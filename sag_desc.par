@@ -1,0 +1,110 @@
+! sag_desc.par
+! List of selected Sagittal accidentals for Help:Legend: Accidentals
+! The entries are repeating every four separate lines:
+!   Pure symbol
+!   Shorthand symbol
+!   Description
+!   Mythological description
+! Only sharp symbols here, the complements will also be shown.
+! Each symbol must have its own PNG file.
+!
+/|\
+^
+Semi-sharp, 11 M-diesis (33/32)
+Apollo's arrow
+/||\
+#
+Sharp, apotome (2187/2048)
+Zeus' lightning bolt
+/|||\
+#^
+Sesqui-sharp, apotome plus 11 M-diesis (72171/65536)
+
+/X\
+x
+Double-sharp, double apotome (4782969/4194304)
+
+'|
+'
+5-schisma, schisma (32805/32768)
+
+)|
+"
+19-schisma (513/512)
+the key to the underworld
+|(
+r
+5:7-kleisma (5120/5103)
+Hestia's hearth-fire poker
+~|
+$
+17-kleisma (2187/2176)
+
+)|(
+*
+7:11-kleisma (896/891)
+Poseidon's trident
+~|(
+g
+17 (or 245 or 7:13) -comma (4131/4096)
+Hephaestus' axe
+|~
+~
+23-comma (736/729)
+Charon's boathook
+./|
+./
+25-comma, diaschisma (2048/2025)
+
+/|
+/
+5-comma, syntonic comma (81/80)
+Didymus' dibbler
+'/|
+'/
+3-comma, Pythagorean comma (531441/524288)
+
+)/|
+¬
+5:19 (or 13) -comma (41553/40960)
+Hades' cornucopia
+|)
+f
+7-comma (64/63)
+Archytas' arc (or rainbow)
+|\
+y
+55-comma (55/54)
+Artemis' half arrow
+(|
+?
+7:11-comma (45927/45056)
+Demeter's scythe
+/|~
+ø
+5:23 (or 245 or 7:13) -S-diesis (46/45)
+Hermes' winged caduceus
+(|(
+q
+5:11 (or 625) -S-diesis (45/44)
+Aphrodite's perfect curves
+//|
+=
+25-S-diesis, minor diesis (6561/6400)
+Amphitrite's crab-claw hairclip
+/|)
+n
+35 (or 125 or 13) -M-diesis (8505/8192)
+Athene's helmet
+(/|
+ç
+49-M-diesis (4096/3969)
+
+(|)
+@
+11-L-diesis (729/704)
+Dionysus' wine cup
+(|\
+m
+35 (or 125 or 13) -L-diesis (8505/8192)
+Ares' large helmet
