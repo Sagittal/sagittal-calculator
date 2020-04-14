@@ -1,4 +1,4 @@
-! Sagittal high-tolerance temperament notation. George Secor. 2003-Aug-28
+! Sagittal high-tolerance temperament notation. George Secor. 2003-Aug-28, updated 2020-Apr-14
 !
 max_abs_slope	7.5
 c_exp_range	-6	10
@@ -7,9 +7,9 @@ fifth_size	703.5787
 oct_size	2/1
 !
 !Lower bound	Symbol	Value		ASCII
--70.385	(!)	704/729	o
+-70.385	(!)	704/729	w
 -62.5	\!/	32/33		v
--55.0	(!)	704/729	o
+-55.0	(!)	704/729	w
 -43.3	\!	80/81		\
 -35.0	!)	63/64		t
 -32.0	!/	54/55		k
@@ -21,7 +21,7 @@ oct_size	2/1
 29.0	|\	55/54		y
 32.0	|)	64/63		f
 35.0	/|	81/80		/
-43.3	(|)	729/704	@
+43.3	(|)	729/704	m
 55.0	/|\	33/32		^
-62.5	(|)	729/704	@
+62.5	(|)	729/704	m
 70.385
