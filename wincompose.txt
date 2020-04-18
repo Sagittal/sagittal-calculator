@@ -1,15 +1,15 @@
 # Sagittal-compatible accidentals in the Bravura font
-<Multi_key> <Multi_key> <h>						: ""	UE261	# Natural
-<Multi_key> <Multi_key> <#>						: ""	UE262	# Conventional sharp
-<Multi_key> <Multi_key> <b> <space>				: ""	UE260	# Conventional flat
-<Multi_key> <Multi_key> <x>						: ""	UE47D	# Large double sharp
-<Multi_key> <Multi_key> <b> <b>					: ""	UE264	# Conventional double flat
-<Multi_key> <Multi_key> <>> <space>				: ""	UE282	# Stein semisharp
-<Multi_key> <Multi_key> <<> <space>				: ""	UE282	# Stein semiflat
-<Multi_key> <Multi_key> <>> <#>					: ""	UE283	# Stein sesquisharp
-<Multi_key> <Multi_key> <<> <b>					: ""	UE283	# Stein sesquiflat
-<Multi_key> <Multi_key> <+>						: ""	UE47B	# Wilson plus
-<Multi_key> <Multi_key> <->						: ""	UE47c	# Wilson minus
+<Multi_key> <Multi_key> <h>			: ""	UE261	# Natural
+<Multi_key> <Multi_key> <#>			: ""	UE262	# Conventional sharp
+<Multi_key> <Multi_key> <b> <space>		: ""	UE260	# Conventional flat
+<Multi_key> <Multi_key> <x>			: ""	UE47D	# Large double sharp
+<Multi_key> <Multi_key> <b> <b>			: ""	UE264	# Conventional double flat
+<Multi_key> <Multi_key> <>> <space>		: ""	UE282	# Stein semisharp
+<Multi_key> <Multi_key> <<> <space>		: ""	UE282	# Stein semiflat
+<Multi_key> <Multi_key> <>> <#>			: ""	UE283	# Stein sesquisharp
+<Multi_key> <Multi_key> <<> <b>			: ""	UE283	# Stein sesquiflat
+<Multi_key> <Multi_key> <+>			: ""	UE47B	# Wilson plus
+<Multi_key> <Multi_key> <->			: ""	UE47c	# Wilson minus
 
 # Spartan Sagittal single-shaft symbols in the Bravura font
 <Multi_key> <Multi_key> <|> <(>			: ""	UE300	# Sagittal |(
