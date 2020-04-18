@@ -552,6 +552,8 @@
 <Multi_key> <Multi_key> <p> <a> <i> <f> <l> <a> <t>					: ""	UE315	# Sagittal paiflat
 <Multi_key> <Multi_key> <n> <a> <o> <s> <h> <a> <r> <p>					: ""	UE316	# Sagittal naosharp
 <Multi_key> <Multi_key> <n> <a> <i> <f> <l> <a> <t>					: ""	UE317	# Sagittal naiflat
+<Multi_key> <Multi_key> <s> <h> <a> <r> <p>						: ""	UE318	# Sagittal sharp
+<Multi_key> <Multi_key> <f> <l> <a> <t>							: ""	UE319	# Sagittal flat
 <Multi_key> <Multi_key> <n> <a> <i> <s> <h> <a> <r> <p>					: ""	UE31C	# Sagittal naisharp
 <Multi_key> <Multi_key> <n> <a> <o> <f> <l> <a> <t>					: ""	UE31D	# Sagittal naoflat
 <Multi_key> <Multi_key> <p> <a> <i> <s> <h> <a> <r> <p>					: ""	UE31E	# Sagittal paisharp
@@ -576,6 +578,8 @@
 <Multi_key> <Multi_key> <p> <a> <i> <d> <o> <u> <b> <l> <e> <f> <l> <a> <t>		: ""	UE331	# Sagittal paidoubleflat
 <Multi_key> <Multi_key> <n> <a> <o> <d> <o> <u> <b> <l> <e> <s> <h> <a> <r> <p>		: ""	UE332	# Sagittal naodoublesharp
 <Multi_key> <Multi_key> <n> <a> <i> <d> <o> <u> <b> <l> <e> <f> <l> <a> <t>		: ""	UE333	# Sagittal naidoubleflat
+<Multi_key> <Multi_key> <d> <o> <u> <b> <l> <e> <s> <h> <a> <r> <p>			: ""	UE334	# Sagittal doublesharp
+<Multi_key> <Multi_key> <d> <o> <u> <b> <l> <e> <f> <l> <a> <t>				: ""	UE335	# Sagittal doubleflat
 
 # Athenian Sagittal extension symbols in the Bravura font (by Sagispeak, spelled conventionals)
 <Multi_key> <Multi_key> <j> <a> <n> <a> <o> <s> <h> <a> <r> <p>				: ""	UE34A	# Sagittal janaosharp
