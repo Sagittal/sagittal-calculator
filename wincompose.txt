@@ -1,3 +1,6 @@
+# Sagittal Spacing
+<Multi_key> <Multi_key> <space>								: " "	U202F	# narrow no-break space
+
 # Sagittal-compatible accidentals in the Bravura font (by long ASCII)
 <Multi_key> <Multi_key> <|> </> </> <|>							: ""	UE261	# Natural
 <Multi_key> <Multi_key> <#>								: ""	UE262	# Conventional sharp
