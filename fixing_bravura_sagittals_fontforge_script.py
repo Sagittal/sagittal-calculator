@@ -87,7 +87,7 @@ def replace_downwards_glyph_with_mirrored_snapped_upwards_glyph(glyph, inverted_
 bravura = fontforge.open("C:/Users/DouglasBlumeyer/Desktop/BravuraSagittalUpdate.sfd")
 
 sagittal_unicode_range_start = 0xe300
-sagittal_unicode_range_end = 0xe3f4
+sagittal_unicode_range_end = 0xe41e
 skip_every_other = 2
 
 for unicode in range(sagittal_unicode_range_start, sagittal_unicode_range_end, skip_every_other):
