@@ -99,9 +99,13 @@ for unicode in range(sagittal_unicode_range_start, sagittal_unicode_range_end, s
 
 	snap_upwards_glyph_to_wonky_grid(glyph)
 
+	glyph.condenseExtend(1, 0, 0, 0)
+
 	next_unicode = unicode + 1
 	inverted_version_of_glyph = bravura[next_unicode]
 	replace_downwards_glyph_with_mirrored_snapped_upwards_glyph(glyph, inverted_version_of_glyph)
+
+	inverted_version_of_glyph.condenseExtend(1, 0, 0, 0)
 
 
 bravura.save()
