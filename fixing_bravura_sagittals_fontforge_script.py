@@ -112,6 +112,13 @@ for unicode in range(sagittal_unicode_range_start, sagittal_unicode_range_end, s
 	fix_side_bearing(inverted_version_of_glyph, next_unicode)
 
 
+for unicode in [0xe284, 0xe285, 0xe47b, 0xe47c, 0xe47d]: # sagittal_compatibles
+	glyph = bravura[unicode]
+	print(hex(unicode))
+	snap_upwards_glyph_to_wonky_grid(glyph)
+	fix_side_bearing(glyph, unicode)
+
+
 # Add kerning to diacritics
 
 glyphs_to_kern_with = ['uniE3EA', 'uniE3E8', 'uniE3CE', 'uniE3CC', 'uniE3C2', 'uniE3BA', 'uniE3B8',
