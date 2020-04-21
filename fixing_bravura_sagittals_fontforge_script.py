@@ -47,8 +47,6 @@ def snap_upwards_glyph_to_wonky_grid(glyph):
 		snapped_contour = contour.dup()
 
 		for point in snapped_contour.__iter__():
-			if not point.on_curve:
-				continue # skip control points
 			snap_point(point)
 
 		snapped_contour.draw(pen)
@@ -81,6 +79,12 @@ def replace_downwards_glyph_with_mirrored_snapped_upwards_glyph(glyph, inverted_
 
 	pen = None
 
+def fix_side_bearing(glyph, unicode):
+	glyph.condenseExtend(1, 0, 0, 0)  # remove existing side-bearing
+	if unicode >= 0xe3f2: # diacritics
+		glyph.right_side_bearing = 62 # 1/16 em
+	else:
+		glyph.right_side_bearing = 0
 
 # Fix up the font!
 
@@ -99,13 +103,13 @@ for unicode in range(sagittal_unicode_range_start, sagittal_unicode_range_end, s
 
 	snap_upwards_glyph_to_wonky_grid(glyph)
 
-	glyph.condenseExtend(1, 0, 0, 0)
+	fix_side_bearing(glyph, unicode)
 
 	next_unicode = unicode + 1
 	inverted_version_of_glyph = bravura[next_unicode]
 	replace_downwards_glyph_with_mirrored_snapped_upwards_glyph(glyph, inverted_version_of_glyph)
 
-	inverted_version_of_glyph.condenseExtend(1, 0, 0, 0)
+	fix_side_bearing(inverted_version_of_glyph, next_unicode)
 
 
 bravura.save()
