@@ -91,7 +91,7 @@ def fix_side_bearing(glyph, unicode):
 bravura = fontforge.open("C:/Users/DouglasBlumeyer/Desktop/BravuraSagittalUpdate.sfd")
 
 sagittal_unicode_range_start = 0xe300
-sagittal_unicode_range_end = 0xe41e
+sagittal_unicode_range_end = 0xe40c
 skip_every_other = 2
 
 for unicode in range(sagittal_unicode_range_start, sagittal_unicode_range_end, skip_every_other):
@@ -110,6 +110,25 @@ for unicode in range(sagittal_unicode_range_start, sagittal_unicode_range_end, s
 	replace_downwards_glyph_with_mirrored_snapped_upwards_glyph(glyph, inverted_version_of_glyph)
 
 	fix_side_bearing(inverted_version_of_glyph, next_unicode)
+
+
+# Add kerning to diacritics
+
+glyphs_to_kern_with = ['uniE3EA', 'uniE3E8', 'uniE3CE', 'uniE3CC', 'uniE3C2', 'uniE3BA', 'uniE3B8',
+'uniE39E', 'uniE39C', 'uniE392', 'uniE386', 'uniE382', 'uniE380', 'uniE37A', 'uniE374', 'uniE362',
+'uniE35E', 'uniE356', 'uniE34E', 'uniE34A', 'uniE342', 'uniE334', 'uniE332', 'uniE330', 'uniE32E',
+'uniE326', 'uniE324', 'uniE31E', 'uniE318', 'uniE316', 'uniE30A', 'uniE308', 'uniE302']
+
+sagittal_diacritic_unicode_range_start = 0xe3f2
+sagittal_unicode_range_end = 0xe40c
+
+table = "'kern' Horizontal Kerning lookup 0 subtable"
+
+for unicode in range(sagittal_diacritic_unicode_range_start, sagittal_unicode_range_end):
+	diacritic_glyph = bravura[unicode]
+	print(hex(unicode))
+	for kerning_glyph in glyphs_to_kern_with:
+		diacritic_glyph.addPosSub(table, kerning_glyph, 0, 0, -62, 0, 0, 0, 0, 0)
 
 
 bravura.save()
