@@ -54,13 +54,15 @@ def snap_glyph_to_wonky_grid(glyph, layer):
 
 def snap_point(point):
 	nearest_x = find_nearest(wonky_sagittal_grid_positions_in_ps_fu, point.x)
-	if (abs(nearest_x - point.x) == 1):
+	diff_x = abs(nearest_x - point.x)
+	if diff_x <= 1 and diff_x > 0:
 		print("snapping x; ", [point.x, point.y], "goes to", [nearest_x, point.y])
 		transformation_matrix = psMat.translate(nearest_x - point.x, 0)
 		point.transform(transformation_matrix)
 
 	nearest_y = find_nearest(wonky_sagittal_grid_positions_in_ps_fu, point.y)
-	if (abs(nearest_y - point.y) == 1):
+	diff_y = abs(nearest_y - point.y)
+	if diff_y <= 1 and diff_y > 0:
 		print("snapping y; ", [point.x, point.y], "goes to", [point.x, nearest_y])
 		transformation_matrix = psMat.translate(0, nearest_y - point.y)
 		point.transform(transformation_matrix)
