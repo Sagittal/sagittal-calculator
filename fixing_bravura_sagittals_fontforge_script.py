@@ -124,7 +124,7 @@ for unicode in [0xe284, 0xe285, 0xe47b, 0xe47c, 0xe47d]: # sagittal_compatibles
 	fix_side_bearing(glyph, unicode)
 
 
-# Add kerning to diacritics
+# Add kerning between diacritics and symbols
 
 glyphs_to_kern_with = ['uniE3EA', 'uniE3E8', 'uniE3CE', 'uniE3CC', 'uniE3C2', 'uniE3BA', 'uniE3B8',
 'uniE39E', 'uniE39C', 'uniE392', 'uniE386', 'uniE382', 'uniE380', 'uniE37A', 'uniE374', 'uniE362',
@@ -141,6 +141,21 @@ for unicode in range(sagittal_diacritic_unicode_range_start, sagittal_unicode_ra
 	print(hex(unicode))
 	for kerning_glyph in glyphs_to_kern_with:
 		diacritic_glyph.addPosSub(table, kerning_glyph, 0, 0, -62, 0, 0, 0, 0, 0)
+
+
+# Add kerning between half-tinas and other tina diacritics (and minas)
+
+upward_half_tina_glyph = bravura[0xe40a]
+upward_tina_glyphs_to_kern_with = ['uniE3F4', 'uniE3F6', 'uniE3F8', 'uniE3FA',
+'uniE3FC', 'uniE3FE', 'uniE400', 'uniE402', 'uniE404', 'uniE406', 'uniE408']
+for upward_tina_glyph in upward_tina_glyphs_to_kern_with:
+	upward_half_tina_glyph.addPosSub(table, upward_tina_glyph, 0, 0, -30, 0, 0, 0, 0, 0)
+
+downward_half_tina_glyph = bravura[0xe40b]
+downward_tina_glyphs_to_kern_with = ['uniE3F5', 'uniE3F7', 'uniE3F9', 'uniE3FB',
+'uniE3FD', 'uniE3FF', 'uniE401', 'uniE403', 'uniE405', 'uniE407', 'uniE409']
+for downward_tina_glyph in downward_tina_glyphs_to_kern_with:
+	downward_half_tina_glyph.addPosSub(table, downward_tina_glyph, 0, 0, -30, 0, 0, 0, 0, 0)
 
 
 bravura.save()
