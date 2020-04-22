@@ -66,7 +66,7 @@ def snap_point(point):
 		point.transform(transformation_matrix)
 
 def replace_downward_glyph_with_mirrored_snapped_upward_glyph(glyph, downward_version_of_glyph, layer):
-	glyph.activeLayer = layer
+	downward_version_of_glyph.activeLayer = layer
 	contours = glyph.layers[layer]
 	pen = downward_version_of_glyph.glyphPen()
 
