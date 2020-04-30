@@ -1,0 +1,153 @@
+# Sagittal-compatible accidentals in the Bravura font (by long ASCII)
+<Multi_key> <Multi_key> <|> </> </> <|>							: ""	UE261	# Natural
+<Multi_key> <Multi_key> <#>								: ""	UE262	# Conventional sharp
+<Multi_key> <Multi_key> <b> <space>							: ""	UE260	# Conventional flat
+<Multi_key> <Multi_key> <x>								: ""	UE47D	# Large double sharp
+<Multi_key> <Multi_key> <b> <b>								: ""	UE264	# Conventional double flat
+<Multi_key> <Multi_key> <>> <space>							: ""	UE282	# Stein semisharp
+<Multi_key> <Multi_key> <<> <space>							: ""	UE282	# Stein semiflat
+<Multi_key> <Multi_key> <>> <#>								: ""	UE283	# Stein sesquisharp
+<Multi_key> <Multi_key> <<> <b>								: ""	UE283	# Stein sesquiflat
+<Multi_key> <Multi_key> <+>								: ""	UE47B	# Wilson plus
+<Multi_key> <Multi_key> <->								: ""	UE47c	# Wilson minus
+
+# Spartan Sagittal single-shaft symbols in the Bravura font (by long ASCII)
+<Multi_key> <Multi_key> <|> <(>								: ""	UE300	# Sagittal |(
+<Multi_key> <Multi_key> <!> <(>								: ""	UE301	# Sagittal !(
+<Multi_key> <Multi_key> </> <|> <space>							: ""	UE302	# Sagittal /|
+<Multi_key> <Multi_key> <\> <!> <space>							: ""	UE303	# Sagittal \!
+<Multi_key> <Multi_key> <|> <)>								: ""	UE304	# Sagittal |)
+<Multi_key> <Multi_key> <!> <)>								: ""	UE305	# Sagittal !)
+<Multi_key> <Multi_key> </> </> <|> <space>						: ""	UE306	# Sagittal //|
+<Multi_key> <Multi_key> <\> <\> <!> <space>						: ""	UE307	# Sagittal \\!
+<Multi_key> <Multi_key> </> <|> <)>							: ""	UE308	# Sagittal /|)
+<Multi_key> <Multi_key> <\> <!> <)>							: ""	UE309	# Sagittal \!)
+<Multi_key> <Multi_key> </> <|> <\>							: ""	UE30A	# Sagittal /|\
+<Multi_key> <Multi_key> <\> <!> </>							: ""	UE30B	# Sagittal \!/
+<Multi_key> <Multi_key> <(> <|> <)>							: ""	UE30C	# Sagittal (|)
+<Multi_key> <Multi_key> <(> <!> <)>							: ""	UE30D	# Sagittal (!)
+<Multi_key> <Multi_key> <(> <|> <\>							: ""	UE30E	# Sagittal (|\
+<Multi_key> <Multi_key> <(> <!> </>							: ""	UE30F	# Sagittal (!/
+
+# Athenian Sagittal extension symbols in the Bravura font (by long ASCII)
+<Multi_key> <Multi_key> <)> <|> <(>							: ""	UE340	# Sagittal )|(
+<Multi_key> <Multi_key> <)> <!> <(>							: ""	UE341	# Sagittal )!(
+<Multi_key> <Multi_key> <~> <|> <(>							: ""	UE342	# Sagittal ~|(
+<Multi_key> <Multi_key> <~> <!> <(>							: ""	UE343	# Sagittal ~!(
+<Multi_key> <Multi_key> <|> <\> <space>							: ""	UE344	# Sagittal |\
+<Multi_key> <Multi_key> <!> </> <space>							: ""	UE345	# Sagittal !/
+<Multi_key> <Multi_key> <(> <|> <space>							: ""	UE346	# Sagittal (|
+<Multi_key> <Multi_key> <(> <!> <space>							: ""	UE347	# Sagittal (!
+<Multi_key> <Multi_key> <(> <|> <(>							: ""	UE348	# Sagittal (|(
+<Multi_key> <Multi_key> <(> <!> <(>							: ""	UE349	# Sagittal (!(
+
+# Trojan Sagittal extension symbols in the Bravura font (by long ASCII)
+<Multi_key> <Multi_key> <|> <~>								: ""	UE370	# Sagittal |~
+<Multi_key> <Multi_key> <!> <~>								: ""	UE371	# Sagittal !~
+<Multi_key> <Multi_key> <)> </> <|> <space>						: ""	UE372	# Sagittal )/|
+<Multi_key> <Multi_key> <)> <\> <!> <space>						: ""	UE373	# Sagittal )\!
+<Multi_key> <Multi_key> </> <|> <~>							: ""	UE374	# Sagittal /|~
+<Multi_key> <Multi_key> <\> <!> <~>							: ""	UE375	# Sagittal \!~
+
+# Promethean Sagittal extension single-shaft symbols in the Bravura font (by long ASCII)
+<Multi_key> <Multi_key> <)> <|> <space>							: ""	UE390	# Sagittal )|
+<Multi_key> <Multi_key> <)> <!> <space>							: ""	UE391	# Sagittal )!
+<Multi_key> <Multi_key> <~> <|> <space>							: ""	UE392	# Sagittal ~|
+<Multi_key> <Multi_key> <~> <!> <space>							: ""	UE393	# Sagittal ~!
+<Multi_key> <Multi_key> <)> <~> <|> <space>						: ""	UE394	# Sagittal )~|
+<Multi_key> <Multi_key> <)> <~> <!> <space>						: ""	UE395	# Sagittal )~!
+<Multi_key> <Multi_key> <~> <~> <|> <space>						: ""	UE396	# Sagittal ~~|
+<Multi_key> <Multi_key> <~> <~> <!> <space>						: ""	UE397	# Sagittal ~~!
+<Multi_key> <Multi_key> <)> <|> <~>							: ""	UE398	# Sagittal )|~
+<Multi_key> <Multi_key> <)> <!> <~>							: ""	UE399	# Sagittal )!~
+<Multi_key> <Multi_key> <)> <|> <)>							: ""	UE39A	# Sagittal )|)
+<Multi_key> <Multi_key> <)> <!> <)>							: ""	UE39B	# Sagittal )!)
+<Multi_key> <Multi_key> <~> <|> <)>							: ""	UE39C	# Sagittal ~|)
+<Multi_key> <Multi_key> <~> <!> <)>							: ""	UE39D	# Sagittal ~!)
+<Multi_key> <Multi_key> <~> <|> <\>							: ""	UE39E	# Sagittal ~|\
+<Multi_key> <Multi_key> <~> <!> </>							: ""	UE39F	# Sagittal ~!/
+<Multi_key> <Multi_key> <)> </> </> <|> <space>						: ""	UE3A0	# Sagittal )//|
+<Multi_key> <Multi_key> <)> <\> <\> <!> <space>						: ""	UE3A1	# Sagittal )\\!
+<Multi_key> <Multi_key> <(> <|> <~>							: ""	UE3A2	# Sagittal (|~
+<Multi_key> <Multi_key> <(> <!> <~>							: ""	UE3A3	# Sagittal (!~
+<Multi_key> <Multi_key> <(> </> <|> <space>						: ""	UE3A4	# Sagittal (/|
+<Multi_key> <Multi_key> <(> <\> <!> <space>						: ""	UE3A5	# Sagittal (\!
+<Multi_key> <Multi_key> <)> </> <|> <\>							: ""	UE3A6	# Sagittal )/|\
+<Multi_key> <Multi_key> <)> <\> <!> </>							: ""	UE3A7	# Sagittal )\!/
+<Multi_key> <Multi_key> <|> <\> <)>							: ""	UE3A8	# Sagittal |\)
+<Multi_key> <Multi_key> <!> </> <)>							: ""	UE3A9	# Sagittal !/)
+<Multi_key> <Multi_key> <|> <\> <\>							: ""	UE3AA	# Sagittal |\\
+<Multi_key> <Multi_key> <!> </> </>							: ""	UE3AB	# Sagittal !//
+<Multi_key> <Multi_key> <)> <|> <\> <\>							: ""	UE3AC	# Sagittal )|\\
+<Multi_key> <Multi_key> <)> <!> </> </>							: ""	UE3AD	# Sagittal )!//
+
+# Herculean Sagittal diacritics in the Bravura font (by long ASCII)
+<Multi_key> <Multi_key> <|> <space>							: ""	UE3F0	# Sagittal shaft up
+<Multi_key> <Multi_key> <!> <space>							: ""	UE3F1	# Sagittal shaft down
+<Multi_key> <Multi_key> <'>								: ""	UE3F2	# Sagittal acute
+<Multi_key> <Multi_key> <.>								: ""	UE3F3	# Sagittal grave
+
+# Olympian Sagittal diacritics in the Bravura font (by long ASCII)
+<Multi_key> <Multi_key> <`> <space>							: ""	UE3F4	# Sagittal inverted breve
+<Multi_key> <Multi_key> <,> <space>							: ""	UE3F5	# Sagittal breve
+<Multi_key> <Multi_key> <`> <`>								: ""	UE3F6	# Sagittal double inverted breve
+<Multi_key> <Multi_key> <,> <,>								: ""	UE3F7	# Sagittal double breve
+
+# "Lazy" down versions
+<Multi_key> <Multi_key> <\> <|> <space>							: ""	UE303	# Sagittal \!
+<Multi_key> <Multi_key> <\> <\> <|>							: ""	UE307	# Sagittal \\!
+<Multi_key> <Multi_key> <\> <|> <)>							: ""	UE309	# Sagittal \!)
+<Multi_key> <Multi_key> <\> <|> </>							: ""	UE30B	# Sagittal \!/
+<Multi_key> <Multi_key> <(> <|> </>							: ""	UE30F	# Sagittal (!/
+<Multi_key> <Multi_key> <|> </> <space>							: ""	UE345	# Sagittal !/
+<Multi_key> <Multi_key> <)> <\> <|> <space>						: ""	UE373	# Sagittal )\!
+<Multi_key> <Multi_key> <\> <|> <~>							: ""	UE375	# Sagittal !/
+<Multi_key> <Multi_key> <~> <|> </>							: ""	UE39F	# Sagittal ~!/
+<Multi_key> <Multi_key> <)> <\> <\> <|> <space>						: ""	UE3A1	# Sagittal )\\!
+<Multi_key> <Multi_key> <(> <\> <|> <space>						: ""	UE3A5	# Sagittal (\!
+<Multi_key> <Multi_key> <)> <\> <|> </>							: ""	UE3A7	# Sagittal )\!/
+<Multi_key> <Multi_key> <|> </> <)>							: ""	UE3A9	# Sagittal !/)
+<Multi_key> <Multi_key> <)> <|> </> </>							: ""	UE3AD	# Sagittal )!//
+
+# Sagittal-compatible accidentals in the Bravura font (by short ASCII)
+<Multi_key> <Multi_key> <h>								: ""	UE261	# Natural
+
+# Spartan Sagittal single-shaft symbols in the Bravura font (by short ASCII)
+<Multi_key> <Multi_key> <u> <space>							: ""	UE300	# Sagittal u
+<Multi_key> <Multi_key> <n> <space>							: ""	UE301	# Sagittal n
+<Multi_key> <Multi_key> </> <space>							: ""	UE302	# Sagittal /
+<Multi_key> <Multi_key> <\> <space>							: ""	UE303	# Sagittal \
+<Multi_key> <Multi_key> <f> <space>							: ""	UE304	# Sagittal f
+<Multi_key> <Multi_key> <t> <space>							: ""	UE305	# Sagittal t
+<Multi_key> <Multi_key> <=> <space>							: ""	UE306	# Sagittal =
+<Multi_key> <Multi_key> <_> <space>							: ""	UE307	# Sagittal _
+<Multi_key> <Multi_key> <%> <space>							: ""	UE308	# Sagittal %
+<Multi_key> <Multi_key> <&> <space>							: ""	UE309	# Sagittal &
+<Multi_key> <Multi_key> <^> <space>							: ""	UE30A	# Sagittal ^
+<Multi_key> <Multi_key> <v> <space>							: ""	UE30B	# Sagittal v
+<Multi_key> <Multi_key> <m> <space>							: ""	UE30C	# Sagittal m
+<Multi_key> <Multi_key> <w> <space>							: ""	UE30D	# Sagittal w
+<Multi_key> <Multi_key> <q> <space>							: ""	UE30E	# Sagittal q
+<Multi_key> <Multi_key> <d> <space>							: ""	UE30F	# Sagittal d
+
+# Athenian Sagittal extension symbols in the Bravura font (by short ASCII)
+<Multi_key> <Multi_key> <*> <space>							: ""	UE340	# Sagittal *
+<Multi_key> <Multi_key> <i> <space>							: ""	UE341	# Sagittal i
+<Multi_key> <Multi_key> <e> <space>							: ""	UE342	# Sagittal e
+<Multi_key> <Multi_key> <o> <space>							: ""	UE343	# Sagittal o
+<Multi_key> <Multi_key> <y> <space>							: ""	UE344	# Sagittal y
+<Multi_key> <Multi_key> <k> <space>							: ""	UE345	# Sagittal k
+<Multi_key> <Multi_key> <?> <space>							: ""	UE346	# Sagittal ?
+<Multi_key> <Multi_key> <j> <space>							: ""	UE347	# Sagittal j
+<Multi_key> <Multi_key> <g> <space>							: ""	UE348	# Sagittal g
+<Multi_key> <Multi_key> <a> <space>							: ""	UE349	# Sagittal a
+
+# Trojan Sagittal extension symbols in the Bravura font (by short ASCII)
+<Multi_key> <Multi_key> <~> <space>							: ""	UE370	# Sagittal ~
+<Multi_key> <Multi_key> <z> <space>							: ""	UE371	# Sagittal z
+
+# Promethean Sagittal extension single-shaft symbols in the Bravura font (by short ASCII)
+<Multi_key> <Multi_key> <r> <space>							: ""	UE390	# Sagittal r
+<Multi_key> <Multi_key> <;> <space>							: ""	UE391	# Sagittal ;
+<Multi_key> <Multi_key> <$> <space>							: ""	UE392	# Sagittal $
+<Multi_key> <Multi_key> <s> <space>							: ""	UE393	# Sagittal s

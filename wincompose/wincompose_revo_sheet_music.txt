@@ -1,0 +1,121 @@
+# Bravura clefs with staff and space
+<Multi_key> <&> <space>			: "= "		UE01A UE050 UE01A U003D UE014 U0020								# treble clef
+<Multi_key> <9> <:>			: "= "		UE01A UE062 UE01A U003D UE014 U0020								# bass clef
+
+# Bravura combining staff positions
+<Multi_key> <A> <3> <->			: ""			UEB9F												# treble A3 combining staff position
+<Multi_key> <B> <3> <->			: ""			UEB9E												# treble B3 combining staff position
+<Multi_key> <C> <4> <->			: ""			UEB9D												# treble C4 combining staff position
+<Multi_key> <D> <4> <->			: ""			UEB9C												# treble D4 combining staff position
+<Multi_key> <E> <4> <->			: ""			UEB9B												# treble E4 combining staff position
+<Multi_key> <F> <4> <->			: ""			UEB9A												# treble F4 combining staff position
+<Multi_key> <G> <4> <->			: ""			UEB99												# treble G4 combining staff position
+<Multi_key> <A> <4> <->			: ""			UEB98												# treble A4 combining staff position
+<Multi_key> <B> <4> <->			: ""															# treble B4 combining staff position (nothing)
+<Multi_key> <C> <5> <->			: ""			UEB90												# treble C5 combining staff position
+<Multi_key> <D> <5> <->			: ""			UEB91												# treble D5 combining staff position
+<Multi_key> <E> <5> <->			: ""			UEB92												# treble E5 combining staff position
+<Multi_key> <F> <5> <->			: ""			UEB93												# treble F5 combining staff position
+<Multi_key> <G> <5> <->			: ""			UEB94												# treble G5 combining staff position
+<Multi_key> <A> <5> <->			: ""			UEB95												# treble A5 combining staff position
+<Multi_key> <B> <5> <->			: ""			UEB96												# treble B5 combining staff position
+<Multi_key> <C> <6> <->			: ""			UEB97												# treble C6 combining staff position
+<Multi_key> <9> <C> <2> <->		: ""			UEB9F												# bass C2 combining staff position
+<Multi_key> <9> <D> <2> <->		: ""			UEB9E												# bass D2 combining staff position
+<Multi_key> <9> <E> <2> <->		: ""			UEB9D												# bass E2 combining staff position
+<Multi_key> <9> <F> <2> <->		: ""			UEB9C												# bass F2 combining staff position
+<Multi_key> <9> <G> <2> <->		: ""			UEB9B												# bass G2 combining staff position
+<Multi_key> <9> <A> <2> <->		: ""			UEB9A												# bass A2 combining staff position
+<Multi_key> <9> <B> <2> <->		: ""			UEB99												# bass B2 combining staff position
+<Multi_key> <9> <C> <3> <->		: ""			UEB98												# bass C3 combining staff position
+<Multi_key> <9> <D> <3> <->		: ""															# bass D3 combining staff position (nothing)
+<Multi_key> <9> <E> <3> <->		: ""			UEB90												# bass E3 combining staff position
+<Multi_key> <9> <F> <3> <->		: ""			UEB91												# bass F3 combining staff position
+<Multi_key> <9> <G> <3> <->		: ""			UEB92												# bass G3 combining staff position
+<Multi_key> <9> <A> <3> <->		: ""			UEB93												# bass A3 combining staff position
+<Multi_key> <9> <B> <3> <->		: ""			UEB94												# bass B3 combining staff position
+<Multi_key> <9> <C> <4> <->		: ""			UEB95												# bass C4 combining staff position
+<Multi_key> <9> <D> <4> <->		: ""			UEB96												# bass D4 combining staff position
+<Multi_key> <9> <E> <4> <->		: ""			UEB97												# bass E4 combining staff position
+
+# Bravura combining staff positions, shortcuts
+<Multi_key> <C> <->			: ""			UEB9D												# treble C4 combining staff position
+<Multi_key> <D> <->			: ""			UEB9C												# treble D4 combining staff position
+<Multi_key> <E> <->			: ""			UEB9B												# treble E4 combining staff position
+<Multi_key> <F> <->			: ""			UEB9A												# treble F4 combining staff position
+<Multi_key> <G> <->			: ""			UEB99												# treble G4 combining staff position
+<Multi_key> <A> <->			: ""			UEB98												# treble A4 combining staff position
+<Multi_key> <B> <->			: ""															# treble B4 combining staff position (nothing)
+<Multi_key> <C> <2> <->			: ""			UEB9F												# bass C2 combining staff position
+<Multi_key> <D> <2> <->			: ""			UEB9E												# bass D2 combining staff position
+<Multi_key> <E> <2> <->			: ""			UEB9D												# bass E2 combining staff position
+<Multi_key> <F> <2> <->			: ""			UEB9C												# bass F2 combining staff position
+<Multi_key> <G> <2> <->			: ""			UEB9B												# bass G2 combining staff position
+<Multi_key> <A> <2> <->			: ""			UEB9A												# bass A2 combining staff position
+<Multi_key> <B> <2> <->			: ""			UEB99												# bass B2 combining staff position
+<Multi_key> <9> <C> <->			: ""			UEB98												# bass C3 combining staff position
+<Multi_key> <9> <D> <->			: ""															# bass D3 combining staff position (nothing)
+<Multi_key> <9> <E> <->			: ""			UEB90												# bass E3 combining staff position
+<Multi_key> <9> <F> <->			: ""			UEB91												# bass F3 combining staff position
+<Multi_key> <9> <G> <->			: ""			UEB92												# bass G3 combining staff position
+<Multi_key> <9> <A> <->			: ""			UEB93												# bass A3 combining staff position
+<Multi_key> <9> <B> <->			: ""			UEB94												# bass B3 combining staff position
+
+# Bravura notes with staff and space
+<Multi_key> <A> <3> <n>			: " = "	UEB9D UE022 UEB9F UE022 UEB9F UE1D5 U0020 UE01A U003D UE01A U0020				# treble A3 note
+<Multi_key> <B> <3> <n>			: " = "		UEB9D UE022 UEB9E UE1D5 U0020 UE01A U003D UE01A U0021						# treble B3 note
+<Multi_key> <C> <4> <n>			: " = "		UEB9D UE022 UEB9D UE1D5 U0020 UE01A U003D UE01A U0022						# treble C4 note
+<Multi_key> <D> <4> <n>			: " = "		UEB9C UE1D5 U0020 UE01A U003D UE01A U0023							# treble D4 note
+<Multi_key> <E> <4> <n>			: " = "		UEB9B UE1D5 U0020 UE01A U003D UE01A U0024							# treble E4 note
+<Multi_key> <F> <4> <n>			: " = "		UEB9A UE1D5 U0020 UE01A U003D UE01A U0025							# treble F4 note
+<Multi_key> <G> <4> <n>			: " = "		UEB99 UE1D5 U0020 UE01A U003D UE01A U0026							# treble G4 note
+<Multi_key> <A> <4> <n>			: " = "		UEB98 UE1D5 U0020 UE01A U003D UE01A U0027							# treble A4 note
+<Multi_key> <B> <4> <n>			: " = "		UE1D6 U0020 UE01A U003D UE01A U0028								# treble B4 note
+<Multi_key> <C> <5> <n>			: " = "		UEB90 UE1D6 U0020 UE01A U003D UE01A U0029							# treble C5 note
+<Multi_key> <D> <5> <n>			: " = "		UEB91 UE1D6 U0020 UE01A U003D UE01A U0030							# treble D5 note
+<Multi_key> <E> <5> <n>			: " = "		UEB92 UE1D6 U0020 UE01A U003D UE01A U0031							# treble E5 note
+<Multi_key> <F> <5> <n>			: " = "		UEB93 UE1D6 U0020 UE01A U003D UE01A U0032							# treble F5 note
+<Multi_key> <G> <5> <n>			: " = "		UEB94 UE1D6 U0020 UE01A U003D UE01A U0033							# treble G5 note
+<Multi_key> <A> <5> <n>			: " = "		UEB95 UE022 UEB95 UE1D6 U0020 UE01A U003D UE01A U0034						# treble A5 note
+<Multi_key> <B> <5> <n>			: " = "		UEB95 UE022 UEB96 UE1D6 U0020 UE01A U003D UE01A U0035						# treble B5 note
+<Multi_key> <C> <6> <n>			: " = "	UEB95 UE022 UEB97 UE022 UEB97 UE1D6 U0020 UE01A U003D UE01A U0036				# treble C6 note
+<Multi_key> <9> <C> <2> <n>		: " = "	UEB9D UE022 UEB9F UE022 UEB9F UE1D5 U0020 UE01A U003D UE01A U0037				# bass C2 note
+<Multi_key> <9> <D> <2> <n>		: " = "		UEB9D UE022 UEB9E UE1D5 U0020 UE01A U003D UE01A U0038						# bass D2 note
+<Multi_key> <9> <E> <2> <n>		: " = "		UEB9D UE022 UEB9D UE1D5 U0020 UE01A U003D UE01A U0039						# bass E2 note
+<Multi_key> <9> <F> <2> <n>		: " = "		UEB9C UE1D5 U0020 UE01A U003D UE01A U0040							# bass F2 note
+<Multi_key> <9> <G> <2> <n>		: " = "		UEB9B UE1D5 U0020 UE01A U003D UE01A U0041							# bass G2 note
+<Multi_key> <9> <A> <2> <n>		: " = "		UEB9A UE1D5 U0020 UE01A U003D UE01A U0042							# bass A2 note
+<Multi_key> <9> <B> <2> <n>		: " = "		UEB99 UE1D5 U0020 UE01A U003D UE01A U0043							# bass B2 note
+<Multi_key> <9> <C> <3> <n>		: " = "		UEB98 UE1D5 U0020 UE01A U003D UE01A U0044							# bass C3 note
+<Multi_key> <9> <D> <3> <n>		: " = "		UE1D6 U0020 UE01A U003D UE01A U0045								# bass D3 note
+<Multi_key> <9> <E> <3> <n>		: " = "		UEB90 UE1D6 U0020 UE01A U003D UE01A U0046							# bass E3 note
+<Multi_key> <9> <F> <3> <n>		: " = "		UEB91 UE1D6 U0020 UE01A U003D UE01A U0047							# bass F3 note
+<Multi_key> <9> <G> <3> <n>		: " = "		UEB92 UE1D6 U0020 UE01A U003D UE01A U0048							# bass G3 note
+<Multi_key> <9> <A> <3> <n>		: " = "		UEB93 UE1D6 U0020 UE01A U003D UE01A U0049							# bass A3 note
+<Multi_key> <9> <B> <3> <n>		: " = "		UEB94 UE1D6 U0020 UE01A U003D UE01A U0050							# bass B3 note
+<Multi_key> <9> <C> <4> <n>		: " = "		UEB95 UE022 UEB95 UE1D6 U0020 UE01A U003D UE01A U0051						# bass C4 note
+<Multi_key> <9> <D> <4> <n>		: " = "		UEB95 UE022 UEB96 UE1D6 U0020 UE01A U003D UE01A U0052						# bass D4 note
+<Multi_key> <9> <E> <4> <n>		: " = "	UEB95 UE022 UEB97 UE022 UEB97 UE1D6 U0020 UE01A U003D UE01A U0053				# bass E4 note
+
+# Bravura notes with staff and space, shortcuts
+<Multi_key> <C> <n>			: " = "		UEB9D UE022 UEB9D UE1D5 U0020 UE01A U003D UE01A U0022						# treble C4 note
+<Multi_key> <D> <n>			: " = "		UEB9C UE1D5 U0020 UE01A U003D UE01A U0023							# treble D4 note
+<Multi_key> <E> <n>			: " = "		UEB9B UE1D5 U0020 UE01A U003D UE01A U0024							# treble E4 note
+<Multi_key> <F> <n>			: " = "		UEB9A UE1D5 U0020 UE01A U003D UE01A U0025							# treble F4 note
+<Multi_key> <G> <n>			: " = "		UEB99 UE1D5 U0020 UE01A U003D UE01A U0026							# treble G4 note
+<Multi_key> <A> <n>			: " = "		UEB98 UE1D5 U0020 UE01A U003D UE01A U0027							# treble A4 note
+<Multi_key> <B> <n>			: " = "		UE1D6 U0020 UE01A U003D UE01A U0028								# treble B4 note
+<Multi_key> <C> <2> <n>			: " = "	UEB9D UE022 UEB9F UE022 UEB9F UE1D5 U0020 UE01A U003D UE01A U0037				# bass C2 note
+<Multi_key> <D> <2> <n>			: " = "		UEB9D UE022 UEB9E UE1D5 U0020 UE01A U003D UE01A U0038						# bass D2 note
+<Multi_key> <E> <2> <n>			: " = "		UEB9D UE022 UEB9D UE1D5 U0020 UE01A U003D UE01A U0039						# bass E2 note
+<Multi_key> <F> <2> <n>			: " = "		UEB9C UE1D5 U0020 UE01A U003D UE01A U0040							# bass F2 note
+<Multi_key> <G> <2> <n>			: " = "		UEB9B UE1D5 U0020 UE01A U003D UE01A U0041							# bass G2 note
+<Multi_key> <A> <2> <n>			: " = "		UEB9A UE1D5 U0020 UE01A U003D UE01A U0042							# bass A2 note
+<Multi_key> <B> <2> <n>			: " = "		UEB99 UE1D5 U0020 UE01A U003D UE01A U0043							# bass B2 note
+<Multi_key> <9> <C> <n>			: " = "		UEB98 UE1D5 U0020 UE01A U003D UE01A U0044							# bass C3 note
+<Multi_key> <9> <D> <n>			: " = "		UE1D6 U0020 UE01A U003D UE01A U0045								# bass D3 note
+<Multi_key> <9> <E> <n>			: " = "		UEB90 UE1D6 U0020 UE01A U003D UE01A U0046							# bass E3 note
+<Multi_key> <9> <F> <n>			: " = "		UEB91 UE1D6 U0020 UE01A U003D UE01A U0047							# bass F3 note
+<Multi_key> <9> <G> <n>			: " = "		UEB92 UE1D6 U0020 UE01A U003D UE01A U0048							# bass G3 note
+<Multi_key> <9> <A> <n>			: " = "		UEB93 UE1D6 U0020 UE01A U003D UE01A U0049							# bass A3 note
+<Multi_key> <9> <B> <n>			: " = "		UEB94 UE1D6 U0020 UE01A U003D UE01A U0050							# bass B3 note
