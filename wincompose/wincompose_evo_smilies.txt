@@ -1,0 +1,1006 @@
+# Sagittal Forum Smilies - conventional symbols
+<Multi_key> <Multi_key> <colon> <h>				: ":h:"			# Sagittal smilie h
+<Multi_key> <Multi_key> <colon> <#>				: ":#:"			# Sagittal smilie #
+<Multi_key> <Multi_key> <colon> <x>				: ":x:"			# Sagittal smilie x
+<Multi_key> <Multi_key> <colon> <b>				: ":b:"			# Sagittal smilie b
+<Multi_key> <Multi_key> <colon> <b> <b>				: ":bb:"		# Sagittal smilie bb
+
+# Sagittal Forum Smilies - Sagittal symbols (Natural) Up
+<Multi_key> <Multi_key> <colon> <`> <|>				: ":`::|:"		# Sagittal smilie `|
+<Multi_key> <Multi_key> <colon> <`> <`> <|>			: ":``::|:"		# Sagittal smilie ``|
+<Multi_key> <Multi_key> <colon> <.> <)> <|>			: ":.::)|:"		# Sagittal smilie .)|
+<Multi_key> <Multi_key> <colon> <|>				: ":|:"			# Sagittal smilie |
+<Multi_key> <Multi_key> <colon> <`> <'> <|>			: ":`::'::|:"		# Sagittal smilie `'|
+<Multi_key> <Multi_key> <colon> <,> <)> <|>			: ":,::)|:"		# Sagittal smilie ,)|
+<Multi_key> <Multi_key> <colon> <)> <|>				: ":)|:"		# Sagittal smilie )|
+<Multi_key> <Multi_key> <colon> <`> <)> <|>			: ":`::)|:"		# Sagittal smilie `)|
+<Multi_key> <Multi_key> <colon> <`> <`> <)> <|>			: ":``::)|:"		# Sagittal smilie ``)|
+<Multi_key> <Multi_key> <colon> <,> <,> <|> <(>			: ":,,::|(:"		# Sagittal smilie ,,|(
+<Multi_key> <Multi_key> <colon> <,> <|> <(>			: ":,::|(:"		# Sagittal smilie ,|(
+<Multi_key> <Multi_key> <colon> <|> <(>				: ":|(:"		# Sagittal smilie |(
+<Multi_key> <Multi_key> <colon> <`> <|> <(>			: ":`::|(:"		# Sagittal smilie `|(
+<Multi_key> <Multi_key> <colon> <.> <~> <|>			: ":.::~|:"		# Sagittal smilie .~|
+<Multi_key> <Multi_key> <colon> <,> <'> <|> <(>			: ":,::'::|(:"		# Sagittal smilie ,'|(
+<Multi_key> <Multi_key> <colon> <|> <(>				: ":|(:"		# Sagittal smilie |(
+<Multi_key> <Multi_key> <colon> <,> <~> <|>			: ":,::~|:"		# Sagittal smilie ,~|
+<Multi_key> <Multi_key> <colon> <~> <|>				: ":~|:"		# Sagittal smilie ~|
+<Multi_key> <Multi_key> <colon> <,> <)> <|> <(>			: ":,::)|(:"		# Sagittal smilie ,)|(
+<Multi_key> <Multi_key> <colon> <)> <|> <(>			: ":)|(:"		# Sagittal smilie )|(
+<Multi_key> <Multi_key> <colon> <`> <)> <|> <(>			: ":`::)|(:"		# Sagittal smilie `)|(
+<Multi_key> <Multi_key> <colon> <`> <`> <)> <|> <(>		: ":``::)|(:"		# Sagittal smilie ``)|(
+<Multi_key> <Multi_key> <colon> <,> <'> <)> <|> <(>		: ":,::'::)|(:"		# Sagittal smilie ,')|(
+<Multi_key> <Multi_key> <colon> <)> <|> <(>			: ":)|(:"		# Sagittal smilie )|(
+<Multi_key> <Multi_key> <colon> <)> <~> <|>			: ":)~|:"		# Sagittal smilie )~|
+<Multi_key> <Multi_key> <colon> <.> <~> <|> <(>			: ":.::~|(:"		# Sagittal smilie .~|(
+<Multi_key> <Multi_key> <colon> <`> <.> <~> <|> <(>		: ":`::.::~|(:"		# Sagittal smilie `.~|(
+<Multi_key> <Multi_key> <colon> <,> <,> <~> <|> <(>		: ":,,::~|(:"		# Sagittal smilie ,,~|(
+<Multi_key> <Multi_key> <colon> <,> <~> <|> <(>			: ":,::~|(:"		# Sagittal smilie ,~|(
+<Multi_key> <Multi_key> <colon> <~> <|> <(>			: ":~|(:"		# Sagittal smilie ~|(
+<Multi_key> <Multi_key> <colon> <`> <~> <|> <(>			: ":`::~|(:"		# Sagittal smilie `~|(
+<Multi_key> <Multi_key> <colon> <,> <,> <|> <~>			: ":,,::|~:"		# Sagittal smilie ,,|~
+<Multi_key> <Multi_key> <colon> <,> <|> <~>			: ":,::|~:"		# Sagittal smilie ,|~
+<Multi_key> <Multi_key> <colon> <|> <~>				: ":|~:"		# Sagittal smilie |~
+<Multi_key> <Multi_key> <colon> <`> <|> <~>			: ":`::|~:"		# Sagittal smilie `|~
+<Multi_key> <Multi_key> <colon> <~> <~> <|>			: ":~~|:"		# Sagittal smilie ~~|
+<Multi_key> <Multi_key> <colon> <`> <~> <~> <|>			: ":`::~~|:"		# Sagittal smilie `~~|
+<Multi_key> <Multi_key> <colon> <`> <`> <~> <~> <|>		: ":``::~~|:"		# Sagittal smilie ``~~|
+<Multi_key> <Multi_key> <colon> <,> <.> </> <|>			: ":,::.::/|:"		# Sagittal smilie ,./|
+<Multi_key> <Multi_key> <colon> <.> </> <|>			: ":.::/|:"		# Sagittal smilie ./|
+<Multi_key> <Multi_key> <colon> <)> <|> <~>			: ":)|~:"		# Sagittal smilie )|~
+<Multi_key> <Multi_key> <colon> <,> <,> </> <|>			: ":,,::/|:"		# Sagittal smilie ,,/|
+<Multi_key> <Multi_key> <colon> <,> </> <|>			: ":,::/|:"		# Sagittal smilie ,/|
+<Multi_key> <Multi_key> <colon> </> <|>				: ":/|:"		# Sagittal smilie /|
+<Multi_key> <Multi_key> <colon> <`> </> <|>			: ":`::/|:"		# Sagittal smilie `/|
+<Multi_key> <Multi_key> <colon> <`> <`> </> <|>			: ":``::/|:"		# Sagittal smilie ``/|
+<Multi_key> <Multi_key> <colon> <.> <)> </> <|>			: ":.::)/|:"		# Sagittal smilie .)/|
+<Multi_key> <Multi_key> <colon> </> <|>				: ":/|:"		# Sagittal smilie /|
+<Multi_key> <Multi_key> <colon> <`> <'> </> <|>			: ":`::'::/|:"		# Sagittal smilie `'/|
+<Multi_key> <Multi_key> <colon> <,> <,> <)> </> <|>		: ":,,::)/|:"		# Sagittal smilie ,,)/|
+<Multi_key> <Multi_key> <colon> <,> <)> </> <|>			: ":,::)/|:"		# Sagittal smilie ,)/|
+<Multi_key> <Multi_key> <colon> <)> </> <|>			: ":)/|:"		# Sagittal smilie )/|
+<Multi_key> <Multi_key> <colon> <,> <.> <|> <)>			: ":,::.::|):"		# Sagittal smilie ,.|)
+<Multi_key> <Multi_key> <colon> <.> <|> <)>			: ":.::|):"		# Sagittal smilie .|)
+<Multi_key> <Multi_key> <colon> <`> <.> <|> <)>			: ":`::.::|):"		# Sagittal smilie `.|)
+<Multi_key> <Multi_key> <colon> <,> <,> <|> <)>			: ":,,::|):"		# Sagittal smilie ,,|)
+<Multi_key> <Multi_key> <colon> <,> <|> <)>			: ":,::|):"		# Sagittal smilie ,|)
+<Multi_key> <Multi_key> <colon> <|> <)>				: ":|):"		# Sagittal smilie |)
+<Multi_key> <Multi_key> <colon> <`> <|> <)>			: ":`::|):"		# Sagittal smilie `|)
+<Multi_key> <Multi_key> <colon> <`> <`> <|> <)>			: ":``::|):"		# Sagittal smilie ``|)
+<Multi_key> <Multi_key> <colon> <,> <'> <|> <)>			: ":,::'::|):"		# Sagittal smilie ,'|)
+<Multi_key> <Multi_key> <colon> <|> <)>				: ":|):"		# Sagittal smilie |)
+<Multi_key> <Multi_key> <colon> <`> <'> <|> <)>			: ":`::'::|):"		# Sagittal smilie `'|)
+<Multi_key> <Multi_key> <colon> <,> <)> <|> <)>			: ":,::)|):"		# Sagittal smilie ,)|)
+<Multi_key> <Multi_key> <colon> <)> <|> <)>			: ":)|):"		# Sagittal smilie )|)
+<Multi_key> <Multi_key> <colon> <.> <(> <|>			: ":.::(|:"		# Sagittal smilie .(|
+<Multi_key> <Multi_key> <colon> <|> <\>				: ":|\:"		# Sagittal smilie |\
+<Multi_key> <Multi_key> <colon> <`> <|> <\>			: ":`::|\:"		# Sagittal smilie `|\
+<Multi_key> <Multi_key> <colon> <,> <(> <|>			: ":,::(|:"		# Sagittal smilie ,(|
+<Multi_key> <Multi_key> <colon> <(> <|>				: ":(|:"		# Sagittal smilie (|
+<Multi_key> <Multi_key> <colon> <`> <(> <|>			: ":`::(|:"		# Sagittal smilie `(|
+<Multi_key> <Multi_key> <colon> <`> <`> <(> <|>			: ":``::(|:"		# Sagittal smilie ``(|
+<Multi_key> <Multi_key> <colon> <,> <'> <(> <|>			: ":,::'::(|:"		# Sagittal smilie ,'(|
+<Multi_key> <Multi_key> <colon> <(> <|>				: ":(|:"		# Sagittal smilie (|
+<Multi_key> <Multi_key> <colon> <,> <~> <|> <)>			: ":,::~|):"		# Sagittal smilie ,~|)
+<Multi_key> <Multi_key> <colon> <~> <|> <)>			: ":~|):"		# Sagittal smilie ~|)
+<Multi_key> <Multi_key> <colon> <`> <~> <|> <)>			: ":`::~|):"		# Sagittal smilie `~|)
+<Multi_key> <Multi_key> <colon> <`> <`> <~> <|> <)>		: ":``::~|):"		# Sagittal smilie ``~|)
+<Multi_key> <Multi_key> <colon> <,> <.> <(> <|> <(>		: ":,::.::(|(:"		# Sagittal smilie ,.(|(
+<Multi_key> <Multi_key> <colon> <.> <(> <|> <(>			: ":.::(|(:"		# Sagittal smilie .(|(
+<Multi_key> <Multi_key> <colon> <~> <|> <)>			: ":~|):"		# Sagittal smilie ~|)
+<Multi_key> <Multi_key> <colon> </> <|> <~>			: ":/|~:"		# Sagittal smilie /|~
+<Multi_key> <Multi_key> <colon> <,> <,> <(> <|> <(>		: ":,,::(|(:"		# Sagittal smilie ,,(|(
+<Multi_key> <Multi_key> <colon> <,> <(> <|> <(>			: ":,::(|(:"		# Sagittal smilie ,(|(
+<Multi_key> <Multi_key> <colon> <(> <|> <(>			: ":(|(:"		# Sagittal smilie (|(
+<Multi_key> <Multi_key> <colon> <`> <(> <|> <(>			: ":`::(|(:"		# Sagittal smilie `(|(
+<Multi_key> <Multi_key> <colon> <~> <|> <\>			: ":~|\:"		# Sagittal smilie ~|\
+<Multi_key> <Multi_key> <colon> <,> <.> </> </> <|>		: ":,::.::/ /|:"	# Sagittal smilie ,.//|
+<Multi_key> <Multi_key> <colon> <.> </> </> <|>			: ":.::/ /|:"		# Sagittal smilie .//|
+<Multi_key> <Multi_key> <colon> <`> <.> </> </> <|>		: ":`::.::/ /|:"	# Sagittal smilie `.//|
+<Multi_key> <Multi_key> <colon> <,> <,> </> </> <|>		: ":,,::/ /|:"		# Sagittal smilie ,,//|
+<Multi_key> <Multi_key> <colon> <,> </> </> <|>			: ":,::/ /|:"		# Sagittal smilie ,//|
+<Multi_key> <Multi_key> <colon> </> </> <|>			: ":/ /|:"		# Sagittal smilie //|
+<Multi_key> <Multi_key> <colon> <`> </> </> <|>			: ":`::/ /|:"		# Sagittal smilie `//|
+<Multi_key> <Multi_key> <colon> <`> <`> </> </> <|>		: ":``::/ /|:"		# Sagittal smilie ``//|
+<Multi_key> <Multi_key> <colon> <,> <'> </> </> <|>		: ":,::'::/ /|:"	# Sagittal smilie ,'//|
+<Multi_key> <Multi_key> <colon> </> </> <|>			: ":/ /|:"		# Sagittal smilie //|
+<Multi_key> <Multi_key> <colon> <`> <'> </> </> <|>		: ":`::'::/ /|:"	# Sagittal smilie `'//|
+<Multi_key> <Multi_key> <colon> <,> <)> </> </> <|>		: ":,::)/ /|:"		# Sagittal smilie ,)//|
+<Multi_key> <Multi_key> <colon> <)> </> </> <|>			: ":)/ /|:"		# Sagittal smilie )//|
+<Multi_key> <Multi_key> <colon> <`> <)> </> </> <|>		: ":`::)/ /|:"		# Sagittal smilie `)//|
+<Multi_key> <Multi_key> <colon> <`> <`> <)> </> </> <|>		: ":``::)/ /|:"		# Sagittal smilie ``)//|
+<Multi_key> <Multi_key> <colon> <,> <,> </> <|> <)>		: ":,,::/|):"		# Sagittal smilie ,,/|)
+<Multi_key> <Multi_key> <colon> <,> </> <|> <)>			: ":,::/|):"		# Sagittal smilie ,/|)
+<Multi_key> <Multi_key> <colon> </> <|> <)>			: ":/|):"		# Sagittal smilie /|)
+<Multi_key> <Multi_key> <colon> <`> </> <|> <)>			: ":`::/|):"		# Sagittal smilie `/|)
+<Multi_key> <Multi_key> <colon> <(> <|> <~>			: ":(|~:"		# Sagittal smilie (|~
+<Multi_key> <Multi_key> <colon> <,> <'> </> <|> <)>		: ":,::'::/|):"		# Sagittal smilie ,'/|)
+<Multi_key> <Multi_key> <colon> </> <|> <)>			: ":/|):"		# Sagittal smilie /|)
+<Multi_key> <Multi_key> <colon> <`> <'> </> <|> <)>		: ":`::'::/|):"		# Sagittal smilie `'/|)
+<Multi_key> <Multi_key> <colon> <.> </> <|> <\>			: ":.::/|\:"		# Sagittal smilie ./|\
+<Multi_key> <Multi_key> <colon> <`> <.> </> <|> <\>		: ":`::.::/|\:"		# Sagittal smilie `./|\
+<Multi_key> <Multi_key> <colon> <,> <,> </> <|> <\>		: ":,,::/|\:"		# Sagittal smilie ,,/|\
+<Multi_key> <Multi_key> <colon> <,> </> <|> <\>			: ":,::/|\:"		# Sagittal smilie ,/|\
+<Multi_key> <Multi_key> <colon> </> <|> <\>			: ":/|\:"		# Sagittal smilie /|\
+<Multi_key> <Multi_key> <colon> <`> </> <|> <\>			: ":`::/|\:"		# Sagittal smilie `/|\
+<Multi_key> <Multi_key> <colon> <,> <(> </> <|>			: ":,::(/|:"		# Sagittal smilie ,(/|
+<Multi_key> <Multi_key> <colon> <(> </> <|>			: ":(/|:"		# Sagittal smilie (/|
+<Multi_key> <Multi_key> <colon> <`> <(> </> <|>			: ":`::(/|:"		# Sagittal smilie `(/|
+<Multi_key> <Multi_key> <colon> </> <|> <\>			: ":/|\:"		# Sagittal smilie /|\
+<Multi_key> <Multi_key> <colon> <`> <'> </> <|> <\>		: ":`::'::/|\:"		# Sagittal smilie `'/|\
+<Multi_key> <Multi_key> <colon> <,> <)> </> <|> <\>		: ":,::)/|\:"		# Sagittal smilie ,)/|\
+<Multi_key> <Multi_key> <colon> <)> </> <|> <\>			: ":)/|\:"		# Sagittal smilie )/|\
+<Multi_key> <Multi_key> <colon> <`> <)> </> <|> <\>		: ":`::)/|\:"		# Sagittal smilie `)/|\
+<Multi_key> <Multi_key> <colon> <`> <`> <)> </> <|> <\>		: ":``::)/|\:"		# Sagittal smilie ``)/|\
+<Multi_key> <Multi_key> <colon> <,> <.> <(> <|> <)>		: ":,::.::(|):"		# Sagittal smilie ,.(|)
+<Multi_key> <Multi_key> <colon> <.> <(> <|> <)>			: ":.::(|):"		# Sagittal smilie .(|)
+<Multi_key> <Multi_key> <colon> <,> <|> <\> <)>			: ":,::|\):"		# Sagittal smilie ,|\)
+<Multi_key> <Multi_key> <colon> <|> <\> <)>			: ":|\):"		# Sagittal smilie |\)
+<Multi_key> <Multi_key> <colon> <`> <|> <\> <)>			: ":`::|\):"		# Sagittal smilie `|\)
+<Multi_key> <Multi_key> <colon> <,> <(> <|> <)>			: ":,::(|):"		# Sagittal smilie ,(|)
+<Multi_key> <Multi_key> <colon> <(> <|> <)>			: ":(|):"		# Sagittal smilie (|)
+<Multi_key> <Multi_key> <colon> <`> <(> <|> <)>			: ":`::(|):"		# Sagittal smilie `(|)
+<Multi_key> <Multi_key> <colon> <`> <`> <(> <|> <)>		: ":``::(|):"		# Sagittal smilie ``(|)
+<Multi_key> <Multi_key> <colon> <,> <'> <(> <|> <)>		: ":,::'::(|):"		# Sagittal smilie ,'(|)
+<Multi_key> <Multi_key> <colon> <(> <|> <)>			: ":(|):"		# Sagittal smilie (|)
+<Multi_key> <Multi_key> <colon> <,> <.> <(> <|> <\>		: ":,::.::(|\:"		# Sagittal smilie ,.(|\
+<Multi_key> <Multi_key> <colon> <.> <(> <|> <\>			: ":.::(|\:"		# Sagittal smilie .(|\
+<Multi_key> <Multi_key> <colon> <`> <.> <(> <|> <\>		: ":`::.::(|\:"		# Sagittal smilie `.(|\
+<Multi_key> <Multi_key> <colon> <|> <\> <\>			: ":|\ \:"		# Sagittal smilie |\\
+<Multi_key> <Multi_key> <colon> <,> <(> <|> <\>			: ":,::(|\:"		# Sagittal smilie ,(|\
+<Multi_key> <Multi_key> <colon> <(> <|> <\>			: ":(|\:"		# Sagittal smilie (|\
+<Multi_key> <Multi_key> <colon> <`> <(> <|> <\>			: ":`::(|\:"		# Sagittal smilie `(|\
+<Multi_key> <Multi_key> <colon> <`> <`> <(> <|> <\>		: ":``::(|\:"		# Sagittal smilie ``(|\
+<Multi_key> <Multi_key> <colon> <,> <,> <)> <|> <\> <\>		: ":,,::)|\ \:"		# Sagittal smilie ,,)|\\
+<Multi_key> <Multi_key> <colon> <,> <)> <|> <\> <\>		: ":,::)|\ \:"		# Sagittal smilie ,)|\\
+<Multi_key> <Multi_key> <colon> <)> <|> <\> <\>			: ":)|\ \:"		# Sagittal smilie )|\\
+<Multi_key> <Multi_key> <colon> <`> <)> <|> <\> <\>		: ":`::)|\ \:"		# Sagittal smilie `)|\\
+
+# Sagittal Forum Smilies - (Natural) Down
+<Multi_key> <Multi_key> <colon> <,> <!>				: ":,::!:"		# Sagittal smilie ,!
+<Multi_key> <Multi_key> <colon> <,> <,> <!>			: ":,,::!:"		# Sagittal smilie ,,!
+<Multi_key> <Multi_key> <colon> <)> <!>				: ":)!:"		# Sagittal smilie )!
+<Multi_key> <Multi_key> <colon> <.> <!>				: ":.::!:"		# Sagittal smilie .!
+<Multi_key> <Multi_key> <colon> <,> <.> <!>			: ":,::.::!:"		# Sagittal smilie ,.!
+<Multi_key> <Multi_key> <colon> <`> <)> <!>			: ":`::)!:"		# Sagittal smilie `)!
+<Multi_key> <Multi_key> <colon> <)> <!>				: ":)!:"		# Sagittal smilie )!
+<Multi_key> <Multi_key> <colon> <,> <)> <!>			: ":,::)!:"		# Sagittal smilie ,)!
+<Multi_key> <Multi_key> <colon> <,> <,> <)> <!>			: ":,,::)!:"		# Sagittal smilie ,,)!
+<Multi_key> <Multi_key> <colon> <`> <`> <!> <(>			: ":``::!(:"		# Sagittal smilie ``!(
+<Multi_key> <Multi_key> <colon> <`> <!> <(>			: ":`::!(:"		# Sagittal smilie `!(
+<Multi_key> <Multi_key> <colon> <!> <(>				: ":!(:"		# Sagittal smilie !(
+<Multi_key> <Multi_key> <colon> <,> <!> <(>			: ":,::!(:"		# Sagittal smilie ,!(
+<Multi_key> <Multi_key> <colon> <~> <!>				: ":~!:"		# Sagittal smilie ~!
+<Multi_key> <Multi_key> <colon> <`> <.> <!> <(>			: ":`::.::!(:"		# Sagittal smilie `.!(
+<Multi_key> <Multi_key> <colon> <.> <!> <(>			: ":.::!(:"		# Sagittal smilie .!(
+<Multi_key> <Multi_key> <colon> <`> <~> <!>			: ":`::~!:"		# Sagittal smilie `~!
+<Multi_key> <Multi_key> <colon> <~> <!>				: ":~!:"		# Sagittal smilie ~!
+<Multi_key> <Multi_key> <colon> <`> <)> <!> <(>			: ":`::)!(:"		# Sagittal smilie `)!(
+<Multi_key> <Multi_key> <colon> <)> <!> <(>			: ":)!(:"		# Sagittal smilie )!(
+<Multi_key> <Multi_key> <colon> <,> <)> <!> <(>			: ":,::)!(:"		# Sagittal smilie ,)!(
+<Multi_key> <Multi_key> <colon> <,> <,> <)> <!> <(>		: ":,,::)!(:"		# Sagittal smilie ,,)!(
+<Multi_key> <Multi_key> <colon> <`> <.> <)> <!> <(>		: ":`::.::)!(:"		# Sagittal smilie `.)!(
+<Multi_key> <Multi_key> <colon> <.> <)> <!> <(>			: ":.::)!(:"		# Sagittal smilie .)!(
+<Multi_key> <Multi_key> <colon> <)> <~> <!>			: ":)~!:"		# Sagittal smilie )~!
+<Multi_key> <Multi_key> <colon> <~> <!> <(>			: ":~!(:"		# Sagittal smilie ~!(
+<Multi_key> <Multi_key> <colon> <,> <'> <~> <!> <(>		: ":,::'::~!(:"		# Sagittal smilie ,'~!(
+<Multi_key> <Multi_key> <colon> <`> <`> <~> <!> <(>		: ":``::~!(:"		# Sagittal smilie ``~!(
+<Multi_key> <Multi_key> <colon> <`> <~> <!> <(>			: ":`::~!(:"		# Sagittal smilie `~!(
+<Multi_key> <Multi_key> <colon> <~> <!> <(>			: ":~!(:"		# Sagittal smilie ~!(
+<Multi_key> <Multi_key> <colon> <,> <~> <!> <(>			: ":,::~!(:"		# Sagittal smilie ,~!(
+<Multi_key> <Multi_key> <colon> <`> <`> <!> <~>			: ":``::!~:"		# Sagittal smilie ``!~
+<Multi_key> <Multi_key> <colon> <`> <!> <~>			: ":`::!~:"		# Sagittal smilie `!~
+<Multi_key> <Multi_key> <colon> <!> <~>				: ":!~:"		# Sagittal smilie !~
+<Multi_key> <Multi_key> <colon> <,> <!> <~>			: ":,::!~:"		# Sagittal smilie ,!~
+<Multi_key> <Multi_key> <colon> <~> <~> <!>			: ":~~!:"		# Sagittal smilie ~~!
+<Multi_key> <Multi_key> <colon> <,> <~> <~> <!>			: ":,::~~!:"		# Sagittal smilie ,~~!
+<Multi_key> <Multi_key> <colon> <,> <,> <~> <~> <!>		: ":,,::~~!:"		# Sagittal smilie ,,~~!
+<Multi_key> <Multi_key> <colon> <`> <'> <\> <!>			: ":`::'::\!:"		# Sagittal smilie `'\!
+<Multi_key> <Multi_key> <colon> <\> <!>				: ":\!:"		# Sagittal smilie \!
+<Multi_key> <Multi_key> <colon> <)> <!> <~>			: ":)!~:"		# Sagittal smilie )!~
+<Multi_key> <Multi_key> <colon> <`> <`> <\> <!>			: ":``::\!:"		# Sagittal smilie ``\!
+<Multi_key> <Multi_key> <colon> <`> <\> <!>			: ":`::\!:"		# Sagittal smilie `\!
+<Multi_key> <Multi_key> <colon> <\> <!>				: ":\!:"		# Sagittal smilie \!
+<Multi_key> <Multi_key> <colon> <,> <\> <!>			: ":,::\!:"		# Sagittal smilie ,\!
+<Multi_key> <Multi_key> <colon> <,> <,> <\> <!>			: ":,,::\!:"		# Sagittal smilie ,,\!
+<Multi_key> <Multi_key> <colon> <)> <\> <!>			: ":)\!:"		# Sagittal smilie )\!
+<Multi_key> <Multi_key> <colon> <.> <\> <!>			: ":.::\!:"		# Sagittal smilie .\!
+<Multi_key> <Multi_key> <colon> <,> <.> <\> <!>			: ":,::.::\!:"		# Sagittal smilie ,.\!
+<Multi_key> <Multi_key> <colon> <`> <`> <)> <\> <!>		: ":``::)\!:"		# Sagittal smilie ``)\!
+<Multi_key> <Multi_key> <colon> <`> <)> <\> <!>			: ":`::)\!:"		# Sagittal smilie `)\!
+<Multi_key> <Multi_key> <colon> <)> <\> <!>			: ":)\!:"		# Sagittal smilie )\!
+<Multi_key> <Multi_key> <colon> <`> <'> <!> <)>			: ":`::'::!):"		# Sagittal smilie `'!)
+<Multi_key> <Multi_key> <colon> <!> <)>				: ":!):"		# Sagittal smilie !)
+<Multi_key> <Multi_key> <colon> <,> <'> <!> <)>			: ":,::'::!):"		# Sagittal smilie ,'!)
+<Multi_key> <Multi_key> <colon> <`> <`> <!> <)>			: ":``::!):"		# Sagittal smilie ``!)
+<Multi_key> <Multi_key> <colon> <`> <!> <)>			: ":`::!):"		# Sagittal smilie `!)
+<Multi_key> <Multi_key> <colon> <!> <)>				: ":!):"		# Sagittal smilie !)
+<Multi_key> <Multi_key> <colon> <,> <!> <)>			: ":,::!):"		# Sagittal smilie ,!)
+<Multi_key> <Multi_key> <colon> <,> <,> <!> <)>			: ":,,::!):"		# Sagittal smilie ,,!)
+<Multi_key> <Multi_key> <colon> <`> <.> <!> <)>			: ":`::.::!):"		# Sagittal smilie `.!)
+<Multi_key> <Multi_key> <colon> <.> <!> <)>			: ":.::!):"		# Sagittal smilie .!)
+<Multi_key> <Multi_key> <colon> <,> <.> <!> <)>			: ":,::.::!):"		# Sagittal smilie ,.!)
+<Multi_key> <Multi_key> <colon> <`> <)> <!> <)>			: ":`::)!):"		# Sagittal smilie `)!)
+<Multi_key> <Multi_key> <colon> <)> <!> <)>			: ":)!):"		# Sagittal smilie )!)
+<Multi_key> <Multi_key> <colon> <(> <!>				: ":(!:"		# Sagittal smilie (!
+<Multi_key> <Multi_key> <colon> <!> </>				: ":!/:"		# Sagittal smilie !/
+<Multi_key> <Multi_key> <colon> <,> <!> </>			: ":,::!/:"		# Sagittal smilie ,!/
+<Multi_key> <Multi_key> <colon> <`> <(> <!>			: ":`::(!:"		# Sagittal smilie `(!
+<Multi_key> <Multi_key> <colon> <(> <!>				: ":(!:"		# Sagittal smilie (!
+<Multi_key> <Multi_key> <colon> <,> <(> <!>			: ":,::(!:"		# Sagittal smilie ,(!
+<Multi_key> <Multi_key> <colon> <,> <,> <(> <!>			: ":,,::(!:"		# Sagittal smilie ,,(!
+<Multi_key> <Multi_key> <colon> <`> <.> <(> <!>			: ":`::.::(!:"		# Sagittal smilie `.(!
+<Multi_key> <Multi_key> <colon> <.> <(> <!>			: ":.::(!:"		# Sagittal smilie .(!
+<Multi_key> <Multi_key> <colon> <`> <~> <!> <)>			: ":`::~!):"		# Sagittal smilie `~!)
+<Multi_key> <Multi_key> <colon> <~> <!> <)>			: ":~!):"		# Sagittal smilie ~!)
+<Multi_key> <Multi_key> <colon> <,> <~> <!> <)>			: ":,::~!):"		# Sagittal smilie ,~!)
+<Multi_key> <Multi_key> <colon> <,> <,> <~> <!> <)>		: ":,,::~!):"		# Sagittal smilie ,,~!)
+<Multi_key> <Multi_key> <colon> <`> <'> <(> <!> <(>		: ":`::'::(!(:"		# Sagittal smilie `'(!(
+<Multi_key> <Multi_key> <colon> <(> <!> <(>			: ":(!(:"		# Sagittal smilie (!(
+<Multi_key> <Multi_key> <colon> <.> <~> <!> <)>			: ":.::~!):"		# Sagittal smilie .~!)
+<Multi_key> <Multi_key> <colon> <\> <!> <~>			: ":\!~:"		# Sagittal smilie \!~
+<Multi_key> <Multi_key> <colon> <`> <`> <(> <!> <(>		: ":``::(!(:"		# Sagittal smilie ``(!(
+<Multi_key> <Multi_key> <colon> <`> <(> <!> <(>			: ":`::(!(:"		# Sagittal smilie `(!(
+<Multi_key> <Multi_key> <colon> <(> <!> <(>			: ":(!(:"		# Sagittal smilie (!(
+<Multi_key> <Multi_key> <colon> <,> <(> <!> <(>			: ":,::(!(:"		# Sagittal smilie ,(!(
+<Multi_key> <Multi_key> <colon> <~> <!> </>			: ":~!/:"		# Sagittal smilie ~!/
+<Multi_key> <Multi_key> <colon> <`> <'> <\> <\> <!>		: ":`::'::\ \!:"	# Sagittal smilie `'\\!
+<Multi_key> <Multi_key> <colon> <\> <\> <!>			: ":\ \!:"		# Sagittal smilie \\!
+<Multi_key> <Multi_key> <colon> <,> <'> <\> <\> <!>		: ":,::'::\ \!:"	# Sagittal smilie ,'\\!
+<Multi_key> <Multi_key> <colon> <`> <`> <\> <\> <!>		: ":``::\ \!:"		# Sagittal smilie ``\\!
+<Multi_key> <Multi_key> <colon> <`> <\> <\> <!>			: ":`::\ \!:"		# Sagittal smilie `\\!
+<Multi_key> <Multi_key> <colon> <\> <\> <!>			: ":\ \!:"		# Sagittal smilie \\!
+<Multi_key> <Multi_key> <colon> <,> <\> <\> <!>			: ":,::\ \!:"		# Sagittal smilie ,\\!
+<Multi_key> <Multi_key> <colon> <,> <,> <\> <\> <!>		: ":,,::\ \!:"		# Sagittal smilie ,,\\!
+<Multi_key> <Multi_key> <colon> <`> <.> <\> <\> <!>		: ":`::.::\ \!:"	# Sagittal smilie `.\\!
+<Multi_key> <Multi_key> <colon> <.> <\> <\> <!>			: ":.::\ \!:"		# Sagittal smilie .\\!
+<Multi_key> <Multi_key> <colon> <,> <.> <\> <\> <!>		: ":,::.::\ \!:"	# Sagittal smilie ,.\\!
+<Multi_key> <Multi_key> <colon> <`> <)> <\> <\> <!>		: ":`::)\ \!:"		# Sagittal smilie `)\\!
+<Multi_key> <Multi_key> <colon> <)> <\> <\> <!>			: ":)\ \!:"		# Sagittal smilie )\\!
+<Multi_key> <Multi_key> <colon> <,> <)> <\> <\> <!>		: ":,::)\ \!:"		# Sagittal smilie ,)\\!
+<Multi_key> <Multi_key> <colon> <,> <,> <)> <\> <\> <!>		: ":,,::)\ \!:"		# Sagittal smilie ,,)\\!
+<Multi_key> <Multi_key> <colon> <`> <`> <\> <!> <)>		: ":``::\!):"		# Sagittal smilie ``\!)
+<Multi_key> <Multi_key> <colon> <`> <\> <!> <)>			: ":`::\!):"		# Sagittal smilie `\!)
+<Multi_key> <Multi_key> <colon> <\> <!> <)>			: ":\!):"		# Sagittal smilie \!)
+<Multi_key> <Multi_key> <colon> <,> <\> <!> <)>			: ":,::\!):"		# Sagittal smilie ,\!)
+<Multi_key> <Multi_key> <colon> <(> <!> <~>			: ":(!~:"		# Sagittal smilie (!~
+<Multi_key> <Multi_key> <colon> <`> <.> <\> <!> <)>		: ":`::.::\!):"		# Sagittal smilie `.\!)
+<Multi_key> <Multi_key> <colon> <.> <\> <!> <)>			: ":.::\!):"		# Sagittal smilie .\!)
+<Multi_key> <Multi_key> <colon> <,> <.> <\> <!> <)>		: ":,::.::\!):"		# Sagittal smilie ,.\!)
+<Multi_key> <Multi_key> <colon> <\> <!> </>			: ":\!/:"		# Sagittal smilie \!/
+<Multi_key> <Multi_key> <colon> <,> <'> <\> <!> </>		: ":,::'::\!/:"		# Sagittal smilie ,'\!/
+<Multi_key> <Multi_key> <colon> <`> <`> <\> <!> </>		: ":``::\!/:"		# Sagittal smilie ``\!/
+<Multi_key> <Multi_key> <colon> <`> <\> <!> </>			: ":`::\!/:"		# Sagittal smilie `\!/
+<Multi_key> <Multi_key> <colon> <\> <!> </>			: ":\!/:"		# Sagittal smilie \!/
+<Multi_key> <Multi_key> <colon> <,> <\> <!> </>			: ":,::\!/:"		# Sagittal smilie ,\!/
+<Multi_key> <Multi_key> <colon> <`> <(> <\> <!>			: ":`::(\!:"		# Sagittal smilie `(\!
+<Multi_key> <Multi_key> <colon> <(> <\> <!>			: ":(\!:"		# Sagittal smilie (\!
+<Multi_key> <Multi_key> <colon> <,> <(> <\> <!>			: ":,::(\!:"		# Sagittal smilie ,(\!
+<Multi_key> <Multi_key> <colon> <.> <\> <!> </>			: ":.::\!/:"		# Sagittal smilie .\!/
+<Multi_key> <Multi_key> <colon> <,> <.> <\> <!> </>		: ":,::.::\!/:"		# Sagittal smilie ,.\!/
+<Multi_key> <Multi_key> <colon> <`> <)> <\> <!> </>		: ":`::)\!/:"		# Sagittal smilie `)\!/
+<Multi_key> <Multi_key> <colon> <)> <\> <!> </>			: ":)\!/:"		# Sagittal smilie )\!/
+<Multi_key> <Multi_key> <colon> <,> <)> <\> <!> </>		: ":,::)\!/:"		# Sagittal smilie ,)\!/
+<Multi_key> <Multi_key> <colon> <,> <,> <)> <\> <!> </>		: ":,,::)\!/:"		# Sagittal smilie ,,)\!/
+<Multi_key> <Multi_key> <colon> <`> <'> <(> <!> <)>		: ":`::'::(!):"		# Sagittal smilie `'(!)
+<Multi_key> <Multi_key> <colon> <(> <!> <)>			: ":(!):"		# Sagittal smilie (!)
+<Multi_key> <Multi_key> <colon> <`> <!> </> <)>			: ":`::!/):"		# Sagittal smilie `!/)
+<Multi_key> <Multi_key> <colon> <!> </> <)>			: ":!/):"		# Sagittal smilie !/)
+<Multi_key> <Multi_key> <colon> <,> <!> </> <)>			: ":,::!/):"		# Sagittal smilie ,!/)
+<Multi_key> <Multi_key> <colon> <`> <(> <!> <)>			: ":`::(!):"		# Sagittal smilie `(!)
+<Multi_key> <Multi_key> <colon> <(> <!> <)>			: ":(!):"		# Sagittal smilie (!)
+<Multi_key> <Multi_key> <colon> <,> <(> <!> <)>			: ":,::(!):"		# Sagittal smilie ,(!)
+<Multi_key> <Multi_key> <colon> <,> <,> <(> <!> <)>		: ":,,::(!):"		# Sagittal smilie ,,(!)
+<Multi_key> <Multi_key> <colon> <`> <.> <(> <!> <)>		: ":`::.::(!):"		# Sagittal smilie `.(!)
+<Multi_key> <Multi_key> <colon> <.> <(> <!> <)>			: ":.::(!):"		# Sagittal smilie .(!)
+<Multi_key> <Multi_key> <colon> <`> <'> <(> <!> </>		: ":`::'::(!/:"		# Sagittal smilie `'(!/
+<Multi_key> <Multi_key> <colon> <(> <!> </>			: ":(!/:"		# Sagittal smilie (!/
+<Multi_key> <Multi_key> <colon> <,> <'> <(> <!> </>		: ":,::'::(!/:"		# Sagittal smilie ,'(!/
+<Multi_key> <Multi_key> <colon> <!> </> </>			: ":!/ /:"		# Sagittal smilie !//
+<Multi_key> <Multi_key> <colon> <`> <(> <!> </>			: ":`::(!/:"		# Sagittal smilie `(!/
+<Multi_key> <Multi_key> <colon> <(> <!> </>			: ":(!/:"		# Sagittal smilie (!/
+<Multi_key> <Multi_key> <colon> <,> <(> <!> </>			: ":,::(!/:"		# Sagittal smilie ,(!/
+<Multi_key> <Multi_key> <colon> <,> <,> <(> <!> </>		: ":,,::(!/:"		# Sagittal smilie ,,(!/
+<Multi_key> <Multi_key> <colon> <`> <`> <)> <!> </> </>		: ":``::)!/ /:"		# Sagittal smilie ``)!//
+<Multi_key> <Multi_key> <colon> <`> <)> <!> </> </>		: ":`::)!/ /:"		# Sagittal smilie `)!//
+<Multi_key> <Multi_key> <colon> <)> <!> </> </>			: ":)!/ /:"		# Sagittal smilie )!//
+<Multi_key> <Multi_key> <colon> <,> <)> <!> </> </>		: ":,::)!/ /:"		# Sagittal smilie ,)!//
+
+# Sagittal Forum Smilies - Sharp Up
+<Multi_key> <Multi_key> <colon> <`> <|> <#>			: ":`::|::#:"		# Sagittal smilie `|#
+<Multi_key> <Multi_key> <colon> <`> <`> <|> <#>			: ":``::|::#:"		# Sagittal smilie ``|#
+<Multi_key> <Multi_key> <colon> <.> <)> <|> <#>			: ":.::)|::#:"		# Sagittal smilie .)|#
+<Multi_key> <Multi_key> <colon> <|> <#>				: ":|::#:"		# Sagittal smilie |#
+<Multi_key> <Multi_key> <colon> <`> <'> <|> <#>			: ":`::'::|::#:"	# Sagittal smilie `'|#
+<Multi_key> <Multi_key> <colon> <,> <)> <|> <#>			: ":,::)|::#:"		# Sagittal smilie ,)|#
+<Multi_key> <Multi_key> <colon> <)> <|> <#>			: ":)|::#:"		# Sagittal smilie )|#
+<Multi_key> <Multi_key> <colon> <`> <)> <|> <#>			: ":`::)|::#:"		# Sagittal smilie `)|#
+<Multi_key> <Multi_key> <colon> <`> <`> <)> <|> <#>		: ":``::)|::#:"		# Sagittal smilie ``)|#
+<Multi_key> <Multi_key> <colon> <,> <,> <|> <(> <#>		: ":,,::|(::#:"		# Sagittal smilie ,,|(#
+<Multi_key> <Multi_key> <colon> <,> <|> <(> <#>			: ":,::|(::#:"		# Sagittal smilie ,|(#
+<Multi_key> <Multi_key> <colon> <|> <(> <#>			: ":|(::#:"		# Sagittal smilie |(#
+<Multi_key> <Multi_key> <colon> <`> <|> <(> <#>			: ":`::|(::#:"		# Sagittal smilie `|(#
+<Multi_key> <Multi_key> <colon> <.> <~> <|> <#>			: ":.::~|::#:"		# Sagittal smilie .~|#
+<Multi_key> <Multi_key> <colon> <,> <'> <|> <(> <#>		: ":,::'::|(::#:"	# Sagittal smilie ,'|(#
+<Multi_key> <Multi_key> <colon> <|> <(> <#>			: ":|(::#:"		# Sagittal smilie |(#
+<Multi_key> <Multi_key> <colon> <,> <~> <|> <#>			: ":,::~|::#:"		# Sagittal smilie ,~|#
+<Multi_key> <Multi_key> <colon> <~> <|> <#>			: ":~|::#:"		# Sagittal smilie ~|#
+<Multi_key> <Multi_key> <colon> <,> <)> <|> <(> <#>		: ":,::)|(::#:"		# Sagittal smilie ,)|(#
+<Multi_key> <Multi_key> <colon> <)> <|> <(> <#>			: ":)|(::#:"		# Sagittal smilie )|(#
+<Multi_key> <Multi_key> <colon> <`> <)> <|> <(> <#>		: ":`::)|(::#:"		# Sagittal smilie `)|(#
+<Multi_key> <Multi_key> <colon> <`> <`> <)> <|> <(> <#>		: ":``::)|(::#:"	# Sagittal smilie ``)|(#
+<Multi_key> <Multi_key> <colon> <,> <'> <)> <|> <(> <#>		: ":,::'::)|(::#:"	# Sagittal smilie ,')|(#
+<Multi_key> <Multi_key> <colon> <)> <|> <(> <#>			: ":)|(::#:"		# Sagittal smilie )|(#
+<Multi_key> <Multi_key> <colon> <)> <~> <|> <#>			: ":)~|::#:"		# Sagittal smilie )~|#
+<Multi_key> <Multi_key> <colon> <.> <~> <|> <(> <#>		: ":.::~|(::#:"		# Sagittal smilie .~|(#
+<Multi_key> <Multi_key> <colon> <`> <.> <~> <|> <(> <#>		: ":`::.::~|(::#:"	# Sagittal smilie `.~|(#
+<Multi_key> <Multi_key> <colon> <,> <,> <~> <|> <(> <#>		: ":,,::~|(::#:"	# Sagittal smilie ,,~|(#
+<Multi_key> <Multi_key> <colon> <,> <~> <|> <(> <#>		: ":,::~|(::#:"		# Sagittal smilie ,~|(#
+<Multi_key> <Multi_key> <colon> <~> <|> <(> <#>			: ":~|(::#:"		# Sagittal smilie ~|(#
+<Multi_key> <Multi_key> <colon> <`> <~> <|> <(> <#>		: ":`::~|(::#:"		# Sagittal smilie `~|(#
+<Multi_key> <Multi_key> <colon> <,> <,> <|> <~> <#>		: ":,,::|~::#:"		# Sagittal smilie ,,|~#
+<Multi_key> <Multi_key> <colon> <,> <|> <~> <#>			: ":,::|~::#:"		# Sagittal smilie ,|~#
+<Multi_key> <Multi_key> <colon> <|> <~> <#>			: ":|~::#:"		# Sagittal smilie |~#
+<Multi_key> <Multi_key> <colon> <`> <|> <~> <#>			: ":`::|~::#:"		# Sagittal smilie `|~#
+<Multi_key> <Multi_key> <colon> <~> <~> <|> <#>			: ":~~|::#:"		# Sagittal smilie ~~|#
+<Multi_key> <Multi_key> <colon> <`> <~> <~> <|> <#>		: ":`::~~|::#:"		# Sagittal smilie `~~|#
+<Multi_key> <Multi_key> <colon> <`> <`> <~> <~> <|> <#>		: ":``::~~|::#:"	# Sagittal smilie ``~~|#
+<Multi_key> <Multi_key> <colon> <,> <.> </> <|> <#>		: ":,::.::/|::#:"	# Sagittal smilie ,./|#
+<Multi_key> <Multi_key> <colon> <.> </> <|> <#>			: ":.::/|::#:"		# Sagittal smilie ./|#
+<Multi_key> <Multi_key> <colon> <)> <|> <~> <#>			: ":)|~::#:"		# Sagittal smilie )|~#
+<Multi_key> <Multi_key> <colon> <,> <,> </> <|> <#>		: ":,,::/|::#:"		# Sagittal smilie ,,/|#
+<Multi_key> <Multi_key> <colon> <,> </> <|> <#>			: ":,::/|::#:"		# Sagittal smilie ,/|#
+<Multi_key> <Multi_key> <colon> </> <|> <#>			: ":/|::#:"		# Sagittal smilie /|#
+<Multi_key> <Multi_key> <colon> <`> </> <|> <#>			: ":`::/|::#:"		# Sagittal smilie `/|#
+<Multi_key> <Multi_key> <colon> <`> <`> </> <|> <#>		: ":``::/|::#:"		# Sagittal smilie ``/|#
+<Multi_key> <Multi_key> <colon> <.> <)> </> <|> <#>		: ":.::)/|::#:"		# Sagittal smilie .)/|#
+<Multi_key> <Multi_key> <colon> </> <|> <#>			: ":/|::#:"		# Sagittal smilie /|#
+<Multi_key> <Multi_key> <colon> <`> <'> </> <|> <#>		: ":`::'::/|::#:"	# Sagittal smilie `'/|#
+<Multi_key> <Multi_key> <colon> <,> <,> <)> </> <|> <#>		: ":,,::)/|::#:"	# Sagittal smilie ,,)/|#
+<Multi_key> <Multi_key> <colon> <,> <)> </> <|> <#>		: ":,::)/|::#:"		# Sagittal smilie ,)/|#
+<Multi_key> <Multi_key> <colon> <)> </> <|> <#>			: ":)/|::#:"		# Sagittal smilie )/|#
+<Multi_key> <Multi_key> <colon> <,> <.> <|> <)> <#>		: ":,::.::|)::#:"	# Sagittal smilie ,.|)#
+<Multi_key> <Multi_key> <colon> <.> <|> <)> <#>			: ":.::|)::#:"		# Sagittal smilie .|)#
+<Multi_key> <Multi_key> <colon> <`> <.> <|> <)> <#>		: ":`::.::|)::#:"	# Sagittal smilie `.|)#
+<Multi_key> <Multi_key> <colon> <,> <,> <|> <)> <#>		: ":,,::|)::#:"		# Sagittal smilie ,,|)#
+<Multi_key> <Multi_key> <colon> <,> <|> <)> <#>			: ":,::|)::#:"		# Sagittal smilie ,|)#
+<Multi_key> <Multi_key> <colon> <|> <)> <#>			: ":|)::#:"		# Sagittal smilie |)#
+<Multi_key> <Multi_key> <colon> <`> <|> <)> <#>			: ":`::|)::#:"		# Sagittal smilie `|)#
+<Multi_key> <Multi_key> <colon> <`> <`> <|> <)> <#>		: ":``::|)::#:"		# Sagittal smilie ``|)#
+<Multi_key> <Multi_key> <colon> <,> <'> <|> <)> <#>		: ":,::'::|)::#:"	# Sagittal smilie ,'|)#
+<Multi_key> <Multi_key> <colon> <|> <)> <#>			: ":|)::#:"		# Sagittal smilie |)#
+<Multi_key> <Multi_key> <colon> <`> <'> <|> <)> <#>		: ":`::'::|)::#:"	# Sagittal smilie `'|)#
+<Multi_key> <Multi_key> <colon> <,> <)> <|> <)> <#>		: ":,::)|)::#:"		# Sagittal smilie ,)|)#
+<Multi_key> <Multi_key> <colon> <)> <|> <)> <#>			: ":)|)::#:"		# Sagittal smilie )|)#
+<Multi_key> <Multi_key> <colon> <.> <(> <|> <#>			: ":.::(|::#:"		# Sagittal smilie .(|#
+<Multi_key> <Multi_key> <colon> <|> <\> <#>			: ":|\::#:"		# Sagittal smilie |\#
+<Multi_key> <Multi_key> <colon> <`> <|> <\> <#>			: ":`::|\::#:"		# Sagittal smilie `|\#
+<Multi_key> <Multi_key> <colon> <,> <(> <|> <#>			: ":,::(|::#:"		# Sagittal smilie ,(|#
+<Multi_key> <Multi_key> <colon> <(> <|> <#>			: ":(|::#:"		# Sagittal smilie (|#
+<Multi_key> <Multi_key> <colon> <`> <(> <|> <#>			: ":`::(|::#:"		# Sagittal smilie `(|#
+<Multi_key> <Multi_key> <colon> <`> <`> <(> <|> <#>		: ":``::(|::#:"		# Sagittal smilie ``(|#
+<Multi_key> <Multi_key> <colon> <,> <'> <(> <|> <#>		: ":,::'::(|::#:"	# Sagittal smilie ,'(|#
+<Multi_key> <Multi_key> <colon> <(> <|> <#>			: ":(|::#:"		# Sagittal smilie (|#
+<Multi_key> <Multi_key> <colon> <,> <~> <|> <)> <#>		: ":,::~|)::#:"		# Sagittal smilie ,~|)#
+<Multi_key> <Multi_key> <colon> <~> <|> <)> <#>			: ":~|)::#:"		# Sagittal smilie ~|)#
+<Multi_key> <Multi_key> <colon> <`> <~> <|> <)> <#>		: ":`::~|)::#:"		# Sagittal smilie `~|)#
+<Multi_key> <Multi_key> <colon> <`> <`> <~> <|> <)> <#>		: ":``::~|)::#:"	# Sagittal smilie ``~|)#
+<Multi_key> <Multi_key> <colon> <,> <.> <(> <|> <(> <#>		: ":,::.::(|(::#:"	# Sagittal smilie ,.(|(#
+<Multi_key> <Multi_key> <colon> <.> <(> <|> <(> <#>		: ":.::(|(::#:"		# Sagittal smilie .(|(#
+<Multi_key> <Multi_key> <colon> <~> <|> <)> <#>			: ":~|)::#:"		# Sagittal smilie ~|)#
+<Multi_key> <Multi_key> <colon> </> <|> <~> <#>			: ":/|~::#:"		# Sagittal smilie /|~#
+<Multi_key> <Multi_key> <colon> <,> <,> <(> <|> <(> <#>		: ":,,::(|(::#:"	# Sagittal smilie ,,(|(#
+<Multi_key> <Multi_key> <colon> <,> <(> <|> <(> <#>		: ":,::(|(::#:"		# Sagittal smilie ,(|(#
+<Multi_key> <Multi_key> <colon> <(> <|> <(> <#>			: ":(|(::#:"		# Sagittal smilie (|(#
+<Multi_key> <Multi_key> <colon> <`> <(> <|> <(> <#>		: ":`::(|(::#:"		# Sagittal smilie `(|(#
+<Multi_key> <Multi_key> <colon> <~> <|> <\> <#>			: ":~|\::#:"		# Sagittal smilie ~|\#
+<Multi_key> <Multi_key> <colon> <,> <.> </> </> <|> <#>		: ":,::.::/ /|::#:"	# Sagittal smilie ,.//|#
+<Multi_key> <Multi_key> <colon> <.> </> </> <|> <#>		: ":.::/ /|::#:"	# Sagittal smilie .//|#
+<Multi_key> <Multi_key> <colon> <`> <.> </> </> <|> <#>		: ":`::.::/ /|::#:"	# Sagittal smilie `.//|#
+<Multi_key> <Multi_key> <colon> <,> <,> </> </> <|> <#>		: ":,,::/ /|::#:"	# Sagittal smilie ,,//|#
+<Multi_key> <Multi_key> <colon> <,> </> </> <|> <#>		: ":,::/ /|::#:"	# Sagittal smilie ,//|#
+<Multi_key> <Multi_key> <colon> </> </> <|> <#>			: ":/ /|::#:"		# Sagittal smilie //|#
+<Multi_key> <Multi_key> <colon> <`> </> </> <|> <#>		: ":`::/ /|::#:"	# Sagittal smilie `//|#
+<Multi_key> <Multi_key> <colon> <`> <`> </> </> <|> <#>		: ":``::/ /|::#:"	# Sagittal smilie ``//|#
+<Multi_key> <Multi_key> <colon> <,> <'> </> </> <|> <#>		: ":,::'::/ /|::#:"	# Sagittal smilie ,'//|#
+<Multi_key> <Multi_key> <colon> </> </> <|> <#>			: ":/ /|::#:"		# Sagittal smilie //|#
+<Multi_key> <Multi_key> <colon> <`> <'> </> </> <|> <#>		: ":`::'::/ /|::#:"	# Sagittal smilie `'//|#
+<Multi_key> <Multi_key> <colon> <,> <)> </> </> <|> <#>		: ":,::)/ /|::#:"	# Sagittal smilie ,)//|#
+<Multi_key> <Multi_key> <colon> <)> </> </> <|> <#>		: ":)/ /|::#:"		# Sagittal smilie )//|#
+<Multi_key> <Multi_key> <colon> <`> <)> </> </> <|> <#>		: ":`::)/ /|::#:"	# Sagittal smilie `)//|#
+<Multi_key> <Multi_key> <colon> <`> <`> <)> </> </> <|> <#>	: ":``::)/ /|::#:"	# Sagittal smilie ``)//|#
+<Multi_key> <Multi_key> <colon> <,> <,> </> <|> <)> <#>		: ":,,::/|)::#:"	# Sagittal smilie ,,/|)#
+<Multi_key> <Multi_key> <colon> <,> </> <|> <)> <#>		: ":,::/|)::#:"		# Sagittal smilie ,/|)#
+<Multi_key> <Multi_key> <colon> </> <|> <)> <#>			: ":/|)::#:"		# Sagittal smilie /|)#
+<Multi_key> <Multi_key> <colon> <`> </> <|> <)> <#>		: ":`::/|)::#:"		# Sagittal smilie `/|)#
+<Multi_key> <Multi_key> <colon> <(> <|> <~> <#>			: ":(|~::#:"		# Sagittal smilie (|~#
+<Multi_key> <Multi_key> <colon> <,> <'> </> <|> <)> <#>		: ":,::'::/|)::#:"	# Sagittal smilie ,'/|)#
+<Multi_key> <Multi_key> <colon> </> <|> <)> <#>			: ":/|)::#:"		# Sagittal smilie /|)#
+<Multi_key> <Multi_key> <colon> <`> <'> </> <|> <)> <#>		: ":`::'::/|)::#:"	# Sagittal smilie `'/|)#
+<Multi_key> <Multi_key> <colon> <.> </> <|> <\> <#>		: ":.::/|\::#:"		# Sagittal smilie ./|\#
+<Multi_key> <Multi_key> <colon> <`> <.> </> <|> <\> <#>		: ":`::.::/|\::#:"	# Sagittal smilie `./|\#
+<Multi_key> <Multi_key> <colon> <,> <,> </> <|> <\> <#>		: ":,,::/|\::#:"	# Sagittal smilie ,,/|\#
+<Multi_key> <Multi_key> <colon> <,> </> <|> <\> <#>		: ":,::/|\::#:"		# Sagittal smilie ,/|\#
+<Multi_key> <Multi_key> <colon> </> <|> <\> <#>			: ":/|\::#:"		# Sagittal smilie /|\#
+<Multi_key> <Multi_key> <colon> <`> </> <|> <\> <#>		: ":`::/|\::#:"		# Sagittal smilie `/|\#
+<Multi_key> <Multi_key> <colon> <,> <(> </> <|> <#>		: ":,::(/|::#:"		# Sagittal smilie ,(/|#
+<Multi_key> <Multi_key> <colon> <(> </> <|> <#>			: ":(/|::#:"		# Sagittal smilie (/|#
+<Multi_key> <Multi_key> <colon> <`> <(> </> <|> <#>		: ":`::(/|::#:"		# Sagittal smilie `(/|#
+<Multi_key> <Multi_key> <colon> </> <|> <\> <#>			: ":/|\::#:"		# Sagittal smilie /|\#
+<Multi_key> <Multi_key> <colon> <`> <'> </> <|> <\> <#>		: ":`::'::/|\::#:"	# Sagittal smilie `'/|\#
+<Multi_key> <Multi_key> <colon> <,> <)> </> <|> <\> <#>		: ":,::)/|\::#:"	# Sagittal smilie ,)/|\#
+<Multi_key> <Multi_key> <colon> <)> </> <|> <\> <#>		: ":)/|\::#:"		# Sagittal smilie )/|\#
+<Multi_key> <Multi_key> <colon> <`> <)> </> <|> <\> <#>		: ":`::)/|\::#:"	# Sagittal smilie `)/|\#
+<Multi_key> <Multi_key> <colon> <`> <`> <)> </> <|> <\> <#>	: ":``::)/|\::#:"	# Sagittal smilie ``)/|\#
+<Multi_key> <Multi_key> <colon> <,> <.> <(> <|> <)> <#>		: ":,::.::(|)::#:"	# Sagittal smilie ,.(|)#
+<Multi_key> <Multi_key> <colon> <.> <(> <|> <)> <#>		: ":.::(|)::#:"		# Sagittal smilie .(|)#
+<Multi_key> <Multi_key> <colon> <,> <|> <\> <)> <#>		: ":,::|\)::#:"		# Sagittal smilie ,|\)#
+<Multi_key> <Multi_key> <colon> <|> <\> <)> <#>			: ":|\)::#:"		# Sagittal smilie |\)#
+<Multi_key> <Multi_key> <colon> <`> <|> <\> <)> <#>		: ":`::|\)::#:"		# Sagittal smilie `|\)#
+<Multi_key> <Multi_key> <colon> <,> <(> <|> <)> <#>		: ":,::(|)::#:"		# Sagittal smilie ,(|)#
+<Multi_key> <Multi_key> <colon> <(> <|> <)> <#>			: ":(|)::#:"		# Sagittal smilie (|)#
+<Multi_key> <Multi_key> <colon> <`> <(> <|> <)> <#>		: ":`::(|)::#:"		# Sagittal smilie `(|)#
+<Multi_key> <Multi_key> <colon> <`> <`> <(> <|> <)> <#>		: ":``::(|)::#:"	# Sagittal smilie ``(|)#
+<Multi_key> <Multi_key> <colon> <,> <'> <(> <|> <)> <#>		: ":,::'::(|)::#:"	# Sagittal smilie ,'(|)#
+<Multi_key> <Multi_key> <colon> <(> <|> <)> <#>			: ":(|)::#:"		# Sagittal smilie (|)#
+<Multi_key> <Multi_key> <colon> <,> <.> <(> <|> <\> <#>		: ":,::.::(|\::#:"	# Sagittal smilie ,.(|\#
+<Multi_key> <Multi_key> <colon> <.> <(> <|> <\> <#>		: ":.::(|\::#:"		# Sagittal smilie .(|\#
+<Multi_key> <Multi_key> <colon> <`> <.> <(> <|> <\> <#>		: ":`::.::(|\::#:"	# Sagittal smilie `.(|\#
+<Multi_key> <Multi_key> <colon> <|> <\> <\> <#>			: ":|\ \::#:"		# Sagittal smilie |\\#
+<Multi_key> <Multi_key> <colon> <,> <(> <|> <\> <#>		: ":,::(|\::#:"		# Sagittal smilie ,(|\#
+<Multi_key> <Multi_key> <colon> <(> <|> <\> <#>			: ":(|\::#:"		# Sagittal smilie (|\#
+<Multi_key> <Multi_key> <colon> <`> <(> <|> <\> <#>		: ":`::(|\::#:"		# Sagittal smilie `(|\#
+<Multi_key> <Multi_key> <colon> <`> <`> <(> <|> <\> <#>		: ":``::(|\::#:"	# Sagittal smilie ``(|\#
+<Multi_key> <Multi_key> <colon> <,> <,> <)> <|> <\> <\> <#>	: ":,,::)|\ \::#:"	# Sagittal smilie ,,)|\\#
+<Multi_key> <Multi_key> <colon> <,> <)> <|> <\> <\> <#>		: ":,::)|\ \::#:"	# Sagittal smilie ,)|\\#
+<Multi_key> <Multi_key> <colon> <)> <|> <\> <\> <#>		: ":)|\ \::#:"		# Sagittal smilie )|\\#
+<Multi_key> <Multi_key> <colon> <`> <)> <|> <\> <\> <#>		: ":`::)|\ \::#:"	# Sagittal smilie `)|\\#
+
+# Sagittal Forum Smilies - Sharp Down
+<Multi_key> <Multi_key> <colon> <,> <!> <#>			: ":,::!::#:"		# Sagittal smilie ,!#
+<Multi_key> <Multi_key> <colon> <,> <,> <!> <#>			: ":,,::!::#:"		# Sagittal smilie ,,!#
+<Multi_key> <Multi_key> <colon> <)> <!> <#>			: ":)!::#:"		# Sagittal smilie )!#
+<Multi_key> <Multi_key> <colon> <.> <!> <#>			: ":.::!::#:"		# Sagittal smilie .!#
+<Multi_key> <Multi_key> <colon> <,> <.> <!> <#>			: ":,::.::!::#:"	# Sagittal smilie ,.!#
+<Multi_key> <Multi_key> <colon> <`> <)> <!> <#>			: ":`::)!::#:"		# Sagittal smilie `)!#
+<Multi_key> <Multi_key> <colon> <)> <!> <#>			: ":)!::#:"		# Sagittal smilie )!#
+<Multi_key> <Multi_key> <colon> <,> <)> <!> <#>			: ":,::)!::#:"		# Sagittal smilie ,)!#
+<Multi_key> <Multi_key> <colon> <,> <,> <)> <!> <#>		: ":,,::)!::#:"		# Sagittal smilie ,,)!#
+<Multi_key> <Multi_key> <colon> <`> <`> <!> <(> <#>		: ":``::!(::#:"		# Sagittal smilie ``!(#
+<Multi_key> <Multi_key> <colon> <`> <!> <(> <#>			: ":`::!(::#:"		# Sagittal smilie `!(#
+<Multi_key> <Multi_key> <colon> <!> <(> <#>			: ":!(::#:"		# Sagittal smilie !(#
+<Multi_key> <Multi_key> <colon> <,> <!> <(> <#>			: ":,::!(::#:"		# Sagittal smilie ,!(#
+<Multi_key> <Multi_key> <colon> <~> <!> <#>			: ":~!::#:"		# Sagittal smilie ~!#
+<Multi_key> <Multi_key> <colon> <`> <.> <!> <(> <#>		: ":`::.::!(::#:"	# Sagittal smilie `.!(#
+<Multi_key> <Multi_key> <colon> <.> <!> <(> <#>			: ":.::!(::#:"		# Sagittal smilie .!(#
+<Multi_key> <Multi_key> <colon> <`> <~> <!> <#>			: ":`::~!::#:"		# Sagittal smilie `~!#
+<Multi_key> <Multi_key> <colon> <~> <!> <#>			: ":~!::#:"		# Sagittal smilie ~!#
+<Multi_key> <Multi_key> <colon> <`> <)> <!> <(> <#>		: ":`::)!(::#:"		# Sagittal smilie `)!(#
+<Multi_key> <Multi_key> <colon> <)> <!> <(> <#>			: ":)!(::#:"		# Sagittal smilie )!(#
+<Multi_key> <Multi_key> <colon> <,> <)> <!> <(> <#>		: ":,::)!(::#:"		# Sagittal smilie ,)!(#
+<Multi_key> <Multi_key> <colon> <,> <,> <)> <!> <(> <#>		: ":,,::)!(::#:"	# Sagittal smilie ,,)!(#
+<Multi_key> <Multi_key> <colon> <`> <.> <)> <!> <(> <#>		: ":`::.::)!(::#:"	# Sagittal smilie `.)!(#
+<Multi_key> <Multi_key> <colon> <.> <)> <!> <(> <#>		: ":.::)!(::#:"		# Sagittal smilie .)!(#
+<Multi_key> <Multi_key> <colon> <)> <~> <!> <#>			: ":)~!::#:"		# Sagittal smilie )~!#
+<Multi_key> <Multi_key> <colon> <~> <!> <(> <#>			: ":~!(::#:"		# Sagittal smilie ~!(#
+<Multi_key> <Multi_key> <colon> <,> <'> <~> <!> <(> <#>		: ":,::'::~!(::#:"	# Sagittal smilie ,'~!(#
+<Multi_key> <Multi_key> <colon> <`> <`> <~> <!> <(> <#>		: ":``::~!(::#:"	# Sagittal smilie ``~!(#
+<Multi_key> <Multi_key> <colon> <`> <~> <!> <(> <#>		: ":`::~!(::#:"		# Sagittal smilie `~!(#
+<Multi_key> <Multi_key> <colon> <~> <!> <(> <#>			: ":~!(::#:"		# Sagittal smilie ~!(#
+<Multi_key> <Multi_key> <colon> <,> <~> <!> <(> <#>		: ":,::~!(::#:"		# Sagittal smilie ,~!(#
+<Multi_key> <Multi_key> <colon> <`> <`> <!> <~> <#>		: ":``::!~::#:"		# Sagittal smilie ``!~#
+<Multi_key> <Multi_key> <colon> <`> <!> <~> <#>			: ":`::!~::#:"		# Sagittal smilie `!~#
+<Multi_key> <Multi_key> <colon> <!> <~> <#>			: ":!~::#:"		# Sagittal smilie !~#
+<Multi_key> <Multi_key> <colon> <,> <!> <~> <#>			: ":,::!~::#:"		# Sagittal smilie ,!~#
+<Multi_key> <Multi_key> <colon> <~> <~> <!> <#>			: ":~~!::#:"		# Sagittal smilie ~~!#
+<Multi_key> <Multi_key> <colon> <,> <~> <~> <!> <#>		: ":,::~~!::#:"		# Sagittal smilie ,~~!#
+<Multi_key> <Multi_key> <colon> <,> <,> <~> <~> <!> <#>		: ":,,::~~!::#:"	# Sagittal smilie ,,~~!#
+<Multi_key> <Multi_key> <colon> <`> <'> <\> <!> <#>		: ":`::'::\!::#:"	# Sagittal smilie `'\!#
+<Multi_key> <Multi_key> <colon> <\> <!> <#>			: ":\!::#:"		# Sagittal smilie \!#
+<Multi_key> <Multi_key> <colon> <)> <!> <~> <#>			: ":)!~::#:"		# Sagittal smilie )!~#
+<Multi_key> <Multi_key> <colon> <`> <`> <\> <!> <#>		: ":``::\!::#:"		# Sagittal smilie ``\!#
+<Multi_key> <Multi_key> <colon> <`> <\> <!> <#>			: ":`::\!::#:"		# Sagittal smilie `\!#
+<Multi_key> <Multi_key> <colon> <\> <!> <#>			: ":\!::#:"		# Sagittal smilie \!#
+<Multi_key> <Multi_key> <colon> <,> <\> <!> <#>			: ":,::\!::#:"		# Sagittal smilie ,\!#
+<Multi_key> <Multi_key> <colon> <,> <,> <\> <!> <#>		: ":,,::\!::#:"		# Sagittal smilie ,,\!#
+<Multi_key> <Multi_key> <colon> <)> <\> <!> <#>			: ":)\!::#:"		# Sagittal smilie )\!#
+<Multi_key> <Multi_key> <colon> <.> <\> <!> <#>			: ":.::\!::#:"		# Sagittal smilie .\!#
+<Multi_key> <Multi_key> <colon> <,> <.> <\> <!> <#>		: ":,::.::\!::#:"	# Sagittal smilie ,.\!#
+<Multi_key> <Multi_key> <colon> <`> <`> <)> <\> <!> <#>		: ":``::)\!::#:"	# Sagittal smilie ``)\!#
+<Multi_key> <Multi_key> <colon> <`> <)> <\> <!> <#>		: ":`::)\!::#:"		# Sagittal smilie `)\!#
+<Multi_key> <Multi_key> <colon> <)> <\> <!> <#>			: ":)\!::#:"		# Sagittal smilie )\!#
+<Multi_key> <Multi_key> <colon> <`> <'> <!> <)> <#>		: ":`::'::!)::#:"	# Sagittal smilie `'!)#
+<Multi_key> <Multi_key> <colon> <!> <)> <#>			: ":!)::#:"		# Sagittal smilie !)#
+<Multi_key> <Multi_key> <colon> <,> <'> <!> <)> <#>		: ":,::'::!)::#:"	# Sagittal smilie ,'!)#
+<Multi_key> <Multi_key> <colon> <`> <`> <!> <)> <#>		: ":``::!)::#:"		# Sagittal smilie ``!)#
+<Multi_key> <Multi_key> <colon> <`> <!> <)> <#>			: ":`::!)::#:"		# Sagittal smilie `!)#
+<Multi_key> <Multi_key> <colon> <!> <)> <#>			: ":!)::#:"		# Sagittal smilie !)#
+<Multi_key> <Multi_key> <colon> <,> <!> <)> <#>			: ":,::!)::#:"		# Sagittal smilie ,!)#
+<Multi_key> <Multi_key> <colon> <,> <,> <!> <)> <#>		: ":,,::!)::#:"		# Sagittal smilie ,,!)#
+<Multi_key> <Multi_key> <colon> <`> <.> <!> <)> <#>		: ":`::.::!)::#:"	# Sagittal smilie `.!)#
+<Multi_key> <Multi_key> <colon> <.> <!> <)> <#>			: ":.::!)::#:"		# Sagittal smilie .!)#
+<Multi_key> <Multi_key> <colon> <,> <.> <!> <)> <#>		: ":,::.::!)::#:"	# Sagittal smilie ,.!)#
+<Multi_key> <Multi_key> <colon> <`> <)> <!> <)> <#>		: ":`::)!)::#:"		# Sagittal smilie `)!)#
+<Multi_key> <Multi_key> <colon> <)> <!> <)> <#>			: ":)!)::#:"		# Sagittal smilie )!)#
+<Multi_key> <Multi_key> <colon> <(> <!> <#>			: ":(!::#:"		# Sagittal smilie (!#
+<Multi_key> <Multi_key> <colon> <!> </> <#>			: ":!/::#:"		# Sagittal smilie !/#
+<Multi_key> <Multi_key> <colon> <,> <!> </> <#>			: ":,::!/::#:"		# Sagittal smilie ,!/#
+<Multi_key> <Multi_key> <colon> <`> <(> <!> <#>			: ":`::(!::#:"		# Sagittal smilie `(!#
+<Multi_key> <Multi_key> <colon> <(> <!> <#>			: ":(!::#:"		# Sagittal smilie (!#
+<Multi_key> <Multi_key> <colon> <,> <(> <!> <#>			: ":,::(!::#:"		# Sagittal smilie ,(!#
+<Multi_key> <Multi_key> <colon> <,> <,> <(> <!> <#>		: ":,,::(!::#:"		# Sagittal smilie ,,(!#
+<Multi_key> <Multi_key> <colon> <`> <.> <(> <!> <#>		: ":`::.::(!::#:"	# Sagittal smilie `.(!#
+<Multi_key> <Multi_key> <colon> <.> <(> <!> <#>			: ":.::(!::#:"		# Sagittal smilie .(!#
+<Multi_key> <Multi_key> <colon> <`> <~> <!> <)> <#>		: ":`::~!)::#:"		# Sagittal smilie `~!)#
+<Multi_key> <Multi_key> <colon> <~> <!> <)> <#>			: ":~!)::#:"		# Sagittal smilie ~!)#
+<Multi_key> <Multi_key> <colon> <,> <~> <!> <)> <#>		: ":,::~!)::#:"		# Sagittal smilie ,~!)#
+<Multi_key> <Multi_key> <colon> <,> <,> <~> <!> <)> <#>		: ":,,::~!)::#:"	# Sagittal smilie ,,~!)#
+<Multi_key> <Multi_key> <colon> <`> <'> <(> <!> <(> <#>		: ":`::'::(!(::#:"	# Sagittal smilie `'(!(#
+<Multi_key> <Multi_key> <colon> <(> <!> <(> <#>			: ":(!(::#:"		# Sagittal smilie (!(#
+<Multi_key> <Multi_key> <colon> <.> <~> <!> <)> <#>		: ":.::~!)::#:"		# Sagittal smilie .~!)#
+<Multi_key> <Multi_key> <colon> <\> <!> <~> <#>			: ":\!~::#:"		# Sagittal smilie \!~#
+<Multi_key> <Multi_key> <colon> <`> <`> <(> <!> <(> <#>		: ":``::(!(::#:"	# Sagittal smilie ``(!(#
+<Multi_key> <Multi_key> <colon> <`> <(> <!> <(> <#>		: ":`::(!(::#:"		# Sagittal smilie `(!(#
+<Multi_key> <Multi_key> <colon> <(> <!> <(> <#>			: ":(!(::#:"		# Sagittal smilie (!(#
+<Multi_key> <Multi_key> <colon> <,> <(> <!> <(> <#>		: ":,::(!(::#:"		# Sagittal smilie ,(!(#
+<Multi_key> <Multi_key> <colon> <~> <!> </> <#>			: ":~!/::#:"		# Sagittal smilie ~!/#
+<Multi_key> <Multi_key> <colon> <`> <'> <\> <\> <!> <#>		: ":`::'::\ \!::#:"	# Sagittal smilie `'\\!#
+<Multi_key> <Multi_key> <colon> <\> <\> <!> <#>			: ":\ \!::#:"		# Sagittal smilie \\!#
+<Multi_key> <Multi_key> <colon> <,> <'> <\> <\> <!> <#>		: ":,::'::\ \!::#:"	# Sagittal smilie ,'\\!#
+<Multi_key> <Multi_key> <colon> <`> <`> <\> <\> <!> <#>		: ":``::\ \!::#:"	# Sagittal smilie ``\\!#
+<Multi_key> <Multi_key> <colon> <`> <\> <\> <!> <#>		: ":`::\ \!::#:"	# Sagittal smilie `\\!#
+<Multi_key> <Multi_key> <colon> <\> <\> <!> <#>			: ":\ \!::#:"		# Sagittal smilie \\!#
+<Multi_key> <Multi_key> <colon> <,> <\> <\> <!> <#>		: ":,::\ \!::#:"	# Sagittal smilie ,\\!#
+<Multi_key> <Multi_key> <colon> <,> <,> <\> <\> <!> <#>		: ":,,::\ \!::#:"	# Sagittal smilie ,,\\!#
+<Multi_key> <Multi_key> <colon> <`> <.> <\> <\> <!> <#>		: ":`::.::\ \!::#:"	# Sagittal smilie `.\\!#
+<Multi_key> <Multi_key> <colon> <.> <\> <\> <!> <#>		: ":.::\ \!::#:"	# Sagittal smilie .\\!#
+<Multi_key> <Multi_key> <colon> <,> <.> <\> <\> <!> <#>		: ":,::.::\ \!::#:"	# Sagittal smilie ,.\\!#
+
+# Sagittal Forum Smilies - Double Sharp (Down)
+<Multi_key> <Multi_key> <colon> <,> <!> <x>			: ":,::!::x:"		# Sagittal smilie ,!x
+<Multi_key> <Multi_key> <colon> <,> <,> <!> <x>			: ":,,::!::x:"		# Sagittal smilie ,,!x
+<Multi_key> <Multi_key> <colon> <)> <!> <x>			: ":)!::x:"		# Sagittal smilie )!x
+<Multi_key> <Multi_key> <colon> <.> <!> <x>			: ":.::!::x:"		# Sagittal smilie .!x
+<Multi_key> <Multi_key> <colon> <,> <.> <!> <x>			: ":,::.::!::x:"	# Sagittal smilie ,.!x
+<Multi_key> <Multi_key> <colon> <`> <)> <!> <x>			: ":`::)!::x:"		# Sagittal smilie `)!x
+<Multi_key> <Multi_key> <colon> <)> <!> <x>			: ":)!::x:"		# Sagittal smilie )!x
+<Multi_key> <Multi_key> <colon> <,> <)> <!> <x>			: ":,::)!::x:"		# Sagittal smilie ,)!x
+<Multi_key> <Multi_key> <colon> <,> <,> <)> <!> <x>		: ":,,::)!::x:"		# Sagittal smilie ,,)!x
+<Multi_key> <Multi_key> <colon> <`> <`> <!> <(> <x>		: ":``::!(::x:"		# Sagittal smilie ``!(x
+<Multi_key> <Multi_key> <colon> <`> <!> <(> <x>			: ":`::!(::x:"		# Sagittal smilie `!(x
+<Multi_key> <Multi_key> <colon> <!> <(> <x>			: ":!(::x:"		# Sagittal smilie !(x
+<Multi_key> <Multi_key> <colon> <,> <!> <(> <x>			: ":,::!(::x:"		# Sagittal smilie ,!(x
+<Multi_key> <Multi_key> <colon> <~> <!> <x>			: ":~!::x:"		# Sagittal smilie ~!x
+<Multi_key> <Multi_key> <colon> <`> <.> <!> <(> <x>		: ":`::.::!(::x:"	# Sagittal smilie `.!(x
+<Multi_key> <Multi_key> <colon> <.> <!> <(> <x>			: ":.::!(::x:"		# Sagittal smilie .!(x
+<Multi_key> <Multi_key> <colon> <`> <~> <!> <x>			: ":`::~!::x:"		# Sagittal smilie `~!x
+<Multi_key> <Multi_key> <colon> <~> <!> <x>			: ":~!::x:"		# Sagittal smilie ~!x
+<Multi_key> <Multi_key> <colon> <`> <)> <!> <(> <x>		: ":`::)!(::x:"		# Sagittal smilie `)!(x
+<Multi_key> <Multi_key> <colon> <)> <!> <(> <x>			: ":)!(::x:"		# Sagittal smilie )!(x
+<Multi_key> <Multi_key> <colon> <,> <)> <!> <(> <x>		: ":,::)!(::x:"		# Sagittal smilie ,)!(x
+<Multi_key> <Multi_key> <colon> <,> <,> <)> <!> <(> <x>		: ":,,::)!(::x:"	# Sagittal smilie ,,)!(x
+<Multi_key> <Multi_key> <colon> <`> <.> <)> <!> <(> <x>		: ":`::.::)!(::x:"	# Sagittal smilie `.)!(x
+<Multi_key> <Multi_key> <colon> <.> <)> <!> <(> <x>		: ":.::)!(::x:"		# Sagittal smilie .)!(x
+<Multi_key> <Multi_key> <colon> <)> <~> <!> <x>			: ":)~!::x:"		# Sagittal smilie )~!x
+<Multi_key> <Multi_key> <colon> <~> <!> <(> <x>			: ":~!(::x:"		# Sagittal smilie ~!(x
+<Multi_key> <Multi_key> <colon> <,> <'> <~> <!> <(> <x>		: ":,::'::~!(::x:"	# Sagittal smilie ,'~!(x
+<Multi_key> <Multi_key> <colon> <`> <`> <~> <!> <(> <x>		: ":``::~!(::x:"	# Sagittal smilie ``~!(x
+<Multi_key> <Multi_key> <colon> <`> <~> <!> <(> <x>		: ":`::~!(::x:"		# Sagittal smilie `~!(x
+<Multi_key> <Multi_key> <colon> <~> <!> <(> <x>			: ":~!(::x:"		# Sagittal smilie ~!(x
+<Multi_key> <Multi_key> <colon> <,> <~> <!> <(> <x>		: ":,::~!(::x:"		# Sagittal smilie ,~!(x
+<Multi_key> <Multi_key> <colon> <`> <`> <!> <~> <x>		: ":``::!~::x:"		# Sagittal smilie ``!~x
+<Multi_key> <Multi_key> <colon> <`> <!> <~> <x>			: ":`::!~::x:"		# Sagittal smilie `!~x
+<Multi_key> <Multi_key> <colon> <!> <~> <x>			: ":!~::x:"		# Sagittal smilie !~x
+<Multi_key> <Multi_key> <colon> <,> <!> <~> <x>			: ":,::!~::x:"		# Sagittal smilie ,!~x
+<Multi_key> <Multi_key> <colon> <~> <~> <!> <x>			: ":~~!::x:"		# Sagittal smilie ~~!x
+<Multi_key> <Multi_key> <colon> <,> <~> <~> <!> <x>		: ":,::~~!::x:"		# Sagittal smilie ,~~!x
+<Multi_key> <Multi_key> <colon> <,> <,> <~> <~> <!> <x>		: ":,,::~~!::x:"	# Sagittal smilie ,,~~!x
+<Multi_key> <Multi_key> <colon> <`> <'> <\> <!> <x>		: ":`::'::\!::x:"	# Sagittal smilie `'\!x
+<Multi_key> <Multi_key> <colon> <\> <!> <x>			: ":\!::x:"		# Sagittal smilie \!x
+<Multi_key> <Multi_key> <colon> <)> <!> <~> <x>			: ":)!~::x:"		# Sagittal smilie )!~x
+<Multi_key> <Multi_key> <colon> <`> <`> <\> <!> <x>		: ":``::\!::x:"		# Sagittal smilie ``\!x
+<Multi_key> <Multi_key> <colon> <`> <\> <!> <x>			: ":`::\!::x:"		# Sagittal smilie `\!x
+<Multi_key> <Multi_key> <colon> <\> <!> <x>			: ":\!::x:"		# Sagittal smilie \!x
+<Multi_key> <Multi_key> <colon> <,> <\> <!> <x>			: ":,::\!::x:"		# Sagittal smilie ,\!x
+<Multi_key> <Multi_key> <colon> <,> <,> <\> <!> <x>		: ":,,::\!::x:"		# Sagittal smilie ,,\!x
+<Multi_key> <Multi_key> <colon> <)> <\> <!> <x>			: ":)\!::x:"		# Sagittal smilie )\!x
+<Multi_key> <Multi_key> <colon> <.> <\> <!> <x>			: ":.::\!::x:"		# Sagittal smilie .\!x
+<Multi_key> <Multi_key> <colon> <,> <.> <\> <!> <x>		: ":,::.::\!::x:"	# Sagittal smilie ,.\!x
+<Multi_key> <Multi_key> <colon> <`> <`> <)> <\> <!> <x>		: ":``::)\!::x:"	# Sagittal smilie ``)\!x
+<Multi_key> <Multi_key> <colon> <`> <)> <\> <!> <x>		: ":`::)\!::x:"		# Sagittal smilie `)\!x
+<Multi_key> <Multi_key> <colon> <)> <\> <!> <x>			: ":)\!::x:"		# Sagittal smilie )\!x
+<Multi_key> <Multi_key> <colon> <`> <'> <!> <)> <x>		: ":`::'::!)::x:"	# Sagittal smilie `'!)x
+<Multi_key> <Multi_key> <colon> <!> <)> <x>			: ":!)::x:"		# Sagittal smilie !)x
+<Multi_key> <Multi_key> <colon> <,> <'> <!> <)> <x>		: ":,::'::!)::x:"	# Sagittal smilie ,'!)x
+<Multi_key> <Multi_key> <colon> <`> <`> <!> <)> <x>		: ":``::!)::x:"		# Sagittal smilie ``!)x
+<Multi_key> <Multi_key> <colon> <`> <!> <)> <x>			: ":`::!)::x:"		# Sagittal smilie `!)x
+<Multi_key> <Multi_key> <colon> <!> <)> <x>			: ":!)::x:"		# Sagittal smilie !)x
+<Multi_key> <Multi_key> <colon> <,> <!> <)> <x>			: ":,::!)::x:"		# Sagittal smilie ,!)x
+<Multi_key> <Multi_key> <colon> <,> <,> <!> <)> <x>		: ":,,::!)::x:"		# Sagittal smilie ,,!)x
+<Multi_key> <Multi_key> <colon> <`> <.> <!> <)> <x>		: ":`::.::!)::x:"	# Sagittal smilie `.!)x
+<Multi_key> <Multi_key> <colon> <.> <!> <)> <x>			: ":.::!)::x:"		# Sagittal smilie .!)x
+<Multi_key> <Multi_key> <colon> <,> <.> <!> <)> <x>		: ":,::.::!)::x:"	# Sagittal smilie ,.!)x
+<Multi_key> <Multi_key> <colon> <`> <)> <!> <)> <x>		: ":`::)!)::x:"		# Sagittal smilie `)!)x
+<Multi_key> <Multi_key> <colon> <)> <!> <)> <x>			: ":)!)::x:"		# Sagittal smilie )!)x
+<Multi_key> <Multi_key> <colon> <(> <!> <x>			: ":(!::x:"		# Sagittal smilie (!x
+<Multi_key> <Multi_key> <colon> <!> </> <x>			: ":!/::x:"		# Sagittal smilie !/x
+<Multi_key> <Multi_key> <colon> <,> <!> </> <x>			: ":,::!/::x:"		# Sagittal smilie ,!/x
+<Multi_key> <Multi_key> <colon> <`> <(> <!> <x>			: ":`::(!::x:"		# Sagittal smilie `(!x
+<Multi_key> <Multi_key> <colon> <(> <!> <x>			: ":(!::x:"		# Sagittal smilie (!x
+<Multi_key> <Multi_key> <colon> <,> <(> <!> <x>			: ":,::(!::x:"		# Sagittal smilie ,(!x
+<Multi_key> <Multi_key> <colon> <,> <,> <(> <!> <x>		: ":,,::(!::x:"		# Sagittal smilie ,,(!x
+<Multi_key> <Multi_key> <colon> <`> <.> <(> <!> <x>		: ":`::.::(!::x:"	# Sagittal smilie `.(!x
+<Multi_key> <Multi_key> <colon> <.> <(> <!> <x>			: ":.::(!::x:"		# Sagittal smilie .(!x
+<Multi_key> <Multi_key> <colon> <`> <~> <!> <)> <x>		: ":`::~!)::x:"		# Sagittal smilie `~!)x
+<Multi_key> <Multi_key> <colon> <~> <!> <)> <x>			: ":~!)::x:"		# Sagittal smilie ~!)x
+<Multi_key> <Multi_key> <colon> <,> <~> <!> <)> <x>		: ":,::~!)::x:"		# Sagittal smilie ,~!)x
+<Multi_key> <Multi_key> <colon> <,> <,> <~> <!> <)> <x>		: ":,,::~!)::x:"	# Sagittal smilie ,,~!)x
+<Multi_key> <Multi_key> <colon> <`> <'> <(> <!> <(> <x>		: ":`::'::(!(::x:"	# Sagittal smilie `'(!(x
+<Multi_key> <Multi_key> <colon> <(> <!> <(> <x>			: ":(!(::x:"		# Sagittal smilie (!(x
+<Multi_key> <Multi_key> <colon> <.> <~> <!> <)> <x>		: ":.::~!)::x:"		# Sagittal smilie .~!)x
+<Multi_key> <Multi_key> <colon> <\> <!> <~> <x>			: ":\!~::x:"		# Sagittal smilie \!~x
+<Multi_key> <Multi_key> <colon> <`> <`> <(> <!> <(> <x>		: ":``::(!(::x:"	# Sagittal smilie ``(!(x
+<Multi_key> <Multi_key> <colon> <`> <(> <!> <(> <x>		: ":`::(!(::x:"		# Sagittal smilie `(!(x
+<Multi_key> <Multi_key> <colon> <(> <!> <(> <x>			: ":(!(::x:"		# Sagittal smilie (!(x
+<Multi_key> <Multi_key> <colon> <,> <(> <!> <(> <x>		: ":,::(!(::x:"		# Sagittal smilie ,(!(x
+<Multi_key> <Multi_key> <colon> <~> <!> </> <x>			: ":~!/::x:"		# Sagittal smilie ~!/x
+<Multi_key> <Multi_key> <colon> <`> <'> <\> <\> <!> <x>		: ":`::'::\ \!::x:"	# Sagittal smilie `'\\!x
+<Multi_key> <Multi_key> <colon> <\> <\> <!> <x>			: ":\ \!::x:"		# Sagittal smilie \\!x
+<Multi_key> <Multi_key> <colon> <,> <'> <\> <\> <!> <x>		: ":,::'::\ \!::x:"	# Sagittal smilie ,'\\!x
+<Multi_key> <Multi_key> <colon> <`> <`> <\> <\> <!> <x>		: ":``::\ \!::x:"	# Sagittal smilie ``\\!x
+<Multi_key> <Multi_key> <colon> <`> <\> <\> <!> <x>		: ":`::\ \!::x:"	# Sagittal smilie `\\!x
+<Multi_key> <Multi_key> <colon> <\> <\> <!> <x>			: ":\ \!::x:"		# Sagittal smilie \\!x
+<Multi_key> <Multi_key> <colon> <,> <\> <\> <!> <x>		: ":,::\ \!::x:"	# Sagittal smilie ,\\!x
+<Multi_key> <Multi_key> <colon> <,> <,> <\> <\> <!> <x>		: ":,,::\ \!::x:"	# Sagittal smilie ,,\\!x
+<Multi_key> <Multi_key> <colon> <`> <.> <\> <\> <!> <x>		: ":`::.::\ \!::x:"	# Sagittal smilie `.\\!x
+<Multi_key> <Multi_key> <colon> <.> <\> <\> <!> <x>		: ":.::\ \!::x:"	# Sagittal smilie .\\!x
+<Multi_key> <Multi_key> <colon> <,> <.> <\> <\> <!> <x>		: ":,::.::\ \!::x:"	# Sagittal smilie ,.\\!x
+
+# Sagittal Forum Smilies - Flat Up
+<Multi_key> <Multi_key> <colon> <`> <|> <b>			: ":`::|::b:"		# Sagittal smilie `|b
+<Multi_key> <Multi_key> <colon> <`> <`> <|> <b>			: ":``::|::b:"		# Sagittal smilie ``|b
+<Multi_key> <Multi_key> <colon> <.> <)> <|> <b>			: ":.::)|::b:"		# Sagittal smilie .)|b
+<Multi_key> <Multi_key> <colon> <|> <b>				: ":|::b:"		# Sagittal smilie |b
+<Multi_key> <Multi_key> <colon> <`> <'> <|> <b>			: ":`::'::|::b:"	# Sagittal smilie `'|b
+<Multi_key> <Multi_key> <colon> <,> <)> <|> <b>			: ":,::)|::b:"		# Sagittal smilie ,)|b
+<Multi_key> <Multi_key> <colon> <)> <|> <b>			: ":)|::b:"		# Sagittal smilie )|b
+<Multi_key> <Multi_key> <colon> <`> <)> <|> <b>			: ":`::)|::b:"		# Sagittal smilie `)|b
+<Multi_key> <Multi_key> <colon> <`> <`> <)> <|> <b>		: ":``::)|::b:"		# Sagittal smilie ``)|b
+<Multi_key> <Multi_key> <colon> <,> <,> <|> <(> <b>		: ":,,::|(::b:"		# Sagittal smilie ,,|(b
+<Multi_key> <Multi_key> <colon> <,> <|> <(> <b>			: ":,::|(::b:"		# Sagittal smilie ,|(b
+<Multi_key> <Multi_key> <colon> <|> <(> <b>			: ":|(::b:"		# Sagittal smilie |(b
+<Multi_key> <Multi_key> <colon> <`> <|> <(> <b>			: ":`::|(::b:"		# Sagittal smilie `|(b
+<Multi_key> <Multi_key> <colon> <.> <~> <|> <b>			: ":.::~|::b:"		# Sagittal smilie .~|b
+<Multi_key> <Multi_key> <colon> <,> <'> <|> <(> <b>		: ":,::'::|(::b:"	# Sagittal smilie ,'|(b
+<Multi_key> <Multi_key> <colon> <|> <(> <b>			: ":|(::b:"		# Sagittal smilie |(b
+<Multi_key> <Multi_key> <colon> <,> <~> <|> <b>			: ":,::~|::b:"		# Sagittal smilie ,~|b
+<Multi_key> <Multi_key> <colon> <~> <|> <b>			: ":~|::b:"		# Sagittal smilie ~|b
+<Multi_key> <Multi_key> <colon> <,> <)> <|> <(> <b>		: ":,::)|(::b:"		# Sagittal smilie ,)|(b
+<Multi_key> <Multi_key> <colon> <)> <|> <(> <b>			: ":)|(::b:"		# Sagittal smilie )|(b
+<Multi_key> <Multi_key> <colon> <`> <)> <|> <(> <b>		: ":`::)|(::b:"		# Sagittal smilie `)|(b
+<Multi_key> <Multi_key> <colon> <`> <`> <)> <|> <(> <b>		: ":``::)|(::b:"	# Sagittal smilie ``)|(b
+<Multi_key> <Multi_key> <colon> <,> <'> <)> <|> <(> <b>		: ":,::'::)|(::b:"	# Sagittal smilie ,')|(b
+<Multi_key> <Multi_key> <colon> <)> <|> <(> <b>			: ":)|(::b:"		# Sagittal smilie )|(b
+<Multi_key> <Multi_key> <colon> <)> <~> <|> <b>			: ":)~|::b:"		# Sagittal smilie )~|b
+<Multi_key> <Multi_key> <colon> <.> <~> <|> <(> <b>		: ":.::~|(::b:"		# Sagittal smilie .~|(b
+<Multi_key> <Multi_key> <colon> <`> <.> <~> <|> <(> <b>		: ":`::.::~|(::b:"	# Sagittal smilie `.~|(b
+<Multi_key> <Multi_key> <colon> <,> <,> <~> <|> <(> <b>		: ":,,::~|(::b:"	# Sagittal smilie ,,~|(b
+<Multi_key> <Multi_key> <colon> <,> <~> <|> <(> <b>		: ":,::~|(::b:"		# Sagittal smilie ,~|(b
+<Multi_key> <Multi_key> <colon> <~> <|> <(> <b>			: ":~|(::b:"		# Sagittal smilie ~|(b
+<Multi_key> <Multi_key> <colon> <`> <~> <|> <(> <b>		: ":`::~|(::b:"		# Sagittal smilie `~|(b
+<Multi_key> <Multi_key> <colon> <,> <,> <|> <~> <b>		: ":,,::|~::b:"		# Sagittal smilie ,,|~b
+<Multi_key> <Multi_key> <colon> <,> <|> <~> <b>			: ":,::|~::b:"		# Sagittal smilie ,|~b
+<Multi_key> <Multi_key> <colon> <|> <~> <b>			: ":|~::b:"		# Sagittal smilie |~b
+<Multi_key> <Multi_key> <colon> <`> <|> <~> <b>			: ":`::|~::b:"		# Sagittal smilie `|~b
+<Multi_key> <Multi_key> <colon> <~> <~> <|> <b>			: ":~~|::b:"		# Sagittal smilie ~~|b
+<Multi_key> <Multi_key> <colon> <`> <~> <~> <|> <b>		: ":`::~~|::b:"		# Sagittal smilie `~~|b
+<Multi_key> <Multi_key> <colon> <`> <`> <~> <~> <|> <b>		: ":``::~~|::b:"	# Sagittal smilie ``~~|b
+<Multi_key> <Multi_key> <colon> <,> <.> </> <|> <b>		: ":,::.::/|::b:"	# Sagittal smilie ,./|b
+<Multi_key> <Multi_key> <colon> <.> </> <|> <b>			: ":.::/|::b:"		# Sagittal smilie ./|b
+<Multi_key> <Multi_key> <colon> <)> <|> <~> <b>			: ":)|~::b:"		# Sagittal smilie )|~b
+<Multi_key> <Multi_key> <colon> <,> <,> </> <|> <b>		: ":,,::/|::b:"		# Sagittal smilie ,,/|b
+<Multi_key> <Multi_key> <colon> <,> </> <|> <b>			: ":,::/|::b:"		# Sagittal smilie ,/|b
+<Multi_key> <Multi_key> <colon> </> <|> <b>			: ":/|::b:"		# Sagittal smilie /|b
+<Multi_key> <Multi_key> <colon> <`> </> <|> <b>			: ":`::/|::b:"		# Sagittal smilie `/|b
+<Multi_key> <Multi_key> <colon> <`> <`> </> <|> <b>		: ":``::/|::b:"		# Sagittal smilie ``/|b
+<Multi_key> <Multi_key> <colon> <.> <)> </> <|> <b>		: ":.::)/|::b:"		# Sagittal smilie .)/|b
+<Multi_key> <Multi_key> <colon> </> <|> <b>			: ":/|::b:"		# Sagittal smilie /|b
+<Multi_key> <Multi_key> <colon> <`> <'> </> <|> <b>		: ":`::'::/|::b:"	# Sagittal smilie `'/|b
+<Multi_key> <Multi_key> <colon> <,> <,> <)> </> <|> <b>		: ":,,::)/|::b:"	# Sagittal smilie ,,)/|b
+<Multi_key> <Multi_key> <colon> <,> <)> </> <|> <b>		: ":,::)/|::b:"		# Sagittal smilie ,)/|b
+<Multi_key> <Multi_key> <colon> <)> </> <|> <b>			: ":)/|::b:"		# Sagittal smilie )/|b
+<Multi_key> <Multi_key> <colon> <,> <.> <|> <)> <b>		: ":,::.::|)::b:"	# Sagittal smilie ,.|)b
+<Multi_key> <Multi_key> <colon> <.> <|> <)> <b>			: ":.::|)::b:"		# Sagittal smilie .|)b
+<Multi_key> <Multi_key> <colon> <`> <.> <|> <)> <b>		: ":`::.::|)::b:"	# Sagittal smilie `.|)b
+<Multi_key> <Multi_key> <colon> <,> <,> <|> <)> <b>		: ":,,::|)::b:"		# Sagittal smilie ,,|)b
+<Multi_key> <Multi_key> <colon> <,> <|> <)> <b>			: ":,::|)::b:"		# Sagittal smilie ,|)b
+<Multi_key> <Multi_key> <colon> <|> <)> <b>			: ":|)::b:"		# Sagittal smilie |)b
+<Multi_key> <Multi_key> <colon> <`> <|> <)> <b>			: ":`::|)::b:"		# Sagittal smilie `|)b
+<Multi_key> <Multi_key> <colon> <`> <`> <|> <)> <b>		: ":``::|)::b:"		# Sagittal smilie ``|)b
+<Multi_key> <Multi_key> <colon> <,> <'> <|> <)> <b>		: ":,::'::|)::b:"	# Sagittal smilie ,'|)b
+<Multi_key> <Multi_key> <colon> <|> <)> <b>			: ":|)::b:"		# Sagittal smilie |)b
+<Multi_key> <Multi_key> <colon> <`> <'> <|> <)> <b>		: ":`::'::|)::b:"	# Sagittal smilie `'|)b
+<Multi_key> <Multi_key> <colon> <,> <)> <|> <)> <b>		: ":,::)|)::b:"		# Sagittal smilie ,)|)b
+<Multi_key> <Multi_key> <colon> <)> <|> <)> <b>			: ":)|)::b:"		# Sagittal smilie )|)b
+<Multi_key> <Multi_key> <colon> <.> <(> <|> <b>			: ":.::(|::b:"		# Sagittal smilie .(|b
+<Multi_key> <Multi_key> <colon> <|> <\> <b>			: ":|\::b:"		# Sagittal smilie |\b
+<Multi_key> <Multi_key> <colon> <`> <|> <\> <b>			: ":`::|\::b:"		# Sagittal smilie `|\b
+<Multi_key> <Multi_key> <colon> <,> <(> <|> <b>			: ":,::(|::b:"		# Sagittal smilie ,(|b
+<Multi_key> <Multi_key> <colon> <(> <|> <b>			: ":(|::b:"		# Sagittal smilie (|b
+<Multi_key> <Multi_key> <colon> <`> <(> <|> <b>			: ":`::(|::b:"		# Sagittal smilie `(|b
+<Multi_key> <Multi_key> <colon> <`> <`> <(> <|> <b>		: ":``::(|::b:"		# Sagittal smilie ``(|b
+<Multi_key> <Multi_key> <colon> <,> <'> <(> <|> <b>		: ":,::'::(|::b:"	# Sagittal smilie ,'(|b
+<Multi_key> <Multi_key> <colon> <(> <|> <b>			: ":(|::b:"		# Sagittal smilie (|b
+<Multi_key> <Multi_key> <colon> <,> <~> <|> <)> <b>		: ":,::~|)::b:"		# Sagittal smilie ,~|)b
+<Multi_key> <Multi_key> <colon> <~> <|> <)> <b>			: ":~|)::b:"		# Sagittal smilie ~|)b
+<Multi_key> <Multi_key> <colon> <`> <~> <|> <)> <b>		: ":`::~|)::b:"		# Sagittal smilie `~|)b
+<Multi_key> <Multi_key> <colon> <`> <`> <~> <|> <)> <b>		: ":``::~|)::b:"	# Sagittal smilie ``~|)b
+<Multi_key> <Multi_key> <colon> <,> <.> <(> <|> <(> <b>		: ":,::.::(|(::b:"	# Sagittal smilie ,.(|(b
+<Multi_key> <Multi_key> <colon> <.> <(> <|> <(> <b>		: ":.::(|(::b:"		# Sagittal smilie .(|(b
+<Multi_key> <Multi_key> <colon> <~> <|> <)> <b>			: ":~|)::b:"		# Sagittal smilie ~|)b
+<Multi_key> <Multi_key> <colon> </> <|> <~> <b>			: ":/|~::b:"		# Sagittal smilie /|~b
+<Multi_key> <Multi_key> <colon> <,> <,> <(> <|> <(> <b>		: ":,,::(|(::b:"	# Sagittal smilie ,,(|(b
+<Multi_key> <Multi_key> <colon> <,> <(> <|> <(> <b>		: ":,::(|(::b:"		# Sagittal smilie ,(|(b
+<Multi_key> <Multi_key> <colon> <(> <|> <(> <b>			: ":(|(::b:"		# Sagittal smilie (|(b
+<Multi_key> <Multi_key> <colon> <`> <(> <|> <(> <b>		: ":`::(|(::b:"		# Sagittal smilie `(|(b
+<Multi_key> <Multi_key> <colon> <~> <|> <\> <b>			: ":~|\::b:"		# Sagittal smilie ~|\b
+<Multi_key> <Multi_key> <colon> <,> <.> </> </> <|> <b>		: ":,::.::/ /|::b:"	# Sagittal smilie ,.//|b
+<Multi_key> <Multi_key> <colon> <.> </> </> <|> <b>		: ":.::/ /|::b:"	# Sagittal smilie .//|b
+<Multi_key> <Multi_key> <colon> <`> <.> </> </> <|> <b>		: ":`::.::/ /|::b:"	# Sagittal smilie `.//|b
+<Multi_key> <Multi_key> <colon> <,> <,> </> </> <|> <b>		: ":,,::/ /|::b:"	# Sagittal smilie ,,//|b
+<Multi_key> <Multi_key> <colon> <,> </> </> <|> <b>		: ":,::/ /|::b:"	# Sagittal smilie ,//|b
+<Multi_key> <Multi_key> <colon> </> </> <|> <b>			: ":/ /|::b:"		# Sagittal smilie //|b
+<Multi_key> <Multi_key> <colon> <`> </> </> <|> <b>		: ":`::/ /|::b:"	# Sagittal smilie `//|b
+<Multi_key> <Multi_key> <colon> <`> <`> </> </> <|> <b>		: ":``::/ /|::b:"	# Sagittal smilie ``//|b
+<Multi_key> <Multi_key> <colon> <,> <'> </> </> <|> <b>		: ":,::'::/ /|::b:"	# Sagittal smilie ,'//|b
+<Multi_key> <Multi_key> <colon> </> </> <|> <b>			: ":/ /|::b:"		# Sagittal smilie //|b
+<Multi_key> <Multi_key> <colon> <`> <'> </> </> <|> <b>		: ":`::'::/ /|::b:"	# Sagittal smilie `'//|b
+
+# Sagittal Forum Smilies - Flat Down
+<Multi_key> <Multi_key> <colon> <,> <!> <b>			: ":,::!::b:"		# Sagittal smilie ,!b
+<Multi_key> <Multi_key> <colon> <,> <,> <!> <b>			: ":,,::!::b:"		# Sagittal smilie ,,!b
+<Multi_key> <Multi_key> <colon> <)> <!> <b>			: ":)!::b:"		# Sagittal smilie )!b
+<Multi_key> <Multi_key> <colon> <.> <!> <b>			: ":.::!::b:"		# Sagittal smilie .!b
+<Multi_key> <Multi_key> <colon> <,> <.> <!> <b>			: ":,::.::!::b:"	# Sagittal smilie ,.!b
+<Multi_key> <Multi_key> <colon> <`> <)> <!> <b>			: ":`::)!::b:"		# Sagittal smilie `)!b
+<Multi_key> <Multi_key> <colon> <)> <!> <b>			: ":)!::b:"		# Sagittal smilie )!b
+<Multi_key> <Multi_key> <colon> <,> <)> <!> <b>			: ":,::)!::b:"		# Sagittal smilie ,)!b
+<Multi_key> <Multi_key> <colon> <,> <,> <)> <!> <b>		: ":,,::)!::b:"		# Sagittal smilie ,,)!b
+<Multi_key> <Multi_key> <colon> <`> <`> <!> <(> <b>		: ":``::!(::b:"		# Sagittal smilie ``!(b
+<Multi_key> <Multi_key> <colon> <`> <!> <(> <b>			: ":`::!(::b:"		# Sagittal smilie `!(b
+<Multi_key> <Multi_key> <colon> <!> <(> <b>			: ":!(::b:"		# Sagittal smilie !(b
+<Multi_key> <Multi_key> <colon> <,> <!> <(> <b>			: ":,::!(::b:"		# Sagittal smilie ,!(b
+<Multi_key> <Multi_key> <colon> <~> <!> <b>			: ":~!::b:"		# Sagittal smilie ~!b
+<Multi_key> <Multi_key> <colon> <`> <.> <!> <(> <b>		: ":`::.::!(::b:"	# Sagittal smilie `.!(b
+<Multi_key> <Multi_key> <colon> <.> <!> <(> <b>			: ":.::!(::b:"		# Sagittal smilie .!(b
+<Multi_key> <Multi_key> <colon> <`> <~> <!> <b>			: ":`::~!::b:"		# Sagittal smilie `~!b
+<Multi_key> <Multi_key> <colon> <~> <!> <b>			: ":~!::b:"		# Sagittal smilie ~!b
+<Multi_key> <Multi_key> <colon> <`> <)> <!> <(> <b>		: ":`::)!(::b:"		# Sagittal smilie `)!(b
+<Multi_key> <Multi_key> <colon> <)> <!> <(> <b>			: ":)!(::b:"		# Sagittal smilie )!(b
+<Multi_key> <Multi_key> <colon> <,> <)> <!> <(> <b>		: ":,::)!(::b:"		# Sagittal smilie ,)!(b
+<Multi_key> <Multi_key> <colon> <,> <,> <)> <!> <(> <b>		: ":,,::)!(::b:"	# Sagittal smilie ,,)!(b
+<Multi_key> <Multi_key> <colon> <`> <.> <)> <!> <(> <b>		: ":`::.::)!(::b:"	# Sagittal smilie `.)!(b
+<Multi_key> <Multi_key> <colon> <.> <)> <!> <(> <b>		: ":.::)!(::b:"		# Sagittal smilie .)!(b
+<Multi_key> <Multi_key> <colon> <)> <~> <!> <b>			: ":)~!::b:"		# Sagittal smilie )~!b
+<Multi_key> <Multi_key> <colon> <~> <!> <(> <b>			: ":~!(::b:"		# Sagittal smilie ~!(b
+<Multi_key> <Multi_key> <colon> <,> <'> <~> <!> <(> <b>		: ":,::'::~!(::b:"	# Sagittal smilie ,'~!(b
+<Multi_key> <Multi_key> <colon> <`> <`> <~> <!> <(> <b>		: ":``::~!(::b:"	# Sagittal smilie ``~!(b
+<Multi_key> <Multi_key> <colon> <`> <~> <!> <(> <b>		: ":`::~!(::b:"		# Sagittal smilie `~!(b
+<Multi_key> <Multi_key> <colon> <~> <!> <(> <b>			: ":~!(::b:"		# Sagittal smilie ~!(b
+<Multi_key> <Multi_key> <colon> <,> <~> <!> <(> <b>		: ":,::~!(::b:"		# Sagittal smilie ,~!(b
+<Multi_key> <Multi_key> <colon> <`> <`> <!> <~> <b>		: ":``::!~::b:"		# Sagittal smilie ``!~b
+<Multi_key> <Multi_key> <colon> <`> <!> <~> <b>			: ":`::!~::b:"		# Sagittal smilie `!~b
+<Multi_key> <Multi_key> <colon> <!> <~> <b>			: ":!~::b:"		# Sagittal smilie !~b
+<Multi_key> <Multi_key> <colon> <,> <!> <~> <b>			: ":,::!~::b:"		# Sagittal smilie ,!~b
+<Multi_key> <Multi_key> <colon> <~> <~> <!> <b>			: ":~~!::b:"		# Sagittal smilie ~~!b
+<Multi_key> <Multi_key> <colon> <,> <~> <~> <!> <b>		: ":,::~~!::b:"		# Sagittal smilie ,~~!b
+<Multi_key> <Multi_key> <colon> <,> <,> <~> <~> <!> <b>		: ":,,::~~!::b:"	# Sagittal smilie ,,~~!b
+<Multi_key> <Multi_key> <colon> <`> <'> <\> <!> <b>		: ":`::'::\!::b:"	# Sagittal smilie `'\!b
+<Multi_key> <Multi_key> <colon> <\> <!> <b>			: ":\!::b:"		# Sagittal smilie \!b
+<Multi_key> <Multi_key> <colon> <)> <!> <~> <b>			: ":)!~::b:"		# Sagittal smilie )!~b
+<Multi_key> <Multi_key> <colon> <`> <`> <\> <!> <b>		: ":``::\!::b:"		# Sagittal smilie ``\!b
+<Multi_key> <Multi_key> <colon> <`> <\> <!> <b>			: ":`::\!::b:"		# Sagittal smilie `\!b
+<Multi_key> <Multi_key> <colon> <\> <!> <b>			: ":\!::b:"		# Sagittal smilie \!b
+<Multi_key> <Multi_key> <colon> <,> <\> <!> <b>			: ":,::\!::b:"		# Sagittal smilie ,\!b
+<Multi_key> <Multi_key> <colon> <,> <,> <\> <!> <b>		: ":,,::\!::b:"		# Sagittal smilie ,,\!b
+<Multi_key> <Multi_key> <colon> <)> <\> <!> <b>			: ":)\!::b:"		# Sagittal smilie )\!b
+<Multi_key> <Multi_key> <colon> <.> <\> <!> <b>			: ":.::\!::b:"		# Sagittal smilie .\!b
+<Multi_key> <Multi_key> <colon> <,> <.> <\> <!> <b>		: ":,::.::\!::b:"	# Sagittal smilie ,.\!b
+<Multi_key> <Multi_key> <colon> <`> <`> <)> <\> <!> <b>		: ":``::)\!::b:"	# Sagittal smilie ``)\!b
+<Multi_key> <Multi_key> <colon> <`> <)> <\> <!> <b>		: ":`::)\!::b:"		# Sagittal smilie `)\!b
+<Multi_key> <Multi_key> <colon> <)> <\> <!> <b>			: ":)\!::b:"		# Sagittal smilie )\!b
+<Multi_key> <Multi_key> <colon> <`> <'> <!> <)> <b>		: ":`::'::!)::b:"	# Sagittal smilie `'!)b
+<Multi_key> <Multi_key> <colon> <!> <)> <b>			: ":!)::b:"		# Sagittal smilie !)b
+<Multi_key> <Multi_key> <colon> <,> <'> <!> <)> <b>		: ":,::'::!)::b:"	# Sagittal smilie ,'!)b
+<Multi_key> <Multi_key> <colon> <`> <`> <!> <)> <b>		: ":``::!)::b:"		# Sagittal smilie ``!)b
+<Multi_key> <Multi_key> <colon> <`> <!> <)> <b>			: ":`::!)::b:"		# Sagittal smilie `!)b
+<Multi_key> <Multi_key> <colon> <!> <)> <b>			: ":!)::b:"		# Sagittal smilie !)b
+<Multi_key> <Multi_key> <colon> <,> <!> <)> <b>			: ":,::!)::b:"		# Sagittal smilie ,!)b
+<Multi_key> <Multi_key> <colon> <,> <,> <!> <)> <b>		: ":,,::!)::b:"		# Sagittal smilie ,,!)b
+<Multi_key> <Multi_key> <colon> <`> <.> <!> <)> <b>		: ":`::.::!)::b:"	# Sagittal smilie `.!)b
+<Multi_key> <Multi_key> <colon> <.> <!> <)> <b>			: ":.::!)::b:"		# Sagittal smilie .!)b
+<Multi_key> <Multi_key> <colon> <,> <.> <!> <)> <b>		: ":,::.::!)::b:"	# Sagittal smilie ,.!)b
+<Multi_key> <Multi_key> <colon> <`> <)> <!> <)> <b>		: ":`::)!)::b:"		# Sagittal smilie `)!)b
+<Multi_key> <Multi_key> <colon> <)> <!> <)> <b>			: ":)!)::b:"		# Sagittal smilie )!)b
+<Multi_key> <Multi_key> <colon> <(> <!> <b>			: ":(!::b:"		# Sagittal smilie (!b
+<Multi_key> <Multi_key> <colon> <!> </> <b>			: ":!/::b:"		# Sagittal smilie !/b
+<Multi_key> <Multi_key> <colon> <,> <!> </> <b>			: ":,::!/::b:"		# Sagittal smilie ,!/b
+<Multi_key> <Multi_key> <colon> <`> <(> <!> <b>			: ":`::(!::b:"		# Sagittal smilie `(!b
+<Multi_key> <Multi_key> <colon> <(> <!> <b>			: ":(!::b:"		# Sagittal smilie (!b
+<Multi_key> <Multi_key> <colon> <,> <(> <!> <b>			: ":,::(!::b:"		# Sagittal smilie ,(!b
+<Multi_key> <Multi_key> <colon> <,> <,> <(> <!> <b>		: ":,,::(!::b:"		# Sagittal smilie ,,(!b
+<Multi_key> <Multi_key> <colon> <`> <.> <(> <!> <b>		: ":`::.::(!::b:"	# Sagittal smilie `.(!b
+<Multi_key> <Multi_key> <colon> <.> <(> <!> <b>			: ":.::(!::b:"		# Sagittal smilie .(!b
+<Multi_key> <Multi_key> <colon> <`> <~> <!> <)> <b>		: ":`::~!)::b:"		# Sagittal smilie `~!)b
+<Multi_key> <Multi_key> <colon> <~> <!> <)> <b>			: ":~!)::b:"		# Sagittal smilie ~!)b
+<Multi_key> <Multi_key> <colon> <,> <~> <!> <)> <b>		: ":,::~!)::b:"		# Sagittal smilie ,~!)b
+<Multi_key> <Multi_key> <colon> <,> <,> <~> <!> <)> <b>		: ":,,::~!)::b:"	# Sagittal smilie ,,~!)b
+<Multi_key> <Multi_key> <colon> <`> <'> <(> <!> <(> <b>		: ":`::'::(!(::b:"	# Sagittal smilie `'(!(b
+<Multi_key> <Multi_key> <colon> <(> <!> <(> <b>			: ":(!(::b:"		# Sagittal smilie (!(b
+<Multi_key> <Multi_key> <colon> <.> <~> <!> <)> <b>		: ":.::~!)::b:"		# Sagittal smilie .~!)b
+<Multi_key> <Multi_key> <colon> <\> <!> <~> <b>			: ":\!~::b:"		# Sagittal smilie \!~b
+<Multi_key> <Multi_key> <colon> <`> <`> <(> <!> <(> <b>		: ":``::(!(::b:"	# Sagittal smilie ``(!(b
+<Multi_key> <Multi_key> <colon> <`> <(> <!> <(> <b>		: ":`::(!(::b:"		# Sagittal smilie `(!(b
+<Multi_key> <Multi_key> <colon> <(> <!> <(> <b>			: ":(!(::b:"		# Sagittal smilie (!(b
+<Multi_key> <Multi_key> <colon> <,> <(> <!> <(> <b>		: ":,::(!(::b:"		# Sagittal smilie ,(!(b
+<Multi_key> <Multi_key> <colon> <~> <!> </> <b>			: ":~!/::b:"		# Sagittal smilie ~!/b
+<Multi_key> <Multi_key> <colon> <`> <'> <\> <\> <!> <b>		: ":`::'::\ \!::b:"	# Sagittal smilie `'\\!b
+<Multi_key> <Multi_key> <colon> <\> <\> <!> <b>			: ":\ \!::b:"		# Sagittal smilie \\!b
+<Multi_key> <Multi_key> <colon> <,> <'> <\> <\> <!> <b>		: ":,::'::\ \!::b:"	# Sagittal smilie ,'\\!b
+<Multi_key> <Multi_key> <colon> <`> <`> <\> <\> <!> <b>		: ":``::\ \!::b:"	# Sagittal smilie ``\\!b
+<Multi_key> <Multi_key> <colon> <`> <\> <\> <!> <b>		: ":`::\ \!::b:"	# Sagittal smilie `\\!b
+<Multi_key> <Multi_key> <colon> <\> <\> <!> <b>			: ":\ \!::b:"		# Sagittal smilie \\!b
+<Multi_key> <Multi_key> <colon> <,> <\> <\> <!> <b>		: ":,::\ \!::b:"	# Sagittal smilie ,\\!b
+<Multi_key> <Multi_key> <colon> <,> <,> <\> <\> <!> <b>		: ":,,::\ \!::b:"	# Sagittal smilie ,,\\!b
+<Multi_key> <Multi_key> <colon> <`> <.> <\> <\> <!> <b>		: ":`::.::\ \!::b:"	# Sagittal smilie `.\\!b
+<Multi_key> <Multi_key> <colon> <.> <\> <\> <!> <b>		: ":.::\ \!::b:"	# Sagittal smilie .\\!b
+<Multi_key> <Multi_key> <colon> <,> <.> <\> <\> <!> <b>		: ":,::.::\ \!::b:"	# Sagittal smilie ,.\\!b
+<Multi_key> <Multi_key> <colon> <`> <)> <\> <\> <!> <b>		: ":`::)\ \!::b:"	# Sagittal smilie `)\\!b
+<Multi_key> <Multi_key> <colon> <)> <\> <\> <!> <b>		: ":)\ \!::b:"		# Sagittal smilie )\\!b
+<Multi_key> <Multi_key> <colon> <,> <)> <\> <\> <!> <b>		: ":,::)\ \!::b:"	# Sagittal smilie ,)\\!b
+<Multi_key> <Multi_key> <colon> <,> <,> <)> <\> <\> <!> <b>	: ":,,::)\ \!::b:"	# Sagittal smilie ,,)\\!b
+<Multi_key> <Multi_key> <colon> <`> <`> <\> <!> <)> <b>		: ":``::\!)::b:"	# Sagittal smilie ``\!)b
+<Multi_key> <Multi_key> <colon> <`> <\> <!> <)> <b>		: ":`::\!)::b:"		# Sagittal smilie `\!)b
+<Multi_key> <Multi_key> <colon> <\> <!> <)> <b>			: ":\!)::b:"		# Sagittal smilie \!)b
+<Multi_key> <Multi_key> <colon> <,> <\> <!> <)> <b>		: ":,::\!)::b:"		# Sagittal smilie ,\!)b
+<Multi_key> <Multi_key> <colon> <(> <!> <~> <b>			: ":(!~::b:"		# Sagittal smilie (!~b
+<Multi_key> <Multi_key> <colon> <`> <.> <\> <!> <)> <b>		: ":`::.::\!)::b:"	# Sagittal smilie `.\!)b
+<Multi_key> <Multi_key> <colon> <.> <\> <!> <)> <b>		: ":.::\!)::b:"		# Sagittal smilie .\!)b
+<Multi_key> <Multi_key> <colon> <,> <.> <\> <!> <)> <b>		: ":,::.::\!)::b:"	# Sagittal smilie ,.\!)b
+<Multi_key> <Multi_key> <colon> <\> <!> </> <b>			: ":\!/::b:"		# Sagittal smilie \!/b
+<Multi_key> <Multi_key> <colon> <,> <'> <\> <!> </> <b>		: ":,::'::\!/::b:"	# Sagittal smilie ,'\!/b
+<Multi_key> <Multi_key> <colon> <`> <`> <\> <!> </> <b>		: ":``::\!/::b:"	# Sagittal smilie ``\!/b
+<Multi_key> <Multi_key> <colon> <`> <\> <!> </> <b>		: ":`::\!/::b:"		# Sagittal smilie `\!/b
+<Multi_key> <Multi_key> <colon> <\> <!> </> <b>			: ":\!/::b:"		# Sagittal smilie \!/b
+<Multi_key> <Multi_key> <colon> <,> <\> <!> </> <b>		: ":,::\!/::b:"		# Sagittal smilie ,\!/b
+<Multi_key> <Multi_key> <colon> <`> <(> <\> <!> <b>		: ":`::(\!::b:"		# Sagittal smilie `(\!b
+<Multi_key> <Multi_key> <colon> <(> <\> <!> <b>			: ":(\!::b:"		# Sagittal smilie (\!b
+<Multi_key> <Multi_key> <colon> <,> <(> <\> <!> <b>		: ":,::(\!::b:"		# Sagittal smilie ,(\!b
+<Multi_key> <Multi_key> <colon> <.> <\> <!> </> <b>		: ":.::\!/::b:"		# Sagittal smilie .\!/b
+<Multi_key> <Multi_key> <colon> <,> <.> <\> <!> </> <b>		: ":,::.::\!/::b:"	# Sagittal smilie ,.\!/b
+<Multi_key> <Multi_key> <colon> <`> <)> <\> <!> </> <b>		: ":`::)\!/::b:"	# Sagittal smilie `)\!/b
+<Multi_key> <Multi_key> <colon> <)> <\> <!> </> <b>		: ":)\!/::b:"		# Sagittal smilie )\!/b
+<Multi_key> <Multi_key> <colon> <,> <)> <\> <!> </> <b>		: ":,::)\!/::b:"	# Sagittal smilie ,)\!/b
+<Multi_key> <Multi_key> <colon> <,> <,> <)> <\> <!> </> <b>	: ":,,::)\!/::b:"	# Sagittal smilie ,,)\!/b
+<Multi_key> <Multi_key> <colon> <`> <'> <(> <!> <)> <b>		: ":`::'::(!)::b:"	# Sagittal smilie `'(!)b
+<Multi_key> <Multi_key> <colon> <(> <!> <)> <b>			: ":(!)::b:"		# Sagittal smilie (!)b
+<Multi_key> <Multi_key> <colon> <`> <!> </> <)> <b>		: ":`::!/)::b:"		# Sagittal smilie `!/)b
+<Multi_key> <Multi_key> <colon> <!> </> <)> <b>			: ":!/)::b:"		# Sagittal smilie !/)b
+<Multi_key> <Multi_key> <colon> <,> <!> </> <)> <b>		: ":,::!/)::b:"		# Sagittal smilie ,!/)b
+<Multi_key> <Multi_key> <colon> <`> <(> <!> <)> <b>		: ":`::(!)::b:"		# Sagittal smilie `(!)b
+<Multi_key> <Multi_key> <colon> <(> <!> <)> <b>			: ":(!)::b:"		# Sagittal smilie (!)b
+<Multi_key> <Multi_key> <colon> <,> <(> <!> <)> <b>		: ":,::(!)::b:"		# Sagittal smilie ,(!)b
+<Multi_key> <Multi_key> <colon> <,> <,> <(> <!> <)> <b>		: ":,,::(!)::b:"	# Sagittal smilie ,,(!)b
+<Multi_key> <Multi_key> <colon> <`> <.> <(> <!> <)> <b>		: ":`::.::(!)::b:"	# Sagittal smilie `.(!)b
+<Multi_key> <Multi_key> <colon> <.> <(> <!> <)> <b>		: ":.::(!)::b:"		# Sagittal smilie .(!)b
+<Multi_key> <Multi_key> <colon> <`> <'> <(> <!> </> <b>		: ":`::'::(!/::b:"	# Sagittal smilie `'(!/b
+<Multi_key> <Multi_key> <colon> <(> <!> </> <b>			: ":(!/::b:"		# Sagittal smilie (!/b
+<Multi_key> <Multi_key> <colon> <,> <'> <(> <!> </> <b>		: ":,::'::(!/::b:"	# Sagittal smilie ,'(!/b
+<Multi_key> <Multi_key> <colon> <!> </> </> <b>			: ":!/ /::b:"		# Sagittal smilie !//b
+<Multi_key> <Multi_key> <colon> <`> <(> <!> </> <b>		: ":`::(!/::b:"		# Sagittal smilie `(!/b
+<Multi_key> <Multi_key> <colon> <(> <!> </> <b>			: ":(!/::b:"		# Sagittal smilie (!/b
+<Multi_key> <Multi_key> <colon> <,> <(> <!> </> <b>		: ":,::(!/::b:"		# Sagittal smilie ,(!/b
+<Multi_key> <Multi_key> <colon> <,> <,> <(> <!> </> <b>		: ":,,::(!/::b:"	# Sagittal smilie ,,(!/b
+<Multi_key> <Multi_key> <colon> <`> <`> <)> <!> </> </> <b>	: ":``::)!/ /::b:"	# Sagittal smilie ``)!//b
+<Multi_key> <Multi_key> <colon> <`> <)> <!> </> </> <b>		: ":`::)!/ /::b:"	# Sagittal smilie `)!//b
+<Multi_key> <Multi_key> <colon> <)> <!> </> </> <b>		: ":)!/ /::b:"		# Sagittal smilie )!//b
+<Multi_key> <Multi_key> <colon> <,> <)> <!> </> </> <b>		: ":,::)!/ /::b:"	# Sagittal smilie ,)!//b
+
+# Sagittal Forum Smilies - Double Flat (Up)
+<Multi_key> <Multi_key> <colon> <`> <|> <b> <b>			: ":`::|::bb:"		# Sagittal smilie `|bb
+<Multi_key> <Multi_key> <colon> <`> <`> <|> <b> <b>		: ":``::|::bb:"		# Sagittal smilie ``|bb
+<Multi_key> <Multi_key> <colon> <.> <)> <|> <b> <b>		: ":.::)|::bb:"		# Sagittal smilie .)|bb
+<Multi_key> <Multi_key> <colon> <|> <b> <b>			: ":|::bb:"		# Sagittal smilie |bb
+<Multi_key> <Multi_key> <colon> <`> <'> <|> <b> <b>		: ":`::'::|::bb:"	# Sagittal smilie `'|bb
+<Multi_key> <Multi_key> <colon> <,> <)> <|> <b> <b>		: ":,::)|::bb:"		# Sagittal smilie ,)|bb
+<Multi_key> <Multi_key> <colon> <)> <|> <b> <b>			: ":)|::bb:"		# Sagittal smilie )|bb
+<Multi_key> <Multi_key> <colon> <`> <)> <|> <b> <b>		: ":`::)|::bb:"		# Sagittal smilie `)|bb
+<Multi_key> <Multi_key> <colon> <`> <`> <)> <|> <b> <b>		: ":``::)|::bb:"	# Sagittal smilie ``)|bb
+<Multi_key> <Multi_key> <colon> <,> <,> <|> <(> <b> <b>		: ":,,::|(::bb:"	# Sagittal smilie ,,|(bb
+<Multi_key> <Multi_key> <colon> <,> <|> <(> <b> <b>		: ":,::|(::bb:"		# Sagittal smilie ,|(bb
+<Multi_key> <Multi_key> <colon> <|> <(> <b> <b>			: ":|(::bb:"		# Sagittal smilie |(bb
+<Multi_key> <Multi_key> <colon> <`> <|> <(> <b> <b>		: ":`::|(::bb:"		# Sagittal smilie `|(bb
+<Multi_key> <Multi_key> <colon> <.> <~> <|> <b> <b>		: ":.::~|::bb:"		# Sagittal smilie .~|bb
+<Multi_key> <Multi_key> <colon> <,> <'> <|> <(> <b> <b>		: ":,::'::|(::bb:"	# Sagittal smilie ,'|(bb
+<Multi_key> <Multi_key> <colon> <|> <(> <b> <b>			: ":|(::bb:"		# Sagittal smilie |(bb
+<Multi_key> <Multi_key> <colon> <,> <~> <|> <b> <b>		: ":,::~|::bb:"		# Sagittal smilie ,~|bb
+<Multi_key> <Multi_key> <colon> <~> <|> <b> <b>			: ":~|::bb:"		# Sagittal smilie ~|bb
+<Multi_key> <Multi_key> <colon> <,> <)> <|> <(> <b> <b>		: ":,::)|(::bb:"	# Sagittal smilie ,)|(bb
+<Multi_key> <Multi_key> <colon> <)> <|> <(> <b> <b>		: ":)|(::bb:"		# Sagittal smilie )|(bb
+<Multi_key> <Multi_key> <colon> <`> <)> <|> <(> <b> <b>		: ":`::)|(::bb:"	# Sagittal smilie `)|(bb
+<Multi_key> <Multi_key> <colon> <`> <`> <)> <|> <(> <b> <b>	: ":``::)|(::bb:"	# Sagittal smilie ``)|(bb
+<Multi_key> <Multi_key> <colon> <,> <'> <)> <|> <(> <b> <b>	: ":,::'::)|(::bb:"	# Sagittal smilie ,')|(bb
+<Multi_key> <Multi_key> <colon> <)> <|> <(> <b> <b>		: ":)|(::bb:"		# Sagittal smilie )|(bb
+<Multi_key> <Multi_key> <colon> <)> <~> <|> <b> <b>		: ":)~|::bb:"		# Sagittal smilie )~|bb
+<Multi_key> <Multi_key> <colon> <.> <~> <|> <(> <b> <b>		: ":.::~|(::bb:"	# Sagittal smilie .~|(bb
+<Multi_key> <Multi_key> <colon> <`> <.> <~> <|> <(> <b> <b>	: ":`::.::~|(::bb:"	# Sagittal smilie `.~|(bb
+<Multi_key> <Multi_key> <colon> <,> <,> <~> <|> <(> <b> <b>	: ":,,::~|(::bb:"	# Sagittal smilie ,,~|(bb
+<Multi_key> <Multi_key> <colon> <,> <~> <|> <(> <b> <b>		: ":,::~|(::bb:"	# Sagittal smilie ,~|(bb
+<Multi_key> <Multi_key> <colon> <~> <|> <(> <b> <b>		: ":~|(::bb:"		# Sagittal smilie ~|(bb
+<Multi_key> <Multi_key> <colon> <`> <~> <|> <(> <b> <b>		: ":`::~|(::bb:"	# Sagittal smilie `~|(bb
+<Multi_key> <Multi_key> <colon> <,> <,> <|> <~> <b> <b>		: ":,,::|~::bb:"	# Sagittal smilie ,,|~bb
+<Multi_key> <Multi_key> <colon> <,> <|> <~> <b> <b>		: ":,::|~::bb:"		# Sagittal smilie ,|~bb
+<Multi_key> <Multi_key> <colon> <|> <~> <b> <b>			: ":|~::bb:"		# Sagittal smilie |~bb
+<Multi_key> <Multi_key> <colon> <`> <|> <~> <b> <b>		: ":`::|~::bb:"		# Sagittal smilie `|~bb
+<Multi_key> <Multi_key> <colon> <~> <~> <|> <b> <b>		: ":~~|::bb:"		# Sagittal smilie ~~|bb
+<Multi_key> <Multi_key> <colon> <`> <~> <~> <|> <b> <b>		: ":`::~~|::bb:"	# Sagittal smilie `~~|bb
+<Multi_key> <Multi_key> <colon> <`> <`> <~> <~> <|> <b> <b>	: ":``::~~|::bb:"	# Sagittal smilie ``~~|bb
+<Multi_key> <Multi_key> <colon> <,> <.> </> <|> <b> <b>		: ":,::.::/|::bb:"	# Sagittal smilie ,./|bb
+<Multi_key> <Multi_key> <colon> <.> </> <|> <b> <b>		: ":.::/|::bb:"		# Sagittal smilie ./|bb
+<Multi_key> <Multi_key> <colon> <)> <|> <~> <b> <b>		: ":)|~::bb:"		# Sagittal smilie )|~bb
+<Multi_key> <Multi_key> <colon> <,> <,> </> <|> <b> <b>		: ":,,::/|::bb:"	# Sagittal smilie ,,/|bb
+<Multi_key> <Multi_key> <colon> <,> </> <|> <b> <b>		: ":,::/|::bb:"		# Sagittal smilie ,/|bb
+<Multi_key> <Multi_key> <colon> </> <|> <b> <b>			: ":/|::bb:"		# Sagittal smilie /|bb
+<Multi_key> <Multi_key> <colon> <`> </> <|> <b> <b>		: ":`::/|::bb:"		# Sagittal smilie `/|bb
+<Multi_key> <Multi_key> <colon> <`> <`> </> <|> <b> <b>		: ":``::/|::bb:"	# Sagittal smilie ``/|bb
+<Multi_key> <Multi_key> <colon> <.> <)> </> <|> <b> <b>		: ":.::)/|::bb:"	# Sagittal smilie .)/|bb
+<Multi_key> <Multi_key> <colon> </> <|> <b> <b>			: ":/|::bb:"		# Sagittal smilie /|bb
+<Multi_key> <Multi_key> <colon> <`> <'> </> <|> <b> <b>		: ":`::'::/|::bb:"	# Sagittal smilie `'/|bb
+<Multi_key> <Multi_key> <colon> <,> <,> <)> </> <|> <b> <b>	: ":,,::)/|::bb:"	# Sagittal smilie ,,)/|bb
+<Multi_key> <Multi_key> <colon> <,> <)> </> <|> <b> <b>		: ":,::)/|::bb:"	# Sagittal smilie ,)/|bb
+<Multi_key> <Multi_key> <colon> <)> </> <|> <b> <b>		: ":)/|::bb:"		# Sagittal smilie )/|bb
+<Multi_key> <Multi_key> <colon> <,> <.> <|> <)> <b> <b>		: ":,::.::|)::bb:"	# Sagittal smilie ,.|)bb
+<Multi_key> <Multi_key> <colon> <.> <|> <)> <b> <b>		: ":.::|)::bb:"		# Sagittal smilie .|)bb
+<Multi_key> <Multi_key> <colon> <`> <.> <|> <)> <b> <b>		: ":`::.::|)::bb:"	# Sagittal smilie `.|)bb
+<Multi_key> <Multi_key> <colon> <,> <,> <|> <)> <b> <b>		: ":,,::|)::bb:"	# Sagittal smilie ,,|)bb
+<Multi_key> <Multi_key> <colon> <,> <|> <)> <b> <b>		: ":,::|)::bb:"		# Sagittal smilie ,|)bb
+<Multi_key> <Multi_key> <colon> <|> <)> <b> <b>			: ":|)::bb:"		# Sagittal smilie |)bb
+<Multi_key> <Multi_key> <colon> <`> <|> <)> <b> <b>		: ":`::|)::bb:"		# Sagittal smilie `|)bb
+<Multi_key> <Multi_key> <colon> <`> <`> <|> <)> <b> <b>		: ":``::|)::bb:"	# Sagittal smilie ``|)bb
+<Multi_key> <Multi_key> <colon> <,> <'> <|> <)> <b> <b>		: ":,::'::|)::bb:"	# Sagittal smilie ,'|)bb
+<Multi_key> <Multi_key> <colon> <|> <)> <b> <b>			: ":|)::bb:"		# Sagittal smilie |)bb
+<Multi_key> <Multi_key> <colon> <`> <'> <|> <)> <b> <b>		: ":`::'::|)::bb:"	# Sagittal smilie `'|)bb
+<Multi_key> <Multi_key> <colon> <,> <)> <|> <)> <b> <b>		: ":,::)|)::bb:"	# Sagittal smilie ,)|)bb
+<Multi_key> <Multi_key> <colon> <)> <|> <)> <b> <b>		: ":)|)::bb:"		# Sagittal smilie )|)bb
+<Multi_key> <Multi_key> <colon> <.> <(> <|> <b> <b>		: ":.::(|::bb:"		# Sagittal smilie .(|bb
+<Multi_key> <Multi_key> <colon> <|> <\> <b> <b>			: ":|\::bb:"		# Sagittal smilie |\bb
+<Multi_key> <Multi_key> <colon> <`> <|> <\> <b> <b>		: ":`::|\::bb:"		# Sagittal smilie `|\bb
+<Multi_key> <Multi_key> <colon> <,> <(> <|> <b> <b>		: ":,::(|::bb:"		# Sagittal smilie ,(|bb
+<Multi_key> <Multi_key> <colon> <(> <|> <b> <b>			: ":(|::bb:"		# Sagittal smilie (|bb
+<Multi_key> <Multi_key> <colon> <`> <(> <|> <b> <b>		: ":`::(|::bb:"		# Sagittal smilie `(|bb
+<Multi_key> <Multi_key> <colon> <`> <`> <(> <|> <b> <b>		: ":``::(|::bb:"	# Sagittal smilie ``(|bb
+<Multi_key> <Multi_key> <colon> <,> <'> <(> <|> <b> <b>		: ":,::'::(|::bb:"	# Sagittal smilie ,'(|bb
+<Multi_key> <Multi_key> <colon> <(> <|> <b> <b>			: ":(|::bb:"		# Sagittal smilie (|bb
+<Multi_key> <Multi_key> <colon> <,> <~> <|> <)> <b> <b>		: ":,::~|)::bb:"	# Sagittal smilie ,~|)bb
+<Multi_key> <Multi_key> <colon> <~> <|> <)> <b> <b>		: ":~|)::bb:"		# Sagittal smilie ~|)bb
+<Multi_key> <Multi_key> <colon> <`> <~> <|> <)> <b> <b>		: ":`::~|)::bb:"	# Sagittal smilie `~|)bb
+<Multi_key> <Multi_key> <colon> <`> <`> <~> <|> <)> <b> <b>	: ":``::~|)::bb:"	# Sagittal smilie ``~|)bb
+<Multi_key> <Multi_key> <colon> <,> <.> <(> <|> <(> <b> <b>	: ":,::.::(|(::bb:"	# Sagittal smilie ,.(|(bb
+<Multi_key> <Multi_key> <colon> <.> <(> <|> <(> <b> <b>		: ":.::(|(::bb:"	# Sagittal smilie .(|(bb
+<Multi_key> <Multi_key> <colon> <~> <|> <)> <b> <b>		: ":~|)::bb:"		# Sagittal smilie ~|)bb
+<Multi_key> <Multi_key> <colon> </> <|> <~> <b> <b>		: ":/|~::bb:"		# Sagittal smilie /|~bb
+<Multi_key> <Multi_key> <colon> <,> <,> <(> <|> <(> <b> <b>	: ":,,::(|(::bb:"	# Sagittal smilie ,,(|(bb
+<Multi_key> <Multi_key> <colon> <,> <(> <|> <(> <b> <b>		: ":,::(|(::bb:"	# Sagittal smilie ,(|(bb
+<Multi_key> <Multi_key> <colon> <(> <|> <(> <b> <b>		: ":(|(::bb:"		# Sagittal smilie (|(bb
+<Multi_key> <Multi_key> <colon> <`> <(> <|> <(> <b> <b>		: ":`::(|(::bb:"	# Sagittal smilie `(|(bb
+<Multi_key> <Multi_key> <colon> <~> <|> <\> <b> <b>		: ":~|\::bb:"		# Sagittal smilie ~|\bb
+<Multi_key> <Multi_key> <colon> <,> <.> </> </> <|> <b> <b>	: ":,::.::/ /|::bb:"	# Sagittal smilie ,.//|bb
+<Multi_key> <Multi_key> <colon> <.> </> </> <|> <b> <b>		: ":.::/ /|::bb:"	# Sagittal smilie .//|bb
+<Multi_key> <Multi_key> <colon> <`> <.> </> </> <|> <b> <b>	: ":`::.::/ /|::bb:"	# Sagittal smilie `.//|bb
+<Multi_key> <Multi_key> <colon> <,> <,> </> </> <|> <b> <b>	: ":,,::/ /|::bb:"	# Sagittal smilie ,,//|bb
+<Multi_key> <Multi_key> <colon> <,> </> </> <|> <b> <b>		: ":,::/ /|::bb:"	# Sagittal smilie ,//|bb
+<Multi_key> <Multi_key> <colon> </> </> <|> <b> <b>		: ":/ /|::bb:"		# Sagittal smilie //|bb
+<Multi_key> <Multi_key> <colon> <`> </> </> <|> <b> <b>		: ":`::/ /|::bb:"	# Sagittal smilie `//|bb
+<Multi_key> <Multi_key> <colon> <`> <`> </> </> <|> <b> <b>	: ":``::/ /|::bb:"	# Sagittal smilie ``//|bb
+<Multi_key> <Multi_key> <colon> <,> <'> </> </> <|> <b> <b>	: ":,::'::/ /|::bb:"	# Sagittal smilie ,'//|bb
+<Multi_key> <Multi_key> <colon> </> </> <|> <b> <b>		: ":/ /|::bb:"		# Sagittal smilie //|bb
+<Multi_key> <Multi_key> <colon> <`> <'> </> </> <|> <b> <b>	: ":`::'::/ /|::bb:"	# Sagittal smilie `'//|bb
