@@ -1,0 +1,469 @@
+# Spartan Sagittal single-shaft symbols in the Bravura font (by Sagispeak)
+<Multi_key> <Multi_key> <n> <a> <i> <space>						: ""	UE300		# Sagittal nai
+<Multi_key> <Multi_key> <n> <a> <o> <space>						: ""	UE301		# Sagittal nao
+<Multi_key> <Multi_key> <p> <a> <i> <space>						: ""	UE302		# Sagittal pai
+<Multi_key> <Multi_key> <p> <a> <o> <space>						: ""	UE303		# Sagittal pao
+<Multi_key> <Multi_key> <t> <a> <i> <space>						: ""	UE304		# Sagittal tai
+<Multi_key> <Multi_key> <t> <a> <o> <space>						: ""	UE305		# Sagittal tao
+<Multi_key> <Multi_key> <p> <h> <a> <i> <space>						: ""	UE306		# Sagittal phai
+<Multi_key> <Multi_key> <p> <h> <a> <o> <space>						: ""	UE307		# Sagittal phao
+<Multi_key> <Multi_key> <p> <a> <t> <a> <i> <space>					: ""	UE308		# Sagittal patai
+<Multi_key> <Multi_key> <p> <a> <t> <a> <o> <space>					: ""	UE309		# Sagittal patao
+<Multi_key> <Multi_key> <p> <a> <k> <a> <i> <space>					: ""	UE30A		# Sagittal pakai
+<Multi_key> <Multi_key> <p> <a> <k> <a> <o> <space>					: ""	UE30B		# Sagittal pakao
+<Multi_key> <Multi_key> <j> <a> <t> <a> <i> <space>					: ""	UE30C		# Sagittal jatai
+<Multi_key> <Multi_key> <j> <a> <t> <a> <o> <space>					: ""	UE30D		# Sagittal jatao
+<Multi_key> <Multi_key> <j> <a> <k> <a> <i> <space>					: ""	UE30E		# Sagittal jakai
+<Multi_key> <Multi_key> <j> <a> <k> <a> <o> <space>					: ""	UE30F		# Sagittal jakao
+
+# Spartan Sagittal conventional symbol and sagittal combinations in the Bravura font (by Sagispeak)
+<Multi_key> <Multi_key> <p> <h> <a> <o> <s> <h> <a> <r> <p>				: ""	UE307 UE262	# Sagittal phaosharp
+<Multi_key> <Multi_key> <p> <h> <a> <i> <f> <l> <a> <t>					: ""	UE306 UE260	# Sagittal phaiflat
+<Multi_key> <Multi_key> <t> <a> <o> <s> <h> <a> <r> <p>					: ""	UE305 UE262	# Sagittal taosharp
+<Multi_key> <Multi_key> <t> <a> <i> <f> <l> <a> <t>					: ""	UE304 UE260	# Sagittal taiflat
+<Multi_key> <Multi_key> <p> <a> <o> <s> <h> <a> <r> <p>					: ""	UE303 UE262	# Sagittal paosharp
+<Multi_key> <Multi_key> <p> <a> <i> <f> <l> <a> <t>					: ""	UE302 UE260	# Sagittal paiflat
+<Multi_key> <Multi_key> <n> <a> <o> <s> <h> <a> <r> <p>					: ""	UE301 UE262	# Sagittal naosharp
+<Multi_key> <Multi_key> <n> <a> <i> <f> <l> <a> <t>					: ""	UE300 UE260	# Sagittal naiflat
+<Multi_key> <Multi_key> <s> <h> <a> <r> <p>						: ""	UE262		# Sagittal sharp
+<Multi_key> <Multi_key> <f> <l> <a> <t>							: ""	UE260		# Sagittal flat
+<Multi_key> <Multi_key> <n> <a> <i> <s> <h> <a> <r> <p>					: ""	UE300 UE262	# Sagittal naisharp
+<Multi_key> <Multi_key> <n> <a> <o> <f> <l> <a> <t>					: ""	UE301 UE260	# Sagittal naoflat
+<Multi_key> <Multi_key> <p> <a> <i> <s> <h> <a> <r> <p>					: ""	UE302 UE262	# Sagittal paisharp
+<Multi_key> <Multi_key> <p> <a> <o> <f> <l> <a> <t>					: ""	UE303 UE260	# Sagittal paoflat
+<Multi_key> <Multi_key> <t> <a> <i> <s> <h> <a> <r> <p>					: ""	UE304 UE262	# Sagittal taisharp
+<Multi_key> <Multi_key> <t> <a> <o> <f> <l> <a> <t>					: ""	UE305 UE260	# Sagittal taoflat
+<Multi_key> <Multi_key> <p> <h> <a> <i> <s> <h> <a> <r> <p>				: ""	UE306 UE262	# Sagittal phaisharp
+<Multi_key> <Multi_key> <p> <h> <a> <o> <f> <l> <a> <t>					: ""	UE307 UE260	# Sagittal phaoflat
+<Multi_key> <Multi_key> <p> <a> <t> <a> <i> <s> <h> <a> <r> <p>				: ""	UE308 UE262	# Sagittal pataisharp
+<Multi_key> <Multi_key> <p> <a> <t> <a> <o> <f> <l> <a> <t>				: ""	UE309 UE260	# Sagittal pataoflat
+<Multi_key> <Multi_key> <p> <a> <k> <a> <i> <s> <h> <a> <r> <p>				: ""	UE30A UE262	# Sagittal pakaisharp
+<Multi_key> <Multi_key> <p> <a> <k> <a> <o> <f> <l> <a> <t>				: ""	UE30B UE260	# Sagittal pakaoflat
+<Multi_key> <Multi_key> <j> <a> <t> <a> <i> <s> <h> <a> <r> <p>				: ""	UE30C UE262	# Sagittal jataisharp
+<Multi_key> <Multi_key> <j> <a> <t> <a> <o> <f> <l> <a> <t>				: ""	UE30D UE260	# Sagittal jataoflat
+<Multi_key> <Multi_key> <j> <a> <k> <a> <i> <s> <h> <a> <r> <p>				: ""	UE30E UE262	# Sagittal jakaisharp
+<Multi_key> <Multi_key> <j> <a> <k> <a> <o> <f> <l> <a> <t>				: ""	UE30F UE260	# Sagittal jakaoflat
+<Multi_key> <Multi_key> <p> <h> <a> <o> <d> <o> <u> <b> <l> <e> <s> <h> <a> <r> <p>	: ""	UE307 UE47D	# Sagittal phaodoublesharp
+<Multi_key> <Multi_key> <p> <h> <a> <i> <d> <o> <u> <b> <l> <e> <f> <l> <a> <t>		: ""	UE306 UE264	# Sagittal phaidoubleflat
+<Multi_key> <Multi_key> <t> <a> <o> <d> <o> <u> <b> <l> <e> <s> <h> <a> <r> <p>		: ""	UE305 UE47D	# Sagittal taodoublesharp
+<Multi_key> <Multi_key> <t> <a> <i> <d> <o> <u> <b> <l> <e> <f> <l> <a> <t>		: ""	UE304 UE264	# Sagittal taidoubleflat
+<Multi_key> <Multi_key> <p> <a> <o> <d> <o> <u> <b> <l> <e> <s> <h> <a> <r> <p>		: ""	UE303 UE47D	# Sagittal paodoublesharp
+<Multi_key> <Multi_key> <p> <a> <i> <d> <o> <u> <b> <l> <e> <f> <l> <a> <t>		: ""	UE302 UE264	# Sagittal paidoubleflat
+<Multi_key> <Multi_key> <n> <a> <o> <d> <o> <u> <b> <l> <e> <s> <h> <a> <r> <p>		: ""	UE301 UE47D	# Sagittal naodoublesharp
+<Multi_key> <Multi_key> <n> <a> <i> <d> <o> <u> <b> <l> <e> <f> <l> <a> <t>		: ""	UE300 UE264	# Sagittal naidoubleflat
+<Multi_key> <Multi_key> <d> <o> <u> <b> <l> <e> <s> <h> <a> <r> <p>			: ""	UE47D		# Sagittal doublesharp
+<Multi_key> <Multi_key> <d> <o> <u> <b> <l> <e> <f> <l> <a> <t>				: ""	UE264		# Sagittal doubleflat
+
+# Athenian Sagittal extension symbols in the Bravura font (by Sagispeak)
+<Multi_key> <Multi_key> <r> <a> <n> <a> <i> <space>					: ""	UE340		# Sagittal ranai
+<Multi_key> <Multi_key> <r> <a> <n> <a> <o> <space>					: ""	UE341		# Sagittal ranao
+<Multi_key> <Multi_key> <s> <a> <n> <a> <i> <space>					: ""	UE342		# Sagittal sanai
+<Multi_key> <Multi_key> <s> <a> <n> <a> <o> <space>					: ""	UE343		# Sagittal sanao
+<Multi_key> <Multi_key> <k> <a> <i> <space>						: ""	UE344		# Sagittal kai
+<Multi_key> <Multi_key> <k> <a> <o> <space>						: ""	UE345		# Sagittal kao
+<Multi_key> <Multi_key> <j> <a> <i> <space>						: ""	UE346		# Sagittal jai
+<Multi_key> <Multi_key> <j> <a> <o> <space>						: ""	UE347		# Sagittal jao
+<Multi_key> <Multi_key> <j> <a> <n> <a> <i> <space>					: ""	UE348		# Sagittal janai
+<Multi_key> <Multi_key> <j> <a> <n> <a> <o> <space>					: ""	UE349		# Sagittal janao
+<Multi_key> <Multi_key> <j> <a> <n> <a> <o> <s> <h> <a> <r> <p>				: ""	UE349 UE262	# Sagittal janaosharp
+<Multi_key> <Multi_key> <j> <a> <n> <a> <i> <f> <l> <a> <t>				: ""	UE348 UE260	# Sagittal janaiflat
+<Multi_key> <Multi_key> <j> <a> <o> <s> <h> <a> <r> <p>					: ""	UE347 UE262	# Sagittal jaosharp
+<Multi_key> <Multi_key> <j> <a> <i> <f> <l> <a> <t>					: ""	UE346 UE260	# Sagittal jaiflat
+<Multi_key> <Multi_key> <k> <a> <o> <s> <h> <a> <r> <p>					: ""	UE345 UE262	# Sagittal kaosharp
+<Multi_key> <Multi_key> <k> <a> <i> <f> <l> <a> <t>					: ""	UE344 UE260	# Sagittal kaiflat
+<Multi_key> <Multi_key> <s> <a> <n> <a> <o> <s> <h> <a> <r> <p>				: ""	UE343 UE262	# Sagittal sanaosharp
+<Multi_key> <Multi_key> <s> <a> <n> <a> <i> <f> <l> <a> <t>				: ""	UE342 UE260	# Sagittal sanaiflat
+<Multi_key> <Multi_key> <r> <a> <n> <a> <o> <s> <h> <a> <r> <p>				: ""	UE341 UE262	# Sagittal ranaosharp
+<Multi_key> <Multi_key> <r> <a> <n> <a> <i> <f> <l> <a> <t>				: ""	UE340 UE260	# Sagittal ranaiflat
+<Multi_key> <Multi_key> <r> <a> <n> <a> <i> <s> <h> <a> <r> <p>				: ""	UE340 UE262	# Sagittal ranaisharp
+<Multi_key> <Multi_key> <r> <a> <n> <a> <o> <f> <l> <a> <t>				: ""	UE341 UE260	# Sagittal ranaoflat
+<Multi_key> <Multi_key> <s> <a> <n> <a> <i> <s> <h> <a> <r> <p>				: ""	UE342 UE262	# Sagittal sanaisharp
+<Multi_key> <Multi_key> <s> <a> <n> <a> <o> <f> <l> <a> <t>				: ""	UE343 UE260	# Sagittal sanaoflat
+<Multi_key> <Multi_key> <k> <a> <i> <s> <h> <a> <r> <p>					: ""	UE344 UE262	# Sagittal kaisharp
+<Multi_key> <Multi_key> <k> <a> <o> <f> <l> <a> <t>					: ""	UE345 UE260	# Sagittal kaoflat
+<Multi_key> <Multi_key> <j> <a> <i> <s> <h> <a> <r> <p>					: ""	UE346 UE262	# Sagittal jaisharp
+<Multi_key> <Multi_key> <j> <a> <o> <f> <l> <a> <t>					: ""	UE347 UE260	# Sagittal jaoflat
+<Multi_key> <Multi_key> <j> <a> <n> <a> <i> <s> <h> <a> <r> <p>				: ""	UE348 UE262	# Sagittal janaisharp
+<Multi_key> <Multi_key> <j> <a> <n> <a> <o> <f> <l> <a> <t>				: ""	UE349 UE260	# Sagittal janaoflat
+<Multi_key> <Multi_key> <j> <a> <n> <a> <o> <d> <o> <u> <b> <l> <e> <s> <h> <a> <r> <p>	: ""	UE349 UE47D	# Sagittal janaodoublesharp
+<Multi_key> <Multi_key> <j> <a> <n> <a> <i> <d> <o> <u> <b> <l> <e> <f> <l> <a> <t>	: ""	UE348 UE264	# Sagittal janaidoubleflat
+<Multi_key> <Multi_key> <j> <a> <o> <d> <o> <u> <b> <l> <e> <s> <h> <a> <r> <p>		: ""	UE347 UE47D	# Sagittal jaodoublesharp
+<Multi_key> <Multi_key> <j> <a> <i> <d> <o> <u> <b> <l> <e> <f> <l> <a> <t>		: ""	UE346 UE264	# Sagittal jaidoubleflat
+<Multi_key> <Multi_key> <k> <a> <o> <d> <o> <u> <b> <l> <e> <s> <h> <a> <r> <p>		: ""	UE345 UE47D	# Sagittal kaodoublesharp
+<Multi_key> <Multi_key> <k> <a> <i> <d> <o> <u> <b> <l> <e> <f> <l> <a> <t>		: ""	UE344 UE264	# Sagittal kaidoubleflat
+<Multi_key> <Multi_key> <s> <a> <n> <a> <o> <d> <o> <u> <b> <l> <e> <s> <h> <a> <r> <p>	: ""	UE343 UE47D	# Sagittal sanaodoublesharp
+<Multi_key> <Multi_key> <s> <a> <n> <a> <i> <d> <o> <u> <b> <l> <e> <f> <l> <a> <t>	: ""	UE342 UE264	# Sagittal sanaidoubleflat
+<Multi_key> <Multi_key> <r> <a> <n> <a> <o> <d> <o> <u> <b> <l> <e> <s> <h> <a> <r> <p>	: ""	UE341 UE47D	# Sagittal ranaodoublesharp
+<Multi_key> <Multi_key> <r> <a> <n> <a> <i> <d> <o> <u> <b> <l> <e> <f> <l> <a> <t>	: ""	UE340 UE264	# Sagittal ranaidoubleflat
+
+# Trojan Sagittal extension symbols in the Bravura font (by Sagispeak)
+<Multi_key> <Multi_key> <z> <a> <i> <space>						: ""	UE370		# Sagittal zai
+<Multi_key> <Multi_key> <z> <a> <o> <space>						: ""	UE371		# Sagittal zao
+<Multi_key> <Multi_key> <p> <r> <a> <i> <space>						: ""	UE372		# Sagittal prai
+<Multi_key> <Multi_key> <p> <r> <a> <o> <space>						: ""	UE373		# Sagittal prao
+<Multi_key> <Multi_key> <p> <a> <z> <a> <i> <space>					: ""	UE374		# Sagittal pazai
+<Multi_key> <Multi_key> <p> <a> <z> <a> <o> <space>					: ""	UE375		# Sagittal pazao
+<Multi_key> <Multi_key> <p> <a> <z> <a> <o> <s> <h> <a> <r> <p>				: ""	UE375 UE262	# Sagittal pazaosharp
+<Multi_key> <Multi_key> <p> <a> <z> <a> <i> <f> <l> <a> <t>				: ""	UE374 UE260	# Sagittal pazaiflat
+<Multi_key> <Multi_key> <p> <r> <a> <o> <s> <h> <a> <r> <p>				: ""	UE373 UE262	# Sagittal praosharp
+<Multi_key> <Multi_key> <p> <r> <a> <i> <f> <l> <a> <t>					: ""	UE372 UE260	# Sagittal praiflat
+<Multi_key> <Multi_key> <z> <a> <o> <s> <h> <a> <r> <p>					: ""	UE371 UE262	# Sagittal zaosharp
+<Multi_key> <Multi_key> <z> <a> <i> <f> <l> <a> <t>					: ""	UE370 UE260	# Sagittal zaiflat
+<Multi_key> <Multi_key> <z> <a> <i> <s> <h> <a> <r> <p>					: ""	UE370 UE262	# Sagittal zaisharp
+<Multi_key> <Multi_key> <z> <a> <o> <f> <l> <a> <t>					: ""	UE371 UE260	# Sagittal zaoflat
+<Multi_key> <Multi_key> <p> <r> <a> <i> <s> <h> <a> <r> <p>				: ""	UE372 UE262	# Sagittal praisharp
+<Multi_key> <Multi_key> <p> <r> <a> <o> <f> <l> <a> <t>					: ""	UE373 UE260	# Sagittal praoflat
+<Multi_key> <Multi_key> <p> <a> <z> <a> <i> <s> <h> <a> <r> <p>				: ""	UE374 UE262	# Sagittal pazaisharp
+<Multi_key> <Multi_key> <p> <a> <z> <a> <o> <f> <l> <a> <t>				: ""	UE375 UE260	# Sagittal pazaoflat
+<Multi_key> <Multi_key> <p> <a> <z> <a> <o> <d> <o> <u> <b> <l> <e> <s> <h> <a> <r> <p>	: ""	UE375 UE47D	# Sagittal pazaodoublesharp
+<Multi_key> <Multi_key> <p> <a> <z> <a> <i> <d> <o> <u> <b> <l> <e> <f> <l> <a> <t>	: ""	UE374 UE264	# Sagittal pazaidoubleflat
+<Multi_key> <Multi_key> <p> <r> <a> <o> <d> <o> <u> <b> <l> <e> <s> <h> <a> <r> <p>	: ""	UE373 UE47D	# Sagittal praodoublesharp
+<Multi_key> <Multi_key> <p> <r> <a> <i> <d> <o> <u> <b> <l> <e> <f> <l> <a> <t>		: ""	UE372 UE264	# Sagittal praidoubleflat
+<Multi_key> <Multi_key> <z> <a> <o> <d> <o> <u> <b> <l> <e> <s> <h> <a> <r> <p>		: ""	UE371 UE47D	# Sagittal zaodoublesharp
+<Multi_key> <Multi_key> <z> <a> <i> <d> <o> <u> <b> <l> <e> <f> <l> <a> <t>		: ""	UE370 UE264	# Sagittal zaidoubleflat
+
+# Promethean Sagittal extension single-shaft symbols in the Bravura font (by Sagispeak)
+<Multi_key> <Multi_key> <r> <a> <i> <space>						: ""	UE390		# Sagittal rai
+<Multi_key> <Multi_key> <r> <a> <o> <space>						: ""	UE391		# Sagittal rao
+<Multi_key> <Multi_key> <s> <a> <i> <space>						: ""	UE392		# Sagittal sai
+<Multi_key> <Multi_key> <s> <a> <o> <space>						: ""	UE393		# Sagittal sao
+<Multi_key> <Multi_key> <s> <r> <a> <i> <space>						: ""	UE394		# Sagittal srai
+<Multi_key> <Multi_key> <s> <r> <a> <o> <space>						: ""	UE395		# Sagittal srao
+<Multi_key> <Multi_key> <s> <h> <a> <i> <space>						: ""	UE396		# Sagittal shai
+<Multi_key> <Multi_key> <s> <h> <a> <o> <space>						: ""	UE397		# Sagittal shao
+<Multi_key> <Multi_key> <r> <a> <z> <a> <i> <space>					: ""	UE398		# Sagittal razai
+<Multi_key> <Multi_key> <r> <a> <z> <a> <o> <space>					: ""	UE399		# Sagittal razao
+<Multi_key> <Multi_key> <r> <a> <t> <a> <i> <space>					: ""	UE39A		# Sagittal ratai
+<Multi_key> <Multi_key> <r> <a> <t> <a> <o> <space>					: ""	UE39B		# Sagittal ratao
+<Multi_key> <Multi_key> <s> <a> <t> <a> <i> <space>					: ""	UE39C		# Sagittal satai
+<Multi_key> <Multi_key> <s> <a> <t> <a> <o> <space>					: ""	UE39D		# Sagittal satao
+<Multi_key> <Multi_key> <s> <a> <k> <a> <i> <space>					: ""	UE39E		# Sagittal sakai
+<Multi_key> <Multi_key> <s> <a> <k> <a> <o> <space>					: ""	UE39F		# Sagittal sakao
+<Multi_key> <Multi_key> <p> <h> <r> <a> <i> <space>					: ""	UE3A0		# Sagittal phrai
+<Multi_key> <Multi_key> <p> <h> <r> <a> <o> <space>					: ""	UE3A1		# Sagittal phrao
+<Multi_key> <Multi_key> <j> <a> <z> <a> <i> <space>					: ""	UE3A2		# Sagittal jazai
+<Multi_key> <Multi_key> <j> <a> <z> <a> <o> <space>					: ""	UE3A3		# Sagittal jazao
+<Multi_key> <Multi_key> <j> <p> <a> <i> <space>						: ""	UE3A4		# Sagittal jpai
+<Multi_key> <Multi_key> <j> <p> <a> <o> <space>						: ""	UE3A5		# Sagittal jpao
+<Multi_key> <Multi_key> <p> <r> <a> <k> <a> <i> <space>					: ""	UE3A6		# Sagittal prakai
+<Multi_key> <Multi_key> <p> <r> <a> <k> <a> <o> <space>					: ""	UE3A7		# Sagittal prakao
+<Multi_key> <Multi_key> <k> <t> <a> <i> <space>						: ""	UE3A8		# Sagittal ktai
+<Multi_key> <Multi_key> <k> <t> <a> <o> <space>						: ""	UE3A9		# Sagittal ktao
+<Multi_key> <Multi_key> <k> <h> <a> <i> <space>						: ""	UE3AA		# Sagittal khai
+<Multi_key> <Multi_key> <k> <h> <a> <o> <space>						: ""	UE3AB		# Sagittal khao
+<Multi_key> <Multi_key> <r> <a> <k> <h> <a> <i> <space>					: ""	UE3AC		# Sagittal rakhai
+<Multi_key> <Multi_key> <r> <a> <k> <h> <a> <o> <space>					: ""	UE3AD		# Sagittal rakhao
+
+# Promethean Sagittal extension conventional symbol and sagittal combinations in the Bravura font (by Sagispeak)
+<Multi_key> <Multi_key> <s> <a> <k> <a> <o> <s> <h> <a> <r> <p>				: ""	UE39F UE262	# Sagittal sakaosharp
+<Multi_key> <Multi_key> <s> <a> <k> <a> <i> <f> <l> <a> <t>				: ""	UE39E UE260	# Sagittal sakaiflat
+<Multi_key> <Multi_key> <s> <a> <t> <a> <o> <s> <h> <a> <r> <p>				: ""	UE39D UE262	# Sagittal sataosharp
+<Multi_key> <Multi_key> <s> <a> <t> <a> <i> <f> <l> <a> <t>				: ""	UE39C UE260	# Sagittal sataiflat
+<Multi_key> <Multi_key> <r> <a> <t> <a> <o> <s> <h> <a> <r> <p>				: ""	UE39B UE262	# Sagittal rataosharp
+<Multi_key> <Multi_key> <r> <a> <t> <a> <i> <f> <l> <a> <t>				: ""	UE39A UE260	# Sagittal rataiflat
+<Multi_key> <Multi_key> <r> <a> <z> <a> <o> <s> <h> <a> <r> <p>				: ""	UE399 UE262	# Sagittal razaosharp
+<Multi_key> <Multi_key> <r> <a> <z> <a> <i> <f> <l> <a> <t>				: ""	UE398 UE260	# Sagittal razaiflat
+<Multi_key> <Multi_key> <s> <h> <a> <o> <s> <h> <a> <r> <p>				: ""	UE397 UE262	# Sagittal shaosharp
+<Multi_key> <Multi_key> <s> <h> <a> <i> <f> <l> <a> <t>					: ""	UE396 UE260	# Sagittal shaiflat
+<Multi_key> <Multi_key> <s> <r> <a> <o> <s> <h> <a> <r> <p>				: ""	UE395 UE262	# Sagittal sraosharp
+<Multi_key> <Multi_key> <s> <r> <a> <i> <f> <l> <a> <t>					: ""	UE394 UE260	# Sagittal sraiflat
+<Multi_key> <Multi_key> <s> <a> <o> <s> <h> <a> <r> <p>					: ""	UE393 UE262	# Sagittal saosharp
+<Multi_key> <Multi_key> <s> <a> <i> <f> <l> <a> <t>					: ""	UE392 UE260	# Sagittal saiflat
+<Multi_key> <Multi_key> <r> <a> <o> <s> <h> <a> <r> <p>					: ""	UE391 UE262	# Sagittal raosharp
+<Multi_key> <Multi_key> <r> <a> <i> <f> <l> <a> <t>					: ""	UE390 UE260	# Sagittal raiflat
+<Multi_key> <Multi_key> <r> <a> <i> <s> <h> <a> <r> <p>					: ""	UE390 UE262	# Sagittal raisharp
+<Multi_key> <Multi_key> <r> <a> <o> <f> <l> <a> <t>					: ""	UE391 UE260	# Sagittal raoflat
+<Multi_key> <Multi_key> <s> <a> <i> <s> <h> <a> <r> <p>					: ""	UE392 UE262	# Sagittal saisharp
+<Multi_key> <Multi_key> <s> <a> <o> <f> <l> <a> <t>					: ""	UE393 UE260	# Sagittal saoflat
+<Multi_key> <Multi_key> <s> <r> <a> <i> <s> <h> <a> <r> <p>				: ""	UE394 UE262	# Sagittal sraisharp
+<Multi_key> <Multi_key> <s> <r> <a> <o> <f> <l> <a> <t>					: ""	UE395 UE260	# Sagittal sraoflat
+<Multi_key> <Multi_key> <s> <h> <a> <i> <s> <h> <a> <r> <p>				: ""	UE396 UE262	# Sagittal shaisharp
+<Multi_key> <Multi_key> <s> <h> <a> <o> <f> <l> <a> <t>					: ""	UE397 UE260	# Sagittal shaoflat
+<Multi_key> <Multi_key> <r> <a> <z> <a> <i> <s> <h> <a> <r> <p>				: ""	UE398 UE262	# Sagittal razaisharp
+<Multi_key> <Multi_key> <r> <a> <z> <a> <o> <f> <l> <a> <t>				: ""	UE399 UE260	# Sagittal razaoflat
+<Multi_key> <Multi_key> <r> <a> <t> <a> <i> <s> <h> <a> <r> <p>				: ""	UE39A UE262	# Sagittal rataisharp
+<Multi_key> <Multi_key> <r> <a> <t> <a> <o> <f> <l> <a> <t>				: ""	UE39B UE260	# Sagittal rataoflat
+<Multi_key> <Multi_key> <s> <a> <t> <a> <i> <s> <h> <a> <r> <p>				: ""	UE39C UE262	# Sagittal sataisharp
+<Multi_key> <Multi_key> <s> <a> <t> <a> <o> <f> <l> <a> <t>				: ""	UE39D UE260	# Sagittal sataoflat
+<Multi_key> <Multi_key> <s> <a> <k> <a> <i> <s> <h> <a> <r> <p>				: ""	UE39E UE262	# Sagittal sakaisharp
+<Multi_key> <Multi_key> <s> <a> <k> <a> <o> <f> <l> <a> <t>				: ""	UE39F UE260	# Sagittal sakaoflat
+<Multi_key> <Multi_key> <p> <h> <r> <a> <i> <s> <h> <a> <r> <p>				: ""	UE3A0 UE262	# Sagittal phraisharp
+<Multi_key> <Multi_key> <p> <h> <r> <a> <o> <f> <l> <a> <t>				: ""	UE3A1 UE260	# Sagittal phraoflat
+<Multi_key> <Multi_key> <j> <a> <z> <a> <i> <s> <h> <a> <r> <p>				: ""	UE3A2 UE262	# Sagittal jazaisharp
+<Multi_key> <Multi_key> <j> <a> <z> <a> <o> <f> <l> <a> <t>				: ""	UE3A3 UE260	# Sagittal jazaoflat
+<Multi_key> <Multi_key> <j> <p> <a> <i> <s> <h> <a> <r> <p>				: ""	UE3A4 UE262	# Sagittal jpaisharp
+<Multi_key> <Multi_key> <j> <p> <a> <o> <f> <l> <a> <t>					: ""	UE3A5 UE260	# Sagittal jpaoflat
+<Multi_key> <Multi_key> <p> <r> <a> <k> <a> <i> <s> <h> <a> <r> <p>			: ""	UE3A6 UE262	# Sagittal prakaisharp
+<Multi_key> <Multi_key> <p> <r> <a> <k> <a> <o> <f> <l> <a> <t>				: ""	UE3A7 UE260	# Sagittal prakaoflat
+<Multi_key> <Multi_key> <k> <t> <a> <i> <s> <h> <a> <r> <p>				: ""	UE3A8 UE262	# Sagittal ktaisharp
+<Multi_key> <Multi_key> <k> <t> <a> <o> <f> <l> <a> <t>					: ""	UE3A9 UE260	# Sagittal ktaoflat
+<Multi_key> <Multi_key> <k> <h> <a> <i> <s> <h> <a> <r> <p>				: ""	UE3AA UE262	# Sagittal khaisharp
+<Multi_key> <Multi_key> <k> <h> <a> <o> <f> <l> <a> <t>					: ""	UE3AB UE260	# Sagittal khaoflat
+<Multi_key> <Multi_key> <r> <a> <k> <h> <a> <i> <s> <h> <a> <r> <p>			: ""	UE3AC UE262	# Sagittal rakhaisharp
+<Multi_key> <Multi_key> <r> <a> <k> <h> <a> <o> <f> <l> <a> <t>				: ""	UE3AD UE260	# Sagittal rakhaoflat
+<Multi_key> <Multi_key> <s> <a> <k> <a> <o> <d> <o> <u> <b> <l> <e> <s> <h> <a> <r> <p>	: ""	UE39F UE47D	# Sagittal sakaodoublesharp
+<Multi_key> <Multi_key> <s> <a> <k> <a> <i> <d> <o> <u> <b> <l> <e> <f> <l> <a> <t>	: ""	UE39E UE264	# Sagittal sakaidoubleflat
+<Multi_key> <Multi_key> <s> <a> <t> <a> <o> <d> <o> <u> <b> <l> <e> <s> <h> <a> <r> <p>	: ""	UE39D UE47D	# Sagittal sataodoublesharp
+<Multi_key> <Multi_key> <s> <a> <t> <a> <i> <d> <o> <u> <b> <l> <e> <f> <l> <a> <t>	: ""	UE39C UE264	# Sagittal sataidoubleflat
+<Multi_key> <Multi_key> <r> <a> <t> <a> <o> <d> <o> <u> <b> <l> <e> <s> <h> <a> <r> <p>	: ""	UE39B UE47D	# Sagittal rataodoublesharp
+<Multi_key> <Multi_key> <r> <a> <t> <a> <i> <d> <o> <u> <b> <l> <e> <f> <l> <a> <t>	: ""	UE39A UE264	# Sagittal rataidoubleflat
+<Multi_key> <Multi_key> <r> <a> <z> <a> <o> <d> <o> <u> <b> <l> <e> <s> <h> <a> <r> <p>	: ""	UE399 UE47D	# Sagittal razaodoublesharp
+<Multi_key> <Multi_key> <r> <a> <z> <a> <i> <d> <o> <u> <b> <l> <e> <f> <l> <a> <t>	: ""	UE398 UE264	# Sagittal razaidoubleflat
+<Multi_key> <Multi_key> <s> <h> <a> <o> <d> <o> <u> <b> <l> <e> <s> <h> <a> <r> <p>	: ""	UE397 UE47D	# Sagittal shaodoublesharp
+<Multi_key> <Multi_key> <s> <h> <a> <i> <d> <o> <u> <b> <l> <e> <f> <l> <a> <t>		: ""	UE396 UE264	# Sagittal shaidoubleflat
+<Multi_key> <Multi_key> <s> <r> <a> <o> <d> <o> <u> <b> <l> <e> <s> <h> <a> <r> <p>	: ""	UE395 UE47D	# Sagittal sraodoublesharp
+<Multi_key> <Multi_key> <s> <r> <a> <i> <d> <o> <u> <b> <l> <e> <f> <l> <a> <t>		: ""	UE394 UE264	# Sagittal sraidoubleflat
+<Multi_key> <Multi_key> <s> <a> <o> <d> <o> <u> <b> <l> <e> <s> <h> <a> <r> <p>		: ""	UE393 UE47D	# Sagittal saodoublesharp
+<Multi_key> <Multi_key> <s> <a> <i> <d> <o> <u> <b> <l> <e> <f> <l> <a> <t>		: ""	UE392 UE264	# Sagittal saidoubleflat
+<Multi_key> <Multi_key> <r> <a> <o> <d> <o> <u> <b> <l> <e> <s> <h> <a> <r> <p>		: ""	UE391 UE47D	# Sagittal raodoublesharp
+<Multi_key> <Multi_key> <r> <a> <i> <d> <o> <u> <b> <l> <e> <f> <l> <a> <t>		: ""	UE390 UE264	# Sagittal raidoubleflat
+
+# Herculean Sagittal diacritics in the Bravura font (by Sagispeak)
+<Multi_key> <Multi_key> <a> <i> 							: ""	UE3F0		# Sagittal ai
+<Multi_key> <Multi_key> <a> <o> 							: ""	UE3F1		# Sagittal ao
+<Multi_key> <Multi_key> <b> <i> 							: ""	UE3F2		# Sagittal bi
+<Multi_key> <Multi_key> <b> <o> 							: ""	UE3F3		# Sagittal bo
+
+# Olympian Sagittal diacritics in the Bravura font (by Sagispeak)
+<Multi_key> <Multi_key> <m> <i> <space> 						: ""	UE3F4		# Sagittal mi
+<Multi_key> <Multi_key> <m> <o> <space> 						: ""	UE3F5		# Sagittal mo
+<Multi_key> <Multi_key> <m> <i> <m> <i> 						: ""	UE3F6		# Sagittal mimi
+<Multi_key> <Multi_key> <m> <o> <m> <o> 						: ""	UE3F7		# Sagittal momo
+
+# Spartan Sagittal single-shaft symbols in the Bravura font (by Sagispeak, alternative spelling)
+<Multi_key> <Multi_key> <f> <a> <i> <space>						: ""	UE306		# Sagittal fai
+<Multi_key> <Multi_key> <f> <a> <o> <space>						: ""	UE307		# Sagittal fao
+<Multi_key> <Multi_key> <g> <a> <i> <space>						: ""	UE308		# Sagittal gai
+<Multi_key> <Multi_key> <g> <a> <o> <space>						: ""	UE309		# Sagittal gao
+<Multi_key> <Multi_key> <v> <a> <i> <space>						: ""	UE30A		# Sagittal vai
+<Multi_key> <Multi_key> <v> <a> <o> <space>						: ""	UE30B		# Sagittal vao
+<Multi_key> <Multi_key> <w> <a> <i> <space>						: ""	UE30C		# Sagittal wai
+<Multi_key> <Multi_key> <w> <a> <o> <space>						: ""	UE30D		# Sagittal wao
+<Multi_key> <Multi_key> <d> <a> <i> <space>						: ""	UE30E		# Sagittal dai
+<Multi_key> <Multi_key> <d> <a> <o> <space>						: ""	UE30F		# Sagittal dao
+
+# Spartan Sagittal conventional symbol and sagittal combinations in the Bravura font (by Sagispeak, alternative spelling)
+<Multi_key> <Multi_key> <f> <a> <o> <s> <h> <a> <r> <p>					: ""	UE307 UE262	# Sagittal faosharp
+<Multi_key> <Multi_key> <f> <a> <i> <f> <l> <a> <t>					: ""	UE306 UE260	# Sagittal faiflat
+<Multi_key> <Multi_key> <f> <a> <i> <s> <h> <a> <r> <p>					: ""	UE306 UE262	# Sagittal faisharp
+<Multi_key> <Multi_key> <f> <a> <o> <f> <l> <a> <t>					: ""	UE307 UE260	# Sagittal faoflat
+<Multi_key> <Multi_key> <g> <a> <i> <s> <h> <a> <r> <p>					: ""	UE308 UE262	# Sagittal gaisharp
+<Multi_key> <Multi_key> <g> <a> <o> <f> <l> <a> <t>					: ""	UE309 UE260	# Sagittal gaoflat
+<Multi_key> <Multi_key> <v> <a> <i> <s> <h> <a> <r> <p>					: ""	UE30A UE262	# Sagittal vaisharp
+<Multi_key> <Multi_key> <v> <a> <o> <f> <l> <a> <t>					: ""	UE30B UE260	# Sagittal vaoflat
+<Multi_key> <Multi_key> <w> <a> <i> <s> <h> <a> <r> <p>					: ""	UE30C UE262	# Sagittal waisharp
+<Multi_key> <Multi_key> <w> <a> <o> <f> <l> <a> <t>					: ""	UE30D UE260	# Sagittal waoflat
+<Multi_key> <Multi_key> <d> <a> <i> <s> <h> <a> <r> <p>					: ""	UE30E UE262	# Sagittal daisharp
+<Multi_key> <Multi_key> <d> <a> <o> <f> <l> <a> <t>					: ""	UE30F UE260	# Sagittal daoflat
+<Multi_key> <Multi_key> <f> <a> <o> <d> <o> <u> <b> <l> <e> <s> <h> <a> <r> <p>		: ""	UE307 UE47D	# Sagittal faodoublesharp
+<Multi_key> <Multi_key> <f> <a> <i> <d> <o> <u> <b> <l> <e> <f> <l> <a> <t>		: ""	UE306 UE264	# Sagittal faidoubleflat
+
+# Promethean Sagittal extension single-shaft symbols in the Bravura font (by Sagispeak, alternative spelling)
+<Multi_key> <Multi_key> <s> <l> <a> <i> <space>						: ""	UE394		# Sagittal slai
+<Multi_key> <Multi_key> <s> <l> <a> <o> <space>						: ""	UE395		# Sagittal slao
+<Multi_key> <Multi_key> <f> <r> <a> <i> <space>						: ""	UE3A0		# Sagittal frai
+<Multi_key> <Multi_key> <f> <r> <a> <o> <space>						: ""	UE3A1		# Sagittal frao
+<Multi_key> <Multi_key> <v> <r> <a> <i> <space>						: ""	UE3A6		# Sagittal vrai
+<Multi_key> <Multi_key> <v> <r> <a> <o> <space>						: ""	UE3A7		# Sagittal vrao
+<Multi_key> <Multi_key> <c> <h> <a> <i> <space>						: ""	UE3AA		# Sagittal chai
+<Multi_key> <Multi_key> <c> <h> <a> <o> <space>						: ""	UE3AB		# Sagittal chao
+<Multi_key> <Multi_key> <r> <a> <c> <h> <a> <i> <space>					: ""	UE3AC		# Sagittal rachai
+<Multi_key> <Multi_key> <r> <a> <c> <h> <a> <o> <space>					: ""	UE3AD		# Sagittal rachao
+
+# Promethean Sagittal extension conventional symbol and sagittal combinations in the Bravura font (by Sagispeak, alternative spelling)
+<Multi_key> <Multi_key> <s> <l> <a> <o> <s> <h> <a> <r> <p>				: ""	UE395 UE262	# Sagittal slaosharp
+<Multi_key> <Multi_key> <s> <l> <a> <i> <f> <l> <a> <t>					: ""	UE394 UE260	# Sagittal slaiflat
+<Multi_key> <Multi_key> <s> <l> <a> <i> <s> <h> <a> <r> <p>				: ""	UE394 UE262	# Sagittal slaisharp
+<Multi_key> <Multi_key> <s> <l> <a> <o> <f> <l> <a> <t>					: ""	UE395 UE260	# Sagittal slaoflat
+<Multi_key> <Multi_key> <f> <r> <a> <i> <s> <h> <a> <r> <p>				: ""	UE3A0 UE262	# Sagittal fraisharp
+<Multi_key> <Multi_key> <f> <r> <a> <o> <f> <l> <a> <t>					: ""	UE3A1 UE260	# Sagittal fraoflat
+<Multi_key> <Multi_key> <v> <r> <a> <i> <s> <h> <a> <r> <p>				: ""	UE3A6 UE262	# Sagittal vraisharp
+<Multi_key> <Multi_key> <v> <r> <a> <o> <f> <l> <a> <t>					: ""	UE3A7 UE260	# Sagittal vraoflat
+<Multi_key> <Multi_key> <c> <h> <a> <i> <s> <h> <a> <r> <p>				: ""	UE3AA UE262	# Sagittal chaisharp
+<Multi_key> <Multi_key> <c> <h> <a> <o> <f> <l> <a> <t>					: ""	UE3AB UE260	# Sagittal chaoflat
+<Multi_key> <Multi_key> <r> <a> <c> <h> <a> <i> <s> <h> <a> <r> <p>			: ""	UE3AC UE262	# Sagittal rachaisharp
+<Multi_key> <Multi_key> <r> <a> <c> <h> <a> <o> <f> <l> <a> <t>				: ""	UE3AD UE260	# Sagittal rachaoflat
+<Multi_key> <Multi_key> <s> <l> <a> <o> <d> <o> <u> <b> <l> <e> <s> <h> <a> <r> <p>	: ""	UE395 UE47D	# Sagittal slaodoublesharp
+<Multi_key> <Multi_key> <s> <l> <a> <i> <d> <o> <u> <b> <l> <e> <f> <l> <a> <t>		: ""	UE394 UE264	# Sagittal slaidoubleflat
+
+# Spartan Sagittal conventional symbol and sagittal combinations in the Bravura font (by Sagispeak-ASCII-hybrid)
+<Multi_key> <Multi_key> <p> <h> <a> <o> <#>						: ""	UE307 UE262	# Sagittal phaosharp
+<Multi_key> <Multi_key> <p> <h> <a> <i> <b> <space>					: ""	UE306 UE260	# Sagittal phaiflat
+<Multi_key> <Multi_key> <t> <a> <o> <#>							: ""	UE305 UE262	# Sagittal taosharp
+<Multi_key> <Multi_key> <t> <a> <i> <b> <space>						: ""	UE304 UE260	# Sagittal taiflat
+<Multi_key> <Multi_key> <p> <a> <o> <#>							: ""	UE303 UE262	# Sagittal paosharp
+<Multi_key> <Multi_key> <p> <a> <i> <b> <space>						: ""	UE302 UE260	# Sagittal paiflat
+<Multi_key> <Multi_key> <n> <a> <o> <#>							: ""	UE301 UE262	# Sagittal naosharp
+<Multi_key> <Multi_key> <n> <a> <i> <b> <space>						: ""	UE300 UE260	# Sagittal naiflat
+<Multi_key> <Multi_key> <n> <a> <i> <#>							: ""	UE300 UE262	# Sagittal naisharp
+<Multi_key> <Multi_key> <n> <a> <o> <b> <space>						: ""	UE301 UE260	# Sagittal naoflat
+<Multi_key> <Multi_key> <p> <a> <i> <#>							: ""	UE302 UE262	# Sagittal paisharp
+<Multi_key> <Multi_key> <p> <a> <o> <b> <space>						: ""	UE303 UE260	# Sagittal paoflat
+<Multi_key> <Multi_key> <t> <a> <i> <#>							: ""	UE304 UE262	# Sagittal taisharp
+<Multi_key> <Multi_key> <t> <a> <o> <b> <space>						: ""	UE305 UE260	# Sagittal taoflat
+<Multi_key> <Multi_key> <p> <h> <a> <i> <#>						: ""	UE306 UE262	# Sagittal phaisharp
+<Multi_key> <Multi_key> <p> <h> <a> <o> <b> <space>					: ""	UE307 UE260	# Sagittal phaoflat
+<Multi_key> <Multi_key> <p> <a> <t> <a> <i> <#>						: ""	UE308 UE262	# Sagittal pataisharp
+<Multi_key> <Multi_key> <p> <a> <t> <a> <o> <b> <space>					: ""	UE309 UE260	# Sagittal pataoflat
+<Multi_key> <Multi_key> <p> <a> <k> <a> <i> <#>						: ""	UE30A UE262	# Sagittal pakaisharp
+<Multi_key> <Multi_key> <p> <a> <k> <a> <o> <b> <space>					: ""	UE30B UE260	# Sagittal pakaoflat
+<Multi_key> <Multi_key> <j> <a> <t> <a> <i> <#>						: ""	UE30C UE262	# Sagittal jataisharp
+<Multi_key> <Multi_key> <j> <a> <t> <a> <o> <b> <space>					: ""	UE30D UE260	# Sagittal jataoflat
+<Multi_key> <Multi_key> <j> <a> <k> <a> <i> <#>						: ""	UE30E UE262	# Sagittal jakaisharp
+<Multi_key> <Multi_key> <j> <a> <k> <a> <o> <b> <space>					: ""	UE30F UE260	# Sagittal jakaoflat
+<Multi_key> <Multi_key> <p> <h> <a> <o> <x>						: ""	UE307 UE47D	# Sagittal phaodoublesharp
+<Multi_key> <Multi_key> <p> <h> <a> <i> <b> <b>						: ""	UE306 UE264	# Sagittal phaidoubleflat
+<Multi_key> <Multi_key> <t> <a> <o> <x>							: ""	UE305 UE47D	# Sagittal taodoublesharp
+<Multi_key> <Multi_key> <t> <a> <i> <b> <b>						: ""	UE304 UE264	# Sagittal taidoubleflat
+<Multi_key> <Multi_key> <p> <a> <o> <x>							: ""	UE303 UE47D	# Sagittal paodoublesharp
+<Multi_key> <Multi_key> <p> <a> <i> <b> <b>						: ""	UE302 UE264	# Sagittal paidoubleflat
+<Multi_key> <Multi_key> <n> <a> <o> <x>							: ""	UE301 UE47D	# Sagittal naodoublesharp
+<Multi_key> <Multi_key> <n> <a> <i> <b> <b>						: ""	UE300 UE264	# Sagittal naidoubleflat
+
+# Athenian Sagittal extension symbols in the Bravura font (Sagispeak-ASCII-hybrid)
+<Multi_key> <Multi_key> <j> <a> <n> <a> <o> <#>						: ""	UE349 UE262	# Sagittal janaosharp
+<Multi_key> <Multi_key> <j> <a> <n> <a> <i> <b> <space>					: ""	UE348 UE260	# Sagittal janaiflat
+<Multi_key> <Multi_key> <j> <a> <o> <#>							: ""	UE347 UE262	# Sagittal jaosharp
+<Multi_key> <Multi_key> <j> <a> <i> <b> <space>						: ""	UE346 UE260	# Sagittal jaiflat
+<Multi_key> <Multi_key> <k> <a> <o> <#>							: ""	UE345 UE262	# Sagittal kaosharp
+<Multi_key> <Multi_key> <k> <a> <i> <b> <space>						: ""	UE344 UE260	# Sagittal kaiflat
+<Multi_key> <Multi_key> <s> <a> <n> <a> <o> <#>						: ""	UE343 UE262	# Sagittal sanaosharp
+<Multi_key> <Multi_key> <s> <a> <n> <a> <i> <b> <space>					: ""	UE342 UE260	# Sagittal sanaiflat
+<Multi_key> <Multi_key> <r> <a> <n> <a> <o> <#>						: ""	UE341 UE262	# Sagittal ranaosharp
+<Multi_key> <Multi_key> <r> <a> <n> <a> <i> <b> <space>					: ""	UE340 UE260	# Sagittal ranaiflat
+<Multi_key> <Multi_key> <r> <a> <n> <a> <i> <#>						: ""	UE340 UE262	# Sagittal ranaisharp
+<Multi_key> <Multi_key> <r> <a> <n> <a> <o> <b> <space>					: ""	UE341 UE260	# Sagittal ranaoflat
+<Multi_key> <Multi_key> <s> <a> <n> <a> <i> <#>						: ""	UE342 UE262	# Sagittal sanaisharp
+<Multi_key> <Multi_key> <s> <a> <n> <a> <o> <b> <space>					: ""	UE343 UE260	# Sagittal sanaoflat
+<Multi_key> <Multi_key> <k> <a> <i> <#>							: ""	UE344 UE262	# Sagittal kaisharp
+<Multi_key> <Multi_key> <k> <a> <o> <b> <space>						: ""	UE345 UE260	# Sagittal kaoflat
+<Multi_key> <Multi_key> <j> <a> <i> <#>							: ""	UE346 UE262	# Sagittal jaisharp
+<Multi_key> <Multi_key> <j> <a> <o> <b> <space>						: ""	UE347 UE260	# Sagittal jaoflat
+<Multi_key> <Multi_key> <j> <a> <n> <a> <i> <#>						: ""	UE348 UE262	# Sagittal janaisharp
+<Multi_key> <Multi_key> <j> <a> <n> <a> <o> <b> <space>					: ""	UE349 UE260	# Sagittal janaoflat
+<Multi_key> <Multi_key> <j> <a> <n> <a> <o> <x>						: ""	UE349 UE47D	# Sagittal janaodoublesharp
+<Multi_key> <Multi_key> <j> <a> <n> <a> <i> <b> <b>					: ""	UE348 UE264	# Sagittal janaidoubleflat
+<Multi_key> <Multi_key> <j> <a> <o> <x>							: ""	UE347 UE47D	# Sagittal jaodoublesharp
+<Multi_key> <Multi_key> <j> <a> <i> <b> <b>						: ""	UE346 UE264	# Sagittal jaidoubleflat
+<Multi_key> <Multi_key> <k> <a> <o> <x>							: ""	UE345 UE47D	# Sagittal kaodoublesharp
+<Multi_key> <Multi_key> <k> <a> <i> <b> <b>						: ""	UE344 UE264	# Sagittal kaidoubleflat
+<Multi_key> <Multi_key> <s> <a> <n> <a> <o> <x>						: ""	UE343 UE47D	# Sagittal sanaodoublesharp
+<Multi_key> <Multi_key> <s> <a> <n> <a> <i> <b> <b>					: ""	UE342 UE264	# Sagittal sanaidoubleflat
+<Multi_key> <Multi_key> <r> <a> <n> <a> <o> <x>						: ""	UE341 UE47D	# Sagittal ranaodoublesharp
+<Multi_key> <Multi_key> <r> <a> <n> <a> <i> <b> <b>					: ""	UE340 UE264	# Sagittal ranaidoubleflat
+
+# Trojan Sagittal extension symbols in the Bravura font (Sagispeak-ASCII-hybrid)
+<Multi_key> <Multi_key> <p> <a> <z> <a> <o> <#>						: ""	UE375 UE262	# Sagittal pazaosharp
+<Multi_key> <Multi_key> <p> <a> <z> <a> <i> <b> <space>					: ""	UE374 UE260	# Sagittal pazaiflat
+<Multi_key> <Multi_key> <p> <r> <a> <o> <#>						: ""	UE373 UE262	# Sagittal praosharp
+<Multi_key> <Multi_key> <p> <r> <a> <i> <b> <space>					: ""	UE372 UE260	# Sagittal praiflat
+<Multi_key> <Multi_key> <z> <a> <o> <#>							: ""	UE371 UE262	# Sagittal zaosharp
+<Multi_key> <Multi_key> <z> <a> <i> <b> <space>						: ""	UE370 UE260	# Sagittal zaiflat
+<Multi_key> <Multi_key> <z> <a> <i> <#>							: ""	UE370 UE262	# Sagittal zaisharp
+<Multi_key> <Multi_key> <z> <a> <o> <b> <space>						: ""	UE371 UE260	# Sagittal zaoflat
+<Multi_key> <Multi_key> <p> <r> <a> <i> <#>						: ""	UE372 UE262	# Sagittal praisharp
+<Multi_key> <Multi_key> <p> <r> <a> <o> <b> <space>					: ""	UE373 UE260	# Sagittal praoflat
+<Multi_key> <Multi_key> <p> <a> <z> <a> <i> <#>						: ""	UE374 UE262	# Sagittal pazaisharp
+<Multi_key> <Multi_key> <p> <a> <z> <a> <o> <b> <space>					: ""	UE375 UE260	# Sagittal pazaoflat
+<Multi_key> <Multi_key> <p> <a> <z> <a> <o> <x>						: ""	UE375 UE47D	# Sagittal pazaodoublesharp
+<Multi_key> <Multi_key> <p> <a> <z> <a> <i> <b> <b>					: ""	UE374 UE264	# Sagittal pazaidoubleflat
+<Multi_key> <Multi_key> <p> <r> <a> <o> <x>						: ""	UE373 UE47D	# Sagittal praodoublesharp
+<Multi_key> <Multi_key> <p> <r> <a> <i> <b> <b>						: ""	UE372 UE264	# Sagittal praidoubleflat
+<Multi_key> <Multi_key> <z> <a> <o> <x>							: ""	UE371 UE47D	# Sagittal zaodoublesharp
+<Multi_key> <Multi_key> <z> <a> <i> <b> <b>						: ""	UE370 UE264	# Sagittal zaidoubleflat
+
+# Promethean Sagittal extension conventional symbol and sagittal combinations in the Bravura font (by Sagispeak-ASCII-hybrid)
+<Multi_key> <Multi_key> <s> <a> <k> <a> <o> <#>						: ""	UE39F UE262	# Sagittal sakaosharp
+<Multi_key> <Multi_key> <s> <a> <k> <a> <i> <b> <space>					: ""	UE39E UE260	# Sagittal sakaiflat
+<Multi_key> <Multi_key> <s> <a> <t> <a> <o> <#>						: ""	UE39D UE262	# Sagittal sataosharp
+<Multi_key> <Multi_key> <s> <a> <t> <a> <i> <b> <space>					: ""	UE39C UE260	# Sagittal sataiflat
+<Multi_key> <Multi_key> <r> <a> <t> <a> <o> <#>						: ""	UE39B UE262	# Sagittal rataosharp
+<Multi_key> <Multi_key> <r> <a> <t> <a> <i> <b> <space>					: ""	UE39A UE260	# Sagittal rataiflat
+<Multi_key> <Multi_key> <r> <a> <z> <a> <o> <#>						: ""	UE399 UE262	# Sagittal razaosharp
+<Multi_key> <Multi_key> <r> <a> <z> <a> <i> <b> <space>					: ""	UE398 UE260	# Sagittal razaiflat
+<Multi_key> <Multi_key> <s> <h> <a> <o> <#>						: ""	UE397 UE262	# Sagittal shaosharp
+<Multi_key> <Multi_key> <s> <h> <a> <i> <b> <space>					: ""	UE396 UE260	# Sagittal shaiflat
+<Multi_key> <Multi_key> <s> <r> <a> <o> <#>						: ""	UE395 UE262	# Sagittal sraosharp
+<Multi_key> <Multi_key> <s> <r> <a> <i> <b> <space>					: ""	UE394 UE260	# Sagittal sraiflat
+<Multi_key> <Multi_key> <s> <a> <o> <#>							: ""	UE393 UE262	# Sagittal saosharp
+<Multi_key> <Multi_key> <s> <a> <i> <b> <space>						: ""	UE392 UE260	# Sagittal saiflat
+<Multi_key> <Multi_key> <r> <a> <o> <#>							: ""	UE391 UE262	# Sagittal raosharp
+<Multi_key> <Multi_key> <r> <a> <i> <b> <space>						: ""	UE390 UE260	# Sagittal raiflat
+<Multi_key> <Multi_key> <r> <a> <i> <#>							: ""	UE390 UE262	# Sagittal raisharp
+<Multi_key> <Multi_key> <r> <a> <o> <b> <space>						: ""	UE391 UE260	# Sagittal raoflat
+<Multi_key> <Multi_key> <s> <a> <i> <#>							: ""	UE392 UE262	# Sagittal saisharp
+<Multi_key> <Multi_key> <s> <a> <o> <b> <space>						: ""	UE393 UE260	# Sagittal saoflat
+<Multi_key> <Multi_key> <s> <r> <a> <i> <#>						: ""	UE394 UE262	# Sagittal sraisharp
+<Multi_key> <Multi_key> <s> <r> <a> <o> <b> <space>					: ""	UE395 UE260	# Sagittal sraoflat
+<Multi_key> <Multi_key> <s> <h> <a> <i> <#>						: ""	UE396 UE262	# Sagittal shaisharp
+<Multi_key> <Multi_key> <s> <h> <a> <o> <b> <space>					: ""	UE397 UE260	# Sagittal shaoflat
+<Multi_key> <Multi_key> <r> <a> <z> <a> <i> <#>						: ""	UE398 UE262	# Sagittal razaisharp
+<Multi_key> <Multi_key> <r> <a> <z> <a> <o> <b> <space>					: ""	UE399 UE260	# Sagittal razaoflat
+<Multi_key> <Multi_key> <r> <a> <t> <a> <i> <#>						: ""	UE39A UE262	# Sagittal rataisharp
+<Multi_key> <Multi_key> <r> <a> <t> <a> <o> <b> <space>					: ""	UE39B UE260	# Sagittal rataoflat
+<Multi_key> <Multi_key> <s> <a> <t> <a> <i> <#>						: ""	UE39C UE262	# Sagittal sataisharp
+<Multi_key> <Multi_key> <s> <a> <t> <a> <o> <b> <space>					: ""	UE39D UE260	# Sagittal sataoflat
+<Multi_key> <Multi_key> <s> <a> <k> <a> <i> <#>						: ""	UE39E UE262	# Sagittal sakaisharp
+<Multi_key> <Multi_key> <s> <a> <k> <a> <o> <b> <space>					: ""	UE39F UE260	# Sagittal sakaoflat
+<Multi_key> <Multi_key> <p> <h> <r> <a> <i> <#>						: ""	UE3A0 UE262	# Sagittal phraisharp
+<Multi_key> <Multi_key> <p> <h> <r> <a> <o> <b> <space>					: ""	UE3A1 UE260	# Sagittal phraoflat
+<Multi_key> <Multi_key> <j> <a> <z> <a> <i> <#>						: ""	UE3A2 UE262	# Sagittal jazaisharp
+<Multi_key> <Multi_key> <j> <a> <z> <a> <o> <b> <space>					: ""	UE3A3 UE260	# Sagittal jazaoflat
+<Multi_key> <Multi_key> <j> <p> <a> <i> <#>						: ""	UE3A4 UE262	# Sagittal jpaisharp
+<Multi_key> <Multi_key> <j> <p> <a> <o> <b> <space>					: ""	UE3A5 UE260	# Sagittal jpaoflat
+<Multi_key> <Multi_key> <p> <r> <a> <k> <a> <i> <#>					: ""	UE3A6 UE262	# Sagittal prakaisharp
+<Multi_key> <Multi_key> <p> <r> <a> <k> <a> <o> <b> <space>				: ""	UE3A7 UE260	# Sagittal prakaoflat
+<Multi_key> <Multi_key> <k> <t> <a> <i> <#>						: ""	UE3A8 UE262	# Sagittal ktaisharp
+<Multi_key> <Multi_key> <k> <t> <a> <o> <b> <space>					: ""	UE3A9 UE260	# Sagittal ktaoflat
+<Multi_key> <Multi_key> <k> <h> <a> <i> <#>						: ""	UE3AA UE262	# Sagittal khaisharp
+<Multi_key> <Multi_key> <k> <h> <a> <o> <b> <space>					: ""	UE3AB UE260	# Sagittal khaoflat
+<Multi_key> <Multi_key> <r> <a> <k> <h> <a> <i> <#>					: ""	UE3AC UE262	# Sagittal rakhaisharp
+<Multi_key> <Multi_key> <r> <a> <k> <h> <a> <o> <b> <space>				: ""	UE3AD UE260	# Sagittal rakhaoflat
+<Multi_key> <Multi_key> <s> <a> <k> <a> <o> <x>						: ""	UE39F UE47D	# Sagittal sakaodoublesharp
+<Multi_key> <Multi_key> <s> <a> <k> <a> <i> <b> <b>					: ""	UE39E UE264	# Sagittal sakaidoubleflat
+<Multi_key> <Multi_key> <s> <a> <t> <a> <o> <x>						: ""	UE39D UE47D	# Sagittal sataodoublesharp
+<Multi_key> <Multi_key> <s> <a> <t> <a> <i> <b> <b>					: ""	UE39C UE264	# Sagittal sataidoubleflat
+<Multi_key> <Multi_key> <r> <a> <t> <a> <o> <x>						: ""	UE39B UE47D	# Sagittal rataodoublesharp
+<Multi_key> <Multi_key> <r> <a> <t> <a> <i> <b> <b>					: ""	UE39A UE264	# Sagittal rataidoubleflat
+<Multi_key> <Multi_key> <r> <a> <z> <a> <o> <x>						: ""	UE399 UE47D	# Sagittal razaodoublesharp
+<Multi_key> <Multi_key> <r> <a> <z> <a> <i> <b> <b>					: ""	UE398 UE264	# Sagittal razaidoubleflat
+<Multi_key> <Multi_key> <s> <h> <a> <o> <x>						: ""	UE397 UE47D	# Sagittal shaodoublesharp
+<Multi_key> <Multi_key> <s> <h> <a> <i> <b> <b>						: ""	UE396 UE264	# Sagittal shaidoubleflat
+<Multi_key> <Multi_key> <s> <r> <a> <o> <x>						: ""	UE395 UE47D	# Sagittal sraodoublesharp
+<Multi_key> <Multi_key> <s> <r> <a> <i> <b> <b>						: ""	UE394 UE264	# Sagittal sraidoubleflat
+<Multi_key> <Multi_key> <s> <a> <o> <x>							: ""	UE393 UE47D	# Sagittal saodoublesharp
+<Multi_key> <Multi_key> <s> <a> <i> <b> <b>						: ""	UE392 UE264	# Sagittal saidoubleflat
+<Multi_key> <Multi_key> <r> <a> <o> <x>							: ""	UE391 UE47D	# Sagittal raodoublesharp
+<Multi_key> <Multi_key> <r> <a> <i> <b> <b>						: ""	UE390 UE264	# Sagittal raidoubleflat
+
+# Spartan Sagittal conventional symbol and sagittal combinations in the Bravura font (by Sagispeak-ASCII-hybrid, alternative spelling)
+<Multi_key> <Multi_key> <f> <a> <o> <#>							: ""	UE307 UE262	# Sagittal faosharp
+<Multi_key> <Multi_key> <f> <a> <i> <b> <space>						: ""	UE306 UE260	# Sagittal faiflat
+<Multi_key> <Multi_key> <f> <a> <i> <#>							: ""	UE306 UE262	# Sagittal faisharp
+<Multi_key> <Multi_key> <f> <a> <o> <b> <space>						: ""	UE307 UE260	# Sagittal faoflat
+<Multi_key> <Multi_key> <g> <a> <i> <#>							: ""	UE308 UE262	# Sagittal gaisharp
+<Multi_key> <Multi_key> <g> <a> <o> <b> <space>						: ""	UE309 UE260	# Sagittal gaoflat
+<Multi_key> <Multi_key> <v> <a> <i> <#>							: ""	UE30A UE262	# Sagittal vaisharp
+<Multi_key> <Multi_key> <v> <a> <o> <b> <space>						: ""	UE30B UE260	# Sagittal vaoflat
+<Multi_key> <Multi_key> <w> <a> <i> <#>							: ""	UE30C UE262	# Sagittal waisharp
+<Multi_key> <Multi_key> <w> <a> <o> <b> <space>						: ""	UE30D UE260	# Sagittal waoflat
+<Multi_key> <Multi_key> <d> <a> <i> <#>							: ""	UE30E UE262	# Sagittal daisharp
+<Multi_key> <Multi_key> <d> <a> <o> <b> <space>						: ""	UE30F UE260	# Sagittal daoflat
+<Multi_key> <Multi_key> <f> <a> <o> <x>							: ""	UE307 UE47D	# Sagittal faodoublesharp
+<Multi_key> <Multi_key> <f> <a> <i> <b> <b>						: ""	UE306 UE264	# Sagittal faidoubleflat
+
+# Promethean Sagittal extension conventional symbol and sagittal combinations in the Bravura font (by Sagispeak-ASCII-hybrid, alternative spelling)
+<Multi_key> <Multi_key> <s> <l> <a> <o> <#>						: ""	UE395 UE262	# Sagittal slaosharp
+<Multi_key> <Multi_key> <s> <l> <a> <i> <b> <space>					: ""	UE394 UE260	# Sagittal slaiflat
+<Multi_key> <Multi_key> <s> <l> <a> <i> <#>						: ""	UE394 UE262	# Sagittal slaisharp
+<Multi_key> <Multi_key> <s> <l> <a> <o> <b> <space>					: ""	UE395 UE260	# Sagittal slaoflat
+<Multi_key> <Multi_key> <f> <r> <a> <i> <#>						: ""	UE3A0 UE262	# Sagittal fraisharp
+<Multi_key> <Multi_key> <f> <r> <a> <o> <b> <space>					: ""	UE3A1 UE260	# Sagittal fraoflat
+<Multi_key> <Multi_key> <v> <r> <a> <i> <#>						: ""	UE3A6 UE262	# Sagittal vraisharp
+<Multi_key> <Multi_key> <v> <r> <a> <o> <b> <space>					: ""	UE3A7 UE260	# Sagittal vraoflat
+<Multi_key> <Multi_key> <c> <h> <a> <i> <#>						: ""	UE3AA UE262	# Sagittal chaisharp
+<Multi_key> <Multi_key> <c> <h> <a> <o> <b> <space>					: ""	UE3AB UE260	# Sagittal chaoflat
+<Multi_key> <Multi_key> <r> <a> <c> <h> <a> <i> <#>					: ""	UE3AC UE262	# Sagittal rachaisharp
+<Multi_key> <Multi_key> <r> <a> <c> <h> <a> <o> <b> <space>				: ""	UE3AD UE260	# Sagittal rachaoflat
+<Multi_key> <Multi_key> <s> <l> <a> <o> <x>						: ""	UE395 UE47D	# Sagittal slaodoublesharp
+<Multi_key> <Multi_key> <s> <l> <a> <i> <b> <b>						: ""	UE394 UE264	# Sagittal slaidoubleflat
