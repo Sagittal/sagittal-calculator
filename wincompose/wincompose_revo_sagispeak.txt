@@ -1,4 +1,4 @@
-# Spartan Sagittal single-shaft symbols in the Bravura font (by Sagispeak)
+# Spartan Sagittal single-shaft sagittals in the Bravura font (by Sagispeak)
 <Multi_key> <Multi_key> <n> <a> <i> <space>						: ""	UE300		# Sagittal nai
 <Multi_key> <Multi_key> <n> <a> <o> <space>						: ""	UE301		# Sagittal nao
 <Multi_key> <Multi_key> <p> <a> <i> <space>						: ""	UE302		# Sagittal pai
@@ -16,7 +16,7 @@
 <Multi_key> <Multi_key> <j> <a> <k> <a> <i> <space>					: ""	UE30E		# Sagittal jakai
 <Multi_key> <Multi_key> <j> <a> <k> <a> <o> <space>					: ""	UE30F		# Sagittal jakao
 
-# Spartan Sagittal multi-shaft symbols in the Bravura font (by Sagispeak)
+# Spartan Sagittal multi-shaft sagittals in the Bravura font (by Sagispeak)
 <Multi_key> <Multi_key> <p> <h> <a> <o> <s> <h> <a> <r> <p>				: ""	UE310		# Sagittal phaosharp
 <Multi_key> <Multi_key> <p> <h> <a> <i> <f> <l> <a> <t>					: ""	UE311		# Sagittal phaiflat
 <Multi_key> <Multi_key> <t> <a> <o> <s> <h> <a> <r> <p>					: ""	UE312		# Sagittal taosharp
@@ -54,7 +54,7 @@
 <Multi_key> <Multi_key> <d> <o> <u> <b> <l> <e> <s> <h> <a> <r> <p>			: ""	UE334		# Sagittal doublesharp
 <Multi_key> <Multi_key> <d> <o> <u> <b> <l> <e> <f> <l> <a> <t>				: ""	UE335		# Sagittal doubleflat
 
-# Athenian Sagittal extension symbols in the Bravura font (by Sagispeak)
+# Athenian Sagittal extension sagittals in the Bravura font (by Sagispeak)
 <Multi_key> <Multi_key> <r> <a> <n> <a> <i> <space>					: ""	UE340		# Sagittal ranai
 <Multi_key> <Multi_key> <r> <a> <n> <a> <o> <space>					: ""	UE341		# Sagittal ranao
 <Multi_key> <Multi_key> <s> <a> <n> <a> <i> <space>					: ""	UE342		# Sagittal sanai
@@ -96,7 +96,7 @@
 <Multi_key> <Multi_key> <r> <a> <n> <a> <o> <d> <o> <u> <b> <l> <e> <s> <h> <a> <r> <p>	: ""	UE366		# Sagittal ranaodoublesharp
 <Multi_key> <Multi_key> <r> <a> <n> <a> <i> <d> <o> <u> <b> <l> <e> <f> <l> <a> <t>	: ""	UE367		# Sagittal ranaidoubleflat
 
-# Trojan Sagittal extension symbols in the Bravura font (by Sagispeak)
+# Trojan Sagittal extension sagittals in the Bravura font (by Sagispeak)
 <Multi_key> <Multi_key> <z> <a> <i> <space>						: ""	UE370		# Sagittal zai
 <Multi_key> <Multi_key> <z> <a> <o> <space>						: ""	UE371		# Sagittal zao
 <Multi_key> <Multi_key> <p> <r> <a> <i> <space>						: ""	UE372		# Sagittal prai
@@ -122,7 +122,7 @@
 <Multi_key> <Multi_key> <z> <a> <o> <d> <o> <u> <b> <l> <e> <s> <h> <a> <r> <p>		: ""	UE386		# Sagittal zaodoublesharp
 <Multi_key> <Multi_key> <z> <a> <i> <d> <o> <u> <b> <l> <e> <f> <l> <a> <t>		: ""	UE387		# Sagittal zaidoubleflat
 
-# Promethean Sagittal extension single-shaft symbols in the Bravura font (by Sagispeak)
+# Promethean Sagittal extension single-shaft sagittals in the Bravura font (by Sagispeak)
 <Multi_key> <Multi_key> <r> <a> <i> <space>						: ""	UE390		# Sagittal rai
 <Multi_key> <Multi_key> <r> <a> <o> <space>						: ""	UE391		# Sagittal rao
 <Multi_key> <Multi_key> <s> <a> <i> <space>						: ""	UE392		# Sagittal sai
@@ -154,7 +154,7 @@
 <Multi_key> <Multi_key> <r> <a> <k> <h> <a> <i> <space>					: ""	UE3AC		# Sagittal rakhai
 <Multi_key> <Multi_key> <r> <a> <k> <h> <a> <o> <space>					: ""	UE3AD		# Sagittal rakhao
 
-# Promethean Sagittal extension multi-shaft symbols in the Bravura font (by Sagispeak)
+# Promethean Sagittal extension multi-shaft sagittals in the Bravura font (by Sagispeak)
 <Multi_key> <Multi_key> <s> <a> <k> <a> <o> <s> <h> <a> <r> <p>				: ""	UE3B0		# Sagittal sakaosharp
 <Multi_key> <Multi_key> <s> <a> <k> <a> <i> <f> <l> <a> <t>				: ""	UE3B1		# Sagittal sakaiflat
 <Multi_key> <Multi_key> <s> <a> <t> <a> <o> <s> <h> <a> <r> <p>				: ""	UE3B2		# Sagittal sataosharp
@@ -230,7 +230,7 @@
 <Multi_key> <Multi_key> <m> <i> <m> <i> 						: ""	UE3F6		# Sagittal mimi
 <Multi_key> <Multi_key> <m> <o> <m> <o> 						: ""	UE3F7		# Sagittal momo
 
-# Spartan Sagittal single-shaft symbols in the Bravura font (by Sagispeak, alternative spelling)
+# Spartan Sagittal single-shaft sagittals in the Bravura font (by Sagispeak, alternative spelling)
 <Multi_key> <Multi_key> <f> <a> <i> <space>						: ""	UE306		# Sagittal fai
 <Multi_key> <Multi_key> <f> <a> <o> <space>						: ""	UE307		# Sagittal fao
 <Multi_key> <Multi_key> <g> <a> <i> <space>						: ""	UE308		# Sagittal gai
@@ -242,7 +242,7 @@
 <Multi_key> <Multi_key> <d> <a> <i> <space>						: ""	UE30E		# Sagittal dai
 <Multi_key> <Multi_key> <d> <a> <o> <space>						: ""	UE30F		# Sagittal dao
 
-# Spartan Sagittal multi-shaft symbols in the Bravura font (by Sagispeak, alternative spelling)
+# Spartan Sagittal multi-shaft sagittals in the Bravura font (by Sagispeak, alternative spelling)
 <Multi_key> <Multi_key> <f> <a> <o> <s> <h> <a> <r> <p>					: ""	UE310		# Sagittal faosharp
 <Multi_key> <Multi_key> <f> <a> <i> <f> <l> <a> <t>					: ""	UE311		# Sagittal faiflat
 <Multi_key> <Multi_key> <f> <a> <i> <s> <h> <a> <r> <p>					: ""	UE322		# Sagittal faisharp
@@ -258,7 +258,7 @@
 <Multi_key> <Multi_key> <f> <a> <o> <d> <o> <u> <b> <l> <e> <s> <h> <a> <r> <p>		: ""	UE32C		# Sagittal faodoublesharp
 <Multi_key> <Multi_key> <f> <a> <i> <d> <o> <u> <b> <l> <e> <f> <l> <a> <t>		: ""	UE32D		# Sagittal faidoubleflat
 
-# Promethean Sagittal extension single-shaft symbols in the Bravura font (by Sagispeak, alternative spelling)
+# Promethean Sagittal extension single-shaft sagittals in the Bravura font (by Sagispeak, alternative spelling)
 <Multi_key> <Multi_key> <s> <l> <a> <i> <space>						: ""	UE394		# Sagittal slai
 <Multi_key> <Multi_key> <s> <l> <a> <o> <space>						: ""	UE395		# Sagittal slao
 <Multi_key> <Multi_key> <f> <r> <a> <i> <space>						: ""	UE3A0		# Sagittal frai
@@ -270,7 +270,7 @@
 <Multi_key> <Multi_key> <r> <a> <c> <h> <a> <i> <space>					: ""	UE3AC		# Sagittal rachai
 <Multi_key> <Multi_key> <r> <a> <c> <h> <a> <o> <space>					: ""	UE3AD		# Sagittal rachao
 
-# Promethean Sagittal extension multi-shaft symbols in the Bravura font (by Sagispeak, alternative spelling)
+# Promethean Sagittal extension multi-shaft sagittals in the Bravura font (by Sagispeak, alternative spelling)
 <Multi_key> <Multi_key> <s> <l> <a> <o> <s> <h> <a> <r> <p>				: ""	UE3BA		# Sagittal slaosharp
 <Multi_key> <Multi_key> <s> <l> <a> <i> <f> <l> <a> <t>					: ""	UE3BB		# Sagittal slaiflat
 <Multi_key> <Multi_key> <s> <l> <a> <i> <s> <h> <a> <r> <p>				: ""	UE3C4		# Sagittal slaisharp
@@ -286,7 +286,7 @@
 <Multi_key> <Multi_key> <s> <l> <a> <o> <d> <o> <u> <b> <l> <e> <s> <h> <a> <r> <p>	: ""	UE3EA		# Sagittal slaodoublesharp
 <Multi_key> <Multi_key> <s> <l> <a> <i> <d> <o> <u> <b> <l> <e> <f> <l> <a> <t>		: ""	UE3EB		# Sagittal slaidoubleflat
 
-# Spartan Sagittal multi-shaft symbols in the Bravura font (by Sagispeak-ASCII-hybrid)
+# Spartan Sagittal multi-shaft sagittals in the Bravura font (by Sagispeak-ASCII-hybrid)
 <Multi_key> <Multi_key> <p> <h> <a> <o> <#>						: ""	UE310		# Sagittal phaosharp
 <Multi_key> <Multi_key> <p> <h> <a> <i> <b> <space>					: ""	UE311		# Sagittal phaiflat
 <Multi_key> <Multi_key> <t> <a> <o> <#>							: ""	UE312		# Sagittal taosharp
@@ -320,7 +320,7 @@
 <Multi_key> <Multi_key> <n> <a> <o> <x>							: ""	UE332		# Sagittal naodoublesharp
 <Multi_key> <Multi_key> <n> <a> <i> <b> <b>						: ""	UE333		# Sagittal naidoubleflat
 
-# Athenian Sagittal extension symbols in the Bravura font (Sagispeak-ASCII-hybrid)
+# Athenian Sagittal extension sagittals in the Bravura font (Sagispeak-ASCII-hybrid)
 <Multi_key> <Multi_key> <j> <a> <n> <a> <o> <#>						: ""	UE34A		# Sagittal janaosharp
 <Multi_key> <Multi_key> <j> <a> <n> <a> <i> <b> <space>					: ""	UE34B		# Sagittal janaiflat
 <Multi_key> <Multi_key> <j> <a> <o> <#>							: ""	UE34C		# Sagittal jaosharp
@@ -352,7 +352,7 @@
 <Multi_key> <Multi_key> <r> <a> <n> <a> <o> <x>						: ""	UE366		# Sagittal ranaodoublesharp
 <Multi_key> <Multi_key> <r> <a> <n> <a> <i> <b> <b>					: ""	UE367		# Sagittal ranaidoubleflat
 
-# Trojan Sagittal extension symbols in the Bravura font (Sagispeak-ASCII-hybrid)
+# Trojan Sagittal extension sagittals in the Bravura font (Sagispeak-ASCII-hybrid)
 <Multi_key> <Multi_key> <p> <a> <z> <a> <o> <#>						: ""	UE376		# Sagittal pazaosharp
 <Multi_key> <Multi_key> <p> <a> <z> <a> <i> <b> <space>					: ""	UE377		# Sagittal pazaiflat
 <Multi_key> <Multi_key> <p> <r> <a> <o> <#>						: ""	UE378		# Sagittal praosharp
@@ -372,7 +372,7 @@
 <Multi_key> <Multi_key> <z> <a> <o> <x>							: ""	UE386		# Sagittal zaodoublesharp
 <Multi_key> <Multi_key> <z> <a> <i> <b> <b>						: ""	UE387		# Sagittal zaidoubleflat
 
-# Promethean Sagittal extension multi-shaft symbols in the Bravura font (by Sagispeak-ASCII-hybrid)
+# Promethean Sagittal extension multi-shaft sagittals in the Bravura font (by Sagispeak-ASCII-hybrid)
 <Multi_key> <Multi_key> <s> <a> <k> <a> <o> <#>						: ""	UE3B0		# Sagittal sakaosharp
 <Multi_key> <Multi_key> <s> <a> <k> <a> <i> <b> <space>					: ""	UE3B1		# Sagittal sakaiflat
 <Multi_key> <Multi_key> <s> <a> <t> <a> <o> <#>						: ""	UE3B2		# Sagittal sataosharp
@@ -436,7 +436,7 @@
 <Multi_key> <Multi_key> <r> <a> <o> <x>							: ""	UE3EE		# Sagittal raodoublesharp
 <Multi_key> <Multi_key> <r> <a> <i> <b> <b>						: ""	UE3EF		# Sagittal raidoubleflat
 
-# Spartan Sagittal multi-shaft symbols in the Bravura font (by Sagispeak-ASCII-hybrid, alternative spelling)
+# Spartan Sagittal multi-shaft sagittals in the Bravura font (by Sagispeak-ASCII-hybrid, alternative spelling)
 <Multi_key> <Multi_key> <f> <a> <o> <#>							: ""	UE310		# Sagittal faosharp
 <Multi_key> <Multi_key> <f> <a> <i> <b> <space>						: ""	UE311		# Sagittal faiflat
 <Multi_key> <Multi_key> <f> <a> <i> <#>							: ""	UE322		# Sagittal faisharp
@@ -452,7 +452,7 @@
 <Multi_key> <Multi_key> <f> <a> <o> <x>							: ""	UE32C		# Sagittal faodoublesharp
 <Multi_key> <Multi_key> <f> <a> <i> <b> <b>						: ""	UE32D		# Sagittal faidoubleflat
 
-# Promethean Sagittal extension multi-shaft symbols in the Bravura font (by Sagispeak-ASCII-hybrid, alternative spelling)
+# Promethean Sagittal extension multi-shaft sagittals in the Bravura font (by Sagispeak-ASCII-hybrid, alternative spelling)
 <Multi_key> <Multi_key> <s> <l> <a> <o> <#>						: ""	UE3BA		# Sagittal slaosharp
 <Multi_key> <Multi_key> <s> <l> <a> <i> <b> <space>					: ""	UE3BB		# Sagittal slaiflat
 <Multi_key> <Multi_key> <s> <l> <a> <i> <#>						: ""	UE3C4		# Sagittal slaisharp
