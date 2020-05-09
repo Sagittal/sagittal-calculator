@@ -367,8 +367,8 @@
 <Multi_key> <Multi_key> <~> <b> <b>							: ""	UE387	# Sagittal ~bb
 
 # Promethean Sagittal extension single-shaft sagittals in the Bravura font (by short ASCII)
-<Multi_key> <Multi_key> <r> <space>							: ""	UE390	# Sagittal r
-<Multi_key> <Multi_key> <;> <space>							: ""	UE391	# Sagittal ;
+<Multi_key> <Multi_key> <;> <space>							: ""	UE390	# Sagittal ;
+<Multi_key> <Multi_key> <r> <space>							: ""	UE391	# Sagittal r
 <Multi_key> <Multi_key> <$> <space>							: ""	UE392	# Sagittal $
 <Multi_key> <Multi_key> <s> <space>							: ""	UE393	# Sagittal s
 
