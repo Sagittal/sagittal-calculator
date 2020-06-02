@@ -1,0 +1,15 @@
+{
+  "name": "sagittal-calculator",
+  "version": "1.0.0",
+  "description": "an online calculator for the Sagittal notation system",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cmloegcmluin/sagittal-calculator.git"
+  },
+  "scripts": {
+    "test": "jasmine"
+  },
+  "devDependencies": {
+    "jasmine": "^3.5.0"
+  }
+}
