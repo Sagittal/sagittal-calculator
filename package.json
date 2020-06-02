@@ -7,7 +7,8 @@
     "url": "git+https://github.com/cmloegcmluin/sagittal-calculator.git"
   },
   "scripts": {
-    "test": "jasmine"
+    "test": "jasmine",
+    "analyze-bounds": "node src/boundsAnalysis/main.js"
   },
   "devDependencies": {
     "jasmine": "^3.5.0"
