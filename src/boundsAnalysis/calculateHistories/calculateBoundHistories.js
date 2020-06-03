@@ -1,4 +1,4 @@
-const {extendHistories} = require("./extendHistories")
+const {calculateLevelHistories} = require("./calculateLevelHistories")
 
 const calculateBoundHistories = bound => {
     const {position, levels} = bound
@@ -6,7 +6,7 @@ const calculateBoundHistories = bound => {
     const initialHistory = {events: [], position}
     let histories = [initialHistory]
     levels.forEach(level => {
-        histories = extendHistories(histories, level, position)
+        histories = calculateLevelHistories(histories, level, position)
     })
 
     return histories

@@ -1,5 +1,5 @@
 const {DATA} = require("./data/data")
-const {calculateBoundHistories} = require("./extendHistories/calculateBoundHistories")
+const {calculateBoundHistories} = require("./calculateHistories/calculateBoundHistories")
 const {processHistories, HEADER_ROW} = require("./analyzeHistories/processHistories")
 
 const args = process.argv.slice(2)

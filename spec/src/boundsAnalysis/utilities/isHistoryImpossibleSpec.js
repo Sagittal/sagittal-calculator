@@ -10,7 +10,7 @@ describe("isHistoryImpossible", () => {
     })
 
     it("returns false if the history has an event but it is not impossible", () => {
-        const events = ["Extreme_EDA_65.5/233_@32.0"]
+        const events = [{type: "EDA"}]
 
         const result = isHistoryImpossible(events)
 
@@ -18,7 +18,7 @@ describe("isHistoryImpossible", () => {
     })
 
     it("returns true if the history has an impossible event", () => {
-        const events = ["Extreme_EDA_65.5/233_@32.0", "Insane_impossible"]
+        const events = [{type: "EDA"}, {type: "impossible"}]
 
         const result = isHistoryImpossible(events)
 

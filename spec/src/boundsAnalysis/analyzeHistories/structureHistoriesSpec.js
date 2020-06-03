@@ -1,49 +1,110 @@
 const {structureHistories} = require("../../../../src/boundsAnalysis/analyzeHistories/structureHistories")
 
 describe("structureHistories", () => {
-    it("structures histories", () => {
-        const histories = [
+    it("structures histories to consolidate redundancies per level and show which events can lead in which events in the next level, and which ones are possible on at least one path", () => {
+        const eventOneGoesToEventThreeAndFour = {
+            level: "VeryHigh",
+            type: "MEAN",
+            name: "'/| )/|",
+            position: 24.2,
+        }
+        const eventTwoGoesToEventThreeAndImpossible = {
+            level: "VeryHigh",
+            type: "EDA",
+            name: "12.5/58",
+            position: 24.33333,
+        }
+        const eventThree = {
+            level: "Extreme",
+            type: "MEAN",
+            name: ",)/|_)/|",
+            position: 24.58139537326805,
+        }
+        const eventFour = {
+            level: "Extreme",
+            type: "EDA",
+            name: "50.5/233",
+            position: 24.151964806252103,
+        }
+        const eventImpossible = {
+            level: "VeryHigh",
+            type: "impossible",
+            name: "impossible",
+            position: 24.9,
+        }
+
+        const analyzedHistories = [
             {
                 events: [
-                    "VeryHigh_MEAN_'/|_)/|_@24.2",
-                    "Extreme_MEAN_,)/|_)/|_@24.6",
+                    eventOneGoesToEventThreeAndFour,
+                    eventThree,
                 ],
+                possible: true,
+                tinaError: 0,
                 position: 24.58139537326805,
             },
             {
                 events: [
-                    "VeryHigh_MEAN_'/|_)/|_@24.2",
-                    "Extreme_EDA_49.5/233@24.2",
+                    eventTwoGoesToEventThreeAndImpossible,
+                    eventThree,
                 ],
+                possible: true,
+                tinaError: 0,
+                position: 24.58139537326805,
+            },
+            {
+                events: [
+                    eventOneGoesToEventThreeAndFour,
+                    eventFour,
+                ],
+                possible: false,
+                tinaError: 3.05589400712,
                 position: 24.151964806252103,
             },
             {
                 events: [
-                    "VeryHigh_EDA_12.5/58@24.5",
-                    "Extreme_MEAN_,)/|_)/|_@24.6",
+                    eventTwoGoesToEventThreeAndImpossible,
+                    eventImpossible,
                 ],
-                position: 24.58139537326805,
-            },
-            {
-                events: [
-                    "VeryHigh_EDA_12.5/58@24.5",
-                    "Extreme_EDA_50.5/233@24.6",
-                ],
-                position: 24.63988328718649,
+                possible: false,
+                tinaError: 2.26723955922,
+                position: 24.9,
             },
         ]
 
-        const result = structureHistories(histories)
+        const result = structureHistories(analyzedHistories)
 
         expect(result).toEqual({
-            "VeryHigh_MEAN_'/|_)/|_@24.2": {
-                "Extreme_MEAN_,)/|_)/|_@24.6": 24.58139537326805,
-                "Extreme_EDA_49.5/233@24.2": 24.151964806252103,
-            },
-            "VeryHigh_EDA_12.5/58@24.5": {
-                "Extreme_MEAN_,)/|_)/|_@24.6": 24.58139537326805,
-                "Extreme_EDA_50.5/233@24.6": 24.63988328718649,
-            },
+            "VeryHigh": [
+                {
+                    ...eventOneGoesToEventThreeAndFour,
+                    possible: true,
+                    nextEvents: [
+                        eventThree.name,
+                        eventFour.name,
+                    ],
+                },
+                {
+                    ...eventTwoGoesToEventThreeAndImpossible,
+                    possible: true,
+                    nextEvents: [
+                        eventThree.name,
+                        eventImpossible.name,
+                    ],
+                },
+            ],
+            "Extreme": [
+                {
+                    ...eventThree,
+                    possible: true,
+                    nextEvents: [],
+                },
+                {
+                    ...eventFour,
+                    possible: false,
+                    nextEvents: [],
+                },
+            ],
         })
     })
 })
