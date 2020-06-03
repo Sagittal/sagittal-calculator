@@ -34,7 +34,7 @@ const structureHistories = histories => {
                     newEvent.possible = true
                 }
                 if (history.overridden) {
-                    newEvent.overridden = true // TODO: these two seem kinda weird, though they appear to work. these are the kinds of things where I'm like, why isn't it just on the event in the first place?
+                    newEvent.overridden = true
                 }
                 structuredHistories[event.level].push(newEvent)
             }

@@ -10,7 +10,7 @@ const calculateExtendedHistories = (history, level, actualBoundPosition) => {
 
     const {events, position} = history
 
-    if (isHistoryImpossible(events)) { // TODO: maybe,since we're alreayd dealing with isHistoryImpossible one layer up, we should just not go in here in the first place for impossible histories? also, its called isHIOSTRYimpossible but you pass in events
+    if (isHistoryImpossible(events)) {
         extendedHistories.push(history)
         return extendedHistories
     }

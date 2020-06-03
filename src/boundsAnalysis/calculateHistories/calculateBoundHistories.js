@@ -1,7 +1,7 @@
 const {calculateLevelHistories} = require("./calculateLevelHistories")
 
 const calculateBoundHistories = bound => {
-    const {position, levels} = bound // TODO: yeah almost certain this is wrong, starting it at the assumed final bound. it should really start at the comma mean
+    const {position, levels} = bound
 
     const initialHistory = {events: [], position}
     let histories = [initialHistory]
