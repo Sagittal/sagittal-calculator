@@ -4,11 +4,49 @@ describe("analyzeAndStructureHistories", () => {
     it("returns helpful identifying information about the bound, alongside an analysis of its histories, and a structured presentation of said histories", () => {
         const histories = [
             {
-                events: ["VeryHigh_MEAN_.)/|-'/|_@23.2", "Extreme_MEAN_.)/|-'/|_@23.2", "Insane_EDA_164.5/809_@23.1"],
+                events: [
+                    {
+                        level: "VeryHigh",
+                        type: "MEAN",
+                        name: ".)/| '/|",
+                        position: 23.2,
+                    },
+                    {
+                        level: "Extreme",
+                        type: "MEAN",
+                        name: ".)/| '/|",
+                        position: 23.2,
+                    },
+                    {
+                        level: "Insane",
+                        type: "EDA",
+                        name: "164.5/809",
+                        position: 23.1,
+                    },
+                ],
                 position: 23.116419649559468,
             },
             {
-                events: ["VeryHigh_MEAN_.)/|-'/|_@23.2", "Extreme_EDA_47.5/233_@23.2", "Insane_EDA_164.5/809_@23.1"],
+                events: [
+                    {
+                        level: "VeryHigh",
+                        type: "MEAN",
+                        name: ".)/| '/|",
+                        position: 23.2,
+                    },
+                    {
+                        level: "Extreme",
+                        type: "EDA",
+                        name: "47.5/233",
+                        position: 23.2,
+                    },
+                    {
+                        level: "Insane",
+                        type: "EDA",
+                        name: "164.5/809",
+                        position: 23.1,
+                    },
+                ],
                 position: 23.116419649559468,
             },
         ]
@@ -46,14 +84,51 @@ describe("analyzeAndStructureHistories", () => {
                 possibleHistories: 2,
             },
             structuredHistories: {
-                "VeryHigh_MEAN_.)/|-'/|_@23.2": {
-                    "Extreme_MEAN_.)/|-'/|_@23.2": {
-                        "Insane_EDA_164.5/809_@23.1": 23.116419649559468,
+                VeryHigh: [
+                    {
+                        level: "VeryHigh",
+                        type: "MEAN",
+                        name: ".)/| '/|",
+                        position: 23.2,
+                        possible: true,
+                        nextEvents: [
+                            ".)/| '/|",
+                            "47.5/233",
+                        ],
                     },
-                    "Extreme_EDA_47.5/233_@23.2": {
-                        "Insane_EDA_164.5/809_@23.1": 23.116419649559468,
+                ],
+                Extreme: [
+                    {
+                        level: "Extreme",
+                        type: "MEAN",
+                        name: ".)/| '/|",
+                        position: 23.2,
+                        possible: true,
+                        nextEvents: [
+                            "164.5/809",
+                        ],
                     },
-                },
+                    {
+                        level: "Extreme",
+                        type: "EDA",
+                        name: "47.5/233",
+                        position: 23.2,
+                        possible: true,
+                        nextEvents: [
+                            "164.5/809",
+                        ],
+                    },
+                ],
+                Insane: [
+                    {
+                        level: "Insane",
+                        type: "EDA",
+                        name: "164.5/809",
+                        position: 23.1,
+                        possible: true,
+                        nextEvents: [],
+                    },
+                ],
             },
         })
     })
