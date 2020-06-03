@@ -18,14 +18,14 @@ describe("calculateEvents", () => {
 
                 const result = calculateEvents(level, neighborCommaPositions, eventType)
 
-                expect(result).toEqual([
+                expect(result).toEqual(jasmine.arrayWithExactContents([
                     {
                         level: "VeryHigh",
                         type: "EDA",
                         name: "2.5/58",
                         position: 4.900215778349652,
                     },
-                ])
+                ]))
             })
 
             it("works when multiple EDA midpoints are between the neighbor commas", () => {
@@ -34,7 +34,7 @@ describe("calculateEvents", () => {
 
                 const result = calculateEvents(level, neighborCommaPositions, eventType)
 
-                expect(result).toEqual([
+                expect(result).toEqual(jasmine.arrayWithExactContents([
                     {
                         level: "High",
                         type: "EDA",
@@ -47,7 +47,7 @@ describe("calculateEvents", () => {
                         name: "12.5/47",
                         position: 30.235373951519126,
                     },
-                ])
+                ]))
             })
 
             it("returns an empty array if there are no EDA midpoints between the position's neighbor commas", () => {

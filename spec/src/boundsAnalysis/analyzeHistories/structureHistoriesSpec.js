@@ -8,7 +8,7 @@ describe("structureHistories", () => {
             name: "'/| )/|",
             position: 24.2,
         }
-        const eventTwoGoesToEventThreeAndImpossible = {
+        const eventTwoGoesToEventThreeAndToImpossibleTwice = {
             level: "VeryHigh",
             type: "EDA",
             name: "12.5/58",
@@ -45,7 +45,7 @@ describe("structureHistories", () => {
             },
             {
                 events: [
-                    eventTwoGoesToEventThreeAndImpossible,
+                    eventTwoGoesToEventThreeAndToImpossibleTwice,
                     eventThree,
                 ],
                 possible: true,
@@ -63,7 +63,16 @@ describe("structureHistories", () => {
             },
             {
                 events: [
-                    eventTwoGoesToEventThreeAndImpossible,
+                    eventTwoGoesToEventThreeAndToImpossibleTwice,
+                    eventImpossible,
+                ],
+                possible: false,
+                tinaError: 2.26723955922,
+                position: 24.9,
+            },
+            {
+                events: [
+                    eventTwoGoesToEventThreeAndToImpossibleTwice,
                     eventImpossible,
                 ],
                 possible: false,
@@ -85,7 +94,7 @@ describe("structureHistories", () => {
                     ],
                 },
                 {
-                    ...eventTwoGoesToEventThreeAndImpossible,
+                    ...eventTwoGoesToEventThreeAndToImpossibleTwice,
                     possible: true,
                     nextEvents: [
                         eventThree.name,

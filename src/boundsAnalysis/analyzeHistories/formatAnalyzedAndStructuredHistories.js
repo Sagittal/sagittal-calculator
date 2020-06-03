@@ -2,7 +2,7 @@ const HEADER_ROW = [
     "index",
     "symbol",
     "bound ¢",
-    "psbl?",
+    "psbln-o", // possible non-overridden
     "min err",
     "ttl hst",
     "psbl hst",
@@ -17,7 +17,7 @@ const formatAnalyzedAndStructuredHistories = (analyzedAndStructuredHistories, {d
                 position,
             },
             analysis: {
-                hasPossibleHistory,
+                hasPossibleNonoverriddenHistory,
                 minimumError,
                 totalHistories,
                 possibleHistories,
@@ -27,7 +27,7 @@ const formatAnalyzedAndStructuredHistories = (analyzedAndStructuredHistories, {d
             datumIndex,
             extremeLevelLesserNeighborCommaSymbol,
             position.toPrecision(3),
-            hasPossibleHistory,
+            hasPossibleNonoverriddenHistory,
             typeof minimumError === "undefined" ? "n/a" : minimumError.toPrecision(3),
             totalHistories,
             possibleHistories,

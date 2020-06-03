@@ -93,7 +93,7 @@ describe("calculateExtendedHistories", () => {
 
             const result = calculateExtendedHistories(history, "VeryHigh", actualBoundPosition)
 
-            expect(result).toEqual([
+            expect(result).toEqual(jasmine.arrayWithExactContents([
                 {
                     position: 46.062028316486725,
                     events: [
@@ -115,7 +115,7 @@ describe("calculateExtendedHistories", () => {
                         {level: "VeryHigh", type: "SIZE", name: "S|M", position: 45.1124978365313},
                     ],
                 },
-            ])
+            ]))
         })
     })
 })
