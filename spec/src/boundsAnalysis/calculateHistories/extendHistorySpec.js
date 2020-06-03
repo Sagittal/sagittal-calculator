@@ -1,7 +1,7 @@
 const {extendHistory} = require("../../../../src/boundsAnalysis/calculateHistories/extendHistory")
 
 describe("extend history", () => {
-    it("given a history and an event, adds the event to the history's events and updates the history's position with the event's position", () => {
+    it("given a history and an event, adds the event to the history's events and updates the history's position with the event's position, and preserves its overridden status if any", () => {
         const priorEvent = {
             level: "High",
             type: "EDA",
@@ -10,6 +10,7 @@ describe("extend history", () => {
         }
         const history = {
             position: 56,
+            overridden: true,
             events: [
                 priorEvent,
             ],
@@ -25,6 +26,7 @@ describe("extend history", () => {
 
         expect(result).toEqual({
             position: 57,
+            overridden: true,
             events: [
                 priorEvent,
                 event,

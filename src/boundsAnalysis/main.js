@@ -23,5 +23,5 @@ if (args.length) {
         if (processedHistories.includes(true)) totalPossible += 1
     })
 
-    console.log(`\nFor ${totalPossible} out of 149 bounds, it is possible that they were set by working up through each level they appear in, each time changing no further than by snapping to any of the three irrational bound types between the commas they bound at that level.`)
+    console.log(`\nFor ${totalPossible} out of 150 bounds, it is possible that they were set by working up through each level they appear in, each time changing no further than by snapping to any of the three irrational bound types between the commas they bound at that level.`)
 }

@@ -10,13 +10,15 @@ const calculateExtendedHistories = (history, level, actualBoundPosition) => {
 
     const {events, position} = history
 
-    if (isHistoryImpossible(events)) {
+    if (isHistoryImpossible(events)) { // TODO: maybe,since we're alreayd dealing with isHistoryImpossible one layer up, we should just not go in here in the first place for impossible histories? also, its called isHIOSTRYimpossible but you pass in events
         extendedHistories.push(history)
         return extendedHistories
     }
 
     if (isPositionOutsideActualBoundNeighborCommaRange(position, actualBoundPosition, level)) {
-        extendedHistories.push(extendHistory(history, calculateImpossibleEvent(position, level)))
+        const impossibleEvent = calculateImpossibleEvent(position, level)
+        const impossibleToExtendHistory = extendHistory(history, impossibleEvent)
+        extendedHistories.push(impossibleToExtendHistory)
         return extendedHistories
     }
 

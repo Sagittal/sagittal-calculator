@@ -78,7 +78,7 @@ describe("analyzeAndStructureHistories", () => {
                 minaUpperBoundOf: 47,
             },
             analysis: {
-                hasPossibleHistory: true,
+                hasPossibleNonoverriddenHistory: true,
                 minimumError: 0,
                 totalHistories: 2,
                 possibleHistories: 2,

@@ -14,7 +14,7 @@ describe("formatAnalyzedAndStructuredHistories", () => {
                     position: 5.447635291818090,
                 },
                 analysis: {
-                    hasPossibleHistory: true,
+                    hasPossibleNonoverriddenHistory: true,
                     minimumError: 0,
                     totalHistories: 42,
                     possibleHistories: 5,
@@ -40,7 +40,7 @@ describe("formatAnalyzedAndStructuredHistories", () => {
                     position: 5.447635291818090,
                 },
                 analysis: {
-                    hasPossibleHistory: true,
+                    hasPossibleNonoverriddenHistory: true,
                     minimumError: 0,
                     totalHistories: 42,
                     possibleHistories: 5,
@@ -57,7 +57,7 @@ describe("formatAnalyzedAndStructuredHistories", () => {
                 `        "position": 5.44763529181809`,
                 `    },`,
                 `    "analysis": {`,
-                `        "hasPossibleHistory": true,`,
+                `        "hasPossibleNonoverriddenHistory": true,`,
                 `        "minimumError": 0,`,
                 `        "totalHistories": 42,`,
                 `        "possibleHistories": 5`,

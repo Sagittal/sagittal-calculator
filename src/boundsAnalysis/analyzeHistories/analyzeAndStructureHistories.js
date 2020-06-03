@@ -1,6 +1,7 @@
 const {structureHistories} = require("./structureHistories")
 const {analyzeHistory} = require("./analyzeHistory")
 const {calculateMinimumError} = require("./calculateMinimumError")
+const {calculateHasPossibleNonoverriddenHistory} = require("./calculateHasPossibleNonoverriddenHistory")
 
 const analyzeAndStructureHistories = (histories, {bound, comma}) => {
     const {position, levels} = bound
@@ -9,7 +10,7 @@ const analyzeAndStructureHistories = (histories, {bound, comma}) => {
     const analyzedHistories = histories.map(history => analyzeHistory(history, position))
 
     const possibleHistories = analyzedHistories.filter(analyzedHistory => analyzedHistory.possible).length
-    const hasPossibleHistory = analyzedHistories.some(analyzedHistory => analyzedHistory.possible)
+    const hasPossibleNonoverriddenHistory = calculateHasPossibleNonoverriddenHistory(analyzedHistories)
     const minimumError = calculateMinimumError(analyzedHistories)
     const totalHistories = analyzedHistories.length
     const structuredHistories = structureHistories(analyzedHistories)
@@ -22,7 +23,7 @@ const analyzeAndStructureHistories = (histories, {bound, comma}) => {
             minaUpperBoundOf: mina,
         },
         analysis: {
-            hasPossibleHistory,
+            hasPossibleNonoverriddenHistory,
             minimumError,
             totalHistories,
             possibleHistories,
