@@ -1,8 +1,8 @@
 const {calculateLevelCommaMeans} = require("../../../../src/boundsAnalysis/data/calculateLevelCommaMeans")
 
 describe("calculateLevelCommaMeans", () => {
-    it("can return the comma means for the Medium level, both the positions and the neighbor commas' symbols", () => {
-        expect(calculateLevelCommaMeans("Medium")).toEqual([
+    it("can return the comma means for the medium level, both the positions and the neighbor commas' symbols", () => {
+        expect(calculateLevelCommaMeans("medium")).toEqual([
             {name: "| |(", position: 2.8789011016926},
             {name: "|( )|(", position: 7.72288142310195},
             {name: ")|( ~|(", position: 12.20918723508155},
@@ -18,8 +18,8 @@ describe("calculateLevelCommaMeans", () => {
         ])
     })
 
-    it("can return the comma means for the High level, both the positions and the neighbor commas' symbols", () => {
-        expect(calculateLevelCommaMeans("High")).toEqual([
+    it("can return the comma means for the high level, both the positions and the neighbor commas' symbols", () => {
+        expect(calculateLevelCommaMeans("high")).toEqual([
             {name: "| )|", position: 1.689009364232425},
             {name: ")| |(", position: 4.567910465925025},
             {name: "|( ~|", position: 7.243699380344975},
@@ -54,8 +54,8 @@ describe("calculateLevelCommaMeans", () => {
         ])
     })
 
-    it("can return the comma means for the VeryHigh level, both the positions and the neighbor commas' symbols", () => {
-        expect(calculateLevelCommaMeans("VeryHigh")).toEqual([
+    it("can return the comma means for the veryHigh level, both the positions and the neighbor commas' symbols", () => {
+        expect(calculateLevelCommaMeans("veryHigh")).toEqual([
             {name: "| .)|", position: 0.7121489702654},
             {name: ".)| '|", position: 1.6890093642324802},
             {name: "'| )|", position: 2.6658697581995052},
@@ -113,8 +113,8 @@ describe("calculateLevelCommaMeans", () => {
         ])
     })
 
-    it("can return the comma means for the Extreme level, both the positions and the neighbor commas' symbols", () => {
-        expect(calculateLevelCommaMeans("Extreme")).toEqual([
+    it("can return the comma means for the extreme level, both the positions and the neighbor commas' symbols", () => {
+        expect(calculateLevelCommaMeans("extreme")).toEqual([
             {name: "| `|", position: 0.21135808297741},
             {name: "`| ``|", position: 0.627620185028205},
             {name: "``| .)|", position: 1.128411072316195},

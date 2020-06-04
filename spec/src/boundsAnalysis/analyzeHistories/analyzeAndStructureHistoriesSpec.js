@@ -6,19 +6,19 @@ describe("analyzeAndStructureHistories", () => {
             {
                 events: [
                     {
-                        level: "VeryHigh",
+                        level: "veryHigh",
                         type: "MEAN",
                         name: ".)/| '/|",
                         position: 23.2,
                     },
                     {
-                        level: "Extreme",
+                        level: "extreme",
                         type: "MEAN",
                         name: ".)/| '/|",
                         position: 23.2,
                     },
                     {
-                        level: "Insane",
+                        level: "insane",
                         type: "EDA",
                         name: "164.5/809",
                         position: 23.1,
@@ -29,19 +29,19 @@ describe("analyzeAndStructureHistories", () => {
             {
                 events: [
                     {
-                        level: "VeryHigh",
+                        level: "veryHigh",
                         type: "MEAN",
                         name: ".)/| '/|",
                         position: 23.2,
                     },
                     {
-                        level: "Extreme",
+                        level: "extreme",
                         type: "EDA",
                         name: "47.5/233",
                         position: 23.2,
                     },
                     {
-                        level: "Insane",
+                        level: "insane",
                         type: "EDA",
                         name: "164.5/809",
                         position: 23.1,
@@ -52,14 +52,14 @@ describe("analyzeAndStructureHistories", () => {
         ]
         const datum = {
             comma: {
-                introducingLevel: "VeryHigh",
+                introducingLevel: "veryHigh",
                 position: 22.9305875372457,
                 symbol: ".)/|",
                 mina: 47,
             },
             bound: {
                 position: 23.1164196495597,
-                levels: ["VeryHigh", "Extreme", "Insane"],
+                levels: ["veryHigh", "extreme", "insane"],
             },
         }
 
@@ -71,48 +71,48 @@ describe("analyzeAndStructureHistories", () => {
                 extremeLevelLesserNeighborCommaSymbol: ".)/|",
                 position: 23.1164196495597,
                 boundedCommas: {
-                    VeryHigh: [
+                    veryHigh: [
                         {
-                            introducingLevel: "VeryHigh",
+                            introducingLevel: "veryHigh",
                             position: 22.93058753724570,
                             distance: 23.1164196495597 - 22.93058753724570,
                             symbol: ".)/|",
                             mina: 47,
                         },
                         {
-                            introducingLevel: "VeryHigh",
+                            introducingLevel: "veryHigh",
                             position: 23.46001038464900,
                             distance: 23.46001038464900 - 23.1164196495597,
                             symbol: "'/|",
                             mina: 48,
                         },
                     ],
-                    Extreme: [
+                    extreme: [
                         {
-                            introducingLevel: "VeryHigh",
+                            introducingLevel: "veryHigh",
                             position: 22.93058753724570,
                             distance: 23.1164196495597 - 22.93058753724570,
                             symbol: ".)/|",
                             mina: 47,
                         },
                         {
-                            introducingLevel: "VeryHigh",
+                            introducingLevel: "veryHigh",
                             position: 23.46001038464900,
                             distance: 23.46001038464900 - 23.1164196495597,
                             symbol: "'/|",
                             mina: 48,
                         },
                     ],
-                    Insane: [
+                    insane: [
                         {
-                            introducingLevel: "VeryHigh",
+                            introducingLevel: "veryHigh",
                             position: 22.93058753724570,
                             distance: 23.1164196495597 - 22.93058753724570,
                             symbol: ".)/|",
                             mina: 47,
                         },
                         {
-                            introducingLevel: "VeryHigh",
+                            introducingLevel: "veryHigh",
                             position: 23.46001038464900,
                             distance: 23.46001038464900 - 23.1164196495597,
                             symbol: "'/|",
@@ -129,9 +129,9 @@ describe("analyzeAndStructureHistories", () => {
                 possibleHistories: 2,
             },
             structuredHistories: {
-                VeryHigh: [
+                veryHigh: [
                     {
-                        level: "VeryHigh",
+                        level: "veryHigh",
                         type: "MEAN",
                         name: ".)/| '/|",
                         position: 23.2,
@@ -142,9 +142,9 @@ describe("analyzeAndStructureHistories", () => {
                         ],
                     },
                 ],
-                Extreme: [
+                extreme: [
                     {
-                        level: "Extreme",
+                        level: "extreme",
                         type: "MEAN",
                         name: ".)/| '/|",
                         position: 23.2,
@@ -154,7 +154,7 @@ describe("analyzeAndStructureHistories", () => {
                         ],
                     },
                     {
-                        level: "Extreme",
+                        level: "extreme",
                         type: "EDA",
                         name: "47.5/233",
                         position: 23.2,
@@ -164,9 +164,9 @@ describe("analyzeAndStructureHistories", () => {
                         ],
                     },
                 ],
-                Insane: [
+                insane: [
                     {
-                        level: "Insane",
+                        level: "insane",
                         type: "EDA",
                         name: "164.5/809",
                         position: 23.1,
