@@ -84,7 +84,7 @@ describe("structureHistories", () => {
         const result = structureHistories(analyzedHistories)
 
         expect(result).toEqual({
-            "VeryHigh": [
+            VeryHigh: [
                 {
                     ...eventOneGoesToEventThreeAndFour,
                     possible: true,
@@ -102,7 +102,7 @@ describe("structureHistories", () => {
                     ],
                 },
             ],
-            "Extreme": [
+            Extreme: [
                 {
                     ...eventThree,
                     possible: true,

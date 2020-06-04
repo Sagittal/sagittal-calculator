@@ -70,11 +70,56 @@ describe("analyzeAndStructureHistories", () => {
             bound: {
                 extremeLevelLesserNeighborCommaSymbol: ".)/|",
                 position: 23.1164196495597,
-                levels: [
-                    "VeryHigh",
-                    "Extreme",
-                    "Insane",
-                ],
+                boundedCommas: {
+                    VeryHigh: [
+                        {
+                            introducingLevel: "VeryHigh",
+                            position: 22.93058753724570,
+                            distance: 23.1164196495597 - 22.93058753724570,
+                            symbol: ".)/|",
+                            mina: 47,
+                        },
+                        {
+                            introducingLevel: "VeryHigh",
+                            position: 23.46001038464900,
+                            distance: 23.46001038464900 - 23.1164196495597,
+                            symbol: "'/|",
+                            mina: 48,
+                        },
+                    ],
+                    Extreme: [
+                        {
+                            introducingLevel: "VeryHigh",
+                            position: 22.93058753724570,
+                            distance: 23.1164196495597 - 22.93058753724570,
+                            symbol: ".)/|",
+                            mina: 47,
+                        },
+                        {
+                            introducingLevel: "VeryHigh",
+                            position: 23.46001038464900,
+                            distance: 23.46001038464900 - 23.1164196495597,
+                            symbol: "'/|",
+                            mina: 48,
+                        },
+                    ],
+                    Insane: [
+                        {
+                            introducingLevel: "VeryHigh",
+                            position: 22.93058753724570,
+                            distance: 23.1164196495597 - 22.93058753724570,
+                            symbol: ".)/|",
+                            mina: 47,
+                        },
+                        {
+                            introducingLevel: "VeryHigh",
+                            position: 23.46001038464900,
+                            distance: 23.46001038464900 - 23.1164196495597,
+                            symbol: "'/|",
+                            mina: 48,
+                        },
+                    ],
+                },
                 minaUpperBoundOf: 47,
             },
             analysis: {

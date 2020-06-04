@@ -22,4 +22,15 @@ describe("calculateImpossibleEvent", () => {
             position: 57.4999779541197,
         })
     })
+
+    it("formats correctly when the lower bound undefined (representing the minimum position)", () => {
+        const result = calculateImpossibleEvent(1.42429794053080, "VeryHigh", [0, 0.83252420410159])
+
+        expect(result).toEqual({
+            level: "VeryHigh",
+            type: "impossible",
+            name: "not between the minimum position @0.0000 and ``| @0.83252 at the VeryHigh level",
+            position:1.42429794053080,
+        })
+    })
 })

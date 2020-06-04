@@ -8,7 +8,7 @@ const calculateImpossibleEvent = (position, level, [lesserNeighborCommaPosition,
 
     const formattedLesserNeighborCommaPosition = lesserNeighborCommaPosition.toPrecision(5)
 
-    const lesserCommaSymbol = calculateCommaFromPosition(lesserNeighborCommaPosition).symbol
+    const lesserCommaSymbol = lesserNeighborCommaPosition ? calculateCommaFromPosition(lesserNeighborCommaPosition).symbol : 'the minimum position'
     const greaterCommaSymbol = greaterNeighborCommaPosition ? calculateCommaFromPosition(greaterNeighborCommaPosition).symbol : 'the maximum position'
 
     return {
