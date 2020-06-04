@@ -1,4 +1,4 @@
-const {calculateBoundedCommas} = require("../../../../src/boundsAnalysis/utilities/calculateBoundedCommas")
+const {calculateBoundedCommas} = require("../../../../src/boundsAnalysis/data/boundedCommas")
 
 describe("calculateBoundedCommas", () => {
     it("returns, given a bound, for each of its levels, an array of the pair of commas it bounds at that level", () => {
