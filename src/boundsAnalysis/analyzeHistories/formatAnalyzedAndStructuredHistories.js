@@ -26,9 +26,9 @@ const formatAnalyzedAndStructuredHistories = (analyzedAndStructuredHistories, {d
         formattedAnalyzedAndStructuredHistories = [
             datumIndex,
             extremeLevelLesserNeighborCommaSymbol,
-            position.toPrecision(3),
+            position.toPrecision(5),
             hasPossibleNonoverriddenHistory,
-            typeof minimumError === "undefined" ? "n/a" : minimumError.toPrecision(3),
+            typeof minimumError === "undefined" ? "n/a" : minimumError.toPrecision(5),
             totalHistories,
             possibleHistories,
         ].join("\t")

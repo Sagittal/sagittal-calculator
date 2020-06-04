@@ -1,4 +1,4 @@
-const {isPositionOutsideActualBoundNeighborCommaRange} = require("../utilities/isPositionOutsideActualBoundNeighborCommaRange")
+const {isPositionBetweenPositions} = require("../utilities/isPositionBetweenPositions")
 const {calculateNeighborCommaPositions} = require("../utilities/calculateNeighborCommaPositions")
 const {calculateEvents} = require("./calculateEvents")
 const {extendHistory} = require("./extendHistory")
@@ -15,14 +15,14 @@ const calculateExtendedHistories = (history, level, actualBoundPosition) => {
         return extendedHistories
     }
 
-    if (isPositionOutsideActualBoundNeighborCommaRange(position, actualBoundPosition, level)) {
-        const impossibleEvent = calculateImpossibleEvent(position, level)
+    const neighborCommaPositions = calculateNeighborCommaPositions(actualBoundPosition, level)
+
+    if (!isPositionBetweenPositions(position, neighborCommaPositions)) {
+        const impossibleEvent = calculateImpossibleEvent(position, level, neighborCommaPositions)
         const impossibleToExtendHistory = extendHistory(history, impossibleEvent)
         extendedHistories.push(impossibleToExtendHistory)
         return extendedHistories
     }
-
-    const neighborCommaPositions = calculateNeighborCommaPositions(position, level)
 
     const newEvents = [
         ...calculateEvents(level, neighborCommaPositions, "EDA"),

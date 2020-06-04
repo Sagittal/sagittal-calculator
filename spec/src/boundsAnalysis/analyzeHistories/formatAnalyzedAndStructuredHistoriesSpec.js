@@ -24,7 +24,7 @@ describe("formatAnalyzedAndStructuredHistories", () => {
 
             const result = formatAnalyzedAndStructuredHistories(analyzedAndStructuredHistories, {datumIndex, summary})
 
-            expect(result).toEqual("10\t,|(\t5.45\ttrue\t0.00\t42\t5")
+            expect(result).toEqual("10\t,|(\t5.4476\ttrue\t0.0000\t42\t5")
         })
     })
 

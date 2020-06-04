@@ -22,7 +22,7 @@ describe("calculateBoundHistories", () => {
                     {
                         level: "VeryHigh",
                         type: "impossible",
-                        name: "impossible",
+                        name: "not between ~| @8.7296 and )|( @9.6880 at the VeryHigh level",
                         position: 8.120357575550852,
                     },
                 ],
@@ -39,7 +39,7 @@ describe("calculateBoundHistories", () => {
                     {
                         level: "VeryHigh",
                         type: "impossible",
-                        name: "impossible",
+                        name: "not between ~| @8.7296 and )|( @9.6880 at the VeryHigh level",
                         position: 7.72288142310195,
                     },
                 ],
@@ -52,20 +52,20 @@ describe("calculateBoundHistories", () => {
                         level: "Medium",
                         type: "override",
                         name: "override",
-                        position: 9.5
+                        position: 9.5,
                     },
                     {
                         level: "VeryHigh",
                         type: "MEAN",
                         name: "~| )|(",
-                        position: 9.208778600061725
+                        position: 9.208778600061725,
                     },
                     {
                         level: "Extreme",
                         type: "EDA",
                         name: "19.5/233",
-                        position: 9.514410378220525
-                    }
+                        position: 9.514410378220525,
+                    },
                 ],
             },
             {
@@ -76,21 +76,21 @@ describe("calculateBoundHistories", () => {
                         level: "Medium",
                         type: "override",
                         name: "override",
-                        position: 9.5
+                        position: 9.5,
                     },
                     {
                         level: "VeryHigh",
                         type: "MEAN",
                         name: "~| )|(",
-                        position: 9.208778600061725
+                        position: 9.208778600061725,
                     },
                     {
                         level: "Extreme",
                         type: "EDA",
                         name: "19.5/233",
-                        position: 9.514410378220525
-                    }
-                ]
+                        position: 9.514410378220525,
+                    },
+                ],
             },
             {
                 position: 9.434865916310185,
@@ -100,20 +100,20 @@ describe("calculateBoundHistories", () => {
                         level: "Medium",
                         type: "override",
                         name: "override",
-                        position: 9.5
+                        position: 9.5,
                     },
                     {
                         level: "VeryHigh",
                         type: "MEAN",
                         name: "~| )|(",
-                        position: 9.208778600061725
+                        position: 9.208778600061725,
                     },
                     {
                         level: "Extreme",
                         type: "MEAN",
                         name: ",)|( )|(",
-                        position: 9.434865916310185
-                    }
+                        position: 9.434865916310185,
+                    },
                 ],
             },
         ]))
@@ -152,7 +152,7 @@ describe("calculateBoundHistories", () => {
                     {
                         level: "Extreme",
                         type: "impossible",
-                        name: "impossible",
+                        name: "not between ``)|\\\\ @68.124 and the maximum position @68.573 at the Extreme level",
                         position: 67.62297774122518,
                     },
                 ],
@@ -461,7 +461,7 @@ describe("calculateBoundHistories", () => {
                     {
                         level: "Extreme",
                         type: "impossible",
-                        name: "impossible",
+                        name: "not between ``)|\\\\ @68.124 and the maximum position @68.573 at the Extreme level",
                         position: 67.62297774122518,
                     },
                 ],
