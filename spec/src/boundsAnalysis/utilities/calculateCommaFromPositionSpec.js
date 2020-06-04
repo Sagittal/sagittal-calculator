@@ -7,7 +7,7 @@ describe("calculateCommaFromPosition", () => {
         const result = calculateCommaFromPosition(position)
 
         expect(result).toEqual({
-            introducingLevel: "High",
+            introducingLevel: "high",
             position: 3.37801872846485,
             symbol: ")|",
             mina: 7,

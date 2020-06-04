@@ -3,13 +3,13 @@ const {calculateLevelHistories} = require("../../../../src/boundsAnalysis/calcul
 describe("calculateLevelHistories", () => {
     it("given the histories for a bound up to the current level, returns the histories extended for all possible events at this level", () => {
         const firstHistoryPriorEvent = {
-            level: "Medium",
+            level: "medium",
             type: "EDA",
             name: "1.5/21",
             position: 8.120357575550852,
         }
         const secondHistoryPriorEvent = {
-            level: "Medium",
+            level: "medium",
             type: "MEAN",
             name: "|( )|(",
             position: 7.72288142310195,
@@ -28,10 +28,10 @@ describe("calculateLevelHistories", () => {
                 ],
             },
         ]
-        const level = "High"
+        const level = "high"
         const bound = {
             position: 8.1,
-            levels: ["Medium", "High"]
+            levels: ["medium", "high"]
         }
 
         const result = calculateLevelHistories(histories, level, bound)
@@ -41,42 +41,42 @@ describe("calculateLevelHistories", () => {
                 position: 6.047074790303825,
                 events: [
                     firstHistoryPriorEvent,
-                    {level: "High", type: "EDA", name: "2.5/47", position: 6.047074790303825},
+                    {level: "high", type: "EDA", name: "2.5/47", position: 6.047074790303825},
                 ],
             },
             {
                 position: 8.465904706425356,
                 events: [
                     firstHistoryPriorEvent,
-                    {level: "High", type: "EDA", name: "3.5/47", position: 8.465904706425356},
+                    {level: "high", type: "EDA", name: "3.5/47", position: 8.465904706425356},
                 ],
             },
             {
                 position: 7.243699380344975,
                 events: [
                     firstHistoryPriorEvent,
-                    {level: "High", type: "MEAN", name: "|( ~|", position: 7.243699380344975},
+                    {level: "high", type: "MEAN", name: "|( ~|", position: 7.243699380344975},
                 ],
             },
             {
                 position: 6.047074790303825,
                 events: [
                     secondHistoryPriorEvent,
-                    {level: "High", type: "EDA", name: "2.5/47", position: 6.047074790303825},
+                    {level: "high", type: "EDA", name: "2.5/47", position: 6.047074790303825},
                 ],
             },
             {
                 position: 8.465904706425356,
                 events: [
                     secondHistoryPriorEvent,
-                    {level: "High", type: "EDA", name: "3.5/47", position: 8.465904706425356},
+                    {level: "high", type: "EDA", name: "3.5/47", position: 8.465904706425356},
                 ],
             },
             {
                 position: 7.243699380344975,
                 events: [
                     secondHistoryPriorEvent,
-                    {level: "High", type: "MEAN", name: "|( ~|", position: 7.243699380344975},
+                    {level: "high", type: "MEAN", name: "|( ~|", position: 7.243699380344975},
                 ],
             },
         ]))
@@ -85,7 +85,7 @@ describe("calculateLevelHistories", () => {
     describe("when all the histories at this level are impossible, meaning that none of their positions are between the comma neighbors", () => {
         it("adds a new history, restarting from the previous level with an override event which resets the position to the actual bound position so that it's definitely between the comma neighbors at this level", () => {
             const eventThatWillBeImpossibleAtNextLevel = {
-                level: "High",
+                level: "high",
                 type: "EDA",
                 name: "1.5/47",
                 position: 6.12, // very far from actualBoundPosition
@@ -100,16 +100,16 @@ describe("calculateLevelHistories", () => {
                 historyThatWillBeImpossibleAtNextLevel,
                 historyThatWillBeImpossibleAtNextLevel, // just showing that there are multiples; should probably test a mixed condition
             ]
-            const level = "VeryHigh"
+            const level = "veryHigh"
             const bound = {
                 position: 9.1,
-                levels: ["Medium", "High", "VeryHigh"]
+                levels: ["medium", "high", "veryHigh"]
             }
 
             const result = calculateLevelHistories(histories, level, bound)
 
             const expectedOverrideEvent = {
-                level: "High",
+                level: "high",
                 type: "override",
                 name: "override",
                 position: 9.1,
@@ -119,9 +119,9 @@ describe("calculateLevelHistories", () => {
                 events: [
                     eventThatWillBeImpossibleAtNextLevel,
                     {
-                        level: "VeryHigh",
+                        level: "veryHigh",
                         type: "impossible",
-                        name: "not between ~| @8.7296 and )|( @9.6880 at the VeryHigh level",
+                        name: "not between ~| @8.7296 and )|( @9.6880 at the veryHigh level",
                         position: 8.12,
                     }
                 ],
@@ -135,7 +135,7 @@ describe("calculateLevelHistories", () => {
                     events: [
                         expectedOverrideEvent,
                         {
-                            level: "VeryHigh",
+                            level: "veryHigh",
                             type: "EDA",
                             name: "4.5/58",
                             position: 8.820388401029373,
@@ -148,7 +148,7 @@ describe("calculateLevelHistories", () => {
                     events: [
                         expectedOverrideEvent,
                         {
-                            level: "VeryHigh",
+                            level: "veryHigh",
                             type: "MEAN",
                             name: "~| )|(",
                             position: 9.208778600061725,
@@ -164,7 +164,7 @@ describe("calculateLevelHistories", () => {
                     position: 8.12,
                     events: [
                         {
-                            level: "Medium",
+                            level: "medium",
                             type: "impossible",
                             name: "not between 88.8 and 99.9",
                             position: 6.12, // very far from actualBoundPosition
@@ -174,16 +174,16 @@ describe("calculateLevelHistories", () => {
                 const histories = [
                     historyThatWillBeImpossibleAtThisLevel,
                 ]
-                const level = "VeryHigh"
+                const level = "veryHigh"
                 const bound = {
                     position: 9.1,
-                    levels: ["Medium", "VeryHigh"] // level skip!
+                    levels: ["medium", "veryHigh"] // level skip!
                 }
 
                 const result = calculateLevelHistories(histories, level, bound)
 
                 const expectedOverrideEvent = {
-                    level: "Medium",
+                    level: "medium",
                     type: "override",
                     name: "override",
                     position: 9.1,
@@ -196,7 +196,7 @@ describe("calculateLevelHistories", () => {
                         events: [
                             expectedOverrideEvent,
                             {
-                                level: "VeryHigh",
+                                level: "veryHigh",
                                 type: "EDA",
                                 name: "4.5/58",
                                 position: 8.820388401029373,
@@ -209,7 +209,7 @@ describe("calculateLevelHistories", () => {
                         events: [
                             expectedOverrideEvent,
                             {
-                                level: "VeryHigh",
+                                level: "veryHigh",
                                 type: "MEAN",
                                 name: "~| )|(",
                                 position: 9.208778600061725,
