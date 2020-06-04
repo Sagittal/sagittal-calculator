@@ -1,7 +1,8 @@
 const {DATA} = require("../data/data")
-const {calculateNeighborPositions} = require("./calculateNeighborPositions")
 
-const calculateCommaFromPosition = (position) => {
+const calculateCommaFromPosition = position => {
+    if (!position) return
+
     const datum = DATA.find(datum => {
         return datum.comma.position === position
     })

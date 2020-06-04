@@ -13,4 +13,12 @@ describe("calculateCommaFromPosition", () => {
             mina: 7,
         })
     })
+
+    it("does not fail if given an undefined position", () => {
+        const position = undefined
+
+        const result = calculateCommaFromPosition(position)
+
+        expect(result).toEqual(undefined)
+    })
 })
