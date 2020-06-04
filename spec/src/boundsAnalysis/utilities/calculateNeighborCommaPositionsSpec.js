@@ -8,7 +8,7 @@ describe("calculateNeighborCommaPositions", () => {
         ])
     })
 
-    it("when the position is greater than the greatest comma at the level, gives the position of the greatest comma for the comma below and undefined for the comma above", () => {
+    it("when the position is greater than the greatest comma at the level, gives the position of the greatest comma for the lesser comma and undefined for the greater comma", () => {
         expect(calculateNeighborCommaPositions(68.4, "VeryHigh")).toEqual([
             67.2910616147857, // )|\\
             undefined,
