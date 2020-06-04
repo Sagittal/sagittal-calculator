@@ -2,7 +2,7 @@ const {structureHistories} = require("./structureHistories")
 const {analyzeHistory} = require("./analyzeHistory")
 const {calculateMinimumError} = require("./calculateMinimumError")
 const {calculateHasPossibleNonoverriddenHistory} = require("./calculateHasPossibleNonoverriddenHistory")
-const {calculateBoundedCommas} = require("../utilities/calculateBoundedCommas")
+const {BOUNDED_COMMAS} = require("../data/boundedCommas")
 
 const analyzeAndStructureHistories = (histories, {bound, comma}) => {
     const {position} = bound
@@ -15,7 +15,7 @@ const analyzeAndStructureHistories = (histories, {bound, comma}) => {
     const minimumError = calculateMinimumError(analyzedHistories)
     const totalHistories = analyzedHistories.length
     const structuredHistories = structureHistories(analyzedHistories)
-    const boundedCommas = calculateBoundedCommas(bound)
+    const boundedCommas = BOUNDED_COMMAS[position]
 
     return {
         bound: {
