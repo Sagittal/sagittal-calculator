@@ -121,7 +121,7 @@ describe("calculateLevelHistories", () => {
                     {
                         level: "VeryHigh",
                         type: "impossible",
-                        name: "impossible",
+                        name: "not between ~| @8.7296 and )|( @9.6880 at the VeryHigh level",
                         position: 8.12,
                     }
                 ],
@@ -166,7 +166,7 @@ describe("calculateLevelHistories", () => {
                         {
                             level: "Medium",
                             type: "impossible",
-                            name: "impossible",
+                            name: "not between 88.8 and 99.9",
                             position: 6.12, // very far from actualBoundPosition
                         },
                     ],

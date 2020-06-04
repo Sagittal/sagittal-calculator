@@ -16,7 +16,7 @@ describe("calculateExtendedHistories", () => {
                     {
                         level: "VeryHigh",
                         type: "impossible",
-                        name: "impossible",
+                        name: "not between 88.8 and 99.9",
                         position: 45.45,
                     },
                 ],
@@ -63,7 +63,7 @@ describe("calculateExtendedHistories", () => {
                         {
                             level: "VeryHigh",
                             type: "impossible",
-                            name: "impossible",
+                            name: "not between ')|( @11.642 and )~| @12.064 at the VeryHigh level",
                             position: 45.45,
                         },
                     ],

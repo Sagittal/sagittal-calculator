@@ -29,7 +29,7 @@ describe("structureHistories", () => {
         const eventImpossible = {
             level: "VeryHigh",
             type: "impossible",
-            name: "impossible",
+            name: "not between 88.8 and 99.9",
             position: 24.9,
         }
 
