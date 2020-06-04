@@ -24,7 +24,7 @@ describe("analyzeHistory", () => {
     })
 
     describe("when the history's position does not match the actual bound position, returns the history plus false for the possible property and the error in tinas", () => {
-        it("works when the position is above the actual bound position by less than a tina", () => {
+        it("works when the position is greater than the actual bound position by less than a tina", () => {
             const expectedTinaError = 2 / 5
             position = actualBoundPosition + TINA * expectedTinaError
             history = {
@@ -40,7 +40,7 @@ describe("analyzeHistory", () => {
             expect(result.position).toBe(position)
         })
 
-        it("works when the position is above the actual bound position by more than a tina", () => {
+        it("works when the position is greater than the actual bound position by more than a tina", () => {
             const expectedTinaError = 5 / 2
             position = actualBoundPosition + TINA * expectedTinaError
             history = {
