@@ -11,20 +11,18 @@ describe("formatAnalyzedAndStructuredHistories", () => {
             const analyzedAndStructuredHistories = {
                 bound: {
                     extremeLevelLesserNeighborCommaSymbol: ",|(",
-                    position: 5.447635291818090,
+                    position: 5.44763529181809,
                 },
                 analysis: {
                     bestRank: 2,
                     minimumError: 0,
-                    totalHistories: 42,
-                    possibleHistories: 5,
                 },
             }
             const datumIndex = 10
 
             const result = formatAnalyzedAndStructuredHistories(analyzedAndStructuredHistories, {datumIndex, summary})
 
-            expect(result).toEqual("10\t,|(\t5.4476\t2\t0.0000\t42\t5")
+            expect(result).toEqual("10\t,|(\t5.4476\t2\t0.0000")
         })
     })
 
@@ -37,7 +35,7 @@ describe("formatAnalyzedAndStructuredHistories", () => {
             const analyzedAndStructuredHistories = {
                 bound: {
                     extremeLevelLesserNeighborCommaSymbol: "|\\\\",
-                    position: 5.447635291818090,
+                    position: 5.44763529181809,
                 },
                 analysis: {
                     bestRank: 2,

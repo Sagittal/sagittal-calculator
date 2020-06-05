@@ -4,8 +4,6 @@ const HEADER_ROW = [
     "bound ¢",
     "bst rnk",
     "min err",
-    "ttl hst", // TODO: not sure this and the next one are really that interesting
-    "psbl hst",
 ].join("\t")
 
 const formatAnalyzedAndStructuredHistories = (analyzedAndStructuredHistories, {datumIndex, summary = false} = {}) => {
@@ -16,11 +14,9 @@ const formatAnalyzedAndStructuredHistories = (analyzedAndStructuredHistories, {d
                 extremeLevelLesserNeighborCommaSymbol,
                 position,
             },
-            analysis: { // TODO: now need to include rank
+            analysis: {
                 bestRank,
                 minimumError,
-                totalHistories,
-                possibleHistories,
             },
         } = analyzedAndStructuredHistories
         formattedAnalyzedAndStructuredHistories = [
@@ -29,8 +25,6 @@ const formatAnalyzedAndStructuredHistories = (analyzedAndStructuredHistories, {d
             position.toPrecision(5),
             bestRank,
             typeof minimumError === "undefined" ? "n/a" : minimumError.toPrecision(5),
-            totalHistories,
-            possibleHistories,
         ].join("\t")
     } else {
         formattedAnalyzedAndStructuredHistories = JSON.stringify(analyzedAndStructuredHistories, null, 4)

@@ -2,7 +2,7 @@ const DATA = [
     {
         comma: {
             introducingLevel: "medium",
-            position: 0.00000000000000,
+            position: 0.0000000000000,
             symbol: "|",
             mina: 0,
         },
@@ -31,19 +31,19 @@ const DATA = [
             mina: 2,
         },
         bound: {
-            position: 1.194465453016760,
+            position: 1.19446545301676,
             levels: ["high", "veryHigh", "extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "veryHigh",
-            position: 1.42429794053080,
+            position: 1.4242979405308,
             symbol: ".)|",
             mina: 3,
         },
         bound: {
-            position: 1.756566842671710,
+            position: 1.75656684267171,
             levels: ["veryHigh", "extreme", "insane"],
         },
     },
@@ -55,7 +55,7 @@ const DATA = [
             mina: 4,
         },
         bound: {
-            position: 2.178142884912920,
+            position: 2.17814288491292,
             levels: ["extreme", "insane"],
         },
     },
@@ -67,7 +67,7 @@ const DATA = [
             mina: 5,
         },
         bound: {
-            position: 2.740244274567870,
+            position: 2.74024427456787,
             levels: ["medium", "veryHigh", "extreme", "insane"],
         },
     },
@@ -79,7 +79,7 @@ const DATA = [
             mina: 6,
         },
         bound: {
-            position: 3.161820316809080,
+            position: 3.16182031680908,
             levels: ["extreme", "insane"],
         },
     },
@@ -91,7 +91,7 @@ const DATA = [
             mina: 7,
         },
         bound: {
-            position: 3.723921706464030,
+            position: 3.72392170646403,
             levels: ["extreme", "insane"],
         },
     },
@@ -103,7 +103,7 @@ const DATA = [
             mina: 8,
         },
         bound: {
-            position: 4.145497748705240,
+            position: 4.14549774870524,
             levels: ["extreme", "insane"],
         },
     },
@@ -115,7 +115,7 @@ const DATA = [
             mina: 9,
         },
         bound: {
-            position: 4.567073790946450,
+            position: 4.56707379094645,
             levels: ["high", "veryHigh", "extreme", "insane"],
         },
     },
@@ -127,7 +127,7 @@ const DATA = [
             mina: 10,
         },
         bound: {
-            position: 5.129175180601400,
+            position: 5.12917518060140,
             levels: ["extreme", "insane"],
         },
     },
@@ -139,19 +139,19 @@ const DATA = [
             mina: 11,
         },
         bound: {
-            position: 5.550751222842610,
+            position: 5.55075122284261,
             levels: ["extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "medium",
-            position: 5.75780220338520,
+            position: 5.7578022033852,
             symbol: "|(",
             mina: 12,
         },
         bound: {
-            position: 6.112852612497560,
+            position: 6.11285261249756,
             levels: ["extreme", "insane"],
         },
     },
@@ -163,7 +163,7 @@ const DATA = [
             mina: 13,
         },
         bound: {
-            position: 6.534428654738770,
+            position: 6.53442865473877,
             levels: ["high", "veryHigh", "extreme", "insane"],
         },
     },
@@ -175,7 +175,7 @@ const DATA = [
             mina: 14,
         },
         bound: {
-            position: 7.096530044393710,
+            position: 7.09653004439371,
             levels: ["veryHigh", "extreme", "insane"],
         },
     },
@@ -187,7 +187,7 @@ const DATA = [
             mina: 15,
         },
         bound: {
-            position: 7.518106086634930,
+            position: 7.51810608663493,
             levels: ["extreme", "insane"],
         },
     },
@@ -199,7 +199,7 @@ const DATA = [
             mina: 16,
         },
         bound: {
-            position: 8.080207476289870,
+            position: 8.08020747628987,
             levels: ["medium", "veryHigh", "extreme", "insane"],
         },
     },
@@ -211,7 +211,7 @@ const DATA = [
             mina: 17,
         },
         bound: {
-            position: 8.501783518531080,
+            position: 8.50178351853108,
             levels: ["extreme", "insane"],
         },
     },
@@ -223,7 +223,7 @@ const DATA = [
             mina: 18,
         },
         bound: {
-            position: 9.063884908186030,
+            position: 9.06388490818603,
             levels: ["high", "veryHigh", "extreme", "insane"],
         },
     },
@@ -235,1555 +235,1555 @@ const DATA = [
             mina: 19,
         },
         bound: {
-            position: 9.485460950427240,
+            position: 9.48546095042724,
             levels: ["extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "medium",
-            position: 9.68796064281870,
+            position: 9.6879606428187,
             symbol: ")|(",
             mina: 20,
         },
         bound: {
-            position: 10.047562340082200,
+            position: 10.04756234008220,
             levels: ["extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "extreme",
-            position: 10.26036403671440,
+            position: 10.2603640367144,
             symbol: "`)|(",
             mina: 21,
         },
         bound: {
-            position: 10.469138382323400,
+            position: 10.46913838232340,
             levels: ["extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "extreme",
-            position: 10.80915722665100,
+            position: 10.8091572266510,
             symbol: "``)|(",
             mina: 22,
         },
         bound: {
-            position: 11.031239771978300,
+            position: 11.03123977197830,
             levels: ["high", "veryHigh", "extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "extreme",
-            position: 11.11984853601830,
+            position: 11.1198485360183,
             symbol: ",')|(",
             mina: 23,
         },
         bound: {
-            position: 11.452815814219600,
+            position: 11.45281581421960,
             levels: ["extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "veryHigh",
-            position: 11.64168143075280,
+            position: 11.6416814307528,
             symbol: "')|(",
             mina: 24,
         },
         bound: {
-            position: 12.014917203874500,
+            position: 12.01491720387450,
             levels: ["veryHigh", "extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "high",
-            position: 12.06439759670770,
+            position: 12.0643975967077,
             symbol: ")~|",
             mina: 25,
         },
         bound: {
-            position: 12.436493246115700,
+            position: 12.43649324611570,
             levels: ["veryHigh", "extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "veryHigh",
-            position: 12.77669303941000,
+            position: 12.7766930394100,
             symbol: ".~|(",
             mina: 26,
         },
         bound: {
-            position: 12.998594635770700,
+            position: 12.99859463577070,
             levels: ["extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "extreme",
-            position: 13.26859076940410,
+            position: 13.2685907694041,
             symbol: "`.~|(",
             mina: 27,
         },
         bound: {
-            position: 13.420170678011900,
+            position: 13.42017067801190,
             levels: ["medium", "high", "veryHigh", "extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "extreme",
-            position: 13.79476660539530,
+            position: 13.7947666053953,
             symbol: ",,~|(",
             mina: 28,
         },
         bound: {
-            position: 13.841746720253100,
+            position: 13.84174672025310,
             levels: ["extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "extreme",
-            position: 14.19052247614750,
+            position: 14.1905224761475,
             symbol: ",~|(",
             mina: 29,
         },
         bound: {
-            position: 14.403848109908000,
+            position: 14.40384810990800,
             levels: ["extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "medium",
-            position: 14.73041382734440,
+            position: 14.7304138273444,
             symbol: "~|(",
             mina: 30,
         },
         bound: {
-            position: 14.825424152149200,
+            position: 14.82542415214920,
             levels: ["extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "extreme",
-            position: 15.19969420339260,
+            position: 15.1996942033926,
             symbol: "`~|(",
             mina: 31,
         },
         bound: {
-            position: 15.387525541804200,
+            position: 15.38752554180420,
             levels: ["high", "veryHigh", "extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "extreme",
-            position: 15.74848739332960,
+            position: 15.7484873933296,
             symbol: ",,|~",
             mina: 32,
         },
         bound: {
-            position: 15.809101584045400,
+            position: 15.80910158404540,
             levels: ["extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "extreme",
-            position: 16.14424326408170,
+            position: 16.1442432640817,
             symbol: ",|~",
             mina: 33,
         },
         bound: {
-            position: 16.371202973700400,
+            position: 16.37120297370040,
             levels: ["extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "high",
-            position: 16.54434207609080,
+            position: 16.5443420760908,
             symbol: "|~",
             mina: 34,
         },
         bound: {
-            position: 16.792779015941600,
+            position: 16.79277901594160,
             levels: ["extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "extreme",
-            position: 16.98967559599150,
+            position: 16.9896755959915,
             symbol: "`|~",
             mina: 35,
         },
         bound: {
-            position: 17.354880405596500,
+            position: 17.35488040559650,
             levels: ["high", "veryHigh", "extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "high",
-            position: 17.57613115728150,
+            position: 17.5761311572815,
             symbol: "~~|",
             mina: 36,
         },
         bound: {
-            position: 17.776456447837700,
+            position: 17.77645644783770,
             levels: ["extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "extreme",
-            position: 18.01237509283100,
+            position: 18.0123750928310,
             symbol: "`~~|",
             mina: 37,
         },
         bound: {
-            position: 18.338557837492700,
+            position: 18.33855783749270,
             levels: ["extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "extreme",
-            position: 18.53449524279570,
+            position: 18.5344952427957,
             symbol: "``~~|",
             mina: 38,
         },
         bound: {
-            position: 18.760133879733900,
+            position: 18.76013387973390,
             levels: ["medium", "high", "veryHigh", "extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "extreme",
-            position: 19.12985264282580,
+            position: 19.1298526428258,
             symbol: ",./|",
             mina: 39,
         },
         bound: {
-            position: 19.322235269388800,
+            position: 19.32223526938880,
             levels: ["extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "veryHigh",
-            position: 19.55256880878070,
+            position: 19.5525688087807,
             symbol: "./|",
             mina: 40,
         },
         bound: {
-            position: 19.743811311630000,
+            position: 19.74381131163000,
             levels: ["veryHigh", "extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "high",
-            position: 20.08199165618430,
+            position: 20.0819916561843,
             symbol: ")|~",
             mina: 41,
         },
         bound: {
-            position: 20.305912701285000,
+            position: 20.30591270128500,
             levels: ["high", "veryHigh", "extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "extreme",
-            position: 20.40771036682770,
+            position: 20.4077103668277,
             symbol: ",,/|",
             mina: 42,
         },
         bound: {
-            position: 20.727488743526200,
+            position: 20.72748874352620,
             levels: ["extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "extreme",
-            position: 21.08357343076000,
+            position: 21.0835734307600,
             symbol: ",/|",
             mina: 43,
         },
         bound: {
-            position: 21.289590133181100,
+            position: 21.28959013318110,
             levels: ["extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "medium",
-            position: 21.50628959671480,
+            position: 21.5062895967148,
             symbol: "/|",
             mina: 44,
         },
         bound: {
-            position: 21.711166175422400,
+            position: 21.71116617542240,
             levels: ["extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "extreme",
-            position: 21.90204546746700,
+            position: 21.9020454674670,
             symbol: "`/|",
             mina: 45,
         },
         bound: {
-            position: 22.132742217663600,
+            position: 22.13274221766360,
             levels: ["extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "extreme",
-            position: 22.32476163342210,
+            position: 22.3247616334221,
             symbol: "``/|",
             mina: 46,
         },
         bound: {
-            position: 22.694843607318500,
+            position: 22.69484360731850,
             levels: ["high", "veryHigh", "extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "veryHigh",
-            position: 22.93058753724570,
+            position: 22.9305875372457,
             symbol: ".)/|",
             mina: 47,
         },
         bound: {
-            position: 23.116419649559700,
+            position: 23.11641964955970,
             levels: ["veryHigh", "extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "veryHigh",
-            position: 23.46001038464900,
+            position: 23.4600103846490,
             symbol: "'/|",
             mina: 48,
         },
         bound: {
-            position: 23.678521039214700,
+            position: 23.67852103921470,
             levels: ["extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "extreme",
-            position: 23.85576625540130,
+            position: 23.8557662554013,
             symbol: "`'/|",
             mina: 49,
         },
         bound: {
-            position: 23.955448448755500,
+            position: 23.95544844875550,
             levels: ["veryHigh", "extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "extreme",
-            position: 24.05513064210970,
+            position: 24.0551306421097,
             symbol: ",,)/|",
-            mina: 49.567569010730000,
+            mina: 49.56756901073000,
         },
         bound: {
-            position: 24.100097081455900,
+            position: 24.10009708145590,
             levels: ["extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "extreme",
-            position: 24.27848242135630,
+            position: 24.2784824213563,
             symbol: ",)/|",
             mina: 50,
         },
         bound: {
-            position: 24.662198471110800,
+            position: 24.66219847111080,
             levels: ["medium", "extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "high",
-            position: 24.88430832517980,
+            position: 24.8843083251798,
             symbol: ")/|",
             mina: 51,
         },
         bound: {
-            position: 24.885981585695500,
+            position: 24.88598158569550,
             levels: ["veryHigh", "extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "extreme",
-            position: 24.88765484621130,
+            position: 24.8876548462113,
             symbol: ",.|)",
-            mina: 51.458648572106000,
+            mina: 51.45864857210600,
         },
         bound: {
-            position: 25.083774513352000,
+            position: 25.08377451335200,
             levels: ["extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "veryHigh",
-            position: 25.31037101216590,
+            position: 25.3103710121659,
             symbol: ".|)",
             mina: 52,
         },
         bound: {
-            position: 25.645875903007000,
+            position: 25.64587590300700,
             levels: ["extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "extreme",
-            position: 26.00885143004390,
+            position: 26.0088514300439,
             symbol: "`.|)",
             mina: 53,
         },
         bound: {
-            position: 26.067451945248200,
+            position: 26.06745194524820,
             levels: ["high", "veryHigh", "extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "extreme",
-            position: 26.43156759599860,
+            position: 26.4315675959986,
             symbol: ",,|)",
             mina: 54,
         },
         bound: {
-            position: 26.629553334903100,
+            position: 26.62955333490310,
             levels: ["extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "extreme",
-            position: 26.84137563414540,
+            position: 26.8413756341454,
             symbol: ",|)",
             mina: 55,
         },
         bound: {
-            position: 27.051129377144400,
+            position: 27.05112937714440,
             levels: ["extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "medium",
-            position: 27.26409180010010,
+            position: 27.2640918001001,
             symbol: "|)",
             mina: 56,
         },
         bound: {
-            position: 27.613230766799300,
+            position: 27.61323076679930,
             levels: ["extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "extreme",
-            position: 27.65984767085250,
+            position: 27.6598476708525,
             symbol: "`|)",
             mina: 57,
         },
         bound: {
-            position: 28.034806809040500,
+            position: 28.03480680904050,
             levels: ["extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "extreme",
-            position: 28.38528838393270,
+            position: 28.3852883839327,
             symbol: "``|)",
             mina: 58,
         },
         bound: {
-            position: 28.596908198695500,
+            position: 28.59690819869550,
             levels: ["high", "veryHigh", "extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "extreme",
-            position: 28.79509642207960,
+            position: 28.7950964220796,
             symbol: ",'|)",
             mina: 59,
         },
         bound: {
-            position: 29.018484240936700,
+            position: 29.01848424093670,
             levels: ["extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "veryHigh",
-            position: 29.21781258803420,
+            position: 29.2178125880342,
             symbol: "'|)",
             mina: 60,
         },
         bound: {
-            position: 29.580585630591600,
+            position: 29.58058563059160,
             levels: ["extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "extreme",
-            position: 29.61356845878680,
+            position: 29.6135684587868,
             symbol: "`'|)",
             mina: 61,
         },
         bound: {
-            position: 30.002161672832800,
+            position: 30.00216167283280,
             levels: ["medium", "veryHigh", "extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "extreme",
-            position: 30.17617667354840,
+            position: 30.1761766735484,
             symbol: ",)|)",
             mina: 62,
         },
         bound: {
-            position: 30.564263062487800,
+            position: 30.56426306248780,
             levels: ["extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "high",
-            position: 30.64211052856500,
+            position: 30.6421105285650,
             symbol: ")|)",
             mina: 63,
         },
         bound: {
-            position: 30.985839104729000,
+            position: 30.98583910472900,
             levels: ["high", "veryHigh", "extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "veryHigh",
-            position: 31.19425023953320,
+            position: 31.1942502395332,
             symbol: ".(|",
             mina: 64,
         },
         bound: {
-            position: 31.407415146970200,
+            position: 31.40741514697020,
             levels: ["veryHigh", "extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "high",
-            position: 31.76665363342940,
+            position: 31.7666536334294,
             symbol: "|\\",
             mina: 65,
         },
         bound: {
-            position: 31.969516536625100,
+            position: 31.96951653662510,
             levels: ["extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "extreme",
-            position: 32.18936979938420,
+            position: 32.1893697993842,
             symbol: "`|\\",
             mina: 66,
         },
         bound: {
-            position: 32.391092578866400,
+            position: 32.39109257886640,
             levels: ["high", "veryHigh", "extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "extreme",
-            position: 32.62179519147650,
+            position: 32.6217951914765,
             symbol: ",(|",
             mina: 67,
         },
         bound: {
-            position: 32.953193968521300,
+            position: 32.95319396852130,
             levels: ["extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "medium",
-            position: 33.14797102746750,
+            position: 33.1479710274675,
             symbol: "(|",
             mina: 68,
         },
         bound: {
-            position: 33.374770010762500,
+            position: 33.37477001076250,
             levels: ["extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "extreme",
-            position: 33.61725140351580,
+            position: 33.6172514035158,
             symbol: "`(|",
             mina: 69,
         },
         bound: {
-            position: 33.936871400417500,
+            position: 33.93687140041750,
             levels: ["extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "extreme",
-            position: 34.28298263612510,
+            position: 34.2829826361251,
             symbol: "``(|",
             mina: 70,
         },
         bound: {
-            position: 34.358447442658700,
+            position: 34.35844744265870,
             levels: ["high", "veryHigh", "extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "extreme",
-            position: 34.69523029828670,
+            position: 34.6952302982867,
             symbol: ",'(|",
             mina: 71,
         },
         bound: {
-            position: 34.920548832313600,
+            position: 34.92054883231360,
             levels: ["extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "veryHigh",
-            position: 34.97561479141980,
+            position: 34.9756147914198,
             symbol: "'(|",
             mina: 72,
         },
         bound: {
-            position: 35.118091464366500,
+            position: 35.11809146436650,
             levels: ["medium", "veryHigh", "extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "extreme",
-            position: 35.26056813731320,
+            position: 35.2605681373132,
             symbol: ",~|)",
-            mina: 72.404868107628500,
+            mina: 72.40486810762850,
         },
         bound: {
-            position: 35.342124874554800,
+            position: 35.34212487455480,
             levels: ["extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "high",
-            position: 35.69681207286230,
+            position: 35.6968120728623,
             symbol: "~|)",
             mina: 73,
         },
         bound: {
-            position: 35.904226264209800,
+            position: 35.90422626420980,
             levels: ["extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "extreme",
-            position: 36.23670342405920,
+            position: 36.2367034240592,
             symbol: "`~|)",
             mina: 74,
         },
         bound: {
-            position: 36.325802306451000,
+            position: 36.32580230645100,
             levels: ["extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "extreme",
-            position: 36.44837885222240,
+            position: 36.4483788522224,
             symbol: "``~|)",
             mina: 75,
         },
         bound: {
-            position: 36.588490003137900,
+            position: 36.58849000313790,
             levels: ["veryHigh", "extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "extreme",
-            position: 36.72860115405330,
+            position: 36.7286011540533,
             symbol: ",.(|(",
-            mina: 75.538384396065200,
+            mina: 75.53838439606520,
         },
         bound: {
-            position: 36.887903696105900,
+            position: 36.88790369610590,
             levels: ["extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "veryHigh",
-            position: 36.95205244291890,
+            position: 36.9520524429189,
             symbol: ".(|(",
             mina: 76,
         },
         bound: {
-            position: 37.309479738347200,
+            position: 37.30947973834720,
             levels: ["high", "veryHigh", "extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "veryHigh",
-            position: 37.65053286079660,
+            position: 37.6505328607966,
             symbol: "'~|)",
             mina: 77,
         },
         bound: {
-            position: 37.871581128002100,
+            position: 37.87158112800210,
             levels: ["veryHigh", "extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "high",
-            position: 38.05063167280570,
+            position: 38.0506316728057,
             symbol: "/|~",
             mina: 78,
         },
         bound: {
-            position: 38.061940349778500,
+            position: 38.06194034977850,
             levels: ["high", "veryHigh", "extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "extreme",
-            position: 38.07324902675130,
+            position: 38.0732490267513,
             symbol: ",,(|(",
-            mina: 78.390145545239200,
+            mina: 78.39014554523920,
         },
         bound: {
-            position: 38.293157170243300,
+            position: 38.29315717024330,
             levels: ["extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "extreme",
-            position: 38.54252940279970,
+            position: 38.5425294027997,
             symbol: ",(|(",
             mina: 79,
         },
         bound: {
-            position: 38.855258559898300,
+            position: 38.85525855989830,
             levels: ["extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "medium",
-            position: 38.90577323085290,
+            position: 38.9057732308529,
             symbol: "(|(",
             mina: 80,
         },
         bound: {
-            position: 39.276834602139500,
+            position: 39.27683460213950,
             levels: ["extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "extreme",
-            position: 39.32848939680780,
+            position: 39.3284893968078,
             symbol: "`(|(",
             mina: 81,
         },
         bound: {
-            position: 39.698410644380700,
+            position: 39.69841064438070,
             levels: ["high", "veryHigh", "extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "high",
-            position: 40.00435246074000,
+            position: 40.0043524607400,
             symbol: "~|\\",
             mina: 82,
         },
         bound: {
-            position: 40.260512034035600,
+            position: 40.26051203403560,
             levels: ["medium", "veryHigh", "extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "extreme",
-            position: 40.63614223954060,
+            position: 40.6361422395406,
             symbol: ",.//|",
             mina: 83,
         },
         bound: {
-            position: 40.682088076276800,
+            position: 40.68208807627680,
             levels: ["extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "veryHigh",
-            position: 41.05885840549560,
+            position: 41.0588584054956,
             symbol: ".//|",
             mina: 84,
         },
         bound: {
-            position: 41.244189465931800,
+            position: 41.24418946593180,
             levels: ["extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "extreme",
-            position: 41.45461427624780,
+            position: 41.4546142762478,
             symbol: "`.//|",
             mina: 85,
         },
         bound: {
-            position: 41.665765508173000,
+            position: 41.66576550817300,
             levels: ["high", "veryHigh", "extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "extreme",
-            position: 41.99450562744460,
+            position: 41.9945056274446,
             symbol: ",,//|",
             mina: 86,
         },
         bound: {
-            position: 42.227866897827900,
+            position: 42.22786689782790,
             levels: ["extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "extreme",
-            position: 42.58986302747500,
+            position: 42.5898630274750,
             symbol: ",//|",
             mina: 87,
         },
         bound: {
-            position: 42.649442940069200,
+            position: 42.64944294006920,
             levels: ["extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "medium",
-            position: 43.01257919342970,
+            position: 43.0125791934297,
             symbol: "//|",
             mina: 88,
         },
         bound: {
-            position: 43.211544329724100,
+            position: 43.21154432972410,
             levels: ["extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "extreme",
-            position: 43.40833506418200,
+            position: 43.4083350641820,
             symbol: "`//|",
             mina: 89,
         },
         bound: {
-            position: 43.633120371965300,
+            position: 43.63312037196530,
             levels: ["extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "extreme",
-            position: 43.83105123013670,
+            position: 43.8310512301367,
             symbol: "``//|",
             mina: 90,
         },
         bound: {
-            position: 44.195221761620300,
+            position: 44.19522176162030,
             levels: ["veryHigh", "extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "extreme",
-            position: 44.42640863016690,
+            position: 44.4264086301669,
             symbol: ",'//|",
             mina: 91,
         },
         bound: {
-            position: 44.616797803861500,
+            position: 44.61679780386150,
             levels: ["high", "extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "veryHigh",
-            position: 44.96964650239560,
+            position: 44.9696465023956,
             symbol: "'//|",
             mina: 92,
         },
         bound: {
-            position: 45.178899193516400,
+            position: 45.1124978365313,
             levels: ["extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "extreme",
-            position: 45.56142023882450,
+            position: 45.5614202388245,
             symbol: ",,)//|",
             mina: 93,
         },
         bound: {
-            position: 45.600475235757600,
+            position: 45.60047523575760,
             levels: ["medium", "veryHigh", "extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "extreme",
-            position: 45.78477201807090,
+            position: 45.7847720180709,
             symbol: ",)//|",
             mina: 94,
         },
         bound: {
-            position: 46.162576625412600,
+            position: 46.16257662541260,
             levels: ["extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "high",
-            position: 46.39394444292620,
+            position: 46.3939444429262,
             symbol: ")//|",
             mina: 95,
         },
         bound: {
-            position: 46.584152667653800,
+            position: 46.58415266765380,
             levels: ["extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "extreme",
-            position: 46.81666060888100,
+            position: 46.8166606088810,
             symbol: "`)//|",
             mina: 96,
         },
         bound: {
-            position: 47.146254057308700,
+            position: 47.14625405730870,
             levels: ["extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "extreme",
-            position: 47.43403702396470,
+            position: 47.4340370239647,
             symbol: "``)//|",
             mina: 97,
         },
         bound: {
-            position: 47.567830099549900,
+            position: 47.56783009954990,
             levels: ["high", "veryHigh", "extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "extreme",
-            position: 47.93785719271360,
+            position: 47.9378571927136,
             symbol: ",,/|)",
             mina: 98,
         },
         bound: {
-            position: 48.129931489204900,
+            position: 48.12993148920490,
             levels: ["extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "extreme",
-            position: 48.34766523086030,
+            position: 48.3476652308603,
             symbol: ",/|)",
             mina: 99,
         },
         bound: {
-            position: 48.551507531446100,
+            position: 48.55150753144610,
             levels: ["extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "medium",
-            position: 48.77038139681490,
+            position: 48.7703813968149,
             symbol: "/|)",
             mina: 100,
         },
         bound: {
-            position: 48.973083573687300,
+            position: 48.97308357368730,
             levels: ["extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "extreme",
-            position: 49.16613726756730,
+            position: 49.1661372675673,
             symbol: "`/|)",
             mina: 101,
         },
         bound: {
-            position: 49.535184963342300,
+            position: 49.53518496334230,
             levels: ["high", "veryHigh", "extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "high",
-            position: 49.89492450167920,
+            position: 49.8949245016792,
             symbol: "(|~",
             mina: 102,
         },
         bound: {
-            position: 49.956761005583500,
+            position: 49.95676100558350,
             levels: ["veryHigh", "extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "extreme",
-            position: 50.30138601879440,
+            position: 50.3013860187944,
             symbol: ",'/|)",
             mina: 103,
         },
         bound: {
-            position: 50.518862395238400,
+            position: 50.51886239523840,
             levels: ["extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "veryHigh",
-            position: 50.72410218474940,
+            position: 50.7241021847494,
             symbol: "'/|)",
             mina: 104,
         },
         bound: {
-            position: 50.940438437479600,
+            position: 50.94043843747960,
             levels: ["extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "extreme",
-            position: 51.11985805550150,
+            position: 51.1198580555015,
             symbol: "`'/|)",
             mina: 105,
         },
         bound: {
-            position: 51.219540248855700,
+            position: 51.21954024885570,
             levels: ["medium", "veryHigh", "extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "veryHigh",
-            position: 51.31922244220990,
+            position: 51.3192224422099,
             symbol: "./|\\",
-            mina: 105.572025496640000,
+            mina: 105.57202549664000,
         },
         bound: {
-            position: 51.502539827134600,
+            position: 51.50253982713460,
             levels: ["extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "extreme",
-            position: 51.68246627026310,
+            position: 51.6824662702631,
             symbol: "`./|\\",
             mina: 106,
         },
         bound: {
-            position: 51.924115869375800,
+            position: 51.92411586937580,
             levels: ["high", "veryHigh", "extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "extreme",
-            position: 52.17436400025700,
+            position: 52.1743640002570,
             symbol: ",,/|\\",
             mina: 107,
         },
         bound: {
-            position: 52.486217259030700,
+            position: 52.48621725903070,
             levels: ["extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "extreme",
-            position: 52.70053983624840,
+            position: 52.7005398362484,
             symbol: ",/|\\",
             mina: 108,
         },
         bound: {
-            position: 52.907793301272000,
+            position: 52.90779330127200,
             levels: ["extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "medium",
-            position: 53.27294323014410,
+            position: 53.2729432301441,
             symbol: "/|\\",
             mina: 109,
         },
         bound: {
-            position: 53.469894690926900,
+            position: 53.46989469092690,
             levels: ["extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "extreme",
-            position: 53.63618705819750,
+            position: 53.6361870581975,
             symbol: "`/|\\",
             mina: 110,
         },
         bound: {
-            position: 53.891470733168100,
+            position: 53.89147073316810,
             levels: ["high", "veryHigh", "extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "extreme",
-            position: 54.10546743424580,
+            position: 54.1054674342458,
             symbol: ",(/|",
             mina: 111,
         },
         bound: {
-            position: 54.453572122823100,
+            position: 54.45357212282310,
             levels: ["extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "high",
-            position: 54.52818360020060,
+            position: 54.5281836002006,
             symbol: "(/|",
             mina: 112,
         },
         bound: {
-            position: 54.875148165064300,
+            position: 54.87514816506430,
             levels: ["extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "extreme",
-            position: 54.96442753574970,
+            position: 54.9644275357497,
             symbol: "`(/|",
             mina: 113,
         },
         bound: {
-            position: 55.095545776914000,
+            position: 55.09554577691400,
             levels: ["veryHigh", "extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "veryHigh",
-            position: 55.22666401807830,
+            position: 55.2266640180783,
             symbol: "'/|\\",
-            mina: 113.451709907417000,
+            mina: 113.45170990741700,
         },
         bound: {
-            position: 55.437249554719200,
+            position: 55.43724955471920,
             levels: ["extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "extreme",
-            position: 55.64938018403320,
+            position: 55.6493801840332,
             symbol: "`'/|\\",
             mina: 114,
         },
         bound: {
-            position: 55.858825596960400,
+            position: 55.85882559696040,
             levels: ["high", "veryHigh", "extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "extreme",
-            position: 56.18502810359230,
+            position: 56.1850281035923,
             symbol: ",)/|\\",
             mina: 115,
         },
         bound: {
-            position: 56.420926986615400,
+            position: 56.42092698661540,
             levels: ["extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "high",
-            position: 56.48190438813460,
+            position: 56.4819043881346,
             symbol: ")/|\\",
             mina: 116,
         },
         bound: {
-            position: 56.842503028856600,
+            position: 56.84250302885660,
             levels: ["medium", "extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "extreme",
-            position: 57.20310166957740,
+            position: 57.2031016695774,
             symbol: "`)/|\\",
             mina: 117,
         },
         bound: {
-            position: 57.264079071097800,
+            position: 57.26407907109780,
             levels: ["extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "extreme",
-            position: 57.49997795411970,
+            position: 57.4999779541197,
             symbol: "``)/|\\",
             mina: 118,
         },
         bound: {
-            position: 57.826180460752700,
+            position: 57.82618046075270,
             levels: ["high", "veryHigh", "extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "extreme",
-            position: 58.03562587367890,
+            position: 58.0356258736789,
             symbol: ",.(|)",
             mina: 119,
         },
         bound: {
-            position: 58.247756502994000,
+            position: 58.24775650299400,
             levels: ["extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "veryHigh",
-            position: 58.45834203963360,
+            position: 58.4583420396336,
             symbol: ".(|)",
             mina: 120,
         },
         bound: {
-            position: 58.589460280797900,
+            position: 58.58946028079790,
             levels: ["veryHigh", "extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "extreme",
-            position: 58.72057852196220,
+            position: 58.7205785219622,
             symbol: ",|\\)",
-            mina: 120.700329647587000,
+            mina: 120.70032964758700,
         },
         bound: {
-            position: 58.809857892648900,
+            position: 58.80985789264890,
             levels: ["extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "high",
-            position: 59.15682245751140,
+            position: 59.1568224575114,
             symbol: "|\\)",
             mina: 121,
         },
         bound: {
-            position: 59.231433934890100,
+            position: 59.23143393489010,
             levels: ["extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "extreme",
-            position: 59.57953862346640,
+            position: 59.5795386234664,
             symbol: "`|\\)",
             mina: 122,
         },
         bound: {
-            position: 59.793535324545100,
+            position: 59.79353532454510,
             levels: ["high", "veryHigh", "extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "extreme",
-            position: 60.04881899951480,
+            position: 60.0488189995148,
             symbol: ",(|)",
             mina: 123,
         },
         bound: {
-            position: 60.215111366786300,
+            position: 60.21511136678630,
             levels: ["extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "medium",
-            position: 60.41206282756760,
+            position: 60.4120628275676,
             symbol: "(|)",
             mina: 124,
         },
         bound: {
-            position: 60.777212756441200,
+            position: 60.77721275644120,
             levels: ["extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "extreme",
-            position: 60.98446622146380,
+            position: 60.9844662214638,
             symbol: "`(|)",
             mina: 125,
         },
         bound: {
-            position: 61.198788798682400,
+            position: 61.19878879868240,
             levels: ["extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "extreme",
-            position: 61.51064205745500,
+            position: 61.5106420574550,
             symbol: "``(|)",
             mina: 126,
         },
         bound: {
-            position: 61.760890188337400,
+            position: 61.76089018833740,
             levels: ["high", "veryHigh", "extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "extreme",
-            position: 62.00253978744860,
+            position: 62.0025397874486,
             symbol: ",'(|)",
             mina: 127,
         },
         bound: {
-            position: 62.182466230578600,
+            position: 62.18246623057860,
             levels: ["extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "veryHigh",
-            position: 62.36578361550210,
+            position: 62.3657836155021,
             symbol: "'(|)",
             mina: 128,
         },
         bound: {
-            position: 62.465465808856200,
+            position: 62.46546580885620,
             levels: ["medium", "veryHigh", "extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "extreme",
-            position: 62.56514800221030,
+            position: 62.5651480022103,
             symbol: ",.(|\\",
-            mina: 128.580014058364000,
+            mina: 128.58001405836400,
         },
         bound: {
-            position: 62.744567620233500,
+            position: 62.74456762023350,
             levels: ["extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "veryHigh",
-            position: 62.96090387296260,
+            position: 62.9609038729626,
             symbol: ".(|\\",
             mina: 129,
         },
         bound: {
-            position: 63.166143662474800,
+            position: 63.16614366247480,
             levels: ["extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "extreme",
-            position: 63.38362003891760,
+            position: 63.3836200389176,
             symbol: "`.(|\\",
             mina: 130,
         },
         bound: {
-            position: 63.728245052129700,
+            position: 63.72824505212970,
             levels: ["veryHigh", "extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "high",
-            position: 63.79008155603250,
+            position: 63.7900815560325,
             symbol: "|\\\\",
             mina: 131,
         },
         bound: {
-            position: 64.149821094370900,
+            position: 64.14982109437090,
             levels: ["high", "veryHigh", "extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "extreme",
-            position: 64.51886879014470,
+            position: 64.5188687901447,
             symbol: ",(|\\",
             mina: 132,
         },
         bound: {
-            position: 64.711922484025900,
+            position: 64.71192248402590,
             levels: ["extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "medium",
-            position: 64.91462466089680,
+            position: 64.9146246608968,
             symbol: "(|\\",
             mina: 133,
         },
         bound: {
-            position: 65.133498526267100,
+            position: 65.13349852626710,
             levels: ["extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "extreme",
-            position: 65.33734082685180,
+            position: 65.3373408268518,
             symbol: "`(|\\",
             mina: 134,
         },
         bound: {
-            position: 65.555074568508300,
+            position: 65.55507456850830,
             levels: ["extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "extreme",
-            position: 65.74714886499850,
+            position: 65.7471488649985,
             symbol: "``(|\\",
             mina: 135,
         },
         bound: {
-            position: 66.117175958163200,
+            position: 66.11717595816320,
             levels: ["high", "veryHigh", "extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "extreme",
-            position: 66.25096903374720,
+            position: 66.2509690337472,
             symbol: ",,)|\\\\",
             mina: 136,
         },
         bound: {
-            position: 66.538752000404400,
+            position: 66.53875200040440,
             levels: ["extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "extreme",
-            position: 66.86834544883100,
+            position: 66.8683454488310,
             symbol: ",)|\\\\",
             mina: 137,
         },
         bound: {
-            position: 67.100853390059400,
+            position: 67.10085339005940,
             levels: ["extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "high",
-            position: 67.29106161478570,
+            position: 67.2910616147857,
             symbol: ")|\\\\",
             mina: 138,
         },
         bound: {
-            position: 67.522429432300600,
+            position: 67.52242943230060,
             levels: ["extreme", "insane"],
         },
     },
     {
         comma: {
             introducingLevel: "extreme",
-            position: 67.90023403964100,
+            position: 67.9002340396410,
             symbol: "`)|\\\\",
             mina: 139,
         },
         bound: {
-            position: 68.084530821955500,
+            position: 68.08453082195550,
             levels: ["extreme", "insane"],
         },
     },
@@ -1795,7 +1795,7 @@ const DATA = [
             mina: 140,
         },
         bound: {
-            position: 68.572508221180400,
+            position: 68.57250822118040,
             levels: ["medium", "high", "veryHigh", "extreme", "insane"],
         },
     },

@@ -16,8 +16,8 @@ if (args.length) {
     console.log(HEADER_ROW)
 
     DATA.map((datum, datumIndex) => {
-        const histories = calculateBoundHistories(datum.bound) // TODO: and clearly the minimum error measure is not useful unless it's minimum error up to a certain rank
-        const processedHistories = processHistories(histories, datum, datumIndex, {summary: true}) // TODO: I am curious to like, print out if any events ever have ranks 4, 5, and 6 or if I totally invented those
+        const histories = calculateBoundHistories(datum.bound)
+        const processedHistories = processHistories(histories, datum, datumIndex, {summary: true})
         console.log(processedHistories)
     })
 

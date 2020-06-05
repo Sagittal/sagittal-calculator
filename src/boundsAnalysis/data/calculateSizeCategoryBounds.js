@@ -1,31 +1,31 @@
 const calculateSizeCategoryBounds = () => [
     {
         name: "n|s",
-        position: 1.807522932766520,
+        position: 1.80752293276652,
     },
     {
         name: "s|k",
-        position: 4.499913461258480,
+        position: 4.49991346125848,
     },
     {
         name: "k|C",
-        position: 11.730005192324400,
+        position: 11.73000519232440,
     },
     {
         name: "C|S",
-        position: 33.382492644207100,
+        position: 33.38249264420710,
     },
     {
         name: "S|M",
-        position: 45.112497836531300,
+        position: 45.11249783653130,
     },
     {
         name: "M|L",
-        position: 56.842503028855900,
+        position: 56.84250302885590,
     },
     {
         name: "L|SS",
-        position: 68.572508221180400,
+        position: 68.57250822118040,
     },
 
 ]
