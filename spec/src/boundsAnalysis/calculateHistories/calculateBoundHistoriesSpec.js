@@ -33,28 +33,28 @@ describe("calculateBoundHistories", () => {
             {
                 position: 8.820388401029373,
                 rank: 8,
-                events:  [
+                events: [
                     {
                         level: "medium",
                         type: "override",
                         name: "override",
                         position: 9.5,
-                        rank: 7
+                        rank: 7,
                     },
                     {
                         level: "veryHigh",
                         type: "EDA",
                         name: "4.5/58",
                         position: 8.820388401029373,
-                        rank: 1
+                        rank: 1,
                     },
                     {
                         level: "extreme",
                         type: "impossible",
                         name: "not between ,)|( @9.1818 and )|( @9.6880 at the extreme level",
                         position: 8.820388401029373,
-                        rank: 8
-                    }
+                        rank: 8,
+                    },
                 ],
             },
             {
@@ -85,7 +85,7 @@ describe("calculateBoundHistories", () => {
                         level: "medium",
                         type: "override",
                         name: "override",
-                        position: 9.5, // TODO: so in analyze step, you should have a function which looks though all the histories and finds the one whose maximum rank is the minimum, and then bring special attention to it as the best history
+                        position: 9.5,
                         rank: 7,
                     },
                     {
@@ -157,9 +157,9 @@ describe("calculateBoundHistories", () => {
                     {
                         level: "high",
                         type: "SIZE",
-                        name: "L|SS", // TODO: also remember to change the bound for the half-apotome mirror of the L|SS size category bound!
+                        name: "L|SS",
                         position: 68.5725082211804,
-                        rank: 3, // TODO: keep an eye out for this one, that it still gets chosen as the most popular one
+                        rank: 3,
                     },
                     {
                         level: "veryHigh",
@@ -234,7 +234,7 @@ describe("calculateBoundHistories", () => {
                         type: "SIZE",
                         name: "L|SS",
                         position: 68.5725082211804,
-                        rank: 3, // TODO: maybe you'll need logic to say that if the final bound from the beginning matches exactly one of these, then don't even bother calculating anything, just assume that's it ?
+                        rank: 3,
                     },
                     {
                         level: "veryHigh",

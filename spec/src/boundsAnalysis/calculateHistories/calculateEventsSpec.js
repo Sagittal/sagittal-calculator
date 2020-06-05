@@ -78,7 +78,7 @@ describe("calculateEvents", () => {
                 level = "veryHigh"
                 neighborCommaPositions = calculateNeighborCommaPositions(6.05, level)
 
-                const result = calculateEvents(level, neighborCommaPositions, eventType)
+                const result = calculateEvents(level, neighborCommaPositions, eventType, position)
 
                 expect(result).toEqual([])
             })
@@ -89,13 +89,12 @@ describe("calculateEvents", () => {
                 eventType = "MEAN"
             })
 
-            // TODO: an example of rank 2 plz
-
             it("works at the medium level", () => {
                 level = "medium"
                 neighborCommaPositions = calculateNeighborCommaPositions(26.25, level)
+                position = 28.3
 
-                const result = calculateEvents(level, neighborCommaPositions, eventType)
+                const result = calculateEvents(level, neighborCommaPositions, eventType, position)
 
                 expect(result).toEqual([
                     {
@@ -111,8 +110,9 @@ describe("calculateEvents", () => {
             it("works at the high level", () => {
                 level = "high"
                 neighborCommaPositions = calculateNeighborCommaPositions(26.25, level)
+                position = 28.3
 
-                const result = calculateEvents(level, neighborCommaPositions, eventType)
+                const result = calculateEvents(level, neighborCommaPositions, eventType, position)
 
                 expect(result).toEqual([
                     {
@@ -128,8 +128,9 @@ describe("calculateEvents", () => {
             it("works at the veryHigh level", () => {
                 level = "veryHigh"
                 neighborCommaPositions = calculateNeighborCommaPositions(26.25, level)
+                position = 28.3
 
-                const result = calculateEvents(level, neighborCommaPositions, eventType)
+                const result = calculateEvents(level, neighborCommaPositions, eventType, position)
 
                 expect(result).toEqual([
                     {
@@ -145,8 +146,9 @@ describe("calculateEvents", () => {
             it("works at the extreme level", () => {
                 level = "extreme"
                 neighborCommaPositions = calculateNeighborCommaPositions(26.25, level)
+                position = 28.3
 
-                const result = calculateEvents(level, neighborCommaPositions, eventType)
+                const result = calculateEvents(level, neighborCommaPositions, eventType, position)
 
                 expect(result).toEqual([
                     {
@@ -162,12 +164,13 @@ describe("calculateEvents", () => {
             it("works even if there is a closer comma mean to the position but it is not between the neighbor commas", () => {
                 // mean between )|) and |\ is 31.2043820809972, 0.20 away
                 // mean between |) and )|) is 28.95310116433255, 2.05 away
-                // however, )|) is at 30.985839104729000, so the 30.5 position is between it and |), not between it and |\
+                // however, )|) is at 30.98583910472900, so the 30.5 position is between it and |), not between it and |\
 
                 level = "high"
                 neighborCommaPositions = calculateNeighborCommaPositions(30.5, level)
+                position = 27.3
 
-                const result = calculateEvents(level, neighborCommaPositions, eventType)
+                const result = calculateEvents(level, neighborCommaPositions, eventType, position)
 
                 expect(result).toEqual([
                     {
@@ -176,6 +179,24 @@ describe("calculateEvents", () => {
                         name: "|) )|)",
                         position: 28.95310116433255,
                         rank: 5,
+                    },
+                ])
+            })
+
+            it("works when the comma mean is within a half-step of the EDA at that level, giving a better rank", () => {
+                level = "medium"
+                neighborCommaPositions = calculateNeighborCommaPositions(26.25, level)
+                position = 26.22
+
+                const result = calculateEvents(level, neighborCommaPositions, eventType, position)
+
+                expect(result).toEqual([
+                    {
+                        level: "medium",
+                        type: "MEAN",
+                        name: "/| |)",
+                        position: 24.38519069840745,
+                        rank: 2,
                     },
                 ])
             })
@@ -190,14 +211,14 @@ describe("calculateEvents", () => {
                 level = "medium"
                 neighborCommaPositions = calculateNeighborCommaPositions(34.0, level)
 
-                const result = calculateEvents(level, neighborCommaPositions, eventType)
+                const result = calculateEvents(level, neighborCommaPositions, eventType, position)
 
                 expect(result).toEqual([
                     {
                         level: "medium",
                         type: "SIZE",
                         name: "C|S",
-                        position: 33.382492644207100,
+                        position: 33.38249264420710,
                         rank: 6,
                     },
                 ])
@@ -207,7 +228,7 @@ describe("calculateEvents", () => {
                 level = "veryHigh"
                 neighborCommaPositions = calculateNeighborCommaPositions(6.05, level)
 
-                const result = calculateEvents(level, neighborCommaPositions, eventType)
+                const result = calculateEvents(level, neighborCommaPositions, eventType, position)
 
                 expect(result).toEqual([])
             })

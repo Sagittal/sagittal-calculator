@@ -114,7 +114,7 @@ describe("calculateExtendedHistories", () => {
                             type: "EDA",
                             name: "23.5/58",
                             position: 46.062028316486725,
-                            rank: 1
+                            rank: 1,
                         },
                     ],
                 },
@@ -128,7 +128,7 @@ describe("calculateExtendedHistories", () => {
                             type: "MEAN",
                             name: "'//| )//|",
                             position: 45.681795472660895,
-                            rank: 2
+                            rank: 2,
                         },
                     ],
                 },
@@ -142,7 +142,7 @@ describe("calculateExtendedHistories", () => {
                             type: "SIZE",
                             name: "S|M",
                             position: 45.1124978365313,
-                            rank: 3
+                            rank: 3,
                         },
                     ],
                 },

@@ -5,4 +5,3 @@ const rankSummary = [
 module.exports = {
     rankSummary,
 }
-// TODO: it might be nice to center the shafts in the main output

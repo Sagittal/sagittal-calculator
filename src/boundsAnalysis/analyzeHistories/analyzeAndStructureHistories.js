@@ -1,7 +1,7 @@
 const {structureHistories} = require("./structureHistories")
 const {analyzeHistory} = require("./analyzeHistory")
 const {calculateMinimumError} = require("./calculateMinimumError")
-const {calculateBestHistories} = require("./calculateBestHistories")
+const {calculateBestPossibleHistories} = require("./calculateBestPossibleHistories")
 const {BOUNDED_COMMAS} = require("../data/boundedCommas")
 const {rankSummary} = require("./rankSummary")
 
@@ -12,7 +12,7 @@ const analyzeAndStructureHistories = (histories, {bound, comma}) => {
     const analyzedHistories = histories.map(history => analyzeHistory(history, position))
 
     const possibleHistories = analyzedHistories.filter(analyzedHistory => analyzedHistory.possible).length
-    const bestHistories = calculateBestHistories(analyzedHistories)
+    const bestHistories = calculateBestPossibleHistories(analyzedHistories)
     const bestRank = bestHistories[0].rank
     const minimumError = calculateMinimumError(analyzedHistories)
     const totalHistories = analyzedHistories.length

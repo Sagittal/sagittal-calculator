@@ -8,7 +8,7 @@ describe("calculateRank", () => {
         })
 
         it("works for EDA midpoints events", () => {
-            const type = 'EDA'
+            const type = "EDA"
 
             const result = calculateRank(type, withinHalfLevelEda)
 
@@ -16,7 +16,7 @@ describe("calculateRank", () => {
         })
 
         it("works for comma mean events", () => {
-            const type = 'MEAN'
+            const type = "MEAN"
 
             const result = calculateRank(type, withinHalfLevelEda)
 
@@ -24,7 +24,7 @@ describe("calculateRank", () => {
         })
 
         it("works for size category bound events", () => {
-            const type = 'SIZE'
+            const type = "SIZE"
 
             const result = calculateRank(type, withinHalfLevelEda)
 
@@ -38,7 +38,7 @@ describe("calculateRank", () => {
         })
 
         it("works for EDA midpoints events", () => {
-            const type = 'EDA'
+            const type = "EDA"
 
             const result = calculateRank(type, withinHalfLevelEda)
 
@@ -46,7 +46,7 @@ describe("calculateRank", () => {
         })
 
         it("works for comma mean events events", () => {
-            const type = 'MEAN'
+            const type = "MEAN"
 
             const result = calculateRank(type, withinHalfLevelEda)
 
@@ -54,7 +54,7 @@ describe("calculateRank", () => {
         })
 
         it("works for size category bound events", () => {
-            const type = 'SIZE'
+            const type = "SIZE"
 
             const result = calculateRank(type, withinHalfLevelEda)
 
@@ -63,7 +63,7 @@ describe("calculateRank", () => {
     })
 
     it("gives the second-lowest rank to override events", () => {
-        const type = 'override'
+        const type = "override"
 
         const result = calculateRank(type, withinHalfLevelEda)
 
@@ -71,7 +71,7 @@ describe("calculateRank", () => {
     })
 
     it("gives the lowest rank to impossible events", () => {
-        const type = 'impossible'
+        const type = "impossible"
 
         const result = calculateRank(type, withinHalfLevelEda)
 

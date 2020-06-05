@@ -3,7 +3,7 @@ const {calculateBoundPreviousLevel} = require("../../../../src/boundsAnalysis/ut
 describe("calculateBoundPreviousLevel", () => {
     it("gives the previous level for this bound (since some bounds skip levels)", () => {
         const bound = {
-            levels: ["medium", "veryHigh"]
+            levels: ["medium", "veryHigh"],
         }
 
         const result = calculateBoundPreviousLevel(bound, "veryHigh")

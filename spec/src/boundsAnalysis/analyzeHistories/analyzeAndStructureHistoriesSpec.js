@@ -84,14 +84,14 @@ describe("analyzeAndStructureHistories", () => {
                     veryHigh: [
                         {
                             introducingLevel: "veryHigh",
-                            position: 22.93058753724570,
-                            distance: 23.1164196495597 - 22.93058753724570,
+                            position: 22.9305875372457,
+                            distance: 23.1164196495597 - 22.9305875372457,
                             symbol: ".)/|",
                             mina: 47,
                         },
                         {
                             introducingLevel: "veryHigh",
-                            position: 23.46001038464900,
+                            position: 23.4600103846490,
                             distance: 23.46001038464900 - 23.1164196495597,
                             symbol: "'/|",
                             mina: 48,
@@ -100,14 +100,14 @@ describe("analyzeAndStructureHistories", () => {
                     extreme: [
                         {
                             introducingLevel: "veryHigh",
-                            position: 22.93058753724570,
-                            distance: 23.1164196495597 - 22.93058753724570,
+                            position: 22.9305875372457,
+                            distance: 23.1164196495597 - 22.9305875372457,
                             symbol: ".)/|",
                             mina: 47,
                         },
                         {
                             introducingLevel: "veryHigh",
-                            position: 23.46001038464900,
+                            position: 23.4600103846490,
                             distance: 23.46001038464900 - 23.1164196495597,
                             symbol: "'/|",
                             mina: 48,
@@ -116,14 +116,14 @@ describe("analyzeAndStructureHistories", () => {
                     insane: [
                         {
                             introducingLevel: "veryHigh",
-                            position: 22.93058753724570,
-                            distance: 23.1164196495597 - 22.93058753724570,
+                            position: 22.9305875372457,
+                            distance: 23.1164196495597 - 22.9305875372457,
                             symbol: ".)/|",
                             mina: 47,
                         },
                         {
                             introducingLevel: "veryHigh",
-                            position: 23.46001038464900,
+                            position: 23.4600103846490,
                             distance: 23.46001038464900 - 23.1164196495597,
                             symbol: "'/|",
                             mina: 48,

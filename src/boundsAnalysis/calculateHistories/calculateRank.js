@@ -8,10 +8,10 @@ const calculateRank = (type, withinHalfLevelEda) => {
     if (type === "SIZE") {
         return withinHalfLevelEda ? 3 : 6
     }
-    if (type === 'override') {
+    if (type === "override") {
         return 7
     }
-    if (type === 'impossible') {
+    if (type === "impossible") {
         return 8
     }
 }

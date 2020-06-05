@@ -3,7 +3,7 @@ const {calculateBoundedCommas} = require("../../../../src/boundsAnalysis/data/bo
 describe("calculateBoundedCommas", () => {
     it("returns, given a bound, for each of its levels, an array of the pair of commas it bounds at that level", () => {
         const bound = {
-            position: 24.662198471110800,
+            position: 24.66219847111080,
             levels: ["medium", "extreme", "insane"],
         }
 
@@ -29,14 +29,14 @@ describe("calculateBoundedCommas", () => {
             extreme: [
                 {
                     introducingLevel: "extreme",
-                    position: 24.27848242135630,
+                    position: 24.2784824213563,
                     distance: 0.38371604975449713,
                     symbol: ",)/|",
                     mina: 50,
                 },
                 {
                     introducingLevel: "high",
-                    position: 24.88430832517980,
+                    position: 24.8843083251798,
                     distance: 0.22210985406900008,
                     symbol: ")/|",
                     mina: 51,
@@ -45,14 +45,14 @@ describe("calculateBoundedCommas", () => {
             insane: [
                 {
                     introducingLevel: "extreme",
-                    position: 24.27848242135630,
+                    position: 24.2784824213563,
                     distance: 0.38371604975449713,
                     symbol: ",)/|",
                     mina: 50,
                 },
                 {
                     introducingLevel: "high",
-                    position: 24.88430832517980,
+                    position: 24.8843083251798,
                     distance: 0.22210985406900008,
                     symbol: ")/|",
                     mina: 51,
@@ -63,7 +63,7 @@ describe("calculateBoundedCommas", () => {
 
     it("works for the final bound", () => {
         const bound = {
-            position: 68.572508221180400,
+            position: 68.57250822118040,
             levels: ["medium", "high", "veryHigh", "extreme", "insane"],
         }
 
