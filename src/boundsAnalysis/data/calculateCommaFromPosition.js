@@ -1,4 +1,4 @@
-const {DATA} = require("../data/data")
+const {DATA} = require("./data")
 
 const calculateCommaFromPosition = position => {
     if (!position) return

@@ -1,5 +1,5 @@
-const {LEVEL_COMMAS} = require("../data/levels")
-const {calculateNeighborPositions} = require("./calculateNeighborPositions")
+const {LEVEL_COMMAS} = require("./levels")
+const {calculateNeighborPositions} = require("../utilities/calculateNeighborPositions")
 
 const calculateNeighborCommaPositions = (position, level) => {
     const levelCommas = LEVEL_COMMAS[level]

@@ -1,4 +1,4 @@
-const {calculateCommaFromPosition} = require("../../../../src/boundsAnalysis/utilities/calculateCommaFromPosition")
+const {calculateCommaFromPosition} = require("../../../../src/boundsAnalysis/data/calculateCommaFromPosition")
 
 describe("calculateCommaFromPosition", () => {
     it("given a position, returns the comma with that position", () => {

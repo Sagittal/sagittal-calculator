@@ -12,8 +12,8 @@ const analyzeAndStructureHistories = (histories, {bound, comma}) => {
     const analyzedHistories = histories.map(history => analyzeHistory(history, position))
 
     const possibleHistories = analyzedHistories.filter(analyzedHistory => analyzedHistory.possible).length
-    const bestHistories = calculateBestPossibleHistories(analyzedHistories)
-    const bestRank = bestHistories[0].rank
+    const bestPossibleHistories = calculateBestPossibleHistories(analyzedHistories)
+    const bestRank = bestPossibleHistories[0].rank
     const minimumError = calculateMinimumError(analyzedHistories)
     const totalHistories = analyzedHistories.length
     const structuredHistories = structureHistories(analyzedHistories)
@@ -28,7 +28,7 @@ const analyzeAndStructureHistories = (histories, {bound, comma}) => {
             boundedCommas,
             minaUpperBoundOf: mina,
         },
-        bestHistories,
+        bestPossibleHistories,
         analysis: {
             bestRank,
             minimumError,

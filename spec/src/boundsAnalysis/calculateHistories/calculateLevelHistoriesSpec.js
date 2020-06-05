@@ -135,7 +135,7 @@ describe("calculateLevelHistories", () => {
                     {
                         level: "veryHigh",
                         type: "impossible",
-                        name: "not between ~| @8.7296 and )|( @9.6880 at the veryHigh level",
+                        name: "not between ~| @8.730 and )|( @9.688 at the veryHigh level",
                         position: 8.12,
                         rank: 8,
                     },

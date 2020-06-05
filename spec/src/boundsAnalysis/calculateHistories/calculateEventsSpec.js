@@ -1,4 +1,4 @@
-const {calculateNeighborCommaPositions} = require("../../../../src/boundsAnalysis/utilities/calculateNeighborCommaPositions")
+const {calculateNeighborCommaPositions} = require("../../../../src/boundsAnalysis/data/calculateNeighborCommaPositions")
 const {calculateEvents} = require("../../../../src/boundsAnalysis/calculateHistories/calculateEvents")
 
 describe("calculateEvents", () => {

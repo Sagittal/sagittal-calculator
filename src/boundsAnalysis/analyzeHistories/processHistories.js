@@ -1,5 +1,5 @@
 const {analyzeAndStructureHistories} = require("./analyzeAndStructureHistories")
-const {formatAnalyzedAndStructuredHistories, HEADER_ROW} = require("./formatAnalyzedAndStructuredHistories")
+const {formatAnalyzedAndStructuredHistories, HEADER_ROW} = require("../format/formatAnalyzedAndStructuredHistories")
 
 const processHistories = (histories, datum, datumIndex, {summary}) => {
     const analyzedAndStructuredHistories = analyzeAndStructureHistories(histories, datum)

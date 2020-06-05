@@ -1,4 +1,4 @@
-const {formatAnalyzedAndStructuredHistories} = require("../../../../src/boundsAnalysis/analyzeHistories/formatAnalyzedAndStructuredHistories")
+const {formatAnalyzedAndStructuredHistories} = require("../../../../src/boundsAnalysis/format/formatAnalyzedAndStructuredHistories")
 
 describe("formatAnalyzedAndStructuredHistories", () => {
     let summary
@@ -22,7 +22,7 @@ describe("formatAnalyzedAndStructuredHistories", () => {
 
             const result = formatAnalyzedAndStructuredHistories(analyzedAndStructuredHistories, {datumIndex, summary})
 
-            expect(result).toEqual("10\t,|(\t5.4476\t2\t0.0000")
+            expect(result).toEqual("10\t    ,|( \t5.448\t2\t0.000")
         })
     })
 

@@ -1,6 +1,9 @@
+const {formatPosition} = require("./formatPosition")
+const {formatSymbol} = require("./formatSymbol")
+
 const HEADER_ROW = [
     "index",
-    "symbol",
+    "   symbol",
     "bound ¢",
     "bst rnk",
     "min err",
@@ -21,10 +24,10 @@ const formatAnalyzedAndStructuredHistories = (analyzedAndStructuredHistories, {d
         } = analyzedAndStructuredHistories
         formattedAnalyzedAndStructuredHistories = [
             datumIndex,
-            extremeLevelLesserNeighborCommaSymbol,
-            position.toPrecision(5),
+            formatSymbol(extremeLevelLesserNeighborCommaSymbol),
+            formatPosition(position),
             bestRank,
-            typeof minimumError === "undefined" ? "n/a" : minimumError.toPrecision(5),
+            typeof minimumError === "undefined" ? "n/a" : formatPosition(minimumError),
         ].join("\t")
     } else {
         formattedAnalyzedAndStructuredHistories = JSON.stringify(analyzedAndStructuredHistories, null, 4)

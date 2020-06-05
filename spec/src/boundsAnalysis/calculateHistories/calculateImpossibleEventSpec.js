@@ -31,7 +31,7 @@ describe("calculateImpossibleEvent", () => {
         expect(result).toEqual({
             level: "veryHigh",
             type: "impossible",
-            name: "not between the minimum position @0.0000 and ``| @0.83252 at the veryHigh level",
+            name: "not between the minimum position @0.000 and ``| @0.833 at the veryHigh level",
             position: 1.4242979405308,
             rank: 8,
         })
