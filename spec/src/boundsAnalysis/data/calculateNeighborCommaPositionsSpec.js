@@ -1,4 +1,4 @@
-const {calculateNeighborCommaPositions} = require("../../../../src/boundsAnalysis/utilities/calculateNeighborCommaPositions")
+const {calculateNeighborCommaPositions} = require("../../../../src/boundsAnalysis/data/calculateNeighborCommaPositions")
 
 describe("calculateNeighborCommaPositions", () => {
     it("gives the positions of the commas immediately lesser and greater than the position at that level", () => {

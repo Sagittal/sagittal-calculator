@@ -24,7 +24,7 @@ describe("calculateBoundHistories", () => {
                     {
                         level: "veryHigh",
                         type: "impossible",
-                        name: "not between ~| @8.7296 and )|( @9.6880 at the veryHigh level",
+                        name: "not between ~| @8.730 and )|( @9.688 at the veryHigh level",
                         position: 8.120357575550852,
                         rank: 8,
                     },
@@ -51,7 +51,7 @@ describe("calculateBoundHistories", () => {
                     {
                         level: "extreme",
                         type: "impossible",
-                        name: "not between ,)|( @9.1818 and )|( @9.6880 at the extreme level",
+                        name: "not between ,)|( @9.182 and )|( @9.688 at the extreme level",
                         position: 8.820388401029373,
                         rank: 8,
                     },
@@ -71,7 +71,7 @@ describe("calculateBoundHistories", () => {
                     {
                         level: "veryHigh",
                         type: "impossible",
-                        name: "not between ~| @8.7296 and )|( @9.6880 at the veryHigh level",
+                        name: "not between ~| @8.730 and )|( @9.688 at the veryHigh level",
                         position: 7.72288142310195,
                         rank: 8,
                     },

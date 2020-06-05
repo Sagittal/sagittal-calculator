@@ -1,12 +1,10 @@
 const {MAXIMUM_POSITION} = require("../data/intervals")
-const {calculateCommaFromPosition} = require("../utilities/calculateCommaFromPosition")
+const {calculateCommaFromPosition} = require("../data/calculateCommaFromPosition")
+const {formatPosition} = require("../format/formatPosition")
 
 const calculateImpossibleEvent = (position, level, [lesserNeighborCommaPosition, greaterNeighborCommaPosition]) => {
-    const formattedGreaterNeighborCommaPosition = greaterNeighborCommaPosition ?
-        greaterNeighborCommaPosition.toPrecision(5) :
-        MAXIMUM_POSITION.toPrecision(5)
-
-    const formattedLesserNeighborCommaPosition = lesserNeighborCommaPosition.toPrecision(5)
+    const formattedGreaterNeighborCommaPosition = formatPosition(greaterNeighborCommaPosition || MAXIMUM_POSITION)
+    const formattedLesserNeighborCommaPosition = formatPosition(lesserNeighborCommaPosition)
 
     const lesserCommaSymbol = lesserNeighborCommaPosition ? calculateCommaFromPosition(lesserNeighborCommaPosition).symbol : "the minimum position"
     const greaterCommaSymbol = greaterNeighborCommaPosition ? calculateCommaFromPosition(greaterNeighborCommaPosition).symbol : "the maximum position"

@@ -138,7 +138,7 @@ describe("analyzeAndStructureHistories", () => {
                 totalHistories: 2,
                 possibleHistories: 2,
             },
-            bestHistories: [
+            bestPossibleHistories: [
                 {
                     ...bestHistory,
                     possible: true,

@@ -1,5 +1,5 @@
-const {calculateNeighborCommaPositions} = require("../utilities/calculateNeighborCommaPositions")
-const {calculateCommaFromPosition} = require("../utilities/calculateCommaFromPosition")
+const {calculateNeighborCommaPositions} = require("./calculateNeighborCommaPositions")
+const {calculateCommaFromPosition} = require("./calculateCommaFromPosition")
 const {DATA} = require("./data")
 
 const calculateBoundedCommas = bound => {

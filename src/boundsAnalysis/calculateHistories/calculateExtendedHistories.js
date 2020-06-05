@@ -1,5 +1,5 @@
 const {isPositionBetweenPositions} = require("../utilities/isPositionBetweenPositions")
-const {calculateNeighborCommaPositions} = require("../utilities/calculateNeighborCommaPositions")
+const {calculateNeighborCommaPositions} = require("../data/calculateNeighborCommaPositions")
 const {calculateEvents} = require("./calculateEvents")
 const {extendHistory} = require("./extendHistory")
 const {calculateImpossibleEvent} = require("./calculateImpossibleEvent")
