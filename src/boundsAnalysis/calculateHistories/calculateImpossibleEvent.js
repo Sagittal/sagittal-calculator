@@ -16,6 +16,7 @@ const calculateImpossibleEvent = (position, level, [lesserNeighborCommaPosition,
         type: "impossible",
         name: `not between ${lesserCommaSymbol} @${formattedLesserNeighborCommaPosition} and ${greaterCommaSymbol} @${formattedGreaterNeighborCommaPosition} at the ${level} level`,
         position,
+        rank: 8, // TODO: enum for rank? well at least a javascript object mapping string to number?
     }
 }
 

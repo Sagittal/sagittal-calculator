@@ -1,6 +1,6 @@
 const {calculateExtendedHistories} = require("./calculateExtendedHistories")
 const {isHistoryImpossible} = require("../utilities/isHistoryImpossible")
-const {calculateBoundPreviousLevel} = require("../utilities/calculateBoundPreviousLevel")
+const {calculateOverriddenHistory} = require("./calculateOverriddenHistory")
 
 const calculateLevelHistories = (histories, level, bound) => {
     const {position: actualBoundPosition} = bound
@@ -13,19 +13,7 @@ const calculateLevelHistories = (histories, level, bound) => {
     })
 
     if (levelHistories.every(({events}) => isHistoryImpossible(events))) {
-        const previousLevel = calculateBoundPreviousLevel(bound, level)
-        const overriddenHistory = {
-            position: actualBoundPosition,
-            overridden: true,
-            events: [
-                {
-                    level: previousLevel,
-                    type: "override",
-                    name: "override",
-                    position: actualBoundPosition,
-                },
-            ],
-        }
+        const overriddenHistory = calculateOverriddenHistory(bound, level)
         const extendedHistories = calculateExtendedHistories(overriddenHistory, level, actualBoundPosition)
         levelHistories = levelHistories.concat(extendedHistories)
     }

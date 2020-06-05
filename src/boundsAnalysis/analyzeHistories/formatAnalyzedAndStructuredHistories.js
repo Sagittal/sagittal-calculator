@@ -2,9 +2,9 @@ const HEADER_ROW = [
     "index",
     "symbol",
     "bound ¢",
-    "psbln-o", // possible non-overridden
+    "bst rnk",
     "min err",
-    "ttl hst",
+    "ttl hst", // TODO: not sure this and the next one are really that interesting
     "psbl hst",
 ].join("\t")
 
@@ -16,8 +16,8 @@ const formatAnalyzedAndStructuredHistories = (analyzedAndStructuredHistories, {d
                 extremeLevelLesserNeighborCommaSymbol,
                 position,
             },
-            analysis: {
-                hasPossibleNonoverriddenHistory,
+            analysis: { // TODO: now need to include rank
+                bestRank,
                 minimumError,
                 totalHistories,
                 possibleHistories,
@@ -27,7 +27,7 @@ const formatAnalyzedAndStructuredHistories = (analyzedAndStructuredHistories, {d
             datumIndex,
             extremeLevelLesserNeighborCommaSymbol,
             position.toPrecision(5),
-            hasPossibleNonoverriddenHistory,
+            bestRank,
             typeof minimumError === "undefined" ? "n/a" : minimumError.toPrecision(5),
             totalHistories,
             possibleHistories,

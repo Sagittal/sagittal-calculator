@@ -9,6 +9,7 @@ describe("calculateImpossibleEvent", () => {
             type: "impossible",
             name: "not between ,.(|) @58.036 and `|\\) @59.580 at the veryHigh level",
             position: 57.4999779541197,
+            rank: 8,
         })
     })
 
@@ -20,6 +21,7 @@ describe("calculateImpossibleEvent", () => {
             type: "impossible",
             name: "not between ,.(|) @58.036 and the maximum position @68.573 at the veryHigh level",
             position: 57.4999779541197,
+            rank: 8,
         })
     })
 
@@ -30,7 +32,8 @@ describe("calculateImpossibleEvent", () => {
             level: "veryHigh",
             type: "impossible",
             name: "not between the minimum position @0.0000 and ``| @0.83252 at the veryHigh level",
-            position:1.42429794053080,
+            position: 1.42429794053080,
+            rank: 8, // TODO: maybe intersting thougt... maybe youdon't need infrastructure to prvent conitnuation of impossible histories if they won't be ranked? &shrug&
         })
     })
 })

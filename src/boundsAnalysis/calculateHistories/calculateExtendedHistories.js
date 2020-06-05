@@ -25,9 +25,9 @@ const calculateExtendedHistories = (history, level, actualBoundPosition) => {
     }
 
     const newEvents = [
-        ...calculateEvents(level, neighborCommaPositions, "EDA"),
-        ...calculateEvents(level, neighborCommaPositions, "MEAN"),
-        ...calculateEvents(level, neighborCommaPositions, "SIZE"),
+        ...calculateEvents(level, neighborCommaPositions, "EDA", position),
+        ...calculateEvents(level, neighborCommaPositions, "MEAN", position),
+        ...calculateEvents(level, neighborCommaPositions, "SIZE", position),
     ]
 
     newEvents.forEach(event => {

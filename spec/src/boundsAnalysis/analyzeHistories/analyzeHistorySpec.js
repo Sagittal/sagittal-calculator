@@ -11,6 +11,7 @@ describe("analyzeHistory", () => {
             position = actualBoundPosition
             history = {
                 events: ["event1", "event2"],
+                rank: 3,
                 position,
             }
 
@@ -20,6 +21,7 @@ describe("analyzeHistory", () => {
             expect(result.tinaError).toBe(0)
             expect(result.events).toEqual(["event1", "event2"])
             expect(result.position).toBe(position)
+            expect(result.rank).toBe(3)
         })
     })
 
@@ -29,6 +31,7 @@ describe("analyzeHistory", () => {
             position = actualBoundPosition + TINA * expectedTinaError
             history = {
                 events: ["event1", "event2"],
+                rank: 2,
                 position,
             }
 
@@ -38,6 +41,7 @@ describe("analyzeHistory", () => {
             expect(result.tinaError).toBe(expectedTinaError)
             expect(result.events).toEqual(["event1", "event2"])
             expect(result.position).toBe(position)
+            expect(result.rank).toBe(2)
         })
 
         it("works when the position is greater than the actual bound position by more than a tina", () => {
@@ -45,6 +49,7 @@ describe("analyzeHistory", () => {
             position = actualBoundPosition + TINA * expectedTinaError
             history = {
                 events: ["event1", "event2"],
+                rank: 1,
                 position,
             }
 
@@ -54,6 +59,7 @@ describe("analyzeHistory", () => {
             expect(result.tinaError).toBe(expectedTinaError)
             expect(result.events).toEqual(["event1", "event2"])
             expect(result.position).toBe(position)
+            expect(result.rank).toBe(1)
         })
 
         it("works when the position is below the actual bound position by less than a tina", () => {
@@ -61,6 +67,7 @@ describe("analyzeHistory", () => {
             position = actualBoundPosition + TINA * expectedTinaError
             history = {
                 events: ["event1", "event2"],
+                rank: 4,
                 position,
             }
 
@@ -70,6 +77,7 @@ describe("analyzeHistory", () => {
             expect(result.tinaError).toBe(expectedTinaError)
             expect(result.events).toEqual(["event1", "event2"])
             expect(result.position).toBe(position)
+            expect(result.rank).toBe(4)
         })
 
         it("works when the position is below the actual bound position by more than a tina", () => {
@@ -77,6 +85,7 @@ describe("analyzeHistory", () => {
             position = actualBoundPosition + TINA * expectedTinaError
             history = {
                 events: ["event1", "event2"],
+                rank: 5,
                 position,
             }
 
@@ -86,25 +95,7 @@ describe("analyzeHistory", () => {
             expect(result.tinaError).toBe(expectedTinaError)
             expect(result.events).toEqual(["event1", "event2"])
             expect(result.position).toBe(position)
-        })
-    })
-
-    describe("when the history's position matches the actual bound position, but the history was overridden at some level", () => {
-        it("returns the history, plus true for the possible property and a 0 error but overridden also set to true", () => {
-            position = actualBoundPosition
-            history = {
-                events: ["event1", "event2"],
-                overridden: true,
-                position,
-            }
-
-            const result = analyzeHistory(history, actualBoundPosition)
-
-            expect(result.possible).toBe(true)
-            expect(result.tinaError).toBe(0)
-            expect(result.events).toEqual(["event1", "event2"])
-            expect(result.position).toBe(position)
-            expect(result.overridden).toBe(true)
+            expect(result.rank).toBe(5)
         })
     })
 })

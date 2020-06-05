@@ -1,54 +1,64 @@
 const {analyzeAndStructureHistories} = require("../../../../src/boundsAnalysis/analyzeHistories/analyzeAndStructureHistories")
 
 describe("analyzeAndStructureHistories", () => {
-    it("returns helpful identifying information about the bound, alongside an analysis of its histories, and a structured presentation of said histories", () => {
+    it("returns helpful identifying information about the bound, alongside an analysis of its histories, and a structured presentation of said histories, and its histories which are tied for the best rank", () => {
+        const notBestHistory = {
+            position: 23.116419649559468,
+            rank: 5,
+            events: [
+                {
+                    level: "veryHigh",
+                    type: "MEAN",
+                    name: ".)/| '/|",
+                    position: 23.2,
+                    rank: 2,
+                },
+                {
+                    level: "extreme",
+                    type: "MEAN",
+                    name: ".)/| '/|",
+                    position: 23.2,
+                    rank: 5,
+                },
+                {
+                    level: "insane",
+                    type: "EDA",
+                    name: "164.5/809",
+                    position: 23.1,
+                    rank: 1,
+                },
+            ],
+        }
+        const bestHistory = {
+            position: 23.116419649559468,
+            rank: 2,
+            events: [
+                {
+                    level: "veryHigh",
+                    type: "MEAN",
+                    name: ".)/| '/|",
+                    position: 23.2,
+                    rank: 2,
+                },
+                {
+                    level: "extreme",
+                    type: "EDA",
+                    name: "47.5/233",
+                    position: 23.2,
+                    rank: 1,
+                },
+                {
+                    level: "insane",
+                    type: "EDA",
+                    name: "164.5/809",
+                    position: 23.1,
+                    rank: 1,
+                },
+            ],
+        }
         const histories = [
-            {
-                events: [
-                    {
-                        level: "veryHigh",
-                        type: "MEAN",
-                        name: ".)/| '/|",
-                        position: 23.2,
-                    },
-                    {
-                        level: "extreme",
-                        type: "MEAN",
-                        name: ".)/| '/|",
-                        position: 23.2,
-                    },
-                    {
-                        level: "insane",
-                        type: "EDA",
-                        name: "164.5/809",
-                        position: 23.1,
-                    },
-                ],
-                position: 23.116419649559468,
-            },
-            {
-                events: [
-                    {
-                        level: "veryHigh",
-                        type: "MEAN",
-                        name: ".)/| '/|",
-                        position: 23.2,
-                    },
-                    {
-                        level: "extreme",
-                        type: "EDA",
-                        name: "47.5/233",
-                        position: 23.2,
-                    },
-                    {
-                        level: "insane",
-                        type: "EDA",
-                        name: "164.5/809",
-                        position: 23.1,
-                    },
-                ],
-                position: 23.116419649559468,
-            },
+            notBestHistory,
+            bestHistory,
         ]
         const datum = {
             comma: {
@@ -123,11 +133,18 @@ describe("analyzeAndStructureHistories", () => {
                 minaUpperBoundOf: 47,
             },
             analysis: {
-                hasPossibleNonoverriddenHistory: true,
+                bestRank: 2,
                 minimumError: 0,
                 totalHistories: 2,
                 possibleHistories: 2,
             },
+            bestHistories: [
+                {
+                    ...bestHistory,
+                    possible: true,
+                    tinaError: -0,
+                },
+            ],
             structuredHistories: {
                 veryHigh: [
                     {
@@ -136,6 +153,7 @@ describe("analyzeAndStructureHistories", () => {
                         name: ".)/| '/|",
                         position: 23.2,
                         possible: true,
+                        rank: 2,
                         nextEvents: [
                             ".)/| '/|",
                             "47.5/233",
@@ -149,6 +167,7 @@ describe("analyzeAndStructureHistories", () => {
                         name: ".)/| '/|",
                         position: 23.2,
                         possible: true,
+                        rank: 5,
                         nextEvents: [
                             "164.5/809",
                         ],
@@ -159,6 +178,7 @@ describe("analyzeAndStructureHistories", () => {
                         name: "47.5/233",
                         position: 23.2,
                         possible: true,
+                        rank: 1,
                         nextEvents: [
                             "164.5/809",
                         ],
@@ -171,6 +191,7 @@ describe("analyzeAndStructureHistories", () => {
                         name: "164.5/809",
                         position: 23.1,
                         possible: true,
+                        rank: 1,
                         nextEvents: [],
                     },
                 ],
