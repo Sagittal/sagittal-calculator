@@ -6,18 +6,21 @@ describe("calculateExtendedHistories", () => {
         beforeEach(() => {
             history = {
                 position: 45.45,
+                rank: 8,
                 events: [
                     {
                         level: "high",
                         type: "EDA",
                         name: "16.5/47",
                         position: 45.45,
+                        rank: 1,
                     },
                     {
                         level: "veryHigh",
                         type: "impossible",
                         name: "not between 88.8 and 99.9",
                         position: 45.45,
+                        rank: 8,
                     },
                 ],
             }
@@ -34,12 +37,14 @@ describe("calculateExtendedHistories", () => {
         beforeEach(() => {
             history = {
                 position: 45.45,
+                rank: 1,
                 events: [
                     {
                         level: "high",
                         type: "EDA",
                         name: "16.5/47",
                         position: 45.45,
+                        rank: 1,
                     },
                 ],
             }
@@ -53,18 +58,21 @@ describe("calculateExtendedHistories", () => {
             expect(result).toEqual([
                 {
                     position: 45.45,
+                    rank: 8,
                     events: [
                         {
                             level: "high",
                             type: "EDA",
                             name: "16.5/47",
                             position: 45.45,
+                            rank: 1,
                         },
                         {
                             level: "veryHigh",
                             type: "impossible",
                             name: "not between ')|( @11.642 and )~| @12.064 at the veryHigh level",
                             position: 45.45,
+                            rank: 8,
                         },
                     ],
                 },
@@ -78,17 +86,19 @@ describe("calculateExtendedHistories", () => {
             type: "EDA",
             name: "16.5/47",
             position: 45.45,
+            rank: 1,
         }
         beforeEach(() => {
             history = {
                 position: 45.45,
+                rank: 1,
                 events: [
                     passedInHistoryEvent,
                 ],
             }
         })
 
-        it("returns an array with potentially many elements: for each snappable position of any event type, a new history which is like the passed-in history but with its events extended with a new event of snapping to that position", () => {
+        it("returns an array with potentially many elements: for each snappable position of any event type, a new history which is like the passed-in history but with its events extended with a new event of snapping to that position, and its rank updated if necessary", () => {
             const actualBoundPosition = 45.4
 
             const result = calculateExtendedHistories(history, "veryHigh", actualBoundPosition)
@@ -96,23 +106,44 @@ describe("calculateExtendedHistories", () => {
             expect(result).toEqual(jasmine.arrayWithExactContents([
                 {
                     position: 46.062028316486725,
+                    rank: 1,
                     events: [
                         passedInHistoryEvent,
-                        {level: "veryHigh", type: "EDA", name: "23.5/58", position: 46.062028316486725},
+                        {
+                            level: "veryHigh",
+                            type: "EDA",
+                            name: "23.5/58",
+                            position: 46.062028316486725,
+                            rank: 1
+                        },
                     ],
                 },
                 {
                     position: 45.681795472660895,
+                    rank: 2,
                     events: [
                         passedInHistoryEvent,
-                        {level: "veryHigh", type: "MEAN", name: "'//| )//|", position: 45.681795472660895},
+                        {
+                            level: "veryHigh",
+                            type: "MEAN",
+                            name: "'//| )//|",
+                            position: 45.681795472660895,
+                            rank: 2
+                        },
                     ],
                 },
                 {
                     position: 45.1124978365313,
+                    rank: 3,
                     events: [
                         passedInHistoryEvent,
-                        {level: "veryHigh", type: "SIZE", name: "S|M", position: 45.1124978365313},
+                        {
+                            level: "veryHigh",
+                            type: "SIZE",
+                            name: "S|M",
+                            position: 45.1124978365313,
+                            rank: 3
+                        },
                     ],
                 },
             ]))

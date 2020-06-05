@@ -5,6 +5,7 @@ describe("calculateEvents", () => {
     let level
     let neighborCommaPositions
     let eventType
+    let position
 
     describe("returns an event for each snappable position between the neighbor comma positions for this event type and level", () => {
         describe("for events of snapping to EDA midpoint positions", () => {
@@ -15,8 +16,9 @@ describe("calculateEvents", () => {
             it("works when only one EDA midpoint is between the neighbor commas", () => {
                 level = "veryHigh"
                 neighborCommaPositions = calculateNeighborCommaPositions(4.5, level)
+                position = 5.1
 
-                const result = calculateEvents(level, neighborCommaPositions, eventType)
+                const result = calculateEvents(level, neighborCommaPositions, eventType, position)
 
                 expect(result).toEqual(jasmine.arrayWithExactContents([
                     {
@@ -24,15 +26,35 @@ describe("calculateEvents", () => {
                         type: "EDA",
                         name: "2.5/58",
                         position: 4.900215778349652,
+                        rank: 1,
                     },
                 ]))
             })
 
-            it("works when multiple EDA midpoints are between the neighbor commas", () => {
+            it("works when only one EDA midpoint is between the neighbor commas, but it is not within a half-step of the EDA, so it gets a lower rank", () => {
+                level = "veryHigh"
+                neighborCommaPositions = calculateNeighborCommaPositions(4.5, level)
+                position = 3.1 // not carefully chosen; may not even be between the neighbor commas
+
+                const result = calculateEvents(level, neighborCommaPositions, eventType, position)
+
+                expect(result).toEqual(jasmine.arrayWithExactContents([
+                    {
+                        level: "veryHigh",
+                        type: "EDA",
+                        name: "2.5/58",
+                        position: 4.900215778349652,
+                        rank: 4,
+                    },
+                ]))
+            })
+
+            it("works when multiple EDA midpoints are between the neighbor commas, assigning the close one a higher rank", () => {
                 level = "high"
                 neighborCommaPositions = calculateNeighborCommaPositions(28.0, level)
+                position = 28.1
 
-                const result = calculateEvents(level, neighborCommaPositions, eventType)
+                const result = calculateEvents(level, neighborCommaPositions, eventType, position)
 
                 expect(result).toEqual(jasmine.arrayWithExactContents([
                     {
@@ -40,12 +62,14 @@ describe("calculateEvents", () => {
                         type: "EDA",
                         name: "11.5/47",
                         position: 27.816544035397598,
+                        rank: 1,
                     },
                     {
                         level: "high",
                         type: "EDA",
                         name: "12.5/47",
                         position: 30.235373951519126,
+                        rank: 4,
                     },
                 ]))
             })
@@ -65,6 +89,8 @@ describe("calculateEvents", () => {
                 eventType = "MEAN"
             })
 
+            // TODO: an example of rank 2 plz
+
             it("works at the medium level", () => {
                 level = "medium"
                 neighborCommaPositions = calculateNeighborCommaPositions(26.25, level)
@@ -77,6 +103,7 @@ describe("calculateEvents", () => {
                         type: "MEAN",
                         name: "/| |)",
                         position: 24.38519069840745,
+                        rank: 5,
                     },
                 ])
             })
@@ -93,6 +120,7 @@ describe("calculateEvents", () => {
                         type: "MEAN",
                         name: ")/| |)",
                         position: 26.07420006263995,
+                        rank: 5,
                     },
                 ])
             })
@@ -109,6 +137,7 @@ describe("calculateEvents", () => {
                         type: "MEAN",
                         name: ".|) |)",
                         position: 26.287231406133,
+                        rank: 5,
                     },
                 ])
             })
@@ -125,6 +154,7 @@ describe("calculateEvents", () => {
                         type: "MEAN",
                         name: "`.|) ,,|)",
                         position: 26.220209513021253,
+                        rank: 5,
                     },
                 ])
             })
@@ -145,6 +175,7 @@ describe("calculateEvents", () => {
                         type: "MEAN",
                         name: "|) )|)",
                         position: 28.95310116433255,
+                        rank: 5,
                     },
                 ])
             })
@@ -167,6 +198,7 @@ describe("calculateEvents", () => {
                         type: "SIZE",
                         name: "C|S",
                         position: 33.382492644207100,
+                        rank: 6,
                     },
                 ])
             })

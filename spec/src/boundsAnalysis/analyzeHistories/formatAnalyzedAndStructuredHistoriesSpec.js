@@ -14,7 +14,7 @@ describe("formatAnalyzedAndStructuredHistories", () => {
                     position: 5.447635291818090,
                 },
                 analysis: {
-                    hasPossibleNonoverriddenHistory: true,
+                    bestRank: 2,
                     minimumError: 0,
                     totalHistories: 42,
                     possibleHistories: 5,
@@ -24,7 +24,7 @@ describe("formatAnalyzedAndStructuredHistories", () => {
 
             const result = formatAnalyzedAndStructuredHistories(analyzedAndStructuredHistories, {datumIndex, summary})
 
-            expect(result).toEqual("10\t,|(\t5.4476\ttrue\t0.0000\t42\t5")
+            expect(result).toEqual("10\t,|(\t5.4476\t2\t0.0000\t42\t5")
         })
     })
 
@@ -40,7 +40,7 @@ describe("formatAnalyzedAndStructuredHistories", () => {
                     position: 5.447635291818090,
                 },
                 analysis: {
-                    hasPossibleNonoverriddenHistory: true,
+                    bestRank: 2,
                     minimumError: 0,
                     totalHistories: 42,
                     possibleHistories: 5,
@@ -57,7 +57,7 @@ describe("formatAnalyzedAndStructuredHistories", () => {
                 `        "position": 5.44763529181809`,
                 `    },`,
                 `    "analysis": {`,
-                `        "hasPossibleNonoverriddenHistory": true,`,
+                `        "bestRank": 2,`,
                 `        "minimumError": 0,`,
                 `        "totalHistories": 42,`,
                 `        "possibleHistories": 5`,
