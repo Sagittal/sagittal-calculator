@@ -1,9 +1,9 @@
-const isHistoryImpossible = events => {
-    if (!events.length) {
+const isHistoryImpossible = history => {
+    if (!history.length) {
         return false
     }
 
-    const mostRecentEvent = events[events.length - 1]
+    const mostRecentEvent = history[history.length - 1]
 
     return mostRecentEvent.type === "IMPOSSIBLE"
 }

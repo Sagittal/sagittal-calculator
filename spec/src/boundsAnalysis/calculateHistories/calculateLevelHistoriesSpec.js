@@ -7,30 +7,16 @@ describe("calculateLevelHistories", () => {
             type: "EDA",
             name: "1.5/21",
             position: 8.120357575550852,
-            rank: 1,
         }
         const secondHistoryPriorEvent = {
             level: "MEDIUM",
             type: "MEAN",
             name: "|( )|(",
             position: 7.72288142310195,
-            rank: 2,
         }
         const histories = [
-            {
-                position: 8.120357575550852,
-                rank: 1,
-                events: [
-                    firstHistoryPriorEvent,
-                ],
-            },
-            {
-                position: 8.120357575550852,
-                rank: 2,
-                events: [
-                    secondHistoryPriorEvent,
-                ],
-            },
+            [firstHistoryPriorEvent],
+            [secondHistoryPriorEvent],
         ]
         const level = "HIGH"
         const bound = {
@@ -41,54 +27,31 @@ describe("calculateLevelHistories", () => {
         const result = calculateLevelHistories(histories, level, bound)
 
         expect(result).toEqual([
-            {
-                position: 6.047074790303825,
-                rank: 4,
-                events: [
-                    firstHistoryPriorEvent,
-                    {level: "HIGH", type: "EDA", name: "2.5/47", position: 6.047074790303825, rank: 4},
-                ],
-            },
-            {
-                position: 8.465904706425356,
-                rank: 1,
-                events: [
-                    firstHistoryPriorEvent,
-                    {level: "HIGH", type: "EDA", name: "3.5/47", position: 8.465904706425356, rank: 1},
-                ],
-            },
-            {
-                position: 7.243699380344975,
-                rank: 2,
-                events: [
-                    firstHistoryPriorEvent,
-                    {level: "HIGH", type: "MEAN", name: "|( ~|", position: 7.243699380344975, rank: 2},
-                ],
-            },
-            {
-                position: 6.047074790303825,
-                rank: 4,
-                events: [
-                    secondHistoryPriorEvent,
-                    {level: "HIGH", type: "EDA", name: "2.5/47", position: 6.047074790303825, rank: 4},
-                ],
-            },
-            {
-                position: 8.465904706425356,
-                rank: 2,
-                events: [
-                    secondHistoryPriorEvent,
-                    {level: "HIGH", type: "EDA", name: "3.5/47", position: 8.465904706425356, rank: 1},
-                ],
-            },
-            {
-                position: 7.243699380344975,
-                rank: 2,
-                events: [
-                    secondHistoryPriorEvent,
-                    {level: "HIGH", type: "MEAN", name: "|( ~|", position: 7.243699380344975, rank: 2},
-                ],
-            },
+            [
+                firstHistoryPriorEvent,
+                {level: "HIGH", type: "EDA", name: "2.5/47", position: 6.047074790303825},
+            ],
+            [
+                firstHistoryPriorEvent,
+                {level: "HIGH", type: "EDA", name: "3.5/47", position: 8.465904706425356},
+            ],
+            [
+                firstHistoryPriorEvent,
+                {level: "HIGH", type: "MEAN", name: "|( ~|", position: 7.243699380344975},
+            ],
+            [
+                secondHistoryPriorEvent,
+                {level: "HIGH", type: "EDA", name: "2.5/47", position: 6.047074790303825},
+            ],
+            [
+                secondHistoryPriorEvent,
+                {level: "HIGH", type: "EDA", name: "3.5/47", position: 8.465904706425356},
+            ],
+            [
+                secondHistoryPriorEvent,
+                {level: "HIGH", type: "MEAN", name: "|( ~|", position: 7.243699380344975},
+            ],
+
         ])
     })
 
@@ -99,15 +62,10 @@ describe("calculateLevelHistories", () => {
                 type: "EDA",
                 name: "1.5/47",
                 position: 6.12, // very far from actualBoundPosition
-                rank: 4,
             }
-            const historyThatWillBeImpossibleAtNextLevel = {
-                position: 8.12,
-                rank: 4,
-                events: [
-                    eventThatWillBeImpossibleAtNextLevel,
-                ],
-            }
+            const historyThatWillBeImpossibleAtNextLevel = [
+                eventThatWillBeImpossibleAtNextLevel,
+            ]
             const histories = [
                 historyThatWillBeImpossibleAtNextLevel,
                 historyThatWillBeImpossibleAtNextLevel, // just showing that there are multiples; should probably test a mixed condition
@@ -125,71 +83,50 @@ describe("calculateLevelHistories", () => {
                 type: "OVERRIDE",
                 name: "OVERRIDE",
                 position: 9.208778600061725,
-                rank: 7,
             }
-            const expectedHistoryThatBecameImpossible = {
-                position: 8.12,
-                rank: 8,
-                events: [
-                    eventThatWillBeImpossibleAtNextLevel,
-                    {
-                        level: "VERY_HIGH",
-                        type: "IMPOSSIBLE",
-                        name: "not between ~| @8.730 and )|( @9.688 at the VERY_HIGH level",
-                        position: 8.12,
-                        rank: 8,
-                    },
-                ],
-            }
+            const expectedHistoryThatBecameImpossible = [
+                eventThatWillBeImpossibleAtNextLevel,
+                {
+                    level: "VERY_HIGH",
+                    type: "IMPOSSIBLE",
+                    name: "not between ~| @8.730 and )|( @9.688 at the VERY_HIGH level",
+                    position: 6.12,
+                },
+            ]
             expect(result).toEqual(jasmine.arrayWithExactContents([
                 expectedHistoryThatBecameImpossible,
                 expectedHistoryThatBecameImpossible,
-                {
-                    position: 8.820388401029373,
-                    rank: 7,
-                    events: [
-                        expectedOverrideEvent,
-                        {
-                            level: "VERY_HIGH",
-                            type: "EDA",
-                            name: "4.5/58",
-                            position: 8.820388401029373,
-                            rank: 1,
-                        },
-                    ],
-                },
-                {
-                    position: 9.208778600061725,
-                    rank: 7,
-                    events: [
-                        expectedOverrideEvent,
-                        {
-                            level: "VERY_HIGH",
-                            type: "MEAN",
-                            name: "~| )|(",
-                            position: 9.208778600061725,
-                            rank: 2,
-                        },
-                    ],
-                },
+                [
+                    expectedOverrideEvent,
+                    {
+                        level: "VERY_HIGH",
+                        type: "EDA",
+                        name: "4.5/58",
+                        position: 8.820388401029373,
+                    },
+                ],
+                [
+                    expectedOverrideEvent,
+                    {
+                        level: "VERY_HIGH",
+                        type: "MEAN",
+                        name: "~| )|(",
+                        position: 9.208778600061725,
+                    },
+                ],
             ]))
         })
 
         describe("when the bound has skipped a level", () => {
             it("sets the override event at the correct level", () => {
-                const historyThatWillBeImpossibleAtThisLevel = {
-                    position: 8.12,
-                    rank: 7,
-                    events: [
-                        {
-                            level: "MEDIUM",
-                            type: "IMPOSSIBLE",
-                            name: "not between 88.8 and 99.9",
-                            position: 6.12, // very far from actualBoundPosition
-                            rank: 7,
-                        },
-                    ],
-                }
+                const historyThatWillBeImpossibleAtThisLevel = [
+                    {
+                        level: "MEDIUM",
+                        type: "IMPOSSIBLE",
+                        name: "not between 88.8 and 99.9",
+                        position: 6.12, // very far from actualBoundPosition
+                    },
+                ]
                 const histories = [
                     historyThatWillBeImpossibleAtThisLevel,
                 ]
@@ -206,37 +143,26 @@ describe("calculateLevelHistories", () => {
                     type: "OVERRIDE",
                     name: "OVERRIDE",
                     position: 9.208778600061725,
-                    rank: 7,
                 }
                 expect(result[0]).toEqual(historyThatWillBeImpossibleAtThisLevel)
-                expect(result[1]).toEqual({
-                    position: 8.820388401029373,
-                    rank: 7,
-                    events: [
-                        expectedOverrideEvent,
-                        {
-                            level: "VERY_HIGH",
-                            type: "EDA",
-                            name: "4.5/58",
-                            position: 8.820388401029373,
-                            rank: 1,
-                        },
-                    ],
-                })
-                expect(result[2]).toEqual({
-                    position: 9.208778600061725,
-                    rank: 7,
-                    events: [
-                        expectedOverrideEvent,
-                        {
-                            level: "VERY_HIGH",
-                            type: "MEAN",
-                            name: "~| )|(",
-                            position: 9.208778600061725,
-                            rank: 2,
-                        },
-                    ],
-                })
+                expect(result[1]).toEqual([
+                    expectedOverrideEvent,
+                    {
+                        level: "VERY_HIGH",
+                        type: "EDA",
+                        name: "4.5/58",
+                        position: 8.820388401029373,
+                    },
+                ])
+                expect(result[2]).toEqual([
+                    expectedOverrideEvent,
+                    {
+                        level: "VERY_HIGH",
+                        type: "MEAN",
+                        name: "~| )|(",
+                        position: 9.208778600061725,
+                    },
+                ])
             })
         })
     })

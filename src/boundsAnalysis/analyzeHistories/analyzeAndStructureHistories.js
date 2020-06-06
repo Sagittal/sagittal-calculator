@@ -15,6 +15,7 @@ const analyzeAndStructureHistories = (histories, bound, boundIndex) => {
 
     const initialPosition = calculateInitialPosition(bound)
     const analyzedHistories = histories.map(history => analyzeHistory(history, bound, initialPosition))
+
     const possibleHistories = analyzedHistories.filter(analyzedHistory => analyzedHistory.possible)
     const possibleHistoryCount = possibleHistories.length
     const bestPossibleHistories = calculateBestPossibleHistories(possibleHistories)

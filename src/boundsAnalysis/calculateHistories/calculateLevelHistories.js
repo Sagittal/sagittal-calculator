@@ -12,7 +12,7 @@ const calculateLevelHistories = (histories, level, bound) => {
         levelHistories = levelHistories.concat(extendedHistories)
     })
 
-    if (levelHistories.every(({events}) => isHistoryImpossible(events))) {
+    if (levelHistories.every(levelHistory => isHistoryImpossible(levelHistory))) {
         const overriddenHistory = calculateOverriddenHistory(bound, level)
         const extendedHistories = calculateExtendedHistories(overriddenHistory, level, actualBoundPosition)
         levelHistories = levelHistories.concat(extendedHistories)

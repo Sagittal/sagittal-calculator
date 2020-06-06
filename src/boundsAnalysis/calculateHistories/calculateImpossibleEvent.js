@@ -1,7 +1,6 @@
 const {MAXIMUM_POSITION} = require("../data/intervals")
 const {calculateCommaFromPosition} = require("../data/calculateCommaFromPosition")
 const {formatNumber} = require("../format/formatNumber")
-const {RANKS} = require("./calculateRank")
 
 const calculateImpossibleEvent = (position, level, [lesserNeighborCommaPosition, greaterNeighborCommaPosition]) => {
     const formattedGreaterNeighborCommaPosition = formatNumber(greaterNeighborCommaPosition || MAXIMUM_POSITION)
@@ -15,7 +14,6 @@ const calculateImpossibleEvent = (position, level, [lesserNeighborCommaPosition,
         type: "IMPOSSIBLE",
         name: `not between ${lesserCommaSymbol} @${formattedLesserNeighborCommaPosition} and ${greaterCommaSymbol} @${formattedGreaterNeighborCommaPosition} at the ${level} level`,
         position,
-        rank: RANKS["IMPOSSIBLE"],
     }
 }
 
