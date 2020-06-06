@@ -19,7 +19,7 @@ describe("analyzeHistory", () => {
             }
             bound = {
                 position: actualBoundPosition,
-                levels: ["EXTREME", "INSANE"]
+                levels: ["EXTREME", "INSANE"],
             }
             initialPosition = calculateInitialPosition(bound)
 
@@ -30,7 +30,7 @@ describe("analyzeHistory", () => {
             expect(result.events).toEqual(["event1", "event2"])
             expect(result.position).toBe(position)
             expect(result.rank).toBe(3)
-            expect(result.initialPositionTinaDifference).toBe(0.12342742615738889)
+            expect(result.initialPositionTinaDifference).toBeCloseTo(0.12342742615738889, ACCURACY_THRESHOLD)
         })
     })
 
@@ -45,7 +45,7 @@ describe("analyzeHistory", () => {
             }
             bound = {
                 position: actualBoundPosition,
-                levels: ["EXTREME", "INSANE"]
+                levels: ["EXTREME", "INSANE"],
             }
             initialPosition = calculateInitialPosition(bound)
 
@@ -56,7 +56,7 @@ describe("analyzeHistory", () => {
             expect(result.events).toEqual(["event1", "event2"])
             expect(result.position).toBe(position)
             expect(result.rank).toBe(2)
-            expect(result.initialPositionTinaDifference).toBe(0.5234274261573838)
+            expect(result.initialPositionTinaDifference).toBeCloseTo(0.5234274261573838, ACCURACY_THRESHOLD)
         })
 
         it("works when the position is greater than the actual bound position by more than a tina", () => {
@@ -69,7 +69,7 @@ describe("analyzeHistory", () => {
             }
             bound = {
                 position: actualBoundPosition,
-                levels: ["EXTREME", "INSANE"]
+                levels: ["EXTREME", "INSANE"],
             }
             initialPosition = calculateInitialPosition(bound)
 
@@ -80,7 +80,7 @@ describe("analyzeHistory", () => {
             expect(result.events).toEqual(["event1", "event2"])
             expect(result.position).toBe(position)
             expect(result.rank).toBe(1)
-            expect(result.initialPositionTinaDifference).toBe(2.6234274261573884)
+            expect(result.initialPositionTinaDifference).toBeCloseTo(2.6234274261573884, ACCURACY_THRESHOLD)
         })
 
         it("works when the position is below the actual bound position by less than a tina", () => {
@@ -93,7 +93,7 @@ describe("analyzeHistory", () => {
             }
             bound = {
                 position: actualBoundPosition,
-                levels: ["EXTREME", "INSANE"]
+                levels: ["EXTREME", "INSANE"],
             }
             initialPosition = calculateInitialPosition(bound)
 
@@ -104,7 +104,7 @@ describe("analyzeHistory", () => {
             expect(result.events).toEqual(["event1", "event2"])
             expect(result.position).toBe(position)
             expect(result.rank).toBe(4)
-            expect(result.initialPositionTinaDifference).toBe(-0.276572573842606)
+            expect(result.initialPositionTinaDifference).toBeCloseTo(-0.276572573842606, ACCURACY_THRESHOLD)
         })
 
         it("works when the position is below the actual bound position by more than a tina", () => {
@@ -117,7 +117,7 @@ describe("analyzeHistory", () => {
             }
             bound = {
                 position: actualBoundPosition,
-                levels: ["EXTREME", "INSANE"]
+                levels: ["EXTREME", "INSANE"],
             }
             initialPosition = calculateInitialPosition(bound)
 
@@ -128,7 +128,7 @@ describe("analyzeHistory", () => {
             expect(result.events).toEqual(["event1", "event2"])
             expect(result.position).toBe(position)
             expect(result.rank).toBe(5)
-            expect(result.initialPositionTinaDifference).toBe(-2.3765725738426107)
+            expect(result.initialPositionTinaDifference).toBeCloseTo(-2.3765725738426107, ACCURACY_THRESHOLD)
         })
     })
 })

@@ -18,9 +18,6 @@ const structureHistories = histories => {
                 if (history.possible) {
                     existingEvent.possible = true
                 }
-                if (history.overridden) {
-                    existingEvent.overridden = true
-                }
             } else {
                 const newEvent = {
                     ...event,
@@ -32,9 +29,6 @@ const structureHistories = histories => {
                 }
                 if (history.possible) {
                     newEvent.possible = true
-                }
-                if (history.overridden) {
-                    newEvent.overridden = true
                 }
                 structuredHistories[event.level].push(newEvent)
             }

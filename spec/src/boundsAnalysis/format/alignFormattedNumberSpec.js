@@ -8,7 +8,7 @@ describe("alignFormattedNumber", () => {
             .toBe(" -2.340")
         expect(alignFormattedNumber("-12.340"))
             .toBe("-12.340")
-        expect(alignFormattedNumber( "12.340"))
+        expect(alignFormattedNumber("12.340"))
             .toBe(" 12.340")
     })
 })

@@ -203,7 +203,7 @@ describe("analyzeAndStructureHistories", () => {
     it("updates the rank summary", () => {
         const datumIndex = 88
 
-        spyOn(rankSummary, 'updateRankSummary')
+        spyOn(rankSummary, "updateRankSummary")
 
         analyzeAndStructureHistories(histories, datum, datumIndex)
 
