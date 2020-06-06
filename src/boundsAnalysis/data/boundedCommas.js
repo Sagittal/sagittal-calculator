@@ -23,8 +23,8 @@ const calculateBoundedCommas = bound => {
 }
 
 const BOUNDED_COMMAS = DATA.reduce(
-    (boundedCommas, {bound}) =>
-        ({...boundedCommas, [bound.position]: calculateBoundedCommas(bound)}),
+    (boundedCommas, {bound}, datumIndex) =>
+        ({...boundedCommas, [datumIndex]: calculateBoundedCommas(bound)}),
     {},
 )
 

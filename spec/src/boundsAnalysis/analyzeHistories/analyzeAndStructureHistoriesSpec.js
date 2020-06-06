@@ -74,7 +74,8 @@ describe("analyzeAndStructureHistories", () => {
     }
 
     it("returns helpful identifying information about the bound, alongside an analysis of its histories, and a structured presentation of said histories, and its histories which are tied for the best rank", () => {
-        const result = analyzeAndStructureHistories(histories, datum)
+        const datumIndex = 47
+        const result = analyzeAndStructureHistories(histories, datum, datumIndex)
 
         expect(result).toEqual({
             bound: {

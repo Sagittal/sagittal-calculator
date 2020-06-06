@@ -9,7 +9,7 @@ const {calculateInitialPosition} = require("../data/calculateInitialPosition")
 const analyzeAndStructureHistories = (histories, {bound, comma}, datumIndex) => {
     const {symbol: extremeLevelLesserNeighborCommaSymbol, mina} = comma
     const {position} = bound
-    const boundedCommas = BOUNDED_COMMAS[position]
+    const boundedCommas = BOUNDED_COMMAS[datumIndex]
 
     const initialPosition = calculateInitialPosition(bound)
     const analyzedHistories = histories.map(history => analyzeHistory(history, bound, initialPosition))
@@ -19,9 +19,9 @@ const analyzeAndStructureHistories = (histories, {bound, comma}, datumIndex) => 
     const bestRank = bestPossibleHistories[0].rank
     const initialPositionTinaDifference = (position - initialPosition) / TINA
 
-    const structuredHistories = structureHistories(analyzedHistories)
-
     rankSummary.updateRankSummary(bestRank, datumIndex)
+
+    const structuredHistories = structureHistories(analyzedHistories)
 
     return {
         bound: {
