@@ -1,4 +1,4 @@
-const {calculateInitialPosition} = require("../../../../src/boundsAnalysis/calculateHistories/calculateInitialPosition")
+const {calculateInitialPosition} = require("../../../../src/boundsAnalysis/data/calculateInitialPosition")
 
 describe("calculateInitialPosition", () => {
     it("returns the mean of the neighbor commas of the bound's actual position at its introducing level", () => {
