@@ -1,4 +1,4 @@
-const {analyzeHistory} = require("../../../../src/boundsAnalysis/analyzeHistories/analyzeHistory")
+const {analyzeHistory, ACCURACY_THRESHOLD} = require("../../../../src/boundsAnalysis/analyzeHistories/analyzeHistory")
 const {calculateInitialPosition} = require("../../../../src/boundsAnalysis/data/calculateInitialPosition")
 const {TINA} = require("../../../../src/boundsAnalysis/data/intervals")
 
@@ -26,11 +26,11 @@ describe("analyzeHistory", () => {
             const result = analyzeHistory(history, bound, initialPosition)
 
             expect(result.possible).toBe(true)
-            expect(result.tinaError).toBe(0)
+            expect(result.tinaError).toBeCloseTo(0, ACCURACY_THRESHOLD)
             expect(result.events).toEqual(["event1", "event2"])
             expect(result.position).toBe(position)
             expect(result.rank).toBe(3)
-            expect(result.initialPositionTinaDistance).toBe(0.123427)
+            expect(result.initialPositionTinaDifference).toBe(0.12342742615738889)
         })
     })
 
@@ -52,11 +52,11 @@ describe("analyzeHistory", () => {
             const result = analyzeHistory(history, bound, initialPosition)
 
             expect(result.possible).toBe(false)
-            expect(result.tinaError).toBe(expectedTinaError)
+            expect(result.tinaError).toBeCloseTo(expectedTinaError, ACCURACY_THRESHOLD)
             expect(result.events).toEqual(["event1", "event2"])
             expect(result.position).toBe(position)
             expect(result.rank).toBe(2)
-            expect(result.initialPositionTinaDistance).toBe(0.523427)
+            expect(result.initialPositionTinaDifference).toBe(0.5234274261573838)
         })
 
         it("works when the position is greater than the actual bound position by more than a tina", () => {
@@ -76,11 +76,11 @@ describe("analyzeHistory", () => {
             const result = analyzeHistory(history, bound, initialPosition)
 
             expect(result.possible).toBe(false)
-            expect(result.tinaError).toBe(expectedTinaError)
+            expect(result.tinaError).toBeCloseTo(expectedTinaError, ACCURACY_THRESHOLD)
             expect(result.events).toEqual(["event1", "event2"])
             expect(result.position).toBe(position)
             expect(result.rank).toBe(1)
-            expect(result.initialPositionTinaDistance).toBe(2.623427)
+            expect(result.initialPositionTinaDifference).toBe(2.6234274261573884)
         })
 
         it("works when the position is below the actual bound position by less than a tina", () => {
@@ -100,11 +100,11 @@ describe("analyzeHistory", () => {
             const result = analyzeHistory(history, bound, initialPosition)
 
             expect(result.possible).toBe(false)
-            expect(result.tinaError).toBe(expectedTinaError)
+            expect(result.tinaError).toBeCloseTo(expectedTinaError, ACCURACY_THRESHOLD)
             expect(result.events).toEqual(["event1", "event2"])
             expect(result.position).toBe(position)
             expect(result.rank).toBe(4)
-            expect(result.initialPositionTinaDistance).toBe(-0.276573)
+            expect(result.initialPositionTinaDifference).toBe(-0.276572573842606)
         })
 
         it("works when the position is below the actual bound position by more than a tina", () => {
@@ -124,11 +124,11 @@ describe("analyzeHistory", () => {
             const result = analyzeHistory(history, bound, initialPosition)
 
             expect(result.possible).toBe(false)
-            expect(result.tinaError).toBe(expectedTinaError)
+            expect(result.tinaError).toBeCloseTo(expectedTinaError, ACCURACY_THRESHOLD)
             expect(result.events).toEqual(["event1", "event2"])
             expect(result.position).toBe(position)
             expect(result.rank).toBe(5)
-            expect(result.initialPositionTinaDistance).toBe(-2.376573)
+            expect(result.initialPositionTinaDifference).toBe(-2.3765725738426107)
         })
     })
 })

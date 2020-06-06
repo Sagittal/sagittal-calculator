@@ -1,80 +1,80 @@
 const {analyzeAndStructureHistories} = require("../../../../src/boundsAnalysis/analyzeHistories/analyzeAndStructureHistories")
+const rankSummary = require("../../../../src/boundsAnalysis/analyzeHistories/rankSummary")
 
 describe("analyzeAndStructureHistories", () => {
+    const notBestHistory = {
+        position: 23.116419649559468,
+        rank: 5,
+        events: [
+            {
+                level: "VERY_HIGH",
+                type: "MEAN",
+                name: ".)/| '/|",
+                position: 23.2,
+                rank: 2,
+            },
+            {
+                level: "EXTREME",
+                type: "MEAN",
+                name: ".)/| '/|",
+                position: 23.2,
+                rank: 5,
+            },
+            {
+                level: "INSANE",
+                type: "EDA",
+                name: "164.5/809",
+                position: 23.1,
+                rank: 1,
+            },
+        ],
+    }
+    const bestHistory = {
+        position: 23.116419649559468,
+        rank: 2,
+        events: [
+            {
+                level: "VERY_HIGH",
+                type: "MEAN",
+                name: ".)/| '/|",
+                position: 23.2,
+                rank: 2,
+            },
+            {
+                level: "EXTREME",
+                type: "EDA",
+                name: "47.5/233",
+                position: 23.2,
+                rank: 1,
+            },
+            {
+                level: "INSANE",
+                type: "EDA",
+                name: "164.5/809",
+                position: 23.1,
+                rank: 1,
+            },
+        ],
+    }
+    const histories = [
+        notBestHistory,
+        bestHistory,
+    ]
+    const datum = {
+        comma: {
+            introducingLevel: "VERY_HIGH",
+            position: 22.9305875372457,
+            symbol: ".)/|",
+            mina: 47,
+        },
+        bound: {
+            position: 23.1164196495597,
+            levels: ["VERY_HIGH", "EXTREME", "INSANE"],
+        },
+    }
+
     it("returns helpful identifying information about the bound, alongside an analysis of its histories, and a structured presentation of said histories, and its histories which are tied for the best rank", () => {
-        const notBestHistory = {
-            position: 23.116419649559468,
-            rank: 5,
-            events: [
-                {
-                    level: "VERY_HIGH",
-                    type: "MEAN",
-                    name: ".)/| '/|",
-                    position: 23.2,
-                    rank: 2,
-                },
-                {
-                    level: "EXTREME",
-                    type: "MEAN",
-                    name: ".)/| '/|",
-                    position: 23.2,
-                    rank: 5,
-                },
-                {
-                    level: "INSANE",
-                    type: "EDA",
-                    name: "164.5/809",
-                    position: 23.1,
-                    rank: 1,
-                },
-            ],
-        }
-        const bestHistory = {
-            position: 23.116419649559468,
-            rank: 2,
-            events: [
-                {
-                    level: "VERY_HIGH",
-                    type: "MEAN",
-                    name: ".)/| '/|",
-                    position: 23.2,
-                    rank: 2,
-                },
-                {
-                    level: "EXTREME",
-                    type: "EDA",
-                    name: "47.5/233",
-                    position: 23.2,
-                    rank: 1,
-                },
-                {
-                    level: "INSANE",
-                    type: "EDA",
-                    name: "164.5/809",
-                    position: 23.1,
-                    rank: 1,
-                },
-            ],
-        }
-        const histories = [
-            notBestHistory,
-            bestHistory,
-        ]
-        const datum = {
-            comma: {
-                introducingLevel: "VERY_HIGH",
-                position: 22.9305875372457,
-                symbol: ".)/|",
-                mina: 47,
-            },
-            bound: {
-                position: 23.1164196495597,
-                levels: ["VERY_HIGH", "EXTREME", "INSANE"],
-            },
-        }
-
         const result = analyzeAndStructureHistories(histories, datum)
-
 
         expect(result).toEqual({
             bound: {
@@ -135,18 +135,17 @@ describe("analyzeAndStructureHistories", () => {
             analysis: {
                 bestRank: 2,
                 initialPosition: 23.195298960947348,
-                initialPositionTinaError: 0.5613173198954056,
-                totalHistories: 2,
-                possibleHistories: 2,
+                initialPositionTinaDifference: -0.5613173198954056,
+                possibleHistoryCount: 2,
+                bestPossibleHistories: [
+                    {
+                        ...bestHistory,
+                        possible: true,
+                        tinaError: 0,
+                        initialPositionTinaDifference: -0.5613173198970488,
+                    },
+                ],
             },
-            bestPossibleHistories: [
-                {
-                    ...bestHistory,
-                    possible: true,
-                    tinaError: -0,
-                    initialPositionTinaDistance: -0.561317,
-                },
-            ],
             structuredHistories: {
                 VERY_HIGH: [
                     {
@@ -199,5 +198,15 @@ describe("analyzeAndStructureHistories", () => {
                 ],
             },
         })
+    })
+
+    it("updates the rank summary", () => {
+        const datumIndex = 88
+
+        spyOn(rankSummary, 'updateRankSummary')
+
+        analyzeAndStructureHistories(histories, datum, datumIndex)
+
+        expect(rankSummary.updateRankSummary).toHaveBeenCalledWith(bestHistory.rank, datumIndex)
     })
 })

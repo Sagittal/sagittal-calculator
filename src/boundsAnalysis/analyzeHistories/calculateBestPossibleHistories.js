@@ -1,12 +1,12 @@
 const calculateBestPossibleHistories = histories => {
     let bestRank = 8
     histories.forEach(history => {
-        if (history.possible && history.rank < bestRank) {
+        if (history.rank < bestRank) {
             bestRank = history.rank
         }
     })
 
-    return histories.filter(history => history.possible && history.rank === bestRank)
+    return histories.filter(history => history.rank === bestRank)
 }
 
 module.exports = {
