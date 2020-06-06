@@ -1,9 +1,12 @@
 const {calculateLevelHistories} = require("./calculateLevelHistories")
+const {calculateInitialPosition} = require("./calculateInitialPosition")
 
 const calculateBoundHistories = bound => {
-    const {position, levels} = bound
+    const {levels} = bound
 
-    const initialHistory = {events: [], position, rank: 0}
+    const initialPosition = calculateInitialPosition(bound)
+
+    const initialHistory = {events: [], position: initialPosition, rank: 0}
     let histories = [initialHistory]
     levels.forEach(level => {
         histories = calculateLevelHistories(histories, level, bound)

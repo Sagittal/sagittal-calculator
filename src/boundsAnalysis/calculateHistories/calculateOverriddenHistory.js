@@ -1,18 +1,19 @@
 const {calculateBoundPreviousLevel} = require("../utilities/calculateBoundPreviousLevel")
+const {calculateInitialPosition} = require("./calculateInitialPosition")
 
 const calculateOverriddenHistory = (bound, level) => {
-    const {position} = bound
+    const reinitializedPosition = calculateInitialPosition(bound, level)
     const previousLevel = calculateBoundPreviousLevel(bound, level)
 
     return {
-        position,
+        position: reinitializedPosition,
         rank: 7,
         events: [
             {
                 level: previousLevel,
                 type: "override",
                 name: "override",
-                position,
+                position: reinitializedPosition,
                 rank: 7,
             },
         ],
