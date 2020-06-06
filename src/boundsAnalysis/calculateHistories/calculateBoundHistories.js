@@ -9,7 +9,7 @@ const calculateBoundHistories = bound => {
     const initialHistory = {
         events: [],
         position: initialPosition,
-        rank: 0
+        rank: 0,
     }
     let histories = [initialHistory]
     levels.forEach(level => {

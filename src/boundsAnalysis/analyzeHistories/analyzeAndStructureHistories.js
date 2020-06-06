@@ -19,7 +19,7 @@ const analyzeAndStructureHistories = (histories, {bound, comma}, datumIndex) => 
     const bestRank = bestPossibleHistories[0].rank
     const initialPositionTinaDifference = (position - initialPosition) / TINA
 
-    const structuredHistories = structureHistories(possibleHistories)
+    const structuredHistories = structureHistories(analyzedHistories)
 
     rankSummary.updateRankSummary(bestRank, datumIndex)
 
