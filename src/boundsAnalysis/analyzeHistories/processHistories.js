@@ -1,5 +1,5 @@
 const {analyzeAndStructureHistories} = require("./analyzeAndStructureHistories")
-const {formatAnalyzedAndStructuredHistories, HEADER_ROW} = require("../format/formatAnalyzedAndStructuredHistories")
+const {formatAnalyzedAndStructuredHistories, HEADER_ROWS} = require("../format/formatAnalyzedAndStructuredHistories")
 
 const processHistories = (histories, datum, datumIndex, {summary}) => {
     const analyzedAndStructuredHistories = analyzeAndStructureHistories(histories, datum, datumIndex)
@@ -9,5 +9,5 @@ const processHistories = (histories, datum, datumIndex, {summary}) => {
 
 module.exports = {
     processHistories,
-    HEADER_ROW,
+    HEADER_ROWS,
 }
