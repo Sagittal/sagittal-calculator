@@ -2,7 +2,7 @@ const {updateRankSummary, rankSummary, rankBounds} = require("../../../../src/bo
 
 describe("updateRankSummary", () => {
     const bestRank = 2
-    const datumIndex = 88
+    const boundIndex = 88
 
     let previousRankSummary
     let previousRankBounds
@@ -11,7 +11,7 @@ describe("updateRankSummary", () => {
         previousRankSummary = rankSummary[bestRank]
         previousRankBounds = rankBounds[bestRank].slice()
 
-        updateRankSummary(bestRank, datumIndex)
+        updateRankSummary(bestRank, boundIndex)
     })
 
     it("updates the count of bounds with this rank as their best rank", () => {
@@ -19,6 +19,6 @@ describe("updateRankSummary", () => {
     })
 
     it("updates the rank to include this bound in the list of bounds with it as their best rank", () => {
-        expect(rankBounds[bestRank]).toEqual(previousRankBounds.concat([datumIndex]))
+        expect(rankBounds[bestRank]).toEqual(previousRankBounds.concat([boundIndex]))
     })
 })

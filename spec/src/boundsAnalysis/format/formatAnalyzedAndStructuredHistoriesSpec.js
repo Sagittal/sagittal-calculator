@@ -7,7 +7,7 @@ describe("formatAnalyzedAndStructuredHistories", () => {
             summary = true
         })
 
-        it("returns a string of the datum index, identifying symbol, actual bound position, whether it has a possible history, the error in tinas, the number of histories, and the number of those histories which are possible. separated by tabs in a single line", () => {
+        it("returns a string of the bound index, identifying symbol, actual bound position, whether it has a possible history, the error in tinas, the number of histories, and the number of those histories which are possible. separated by tabs in a single line", () => {
             const analyzedAndStructuredHistories = {
                 bound: {
                     extremeLevelLesserNeighborCommaSymbol: ",|(",
@@ -19,9 +19,9 @@ describe("formatAnalyzedAndStructuredHistories", () => {
                     initialPositionTinaDifference: 0.0393,
                 },
             }
-            const datumIndex = 10
+            const boundIndex = 10
 
-            const result = formatAnalyzedAndStructuredHistories(analyzedAndStructuredHistories, {datumIndex, summary})
+            const result = formatAnalyzedAndStructuredHistories(analyzedAndStructuredHistories, {boundIndex, summary})
 
             expect(result).toEqual("10\t    ,|( \t2\t  5.448\t  5.485\t  0.039")
         })
@@ -45,9 +45,9 @@ describe("formatAnalyzedAndStructuredHistories", () => {
                     possibleHistories: 5,
                 },
             }
-            const datumIndex = 10
+            const boundIndex = 10
 
-            const result = formatAnalyzedAndStructuredHistories(analyzedAndStructuredHistories, {datumIndex, summary})
+            const result = formatAnalyzedAndStructuredHistories(analyzedAndStructuredHistories, {boundIndex, summary})
 
             expect(result).toEqual([
                 `{`,

@@ -45,7 +45,7 @@ const HEADER_ROWS = [
     ].join("\t"),
 ].join("\n")
 
-const formatAnalyzedAndStructuredHistories = (analyzedAndStructuredHistories, {datumIndex, summary = false} = {}) => {
+const formatAnalyzedAndStructuredHistories = (analyzedAndStructuredHistories, {boundIndex, summary = false} = {}) => {
     let formattedAnalyzedAndStructuredHistories
     if (summary) {
         const {
@@ -60,7 +60,7 @@ const formatAnalyzedAndStructuredHistories = (analyzedAndStructuredHistories, {d
             },
         } = analyzedAndStructuredHistories
         formattedAnalyzedAndStructuredHistories = [
-            datumIndex,
+            boundIndex,
             alignSymbol(extremeLevelLesserNeighborCommaSymbol),
             bestRank,
             alignFormattedNumber(formatNumber(position)),

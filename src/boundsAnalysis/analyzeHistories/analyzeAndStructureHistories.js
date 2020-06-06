@@ -1,3 +1,4 @@
+const {COMMAS} = require("../data/commas")
 const {structureHistories} = require("./structureHistories")
 const {analyzeHistory} = require("./analyzeHistory")
 const {calculateBestPossibleHistories} = require("./calculateBestPossibleHistories")
@@ -6,10 +7,11 @@ const {TINA} = require("../data/intervals")
 const rankSummary = require("./rankSummary")
 const {calculateInitialPosition} = require("../data/calculateInitialPosition")
 
-const analyzeAndStructureHistories = (histories, {bound, comma}, datumIndex) => {
+const analyzeAndStructureHistories = (histories, bound, boundIndex) => {
+    const comma = COMMAS[boundIndex]
     const {symbol: extremeLevelLesserNeighborCommaSymbol, mina} = comma
     const {position} = bound
-    const boundedCommas = BOUNDED_COMMAS[datumIndex]
+    const boundedCommas = BOUNDED_COMMAS[boundIndex]
 
     const initialPosition = calculateInitialPosition(bound)
     const analyzedHistories = histories.map(history => analyzeHistory(history, bound, initialPosition))
@@ -19,7 +21,7 @@ const analyzeAndStructureHistories = (histories, {bound, comma}, datumIndex) => 
     const bestRank = bestPossibleHistories[0].rank
     const initialPositionTinaDifference = (position - initialPosition) / TINA
 
-    rankSummary.updateRankSummary(bestRank, datumIndex)
+    rankSummary.updateRankSummary(bestRank, boundIndex)
 
     const structuredHistories = structureHistories(analyzedHistories)
 

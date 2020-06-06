@@ -1,6 +1,6 @@
 const {calculateNeighborCommaPositions} = require("./calculateNeighborCommaPositions")
 const {calculateCommaFromPosition} = require("./calculateCommaFromPosition")
-const {DATA} = require("./data")
+const {BOUNDS} = require("./bounds")
 
 const calculateBoundedCommas = bound => {
     const {position, levels} = bound
@@ -22,9 +22,9 @@ const calculateBoundedCommas = bound => {
     )
 }
 
-const BOUNDED_COMMAS = DATA.reduce(
-    (boundedCommas, {bound}, datumIndex) =>
-        ({...boundedCommas, [datumIndex]: calculateBoundedCommas(bound)}),
+const BOUNDED_COMMAS = BOUNDS.reduce(
+    (boundedCommas, bound, boundIndex) =>
+        ({...boundedCommas, [boundIndex]: calculateBoundedCommas(bound)}),
     {},
 )
 
