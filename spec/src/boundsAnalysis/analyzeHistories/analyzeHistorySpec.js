@@ -19,7 +19,7 @@ describe("analyzeHistory", () => {
             }
             bound = {
                 position: actualBoundPosition,
-                levels: ["extreme", "insane"]
+                levels: ["EXTREME", "INSANE"]
             }
             initialPosition = calculateInitialPosition(bound)
 
@@ -45,7 +45,7 @@ describe("analyzeHistory", () => {
             }
             bound = {
                 position: actualBoundPosition,
-                levels: ["extreme", "insane"]
+                levels: ["EXTREME", "INSANE"]
             }
             initialPosition = calculateInitialPosition(bound)
 
@@ -69,7 +69,7 @@ describe("analyzeHistory", () => {
             }
             bound = {
                 position: actualBoundPosition,
-                levels: ["extreme", "insane"]
+                levels: ["EXTREME", "INSANE"]
             }
             initialPosition = calculateInitialPosition(bound)
 
@@ -93,7 +93,7 @@ describe("analyzeHistory", () => {
             }
             bound = {
                 position: actualBoundPosition,
-                levels: ["extreme", "insane"]
+                levels: ["EXTREME", "INSANE"]
             }
             initialPosition = calculateInitialPosition(bound)
 
@@ -117,7 +117,7 @@ describe("analyzeHistory", () => {
             }
             bound = {
                 position: actualBoundPosition,
-                levels: ["extreme", "insane"]
+                levels: ["EXTREME", "INSANE"]
             }
             initialPosition = calculateInitialPosition(bound)
 
