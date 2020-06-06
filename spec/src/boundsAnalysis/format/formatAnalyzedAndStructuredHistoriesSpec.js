@@ -15,14 +15,15 @@ describe("formatAnalyzedAndStructuredHistories", () => {
                 },
                 analysis: {
                     bestRank: 2,
-                    minimumError: 0,
+                    initialPosition: 5.48533,
+                    minimumInitialPositionTinaDistance: 0.0393,
                 },
             }
             const datumIndex = 10
 
             const result = formatAnalyzedAndStructuredHistories(analyzedAndStructuredHistories, {datumIndex, summary})
 
-            expect(result).toEqual("10\t    ,|( \t5.448\t2\t0.000")
+            expect(result).toEqual("10\t    ,|( \t2\t5.448\t5.485\t0.039")
         })
     })
 

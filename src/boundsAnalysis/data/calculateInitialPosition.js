@@ -1,5 +1,5 @@
-const {MAXIMUM_POSITION} = require("../data/intervals")
-const {calculateNeighborCommaPositions} = require("../data/calculateNeighborCommaPositions")
+const {MAXIMUM_POSITION} = require("./intervals")
+const {calculateNeighborCommaPositions} = require("./calculateNeighborCommaPositions")
 
 const calculateInitialPosition = (bound, level) => {
     const {position, levels} = bound

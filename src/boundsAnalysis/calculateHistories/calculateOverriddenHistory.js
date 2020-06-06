@@ -1,5 +1,5 @@
 const {calculateBoundPreviousLevel} = require("../utilities/calculateBoundPreviousLevel")
-const {calculateInitialPosition} = require("./calculateInitialPosition")
+const {calculateInitialPosition} = require("../data/calculateInitialPosition")
 
 const calculateOverriddenHistory = (bound, level) => {
     const reinitializedPosition = calculateInitialPosition(bound, level)
