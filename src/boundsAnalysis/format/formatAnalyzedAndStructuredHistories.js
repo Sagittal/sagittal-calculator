@@ -1,14 +1,49 @@
 const {formatNumber} = require("./formatNumber")
-const {formatSymbol} = require("./formatSymbol")
+const {alignSymbol} = require("./alignSymbol")
+const {alignFormattedNumber} = require("./alignFormattedNumber")
 
-const HEADER_ROW = [
-    "index",
-    "   symbol",
-    "bst rnk",
-    "bound ¢",
-    "in ps ¢", // initial position
-    "min dst", // tinas // TODO: this really needs more rows
-].join("\t")
+const HEADER_ROWS = [
+    [
+        "      ",
+        " immediately",
+        "   ",
+        "  ",
+        "initial",
+        "a.b. vs",
+    ].join("\t"),
+    [
+        "      ",
+        "   lesser",
+        "best",
+        " actual",
+        "  comma",
+        " i.c.m.",
+    ].join("\t"),
+    [
+        "  bound",
+        "   extreme",
+        "history",
+        "  bound",
+        "   mean",
+        "  error",
+    ].join("\t"),
+    [
+        "  index",
+        "   symbol",
+        "rank",
+        "pos (¢)",
+        "pos (¢)",
+        "(tinas)",
+    ].join("\t"),
+    [
+        "   ",
+        "   ",
+        "   ",
+        "   ",
+        "   ",
+        "   ",
+    ].join("\t"),
+].join("\n")
 
 const formatAnalyzedAndStructuredHistories = (analyzedAndStructuredHistories, {datumIndex, summary = false} = {}) => {
     let formattedAnalyzedAndStructuredHistories
@@ -21,16 +56,16 @@ const formatAnalyzedAndStructuredHistories = (analyzedAndStructuredHistories, {d
             analysis: {
                 bestRank,
                 initialPosition,
-                minimumInitialPositionTinaDistance,
+                initialPositionTinaError,
             },
         } = analyzedAndStructuredHistories
         formattedAnalyzedAndStructuredHistories = [
             datumIndex,
-            formatSymbol(extremeLevelLesserNeighborCommaSymbol),
+            alignSymbol(extremeLevelLesserNeighborCommaSymbol),
             bestRank,
-            formatNumber(position),
-            formatNumber(initialPosition),
-            formatNumber(minimumInitialPositionTinaDistance),
+            alignFormattedNumber(formatNumber(position)),
+            alignFormattedNumber(formatNumber(initialPosition)),
+            alignFormattedNumber(formatNumber(initialPositionTinaError)),
         ].join("\t")
     } else {
         formattedAnalyzedAndStructuredHistories = JSON.stringify(analyzedAndStructuredHistories, null, 4)
@@ -41,6 +76,6 @@ const formatAnalyzedAndStructuredHistories = (analyzedAndStructuredHistories, {d
 }
 
 module.exports = {
-    HEADER_ROW,
+    HEADER_ROWS,
     formatAnalyzedAndStructuredHistories,
 }

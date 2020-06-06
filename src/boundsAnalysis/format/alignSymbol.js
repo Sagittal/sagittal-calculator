@@ -1,4 +1,4 @@
-const formatSymbol = symbol => {
+const alignSymbol = symbol => {
     const shaftIndex = symbol.indexOf("|")
 
     let spacesToPrepend = 5 - shaftIndex
@@ -16,5 +16,5 @@ const formatSymbol = symbol => {
 }
 
 module.exports = {
-    formatSymbol,
+    alignSymbol,
 }

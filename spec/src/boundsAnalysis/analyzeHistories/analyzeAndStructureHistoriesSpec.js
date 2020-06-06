@@ -135,7 +135,7 @@ describe("analyzeAndStructureHistories", () => {
             analysis: {
                 bestRank: 2,
                 initialPosition: 23.195298960947348,
-                minimumInitialPositionTinaDistance: 0.561317,
+                initialPositionTinaError: 0.5613173198954056,
                 totalHistories: 2,
                 possibleHistories: 2,
             },
