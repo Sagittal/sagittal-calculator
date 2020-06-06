@@ -1,13 +1,11 @@
-const {DATA} = require("./data")
+const {COMMAS} = require("./commas")
 
 const calculateCommaFromPosition = position => {
     if (!position) return
 
-    const datum = DATA.find(datum => {
-        return datum.comma.position === position
+    return COMMAS.find(comma => {
+        return comma.position === position
     })
-
-    return datum.comma
 }
 
 module.exports = {

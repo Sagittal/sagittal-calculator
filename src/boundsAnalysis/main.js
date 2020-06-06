@@ -1,4 +1,4 @@
-const {DATA} = require("./data/data")
+const {BOUNDS} = require("./data/bounds")
 const {calculateBoundHistories} = require("./calculateHistories/calculateBoundHistories")
 const {processHistories, HEADER_ROWS} = require("./analyzeHistories/processHistories")
 const {rankSummary, rankBounds} = require("./analyzeHistories/rankSummary")
@@ -6,18 +6,18 @@ const {rankSummary, rankBounds} = require("./analyzeHistories/rankSummary")
 const args = process.argv.slice(2)
 
 if (args.length) {
-    const datumIndex = args[0]
-    const datum = DATA[datumIndex]
+    const boundIndex = args[0]
+    const bound = BOUNDS[boundIndex]
 
-    const histories = calculateBoundHistories(datum.bound)
-    const processedHistories = processHistories(histories, datum, datumIndex, {summary: false})
+    const histories = calculateBoundHistories(bound)
+    const processedHistories = processHistories(histories, bound, boundIndex, {summary: false})
     console.log(processedHistories)
 } else {
     console.log(HEADER_ROWS)
 
-    DATA.map((datum, datumIndex) => {
-        const histories = calculateBoundHistories(datum.bound)
-        const processedHistories = processHistories(histories, datum, datumIndex, {summary: true})
+    BOUNDS.map((bound, boundIndex) => {
+        const histories = calculateBoundHistories(bound)
+        const processedHistories = processHistories(histories, bound, boundIndex, {summary: true})
         console.log(processedHistories)
     })
 

@@ -6,9 +6,9 @@ const rankBounds = [
     [], [], [], [], [], [], [], [], [],
 ]
 
-const updateRankSummary = (bestRank, datumIndex) => {
+const updateRankSummary = (bestRank, boundIndex) => {
     rankSummary[bestRank] += 1
-    rankBounds[bestRank].push(datumIndex)
+    rankBounds[bestRank].push(boundIndex)
 }
 
 module.exports = {

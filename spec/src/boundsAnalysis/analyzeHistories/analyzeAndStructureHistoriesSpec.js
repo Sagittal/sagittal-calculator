@@ -60,22 +60,14 @@ describe("analyzeAndStructureHistories", () => {
         notBestHistory,
         bestHistory,
     ]
-    const datum = {
-        comma: {
-            introducingLevel: "VERY_HIGH",
-            position: 22.9305875372457,
-            symbol: ".)/|",
-            mina: 47,
-        },
-        bound: {
-            position: 23.1164196495597,
-            levels: ["VERY_HIGH", "EXTREME", "INSANE"],
-        },
+    const bound = {
+        position: 23.1164196495597,
+        levels: ["VERY_HIGH", "EXTREME", "INSANE"],
     }
 
     it("returns helpful identifying information about the bound, alongside an analysis of its histories, and a structured presentation of said histories, and its histories which are tied for the best rank", () => {
-        const datumIndex = 47
-        const result = analyzeAndStructureHistories(histories, datum, datumIndex)
+        const boundIndex = 47
+        const result = analyzeAndStructureHistories(histories, bound, boundIndex)
 
         expect(result).toEqual({
             bound: {
@@ -202,12 +194,12 @@ describe("analyzeAndStructureHistories", () => {
     })
 
     it("updates the rank summary", () => {
-        const datumIndex = 88
+        const boundIndex = 88
 
         spyOn(rankSummary, "updateRankSummary")
 
-        analyzeAndStructureHistories(histories, datum, datumIndex)
+        analyzeAndStructureHistories(histories, bound, boundIndex)
 
-        expect(rankSummary.updateRankSummary).toHaveBeenCalledWith(bestHistory.rank, datumIndex)
+        expect(rankSummary.updateRankSummary).toHaveBeenCalledWith(bestHistory.rank, boundIndex)
     })
 })

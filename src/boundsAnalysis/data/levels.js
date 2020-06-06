@@ -1,4 +1,4 @@
-const {DATA} = require("./data")
+const {COMMAS} = require("./commas")
 
 const LEVELS = ["MEDIUM", "HIGH", "VERY_HIGH", "EXTREME", "INSANE"]
 
@@ -8,7 +8,7 @@ const isWithinLevel = (level, targetLevel) =>
     LEVELS.indexOf(level) <= LEVELS.indexOf(targetLevel)
 
 const calculateLevelCommas = level =>
-    DATA.filter(datum => isWithinLevel(datum.comma.introducingLevel, level)).map(datum => ({...datum.comma}))
+    COMMAS.filter(comma => isWithinLevel(comma.introducingLevel, level))
 
 const LEVEL_COMMAS = LEVELS.reduce(
     (levelCommas, level) => {
