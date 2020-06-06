@@ -56,7 +56,7 @@ const formatAnalyzedAndStructuredHistories = (analyzedAndStructuredHistories, {d
             analysis: {
                 bestRank,
                 initialPosition,
-                initialPositionTinaError,
+                initialPositionTinaDifference,
             },
         } = analyzedAndStructuredHistories
         formattedAnalyzedAndStructuredHistories = [
@@ -65,7 +65,7 @@ const formatAnalyzedAndStructuredHistories = (analyzedAndStructuredHistories, {d
             bestRank,
             alignFormattedNumber(formatNumber(position)),
             alignFormattedNumber(formatNumber(initialPosition)),
-            alignFormattedNumber(formatNumber(initialPositionTinaError)),
+            alignFormattedNumber(formatNumber(initialPositionTinaDifference)),
         ].join("\t")
     } else {
         formattedAnalyzedAndStructuredHistories = JSON.stringify(analyzedAndStructuredHistories, null, 4)

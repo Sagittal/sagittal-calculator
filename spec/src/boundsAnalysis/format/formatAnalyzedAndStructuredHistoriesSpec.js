@@ -16,7 +16,7 @@ describe("formatAnalyzedAndStructuredHistories", () => {
                 analysis: {
                     bestRank: 2,
                     initialPosition: 5.48533,
-                    initialPositionTinaError: 0.0393,
+                    initialPositionTinaDifference: 0.0393,
                 },
             }
             const datumIndex = 10
