@@ -3,32 +3,32 @@ const {structureHistories} = require("../../../../src/boundsAnalysis/analyzeHist
 describe("structureHistories", () => {
     it("structures histories to consolidate redundancies per level and show which events can lead in which events in the next level, and which ones are possible on at least one path", () => {
         const eventOneGoesToEventThreeAndFour = {
-            level: "veryHigh",
+            level: "VERY_HIGH",
             type: "MEAN",
             name: "'/| )/|",
             position: 24.2,
         }
         const eventTwoGoesToEventThreeAndToImpossibleTwice = {
-            level: "veryHigh",
+            level: "VERY_HIGH",
             type: "EDA",
             name: "12.5/58",
             position: 24.33333,
         }
         const eventThree = {
-            level: "extreme",
+            level: "EXTREME",
             type: "MEAN",
             name: ",)/|_)/|",
             position: 24.58139537326805,
         }
         const eventFour = {
-            level: "extreme",
+            level: "EXTREME",
             type: "EDA",
             name: "50.5/233",
             position: 24.151964806252103,
         }
         const eventImpossible = {
-            level: "veryHigh",
-            type: "impossible",
+            level: "VERY_HIGH",
+            type: "IMPOSSIBLE",
             name: "not between 88.8 and 99.9",
             position: 24.9,
         }
@@ -84,7 +84,7 @@ describe("structureHistories", () => {
         const result = structureHistories(analyzedHistories)
 
         expect(result).toEqual({
-            veryHigh: [
+            VERY_HIGH: [
                 {
                     ...eventOneGoesToEventThreeAndFour,
                     possible: true,
@@ -102,7 +102,7 @@ describe("structureHistories", () => {
                     ],
                 },
             ],
-            extreme: [
+            EXTREME: [
                 {
                     ...eventThree,
                     possible: true,

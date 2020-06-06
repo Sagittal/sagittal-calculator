@@ -63,7 +63,7 @@ describe("calculateRank", () => {
     })
 
     it("gives the second-lowest rank to override events", () => {
-        const type = "override"
+        const type = "OVERRIDE"
 
         const result = calculateRank(type, withinHalfLevelEda)
 
@@ -71,7 +71,7 @@ describe("calculateRank", () => {
     })
 
     it("gives the lowest rank to impossible events", () => {
-        const type = "impossible"
+        const type = "IMPOSSIBLE"
 
         const result = calculateRank(type, withinHalfLevelEda)
 

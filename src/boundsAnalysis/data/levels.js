@@ -1,6 +1,6 @@
 const {DATA} = require("./data")
 
-const LEVELS = ["medium", "high", "veryHigh", "extreme", "insane"]
+const LEVELS = ["MEDIUM", "HIGH", "VERY_HIGH", "EXTREME", "INSANE"]
 
 const LEVEL_EDAS = [21, 47, 58, 233, 809]
 

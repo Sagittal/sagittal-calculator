@@ -9,15 +9,15 @@ describe("calculateExtendedHistories", () => {
                 rank: 8,
                 events: [
                     {
-                        level: "high",
+                        level: "HIGH",
                         type: "EDA",
                         name: "16.5/47",
                         position: 45.45,
                         rank: 1,
                     },
                     {
-                        level: "veryHigh",
-                        type: "impossible",
+                        level: "VERY_HIGH",
+                        type: "IMPOSSIBLE",
                         name: "not between 88.8 and 99.9",
                         position: 45.45,
                         rank: 8,
@@ -40,7 +40,7 @@ describe("calculateExtendedHistories", () => {
                 rank: 1,
                 events: [
                     {
-                        level: "high",
+                        level: "HIGH",
                         type: "EDA",
                         name: "16.5/47",
                         position: 45.45,
@@ -53,7 +53,7 @@ describe("calculateExtendedHistories", () => {
         it("returns an array with one element: the passed-in history with its events extended with an event terminating it as impossible", () => {
             const actualBoundPosition = 12 // definitely 45.45 is nowhere near the position and thus no way it's between its neighbor commas
 
-            const result = calculateExtendedHistories(history, "veryHigh", actualBoundPosition)
+            const result = calculateExtendedHistories(history, "VERY_HIGH", actualBoundPosition)
 
             expect(result).toEqual([
                 {
@@ -61,16 +61,16 @@ describe("calculateExtendedHistories", () => {
                     rank: 8,
                     events: [
                         {
-                            level: "high",
+                            level: "HIGH",
                             type: "EDA",
                             name: "16.5/47",
                             position: 45.45,
                             rank: 1,
                         },
                         {
-                            level: "veryHigh",
-                            type: "impossible",
-                            name: "not between ')|( @11.642 and )~| @12.064 at the veryHigh level",
+                            level: "VERY_HIGH",
+                            type: "IMPOSSIBLE",
+                            name: "not between ')|( @11.642 and )~| @12.064 at the VERY_HIGH level",
                             position: 45.45,
                             rank: 8,
                         },
@@ -82,7 +82,7 @@ describe("calculateExtendedHistories", () => {
 
     describe("when the history's position is between the actual bound position's neighbor commas", () => {
         let passedInHistoryEvent = {
-            level: "high",
+            level: "HIGH",
             type: "EDA",
             name: "16.5/47",
             position: 45.45,
@@ -101,7 +101,7 @@ describe("calculateExtendedHistories", () => {
         it("returns an array with potentially many elements: for each snappable position of any event type, a new history which is like the passed-in history but with its events extended with a new event of snapping to that position, and its rank updated if necessary", () => {
             const actualBoundPosition = 45.4
 
-            const result = calculateExtendedHistories(history, "veryHigh", actualBoundPosition)
+            const result = calculateExtendedHistories(history, "VERY_HIGH", actualBoundPosition)
 
             expect(result).toEqual(jasmine.arrayWithExactContents([
                 {
@@ -110,7 +110,7 @@ describe("calculateExtendedHistories", () => {
                     events: [
                         passedInHistoryEvent,
                         {
-                            level: "veryHigh",
+                            level: "VERY_HIGH",
                             type: "EDA",
                             name: "23.5/58",
                             position: 46.062028316486725,
@@ -124,7 +124,7 @@ describe("calculateExtendedHistories", () => {
                     events: [
                         passedInHistoryEvent,
                         {
-                            level: "veryHigh",
+                            level: "VERY_HIGH",
                             type: "MEAN",
                             name: "'//| )//|",
                             position: 45.681795472660895,
@@ -138,7 +138,7 @@ describe("calculateExtendedHistories", () => {
                     events: [
                         passedInHistoryEvent,
                         {
-                            level: "veryHigh",
+                            level: "VERY_HIGH",
                             type: "SIZE",
                             name: "S|M",
                             position: 45.1124978365313,

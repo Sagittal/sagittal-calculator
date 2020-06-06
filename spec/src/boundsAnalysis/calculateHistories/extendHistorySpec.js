@@ -3,7 +3,7 @@ const {extendHistory} = require("../../../../src/boundsAnalysis/calculateHistori
 describe("extend history", () => {
     it("given a history and an event, adds the event to the history's events and updates the history's position with the event's position, and preserves its overridden status if any, and decreases its rank if need be", () => {
         const priorEvent = {
-            level: "high",
+            level: "HIGH",
             type: "EDA",
             name: "15.5/47",
             position: 56,
@@ -17,7 +17,7 @@ describe("extend history", () => {
             ],
         }
         const event = {
-            level: "veryHigh",
+            level: "VERY_HIGH",
             type: "MEAN",
             name: "(|\\ /|)",
             position: 57,
@@ -38,7 +38,7 @@ describe("extend history", () => {
 
     it("does not update the rank if the new event's rank is not worse than the current rank", () => {
         const priorEvent = {
-            level: "high",
+            level: "HIGH",
             type: "EDA",
             name: "15.5/47",
             position: 56,
@@ -52,7 +52,7 @@ describe("extend history", () => {
             ],
         }
         const event = {
-            level: "veryHigh",
+            level: "VERY_HIGH",
             type: "MEAN",
             name: "(|\\ /|)",
             position: 57,

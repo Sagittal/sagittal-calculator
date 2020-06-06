@@ -5,7 +5,7 @@ const isHistoryImpossible = events => {
 
     const mostRecentEvent = events[events.length - 1]
 
-    return mostRecentEvent.type === "impossible"
+    return mostRecentEvent.type === "IMPOSSIBLE"
 }
 
 module.exports = {

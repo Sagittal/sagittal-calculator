@@ -2,7 +2,7 @@ const {calculateLevelCommaMeans} = require("../../../../src/boundsAnalysis/data/
 
 describe("calculateLevelCommaMeans", () => {
     it("can return the comma means for the medium level, both the positions and the neighbor commas' symbols", () => {
-        expect(calculateLevelCommaMeans("medium")).toEqual([
+        expect(calculateLevelCommaMeans("MEDIUM")).toEqual([
             {name: "| |(", position: 2.8789011016926},
             {name: "|( )|(", position: 7.72288142310195},
             {name: ")|( ~|(", position: 12.20918723508155},
@@ -19,7 +19,7 @@ describe("calculateLevelCommaMeans", () => {
     })
 
     it("can return the comma means for the high level, both the positions and the neighbor commas' symbols", () => {
-        expect(calculateLevelCommaMeans("high")).toEqual([
+        expect(calculateLevelCommaMeans("HIGH")).toEqual([
             {name: "| )|", position: 1.689009364232425},
             {name: ")| |(", position: 4.567910465925025},
             {name: "|( ~|", position: 7.243699380344975},
@@ -54,8 +54,8 @@ describe("calculateLevelCommaMeans", () => {
         ])
     })
 
-    it("can return the comma means for the veryHigh level, both the positions and the neighbor commas' symbols", () => {
-        expect(calculateLevelCommaMeans("veryHigh")).toEqual([
+    it("can return the comma means for the very high level, both the positions and the neighbor commas' symbols", () => {
+        expect(calculateLevelCommaMeans("VERY_HIGH")).toEqual([
             {name: "| .)|", position: 0.7121489702654},
             {name: ".)| '|", position: 1.6890093642324802},
             {name: "'| )|", position: 2.6658697581995052},
@@ -114,7 +114,7 @@ describe("calculateLevelCommaMeans", () => {
     })
 
     it("can return the comma means for the extreme level, both the positions and the neighbor commas' symbols", () => {
-        expect(calculateLevelCommaMeans("extreme")).toEqual([
+        expect(calculateLevelCommaMeans("EXTREME")).toEqual([
             {name: "| `|", position: 0.21135808297741},
             {name: "`| ``|", position: 0.627620185028205},
             {name: "``| .)|", position: 1.128411072316195},

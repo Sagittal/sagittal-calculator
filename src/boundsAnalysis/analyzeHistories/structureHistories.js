@@ -3,7 +3,7 @@ const structureHistories = histories => {
 
     histories.forEach(history => {
         history.events.forEach((event, index) => {
-            if (event.type === "impossible") return
+            if (event.type === "IMPOSSIBLE") return
 
             const nextEvent = history.events[index + 1]
 
