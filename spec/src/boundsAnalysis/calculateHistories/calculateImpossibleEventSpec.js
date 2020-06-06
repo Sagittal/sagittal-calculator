@@ -9,7 +9,6 @@ describe("calculateImpossibleEvent", () => {
             type: "IMPOSSIBLE",
             name: "not between ,.(|) @58.036 and `|\\) @59.580 at the VERY_HIGH level",
             position: 57.4999779541197,
-            rank: 8,
         })
     })
 
@@ -21,7 +20,6 @@ describe("calculateImpossibleEvent", () => {
             type: "IMPOSSIBLE",
             name: "not between ,.(|) @58.036 and the maximum position @68.573 at the VERY_HIGH level",
             position: 57.4999779541197,
-            rank: 8,
         })
     })
 
@@ -33,7 +31,6 @@ describe("calculateImpossibleEvent", () => {
             type: "IMPOSSIBLE",
             name: "not between the minimum position @0.000 and ``| @0.833 at the VERY_HIGH level",
             position: 1.4242979405308,
-            rank: 8,
         })
     })
 })

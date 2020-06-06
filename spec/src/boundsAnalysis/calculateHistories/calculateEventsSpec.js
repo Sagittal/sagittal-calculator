@@ -26,12 +26,11 @@ describe("calculateEvents", () => {
                         type: "EDA",
                         name: "2.5/58",
                         position: 4.900215778349652,
-                        rank: 1,
                     },
                 ]))
             })
 
-            it("works when only one EDA midpoint is between the neighbor commas, but it is not within a half-step of the EDA, so it gets a lower rank", () => {
+            it("works when only one EDA midpoint is between the neighbor commas, even if it is not within a half-step of the EDA", () => {
                 level = "VERY_HIGH"
                 neighborCommaPositions = calculateNeighborCommaPositions(4.5, level)
                 position = 3.1 // not carefully chosen; may not even be between the neighbor commas
@@ -44,12 +43,11 @@ describe("calculateEvents", () => {
                         type: "EDA",
                         name: "2.5/58",
                         position: 4.900215778349652,
-                        rank: 4,
                     },
                 ]))
             })
 
-            it("works when multiple EDA midpoints are between the neighbor commas, assigning the close one a higher rank", () => {
+            it("works when multiple EDA midpoints are between the neighbor commas", () => {
                 level = "HIGH"
                 neighborCommaPositions = calculateNeighborCommaPositions(28.0, level)
                 position = 28.1
@@ -62,14 +60,12 @@ describe("calculateEvents", () => {
                         type: "EDA",
                         name: "11.5/47",
                         position: 27.816544035397598,
-                        rank: 1,
                     },
                     {
                         level: "HIGH",
                         type: "EDA",
                         name: "12.5/47",
                         position: 30.235373951519126,
-                        rank: 4,
                     },
                 ]))
             })
@@ -102,7 +98,6 @@ describe("calculateEvents", () => {
                         type: "MEAN",
                         name: "/| |)",
                         position: 24.38519069840745,
-                        rank: 5,
                     },
                 ])
             })
@@ -120,7 +115,6 @@ describe("calculateEvents", () => {
                         type: "MEAN",
                         name: ")/| |)",
                         position: 26.07420006263995,
-                        rank: 5,
                     },
                 ])
             })
@@ -138,7 +132,6 @@ describe("calculateEvents", () => {
                         type: "MEAN",
                         name: ".|) |)",
                         position: 26.287231406133,
-                        rank: 5,
                     },
                 ])
             })
@@ -156,7 +149,6 @@ describe("calculateEvents", () => {
                         type: "MEAN",
                         name: "`.|) ,,|)",
                         position: 26.220209513021253,
-                        rank: 5,
                     },
                 ])
             })
@@ -178,25 +170,6 @@ describe("calculateEvents", () => {
                         type: "MEAN",
                         name: "|) )|)",
                         position: 28.95310116433255,
-                        rank: 5,
-                    },
-                ])
-            })
-
-            it("works when the comma mean is within a half-step of the EDA at that level, giving a better rank", () => {
-                level = "MEDIUM"
-                neighborCommaPositions = calculateNeighborCommaPositions(26.25, level)
-                position = 26.22
-
-                const result = calculateEvents(level, neighborCommaPositions, eventType, position)
-
-                expect(result).toEqual([
-                    {
-                        level: "MEDIUM",
-                        type: "MEAN",
-                        name: "/| |)",
-                        position: 24.38519069840745,
-                        rank: 2,
                     },
                 ])
             })
@@ -219,7 +192,6 @@ describe("calculateEvents", () => {
                         type: "SIZE",
                         name: "C|S",
                         position: 33.38249264420710,
-                        rank: 6,
                     },
                 ])
             })

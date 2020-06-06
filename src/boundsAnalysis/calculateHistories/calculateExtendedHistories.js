@@ -1,16 +1,16 @@
 const {isPositionBetweenPositions} = require("../utilities/isPositionBetweenPositions")
 const {calculateNeighborCommaPositions} = require("../data/calculateNeighborCommaPositions")
 const {calculateEvents} = require("./calculateEvents")
-const {extendHistory} = require("./extendHistory")
 const {calculateImpossibleEvent} = require("./calculateImpossibleEvent")
 const {isHistoryImpossible} = require("../utilities/isHistoryImpossible")
+const {calculateHistoryPosition} = require("../utilities/calculateHistoryPosition")
 
 const calculateExtendedHistories = (history, level, actualBoundPosition) => {
     const extendedHistories = []
 
-    const {events, position} = history
+    const position = calculateHistoryPosition(history)
 
-    if (isHistoryImpossible(events)) {
+    if (isHistoryImpossible(history)) {
         extendedHistories.push(history)
         return extendedHistories
     }
@@ -19,8 +19,9 @@ const calculateExtendedHistories = (history, level, actualBoundPosition) => {
 
     if (!isPositionBetweenPositions(position, neighborCommaPositions)) {
         const impossibleEvent = calculateImpossibleEvent(position, level, neighborCommaPositions)
-        const impossibleToExtendHistory = extendHistory(history, impossibleEvent)
+        const impossibleToExtendHistory = history.concat(impossibleEvent)
         extendedHistories.push(impossibleToExtendHistory)
+
         return extendedHistories
     }
 
@@ -31,7 +32,7 @@ const calculateExtendedHistories = (history, level, actualBoundPosition) => {
     ]
 
     newEvents.forEach(event => {
-        const extendedHistory = extendHistory(history, event)
+        const extendedHistory = history.concat(event)
         extendedHistories.push(extendedHistory)
     })
 

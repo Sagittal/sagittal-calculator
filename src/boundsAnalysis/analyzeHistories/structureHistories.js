@@ -1,36 +1,30 @@
-const structureHistories = histories => {
+const {calculateInitialStructuredEvent} = require("./calculateInitialStructuredEvent")
+const {updateStructuredEvent} = require("./updateStructuredEvent")
+
+const structureHistories = analyzedHistories => {
     const structuredHistories = {}
 
-    histories.forEach(history => {
-        history.events.forEach((event, index) => {
-            if (event.type === "IMPOSSIBLE") return
+    analyzedHistories.forEach(analyzedHistory => {
+        analyzedHistory.events.forEach((analyzedEvent, index) => {
+            if (analyzedEvent.type === "IMPOSSIBLE") return
 
-            const nextEvent = history.events[index + 1]
+            if (!structuredHistories[analyzedEvent.level]) {
+                structuredHistories[analyzedEvent.level] = []
+            }
 
-            if (!structuredHistories[event.level]) structuredHistories[event.level] = []
+            const nextAnalyzedEvent = analyzedHistory.events[index + 1]
 
-            const existingEvent = structuredHistories[event.level].find(existingEvent => existingEvent.name === event.name)
+            const matchingStructuredEvent = structuredHistories[analyzedEvent.level]
+                .find(existingEvent => existingEvent.name === analyzedEvent.name)
 
-            if (existingEvent) {
-                if (nextEvent && !existingEvent.nextEvents.includes(nextEvent.name)) {
-                    existingEvent.nextEvents.push(nextEvent.name)
-                }
-                if (history.possible) {
-                    existingEvent.possible = true
-                }
+            if (matchingStructuredEvent) {
+                updateStructuredEvent(matchingStructuredEvent, {nextAnalyzedEvent, analyzedHistory, analyzedEvent})
             } else {
-                const newEvent = {
-                    ...event,
-                    possible: false,
-                    nextEvents: [],
-                }
-                if (nextEvent) {
-                    newEvent.nextEvents.push(nextEvent.name)
-                }
-                if (history.possible) {
-                    newEvent.possible = true
-                }
-                structuredHistories[event.level].push(newEvent)
+                const newStructuredEvent = calculateInitialStructuredEvent(analyzedEvent)
+
+                updateStructuredEvent(newStructuredEvent, {nextAnalyzedEvent, analyzedHistory, analyzedEvent})
+
+                structuredHistories[analyzedEvent.level].push(newStructuredEvent)
             }
         })
     })

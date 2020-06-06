@@ -1,5 +1,5 @@
 const {LEVEL_EDA_MIDPOINTS, LEVEL_SIZE_CATEGORY_BOUNDS, LEVEL_COMMA_MEANS} = require("../data/snappablePositions")
-const {calculateRank} = require("./calculateRank")
+const {calculateLevelRank} = require("../analyzeHistories/calculateLevelRank")
 const {calculateWithinHalfLevelEda} = require("./calculateWithinHalfLevelEda")
 
 const EVENT_TYPE_SNAPPABLE_POSITIONS = {
@@ -18,16 +18,11 @@ const calculateEvents = (level, [lesserNeighborCommaPosition, greaterNeighborCom
             snappablePosition.position > lesserNeighborCommaPosition &&
             (snappablePosition.position < greaterNeighborCommaPosition || !greaterNeighborCommaPosition)
         ) {
-            const withinHalfLevelEda = calculateWithinHalfLevelEda(level, snappablePosition.position, position)
-
-            const rank = calculateRank(type, withinHalfLevelEda)
-
             events.push({
                 level,
                 type,
                 name: snappablePosition.name,
                 position: snappablePosition.position,
-                rank,
             })
         }
     })
