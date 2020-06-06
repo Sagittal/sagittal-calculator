@@ -11,14 +11,14 @@ describe("calculateOverriddenHistorySpec", () => {
         const result = calculateOverriddenHistory(bound, level)
 
         expect(result).toEqual({
-            position: 45,
+            position: 45.681795472660895,
             rank: 7,
             events: [
                 {
                     level: "medium",
                     type: "override",
                     name: "override",
-                    position: 45,
+                    position: 45.681795472660895, // mean of '//| (44.9696465023956) and )//| (46.3939444429262) at veryHigh level is
                     rank: 7,
                 },
             ],

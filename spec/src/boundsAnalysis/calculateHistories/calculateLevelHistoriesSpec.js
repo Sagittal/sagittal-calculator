@@ -124,7 +124,7 @@ describe("calculateLevelHistories", () => {
                 level: "high",
                 type: "override",
                 name: "override",
-                position: 9.1,
+                position: 9.208778600061725,
                 rank: 7,
             }
             const expectedHistoryThatBecameImpossible = {
@@ -205,7 +205,7 @@ describe("calculateLevelHistories", () => {
                     level: "medium",
                     type: "override",
                     name: "override",
-                    position: 9.1,
+                    position: 9.208778600061725,
                     rank: 7,
                 }
                 expect(result[0]).toEqual(historyThatWillBeImpossibleAtThisLevel)

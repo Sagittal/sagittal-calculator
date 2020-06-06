@@ -31,33 +31,6 @@ describe("calculateBoundHistories", () => {
                 ],
             },
             {
-                position: 8.820388401029373,
-                rank: 8,
-                events: [
-                    {
-                        level: "medium",
-                        type: "override",
-                        name: "override",
-                        position: 9.5,
-                        rank: 7,
-                    },
-                    {
-                        level: "veryHigh",
-                        type: "EDA",
-                        name: "4.5/58",
-                        position: 8.820388401029373,
-                        rank: 1,
-                    },
-                    {
-                        level: "extreme",
-                        type: "impossible",
-                        name: "not between ,)|( @9.182 and )|( @9.688 at the extreme level",
-                        position: 8.820388401029373,
-                        rank: 8,
-                    },
-                ],
-            },
-            {
                 position: 7.72288142310195,
                 rank: 8,
                 events: [
@@ -78,6 +51,33 @@ describe("calculateBoundHistories", () => {
                 ],
             },
             {
+                position: 8.820388401029373,
+                rank: 8,
+                events: [
+                    {
+                        level: "medium",
+                        type: "override",
+                        name: "override",
+                        position: 9.208778600061725,
+                        rank: 7,
+                    },
+                    {
+                        level: "veryHigh",
+                        type: "EDA",
+                        name: "4.5/58",
+                        position: 8.820388401029373,
+                        rank: 1,
+                    },
+                    {
+                        level: "extreme",
+                        type: "impossible",
+                        name: "not between ,)|( @9.182 and )|( @9.688 at the extreme level",
+                        position: 8.820388401029373,
+                        rank: 8,
+                    },
+                ],
+            },
+            {
                 position: 9.514410378220525,
                 rank: 7,
                 events: [
@@ -85,7 +85,7 @@ describe("calculateBoundHistories", () => {
                         level: "medium",
                         type: "override",
                         name: "override",
-                        position: 9.5,
+                        position: 9.208778600061725,
                         rank: 7,
                     },
                     {
@@ -112,7 +112,7 @@ describe("calculateBoundHistories", () => {
                         level: "medium",
                         type: "override",
                         name: "override",
-                        position: 9.5,
+                        position: 9.208778600061725,
                         rank: 7,
                     },
                     {

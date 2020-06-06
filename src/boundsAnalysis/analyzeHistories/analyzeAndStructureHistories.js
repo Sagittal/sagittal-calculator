@@ -3,9 +3,9 @@ const {analyzeHistory} = require("./analyzeHistory")
 const {calculateMinimumError} = require("./calculateMinimumError")
 const {calculateBestPossibleHistories} = require("./calculateBestPossibleHistories")
 const {BOUNDED_COMMAS} = require("../data/boundedCommas")
-const {rankSummary} = require("./rankSummary")
+const {rankBounds, rankSummary} = require("./rankSummary")
 
-const analyzeAndStructureHistories = (histories, {bound, comma}) => {
+const analyzeAndStructureHistories = (histories, {bound, comma}, datumIndex) => {
     const {position} = bound
     const {symbol: extremeLevelLesserNeighborCommaSymbol, mina} = comma
 
@@ -20,6 +20,7 @@ const analyzeAndStructureHistories = (histories, {bound, comma}) => {
     const boundedCommas = BOUNDED_COMMAS[position]
 
     rankSummary[bestRank] += 1
+    rankBounds[bestRank].push(datumIndex)
 
     return {
         bound: {
