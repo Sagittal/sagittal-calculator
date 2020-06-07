@@ -1,18 +1,18 @@
 const {calculateBestPossibleHistories} = require("../../../../src/boundsAnalysis/analyzeHistories/calculateBestPossibleHistories")
 
 describe("calculateBestPossibleHistories", () => {
-    it("returns the histories with the best rank (the not possible ones are all already filtered out)", () => {
+    it("returns the histories with the best score (the not possible ones are all already filtered out)", () => {
         const histories = [
             {
-                rank: 3,
+                score: 3,
                 position: 12.909,
             },
             {
-                rank: 2,
+                score: 2,
                 position: 13.235,
             },
             {
-                rank: 2,
+                score: 2,
                 position: 13.47489,
             },
         ]
@@ -21,11 +21,11 @@ describe("calculateBestPossibleHistories", () => {
 
         expect(result).toEqual([
             {
-                rank: 2,
+                score: 2,
                 position: 13.235,
             },
             {
-                rank: 2,
+                score: 2,
                 position: 13.47489,
             },
         ])

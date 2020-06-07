@@ -1,4 +1,6 @@
 const {analyzeAndStructureHistories} = require("../../../../src/boundsAnalysis/analyzeHistories/analyzeAndStructureHistories")
+const {calculateBoundHistories} = require("../../../../src/boundsAnalysis/calculateHistories/calculateBoundHistories")
+const {BOUNDS} = require("../../../../src/boundsAnalysis/data/bounds")
 const rankSummary = require("../../../../src/boundsAnalysis/analyzeHistories/rankSummary")
 
 describe("analyzeAndStructureHistories", () => {
@@ -168,6 +170,7 @@ describe("analyzeAndStructureHistories", () => {
                         events: expectedBestHistoryEvents,
                         position: 23.116419649559468,
                         rank: 2,
+                        score: 132,
                         possible: true,
                         tinaError: 0,
                         initialPositionTinaDifference: -0.5613173198970488,
@@ -255,5 +258,13 @@ describe("analyzeAndStructureHistories", () => {
 
         const expectedBestHistoryRank = 2
         expect(rankSummary.updateRankSummary).toHaveBeenCalledWith(expectedBestHistoryRank, boundIndex)
+    })
+
+    it("returns exactly one best history for each bound", () => {
+        BOUNDS.forEach((bound, boundIndex) => {
+            const result = analyzeAndStructureHistories(calculateBoundHistories(bound), bound, boundIndex)
+
+            expect(result.analysis.bestPossibleHistories.length).toBe(1)
+        })
     })
 })
