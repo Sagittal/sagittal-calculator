@@ -3,6 +3,7 @@ const {round} = require("../utilities/round")
 const {calculateHistoryPosition} = require("../utilities/calculateHistoryPosition")
 const {calculateRank} = require("./calculateRank")
 const {analyzeEvents} = require("./analyzeEvents")
+const {calculateScore} = require("./calculateScore")
 
 const ACCURACY_THRESHOLD = 6
 
@@ -11,6 +12,7 @@ const analyzeHistory = (history, bound, initialPosition) => {
 
     const analyzedEvents = analyzeEvents(history)
     const rank = calculateRank(analyzedEvents)
+    const score = calculateScore(analyzedEvents)
 
     const positionError = position - bound.position
     const possible = round(positionError, ACCURACY_THRESHOLD) === 0
@@ -25,6 +27,7 @@ const analyzeHistory = (history, bound, initialPosition) => {
         events: analyzedEvents,
         position,
         rank,
+        score,
         possible,
         tinaError,
         initialPositionTinaDifference,
