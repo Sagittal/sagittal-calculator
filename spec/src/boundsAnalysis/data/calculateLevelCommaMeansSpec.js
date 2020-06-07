@@ -1,7 +1,7 @@
 const {calculateLevelCommaMeans} = require("../../../../src/boundsAnalysis/data/calculateLevelCommaMeans")
 
 describe("calculateLevelCommaMeans", () => {
-    it("can return the comma means for the medium level, both the positions and the bounded commas' symbols", () => {
+    it("can return the comma means for the Medium level, both the positions and the bounded commas' symbols", () => {
         expect(calculateLevelCommaMeans("MEDIUM")).toEqual([
             {name: "| |(", position: 2.8789011016926},
             {name: "|( )|(", position: 7.72288142310195},
@@ -18,7 +18,7 @@ describe("calculateLevelCommaMeans", () => {
         ])
     })
 
-    it("can return the comma means for the high level, both the positions and the bounded commas' symbols", () => {
+    it("can return the comma means for the High level, both the positions and the bounded commas' symbols", () => {
         expect(calculateLevelCommaMeans("HIGH")).toEqual([
             {name: "| )|", position: 1.689009364232425},
             {name: ")| |(", position: 4.567910465925025},
@@ -54,7 +54,7 @@ describe("calculateLevelCommaMeans", () => {
         ])
     })
 
-    it("can return the comma means for the very high level, both the positions and the bounded commas' symbols", () => {
+    it("can return the comma means for the Very High level, both the positions and the bounded commas' symbols", () => {
         expect(calculateLevelCommaMeans("VERY_HIGH")).toEqual([
             {name: "| .)|", position: 0.7121489702654},
             {name: ".)| '|", position: 1.6890093642324802},
@@ -113,7 +113,7 @@ describe("calculateLevelCommaMeans", () => {
         ])
     })
 
-    it("can return the comma means for the extreme level, both the positions and the bounded commas' symbols", () => {
+    it("can return the comma means for the Extreme level, both the positions and the bounded commas' symbols", () => {
         expect(calculateLevelCommaMeans("EXTREME")).toEqual([
             {name: "| `|", position: 0.21135808297741},
             {name: "`| ``|", position: 0.627620185028205},
