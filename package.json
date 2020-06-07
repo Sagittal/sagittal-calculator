@@ -11,6 +11,7 @@
     "analyze-bounds": "node src/boundsAnalysis/main.js"
   },
   "devDependencies": {
+    "colors": "^1.4.0",
     "jasmine": "^3.5.0"
   }
 }

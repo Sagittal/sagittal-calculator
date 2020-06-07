@@ -8,15 +8,15 @@ const EVENT_TYPE_SNAPPABLE_POSITIONS = {
     MEAN: LEVEL_COMMA_MEANS,
 }
 
-const calculateEvents = (level, [lesserNeighborCommaPosition, greaterNeighborCommaPosition], type, position) => {
+const calculateEvents = (level, [lesserBoundedCommaPosition, greaterBoundedCommaPosition], type, position) => {
     const events = []
 
     const snappablePositions = EVENT_TYPE_SNAPPABLE_POSITIONS[type][level]
 
     snappablePositions.forEach(snappablePosition => {
         if (
-            snappablePosition.position > lesserNeighborCommaPosition &&
-            (snappablePosition.position < greaterNeighborCommaPosition || !greaterNeighborCommaPosition)
+            snappablePosition.position > lesserBoundedCommaPosition &&
+            (snappablePosition.position < greaterBoundedCommaPosition || !greaterBoundedCommaPosition)
         ) {
             events.push({
                 level,

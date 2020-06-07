@@ -1,12 +1,12 @@
 const {MAXIMUM_POSITION} = require("./intervals")
-const {calculateNeighborCommaPositions} = require("./calculateNeighborCommaPositions")
+const {calculateBoundedCommaPositions} = require("./calculateBoundedCommaPositions")
 
 const calculateInitialPosition = (bound, level) => {
     const {position, levels} = bound
     const initialLevel = level || levels[0]
-    const [lesserNeighborCommaPosition, greaterNeighborCommaPosition] = calculateNeighborCommaPositions(position, initialLevel)
+    const [lesserBoundedCommaPosition, greaterBoundedCommaPosition] = calculateBoundedCommaPositions(position, initialLevel)
 
-    return greaterNeighborCommaPosition ? (lesserNeighborCommaPosition + greaterNeighborCommaPosition) / 2 : MAXIMUM_POSITION
+    return greaterBoundedCommaPosition ? (lesserBoundedCommaPosition + greaterBoundedCommaPosition) / 2 : MAXIMUM_POSITION
 }
 
 module.exports = {

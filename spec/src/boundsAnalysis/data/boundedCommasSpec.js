@@ -117,4 +117,35 @@ describe("calculateBoundedCommas", () => {
             ],
         })
     })
+
+
+    it("works for the first bound", () => {
+        const bound = {
+            position: 0.210788021120605,
+            levels: ["EXTREME", "INSANE"],
+        }
+
+        const result = calculateBoundedCommas(bound)
+
+        expect(result).toEqual({
+            EXTREME: [
+                {
+                    introducingLevel: "EXTREME",
+                    position: 0.42271616595482,
+                    symbol: "`|",
+                    mina: 1,
+                    distance: 0.211928144834215,
+                },
+            ],
+            INSANE: [
+                {
+                    introducingLevel: "EXTREME",
+                    position: 0.42271616595482,
+                    symbol: "`|",
+                    mina: 1,
+                    distance: 0.211928144834215,
+                },
+            ],
+        })
+    })
 })

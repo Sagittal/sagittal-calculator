@@ -102,7 +102,8 @@ describe("analyzeAndStructureHistories", () => {
         ]
         expect(result).toEqual({
             bound: {
-                extremeLevelLesserNeighborCommaSymbol: ".)/|",
+                extremeLevelLesserBoundedCommaSymbol: ".)/|",
+                extremeLevelGreaterBoundedCommaSymbol: "'/|",
                 position: 23.1164196495597,
                 boundedCommas: {
                     VERY_HIGH: [
@@ -154,7 +155,8 @@ describe("analyzeAndStructureHistories", () => {
                         },
                     ],
                 },
-                minaUpperBoundOf: 47,
+                lesserBoundedMina: 47,
+                greaterBoundedMina: 48,
             },
             analysis: {
                 bestRank: 2,

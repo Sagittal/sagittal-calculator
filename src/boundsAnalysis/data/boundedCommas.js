@@ -1,4 +1,4 @@
-const {calculateNeighborCommaPositions} = require("./calculateNeighborCommaPositions")
+const {calculateBoundedCommaPositions} = require("./calculateBoundedCommaPositions")
 const {calculateCommaFromPosition} = require("./calculateCommaFromPosition")
 const {BOUNDS} = require("./bounds")
 
@@ -7,7 +7,7 @@ const calculateBoundedCommas = bound => {
 
     return levels.reduce(
         (levels, level) => {
-            const levelBoundedCommas = calculateNeighborCommaPositions(position, level).map(position => calculateCommaFromPosition(position)).filter(comma => !!comma)
+            const levelBoundedCommas = calculateBoundedCommaPositions(position, level).map(position => calculateCommaFromPosition(position)).filter(comma => !!comma)
             const levelBoundedCommasWithDistance = levelBoundedCommas.map(comma => ({
                 ...comma,
                 distance: Math.abs(position - comma.position),
