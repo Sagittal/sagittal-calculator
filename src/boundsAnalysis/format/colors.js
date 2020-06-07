@@ -1,15 +1,14 @@
-const {RANKS} = require("../data/ranks")
-
-const COLORS = {
-    [RANKS["EDA"]]: "brightBlue",
-    [RANKS["MEAN"]]: "cyan",
-    [RANKS["SIZE"]]: "green",
-    [RANKS["INFERIOR_EDA"]]: "yellow",
-    [RANKS["INFERIOR_MEAN"]]: "yellow",
-    [RANKS["INFERIOR_SIZE"]]: "yellow",
-    [RANKS["OVERRIDE"]]: "red",
-    [RANKS["IMPOSSIBLE"]]: "magenta",
-}
+const COLORS = [
+    "blue",         // INITIAL
+    "brightBlue",   // EDA
+    "cyan",         // MEAN
+    "green",        // SIZE
+    "yellow",       // NOT_NEAREST_EDA
+    "yellow",       // NOT_NEAREST_MEAN
+    "yellow",       // NOT_NEAREST_SIZE
+    "red",          // OVERRIDE
+    "magenta",      // IMPOSSIBLE
+]
 
 module.exports = {
     COLORS,

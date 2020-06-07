@@ -1,18 +1,18 @@
-const rankSummary = [
+const rankCounts = [
     0, 0, 0, 0, 0, 0, 0, 0, 0,
 ]
 
-const rankBounds = [
+const rankBoundIndices = [
     [], [], [], [], [], [], [], [], [],
 ]
 
 const updateRankSummary = (bestRank, boundIndex) => {
-    rankSummary[bestRank] += 1
-    rankBounds[bestRank].push(boundIndex)
+    rankCounts[bestRank] += 1
+    rankBoundIndices[bestRank].push(boundIndex)
 }
 
 module.exports = {
-    rankSummary,
-    rankBounds,
+    rankCounts,
+    rankBoundIndices,
     updateRankSummary,
 }

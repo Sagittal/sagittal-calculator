@@ -3,9 +3,9 @@ const RANKS = {
     EDA: 1,
     MEAN: 2,
     SIZE: 3,
-    INFERIOR_EDA: 4,
-    INFERIOR_MEAN: 5,
-    INFERIOR_SIZE: 6,
+    NOT_NEAREST_EDA: 4,
+    NOT_NEAREST_MEAN: 5,
+    NOT_NEAREST_SIZE: 6,
     OVERRIDE: 7,
     IMPOSSIBLE: 8,
 }

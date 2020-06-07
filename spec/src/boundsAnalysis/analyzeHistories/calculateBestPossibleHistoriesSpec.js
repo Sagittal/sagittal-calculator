@@ -1,33 +1,48 @@
-const {calculateBestPossibleHistories} = require("../../../../src/boundsAnalysis/analyzeHistories/calculateBestPossibleHistories")
+const {calculateBestPossibleHistory} = require("../../../../src/boundsAnalysis/analyzeHistories/calculateBestPossibleHistories")
 
-describe("calculateBestPossibleHistories", () => {
-    it("returns the histories with the best score (the not possible ones are all already filtered out)", () => {
+describe("calculateBestPossibleHistory", () => {
+    it("returns the history with the best score (the not possible ones are all already filtered out)", () => {
         const histories = [
             {
-                score: 3,
+                score: 3436643,
                 position: 12.909,
             },
             {
-                score: 2,
+                score: 245444,
                 position: 13.235,
             },
             {
-                score: 2,
+                score: 2422436,
                 position: 13.47489,
             },
         ]
 
-        const result = calculateBestPossibleHistories(histories)
+        const result = calculateBestPossibleHistory(histories)
 
-        expect(result).toEqual([
+        expect(result).toEqual(
             {
-                score: 2,
+                score: 245444,
+                position: 13.235,
+            },
+        )
+    })
+
+    it("throws an error if two histories have the same score", () => {
+        const histories = [
+            {
+                score: 3436643,
+                position: 12.909,
+            },
+            {
+                score: 2422436,
                 position: 13.235,
             },
             {
-                score: 2,
+                score: 2422436,
                 position: 13.47489,
             },
-        ])
+        ]
+
+        expect(() => calculateBestPossibleHistory(histories)).toThrow()
     })
 })

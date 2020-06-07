@@ -1,4 +1,4 @@
-const {updateRankSummary, rankSummary, rankBounds} = require("../../../../src/boundsAnalysis/analyzeHistories/rankSummary")
+const {updateRankSummary, rankCounts, rankBoundIndices} = require("../../../../src/boundsAnalysis/analyzeHistories/rankSummary")
 
 describe("updateRankSummary", () => {
     const bestRank = 2
@@ -8,17 +8,17 @@ describe("updateRankSummary", () => {
     let previousRankBounds
 
     beforeAll(() => {
-        previousRankSummary = rankSummary[bestRank]
-        previousRankBounds = rankBounds[bestRank].slice()
+        previousRankSummary = rankCounts[bestRank]
+        previousRankBounds = rankBoundIndices[bestRank].slice()
 
         updateRankSummary(bestRank, boundIndex)
     })
 
     it("updates the count of bounds with this rank as their best rank", () => {
-        expect(rankSummary[bestRank]).toBe(previousRankSummary + 1)
+        expect(rankCounts[bestRank]).toBe(previousRankSummary + 1)
     })
 
     it("updates the rank to include this bound in the list of bounds with it as their best rank", () => {
-        expect(rankBounds[bestRank]).toEqual(previousRankBounds.concat([boundIndex]))
+        expect(rankBoundIndices[bestRank]).toEqual(previousRankBounds.concat([boundIndex]))
     })
 })

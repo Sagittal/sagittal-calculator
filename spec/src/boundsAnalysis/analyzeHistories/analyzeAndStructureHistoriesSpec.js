@@ -1,7 +1,6 @@
 const {analyzeAndStructureHistories} = require("../../../../src/boundsAnalysis/analyzeHistories/analyzeAndStructureHistories")
-const {calculateBoundHistories} = require("../../../../src/boundsAnalysis/calculateHistories/calculateBoundHistories")
-const {BOUNDS} = require("../../../../src/boundsAnalysis/data/bounds")
 const rankSummary = require("../../../../src/boundsAnalysis/analyzeHistories/rankSummary")
+const levelSummary = require("../../../../src/boundsAnalysis/analyzeHistories/levelSummary")
 
 describe("analyzeAndStructureHistories", () => {
     const notBestHistory = [
@@ -66,42 +65,52 @@ describe("analyzeAndStructureHistories", () => {
         position: 23.1164196495597,
         levels: ["VERY_HIGH", "EXTREME", "INSANE"],
     }
+    const expectedBestHistoryEvents = [
+        {
+            level: "INITIAL",
+            type: "INITIAL",
+            name: "INITIAL",
+            position: 23.2,
+            rank: 0,
+        },
+        {
+            level: "VERY_HIGH",
+            type: "MEAN",
+            name: ".)/| '/|",
+            position: 23.2,
+            rank: 2,
+        },
+        {
+            level: "EXTREME",
+            type: "EDA",
+            name: "47.5/233",
+            position: 23.15,
+            rank: 1,
+        },
+        {
+            level: "INSANE",
+            type: "EDA",
+            name: "164.5/809",
+            position: 23.116419649559468,
+            rank: 1,
+        },
+    ]
+    const expecteBestPossibleHistory = {
+        events: expectedBestHistoryEvents,
+        position: 23.116419649559468,
+        rank: 2,
+        score: 132,
+        possible: true,
+        tinaError: 0,
+        initialPositionTinaDifference: -0.5613173198970488,
+    }
 
     it("returns helpful identifying information about the bound, alongside an analysis of its histories, and a structured presentation of said histories, and its histories which are tied for the best rank", () => {
         const boundIndex = 47
 
         const result = analyzeAndStructureHistories(histories, bound, boundIndex)
 
-        const expectedBestHistoryEvents = [
-            {
-                level: "INITIAL",
-                type: "INITIAL",
-                name: "INITIAL",
-                position: 23.2,
-                rank: 0,
-            },
-            {
-                level: "VERY_HIGH",
-                type: "MEAN",
-                name: ".)/| '/|",
-                position: 23.2,
-                rank: 2,
-            },
-            {
-                level: "EXTREME",
-                type: "EDA",
-                name: "47.5/233",
-                position: 23.15,
-                rank: 1,
-            },
-            {
-                level: "INSANE",
-                type: "EDA",
-                name: "164.5/809",
-                position: 23.116419649559468,
-                rank: 1,
-            },
-        ]
+
         expect(result).toEqual({
             bound: {
                 extremeLevelLesserBoundedCommaSymbol: ".)/|",
@@ -165,17 +174,15 @@ describe("analyzeAndStructureHistories", () => {
                 initialPosition: 23.195298960947348,
                 initialPositionTinaDifference: -0.5613173198954056,
                 possibleHistoryCount: 2,
-                bestPossibleHistories: [
-                    {
-                        events: expectedBestHistoryEvents,
-                        position: 23.116419649559468,
-                        rank: 2,
-                        score: 132,
-                        possible: true,
-                        tinaError: 0,
-                        initialPositionTinaDifference: -0.5613173198970488,
-                    },
-                ],
+                bestPossibleHistory: {
+                    events: expectedBestHistoryEvents,
+                    position: 23.116419649559468,
+                    rank: 2,
+                    score: 132,
+                    possible: true,
+                    tinaError: 0,
+                    initialPositionTinaDifference: -0.5613173198970488,
+                },
             },
             structuredHistories: {
                 INITIAL: [
@@ -260,11 +267,13 @@ describe("analyzeAndStructureHistories", () => {
         expect(rankSummary.updateRankSummary).toHaveBeenCalledWith(expectedBestHistoryRank, boundIndex)
     })
 
-    it("returns exactly one best history for each bound", () => {
-        BOUNDS.forEach((bound, boundIndex) => {
-            const result = analyzeAndStructureHistories(calculateBoundHistories(bound), bound, boundIndex)
+    it("updates the level summary", () => {
+        const boundIndex = 88
 
-            expect(result.analysis.bestPossibleHistories.length).toBe(1)
-        })
+        spyOn(levelSummary, "updateLevelSummary")
+
+        analyzeAndStructureHistories(histories, bound, boundIndex)
+
+        expect(levelSummary.updateLevelSummary).toHaveBeenCalledWith(expecteBestPossibleHistory)
     })
 })

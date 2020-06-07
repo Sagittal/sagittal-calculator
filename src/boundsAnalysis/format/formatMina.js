@@ -1,6 +1,8 @@
 const {round} = require("../utilities/round")
 
 const formatMina = mina => {
+    if (!mina) return "       "
+
     let formattedMina = round(mina, 3).toString()
 
     let decimalPointIndex = formattedMina.indexOf(".")

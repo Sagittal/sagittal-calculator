@@ -1,9 +1,10 @@
 const {structureHistories} = require("./structureHistories")
 const {analyzeHistory} = require("./analyzeHistory")
-const {calculateBestPossibleHistories} = require("./calculateBestPossibleHistories")
+const {calculateBestPossibleHistory} = require("./calculateBestPossibleHistories")
 const {BOUNDED_COMMAS} = require("../data/boundedCommas")
 const {TINA} = require("../data/intervals")
 const rankSummary = require("./rankSummary")
+const levelSummary = require("./levelSummary")
 const {calculateInitialPosition} = require("../data/calculateInitialPosition")
 
 const analyzeAndStructureHistories = (histories, bound, boundIndex) => {
@@ -17,27 +18,28 @@ const analyzeAndStructureHistories = (histories, bound, boundIndex) => {
 
     const possibleHistories = analyzedHistories.filter(analyzedHistory => analyzedHistory.possible)
     const possibleHistoryCount = possibleHistories.length
-    const bestPossibleHistories = calculateBestPossibleHistories(possibleHistories)
-    const bestRank = bestPossibleHistories[0].rank
+    const bestPossibleHistory = calculateBestPossibleHistory(possibleHistories)
+    const bestRank = bestPossibleHistory.rank
     const initialPositionTinaDifference = (position - initialPosition) / TINA
 
     rankSummary.updateRankSummary(bestRank, boundIndex)
+    levelSummary.updateLevelSummary(bestPossibleHistory)
 
     const structuredHistories = structureHistories(analyzedHistories)
 
     return {
         bound: {
-            extremeLevelLesserBoundedCommaSymbol: lesserBoundedComma ? lesserBoundedComma.symbol : '|',
+            extremeLevelLesserBoundedCommaSymbol: lesserBoundedComma ? lesserBoundedComma.symbol : '',
             extremeLevelGreaterBoundedCommaSymbol: greaterBoundedComma ? greaterBoundedComma.symbol : '',
             position,
             boundedCommas,
-            lesserBoundedMina: lesserBoundedComma ? lesserBoundedComma.mina : 0,
-            greaterBoundedMina: greaterBoundedComma ? greaterBoundedComma.mina : '',
+            lesserBoundedMina: lesserBoundedComma ? lesserBoundedComma.mina : '',
+            greaterBoundedMina: greaterBoundedComma && greaterBoundedComma.mina,
         },
         analysis: {
             initialPosition,
             possibleHistoryCount,
-            bestPossibleHistories,
+            bestPossibleHistory,
             bestRank,
             initialPositionTinaDifference,
         },
