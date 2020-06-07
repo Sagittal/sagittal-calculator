@@ -2,17 +2,17 @@ const {MAXIMUM_POSITION} = require("../data/intervals")
 const {calculateCommaFromPosition} = require("../data/calculateCommaFromPosition")
 const {formatNumber} = require("../format/formatNumber")
 
-const calculateImpossibleEvent = (position, level, [lesserNeighborCommaPosition, greaterNeighborCommaPosition]) => {
-    const formattedGreaterNeighborCommaPosition = formatNumber(greaterNeighborCommaPosition || MAXIMUM_POSITION)
-    const formattedLesserNeighborCommaPosition = formatNumber(lesserNeighborCommaPosition)
+const calculateImpossibleEvent = (position, level, [lesserBoundedCommaPosition, greaterBoundedCommaPosition]) => {
+    const formattedGreaterBoundedCommaPosition = formatNumber(greaterBoundedCommaPosition || MAXIMUM_POSITION)
+    const formattedLesserBoundedCommaPosition = formatNumber(lesserBoundedCommaPosition)
 
-    const lesserCommaSymbol = lesserNeighborCommaPosition ? calculateCommaFromPosition(lesserNeighborCommaPosition).symbol : "the minimum position"
-    const greaterCommaSymbol = greaterNeighborCommaPosition ? calculateCommaFromPosition(greaterNeighborCommaPosition).symbol : "the maximum position"
+    const lesserCommaSymbol = lesserBoundedCommaPosition ? calculateCommaFromPosition(lesserBoundedCommaPosition).symbol : "the minimum position"
+    const greaterCommaSymbol = greaterBoundedCommaPosition ? calculateCommaFromPosition(greaterBoundedCommaPosition).symbol : "the maximum position"
 
     return {
         level,
         type: "IMPOSSIBLE",
-        name: `not between ${lesserCommaSymbol} @${formattedLesserNeighborCommaPosition} and ${greaterCommaSymbol} @${formattedGreaterNeighborCommaPosition} at the ${level} level`,
+        name: `not between ${lesserCommaSymbol} @${formattedLesserBoundedCommaPosition} and ${greaterCommaSymbol} @${formattedGreaterBoundedCommaPosition} at the ${level} level`,
         position,
     }
 }

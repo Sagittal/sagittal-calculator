@@ -1,4 +1,3 @@
-const {COMMAS} = require("../data/commas")
 const {structureHistories} = require("./structureHistories")
 const {analyzeHistory} = require("./analyzeHistory")
 const {calculateBestPossibleHistories} = require("./calculateBestPossibleHistories")
@@ -8,10 +7,10 @@ const rankSummary = require("./rankSummary")
 const {calculateInitialPosition} = require("../data/calculateInitialPosition")
 
 const analyzeAndStructureHistories = (histories, bound, boundIndex) => {
-    const comma = COMMAS[boundIndex]
-    const {symbol: extremeLevelLesserNeighborCommaSymbol, mina} = comma
     const {position} = bound
     const boundedCommas = BOUNDED_COMMAS[boundIndex]
+    const extremeBoundedCommas = boundedCommas["EXTREME"]
+    const [lesserBoundedComma, greaterBoundedComma] = extremeBoundedCommas
 
     const initialPosition = calculateInitialPosition(bound)
     const analyzedHistories = histories.map(history => analyzeHistory(history, bound, initialPosition))
@@ -28,10 +27,12 @@ const analyzeAndStructureHistories = (histories, bound, boundIndex) => {
 
     return {
         bound: {
-            extremeLevelLesserNeighborCommaSymbol,
+            extremeLevelLesserBoundedCommaSymbol: lesserBoundedComma ? lesserBoundedComma.symbol : '|',
+            extremeLevelGreaterBoundedCommaSymbol: greaterBoundedComma ? greaterBoundedComma.symbol : '',
             position,
             boundedCommas,
-            minaUpperBoundOf: mina,
+            lesserBoundedMina: lesserBoundedComma ? lesserBoundedComma.mina : 0,
+            greaterBoundedMina: greaterBoundedComma ? greaterBoundedComma.mina : '',
         },
         analysis: {
             initialPosition,

@@ -1,24 +1,24 @@
-const {calculateNeighborCommaPositions} = require("../../../../src/boundsAnalysis/data/calculateNeighborCommaPositions")
+const {calculateBoundedCommaPositions} = require("../../../../src/boundsAnalysis/data/calculateBoundedCommaPositions")
 const {calculateEvents} = require("../../../../src/boundsAnalysis/calculateHistories/calculateEvents")
 
 describe("calculateEvents", () => {
     let level
-    let neighborCommaPositions
+    let boundedCommaPositions
     let eventType
     let position
 
-    describe("returns an event for each snappable position between the neighbor comma positions for this event type and level", () => {
+    describe("returns an event for each snappable position between the bounded comma positions for this event type and level", () => {
         describe("for events of snapping to EDA midpoint positions", () => {
             beforeEach(() => {
                 eventType = "EDA"
             })
 
-            it("works when only one EDA midpoint is between the neighbor commas", () => {
+            it("works when only one EDA midpoint is between the bounded commas", () => {
                 level = "VERY_HIGH"
-                neighborCommaPositions = calculateNeighborCommaPositions(4.5, level)
+                boundedCommaPositions = calculateBoundedCommaPositions(4.5, level)
                 position = 5.1
 
-                const result = calculateEvents(level, neighborCommaPositions, eventType, position)
+                const result = calculateEvents(level, boundedCommaPositions, eventType, position)
 
                 expect(result).toEqual(jasmine.arrayWithExactContents([
                     {
@@ -30,12 +30,12 @@ describe("calculateEvents", () => {
                 ]))
             })
 
-            it("works when only one EDA midpoint is between the neighbor commas, even if it is not within a half-step of the EDA", () => {
+            it("works when only one EDA midpoint is between the bounded commas, even if it is not within a half-step of the EDA", () => {
                 level = "VERY_HIGH"
-                neighborCommaPositions = calculateNeighborCommaPositions(4.5, level)
-                position = 3.1 // not carefully chosen; may not even be between the neighbor commas
+                boundedCommaPositions = calculateBoundedCommaPositions(4.5, level)
+                position = 3.1 // not carefully chosen; may not even be between the bounded commas
 
-                const result = calculateEvents(level, neighborCommaPositions, eventType, position)
+                const result = calculateEvents(level, boundedCommaPositions, eventType, position)
 
                 expect(result).toEqual(jasmine.arrayWithExactContents([
                     {
@@ -47,12 +47,12 @@ describe("calculateEvents", () => {
                 ]))
             })
 
-            it("works when multiple EDA midpoints are between the neighbor commas", () => {
+            it("works when multiple EDA midpoints are between the bounded commas", () => {
                 level = "HIGH"
-                neighborCommaPositions = calculateNeighborCommaPositions(28.0, level)
+                boundedCommaPositions = calculateBoundedCommaPositions(28.0, level)
                 position = 28.1
 
-                const result = calculateEvents(level, neighborCommaPositions, eventType, position)
+                const result = calculateEvents(level, boundedCommaPositions, eventType, position)
 
                 expect(result).toEqual(jasmine.arrayWithExactContents([
                     {
@@ -70,11 +70,11 @@ describe("calculateEvents", () => {
                 ]))
             })
 
-            it("returns an empty array if there are no EDA midpoints between the position's neighbor commas", () => {
+            it("returns an empty array if there are no EDA midpoints between the position's bounded commas", () => {
                 level = "VERY_HIGH"
-                neighborCommaPositions = calculateNeighborCommaPositions(6.05, level)
+                boundedCommaPositions = calculateBoundedCommaPositions(6.05, level)
 
-                const result = calculateEvents(level, neighborCommaPositions, eventType, position)
+                const result = calculateEvents(level, boundedCommaPositions, eventType, position)
 
                 expect(result).toEqual([])
             })
@@ -87,10 +87,10 @@ describe("calculateEvents", () => {
 
             it("works at the medium level", () => {
                 level = "MEDIUM"
-                neighborCommaPositions = calculateNeighborCommaPositions(26.25, level)
+                boundedCommaPositions = calculateBoundedCommaPositions(26.25, level)
                 position = 28.3
 
-                const result = calculateEvents(level, neighborCommaPositions, eventType, position)
+                const result = calculateEvents(level, boundedCommaPositions, eventType, position)
 
                 expect(result).toEqual([
                     {
@@ -104,10 +104,10 @@ describe("calculateEvents", () => {
 
             it("works at the high level", () => {
                 level = "HIGH"
-                neighborCommaPositions = calculateNeighborCommaPositions(26.25, level)
+                boundedCommaPositions = calculateBoundedCommaPositions(26.25, level)
                 position = 28.3
 
-                const result = calculateEvents(level, neighborCommaPositions, eventType, position)
+                const result = calculateEvents(level, boundedCommaPositions, eventType, position)
 
                 expect(result).toEqual([
                     {
@@ -121,10 +121,10 @@ describe("calculateEvents", () => {
 
             it("works at the very high level", () => {
                 level = "VERY_HIGH"
-                neighborCommaPositions = calculateNeighborCommaPositions(26.25, level)
+                boundedCommaPositions = calculateBoundedCommaPositions(26.25, level)
                 position = 28.3
 
-                const result = calculateEvents(level, neighborCommaPositions, eventType, position)
+                const result = calculateEvents(level, boundedCommaPositions, eventType, position)
 
                 expect(result).toEqual([
                     {
@@ -138,10 +138,10 @@ describe("calculateEvents", () => {
 
             it("works at the extreme level", () => {
                 level = "EXTREME"
-                neighborCommaPositions = calculateNeighborCommaPositions(26.25, level)
+                boundedCommaPositions = calculateBoundedCommaPositions(26.25, level)
                 position = 28.3
 
-                const result = calculateEvents(level, neighborCommaPositions, eventType, position)
+                const result = calculateEvents(level, boundedCommaPositions, eventType, position)
 
                 expect(result).toEqual([
                     {
@@ -153,16 +153,16 @@ describe("calculateEvents", () => {
                 ])
             })
 
-            it("works even if there is a closer comma mean to the position but it is not between the neighbor commas", () => {
+            it("works even if there is a closer comma mean to the position but it is not between the bounded commas", () => {
                 // mean between )|) and |\ is 31.2043820809972, 0.20 away
                 // mean between |) and )|) is 28.95310116433255, 2.05 away
                 // however, )|) is at 30.98583910472900, so the 30.5 position is between it and |), not between it and |\
 
                 level = "HIGH"
-                neighborCommaPositions = calculateNeighborCommaPositions(30.5, level)
+                boundedCommaPositions = calculateBoundedCommaPositions(30.5, level)
                 position = 27.3
 
-                const result = calculateEvents(level, neighborCommaPositions, eventType, position)
+                const result = calculateEvents(level, boundedCommaPositions, eventType, position)
 
                 expect(result).toEqual([
                     {
@@ -180,11 +180,11 @@ describe("calculateEvents", () => {
                 eventType = "SIZE"
             })
 
-            it("returns one event for each size category bound between the position's neighbor commas", () => {
+            it("returns one event for each size category bound between the position's bounded commas", () => {
                 level = "MEDIUM"
-                neighborCommaPositions = calculateNeighborCommaPositions(34.0, level)
+                boundedCommaPositions = calculateBoundedCommaPositions(34.0, level)
 
-                const result = calculateEvents(level, neighborCommaPositions, eventType, position)
+                const result = calculateEvents(level, boundedCommaPositions, eventType, position)
 
                 expect(result).toEqual([
                     {
@@ -196,11 +196,11 @@ describe("calculateEvents", () => {
                 ])
             })
 
-            it("returns an empty array if there are no size category bounds between the position's neighbor commas", () => {
+            it("returns an empty array if there are no size category bounds between the position's bounded commas", () => {
                 level = "VERY_HIGH"
-                neighborCommaPositions = calculateNeighborCommaPositions(6.05, level)
+                boundedCommaPositions = calculateBoundedCommaPositions(6.05, level)
 
-                const result = calculateEvents(level, neighborCommaPositions, eventType, position)
+                const result = calculateEvents(level, boundedCommaPositions, eventType, position)
 
                 expect(result).toEqual([])
             })

@@ -1,3 +1,4 @@
+const colors = require("colors")
 const {formatAnalyzedAndStructuredHistories} = require("../../../../src/boundsAnalysis/format/formatAnalyzedAndStructuredHistories")
 
 describe("formatAnalyzedAndStructuredHistories", () => {
@@ -7,11 +8,14 @@ describe("formatAnalyzedAndStructuredHistories", () => {
             summary = true
         })
 
-        it("returns a string of the bound index, identifying symbol, actual bound position, whether it has a possible history, the error in tinas, the number of histories, and the number of those histories which are possible. separated by tabs in a single line", () => {
+        it("returns a string of the bound index, identifying symbol, actual bound position, whether it has a possible history, the error in tinas, the number of histories, and the number of those histories which are possible. separated by tabs in a single line, and makes it the correct color", () => {
             const analyzedAndStructuredHistories = {
                 bound: {
-                    extremeLevelLesserNeighborCommaSymbol: ",|(",
+                    extremeLevelLesserBoundedCommaSymbol: ",|(",
+                    extremeLevelGreaterBoundedCommaSymbol: "|(",
                     position: 5.44763529181809,
+                    lesserBoundedMina: 1,
+                    greaterBoundedMina: 2,
                 },
                 analysis: {
                     bestRank: 2,
@@ -23,7 +27,7 @@ describe("formatAnalyzedAndStructuredHistories", () => {
 
             const result = formatAnalyzedAndStructuredHistories(analyzedAndStructuredHistories, {boundIndex, summary})
 
-            expect(result).toEqual("10\t    ,|( \t2\t  5.448\t  5.485\t  0.039")
+            expect(result).toEqual(colors.cyan("10\t  1\t  2\t    ,|( \t     |( \t2\t  5.448\t  5.485\t  0.039"))
         })
     })
 
@@ -35,7 +39,7 @@ describe("formatAnalyzedAndStructuredHistories", () => {
         it("returns a string which is a multi-line, properly indented rendition of the analyzed and structured histories object", () => {
             const analyzedAndStructuredHistories = {
                 bound: {
-                    extremeLevelLesserNeighborCommaSymbol: "|\\\\",
+                    extremeLevelLesserBoundedCommaSymbol: "|\\\\",
                     position: 5.44763529181809,
                 },
                 analysis: {
@@ -52,7 +56,7 @@ describe("formatAnalyzedAndStructuredHistories", () => {
             expect(result).toEqual([
                 `{`,
                 `    "bound": {`,
-                `        "extremeLevelLesserNeighborCommaSymbol": "|\\\\",`, // will actually display as |\\
+                `        "extremeLevelLesserBoundedCommaSymbol": "|\\\\",`, // will actually display as |\\
                 `        "position": 5.44763529181809`,
                 `    },`,
                 `    "analysis": {`,

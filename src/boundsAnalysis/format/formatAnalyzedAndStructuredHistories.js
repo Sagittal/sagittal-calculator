@@ -1,11 +1,17 @@
+const colors = require("colors")
+const {COLORS} = require("./colors")
 const {formatNumber} = require("./formatNumber")
 const {alignSymbol} = require("./alignSymbol")
 const {alignFormattedNumber} = require("./alignFormattedNumber")
+const {formatMina} = require("./formatMina")
 
 const HEADER_ROWS = [
     [
         "      ",
-        " immediately",
+        "      ",
+        "      ",
+        "      ",
+        "     ",
         "   ",
         "  ",
         "initial",
@@ -13,14 +19,20 @@ const HEADER_ROWS = [
     ].join("\t"),
     [
         "      ",
+        "      ",
+        "      ",
         "   lesser",
+        "   greater",
         "best",
         " actual",
         "  comma",
         " i.c.m.",
     ].join("\t"),
     [
-        "  bound",
+        "bound",
+        "lesser",
+        "greater",
+        "   extreme",
         "   extreme",
         "history",
         "  bound",
@@ -28,7 +40,10 @@ const HEADER_ROWS = [
         "  error",
     ].join("\t"),
     [
-        "  index",
+        "index",
+        "mina",
+        "mina",
+        "   symbol",
         "   symbol",
         "rank",
         "pos (¢)",
@@ -50,8 +65,11 @@ const formatAnalyzedAndStructuredHistories = (analyzedAndStructuredHistories, {b
     if (summary) {
         const {
             bound: {
-                extremeLevelLesserNeighborCommaSymbol,
+                extremeLevelLesserBoundedCommaSymbol,
+                extremeLevelGreaterBoundedCommaSymbol,
                 position,
+                lesserBoundedMina,
+                greaterBoundedMina,
             },
             analysis: {
                 bestRank,
@@ -59,14 +77,18 @@ const formatAnalyzedAndStructuredHistories = (analyzedAndStructuredHistories, {b
                 initialPositionTinaDifference,
             },
         } = analyzedAndStructuredHistories
-        formattedAnalyzedAndStructuredHistories = [
+        const color = COLORS[bestRank]
+        formattedAnalyzedAndStructuredHistories = colors[color]([
             boundIndex,
-            alignSymbol(extremeLevelLesserNeighborCommaSymbol),
+            formatMina(lesserBoundedMina),
+            formatMina(greaterBoundedMina),
+            alignSymbol(extremeLevelLesserBoundedCommaSymbol),
+            alignSymbol(extremeLevelGreaterBoundedCommaSymbol),
             bestRank,
             alignFormattedNumber(formatNumber(position)),
             alignFormattedNumber(formatNumber(initialPosition)),
             alignFormattedNumber(formatNumber(initialPositionTinaDifference)),
-        ].join("\t")
+        ].join("\t"))
     } else {
         formattedAnalyzedAndStructuredHistories = JSON.stringify(analyzedAndStructuredHistories, null, 4)
             .replace(/\\\\/g, "\\")

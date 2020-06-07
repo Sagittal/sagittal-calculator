@@ -27,7 +27,7 @@ describe('calculateExtendedHistories', () => {
         })
     })
 
-    describe('when the history\'s position is not between the actual bound position\'s neighbor commas', () => {
+    describe('when the history\'s position is not between the actual bound position\'s bounded commas', () => {
         beforeEach(() => {
             history = [
                 {
@@ -40,7 +40,7 @@ describe('calculateExtendedHistories', () => {
         })
 
         it('returns an array with one element: the passed-in history extended with an event terminating it as impossible', () => {
-            const actualBoundPosition = 12 // definitely 45.45 is nowhere near the position and thus no way it's between its neighbor commas
+            const actualBoundPosition = 12 // definitely 45.45 is nowhere near the position and thus no way it's between its bounded commas
 
             const result = calculateExtendedHistories(history, 'VERY_HIGH', actualBoundPosition)
 
@@ -63,7 +63,7 @@ describe('calculateExtendedHistories', () => {
         })
     })
 
-    describe('when the history\'s position is between the actual bound position\'s neighbor commas', () => {
+    describe('when the history\'s position is between the actual bound position\'s bounded commas', () => {
         let passedInHistoryEvent = {
             level: 'HIGH',
             type: 'EDA',

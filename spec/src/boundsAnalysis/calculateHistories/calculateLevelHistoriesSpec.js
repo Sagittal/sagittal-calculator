@@ -55,8 +55,8 @@ describe("calculateLevelHistories", () => {
         ])
     })
 
-    describe("when all the histories at this level are impossible, meaning that none of their positions are between the neighbor commas", () => {
-        it("adds a new history, restarting from the previous level with an override event which resets the position to the actual bound position so that it's definitely between the neighbor commas at this level", () => {
+    describe("when all the histories at this level are impossible, meaning that none of their positions are between the bounded commas", () => {
+        it("adds a new history, restarting from the previous level with an override event which resets the position to the actual bound position so that it's definitely between the bounded commas at this level", () => {
             const eventThatWillBeImpossibleAtNextLevel = {
                 level: "HIGH",
                 type: "EDA",

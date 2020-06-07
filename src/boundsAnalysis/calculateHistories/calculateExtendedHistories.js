@@ -1,5 +1,5 @@
 const {isPositionBetweenPositions} = require("../utilities/isPositionBetweenPositions")
-const {calculateNeighborCommaPositions} = require("../data/calculateNeighborCommaPositions")
+const {calculateBoundedCommaPositions} = require("../data/calculateBoundedCommaPositions")
 const {calculateEvents} = require("./calculateEvents")
 const {calculateImpossibleEvent} = require("./calculateImpossibleEvent")
 const {isHistoryImpossible} = require("../utilities/isHistoryImpossible")
@@ -15,10 +15,10 @@ const calculateExtendedHistories = (history, level, actualBoundPosition) => {
         return extendedHistories
     }
 
-    const neighborCommaPositions = calculateNeighborCommaPositions(actualBoundPosition, level)
+    const boundedCommaPosition = calculateBoundedCommaPositions(actualBoundPosition, level)
 
-    if (!isPositionBetweenPositions(position, neighborCommaPositions)) {
-        const impossibleEvent = calculateImpossibleEvent(position, level, neighborCommaPositions)
+    if (!isPositionBetweenPositions(position, boundedCommaPosition)) {
+        const impossibleEvent = calculateImpossibleEvent(position, level, boundedCommaPosition)
         const impossibleToExtendHistory = history.concat(impossibleEvent)
         extendedHistories.push(impossibleToExtendHistory)
 
@@ -26,9 +26,9 @@ const calculateExtendedHistories = (history, level, actualBoundPosition) => {
     }
 
     const newEvents = [
-        ...calculateEvents(level, neighborCommaPositions, "EDA", position),
-        ...calculateEvents(level, neighborCommaPositions, "MEAN", position),
-        ...calculateEvents(level, neighborCommaPositions, "SIZE", position),
+        ...calculateEvents(level, boundedCommaPosition, "EDA", position),
+        ...calculateEvents(level, boundedCommaPosition, "MEAN", position),
+        ...calculateEvents(level, boundedCommaPosition, "SIZE", position),
     ]
 
     newEvents.forEach(event => {
