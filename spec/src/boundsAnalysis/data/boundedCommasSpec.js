@@ -78,6 +78,7 @@ describe("calculateBoundedCommas", () => {
                     mina: 133,
                     distance: 3.6578835602835937,
                 },
+                undefined,
             ],
             HIGH: [
                 {
@@ -87,6 +88,7 @@ describe("calculateBoundedCommas", () => {
                     mina: 138,
                     distance: 1.2814466063946952,
                 },
+                undefined,
             ],
             VERY_HIGH: [
                 {
@@ -96,6 +98,7 @@ describe("calculateBoundedCommas", () => {
                     mina: 138,
                     distance: 1.2814466063946952,
                 },
+                undefined,
             ],
             EXTREME: [
                 {
@@ -105,6 +108,7 @@ describe("calculateBoundedCommas", () => {
                     mina: 140,
                     distance: 0.44892240228040237,
                 },
+                undefined,
             ],
             INSANE: [
                 {
@@ -114,6 +118,7 @@ describe("calculateBoundedCommas", () => {
                     mina: 140,
                     distance: 0.44892240228040237,
                 },
+                undefined,
             ],
         })
     })
@@ -129,6 +134,7 @@ describe("calculateBoundedCommas", () => {
 
         expect(result).toEqual({
             EXTREME: [
+                undefined,
                 {
                     introducingLevel: "EXTREME",
                     position: 0.42271616595482,
@@ -138,6 +144,7 @@ describe("calculateBoundedCommas", () => {
                 },
             ],
             INSANE: [
+                undefined,
                 {
                     introducingLevel: "EXTREME",
                     position: 0.42271616595482,

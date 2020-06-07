@@ -20,4 +20,8 @@ describe("formatMina", () => {
     it('when it includes decimal places, always includes three', () => {
         expect(formatMina(78.390035457238243)).toBe(" 78.390")
     })
+
+    it("returns a blank string for the last bound (when one of the minas is undefined)", () => {
+        expect(formatMina(undefined)).toBe("       ")
+    })
 })

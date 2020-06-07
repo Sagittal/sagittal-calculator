@@ -7,8 +7,8 @@ const calculateBoundedCommas = bound => {
 
     return levels.reduce(
         (levels, level) => {
-            const levelBoundedCommas = calculateBoundedCommaPositions(position, level).map(position => calculateCommaFromPosition(position)).filter(comma => !!comma)
-            const levelBoundedCommasWithDistance = levelBoundedCommas.map(comma => ({
+            const levelBoundedCommas = calculateBoundedCommaPositions(position, level).map(position => calculateCommaFromPosition(position))
+            const levelBoundedCommasWithDistance = levelBoundedCommas.map(comma => comma && ({
                 ...comma,
                 distance: Math.abs(position - comma.position),
             }))
@@ -22,11 +22,7 @@ const calculateBoundedCommas = bound => {
     )
 }
 
-const BOUNDED_COMMAS = BOUNDS.reduce(
-    (boundedCommas, bound, boundIndex) =>
-        ({...boundedCommas, [boundIndex]: calculateBoundedCommas(bound)}),
-    {},
-)
+const BOUNDED_COMMAS = BOUNDS.map((bound, boundIndex) => calculateBoundedCommas(bound))
 
 module.exports = {
     calculateBoundedCommas,

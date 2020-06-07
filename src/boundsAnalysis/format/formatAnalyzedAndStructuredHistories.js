@@ -1,68 +1,13 @@
-const colors = require("colors")
 const {COLORS} = require("./colors")
 const {formatNumber} = require("./formatNumber")
 const {alignSymbol} = require("./alignSymbol")
 const {alignFormattedNumber} = require("./alignFormattedNumber")
 const {formatMina} = require("./formatMina")
+const {extractLevelRanks} = require("./extractLevelRanks")
 
-const HEADER_ROWS = [
-    [
-        "      ",
-        "      ",
-        "      ",
-        "      ",
-        "     ",
-        "   ",
-        "  ",
-        "initial",
-        "a.b. vs",
-    ].join("\t"),
-    [
-        "      ",
-        "      ",
-        "      ",
-        "   lesser",
-        "   greater",
-        "best",
-        " actual",
-        "  comma",
-        " i.c.m.",
-    ].join("\t"),
-    [
-        "bound",
-        "lesser",
-        "greater",
-        "   extreme",
-        "   extreme",
-        "history",
-        "  bound",
-        "   mean",
-        "  error",
-    ].join("\t"),
-    [
-        "index",
-        "mina",
-        "mina",
-        "   symbol",
-        "   symbol",
-        "rank",
-        "pos (¢)",
-        "pos (¢)",
-        "(tinas)",
-    ].join("\t"),
-    [
-        "   ",
-        "   ",
-        "   ",
-        "   ",
-        "   ",
-        "   ",
-    ].join("\t"),
-].join("\n")
-
-const formatAnalyzedAndStructuredHistories = (analyzedAndStructuredHistories, {boundIndex, summary = false} = {}) => {
+const formatAnalyzedAndStructuredHistories = (analyzedAndStructuredHistories, {boundIndex, mode = "DETAILS"} = {}) => {
     let formattedAnalyzedAndStructuredHistories
-    if (summary) {
+    if (mode === "SUMMARY") {
         const {
             bound: {
                 extremeLevelLesserBoundedCommaSymbol,
@@ -73,23 +18,38 @@ const formatAnalyzedAndStructuredHistories = (analyzedAndStructuredHistories, {b
             },
             analysis: {
                 bestRank,
+                bestPossibleHistory,
                 initialPosition,
                 initialPositionTinaDifference,
             },
         } = analyzedAndStructuredHistories
+
+        const [
+            mediumLevelRank,
+            highLevelRank,
+            veryHighLevelRank,
+            extremeLevelRank,
+            insaneLevelRank,
+        ] = extractLevelRanks(bestPossibleHistory)
+
         const color = COLORS[bestRank]
-        formattedAnalyzedAndStructuredHistories = colors[color]([
+        formattedAnalyzedAndStructuredHistories = [
             boundIndex,
             formatMina(lesserBoundedMina),
             formatMina(greaterBoundedMina),
             alignSymbol(extremeLevelLesserBoundedCommaSymbol),
             alignSymbol(extremeLevelGreaterBoundedCommaSymbol),
+            mediumLevelRank,
+            highLevelRank,
+            veryHighLevelRank,
+            extremeLevelRank,
+            insaneLevelRank,
             bestRank,
             alignFormattedNumber(formatNumber(position)),
             alignFormattedNumber(formatNumber(initialPosition)),
             alignFormattedNumber(formatNumber(initialPositionTinaDifference)),
-        ].join("\t"))
-    } else {
+        ].join("\t")[color]
+    } else if (mode === "DETAILS") {
         formattedAnalyzedAndStructuredHistories = JSON.stringify(analyzedAndStructuredHistories, null, 4)
             .replace(/\\\\/g, "\\")
     }
@@ -98,6 +58,5 @@ const formatAnalyzedAndStructuredHistories = (analyzedAndStructuredHistories, {b
 }
 
 module.exports = {
-    HEADER_ROWS,
     formatAnalyzedAndStructuredHistories,
 }

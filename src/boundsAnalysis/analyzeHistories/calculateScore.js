@@ -12,7 +12,7 @@ const calculateScore = analyzedHistories => {
     const scoreThing = [...Array((Object.keys(RANKS).length - OFFSET_FOR_INITIAL_RANK) * LEVELS.length).keys()].map(n => 0)
 
     analyzedHistories.forEach(analyzedHistory => {
-        const scoreThingIndex = calculateScoreIndex(analyzedHistory.rank, LEVELS.indexOf(analyzedHistory.level)) // TODO: yeah why don't we store the name of the rank, not the value? like we do for the levels?
+        const scoreThingIndex = calculateScoreIndex(analyzedHistory.rank, LEVELS.indexOf(analyzedHistory.level))
 
         scoreThing[scoreThingIndex] += 1
     })
