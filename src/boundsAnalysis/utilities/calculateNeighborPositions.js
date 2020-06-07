@@ -1,14 +1,11 @@
+const {calculateNeighborPositionIndices} = require("./calculateNeighborPositionIndices")
+
 const calculateNeighborPositions = (position, targetPositions) => {
-    let index = 0
-    let target = targetPositions[index]
-    while (target < position) {
-        index++
-        target = targetPositions[index]
-    }
+    const [lesserNeighborPositionIndex, greaterNeighborPositionIndex] = calculateNeighborPositionIndices(position, targetPositions)
 
     return [
-        targetPositions[index - 1],
-        target,
+        targetPositions[lesserNeighborPositionIndex],
+        targetPositions[greaterNeighborPositionIndex],
     ]
 }
 

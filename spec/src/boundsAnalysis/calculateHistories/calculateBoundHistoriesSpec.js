@@ -54,7 +54,7 @@ describe("calculateBoundHistories", () => {
                 {
                     level: "MEDIUM",
                     type: "OVERRIDE",
-                    name: "OVERRIDE",
+                    name: "overridden to stay within ~| and )|( at the VERY_HIGH level",
                     position: 9.208778600061725,
                 },
                 {
@@ -74,7 +74,7 @@ describe("calculateBoundHistories", () => {
                 {
                     level: "MEDIUM",
                     type: "OVERRIDE",
-                    name: "OVERRIDE",
+                    name: "overridden to stay within ~| and )|( at the VERY_HIGH level",
                     position: 9.208778600061725,
                 },
                 {
@@ -94,7 +94,7 @@ describe("calculateBoundHistories", () => {
                 {
                     level: "MEDIUM",
                     type: "OVERRIDE",
-                    name: "OVERRIDE",
+                    name: "overridden to stay within ~| and )|( at the VERY_HIGH level",
                     position: 9.208778600061725,
                 },
                 {

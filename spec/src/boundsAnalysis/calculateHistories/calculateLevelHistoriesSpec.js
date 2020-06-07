@@ -81,7 +81,7 @@ describe("calculateLevelHistories", () => {
             const expectedOverrideEvent = {
                 level: "HIGH",
                 type: "OVERRIDE",
-                name: "OVERRIDE",
+                name: "overridden to stay within ~| and )|( at the VERY_HIGH level",
                 position: 9.208778600061725,
             }
             const expectedHistoryThatBecameImpossible = [
@@ -141,7 +141,7 @@ describe("calculateLevelHistories", () => {
                 const expectedOverrideEvent = {
                     level: "MEDIUM",
                     type: "OVERRIDE",
-                    name: "OVERRIDE",
+                    name: "overridden to stay within ~| and )|( at the VERY_HIGH level",
                     position: 9.208778600061725,
                 }
                 expect(result[0]).toEqual(historyThatWillBeImpossibleAtThisLevel)

@@ -53,7 +53,7 @@ describe("calculateScore", () => {
         expect(expectedWorseResult).toBeGreaterThan(expectedBetterResult)
     })
 
-    it("a history with the lowest event rank must get the lower score, even in the most extreme case leaning otherwise", () => {
+    it("a history with the lowest event rank must get the lower score, even in the most case leaning as much as possible in favor of otherwise", () => {
         const expectedWorseScoreHistories = [
             { level: "MEDIUM", rank: 1 },
             { level: "HIGH", rank: 1 },

@@ -85,7 +85,7 @@ describe("calculateEvents", () => {
                 eventType = "MEAN"
             })
 
-            it("works at the medium level", () => {
+            it("works at the Medium level", () => {
                 level = "MEDIUM"
                 boundedCommaPositions = calculateBoundedCommaPositions(26.25, level)
                 position = 28.3
@@ -102,7 +102,7 @@ describe("calculateEvents", () => {
                 ])
             })
 
-            it("works at the high level", () => {
+            it("works at the High level", () => {
                 level = "HIGH"
                 boundedCommaPositions = calculateBoundedCommaPositions(26.25, level)
                 position = 28.3
@@ -119,7 +119,7 @@ describe("calculateEvents", () => {
                 ])
             })
 
-            it("works at the very high level", () => {
+            it("works at the Very High level", () => {
                 level = "VERY_HIGH"
                 boundedCommaPositions = calculateBoundedCommaPositions(26.25, level)
                 position = 28.3
@@ -136,7 +136,7 @@ describe("calculateEvents", () => {
                 ])
             })
 
-            it("works at the extreme level", () => {
+            it("works at the Extreme level", () => {
                 level = "EXTREME"
                 boundedCommaPositions = calculateBoundedCommaPositions(26.25, level)
                 position = 28.3
