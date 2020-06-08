@@ -6,7 +6,7 @@ const calculateInitialPosition = (bound, level) => {
     const initialLevel = level || levels[0]
     const [lesserBoundedCommaPosition, greaterBoundedCommaPosition] = calculateBoundedCommaPositions(position, initialLevel)
 
-    return greaterBoundedCommaPosition ? (lesserBoundedCommaPosition + greaterBoundedCommaPosition) / 2 : MAXIMUM_POSITION // TODO: INITIAL type event should have a name and it should be comma mean style?
+    return greaterBoundedCommaPosition ? (lesserBoundedCommaPosition + greaterBoundedCommaPosition) / 2 : MAXIMUM_POSITION
 }
 
 module.exports = {

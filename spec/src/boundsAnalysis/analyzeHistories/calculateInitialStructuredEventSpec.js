@@ -6,7 +6,7 @@ describe("calculateInitialStructuredEvent", () => {
         type: "EDA",
         name: "12.5/58",
         rank: 4,
-        position: 43.343455
+        position: 43.343455,
     }
 
     beforeEach(() => {

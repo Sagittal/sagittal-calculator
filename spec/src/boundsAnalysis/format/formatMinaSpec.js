@@ -17,7 +17,7 @@ describe("formatMina", () => {
         expect(formatMina(51.459235987293823)).toBe(" 51.459")
     })
 
-    it('when it includes decimal places, always includes three', () => {
+    it("when it includes decimal places, always includes three", () => {
         expect(formatMina(78.390035457238243)).toBe(" 78.390")
     })
 

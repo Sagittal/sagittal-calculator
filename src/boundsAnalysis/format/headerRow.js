@@ -7,23 +7,23 @@ const HEADER_ROW = "   ---   Bound Summaries   ---   \n\n\n" + formatHeaderRow([
     ],
     [
         "lesser",
-        "mina"
+        "mina",
     ],
     [
         "greater",
-        "mina"
+        "mina",
     ],
     [
         "  lesser",
         "  extreme",
         "  level ",
-        "  symbol"
+        "  symbol",
     ],
     [
         "  greater",
         "  extreme",
         "  level ",
-        "  symbol"
+        "  symbol",
     ],
     [
         "medium",
@@ -60,20 +60,20 @@ const HEADER_ROW = "   ---   Bound Summaries   ---   \n\n\n" + formatHeaderRow([
     [
         " actual",
         "  bound",
-        "pos (¢)"
+        "pos (¢)",
     ],
     [
         "initial",
         "  comma",
         "   mean",
-        "pos (¢)"
+        "pos (¢)",
     ],
     [
         "a.b. vs",
         " i.c.m.",
         "  error",
         "(tinas)",
-    ]
+    ],
 ])
 
 module.exports = {

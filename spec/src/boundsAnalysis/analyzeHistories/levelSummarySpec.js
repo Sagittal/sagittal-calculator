@@ -5,7 +5,7 @@ describe("levelSummary", () => {
         const bestPossibleHistory = {
             events: [
                 {level: "MEDIUM", rank: "EDA"},
-            ]
+            ],
         }
         if ("MEDIUM" in levelsBestHistoryRanks) delete levelsBestHistoryRanks["MEDIUM"]
         expect(levelsBestHistoryRanks["MEDIUM"]).toBeUndefined()
@@ -20,12 +20,12 @@ describe("levelSummary", () => {
             events: [
                 {level: "MEDIUM", rank: "EDA"},
                 {level: "HIGH", rank: "MEAN"},
-            ]
+            ],
         }
         let formerMediumEda = 3
         let formerHighMean = 4
-        levelsBestHistoryRanks["MEDIUM"] = { EDA: formerMediumEda }
-        levelsBestHistoryRanks["HIGH"] = { MEAN: formerHighMean }
+        levelsBestHistoryRanks["MEDIUM"] = {EDA: formerMediumEda}
+        levelsBestHistoryRanks["HIGH"] = {MEAN: formerHighMean}
 
         updateLevelSummary(bestPossibleHistory)
 
