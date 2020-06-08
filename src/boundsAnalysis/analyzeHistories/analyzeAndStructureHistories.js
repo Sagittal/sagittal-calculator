@@ -29,11 +29,11 @@ const analyzeAndStructureHistories = (histories, bound, boundIndex) => {
 
     return {
         bound: {
-            extremeLevelLesserBoundedCommaSymbol: lesserBoundedComma ? lesserBoundedComma.symbol : '',
-            extremeLevelGreaterBoundedCommaSymbol: greaterBoundedComma ? greaterBoundedComma.symbol : '',
+            extremeLevelLesserBoundedCommaSymbol: lesserBoundedComma ? lesserBoundedComma.symbol : "",
+            extremeLevelGreaterBoundedCommaSymbol: greaterBoundedComma ? greaterBoundedComma.symbol : "",
             position,
             boundedCommas,
-            lesserBoundedMina: lesserBoundedComma ? lesserBoundedComma.mina : '',
+            lesserBoundedMina: lesserBoundedComma ? lesserBoundedComma.mina : "",
             greaterBoundedMina: greaterBoundedComma && greaterBoundedComma.mina,
         },
         analysis: {

@@ -14,5 +14,5 @@ const formatRankSummaries = () => {
 }
 
 module.exports = {
-    formatRankSummaries
+    formatRankSummaries,
 }

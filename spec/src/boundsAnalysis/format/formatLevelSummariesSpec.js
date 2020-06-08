@@ -4,11 +4,11 @@ const {levelsBestHistoryRanks} = require("../../../../src/boundsAnalysis/analyze
 
 describe("formatLevelSummary", () => {
     beforeEach(() => {
-        levelsBestHistoryRanks["MEDIUM"] = { 1: 18, 2: 23, 3: 1, 7: 13 }
-        levelsBestHistoryRanks["HIGH"] = { 1: 18, 2: 23, 3: 1, 7: 13 }
-        levelsBestHistoryRanks["VERY_HIGH"] = { 1: 18, 2: 23, 3: 1, 7: 13 }
-        levelsBestHistoryRanks["EXTREME"] = { 1: 18, 2: 23, 3: 1, 7: 13 }
-        levelsBestHistoryRanks["INSANE"] = { 1: 18, 2: 23, 3: 1, 7: 13 }
+        levelsBestHistoryRanks["MEDIUM"] = {1: 18, 2: 23, 3: 1, 7: 13}
+        levelsBestHistoryRanks["HIGH"] = {1: 18, 2: 23, 3: 1, 7: 13}
+        levelsBestHistoryRanks["VERY_HIGH"] = {1: 18, 2: 23, 3: 1, 7: 13}
+        levelsBestHistoryRanks["EXTREME"] = {1: 18, 2: 23, 3: 1, 7: 13}
+        levelsBestHistoryRanks["INSANE"] = {1: 18, 2: 23, 3: 1, 7: 13}
     })
 
     it("does not mutate LEVELS", () => {

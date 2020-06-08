@@ -3,7 +3,7 @@ const {formatLevelSummary} = require("../../../../src/boundsAnalysis/format/form
 describe("formatLevelSummary", () => {
     it("gives an explanation per level of what bounds have what ranks there", () => {
         const level = "VERY_HIGH"
-        const levelBestHistoryRanks = { 1: 18, 2: 23, 3: 1, 7: 13 }
+        const levelBestHistoryRanks = {1: 18, 2: 23, 3: 1, 7: 13}
 
         const result = formatLevelSummary(level, levelBestHistoryRanks)
 

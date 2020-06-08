@@ -19,9 +19,9 @@ describe("formatAnalyzedAndStructuredHistories", () => {
                 analysis: {
                     bestPossibleHistory: {
                         events: [
-                            { level: "EXTREME", rank: 1 },
-                            { level: "INSANE", rank: 2 },
-                        ]
+                            {level: "EXTREME", rank: 1},
+                            {level: "INSANE", rank: 2},
+                        ],
                     },
                     bestRank: 2,
                     initialPosition: 5.48533,

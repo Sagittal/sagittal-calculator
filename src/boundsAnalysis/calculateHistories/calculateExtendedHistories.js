@@ -4,8 +4,10 @@ const {calculateEvents} = require("./calculateEvents")
 const {calculateImpossibleEvent} = require("./calculateImpossibleEvent")
 const {isHistoryImpossible} = require("../utilities/isHistoryImpossible")
 const {calculateHistoryPosition} = require("../utilities/calculateHistoryPosition")
+const {calculateOverrideEvent} = require("./calculateOverrideEvent")
+const {LEVELS} = require("../data/levels")
 
-const calculateExtendedHistories = (history, level, actualBoundPosition) => {
+const calculateExtendedHistories = (history, level, bound) => {
     const extendedHistories = []
 
     const position = calculateHistoryPosition(history)
@@ -15,7 +17,7 @@ const calculateExtendedHistories = (history, level, actualBoundPosition) => {
         return extendedHistories
     }
 
-    const boundedCommaPosition = calculateBoundedCommaPositions(actualBoundPosition, level)
+    const boundedCommaPosition = calculateBoundedCommaPositions(bound.position, level)
 
     if (!isPositionBetweenPositions(position, boundedCommaPosition)) {
         const impossibleEvent = calculateImpossibleEvent(position, level, boundedCommaPosition)
@@ -35,6 +37,12 @@ const calculateExtendedHistories = (history, level, actualBoundPosition) => {
         const extendedHistory = history.concat(event)
         extendedHistories.push(extendedHistory)
     })
+
+    if (level !== LEVELS[LEVELS.length - 1]) {
+        const overrideEvent = calculateOverrideEvent(level, bound)
+        const extendedHistory = history.concat(overrideEvent)
+        extendedHistories.push(extendedHistory)
+    }
 
     return extendedHistories
 }
