@@ -1,24 +1,24 @@
-const {calculateScore, calculateScoreIndex} = require("../../../../src/boundsAnalysis/analyzeHistories/calculateScore")
+const {calculateScore, calculateBinaryScoreRepresentationIndex} = require("../../../../src/boundsAnalysis/analyzeHistories/calculateScore")
 
-describe("calculateScoreIndex", () => {
+describe("calculateBinaryScoreRepresentationIndex", () => {
     it("gives the correct index for the power of two based score", () => {
-        expect(calculateScoreIndex(1, 4)).toBe(0)
-        expect(calculateScoreIndex(1, 3)).toBe(1)
-        expect(calculateScoreIndex(1, 2)).toBe(2)
-        expect(calculateScoreIndex(1, 1)).toBe(3)
-        expect(calculateScoreIndex(1, 0)).toBe(4)
+        expect(calculateBinaryScoreRepresentationIndex(1, 4)).toBe(0)
+        expect(calculateBinaryScoreRepresentationIndex(1, 3)).toBe(1)
+        expect(calculateBinaryScoreRepresentationIndex(1, 2)).toBe(2)
+        expect(calculateBinaryScoreRepresentationIndex(1, 1)).toBe(3)
+        expect(calculateBinaryScoreRepresentationIndex(1, 0)).toBe(4)
 
-        expect(calculateScoreIndex(2, 4)).toBe(5)
-        expect(calculateScoreIndex(2, 3)).toBe(6)
-        expect(calculateScoreIndex(2, 2)).toBe(7)
-        expect(calculateScoreIndex(2, 1)).toBe(8)
-        expect(calculateScoreIndex(2, 0)).toBe(9)
+        expect(calculateBinaryScoreRepresentationIndex(2, 4)).toBe(5)
+        expect(calculateBinaryScoreRepresentationIndex(2, 3)).toBe(6)
+        expect(calculateBinaryScoreRepresentationIndex(2, 2)).toBe(7)
+        expect(calculateBinaryScoreRepresentationIndex(2, 1)).toBe(8)
+        expect(calculateBinaryScoreRepresentationIndex(2, 0)).toBe(9)
 
-        expect(calculateScoreIndex(3, 4)).toBe(10)
-        expect(calculateScoreIndex(3, 3)).toBe(11)
-        expect(calculateScoreIndex(3, 2)).toBe(12)
-        expect(calculateScoreIndex(3, 1)).toBe(13)
-        expect(calculateScoreIndex(3, 0)).toBe(14)
+        expect(calculateBinaryScoreRepresentationIndex(3, 4)).toBe(10)
+        expect(calculateBinaryScoreRepresentationIndex(3, 3)).toBe(11)
+        expect(calculateBinaryScoreRepresentationIndex(3, 2)).toBe(12)
+        expect(calculateBinaryScoreRepresentationIndex(3, 1)).toBe(13)
+        expect(calculateBinaryScoreRepresentationIndex(3, 0)).toBe(14)
     })
 })
 
