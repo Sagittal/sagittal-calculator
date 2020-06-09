@@ -4,17 +4,17 @@ const LEVELS = ["MEDIUM", "HIGH", "VERY_HIGH", "EXTREME", "INSANE"]
 
 const LEVEL_EDAS = [21, 47, 58, 233, 809]
 
-const isWithinLevel = (level, targetLevel) =>
+const computeIsWithinLevel = (level, targetLevel) =>
     LEVELS.indexOf(level) <= LEVELS.indexOf(targetLevel)
 
-const calculateLevelCommas = level =>
-    COMMAS.filter(comma => isWithinLevel(comma.introducingLevel, level))
+const computeLevelCommas = level =>
+    COMMAS.filter(comma => computeIsWithinLevel(comma.introducingLevel, level))
 
-const LEVEL_COMMAS = LEVELS.reduce(
+const LEVELS_COMMAS = LEVELS.reduce(
     (levelCommas, level) => {
         return {
             ...levelCommas,
-            [level]: calculateLevelCommas(level),
+            [level]: computeLevelCommas(level),
         }
     },
     {},
@@ -23,7 +23,7 @@ const LEVEL_COMMAS = LEVELS.reduce(
 module.exports = {
     LEVELS,
     LEVEL_EDAS,
-    LEVEL_COMMAS,
-    isWithinLevel,
-    calculateLevelCommas,
+    LEVELS_COMMAS,
+    computeIsWithinLevel,
+    computeLevelCommas,
 }
