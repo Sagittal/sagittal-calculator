@@ -10,7 +10,7 @@ const computeOverrideEvent = (level, bound) => {
     return {
         level,
         type: "OVERRIDE",
-        name: `guaranteed between ${lesserBoundedCommaSymbol} and ${greaterBoundedCommaSymbol} at the ${nextLevel} level, to re-initialize if necessary`,
+        name: `guaranteed between ${lesserBoundedCommaSymbol} and ${greaterBoundedCommaSymbol || "the maximum position"} at the ${nextLevel} level, to re-initialize if necessary`,
         position: reinitializedPosition,
     }
 }
