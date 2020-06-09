@@ -1,4 +1,4 @@
-const {computeLevelHistories} = require("./levelHistories")
+const {computeExtendedLevelHistories} = require("./extendedLevelHistories")
 const {computeInitialHistory} = require("./initialHistory")
 
 const computeHistories = bound => {
@@ -6,12 +6,12 @@ const computeHistories = bound => {
 
     const initialHistory = computeInitialHistory(bound)
 
-    let boundHistories = [initialHistory]
+    let histories = [initialHistory]
     levels.forEach(level => {
-        boundHistories = computeLevelHistories(boundHistories, level, bound)
+        histories = computeExtendedLevelHistories(histories, level, bound)
     })
 
-    return boundHistories
+    return histories
 }
 
 module.exports = {
