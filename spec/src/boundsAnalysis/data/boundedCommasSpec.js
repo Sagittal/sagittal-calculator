@@ -1,13 +1,13 @@
-const {calculateBoundedCommas} = require("../../../../src/boundsAnalysis/data/boundedCommas")
+const {computeBoundedCommas} = require("../../../../src/boundsAnalysis/data/boundedCommas")
 
-describe("calculateBoundedCommas", () => {
+describe("computeBoundedCommas", () => {
     it("returns, given a bound, for each of its levels, an array of the pair of commas it bounds at that level", () => {
         const bound = {
             position: 24.66219847111080,
             levels: ["MEDIUM", "EXTREME", "INSANE"],
         }
 
-        const result = calculateBoundedCommas(bound)
+        const result = computeBoundedCommas(bound)
 
         expect(result).toEqual({
             MEDIUM: [
@@ -67,7 +67,7 @@ describe("calculateBoundedCommas", () => {
             levels: ["MEDIUM", "HIGH", "VERY_HIGH", "EXTREME", "INSANE"],
         }
 
-        const result = calculateBoundedCommas(bound)
+        const result = computeBoundedCommas(bound)
 
         expect(result).toEqual({
             MEDIUM: [
@@ -130,7 +130,7 @@ describe("calculateBoundedCommas", () => {
             levels: ["EXTREME", "INSANE"],
         }
 
-        const result = calculateBoundedCommas(bound)
+        const result = computeBoundedCommas(bound)
 
         expect(result).toEqual({
             EXTREME: [

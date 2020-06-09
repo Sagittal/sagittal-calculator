@@ -1,13 +1,13 @@
-const {calculateBoundedCommaPositions} = require("./calculateBoundedCommaPositions")
-const {calculateCommaFromPosition} = require("./calculateCommaFromPosition")
+const {computeBoundedCommaPositions} = require("./boundedCommaPositions")
+const {computePositionComma} = require("./positionComma")
 const {BOUNDS} = require("./bounds")
 
-const calculateBoundedCommas = bound => {
+const computeBoundedCommas = bound => {
     const {position, levels} = bound
 
     return levels.reduce(
         (levels, level) => {
-            const levelBoundedCommas = calculateBoundedCommaPositions(position, level).map(position => calculateCommaFromPosition(position))
+            const levelBoundedCommas = computeBoundedCommaPositions(position, level).map(position => computePositionComma(position))
             const levelBoundedCommasWithDistance = levelBoundedCommas.map(comma => comma && ({
                 ...comma,
                 distance: Math.abs(position - comma.position),
@@ -22,9 +22,9 @@ const calculateBoundedCommas = bound => {
     )
 }
 
-const BOUNDED_COMMAS = BOUNDS.map((bound, boundIndex) => calculateBoundedCommas(bound))
+const BOUNDED_COMMAS = BOUNDS.map((bound, boundIndex) => computeBoundedCommas(bound))
 
 module.exports = {
-    calculateBoundedCommas,
+    computeBoundedCommas,
     BOUNDED_COMMAS,
 }
