@@ -385,15 +385,15 @@ const BOUNDS = [
     },
     {
         position: 44.61679780386150,
-        levels: ["HIGH", "EXTREME", "INSANE"],
-    },
-    {
-        position: 45.1124978365313,
         levels: ["EXTREME", "INSANE"],
     },
     {
+        position: 45.1124978365313,
+        levels: ["MEDIUM", "HIGH", "VERY_HIGH", "EXTREME", "INSANE"],
+    },
+    {
         position: 45.60047523575760,
-        levels: ["MEDIUM", "VERY_HIGH", "EXTREME", "INSANE"],
+        levels: ["EXTREME", "INSANE"],
     },
     {
         position: 46.16257662541260,
