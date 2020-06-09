@@ -5,23 +5,21 @@ const {alignFormattedNumber} = require("./alignFormattedNumber")
 const {presentMina} = require("./mina")
 const {extractLevelRanks} = require("./extractLevelRanks")
 
-const presentBoundAnalysis = (boundAnalysis, {boundIndex, mode = "DETAILS"} = {}) => {
+const presentBoundAnalysis = (boundAnalysis, presentedBound, {boundIndex, mode = "DETAILS"} = {}) => {
     let presentedBoundAnalysis
     if (mode === "SUMMARY") {
         const {
-            bound: {
-                extremeLevelLesserBoundedCommaSymbol,
-                extremeLevelGreaterBoundedCommaSymbol,
-                position,
-                lesserBoundedMina,
-                greaterBoundedMina,
-            },
-            analysis: {
-                bestRank,
-                bestPossibleHistory,
-                initialPosition,
-                initialPositionTinaDifference,
-            },
+            extremeLevelLesserBoundedCommaSymbol,
+            extremeLevelGreaterBoundedCommaSymbol,
+            position,
+            lesserBoundedMina,
+            greaterBoundedMina,
+        } = presentedBound
+        const {
+            bestRank,
+            bestPossibleHistory,
+            initialPosition,
+            initialPositionTinaDifference,
         } = boundAnalysis
 
         const [
@@ -50,8 +48,12 @@ const presentBoundAnalysis = (boundAnalysis, {boundIndex, mode = "DETAILS"} = {}
             alignFormattedNumber(presentNumber(initialPositionTinaDifference)),
         ].join("\t")[color]
     } else if (mode === "DETAILS") {
-        presentedBoundAnalysis = JSON.stringify(boundAnalysis, null, 4)
-            .replace(/\\\\/g, "\\")
+        presentedBoundAnalysis =
+            JSON.stringify(presentedBound, null, 4)
+                .replace(/\\\\/g, "\\") +
+            "\n" +
+            JSON.stringify(boundAnalysis, null, 4)
+                .replace(/\\\\/g, "\\")
     }
 
     return presentedBoundAnalysis
