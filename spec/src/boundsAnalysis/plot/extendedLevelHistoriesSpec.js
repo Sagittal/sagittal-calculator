@@ -1,6 +1,6 @@
-const {computeLevelHistories} = require("../../../../src/boundsAnalysis/plot/levelHistories")
+const {computeExtendedLevelHistories} = require("../../../../src/boundsAnalysis/plot/extendedLevelHistories")
 
-describe("computeLevelHistories", () => {
+describe("computeExtendedLevelHistories", () => {
     it("given the histories for a bound up to the current level, returns the histories extended for all possible events at this level", () => {
         const firstHistoryPriorEvent = {
             level: "MEDIUM",
@@ -24,7 +24,7 @@ describe("computeLevelHistories", () => {
             levels: ["MEDIUM", "HIGH", "VERY_HIGH"],
         }
 
-        const result = computeLevelHistories(histories, level, bound)
+        const result = computeExtendedLevelHistories(histories, level, bound)
 
         expect(result).toEqual([
             [
