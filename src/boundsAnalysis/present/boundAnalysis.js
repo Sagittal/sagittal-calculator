@@ -4,9 +4,12 @@ const {presentSymbol} = require("./symbol")
 const {alignFormattedNumber} = require("./alignFormattedNumber")
 const {presentMina} = require("./mina")
 const {extractLevelRanks} = require("./extractLevelRanks")
+const {extractBoundIdentifiers} = require("./bound")
 
-const presentBoundAnalysis = (boundAnalysis, presentedBound, {boundIndex, mode = "DETAILS"} = {}) => {
+const presentBoundAnalysis = (boundAnalysis, {bound, boundIndex, mode = "DETAILS"} = {}) => {
     let presentedBoundAnalysis
+    const boundIdentifiers = extractBoundIdentifiers(bound, boundIndex)
+
     if (mode === "SUMMARY") {
         const {
             extremeLevelLesserBoundedCommaSymbol,
@@ -14,7 +17,7 @@ const presentBoundAnalysis = (boundAnalysis, presentedBound, {boundIndex, mode =
             position,
             lesserBoundedMina,
             greaterBoundedMina,
-        } = presentedBound
+        } = boundIdentifiers
         const {
             bestRank,
             bestPossibleHistory,
@@ -49,7 +52,7 @@ const presentBoundAnalysis = (boundAnalysis, presentedBound, {boundIndex, mode =
         ].join("\t")[color]
     } else if (mode === "DETAILS") {
         presentedBoundAnalysis =
-            JSON.stringify(presentedBound, null, 4)
+            JSON.stringify(boundIdentifiers, null, 4)
                 .replace(/\\\\/g, "\\") +
             "\n" +
             JSON.stringify(boundAnalysis, null, 4)

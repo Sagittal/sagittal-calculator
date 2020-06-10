@@ -3,7 +3,7 @@ const {BOUNDS} = require("./data/bounds")
 const {computeHistories} = require("./plot/histories")
 const {analyzeBound} = require("./analyze/bound")
 const {HEADER_ROW} = require("./present/headerRow")
-const {presentBound} = require("./present/bound")
+const {extractBoundIdentifiers} = require("./present/bound")
 const {presentBoundAnalysis} = require("./present/boundAnalysis")
 const {presentRankAnalyses} = require("./present/rankAnalyses")
 const {presentLevelAnalyses} = require("./present/levelAnalyses")
@@ -17,9 +17,8 @@ if (args.length) {
 
     const histories = computeHistories(bound)
     const boundAnalysis = analyzeBound(histories, bound, boundIndex)
-    const presentedBound = presentBound(bound, boundIndex)
 
-    console.log(presentBoundAnalysis(boundAnalysis, presentedBound, {boundIndex, mode: "DETAILS"}))
+    console.log(presentBoundAnalysis(boundAnalysis, {bound, boundIndex, mode: "DETAILS"}))
 } else {
     console.log(HEADER_ROW)
 
@@ -27,9 +26,8 @@ if (args.length) {
     BOUNDS.map((bound, boundIndex) => {
         const histories = computeHistories(bound)
         const boundAnalysis = analyzeBound(histories, bound, boundIndex)
-        const presentedBound = presentBound(bound, boundIndex)
 
-        console.log(presentBoundAnalysis(boundAnalysis,  presentedBound, {boundIndex, mode: "SUMMARY"}))
+        console.log(presentBoundAnalysis(boundAnalysis, {bound, boundIndex, mode: "SUMMARY"}))
 
         visualization.push(boundAnalysis)
     })
