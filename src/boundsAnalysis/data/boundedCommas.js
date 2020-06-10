@@ -22,7 +22,7 @@ const computeBoundedCommas = bound => {
     )
 }
 
-const BOUNDED_COMMAS = BOUNDS.map((bound, boundIndex) => computeBoundedCommas(bound))
+const BOUNDED_COMMAS = BOUNDS.map(computeBoundedCommas)
 
 module.exports = {
     computeBoundedCommas,
