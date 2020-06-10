@@ -15,12 +15,12 @@ const computeSnappablePositions = (computeLevelSnappablePositions) => {
     )
 }
 
-const LEVEL_EDA_MIDPOINTS = computeSnappablePositions(computeEdaMidpoints)
-const LEVEL_COMMA_MEANS = computeSnappablePositions(computeLevelCommaMeans)
-const LEVEL_SIZE_CATEGORY_BOUNDS = computeSnappablePositions(computeSizeCategoryBounds)
+const LEVELS_EDA_MIDPOINTS = computeSnappablePositions(computeEdaMidpoints)
+const LEVELS_COMMA_MEANS = computeSnappablePositions(computeLevelCommaMeans)
+const LEVELS_SIZE_CATEGORY_BOUNDS = computeSnappablePositions(computeSizeCategoryBounds)
 
 module.exports = {
-    LEVEL_EDA_MIDPOINTS,
-    LEVEL_COMMA_MEANS,
-    LEVEL_SIZE_CATEGORY_BOUNDS,
+    LEVELS_EDA_MIDPOINTS,
+    LEVELS_COMMA_MEANS,
+    LEVELS_SIZE_CATEGORY_BOUNDS,
 }

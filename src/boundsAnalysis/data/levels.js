@@ -10,7 +10,7 @@ const computeIsWithinLevel = (level, targetLevel) =>
 const computeLevelCommas = level =>
     COMMAS.filter(comma => computeIsWithinLevel(comma.introducingLevel, level))
 
-const LEVELS_COMMAS = LEVELS.reduce(
+const LEVELS_COMMAS = LEVELS.reduce( // TODO: should be extracted to levelsCommas, separate from LEVELS... and perhaps levelEDAs too?
     (levelCommas, level) => {
         return {
             ...levelCommas,
