@@ -1,4 +1,5 @@
 const fs = require("fs")
+const {resetFile} = require("./file")
 const {addFont} = require("./font")
 const {addParentSvg} = require("./parentSvg")
 const {visualizeEvents} = require("./events")
@@ -10,7 +11,7 @@ const {visualizeLevelCommaMeans} = require("./levelCommaMeans")
 const {OUTPUT} = require("./constants")
 
 const visualizeBounds = visualization => {
-    fs.unlinkSync(OUTPUT)
+    resetFile()
 
     addParentSvg()
     addFont()
