@@ -1,6 +1,6 @@
-const {presentBound} = require("../../../../src/boundsAnalysis/present/bound")
+const {extractBoundIdentifiers} = require("../../../../src/boundsAnalysis/present/bound")
 
-describe("presentBound", () => {
+describe("extractBoundIdentifiers", () => {
     const bound = {
         position: 23.1164196495597,
         levels: ["VERY_HIGH", "EXTREME", "INSANE"],
@@ -9,7 +9,7 @@ describe("presentBound", () => {
     it("returns helpful identifying information about the bound", () => {
         const boundIndex = 47
 
-        const result = presentBound(bound, boundIndex)
+        const result = extractBoundIdentifiers(bound, boundIndex)
 
         expect(result).toEqual({
             extremeLevelLesserBoundedCommaSymbol: ".)/|",

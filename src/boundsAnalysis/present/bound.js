@@ -1,6 +1,6 @@
 const {BOUNDED_COMMAS} = require("../data/boundedCommas")
 
-const presentBound = (bound, boundIndex) => {
+const extractBoundIdentifiers = (bound, boundIndex) => {
     const {position} = bound
     const boundedCommas = BOUNDED_COMMAS[boundIndex]
     const extremeBoundedCommas = boundedCommas["EXTREME"]
@@ -17,5 +17,5 @@ const presentBound = (bound, boundIndex) => {
 }
 
 module.exports = {
-    presentBound,
+    extractBoundIdentifiers,
 }
