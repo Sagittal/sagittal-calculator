@@ -128,6 +128,16 @@ describe("computeStructuredHistories", () => {
                         eventImpossible.name,
                     ],
                 },
+                {
+                    type: eventImpossible.type,
+                    level: eventImpossible.level,
+                    name: eventImpossible.name,
+                    position: eventImpossible.position,
+                    isPossibleHistoryMember: false,
+                    rankOfBestRankedEventInAnyMemberHistory: 8,
+                    rankOfBestRankedMemberHistory: 8,
+                    nextEvents: [],
+                },
             ],
             EXTREME: [
                 {
