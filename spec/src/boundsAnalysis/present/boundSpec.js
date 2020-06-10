@@ -22,6 +22,7 @@ describe("presentBound", () => {
                         position: 22.9305875372457,
                         distance: 23.1164196495597 - 22.9305875372457,
                         symbol: ".)/|",
+                        unicode: '',
                         mina: 47,
                     },
                     {
@@ -29,6 +30,7 @@ describe("presentBound", () => {
                         position: 23.4600103846490,
                         distance: 23.46001038464900 - 23.1164196495597,
                         symbol: "'/|",
+                        unicode: '',
                         mina: 48,
                     },
                 ],
@@ -38,6 +40,7 @@ describe("presentBound", () => {
                         position: 22.9305875372457,
                         distance: 23.1164196495597 - 22.9305875372457,
                         symbol: ".)/|",
+                        unicode: '',
                         mina: 47,
                     },
                     {
@@ -45,6 +48,7 @@ describe("presentBound", () => {
                         position: 23.4600103846490,
                         distance: 23.46001038464900 - 23.1164196495597,
                         symbol: "'/|",
+                        unicode: '',
                         mina: 48,
                     },
                 ],
@@ -54,6 +58,7 @@ describe("presentBound", () => {
                         position: 22.9305875372457,
                         distance: 23.1164196495597 - 22.9305875372457,
                         symbol: ".)/|",
+                        unicode: '',
                         mina: 47,
                     },
                     {
@@ -61,6 +66,7 @@ describe("presentBound", () => {
                         position: 23.4600103846490,
                         distance: 23.46001038464900 - 23.1164196495597,
                         symbol: "'/|",
+                        unicode: '',
                         mina: 48,
                     },
                 ],

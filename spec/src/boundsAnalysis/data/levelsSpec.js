@@ -15,6 +15,7 @@ describe("computeLevelCommas", () => {
             introducingLevel: "MEDIUM",
             position: 0,
             symbol: "|",
+            unicode: '', // TODO: really symbols should be separate still, like their own file, like how i seaparated commas and bounds already
             mina: 0,
         })
     })

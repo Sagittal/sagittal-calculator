@@ -10,6 +10,7 @@ describe("computePositionComma", () => {
             introducingLevel: "HIGH",
             position: 3.37801872846485,
             symbol: ")|",
+            unicode: '',
             mina: 7,
         })
     })
