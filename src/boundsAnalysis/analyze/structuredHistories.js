@@ -6,8 +6,6 @@ const computeStructuredHistories = analyzedHistories => {
 
     analyzedHistories.forEach(analyzedHistory => {
         analyzedHistory.events.forEach((analyzedEvent, index) => {
-            if (analyzedEvent.type === "IMPOSSIBLE") return
-
             if (!structuredHistories[analyzedEvent.level]) {
                 structuredHistories[analyzedEvent.level] = []
             }
