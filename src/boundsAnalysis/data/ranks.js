@@ -4,10 +4,8 @@ const RANKS = {
     MEAN: 2,
     SIZE: 3,
     NOT_NEAREST_EDA: 4,
-    NOT_NEAREST_MEAN: 5,
-    NOT_NEAREST_SIZE: 6,
-    OVERRIDE: 7,
-    IMPOSSIBLE: 8,
+    OVERRIDE: 5,
+    IMPOSSIBLE: 6,
 }
 
 module.exports = {

@@ -14,8 +14,8 @@ describe("computeInitialStructuredEvent", () => {
     })
 
     it("initializes the rank related fields to the worst rank (so that there's nowhere to go but up when updating them with data from the analyzed histories", () => {
-        expect(result.rankOfBestRankedEventInAnyMemberHistory).toBe(8)
-        expect(result.rankOfBestRankedMemberHistory).toBe(8)
+        expect(result.rankOfBestRankedEventInAnyMemberHistory).toBe(6)
+        expect(result.rankOfBestRankedMemberHistory).toBe(6)
     })
 
     it("strips off the rank that was created in the analyze step, replacing it with the rank measurements that are appropriate for the structured history", () => {

@@ -1,80 +1,57 @@
 const {computeLevelRank} = require("../../../../src/boundsAnalysis/analyze/levelRank")
 
 describe("computeLevelRank", () => {
-    let withinHalfLevelEda
-    describe("when within a half-step of the EDA", () => {
-        beforeEach(() => {
-            withinHalfLevelEda = true
-        })
+    const index = 2
+    const previousPosition = 7.24369938035
+    const history = [{}, {position: previousPosition}, {}]
 
-        it("works for EDA midpoints events", () => {
-            const type = "EDA"
+    it("works for EDA midpoints events", () => {
+        const event = {type: "EDA", level: "VERY_HIGH"}
 
-            const result = computeLevelRank(type, withinHalfLevelEda)
+        const result = computeLevelRank(event, index, history)
 
-            expect(result).toBe(1)
-        })
-
-        it("works for comma mean events", () => {
-            const type = "MEAN"
-
-            const result = computeLevelRank(type, withinHalfLevelEda)
-
-            expect(result).toBe(2)
-        })
-
-        it("works for size category bound events", () => {
-            const type = "SIZE"
-
-            const result = computeLevelRank(type, withinHalfLevelEda)
-
-            expect(result).toBe(3)
-        })
+        expect(result).toBe(1)
     })
 
-    describe("when not within a half-step of the EDA", () => {
-        beforeEach(() => {
-            withinHalfLevelEda = false
-        })
+    it("works for comma mean events events", () => {
+        const event = {type: "MEAN"}
 
-        it("works for EDA midpoints events", () => {
-            const type = "EDA"
+        const result = computeLevelRank(event, index, history)
 
-            const result = computeLevelRank(type, withinHalfLevelEda)
+        expect(result).toBe(2)
+    })
 
-            expect(result).toBe(4)
-        })
+    it("works for size category bound events", () => {
+        const event = {type: "SIZE"}
 
-        it("works for comma mean events events", () => {
-            const type = "MEAN"
+        const result = computeLevelRank(event, index, history)
 
-            const result = computeLevelRank(type, withinHalfLevelEda)
+        expect(result).toBe(3)
+    })
 
-            expect(result).toBe(5)
-        })
+    it("works for not-nearest EDA midpoints", () => {
+        const event = {type: "EDA", level: "HIGH", position: 8.465904706425356, name: "3.5/47" } // 1.19662459005 away
+        // The other, closer, EDA event between |( and ~| at the HIGH level would be {type: "EDA", level: "HIGH", position: 6.047074790303825, name: "2.5/47" }, and it is 1.22220532608 away, slightly further;
+        // this is only one of two places where this ever happens, the other being between |) and )|), also at the HIGH level, where both 11.5/47 and 12.5/47 fall between the commas
 
-        it("works for size category bound events", () => {
-            const type = "SIZE"
+        const result = computeLevelRank(event, index, history)
 
-            const result = computeLevelRank(type, withinHalfLevelEda)
-
-            expect(result).toBe(6)
-        })
+        expect(result).toBe(4)
     })
 
     it("gives the second-lowest rank to override events", () => {
-        const type = "OVERRIDE"
+        const event = {type: "OVERRIDE"}
 
-        const result = computeLevelRank(type, withinHalfLevelEda)
+        const result = computeLevelRank(event, index, history)
 
-        expect(result).toBe(7)
+        expect(result).toBe(5)
     })
 
     it("gives the lowest rank to impossible events", () => {
-        const type = "IMPOSSIBLE"
+        const event = {type: "IMPOSSIBLE"}
 
-        const result = computeLevelRank(type, withinHalfLevelEda)
+        const result = computeLevelRank(event, index, history)
 
-        expect(result).toBe(8)
+        expect(result).toBe(6)
     })
 })

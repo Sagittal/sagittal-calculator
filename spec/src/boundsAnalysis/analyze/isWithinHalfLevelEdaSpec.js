@@ -1,4 +1,4 @@
-const {computeIsWithinHalfLevelEda} = require("../../../../src/boundsAnalysis/plot/isWithinHalfLevelEda")
+const {computeIsWithinHalfLevelEda} = require("../../../../src/boundsAnalysis/analyze/isWithinHalfLevelEda")
 
 describe("computeIsWithinHalfLevelEda", () => {
     it("return true when the position is close to the previous position by an amount less than or equal to the size of a half-step of the EDA at this level", () => {

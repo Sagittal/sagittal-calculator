@@ -82,7 +82,7 @@ describe("analyzeEvents", () => {
                 type: "SIZE",
                 level: "VERY_HIGH",
                 position: 8.9,
-                rank: 6,
+                rank: 3,
                 exact: false,
             },
             {
