@@ -3,7 +3,7 @@ const {presentLevelAnalysis} = require("../../../../src/boundsAnalysis/present/l
 describe("presentLevelAnalysis", () => {
     it("gives an explanation per level of what bounds have what ranks there", () => {
         const level = "VERY_HIGH"
-        const levelBestHistoryRanks = {1: 18, 2: 23, 3: 1, 7: 13}
+        const levelBestHistoryRanks = {1: 18, 2: 23, 3: 1, 5: 13}
 
         const result = presentLevelAnalysis(level, levelBestHistoryRanks)
 

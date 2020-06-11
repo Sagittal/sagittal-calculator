@@ -23,9 +23,9 @@ describe("analyzeHistory", () => {
 
             expect(result.possible).toBe(true)
             expect(result.tinaError).toBeCloseTo(0, ACCURACY_THRESHOLD)
-            expect(result.events).toEqual([{type: "INITIAL", rank: 0, exact: false}, {position, type: "SIZE", rank: 6, exact: true}])
+            expect(result.events).toEqual([{type: "INITIAL", rank: 0, exact: false}, {position, type: "SIZE", rank: 3, exact: true}])
             expect(result.position).toBe(position)
-            expect(result.rank).toBe(6)
+            expect(result.rank).toBe(3)
             expect(result.initialPositionTinaDifference).toBeCloseTo(0.12342742615738889, ACCURACY_THRESHOLD)
         })
     })
@@ -45,16 +45,16 @@ describe("analyzeHistory", () => {
 
             expect(result.possible).toBe(false)
             expect(result.tinaError).toBeCloseTo(expectedTinaError, ACCURACY_THRESHOLD)
-            expect(result.events).toEqual([{type: "INITIAL", rank: 0, exact: false}, {position, type: "MEAN", rank: 5, exact: false}])
+            expect(result.events).toEqual([{type: "INITIAL", rank: 0, exact: false}, {position, type: "MEAN", rank: 2, exact: false}])
             expect(result.position).toBe(position)
-            expect(result.rank).toBe(5)
+            expect(result.rank).toBe(2)
             expect(result.initialPositionTinaDifference).toBeCloseTo(0.5234274261573838, ACCURACY_THRESHOLD)
         })
 
         it("works when the position is greater than the actual bound position by more than a tina", () => {
             const expectedTinaError = 5 / 2
             position = actualBoundPosition + TINA * expectedTinaError
-            history = [{type: "INITIAL"}, {position, type: "EDA"}]
+            history = [{type: "INITIAL"}, {position, type: "EDA", level: "EXTREME"}]
             bound = {
                 position: actualBoundPosition,
                 levels: ["EXTREME", "INSANE"],
@@ -65,9 +65,9 @@ describe("analyzeHistory", () => {
 
             expect(result.possible).toBe(false)
             expect(result.tinaError).toBeCloseTo(expectedTinaError, ACCURACY_THRESHOLD)
-            expect(result.events).toEqual([{type: "INITIAL", rank: 0, exact: false}, {position, type: "EDA", rank: 4, exact: false}])
+            expect(result.events).toEqual([{type: "INITIAL", rank: 0, exact: false}, {position, type: "EDA", level: "EXTREME", rank: 1, exact: false}])
             expect(result.position).toBe(position)
-            expect(result.rank).toBe(4)
+            expect(result.rank).toBe(1)
             expect(result.initialPositionTinaDifference).toBeCloseTo(2.6234274261573884, ACCURACY_THRESHOLD)
         })
 
@@ -85,9 +85,9 @@ describe("analyzeHistory", () => {
 
             expect(result.possible).toBe(false)
             expect(result.tinaError).toBeCloseTo(expectedTinaError, ACCURACY_THRESHOLD)
-            expect(result.events).toEqual([{type: "INITIAL", rank: 0, exact: false}, {position, type: "SIZE", rank: 6, exact: false}])
+            expect(result.events).toEqual([{type: "INITIAL", rank: 0, exact: false}, {position, type: "SIZE", rank: 3, exact: false}])
             expect(result.position).toBe(position)
-            expect(result.rank).toBe(6)
+            expect(result.rank).toBe(3)
             expect(result.initialPositionTinaDifference).toBeCloseTo(-0.276572573842606, ACCURACY_THRESHOLD)
         })
 
@@ -105,9 +105,9 @@ describe("analyzeHistory", () => {
 
             expect(result.possible).toBe(false)
             expect(result.tinaError).toBeCloseTo(expectedTinaError, ACCURACY_THRESHOLD)
-            expect(result.events).toEqual([{type: "INITIAL", rank: 0, exact: false}, {position, type: "MEAN", rank: 5, exact: false}])
+            expect(result.events).toEqual([{type: "INITIAL", rank: 0, exact: false}, {position, type: "MEAN", rank: 2, exact: false}])
             expect(result.position).toBe(position)
-            expect(result.rank).toBe(5)
+            expect(result.rank).toBe(2)
             expect(result.initialPositionTinaDifference).toBeCloseTo(-2.3765725738426107, ACCURACY_THRESHOLD)
         })
     })

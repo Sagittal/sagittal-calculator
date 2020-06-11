@@ -4,8 +4,6 @@ const FORMATTED_RANK_NAMES = [
     "comma mean",
     "size category bound",
     "not-nearest EDA midpoint",
-    "not-nearest comma mean",
-    "not-nearest size category bound",
     "override",
     "impossible",
 ]

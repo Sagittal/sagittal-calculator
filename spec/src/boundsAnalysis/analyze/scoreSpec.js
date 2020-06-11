@@ -59,14 +59,14 @@ describe("computeScore", () => {
             {level: "HIGH", rank: 1},
             {level: "VERY_HIGH", rank: 1},
             {level: "EXTREME", rank: 1},
-            {level: "INSANE", rank: 8},
+            {level: "INSANE", rank: 6},
         ]
         const expectedBetterScoreHistories = [
-            {level: "MEDIUM", rank: 7},
-            {level: "HIGH", rank: 7},
-            {level: "VERY_HIGH", rank: 7},
-            {level: "EXTREME", rank: 7},
-            {level: "INSANE", rank: 7},
+            {level: "MEDIUM", rank: 5},
+            {level: "HIGH", rank: 5},
+            {level: "VERY_HIGH", rank: 5},
+            {level: "EXTREME", rank: 5},
+            {level: "INSANE", rank: 5},
         ]
 
         const expectedWorseResult = computeScore(expectedWorseScoreHistories)

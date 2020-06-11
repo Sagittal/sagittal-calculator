@@ -1,10 +1,4 @@
-const {LEVELS_EDA_MIDPOINTS, LEVELS_SIZE_CATEGORY_BOUNDS, LEVELS_COMMA_MEANS} = require("../data/snappablePositions")
-
-const EVENT_TYPE_SNAPPABLE_POSITIONS = {
-    EDA: LEVELS_EDA_MIDPOINTS,
-    SIZE: LEVELS_SIZE_CATEGORY_BOUNDS,
-    MEAN: LEVELS_COMMA_MEANS,
-}
+const {EVENT_TYPE_SNAPPABLE_POSITIONS} = require("../data/snappablePositions")
 
 const computeEvents = (level, [lesserBoundedCommaPosition, greaterBoundedCommaPosition], type) => {
     const events = []

@@ -17,10 +17,10 @@ const computeExtendedHistories = (history, level, bound) => {
         return extendedHistories
     }
 
-    const boundedCommaPosition = computeBoundedCommaPositions(bound.position, level)
+    const boundedCommaPositions = computeBoundedCommaPositions(bound.position, level)
 
-    if (!computeIsPositionBetweenPositions(position, boundedCommaPosition)) {
-        const impossibleEvent = computeImpossibleEvent(position, level, boundedCommaPosition)
+    if (!computeIsPositionBetweenPositions(position, boundedCommaPositions)) {
+        const impossibleEvent = computeImpossibleEvent(position, level, boundedCommaPositions)
         const impossibleToExtendHistory = history.concat(impossibleEvent)
         extendedHistories.push(impossibleToExtendHistory)
 
@@ -28,9 +28,9 @@ const computeExtendedHistories = (history, level, bound) => {
     }
 
     const newEvents = [
-        ...computeEvents(level, boundedCommaPosition, "EDA", position),
-        ...computeEvents(level, boundedCommaPosition, "MEAN", position),
-        ...computeEvents(level, boundedCommaPosition, "SIZE", position),
+        ...computeEvents(level, boundedCommaPositions, "EDA", position),
+        ...computeEvents(level, boundedCommaPositions, "MEAN", position),
+        ...computeEvents(level, boundedCommaPositions, "SIZE", position),
     ]
 
     newEvents.forEach(event => {
