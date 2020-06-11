@@ -575,14 +575,14 @@ const COMMAS = [
     },
     {
         introducingLevel: "HIGH",
-        position: 38.0506316728057,
+        position: 38.0506316728057, // here it is
         symbol: "/|~",
         unicode: "",
         mina: 78,
     },
     {
         introducingLevel: "EXTREME",
-        position: 38.0732490267513,
+        position: 38.0732490267513, // here it is
         symbol: ",,(|(",
         unicode: "",
         mina: 78.39014554523920,

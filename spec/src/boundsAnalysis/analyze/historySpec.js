@@ -23,7 +23,7 @@ describe("analyzeHistory", () => {
 
             expect(result.possible).toBe(true)
             expect(result.tinaError).toBeCloseTo(0, ACCURACY_THRESHOLD)
-            expect(result.events).toEqual([{type: "INITIAL", rank: 0}, {position, type: "SIZE", rank: 6}])
+            expect(result.events).toEqual([{type: "INITIAL", rank: 0, exact: false}, {position, type: "SIZE", rank: 6, exact: true}])
             expect(result.position).toBe(position)
             expect(result.rank).toBe(6)
             expect(result.initialPositionTinaDifference).toBeCloseTo(0.12342742615738889, ACCURACY_THRESHOLD)
@@ -45,7 +45,7 @@ describe("analyzeHistory", () => {
 
             expect(result.possible).toBe(false)
             expect(result.tinaError).toBeCloseTo(expectedTinaError, ACCURACY_THRESHOLD)
-            expect(result.events).toEqual([{type: "INITIAL", rank: 0}, {position, type: "MEAN", rank: 5}])
+            expect(result.events).toEqual([{type: "INITIAL", rank: 0, exact: false}, {position, type: "MEAN", rank: 5, exact: false}])
             expect(result.position).toBe(position)
             expect(result.rank).toBe(5)
             expect(result.initialPositionTinaDifference).toBeCloseTo(0.5234274261573838, ACCURACY_THRESHOLD)
@@ -65,7 +65,7 @@ describe("analyzeHistory", () => {
 
             expect(result.possible).toBe(false)
             expect(result.tinaError).toBeCloseTo(expectedTinaError, ACCURACY_THRESHOLD)
-            expect(result.events).toEqual([{type: "INITIAL", rank: 0}, {position, type: "EDA", rank: 4}])
+            expect(result.events).toEqual([{type: "INITIAL", rank: 0, exact: false}, {position, type: "EDA", rank: 4, exact: false}])
             expect(result.position).toBe(position)
             expect(result.rank).toBe(4)
             expect(result.initialPositionTinaDifference).toBeCloseTo(2.6234274261573884, ACCURACY_THRESHOLD)
@@ -85,7 +85,7 @@ describe("analyzeHistory", () => {
 
             expect(result.possible).toBe(false)
             expect(result.tinaError).toBeCloseTo(expectedTinaError, ACCURACY_THRESHOLD)
-            expect(result.events).toEqual([{type: "INITIAL", rank: 0}, {position, type: "SIZE", rank: 6}])
+            expect(result.events).toEqual([{type: "INITIAL", rank: 0, exact: false}, {position, type: "SIZE", rank: 6, exact: false}])
             expect(result.position).toBe(position)
             expect(result.rank).toBe(6)
             expect(result.initialPositionTinaDifference).toBeCloseTo(-0.276572573842606, ACCURACY_THRESHOLD)
@@ -105,7 +105,7 @@ describe("analyzeHistory", () => {
 
             expect(result.possible).toBe(false)
             expect(result.tinaError).toBeCloseTo(expectedTinaError, ACCURACY_THRESHOLD)
-            expect(result.events).toEqual([{type: "INITIAL", rank: 0}, {position, type: "MEAN", rank: 5}])
+            expect(result.events).toEqual([{type: "INITIAL", rank: 0, exact: false}, {position, type: "MEAN", rank: 5, exact: false}])
             expect(result.position).toBe(position)
             expect(result.rank).toBe(5)
             expect(result.initialPositionTinaDifference).toBeCloseTo(-2.3765725738426107, ACCURACY_THRESHOLD)

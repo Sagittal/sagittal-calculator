@@ -72,6 +72,7 @@ describe("analyzeBound", () => {
             name: "INITIAL",
             position: 23.2,
             rank: 0,
+            exact: false,
         },
         {
             level: "VERY_HIGH",
@@ -79,6 +80,7 @@ describe("analyzeBound", () => {
             name: ".)/| '/|",
             position: 23.2,
             rank: 2,
+            exact: false,
         },
         {
             level: "EXTREME",
@@ -86,6 +88,7 @@ describe("analyzeBound", () => {
             name: "47.5/233",
             position: 23.15,
             rank: 1,
+            exact: false,
         },
         {
             level: "INSANE",
@@ -93,14 +96,16 @@ describe("analyzeBound", () => {
             name: "164.5/809",
             position: 23.116419649559468,
             rank: 1,
+            exact: true,
         },
     ]
-    const expecteBestPossibleHistory = {
+    const expectedBestPossibleHistory = {
         events: expectedBestHistoryEvents,
         position: 23.116419649559468,
         rank: 2,
         score: 132,
         possible: true,
+        exact: false,
         tinaError: 0,
         initialPositionTinaDifference: -0.5613173198970488,
     }
@@ -115,15 +120,7 @@ describe("analyzeBound", () => {
             initialPosition: 23.195298960947348,
             initialPositionTinaDifference: -0.5613173198954056,
             possibleHistoryCount: 2,
-            bestPossibleHistory: {
-                events: expectedBestHistoryEvents,
-                position: 23.116419649559468,
-                rank: 2,
-                score: 132,
-                possible: true,
-                tinaError: 0,
-                initialPositionTinaDifference: -0.5613173198970488,
-            },
+            bestPossibleHistory: expectedBestPossibleHistory,
             structuredHistories: {
                 INITIAL: [
                     {
@@ -133,6 +130,7 @@ describe("analyzeBound", () => {
                         position: 23.2,
                         isPossibleHistoryMember: true,
                         isBestPossibleHistoryMember: true,
+                        exact: false,
                         rankOfBestRankedEventInAnyMemberHistory: 0,
                         rankOfBestRankedMemberHistory: 2,
                         nextEvents: [
@@ -148,6 +146,7 @@ describe("analyzeBound", () => {
                         position: 23.2,
                         isPossibleHistoryMember: true,
                         isBestPossibleHistoryMember: true,
+                        exact: false,
                         rankOfBestRankedEventInAnyMemberHistory: 2,
                         rankOfBestRankedMemberHistory: 2,
                         nextEvents: [
@@ -164,6 +163,7 @@ describe("analyzeBound", () => {
                         position: 23.2,
                         isPossibleHistoryMember: true,
                         isBestPossibleHistoryMember: false,
+                        exact: false,
                         rankOfBestRankedEventInAnyMemberHistory: 2,
                         rankOfBestRankedMemberHistory: 4,
                         nextEvents: [
@@ -177,6 +177,7 @@ describe("analyzeBound", () => {
                         position: 23.15,
                         isPossibleHistoryMember: true,
                         isBestPossibleHistoryMember: true,
+                        exact: false,
                         rankOfBestRankedEventInAnyMemberHistory: 1,
                         rankOfBestRankedMemberHistory: 2,
                         nextEvents: [
@@ -192,6 +193,7 @@ describe("analyzeBound", () => {
                         position: 23.116419649559468,
                         isPossibleHistoryMember: true,
                         isBestPossibleHistoryMember: true,
+                        exact: true,
                         rankOfBestRankedEventInAnyMemberHistory: 1,
                         rankOfBestRankedMemberHistory: 2,
                         nextEvents: [],
@@ -219,6 +221,6 @@ describe("analyzeBound", () => {
 
         analyzeBound(histories, bound, boundIndex)
 
-        expect(levelAnalysis.updateLevelAnalysis).toHaveBeenCalledWith(expecteBestPossibleHistory)
+        expect(levelAnalysis.updateLevelAnalysis).toHaveBeenCalledWith(expectedBestPossibleHistory)
     })
 })

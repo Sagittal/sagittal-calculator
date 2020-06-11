@@ -5,6 +5,7 @@ const computeInitialStructuredEvent = analyzedEvent => ({
     type: analyzedEvent.type,
     name: analyzedEvent.name,
     position: analyzedEvent.position,
+    exact: analyzedEvent.exact,
     isPossibleHistoryMember: false,
     isBestPossibleHistoryMember: false,
     nextEvents: [],

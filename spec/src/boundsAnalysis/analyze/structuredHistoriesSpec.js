@@ -8,6 +8,7 @@ describe("computeStructuredHistories", () => {
             name: "'/| )/|",
             position: 24.2,
             rank: 2,
+            exact: false,
         }
         const eventTwoGoesToEventThreeAndToImpossibleTwice = {
             level: "VERY_HIGH",
@@ -15,6 +16,7 @@ describe("computeStructuredHistories", () => {
             name: "12.5/58",
             position: 24.33333,
             rank: 1,
+            exact: false,
         }
         const eventThree = {
             level: "EXTREME",
@@ -22,6 +24,7 @@ describe("computeStructuredHistories", () => {
             name: ",)/|_)/|",
             position: 24.58139537326805,
             rank: 2,
+            exact: false,
         }
         const eventFour = {
             level: "EXTREME",
@@ -29,6 +32,7 @@ describe("computeStructuredHistories", () => {
             name: "50.5/233",
             position: 24.151964806252103,
             rank: 1,
+            exact: false,
         }
         const eventImpossible = {
             level: "VERY_HIGH",
@@ -36,6 +40,7 @@ describe("computeStructuredHistories", () => {
             name: "not between 88.8 and 99.9",
             position: 24.9,
             rank: 8,
+            exact: false,
         }
         const eventThreeButWithBetterRank = {
             level: "EXTREME",
@@ -43,6 +48,7 @@ describe("computeStructuredHistories", () => {
             name: ",)/|_)/|",
             position: 24.58139537326805,
             rank: 1,
+            exact: false,
         }
 
         const bestPossibleHistory = {
@@ -110,6 +116,7 @@ describe("computeStructuredHistories", () => {
                     position: eventOneGoesToEventThreeAndFour.position,
                     isPossibleHistoryMember: true,
                     isBestPossibleHistoryMember: false,
+                    exact: false,
                     rankOfBestRankedEventInAnyMemberHistory: 2,
                     rankOfBestRankedMemberHistory: 2,
                     nextEvents: [
@@ -124,6 +131,7 @@ describe("computeStructuredHistories", () => {
                     position: eventTwoGoesToEventThreeAndToImpossibleTwice.position,
                     isPossibleHistoryMember: true,
                     isBestPossibleHistoryMember: true,
+                    exact: false,
                     rankOfBestRankedEventInAnyMemberHistory: 1,
                     rankOfBestRankedMemberHistory: 1,
                     nextEvents: [
@@ -138,6 +146,7 @@ describe("computeStructuredHistories", () => {
                     position: eventImpossible.position,
                     isPossibleHistoryMember: false,
                     isBestPossibleHistoryMember: false,
+                    exact: false,
                     rankOfBestRankedEventInAnyMemberHistory: 8,
                     rankOfBestRankedMemberHistory: 8,
                     nextEvents: [],
@@ -151,6 +160,7 @@ describe("computeStructuredHistories", () => {
                     position: eventThree.position,
                     isPossibleHistoryMember: true,
                     isBestPossibleHistoryMember: true,
+                    exact: false,
                     rankOfBestRankedEventInAnyMemberHistory: 1,
                     rankOfBestRankedMemberHistory: 1,
                     nextEvents: [],
@@ -162,6 +172,7 @@ describe("computeStructuredHistories", () => {
                     position: eventFour.position,
                     isPossibleHistoryMember: false,
                     isBestPossibleHistoryMember: false,
+                    exact: false,
                     rankOfBestRankedEventInAnyMemberHistory: 1,
                     rankOfBestRankedMemberHistory: 2,
                     nextEvents: [],
