@@ -16,7 +16,7 @@ const LEVEL_EDA_STEP_SIZES = LEVEL_EDAS.reduce(
         }
     },
     {},
-) // 5.41357171705, 2.41882991613, 1.96008631134, 0.48791848093, 0.14052534741
+) // 5.41357171705, 2.41882991613, 1.96008631134, 0.48791848093, 0.14052534741 //TODO: you could test that this is a TINA, or just set TINA to that? same for MINA
 
 module.exports = {
     APOTOME,
