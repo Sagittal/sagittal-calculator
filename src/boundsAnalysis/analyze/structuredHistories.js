@@ -1,7 +1,8 @@
 const {computeInitialStructuredEvent} = require("./initialStructuredEvent")
 const {updateStructuredEvent} = require("./updateStructuredEvent")
+const {ensureOneBestPossibleEventPerLevel} = require("./ensureOneBestPossibleEventPerLevel")
 
-const computeStructuredHistories = analyzedHistories => {
+const computeStructuredHistories = (analyzedHistories, bestPossibleHistory) => {
     const structuredHistories = {}
 
     analyzedHistories.forEach(analyzedHistory => {
@@ -16,16 +17,18 @@ const computeStructuredHistories = analyzedHistories => {
                 .find(existingEvent => existingEvent.name === analyzedEvent.name)
 
             if (matchingStructuredEvent) {
-                updateStructuredEvent(matchingStructuredEvent, {nextAnalyzedEvent, analyzedHistory, analyzedEvent})
+                updateStructuredEvent(matchingStructuredEvent, {nextAnalyzedEvent, analyzedHistory, analyzedEvent, bestPossibleHistory})
             } else {
                 const newStructuredEvent = computeInitialStructuredEvent(analyzedEvent)
 
-                updateStructuredEvent(newStructuredEvent, {nextAnalyzedEvent, analyzedHistory, analyzedEvent})
+                updateStructuredEvent(newStructuredEvent, {nextAnalyzedEvent, analyzedHistory, analyzedEvent, bestPossibleHistory})
 
                 structuredHistories[analyzedEvent.level].push(newStructuredEvent)
             }
         })
     })
+
+    ensureOneBestPossibleEventPerLevel(structuredHistories)
 
     return structuredHistories
 }

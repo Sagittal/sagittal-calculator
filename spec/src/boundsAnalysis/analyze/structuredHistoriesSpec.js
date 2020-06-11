@@ -1,7 +1,7 @@
 const {computeStructuredHistories} = require("../../../../src/boundsAnalysis/analyze/structuredHistories")
 
 describe("computeStructuredHistories", () => {
-    it("structures histories to consolidate redundancies per level and show which events can lead in which events in the next level, and which ones are members of histories that are possible, and what the best rank is in any event that gets consolidated into this structured display, and what the best rank of any history this event is a member of is", () => {
+    it("structures histories to consolidate redundancies per level and show which events can lead in which events in the next level, and which ones are members of histories that are possible, and what the best rank is in any event that gets consolidated into this structured display, and what the best rank of any history this event is a member of is, and membership in the best possible history", () => {
         const eventOneGoesToEventThreeAndFour = {
             level: "VERY_HIGH",
             type: "MEAN",
@@ -45,6 +45,16 @@ describe("computeStructuredHistories", () => {
             rank: 1,
         }
 
+        const bestPossibleHistory = {
+            events: [
+                eventTwoGoesToEventThreeAndToImpossibleTwice,
+                eventThreeButWithBetterRank,
+            ],
+            rank: 1,
+            possible: true,
+            tinaError: 0,
+            position: 24.58139537326805,
+        }
         const analyzedHistories = [
             {
                 events: [
@@ -56,16 +66,7 @@ describe("computeStructuredHistories", () => {
                 tinaError: 0,
                 position: 24.58139537326805,
             },
-            {
-                events: [
-                    eventTwoGoesToEventThreeAndToImpossibleTwice,
-                    eventThreeButWithBetterRank,
-                ],
-                rank: 1,
-                possible: true,
-                tinaError: 0,
-                position: 24.58139537326805,
-            },
+            bestPossibleHistory,
             {
                 events: [
                     eventOneGoesToEventThreeAndFour,
@@ -98,7 +99,7 @@ describe("computeStructuredHistories", () => {
             },
         ]
 
-        const result = computeStructuredHistories(analyzedHistories)
+        const result = computeStructuredHistories(analyzedHistories, bestPossibleHistory)
 
         expect(result).toEqual({
             VERY_HIGH: [
@@ -108,6 +109,7 @@ describe("computeStructuredHistories", () => {
                     name: eventOneGoesToEventThreeAndFour.name,
                     position: eventOneGoesToEventThreeAndFour.position,
                     isPossibleHistoryMember: true,
+                    isBestPossibleHistoryMember: false,
                     rankOfBestRankedEventInAnyMemberHistory: 2,
                     rankOfBestRankedMemberHistory: 2,
                     nextEvents: [
@@ -121,6 +123,7 @@ describe("computeStructuredHistories", () => {
                     name: eventTwoGoesToEventThreeAndToImpossibleTwice.name,
                     position: eventTwoGoesToEventThreeAndToImpossibleTwice.position,
                     isPossibleHistoryMember: true,
+                    isBestPossibleHistoryMember: true,
                     rankOfBestRankedEventInAnyMemberHistory: 1,
                     rankOfBestRankedMemberHistory: 1,
                     nextEvents: [
@@ -134,6 +137,7 @@ describe("computeStructuredHistories", () => {
                     name: eventImpossible.name,
                     position: eventImpossible.position,
                     isPossibleHistoryMember: false,
+                    isBestPossibleHistoryMember: false,
                     rankOfBestRankedEventInAnyMemberHistory: 8,
                     rankOfBestRankedMemberHistory: 8,
                     nextEvents: [],
@@ -146,6 +150,7 @@ describe("computeStructuredHistories", () => {
                     name: eventThree.name,
                     position: eventThree.position,
                     isPossibleHistoryMember: true,
+                    isBestPossibleHistoryMember: true,
                     rankOfBestRankedEventInAnyMemberHistory: 1,
                     rankOfBestRankedMemberHistory: 1,
                     nextEvents: [],
@@ -156,6 +161,7 @@ describe("computeStructuredHistories", () => {
                     name: eventFour.name,
                     position: eventFour.position,
                     isPossibleHistoryMember: false,
+                    isBestPossibleHistoryMember: false,
                     rankOfBestRankedEventInAnyMemberHistory: 1,
                     rankOfBestRankedMemberHistory: 2,
                     nextEvents: [],
