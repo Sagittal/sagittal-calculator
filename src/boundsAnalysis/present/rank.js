@@ -10,8 +10,6 @@ const FORMATTED_RANK_NAMES = [
     "impossible",
 ]
 
-const presentRank = rank => FORMATTED_RANK_NAMES[rank]
-
 module.exports = {
-    presentRank,
+    FORMATTED_RANK_NAMES,
 }

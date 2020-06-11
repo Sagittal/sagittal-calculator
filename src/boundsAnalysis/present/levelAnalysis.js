@@ -1,4 +1,4 @@
-const {presentRank} = require("./rank")
+const {FORMATTED_RANK_NAMES} = require("./rank")
 const {presentLevel} = require("./level")
 const {COLORS} = require("./colors")
 
@@ -11,7 +11,7 @@ const presentLevelAnalysis = (level, levelsBestHistoryRanks) => {
             presentedCount = " " + presentedCount
         }
 
-        presentedLevelAnalysis.push(`${presentedCount} ${presentRank(rankIndex)}`[COLORS[rankIndex]])
+        presentedLevelAnalysis.push(`${presentedCount} ${FORMATTED_RANK_NAMES[rankIndex]}`[COLORS[rankIndex]])
     })
 
     return presentedLevelAnalysis.join("\n")

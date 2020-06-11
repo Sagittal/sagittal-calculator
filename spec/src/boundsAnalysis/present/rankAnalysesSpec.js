@@ -14,15 +14,21 @@ describe("presentRankAnalyses", () => {
             analyzeBound(histories, bound, boundIndex)
         })
 
-        const result = presentRankAnalyses()
+        const result = presentRankAnalyses() // TODO: hey maybe if the svg's background was also dark grey the colors would work out alright?
 
         const expectedResult =
-            "\n\n   ---   Rank Analyses   ---   \n\n\n" +
-            "For 107 bounds (0, 1, 2, 4, 6, 7, 8, 10, 11, 12, 14, 15, 17, 19, 20, 21, 23, 26, 28, 29, 30, 32, 33, 34, 36, 37, 38, 39, 42, 43, 44, 45, 48, 50, 53, 54, 56, 57, 58, 59, 60, 61, 62, 64, 67, 68, 69, 70, 71, 73, 75, 76, 77, 79, 83, 84, 85, 87, 88, 89, 91, 92, 93, 94, 95, 96, 98, 99, 100, 101, 103, 104, 105, 107, 108, 109, 111, 112, 113, 114, 115, 116, 117, 118, 120, 122, 123, 124, 126, 128, 129, 130, 131, 132, 133, 134, 135, 137, 138, 139, 141, 142, 143, 145, 146, 147, 148), the best possible explanation for how they were set was by working up through each level they appear in, each time staying between the bounded commas of the bound, snapping only to an EDA midpoint which is close to the position it was already at, where close is defined as within a half-step of that EDA.".brightBlue + "\n\n" +
-            "For 22 bounds (3, 5, 9, 16, 18, 24, 25, 40, 47, 55, 63, 66, 72, 80, 81, 86, 102, 106, 121, 125, 140, 144), the best possible explanation for how they were set was by working up through each level they appear in, each time staying between the bounded commas of the bound, each time snapping only either to an EDA midpoint or a comma mean which is close to the position it was already at, where close is defined as within a half-step of that EDA.".cyan + "\n\n" +
-            "For 2 bounds (97, 149), the best possible explanation for how they were set was by working up through each level they appear in, each time staying between the bounded commas of the bound, each time snapping only either to an EDA midpoint, a comma mean, or a size category bound which is close to the position it was already at, where close is defined as within a half-step of that EDA.".green + "\n\n" +
-            "For 4 bounds (27, 31, 35, 51), the best possible explanation for how they were set was by working up through each level they appear in, each time staying between the bounded commas of the bound, each time snapping only either to an EDA midpoint, a comma mean, or a size category bound which is close to the position it was already at, where close is defined as within a half-step of that EDA, or an EDA midpoint which was further than a half-step of that EDA away.".yellow + "\n\n" +
-            "For 15 bounds (13, 22, 41, 46, 49, 52, 65, 74, 78, 82, 90, 110, 119, 127, 136), the best possible explanation for how they were set was unfortunately one which necessitated an override of a bound at a lower level, in the sense that none of the possible places it could have been at the lower level were within the bounded commas of the level.".red
+            "\n\n   ---   Rank Analyses   ---   " +
+            "\n\n\n" +
+            "EDA midpoint snap event was worst-ranked snap event:\n\ttotal: 107 bounds\n\tbounds: 0, 1, 2, 4, 6, 7, 8, 10, 11, 12, 14, 15, 17, 19, 20, 21, 23, 26, 28, 29, 30, 32, 33, 34, 36, 37, 38, 39, 42, 43, 44, 45, 48, 50, 53, 54, 56, 57, 58, 59, 60, 61, 62, 64, 67, 68, 69, 70, 71, 73, 75, 76, 77, 79, 83, 84, 85, 87, 88, 89, 91, 92, 93, 94, 95, 96, 98, 99, 100, 101, 103, 104, 105, 107, 108, 109, 111, 112, 113, 114, 115, 116, 117, 118, 120, 122, 123, 124, 126, 128, 129, 130, 131, 132, 133, 134, 135, 137, 138, 139, 141, 142, 143, 145, 146, 147, 148".brightBlue +
+            "\n\n" +
+            "comma mean snap event was worst-ranked snap event:\n\ttotal: 22 bounds\n\tbounds: 3, 5, 9, 16, 18, 24, 25, 40, 47, 55, 63, 66, 72, 80, 81, 86, 102, 106, 121, 125, 140, 144".cyan +
+            "\n\n" +
+            "size category bound snap event was worst-ranked snap event:\n\ttotal: 2 bounds\n\tbounds: 97, 149".green +
+            "\n\n" +
+            "not-nearest EDA midpoint snap event was worst-ranked snap event:\n\ttotal: 4 bounds\n\tbounds: 27, 31, 35, 51".yellow +
+            "\n\n" +
+            "override snap event was worst-ranked snap event:\n\ttotal: 15 bounds\n\tbounds: 13, 22, 41, 46, 49, 52, 65, 74, 78, 82, 90, 110, 119, 127, 136".red
+
         expect(result).toEqual(expectedResult)
     })
 })
