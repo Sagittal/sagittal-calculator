@@ -110,7 +110,6 @@ describe("analyzeBound", () => {
 
         const result = analyzeBound(histories, bound, boundIndex)
 
-
         expect(result).toEqual({
             bestRank: 2,
             initialPosition: 23.195298960947348,
@@ -133,6 +132,7 @@ describe("analyzeBound", () => {
                         name: "INITIAL",
                         position: 23.2,
                         isPossibleHistoryMember: true,
+                        isBestPossibleHistoryMember: true,
                         rankOfBestRankedEventInAnyMemberHistory: 0,
                         rankOfBestRankedMemberHistory: 2,
                         nextEvents: [
@@ -147,6 +147,7 @@ describe("analyzeBound", () => {
                         name: ".)/| '/|",
                         position: 23.2,
                         isPossibleHistoryMember: true,
+                        isBestPossibleHistoryMember: true,
                         rankOfBestRankedEventInAnyMemberHistory: 2,
                         rankOfBestRankedMemberHistory: 2,
                         nextEvents: [
@@ -162,6 +163,7 @@ describe("analyzeBound", () => {
                         name: ".)/| '/|",
                         position: 23.2,
                         isPossibleHistoryMember: true,
+                        isBestPossibleHistoryMember: false,
                         rankOfBestRankedEventInAnyMemberHistory: 2,
                         rankOfBestRankedMemberHistory: 4,
                         nextEvents: [
@@ -174,6 +176,7 @@ describe("analyzeBound", () => {
                         name: "47.5/233",
                         position: 23.15,
                         isPossibleHistoryMember: true,
+                        isBestPossibleHistoryMember: true,
                         rankOfBestRankedEventInAnyMemberHistory: 1,
                         rankOfBestRankedMemberHistory: 2,
                         nextEvents: [
@@ -188,6 +191,7 @@ describe("analyzeBound", () => {
                         name: "164.5/809",
                         position: 23.116419649559468,
                         isPossibleHistoryMember: true,
+                        isBestPossibleHistoryMember: true,
                         rankOfBestRankedEventInAnyMemberHistory: 1,
                         rankOfBestRankedMemberHistory: 2,
                         nextEvents: [],

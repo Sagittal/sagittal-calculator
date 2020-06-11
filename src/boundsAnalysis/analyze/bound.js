@@ -16,10 +16,12 @@ const analyzeBound = (histories, bound, boundIndex) => {
     const bestRank = bestPossibleHistory.rank
     const initialPositionTinaDifference = (bound.position - initialPosition) / TINA
 
+    // console.log("BPH???", bestPossibleHistory)
+
     rankAnalysis.updateRankAnalysis(bestRank, boundIndex)
     levelAnalysis.updateLevelAnalysis(bestPossibleHistory)
 
-    const structuredHistories = computeStructuredHistories(analyzedHistories)
+    const structuredHistories = computeStructuredHistories(analyzedHistories, bestPossibleHistory)
 
     return {
         initialPosition,

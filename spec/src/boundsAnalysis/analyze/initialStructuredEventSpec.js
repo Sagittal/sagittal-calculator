@@ -26,6 +26,10 @@ describe("computeInitialStructuredEvent", () => {
         expect(result.isPossibleHistoryMember).toBeFalsy()
     })
 
+    it("initializes to assume that it is not a member of the best possible history (if one ever comes across which is possible, then it never goes back to being considered not possible)", () => {
+        expect(result.isBestPossibleHistoryMember).toBeFalsy()
+    })
+
     it("initializes with an empty list of next events", () => {
         expect(result.nextEvents).toEqual([])
     })

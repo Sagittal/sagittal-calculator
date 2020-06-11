@@ -6,6 +6,7 @@ const computeInitialStructuredEvent = analyzedEvent => ({
     name: analyzedEvent.name,
     position: analyzedEvent.position,
     isPossibleHistoryMember: false,
+    isBestPossibleHistoryMember: false,
     nextEvents: [],
     rankOfBestRankedMemberHistory: RANKS["IMPOSSIBLE"],
     rankOfBestRankedEventInAnyMemberHistory: RANKS["IMPOSSIBLE"],
