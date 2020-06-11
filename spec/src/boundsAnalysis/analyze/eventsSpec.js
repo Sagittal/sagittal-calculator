@@ -1,7 +1,7 @@
 const {analyzeEvents} = require("../../../../src/boundsAnalysis/analyze/events")
 
 describe("analyzeEvents", () => {
-    it("adds a rank to each event", () => {
+    it("adds a rank and exact property to each event", () => {
         const history = [
             {
                 type: "EDA",
@@ -19,8 +19,9 @@ describe("analyzeEvents", () => {
                 position: 10.1,
             },
         ]
+        const actualBoundPosition = 10.2
 
-        const result = analyzeEvents(history)
+        const result = analyzeEvents(history, actualBoundPosition)
 
         expect(result).toEqual(jasmine.arrayWithExactContents([
             {
@@ -28,18 +29,21 @@ describe("analyzeEvents", () => {
                 level: "HIGH",
                 position: 10.0,
                 rank: 1,
+                exact: false,
             },
             {
                 type: "SIZE",
                 level: "VERY_HIGH",
                 position: 10.2,
                 rank: 3,
+                exact: true,
             },
             {
                 type: "MEAN",
                 level: "EXTREME",
                 position: 10.1,
                 rank: 2,
+                exact: false,
             },
         ]))
     })
@@ -62,8 +66,9 @@ describe("analyzeEvents", () => {
                 position: 9.0,
             },
         ]
+        const actualBoundPosition = 9.5
 
-        const result = analyzeEvents(history)
+        const result = analyzeEvents(history, actualBoundPosition)
 
         expect(result).toEqual(jasmine.arrayWithExactContents([
             {
@@ -71,18 +76,21 @@ describe("analyzeEvents", () => {
                 level: "HIGH",
                 position: 10.0,
                 rank: 1,
+                exact: false,
             },
             {
                 type: "SIZE",
                 level: "VERY_HIGH",
                 position: 8.9,
                 rank: 6,
+                exact: false,
             },
             {
                 type: "MEAN",
                 level: "EXTREME",
                 position: 9.0,
                 rank: 2,
+                exact: false,
             },
         ]))
     })

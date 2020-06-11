@@ -19,12 +19,10 @@ describe("computeBestPossibleHistory", () => {
 
         const result = computeBestPossibleHistory(histories)
 
-        expect(result).toEqual(
-            {
-                score: 245444,
-                position: 13.235,
-            },
-        )
+        expect(result).toEqual({
+            score: 245444,
+            position: 13.235,
+        })
     })
 
     it("throws an error if two histories have the same score", () => {
@@ -44,5 +42,32 @@ describe("computeBestPossibleHistory", () => {
         ]
 
         expect(() => computeBestPossibleHistory(histories)).toThrow()
+    })
+
+    it("returns the best exact history even if its score is not the best", () => {
+        const histories = [
+            {
+                score: 3436643,
+                position: 12.909,
+                exact: true,
+            },
+            {
+                score: 45575474,
+                position: 12.909,
+                exact: true,
+            },
+            {
+                score: 245444,
+                position: 13.235,
+            },
+        ]
+
+        const result = computeBestPossibleHistory(histories)
+
+        expect(result).toEqual({
+            score: 3436643,
+            position: 12.909,
+            exact: true,
+        })
     })
 })

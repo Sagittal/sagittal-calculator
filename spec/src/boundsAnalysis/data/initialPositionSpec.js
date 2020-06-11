@@ -1,4 +1,5 @@
 const {computeInitialPosition} = require("../../../../src/boundsAnalysis/data/initialPosition")
+const {MAXIMUM_POSITION} = require("../../../../src/boundsAnalysis/data/intervals")
 
 describe("computeInitialPosition", () => {
     it("returns the mean of the bounded commas at the introducing level", () => {
@@ -22,5 +23,17 @@ describe("computeInitialPosition", () => {
         const result = computeInitialPosition(bound, level)
 
         expect(result).toEqual((41.0588584054956 + 43.0125791934297) / 2)
+    })
+
+    it("gives the maximum position if the position is above the highest comma at that level", () => {
+        const bound = {
+            levels: ["MEDIUM", "EXTREME"],
+            position: 68,
+        }
+        const level = "MEDIUM"
+
+        const result = computeInitialPosition(bound, level)
+
+        expect(result).toEqual(MAXIMUM_POSITION)
     })
 })
