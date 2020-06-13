@@ -1,11 +1,12 @@
-const fs = require("fs")
 const {LEVELS_COMMAS} = require("../data/levelsCommas")
 const {LEVELS} = require("../data/levels")
 const {LEVEL_CENTERS} = require("./levelHeights")
-const {COMMA_OFFSET, OUTPUT, EXCEPT_INSANE_LEVEL, DOT_SIZE} = require("./constants")
+const {COMMA_OFFSET, EXCEPT_INSANE_LEVEL, DOT_SIZE} = require("./constants")
 const {computeX} = require("./x")
 
 const visualizeLevelCommas = () => {
+    const levelCommaLines = []
+
     Object.entries(LEVELS_COMMAS).slice(0, LEVELS.length - EXCEPT_INSANE_LEVEL).forEach(([level, levelsCommas]) => {
         const y = LEVEL_CENTERS[level]
         const dotY = y - COMMA_OFFSET
@@ -16,10 +17,12 @@ const visualizeLevelCommas = () => {
 
             const cx = computeX(position)
 
-            fs.appendFileSync(OUTPUT, `  <circle stroke="black" cx="${cx}" cy="${dotY}" r="${DOT_SIZE}" />\n`)
-            fs.appendFileSync(OUTPUT, `  <text text-anchor="middle" x="${cx}" y="${symbolY}" font-size="40px" font-family="Bravura">${unicode}</text>\n`)
+            levelCommaLines.push(`  <circle stroke="black" cx="${cx}" cy="${dotY}" r="${DOT_SIZE}" />\n`)
+            levelCommaLines.push(`  <text text-anchor="middle" x="${cx}" y="${symbolY}" font-size="40px" font-family="Bravura">${unicode}</text>\n`)
         })
     })
+
+    return levelCommaLines
 }
 
 module.exports = {
