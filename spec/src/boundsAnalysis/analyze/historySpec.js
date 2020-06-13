@@ -9,10 +9,37 @@ describe("analyzeHistory", () => {
     let bound
     let initialPosition
 
+    it("returns its history but with its event augmented with analysis properties, and calculates the final position of the history, and its distance from the initial position, and its overall distance the bound moved across all the events", () => {
+        position = actualBoundPosition + 0.5
+        history = [
+            {position, type: "EDA", level: "EXTREME"},
+            {position, type: "SIZE", level: "INSANE"},
+        ]
+        bound = {
+            position: actualBoundPosition,
+            levels: ["EXTREME", "INSANE"],
+        }
+        initialPosition = computeInitialPosition(bound)
+
+        const result = analyzeHistory(history, bound, initialPosition)
+
+        expect(result.events).toEqual([
+            {position, type: "EDA", rank: 0, exact: false, sleda: 0, level: "EXTREME"},
+            {position, type: "SIZE", rank: 2, exact: false, sleda: 0, level: "INSANE"},
+        ])
+        expect(result.position).toBe(position)
+        expect(result.rank).toBe(2)
+        expect(result.sleda).toBe(0)
+        expect(result.initialPositionTinaDifference).toBeCloseTo(3.681504379547852, ACCURACY_THRESHOLD)
+    })
+
     describe("when the history's position matches the actual bound position", () => {
-        it("returns the history's events with their rank, plus true for the possible property and a 0 tina error, along with a rank for the history overall, its position, and its distance from the initial position for this bound", () => {
+        it("returns the history's events with their rank, plus true for the possible property and a 0 tina error", () => {
             position = actualBoundPosition
-            history = [{type: "INITIAL"}, {position, type: "SIZE"}]
+            history = [
+                {position, type: "EDA", level: "EXTREME"},
+                {position, type: "SIZE", level: "INSANE"},
+            ]
             bound = {
                 position: actualBoundPosition,
                 levels: ["EXTREME", "INSANE"],
@@ -23,10 +50,6 @@ describe("analyzeHistory", () => {
 
             expect(result.possible).toBe(true)
             expect(result.tinaError).toBeCloseTo(0, ACCURACY_THRESHOLD)
-            expect(result.events).toEqual([{type: "INITIAL", rank: 0, exact: false}, {position, type: "SIZE", rank: 3, exact: true}])
-            expect(result.position).toBe(position)
-            expect(result.rank).toBe(3)
-            expect(result.initialPositionTinaDifference).toBeCloseTo(0.12342742615738889, ACCURACY_THRESHOLD)
         })
     })
 
@@ -34,7 +57,7 @@ describe("analyzeHistory", () => {
         it("works when the position is greater than the actual bound position by less than a tina", () => {
             const expectedTinaError = 2 / 5
             position = actualBoundPosition + TINA * expectedTinaError
-            history = [{type: "INITIAL"}, {position, type: "MEAN"}]
+            history = [{type: "EDA", position}, {position, type: "MEAN"}]
             bound = {
                 position: actualBoundPosition,
                 levels: ["EXTREME", "INSANE"],
@@ -45,16 +68,12 @@ describe("analyzeHistory", () => {
 
             expect(result.possible).toBe(false)
             expect(result.tinaError).toBeCloseTo(expectedTinaError, ACCURACY_THRESHOLD)
-            expect(result.events).toEqual([{type: "INITIAL", rank: 0, exact: false}, {position, type: "MEAN", rank: 2, exact: false}])
-            expect(result.position).toBe(position)
-            expect(result.rank).toBe(2)
-            expect(result.initialPositionTinaDifference).toBeCloseTo(0.5234274261573838, ACCURACY_THRESHOLD)
         })
 
         it("works when the position is greater than the actual bound position by more than a tina", () => {
             const expectedTinaError = 5 / 2
             position = actualBoundPosition + TINA * expectedTinaError
-            history = [{type: "INITIAL"}, {position, type: "EDA", level: "EXTREME"}]
+            history = [{type: "EDA", position}, {position, type: "EDA", level: "EXTREME"}]
             bound = {
                 position: actualBoundPosition,
                 levels: ["EXTREME", "INSANE"],
@@ -65,16 +84,12 @@ describe("analyzeHistory", () => {
 
             expect(result.possible).toBe(false)
             expect(result.tinaError).toBeCloseTo(expectedTinaError, ACCURACY_THRESHOLD)
-            expect(result.events).toEqual([{type: "INITIAL", rank: 0, exact: false}, {position, type: "EDA", level: "EXTREME", rank: 1, exact: false}])
-            expect(result.position).toBe(position)
-            expect(result.rank).toBe(1)
-            expect(result.initialPositionTinaDifference).toBeCloseTo(2.6234274261573884, ACCURACY_THRESHOLD)
         })
 
         it("works when the position is below the actual bound position by less than a tina", () => {
             const expectedTinaError = -2 / 5
             position = actualBoundPosition + TINA * expectedTinaError
-            history = [{type: "INITIAL"}, {position, type: "SIZE"}]
+            history = [{type: "EDA", position, level: "EXTREME"}, {position, type: "SIZE", level: "INSANE"}]
             bound = {
                 position: actualBoundPosition,
                 levels: ["EXTREME", "INSANE"],
@@ -85,16 +100,12 @@ describe("analyzeHistory", () => {
 
             expect(result.possible).toBe(false)
             expect(result.tinaError).toBeCloseTo(expectedTinaError, ACCURACY_THRESHOLD)
-            expect(result.events).toEqual([{type: "INITIAL", rank: 0, exact: false}, {position, type: "SIZE", rank: 3, exact: false}])
-            expect(result.position).toBe(position)
-            expect(result.rank).toBe(3)
-            expect(result.initialPositionTinaDifference).toBeCloseTo(-0.276572573842606, ACCURACY_THRESHOLD)
         })
 
         it("works when the position is below the actual bound position by more than a tina", () => {
             const expectedTinaError = -5 / 2
             position = actualBoundPosition + TINA * expectedTinaError
-            history = [{type: "INITIAL"}, {position, type: "MEAN"}]
+            history = [{type: "EDA", position}, {position, type: "MEAN"}]
             bound = {
                 position: actualBoundPosition,
                 levels: ["EXTREME", "INSANE"],
@@ -105,10 +116,6 @@ describe("analyzeHistory", () => {
 
             expect(result.possible).toBe(false)
             expect(result.tinaError).toBeCloseTo(expectedTinaError, ACCURACY_THRESHOLD)
-            expect(result.events).toEqual([{type: "INITIAL", rank: 0, exact: false}, {position, type: "MEAN", rank: 2, exact: false}])
-            expect(result.position).toBe(position)
-            expect(result.rank).toBe(2)
-            expect(result.initialPositionTinaDifference).toBeCloseTo(-2.3765725738426107, ACCURACY_THRESHOLD)
         })
     })
 })

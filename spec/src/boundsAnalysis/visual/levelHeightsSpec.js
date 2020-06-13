@@ -1,5 +1,5 @@
 const {computeLevelHeights} = require("../../../../src/boundsAnalysis/visual/levelHeights")
-const {ACCURACY_THRESHOLD} = require("../../../../src/boundsAnalysis/analyze/history")
+const {ACCURACY_THRESHOLD} = require("../../../../src/boundsAnalysis/utilities/constants")
 
 describe("computeLevelHeights", () => {
     it("gives the correct height for the tops of each level", () => {

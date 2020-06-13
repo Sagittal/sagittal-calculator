@@ -10,7 +10,7 @@ describe("computeStructuredHistories", () => {
             rank: 2,
             exact: false,
         }
-        const eventTwoGoesToEventThreeAndToImpossibleTwice = {
+        const eventTwoGoesToEventThree = {
             level: "VERY_HIGH",
             type: "EDA",
             name: "12.5/58",
@@ -34,14 +34,6 @@ describe("computeStructuredHistories", () => {
             rank: 1,
             exact: false,
         }
-        const eventImpossible = {
-            level: "VERY_HIGH",
-            type: "IMPOSSIBLE",
-            name: "not between 88.8 and 99.9",
-            position: 24.9,
-            rank: 8,
-            exact: false,
-        }
         const eventThreeButWithBetterRank = {
             level: "EXTREME",
             type: "MEAN",
@@ -53,7 +45,7 @@ describe("computeStructuredHistories", () => {
 
         const bestPossibleHistory = {
             events: [
-                eventTwoGoesToEventThreeAndToImpossibleTwice,
+                eventTwoGoesToEventThree,
                 eventThreeButWithBetterRank,
             ],
             rank: 1,
@@ -85,18 +77,7 @@ describe("computeStructuredHistories", () => {
             },
             {
                 events: [
-                    eventTwoGoesToEventThreeAndToImpossibleTwice,
-                    eventImpossible,
-                ],
-                rank: 8,
-                possible: false,
-                tinaError: 2.26723955922,
-                position: 24.9,
-            },
-            {
-                events: [
-                    eventTwoGoesToEventThreeAndToImpossibleTwice,
-                    eventImpossible,
+                    eventTwoGoesToEventThree,
                 ],
                 rank: 8,
                 possible: false,
@@ -125,10 +106,10 @@ describe("computeStructuredHistories", () => {
                     ],
                 },
                 {
-                    type: eventTwoGoesToEventThreeAndToImpossibleTwice.type,
-                    level: eventTwoGoesToEventThreeAndToImpossibleTwice.level,
-                    name: eventTwoGoesToEventThreeAndToImpossibleTwice.name,
-                    position: eventTwoGoesToEventThreeAndToImpossibleTwice.position,
+                    type: eventTwoGoesToEventThree.type,
+                    level: eventTwoGoesToEventThree.level,
+                    name: eventTwoGoesToEventThree.name,
+                    position: eventTwoGoesToEventThree.position,
                     isPossibleHistoryMember: true,
                     isBestPossibleHistoryMember: true,
                     exact: false,
@@ -136,20 +117,8 @@ describe("computeStructuredHistories", () => {
                     rankOfBestRankedMemberHistory: 1,
                     nextEvents: [
                         eventThree.name,
-                        eventImpossible.name,
+                        // eventImpossible.name,
                     ],
-                },
-                {
-                    type: eventImpossible.type,
-                    level: eventImpossible.level,
-                    name: eventImpossible.name,
-                    position: eventImpossible.position,
-                    isPossibleHistoryMember: false,
-                    isBestPossibleHistoryMember: false,
-                    exact: false,
-                    rankOfBestRankedEventInAnyMemberHistory: 6,
-                    rankOfBestRankedMemberHistory: 6,
-                    nextEvents: [],
                 },
             ],
             EXTREME: [

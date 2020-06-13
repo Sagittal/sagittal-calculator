@@ -1,15 +1,18 @@
-const {computeLevelRank} = require("./levelRank")
+const {RANKS} = require("../data/ranks")
 const {computeIsCloseTo} = require("../utilities/isCloseTo")
 
 const analyzeEvents = (history, actualBoundPosition) => {
     return history.map((event, index) => {
-        const exact = computeIsCloseTo(event.position, actualBoundPosition)
-        const rank = computeLevelRank(event, index, history)
+        const {position, type} = event
+        const exact = computeIsCloseTo(position, actualBoundPosition)
+        const rank = RANKS[type]
+        const sleda = Math.abs(index === 0 ? 0 : history[index - 1].position - event.position) // TODO: extract
 
         return {
             ...event,
             rank,
             exact,
+            sleda,
         }
     })
 }

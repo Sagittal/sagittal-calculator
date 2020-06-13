@@ -1,9 +1,9 @@
 const rankCounts = [
-    0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0,
 ]
 
 const rankBoundIndices = [
-    [], [], [], [], [], [], [],
+    [], [], [],
 ]
 
 const updateRankAnalysis = (bestRank, boundIndex) => {

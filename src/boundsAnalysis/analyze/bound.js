@@ -15,6 +15,15 @@ const analyzeBound = (histories, bound, boundIndex) => {
     const possibleHistoryCount = possibleHistories.length
     const bestPossibleHistory = computeBestPossibleHistory(possibleHistories)
     const bestRank = bestPossibleHistory.rank
+
+    // TODO: this is what to use when/if we decide to weigh sleda in against the score
+    // const bestPossibleHistories = computeBestPossibleHistories(possibleHistories)
+    // const bestRank = bestPossibleHistories.reduce(
+    //     (rank, bestPossibleHistory) => bestPossibleHistory.rank < rank ? bestPossibleHistory.rank : rank,
+    //     0
+    // )
+    // console.log(bestPossibleHistories.length, possibleHistories.length)
+
     const initialPositionTinaDifference = (bound.position - initialPosition) / TINA
 
     // TODO: deal with > half-step of level EDA issues

@@ -1,8 +1,6 @@
 const {LEVELS} = require("../data/levels")
 
-const ZERO_INDEX_OFFSET = 1
-
-const computeReversedLevelIndex = levelIndex => LEVELS.length - ZERO_INDEX_OFFSET - levelIndex
+const computeReversedLevelIndex = levelIndex => LEVELS.length - 1 - levelIndex
 
 module.exports = {
     computeReversedLevelIndex,

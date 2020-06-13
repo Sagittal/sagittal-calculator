@@ -8,6 +8,7 @@ const {visualizeLevelCommas} = require("./levelCommas")
 const {visualizeLevelBounds} = require("./levelBounds")
 const {visualizeLevelEdaMidpoints} = require("./levelEdaMidpoints")
 const {visualizeLevelCommaMeans} = require("./levelCommaMeans")
+const {visualizeSizeCategoryBounds} = require("./sizeCategoryBounds")
 const {OUTPUT} = require("./constants")
 
 const visualizeBounds = visualization => {
@@ -21,10 +22,15 @@ const visualizeBounds = visualization => {
 
     visualization.forEach(boundAnalysis => {
         visualizeEvents(boundAnalysis.bestPossibleHistory.events)
+        // TODO: this is what it could look like if we do balance sleda and score
+        // boundAnalysis.bestPossibleHistories && boundAnalysis.bestPossibleHistories.forEach(bestPossibleHistory => {
+        //     visualizeEvents(bestPossibleHistory.events)
+        // })
     })
 
-    visualizeLevelEdaMidpoints()
+    visualizeSizeCategoryBounds()
     visualizeLevelCommaMeans()
+    visualizeLevelEdaMidpoints()
 
     visualizeLevelCommas()
 

@@ -25,25 +25,6 @@ describe("computeBestPossibleHistory", () => {
         })
     })
 
-    it("throws an error if two histories have the same score", () => {
-        const histories = [
-            {
-                score: 3436643,
-                position: 12.909,
-            },
-            {
-                score: 2422436,
-                position: 13.235,
-            },
-            {
-                score: 2422436,
-                position: 13.47489,
-            },
-        ]
-
-        expect(() => computeBestPossibleHistory(histories)).toThrow()
-    })
-
     it("returns the best exact history even if its score is not the best", () => {
         const histories = [
             {
@@ -69,5 +50,31 @@ describe("computeBestPossibleHistory", () => {
             position: 12.909,
             exact: true,
         })
+    })
+
+    it("tie-breaks by sleda", () => {
+        const histories = [
+            {
+                score: 3436643,
+                sleda: 0.2,
+                position: 12.909,
+                exact: true,
+            },
+            {
+                score: 3436643,
+                sleda: 0.1,
+                position: 12.909,
+                exact: true,
+            },
+        ]
+
+        const result = computeBestPossibleHistory(histories)
+
+        expect(result).toEqual({
+            score: 3436643,
+            sleda: 0.1,
+            position: 12.909,
+            exact: true,
+        },)
     })
 })
