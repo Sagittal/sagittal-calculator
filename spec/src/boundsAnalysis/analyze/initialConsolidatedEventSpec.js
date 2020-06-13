@@ -1,6 +1,6 @@
-const {computeInitialStructuredEvent} = require("../../../../src/boundsAnalysis/analyze/initialStructuredEvent")
+const {computeInitialConsolidatedEvent} = require("../../../../src/boundsAnalysis/analyze/initialConsolidatedEvent")
 
-describe("computeInitialStructuredEvent", () => {
+describe("computeInitialConsolidatedEvent", () => {
     let result
     const analyzedEvent = {
         type: "EDA",
@@ -10,7 +10,7 @@ describe("computeInitialStructuredEvent", () => {
     }
 
     beforeEach(() => {
-        result = computeInitialStructuredEvent(analyzedEvent)
+        result = computeInitialConsolidatedEvent(analyzedEvent)
     })
 
     it("initializes the rank related fields to the worst rank (so that there's nowhere to go but up when updating them with data from the analyzed histories", () => {
@@ -18,7 +18,7 @@ describe("computeInitialStructuredEvent", () => {
         expect(result.rankOfBestRankedMemberHistory).toBe(2)
     })
 
-    it("strips off the rank that was created in the analyze step, replacing it with the rank measurements that are appropriate for the structured history", () => {
+    it("strips off the rank that was created in the analyze step, replacing it with the rank measurements that are appropriate for the consolidated history", () => {
         expect(result.rank).toBeUndefined()
     })
 
