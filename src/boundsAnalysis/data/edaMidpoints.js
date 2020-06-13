@@ -1,5 +1,6 @@
 const {APOTOME, MAXIMUM_POSITION} = require("./intervals")
-const {LEVEL_EDAS, LEVELS} = require("./levels")
+const {LEVELS} = require("./levels")
+const {LEVEL_EDAS} = require("./levelEdas")
 
 const computeEdaMidpoints = level => {
     const eda = LEVEL_EDAS[LEVELS.indexOf(level)]

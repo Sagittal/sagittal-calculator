@@ -1,4 +1,4 @@
-const {LEVELS_COMMAS} = require("../data/levels")
+const {LEVELS_COMMAS} = require("../data/levelsCommas")
 
 const computeLevelCommaMeans = level => {
     const levelCommas = LEVELS_COMMAS[level]

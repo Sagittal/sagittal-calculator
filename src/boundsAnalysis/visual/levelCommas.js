@@ -1,5 +1,5 @@
 const fs = require("fs")
-const {LEVELS_COMMAS} = require("../data/levels")
+const {LEVELS_COMMAS} = require("../data/levelsCommas")
 const {LEVELS} = require("../data/levels")
 const {LEVEL_CENTERS} = require("./levelHeights")
 const {COMMA_OFFSET, OUTPUT, EXCEPT_INSANE_LEVEL, DOT_SIZE} = require("./constants")

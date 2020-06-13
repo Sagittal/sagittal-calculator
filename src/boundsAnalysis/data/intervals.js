@@ -1,4 +1,5 @@
-const {LEVELS, LEVEL_EDAS} = require("./levels")
+const {LEVELS} = require("./levels")
+const {LEVEL_EDAS} = require("./levelEdas")
 
 const APOTOME = Math.log2(2187 / 2048) * 1200    // 113.68500605771192
 const TINA = 1 / 809 * APOTOME                      // 0.14052534741373537
