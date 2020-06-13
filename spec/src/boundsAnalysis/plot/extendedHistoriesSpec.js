@@ -6,7 +6,7 @@ describe("computeExtendedHistories", () => {
     let passedInHistoryEvent = {
         level: "HIGH",
         type: "EDA",
-        name: "16.5/47",
+        name: "16.5°47",
         position: 45.45,
     }
     beforeEach(() => {
@@ -29,7 +29,7 @@ describe("computeExtendedHistories", () => {
                 {
                     level: "VERY_HIGH",
                     type: "EDA",
-                    name: "23.5/58",
+                    name: "23.5°58",
                     position: 46.062028316486725,
                 },
             ],

@@ -24,7 +24,7 @@ describe("computeEvents", () => {
                     {
                         level: "VERY_HIGH",
                         type: "EDA",
-                        name: "2.5/58",
+                        name: "2.5°58",
                         position: 4.900215778349652,
                     },
                 ]))
@@ -41,7 +41,7 @@ describe("computeEvents", () => {
                     {
                         level: "VERY_HIGH",
                         type: "EDA",
-                        name: "2.5/58",
+                        name: "2.5°58",
                         position: 4.900215778349652,
                     },
                 ]))
@@ -58,13 +58,13 @@ describe("computeEvents", () => {
                     {
                         level: "HIGH",
                         type: "EDA",
-                        name: "11.5/47",
+                        name: "11.5°47",
                         position: 27.816544035397598,
                     },
                     {
                         level: "HIGH",
                         type: "EDA",
-                        name: "12.5/47",
+                        name: "12.5°47",
                         position: 30.235373951519126,
                     },
                 ]))

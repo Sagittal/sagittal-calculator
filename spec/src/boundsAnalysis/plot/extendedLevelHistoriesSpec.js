@@ -5,7 +5,7 @@ describe("computeExtendedLevelHistories", () => {
         const firstHistoryPriorEvent = {
             level: "MEDIUM",
             type: "EDA",
-            name: "1.5/21",
+            name: "1.5°21",
             position: 8.120357575550852,
         }
         const secondHistoryPriorEvent = {
@@ -29,11 +29,11 @@ describe("computeExtendedLevelHistories", () => {
         expect(result).toEqual([
             [
                 firstHistoryPriorEvent,
-                {level: "HIGH", type: "EDA", name: "2.5/47", position: 6.047074790303825},
+                {level: "HIGH", type: "EDA", name: "2.5°47", position: 6.047074790303825},
             ],
             [
                 firstHistoryPriorEvent,
-                {level: "HIGH", type: "EDA", name: "3.5/47", position: 8.465904706425356},
+                {level: "HIGH", type: "EDA", name: "3.5°47", position: 8.465904706425356},
             ],
             [
                 firstHistoryPriorEvent,
@@ -41,11 +41,11 @@ describe("computeExtendedLevelHistories", () => {
             ],
             [
                 secondHistoryPriorEvent,
-                {level: "HIGH", type: "EDA", name: "2.5/47", position: 6.047074790303825},
+                {level: "HIGH", type: "EDA", name: "2.5°47", position: 6.047074790303825},
             ],
             [
                 secondHistoryPriorEvent,
-                {level: "HIGH", type: "EDA", name: "3.5/47", position: 8.465904706425356},
+                {level: "HIGH", type: "EDA", name: "3.5°47", position: 8.465904706425356},
             ],
             [
                 secondHistoryPriorEvent,

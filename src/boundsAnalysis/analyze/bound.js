@@ -1,4 +1,4 @@
-const {computeStructuredHistories} = require("./structuredHistories")
+const {computeConsolidatedHistories} = require("./consolidatedHistories")
 const {analyzeHistory} = require("./history")
 const {computeBestPossibleHistory} = require("./bestPossibleHistory")
 const {TINA} = require("../data/intervals")
@@ -38,7 +38,7 @@ const analyzeBound = (histories, bound, boundIndex) => {
     rankAnalysis.updateRankAnalysis(bestRank, boundIndex)
     levelAnalysis.updateLevelAnalysis(bestPossibleHistory)
 
-    const structuredHistories = computeStructuredHistories(analyzedHistories, bestPossibleHistory)
+    const consolidatedHistories = computeConsolidatedHistories(analyzedHistories, bestPossibleHistory)
 
     return {
         initialPosition,
@@ -46,7 +46,7 @@ const analyzeBound = (histories, bound, boundIndex) => {
         bestPossibleHistory,
         bestRank,
         initialPositionTinaDifference,
-        structuredHistories,
+        consolidatedHistories,
     }
 }
 

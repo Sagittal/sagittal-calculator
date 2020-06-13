@@ -1,7 +1,7 @@
-const {computeStructuredHistories} = require("../../../../src/boundsAnalysis/analyze/structuredHistories")
+const {computeConsolidatedHistories} = require("../../../../src/boundsAnalysis/analyze/consolidatedHistories")
 
-describe("computeStructuredHistories", () => {
-    it("structures histories to consolidate redundancies per level and show which events can lead in which events in the next level, and which ones are members of histories that are possible, and what the best rank is in any event that gets consolidated into this structured display, and what the best rank of any history this event is a member of is, and membership in the best possible history", () => {
+describe("computeConsolidatedHistories", () => {
+    it("consolidates histories to collapse redundancies per level and show which events can lead into which events in the next level, and which ones are members of histories that are possible, and what the best rank is in any event that gets consolidated into this consolidated display, and what the best rank of any history this event is a member of is, and membership in the best possible history", () => {
         const eventOneGoesToEventThreeAndFour = {
             level: "VERY_HIGH",
             type: "MEAN",
@@ -13,7 +13,7 @@ describe("computeStructuredHistories", () => {
         const eventTwoGoesToEventThree = {
             level: "VERY_HIGH",
             type: "EDA",
-            name: "12.5/58",
+            name: "12.5°58",
             position: 24.33333,
             rank: 1,
             exact: false,
@@ -29,7 +29,7 @@ describe("computeStructuredHistories", () => {
         const eventFour = {
             level: "EXTREME",
             type: "EDA",
-            name: "50.5/233",
+            name: "50.5°233",
             position: 24.151964806252103,
             rank: 1,
             exact: false,
@@ -86,7 +86,7 @@ describe("computeStructuredHistories", () => {
             },
         ]
 
-        const result = computeStructuredHistories(analyzedHistories, bestPossibleHistory)
+        const result = computeConsolidatedHistories(analyzedHistories, bestPossibleHistory)
 
         expect(result).toEqual({
             VERY_HIGH: [

@@ -19,7 +19,7 @@ describe("analyzeBound", () => {
         {
             level: "INSANE",
             type: "EDA",
-            name: "164.5/809",
+            name: "164.5°809",
             position: 23.116419649559468,
             // this one gets rank: 4
         },
@@ -34,13 +34,13 @@ describe("analyzeBound", () => {
         {
             level: "EXTREME",
             type: "EDA",
-            name: "47.5/233",
+            name: "47.5°233",
             position: 23.15,
         },
         {
             level: "INSANE",
             type: "EDA",
-            name: "164.5/809",
+            name: "164.5°809",
             position: 23.116419649559468,
             // this one gets rank 1
         },
@@ -66,7 +66,7 @@ describe("analyzeBound", () => {
         {
             level: "EXTREME",
             type: "EDA",
-            name: "47.5/233",
+            name: "47.5°233",
             position: 23.15,
             rank: 0,
             sleda: 0.05000000000000071,
@@ -75,7 +75,7 @@ describe("analyzeBound", () => {
         {
             level: "INSANE",
             type: "EDA",
-            name: "164.5/809",
+            name: "164.5°809",
             position: 23.116419649559468,
             rank: 0,
             sleda: 0.03358035044053054,
@@ -94,7 +94,7 @@ describe("analyzeBound", () => {
         initialPositionTinaDifference: -0.5613173198970488,
     }
 
-    it("returns an analysis of the bound using its histories, including a structured presentation of said histories, and its best possible history, and the difference between the bound and its initial position", () => {
+    it("returns an analysis of the bound using its histories, including a consolidated presentation of said histories, and its best possible history, and the difference between the bound and its initial position", () => {
         const boundIndex = 47
 
         const result = analyzeBound(histories, bound, boundIndex)
@@ -105,7 +105,7 @@ describe("analyzeBound", () => {
             initialPositionTinaDifference: -0.5613173198954056,
             possibleHistoryCount: 2,
             bestPossibleHistory: expectedBestPossibleHistory,
-            structuredHistories: {
+            consolidatedHistories: {
                 VERY_HIGH: [
                     {
                         level: "VERY_HIGH",
@@ -119,7 +119,7 @@ describe("analyzeBound", () => {
                         rankOfBestRankedMemberHistory: 1,
                         nextEvents: [
                             ".)/| '/|",
-                            "47.5/233",
+                            "47.5°233",
                         ],
                     },
                 ],
@@ -135,13 +135,13 @@ describe("analyzeBound", () => {
                         rankOfBestRankedEventInAnyMemberHistory: 1,
                         rankOfBestRankedMemberHistory: 1,
                         nextEvents: [
-                            "164.5/809",
+                            "164.5°809",
                         ],
                     },
                     {
                         level: "EXTREME",
                         type: "EDA",
-                        name: "47.5/233",
+                        name: "47.5°233",
                         position: 23.15,
                         isPossibleHistoryMember: true,
                         isBestPossibleHistoryMember: true,
@@ -149,7 +149,7 @@ describe("analyzeBound", () => {
                         rankOfBestRankedEventInAnyMemberHistory: 0,
                         rankOfBestRankedMemberHistory: 1,
                         nextEvents: [
-                            "164.5/809",
+                            "164.5°809",
                         ],
                     },
                 ],
@@ -157,7 +157,7 @@ describe("analyzeBound", () => {
                     {
                         level: "INSANE",
                         type: "EDA",
-                        name: "164.5/809",
+                        name: "164.5°809",
                         position: 23.116419649559468,
                         isPossibleHistoryMember: true,
                         isBestPossibleHistoryMember: true,

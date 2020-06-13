@@ -1,6 +1,5 @@
-const ensureOneBestPossibleEventPerLevel = structuredHistory => {
-    Object.entries(structuredHistory).forEach(([level, events]) => {
-        // TODO: is it really "structured"? or more like consolidated?
+const ensureOneBestPossibleEventPerLevel = consolidatedHistory => {
+    Object.entries(consolidatedHistory).forEach(([level, events]) => {
         const bestPossibleHistoryEvents = events.filter(event => event.isBestPossibleHistoryMember)
 
         if (bestPossibleHistoryEvents.length > 1) {

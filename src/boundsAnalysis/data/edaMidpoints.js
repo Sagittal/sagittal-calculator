@@ -10,7 +10,7 @@ const computeEdaMidpoints = level => {
 
         if (position > MAXIMUM_POSITION) return undefined
 
-        const name = `${midpoint}/${eda}`
+        const name = `${midpoint}°${eda}`
 
         return {name, position}
     }).filter(edaMidpoint => !!edaMidpoint)
