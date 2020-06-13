@@ -4,7 +4,7 @@ describe("computeInitialConsolidatedEvent", () => {
     let result
     const analyzedEvent = {
         type: "EDA",
-        name: "12.5/58",
+        name: "12.5°58",
         rank: 4,
         position: 43.343455,
     }

@@ -1,6 +1,6 @@
 const {RANKS} = require("../data/ranks")
 
-const computeInitialStructuredEvent = analyzedEvent => ({
+const computeInitialConsolidatedEvent = analyzedEvent => ({
     level: analyzedEvent.level,
     type: analyzedEvent.type,
     name: analyzedEvent.name,
@@ -14,5 +14,5 @@ const computeInitialStructuredEvent = analyzedEvent => ({
 })
 
 module.exports = {
-    computeInitialStructuredEvent,
+    computeInitialConsolidatedEvent,
 }

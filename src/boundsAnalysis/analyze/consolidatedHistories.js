@@ -1,38 +1,38 @@
-const {computeInitialStructuredEvent} = require("./initialStructuredEvent")
-const {updateStructuredEvent} = require("./updateStructuredEvent")
+const {computeInitialConsolidatedEvent} = require("./initialConsolidatedEvent")
+const {updateConsolidatedEvent} = require("./updateConsolidatedEvent")
 const {ensureOneBestPossibleEventPerLevel} = require("./ensureOneBestPossibleEventPerLevel")
 
-const computeStructuredHistories = (analyzedHistories, bestPossibleHistory) => {
-    const structuredHistories = {}
+const computeConsolidatedHistories = (analyzedHistories, bestPossibleHistory) => {
+    const consolidatedHistories = {}
 
     analyzedHistories.forEach(analyzedHistory => {
         analyzedHistory.events.forEach((analyzedEvent, index) => {
-            if (!structuredHistories[analyzedEvent.level]) {
-                structuredHistories[analyzedEvent.level] = []
+            if (!consolidatedHistories[analyzedEvent.level]) {
+                consolidatedHistories[analyzedEvent.level] = []
             }
 
             const nextAnalyzedEvent = analyzedHistory.events[index + 1]
 
-            const matchingStructuredEvent = structuredHistories[analyzedEvent.level]
+            const matchingConsolidatedEvent = consolidatedHistories[analyzedEvent.level]
                 .find(existingEvent => existingEvent.name === analyzedEvent.name)
 
-            if (matchingStructuredEvent) {
-                updateStructuredEvent(matchingStructuredEvent, {nextAnalyzedEvent, analyzedHistory, analyzedEvent, bestPossibleHistory})
+            if (matchingConsolidatedEvent) {
+                updateConsolidatedEvent(matchingConsolidatedEvent, {nextAnalyzedEvent, analyzedHistory, analyzedEvent, bestPossibleHistory})
             } else {
-                const newStructuredEvent = computeInitialStructuredEvent(analyzedEvent)
+                const newConsolidatedEvent = computeInitialConsolidatedEvent(analyzedEvent)
 
-                updateStructuredEvent(newStructuredEvent, {nextAnalyzedEvent, analyzedHistory, analyzedEvent, bestPossibleHistory})
+                updateConsolidatedEvent(newConsolidatedEvent, {nextAnalyzedEvent, analyzedHistory, analyzedEvent, bestPossibleHistory})
 
-                structuredHistories[analyzedEvent.level].push(newStructuredEvent)
+                consolidatedHistories[analyzedEvent.level].push(newConsolidatedEvent)
             }
         })
     })
 
-    ensureOneBestPossibleEventPerLevel(structuredHistories)
+    ensureOneBestPossibleEventPerLevel(consolidatedHistories)
 
-    return structuredHistories
+    return consolidatedHistories
 }
 
 module.exports = {
-    computeStructuredHistories,
+    computeConsolidatedHistories,
 }

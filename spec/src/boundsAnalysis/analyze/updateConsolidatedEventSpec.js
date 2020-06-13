@@ -1,6 +1,6 @@
-const {updateStructuredEvent} = require("../../../../src/boundsAnalysis/analyze/updateStructuredEvent")
+const {updateConsolidatedEvent} = require("../../../../src/boundsAnalysis/analyze/updateConsolidatedEvent")
 
-describe("updateStructuredEvent", () => {
+describe("updateConsolidatedEvent", () => {
     let analyzedHistory
     let analyzedEvent
     let nextAnalyzedEvent
@@ -15,44 +15,44 @@ describe("updateStructuredEvent", () => {
 
     describe("next events", () => {
         it("when there is no next analyzed event (i.e. this is the last event of the analyzed history) the next events stays the same", () => {
-            const consolidatedEvent = {nextEvents: ["2.5/58"]}
+            const consolidatedEvent = {nextEvents: ["2.5°58"]}
 
-            updateStructuredEvent(consolidatedEvent, {
+            updateConsolidatedEvent(consolidatedEvent, {
                 analyzedHistory,
                 analyzedEvent,
                 nextAnalyzedEvent,
                 bestPossibleHistory,
             })
 
-            expect(consolidatedEvent.nextEvents).toEqual(["2.5/58"])
+            expect(consolidatedEvent.nextEvents).toEqual(["2.5°58"])
         })
 
         it("when there is a next analyzed event, it adds its name to the next events", () => {
-            const consolidatedEvent = {nextEvents: ["2.5/58"]}
+            const consolidatedEvent = {nextEvents: ["2.5°58"]}
             nextAnalyzedEvent = {name: ".)/| '/|"}
 
-            updateStructuredEvent(consolidatedEvent, {
+            updateConsolidatedEvent(consolidatedEvent, {
                 analyzedHistory,
                 analyzedEvent,
                 nextAnalyzedEvent,
                 bestPossibleHistory,
             })
 
-            expect(consolidatedEvent.nextEvents).toEqual(jasmine.arrayWithExactContents(["2.5/58", ".)/| '/|"]))
+            expect(consolidatedEvent.nextEvents).toEqual(jasmine.arrayWithExactContents(["2.5°58", ".)/| '/|"]))
         })
 
         it("when there is a next analyzed event, but an event with that name has already been updated into this consolidated event, the next events stays the same", () => {
-            const consolidatedEvent = {nextEvents: ["2.5/58"]}
-            nextAnalyzedEvent = {name: "2.5/58"}
+            const consolidatedEvent = {nextEvents: ["2.5°58"]}
+            nextAnalyzedEvent = {name: "2.5°58"}
 
-            updateStructuredEvent(consolidatedEvent, {
+            updateConsolidatedEvent(consolidatedEvent, {
                 analyzedHistory,
                 analyzedEvent,
                 nextAnalyzedEvent,
                 bestPossibleHistory,
             })
 
-            expect(consolidatedEvent.nextEvents).toEqual(jasmine.arrayWithExactContents(["2.5/58"]))
+            expect(consolidatedEvent.nextEvents).toEqual(jasmine.arrayWithExactContents(["2.5°58"]))
         })
     })
 
@@ -61,7 +61,7 @@ describe("updateStructuredEvent", () => {
             const consolidatedEvent = {isPossibleHistoryMember: true}
             analyzedHistory = {possible: true}
 
-            updateStructuredEvent(consolidatedEvent, {
+            updateConsolidatedEvent(consolidatedEvent, {
                 analyzedHistory,
                 analyzedEvent,
                 nextAnalyzedEvent,
@@ -75,7 +75,7 @@ describe("updateStructuredEvent", () => {
             const consolidatedEvent = {isPossibleHistoryMember: true}
             analyzedHistory = {possible: false}
 
-            updateStructuredEvent(consolidatedEvent, {
+            updateConsolidatedEvent(consolidatedEvent, {
                 analyzedHistory,
                 analyzedEvent,
                 nextAnalyzedEvent,
@@ -89,7 +89,7 @@ describe("updateStructuredEvent", () => {
             const consolidatedEvent = {isPossibleHistoryMember: false}
             analyzedHistory = {possible: true}
 
-            updateStructuredEvent(consolidatedEvent, {
+            updateConsolidatedEvent(consolidatedEvent, {
                 analyzedHistory,
                 analyzedEvent,
                 nextAnalyzedEvent,
@@ -103,7 +103,7 @@ describe("updateStructuredEvent", () => {
             const consolidatedEvent = {isPossibleHistoryMember: false}
             analyzedHistory = {possible: false}
 
-            updateStructuredEvent(consolidatedEvent, {
+            updateConsolidatedEvent(consolidatedEvent, {
                 analyzedHistory,
                 analyzedEvent,
                 nextAnalyzedEvent,
@@ -119,7 +119,7 @@ describe("updateStructuredEvent", () => {
             const consolidatedEvent = {isBestPossibleHistoryMember: true, name: "eventName", level: "LEVEL"}
             bestPossibleHistory = {events: [{name: "eventName", level: "LEVEL"}]}
 
-            updateStructuredEvent(consolidatedEvent, {
+            updateConsolidatedEvent(consolidatedEvent, {
                 analyzedHistory,
                 analyzedEvent,
                 nextAnalyzedEvent,
@@ -133,7 +133,7 @@ describe("updateStructuredEvent", () => {
             const consolidatedEvent = {isBestPossibleHistoryMember: true, name: "eventName"}
             bestPossibleHistory = {events: [{name: "eventName", level: "OTHER_LEVEL"}]}
 
-            updateStructuredEvent(consolidatedEvent, {
+            updateConsolidatedEvent(consolidatedEvent, {
                 analyzedHistory,
                 analyzedEvent,
                 nextAnalyzedEvent,
@@ -147,7 +147,7 @@ describe("updateStructuredEvent", () => {
             const consolidatedEvent = {isBestPossibleHistoryMember: false, name: "eventName", level: "LEVEL"}
             bestPossibleHistory = {events: [{name: "eventName", level: "LEVEL"}]}
 
-            updateStructuredEvent(consolidatedEvent, {
+            updateConsolidatedEvent(consolidatedEvent, {
                 analyzedHistory,
                 analyzedEvent,
                 nextAnalyzedEvent,
@@ -161,7 +161,7 @@ describe("updateStructuredEvent", () => {
             const consolidatedEvent = {isBestPossibleHistoryMember: false, name: "eventName", level: "LEVEL"}
             bestPossibleHistory = {events: [{name: "eventName", level: "OTHER_LEVEL"}]}
 
-            updateStructuredEvent(consolidatedEvent, {
+            updateConsolidatedEvent(consolidatedEvent, {
                 analyzedHistory,
                 analyzedEvent,
                 nextAnalyzedEvent,
@@ -177,7 +177,7 @@ describe("updateStructuredEvent", () => {
             const consolidatedEvent = {rankOfBestRankedMemberHistory: 3}
             analyzedHistory = {rank: 2}
 
-            updateStructuredEvent(consolidatedEvent, {
+            updateConsolidatedEvent(consolidatedEvent, {
                 analyzedHistory,
                 analyzedEvent,
                 nextAnalyzedEvent,
@@ -191,7 +191,7 @@ describe("updateStructuredEvent", () => {
             const consolidatedEvent = {rankOfBestRankedMemberHistory: 1}
             analyzedHistory = {rank: 2}
 
-            updateStructuredEvent(consolidatedEvent, {
+            updateConsolidatedEvent(consolidatedEvent, {
                 analyzedHistory,
                 analyzedEvent,
                 nextAnalyzedEvent,
@@ -207,7 +207,7 @@ describe("updateStructuredEvent", () => {
             const consolidatedEvent = {rankOfBestRankedEventInAnyMemberHistory: 3}
             analyzedEvent = {rank: 2}
 
-            updateStructuredEvent(consolidatedEvent, {
+            updateConsolidatedEvent(consolidatedEvent, {
                 analyzedHistory,
                 analyzedEvent,
                 nextAnalyzedEvent,
@@ -221,7 +221,7 @@ describe("updateStructuredEvent", () => {
             const consolidatedEvent = {rankOfBestRankedEventInAnyMemberHistory: 1}
             analyzedEvent = {rank: 2}
 
-            updateStructuredEvent(consolidatedEvent, {
+            updateConsolidatedEvent(consolidatedEvent, {
                 analyzedHistory,
                 analyzedEvent,
                 nextAnalyzedEvent,
