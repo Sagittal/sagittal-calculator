@@ -5,5 +5,5 @@ const unicodeFromAscii = symbolAscii => {
 }
 
 module.exports = {
-    unicodeFromAscii, // TODO: test
+    unicodeFromAscii,
 }
