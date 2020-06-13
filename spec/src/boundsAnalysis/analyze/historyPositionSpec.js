@@ -1,4 +1,4 @@
-const {computeHistoryPosition} = require("../../../../src/boundsAnalysis/utilities/historyPosition")
+const {computeHistoryPosition} = require("../../../../src/boundsAnalysis/analyze/historyPosition")
 
 describe("computeHistoryPosition", () => {
     it("returns the position of the history's final event", () => {

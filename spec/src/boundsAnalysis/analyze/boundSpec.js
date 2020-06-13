@@ -5,12 +5,6 @@ const levelAnalysis = require("../../../../src/boundsAnalysis/analyze/levels")
 describe("analyzeBound", () => {
     const notBestHistory = [
         {
-            level: "INITIAL",
-            type: "INITIAL",
-            name: "INITIAL",
-            position: 23.2,
-        },
-        {
             level: "VERY_HIGH",
             type: "MEAN",
             name: ".)/| '/|",
@@ -31,12 +25,6 @@ describe("analyzeBound", () => {
         },
     ]
     const bestHistory = [
-        {
-            level: "INITIAL",
-            type: "INITIAL",
-            name: "INITIAL",
-            position: 23.2,
-        },
         {
             level: "VERY_HIGH",
             type: "MEAN",
@@ -67,19 +55,12 @@ describe("analyzeBound", () => {
     }
     const expectedBestHistoryEvents = [
         {
-            level: "INITIAL",
-            type: "INITIAL",
-            name: "INITIAL",
-            position: 23.2,
-            rank: 0,
-            exact: false,
-        },
-        {
             level: "VERY_HIGH",
             type: "MEAN",
             name: ".)/| '/|",
             position: 23.2,
-            rank: 2,
+            rank: 1,
+            sleda: 0,
             exact: false,
         },
         {
@@ -87,7 +68,8 @@ describe("analyzeBound", () => {
             type: "EDA",
             name: "47.5/233",
             position: 23.15,
-            rank: 1,
+            rank: 0,
+            sleda: 0.05000000000000071,
             exact: false,
         },
         {
@@ -95,17 +77,19 @@ describe("analyzeBound", () => {
             type: "EDA",
             name: "164.5/809",
             position: 23.116419649559468,
-            rank: 1,
+            rank: 0,
+            sleda: 0.03358035044053054,
             exact: true,
         },
     ]
     const expectedBestPossibleHistory = {
         events: expectedBestHistoryEvents,
         position: 23.116419649559468,
-        rank: 2,
-        score: 132,
+        rank: 1,
+        score: 131,
         possible: true,
         exact: false,
+        sleda: 0.08358035044053125,
         tinaError: 0,
         initialPositionTinaDifference: -0.5613173198970488,
     }
@@ -116,28 +100,12 @@ describe("analyzeBound", () => {
         const result = analyzeBound(histories, bound, boundIndex)
 
         expect(result).toEqual({
-            bestRank: 2,
+            bestRank: 1,
             initialPosition: 23.195298960947348,
             initialPositionTinaDifference: -0.5613173198954056,
             possibleHistoryCount: 2,
             bestPossibleHistory: expectedBestPossibleHistory,
             structuredHistories: {
-                INITIAL: [
-                    {
-                        level: "INITIAL",
-                        type: "INITIAL",
-                        name: "INITIAL",
-                        position: 23.2,
-                        isPossibleHistoryMember: true,
-                        isBestPossibleHistoryMember: true,
-                        exact: false,
-                        rankOfBestRankedEventInAnyMemberHistory: 0,
-                        rankOfBestRankedMemberHistory: 2,
-                        nextEvents: [
-                            ".)/| '/|",
-                        ],
-                    },
-                ],
                 VERY_HIGH: [
                     {
                         level: "VERY_HIGH",
@@ -147,8 +115,8 @@ describe("analyzeBound", () => {
                         isPossibleHistoryMember: true,
                         isBestPossibleHistoryMember: true,
                         exact: false,
-                        rankOfBestRankedEventInAnyMemberHistory: 2,
-                        rankOfBestRankedMemberHistory: 2,
+                        rankOfBestRankedEventInAnyMemberHistory: 1,
+                        rankOfBestRankedMemberHistory: 1,
                         nextEvents: [
                             ".)/| '/|",
                             "47.5/233",
@@ -164,8 +132,8 @@ describe("analyzeBound", () => {
                         isPossibleHistoryMember: true,
                         isBestPossibleHistoryMember: false,
                         exact: false,
-                        rankOfBestRankedEventInAnyMemberHistory: 2,
-                        rankOfBestRankedMemberHistory: 4,
+                        rankOfBestRankedEventInAnyMemberHistory: 1,
+                        rankOfBestRankedMemberHistory: 1,
                         nextEvents: [
                             "164.5/809",
                         ],
@@ -178,8 +146,8 @@ describe("analyzeBound", () => {
                         isPossibleHistoryMember: true,
                         isBestPossibleHistoryMember: true,
                         exact: false,
-                        rankOfBestRankedEventInAnyMemberHistory: 1,
-                        rankOfBestRankedMemberHistory: 2,
+                        rankOfBestRankedEventInAnyMemberHistory: 0,
+                        rankOfBestRankedMemberHistory: 1,
                         nextEvents: [
                             "164.5/809",
                         ],
@@ -194,8 +162,8 @@ describe("analyzeBound", () => {
                         isPossibleHistoryMember: true,
                         isBestPossibleHistoryMember: true,
                         exact: true,
-                        rankOfBestRankedEventInAnyMemberHistory: 1,
-                        rankOfBestRankedMemberHistory: 2,
+                        rankOfBestRankedEventInAnyMemberHistory: 0,
+                        rankOfBestRankedMemberHistory: 1,
                         nextEvents: [],
                     },
                 ],
@@ -210,7 +178,7 @@ describe("analyzeBound", () => {
 
         analyzeBound(histories, bound, boundIndex)
 
-        const expectedBestHistoryRank = 2
+        const expectedBestHistoryRank = 1
         expect(rankAnalysis.updateRankAnalysis).toHaveBeenCalledWith(expectedBestHistoryRank, boundIndex)
     })
 

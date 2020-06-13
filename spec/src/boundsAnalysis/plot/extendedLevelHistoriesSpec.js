@@ -40,15 +40,6 @@ describe("computeExtendedLevelHistories", () => {
                 {level: "HIGH", type: "MEAN", name: "|( ~|", position: 7.243699380344975},
             ],
             [
-                firstHistoryPriorEvent,
-                {
-                    level: "HIGH",
-                    type: "OVERRIDE",
-                    name: "guaranteed between '|( and ~| at the VERY_HIGH level, to re-initialize if necessary",
-                    position: 8.22055977431223,
-                },
-            ],
-            [
                 secondHistoryPriorEvent,
                 {level: "HIGH", type: "EDA", name: "2.5/47", position: 6.047074790303825},
             ],
@@ -59,15 +50,6 @@ describe("computeExtendedLevelHistories", () => {
             [
                 secondHistoryPriorEvent,
                 {level: "HIGH", type: "MEAN", name: "|( ~|", position: 7.243699380344975},
-            ],
-            [
-                secondHistoryPriorEvent,
-                {
-                    level: "HIGH",
-                    type: "OVERRIDE",
-                    name: "guaranteed between '|( and ~| at the VERY_HIGH level, to re-initialize if necessary",
-                    position: 8.22055977431223,
-                },
             ],
         ])
     })

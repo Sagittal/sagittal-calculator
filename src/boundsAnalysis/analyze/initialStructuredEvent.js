@@ -9,8 +9,8 @@ const computeInitialStructuredEvent = analyzedEvent => ({
     isPossibleHistoryMember: false,
     isBestPossibleHistoryMember: false,
     nextEvents: [],
-    rankOfBestRankedMemberHistory: RANKS["IMPOSSIBLE"],
-    rankOfBestRankedEventInAnyMemberHistory: RANKS["IMPOSSIBLE"],
+    rankOfBestRankedMemberHistory: Object.keys(RANKS).length - 1,
+    rankOfBestRankedEventInAnyMemberHistory: Object.keys(RANKS).length - 1,
 })
 
 module.exports = {

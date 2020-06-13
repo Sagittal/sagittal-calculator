@@ -1,11 +1,7 @@
 const RANKS = {
-    INITIAL: 0,
-    EDA: 1,
-    MEAN: 2,
-    SIZE: 3,
-    NOT_NEAREST_EDA: 4,
-    OVERRIDE: 5,
-    IMPOSSIBLE: 6,
+    EDA: 0,
+    MEAN: 1,
+    SIZE: 2,
 }
 
 module.exports = {

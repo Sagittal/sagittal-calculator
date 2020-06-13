@@ -1,12 +1,9 @@
 const {computeExtendedLevelHistories} = require("./extendedLevelHistories")
-const {computeInitialHistory} = require("./initialHistory")
 
 const computeHistories = bound => {
     const {levels} = bound
 
-    const initialHistory = computeInitialHistory(bound)
-
-    let histories = [initialHistory]
+    let histories = [[]]
     levels.forEach(level => {
         histories = computeExtendedLevelHistories(histories, level, bound)
     })

@@ -1,6 +1,5 @@
 const computeBestPossibleHistory = analyzedHistories => {
-    let bestScore = Infinity
-    let bestPossibleHistory
+    let bestPossibleHistory = {score: Infinity}
 
     if (analyzedHistories.some(analyzedHistory => !analyzedHistory.exact)) {
         let exactHistories = []
@@ -13,10 +12,10 @@ const computeBestPossibleHistory = analyzedHistories => {
     }
 
     analyzedHistories.forEach(analyzedHistory => {
-        if (analyzedHistory.score === bestScore) {
-            throw new Error(`It should not be possible for two histories to get the same score (${bestScore}). Please revise the scoring method.`)
-        } else if (analyzedHistory.score < bestScore) {
-            bestScore = analyzedHistory.score
+        if (
+            analyzedHistory.score < bestPossibleHistory.score ||
+            (analyzedHistory.score === bestPossibleHistory.score && analyzedHistory.sleda < bestPossibleHistory.sleda)
+        ) {
             bestPossibleHistory = analyzedHistory
         }
     })
