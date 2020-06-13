@@ -1,4 +1,4 @@
-const {LEVELS_COMMAS} = require("./levels")
+const {LEVELS_COMMAS} = require("./levelsCommas")
 const {computeNeighborPositions} = require("./neighborPositions")
 
 const computeBoundedCommaPositions = (position, level) => {

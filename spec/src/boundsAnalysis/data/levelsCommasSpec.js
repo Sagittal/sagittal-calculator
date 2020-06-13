@@ -1,4 +1,4 @@
-const {computeLevelCommas, computeIsWithinLevel} = require("../../../../src/boundsAnalysis/data/levels")
+const {computeLevelCommas, computeIsWithinLevel} = require("../../../../src/boundsAnalysis/data/levelsCommas")
 
 describe("computeLevelCommas", () => {
     it("returns the commas for the levels up to and including the target level", () => {
