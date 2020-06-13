@@ -22,10 +22,6 @@ const visualizeBounds = visualization => {
 
     visualization.forEach(boundAnalysis => {
         visualizeEvents(boundAnalysis.bestPossibleHistory.events)
-        // TODO: this is what it could look like if we do balance sleda and score
-        // boundAnalysis.bestPossibleHistories && boundAnalysis.bestPossibleHistories.forEach(bestPossibleHistory => {
-        //     visualizeEvents(bestPossibleHistory.events)
-        // })
     })
 
     visualizeSizeCategoryBounds()

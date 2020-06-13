@@ -13,7 +13,7 @@ const visualizeLevelEdaMidpoints = () => {
         const textY = y1 - TEXT_OFFSET
 
         levelEdaMidpoints.forEach(levelEdaMidpoint => {
-            const {name, position} = levelEdaMidpoint // TODO: format vinculum
+            const {name, position} = levelEdaMidpoint
 
             const x = computeX(position)
 

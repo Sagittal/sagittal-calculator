@@ -14,7 +14,7 @@ describe("presentRankAnalyses", () => {
             analyzeBound(histories, bound, boundIndex)
         })
 
-        const result = presentRankAnalyses() // TODO: hey maybe if the svg's background was also dark grey the colors would work out alright?
+        const result = presentRankAnalyses()
 
         const expectedResult =
             "\n\n   ---   Rank Analyses   ---   " +
