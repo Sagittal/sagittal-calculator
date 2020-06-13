@@ -30,7 +30,7 @@ const presentBoundAnalysis = (boundAnalysis, {bound, boundIndex, mode = "DETAILS
             highLevelRank,
             veryHighLevelRank,
             extremeLevelRank,
-            insaneLevelRank,
+            // insaneLevelRank,
         ] = extractLevelRanks(bestPossibleHistory)
 
         const color = COLORS[bestRank]
@@ -44,7 +44,7 @@ const presentBoundAnalysis = (boundAnalysis, {bound, boundIndex, mode = "DETAILS
             highLevelRank,
             veryHighLevelRank,
             extremeLevelRank,
-            insaneLevelRank,
+            // insaneLevelRank,
             bestRank,
             alignFormattedNumber(presentNumber(position)),
             alignFormattedNumber(presentNumber(initialPosition)),

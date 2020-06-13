@@ -26,7 +26,7 @@ describe("presentBoundAnalysis", () => {
 
             const result = presentBoundAnalysis(boundAnalysis, {bound, boundIndex, mode})
 
-            expect(result).toEqual("10\t 10\t 11\t   ,,|( \t    ,|( \t \t \t \t0\t1\t1\t  5.448\t  5.485\t  0.039".cyan)
+            expect(result).toEqual("10\t 10\t 11\t   ,,|( \t    ,|( \t \t \t \t0\t1\t  5.448\t  5.485\t  0.039".cyan)
         })
     })
 
