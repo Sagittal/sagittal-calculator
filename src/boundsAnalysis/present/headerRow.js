@@ -70,10 +70,33 @@ const HEADER_ROW = "   ---   Bound Analyses   ---   \n\n\n" + presentHeaderRow([
         "rank",
     ],
     [
-        "best",
-        "history",
         "overall",
         "rank",
+    ],
+    [
+        " medium",
+        "dstance",
+        "  moved",
+    ],
+    [
+        "   high",
+        "dstance",
+        "  moved",
+    ],
+    [
+        "  ultra",
+        "dstance",
+        "  moved",
+    ],
+    [
+        "extreme",
+        "dstance",
+        "  moved",
+    ],
+    [
+        "overall",
+        "dstance",
+        "  moved",
     ],
     [
         " actual",

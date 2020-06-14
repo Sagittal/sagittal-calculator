@@ -3,7 +3,8 @@ const {presentNumber} = require("./number")
 const {presentSymbolAscii} = require("./symbolAscii")
 const {alignFormattedNumber} = require("./alignFormattedNumber")
 const {presentMina} = require("./mina")
-const {extractLevelRanks} = require("./extractLevelRanks")
+const {extractLevelRanks} = require("./levelRanks")
+const {extractLevelDistances} = require("./levelDistances")
 const {extractBoundIdentifiers} = require("./bound")
 
 const presentBoundAnalysis = (boundAnalysis, {bound, boundIndex, mode = "DETAILS"} = {}) => {
@@ -23,6 +24,7 @@ const presentBoundAnalysis = (boundAnalysis, {bound, boundIndex, mode = "DETAILS
             bestPossibleHistory,
             initialPosition,
             initialPositionTinaDifference,
+            bestPossibleHistoryDistance,
         } = boundAnalysis
 
         const [
@@ -30,8 +32,14 @@ const presentBoundAnalysis = (boundAnalysis, {bound, boundIndex, mode = "DETAILS
             highLevelRank,
             veryHighLevelRank,
             extremeLevelRank,
-            // insaneLevelRank,
         ] = extractLevelRanks(bestPossibleHistory)
+
+        const [
+            bestPossibleHistoryMediumDistance,
+            bestPossibleHistoryHighDistance,
+            bestPossibleHistoryUltraDistance,
+            bestPossibleHistoryExtremeDistance,
+        ] = extractLevelDistances(bestPossibleHistory)
 
         const color = COLORS[bestRank]
         presentedBoundAnalysis = [
@@ -44,8 +52,12 @@ const presentBoundAnalysis = (boundAnalysis, {bound, boundIndex, mode = "DETAILS
             highLevelRank,
             veryHighLevelRank,
             extremeLevelRank,
-            // insaneLevelRank,
             bestRank,
+            bestPossibleHistoryMediumDistance,
+            bestPossibleHistoryHighDistance,
+            bestPossibleHistoryUltraDistance,
+            bestPossibleHistoryExtremeDistance,
+            alignFormattedNumber(presentNumber(bestPossibleHistoryDistance)),
             alignFormattedNumber(presentNumber(position)),
             alignFormattedNumber(presentNumber(initialPosition)),
             alignFormattedNumber(presentNumber(initialPositionTinaDifference)),
