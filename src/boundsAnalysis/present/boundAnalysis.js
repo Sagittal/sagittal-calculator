@@ -1,6 +1,6 @@
 const {COLORS} = require("./colors")
 const {presentNumber} = require("./number")
-const {presentSymbol} = require("./symbol")
+const {presentSymbolAscii} = require("./symbolAscii")
 const {alignFormattedNumber} = require("./alignFormattedNumber")
 const {presentMina} = require("./mina")
 const {extractLevelRanks} = require("./extractLevelRanks")
@@ -38,8 +38,8 @@ const presentBoundAnalysis = (boundAnalysis, {bound, boundIndex, mode = "DETAILS
             boundIndex,
             presentMina(lesserBoundedMina),
             presentMina(greaterBoundedMina),
-            presentSymbol(extremeLevelLesserBoundedCommaSymbol),
-            presentSymbol(extremeLevelGreaterBoundedCommaSymbol),
+            presentSymbolAscii(extremeLevelLesserBoundedCommaSymbol),
+            presentSymbolAscii(extremeLevelGreaterBoundedCommaSymbol),
             mediumLevelRank,
             highLevelRank,
             veryHighLevelRank,

@@ -14,8 +14,8 @@ describe("computeLevelCommas", () => {
         expect(levelCommas[0]).toEqual({
             introducingLevel: "MEDIUM",
             position: 0,
-            symbol: "|",
-            unicode: '', // TODO: really symbols should be separate still, like their own file, like how i seaparated commas and bounds already
+            ascii: "|",
+            unicode: '',
             mina: 0,
         })
     })

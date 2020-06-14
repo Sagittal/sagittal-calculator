@@ -1,7 +1,7 @@
 const {COMMAS} = require("./commas")
 
-const unicodeFromAscii = symbolAscii => {
-    return COMMAS.find(comma => comma.symbol === symbolAscii).unicode
+const unicodeFromAscii = ascii => {
+    return COMMAS.find(comma => comma.ascii === ascii).unicode
 }
 
 module.exports = {
