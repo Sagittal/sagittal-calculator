@@ -14,7 +14,7 @@ describe("computeEvents", () => {
             })
 
             it("works when only one EDA midpoint is between the bounded commas", () => {
-                level = "VERY_HIGH"
+                level = "ULTRA"
                 boundedCommaPositions = computeBoundedCommaPositions(4.5, level)
                 position = 5.1
 
@@ -22,7 +22,7 @@ describe("computeEvents", () => {
 
                 expect(result).toEqual(jasmine.arrayWithExactContents([
                     {
-                        level: "VERY_HIGH",
+                        level: "ULTRA",
                         type: "EDA",
                         name: "2.5°58",
                         position: 4.900215778349652,
@@ -31,7 +31,7 @@ describe("computeEvents", () => {
             })
 
             it("works when only one EDA midpoint is between the bounded commas, even if it is not within a half-step of the EDA", () => {
-                level = "VERY_HIGH"
+                level = "ULTRA"
                 boundedCommaPositions = computeBoundedCommaPositions(4.5, level)
                 position = 3.1 // not carefully chosen; may not even be between the bounded commas
 
@@ -39,7 +39,7 @@ describe("computeEvents", () => {
 
                 expect(result).toEqual(jasmine.arrayWithExactContents([
                     {
-                        level: "VERY_HIGH",
+                        level: "ULTRA",
                         type: "EDA",
                         name: "2.5°58",
                         position: 4.900215778349652,
@@ -71,7 +71,7 @@ describe("computeEvents", () => {
             })
 
             it("returns an empty array if there are no EDA midpoints between the position's bounded commas", () => {
-                level = "VERY_HIGH"
+                level = "ULTRA"
                 boundedCommaPositions = computeBoundedCommaPositions(6.05, level)
 
                 const result = computeEvents(level, boundedCommaPositions, eventType, position)
@@ -119,8 +119,8 @@ describe("computeEvents", () => {
                 ])
             })
 
-            it("works at the Very High level", () => {
-                level = "VERY_HIGH"
+            it("works at the Ultra level", () => {
+                level = "ULTRA"
                 boundedCommaPositions = computeBoundedCommaPositions(26.25, level)
                 position = 28.3
 
@@ -128,7 +128,7 @@ describe("computeEvents", () => {
 
                 expect(result).toEqual([
                     {
-                        level: "VERY_HIGH",
+                        level: "ULTRA",
                         type: "MEAN",
                         name: ".|) |)",
                         position: 26.287231406133,
@@ -197,7 +197,7 @@ describe("computeEvents", () => {
             })
 
             it("returns an empty array if there are no size category bounds between the position's bounded commas", () => {
-                level = "VERY_HIGH"
+                level = "ULTRA"
                 boundedCommaPositions = computeBoundedCommaPositions(6.05, level)
 
                 const result = computeEvents(level, boundedCommaPositions, eventType, position)

@@ -9,11 +9,11 @@ const BOUNDS = [
     },
     {
         position: 1.19446545301676,
-        levels: ["HIGH", "VERY_HIGH", "EXTREME", "INSANE"],
+        levels: ["HIGH", "ULTRA", "EXTREME", "INSANE"],
     },
     {
         position: 1.75656684267171,
-        levels: ["VERY_HIGH", "EXTREME", "INSANE"],
+        levels: ["ULTRA", "EXTREME", "INSANE"],
     },
     {
         position: 2.17814288491292,
@@ -21,7 +21,7 @@ const BOUNDS = [
     },
     {
         position: 2.74024427456787,
-        levels: ["MEDIUM", "VERY_HIGH", "EXTREME", "INSANE"],
+        levels: ["MEDIUM", "ULTRA", "EXTREME", "INSANE"],
     },
     {
         position: 3.16182031680908,
@@ -37,7 +37,7 @@ const BOUNDS = [
     },
     {
         position: 4.56707379094645,
-        levels: ["HIGH", "VERY_HIGH", "EXTREME", "INSANE"],
+        levels: ["HIGH", "ULTRA", "EXTREME", "INSANE"],
     },
     {
         position: 5.12917518060140,
@@ -53,11 +53,11 @@ const BOUNDS = [
     },
     {
         position: 6.53442865473877,
-        levels: ["HIGH", "VERY_HIGH", "EXTREME", "INSANE"],
+        levels: ["HIGH", "ULTRA", "EXTREME", "INSANE"],
     },
     {
         position: 7.09653004439371,
-        levels: ["VERY_HIGH", "EXTREME", "INSANE"],
+        levels: ["ULTRA", "EXTREME", "INSANE"],
     },
     {
         position: 7.51810608663493,
@@ -65,7 +65,7 @@ const BOUNDS = [
     },
     {
         position: 8.08020747628987,
-        levels: ["MEDIUM", "VERY_HIGH", "EXTREME", "INSANE"],
+        levels: ["MEDIUM", "ULTRA", "EXTREME", "INSANE"],
     },
     {
         position: 8.50178351853108,
@@ -73,7 +73,7 @@ const BOUNDS = [
     },
     {
         position: 9.06388490818603,
-        levels: ["HIGH", "VERY_HIGH", "EXTREME", "INSANE"],
+        levels: ["HIGH", "ULTRA", "EXTREME", "INSANE"],
     },
     {
         position: 9.48546095042724,
@@ -89,7 +89,7 @@ const BOUNDS = [
     },
     {
         position: 11.03123977197830,
-        levels: ["HIGH", "VERY_HIGH", "EXTREME", "INSANE"],
+        levels: ["HIGH", "ULTRA", "EXTREME", "INSANE"],
     },
     {
         position: 11.45281581421960,
@@ -97,11 +97,11 @@ const BOUNDS = [
     },
     {
         position: 12.01491720387450,
-        levels: ["VERY_HIGH", "EXTREME", "INSANE"],
+        levels: ["ULTRA", "EXTREME", "INSANE"],
     },
     {
         position: 12.43649324611570,
-        levels: ["VERY_HIGH", "EXTREME", "INSANE"],
+        levels: ["ULTRA", "EXTREME", "INSANE"],
     },
     {
         position: 12.99859463577070,
@@ -109,7 +109,7 @@ const BOUNDS = [
     },
     {
         position: 13.42017067801190,
-        levels: ["MEDIUM", "HIGH", "VERY_HIGH", "EXTREME", "INSANE"],
+        levels: ["MEDIUM", "HIGH", "ULTRA", "EXTREME", "INSANE"],
     },
     {
         position: 13.84174672025310,
@@ -125,7 +125,7 @@ const BOUNDS = [
     },
     {
         position: 15.38752554180420,
-        levels: ["HIGH", "VERY_HIGH", "EXTREME", "INSANE"],
+        levels: ["HIGH", "ULTRA", "EXTREME", "INSANE"],
     },
     {
         position: 15.80910158404540,
@@ -141,7 +141,7 @@ const BOUNDS = [
     },
     {
         position: 17.35488040559650,
-        levels: ["HIGH", "VERY_HIGH", "EXTREME", "INSANE"],
+        levels: ["HIGH", "ULTRA", "EXTREME", "INSANE"],
     },
     {
         position: 17.77645644783770,
@@ -153,7 +153,7 @@ const BOUNDS = [
     },
     {
         position: 18.76013387973390,
-        levels: ["MEDIUM", "HIGH", "VERY_HIGH", "EXTREME", "INSANE"],
+        levels: ["MEDIUM", "HIGH", "ULTRA", "EXTREME", "INSANE"],
     },
     {
         position: 19.32223526938880,
@@ -161,11 +161,11 @@ const BOUNDS = [
     },
     {
         position: 19.74381131163000,
-        levels: ["VERY_HIGH", "EXTREME", "INSANE"],
+        levels: ["ULTRA", "EXTREME", "INSANE"],
     },
     {
         position: 20.30591270128500,
-        levels: ["HIGH", "VERY_HIGH", "EXTREME", "INSANE"],
+        levels: ["HIGH", "ULTRA", "EXTREME", "INSANE"],
     },
     {
         position: 20.72748874352620,
@@ -185,11 +185,11 @@ const BOUNDS = [
     },
     {
         position: 22.69484360731850,
-        levels: ["HIGH", "VERY_HIGH", "EXTREME", "INSANE"],
+        levels: ["HIGH", "ULTRA", "EXTREME", "INSANE"],
     },
     {
         position: 23.11641964955970,
-        levels: ["VERY_HIGH", "EXTREME", "INSANE"],
+        levels: ["ULTRA", "EXTREME", "INSANE"],
     },
     {
         position: 23.67852103921470,
@@ -197,7 +197,7 @@ const BOUNDS = [
     },
     {
         position: 23.95544844875550,
-        levels: ["VERY_HIGH", "EXTREME", "INSANE"],
+        levels: ["ULTRA", "EXTREME", "INSANE"],
     },
     {
         position: 24.10009708145590,
@@ -209,7 +209,7 @@ const BOUNDS = [
     },
     {
         position: 24.88598158569550,
-        levels: ["VERY_HIGH", "EXTREME", "INSANE"],
+        levels: ["ULTRA", "EXTREME", "INSANE"],
     },
     {
         position: 25.08377451335200,
@@ -221,7 +221,7 @@ const BOUNDS = [
     },
     {
         position: 26.06745194524820,
-        levels: ["HIGH", "VERY_HIGH", "EXTREME", "INSANE"],
+        levels: ["HIGH", "ULTRA", "EXTREME", "INSANE"],
     },
     {
         position: 26.62955333490310,
@@ -241,7 +241,7 @@ const BOUNDS = [
     },
     {
         position: 28.59690819869550,
-        levels: ["HIGH", "VERY_HIGH", "EXTREME", "INSANE"],
+        levels: ["HIGH", "ULTRA", "EXTREME", "INSANE"],
     },
     {
         position: 29.01848424093670,
@@ -253,7 +253,7 @@ const BOUNDS = [
     },
     {
         position: 30.00216167283280,
-        levels: ["MEDIUM", "VERY_HIGH", "EXTREME", "INSANE"],
+        levels: ["MEDIUM", "ULTRA", "EXTREME", "INSANE"],
     },
     {
         position: 30.56426306248780,
@@ -261,11 +261,11 @@ const BOUNDS = [
     },
     {
         position: 30.98583910472900,
-        levels: ["HIGH", "VERY_HIGH", "EXTREME", "INSANE"],
+        levels: ["HIGH", "ULTRA", "EXTREME", "INSANE"],
     },
     {
         position: 31.40741514697020,
-        levels: ["VERY_HIGH", "EXTREME", "INSANE"],
+        levels: ["ULTRA", "EXTREME", "INSANE"],
     },
     {
         position: 31.96951653662510,
@@ -273,7 +273,7 @@ const BOUNDS = [
     },
     {
         position: 32.39109257886640,
-        levels: ["HIGH", "VERY_HIGH", "EXTREME", "INSANE"],
+        levels: ["HIGH", "ULTRA", "EXTREME", "INSANE"],
     },
     {
         position: 32.95319396852130,
@@ -289,7 +289,7 @@ const BOUNDS = [
     },
     {
         position: 34.35844744265870,
-        levels: ["HIGH", "VERY_HIGH", "EXTREME", "INSANE"],
+        levels: ["HIGH", "ULTRA", "EXTREME", "INSANE"],
     },
     {
         position: 34.92054883231360,
@@ -297,7 +297,7 @@ const BOUNDS = [
     },
     {
         position: 35.11809146436650,
-        levels: ["MEDIUM", "VERY_HIGH", "EXTREME", "INSANE"],
+        levels: ["MEDIUM", "ULTRA", "EXTREME", "INSANE"],
     },
     {
         position: 35.34212487455480,
@@ -313,7 +313,7 @@ const BOUNDS = [
     },
     {
         position: 36.58849000313790,
-        levels: ["VERY_HIGH", "EXTREME", "INSANE"],
+        levels: ["ULTRA", "EXTREME", "INSANE"],
     },
     {
         position: 36.88790369610590,
@@ -321,15 +321,15 @@ const BOUNDS = [
     },
     {
         position: 37.30947973834720,
-        levels: ["HIGH", "VERY_HIGH", "EXTREME", "INSANE"],
+        levels: ["HIGH", "ULTRA", "EXTREME", "INSANE"],
     },
     {
         position: 37.87158112800210,
-        levels: ["VERY_HIGH", "EXTREME", "INSANE"],
+        levels: ["ULTRA", "EXTREME", "INSANE"],
     },
     {
         position: 38.06194034977850,
-        levels: ["HIGH", "VERY_HIGH", "EXTREME", "INSANE"],
+        levels: ["HIGH", "ULTRA", "EXTREME", "INSANE"],
     },
     {
         position: 38.29315717024330,
@@ -345,11 +345,11 @@ const BOUNDS = [
     },
     {
         position: 39.69841064438070,
-        levels: ["HIGH", "VERY_HIGH", "EXTREME", "INSANE"],
+        levels: ["HIGH", "ULTRA", "EXTREME", "INSANE"],
     },
     {
         position: 40.26051203403560,
-        levels: ["MEDIUM", "VERY_HIGH", "EXTREME", "INSANE"],
+        levels: ["MEDIUM", "ULTRA", "EXTREME", "INSANE"],
     },
     {
         position: 40.68208807627680,
@@ -361,7 +361,7 @@ const BOUNDS = [
     },
     {
         position: 41.66576550817300,
-        levels: ["HIGH", "VERY_HIGH", "EXTREME", "INSANE"],
+        levels: ["HIGH", "ULTRA", "EXTREME", "INSANE"],
     },
     {
         position: 42.22786689782790,
@@ -381,7 +381,7 @@ const BOUNDS = [
     },
     {
         position: 44.19522176162030,
-        levels: ["VERY_HIGH", "EXTREME", "INSANE"],
+        levels: ["ULTRA", "EXTREME", "INSANE"],
     },
     {
         position: 44.61679780386150,
@@ -389,7 +389,7 @@ const BOUNDS = [
     },
     {
         position: 45.1124978365313,
-        levels: ["MEDIUM", "HIGH", "VERY_HIGH", "EXTREME", "INSANE"],
+        levels: ["MEDIUM", "HIGH", "ULTRA", "EXTREME", "INSANE"],
     },
     {
         position: 45.60047523575760,
@@ -409,7 +409,7 @@ const BOUNDS = [
     },
     {
         position: 47.56783009954990,
-        levels: ["HIGH", "VERY_HIGH", "EXTREME", "INSANE"],
+        levels: ["HIGH", "ULTRA", "EXTREME", "INSANE"],
     },
     {
         position: 48.12993148920490,
@@ -425,11 +425,11 @@ const BOUNDS = [
     },
     {
         position: 49.53518496334230,
-        levels: ["HIGH", "VERY_HIGH", "EXTREME", "INSANE"],
+        levels: ["HIGH", "ULTRA", "EXTREME", "INSANE"],
     },
     {
         position: 49.95676100558350,
-        levels: ["VERY_HIGH", "EXTREME", "INSANE"],
+        levels: ["ULTRA", "EXTREME", "INSANE"],
     },
     {
         position: 50.51886239523840,
@@ -441,7 +441,7 @@ const BOUNDS = [
     },
     {
         position: 51.21954024885570,
-        levels: ["MEDIUM", "VERY_HIGH", "EXTREME", "INSANE"],
+        levels: ["MEDIUM", "ULTRA", "EXTREME", "INSANE"],
     },
     {
         position: 51.50253982713460,
@@ -449,7 +449,7 @@ const BOUNDS = [
     },
     {
         position: 51.92411586937580,
-        levels: ["HIGH", "VERY_HIGH", "EXTREME", "INSANE"],
+        levels: ["HIGH", "ULTRA", "EXTREME", "INSANE"],
     },
     {
         position: 52.48621725903070,
@@ -465,7 +465,7 @@ const BOUNDS = [
     },
     {
         position: 53.89147073316810,
-        levels: ["HIGH", "VERY_HIGH", "EXTREME", "INSANE"],
+        levels: ["HIGH", "ULTRA", "EXTREME", "INSANE"],
     },
     {
         position: 54.45357212282310,
@@ -477,7 +477,7 @@ const BOUNDS = [
     },
     {
         position: 55.09554577691400,
-        levels: ["VERY_HIGH", "EXTREME", "INSANE"],
+        levels: ["ULTRA", "EXTREME", "INSANE"],
     },
     {
         position: 55.43724955471920,
@@ -485,7 +485,7 @@ const BOUNDS = [
     },
     {
         position: 55.85882559696040,
-        levels: ["HIGH", "VERY_HIGH", "EXTREME", "INSANE"],
+        levels: ["HIGH", "ULTRA", "EXTREME", "INSANE"],
     },
     {
         position: 56.42092698661540,
@@ -501,7 +501,7 @@ const BOUNDS = [
     },
     {
         position: 57.82618046075270,
-        levels: ["HIGH", "VERY_HIGH", "EXTREME", "INSANE"],
+        levels: ["HIGH", "ULTRA", "EXTREME", "INSANE"],
     },
     {
         position: 58.24775650299400,
@@ -509,7 +509,7 @@ const BOUNDS = [
     },
     {
         position: 58.58946028079790,
-        levels: ["VERY_HIGH", "EXTREME", "INSANE"],
+        levels: ["ULTRA", "EXTREME", "INSANE"],
     },
     {
         position: 58.80985789264890,
@@ -521,7 +521,7 @@ const BOUNDS = [
     },
     {
         position: 59.79353532454510,
-        levels: ["HIGH", "VERY_HIGH", "EXTREME", "INSANE"],
+        levels: ["HIGH", "ULTRA", "EXTREME", "INSANE"],
     },
     {
         position: 60.21511136678630,
@@ -537,7 +537,7 @@ const BOUNDS = [
     },
     {
         position: 61.76089018833740,
-        levels: ["HIGH", "VERY_HIGH", "EXTREME", "INSANE"],
+        levels: ["HIGH", "ULTRA", "EXTREME", "INSANE"],
     },
     {
         position: 62.18246623057860,
@@ -545,7 +545,7 @@ const BOUNDS = [
     },
     {
         position: 62.46546580885620,
-        levels: ["MEDIUM", "VERY_HIGH", "EXTREME", "INSANE"],
+        levels: ["MEDIUM", "ULTRA", "EXTREME", "INSANE"],
     },
     {
         position: 62.74456762023350,
@@ -557,11 +557,11 @@ const BOUNDS = [
     },
     {
         position: 63.72824505212970,
-        levels: ["VERY_HIGH", "EXTREME", "INSANE"],
+        levels: ["ULTRA", "EXTREME", "INSANE"],
     },
     {
         position: 64.14982109437090,
-        levels: ["HIGH", "VERY_HIGH", "EXTREME", "INSANE"],
+        levels: ["HIGH", "ULTRA", "EXTREME", "INSANE"],
     },
     {
         position: 64.71192248402590,
@@ -577,7 +577,7 @@ const BOUNDS = [
     },
     {
         position: 66.11717595816320,
-        levels: ["HIGH", "VERY_HIGH", "EXTREME", "INSANE"],
+        levels: ["HIGH", "ULTRA", "EXTREME", "INSANE"],
     },
     {
         position: 66.53875200040440,
@@ -597,7 +597,7 @@ const BOUNDS = [
     },
     {
         position: 68.57250822118040,
-        levels: ["MEDIUM", "HIGH", "VERY_HIGH", "EXTREME", "INSANE"],
+        levels: ["MEDIUM", "HIGH", "ULTRA", "EXTREME", "INSANE"],
     },
 ]
 

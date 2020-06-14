@@ -4,7 +4,7 @@ describe("computeHistories", () => {
     it("given a bound, returns an array of all of its possible histories", () => {
         const bound = {
             position: 9.5,
-            levels: ["MEDIUM", "VERY_HIGH", "EXTREME", "INSANE"],
+            levels: ["MEDIUM", "ULTRA", "EXTREME", "INSANE"],
         }
 
         const result = computeHistories(bound)
@@ -18,7 +18,7 @@ describe("computeHistories", () => {
                     position: 8.120357575550852
                 },
                 {
-                    level: "VERY_HIGH",
+                    level: "ULTRA",
                     type: "EDA",
                     name: "4.5°58",
                     position: 8.820388401029373
@@ -44,7 +44,7 @@ describe("computeHistories", () => {
                     position: 8.120357575550852
                 },
                 {
-                    level: "VERY_HIGH",
+                    level: "ULTRA",
                     type: "EDA",
                     name: "4.5°58",
                     position: 8.820388401029373
@@ -70,7 +70,7 @@ describe("computeHistories", () => {
                     position: 8.120357575550852
                 },
                 {
-                    level: "VERY_HIGH",
+                    level: "ULTRA",
                     type: "EDA",
                     name: "4.5°58",
                     position: 8.820388401029373
@@ -96,7 +96,7 @@ describe("computeHistories", () => {
                     position: 8.120357575550852
                 },
                 {
-                    level: "VERY_HIGH",
+                    level: "ULTRA",
                     type: "EDA",
                     name: "4.5°58",
                     position: 8.820388401029373
@@ -122,7 +122,7 @@ describe("computeHistories", () => {
                     position: 8.120357575550852
                 },
                 {
-                    level: "VERY_HIGH",
+                    level: "ULTRA",
                     type: "EDA",
                     name: "4.5°58",
                     position: 8.820388401029373
@@ -148,7 +148,7 @@ describe("computeHistories", () => {
                     position: 8.120357575550852
                 },
                 {
-                    level: "VERY_HIGH",
+                    level: "ULTRA",
                     type: "EDA",
                     name: "4.5°58",
                     position: 8.820388401029373
@@ -174,7 +174,7 @@ describe("computeHistories", () => {
                     position: 8.120357575550852
                 },
                 {
-                    level: "VERY_HIGH",
+                    level: "ULTRA",
                     type: "EDA",
                     name: "4.5°58",
                     position: 8.820388401029373
@@ -200,7 +200,7 @@ describe("computeHistories", () => {
                     position: 8.120357575550852
                 },
                 {
-                    level: "VERY_HIGH",
+                    level: "ULTRA",
                     type: "EDA",
                     name: "4.5°58",
                     position: 8.820388401029373
@@ -226,7 +226,7 @@ describe("computeHistories", () => {
                     position: 8.120357575550852
                 },
                 {
-                    level: "VERY_HIGH",
+                    level: "ULTRA",
                     type: "EDA",
                     name: "4.5°58",
                     position: 8.820388401029373
@@ -252,7 +252,7 @@ describe("computeHistories", () => {
                     position: 8.120357575550852
                 },
                 {
-                    level: "VERY_HIGH",
+                    level: "ULTRA",
                     type: "EDA",
                     name: "4.5°58",
                     position: 8.820388401029373
@@ -278,7 +278,7 @@ describe("computeHistories", () => {
                     position: 8.120357575550852
                 },
                 {
-                    level: "VERY_HIGH",
+                    level: "ULTRA",
                     type: "MEAN",
                     name: "~| )|(",
                     position: 9.208778600061725
@@ -304,7 +304,7 @@ describe("computeHistories", () => {
                     position: 8.120357575550852
                 },
                 {
-                    level: "VERY_HIGH",
+                    level: "ULTRA",
                     type: "MEAN",
                     name: "~| )|(",
                     position: 9.208778600061725
@@ -330,7 +330,7 @@ describe("computeHistories", () => {
                     position: 8.120357575550852
                 },
                 {
-                    level: "VERY_HIGH",
+                    level: "ULTRA",
                     type: "MEAN",
                     name: "~| )|(",
                     position: 9.208778600061725
@@ -356,7 +356,7 @@ describe("computeHistories", () => {
                     position: 8.120357575550852
                 },
                 {
-                    level: "VERY_HIGH",
+                    level: "ULTRA",
                     type: "MEAN",
                     name: "~| )|(",
                     position: 9.208778600061725
@@ -382,7 +382,7 @@ describe("computeHistories", () => {
                     position: 8.120357575550852
                 },
                 {
-                    level: "VERY_HIGH",
+                    level: "ULTRA",
                     type: "MEAN",
                     name: "~| )|(",
                     position: 9.208778600061725
@@ -408,7 +408,7 @@ describe("computeHistories", () => {
                     position: 8.120357575550852
                 },
                 {
-                    level: "VERY_HIGH",
+                    level: "ULTRA",
                     type: "MEAN",
                     name: "~| )|(",
                     position: 9.208778600061725
@@ -434,7 +434,7 @@ describe("computeHistories", () => {
                     position: 8.120357575550852
                 },
                 {
-                    level: "VERY_HIGH",
+                    level: "ULTRA",
                     type: "MEAN",
                     name: "~| )|(",
                     position: 9.208778600061725
@@ -460,7 +460,7 @@ describe("computeHistories", () => {
                     position: 8.120357575550852
                 },
                 {
-                    level: "VERY_HIGH",
+                    level: "ULTRA",
                     type: "MEAN",
                     name: "~| )|(",
                     position: 9.208778600061725
@@ -486,7 +486,7 @@ describe("computeHistories", () => {
                     position: 8.120357575550852
                 },
                 {
-                    level: "VERY_HIGH",
+                    level: "ULTRA",
                     type: "MEAN",
                     name: "~| )|(",
                     position: 9.208778600061725
@@ -512,7 +512,7 @@ describe("computeHistories", () => {
                     position: 8.120357575550852
                 },
                 {
-                    level: "VERY_HIGH",
+                    level: "ULTRA",
                     type: "MEAN",
                     name: "~| )|(",
                     position: 9.208778600061725
@@ -538,7 +538,7 @@ describe("computeHistories", () => {
                     position: 7.72288142310195
                 },
                 {
-                    level: "VERY_HIGH",
+                    level: "ULTRA",
                     type: "EDA",
                     name: "4.5°58",
                     position: 8.820388401029373
@@ -564,7 +564,7 @@ describe("computeHistories", () => {
                     position: 7.72288142310195
                 },
                 {
-                    level: "VERY_HIGH",
+                    level: "ULTRA",
                     type: "EDA",
                     name: "4.5°58",
                     position: 8.820388401029373
@@ -590,7 +590,7 @@ describe("computeHistories", () => {
                     position: 7.72288142310195
                 },
                 {
-                    level: "VERY_HIGH",
+                    level: "ULTRA",
                     type: "EDA",
                     name: "4.5°58",
                     position: 8.820388401029373
@@ -616,7 +616,7 @@ describe("computeHistories", () => {
                     position: 7.72288142310195
                 },
                 {
-                    level: "VERY_HIGH",
+                    level: "ULTRA",
                     type: "EDA",
                     name: "4.5°58",
                     position: 8.820388401029373
@@ -642,7 +642,7 @@ describe("computeHistories", () => {
                     position: 7.72288142310195
                 },
                 {
-                    level: "VERY_HIGH",
+                    level: "ULTRA",
                     type: "EDA",
                     name: "4.5°58",
                     position: 8.820388401029373
@@ -668,7 +668,7 @@ describe("computeHistories", () => {
                     position: 7.72288142310195
                 },
                 {
-                    level: "VERY_HIGH",
+                    level: "ULTRA",
                     type: "EDA",
                     name: "4.5°58",
                     position: 8.820388401029373
@@ -694,7 +694,7 @@ describe("computeHistories", () => {
                     position: 7.72288142310195
                 },
                 {
-                    level: "VERY_HIGH",
+                    level: "ULTRA",
                     type: "EDA",
                     name: "4.5°58",
                     position: 8.820388401029373
@@ -720,7 +720,7 @@ describe("computeHistories", () => {
                     position: 7.72288142310195
                 },
                 {
-                    level: "VERY_HIGH",
+                    level: "ULTRA",
                     type: "EDA",
                     name: "4.5°58",
                     position: 8.820388401029373
@@ -746,7 +746,7 @@ describe("computeHistories", () => {
                     position: 7.72288142310195
                 },
                 {
-                    level: "VERY_HIGH",
+                    level: "ULTRA",
                     type: "EDA",
                     name: "4.5°58",
                     position: 8.820388401029373
@@ -772,7 +772,7 @@ describe("computeHistories", () => {
                     position: 7.72288142310195
                 },
                 {
-                    level: "VERY_HIGH",
+                    level: "ULTRA",
                     type: "EDA",
                     name: "4.5°58",
                     position: 8.820388401029373
@@ -798,7 +798,7 @@ describe("computeHistories", () => {
                     position: 7.72288142310195
                 },
                 {
-                    level: "VERY_HIGH",
+                    level: "ULTRA",
                     type: "MEAN",
                     name: "~| )|(",
                     position: 9.208778600061725
@@ -824,7 +824,7 @@ describe("computeHistories", () => {
                     position: 7.72288142310195
                 },
                 {
-                    level: "VERY_HIGH",
+                    level: "ULTRA",
                     type: "MEAN",
                     name: "~| )|(",
                     position: 9.208778600061725
@@ -850,7 +850,7 @@ describe("computeHistories", () => {
                     position: 7.72288142310195
                 },
                 {
-                    level: "VERY_HIGH",
+                    level: "ULTRA",
                     type: "MEAN",
                     name: "~| )|(",
                     position: 9.208778600061725
@@ -876,7 +876,7 @@ describe("computeHistories", () => {
                     position: 7.72288142310195
                 },
                 {
-                    level: "VERY_HIGH",
+                    level: "ULTRA",
                     type: "MEAN",
                     name: "~| )|(",
                     position: 9.208778600061725
@@ -902,7 +902,7 @@ describe("computeHistories", () => {
                     position: 7.72288142310195
                 },
                 {
-                    level: "VERY_HIGH",
+                    level: "ULTRA",
                     type: "MEAN",
                     name: "~| )|(",
                     position: 9.208778600061725
@@ -928,7 +928,7 @@ describe("computeHistories", () => {
                     position: 7.72288142310195
                 },
                 {
-                    level: "VERY_HIGH",
+                    level: "ULTRA",
                     type: "MEAN",
                     name: "~| )|(",
                     position: 9.208778600061725
@@ -954,7 +954,7 @@ describe("computeHistories", () => {
                     position: 7.72288142310195
                 },
                 {
-                    level: "VERY_HIGH",
+                    level: "ULTRA",
                     type: "MEAN",
                     name: "~| )|(",
                     position: 9.208778600061725
@@ -980,7 +980,7 @@ describe("computeHistories", () => {
                     position: 7.72288142310195
                 },
                 {
-                    level: "VERY_HIGH",
+                    level: "ULTRA",
                     type: "MEAN",
                     name: "~| )|(",
                     position: 9.208778600061725
@@ -1006,7 +1006,7 @@ describe("computeHistories", () => {
                     position: 7.72288142310195
                 },
                 {
-                    level: "VERY_HIGH",
+                    level: "ULTRA",
                     type: "MEAN",
                     name: "~| )|(",
                     position: 9.208778600061725
@@ -1032,7 +1032,7 @@ describe("computeHistories", () => {
                     position: 7.72288142310195
                 },
                 {
-                    level: "VERY_HIGH",
+                    level: "ULTRA",
                     type: "MEAN",
                     name: "~| )|(",
                     position: 9.208778600061725
@@ -1056,7 +1056,7 @@ describe("computeHistories", () => {
     it("works for the final bound", () => {
         const bound = {
             position: 68.5725082211804,
-            levels: ["MEDIUM", "HIGH", "VERY_HIGH", "EXTREME", "INSANE"],
+            levels: ["MEDIUM", "HIGH", "ULTRA", "EXTREME", "INSANE"],
         }
 
         const result = computeHistories(bound)
@@ -1076,7 +1076,7 @@ describe("computeHistories", () => {
                     position: 68.5725082211804
                 },
                 {
-                    level: "VERY_HIGH",
+                    level: "ULTRA",
                     type: "EDA",
                     name: "34.5°58",
                     position: 67.62297774122518
@@ -1108,7 +1108,7 @@ describe("computeHistories", () => {
                     position: 68.5725082211804
                 },
                 {
-                    level: "VERY_HIGH",
+                    level: "ULTRA",
                     type: "EDA",
                     name: "34.5°58",
                     position: 67.62297774122518
@@ -1140,7 +1140,7 @@ describe("computeHistories", () => {
                     position: 68.5725082211804
                 },
                 {
-                    level: "VERY_HIGH",
+                    level: "ULTRA",
                     type: "EDA",
                     name: "34.5°58",
                     position: 67.62297774122518
@@ -1172,7 +1172,7 @@ describe("computeHistories", () => {
                     position: 68.5725082211804
                 },
                 {
-                    level: "VERY_HIGH",
+                    level: "ULTRA",
                     type: "EDA",
                     name: "34.5°58",
                     position: 67.62297774122518
@@ -1204,7 +1204,7 @@ describe("computeHistories", () => {
                     position: 68.5725082211804
                 },
                 {
-                    level: "VERY_HIGH",
+                    level: "ULTRA",
                     type: "EDA",
                     name: "34.5°58",
                     position: 67.62297774122518
@@ -1236,7 +1236,7 @@ describe("computeHistories", () => {
                     position: 68.5725082211804
                 },
                 {
-                    level: "VERY_HIGH",
+                    level: "ULTRA",
                     type: "EDA",
                     name: "34.5°58",
                     position: 67.62297774122518
@@ -1268,7 +1268,7 @@ describe("computeHistories", () => {
                     position: 68.5725082211804
                 },
                 {
-                    level: "VERY_HIGH",
+                    level: "ULTRA",
                     type: "EDA",
                     name: "34.5°58",
                     position: 67.62297774122518
@@ -1300,7 +1300,7 @@ describe("computeHistories", () => {
                     position: 68.5725082211804
                 },
                 {
-                    level: "VERY_HIGH",
+                    level: "ULTRA",
                     type: "EDA",
                     name: "34.5°58",
                     position: 67.62297774122518
@@ -1332,7 +1332,7 @@ describe("computeHistories", () => {
                     position: 68.5725082211804
                 },
                 {
-                    level: "VERY_HIGH",
+                    level: "ULTRA",
                     type: "SIZE",
                     name: "L|SS",
                     position: 68.5725082211804
@@ -1364,7 +1364,7 @@ describe("computeHistories", () => {
                     position: 68.5725082211804
                 },
                 {
-                    level: "VERY_HIGH",
+                    level: "ULTRA",
                     type: "SIZE",
                     name: "L|SS",
                     position: 68.5725082211804
@@ -1396,7 +1396,7 @@ describe("computeHistories", () => {
                     position: 68.5725082211804
                 },
                 {
-                    level: "VERY_HIGH",
+                    level: "ULTRA",
                     type: "SIZE",
                     name: "L|SS",
                     position: 68.5725082211804
@@ -1428,7 +1428,7 @@ describe("computeHistories", () => {
                     position: 68.5725082211804
                 },
                 {
-                    level: "VERY_HIGH",
+                    level: "ULTRA",
                     type: "SIZE",
                     name: "L|SS",
                     position: 68.5725082211804
@@ -1460,7 +1460,7 @@ describe("computeHistories", () => {
                     position: 68.5725082211804
                 },
                 {
-                    level: "VERY_HIGH",
+                    level: "ULTRA",
                     type: "SIZE",
                     name: "L|SS",
                     position: 68.5725082211804
@@ -1492,7 +1492,7 @@ describe("computeHistories", () => {
                     position: 68.5725082211804
                 },
                 {
-                    level: "VERY_HIGH",
+                    level: "ULTRA",
                     type: "SIZE",
                     name: "L|SS",
                     position: 68.5725082211804
@@ -1524,7 +1524,7 @@ describe("computeHistories", () => {
                     position: 68.5725082211804
                 },
                 {
-                    level: "VERY_HIGH",
+                    level: "ULTRA",
                     type: "SIZE",
                     name: "L|SS",
                     position: 68.5725082211804
@@ -1556,7 +1556,7 @@ describe("computeHistories", () => {
                     position: 68.5725082211804
                 },
                 {
-                    level: "VERY_HIGH",
+                    level: "ULTRA",
                     type: "SIZE",
                     name: "L|SS",
                     position: 68.5725082211804
@@ -1588,7 +1588,7 @@ describe("computeHistories", () => {
                     position: 68.5725082211804
                 },
                 {
-                    level: "VERY_HIGH",
+                    level: "ULTRA",
                     type: "EDA",
                     name: "34.5°58",
                     position: 67.62297774122518
@@ -1620,7 +1620,7 @@ describe("computeHistories", () => {
                     position: 68.5725082211804
                 },
                 {
-                    level: "VERY_HIGH",
+                    level: "ULTRA",
                     type: "EDA",
                     name: "34.5°58",
                     position: 67.62297774122518
@@ -1652,7 +1652,7 @@ describe("computeHistories", () => {
                     position: 68.5725082211804
                 },
                 {
-                    level: "VERY_HIGH",
+                    level: "ULTRA",
                     type: "EDA",
                     name: "34.5°58",
                     position: 67.62297774122518
@@ -1684,7 +1684,7 @@ describe("computeHistories", () => {
                     position: 68.5725082211804
                 },
                 {
-                    level: "VERY_HIGH",
+                    level: "ULTRA",
                     type: "EDA",
                     name: "34.5°58",
                     position: 67.62297774122518
@@ -1716,7 +1716,7 @@ describe("computeHistories", () => {
                     position: 68.5725082211804
                 },
                 {
-                    level: "VERY_HIGH",
+                    level: "ULTRA",
                     type: "EDA",
                     name: "34.5°58",
                     position: 67.62297774122518
@@ -1748,7 +1748,7 @@ describe("computeHistories", () => {
                     position: 68.5725082211804
                 },
                 {
-                    level: "VERY_HIGH",
+                    level: "ULTRA",
                     type: "EDA",
                     name: "34.5°58",
                     position: 67.62297774122518
@@ -1780,7 +1780,7 @@ describe("computeHistories", () => {
                     position: 68.5725082211804
                 },
                 {
-                    level: "VERY_HIGH",
+                    level: "ULTRA",
                     type: "EDA",
                     name: "34.5°58",
                     position: 67.62297774122518
@@ -1812,7 +1812,7 @@ describe("computeHistories", () => {
                     position: 68.5725082211804
                 },
                 {
-                    level: "VERY_HIGH",
+                    level: "ULTRA",
                     type: "EDA",
                     name: "34.5°58",
                     position: 67.62297774122518
@@ -1844,7 +1844,7 @@ describe("computeHistories", () => {
                     position: 68.5725082211804
                 },
                 {
-                    level: "VERY_HIGH",
+                    level: "ULTRA",
                     type: "SIZE",
                     name: "L|SS",
                     position: 68.5725082211804
@@ -1876,7 +1876,7 @@ describe("computeHistories", () => {
                     position: 68.5725082211804
                 },
                 {
-                    level: "VERY_HIGH",
+                    level: "ULTRA",
                     type: "SIZE",
                     name: "L|SS",
                     position: 68.5725082211804
@@ -1908,7 +1908,7 @@ describe("computeHistories", () => {
                     position: 68.5725082211804
                 },
                 {
-                    level: "VERY_HIGH",
+                    level: "ULTRA",
                     type: "SIZE",
                     name: "L|SS",
                     position: 68.5725082211804
@@ -1940,7 +1940,7 @@ describe("computeHistories", () => {
                     position: 68.5725082211804
                 },
                 {
-                    level: "VERY_HIGH",
+                    level: "ULTRA",
                     type: "SIZE",
                     name: "L|SS",
                     position: 68.5725082211804
@@ -1972,7 +1972,7 @@ describe("computeHistories", () => {
                     position: 68.5725082211804
                 },
                 {
-                    level: "VERY_HIGH",
+                    level: "ULTRA",
                     type: "SIZE",
                     name: "L|SS",
                     position: 68.5725082211804
@@ -2004,7 +2004,7 @@ describe("computeHistories", () => {
                     position: 68.5725082211804
                 },
                 {
-                    level: "VERY_HIGH",
+                    level: "ULTRA",
                     type: "SIZE",
                     name: "L|SS",
                     position: 68.5725082211804
@@ -2036,7 +2036,7 @@ describe("computeHistories", () => {
                     position: 68.5725082211804
                 },
                 {
-                    level: "VERY_HIGH",
+                    level: "ULTRA",
                     type: "SIZE",
                     name: "L|SS",
                     position: 68.5725082211804
@@ -2068,7 +2068,7 @@ describe("computeHistories", () => {
                     position: 68.5725082211804
                 },
                 {
-                    level: "VERY_HIGH",
+                    level: "ULTRA",
                     type: "SIZE",
                     name: "L|SS",
                     position: 68.5725082211804

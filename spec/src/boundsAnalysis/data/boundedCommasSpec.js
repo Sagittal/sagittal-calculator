@@ -70,7 +70,7 @@ describe("computeBoundedCommas", () => {
     it("works for the final bound", () => {
         const bound = {
             position: 68.57250822118040,
-            levels: ["MEDIUM", "HIGH", "VERY_HIGH", "EXTREME", "INSANE"],
+            levels: ["MEDIUM", "HIGH", "ULTRA", "EXTREME", "INSANE"],
         }
 
         const result = computeBoundedCommas(bound)
@@ -98,7 +98,7 @@ describe("computeBoundedCommas", () => {
                 },
                 undefined,
             ],
-            VERY_HIGH: [
+            ULTRA: [
                 {
                     introducingLevel: "HIGH",
                     position: 67.2910616147857,

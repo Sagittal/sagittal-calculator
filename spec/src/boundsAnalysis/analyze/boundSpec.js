@@ -5,7 +5,7 @@ const levelAnalysis = require("../../../../src/boundsAnalysis/analyze/levels")
 describe("analyzeBound", () => {
     const notBestHistory = [
         {
-            level: "VERY_HIGH",
+            level: "ULTRA",
             type: "MEAN",
             name: ".)/| '/|",
             position: 23.2,
@@ -26,7 +26,7 @@ describe("analyzeBound", () => {
     ]
     const bestHistory = [
         {
-            level: "VERY_HIGH",
+            level: "ULTRA",
             type: "MEAN",
             name: ".)/| '/|",
             position: 23.2,
@@ -51,11 +51,11 @@ describe("analyzeBound", () => {
     ]
     const bound = {
         position: 23.1164196495597,
-        levels: ["VERY_HIGH", "EXTREME", "INSANE"],
+        levels: ["ULTRA", "EXTREME", "INSANE"],
     }
     const expectedBestHistoryEvents = [
         {
-            level: "VERY_HIGH",
+            level: "ULTRA",
             type: "MEAN",
             name: ".)/| '/|",
             position: 23.2,
@@ -106,9 +106,9 @@ describe("analyzeBound", () => {
             possibleHistoryCount: 2,
             bestPossibleHistory: expectedBestPossibleHistory,
             consolidatedHistories: {
-                VERY_HIGH: [
+                ULTRA: [
                     {
-                        level: "VERY_HIGH",
+                        level: "ULTRA",
                         type: "MEAN",
                         name: ".)/| '/|",
                         position: 23.2,

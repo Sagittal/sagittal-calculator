@@ -2,7 +2,7 @@ const {computeBoundedCommaSymbols} = require("../../../../src/boundsAnalysis/dat
 
 describe("computeBoundedCommaSymbols", () => {
     it("gives the symbols of the commas immediately lesser and greater than the position at that level", () => {
-        expect(computeBoundedCommaSymbols(45, "VERY_HIGH")).toEqual([
+        expect(computeBoundedCommaSymbols(45, "ULTRA")).toEqual([
             "'//|",
             ")//|",
         ])

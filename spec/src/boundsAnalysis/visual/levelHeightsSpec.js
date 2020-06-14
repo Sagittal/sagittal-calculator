@@ -7,7 +7,7 @@ describe("computeLevelHeights", () => {
 
         expect(result["MEDIUM"]).toBeCloseTo(410, ACCURACY_THRESHOLD)
         expect(result["HIGH"]).toBeCloseTo(310, ACCURACY_THRESHOLD)
-        expect(result["VERY_HIGH"]).toBeCloseTo(210, ACCURACY_THRESHOLD)
+        expect(result["ULTRA"]).toBeCloseTo(210, ACCURACY_THRESHOLD)
         expect(result["EXTREME"]).toBeCloseTo(110, ACCURACY_THRESHOLD)
         expect(result["INSANE"]).toBeCloseTo(10, ACCURACY_THRESHOLD)
     })
@@ -17,7 +17,7 @@ describe("computeLevelHeights", () => {
 
         expect(result["MEDIUM"]).toBeCloseTo(460, ACCURACY_THRESHOLD)
         expect(result["HIGH"]).toBeCloseTo(360, ACCURACY_THRESHOLD)
-        expect(result["VERY_HIGH"]).toBeCloseTo(260, ACCURACY_THRESHOLD)
+        expect(result["ULTRA"]).toBeCloseTo(260, ACCURACY_THRESHOLD)
         expect(result["EXTREME"]).toBeCloseTo(160, ACCURACY_THRESHOLD)
         expect(result["INSANE"]).toBeCloseTo(60, ACCURACY_THRESHOLD)
     })
@@ -27,7 +27,7 @@ describe("computeLevelHeights", () => {
 
         expect(result["MEDIUM"]).toBeCloseTo(510, ACCURACY_THRESHOLD)
         expect(result["HIGH"]).toBeCloseTo(410, ACCURACY_THRESHOLD)
-        expect(result["VERY_HIGH"]).toBeCloseTo(310, ACCURACY_THRESHOLD)
+        expect(result["ULTRA"]).toBeCloseTo(310, ACCURACY_THRESHOLD)
         expect(result["EXTREME"]).toBeCloseTo(210, ACCURACY_THRESHOLD)
         expect(result["INSANE"]).toBeCloseTo(110, ACCURACY_THRESHOLD)
     })

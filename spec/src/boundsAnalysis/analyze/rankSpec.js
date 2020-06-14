@@ -11,7 +11,7 @@ describe("computeRank", () => {
             },
             {
                 type: "SIZE",
-                level: "VERY_HIGH",
+                level: "ULTRA",
                 position: 10.2,
                 rank: 3,
             },

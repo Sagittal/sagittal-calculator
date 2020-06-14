@@ -18,16 +18,16 @@ describe("computeExtendedHistories", () => {
     it("returns an array with potentially many elements: for each snappable position of any event type, a new history which is like the passed-in history extended with a new event of snapping to that position, and its rank updated if necessary", () => {
         const actualBoundPosition = 45.4
 
-        const result = computeExtendedHistories(history, "VERY_HIGH", {
+        const result = computeExtendedHistories(history, "ULTRA", {
             position: actualBoundPosition,
-            levels: ["VERY_HIGH", "EXTREME"],
+            levels: ["ULTRA", "EXTREME"],
         })
 
         expect(result).toEqual(jasmine.arrayWithExactContents([
             [
                 passedInHistoryEvent,
                 {
-                    level: "VERY_HIGH",
+                    level: "ULTRA",
                     type: "EDA",
                     name: "23.5°58",
                     position: 46.062028316486725,
@@ -36,7 +36,7 @@ describe("computeExtendedHistories", () => {
             [
                 passedInHistoryEvent,
                 {
-                    level: "VERY_HIGH",
+                    level: "ULTRA",
                     type: "MEAN",
                     name: "'//| )//|",
                     position: 45.681795472660895,
@@ -45,7 +45,7 @@ describe("computeExtendedHistories", () => {
             [
                 passedInHistoryEvent,
                 {
-                    level: "VERY_HIGH",
+                    level: "ULTRA",
                     type: "SIZE",
                     name: "S|M",
                     position: 45.1124978365313,

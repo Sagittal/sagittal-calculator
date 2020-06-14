@@ -1,4 +1,4 @@
-const LEVELS = ["MEDIUM", "HIGH", "VERY_HIGH", "EXTREME", "INSANE"]
+const LEVELS = ["MEDIUM", "HIGH", "ULTRA", "EXTREME", "INSANE"]
 
 module.exports = {
     LEVELS,

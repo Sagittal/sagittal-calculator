@@ -6,7 +6,7 @@ describe("presentLevelAnalyses", () => {
     beforeEach(() => {
         levelsBestHistoryRanks["MEDIUM"] = {1: 18, 2: 23, 3: 1, 7: 13}
         levelsBestHistoryRanks["HIGH"] = {1: 18, 2: 23, 3: 1, 7: 13}
-        levelsBestHistoryRanks["VERY_HIGH"] = {1: 18, 2: 23, 3: 1, 7: 13}
+        levelsBestHistoryRanks["ULTRA"] = {1: 18, 2: 23, 3: 1, 7: 13}
         levelsBestHistoryRanks["EXTREME"] = {1: 18, 2: 23, 3: 1, 7: 13}
         levelsBestHistoryRanks["INSANE"] = {1: 18, 2: 23, 3: 1, 7: 13}
     })
@@ -23,8 +23,8 @@ describe("presentLevelAnalyses", () => {
         const result = presentLevelAnalyses()
 
         expect(result.indexOf("Insane")).toBeLessThan(result.indexOf("Extreme"))
-        expect(result.indexOf("Extreme")).toBeLessThan(result.indexOf("Very High"))
-        expect(result.indexOf("Very High")).toBeLessThan(result.indexOf("High"))
+        expect(result.indexOf("Extreme")).toBeLessThan(result.indexOf("Ultra"))
+        expect(result.indexOf("Ultra")).toBeLessThan(result.indexOf("High"))
         expect(result.indexOf("High")).toBeLessThan(result.indexOf("Medium"))
     })
 })

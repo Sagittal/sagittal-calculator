@@ -2,7 +2,7 @@ const {APOTOME, MAXIMUM_POSITION} = require("./intervals")
 const {LEVELS} = require("./levels")
 const {LEVEL_EDAS} = require("./levelEdas")
 
-const computeEdaMidpoints = level => {
+const computeInaMidpoints = level => {
     const eda = LEVEL_EDAS[LEVELS.indexOf(level)]
 
     return [...Array(eda).keys()].map(degree => {
@@ -14,9 +14,9 @@ const computeEdaMidpoints = level => {
         const name = `${midpoint}°${eda}`
 
         return {name, position}
-    }).filter(edaMidpoint => !!edaMidpoint)
+    }).filter(inaMidpoint => !!inaMidpoint)
 }
 
 module.exports = {
-    computeEdaMidpoints,
+    computeInaMidpoints,
 }

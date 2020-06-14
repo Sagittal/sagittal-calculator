@@ -3,11 +3,11 @@ const {computeBoundNextLevel} = require("../../../../src/boundsAnalysis/plot/bou
 describe("computeBoundNextLevel", () => {
     it("gives the next level for this bound (since some bounds skip levels)", () => {
         const bound = {
-            levels: ["MEDIUM", "VERY_HIGH"],
+            levels: ["MEDIUM", "ULTRA"],
         }
 
         const result = computeBoundNextLevel(bound, "MEDIUM")
 
-        expect(result).toBe("VERY_HIGH")
+        expect(result).toBe("ULTRA")
     })
 })
