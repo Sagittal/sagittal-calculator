@@ -1,7 +1,7 @@
 const {INA_MIDPOINTS} = require("../data/snappablePositions")
 const {INA_COLOR} = require("./colors")
 const {LEVEL_CENTERS} = require("./levelHeights")
-const {DASH_SIZE, HALF_TICK_SIZE, TEXT_OFFSET} = require("./constants")
+const {DASH_SIZE, HALF_TICK_SIZE, TEXT_OFFSET} = require("./size")
 const {computeX} = require("./x")
 
 const visualizeInaMidpoints = () => {

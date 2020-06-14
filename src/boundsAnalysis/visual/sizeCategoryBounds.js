@@ -1,7 +1,7 @@
 const {LEVELS_SIZE_CATEGORY_BOUNDS} = require("../data/snappablePositions")
 const {LEVEL_TOPS, LEVEL_BOTTOMS} = require("./levelHeights")
 const {computeX} = require("./x")
-const {DASH_SIZE} = require("./constants")
+const {DASH_SIZE} = require("./size")
 const {SIZE_COLOR} = require("./colors")
 
 const visualizeSizeCategoryBounds = () => {

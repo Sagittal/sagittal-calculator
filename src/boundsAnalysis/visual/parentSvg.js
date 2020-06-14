@@ -1,7 +1,7 @@
 const {MAXIMUM_POSITION} = require("../data/intervals")
 const {computeX} = require("./x")
 const {LEVEL_BOTTOMS} = require("./levelHeights")
-const {MARGIN} = require("./constants")
+const {MARGIN} = require("./size")
 
 const addParentSvg = () => {
     const width = computeX(MARGIN + MAXIMUM_POSITION)
