@@ -60,8 +60,7 @@ const HEADER_ROW = "   ---   Bound Analyses   ---   \n\n\n" + presentHeaderRow([
         "rank",
     ],
     [
-        "very",
-        "high",
+        "ultra",
         "level",
         "rank",
     ],

@@ -21,14 +21,14 @@ const COMMAS = [
         mina: 2,
     },
     {
-        introducingLevel: "VERY_HIGH",
+        introducingLevel: "ULTRA",
         position: 1.4242979405308,
         symbol: ".)|",
         unicode: "",
         mina: 3,
     },
     {
-        introducingLevel: "VERY_HIGH",
+        introducingLevel: "ULTRA",
         position: 1.95372078793416,
         symbol: "'|",
         unicode: "",
@@ -98,7 +98,7 @@ const COMMAS = [
         mina: 13,
     },
     {
-        introducingLevel: "VERY_HIGH",
+        introducingLevel: "ULTRA",
         position: 6.77587576937045,
         symbol: ".~|",
         unicode: "",
@@ -112,7 +112,7 @@ const COMMAS = [
         mina: 15,
     },
     {
-        introducingLevel: "VERY_HIGH",
+        introducingLevel: "ULTRA",
         position: 7.71152299131971,
         symbol: "'|(",
         unicode: "",
@@ -168,7 +168,7 @@ const COMMAS = [
         mina: 23,
     },
     {
-        introducingLevel: "VERY_HIGH",
+        introducingLevel: "ULTRA",
         position: 11.6416814307528,
         symbol: "')|(",
         unicode: "",
@@ -182,7 +182,7 @@ const COMMAS = [
         mina: 25,
     },
     {
-        introducingLevel: "VERY_HIGH",
+        introducingLevel: "ULTRA",
         position: 12.7766930394100,
         symbol: ".~|(",
         unicode: "",
@@ -280,7 +280,7 @@ const COMMAS = [
         mina: 39,
     },
     {
-        introducingLevel: "VERY_HIGH",
+        introducingLevel: "ULTRA",
         position: 19.5525688087807,
         symbol: "./|",
         unicode: "",
@@ -329,14 +329,14 @@ const COMMAS = [
         mina: 46,
     },
     {
-        introducingLevel: "VERY_HIGH",
+        introducingLevel: "ULTRA",
         position: 22.9305875372457,
         symbol: ".)/|",
         unicode: "",
         mina: 47,
     },
     {
-        introducingLevel: "VERY_HIGH",
+        introducingLevel: "ULTRA",
         position: 23.4600103846490,
         symbol: "'/|",
         unicode: "",
@@ -378,7 +378,7 @@ const COMMAS = [
         mina: 51.45864857210600,
     },
     {
-        introducingLevel: "VERY_HIGH",
+        introducingLevel: "ULTRA",
         position: 25.3103710121659,
         symbol: ".|)",
         unicode: "",
@@ -434,7 +434,7 @@ const COMMAS = [
         mina: 59,
     },
     {
-        introducingLevel: "VERY_HIGH",
+        introducingLevel: "ULTRA",
         position: 29.2178125880342,
         symbol: "'|)",
         unicode: "",
@@ -462,7 +462,7 @@ const COMMAS = [
         mina: 63,
     },
     {
-        introducingLevel: "VERY_HIGH",
+        introducingLevel: "ULTRA",
         position: 31.1942502395332,
         symbol: ".(|",
         unicode: "",
@@ -518,7 +518,7 @@ const COMMAS = [
         mina: 71,
     },
     {
-        introducingLevel: "VERY_HIGH",
+        introducingLevel: "ULTRA",
         position: 34.9756147914198,
         symbol: "'(|",
         unicode: "",
@@ -560,14 +560,14 @@ const COMMAS = [
         mina: 75.53838439606520,
     },
     {
-        introducingLevel: "VERY_HIGH",
+        introducingLevel: "ULTRA",
         position: 36.9520524429189,
         symbol: ".(|(",
         unicode: "",
         mina: 76,
     },
     {
-        introducingLevel: "VERY_HIGH",
+        introducingLevel: "ULTRA",
         position: 37.6505328607966,
         symbol: "'~|)",
         unicode: "",
@@ -623,7 +623,7 @@ const COMMAS = [
         mina: 83,
     },
     {
-        introducingLevel: "VERY_HIGH",
+        introducingLevel: "ULTRA",
         position: 41.0588584054956,
         symbol: ".//|",
         unicode: "",
@@ -679,7 +679,7 @@ const COMMAS = [
         mina: 91,
     },
     {
-        introducingLevel: "VERY_HIGH",
+        introducingLevel: "ULTRA",
         position: 44.9696465023956,
         symbol: "'//|",
         unicode: "",
@@ -763,7 +763,7 @@ const COMMAS = [
         mina: 103,
     },
     {
-        introducingLevel: "VERY_HIGH",
+        introducingLevel: "ULTRA",
         position: 50.7241021847494,
         symbol: "'/|)",
         unicode: "",
@@ -777,7 +777,7 @@ const COMMAS = [
         mina: 105,
     },
     {
-        introducingLevel: "VERY_HIGH",
+        introducingLevel: "ULTRA",
         position: 51.3192224422099,
         symbol: "./|\\",
         unicode: "",
@@ -840,7 +840,7 @@ const COMMAS = [
         mina: 113,
     },
     {
-        introducingLevel: "VERY_HIGH",
+        introducingLevel: "ULTRA",
         position: 55.2266640180783,
         symbol: "'/|\\",
         unicode: "",
@@ -889,7 +889,7 @@ const COMMAS = [
         mina: 119,
     },
     {
-        introducingLevel: "VERY_HIGH",
+        introducingLevel: "ULTRA",
         position: 58.4583420396336,
         symbol: ".(|)",
         unicode: "",
@@ -952,7 +952,7 @@ const COMMAS = [
         mina: 127,
     },
     {
-        introducingLevel: "VERY_HIGH",
+        introducingLevel: "ULTRA",
         position: 62.3657836155021,
         symbol: "'(|)",
         unicode: "",
@@ -966,7 +966,7 @@ const COMMAS = [
         mina: 128.58001405836400,
     },
     {
-        introducingLevel: "VERY_HIGH",
+        introducingLevel: "ULTRA",
         position: 62.9609038729626,
         symbol: ".(|\\",
         unicode: "",

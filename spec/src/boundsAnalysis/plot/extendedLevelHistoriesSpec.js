@@ -21,7 +21,7 @@ describe("computeExtendedLevelHistories", () => {
         const level = "HIGH"
         const bound = {
             position: 8.1,
-            levels: ["MEDIUM", "HIGH", "VERY_HIGH"],
+            levels: ["MEDIUM", "HIGH", "ULTRA"],
         }
 
         const result = computeExtendedLevelHistories(histories, level, bound)

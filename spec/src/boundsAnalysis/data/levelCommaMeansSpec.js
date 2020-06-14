@@ -54,8 +54,8 @@ describe("computeLevelCommaMeans", () => {
         ])
     })
 
-    it("can return the comma means for the Very High level, both the positions and the bounded commas' symbols", () => {
-        expect(computeLevelCommaMeans("VERY_HIGH")).toEqual([
+    it("can return the comma means for the Ultra level, both the positions and the bounded commas' symbols", () => {
+        expect(computeLevelCommaMeans("ULTRA")).toEqual([
             {name: "| .)|", position: 0.7121489702654},
             {name: ".)| '|", position: 1.6890093642324802},
             {name: "'| )|", position: 2.6658697581995052},

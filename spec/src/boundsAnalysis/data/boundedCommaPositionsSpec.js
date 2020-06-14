@@ -9,7 +9,7 @@ describe("computeBoundedCommaPositions", () => {
     })
 
     it("when the position is greater than the greatest comma at the level, gives the position of the greatest comma for the lesser comma and undefined for the greater comma", () => {
-        expect(computeBoundedCommaPositions(68.4, "VERY_HIGH")).toEqual([
+        expect(computeBoundedCommaPositions(68.4, "ULTRA")).toEqual([
             67.2910616147857, // )|\\
             undefined,
         ])

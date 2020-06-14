@@ -3,7 +3,7 @@ const {computeConsolidatedHistories} = require("../../../../src/boundsAnalysis/a
 describe("computeConsolidatedHistories", () => {
     it("consolidates histories to collapse redundancies per level and show which events can lead into which events in the next level, and which ones are members of histories that are possible, and what the best rank is in any event that gets consolidated into this consolidated display, and what the best rank of any history this event is a member of is, and membership in the best possible history", () => {
         const eventOneGoesToEventThreeAndFour = {
-            level: "VERY_HIGH",
+            level: "ULTRA",
             type: "MEAN",
             name: "'/| )/|",
             position: 24.2,
@@ -11,7 +11,7 @@ describe("computeConsolidatedHistories", () => {
             exact: false,
         }
         const eventTwoGoesToEventThree = {
-            level: "VERY_HIGH",
+            level: "ULTRA",
             type: "EDA",
             name: "12.5°58",
             position: 24.33333,
@@ -89,7 +89,7 @@ describe("computeConsolidatedHistories", () => {
         const result = computeConsolidatedHistories(analyzedHistories, bestPossibleHistory)
 
         expect(result).toEqual({
-            VERY_HIGH: [
+            ULTRA: [
                 {
                     type: eventOneGoesToEventThreeAndFour.type,
                     level: eventOneGoesToEventThreeAndFour.level,

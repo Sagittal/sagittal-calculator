@@ -1,8 +1,8 @@
-const {computeEdaMidpoints} = require("../../../../src/boundsAnalysis/data/edaMidpoints")
+const {computeInaMidpoints} = require("../../../../src/boundsAnalysis/data/edaMidpoints")
 
-describe("computeEdaMidpoints", () => {
+describe("computeInaMidpoints", () => {
     it("works for the MEDIUM level, only including midpoints below the maximum position", () => {
-        expect(computeEdaMidpoints("MEDIUM")).toEqual([
+        expect(computeInaMidpoints("MEDIUM")).toEqual([
             {name: "0.5°21", position: 2.7067858585169504},
             {name: "1.5°21", position: 8.120357575550852},
             {name: "2.5°21", position: 13.533929292584752},
