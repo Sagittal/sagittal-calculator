@@ -21,7 +21,7 @@ describe("analyzeBound", () => {
             type: "INA",
             name: "164.5°809",
             position: 23.116419649559468,
-            // this one gets rank: 4
+            // this one gets rank 4
         },
     ]
     const bestHistory = [
@@ -105,6 +105,7 @@ describe("analyzeBound", () => {
             initialPositionTinaDifference: -0.5613173198954056,
             possibleHistoryCount: 2,
             bestPossibleHistory: expectedBestPossibleHistory,
+            bestPossibleHistoryDistance: 0.08358035044053125,
             consolidatedHistories: {
                 ULTRA: [
                     {

@@ -14,19 +14,21 @@ describe("presentBoundAnalysis", () => {
             const boundAnalysis = {
                 bestPossibleHistory: {
                     events: [
-                        {level: "EXTREME", rank: 0},
-                        {level: "INSANE", rank: 1},
+                        {level: "ULTRA", rank: 0, distance: 0.000},
+                        {level: "EXTREME", rank: 0, distance: 3.333},
+                        {level: "INSANE", rank: 1, distance: 2.222},
                     ],
                 },
                 bestRank: 1,
                 initialPosition: 5.48533,
                 initialPositionTinaDifference: 0.0393,
+                bestPossibleHistoryDistance: 5.555,
             }
             const boundIndex = 10
 
             const result = presentBoundAnalysis(boundAnalysis, {bound, boundIndex, mode})
 
-            expect(result).toEqual("10\t 10\t 11\t   ,,|( \t    ,|( \t \t \t \t0\t1\t  5.448\t  5.485\t  0.039".cyan)
+            expect(result).toEqual("10\t 10\t 11\t   ,,|( \t    ,|( \t \t \t0\t0\t1\t \t \t  3.333\t  2.222\t  5.555\t  5.448\t  5.485\t  0.039".cyan)
         })
     })
 
