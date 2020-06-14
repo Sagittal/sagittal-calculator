@@ -10,10 +10,21 @@ const {visualizeBounds} = require("./visual/bounds")
 
 const args = process.argv.slice(2)
 
+let bound
+let boundIndex
+let testMode = false
 if (args.length) {
-    const boundIndex = args[0]
-    const bound = BOUNDS[boundIndex]
+    const arg = args[0]
 
+    if (arg === "--test") {
+        testMode = true
+    } else {
+        boundIndex = arg
+        bound = BOUNDS[boundIndex]
+    }
+}
+
+if (bound) {
     const histories = computeHistories(bound)
     const boundAnalysis = analyzeBound(histories, bound, boundIndex)
 
@@ -34,5 +45,5 @@ if (args.length) {
     console.log(presentLevelAnalyses())
     console.log(presentRankAnalyses())
 
-    visualizeBounds(visualization)
+    !testMode && visualizeBounds(visualization)
 }
