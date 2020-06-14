@@ -1,5 +1,5 @@
 const {LEVELS} = require("../data/levels")
-const {LEVEL_HEIGHT, Y_SCALE, MARGIN} = require("./size")
+const {LEVEL_HEIGHT, Y_SCALE, MARGIN} = require("./sizes")
 const {computeReversedLevelIndex} = require("./reversedLevelIndex")
 
 const computeLevelHeights = withinLevelHeight => {
