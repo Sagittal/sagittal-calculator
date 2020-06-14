@@ -6,7 +6,7 @@ const {HEADER_ROW} = require("./present/headerRow")
 const {presentBoundAnalysis} = require("./present/boundAnalysis")
 const {presentRankAnalyses} = require("./present/rankAnalyses")
 const {presentLevelAnalyses} = require("./present/levelAnalyses")
-const {visualizeBounds} = require("./visual/bounds")
+const {visualizeBounds} = require("./visualize/bounds")
 
 const args = process.argv.slice(2)
 
