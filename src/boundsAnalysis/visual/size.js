@@ -8,7 +8,7 @@ const LEVEL_HEIGHT = 1
 const TICK_SIZE = SCALE * LEVEL_HEIGHT / 2
 const HALF_TICK_SIZE = TICK_SIZE / 2
 
-const DOT_SIZE = SCALE * 0.01 // TODO: there's something frustratingly inconsistent about what stuff is multiplied by scale and what isn't...
+const DOT_SIZE = SCALE * 0.01
 const DASH_SIZE = 1
 
 const TEXT_OFFSET = Y_SCALE * 0.05
