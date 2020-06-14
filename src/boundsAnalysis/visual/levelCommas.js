@@ -14,11 +14,12 @@ const visualizeLevelCommas = () => {
         const symbolY = centerY + COMMA_OFFSET
 
         levelsCommas.forEach(levelComma => {
-            const {position, unicode} = levelComma
+            const {position, ascii, unicode} = levelComma
 
             const positionX = computeX(position)
 
             levelCommaElements.push(`  <circle stroke="black" cx="${positionX}" cy="${dotY}" r="${DOT_SIZE}" />\n`)
+            levelCommaElements.push(`  <text fill="white" text-anchor="middle" x="${positionX}" y="${symbolY}" font-size="10px" font-family="Helvetica">${ascii}</text>\n`)
             levelCommaElements.push(`  <text text-anchor="middle" x="${positionX}" y="${symbolY}" font-size="40px" font-family="Bravura">${unicode}</text>\n`)
         })
     })
