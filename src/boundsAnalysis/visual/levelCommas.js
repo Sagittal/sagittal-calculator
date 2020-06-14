@@ -1,6 +1,6 @@
 const {LEVELS_COMMAS} = require("../data/levelsCommas")
 const {LEVEL_CENTERS} = require("./levelHeights")
-const {COMMA_OFFSET, DOT_SIZE} = require("./size")
+const {COMMA_OFFSET, DOT_SIZE} = require("./sizes")
 const {computeX} = require("./x")
 
 const visualizeLevelCommas = () => {
