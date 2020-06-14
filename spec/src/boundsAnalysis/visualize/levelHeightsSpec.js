@@ -1,4 +1,4 @@
-const {computeLevelHeights} = require("../../../../src/boundsAnalysis/visual/levelHeights")
+const {computeLevelHeights} = require("../../../../src/boundsAnalysis/visualize/levelHeights")
 const {ACCURACY_THRESHOLD} = require("../../../../src/boundsAnalysis/utilities/constants")
 
 describe("computeLevelHeights", () => {
