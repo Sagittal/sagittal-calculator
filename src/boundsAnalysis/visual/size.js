@@ -11,7 +11,6 @@ const HALF_TICK_SIZE = TICK_SIZE / 2
 const DOT_SIZE = SCALE * 0.01
 const DASH_SIZE = 1
 
-const TEXT_OFFSET = Y_SCALE * 0.05
 const COMMA_OFFSET = Y_SCALE * 0.1
 
 module.exports = {
@@ -24,6 +23,5 @@ module.exports = {
     DOT_SIZE,
     DASH_SIZE,
     HALF_TICK_SIZE,
-    TEXT_OFFSET,
     COMMA_OFFSET,
 }
