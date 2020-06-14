@@ -16,27 +16,27 @@ const visualizeBounds = visualization => {
 
     fs.copyFileSync("assets/fonts/BravuraSagittalUpdate_v10.otf", "dist/boundsAnalysis/BravuraSagittalUpdate_v10.otf")
 
-    let lines = []
+    let elements = []
 
-    lines = lines.concat(addParentSvg())
-    lines = lines.concat(addFont())
+    elements = elements.concat(addParentSvg())
+    elements = elements.concat(addFont())
 
-    lines = lines.concat(visualizeLevels())
-    lines = lines.concat(visualizeLevelBounds())
+    elements = elements.concat(visualizeLevels())
+    elements = elements.concat(visualizeLevelBounds())
 
     visualization.forEach(boundAnalysis => {
-        lines = lines.concat(visualizeEvents(boundAnalysis.bestPossibleHistory.events))
+        elements = elements.concat(visualizeEvents(boundAnalysis.bestPossibleHistory.events))
     })
 
-    lines = lines.concat(visualizeSizeCategoryBounds())
-    lines = lines.concat(visualizeLevelCommaMeans())
-    lines = lines.concat(visualizeInaMidpoints())
+    elements = elements.concat(visualizeSizeCategoryBounds())
+    elements = elements.concat(visualizeLevelCommaMeans())
+    elements = elements.concat(visualizeInaMidpoints())
 
-    lines = lines.concat(visualizeLevelCommas())
+    elements = elements.concat(visualizeLevelCommas())
 
-    lines = lines.concat("</svg>\n")
+    elements = elements.concat("</svg>\n")
 
-    fs.appendFileSync(OUTPUT, lines.join("\n"))
+    fs.appendFileSync(OUTPUT, elements.join("\n"))
 }
 
 module.exports = {

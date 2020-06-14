@@ -4,7 +4,7 @@ const {computeX} = require("./x")
 const {DASH_SIZE} = require("./size")
 
 const visualizeLevelBounds = () => {
-    const levelBoundLines = []
+    const levelBoundElements = []
 
     Object.entries(LEVELS_BOUNDS).forEach(([level, levelsBounds]) => {
         if (level === "INSANE") return
@@ -12,19 +12,19 @@ const visualizeLevelBounds = () => {
         levelsBounds.forEach((levelBound, index) => {
             const {position} = levelBound
 
-            const y1 = LEVEL_TOPS[level]
-            const y2 = LEVEL_BOTTOMS[level]
-            const x = computeX(position)
+            const topY = LEVEL_TOPS[level]
+            const bottomY = LEVEL_BOTTOMS[level]
+            const positionX = computeX(position)
 
-            levelBoundLines.push(`  <line stroke-dasharray="${DASH_SIZE}" stroke="black" x1="${x}" x2="${x}" y1="${y1}" y2="${y2}" />\n`)
+            levelBoundElements.push(`  <line stroke-dasharray="${DASH_SIZE}" stroke="black" x1="${positionX}" x2="${positionX}" y1="${topY}" y2="${bottomY}" />\n`)
 
             if (level === "EXTREME") { // bound index, not mina label
-                levelBoundLines.push(`  <text fill="black" text-anchor="middle" xml:space="preserve" x="${x}" y="${y1}" font-size="12px" font-family="Helvetica">${index}</text>`)
+                levelBoundElements.push(`  <text fill="black" text-anchor="middle" xml:space="preserve" x="${positionX}" y="${topY}" font-size="12px" font-family="Helvetica">${index}</text>`)
             }
         })
     })
 
-    return levelBoundLines
+    return levelBoundElements
 }
 
 module.exports = {

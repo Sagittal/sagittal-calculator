@@ -4,17 +4,17 @@ const {LEVELS} = require("../data/levels")
 const {LEVEL_BOTTOMS} = require("./levelHeights")
 
 const visualizeLevels = () => {
-    const levelLines = []
+    const levelElements = []
 
     LEVELS.forEach(level => {
-        const x1 = computeX(0)
-        const x2 = computeX(MAXIMUM_POSITION)
-        const y = LEVEL_BOTTOMS[level]
+        const leftEdgeX = computeX(0)
+        const rightEdgeX = computeX(MAXIMUM_POSITION)
+        const levelY = LEVEL_BOTTOMS[level]
 
-        levelLines.push(`  <line stroke="black" x1="${x1}" x2="${x2}" y1="${y}" y2="${y}"/>\n`)
+        levelElements.push(`  <line stroke="black" x1="${leftEdgeX}" x2="${rightEdgeX}" y1="${levelY}" y2="${levelY}"/>\n`)
     })
 
-    return levelLines
+    return levelElements
 }
 
 module.exports = {
