@@ -1,5 +1,5 @@
 const FORMATTED_RANK_NAMES = [
-    "EDA midpoint",
+    "INA midpoint",
     "comma mean",
     "size category bound",
 ]

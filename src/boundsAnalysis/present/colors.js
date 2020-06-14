@@ -1,5 +1,5 @@
 const COLORS = [
-    "brightBlue",   // EDA
+    "brightBlue",   // INA
     "cyan",         // MEAN
     "green",        // SIZE
 ]

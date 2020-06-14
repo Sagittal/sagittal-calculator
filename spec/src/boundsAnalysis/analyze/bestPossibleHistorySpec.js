@@ -52,17 +52,17 @@ describe("computeBestPossibleHistory", () => {
         })
     })
 
-    it("tie-breaks by sleda", () => {
+    it("tie-breaks by distance", () => {
         const histories = [
             {
                 score: 3436643,
-                sleda: 0.2,
+                distance: 0.2,
                 position: 12.909,
                 exact: true,
             },
             {
                 score: 3436643,
-                sleda: 0.1,
+                distance: 0.1,
                 position: 12.909,
                 exact: true,
             },
@@ -72,7 +72,7 @@ describe("computeBestPossibleHistory", () => {
 
         expect(result).toEqual({
             score: 3436643,
-            sleda: 0.1,
+            distance: 0.1,
             position: 12.909,
             exact: true,
         },)

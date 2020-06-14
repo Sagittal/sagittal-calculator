@@ -9,7 +9,7 @@ describe("presentLevelAnalysis", () => {
 
         expect(result).toBe([
             "Ultra",
-            " 18 EDA midpoint".brightBlue,
+            " 18 INA midpoint".brightBlue,
             " 23 comma mean".cyan,
             " 13 size category bound".green,
         ].join("\n"))

@@ -1,5 +1,5 @@
 const RANKS = {
-    EDA: 0,
+    INA: 0,
     MEAN: 1,
     SIZE: 2,
 }

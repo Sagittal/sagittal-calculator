@@ -18,7 +18,7 @@ describe("analyzeBound", () => {
         },
         {
             level: "INSANE",
-            type: "EDA",
+            type: "INA",
             name: "164.5°809",
             position: 23.116419649559468,
             // this one gets rank: 4
@@ -33,13 +33,13 @@ describe("analyzeBound", () => {
         },
         {
             level: "EXTREME",
-            type: "EDA",
+            type: "INA",
             name: "47.5°233",
             position: 23.15,
         },
         {
             level: "INSANE",
-            type: "EDA",
+            type: "INA",
             name: "164.5°809",
             position: 23.116419649559468,
             // this one gets rank 1
@@ -60,25 +60,25 @@ describe("analyzeBound", () => {
             name: ".)/| '/|",
             position: 23.2,
             rank: 1,
-            sleda: 0,
+            distance: 0,
             exact: false,
         },
         {
             level: "EXTREME",
-            type: "EDA",
+            type: "INA",
             name: "47.5°233",
             position: 23.15,
             rank: 0,
-            sleda: 0.05000000000000071,
+            distance: 0.05000000000000071,
             exact: false,
         },
         {
             level: "INSANE",
-            type: "EDA",
+            type: "INA",
             name: "164.5°809",
             position: 23.116419649559468,
             rank: 0,
-            sleda: 0.03358035044053054,
+            distance: 0.03358035044053054,
             exact: true,
         },
     ]
@@ -89,7 +89,7 @@ describe("analyzeBound", () => {
         score: 131,
         possible: true,
         exact: false,
-        sleda: 0.08358035044053125,
+        distance: 0.08358035044053125,
         tinaError: 0,
         initialPositionTinaDifference: -0.5613173198970488,
     }
@@ -140,7 +140,7 @@ describe("analyzeBound", () => {
                     },
                     {
                         level: "EXTREME",
-                        type: "EDA",
+                        type: "INA",
                         name: "47.5°233",
                         position: 23.15,
                         isPossibleHistoryMember: true,
@@ -156,7 +156,7 @@ describe("analyzeBound", () => {
                 INSANE: [
                     {
                         level: "INSANE",
-                        type: "EDA",
+                        type: "INA",
                         name: "164.5°809",
                         position: 23.116419649559468,
                         isPossibleHistoryMember: true,

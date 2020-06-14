@@ -4,7 +4,7 @@ describe("computeRank", () => {
     it("returns the worst rank of any of the events in the history", () => {
         const analyzedEvents = [
             {
-                type: "EDA",
+                type: "INA",
                 level: "HIGH",
                 position: 10.0,
                 rank: 1,

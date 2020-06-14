@@ -8,12 +8,12 @@ describe("computeEvents", () => {
     let position
 
     describe("returns an event for each snappable position between the bounded comma positions for this event type and level", () => {
-        describe("for events of snapping to EDA midpoint positions", () => {
+        describe("for events of snapping to INA midpoint positions", () => {
             beforeEach(() => {
-                eventType = "EDA"
+                eventType = "INA"
             })
 
-            it("works when only one EDA midpoint is between the bounded commas", () => {
+            it("works when only one INA midpoint is between the bounded commas", () => {
                 level = "ULTRA"
                 boundedCommaPositions = computeBoundedCommaPositions(4.5, level)
                 position = 5.1
@@ -23,14 +23,14 @@ describe("computeEvents", () => {
                 expect(result).toEqual(jasmine.arrayWithExactContents([
                     {
                         level: "ULTRA",
-                        type: "EDA",
+                        type: "INA",
                         name: "2.5°58",
                         position: 4.900215778349652,
                     },
                 ]))
             })
 
-            it("works when only one EDA midpoint is between the bounded commas, even if it is not within a half-step of the EDA", () => {
+            it("works when only one INA midpoint is between the bounded commas, even if it is not within a half-ina", () => {
                 level = "ULTRA"
                 boundedCommaPositions = computeBoundedCommaPositions(4.5, level)
                 position = 3.1 // not carefully chosen; may not even be between the bounded commas
@@ -40,14 +40,14 @@ describe("computeEvents", () => {
                 expect(result).toEqual(jasmine.arrayWithExactContents([
                     {
                         level: "ULTRA",
-                        type: "EDA",
+                        type: "INA",
                         name: "2.5°58",
                         position: 4.900215778349652,
                     },
                 ]))
             })
 
-            it("works when multiple EDA midpoints are between the bounded commas", () => {
+            it("works when multiple INA midpoints are between the bounded commas", () => {
                 level = "HIGH"
                 boundedCommaPositions = computeBoundedCommaPositions(28.0, level)
                 position = 28.1
@@ -57,20 +57,20 @@ describe("computeEvents", () => {
                 expect(result).toEqual(jasmine.arrayWithExactContents([
                     {
                         level: "HIGH",
-                        type: "EDA",
+                        type: "INA",
                         name: "11.5°47",
                         position: 27.816544035397598,
                     },
                     {
                         level: "HIGH",
-                        type: "EDA",
+                        type: "INA",
                         name: "12.5°47",
                         position: 30.235373951519126,
                     },
                 ]))
             })
 
-            it("returns an empty array if there are no EDA midpoints between the position's bounded commas", () => {
+            it("returns an empty array if there are no INA midpoints between the position's bounded commas", () => {
                 level = "ULTRA"
                 boundedCommaPositions = computeBoundedCommaPositions(6.05, level)
 

@@ -1,4 +1,4 @@
-const {computeInaMidpoints} = require("../../../../src/boundsAnalysis/data/edaMidpoints")
+const {computeInaMidpoints} = require("../../../../src/boundsAnalysis/data/inaMidpoints")
 
 describe("computeInaMidpoints", () => {
     it("works for the MEDIUM level, only including midpoints below the maximum position", () => {

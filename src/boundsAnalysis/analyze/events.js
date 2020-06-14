@@ -6,13 +6,13 @@ const analyzeEvents = (history, actualBoundPosition) => {
         const {position, type} = event
         const exact = computeIsCloseTo(position, actualBoundPosition)
         const rank = RANKS[type]
-        const sleda = Math.abs(index === 0 ? 0 : history[index - 1].position - event.position) // TODO: extract
+        const distance = Math.abs(index === 0 ? 0 : history[index - 1].position - event.position) // TODO: extract
 
         return {
             ...event,
             rank,
             exact,
-            sleda,
+            distance,
         }
     })
 }
