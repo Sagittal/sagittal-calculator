@@ -11,7 +11,7 @@ const visualizeEvents = events => {
             return
         }
 
-        const {level: nextLevel, position: nextPosition, rank: nextRank, sleda: nextSleda} = events[index + 1] || {}
+        const {level: nextLevel, position: nextPosition, rank: nextRank, distance: nextDistance} = events[index + 1] || {}
 
         const stroke = RANK_FILLS[nextRank]
 
@@ -31,7 +31,7 @@ const visualizeEvents = events => {
         const angle = run === 0 ?
             rise > 0 ? 90 : 270 :
             Math.sin(slope) * (180/Math.PI)
-        eventLines.push(`  <text transform="rotate(${angle} ${textX} ${textY})" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" fill="red" x="${textX}" y="${textY}">${nextSleda.toPrecision(5)}</text>`)
+        eventLines.push(`  <text transform="rotate(${angle} ${textX} ${textY})" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" fill="red" x="${textX}" y="${textY}">${nextDistance.toPrecision(5)}</text>`)
     })
 
     return eventLines

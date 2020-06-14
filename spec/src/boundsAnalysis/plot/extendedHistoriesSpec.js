@@ -5,7 +5,7 @@ describe("computeExtendedHistories", () => {
 
     let passedInHistoryEvent = {
         level: "HIGH",
-        type: "EDA",
+        type: "INA",
         name: "16.5°47",
         position: 45.45,
     }
@@ -28,7 +28,7 @@ describe("computeExtendedHistories", () => {
                 passedInHistoryEvent,
                 {
                     level: "ULTRA",
-                    type: "EDA",
+                    type: "INA",
                     name: "23.5°58",
                     position: 46.062028316486725,
                 },

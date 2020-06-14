@@ -7,7 +7,7 @@ const computeExtendedHistories = (history, level, bound) => {
     const boundedCommaPositions = computeBoundedCommaPositions(bound.position, level)
 
     const newEvents = [
-        ...computeEvents(level, boundedCommaPositions, "EDA"),
+        ...computeEvents(level, boundedCommaPositions, "INA"),
         ...computeEvents(level, boundedCommaPositions, "MEAN"),
         ...computeEvents(level, boundedCommaPositions, "SIZE"),
     ]

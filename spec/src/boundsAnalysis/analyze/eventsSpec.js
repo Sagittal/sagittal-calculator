@@ -1,10 +1,10 @@
 const {analyzeEvents} = require("../../../../src/boundsAnalysis/analyze/events")
 
 describe("analyzeEvents", () => {
-    it("adds some analysis properties to each event: rank, sleda, and exact", () => {
+    it("adds some analysis properties to each event: rank, distance, and exact", () => {
         const history = [
             {
-                type: "EDA",
+                type: "INA",
                 level: "HIGH",
                 position: 10.0,
             },
@@ -25,12 +25,12 @@ describe("analyzeEvents", () => {
 
         expect(result).toEqual(jasmine.arrayWithExactContents([
             {
-                type: "EDA",
+                type: "INA",
                 level: "HIGH",
                 position: 10.0,
                 rank: 0,
                 exact: false,
-                sleda: 0,
+                distance: 0,
             },
             {
                 type: "SIZE",
@@ -38,7 +38,7 @@ describe("analyzeEvents", () => {
                 position: 10.2,
                 rank: 2,
                 exact: true,
-                sleda: 0.1999999999999993,
+                distance: 0.1999999999999993,
             },
             {
                 type: "MEAN",
@@ -46,7 +46,7 @@ describe("analyzeEvents", () => {
                 position: 10.1,
                 rank: 1,
                 exact: false,
-                sleda: 0.09999999999999964,
+                distance: 0.09999999999999964,
             },
         ]))
     })

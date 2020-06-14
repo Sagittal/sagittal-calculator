@@ -15,7 +15,7 @@ const MAXIMUM_POSITION = Math.log2(
     Math.pow(2, 15),
 ) * 1200                                            // 68.5725082211804
 
-const LEVEL_EDA_STEP_SIZES = LEVEL_EDAS.reduce(
+const INA_SIZES = LEVEL_EDAS.reduce(
     (levelEdaStepSizes, levelEda, index) => {
         return {
             ...levelEdaStepSizes,
@@ -33,5 +33,5 @@ module.exports = {
     HIGHINA,
     MEDINA,
     MAXIMUM_POSITION,
-    LEVEL_EDA_STEP_SIZES,
+    INA_SIZES,
 }

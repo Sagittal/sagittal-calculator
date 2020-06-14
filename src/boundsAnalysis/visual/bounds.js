@@ -6,7 +6,7 @@ const {visualizeEvents} = require("./events")
 const {visualizeLevels} = require("./levels")
 const {visualizeLevelCommas} = require("./levelCommas")
 const {visualizeLevelBounds} = require("./levelBounds")
-const {visualizeLevelEdaMidpoints} = require("./levelEdaMidpoints")
+const {visualizeInaMidpoints} = require("./inaMidpoints")
 const {visualizeLevelCommaMeans} = require("./levelCommaMeans")
 const {visualizeSizeCategoryBounds} = require("./sizeCategoryBounds")
 const {OUTPUT} = require("./constants")
@@ -30,7 +30,7 @@ const visualizeBounds = visualization => {
 
     lines = lines.concat(visualizeSizeCategoryBounds())
     lines = lines.concat(visualizeLevelCommaMeans())
-    lines = lines.concat(visualizeLevelEdaMidpoints())
+    lines = lines.concat(visualizeInaMidpoints())
 
     lines = lines.concat(visualizeLevelCommas())
 

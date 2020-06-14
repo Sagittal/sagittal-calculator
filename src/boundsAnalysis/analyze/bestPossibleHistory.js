@@ -14,7 +14,7 @@ const computeBestPossibleHistory = analyzedHistories => {
     analyzedHistories.forEach(analyzedHistory => {
         if (
             analyzedHistory.score < bestPossibleHistory.score ||
-            (analyzedHistory.score === bestPossibleHistory.score && analyzedHistory.sleda < bestPossibleHistory.sleda)
+            (analyzedHistory.score === bestPossibleHistory.score && analyzedHistory.distance < bestPossibleHistory.distance)
         ) {
             bestPossibleHistory = analyzedHistory
         }

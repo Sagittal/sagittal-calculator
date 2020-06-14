@@ -12,7 +12,7 @@ describe("computeConsolidatedHistories", () => {
         }
         const eventTwoGoesToEventThree = {
             level: "ULTRA",
-            type: "EDA",
+            type: "INA",
             name: "12.5°58",
             position: 24.33333,
             rank: 1,
@@ -28,7 +28,7 @@ describe("computeConsolidatedHistories", () => {
         }
         const eventFour = {
             level: "EXTREME",
-            type: "EDA",
+            type: "INA",
             name: "50.5°233",
             position: 24.151964806252103,
             rank: 1,

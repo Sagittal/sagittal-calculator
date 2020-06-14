@@ -22,14 +22,14 @@ describe("updateLevelAnalysis", () => {
                 {level: "HIGH", rank: 1},
             ],
         }
-        let formerMediumEda = 3
+        let formerMediumIna = 3
         let formerHighMean = 4
-        levelsBestHistoryRanks["MEDIUM"] = [formerMediumEda]
+        levelsBestHistoryRanks["MEDIUM"] = [formerMediumIna]
         levelsBestHistoryRanks["HIGH"] = [undefined, formerHighMean]
 
         updateLevelAnalysis(bestPossibleHistory)
 
-        expect(levelsBestHistoryRanks["MEDIUM"][0]).toBe(formerMediumEda + 1)
+        expect(levelsBestHistoryRanks["MEDIUM"][0]).toBe(formerMediumIna + 1)
         expect(levelsBestHistoryRanks["HIGH"][1]).toBe(formerHighMean + 1)
     })
 })

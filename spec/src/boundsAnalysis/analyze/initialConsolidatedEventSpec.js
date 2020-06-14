@@ -3,7 +3,7 @@ const {computeInitialConsolidatedEvent} = require("../../../../src/boundsAnalysi
 describe("computeInitialConsolidatedEvent", () => {
     let result
     const analyzedEvent = {
-        type: "EDA",
+        type: "INA",
         name: "12.5°58",
         rank: 4,
         position: 43.343455,

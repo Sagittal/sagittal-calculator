@@ -12,7 +12,7 @@ describe("analyzeHistory", () => {
     it("returns its history but with its event augmented with analysis properties, and calculates the final position of the history, and its distance from the initial position, and its overall distance the bound moved across all the events", () => {
         position = actualBoundPosition + 0.5
         history = [
-            {position, type: "EDA", level: "EXTREME"},
+            {position, type: "INA", level: "EXTREME"},
             {position, type: "SIZE", level: "INSANE"},
         ]
         bound = {
@@ -24,12 +24,12 @@ describe("analyzeHistory", () => {
         const result = analyzeHistory(history, bound, initialPosition)
 
         expect(result.events).toEqual([
-            {position, type: "EDA", rank: 0, exact: false, sleda: 0, level: "EXTREME"},
-            {position, type: "SIZE", rank: 2, exact: false, sleda: 0, level: "INSANE"},
+            {position, type: "INA", rank: 0, exact: false, distance: 0, level: "EXTREME"},
+            {position, type: "SIZE", rank: 2, exact: false, distance: 0, level: "INSANE"},
         ])
         expect(result.position).toBe(position)
         expect(result.rank).toBe(2)
-        expect(result.sleda).toBe(0)
+        expect(result.distance).toBe(0)
         expect(result.initialPositionTinaDifference).toBeCloseTo(3.681504379547852, ACCURACY_THRESHOLD)
     })
 
@@ -37,7 +37,7 @@ describe("analyzeHistory", () => {
         it("returns the history's events with their rank, plus true for the possible property and a 0 tina error", () => {
             position = actualBoundPosition
             history = [
-                {position, type: "EDA", level: "EXTREME"},
+                {position, type: "INA", level: "EXTREME"},
                 {position, type: "SIZE", level: "INSANE"},
             ]
             bound = {
@@ -57,7 +57,7 @@ describe("analyzeHistory", () => {
         it("works when the position is greater than the actual bound position by less than a tina", () => {
             const expectedTinaError = 2 / 5
             position = actualBoundPosition + TINA * expectedTinaError
-            history = [{type: "EDA", position}, {position, type: "MEAN"}]
+            history = [{type: "INA", position}, {position, type: "MEAN"}]
             bound = {
                 position: actualBoundPosition,
                 levels: ["EXTREME", "INSANE"],
@@ -73,7 +73,7 @@ describe("analyzeHistory", () => {
         it("works when the position is greater than the actual bound position by more than a tina", () => {
             const expectedTinaError = 5 / 2
             position = actualBoundPosition + TINA * expectedTinaError
-            history = [{type: "EDA", position}, {position, type: "EDA", level: "EXTREME"}]
+            history = [{type: "INA", position}, {position, type: "INA", level: "EXTREME"}]
             bound = {
                 position: actualBoundPosition,
                 levels: ["EXTREME", "INSANE"],
@@ -89,7 +89,7 @@ describe("analyzeHistory", () => {
         it("works when the position is below the actual bound position by less than a tina", () => {
             const expectedTinaError = -2 / 5
             position = actualBoundPosition + TINA * expectedTinaError
-            history = [{type: "EDA", position, level: "EXTREME"}, {position, type: "SIZE", level: "INSANE"}]
+            history = [{type: "INA", position, level: "EXTREME"}, {position, type: "SIZE", level: "INSANE"}]
             bound = {
                 position: actualBoundPosition,
                 levels: ["EXTREME", "INSANE"],
@@ -105,7 +105,7 @@ describe("analyzeHistory", () => {
         it("works when the position is below the actual bound position by more than a tina", () => {
             const expectedTinaError = -5 / 2
             position = actualBoundPosition + TINA * expectedTinaError
-            history = [{type: "EDA", position}, {position, type: "MEAN"}]
+            history = [{type: "INA", position}, {position, type: "MEAN"}]
             bound = {
                 position: actualBoundPosition,
                 levels: ["EXTREME", "INSANE"],
