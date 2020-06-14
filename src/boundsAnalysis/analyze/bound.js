@@ -18,7 +18,7 @@ const analyzeBound = (histories, bound, boundIndex) => {
 
     const initialPositionTinaDifference = (bound.position - initialPosition) / TINA
 
-    // TODO: deal with > half-ina issues
+    // TODO: deal with > half-ina issues... wait on Dave's advice
     // bestPossibleHistory.events.forEach((event, index) => {
     //     if (index === 0) return
     //     const previousEvent = bestPossibleHistory.events[index - 1]

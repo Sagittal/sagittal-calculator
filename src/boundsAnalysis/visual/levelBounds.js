@@ -1,7 +1,7 @@
 const {LEVELS_BOUNDS} = require("../data/levelsBounds")
 const {LEVEL_TOPS, LEVEL_BOTTOMS} = require("./levelHeights")
 const {computeX} = require("./x")
-const {DASH_SIZE} = require("./constants")
+const {DASH_SIZE} = require("./size")
 
 const visualizeLevelBounds = () => {
     const levelBoundLines = []

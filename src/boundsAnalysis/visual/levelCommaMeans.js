@@ -1,5 +1,5 @@
 const {LEVELS_COMMA_MEANS} = require("../data/snappablePositions")
-const {DASH_SIZE, HALF_TICK_SIZE, TEXT_OFFSET} = require("./constants") // TODO: it'd be great if this could be size constants
+const {DASH_SIZE, HALF_TICK_SIZE, TEXT_OFFSET} = require("./size")
 const {MEAN_COLOR} = require("./colors")
 const {LEVEL_CENTERS} = require("./levelHeights")
 const {unicodeFromAscii} = require("../data/asciiUnicode")
