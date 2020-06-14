@@ -1,4 +1,4 @@
-const computeDistance = analyzedEvents => {
+const computeHistoryDistance = analyzedEvents => {
     return analyzedEvents.reduce(
         (distance, analyzedEvent) => {
             return distance + analyzedEvent.distance
@@ -8,5 +8,5 @@ const computeDistance = analyzedEvents => {
 }
 
 module.exports = {
-    computeDistance,
+    computeHistoryDistance,
 }
