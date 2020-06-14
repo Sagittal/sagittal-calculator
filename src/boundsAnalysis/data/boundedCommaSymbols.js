@@ -9,8 +9,8 @@ const computeBoundedCommaSymbols = (position, level) => {
     const [lesserNeighborPositionIndex, greaterNeighborPositionIndex] = computeNeighborPositionIndices(position, levelCommaPositions)
 
     return [
-        levelCommas[lesserNeighborPositionIndex] ? levelCommas[lesserNeighborPositionIndex].symbol : "",
-        levelCommas[greaterNeighborPositionIndex] ? levelCommas[greaterNeighborPositionIndex].symbol : "",
+        levelCommas[lesserNeighborPositionIndex] ? levelCommas[lesserNeighborPositionIndex].ascii : "",
+        levelCommas[greaterNeighborPositionIndex] ? levelCommas[greaterNeighborPositionIndex].ascii : "",
     ]
 }
 

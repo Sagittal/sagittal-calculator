@@ -9,7 +9,7 @@ describe("computePositionComma", () => {
         expect(result).toEqual({
             introducingLevel: "HIGH",
             position: 3.37801872846485,
-            symbol: ")|",
+            ascii: ")|",
             unicode: '',
             mina: 7,
         })

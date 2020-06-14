@@ -7,8 +7,8 @@ const extractBoundIdentifiers = (bound, boundIndex) => {
     const [lesserBoundedComma, greaterBoundedComma] = extremeBoundedCommas
 
     return {
-        extremeLevelLesserBoundedCommaSymbol: lesserBoundedComma ? lesserBoundedComma.symbol : "",
-        extremeLevelGreaterBoundedCommaSymbol: greaterBoundedComma ? greaterBoundedComma.symbol : "",
+        extremeLevelLesserBoundedCommaSymbol: lesserBoundedComma ? lesserBoundedComma.ascii : "",
+        extremeLevelGreaterBoundedCommaSymbol: greaterBoundedComma ? greaterBoundedComma.ascii : "",
         position,
         boundedCommas,
         lesserBoundedMina: lesserBoundedComma ? lesserBoundedComma.mina : "",

@@ -9,7 +9,7 @@ const computeLevelCommaMeans = level => {
         const nextComma = levelCommas[index + 1]
 
         return {
-            name: [comma.symbol, nextComma.symbol].join(" "),
+            name: [comma.ascii, nextComma.ascii].join(" "),
             position: (comma.position + nextComma.position) / 2,
         }
     })
