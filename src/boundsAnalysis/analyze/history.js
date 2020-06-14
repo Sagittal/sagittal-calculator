@@ -5,7 +5,7 @@ const {computeRank} = require("./rank")
 const {computeExact} = require("./exact")
 const {analyzeEvents} = require("./events")
 const {computeScore} = require("./score")
-const {computeDistance} = require("./distance")
+const {computeHistoryDistance} = require("./historyDistance")
 
 const analyzeHistory = (history, bound, initialPosition) => {
     const position = computeHistoryPosition(history)
@@ -14,7 +14,7 @@ const analyzeHistory = (history, bound, initialPosition) => {
     const rank = computeRank(analyzedEvents)
     const score = computeScore(analyzedEvents)
     const exact = computeExact(analyzedEvents)
-    const distance = computeDistance(analyzedEvents)
+    const distance = computeHistoryDistance(analyzedEvents)
 
     const positionError = position - bound.position
     const possible = computeIsCloseTo(positionError, 0)
