@@ -3,6 +3,7 @@ const {resetFile} = require("./file")
 const {addFont} = require("./font")
 const {addParentSvg} = require("./parentSvg")
 const {visualizeEvents} = require("./events")
+const {visualizeCents} = require("./cents")
 const {visualizeLevels} = require("./levels")
 const {visualizeLevelCommas} = require("./levelCommas")
 const {visualizeLevelBounds} = require("./levelBounds")
@@ -21,6 +22,7 @@ const visualizeBounds = visualization => {
     elements = elements.concat(addParentSvg())
     elements = elements.concat(addFont())
 
+    elements = elements.concat(visualizeCents())
     elements = elements.concat(visualizeLevels())
     elements = elements.concat(visualizeLevelBounds())
 

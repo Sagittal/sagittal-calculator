@@ -30,7 +30,6 @@ const visualizeEvents = events => {
         const nextPositionY = LEVEL_CENTERS[nextLevel]
 
         eventElements.push(`  <line stroke="${stroke}" x1="${positionX}" y1="${positionY}" x2="${nextPositionX}" y2="${nextPositionY}" />\n`)
-        // eventElements.push(`  <circle stroke="${stroke}" cx="${positionX}" cy="${positionY}" />\n`)
         eventElements.push(`  <circle stroke="${stroke}" r="${DOT_SIZE}" cx="${nextPositionX}" cy="${nextPositionY}" />\n`)
 
         const textX = (positionX+nextPositionX)/2
