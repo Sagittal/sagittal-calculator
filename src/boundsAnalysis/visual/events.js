@@ -3,7 +3,7 @@ const {RANK_FILLS} = require("./colors")
 const {computeX} = require("./x")
 
 const visualizeEvents = events => {
-    const eventLines = []
+    const eventElements = []
 
     events.forEach((event, index) => {
         const {level, position} = event
@@ -15,26 +15,26 @@ const visualizeEvents = events => {
 
         const stroke = RANK_FILLS[nextRank]
 
-        const x1 = computeX(position)
-        const x2 = computeX(nextPosition)
+        const positionX = computeX(position)
+        const positionY = level ? LEVEL_CENTERS[level] : LEVEL_BOTTOMS[nextLevel]
 
-        const y2 = LEVEL_CENTERS[nextLevel]
-        const y1 = level ? LEVEL_CENTERS[level] : LEVEL_BOTTOMS[nextLevel]
+        const nextPositionX = computeX(nextPosition)
+        const nextPositionY = LEVEL_CENTERS[nextLevel]
 
-        eventLines.push(`  <line stroke="${stroke}" x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" />`)
+        eventElements.push(`  <line stroke="${stroke}" x1="${positionX}" y1="${positionY}" x2="${nextPositionX}" y2="${nextPositionY}" />`)
 
-        const textX = (x1+x2)/2
-        const textY = (y1+y2)/2
-        const rise = y2 - y1
-        const run = x2 - x1
+        const textX = (positionX+nextPositionX)/2
+        const textY = (positionY+nextPositionY)/2
+        const rise = nextPositionY - positionY
+        const run = nextPositionX - positionX
         const slope = rise/run
         const angle = run === 0 ?
             rise > 0 ? 90 : 270 :
             Math.sin(slope) * (180/Math.PI)
-        eventLines.push(`  <text transform="rotate(${angle} ${textX} ${textY})" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" fill="red" x="${textX}" y="${textY}">${nextDistance.toPrecision(5)}</text>`)
+        eventElements.push(`  <text transform="rotate(${angle} ${textX} ${textY})" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" fill="red" x="${textX}" y="${textY}">${nextDistance.toPrecision(5)}</text>`)
     })
 
-    return eventLines
+    return eventElements
 }
 
 module.exports = {

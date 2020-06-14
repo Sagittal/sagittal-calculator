@@ -6,28 +6,28 @@ const {unicodeFromAscii} = require("../data/asciiUnicode")
 const {computeX} = require("./x")
 
 const visualizeLevelCommaMeans = () => {
-    const levelCommaMeanLines = []
+    const levelCommaMeanElements = []
 
     Object.entries(LEVELS_COMMA_MEANS).forEach(([level, levelCommaMeans]) => {
         if (level === "INSANE") return
 
-        const y = LEVEL_CENTERS[level]
-        const y1 = y - HALF_TICK_SIZE
-        const y2 = y + HALF_TICK_SIZE
-        const textY = y2 + TEXT_OFFSET
+        const centerY = LEVEL_CENTERS[level]
+        const topY = centerY - HALF_TICK_SIZE
+        const bottomY = centerY + HALF_TICK_SIZE
+        const textY = bottomY + TEXT_OFFSET
 
         levelCommaMeans.forEach(levelCommaMean => {
             const {position, name} = levelCommaMean
 
             const formattedName = name.split(" ").map(symbolAscii => unicodeFromAscii(symbolAscii)).join("   ")
-            const x = computeX(position)
+            const positionX = computeX(position)
 
-            levelCommaMeanLines.push(`  <line stroke-dasharray="${DASH_SIZE}" stroke="${MEAN_COLOR}" x1="${x}" x2="${x}" y1="${y1}" y2="${y2}"/>`)
-            levelCommaMeanLines.push(`  <text fill="${MEAN_COLOR}" text-anchor="middle" xml:space="preserve" x="${x}" y="${textY}" font-size="10px" font-family="Bravura">${formattedName}</text>\n`)
+            levelCommaMeanElements.push(`  <line stroke-dasharray="${DASH_SIZE}" stroke="${MEAN_COLOR}" x1="${positionX}" x2="${positionX}" y1="${topY}" y2="${bottomY}"/>`)
+            levelCommaMeanElements.push(`  <text fill="${MEAN_COLOR}" text-anchor="middle" xml:space="preserve" x="${positionX}" y="${textY}" font-size="10px" font-family="Bravura">${formattedName}</text>\n`)
         })
     })
 
-    return levelCommaMeanLines
+    return levelCommaMeanElements
 }
 
 module.exports = {

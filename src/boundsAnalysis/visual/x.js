@@ -1,4 +1,4 @@
-const {X_SCALE, MARGIN} = require("./constants")
+const {X_SCALE, MARGIN} = require("./size")
 
 const computeX = position => {
     return X_SCALE * (MARGIN + position)
