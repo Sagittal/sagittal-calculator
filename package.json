@@ -8,7 +8,8 @@
   },
   "scripts": {
     "test": "jasmine",
-    "analyze-bounds": "node src/boundsAnalysis/main.js"
+    "analyze-bounds": "node src/boundsAnalysis/main.js",
+    "tina-commas": "node src/findTinaPrimaryCommas/main.js"
   },
   "devDependencies": {
     "colors": "^1.4.0",
