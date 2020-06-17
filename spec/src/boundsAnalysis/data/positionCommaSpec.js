@@ -12,6 +12,7 @@ describe("computePositionComma", () => {
             ascii: ")|",
             unicode: '',
             mina: 7,
+            index: 7,
         })
     })
 

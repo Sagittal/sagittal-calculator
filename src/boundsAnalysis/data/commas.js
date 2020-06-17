@@ -5,6 +5,7 @@ const COMMAS = [
         ascii: "|",
         unicode: "",
         mina: 0,
+        index: 0,
     },
     {
         introducingLevel: "EXTREME",
@@ -12,6 +13,7 @@ const COMMAS = [
         ascii: "`|",
         unicode: "",
         mina: 1,
+        index: 1,
     },
     {
         introducingLevel: "EXTREME",
@@ -19,6 +21,7 @@ const COMMAS = [
         ascii: "``|",
         unicode: "",
         mina: 2,
+        index: 2,
     },
     {
         introducingLevel: "ULTRA",
@@ -26,6 +29,7 @@ const COMMAS = [
         ascii: ".)|",
         unicode: "",
         mina: 3,
+        index: 3,
     },
     {
         introducingLevel: "ULTRA",
@@ -33,6 +37,7 @@ const COMMAS = [
         ascii: "'|",
         unicode: "",
         mina: 4,
+        index: 4,
     },
     {
         introducingLevel: "EXTREME",
@@ -40,6 +45,7 @@ const COMMAS = [
         ascii: "`'|",
         unicode: "",
         mina: 5,
+        index: 5,
     },
     {
         introducingLevel: "EXTREME",
@@ -47,6 +53,7 @@ const COMMAS = [
         ascii: ",)|",
         unicode: "",
         mina: 6,
+        index: 6,
     },
     {
         introducingLevel: "HIGH",
@@ -54,6 +61,7 @@ const COMMAS = [
         ascii: ")|",
         unicode: "",
         mina: 7,
+        index: 7,
     },
     {
         introducingLevel: "EXTREME",
@@ -61,6 +69,7 @@ const COMMAS = [
         ascii: "`)|",
         unicode: "",
         mina: 8,
+        index: 8,
     },
     {
         introducingLevel: "EXTREME",
@@ -68,6 +77,7 @@ const COMMAS = [
         ascii: "``)|",
         unicode: "",
         mina: 9,
+        index: 9,
     },
     {
         introducingLevel: "EXTREME",
@@ -75,6 +85,7 @@ const COMMAS = [
         ascii: ",,|(",
         unicode: "",
         mina: 10,
+        index: 10,
     },
     {
         introducingLevel: "EXTREME",
@@ -82,6 +93,7 @@ const COMMAS = [
         ascii: ",|(",
         unicode: "",
         mina: 11,
+        index: 11,
     },
     {
         introducingLevel: "MEDIUM",
@@ -89,6 +101,7 @@ const COMMAS = [
         ascii: "|(",
         unicode: "",
         mina: 12,
+        index: 12,
     },
     {
         introducingLevel: "EXTREME",
@@ -96,6 +109,7 @@ const COMMAS = [
         ascii: "`|(",
         unicode: "",
         mina: 13,
+        index: 13,
     },
     {
         introducingLevel: "ULTRA",
@@ -103,6 +117,7 @@ const COMMAS = [
         ascii: ".~|",
         unicode: "",
         mina: 14,
+        index: 14,
     },
     {
         introducingLevel: "EXTREME",
@@ -110,6 +125,7 @@ const COMMAS = [
         ascii: ",'|(",
         unicode: "",
         mina: 15,
+        index: 15,
     },
     {
         introducingLevel: "ULTRA",
@@ -117,6 +133,7 @@ const COMMAS = [
         ascii: "'|(",
         unicode: "",
         mina: 16,
+        index: 16,
     },
     {
         introducingLevel: "EXTREME",
@@ -124,6 +141,7 @@ const COMMAS = [
         ascii: ",~|",
         unicode: "",
         mina: 17,
+        index: 17,
     },
     {
         introducingLevel: "HIGH",
@@ -131,6 +149,7 @@ const COMMAS = [
         ascii: "~|",
         unicode: "",
         mina: 18,
+        index: 18,
     },
     {
         introducingLevel: "EXTREME",
@@ -138,6 +157,7 @@ const COMMAS = [
         ascii: ",)|(",
         unicode: "",
         mina: 19,
+        index: 19,
     },
     {
         introducingLevel: "MEDIUM",
@@ -145,6 +165,7 @@ const COMMAS = [
         ascii: ")|(",
         unicode: "",
         mina: 20,
+        index: 20,
     },
     {
         introducingLevel: "EXTREME",
@@ -152,6 +173,7 @@ const COMMAS = [
         ascii: "`)|(",
         unicode: "",
         mina: 21,
+        index: 21,
     },
     {
         introducingLevel: "EXTREME",
@@ -159,6 +181,7 @@ const COMMAS = [
         ascii: "``)|(",
         unicode: "",
         mina: 22,
+        index: 22,
     },
     {
         introducingLevel: "EXTREME",
@@ -166,6 +189,7 @@ const COMMAS = [
         ascii: ",')|(",
         unicode: "",
         mina: 23,
+        index: 23,
     },
     {
         introducingLevel: "ULTRA",
@@ -173,6 +197,7 @@ const COMMAS = [
         ascii: "')|(",
         unicode: "",
         mina: 24,
+        index: 24,
     },
     {
         introducingLevel: "HIGH",
@@ -180,6 +205,7 @@ const COMMAS = [
         ascii: ")~|",
         unicode: "",
         mina: 25,
+        index: 25,
     },
     {
         introducingLevel: "ULTRA",
@@ -187,6 +213,7 @@ const COMMAS = [
         ascii: ".~|(",
         unicode: "",
         mina: 26,
+        index: 26,
     },
     {
         introducingLevel: "EXTREME",
@@ -194,6 +221,7 @@ const COMMAS = [
         ascii: "`.~|(",
         unicode: "",
         mina: 27,
+        index: 27,
     },
     {
         introducingLevel: "EXTREME",
@@ -201,6 +229,7 @@ const COMMAS = [
         ascii: ",,~|(",
         unicode: "",
         mina: 28,
+        index: 28,
     },
     {
         introducingLevel: "EXTREME",
@@ -208,6 +237,7 @@ const COMMAS = [
         ascii: ",~|(",
         unicode: "",
         mina: 29,
+        index: 29,
     },
     {
         introducingLevel: "MEDIUM",
@@ -215,6 +245,7 @@ const COMMAS = [
         ascii: "~|(",
         unicode: "",
         mina: 30,
+        index: 30,
     },
     {
         introducingLevel: "EXTREME",
@@ -222,6 +253,7 @@ const COMMAS = [
         ascii: "`~|(",
         unicode: "",
         mina: 31,
+        index: 31,
     },
     {
         introducingLevel: "EXTREME",
@@ -229,6 +261,7 @@ const COMMAS = [
         ascii: ",,|~",
         unicode: "",
         mina: 32,
+        index: 32,
     },
     {
         introducingLevel: "EXTREME",
@@ -236,6 +269,7 @@ const COMMAS = [
         ascii: ",|~",
         unicode: "",
         mina: 33,
+        index: 33,
     },
     {
         introducingLevel: "HIGH",
@@ -243,6 +277,7 @@ const COMMAS = [
         ascii: "|~",
         unicode: "",
         mina: 34,
+        index: 34,
     },
     {
         introducingLevel: "EXTREME",
@@ -250,6 +285,7 @@ const COMMAS = [
         ascii: "`|~",
         unicode: "",
         mina: 35,
+        index: 35,
     },
     {
         introducingLevel: "HIGH",
@@ -257,6 +293,7 @@ const COMMAS = [
         ascii: "~~|",
         unicode: "",
         mina: 36,
+        index: 36,
     },
     {
         introducingLevel: "EXTREME",
@@ -264,6 +301,7 @@ const COMMAS = [
         ascii: "`~~|",
         unicode: "",
         mina: 37,
+        index: 37,
     },
     {
         introducingLevel: "EXTREME",
@@ -271,6 +309,7 @@ const COMMAS = [
         ascii: "``~~|",
         unicode: "",
         mina: 38,
+        index: 38,
     },
     {
         introducingLevel: "EXTREME",
@@ -278,6 +317,7 @@ const COMMAS = [
         ascii: ",./|",
         unicode: "",
         mina: 39,
+        index: 39,
     },
     {
         introducingLevel: "ULTRA",
@@ -285,6 +325,7 @@ const COMMAS = [
         ascii: "./|",
         unicode: "",
         mina: 40,
+        index: 40,
     },
     {
         introducingLevel: "HIGH",
@@ -292,6 +333,7 @@ const COMMAS = [
         ascii: ")|~",
         unicode: "",
         mina: 41,
+        index: 41,
     },
     {
         introducingLevel: "EXTREME",
@@ -299,6 +341,7 @@ const COMMAS = [
         ascii: ",,/|",
         unicode: "",
         mina: 42,
+        index: 42,
     },
     {
         introducingLevel: "EXTREME",
@@ -306,6 +349,7 @@ const COMMAS = [
         ascii: ",/|",
         unicode: "",
         mina: 43,
+        index: 43,
     },
     {
         introducingLevel: "MEDIUM",
@@ -313,6 +357,7 @@ const COMMAS = [
         ascii: "/|",
         unicode: "",
         mina: 44,
+        index: 44,
     },
     {
         introducingLevel: "EXTREME",
@@ -320,6 +365,7 @@ const COMMAS = [
         ascii: "`/|",
         unicode: "",
         mina: 45,
+        index: 45,
     },
     {
         introducingLevel: "EXTREME",
@@ -327,6 +373,7 @@ const COMMAS = [
         ascii: "``/|",
         unicode: "",
         mina: 46,
+        index: 46,
     },
     {
         introducingLevel: "ULTRA",
@@ -334,6 +381,7 @@ const COMMAS = [
         ascii: ".)/|",
         unicode: "",
         mina: 47,
+        index: 47,
     },
     {
         introducingLevel: "ULTRA",
@@ -341,6 +389,7 @@ const COMMAS = [
         ascii: "'/|",
         unicode: "",
         mina: 48,
+        index: 48,
     },
     {
         introducingLevel: "EXTREME",
@@ -348,6 +397,7 @@ const COMMAS = [
         ascii: "`'/|",
         unicode: "",
         mina: 49,
+        index: 49,
     },
     {
         introducingLevel: "EXTREME",
@@ -355,6 +405,7 @@ const COMMAS = [
         ascii: ",,)/|",
         unicode: "",
         mina: 49.56756901073000,
+        index: 50,
     },
     {
         introducingLevel: "EXTREME",
@@ -362,6 +413,7 @@ const COMMAS = [
         ascii: ",)/|",
         unicode: "",
         mina: 50,
+        index: 51,
     },
     {
         introducingLevel: "HIGH",
@@ -369,6 +421,7 @@ const COMMAS = [
         ascii: ")/|",
         unicode: "",
         mina: 51,
+        index: 52,
     },
     {
         introducingLevel: "EXTREME",
@@ -376,6 +429,7 @@ const COMMAS = [
         ascii: ",.|)",
         unicode: "",
         mina: 51.45864857210600,
+        index: 53,
     },
     {
         introducingLevel: "ULTRA",
@@ -383,6 +437,7 @@ const COMMAS = [
         ascii: ".|)",
         unicode: "",
         mina: 52,
+        index: 54,
     },
     {
         introducingLevel: "EXTREME",
@@ -390,6 +445,7 @@ const COMMAS = [
         ascii: "`.|)",
         unicode: "",
         mina: 53,
+        index: 55,
     },
     {
         introducingLevel: "EXTREME",
@@ -397,6 +453,7 @@ const COMMAS = [
         ascii: ",,|)",
         unicode: "",
         mina: 54,
+        index: 56,
     },
     {
         introducingLevel: "EXTREME",
@@ -404,6 +461,7 @@ const COMMAS = [
         ascii: ",|)",
         unicode: "",
         mina: 55,
+        index: 57,
     },
     {
         introducingLevel: "MEDIUM",
@@ -411,6 +469,7 @@ const COMMAS = [
         ascii: "|)",
         unicode: "",
         mina: 56,
+        index: 58,
     },
     {
         introducingLevel: "EXTREME",
@@ -418,6 +477,7 @@ const COMMAS = [
         ascii: "`|)",
         unicode: "",
         mina: 57,
+        index: 59,
     },
     {
         introducingLevel: "EXTREME",
@@ -425,6 +485,7 @@ const COMMAS = [
         ascii: "``|)",
         unicode: "",
         mina: 58,
+        index: 60,
     },
     {
         introducingLevel: "EXTREME",
@@ -432,6 +493,7 @@ const COMMAS = [
         ascii: ",'|)",
         unicode: "",
         mina: 59,
+        index: 61,
     },
     {
         introducingLevel: "ULTRA",
@@ -439,6 +501,7 @@ const COMMAS = [
         ascii: "'|)",
         unicode: "",
         mina: 60,
+        index: 62,
     },
     {
         introducingLevel: "EXTREME",
@@ -446,6 +509,7 @@ const COMMAS = [
         ascii: "`'|)",
         unicode: "",
         mina: 61,
+        index: 63,
     },
     {
         introducingLevel: "EXTREME",
@@ -453,6 +517,7 @@ const COMMAS = [
         ascii: ",)|)",
         unicode: "",
         mina: 62,
+        index: 64,
     },
     {
         introducingLevel: "HIGH",
@@ -460,6 +525,7 @@ const COMMAS = [
         ascii: ")|)",
         unicode: "",
         mina: 63,
+        index: 65,
     },
     {
         introducingLevel: "ULTRA",
@@ -467,6 +533,7 @@ const COMMAS = [
         ascii: ".(|",
         unicode: "",
         mina: 64,
+        index: 66,
     },
     {
         introducingLevel: "HIGH",
@@ -474,6 +541,7 @@ const COMMAS = [
         ascii: "|\\",
         unicode: "",
         mina: 65,
+        index: 67,
     },
     {
         introducingLevel: "EXTREME",
@@ -481,6 +549,7 @@ const COMMAS = [
         ascii: "`|\\",
         unicode: "",
         mina: 66,
+        index: 68,
     },
     {
         introducingLevel: "EXTREME",
@@ -488,6 +557,7 @@ const COMMAS = [
         ascii: ",(|",
         unicode: "",
         mina: 67,
+        index: 69,
     },
     {
         introducingLevel: "MEDIUM",
@@ -495,6 +565,7 @@ const COMMAS = [
         ascii: "(|",
         unicode: "",
         mina: 68,
+        index: 70,
     },
     {
         introducingLevel: "EXTREME",
@@ -502,6 +573,7 @@ const COMMAS = [
         ascii: "`(|",
         unicode: "",
         mina: 69,
+        index: 71,
     },
     {
         introducingLevel: "EXTREME",
@@ -509,6 +581,7 @@ const COMMAS = [
         ascii: "``(|",
         unicode: "",
         mina: 70,
+        index: 72,
     },
     {
         introducingLevel: "EXTREME",
@@ -516,6 +589,7 @@ const COMMAS = [
         ascii: ",'(|",
         unicode: "",
         mina: 71,
+        index: 73,
     },
     {
         introducingLevel: "ULTRA",
@@ -523,6 +597,7 @@ const COMMAS = [
         ascii: "'(|",
         unicode: "",
         mina: 72,
+        index: 74,
     },
     {
         introducingLevel: "EXTREME",
@@ -530,6 +605,7 @@ const COMMAS = [
         ascii: ",~|)",
         unicode: "",
         mina: 72.40486810762850,
+        index: 75,
     },
     {
         introducingLevel: "HIGH",
@@ -537,6 +613,7 @@ const COMMAS = [
         ascii: "~|)",
         unicode: "",
         mina: 73,
+        index: 76,
     },
     {
         introducingLevel: "EXTREME",
@@ -544,6 +621,7 @@ const COMMAS = [
         ascii: "`~|)",
         unicode: "",
         mina: 74,
+        index: 77,
     },
     {
         introducingLevel: "EXTREME",
@@ -551,6 +629,7 @@ const COMMAS = [
         ascii: "``~|)",
         unicode: "",
         mina: 75,
+        index: 78,
     },
     {
         introducingLevel: "EXTREME",
@@ -558,6 +637,7 @@ const COMMAS = [
         ascii: ",.(|(",
         unicode: "",
         mina: 75.53838439606520,
+        index: 79,
     },
     {
         introducingLevel: "ULTRA",
@@ -565,6 +645,7 @@ const COMMAS = [
         ascii: ".(|(",
         unicode: "",
         mina: 76,
+        index: 80,
     },
     {
         introducingLevel: "ULTRA",
@@ -572,6 +653,7 @@ const COMMAS = [
         ascii: "'~|)",
         unicode: "",
         mina: 77,
+        index: 81,
     },
     {
         introducingLevel: "HIGH",
@@ -579,6 +661,7 @@ const COMMAS = [
         ascii: "/|~",
         unicode: "",
         mina: 78,
+        index: 82,
     },
     {
         introducingLevel: "EXTREME",
@@ -586,6 +669,7 @@ const COMMAS = [
         ascii: ",,(|(",
         unicode: "",
         mina: 78.39014554523920,
+        index: 83,
     },
     {
         introducingLevel: "EXTREME",
@@ -593,6 +677,7 @@ const COMMAS = [
         ascii: ",(|(",
         unicode: "",
         mina: 79,
+        index: 84,
     },
     {
         introducingLevel: "MEDIUM",
@@ -600,6 +685,7 @@ const COMMAS = [
         ascii: "(|(",
         unicode: "",
         mina: 80,
+        index: 85,
     },
     {
         introducingLevel: "EXTREME",
@@ -607,6 +693,7 @@ const COMMAS = [
         ascii: "`(|(",
         unicode: "",
         mina: 81,
+        index: 86,
     },
     {
         introducingLevel: "HIGH",
@@ -614,6 +701,7 @@ const COMMAS = [
         ascii: "~|\\",
         unicode: "",
         mina: 82,
+        index: 87,
     },
     {
         introducingLevel: "EXTREME",
@@ -621,6 +709,7 @@ const COMMAS = [
         ascii: ",.//|",
         unicode: "",
         mina: 83,
+        index: 88,
     },
     {
         introducingLevel: "ULTRA",
@@ -628,6 +717,7 @@ const COMMAS = [
         ascii: ".//|",
         unicode: "",
         mina: 84,
+        index: 89,
     },
     {
         introducingLevel: "EXTREME",
@@ -635,6 +725,7 @@ const COMMAS = [
         ascii: "`.//|",
         unicode: "",
         mina: 85,
+        index: 90,
     },
     {
         introducingLevel: "EXTREME",
@@ -642,6 +733,7 @@ const COMMAS = [
         ascii: ",,//|",
         unicode: "",
         mina: 86,
+        index: 91,
     },
     {
         introducingLevel: "EXTREME",
@@ -649,6 +741,7 @@ const COMMAS = [
         ascii: ",//|",
         unicode: "",
         mina: 87,
+        index: 92,
     },
     {
         introducingLevel: "MEDIUM",
@@ -656,6 +749,7 @@ const COMMAS = [
         ascii: "//|",
         unicode: "",
         mina: 88,
+        index: 93,
     },
     {
         introducingLevel: "EXTREME",
@@ -663,6 +757,7 @@ const COMMAS = [
         ascii: "`//|",
         unicode: "",
         mina: 89,
+        index: 94,
     },
     {
         introducingLevel: "EXTREME",
@@ -670,6 +765,7 @@ const COMMAS = [
         ascii: "``//|",
         unicode: "",
         mina: 90,
+        index: 95,
     },
     {
         introducingLevel: "EXTREME",
@@ -677,6 +773,7 @@ const COMMAS = [
         ascii: ",'//|",
         unicode: "",
         mina: 91,
+        index: 96,
     },
     {
         introducingLevel: "ULTRA",
@@ -684,6 +781,7 @@ const COMMAS = [
         ascii: "'//|",
         unicode: "",
         mina: 92,
+        index: 97,
     },
     {
         introducingLevel: "EXTREME",
@@ -691,6 +789,7 @@ const COMMAS = [
         ascii: ",,)//|",
         unicode: "",
         mina: 93,
+        index: 98,
     },
     {
         introducingLevel: "EXTREME",
@@ -698,6 +797,7 @@ const COMMAS = [
         ascii: ",)//|",
         unicode: "",
         mina: 94,
+        index: 99,
     },
     {
         introducingLevel: "HIGH",
@@ -705,6 +805,7 @@ const COMMAS = [
         ascii: ")//|",
         unicode: "",
         mina: 95,
+        index: 100,
     },
     {
         introducingLevel: "EXTREME",
@@ -712,6 +813,7 @@ const COMMAS = [
         ascii: "`)//|",
         unicode: "",
         mina: 96,
+        index: 101,
     },
     {
         introducingLevel: "EXTREME",
@@ -719,6 +821,7 @@ const COMMAS = [
         ascii: "``)//|",
         unicode: "",
         mina: 97,
+        index: 102,
     },
     {
         introducingLevel: "EXTREME",
@@ -726,6 +829,7 @@ const COMMAS = [
         ascii: ",,/|)",
         unicode: "",
         mina: 98,
+        index: 103,
     },
     {
         introducingLevel: "EXTREME",
@@ -733,6 +837,7 @@ const COMMAS = [
         ascii: ",/|)",
         unicode: "",
         mina: 99,
+        index: 104,
     },
     {
         introducingLevel: "MEDIUM",
@@ -740,6 +845,7 @@ const COMMAS = [
         ascii: "/|)",
         unicode: "",
         mina: 100,
+        index: 105,
     },
     {
         introducingLevel: "EXTREME",
@@ -747,6 +853,7 @@ const COMMAS = [
         ascii: "`/|)",
         unicode: "",
         mina: 101,
+        index: 106,
     },
     {
         introducingLevel: "HIGH",
@@ -754,6 +861,7 @@ const COMMAS = [
         ascii: "(|~",
         unicode: "",
         mina: 102,
+        index: 107,
     },
     {
         introducingLevel: "EXTREME",
@@ -761,6 +869,7 @@ const COMMAS = [
         ascii: ",'/|)",
         unicode: "",
         mina: 103,
+        index: 108,
     },
     {
         introducingLevel: "ULTRA",
@@ -768,6 +877,7 @@ const COMMAS = [
         ascii: "'/|)",
         unicode: "",
         mina: 104,
+        index: 109,
     },
     {
         introducingLevel: "EXTREME",
@@ -775,6 +885,7 @@ const COMMAS = [
         ascii: "`'/|)",
         unicode: "",
         mina: 105,
+        index: 110,
     },
     {
         introducingLevel: "ULTRA",
@@ -782,6 +893,7 @@ const COMMAS = [
         ascii: "./|\\",
         unicode: "",
         mina: 105.57202549664000,
+        index: 111,
     },
     {
         introducingLevel: "EXTREME",
@@ -789,6 +901,7 @@ const COMMAS = [
         ascii: "`./|\\",
         unicode: "",
         mina: 106,
+        index: 112,
     },
     {
         introducingLevel: "EXTREME",
@@ -796,6 +909,7 @@ const COMMAS = [
         ascii: ",,/|\\",
         unicode: "",
         mina: 107,
+        index: 113,
     },
     {
         introducingLevel: "EXTREME",
@@ -803,6 +917,7 @@ const COMMAS = [
         ascii: ",/|\\",
         unicode: "",
         mina: 108,
+        index: 114,
     },
     {
         introducingLevel: "MEDIUM",
@@ -810,6 +925,7 @@ const COMMAS = [
         ascii: "/|\\",
         unicode: "",
         mina: 109,
+        index: 115,
     },
     {
         introducingLevel: "EXTREME",
@@ -817,6 +933,7 @@ const COMMAS = [
         ascii: "`/|\\",
         unicode: "",
         mina: 110,
+        index: 116,
     },
     {
         introducingLevel: "EXTREME",
@@ -824,6 +941,7 @@ const COMMAS = [
         ascii: ",(/|",
         unicode: "",
         mina: 111,
+        index: 117,
     },
     {
         introducingLevel: "HIGH",
@@ -831,6 +949,7 @@ const COMMAS = [
         ascii: "(/|",
         unicode: "",
         mina: 112,
+        index: 118,
     },
     {
         introducingLevel: "EXTREME",
@@ -838,6 +957,7 @@ const COMMAS = [
         ascii: "`(/|",
         unicode: "",
         mina: 113,
+        index: 119,
     },
     {
         introducingLevel: "ULTRA",
@@ -845,6 +965,7 @@ const COMMAS = [
         ascii: "'/|\\",
         unicode: "",
         mina: 113.45170990741700,
+        index: 120,
     },
     {
         introducingLevel: "EXTREME",
@@ -852,6 +973,7 @@ const COMMAS = [
         ascii: "`'/|\\",
         unicode: "",
         mina: 114,
+        index: 121,
     },
     {
         introducingLevel: "EXTREME",
@@ -859,6 +981,7 @@ const COMMAS = [
         ascii: ",)/|\\",
         unicode: "",
         mina: 115,
+        index: 122,
     },
     {
         introducingLevel: "HIGH",
@@ -866,6 +989,7 @@ const COMMAS = [
         ascii: ")/|\\",
         unicode: "",
         mina: 116,
+        index: 123,
     },
     {
         introducingLevel: "EXTREME",
@@ -873,6 +997,7 @@ const COMMAS = [
         ascii: "`)/|\\",
         unicode: "",
         mina: 117,
+        index: 124,
     },
     {
         introducingLevel: "EXTREME",
@@ -880,6 +1005,7 @@ const COMMAS = [
         ascii: "``)/|\\",
         unicode: "",
         mina: 118,
+        index: 125,
     },
     {
         introducingLevel: "EXTREME",
@@ -887,6 +1013,7 @@ const COMMAS = [
         ascii: ",.(|)",
         unicode: "",
         mina: 119,
+        index: 126,
     },
     {
         introducingLevel: "ULTRA",
@@ -894,6 +1021,7 @@ const COMMAS = [
         ascii: ".(|)",
         unicode: "",
         mina: 120,
+        index: 127,
     },
     {
         introducingLevel: "EXTREME",
@@ -901,6 +1029,7 @@ const COMMAS = [
         ascii: ",|\\)",
         unicode: "",
         mina: 120.70032964758700,
+        index: 128,
     },
     {
         introducingLevel: "HIGH",
@@ -908,6 +1037,7 @@ const COMMAS = [
         ascii: "|\\)",
         unicode: "",
         mina: 121,
+        index: 129,
     },
     {
         introducingLevel: "EXTREME",
@@ -915,6 +1045,7 @@ const COMMAS = [
         ascii: "`|\\)",
         unicode: "",
         mina: 122,
+        index: 130,
     },
     {
         introducingLevel: "EXTREME",
@@ -922,6 +1053,7 @@ const COMMAS = [
         ascii: ",(|)",
         unicode: "",
         mina: 123,
+        index: 131,
     },
     {
         introducingLevel: "MEDIUM",
@@ -929,6 +1061,7 @@ const COMMAS = [
         ascii: "(|)",
         unicode: "",
         mina: 124,
+        index: 132,
     },
     {
         introducingLevel: "EXTREME",
@@ -936,6 +1069,7 @@ const COMMAS = [
         ascii: "`(|)",
         unicode: "",
         mina: 125,
+        index: 133,
     },
     {
         introducingLevel: "EXTREME",
@@ -943,6 +1077,7 @@ const COMMAS = [
         ascii: "``(|)",
         unicode: "",
         mina: 126,
+        index: 134,
     },
     {
         introducingLevel: "EXTREME",
@@ -950,6 +1085,7 @@ const COMMAS = [
         ascii: ",'(|)",
         unicode: "",
         mina: 127,
+        index: 135,
     },
     {
         introducingLevel: "ULTRA",
@@ -957,6 +1093,7 @@ const COMMAS = [
         ascii: "'(|)",
         unicode: "",
         mina: 128,
+        index: 136,
     },
     {
         introducingLevel: "EXTREME",
@@ -964,6 +1101,7 @@ const COMMAS = [
         ascii: ",.(|\\",
         unicode: "",
         mina: 128.58001405836400,
+        index: 137,
     },
     {
         introducingLevel: "ULTRA",
@@ -971,6 +1109,7 @@ const COMMAS = [
         ascii: ".(|\\",
         unicode: "",
         mina: 129,
+        index: 138,
     },
     {
         introducingLevel: "EXTREME",
@@ -978,6 +1117,7 @@ const COMMAS = [
         ascii: "`.(|\\",
         unicode: "",
         mina: 130,
+        index: 139,
     },
     {
         introducingLevel: "HIGH",
@@ -985,6 +1125,7 @@ const COMMAS = [
         ascii: "|\\\\",
         unicode: "",
         mina: 131,
+        index: 140,
     },
     {
         introducingLevel: "EXTREME",
@@ -992,6 +1133,7 @@ const COMMAS = [
         ascii: ",(|\\",
         unicode: "",
         mina: 132,
+        index: 141,
     },
     {
         introducingLevel: "MEDIUM",
@@ -999,6 +1141,7 @@ const COMMAS = [
         ascii: "(|\\",
         unicode: "",
         mina: 133,
+        index: 142,
     },
     {
         introducingLevel: "EXTREME",
@@ -1006,6 +1149,7 @@ const COMMAS = [
         ascii: "`(|\\",
         unicode: "",
         mina: 134,
+        index: 143,
     },
     {
         introducingLevel: "EXTREME",
@@ -1013,6 +1157,7 @@ const COMMAS = [
         ascii: "``(|\\",
         unicode: "",
         mina: 135,
+        index: 144,
     },
     {
         introducingLevel: "EXTREME",
@@ -1020,6 +1165,7 @@ const COMMAS = [
         ascii: ",,)|\\\\",
         unicode: "",
         mina: 136,
+        index: 145,
     },
     {
         introducingLevel: "EXTREME",
@@ -1027,6 +1173,7 @@ const COMMAS = [
         ascii: ",)|\\\\",
         unicode: "",
         mina: 137,
+        index: 146,
     },
     {
         introducingLevel: "HIGH",
@@ -1034,6 +1181,7 @@ const COMMAS = [
         ascii: ")|\\\\",
         unicode: "",
         mina: 138,
+        index: 147,
     },
     {
         introducingLevel: "EXTREME",
@@ -1041,6 +1189,7 @@ const COMMAS = [
         ascii: "`)|\\\\",
         unicode: "",
         mina: 139,
+        index: 148,
     },
     {
         introducingLevel: "EXTREME",
@@ -1048,6 +1197,7 @@ const COMMAS = [
         ascii: "``)|\\\\",
         unicode: "",
         mina: 140,
+        index: 149,
     },
 ]
 

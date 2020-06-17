@@ -17,6 +17,7 @@ describe("computeLevelCommas", () => {
             ascii: "|",
             unicode: '',
             mina: 0,
+            index: 0,
         })
     })
 })

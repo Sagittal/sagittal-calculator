@@ -24,6 +24,7 @@ describe("extractBoundIdentifiers", () => {
                         ascii: ".)/|",
                         unicode: '',
                         mina: 47,
+                        index: 47, // not the best example since index and mina are the same up to this point
                     },
                     {
                         introducingLevel: "ULTRA",
@@ -32,6 +33,7 @@ describe("extractBoundIdentifiers", () => {
                         ascii: "'/|",
                         unicode: '',
                         mina: 48,
+                        index: 48,
                     },
                 ],
                 EXTREME: [
@@ -42,6 +44,7 @@ describe("extractBoundIdentifiers", () => {
                         ascii: ".)/|",
                         unicode: '',
                         mina: 47,
+                        index: 47,
                     },
                     {
                         introducingLevel: "ULTRA",
@@ -50,6 +53,7 @@ describe("extractBoundIdentifiers", () => {
                         ascii: "'/|",
                         unicode: '',
                         mina: 48,
+                        index: 48,
                     },
                 ],
                 INSANE: [
@@ -60,6 +64,7 @@ describe("extractBoundIdentifiers", () => {
                         ascii: ".)/|",
                         unicode: '',
                         mina: 47,
+                        index: 47,
                     },
                     {
                         introducingLevel: "ULTRA",
@@ -68,6 +73,7 @@ describe("extractBoundIdentifiers", () => {
                         ascii: "'/|",
                         unicode: '',
                         mina: 48,
+                        index: 48,
                     },
                 ],
             },
