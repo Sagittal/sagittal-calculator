@@ -1,4 +1,4 @@
-! Sagittal 12R notation. Dave Keenan & George Secor. 2006-Mar-22, updated 2020-Apr-14
+! Sagittal 12R (Trojan) notation. Dave Keenan & George Secor. 2006-Mar-22, updated 2020-Jun-14
 !
 max_abs_slope	6.0
 c_exp_range	-6	10
