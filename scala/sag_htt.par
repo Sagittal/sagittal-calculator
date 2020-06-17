@@ -6,7 +6,7 @@ nc_exp_range	-1	5
 fifth_size	703.5787
 oct_size	2/1
 !
-!Lower bound	Symbol	Value		ASCII
+!Lower bound	Symbol	Value		Short
 -70.385		(!)	704/729		w
 -62.5		\!/	32/33		v
 -55.0		(!)	704/729		w
