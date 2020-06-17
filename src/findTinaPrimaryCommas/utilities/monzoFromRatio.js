@@ -11,7 +11,7 @@ const {combineMonzos} = require("./combineMonzos")
 
 const computeMonzoFromRatio = ratio => {
     const positiveFactors = primeFactorizeInteger(ratio[0])
-    const negativeFactors = primeFactorizeInteger(ratio[1])
+    const negativeFactors = primeFactorizeInteger(ratio[1]).map(term => -term)
 
     while (positiveFactors.length < negativeFactors.length) {
         positiveFactors.push(0)

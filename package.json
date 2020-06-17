@@ -9,7 +9,8 @@
   "scripts": {
     "test": "jasmine",
     "analyze-bounds": "node src/boundsAnalysis/main.js",
-    "tina-commas": "node src/findTinaPrimaryCommas/main.js"
+    "tina-commas": "node src/findTinaPrimaryCommas/main.js",
+    "ratio-to-monzo": "node src/ratioToMonzo/main.js"
   },
   "devDependencies": {
     "colors": "^1.4.0",
