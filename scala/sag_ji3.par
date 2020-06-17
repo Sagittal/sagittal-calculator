@@ -1,4 +1,4 @@
-! Herculean Sagittal JI notation. Dave Keenan & George Secor. 2007-Nov-11, updated 2020-Apr-14
+! Ultra Precision (Herculean) Sagittal JI notation. Dave Keenan & George Secor. 2007-Nov-11, updated 2020-Jun-14
 ! The typical step is ln(3^7/2^11)/ln(2)*1200/58 = 1.960086311 cents
 !
 max_abs_slope	8.28
