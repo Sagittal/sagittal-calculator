@@ -1,3 +1,5 @@
+const CENTS_PER_OCTAVE = 1200
+
 const PRIMES = [
     2,
     3,
@@ -9594,5 +9596,6 @@ const PRIMES = [
 ]
 
 module.exports = {
+    CENTS_PER_OCTAVE,
     PRIMES,
 }
