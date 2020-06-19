@@ -7,3 +7,4 @@ const ratio = args[0].split("/")
 const monzo = computeMonzoFromRatio(ratio)
 
 console.log(monzo)
+//TODO: test
