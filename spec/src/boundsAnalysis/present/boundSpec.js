@@ -24,6 +24,7 @@ describe("extractBoundIdentifiers", () => {
                         ascii: ".)/|",
                         unicode: '',
                         mina: 47,
+                        monzo: [ 2, -1, -2, 0, 0, 0, 0, 1 ]
                         index: 47, // not the best example since index and mina are the same up to this point
                     },
                     {
@@ -33,6 +34,7 @@ describe("extractBoundIdentifiers", () => {
                         ascii: "'/|",
                         unicode: '',
                         mina: 48,
+                        monzo: [ -19, 12 ]
                         index: 48,
                     },
                 ],
@@ -44,6 +46,7 @@ describe("extractBoundIdentifiers", () => {
                         ascii: ".)/|",
                         unicode: '',
                         mina: 47,
+                        monzo: [ 2, -1, -2, 0, 0, 0, 0, 1 ]
                         index: 47,
                     },
                     {
@@ -53,6 +56,7 @@ describe("extractBoundIdentifiers", () => {
                         ascii: "'/|",
                         unicode: '',
                         mina: 48,
+                        monzo: [ -19, 12 ]
                         index: 48,
                     },
                 ],
@@ -65,6 +69,7 @@ describe("extractBoundIdentifiers", () => {
                         unicode: '',
                         mina: 47,
                         index: 47,
+                        monzo: [ 2, -1, -2, 0, 0, 0, 0, 1 ]
                     },
                     {
                         introducingLevel: "ULTRA",
@@ -74,6 +79,7 @@ describe("extractBoundIdentifiers", () => {
                         unicode: '',
                         mina: 48,
                         index: 48,
+                        monzo: [ -19, 12 ]
                     },
                 ],
             },

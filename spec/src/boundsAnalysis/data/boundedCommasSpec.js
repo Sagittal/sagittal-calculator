@@ -18,6 +18,7 @@ describe("computeBoundedCommas", () => {
                     ascii: "/|",
                     unicode: '',
                     mina: 44,
+                    monzo: [ -4, 4, -1 ],
                     index: 44,
                 },
                 {
@@ -27,6 +28,7 @@ describe("computeBoundedCommas", () => {
                     ascii: "|)",
                     unicode: '',
                     mina: 56,
+                    monzo: [ 6, -2, 0, -1 ]
                     index: 58,
                 },
             ],
@@ -38,6 +40,7 @@ describe("computeBoundedCommas", () => {
                     ascii: ",)/|",
                     unicode: '',
                     mina: 50,
+                    monzo: [ -8, 3, 3, 0, 0, -1 ]
                     index: 51,
                 },
                 {
@@ -47,6 +50,7 @@ describe("computeBoundedCommas", () => {
                     ascii: ")/|",
                     unicode: '',
                     mina: 51,
+                    monzo: [ -13, 7, -1, 0, 0, 0, 0, 1 ]
                     index: 52,
                 },
             ],
@@ -58,6 +62,7 @@ describe("computeBoundedCommas", () => {
                     ascii: ",)/|",
                     unicode: '',
                     mina: 50,
+                    monzo: [ -8, 3, 3, 0, 0, -1 ]
                     index: 51,
                 },
                 {
@@ -67,6 +72,7 @@ describe("computeBoundedCommas", () => {
                     ascii: ")/|",
                     unicode: '',
                     mina: 51,
+                    monzo: [ -13, 7, -1, 0, 0, 0, 0, 1 ]
                     index: 52,
                 },
             ],
@@ -91,6 +97,7 @@ describe("computeBoundedCommas", () => {
                     mina: 133,
                     index: 142,
                     distance: 3.6578835602835937,
+                    monzo: [ -13, 5, 1, 1 ]
                 },
                 undefined,
             ],
@@ -103,6 +110,7 @@ describe("computeBoundedCommas", () => {
                     mina: 138,
                     index: 147,
                     distance: 1.2814466063946952,
+                    monzo: [ -16, 11, 1, 0, 0, -1 ]
                 },
                 undefined,
             ],
@@ -115,6 +123,7 @@ describe("computeBoundedCommas", () => {
                     mina: 138,
                     index: 147,
                     distance: 1.2814466063946952,
+                    monzo: [ -16, 11, 1, 0, 0, -1 ]
                 },
                 undefined,
             ],
@@ -127,6 +136,7 @@ describe("computeBoundedCommas", () => {
                     mina: 140,
                     index: 149,
                     distance: 0.44892240228040237,
+                    monzo: [ -11, 8, 2, -1, -1 ]
                 },
                 undefined,
             ],
@@ -139,6 +149,7 @@ describe("computeBoundedCommas", () => {
                     mina: 140,
                     index: 149,
                     distance: 0.44892240228040237,
+                    monzo: [ -11, 8, 2, -1, -1 ]
                 },
                 undefined,
             ],
@@ -163,6 +174,7 @@ describe("computeBoundedCommas", () => {
                     ascii: "`|",
                     unicode: '',
                     mina: 1,
+                    monzo: [ 12, -2, -1, -1, 0, -1 ],
                     index: 1,
                     distance: 0.211928144834215,
                 },
@@ -175,6 +187,7 @@ describe("computeBoundedCommas", () => {
                     ascii: "`|",
                     unicode: '',
                     mina: 1,
+                    monzo: [ 12, -2, -1, -1, 0, -1 ],
                     index: 1,
                     distance: 0.211928144834215,
                 },

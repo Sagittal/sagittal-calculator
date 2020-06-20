@@ -12,6 +12,7 @@ describe("computePositionComma", () => {
             ascii: ")|",
             unicode: '',
             mina: 7,
+            monzo: [ -9, 3, 0, 0, 0, 0, 0, 1 ],
             index: 7,
         })
     })
