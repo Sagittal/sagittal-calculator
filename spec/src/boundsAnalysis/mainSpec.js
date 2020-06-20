@@ -1,6 +1,6 @@
 const cp = require("child_process")
 
-describe("main", () => {
+describe("boundsAnalysis/main", () => {
     it("runs without error", () => {
         cp.execSync("npm run analyze-bounds --test")
     })
