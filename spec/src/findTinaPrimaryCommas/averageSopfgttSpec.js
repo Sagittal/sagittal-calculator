@@ -1,18 +1,20 @@
 const {COMMAS} = require("../../../src/boundsAnalysis/data/commas")
 const {computeSopfgtt} = require("../../../src/findTinaPrimaryCommas/utilities/sopfgtt")
+const {ACCURACY_THRESHOLD} = require("../../../src/boundsAnalysis/utilities/constants")
+
+const AVERAGE_SOPFGTT = 22.946666666666665
 
 describe("average sopfgtt", () => {
-    it("gets me my answer", () => {
+    it("is about 23", () => {
         const total = COMMAS.reduce(
             (totalSopfgtt, comma) => {
                 const sopfgtt = computeSopfgtt(comma.monzo)
-                console.log(sopfgtt)
 
                 return totalSopfgtt + sopfgtt
             },
             0,
         )
 
-        console.log(total / COMMAS.length)
+        expect(total / COMMAS.length).toBeCloseTo(AVERAGE_SOPFGTT, ACCURACY_THRESHOLD)
     })
 })

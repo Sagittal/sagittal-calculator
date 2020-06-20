@@ -1,6 +1,6 @@
 const {computeCommaName} = require("../../../../src/findTinaPrimaryCommas/utilities/commaName")
 
-describe("computeCommaName", () => {
+xdescribe("computeCommaName", () => {
     it("given a monzo will return the name of the comma", () => {
         const monzo = [5, -7, -1, 3]
 

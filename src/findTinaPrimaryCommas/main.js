@@ -1,4 +1,5 @@
 const {PRIMES} = require("./constants")
+const {computeSopfgtt} = require("./utilities/sopfgtt")
 
 const args = process.argv.slice(2)
 

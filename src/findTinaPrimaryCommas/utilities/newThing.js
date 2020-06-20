@@ -1,8 +1,9 @@
 const {computeMonzoFromRatio} = require("./monzoFromRatio")
 const {computeSopfgtt} = require("./sopfgtt")
 const {computeCopfgtt} = require("./copfgtt")
+const {computeLimit} = require("./limit")
 
-const COMMA_POPULARITIES = [
+const COMMA_POPULARITIES = [ // TODO: note: this is the one which matches my sheet
     [1, 1, 7624],
     [5, 1, 5371],
     [7, 1, 3016],
@@ -825,26 +826,31 @@ const COMMA_POPULARITIES = [
     // [115, 7, 1],
 ]
 
-const fs = require("fs")
+// const fs = require("fs")
+//
+// fs.unlinkSync("src/findTinaPrimaryCommas/utilities/results2.txt")
+//
+// COMMA_POPULARITIES.forEach(([numerator, denominator, popularity]) => {
+//     const monzo = computeMonzoFromRatio([numerator, denominator])
+//     const numeratorMonzo = computeMonzoFromRatio([numerator, 1])
+//     const denominatorMonzo = computeMonzoFromRatio([1, denominator])
+//     // console.log(monzo, numeratorMonzo, denominatorMonzo)
+//
+//     const sopfgtt = computeSopfgtt(monzo)
+//     const numeratorSopfgtt = computeSopfgtt(numeratorMonzo)
+//     const denominatorSopfgtt = computeSopfgtt(denominatorMonzo)
+//
+//     const blumeyerLength = numerator - denominator
+//
+//     // const score = sopfgtt + (blumeyerLength * 0.1)
+//     const score = sopfgtt //+ Math.abs(computeCopfgtt(numeratorMonzo) - computeCopfgtt(denominatorMonzo))
+//
+//     // fs.appendFileSync("src/findTinaPrimaryCommas/utilities/results.txt", `${numerator}/${denominator}\n`)
+//     // fs.appendFileSync("src/findTinaPrimaryCommas/utilities/results2.txt", `(${sopfgtt},${popularity}),`)
+//     fs.appendFileSync("src/findTinaPrimaryCommas/utilities/results2.txt", `${denominatorSopfgtt}\n`)
+// })
 
-fs.unlinkSync("src/findTinaPrimaryCommas/utilities/results2.txt")
-
-COMMA_POPULARITIES.forEach(([numerator, denominator, popularity]) => {
-    const monzo = computeMonzoFromRatio([numerator, denominator])
-    const numeratorMonzo = computeMonzoFromRatio([numerator, 1])
-    const denominatorMonzo = computeMonzoFromRatio([1, denominator])
-    // console.log(monzo, numeratorMonzo, denominatorMonzo)
-
-    const sopfgtt = computeSopfgtt(monzo)
-    const numeratorSopfgtt = computeSopfgtt(numeratorMonzo)
-    const denominatorSopfgtt = computeSopfgtt(denominatorMonzo)
-
-    const blumeyerLength = numerator - denominator
-
-    // const score = sopfgtt + (blumeyerLength * 0.1)
-    const score = sopfgtt //+ Math.abs(computeCopfgtt(numeratorMonzo) - computeCopfgtt(denominatorMonzo))
-
-    // fs.appendFileSync("src/findTinaPrimaryCommas/utilities/results.txt", `${numerator}/${denominator}\n`)
-    // fs.appendFileSync("src/findTinaPrimaryCommas/utilities/results2.txt", `(${sopfgtt},${popularity}),`)
-    fs.appendFileSync("src/findTinaPrimaryCommas/utilities/results2.txt", `${denominatorSopfgtt}\n`)
-})
+//
+// COMMA_POPULARITIES.forEach(([num, den]) => {
+//     console.log(computeLimit(computeMonzoFromRatio([num, den])))
+// })
