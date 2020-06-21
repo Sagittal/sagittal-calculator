@@ -1,11 +1,10 @@
 const {PRIMES} = require("../constants")
+const {computeReducedMonzo} = require("./reducedMonzo")
 
 const computeLimit = monzo => {
-    while(monzo[monzo.length - 1] === 0){
-        monzo.pop()
-    }
+    const reducedMonzo = computeReducedMonzo(monzo)
 
-    return PRIMES[monzo.length - 1]
+    return PRIMES[reducedMonzo.length - 1]
 }
 
 module.exports = {
