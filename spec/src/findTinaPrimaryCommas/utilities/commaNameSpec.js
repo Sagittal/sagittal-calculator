@@ -1,6 +1,6 @@
 const {computeCommaName} = require("../../../../src/findTinaPrimaryCommas/utilities/commaName")
 
-xdescribe("computeCommaName", () => {
+describe("computeCommaName", () => {
     it("given a monzo will return the name of the comma", () => {
         const monzo = [5, -7, -1, 3]
 
@@ -52,7 +52,7 @@ xdescribe("computeCommaName", () => {
     it("assigns the correct size category", () => {
         expect(computeCommaName([12, -2, -1, -1, 0, -1])).toBe("1/455n")
         expect(computeCommaName([-15, 8, 1])).toBe("5s")
-        expect(computeCommaName([-7, 7, 0, 0, 0, 0, -1])).toBe("17k")
+        expect(computeCommaName([-7, 7, 0, 0, 0, 0, -1])).toBe("1/17k")
         expect(computeCommaName([-12, 5, 0, 0, 0, 0, 1])).toBe("17C")
         expect(computeCommaName([1, -2, -1, 0, 0, 0, 0, 0, 1])).toBe("23/5S")
         expect(computeCommaName([7, -3, 1, 0, 0, 0, 0, 0, -1])).toBe("5/23M")
