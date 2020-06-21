@@ -83,30 +83,3 @@ const findComma = (five, seven, eleven, thirteen, seventeen, nineteen, twentythr
 results.sort(({ sumOfPrimes}, {sumOfPrimes: nextSumOfPrimes}) => sumOfPrimes - nextSumOfPrimes)
 
 results.forEach(({ output }) => console.log(output))
-
-// TODO: clean up below
-/*
-// script for appraising a monzo
-
-const terms = [2,3,5,7,11,13,17,19,23,29,31,37]
-const sumOfPrimesTerms = [0,0,5,7,11,13,17,19,23,29,31,37]
-
-const monzo = [-7, 1, 0, -3, 4]
-const result = (Math.log2(
-        2 ** (monzo[0] || 0) *
-        3 ** (monzo[1] || 0) *
-        5 ** (monzo[2] || 0) *
-        7 ** (monzo[3] || 0) *
-        11 ** (monzo[4] || 0) *
-  13 ** (monzo[5] || 0)
-      ) * 1200) % 1200
-const numerator = monzo.reduce((a, m, i) => m > 0 ? a * terms[i] ** m : a, 1)
-const denominator = monzo.reduce((a, m, i) => m < 0 ? a * terms[i] ** -m : a, 1)
-const sumOfPrimes = monzo.reduce((a, m, i) => a + sumOfPrimesTerms[i] * Math.abs(m), 0)
-const apotomeSlope = monzo[1] - 7 * result/113.685
-
-console.log(`${numerator}/${denominator}`)
-console.log(apotomeSlope.toPrecision(3))
-console.log(sumOfPrimes)
- */
-

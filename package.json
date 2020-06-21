@@ -11,7 +11,7 @@
     "analyze-bounds": "node src/boundsAnalysis/main.js",
     "tina-commas": "node src/findTinaPrimaryCommas/main.js",
     "ratio-to-monzo": "node src/ratioToMonzo/main.js",
-    "monzo-to-ratio": "node src/monzoToRatio/main.js"
+    "appraise-monzo": "node src/appraiseMonzo/main.js"
   },
   "devDependencies": {
     "colors": "^1.4.0",
