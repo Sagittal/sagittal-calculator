@@ -84,6 +84,7 @@ results.sort(({ sumOfPrimes}, {sumOfPrimes: nextSumOfPrimes}) => sumOfPrimes - n
 
 results.forEach(({ output }) => console.log(output))
 
+// TODO: clean up below
 /*
 // script for appraising a monzo
 
@@ -109,4 +110,3 @@ console.log(apotomeSlope.toPrecision(3))
 console.log(sumOfPrimes)
  */
 
-// TODO: per https://docs.google.com/spreadsheets/d/1fUXdga6ID1Myt6LfFBBYTjNsh7XC-lEV8SsLuS_nyJU/edit#gid=1736127328, should be able to find commas within a certain range, yes, but also for specific prime content

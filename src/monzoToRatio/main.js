@@ -7,4 +7,3 @@ const monzo = args[0]
 const ratio = computeRatioFromMonzo(JSON.parse(monzo))
 
 console.log(ratio.join("/"))
-//TODO: test

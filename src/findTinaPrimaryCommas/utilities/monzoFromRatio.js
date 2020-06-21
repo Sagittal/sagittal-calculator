@@ -1,14 +1,6 @@
 const {PRIMES} = require("../constants")
 const {combineMonzos} = require("./combineMonzos")
 
-// const primeFactorize = integerOrRational => {
-//     if (typeof integerOrRational === "object") {
-//         return primeFactorizeRational(integerOrRational)
-//     }
-//
-//     return primeFactorizeInteger(integerOrRational)
-// }
-
 const computeMonzoFromRatio = ratio => {
     const positiveFactors = primeFactorizeInteger(ratio[0])
     const negativeFactors = primeFactorizeInteger(ratio[1]).map(term => -term)
@@ -17,14 +9,6 @@ const computeMonzoFromRatio = ratio => {
         positiveFactors.push(0)
     }
 
-    // console.log(positiveFactors, negativeFactors)
-
-    // TODO: can i just use combineMonzos?
-    // return positiveFactors.map((positiveFactor, index) => {
-    //     const negativeFactor = negativeFactors[index]
-    //
-    //     return positiveFactor - negativeFactor
-    // })
     return combineMonzos(positiveFactors, negativeFactors)
 }
 
