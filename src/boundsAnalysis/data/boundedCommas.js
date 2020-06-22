@@ -3,7 +3,7 @@ const {computePositionComma} = require("./positionComma")
 const {BOUNDS} = require("./bounds")
 
 const computeBoundedCommas = bound => {
-    const {position, levels} = bound
+    const {position, levels, id} = bound
 
     return levels.reduce(
         (levels, level) => {
@@ -18,7 +18,9 @@ const computeBoundedCommas = bound => {
                 [level]: levelBoundedCommasWithDistance,
             }
         },
-        {},
+        {
+            id,
+        },
     )
 }
 

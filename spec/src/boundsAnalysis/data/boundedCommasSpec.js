@@ -5,11 +5,13 @@ describe("computeBoundedCommas", () => {
         const bound = {
             position: 24.66219847111080,
             levels: ["MEDIUM", "EXTREME", "INSANE"],
+            id: 54,
         }
 
         const result = computeBoundedCommas(bound)
 
         expect(result).toEqual({
+            id: 54,
             MEDIUM: [
                 {
                     introducingLevel: "MEDIUM",
@@ -19,7 +21,7 @@ describe("computeBoundedCommas", () => {
                     unicode: '',
                     mina: 44,
                     monzo: [ -4, 4, -1 ],
-                    index: 44,
+                    id: 44,
                 },
                 {
                     introducingLevel: "MEDIUM",
@@ -28,8 +30,8 @@ describe("computeBoundedCommas", () => {
                     ascii: "|)",
                     unicode: '',
                     mina: 56,
-                    monzo: [ 6, -2, 0, -1 ]
-                    index: 58,
+                    monzo: [ 6, -2, 0, -1 ],
+                    id: 58,
                 },
             ],
             EXTREME: [
@@ -40,8 +42,8 @@ describe("computeBoundedCommas", () => {
                     ascii: ",)/|",
                     unicode: '',
                     mina: 50,
-                    monzo: [ -8, 3, 3, 0, 0, -1 ]
-                    index: 51,
+                    monzo: [ -8, 3, 3, 0, 0, -1 ],
+                    id: 51,
                 },
                 {
                     introducingLevel: "HIGH",
@@ -50,8 +52,8 @@ describe("computeBoundedCommas", () => {
                     ascii: ")/|",
                     unicode: '',
                     mina: 51,
-                    monzo: [ -13, 7, -1, 0, 0, 0, 0, 1 ]
-                    index: 52,
+                    monzo: [ -13, 7, -1, 0, 0, 0, 0, 1 ],
+                    id: 52,
                 },
             ],
             INSANE: [
@@ -62,8 +64,8 @@ describe("computeBoundedCommas", () => {
                     ascii: ",)/|",
                     unicode: '',
                     mina: 50,
-                    monzo: [ -8, 3, 3, 0, 0, -1 ]
-                    index: 51,
+                    monzo: [ -8, 3, 3, 0, 0, -1 ],
+                    id: 51,
                 },
                 {
                     introducingLevel: "HIGH",
@@ -72,8 +74,8 @@ describe("computeBoundedCommas", () => {
                     ascii: ")/|",
                     unicode: '',
                     mina: 51,
-                    monzo: [ -13, 7, -1, 0, 0, 0, 0, 1 ]
-                    index: 52,
+                    monzo: [ -13, 7, -1, 0, 0, 0, 0, 1 ],
+                    id: 52,
                 },
             ],
         })
@@ -83,11 +85,13 @@ describe("computeBoundedCommas", () => {
         const bound = {
             position: 68.57250822118040,
             levels: ["MEDIUM", "HIGH", "ULTRA", "EXTREME", "INSANE"],
+            id: 54,
         }
 
         const result = computeBoundedCommas(bound)
 
         expect(result).toEqual({
+            id: 54,
             MEDIUM: [
                 {
                     introducingLevel: "MEDIUM",
@@ -95,7 +99,7 @@ describe("computeBoundedCommas", () => {
                     ascii: "(|\\",
                     unicode: '',
                     mina: 133,
-                    index: 142,
+                    id: 142,
                     distance: 3.6578835602835937,
                     monzo: [ -13, 5, 1, 1 ]
                 },
@@ -108,7 +112,7 @@ describe("computeBoundedCommas", () => {
                     ascii: ")|\\\\",
                     unicode: '',
                     mina: 138,
-                    index: 147,
+                    id: 147,
                     distance: 1.2814466063946952,
                     monzo: [ -16, 11, 1, 0, 0, -1 ]
                 },
@@ -121,7 +125,7 @@ describe("computeBoundedCommas", () => {
                     ascii: ")|\\\\",
                     unicode: '',
                     mina: 138,
-                    index: 147,
+                    id: 147,
                     distance: 1.2814466063946952,
                     monzo: [ -16, 11, 1, 0, 0, -1 ]
                 },
@@ -134,7 +138,7 @@ describe("computeBoundedCommas", () => {
                     ascii: "``)|\\\\",
                     unicode: '',
                     mina: 140,
-                    index: 149,
+                    id: 149,
                     distance: 0.44892240228040237,
                     monzo: [ -11, 8, 2, -1, -1 ]
                 },
@@ -147,7 +151,7 @@ describe("computeBoundedCommas", () => {
                     ascii: "``)|\\\\",
                     unicode: '',
                     mina: 140,
-                    index: 149,
+                    id: 149,
                     distance: 0.44892240228040237,
                     monzo: [ -11, 8, 2, -1, -1 ]
                 },
@@ -161,11 +165,13 @@ describe("computeBoundedCommas", () => {
         const bound = {
             position: 0.210788021120605,
             levels: ["EXTREME", "INSANE"],
+            id: 55,
         }
 
         const result = computeBoundedCommas(bound)
 
         expect(result).toEqual({
+            id: 55,
             EXTREME: [
                 undefined,
                 {
@@ -175,7 +181,7 @@ describe("computeBoundedCommas", () => {
                     unicode: '',
                     mina: 1,
                     monzo: [ 12, -2, -1, -1, 0, -1 ],
-                    index: 1,
+                    id: 1,
                     distance: 0.211928144834215,
                 },
             ],
@@ -188,7 +194,7 @@ describe("computeBoundedCommas", () => {
                     unicode: '',
                     mina: 1,
                     monzo: [ 12, -2, -1, -1, 0, -1 ],
-                    index: 1,
+                    id: 1,
                     distance: 0.211928144834215,
                 },
             ],

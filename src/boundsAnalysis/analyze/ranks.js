@@ -6,9 +6,9 @@ const rankBoundIndices = [
     [], [], [],
 ]
 
-const updateRankAnalysis = (bestRank, boundIndex) => {
+const updateRankAnalysis = (bestRank, boundId) => {
     rankCounts[bestRank] += 1
-    rankBoundIndices[bestRank].push(boundIndex)
+    rankBoundIndices[bestRank].push(boundId)
 }
 
 module.exports = {

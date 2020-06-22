@@ -52,6 +52,7 @@ describe("analyzeBound", () => {
     const bound = {
         position: 23.1164196495597,
         levels: ["ULTRA", "EXTREME", "INSANE"],
+        id: 47,
     }
     const expectedBestHistoryEvents = [
         {
@@ -95,9 +96,7 @@ describe("analyzeBound", () => {
     }
 
     it("returns an analysis of the bound using its histories, including a consolidated presentation of said histories, and its best possible history, and the difference between the bound and its initial position", () => {
-        const boundIndex = 47
-
-        const result = analyzeBound(histories, bound, boundIndex)
+        const result = analyzeBound(histories, bound)
 
         expect(result).toEqual({
             bestRank: 1,
@@ -173,22 +172,18 @@ describe("analyzeBound", () => {
     })
 
     it("updates the rank analysis", () => {
-        const boundIndex = 88
-
         spyOn(rankAnalysis, "updateRankAnalysis")
 
-        analyzeBound(histories, bound, boundIndex)
+        analyzeBound(histories, bound)
 
         const expectedBestHistoryRank = 1
-        expect(rankAnalysis.updateRankAnalysis).toHaveBeenCalledWith(expectedBestHistoryRank, boundIndex)
+        expect(rankAnalysis.updateRankAnalysis).toHaveBeenCalledWith(expectedBestHistoryRank, bound.id)
     })
 
     it("updates the level analysis", () => {
-        const boundIndex = 88
-
         spyOn(levelAnalysis, "updateLevelAnalysis")
 
-        analyzeBound(histories, bound, boundIndex)
+        analyzeBound(histories, bound)
 
         expect(levelAnalysis.updateLevelAnalysis).toHaveBeenCalledWith(expectedBestPossibleHistory)
     })

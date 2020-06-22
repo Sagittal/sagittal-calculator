@@ -2,7 +2,7 @@ const {updateRankAnalysis, rankCounts, rankBoundIndices} = require("../../../../
 
 describe("updateRankAnalysis", () => {
     const bestRank = 2
-    const boundIndex = 88
+    const boundId = 88
 
     let previousRankAnalysis
     let previousRankBounds
@@ -11,7 +11,7 @@ describe("updateRankAnalysis", () => {
         previousRankAnalysis = rankCounts[bestRank]
         previousRankBounds = rankBoundIndices[bestRank].slice()
 
-        updateRankAnalysis(bestRank, boundIndex)
+        updateRankAnalysis(bestRank, boundId)
     })
 
     it("updates the count of bounds with this rank as their best rank", () => {
@@ -19,6 +19,6 @@ describe("updateRankAnalysis", () => {
     })
 
     it("updates the rank to include this bound in the list of bounds with it as their best rank", () => {
-        expect(rankBoundIndices[bestRank]).toEqual(previousRankBounds.concat([boundIndex]))
+        expect(rankBoundIndices[bestRank]).toEqual(previousRankBounds.concat([boundId]))
     })
 })

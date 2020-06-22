@@ -6,8 +6,8 @@ describe("tinas per ina distribution spec", () => {
         Object.entries(LEVELS_BOUNDS).forEach(([level, levelBounds]) => {
             console.log(level)
             levelBounds.forEach(levelBound => {
-                const index = levelBound.index
-                const levelComma = COMMAS.find(levelComma => levelComma.index === index)
+                const id = levelBound.id
+                const levelComma = COMMAS.find(levelComma => levelComma.id === id)
                 console.log(levelComma.mina)
             })
         })

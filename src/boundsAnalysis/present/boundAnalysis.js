@@ -7,9 +7,9 @@ const {extractLevelRanks} = require("./levelRanks")
 const {extractLevelDistances} = require("./levelDistances")
 const {extractBoundIdentifiers} = require("./bound")
 
-const presentBoundAnalysis = (boundAnalysis, {bound, boundIndex, mode = "DETAILS"} = {}) => {
+const presentBoundAnalysis = (boundAnalysis, {bound, mode = "DETAILS"} = {}) => {
     let presentedBoundAnalysis
-    const boundIdentifiers = extractBoundIdentifiers(bound, boundIndex)
+    const boundIdentifiers = extractBoundIdentifiers(bound)
 
     if (mode === "SUMMARY") {
         const {
@@ -43,7 +43,7 @@ const presentBoundAnalysis = (boundAnalysis, {bound, boundIndex, mode = "DETAILS
 
         const color = COLORS[bestRank]
         presentedBoundAnalysis = [
-            boundIndex,
+            bound.id,
             presentMina(lesserBoundedMina),
             presentMina(greaterBoundedMina),
             presentSymbolAscii(extremeLevelLesserBoundedCommaSymbol),

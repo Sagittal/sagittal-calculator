@@ -18,7 +18,7 @@ const visualizeLevelBounds = () => {
 
             levelBoundElements.push(`  <line stroke-dasharray="${DASH_SIZE}" stroke="black" x1="${positionX}" x2="${positionX}" y1="${topY}" y2="${bottomY}" />\n`)
 
-            if (level === "EXTREME") { // bound index, not mina label
+            if (level === "EXTREME") { // bound id, not mina label
                 levelBoundElements.push(`  <text fill="black" text-anchor="middle" xml:space="preserve" x="${positionX}" y="${topY}" font-size="12px" font-family="Helvetica">${index}</text>\n`)
             }
         })

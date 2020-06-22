@@ -7,9 +7,10 @@ describe("presentBoundAnalysis", () => {
             mode = "SUMMARY"
         })
 
-        it("returns a string of the bound index, identifying symbol, actual bound position, whether it has a possible history, the error in tinas, and the ranks at each level of the best possible history, separated by tabs in a single line, and makes it the correct color", () => {
+        it("returns a string of the bound id, identifying symbol, actual bound position, whether it has a possible history, the error in tinas, and the ranks at each level of the best possible history, separated by tabs in a single line, and makes it the correct color", () => {
             const bound = {
                 position: 5.44763529181809,
+                id: 10,
             }
             const boundAnalysis = {
                 bestPossibleHistory: {
@@ -24,9 +25,8 @@ describe("presentBoundAnalysis", () => {
                 initialPositionTinaDifference: 0.0393,
                 bestPossibleHistoryDistance: 5.555,
             }
-            const boundIndex = 10
 
-            const result = presentBoundAnalysis(boundAnalysis, {bound, boundIndex, mode})
+            const result = presentBoundAnalysis(boundAnalysis, {bound, mode})
 
             expect(result).toEqual("10\t 10\t 11\t   ,,|( \t    ,|( \t \t \t0\t0\t1\t \t \t  3.333\t  2.222\t  5.555\t  5.448\t  5.485\t  0.039".cyan)
         })
@@ -40,6 +40,7 @@ describe("presentBoundAnalysis", () => {
         it("returns a string which is a multi-line, properly indented rendition of the bound analysis object as well as identifying information for the bound", () => {
             const bound = {
                 position: 5.44763529181809,
+                id: 10,
             }
             const boundAnalysis = {
                 bestRank: 2,
@@ -47,16 +48,16 @@ describe("presentBoundAnalysis", () => {
                 totalHistories: 42,
                 possibleHistories: 5,
             }
-            const boundIndex = 10
 
-            const result = presentBoundAnalysis(boundAnalysis, {bound, boundIndex, mode})
+            const result = presentBoundAnalysis(boundAnalysis, {bound, mode})
 
-            expect(result).toEqual([
+            const expectedResult = [
                 `{`,
                 `    "extremeLevelLesserBoundedCommaSymbol": ",,|(",`,
                 `    "extremeLevelGreaterBoundedCommaSymbol": ",|(",`,
                 `    "position": 5.44763529181809,`,
                 `    "boundedCommas": {`,
+                `        "id": 10,`,
                 `        "EXTREME": [`,
                 `            {`,
                 `                "introducingLevel": "EXTREME",`,
@@ -72,7 +73,7 @@ describe("presentBoundAnalysis", () => {
                 `                    1,`,
                 `                    -1`,
                 `                ],`,
-                `                "index": 10,`,
+                `                "id": 10,`,
                 `                "distance": 0.20389718131742995`,
                 `            },`,
                 `            {`,
@@ -94,7 +95,7 @@ describe("presentBoundAnalysis", () => {
                 `                    0,`,
                 `                    1`,
                 `                ],`,
-                `                "index": 11,`,
+                `                "id": 11,`,
                 `                "distance": 0.31846011121669004`,
                 `            }`,
                 `        ],`,
@@ -105,7 +106,6 @@ describe("presentBoundAnalysis", () => {
                 `                "ascii": ",,|(",`,
                 `                "unicode": "",`,
                 `                "mina": 10,`,
-                `                "index": 10,`,
                 `                "monzo": [`,
                 `                    5,`,
                 `                    -3,`,
@@ -114,6 +114,7 @@ describe("presentBoundAnalysis", () => {
                 `                    1,`,
                 `                    -1`,
                 `                ],`,
+                `                "id": 10,`,
                 `                "distance": 0.20389718131742995`,
                 `            },`,
                 `            {`,
@@ -122,7 +123,6 @@ describe("presentBoundAnalysis", () => {
                 `                "ascii": ",|(",`,
                 `                "unicode": "",`,
                 `                "mina": 11,`,
-                `                "index": 11,`,
                 `                "monzo": [`,
                 `                    -11,`,
                 `                    6,`,
@@ -136,6 +136,7 @@ describe("presentBoundAnalysis", () => {
                 `                    0,`,
                 `                    1`,
                 `                ],`,
+                `                "id": 11,`,
                 `                "distance": 0.31846011121669004`,
                 `            }`,
                 `        ]`,
@@ -149,7 +150,8 @@ describe("presentBoundAnalysis", () => {
                 `    "totalHistories": 42,`,
                 `    "possibleHistories": 5`,
                 `}`,
-            ].join("\n"))
+            ].join("\n")
+            expect(result).toEqual(expectedResult)
         })
     })
 })

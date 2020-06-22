@@ -4,18 +4,18 @@ describe("extractBoundIdentifiers", () => {
     const bound = {
         position: 23.1164196495597,
         levels: ["ULTRA", "EXTREME", "INSANE"],
+        id: 47,
     }
 
     it("returns helpful identifying information about the bound", () => {
-        const boundIndex = 47
-
-        const result = extractBoundIdentifiers(bound, boundIndex)
+        const result = extractBoundIdentifiers(bound)
 
         expect(result).toEqual({
             extremeLevelLesserBoundedCommaSymbol: ".)/|",
             extremeLevelGreaterBoundedCommaSymbol: "'/|",
             position: 23.1164196495597,
             boundedCommas: {
+                id: 47,
                 ULTRA: [
                     {
                         introducingLevel: "ULTRA",
@@ -24,8 +24,8 @@ describe("extractBoundIdentifiers", () => {
                         ascii: ".)/|",
                         unicode: '',
                         mina: 47,
-                        monzo: [ 2, -1, -2, 0, 0, 0, 0, 1 ]
-                        index: 47, // not the best example since index and mina are the same up to this point
+                        monzo: [ 2, -1, -2, 0, 0, 0, 0, 1 ],
+                        id: 47, // not the best example since id and mina are the same up to this point
                     },
                     {
                         introducingLevel: "ULTRA",
@@ -34,8 +34,8 @@ describe("extractBoundIdentifiers", () => {
                         ascii: "'/|",
                         unicode: '',
                         mina: 48,
-                        monzo: [ -19, 12 ]
-                        index: 48,
+                        monzo: [ -19, 12 ],
+                        id: 48,
                     },
                 ],
                 EXTREME: [
@@ -46,8 +46,8 @@ describe("extractBoundIdentifiers", () => {
                         ascii: ".)/|",
                         unicode: '',
                         mina: 47,
-                        monzo: [ 2, -1, -2, 0, 0, 0, 0, 1 ]
-                        index: 47,
+                        monzo: [ 2, -1, -2, 0, 0, 0, 0, 1 ],
+                        id: 47,
                     },
                     {
                         introducingLevel: "ULTRA",
@@ -56,8 +56,8 @@ describe("extractBoundIdentifiers", () => {
                         ascii: "'/|",
                         unicode: '',
                         mina: 48,
-                        monzo: [ -19, 12 ]
-                        index: 48,
+                        monzo: [ -19, 12 ],
+                        id: 48,
                     },
                 ],
                 INSANE: [
@@ -68,7 +68,7 @@ describe("extractBoundIdentifiers", () => {
                         ascii: ".)/|",
                         unicode: '',
                         mina: 47,
-                        index: 47,
+                        id: 47,
                         monzo: [ 2, -1, -2, 0, 0, 0, 0, 1 ]
                     },
                     {
@@ -78,7 +78,7 @@ describe("extractBoundIdentifiers", () => {
                         ascii: "'/|",
                         unicode: '',
                         mina: 48,
-                        index: 48,
+                        id: 48,
                         monzo: [ -19, 12 ]
                     },
                 ],

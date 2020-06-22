@@ -5,7 +5,7 @@ describe("computeLevelCommas", () => {
         expect(computeLevelCommas("MEDIUM").length).toBe(13)
         expect(computeLevelCommas("HIGH").length).toBe(32)
         expect(computeLevelCommas("ULTRA").length).toBe(55)
-        expect(computeLevelCommas("EXTREME").length).toBe(150)
+        expect(computeLevelCommas("EXTREME").length).toBe(149)
     })
 
     it("returns only the comma data (not the bound data)", () => {
@@ -18,7 +18,7 @@ describe("computeLevelCommas", () => {
             unicode: '',
             mina: 0,
             monzo: [],
-            index: 0,
+            id: 0,
         })
     })
 })

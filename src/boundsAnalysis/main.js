@@ -13,7 +13,7 @@ const args = process.argv.slice(2)
 // TODO: this should also use Commander.js like the tina-comma script
 
 let bound
-let boundIndex
+let boundId
 let testMode = false
 if (args.length) {
     const arg = args[0]
@@ -21,25 +21,25 @@ if (args.length) {
     if (arg === "--test") {
         testMode = true
     } else {
-        boundIndex = arg
-        bound = BOUNDS[boundIndex]
+        boundId = arg
+        bound = BOUNDS.find(bound => bound.id === boundId)
     }
 }
 
 if (bound) {
     const histories = computeHistories(bound)
-    const boundAnalysis = analyzeBound(histories, bound, boundIndex)
+    const boundAnalysis = analyzeBound(histories, bound)
 
-    console.log(presentBoundAnalysis(boundAnalysis, {bound, boundIndex, mode: "DETAILS"}))
+    console.log(presentBoundAnalysis(boundAnalysis, {bound, boundId, mode: "DETAILS"}))
 } else {
     console.log(BOUNDS_ANALYSIS_HEADER_ROW)
 
     const visualization = []
-    BOUNDS.map((bound, boundIndex) => {
+    BOUNDS.map((bound, boundId) => {
         const histories = computeHistories(bound)
-        const boundAnalysis = analyzeBound(histories, bound, boundIndex)
+        const boundAnalysis = analyzeBound(histories, bound, boundId)
 
-        console.log(presentBoundAnalysis(boundAnalysis, {bound, boundIndex, mode: "SUMMARY"}))
+        console.log(presentBoundAnalysis(boundAnalysis, {bound, boundId, mode: "SUMMARY"}))
 
         visualization.push(boundAnalysis)
     })

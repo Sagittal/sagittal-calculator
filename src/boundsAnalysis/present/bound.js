@@ -1,8 +1,8 @@
 const {BOUNDED_COMMAS} = require("../data/boundedCommas")
 
-const extractBoundIdentifiers = (bound, boundIndex) => {
-    const {position} = bound
-    const boundedCommas = BOUNDED_COMMAS[boundIndex]
+const extractBoundIdentifiers = bound => {
+    const {position, id} = bound
+    const boundedCommas = BOUNDED_COMMAS.find(comma => comma.id === id)
     const extremeBoundedCommas = boundedCommas["EXTREME"]
     const [lesserBoundedComma, greaterBoundedComma] = extremeBoundedCommas
 
