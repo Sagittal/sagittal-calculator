@@ -1,3 +1,0 @@
-describe("computeCommasFromFiveMonzo", () => {
-    xit("doesaoigjoi")
-})

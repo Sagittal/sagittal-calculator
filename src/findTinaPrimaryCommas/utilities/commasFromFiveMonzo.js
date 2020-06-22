@@ -1,36 +1,34 @@
-const {computeSopfgtt} = require("./sopfgtt")
 const {computePlusOrMinusRange} = require("./plusOrMinusRange")
-const {computeCommaName} = require("./commaName")
-const {computeApotomeSlope} = require("./apotomeSlope")
-const {computeRatioFromMonzo} = require("./ratioFromMonzo")
-const {computeCentsFromRatio} = require("./centsFromRatio")
-const {computeLimit} = require("./limit")
+const {computeTwoMonzoInCentsRange} = require("./twoMonzoInCentsRange")
+const {analyzeComma} = require("../analyze/comma")
 
-const MAXIMUM_TWO_EXPONENT_FOR_NO_REASON_MAYBE = 30
-const MAXIMUM_ABSOLUTE_THREE_EXPONENT = 15
+const computeCommasFromFiveMonzo = (fiveMonzo, options) => {
+    const {
+        lowerBound,
+        upperBound,
+        maximumAbsoluteThreeExponent,
+        maximumApotomeSlope = Infinity,             // optional
+    } = options || {}
 
-const computeCommasFromFiveMonzo = (fiveMonzo, {lowerBound, upperBound}) => {
-    const commas = []
+    if (typeof lowerBound === 'undefined') throw new Error("Lower bound must be supplied.")
+    if (typeof upperBound === 'undefined') throw new Error("Upper bound must be supplied.")
+    if (typeof maximumAbsoluteThreeExponent === 'undefined') throw new Error("Maximum absolute three exponent must be supplied.")
 
-    computePlusOrMinusRange(MAXIMUM_TWO_EXPONENT_FOR_NO_REASON_MAYBE).forEach(two => {
-        computePlusOrMinusRange(MAXIMUM_ABSOLUTE_THREE_EXPONENT).forEach(three => {
-            const monzo = [two, three, ...fiveMonzo]
-            const ratio = computeRatioFromMonzo(monzo)
-            const cents = computeCentsFromRatio(ratio)
+    const analyzedCommas = []
 
-            if (cents > lowerBound && cents < upperBound) {
-                const commaName = computeCommaName(monzo)
-                const sopfgtt = computeSopfgtt(monzo)
-                const apotomeSlope = computeApotomeSlope(monzo)
-                const limit = computeLimit(monzo)
+    computePlusOrMinusRange(maximumAbsoluteThreeExponent).forEach(three => {
+        const monzo = computeTwoMonzoInCentsRange([three, ...fiveMonzo], lowerBound, upperBound)
 
-                const formattedOutput = `${cents}\t[${monzo.join(' ')}⟩\t\t${ratio.join("/")}\t\t${commaName}\t\t${limit}\t\t${apotomeSlope}\t\t${sopfgtt}` // TODO: formatRatio in a couple palces, and formatMonzo
-                commas.push({sopfgtt, formattedOutput})
-            }
-        })
+        if (monzo) {
+            const analyzedComma = analyzeComma(monzo)
+
+            if (analyzedComma.apotomeSlope > maximumApotomeSlope) return
+
+            analyzedCommas.push(analyzedComma)
+        }
     })
 
-    return commas
+    return analyzedCommas
 }
 
 module.exports = {

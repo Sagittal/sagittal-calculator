@@ -1,20 +1,10 @@
-const {computeRatioFromMonzo} = require("../findTinaPrimaryCommas/utilities/ratioFromMonzo")
-const {computeApotomeSlope} = require("../findTinaPrimaryCommas/utilities/apotomeSlope")
-const {computeSopfgtt} = require("../findTinaPrimaryCommas/utilities/sopfgtt")
-const {computeCommaName} = require("../findTinaPrimaryCommas/utilities/commaName")
-const {computeLimit} = require("../findTinaPrimaryCommas/utilities/limit")
-const {computeCentsFromRatio} = require("../findTinaPrimaryCommas/utilities/centsFromRatio")
+const {presentComma} = require("../findTinaPrimaryCommas/present/comma")
+const {analyzeComma} = require("../findTinaPrimaryCommas/analyze/comma")
 
 const args = process.argv.slice(2)
 
 const monzo = JSON.parse(args[0])
 
-const ratio = computeRatioFromMonzo(monzo)
+const analyzedComma = analyzeComma(monzo)
 
-// TODO: this should be DRYed with what happens in commasFromFiveMonzo somehow
-console.log(`comma name: ${computeCommaName(monzo)}`)
-console.log(`cents: ${computeCentsFromRatio(ratio)}`)
-console.log(`limit: ${computeLimit(monzo)}`)
-console.log(`ratio: ${ratio.join("/")}`)
-console.log(`SoPF>3: ${computeSopfgtt(monzo)}`)
-console.log(`apotome slope: ${computeApotomeSlope(monzo)}`)
+console.log(presentComma(analyzedComma, {mode: "DETAILS"}))

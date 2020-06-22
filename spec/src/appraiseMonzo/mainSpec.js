@@ -11,12 +11,12 @@ describe("appraiseMonzo/main", () => {
         const answer = resultLines.slice(HEADER_LINES_COUNT, resultLines.length - SKIP_THE_FINAL_EMPTY_LINE)
 
         expect(answer).toEqual([
-            'comma name: 275k',
-            'cents: 10.26036403671435',
-            'limit: 11',
-            'ratio: 2200/2187',
-            'SoPF>3: 21',
-            'apotome slope: -7.631767994281849',
+            'comma name:\t275k',
+            'limit:\t11',
+            'SoPF>3:\t21',
+            'cents:\t10.26036403671435',
+            'ratio:\t2200/2187',
+            'apotome slope:\t-7.631767994281849',
         ])
     })
 })
