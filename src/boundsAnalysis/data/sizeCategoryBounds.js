@@ -1,4 +1,4 @@
-const computeSizeCategoryBounds = () => [
+const SIZE_CATEGORY_BOUNDS = [
     {
         name: "n|s",                    // half Pythagorean schisma
         position: 1.80752293276652,
@@ -34,9 +34,11 @@ const computeSizeCategoryBounds = () => [
         position: 68.57250822118040,    // half (apotome + Pythagorean comma)
         monzo: [-15, 9.5],
     },
-
 ]
+
+const computeSizeCategoryBounds = () => SIZE_CATEGORY_BOUNDS
 
 module.exports = {
     computeSizeCategoryBounds,
+    SIZE_CATEGORY_BOUNDS,
 }
