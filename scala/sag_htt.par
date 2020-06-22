@@ -1,4 +1,4 @@
-! Sagittal high-tolerance temperament notation. George Secor. 2003-Aug-28, updated 2020-Apr-14
+! Sagittal high-tolerance temperament notation. George Secor. 2003-Aug-28, updated 2020-Jun-14
 !
 max_abs_slope	7.5
 c_exp_range	-6	10

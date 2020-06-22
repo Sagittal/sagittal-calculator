@@ -1,12 +1,14 @@
-! Sagittal ET notation. Secor & Keenan 2006-Jun-28, updated 2020-Apr-14
+! Sagittal ET notation. Secor & Keenan 2006-Jun-28, updated 2020-Jun-14
 ! n = native-fifth notation for <division> <fifth> where non-native-fifth (s) notation also exists
 ! d = native-fifth notation for <division> <fifth> where this is the only notation
 ! s = list of subdivisions for above division using non-native fifth
 !
 n 5 3
-n 7 4
-d 9 5
 |\
+n 7 4
+|\  N\
+d 9 5
+|\  N\
 n 10 6
 (|\  /N\
 d 12 7
@@ -17,7 +19,7 @@ n 14 8
 n 15 9
 /|  N\  /N\
 n 16 9
-|)  (|\
+|)  (|\  N\
 d 17 10
 /|\  /N\
 d 19 11
@@ -25,12 +27,12 @@ d 19 11
 n 20 12
 )~|  (|\  ~N\  /N\
 n 21 12
-|)  (|\
+|)  (|\  N\
 d 22 13
 s 11
 /|  N\  /N\
 n 23 13
-|)  |\  (|\
+|)  |\  (|\  N\
 d 24 14
 s 8
 /|\  /N\
@@ -42,7 +44,7 @@ s 13
 d 27 16
 /|  (|\  N\  /N\
 n 28 16
-|)  |\  (|\
+|)  |\  (|\  N\
 d 29 17
 /|  N\  /N\
 n 30 18
@@ -52,11 +54,11 @@ d 31 18
 n 32 19
 )~|  /|  N\  ~N\  /N\
 n 33 19
-|)  |\  (|\
+|)  |\  (|\  N\
 d 34 20
 /|  /|\  N\  /N\
 n 35 20
-|(  |)  (|\
+|(  |)  (|\  N)  N\
 d 36 21
 s 18
 |)  N)  /N\
@@ -67,7 +69,7 @@ d 38 22
 d 39 23
 /|  /|\  (|)  N\  /N\
 n 40 23
-|(  |)  (|\
+|(  |)  (|\  N)  N\
 d 41 24
 /|  /|\  N\  /N\
 n 42 25
@@ -82,7 +84,7 @@ d 46 27
 s 23
 /|  /|\  (|)  N\  /N\
 n 47 27
-|(  |)  |\  (|\
+|(  |)  |\  (|\  N)  N\
 d 48 28
 s 16
 |~  /|\  /N~  /N\
@@ -184,6 +186,8 @@ d 130 76
 d 132 77
 s 66
 ~|(  (|  |~  |\  /|)  (|\  /N  /N~  )N~  (N(  /N\
+d 137 80
+|(  /|  |)  |\  /|)  /|\  (|\  /N  N)  N\  /N)  /N\
 d 142 83
 s 71
 |(  /|  |)  |\  /|)  /|\  (|)  (|\  /N  N)  N\  /N)  /N\
