@@ -15,6 +15,7 @@
   },
   "devDependencies": {
     "colors": "^1.4.0",
+    "commander": "^5.1.0",
     "jasmine": "^3.5.0"
   }
 }

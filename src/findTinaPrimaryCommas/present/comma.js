@@ -30,7 +30,7 @@ const presentComma = (comma, {mode = "SUMMARY"} = {}) => {
             presentMonzo(monzo),
             presentRatio(ratio),
             apotomeSlope,
-        ].join("\t\t")
+        ].join("\t")
     }
 }
 

@@ -1,16 +1,10 @@
-const cp = require("child_process")
-
-const HEADER_LINES_COUNT = 4
-const SKIP_THE_FINAL_EMPTY_LINE = 1
-
 describe("appraiseMonzo/main", () => {
     it("runs without error", () => {
-        const result = cp.execSync("npm run appraise-monzo [3,-7,2,0,1]").toString()
+        const command = "npm run appraise-monzo [3,-7,2,0,1]"
 
-        const resultLines = result.split('\n')
-        const answer = resultLines.slice(HEADER_LINES_COUNT, resultLines.length - SKIP_THE_FINAL_EMPTY_LINE)
+        const result = runCommandAndGetConsoleOutput(command)
 
-        expect(answer).toEqual([
+        expect(result).toEqual([
             'comma name:\t275k',
             'limit:\t11',
             'SoPF>3:\t21',

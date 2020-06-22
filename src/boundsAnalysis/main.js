@@ -2,7 +2,7 @@ require("colors")
 const {BOUNDS} = require("./data/bounds")
 const {computeHistories} = require("./plot/histories")
 const {analyzeBound} = require("./analyze/bound")
-const {HEADER_ROW} = require("./present/headerRow")
+const {BOUNDS_ANALYSIS_HEADER_ROW} = require("./present/headerRow")
 const {presentBoundAnalysis} = require("./present/boundAnalysis")
 const {presentRankAnalyses} = require("./present/rankAnalyses")
 const {presentLevelAnalyses} = require("./present/levelAnalyses")
@@ -30,7 +30,7 @@ if (bound) {
 
     console.log(presentBoundAnalysis(boundAnalysis, {bound, boundIndex, mode: "DETAILS"}))
 } else {
-    console.log(HEADER_ROW)
+    console.log(BOUNDS_ANALYSIS_HEADER_ROW)
 
     const visualization = []
     BOUNDS.map((bound, boundIndex) => {

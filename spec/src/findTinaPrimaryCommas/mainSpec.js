@@ -1,8 +1,13 @@
-const cp = require("child_process")
-
 describe("findTinaPrimaryCommas/main", () => {
     it("runs without error", () => {
-        cp.execSync("npm run tina-commas 45 45.01")
+        const command = "npm run tina-commas -- -l 30 -u 30.5 -3 2 -c 3 -p 37 -s 58 -a 3"
+
+        const result = runCommandAndGetConsoleOutput(command)
+
+        expect(result).toEqual([
+            'comma name\tlimit\tSoPF>3\tcents\tratio\tapotome slope',
+            '29/19C\t29\t48\t30.109177155396626\t[1 -1 0 0 0 0 0 -1 0 1⟩\t58/57\t-2.853931731162352',
+        ])
     })
 
     xit("can find commas with specific prime content", () => {

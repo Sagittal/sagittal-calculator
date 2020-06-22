@@ -24,7 +24,7 @@ const presentHeaderRow = columnHeaders => {
     return rows.map(row => row.join("\t")).join("\n") + "\n"
 }
 
-const HEADER_ROW = "   ---   Bound Analyses   ---   \n\n\n" + presentHeaderRow([
+const BOUNDS_ANALYSIS_HEADER_ROW = "   ---   Bound Analyses   ---   \n\n\n" + presentHeaderRow([
     [
         "bound",
         "index",
@@ -119,5 +119,5 @@ const HEADER_ROW = "   ---   Bound Analyses   ---   \n\n\n" + presentHeaderRow([
 
 module.exports = {
     presentHeaderRow,
-    HEADER_ROW,
+    BOUNDS_ANALYSIS_HEADER_ROW,
 }

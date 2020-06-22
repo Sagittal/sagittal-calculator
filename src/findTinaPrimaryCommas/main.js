@@ -1,25 +1,34 @@
+const {program} = require("commander")
 const {computeFiveMonzosToCheck} = require("./utilities/fiveMonzosToCheck")
 const {computeCommasFromFiveMonzo} = require("./utilities/commasFromFiveMonzo")
 const {presentComma} = require("./present/comma")
+const {MAXIMUM_POSITION} = require("../boundsAnalysis/data/intervals")
+const {TINA_COMMAS_HEADER_ROW} = require("./present/headerRow")
 
-const args = process.argv.slice(2)
+program
+    .option("-l, --lower-bound <lowerBound>", "output extra debugging", parseFloat)
+    .option("-u, --upper-bound <upperBound>", "small pizza size", parseFloat)
+    .option("-p, --prime-limit <primeLimit>", "maximum prime limit", parseInt)
+    .option("-a, --apotome-slope <apotomeSlope>", "maximum absolute apotome slope", parseFloat)
+    .option("-s, --sopfgtt <sopfgtt>", "maximum sopfgtt", parseInt)
+    .option("-c, --copfgtt <copfgtt>", "maximum copfgtt", parseInt)
+    .option("-3, --absolute-three-exponent <absoluteThreeExponent>", "maximum absolute 3 exponent", parseInt)
+    .parse(process.argv)
 
-const lowerBound = args[0]
-const upperBound = args[1]
-
-// TODO: perhaps the rest of these should also be received as flags from the command line (but I think that may involve adding a new package)
-const MAXIMUM_SUM_OF_PRIMES_GREATER_THAN_THREE = 61
-const MAXIMUM_COUNT_OF_PRIMES_GREATER_THAN_THREE = 555 // a silly number, unlikely to come close
-const MAXIMUM_APOTOME_SLOPE = 14
-const MAXIMUM_PRIME_LIMIT = 47
-const MAXIMUM_ABSOLUTE_THREE_EXPONENT = 15
+const lowerBound = program.lowerBound || 0
+const upperBound = program.upperBound || MAXIMUM_POSITION
+const maximumSopfgtt = program.sopfgtt || 61
+const maximumCopfgtt = program.copfgtt || 555 // a silly number, unlikely to come close
+const maximumApotomeSlope = program.apotomeSlope || 14
+const maximumPrimeLimit = program.primeLimit || 47
+const maximumAbsoluteThreeExponent = program.absoluteThreeExponent || 15
 
 let commas = []
 
 const fiveMonzosToCheck = computeFiveMonzosToCheck({
-    maximumPrimeLimit: MAXIMUM_PRIME_LIMIT,
-    maximumSopfgtt: MAXIMUM_SUM_OF_PRIMES_GREATER_THAN_THREE,
-    maximumCopfgtt: MAXIMUM_COUNT_OF_PRIMES_GREATER_THAN_THREE,
+    maximumPrimeLimit,
+    maximumSopfgtt,
+    maximumCopfgtt,
 })
 
 fiveMonzosToCheck.forEach(fiveMonzoToCheck => {
@@ -29,13 +38,14 @@ fiveMonzosToCheck.forEach(fiveMonzoToCheck => {
             {
                 lowerBound,
                 upperBound,
-                maximumApotomeSlope: MAXIMUM_APOTOME_SLOPE,
-                maximumAbsoluteThreeExponent: MAXIMUM_ABSOLUTE_THREE_EXPONENT,
-            }
-        )
+                maximumApotomeSlope,
+                maximumAbsoluteThreeExponent,
+            },
+        ),
     )
 })
 
 commas.sort(({sopfgtt}, {sopfgtt: nextSopfgtt}) => sopfgtt - nextSopfgtt)
 
+console.log(TINA_COMMAS_HEADER_ROW)
 commas.forEach(comma => console.log(presentComma(comma)))

@@ -14,7 +14,7 @@ describe("presentComma", () => {
     it("formats it in a nice single line in the default summary mode", () => {
         const result = presentComma(comma)
 
-        expect(result).toEqual("6j\t\t14\t\t13\t\t11.2\t\t[0 -1 1⟩\t\t5/4\t\t8.2")
+        expect(result).toEqual("6j\t14\t13\t11.2\t[0 -1 1⟩\t5/4\t8.2")
     })
 
     it("can also format it in a details mode with lines with titles for each line", () => {
