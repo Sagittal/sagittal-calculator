@@ -90,7 +90,7 @@ const COMMA_POPULARITIES = [
     {ratio: [29, 11], popularity: 13},
     {ratio: [37, 13], popularity: 13},
     {ratio: [143, 5], popularity: 13},
-    {ratio: [211, 11], popularity: 13}, // this one is stricken from my spreadshet
+    {ratio: [211, 11], popularity: 13}, // this one is stricken from my spreadsheet
     {ratio: [78125, 1], popularity: 13},
     {ratio: [37, 19], popularity: 12},
     {ratio: [475, 1], popularity: 12},
@@ -106,7 +106,7 @@ const COMMA_POPULARITIES = [
     {ratio: [175, 11], popularity: 11},
     {ratio: [275, 49], popularity: 11},
     {ratio: [343, 125], popularity: 11},
-    {ratio: [433, 125], popularity: 11}, // this one is stricken from my spreadshet
+    {ratio: [433, 125], popularity: 11}, // this one is stricken from my spreadsheet
     {ratio: [117649, 1], popularity: 11},
     {ratio: [29, 25], popularity: 10},
     {ratio: [31, 7], popularity: 10},

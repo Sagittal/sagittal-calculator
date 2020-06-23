@@ -29,12 +29,10 @@ const computeFiveMonzosToCheck = ({maximumPrimeLimit, maximumSopfgtt, maximumCop
         maximumPrime = possiblePrimes[possiblePrimes.length - 1]
     }
     const indexOfMaximumPrime = PRIMES.findIndex(prime => {
-        // if (prime < 100) console.log('wtsf', prime, maximumP?rime, prime === maximumPrime)
         return prime === maximumPrime
     })
 
     const primes = PRIMES.slice(2, indexOfMaximumPrime + 1)
-    // console.log('result primes', primes, maximumPrimeLimit, maximumPrime, indexOfMaximumPrime)
 
     primes.forEach(prime => {
         const newFiveMonzosToCheck = []
@@ -47,7 +45,7 @@ const computeFiveMonzosToCheck = ({maximumPrimeLimit, maximumSopfgtt, maximumCop
                 prime,
                 {
                     maximumSopfgtt: maximumSopfgtt ? maximumSopfgtt - sopfgtt : undefined,
-                    maximumCopfgtt: maximumCopfgtt ? maximumCopfgtt - copfgtt : undefined, // TODO: test this
+                    maximumCopfgtt: maximumCopfgtt ? maximumCopfgtt - copfgtt : undefined,
                 },
             )
             termRange.forEach(potentialNextTerm => {
