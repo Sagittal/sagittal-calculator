@@ -8,10 +8,10 @@
   },
   "scripts": {
     "test": "jasmine",
-    "analyze-bounds": "node src/boundsAnalysis/main.js",
-    "find-commas": "node src/findCommas/main.js",
-    "appraise-ratio": "node src/appraiseRatio/main.js",
-    "appraise-monzo": "node src/appraiseMonzo/main.js"
+    "analyze-bounds": "node src/scripts/analyzeBounds.js",
+    "find-commas": "node src/scripts/findCommas.js",
+    "appraise-ratio": "node src/scripts/appraiseRatio.js",
+    "appraise-monzo": "node src/scripts/appraiseMonzo.js"
   },
   "devDependencies": {
     "colors": "^1.4.0",
