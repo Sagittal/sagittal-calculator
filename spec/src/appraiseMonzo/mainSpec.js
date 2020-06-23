@@ -5,11 +5,11 @@ describe("appraiseMonzo/main", () => {
         const result = runCommandAndGetConsoleOutput(command)
 
         expect(result).toEqual([
-            "comma name:\t275k",
-            "limit:\t11",
-            "SoPF>3:\t21",
-            "cents:\t10.26036403671435",
-            "ratio:\t2200/2187",
+            "comma name:   \t275k",
+            "limit:        \t11",
+            "SoPF>3:       \t21",
+            "cents:        \t10.26036403671435",
+            "ratio:        \t2200/2187",
             "apotome slope:\t-7.631767994281849",
         ])
     })

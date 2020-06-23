@@ -21,11 +21,11 @@ describe("presentComma", () => {
         const result = presentComma(comma, {mode: "DETAILS"})
 
         expect(result).toEqual(
-            "comma name:\t6j\n" +
-            "limit:\t14\n" +
-            "SoPF>3:\t13\n" +
-            "cents:\t11.2\n" +
-            "ratio:\t5/4\n" +
+            "comma name:   \t6j\n" +
+            "limit:        \t14\n" +
+            "SoPF>3:       \t13\n" +
+            "cents:        \t11.2\n" +
+            "ratio:        \t5/4\n" +
             "apotome slope:\t8.2",
         )
     })

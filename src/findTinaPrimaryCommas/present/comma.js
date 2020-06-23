@@ -14,11 +14,11 @@ const presentComma = (comma, {mode = "SUMMARY"} = {}) => {
 
     if (mode === "DETAILS") {
         return [
-            `comma name:\t${commaName}`,
-            `limit:\t${limit}`,
-            `SoPF>3:\t${sopfgtt}`,
-            `cents:\t${cents}`,
-            `ratio:\t${presentRatio(ratio)}`,
+            `comma name:   \t${commaName}`,
+            `limit:        \t${limit}`,
+            `SoPF>3:       \t${sopfgtt}`,
+            `cents:        \t${cents}`,
+            `ratio:        \t${presentRatio(ratio)}`,
             `apotome slope:\t${apotomeSlope}`,
         ].join("\n")
     } else {
