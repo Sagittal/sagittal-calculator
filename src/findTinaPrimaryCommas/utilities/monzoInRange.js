@@ -26,5 +26,5 @@ const computeMonzoInRange = (threeRoughMonzo, lowerBound, upperBound) => {
 }
 
 module.exports = {
-    computeMonzoInRange
+    computeMonzoInRange,
 }

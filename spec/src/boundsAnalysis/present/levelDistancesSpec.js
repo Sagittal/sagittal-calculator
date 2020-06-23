@@ -4,12 +4,12 @@ describe("extractLevelDistances", () => {
     it("returns an array of the distances of each event (from the previous event)", () => {
         const analyzedHistory = {
             events: [
-                { level: "MEDIUM", distance: 0.00000 },
-                { level: "HIGH", distance: 4.44444444 },
-                { level: "ULTRA", distance: 3.33333333 },
-                { level: "EXTREME", distance: 2.222222 },
-                { level: "INSANE", distance: 1.111111 },
-            ]
+                {level: "MEDIUM", distance: 0.00000},
+                {level: "HIGH", distance: 4.44444444},
+                {level: "ULTRA", distance: 3.33333333},
+                {level: "EXTREME", distance: 2.222222},
+                {level: "INSANE", distance: 1.111111},
+            ],
         }
 
         const result = extractLevelDistances(analyzedHistory)
@@ -25,11 +25,11 @@ describe("extractLevelDistances", () => {
     it("works when a level is skipped", () => {
         const analyzedHistory = {
             events: [
-                { level: "MEDIUM", distance: 0.00000 },
-                { level: "HIGH", distance: 4.44444444 },
-                { level: "EXTREME", distance: 2.222222 },
-                { level: "INSANE", distance: 1.111111 },
-            ]
+                {level: "MEDIUM", distance: 0.00000},
+                {level: "HIGH", distance: 4.44444444},
+                {level: "EXTREME", distance: 2.222222},
+                {level: "INSANE", distance: 1.111111},
+            ],
         }
 
         const result = extractLevelDistances(analyzedHistory)

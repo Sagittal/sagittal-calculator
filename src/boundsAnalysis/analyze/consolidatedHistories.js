@@ -17,11 +17,21 @@ const computeConsolidatedHistories = (analyzedHistories, bestPossibleHistory) =>
                 .find(existingEvent => existingEvent.name === analyzedEvent.name)
 
             if (matchingConsolidatedEvent) {
-                updateConsolidatedEvent(matchingConsolidatedEvent, {nextAnalyzedEvent, analyzedHistory, analyzedEvent, bestPossibleHistory})
+                updateConsolidatedEvent(matchingConsolidatedEvent, {
+                    nextAnalyzedEvent,
+                    analyzedHistory,
+                    analyzedEvent,
+                    bestPossibleHistory,
+                })
             } else {
                 const newConsolidatedEvent = computeInitialConsolidatedEvent(analyzedEvent)
 
-                updateConsolidatedEvent(newConsolidatedEvent, {nextAnalyzedEvent, analyzedHistory, analyzedEvent, bestPossibleHistory})
+                updateConsolidatedEvent(newConsolidatedEvent, {
+                    nextAnalyzedEvent,
+                    analyzedHistory,
+                    analyzedEvent,
+                    bestPossibleHistory,
+                })
 
                 consolidatedHistories[analyzedEvent.level].push(newConsolidatedEvent)
             }

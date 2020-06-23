@@ -12,7 +12,7 @@ describe("maximum apotome slope per level", () => {
                 0,
             )
 
-            return { [level]: levelMaximumApotomeSlope }
+            return {[level]: levelMaximumApotomeSlope}
         })
 
         const expectedLevelMaximumApotomeSlopes = [

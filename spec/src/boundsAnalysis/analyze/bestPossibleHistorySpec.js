@@ -75,6 +75,6 @@ describe("computeBestPossibleHistory", () => {
             distance: 0.1,
             position: 12.909,
             exact: true,
-        },)
+        })
     })
 })

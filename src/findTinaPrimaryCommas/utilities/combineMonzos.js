@@ -3,8 +3,8 @@ const combineMonzos = (...monzos) => {
 
     return [...Array(maximumMonzoLength).keys()].map(index => {
         return monzos.reduce(
-            (term, monzo) =>  term + (monzo[index] || 0),
-            0
+            (term, monzo) => term + (monzo[index] || 0),
+            0,
         )
     })
 }

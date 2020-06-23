@@ -3,7 +3,7 @@ const computeHistoryDistance = analyzedEvents => {
         (distance, analyzedEvent) => {
             return distance + analyzedEvent.distance
         },
-        0
+        0,
     )
 }
 

@@ -10,7 +10,7 @@ const computeApotomeSlope = monzo => {
 
     const monzoThreeExponent = monzo[1]
 
-    return monzoThreeExponent - APOTOME_THREE_EXPONENT * cents/APOTOME
+    return monzoThreeExponent - APOTOME_THREE_EXPONENT * cents / APOTOME
 }
 
 module.exports = {

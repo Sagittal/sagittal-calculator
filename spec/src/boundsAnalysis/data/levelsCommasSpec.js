@@ -15,7 +15,7 @@ describe("computeLevelCommas", () => {
             introducingLevel: "MEDIUM",
             position: 0,
             ascii: "|",
-            unicode: '',
+            unicode: "",
             mina: 0,
             monzo: [],
             id: 0,

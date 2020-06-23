@@ -32,14 +32,14 @@ const visualizeEvents = events => {
         eventElements.push(`  <line stroke="${stroke}" x1="${positionX}" y1="${positionY}" x2="${nextPositionX}" y2="${nextPositionY}" />\n`)
         eventElements.push(`  <circle stroke="${stroke}" r="${DOT_SIZE}" cx="${nextPositionX}" cy="${nextPositionY}" />\n`)
 
-        const textX = (positionX+nextPositionX)/2
-        const textY = (positionY+nextPositionY)/2
+        const textX = (positionX + nextPositionX) / 2
+        const textY = (positionY + nextPositionY) / 2
         const rise = nextPositionY - positionY
         const run = nextPositionX - positionX
-        const slope = rise/run
+        const slope = rise / run
         const angle = run === 0 ?
             rise > 0 ? 90 : 270 :
-            Math.sin(slope) * (180/Math.PI)
+            Math.sin(slope) * (180 / Math.PI)
         eventElements.push(`  <text transform="rotate(${angle} ${textX} ${textY})" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" fill="red" x="${textX}" y="${textY}">${nextDistance.toPrecision(5)}</text>\n`)
     })
 

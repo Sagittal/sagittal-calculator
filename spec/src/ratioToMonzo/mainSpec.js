@@ -5,7 +5,7 @@ describe("monzoToRatio/main", () => {
         const result = runCommandAndGetConsoleOutput(command)
 
         expect(result).toEqual([
-            '[ 3, -2 ]',
+            "[ 3, -2 ]",
         ])
     })
 })

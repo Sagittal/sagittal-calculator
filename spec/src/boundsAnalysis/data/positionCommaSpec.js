@@ -10,9 +10,9 @@ describe("computePositionComma", () => {
             introducingLevel: "HIGH",
             position: 3.37801872846485,
             ascii: ")|",
-            unicode: '',
+            unicode: "",
             mina: 7,
-            monzo: [ -9, 3, 0, 0, 0, 0, 0, 1 ],
+            monzo: [-9, 3, 0, 0, 0, 0, 0, 1],
             id: 7,
         })
     })

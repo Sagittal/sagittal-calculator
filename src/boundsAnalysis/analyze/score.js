@@ -7,7 +7,7 @@ const computeScore = analyzedHistories => {
     analyzedHistories.forEach(analyzedHistory => {
         const binaryScoreRepresentationIndex = computeBinaryScoreRepresentationIndex(
             analyzedHistory.rank,
-            LEVELS.indexOf(analyzedHistory.level)
+            LEVELS.indexOf(analyzedHistory.level),
         )
 
         binaryScoreRepresentation[binaryScoreRepresentationIndex] += 1

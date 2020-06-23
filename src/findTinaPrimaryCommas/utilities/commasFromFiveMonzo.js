@@ -10,9 +10,9 @@ const computeCommasFromFiveMonzo = (fiveRoughMonzo, options) => {
         maximumApotomeSlope = Infinity,             // optional
     } = options || {}
 
-    if (typeof lowerBound === 'undefined') throw new Error("Lower bound must be supplied.")
-    if (typeof upperBound === 'undefined') throw new Error("Upper bound must be supplied.")
-    if (typeof maximumAbsoluteThreeExponent === 'undefined') throw new Error("Maximum absolute three exponent must be supplied.")
+    if (typeof lowerBound === "undefined") throw new Error("Lower bound must be supplied.")
+    if (typeof upperBound === "undefined") throw new Error("Upper bound must be supplied.")
+    if (typeof maximumAbsoluteThreeExponent === "undefined") throw new Error("Maximum absolute three exponent must be supplied.")
 
     const analyzedCommas = []
 

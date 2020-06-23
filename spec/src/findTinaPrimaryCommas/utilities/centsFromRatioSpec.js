@@ -3,7 +3,7 @@ const {ACCURACY_THRESHOLD} = require("../../../../src/boundsAnalysis/utilities/c
 
 describe("computeCentsFromRatio", () => {
     it("gives the cents value of a ratio", () => {
-        const ratio = [3,2]
+        const ratio = [3, 2]
 
         const result = computeCentsFromRatio(ratio)
 
