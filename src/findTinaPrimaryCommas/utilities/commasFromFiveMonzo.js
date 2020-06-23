@@ -22,7 +22,7 @@ const computeCommasFromFiveMonzo = (fiveRoughMonzo, options) => {
         if (monzo) {
             const analyzedComma = analyzeComma(monzo)
 
-            if (Math.abs(analyzedComma.apotomeSlope) > maximumApotomeSlope) return // TODO: test the abs() part
+            if (Math.abs(analyzedComma.apotomeSlope) > maximumApotomeSlope) return
 
             analyzedCommas.push(analyzedComma)
         }
