@@ -9,7 +9,7 @@
   "scripts": {
     "test": "jasmine",
     "analyze-bounds": "node src/boundsAnalysis/main.js",
-    "tina-commas": "node src/findTinaPrimaryCommas/main.js",
+    "find-commas": "node src/findCommas/main.js",
     "appraise-ratio": "node src/appraiseRatio/main.js",
     "appraise-monzo": "node src/appraiseMonzo/main.js"
   },

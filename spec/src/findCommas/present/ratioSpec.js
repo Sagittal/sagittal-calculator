@@ -1,4 +1,4 @@
-const {presentRatio} = require("../../../../src/findTinaPrimaryCommas/present/ratio")
+const {presentRatio} = require("../../../../src/findCommas/present/ratio")
 
 describe("presentRatio", () => {
     it("it shows it with a slash", () => {

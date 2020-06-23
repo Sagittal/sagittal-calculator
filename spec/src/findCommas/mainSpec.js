@@ -1,6 +1,6 @@
-describe("findTinaPrimaryCommas/main", () => {
+describe("findCommas/main", () => {
     it("finds commas given search parameters", () => {
-        const command = "npm run tina-commas -- -l 30 -u 30.5 -3 2 -c 3 -p 37 -s 58 -a 3"
+        const command = "npm run find-commas -- -l 30 -u 30.5 -3 2 -c 3 -p 37 -s 58 -a 3"
 
         const result = runCommandAndGetConsoleOutput(command)
 
@@ -11,7 +11,7 @@ describe("findTinaPrimaryCommas/main", () => {
     })
 
     it("can find commas with specific prime content (it includes inverses)", () => {
-        const command = "npm run tina-commas -- -f [0,0,0,0,0,-1,0,1]"
+        const command = "npm run find-commas -- -f [0,0,0,0,0,-1,0,1]"
 
         const result = runCommandAndGetConsoleOutput(command)
 

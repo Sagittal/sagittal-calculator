@@ -1,4 +1,4 @@
-const {computeMonzoFromRatio} = require("../../../../src/findTinaPrimaryCommas/utilities/monzoFromRatio")
+const {computeMonzoFromRatio} = require("../../../../src/findCommas/utilities/monzoFromRatio")
 
 describe("monzoFromRatio", () => {
     it("given a ratio in the form of an array of the numerator and denominator, returns it as a monzo", () => {

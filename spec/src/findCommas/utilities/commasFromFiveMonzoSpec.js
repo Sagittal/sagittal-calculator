@@ -1,4 +1,4 @@
-const {computeCommasFromFiveMonzo} = require("../../../../src/findTinaPrimaryCommas/utilities/commasFromFiveMonzo")
+const {computeCommasFromFiveMonzo} = require("../../../../src/findCommas/utilities/commasFromFiveMonzo")
 
 describe("computeCommasFromFiveMonzo", () => {
     const fiveRoughMonzo = [3, 5, -1]

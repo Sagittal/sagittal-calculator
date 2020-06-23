@@ -1,4 +1,4 @@
-const {computeTermRange} = require("../../../../src/findTinaPrimaryCommas/utilities/termRange")
+const {computeTermRange} = require("../../../../src/findCommas/utilities/termRange")
 
 describe("computeTermRange", () => {
     it("gives the valid range of the term of the monzo for a prime given a maximum SoPF>3 and a maximum CoPF>3 where the CoPF>3 is the limiting factor", () => {

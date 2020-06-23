@@ -1,4 +1,4 @@
-const {computeMonzoInRange} = require("../../../../src/findTinaPrimaryCommas/utilities/monzoInRange")
+const {computeMonzoInRange} = require("../../../../src/findCommas/utilities/monzoInRange")
 
 describe("computeMonzoInRange", () => {
     it("given a 3-monzo, finds the (2-)monzo which is within the cents range", () => {

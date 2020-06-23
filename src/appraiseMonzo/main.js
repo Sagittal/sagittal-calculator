@@ -1,5 +1,5 @@
-const {presentComma} = require("../findTinaPrimaryCommas/present/comma")
-const {analyzeComma} = require("../findTinaPrimaryCommas/analyze/comma")
+const {presentComma} = require("../findCommas/present/comma")
+const {analyzeComma} = require("../findCommas/analyze/comma")
 
 const args = process.argv.slice(2)
 

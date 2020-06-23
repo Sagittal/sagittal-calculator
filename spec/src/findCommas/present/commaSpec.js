@@ -1,4 +1,4 @@
-const {presentComma} = require("../../../../src/findTinaPrimaryCommas/present/comma")
+const {presentComma} = require("../../../../src/findCommas/present/comma")
 
 describe("presentComma", () => {
     const comma = {

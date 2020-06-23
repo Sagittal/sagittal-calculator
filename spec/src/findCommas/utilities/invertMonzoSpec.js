@@ -1,4 +1,4 @@
-const {invertMonzo} = require("../../../../src/findTinaPrimaryCommas/utilities/invertMonzo")
+const {invertMonzo} = require("../../../../src/findCommas/utilities/invertMonzo")
 
 describe("invertMonzo", () => {
     it("returns the inverted (negated) version of the monzo", () => {

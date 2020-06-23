@@ -1,4 +1,4 @@
-const {computeApotomeSlope} = require("../../../../src/findTinaPrimaryCommas/utilities/apotomeSlope")
+const {computeApotomeSlope} = require("../../../../src/findCommas/utilities/apotomeSlope")
 const {ACCURACY_THRESHOLD} = require("../../../../src/boundsAnalysis/utilities/constants")
 
 describe("computeApotomeSlope", () => {

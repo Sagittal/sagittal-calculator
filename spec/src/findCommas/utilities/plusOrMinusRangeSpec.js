@@ -1,4 +1,4 @@
-const {computePlusOrMinusRange} = require("../../../../src/findTinaPrimaryCommas/utilities/plusOrMinusRange")
+const {computePlusOrMinusRange} = require("../../../../src/findCommas/utilities/plusOrMinusRange")
 
 describe("computePlusOrMinusRange", () => {
     it("given a number, returns a range from -number to +number", () => {

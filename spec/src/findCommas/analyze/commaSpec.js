@@ -1,4 +1,4 @@
-const {analyzeComma} = require("../../../../src/findTinaPrimaryCommas/analyze/comma")
+const {analyzeComma} = require("../../../../src/findCommas/analyze/comma")
 
 describe("analyzeComma", () => {
     it("returns a bundle of analyzed properties of the comma", () => {

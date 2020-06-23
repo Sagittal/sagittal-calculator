@@ -1,4 +1,4 @@
-const {presentMonzo} = require("../../../../src/findTinaPrimaryCommas/present/monzo")
+const {presentMonzo} = require("../../../../src/findCommas/present/monzo")
 
 describe("presentMonzo", () => {
     it("formats it correctly", () => {

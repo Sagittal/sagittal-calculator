@@ -1,4 +1,4 @@
-const {computeFiveMonzosToCheck} = require("../../../../src/findTinaPrimaryCommas/utilities/fiveMonzosToCheck")
+const {computeFiveMonzosToCheck} = require("../../../../src/findCommas/utilities/fiveMonzosToCheck")
 
 describe("fiveMonzosToCheck", () => {
     it("returns the list of 5-monzos to check, given a maximum prime limit, a maximum SoPF>3, and a maximum CoPF>3", () => {

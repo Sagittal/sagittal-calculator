@@ -1,5 +1,5 @@
-const {computeCentsFromRatio} = require("../../../../src/findTinaPrimaryCommas/utilities/centsFromRatio")
-const {computeRatioFromMonzo} = require("../../../../src/findTinaPrimaryCommas/utilities/ratioFromMonzo")
+const {computeCentsFromRatio} = require("../../../../src/findCommas/utilities/centsFromRatio")
+const {computeRatioFromMonzo} = require("../../../../src/findCommas/utilities/ratioFromMonzo")
 const {COMMAS} = require("../../../../src/boundsAnalysis/data/commas")
 const {ACCURACY_THRESHOLD} = require("../../../../src/boundsAnalysis/utilities/constants")
 

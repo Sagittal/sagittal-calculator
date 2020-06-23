@@ -1,4 +1,4 @@
-const {computeCommaName} = require("../../../../src/findTinaPrimaryCommas/utilities/commaName")
+const {computeCommaName} = require("../../../../src/findCommas/utilities/commaName")
 
 describe("computeCommaName", () => {
     it("given a monzo will return the name of the comma", () => {

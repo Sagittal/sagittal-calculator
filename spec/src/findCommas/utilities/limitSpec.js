@@ -1,4 +1,4 @@
-const {computeLimit} = require("../../../../src/findTinaPrimaryCommas/utilities/limit")
+const {computeLimit} = require("../../../../src/findCommas/utilities/limit")
 
 describe("computeLimit", () => {
     it("returns the prime limit of the given monzo", () => {

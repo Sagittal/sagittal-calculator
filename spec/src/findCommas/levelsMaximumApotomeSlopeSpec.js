@@ -1,4 +1,4 @@
-const {computeApotomeSlope} = require("../../../src/findTinaPrimaryCommas/utilities/apotomeSlope")
+const {computeApotomeSlope} = require("../../../src/findCommas/utilities/apotomeSlope")
 const {LEVELS_COMMAS} = require("../../../src/boundsAnalysis/data/levelsCommas")
 
 describe("maximum apotome slope per level", () => {

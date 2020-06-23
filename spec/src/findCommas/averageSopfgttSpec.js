@@ -1,5 +1,5 @@
 const {COMMAS} = require("../../../src/boundsAnalysis/data/commas")
-const {computeSopfgtt} = require("../../../src/findTinaPrimaryCommas/utilities/sopfgtt")
+const {computeSopfgtt} = require("../../../src/findCommas/utilities/sopfgtt")
 const {ACCURACY_THRESHOLD} = require("../../../src/boundsAnalysis/utilities/constants")
 
 const AVERAGE_SOPFGTT = 22.78523489932886

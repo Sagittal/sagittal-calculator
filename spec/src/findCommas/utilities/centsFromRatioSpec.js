@@ -1,4 +1,4 @@
-const {computeCentsFromRatio} = require("../../../../src/findTinaPrimaryCommas/utilities/centsFromRatio")
+const {computeCentsFromRatio} = require("../../../../src/findCommas/utilities/centsFromRatio")
 const {ACCURACY_THRESHOLD} = require("../../../../src/boundsAnalysis/utilities/constants")
 
 describe("computeCentsFromRatio", () => {

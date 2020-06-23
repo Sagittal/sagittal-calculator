@@ -1,4 +1,4 @@
-const {computeReducedMonzo} = require("../../../../src/findTinaPrimaryCommas/utilities/reducedMonzo")
+const {computeReducedMonzo} = require("../../../../src/findCommas/utilities/reducedMonzo")
 
 describe("reduceMonzo", () => {
     it("removes trailing zeroes from the monzo", () => {

@@ -1,4 +1,4 @@
-const {computeSizeCategory} = require("../../../../src/findTinaPrimaryCommas/utilities/sizeCategory")
+const {computeSizeCategory} = require("../../../../src/findCommas/utilities/sizeCategory")
 
 describe("computeSizeCategory", () => {
     it("returns the correct size category per the amount of cents", () => {

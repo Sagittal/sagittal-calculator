@@ -1,4 +1,4 @@
-const {computeSopfgtt} = require("../../../../src/findTinaPrimaryCommas/utilities/sopfgtt")
+const {computeSopfgtt} = require("../../../../src/findCommas/utilities/sopfgtt")
 
 describe("sopfgtt", () => {
     it("sums the absolute values of the prime factors greater than three in the monzo", () => {

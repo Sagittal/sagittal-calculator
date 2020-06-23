@@ -1,4 +1,4 @@
-const {combineMonzos} = require("../../../../src/findTinaPrimaryCommas/utilities/combineMonzos")
+const {combineMonzos} = require("../../../../src/findCommas/utilities/combineMonzos")
 
 describe("combineMonzos", () => {
     it("sums each of the terms of all of the monzos", () => {
