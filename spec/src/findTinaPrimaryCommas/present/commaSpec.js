@@ -25,6 +25,7 @@ describe("presentComma", () => {
             "limit:        \t14\n" +
             "SoPF>3:       \t13\n" +
             "cents:        \t11.2\n" +
+            "monzo:        \t[0 -1 1⟩\n" +
             "ratio:        \t5/4\n" +
             "apotome slope:\t8.2",
         )

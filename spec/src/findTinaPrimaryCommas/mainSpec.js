@@ -1,5 +1,5 @@
 describe("findTinaPrimaryCommas/main", () => {
-    it("runs without error", () => {
+    it("finds commas given search parameters", () => {
         const command = "npm run tina-commas -- -l 30 -u 30.5 -3 2 -c 3 -p 37 -s 58 -a 3"
 
         const result = runCommandAndGetConsoleOutput(command)

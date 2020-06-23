@@ -1,6 +1,6 @@
-describe("appraiseMonzo/main", () => {
-    it("appraises a given monzo", () => {
-        const command = "npm run appraise-monzo [3,-7,2,0,1]"
+describe("appraiseRatio/main", () => {
+    it("can appraise a ratio for you", () => {
+        const command = "npm run appraise-ratio 2200/2187"
 
         const result = runCommandAndGetConsoleOutput(command)
 

@@ -18,6 +18,7 @@ const presentComma = (comma, {mode = "SUMMARY"} = {}) => {
             `limit:        \t${limit}`,
             `SoPF>3:       \t${sopfgtt}`,
             `cents:        \t${cents}`,
+            `monzo:        \t${presentMonzo(monzo)}`,
             `ratio:        \t${presentRatio(ratio)}`,
             `apotome slope:\t${apotomeSlope}`,
         ].join("\n")

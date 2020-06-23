@@ -10,8 +10,6 @@ const {visualizeBounds} = require("./visualize/bounds")
 
 const args = process.argv.slice(2)
 
-// TODO: this should also use Commander.js like the tina-comma script
-
 let bound
 let boundId
 let testMode = false
