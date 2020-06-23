@@ -1,14 +1,14 @@
 const {computeCommasFromFiveMonzo} = require("../../../../src/findTinaPrimaryCommas/utilities/commasFromFiveMonzo")
 
 describe("computeCommasFromFiveMonzo", () => {
-    const fiveMonzo = [3, 5, -1]
+    const fiveRoughMonzo = [3, 5, -1]
 
-    it("returns analyzed commas with the prime content from the five monzo", () => {
+    it("returns analyzed commas with the prime content from the five-rough monzo", () => {
         const lowerBound = 40
         const upperBound = 40.1
         const maximumAbsoluteThreeExponent = 12
 
-        const result = computeCommasFromFiveMonzo(fiveMonzo, {lowerBound, upperBound, maximumAbsoluteThreeExponent})
+        const result = computeCommasFromFiveMonzo(fiveRoughMonzo, {lowerBound, upperBound, maximumAbsoluteThreeExponent})
 
         expect(result).toEqual(jasmine.arrayWithExactContents([
             {
@@ -28,7 +28,7 @@ describe("computeCommasFromFiveMonzo", () => {
             const upperBound = 40.1
             const maximumAbsoluteThreeExponent = 12
 
-            expect(() => computeCommasFromFiveMonzo(fiveMonzo, {upperBound, maximumAbsoluteThreeExponent}))
+            expect(() => computeCommasFromFiveMonzo(fiveRoughMonzo, {upperBound, maximumAbsoluteThreeExponent}))
                 .toThrowError("Lower bound must be supplied.")
         })
 
@@ -36,7 +36,7 @@ describe("computeCommasFromFiveMonzo", () => {
             const lowerBound = 40.1
             const maximumAbsoluteThreeExponent = 12
 
-            expect(() => computeCommasFromFiveMonzo(fiveMonzo, {lowerBound, maximumAbsoluteThreeExponent}))
+            expect(() => computeCommasFromFiveMonzo(fiveRoughMonzo, {lowerBound, maximumAbsoluteThreeExponent}))
                 .toThrowError("Upper bound must be supplied.")
         })
 
@@ -44,7 +44,7 @@ describe("computeCommasFromFiveMonzo", () => {
             const lowerBound = 40
             const upperBound = 40.1
 
-            expect(() => computeCommasFromFiveMonzo(fiveMonzo, {lowerBound, upperBound}))
+            expect(() => computeCommasFromFiveMonzo(fiveRoughMonzo, {lowerBound, upperBound}))
                 .toThrowError("Maximum absolute three exponent must be supplied.")
         })
     })

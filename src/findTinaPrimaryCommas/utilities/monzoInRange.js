@@ -8,10 +8,10 @@ const computeCentsFromMonzo = monzo => {
     return computeCentsFromRatio(ratio)
 }
 
-const computeTwoMonzoInCentsRange = (threeMonzo, lowerBound, upperBound) => {
+const computeMonzoInRange = (threeRoughMonzo, lowerBound, upperBound) => {
     if (upperBound - lowerBound > CENTS_PER_OCTAVE) throw new Error("Cents range must be less than 1200.")
 
-    const monzo = [0, ...threeMonzo]
+    const monzo = [0, ...threeRoughMonzo]
     let cents = computeCentsFromMonzo(monzo)
     while (cents > upperBound) {
         monzo[0] -= 1
@@ -26,5 +26,5 @@ const computeTwoMonzoInCentsRange = (threeMonzo, lowerBound, upperBound) => {
 }
 
 module.exports = {
-    computeTwoMonzoInCentsRange
+    computeMonzoInRange
 }

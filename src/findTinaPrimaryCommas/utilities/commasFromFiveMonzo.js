@@ -1,8 +1,8 @@
 const {computePlusOrMinusRange} = require("./plusOrMinusRange")
-const {computeTwoMonzoInCentsRange} = require("./twoMonzoInCentsRange")
+const {computeMonzoInRange} = require("./monzoInRange")
 const {analyzeComma} = require("../analyze/comma")
 
-const computeCommasFromFiveMonzo = (fiveMonzo, options) => {
+const computeCommasFromFiveMonzo = (fiveRoughMonzo, options) => {
     const {
         lowerBound,
         upperBound,
@@ -17,7 +17,7 @@ const computeCommasFromFiveMonzo = (fiveMonzo, options) => {
     const analyzedCommas = []
 
     computePlusOrMinusRange(maximumAbsoluteThreeExponent).forEach(three => {
-        const monzo = computeTwoMonzoInCentsRange([three, ...fiveMonzo], lowerBound, upperBound)
+        const monzo = computeMonzoInRange([three, ...fiveRoughMonzo], lowerBound, upperBound)
 
         if (monzo) {
             const analyzedComma = analyzeComma(monzo)

@@ -14,7 +14,7 @@ program
     .option("-s, --sopfgtt <sopfgtt>", "maximum sopfgtt", parseInt)
     .option("-c, --copfgtt <copfgtt>", "maximum copfgtt", parseInt)
     .option("-3, --absolute-three-exponent <absoluteThreeExponent>", "maximum absolute 3 exponent", parseInt)
-    .option("-f, --five-monzo <fiveMonzo>", "five monzo", JSON.parse)
+    .option("-f, --five-rough-monzo <fiveRoughMonzo>", "five-rough monzo", JSON.parse)
     .parse(process.argv)
 
 const lowerBound = program.lowerBound || 0
@@ -24,11 +24,11 @@ const maximumCopfgtt = program.copfgtt || 555 // a silly number, unlikely to com
 const maximumApotomeSlope = program.apotomeSlope || 14
 const maximumPrimeLimit = program.primeLimit || 47
 const maximumAbsoluteThreeExponent = program.absoluteThreeExponent || 15
-const fiveMonzo = program.fiveMonzo
+const fiveRoughMonzo = program.fiveRoughMonzo
 
 let commas = []
 
-const fiveMonzosToCheck = fiveMonzo ? [fiveMonzo, invertMonzo(fiveMonzo)] : computeFiveMonzosToCheck({
+const fiveMonzosToCheck = fiveRoughMonzo ? [fiveRoughMonzo, invertMonzo(fiveRoughMonzo)] : computeFiveMonzosToCheck({
     maximumPrimeLimit,
     maximumSopfgtt,
     maximumCopfgtt,
