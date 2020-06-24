@@ -33,7 +33,7 @@ describe("presentBoundAnalysis", () => {
         })
     })
 
-    describe("when formatting details for a specific bound", () => {
+    fdescribe("when formatting details for a specific bound", () => {
         beforeEach(() => {
             mode = "DETAILS"
         })
@@ -75,8 +75,8 @@ describe("presentBoundAnalysis", () => {
                 `                    -1`,
                 `                ],`,
                 `                "id": 10,`,
-                `                "distance": 0.20389718131742995`,
-                `                "inaDistance": 0.20389718131742995`,
+                `                "distance": 0.20389718131742995,`,
+                `                "inaDistance": 0.4178919005628925`,
                 `            },`,
                 `            {`,
                 `                "introducingLevel": "EXTREME",`,
@@ -98,8 +98,8 @@ describe("presentBoundAnalysis", () => {
                 `                    1`,
                 `                ],`,
                 `                "id": 11,`,
-                `                "distance": 0.31846011121669004`,
-                `                "inaDistance": 0.31846011121669004`,
+                `                "distance": 0.31846011121669004,`,
+                `                "inaDistance": 0.6526912254006542`,
                 `            }`,
                 `        ],`,
                 `        "INSANE": [`,
@@ -118,8 +118,8 @@ describe("presentBoundAnalysis", () => {
                 `                    -1`,
                 `                ],`,
                 `                "id": 10,`,
-                `                "distance": 0.20389718131742995`,
-                `                "inaDistance": 0.20389718131742995`,
+                `                "distance": 0.20389718131742995,`,
+                `                "inaDistance": 1.450963723413648`,
                 `            },`,
                 `            {`,
                 `                "introducingLevel": "EXTREME",`,
@@ -141,8 +141,8 @@ describe("presentBoundAnalysis", () => {
                 `                    1`,
                 `                ],`,
                 `                "id": 11,`,
-                `                "distance": 0.31846011121669004`,
-                `                "inaDistance": 0.31846011121669004`,
+                `                "distance": 0.31846011121669004,`,
+                `                "inaDistance": 2.266211164588537`,
                 `            }`,
                 `        ]`,
                 `    },`,
@@ -156,9 +156,8 @@ describe("presentBoundAnalysis", () => {
                 `    "possibleHistories": 5`,
                 `}`,
             ].join("\n")
-            // console.log(result)
-            // console.log(expectedResult)
-            // expect(result).toEqual(expectedResult)
+
+            expect(result).toEqual(expectedResult)
         })
     })
 })
