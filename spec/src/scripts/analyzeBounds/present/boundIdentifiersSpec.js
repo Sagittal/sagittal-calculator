@@ -1,4 +1,4 @@
-const {extractBoundIdentifiers} = require("../../../../../src/scripts/analyzeBounds/present/bound")
+const {extractBoundIdentifiers} = require("../../../../../src/scripts/analyzeBounds/present/boundIdentifiers")
 const {INA_SIZES} = require("../../../../../src/notations/ji/intervals")
 
 describe("extractBoundIdentifiers", () => {

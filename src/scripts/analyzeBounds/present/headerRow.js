@@ -99,6 +99,31 @@ const BOUNDS_ANALYSIS_HEADER_ROW = "   ---   Bound Analyses   ---   \n\n\n" + pr
         "  moved",
     ],
     [
+        " medium",
+        "ina-dst",
+        "  moved",
+    ],
+    [
+        "   high",
+        "ina-dst",
+        "  moved",
+    ],
+    [
+        "  ultra",
+        "ina-dst",
+        "  moved",
+    ],
+    [
+        "extreme",
+        "ina-dst",
+        "  moved",
+    ],
+    [
+        "overall",
+        "ina-dst",
+        "  moved",
+    ],
+    [
         " actual",
         "  bound",
         "pos (¢)",

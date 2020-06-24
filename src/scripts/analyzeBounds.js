@@ -7,6 +7,8 @@ const {presentBoundAnalysis} = require("./analyzeBounds/present/boundAnalysis")
 const {presentRankAnalyses} = require("./analyzeBounds/present/rankAnalyses")
 const {presentLevelAnalyses} = require("./analyzeBounds/present/levelAnalyses")
 const {visualizeBounds} = require("./analyzeBounds/visualize/bounds")
+const {updateFile} = require("./analyzeBounds/file")
+const {BOUNDS_ANALYSIS_TEXT_FILE, BOUNDS_ANALYSIS_VISUALIZATION_FILE} = require("./analyzeBounds/constants")
 
 const args = process.argv.slice(2)
 
@@ -20,30 +22,39 @@ if (args.length) {
         testMode = true
     } else {
         boundId = arg
-        bound = BOUNDS.find(bound => bound.id === boundId)
+        bound = BOUNDS.find(bound => bound.id === parseInt(boundId))
     }
 }
+
+let textOutput = ""
 
 if (bound) {
     const histories = computeHistories(bound)
     const boundAnalysis = analyzeBound(histories, bound)
 
-    console.log(presentBoundAnalysis(boundAnalysis, {bound, boundId, mode: "DETAILS"}))
+    textOutput = textOutput.concat(presentBoundAnalysis(boundAnalysis, {bound, boundId, mode: "DETAILS"}))
 } else {
-    console.log(BOUNDS_ANALYSIS_HEADER_ROW)
+    textOutput = textOutput.concat(BOUNDS_ANALYSIS_HEADER_ROW)
 
-    const visualization = []
+    const boundsAnalysis = []
     BOUNDS.map((bound, boundId) => {
         const histories = computeHistories(bound)
         const boundAnalysis = analyzeBound(histories, bound, boundId)
 
-        console.log(presentBoundAnalysis(boundAnalysis, {bound, boundId, mode: "SUMMARY"}))
+        textOutput = textOutput.concat(presentBoundAnalysis(boundAnalysis, {bound, boundId, mode: "SUMMARY"}) + "\n")
 
-        visualization.push(boundAnalysis)
+        boundsAnalysis.push(boundAnalysis)
     })
 
-    console.log(presentLevelAnalyses())
-    console.log(presentRankAnalyses())
+    textOutput = textOutput.concat(presentLevelAnalyses())
+    textOutput = textOutput.concat(presentRankAnalyses())
 
-    !testMode && visualizeBounds(visualization)
+    if (!testMode) {
+        updateFile(BOUNDS_ANALYSIS_TEXT_FILE, textOutput)
+
+        const visualizationOutput = visualizeBounds(boundsAnalysis)
+        updateFile(BOUNDS_ANALYSIS_VISUALIZATION_FILE, visualizationOutput)
+    }
 }
+
+console.log(textOutput)

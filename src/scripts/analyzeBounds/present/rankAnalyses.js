@@ -10,7 +10,7 @@ const presentRankAnalyses = () => {
         presentedRankAnalyses.push(presentRankAnalysis(rankCount, rankIndex))
     })
 
-    return "\n\n   ---   Rank Analyses   ---   \n\n\n" + presentedRankAnalyses.join("\n\n")
+    return "\n\n\n   ---   Rank Analyses   ---   \n\n\n" + presentedRankAnalyses.join("\n\n")
 }
 
 module.exports = {

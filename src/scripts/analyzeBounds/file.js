@@ -1,12 +1,12 @@
 const fs = require("fs")
-const {OUTPUT} = require("./constants")
 
-const resetFile = () => {
+const updateFile = (file, output) => {
     fs.existsSync("dist") || fs.mkdirSync("dist")
     fs.existsSync("dist/analyzeBounds") || fs.mkdirSync("dist/analyzeBounds")
-    fs.existsSync(OUTPUT) && fs.unlinkSync(OUTPUT)
+    fs.existsSync(file) && fs.unlinkSync(file)
+    fs.appendFileSync(file, output)
 }
 
 module.exports = {
-    resetFile,
+    updateFile,
 }

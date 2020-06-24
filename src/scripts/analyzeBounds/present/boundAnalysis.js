@@ -6,7 +6,7 @@ const {presentMina} = require("./mina")
 const {extractLevelRanks} = require("./levelRanks")
 const {extractLevelDistances} = require("./levelDistances")
 const {extractLevelInaDistances} = require("./levelInaDistances")
-const {extractBoundIdentifiers} = require("./bound")
+const {extractBoundIdentifiers} = require("./boundIdentifiers")
 
 const presentBoundAnalysis = (boundAnalysis, {bound, mode = "DETAILS"} = {}) => {
     let presentedBoundAnalysis

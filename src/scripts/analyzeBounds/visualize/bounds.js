@@ -1,5 +1,4 @@
 const fs = require("fs")
-const {resetFile} = require("./file")
 const {addFont} = require("./font")
 const {addParentSvg} = require("./parentSvg")
 const {visualizeEvents} = require("./events")
@@ -10,11 +9,8 @@ const {visualizeLevelBounds} = require("./levelBounds")
 const {visualizeInaMidpoints} = require("./inaMidpoints")
 const {visualizeLevelCommaMeans} = require("./levelCommaMeans")
 const {visualizeSizeCategoryBounds} = require("./sizeCategoryBounds")
-const {OUTPUT} = require("./constants")
 
-const visualizeBounds = visualization => {
-    resetFile()
-
+const visualizeBounds = boundsAnalysis => {
     fs.copyFileSync("assets/fonts/BravuraSagittalUpdate_v10.otf", "dist/analyzeBounds/BravuraSagittalUpdate_v10.otf")
 
     let elements = []
@@ -26,7 +22,7 @@ const visualizeBounds = visualization => {
     elements = elements.concat(visualizeLevels())
     elements = elements.concat(visualizeLevelBounds())
 
-    visualization.forEach(boundAnalysis => {
+    boundsAnalysis.forEach(boundAnalysis => {
         elements = elements.concat(visualizeEvents(boundAnalysis.bestPossibleHistory.events))
     })
 
@@ -38,7 +34,7 @@ const visualizeBounds = visualization => {
 
     elements = elements.concat("</svg>\n")
 
-    fs.appendFileSync(OUTPUT, elements.join("\n"))
+    return elements.join("")
 }
 
 module.exports = {
