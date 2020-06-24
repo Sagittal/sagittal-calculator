@@ -1,4 +1,5 @@
 const {extractBoundIdentifiers} = require("../../../../../src/scripts/analyzeBounds/present/bound")
+const {INA_SIZES} = require("../../../../../src/notations/ji/intervals")
 
 describe("extractBoundIdentifiers", () => {
     const bound = {
@@ -21,6 +22,7 @@ describe("extractBoundIdentifiers", () => {
                         introducingLevel: "ULTRA",
                         position: 22.9305875372457,
                         distance: 23.1164196495597 - 22.9305875372457,
+                        inaDistance: (23.1164196495597 - 22.9305875372457) / INA_SIZES["ULTRA"],
                         ascii: ".)/|",
                         unicode: "",
                         mina: 47,
@@ -31,6 +33,7 @@ describe("extractBoundIdentifiers", () => {
                         introducingLevel: "ULTRA",
                         position: 23.4600103846490,
                         distance: 23.46001038464900 - 23.1164196495597,
+                        inaDistance: (23.46001038464900 - 23.1164196495597) / INA_SIZES["ULTRA"],
                         ascii: "'/|",
                         unicode: "",
                         mina: 48,
@@ -43,6 +46,7 @@ describe("extractBoundIdentifiers", () => {
                         introducingLevel: "ULTRA",
                         position: 22.9305875372457,
                         distance: 23.1164196495597 - 22.9305875372457,
+                        inaDistance: (23.1164196495597 - 22.9305875372457) / INA_SIZES["EXTREME"],
                         ascii: ".)/|",
                         unicode: "",
                         mina: 47,
@@ -53,6 +57,7 @@ describe("extractBoundIdentifiers", () => {
                         introducingLevel: "ULTRA",
                         position: 23.4600103846490,
                         distance: 23.46001038464900 - 23.1164196495597,
+                        inaDistance: (23.46001038464900 - 23.1164196495597) / INA_SIZES["EXTREME"],
                         ascii: "'/|",
                         unicode: "",
                         mina: 48,
@@ -65,6 +70,7 @@ describe("extractBoundIdentifiers", () => {
                         introducingLevel: "ULTRA",
                         position: 22.9305875372457,
                         distance: 23.1164196495597 - 22.9305875372457,
+                        inaDistance: (23.1164196495597 - 22.9305875372457) / INA_SIZES["INSANE"],
                         ascii: ".)/|",
                         unicode: "",
                         mina: 47,
@@ -75,6 +81,7 @@ describe("extractBoundIdentifiers", () => {
                         introducingLevel: "ULTRA",
                         position: 23.4600103846490,
                         distance: 23.46001038464900 - 23.1164196495597,
+                        inaDistance: (23.46001038464900 - 23.1164196495597) / INA_SIZES["INSANE"],
                         ascii: "'/|",
                         unicode: "",
                         mina: 48,

@@ -62,6 +62,7 @@ describe("analyzeBound", () => {
             position: 23.2,
             rank: 1,
             distance: 0,
+            inaDistance: 0,
             exact: false,
         },
         {
@@ -71,6 +72,7 @@ describe("analyzeBound", () => {
             position: 23.15,
             rank: 0,
             distance: 0.05000000000000071,
+            inaDistance: 0.10247613475154385,
             exact: false,
         },
         {
@@ -80,6 +82,7 @@ describe("analyzeBound", () => {
             position: 23.116419649559468,
             rank: 0,
             distance: 0.03358035044053054,
+            inaDistance: 0.238962941978454,
             exact: true,
         },
     ]
@@ -91,6 +94,7 @@ describe("analyzeBound", () => {
         possible: true,
         exact: false,
         distance: 0.08358035044053125,
+        inaDistance: 0.34143907672999785,
         tinaError: 0,
         initialPositionTinaDifference: -0.5613173198970488,
     }
@@ -105,6 +109,7 @@ describe("analyzeBound", () => {
             possibleHistoryCount: 2,
             bestPossibleHistory: expectedBestPossibleHistory,
             bestPossibleHistoryDistance: 0.08358035044053125,
+            bestPossibleHistoryInaDistance: 0.34143907672999785,
             consolidatedHistories: {
                 ULTRA: [
                     {

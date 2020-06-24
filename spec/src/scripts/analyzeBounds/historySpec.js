@@ -24,8 +24,8 @@ describe("analyzeHistory", () => {
         const result = analyzeHistory(history, bound, initialPosition)
 
         expect(result.events).toEqual([
-            {position, type: "INA", rank: 0, exact: false, distance: 0, level: "EXTREME"},
-            {position, type: "SIZE", rank: 2, exact: false, distance: 0, level: "INSANE"},
+            {position, type: "INA", rank: 0, exact: false, distance: 0, inaDistance: 0, level: "EXTREME"},
+            {position, type: "SIZE", rank: 2, exact: false, distance: 0, inaDistance: 0, level: "INSANE"},
         ])
         expect(result.position).toBe(position)
         expect(result.rank).toBe(2)

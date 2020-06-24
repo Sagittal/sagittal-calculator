@@ -27,7 +27,7 @@ const presentHeaderRow = columnHeaders => {
 const BOUNDS_ANALYSIS_HEADER_ROW = "   ---   Bound Analyses   ---   \n\n\n" + presentHeaderRow([
     [
         "bound",
-        "index",
+        "id",
     ],
     [
         "lesser",

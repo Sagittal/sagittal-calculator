@@ -1,7 +1,7 @@
 const {computeBoundedCommas} = require("../../../../src/notations/ji/boundedCommas")
 
 describe("computeBoundedCommas", () => {
-    it("returns, given a bound, for each of its levels, an array of the pair of commas it bounds at that level", () => {
+    it("returns, given a bound, for each of its levels, an array of the pair of commas it bounds at that level, as well as their distances and ina-distances from the bound", () => {
         const bound = {
             position: 24.66219847111080,
             levels: ["MEDIUM", "EXTREME", "INSANE"],
@@ -17,6 +17,7 @@ describe("computeBoundedCommas", () => {
                     introducingLevel: "MEDIUM",
                     position: 21.5062895967148,
                     distance: 3.1559088743959975,
+                    inaDistance: 0.5829624209957123,
                     ascii: "/|",
                     unicode: "",
                     mina: 44,
@@ -27,6 +28,7 @@ describe("computeBoundedCommas", () => {
                     introducingLevel: "MEDIUM",
                     position: 27.2640918001001,
                     distance: 2.601893328989302,
+                    inaDistance: 0.48062415443807605,
                     ascii: "|)",
                     unicode: "",
                     mina: 56,
@@ -39,6 +41,7 @@ describe("computeBoundedCommas", () => {
                     introducingLevel: "EXTREME",
                     position: 24.2784824213563,
                     distance: 0.38371604975449713,
+                    inaDistance: 0.786434752419428,
                     ascii: ",)/|",
                     unicode: "",
                     mina: 50,
@@ -49,6 +52,7 @@ describe("computeBoundedCommas", () => {
                     introducingLevel: "HIGH",
                     position: 24.8843083251798,
                     distance: 0.22210985406900008,
+                    inaDistance: 0.4552191867044054,
                     ascii: ")/|",
                     unicode: "",
                     mina: 51,
@@ -61,6 +65,7 @@ describe("computeBoundedCommas", () => {
                     introducingLevel: "EXTREME",
                     position: 24.2784824213563,
                     distance: 0.38371604975449713,
+                    inaDistance: 2.7305824665550094,
                     ascii: ",)/|",
                     unicode: "",
                     mina: 50,
@@ -71,6 +76,7 @@ describe("computeBoundedCommas", () => {
                     introducingLevel: "HIGH",
                     position: 24.8843083251798,
                     distance: 0.22210985406900008,
+                    inaDistance: 1.5805679057676565,
                     ascii: ")/|",
                     unicode: "",
                     mina: 51,
@@ -101,6 +107,7 @@ describe("computeBoundedCommas", () => {
                     mina: 133,
                     id: 142,
                     distance: 3.6578835602835937,
+                    inaDistance: 0.6756876516060547,
                     monzo: [-13, 5, 1, 1],
                 },
                 undefined,
@@ -114,6 +121,7 @@ describe("computeBoundedCommas", () => {
                     mina: 138,
                     id: 147,
                     distance: 1.2814466063946952,
+                    inaDistance: 0.5297795425192314,
                     monzo: [-16, 11, 1, 0, 0, -1],
                 },
                 undefined,
@@ -127,6 +135,7 @@ describe("computeBoundedCommas", () => {
                     mina: 138,
                     id: 147,
                     distance: 1.2814466063946952,
+                    inaDistance: 0.6537704992790516,
                     monzo: [-16, 11, 1, 0, 0, -1],
                 },
                 undefined,
@@ -140,6 +149,7 @@ describe("computeBoundedCommas", () => {
                     mina: 140,
                     id: 149,
                     distance: 0.44892240228040237,
+                    inaDistance: 0.9200766517814528,
                     monzo: [-11, 8, 2, -1, -1],
                 },
                 undefined,
@@ -153,13 +163,13 @@ describe("computeBoundedCommas", () => {
                     mina: 140,
                     id: 149,
                     distance: 0.44892240228040237,
+                    inaDistance: 3.194600906829164,
                     monzo: [-11, 8, 2, -1, -1],
                 },
                 undefined,
             ],
         })
     })
-
 
     it("works for the first bound", () => {
         const bound = {
@@ -183,6 +193,7 @@ describe("computeBoundedCommas", () => {
                     monzo: [12, -2, -1, -1, 0, -1],
                     id: 1,
                     distance: 0.211928144834215,
+                    inaDistance: 0.43435154255350816,
                 },
             ],
             INSANE: [
@@ -196,6 +207,7 @@ describe("computeBoundedCommas", () => {
                     monzo: [12, -2, -1, -1, 0, -1],
                     id: 1,
                     distance: 0.211928144834215,
+                    inaDistance: 1.508113295818833,
                 },
             ],
         })

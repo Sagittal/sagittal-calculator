@@ -15,6 +15,7 @@ const analyzeBound = (histories, bound) => {
     const bestPossibleHistory = computeBestPossibleHistory(possibleHistories)
     const bestRank = bestPossibleHistory.rank
     const bestPossibleHistoryDistance = bestPossibleHistory.distance
+    const bestPossibleHistoryInaDistance = bestPossibleHistory.inaDistance
 
     const initialPositionTinaDifference = (bound.position - initialPosition) / TINA
 
@@ -29,6 +30,7 @@ const analyzeBound = (histories, bound) => {
         bestPossibleHistory,
         bestRank,
         bestPossibleHistoryDistance,
+        bestPossibleHistoryInaDistance,
         initialPositionTinaDifference,
         consolidatedHistories,
     }
