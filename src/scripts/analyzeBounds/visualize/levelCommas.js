@@ -19,10 +19,12 @@ const visualizeLevelCommas = () => {
 
             const positionX = computeX(position)
 
+            const adjustedUnicode = ascii === "/|~" ? unicode + "         " : ascii === ",,(|(" ? "         " + unicode : unicode
+
             levelCommaElements.push(`  <circle stroke="black" cx="${positionX}" cy="${dotY}" r="${DOT_SIZE}" />\n`)
             levelCommaElements.push(`  <text fill="white" text-anchor="middle" x="${positionX}" y="${symbolY}" font-size="10px" font-family="Helvetica">${ascii}</text>\n`) // for searchability by ascii
             // levelCommaElements.push(`  <text stroke="white" stroke-width="0.45em" text-anchor="middle" x="${positionX}" y="${symbolY}" font-size="40px" font-family="Bravura">${unicode}</text>\n`)
-            levelCommaElements.push(`  <text fill="black" text-anchor="middle" x="${positionX}" y="${symbolY}" font-size="40px" font-family="Bravura">${unicode}</text>\n`)
+            levelCommaElements.push(`  <text fill="black" text-anchor="middle" x="${positionX}" y="${symbolY}" font-size="40px" font-family="Bravura">${adjustedUnicode}</text>\n`)
 
             if (level === "EXTREME") {
                 const minaY = symbolY - MINA_OFFSET
