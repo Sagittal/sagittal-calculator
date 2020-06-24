@@ -45,7 +45,7 @@ if (bound) {
     textOutput = textOutput.concat(presentRankAnalyses())
 
     if (shouldUpdateFiles) {
-        updateFile(BOUNDS_ANALYSIS_TEXT_FILE, textOutput)
+        updateFile(BOUNDS_ANALYSIS_TEXT_FILE, textOutput.replace(/\[\d\dm/g, "")) // remove colors
 
         const visualizationOutput = visualizeBounds(boundsAnalysis)
         updateFile(BOUNDS_ANALYSIS_VISUALIZATION_FILE, visualizationOutput)
