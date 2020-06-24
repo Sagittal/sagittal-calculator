@@ -1,4 +1,5 @@
 require("colors")
+const {program} = require("commander")
 const {BOUNDS} = require("../notations/ji/bounds")
 const {computeHistories} = require("./analyzeBounds/plot/histories")
 const {analyzeBound} = require("../scripts/analyzeBounds/bound")
@@ -10,21 +11,15 @@ const {visualizeBounds} = require("./analyzeBounds/visualize/bounds")
 const {updateFile} = require("./analyzeBounds/file")
 const {BOUNDS_ANALYSIS_TEXT_FILE, BOUNDS_ANALYSIS_VISUALIZATION_FILE} = require("./analyzeBounds/constants")
 
-const args = process.argv.slice(2)
+program
+    .option("-x, --do-not-update-files", "do not update files")
+    .option("-d, --details <boundId>", "details mode on specific bound", parseInt)
+    .parse(process.argv)
 
-let bound
-let boundId
-let testMode = false
-if (args.length) {
-    const arg = args[0]
+const shouldUpdateFiles = !program.doNotUpdateFiles
+const boundId = program.details
 
-    if (arg === "--test") {
-        testMode = true
-    } else {
-        boundId = arg
-        bound = BOUNDS.find(bound => bound.id === parseInt(boundId))
-    }
-}
+const bound = boundId &&  BOUNDS.find(bound => bound.id === parseInt(boundId))
 
 let textOutput = ""
 
@@ -49,7 +44,7 @@ if (bound) {
     textOutput = textOutput.concat(presentLevelAnalyses())
     textOutput = textOutput.concat(presentRankAnalyses())
 
-    if (!testMode) {
+    if (shouldUpdateFiles) {
         updateFile(BOUNDS_ANALYSIS_TEXT_FILE, textOutput)
 
         const visualizationOutput = visualizeBounds(boundsAnalysis)

@@ -75,7 +75,7 @@ const presentBoundAnalysis = (boundAnalysis, {bound, mode = "DETAILS"} = {}) => 
             alignFormattedNumber(presentNumber(position)),
             alignFormattedNumber(presentNumber(initialPosition)),
             alignFormattedNumber(presentNumber(initialPositionTinaDifference)),
-        ].join("\t")[color]
+        ].join("\t")[color] // use of color
     } else if (mode === "DETAILS") {
         presentedBoundAnalysis =
             JSON.stringify(boundIdentifiers, null, 4)

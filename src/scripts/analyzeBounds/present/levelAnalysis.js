@@ -11,7 +11,7 @@ const presentLevelAnalysis = (level, levelsBestHistoryRanks) => {
             presentedCount = " " + presentedCount
         }
 
-        presentedLevelAnalysis.push(`${presentedCount} ${FORMATTED_RANK_NAMES[rankIndex]}`[COLORS[rankIndex]])
+        presentedLevelAnalysis.push(`${presentedCount} ${FORMATTED_RANK_NAMES[rankIndex]}`[COLORS[rankIndex]]) // use of color
     })
 
     return presentedLevelAnalysis.join("\n")
