@@ -1,9 +1,8 @@
 const {program} = require("commander")
 const {computeMonzoFromRatio} = require("../utilities/comma/monzoFromRatio")
 const {presentComma} = require("../utilities/comma/present/comma")
+const {parseRatio} = require("../utilities/comma/ratio")
 const {analyzeComma} = require("../utilities/comma/comma")
-
-const parseRatio = ratio => ratio.split("/")
 
 program
     .option("-m, --monzo <monzo>", "monzo", JSON.parse)

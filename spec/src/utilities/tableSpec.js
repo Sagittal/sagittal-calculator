@@ -1,6 +1,6 @@
 const {alignTable} = require("../../../src/utilities/table")
 
-fdescribe("alignTable", () => {
+describe("alignTable", () => {
     it("gets each column to have the same width", () => {
         const data = [
             "comma name\tlimit\tSoPF>3\tcents\tmonzo\tratio\tapotome slope",
