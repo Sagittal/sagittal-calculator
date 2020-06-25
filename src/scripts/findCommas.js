@@ -1,10 +1,9 @@
 const {program} = require("commander")
 const {computeFiveMonzosToCheck} = require("./findCommas/fiveMonzosToCheck")
 const {computeCommasFromFiveMonzo} = require("./findCommas/commasFromFiveMonzo")
-const {presentComma} = require("../utilities/comma/present/comma")
+const {presentCommas} = require("../utilities/comma/present/commas")
 const {invertMonzo} = require("../utilities/comma/invertMonzo")
 const {MAXIMUM_POSITION} = require("../notations/ji/intervals")
-const {FIND_COMMAS_HEADER_ROW} = require("../utilities/comma/present/headerRow")
 
 program
     .option("-l, --lower-bound <lowerBound>", "output extra debugging", parseFloat)
@@ -56,5 +55,4 @@ if (sort) {
     })
 }
 
-console.log(FIND_COMMAS_HEADER_ROW)
-commas.forEach(comma => console.log(presentComma(comma)))
+console.log(presentCommas(commas))
