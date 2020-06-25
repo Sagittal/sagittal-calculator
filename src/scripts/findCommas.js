@@ -3,6 +3,7 @@ const {computeFiveMonzosToCheck} = require("./findCommas/fiveMonzosToCheck")
 const {computeCommasFromFiveMonzo} = require("./findCommas/commasFromFiveMonzo")
 const {presentCommas} = require("../utilities/comma/present/commas")
 const {invertMonzo} = require("../utilities/comma/invertMonzo")
+const {parseMonzo} = require("../utilities/comma/monzo")
 const {MAXIMUM_POSITION} = require("../notations/ji/intervals")
 
 program
@@ -13,7 +14,7 @@ program
     .option("-+, --sopfgtt <sopfgtt>", "maximum sopfgtt", parseInt)
     .option("-#, --copfgtt <copfgtt>", "maximum copfgtt", parseInt)
     .option("-3, --absolute-three-exponent <absoluteThreeExponent>", "maximum absolute 3 exponent", parseInt)
-    .option("-f, --five-rough-monzo <fiveRoughMonzo>", "five-rough monzo", JSON.parse)
+    .option("-f, --five-rough-monzo <fiveRoughMonzo>", "five-rough monzo", parseMonzo)
     .option("-s, --sort <sort>", "sort by")
     .parse(process.argv)
 

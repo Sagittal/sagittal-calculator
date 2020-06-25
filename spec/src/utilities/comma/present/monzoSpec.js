@@ -6,7 +6,7 @@ describe("presentMonzo", () => {
 
         const result = presentMonzo(monzo)
 
-        expect(result).toBe(`[-8 -6 3 5 -1⟩`)
+        expect(result).toBe(`[ -8 -6 3 5 -1 ⟩`)
     })
 
     it("can format it using George Secor's punctuated format", () => {
@@ -14,6 +14,6 @@ describe("presentMonzo", () => {
 
         const result = presentMonzo(monzo, {punctuated: true})
 
-        expect(result).toBe(`[-8 -6, 3 5 -1, 0 0 0, 5 4 2, 3⟩`)
+        expect(result).toBe(`[ -8 -6, 3 5 -1, 0 0 0, 5 4 2, 3 ⟩`)
     })
 })

@@ -2,10 +2,11 @@ const {program} = require("commander")
 const {computeMonzoFromRatio} = require("../utilities/comma/monzoFromRatio")
 const {presentComma} = require("../utilities/comma/present/comma")
 const {parseRatio} = require("../utilities/comma/ratio")
+const {parseMonzo} = require("../utilities/comma/monzo")
 const {analyzeComma} = require("../utilities/comma/comma")
 
 program
-    .option("-m, --monzo <monzo>", "monzo", JSON.parse)
+    .option("-m, --monzo <monzo>", "monzo", parseMonzo)
     .option("-r, --ratio <ratio>", "ratio", parseRatio)
     .option("-n, --name <name>", "comma name")
     .parse(process.argv)
@@ -17,8 +18,8 @@ if (comma) {
     if (comma.includes("/")) {
         monzo = computeMonzoFromRatio(parseRatio(comma))
     }
-    if (comma.includes("[")) {
-        monzo = JSON.parse(comma)
+    if (comma.includes("[") || comma.includes("|") || comma.includes(">") || comma.includes("⟩") || comma.includes("]")) {
+        monzo = parseMonzo(comma)
     }
 } else if (program.monzo) {
     monzo = program.monzo

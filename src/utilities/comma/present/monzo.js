@@ -20,7 +20,7 @@ const presentMonzo = (monzo, {punctuated = false} = {}) => {
         contents = monzo.join(" ")
     }
 
-    return `[${contents}⟩`
+    return `[ ${contents} ⟩`
 }
 
 module.exports = {

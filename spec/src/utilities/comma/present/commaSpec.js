@@ -14,7 +14,7 @@ describe("presentComma", () => {
     it("formats it in a nice single line in the default summary mode", () => {
         const result = presentComma(comma)
 
-        expect(result).toEqual("6j\t14\t13\t11.2\t[0 -1 1⟩\t5/4\t8.2")
+        expect(result).toEqual("6j\t14\t13\t11.2\t[ 0 -1 1 ⟩\t5/4\t8.2")
     })
 
     it("can also format it in a details mode with lines with titles for each line", () => {
@@ -25,7 +25,7 @@ describe("presentComma", () => {
             "limit:        \t14\n" +
             "SoPF>3:       \t13\n" +
             "cents:        \t11.2\n" +
-            "monzo:        \t[0 -1 1⟩\n" +
+            "monzo:        \t[ 0 -1 1 ⟩\n" +
             "ratio:        \t5/4\n" +
             "apotome slope:\t8.2",
         )
