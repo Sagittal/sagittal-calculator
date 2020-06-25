@@ -1,15 +1,27 @@
 const levelsBestHistoryRanks = {}
+const levelsBestCumulativeHistoryRanks = {}
 
 const updateLevelAnalysis = bestPossibleHistory => {
+    let cumulativeRank = 0
     bestPossibleHistory.events.forEach(event => {
-        if (!levelsBestHistoryRanks[event.level]) levelsBestHistoryRanks[event.level] = []
-        if (!levelsBestHistoryRanks[event.level][event.rank]) levelsBestHistoryRanks[event.level][event.rank] = 0
+        const {level, rank} = event
 
-        levelsBestHistoryRanks[event.level][event.rank] += 1
+        if (rank > cumulativeRank) {
+            cumulativeRank = rank
+        }
+
+        if (!levelsBestHistoryRanks[level]) levelsBestHistoryRanks[level] = []
+        if (!levelsBestHistoryRanks[level][rank]) levelsBestHistoryRanks[level][rank] = 0
+        levelsBestHistoryRanks[level][rank] += 1
+
+        if (!levelsBestCumulativeHistoryRanks[level]) levelsBestCumulativeHistoryRanks[level] = []
+        if (!levelsBestCumulativeHistoryRanks[level][cumulativeRank]) levelsBestCumulativeHistoryRanks[level][cumulativeRank] = 0
+        levelsBestCumulativeHistoryRanks[level][cumulativeRank] += 1
     })
 }
 
 module.exports = {
     levelsBestHistoryRanks,
+    levelsBestCumulativeHistoryRanks,
     updateLevelAnalysis,
 }
