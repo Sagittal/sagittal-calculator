@@ -33,7 +33,7 @@ describe("presentBoundAnalysis", () => {
         })
     })
 
-    fdescribe("when formatting details for a specific bound", () => {
+    describe("when formatting details for a specific bound", () => {
         beforeEach(() => {
             mode = "DETAILS"
         })

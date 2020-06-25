@@ -10,8 +10,7 @@
     "test": "jasmine",
     "analyze-bounds": "node src/scripts/analyzeBounds.js",
     "find-commas": "node src/scripts/findCommas.js",
-    "appraise-ratio": "node src/scripts/appraiseRatio.js",
-    "appraise-monzo": "node src/scripts/appraiseMonzo.js"
+    "analyze-comma": "node src/scripts/analyzeComma.js"
   },
   "devDependencies": {
     "colors": "^1.4.0",
