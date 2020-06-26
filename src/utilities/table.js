@@ -20,13 +20,33 @@ const computeColumnRange = data => {
     const exampleRow = data[0]
     const exampleRowCells = exampleRow.split("\t")
     const columnCount = exampleRowCells.length
-    const columnRange = [...Array(columnCount).keys()]
 
-    return columnRange
+    return [...Array(columnCount).keys()]
 }
 
 const computeJustifications = (justification, columnRange) => {
-    return typeof justification === "string" ? columnRange.map(index => justification) : columnRange.map(index => justification[index] || "LEFT")
+    return typeof justification === "string" ?
+        columnRange.map(_ => justification) :
+        columnRange.map(index => justification[index] || "LEFT")
+}
+
+const furtherAlignRowCell = (alignedRowCell, columnJustification) => {
+    return columnJustification === "LEFT" ?
+        alignedRowCell + " " :
+        columnJustification === "RIGHT" ?
+            " " + alignedRowCell :
+            alignedRowCell.length % 2 === 0 ?
+                " " + alignedRowCell :
+                alignedRowCell + " "
+}
+
+const computeAlignedRowCell = (rowCell, {columnWidth, columnJustification}) => {
+    let alignedRowCell = rowCell
+    while (alignedRowCell.length < columnWidth) {
+        alignedRowCell = furtherAlignRowCell(alignedRowCell, columnJustification)
+    }
+
+    return alignedRowCell
 }
 
 const alignTable = (data, {justification = "LEFT"} = {}) => {
@@ -44,10 +64,7 @@ const alignTable = (data, {justification = "LEFT"} = {}) => {
                 const columnWidth = columnWidths[index]
                 const columnJustification = justifications[index]
 
-                let alignedRowCell = rowCell
-                while (alignedRowCell.length < columnWidth) {
-                    alignedRowCell = columnJustification === "LEFT" ? alignedRowCell + " " : columnJustification === "RIGHT" ? " " + alignedRowCell : alignedRowCell.length % 2 === 0 ? " " + alignedRowCell : alignedRowCell + " "
-                }
+                let alignedRowCell = computeAlignedRowCell(rowCell, {columnWidth, columnJustification})
 
                 const maybeDelimeter = index === finalIndex ? "" : "\t"
 
