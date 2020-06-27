@@ -22,6 +22,6 @@ describe("computeSopfgtt", () => {
 
         const result = computeSopfgtt(integer)
 
-        expect(result).toBe(42)
+        expect(result).toBe(11 + 31)
     })
 })
