@@ -17,7 +17,7 @@ const ourCandidateMetric = (ratio, k, a, s, u) => {
     const primeLimit = computeLimit(monzo)
     const soupfgtt = computeSoupfgtt(monzo)
 
-    return orientedSopfgttNum + k * orientedSopfgttDen + l * primeLimit + u * soupfgtt
+    return orientedSopfgttNum + k * orientedSopfgttDen + s * primeLimit + u * soupfgtt
 
     // return computeSopfgtt(monzo)
 }
