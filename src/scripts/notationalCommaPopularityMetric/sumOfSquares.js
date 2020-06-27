@@ -1,9 +1,9 @@
-const computeSumOfSquares = (ourRanks, commaPopularities) => {
-    return commaPopularities.reduce(
+const computeSumOfSquares = (ourPopularities, realPopularities, r) => {
+    return realPopularities.reduce(
         (sumOfSquares, commaPopularity, index) => {
-            const ourRank = ourRanks[index].rank
+            const ourRank = ourPopularities[index].rank
             const rank = commaPopularity.rank
-            const squaredDistance = (ourRank ** -1.37 - rank ** -1.37) ** 2
+            const squaredDistance = (ourRank ** r - rank ** r) ** 2
 
             return sumOfSquares + squaredDistance
         },
