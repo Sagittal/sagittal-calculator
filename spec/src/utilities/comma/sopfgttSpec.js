@@ -1,6 +1,6 @@
 const {computeSopfgtt} = require("../../../../src/utilities/comma/sopfgtt")
 
-describe("sopfgtt", () => {
+describe("computeSopfgtt", () => {
     it("sums the absolute values of the prime factors greater than three in the monzo", () => {
         const monzo = [5, 6, 0, 0, 1, -1, 2]
 
