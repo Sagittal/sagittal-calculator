@@ -1,5 +1,5 @@
 describe("notationalCommaPopularityMetric", () => {
-    it("works", () => {
+    xit("works", () => {
         const command = "npm run ncpm"
 
         const result = runCommandAndGetConsoleOutput(command)

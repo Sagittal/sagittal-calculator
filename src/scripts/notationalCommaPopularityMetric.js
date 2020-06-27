@@ -7,13 +7,29 @@ const {computeOurPopularities} = require("./notationalCommaPopularityMetric/ourP
 const {addRankToOurPopularities} = require("./notationalCommaPopularityMetric/rank")
 const {computeSumOfSquares} = require("./notationalCommaPopularityMetric/sumOfSquares")
 
-const k = 1.13
-const a = 0.68
+// const k = 0.68
+// const a = 1.13
 const realPopularities = COMMA_POPULARITIES
 
-let ourApproximatePopularities = computeOurPopularities(realPopularities, k, a)
-ourApproximatePopularities = addRankToOurPopularities(ourApproximatePopularities)
+const doThing = (a, k) => {
+    let ourApproximatePopularities = computeOurPopularities(realPopularities, k, a)
+    ourApproximatePopularities = addRankToOurPopularities(ourApproximatePopularities)
 
-const sumOfSquares = computeSumOfSquares(ourApproximatePopularities, realPopularities)
+    const sumOfSquares = computeSumOfSquares(ourApproximatePopularities, realPopularities)
 
-console.log(`${round(sumOfSquares, ACCURACY_THRESHOLD)} k=${k} a=${a}`)
+    // console.log(`${round(sumOfSquares, ACCURACY_THRESHOLD)} k=${k} a=${a}`)
+    return sumOfSquares
+}
+
+let best = { sumOfSquares: Infinity }
+for (let k = 0.5; k < 0.7; k += 0.03) {
+    for (let a = 0.8; a < 1.1; a += 0.007) {
+        // console.log(a, k)
+        const sumOfSquares = doThing(a, k)
+
+        if (sumOfSquares < best.sumOfSquares) {
+            best = { sumOfSquares, a, k }
+        }
+    }
+}
+console.log(best)
