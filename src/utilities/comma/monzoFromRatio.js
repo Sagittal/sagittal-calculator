@@ -50,4 +50,5 @@ const primeFactorizeInteger = integer => {
 
 module.exports = {
     computeMonzoFromRatio,
+    primeFactorizeInteger, // TODO: test and/or extract
 }

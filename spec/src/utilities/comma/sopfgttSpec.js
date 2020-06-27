@@ -16,4 +16,12 @@ describe("sopfgtt", () => {
 
         expect(result).toBe(0)
     })
+
+    it("works for a simple integer", () => {
+        const integer = 341
+
+        const result = computeSopfgtt(integer)
+
+        expect(result).toBe(42)
+    })
 })

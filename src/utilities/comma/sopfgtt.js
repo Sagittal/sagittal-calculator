@@ -1,7 +1,12 @@
 const {PRIMES} = require("../constants")
+const {primeFactorizeInteger} = require("./monzoFromRatio")
 
 // sum of prime factors > 3
 const computeSopfgtt = monzo => {
+    if (typeof monzo === "number") {
+        monzo = primeFactorizeInteger(monzo)
+    }
+
     return monzo.reduce(
         (sopfgtt, term, index) => {
             if (index < 2) return 0
