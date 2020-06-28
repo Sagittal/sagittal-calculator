@@ -16,4 +16,12 @@ describe("computeLimit", () => {
 
         expect(result).toBe(5)
     })
+
+    it("works for an empty monzo (1), giving the conventional value of 1", () => {
+        const monzo = []
+
+        const result = computeLimit(monzo)
+
+        expect(result).toBe(1)
+    })
 })

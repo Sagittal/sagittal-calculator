@@ -7,18 +7,18 @@ const {computeWeightedSoupifgtt} = require("./weightedSoupifgtt")
 
 const ourCandidateMetric = (ratio, parameters) => {
     const [num, den] = ratio
-    const {k, j, a, b, s, u, i, h} = parameters
+    const {k, j, a, b, s, u, i, h, l, m} = parameters
 
-    const soppifgttNum = i ? computeWeightedSopifgtt(num, a) : computeWeightedSopfgtt(num, a)
-    const soppifgttDen = i ? computeWeightedSopifgtt(den, a) : computeWeightedSopfgtt(den, a)
+    const soppifgttNum = i ? computeWeightedSopifgtt(num, a, l) : computeWeightedSopfgtt(num, a, l)
+    const soppifgttDen = i ? computeWeightedSopifgtt(den, a, l) : computeWeightedSopfgtt(den, a, l)
     const orientedSoppifgttNum = soppifgttNum > soppifgttDen ? soppifgttNum : soppifgttDen
     const orientedSoppifgttDen = soppifgttNum > soppifgttDen ? soppifgttDen : soppifgttNum
 
     const monzo = computeMonzoFromRatio(ratio)
     const primeLimit = computeLimit(monzo)
 
-    const souppifgttNum = h ? computeWeightedSoupifgtt(num, b) : computeWeightedSoupfgtt(monzo, b)
-    const souppifgttDen = h ? computeWeightedSoupifgtt(den, b) : computeWeightedSoupfgtt(den, b)
+    const souppifgttNum = h ? computeWeightedSoupifgtt(num, b, m) : computeWeightedSoupfgtt(monzo, b, m)
+    const souppifgttDen = h ? computeWeightedSoupifgtt(den, b, m) : computeWeightedSoupfgtt(den, b, m)
     const orientedSouppifgttNum = souppifgttNum > souppifgttDen ? souppifgttNum : souppifgttDen
     const orientedSouppifgttDen = souppifgttNum > souppifgttDen ? souppifgttDen : souppifgttNum
 
