@@ -1,24 +1,26 @@
-const {computeLevelCommas, computeIsWithinLevel} = require("../../../../src/notations/ji/levelsCommas")
+const {computeLevelSymbols, computeIsWithinLevel} = require("../../../../src/notations/ji/levelsSymbols")
 
-describe("computeLevelCommas", () => {
-    it("returns the commas for the levels up to and including the target level", () => {
-        expect(computeLevelCommas("MEDIUM").length).toBe(13)
-        expect(computeLevelCommas("HIGH").length).toBe(32)
-        expect(computeLevelCommas("ULTRA").length).toBe(55)
-        expect(computeLevelCommas("EXTREME").length).toBe(149)
+describe("computeLevelSymbols", () => {
+    it("returns the symbols for the levels up to and including the target level", () => {
+        expect(computeLevelSymbols("MEDIUM").length).toBe(13)
+        expect(computeLevelSymbols("HIGH").length).toBe(32)
+        expect(computeLevelSymbols("ULTRA").length).toBe(55)
+        expect(computeLevelSymbols("EXTREME").length).toBe(149)
     })
 
-    it("returns only the comma data (not the bound data)", () => {
-        const levelCommas = computeLevelCommas("MEDIUM")
+    it("returns only the symbol data (not the bound data)", () => {
+        const levelCommas = computeLevelSymbols("MEDIUM")
 
         expect(levelCommas[0]).toEqual({
+            id: 0,
             introducingLevel: "MEDIUM",
-            position: 0,
             ascii: "|",
             unicode: "",
             mina: 0,
-            monzo: [],
-            id: 0,
+            primaryComma: {
+                position: 0,
+                monzo: [],
+            },
         })
     })
 })

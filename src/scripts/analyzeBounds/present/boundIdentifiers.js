@@ -1,18 +1,18 @@
-const {BOUNDED_COMMAS} = require("../../../notations/ji/boundedCommas")
+const {LEVEL_BOUNDED_SYMBOLS} = require("../../../notations/ji/levelBoundedSymbols")
 
 const extractBoundIdentifiers = bound => {
     const {position, id} = bound
-    const boundedCommas = BOUNDED_COMMAS.find(comma => comma.id === id)
-    const extremeBoundedCommas = boundedCommas["EXTREME"]
-    const [lesserBoundedComma, greaterBoundedComma] = extremeBoundedCommas
+    const boundedSymbols = LEVEL_BOUNDED_SYMBOLS.find(comma => comma.id === id)
+    const extremeBoundedSymbols = boundedSymbols["EXTREME"]
+    const [lesserBoundedSymbol, greaterBoundedSymbol] = extremeBoundedSymbols
 
     return {
-        extremeLevelLesserBoundedCommaSymbol: lesserBoundedComma ? lesserBoundedComma.ascii : "",
-        extremeLevelGreaterBoundedCommaSymbol: greaterBoundedComma ? greaterBoundedComma.ascii : "",
+        extremeLevelLesserBoundedSymbol: lesserBoundedSymbol ? lesserBoundedSymbol.ascii : "",
+        extremeLevelGreaterBoundedSymbol: greaterBoundedSymbol ? greaterBoundedSymbol.ascii : "",
         position,
-        boundedCommas,
-        lesserBoundedMina: lesserBoundedComma ? lesserBoundedComma.mina : "",
-        greaterBoundedMina: greaterBoundedComma && greaterBoundedComma.mina,
+        boundedSymbols,
+        lesserBoundedMina: lesserBoundedSymbol ? lesserBoundedSymbol.mina : "",
+        greaterBoundedMina: greaterBoundedSymbol && greaterBoundedSymbol.mina,
     }
 }
 

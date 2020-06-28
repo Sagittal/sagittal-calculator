@@ -11,7 +11,7 @@ describe("notationalCommaPopularityMetric", () => {
         /*
         const {COMMA_POPULARITIES} = require("./notationalCommaPopularityMetric/popularities")
 const parameters = {k: 0.368, a: 0.264, s: 0.171, u: 0.127, j: 1, b: 1, i: false, h: false}
-console.log(COMMA_POPULARITIES.slice(0, 80).map(commaPopularity => {
+log(COMMA_POPULARITIES.slice(0, 80).map(commaPopularity => {
     return `${presentRatio(commaPopularity.ratio)} ${ourCandidateMetric(commaPopularity.ratio, parameters)}`
 }))
 

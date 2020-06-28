@@ -1,16 +1,16 @@
-const {LEVELS_COMMAS} = require("./levelsCommas")
+const {LEVELS_SYMBOLS} = require("./levelsSymbols")
 
 const computeLevelCommaMeans = level => {
-    const levelCommas = LEVELS_COMMAS[level]
+    const levelSymbols = LEVELS_SYMBOLS[level]
 
-    const levelCommasExcludingTheLastComma = levelCommas.slice(0, levelCommas.length - 1)
+    const levelSymbolsExcludingTheLastSymbol = levelSymbols.slice(0, levelSymbols.length - 1)
 
-    return levelCommasExcludingTheLastComma.map((comma, index) => {
-        const nextComma = levelCommas[index + 1]
+    return levelSymbolsExcludingTheLastSymbol.map((symbol, index) => {
+        const nextSymbol = levelSymbols[index + 1]
 
         return {
-            name: [comma.ascii, nextComma.ascii].join(" "),
-            position: (comma.position + nextComma.position) / 2,
+            name: [symbol.ascii, nextSymbol.ascii].join(" "),
+            position: (symbol.primaryComma.position + nextSymbol.primaryComma.position) / 2,
         }
     })
 }

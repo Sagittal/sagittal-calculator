@@ -1,10 +1,10 @@
-const {computeBoundedCommaPositions} = require("../../../notations/ji/boundedCommaPositions")
+const {computeBoundedSymbolPositions} = require("../../../notations/ji/boundedSymbolPositions")
 const {computeEvents} = require("./events")
 
 const computeExtendedHistories = (history, level, bound) => {
     const extendedHistories = []
 
-    const boundedCommaPositions = computeBoundedCommaPositions(bound.position, level)
+    const boundedCommaPositions = computeBoundedSymbolPositions(bound.position, level)
 
     const newEvents = [
         ...computeEvents(level, boundedCommaPositions, "INA"),

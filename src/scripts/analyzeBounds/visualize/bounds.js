@@ -4,7 +4,7 @@ const {addParentSvg} = require("./parentSvg")
 const {visualizeEvents} = require("./events")
 const {visualizeCents} = require("./cents")
 const {visualizeLevels} = require("./levels")
-const {visualizeLevelCommas} = require("./levelCommas")
+const {visualizeLevelSymbols} = require("./levelSymbols")
 const {visualizeLevelBounds} = require("./levelBounds")
 const {visualizeInaMidpoints} = require("./inaMidpoints")
 const {visualizeLevelCommaMeans} = require("./levelCommaMeans")
@@ -30,7 +30,7 @@ const visualizeBounds = boundsAnalysis => {
     elements = elements.concat(visualizeLevelCommaMeans())
     elements = elements.concat(visualizeInaMidpoints())
 
-    elements = elements.concat(visualizeLevelCommas())
+    elements = elements.concat(visualizeLevelSymbols())
 
     elements = elements.concat("</svg>\n")
 

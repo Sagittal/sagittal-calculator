@@ -14,8 +14,8 @@ const presentBoundAnalysis = (boundAnalysis, {bound, mode = "DETAILS"} = {}) => 
 
     if (mode === "SUMMARY") {
         const {
-            extremeLevelLesserBoundedCommaSymbol,
-            extremeLevelGreaterBoundedCommaSymbol,
+            extremeLevelLesserBoundedSymbol,
+            extremeLevelGreaterBoundedSymbol,
             position,
             lesserBoundedMina,
             greaterBoundedMina,
@@ -55,8 +55,8 @@ const presentBoundAnalysis = (boundAnalysis, {bound, mode = "DETAILS"} = {}) => 
             bound.id,
             presentMina(lesserBoundedMina),
             presentMina(greaterBoundedMina),
-            presentSymbolAscii(extremeLevelLesserBoundedCommaSymbol),
-            presentSymbolAscii(extremeLevelGreaterBoundedCommaSymbol),
+            presentSymbolAscii(extremeLevelLesserBoundedSymbol),
+            presentSymbolAscii(extremeLevelGreaterBoundedSymbol),
             mediumLevelRank,
             highLevelRank,
             veryHighLevelRank,

@@ -1,12 +1,12 @@
 const {computeApotomeSlope} = require("../../../../src/utilities/comma/apotomeSlope")
-const {LEVELS_COMMAS} = require("../../../../src/notations/ji/levelsCommas")
+const {LEVELS_SYMBOLS} = require("../../../../src/notations/ji/levelsSymbols")
 
 describe("maximum apotome slope per level", () => {
     it("increases a bit at each level", () => {
-        const result = Object.entries(LEVELS_COMMAS).map(([level, levelCommas]) => {
-            const levelMaximumApotomeSlope = levelCommas.reduce(
-                (levelMaximumApotomeSlope, levelComma) => {
-                    const apotomeSlope = Math.abs(computeApotomeSlope(levelComma.monzo))
+        const result = Object.entries(LEVELS_SYMBOLS).map(([level, levelSymbols]) => {
+            const levelMaximumApotomeSlope = levelSymbols.reduce(
+                (levelMaximumApotomeSlope, levelSymbol) => {
+                    const apotomeSlope = Math.abs(computeApotomeSlope(levelSymbol.primaryComma.monzo))
                     return apotomeSlope > levelMaximumApotomeSlope ? apotomeSlope : levelMaximumApotomeSlope
                 },
                 0,

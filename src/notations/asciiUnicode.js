@@ -1,7 +1,7 @@
-const {COMMAS} = require("./ji/commas")
+const {SYMBOLS} = require("./ji/symbols")
 
 const unicodeFromAscii = ascii => {
-    return COMMAS.find(comma => comma.ascii === ascii).unicode
+    return SYMBOLS.find(symbol => symbol.ascii === ascii).unicode
 }
 
 module.exports = {

@@ -1,6 +1,3 @@
-// console.log(ourCandidateMetric([7,5]))
-
-
 // const computeRho = sed => {
 //     const n = realPopularities.length
 //     const rho = 1 - ((6 * sed) / (n * (n ** 2 - 1)))
@@ -28,5 +25,5 @@ while (tries < 1000) {
 
     k = k + (dir * k * 2 ** -tries)
 }
-console.log(maxRho, k)
+log(maxRho, k)
  */

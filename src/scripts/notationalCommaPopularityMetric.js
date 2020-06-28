@@ -7,7 +7,7 @@ const R = -1
 const I = false // when true, use pi; when false, use p (for sop(i)f)
 const H = false // when true, use pi; when false, use p (for soup(i)f)
 const L = false // when true, use logarithmic weights on primes instead of exponential for sopfr
-const M = false // when true, use logarithmic weights on primes instead of exponential for sopf
+const M = false // when true, use logarithmic weights on primes instead of exponential for sopf // todo: probably i should use gpf, sopfr, sopf instead of sopfgtt and soupfgtt and ignore the gtt parts of the names or make sure that's built into how they're USED instead of how they work
 
 let best = {sumOfSquares: Infinity}
 

@@ -9,8 +9,6 @@ describe("ourCandidateMetric", () => { // todo: should be "compute" something. a
         const balancedResult = ourCandidateMetric(balancedRatio, parameters)
         const lopsidedResult = ourCandidateMetric(lopsidedRatio, parameters)
 
-        console.log(balancedResult, lopsidedResult)
-
         expect(balancedResult).toBeLessThan(lopsidedResult)
     })
 })
