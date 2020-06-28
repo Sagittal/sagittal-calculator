@@ -2,8 +2,8 @@ const {PRIMES} = require("../../utilities/constants")
 const {primeFactorizeInteger} = require("../../utilities/comma/monzoFromRatio")
 
 
-// sum of prime factors > 3
-const computeWeightedSopfgtt = (monzo, a) => {
+// sum of unique prime factors > 3
+const computeWeightedSoupfgtt = (monzo, b) => {
     if (typeof monzo === "number") {
         monzo = primeFactorizeInteger(monzo)
     }
@@ -12,7 +12,7 @@ const computeWeightedSopfgtt = (monzo, a) => {
         (sopfgtt, term, index) => {
             if (index < 2) return 0
 
-            const prime = Math.abs(term * PRIMES[index] ** a)
+            const prime = term === 0 ? 0 : PRIMES[index] ** b
 
             return sopfgtt + prime
         },
@@ -21,5 +21,5 @@ const computeWeightedSopfgtt = (monzo, a) => {
 }
 
 module.exports = {
-    computeWeightedSopfgtt,
+    computeWeightedSoupfgtt,
 }

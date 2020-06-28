@@ -1,28 +1,28 @@
-const {computeWeightedSopfgtt} = require("./weightedSopfgtt")
-const {computeWeightedSopifgtt} = require("./weightedSopifgtt")
 const {computeLimit} = require("../../utilities/comma/limit")
 const {computeMonzoFromRatio} = require("../../utilities/comma/monzoFromRatio")
-const {computeSoupfgtt} = require("../../utilities/comma/soupfgtt")
-const {computeSoupifgtt} = require("./soupifgtt")
+const {computeWeightedSopfgtt} = require("./weightedSopfgtt")
+const {computeWeightedSopifgtt} = require("./weightedSopifgtt")
+const {computeWeightedSoupfgtt} = require("./weightedSoupfgtt")
+const {computeWeightedSoupifgtt} = require("./weightedSoupifgtt")
 
 const ourCandidateMetric = (ratio, parameters) => {
     const [num, den] = ratio
-    const {k, a, s, u} = parameters
+    const {k, j, a, b, s, u, i, h} = parameters
 
-    const sopfgttNum = computeWeightedSopfgtt(num, a)
-    // const sopfgttNum = computeWeightedSopifgtt(num, a)
-    const sopfgttDen = computeWeightedSopfgtt(den, a)
-    // const sopfgttDen = computeWeightedSopifgtt(den, a)
-
-    const orientedSopfgttNum = sopfgttNum > sopfgttDen ? sopfgttNum : sopfgttDen
-    const orientedSopfgttDen = sopfgttNum > sopfgttDen ? sopfgttDen : sopfgttNum
+    const soppifgttNum = i ? computeWeightedSopifgtt(num, a) : computeWeightedSopfgtt(num, a)
+    const soppifgttDen = i ? computeWeightedSopifgtt(den, a) : computeWeightedSopfgtt(den, a)
+    const orientedSoppifgttNum = soppifgttNum > soppifgttDen ? soppifgttNum : soppifgttDen
+    const orientedSoppifgttDen = soppifgttNum > soppifgttDen ? soppifgttDen : soppifgttNum
 
     const monzo = computeMonzoFromRatio(ratio)
     const primeLimit = computeLimit(monzo)
-    // const soupfgtt = computeSoupfgtt(monzo)
-    const soupifgtt = computeSoupifgtt(monzo)
 
-    return orientedSopfgttNum + k * orientedSopfgttDen + s * primeLimit + u * soupifgtt
+    const souppifgttNum = h ? computeWeightedSoupifgtt(num, b) : computeWeightedSoupfgtt(monzo, b)
+    const souppifgttDen = h ? computeWeightedSoupifgtt(den, b) : computeWeightedSoupfgtt(den, b)
+    const orientedSouppifgttNum = souppifgttNum > souppifgttDen ? souppifgttNum : souppifgttDen
+    const orientedSouppifgttDen = souppifgttNum > souppifgttDen ? souppifgttDen : souppifgttNum
+
+    return orientedSoppifgttNum + k * orientedSoppifgttDen + s * primeLimit + u * (orientedSouppifgttNum + j * orientedSouppifgttDen)
 }
 
 module.exports = {

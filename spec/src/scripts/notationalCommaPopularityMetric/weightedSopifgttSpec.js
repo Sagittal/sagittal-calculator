@@ -1,7 +1,7 @@
 const {computeWeightedSopifgtt} = require("../../../../src/scripts/notationalCommaPopularityMetric/weightedSopifgtt")
 
 describe("computeWeightedSopifgtt", () => {
-    it("sums the absolute values of the prime factors greater than three in the monzo, mapped to the prime count function, and weighted by raising them to the provided power", () => {
+    it("sums the absolute values of the prime factors greater than three in the monzo, mapped to the prime count function, raised to the provided power (weight)", () => {
         const monzo = [
             5,  // 1
             6,  // 2
@@ -28,11 +28,11 @@ describe("computeWeightedSopifgtt", () => {
     })
 
     it("works for a simple integer", () => {
-        const integer = 341
+        const integer = 3751
         const a = 0.56
 
         const result = computeWeightedSopifgtt(integer, a)
 
-        expect(result).toBe(5 ** 0.56 + 11 ** 0.56)
+        expect(result).toBe(5 ** 0.56 + 5 ** 0.56 + 11 ** 0.56)
     })
 })
