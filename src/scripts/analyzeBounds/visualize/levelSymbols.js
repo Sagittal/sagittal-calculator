@@ -1,6 +1,6 @@
 const {LEVELS_SYMBOLS} = require("../../../notations/ji/levelsSymbols")
 const {LEVEL_CENTERS} = require("./levelHeights")
-const {COMMA_OFFSET, DOT_SIZE, MINA_OFFSET} = require("./sizes")
+const {SYMBOL_OFFSET, DOT_SIZE, MINA_OFFSET} = require("./sizes")
 const {computeX} = require("./x")
 const {presentMina} = require("../present/mina")
 
@@ -11,8 +11,8 @@ const visualizeLevelSymbols = () => {
         if (level === "INSANE") return
 
         const centerY = LEVEL_CENTERS[level]
-        const dotY = centerY - COMMA_OFFSET
-        const symbolY = centerY + COMMA_OFFSET
+        const dotY = centerY - SYMBOL_OFFSET
+        const symbolY = centerY + SYMBOL_OFFSET
 
         levelSymbols.forEach(levelSymbol => {
             const {position, ascii, unicode, mina} = levelSymbol

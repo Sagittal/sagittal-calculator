@@ -2,7 +2,7 @@ const {LEVEL_BOUNDED_SYMBOLS} = require("../../../notations/ji/levelBoundedSymbo
 
 const extractBoundIdentifiers = bound => {
     const {position, id} = bound
-    const boundedSymbols = LEVEL_BOUNDED_SYMBOLS.find(comma => comma.id === id)
+    const boundedSymbols = LEVEL_BOUNDED_SYMBOLS.find(symbol => symbol.id === id)
     const extremeBoundedSymbols = boundedSymbols["EXTREME"]
     const [lesserBoundedSymbol, greaterBoundedSymbol] = extremeBoundedSymbols
 
