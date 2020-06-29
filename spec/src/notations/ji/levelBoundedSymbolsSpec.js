@@ -25,6 +25,7 @@ describe("computeLevelBoundedSymbols", () => {
                         position: 21.5062895967148,
                     },
                     id: 44,
+                    elements: ["/|"],
                 },
                 {
                     introducingLevel: "MEDIUM",
@@ -38,6 +39,7 @@ describe("computeLevelBoundedSymbols", () => {
                         position: 27.2640918001001,
                     },
                     id: 58,
+                    elements: ["|)"],
                 },
             ],
             EXTREME: [
@@ -53,6 +55,7 @@ describe("computeLevelBoundedSymbols", () => {
                         position: 24.2784824213563,
                     },
                     id: 51,
+                    elements: [",|", ")|", "/|"],
                 },
                 {
                     introducingLevel: "HIGH",
@@ -66,6 +69,7 @@ describe("computeLevelBoundedSymbols", () => {
                         position: 24.8843083251798,
                     },
                     id: 52,
+                    elements: [")|", "/|"],
                 },
             ],
             INSANE: [
@@ -81,6 +85,7 @@ describe("computeLevelBoundedSymbols", () => {
                         position: 24.2784824213563,
                     },
                     id: 51,
+                    elements: [",|", ")|", "/|"],
                 },
                 {
                     introducingLevel: "HIGH",
@@ -94,6 +99,7 @@ describe("computeLevelBoundedSymbols", () => {
                         position: 24.8843083251798,
                     },
                     id: 52,
+                    elements: [")|", "/|"],
                 },
             ],
         })
@@ -123,6 +129,7 @@ describe("computeLevelBoundedSymbols", () => {
                         monzo: [-13, 5, 1, 1],
                         position: 64.9146246608968,
                     },
+                    elements: ["(|", "|\\"],
                 },
                 undefined,
             ],
@@ -139,6 +146,7 @@ describe("computeLevelBoundedSymbols", () => {
                         monzo: [-16, 11, 1, 0, 0, -1],
                         position: 67.2910616147857,
                     },
+                    elements: [")|", "|\\", "|\\"],
                 },
                 undefined,
             ],
@@ -155,6 +163,7 @@ describe("computeLevelBoundedSymbols", () => {
                         monzo: [-16, 11, 1, 0, 0, -1],
                         position: 67.2910616147857,
                     },
+                    elements: [")|", "|\\", "|\\"],
                 },
                 undefined,
             ],
@@ -171,6 +180,7 @@ describe("computeLevelBoundedSymbols", () => {
                         monzo: [-11, 8, 2, -1, -1],
                         position: 68.1235858189,
                     },
+                    elements: ["``|", ")|", "|\\", "|\\"],
                 },
                 undefined,
             ],
@@ -187,6 +197,7 @@ describe("computeLevelBoundedSymbols", () => {
                         monzo: [-11, 8, 2, -1, -1],
                         position: 68.1235858189,
                     },
+                    elements: ["``|", ")|", "|\\", "|\\"],
                 },
                 undefined,
             ],
@@ -218,6 +229,7 @@ describe("computeLevelBoundedSymbols", () => {
                     id: 1,
                     distance: 0.211928144834215,
                     inaDistance: 0.43435154255350816,
+                    elements: ["`|"],
                 },
             ],
             INSANE: [
@@ -234,6 +246,7 @@ describe("computeLevelBoundedSymbols", () => {
                     id: 1,
                     distance: 0.211928144834215,
                     inaDistance: 1.508113295818833,
+                    elements: ["`|"],
                 },
             ],
         })

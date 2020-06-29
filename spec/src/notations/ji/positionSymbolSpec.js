@@ -16,6 +16,7 @@ describe("computePositionSymbol", () => {
                 monzo: [-9, 3, 0, 0, 0, 0, 0, 1],
                 position: 3.37801872846485,
             },
+            elements: [ ')|' ],
         })
     })
 

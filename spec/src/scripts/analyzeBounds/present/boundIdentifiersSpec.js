@@ -30,6 +30,7 @@ describe("extractBoundIdentifiers", () => {
                             monzo: [2, -1, -2, 0, 0, 0, 0, 1],
                         },
                         id: 47, // not the best example since id and mina are the same up to this point
+                        elements: [".|", ")|", "/|"],
                     },
                     {
                         introducingLevel: "ULTRA",
@@ -43,6 +44,7 @@ describe("extractBoundIdentifiers", () => {
                             monzo: [-19, 12],
                         },
                         id: 48,
+                        elements: ["'|", "/|"],
                     },
                 ],
                 EXTREME: [
@@ -58,6 +60,7 @@ describe("extractBoundIdentifiers", () => {
                             monzo: [2, -1, -2, 0, 0, 0, 0, 1],
                         },
                         id: 47,
+                        elements: [".|", ")|", "/|"],
                     },
                     {
                         introducingLevel: "ULTRA",
@@ -71,6 +74,7 @@ describe("extractBoundIdentifiers", () => {
                             monzo: [-19, 12],
                         },
                         id: 48,
+                        elements: ["'|", "/|"],
                     },
                 ],
                 INSANE: [
@@ -86,6 +90,7 @@ describe("extractBoundIdentifiers", () => {
                             position: 22.9305875372457,
                             monzo: [2, -1, -2, 0, 0, 0, 0, 1],
                         },
+                        elements: [".|", ")|", "/|"],
                     },
                     {
                         introducingLevel: "ULTRA",
@@ -99,6 +104,7 @@ describe("extractBoundIdentifiers", () => {
                             position: 23.4600103846490,
                             monzo: [-19, 12],
                         },
+                        elements: ["'|", "/|"],
                     },
                 ],
             },

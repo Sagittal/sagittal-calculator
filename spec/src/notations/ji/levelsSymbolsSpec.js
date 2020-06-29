@@ -21,6 +21,7 @@ describe("computeLevelSymbols", () => {
                 position: 0,
                 monzo: [],
             },
+            elements: [],
         })
     })
 })

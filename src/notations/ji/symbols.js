@@ -9,6 +9,7 @@ const SYMBOLS = [
             monzo: [],
             position: 0.0000000000000,
         },
+        elements: [],
     },
     {
         id: 1,
@@ -20,6 +21,7 @@ const SYMBOLS = [
             monzo: [12, -2, -1, -1, 0, -1],
             position: 0.42271616595482,
         },
+        elements: ["`|"],
     },
     {
         id: 2,
@@ -31,6 +33,7 @@ const SYMBOLS = [
             monzo: [5, -3, 1, -1, -1, 1],
             position: 0.83252420410159,
         },
+        elements: ["``|"],
     },
     {
         id: 3,
@@ -42,6 +45,7 @@ const SYMBOLS = [
             monzo: [6, -5, -1, 0, 0, 0, 0, 1],
             position: 1.4242979405308,
         },
+        elements: [".|", ")|"],
     },
     {
         id: 4,
@@ -53,6 +57,7 @@ const SYMBOLS = [
             monzo: [-15, 8, 1],
             position: 1.95372078793416,
         },
+        elements: ["'|"],
     },
     {
         id: 5,
@@ -64,6 +69,7 @@ const SYMBOLS = [
             monzo: [-3, 6, 0, -1, 0, -1],
             position: 2.37643695388898,
         },
+        elements: ["`|", "'|"],
     },
     {
         id: 6,
@@ -75,6 +81,7 @@ const SYMBOLS = [
             monzo: [-8, 10, -4, -1, 0, 0, 0, 1],
             position: 2.98226285771248,
         },
+        elements: [",|", ")|"],
     },
     {
         id: 7,
@@ -86,6 +93,7 @@ const SYMBOLS = [
             monzo: [-9, 3, 0, 0, 0, 0, 0, 1],
             position: 3.37801872846485,
         },
+        elements: [")|"],
     },
     {
         id: 8,
@@ -97,6 +105,7 @@ const SYMBOLS = [
             monzo: [-3, 2, -1, 2, -1],
             position: 3.93015843943305,
         },
+        elements: ["`|", ")|"],
     },
     {
         id: 9,
@@ -108,6 +117,7 @@ const SYMBOLS = [
             monzo: [-7, -1, 1, 1, 1],
             position: 4.50256183332916,
         },
+        elements: ["``|", ")|"],
     },
     {
         id: 10,
@@ -119,6 +129,7 @@ const SYMBOLS = [
             monzo: [5, -3, 0, 0, 1, -1],
             position: 4.92527799928397,
         },
+        elements: [",,|", "|("],
     },
     {
         id: 11,
@@ -130,6 +141,7 @@ const SYMBOLS = [
             monzo: [-11, 6, 0, 0, -1, 0, 0, 0, 0, 0, 1],
             position: 5.44763529181809,
         },
+        elements: [",|", "|("],
     },
     {
         id: 12,
@@ -141,6 +153,7 @@ const SYMBOLS = [
             monzo: [10, -6, 1, -1],
             position: 5.7578022033852,
         },
+        elements: ["|("],
     },
     {
         id: 13,
@@ -152,6 +165,7 @@ const SYMBOLS = [
             monzo: [5, -7, -1, 3],
             position: 6.47899948482794,
         },
+        elements: ["`|", "|("],
     },
     {
         id: 14,
@@ -163,6 +177,7 @@ const SYMBOLS = [
             monzo: [8, -1, -1, 0, 0, 0, -1],
             position: 6.77587576937045,
         },
+        elements: [".|", "~|"],
     },
     {
         id: 15,
@@ -174,6 +189,7 @@ const SYMBOLS = [
             monzo: [-4, 9, -2, -2],
             position: 7.31576712056731,
         },
+        elements: [",|", "'|", "|("],
     },
     {
         id: 16,
@@ -185,6 +201,7 @@ const SYMBOLS = [
             monzo: [-5, 2, 2, -1],
             position: 7.71152299131971,
         },
+        elements: ["'|", "|("],
     },
     {
         id: 17,
@@ -196,6 +213,7 @@ const SYMBOLS = [
             monzo: [-10, 1, 0, 3],
             position: 8.43272027276221,
         },
+        elements: [",|", "~|"],
     },
     {
         id: 18,
@@ -207,6 +225,7 @@ const SYMBOLS = [
             monzo: [-7, 7, 0, 0, 0, 0, -1],
             position: 8.72959655730475,
         },
+        elements: ["~|"],
     },
     {
         id: 19,
@@ -218,6 +237,7 @@ const SYMBOLS = [
             monzo: [-17, 2, 0, 0, 4],
             position: 9.18177118980167,
         },
+        elements: [",|", ")|", "|("],
     },
     {
         id: 20,
@@ -229,6 +249,7 @@ const SYMBOLS = [
             monzo: [7, -4, 0, 1, -1],
             position: 9.6879606428187,
         },
+        elements: [")|", "|("],
     },
     {
         id: 21,
@@ -240,6 +261,7 @@ const SYMBOLS = [
             monzo: [3, -7, 2, 0, 1],
             position: 10.2603640367144,
         },
+        elements: ["`|", ")|", "|("],
     },
     {
         id: 22,
@@ -251,6 +273,7 @@ const SYMBOLS = [
             monzo: [-13, 7, 0, 2, 0, -1],
             position: 10.8091572266510,
         },
+        elements: ["``|", ")|", "|("],
     },
     {
         id: 23,
@@ -262,6 +285,7 @@ const SYMBOLS = [
             monzo: [21, -5, -2, -3],
             position: 11.1198485360183,
         },
+        elements: [",|", "'|", ")|", "|("],
     },
     {
         id: 24,
@@ -273,6 +297,7 @@ const SYMBOLS = [
             monzo: [-8, 4, 1, 1, -1],
             position: 11.6416814307528,
         },
+        elements: ["'|", ")|", "|("],
     },
     {
         id: 25,
@@ -284,6 +309,7 @@ const SYMBOLS = [
             monzo: [4, 2, 0, 0, -1, -1],
             position: 12.0643975967077,
         },
+        elements: [")|", "~|"],
     },
     {
         id: 26,
@@ -295,6 +321,7 @@ const SYMBOLS = [
             monzo: [3, -3, -1, 0, 0, 0, 1],
             position: 12.7766930394100,
         },
+        elements: [".|", "~|", "|("],
     },
     {
         id: 27,
@@ -306,6 +333,7 @@ const SYMBOLS = [
             monzo: [9, -5, 0, 0, 1, 0, 0, 0, -1],
             position: 13.2685907694041,
         },
+        elements: ["`|", ".|", "~|", "|("],
     },
     {
         id: 28,
@@ -317,6 +345,7 @@ const SYMBOLS = [
             monzo: [1, 2, -3, 1],
             position: 13.7947666053953,
         },
+        elements: [",,|", "~|", "|("],
     },
     {
         id: 29,
@@ -328,6 +357,7 @@ const SYMBOLS = [
             monzo: [0, -5, 1, 2],
             position: 14.1905224761475,
         },
+        elements: [",|", "~|", "|("],
     },
     {
         id: 30,
@@ -339,6 +369,7 @@ const SYMBOLS = [
             monzo: [-12, 5, 0, 0, 0, 0, 1],
             position: 14.7304138273444,
         },
+        elements: ["~|", "|("],
     },
     {
         id: 31,
@@ -350,6 +381,7 @@ const SYMBOLS = [
             monzo: [2, -4, 0, -1, 1, 1],
             position: 15.1996942033926,
         },
+        elements: ["`|", "~|", "|("],
     },
     {
         id: 32,
@@ -361,6 +393,7 @@ const SYMBOLS = [
             monzo: [-14, 10, -2, 1],
             position: 15.7484873933296,
         },
+        elements: [",,|", "|~"],
     },
     {
         id: 33,
@@ -372,6 +405,7 @@ const SYMBOLS = [
             monzo: [-15, 3, 2, 2],
             position: 16.1442432640817,
         },
+        elements: [",|", "|~"],
     },
     {
         id: 34,
@@ -383,6 +417,7 @@ const SYMBOLS = [
             monzo: [5, -6, 0, 0, 0, 0, 0, 0, 1],
             position: 16.5443420760908,
         },
+        elements: ["|~"],
     },
     {
         id: 35,
@@ -394,6 +429,7 @@ const SYMBOLS = [
             monzo: [9, -1, 0, 0, 0, -2],
             position: 16.9896755959915,
         },
+        elements: ["`|", "|~"],
     },
     {
         id: 36,
@@ -405,6 +441,7 @@ const SYMBOLS = [
             monzo: [-1, 2, 0, -2, 1],
             position: 17.5761311572815,
         },
+        elements: ["~|", "~|"],
     },
     {
         id: 37,
@@ -416,6 +453,7 @@ const SYMBOLS = [
             monzo: [-8, 6, 0, 0, 1, 0, 0, 0, 0, 0, -1],
             position: 18.0123750928310,
         },
+        elements: ["`|", "~|", "~|"],
     },
     {
         id: 38,
@@ -427,6 +465,7 @@ const SYMBOLS = [
             monzo: [13, -9, 0, -1, 0, 0, 1],
             position: 18.5344952427957,
         },
+        elements: ["``|", "~|", "~|"],
     },
     {
         id: 39,
@@ -438,6 +477,7 @@ const SYMBOLS = [
             monzo: [-1, -2, -1, 1, 0, 1],
             position: 19.1298526428258,
         },
+        elements: [",|", ".|", "/|"],
     },
     {
         id: 40,
@@ -449,6 +489,7 @@ const SYMBOLS = [
             monzo: [11, -4, -2],
             position: 19.5525688087807,
         },
+        elements: [".|", "/|"],
     },
     {
         id: 41,
@@ -460,6 +501,7 @@ const SYMBOLS = [
             monzo: [-10, 9, 0, 0, 0, 0, 0, -1],
             position: 20.0819916561843,
         },
+        elements: [")|", "|~"],
     },
     {
         id: 42,
@@ -471,6 +513,7 @@ const SYMBOLS = [
             monzo: [8, 0, 0, 0, -1, 0, 0, 0, -1],
             position: 20.4077103668277,
         },
+        elements: [",,|", "/|"],
     },
     {
         id: 43,
@@ -482,6 +525,7 @@ const SYMBOLS = [
             monzo: [-16, 6, 0, 1, 0, 1],
             position: 21.0835734307600,
         },
+        elements: [",|", "/|"],
     },
     {
         id: 44,
@@ -493,6 +537,7 @@ const SYMBOLS = [
             monzo: [-4, 4, -1],
             position: 21.5062895967148,
         },
+        elements: ["/|"],
     },
     {
         id: 45,
@@ -504,6 +549,7 @@ const SYMBOLS = [
             monzo: [-5, -3, 3, 1],
             position: 21.9020454674670,
         },
+        elements: ["`|", "/|"],
     },
     {
         id: 46,
@@ -515,6 +561,7 @@ const SYMBOLS = [
             monzo: [7, -5, 2, 0, 0, -1],
             position: 22.3247616334221,
         },
+        elements: ["``|", "/|"],
     },
     {
         id: 47,
@@ -526,6 +573,7 @@ const SYMBOLS = [
             monzo: [2, -1, -2, 0, 0, 0, 0, 1],
             position: 22.9305875372457,
         },
+        elements: [".|", ")|", "/|"],
     },
     {
         id: 48,
@@ -537,6 +585,7 @@ const SYMBOLS = [
             monzo: [-19, 12],
             position: 23.4600103846490,
         },
+        elements: ["'|", "/|"],
     },
     {
         id: 49,
@@ -548,6 +597,7 @@ const SYMBOLS = [
             monzo: [-20, 5, 4, 1],
             position: 23.8557662554013,
         },
+        elements: ["`|", "'|", "/|"],
     },
     {
         id: 50,
@@ -559,6 +609,7 @@ const SYMBOLS = [
             monzo: [4, -5, -1, 1, 1],
             position: 24.0551306421097,
         },
+        elements: [",,|", ")|", "/|"],
     },
     {
         id: 51,
@@ -570,6 +621,7 @@ const SYMBOLS = [
             monzo: [-8, 3, 3, 0, 0, -1],
             position: 24.2784824213563,
         },
+        elements: [",|", ")|", "/|"],
     },
     {
         id: 52,
@@ -581,6 +633,7 @@ const SYMBOLS = [
             monzo: [-13, 7, -1, 0, 0, 0, 0, 1],
             position: 24.8843083251798,
         },
+        elements: [")|", "/|"],
     },
     {
         id: 53,
@@ -592,6 +645,7 @@ const SYMBOLS = [
             monzo: [9, -8, 0, 0, 0, 1],
             position: 24.8876548462113,
         },
+        elements: [",|", ".|", "|)"],
     },
     {
         id: 54,
@@ -603,6 +657,7 @@ const SYMBOLS = [
             monzo: [21, -10, -1, -1],
             position: 25.3103710121659,
         },
+        elements: [".|", "|)"],
     },
     {
         id: 55,
@@ -614,6 +669,7 @@ const SYMBOLS = [
             monzo: [-11, 3, 0, 1, 1],
             position: 26.0088514300439,
         },
+        elements: ["`|", ".|", "|)"],
     },
     {
         id: 56,
@@ -625,6 +681,7 @@ const SYMBOLS = [
             monzo: [1, 1, -1, 0, 1, -1],
             position: 26.4315675959986,
         },
+        elements: [",,|", "|)"],
     },
     {
         id: 57,
@@ -636,6 +693,7 @@ const SYMBOLS = [
             monzo: [-6, 0, 1, 0, 0, 1],
             position: 26.8413756341454,
         },
+        elements: [",|", "|)"],
     },
     {
         id: 58,
@@ -647,6 +705,7 @@ const SYMBOLS = [
             monzo: [6, -2, 0, -1],
             position: 27.2640918001001,
         },
+        elements: ["|)"],
     },
     {
         id: 59,
@@ -658,6 +717,7 @@ const SYMBOLS = [
             monzo: [5, -9, 4],
             position: 27.6598476708525,
         },
+        elements: ["`|", "|)"],
     },
     {
         id: 60,
@@ -669,6 +729,7 @@ const SYMBOLS = [
             monzo: [-14, 9, 0, 0, 1, -1],
             position: 28.3852883839327,
         },
+        elements: ["``|", "|)"],
     },
     {
         id: 61,
@@ -680,6 +741,7 @@ const SYMBOLS = [
             monzo: [-21, 8, 2, 0, 0, 1],
             position: 28.7950964220796,
         },
+        elements: [",|", "'|", "|)"],
     },
     {
         id: 62,
@@ -691,6 +753,7 @@ const SYMBOLS = [
             monzo: [-9, 6, 1, -1],
             position: 29.2178125880342,
         },
+        elements: ["'|", "|)"],
     },
     {
         id: 63,
@@ -702,6 +765,7 @@ const SYMBOLS = [
             monzo: [-10, -1, 5],
             position: 29.6135684587868,
         },
+        elements: ["`|", "'|", "|)"],
     },
     {
         id: 64,
@@ -713,6 +777,7 @@ const SYMBOLS = [
             monzo: [5, -5, 1, 0, -1, 0, 1],
             position: 30.1761766735484,
         },
+        elements: [",|", ")|", "|)"],
     },
     {
         id: 65,
@@ -724,6 +789,7 @@ const SYMBOLS = [
             monzo: [-3, 1, 0, -1, 0, 0, 0, 1],
             position: 30.6421105285650,
         },
+        elements: [")|", "|)"],
     },
     {
         id: 66,
@@ -735,6 +801,7 @@ const SYMBOLS = [
             monzo: [3, 0, -1, 1, -1],
             position: 31.1942502395332,
         },
+        elements: [".|", "(|"],
     },
     {
         id: 67,
@@ -746,6 +813,7 @@ const SYMBOLS = [
             monzo: [-1, -3, 1, 0, 1],
             position: 31.7666536334294,
         },
+        elements: ["|\\"],
     },
     {
         id: 68,
@@ -757,6 +825,7 @@ const SYMBOLS = [
             monzo: [11, -5, 0, -1, 1, -1],
             position: 32.1893697993842,
         },
+        elements: ["`|", "|\\"],
     },
     {
         id: 69,
@@ -768,6 +837,7 @@ const SYMBOLS = [
             monzo: [-4, 1, 3, 0, 0, 0, 0, 0, -1],
             position: 32.6217951914765,
         },
+        elements: [",|", "(|"],
     },
     {
         id: 70,
@@ -779,6 +849,7 @@ const SYMBOLS = [
             monzo: [-12, 8, 0, 1, -1],
             position: 33.1479710274675,
         },
+        elements: ["(|"],
     },
     {
         id: 71,
@@ -790,6 +861,7 @@ const SYMBOLS = [
             monzo: [2, -1, 0, 0, 0, 1, -1],
             position: 33.6172514035158,
         },
+        elements: ["`|", "(|"],
     },
     {
         id: 72,
@@ -801,6 +873,7 @@ const SYMBOLS = [
             monzo: [-1, 1, -2, 0, 0, 0, 1],
             position: 34.2829826361251,
         },
+        elements: ["``|", "(|"],
     },
     {
         id: 73,
@@ -812,6 +885,7 @@ const SYMBOLS = [
             monzo: [2, 2, 0, 1, 0, -1, 0, -1],
             position: 34.6952302982867,
         },
+        elements: [",|", "'|", "(|"],
     },
     {
         id: 74,
@@ -823,6 +897,7 @@ const SYMBOLS = [
             monzo: [1, 0, 2, -2],
             position: 34.9756147914198,
         },
+        elements: ["'|", "(|"],
     },
     {
         id: 75,
@@ -834,6 +909,7 @@ const SYMBOLS = [
             monzo: [3, -5, 0, 0, 0, 0, 0, 0, 0, 0, 1],
             position: 35.2605681373132,
         },
+        elements: [",|", "~|", "|)"],
     },
     {
         id: 76,
@@ -845,6 +921,7 @@ const SYMBOLS = [
             monzo: [-4, -1, 0, 2],
             position: 35.6968120728623,
         },
+        elements: ["~|", "|)"],
     },
     {
         id: 77,
@@ -856,6 +933,7 @@ const SYMBOLS = [
             monzo: [-16, 9, -1, 0, 0, 0, 1],
             position: 36.2367034240592,
         },
+        elements: ["`|", "~|", "|)"],
     },
     {
         id: 79,
@@ -867,6 +945,7 @@ const SYMBOLS = [
             monzo: [-10, 7, 0, 0, 1, 0, 0, 0, -1],
             position: 36.7286011540533,
         },
+        elements: [",|", ".|", "(|", "|("],
     },
     {
         id: 80,
@@ -878,6 +957,7 @@ const SYMBOLS = [
             monzo: [13, -6, 0, 0, -1],
             position: 36.9520524429189,
         },
+        elements: [".|", "(|", "|("],
     },
     {
         id: 81,
@@ -889,6 +969,7 @@ const SYMBOLS = [
             monzo: [-19, 7, 1, 2],
             position: 37.6505328607966,
         },
+        elements: ["'|", "~|", "|)"],
     },
     {
         id: 82,
@@ -900,6 +981,7 @@ const SYMBOLS = [
             monzo: [1, -2, -1, 0, 0, 0, 0, 0, 1],
             position: 38.0506316728057,
         },
+        elements: ["/|", "|~"],
     },
     {
         id: 83,
@@ -911,6 +993,7 @@ const SYMBOLS = [
             monzo: [-7, 5, 0, 1, 0, -1],
             position: 38.0732490267513,
         },
+        elements: [",,|", "(|", "|("],
     },
     {
         id: 84,
@@ -922,6 +1005,7 @@ const SYMBOLS = [
             monzo: [7, -4, 0, 0, 1, 0, -1],
             position: 38.5425294027997,
         },
+        elements: [",|", "(|", "|("],
     },
     {
         id: 85,
@@ -933,6 +1017,7 @@ const SYMBOLS = [
             monzo: [-2, 2, 1, 0, -1],
             position: 38.9057732308529,
         },
+        elements: ["(|", "|("],
     },
     {
         id: 86,
@@ -944,6 +1029,7 @@ const SYMBOLS = [
             monzo: [10, 0, 0, -1, -1, -1],
             position: 39.3284893968078,
         },
+        elements: ["`|", "(|", "|("],
     },
     {
         id: 87,
@@ -955,6 +1041,7 @@ const SYMBOLS = [
             monzo: [-14, 6, 0, 0, 0, 0, 0, 0, 1],
             position: 40.0043524607400,
         },
+        elements: ["~|", "|\\"],
     },
     {
         id: 88,
@@ -966,6 +1053,7 @@ const SYMBOLS = [
             monzo: [-5, 2, -2, 1, 0, 1],
             position: 40.6361422395406,
         },
+        elements: [",|", ".|", "/|", "/|"],
     },
     {
         id: 89,
@@ -977,6 +1065,7 @@ const SYMBOLS = [
             monzo: [7, 0, -3],
             position: 41.0588584054956,
         },
+        elements: [".|", "/|", "/|"],
     },
     {
         id: 90,
@@ -988,6 +1077,7 @@ const SYMBOLS = [
             monzo: [6, -7, 1, 1],
             position: 41.4546142762478,
         },
+        elements: ["`|", ".|", "/|", "/|"],
     },
     {
         id: 91,
@@ -999,6 +1089,7 @@ const SYMBOLS = [
             monzo: [-6, 3, 0, -1, 0, 0, 1],
             position: 41.9945056274446,
         },
+        elements: [",,|", "/|", "/|"],
     },
     {
         id: 92,
@@ -1010,6 +1101,7 @@ const SYMBOLS = [
             monzo: [-20, 10, -1, 1, 0, 1],
             position: 42.5898630274750,
         },
+        elements: [",|", "/|", "/|"],
     },
     {
         id: 93,
@@ -1021,6 +1113,7 @@ const SYMBOLS = [
             monzo: [-8, 8, -2],
             position: 43.0125791934297,
         },
+        elements: ["/|", "/|"],
     },
     {
         id: 94,
@@ -1032,6 +1125,7 @@ const SYMBOLS = [
             monzo: [-9, 1, 2, 1],
             position: 43.4083350641820,
         },
+        elements: ["`|", "/|", "/|"],
     },
     {
         id: 95,
@@ -1043,6 +1137,7 @@ const SYMBOLS = [
             monzo: [3, -1, 1, 0, 0, -1],
             position: 43.8310512301367,
         },
+        elements: ["``|", "/|", "/|"],
     },
     {
         id: 96,
@@ -1054,6 +1149,7 @@ const SYMBOLS = [
             monzo: [-11, 6, 0, 2, 0, 0, -1],
             position: 44.4264086301669,
         },
+        elements: [",|", "'|", "/|", "/|"],
     },
     {
         id: 97,
@@ -1065,6 +1161,7 @@ const SYMBOLS = [
             monzo: [-1, 1, 0, 0, 0, 1, 0, -1],
             position: 44.9696465023956,
         },
+        elements: ["'|", "/|", "/|"],
     },
     {
         id: 98,
@@ -1076,6 +1173,7 @@ const SYMBOLS = [
             monzo: [0, -1, -2, 1, 1],
             position: 45.5614202388245,
         },
+        elements: [",,|", ")|", "/|", "/|"],
     },
     {
         id: 99,
@@ -1087,6 +1185,7 @@ const SYMBOLS = [
             monzo: [-12, 7, 2, 0, 0, -1],
             position: 45.7847720180709,
         },
+        elements: [",|", ")|", "/|", "/|"],
     },
     {
         id: 100,
@@ -1098,6 +1197,7 @@ const SYMBOLS = [
             monzo: [5, -4, -1, 0, 0, 1],
             position: 46.3939444429262,
         },
+        elements: [")|", "/|", "/|"],
     },
     {
         id: 101,
@@ -1109,6 +1209,7 @@ const SYMBOLS = [
             monzo: [17, -6, -2, -1],
             position: 46.8166606088810,
         },
+        elements: ["`|", ")|", "/|", "/|"],
     },
     {
         id: 102,
@@ -1120,6 +1221,7 @@ const SYMBOLS = [
             monzo: [-2, -2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
             position: 47.4340370239647,
         },
+        elements: ["``|", ")|", "/|", "/|"],
     },
     {
         id: 103,
@@ -1131,6 +1233,7 @@ const SYMBOLS = [
             monzo: [-3, 5, -2, 0, 1, -1],
             position: 47.9378571927136,
         },
+        elements: [",,|", "/|", "|)"],
     },
     {
         id: 104,
@@ -1142,6 +1245,7 @@ const SYMBOLS = [
             monzo: [-10, 4, 0, 0, 0, 1],
             position: 48.3476652308603,
         },
+        elements: [",|", "/|", "|)"],
     },
     {
         id: 105,
@@ -1153,6 +1257,7 @@ const SYMBOLS = [
             monzo: [2, 2, -1, -1],
             position: 48.7703813968149,
         },
+        elements: ["/|", "|)"],
     },
     {
         id: 106,
@@ -1164,6 +1269,7 @@ const SYMBOLS = [
             monzo: [1, -5, 3],
             position: 49.1661372675673,
         },
+        elements: ["`|", "/|", "|)"],
     },
     {
         id: 107,
@@ -1175,6 +1281,7 @@ const SYMBOLS = [
             monzo: [4, -2, 0, 0, 1, 0, 0, -1],
             position: 49.8949245016792,
         },
+        elements: ["(|", "|~"],
     },
     {
         id: 108,
@@ -1186,6 +1293,7 @@ const SYMBOLS = [
             monzo: [-25, 12, 1, 0, 0, 1],
             position: 50.3013860187944,
         },
+        elements: [",|", "'|", "/|", "|)"],
     },
     {
         id: 109,
@@ -1197,6 +1305,7 @@ const SYMBOLS = [
             monzo: [-13, 10, 0, -1],
             position: 50.7241021847494,
         },
+        elements: ["'|", "/|", "|)"],
     },
     {
         id: 110,
@@ -1208,6 +1317,7 @@ const SYMBOLS = [
             monzo: [-14, 3, 4],
             position: 51.1198580555015,
         },
+        elements: ["`|", "'|", "/|", "|)"],
     },
     {
         id: 111,
@@ -1219,6 +1329,7 @@ const SYMBOLS = [
             monzo: [10, -7, -1, 0, 1],
             position: 51.3192224422099,
         },
+        elements: [".|", "/|", "|\\"],
     },
     {
         id: 112,
@@ -1230,6 +1341,7 @@ const SYMBOLS = [
             monzo: [1, -1, 0, 0, -1, 0, 1],
             position: 51.6824662702631,
         },
+        elements: ["`|", ".|", "/|", "|\\"],
     },
     {
         id: 113,
@@ -1241,6 +1353,7 @@ const SYMBOLS = [
             monzo: [7, -3, 1, 0, 0, 0, 0, 0, -1],
             position: 52.1743640002570,
         },
+        elements: [",,|", "/|", "|\\"],
     },
     {
         id: 114,
@@ -1252,6 +1365,7 @@ const SYMBOLS = [
             monzo: [-1, 4, -2, 1, -1],
             position: 52.7005398362484,
         },
+        elements: [",|", "/|", "|\\"],
     },
     {
         id: 115,
@@ -1263,6 +1377,7 @@ const SYMBOLS = [
             monzo: [-5, 1, 0, 0, 1],
             position: 53.2729432301441,
         },
+        elements: ["/|", "|\\"],
     },
     {
         id: 116,
@@ -1274,6 +1389,7 @@ const SYMBOLS = [
             monzo: [-14, 7, 1, 0, -1, 0, 1],
             position: 53.6361870581975,
         },
+        elements: ["`|", "/|", "|\\"],
     },
     {
         id: 117,
@@ -1285,6 +1401,7 @@ const SYMBOLS = [
             monzo: [0, -2, 1, -1, 0, 1],
             position: 54.1054674342458,
         },
+        elements: [",|", "(|", "/|"],
     },
     {
         id: 118,
@@ -1296,6 +1413,7 @@ const SYMBOLS = [
             monzo: [12, -4, 0, -2],
             position: 54.5281836002006,
         },
+        elements: ["(|", "/|"],
     },
     {
         id: 119,
@@ -1307,6 +1425,7 @@ const SYMBOLS = [
             monzo: [5, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1],
             position: 54.9644275357497,
         },
+        elements: ["`|", "(|", "/|"],
     },
     {
         id: 120,
@@ -1318,6 +1437,7 @@ const SYMBOLS = [
             monzo: [-20, 9, 1, 0, 1],
             position: 55.2266640180783,
         },
+        elements: ["'|", "/|", "|\\"],
     },
     {
         id: 121,
@@ -1329,6 +1449,7 @@ const SYMBOLS = [
             monzo: [-8, 7, 0, -1, 1, -1],
             position: 55.6493801840332,
         },
+        elements: ["`|", "'|", "/|", "|\\"],
     },
     {
         id: 122,
@@ -1340,6 +1461,7 @@ const SYMBOLS = [
             monzo: [-6, -2, 1, 1, 0, 0, 1],
             position: 56.1850281035923,
         },
+        elements: [",|", ")|", "/|", "|\\"],
     },
     {
         id: 123,
@@ -1351,6 +1473,7 @@ const SYMBOLS = [
             monzo: [-3, 4, 1, -2],
             position: 56.4819043881346,
         },
+        elements: [")|", "/|", "|\\"],
     },
     {
         id: 124,
@@ -1362,6 +1485,7 @@ const SYMBOLS = [
             monzo: [-8, 3, -1, 2],
             position: 57.2031016695774,
         },
+        elements: ["`|", ")|", "/|", "|\\"],
     },
     {
         id: 125,
@@ -1373,6 +1497,7 @@ const SYMBOLS = [
             monzo: [-5, 9, -1, -1, 0, 0, -1],
             position: 57.4999779541197,
         },
+        elements: ["``|", ")|", "/|", "|\\"],
     },
     {
         id: 126,
@@ -1384,6 +1509,7 @@ const SYMBOLS = [
             monzo: [-3, 0, 0, 1, -1, 1],
             position: 58.0356258736789,
         },
+        elements: [",|", ".|", "(|", "|)"],
     },
     {
         id: 127,
@@ -1395,6 +1521,7 @@ const SYMBOLS = [
             monzo: [9, -2, -1, 0, -1],
             position: 58.4583420396336,
         },
+        elements: [".|", "(|", "|)"],
     },
     {
         id: 128,
@@ -1406,6 +1533,7 @@ const SYMBOLS = [
             monzo: [-16, 7, 0, 0, 0, 0, 0, 0, 0, 0, 1],
             position: 58.7205785219622,
         },
+        elements: [",|", "|\\", "|)"],
     },
     {
         id: 129,
@@ -1417,6 +1545,7 @@ const SYMBOLS = [
             monzo: [-23, 11, 0, 2],
             position: 59.1568224575114,
         },
+        elements: ["|\\", "|)"],
     },
     {
         id: 130,
@@ -1428,6 +1557,7 @@ const SYMBOLS = [
             monzo: [-11, 9, -1, 1, 0, -1],
             position: 59.5795386234664,
         },
+        elements: ["`|", "|\\", "|)"],
     },
     {
         id: 131,
@@ -1439,6 +1569,7 @@ const SYMBOLS = [
             monzo: [3, 0, -1, 0, 1, 0, -1],
             position: 60.0488189995148,
         },
+        elements: [",|", "(|", "|)"],
     },
     {
         id: 132,
@@ -1450,6 +1581,7 @@ const SYMBOLS = [
             monzo: [-6, 6, 0, 0, -1],
             position: 60.4120628275676,
         },
+        elements: ["(|", "|)"],
     },
     {
         id: 133,
@@ -1461,6 +1593,7 @@ const SYMBOLS = [
             monzo: [-10, 3, 2, -1, 1],
             position: 60.9844662214638,
         },
+        elements: ["`|", "(|", "|)"],
     },
     {
         id: 134,
@@ -1472,6 +1605,7 @@ const SYMBOLS = [
             monzo: [-18, 10, -1, 0, 0, 0, 0, 0, 1],
             position: 61.5106420574550,
         },
+        elements: ["``|", "(|", "|)"],
     },
     {
         id: 135,
@@ -1483,6 +1617,7 @@ const SYMBOLS = [
             monzo: [-12, 8, 0, 0, 1, 0, -1],
             position: 62.0025397874486,
         },
+        elements: [",|", "'|", "(|", "|)"],
     },
     {
         id: 136,
@@ -1494,6 +1629,7 @@ const SYMBOLS = [
             monzo: [-21, 14, 1, 0, -1],
             position: 62.3657836155021,
         },
+        elements: ["'|", "(|", "|)"],
     },
     {
         id: 137,
@@ -1505,6 +1641,7 @@ const SYMBOLS = [
             monzo: [3, 4, -4],
             position: 62.5651480022103,
         },
+        elements: [",|", ".|", "(|", "|\\"],
     },
     {
         id: 138,
@@ -1516,6 +1653,7 @@ const SYMBOLS = [
             monzo: [2, -3, 0, 1],
             position: 62.9609038729626,
         },
+        elements: [".|", "(|", "|\\"],
     },
     {
         id: 139,
@@ -1527,6 +1665,7 @@ const SYMBOLS = [
             monzo: [14, -5, -1, 0, 0, -1],
             position: 63.3836200389176,
         },
+        elements: ["`|", ".|", "(|", "|\\"],
     },
     {
         id: 140,
@@ -1538,6 +1677,7 @@ const SYMBOLS = [
             monzo: [-15, 9, 0, 0, -1, 0, 0, 1],
             position: 63.7900815560325,
         },
+        elements: ["|\\", "|\\"],
     },
     {
         id: 141,
@@ -1549,6 +1689,7 @@ const SYMBOLS = [
             monzo: [-12, 12, -3],
             position: 64.5188687901447,
         },
+        elements: [",|", "(|", "|\\"],
     },
     {
         id: 142,
@@ -1560,6 +1701,7 @@ const SYMBOLS = [
             monzo: [-13, 5, 1, 1],
             position: 64.9146246608968,
         },
+        elements: ["(|", "|\\"],
     },
     {
         id: 143,
@@ -1571,6 +1713,7 @@ const SYMBOLS = [
             monzo: [-1, 3, 0, 0, 0, -1],
             position: 65.3373408268518,
         },
+        elements: ["`|", "(|", "|\\"],
     },
     {
         id: 144,
@@ -1582,6 +1725,7 @@ const SYMBOLS = [
             monzo: [-8, 2, 2, 0, -1, 1],
             position: 65.7471488649985,
         },
+        elements: ["``|", "(|", "|\\"],
     },
     {
         id: 145,
@@ -1593,6 +1737,7 @@ const SYMBOLS = [
             monzo: [-9, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1],
             position: 66.2509690337472,
         },
+        elements: [",,|", ")|", "|\\", "|\\"],
     },
     {
         id: 146,
@@ -1604,6 +1749,7 @@ const SYMBOLS = [
             monzo: [-28, 13, 2, 1],
             position: 66.8683454488310,
         },
+        elements: [",|", ")|", "|\\", "|\\"],
     },
     {
         id: 147,
@@ -1615,6 +1761,7 @@ const SYMBOLS = [
             monzo: [-16, 11, 1, 0, 0, -1],
             position: 67.2910616147857,
         },
+        elements: [")|", "|\\", "|\\"],
     },
     {
         id: 148,
@@ -1626,6 +1773,7 @@ const SYMBOLS = [
             monzo: [1, 0, -2, 0, 0, 1],
             position: 67.9002340396410,
         },
+        elements: ["`|", ")|", "|\\", "|\\"],
     },
     {
         id: 149,
@@ -1637,6 +1785,7 @@ const SYMBOLS = [
             monzo: [-11, 8, 2, -1, -1],
             position: 68.1235858189,
         },
+        elements: ["``|", ")|", "|\\", "|\\"],
     },
 ]
 
