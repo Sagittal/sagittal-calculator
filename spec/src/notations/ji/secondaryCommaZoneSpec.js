@@ -80,7 +80,7 @@ describe("secondaryCommaZone", () => {
         const result = computeSecondaryCommaZone(symbol)
 
         expect(result).toEqual([
-            -2.74024427456787,
+            0,
             2.74024427456787,
         ])
     })

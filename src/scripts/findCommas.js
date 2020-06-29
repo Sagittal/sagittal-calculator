@@ -1,9 +1,7 @@
 const {program} = require("commander")
-const {computeFiveMonzosToCheck} = require("./findCommas/fiveMonzosToCheck")
-const {computeCommasFromFiveMonzo} = require("./findCommas/commasFromFiveMonzo")
 const {presentCommas} = require("../utilities/comma/present/commas")
-const {invertMonzo} = require("../utilities/comma/invertMonzo")
 const {parseMonzo} = require("../utilities/comma/monzo")
+const {computeCommas} = require("./findCommas/commas")
 const {MAXIMUM_POSITION} = require("../notations/ji/intervals")
 
 program
@@ -28,32 +26,15 @@ const maximumAbsoluteThreeExponent = program.absoluteThreeExponent || 15
 const fiveRoughMonzo = program.fiveRoughMonzo
 const sort = program.sort
 
-let commas = []
-
-const fiveMonzosToCheck = fiveRoughMonzo ? [fiveRoughMonzo, invertMonzo(fiveRoughMonzo)] : computeFiveMonzosToCheck({
-    maximumPrimeLimit,
+const commas = computeCommas({
+    lowerBound,
+    upperBound,
     maximumSopfgtt,
     maximumCopfgtt,
+    maximumApotomeSlope,
+    maximumPrimeLimit,
+    maximumAbsoluteThreeExponent,
+    fiveRoughMonzo,
+    sort,
 })
-
-fiveMonzosToCheck.forEach(fiveMonzoToCheck => {
-    commas = commas.concat(
-        computeCommasFromFiveMonzo(
-            fiveMonzoToCheck,
-            {
-                lowerBound,
-                upperBound,
-                maximumApotomeSlope,
-                maximumAbsoluteThreeExponent,
-            },
-        ),
-    )
-})
-
-if (sort) {
-    commas.sort((a, b) => {
-        return a[sort] - b[sort]
-    })
-}
-
 console.log(presentCommas(commas))
