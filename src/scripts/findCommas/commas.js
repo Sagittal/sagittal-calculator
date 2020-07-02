@@ -1,32 +1,32 @@
-const {computeFiveMonzosToCheck} = require("./fiveMonzosToCheck")
-const {computeCommasFromFiveMonzo} = require("./commasFromFiveMonzo")
+const {computeFiveSlicedMonzosToCheck} = require("./fiveSlicedMonzosToCheck")
+const {computeCommasFromFiveSlicedMonzo} = require("./commasFromFiveSlicedMonzo")
 const {invertMonzo} = require("../../utilities/comma/invertMonzo")
 
-const computeCommas = parameters => {
+const computeCommas = options => {
     const {
         lowerBound,
         upperBound,
-        maximumSopfgtt,
-        maximumCopfgtt,
+        maximumFiveRoughSopfr,
+        maximumFiveRoughCopfr,
         maximumApotomeSlope,
         maximumPrimeLimit,
         maximumAbsoluteThreeExponent,
-        fiveRoughMonzo,
-        sort,
-    } = parameters
+        fiveSlicedMonzo,
+        sortKey,
+    } = options
 
     let commas = []
 
-    const fiveMonzosToCheck = fiveRoughMonzo ? [fiveRoughMonzo, invertMonzo(fiveRoughMonzo)] : computeFiveMonzosToCheck({
+    const fiveSlicedMonzosToCheck = fiveSlicedMonzo ? [fiveSlicedMonzo, invertMonzo(fiveSlicedMonzo)] : computeFiveSlicedMonzosToCheck({
         maximumPrimeLimit,
-        maximumSopfgtt,
-        maximumCopfgtt,
+        maximumFiveRoughSopfr,
+        maximumFiveRoughCopfr,
     })
 
-    fiveMonzosToCheck.forEach(fiveMonzoToCheck => {
+    fiveSlicedMonzosToCheck.forEach(fiveSlicedMonzoToCheck => {
         commas = commas.concat(
-            computeCommasFromFiveMonzo(
-                fiveMonzoToCheck,
+            computeCommasFromFiveSlicedMonzo(
+                fiveSlicedMonzoToCheck,
                 {
                     lowerBound,
                     upperBound,
@@ -37,9 +37,9 @@ const computeCommas = parameters => {
         )
     })
 
-    if (sort) {
-        commas.sort((a, b) => {
-            return a[sort] - b[sort]
+    if (sortKey) {
+        commas.sort((comma, nextComma) => {
+            return comma[sortKey] - nextComma[sortKey]
         })
     }
 

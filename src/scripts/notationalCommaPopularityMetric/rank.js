@@ -1,17 +1,17 @@
 const addRankToOurPopularities = ourApproximatePopularities => {
-    const sortedValues = ourApproximatePopularities.sort((a, b) => {
-        return a.value - b.value
+    const ourApproximatePopularitiesSortedByAntivotes = ourApproximatePopularities.sort((ourApproximatePopularity, nextOurApproximatePopularity) => {
+        return ourApproximatePopularity.antivotes - nextOurApproximatePopularity.antivotes // todo: wouldn't have been bad if tested it
     })
 
-    const rankedValues = sortedValues.map((value, index) => {
+    const ourApproximatePopularitiesRanked = ourApproximatePopularitiesSortedByAntivotes.map((value, index) => {
         return {
             ...value,
             rank: index + 1, // no zero-offset
         }
     })
 
-    return rankedValues.sort((a, b) => {
-        return a.index - b.index
+    return ourApproximatePopularitiesRanked.sort((ourApproximatePopularityRanked, nextOurApproximatePopularityRanked) => {
+        return ourApproximatePopularityRanked.index - nextOurApproximatePopularityRanked.index
     })
 }
 

@@ -4,19 +4,19 @@ const {presentRatio} = require("../../../utilities/comma/present/ratio")
 const presentComma = (comma, {mode = "SUMMARY"} = {}) => {
     const {
         commaName,
+        limit,
+        fiveRoughSopfr,
         cents,
         monzo,
         ratio,
-        limit,
         apotomeSlope,
-        sopfgtt,
     } = comma
 
     if (mode === "DETAILS") {
         return [
             `comma name:   \t${commaName}`,
             `limit:        \t${limit}`,
-            `SoPF>3:       \t${sopfgtt}`,
+            `5-rough sopfr:\t${fiveRoughSopfr}`,
             `cents:        \t${cents}`,
             `monzo:        \t${presentMonzo(monzo)}`,
             `ratio:        \t${presentRatio(ratio)}`,
@@ -26,7 +26,7 @@ const presentComma = (comma, {mode = "SUMMARY"} = {}) => {
         return [
             commaName,
             limit,
-            sopfgtt,
+            fiveRoughSopfr,
             cents,
             presentMonzo(monzo),
             presentRatio(ratio),

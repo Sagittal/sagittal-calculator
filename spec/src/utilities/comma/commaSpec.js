@@ -13,7 +13,7 @@ describe("analyzeComma", () => {
             commaName: "2100875/11S",
             limit: 11,
             apotomeSlope: -8.464345074135046,
-            sopfgtt: 61,
+            fiveRoughSopfr: 61,
         })
     })
 })

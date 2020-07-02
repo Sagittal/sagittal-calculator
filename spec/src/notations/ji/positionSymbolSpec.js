@@ -1,7 +1,7 @@
 const {computePositionSymbol} = require("../../../../src/notations/ji/positionSymbol")
 
 describe("computePositionSymbol", () => {
-    it("given a position, returns the symbol at that position", () => { // todo: this could be used for the calculator?
+    it("given a position, returns the symbol at that position", () => { // TODO: this could be used for the calculator?
         const position = 3.37801872846485
 
         const result = computePositionSymbol(position)

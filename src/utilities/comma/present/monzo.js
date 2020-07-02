@@ -1,13 +1,14 @@
 const presentMonzo = (monzo, {punctuated = false} = {}) => {
     let contents
     if (punctuated) {
-        const fiveRoughMonzo = monzo.splice(2)
-        contents = monzo.join(" ") + ", "
+        const fiveSlicedMonzo = monzo.splice(2)
+        const twoThreeMonzo = monzo
+        contents = twoThreeMonzo.join(" ") + ", "
 
         let index = 0
-        while (index < fiveRoughMonzo.length) {
-            contents = contents + fiveRoughMonzo[index]
-            if (index < fiveRoughMonzo.length - 1) {
+        while (index < fiveSlicedMonzo.length) {
+            contents = contents + fiveSlicedMonzo[index]
+            if (index < fiveSlicedMonzo.length - 1) {
                 if (index % 3 === 2) {
                     contents = contents + ", "
                 } else {

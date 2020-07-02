@@ -9,7 +9,7 @@ describe("analyzeComma", () => {
         expect(result).toEqual([
             "comma name:   \t275k",
             "limit:        \t11",
-            "SoPF>3:       \t21",
+            "5-rough sopfr:\t21",
             "cents:        \t10.26036403671435",
             "monzo:        \t[ 3 -7 2 0 1 ⟩",
             "ratio:        \t2200/2187",
@@ -25,7 +25,7 @@ describe("analyzeComma", () => {
         expect(result).toEqual([
             "comma name:   \t275k",
             "limit:        \t11",
-            "SoPF>3:       \t21",
+            "5-rough sopfr:\t21",
             "cents:        \t10.26036403671435",
             "monzo:        \t[ 3 -7 2 0 1 ⟩",
             "ratio:        \t2200/2187",

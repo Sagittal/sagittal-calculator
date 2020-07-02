@@ -1,20 +1,17 @@
-const {computeSopfgtt} = require("./sopfgtt")
-const {ourCandidateMetric} = require("../../scripts/notationalCommaPopularityMetric/candidateMetric")
-const {computeCommaName} = require("./commaName")
+const {computeSopfr} = require("./sopfr")
+const {computeCommaName} = require("./name")
 const {computeApotomeSlope} = require("./apotomeSlope")
 const {computeRatioFromMonzo} = require("./ratioFromMonzo")
 const {computeCentsFromRatio} = require("./centsFromRatio")
-const {computeLimit} = require("./limit")
-
-const IDEAL_PARAMETERS = {k: 0.368, j: 1, a: 0.624, b: 1, s: 0.171, u: 0.127}
+const {computeRoughMonzo} = require("./rough")
+const {computeGpf} = require("./gpf")
 
 const analyzeComma = monzo => {
     const apotomeSlope = computeApotomeSlope(monzo)
-    const commaName = computeCommaName(monzo) // todo: wait am I supposed to be getting stuff like 1:2873s
+    const commaName = computeCommaName(monzo)
     const ratio = computeRatioFromMonzo(monzo)
-    const sopfgtt = computeSopfgtt(monzo)
-    // const sopfgtt = ourCandidateMetric(ratio, IDEAL_PARAMETERS)
-    const limit = computeLimit(monzo)
+    const fiveRoughSopfr = computeSopfr(computeRoughMonzo(monzo,5)) // TODO: one day replace this with the improved fiveRoughCommaUnpopularity metric
+    const limit = computeGpf(monzo)
     const cents = computeCentsFromRatio(ratio)
 
     return {
@@ -24,7 +21,7 @@ const analyzeComma = monzo => {
         commaName,
         limit,
         apotomeSlope,
-        sopfgtt,
+        fiveRoughSopfr,
     }
 }
 

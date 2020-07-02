@@ -1,40 +1,40 @@
 const {computeTermRange} = require("../../../../src/scripts/findCommas/termRange")
 
 describe("computeTermRange", () => {
-    it("gives the valid range of the term of the monzo for a prime given a maximum SoPF>3 and a maximum CoPF>3 where the CoPF>3 is the limiting factor", () => {
+    it("gives the valid range of the term of the monzo for a prime given a maximum 5-rough sopfr and a maximum 5-rough copfr where the 5-rough copfr is the limiting factor", () => {
         const prime = 11
-        const maximumSopfgtt = 51
-        const maximumCopfgtt = 3
+        const maximumFiveRoughSopfr = 51
+        const maximumFiveRoughCopfr = 3
 
-        const result = computeTermRange(prime, {maximumSopfgtt, maximumCopfgtt})
+        const result = computeTermRange(prime, {maximumFiveRoughSopfr, maximumFiveRoughCopfr})
 
         expect(result).toEqual([-3, -2, -1, 0, 1, 2, 3])
     })
 
-    it("gives the valid range of the term of the monzo for a prime given a maximum SoPF>3 and a maximum CoPF>3 where the SoPF>3 is the limiting factor", () => {
+    it("gives the valid range of the term of the monzo for a prime given a maximum 5-rough sopfr and a maximum 5-rough copfr where the 5-rough sopfr is the limiting factor", () => {
         const prime = 11
-        const maximumSopfgtt = 30
-        const maximumCopfgtt = 3
+        const maximumFiveRoughSopfr = 30
+        const maximumFiveRoughCopfr = 3
 
-        const result = computeTermRange(prime, {maximumSopfgtt, maximumCopfgtt})
+        const result = computeTermRange(prime, {maximumFiveRoughSopfr, maximumFiveRoughCopfr})
 
         expect(result).toEqual([-2, -1, 0, 1, 2])
     })
 
-    it("gives the valid range of the term of the monzo for a prime given a maximum SoPF>3", () => {
+    it("gives the valid range of the term of the monzo for a prime given a maximum 5-rough sopfr", () => {
         const prime = 11
-        const maximumSopfgtt = 51
+        const maximumFiveRoughSopfr = 51
 
-        const result = computeTermRange(prime, {maximumSopfgtt})
+        const result = computeTermRange(prime, {maximumFiveRoughSopfr})
 
         expect(result).toEqual([-4, -3, -2, -1, 0, 1, 2, 3, 4])
     })
 
-    it("gives the valid range of the term of the monzo for a prime given a maximum CoPF>3", () => {
+    it("gives the valid range of the term of the monzo for a prime given a maximum 5-rough copfr", () => {
         const prime = 61
-        const maximumCopfgtt = 3
+        const maximumFiveRoughCopfr = 3
 
-        const result = computeTermRange(prime, {maximumCopfgtt})
+        const result = computeTermRange(prime, {maximumFiveRoughCopfr})
 
         expect(result).toEqual([-3, -2, -1, 0, 1, 2, 3])
     })

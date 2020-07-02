@@ -8,7 +8,7 @@ describe("presentComma", () => {
         commaName: "6j",
         limit: 14,
         apotomeSlope: 8.2,
-        sopfgtt: 13,
+        fiveRoughSopfr: 13,
     }
 
     it("formats it in a nice single line in the default summary mode", () => {
@@ -23,7 +23,7 @@ describe("presentComma", () => {
         expect(result).toEqual(
             "comma name:   \t6j\n" +
             "limit:        \t14\n" +
-            "SoPF>3:       \t13\n" +
+            "5-rough sopfr:\t13\n" +
             "cents:        \t11.2\n" +
             "monzo:        \t[ 0 -1 1 ⟩\n" +
             "ratio:        \t5/4\n" +
