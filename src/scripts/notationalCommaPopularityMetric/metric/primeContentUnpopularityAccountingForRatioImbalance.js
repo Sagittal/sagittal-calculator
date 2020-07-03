@@ -1,6 +1,6 @@
 const {computePrimeContentUnpopularity} = require("./primeContentUnpopularity")
-const {computeMonzoFromInteger} = require("../../utilities/comma/monzoFromInteger")
-const {computeMonzoFromRatio} = require("../../utilities/comma/monzoFromRatio")
+const {computeMonzoFromInteger} = require("../../../utilities/comma/monzoFromInteger")
+const {computeMonzoFromRatio} = require("../../../utilities/comma/monzoFromRatio")
 
 const computePrimeContentUnpopularityAccountingForRatioImbalance = (fiveRoughRatio, adjustments = {}, submetricType = {}) => {
     const {k = 1, numeratorIsNuminator = 0 } = adjustments

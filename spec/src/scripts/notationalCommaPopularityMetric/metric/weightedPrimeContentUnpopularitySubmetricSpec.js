@@ -1,6 +1,6 @@
-const {computeWeightedPrimeContentUnpopularitySubmetric} = require("../../../../src/scripts/notationalCommaPopularityMetric/weightedPrimeContentUnpopularitySubmetric")
-const {computePrimeContentUnpopularityAccountingForRatioImbalance} = require("../../../../src/scripts/notationalCommaPopularityMetric/primeContentUnpopularityAccountingForRatioImbalance")
-const primeContentUnpopularityAccountingForRatioImbalance = require("../../../../src/scripts/notationalCommaPopularityMetric/primeContentUnpopularityAccountingForRatioImbalance")
+const {computeWeightedPrimeContentUnpopularitySubmetric} = require("../../../../../src/scripts/notationalCommaPopularityMetric/metric/weightedPrimeContentUnpopularitySubmetric")
+const {computePrimeContentUnpopularityAccountingForRatioImbalance} = require("../../../../../src/scripts/notationalCommaPopularityMetric/metric/primeContentUnpopularityAccountingForRatioImbalance")
+const primeContentUnpopularityAccountingForRatioImbalance = require("../../../../../src/scripts/notationalCommaPopularityMetric/metric/primeContentUnpopularityAccountingForRatioImbalance")
 
 describe("computeWeightedPrimeContentUnpopularitySubmetric", () => {
     it("returns 0 when the weight is 0", () => {

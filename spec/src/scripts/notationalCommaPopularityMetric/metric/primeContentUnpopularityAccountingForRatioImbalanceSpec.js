@@ -1,5 +1,5 @@
-const {computePrimeContentUnpopularityAccountingForRatioImbalance} = require("../../../../src/scripts/notationalCommaPopularityMetric/primeContentUnpopularityAccountingForRatioImbalance")
-const {computePrimeContentUnpopularity} = require("../../../../src/scripts/notationalCommaPopularityMetric/primeContentUnpopularity")
+const {computePrimeContentUnpopularityAccountingForRatioImbalance} = require("../../../../../src/scripts/notationalCommaPopularityMetric/metric/primeContentUnpopularityAccountingForRatioImbalance")
+const {computePrimeContentUnpopularity} = require("../../../../../src/scripts/notationalCommaPopularityMetric/metric/primeContentUnpopularity")
 
 describe("computePrimeContentUnpopularityAccountingForRatioImbalance", () => {
     it("splits the ratio into numerator and denominator, computes their prime content unpopularity separately, then adjusts the diminuator (the lesser of the two) by k", () => {

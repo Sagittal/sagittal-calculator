@@ -1,4 +1,4 @@
-const {computeSampleBlock} = require("../../../../src/scripts/notationalCommaPopularityMetric/sampleBlock")
+const {computeSampleBlock} = require("../../../../../src/scripts/notationalCommaPopularityMetric/parameters/sampleBlock")
 
 describe("computeSampleBlock", () => {
     it("given a center, a range, and a count, will return a block of points to sample", () => {

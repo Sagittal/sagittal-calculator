@@ -1,5 +1,5 @@
-const {computePrimeContentUnpopularity} = require("../../../../src/scripts/notationalCommaPopularityMetric/primeContentUnpopularity")
-const {computeLog} = require("../../../../src/utilities/log")
+const {computePrimeContentUnpopularity} = require("../../../../../src/scripts/notationalCommaPopularityMetric/metric/primeContentUnpopularity")
+const {computeLog} = require("../../../../../src/utilities/log")
 
 describe("computePrimeContentUnpopularity", () => {
     let adjustments

@@ -1,4 +1,4 @@
-const {computePrimeContentUnpopularitySubmetricCombinedAdjustments} = require("../../../../src/scripts/notationalCommaPopularityMetric/primeContentUnpopularitySubmetricCombinedAdjustments")
+const {computePrimeContentUnpopularitySubmetricCombinedAdjustments} = require("../../../../../src/scripts/notationalCommaPopularityMetric/parameters/primeContentUnpopularitySubmetricCombinedAdjustments")
 
 describe("computePrimeContentUnpopularitySubmetricCombinedAdjustments", () => {
     it("takes the adjustments for each prime content unpopularity submetric and returns every possible combination of them", () => {

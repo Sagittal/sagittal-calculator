@@ -10,7 +10,7 @@ const ONE = {center: 1, count: 1}
 const NUMERIC_BOOLEAN = {center: 0.5, range: 1, count: 2}
 
 const combinedAdjustmentsToCheck = computePrimeContentUnpopularitySubmetricCombinedAdjustments({
-    soapfar: computeAdjustmentsToCheck({
+    soapfar: computeAdjustmentsToCheck({ // todo: this call should be handled inside computePrimeContentUnpopularitySubmetricCombinedAdjustments I think... don't change its test though, just encapsulate another layer
         // todo: and k could be either a power, a base, or a coefficient too
         // todo: also have a "submetric power or base"
         // todo: also have a "use the submetric power or base as a base"

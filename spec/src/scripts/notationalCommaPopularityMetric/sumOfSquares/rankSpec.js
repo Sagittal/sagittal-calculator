@@ -1,4 +1,4 @@
-const {addRankToOurPopularities} = require("../../../../src/scripts/notationalCommaPopularityMetric/rank")
+const {addRankToOurPopularities} = require("../../../../../src/scripts/notationalCommaPopularityMetric/sumOfSquares/rank")
 
 describe("addRankToOurPopularities", () => {
     it("adds rank to our popularities", () => {

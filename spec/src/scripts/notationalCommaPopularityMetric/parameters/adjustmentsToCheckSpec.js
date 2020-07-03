@@ -1,4 +1,4 @@
-const {computeAdjustmentsToCheck} = require("../../../../src/scripts/notationalCommaPopularityMetric/adjustmentsToCheck")
+const {computeAdjustmentsToCheck} = require("../../../../../src/scripts/notationalCommaPopularityMetric/parameters/adjustmentsToCheck")
 
 describe("computeAdjustmentsToCheck", () => {
     it("given centers, ranges, and counts for each adjustment sample, returns an array of all the possible adjustments to check", () => {

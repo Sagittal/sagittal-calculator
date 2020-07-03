@@ -1,5 +1,5 @@
-const {computeFiveRoughCommaUnpopularity} = require("../../../../src/scripts/notationalCommaPopularityMetric/fiveRoughCommaUnpopularity")
-const {computePrimeContentUnpopularity} = require("../../../../src/scripts/notationalCommaPopularityMetric/primeContentUnpopularity")
+const {computeFiveRoughCommaUnpopularity} = require("../../../../../src/scripts/notationalCommaPopularityMetric/metric/fiveRoughCommaUnpopularity")
+const {computePrimeContentUnpopularity} = require("../../../../../src/scripts/notationalCommaPopularityMetric/metric/primeContentUnpopularity")
 
 describe("computeFiveRoughCommaUnpopularity", () => {
     it("when k = 1 (default), and two 5-rough ratios have the same sopfr, but one has its primes all lopsided on one side, they still get ranked the same", () => {

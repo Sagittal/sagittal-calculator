@@ -1,5 +1,5 @@
-const {computeGpf} = require("../../utilities/comma/gpf")
-const {computeMonzoFromRatio} = require("../../utilities/comma/monzoFromRatio")
+const {computeGpf} = require("../../../utilities/comma/gpf")
+const {computeMonzoFromRatio} = require("../../../utilities/comma/monzoFromRatio")
 const {computeWeightedPrimeContentUnpopularitySubmetric} = require("./weightedPrimeContentUnpopularitySubmetric")
 
 const computeFiveRoughCommaUnpopularity = (fiveRoughRatio, parameters) => {

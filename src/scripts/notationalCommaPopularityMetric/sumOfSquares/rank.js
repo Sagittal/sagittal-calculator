@@ -1,4 +1,4 @@
-const triangularNumber = number => {
+const triangularNumber = number => { // todo: extract
     return (number * (number + 1)) / 2
 }
 

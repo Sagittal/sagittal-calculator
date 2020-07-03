@@ -1,6 +1,6 @@
-const {PRIMES} = require("../../utilities/constants")
-const {computePrimeCount} = require("../../utilities/primeCount")
-const {computeLog} = require("../../utilities/log")
+const {PRIMES} = require("../../../utilities/constants")
+const {computePrimeCount} = require("../../../utilities/primeCount")
+const {computeLog} = require("../../../utilities/log")
 
 // (sum or count)
 // of (maybe adjusted) prime factors
