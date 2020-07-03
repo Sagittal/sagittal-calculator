@@ -1,16 +1,16 @@
-const {computeSampleRange} = require("./sampleRange")
+const {computeSampleBlock} = require("./sampleBlock")
 
-const computeAdjustmentsToCheck = (adjustmentSamples = {}) => {
+const computeAdjustmentsToCheck = (adjustmentSampleBlockOptions = {}) => {
     let adjustmentsToCheck = [ {} ]
 
-    Object.entries(adjustmentSamples).forEach(([adjustmentKey, adjustmentSample]) => {
+    Object.entries(adjustmentSampleBlockOptions).forEach(([adjustmentKey, sampleBlockOptions]) => {
         let extendedAdjustmentsToCheck = []
 
-        const sampleRange = computeSampleRange(adjustmentSample)
-        if (!sampleRange.length) return
+        const sampleBlock = computeSampleBlock(sampleBlockOptions)
+        if (!sampleBlock.length) return
 
         adjustmentsToCheck.forEach(adjustmentToCheck => {
-            sampleRange.forEach(samplePoint => {
+            sampleBlock.forEach(samplePoint => {
                 extendedAdjustmentsToCheck.push({ ...adjustmentToCheck, [adjustmentKey]: samplePoint })
             })
         })

@@ -1,4 +1,10 @@
-const computeSampleRange = ({ center, range, count }) => {
+const computeSampleBlock = (sampleBlockOptions = {}) => {
+    const {
+        center,
+        range = 0,
+        count = 1,
+    } = sampleBlockOptions
+
     if (count === 1) return [center]
 
     const keys = [...Array(count).keys()]
@@ -13,5 +19,5 @@ const computeSampleRange = ({ center, range, count }) => {
 }
 
 module.exports = {
-    computeSampleRange,
+    computeSampleBlock,
 }

@@ -2,7 +2,7 @@ const {computeAdjustmentsToCheck} = require("../../../../src/scripts/notationalC
 
 describe("computeAdjustmentsToCheck", () => {
     it("given centers, ranges, and counts for each adjustment sample, returns an array of all the possible adjustments to check", () => {
-        const adjustmentSamples = {
+        const adjustmentSampleBlockOptions = {
             a: {
                 center: 1,
                 range: 0.5,
@@ -15,7 +15,7 @@ describe("computeAdjustmentsToCheck", () => {
             }
         }
 
-        const result = computeAdjustmentsToCheck(adjustmentSamples)
+        const result = computeAdjustmentsToCheck(adjustmentSampleBlockOptions)
 
         expect(result).toEqual(jasmine.arrayWithExactContents([
             { a: 0.75, b: 0.6 },
@@ -37,7 +37,7 @@ describe("computeAdjustmentsToCheck", () => {
     })
 
     it("leaves an adjustment out if it has a 0 count", () => {
-        const adjustmentSamples = {
+        const adjustmentSampleBlockOptions = {
             a: {
                 center: 1,
                 range: 0.5,
@@ -50,7 +50,7 @@ describe("computeAdjustmentsToCheck", () => {
             }
         }
 
-        const result = computeAdjustmentsToCheck(adjustmentSamples)
+        const result = computeAdjustmentsToCheck(adjustmentSampleBlockOptions)
 
         expect(result).toEqual(jasmine.arrayWithExactContents([
             { a: 0.75 },
