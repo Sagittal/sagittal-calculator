@@ -11,7 +11,7 @@
     "analyze-bounds": "node src/scripts/analyzeBounds.js",
     "find-commas": "node src/scripts/findCommas.js",
     "analyze-comma": "node src/scripts/analyzeComma.js",
-    "ncpm": "node --max-old-space-size=8192 src/scripts/notationalCommaPopularityMetric.js"
+    "unpopularity-metric": "node --max-old-space-size=8192 src/scripts/unpopularityMetric.js"
   },
   "devDependencies": {
     "colors": "^1.4.0",
