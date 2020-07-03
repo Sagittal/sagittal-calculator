@@ -62,4 +62,27 @@ describe("computeFiveRoughCommaUnpopularity", () => {
 
         expect(result).not.toBeNaN()
     })
+
+    it("here is the place for testing parameters on specific ratios one-off", () => {
+        const parameters = {
+            soapfar: {
+                adjustments: {
+                    weight: 1,
+                    k: 0,
+                    a: 1.994,
+                    aIsBaseNotPower: 1,
+                    w: -2.08,
+                    y: 0.455,
+                },
+            },
+            coapfar: {
+                adjustments: {
+                    weight: 0.577,
+                }
+            }
+        }
+
+        expect(computeFiveRoughCommaUnpopularity([11, 5], parameters)).toBe(10.626492118345443)
+        expect(computeFiveRoughCommaUnpopularity([11, 7], parameters)).toBe(11.780492118345443)
+    })
 })
