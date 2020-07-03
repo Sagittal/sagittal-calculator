@@ -19,7 +19,7 @@ const computePrimeContentUnpopularityAccountingForRatioImbalance = (fiveRoughRat
     const denominatorPrimeContentUnpopularity = computePrimeContentUnpopularity(fiveRoughDenominatorMonzo, adjustments, submetricType)
     const numinator = numeratorIsNuminator ?
         numeratorPrimeContentUnpopularity :
-        numeratorPrimeContentUnpopularity > denominatorPrimeContentUnpopularity ? // todo: a new option that says whether numinator and diminuator are based on input ratio num and dem or oriented after the fact
+        numeratorPrimeContentUnpopularity > denominatorPrimeContentUnpopularity ?
             numeratorPrimeContentUnpopularity :
             denominatorPrimeContentUnpopularity
     const diminuator = numeratorIsNuminator ?
