@@ -39,4 +39,18 @@ describe("computePrimeContentUnpopularityAccountingForRatioImbalance", () => {
             computePrimeContentUnpopularity([-1, 1, 1, -1], adjustments)
         )
     })
+
+    it("supports deciding the numinator and diminuator by the input numerator and denominator", () => {
+        const k = 0.46
+        const fiveRoughRatio = [100, 99] // 25:11 -> 10:11
+        const numeratorIsNuminator = 1
+        const adjustments = {k, numeratorIsNuminator}
+
+        const result = computePrimeContentUnpopularityAccountingForRatioImbalance(fiveRoughRatio, adjustments)
+
+        expect(result).toBe(
+            computePrimeContentUnpopularity([2, 0, 2], adjustments) +
+            k * computePrimeContentUnpopularity([0, 2, 0, 0, 1], adjustments)
+        )
+    })
 })

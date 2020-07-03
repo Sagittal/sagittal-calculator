@@ -1,21 +1,20 @@
 const {computeSumOfSquaresGivenParameters} = require("./sumOfSquaresGivenParameters")
 
-const adjustments = {
-    k: 0,
-    a: 1.994,
-    y: 0.455,
-    aIsBaseNotPower: true,
-    s: 0,
-    zipfExponent: -1,
-    usePrimeIndex: false,
-    cutOffPoint: 80,
-    useSoapfarNotSoapfrAndSoapf: true,
-    ur: 1,
-    u: 0.5,
-    cr: 0.577,
-    c: 0,
-    w: -2.08,
+const parameters = {
+    soapfar: {
+        adjustments: { // todo: confusing why sometimes it seems we need this and other times not, this adjustments nesting level... typescript would help
+            weight: 1,
+            // k: 1,
+            // a: 2,
+            // aIsBaseNotPower: 1,
+            w: -1,
+            // x: -2,
+            // y: 0.06896551724137931,
+            // t: -2,
+        }
+    }
 }
-const sumOfSquares = computeSumOfSquaresGivenParameters(adjustments)
 
-console.log(JSON.stringify({sumOfSquares, ...adjustments}))
+const sumOfSquares = computeSumOfSquaresGivenParameters(parameters, true)
+
+console.log(JSON.stringify({sumOfSquares, ...parameters}))

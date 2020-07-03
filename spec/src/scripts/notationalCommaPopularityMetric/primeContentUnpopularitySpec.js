@@ -5,7 +5,7 @@ describe("computePrimeContentUnpopularity", () => {
     let adjustments
     let submetricType
 
-    const fiveRoughMonzo = [
+    const fiveRoughMonzo = [ // todo: should be fiveRoughNumberMonzo
         0,                  // prime 2;  prime index 1 (from the prime count function)
         0,                  // prime 3;  prime index 2 (from the prime count function)
         0,                  // prime 5;  prime index 3 (from the prime count function)
@@ -75,7 +75,7 @@ describe("computePrimeContentUnpopularity", () => {
 
         it("adds a constant to each prime before applying the power or base, when x is provided", () => {
             const a = 0.56
-            const x = 0.34
+            const x = -2.1 // it should work when x sends 2 to negative, which otherwise might
             adjustments.a = a
             adjustments.x = x
 

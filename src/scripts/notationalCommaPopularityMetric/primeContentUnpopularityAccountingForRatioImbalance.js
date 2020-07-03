@@ -3,7 +3,7 @@ const {primeFactorizeInteger} = require("../../utilities/comma/monzoFromRatio")
 const {computeMonzoFromRatio} = require("../../utilities/comma/monzoFromRatio")
 
 const computePrimeContentUnpopularityAccountingForRatioImbalance = (fiveRoughRatio, adjustments = {}, submetricType = {}) => {
-    const { k = 1 } = adjustments
+    const {k = 1, numeratorIsNuminator = 0 } = adjustments
 
     if (k === 1) {
         const fiveRoughMonzo = computeMonzoFromRatio(fiveRoughRatio)
@@ -17,14 +17,18 @@ const computePrimeContentUnpopularityAccountingForRatioImbalance = (fiveRoughRat
 
     const numeratorPrimeContentUnpopularity = computePrimeContentUnpopularity(fiveRoughNumeratorMonzo, adjustments, submetricType)
     const denominatorPrimeContentUnpopularity = computePrimeContentUnpopularity(fiveRoughDenominatorMonzo, adjustments, submetricType)
-    const numinator = numeratorPrimeContentUnpopularity > denominatorPrimeContentUnpopularity ?
+    const numinator = numeratorIsNuminator ?
         numeratorPrimeContentUnpopularity :
-        denominatorPrimeContentUnpopularity
-    const diminuator = numeratorPrimeContentUnpopularity > denominatorPrimeContentUnpopularity ?
+        numeratorPrimeContentUnpopularity > denominatorPrimeContentUnpopularity ? // todo: a new option that says whether numinator and diminuator are based on input ratio num and dem or oriented after the fact
+            numeratorPrimeContentUnpopularity :
+            denominatorPrimeContentUnpopularity
+    const diminuator = numeratorIsNuminator ?
         denominatorPrimeContentUnpopularity :
-        numeratorPrimeContentUnpopularity
+        numeratorPrimeContentUnpopularity > denominatorPrimeContentUnpopularity ?
+            denominatorPrimeContentUnpopularity :
+            numeratorPrimeContentUnpopularity
 
-    // console.log('numinator', numinator, 'k', k, 'diminuator', diminuator)
+    // console.log('numinator', numinator, 'k', k, 'diminuator', diminuator, fiveRoughDenominatorMonzo)
     return numinator + k * diminuator
 }
 

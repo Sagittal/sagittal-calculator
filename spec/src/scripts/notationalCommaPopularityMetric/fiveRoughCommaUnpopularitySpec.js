@@ -36,7 +36,30 @@ describe("computeFiveRoughCommaUnpopularity", () => {
 
         expect(result).toBe(
             0.5 * computePrimeContentUnpopularity([0, 0, 0, 1, 1]) +
-            0.3 * computePrimeContentUnpopularity([0, 0, 0, 1, 1], { withRepetition: false })
+            0.3 * computePrimeContentUnpopularity([0, 0, 0, 1, 1], {withRepetition: false}),
         )
+    })
+
+    it("should not return NaN", () => {
+        const parameters = {
+            soapfar: {
+                adjustments: {
+                    weight: 1,
+                    k: 0,
+                    a: 2,
+                    aIsBaseNotPower: 1,
+                    w: -6,
+                    x: -2,
+                    y: 0.14285714285714285,
+                    v: -0.8571428571428572,
+                    t: -1.6142857142857143,
+                },
+            },
+        }
+        const fiveRoughRatio = [5, 1]
+
+        const result = computeFiveRoughCommaUnpopularity(fiveRoughRatio, parameters)
+
+        expect(result).not.toBeNaN()
     })
 })

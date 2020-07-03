@@ -38,8 +38,12 @@ const computePrimeContentUnpopularity = (fiveRoughMonzo, adjustments = {}, subme
                     prime
             adjustedPrime = adjustedPrime + x
             adjustedPrime = aIsBaseNotPower ?
-                computeLog(adjustedPrime, a) :
-                adjustedPrime ** a
+                adjustedPrime >= 1 ?
+                    computeLog(adjustedPrime, a) :
+                    1 :
+                adjustedPrime >= 0 ?
+                    adjustedPrime ** a :
+                    0
             adjustedPrime = adjustedPrime + w
 
             if (term === 0) {
@@ -47,14 +51,14 @@ const computePrimeContentUnpopularity = (fiveRoughMonzo, adjustments = {}, subme
             } else {
                 adjustedTerm = withRepetition ? Math.abs(term) : 1
                 adjustedTerm = adjustedTerm + t
-                adjustedTerm = adjustedTerm ** y
+                adjustedTerm = adjustedTerm >= 0 ? adjustedTerm ** y : 0
                 adjustedTerm = adjustedTerm + v
             }
 
 
             const primeContentUnpopularity = adjustedTerm * adjustedPrime
 
-            // console.log('p', prime, 'ap', adjustedPrime, 'r', term, 'ar', adjustedTerm, 'totalPrimeContentUnpopularity', totalPrimeContentUnpopularity)
+            // console.log("p", prime, "ap", adjustedPrime, "r", term, "ar", adjustedTerm, "totalPrimeContentUnpopularity", totalPrimeContentUnpopularity)
 
             return totalPrimeContentUnpopularity + primeContentUnpopularity
         },

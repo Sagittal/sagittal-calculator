@@ -10,6 +10,8 @@ const computePrimeContentUnpopularitySubmetricCombinedAdjustments = primeContent
             })
         })
 
+        // todo: maybe here we coudl default soapfar weight to 1
+
         combinedAdjustments = extendedCombinedAdjustments
     })
 

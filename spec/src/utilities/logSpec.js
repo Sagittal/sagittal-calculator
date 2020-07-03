@@ -10,4 +10,13 @@ describe("computeLog", () => {
 
         expect(result).toBeCloseTo(2, ACCURACY_THRESHOLD)
     })
+
+    it("is accurate", () => {
+        const value = 5
+        const base = 2
+
+        const result = computeLog(value, base)
+
+        expect(result).toBeCloseTo(2.32192809489)
+    })
 })
