@@ -6,9 +6,9 @@ const computePrimeContentUnpopularityAccountingForRatioImbalance = (fiveRoughRat
     const {k = 1, numeratorIsNuminator = 0 } = adjustments
 
     if (k === 1) {
-        const fiveRoughMonzo = computeMonzoFromRatio(fiveRoughRatio)
+        const fiveRoughNumberMonzo = computeMonzoFromRatio(fiveRoughRatio)
 
-        return computePrimeContentUnpopularity(fiveRoughMonzo, adjustments, submetricType)
+        return computePrimeContentUnpopularity(fiveRoughNumberMonzo, adjustments, submetricType)
     }
 
     const [numerator, denominator] = fiveRoughRatio

@@ -10,8 +10,8 @@ const computeFiveRoughCommaUnpopularity = (fiveRoughRatio, parameters) => {
             if (primeContentUnpopularitySubmetric === "gpf") {
                 let wgpf = 0
                 if (adjustments.weight !== 0) {
-                    const fiveRoughMonzo = computeMonzoFromRatio(fiveRoughRatio)
-                    wgpf = adjustments.weight * computeGpf(fiveRoughMonzo)
+                    const fiveRoughNumberMonzo = computeMonzoFromRatio(fiveRoughRatio)
+                    wgpf = adjustments.weight * computeGpf(fiveRoughNumberMonzo)
                 }
 
                 return wgpf

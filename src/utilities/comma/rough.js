@@ -1,6 +1,6 @@
 const {PRIMES} = require("../constants")
 
-const computeRoughMonzo = (monzo, roughness) => {
+const computeRoughNumberMonzo = (monzo, roughness) => {
     const roughnessIndex = PRIMES.findIndex(prime => prime === roughness)
 
     return monzo.map((term, index) => {
@@ -9,5 +9,5 @@ const computeRoughMonzo = (monzo, roughness) => {
 }
 
 module.exports = {
-    computeRoughMonzo,
+    computeRoughNumberMonzo,
 }

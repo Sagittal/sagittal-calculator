@@ -1,6 +1,6 @@
 const {SYMBOLS} = require("../../../../src/notations/ji/symbols")
 const {computeSopfr} = require("../../../../src/utilities/comma/sopfr")
-const {computeRoughMonzo} = require("../../../../src/utilities/comma/rough")
+const {computeRoughNumberMonzo} = require("../../../../src/utilities/comma/rough")
 const {ACCURACY_THRESHOLD} = require("../../../../src/utilities/constants")
 
 const AVERAGE_FIVE_ROUGH_SOPFR = 22.78523489932886
@@ -10,8 +10,8 @@ describe("averageFiveRoughSopfr", () => {
         const total = SYMBOLS.reduce(
             (totalFiveRoughSopfr, symbol) => {
                 const monzo = symbol.primaryComma.monzo
-                const fiveRoughMonzo = computeRoughMonzo(monzo, 5)
-                const fiveRoughSopfr = computeSopfr(fiveRoughMonzo)
+                const fiveRoughNumberMonzo = computeRoughNumberMonzo(monzo, 5)
+                const fiveRoughSopfr = computeSopfr(fiveRoughNumberMonzo)
 
                 return totalFiveRoughSopfr + fiveRoughSopfr
             },

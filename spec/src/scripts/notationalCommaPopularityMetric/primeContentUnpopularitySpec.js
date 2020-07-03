@@ -5,7 +5,7 @@ describe("computePrimeContentUnpopularity", () => {
     let adjustments
     let submetricType
 
-    const fiveRoughMonzo = [ // todo: should be fiveRoughNumberMonzo
+    const fiveRoughNumberMonzo = [
         0,                  // prime 2;  prime index 1 (from the prime count function)
         0,                  // prime 3;  prime index 2 (from the prime count function)
         0,                  // prime 5;  prime index 3 (from the prime count function)
@@ -22,7 +22,7 @@ describe("computePrimeContentUnpopularity", () => {
 
     describe("default case: submetric type sums primes, not using prime index, using repetition (adjustments tested here)", () => {
         it("sums the absolute values of the prime factors in the 5-rough monzo", () => {
-            const result = computePrimeContentUnpopularity(fiveRoughMonzo, adjustments, submetricType)
+            const result = computePrimeContentUnpopularity(fiveRoughNumberMonzo, adjustments, submetricType)
 
             expect(result).toBe(
                 1 * 11 +
@@ -35,7 +35,7 @@ describe("computePrimeContentUnpopularity", () => {
             const a = 0.56
             adjustments.a = a
 
-            const result = computePrimeContentUnpopularity(fiveRoughMonzo, adjustments, submetricType)
+            const result = computePrimeContentUnpopularity(fiveRoughNumberMonzo, adjustments, submetricType)
 
             expect(result).toBe(
                 1 * 11 ** a +
@@ -49,7 +49,7 @@ describe("computePrimeContentUnpopularity", () => {
             adjustments.a = a
             adjustments.aIsBaseNotPower = 1
 
-            const result = computePrimeContentUnpopularity(fiveRoughMonzo, adjustments, submetricType)
+            const result = computePrimeContentUnpopularity(fiveRoughNumberMonzo, adjustments, submetricType)
 
             expect(result).toBe(
                 1 * computeLog(11, a) +
@@ -64,7 +64,7 @@ describe("computePrimeContentUnpopularity", () => {
             adjustments.a = a
             adjustments.w = w
 
-            const result = computePrimeContentUnpopularity(fiveRoughMonzo, adjustments, submetricType)
+            const result = computePrimeContentUnpopularity(fiveRoughNumberMonzo, adjustments, submetricType)
 
             expect(result).toBe(
                 1 * (11 ** a + w) +
@@ -79,7 +79,7 @@ describe("computePrimeContentUnpopularity", () => {
             adjustments.a = a
             adjustments.x = x
 
-            const result = computePrimeContentUnpopularity(fiveRoughMonzo, adjustments, submetricType)
+            const result = computePrimeContentUnpopularity(fiveRoughNumberMonzo, adjustments, submetricType)
 
             expect(result).toBe(
                 1 * (11 + x) ** a +
@@ -92,7 +92,7 @@ describe("computePrimeContentUnpopularity", () => {
             const y = 0.81
             adjustments.y = y
 
-            const result = computePrimeContentUnpopularity(fiveRoughMonzo, adjustments, submetricType)
+            const result = computePrimeContentUnpopularity(fiveRoughNumberMonzo, adjustments, submetricType)
 
             expect(result).toBe(
                 1 ** y * 11 +
@@ -107,7 +107,7 @@ describe("computePrimeContentUnpopularity", () => {
             adjustments.y = y
             adjustments.v = v
 
-            const result = computePrimeContentUnpopularity(fiveRoughMonzo, adjustments, submetricType)
+            const result = computePrimeContentUnpopularity(fiveRoughNumberMonzo, adjustments, submetricType)
 
             expect(result).toBe(
                 (1 ** y + v) * 11 +
@@ -122,7 +122,7 @@ describe("computePrimeContentUnpopularity", () => {
             adjustments.y = y
             adjustments.t = t
 
-            const result = computePrimeContentUnpopularity(fiveRoughMonzo, adjustments, submetricType)
+            const result = computePrimeContentUnpopularity(fiveRoughNumberMonzo, adjustments, submetricType)
 
             expect(result).toBe(
                 (1 + t) ** y * 11 +
@@ -157,7 +157,7 @@ describe("computePrimeContentUnpopularity", () => {
                 })
 
                 it("sums the absolute values of the unique prime factors in the 5-rough monzo", () => {
-                    const result = computePrimeContentUnpopularity(fiveRoughMonzo, adjustments, submetricType)
+                    const result = computePrimeContentUnpopularity(fiveRoughNumberMonzo, adjustments, submetricType)
 
                     expect(result).toBe(
                         1 * 11 +
@@ -179,7 +179,7 @@ describe("computePrimeContentUnpopularity", () => {
                 })
 
                 it("sums the absolute values of the prime factors in the 5-rough monzo, mapped to the prime count function", () => {
-                    const result = computePrimeContentUnpopularity(fiveRoughMonzo, adjustments, submetricType)
+                    const result = computePrimeContentUnpopularity(fiveRoughNumberMonzo, adjustments, submetricType)
 
                     expect(result).toBe(
                         1 * 5 +
@@ -195,7 +195,7 @@ describe("computePrimeContentUnpopularity", () => {
                 })
 
                 it("sums the absolute values of the unique prime factors in the 5-rough monzo, mapped to the prime count function", () => {
-                    const result = computePrimeContentUnpopularity(fiveRoughMonzo, adjustments, submetricType)
+                    const result = computePrimeContentUnpopularity(fiveRoughNumberMonzo, adjustments, submetricType)
 
                     expect(result).toBe(
                         1 * 5 +
@@ -223,7 +223,7 @@ describe("computePrimeContentUnpopularity", () => {
                 })
 
                 it("counts the prime factors in the 5-rough monzo", () => {
-                    const result = computePrimeContentUnpopularity(fiveRoughMonzo, adjustments, submetricType)
+                    const result = computePrimeContentUnpopularity(fiveRoughNumberMonzo, adjustments, submetricType)
 
                     expect(result).toBe(
                         1 * 1 +
@@ -239,7 +239,7 @@ describe("computePrimeContentUnpopularity", () => {
                 })
 
                 it("counts the unique prime factors in the 5-rough monzo", () => {
-                    const result = computePrimeContentUnpopularity(fiveRoughMonzo, adjustments, submetricType)
+                    const result = computePrimeContentUnpopularity(fiveRoughNumberMonzo, adjustments, submetricType)
 
                     expect(result).toBe(
                         1 * 1 +
@@ -261,7 +261,7 @@ describe("computePrimeContentUnpopularity", () => {
                 })
 
                 it("counts the prime factors in the 5-rough monzo", () => {
-                    const result = computePrimeContentUnpopularity(fiveRoughMonzo, adjustments, submetricType)
+                    const result = computePrimeContentUnpopularity(fiveRoughNumberMonzo, adjustments, submetricType)
 
                     expect(result).toBe(
                         1 * 1 +
@@ -277,7 +277,7 @@ describe("computePrimeContentUnpopularity", () => {
                 })
 
                 it("counts the unique prime factors in the 5-rough monzo", () => {
-                    const result = computePrimeContentUnpopularity(fiveRoughMonzo, adjustments, submetricType)
+                    const result = computePrimeContentUnpopularity(fiveRoughNumberMonzo, adjustments, submetricType)
 
                     expect(result).toBe(
                         1 * 1 +

@@ -19,7 +19,7 @@ describe("verifying primary commas", () => {
             const maximumApotomeSlope = 14
             const maximumPrimeLimit = 47
             const maximumAbsoluteThreeExponent = 15
-            const fiveRoughMonzo = undefined
+            const fiveRoughNumberMonzo = undefined
             const sort = "fiveRoughSopfr"
 
             const commas = computeCommas({
@@ -30,7 +30,7 @@ describe("verifying primary commas", () => {
                 maximumApotomeSlope,
                 maximumPrimeLimit,
                 maximumAbsoluteThreeExponent,
-                fiveRoughMonzo,
+                fiveRoughNumberMonzo,
                 sort,
             })
 

@@ -7,7 +7,7 @@ const {computeLog} = require("../../utilities/log")
 // (or prime factor indices via prime count function π)
 // (maybe with (maybe adjusted) repetition)
 
-const computePrimeContentUnpopularity = (fiveRoughMonzo, adjustments = {}, submetricType = {}) => {
+const computePrimeContentUnpopularity = (fiveRoughNumberMonzo, adjustments = {}, submetricType = {}) => {
     const {
         a = 1,
         aIsBaseNotPower = 0,
@@ -24,7 +24,7 @@ const computePrimeContentUnpopularity = (fiveRoughMonzo, adjustments = {}, subme
         usePrimeIndex,
     } = submetricType
 
-    return fiveRoughMonzo.reduce(
+    return fiveRoughNumberMonzo.reduce(
         (totalPrimeContentUnpopularity, term, index) => {
             const prime = PRIMES[index]
 
