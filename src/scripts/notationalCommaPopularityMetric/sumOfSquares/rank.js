@@ -1,6 +1,4 @@
-const triangularNumber = number => { // todo: extract
-    return (number * (number + 1)) / 2
-}
+const {computeTriangularNumber} = require("../../../utilities/triangularNumber")
 
 const addRankToOurPopularities = ourApproximatePopularities => {
     const ourApproximatePopularitiesSortedByAntivotes = ourApproximatePopularities.sort((ourApproximatePopularity, nextOurApproximatePopularity) => {
@@ -21,7 +19,7 @@ const addRankToOurPopularities = ourApproximatePopularities => {
         if (tiesCount === 0) {
             rank = index + 1 // no zero-offset
         } else {
-            rank = ((index * tiesCount) + triangularNumber(tiesCount) ) / tiesCount
+            rank = ((index * tiesCount) + computeTriangularNumber(tiesCount) ) / tiesCount
 
             for (let i = index; i < index + tiesCount; i++) {
                 // console.log(ourApproximatePopularitiesSortedByAntivotes[i])
