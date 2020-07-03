@@ -1,10 +1,10 @@
 const {PRIMES} = require("../constants")
-const {primeFactorizeInteger} = require("./monzoFromRatio")
+const {computeMonzoFromInteger} = require("./monzoFromInteger")
 
 // sum of prime factors (without repetition)
 const computeSopf = monzo => {
     if (typeof monzo === "number") {
-        monzo = primeFactorizeInteger(monzo)
+        monzo = computeMonzoFromInteger(monzo)
     }
 
     return monzo.reduce(
