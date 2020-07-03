@@ -1,4 +1,4 @@
-const {computeFiveRoughCommaUnpopularity} = require("./fiveRoughCommaUnpopularity")
+const {computeFiveRoughCommaUnpopularity} = require("../metric/fiveRoughCommaUnpopularity")
 
 const computeOurPopularities = (realPopularities, parameters) => {
     return realPopularities.map((popularity, index) => {

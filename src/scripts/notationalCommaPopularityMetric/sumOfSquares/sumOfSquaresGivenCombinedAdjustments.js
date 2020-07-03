@@ -1,6 +1,6 @@
 const {computeSumOfSquaresGivenParameters} = require("./sumOfSquaresGivenParameters")
 
-const computeSumOfSquaresGivenCombinedAdjustments = (combinedAdjustments, bob) => {
+const computeSumOfSquaresGivenCombinedAdjustments = (combinedAdjustments, options = {}) => {
     const parameters = {
         soapfar: { // todo: we lost the default 1 weight on here (old comment was: the default prime content unpopularity submetric, to which other things are essentially relative, but for consistency giving it a weight too)
             adjustments: combinedAdjustments.soapfar,
@@ -73,10 +73,7 @@ const computeSumOfSquaresGivenCombinedAdjustments = (combinedAdjustments, bob) =
         }
     }
 
-    let sumOfSquares = computeSumOfSquaresGivenParameters(parameters, bob)
-
-
-    return sumOfSquares
+    return computeSumOfSquaresGivenParameters(parameters, options)
 }
 
 module.exports = {

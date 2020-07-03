@@ -1,12 +1,12 @@
 describe("notationalCommaPopularityMetric", () => {
-    xit("works", () => {
+    it("runs without error", () => {
         const command = "npm run ncpm"
 
         const result = runCommandAndGetConsoleOutput(command)
 
-        expect(result).toEqual([
-            "",
-        ])
+        // expect(result).toEqual([
+        //     "",
+        // ])
 
         /*
         const {COMMA_POPULARITIES} = require("./notationalCommaPopularityMetric/popularities")
