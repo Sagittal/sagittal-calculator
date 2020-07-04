@@ -3,7 +3,7 @@ const {SUBMETRIC_TYPE, PARAMETER} = require("../submetricCombinations/constants"
 
 const submetricCombination = [
     {
-        [PARAMETER.K]: 0,
+        [PARAMETER.K]: 0.038,
         [PARAMETER.A]: 1.994,
         [PARAMETER.A_IS_BASE_NOT_POWER]: 1,
         [PARAMETER.Y]: 0.455,
