@@ -1,7 +1,7 @@
 const {PRIMES} = require("../../../utilities/constants")
 const {computePrimeCount} = require("../../../utilities/primeCount")
 const {computeLog} = require("../../../utilities/log")
-const {SUBMETRIC_OPERATION, SUBMETRIC_TYPE, SUBMETRIC_PROPERTIES} = require("../submetricCombinations/constants")
+const {SUBMETRIC_OPERATION, SUBMETRIC_TYPE, SUBMETRIC_PROPERTIES} = require("../constants")
 
 // (sum or count)
 // of (maybe adjusted) prime factors

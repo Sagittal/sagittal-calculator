@@ -1,4 +1,4 @@
-const {PARAMETER} = require("../submetricCombinations/constants")
+const {PARAMETER} = require("../constants")
 
 const checkSubmetricCombinationForIssues = submetricCombination => {
     submetricCombination.forEach(submetric => {

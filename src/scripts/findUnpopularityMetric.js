@@ -1,6 +1,6 @@
 // This script is for developing the improvement to the "SoPF>3" metric. Once developed, it should become part of the analyzeComma script.
 
-const {SUBMETRIC_TYPE, PARAMETER} = require("./unpopularityMetric/submetricCombinations/constants")
+const {SUBMETRIC_TYPE, PARAMETER} = require("./unpopularityMetric/constants")
 const {computeSubmetricCombinations} = require("./unpopularityMetric/submetricCombinations/submetricCombinations")
 const {computeSumOfSquaresForSubmetricCombination} = require("./unpopularityMetric/sumOfSquares/sumOfSquaresForSubmetricCombination")
 

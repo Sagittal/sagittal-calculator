@@ -1,5 +1,5 @@
 const {computeUnpopularities} = require("../../../../../src/scripts/unpopularityMetric/sumOfSquares/unpopularities")
-const {SUBMETRIC_TYPE, PARAMETER} = require("../../../../../src/scripts/unpopularityMetric/submetricCombinations/constants")
+const {SUBMETRIC_TYPE, PARAMETER} = require("../../../../../src/scripts/unpopularityMetric/constants")
 
 describe("computeUnpopularities", () => {
     it("given a list of real popularities and submetric combinations, returns our estimated unpopularities, which have antivotes instead of votes", () => {

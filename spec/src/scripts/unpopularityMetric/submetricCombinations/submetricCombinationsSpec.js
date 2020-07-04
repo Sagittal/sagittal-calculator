@@ -1,5 +1,5 @@
 const {computeSubmetricCombinations} = require("../../../../../src/scripts/unpopularityMetric/submetricCombinations/submetricCombinations")
-const {PARAMETER, SUBMETRIC_TYPE} = require("../../../../../src/scripts/unpopularityMetric/submetricCombinations/constants")
+const {PARAMETER, SUBMETRIC_TYPE} = require("../../../../../src/scripts/unpopularityMetric/constants")
 
 describe("submetricCombinations", () => {
     it("given configs for submetrics' parameters, will return all combinations of submetrics to check", () => {

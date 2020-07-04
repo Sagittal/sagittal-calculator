@@ -1,5 +1,5 @@
 const {combineSubmetricsPoints} = require("../../../../../src/scripts/unpopularityMetric/submetricCombinations/combineSubmetricsPoints")
-const {SUBMETRIC_TYPE, PARAMETER} = require("../../../../../src/scripts/unpopularityMetric/submetricCombinations/constants")
+const {SUBMETRIC_TYPE, PARAMETER} = require("../../../../../src/scripts/unpopularityMetric/constants")
 
 describe("combineSubmetricsPoints", () => {
     it("takes the list of possible points for each submetric individually, and returns a list of every possible combination of them, which is then called a 'submetric combination'", () => {

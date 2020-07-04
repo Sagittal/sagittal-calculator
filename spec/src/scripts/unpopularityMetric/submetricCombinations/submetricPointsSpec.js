@@ -1,5 +1,5 @@
 const {computeSubmetricPoints} = require("../../../../../src/scripts/unpopularityMetric/submetricCombinations/submetricPoints")
-const {PARAMETER} = require("../../../../../src/scripts/unpopularityMetric/submetricCombinations/constants")
+const {PARAMETER} = require("../../../../../src/scripts/unpopularityMetric/constants")
 
 describe("computeSubmetricPoints", () => {
     it("given this submetric's configs (centers, ranges, and counts) to compute each of its parameters' sample points, returns an array of all the possible combinations of those parameter sample points ", () => {

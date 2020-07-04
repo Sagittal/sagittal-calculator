@@ -1,5 +1,5 @@
 const {computeAntivotes} = require("../antivotes/antivotes")
-const {SUBMETRIC_TYPE, PARAMETER} = require("../submetricCombinations/constants")
+const {SUBMETRIC_TYPE, PARAMETER} = require("../constants")
 const {presentRatio} = require("../../../utilities/comma/present/ratio")
 
 const submetricCombination = [

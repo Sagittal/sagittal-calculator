@@ -1,7 +1,7 @@
 const {computeWeightedSubmetricAntivotes} = require("../../../../../src/scripts/unpopularityMetric/antivotes/weightedSubmetricAntivotes")
 const {computeRatioSubmetricAntivotes} = require("../../../../../src/scripts/unpopularityMetric/antivotes/ratioSubmetricAntivotes")
 const ratioSubmetricUnpopularity = require("../../../../../src/scripts/unpopularityMetric/antivotes/ratioSubmetricAntivotes")
-const {PARAMETER, SUBMETRIC_TYPE} = require("../../../../../src/scripts/unpopularityMetric/submetricCombinations/constants")
+const {PARAMETER, SUBMETRIC_TYPE} = require("../../../../../src/scripts/unpopularityMetric/constants")
 
 describe("computeWeightedSubmetricAntivotes", () => {
     it("returns 0 when the weight is 0", () => {

@@ -58,7 +58,7 @@ const SUBMETRIC_PROPERTIES = {
         operation: SUBMETRIC_OPERATION.MAX,
         usePrimeIndex: true,
     },
-} // todo: this file should be moved up a level now
+}
 
 const PARAMETER = {
     SUBMETRIC_TYPE: "submetricType",                    // submetric type, which will be used to look up its properties (how it works) when computing antivotes

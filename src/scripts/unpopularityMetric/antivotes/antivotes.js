@@ -1,5 +1,5 @@
 const {computeWeightedSubmetricAntivotes} = require("./weightedSubmetricAntivotes")
-const {SUBMETRIC_TYPE, PARAMETER} = require("../submetricCombinations/constants")
+const {SUBMETRIC_TYPE, PARAMETER} = require("../constants")
 
 const computeAntivotes = (fiveRoughRatio, submetricCombination, {logSubmetricAntivotes = false} = {}) => {
     return submetricCombination.reduce(

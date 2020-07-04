@@ -1,5 +1,5 @@
 const {computeSumOfSquaresForSubmetricCombination} = require("../../../../../src/scripts/unpopularityMetric/sumOfSquares/sumOfSquaresForSubmetricCombination")
-const {PARAMETER, SUBMETRIC_TYPE} = require("../../../../../src/scripts/unpopularityMetric/submetricCombinations/constants")
+const {PARAMETER, SUBMETRIC_TYPE} = require("../../../../../src/scripts/unpopularityMetric/constants")
 
 describe("computeSumOfSquaresForSubmetricCombination", () => {
     it("returns the sum-of-squares for a given submetric combination", () => {
