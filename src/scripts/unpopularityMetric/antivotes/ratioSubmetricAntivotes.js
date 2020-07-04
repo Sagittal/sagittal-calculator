@@ -3,9 +3,9 @@ const {computeMonzoFromInteger} = require("../../../utilities/comma/monzoFromInt
 const {computeMonzoFromRatio} = require("../../../utilities/comma/monzoFromRatio")
 
 const computeRatioSubmetricAntivotes = (fiveRoughRatio, submetric = {}) => {
-    const {k = 1, numeratorIsNuminator = 0} = submetric
+    const {k = 1, j = 1, numeratorIsNuminator = 0} = submetric
 
-    if (k === 1) {
+    if (k === j) {
         const fiveRoughNumberMonzo = computeMonzoFromRatio(fiveRoughRatio)
 
         return computeSubmetricAntivotes(fiveRoughNumberMonzo, submetric)
@@ -28,8 +28,8 @@ const computeRatioSubmetricAntivotes = (fiveRoughRatio, submetric = {}) => {
             denominatorPrimeContentAntivotes :
             numeratorPrimeContentAntivotes
 
-    // console.log('numinator', numinator, 'k', k, 'diminuator', diminuator, fiveRoughDenominatorMonzo)
-    return numinator + k * diminuator
+    // console.log('j', j, 'numinator', numinator, 'k', k, 'diminuator', diminuator, fiveRoughDenominatorMonzo)
+    return j * numinator + k * diminuator
 }
 
 module.exports = {
