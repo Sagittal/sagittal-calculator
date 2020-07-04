@@ -5,18 +5,17 @@ const {presentRatio} = require("../../../utilities/comma/present/ratio")
 
 const combinedAdjustments = {
     [SUBMETRIC_NAME.SOAPFAR]: {
-        [ADJUSTMENT.WEIGHT]: 1,
         [ADJUSTMENT.K]: 0,
         [ADJUSTMENT.A]: 1.994,
         [ADJUSTMENT.A_IS_BASE_NOT_POWER]: 1,
-        [ADJUSTMENT.W]: -2.08,
         [ADJUSTMENT.Y]: 0.455,
+        [ADJUSTMENT.W]: -2.08,
     },
     [SUBMETRIC_NAME.COAPFAR]: {
         [ADJUSTMENT.WEIGHT]: 0.577,
     },
 }
-const fiveRoughRatio = [11, 5]
+const fiveRoughRatio = [11, 7]
 
 const parameters = computeParametersFromCombinedAdjustments(combinedAdjustments)
 const unpopularity = computeUnpopularity(fiveRoughRatio, parameters)

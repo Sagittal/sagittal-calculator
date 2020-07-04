@@ -12,13 +12,16 @@ const combinedAdjustmentsToCheck = computeCombinedSubmetricAdjustments({
         //  also have a "submetric power or base"
         //  also have a "use the submetric power or base as a base"
         //  shouldn’t you be able to weight the numinator too? with "j" I guess? in cases when you ONLY want the numinator that's the only way you could do it
-        [ADJUSTMENT.WEIGHT]: LOCKED_AT_ONE,
-        [ADJUSTMENT.K]: {center:0.213895488, count: 1},
-        [ADJUSTMENT.A]: {center:2, count: 1},
+        [ADJUSTMENT.K]: {center:0.038, count: 1},
+        [ADJUSTMENT.A]: {center:1.994, count: 1},
         [ADJUSTMENT.A_IS_BASE_NOT_POWER]: LOCKED_AT_ONE,
-        [ADJUSTMENT.W]: {center:-2.048657352, count: 1},
-        [ADJUSTMENT.Y]: {center:0.642099097, count: 1},
+        [ADJUSTMENT.W]: {center:-2.08, count: 1},
+        [ADJUSTMENT.Y]: {center:0.455, count: 1},
+        // todo: also, yikes, what assumptions have been built into the code that would prevent me from having two different soapfar entires? probably lots. but what if i need to treat the num with one y and the den with a different y?
     }),
+    [SUBMETRIC_NAME.COAPF]: computeAdjustmentsToCheck({
+        [ADJUSTMENT.WEIGHT]: {center: 0.577, count: 1}, // todo: maybe this would be smart enough that if you just gave it a flat number it'd do the right thing
+    })
 })
 
 let best = {sumOfSquares: Infinity}
