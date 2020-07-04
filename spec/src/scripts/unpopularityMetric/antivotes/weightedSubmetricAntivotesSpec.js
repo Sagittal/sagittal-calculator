@@ -1,6 +1,7 @@
 const {computeWeightedSubmetricAntivotes} = require("../../../../../src/scripts/unpopularityMetric/antivotes/weightedSubmetricAntivotes")
 const {computeRatioSubmetricAntivotes} = require("../../../../../src/scripts/unpopularityMetric/antivotes/ratioSubmetricAntivotes")
 const ratioSubmetricUnpopularity = require("../../../../../src/scripts/unpopularityMetric/antivotes/ratioSubmetricAntivotes")
+const {computeLog} = require("../../../../../src/utilities/log")
 const {PARAMETER, SUBMETRIC_TYPE} = require("../../../../../src/scripts/unpopularityMetric/constants")
 
 describe("computeWeightedSubmetricAntivotes", () => {
@@ -49,5 +50,23 @@ describe("computeWeightedSubmetricAntivotes", () => {
         const result = computeWeightedSubmetricAntivotes(fiveRoughRatio, submetric)
 
         expect(result).toBe(17)
+    })
+
+    it("can use the weight as a base", () => {
+        const fiveRoughRatio = [15, 14]
+        const submetric = {[PARAMETER.WEIGHT]: 2, [PARAMETER.WEIGHT_IS_BASE_OR_POWER]: -1}
+
+        const result = computeWeightedSubmetricAntivotes(fiveRoughRatio, submetric)
+
+        expect(result).toBe(computeLog(computeRatioSubmetricAntivotes(fiveRoughRatio), 2))
+    })
+
+    it("can use the weight as a power", () => {
+        const fiveRoughRatio = [15, 14]
+        const submetric = {[PARAMETER.WEIGHT]: 0.5, [PARAMETER.WEIGHT_IS_BASE_OR_POWER]: 1}
+
+        const result = computeWeightedSubmetricAntivotes(fiveRoughRatio, submetric)
+
+        expect(result).toBe(computeRatioSubmetricAntivotes(fiveRoughRatio) ** 0.5)
     })
 })

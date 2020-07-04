@@ -41,7 +41,7 @@ const computeSubmetricAntivotes = (fiveRoughNumberMonzo, submetric = {}) => {
                     computePrimeCount(prime) :
                     prime
             adjustedPrime = adjustedPrime + x
-            adjustedPrime = aIsBaseOrPower === USE_AS.BASE ? // todo: test
+            adjustedPrime = aIsBaseOrPower === USE_AS.BASE ?
                 adjustedPrime >= 1 ?
                     computeLog(adjustedPrime, a) :
                     1 :

@@ -1,5 +1,3 @@
-const CHECK_NUMERIC_BOOLEAN = {center: 0.5, range: 1, count: 2}
-
 const SUBMETRIC_TYPE = {
     SOAPFAR: "soapfar",
     SOAPF: "soapf",
@@ -63,6 +61,7 @@ const SUBMETRIC_PROPERTIES = {
 const PARAMETER = {
     SUBMETRIC_TYPE: "submetricType",                    // submetric type, which will be used to look up its properties (how it works) when computing antivotes
     WEIGHT: "weight",                                   // submetric coefficient
+    WEIGHT_IS_BASE_OR_POWER: "weightIsBaseOrPower",     // use the submetric coefficient instead as a power (1) or base (-1)
     K: "k",                                             // diminuator coefficient
     K_IS_BASE_OR_POWER: "kIsBaseOrPower",               // use the diminuator coefficient instead as a power (1) or base (-1)
     J: "j",                                             // numinator coefficient
@@ -83,8 +82,10 @@ const USE_AS = {
     POWER: 1,
 }
 
+const CHECK_ALL_USES = {center: 0, range: 2, count: 3}
+
 module.exports = {
-    CHECK_NUMERIC_BOOLEAN,
+    CHECK_ALL_USES,
     SUBMETRIC_PROPERTIES,
     SUBMETRIC_TYPE,
     SUBMETRIC_OPERATION,
