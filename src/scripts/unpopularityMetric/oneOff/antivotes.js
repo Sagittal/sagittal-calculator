@@ -17,8 +17,6 @@ const submetricCombination = [
 ]
 const fiveRoughRatio = [11, 7]
 
-const antivotes = computeAntivotes(fiveRoughRatio, submetricCombination)
-// todo: it might be nice if you could log what each submetric contributed,
-//  akin to how with the sum-of-squares one-off script you can log the individual unpopularities
+const antivotes = computeAntivotes(fiveRoughRatio, submetricCombination, {logSubmetricAntivotes: true})
 
 console.log(`${presentRatio(fiveRoughRatio)}\n${JSON.stringify(submetricCombination)}\n${antivotes}`)

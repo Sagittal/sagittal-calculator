@@ -3,7 +3,7 @@ const {computeMonzoFromRatio} = require("../../../utilities/comma/monzoFromRatio
 const {computeWeightedSubmetricAntivotes} = require("./weightedSubmetricAntivotes")
 const {SUBMETRIC_TYPE, PARAMETER} = require("../submetricCombinations/constants")
 
-const computeAntivotes = (fiveRoughRatio, submetricCombination) => {
+const computeAntivotes = (fiveRoughRatio, submetricCombination, {logSubmetricAntivotes = false} = {}) => {
     return submetricCombination.reduce(
         (totalAntivotes, submetric) => {
             // todo: handle gpf and gpif like any other submetric
@@ -19,6 +19,8 @@ const computeAntivotes = (fiveRoughRatio, submetricCombination) => {
             }
 
             const weightedSubmetricAntivotes = computeWeightedSubmetricAntivotes(fiveRoughRatio, submetric)
+
+            if (logSubmetricAntivotes) console.log(`${submetric[PARAMETER.SUBMETRIC_TYPE] || SUBMETRIC_TYPE.SOAPFAR}: ${weightedSubmetricAntivotes}`)
 
             return totalAntivotes + weightedSubmetricAntivotes
         },
