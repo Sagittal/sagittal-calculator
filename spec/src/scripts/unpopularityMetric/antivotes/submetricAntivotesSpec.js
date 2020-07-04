@@ -191,6 +191,30 @@ describe("computeSubmetricAntivotes", () => {
         )
     })
 
+    it("when the submetric type is gpf, takes the maximum prime factor in the 5-rough monzo", () => {
+        submetric[PARAMETER.SUBMETRIC_TYPE] = SUBMETRIC_TYPE.GPF
+
+        const result = computeSubmetricAntivotes(fiveRoughNumberMonzo, submetric)
+
+        expect(result).toBe(
+            0 * 11 +
+            0 * 13 +
+            1 * 17,
+        )
+    })
+
+    it("when the submetric type is gpf, takes the maximum prime factor index in the 5-rough monzo", () => {
+        submetric[PARAMETER.SUBMETRIC_TYPE] = SUBMETRIC_TYPE.GPIF
+
+        const result = computeSubmetricAntivotes(fiveRoughNumberMonzo, submetric)
+
+        expect(result).toBe(
+            0 * 5 +
+            0 * 6 +
+            1 * 7,
+        )
+    })
+
     it("works for an empty monzo", () => {
         const result = computeSubmetricAntivotes([], submetric)
 

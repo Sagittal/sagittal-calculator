@@ -28,6 +28,8 @@ const computeSubmetricAntivotes = (fiveRoughNumberMonzo, submetric = {}) => {
 
     return fiveRoughNumberMonzo.reduce(
         (monzoUnpopularity, term, index) => {
+            if (operation === SUBMETRIC_OPERATION.MAX && index < fiveRoughNumberMonzo.length - 1) return 0
+
             const prime = PRIMES[index]
 
             let adjustedPrime

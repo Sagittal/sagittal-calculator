@@ -49,10 +49,12 @@ const SUBMETRIC_PROPERTIES = {
         usePrimeIndex: true,
     },
     [SUBMETRIC_TYPE.GPF]: {
+        withRepetition: false,
         operation: SUBMETRIC_OPERATION.MAX,
         usePrimeIndex: false,
     },
     [SUBMETRIC_TYPE.GPIF]: {
+        withRepetition: false,
         operation: SUBMETRIC_OPERATION.MAX,
         usePrimeIndex: true,
     },
