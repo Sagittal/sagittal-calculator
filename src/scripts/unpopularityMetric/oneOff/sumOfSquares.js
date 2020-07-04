@@ -1,22 +1,20 @@
-const {computeSumOfSquaresGivenCombinedAdjustments} = require("../sumOfSquares/sumOfSquaresGivenCombinedAdjustments")
-const {SUBMETRIC_NAME, ADJUSTMENT} = require("../parameters/constants")
+const {computeSumOfSquaresForSubmetricCombination} = require("../sumOfSquares/sumOfSquaresForSubmetricCombination")
+const {SUBMETRIC_TYPE, PARAMETER} = require("../submetricCombinations/constants")
 
-const combinedAdjustments = {
-    [SUBMETRIC_NAME.SOAPFAR]: {
-        [ADJUSTMENT.K]: 0,
-        [ADJUSTMENT.A]: 1.994,
-        [ADJUSTMENT.A_IS_BASE_NOT_POWER]: 1,
-        [ADJUSTMENT.Y]: 0.455,
-        [ADJUSTMENT.W]: -2.08,
+const submetricCombination = [
+    {
+        [PARAMETER.K]: 0,
+        [PARAMETER.A]: 1.994,
+        [PARAMETER.A_IS_BASE_NOT_POWER]: 1,
+        [PARAMETER.Y]: 0.455,
+        [PARAMETER.W]: -2.08,
     },
-    [SUBMETRIC_NAME.COAPFAR]: {
-        [ADJUSTMENT.WEIGHT]: 0.577,
+    {
+        [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPFAR,
+        [PARAMETER.WEIGHT]: 0.577,
     },
-}
+]
 
-const sumOfSquares = computeSumOfSquaresGivenCombinedAdjustments(
-    combinedAdjustments,
-    {logUnpopularities: true},
-)
+const sumOfSquares = computeSumOfSquaresForSubmetricCombination(submetricCombination, {logUnpopularities: true})
 
-console.log(JSON.stringify({sumOfSquares, ...combinedAdjustments}))
+console.log(`${sumOfSquares}\n${JSON.stringify(submetricCombination)}`)

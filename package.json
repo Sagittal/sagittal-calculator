@@ -11,7 +11,7 @@
     "analyze-bounds": "node src/scripts/analyzeBounds.js",
     "find-commas": "node src/scripts/findCommas.js",
     "analyze-comma": "node src/scripts/analyzeComma.js",
-    "unpopularity-metric": "node --max-old-space-size=8192 src/scripts/unpopularityMetric.js"
+    "find-unpopularity-metric": "node --max-old-space-size=8192 src/scripts/findUnpopularityMetric.js"
   },
   "devDependencies": {
     "colors": "^1.4.0",

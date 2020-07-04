@@ -1,10 +1,10 @@
-const {computeUnpopularity} = require("../metric/unpopularity")
+const {computeAntivotes} = require("../antivotes/antivotes")
 
-const computeUnpopularities = (realPopularities, parameters) => {
+const computeUnpopularities = (realPopularities, submetricCombination) => {
     return realPopularities.map(({fiveRoughRatio}, index) => {
         return {
             index,
-            antivotes: computeUnpopularity(fiveRoughRatio, parameters),
+            antivotes: computeAntivotes(fiveRoughRatio, submetricCombination),
             fiveRoughRatio,
         }
     })

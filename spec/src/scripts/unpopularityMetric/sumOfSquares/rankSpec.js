@@ -1,14 +1,14 @@
 const {addRankToUnpopularities} = require("../../../../../src/scripts/unpopularityMetric/sumOfSquares/rank")
 
 describe("addRankToUnpopularities", () => {
-    it("adds rank to our popularities", () => {
-        const ourPopularities = [
+    it("adds rank to unpopularities", () => {
+        const unpopularities = [
             { index: 0, antivotes: 10 },
             { index: 1, antivotes: 5 },
             { index: 2, antivotes: 20 },
         ]
 
-        const result = addRankToUnpopularities(ourPopularities)
+        const result = addRankToUnpopularities(unpopularities)
 
         expect(result).toEqual([
             { index: 0, antivotes: 10, rank: 2 },
@@ -18,14 +18,14 @@ describe("addRankToUnpopularities", () => {
     })
 
     it("uses fractional ranks if some are tied", () => {
-        const ourPopularities = [
+        const unpopularities = [
             { index: 0, antivotes: 10 },
             { index: 1, antivotes: 5 },
             { index: 2, antivotes: 20 },
             { index: 3, antivotes: 10 },
         ]
 
-        const result = addRankToUnpopularities(ourPopularities)
+        const result = addRankToUnpopularities(unpopularities)
 
         expect(result).toEqual([
             { index: 0, antivotes: 10, rank: 2.5 },
@@ -36,7 +36,7 @@ describe("addRankToUnpopularities", () => {
     })
 
     it("another example of fractional ranks", () => {
-        const ourPopularities = [
+        const unpopularities = [
             { index: 0, antivotes: 10 },
             { index: 1, antivotes: 5 },
             { index: 2, antivotes: 20 },
@@ -44,7 +44,7 @@ describe("addRankToUnpopularities", () => {
             { index: 4, antivotes: 10 },
         ]
 
-        const result = addRankToUnpopularities(ourPopularities)
+        const result = addRankToUnpopularities(unpopularities)
 
         expect(result).toEqual([
             { index: 0, antivotes: 10, rank: 3 },

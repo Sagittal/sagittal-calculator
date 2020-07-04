@@ -1,8 +1,6 @@
-const LOCKED_AT_ZERO = {center: 0, count: 1}
-const LOCKED_AT_ONE = {center: 1, count: 1}
 const CHECK_NUMERIC_BOOLEAN = {center: 0.5, range: 1, count: 2}
 
-const SUBMETRIC_NAME = {
+const SUBMETRIC_TYPE = {
     SOAPFAR: "soapfar",
     SOAPF: "soapf",
     COAPFAR: "coapfar",
@@ -21,69 +19,50 @@ const SUBMETRIC_OPERATION = {
     MAX: "max",
 }
 
-const SUBMETRIC_TYPE = {
-    [SUBMETRIC_NAME.SOAPFAR]: {
+const SUBMETRIC_PROPERTIES = {
+    [SUBMETRIC_TYPE.SOAPFAR]: {
         withRepetition: true,
         operation: SUBMETRIC_OPERATION.SUM,
         usePrimeIndex: false,
-        name: SUBMETRIC_NAME.SOAPFAR,
     },
-    [SUBMETRIC_NAME.SOAPF]: {
+    [SUBMETRIC_TYPE.SOAPF]: {
         withRepetition: false,
         operation: SUBMETRIC_OPERATION.SUM,
         usePrimeIndex: false,
-        name: SUBMETRIC_NAME.SOAPF,
     },
-    [SUBMETRIC_NAME.COAPFAR]: {
+    [SUBMETRIC_TYPE.COAPFAR]: {
         withRepetition: true,
         operation: SUBMETRIC_OPERATION.COUNT,
-        usePrimeIndex: false,
-        name: SUBMETRIC_NAME.COAPFAR,
     },
-    [SUBMETRIC_NAME.COAPF]: {
+    [SUBMETRIC_TYPE.COAPF]: {
         withRepetition: false,
         operation: SUBMETRIC_OPERATION.COUNT,
-        usePrimeIndex: false,
-        name: SUBMETRIC_NAME.COAPF,
     },
-    [SUBMETRIC_NAME.SOAPIFAR]: {
+    [SUBMETRIC_TYPE.SOAPIFAR]: {
         withRepetition: true,
         operation: SUBMETRIC_OPERATION.SUM,
         usePrimeIndex: true,
-        name: SUBMETRIC_NAME.SOAPIFAR,
     },
-    [SUBMETRIC_NAME.SOAPIF]: {
+    [SUBMETRIC_TYPE.SOAPIF]: {
         withRepetition: false,
         operation: SUBMETRIC_OPERATION.SUM,
         usePrimeIndex: true,
-        name: SUBMETRIC_NAME.SOAPIF,
     },
-    [SUBMETRIC_NAME.COAPIFAR]: {
-        withRepetition: true,
-        operation: SUBMETRIC_OPERATION.COUNT,
-        usePrimeIndex: true,
-        name: SUBMETRIC_NAME.COAPIFAR,
-    },
-    [SUBMETRIC_NAME.COAPIF]: {
-        withRepetition: false,
-        operation: SUBMETRIC_OPERATION.COUNT,
-        usePrimeIndex: true,
-        name: SUBMETRIC_NAME.COAPIF,
-    },
-    [SUBMETRIC_NAME.GPF]: {
+    [SUBMETRIC_TYPE.GPF]: {
         operation: SUBMETRIC_OPERATION.MAX,
         usePrimeIndex: false,
-        name: SUBMETRIC_NAME.GPF,
     },
-    [SUBMETRIC_NAME.GPIF]: {
+    [SUBMETRIC_TYPE.GPIF]: {
         operation: SUBMETRIC_OPERATION.MAX,
         usePrimeIndex: true,
-        name: SUBMETRIC_NAME.GPIF,
     },
 }
 
-// todo: whoa i think it breaks it if y is 0 and t is -1... there should be a test that throws an error and catches that... there might be some other conditions too
-const ADJUSTMENT = {
+// todo: whoa i think it breaks it if y is 0 and t is -1...
+//  there should be a test that throws an error and catches that... there might be some other breaking conditions too
+//  such as maybe when x sends 2 to negative?
+const PARAMETER = {
+    SUBMETRIC_TYPE: "submetricType",                    // submetric type, which will be used to look up its properties (how it works) when computing antivotes
     WEIGHT: "weight",                                   // submetric coefficient
     K: "k",                                             // diminuator coefficient
     A: "a",                                             // prime power or base
@@ -97,11 +76,9 @@ const ADJUSTMENT = {
 }
 
 module.exports = {
-    LOCKED_AT_ZERO,
-    LOCKED_AT_ONE,
     CHECK_NUMERIC_BOOLEAN,
+    SUBMETRIC_PROPERTIES,
     SUBMETRIC_TYPE,
-    SUBMETRIC_NAME,
     SUBMETRIC_OPERATION,
-    ADJUSTMENT,
+    PARAMETER,
 }

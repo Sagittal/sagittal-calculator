@@ -1,14 +1,14 @@
 const {PRIMES} = require("../../../utilities/constants")
 const {computePrimeCount} = require("../../../utilities/primeCount")
 const {computeLog} = require("../../../utilities/log")
-const {SUBMETRIC_OPERATION} = require("../parameters/constants")
+const {SUBMETRIC_OPERATION, SUBMETRIC_TYPE, SUBMETRIC_PROPERTIES} = require("../submetricCombinations/constants")
 
 // (sum or count)
 // of (maybe adjusted) prime factors
 // (or prime factor indices via prime count function π)
 // (maybe with (maybe adjusted) repetition)
 
-const computeSubmetricUnpopularity = (fiveRoughNumberMonzo, adjustments = {}, submetricType = {}) => {
+const computeSubmetricAntivotes = (fiveRoughNumberMonzo, submetric = {}) => {
     const {
         a = 1,
         aIsBaseNotPower = 0,
@@ -17,16 +17,17 @@ const computeSubmetricUnpopularity = (fiveRoughNumberMonzo, adjustments = {}, su
         y = 1,
         v = 0,
         t = 0,
-    } = adjustments
+        submetricType = SUBMETRIC_TYPE.SOAPFAR,
+    } = submetric
 
     const {
         withRepetition = true,
         operation = SUBMETRIC_OPERATION.SUM,
         usePrimeIndex,
-    } = submetricType
+    } = SUBMETRIC_PROPERTIES[submetricType]
 
     return fiveRoughNumberMonzo.reduce(
-        (totalPrimeContentUnpopularity, term, index) => {
+        (monzoUnpopularity, term, index) => {
             const prime = PRIMES[index]
 
             let adjustedPrime
@@ -57,16 +58,16 @@ const computeSubmetricUnpopularity = (fiveRoughNumberMonzo, adjustments = {}, su
             }
 
 
-            const primeContentUnpopularity = adjustedTerm * adjustedPrime
+            const termUnpopularity = adjustedTerm * adjustedPrime
 
-            // console.log("p", prime, "ap", adjustedPrime, "r", term, "ar", adjustedTerm, "totalPrimeContentUnpopularity", totalPrimeContentUnpopularity)
+            // console.log("p", prime, "ap", adjustedPrime, "r", term, "ar", adjustedTerm, "monzoUnpopularity", monzoUnpopularity)
 
-            return totalPrimeContentUnpopularity + primeContentUnpopularity
+            return monzoUnpopularity + termUnpopularity
         },
         0,
     )
 }
 
 module.exports = {
-    computeSubmetricUnpopularity,
+    computeSubmetricAntivotes,
 }

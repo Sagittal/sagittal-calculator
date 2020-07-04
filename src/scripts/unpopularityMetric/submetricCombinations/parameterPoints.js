@@ -1,9 +1,9 @@
-const computeSampleBlock = (sampleBlockOptions = {}) => {
+const computeParameterPoints = (parameterConfig = {}) => {
     const {
         center,
         range = 0,
         count = 1,
-    } = sampleBlockOptions
+    } = parameterConfig
 
     if (count === 1) return [center]
 
@@ -19,5 +19,5 @@ const computeSampleBlock = (sampleBlockOptions = {}) => {
 }
 
 module.exports = {
-    computeSampleBlock,
+    computeParameterPoints,
 }
