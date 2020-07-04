@@ -64,7 +64,9 @@ const PARAMETER = {
     SUBMETRIC_TYPE: "submetricType",                    // submetric type, which will be used to look up its properties (how it works) when computing antivotes
     WEIGHT: "weight",                                   // submetric coefficient
     K: "k",                                             // diminuator coefficient
+    K_IS_BASE_OR_POWER: "kIsBaseOrPowerNotCoefficient", // use the diminuator coefficient instead as a power (1) or base (-1)
     J: "j",                                             // numinator coefficient
+    J_IS_BASE_OR_POWER: "jIsBaseOrPowerNotCoefficient", // use the numinator coefficient instead as a power (1) or base (-1)
     A: "a",                                             // prime power or base
     A_IS_BASE_NOT_POWER: "aIsBaseNotPower",             // use the prime power or base as a base
     W: "w",                                             // prime constant (applied after applying power or base)

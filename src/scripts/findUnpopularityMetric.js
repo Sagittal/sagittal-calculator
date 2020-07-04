@@ -7,8 +7,6 @@ const {computeSumOfSquaresForSubmetricCombination} = require("./unpopularityMetr
 const configs = [
     {
         // todo: new parameters.
-        //  k could be either a power, a base, or a coefficient too,
-        //  and since that's three different things, it might need to cycle through -1, 0, and 1
         //  also have a "submetric power or base"
         //  also have a "use the submetric power or base as a base", which also cycles through -1, 0, and 1
         [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPFAR,

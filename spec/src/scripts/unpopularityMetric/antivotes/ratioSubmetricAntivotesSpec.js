@@ -1,5 +1,6 @@
 const {computeRatioSubmetricAntivotes} = require("../../../../../src/scripts/unpopularityMetric/antivotes/ratioSubmetricAntivotes")
 const {computeSubmetricAntivotes} = require("../../../../../src/scripts/unpopularityMetric/antivotes/submetricAntivotes")
+const {computeLog} = require("../../../../../src/utilities/log")
 
 describe("computeRatioSubmetricAntivotes", () => {
     it("splits the ratio into numerator and denominator, computes their submetric antivotes separately, then adjusts the diminuator (the lesser of the two) by k", () => {
@@ -74,6 +75,62 @@ describe("computeRatioSubmetricAntivotes", () => {
 
         expect(result).toBe(
             computeSubmetricAntivotes([0, 0, 1, 0], submetric)
+        )
+    })
+
+    it("works when k is a base", () => {
+        const k = 2
+        const kIsBaseOrPowerNotCoefficient = -1
+        const fiveRoughRatio = [5, 7]
+        const submetric = {k, kIsBaseOrPowerNotCoefficient}
+
+        const result = computeRatioSubmetricAntivotes(fiveRoughRatio, submetric)
+
+        expect(result).toBe(
+            computeSubmetricAntivotes([0, 0, 0, 1], submetric) +
+            computeLog(computeSubmetricAntivotes([0, 0, 1, 0], submetric), 2)
+        )
+    })
+
+    it("works when k is a power", () => {
+        const k = 2
+        const kIsBaseOrPowerNotCoefficient = 1
+        const fiveRoughRatio = [5, 7]
+        const submetric = {k, kIsBaseOrPowerNotCoefficient}
+
+        const result = computeRatioSubmetricAntivotes(fiveRoughRatio, submetric)
+
+        expect(result).toBe(
+            computeSubmetricAntivotes([0, 0, 0, 1], submetric) +
+            computeSubmetricAntivotes([0, 0, 1, 0], submetric) ** 2
+        )
+    })
+
+    it("works when j is a base", () => {
+        const j = 2
+        const jIsBaseOrPowerNotCoefficient = -1
+        const fiveRoughRatio = [5, 7]
+        const submetric = {j, jIsBaseOrPowerNotCoefficient}
+
+        const result = computeRatioSubmetricAntivotes(fiveRoughRatio, submetric)
+
+        expect(result).toBe(
+            computeSubmetricAntivotes([0, 0, 1, 0], submetric) +
+            computeLog(computeSubmetricAntivotes([0, 0, 0, 1], submetric), 2)
+        )
+    })
+
+    it("works when j is a power", () => {
+        const j = 2
+        const jIsBaseOrPowerNotCoefficient = 1
+        const fiveRoughRatio = [5, 7]
+        const submetric = {j, jIsBaseOrPowerNotCoefficient}
+
+        const result = computeRatioSubmetricAntivotes(fiveRoughRatio, submetric)
+
+        expect(result).toBe(
+            computeSubmetricAntivotes([0, 0, 1, 0], submetric) +
+            computeSubmetricAntivotes([0, 0, 0, 1], submetric) ** 2
         )
     })
 })
