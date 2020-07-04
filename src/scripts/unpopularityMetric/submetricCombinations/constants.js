@@ -58,11 +58,8 @@ const SUBMETRIC_PROPERTIES = {
         operation: SUBMETRIC_OPERATION.MAX,
         usePrimeIndex: true,
     },
-}
+} // todo: this file should be moved up a level now
 
-// todo: whoa i think it breaks it if y is 0 and t is -1...
-//  there should be a test that throws an error and catches that... there might be some other breaking conditions too
-//  such as maybe when x sends 2 to negative?
 const PARAMETER = {
     SUBMETRIC_TYPE: "submetricType",                    // submetric type, which will be used to look up its properties (how it works) when computing antivotes
     WEIGHT: "weight",                                   // submetric coefficient
