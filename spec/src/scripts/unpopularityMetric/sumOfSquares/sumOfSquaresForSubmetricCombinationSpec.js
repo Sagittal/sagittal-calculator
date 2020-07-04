@@ -1,5 +1,5 @@
 const {computeSumOfSquaresForSubmetricCombination} = require("../../../../../src/scripts/unpopularityMetric/sumOfSquares/sumOfSquaresForSubmetricCombination")
-const {PARAMETER, SUBMETRIC_TYPE} = require("../../../../../src/scripts/unpopularityMetric/constants")
+const {PARAMETER, SUBMETRIC_TYPE, USE_AS} = require("../../../../../src/scripts/unpopularityMetric/constants")
 
 describe("computeSumOfSquaresForSubmetricCombination", () => {
     it("returns the sum-of-squares for a given submetric combination", () => {
@@ -7,7 +7,7 @@ describe("computeSumOfSquaresForSubmetricCombination", () => {
             {
                 [PARAMETER.K]: 0.038,
                 [PARAMETER.A]: 1.994,
-                [PARAMETER.A_IS_BASE_NOT_POWER]: 1,
+                [PARAMETER.A_IS_BASE_OR_POWER]: USE_AS.BASE,
                 [PARAMETER.Y]: 0.455,
                 [PARAMETER.W]: -2.08,
             },
@@ -26,7 +26,7 @@ describe("computeSumOfSquaresForSubmetricCombination", () => {
         const submetricCombination = [
             {
                 [PARAMETER.A]: 1,
-                [PARAMETER.A_IS_BASE_NOT_POWER]: 1,
+                [PARAMETER.A_IS_BASE_OR_POWER]: USE_AS.BASE,
             },
         ]
 
@@ -37,7 +37,7 @@ describe("computeSumOfSquaresForSubmetricCombination", () => {
         const submetricCombination = [
             {
                 [PARAMETER.A]: -2.23,
-                [PARAMETER.A_IS_BASE_NOT_POWER]: 1,
+                [PARAMETER.A_IS_BASE_OR_POWER]: USE_AS.BASE,
             },
         ]
 

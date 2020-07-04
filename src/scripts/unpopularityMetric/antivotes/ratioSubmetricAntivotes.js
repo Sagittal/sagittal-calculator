@@ -2,13 +2,14 @@ const {computeSubmetricAntivotes} = require("./submetricAntivotes")
 const {computeMonzoFromInteger} = require("../../../utilities/comma/monzoFromInteger")
 const {computeMonzoFromRatio} = require("../../../utilities/comma/monzoFromRatio")
 const {computeLog} = require("../../../utilities/log")
+const {USE_AS} = require("../constants")
 
 const computeRatioSubmetricAntivotes = (fiveRoughRatio, submetric = {}) => {
     const {
         k = 1,
         j = 1,
-        jIsBaseOrPowerNotCoefficient = 0,
-        kIsBaseOrPowerNotCoefficient = 0,
+        jIsBaseOrPower = USE_AS.COEFFICIENT,
+        kIsBaseOrPower = USE_AS.COEFFICIENT,
         numeratorIsNuminator = 0
     } = submetric
 
@@ -35,15 +36,15 @@ const computeRatioSubmetricAntivotes = (fiveRoughRatio, submetric = {}) => {
             denominatorPrimeContentAntivotes :
             numeratorPrimeContentAntivotes
 
-    const weightedNuminator = jIsBaseOrPowerNotCoefficient === -1 ?
+    const weightedNuminator = jIsBaseOrPower === USE_AS.BASE ?
         computeLog(numinator, j) :
-        jIsBaseOrPowerNotCoefficient === 1 ?
+        jIsBaseOrPower === USE_AS.POWER ?
             numinator ** j :
             numinator * j
 
-    const weightedDiminuator = kIsBaseOrPowerNotCoefficient === -1 ?
+    const weightedDiminuator = kIsBaseOrPower === USE_AS.BASE ?
         computeLog(diminuator, k) :
-        kIsBaseOrPowerNotCoefficient === 1 ?
+        kIsBaseOrPower === USE_AS.POWER ?
             diminuator ** k :
             diminuator * k
 

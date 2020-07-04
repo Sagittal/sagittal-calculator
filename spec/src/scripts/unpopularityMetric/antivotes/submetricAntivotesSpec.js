@@ -1,6 +1,6 @@
 const {computeSubmetricAntivotes} = require("../../../../../src/scripts/unpopularityMetric/antivotes/submetricAntivotes")
 const {computeLog} = require("../../../../../src/utilities/log")
-const {PARAMETER, SUBMETRIC_TYPE} = require("../../../../../src/scripts/unpopularityMetric/constants")
+const {PARAMETER, SUBMETRIC_TYPE, USE_AS} = require("../../../../../src/scripts/unpopularityMetric/constants")
 
 describe("computeSubmetricAntivotes", () => {
     let submetric
@@ -30,7 +30,7 @@ describe("computeSubmetricAntivotes", () => {
             )
         })
 
-        it("when a is provided, raises the prime to a power", () => {
+        it("when a is provided, raises the prime to a power (for a, unlike j and k and weight, power is the default)", () => {
             const a = 0.56
             submetric[PARAMETER.A] = a
 
@@ -43,10 +43,24 @@ describe("computeSubmetricAntivotes", () => {
             )
         })
 
+        it("when a is used as a coefficient", () => {
+            const a = 0.56
+            submetric[PARAMETER.A] = a
+            submetric[PARAMETER.A_IS_BASE_OR_POWER] = USE_AS.COEFFICIENT
+
+            const result = computeSubmetricAntivotes(fiveRoughNumberMonzo, submetric)
+
+            expect(result).toBe(
+                1 * 11 * a +
+                1 * 13 * a +
+                2 * 17 * a,
+            )
+        })
+
         it("when a is used as a base (not a power)", () => {
             const a = 0.56
             submetric[PARAMETER.A] = a
-            submetric[PARAMETER.A_IS_BASE_NOT_POWER] = 1
+            submetric[PARAMETER.A_IS_BASE_OR_POWER] = USE_AS.BASE
 
             const result = computeSubmetricAntivotes(fiveRoughNumberMonzo, submetric)
 

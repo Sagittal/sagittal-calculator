@@ -1,6 +1,6 @@
 const {computeAntivotes} = require("../../../../../src/scripts/unpopularityMetric/antivotes/antivotes")
 const {computeSubmetricAntivotes} = require("../../../../../src/scripts/unpopularityMetric/antivotes/submetricAntivotes")
-const {SUBMETRIC_TYPE, PARAMETER} = require("../../../../../src/scripts/unpopularityMetric/constants")
+const {SUBMETRIC_TYPE, PARAMETER, USE_AS} = require("../../../../../src/scripts/unpopularityMetric/constants")
 
 describe("computeAntivotes", () => {
     it("when k = 1 (default), and two 5-rough ratios have the same sopfr, but one has its primes all lopsided on one side, they still get ranked the same", () => {
@@ -59,7 +59,7 @@ describe("computeAntivotes", () => {
                 [PARAMETER.WEIGHT]: 1,
                 [PARAMETER.K]: 0,
                 [PARAMETER.A]: 2,
-                [PARAMETER.A_IS_BASE_NOT_POWER]: 1,
+                [PARAMETER.A_IS_BASE_OR_POWER]: USE_AS.BASE,
                 [PARAMETER.W]: -6,
                 [PARAMETER.X]: -2,
                 [PARAMETER.Y]: 0.14285714285714285,

@@ -1,7 +1,7 @@
 const {PRIMES} = require("../../../utilities/constants")
 const {computePrimeCount} = require("../../../utilities/primeCount")
 const {computeLog} = require("../../../utilities/log")
-const {SUBMETRIC_OPERATION, SUBMETRIC_TYPE, SUBMETRIC_PROPERTIES} = require("../constants")
+const {SUBMETRIC_OPERATION, SUBMETRIC_TYPE, SUBMETRIC_PROPERTIES, USE_AS} = require("../constants")
 
 // (sum or count)
 // of (maybe adjusted) prime factors
@@ -11,7 +11,7 @@ const {SUBMETRIC_OPERATION, SUBMETRIC_TYPE, SUBMETRIC_PROPERTIES} = require("../
 const computeSubmetricAntivotes = (fiveRoughNumberMonzo, submetric = {}) => {
     const {
         a = 1,
-        aIsBaseNotPower = 0,
+        aIsBaseOrPower = USE_AS.POWER,
         w = 0,
         x = 0,
         y = 1,
@@ -41,13 +41,16 @@ const computeSubmetricAntivotes = (fiveRoughNumberMonzo, submetric = {}) => {
                     computePrimeCount(prime) :
                     prime
             adjustedPrime = adjustedPrime + x
-            adjustedPrime = aIsBaseNotPower ?
+            adjustedPrime = aIsBaseOrPower === USE_AS.BASE ? // todo: test
                 adjustedPrime >= 1 ?
                     computeLog(adjustedPrime, a) :
                     1 :
-                adjustedPrime >= 0 ?
-                    adjustedPrime ** a :
-                    0
+                aIsBaseOrPower === USE_AS.POWER ?
+                    adjustedPrime >= 0 ?
+                        adjustedPrime ** a :
+                        0
+                    :
+                    adjustedPrime * a
             adjustedPrime = adjustedPrime + w
 
             if (term === 0) {

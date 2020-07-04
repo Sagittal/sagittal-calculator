@@ -1,11 +1,11 @@
 const {computeSumOfSquaresForSubmetricCombination} = require("../sumOfSquares/sumOfSquaresForSubmetricCombination")
-const {SUBMETRIC_TYPE, PARAMETER} = require("../constants")
+const {SUBMETRIC_TYPE, PARAMETER, USE_AS} = require("../constants")
 
 const submetricCombination = [
     {
         [PARAMETER.K]: 0.038,
         [PARAMETER.A]: 1.994,
-        [PARAMETER.A_IS_BASE_NOT_POWER]: 1,
+        [PARAMETER.A_IS_BASE_OR_POWER]: USE_AS.BASE,
         [PARAMETER.Y]: 0.455,
         [PARAMETER.W]: -2.08,
     },
