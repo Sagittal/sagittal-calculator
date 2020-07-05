@@ -1,4 +1,4 @@
-const {checkIfLocalMinimum} = require("../../../../../src/scripts/unpopularityMetric/automator/checkIfLocalMinimum")
+const {checkIfLocalMinimum} = require("../../../../../src/scripts/unpopularityMetric/automator/localMinimum")
 const {setSumOfSquaresAtCoordinate} = require("../../../../../src/scripts/unpopularityMetric/automator/setSumOfSquaresAtCoordinate")
 
 describe("checkIfLocalMinimum", () => {
