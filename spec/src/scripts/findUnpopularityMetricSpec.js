@@ -1,5 +1,5 @@
 describe("unpopularityMetric", () => {
-    xit("runs without error", () => {
+    it("runs without error", () => {
         const command = "npm run find-unpopularity-metric"
 
         const result = runCommandAndGetConsoleOutput(command)
