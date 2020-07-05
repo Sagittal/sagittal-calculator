@@ -2,7 +2,7 @@ const {computeSubmetricAntivotes} = require("./submetricAntivotes")
 const {computeMonzoFromInteger} = require("../../../utilities/comma/monzoFromInteger")
 const {computeMonzoFromRatio} = require("../../../utilities/comma/monzoFromRatio")
 const {computeLog} = require("../../../utilities/log")
-const {USE_AS} = require("../constants")
+const {USE_AS, NUMERIC_BOOLEAN} = require("../constants")
 
 const computeRatioSubmetricAntivotes = (fiveRoughRatio, submetric = {}) => {
     const {
@@ -10,7 +10,7 @@ const computeRatioSubmetricAntivotes = (fiveRoughRatio, submetric = {}) => {
         j = 1,
         jIsBaseOrPower = USE_AS.COEFFICIENT,
         kIsBaseOrPower = USE_AS.COEFFICIENT,
-        numeratorIsNuminator = 0
+        numeratorIsNuminator = NUMERIC_BOOLEAN.FALSE,
     } = submetric
 
     if (k === j) {
@@ -25,12 +25,12 @@ const computeRatioSubmetricAntivotes = (fiveRoughRatio, submetric = {}) => {
 
     const numeratorPrimeContentAntivotes = computeSubmetricAntivotes(fiveRoughNumeratorMonzo, submetric)
     const denominatorPrimeContentAntivotes = computeSubmetricAntivotes(fiveRoughDenominatorMonzo, submetric)
-    const numinator = numeratorIsNuminator ?
+    const numinator = numeratorIsNuminator === NUMERIC_BOOLEAN.TRUE ?
         numeratorPrimeContentAntivotes :
         numeratorPrimeContentAntivotes > denominatorPrimeContentAntivotes ?
             numeratorPrimeContentAntivotes :
             denominatorPrimeContentAntivotes
-    const diminuator = numeratorIsNuminator ?
+    const diminuator = numeratorIsNuminator === NUMERIC_BOOLEAN.TRUE ?
         denominatorPrimeContentAntivotes :
         numeratorPrimeContentAntivotes > denominatorPrimeContentAntivotes ?
             denominatorPrimeContentAntivotes :

@@ -1,7 +1,7 @@
 const {computeRatioSubmetricAntivotes} = require("../../../../../src/scripts/unpopularityMetric/antivotes/ratioSubmetricAntivotes")
 const {computeSubmetricAntivotes} = require("../../../../../src/scripts/unpopularityMetric/antivotes/submetricAntivotes")
 const {computeLog} = require("../../../../../src/utilities/log")
-const {USE_AS} = require("../../../../../src/scripts/unpopularityMetric/constants")
+const {USE_AS, NUMERIC_BOOLEAN} = require("../../../../../src/scripts/unpopularityMetric/constants")
 
 describe("computeRatioSubmetricAntivotes", () => {
     it("splits the ratio into numerator and denominator, computes their submetric antivotes separately, then adjusts the diminuator (the lesser of the two) by k", () => {
@@ -44,7 +44,7 @@ describe("computeRatioSubmetricAntivotes", () => {
     it("supports deciding the numinator and diminuator by the input numerator and denominator", () => {
         const k = 0.46
         const fiveRoughRatio = [25, 11] // 10:11
-        const numeratorIsNuminator = 1
+        const numeratorIsNuminator = NUMERIC_BOOLEAN.TRUE
         const submetric = {k, numeratorIsNuminator}
 
         const result = computeRatioSubmetricAntivotes(fiveRoughRatio, submetric)

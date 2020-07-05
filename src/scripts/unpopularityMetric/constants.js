@@ -74,6 +74,7 @@ const PARAMETER = {
     V: "v",                                             // term constant (applied before applying power, for non-zero terms)
     T: "t",                                             // term constant (applied after applying power)
     NUMERATOR_IS_NUMINATOR: "numeratorIsNuminator",     // numinator is determined by the original ratio's numerator, not the greater of the two results of calling the submetric on the original ratio's numerator and denominator
+    MODIFIED_COUNT: "modifiedCount",                    // Dave's trick where 5's get a half-count
 }
 
 const USE_AS = {
@@ -82,13 +83,21 @@ const USE_AS = {
     POWER: 1,
 }
 
+const NUMERIC_BOOLEAN = {
+    TRUE: 1,
+    FALSE: 0,
+}
+
 const CHECK_ALL_USES = {center: 0, range: 2, count: 3}
+const CHECK_NUMERIC_BOOLEAN = {center: 0.5, range: 1, count: 2}
 
 module.exports = {
     CHECK_ALL_USES,
+    CHECK_NUMERIC_BOOLEAN,
     SUBMETRIC_PROPERTIES,
     SUBMETRIC_TYPE,
     SUBMETRIC_OPERATION,
     PARAMETER,
     USE_AS,
+    NUMERIC_BOOLEAN,
 }

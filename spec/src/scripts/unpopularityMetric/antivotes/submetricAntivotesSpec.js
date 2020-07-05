@@ -1,6 +1,6 @@
 const {computeSubmetricAntivotes} = require("../../../../../src/scripts/unpopularityMetric/antivotes/submetricAntivotes")
 const {computeLog} = require("../../../../../src/utilities/log")
-const {PARAMETER, SUBMETRIC_TYPE, USE_AS} = require("../../../../../src/scripts/unpopularityMetric/constants")
+const {PARAMETER, SUBMETRIC_TYPE, USE_AS, NUMERIC_BOOLEAN} = require("../../../../../src/scripts/unpopularityMetric/constants")
 
 describe("computeSubmetricAntivotes", () => {
     let submetric
@@ -141,6 +141,18 @@ describe("computeSubmetricAntivotes", () => {
                 (1 + t) ** y * 11 +
                 (1 + t) ** y * 13 +
                 (2 + t) ** y * 17,
+            )
+        })
+
+        it("when Dave's modified count is provided, counts 5's half as much as normal", () => {
+            submetric[PARAMETER.MODIFIED_COUNT] = NUMERIC_BOOLEAN.TRUE
+            const fiveRoughNumberMonzo = [0, 0, 1, -1]
+
+            const result = computeSubmetricAntivotes(fiveRoughNumberMonzo, submetric)
+
+            expect(result).toBe(
+                0.5 * 5 +
+                1 * 7
             )
         })
     })

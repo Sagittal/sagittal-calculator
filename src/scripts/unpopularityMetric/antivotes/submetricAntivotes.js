@@ -1,7 +1,7 @@
 const {PRIMES} = require("../../../utilities/constants")
 const {computePrimeCount} = require("../../../utilities/primeCount")
 const {computeLog} = require("../../../utilities/log")
-const {SUBMETRIC_OPERATION, SUBMETRIC_TYPE, SUBMETRIC_PROPERTIES, USE_AS} = require("../constants")
+const {SUBMETRIC_OPERATION, SUBMETRIC_TYPE, SUBMETRIC_PROPERTIES, USE_AS, NUMERIC_BOOLEAN} = require("../constants")
 
 // (sum or count)
 // of (maybe adjusted) prime factors
@@ -18,6 +18,7 @@ const computeSubmetricAntivotes = (fiveRoughNumberMonzo, submetric = {}) => {
         v = 0,
         t = 0,
         submetricType = SUBMETRIC_TYPE.SOAPFAR,
+        modifiedCount = NUMERIC_BOOLEAN.FALSE,
     } = submetric
 
     const {
@@ -62,10 +63,10 @@ const computeSubmetricAntivotes = (fiveRoughNumberMonzo, submetric = {}) => {
                 adjustedTerm = adjustedTerm + v
             }
 
-
-            const termUnpopularity = adjustedTerm * adjustedPrime
-
-            // console.log("p", prime, "ap", adjustedPrime, "r", term, "ar", adjustedTerm, "monzoUnpopularity", monzoUnpopularity)
+            let termUnpopularity = adjustedTerm * adjustedPrime
+            if (index === 2 && modifiedCount === NUMERIC_BOOLEAN.TRUE) {
+                termUnpopularity = termUnpopularity * 0.5
+            }
 
             return monzoUnpopularity + termUnpopularity
         },
