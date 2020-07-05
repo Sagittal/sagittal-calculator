@@ -30,7 +30,7 @@ describe("computeSubmetricAntivotes", () => {
             )
         })
 
-        it("when a is provided, raises the prime to a power (for a, unlike j and k and weight, power is the default)", () => {
+        it("when a is provided, raises the prime to an exponent (for a, unlike j and k and weight, exponent is the default)", () => {
             const a = 0.56
             submetric[PARAMETER.A] = a
 
@@ -46,7 +46,7 @@ describe("computeSubmetricAntivotes", () => {
         it("when a is used as a coefficient", () => {
             const a = 0.56
             submetric[PARAMETER.A] = a
-            submetric[PARAMETER.A_IS_BASE_OR_POWER] = USE_AS.COEFFICIENT
+            submetric[PARAMETER.A_IS_BASE_OR_EXPONENT] = USE_AS.COEFFICIENT
 
             const result = computeSubmetricAntivotes(fiveRoughNumberMonzo, submetric)
 
@@ -57,10 +57,10 @@ describe("computeSubmetricAntivotes", () => {
             )
         })
 
-        it("when a is used as a base (not a power)", () => {
+        it("when a is used as a base (not an exponent)", () => {
             const a = 0.56
             submetric[PARAMETER.A] = a
-            submetric[PARAMETER.A_IS_BASE_OR_POWER] = USE_AS.BASE
+            submetric[PARAMETER.A_IS_BASE_OR_EXPONENT] = USE_AS.BASE
 
             const result = computeSubmetricAntivotes(fiveRoughNumberMonzo, submetric)
 
@@ -71,7 +71,7 @@ describe("computeSubmetricAntivotes", () => {
             )
         })
 
-        it("when w is provided, adds a constant to each prime after applying the power or base", () => {
+        it("when w is provided, adds a constant to each prime after applying the exponent or base", () => {
             const a = 0.56
             const w = 0.34
             submetric[PARAMETER.A] = a
@@ -86,7 +86,7 @@ describe("computeSubmetricAntivotes", () => {
             )
         })
 
-        it("when x is provided, adds a constant to each prime before applying the power or base", () => {
+        it("when x is provided, adds a constant to each prime before applying the exponent or base", () => {
             const a = 0.56
             const x = -2.1
             submetric[PARAMETER.A] = a
@@ -101,7 +101,7 @@ describe("computeSubmetricAntivotes", () => {
             )
         })
 
-        it("when y is provided, raises the term to a power", () => {
+        it("when y is provided, raises the term to an exponent", () => {
             const y = 0.81
             submetric[PARAMETER.Y] = y
 
@@ -114,7 +114,7 @@ describe("computeSubmetricAntivotes", () => {
             )
         })
 
-        it("when v is provided, adds a constant to each *non-zero* term after applying the power", () => {
+        it("when v is provided, adds a constant to each *non-zero* term after applying the exponent", () => {
             const y = 0.81
             const v = 0.34
             submetric[PARAMETER.Y] = y
@@ -129,7 +129,7 @@ describe("computeSubmetricAntivotes", () => {
             )
         })
 
-        it("when t is provided, adds a constant to each *non-zero* term before applying the power", () => {
+        it("when t is provided, adds a constant to each *non-zero* term before applying the exponent", () => {
             const y = 0.81
             const t = 0.34
             submetric[PARAMETER.Y] = y

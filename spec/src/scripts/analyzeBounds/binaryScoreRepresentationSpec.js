@@ -1,7 +1,7 @@
 const {computeBinaryScoreRepresentationIndex} = require("../../../../src/scripts/analyzeBounds/binaryScoreRepresentationCardinality")
 
 describe("computeBinaryScoreRepresentationIndex", () => {
-    it("gives the correct index for the power of two based score", () => {
+    it("gives the correct index for the power-of-two-based score", () => {
         expect(computeBinaryScoreRepresentationIndex(0, 4)).toBe(0)
         expect(computeBinaryScoreRepresentationIndex(0, 3)).toBe(1)
         expect(computeBinaryScoreRepresentationIndex(0, 2)).toBe(2)

@@ -8,7 +8,7 @@ const submetricCombination =
         {
             [PARAMETER.K]: 0,
             [PARAMETER.A]: 1.994,
-            [PARAMETER.A_IS_BASE_OR_POWER]: USE_AS.BASE,
+            [PARAMETER.A_IS_BASE_OR_EXPONENT]: USE_AS.BASE,
             [PARAMETER.Y]: 0.455,
             [PARAMETER.W]: -2.08,
         },

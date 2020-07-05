@@ -11,7 +11,7 @@ const {SUBMETRIC_OPERATION, SUBMETRIC_TYPE, SUBMETRIC_PROPERTIES, USE_AS, NUMERI
 const computeSubmetricAntivotes = (fiveRoughNumberMonzo, submetric = {}) => {
     const {
         a = 1,
-        aIsBaseOrPower = USE_AS.POWER,
+        aIsBaseOrExponent = USE_AS.EXPONENT,
         w = 0,
         x = 0,
         y = 1,
@@ -42,11 +42,11 @@ const computeSubmetricAntivotes = (fiveRoughNumberMonzo, submetric = {}) => {
                     computePrimeCount(prime) :
                     prime
             adjustedPrime = adjustedPrime + x
-            adjustedPrime = aIsBaseOrPower === USE_AS.BASE ?
+            adjustedPrime = aIsBaseOrExponent === USE_AS.BASE ?
                 adjustedPrime >= 1 ?
                     computeLog(adjustedPrime, a) :
                     1 :
-                aIsBaseOrPower === USE_AS.POWER ?
+                aIsBaseOrExponent === USE_AS.EXPONENT ?
                     adjustedPrime >= 0 ?
                         adjustedPrime ** a :
                         0

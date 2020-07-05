@@ -81,9 +81,9 @@ describe("computeRatioSubmetricAntivotes", () => {
 
     it("works when k is a base", () => {
         const k = 2
-        const kIsBaseOrPower = USE_AS.BASE
+        const kIsBaseOrExponent = USE_AS.BASE
         const fiveRoughRatio = [5, 7]
-        const submetric = {k, kIsBaseOrPower}
+        const submetric = {k, kIsBaseOrExponent}
 
         const result = computeRatioSubmetricAntivotes(fiveRoughRatio, submetric)
 
@@ -93,11 +93,11 @@ describe("computeRatioSubmetricAntivotes", () => {
         )
     })
 
-    it("works when k is a power", () => {
+    it("works when k is an exponent", () => {
         const k = 2
-        const kIsBaseOrPower = USE_AS.POWER
+        const kIsBaseOrExponent = USE_AS.EXPONENT
         const fiveRoughRatio = [5, 7]
-        const submetric = {k, kIsBaseOrPower}
+        const submetric = {k, kIsBaseOrExponent}
 
         const result = computeRatioSubmetricAntivotes(fiveRoughRatio, submetric)
 
@@ -109,9 +109,9 @@ describe("computeRatioSubmetricAntivotes", () => {
 
     it("works when j is a base", () => {
         const j = 2
-        const jIsBaseOrPower = USE_AS.BASE
+        const jIsBaseOrExponent = USE_AS.BASE
         const fiveRoughRatio = [5, 7]
-        const submetric = {j, jIsBaseOrPower}
+        const submetric = {j, jIsBaseOrExponent}
 
         const result = computeRatioSubmetricAntivotes(fiveRoughRatio, submetric)
 
@@ -121,11 +121,11 @@ describe("computeRatioSubmetricAntivotes", () => {
         )
     })
 
-    it("works when j is a power", () => {
+    it("works when j is an exponent", () => {
         const j = 2
-        const jIsBaseOrPower = USE_AS.POWER
+        const jIsBaseOrExponent = USE_AS.EXPONENT
         const fiveRoughRatio = [5, 7]
-        const submetric = {j, jIsBaseOrPower}
+        const submetric = {j, jIsBaseOrExponent}
 
         const result = computeRatioSubmetricAntivotes(fiveRoughRatio, submetric)
 

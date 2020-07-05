@@ -8,8 +8,8 @@ const computeRatioSubmetricAntivotes = (fiveRoughRatio, submetric = {}) => {
     const {
         k = 1,
         j = 1,
-        jIsBaseOrPower = USE_AS.COEFFICIENT,
-        kIsBaseOrPower = USE_AS.COEFFICIENT,
+        jIsBaseOrExponent = USE_AS.COEFFICIENT,
+        kIsBaseOrExponent = USE_AS.COEFFICIENT,
         numeratorIsNuminator = NUMERIC_BOOLEAN.FALSE,
     } = submetric
 
@@ -36,15 +36,15 @@ const computeRatioSubmetricAntivotes = (fiveRoughRatio, submetric = {}) => {
             denominatorPrimeContentAntivotes :
             numeratorPrimeContentAntivotes
 
-    const weightedNuminator = jIsBaseOrPower === USE_AS.BASE ?
+    const weightedNuminator = jIsBaseOrExponent === USE_AS.BASE ?
         computeLog(numinator, j) :
-        jIsBaseOrPower === USE_AS.POWER ?
+        jIsBaseOrExponent === USE_AS.EXPONENT ?
             numinator ** j :
             numinator * j
 
-    const weightedDiminuator = kIsBaseOrPower === USE_AS.BASE ?
+    const weightedDiminuator = kIsBaseOrExponent === USE_AS.BASE ?
         computeLog(diminuator, k) :
-        kIsBaseOrPower === USE_AS.POWER ?
+        kIsBaseOrExponent === USE_AS.EXPONENT ?
             diminuator ** k :
             diminuator * k
 

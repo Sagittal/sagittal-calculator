@@ -59,7 +59,7 @@ describe("computeAntivotes", () => {
                 [PARAMETER.WEIGHT]: 1,
                 [PARAMETER.K]: 0,
                 [PARAMETER.A]: 2,
-                [PARAMETER.A_IS_BASE_OR_POWER]: USE_AS.BASE,
+                [PARAMETER.A_IS_BASE_OR_EXPONENT]: USE_AS.BASE,
                 [PARAMETER.W]: -6,
                 [PARAMETER.X]: -2,
                 [PARAMETER.Y]: 0.14285714285714285,

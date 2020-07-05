@@ -20,7 +20,7 @@ const withPrimeLimit = [
     {
         [PARAMETER.K]: 0.638243216,
         [PARAMETER.A]: 3.956349187,
-        [PARAMETER.A_IS_BASE_OR_POWER]: USE_AS.BASE,
+        [PARAMETER.A_IS_BASE_OR_EXPONENT]: USE_AS.BASE,
         [PARAMETER.W]: -0.619217685,
         [PARAMETER.Y]: 0.883788532,
     },
@@ -41,7 +41,7 @@ const lowestEver = [
     {
         [PARAMETER.K]: 0.038,
         [PARAMETER.A]: 1.994,
-        [PARAMETER.A_IS_BASE_OR_POWER]: USE_AS.BASE,
+        [PARAMETER.A_IS_BASE_OR_EXPONENT]: USE_AS.BASE,
         [PARAMETER.Y]: 0.455,
         [PARAMETER.W]: -2.08,
     },
@@ -63,7 +63,7 @@ const likeLowestEverButWithZeroK = [
     {
         [PARAMETER.K]: 0,
         [PARAMETER.A]: 1.753,
-        [PARAMETER.A_IS_BASE_OR_POWER]: USE_AS.BASE,
+        [PARAMETER.A_IS_BASE_OR_EXPONENT]: USE_AS.BASE,
         [PARAMETER.Y]: 0.473,
         [PARAMETER.W]: -2.620,
     },
@@ -77,7 +77,7 @@ const likeLowestEverButWithZeroC = [
     {
         [PARAMETER.K]: 0.635,
         [PARAMETER.A]: 1.430,
-        [PARAMETER.A_IS_BASE_OR_POWER]: USE_AS.BASE,
+        [PARAMETER.A_IS_BASE_OR_EXPONENT]: USE_AS.BASE,
         [PARAMETER.Y]: 0.850,
         [PARAMETER.W]: -2.770,
     },
@@ -93,7 +93,7 @@ const notTwoParameterByCurrentDefinitionMcopfr = [
     {
         [PARAMETER.K]: 0,
         [PARAMETER.A]: 2,
-        [PARAMETER.A_IS_BASE_OR_POWER]: USE_AS.BASE,
+        [PARAMETER.A_IS_BASE_OR_EXPONENT]: USE_AS.BASE,
         [PARAMETER.W]: -1.453,
         [PARAMETER.Y]: 0.863,
     },
@@ -115,7 +115,7 @@ const notThreeParameterByCurrentDefinitionMcopfr = [
     {
         [PARAMETER.K]: 0,
         [PARAMETER.A]: 2,
-        [PARAMETER.A_IS_BASE_OR_POWER]: USE_AS.BASE,
+        [PARAMETER.A_IS_BASE_OR_EXPONENT]: USE_AS.BASE,
         [PARAMETER.W]: -1.431,
         [PARAMETER.Y]: 0.851,
     },
@@ -144,7 +144,7 @@ const notFourParameterByCurrentDefinitionMcopfr = [
     {
         [PARAMETER.K]: 0,
         [PARAMETER.A]: 2,
-        [PARAMETER.A_IS_BASE_OR_POWER]: USE_AS.BASE,
+        [PARAMETER.A_IS_BASE_OR_EXPONENT]: USE_AS.BASE,
         [PARAMETER.W]: -1.44,
         [PARAMETER.Y]: 0.860,
     },
@@ -168,7 +168,7 @@ const oneSubmetricSevenParameter = [
     {
         [PARAMETER.K]: 0.5920238095238095,              // ≈3/5
         [PARAMETER.A]: 2.0107142857142857,              // ≈2
-        [PARAMETER.A_IS_BASE_OR_POWER]: USE_AS.BASE,
+        [PARAMETER.A_IS_BASE_OR_EXPONENT]: USE_AS.BASE,
         [PARAMETER.Y]: 0.455,                           // ≈√
         [PARAMETER.W]: -2.341928094887362,              // ≈log2(5)
         [PARAMETER.X]: 3.069642857142857,               // ≈3
@@ -181,7 +181,7 @@ const goldenOneSubmetricSixParameter = [
     {
         [PARAMETER.K]: 0.5970238095238095,
         [PARAMETER.A]: 2.0125,
-        [PARAMETER.A_IS_BASE_OR_POWER]: USE_AS.BASE,
+        [PARAMETER.A_IS_BASE_OR_EXPONENT]: USE_AS.BASE,
         [PARAMETER.Y]: 1.6226190476190474,                          // ≈φ
         [PARAMETER.W]: -2.334428094887362,
         [PARAMETER.X]: 3.069642857142857,
@@ -193,7 +193,7 @@ const oneSubmetricFiveParameter = [
     {
         [PARAMETER.K]: 0.6328571428571429,
         [PARAMETER.A]: 1.5728571428571425,
-        [PARAMETER.A_IS_BASE_OR_POWER]: USE_AS.BASE,
+        [PARAMETER.A_IS_BASE_OR_EXPONENT]: USE_AS.BASE,
         [PARAMETER.W]: -3.0571428571428574,
         [PARAMETER.Y]: 0.8571428571428571,
         [PARAMETER.X]: 1.607142857142857,
@@ -204,7 +204,7 @@ const oneSubmetricFourParameter = [
     {
         [PARAMETER.K]: 0.6,
         [PARAMETER.A]: 3,
-        [PARAMETER.A_IS_BASE_OR_POWER]: USE_AS.BASE,
+        [PARAMETER.A_IS_BASE_OR_EXPONENT]: USE_AS.BASE,
         [PARAMETER.W]: -1,
         [PARAMETER.Y]: 0.8766666666666667,
     },
@@ -222,7 +222,7 @@ const almostLowestEverButWithExactA = [
         [PARAMETER.K]: 0.038,
         [PARAMETER.Y]: 0.455,
         [PARAMETER.A]: 2,
-        [PARAMETER.A_IS_BASE_OR_POWER]: USE_AS.BASE,
+        [PARAMETER.A_IS_BASE_OR_EXPONENT]: USE_AS.BASE,
         [PARAMETER.W]: -2.09,
     },
     {
@@ -243,7 +243,7 @@ const lessFragileMinimum = [
         [PARAMETER.K]: 0.213895488,
         [PARAMETER.Y]: 0.642099097,
         [PARAMETER.A]: 2,
-        [PARAMETER.A_IS_BASE_OR_POWER]: USE_AS.BASE,
+        [PARAMETER.A_IS_BASE_OR_EXPONENT]: USE_AS.BASE,
         [PARAMETER.W]: -2.048657352,
     },
     {
@@ -264,7 +264,7 @@ const sanityCheck = [
         [PARAMETER.K]: 0.632,
         [PARAMETER.Y]: 0.858,
         [PARAMETER.A]: 2,
-        [PARAMETER.A_IS_BASE_OR_POWER]: USE_AS.BASE,
+        [PARAMETER.A_IS_BASE_OR_EXPONENT]: USE_AS.BASE,
         [PARAMETER.W]: -1.415,
     },
 ]
