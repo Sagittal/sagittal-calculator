@@ -1,8 +1,8 @@
 const {} = require("../bests")
-const {computeSumOfSquaresForSubmetricCombination} = require("../sumOfSquares/sumOfSquaresForSubmetricCombination")
+const {computeSumOfSquaresForSubmetrics} = require("../sumOfSquares/sumOfSquaresForSubmetrics")
 const {SUBMETRIC_TYPE, PARAMETER, USE_AS} = require("../constants")
 
-const submetricCombination =
+const submetrics =
     [
         {
             [PARAMETER.K]: 0.038,
@@ -17,6 +17,6 @@ const submetricCombination =
         },
     ]
 
-const sumOfSquares = computeSumOfSquaresForSubmetricCombination(submetricCombination, {logUnpopularities: true})
+const sumOfSquares = computeSumOfSquaresForSubmetrics(submetrics, {logUnpopularities: true})
 
-console.log(`${sumOfSquares}\n${JSON.stringify(submetricCombination)}`)
+console.log(`${sumOfSquares}\n${JSON.stringify(submetrics)}`)

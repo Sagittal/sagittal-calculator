@@ -6,14 +6,14 @@ describe("computeAntivotes", () => {
     it("when k = 1 (default), and two 5-rough ratios have the same sopfr, but one has its primes all lopsided on one side, they still get ranked the same", () => {
         const balancedFiveRoughRatio = [11, 7]
         const lopsidedFiveRoughRatio = [77, 1]
-        const submetricCombination = [
+        const submetrics = [
             {
                 [PARAMETER.K]: 1,
             },
         ]
 
-        const balancedResult = computeAntivotes(balancedFiveRoughRatio, submetricCombination)
-        const lopsidedResult = computeAntivotes(lopsidedFiveRoughRatio, submetricCombination)
+        const balancedResult = computeAntivotes(balancedFiveRoughRatio, submetrics)
+        const lopsidedResult = computeAntivotes(lopsidedFiveRoughRatio, submetrics)
 
         expect(balancedResult).toBe(lopsidedResult)
     })
@@ -21,21 +21,21 @@ describe("computeAntivotes", () => {
     it("when k < 1, two 5-rough ratios have the same sopfr, but one has its primes all lopsided on one side, it gets ranked worse", () => {
         const balancedFiveRoughRatio = [11, 7]
         const lopsidedFiveRoughRatio = [77, 1]
-        const submetricCombination = [
+        const submetrics = [
             {
                 [PARAMETER.K]: 0.9,
             },
         ]
 
-        const balancedResult = computeAntivotes(balancedFiveRoughRatio, submetricCombination)
-        const lopsidedResult = computeAntivotes(lopsidedFiveRoughRatio, submetricCombination)
+        const balancedResult = computeAntivotes(balancedFiveRoughRatio, submetrics)
+        const lopsidedResult = computeAntivotes(lopsidedFiveRoughRatio, submetrics)
 
         expect(balancedResult).toBeLessThan(lopsidedResult)
     })
 
     it("applies weights to each submetric", () => {
         const fiveRoughRatio = [77, 1]
-        const submetricCombination = [
+        const submetrics = [
             {
                 [PARAMETER.WEIGHT]: 0.5,
             },
@@ -45,7 +45,7 @@ describe("computeAntivotes", () => {
             },
         ]
 
-        const result = computeAntivotes(fiveRoughRatio, submetricCombination)
+        const result = computeAntivotes(fiveRoughRatio, submetrics)
 
         expect(result).toBe(
             0.5 * computeSubmetricAntivotes([0, 0, 0, 1, 1]) +
@@ -54,7 +54,7 @@ describe("computeAntivotes", () => {
     })
 
     it("should not return NaN", () => {
-        const submetricCombination = [
+        const submetrics = [
             {
                 [PARAMETER.WEIGHT]: 1,
                 [PARAMETER.K]: 0,
@@ -69,7 +69,7 @@ describe("computeAntivotes", () => {
         ]
         const fiveRoughRatio = [5, 1]
 
-        const result = computeAntivotes(fiveRoughRatio, submetricCombination)
+        const result = computeAntivotes(fiveRoughRatio, submetrics)
 
         expect(result).not.toBeNaN()
     })

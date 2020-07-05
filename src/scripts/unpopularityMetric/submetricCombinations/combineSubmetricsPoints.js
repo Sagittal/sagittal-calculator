@@ -1,16 +1,27 @@
-const combineSubmetricsPoints = submetricsPoints => {
-    let submetricCombinations = [[]]
+const {computeParameterPointIndices} = require("./parameterPointIndices")
 
-    submetricsPoints.forEach(submetricPoints => {
-        let extendedPoints = []
+const combineSubmetricsPoints = ({submetricsPoints, dynamicParameters}) => {
+    let submetricCombinations = [{submetrics: [], coordinate: []}]
 
-        submetricCombinations.forEach(submetricCombination => {
+    submetricsPoints.forEach((submetricPoints, submetricIndex) => {
+        let extendedSubmetricCombinations = []
+
+        submetricCombinations.forEach(({submetrics, coordinate}) => {
             submetricPoints.forEach(submetricPoint => {
-                extendedPoints.push([...submetricCombination, submetricPoint])
+                const parameterPointIndices = computeParameterPointIndices({
+                    dynamicParameters,
+                    submetricPoint,
+                    submetricIndex,
+                })
+
+                extendedSubmetricCombinations.push({
+                    submetrics: [...submetrics, submetricPoint],
+                    coordinate: [...coordinate, ...parameterPointIndices],
+                })
             })
         })
 
-        submetricCombinations = extendedPoints
+        submetricCombinations = extendedSubmetricCombinations
     })
 
     return submetricCombinations

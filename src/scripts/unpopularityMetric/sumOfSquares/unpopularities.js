@@ -1,10 +1,10 @@
 const {computeAntivotes} = require("../antivotes/antivotes")
 
-const computeUnpopularities = (realPopularities, submetricCombination) => {
+const computeUnpopularities = (realPopularities, submetrics) => {
     return realPopularities.map(({fiveRoughRatio}, index) => {
         return {
             index,
-            antivotes: computeAntivotes(fiveRoughRatio, submetricCombination),
+            antivotes: computeAntivotes(fiveRoughRatio, submetrics),
             fiveRoughRatio,
         }
     })

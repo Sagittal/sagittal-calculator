@@ -1,7 +1,7 @@
 const {PARAMETER, USE_AS} = require("../constants")
 
-const checkSubmetricCombinationForIssues = submetricCombination => {
-    submetricCombination.forEach(submetric => {
+const checkSubmetricsForIssues = submetrics => {
+    submetrics.forEach(submetric => {
         if (submetric[PARAMETER.A] === 1 && submetric[PARAMETER.A_IS_BASE_OR_EXPONENT] === USE_AS.BASE) {
             throw new Error("Submetric has base 1 and will calculate undefined antivotes.")
         }
@@ -12,5 +12,5 @@ const checkSubmetricCombinationForIssues = submetricCombination => {
 }
 
 module.exports = {
-    checkSubmetricCombinationForIssues,
+    checkSubmetricsForIssues,
 }

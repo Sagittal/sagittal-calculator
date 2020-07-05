@@ -2,22 +2,22 @@ const {COMMA_POPULARITIES} = require("./popularities")
 const {computeUnpopularities} = require("./unpopularities")
 const {addRankToUnpopularities} = require("./rank")
 const {computeSumOfSquares} = require("./sumOfSquares")
-const {checkSubmetricCombinationForIssues} = require("./check")
+const {checkSubmetricsForIssues} = require("./check")
 const {CUT_OFF_POPULARITY, ZIPF_EXPONENT} = require("./constants")
 
-const computeSumOfSquaresForSubmetricCombination = (submetricCombination, {logUnpopularities} = {}) => {
-    checkSubmetricCombinationForIssues(submetricCombination)
+const computeSumOfSquaresForSubmetrics = (submetrics, {logUnpopularities} = {}) => {
+    checkSubmetricsForIssues(submetrics)
 
     const realPopularities = COMMA_POPULARITIES.slice(0, CUT_OFF_POPULARITY)
 
-    const unpopularities = computeUnpopularities(realPopularities, submetricCombination)
+    const unpopularities = computeUnpopularities(realPopularities, submetrics)
     const rankedUnpopularities = addRankToUnpopularities(unpopularities)
 
-    if (logUnpopularities) console.log(rankedUnpopularities)
+    if (logUnpopularities) rankedUnpopularities.map(rankedUnpopularity => console.log(JSON.stringify(rankedUnpopularity)))
 
     return computeSumOfSquares(rankedUnpopularities, realPopularities, ZIPF_EXPONENT)
 }
 
 module.exports = {
-    computeSumOfSquaresForSubmetricCombination,
+    computeSumOfSquaresForSubmetrics,
 }

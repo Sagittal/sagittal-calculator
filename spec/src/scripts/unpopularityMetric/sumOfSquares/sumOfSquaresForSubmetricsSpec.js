@@ -1,9 +1,9 @@
-const {computeSumOfSquaresForSubmetricCombination} = require("../../../../../src/scripts/unpopularityMetric/sumOfSquares/sumOfSquaresForSubmetricCombination")
+const {computeSumOfSquaresForSubmetrics} = require("../../../../../src/scripts/unpopularityMetric/sumOfSquares/sumOfSquaresForSubmetrics")
 const {PARAMETER, SUBMETRIC_TYPE, USE_AS} = require("../../../../../src/scripts/unpopularityMetric/constants")
 
-describe("computeSumOfSquaresForSubmetricCombination", () => {
+describe("computeSumOfSquaresForSubmetrics", () => {
     it("returns the sum-of-squares for a given submetric combination", () => {
-        const submetricCombination = [
+        const submetrics = [
             {
                 [PARAMETER.K]: 0.038,
                 [PARAMETER.A]: 1.994,
@@ -17,30 +17,30 @@ describe("computeSumOfSquaresForSubmetricCombination", () => {
             },
         ]
 
-        const result = computeSumOfSquaresForSubmetricCombination(submetricCombination)
+        const result = computeSumOfSquaresForSubmetrics(submetrics)
 
         expect(result).toBe(0.004260809896143936)
     })
 
     it("gives a good error when a is a base but it is 1", () => {
-        const submetricCombination = [
+        const submetrics = [
             {
                 [PARAMETER.A]: 1,
                 [PARAMETER.A_IS_BASE_OR_EXPONENT]: USE_AS.BASE,
             },
         ]
 
-        expect(() => computeSumOfSquaresForSubmetricCombination(submetricCombination)).toThrowError("Submetric has base 1 and will calculate undefined antivotes.")
+        expect(() => computeSumOfSquaresForSubmetrics(submetrics)).toThrowError("Submetric has base 1 and will calculate undefined antivotes.")
     })
 
     it("gives a good error when a is a base but it is negative", () => {
-        const submetricCombination = [
+        const submetrics = [
             {
                 [PARAMETER.A]: -2.23,
                 [PARAMETER.A_IS_BASE_OR_EXPONENT]: USE_AS.BASE,
             },
         ]
 
-        expect(() => computeSumOfSquaresForSubmetricCombination(submetricCombination)).toThrowError("Submetric has negative base and will calculate undefined antivotes.")
+        expect(() => computeSumOfSquaresForSubmetrics(submetrics)).toThrowError("Submetric has negative base and will calculate undefined antivotes.")
     })
 })

@@ -1,7 +1,8 @@
 const {computeParameterPoints} = require("./parameterPoints")
 
-const computeSubmetricPoints = (submetricConfigs = {}) => {
+const computeSubmetricPointsAndDynamicParameters = (submetricConfigs = {}, submetricIndex) => {
     let submetricPoints = [{}]
+    const submetricDynamicParameters = []
 
     Object.entries(submetricConfigs).forEach(([parameter, parameterConfig]) => {
         let extendedSubmetricPoints = []
@@ -12,7 +13,10 @@ const computeSubmetricPoints = (submetricConfigs = {}) => {
         } else {
             parameterPoints = computeParameterPoints(parameterConfig)
         }
-        if (!parameterPoints.length) return
+        if (parameterPoints.length === 0) return
+        if (parameterPoints.length > 1) {
+            submetricDynamicParameters.push({ submetricIndex, parameter, parameterPoints })
+        }
 
         submetricPoints.forEach(submetricPoint => {
             parameterPoints.forEach(parameterPoint => {
@@ -23,9 +27,9 @@ const computeSubmetricPoints = (submetricConfigs = {}) => {
         submetricPoints = extendedSubmetricPoints
     })
 
-    return submetricPoints
+    return {submetricPoints, submetricDynamicParameters}
 }
 
 module.exports = {
-    computeSubmetricPoints,
+    computeSubmetricPointsAndDynamicParameters,
 }

@@ -18,145 +18,174 @@ describe("submetricCombinations", () => {
         const result = computeSubmetricCombinations(configs)
 
         const expectedResult = [
-            [
-                {
-                    [PARAMETER.A]: 1,
-                    [PARAMETER.K]: -2,
-                },
-                {
-                    [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPF,
-                    [PARAMETER.A]: 2.5,
-                    [PARAMETER.W]: 3.3,
-                },
-            ],
-            [
-                {
-                    [PARAMETER.A]: 1,
-                    [PARAMETER.K]: -2,
-                },
-                {
-                    [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPF,
-                    [PARAMETER.A]: 0.5,
-                    [PARAMETER.W]: 3.3,
-                },
-            ],
-
-            [
-                {
-                    [PARAMETER.A]: 1,
-                    [PARAMETER.K]: 2,
-                },
-                {
-                    [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPF,
-                    [PARAMETER.A]: 2.5,
-                    [PARAMETER.W]: 3.3,
-                },
-            ],
-            [
-                {
-                    [PARAMETER.A]: 1,
-                    [PARAMETER.K]: 2,
-                },
-                {
-                    [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPF,
-                    [PARAMETER.A]: 0.5,
-                    [PARAMETER.W]: 3.3,
-                },
-            ],
-
-
-            [
-                {
-                    [PARAMETER.A]: 2,
-                    [PARAMETER.K]: -2,
-                },
-                {
-                    [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPF,
-                    [PARAMETER.A]: 2.5,
-                    [PARAMETER.W]: 3.3,
-                },
-            ],
-            [
-                {
-                    [PARAMETER.A]: 2,
-                    [PARAMETER.K]: -2,
-                },
-                {
-                    [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPF,
-                    [PARAMETER.A]: 0.5,
-                    [PARAMETER.W]: 3.3,
-                },
-            ],
-
-            [
-                {
-                    [PARAMETER.A]: 2,
-                    [PARAMETER.K]: 2,
-                },
-                {
-                    [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPF,
-                    [PARAMETER.A]: 2.5,
-                    [PARAMETER.W]: 3.3,
-                },
-            ],
-            [
-                {
-                    [PARAMETER.A]: 2,
-                    [PARAMETER.K]: 2,
-                },
-                {
-                    [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPF,
-                    [PARAMETER.A]: 0.5,
-                    [PARAMETER.W]: 3.3,
-                },
-            ],
-
-
-            [
-                {
-                    [PARAMETER.A]: 3,
-                    [PARAMETER.K]: -2,
-                },
-                {
-                    [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPF,
-                    [PARAMETER.A]: 2.5,
-                    [PARAMETER.W]: 3.3,
-                },
-            ],
-            [
-                {
-                    [PARAMETER.A]: 3,
-                    [PARAMETER.K]: -2,
-                },
-                {
-                    [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPF,
-                    [PARAMETER.A]: 0.5,
-                    [PARAMETER.W]: 3.3,
-                },
-            ],
-
-            [
-                {
-                    [PARAMETER.A]: 3,
-                    [PARAMETER.K]: 2,
-                },
-                {
-                    [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPF,
-                    [PARAMETER.A]: 2.5,
-                    [PARAMETER.W]: 3.3,
-                },
-            ],
-            [
-                {
-                    [PARAMETER.A]: 3,
-                    [PARAMETER.K]: 2,
-                },
-                {
-                    [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPF,
-                    [PARAMETER.A]: 0.5,
-                    [PARAMETER.W]: 3.3,
-                },
-            ],
+            {
+                submetrics: [
+                    {
+                        [PARAMETER.A]: 1,
+                        [PARAMETER.K]: -2,
+                    },
+                    {
+                        [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPF,
+                        [PARAMETER.A]: 0.5,
+                        [PARAMETER.W]: 3.3,
+                    },
+                ],
+                coordinate: [0, 0, 0],
+            },
+            {
+                submetrics: [
+                    {
+                        [PARAMETER.A]: 1,
+                        [PARAMETER.K]: -2,
+                    },
+                    {
+                        [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPF,
+                        [PARAMETER.A]: 2.5,
+                        [PARAMETER.W]: 3.3,
+                    },
+                ],
+                coordinate: [0, 0, 1],
+            },
+            {
+                submetrics: [
+                    {
+                        [PARAMETER.A]: 1,
+                        [PARAMETER.K]: 2,
+                    },
+                    {
+                        [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPF,
+                        [PARAMETER.A]: 0.5,
+                        [PARAMETER.W]: 3.3,
+                    },
+                ],
+                coordinate: [0, 1, 0],
+            },
+            {
+                submetrics: [
+                    {
+                        [PARAMETER.A]: 1,
+                        [PARAMETER.K]: 2,
+                    },
+                    {
+                        [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPF,
+                        [PARAMETER.A]: 2.5,
+                        [PARAMETER.W]: 3.3,
+                    },
+                ],
+                coordinate: [0, 1, 1],
+            },
+            {
+                submetrics: [
+                    {
+                        [PARAMETER.A]: 2,
+                        [PARAMETER.K]: -2,
+                    },
+                    {
+                        [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPF,
+                        [PARAMETER.A]: 0.5,
+                        [PARAMETER.W]: 3.3,
+                    },
+                ],
+                coordinate: [1, 0, 0],
+            },
+            {
+                submetrics: [
+                    {
+                        [PARAMETER.A]: 2,
+                        [PARAMETER.K]: -2,
+                    },
+                    {
+                        [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPF,
+                        [PARAMETER.A]: 2.5,
+                        [PARAMETER.W]: 3.3,
+                    },
+                ],
+                coordinate: [1, 0, 1],
+            },
+            {
+                submetrics: [
+                    {
+                        [PARAMETER.A]: 2,
+                        [PARAMETER.K]: 2,
+                    },
+                    {
+                        [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPF,
+                        [PARAMETER.A]: 0.5,
+                        [PARAMETER.W]: 3.3,
+                    },
+                ],
+                coordinate: [1, 1, 0],
+            },
+            {
+                submetrics: [
+                    {
+                        [PARAMETER.A]: 2,
+                        [PARAMETER.K]: 2,
+                    },
+                    {
+                        [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPF,
+                        [PARAMETER.A]: 2.5,
+                        [PARAMETER.W]: 3.3,
+                    },
+                ],
+                coordinate: [1, 1, 1],
+            },
+            {
+                submetrics: [
+                    {
+                        [PARAMETER.A]: 3,
+                        [PARAMETER.K]: -2,
+                    },
+                    {
+                        [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPF,
+                        [PARAMETER.A]: 0.5,
+                        [PARAMETER.W]: 3.3,
+                    },
+                ],
+                coordinate: [2, 0, 0],
+            },
+            {
+                submetrics: [
+                    {
+                        [PARAMETER.A]: 3,
+                        [PARAMETER.K]: -2,
+                    },
+                    {
+                        [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPF,
+                        [PARAMETER.A]: 2.5,
+                        [PARAMETER.W]: 3.3,
+                    },
+                ],
+                coordinate: [2, 0, 1],
+            },
+            {
+                submetrics: [
+                    {
+                        [PARAMETER.A]: 3,
+                        [PARAMETER.K]: 2,
+                    },
+                    {
+                        [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPF,
+                        [PARAMETER.A]: 0.5,
+                        [PARAMETER.W]: 3.3,
+                    },
+                ],
+                coordinate: [2, 1, 0],
+            },
+            {
+                submetrics: [
+                    {
+                        [PARAMETER.A]: 3,
+                        [PARAMETER.K]: 2,
+                    },
+                    {
+                        [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPF,
+                        [PARAMETER.A]: 2.5,
+                        [PARAMETER.W]: 3.3,
+                    },
+                ],
+                coordinate: [2, 1, 1],
+            },
         ]
         expect(result).toEqual(jasmine.arrayWithExactContents(expectedResult))
     })
@@ -178,54 +207,66 @@ describe("submetricCombinations", () => {
         const result = computeSubmetricCombinations(configs)
 
         const expectedResult = [
-            [
-                {
-                    [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPF,
-                    [PARAMETER.A]: 0.5,
-                    [PARAMETER.K]: 0.5,
-                },
-                {
-                    [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPF,
-                    [PARAMETER.A]: 0,
-                    [PARAMETER.K]: 0,
-                },
-            ],
-            [
-                {
-                    [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPF,
-                    [PARAMETER.A]: 2.5,
-                    [PARAMETER.K]: 0.5,
-                },
-                {
-                    [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPF,
-                    [PARAMETER.A]: 0,
-                    [PARAMETER.K]: 0,
-                },
-            ],
-            [
-                {
-                    [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPF,
-                    [PARAMETER.A]: 0.5,
-                    [PARAMETER.K]: 0.5,
-                },
-                {
-                    [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPF,
-                    [PARAMETER.A]: 2,
-                    [PARAMETER.K]: 0,
-                },
-            ],
-            [
-                {
-                    [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPF,
-                    [PARAMETER.A]: 2.5,
-                    [PARAMETER.K]: 0.5,
-                },
-                {
-                    [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPF,
-                    [PARAMETER.A]: 2,
-                    [PARAMETER.K]: 0,
-                },
-            ],
+            {
+                submetrics: [
+                    {
+                        [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPF,
+                        [PARAMETER.A]: 0.5,
+                        [PARAMETER.K]: 0.5,
+                    },
+                    {
+                        [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPF,
+                        [PARAMETER.A]: 0,
+                        [PARAMETER.K]: 0,
+                    },
+                ],
+                coordinate: [0, 0],
+            },
+            {
+                submetrics: [
+                    {
+                        [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPF,
+                        [PARAMETER.A]: 0.5,
+                        [PARAMETER.K]: 0.5,
+                    },
+                    {
+                        [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPF,
+                        [PARAMETER.A]: 2,
+                        [PARAMETER.K]: 0,
+                    },
+                ],
+                coordinate: [0, 1],
+            },
+            {
+                submetrics: [
+                    {
+                        [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPF,
+                        [PARAMETER.A]: 2.5,
+                        [PARAMETER.K]: 0.5,
+                    },
+                    {
+                        [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPF,
+                        [PARAMETER.A]: 0,
+                        [PARAMETER.K]: 0,
+                    },
+                ],
+                coordinate: [1, 0],
+            },
+            {
+                submetrics: [
+                    {
+                        [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPF,
+                        [PARAMETER.A]: 2.5,
+                        [PARAMETER.K]: 0.5,
+                    },
+                    {
+                        [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPF,
+                        [PARAMETER.A]: 2,
+                        [PARAMETER.K]: 0,
+                    },
+                ],
+                coordinate: [1, 1],
+            },
         ]
         expect(result).toEqual(jasmine.arrayWithExactContents(expectedResult))
     })
