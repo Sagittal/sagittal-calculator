@@ -6,16 +6,13 @@ const {computeSumOfSquaresForSubmetricCombination} = require("./unpopularityMetr
 
 const configs = [
     {
-        [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPFAR,
-        [PARAMETER.K]: 0.038,
-        [PARAMETER.A]: 1.994,
+        [PARAMETER.K]: {center: 2, range: 2, count: 21},
+        [PARAMETER.K_IS_BASE_OR_EXPONENT]: USE_AS.BASE,
+        [PARAMETER.A]: {center: 2.5, range: 2, count: 21},
         [PARAMETER.A_IS_BASE_OR_EXPONENT]: USE_AS.BASE,
-        [PARAMETER.W]: -2.08,
-        [PARAMETER.Y]: 0.455,
-    },
-    {
-        [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPFAR,
-        [PARAMETER.WEIGHT]: 0.577,
+        [PARAMETER.W]: {center: -0.5, range: 1, count: 21},
+        [PARAMETER.Y]: {center: 1, range: 2, count: 21},
+        [PARAMETER.T]: {center: 0, range: 4, count: 21},
     },
 ]
 
@@ -38,6 +35,6 @@ submetricCombinations.forEach((submetricCombination, index) => {
         console.log(JSON.stringify(best))
     }
 
-    if (index % 10000 === 0) console.log("submetricCombinations checked so far:", index, 'out of', submetricCombinationCount, '(', 100 * index / submetricCombinationCount, '% )')
+    if (index % 10000 === 0) console.log("submetricCombinations checked so far:", index, "out of", submetricCombinationCount, "(", 100 * index / submetricCombinationCount, "% )")
 })
-console.log('final best:', JSON.stringify(best))
+console.log("final best:", JSON.stringify(best))

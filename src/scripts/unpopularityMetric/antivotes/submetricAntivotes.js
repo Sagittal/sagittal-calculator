@@ -68,6 +68,8 @@ const computeSubmetricAntivotes = (fiveRoughNumberMonzo, submetric = {}) => {
                 termUnpopularity = termUnpopularity * 0.5
             }
 
+            if (isNaN(termUnpopularity)) throw new Error(`You got NaN! in submetricAntivotes ${fiveRoughNumberMonzo} ${JSON.stringify(submetric, null, 4)}`)
+
             return monzoUnpopularity + termUnpopularity
         },
         0,

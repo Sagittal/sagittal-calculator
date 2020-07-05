@@ -1,7 +1,7 @@
 const {computeParameterPoints} = require("./parameterPoints")
 
 const computeSubmetricPoints = (submetricConfigs = {}) => {
-    let submetricPoints = [ {} ]
+    let submetricPoints = [{}]
 
     Object.entries(submetricConfigs).forEach(([parameter, parameterConfig]) => {
         let extendedSubmetricPoints = []
@@ -16,7 +16,7 @@ const computeSubmetricPoints = (submetricConfigs = {}) => {
 
         submetricPoints.forEach(submetricPoint => {
             parameterPoints.forEach(parameterPoint => {
-                extendedSubmetricPoints.push({ ...submetricPoint, [parameter]: parameterPoint })
+                extendedSubmetricPoints.push({...submetricPoint, [parameter]: parameterPoint})
             })
         })
 

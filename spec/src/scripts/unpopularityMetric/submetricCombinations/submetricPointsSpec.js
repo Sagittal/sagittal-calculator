@@ -13,27 +13,27 @@ describe("computeSubmetricPoints", () => {
                 center: 0.7,
                 range: 0.2,
                 count: 3,
-            }
+            },
         }
 
         const result = computeSubmetricPoints(submetricConfigs)
 
         expect(result).toEqual(jasmine.arrayWithExactContents([
-            { [PARAMETER.A]: 0.75, [PARAMETER.W]: 0.6 },
-            { [PARAMETER.A]: 0.875, [PARAMETER.W]: 0.6 },
-            { [PARAMETER.A]: 1.0, [PARAMETER.W]: 0.6 },
-            { [PARAMETER.A]: 1.125, [PARAMETER.W]: 0.6 },
-            { [PARAMETER.A]: 1.25, [PARAMETER.W]: 0.6 },
-            { [PARAMETER.A]: 0.75, [PARAMETER.W]: 0.7 },
-            { [PARAMETER.A]: 0.875, [PARAMETER.W]: 0.7 },
-            { [PARAMETER.A]: 1.0, [PARAMETER.W]: 0.7 },
-            { [PARAMETER.A]: 1.125, [PARAMETER.W]: 0.7 },
-            { [PARAMETER.A]: 1.25, [PARAMETER.W]: 0.7 },
-            { [PARAMETER.A]: 0.75, [PARAMETER.W]: 0.8 },
-            { [PARAMETER.A]: 0.875, [PARAMETER.W]: 0.8 },
-            { [PARAMETER.A]: 1.0, [PARAMETER.W]: 0.8 },
-            { [PARAMETER.A]: 1.125, [PARAMETER.W]: 0.8 },
-            { [PARAMETER.A]: 1.25, [PARAMETER.W]: 0.8 },
+            {[PARAMETER.A]: 0.75, [PARAMETER.W]: 0.6},
+            {[PARAMETER.A]: 0.875, [PARAMETER.W]: 0.6},
+            {[PARAMETER.A]: 1.0, [PARAMETER.W]: 0.6},
+            {[PARAMETER.A]: 1.125, [PARAMETER.W]: 0.6},
+            {[PARAMETER.A]: 1.25, [PARAMETER.W]: 0.6},
+            {[PARAMETER.A]: 0.75, [PARAMETER.W]: 0.7},
+            {[PARAMETER.A]: 0.875, [PARAMETER.W]: 0.7},
+            {[PARAMETER.A]: 1.0, [PARAMETER.W]: 0.7},
+            {[PARAMETER.A]: 1.125, [PARAMETER.W]: 0.7},
+            {[PARAMETER.A]: 1.25, [PARAMETER.W]: 0.7},
+            {[PARAMETER.A]: 0.75, [PARAMETER.W]: 0.8},
+            {[PARAMETER.A]: 0.875, [PARAMETER.W]: 0.8},
+            {[PARAMETER.A]: 1.0, [PARAMETER.W]: 0.8},
+            {[PARAMETER.A]: 1.125, [PARAMETER.W]: 0.8},
+            {[PARAMETER.A]: 1.25, [PARAMETER.W]: 0.8},
         ]))
     })
 
@@ -48,17 +48,17 @@ describe("computeSubmetricPoints", () => {
                 center: 0.7,
                 range: 0.2,
                 count: 0,
-            }
+            },
         }
 
         const result = computeSubmetricPoints(submetricConfigs)
 
         expect(result).toEqual(jasmine.arrayWithExactContents([
-            { [PARAMETER.A]: 0.75 },
-            { [PARAMETER.A]: 0.875 },
-            { [PARAMETER.A]: 1.0 },
-            { [PARAMETER.A]: 1.125 },
-            { [PARAMETER.A]: 1.25 },
+            {[PARAMETER.A]: 0.75},
+            {[PARAMETER.A]: 0.875},
+            {[PARAMETER.A]: 1.0},
+            {[PARAMETER.A]: 1.125},
+            {[PARAMETER.A]: 1.25},
         ]))
     })
 
@@ -75,11 +75,11 @@ describe("computeSubmetricPoints", () => {
         const result = computeSubmetricPoints(submetricConfigs)
 
         expect(result).toEqual(jasmine.arrayWithExactContents([
-            { [PARAMETER.A]: 0.75, [PARAMETER.W]: 0.7 },
-            { [PARAMETER.A]: 0.875, [PARAMETER.W]: 0.7 },
-            { [PARAMETER.A]: 1.0, [PARAMETER.W]: 0.7 },
-            { [PARAMETER.A]: 1.125, [PARAMETER.W]: 0.7 },
-            { [PARAMETER.A]: 1.25, [PARAMETER.W]: 0.7 },
+            {[PARAMETER.A]: 0.75, [PARAMETER.W]: 0.7},
+            {[PARAMETER.A]: 0.875, [PARAMETER.W]: 0.7},
+            {[PARAMETER.A]: 1.0, [PARAMETER.W]: 0.7},
+            {[PARAMETER.A]: 1.125, [PARAMETER.W]: 0.7},
+            {[PARAMETER.A]: 1.25, [PARAMETER.W]: 0.7},
         ]))
     })
 })

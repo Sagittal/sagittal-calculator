@@ -6,7 +6,7 @@ describe("parseMonzo", () => {
 
         const result = parseMonzo(monzo)
 
-        expect(result).toEqual([3,4,5])
+        expect(result).toEqual([3, 4, 5])
     })
 
     it("parses formatted monzos", () => {
@@ -14,7 +14,7 @@ describe("parseMonzo", () => {
 
         const result = parseMonzo(monzo)
 
-        expect(result).toEqual([3,4,5])
+        expect(result).toEqual([3, 4, 5])
     })
 
     it("parses monzos given with greater than signs", () => {
@@ -22,7 +22,7 @@ describe("parseMonzo", () => {
 
         const result = parseMonzo(monzo)
 
-        expect(result).toEqual([3,4,5])
+        expect(result).toEqual([3, 4, 5])
     })
 
     it("parses monzos given with pipes", () => {
@@ -30,7 +30,7 @@ describe("parseMonzo", () => {
 
         const result = parseMonzo(monzo)
 
-        expect(result).toEqual([3,4,5])
+        expect(result).toEqual([3, 4, 5])
     })
 
     it("parses monzos given with no spaces on the ends", () => {
@@ -38,6 +38,6 @@ describe("parseMonzo", () => {
 
         const result = parseMonzo(monzo)
 
-        expect(result).toEqual([3,4,5])
+        expect(result).toEqual([3, 4, 5])
     })
 })

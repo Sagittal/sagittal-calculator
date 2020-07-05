@@ -10,7 +10,7 @@ const analyzeComma = monzo => {
     const apotomeSlope = computeApotomeSlope(monzo)
     const commaName = computeCommaName(monzo)
     const ratio = computeRatioFromMonzo(monzo)
-    const fiveRoughSopfr = computeSopfr(computeRoughNumberMonzo(monzo,5)) // TODO: one day replace this with the improved fiveRoughCommaUnpopularity metric
+    const fiveRoughSopfr = computeSopfr(computeRoughNumberMonzo(monzo, 5)) // TODO: one day replace this with the improved fiveRoughCommaUnpopularity metric
     const limit = computeGpf(monzo)
     const cents = computeCentsFromRatio(ratio)
 

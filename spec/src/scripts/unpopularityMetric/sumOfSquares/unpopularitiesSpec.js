@@ -16,7 +16,7 @@ describe("computeUnpopularities", () => {
             {
                 [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPF,
                 [PARAMETER.WEIGHT]: 1,
-            }
+            },
         ]
 
         const result = computeUnpopularities(realPopularities, submetricCombinations)

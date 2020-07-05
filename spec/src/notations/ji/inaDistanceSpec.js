@@ -9,6 +9,6 @@ describe("inaDistance", () => {
         expect(computeInaDistance(distance, "HIGH")).toBeCloseTo(0.041342303290321826, ACCURACY_THRESHOLD)
         expect(computeInaDistance(distance, "ULTRA")).toBeCloseTo(0.05101816150720566, ACCURACY_THRESHOLD)
         expect(computeInaDistance(distance, "EXTREME")).toBeCloseTo(0.20495226950308482, ACCURACY_THRESHOLD)
-        expect(computeInaDistance(distance, "INSANE")).toBeCloseTo(0.7116153906780928 , ACCURACY_THRESHOLD)
+        expect(computeInaDistance(distance, "INSANE")).toBeCloseTo(0.7116153906780928, ACCURACY_THRESHOLD)
     })
 })

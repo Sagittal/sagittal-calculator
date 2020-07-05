@@ -48,6 +48,8 @@ const computeRatioSubmetricAntivotes = (fiveRoughRatio, submetric = {}) => {
             diminuator ** k :
             diminuator * k
 
+    if (isNaN(weightedNuminator) || isNaN(weightedDiminuator)) throw new Error(`You got NaN! in ratioSubmetricAntivotes ${fiveRoughRatio} ${JSON.stringify(submetric, null, 4)} ${weightedNuminator} ${weightedDiminuator} ${diminuator} ${k}`)
+
     return weightedNuminator + weightedDiminuator
 }
 

@@ -27,7 +27,7 @@ describe("submetricCombinations", () => {
                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPF,
                     [PARAMETER.A]: 2.5,
                     [PARAMETER.W]: 3.3,
-                }
+                },
             ],
             [
                 {
@@ -38,7 +38,7 @@ describe("submetricCombinations", () => {
                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPF,
                     [PARAMETER.A]: 0.5,
                     [PARAMETER.W]: 3.3,
-                }
+                },
             ],
 
             [
@@ -50,7 +50,7 @@ describe("submetricCombinations", () => {
                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPF,
                     [PARAMETER.A]: 2.5,
                     [PARAMETER.W]: 3.3,
-                }
+                },
             ],
             [
                 {
@@ -61,9 +61,8 @@ describe("submetricCombinations", () => {
                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPF,
                     [PARAMETER.A]: 0.5,
                     [PARAMETER.W]: 3.3,
-                }
+                },
             ],
-
 
 
             [
@@ -75,7 +74,7 @@ describe("submetricCombinations", () => {
                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPF,
                     [PARAMETER.A]: 2.5,
                     [PARAMETER.W]: 3.3,
-                }
+                },
             ],
             [
                 {
@@ -86,7 +85,7 @@ describe("submetricCombinations", () => {
                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPF,
                     [PARAMETER.A]: 0.5,
                     [PARAMETER.W]: 3.3,
-                }
+                },
             ],
 
             [
@@ -98,7 +97,7 @@ describe("submetricCombinations", () => {
                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPF,
                     [PARAMETER.A]: 2.5,
                     [PARAMETER.W]: 3.3,
-                }
+                },
             ],
             [
                 {
@@ -109,9 +108,8 @@ describe("submetricCombinations", () => {
                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPF,
                     [PARAMETER.A]: 0.5,
                     [PARAMETER.W]: 3.3,
-                }
+                },
             ],
-
 
 
             [
@@ -123,7 +121,7 @@ describe("submetricCombinations", () => {
                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPF,
                     [PARAMETER.A]: 2.5,
                     [PARAMETER.W]: 3.3,
-                }
+                },
             ],
             [
                 {
@@ -134,7 +132,7 @@ describe("submetricCombinations", () => {
                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPF,
                     [PARAMETER.A]: 0.5,
                     [PARAMETER.W]: 3.3,
-                }
+                },
             ],
 
             [
@@ -146,7 +144,7 @@ describe("submetricCombinations", () => {
                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPF,
                     [PARAMETER.A]: 2.5,
                     [PARAMETER.W]: 3.3,
-                }
+                },
             ],
             [
                 {
@@ -157,7 +155,7 @@ describe("submetricCombinations", () => {
                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPF,
                     [PARAMETER.A]: 0.5,
                     [PARAMETER.W]: 3.3,
-                }
+                },
             ],
         ]
         expect(result).toEqual(jasmine.arrayWithExactContents(expectedResult))
@@ -190,7 +188,7 @@ describe("submetricCombinations", () => {
                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPF,
                     [PARAMETER.A]: 0,
                     [PARAMETER.K]: 0,
-                }
+                },
             ],
             [
                 {
@@ -202,7 +200,7 @@ describe("submetricCombinations", () => {
                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPF,
                     [PARAMETER.A]: 0,
                     [PARAMETER.K]: 0,
-                }
+                },
             ],
             [
                 {
@@ -214,7 +212,7 @@ describe("submetricCombinations", () => {
                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPF,
                     [PARAMETER.A]: 2,
                     [PARAMETER.K]: 0,
-                }
+                },
             ],
             [
                 {
@@ -226,7 +224,7 @@ describe("submetricCombinations", () => {
                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPF,
                     [PARAMETER.A]: 2,
                     [PARAMETER.K]: 0,
-                }
+                },
             ],
         ]
         expect(result).toEqual(jasmine.arrayWithExactContents(expectedResult))

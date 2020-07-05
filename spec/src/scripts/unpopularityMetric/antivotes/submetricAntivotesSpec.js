@@ -152,7 +152,7 @@ describe("computeSubmetricAntivotes", () => {
 
             expect(result).toBe(
                 0.5 * 5 +
-                1 * 7
+                1 * 7,
             )
         })
     })

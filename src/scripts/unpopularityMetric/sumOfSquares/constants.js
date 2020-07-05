@@ -3,5 +3,5 @@ const CUT_OFF_POPULARITY = 80    // the first popularity which no longer has >0.
 
 module.exports = {
     ZIPF_EXPONENT,
-    CUT_OFF_POPULARITY
+    CUT_OFF_POPULARITY,
 }

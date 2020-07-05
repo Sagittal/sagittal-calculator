@@ -10,11 +10,15 @@ const computeWeightedSubmetricAntivotes = (fiveRoughRatio, submetric = {}) => {
         submetricAntivotes = ratioSubmetricUnpopularity.computeRatioSubmetricAntivotes(fiveRoughRatio, submetric)
     }
 
-    return weightIsBaseOrExponent === USE_AS.BASE ?
+    const weightedSubmetricAntivotes = weightIsBaseOrExponent === USE_AS.BASE ?
         computeLog(submetricAntivotes, weight) :
         weightIsBaseOrExponent === USE_AS.EXPONENT ?
             submetricAntivotes ** weight :
             submetricAntivotes * weight
+
+    if (isNaN(weightedSubmetricAntivotes)) throw new Error(`You got NaN! ${fiveRoughRatio} ${JSON.stringify(submetric, null, 4)} ${submetricAntivotes} ${weight} ${weightIsBaseOrExponent}`)
+
+    return weightedSubmetricAntivotes
 }
 
 module.exports = {

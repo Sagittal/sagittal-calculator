@@ -45,7 +45,7 @@ describe("computeParameterPoints", () => {
                 result[Math.floor(result.length / 2) - 1]
             )
             /
-            2
+            2,
         ).toBe(parameterConfig.center)
     })
 

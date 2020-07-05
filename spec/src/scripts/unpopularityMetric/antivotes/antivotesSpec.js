@@ -8,7 +8,7 @@ describe("computeAntivotes", () => {
         const lopsidedFiveRoughRatio = [77, 1]
         const submetricCombination = [
             {
-                [PARAMETER.K]: 1
+                [PARAMETER.K]: 1,
             },
         ]
 

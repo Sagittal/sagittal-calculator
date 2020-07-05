@@ -9,10 +9,10 @@ const computeParameterPoints = (parameterConfig = {}) => {
 
     const keys = [...Array(count).keys()]
 
-    const offset = center - range/2
+    const offset = center - range / 2
 
     return keys.map(key => {
-        const adjustedKey = key * range/(count - 1)
+        const adjustedKey = key * range / (count - 1)
 
         return offset + adjustedKey
     })

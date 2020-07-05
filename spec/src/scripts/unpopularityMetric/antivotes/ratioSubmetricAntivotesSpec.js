@@ -13,7 +13,7 @@ describe("computeRatioSubmetricAntivotes", () => {
 
         expect(result).toBe(
             computeSubmetricAntivotes([0, 0, 0, 0, 1], submetric) +
-            k * computeSubmetricAntivotes([0, 0, 0, 1], submetric)
+            k * computeSubmetricAntivotes([0, 0, 0, 1], submetric),
         )
     })
 
@@ -26,7 +26,7 @@ describe("computeRatioSubmetricAntivotes", () => {
 
         expect(result).toBe(
             computeSubmetricAntivotes([0, 0, 0, 0, 1], submetric) +
-            k * computeSubmetricAntivotes([0, 0, 2], submetric)
+            k * computeSubmetricAntivotes([0, 0, 2], submetric),
         )
     })
 
@@ -37,7 +37,7 @@ describe("computeRatioSubmetricAntivotes", () => {
         const result = computeRatioSubmetricAntivotes(fiveRoughRatio, submetric)
 
         expect(result).toBe(
-            computeSubmetricAntivotes([0, 0, 1, -1], submetric)
+            computeSubmetricAntivotes([0, 0, 1, -1], submetric),
         )
     })
 
@@ -51,7 +51,7 @@ describe("computeRatioSubmetricAntivotes", () => {
 
         expect(result).toBe(
             computeSubmetricAntivotes([0, 0, 2], submetric) +
-            k * computeSubmetricAntivotes([0, 0, 0, 0, 1], submetric)
+            k * computeSubmetricAntivotes([0, 0, 0, 0, 1], submetric),
         )
     })
 
@@ -63,7 +63,7 @@ describe("computeRatioSubmetricAntivotes", () => {
         const result = computeRatioSubmetricAntivotes(fiveRoughRatio, submetric)
 
         expect(result).toBe(
-            computeSubmetricAntivotes([0, 0, 0, 1], submetric)
+            computeSubmetricAntivotes([0, 0, 0, 1], submetric),
         )
     })
 
@@ -75,7 +75,7 @@ describe("computeRatioSubmetricAntivotes", () => {
         const result = computeRatioSubmetricAntivotes(fiveRoughRatio, submetric)
 
         expect(result).toBe(
-            computeSubmetricAntivotes([0, 0, 1, 0], submetric)
+            computeSubmetricAntivotes([0, 0, 1, 0], submetric),
         )
     })
 
@@ -89,7 +89,7 @@ describe("computeRatioSubmetricAntivotes", () => {
 
         expect(result).toBe(
             computeSubmetricAntivotes([0, 0, 0, 1], submetric) +
-            computeLog(computeSubmetricAntivotes([0, 0, 1, 0], submetric), 2)
+            computeLog(computeSubmetricAntivotes([0, 0, 1, 0], submetric), 2),
         )
     })
 
@@ -103,7 +103,7 @@ describe("computeRatioSubmetricAntivotes", () => {
 
         expect(result).toBe(
             computeSubmetricAntivotes([0, 0, 0, 1], submetric) +
-            computeSubmetricAntivotes([0, 0, 1, 0], submetric) ** 2
+            computeSubmetricAntivotes([0, 0, 1, 0], submetric) ** 2,
         )
     })
 
@@ -117,7 +117,7 @@ describe("computeRatioSubmetricAntivotes", () => {
 
         expect(result).toBe(
             computeSubmetricAntivotes([0, 0, 1, 0], submetric) +
-            computeLog(computeSubmetricAntivotes([0, 0, 0, 1], submetric), 2)
+            computeLog(computeSubmetricAntivotes([0, 0, 0, 1], submetric), 2),
         )
     })
 
@@ -131,7 +131,7 @@ describe("computeRatioSubmetricAntivotes", () => {
 
         expect(result).toBe(
             computeSubmetricAntivotes([0, 0, 1, 0], submetric) +
-            computeSubmetricAntivotes([0, 0, 0, 1], submetric) ** 2
+            computeSubmetricAntivotes([0, 0, 0, 1], submetric) ** 2,
         )
     })
 })

@@ -19,7 +19,7 @@ program
 const shouldUpdateFiles = !program.doNotUpdateFiles
 const boundId = program.details || program.args[0]
 
-const bound = boundId &&  BOUNDS.find(bound => bound.id === parseInt(boundId))
+const bound = boundId && BOUNDS.find(bound => bound.id === parseInt(boundId))
 
 let textOutput = ""
 

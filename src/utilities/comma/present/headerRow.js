@@ -5,7 +5,7 @@ const FIND_COMMAS_HEADER_ROW = [
     "cents",
     "monzo",
     "ratio",
-    "apotome slope"
+    "apotome slope",
 ].join("\t")
 
 module.exports = {

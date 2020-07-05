@@ -37,7 +37,7 @@ describe("analyzeComma", () => {
         const command = "npm run analyze-comma"
 
         expect(
-            () => cp.execSync(command, {stdio: [this.stdin, this.stdout, this.stderr]})
+            () => cp.execSync(command, {stdio: [this.stdin, this.stdout, this.stderr]}),
         ).toThrowError(/Unable to determine monzo for comma/)
     })
 })
