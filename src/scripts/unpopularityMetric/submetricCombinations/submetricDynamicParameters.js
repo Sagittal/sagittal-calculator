@@ -4,9 +4,11 @@ const computeSubmetricDynamicParameters = (submetricConfigs = {}, submetricIndex
     const submetricDynamicParameters = []
 
     Object.entries(submetricConfigs).forEach(([parameter, parameterConfig]) => {
-        if (typeof parameterConfig === "object" && parameterConfig.count > 1) {
+        const {count, range} = parameterConfig
+        if (typeof parameterConfig === "object" && count > 1) {
             const parameterPoints = computeParameterPoints(parameterConfig)
-            submetricDynamicParameters.push({submetricIndex, parameter, parameterPoints})
+            const unit = range / (count - 1)
+            submetricDynamicParameters.push({submetricIndex, parameter, parameterPoints, unit})
         }
     })
 

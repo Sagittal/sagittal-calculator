@@ -21,8 +21,8 @@ describe("computeSubmetricDynamicParameters", () => {
         const result = computeSubmetricDynamicParameters(submetricConfigs, submetricIndex)
 
         expect(result).toEqual(jasmine.arrayWithExactContents([
-            {submetricIndex, parameter: PARAMETER.A, parameterPoints: [0.75, 0.875, 1.0, 1.125, 1.25]},
-            {submetricIndex, parameter: PARAMETER.W, parameterPoints: [0.6, 0.7, 0.8]},
+            {submetricIndex, parameter: PARAMETER.A, parameterPoints: [0.75, 0.875, 1.0, 1.125, 1.25], unit: 0.125},
+            {submetricIndex, parameter: PARAMETER.W, parameterPoints: [0.6, 0.7, 0.8], unit: 0.1},
         ]))
     })
 
@@ -43,7 +43,7 @@ describe("computeSubmetricDynamicParameters", () => {
         const result = computeSubmetricDynamicParameters(submetricConfigs, submetricIndex)
 
         expect(result).toEqual(jasmine.arrayWithExactContents([
-            {submetricIndex, parameter: PARAMETER.A, parameterPoints: [0.75, 0.875, 1.0, 1.125, 1.25]},
+            {submetricIndex, parameter: PARAMETER.A, parameterPoints: [0.75, 0.875, 1.0, 1.125, 1.25], unit: 0.125},
         ]))
     })
 
@@ -60,7 +60,7 @@ describe("computeSubmetricDynamicParameters", () => {
         const result = computeSubmetricDynamicParameters(submetricConfigs, submetricIndex)
 
         expect(result).toEqual(jasmine.arrayWithExactContents([
-            {submetricIndex, parameter: PARAMETER.A, parameterPoints: [0.75, 0.875, 1.0, 1.125, 1.25]},
+            {submetricIndex, parameter: PARAMETER.A, parameterPoints: [0.75, 0.875, 1.0, 1.125, 1.25], unit: 0.125},
         ]))
     })
 })

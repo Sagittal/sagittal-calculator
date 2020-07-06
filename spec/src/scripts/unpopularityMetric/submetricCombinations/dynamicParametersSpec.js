@@ -18,9 +18,9 @@ describe("computeDynamicParameters", () => {
         const result = computeDynamicParameters(configs)
 
         expect(result).toEqual([
-            { submetricIndex: 0, parameter: PARAMETER.Y, parameterPoints: [0.7, 1.2, 1.7] },
-            { submetricIndex: 1, parameter: PARAMETER.Y, parameterPoints: [0.9, 1.1] },
-            { submetricIndex: 1, parameter: PARAMETER.A, parameterPoints: [0.6, 0.7] },
+            {submetricIndex: 0, parameter: PARAMETER.Y, parameterPoints: [0.7, 1.2, 1.7], unit: 0.5},
+            {submetricIndex: 1, parameter: PARAMETER.Y, parameterPoints: [0.9, 1.1], unit: 0.2},
+            {submetricIndex: 1, parameter: PARAMETER.A, parameterPoints: [0.6, 0.7], unit: 0.1},
         ])
     })
 })
