@@ -270,6 +270,13 @@ const sanityCheck = [
 ]
 
 
+//
+
+
+// slightly even better than lowestEver
+// {"localMinimum":0.004227573376485423,"submetrics":[{"k":0.063,"a":1.9689999999999999,"aIsBaseOrExponent":-1,"y":0.505,"w":-2.105},{"submetricType":"coapfar","weight":0.577}]}
+
+
 module.exports = {
     withPrimeLimit,
 

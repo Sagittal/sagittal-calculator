@@ -1,15 +1,8 @@
 const {combineSubmetricsPoints} = require("./combineSubmetricsPoints")
-const {computeSubmetricPointsAndDynamicParameters} = require("./submetricPointsAndDynamicParameters")
+const {computeSubmetricPoints} = require("./submetricPoints")
 
-const computeSubmetricCombinations = configs => {
-    let dynamicParameters = []
-    const submetricsPoints = configs.map((submetricConfigs, submetricIndex) => {
-        const {submetricPoints, submetricDynamicParameters} = computeSubmetricPointsAndDynamicParameters(submetricConfigs, submetricIndex)
-
-        dynamicParameters = dynamicParameters.concat(submetricDynamicParameters)
-
-        return submetricPoints
-    })
+const computeSubmetricCombinations = ({configs, dynamicParameters}) => {
+    const submetricsPoints = configs.map(computeSubmetricPoints)
 
     return combineSubmetricsPoints({submetricsPoints, dynamicParameters})
 }

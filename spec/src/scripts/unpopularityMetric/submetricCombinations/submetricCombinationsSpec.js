@@ -1,4 +1,5 @@
 const {computeSubmetricCombinations} = require("../../../../../src/scripts/unpopularityMetric/submetricCombinations/submetricCombinations")
+const {computeDynamicParameters} = require("../../../../../src/scripts/unpopularityMetric/submetricCombinations/dynamicParameters")
 const {PARAMETER, SUBMETRIC_TYPE} = require("../../../../../src/scripts/unpopularityMetric/constants")
 
 describe("submetricCombinations", () => {
@@ -14,8 +15,9 @@ describe("submetricCombinations", () => {
                 [PARAMETER.W]: 3.3,
             },
         ]
+        const dynamicParameters = computeDynamicParameters(configs)
 
-        const result = computeSubmetricCombinations(configs)
+        const result = computeSubmetricCombinations({configs, dynamicParameters})
 
         const expectedResult = [
             {
@@ -203,8 +205,9 @@ describe("submetricCombinations", () => {
                 [PARAMETER.K]: 0,
             },
         ]
+        const dynamicParameters = computeDynamicParameters(configs)
 
-        const result = computeSubmetricCombinations(configs)
+        const result = computeSubmetricCombinations({configs, dynamicParameters})
 
         const expectedResult = [
             {
