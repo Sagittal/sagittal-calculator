@@ -11,7 +11,7 @@ describe("computeNextConfigs", () => {
         ]
         const configs = [
             {
-                [PARAMETER.J]: {center: 0.1, range: 0.05, count: 5},
+                [PARAMETER.J]: {center: 0.1, range: 0.05, count: 5}, // haha... it just doesn't care what your previous count was. well, that's why I had the top-level script point to the same constant that this module uses, to generally prevent that.
                 [PARAMETER.T]: {center: 0, range: 0.25, count: 5},
                 [PARAMETER.A]: 2,
             },

@@ -1,4 +1,5 @@
 const {computeDeepClone} = require("../../../utilities/deepClone")
+const {RESOLUTION} = require("./constants")
 
 const computeNextConfigs = (coordinate, dynamicParameters, configs) => {
     const nextConfigs = computeDeepClone(configs)
@@ -8,7 +9,7 @@ const computeNextConfigs = (coordinate, dynamicParameters, configs) => {
 
         const center = parameterPoints[coordinateElement]
         const range = unit * (2/3)
-        const count = 2
+        const count = RESOLUTION
 
         nextConfigs[submetricIndex][parameter] = { center, range, count }
     })
