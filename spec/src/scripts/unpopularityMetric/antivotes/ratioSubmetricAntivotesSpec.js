@@ -1,7 +1,6 @@
 const {computeRatioSubmetricAntivotes} = require("../../../../../src/scripts/unpopularityMetric/antivotes/ratioSubmetricAntivotes")
 const {computeSubmetricAntivotes} = require("../../../../../src/scripts/unpopularityMetric/antivotes/submetricAntivotes")
 const {computeLog} = require("../../../../../src/utilities/log")
-const {USE_AS, NUMERIC_BOOLEAN} = require("../../../../../src/scripts/unpopularityMetric/constants")
 
 describe("computeRatioSubmetricAntivotes", () => {
     it("splits the ratio into numerator and denominator, computes their submetric antivotes separately, then adjusts the diminuator (the lesser of the two) by k", () => {
@@ -44,7 +43,7 @@ describe("computeRatioSubmetricAntivotes", () => {
     it("supports deciding the numinator and diminuator by the input numerator and denominator", () => {
         const k = 0.46
         const fiveRoughRatio = [25, 11] // 10:11
-        const numeratorIsNuminator = NUMERIC_BOOLEAN.TRUE
+        const numeratorIsNuminator = true
         const submetric = {k, numeratorIsNuminator}
 
         const result = computeRatioSubmetricAntivotes(fiveRoughRatio, submetric)
@@ -81,9 +80,9 @@ describe("computeRatioSubmetricAntivotes", () => {
 
     it("works when k is a base", () => {
         const k = 2
-        const kIsBaseOrExponent = USE_AS.BASE
+        const kIsBase = true
         const fiveRoughRatio = [5, 7]
-        const submetric = {k, kIsBaseOrExponent}
+        const submetric = {k, kIsBase}
 
         const result = computeRatioSubmetricAntivotes(fiveRoughRatio, submetric)
 
@@ -95,9 +94,9 @@ describe("computeRatioSubmetricAntivotes", () => {
 
     it("works when k is an exponent", () => {
         const k = 2
-        const kIsBaseOrExponent = USE_AS.EXPONENT
+        const kIsExponent = true
         const fiveRoughRatio = [5, 7]
-        const submetric = {k, kIsBaseOrExponent}
+        const submetric = {k, kIsExponent}
 
         const result = computeRatioSubmetricAntivotes(fiveRoughRatio, submetric)
 
@@ -109,9 +108,9 @@ describe("computeRatioSubmetricAntivotes", () => {
 
     it("works when j is a base", () => {
         const j = 2
-        const jIsBaseOrExponent = USE_AS.BASE
+        const jIsBase = true
         const fiveRoughRatio = [5, 7]
-        const submetric = {j, jIsBaseOrExponent}
+        const submetric = {j, jIsBase}
 
         const result = computeRatioSubmetricAntivotes(fiveRoughRatio, submetric)
 
@@ -123,9 +122,9 @@ describe("computeRatioSubmetricAntivotes", () => {
 
     it("works when j is an exponent", () => {
         const j = 2
-        const jIsBaseOrExponent = USE_AS.EXPONENT
+        const jIsExponent = true
         const fiveRoughRatio = [5, 7]
-        const submetric = {j, jIsBaseOrExponent}
+        const submetric = {j, jIsExponent}
 
         const result = computeRatioSubmetricAntivotes(fiveRoughRatio, submetric)
 

@@ -61,13 +61,17 @@ const SUBMETRIC_PROPERTIES = {
 const PARAMETER = {
     SUBMETRIC_TYPE: "submetricType",                        // submetric type, which will be used to look up its properties (how it works) when computing antivotes
     WEIGHT: "weight",                                       // submetric coefficient
-    WEIGHT_IS_BASE_OR_EXPONENT: "weightIsBaseOrExponent",   // use the submetric coefficient instead as a exponent (1) or base (-1)
+    WEIGHT_IS_BASE: "weightIsBase",                         // use the submetric coefficient instead as base
+    WEIGHT_IS_EXPONENT: "weightIsExponent",                 // use the submetric coefficient instead as an exponent
     K: "k",                                                 // diminuator coefficient
-    K_IS_BASE_OR_EXPONENT: "kIsBaseOrExponent",             // use the diminuator coefficient instead as a exponent (1) or base (-1)
+    K_IS_BASE: "kIsBase",                                   // use the diminuator coefficient instead as a base
+    K_IS_EXPONENT: "kIsExponent",                           // use the diminuator coefficient instead as an exponent
     J: "j",                                                 // numinator coefficient
-    J_IS_BASE_OR_EXPONENT: "jIsBaseOrExponent",             // use the numinator coefficient instead as a exponent (1) or base (-1)
+    J_IS_BASE: "jIsBase",                                   // use the numinator coefficient instead as a base
+    J_IS_EXPONENT: "jIsExponent",                           // use the numinator coefficient instead as an exponent
     A: "a",                                                 // prime coefficient
-    A_IS_BASE_OR_EXPONENT: "aIsBaseOrExponent",             // use the prime coefficient instead as a exponent (1) or base (-1)
+    A_IS_BASE: "aIsBase",                                   // use the prime coefficient instead as a base
+    A_IS_EXPONENT: "aIsExponent",                           // use the prime coefficient instead as an exponent
     W: "w",                                                 // prime constant (applied after applying exponent or base)
     X: "x",                                                 // prime constant (applied before applying exponent or base)
     Y: "y",                                                 // term exponent
@@ -77,27 +81,9 @@ const PARAMETER = {
     MODIFIED_COUNT: "modifiedCount",                        // Dave's trick where 5's get a half-count
 }
 
-const USE_AS = {
-    BASE: -1,
-    COEFFICIENT: 0,
-    EXPONENT: 1,
-}
-
-const NUMERIC_BOOLEAN = {
-    TRUE: 1,
-    FALSE: 0,
-}
-
-const CHECK_ALL_USES = {center: 0, range: 2, count: 3}
-const CHECK_NUMERIC_BOOLEAN = {center: 0.5, range: 1, count: 2}
-
 module.exports = {
-    CHECK_ALL_USES,
-    CHECK_NUMERIC_BOOLEAN,
     SUBMETRIC_PROPERTIES,
     SUBMETRIC_TYPE,
     SUBMETRIC_OPERATION,
     PARAMETER,
-    USE_AS,
-    NUMERIC_BOOLEAN,
 }

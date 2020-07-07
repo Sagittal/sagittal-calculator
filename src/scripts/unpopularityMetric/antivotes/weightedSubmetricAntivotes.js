@@ -1,18 +1,17 @@
 const ratioSubmetricUnpopularity = require("./ratioSubmetricAntivotes")
 const {computeLog} = require("../../../utilities/log")
-const {USE_AS} = require("../constants")
 
 const computeWeightedSubmetricAntivotes = (fiveRoughRatio, submetric = {}) => {
-    const {weight = 1, weightIsBaseOrExponent = 0} = submetric
+    const {weight = 1, weightIsBase = false, weightIsExponent = false} = submetric
 
     let submetricAntivotes = 0
     if (weight !== 0) {
         submetricAntivotes = ratioSubmetricUnpopularity.computeRatioSubmetricAntivotes(fiveRoughRatio, submetric)
     }
 
-    const weightedSubmetricAntivotes = weightIsBaseOrExponent === USE_AS.BASE ?
+    const weightedSubmetricAntivotes = weightIsBase ?
         computeLog(submetricAntivotes, weight) :
-        weightIsBaseOrExponent === USE_AS.EXPONENT ?
+        weightIsExponent ?
             submetricAntivotes ** weight :
             submetricAntivotes * weight
 

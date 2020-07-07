@@ -1,6 +1,6 @@
 const {computeSubmetricAntivotes} = require("../../../../../src/scripts/unpopularityMetric/antivotes/submetricAntivotes")
 const {computeLog} = require("../../../../../src/utilities/log")
-const {PARAMETER, SUBMETRIC_TYPE, USE_AS, NUMERIC_BOOLEAN} = require("../../../../../src/scripts/unpopularityMetric/constants")
+const {PARAMETER, SUBMETRIC_TYPE} = require("../../../../../src/scripts/unpopularityMetric/constants")
 
 describe("computeSubmetricAntivotes", () => {
     let submetric
@@ -30,23 +30,9 @@ describe("computeSubmetricAntivotes", () => {
             )
         })
 
-        it("when a is provided, raises the prime to an exponent (for a, unlike j and k and weight, exponent is the default)", () => {
+        it("when a is provided, multiplies the prime by it", () => {
             const a = 0.56
             submetric[PARAMETER.A] = a
-
-            const result = computeSubmetricAntivotes(fiveRoughNumberMonzo, submetric)
-
-            expect(result).toBe(
-                1 * 11 ** a +
-                1 * 13 ** a +
-                2 * 17 ** a,
-            )
-        })
-
-        it("when a is used as a coefficient", () => {
-            const a = 0.56
-            submetric[PARAMETER.A] = a
-            submetric[PARAMETER.A_IS_BASE_OR_EXPONENT] = USE_AS.COEFFICIENT
 
             const result = computeSubmetricAntivotes(fiveRoughNumberMonzo, submetric)
 
@@ -57,10 +43,24 @@ describe("computeSubmetricAntivotes", () => {
             )
         })
 
-        it("when a is used as a base (not an exponent)", () => {
+        it("when a is used as an exponent (not a coefficient)", () => {
             const a = 0.56
             submetric[PARAMETER.A] = a
-            submetric[PARAMETER.A_IS_BASE_OR_EXPONENT] = USE_AS.BASE
+            submetric[PARAMETER.A_IS_EXPONENT] = true
+
+            const result = computeSubmetricAntivotes(fiveRoughNumberMonzo, submetric)
+
+            expect(result).toBe(
+                1 * 11 ** a +
+                1 * 13 ** a +
+                2 * 17 ** a,
+            )
+        })
+
+        it("when a is used as a base (not a coefficient)", () => {
+            const a = 0.56
+            submetric[PARAMETER.A] = a
+            submetric[PARAMETER.A_IS_BASE] = true
 
             const result = computeSubmetricAntivotes(fiveRoughNumberMonzo, submetric)
 
@@ -71,7 +71,7 @@ describe("computeSubmetricAntivotes", () => {
             )
         })
 
-        it("when w is provided, adds a constant to each prime after applying the exponent or base", () => {
+        it("when w is provided, adds a constant to each prime after applying the coefficient, exponent, or base", () => {
             const a = 0.56
             const w = 0.34
             submetric[PARAMETER.A] = a
@@ -80,13 +80,13 @@ describe("computeSubmetricAntivotes", () => {
             const result = computeSubmetricAntivotes(fiveRoughNumberMonzo, submetric)
 
             expect(result).toBe(
-                1 * (11 ** a + w) +
-                1 * (13 ** a + w) +
-                2 * (17 ** a + w),
+                1 * (11 * a + w) +
+                1 * (13 * a + w) +
+                2 * (17 * a + w),
             )
         })
 
-        it("when x is provided, adds a constant to each prime before applying the exponent or base", () => {
+        it("when x is provided, adds a constant to each prime before applying the coefficient, exponent, or base", () => {
             const a = 0.56
             const x = -2.1
             submetric[PARAMETER.A] = a
@@ -95,9 +95,9 @@ describe("computeSubmetricAntivotes", () => {
             const result = computeSubmetricAntivotes(fiveRoughNumberMonzo, submetric)
 
             expect(result).toBe(
-                1 * (11 + x) ** a +
-                1 * (13 + x) ** a +
-                2 * (17 + x) ** a,
+                1 * (11 + x) * a +
+                1 * (13 + x) * a +
+                2 * (17 + x) * a,
             )
         })
 
@@ -145,7 +145,7 @@ describe("computeSubmetricAntivotes", () => {
         })
 
         it("when Dave's modified count is provided, counts 5's half as much as normal", () => {
-            submetric[PARAMETER.MODIFIED_COUNT] = NUMERIC_BOOLEAN.TRUE
+            submetric[PARAMETER.MODIFIED_COUNT] = true
             const fiveRoughNumberMonzo = [0, 0, 1, -1]
 
             const result = computeSubmetricAntivotes(fiveRoughNumberMonzo, submetric)

@@ -1,7 +1,7 @@
 const {PRIMES} = require("../../../utilities/constants")
 const {computePrimeCount} = require("../../../utilities/primeCount")
 const {computeLog} = require("../../../utilities/log")
-const {SUBMETRIC_OPERATION, SUBMETRIC_TYPE, SUBMETRIC_PROPERTIES, USE_AS, NUMERIC_BOOLEAN} = require("../constants")
+const {SUBMETRIC_OPERATION, SUBMETRIC_TYPE, SUBMETRIC_PROPERTIES} = require("../constants")
 
 // (sum or count)
 // of (maybe adjusted) prime factors
@@ -11,14 +11,15 @@ const {SUBMETRIC_OPERATION, SUBMETRIC_TYPE, SUBMETRIC_PROPERTIES, USE_AS, NUMERI
 const computeSubmetricAntivotes = (fiveRoughNumberMonzo, submetric = {}) => {
     const {
         a = 1,
-        aIsBaseOrExponent = USE_AS.EXPONENT,
+        aIsExponent = false,
+        aIsBase = false,
         w = 0,
         x = 0,
         y = 1,
         v = 0,
         t = 0,
         submetricType = SUBMETRIC_TYPE.SOAPFAR,
-        modifiedCount = NUMERIC_BOOLEAN.FALSE,
+        modifiedCount = false,
     } = submetric
 
     const {
@@ -42,11 +43,11 @@ const computeSubmetricAntivotes = (fiveRoughNumberMonzo, submetric = {}) => {
                     computePrimeCount(prime) :
                     prime
             adjustedPrime = adjustedPrime + x
-            adjustedPrime = aIsBaseOrExponent === USE_AS.BASE ?
+            adjustedPrime = aIsBase ?
                 adjustedPrime >= 1 ?
                     computeLog(adjustedPrime, a) :
                     1 :
-                aIsBaseOrExponent === USE_AS.EXPONENT ?
+                aIsExponent ?
                     adjustedPrime >= 0 ?
                         adjustedPrime ** a :
                         0
@@ -64,7 +65,7 @@ const computeSubmetricAntivotes = (fiveRoughNumberMonzo, submetric = {}) => {
             }
 
             let termUnpopularity = adjustedTerm * adjustedPrime
-            if (index === 2 && modifiedCount === NUMERIC_BOOLEAN.TRUE) {
+            if (index === 2 && modifiedCount) {
                 termUnpopularity = termUnpopularity * 0.5
             }
 

@@ -1,6 +1,6 @@
 const {} = require("../bests")
 const {computeAntivotes} = require("../antivotes/antivotes")
-const {SUBMETRIC_TYPE, PARAMETER, USE_AS} = require("../constants")
+const {SUBMETRIC_TYPE, PARAMETER} = require("../constants")
 const {presentRatio} = require("../../../utilities/comma/present/ratio")
 
 const submetricCombination =
@@ -8,7 +8,7 @@ const submetricCombination =
         {
             [PARAMETER.K]: 0,
             [PARAMETER.A]: 1.994,
-            [PARAMETER.A_IS_BASE_OR_EXPONENT]: USE_AS.BASE,
+            [PARAMETER.A_IS_BASE]: true,
             [PARAMETER.Y]: 0.455,
             [PARAMETER.W]: -2.08,
         },

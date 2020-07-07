@@ -1,13 +1,13 @@
 const {} = require("../bests")
 const {computeSumOfSquaresForSubmetrics} = require("../sumOfSquares/sumOfSquaresForSubmetrics")
-const {SUBMETRIC_TYPE, PARAMETER, USE_AS} = require("../constants")
+const {SUBMETRIC_TYPE, PARAMETER} = require("../constants")
 
 const submetrics =
     [
         {
             [PARAMETER.K]: 0.038,
             [PARAMETER.A]: 1.994,
-            [PARAMETER.A_IS_BASE_OR_EXPONENT]: USE_AS.BASE,
+            [PARAMETER.A_IS_BASE]: true,
             [PARAMETER.Y]: 0.455,
             [PARAMETER.W]: -2.08,
         },

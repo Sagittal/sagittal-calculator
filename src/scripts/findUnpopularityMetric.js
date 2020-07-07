@@ -2,7 +2,7 @@
 
 require("colors")
 const {program} = require("commander")
-const {SUBMETRIC_TYPE, PARAMETER, USE_AS} = require("./unpopularityMetric/constants")
+const {SUBMETRIC_TYPE, PARAMETER} = require("./unpopularityMetric/constants")
 const {recursivelyFindUnpopularityMetric} = require("./unpopularityMetric/automator/recursivelyFind")
 
 program
@@ -17,7 +17,7 @@ const configs = [
     {
         [PARAMETER.K]: {center: 0.5, range: 1, count: 2},
         [PARAMETER.A]: {center: 2, range: 1, count: 2},
-        [PARAMETER.A_IS_BASE_OR_EXPONENT]: USE_AS.BASE,
+        [PARAMETER.A_IS_BASE]: true,
         [PARAMETER.Y]: {center: 1, range: 2, count: 2},
         [PARAMETER.W]: {center: -2, range: 2, count: 2},
     },

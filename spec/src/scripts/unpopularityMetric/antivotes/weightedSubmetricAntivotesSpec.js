@@ -54,7 +54,7 @@ describe("computeWeightedSubmetricAntivotes", () => {
 
     it("can use the weight as a base", () => {
         const fiveRoughRatio = [15, 14]
-        const submetric = {[PARAMETER.WEIGHT]: 2, [PARAMETER.WEIGHT_IS_BASE_OR_EXPONENT]: -1}
+        const submetric = {[PARAMETER.WEIGHT]: 2, [PARAMETER.WEIGHT_IS_BASE]: true}
 
         const result = computeWeightedSubmetricAntivotes(fiveRoughRatio, submetric)
 
@@ -63,7 +63,7 @@ describe("computeWeightedSubmetricAntivotes", () => {
 
     it("can use the weight as an exponent", () => {
         const fiveRoughRatio = [15, 14]
-        const submetric = {[PARAMETER.WEIGHT]: 0.5, [PARAMETER.WEIGHT_IS_BASE_OR_EXPONENT]: 1}
+        const submetric = {[PARAMETER.WEIGHT]: 0.5, [PARAMETER.WEIGHT_IS_EXPONENT]: true}
 
         const result = computeWeightedSubmetricAntivotes(fiveRoughRatio, submetric)
 
