@@ -1,7 +1,7 @@
-const {checkIfLocalMinimum} = require("../../../../../src/scripts/unpopularityMetric/automator/localMinimum")
+const {getSumOfSquaresAtCoordinateIfLocalMinimum} = require("../../../../../src/scripts/unpopularityMetric/automator/localMinimum")
 const {setSumOfSquaresAtCoordinate} = require("../../../../../src/scripts/unpopularityMetric/automator/setSumOfSquaresAtCoordinate")
 
-describe("checkIfLocalMinimum", () => {
+describe("getSumOfSquaresAtCoordinateIfLocalMinimum", () => {
     let sumsOfSquares
     beforeEach(() => {
         sumsOfSquares = []
@@ -40,7 +40,7 @@ describe("checkIfLocalMinimum", () => {
     it("returns the sum-of-squares if it is lower at the coordinate than at every adjacent coordinates", () => {
         const coordinate = [1, 0, 3, 2]
 
-        const result = checkIfLocalMinimum(sumsOfSquares, coordinate)
+        const result = getSumOfSquaresAtCoordinateIfLocalMinimum(sumsOfSquares, coordinate)
 
         expect(result).toEqual(0.00422)
     })
@@ -48,7 +48,7 @@ describe("checkIfLocalMinimum", () => {
     it("another example of a local minimum", () => {
         const coordinate = [2, 2, 2, 2]
 
-        const result = checkIfLocalMinimum(sumsOfSquares, coordinate)
+        const result = getSumOfSquaresAtCoordinateIfLocalMinimum(sumsOfSquares, coordinate)
 
         expect(result).toEqual(0.00454)
     })
@@ -56,7 +56,7 @@ describe("checkIfLocalMinimum", () => {
     it("returns undefined if the sum-of-squares is not lower at the coordinate than at every adjacent coordinate", () => {
         const coordinate = [1, 1, 1, 1]
 
-        const result = checkIfLocalMinimum(sumsOfSquares, coordinate)
+        const result = getSumOfSquaresAtCoordinateIfLocalMinimum(sumsOfSquares, coordinate)
 
         expect(result).toEqual(undefined)
     })
@@ -64,7 +64,7 @@ describe("checkIfLocalMinimum", () => {
     it("another example of not local minimum", () => {
         const coordinate = [0, 3, 3, 1]
 
-        const result = checkIfLocalMinimum(sumsOfSquares, coordinate)
+        const result = getSumOfSquaresAtCoordinateIfLocalMinimum(sumsOfSquares, coordinate)
 
         expect(result).toEqual(undefined)
     })

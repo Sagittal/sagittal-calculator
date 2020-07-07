@@ -25,12 +25,12 @@ describe("computeNextConfigs", () => {
 
         expect(result).toEqual([
             {
-                [PARAMETER.J]: {center: 0.1, range: 0.05, count: 5},
-                [PARAMETER.T]: {center: 0, range: 0.25, count: 5},
+                [PARAMETER.J]: {center: 0.1, range: 0.06666666666666667, count: 2},
+                [PARAMETER.T]: {center: 0, range: 0.3333333333333333, count: 2},
                 [PARAMETER.A]: 2,
             },
             {
-                [PARAMETER.V]: {center: 2.06, range: 0.01, count: 5},
+                [PARAMETER.V]: {center: 2.06, range: 0.013333333333333332, count: 2},
                 [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPFAR,
             },
         ])

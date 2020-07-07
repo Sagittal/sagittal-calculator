@@ -1,7 +1,7 @@
 const {computeAdjacentCoordinates} = require("./adjacentCoodinates")
 const {getSumOfSquaresAtCoordinate} = require("./getSumOfSquaresAtCoordinate")
 
-const checkIfLocalMinimum = (sumsOfSquares, coordinate) => {
+const getSumOfSquaresAtCoordinateIfLocalMinimum = (sumsOfSquares, coordinate) => {
     const adjacentCoordinates = computeAdjacentCoordinates(coordinate)
     const sumOfSquares = getSumOfSquaresAtCoordinate(sumsOfSquares, coordinate)
 
@@ -17,5 +17,5 @@ const checkIfLocalMinimum = (sumsOfSquares, coordinate) => {
 }
 
 module.exports = {
-    checkIfLocalMinimum,
+    getSumOfSquaresAtCoordinateIfLocalMinimum,
 }

@@ -273,8 +273,22 @@ const sanityCheck = [
 //
 
 
-// slightly even better than lowestEver
-// {"localMinimum":0.004227573376485423,"submetrics":[{"k":0.063,"a":1.9689999999999999,"aIsBaseOrExponent":-1,"y":0.505,"w":-2.105},{"submetricType":"coapfar","weight":0.577}]}
+// Douglas's first run of the recursive automatic finder turned this up quick, 0.00406
+// Sun Jul 05, 2020 10:29 pm
+// http://forum.sagittal.org/viewtopic.php?p=2004#p2004
+const firstRecursiveRun = [
+    {
+        [PARAMETER.K]: 0.1796875,
+        [PARAMETER.A]: 2.0234375,
+        [PARAMETER.A_IS_BASE_OR_EXPONENT]: USE_AS.BASE,
+        [PARAMETER.Y]: 0.4921875,
+        [PARAMETER.W]: -1.986328125,
+    },
+    {
+        [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPFAR,
+        [PARAMETER.WEIGHT]: 0.5615234375,
+    },
+]
 
 
 module.exports = {
@@ -298,4 +312,6 @@ module.exports = {
     lessFragileMinimum,
 
     sanityCheck,
+
+    firstRecursiveRun,
 }
