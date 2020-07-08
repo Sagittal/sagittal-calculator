@@ -1,7 +1,7 @@
 const {computeSumOfSquaresForSubmetrics} = require("../sumOfSquares/sumOfSquaresForSubmetrics")
 const {setSumOfSquaresAtCoordinate} = require("./setSumOfSquaresAtCoordinate")
 
-const gatherSumsOfSquares = (sumsOfSquares, submetricCombinations, best, indentation) => {
+const gatherSumsOfSquares = (sumsOfSquares, submetricCombinations, best, indentation, quiet) => {
     let nextBest = best
 
     submetricCombinations.forEach(({submetrics, coordinate}) => {
@@ -16,7 +16,7 @@ const gatherSumsOfSquares = (sumsOfSquares, submetricCombinations, best, indenta
                 throw new Error("This sum-of-squares was 0. That's extremely unlikely and probably means there's a bug in the code and that to continue searching now would be a waste of time.")
             }
 
-            console.log(`${indentation}new best: ${JSON.stringify(nextBest)}`.green)
+            if (!quiet) console.log(`${indentation}new best: ${JSON.stringify(nextBest)}`.green)
         }
     })
 

@@ -24,7 +24,7 @@ const recursivelyFindUnpopularityMetric = (configs, options = {}) => {
     const submetricCombinations = computeSubmetricCombinations({configs, dynamicParameters})
 
     const sumsOfSquares = []
-    let nextBest = gatherSumsOfSquares(sumsOfSquares, submetricCombinations, best, indentation)
+    let nextBest = gatherSumsOfSquares(sumsOfSquares, submetricCombinations, best, indentation, quiet)
 
     if (!quiet) console.log(`\n${indentation}local minima:`)
     const nextLocalMinima = computeLocalMinima(submetricCombinations, sumsOfSquares)
