@@ -7,7 +7,7 @@ const computeRatioSubmetricAntivotes = (fiveRoughRatio, submetric = {}) => {
     const {
         k = 1,
         j = 1,
-        numeratorIsNuminator = false,
+        numeratorIsNuminator = true,
         jIsBase = false,
         jIsExponent = false,
         kIsBase = false,

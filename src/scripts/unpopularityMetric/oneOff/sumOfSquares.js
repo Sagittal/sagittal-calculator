@@ -10,10 +10,12 @@ const submetrics =
             [PARAMETER.A_IS_BASE]: true,
             [PARAMETER.Y]: 0.455,
             [PARAMETER.W]: -2.08,
+            [PARAMETER.NUMERATOR_IS_NUMINATOR]: false,
         },
         {
             [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPFAR,
             [PARAMETER.WEIGHT]: 0.577,
+            [PARAMETER.NUMERATOR_IS_NUMINATOR]: false,
         },
     ]
 

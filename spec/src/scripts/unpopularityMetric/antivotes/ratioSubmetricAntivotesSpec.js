@@ -3,7 +3,7 @@ const {computeSubmetricAntivotes} = require("../../../../../src/scripts/unpopula
 const {computeLog} = require("../../../../../src/utilities/log")
 
 describe("computeRatioSubmetricAntivotes", () => {
-    it("splits the ratio into numerator and denominator, computes their submetric antivotes separately, then adjusts the diminuator (the lesser of the two) by k", () => {
+    it("splits the ratio into numerator and denominator, computes their submetric antivotes separately, then adjusts the denominator by k", () => {
         const k = 0.46
         const fiveRoughRatio = [11, 7]
         const submetric = {k}
@@ -16,7 +16,7 @@ describe("computeRatioSubmetricAntivotes", () => {
         )
     })
 
-    it("works when the input ratio's denominator will be the numinator (the greater of the two)", () => {
+    it("another example", () => {
         const k = 0.46
         const fiveRoughRatio = [25, 11] // 10:11
         const submetric = {k}
@@ -24,8 +24,8 @@ describe("computeRatioSubmetricAntivotes", () => {
         const result = computeRatioSubmetricAntivotes(fiveRoughRatio, submetric)
 
         expect(result).toBe(
-            computeSubmetricAntivotes([0, 0, 0, 0, 1], submetric) +
-            k * computeSubmetricAntivotes([0, 0, 2], submetric),
+            computeSubmetricAntivotes([0, 0, 2], submetric) +
+            k * computeSubmetricAntivotes([0, 0, 0, 0, 1], submetric),
         )
     })
 
@@ -40,21 +40,21 @@ describe("computeRatioSubmetricAntivotes", () => {
         )
     })
 
-    it("supports deciding the numinator and diminuator by the input numerator and denominator", () => {
+    it("supports deciding the numinator and diminuator by which is the greater of the two", () => {
         const k = 0.46
         const fiveRoughRatio = [25, 11] // 10:11
-        const numeratorIsNuminator = true
+        const numeratorIsNuminator = false
         const submetric = {k, numeratorIsNuminator}
 
         const result = computeRatioSubmetricAntivotes(fiveRoughRatio, submetric)
 
         expect(result).toBe(
-            computeSubmetricAntivotes([0, 0, 2], submetric) +
-            k * computeSubmetricAntivotes([0, 0, 0, 0, 1], submetric),
+            computeSubmetricAntivotes([0, 0, 0, 0, 1], submetric) +
+            k * computeSubmetricAntivotes([0, 0, 2], submetric),
         )
     })
 
-    it("works when k = 0 (and j = 1) therefore it only looks at the numinator", () => {
+    it("works when k = 0 (and j = 1) therefore it only looks at the numerator", () => {
         const k = 0
         const fiveRoughRatio = [5, 7]
         const submetric = {k}
@@ -62,11 +62,11 @@ describe("computeRatioSubmetricAntivotes", () => {
         const result = computeRatioSubmetricAntivotes(fiveRoughRatio, submetric)
 
         expect(result).toBe(
-            computeSubmetricAntivotes([0, 0, 0, 1], submetric),
+            computeSubmetricAntivotes([0, 0, 1], submetric),
         )
     })
 
-    it("works when j = 0 (and k = 1) therefore it only looks at the diminuator", () => {
+    it("works when j = 0 (and k = 1) therefore it only looks at the denominator", () => {
         const j = 0
         const fiveRoughRatio = [5, 7]
         const submetric = {j}
@@ -74,7 +74,7 @@ describe("computeRatioSubmetricAntivotes", () => {
         const result = computeRatioSubmetricAntivotes(fiveRoughRatio, submetric)
 
         expect(result).toBe(
-            computeSubmetricAntivotes([0, 0, 1, 0], submetric),
+            computeSubmetricAntivotes([0, 0, 0, 1], submetric),
         )
     })
 
@@ -87,8 +87,8 @@ describe("computeRatioSubmetricAntivotes", () => {
         const result = computeRatioSubmetricAntivotes(fiveRoughRatio, submetric)
 
         expect(result).toBe(
-            computeSubmetricAntivotes([0, 0, 0, 1], submetric) +
-            computeLog(computeSubmetricAntivotes([0, 0, 1, 0], submetric), 2),
+            computeSubmetricAntivotes([0, 0, 1], submetric) +
+            computeLog(computeSubmetricAntivotes([0, 0, 0, 1], submetric), 2),
         )
     })
 
@@ -101,8 +101,8 @@ describe("computeRatioSubmetricAntivotes", () => {
         const result = computeRatioSubmetricAntivotes(fiveRoughRatio, submetric)
 
         expect(result).toBe(
-            computeSubmetricAntivotes([0, 0, 0, 1], submetric) +
-            computeSubmetricAntivotes([0, 0, 1, 0], submetric) ** 2,
+            computeSubmetricAntivotes([0, 0, 1], submetric) +
+            computeSubmetricAntivotes([0, 0, 0, 1], submetric) ** 2,
         )
     })
 
@@ -115,8 +115,8 @@ describe("computeRatioSubmetricAntivotes", () => {
         const result = computeRatioSubmetricAntivotes(fiveRoughRatio, submetric)
 
         expect(result).toBe(
-            computeSubmetricAntivotes([0, 0, 1, 0], submetric) +
-            computeLog(computeSubmetricAntivotes([0, 0, 0, 1], submetric), 2),
+            computeLog(computeSubmetricAntivotes([0, 0, 1], submetric), 2) +
+            computeSubmetricAntivotes([0, 0, 0, 1], submetric),
         )
     })
 
@@ -129,8 +129,8 @@ describe("computeRatioSubmetricAntivotes", () => {
         const result = computeRatioSubmetricAntivotes(fiveRoughRatio, submetric)
 
         expect(result).toBe(
-            computeSubmetricAntivotes([0, 0, 1, 0], submetric) +
-            computeSubmetricAntivotes([0, 0, 0, 1], submetric) ** 2,
+            computeSubmetricAntivotes([0, 0, 1], submetric) ** 2 +
+            computeSubmetricAntivotes([0, 0, 0, 1], submetric),
         )
     })
 })
