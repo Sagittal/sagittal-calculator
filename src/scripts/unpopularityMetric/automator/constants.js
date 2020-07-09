@@ -1,6 +1,29 @@
-const {PARAMETER, SUBMETRIC_TYPE, PARAMETER_INITIAL_CONFIGS} = require("../constants")
+const {PARAMETER, SUBMETRIC_TYPE} = require("../constants")
 
 const RESOLUTION = 2
+
+// AKA: if they are going to be included in the automatically generated initial configs, what should they be set to
+const PARAMETER_INITIAL_CONFIGS = {
+    [PARAMETER.WEIGHT]: { center: 0.5, range: 1, count: RESOLUTION },
+    [PARAMETER.WEIGHT_IS_BASE]: true,
+    [PARAMETER.WEIGHT_IS_EXPONENT]: true,
+    [PARAMETER.K]: { center: 1, range: 2, count: RESOLUTION },
+    [PARAMETER.K_IS_BASE]: true,
+    [PARAMETER.K_IS_EXPONENT]: true,
+    [PARAMETER.J]: { center: 1, range: 2, count: RESOLUTION },
+    [PARAMETER.J_IS_BASE]: true,
+    [PARAMETER.J_IS_EXPONENT]: true,
+    [PARAMETER.A]: { center: 2, range: 4, count: RESOLUTION },
+    [PARAMETER.A_IS_BASE]: true,
+    [PARAMETER.A_IS_EXPONENT]: true,
+    [PARAMETER.W]: { center: 0, range: 12, count: RESOLUTION },
+    // [PARAMETER.X]: { center: 0, range: 6, count: RESOLUTION },
+    [PARAMETER.Y]: { center: 0, range: 6, count: RESOLUTION },
+    // [PARAMETER.V]: { center: 0, range: 6, count: RESOLUTION },
+    // [PARAMETER.T]: { center: 0, range: 6, count: RESOLUTION },
+    [PARAMETER.NUMERATOR_IS_NUMINATOR]: false,
+    [PARAMETER.MODIFIED_COUNT]: true,
+}
 
 const SUBMETRIC_CONFIGS = Object.values(SUBMETRIC_TYPE).map(submetricType => {
     return { [PARAMETER.SUBMETRIC_TYPE]: submetricType }
@@ -17,10 +40,10 @@ const PARAMETER_CONFIGS = [
     { [PARAMETER.A]: PARAMETER_INITIAL_CONFIGS[PARAMETER.A], [PARAMETER.A_IS_BASE]: true},
     { [PARAMETER.A]: PARAMETER_INITIAL_CONFIGS[PARAMETER.A], [PARAMETER.A_IS_EXPONENT]: true},
     { [PARAMETER.W]: PARAMETER_INITIAL_CONFIGS[PARAMETER.W]},
-    { [PARAMETER.X]: PARAMETER_INITIAL_CONFIGS[PARAMETER.X]},
+    // { [PARAMETER.X]: PARAMETER_INITIAL_CONFIGS[PARAMETER.X]},
     { [PARAMETER.Y]: PARAMETER_INITIAL_CONFIGS[PARAMETER.Y]},
-    { [PARAMETER.V]: PARAMETER_INITIAL_CONFIGS[PARAMETER.V]},
-    { [PARAMETER.T]: PARAMETER_INITIAL_CONFIGS[PARAMETER.T]},
+    // { [PARAMETER.V]: PARAMETER_INITIAL_CONFIGS[PARAMETER.V]},
+    // { [PARAMETER.T]: PARAMETER_INITIAL_CONFIGS[PARAMETER.T]},
     { [PARAMETER.MODIFIED_COUNT]: PARAMETER_INITIAL_CONFIGS[PARAMETER.MODIFIED_COUNT]},
 ]
 

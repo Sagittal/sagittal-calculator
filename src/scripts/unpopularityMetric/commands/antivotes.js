@@ -3,7 +3,7 @@ const {computeAntivotes} = require("../antivotes/antivotes")
 const {SUBMETRIC_TYPE, PARAMETER} = require("../constants")
 const {presentRatio} = require("../../../utilities/comma/present/ratio")
 
-const submetricCombination =
+const submetrics =
     [
         {
             [PARAMETER.K]: 0,
@@ -19,6 +19,6 @@ const submetricCombination =
     ]
 const fiveRoughRatio = [11, 7]
 
-const antivotes = computeAntivotes(fiveRoughRatio, submetricCombination, {logSubmetricAntivotes: true})
+const antivotes = computeAntivotes(fiveRoughRatio, submetrics, {logSubmetricAntivotes: true})
 
-console.log(`${presentRatio(fiveRoughRatio)}\n${JSON.stringify(submetricCombination)}\n${antivotes}`)
+console.log(`${presentRatio(fiveRoughRatio)}\n${JSON.stringify(submetrics)}\n${antivotes}`)

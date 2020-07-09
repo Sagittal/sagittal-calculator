@@ -24,6 +24,6 @@ const configs = [
     },
 ]
 
-const bestMetric = recursivelyFindUnpopularityMetric(configs, { recurse, quiet })
+const bestMetric = recursivelyFindUnpopularityMetric(configs, {recurse, quiet})
 
 console.log(`\nfinal best: ${JSON.stringify(bestMetric)}`.green)

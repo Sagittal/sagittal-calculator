@@ -71,35 +71,12 @@ const PARAMETER = {
     A_IS_BASE: "aIsBase",                           // use the prime coefficient instead as a base
     A_IS_EXPONENT: "aIsExponent",                   // use the prime coefficient instead as an exponent
     W: "w",                                         // prime constant (applied after applying exponent or base)
-    X: "x",                                         // prime constant (applied before applying exponent or base)
+    // X: "x",                                         // prime constant (applied before applying exponent or base) // todo: all these commented out ones lead to bad. this one froze: [{"submetricType":"soapf"},{"submetricType":"soapfar","x":{"center":0,"range":6,"count":2},"a":{"center":2,"range":4,"count":2}}]
     Y: "y",                                         // term exponent
-    V: "v",                                         // term constant (applied before applying exponent, for non-zero terms)
-    T: "t",                                         // term constant (applied after applying exponent)
+    // V: "v",                                         // term constant (applied before applying exponent, for non-zero terms)
+    // T: "t",                                         // term constant (applied after applying exponent)
     NUMERATOR_IS_NUMINATOR: "numeratorIsNuminator", // numinator is determined by the original ratio's numerator, not the greater of the two results of calling the submetric on the original ratio's numerator and denominator
     MODIFIED_COUNT: "modifiedCount",                // Dave's trick where 5's get a half-count
-}
-
-// AKA: if they are going to be included in the automatically generated initial configs, what should they be set to
-const PARAMETER_INITIAL_CONFIGS = {
-    [PARAMETER.WEIGHT]: { center: 0.5, range: 1 },
-    [PARAMETER.WEIGHT_IS_BASE]: true,
-    [PARAMETER.WEIGHT_IS_EXPONENT]: true,
-    [PARAMETER.K]: { center: 1, range: 2 },
-    [PARAMETER.K_IS_BASE]: true,
-    [PARAMETER.K_IS_EXPONENT]: true,
-    [PARAMETER.J]: { center: 1, range: 2 },
-    [PARAMETER.J_IS_BASE]: true,
-    [PARAMETER.J_IS_EXPONENT]: true,
-    [PARAMETER.A]: { center: 2, range: 4 },
-    [PARAMETER.A_IS_BASE]: true,
-    [PARAMETER.A_IS_EXPONENT]: true,
-    [PARAMETER.W]: { center: 0, range: 12 },
-    [PARAMETER.X]: { center: 0, range: 6 },
-    [PARAMETER.Y]: { center: 0, range: 6 },
-    [PARAMETER.V]: { center: 0, range: 6 },
-    [PARAMETER.T]: { center: 0, range: 6 },
-    [PARAMETER.NUMERATOR_IS_NUMINATOR]: false,
-    [PARAMETER.MODIFIED_COUNT]: true,
 }
 
 module.exports = {
@@ -107,5 +84,4 @@ module.exports = {
     SUBMETRIC_TYPE,
     SUBMETRIC_OPERATION,
     PARAMETER,
-    PARAMETER_INITIAL_CONFIGS,
 }

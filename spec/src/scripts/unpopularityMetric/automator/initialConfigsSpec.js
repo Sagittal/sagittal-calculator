@@ -1,5 +1,6 @@
 const {computeInitialConfigs} = require("../../../../../src/scripts/unpopularityMetric/automator/initialConfigs")
-const {PARAMETER, PARAMETER_INITIAL_CONFIGS, SUBMETRIC_TYPE} = require("../../../../../src/scripts/unpopularityMetric/constants")
+const {PARAMETER, SUBMETRIC_TYPE} = require("../../../../../src/scripts/unpopularityMetric/constants")
+const {PARAMETER_INITIAL_CONFIGS} = require("../../../../../src/scripts/unpopularityMetric/automator/constants")
 const {deepEquals} = require("../../../../../src/utilities/deepEquals")
 const {arraysHaveSameContents} = require("../../../../../src/utilities/arraysHaveSameContents")
 
