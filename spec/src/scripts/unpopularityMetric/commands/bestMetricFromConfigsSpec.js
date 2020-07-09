@@ -1,6 +1,6 @@
-describe("unpopularityMetric", () => {
+describe("best metric from configs", () => {
     xit("runs without error", () => {
-        const command = "npm run find-unpopularity-metric"
+        const command = "npm run best-metric-from-configs"
 
         const result = runCommandAndGetConsoleOutput(command)
 

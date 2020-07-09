@@ -8,10 +8,14 @@
   },
   "scripts": {
     "test": "jasmine",
-    "analyze-bounds": "node src/scripts/analyzeBounds.js",
-    "find-commas": "node src/scripts/findCommas.js",
-    "analyze-comma": "node src/scripts/analyzeComma.js",
-    "find-unpopularity-metric": "node --max-old-space-size=131072 src/scripts/findUnpopularityMetric.js"
+    "analyze-bound": "node src/scripts/analyzeBounds/commands/analyzeBound.js",
+    "analyze-bounds": "node src/scripts/analyzeBounds/commands/analyzeBounds.js",
+    "find-commas": "node src/scripts/findCommas/commands/findCommas.js",
+    "analyze-comma": "node src/scripts/analyzeComma/commands/analyzeComma.js",
+    "best-metric-from-configs": "node src/scripts/unpopularityMetric/commands/bestMetricFromConfigs.js",
+    "antivotes": "node src/scripts/unpopularityMetric/commands/antivotes.js",
+    "sos": "node src/scripts/unpopularityMetric/commands/sumOfSquares.js",
+    "best-metric-automatic-finder": "node --max-old-space-size=131072 src/scripts/unpopularityMetric/commands/bestMetricAutomaticFinder.js"
   },
   "devDependencies": {
     "colors": "^1.4.0",

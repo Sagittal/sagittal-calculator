@@ -4,10 +4,10 @@ const {computeDistributions} = require("../../../utilities/distributions")
 const {merge} = require("../../../utilities/merge")
 const {SUBMETRIC_CONFIGS, PARAMETER_CONFIGS, SUBMETRIC_CONFIG_COMBINATIONS, PARAMETER_CONFIG_COMBINATIONS} = require("./constants")
 
-const computeInitialConfigs = chunkCount => {
+const computeInitialConfigs = (chunkCount, {quiet = false} = {}) => {
     let initialConfigs = []
 
-    console.log(`calculating the initial configs: phase 1 of ${chunkCount}`)
+    if (!quiet) console.log(`calculating the initial configs: phase 1 of ${chunkCount}`)
     const submetricConfigsCombinations = computeCombinations(SUBMETRIC_CONFIGS, chunkCount)
     submetricConfigsCombinations.forEach(submetricConfigsCombination => {
         initialConfigs.push(submetricConfigsCombination)
@@ -26,7 +26,7 @@ const computeInitialConfigs = chunkCount => {
         PARAMETER_CONFIG_COMBINATIONS[chunkCountForParameters] = PARAMETER_CONFIG_COMBINATIONS[chunkCountForParameters] || computeCombinations(PARAMETER_CONFIGS, chunkCountForParameters, {withRepeatedElements: true})
         const parameterConfigsCombinations = PARAMETER_CONFIG_COMBINATIONS[chunkCountForParameters]
 
-        console.log(`calculating the initial configs: phase ${chunkCountForParameters + 1} of ${chunkCount}`)
+        if (!quiet) console.log(`calculating the initial configs: phase ${chunkCountForParameters + 1} of ${chunkCount}`)
 
         const pTotal = parameterConfigsCombinations.length
         const total = submetricConfigsCombinations.length * pTotal

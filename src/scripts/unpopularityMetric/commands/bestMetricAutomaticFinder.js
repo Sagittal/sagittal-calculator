@@ -1,10 +1,18 @@
 require("colors")
-const {recursivelyFindUnpopularityMetric} = require("./recursivelyFind")
-const {computeInitialConfigs} = require("./initialConfigs")
+const {program} = require("commander")
 
-console.log(require('v8').getHeapStatistics().total_available_size)
+const {recursivelyFindUnpopularityMetric} = require("../automator/recursivelyFind")
+const {computeInitialConfigs} = require("../automator/initialConfigs")
 
-for (let chunkCount = 0; chunkCount < 8; chunkCount++) {
+program
+  .option("-l, --lower-bound-chunk-count <lowerBoundChunkCount>", "lower bound chunk count", parseInt)
+  .option("-u, --upper-bound-chunk-count <upperBoundChunkCount>", "upper bound chunk count", parseInt)
+  .parse(process.argv)
+
+const lowerBoundChunkCount = program.lowerBoundChunkCount || 1
+const upperBoundChunkCount = program.upperBoundChunkCount || 8
+
+for (let chunkCount = lowerBoundChunkCount; chunkCount < upperBoundChunkCount; chunkCount++) {
     const initialConfigs = computeInitialConfigs(chunkCount)
     console.log(`Investigating chunk count ${chunkCount} which has ${initialConfigs.length} configs to check`)
 

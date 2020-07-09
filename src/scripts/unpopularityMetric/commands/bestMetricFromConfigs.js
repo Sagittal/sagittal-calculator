@@ -2,9 +2,9 @@
 
 require("colors")
 const {program} = require("commander")
-const {SUBMETRIC_TYPE, PARAMETER} = require("./unpopularityMetric/constants")
-const {RESOLUTION} = require("./unpopularityMetric/automator/constants")
-const {recursivelyFindUnpopularityMetric} = require("./unpopularityMetric/automator/recursivelyFind")
+const {SUBMETRIC_TYPE, PARAMETER} = require("../constants")
+const {RESOLUTION} = require("../automator/constants")
+const {recursivelyFindUnpopularityMetric} = require("../automator/recursivelyFind")
 
 program
     .option("-r, --recursive", "recursive")
@@ -24,6 +24,6 @@ const configs = [
     },
 ]
 
-const best = recursivelyFindUnpopularityMetric(configs, { recurse, quiet })
+const bestMetric = recursivelyFindUnpopularityMetric(configs, { recurse, quiet })
 
-console.log(`\nfinal best: ${JSON.stringify(best)}`.green)
+console.log(`\nfinal best: ${JSON.stringify(bestMetric)}`.green)

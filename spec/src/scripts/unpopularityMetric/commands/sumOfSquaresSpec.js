@@ -1,6 +1,6 @@
-describe("one-off sum-of-squares", () => {
+describe("sum-of-squares", () => {
     it("gives you the sum-of-squares given the submetric combination in the file, and also logs the full list of unpopularities", () => {
-        const command = "node src/scripts/unpopularityMetric/oneOff/sumOfSquares"
+        const command = "node src/scripts/unpopularityMetric/commands/sumOfSquares"
 
         const result = runCommandAndGetConsoleOutput(command, {headerLinesCount: 0})
 

@@ -1,6 +1,6 @@
-describe("one-off antivotes", () => {
+describe("antivotes", () => {
     it("gives you the antivotes of a specific ratio for the submetric combination set in the file", () => {
-        const command = "node src/scripts/unpopularityMetric/oneOff/antivotes"
+        const command = "node src/scripts/unpopularityMetric/commands/antivotes"
 
         const result = runCommandAndGetConsoleOutput(command, {headerLinesCount: 0})
 

@@ -1,8 +1,8 @@
 const {program} = require("commander")
-const {presentCommas} = require("../utilities/comma/present/commas")
-const {parseMonzo} = require("../utilities/comma/monzo")
-const {computeCommas} = require("./findCommas/commas")
-const {MAXIMUM_POSITION} = require("../notations/ji/intervals")
+const {presentCommas} = require("../../../utilities/comma/present/commas")
+const {parseMonzo} = require("../../../utilities/comma/monzo")
+const {computeCommas} = require("../commas")
+const {MAXIMUM_POSITION} = require("../../../notations/ji/intervals")
 
 program
     .option("-l, --lower-bound <lowerBound>", "lower bound", parseFloat)

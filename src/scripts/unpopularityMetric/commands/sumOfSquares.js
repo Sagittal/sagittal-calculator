@@ -1,4 +1,4 @@
-const {} = require("../bests")
+const {} = require("../bestMetrics")
 const {computeSumOfSquaresForSubmetrics} = require("../sumOfSquares/sumOfSquaresForSubmetrics")
 const {SUBMETRIC_TYPE, PARAMETER} = require("../constants")
 

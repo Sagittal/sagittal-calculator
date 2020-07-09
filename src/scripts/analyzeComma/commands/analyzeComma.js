@@ -1,9 +1,9 @@
 const {program} = require("commander")
-const {computeMonzoFromRatio} = require("../utilities/comma/monzoFromRatio")
-const {presentComma} = require("../utilities/comma/present/comma")
-const {parseRatio} = require("../utilities/comma/ratio")
-const {parseMonzo} = require("../utilities/comma/monzo")
-const {analyzeComma} = require("../utilities/comma/comma")
+const {computeMonzoFromRatio} = require("../../../utilities/comma/monzoFromRatio")
+const {presentComma} = require("../../../utilities/comma/present/comma")
+const {parseRatio} = require("../../../utilities/comma/ratio")
+const {parseMonzo} = require("../../../utilities/comma/monzo")
+const {analyzeComma} = require("../../../utilities/comma/comma")
 
 program
     .option("-m, --monzo <monzo>", "monzo", parseMonzo)

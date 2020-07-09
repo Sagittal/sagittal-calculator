@@ -1,4 +1,4 @@
-const {} = require("../bests")
+const {} = require("../bestMetrics")
 const {computeAntivotes} = require("../antivotes/antivotes")
 const {SUBMETRIC_TYPE, PARAMETER} = require("../constants")
 const {presentRatio} = require("../../../utilities/comma/present/ratio")
