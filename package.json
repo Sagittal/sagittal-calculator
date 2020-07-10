@@ -7,19 +7,23 @@
     "url": "git+https://github.com/cmloegcmluin/sagittal-calculator.git"
   },
   "scripts": {
-    "test": "jasmine",
-    "analyze-bound": "node src/scripts/analyzeBounds/commands/analyzeBound.js",
-    "analyze-bounds": "node src/scripts/analyzeBounds/commands/analyzeBounds.js",
-    "find-commas": "node src/scripts/findCommas/commands/findCommas.js",
-    "analyze-comma": "node src/scripts/analyzeComma/commands/analyzeComma.js",
-    "best-metric-from-configs": "node src/scripts/unpopularityMetric/commands/bestMetricFromConfigs.js",
-    "antivotes": "node src/scripts/unpopularityMetric/commands/antivotes.js",
-    "sos": "node src/scripts/unpopularityMetric/commands/sumOfSquares.js",
-    "best-metric-automatic-finder": "node --max-old-space-size=131072 src/scripts/unpopularityMetric/commands/bestMetricAutomaticFinder.js"
+    "test": "ts-node node_modules/jasmine/bin/jasmine",
+    "analyze-bound": "ts-node src/scripts/analyzeBounds/commands/analyzeBound.ts",
+    "analyze-bounds": "ts-node src/scripts/analyzeBounds/commands/analyzeBounds.ts",
+    "find-commas": "ts-node src/scripts/findCommas/commands/findCommas.ts",
+    "analyze-comma": "ts-node src/scripts/analyzeComma/commands/analyzeComma.ts",
+    "best-metric-from-configs": "ts-node src/scripts/unpopularityMetric/commands/bestMetricFromConfigs.ts",
+    "antivotes": "ts-node src/scripts/unpopularityMetric/commands/antivotes.ts",
+    "sos": "ts-node src/scripts/unpopularityMetric/commands/sumOfSquares.ts",
+    "best-metric-automatic-finder": "node -r ts-node/register --max-old-space-size=131072 src/scripts/unpopularityMetric/commands/bestMetricAutomaticFinder.ts"
   },
   "devDependencies": {
+    "@types/jasmine": "^3.5.11",
+    "@types/node": "^14.0.20",
     "colors": "^1.4.0",
     "commander": "^5.1.0",
-    "jasmine": "^3.5.0"
+    "jasmine": "^3.5.0",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.6"
   }
 }
