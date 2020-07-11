@@ -1,7 +1,7 @@
 import { computeAdjacentPoints } from "./adjacentPoints"
 import { getSumOfSquaresAtPoint } from "./getSumOfSquaresAtPoint"
 import { SumOfSquares, SumsOfSquares } from "../sumOfSquares/types"
-import { Point } from "./types"
+import { Point } from "../samples/types"
 
 const getSumOfSquaresAtPointIfLocalMinimum = (sumsOfSquares: SumsOfSquares, point: Point): SumOfSquares | undefined => {
     const adjacentPoints = computeAdjacentPoints(point)

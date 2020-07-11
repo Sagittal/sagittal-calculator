@@ -1,4 +1,4 @@
-import { computeSubmetricDynamicParameters } from "../../../../../src/scripts/unpopularityMetric/submetricCombinations/submetricDynamicParameters"
+import { computeSubmetricDynamicParameters } from "../../../../../src/scripts/unpopularityMetric/samples/submetricDynamicParameters"
 import { Parameter, SubmetricConfig } from "../../../../../src/scripts/unpopularityMetric/types"
 
 describe("computeSubmetricDynamicParameters", () => {

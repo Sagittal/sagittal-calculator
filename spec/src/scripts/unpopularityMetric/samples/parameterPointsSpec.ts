@@ -1,5 +1,5 @@
-import { computeParameterPoints } from "../../../../../src/scripts/unpopularityMetric/submetricCombinations/parameterPoints"
-import { ParameterPoint } from "../../../../../src/scripts/unpopularityMetric/submetricCombinations/types"
+import { computeParameterPoints } from "../../../../../src/scripts/unpopularityMetric/samples/parameterPoints"
+import { ParameterPoint } from "../../../../../src/scripts/unpopularityMetric/samples/types"
 import { ParameterConfig } from "../../../../../src/scripts/unpopularityMetric/types"
 
 describe("computeParameterPoints", () => {

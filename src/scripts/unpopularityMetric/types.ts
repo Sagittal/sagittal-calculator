@@ -1,4 +1,4 @@
-import { ParameterPoint } from "./submetricCombinations/types"
+import { ParameterPoint } from "./samples/types"
 
 enum SubmetricType {
     SOAPFAR = "soapfar",

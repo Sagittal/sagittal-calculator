@@ -1,4 +1,4 @@
-import { computeSubmetricPoints } from "../../../../../src/scripts/unpopularityMetric/submetricCombinations/submetricPoints"
+import { computeSubmetricPoints } from "../../../../../src/scripts/unpopularityMetric/samples/submetricPoints"
 import { Parameter } from "../../../../../src/scripts/unpopularityMetric/types"
 
 describe("computeSubmetricPoints", () => {

@@ -1,12 +1,13 @@
 import { getSumOfSquaresAtPointIfLocalMinimum } from "./localMinimum"
 import { computeDeepDistinct } from "../../../utilities/deepDistinct"
 import { LocalMinimum } from "./types"
-import { SubmetricCombination } from "../submetricCombinations/types"
+import { Sample } from "../samples/types"
 import { SumsOfSquares } from "../sumOfSquares/types"
 
-const computeLocalMinima = (submetricCombinations: SubmetricCombination[], sumsOfSquares: SumsOfSquares) => {
+const computeLocalMinima = (samples: Sample[], sumsOfSquares: SumsOfSquares) => {
     const localMinima: LocalMinimum[] = []
-    submetricCombinations.forEach(({ submetrics, point }) => {
+    samples.forEach(sample => {
+        const { submetrics, point } = sample
         const sumOfSquares = getSumOfSquaresAtPointIfLocalMinimum(sumsOfSquares, point)
         if (sumOfSquares) {
             localMinima.push({ sumOfSquares, point: point, submetrics })

@@ -1,9 +1,9 @@
-import { computeParameterPointIndices } from "../../../../../src/scripts/unpopularityMetric/submetricCombinations/parameterPointIndices"
+import { computeParameterPointIndices } from "../../../../../src/scripts/unpopularityMetric/samples/parameterPointIndices"
 import { DynamicParameter, Parameter } from "../../../../../src/scripts/unpopularityMetric/types"
 import {
     ParameterPoint,
     SubmetricPoint,
-} from "../../../../../src/scripts/unpopularityMetric/submetricCombinations/types"
+} from "../../../../../src/scripts/unpopularityMetric/samples/types"
 
 describe("computeParameterPointIndices", () => {
     it("given the dynamic parameters and a submetric point, returns an array of, in order, for each of the submetric point's parameters which is dynamic, its index in the parameter points", () => {

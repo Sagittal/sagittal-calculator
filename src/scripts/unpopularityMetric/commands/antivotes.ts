@@ -1,3 +1,4 @@
+import "colors"
 import { computeAntivotes } from "../antivotes/antivotes"
 import { presentRatio } from "../../../utilities/comma/present/ratio"
 import { Parameter, Submetric, SubmetricType } from "../types"

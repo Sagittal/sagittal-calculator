@@ -1,6 +1,6 @@
-import { Point } from "./types"
+import { Point } from "../samples/types"
 
-const computeAdjacentPoints = (point: Point) => { // todo: rename point per recent email with Dave
+const computeAdjacentPoints = (point: Point) => {
     const adjacentPoints: Point[] = []
 
     point.forEach((coordinate, index) => {

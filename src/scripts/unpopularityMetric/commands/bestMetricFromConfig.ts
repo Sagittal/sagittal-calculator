@@ -4,7 +4,8 @@ import "colors"
 import { program } from "commander"
 import { RESOLUTION } from "../automator/constants"
 import { recursivelyFindUnpopularityMetric } from "../automator/recursivelyFind"
-import { Parameter } from "../types"
+import { Parameter, SubmetricConfig } from "../types"
+import { Combination } from "../../../utilities/types"
 
 program
     .option("-r, --recursive", "recursive")
@@ -14,7 +15,7 @@ program
 const recurse = !!program.recursive
 const quiet = !!program.quiet
 
-const metricConfig = [
+const submetricConfigs = [
     {
         [ Parameter.K ]: { center: 1, range: 2, count: RESOLUTION },
         [ Parameter.A ]: { center: 2.00001, range: 2, count: RESOLUTION },
@@ -22,8 +23,8 @@ const metricConfig = [
         [ Parameter.Y ]: { center: 2, range: 4, count: RESOLUTION },
         [ Parameter.W ]: { center: -2.00001, range: 3, count: RESOLUTION },
     },
-]
+] as Combination<SubmetricConfig>
 
-const bestMetric = recursivelyFindUnpopularityMetric(metricConfig, { recurse, quiet })
+const bestMetric = recursivelyFindUnpopularityMetric(submetricConfigs, { recurse, quiet })
 
 console.log(`\nbest metric: ${JSON.stringify(bestMetric)}`[ "green" ])

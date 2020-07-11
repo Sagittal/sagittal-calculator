@@ -1,9 +1,9 @@
-import { combineSubmetricsPoints } from "../../../../../src/scripts/unpopularityMetric/submetricCombinations/combineSubmetricsPoints"
+import { combineSubmetricsPoints } from "../../../../../src/scripts/unpopularityMetric/samples/combineSubmetricsPoints"
 import { DynamicParameter, Parameter, SubmetricType } from "../../../../../src/scripts/unpopularityMetric/types"
 import {
     ParameterPoint,
     SubmetricPoint,
-} from "../../../../../src/scripts/unpopularityMetric/submetricCombinations/types"
+} from "../../../../../src/scripts/unpopularityMetric/samples/types"
 
 describe("combineSubmetricsPoints", () => {
     it("takes the list of possible points for each submetric individually, and returns a list of every possible combination of them, along with its point, which is then called a 'submetric combination'", () => {

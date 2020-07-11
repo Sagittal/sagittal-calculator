@@ -4,8 +4,7 @@ import {
     Parameter, SubmetricConfig,
     SubmetricType,
 } from "../../../../../src/scripts/unpopularityMetric/types"
-import { Point } from "../../../../../src/scripts/unpopularityMetric/automator/types"
-import { ParameterPoint } from "../../../../../src/scripts/unpopularityMetric/submetricCombinations/types"
+import { ParameterPoint, Point } from "../../../../../src/scripts/unpopularityMetric/samples/types"
 import { Combination } from "../../../../../src/utilities/types"
 
 describe("computeNextConfigs", () => {

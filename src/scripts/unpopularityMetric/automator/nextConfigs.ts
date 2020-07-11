@@ -1,8 +1,8 @@
 import { computeDeepClone } from "../../../utilities/deepClone"
 import { RESOLUTION } from "./constants"
-import { Point } from "./types"
 import { DynamicParameter, SubmetricConfig } from "../types"
 import { Combination } from "../../../utilities/types"
+import { Point } from "../samples/types"
 
 const computeNextConfigs = (point: Point, dynamicParameters: DynamicParameter[], submetricConfigs: Combination<SubmetricConfig> ) => {
     const nextConfigs = computeDeepClone(submetricConfigs)

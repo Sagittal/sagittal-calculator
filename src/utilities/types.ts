@@ -6,10 +6,6 @@ type Proportion = number & { _ProportionBrand: "Proportion" }
 
 type Ratio = [Numerator, Denominator]
 
-// todo: need a better name for SubmetricCombination since it has a Combination<Submetric> inside it.
-// todo: and then the directory should be called submetricCombinations not anymore
-// todo: ok i cna't find the other todo i just added for renaming SubmetricCombination since it contains a Combination<Submetric> but perhaps its actually a Sample ?
-
 type Combination<T> = T[] & { _CombinationBrand: "Combination" } // todo: the idea should be that for arrays where order doesn't matter you should use combination
 type Combinations<T> = Combination<T>[] & { _CombinationsBrand: "Combinations" }
 

@@ -1,5 +1,5 @@
 import { SumOfSquares, SumsOfSquares } from "../sumOfSquares/types"
-import { Point } from "./types"
+import { Point } from "../samples/types"
 
 const setSumOfSquaresAtPoint = (sumOfSquares: SumOfSquares, sumsOfSquares: SumsOfSquares, point: Point) => {
     let cursor = sumsOfSquares

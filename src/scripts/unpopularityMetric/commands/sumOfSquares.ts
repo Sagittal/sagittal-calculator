@@ -1,3 +1,4 @@
+import "colors"
 import { computeSumOfSquaresForSubmetrics } from "../sumOfSquares/sumOfSquaresForSubmetrics"
 import { Parameter, Submetric, SubmetricType } from "../types"
 import { Combination } from "../../../utilities/types"

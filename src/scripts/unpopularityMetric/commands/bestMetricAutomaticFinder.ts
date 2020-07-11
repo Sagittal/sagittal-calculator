@@ -1,6 +1,5 @@
 import "colors"
 import { program } from "commander"
-
 import { recursivelyFindUnpopularityMetric } from "../automator/recursivelyFind"
 import { computeInitialConfigs } from "../automator/initialConfigs"
 

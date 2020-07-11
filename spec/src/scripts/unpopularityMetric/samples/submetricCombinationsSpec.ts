@@ -1,5 +1,5 @@
-import { computeSubmetricCombinations } from "../../../../../src/scripts/unpopularityMetric/submetricCombinations/submetricCombinations"
-import { computeDynamicParameters } from "../../../../../src/scripts/unpopularityMetric/submetricCombinations/dynamicParameters"
+import { computeSamples } from "../../../../../src/scripts/unpopularityMetric/samples/samples"
+import { computeDynamicParameters } from "../../../../../src/scripts/unpopularityMetric/samples/dynamicParameters"
 import { Parameter, SubmetricConfig, SubmetricType } from "../../../../../src/scripts/unpopularityMetric/types"
 import { Combination } from "../../../../../src/utilities/types"
 
@@ -18,7 +18,7 @@ describe("submetricCombinations", () => {
         ] as Combination<SubmetricConfig>
         const dynamicParameters = computeDynamicParameters(submetricConfigs)
 
-        const result = computeSubmetricCombinations({ submetricConfigs: submetricConfigs, dynamicParameters })
+        const result = computeSamples({ submetricConfigs: submetricConfigs, dynamicParameters })
 
         const expectedResult = [
             {
@@ -208,7 +208,7 @@ describe("submetricCombinations", () => {
         ] as Combination<SubmetricConfig>
         const dynamicParameters = computeDynamicParameters(metricConfig)
 
-        const result = computeSubmetricCombinations({ submetricConfigs: metricConfig, dynamicParameters })
+        const result = computeSamples({ submetricConfigs: metricConfig, dynamicParameters })
 
         const expectedResult = [
             {

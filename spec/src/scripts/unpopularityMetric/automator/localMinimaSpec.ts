@@ -1,12 +1,11 @@
 import { computeLocalMinima } from "../../../../../src/scripts/unpopularityMetric/automator/localMinima"
-import { SubmetricCombination } from "../../../../../src/scripts/unpopularityMetric/submetricCombinations/types"
-import { Point } from "../../../../../src/scripts/unpopularityMetric/automator/types"
+import { Point, Sample } from "../../../../../src/scripts/unpopularityMetric/samples/types"
 import { SumOfSquares, SumsOfSquares } from "../../../../../src/scripts/unpopularityMetric/sumOfSquares/types"
 import { Combination } from "../../../../../src/utilities/types"
 import { Submetric } from "../../../../../src/scripts/unpopularityMetric/types"
 
 describe("computeLocalMinima", () => {
-    const submetricCombinations: SubmetricCombination[] = [
+    const samples: Sample[] = [
         { point: [0, 0, 0] as Point, submetrics: [] as unknown as Combination<Submetric> },
         { point: [0, 0, 1] as Point, submetrics: [] as unknown as Combination<Submetric> },
         { point: [0, 0, 2] as Point, submetrics: [] as unknown as Combination<Submetric> },
@@ -43,7 +42,7 @@ describe("computeLocalMinima", () => {
             ],
         ]
 
-        const result = computeLocalMinima(submetricCombinations, sumsOfSquares)
+        const result = computeLocalMinima(samples, sumsOfSquares)
 
         expect(result).toEqual([])
     })
@@ -64,7 +63,7 @@ describe("computeLocalMinima", () => {
             ],
         ]
 
-        const result = computeLocalMinima(submetricCombinations, sumsOfSquares)
+        const result = computeLocalMinima(samples, sumsOfSquares)
 
         expect(result).toEqual([])
     })
@@ -85,7 +84,7 @@ describe("computeLocalMinima", () => {
             ],
         ]
 
-        const result = computeLocalMinima(submetricCombinations, sumsOfSquares)
+        const result = computeLocalMinima(samples, sumsOfSquares)
 
         expect(result).toEqual([])
     })
@@ -106,7 +105,7 @@ describe("computeLocalMinima", () => {
             ],
         ]
 
-        const result = computeLocalMinima(submetricCombinations, sumsOfSquares)
+        const result = computeLocalMinima(samples, sumsOfSquares)
 
         expect(result).toEqual(jasmine.arrayWithExactContents([
             { sumOfSquares: 0.003, point: [0, 1, 0], submetrics: [] },

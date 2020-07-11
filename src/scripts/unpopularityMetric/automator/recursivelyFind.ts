@@ -1,5 +1,5 @@
-import { computeSubmetricCombinations } from "../submetricCombinations/submetricCombinations"
-import { computeDynamicParameters } from "../submetricCombinations/dynamicParameters"
+import { computeSamples } from "../samples/samples"
+import { computeDynamicParameters } from "../samples/dynamicParameters"
 import { computeNextConfigs } from "./nextConfigs"
 import { computeIndentation } from "./indentation"
 import { computeLocalMinima } from "./localMinima"
@@ -24,13 +24,13 @@ const recursivelyFindUnpopularityMetric = (submetricConfigs: Combination<Submetr
     const indentation = computeIndentation(depth)
 
     const dynamicParameters = computeDynamicParameters(submetricConfigs)
-    const submetricCombinations = computeSubmetricCombinations({ submetricConfigs, dynamicParameters })
+    const samples = computeSamples({ submetricConfigs, dynamicParameters })
 
     const sumsOfSquares: SumsOfSquares = []
-    let bestMetric = gatherSumsOfSquares(sumsOfSquares, submetricCombinations, previousBestMetric, indentation, quiet)
+    let bestMetric = gatherSumsOfSquares(sumsOfSquares, samples, previousBestMetric, indentation, quiet)
 
     if (!quiet) console.log(`\n${indentation}local minima:`)
-    const nextLocalMinima = computeLocalMinima(submetricCombinations, sumsOfSquares)
+    const nextLocalMinima = computeLocalMinima(samples, sumsOfSquares)
     nextLocalMinima.forEach((nextLocalMinimum, index) => {
         const nextConfigs = computeNextConfigs(nextLocalMinimum.point, dynamicParameters, submetricConfigs)
         const nextProgressMessage = progressMessage + `${index}/${(nextLocalMinima.length)}@depth${nextDepth} `
