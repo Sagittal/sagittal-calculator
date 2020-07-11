@@ -5,7 +5,7 @@
 // import {arraysHaveSameContents} from "../../../../../src/utilities/arraysHaveSameContents"
 //
 // describe("computeInitialConfigs", () => {
-//     it("given a chunk count, returns all possible combinations of those parameters - works for 1", () => {
+//     it("given a chunk resolution, returns all possible combinations of those parameters - works for 1", () => {
 //         const chunkCount = 1
 //
 //         const result = computeInitialConfigs(chunkCount, {quiet: true})
@@ -38,7 +38,7 @@
 //         ]))
 //     })
 //
-//     it("given a chunk count, returns all possible combinations of those parameters - works for 2", () => {
+//     it("given a chunk resolution, returns all possible combinations of those parameters - works for 2", () => {
 //         const chunkCount = 2
 //
 //         const result = computeInitialConfigs(chunkCount, {quiet: true})
@@ -963,7 +963,7 @@
 //         })
 //     })
 //
-//     it("given a chunk count, returns all possible combinations of those parameters - works for 3", () => {
+//     it("given a chunk resolution, returns all possible combinations of those parameters - works for 3", () => {
 //         const chunkCount = 3
 //
 //         const result = computeInitialConfigs(chunkCount, {quiet: true})
@@ -1000,7 +1000,7 @@
 //         })
 //     })
 //
-//     it("given a chunk count, returns all possible combinations of those parameters - works for 4", () => {
+//     it("given a chunk resolution, returns all possible combinations of those parameters - works for 4", () => {
 //         const chunkCount = 4
 //
 //         const result = computeInitialConfigs(chunkCount, {quiet: true})

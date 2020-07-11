@@ -1,28 +1,28 @@
-import { Parameter, ParameterConfig, ParameterType, SubmetricType } from "../types"
+import { Parameter, DynamicParameterConfig, SubmetricType, SubmetricConfig, SampleResolution } from "../types"
 import { Combinations } from "../../../utilities/types"
 import { ParameterChunk, SubmetricChunk } from "./types"
 
-const RESOLUTION = 2
+const RESOLUTION: SampleResolution = 2 as SampleResolution
 
 // AKA: if they are going to be included in the automatically generated initial configs, what should they be set to
-const PARAMETER_INITIAL_CONFIGS: { [key in Parameter]?: ParameterType | ParameterConfig } = {
-    [ Parameter.WEIGHT ]: { center: 0.5, range: 1, count: RESOLUTION },
+const PARAMETER_INITIAL_CONFIGS: SubmetricConfig = {
+    [ Parameter.WEIGHT ]: { center: 0.5, range: 1, resolution: RESOLUTION } as DynamicParameterConfig,
     [ Parameter.WEIGHT_IS_BASE ]: true,
     [ Parameter.WEIGHT_IS_EXPONENT ]: true,
-    [ Parameter.K ]: { center: 1, range: 2, count: RESOLUTION },
+    [ Parameter.K ]: { center: 1, range: 2, resolution: RESOLUTION } as DynamicParameterConfig,
     [ Parameter.K_IS_BASE ]: true,
     [ Parameter.K_IS_EXPONENT ]: true,
-    [ Parameter.J ]: { center: 1, range: 2, count: RESOLUTION },
+    [ Parameter.J ]: { center: 1, range: 2, resolution: RESOLUTION } as DynamicParameterConfig,
     [ Parameter.J_IS_BASE ]: true,
     [ Parameter.J_IS_EXPONENT ]: true,
-    [ Parameter.A ]: { center: 2, range: 4, count: RESOLUTION },
+    [ Parameter.A ]: { center: 2, range: 4, resolution: RESOLUTION } as DynamicParameterConfig,
     [ Parameter.A_IS_BASE ]: true,
     [ Parameter.A_IS_EXPONENT ]: true,
-    [ Parameter.W ]: { center: 0, range: 12, count: RESOLUTION },
-    // [Parameter.X]: { center: 0, range: 6, count: RESOLUTION },
-    [ Parameter.Y ]: { center: 0, range: 6, count: RESOLUTION },
-    // [Parameter.V]: { center: 0, range: 6, count: RESOLUTION },
-    // [Parameter.T]: { center: 0, range: 6, count: RESOLUTION },
+    [ Parameter.W ]: { center: 0, range: 12, resolution: RESOLUTION } as DynamicParameterConfig,
+    // [Parameter.X]: { center: 0, range: 6, resolution: RESOLUTION } as DynamicParameterConfig,
+    [ Parameter.Y ]: { center: 0, range: 6, resolution: RESOLUTION } as DynamicParameterConfig,
+    // [Parameter.V]: { center: 0, range: 6, resolution: RESOLUTION } as DynamicParameterConfig,
+    // [Parameter.T]: { center: 0, range: 6, resolution: RESOLUTION } as DynamicParameterConfig,
     [ Parameter.NUMERATOR_IS_NUMINATOR ]: false,
     [ Parameter.MODIFIED_COUNT ]: true,
 }

@@ -5,22 +5,23 @@ import { SUBMETRIC_PROPERTIES } from "../../constants"
 import { Monzo } from "../../../../utilities/comma/types"
 import { Submetric, SubmetricOperation, SubmetricType } from "../../types"
 import { Antivotes } from "../../sumOfSquares/types"
+import { DynamicParameterValue } from "../../automator/samples/types"
 
-// (sum or count)
+// (sum or resolution)
 // of (maybe adjusted) prime factors
-// (or prime factor indices via prime count function π)
+// (or prime factor indices via prime resolution function π)
 // (maybe with (maybe adjusted) repetition)
 
 const computeSubmetricAntivotes = (fiveRoughNumberMonzo: Monzo, submetric = {}): Antivotes => {
     const {
-        a = 1,
+        a = 1 as DynamicParameterValue,
         aIsExponent = false,
         aIsBase = false,
-        w = 0,
-        // x = 0,
-        y = 1,
-        // v = 0,
-        // t = 0,
+        w = 0 as DynamicParameterValue,
+        // x = 0 as DynamicParameterValue,
+        y = 1 as DynamicParameterValue,
+        // v = 0 as DynamicParameterValue,
+        // t = 0 as DynamicParameterValue,
         submetricType = SubmetricType.SOAPFAR,
         modifiedCount = false,
     }: Submetric = submetric

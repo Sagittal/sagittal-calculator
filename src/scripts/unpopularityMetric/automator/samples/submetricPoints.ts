@@ -1,26 +1,26 @@
-import { computeParameterPoints } from "./parameterPoints"
-import { ParameterPoint, SubmetricPoint } from "./types"
-import { Parameter, ParameterConfig } from "../../types"
+import { computeParameterValues } from "./parameterValues"
+import { DynamicParameterValue, SubmetricValue } from "./types"
+import { Parameter, DynamicParameterConfig } from "../../types"
 
 const computeSubmetricPoints = (submetricConfig = {}) => {
-    let submetricPoints: SubmetricPoint[] = [{} as SubmetricPoint]
+    let submetricPoints: SubmetricValue[] = [{} as SubmetricValue]
 
-    const submetricConfigEntries = Object.entries(submetricConfig) as Array<[Parameter, ParameterConfig]>
+    const submetricConfigEntries = Object.entries(submetricConfig) as Array<[Parameter, DynamicParameterConfig]>
 
-    submetricConfigEntries.forEach(([parameter, parameterConfig]: [Parameter, ParameterConfig]) => {
-        let extendedSubmetricPoints: SubmetricPoint[] = []
+    submetricConfigEntries.forEach(([parameter, parameterConfig]: [Parameter, DynamicParameterConfig]) => {
+        let extendedSubmetricPoints: SubmetricValue[] = []
 
-        let parameterPoints: ParameterPoint[]
+        let values: DynamicParameterValue[]
         if (typeof parameterConfig !== "object") {
-            parameterPoints = [parameterConfig]
+            values = [parameterConfig]
         } else {
-            parameterPoints = computeParameterPoints(parameterConfig)
+            values = computeParameterValues(parameterConfig)
         }
-        if (parameterPoints.length === 0) return
+        if (values.length === 0) return
 
         submetricPoints.forEach(submetricPoint => {
-            parameterPoints.forEach(parameterPoint => {
-                extendedSubmetricPoints.push({ ...submetricPoint, [ parameter ]: parameterPoint })
+            values.forEach(value => {
+                extendedSubmetricPoints.push({ ...submetricPoint, [ parameter ]: value })
             })
         })
 

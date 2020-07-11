@@ -3,18 +3,19 @@ import { computeLog } from "../../../../../../src/utilities/log"
 import { Parameter, Submetric, SubmetricType } from "../../../../../../src/scripts/unpopularityMetric/types"
 import { Monzo } from "../../../../../../src/utilities/comma/types"
 import { Antivotes } from "../../../../../../src/scripts/unpopularityMetric/sumOfSquares/types"
+import { DynamicParameterValue } from "../../../../../../src/scripts/unpopularityMetric/automator/samples/types"
 
 describe("computeSubmetricAntivotes", () => {
     let submetric: Submetric
 
     const fiveRoughNumberMonzo: Monzo = [
-        0,                  // prime 2,  prime index 1 (from the prime count function)
-        0,                  // prime 3,  prime index 2 (from the prime count function)
-        0,                  // prime 5,  prime index 3 (from the prime count function)
-        0,                  // prime 7,  prime index 4 (from the prime count function)
-        1,                  // prime 11, prime index 5 (from the prime count function)
-        -1,                 // prime 13, prime index 6 (from the prime count function)
-        2,                  // prime 17, prime index 7 (from the prime count function)
+        0,                  // prime 2,  prime index 1 (from the prime resolution function)
+        0,                  // prime 3,  prime index 2 (from the prime resolution function)
+        0,                  // prime 5,  prime index 3 (from the prime resolution function)
+        0,                  // prime 7,  prime index 4 (from the prime resolution function)
+        1,                  // prime 11, prime index 5 (from the prime resolution function)
+        -1,                 // prime 13, prime index 6 (from the prime resolution function)
+        2,                  // prime 17, prime index 7 (from the prime resolution function)
     ] as Monzo
 
     beforeEach(() => {
@@ -33,7 +34,7 @@ describe("computeSubmetricAntivotes", () => {
         })
 
         it("when a is provided, multiplies the prime by it", () => {
-            const a = 0.56
+            const a = 0.56 as DynamicParameterValue
             submetric[ Parameter.A ] = a
 
             const result = computeSubmetricAntivotes(fiveRoughNumberMonzo, submetric)
@@ -46,7 +47,7 @@ describe("computeSubmetricAntivotes", () => {
         })
 
         it("when a is used as an exponent (not a coefficient)", () => {
-            const a = 0.56
+            const a = 0.56 as DynamicParameterValue
             submetric[ Parameter.A ] = a
             submetric[ Parameter.A_IS_EXPONENT ] = true
 
@@ -60,7 +61,7 @@ describe("computeSubmetricAntivotes", () => {
         })
 
         it("when a is used as a base (not a coefficient)", () => {
-            const a = 0.56
+            const a = 0.56 as DynamicParameterValue
             submetric[ Parameter.A ] = a
             submetric[ Parameter.A_IS_BASE ] = true
 
@@ -74,8 +75,8 @@ describe("computeSubmetricAntivotes", () => {
         })
 
         it("when w is provided, adds a constant to each prime after applying the coefficient, exponent, or base", () => {
-            const a = 0.56
-            const w = 0.34
+            const a = 0.56 as DynamicParameterValue
+            const w = 0.34 as DynamicParameterValue
             submetric[ Parameter.A ] = a
             submetric[ Parameter.W ] = w
 
@@ -104,7 +105,7 @@ describe("computeSubmetricAntivotes", () => {
         // })
 
         it("when y is provided, raises the term to an exponent", () => {
-            const y = 0.81
+            const y = 0.81 as DynamicParameterValue
             submetric[ Parameter.Y ] = y
 
             const result = computeSubmetricAntivotes(fiveRoughNumberMonzo, submetric)
@@ -117,8 +118,8 @@ describe("computeSubmetricAntivotes", () => {
         })
 
         // it("when v is provided, adds a constant to each *non-zero* term after applying the exponent", () => {
-        //     const y = 0.81
-        //     const v = 0.34
+        //     const y = 0.81 as DynamicParameterValue
+        //     const v = 0.34 as DynamicParameterValue
         //     submetric[Parameter.Y] = y
         //     submetric[Parameter.V] = v
         //
@@ -132,8 +133,8 @@ describe("computeSubmetricAntivotes", () => {
         // })
 
         // it("when t is provided, adds a constant to each *non-zero* term before applying the exponent", () => {
-        //     const y = 0.81
-        //     const t = 0.34
+        //     const y = 0.81 as DynamicParameterValue
+        //     const t = 0.34 as DynamicParameterValue
         //     submetric[Parameter.Y] = y
         //     submetric[Parameter.T] = t
         //
@@ -146,7 +147,7 @@ describe("computeSubmetricAntivotes", () => {
         //     )
         // })
 
-        it("when Dave's modified count is provided, counts 5's half as much as normal", () => {
+        it("when Dave's modified resolution is provided, counts 5's half as much as normal", () => {
             submetric[ Parameter.MODIFIED_COUNT ] = true
             const fiveRoughNumberMonzo = [0, 0, 1, -1] as Monzo
 
@@ -171,7 +172,7 @@ describe("computeSubmetricAntivotes", () => {
         )
     })
 
-    it("when the submetric type is soapifar, sums the absolute values of the prime factors in the 5-rough monzo, mapped to the prime count function", () => {
+    it("when the submetric type is soapifar, sums the absolute values of the prime factors in the 5-rough monzo, mapped to the prime resolution function", () => {
         submetric[ Parameter.SUBMETRIC_TYPE ] = SubmetricType.SOAPIFAR
 
         const result = computeSubmetricAntivotes(fiveRoughNumberMonzo, submetric)
@@ -183,7 +184,7 @@ describe("computeSubmetricAntivotes", () => {
         )
     })
 
-    it("when the submetric type is soapif, sums the absolute values of the unique prime factors in the 5-rough monzo, mapped to the prime count function", () => {
+    it("when the submetric type is soapif, sums the absolute values of the unique prime factors in the 5-rough monzo, mapped to the prime resolution function", () => {
         submetric[ Parameter.SUBMETRIC_TYPE ] = SubmetricType.SOAPIF
 
         const result = computeSubmetricAntivotes(fiveRoughNumberMonzo, submetric)

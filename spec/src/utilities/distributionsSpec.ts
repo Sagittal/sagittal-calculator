@@ -2,7 +2,7 @@ import { computeDistributions } from "../../../src/utilities/distributions"
 import { arraysHaveSameContents } from "../../../src/utilities/arraysHaveSameContents"
 
 describe("computeDistributions", () => {
-    it("given an array and a count of buckets, will return all the possible ways of distributing the elements across the buckets", () => {
+    it("given an array and a resolution of buckets, will return all the possible ways of distributing the elements across the buckets", () => {
         const array = ["a", "b", "c", "d"]
         const bucketCount = 3
 

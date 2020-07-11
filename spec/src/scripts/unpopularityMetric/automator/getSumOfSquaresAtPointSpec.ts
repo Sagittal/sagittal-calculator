@@ -1,6 +1,6 @@
 import { getSumOfSquaresAtPoint } from "../../../../../src/scripts/unpopularityMetric/automator/getSumOfSquaresAtPoint"
 import { SumOfSquares, SumsOfSquares } from "../../../../../src/scripts/unpopularityMetric/sumOfSquares/types"
-import { Point } from "../../../../../src/scripts/unpopularityMetric/automator/samples/types"
+import { SamplePoint } from "../../../../../src/scripts/unpopularityMetric/automator/samples/types"
 
 describe("getSumOfSquaresAtCoordinate", () => {
     it("returns the sum-of-squares at that point", () => {
@@ -11,7 +11,7 @@ describe("getSumOfSquaresAtCoordinate", () => {
                 [undefined, undefined, undefined, 0.0045843033 as SumOfSquares],
             ],
         ]
-        const point = [2, 0, 3] as Point
+        const point = [2, 0, 3] as SamplePoint
 
         const result = getSumOfSquaresAtPoint(sumsOfSquares, point)
 

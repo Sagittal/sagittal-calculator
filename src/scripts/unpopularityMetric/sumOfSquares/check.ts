@@ -32,8 +32,8 @@ const checkSubmetricsForIssues = (submetrics: Combination<Submetric>) => {
     })
 
     // gotta check combos of submetrics out here like this
-    // [{"submetricType":"soapf"},{"submetricType":"soapfar","w":{"center":0,"range":12,"count":2},"a":{"center":2,"range":4,"count":2}}]
-    // [{"submetricType":"gpf","j":{"center":1,"range":2,"count":2}},{"submetricType":"soapfar","a":{"center":2,"range":4,"count":2}}]
+    // [{"submetricType":"soapf"},{"submetricType":"soapfar","w":{"center":0,"range":12,"resolution":2},"a":{"center":2,"range":4,"resolution":2}}]
+    // [{"submetricType":"gpf","j":{"center":1,"range":2,"resolution":2}},{"submetricType":"soapfar","a":{"center":2,"range":4,"resolution":2}}]
 }
 
 export {

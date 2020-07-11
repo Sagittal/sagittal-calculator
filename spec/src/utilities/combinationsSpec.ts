@@ -1,10 +1,11 @@
 import { computeCombinations } from "../../../src/utilities/combinations"
 import { arraysHaveSameContents } from "../../../src/utilities/arraysHaveSameContents"
+import { Count } from "../../../src/utilities/types"
 
 describe("computeCombinations", () => {
     const set = ["a", "b", "c", "d"]
     it("given a set, will return all combinations of it with the specified count of elements", () => {
-        const count = 2
+        const count = 2 as Count
 
         const result = computeCombinations(set, count)
 
@@ -18,8 +19,8 @@ describe("computeCombinations", () => {
         ]))
     })
 
-    it("when count is zero, returns an empty array", () => {
-        const count = 0
+    it("when resolution is zero, returns an empty array", () => {
+        const count = 0 as Count
 
         const result = computeCombinations(set, count)
 
@@ -27,7 +28,7 @@ describe("computeCombinations", () => {
     })
 
     it("works when with repeated elements is true", () => {
-        const count = 2
+        const count = 2 as Count
 
         const result = computeCombinations(set, count, { withRepeatedElements: true })
 

@@ -2,57 +2,69 @@ import { combineSubmetricsPoints } from "../../../../../../src/scripts/unpopular
 import { Parameter, SubmetricType } from "../../../../../../src/scripts/unpopularityMetric/types"
 import {
     DynamicParameter,
-    ParameterPoint,
-    SubmetricPoint,
+    DynamicParameterValue,
+    ParameterUnit,
+    SubmetricValue,
 } from "../../../../../../src/scripts/unpopularityMetric/automator/samples/types"
+import { Index } from "../../../../../../src/utilities/types"
 
 describe("combineSubmetricsPoints", () => {
     it("takes the list of possible points for each submetric individually, and returns a list of every possible combination of them, along with its point, which is then called a 'submetric combination'", () => {
-        const submetricOnePointOne: SubmetricPoint = {
-            [ Parameter.A ]: 0.5 as ParameterPoint,
-            [ Parameter.Y ]: 1.5 as ParameterPoint,
+        const submetricOnePointOne: SubmetricValue = {
+            [ Parameter.A ]: 0.5 as DynamicParameterValue,
+            [ Parameter.Y ]: 1.5 as DynamicParameterValue,
             [ Parameter.SUBMETRIC_TYPE ]: SubmetricType.SOAPFAR,
         }
-        const submetricOnePointTwo: SubmetricPoint = {
-            [ Parameter.A ]: 0.5 as ParameterPoint,
-            [ Parameter.Y ]: 1.2 as ParameterPoint,
+        const submetricOnePointTwo: SubmetricValue = {
+            [ Parameter.A ]: 0.5 as DynamicParameterValue,
+            [ Parameter.Y ]: 1.2 as DynamicParameterValue,
             [ Parameter.SUBMETRIC_TYPE ]: SubmetricType.SOAPFAR,
         }
-        const submetricOnePointThree: SubmetricPoint = {
-            [ Parameter.A ]: 0.5 as ParameterPoint,
-            [ Parameter.Y ]: 0.9 as ParameterPoint,
+        const submetricOnePointThree: SubmetricValue = {
+            [ Parameter.A ]: 0.5 as DynamicParameterValue,
+            [ Parameter.Y ]: 0.9 as DynamicParameterValue,
             [ Parameter.SUBMETRIC_TYPE ]: SubmetricType.SOAPFAR,
         }
-        const submetricTwoPointOne: SubmetricPoint = {
-            [ Parameter.Y ]: 0.9 as ParameterPoint,
-            [ Parameter.A ]: 0.7 as ParameterPoint,
+        const submetricTwoPointOne: SubmetricValue = {
+            [ Parameter.Y ]: 0.9 as DynamicParameterValue,
+            [ Parameter.A ]: 0.7 as DynamicParameterValue,
         }
-        const submetricTwoPointTwo: SubmetricPoint = {
-            [ Parameter.Y ]: 1.1 as ParameterPoint,
-            [ Parameter.A ]: 0.7 as ParameterPoint,
+        const submetricTwoPointTwo: SubmetricValue = {
+            [ Parameter.Y ]: 1.1 as DynamicParameterValue,
+            [ Parameter.A ]: 0.7 as DynamicParameterValue,
         }
-        const submetricTwoPointThree: SubmetricPoint = {
-            [ Parameter.Y ]: 0.9 as ParameterPoint,
-            [ Parameter.A ]: 0.6 as ParameterPoint,
+        const submetricTwoPointThree: SubmetricValue = {
+            [ Parameter.Y ]: 0.9 as DynamicParameterValue,
+            [ Parameter.A ]: 0.6 as DynamicParameterValue,
         }
-        const submetricTwoPointFour: SubmetricPoint = {
-            [ Parameter.Y ]: 1.1 as ParameterPoint,
-            [ Parameter.A ]: 0.6 as ParameterPoint,
+        const submetricTwoPointFour: SubmetricValue = {
+            [ Parameter.Y ]: 1.1 as DynamicParameterValue,
+            [ Parameter.A ]: 0.6 as DynamicParameterValue,
         }
 
-        const submetricsPoints: SubmetricPoint[][] = [
+        const submetricsPoints: SubmetricValue[][] = [
             [submetricOnePointOne, submetricOnePointTwo, submetricOnePointThree],
             [submetricTwoPointOne, submetricTwoPointTwo, submetricTwoPointThree, submetricTwoPointFour],
         ]
         const dynamicParameters: DynamicParameter[] = [
             {
-                submetricIndex: 0,
+                submetricIndex: 0 as Index,
                 parameter: Parameter.Y,
-                parameterPoints: [1.5, 1.2, 0.9] as ParameterPoint[],
-                unit: 0,
+                values: [1.5, 1.2, 0.9] as DynamicParameterValue[],
+                unit: 0 as ParameterUnit,
             },
-            { submetricIndex: 1, parameter: Parameter.Y, parameterPoints: [0.9, 1.1] as ParameterPoint[], unit: 0 },
-            { submetricIndex: 1, parameter: Parameter.A, parameterPoints: [0.7, 0.6] as ParameterPoint[], unit: 0 },
+            {
+                submetricIndex: 1 as Index,
+                parameter: Parameter.Y,
+                values: [0.9, 1.1] as DynamicParameterValue[],
+                unit: 0 as ParameterUnit,
+            },
+            {
+                submetricIndex: 1 as Index,
+                parameter: Parameter.A,
+                values: [0.7, 0.6] as DynamicParameterValue[],
+                unit: 0 as ParameterUnit,
+            },
         ]
 
         const result = combineSubmetricsPoints({ submetricsPoints, dynamicParameters })

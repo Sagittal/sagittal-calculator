@@ -15,13 +15,14 @@ program
 const recurse = !!program.recursive
 const debug = !!program.debug
 
-const submetricConfigs = [
+// todo and also should it be "sample configs" ? thought about it before... but it might clarify things... i just had a moment where i was like "best metric from config? well if i have the config already, don't i alreayd know the metric?" but the metric just is the metric, the config is for sampling a vicinity
+const submetricConfigs = [ // todo: these should all be submetricConfigCombination
     {
-        [ Parameter.K ]: { center: 1, range: 2, count: RESOLUTION },
-        [ Parameter.A ]: { center: 2.00001, range: 2, count: RESOLUTION },
+        [ Parameter.K ]: { center: 1, range: 2, resolution: RESOLUTION },
+        [ Parameter.A ]: { center: 2.00001, range: 2, resolution: RESOLUTION },
         [ Parameter.A_IS_BASE ]: true,
-        [ Parameter.Y ]: { center: 2, range: 4, count: RESOLUTION },
-        [ Parameter.W ]: { center: -2.00001, range: 3, count: RESOLUTION },
+        [ Parameter.Y ]: { center: 2, range: 4, resolution: RESOLUTION },
+        [ Parameter.W ]: { center: -2.00001, range: 3, resolution: RESOLUTION },
     },
 ] as Combination<SubmetricConfig>
 

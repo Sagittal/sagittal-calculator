@@ -1,5 +1,5 @@
 import { presentCommas } from "../../../../../src/utilities/comma/present/commas"
-import { Comma, CommaName, Monzo } from "../../../../../src/utilities/comma/types"
+import { Comma, CommaName, Monzo, Sopfr } from "../../../../../src/utilities/comma/types"
 import { Cents, Prime, Ratio } from "../../../../../src/utilities/types"
 import { ApotomeSlope } from "../../../../../src/notations/ji/types"
 
@@ -9,7 +9,7 @@ describe("presentCommas", () => {
             {
                 commaName: "11M" as CommaName,
                 limit: 11 as Prime,
-                fiveRoughSopfr: 11,
+                fiveRoughSopfr: 11 as Sopfr<5>,
                 cents: 45.45 as Cents,
                 monzo: [0, 0, 1] as Monzo,
                 ratio: [33, 32] as Ratio,
@@ -18,7 +18,7 @@ describe("presentCommas", () => {
             {
                 commaName: "25/49M" as CommaName,
                 limit: 7 as Prime,
-                fiveRoughSopfr: 24,
+                fiveRoughSopfr: 24 as Sopfr<5>,
                 cents: 33.4 as Cents,
                 monzo: [0, 0] as Monzo,
                 ratio: [50, 49] as Ratio,

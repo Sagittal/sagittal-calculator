@@ -12,6 +12,6 @@ describe("computeEventInaDistance", () => {
 
         const result = computeEventInaDistance(event, index, history)
 
-        expect(result).toBeCloseTo(2 / HIGHINA, ACCURACY_THRESHOLD) // todo: InaDistance type
+        expect(result).toBeCloseTo(2 / HIGHINA, ACCURACY_THRESHOLD)
     })
 })

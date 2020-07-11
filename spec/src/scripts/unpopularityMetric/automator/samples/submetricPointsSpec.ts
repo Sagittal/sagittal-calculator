@@ -7,12 +7,12 @@ describe("computeSubmetricPoints", () => {
             [ Parameter.A ]: {
                 center: 1,
                 range: 0.5,
-                count: 5,
+                resolution: 5,
             },
             [ Parameter.W ]: {
                 center: 0.7,
                 range: 0.2,
-                count: 3,
+                resolution: 3,
             },
         }
 
@@ -37,17 +37,17 @@ describe("computeSubmetricPoints", () => {
         ]))
     })
 
-    it("leaves a parameter out if it has a 0 count", () => {
+    it("leaves a parameter out if it has a 0 resolution", () => {
         const submetricConfig = {
             [ Parameter.A ]: {
                 center: 1,
                 range: 0.5,
-                count: 5,
+                resolution: 5,
             },
             [ Parameter.W ]: {
                 center: 0.7,
                 range: 0.2,
-                count: 0,
+                resolution: 0,
             },
         }
 
@@ -67,7 +67,7 @@ describe("computeSubmetricPoints", () => {
             [ Parameter.A ]: {
                 center: 1,
                 range: 0.5,
-                count: 5,
+                resolution: 5,
             },
             [ Parameter.W ]: 0.7,
         }

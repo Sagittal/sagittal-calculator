@@ -1,25 +1,25 @@
-import { computeParameterPointIndices } from "./parameterPointIndices"
-import { DynamicParameter, Point, Sample, SubmetricPoint } from "./types"
+import { computeParameterValueIndices } from "./parameterValueIndices"
+import { DynamicParameter, SamplePoint, Sample, SubmetricValue } from "./types"
 import { Submetric } from "../../types"
-import { Combination } from "../../../../utilities/types"
+import { Combination, Index } from "../../../../utilities/types"
 
-const combineSubmetricsPoints = ({ submetricsPoints, dynamicParameters }: {submetricsPoints: SubmetricPoint[][], dynamicParameters: DynamicParameter[]}): Sample[] => {
-    let samples: Sample[] = [{ submetrics: [] as unknown as Combination<Submetric>, point: [] as unknown as Point }]
+const combineSubmetricsPoints = ({ submetricsPoints, dynamicParameters }: {submetricsPoints: SubmetricValue[][], dynamicParameters: DynamicParameter[]}): Sample[] => {
+    let samples: Sample[] = [{ submetrics: [] as unknown as Combination<Submetric>, point: [] as unknown as SamplePoint }]
 
     submetricsPoints.forEach((submetricPoints, submetricIndex) => {
         let extendedSubmetricCombinations: Sample[] = []
 
         samples.forEach(({ submetrics, point }) => {
-            submetricPoints.forEach((submetricPoint: SubmetricPoint) => {
-                const parameterPointIndices = computeParameterPointIndices({
+            submetricPoints.forEach((submetricPoint: SubmetricValue) => {
+                const parameterPointIndices = computeParameterValueIndices({
                     dynamicParameters,
-                    submetricPoint,
-                    submetricIndex,
+                    submetricValue: submetricPoint,
+                    submetricIndex: submetricIndex as Index,
                 })
 
                 extendedSubmetricCombinations.push({
                     submetrics: [...submetrics, submetricPoint] as Combination<Submetric>,
-                    point: [...point, ...parameterPointIndices] as Point,
+                    point: [...point, ...parameterPointIndices] as SamplePoint,
                 })
             })
         })

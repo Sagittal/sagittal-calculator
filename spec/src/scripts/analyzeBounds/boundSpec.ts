@@ -4,7 +4,7 @@ import * as levelAnalysis from "../../../../src/scripts/analyzeBounds/levels"
 import { Bound, BoundId, Level } from "../../../../src/notations/ji/types"
 import {
     AnalyzedBound, AnalyzedEvent,
-    AnalyzedHistory, ConsolidatedEvent,
+    AnalyzedHistory,
     ConsolidatedHistories, EventName, EventType,
     History,
     EventRank,
@@ -105,8 +105,8 @@ describe("analyzeBound", () => {
         exact: false,
         distance: 0.08358035044053125 as Cents,
         inaDistance: 0.34143907672999785 as Proportion,
-        tinaError: 0,
-        initialPositionTinaDifference: -0.5613173198970488,
+        tinaError: 0 as Proportion<"Tina">,
+        initialPositionTinaDifference: -0.5613173198970488 as Proportion<"Tina">,
     }
 
     it("returns an analysis of the bound using its histories, including a consolidated presentation of said histories, and its best possible history, and the difference between the bound and its initial position", () => {

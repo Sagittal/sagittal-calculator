@@ -2,7 +2,10 @@ type Cents = number & { _CentsBrand: "Cents" }
 type Numerator = number & { _NumeratorBrand: "Numerator" }
 type Denominator = number & { _DenominatorBrand: "Denominator" }
 type Prime = number & { _PrimeBrand: "Prime" }
-type Proportion = number & { _ProportionBrand: "Proportion" }
+type Proportion<ProportionOf = void> = number & { _ProportionBrand: "Proportion" } & (ProportionOf extends void ? {} : { _ProportionOfBrand: ProportionOf })
+type Index<T = void> = number & { _IndexBrand: "Index" } & (T extends void ? {} : { _IndexOfBrand: T })
+type Count<T = void> = number & { _CountBrand: "Count" }& (T extends void ? {} : { _CountOfBrand: T })
+type Sum<T = void> = number & { _SumBrand: "Sum" } & (T extends void ? {} : { _SumOfBrand: T })
 
 type Ratio = [Numerator, Denominator]
 
@@ -30,4 +33,7 @@ export {
     Distribution,
     DistributionBin,
     Proportion,
+    Index,
+    Count,
+    Sum,
 }

@@ -16,7 +16,7 @@ const computeFiveSlicedMonzosToCheck = ({ maximumPrimeLimit, maximumFiveRoughSop
                 throw new Error("The size of the primes must be limited somehow.")
             }
         } else if (typeof maximumFiveRoughCopfr === "undefined") {
-            throw new Error("The count of the primes must be limited somehow.")
+            throw new Error("The resolution of the primes must be limited somehow.")
         }
     }
 

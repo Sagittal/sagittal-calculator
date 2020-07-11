@@ -1,5 +1,5 @@
 import { presentComma } from "../../../../../src/utilities/comma/present/comma"
-import { Comma, CommaName, Monzo } from "../../../../../src/utilities/comma/types"
+import { Comma, CommaName, Monzo, Sopfr } from "../../../../../src/utilities/comma/types"
 import { Cents, Prime, Ratio } from "../../../../../src/utilities/types"
 import { ApotomeSlope } from "../../../../../src/notations/ji/types"
 
@@ -11,7 +11,7 @@ describe("presentComma", () => {
         commaName: "6j" as CommaName,
         limit: 14 as Prime,
         apotomeSlope: 8.2 as ApotomeSlope,
-        fiveRoughSopfr: 13,
+        fiveRoughSopfr: 13 as Sopfr<5>,
     }
 
     it("formats it in a nice single line in the default summary mode", () => {

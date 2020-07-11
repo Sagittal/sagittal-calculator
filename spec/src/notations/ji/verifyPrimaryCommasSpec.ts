@@ -4,7 +4,7 @@ import { presentCommas } from "../../../../src/utilities/comma/present/commas"
 import { computeCommaName } from "../../../../src/utilities/comma/name"
 import { SYMBOLS } from "../../../../src/notations/ji/symbols"
 import { ApotomeSlope } from "../../../../src/notations/ji/types"
-import { PrimeExponent } from "../../../../src/utilities/comma/types"
+import { Copfr, Sopfr, PrimeExponent } from "../../../../src/utilities/comma/types"
 import { Prime } from "../../../../src/utilities/types"
 
 describe("verifying primary commas", () => {
@@ -17,8 +17,8 @@ describe("verifying primary commas", () => {
             const secondaryCommaZone = computeSecondaryCommaZone(symbol)
             const lowerBound = secondaryCommaZone[ 0 ]
             const upperBound = secondaryCommaZone[ 1 ]
-            const maximumFiveRoughSopfr = 61
-            const maximumFiveRoughCopfr = 555
+            const maximumFiveRoughSopfr = 61 as Sopfr<5>
+            const maximumFiveRoughCopfr = 555 as Copfr<5>
             const maximumApotomeSlope = 14 as ApotomeSlope
             const maximumPrimeLimit = 47 as Prime
             const maximumAbsoluteThreeExponent = 15 as PrimeExponent

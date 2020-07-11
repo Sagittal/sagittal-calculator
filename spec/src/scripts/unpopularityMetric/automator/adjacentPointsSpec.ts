@@ -1,9 +1,9 @@
 import { computeAdjacentPoints } from "../../../../../src/scripts/unpopularityMetric/automator/adjacentPoints"
-import { Point } from "../../../../../src/scripts/unpopularityMetric/automator/samples/types"
+import { SamplePoint } from "../../../../../src/scripts/unpopularityMetric/automator/samples/types"
 
 describe("computeAdjacentPoints", () => {
     it("returns the list of points adjacent to a given point", () => {
-        const point = [1, 2, 3] as Point
+        const point = [1, 2, 3] as SamplePoint
 
         const result = computeAdjacentPoints(point)
 
@@ -18,7 +18,7 @@ describe("computeAdjacentPoints", () => {
     })
 
     it("blindly returns points that are off the edge, but that's okay because getSumOfSquaresAtPointIfLocalMinimum can handle that, and it has no concept of the upper edge of any dimension so it might as well not deal with it", () => {
-        const point = [0, 0] as Point
+        const point = [0, 0] as SamplePoint
 
         const result = computeAdjacentPoints(point)
 

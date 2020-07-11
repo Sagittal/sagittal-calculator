@@ -8,11 +8,11 @@ import {
     SUBMETRIC_CHUNK_COMBINATIONS,
     SUBMETRIC_CHUNKS,
 } from "./constants"
-import { ChunkCount, ParameterChunk, SubmetricChunk } from "./types"
+import { Chunk, ParameterChunk, SubmetricChunk } from "./types"
 import { SubmetricConfig } from "../types"
-import { Combination, Combinations } from "../../../utilities/types"
+import { Combination, Combinations, Count } from "../../../utilities/types"
 
-const computeInitialConfigs = (chunkCount: ChunkCount, { debug = false } = {}): Combinations<SubmetricConfig> => {
+const computeInitialConfigs = (chunkCount: Count<Chunk>, { debug = false } = {}): Combinations<SubmetricConfig> => {
     let initialConfigs: Combinations<SubmetricConfig> = [] as unknown as Combinations<SubmetricConfig>
 
     if (debug) console.log(`calculating the initial configs: phase 1 of ${chunkCount}`)
@@ -21,10 +21,10 @@ const computeInitialConfigs = (chunkCount: ChunkCount, { debug = false } = {}): 
         initialConfigs.push(submetricChunkCombination)
     })
 
-    let chunkCountForSubmetrics: ChunkCount = chunkCount
+    let chunkCountForSubmetrics: Count<Chunk> = chunkCount
     while (chunkCountForSubmetrics > 1) {
-        chunkCountForSubmetrics = chunkCountForSubmetrics - 1 as ChunkCount
-        const chunkCountForParameters = chunkCount - chunkCountForSubmetrics
+        chunkCountForSubmetrics = chunkCountForSubmetrics - 1 as Count<Chunk>
+        const chunkCountForParameters: Count<ParameterChunk> = chunkCount - chunkCountForSubmetrics as Count<ParameterChunk>
 
         // todo: this part can take a really long time, so perhaps it should also do some progress logging
 

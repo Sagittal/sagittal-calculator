@@ -1,3 +1,5 @@
+import { DynamicParameterValue, ParameterValue } from "./automator/samples/types"
+
 enum SubmetricType {
     SOAPFAR = "soapfar",
     SOAPF = "soapf",
@@ -31,33 +33,33 @@ enum Parameter {
     A_IS_BASE = "aIsBase",                           // use the prime coefficient instead as a base
     A_IS_EXPONENT = "aIsExponent",                   // use the prime coefficient instead as an exponent
     W = "w",                                         // prime constant (applied after applying exponent or base)
-    // X = "x",                                         // prime constant (applied before applying exponent or base) // todo = all these commented out ones lead to bad. this one froze = [{"submetricType" ="soapf"},{"submetricType" ="soapfar","x" ={"center" =0,"range" =6,"count" =2},"a" ={"center" =2,"range" =4,"count" =2}}]
+    // X = "x",                                         // prime constant (applied before applying exponent or base) // todo = all these commented out ones lead to bad. this one froze = [{"submetricType" ="soapf"},{"submetricType" ="soapfar","x" ={"center" =0,"range" =6,"resolution" =2},"a" ={"center" =2,"range" =4,"resolution" =2}}]
     Y = "y",                                         // term exponent
     // V = "v",                                         // term constant (applied before applying exponent, for non-zero terms)
     // T = "t",                                         // term constant (applied after applying exponent)
     NUMERATOR_IS_NUMINATOR = "numeratorIsNuminator", // numinator is determined by the original ratio's numerator, not the greater of the two results of calling the submetric on the original ratio's numerator and denominator
-    MODIFIED_COUNT = "modifiedCount",                // Dave's trick where 5's get a half-count
+    MODIFIED_COUNT = "modifiedCount",                // Dave's trick where 5's get a half-resolution
 }
 
 type Submetric = {
     [ Parameter.SUBMETRIC_TYPE ]?: SubmetricType,
-    [ Parameter.WEIGHT ]?: number,
+    [ Parameter.WEIGHT ]?: DynamicParameterValue,
     [ Parameter.WEIGHT_IS_BASE ]?: boolean,
     [ Parameter.WEIGHT_IS_EXPONENT ]?: boolean,
-    [ Parameter.K ]?: number
+    [ Parameter.K ]?: DynamicParameterValue
     [ Parameter.K_IS_BASE ]?: boolean
     [ Parameter.K_IS_EXPONENT ]?: boolean
-    [ Parameter.J ]?: number
+    [ Parameter.J ]?: DynamicParameterValue
     [ Parameter.J_IS_BASE ]?: boolean
     [ Parameter.J_IS_EXPONENT ]?: boolean
-    [ Parameter.A ]?: number
+    [ Parameter.A ]?: DynamicParameterValue
     [ Parameter.A_IS_BASE ]?: boolean
     [ Parameter.A_IS_EXPONENT ]?: boolean
-    [ Parameter.W ]?: number
-    [ Parameter.Y ]?: number
+    [ Parameter.W ]?: DynamicParameterValue
+    [ Parameter.Y ]?: DynamicParameterValue
     [ Parameter.NUMERATOR_IS_NUMINATOR ]?: boolean
     [ Parameter.MODIFIED_COUNT ]?: boolean
-    // [Parameter.X]?: number
+    // [Parameter.X]?: DynamicParameterValue
 }
 
 type SubmetricProperties = {
@@ -66,20 +68,17 @@ type SubmetricProperties = {
     usePrimeIndex?: boolean,
 }
 
-type ParameterType = number | boolean | SubmetricType // todo: relationship w/ SubmetricPoint? should this be a ParameterPoint or something?
-
-interface ParameterConfig {
-    center?: number,
-    range?: number,
-    count?: number,
+// todo: these probably goes deeper somewhere
+type SampleRange = number & { _SampleRangeBrand: "SampleRange" }
+type SampleResolution = number & { _SampleResolutionBrand: "SampleResolution" }
+interface DynamicParameterConfig {
+    center?: DynamicParameterValue,
+    range?: SampleRange,
+    resolution?: SampleResolution,
 }
 
 type SubmetricConfig = {
-    [key in Parameter]?: ParameterType | ParameterConfig
-}
-
-type ParameterConfigs = { // todo: uhhhh so this is exactly the same as a SubmetricConfig... will probably be fixed by the refactor
-    [key in Parameter]?: ParameterType | ParameterConfig
+    [key in Parameter]?: ParameterValue | DynamicParameterConfig
 }
 
 export {
@@ -89,7 +88,7 @@ export {
     Parameter,
     SubmetricProperties,
     SubmetricConfig,
-    ParameterConfig,
-    ParameterType,
-    ParameterConfigs,
+    DynamicParameterConfig,
+    SampleRange,
+    SampleResolution,
 }

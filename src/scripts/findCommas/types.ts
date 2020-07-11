@@ -1,10 +1,10 @@
 import { Cents, Prime } from "../../utilities/types"
 import { ApotomeSlope } from "../../notations/ji/types"
-import { Monzo, PrimeExponent } from "../../utilities/comma/types"
+import { FiveRoughCopfr, FiveRoughSopfr, Monzo, PrimeExponent } from "../../utilities/comma/types"
 
 interface ComputeCommasOptions extends ComputeCommasFromFiveSlicedMonzoOptions {
-    maximumFiveRoughSopfr: number,
-    maximumFiveRoughCopfr: number,
+    maximumFiveRoughSopfr: FiveRoughSopfr,
+    maximumFiveRoughCopfr: FiveRoughCopfr,
     maximumPrimeLimit: Prime,
     fiveSlicedMonzo?: Monzo<5>,
     sortKey: string,

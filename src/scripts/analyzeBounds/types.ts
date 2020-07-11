@@ -1,4 +1,4 @@
-import { Cents, Proportion } from "../../utilities/types"
+import { Cents, Count, Proportion } from "../../utilities/types"
 import { Level } from "../../notations/ji/types"
 import { Monzo } from "../../utilities/comma/types"
 
@@ -8,7 +8,7 @@ enum EventType {
     SIZE = "SIZE",
 }
 
-type EventRank = number & { _RankBrand: "EventRank" }
+type EventRank = number & { _EventRankBrand: "EventRank" }
 type Score = number & { _ScoreBrand: "Score" }
 
 type EventName = string & { _EventNameBrand: "EventName"}
@@ -53,8 +53,8 @@ interface AnalyzedHistory {
     inaDistance: Proportion,
     exact: boolean,
     possible: boolean,
-    tinaError: number,
-    initialPositionTinaDifference: number,
+    tinaError: Proportion<"Tina">,
+    initialPositionTinaDifference: Proportion<"Tina">,
 }
 
 type ConsolidatedHistories = { [key in Level]?: ConsolidatedEvent[] }
@@ -68,12 +68,12 @@ interface UpdateConsolidatedEventParameters {
 
 interface AnalyzedBound {
     initialPosition: Cents,
-    possibleHistoryCount: number,
+    possibleHistoryCount: Count,
     bestPossibleHistory: AnalyzedHistory,
     bestRank: EventRank,
     bestPossibleHistoryDistance: Cents,
-    bestPossibleHistoryInaDistance: number,
-    initialPositionTinaDifference: number,
+    bestPossibleHistoryInaDistance: Proportion,
+    initialPositionTinaDifference: Proportion<"Tina">,
     consolidatedHistories: ConsolidatedHistories,
 }
 

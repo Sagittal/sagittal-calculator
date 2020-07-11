@@ -1,5 +1,5 @@
 import { analyzeComma } from "../../../../src/utilities/comma/comma"
-import { CommaName, Monzo } from "../../../../src/utilities/comma/types"
+import { CommaName, Monzo, Sopfr } from "../../../../src/utilities/comma/types"
 import { Cents, Prime, Ratio } from "../../../../src/utilities/types"
 import { ApotomeSlope } from "../../../../src/notations/ji/types"
 
@@ -16,7 +16,7 @@ describe("analyzeComma", () => {
             commaName: "2100875/11S" as CommaName,
             limit: 11 as Prime,
             apotomeSlope: -8.464345074135046 as ApotomeSlope,
-            fiveRoughSopfr: 61, // todo: just because everything is Antivotes in the unpopularity metric dir doesn't mean out here it can't be Sopfr and Copfr
+            fiveRoughSopfr: 61 as Sopfr<5>,
         })
     })
 })

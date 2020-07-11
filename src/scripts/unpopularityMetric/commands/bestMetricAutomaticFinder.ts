@@ -2,6 +2,8 @@ import "colors"
 import { program } from "commander"
 import { recursivelyFindUnpopularityMetric } from "../automator/recursivelyFind"
 import { computeInitialConfigs } from "../automator/initialConfigs"
+import { Chunk } from "../automator/types"
+import { Count } from "../../../utilities/types"
 
 program
     .option("-l, --lower-bound-chunk-count <lowerBoundChunkCount>", "lower bound chunk count", parseInt)
@@ -13,8 +15,8 @@ const lowerBoundChunkCount = program.lowerBoundChunkCount || 1
 const upperBoundChunkCount = program.upperBoundChunkCount || 8
 const debug = !!program.debug
 
-for (let chunkCount = lowerBoundChunkCount; chunkCount < upperBoundChunkCount; chunkCount++) {
-    const initialConfigs = computeInitialConfigs(chunkCount)
+for (let chunkCount = lowerBoundChunkCount; chunkCount < upperBoundChunkCount; chunkCount = chunkCount + 1 as Count<Chunk>) {
+    const initialConfigs = computeInitialConfigs(chunkCount) // todo this could have a better name, like compute configs for chunk count
     console.log(`investigating chunk count ${chunkCount} which has ${initialConfigs.length} configs to check`)
 
     let bestMetric = { sumOfSquares: Infinity }

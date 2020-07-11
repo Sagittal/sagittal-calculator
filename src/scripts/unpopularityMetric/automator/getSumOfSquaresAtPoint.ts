@@ -1,7 +1,7 @@
 import { SumOfSquares, SumsOfSquares } from "../sumOfSquares/types"
-import { Point } from "./samples/types"
+import { SamplePoint } from "./samples/types"
 
-const getSumOfSquaresAtPoint = (sumsOfSquares: SumsOfSquares, point: Point): SumOfSquares | undefined => {
+const getSumOfSquaresAtPoint = (sumsOfSquares: SumsOfSquares, point: SamplePoint): SumOfSquares | undefined => {
     let cursor = sumsOfSquares
     point.slice(0, point.length - 1).forEach(coordinate => {
         if (cursor) cursor = cursor[ coordinate ] as SumsOfSquares

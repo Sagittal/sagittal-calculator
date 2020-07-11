@@ -1,5 +1,5 @@
 import { computeSopfr } from "../../../../src/utilities/comma/sopfr"
-import { Monzo } from "../../../../src/utilities/comma/types"
+import { Monzo, Sopfr } from "../../../../src/utilities/comma/types"
 
 describe("computeSopfr", () => {
     it("sums the absolute values of the prime factors (with repetition) in the monzo", () => {
@@ -7,7 +7,7 @@ describe("computeSopfr", () => {
 
         const result = computeSopfr(monzo)
 
-        expect(result).toBe(2 + 2 + 2 + 2 + 2 + 3 + 3 + 3 + 3 + 3 + 3 + 11 + 13 + 17 + 17)
+        expect(result).toBe(2 + 2 + 2 + 2 + 2 + 3 + 3 + 3 + 3 + 3 + 3 + 11 + 13 + 17 + 17 as Sopfr)
     })
 
     it("works for an empty monzo", () => {
@@ -15,7 +15,7 @@ describe("computeSopfr", () => {
 
         const result = computeSopfr(monzo)
 
-        expect(result).toBe(0)
+        expect(result).toBe(0 as Sopfr)
     })
 
     it("works for a simple integer", () => {
@@ -23,6 +23,6 @@ describe("computeSopfr", () => {
 
         const result = computeSopfr(integer)
 
-        expect(result).toBe(11 + 31)
+        expect(result).toBe(11 + 31 as Sopfr)
     })
 })

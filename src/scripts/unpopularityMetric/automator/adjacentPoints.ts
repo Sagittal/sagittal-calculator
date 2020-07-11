@@ -1,14 +1,14 @@
-import { Point } from "./samples/types"
+import { SamplePoint } from "./samples/types"
 
-const computeAdjacentPoints = (point: Point) => {
-    const adjacentPoints: Point[] = []
+const computeAdjacentPoints = (point: SamplePoint) => {
+    const adjacentPoints: SamplePoint[] = []
 
     point.forEach((coordinate, index) => {
-        const adjacentPointOne: Point = point.slice() as Point
+        const adjacentPointOne: SamplePoint = point.slice() as SamplePoint
         adjacentPointOne[ index ] = coordinate - 1
         adjacentPoints.push(adjacentPointOne)
 
-        const adjacentPointTwo: Point = point.slice() as Point
+        const adjacentPointTwo: SamplePoint = point.slice() as SamplePoint
         adjacentPointTwo[ index ] = coordinate + 1
         adjacentPoints.push(adjacentPointTwo)
     })

@@ -1,17 +1,18 @@
-import { computeParameterPoints } from "./parameterPoints"
-import { Parameter, ParameterConfig, SubmetricConfig } from "../../types"
-import { DynamicParameter } from "./types"
+import { computeParameterValues } from "./parameterValues"
+import { Parameter, DynamicParameterConfig, SubmetricConfig } from "../../types"
+import { DynamicParameter, ParameterUnit } from "./types"
+import { Index } from "../../../../utilities/types"
 
-const computeSubmetricDynamicParameters = (submetricConfig: SubmetricConfig = {}, submetricIndex: number): DynamicParameter[] => {
+const computeSubmetricDynamicParameters = (submetricConfig: SubmetricConfig = {}, submetricIndex: Index): DynamicParameter[] => {
     const submetricDynamicParameters: DynamicParameter[] = [] as DynamicParameter[]
 
-    const submetricConfigEntries = Object.entries(submetricConfig) as Array<[Parameter, ParameterConfig]>
-    submetricConfigEntries.forEach(([parameter, parameterConfig]: [Parameter, ParameterConfig]) => {
-        const { count, range } = parameterConfig
-        if (typeof parameterConfig === "object" && count && range && count > 1) {
-            const parameterPoints = computeParameterPoints(parameterConfig)
-            const unit = range / (count - 1)
-            submetricDynamicParameters.push({ submetricIndex, parameter, parameterPoints, unit })
+    const submetricConfigEntries = Object.entries(submetricConfig) as Array<[Parameter, DynamicParameterConfig]>
+    submetricConfigEntries.forEach(([parameter, parameterConfig]: [Parameter, DynamicParameterConfig]) => {
+        const { resolution, range } = parameterConfig
+        if (typeof parameterConfig === "object" && resolution && range && resolution > 1) {
+            const values = computeParameterValues(parameterConfig)
+            const unit = range / (resolution - 1) as ParameterUnit
+            submetricDynamicParameters.push({ submetricIndex, parameter, values, unit })
         }
     })
 

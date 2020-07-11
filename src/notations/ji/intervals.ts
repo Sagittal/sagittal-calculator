@@ -4,11 +4,11 @@ import { APOTOME } from "../intervals"
 import { Cents } from "../../utilities/types"
 import { Level } from "./types"
 
-const TINA = 1 / 809 * APOTOME                      // 0.14052534741
-const MINA = 1 / 233 * APOTOME                      // 0.48791848093
-const ULTRINA = 1 / 58 * APOTOME                    // 1.96008631134
-const HIGHINA = 1 / 47 * APOTOME                    // 2.41882991613
-const MEDINA = 1 / 21 * APOTOME                     // 5.41357171705
+const TINA: Cents = 1 / 809 * APOTOME as Cents      // 0.14052534741
+const MINA: Cents = 1 / 233 * APOTOME as Cents      // 0.48791848093
+const ULTRINA: Cents = 1 / 58 * APOTOME as Cents    // 1.96008631134
+const HIGHINA: Cents = 1 / 47 * APOTOME as Cents    // 2.41882991613
+const MEDINA: Cents = 1 / 21 * APOTOME as Cents     // 5.41357171705
 
 const MAXIMUM_POSITION: Cents = Math.log2(
     Math.pow(3, 9.5)

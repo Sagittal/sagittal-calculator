@@ -7,12 +7,12 @@ describe("submetricCombinations", () => {
     it("given a metric config, will return all combinations of submetrics to check", () => {
         const submetricConfigs = [
             {
-                [ Parameter.A ]: { center: 2, range: 2, count: 3 },
-                [ Parameter.K ]: { center: 0, range: 4, count: 2 },
+                [ Parameter.A ]: { center: 2, range: 2, resolution: 3 },
+                [ Parameter.K ]: { center: 0, range: 4, resolution: 2 },
             },
             {
                 [ Parameter.SUBMETRIC_TYPE ]: SubmetricType.COAPF,
-                [ Parameter.A ]: { center: 1.5, range: 2, count: 2 },
+                [ Parameter.A ]: { center: 1.5, range: 2, resolution: 2 },
                 [ Parameter.W ]: 3.3,
             },
         ] as Combination<SubmetricConfig>
@@ -197,12 +197,12 @@ describe("submetricCombinations", () => {
         const metricConfig = [
             {
                 [ Parameter.SUBMETRIC_TYPE ]: SubmetricType.COAPF,
-                [ Parameter.A ]: { center: 1.5, range: 2, count: 2 },
+                [ Parameter.A ]: { center: 1.5, range: 2, resolution: 2 },
                 [ Parameter.K ]: 0.5,
             },
             {
                 [ Parameter.SUBMETRIC_TYPE ]: SubmetricType.COAPF,
-                [ Parameter.A ]: { center: 1, range: 2, count: 2 },
+                [ Parameter.A ]: { center: 1, range: 2, resolution: 2 },
                 [ Parameter.K ]: 0,
             },
         ] as Combination<SubmetricConfig>

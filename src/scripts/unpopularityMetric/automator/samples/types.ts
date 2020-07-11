@@ -1,41 +1,43 @@
 import { Parameter, Submetric, SubmetricType } from "../../types"
-import { Combination } from "../../../../utilities/types"
+import { Combination, Index } from "../../../../utilities/types"
 
-type Point = number[] & { _CoordinateBrand: "Coordinate" }
+type ParameterUnit = number & { _ParameterUnitBrand: "ParameterUnit" }
 
-// todo: crap is this confusing that we have Point and this ParameterPoint?
-//  they are kind of the same but not exactly.
-//  should point actually be a SamplePoint?
-//  and this be a SampleCoordinate?
-//  but also consider w/r/t SubmetricPoint just below
-//  well actually a coordinate is like a ParameterPointIndex yeah?
-type ParameterPoint = number & { _ParameterPointBrand: "ParameterPoint" }
+type SamplePoint = number[] & { _SamplePointBrand: "SamplePoint" }
 
-type SubmetricPoint = { [key in Parameter]?: ParameterPoint | boolean | SubmetricType }
+// todo: well actually a sample coordinate is like a ParameterValueIndex yeah? reconcile that
+
+type DynamicParameterValue = number & { _DynamicParameterValueBrand: "DynamicParameterValue" }
+
+type ParameterValue = DynamicParameterValue | boolean | SubmetricType
+
+type SubmetricValue = { [key in Parameter]?: ParameterValue }
 
 type Sample = {
     submetrics: Combination<Submetric>,
-    point: Point,
+    point: SamplePoint,
 }
 
-interface ComputeParameterPointIndicesParameters {
+interface ComputeParameterValueIndicesParameters {
     dynamicParameters: DynamicParameter[],
-    submetricPoint: SubmetricPoint,
-    submetricIndex: number,
+    submetricValue: SubmetricValue,
+    submetricIndex: Index,
 }
 
 interface DynamicParameter {
-    submetricIndex: number,
+    submetricIndex: Index,
     parameter: Parameter,
-    parameterPoints: ParameterPoint[],
-    unit: number,
+    values: DynamicParameterValue[],
+    unit: ParameterUnit,
 }
 
 export {
-    ParameterPoint,
     Sample,
-    ComputeParameterPointIndicesParameters,
-    SubmetricPoint,
-    Point,
+    ComputeParameterValueIndicesParameters,
+    SubmetricValue,
+    SamplePoint,
     DynamicParameter,
+    ParameterUnit,
+    ParameterValue,
+    DynamicParameterValue,
 }

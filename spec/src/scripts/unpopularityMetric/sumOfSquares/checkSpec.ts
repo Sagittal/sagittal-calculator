@@ -82,5 +82,5 @@ describe("checkSubmetricsForIssues", () => {
 
     // todo: wait shouldn't it be bad if you got [{soapfar,k},{soapfar,j}] ??
 
-    // todo: okay this one crashes things though for sure: [{"submetricType":"soapf"},{"submetricType":"soapfar","w":{"center":0,"range":12,"count":2},"a":{"center":2,"range":4,"count":2}}]
+    // todo: okay this one crashes things though for sure: [{"submetricType":"soapf"},{"submetricType":"soapfar","w":{"center":0,"range":12,"resolution":2},"a":{"center":2,"range":4,"resolution":2}}]
 })

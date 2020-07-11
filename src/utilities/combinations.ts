@@ -1,6 +1,6 @@
-import { Combinations } from "./types"
+import { Combinations, Count } from "./types"
 
-const computeCombinations = <T>(array: T[], count: number, { withRepeatedElements = false } = {}): Combinations<T> => {
+const computeCombinations = <T>(array: T[], count: Count, { withRepeatedElements = false } = {}): Combinations<T> => {
     if (withRepeatedElements) return computeCombinationsWithRepetitions(array, count)
 
     const combinations: number[][] = []
@@ -33,7 +33,7 @@ const computeCombinations = <T>(array: T[], count: number, { withRepeatedElement
     }) as Combinations<T>
 }
 
-const computeCombinationsWithRepetitions = <T>(array: T[], count: number): Combinations<T> => {
+const computeCombinationsWithRepetitions = <T>(array: T[], count: Count): Combinations<T> => {
     const comb = <U>(n: number, ys: U[][]): Combinations<U> => {
         if (0 === n) return ys as Combinations<U>
         if (isNull(ys)) return comb(n - 1, map(pure, array as unknown as U[]))

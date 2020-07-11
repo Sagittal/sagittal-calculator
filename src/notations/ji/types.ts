@@ -6,7 +6,7 @@ type SymbolUnicode = string & { _SymbolUnicodeBrand: "SymbolUnicode" }
 
 type SymbolId = number & { _SymbolIdBrand: "SymbolId" }
 type BoundId = number & { _BoundIdBrand: "BoundId" }
-type Mina = number & { _MinaIndexBrand: "Mina" }
+type Mina = number & { _MinaBrand: "Mina" }
 type ApotomeSlope = number & { _ApotomeSlopeBrand: "ApotomeSlope" }
 
 enum Level {
