@@ -360,6 +360,35 @@ const firstRecursiveRun = {
 }
 
 
+//
+
+
+// Dave's b and u: SoS 0.00659
+// Fri Jul 10, 2020 2:57 am
+// http://forum.sagittal.org/viewtopic.php?p=2039#p2039
+// const bAndU = {
+//     sumOfSquares: 0.006594234470005811,
+//     submetrics: [
+//         {
+//             [ Parameter.K ]: 0,
+//             [ Parameter.A ]: 2,
+//             [ Parameter.A_IS_BASE ]: true,
+//             [ Parameter.Y ]: 0.861,
+//             [ Parameter.W ]: -2.656,
+//             [ Parameter.X ]: 4.471,
+//         },
+//         {
+//             [ Parameter.J ]: 0,
+//             [ Parameter.A ]: 2,
+//             [ Parameter.A_IS_BASE ]: true,
+//             [ Parameter.Y ]: 0.861,
+//             [ Parameter.W ]: -2.829,
+//             [ Parameter.X ]: 3.850,
+//         },
+//     ]
+// }
+
+
 export {
     withPrimeLimit,
 
@@ -383,4 +412,6 @@ export {
     sanityCheck,
 
     firstRecursiveRun,
+
+    // bAndU,
 }

@@ -58,6 +58,7 @@ type Submetric = {
     [Parameter.Y]?: number
     [Parameter.NUMERATOR_IS_NUMINATOR]?: boolean
     [Parameter.MODIFIED_COUNT]?: boolean
+    // [Parameter.X]?: number
 }
 
 type SubmetricProperties = {
