@@ -1,11 +1,11 @@
 import { computeSubmetricDynamicParameters } from "./submetricDynamicParameters"
-import { Configs, DynamicParameter, SubmetricConfigs } from "../types"
+import { MetricConfig, DynamicParameter, SubmetricConfig } from "../types"
 
-const computeDynamicParameters = (configs: Configs): DynamicParameter[] => {
+const computeDynamicParameters = (metricConfig: MetricConfig): DynamicParameter[] => {
     let dynamicParameters: DynamicParameter[] = []
 
-    configs.forEach((submetricConfigs: SubmetricConfigs, submetricIndex: number) => {
-        const submetricDynamicParameters: DynamicParameter[] = computeSubmetricDynamicParameters(submetricConfigs, submetricIndex)
+    metricConfig.forEach((submetricConfig: SubmetricConfig, submetricIndex: number) => {
+        const submetricDynamicParameters: DynamicParameter[] = computeSubmetricDynamicParameters(submetricConfig, submetricIndex)
 
         dynamicParameters = dynamicParameters.concat(submetricDynamicParameters)
     })

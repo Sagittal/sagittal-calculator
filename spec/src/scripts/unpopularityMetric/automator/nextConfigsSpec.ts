@@ -1,11 +1,11 @@
 import { computeNextConfigs } from "../../../../../src/scripts/unpopularityMetric/automator/nextConfigs"
 import { DynamicParameter, Parameter, SubmetricType } from "../../../../../src/scripts/unpopularityMetric/types"
-import { Coordinate } from "../../../../../src/scripts/unpopularityMetric/automator/types"
+import { Point } from "../../../../../src/scripts/unpopularityMetric/automator/types"
 import { ParameterPoint } from "../../../../../src/scripts/unpopularityMetric/submetricCombinations/types"
 
 describe("computeNextConfigs", () => {
-    it("given a coordinate (which has been identified as a local minimum) and the dynamic parameters, is able to tell you what the next configs should be to delve deeper in that vicinity", () => {
-        const coordinate = [1, 0, 3] as Coordinate
+    it("given a point (which has been identified as a local minimum) and the dynamic parameters, is able to tell you what the next configs should be to delve deeper in that vicinity", () => {
+        const point = [1, 0, 3] as Point
         const dynamicParameters: DynamicParameter[] = [
             { submetricIndex: 0, parameter: Parameter.J, parameterPoints: [0, 0.1, 0.2, 0.3, 0.4, 0.5] as ParameterPoint[], unit: 0.1 },
             { submetricIndex: 0, parameter: Parameter.W, parameterPoints: [0, 0.5, 1] as ParameterPoint[], unit: 0.5 },
@@ -16,7 +16,7 @@ describe("computeNextConfigs", () => {
                 unit: 0.02,
             },
         ]
-        const configs = [
+        const metricConfig = [
             {
                 [ Parameter.J ]: { center: 0.1, range: 0.05, count: 5 }, // haha... it just doesn't care what your previous count was. well, that's why I had the top-level script point to the same constant that this module uses, to generally prevent that.
                 [ Parameter.W ]: { center: 0, range: 0.25, count: 5 },
@@ -28,7 +28,7 @@ describe("computeNextConfigs", () => {
             },
         ]
 
-        const result = computeNextConfigs(coordinate, dynamicParameters, configs)
+        const result = computeNextConfigs(point, dynamicParameters, metricConfig)
 
         expect(result).toEqual([
             {

@@ -1,4 +1,4 @@
-import "colors" // todo: perhaps it is better to use the .green style now that we're in TypeScript?
+import "colors"
 import { program } from "commander"
 import { BOUNDS } from "../../../notations/ji/bounds"
 import { computeHistories } from "../plot/histories"
@@ -6,11 +6,9 @@ import { analyzeBound } from "../bound"
 import { presentBoundAnalysis } from "../present/boundAnalysis"
 import { AnalysisMode } from "../present/types"
 
-program
-    .option("-b, --boundId <boundId>", "specific bound", parseInt) // todo: don't even accept it as a flag... just arg it
-    .parse(process.argv)
+program.parse(process.argv)
 
-const boundId = program.details || program.args[ 0 ]
+const boundId = program.args[ 0 ]
 
 const bound = boundId && BOUNDS.find(bound => bound.id === parseInt(boundId))
 

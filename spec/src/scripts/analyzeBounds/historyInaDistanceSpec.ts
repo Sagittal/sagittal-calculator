@@ -1,5 +1,6 @@
 import { computeHistoryInaDistance } from "../../../../src/scripts/analyzeBounds/historyInaDistance"
 import { AnalyzedEvent } from "../../../../src/scripts/analyzeBounds/types"
+import { Proportion } from "../../../../src/utilities/types"
 
 describe("computeHistoryInaDistance", () => {
     it("sums up the ina-distances of all the events in the history (they are already all positive)", () => {
@@ -11,6 +12,6 @@ describe("computeHistoryInaDistance", () => {
 
         const result = computeHistoryInaDistance(analyzedEvents)
 
-        expect(result).toBe(1.5)
+        expect(result).toBe(1.5 as Proportion)
     })
 })

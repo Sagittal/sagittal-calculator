@@ -1,9 +1,11 @@
-const computeCombinations = <T>(array: T[], count: number, { withRepeatedElements = false } = {}): T[][] => {
+import { Combinations } from "./types"
+
+const computeCombinations = <T>(array: T[], count: number, { withRepeatedElements = false } = {}): Combinations<T> => {
     if (withRepeatedElements) return computeCombinationsWithRepetitions(array, count)
 
     const combinations: number[][] = []
 
-    if (count === 0) return []
+    if (count === 0) return [] as unknown as Combinations<T>
 
     const computeRecursiveCombinations = (integer: number, combination: number[]) => {
         if (combination.length === count) {
@@ -28,12 +30,12 @@ const computeCombinations = <T>(array: T[], count: number, { withRepeatedElement
         return combination.map(index => {
             return array[ index - 1 ]
         })
-    })
+    }) as Combinations<T>
 }
 
-const computeCombinationsWithRepetitions = <T>(array: T[], count: number): T[][] => {
-    const comb = <U>(n: number, ys: U[][]): U[][] => {
-        if (0 === n) return ys as U[][]
+const computeCombinationsWithRepetitions = <T>(array: T[], count: number): Combinations<T> => {
+    const comb = <U>(n: number, ys: U[][]): Combinations<U> => {
+        if (0 === n) return ys as Combinations<U>
         if (isNull(ys)) return comb(n - 1, map(pure, array as unknown as U[]))
 
         return comb(n - 1, concatMap((zs: U[]) => {
@@ -42,21 +44,15 @@ const computeCombinationsWithRepetitions = <T>(array: T[], count: number): T[][]
         }, ys))
     }
 
-    return comb(count, [] as T[][])
+    return comb(count, [] as unknown as Combinations<T>)
 }
 
-// GENERIC FUNCTIONS ------------------------------------------------------
-
-// concatMap :: (a -> [b]) -> [a] -> [b]
 const concatMap = <T, U>(f: (g: T) => U[], array: T[]): U[] =>
     ([] as U[]).concat.apply([] as T[], array.map(f))
 
-// dropWhile :: (a -> Bool) -> [a] -> [a]
 const dropWhile = <T>(p: (q: T) => boolean, array: T[]): T[] => {
     let i = 0
-    for (let lng = array.length;
-         (i < lng) && p(array[ i ]); i++) {
-    }
+    for (let lng = array.length; (i < lng) && p(array[ i ]); i++) {}
     return array.slice(i)
 }
 

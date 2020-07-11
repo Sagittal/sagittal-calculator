@@ -6,7 +6,7 @@ import {
 } from "../../../../../src/scripts/unpopularityMetric/submetricCombinations/types"
 
 describe("combineSubmetricsPoints", () => {
-    it("takes the list of possible points for each submetric individually, and returns a list of every possible combination of them, along with its coordinate, which is then called a 'submetric combination'", () => {
+    it("takes the list of possible points for each submetric individually, and returns a list of every possible combination of them, along with its point, which is then called a 'submetric combination'", () => {
         const submetricOnePointOne: SubmetricPoint = {
             [ Parameter.A ]: 0.5 as ParameterPoint,
             [ Parameter.Y ]: 1.5 as ParameterPoint,
@@ -51,19 +51,19 @@ describe("combineSubmetricsPoints", () => {
 
         const result = combineSubmetricsPoints({ submetricsPoints, dynamicParameters })
 
-        const expectedResult = [                                                                    // by submetric    // by submetric & parameter // by dynamic parameter
-            { submetrics: [submetricOnePointOne, submetricTwoPointOne], coordinate: [0, 0, 0] },      // [0, 0]           // [ [0, 0, 0], [0, 0] ]    // [ 0, 0, 0 ]
-            { submetrics: [submetricOnePointOne, submetricTwoPointTwo], coordinate: [0, 1, 0] },      // [0, 1]           // [ [0, 0, 0], [1, 0] ]    // [ 0, 1, 0 ]
-            { submetrics: [submetricOnePointOne, submetricTwoPointThree], coordinate: [0, 0, 1] },    // [0, 0]           // [ [0, 0, 0], [0, 1] ]    // [ 0, 0, 1 ]
-            { submetrics: [submetricOnePointOne, submetricTwoPointFour], coordinate: [0, 1, 1] },     // [0, 1]           // [ [0, 0, 0], [1, 1] ]    // [ 0, 1, 1 ]
-            { submetrics: [submetricOnePointTwo, submetricTwoPointOne], coordinate: [1, 0, 0] },      // [1, 0]           // [ [0, 1, 0], [0, 0] ]    // [ 1, 0, 0 ]
-            { submetrics: [submetricOnePointTwo, submetricTwoPointTwo], coordinate: [1, 1, 0] },      // [1, 1]           // [ [0, 1, 0], [1, 0] ]    // [ 1, 1, 0 ]
-            { submetrics: [submetricOnePointTwo, submetricTwoPointThree], coordinate: [1, 0, 1] },    // [1, 0]           // [ [0, 1, 0], [0, 1] ]    // [ 1, 0, 1 ]
-            { submetrics: [submetricOnePointTwo, submetricTwoPointFour], coordinate: [1, 1, 1] },     // [1, 1]           // [ [0, 1, 0], [1, 1] ]    // [ 1, 1, 1 ]
-            { submetrics: [submetricOnePointThree, submetricTwoPointOne], coordinate: [2, 0, 0] },    // [2, 0]           // [ [0, 2, 0], [0, 0] ]    // [ 2, 0, 0 ]
-            { submetrics: [submetricOnePointThree, submetricTwoPointTwo], coordinate: [2, 1, 0] },    // [2, 1]           // [ [0, 2, 0], [1, 0] ]    // [ 2, 1, 0 ]
-            { submetrics: [submetricOnePointThree, submetricTwoPointThree], coordinate: [2, 0, 1] },  // [2, 0]           // [ [0, 2, 0], [0, 1] ]    // [ 2, 0, 1 ]
-            { submetrics: [submetricOnePointThree, submetricTwoPointFour], coordinate: [2, 1, 1] },   // [2, 1]           // [ [0, 2, 0], [1, 1] ]    // [ 2, 1, 1 ]
+        const expectedResult = [                                                                 // by submetric    // by submetric & parameter // by dynamic parameter
+            { submetrics: [submetricOnePointOne, submetricTwoPointOne], point: [0, 0, 0] },      // [0, 0]          // [ [0, 0, 0], [0, 0] ]    // [ 0, 0, 0 ]
+            { submetrics: [submetricOnePointOne, submetricTwoPointTwo], point: [0, 1, 0] },      // [0, 1]          // [ [0, 0, 0], [1, 0] ]    // [ 0, 1, 0 ]
+            { submetrics: [submetricOnePointOne, submetricTwoPointThree], point: [0, 0, 1] },    // [0, 0]          // [ [0, 0, 0], [0, 1] ]    // [ 0, 0, 1 ]
+            { submetrics: [submetricOnePointOne, submetricTwoPointFour], point: [0, 1, 1] },     // [0, 1]          // [ [0, 0, 0], [1, 1] ]    // [ 0, 1, 1 ]
+            { submetrics: [submetricOnePointTwo, submetricTwoPointOne], point: [1, 0, 0] },      // [1, 0]          // [ [0, 1, 0], [0, 0] ]    // [ 1, 0, 0 ]
+            { submetrics: [submetricOnePointTwo, submetricTwoPointTwo], point: [1, 1, 0] },      // [1, 1]          // [ [0, 1, 0], [1, 0] ]    // [ 1, 1, 0 ]
+            { submetrics: [submetricOnePointTwo, submetricTwoPointThree], point: [1, 0, 1] },    // [1, 0]          // [ [0, 1, 0], [0, 1] ]    // [ 1, 0, 1 ]
+            { submetrics: [submetricOnePointTwo, submetricTwoPointFour], point: [1, 1, 1] },     // [1, 1]          // [ [0, 1, 0], [1, 1] ]    // [ 1, 1, 1 ]
+            { submetrics: [submetricOnePointThree, submetricTwoPointOne], point: [2, 0, 0] },    // [2, 0]          // [ [0, 2, 0], [0, 0] ]    // [ 2, 0, 0 ]
+            { submetrics: [submetricOnePointThree, submetricTwoPointTwo], point: [2, 1, 0] },    // [2, 1]          // [ [0, 2, 0], [1, 0] ]    // [ 2, 1, 0 ]
+            { submetrics: [submetricOnePointThree, submetricTwoPointThree], point: [2, 0, 1] },  // [2, 0]          // [ [0, 2, 0], [0, 1] ]    // [ 2, 0, 1 ]
+            { submetrics: [submetricOnePointThree, submetricTwoPointFour], point: [2, 1, 1] },   // [2, 1]          // [ [0, 2, 0], [1, 1] ]    // [ 2, 1, 1 ]
         ]
         expect(result).toEqual(jasmine.arrayWithExactContents(expectedResult))
     })

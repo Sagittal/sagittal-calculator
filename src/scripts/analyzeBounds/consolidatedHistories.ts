@@ -9,10 +9,11 @@ const computeConsolidatedHistories = (analyzedHistories: AnalyzedHistory[], best
     analyzedHistories.forEach(analyzedHistory => {
         analyzedHistory.events.forEach((analyzedEvent, index) => {
             consolidatedHistories[ analyzedEvent.level ] = consolidatedHistories[ analyzedEvent.level ] || [] as ConsolidatedEvent[]
+            const consolidatedHistory = consolidatedHistories[ analyzedEvent.level ] as ConsolidatedEvent[]
 
             const nextAnalyzedEvent = analyzedHistory.events[ index + 1 ]
 
-            const matchingConsolidatedEvent: ConsolidatedEvent | undefined = (consolidatedHistories[ analyzedEvent.level ] as ConsolidatedEvent[]) // todo: maybe a type guard would clean this up>
+            const matchingConsolidatedEvent: ConsolidatedEvent | undefined = consolidatedHistory
                 .find(existingEvent => existingEvent.name === analyzedEvent.name)
 
             const updateConsolidatedEventParameters = {
@@ -23,19 +24,13 @@ const computeConsolidatedHistories = (analyzedHistories: AnalyzedHistory[], best
             }
 
             if (matchingConsolidatedEvent) {
-                updateConsolidatedEvent(
-                    matchingConsolidatedEvent,
-                    updateConsolidatedEventParameters,
-                )
+                updateConsolidatedEvent(matchingConsolidatedEvent, updateConsolidatedEventParameters)
             } else {
                 const newConsolidatedEvent: ConsolidatedEvent = computeInitialConsolidatedEvent(analyzedEvent)
 
-                updateConsolidatedEvent(
-                    newConsolidatedEvent,
-                    updateConsolidatedEventParameters,
-                );
+                updateConsolidatedEvent(newConsolidatedEvent, updateConsolidatedEventParameters)
 
-                (consolidatedHistories[ analyzedEvent.level ] as ConsolidatedEvent[]).push(newConsolidatedEvent)
+                consolidatedHistory.push(newConsolidatedEvent)
             }
         })
     })

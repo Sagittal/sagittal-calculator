@@ -2,8 +2,8 @@ import { computeSubmetricPoints } from "../../../../../src/scripts/unpopularityM
 import { Parameter } from "../../../../../src/scripts/unpopularityMetric/types"
 
 describe("computeSubmetricPoints", () => {
-    it("given this submetric's configs (centers, ranges, and counts) to compute each of its parameters' sample points, returns an array of all the possible combinations of those parameter sample points", () => {
-        const submetricConfigs = {
+    it("given this submetric's config (centers, ranges, and counts for each of its parameters) to compute each of its parameters' sample points, returns an array of all the possible combinations of those parameter sample points", () => {
+        const submetricConfig = {
             [ Parameter.A ]: {
                 center: 1,
                 range: 0.5,
@@ -16,7 +16,7 @@ describe("computeSubmetricPoints", () => {
             },
         }
 
-        const result = computeSubmetricPoints(submetricConfigs)
+        const result = computeSubmetricPoints(submetricConfig)
 
         expect(result).toEqual(jasmine.arrayWithExactContents([
             { [ Parameter.A ]: 0.75, [ Parameter.W ]: 0.6 },
@@ -38,7 +38,7 @@ describe("computeSubmetricPoints", () => {
     })
 
     it("leaves a parameter out if it has a 0 count", () => {
-        const submetricConfigs = {
+        const submetricConfig = {
             [ Parameter.A ]: {
                 center: 1,
                 range: 0.5,
@@ -51,7 +51,7 @@ describe("computeSubmetricPoints", () => {
             },
         }
 
-        const result = computeSubmetricPoints(submetricConfigs)
+        const result = computeSubmetricPoints(submetricConfig)
 
         expect(result).toEqual(jasmine.arrayWithExactContents([
             { [ Parameter.A ]: 0.75 },

@@ -1,22 +1,23 @@
 import { computeDeepClone } from "./deepClone"
+import { Distribution, DistributionBin } from "./types"
 
-const computeDistributions = <T>(array: T[], bucketCount: number): T[][][] => {
-    const emptyBucketing: T[][] = [...Array(bucketCount).keys()].map(_ => [] as T[]) as T[][]
-    let bucketings: T[][][] = [emptyBucketing]
+const computeDistributions = <T>(array: T[], bucketCount: number): Distribution<T>[] => {
+    const emptyDistribution: Distribution<T> = [...Array(bucketCount).keys()].map(_ => [] as unknown as DistributionBin<T>) as Distribution<T>
+    let distributions: Distribution<T>[] = [emptyDistribution]
 
     array.forEach(element => {
-        let extendedBucketings: T[][][] = []
+        let extendedDistributions: Distribution<T>[] = []
         for (let index = 0; index < bucketCount; index++) {
-            bucketings.forEach(bucketing => {
+            distributions.forEach(bucketing => {
                 const extendedBucketing = computeDeepClone(bucketing)
                 extendedBucketing[ index ].push(computeDeepClone(element))
-                extendedBucketings.push(extendedBucketing)
+                extendedDistributions.push(extendedBucketing)
             })
         }
-        bucketings = extendedBucketings
+        distributions = extendedDistributions
     })
 
-    return bucketings
+    return distributions
 }
 
 

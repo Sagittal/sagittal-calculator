@@ -1,7 +1,7 @@
 import { SumOfSquares } from "../sumOfSquares/types"
-import { Submetric } from "../types"
+import { ParameterConfigs, Submetric, SubmetricConfig } from "../types"
 
-type Coordinate = number[] & { _CoordinateBrand: "Coordinate" }
+type Point = number[] & { _CoordinateBrand: "Coordinate" }
 
 type ChunkCount = number & { _ChunkCountBrand: "ChunkCount" }
 
@@ -12,13 +12,18 @@ interface Metric {
 
 interface LocalMinimum {
     sumOfSquares: SumOfSquares,
-    coordinate: Coordinate,
+    point: Point,
     submetrics: Submetric[],
 }
 
+type SubmetricChunk = SubmetricConfig
+type ParameterChunk = ParameterConfigs
+
 export {
-    Coordinate,
+    Point,
     LocalMinimum,
     ChunkCount,
     Metric,
+    SubmetricChunk,
+    ParameterChunk,
 }

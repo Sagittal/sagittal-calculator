@@ -8,7 +8,7 @@ import {
     SymbolLongAscii,
     SymbolUnicode,
 } from "../../../../src/notations/ji/types"
-import { Cents } from "../../../../src/utilities/types"
+import { Cents, Proportion } from "../../../../src/utilities/types"
 import { Monzo } from "../../../../src/utilities/comma/types"
 
 describe("computeLevelBoundedSymbols", () => {
@@ -27,7 +27,7 @@ describe("computeLevelBoundedSymbols", () => {
                 {
                     introducingLevel: Level.MEDIUM,
                     distance: 3.1559088743959975 as Cents,
-                    inaDistance: 0.5829624209957123,
+                    inaDistance: 0.5829624209957123 as Proportion,
                     ascii: "/|" as SymbolLongAscii as SymbolLongAscii,
                     unicode: "" as SymbolUnicode as SymbolUnicode,
                     mina: 44 as Mina as Mina,
@@ -41,7 +41,7 @@ describe("computeLevelBoundedSymbols", () => {
                 {
                     introducingLevel: Level.MEDIUM,
                     distance: 2.601893328989302 as Cents,
-                    inaDistance: 0.48062415443807605,
+                    inaDistance: 0.48062415443807605 as Proportion,
                     ascii: "|)" as SymbolLongAscii,
                     unicode: "" as SymbolUnicode,
                     mina: 56 as Mina,
@@ -57,7 +57,7 @@ describe("computeLevelBoundedSymbols", () => {
                 {
                     introducingLevel: Level.EXTREME,
                     distance: 0.38371604975449713 as Cents,
-                    inaDistance: 0.786434752419428,
+                    inaDistance: 0.786434752419428 as Proportion,
                     ascii: ",)/|" as SymbolLongAscii,
                     unicode: "" as SymbolUnicode,
                     mina: 50 as Mina,
@@ -71,7 +71,7 @@ describe("computeLevelBoundedSymbols", () => {
                 {
                     introducingLevel: Level.HIGH,
                     distance: 0.22210985406900008 as Cents,
-                    inaDistance: 0.4552191867044054,
+                    inaDistance: 0.4552191867044054 as Proportion,
                     ascii: ")/|" as SymbolLongAscii,
                     unicode: "" as SymbolUnicode,
                     mina: 51 as Mina,
@@ -87,7 +87,7 @@ describe("computeLevelBoundedSymbols", () => {
                 {
                     introducingLevel: Level.EXTREME,
                     distance: 0.38371604975449713 as Cents,
-                    inaDistance: 2.7305824665550094,
+                    inaDistance: 2.7305824665550094 as Proportion,
                     ascii: ",)/|" as SymbolLongAscii,
                     unicode: "" as SymbolUnicode,
                     mina: 50 as Mina,
@@ -101,7 +101,7 @@ describe("computeLevelBoundedSymbols", () => {
                 {
                     introducingLevel: Level.HIGH,
                     distance: 0.22210985406900008 as Cents,
-                    inaDistance: 1.5805679057676565,
+                    inaDistance: 1.5805679057676565 as Proportion,
                     ascii: ")/|" as SymbolLongAscii,
                     unicode: "" as SymbolUnicode,
                     mina: 51 as Mina,
@@ -135,7 +135,7 @@ describe("computeLevelBoundedSymbols", () => {
                     id: 142 as SymbolId,
                     mina: 133 as Mina,
                     distance: 3.6578835602835937 as Cents,
-                    inaDistance: 0.6756876516060547,
+                    inaDistance: 0.6756876516060547 as Proportion,
                     primaryComma: {
                         monzo: [-13, 5, 1, 1] as Monzo,
                         position: 64.9146246608968 as Cents,
@@ -152,7 +152,7 @@ describe("computeLevelBoundedSymbols", () => {
                     mina: 138 as Mina,
                     id: 147 as SymbolId,
                     distance: 1.2814466063946952 as Cents,
-                    inaDistance: 0.5297795425192314,
+                    inaDistance: 0.5297795425192314 as Proportion,
                     primaryComma: {
                         monzo: [-16, 11, 1, 0, 0, -1] as Monzo,
                         position: 67.2910616147857 as Cents,
@@ -169,7 +169,7 @@ describe("computeLevelBoundedSymbols", () => {
                     mina: 138 as Mina,
                     id: 147 as SymbolId,
                     distance: 1.2814466063946952 as Cents,
-                    inaDistance: 0.6537704992790516,
+                    inaDistance: 0.6537704992790516 as Proportion,
                     primaryComma: {
                         monzo: [-16, 11, 1, 0, 0, -1] as Monzo,
                         position: 67.2910616147857 as Cents,
@@ -186,7 +186,7 @@ describe("computeLevelBoundedSymbols", () => {
                     id: 149 as SymbolId,
                     mina: 140 as Mina,
                     distance: 0.44892240228040237 as Cents,
-                    inaDistance: 0.9200766517814528,
+                    inaDistance: 0.9200766517814528 as Proportion,
                     primaryComma: {
                         monzo: [-11, 8, 2, -1, -1] as Monzo,
                         position: 68.1235858189 as Cents,
@@ -203,7 +203,7 @@ describe("computeLevelBoundedSymbols", () => {
                     mina: 140 as Mina,
                     id: 149 as SymbolId,
                     distance: 0.44892240228040237 as Cents,
-                    inaDistance: 3.194600906829164,
+                    inaDistance: 3.194600906829164 as Proportion,
                     primaryComma: {
                         monzo: [-11, 8, 2, -1, -1] as Monzo,
                         position: 68.1235858189 as Cents,
@@ -239,7 +239,7 @@ describe("computeLevelBoundedSymbols", () => {
                     },
                     id: 1 as SymbolId,
                     distance: 0.211928144834215 as Cents,
-                    inaDistance: 0.43435154255350816,
+                    inaDistance: 0.43435154255350816 as Proportion,
                     elements: ["`|"] as SymbolLongAscii[],
                 },
             ],
@@ -256,7 +256,7 @@ describe("computeLevelBoundedSymbols", () => {
                     },
                     id: 1 as SymbolId,
                     distance: 0.211928144834215 as Cents,
-                    inaDistance: 1.508113295818833,
+                    inaDistance: 1.508113295818833 as Proportion,
                     elements: ["`|"] as SymbolLongAscii[],
                 },
             ],

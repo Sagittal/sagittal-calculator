@@ -8,7 +8,7 @@ import {
 describe("computeParameterPointIndices", () => {
     it("given the dynamic parameters and a submetric point, returns an array of, in order, for each of the submetric point's parameters which is dynamic, its index in the parameter points", () => {
         const dynamicParameters: DynamicParameter[] = [
-            // don't pick me at all, since I'm submetric index 0;
+            // don't pick me at all, since I'm submetric index 0 --
             // I should have already been handled by a previous call to computeParameterPointIndices
             // i.e. already be in the array which this call's returned array will be spread onto the end of
             {

@@ -4,7 +4,7 @@ import { Parameter, SubmetricType } from "./types"
 //
 
 
-// Dave's log-α's (best is 0.00613) some still with prime limit (s)
+// Dave's log-α's (best SoS is 0.00613) some still with prime limit (s)
 // Mon Jun 29, 2020 7:07 pm
 // http://forum.sagittal.org/viewtopic.php?p=1944#p1944
 /*

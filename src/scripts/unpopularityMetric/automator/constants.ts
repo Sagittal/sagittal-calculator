@@ -1,4 +1,6 @@
-import { Parameter, ParameterConfig, ParameterConfigs, ParameterType, SubmetricConfigs, SubmetricType } from "../types"
+import { Parameter, ParameterConfig, ParameterType, SubmetricType } from "../types"
+import { Combinations } from "../../../utilities/types"
+import { ParameterChunk, SubmetricChunk } from "./types"
 
 const RESOLUTION = 2
 
@@ -25,20 +27,38 @@ const PARAMETER_INITIAL_CONFIGS: { [key in Parameter]?: ParameterType | Paramete
     [ Parameter.MODIFIED_COUNT ]: true,
 }
 
-const SUBMETRIC_CONFIGS: SubmetricConfigs[] = Object.values(SubmetricType).map(submetricType => {
+const SUBMETRIC_CHUNKS: SubmetricChunk[] = Object.values(SubmetricType).map(submetricType => {
     return { [ Parameter.SUBMETRIC_TYPE ]: submetricType }
 })
 
-const PARAMETER_CONFIGS: ParameterConfigs[] = [
+const PARAMETER_CHUNKS: ParameterChunk[] = [
     { [ Parameter.K ]: PARAMETER_INITIAL_CONFIGS[ Parameter.K ] },
-    { [ Parameter.K ]: PARAMETER_INITIAL_CONFIGS[ Parameter.K ], [ Parameter.K_IS_BASE ]: PARAMETER_INITIAL_CONFIGS[Parameter.K_IS_BASE] },
-    { [ Parameter.K ]: PARAMETER_INITIAL_CONFIGS[ Parameter.K ], [ Parameter.K_IS_EXPONENT ]: PARAMETER_INITIAL_CONFIGS[Parameter.K_IS_EXPONENT] },
+    {
+        [ Parameter.K ]: PARAMETER_INITIAL_CONFIGS[ Parameter.K ],
+        [ Parameter.K_IS_BASE ]: PARAMETER_INITIAL_CONFIGS[ Parameter.K_IS_BASE ],
+    },
+    {
+        [ Parameter.K ]: PARAMETER_INITIAL_CONFIGS[ Parameter.K ],
+        [ Parameter.K_IS_EXPONENT ]: PARAMETER_INITIAL_CONFIGS[ Parameter.K_IS_EXPONENT ],
+    },
     { [ Parameter.J ]: PARAMETER_INITIAL_CONFIGS[ Parameter.J ] },
-    { [ Parameter.J ]: PARAMETER_INITIAL_CONFIGS[ Parameter.J ], [ Parameter.J_IS_BASE ]: PARAMETER_INITIAL_CONFIGS[Parameter.J_IS_BASE] },
-    { [ Parameter.J ]: PARAMETER_INITIAL_CONFIGS[ Parameter.J ], [ Parameter.J_IS_EXPONENT ]: PARAMETER_INITIAL_CONFIGS[Parameter.J_IS_EXPONENT] },
+    {
+        [ Parameter.J ]: PARAMETER_INITIAL_CONFIGS[ Parameter.J ],
+        [ Parameter.J_IS_BASE ]: PARAMETER_INITIAL_CONFIGS[ Parameter.J_IS_BASE ],
+    },
+    {
+        [ Parameter.J ]: PARAMETER_INITIAL_CONFIGS[ Parameter.J ],
+        [ Parameter.J_IS_EXPONENT ]: PARAMETER_INITIAL_CONFIGS[ Parameter.J_IS_EXPONENT ],
+    },
     { [ Parameter.A ]: PARAMETER_INITIAL_CONFIGS[ Parameter.A ] },
-    { [ Parameter.A ]: PARAMETER_INITIAL_CONFIGS[ Parameter.A ], [ Parameter.A_IS_BASE ]: PARAMETER_INITIAL_CONFIGS[Parameter.A_IS_BASE] },
-    { [ Parameter.A ]: PARAMETER_INITIAL_CONFIGS[ Parameter.A ], [ Parameter.A_IS_EXPONENT ]: PARAMETER_INITIAL_CONFIGS[Parameter.A_IS_EXPONENT] },
+    {
+        [ Parameter.A ]: PARAMETER_INITIAL_CONFIGS[ Parameter.A ],
+        [ Parameter.A_IS_BASE ]: PARAMETER_INITIAL_CONFIGS[ Parameter.A_IS_BASE ],
+    },
+    {
+        [ Parameter.A ]: PARAMETER_INITIAL_CONFIGS[ Parameter.A ],
+        [ Parameter.A_IS_EXPONENT ]: PARAMETER_INITIAL_CONFIGS[ Parameter.A_IS_EXPONENT ],
+    },
     { [ Parameter.W ]: PARAMETER_INITIAL_CONFIGS[ Parameter.W ] },
     // { [Parameter.X]: PARAMETER_INITIAL_CONFIGS[Parameter.X]},
     { [ Parameter.Y ]: PARAMETER_INITIAL_CONFIGS[ Parameter.Y ] },
@@ -47,14 +67,14 @@ const PARAMETER_CONFIGS: ParameterConfigs[] = [
     { [ Parameter.MODIFIED_COUNT ]: PARAMETER_INITIAL_CONFIGS[ Parameter.MODIFIED_COUNT ] },
 ]
 
-const SUBMETRIC_CONFIG_COMBINATIONS: SubmetricConfigs[][][] = [] // todo: this is crazy!? QUADRUPLE plural???? and why is it ddifferent than the parameter config combinations??
+const SUBMETRIC_CHUNK_COMBINATIONS: Combinations<SubmetricChunk>[] = []
 
-const PARAMETER_CONFIG_COMBINATIONS: ParameterConfigs[][][] = []
+const PARAMETER_CHUNK_COMBINATIONS: Combinations<ParameterChunk>[] = []
 
 export {
     RESOLUTION,
-    SUBMETRIC_CONFIGS,
-    PARAMETER_CONFIGS,
-    SUBMETRIC_CONFIG_COMBINATIONS,
-    PARAMETER_CONFIG_COMBINATIONS,
+    SUBMETRIC_CHUNKS,
+    PARAMETER_CHUNKS,
+    SUBMETRIC_CHUNK_COMBINATIONS,
+    PARAMETER_CHUNK_COMBINATIONS,
 }

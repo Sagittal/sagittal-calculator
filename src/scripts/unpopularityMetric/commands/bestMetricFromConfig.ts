@@ -14,7 +14,7 @@ program
 const recurse = !!program.recursive
 const quiet = !!program.quiet
 
-const configs = [
+const metricConfig = [
     {
         [ Parameter.K ]: { center: 1, range: 2, count: RESOLUTION },
         [ Parameter.A ]: { center: 2.00001, range: 2, count: RESOLUTION },
@@ -24,6 +24,6 @@ const configs = [
     },
 ]
 
-const bestMetric = recursivelyFindUnpopularityMetric(configs, { recurse, quiet })
+const bestMetric = recursivelyFindUnpopularityMetric(metricConfig, { recurse, quiet })
 
-console.log(`\nfinal best: ${JSON.stringify(bestMetric)}`[ "green" ])
+console.log(`\nbest metric: ${JSON.stringify(bestMetric)}`[ "green" ])

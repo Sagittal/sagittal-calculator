@@ -1,9 +1,9 @@
-import { getSumOfSquaresAtCoordinate } from "../../../../../src/scripts/unpopularityMetric/automator/getSumOfSquaresAtCoordinate"
+import { getSumOfSquaresAtPoint } from "../../../../../src/scripts/unpopularityMetric/automator/getSumOfSquaresAtPoint"
 import { SumOfSquares, SumsOfSquares } from "../../../../../src/scripts/unpopularityMetric/sumOfSquares/types"
-import { Coordinate } from "../../../../../src/scripts/unpopularityMetric/automator/types"
+import { Point } from "../../../../../src/scripts/unpopularityMetric/automator/types"
 
 describe("getSumOfSquaresAtCoordinate", () => {
-    it("returns the sum-of-squares at that coordinate", () => {
+    it("returns the sum-of-squares at that point", () => {
         const sumsOfSquares: SumsOfSquares = [
             undefined,
             undefined,
@@ -11,9 +11,9 @@ describe("getSumOfSquaresAtCoordinate", () => {
                 [undefined, undefined, undefined, 0.0045843033 as SumOfSquares],
             ],
         ]
-        const coordinate = [2, 0, 3] as Coordinate
+        const point = [2, 0, 3] as Point
 
-        const result = getSumOfSquaresAtCoordinate(sumsOfSquares, coordinate)
+        const result = getSumOfSquaresAtPoint(sumsOfSquares, point)
 
         expect(result).toEqual(0.0045843033 as SumOfSquares)
     })

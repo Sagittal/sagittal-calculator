@@ -3,21 +3,22 @@ import { computeDeepClone } from "../../../utilities/deepClone"
 import { computeDistributions } from "../../../utilities/distributions"
 import { merge } from "../../../utilities/merge"
 import {
-    PARAMETER_CONFIG_COMBINATIONS,
-    PARAMETER_CONFIGS,
-    SUBMETRIC_CONFIG_COMBINATIONS,
-    SUBMETRIC_CONFIGS,
+    PARAMETER_CHUNK_COMBINATIONS,
+    PARAMETER_CHUNKS,
+    SUBMETRIC_CHUNK_COMBINATIONS,
+    SUBMETRIC_CHUNKS,
 } from "./constants"
-import { ChunkCount } from "./types"
-import { Configs, ParameterConfigs, SubmetricConfigs } from "../types"
+import { ChunkCount, ParameterChunk, SubmetricChunk } from "./types"
+import { MetricConfig, SubmetricConfig } from "../types"
+import { Combination, Combinations } from "../../../utilities/types"
 
-const computeInitialConfigs = (chunkCount: ChunkCount, { quiet = false } = {}) => {
-    let initialConfigs: Configs[] = []
+const computeInitialConfigs = (chunkCount: ChunkCount, { quiet = false } = {}): MetricConfig[] => {
+    let initialConfigs: MetricConfig[] = []
 
     if (!quiet) console.log(`calculating the initial configs: phase 1 of ${chunkCount}`)
-    const submetricConfigsCombinations: SubmetricConfigs[][] = computeCombinations(SUBMETRIC_CONFIGS, chunkCount)
-    submetricConfigsCombinations.forEach((submetricConfigsCombination: SubmetricConfigs[]) => {
-        initialConfigs.push(submetricConfigsCombination)
+    const submetricChunkCombinations: Combinations<SubmetricChunk> = computeCombinations(SUBMETRIC_CHUNKS, chunkCount)
+    submetricChunkCombinations.forEach((submetricChunkCombination: Combination<SubmetricChunk>) => {
+        initialConfigs.push(submetricChunkCombination)
     })
 
     let chunkCountForSubmetrics: ChunkCount = chunkCount
@@ -25,28 +26,28 @@ const computeInitialConfigs = (chunkCount: ChunkCount, { quiet = false } = {}) =
         chunkCountForSubmetrics = chunkCountForSubmetrics - 1 as ChunkCount
         const chunkCountForParameters = chunkCount - chunkCountForSubmetrics
 
-        // this part can take a really long time
+        // todo: this part can take a really long time, so perhaps it should also do some progress logging
 
-        SUBMETRIC_CONFIG_COMBINATIONS[ chunkCountForSubmetrics ] = SUBMETRIC_CONFIG_COMBINATIONS[ chunkCountForSubmetrics ] || computeCombinations(SUBMETRIC_CONFIGS, chunkCountForSubmetrics, { withRepeatedElements: true })
-        const submetricConfigsCombinations: SubmetricConfigs[][] = SUBMETRIC_CONFIG_COMBINATIONS[ chunkCountForSubmetrics ]
+        SUBMETRIC_CHUNK_COMBINATIONS[ chunkCountForSubmetrics ] = SUBMETRIC_CHUNK_COMBINATIONS[ chunkCountForSubmetrics ] || computeCombinations(SUBMETRIC_CHUNKS, chunkCountForSubmetrics, { withRepeatedElements: true })
+        const submetricChunkCombinations: Combinations<SubmetricChunk> = SUBMETRIC_CHUNK_COMBINATIONS[ chunkCountForSubmetrics ]
 
-        PARAMETER_CONFIG_COMBINATIONS[ chunkCountForParameters ] = PARAMETER_CONFIG_COMBINATIONS[ chunkCountForParameters ] || computeCombinations(PARAMETER_CONFIGS, chunkCountForParameters, { withRepeatedElements: true })
-        const parameterConfigsCombinations: ParameterConfigs[][] = PARAMETER_CONFIG_COMBINATIONS[ chunkCountForParameters ]
+        PARAMETER_CHUNK_COMBINATIONS[ chunkCountForParameters ] = PARAMETER_CHUNK_COMBINATIONS[ chunkCountForParameters ] || computeCombinations(PARAMETER_CHUNKS, chunkCountForParameters, { withRepeatedElements: true })
+        const parameterChunkCombinations: Combinations<ParameterChunk> = PARAMETER_CHUNK_COMBINATIONS[ chunkCountForParameters ]
 
         if (!quiet) console.log(`calculating the initial configs: phase ${chunkCountForParameters + 1} of ${chunkCount}`)
 
-        const pTotal = parameterConfigsCombinations.length
-        const total = submetricConfigsCombinations.length * pTotal
+        const pTotal = parameterChunkCombinations.length
+        const total = submetricChunkCombinations.length * pTotal
 
-        submetricConfigsCombinations.forEach((submetricConfigsCombination: SubmetricConfigs[], sIndex) => {
-            parameterConfigsCombinations.forEach((parameterConfigsCombination: ParameterConfigs[], pIndex) => {
-                const baseInitialConfig: SubmetricConfigs[] = computeDeepClone(submetricConfigsCombination)
+        submetricChunkCombinations.forEach((submetricChunkCombination: Combination<SubmetricChunk>, sIndex) => {
+            parameterChunkCombinations.forEach((parameterChunkCombination: Combination<ParameterChunk>, pIndex) => {
+                const baseInitialConfig: SubmetricConfig[] = computeDeepClone(submetricChunkCombination)
 
-                const parameterConfigsDistributions = computeDistributions(parameterConfigsCombination, submetricConfigsCombination.length)
+                const parameterChunkCombinationDistributions = computeDistributions(parameterChunkCombination, submetricChunkCombination.length)
 
-                parameterConfigsDistributions.forEach(parameterConfigsDistribution => {
-                    const initialConfig = baseInitialConfig.map((baseInitialSubmetric, index) => {
-                        return merge(baseInitialSubmetric, ...parameterConfigsDistribution[ index ])
+                parameterChunkCombinationDistributions.forEach(parameterChunkCombinationDistribution => {
+                    const initialConfig = baseInitialConfig.map((baseInitialSubmetricConfig, index) => {
+                        return merge(baseInitialSubmetricConfig, ...parameterChunkCombinationDistribution[ index ])
                     })
                     initialConfigs.push(initialConfig)
                 })

@@ -5,13 +5,13 @@ import { computeIndentation } from "./indentation"
 import { computeLocalMinima } from "./localMinima"
 import { deepEquals } from "../../../utilities/deepEquals"
 import { gatherSumsOfSquares } from "./gatherSumsOfSquares"
-import { Configs } from "../types"
+import { MetricConfig } from "../types"
 import { SumsOfSquares } from "../sumOfSquares/types"
 
-const recursivelyFindUnpopularityMetric = (configs: Configs, options = {}) => {
+const recursivelyFindUnpopularityMetric = (metricConfig: MetricConfig, options = {}) => {
     const {
         depth = 0,
-        best = { sumOfSquares: Infinity },
+        bestMetric: previousBestMetric = { sumOfSquares: Infinity },
         progressMessage = "",
         localMinimum,
         recurse = true,
@@ -22,23 +22,23 @@ const recursivelyFindUnpopularityMetric = (configs: Configs, options = {}) => {
 
     const indentation = computeIndentation(depth)
 
-    const dynamicParameters = computeDynamicParameters(configs)
-    const submetricCombinations = computeSubmetricCombinations({ configs, dynamicParameters })
+    const dynamicParameters = computeDynamicParameters(metricConfig)
+    const submetricCombinations = computeSubmetricCombinations({ metricConfig, dynamicParameters })
 
     const sumsOfSquares: SumsOfSquares = []
-    let nextBest = gatherSumsOfSquares(sumsOfSquares, submetricCombinations, best, indentation, quiet) // todo: i meant to rename this to nextBestMetric, but also "next best" is confusing
+    let bestMetric = gatherSumsOfSquares(sumsOfSquares, submetricCombinations, previousBestMetric, indentation, quiet)
 
     if (!quiet) console.log(`\n${indentation}local minima:`)
     const nextLocalMinima = computeLocalMinima(submetricCombinations, sumsOfSquares)
     nextLocalMinima.forEach((nextLocalMinimum, index) => {
-        const nextConfigs = computeNextConfigs(nextLocalMinimum.coordinate, dynamicParameters, configs)
+        const nextConfigs = computeNextConfigs(nextLocalMinimum.point, dynamicParameters, metricConfig)
         const nextProgressMessage = progressMessage + `${index}/${(nextLocalMinima.length)}@depth${nextDepth} `
         if (!quiet) console.log(`${indentation}${nextProgressMessage}${JSON.stringify(nextLocalMinimum)}`)
 
         if (recurse && !deepEquals(localMinimum, nextLocalMinimum)) {
-            nextBest = recursivelyFindUnpopularityMetric(nextConfigs, {
+            bestMetric = recursivelyFindUnpopularityMetric(nextConfigs, {
                 depth: nextDepth,
-                best: nextBest,
+                bestMetric,
                 progressMessage: nextProgressMessage,
                 localMinimum: nextLocalMinimum,
                 quiet,
@@ -46,7 +46,7 @@ const recursivelyFindUnpopularityMetric = (configs: Configs, options = {}) => {
         }
     })
 
-    return nextBest
+    return bestMetric
 }
 
 export {

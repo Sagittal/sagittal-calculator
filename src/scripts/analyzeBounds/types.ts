@@ -1,4 +1,4 @@
-import { Cents } from "../../utilities/types"
+import { Cents, Proportion } from "../../utilities/types"
 import { Level } from "../../notations/ji/types"
 import { Monzo } from "../../utilities/comma/types"
 
@@ -8,6 +8,17 @@ enum EventType {
     SIZE = "SIZE",
 }
 
+type EventRank = number & { _RankBrand: "EventRank" }
+type Score = number & { _ScoreBrand: "Score" }
+
+type EventName = string & { _EventNameBrand: "EventName"}
+
+interface SnappablePosition {
+    position: Cents,
+    name: EventName,
+    monzo: Monzo,
+}
+
 interface HistoricalEvent {
     position: Cents,
     type: EventType,
@@ -15,10 +26,23 @@ interface HistoricalEvent {
     name: EventName,
 }
 
-type EventRank = number & { _RankBrand: "EventRank" }
-type Score = number & { _ScoreBrand: "Score" }
+interface AnalyzedEvent extends HistoricalEvent {
+    distance: Cents,
+    inaDistance: Proportion,
+    rank: EventRank,
+    exact: boolean,
+}
 
-type EventName = string & { _EventNameBrand: "EventName"}
+interface ConsolidatedEvent extends HistoricalEvent {
+    isPossibleHistoryMember: boolean,
+    isBestPossibleHistoryMember: boolean,
+    rankOfBestRankedMemberHistory: EventRank,
+    rankOfBestRankedEventInAnyMemberHistory: EventRank,
+    nextEvents: EventName[],
+    exact: boolean,
+}
+
+type History = HistoricalEvent[]
 
 interface AnalyzedHistory {
     events: AnalyzedEvent[],
@@ -26,16 +50,21 @@ interface AnalyzedHistory {
     rank: EventRank,
     score: Score,
     distance: Cents,
-    inaDistance: number, // todo: Proportion?
+    inaDistance: Proportion,
     exact: boolean,
     possible: boolean,
     tinaError: number,
     initialPositionTinaDifference: number,
 }
 
-type History = HistoricalEvent[]
-
 type ConsolidatedHistories = { [key in Level]?: ConsolidatedEvent[] }
+
+interface UpdateConsolidatedEventParameters {
+    analyzedEvent: AnalyzedEvent
+    nextAnalyzedEvent: AnalyzedEvent,
+    analyzedHistory: AnalyzedHistory,
+    bestPossibleHistory: AnalyzedHistory,
+}
 
 interface AnalyzedBound {
     initialPosition: Cents,
@@ -46,37 +75,6 @@ interface AnalyzedBound {
     bestPossibleHistoryInaDistance: number,
     initialPositionTinaDifference: number,
     consolidatedHistories: ConsolidatedHistories,
-}
-
-interface AnalyzedOrConsolidatedEvent extends HistoricalEvent { // todo: maybe we don't need this??
-    exact: boolean,
-}
-
-interface AnalyzedEvent extends AnalyzedOrConsolidatedEvent {
-    distance: Cents,
-    inaDistance: number,
-    rank: EventRank,
-}
-
-interface ConsolidatedEvent extends AnalyzedOrConsolidatedEvent {
-    isPossibleHistoryMember: boolean,
-    isBestPossibleHistoryMember: boolean,
-    rankOfBestRankedMemberHistory: EventRank,
-    rankOfBestRankedEventInAnyMemberHistory: EventRank,
-    nextEvents: EventName[],
-}
-
-interface UpdateConsolidatedEventParameters {
-    analyzedEvent: AnalyzedEvent
-    nextAnalyzedEvent: AnalyzedEvent,
-    analyzedHistory: AnalyzedHistory,
-    bestPossibleHistory: AnalyzedHistory,
-}
-
-interface SnappablePosition {
-    position: Cents,
-    name: EventName,
-    monzo: Monzo,
 }
 
 export {
@@ -92,6 +90,5 @@ export {
     EventName,
     UpdateConsolidatedEventParameters,
     ConsolidatedEvent,
-    AnalyzedOrConsolidatedEvent, // todo: don't want to export
     SnappablePosition,
 }

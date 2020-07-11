@@ -41,23 +41,23 @@ enum Parameter {
 }
 
 type Submetric = {
-    [Parameter.SUBMETRIC_TYPE]?: SubmetricType,
-    [Parameter.WEIGHT]?: number,
-    [Parameter.WEIGHT_IS_BASE]?: boolean,
-    [Parameter.WEIGHT_IS_EXPONENT]?: boolean,
-    [Parameter.K]?: number
-    [Parameter.K_IS_BASE]?: boolean
-    [Parameter.K_IS_EXPONENT]?: boolean
-    [Parameter.J]?: number
-    [Parameter.J_IS_BASE]?: boolean
-    [Parameter.J_IS_EXPONENT]?: boolean
-    [Parameter.A]?: number
-    [Parameter.A_IS_BASE]?: boolean
-    [Parameter.A_IS_EXPONENT]?: boolean
-    [Parameter.W]?: number
-    [Parameter.Y]?: number
-    [Parameter.NUMERATOR_IS_NUMINATOR]?: boolean
-    [Parameter.MODIFIED_COUNT]?: boolean
+    [ Parameter.SUBMETRIC_TYPE ]?: SubmetricType,
+    [ Parameter.WEIGHT ]?: number,
+    [ Parameter.WEIGHT_IS_BASE ]?: boolean,
+    [ Parameter.WEIGHT_IS_EXPONENT ]?: boolean,
+    [ Parameter.K ]?: number
+    [ Parameter.K_IS_BASE ]?: boolean
+    [ Parameter.K_IS_EXPONENT ]?: boolean
+    [ Parameter.J ]?: number
+    [ Parameter.J_IS_BASE ]?: boolean
+    [ Parameter.J_IS_EXPONENT ]?: boolean
+    [ Parameter.A ]?: number
+    [ Parameter.A_IS_BASE ]?: boolean
+    [ Parameter.A_IS_EXPONENT ]?: boolean
+    [ Parameter.W ]?: number
+    [ Parameter.Y ]?: number
+    [ Parameter.NUMERATOR_IS_NUMINATOR ]?: boolean
+    [ Parameter.MODIFIED_COUNT ]?: boolean
     // [Parameter.X]?: number
 }
 
@@ -69,20 +69,6 @@ type SubmetricProperties = {
 
 type ParameterType = number | boolean | SubmetricType // todo: relationship w/ SubmetricPoint? should this be a ParameterPoint or something?
 
-type Configs = SubmetricConfigs[] // todo: MetricConfigs ?
-
-type SubmetricConfigs = {
-    [key in Parameter]?: ParameterType | ParameterConfig
-}
-
-type ParameterConfigs = { [ key in Parameter ]?: ParameterType | ParameterConfig }
-
-interface ParameterConfig {
-    center?: number,
-    range?: number,
-    count?: number,
-}
-
 interface DynamicParameter {
     submetricIndex: number,
     parameter: Parameter,
@@ -90,14 +76,30 @@ interface DynamicParameter {
     unit: number,
 }
 
+interface ParameterConfig {
+    center?: number,
+    range?: number,
+    count?: number,
+}
+
+type SubmetricConfig = {
+    [key in Parameter]?: ParameterType | ParameterConfig
+}
+
+type ParameterConfigs = { // todo: uhhhh so this is exactly the same as a SubmetricConfig... will probably be fixed by the refactor
+    [key in Parameter]?: ParameterType | ParameterConfig
+}
+
+type MetricConfig = SubmetricConfig[]
+
 export {
     Submetric,
     SubmetricType,
     SubmetricOperation,
     Parameter,
     SubmetricProperties,
-    Configs,
-    SubmetricConfigs,
+    MetricConfig,
+    SubmetricConfig,
     ParameterConfig,
     DynamicParameter,
     ParameterType,

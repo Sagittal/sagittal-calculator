@@ -1,4 +1,4 @@
-import { AnalyzedHistory, EventRank } from "./types"
+import { AnalyzedHistory } from "./types"
 import { Level } from "../../notations/ji/types"
 
 const levelsBestHistoryRanks: { [key in Level]: { [index: number]: number | undefined }} = {} as { [key in Level]: { [index: number]: number | undefined }}
@@ -13,17 +13,13 @@ const updateLevelAnalysis = (bestPossibleHistory: AnalyzedHistory) => {
             cumulativeRank = rank
         }
 
-        if (!levelsBestHistoryRanks[ level ]) levelsBestHistoryRanks[ level ] = [] // todo: also type guard
-        // @ts-ignore
+        if (!levelsBestHistoryRanks[ level ]) levelsBestHistoryRanks[ level ] = []
         if (!levelsBestHistoryRanks[ level ][ rank ]) levelsBestHistoryRanks[ level ][ rank ] = 0
-        // @ts-ignore
-        levelsBestHistoryRanks[ level ][ rank ] += 1
+        levelsBestHistoryRanks[ level ][ rank ] = (levelsBestHistoryRanks[ level ][ rank ] as number) + 1
 
         if (!levelsBestCumulativeHistoryRanks[ level ]) levelsBestCumulativeHistoryRanks[ level ] = []
-        // @ts-ignore
         if (!levelsBestCumulativeHistoryRanks[ level ][ cumulativeRank ]) levelsBestCumulativeHistoryRanks[ level ][ cumulativeRank ] = 0
-        // @ts-ignore
-        levelsBestCumulativeHistoryRanks[ level ][ cumulativeRank ] += 1
+        levelsBestCumulativeHistoryRanks[ level ][ cumulativeRank ] = levelsBestCumulativeHistoryRanks[ level ][ cumulativeRank ] + 1
     })
 }
 

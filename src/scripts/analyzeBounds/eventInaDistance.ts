@@ -1,8 +1,8 @@
 import { computeInaDistance } from "../../notations/ji/inaDistance"
 import { HistoricalEvent, History } from "./types"
-import { Cents } from "../../utilities/types"
+import { Cents, Proportion } from "../../utilities/types"
 
-const computeEventInaDistance = (event: HistoricalEvent, index: number, history: History) => {
+const computeEventInaDistance = (event: HistoricalEvent, index: number, history: History): Proportion => {
     return computeInaDistance(
         Math.abs(
             index === 0 ?

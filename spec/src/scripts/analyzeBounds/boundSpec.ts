@@ -10,7 +10,7 @@ import {
     EventRank,
     Score,
 } from "../../../../src/scripts/analyzeBounds/types"
-import { Cents } from "../../../../src/utilities/types"
+import { Cents, Proportion } from "../../../../src/utilities/types"
 
 describe("analyzeBound", () => {
     const notBestHistory: History = [
@@ -72,7 +72,7 @@ describe("analyzeBound", () => {
             position: 23.2 as Cents,
             rank: 1 as EventRank,
             distance: 0 as Cents,
-            inaDistance: 0,
+            inaDistance: 0 as Proportion,
             exact: false,
         } as AnalyzedEvent,
         {
@@ -82,7 +82,7 @@ describe("analyzeBound", () => {
             position: 23.15 as Cents,
             rank: 0 as EventRank,
             distance: 0.05000000000000071 as Cents,
-            inaDistance: 0.10247613475154385,
+            inaDistance: 0.10247613475154385 as Proportion,
             exact: false,
         } as AnalyzedEvent,
         {
@@ -92,7 +92,7 @@ describe("analyzeBound", () => {
             position: 23.116419649559468 as Cents,
             rank: 0 as EventRank,
             distance: 0.03358035044053054 as Cents,
-            inaDistance: 0.238962941978454,
+            inaDistance: 0.238962941978454 as Proportion,
             exact: true,
         } as AnalyzedEvent,
     ]
@@ -104,7 +104,7 @@ describe("analyzeBound", () => {
         possible: true,
         exact: false,
         distance: 0.08358035044053125 as Cents,
-        inaDistance: 0.34143907672999785,
+        inaDistance: 0.34143907672999785 as Proportion,
         tinaError: 0,
         initialPositionTinaDifference: -0.5613173198970488,
     }

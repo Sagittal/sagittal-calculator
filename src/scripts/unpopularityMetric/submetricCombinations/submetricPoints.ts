@@ -2,10 +2,12 @@ import { computeParameterPoints } from "./parameterPoints"
 import { ParameterPoint, SubmetricPoint } from "./types"
 import { Parameter, ParameterConfig } from "../types"
 
-const computeSubmetricPoints = (submetricConfigs = {}) => {
-    let submetricPoints: SubmetricPoint[] = [{} as SubmetricPoint]; // todo: i should probably replace these semis with storing the object entries calls in variables
+const computeSubmetricPoints = (submetricConfig = {}) => {
+    let submetricPoints: SubmetricPoint[] = [{} as SubmetricPoint]
 
-    (Object.entries(submetricConfigs) as Array<[Parameter, ParameterConfig]>).forEach(([parameter, parameterConfig]: [Parameter, ParameterConfig]) => {
+    const submetricConfigEntries = Object.entries(submetricConfig) as Array<[Parameter, ParameterConfig]>
+
+    submetricConfigEntries.forEach(([parameter, parameterConfig]: [Parameter, ParameterConfig]) => {
         let extendedSubmetricPoints: SubmetricPoint[] = []
 
         let parameterPoints: ParameterPoint[]

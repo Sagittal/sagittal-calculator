@@ -1,14 +1,14 @@
-import { computeAdjacentCoordinates } from "./adjacentCoodinates"
-import { getSumOfSquaresAtCoordinate } from "./getSumOfSquaresAtCoordinate"
+import { computeAdjacentPoints } from "./adjacentPoints"
+import { getSumOfSquaresAtPoint } from "./getSumOfSquaresAtPoint"
 import { SumOfSquares, SumsOfSquares } from "../sumOfSquares/types"
-import { Coordinate } from "./types"
+import { Point } from "./types"
 
-const getSumOfSquaresAtCoordinateIfLocalMinimum = (sumsOfSquares: SumsOfSquares, coordinate: Coordinate): SumOfSquares | undefined => {
-    const adjacentCoordinates = computeAdjacentCoordinates(coordinate)
-    const sumOfSquares = getSumOfSquaresAtCoordinate(sumsOfSquares, coordinate)
+const getSumOfSquaresAtPointIfLocalMinimum = (sumsOfSquares: SumsOfSquares, point: Point): SumOfSquares | undefined => {
+    const adjacentPoints = computeAdjacentPoints(point)
+    const sumOfSquares = getSumOfSquaresAtPoint(sumsOfSquares, point)
 
-    const isLocalMinimum = adjacentCoordinates.every(adjacentCoordinate => {
-        const adjacentSumOfSquares = getSumOfSquaresAtCoordinate(sumsOfSquares, adjacentCoordinate)
+    const isLocalMinimum = adjacentPoints.every(adjacentPoint => {
+        const adjacentSumOfSquares = getSumOfSquaresAtPoint(sumsOfSquares, adjacentPoint)
 
         return !adjacentSumOfSquares || sumOfSquares && adjacentSumOfSquares > sumOfSquares
     })
@@ -21,5 +21,5 @@ const getSumOfSquaresAtCoordinateIfLocalMinimum = (sumsOfSquares: SumsOfSquares,
 }
 
 export {
-    getSumOfSquaresAtCoordinateIfLocalMinimum,
+    getSumOfSquaresAtPointIfLocalMinimum,
 }

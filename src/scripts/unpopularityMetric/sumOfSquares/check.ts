@@ -1,11 +1,16 @@
 import { Parameter, Submetric } from "../types"
+import { isNumber } from "../../../utilities/typeGuards"
 
 const checkSubmetricsForIssues = (submetrics: Submetric[]) => {
     submetrics.forEach((submetric: Submetric) => {
-        if (submetric[ Parameter.A ] === 1 && submetric[ Parameter.A_IS_BASE ]) {
+        const {
+            [ Parameter.A ]: a,
+        } = submetric
+
+        if (a === 1 && submetric[ Parameter.A_IS_BASE ]) {
             throw new Error("Submetric has base 1 and will calculate undefined antivotes.")
-        };
-        if ((submetric[ Parameter.A ] as number) < 0 && submetric[ Parameter.A_IS_BASE ]) {
+        }
+        if (isNumber(a) && a < 0 && submetric[ Parameter.A_IS_BASE ]) {
             throw new Error("Submetric has negative base and will calculate undefined antivotes.")
         }
         if (submetric[ Parameter.A_IS_BASE ] && submetric[ Parameter.A_IS_EXPONENT ]) {

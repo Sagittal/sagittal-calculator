@@ -4,7 +4,7 @@ import { ParameterPoint } from "../../../../../src/scripts/unpopularityMetric/su
 
 describe("computeDynamicParameters", () => {
     it("returns a flattened array of all the parameters that are dynamic (count > 1) -- flattened across all the submetrics, that is", () => {
-        const configs = [
+        const metricConfig = [
             {
                 [ Parameter.Y ]: { center: 1.2, range: 1, count: 3 },
                 [ Parameter.W ]: 4,
@@ -16,7 +16,7 @@ describe("computeDynamicParameters", () => {
             },
         ]
 
-        const result = computeDynamicParameters(configs)
+        const result = computeDynamicParameters(metricConfig)
 
         expect(result).toEqual([
             { submetricIndex: 0, parameter: Parameter.Y, parameterPoints: [0.7, 1.2, 1.7] as ParameterPoint[], unit: 0.5 },

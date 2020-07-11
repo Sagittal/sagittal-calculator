@@ -4,10 +4,11 @@ import { COLORS } from "./colors"
 import { Level } from "../../../notations/ji/types"
 
 const presentLevelAnalysis = (level: Level, levelsBestHistoryRanks: { [ index: number ]: number | undefined }, levelsBestCumulativeHistoryRanks: { [ index: number ]: number }) => {
-    const presentedLevelAnalysis: string[] = [ `${presentLevel(level)}            \there\tcmltv` ];
+    const presentedLevelAnalysis: string[] = [ `${presentLevel(level)}            \there\tcmltv` ]
 
-    (Object.entries(levelsBestHistoryRanks) as unknown as Array<[ number, number ]>).forEach(([ rankIndex, bestHistoryRankCount ]) => {
+    const levelsBestHistoryRanksEntries = Object.entries(levelsBestHistoryRanks) as unknown as Array<[number, number]>
 
+    levelsBestHistoryRanksEntries.forEach(([ rankIndex, bestHistoryRankCount ]) => {
         let presentedBestHistoryRankCount = bestHistoryRankCount.toString()
         while (presentedBestHistoryRankCount.length < 3) {
             presentedBestHistoryRankCount = " " + presentedBestHistoryRankCount

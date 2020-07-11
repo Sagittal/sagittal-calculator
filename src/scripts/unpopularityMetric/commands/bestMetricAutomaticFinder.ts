@@ -18,14 +18,14 @@ for (let chunkCount = lowerBoundChunkCount; chunkCount < upperBoundChunkCount; c
     const initialConfigs = computeInitialConfigs(chunkCount)
     console.log(`investigating chunk count ${chunkCount} which has ${initialConfigs.length} configs to check`)
 
-    let best = { sumOfSquares: Infinity }
+    let bestMetric = { sumOfSquares: Infinity }
     initialConfigs.forEach((initialConfig, index) => {
         try {
             if (logInitialConfigs) console.log(JSON.stringify(initialConfig))
-            const bestForConfig = recursivelyFindUnpopularityMetric(initialConfig, { quiet: true })
+            const bestMetricForConfig = recursivelyFindUnpopularityMetric(initialConfig, { quiet: true })
 
-            if (bestForConfig.sumOfSquares < best.sumOfSquares) {
-                best = bestForConfig
+            if (bestMetricForConfig.sumOfSquares < bestMetric.sumOfSquares) {
+                bestMetric = bestMetricForConfig
             }
         } catch (e) {
             // bad configs are still being computed... may not be a simple matter to not calculate them in the first place, so for now, just don't worry about them
@@ -33,5 +33,5 @@ for (let chunkCount = lowerBoundChunkCount; chunkCount < upperBoundChunkCount; c
 
         if (index > 0 && index % 100 === 0) console.log(`${index}/${initialConfigs.length} (${100 * index / initialConfigs.length}%)`[ "blue" ])
     })
-    console.log("best was", best)
+    console.log("best metric was", bestMetric)
 }

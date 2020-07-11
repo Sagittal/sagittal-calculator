@@ -30,7 +30,7 @@ describe("computeLevelSymbols", () => {
 })
 
 describe("computeIsWithinLevel", () => {
-    it("returns true if the level is below or at to the target level; false otherwise", () => {
+    it("returns true if the level is below or at to the target level, and false otherwise", () => {
         expect(computeIsWithinLevel(Level.MEDIUM, Level.INSANE)).toBe(true)
         expect(computeIsWithinLevel(Level.HIGH, Level.INSANE)).toBe(true)
         expect(computeIsWithinLevel(Level.ULTRA, Level.INSANE)).toBe(true)
