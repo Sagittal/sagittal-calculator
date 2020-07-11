@@ -1,14 +1,15 @@
-import {computeHistoryInaDistance} from "../../../../src/scripts/analyzeBounds/historyInaDistance"
+import { computeHistoryInaDistance } from "../../../../src/scripts/analyzeBounds/historyInaDistance"
+import { AnalyzedEvent } from "../../../../src/scripts/analyzeBounds/types"
 
 describe("computeHistoryInaDistance", () => {
     it("sums up the ina-distances of all the events in the history (they are already all positive)", () => {
-        const events = [
-            {inaDistance: 0.4},
-            {inaDistance: 0.5},
-            {inaDistance: 0.6},
+        const analyzedEvents: AnalyzedEvent[] = [
+            { inaDistance: 0.4 } as AnalyzedEvent,
+            { inaDistance: 0.5 } as AnalyzedEvent,
+            { inaDistance: 0.6 } as AnalyzedEvent,
         ]
 
-        const result = computeHistoryInaDistance(events)
+        const result = computeHistoryInaDistance(analyzedEvents)
 
         expect(result).toBe(1.5)
     })

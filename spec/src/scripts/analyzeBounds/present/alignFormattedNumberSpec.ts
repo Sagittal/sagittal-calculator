@@ -1,4 +1,4 @@
-import {alignFormattedNumber} from "../../../../../src/scripts/analyzeBounds/present/alignFormattedNumber"
+import { alignFormattedNumber } from "../../../../../src/scripts/analyzeBounds/present/alignFormattedNumber"
 
 describe("alignFormattedNumber", () => {
     it("shifts over numbers so that the decimal places align", () => {

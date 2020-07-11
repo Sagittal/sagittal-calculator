@@ -1,16 +1,18 @@
-import {LEVELS} from "../../../notations/ji/levels"
-import {LEVEL_HEIGHT, Y_SCALE, MARGIN} from "./sizes"
-import {computeReversedLevelIndex} from "./reversedLevelIndex"
+import { LEVELS } from "../../../notations/ji/levels"
+import { LEVEL_HEIGHT, MARGIN, Y_SCALE } from "./sizes"
+import { computeReversedLevelIndex } from "./reversedLevelIndex"
+import { Level } from "../../../notations/ji/types"
+import { Px } from "./types"
 
-const computeLevelHeights = withinLevelHeight => {
+const computeLevelHeights = (withinLevelHeight: number): {[key in Level]: Px} => {
     return LEVELS.reduce(
         (levelTops, level, levelIndex) => {
             return {
                 ...levelTops,
-                [level]: Y_SCALE * (MARGIN + (computeReversedLevelIndex(levelIndex) + withinLevelHeight) * LEVEL_HEIGHT),
+                [ level ]: Y_SCALE * (MARGIN + (computeReversedLevelIndex(levelIndex) + withinLevelHeight) * LEVEL_HEIGHT) as Px,
             }
         },
-        {},
+        {} as {[key in Level]: Px},
     )
 }
 

@@ -1,8 +1,10 @@
-const computeBestPossibleHistory = analyzedHistories => {
-    let bestPossibleHistory: any = {score: Infinity}
+import { AnalyzedHistory } from "./types"
+
+const computeBestPossibleHistory = (analyzedHistories: AnalyzedHistory[]): AnalyzedHistory => {
+    let bestPossibleHistory: any = { score: Infinity }
 
     if (analyzedHistories.some(analyzedHistory => !analyzedHistory.exact)) {
-        let exactHistories = []
+        let exactHistories: AnalyzedHistory[] = []
         analyzedHistories.forEach(analyzedHistory => {
             if (analyzedHistory.exact) {
                 exactHistories.push(analyzedHistory)

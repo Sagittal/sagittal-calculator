@@ -1,9 +1,11 @@
-import {computeSubmetricAntivotes} from "./submetricAntivotes"
-import {computeMonzoFromInteger} from "../../../utilities/comma/monzoFromInteger"
-import {computeMonzoFromRatio} from "../../../utilities/comma/monzoFromRatio"
-import {computeLog} from "../../../utilities/log"
+import { computeSubmetricAntivotes } from "./submetricAntivotes"
+import { computeMonzoFromInteger } from "../../../utilities/comma/monzoFromInteger"
+import { computeMonzoFromRatio } from "../../../utilities/comma/monzoFromRatio"
+import { computeLog } from "../../../utilities/log"
+import { Ratio } from "../../../utilities/types"
+import { Antivotes } from "../sumOfSquares/types"
 
-const computeRatioSubmetricAntivotes = (fiveRoughRatio, submetric = {}) => {
+const computeRatioSubmetricAntivotes = (fiveRoughRatio: Ratio, submetric = {}): Antivotes => {
     const {
         k = 1,
         j = 1,
@@ -51,7 +53,7 @@ const computeRatioSubmetricAntivotes = (fiveRoughRatio, submetric = {}) => {
 
     if (isNaN(weightedNuminator) || isNaN(weightedDiminuator)) throw new Error(`You got NaN! in ratioSubmetricAntivotes ${fiveRoughRatio} ${JSON.stringify(submetric, null, 4)} ${weightedNuminator} ${weightedDiminuator} ${diminuator} ${k}`)
 
-    return weightedNuminator + weightedDiminuator
+    return weightedNuminator + weightedDiminuator as Antivotes
 }
 
 export {

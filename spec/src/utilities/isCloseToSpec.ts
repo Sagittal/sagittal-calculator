@@ -1,4 +1,4 @@
-import {computeIsCloseTo} from "../../../src/utilities/isCloseTo"
+import { computeIsCloseTo } from "../../../src/utilities/isCloseTo"
 
 describe("computeIsCloseTo", () => {
     it("returns true if the two values are very close", () => {

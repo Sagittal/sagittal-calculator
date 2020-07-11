@@ -1,8 +1,8 @@
-const merge = (...objects) => {
+const merge = <T>(...objects: T[]) => {
     return objects.reduce(
         (mergedObjects, object) => {
-            return {...mergedObjects, ...object}
-        } ,
+            return { ...mergedObjects, ...object }
+        },
         {},
     )
 }

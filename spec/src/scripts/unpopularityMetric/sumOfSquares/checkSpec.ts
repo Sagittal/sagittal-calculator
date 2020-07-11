@@ -1,12 +1,12 @@
-import {checkSubmetricsForIssues} from "../../../../../src/scripts/unpopularityMetric/sumOfSquares/check"
-import {PARAMETER} from "../../../../../src/scripts/unpopularityMetric/constants"
+import { checkSubmetricsForIssues } from "../../../../../src/scripts/unpopularityMetric/sumOfSquares/check"
+import { Parameter } from "../../../../../src/scripts/unpopularityMetric/types"
 
 describe("checkSubmetricsForIssues", () => {
     it("gives a good error when a is a base but it is 1", () => {
         const submetrics = [
             {
-                [PARAMETER.A]: 1,
-                [PARAMETER.A_IS_BASE]: true,
+                [ Parameter.A ]: 1,
+                [ Parameter.A_IS_BASE ]: true,
             },
         ]
 
@@ -16,8 +16,8 @@ describe("checkSubmetricsForIssues", () => {
     it("gives a good error when a is a base but it is negative", () => {
         const submetrics = [
             {
-                [PARAMETER.A]: -2.23,
-                [PARAMETER.A_IS_BASE]: true,
+                [ Parameter.A ]: -2.23,
+                [ Parameter.A_IS_BASE ]: true,
             },
         ]
 
@@ -27,8 +27,8 @@ describe("checkSubmetricsForIssues", () => {
     it("gives a good error when a is tried to be used both as a base and an exponent", () => {
         const submetrics = [
             {
-                [PARAMETER.A_IS_EXPONENT]: true,
-                [PARAMETER.A_IS_BASE]: true,
+                [ Parameter.A_IS_EXPONENT ]: true,
+                [ Parameter.A_IS_BASE ]: true,
             },
         ]
 
@@ -38,8 +38,8 @@ describe("checkSubmetricsForIssues", () => {
     it("gives a good error when j is tried to be used both as a base and an exponent", () => {
         const submetrics = [
             {
-                [PARAMETER.J_IS_EXPONENT]: true,
-                [PARAMETER.J_IS_BASE]: true,
+                [ Parameter.J_IS_EXPONENT ]: true,
+                [ Parameter.J_IS_BASE ]: true,
             },
         ]
 
@@ -49,8 +49,8 @@ describe("checkSubmetricsForIssues", () => {
     it("gives a good error when k is tried to be used both as a base and an exponent", () => {
         const submetrics = [
             {
-                [PARAMETER.K_IS_EXPONENT]: true,
-                [PARAMETER.K_IS_BASE]: true,
+                [ Parameter.K_IS_EXPONENT ]: true,
+                [ Parameter.K_IS_BASE ]: true,
             },
         ]
 
@@ -60,8 +60,8 @@ describe("checkSubmetricsForIssues", () => {
     it("gives a good error when weight is tried to be used both as a base and an exponent", () => {
         const submetrics = [
             {
-                [PARAMETER.WEIGHT_IS_EXPONENT]: true,
-                [PARAMETER.WEIGHT_IS_BASE]: true,
+                [ Parameter.WEIGHT_IS_EXPONENT ]: true,
+                [ Parameter.WEIGHT_IS_BASE ]: true,
             },
         ]
 
@@ -71,8 +71,8 @@ describe("checkSubmetricsForIssues", () => {
     it("gives a good error when both j and k are included on the same submetrics (because you could always forever increase them together to get the same result)", () => {
         const submetrics = [
             {
-                [PARAMETER.J]: 3,
-                [PARAMETER.K]: 3,
+                [ Parameter.J ]: 3,
+                [ Parameter.K ]: 3,
             },
         ]
 

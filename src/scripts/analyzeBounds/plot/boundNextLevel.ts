@@ -1,7 +1,9 @@
-const computeBoundNextLevel = (bound, level) => {
-    const {levels} = bound
+import { Bound, Level } from "../../../notations/ji/types"
 
-    return levels[levels.indexOf(level) + 1]
+const computeBoundNextLevel = (bound: Bound, level: Level) => {
+    const { levels } = bound
+
+    return levels[ levels.indexOf(level) + 1 ]
 }
 
 export {

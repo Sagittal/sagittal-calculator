@@ -1,11 +1,13 @@
-import {computeSubmetricAntivotes} from "../../../../../src/scripts/unpopularityMetric/antivotes/submetricAntivotes"
-import {computeLog} from "../../../../../src/utilities/log"
-import {PARAMETER, SUBMETRIC_TYPE} from "../../../../../src/scripts/unpopularityMetric/constants"
+import { computeSubmetricAntivotes } from "../../../../../src/scripts/unpopularityMetric/antivotes/submetricAntivotes"
+import { computeLog } from "../../../../../src/utilities/log"
+import { Parameter, Submetric, SubmetricType } from "../../../../../src/scripts/unpopularityMetric/types"
+import { Monzo } from "../../../../../src/utilities/comma/types"
+import { Antivotes } from "../../../../../src/scripts/unpopularityMetric/sumOfSquares/types"
 
 describe("computeSubmetricAntivotes", () => {
-    let submetric
+    let submetric: Submetric
 
-    const fiveRoughNumberMonzo = [
+    const fiveRoughNumberMonzo: Monzo = [
         0,                  // prime 2;  prime index 1 (from the prime count function)
         0,                  // prime 3;  prime index 2 (from the prime count function)
         0,                  // prime 5;  prime index 3 (from the prime count function)
@@ -13,7 +15,7 @@ describe("computeSubmetricAntivotes", () => {
         1,                  // prime 11; prime index 5 (from the prime count function)
         -1,                 // prime 13; prime index 6 (from the prime count function)
         2,                  // prime 17; prime index 7 (from the prime count function)
-    ]
+    ] as Monzo
 
     beforeEach(() => {
         submetric = {}
@@ -26,71 +28,71 @@ describe("computeSubmetricAntivotes", () => {
             expect(result).toBe(
                 1 * 11 +
                 1 * 13 +
-                2 * 17,
+                2 * 17 as Antivotes,
             )
         })
 
         it("when a is provided, multiplies the prime by it", () => {
             const a = 0.56
-            submetric[PARAMETER.A] = a
+            submetric[ Parameter.A ] = a
 
             const result = computeSubmetricAntivotes(fiveRoughNumberMonzo, submetric)
 
             expect(result).toBe(
                 1 * 11 * a +
                 1 * 13 * a +
-                2 * 17 * a,
+                2 * 17 * a as Antivotes,
             )
         })
 
         it("when a is used as an exponent (not a coefficient)", () => {
             const a = 0.56
-            submetric[PARAMETER.A] = a
-            submetric[PARAMETER.A_IS_EXPONENT] = true
+            submetric[ Parameter.A ] = a
+            submetric[ Parameter.A_IS_EXPONENT ] = true
 
             const result = computeSubmetricAntivotes(fiveRoughNumberMonzo, submetric)
 
             expect(result).toBe(
                 1 * 11 ** a +
                 1 * 13 ** a +
-                2 * 17 ** a,
+                2 * 17 ** a as Antivotes,
             )
         })
 
         it("when a is used as a base (not a coefficient)", () => {
             const a = 0.56
-            submetric[PARAMETER.A] = a
-            submetric[PARAMETER.A_IS_BASE] = true
+            submetric[ Parameter.A ] = a
+            submetric[ Parameter.A_IS_BASE ] = true
 
             const result = computeSubmetricAntivotes(fiveRoughNumberMonzo, submetric)
 
             expect(result).toBe(
                 1 * computeLog(11, a) +
                 1 * computeLog(13, a) +
-                2 * computeLog(17, a),
+                2 * computeLog(17, a) as Antivotes,
             )
         })
 
         it("when w is provided, adds a constant to each prime after applying the coefficient, exponent, or base", () => {
             const a = 0.56
             const w = 0.34
-            submetric[PARAMETER.A] = a
-            submetric[PARAMETER.W] = w
+            submetric[ Parameter.A ] = a
+            submetric[ Parameter.W ] = w
 
             const result = computeSubmetricAntivotes(fiveRoughNumberMonzo, submetric)
 
             expect(result).toBe(
                 1 * (11 * a + w) +
                 1 * (13 * a + w) +
-                2 * (17 * a + w),
+                2 * (17 * a + w) as Antivotes,
             )
         })
 
         // it("when x is provided, adds a constant to each prime before applying the coefficient, exponent, or base", () => {
         //     const a = 0.56
         //     const x = -2.1
-        //     submetric[PARAMETER.A] = a
-        //     submetric[PARAMETER.X] = x
+        //     submetric[Parameter.A] = a
+        //     submetric[Parameter.X] = x
         //
         //     const result = computeSubmetricAntivotes(fiveRoughNumberMonzo, submetric)
         //
@@ -103,22 +105,22 @@ describe("computeSubmetricAntivotes", () => {
 
         it("when y is provided, raises the term to an exponent", () => {
             const y = 0.81
-            submetric[PARAMETER.Y] = y
+            submetric[ Parameter.Y ] = y
 
             const result = computeSubmetricAntivotes(fiveRoughNumberMonzo, submetric)
 
             expect(result).toBe(
                 1 ** y * 11 +
                 1 ** y * 13 +
-                2 ** y * 17,
+                2 ** y * 17 as Antivotes,
             )
         })
 
         // it("when v is provided, adds a constant to each *non-zero* term after applying the exponent", () => {
         //     const y = 0.81
         //     const v = 0.34
-        //     submetric[PARAMETER.Y] = y
-        //     submetric[PARAMETER.V] = v
+        //     submetric[Parameter.Y] = y
+        //     submetric[Parameter.V] = v
         //
         //     const result = computeSubmetricAntivotes(fiveRoughNumberMonzo, submetric)
         //
@@ -132,8 +134,8 @@ describe("computeSubmetricAntivotes", () => {
         // it("when t is provided, adds a constant to each *non-zero* term before applying the exponent", () => {
         //     const y = 0.81
         //     const t = 0.34
-        //     submetric[PARAMETER.Y] = y
-        //     submetric[PARAMETER.T] = t
+        //     submetric[Parameter.Y] = y
+        //     submetric[Parameter.T] = t
         //
         //     const result = computeSubmetricAntivotes(fiveRoughNumberMonzo, submetric)
         //
@@ -145,105 +147,105 @@ describe("computeSubmetricAntivotes", () => {
         // })
 
         it("when Dave's modified count is provided, counts 5's half as much as normal", () => {
-            submetric[PARAMETER.MODIFIED_COUNT] = true
-            const fiveRoughNumberMonzo = [0, 0, 1, -1]
+            submetric[ Parameter.MODIFIED_COUNT ] = true
+            const fiveRoughNumberMonzo = [0, 0, 1, -1] as Monzo
 
             const result = computeSubmetricAntivotes(fiveRoughNumberMonzo, submetric)
 
             expect(result).toBe(
                 0.5 * 5 +
-                1 * 7,
+                1 * 7 as Antivotes,
             )
         })
     })
 
     it("when the submetric type is soapf, sums the absolute values of the unique prime factors in the 5-rough monzo", () => {
-        submetric[PARAMETER.SUBMETRIC_TYPE] = SUBMETRIC_TYPE.SOAPF
+        submetric[ Parameter.SUBMETRIC_TYPE ] = SubmetricType.SOAPF
 
         const result = computeSubmetricAntivotes(fiveRoughNumberMonzo, submetric)
 
         expect(result).toBe(
             1 * 11 +
             1 * 13 +
-            1 * 17,
+            1 * 17 as Antivotes,
         )
     })
 
     it("when the submetric type is soapifar, sums the absolute values of the prime factors in the 5-rough monzo, mapped to the prime count function", () => {
-        submetric[PARAMETER.SUBMETRIC_TYPE] = SUBMETRIC_TYPE.SOAPIFAR
+        submetric[ Parameter.SUBMETRIC_TYPE ] = SubmetricType.SOAPIFAR
 
         const result = computeSubmetricAntivotes(fiveRoughNumberMonzo, submetric)
 
         expect(result).toBe(
             1 * 5 +
             1 * 6 +
-            2 * 7,
+            2 * 7 as Antivotes,
         )
     })
 
     it("when the submetric type is soapif, sums the absolute values of the unique prime factors in the 5-rough monzo, mapped to the prime count function", () => {
-        submetric[PARAMETER.SUBMETRIC_TYPE] = SUBMETRIC_TYPE.SOAPIF
+        submetric[ Parameter.SUBMETRIC_TYPE ] = SubmetricType.SOAPIF
 
         const result = computeSubmetricAntivotes(fiveRoughNumberMonzo, submetric)
 
         expect(result).toBe(
             1 * 5 +
             1 * 6 +
-            1 * 7,
+            1 * 7 as Antivotes,
         )
     })
 
     it("when the submetric type is coapfar, counts the prime factors in the 5-rough monzo", () => {
-        submetric[PARAMETER.SUBMETRIC_TYPE] = SUBMETRIC_TYPE.COAPFAR
+        submetric[ Parameter.SUBMETRIC_TYPE ] = SubmetricType.COAPFAR
 
         const result = computeSubmetricAntivotes(fiveRoughNumberMonzo, submetric)
 
         expect(result).toBe(
             1 * 1 +
             1 * 1 +
-            2 * 1,
+            2 * 1 as Antivotes,
         )
     })
 
     it("when the submetric type is coapf, counts the unique prime factors in the 5-rough monzo", () => {
-        submetric[PARAMETER.SUBMETRIC_TYPE] = SUBMETRIC_TYPE.COAPF
+        submetric[ Parameter.SUBMETRIC_TYPE ] = SubmetricType.COAPF
 
         const result = computeSubmetricAntivotes(fiveRoughNumberMonzo, submetric)
 
         expect(result).toBe(
             1 * 1 +
             1 * 1 +
-            1 * 1,
+            1 * 1 as Antivotes,
         )
     })
 
     it("when the submetric type is gpf, takes the maximum prime factor in the 5-rough monzo", () => {
-        submetric[PARAMETER.SUBMETRIC_TYPE] = SUBMETRIC_TYPE.GPF
+        submetric[ Parameter.SUBMETRIC_TYPE ] = SubmetricType.GPF
 
         const result = computeSubmetricAntivotes(fiveRoughNumberMonzo, submetric)
 
         expect(result).toBe(
             0 * 11 +
             0 * 13 +
-            1 * 17,
+            1 * 17 as Antivotes,
         )
     })
 
     it("when the submetric type is gpf, takes the maximum prime factor index in the 5-rough monzo", () => {
-        submetric[PARAMETER.SUBMETRIC_TYPE] = SUBMETRIC_TYPE.GPIF
+        submetric[ Parameter.SUBMETRIC_TYPE ] = SubmetricType.GPIF
 
         const result = computeSubmetricAntivotes(fiveRoughNumberMonzo, submetric)
 
         expect(result).toBe(
             0 * 5 +
             0 * 6 +
-            1 * 7,
+            1 * 7 as Antivotes,
         )
     })
 
     it("works for an empty monzo", () => {
         const result = computeSubmetricAntivotes([], submetric)
 
-        expect(result).toBe(0)
+        expect(result).toBe(0 as Antivotes)
     })
 })

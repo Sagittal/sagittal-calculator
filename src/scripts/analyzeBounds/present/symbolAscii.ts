@@ -1,4 +1,6 @@
-const presentSymbolAscii = symbolAscii => {
+import { SymbolLongAscii } from "../../../notations/ji/types"
+
+const presentSymbolAscii = (symbolAscii: SymbolLongAscii) => {
     const shaftIndex = symbolAscii.indexOf("|")
 
     let spacesToPrepend = 5 - shaftIndex

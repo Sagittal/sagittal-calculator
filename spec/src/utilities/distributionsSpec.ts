@@ -1,5 +1,5 @@
-import {computeDistributions} from "../../../src/utilities/distributions"
-import {arraysHaveSameContents} from "../../../src/utilities/arraysHaveSameContents"
+import { computeDistributions } from "../../../src/utilities/distributions"
+import { arraysHaveSameContents } from "../../../src/utilities/arraysHaveSameContents"
 
 describe("computeDistributions", () => {
     it("given an array and a count of buckets, will return all the possible ways of distributing the elements across the buckets", () => {
@@ -157,22 +157,22 @@ describe("computeDistributions", () => {
             [
                 ["a"],
                 [],
-                ["b", "c","d"],
+                ["b", "c", "d"],
             ],
             [
                 ["b"],
                 [],
-                ["a", "c","d"],
+                ["a", "c", "d"],
             ],
             [
                 ["c"],
                 [],
-                ["b", "a","d"],
+                ["b", "a", "d"],
             ],
             [
                 ["d"],
                 [],
-                ["b", "c","a"],
+                ["b", "c", "a"],
             ],
 
             // 0 0 4
@@ -449,7 +449,7 @@ describe("computeDistributions", () => {
         expectedResult.forEach(expectedResultElement => {
             expect(result.some(resultElement => {
                 return resultElement.every((bucket, index) => {
-                    return arraysHaveSameContents(bucket, expectedResultElement[index])
+                    return arraysHaveSameContents(bucket, expectedResultElement[ index ])
                 })
             })).toBeTruthy(`This expected element was not found: ${JSON.stringify(expectedResultElement)}`)
         })

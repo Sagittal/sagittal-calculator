@@ -1,6 +1,6 @@
-import {LEVELS} from "../../../notations/ji/levels"
+import { LEVELS } from "../../../notations/ji/levels"
 
-const computeReversedLevelIndex = levelIndex => LEVELS.length - 1 - levelIndex
+const computeReversedLevelIndex = (levelIndex: number) => LEVELS.length - 1 - levelIndex
 
 export {
     computeReversedLevelIndex,

@@ -1,10 +1,12 @@
-import {APOTOME} from "../intervals"
-import {MAXIMUM_POSITION} from "./intervals"
-import {LEVELS} from "./levels"
-import {LEVEL_EDAS} from "./levelEdas"
+import { APOTOME } from "../intervals"
+import { MAXIMUM_POSITION } from "./intervals"
+import { LEVELS } from "./levels"
+import { LEVEL_EDAS } from "./levelEdas"
+import { Level } from "./types"
+import { SnappablePosition } from "../../scripts/analyzeBounds/types"
 
-const computeInaMidpoints = level => {
-    const eda = LEVEL_EDAS[LEVELS.indexOf(level)]
+const computeInaMidpoints = (level: Level): SnappablePosition[] => {
+    const eda = LEVEL_EDAS[ LEVELS.indexOf(level) ]
 
     return [...Array(eda).keys()].map(degree => {
         const midpoint = degree + 0.5
@@ -14,8 +16,8 @@ const computeInaMidpoints = level => {
 
         const name = `${midpoint}°${eda}`
 
-        return {name, position}
-    }).filter(inaMidpoint => !!inaMidpoint)
+        return { name, position }
+    }).filter(inaMidpoint => !!inaMidpoint) as SnappablePosition[]
 }
 
 export {

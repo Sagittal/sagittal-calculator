@@ -1,8 +1,10 @@
+import { Cents, Prime } from "./types"
+
 const ACCURACY_THRESHOLD = 6
 
-const CENTS_PER_OCTAVE = 1200
+const CENTS_PER_OCTAVE: Cents = 1200 as Cents
 
-const PRIMES = [
+const PRIMES: Prime[] = [
     2,
     3,
     5,
@@ -9595,7 +9597,7 @@ const PRIMES = [
     99971,
     99989,
     99991,
-]
+] as Prime[]
 
 export {
     CENTS_PER_OCTAVE,

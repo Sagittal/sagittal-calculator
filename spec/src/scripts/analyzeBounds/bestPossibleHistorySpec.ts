@@ -1,8 +1,9 @@
-import {computeBestPossibleHistory} from "../../../../src/scripts/analyzeBounds/bestPossibleHistory"
+import { computeBestPossibleHistory } from "../../../../src/scripts/analyzeBounds/bestPossibleHistory"
+import { AnalyzedHistory } from "../../../../src/scripts/analyzeBounds/types"
 
 describe("computeBestPossibleHistory", () => {
     it("returns the history with the best score (the not possible ones are all already filtered out)", () => {
-        const histories = [
+        const analyzedHistories: AnalyzedHistory[] = [
             {
                 score: 3436643,
                 position: 12.909,
@@ -15,18 +16,18 @@ describe("computeBestPossibleHistory", () => {
                 score: 2422436,
                 position: 13.47489,
             },
-        ]
+        ] as AnalyzedHistory[]
 
-        const result = computeBestPossibleHistory(histories)
+        const result = computeBestPossibleHistory(analyzedHistories)
 
         expect(result).toEqual({
             score: 245444,
             position: 13.235,
-        })
+        } as AnalyzedHistory)
     })
 
     it("returns the best exact history even if its score is not the best", () => {
-        const histories = [
+        const analyzedHistories = [
             {
                 score: 3436643,
                 position: 12.909,
@@ -41,19 +42,19 @@ describe("computeBestPossibleHistory", () => {
                 score: 245444,
                 position: 13.235,
             },
-        ]
+        ] as AnalyzedHistory[]
 
-        const result = computeBestPossibleHistory(histories)
+        const result = computeBestPossibleHistory(analyzedHistories)
 
         expect(result).toEqual({
             score: 3436643,
             position: 12.909,
             exact: true,
-        })
+        } as AnalyzedHistory)
     })
 
     it("tie-breaks by distance", () => {
-        const histories = [
+        const analyzedHistories = [
             {
                 score: 3436643,
                 distance: 0.2,
@@ -66,15 +67,15 @@ describe("computeBestPossibleHistory", () => {
                 position: 12.909,
                 exact: true,
             },
-        ]
+        ] as AnalyzedHistory[]
 
-        const result = computeBestPossibleHistory(histories)
+        const result = computeBestPossibleHistory(analyzedHistories)
 
         expect(result).toEqual({
             score: 3436643,
             distance: 0.1,
             position: 12.909,
             exact: true,
-        })
+        } as AnalyzedHistory)
     })
 })

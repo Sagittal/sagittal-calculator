@@ -1,19 +1,21 @@
-import {INA_MIDPOINTS} from "../snappablePositions"
-import {INA_COLOR} from "./colors"
-import {LEVEL_CENTERS} from "./levelHeights"
-import {DASH_SIZE, HALF_TICK_SIZE} from "./sizes"
-import {computeX} from "./x"
+import { INA_MIDPOINTS } from "../snappablePositions"
+import { INA_COLOR } from "./colors"
+import { LEVEL_CENTERS } from "./levelHeights"
+import { DASH_SIZE, HALF_TICK_SIZE } from "./sizes"
+import { computeX } from "./x"
+import { SnappablePosition } from "../types"
+import { Level } from "../../../notations/ji/types"
 
 const visualizeInaMidpoints = () => {
-    const inaMidpointElements = []
+    const inaMidpointElements: string[] = [] as string[]
 
-    Object.entries(INA_MIDPOINTS).forEach(([level, inaMidpoints]: any) => {
-        const centerY = LEVEL_CENTERS[level]
+    (Object.entries(INA_MIDPOINTS) as Array<[Level, SnappablePosition[]]>).forEach(([level, inaMidpoints]: [Level, SnappablePosition[]]) => {
+        const centerY = LEVEL_CENTERS[ level ]
         const topY = centerY - HALF_TICK_SIZE
         const bottomY = centerY + HALF_TICK_SIZE
 
-        inaMidpoints.forEach(inaMidpoint => {
-            const {name, position} = inaMidpoint
+        inaMidpoints.forEach((inaMidpoint: SnappablePosition) => {
+            const { name, position } = inaMidpoint
 
             const x = computeX(position)
 

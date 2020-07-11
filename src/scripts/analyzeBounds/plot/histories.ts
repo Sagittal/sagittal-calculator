@@ -1,9 +1,11 @@
-import {computeExtendedLevelHistories} from "./extendedLevelHistories"
+import { computeExtendedLevelHistories } from "./extendedLevelHistories"
+import { Bound } from "../../../notations/ji/types"
+import { History } from "../types"
 
-const computeHistories = bound => {
-    const {levels} = bound
+const computeHistories = (bound: Bound) => {
+    const { levels } = bound
 
-    let histories = [[]]
+    let histories: History[] = [[]]
     levels.forEach(level => {
         histories = computeExtendedLevelHistories(histories, level, bound)
     })

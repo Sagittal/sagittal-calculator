@@ -1,24 +1,23 @@
-import {} from "../bestMetrics"
-import {computeSumOfSquaresForSubmetrics} from "../sumOfSquares/sumOfSquaresForSubmetrics"
-import {SUBMETRIC_TYPE, PARAMETER} from "../constants"
+import { computeSumOfSquaresForSubmetrics } from "../sumOfSquares/sumOfSquaresForSubmetrics"
+import { Parameter, SubmetricType } from "../types"
 
 const submetrics =
     [
         {
-            [PARAMETER.K]: 0.038,
-            [PARAMETER.A]: 1.994,
-            [PARAMETER.A_IS_BASE]: true,
-            [PARAMETER.Y]: 0.455,
-            [PARAMETER.W]: -2.08,
-            [PARAMETER.NUMERATOR_IS_NUMINATOR]: false,
+            [ Parameter.K ]: 0.038,
+            [ Parameter.A ]: 1.994,
+            [ Parameter.A_IS_BASE ]: true,
+            [ Parameter.Y ]: 0.455,
+            [ Parameter.W ]: -2.08,
+            [ Parameter.NUMERATOR_IS_NUMINATOR ]: false,
         },
         {
-            [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPFAR,
-            [PARAMETER.WEIGHT]: 0.577,
-            [PARAMETER.NUMERATOR_IS_NUMINATOR]: false,
+            [ Parameter.SUBMETRIC_TYPE ]: SubmetricType.COAPFAR,
+            [ Parameter.WEIGHT ]: 0.577,
+            [ Parameter.NUMERATOR_IS_NUMINATOR ]: false,
         },
     ]
 
-const sumOfSquares = computeSumOfSquaresForSubmetrics(submetrics, {logUnpopularities: true})
+const sumOfSquares = computeSumOfSquaresForSubmetrics(submetrics, { logUnpopularities: true })
 
 console.log(`${sumOfSquares}\n${JSON.stringify(submetrics)}`)

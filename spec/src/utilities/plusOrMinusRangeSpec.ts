@@ -1,4 +1,4 @@
-import {computePlusOrMinusRange} from "../../../src/utilities/plusOrMinusRange"
+import { computePlusOrMinusRange } from "../../../src/utilities/plusOrMinusRange"
 
 describe("computePlusOrMinusRange", () => {
     it("given a number, returns a range from -number to +number", () => {
@@ -6,6 +6,6 @@ describe("computePlusOrMinusRange", () => {
 
         const result = computePlusOrMinusRange(number)
 
-        expect(result).toEqual([-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5])
+        expect(result as number[]).toEqual([-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5])
     })
 })

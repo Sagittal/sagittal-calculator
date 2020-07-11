@@ -1,15 +1,16 @@
-import {LEVELS} from "../../../notations/ji/levels"
-import {levelsBestHistoryRanks, levelsBestCumulativeHistoryRanks} from "../levels"
-import {presentLevelAnalysis} from "./levelAnalysis"
+import { LEVELS } from "../../../notations/ji/levels"
+import { levelsBestCumulativeHistoryRanks, levelsBestHistoryRanks } from "../levels"
+import { presentLevelAnalysis } from "./levelAnalysis"
+import { Level } from "../../../notations/ji/types"
 
 const presentLevelAnalyses = () => {
-    const presentedLevelAnalysis = []
+    const presentedLevelAnalysis: string[] = []
 
     LEVELS.slice().reverse().forEach(level => {
-        if (level === "INSANE") return
+        if (level === Level.INSANE) return
 
-        const levelBestHistoryRanks = levelsBestHistoryRanks[level]
-        const levelBestCumulativeHistoryRanks = levelsBestCumulativeHistoryRanks[level]
+        const levelBestHistoryRanks: { [index: number]: number | undefined } = levelsBestHistoryRanks[ level ]
+        const levelBestCumulativeHistoryRanks: { [index: number]: number } = levelsBestCumulativeHistoryRanks[ level ]
 
         presentedLevelAnalysis.push(presentLevelAnalysis(level, levelBestHistoryRanks, levelBestCumulativeHistoryRanks))
     })

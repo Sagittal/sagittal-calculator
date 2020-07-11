@@ -1,5 +1,5 @@
-const computeDeepDistinct = array => {
-    return Array.from(new Set(array.map(JSON.stringify))).map((element: any) => JSON.parse(element))
+const computeDeepDistinct = (array: unknown[]) => {
+    return Array.from(new Set(array.map(element => JSON.stringify(element)))).map((element: any) => JSON.parse(element))
 }
 
 export {

@@ -1,4 +1,4 @@
-import {computeTriangularNumber} from "../../../src/utilities/triangularNumber"
+import { computeTriangularNumber } from "../../../src/utilities/triangularNumber"
 
 describe("triangular number", () => {
     it("returns the nth triangular number", () => {

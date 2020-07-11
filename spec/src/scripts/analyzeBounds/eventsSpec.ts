@@ -1,32 +1,35 @@
-import {analyzeEvents} from "../../../../src/scripts/analyzeBounds/events"
+import { analyzeEvents } from "../../../../src/scripts/analyzeBounds/events"
+import { EventType, HistoricalEvent, History } from "../../../../src/scripts/analyzeBounds/types"
+import { Level } from "../../../../src/notations/ji/types"
+import { Cents } from "../../../../src/utilities/types"
 
 describe("analyzeEvents", () => {
     it("adds some analysis properties to each event: rank, distance, and exact", () => {
-        const history = [
+        const history: History = [
             {
-                type: "INA",
-                level: "HIGH",
-                position: 10.0,
-            },
+                type: EventType.INA,
+                level: Level.HIGH,
+                position: 10.0 as Cents,
+            } as HistoricalEvent,
             {
-                type: "SIZE",
-                level: "ULTRA",
-                position: 10.2,
-            },
+                type: EventType.SIZE,
+                level: Level.ULTRA,
+                position: 10.2 as Cents,
+            } as HistoricalEvent,
             {
-                type: "MEAN",
-                level: "EXTREME",
-                position: 10.1,
-            },
+                type: EventType.MEAN,
+                level: Level.EXTREME,
+                position: 10.1 as Cents,
+            } as HistoricalEvent,
         ]
-        const actualBoundPosition = 10.2
+        const actualBoundPosition = 10.2 as Cents
 
         const result = analyzeEvents(history, actualBoundPosition)
 
         expect(result).toEqual(jasmine.arrayWithExactContents([
             {
-                type: "INA",
-                level: "HIGH",
+                type: EventType.INA,
+                level: Level.HIGH,
                 position: 10.0,
                 rank: 0,
                 exact: false,
@@ -34,8 +37,8 @@ describe("analyzeEvents", () => {
                 inaDistance: 0,
             },
             {
-                type: "SIZE",
-                level: "ULTRA",
+                type: EventType.SIZE,
+                level: Level.ULTRA,
                 position: 10.2,
                 rank: 2,
                 exact: true,
@@ -43,8 +46,8 @@ describe("analyzeEvents", () => {
                 inaDistance: 0.10203632301441096,
             },
             {
-                type: "MEAN",
-                level: "EXTREME",
+                type: EventType.MEAN,
+                level: Level.EXTREME,
                 position: 10.1,
                 rank: 1,
                 exact: false,

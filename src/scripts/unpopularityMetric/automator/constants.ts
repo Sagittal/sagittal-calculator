@@ -1,55 +1,55 @@
-import {PARAMETER, SUBMETRIC_TYPE} from "../constants"
+import { Parameter, ParameterConfig, ParameterConfigs, ParameterType, SubmetricConfigs, SubmetricType } from "../types"
 
 const RESOLUTION = 2
 
 // AKA: if they are going to be included in the automatically generated initial configs, what should they be set to
-const PARAMETER_INITIAL_CONFIGS = {
-    [PARAMETER.WEIGHT]: { center: 0.5, range: 1, count: RESOLUTION },
-    [PARAMETER.WEIGHT_IS_BASE]: true,
-    [PARAMETER.WEIGHT_IS_EXPONENT]: true,
-    [PARAMETER.K]: { center: 1, range: 2, count: RESOLUTION },
-    [PARAMETER.K_IS_BASE]: true,
-    [PARAMETER.K_IS_EXPONENT]: true,
-    [PARAMETER.J]: { center: 1, range: 2, count: RESOLUTION },
-    [PARAMETER.J_IS_BASE]: true,
-    [PARAMETER.J_IS_EXPONENT]: true,
-    [PARAMETER.A]: { center: 2, range: 4, count: RESOLUTION },
-    [PARAMETER.A_IS_BASE]: true,
-    [PARAMETER.A_IS_EXPONENT]: true,
-    [PARAMETER.W]: { center: 0, range: 12, count: RESOLUTION },
-    // [PARAMETER.X]: { center: 0, range: 6, count: RESOLUTION },
-    [PARAMETER.Y]: { center: 0, range: 6, count: RESOLUTION },
-    // [PARAMETER.V]: { center: 0, range: 6, count: RESOLUTION },
-    // [PARAMETER.T]: { center: 0, range: 6, count: RESOLUTION },
-    [PARAMETER.NUMERATOR_IS_NUMINATOR]: false,
-    [PARAMETER.MODIFIED_COUNT]: true,
+const PARAMETER_INITIAL_CONFIGS: { [key in Parameter]?: ParameterType | ParameterConfig } = {
+    [ Parameter.WEIGHT ]: { center: 0.5, range: 1, count: RESOLUTION },
+    [ Parameter.WEIGHT_IS_BASE ]: true,
+    [ Parameter.WEIGHT_IS_EXPONENT ]: true,
+    [ Parameter.K ]: { center: 1, range: 2, count: RESOLUTION },
+    [ Parameter.K_IS_BASE ]: true,
+    [ Parameter.K_IS_EXPONENT ]: true,
+    [ Parameter.J ]: { center: 1, range: 2, count: RESOLUTION },
+    [ Parameter.J_IS_BASE ]: true,
+    [ Parameter.J_IS_EXPONENT ]: true,
+    [ Parameter.A ]: { center: 2, range: 4, count: RESOLUTION },
+    [ Parameter.A_IS_BASE ]: true,
+    [ Parameter.A_IS_EXPONENT ]: true,
+    [ Parameter.W ]: { center: 0, range: 12, count: RESOLUTION },
+    // [Parameter.X]: { center: 0, range: 6, count: RESOLUTION },
+    [ Parameter.Y ]: { center: 0, range: 6, count: RESOLUTION },
+    // [Parameter.V]: { center: 0, range: 6, count: RESOLUTION },
+    // [Parameter.T]: { center: 0, range: 6, count: RESOLUTION },
+    [ Parameter.NUMERATOR_IS_NUMINATOR ]: false,
+    [ Parameter.MODIFIED_COUNT ]: true,
 }
 
-const SUBMETRIC_CONFIGS = Object.values(SUBMETRIC_TYPE).map(submetricType => {
-    return { [PARAMETER.SUBMETRIC_TYPE]: submetricType }
+const SUBMETRIC_CONFIGS: SubmetricConfigs[] = Object.values(SubmetricType).map(submetricType => {
+    return { [ Parameter.SUBMETRIC_TYPE ]: submetricType }
 })
 
-const PARAMETER_CONFIGS = [
-    { [PARAMETER.K]: PARAMETER_INITIAL_CONFIGS[PARAMETER.K]},
-    { [PARAMETER.K]: PARAMETER_INITIAL_CONFIGS[PARAMETER.K], [PARAMETER.K_IS_BASE]: true},
-    { [PARAMETER.K]: PARAMETER_INITIAL_CONFIGS[PARAMETER.K], [PARAMETER.K_IS_EXPONENT]: true},
-    { [PARAMETER.J]: PARAMETER_INITIAL_CONFIGS[PARAMETER.J]},
-    { [PARAMETER.J]: PARAMETER_INITIAL_CONFIGS[PARAMETER.J], [PARAMETER.J_IS_BASE]: true},
-    { [PARAMETER.J]: PARAMETER_INITIAL_CONFIGS[PARAMETER.J], [PARAMETER.J_IS_EXPONENT]: true},
-    { [PARAMETER.A]: PARAMETER_INITIAL_CONFIGS[PARAMETER.A]},
-    { [PARAMETER.A]: PARAMETER_INITIAL_CONFIGS[PARAMETER.A], [PARAMETER.A_IS_BASE]: true},
-    { [PARAMETER.A]: PARAMETER_INITIAL_CONFIGS[PARAMETER.A], [PARAMETER.A_IS_EXPONENT]: true},
-    { [PARAMETER.W]: PARAMETER_INITIAL_CONFIGS[PARAMETER.W]},
-    // { [PARAMETER.X]: PARAMETER_INITIAL_CONFIGS[PARAMETER.X]},
-    { [PARAMETER.Y]: PARAMETER_INITIAL_CONFIGS[PARAMETER.Y]},
-    // { [PARAMETER.V]: PARAMETER_INITIAL_CONFIGS[PARAMETER.V]},
-    // { [PARAMETER.T]: PARAMETER_INITIAL_CONFIGS[PARAMETER.T]},
-    { [PARAMETER.MODIFIED_COUNT]: PARAMETER_INITIAL_CONFIGS[PARAMETER.MODIFIED_COUNT]},
+const PARAMETER_CONFIGS: ParameterConfigs[] = [
+    { [ Parameter.K ]: PARAMETER_INITIAL_CONFIGS[ Parameter.K ] },
+    { [ Parameter.K ]: PARAMETER_INITIAL_CONFIGS[ Parameter.K ], [ Parameter.K_IS_BASE ]: PARAMETER_INITIAL_CONFIGS[Parameter.K_IS_BASE] },
+    { [ Parameter.K ]: PARAMETER_INITIAL_CONFIGS[ Parameter.K ], [ Parameter.K_IS_EXPONENT ]: PARAMETER_INITIAL_CONFIGS[Parameter.K_IS_EXPONENT] },
+    { [ Parameter.J ]: PARAMETER_INITIAL_CONFIGS[ Parameter.J ] },
+    { [ Parameter.J ]: PARAMETER_INITIAL_CONFIGS[ Parameter.J ], [ Parameter.J_IS_BASE ]: PARAMETER_INITIAL_CONFIGS[Parameter.J_IS_BASE] },
+    { [ Parameter.J ]: PARAMETER_INITIAL_CONFIGS[ Parameter.J ], [ Parameter.J_IS_EXPONENT ]: PARAMETER_INITIAL_CONFIGS[Parameter.J_IS_EXPONENT] },
+    { [ Parameter.A ]: PARAMETER_INITIAL_CONFIGS[ Parameter.A ] },
+    { [ Parameter.A ]: PARAMETER_INITIAL_CONFIGS[ Parameter.A ], [ Parameter.A_IS_BASE ]: PARAMETER_INITIAL_CONFIGS[Parameter.A_IS_BASE] },
+    { [ Parameter.A ]: PARAMETER_INITIAL_CONFIGS[ Parameter.A ], [ Parameter.A_IS_EXPONENT ]: PARAMETER_INITIAL_CONFIGS[Parameter.A_IS_EXPONENT] },
+    { [ Parameter.W ]: PARAMETER_INITIAL_CONFIGS[ Parameter.W ] },
+    // { [Parameter.X]: PARAMETER_INITIAL_CONFIGS[Parameter.X]},
+    { [ Parameter.Y ]: PARAMETER_INITIAL_CONFIGS[ Parameter.Y ] },
+    // { [Parameter.V]: PARAMETER_INITIAL_CONFIGS[Parameter.V]},
+    // { [Parameter.T]: PARAMETER_INITIAL_CONFIGS[Parameter.T]},
+    { [ Parameter.MODIFIED_COUNT ]: PARAMETER_INITIAL_CONFIGS[ Parameter.MODIFIED_COUNT ] },
 ]
 
-const SUBMETRIC_CONFIG_COMBINATIONS = []
+const SUBMETRIC_CONFIG_COMBINATIONS: SubmetricConfigs[][][] = [] // todo: this is crazy!? QUADRUPLE plural???? and why is it ddifferent than the parameter config combinations??
 
-const PARAMETER_CONFIG_COMBINATIONS = []
+const PARAMETER_CONFIG_COMBINATIONS: ParameterConfigs[][][] = []
 
 export {
     RESOLUTION,

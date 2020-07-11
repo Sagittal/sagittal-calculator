@@ -1,4 +1,4 @@
-import {presentNumber} from "../../../../../src/scripts/analyzeBounds/present/number"
+import { presentNumber } from "../../../../../src/scripts/analyzeBounds/present/number"
 
 describe("presentNumber", () => {
     it("always shows 3 decimal places", () => {

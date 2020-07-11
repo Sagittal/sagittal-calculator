@@ -1,39 +1,41 @@
-import {computeInitialConsolidatedEvent} from "./initialConsolidatedEvent"
-import {updateConsolidatedEvent} from "./updateConsolidatedEvent"
-import {ensureOneBestPossibleEventPerLevel} from "./ensureOneBestPossibleEventPerLevel"
+import { computeInitialConsolidatedEvent } from "./initialConsolidatedEvent"
+import { updateConsolidatedEvent } from "./updateConsolidatedEvent"
+import { ensureOneBestPossibleEventPerLevel } from "./ensureOneBestPossibleEventPerLevel"
+import { AnalyzedHistory, ConsolidatedEvent, ConsolidatedHistories, UpdateConsolidatedEventParameters } from "./types"
 
-const computeConsolidatedHistories = (analyzedHistories, bestPossibleHistory) => {
-    const consolidatedHistories = {}
+const computeConsolidatedHistories = (analyzedHistories: AnalyzedHistory[], bestPossibleHistory: AnalyzedHistory): ConsolidatedHistories => {
+    const consolidatedHistories: ConsolidatedHistories = {}
 
     analyzedHistories.forEach(analyzedHistory => {
         analyzedHistory.events.forEach((analyzedEvent, index) => {
-            if (!consolidatedHistories[analyzedEvent.level]) {
-                consolidatedHistories[analyzedEvent.level] = []
-            }
+            consolidatedHistories[ analyzedEvent.level ] = consolidatedHistories[ analyzedEvent.level ] || [] as ConsolidatedEvent[]
 
-            const nextAnalyzedEvent = analyzedHistory.events[index + 1]
+            const nextAnalyzedEvent = analyzedHistory.events[ index + 1 ]
 
-            const matchingConsolidatedEvent = consolidatedHistories[analyzedEvent.level]
+            const matchingConsolidatedEvent: ConsolidatedEvent | undefined = (consolidatedHistories[ analyzedEvent.level ] as ConsolidatedEvent[]) // todo: maybe a type guard would clean this up>
                 .find(existingEvent => existingEvent.name === analyzedEvent.name)
 
+            const updateConsolidatedEventParameters = {
+                nextAnalyzedEvent,
+                analyzedHistory,
+                analyzedEvent,
+                bestPossibleHistory,
+            }
+
             if (matchingConsolidatedEvent) {
-                updateConsolidatedEvent(matchingConsolidatedEvent, {
-                    nextAnalyzedEvent,
-                    analyzedHistory,
-                    analyzedEvent,
-                    bestPossibleHistory,
-                })
+                updateConsolidatedEvent(
+                    matchingConsolidatedEvent,
+                    updateConsolidatedEventParameters,
+                )
             } else {
-                const newConsolidatedEvent = computeInitialConsolidatedEvent(analyzedEvent)
+                const newConsolidatedEvent: ConsolidatedEvent = computeInitialConsolidatedEvent(analyzedEvent)
 
-                updateConsolidatedEvent(newConsolidatedEvent, {
-                    nextAnalyzedEvent,
-                    analyzedHistory,
-                    analyzedEvent,
-                    bestPossibleHistory,
-                })
+                updateConsolidatedEvent(
+                    newConsolidatedEvent,
+                    updateConsolidatedEventParameters,
+                );
 
-                consolidatedHistories[analyzedEvent.level].push(newConsolidatedEvent)
+                (consolidatedHistories[ analyzedEvent.level ] as ConsolidatedEvent[]).push(newConsolidatedEvent)
             }
         })
     })

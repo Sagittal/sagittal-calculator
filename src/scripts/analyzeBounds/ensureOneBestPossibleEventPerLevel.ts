@@ -1,5 +1,8 @@
-const ensureOneBestPossibleEventPerLevel = consolidatedHistory => {
-    Object.entries(consolidatedHistory).forEach(([level, events]: any) => {
+import { ConsolidatedEvent, ConsolidatedHistories } from "./types"
+import { Level } from "../../notations/ji/types"
+
+const ensureOneBestPossibleEventPerLevel = (consolidatedHistories: ConsolidatedHistories) => {
+    (Object.entries(consolidatedHistories) as Array<[Level, ConsolidatedEvent[]]>).forEach(([level, events]: [Level, ConsolidatedEvent[]]) => {
         const bestPossibleHistoryEvents = events.filter(event => event.isBestPossibleHistoryMember)
 
         if (bestPossibleHistoryEvents.length > 1) {

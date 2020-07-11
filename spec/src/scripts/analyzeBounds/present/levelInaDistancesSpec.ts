@@ -1,16 +1,18 @@
-import {extractLevelInaDistances} from "../../../../../src/scripts/analyzeBounds/present/levelInaDistances"
+import { extractLevelInaDistances } from "../../../../../src/scripts/analyzeBounds/present/levelInaDistances"
+import { Level } from "../../../../../src/notations/ji/types"
+import { AnalyzedEvent, AnalyzedHistory } from "../../../../../src/scripts/analyzeBounds/types"
 
 describe("extractLevelInaDistances", () => {
     it("returns an array of the ina-distances of each event (from the previous event)", () => {
         const analyzedHistory = {
             events: [
-                {level: "MEDIUM", inaDistance: 0.00000},
-                {level: "HIGH", inaDistance: 4.44444444},
-                {level: "ULTRA", inaDistance: 3.33333333},
-                {level: "EXTREME", inaDistance: 2.222222},
-                {level: "INSANE", inaDistance: 1.111111},
-            ],
-        }
+                { level: Level.MEDIUM, inaDistance: 0.00000 },
+                { level: Level.HIGH, inaDistance: 4.44444444 },
+                { level: Level.ULTRA, inaDistance: 3.33333333 },
+                { level: Level.EXTREME, inaDistance: 2.222222 },
+                { level: Level.INSANE, inaDistance: 1.111111 },
+            ] as AnalyzedEvent[],
+        } as AnalyzedHistory
 
         const result = extractLevelInaDistances(analyzedHistory)
 
@@ -23,14 +25,14 @@ describe("extractLevelInaDistances", () => {
     })
 
     it("works when a level is skipped", () => {
-        const analyzedHistory = {
+        const analyzedHistory: AnalyzedHistory = {
             events: [
-                {level: "MEDIUM", inaDistance: 0.00000},
-                {level: "HIGH", inaDistance: 4.44444444},
-                {level: "EXTREME", inaDistance: 2.222222},
-                {level: "INSANE", inaDistance: 1.111111},
-            ],
-        }
+                { level: Level.MEDIUM, inaDistance: 0.00000 },
+                { level: Level.HIGH, inaDistance: 4.44444444 },
+                { level: Level.EXTREME, inaDistance: 2.222222 },
+                { level: Level.INSANE, inaDistance: 1.111111 },
+            ] as AnalyzedEvent[],
+        } as AnalyzedHistory
 
         const result = extractLevelInaDistances(analyzedHistory)
 

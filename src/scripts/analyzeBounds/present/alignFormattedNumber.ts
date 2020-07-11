@@ -1,4 +1,4 @@
-const alignFormattedNumber = presentedNumber => {
+const alignFormattedNumber = (presentedNumber: string) => {
     while (presentedNumber.length < 7) {
         presentedNumber = " " + presentedNumber
     }

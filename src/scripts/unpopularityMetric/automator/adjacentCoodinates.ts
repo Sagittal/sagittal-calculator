@@ -1,13 +1,15 @@
-const computeAdjacentCoordinates = coordinate => {
-    const adjacentCoordinates = []
+import { Coordinate } from "./types"
+
+const computeAdjacentCoordinates = (coordinate: Coordinate) => { // todo: rename coordinate per recent email with Dave
+    const adjacentCoordinates: Coordinate[] = []
 
     coordinate.forEach((coordinateElement, index) => {
-        const adjacentCoordinateOne = coordinate.slice()
-        adjacentCoordinateOne[index] = coordinateElement - 1
+        const adjacentCoordinateOne: Coordinate = coordinate.slice() as Coordinate
+        adjacentCoordinateOne[ index ] = coordinateElement - 1
         adjacentCoordinates.push(adjacentCoordinateOne)
 
-        const adjacentCoordinateTwo = coordinate.slice()
-        adjacentCoordinateTwo[index] = coordinateElement + 1
+        const adjacentCoordinateTwo: Coordinate = coordinate.slice() as Coordinate
+        adjacentCoordinateTwo[ index ] = coordinateElement + 1
         adjacentCoordinates.push(adjacentCoordinateTwo)
     })
 

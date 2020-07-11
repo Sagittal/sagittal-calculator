@@ -1,6 +1,6 @@
-import {PRIMES} from "./constants"
+import { PRIMES } from "./constants"
 
-const computePrimeCount = value => {
+const computePrimeCount = (value: number) => {
     return PRIMES.findIndex(prime => prime > value)
 }
 

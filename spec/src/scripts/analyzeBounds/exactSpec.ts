@@ -1,12 +1,13 @@
-import {computeExact} from "../../../../src/scripts/analyzeBounds/exact"
+import { computeExact } from "../../../../src/scripts/analyzeBounds/exact"
+import { AnalyzedEvent } from "../../../../src/scripts/analyzeBounds/types"
 
 describe("computeExact", () => {
     it("returns true if every event's position is the same as the actual bound position", () => {
-        const analyzedEvents = [
-            {exact: true},
-            {exact: true},
-            {exact: true},
-            {exact: true},
+        const analyzedEvents: AnalyzedEvent[] = [
+            { exact: true } as AnalyzedEvent,
+            { exact: true } as AnalyzedEvent,
+            { exact: true } as AnalyzedEvent,
+            { exact: true } as AnalyzedEvent,
         ]
 
         const result = computeExact(analyzedEvents)
@@ -15,11 +16,11 @@ describe("computeExact", () => {
     })
 
     it("returns false if a single event's position is not the same as the actual bound position", () => {
-        const analyzedEvents = [
-            {exact: true},
-            {exact: false},
-            {exact: true},
-            {exact: true},
+        const analyzedEvents: AnalyzedEvent[] = [
+            { exact: true } as AnalyzedEvent,
+            { exact: false } as AnalyzedEvent,
+            { exact: true } as AnalyzedEvent,
+            { exact: true } as AnalyzedEvent,
         ]
 
         const result = computeExact(analyzedEvents)

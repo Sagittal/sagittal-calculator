@@ -1,7 +1,8 @@
-import {presentMonzo} from "../../../utilities/comma/present/monzo"
-import {presentRatio} from "../../../utilities/comma/present/ratio"
+import { presentMonzo } from "../../../utilities/comma/present/monzo"
+import { presentRatio } from "../../../utilities/comma/present/ratio"
+import { Comma } from "../types"
 
-const presentComma = (comma, {mode = "SUMMARY"} = {}) => {
+const presentComma = (comma: Comma, { mode = "SUMMARY" } = {}) => {
     const {
         commaName,
         limit,

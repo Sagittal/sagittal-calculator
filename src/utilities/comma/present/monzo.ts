@@ -1,4 +1,6 @@
-const presentMonzo = (monzo, {punctuated = false} = {}) => {
+import { Monzo } from "../types"
+
+const presentMonzo = (monzo: Monzo, { punctuated = false } = {}) => {
     let contents
     if (punctuated) {
         const fiveSlicedMonzo = monzo.splice(2)
@@ -7,7 +9,7 @@ const presentMonzo = (monzo, {punctuated = false} = {}) => {
 
         let index = 0
         while (index < fiveSlicedMonzo.length) {
-            contents = contents + fiveSlicedMonzo[index]
+            contents = contents + fiveSlicedMonzo[ index ]
             if (index < fiveSlicedMonzo.length - 1) {
                 if (index % 3 === 2) {
                     contents = contents + ", "

@@ -1,4 +1,4 @@
-import { runCommandAndGetConsoleOutput } from '../../../../helpers/specHelper'
+import { runCommandAndGetConsoleOutput } from "../../../../helpers/specHelper"
 import * as cp from "child_process"
 
 describe("analyzeComma", () => {
@@ -38,7 +38,7 @@ describe("analyzeComma", () => {
         const command = "npm run analyze-comma"
 
         expect(
-            () => cp.execSync(command, {stdio: [this.stdin, this.stdout, this.stderr]}),
+            () => cp.execSync(command, { stdio: [null, null, null] }),
         ).toThrowError(/Unable to determine monzo for comma/)
     })
 })

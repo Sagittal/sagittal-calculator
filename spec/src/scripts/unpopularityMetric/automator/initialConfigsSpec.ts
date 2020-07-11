@@ -12,28 +12,28 @@
 //
 //         expect(result).toEqual(jasmine.arrayWithExactContents([
 //             [
-//                 {[PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPFAR},
+//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPFAR},
 //             ],
 //             [
-//                 {[PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPF},
+//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPF},
 //             ],
 //             [
-//                 {[PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPFAR},
+//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.COAPFAR},
 //             ],
 //             [
-//                 {[PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPF},
+//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.COAPF},
 //             ],
 //             [
-//                 {[PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPIFAR},
+//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIFAR},
 //             ],
 //             [
-//                 {[PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPIF},
+//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIF},
 //             ],
 //             [
-//                 {[PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.GPF},
+//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.GPF},
 //             ],
 //             [
-//                 {[PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.GPIF},
+//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.GPIF},
 //             ],
 //         ]))
 //     })
@@ -46,911 +46,911 @@
 //         const expectedResult = [
 //             // 7
 //             [
-//                 {[PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPFAR},
-//                 {[PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPF},
+//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPFAR},
+//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPF},
 //             ],
 //             [
-//                 {[PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPFAR},
-//                 {[PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPFAR},
+//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPFAR},
+//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.COAPFAR},
 //             ],
 //             [
-//                 {[PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPFAR},
-//                 {[PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPF},
+//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPFAR},
+//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.COAPF},
 //             ],
 //             [
-//                 {[PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPFAR},
-//                 {[PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPIFAR},
+//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPFAR},
+//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIFAR},
 //             ],
 //             [
-//                 {[PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPFAR},
-//                 {[PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPIF},
+//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPFAR},
+//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIF},
 //             ],
 //             [
-//                 {[PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPFAR},
-//                 {[PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.GPF},
+//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPFAR},
+//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.GPF},
 //             ],
 //             [
-//                 {[PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPFAR},
-//                 {[PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.GPIF},
+//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPFAR},
+//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.GPIF},
 //             ],
 //
 //             // 6
 //             [
-//                 {[PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPF},
-//                 {[PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPFAR},
+//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPF},
+//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.COAPFAR},
 //             ],
 //             [
-//                 {[PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPF},
-//                 {[PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPF},
+//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPF},
+//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.COAPF},
 //             ],
 //             [
-//                 {[PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPF},
-//                 {[PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPIFAR},
+//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPF},
+//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIFAR},
 //             ],
 //             [
-//                 {[PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPF},
-//                 {[PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPIF},
+//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPF},
+//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIF},
 //             ],
 //             [
-//                 {[PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPF},
-//                 {[PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.GPF},
+//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPF},
+//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.GPF},
 //             ],
 //             [
-//                 {[PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPF},
-//                 {[PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.GPIF},
+//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPF},
+//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.GPIF},
 //             ],
 //
 //             // 5
 //             [
-//                 {[PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPFAR},
-//                 {[PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPF},
+//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.COAPFAR},
+//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.COAPF},
 //             ],
 //             [
-//                 {[PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPFAR},
-//                 {[PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPIFAR},
+//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.COAPFAR},
+//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIFAR},
 //             ],
 //             [
-//                 {[PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPFAR},
-//                 {[PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPIF},
+//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.COAPFAR},
+//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIF},
 //             ],
 //             [
-//                 {[PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPFAR},
-//                 {[PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.GPF},
+//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.COAPFAR},
+//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.GPF},
 //             ],
 //             [
-//                 {[PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPFAR},
-//                 {[PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.GPIF},
+//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.COAPFAR},
+//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.GPIF},
 //             ],
 //
 //             // 4
 //             [
-//                 {[PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPF},
-//                 {[PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPIFAR},
+//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.COAPF},
+//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIFAR},
 //             ],
 //             [
-//                 {[PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPF},
-//                 {[PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPIF},
+//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.COAPF},
+//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIF},
 //             ],
 //             [
-//                 {[PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPF},
-//                 {[PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.GPF},
+//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.COAPF},
+//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.GPF},
 //             ],
 //             [
-//                 {[PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPF},
-//                 {[PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.GPIF},
+//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.COAPF},
+//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.GPIF},
 //             ],
 //
 //             // 3
 //             [
-//                 {[PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPIFAR},
-//                 {[PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPIF},
+//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIFAR},
+//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIF},
 //             ],
 //             [
-//                 {[PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPIFAR},
-//                 {[PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.GPF},
+//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIFAR},
+//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.GPF},
 //             ],
 //             [
-//                 {[PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPIFAR},
-//                 {[PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.GPIF},
+//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIFAR},
+//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.GPIF},
 //             ],
 //
 //             // 2
 //             [
-//                 {[PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPIF},
-//                 {[PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.GPF},
+//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIF},
+//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.GPF},
 //             ],
 //             [
-//                 {[PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPIF},
-//                 {[PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.GPIF},
+//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIF},
+//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.GPIF},
 //             ],
 //
 //             // 1
 //             [
-//                 {[PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.GPF},
-//                 {[PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.GPIF},
+//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.GPF},
+//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.GPIF},
 //             ],
 //
 //             // SOAPFAR (15)
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPFAR,
-//                     [PARAMETER.K]: PARAMETER_INITIAL_CONFIGS[PARAMETER.K],
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPFAR,
+//                     [Parameter.K]: PARAMETER_INITIAL_CONFIGS[Parameter.K],
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPFAR,
-//                     [PARAMETER.K]: PARAMETER_INITIAL_CONFIGS[PARAMETER.K],
-//                     [PARAMETER.K_IS_BASE]: true,
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPFAR,
+//                     [Parameter.K]: PARAMETER_INITIAL_CONFIGS[Parameter.K],
+//                     [Parameter.K_IS_BASE]: true,
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPFAR,
-//                     [PARAMETER.K]: PARAMETER_INITIAL_CONFIGS[PARAMETER.K],
-//                     [PARAMETER.K_IS_EXPONENT]: true,
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPFAR,
+//                     [Parameter.K]: PARAMETER_INITIAL_CONFIGS[Parameter.K],
+//                     [Parameter.K_IS_EXPONENT]: true,
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPFAR,
-//                     [PARAMETER.J]: PARAMETER_INITIAL_CONFIGS[PARAMETER.J],
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPFAR,
+//                     [Parameter.J]: PARAMETER_INITIAL_CONFIGS[Parameter.J],
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPFAR,
-//                     [PARAMETER.J]: PARAMETER_INITIAL_CONFIGS[PARAMETER.J],
-//                     [PARAMETER.J_IS_BASE]: true,
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPFAR,
+//                     [Parameter.J]: PARAMETER_INITIAL_CONFIGS[Parameter.J],
+//                     [Parameter.J_IS_BASE]: true,
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPFAR,
-//                     [PARAMETER.J]: PARAMETER_INITIAL_CONFIGS[PARAMETER.J],
-//                     [PARAMETER.J_IS_EXPONENT]: true,
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPFAR,
+//                     [Parameter.J]: PARAMETER_INITIAL_CONFIGS[Parameter.J],
+//                     [Parameter.J_IS_EXPONENT]: true,
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPFAR,
-//                     [PARAMETER.A]: PARAMETER_INITIAL_CONFIGS[PARAMETER.A],
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPFAR,
+//                     [Parameter.A]: PARAMETER_INITIAL_CONFIGS[Parameter.A],
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPFAR,
-//                     [PARAMETER.A]: PARAMETER_INITIAL_CONFIGS[PARAMETER.A],
-//                     [PARAMETER.A_IS_BASE]: true,
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPFAR,
+//                     [Parameter.A]: PARAMETER_INITIAL_CONFIGS[Parameter.A],
+//                     [Parameter.A_IS_BASE]: true,
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPFAR,
-//                     [PARAMETER.A]: PARAMETER_INITIAL_CONFIGS[PARAMETER.A],
-//                     [PARAMETER.A_IS_EXPONENT]: true,
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPFAR,
+//                     [Parameter.A]: PARAMETER_INITIAL_CONFIGS[Parameter.A],
+//                     [Parameter.A_IS_EXPONENT]: true,
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPFAR,
-//                     [PARAMETER.W]: PARAMETER_INITIAL_CONFIGS[PARAMETER.W],
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPFAR,
+//                     [Parameter.W]: PARAMETER_INITIAL_CONFIGS[Parameter.W],
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPFAR,
-//                     [PARAMETER.X]: PARAMETER_INITIAL_CONFIGS[PARAMETER.X],
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPFAR,
+//                     [Parameter.X]: PARAMETER_INITIAL_CONFIGS[Parameter.X],
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPFAR,
-//                     [PARAMETER.Y]: PARAMETER_INITIAL_CONFIGS[PARAMETER.Y],
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPFAR,
+//                     [Parameter.Y]: PARAMETER_INITIAL_CONFIGS[Parameter.Y],
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPFAR,
-//                     [PARAMETER.V]: PARAMETER_INITIAL_CONFIGS[PARAMETER.V],
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPFAR,
+//                     [Parameter.V]: PARAMETER_INITIAL_CONFIGS[Parameter.V],
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPFAR,
-//                     [PARAMETER.T]: PARAMETER_INITIAL_CONFIGS[PARAMETER.T],
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPFAR,
+//                     [Parameter.T]: PARAMETER_INITIAL_CONFIGS[Parameter.T],
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPFAR,
-//                     [PARAMETER.MODIFIED_COUNT]: PARAMETER_INITIAL_CONFIGS[PARAMETER.MODIFIED_COUNT],
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPFAR,
+//                     [Parameter.MODIFIED_COUNT]: PARAMETER_INITIAL_CONFIGS[Parameter.MODIFIED_COUNT],
 //                 },
 //             ],
 //
 //             // SOAPF (15)
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPF,
-//                     [PARAMETER.K]: PARAMETER_INITIAL_CONFIGS[PARAMETER.K],
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPF,
+//                     [Parameter.K]: PARAMETER_INITIAL_CONFIGS[Parameter.K],
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPF,
-//                     [PARAMETER.K]: PARAMETER_INITIAL_CONFIGS[PARAMETER.K],
-//                     [PARAMETER.K_IS_BASE]: true,
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPF,
+//                     [Parameter.K]: PARAMETER_INITIAL_CONFIGS[Parameter.K],
+//                     [Parameter.K_IS_BASE]: true,
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPF,
-//                     [PARAMETER.K]: PARAMETER_INITIAL_CONFIGS[PARAMETER.K],
-//                     [PARAMETER.K_IS_EXPONENT]: true,
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPF,
+//                     [Parameter.K]: PARAMETER_INITIAL_CONFIGS[Parameter.K],
+//                     [Parameter.K_IS_EXPONENT]: true,
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPF,
-//                     [PARAMETER.J]: PARAMETER_INITIAL_CONFIGS[PARAMETER.J],
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPF,
+//                     [Parameter.J]: PARAMETER_INITIAL_CONFIGS[Parameter.J],
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPF,
-//                     [PARAMETER.J]: PARAMETER_INITIAL_CONFIGS[PARAMETER.J],
-//                     [PARAMETER.J_IS_BASE]: true,
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPF,
+//                     [Parameter.J]: PARAMETER_INITIAL_CONFIGS[Parameter.J],
+//                     [Parameter.J_IS_BASE]: true,
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPF,
-//                     [PARAMETER.J]: PARAMETER_INITIAL_CONFIGS[PARAMETER.J],
-//                     [PARAMETER.J_IS_EXPONENT]: true,
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPF,
+//                     [Parameter.J]: PARAMETER_INITIAL_CONFIGS[Parameter.J],
+//                     [Parameter.J_IS_EXPONENT]: true,
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPF,
-//                     [PARAMETER.A]: PARAMETER_INITIAL_CONFIGS[PARAMETER.A],
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPF,
+//                     [Parameter.A]: PARAMETER_INITIAL_CONFIGS[Parameter.A],
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPF,
-//                     [PARAMETER.A]: PARAMETER_INITIAL_CONFIGS[PARAMETER.A],
-//                     [PARAMETER.A_IS_BASE]: true,
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPF,
+//                     [Parameter.A]: PARAMETER_INITIAL_CONFIGS[Parameter.A],
+//                     [Parameter.A_IS_BASE]: true,
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPF,
-//                     [PARAMETER.A]: PARAMETER_INITIAL_CONFIGS[PARAMETER.A],
-//                     [PARAMETER.A_IS_EXPONENT]: true,
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPF,
+//                     [Parameter.A]: PARAMETER_INITIAL_CONFIGS[Parameter.A],
+//                     [Parameter.A_IS_EXPONENT]: true,
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPF,
-//                     [PARAMETER.W]: PARAMETER_INITIAL_CONFIGS[PARAMETER.W],
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPF,
+//                     [Parameter.W]: PARAMETER_INITIAL_CONFIGS[Parameter.W],
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPF,
-//                     [PARAMETER.X]: PARAMETER_INITIAL_CONFIGS[PARAMETER.X],
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPF,
+//                     [Parameter.X]: PARAMETER_INITIAL_CONFIGS[Parameter.X],
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPF,
-//                     [PARAMETER.Y]: PARAMETER_INITIAL_CONFIGS[PARAMETER.Y],
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPF,
+//                     [Parameter.Y]: PARAMETER_INITIAL_CONFIGS[Parameter.Y],
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPF,
-//                     [PARAMETER.V]: PARAMETER_INITIAL_CONFIGS[PARAMETER.V],
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPF,
+//                     [Parameter.V]: PARAMETER_INITIAL_CONFIGS[Parameter.V],
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPF,
-//                     [PARAMETER.T]: PARAMETER_INITIAL_CONFIGS[PARAMETER.T],
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPF,
+//                     [Parameter.T]: PARAMETER_INITIAL_CONFIGS[Parameter.T],
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPF,
-//                     [PARAMETER.MODIFIED_COUNT]: PARAMETER_INITIAL_CONFIGS[PARAMETER.MODIFIED_COUNT],
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPF,
+//                     [Parameter.MODIFIED_COUNT]: PARAMETER_INITIAL_CONFIGS[Parameter.MODIFIED_COUNT],
 //                 },
 //             ],
 //
 //             // COAPFAR (15)
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPFAR,
-//                     [PARAMETER.K]: PARAMETER_INITIAL_CONFIGS[PARAMETER.K],
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.COAPFAR,
+//                     [Parameter.K]: PARAMETER_INITIAL_CONFIGS[Parameter.K],
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPFAR,
-//                     [PARAMETER.K]: PARAMETER_INITIAL_CONFIGS[PARAMETER.K],
-//                     [PARAMETER.K_IS_BASE]: true,
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.COAPFAR,
+//                     [Parameter.K]: PARAMETER_INITIAL_CONFIGS[Parameter.K],
+//                     [Parameter.K_IS_BASE]: true,
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPFAR,
-//                     [PARAMETER.K]: PARAMETER_INITIAL_CONFIGS[PARAMETER.K],
-//                     [PARAMETER.K_IS_EXPONENT]: true,
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.COAPFAR,
+//                     [Parameter.K]: PARAMETER_INITIAL_CONFIGS[Parameter.K],
+//                     [Parameter.K_IS_EXPONENT]: true,
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPFAR,
-//                     [PARAMETER.J]: PARAMETER_INITIAL_CONFIGS[PARAMETER.J],
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.COAPFAR,
+//                     [Parameter.J]: PARAMETER_INITIAL_CONFIGS[Parameter.J],
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPFAR,
-//                     [PARAMETER.J]: PARAMETER_INITIAL_CONFIGS[PARAMETER.J],
-//                     [PARAMETER.J_IS_BASE]: true,
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.COAPFAR,
+//                     [Parameter.J]: PARAMETER_INITIAL_CONFIGS[Parameter.J],
+//                     [Parameter.J_IS_BASE]: true,
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPFAR,
-//                     [PARAMETER.J]: PARAMETER_INITIAL_CONFIGS[PARAMETER.J],
-//                     [PARAMETER.J_IS_EXPONENT]: true,
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.COAPFAR,
+//                     [Parameter.J]: PARAMETER_INITIAL_CONFIGS[Parameter.J],
+//                     [Parameter.J_IS_EXPONENT]: true,
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPFAR,
-//                     [PARAMETER.A]: PARAMETER_INITIAL_CONFIGS[PARAMETER.A],
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.COAPFAR,
+//                     [Parameter.A]: PARAMETER_INITIAL_CONFIGS[Parameter.A],
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPFAR,
-//                     [PARAMETER.A]: PARAMETER_INITIAL_CONFIGS[PARAMETER.A],
-//                     [PARAMETER.A_IS_BASE]: true,
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.COAPFAR,
+//                     [Parameter.A]: PARAMETER_INITIAL_CONFIGS[Parameter.A],
+//                     [Parameter.A_IS_BASE]: true,
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPFAR,
-//                     [PARAMETER.A]: PARAMETER_INITIAL_CONFIGS[PARAMETER.A],
-//                     [PARAMETER.A_IS_EXPONENT]: true,
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.COAPFAR,
+//                     [Parameter.A]: PARAMETER_INITIAL_CONFIGS[Parameter.A],
+//                     [Parameter.A_IS_EXPONENT]: true,
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPFAR,
-//                     [PARAMETER.W]: PARAMETER_INITIAL_CONFIGS[PARAMETER.W],
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.COAPFAR,
+//                     [Parameter.W]: PARAMETER_INITIAL_CONFIGS[Parameter.W],
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPFAR,
-//                     [PARAMETER.X]: PARAMETER_INITIAL_CONFIGS[PARAMETER.X],
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.COAPFAR,
+//                     [Parameter.X]: PARAMETER_INITIAL_CONFIGS[Parameter.X],
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPFAR,
-//                     [PARAMETER.Y]: PARAMETER_INITIAL_CONFIGS[PARAMETER.Y],
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.COAPFAR,
+//                     [Parameter.Y]: PARAMETER_INITIAL_CONFIGS[Parameter.Y],
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPFAR,
-//                     [PARAMETER.V]: PARAMETER_INITIAL_CONFIGS[PARAMETER.V],
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.COAPFAR,
+//                     [Parameter.V]: PARAMETER_INITIAL_CONFIGS[Parameter.V],
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPFAR,
-//                     [PARAMETER.T]: PARAMETER_INITIAL_CONFIGS[PARAMETER.T],
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.COAPFAR,
+//                     [Parameter.T]: PARAMETER_INITIAL_CONFIGS[Parameter.T],
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPFAR,
-//                     [PARAMETER.MODIFIED_COUNT]: PARAMETER_INITIAL_CONFIGS[PARAMETER.MODIFIED_COUNT],
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.COAPFAR,
+//                     [Parameter.MODIFIED_COUNT]: PARAMETER_INITIAL_CONFIGS[Parameter.MODIFIED_COUNT],
 //                 },
 //             ],
 //
 //             // COAPF (15)
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPF,
-//                     [PARAMETER.K]: PARAMETER_INITIAL_CONFIGS[PARAMETER.K],
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.COAPF,
+//                     [Parameter.K]: PARAMETER_INITIAL_CONFIGS[Parameter.K],
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPF,
-//                     [PARAMETER.K]: PARAMETER_INITIAL_CONFIGS[PARAMETER.K],
-//                     [PARAMETER.K_IS_BASE]: true,
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.COAPF,
+//                     [Parameter.K]: PARAMETER_INITIAL_CONFIGS[Parameter.K],
+//                     [Parameter.K_IS_BASE]: true,
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPF,
-//                     [PARAMETER.K]: PARAMETER_INITIAL_CONFIGS[PARAMETER.K],
-//                     [PARAMETER.K_IS_EXPONENT]: true,
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.COAPF,
+//                     [Parameter.K]: PARAMETER_INITIAL_CONFIGS[Parameter.K],
+//                     [Parameter.K_IS_EXPONENT]: true,
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPF,
-//                     [PARAMETER.J]: PARAMETER_INITIAL_CONFIGS[PARAMETER.J],
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.COAPF,
+//                     [Parameter.J]: PARAMETER_INITIAL_CONFIGS[Parameter.J],
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPF,
-//                     [PARAMETER.J]: PARAMETER_INITIAL_CONFIGS[PARAMETER.J],
-//                     [PARAMETER.J_IS_BASE]: true,
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.COAPF,
+//                     [Parameter.J]: PARAMETER_INITIAL_CONFIGS[Parameter.J],
+//                     [Parameter.J_IS_BASE]: true,
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPF,
-//                     [PARAMETER.J]: PARAMETER_INITIAL_CONFIGS[PARAMETER.J],
-//                     [PARAMETER.J_IS_EXPONENT]: true,
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.COAPF,
+//                     [Parameter.J]: PARAMETER_INITIAL_CONFIGS[Parameter.J],
+//                     [Parameter.J_IS_EXPONENT]: true,
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPF,
-//                     [PARAMETER.A]: PARAMETER_INITIAL_CONFIGS[PARAMETER.A],
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.COAPF,
+//                     [Parameter.A]: PARAMETER_INITIAL_CONFIGS[Parameter.A],
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPF,
-//                     [PARAMETER.A]: PARAMETER_INITIAL_CONFIGS[PARAMETER.A],
-//                     [PARAMETER.A_IS_BASE]: true,
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.COAPF,
+//                     [Parameter.A]: PARAMETER_INITIAL_CONFIGS[Parameter.A],
+//                     [Parameter.A_IS_BASE]: true,
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPF,
-//                     [PARAMETER.A]: PARAMETER_INITIAL_CONFIGS[PARAMETER.A],
-//                     [PARAMETER.A_IS_EXPONENT]: true,
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.COAPF,
+//                     [Parameter.A]: PARAMETER_INITIAL_CONFIGS[Parameter.A],
+//                     [Parameter.A_IS_EXPONENT]: true,
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPF,
-//                     [PARAMETER.W]: PARAMETER_INITIAL_CONFIGS[PARAMETER.W],
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.COAPF,
+//                     [Parameter.W]: PARAMETER_INITIAL_CONFIGS[Parameter.W],
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPF,
-//                     [PARAMETER.X]: PARAMETER_INITIAL_CONFIGS[PARAMETER.X],
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.COAPF,
+//                     [Parameter.X]: PARAMETER_INITIAL_CONFIGS[Parameter.X],
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPF,
-//                     [PARAMETER.Y]: PARAMETER_INITIAL_CONFIGS[PARAMETER.Y],
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.COAPF,
+//                     [Parameter.Y]: PARAMETER_INITIAL_CONFIGS[Parameter.Y],
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPF,
-//                     [PARAMETER.V]: PARAMETER_INITIAL_CONFIGS[PARAMETER.V],
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.COAPF,
+//                     [Parameter.V]: PARAMETER_INITIAL_CONFIGS[Parameter.V],
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPF,
-//                     [PARAMETER.T]: PARAMETER_INITIAL_CONFIGS[PARAMETER.T],
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.COAPF,
+//                     [Parameter.T]: PARAMETER_INITIAL_CONFIGS[Parameter.T],
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPF,
-//                     [PARAMETER.MODIFIED_COUNT]: PARAMETER_INITIAL_CONFIGS[PARAMETER.MODIFIED_COUNT],
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.COAPF,
+//                     [Parameter.MODIFIED_COUNT]: PARAMETER_INITIAL_CONFIGS[Parameter.MODIFIED_COUNT],
 //                 },
 //             ],
 //
 //             // SOAPIFAR (15)
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPIFAR,
-//                     [PARAMETER.K]: PARAMETER_INITIAL_CONFIGS[PARAMETER.K],
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIFAR,
+//                     [Parameter.K]: PARAMETER_INITIAL_CONFIGS[Parameter.K],
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPIFAR,
-//                     [PARAMETER.K]: PARAMETER_INITIAL_CONFIGS[PARAMETER.K],
-//                     [PARAMETER.K_IS_BASE]: true,
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIFAR,
+//                     [Parameter.K]: PARAMETER_INITIAL_CONFIGS[Parameter.K],
+//                     [Parameter.K_IS_BASE]: true,
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPIFAR,
-//                     [PARAMETER.K]: PARAMETER_INITIAL_CONFIGS[PARAMETER.K],
-//                     [PARAMETER.K_IS_EXPONENT]: true,
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIFAR,
+//                     [Parameter.K]: PARAMETER_INITIAL_CONFIGS[Parameter.K],
+//                     [Parameter.K_IS_EXPONENT]: true,
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPIFAR,
-//                     [PARAMETER.J]: PARAMETER_INITIAL_CONFIGS[PARAMETER.J],
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIFAR,
+//                     [Parameter.J]: PARAMETER_INITIAL_CONFIGS[Parameter.J],
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPIFAR,
-//                     [PARAMETER.J]: PARAMETER_INITIAL_CONFIGS[PARAMETER.J],
-//                     [PARAMETER.J_IS_BASE]: true,
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIFAR,
+//                     [Parameter.J]: PARAMETER_INITIAL_CONFIGS[Parameter.J],
+//                     [Parameter.J_IS_BASE]: true,
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPIFAR,
-//                     [PARAMETER.J]: PARAMETER_INITIAL_CONFIGS[PARAMETER.J],
-//                     [PARAMETER.J_IS_EXPONENT]: true,
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIFAR,
+//                     [Parameter.J]: PARAMETER_INITIAL_CONFIGS[Parameter.J],
+//                     [Parameter.J_IS_EXPONENT]: true,
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPIFAR,
-//                     [PARAMETER.A]: PARAMETER_INITIAL_CONFIGS[PARAMETER.A],
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIFAR,
+//                     [Parameter.A]: PARAMETER_INITIAL_CONFIGS[Parameter.A],
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPIFAR,
-//                     [PARAMETER.A]: PARAMETER_INITIAL_CONFIGS[PARAMETER.A],
-//                     [PARAMETER.A_IS_BASE]: true,
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIFAR,
+//                     [Parameter.A]: PARAMETER_INITIAL_CONFIGS[Parameter.A],
+//                     [Parameter.A_IS_BASE]: true,
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPIFAR,
-//                     [PARAMETER.A]: PARAMETER_INITIAL_CONFIGS[PARAMETER.A],
-//                     [PARAMETER.A_IS_EXPONENT]: true,
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIFAR,
+//                     [Parameter.A]: PARAMETER_INITIAL_CONFIGS[Parameter.A],
+//                     [Parameter.A_IS_EXPONENT]: true,
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPIFAR,
-//                     [PARAMETER.W]: PARAMETER_INITIAL_CONFIGS[PARAMETER.W],
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIFAR,
+//                     [Parameter.W]: PARAMETER_INITIAL_CONFIGS[Parameter.W],
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPIFAR,
-//                     [PARAMETER.X]: PARAMETER_INITIAL_CONFIGS[PARAMETER.X],
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIFAR,
+//                     [Parameter.X]: PARAMETER_INITIAL_CONFIGS[Parameter.X],
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPIFAR,
-//                     [PARAMETER.Y]: PARAMETER_INITIAL_CONFIGS[PARAMETER.Y],
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIFAR,
+//                     [Parameter.Y]: PARAMETER_INITIAL_CONFIGS[Parameter.Y],
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPIFAR,
-//                     [PARAMETER.V]: PARAMETER_INITIAL_CONFIGS[PARAMETER.V],
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIFAR,
+//                     [Parameter.V]: PARAMETER_INITIAL_CONFIGS[Parameter.V],
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPIFAR,
-//                     [PARAMETER.T]: PARAMETER_INITIAL_CONFIGS[PARAMETER.T],
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIFAR,
+//                     [Parameter.T]: PARAMETER_INITIAL_CONFIGS[Parameter.T],
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPIFAR,
-//                     [PARAMETER.MODIFIED_COUNT]: PARAMETER_INITIAL_CONFIGS[PARAMETER.MODIFIED_COUNT],
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIFAR,
+//                     [Parameter.MODIFIED_COUNT]: PARAMETER_INITIAL_CONFIGS[Parameter.MODIFIED_COUNT],
 //                 },
 //             ],
 //
 //             // SOAPIF (15)
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPIF,
-//                     [PARAMETER.K]: PARAMETER_INITIAL_CONFIGS[PARAMETER.K],
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIF,
+//                     [Parameter.K]: PARAMETER_INITIAL_CONFIGS[Parameter.K],
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPIF,
-//                     [PARAMETER.K]: PARAMETER_INITIAL_CONFIGS[PARAMETER.K],
-//                     [PARAMETER.K_IS_BASE]: true,
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIF,
+//                     [Parameter.K]: PARAMETER_INITIAL_CONFIGS[Parameter.K],
+//                     [Parameter.K_IS_BASE]: true,
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPIF,
-//                     [PARAMETER.K]: PARAMETER_INITIAL_CONFIGS[PARAMETER.K],
-//                     [PARAMETER.K_IS_EXPONENT]: true,
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIF,
+//                     [Parameter.K]: PARAMETER_INITIAL_CONFIGS[Parameter.K],
+//                     [Parameter.K_IS_EXPONENT]: true,
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPIF,
-//                     [PARAMETER.J]: PARAMETER_INITIAL_CONFIGS[PARAMETER.J],
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIF,
+//                     [Parameter.J]: PARAMETER_INITIAL_CONFIGS[Parameter.J],
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPIF,
-//                     [PARAMETER.J]: PARAMETER_INITIAL_CONFIGS[PARAMETER.J],
-//                     [PARAMETER.J_IS_BASE]: true,
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIF,
+//                     [Parameter.J]: PARAMETER_INITIAL_CONFIGS[Parameter.J],
+//                     [Parameter.J_IS_BASE]: true,
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPIF,
-//                     [PARAMETER.J]: PARAMETER_INITIAL_CONFIGS[PARAMETER.J],
-//                     [PARAMETER.J_IS_EXPONENT]: true,
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIF,
+//                     [Parameter.J]: PARAMETER_INITIAL_CONFIGS[Parameter.J],
+//                     [Parameter.J_IS_EXPONENT]: true,
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPIF,
-//                     [PARAMETER.A]: PARAMETER_INITIAL_CONFIGS[PARAMETER.A],
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIF,
+//                     [Parameter.A]: PARAMETER_INITIAL_CONFIGS[Parameter.A],
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPIF,
-//                     [PARAMETER.A]: PARAMETER_INITIAL_CONFIGS[PARAMETER.A],
-//                     [PARAMETER.A_IS_BASE]: true,
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIF,
+//                     [Parameter.A]: PARAMETER_INITIAL_CONFIGS[Parameter.A],
+//                     [Parameter.A_IS_BASE]: true,
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPIF,
-//                     [PARAMETER.A]: PARAMETER_INITIAL_CONFIGS[PARAMETER.A],
-//                     [PARAMETER.A_IS_EXPONENT]: true,
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIF,
+//                     [Parameter.A]: PARAMETER_INITIAL_CONFIGS[Parameter.A],
+//                     [Parameter.A_IS_EXPONENT]: true,
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPIF,
-//                     [PARAMETER.W]: PARAMETER_INITIAL_CONFIGS[PARAMETER.W],
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIF,
+//                     [Parameter.W]: PARAMETER_INITIAL_CONFIGS[Parameter.W],
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPIF,
-//                     [PARAMETER.X]: PARAMETER_INITIAL_CONFIGS[PARAMETER.X],
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIF,
+//                     [Parameter.X]: PARAMETER_INITIAL_CONFIGS[Parameter.X],
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPIF,
-//                     [PARAMETER.Y]: PARAMETER_INITIAL_CONFIGS[PARAMETER.Y],
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIF,
+//                     [Parameter.Y]: PARAMETER_INITIAL_CONFIGS[Parameter.Y],
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPIF,
-//                     [PARAMETER.V]: PARAMETER_INITIAL_CONFIGS[PARAMETER.V],
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIF,
+//                     [Parameter.V]: PARAMETER_INITIAL_CONFIGS[Parameter.V],
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPIF,
-//                     [PARAMETER.T]: PARAMETER_INITIAL_CONFIGS[PARAMETER.T],
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIF,
+//                     [Parameter.T]: PARAMETER_INITIAL_CONFIGS[Parameter.T],
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPIF,
-//                     [PARAMETER.MODIFIED_COUNT]: PARAMETER_INITIAL_CONFIGS[PARAMETER.MODIFIED_COUNT],
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIF,
+//                     [Parameter.MODIFIED_COUNT]: PARAMETER_INITIAL_CONFIGS[Parameter.MODIFIED_COUNT],
 //                 },
 //             ],
 //
 //             // GPF (15)
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.GPF,
-//                     [PARAMETER.K]: PARAMETER_INITIAL_CONFIGS[PARAMETER.K],
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.GPF,
+//                     [Parameter.K]: PARAMETER_INITIAL_CONFIGS[Parameter.K],
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.GPF,
-//                     [PARAMETER.K]: PARAMETER_INITIAL_CONFIGS[PARAMETER.K],
-//                     [PARAMETER.K_IS_BASE]: true,
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.GPF,
+//                     [Parameter.K]: PARAMETER_INITIAL_CONFIGS[Parameter.K],
+//                     [Parameter.K_IS_BASE]: true,
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.GPF,
-//                     [PARAMETER.K]: PARAMETER_INITIAL_CONFIGS[PARAMETER.K],
-//                     [PARAMETER.K_IS_EXPONENT]: true,
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.GPF,
+//                     [Parameter.K]: PARAMETER_INITIAL_CONFIGS[Parameter.K],
+//                     [Parameter.K_IS_EXPONENT]: true,
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.GPF,
-//                     [PARAMETER.J]: PARAMETER_INITIAL_CONFIGS[PARAMETER.J],
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.GPF,
+//                     [Parameter.J]: PARAMETER_INITIAL_CONFIGS[Parameter.J],
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.GPF,
-//                     [PARAMETER.J]: PARAMETER_INITIAL_CONFIGS[PARAMETER.J],
-//                     [PARAMETER.J_IS_BASE]: true,
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.GPF,
+//                     [Parameter.J]: PARAMETER_INITIAL_CONFIGS[Parameter.J],
+//                     [Parameter.J_IS_BASE]: true,
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.GPF,
-//                     [PARAMETER.J]: PARAMETER_INITIAL_CONFIGS[PARAMETER.J],
-//                     [PARAMETER.J_IS_EXPONENT]: true,
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.GPF,
+//                     [Parameter.J]: PARAMETER_INITIAL_CONFIGS[Parameter.J],
+//                     [Parameter.J_IS_EXPONENT]: true,
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.GPF,
-//                     [PARAMETER.A]: PARAMETER_INITIAL_CONFIGS[PARAMETER.A],
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.GPF,
+//                     [Parameter.A]: PARAMETER_INITIAL_CONFIGS[Parameter.A],
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.GPF,
-//                     [PARAMETER.A]: PARAMETER_INITIAL_CONFIGS[PARAMETER.A],
-//                     [PARAMETER.A_IS_BASE]: true,
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.GPF,
+//                     [Parameter.A]: PARAMETER_INITIAL_CONFIGS[Parameter.A],
+//                     [Parameter.A_IS_BASE]: true,
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.GPF,
-//                     [PARAMETER.A]: PARAMETER_INITIAL_CONFIGS[PARAMETER.A],
-//                     [PARAMETER.A_IS_EXPONENT]: true,
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.GPF,
+//                     [Parameter.A]: PARAMETER_INITIAL_CONFIGS[Parameter.A],
+//                     [Parameter.A_IS_EXPONENT]: true,
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.GPF,
-//                     [PARAMETER.W]: PARAMETER_INITIAL_CONFIGS[PARAMETER.W],
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.GPF,
+//                     [Parameter.W]: PARAMETER_INITIAL_CONFIGS[Parameter.W],
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.GPF,
-//                     [PARAMETER.X]: PARAMETER_INITIAL_CONFIGS[PARAMETER.X],
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.GPF,
+//                     [Parameter.X]: PARAMETER_INITIAL_CONFIGS[Parameter.X],
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.GPF,
-//                     [PARAMETER.Y]: PARAMETER_INITIAL_CONFIGS[PARAMETER.Y],
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.GPF,
+//                     [Parameter.Y]: PARAMETER_INITIAL_CONFIGS[Parameter.Y],
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.GPF,
-//                     [PARAMETER.V]: PARAMETER_INITIAL_CONFIGS[PARAMETER.V],
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.GPF,
+//                     [Parameter.V]: PARAMETER_INITIAL_CONFIGS[Parameter.V],
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.GPF,
-//                     [PARAMETER.T]: PARAMETER_INITIAL_CONFIGS[PARAMETER.T],
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.GPF,
+//                     [Parameter.T]: PARAMETER_INITIAL_CONFIGS[Parameter.T],
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.GPF,
-//                     [PARAMETER.MODIFIED_COUNT]: PARAMETER_INITIAL_CONFIGS[PARAMETER.MODIFIED_COUNT],
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.GPF,
+//                     [Parameter.MODIFIED_COUNT]: PARAMETER_INITIAL_CONFIGS[Parameter.MODIFIED_COUNT],
 //                 },
 //             ],
 //
 //             // GPIF (15)
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.GPIF,
-//                     [PARAMETER.K]: PARAMETER_INITIAL_CONFIGS[PARAMETER.K],
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.GPIF,
+//                     [Parameter.K]: PARAMETER_INITIAL_CONFIGS[Parameter.K],
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.GPIF,
-//                     [PARAMETER.K]: PARAMETER_INITIAL_CONFIGS[PARAMETER.K],
-//                     [PARAMETER.K_IS_BASE]: true,
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.GPIF,
+//                     [Parameter.K]: PARAMETER_INITIAL_CONFIGS[Parameter.K],
+//                     [Parameter.K_IS_BASE]: true,
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.GPIF,
-//                     [PARAMETER.K]: PARAMETER_INITIAL_CONFIGS[PARAMETER.K],
-//                     [PARAMETER.K_IS_EXPONENT]: true,
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.GPIF,
+//                     [Parameter.K]: PARAMETER_INITIAL_CONFIGS[Parameter.K],
+//                     [Parameter.K_IS_EXPONENT]: true,
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.GPIF,
-//                     [PARAMETER.J]: PARAMETER_INITIAL_CONFIGS[PARAMETER.J],
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.GPIF,
+//                     [Parameter.J]: PARAMETER_INITIAL_CONFIGS[Parameter.J],
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.GPIF,
-//                     [PARAMETER.J]: PARAMETER_INITIAL_CONFIGS[PARAMETER.J],
-//                     [PARAMETER.J_IS_BASE]: true,
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.GPIF,
+//                     [Parameter.J]: PARAMETER_INITIAL_CONFIGS[Parameter.J],
+//                     [Parameter.J_IS_BASE]: true,
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.GPIF,
-//                     [PARAMETER.J]: PARAMETER_INITIAL_CONFIGS[PARAMETER.J],
-//                     [PARAMETER.J_IS_EXPONENT]: true,
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.GPIF,
+//                     [Parameter.J]: PARAMETER_INITIAL_CONFIGS[Parameter.J],
+//                     [Parameter.J_IS_EXPONENT]: true,
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.GPIF,
-//                     [PARAMETER.A]: PARAMETER_INITIAL_CONFIGS[PARAMETER.A],
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.GPIF,
+//                     [Parameter.A]: PARAMETER_INITIAL_CONFIGS[Parameter.A],
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.GPIF,
-//                     [PARAMETER.A]: PARAMETER_INITIAL_CONFIGS[PARAMETER.A],
-//                     [PARAMETER.A_IS_BASE]: true,
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.GPIF,
+//                     [Parameter.A]: PARAMETER_INITIAL_CONFIGS[Parameter.A],
+//                     [Parameter.A_IS_BASE]: true,
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.GPIF,
-//                     [PARAMETER.A]: PARAMETER_INITIAL_CONFIGS[PARAMETER.A],
-//                     [PARAMETER.A_IS_EXPONENT]: true,
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.GPIF,
+//                     [Parameter.A]: PARAMETER_INITIAL_CONFIGS[Parameter.A],
+//                     [Parameter.A_IS_EXPONENT]: true,
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.GPIF,
-//                     [PARAMETER.W]: PARAMETER_INITIAL_CONFIGS[PARAMETER.W],
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.GPIF,
+//                     [Parameter.W]: PARAMETER_INITIAL_CONFIGS[Parameter.W],
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.GPIF,
-//                     [PARAMETER.X]: PARAMETER_INITIAL_CONFIGS[PARAMETER.X],
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.GPIF,
+//                     [Parameter.X]: PARAMETER_INITIAL_CONFIGS[Parameter.X],
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.GPIF,
-//                     [PARAMETER.Y]: PARAMETER_INITIAL_CONFIGS[PARAMETER.Y],
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.GPIF,
+//                     [Parameter.Y]: PARAMETER_INITIAL_CONFIGS[Parameter.Y],
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.GPIF,
-//                     [PARAMETER.V]: PARAMETER_INITIAL_CONFIGS[PARAMETER.V],
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.GPIF,
+//                     [Parameter.V]: PARAMETER_INITIAL_CONFIGS[Parameter.V],
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.GPIF,
-//                     [PARAMETER.T]: PARAMETER_INITIAL_CONFIGS[PARAMETER.T],
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.GPIF,
+//                     [Parameter.T]: PARAMETER_INITIAL_CONFIGS[Parameter.T],
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.GPIF,
-//                     [PARAMETER.MODIFIED_COUNT]: PARAMETER_INITIAL_CONFIGS[PARAMETER.MODIFIED_COUNT],
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.GPIF,
+//                     [Parameter.MODIFIED_COUNT]: PARAMETER_INITIAL_CONFIGS[Parameter.MODIFIED_COUNT],
 //                 },
 //             ],
 //         ]
@@ -976,20 +976,20 @@
 //         const exampleResultElements = [
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.GPIF,
-//                     [PARAMETER.T]: PARAMETER_INITIAL_CONFIGS[PARAMETER.T],
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.GPIF,
+//                     [Parameter.T]: PARAMETER_INITIAL_CONFIGS[Parameter.T],
 //                 },
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.GPF,
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.GPF,
 //                 },
 //             ],
 //             [
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.GPIF,
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.GPIF,
 //                 },
 //                 {
-//                     [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.GPF,
-//                     [PARAMETER.T]: PARAMETER_INITIAL_CONFIGS[PARAMETER.T],
+//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.GPF,
+//                     [Parameter.T]: PARAMETER_INITIAL_CONFIGS[Parameter.T],
 //                 },
 //             ],
 //         ]

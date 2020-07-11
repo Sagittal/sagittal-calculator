@@ -1,19 +1,20 @@
 import * as fs from "fs"
-import {addFont} from "./font"
-import {addParentSvg} from "./parentSvg"
-import {visualizeEvents} from "./events"
-import {visualizeCents} from "./cents"
-import {visualizeLevels} from "./levels"
-import {visualizeLevelSymbols} from "./levelSymbols"
-import {visualizeLevelBounds} from "./levelBounds"
-import {visualizeInaMidpoints} from "./inaMidpoints"
-import {visualizeLevelCommaMeans} from "./levelCommaMeans"
-import {visualizeSizeCategoryBounds} from "./sizeCategoryBounds"
+import { addFont } from "./font"
+import { addParentSvg } from "./parentSvg"
+import { visualizeEvents } from "./events"
+import { visualizeCents } from "./cents"
+import { visualizeLevels } from "./levels"
+import { visualizeLevelSymbols } from "./levelSymbols"
+import { visualizeLevelBounds } from "./levelBounds"
+import { visualizeInaMidpoints } from "./inaMidpoints"
+import { visualizeLevelCommaMeans } from "./levelCommaMeans"
+import { visualizeSizeCategoryBounds } from "./sizeCategoryBounds"
+import { AnalyzedBound } from "../types"
 
-const visualizeBounds = boundsAnalysis => {
+const visualizeBounds = (boundsAnalysis: AnalyzedBound[]) => {
     fs.copyFileSync("assets/fonts/BravuraSagittalUpdate_v10.otf", "dist/analyzeBounds/BravuraSagittalUpdate_v10.otf")
 
-    let elements = []
+    let elements: string[] = []
 
     elements = elements.concat(addParentSvg())
     elements = elements.concat(addFont())

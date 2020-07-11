@@ -1,6 +1,7 @@
-import {round} from "../../../utilities/round"
+import { round } from "../../../utilities/round"
+import { Mina } from "../../../notations/ji/types"
 
-const presentMina = mina => {
+const presentMina = (mina: Mina | undefined) => {
     if (!mina) return "       "
 
     let presentedMina = round(mina, 3).toString()

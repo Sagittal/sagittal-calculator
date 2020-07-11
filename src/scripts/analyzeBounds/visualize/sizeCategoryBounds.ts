@@ -1,19 +1,20 @@
-import {LEVELS_SIZE_CATEGORY_BOUNDS} from "../snappablePositions"
-import {LEVEL_TOPS, LEVEL_BOTTOMS} from "./levelHeights"
-import {computeX} from "./x"
-import {DASH_SIZE} from "./sizes"
-import {SIZE_COLOR} from "./colors"
+import { LEVELS_SIZE_CATEGORY_BOUNDS } from "../snappablePositions"
+import { LEVEL_BOTTOMS, LEVEL_TOPS } from "./levelHeights"
+import { computeX } from "./x"
+import { DASH_SIZE } from "./sizes"
+import { SIZE_COLOR } from "./colors"
+import { Level } from "../../../notations/ji/types"
 
 const visualizeSizeCategoryBounds = () => {
-    const sizeCategoryBounds = LEVELS_SIZE_CATEGORY_BOUNDS["MEDIUM"] // same at every level
+    const sizeCategoryBounds = LEVELS_SIZE_CATEGORY_BOUNDS[ Level.MEDIUM ] // same at every level
 
-    const sizeCategoryBoundElements = []
+    const sizeCategoryBoundElements: string[] = []
 
     sizeCategoryBounds.forEach(sizeCategoryBound => {
-        const {name, position} = sizeCategoryBound
+        const { name, position } = sizeCategoryBound
 
-        const topEdgeY = LEVEL_TOPS["INSANE"]
-        const bottomEdgeY = LEVEL_BOTTOMS["MEDIUM"]
+        const topEdgeY = LEVEL_TOPS[ Level.INSANE ]
+        const bottomEdgeY = LEVEL_BOTTOMS[ Level.MEDIUM ]
         const centerY = (topEdgeY + bottomEdgeY) / 2
 
         const positionX = computeX(position)

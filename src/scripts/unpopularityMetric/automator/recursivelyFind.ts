@@ -1,15 +1,17 @@
-import {computeSubmetricCombinations} from "../submetricCombinations/submetricCombinations"
-import {computeDynamicParameters} from "../submetricCombinations/dynamicParameters"
-import {computeNextConfigs} from "./nextConfigs"
-import {computeIndentation} from "./indentation"
-import {computeLocalMinima} from "./localMinima"
-import {deepEquals} from "../../../utilities/deepEquals"
-import {gatherSumsOfSquares} from "./gatherSumsOfSquares"
+import { computeSubmetricCombinations } from "../submetricCombinations/submetricCombinations"
+import { computeDynamicParameters } from "../submetricCombinations/dynamicParameters"
+import { computeNextConfigs } from "./nextConfigs"
+import { computeIndentation } from "./indentation"
+import { computeLocalMinima } from "./localMinima"
+import { deepEquals } from "../../../utilities/deepEquals"
+import { gatherSumsOfSquares } from "./gatherSumsOfSquares"
+import { Configs } from "../types"
+import { SumsOfSquares } from "../sumOfSquares/types"
 
-const recursivelyFindUnpopularityMetric = (configs, options = {}) => {
+const recursivelyFindUnpopularityMetric = (configs: Configs, options = {}) => {
     const {
         depth = 0,
-        best = {sumOfSquares: Infinity},
+        best = { sumOfSquares: Infinity },
         progressMessage = "",
         localMinimum,
         recurse = true,
@@ -21,9 +23,9 @@ const recursivelyFindUnpopularityMetric = (configs, options = {}) => {
     const indentation = computeIndentation(depth)
 
     const dynamicParameters = computeDynamicParameters(configs)
-    const submetricCombinations = computeSubmetricCombinations({configs, dynamicParameters})
+    const submetricCombinations = computeSubmetricCombinations({ configs, dynamicParameters })
 
-    const sumsOfSquares = []
+    const sumsOfSquares: SumsOfSquares = []
     let nextBest = gatherSumsOfSquares(sumsOfSquares, submetricCombinations, best, indentation, quiet) // todo: i meant to rename this to nextBestMetric, but also "next best" is confusing
 
     if (!quiet) console.log(`\n${indentation}local minima:`)

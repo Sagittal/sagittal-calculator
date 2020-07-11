@@ -1,7 +1,8 @@
-import {CENTS_PER_OCTAVE} from "../constants"
+import { CENTS_PER_OCTAVE } from "../constants"
+import { Cents, Ratio } from "../types"
 
-const computeCentsFromRatio = ratio => {
-    return Math.log2(ratio[0] / ratio[1]) * CENTS_PER_OCTAVE
+const computeCentsFromRatio = (ratio: Ratio): Cents => {
+    return Math.log2(ratio[ 0 ] / ratio[ 1 ]) * CENTS_PER_OCTAVE as Cents
 }
 
 export {

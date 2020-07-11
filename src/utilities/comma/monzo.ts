@@ -1,4 +1,4 @@
-const parseMonzo = monzoString => {
+const parseMonzo = (monzoString: string) => {
     const preparsedMonzoString = monzoString
         .replace("⟩", "]")
         .replace(">", "]")

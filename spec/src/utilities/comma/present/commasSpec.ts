@@ -1,25 +1,28 @@
-import {presentCommas} from "../../../../../src/utilities/comma/present/commas"
+import { presentCommas } from "../../../../../src/utilities/comma/present/commas"
+import { Comma, CommaName, Monzo } from "../../../../../src/utilities/comma/types"
+import { Cents, Prime, Ratio } from "../../../../../src/utilities/types"
+import { ApotomeSlope } from "../../../../../src/notations/ji/types"
 
 describe("presentCommas", () => {
     it("aligns each comma output to the same width per column", () => {
-        const commas = [
+        const commas: Comma[] = [
             {
-                commaName: "11M",
-                limit: 11,
+                commaName: "11M" as CommaName,
+                limit: 11 as Prime,
                 fiveRoughSopfr: 11,
-                cents: 45.45,
-                monzo: [0, 0, 1],
-                ratio: [33, 32],
-                apotomeSlope: -4,
+                cents: 45.45 as Cents,
+                monzo: [0, 0, 1] as Monzo,
+                ratio: [33, 32] as Ratio,
+                apotomeSlope: -4 as ApotomeSlope,
             },
             {
-                commaName: "25/49M",
-                limit: 7,
+                commaName: "25/49M" as CommaName,
+                limit: 7 as Prime,
                 fiveRoughSopfr: 24,
-                cents: 33.4,
-                monzo: [0, 0],
-                ratio: [50, 49],
-                apotomeSlope: -59.333,
+                cents: 33.4 as Cents,
+                monzo: [0, 0] as Monzo,
+                ratio: [50, 49] as Ratio,
+                apotomeSlope: -59.333 as ApotomeSlope,
             },
         ]
 

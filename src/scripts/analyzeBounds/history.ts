@@ -1,14 +1,17 @@
-import {TINA} from "../../notations/ji/intervals"
-import {computeIsCloseTo} from "../../utilities/isCloseTo"
-import {computeHistoryPosition} from "./historyPosition"
-import {computeRank} from "./rank"
-import {computeExact} from "./exact"
-import {analyzeEvents} from "./events"
-import {computeScore} from "./score"
-import {computeHistoryDistance} from "./historyDistance"
-import {computeHistoryInaDistance} from "./historyInaDistance"
+import { TINA } from "../../notations/ji/intervals"
+import { computeIsCloseTo } from "../../utilities/isCloseTo"
+import { computeHistoryPosition } from "./historyPosition"
+import { computeRank } from "./rank"
+import { computeExact } from "./exact"
+import { analyzeEvents } from "./events"
+import { computeScore } from "./score"
+import { computeHistoryDistance } from "./historyDistance"
+import { computeHistoryInaDistance } from "./historyInaDistance"
+import { AnalyzedHistory, History } from "./types"
+import { Bound } from "../../notations/ji/types"
+import { Cents } from "../../utilities/types"
 
-const analyzeHistory = (history, bound, initialPosition) => {
+const analyzeHistory = (history: History, bound: Bound, initialPosition: Cents): AnalyzedHistory => {
     const position = computeHistoryPosition(history)
 
     const analyzedEvents = analyzeEvents(history, bound.position)

@@ -1,7 +1,9 @@
-import {INA_SIZES} from "./intervals"
+import { INA_SIZES } from "./intervals"
+import { Cents } from "../../utilities/types"
+import { Level } from "./types"
 
-const computeInaDistance = (distance, level) => {
-    return distance / INA_SIZES[level]
+const computeInaDistance = (distance: Cents, level: Level) => {
+    return distance / INA_SIZES[ level ]
 }
 
 export {

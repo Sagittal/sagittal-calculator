@@ -1,12 +1,13 @@
-import {computeTriangularNumber} from "../../../utilities/triangularNumber"
+import { computeTriangularNumber } from "../../../utilities/triangularNumber"
+import { RankedUnpopularity, Unpopularity, UnpopularityRank } from "./types"
 
-const addRankToUnpopularities = unpopularities => {
+const addRankToUnpopularities = (unpopularities: Unpopularity[]): RankedUnpopularity[] => {
     const unpopularitiesSortedByAntivotes = unpopularities.sort((unpopularity, nextUnpopularity) => {
         return unpopularity.antivotes - nextUnpopularity.antivotes
     })
 
-    const unpopularitiesRanked = unpopularitiesSortedByAntivotes.map((unpopularity, index) => {
-        if (unpopularity.rank) return unpopularity
+    const rankedUnpopularities: RankedUnpopularity[] = unpopularitiesSortedByAntivotes.map((unpopularity, index): RankedUnpopularity => {
+        if ((unpopularity as RankedUnpopularity).rank) return unpopularity as RankedUnpopularity
 
         let tiesCount = 0
         unpopularitiesSortedByAntivotes.slice(index).forEach(worseOrTiedUnpopularity => {
@@ -15,21 +16,21 @@ const addRankToUnpopularities = unpopularities => {
             }
         })
 
-        let rank
+        let rank: UnpopularityRank
         if (tiesCount === 0) {
-            rank = index + 1 // no zero-offset
+            rank = index + 1 as UnpopularityRank // no zero-offset
         } else {
-            rank = ((index * tiesCount) + computeTriangularNumber(tiesCount)) / tiesCount
+            rank = ((index * tiesCount) + computeTriangularNumber(tiesCount)) / tiesCount as UnpopularityRank
 
             for (let i = index; i < index + tiesCount; i++) {
-                unpopularitiesSortedByAntivotes[i].rank = rank
+                (unpopularitiesSortedByAntivotes[ i ] as RankedUnpopularity).rank = rank as UnpopularityRank
             }
         }
 
-        return {...unpopularity, rank}
+        return { ...unpopularity, rank }
     })
 
-    return unpopularitiesRanked.sort((unpopularityRanked, nextUnpopularityRanked) => {
+    return rankedUnpopularities.sort((unpopularityRanked, nextUnpopularityRanked) => {
         return unpopularityRanked.index - nextUnpopularityRanked.index
     })
 }

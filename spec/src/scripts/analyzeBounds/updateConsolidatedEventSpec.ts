@@ -1,21 +1,29 @@
-import {updateConsolidatedEvent} from "../../../../src/scripts/analyzeBounds/updateConsolidatedEvent"
+import { updateConsolidatedEvent } from "../../../../src/scripts/analyzeBounds/updateConsolidatedEvent"
+import {
+    AnalyzedEvent,
+    AnalyzedHistory,
+    ConsolidatedEvent,
+    EventName,
+    EventRank,
+} from "../../../../src/scripts/analyzeBounds/types"
+import { Level } from "../../../../src/notations/ji/types"
 
 describe("updateConsolidatedEvent", () => {
-    let analyzedHistory
-    let analyzedEvent
-    let nextAnalyzedEvent
-    let bestPossibleHistory
+    let analyzedHistory: AnalyzedHistory
+    let analyzedEvent: AnalyzedEvent
+    let nextAnalyzedEvent: AnalyzedEvent
+    let bestPossibleHistory: AnalyzedHistory
 
     beforeEach(() => {
-        analyzedHistory = {}
-        analyzedEvent = {}
-        nextAnalyzedEvent = undefined
-        bestPossibleHistory = {events: []}
+        analyzedHistory = {} as AnalyzedHistory
+        analyzedEvent = {} as AnalyzedEvent
+        nextAnalyzedEvent = undefined as unknown as AnalyzedEvent
+        bestPossibleHistory = { events: [] } as unknown as AnalyzedHistory
     })
 
     describe("next events", () => {
         it("when there is no next analyzed event (i.e. this is the last event of the analyzed history) the next events stays the same", () => {
-            const consolidatedEvent = {nextEvents: ["2.5°58"]}
+            const consolidatedEvent: ConsolidatedEvent = { nextEvents: ["2.5°58"] as EventName[] } as unknown as ConsolidatedEvent
 
             updateConsolidatedEvent(consolidatedEvent, {
                 analyzedHistory,
@@ -24,12 +32,12 @@ describe("updateConsolidatedEvent", () => {
                 bestPossibleHistory,
             })
 
-            expect(consolidatedEvent.nextEvents).toEqual(["2.5°58"])
+            expect(consolidatedEvent.nextEvents).toEqual(["2.5°58"] as EventName[])
         })
 
         it("when there is a next analyzed event, it adds its name to the next events", () => {
-            const consolidatedEvent = {nextEvents: ["2.5°58"]}
-            nextAnalyzedEvent = {name: ".)/| '/|"}
+            const consolidatedEvent: ConsolidatedEvent = { nextEvents: ["2.5°58"] as EventName[] } as unknown as ConsolidatedEvent
+            nextAnalyzedEvent = { name: ".)/| '/|" as EventName } as AnalyzedEvent
 
             updateConsolidatedEvent(consolidatedEvent, {
                 analyzedHistory,
@@ -42,8 +50,8 @@ describe("updateConsolidatedEvent", () => {
         })
 
         it("when there is a next analyzed event, but an event with that name has already been updated into this consolidated event, the next events stays the same", () => {
-            const consolidatedEvent = {nextEvents: ["2.5°58"]}
-            nextAnalyzedEvent = {name: "2.5°58"}
+            const consolidatedEvent: ConsolidatedEvent = { nextEvents: ["2.5°58"] as EventName[] } as unknown as ConsolidatedEvent
+            nextAnalyzedEvent = { name: "2.5°58" as EventName } as AnalyzedEvent
 
             updateConsolidatedEvent(consolidatedEvent, {
                 analyzedHistory,
@@ -58,8 +66,8 @@ describe("updateConsolidatedEvent", () => {
 
     describe("membership of a history which is possible", () => {
         it("when the consolidated event has been identified as a member of a possible history, and the analyzed history is possible, the consolidated event remains identified as a member of a possible history", () => {
-            const consolidatedEvent = {isPossibleHistoryMember: true}
-            analyzedHistory = {possible: true}
+            const consolidatedEvent: ConsolidatedEvent = { isPossibleHistoryMember: true } as unknown as ConsolidatedEvent
+            analyzedHistory = { possible: true } as AnalyzedHistory
 
             updateConsolidatedEvent(consolidatedEvent, {
                 analyzedHistory,
@@ -72,8 +80,8 @@ describe("updateConsolidatedEvent", () => {
         })
 
         it("when the consolidated event has been identified as a member of a possible history, and the analyzed history is not possible, the consolidated event remains identified as a member of a possible history", () => {
-            const consolidatedEvent = {isPossibleHistoryMember: true}
-            analyzedHistory = {possible: false}
+            const consolidatedEvent: ConsolidatedEvent = { isPossibleHistoryMember: true } as unknown as ConsolidatedEvent
+            analyzedHistory = { possible: false } as AnalyzedHistory
 
             updateConsolidatedEvent(consolidatedEvent, {
                 analyzedHistory,
@@ -86,8 +94,8 @@ describe("updateConsolidatedEvent", () => {
         })
 
         it("when the consolidated event has not been identified as a member of a possible history, and the analyzed history is possible, the consolidated event becomes identified as a member of a possible history", () => {
-            const consolidatedEvent = {isPossibleHistoryMember: false}
-            analyzedHistory = {possible: true}
+            const consolidatedEvent: ConsolidatedEvent = { isPossibleHistoryMember: false } as unknown as ConsolidatedEvent
+            analyzedHistory = { possible: true } as AnalyzedHistory
 
             updateConsolidatedEvent(consolidatedEvent, {
                 analyzedHistory,
@@ -100,8 +108,8 @@ describe("updateConsolidatedEvent", () => {
         })
 
         it("when the consolidated event has not been identified as a member of a possible history, and the analyzed history is not possible, the consolidated event remains not identified as a member of a possible history", () => {
-            const consolidatedEvent = {isPossibleHistoryMember: false}
-            analyzedHistory = {possible: false}
+            const consolidatedEvent: ConsolidatedEvent = { isPossibleHistoryMember: false } as unknown as ConsolidatedEvent
+            analyzedHistory = { possible: false } as AnalyzedHistory
 
             updateConsolidatedEvent(consolidatedEvent, {
                 analyzedHistory,
@@ -116,8 +124,8 @@ describe("updateConsolidatedEvent", () => {
 
     describe("membership of a history which is the best possible", () => {
         it("when the consolidated event has been identified as a member of the best possible history, and the best possible history contains this event at this level, the consolidated event remains identified as a member of the best possible history", () => {
-            const consolidatedEvent = {isBestPossibleHistoryMember: true, name: "eventName", level: "LEVEL"}
-            bestPossibleHistory = {events: [{name: "eventName", level: "LEVEL"}]}
+            const consolidatedEvent: ConsolidatedEvent = { isBestPossibleHistoryMember: true, name: "eventName", level: Level.ULTRA } as unknown as ConsolidatedEvent
+            bestPossibleHistory = { events: [{ name: "eventName", level: Level.ULTRA }] } as AnalyzedHistory
 
             updateConsolidatedEvent(consolidatedEvent, {
                 analyzedHistory,
@@ -130,8 +138,8 @@ describe("updateConsolidatedEvent", () => {
         })
 
         it("when the consolidated event has been identified as a member of the best possible history, and the best possible history does not contain this event at this level, the consolidated event remains identified as a member of the best possible history", () => {
-            const consolidatedEvent = {isBestPossibleHistoryMember: true, name: "eventName"}
-            bestPossibleHistory = {events: [{name: "eventName", level: "OTHER_LEVEL"}]}
+            const consolidatedEvent: ConsolidatedEvent = { isBestPossibleHistoryMember: true, name: "eventName" as EventName } as unknown as ConsolidatedEvent
+            bestPossibleHistory = { events: [{ name: "eventName" as EventName, level: Level.EXTREME } as AnalyzedEvent] } as AnalyzedHistory
 
             updateConsolidatedEvent(consolidatedEvent, {
                 analyzedHistory,
@@ -144,8 +152,8 @@ describe("updateConsolidatedEvent", () => {
         })
 
         it("when the consolidated event has not been identified as a member of the best possible history, and the best possible history contains this event at this level, the consolidated event becomes identified as a member of the best possible history", () => {
-            const consolidatedEvent = {isBestPossibleHistoryMember: false, name: "eventName", level: "LEVEL"}
-            bestPossibleHistory = {events: [{name: "eventName", level: "LEVEL"}]}
+            const consolidatedEvent: ConsolidatedEvent = { isBestPossibleHistoryMember: false, name: "eventName", level: Level.ULTRA as Level } as unknown as ConsolidatedEvent
+            bestPossibleHistory = { events: [{ name: "eventName" as EventName, level: Level.ULTRA } as AnalyzedEvent] } as AnalyzedHistory
 
             updateConsolidatedEvent(consolidatedEvent, {
                 analyzedHistory,
@@ -158,8 +166,8 @@ describe("updateConsolidatedEvent", () => {
         })
 
         it("when the consolidated event has not been identified as a member of the best possible history, and the best possible history does not contain this event at this level, the consolidated event remains not identified as a member of the best possible history", () => {
-            const consolidatedEvent = {isBestPossibleHistoryMember: false, name: "eventName", level: "LEVEL"}
-            bestPossibleHistory = {events: [{name: "eventName", level: "OTHER_LEVEL"}]}
+            const consolidatedEvent: ConsolidatedEvent = { isBestPossibleHistoryMember: false, name: "eventName", level: Level.ULTRA as Level } as unknown as ConsolidatedEvent
+            bestPossibleHistory = { events: [{ name: "eventName" as EventName, level: Level.EXTREME } as AnalyzedEvent] } as AnalyzedHistory
 
             updateConsolidatedEvent(consolidatedEvent, {
                 analyzedHistory,
@@ -174,8 +182,8 @@ describe("updateConsolidatedEvent", () => {
 
     describe("rank of the best ranked history any event updated into this consolidated event was a member of", () => {
         it("when the analyzed history's rank is less than the rank of the best ranked history this consolidated event has so far been updated with an event from, it updates its rank of best ranked member history", () => {
-            const consolidatedEvent = {rankOfBestRankedMemberHistory: 3}
-            analyzedHistory = {rank: 2}
+            const consolidatedEvent: ConsolidatedEvent = { rankOfBestRankedMemberHistory: 3 as EventRank } as unknown as ConsolidatedEvent
+            analyzedHistory = { rank: 2 as EventRank } as AnalyzedHistory
 
             updateConsolidatedEvent(consolidatedEvent, {
                 analyzedHistory,
@@ -184,12 +192,12 @@ describe("updateConsolidatedEvent", () => {
                 bestPossibleHistory,
             })
 
-            expect(consolidatedEvent.rankOfBestRankedMemberHistory).toBe(2)
+            expect(consolidatedEvent.rankOfBestRankedMemberHistory).toBe(2 as EventRank)
         })
 
         it("when the analyzed history's rank is not less than the rank of the best ranked history this consolidated event has so far been updated with an event from, it keeps its rank of best ranked member history the same", () => {
-            const consolidatedEvent = {rankOfBestRankedMemberHistory: 1}
-            analyzedHistory = {rank: 2}
+            const consolidatedEvent: ConsolidatedEvent = { rankOfBestRankedMemberHistory: 1 as EventRank } as unknown as ConsolidatedEvent
+            analyzedHistory = { rank: 2 as EventRank } as AnalyzedHistory
 
             updateConsolidatedEvent(consolidatedEvent, {
                 analyzedHistory,
@@ -198,14 +206,14 @@ describe("updateConsolidatedEvent", () => {
                 bestPossibleHistory,
             })
 
-            expect(consolidatedEvent.rankOfBestRankedMemberHistory).toBe(1)
+            expect(consolidatedEvent.rankOfBestRankedMemberHistory).toBe(1 as EventRank)
         })
     })
 
     describe("rank of the best ranked event updated into this consolidated event", () => {
         it("when the analyzed event's rank is less than the rank of the best ranked event this consolidated event has so far been updated with, it updates its rank of best ranked event", () => {
-            const consolidatedEvent = {rankOfBestRankedEventInAnyMemberHistory: 3}
-            analyzedEvent = {rank: 2}
+            const consolidatedEvent: ConsolidatedEvent = { rankOfBestRankedEventInAnyMemberHistory: 3 as EventRank } as unknown as ConsolidatedEvent
+            analyzedEvent = { rank: 2 as EventRank } as AnalyzedEvent
 
             updateConsolidatedEvent(consolidatedEvent, {
                 analyzedHistory,
@@ -214,12 +222,12 @@ describe("updateConsolidatedEvent", () => {
                 bestPossibleHistory,
             })
 
-            expect(consolidatedEvent.rankOfBestRankedEventInAnyMemberHistory).toBe(2)
+            expect(consolidatedEvent.rankOfBestRankedEventInAnyMemberHistory).toBe(2 as EventRank)
         })
 
         it("when the analyzed event's rank is not less than the rank of the best ranked event this consolidated event has so far been updated with, it keeps its rank of best ranked event the same", () => {
-            const consolidatedEvent = {rankOfBestRankedEventInAnyMemberHistory: 1}
-            analyzedEvent = {rank: 2}
+            const consolidatedEvent: ConsolidatedEvent = { rankOfBestRankedEventInAnyMemberHistory: 1 as EventRank } as unknown as ConsolidatedEvent
+            analyzedEvent = { rank: 2 as EventRank } as AnalyzedEvent
 
             updateConsolidatedEvent(consolidatedEvent, {
                 analyzedHistory,
@@ -228,7 +236,7 @@ describe("updateConsolidatedEvent", () => {
                 bestPossibleHistory,
             })
 
-            expect(consolidatedEvent.rankOfBestRankedEventInAnyMemberHistory).toBe(1)
+            expect(consolidatedEvent.rankOfBestRankedEventInAnyMemberHistory).toBe(1 as EventRank)
         })
     })
 })

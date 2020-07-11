@@ -1,24 +1,27 @@
-import {computeWeightedSubmetricAntivotes} from "../../../../../src/scripts/unpopularityMetric/antivotes/weightedSubmetricAntivotes"
-import {computeRatioSubmetricAntivotes} from "../../../../../src/scripts/unpopularityMetric/antivotes/ratioSubmetricAntivotes"
-import * as ratioSubmetricUnpopularity from "../../../../../src/scripts/unpopularityMetric/antivotes/ratioSubmetricAntivotes"
-import {computeLog} from "../../../../../src/utilities/log"
-import {PARAMETER, SUBMETRIC_TYPE} from "../../../../../src/scripts/unpopularityMetric/constants"
+import { computeWeightedSubmetricAntivotes } from "../../../../../src/scripts/unpopularityMetric/antivotes/weightedSubmetricAntivotes"
+import * as ratioSubmetricUnpopularity
+    from "../../../../../src/scripts/unpopularityMetric/antivotes/ratioSubmetricAntivotes"
+import { computeRatioSubmetricAntivotes } from "../../../../../src/scripts/unpopularityMetric/antivotes/ratioSubmetricAntivotes"
+import { computeLog } from "../../../../../src/utilities/log"
+import { Parameter, SubmetricType } from "../../../../../src/scripts/unpopularityMetric/types"
+import { Ratio } from "../../../../../src/utilities/types"
+import { Antivotes } from "../../../../../src/scripts/unpopularityMetric/sumOfSquares/types"
 
 describe("computeWeightedSubmetricAntivotes", () => {
     it("returns 0 when the weight is 0", () => {
-        const fiveRoughRatio = [15, 14]
-        const submetric = {[PARAMETER.WEIGHT]: 0}
+        const fiveRoughRatio = [15, 14] as Ratio
+        const submetric = { [ Parameter.WEIGHT ]: 0 }
 
         const result = computeWeightedSubmetricAntivotes(fiveRoughRatio, submetric)
 
-        expect(result).toBe(0)
+        expect(result).toBe(0 as Antivotes)
     })
 
     it("does not waste resources calling computeRatioSubmetricAntivotes when the weight is 0", () => {
         spyOn(ratioSubmetricUnpopularity, "computeRatioSubmetricAntivotes")
 
-        const fiveRoughRatio = [15, 14]
-        const submetric = {[PARAMETER.WEIGHT]: 0}
+        const fiveRoughRatio = [15, 14] as Ratio
+        const submetric = { [ Parameter.WEIGHT ]: 0 }
 
         computeWeightedSubmetricAntivotes(fiveRoughRatio, submetric)
 
@@ -26,8 +29,8 @@ describe("computeWeightedSubmetricAntivotes", () => {
     })
 
     it("returns the full submetric antivotes when the weight is 1", () => {
-        const fiveRoughRatio = [15, 14]
-        const submetric = {[PARAMETER.WEIGHT]: 1}
+        const fiveRoughRatio = [15, 14] as Ratio
+        const submetric = { [ Parameter.WEIGHT ]: 1 }
 
         const result = computeWeightedSubmetricAntivotes(fiveRoughRatio, submetric)
 
@@ -35,38 +38,38 @@ describe("computeWeightedSubmetricAntivotes", () => {
     })
 
     it("returns the weighted value of the submetric antivotes", () => {
-        const fiveRoughRatio = [15, 14]
-        const submetric = {[PARAMETER.WEIGHT]: 0.5}
+        const fiveRoughRatio = [15, 14] as Ratio
+        const submetric = { [ Parameter.WEIGHT ]: 0.5 }
 
         const result = computeWeightedSubmetricAntivotes(fiveRoughRatio, submetric)
 
-        expect(result).toBe(0.5 * computeRatioSubmetricAntivotes(fiveRoughRatio))
+        expect(result).toBe(0.5 * computeRatioSubmetricAntivotes(fiveRoughRatio) as Antivotes)
     })
 
     it("defaults the weight to 1", () => {
-        const fiveRoughRatio = [15, 14]
-        const submetric = {[PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPFAR}
+        const fiveRoughRatio = [15, 14] as Ratio
+        const submetric = { [ Parameter.SUBMETRIC_TYPE ]: SubmetricType.SOAPFAR }
 
         const result = computeWeightedSubmetricAntivotes(fiveRoughRatio, submetric)
 
-        expect(result).toBe(17)
+        expect(result).toBe(17 as Antivotes)
     })
 
     it("can use the weight as a base", () => {
-        const fiveRoughRatio = [15, 14]
-        const submetric = {[PARAMETER.WEIGHT]: 2, [PARAMETER.WEIGHT_IS_BASE]: true}
+        const fiveRoughRatio = [15, 14] as Ratio
+        const submetric = { [ Parameter.WEIGHT ]: 2, [ Parameter.WEIGHT_IS_BASE ]: true }
 
         const result = computeWeightedSubmetricAntivotes(fiveRoughRatio, submetric)
 
-        expect(result).toBe(computeLog(computeRatioSubmetricAntivotes(fiveRoughRatio), 2))
+        expect(result).toBe(computeLog(computeRatioSubmetricAntivotes(fiveRoughRatio), 2) as Antivotes)
     })
 
     it("can use the weight as an exponent", () => {
-        const fiveRoughRatio = [15, 14]
-        const submetric = {[PARAMETER.WEIGHT]: 0.5, [PARAMETER.WEIGHT_IS_EXPONENT]: true}
+        const fiveRoughRatio = [15, 14] as Ratio
+        const submetric = { [ Parameter.WEIGHT ]: 0.5, [ Parameter.WEIGHT_IS_EXPONENT ]: true }
 
         const result = computeWeightedSubmetricAntivotes(fiveRoughRatio, submetric)
 
-        expect(result).toBe(computeRatioSubmetricAntivotes(fiveRoughRatio) ** 0.5)
+        expect(result).toBe(computeRatioSubmetricAntivotes(fiveRoughRatio) ** 0.5 as Antivotes)
     })
 })

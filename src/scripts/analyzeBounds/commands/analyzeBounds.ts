@@ -10,6 +10,8 @@ import { presentLevelAnalyses } from "../present/levelAnalyses"
 import { visualizeBounds } from "../visualize/bounds"
 import { updateFile } from "../file"
 import { BOUNDS_ANALYSIS_TEXT_FILE, BOUNDS_ANALYSIS_VISUALIZATION_FILE } from "../constants"
+import { AnalyzedBound } from "../types"
+import { AnalysisMode } from "../present/types"
 
 program
     .option("-x, --do-not-update-files", "do not update files")
@@ -19,12 +21,12 @@ const shouldUpdateFiles = !program.doNotUpdateFiles
 
 let textOutput = BOUNDS_ANALYSIS_HEADER_ROW
 
-const boundsAnalysis = []
+const boundsAnalysis: AnalyzedBound[] = []
 BOUNDS.map((bound, boundId) => {
     const histories = computeHistories(bound)
     const boundAnalysis = analyzeBound(histories, bound)
 
-    textOutput = textOutput.concat(presentBoundAnalysis(boundAnalysis, { bound, mode: "SUMMARY" }) + "\n")
+    textOutput = textOutput.concat(presentBoundAnalysis(boundAnalysis, { bound, mode: AnalysisMode.SUMMARY }) + "\n")
 
     boundsAnalysis.push(boundAnalysis)
 })

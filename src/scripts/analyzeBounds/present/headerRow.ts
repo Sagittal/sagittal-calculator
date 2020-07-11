@@ -1,9 +1,9 @@
 const COLUMN_WIDTH = 7
 
-const presentHeaderRow = columnHeaders => {
+const presentHeaderRow = (columnHeaders: string[][]) => {
     const maxColumnHeaderHeight = Math.max(...columnHeaders.map(columnHeader => columnHeader.length))
 
-    const rows = [...Array(maxColumnHeaderHeight).keys()].map(row => [])
+    const rows: string[][] = [...Array(maxColumnHeaderHeight).keys()].map(row => [] as string[])
 
     columnHeaders.forEach(columnHeader => {
         while (columnHeader.length < maxColumnHeaderHeight) {
@@ -17,7 +17,7 @@ const presentHeaderRow = columnHeaders => {
                 presentedColumnHeaderElement = presentedColumnHeaderElement + " "
             }
 
-            rows[index].push(presentedColumnHeaderElement)
+            rows[ index ].push(presentedColumnHeaderElement)
         })
     })
 

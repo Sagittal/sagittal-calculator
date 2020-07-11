@@ -1,4 +1,4 @@
-import {computePrimeCount} from "../../../src/utilities/primeCount"
+import { computePrimeCount } from "../../../src/utilities/primeCount"
 
 describe("computePrimeCount", () => {
     it("is the π function, returning the count of primes less than or equal to a number", () => {

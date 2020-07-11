@@ -1,14 +1,16 @@
-import {COMMA_POPULARITIES} from "./popularities"
-import {computeUnpopularities} from "./unpopularities"
-import {addRankToUnpopularities} from "./rank"
-import {computeSumOfSquares} from "./sumOfSquares"
-import {checkSubmetricsForIssues} from "./check"
-import {CUT_OFF_POPULARITY, ZIPF_EXPONENT} from "./constants"
+import { COMMA_POPULARITIES } from "./popularities"
+import { computeUnpopularities } from "./unpopularities"
+import { addRankToUnpopularities } from "./rank"
+import { computeSumOfSquares } from "./sumOfSquares"
+import { checkSubmetricsForIssues } from "./check"
+import { CUT_OFF_POPULARITY, ZIPF_EXPONENT } from "./constants"
+import { Submetric } from "../types"
+import { Popularity, SumOfSquares } from "./types"
 
-const computeSumOfSquaresForSubmetrics = (submetrics, {logUnpopularities = false} = {}) => {
+const computeSumOfSquaresForSubmetrics = (submetrics: Submetric[], { logUnpopularities = false } = {}): SumOfSquares => {
     checkSubmetricsForIssues(submetrics)
 
-    const realPopularities = COMMA_POPULARITIES.slice(0, CUT_OFF_POPULARITY)
+    const realPopularities: Popularity[] = COMMA_POPULARITIES.slice(0, CUT_OFF_POPULARITY)
 
     const unpopularities = computeUnpopularities(realPopularities, submetrics)
     const rankedUnpopularities = addRankToUnpopularities(unpopularities)

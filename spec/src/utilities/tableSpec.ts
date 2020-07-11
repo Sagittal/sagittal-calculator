@@ -1,4 +1,5 @@
-import {alignTable} from "../../../src/utilities/table"
+import { alignTable } from "../../../src/utilities/table"
+import { Justification } from "../../../src/utilities/types"
 
 describe("alignTable", () => {
     it("gets each column to have the same width", () => {
@@ -24,7 +25,7 @@ describe("alignTable", () => {
             "25/49M\t7\t24\t33.4\t[0 0⟩\t50/49\t-59.333",
         ]
 
-        const result = alignTable(data, {justification: "RIGHT"})
+        const result = alignTable(data, { justification: Justification.RIGHT })
 
         expect(result).toEqual([
             "comma name\tlimit\t5-rough sopfr\tcents\t  monzo\tratio\tapotome slope",
@@ -40,7 +41,7 @@ describe("alignTable", () => {
             "25/49M\t7\t24\t33.4\t[0 0⟩\t50/49\t-59.333",
         ]
 
-        const result = alignTable(data, {justification: "CENTER"})
+        const result = alignTable(data, { justification: Justification.CENTER })
 
         expect(result).toEqual([
             "comma name\tlimit\t5-rough sopfr\tcents\t monzo \tratio\tapotome slope",
@@ -56,7 +57,7 @@ describe("alignTable", () => {
             "25/49M\t7\t24\t33.4\t[0 0⟩\t50/49\t-59.333",
         ]
 
-        const result = alignTable(data, {justification: ["RIGHT", "LEFT", "CENTER", null, "RIGHT"]})
+        const result = alignTable(data, { justification: [Justification.RIGHT, Justification.LEFT, Justification.CENTER, null, Justification.RIGHT] })
 
         expect(result).toEqual([
             "comma name\tlimit\t5-rough sopfr\tcents\t  monzo\tratio\tapotome slope",

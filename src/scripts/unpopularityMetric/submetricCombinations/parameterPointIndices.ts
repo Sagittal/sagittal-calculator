@@ -1,10 +1,13 @@
-const computeParameterPointIndices = ({dynamicParameters, submetricPoint, submetricIndex}) => {
-    const parameterPointIndices = []
+import { ComputeParameterPointIndicesParameters, ParameterPoint } from "./types"
+import { DynamicParameter, Parameter } from "../types"
 
-    dynamicParameters.forEach(dynamicParameter => {
+const computeParameterPointIndices = ({ dynamicParameters, submetricPoint, submetricIndex }: ComputeParameterPointIndicesParameters): number[] => {
+    const parameterPointIndices: number[] = []
+
+    dynamicParameters.forEach((dynamicParameter: DynamicParameter) => {
         if (dynamicParameter.submetricIndex !== submetricIndex) return
 
-        Object.entries(submetricPoint).forEach(([parameter, parameterPoint]) => {
+        (Object.entries(submetricPoint) as Array<[Parameter, ParameterPoint]>).forEach(([parameter, parameterPoint]) => {
             if (dynamicParameter.parameter === parameter) {
                 const parameterPointIndex = dynamicParameter.parameterPoints.indexOf(parameterPoint)
                 parameterPointIndices.push(parameterPointIndex)

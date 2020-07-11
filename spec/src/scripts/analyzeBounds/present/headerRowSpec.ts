@@ -1,4 +1,4 @@
-import {presentHeaderRow} from "../../../../../src/scripts/analyzeBounds/present/headerRow"
+import { presentHeaderRow } from "../../../../../src/scripts/analyzeBounds/present/headerRow"
 
 describe("presentHeaderRow", () => {
     it("takes multiline column headers and re-slices and re-dices them into the lines that will be printed", () => {

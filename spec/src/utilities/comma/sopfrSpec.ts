@@ -1,8 +1,9 @@
-import {computeSopfr} from "../../../../src/utilities/comma/sopfr"
+import { computeSopfr } from "../../../../src/utilities/comma/sopfr"
+import { Monzo } from "../../../../src/utilities/comma/types"
 
 describe("computeSopfr", () => {
     it("sums the absolute values of the prime factors (with repetition) in the monzo", () => {
-        const monzo = [5, 6, 0, 0, 1, -1, 2]
+        const monzo = [5, 6, 0, 0, 1, -1, 2] as Monzo
 
         const result = computeSopfr(monzo)
 
@@ -10,7 +11,7 @@ describe("computeSopfr", () => {
     })
 
     it("works for an empty monzo", () => {
-        const monzo = []
+        const monzo = [] as Monzo
 
         const result = computeSopfr(monzo)
 

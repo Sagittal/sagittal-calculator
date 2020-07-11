@@ -1,8 +1,10 @@
-import {LEVELS_SYMBOLS} from "./levelsSymbols"
-import {computeNeighborPositions} from "./neighborPositions"
+import { LEVELS_SYMBOLS } from "./levelsSymbols"
+import { computeNeighborPositions } from "./neighborPositions"
+import { Level, SagittalSymbol } from "./types"
+import { Cents } from "../../utilities/types"
 
-const computeBoundedSymbolPositions = (position, level): any => {
-    const levelSymbols = LEVELS_SYMBOLS[level]
+const computeBoundedSymbolPositions = (position: Cents, level: Level): any => {
+    const levelSymbols: SagittalSymbol[] = LEVELS_SYMBOLS[ level ]
 
     const levelSymbolPositions = levelSymbols.map(levelSymbol => levelSymbol.primaryComma.position)
 

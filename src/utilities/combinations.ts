@@ -1,11 +1,11 @@
-const computeCombinations = (array, count, {withRepeatedElements = false} = {}) => {
+const computeCombinations = <T>(array: T[], count: number, { withRepeatedElements = false } = {}): T[][] => {
     if (withRepeatedElements) return computeCombinationsWithRepetitions(array, count)
 
-    const combinations = []
+    const combinations: number[][] = []
 
-    if (count === 0) return combinations
+    if (count === 0) return []
 
-    const computeRecursiveCombinations = (integer, combination) => {
+    const computeRecursiveCombinations = (integer: number, combination: number[]) => {
         if (combination.length === count) {
             combinations.push(combination.slice())
 
@@ -24,62 +24,49 @@ const computeCombinations = (array, count, {withRepeatedElements = false} = {}) 
 
     computeRecursiveCombinations(1, [])
 
-    return combinations.map(combination => {
+    return combinations.map((combination) => {
         return combination.map(index => {
-            return array[index - 1]
+            return array[ index - 1 ]
         })
     })
 }
 
-const computeCombinationsWithRepetitions = (xs, k) => {
-    const comb = (n, ys) => {
-        if (0 === n) return ys;
-        if (isNull(ys)) return comb(n - 1, map(pure, xs));
+const computeCombinationsWithRepetitions = <T>(array: T[], count: number): T[][] => {
+    const comb = <U>(n: number, ys: U[][]): U[][] => {
+        if (0 === n) return ys as U[][]
+        if (isNull(ys)) return comb(n - 1, map(pure, array as unknown as U[]))
 
-        return comb(n - 1, concatMap(zs => {
-            const h = head(zs);
-            return map(x => [x].concat(zs), dropWhile(x => x !== h, xs));
-        }, ys));
-    };
-    return comb(k, []);
-};
+        return comb(n - 1, concatMap((zs: U[]) => {
+            const h = head(zs)
+            return map((x: U) => [x].concat(zs), dropWhile(x => x !== h, array as unknown as U[]))
+        }, ys))
+    }
+
+    return comb(count, [] as T[][])
+}
 
 // GENERIC FUNCTIONS ------------------------------------------------------
 
 // concatMap :: (a -> [b]) -> [a] -> [b]
-const concatMap = (f, xs) => [].concat.apply([], xs.map(f));
+const concatMap = <T, U>(f: (g: T) => U[], array: T[]): U[] =>
+    ([] as U[]).concat.apply([] as T[], array.map(f))
 
 // dropWhile :: (a -> Bool) -> [a] -> [a]
-const dropWhile = (p, xs) => {
-    let i = 0;
-    for (let lng = xs.length;
-         (i < lng) && p(xs[i]); i++) {}
-    return xs.slice(i);
-};
+const dropWhile = <T>(p: (q: T) => boolean, array: T[]): T[] => {
+    let i = 0
+    for (let lng = array.length;
+         (i < lng) && p(array[ i ]); i++) {
+    }
+    return array.slice(i)
+}
 
-// enumFromTo :: Int -> Int -> [Int]
-const enumFromTo = (m, n) =>
-    Array.from({
-        length: Math.floor(n - m) + 1
-    }, (_, i) => m + i);
+const head = <T>(array: T[]): T | undefined  => array.length ? array[ 0 ] : undefined
 
-// head :: [a] -> Maybe a
-const head = xs => xs.length ? xs[0] : undefined;
+const isNull = <T>(array: T[]): boolean => array instanceof Array ? array.length < 1 : false
 
-// isNull :: [a] -> Bool
-const isNull = xs => (xs instanceof Array) ? xs.length < 1 : undefined;
+const map = <T, U>(f: (g: T) => U, array: T[]): U[] => array.map(f)
 
-// length :: [a] -> Int
-const length = xs => xs.length;
-
-// map :: (a -> b) -> [a] -> [b]
-const map = (f, xs) => xs.map(f);
-
-// pure :: a -> [a]
-const pure = x => [x];
-
-// show :: a -> String
-const show = x => JSON.stringify(x, null, 2);
+const pure = <T>(x: T): T[] => [x]
 
 export {
     computeCombinations,

@@ -1,8 +1,8 @@
-import {program} from "commander"
-import {presentCommas} from "../../../utilities/comma/present/commas"
-import {parseMonzo} from "../../../utilities/comma/monzo"
-import {computeCommas} from "../commas"
-import {MAXIMUM_POSITION} from "../../../notations/ji/intervals"
+import { program } from "commander"
+import { presentCommas } from "../../../utilities/comma/present/commas"
+import { parseMonzo } from "../../../utilities/comma/monzo"
+import { computeCommas } from "../commas"
+import { MAXIMUM_POSITION } from "../../../notations/ji/intervals"
 
 program
     .option("-l, --lower-bound <lowerBound>", "lower bound", parseFloat)

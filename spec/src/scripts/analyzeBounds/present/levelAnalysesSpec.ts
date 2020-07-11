@@ -1,19 +1,23 @@
-import {presentLevelAnalyses} from "../../../../../src/scripts/analyzeBounds/present/levelAnalyses"
-import {LEVELS} from "../../../../../src/notations/ji/levels"
-import {levelsBestHistoryRanks, levelsBestCumulativeHistoryRanks} from "../../../../../src/scripts/analyzeBounds/levels"
+import { presentLevelAnalyses } from "../../../../../src/scripts/analyzeBounds/present/levelAnalyses"
+import { LEVELS } from "../../../../../src/notations/ji/levels"
+import {
+    levelsBestCumulativeHistoryRanks,
+    levelsBestHistoryRanks,
+} from "../../../../../src/scripts/analyzeBounds/levels"
+import { Level } from "../../../../../src/notations/ji/types"
 
 describe("presentLevelAnalyses", () => {
     beforeEach(() => {
-        levelsBestHistoryRanks["MEDIUM"] = {1: 18, 2: 23, 3: 1, 7: 13}
-        levelsBestHistoryRanks["HIGH"] = {1: 18, 2: 23, 3: 1, 7: 13}
-        levelsBestHistoryRanks["ULTRA"] = {1: 18, 2: 23, 3: 1, 7: 13}
-        levelsBestHistoryRanks["EXTREME"] = {1: 18, 2: 23, 3: 1, 7: 13}
-        levelsBestHistoryRanks["INSANE"] = {1: 18, 2: 23, 3: 1, 7: 13}
-        levelsBestCumulativeHistoryRanks["MEDIUM"] = {1: 16, 2: 23, 3: 1, 7: 13}
-        levelsBestCumulativeHistoryRanks["HIGH"] = {1: 16, 2: 23, 3: 1, 7: 13}
-        levelsBestCumulativeHistoryRanks["ULTRA"] = {1: 16, 2: 23, 3: 1, 7: 13}
-        levelsBestCumulativeHistoryRanks["EXTREME"] = {1: 16, 2: 23, 3: 1, 7: 13}
-        levelsBestCumulativeHistoryRanks["INSANE"] = {1: 16, 2: 23, 3: 1, 7: 13}
+        levelsBestHistoryRanks[ Level.MEDIUM ] = { 1: 18, 2: 23, 3: 1, 7: 13 }
+        levelsBestHistoryRanks[ Level.HIGH ] = { 1: 18, 2: 23, 3: 1, 7: 13 }
+        levelsBestHistoryRanks[ Level.ULTRA ] = { 1: 18, 2: 23, 3: 1, 7: 13 }
+        levelsBestHistoryRanks[ Level.EXTREME ] = { 1: 18, 2: 23, 3: 1, 7: 13 }
+        levelsBestHistoryRanks[ Level.INSANE ] = { 1: 18, 2: 23, 3: 1, 7: 13 }
+        levelsBestCumulativeHistoryRanks[ Level.MEDIUM ] = { 1: 16, 2: 23, 3: 1, 7: 13 }
+        levelsBestCumulativeHistoryRanks[ Level.HIGH ] = { 1: 16, 2: 23, 3: 1, 7: 13 }
+        levelsBestCumulativeHistoryRanks[ Level.ULTRA ] = { 1: 16, 2: 23, 3: 1, 7: 13 }
+        levelsBestCumulativeHistoryRanks[ Level.EXTREME ] = { 1: 16, 2: 23, 3: 1, 7: 13 }
+        levelsBestCumulativeHistoryRanks[ Level.INSANE ] = { 1: 16, 2: 23, 3: 1, 7: 13 }
     })
 
     it("does not mutate LEVELS", () => {

@@ -1,10 +1,11 @@
-import {PRIMES} from "../constants"
+import { PRIMES } from "../constants"
+import { Monzo, PrimeExponent } from "./types"
 
-const computeRoughNumberMonzo = (monzo, roughness) => {
+const computeRoughNumberMonzo = (monzo: Monzo, roughness: number): Monzo => {
     const roughnessIndex = PRIMES.findIndex(prime => prime === roughness)
 
-    return monzo.map((term, index) => {
-        return index < roughnessIndex ? 0 : term
+    return monzo.map((term: PrimeExponent, index): PrimeExponent => {
+        return index < roughnessIndex ? 0 as PrimeExponent : term
     })
 }
 

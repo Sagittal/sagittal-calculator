@@ -1,5 +1,5 @@
-import {computeLog} from "../../../src/utilities/log"
-import {ACCURACY_THRESHOLD} from "../../../src/utilities/constants"
+import { computeLog } from "../../../src/utilities/log"
+import { ACCURACY_THRESHOLD } from "../../../src/utilities/constants"
 
 describe("computeLog", () => {
     it("returns the logarithmic with the specified base of the value", () => {

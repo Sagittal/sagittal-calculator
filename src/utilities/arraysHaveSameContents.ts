@@ -1,6 +1,6 @@
-import {deepEquals} from "./deepEquals"
+import { deepEquals } from "./deepEquals"
 
-const arraysHaveSameContents = (arrayOne, arrayTwo) => {
+const arraysHaveSameContents = <T>(arrayOne: T[], arrayTwo: T[]) => {
     if (arrayOne.length !== arrayTwo.length) return false
 
     return arrayOne.every(elementOne => {

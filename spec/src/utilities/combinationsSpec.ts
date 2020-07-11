@@ -1,5 +1,5 @@
-import {computeCombinations} from "../../../src/utilities/combinations"
-import {arraysHaveSameContents} from "../../../src/utilities/arraysHaveSameContents"
+import { computeCombinations } from "../../../src/utilities/combinations"
+import { arraysHaveSameContents } from "../../../src/utilities/arraysHaveSameContents"
 
 describe("computeCombinations", () => {
     const set = ["a", "b", "c", "d"]
@@ -29,7 +29,7 @@ describe("computeCombinations", () => {
     it("works when with repeated elements is true", () => {
         const count = 2
 
-        const result = computeCombinations(set, count, {withRepeatedElements: true})
+        const result = computeCombinations(set, count, { withRepeatedElements: true })
 
         const expectedResult = [
             ["a", "a"],

@@ -1,203 +1,214 @@
-import {computeLevelBoundedSymbols} from "../../../../src/notations/ji/levelBoundedSymbols"
+import { computeLevelBoundedSymbols } from "../../../../src/notations/ji/levelBoundedSymbols"
+import {
+    Bound,
+    BoundId,
+    Level,
+    Mina,
+    SymbolId,
+    SymbolLongAscii,
+    SymbolUnicode,
+} from "../../../../src/notations/ji/types"
+import { Cents } from "../../../../src/utilities/types"
+import { Monzo } from "../../../../src/utilities/comma/types"
 
 describe("computeLevelBoundedSymbols", () => {
     it("returns, given a bound, for each of its levels, an array of the pair of symbols it bounds at that level, as well as their distances and ina-distances from the bound", () => {
-        const bound = {
-            position: 24.66219847111080,
-            levels: ["MEDIUM", "EXTREME", "INSANE"],
-            id: 54,
+        const bound: Bound = {
+            position: 24.66219847111080 as Cents,
+            levels: [Level.MEDIUM, Level.EXTREME, Level.INSANE],
+            id: 54 as BoundId,
         }
 
         const result = computeLevelBoundedSymbols(bound)
 
         expect(result).toEqual({
-            id: 54,
-            MEDIUM: [
+            id: 54 as BoundId,
+            [ Level.MEDIUM ]: [
                 {
-                    introducingLevel: "MEDIUM",
-                    distance: 3.1559088743959975,
+                    introducingLevel: Level.MEDIUM,
+                    distance: 3.1559088743959975 as Cents,
                     inaDistance: 0.5829624209957123,
-                    ascii: "/|",
-                    unicode: "",
-                    mina: 44,
+                    ascii: "/|" as SymbolLongAscii as SymbolLongAscii,
+                    unicode: "" as SymbolUnicode as SymbolUnicode,
+                    mina: 44 as Mina as Mina,
                     primaryComma: {
-                        monzo: [-4, 4, -1],
-                        position: 21.5062895967148,
+                        monzo: [-4, 4, -1] as Monzo as Monzo,
+                        position: 21.5062895967148 as Cents as Cents,
                     },
-                    id: 44,
-                    elements: ["/|"],
+                    id: 44 as SymbolId,
+                    elements: ["/|"] as SymbolLongAscii[] as SymbolLongAscii[],
                 },
                 {
-                    introducingLevel: "MEDIUM",
-                    distance: 2.601893328989302,
+                    introducingLevel: Level.MEDIUM,
+                    distance: 2.601893328989302 as Cents,
                     inaDistance: 0.48062415443807605,
-                    ascii: "|)",
-                    unicode: "",
-                    mina: 56,
+                    ascii: "|)" as SymbolLongAscii,
+                    unicode: "" as SymbolUnicode,
+                    mina: 56 as Mina,
                     primaryComma: {
-                        monzo: [6, -2, 0, -1],
-                        position: 27.2640918001001,
+                        monzo: [6, -2, 0, -1] as Monzo,
+                        position: 27.2640918001001 as Cents,
                     },
-                    id: 58,
-                    elements: ["|)"],
+                    id: 58 as SymbolId,
+                    elements: ["|)"] as SymbolLongAscii[],
                 },
             ],
-            EXTREME: [
+            [ Level.EXTREME ]: [
                 {
-                    introducingLevel: "EXTREME",
-                    distance: 0.38371604975449713,
+                    introducingLevel: Level.EXTREME,
+                    distance: 0.38371604975449713 as Cents,
                     inaDistance: 0.786434752419428,
-                    ascii: ",)/|",
-                    unicode: "",
-                    mina: 50,
+                    ascii: ",)/|" as SymbolLongAscii,
+                    unicode: "" as SymbolUnicode,
+                    mina: 50 as Mina,
                     primaryComma: {
-                        monzo: [-8, 3, 3, 0, 0, -1],
-                        position: 24.2784824213563,
+                        monzo: [-8, 3, 3, 0, 0, -1] as Monzo,
+                        position: 24.2784824213563 as Cents,
                     },
-                    id: 51,
-                    elements: [",|", ")|", "/|"],
+                    id: 51 as SymbolId,
+                    elements: [",|", ")|", "/|"] as SymbolLongAscii[],
                 },
                 {
-                    introducingLevel: "HIGH",
-                    distance: 0.22210985406900008,
+                    introducingLevel: Level.HIGH,
+                    distance: 0.22210985406900008 as Cents,
                     inaDistance: 0.4552191867044054,
-                    ascii: ")/|",
-                    unicode: "",
-                    mina: 51,
+                    ascii: ")/|" as SymbolLongAscii,
+                    unicode: "" as SymbolUnicode,
+                    mina: 51 as Mina,
                     primaryComma: {
-                        monzo: [-13, 7, -1, 0, 0, 0, 0, 1],
-                        position: 24.8843083251798,
+                        monzo: [-13, 7, -1, 0, 0, 0, 0, 1] as Monzo,
+                        position: 24.8843083251798 as Cents,
                     },
-                    id: 52,
-                    elements: [")|", "/|"],
+                    id: 52 as SymbolId,
+                    elements: [")|", "/|"] as SymbolLongAscii[],
                 },
             ],
-            INSANE: [
+            [ Level.INSANE ]: [
                 {
-                    introducingLevel: "EXTREME",
-                    distance: 0.38371604975449713,
+                    introducingLevel: Level.EXTREME,
+                    distance: 0.38371604975449713 as Cents,
                     inaDistance: 2.7305824665550094,
-                    ascii: ",)/|",
-                    unicode: "",
-                    mina: 50,
+                    ascii: ",)/|" as SymbolLongAscii,
+                    unicode: "" as SymbolUnicode,
+                    mina: 50 as Mina,
                     primaryComma: {
-                        monzo: [-8, 3, 3, 0, 0, -1],
-                        position: 24.2784824213563,
+                        monzo: [-8, 3, 3, 0, 0, -1] as Monzo,
+                        position: 24.2784824213563 as Cents,
                     },
-                    id: 51,
-                    elements: [",|", ")|", "/|"],
+                    id: 51 as SymbolId,
+                    elements: [",|", ")|", "/|"] as SymbolLongAscii[],
                 },
                 {
-                    introducingLevel: "HIGH",
-                    distance: 0.22210985406900008,
+                    introducingLevel: Level.HIGH,
+                    distance: 0.22210985406900008 as Cents,
                     inaDistance: 1.5805679057676565,
-                    ascii: ")/|",
-                    unicode: "",
-                    mina: 51,
+                    ascii: ")/|" as SymbolLongAscii,
+                    unicode: "" as SymbolUnicode,
+                    mina: 51 as Mina,
                     primaryComma: {
-                        monzo: [-13, 7, -1, 0, 0, 0, 0, 1],
-                        position: 24.8843083251798,
+                        monzo: [-13, 7, -1, 0, 0, 0, 0, 1] as Monzo,
+                        position: 24.8843083251798 as Cents,
                     },
-                    id: 52,
-                    elements: [")|", "/|"],
+                    id: 52 as SymbolId,
+                    elements: [")|", "/|"] as SymbolLongAscii[],
                 },
             ],
         })
     })
 
     it("works for the final bound", () => {
-        const bound = {
-            position: 68.57250822118040,
-            levels: ["MEDIUM", "HIGH", "ULTRA", "EXTREME", "INSANE"],
-            id: 54,
+        const bound: Bound = {
+            position: 68.57250822118040 as Cents,
+            levels: [Level.MEDIUM, Level.HIGH, Level.ULTRA, Level.EXTREME, Level.INSANE],
+            id: 54 as BoundId,
         }
 
         const result = computeLevelBoundedSymbols(bound)
 
         expect(result).toEqual({
-            id: 54,
-            MEDIUM: [
+            id: 54 as BoundId,
+            [ Level.MEDIUM ]: [
                 {
-                    introducingLevel: "MEDIUM",
-                    ascii: "(|\\",
-                    unicode: "",
-                    id: 142,
-                    mina: 133,
-                    distance: 3.6578835602835937,
+                    introducingLevel: Level.MEDIUM,
+                    ascii: "(|\\" as SymbolLongAscii,
+                    unicode: "" as SymbolUnicode,
+                    id: 142 as SymbolId,
+                    mina: 133 as Mina,
+                    distance: 3.6578835602835937 as Cents,
                     inaDistance: 0.6756876516060547,
                     primaryComma: {
-                        monzo: [-13, 5, 1, 1],
-                        position: 64.9146246608968,
+                        monzo: [-13, 5, 1, 1] as Monzo,
+                        position: 64.9146246608968 as Cents,
                     },
-                    elements: ["(|", "|\\"],
+                    elements: ["(|", "|\\"] as SymbolLongAscii[],
                 },
                 undefined,
             ],
-            HIGH: [
+            [ Level.HIGH ]: [
                 {
-                    introducingLevel: "HIGH",
-                    ascii: ")|\\\\",
-                    unicode: "",
-                    mina: 138,
-                    id: 147,
-                    distance: 1.2814466063946952,
+                    introducingLevel: Level.HIGH,
+                    ascii: ")|\\\\" as SymbolLongAscii,
+                    unicode: "" as SymbolUnicode,
+                    mina: 138 as Mina,
+                    id: 147 as SymbolId,
+                    distance: 1.2814466063946952 as Cents,
                     inaDistance: 0.5297795425192314,
                     primaryComma: {
-                        monzo: [-16, 11, 1, 0, 0, -1],
-                        position: 67.2910616147857,
+                        monzo: [-16, 11, 1, 0, 0, -1] as Monzo,
+                        position: 67.2910616147857 as Cents,
                     },
-                    elements: [")|", "|\\", "|\\"],
+                    elements: [")|", "|\\", "|\\"] as SymbolLongAscii[],
                 },
                 undefined,
             ],
-            ULTRA: [
+            [ Level.ULTRA ]: [
                 {
-                    introducingLevel: "HIGH",
-                    ascii: ")|\\\\",
-                    unicode: "",
-                    mina: 138,
-                    id: 147,
-                    distance: 1.2814466063946952,
+                    introducingLevel: Level.HIGH,
+                    ascii: ")|\\\\" as SymbolLongAscii,
+                    unicode: "" as SymbolUnicode,
+                    mina: 138 as Mina,
+                    id: 147 as SymbolId,
+                    distance: 1.2814466063946952 as Cents,
                     inaDistance: 0.6537704992790516,
                     primaryComma: {
-                        monzo: [-16, 11, 1, 0, 0, -1],
-                        position: 67.2910616147857,
+                        monzo: [-16, 11, 1, 0, 0, -1] as Monzo,
+                        position: 67.2910616147857 as Cents,
                     },
-                    elements: [")|", "|\\", "|\\"],
+                    elements: [")|", "|\\", "|\\"] as SymbolLongAscii[],
                 },
                 undefined,
             ],
-            EXTREME: [
+            [ Level.EXTREME ]: [
                 {
-                    introducingLevel: "EXTREME",
-                    ascii: "``)|\\\\",
-                    unicode: "",
-                    id: 149,
-                    mina: 140,
-                    distance: 0.44892240228040237,
+                    introducingLevel: Level.EXTREME,
+                    ascii: "``)|\\\\" as SymbolLongAscii,
+                    unicode: "" as SymbolUnicode,
+                    id: 149 as SymbolId,
+                    mina: 140 as Mina,
+                    distance: 0.44892240228040237 as Cents,
                     inaDistance: 0.9200766517814528,
                     primaryComma: {
-                        monzo: [-11, 8, 2, -1, -1],
-                        position: 68.1235858189,
+                        monzo: [-11, 8, 2, -1, -1] as Monzo,
+                        position: 68.1235858189 as Cents,
                     },
-                    elements: ["``|", ")|", "|\\", "|\\"],
+                    elements: ["``|", ")|", "|\\", "|\\"] as SymbolLongAscii[],
                 },
                 undefined,
             ],
-            INSANE: [
+            [ Level.INSANE ]: [
                 {
-                    introducingLevel: "EXTREME",
-                    ascii: "``)|\\\\",
-                    unicode: "",
-                    mina: 140,
-                    id: 149,
-                    distance: 0.44892240228040237,
+                    introducingLevel: Level.EXTREME,
+                    ascii: "``)|\\\\" as SymbolLongAscii,
+                    unicode: "" as SymbolUnicode,
+                    mina: 140 as Mina,
+                    id: 149 as SymbolId,
+                    distance: 0.44892240228040237 as Cents,
                     inaDistance: 3.194600906829164,
                     primaryComma: {
-                        monzo: [-11, 8, 2, -1, -1],
-                        position: 68.1235858189,
+                        monzo: [-11, 8, 2, -1, -1] as Monzo,
+                        position: 68.1235858189 as Cents,
                     },
-                    elements: ["``|", ")|", "|\\", "|\\"],
+                    elements: ["``|", ")|", "|\\", "|\\"] as SymbolLongAscii[],
                 },
                 undefined,
             ],
@@ -205,48 +216,48 @@ describe("computeLevelBoundedSymbols", () => {
     })
 
     it("works for the first bound", () => {
-        const bound = {
-            position: 0.210788021120605,
-            levels: ["EXTREME", "INSANE"],
-            id: 55,
+        const bound: Bound = {
+            position: 0.210788021120605 as Cents,
+            levels: [Level.EXTREME, Level.INSANE],
+            id: 55 as BoundId,
         }
 
         const result = computeLevelBoundedSymbols(bound)
 
         expect(result).toEqual({
-            id: 55,
-            EXTREME: [
+            id: 55 as BoundId,
+            [ Level.EXTREME ]: [
                 undefined,
                 {
-                    introducingLevel: "EXTREME",
-                    ascii: "`|",
-                    unicode: "",
-                    mina: 1,
+                    introducingLevel: Level.EXTREME,
+                    ascii: "`|" as SymbolLongAscii,
+                    unicode: "" as SymbolUnicode,
+                    mina: 1 as Mina,
                     primaryComma: {
-                        monzo: [12, -2, -1, -1, 0, -1],
-                        position: 0.42271616595482,
+                        monzo: [12, -2, -1, -1, 0, -1] as Monzo,
+                        position: 0.42271616595482 as Cents,
                     },
-                    id: 1,
-                    distance: 0.211928144834215,
+                    id: 1 as SymbolId,
+                    distance: 0.211928144834215 as Cents,
                     inaDistance: 0.43435154255350816,
-                    elements: ["`|"],
+                    elements: ["`|"] as SymbolLongAscii[],
                 },
             ],
-            INSANE: [
+            [ Level.INSANE ]: [
                 undefined,
                 {
-                    introducingLevel: "EXTREME",
-                    ascii: "`|",
-                    unicode: "",
-                    mina: 1,
+                    introducingLevel: Level.EXTREME,
+                    ascii: "`|" as SymbolLongAscii,
+                    unicode: "" as SymbolUnicode,
+                    mina: 1 as Mina,
                     primaryComma: {
-                        monzo: [12, -2, -1, -1, 0, -1],
-                        position: 0.42271616595482,
+                        monzo: [12, -2, -1, -1, 0, -1] as Monzo,
+                        position: 0.42271616595482 as Cents,
                     },
-                    id: 1,
-                    distance: 0.211928144834215,
+                    id: 1 as SymbolId,
+                    distance: 0.211928144834215 as Cents,
                     inaDistance: 1.508113295818833,
-                    elements: ["`|"],
+                    elements: ["`|"] as SymbolLongAscii[],
                 },
             ],
         })

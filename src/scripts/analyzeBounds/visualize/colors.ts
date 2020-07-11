@@ -1,6 +1,8 @@
-const INA_COLOR = "#6666ff"
-const MEAN_COLOR = "#88cccc"
-const SIZE_COLOR = "#88ff88"
+import { HexColor } from "./types"
+
+const INA_COLOR: HexColor = "#6666ff" as HexColor
+const MEAN_COLOR: HexColor = "#88cccc" as HexColor
+const SIZE_COLOR: HexColor = "#88ff88" as HexColor
 
 const RANK_FILLS = [
     INA_COLOR,

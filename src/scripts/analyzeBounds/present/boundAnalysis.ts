@@ -1,18 +1,20 @@
-import {COLORS} from "./colors"
-import {presentNumber} from "./number"
-import {presentSymbolAscii} from "./symbolAscii"
-import {alignFormattedNumber} from "./alignFormattedNumber"
-import {presentMina} from "./mina"
-import {extractLevelRanks} from "./levelRanks"
-import {extractLevelDistances} from "./levelDistances"
-import {extractLevelInaDistances} from "./levelInaDistances"
-import {extractBoundIdentifiers} from "./boundIdentifiers"
+import { COLORS } from "./colors"
+import { presentNumber } from "./number"
+import { presentSymbolAscii } from "./symbolAscii"
+import { alignFormattedNumber } from "./alignFormattedNumber"
+import { presentMina } from "./mina"
+import { extractLevelRanks } from "./levelRanks"
+import { extractLevelDistances } from "./levelDistances"
+import { extractLevelInaDistances } from "./levelInaDistances"
+import { extractBoundIdentifiers } from "./boundIdentifiers"
+import { AnalysisMode, PresentBoundAnalysisParameters } from "./types"
+import { AnalyzedBound } from "../types"
 
-const presentBoundAnalysis = (boundAnalysis, {bound = undefined, mode = "DETAILS"}: any = {}) => {
+const presentBoundAnalysis = (boundAnalysis: AnalyzedBound, { bound, mode = AnalysisMode.DETAILS }: PresentBoundAnalysisParameters) => {
     let presentedBoundAnalysis
     const boundIdentifiers = extractBoundIdentifiers(bound)
 
-    if (mode === "SUMMARY") {
+    if (mode === AnalysisMode.SUMMARY && bound) {
         const {
             extremeLevelLesserBoundedSymbol,
             extremeLevelGreaterBoundedSymbol,
@@ -50,7 +52,7 @@ const presentBoundAnalysis = (boundAnalysis, {bound = undefined, mode = "DETAILS
             bestPossibleHistoryExtremeInaDistance,
         ] = extractLevelInaDistances(bestPossibleHistory)
 
-        const color = COLORS[bestRank]
+        const color = COLORS[ bestRank ]
         presentedBoundAnalysis = [
             bound.id,
             presentMina(lesserBoundedMina),
@@ -75,7 +77,9 @@ const presentBoundAnalysis = (boundAnalysis, {bound = undefined, mode = "DETAILS
             alignFormattedNumber(presentNumber(position)),
             alignFormattedNumber(presentNumber(initialPosition)),
             alignFormattedNumber(presentNumber(initialPositionTinaDifference)),
-        ].join("\t")[color]
+        ].join("\t")
+
+        presentedBoundAnalysis = presentedBoundAnalysis[ color ]
     } else if (mode === "DETAILS") {
         presentedBoundAnalysis =
             JSON.stringify(boundIdentifiers, null, 4)

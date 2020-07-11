@@ -1,11 +1,14 @@
-import {EVENT_TYPE_SNAPPABLE_POSITIONS} from "../snappablePositions"
+import { EVENT_TYPE_SNAPPABLE_POSITIONS } from "../snappablePositions"
+import { EventType, HistoricalEvent, SnappablePosition } from "../types"
+import { Level } from "../../../notations/ji/types"
+import { Cents } from "../../../utilities/types"
 
-const computeEvents = (level, [lesserBoundedSymbolPosition, greaterBoundedSymbolPosition], type) => {
-    const events = []
+const computeEvents = (level: Level, [lesserBoundedSymbolPosition, greaterBoundedSymbolPosition]: [Cents, Cents], type: EventType) => {
+    const events: HistoricalEvent[] = []
 
-    const snappablePositions = EVENT_TYPE_SNAPPABLE_POSITIONS[type][level]
+    const snappablePositions = EVENT_TYPE_SNAPPABLE_POSITIONS[ type ][ level ]
 
-    snappablePositions.forEach(snappablePosition => {
+    snappablePositions.forEach((snappablePosition: SnappablePosition) => {
         if (
             snappablePosition.position > lesserBoundedSymbolPosition &&
             (snappablePosition.position < greaterBoundedSymbolPosition || !greaterBoundedSymbolPosition)

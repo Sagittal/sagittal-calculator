@@ -1,24 +1,26 @@
-import {updateRankAnalysis, rankCounts, rankBoundIndices} from "../../../../src/scripts/analyzeBounds/ranks"
+import { rankBoundIndices, rankCounts, updateRankAnalysis } from "../../../../src/scripts/analyzeBounds/ranks"
+import { BoundId } from "../../../../src/notations/ji/types"
+import { EventRank } from "../../../../src/scripts/analyzeBounds/types"
 
 describe("updateRankAnalysis", () => {
-    const bestRank = 2
-    const boundId = 88
+    const bestRank: EventRank = 2 as EventRank
+    const boundId: BoundId = 88 as BoundId
 
-    let previousRankAnalysis
-    let previousRankBounds
+    let previousRankAnalysis: number
+    let previousRankBounds: BoundId[]
 
     beforeAll(() => {
-        previousRankAnalysis = rankCounts[bestRank]
-        previousRankBounds = rankBoundIndices[bestRank].slice()
+        previousRankAnalysis = rankCounts[ bestRank ]
+        previousRankBounds = rankBoundIndices[ bestRank ].slice()
 
         updateRankAnalysis(bestRank, boundId)
     })
 
     it("updates the count of bounds with this rank as their best rank", () => {
-        expect(rankCounts[bestRank]).toBe(previousRankAnalysis + 1)
+        expect(rankCounts[ bestRank ]).toBe(previousRankAnalysis + 1)
     })
 
     it("updates the rank to include this bound in the list of bounds with it as their best rank", () => {
-        expect(rankBoundIndices[bestRank]).toEqual(previousRankBounds.concat([boundId]))
+        expect(rankBoundIndices[ bestRank ]).toEqual(previousRankBounds.concat([boundId]))
     })
 })

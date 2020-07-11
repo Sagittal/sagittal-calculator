@@ -1,12 +1,14 @@
-import {computeConsolidatedHistories} from "./consolidatedHistories"
-import {analyzeHistory} from "./history"
-import {computeBestPossibleHistory} from "./bestPossibleHistory"
-import {TINA} from "../../notations/ji/intervals"
+import { computeConsolidatedHistories } from "./consolidatedHistories"
+import { analyzeHistory } from "./history"
+import { computeBestPossibleHistory } from "./bestPossibleHistory"
+import { TINA } from "../../notations/ji/intervals"
 import * as rankAnalysis from "./ranks"
 import * as levelAnalysis from "./levels"
-import {computeInitialPosition} from "./initialPosition"
+import { computeInitialPosition } from "./initialPosition"
+import { AnalyzedBound, History } from "./types"
+import { Bound } from "../../notations/ji/types"
 
-const analyzeBound = (histories, bound) => {
+const analyzeBound = (histories: History[], bound: Bound): AnalyzedBound => {
     const initialPosition = computeInitialPosition(bound)
     const analyzedHistories = histories.map(history => analyzeHistory(history, bound, initialPosition))
 

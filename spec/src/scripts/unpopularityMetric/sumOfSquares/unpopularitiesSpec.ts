@@ -1,30 +1,37 @@
-import {computeUnpopularities} from "../../../../../src/scripts/unpopularityMetric/sumOfSquares/unpopularities"
-import {SUBMETRIC_TYPE, PARAMETER} from "../../../../../src/scripts/unpopularityMetric/constants"
+import { computeUnpopularities } from "../../../../../src/scripts/unpopularityMetric/sumOfSquares/unpopularities"
+import { Parameter, Submetric, SubmetricType } from "../../../../../src/scripts/unpopularityMetric/types"
+import {
+    Antivotes,
+    Popularity,
+    PopularityRank,
+    Votes,
+} from "../../../../../src/scripts/unpopularityMetric/sumOfSquares/types"
+import { Ratio } from "../../../../../src/utilities/types"
 
 describe("computeUnpopularities", () => {
     it("given a list of real popularities and submetric combinations, returns our estimated unpopularities, which have antivotes instead of votes", () => {
-        const realPopularities = [
-            {rank: 5, fiveRoughRatio: [7, 5], votes: 1318},
-            {rank: 8, fiveRoughRatio: [125, 1], votes: 492},
-            {rank: 39, fiveRoughRatio: [55, 49], votes: 51},
+        const realPopularities: Popularity[] = [
+            { rank: 5 as PopularityRank, fiveRoughRatio: [7, 5] as Ratio, votes: 1318 as Votes },
+            { rank: 8 as PopularityRank, fiveRoughRatio: [125, 1] as Ratio, votes: 492 as Votes },
+            { rank: 39 as PopularityRank, fiveRoughRatio: [55, 49] as Ratio, votes: 51 as Votes },
         ]
-        const submetricCombinations = [
+        const submetrics: Submetric[] = [
             {
-                [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.SOAPFAR,
-                [PARAMETER.WEIGHT]: 0,
+                [ Parameter.SUBMETRIC_TYPE ]: SubmetricType.SOAPFAR,
+                [ Parameter.WEIGHT ]: 0,
             },
             {
-                [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPF,
-                [PARAMETER.WEIGHT]: 1,
+                [ Parameter.SUBMETRIC_TYPE ]: SubmetricType.COAPF,
+                [ Parameter.WEIGHT ]: 1,
             },
         ]
 
-        const result = computeUnpopularities(realPopularities, submetricCombinations)
+        const result = computeUnpopularities(realPopularities, submetrics)
 
         expect(result).toEqual([
-            {antivotes: 2, fiveRoughRatio: [7, 5], index: 0},
-            {antivotes: 1, fiveRoughRatio: [125, 1], index: 1},
-            {antivotes: 3, fiveRoughRatio: [55, 49], index: 2},
+            { antivotes: 2 as Antivotes, fiveRoughRatio: [7, 5] as Ratio, index: 0 },
+            { antivotes: 1 as Antivotes, fiveRoughRatio: [125, 1] as Ratio, index: 1 },
+            { antivotes: 3 as Antivotes, fiveRoughRatio: [55, 49] as Ratio, index: 2 },
         ])
     })
 })

@@ -1,115 +1,127 @@
-import {extractBoundIdentifiers} from "../../../../../src/scripts/analyzeBounds/present/boundIdentifiers"
-import {INA_SIZES} from "../../../../../src/notations/ji/intervals"
+import { extractBoundIdentifiers } from "../../../../../src/scripts/analyzeBounds/present/boundIdentifiers"
+import { INA_SIZES } from "../../../../../src/notations/ji/intervals"
+import {
+    Bound,
+    BoundId,
+    Level,
+    Mina,
+    SymbolId,
+    SymbolLongAscii,
+    SymbolUnicode,
+} from "../../../../../src/notations/ji/types"
+import { BoundIdentifiers } from "../../../../../src/scripts/analyzeBounds/present/types"
+import { Cents } from "../../../../../src/utilities/types"
+import { Monzo } from "../../../../../src/utilities/comma/types"
 
 describe("extractBoundIdentifiers", () => {
     const bound = {
-        position: 23.1164196495597,
-        levels: ["ULTRA", "EXTREME", "INSANE"],
-        id: 47,
+        position: 23.1164196495597 as Cents,
+        levels: [ Level.ULTRA, Level.EXTREME, Level.INSANE ],
+        id: 47 as BoundId,
     }
 
     it("returns helpful identifying information about the bound", () => {
-        const result = extractBoundIdentifiers(bound)
+        const result: BoundIdentifiers = extractBoundIdentifiers(bound)
 
         expect(result).toEqual({
-            extremeLevelLesserBoundedSymbol: ".)/|",
-            extremeLevelGreaterBoundedSymbol: "'/|",
-            position: 23.1164196495597,
+            extremeLevelLesserBoundedSymbol: ".)/|" as SymbolLongAscii,
+            extremeLevelGreaterBoundedSymbol: "'/|" as SymbolLongAscii,
+            position: 23.1164196495597 as Cents as Cents,
             boundedSymbols: {
-                id: 47,
-                ULTRA: [
+                id: 47 as BoundId,
+                [ Level.ULTRA ]: [
                     {
-                        introducingLevel: "ULTRA",
-                        distance: 23.1164196495597 - 22.9305875372457,
-                        inaDistance: (23.1164196495597 - 22.9305875372457) / INA_SIZES["ULTRA"],
-                        ascii: ".)/|",
-                        unicode: "",
-                        mina: 47,
+                        introducingLevel: Level.ULTRA,
+                        distance: 23.1164196495597 - 22.9305875372457 as Cents,
+                        inaDistance: (23.1164196495597 - 22.9305875372457) / INA_SIZES[ Level.ULTRA ],
+                        ascii: ".)/|" as SymbolLongAscii,
+                        unicode: "" as SymbolUnicode,
+                        mina: 47 as Mina,
                         primaryComma: {
-                            position: 22.9305875372457,
-                            monzo: [2, -1, -2, 0, 0, 0, 0, 1],
+                            position: 22.9305875372457 as Cents,
+                            monzo: [2, -1, -2, 0, 0, 0, 0, 1] as Monzo,
                         },
-                        id: 47, // not the best example since id and mina are the same up to this point
-                        elements: [".|", ")|", "/|"],
+                        id: 47 as SymbolId, // not the best example since id and mina are the same up to this point
+                        elements: [".|", ")|", "/|"] as SymbolLongAscii[],
                     },
                     {
-                        introducingLevel: "ULTRA",
-                        distance: 23.46001038464900 - 23.1164196495597,
-                        inaDistance: (23.46001038464900 - 23.1164196495597) / INA_SIZES["ULTRA"],
-                        ascii: "'/|",
-                        unicode: "",
-                        mina: 48,
+                        introducingLevel: Level.ULTRA,
+                        distance: 23.46001038464900 - 23.1164196495597 as Cents,
+                        inaDistance: (23.46001038464900 - 23.1164196495597) / INA_SIZES[ Level.ULTRA ],
+                        ascii: "'/|" as SymbolLongAscii,
+                        unicode: "" as SymbolUnicode,
+                        mina: 48 as Mina,
                         primaryComma: {
-                            position: 23.4600103846490,
-                            monzo: [-19, 12],
+                            position: 23.4600103846490 as Cents,
+                            monzo: [-19, 12] as Monzo,
                         },
-                        id: 48,
-                        elements: ["'|", "/|"],
-                    },
-                ],
-                EXTREME: [
-                    {
-                        introducingLevel: "ULTRA",
-                        distance: 23.1164196495597 - 22.9305875372457,
-                        inaDistance: (23.1164196495597 - 22.9305875372457) / INA_SIZES["EXTREME"],
-                        ascii: ".)/|",
-                        unicode: "",
-                        mina: 47,
-                        primaryComma: {
-                            position: 22.9305875372457,
-                            monzo: [2, -1, -2, 0, 0, 0, 0, 1],
-                        },
-                        id: 47,
-                        elements: [".|", ")|", "/|"],
-                    },
-                    {
-                        introducingLevel: "ULTRA",
-                        distance: 23.46001038464900 - 23.1164196495597,
-                        inaDistance: (23.46001038464900 - 23.1164196495597) / INA_SIZES["EXTREME"],
-                        ascii: "'/|",
-                        unicode: "",
-                        mina: 48,
-                        primaryComma: {
-                            position: 23.4600103846490,
-                            monzo: [-19, 12],
-                        },
-                        id: 48,
-                        elements: ["'|", "/|"],
+                        id: 48 as SymbolId,
+                        elements: ["'|", "/|"] as SymbolLongAscii[],
                     },
                 ],
-                INSANE: [
+                [ Level.EXTREME ]: [
                     {
-                        introducingLevel: "ULTRA",
-                        distance: 23.1164196495597 - 22.9305875372457,
-                        inaDistance: (23.1164196495597 - 22.9305875372457) / INA_SIZES["INSANE"],
-                        ascii: ".)/|",
-                        unicode: "",
-                        mina: 47,
-                        id: 47,
+                        introducingLevel: Level.ULTRA,
+                        distance: 23.1164196495597 - 22.9305875372457 as Cents,
+                        inaDistance: (23.1164196495597 - 22.9305875372457) / INA_SIZES[ Level.EXTREME ],
+                        ascii: ".)/|" as SymbolLongAscii,
+                        unicode: "" as SymbolUnicode,
+                        mina: 47 as Mina,
                         primaryComma: {
-                            position: 22.9305875372457,
-                            monzo: [2, -1, -2, 0, 0, 0, 0, 1],
+                            position: 22.9305875372457 as Cents,
+                            monzo: [2, -1, -2, 0, 0, 0, 0, 1] as Monzo,
                         },
-                        elements: [".|", ")|", "/|"],
+                        id: 47 as SymbolId,
+                        elements: [".|", ")|", "/|"] as SymbolLongAscii[],
                     },
                     {
-                        introducingLevel: "ULTRA",
-                        distance: 23.46001038464900 - 23.1164196495597,
-                        inaDistance: (23.46001038464900 - 23.1164196495597) / INA_SIZES["INSANE"],
-                        ascii: "'/|",
-                        unicode: "",
-                        mina: 48,
-                        id: 48,
+                        introducingLevel: Level.ULTRA,
+                        distance: 23.46001038464900 - 23.1164196495597 as Cents,
+                        inaDistance: (23.46001038464900 - 23.1164196495597) / INA_SIZES[ Level.EXTREME ],
+                        ascii: "'/|" as SymbolLongAscii,
+                        unicode: "" as SymbolUnicode,
+                        mina: 48 as Mina,
                         primaryComma: {
-                            position: 23.4600103846490,
-                            monzo: [-19, 12],
+                            position: 23.4600103846490 as Cents,
+                            monzo: [-19, 12] as Monzo,
                         },
-                        elements: ["'|", "/|"],
+                        id: 48 as SymbolId,
+                        elements: ["'|", "/|"] as SymbolLongAscii[],
+                    },
+                ],
+                [ Level.INSANE ]: [
+                    {
+                        introducingLevel: Level.ULTRA,
+                        distance: 23.1164196495597 - 22.9305875372457 as Cents,
+                        inaDistance: (23.1164196495597 - 22.9305875372457) / INA_SIZES[ Level.INSANE ],
+                        ascii: ".)/|" as SymbolLongAscii,
+                        unicode: "" as SymbolUnicode,
+                        mina: 47 as Mina,
+                        id: 47 as SymbolId,
+                        primaryComma: {
+                            position: 22.9305875372457 as Cents,
+                            monzo: [2, -1, -2, 0, 0, 0, 0, 1] as Monzo,
+                        },
+                        elements: [".|", ")|", "/|"] as SymbolLongAscii[],
+                    },
+                    {
+                        introducingLevel: Level.ULTRA,
+                        distance: 23.46001038464900 - 23.1164196495597 as Cents,
+                        inaDistance: (23.46001038464900 - 23.1164196495597) / INA_SIZES[ Level.INSANE ],
+                        ascii: "'/|" as SymbolLongAscii,
+                        unicode: "" as SymbolUnicode,
+                        mina: 48 as Mina,
+                        id: 48 as SymbolId,
+                        primaryComma: {
+                            position: 23.4600103846490 as Cents,
+                            monzo: [-19, 12] as Monzo,
+                        },
+                        elements: ["'|", "/|"] as SymbolLongAscii[],
                     },
                 ],
             },
-            lesserBoundedMina: 47,
-            greaterBoundedMina: 48,
-        })
+            lesserBoundedMina: 47 as Mina,
+            greaterBoundedMina: 48 as Mina,
+        } as BoundIdentifiers)
     })
 })

@@ -1,19 +1,21 @@
-import {computeBoundedSymbolPositions} from "../../../notations/ji/boundedSymbolPositions"
-import {computeEvents} from "./events"
+import { computeBoundedSymbolPositions } from "../../../notations/ji/boundedSymbolPositions"
+import { computeEvents } from "./events"
+import { EventType, History } from "../types"
+import { Bound, Level } from "../../../notations/ji/types"
 
-const computeExtendedHistories = (history, level, bound) => {
-    const extendedHistories = []
+const computeExtendedHistories = (history: History, level: Level, bound: Bound) => {
+    const extendedHistories: History[] = []
 
     const boundedSymbolPositions: any = computeBoundedSymbolPositions(bound.position, level)
 
     const newEvents = [
-        ...computeEvents(level, boundedSymbolPositions, "INA"),
-        ...computeEvents(level, boundedSymbolPositions, "MEAN"),
-        ...computeEvents(level, boundedSymbolPositions, "SIZE"),
+        ...computeEvents(level, boundedSymbolPositions, EventType.INA),
+        ...computeEvents(level, boundedSymbolPositions, EventType.MEAN),
+        ...computeEvents(level, boundedSymbolPositions, EventType.SIZE),
     ]
 
     newEvents.forEach(event => {
-        const extendedHistory = history.concat(event)
+        const extendedHistory: History = history.concat(event)
         extendedHistories.push(extendedHistory)
     })
 

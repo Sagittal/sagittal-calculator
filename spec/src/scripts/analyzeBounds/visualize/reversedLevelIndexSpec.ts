@@ -1,4 +1,4 @@
-import {computeReversedLevelIndex} from "../../../../../src/scripts/analyzeBounds/visualize/reversedLevelIndex"
+import { computeReversedLevelIndex } from "../../../../../src/scripts/analyzeBounds/visualize/reversedLevelIndex"
 
 describe("computeReversedLevelIndex", () => {
     it("returns 0 for the highest level, which is 4, and descends from there", () => {

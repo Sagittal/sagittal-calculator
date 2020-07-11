@@ -1,26 +1,27 @@
-import {computeSumOfSquaresForSubmetrics} from "../../../../../src/scripts/unpopularityMetric/sumOfSquares/sumOfSquaresForSubmetrics"
-import {PARAMETER, SUBMETRIC_TYPE} from "../../../../../src/scripts/unpopularityMetric/constants"
+import { computeSumOfSquaresForSubmetrics } from "../../../../../src/scripts/unpopularityMetric/sumOfSquares/sumOfSquaresForSubmetrics"
+import { Parameter, SubmetricType } from "../../../../../src/scripts/unpopularityMetric/types"
+import { SumOfSquares } from "../../../../../src/scripts/unpopularityMetric/sumOfSquares/types"
 
 describe("computeSumOfSquaresForSubmetrics", () => {
     it("returns the sum-of-squares for a given submetric combination", () => {
         const submetrics = [
             {
-                [PARAMETER.K]: 0.038,
-                [PARAMETER.A]: 1.994,
-                [PARAMETER.A_IS_BASE]: true,
-                [PARAMETER.Y]: 0.455,
-                [PARAMETER.W]: -2.08,
-                [PARAMETER.NUMERATOR_IS_NUMINATOR]: false,
+                [ Parameter.K ]: 0.038,
+                [ Parameter.A ]: 1.994,
+                [ Parameter.A_IS_BASE ]: true,
+                [ Parameter.Y ]: 0.455,
+                [ Parameter.W ]: -2.08,
+                [ Parameter.NUMERATOR_IS_NUMINATOR ]: false,
             },
             {
-                [PARAMETER.SUBMETRIC_TYPE]: SUBMETRIC_TYPE.COAPFAR,
-                [PARAMETER.WEIGHT]: 0.577,
-                [PARAMETER.NUMERATOR_IS_NUMINATOR]: false,
+                [ Parameter.SUBMETRIC_TYPE ]: SubmetricType.COAPFAR,
+                [ Parameter.WEIGHT ]: 0.577,
+                [ Parameter.NUMERATOR_IS_NUMINATOR ]: false,
             },
         ]
 
         const result = computeSumOfSquaresForSubmetrics(submetrics)
 
-        expect(result).toBe(0.004260809896143936)
+        expect(result).toBe(0.004260809896143936 as SumOfSquares)
     })
 })

@@ -1,56 +1,57 @@
-import {presentBoundAnalysis} from "../../../../../src/scripts/analyzeBounds/present/boundAnalysis"
+import { presentBoundAnalysis } from "../../../../../src/scripts/analyzeBounds/present/boundAnalysis"
+import { Bound, BoundId, Level } from "../../../../../src/notations/ji/types"
+import { AnalysisMode } from "../../../../../src/scripts/analyzeBounds/present/types"
+import { AnalyzedBound, AnalyzedEvent, AnalyzedHistory, EventRank } from "../../../../../src/scripts/analyzeBounds/types"
+import { Cents } from "../../../../../src/utilities/types"
 
 describe("presentBoundAnalysis", () => {
-    let mode
+    let mode: AnalysisMode
     describe("when formatting a summarized version to be presented in a list with all the other bounds", () => {
         beforeEach(() => {
-            mode = "SUMMARY"
+            mode = AnalysisMode.SUMMARY
         })
 
         it("returns a string of the bound id, identifying symbol, actual bound position, whether it has a possible history, the error in tinas, and the ranks at each level of the best possible history, separated by tabs in a single line, and makes it the correct color", () => {
-            const bound = {
-                position: 5.44763529181809,
-                id: 10,
-            }
-            const boundAnalysis = {
+            const bound: Bound = {
+                position: 5.44763529181809 as Cents,
+                id: 10 as BoundId,
+            } as Bound
+            const boundAnalysis: AnalyzedBound = { //todo: names
                 bestPossibleHistory: {
                     events: [
-                        {level: "ULTRA", rank: 0, distance: 0.000, inaDistance: 0.000},
-                        {level: "EXTREME", rank: 0, distance: 0.333, inaDistance: 0.682},
-                        {level: "INSANE", rank: 1, distance: 0.022, inaDistance: 0.157},
-                    ],
-                },
-                bestRank: 1,
-                initialPosition: 5.48533,
+                        { level: Level.ULTRA, rank: 0 as EventRank, distance: 0.000 as Cents, inaDistance: 0.000 },
+                        { level: Level.EXTREME, rank: 0 as EventRank, distance: 0.333 as Cents, inaDistance: 0.682 },
+                        { level: Level.INSANE, rank: 1 as EventRank, distance: 0.022 as Cents, inaDistance: 0.157 },
+                    ] as AnalyzedEvent[],
+                } as AnalyzedHistory,
+                bestRank: 1 as EventRank,
+                initialPosition: 5.48533 as Cents,
                 initialPositionTinaDifference: 0.0393,
-                bestPossibleHistoryDistance: 0.355,
+                bestPossibleHistoryDistance: 0.355 as Cents,
                 bestPossibleHistoryInaDistance: 0.839,
-            }
+            } as AnalyzedBound
 
-            const result = presentBoundAnalysis(boundAnalysis, {bound, mode})
+            const result = presentBoundAnalysis(boundAnalysis, { bound, mode })
 
-            expect(result).toEqual("10\t 10\t 11\t   ,,|( \t    ,|( \t \t \t0\t0\t1\t \t \t  0.333\t  0.022\t  0.355\t \t \t  0.682\t  0.157\t  0.839\t  5.448\t  5.485\t  0.039"["cyan"])
+            expect(result).toEqual("10\t 10\t 11\t   ,,|( \t    ,|( \t \t \t0\t0\t1\t \t \t  0.333\t  0.022\t  0.355\t \t \t  0.682\t  0.157\t  0.839\t  5.448\t  5.485\t  0.039"[ "cyan" ])
         })
     })
 
     describe("when formatting details for a specific bound", () => {
         beforeEach(() => {
-            mode = "DETAILS"
+            mode = AnalysisMode.DETAILS
         })
 
         it("returns a string which is a multi-line, properly indented rendition of the bound analysis object as well as identifying information for the bound", () => {
             const bound = {
-                position: 5.44763529181809,
-                id: 10,
-            }
-            const boundAnalysis = {
-                bestRank: 2,
-                minimumError: 0,
-                totalHistories: 42,
-                possibleHistories: 5,
-            }
+                position: 5.44763529181809 as Cents,
+                id: 10 as BoundId,
+            } as Bound
+            const boundAnalysis: AnalyzedBound = {
+                bestRank: 2 as EventRank,
+            } as AnalyzedBound
 
-            const result = presentBoundAnalysis(boundAnalysis, {bound, mode})
+            const result = presentBoundAnalysis(boundAnalysis, { bound, mode })
 
             const expectedResult = [
                 `{`,
@@ -174,10 +175,7 @@ describe("presentBoundAnalysis", () => {
                 `    "greaterBoundedMina": 11`,
                 `}`,
                 `{`,
-                `    "bestRank": 2,`,
-                `    "minimumError": 0,`,
-                `    "totalHistories": 42,`,
-                `    "possibleHistories": 5`,
+                `    "bestRank": 2`,
                 `}`,
             ].join("\n")
 

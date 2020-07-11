@@ -1,6 +1,6 @@
 import * as fs from "fs"
 
-const updateFile = (file, output) => {
+const updateFile = (file: string, output: string) => {
     fs.existsSync("dist") || fs.mkdirSync("dist")
     fs.existsSync("dist/analyzeBounds") || fs.mkdirSync("dist/analyzeBounds")
     fs.existsSync(file) && fs.unlinkSync(file)

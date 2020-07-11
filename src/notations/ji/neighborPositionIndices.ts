@@ -1,9 +1,11 @@
-const computeNeighborPositionIndices = (position, targetPositions) => {
+import { Cents } from "../../utilities/types"
+
+const computeNeighborPositionIndices = (position: Cents, targetPositions: Cents[]) => {
     let index = 0
-    let target = targetPositions[index]
+    let target = targetPositions[ index ]
     while (target < position) {
         index++
-        target = targetPositions[index]
+        target = targetPositions[ index ]
     }
 
     return [

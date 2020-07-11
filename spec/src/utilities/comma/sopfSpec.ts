@@ -1,8 +1,9 @@
-import {computeSopf} from "../../../../src/utilities/comma/sopf"
+import { computeSopf } from "../../../../src/utilities/comma/sopf"
+import { Monzo } from "../../../../src/utilities/comma/types"
 
 describe("computeSopf", () => {
     it("sums the absolute values of the unique prime factors in the monzo", () => {
-        const monzo = [5, 6, 0, 0, 1, -1, 2]
+        const monzo = [5, 6, 0, 0, 1, -1, 2] as Monzo
 
         const result = computeSopf(monzo)
 
@@ -10,7 +11,7 @@ describe("computeSopf", () => {
     })
 
     it("works for an empty monzo", () => {
-        const monzo = []
+        const monzo = [] as Monzo
 
         const result = computeSopf(monzo)
 

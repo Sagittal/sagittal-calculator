@@ -1,8 +1,10 @@
-import {computePlusOrMinusRange} from "../../utilities/plusOrMinusRange"
-import {computeMonzoInRange} from "../../utilities/comma/monzoInRange"
-import {analyzeComma} from "../../utilities/comma/comma"
+import { computePlusOrMinusRange } from "../../utilities/plusOrMinusRange"
+import { computeMonzoInRange } from "../../utilities/comma/monzoInRange"
+import { analyzeComma } from "../../utilities/comma/comma"
+import { Comma, Monzo } from "../../utilities/comma/types"
+import { ComputeCommasFromFiveSlicedMonzoOptions } from "./types"
 
-const computeCommasFromFiveSlicedMonzo = (fiveSlicedMonzo, options) => {
+const computeCommasFromFiveSlicedMonzo = (fiveSlicedMonzo: Monzo, options: ComputeCommasFromFiveSlicedMonzoOptions) => {
     const {
         lowerBound,
         upperBound,
@@ -14,7 +16,7 @@ const computeCommasFromFiveSlicedMonzo = (fiveSlicedMonzo, options) => {
     if (typeof upperBound === "undefined") throw new Error("Upper bound must be supplied.")
     if (typeof maximumAbsoluteThreeExponent === "undefined") throw new Error("Maximum absolute three exponent must be supplied.")
 
-    const analyzedCommas = []
+    const analyzedCommas: Comma[] = []
 
     computePlusOrMinusRange(maximumAbsoluteThreeExponent).forEach(three => {
         const monzo = computeMonzoInRange([three, ...fiveSlicedMonzo], lowerBound, upperBound)

@@ -1,9 +1,12 @@
-const computeHistoryDistance = analyzedEvents => {
+import { AnalyzedEvent } from "./types"
+import { Cents } from "../../utilities/types"
+
+const computeHistoryDistance = (analyzedEvents: AnalyzedEvent[]): Cents => {
     return analyzedEvents.reduce(
-        (distance, analyzedEvent) => {
-            return distance + analyzedEvent.distance
+        (distance, analyzedEvent): Cents => {
+            return distance + analyzedEvent.distance as Cents
         },
-        0,
+        0 as Cents,
     )
 }
 

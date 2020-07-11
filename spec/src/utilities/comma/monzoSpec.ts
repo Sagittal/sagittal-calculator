@@ -1,4 +1,4 @@
-import {parseMonzo} from "../../../../src/utilities/comma/monzo"
+import { parseMonzo } from "../../../../src/utilities/comma/monzo"
 
 describe("parseMonzo", () => {
     it("parses monzos", () => {

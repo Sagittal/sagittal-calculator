@@ -1,17 +1,19 @@
-import {computeBoundedSymbolPositions} from "./boundedSymbolPositions"
-import {computePositionSymbol} from "./positionSymbol"
-import {computeInaDistance} from "./inaDistance"
-import {BOUNDS} from "./bounds"
+import { computeBoundedSymbolPositions } from "./boundedSymbolPositions"
+import { computePositionSymbol } from "./positionSymbol"
+import { computeInaDistance } from "./inaDistance"
+import { BOUNDS } from "./bounds"
+import { Bound, BoundedSymbols, SagittalSymbol } from "./types"
+import { Cents } from "../../utilities/types"
 
-const computeLevelBoundedSymbols = bound => {
-    const {position, levels, id} = bound
+const computeLevelBoundedSymbols = (bound: Bound): BoundedSymbols => {
+    const { position, levels, id } = bound
 
     return levels.reduce(
         (levels, level) => {
-            const levelBoundedSymbols = computeBoundedSymbolPositions(position, level).map(position => computePositionSymbol(position))
+            const levelBoundedSymbols: Array<SagittalSymbol | undefined> = computeBoundedSymbolPositions(position, level).map((position: Cents) => computePositionSymbol(position))
             const levelBoundedSymbolsWithDistance = levelBoundedSymbols.map(symbol => {
                 if (symbol) {
-                    const distance = Math.abs(position - symbol.primaryComma.position)
+                    const distance: Cents = Math.abs(position - symbol.primaryComma.position) as Cents
 
                     return {
                         ...symbol,
@@ -25,7 +27,7 @@ const computeLevelBoundedSymbols = bound => {
 
             return {
                 ...levels,
-                [level]: levelBoundedSymbolsWithDistance,
+                [ level ]: levelBoundedSymbolsWithDistance,
             }
         },
         {
@@ -34,7 +36,7 @@ const computeLevelBoundedSymbols = bound => {
     )
 }
 
-const LEVEL_BOUNDED_SYMBOLS = BOUNDS.map(computeLevelBoundedSymbols)
+const LEVEL_BOUNDED_SYMBOLS: BoundedSymbols[] = BOUNDS.map(computeLevelBoundedSymbols)
 
 export {
     computeLevelBoundedSymbols,

@@ -1,7 +1,7 @@
-import {round} from "../../../src/utilities/round"
+import { round } from "../../../src/utilities/round"
 
 describe("round", () => {
-    const num = 29.59845456
+    const num: number = 29.59845456
 
     it("rounds to the precision specified", () => {
         expect(round(num, 1)).toBe(29.6)
