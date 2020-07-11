@@ -1,6 +1,6 @@
-import { computeParameterPoints } from "../../../../../src/scripts/unpopularityMetric/samples/parameterPoints"
-import { ParameterPoint } from "../../../../../src/scripts/unpopularityMetric/samples/types"
-import { ParameterConfig } from "../../../../../src/scripts/unpopularityMetric/types"
+import { computeParameterPoints } from "../../../../../../src/scripts/unpopularityMetric/automator/samples/parameterPoints"
+import { ParameterPoint } from "../../../../../../src/scripts/unpopularityMetric/automator/samples/types"
+import { ParameterConfig } from "../../../../../../src/scripts/unpopularityMetric/types"
 
 describe("computeParameterPoints", () => {
     it("given a parameter config (a center, a range, and a count), will return a block of points to sample", () => {

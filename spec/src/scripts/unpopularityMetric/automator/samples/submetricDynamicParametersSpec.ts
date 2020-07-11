@@ -1,5 +1,5 @@
-import { computeSubmetricDynamicParameters } from "../../../../../src/scripts/unpopularityMetric/samples/submetricDynamicParameters"
-import { Parameter, SubmetricConfig } from "../../../../../src/scripts/unpopularityMetric/types"
+import { computeSubmetricDynamicParameters } from "../../../../../../src/scripts/unpopularityMetric/automator/samples/submetricDynamicParameters"
+import { Parameter, SubmetricConfig } from "../../../../../../src/scripts/unpopularityMetric/types"
 
 describe("computeSubmetricDynamicParameters", () => {
     const submetricIndex = 5

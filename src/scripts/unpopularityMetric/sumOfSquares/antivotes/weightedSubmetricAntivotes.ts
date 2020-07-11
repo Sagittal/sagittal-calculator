@@ -1,7 +1,7 @@
 import * as ratioSubmetricUnpopularity from "./ratioSubmetricAntivotes"
-import { computeLog } from "../../../utilities/log"
-import { Ratio } from "../../../utilities/types"
-import { Antivotes } from "../sumOfSquares/types"
+import { computeLog } from "../../../../utilities/log"
+import { Ratio } from "../../../../utilities/types"
+import { Antivotes } from "../types"
 
 const computeWeightedSubmetricAntivotes = (fiveRoughRatio: Ratio, submetric = {}): Antivotes => {
     const { weight = 1, weightIsBase = false, weightIsExponent = false }: any = submetric

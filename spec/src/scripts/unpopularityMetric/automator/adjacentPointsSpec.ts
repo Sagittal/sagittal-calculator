@@ -1,5 +1,5 @@
 import { computeAdjacentPoints } from "../../../../../src/scripts/unpopularityMetric/automator/adjacentPoints"
-import { Point } from "../../../../../src/scripts/unpopularityMetric/samples/types"
+import { Point } from "../../../../../src/scripts/unpopularityMetric/automator/samples/types"
 
 describe("computeAdjacentPoints", () => {
     it("returns the list of points adjacent to a given point", () => {

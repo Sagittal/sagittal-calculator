@@ -1,8 +1,8 @@
 import { getSumOfSquaresAtPointIfLocalMinimum } from "./localMinimum"
 import { computeDeepDistinct } from "../../../utilities/deepDistinct"
 import { LocalMinimum } from "./types"
-import { Sample } from "../samples/types"
 import { SumsOfSquares } from "../sumOfSquares/types"
+import { Sample } from "./samples/types"
 
 const computeLocalMinima = (samples: Sample[], sumsOfSquares: SumsOfSquares) => {
     const localMinima: LocalMinimum[] = []

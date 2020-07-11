@@ -1,6 +1,6 @@
 import { computeParameterPoints } from "./parameterPoints"
 import { ParameterPoint, SubmetricPoint } from "./types"
-import { Parameter, ParameterConfig } from "../types"
+import { Parameter, ParameterConfig } from "../../types"
 
 const computeSubmetricPoints = (submetricConfig = {}) => {
     let submetricPoints: SubmetricPoint[] = [{} as SubmetricPoint]

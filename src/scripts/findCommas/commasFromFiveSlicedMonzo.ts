@@ -4,7 +4,7 @@ import { analyzeComma } from "../../utilities/comma/comma"
 import { Comma, Monzo } from "../../utilities/comma/types"
 import { ComputeCommasFromFiveSlicedMonzoOptions } from "./types"
 
-const computeCommasFromFiveSlicedMonzo = (fiveSlicedMonzo: Monzo, options: ComputeCommasFromFiveSlicedMonzoOptions) => {
+const computeCommasFromFiveSlicedMonzo = (fiveSlicedMonzo: Monzo<5>, options: ComputeCommasFromFiveSlicedMonzoOptions) => {
     const {
         lowerBound,
         upperBound,
@@ -19,7 +19,8 @@ const computeCommasFromFiveSlicedMonzo = (fiveSlicedMonzo: Monzo, options: Compu
     const analyzedCommas: Comma[] = []
 
     computePlusOrMinusRange(maximumAbsoluteThreeExponent).forEach(three => {
-        const monzo = computeMonzoInRange([three, ...fiveSlicedMonzo], lowerBound, upperBound)
+        const threeSlicedMonzo: Monzo<3> = [three, ...fiveSlicedMonzo] as Monzo<3>
+        const monzo = computeMonzoInRange(threeSlicedMonzo, lowerBound, upperBound)
 
         if (monzo) {
             const analyzedComma = analyzeComma(monzo)

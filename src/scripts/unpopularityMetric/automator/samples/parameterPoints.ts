@@ -1,5 +1,5 @@
 import { ParameterPoint } from "./types"
-import { ParameterConfig } from "../types"
+import { ParameterConfig } from "../../types"
 
 const computeParameterPoints = (parameterConfig: ParameterConfig): ParameterPoint[] => {
     const {

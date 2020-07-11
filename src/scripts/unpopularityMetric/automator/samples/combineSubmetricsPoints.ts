@@ -1,7 +1,7 @@
 import { computeParameterPointIndices } from "./parameterPointIndices"
-import { Point, Sample, SubmetricPoint } from "./types"
-import { DynamicParameter, Submetric } from "../types"
-import { Combination } from "../../../utilities/types"
+import { DynamicParameter, Point, Sample, SubmetricPoint } from "./types"
+import { Submetric } from "../../types"
+import { Combination } from "../../../../utilities/types"
 
 const combineSubmetricsPoints = ({ submetricsPoints, dynamicParameters }: {submetricsPoints: SubmetricPoint[][], dynamicParameters: DynamicParameter[]}): Sample[] => {
     let samples: Sample[] = [{ submetrics: [] as unknown as Combination<Submetric>, point: [] as unknown as Point }]

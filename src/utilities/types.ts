@@ -6,7 +6,7 @@ type Proportion = number & { _ProportionBrand: "Proportion" }
 
 type Ratio = [Numerator, Denominator]
 
-type Combination<T> = T[] & { _CombinationBrand: "Combination" } // todo: the idea should be that for arrays where order doesn't matter you should use combination
+type Combination<T> = T[] & { _CombinationBrand: "Combination" }
 type Combinations<T> = Combination<T>[] & { _CombinationsBrand: "Combinations" }
 
 type DistributionBin<T> = Combination<T> & { _DistributionBinBrand: "DistributionBin" }

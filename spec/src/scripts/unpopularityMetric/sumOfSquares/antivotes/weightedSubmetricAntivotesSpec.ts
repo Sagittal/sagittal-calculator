@@ -1,11 +1,11 @@
-import { computeWeightedSubmetricAntivotes } from "../../../../../src/scripts/unpopularityMetric/antivotes/weightedSubmetricAntivotes"
+import { computeWeightedSubmetricAntivotes } from "../../../../../../src/scripts/unpopularityMetric/sumOfSquares/antivotes/weightedSubmetricAntivotes"
 import * as ratioSubmetricUnpopularity
-    from "../../../../../src/scripts/unpopularityMetric/antivotes/ratioSubmetricAntivotes"
-import { computeRatioSubmetricAntivotes } from "../../../../../src/scripts/unpopularityMetric/antivotes/ratioSubmetricAntivotes"
-import { computeLog } from "../../../../../src/utilities/log"
-import { Parameter, SubmetricType } from "../../../../../src/scripts/unpopularityMetric/types"
-import { Ratio } from "../../../../../src/utilities/types"
-import { Antivotes } from "../../../../../src/scripts/unpopularityMetric/sumOfSquares/types"
+    from "../../../../../../src/scripts/unpopularityMetric/sumOfSquares/antivotes/ratioSubmetricAntivotes"
+import { computeRatioSubmetricAntivotes } from "../../../../../../src/scripts/unpopularityMetric/sumOfSquares/antivotes/ratioSubmetricAntivotes"
+import { computeLog } from "../../../../../../src/utilities/log"
+import { Parameter, SubmetricType } from "../../../../../../src/scripts/unpopularityMetric/types"
+import { Ratio } from "../../../../../../src/utilities/types"
+import { Antivotes } from "../../../../../../src/scripts/unpopularityMetric/sumOfSquares/types"
 
 describe("computeWeightedSubmetricAntivotes", () => {
     it("returns 0 when the weight is 0", () => {

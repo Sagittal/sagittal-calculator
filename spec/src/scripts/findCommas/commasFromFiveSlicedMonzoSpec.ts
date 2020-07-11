@@ -4,7 +4,7 @@ import { Cents } from "../../../../src/utilities/types"
 import { ApotomeSlope } from "../../../../src/notations/ji/types"
 
 describe("computeCommasFromFiveSlicedMonzo", () => {
-    const fiveSlicedMonzo: Monzo = [3, 5, -1] as Monzo
+    const fiveSlicedMonzo: Monzo<5> = [3, 5, -1] as Monzo<5>
 
     it("returns analyzed commas with the prime content from the five-rough monzo", () => {
         const lowerBound = 40 as Cents

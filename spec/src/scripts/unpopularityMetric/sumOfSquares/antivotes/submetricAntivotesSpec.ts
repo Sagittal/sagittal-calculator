@@ -1,8 +1,8 @@
-import { computeSubmetricAntivotes } from "../../../../../src/scripts/unpopularityMetric/antivotes/submetricAntivotes"
-import { computeLog } from "../../../../../src/utilities/log"
-import { Parameter, Submetric, SubmetricType } from "../../../../../src/scripts/unpopularityMetric/types"
-import { Monzo } from "../../../../../src/utilities/comma/types"
-import { Antivotes } from "../../../../../src/scripts/unpopularityMetric/sumOfSquares/types"
+import { computeSubmetricAntivotes } from "../../../../../../src/scripts/unpopularityMetric/sumOfSquares/antivotes/submetricAntivotes"
+import { computeLog } from "../../../../../../src/utilities/log"
+import { Parameter, Submetric, SubmetricType } from "../../../../../../src/scripts/unpopularityMetric/types"
+import { Monzo } from "../../../../../../src/utilities/comma/types"
+import { Antivotes } from "../../../../../../src/scripts/unpopularityMetric/sumOfSquares/types"
 
 describe("computeSubmetricAntivotes", () => {
     let submetric: Submetric

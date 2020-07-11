@@ -9,11 +9,11 @@ import { Combination } from "../../../utilities/types"
 
 program
     .option("-r, --recursive", "recursive")
-    .option("-q, --quiet", "quiet")
+    .option("-d, --debug", "debug")
     .parse(process.argv)
 
 const recurse = !!program.recursive
-const quiet = !!program.quiet
+const debug = !!program.debug
 
 const submetricConfigs = [
     {
@@ -25,6 +25,6 @@ const submetricConfigs = [
     },
 ] as Combination<SubmetricConfig>
 
-const bestMetric = recursivelyFindUnpopularityMetric(submetricConfigs, { recurse, quiet })
+const bestMetric = recursivelyFindUnpopularityMetric(submetricConfigs, { recurse, debug })
 
 console.log(`\nbest metric: ${JSON.stringify(bestMetric)}`[ "green" ])

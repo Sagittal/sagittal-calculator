@@ -1,5 +1,3 @@
-import { ParameterPoint } from "./samples/types"
-
 enum SubmetricType {
     SOAPFAR = "soapfar",
     SOAPF = "soapf",
@@ -70,13 +68,6 @@ type SubmetricProperties = {
 
 type ParameterType = number | boolean | SubmetricType // todo: relationship w/ SubmetricPoint? should this be a ParameterPoint or something?
 
-interface DynamicParameter {
-    submetricIndex: number,
-    parameter: Parameter,
-    parameterPoints: ParameterPoint[],
-    unit: number,
-}
-
 interface ParameterConfig {
     center?: number,
     range?: number,
@@ -99,7 +90,6 @@ export {
     SubmetricProperties,
     SubmetricConfig,
     ParameterConfig,
-    DynamicParameter,
     ParameterType,
     ParameterConfigs,
 }

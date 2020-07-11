@@ -1,7 +1,7 @@
-import { computeDynamicParameters } from "../../../../../src/scripts/unpopularityMetric/samples/dynamicParameters"
-import { Parameter, SubmetricConfig, SubmetricType } from "../../../../../src/scripts/unpopularityMetric/types"
-import { ParameterPoint } from "../../../../../src/scripts/unpopularityMetric/samples/types"
-import { Combination } from "../../../../../src/utilities/types"
+import { computeDynamicParameters } from "../../../../../../src/scripts/unpopularityMetric/automator/samples/dynamicParameters"
+import { Parameter, SubmetricConfig, SubmetricType } from "../../../../../../src/scripts/unpopularityMetric/types"
+import { ParameterPoint } from "../../../../../../src/scripts/unpopularityMetric/automator/samples/types"
+import { Combination } from "../../../../../../src/utilities/types"
 
 describe("computeDynamicParameters", () => {
     it("returns a flattened array of all the parameters that are dynamic (count > 1) -- flattened across all the submetrics, that is", () => {

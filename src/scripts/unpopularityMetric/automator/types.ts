@@ -16,8 +16,6 @@ interface LocalMinimum {
     submetrics: Combination<Submetric>,
 }
 
-// todo: and then the directory should be called submetricCombinations not anymore
-
 type SubmetricChunk = SubmetricConfig
 type ParameterChunk = ParameterConfigs
 

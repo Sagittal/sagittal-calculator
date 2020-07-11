@@ -1,4 +1,4 @@
-import { Point } from "../samples/types"
+import { Point } from "./samples/types"
 
 const computeAdjacentPoints = (point: Point) => {
     const adjacentPoints: Point[] = []

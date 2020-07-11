@@ -12,10 +12,10 @@ import { ChunkCount, ParameterChunk, SubmetricChunk } from "./types"
 import { SubmetricConfig } from "../types"
 import { Combination, Combinations } from "../../../utilities/types"
 
-const computeInitialConfigs = (chunkCount: ChunkCount, { quiet = false } = {}): Combinations<SubmetricConfig> => {
+const computeInitialConfigs = (chunkCount: ChunkCount, { debug = false } = {}): Combinations<SubmetricConfig> => {
     let initialConfigs: Combinations<SubmetricConfig> = [] as unknown as Combinations<SubmetricConfig>
 
-    if (!quiet) console.log(`calculating the initial configs: phase 1 of ${chunkCount}`)
+    if (debug) console.log(`calculating the initial configs: phase 1 of ${chunkCount}`)
     const submetricChunkCombinations: Combinations<SubmetricChunk> = computeCombinations(SUBMETRIC_CHUNKS, chunkCount)
     submetricChunkCombinations.forEach((submetricChunkCombination: Combination<SubmetricChunk>) => {
         initialConfigs.push(submetricChunkCombination)
@@ -34,7 +34,7 @@ const computeInitialConfigs = (chunkCount: ChunkCount, { quiet = false } = {}): 
         PARAMETER_CHUNK_COMBINATIONS[ chunkCountForParameters ] = PARAMETER_CHUNK_COMBINATIONS[ chunkCountForParameters ] || computeCombinations(PARAMETER_CHUNKS, chunkCountForParameters, { withRepeatedElements: true })
         const parameterChunkCombinations: Combinations<ParameterChunk> = PARAMETER_CHUNK_COMBINATIONS[ chunkCountForParameters ]
 
-        if (!quiet) console.log(`calculating the initial configs: phase ${chunkCountForParameters + 1} of ${chunkCount}`)
+        if (debug) console.log(`calculating the initial configs: phase ${chunkCountForParameters + 1} of ${chunkCount}`)
 
         const pTotal = parameterChunkCombinations.length
         const total = submetricChunkCombinations.length * pTotal

@@ -2,7 +2,7 @@ import { runCommandAndGetConsoleOutput } from "../../../../helpers/specHelper"
 
 describe("best metric from config", () => {
     xit("runs without error", () => {
-        const command = "npm run best-metric-from-config"
+        const command = "npm run best-metric-from-config -- -q"
 
         const result = runCommandAndGetConsoleOutput(command)
 

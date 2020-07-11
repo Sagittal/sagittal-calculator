@@ -4,7 +4,7 @@ import { Cents } from "../../../../src/utilities/types"
 
 describe("computeMonzoInRange", () => {
     it("given a 3-monzo, finds the (2-)monzo which is within the cents range", () => {
-        const threeRoughMonzo = [-6, 3, 5, -1] as Monzo
+        const threeRoughMonzo = [-6, 3, 5, -1] as Monzo<3>
         const lowerBound = 40.0 as Cents
         const upperBound = 40.1 as Cents
 
@@ -14,7 +14,7 @@ describe("computeMonzoInRange", () => {
     })
 
     it("returns undefined if no (2-)monzo is within the cents range", () => {
-        const threeRoughMonzo = [-6, 3, 5, -1] as Monzo
+        const threeRoughMonzo = [-6, 3, 5, -1] as Monzo<3>
         const lowerBound = 40.1 as Cents
         const upperBound = 40.2 as Cents
 
@@ -24,7 +24,7 @@ describe("computeMonzoInRange", () => {
     })
 
     it("throws an error if the cents range is greater than an octave (therefore more than one two monzo could be in range)", () => {
-        const threeRoughMonzo = [-6, 3, 5, -1] as Monzo
+        const threeRoughMonzo = [-6, 3, 5, -1] as Monzo<3>
         const lowerBound = 40.0 as Cents
         const upperBound = 1240.1 as Cents
 

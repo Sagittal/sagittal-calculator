@@ -1,8 +1,15 @@
 import "colors"
-import { computeAntivotes } from "../antivotes/antivotes"
+import { program } from "commander"
+import { computeAntivotes } from "../sumOfSquares/antivotes/antivotes"
 import { presentRatio } from "../../../utilities/comma/present/ratio"
 import { Parameter, Submetric, SubmetricType } from "../types"
 import { Combination, Ratio } from "../../../utilities/types"
+
+program
+    .option("-d, --debug", "debug")
+    .parse(process.argv)
+
+const debug = !!program.debug
 
 const submetrics =
     [
@@ -21,6 +28,6 @@ const submetrics =
 
 const fiveRoughRatio: Ratio = [11, 7] as Ratio
 
-const antivotes = computeAntivotes(fiveRoughRatio, submetrics, { logSubmetricAntivotes: true })
+const antivotes = computeAntivotes(fiveRoughRatio, submetrics, { debug })
 
 console.log(`${presentRatio(fiveRoughRatio)}\n${JSON.stringify(submetrics)}\n${antivotes}`)

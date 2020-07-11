@@ -5,7 +5,7 @@ type CommaName = string & { _CommaNameBrand: "CommaName" }
 
 type PrimeExponent = number & { _TermBrand: "PrimeExponent" }
 
-type Monzo = PrimeExponent[]
+type Monzo<Slice = void, Limit = void> = PrimeExponent[] & (Slice extends number ? { _MonzoSlice: Slice } : {})
 // todo: Monzo<5,11>
 // BestMetric<ChunkCount>
 
@@ -17,6 +17,7 @@ interface Comma {
     limit: Prime,
     apotomeSlope: ApotomeSlope,
     fiveRoughSopfr: number,
+
     [ index: string ]: Cents | Monzo | Ratio | CommaName | Prime | ApotomeSlope | number,
 }
 

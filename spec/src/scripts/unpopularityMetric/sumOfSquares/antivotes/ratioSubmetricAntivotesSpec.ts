@@ -1,9 +1,9 @@
-import { computeRatioSubmetricAntivotes } from "../../../../../src/scripts/unpopularityMetric/antivotes/ratioSubmetricAntivotes"
-import { computeSubmetricAntivotes } from "../../../../../src/scripts/unpopularityMetric/antivotes/submetricAntivotes"
-import { computeLog } from "../../../../../src/utilities/log"
-import { Ratio } from "../../../../../src/utilities/types"
-import { Monzo } from "../../../../../src/utilities/comma/types"
-import { Antivotes } from "../../../../../src/scripts/unpopularityMetric/sumOfSquares/types"
+import { computeRatioSubmetricAntivotes } from "../../../../../../src/scripts/unpopularityMetric/sumOfSquares/antivotes/ratioSubmetricAntivotes"
+import { computeSubmetricAntivotes } from "../../../../../../src/scripts/unpopularityMetric/sumOfSquares/antivotes/submetricAntivotes"
+import { computeLog } from "../../../../../../src/utilities/log"
+import { Ratio } from "../../../../../../src/utilities/types"
+import { Monzo } from "../../../../../../src/utilities/comma/types"
+import { Antivotes } from "../../../../../../src/scripts/unpopularityMetric/sumOfSquares/types"
 
 describe("computeRatioSubmetricAntivotes", () => {
     it("splits the ratio into numerator and denominator, computes their submetric antivotes separately, then adjusts the denominator by k", () => {

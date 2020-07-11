@@ -8,7 +8,7 @@ import { Submetric } from "../types"
 import { Popularity, SumOfSquares } from "./types"
 import { Combination } from "../../../utilities/types"
 
-const computeSumOfSquaresForSubmetrics = (submetrics: Combination<Submetric>, { logUnpopularities = false } = {}): SumOfSquares => {
+const computeSumOfSquaresForSubmetrics = (submetrics: Combination<Submetric>, { debug = false } = {}): SumOfSquares => {
     checkSubmetricsForIssues(submetrics)
 
     const realPopularities: Popularity[] = COMMA_POPULARITIES.slice(0, CUT_OFF_POPULARITY)
@@ -16,7 +16,7 @@ const computeSumOfSquaresForSubmetrics = (submetrics: Combination<Submetric>, { 
     const unpopularities = computeUnpopularities(realPopularities, submetrics)
     const rankedUnpopularities = addRankToUnpopularities(unpopularities)
 
-    if (logUnpopularities) rankedUnpopularities.map(rankedUnpopularity => console.log(JSON.stringify(rankedUnpopularity)))
+    if (debug) rankedUnpopularities.map(rankedUnpopularity => console.log(JSON.stringify(rankedUnpopularity)))
 
     return computeSumOfSquares(rankedUnpopularities, realPopularities, ZIPF_EXPONENT)
 }

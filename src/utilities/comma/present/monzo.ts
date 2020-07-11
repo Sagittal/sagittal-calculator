@@ -3,7 +3,7 @@ import { Monzo } from "../types"
 const presentMonzo = (monzo: Monzo, { punctuated = false } = {}) => {
     let contents
     if (punctuated) {
-        const fiveSlicedMonzo = monzo.splice(2)
+        const fiveSlicedMonzo: Monzo<5> = monzo.splice(2) as Monzo<5>
         const twoThreeMonzo = monzo
         contents = twoThreeMonzo.join(" ") + ", "
 

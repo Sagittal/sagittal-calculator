@@ -2,7 +2,7 @@ import { computeFiveSlicedMonzosToCheck } from "./fiveSlicedMonzosToCheck"
 import { computeCommasFromFiveSlicedMonzo } from "./commasFromFiveSlicedMonzo"
 import { invertMonzo } from "../../utilities/comma/invertMonzo"
 import { ComputeCommasOptions } from "./types"
-import { Comma } from "../../utilities/comma/types"
+import { Comma, Monzo } from "../../utilities/comma/types"
 
 const computeCommas = (options: ComputeCommasOptions) => {
     const {
@@ -19,11 +19,13 @@ const computeCommas = (options: ComputeCommasOptions) => {
 
     let commas: Comma[] = []
 
-    const fiveSlicedMonzosToCheck = fiveSlicedMonzo ? [fiveSlicedMonzo, invertMonzo(fiveSlicedMonzo)] : computeFiveSlicedMonzosToCheck({
-        maximumPrimeLimit,
-        maximumFiveRoughSopfr,
-        maximumFiveRoughCopfr,
-    })
+    const fiveSlicedMonzosToCheck: Monzo<5>[] = fiveSlicedMonzo ?
+        [fiveSlicedMonzo, invertMonzo(fiveSlicedMonzo)] :
+        computeFiveSlicedMonzosToCheck({
+            maximumPrimeLimit,
+            maximumFiveRoughSopfr,
+            maximumFiveRoughCopfr,
+        })
 
     fiveSlicedMonzosToCheck.forEach(fiveSlicedMonzoToCheck => {
         commas = commas.concat(

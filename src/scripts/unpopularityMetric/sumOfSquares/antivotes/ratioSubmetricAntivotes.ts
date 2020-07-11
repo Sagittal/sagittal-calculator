@@ -1,9 +1,9 @@
 import { computeSubmetricAntivotes } from "./submetricAntivotes"
-import { computeMonzoFromInteger } from "../../../utilities/comma/monzoFromInteger"
-import { computeMonzoFromRatio } from "../../../utilities/comma/monzoFromRatio"
-import { computeLog } from "../../../utilities/log"
-import { Ratio } from "../../../utilities/types"
-import { Antivotes } from "../sumOfSquares/types"
+import { computeMonzoFromInteger } from "../../../../utilities/comma/monzoFromInteger"
+import { computeMonzoFromRatio } from "../../../../utilities/comma/monzoFromRatio"
+import { computeLog } from "../../../../utilities/log"
+import { Ratio } from "../../../../utilities/types"
+import { Antivotes } from "../../sumOfSquares/types"
 
 const computeRatioSubmetricAntivotes = (fiveRoughRatio: Ratio, submetric = {}): Antivotes => {
     const {

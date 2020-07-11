@@ -1,7 +1,7 @@
-import { computeSamples } from "../../../../../src/scripts/unpopularityMetric/samples/samples"
-import { computeDynamicParameters } from "../../../../../src/scripts/unpopularityMetric/samples/dynamicParameters"
-import { Parameter, SubmetricConfig, SubmetricType } from "../../../../../src/scripts/unpopularityMetric/types"
-import { Combination } from "../../../../../src/utilities/types"
+import { computeSamples } from "../../../../../../src/scripts/unpopularityMetric/automator/samples/samples"
+import { computeDynamicParameters } from "../../../../../../src/scripts/unpopularityMetric/automator/samples/dynamicParameters"
+import { Parameter, SubmetricConfig, SubmetricType } from "../../../../../../src/scripts/unpopularityMetric/types"
+import { Combination } from "../../../../../../src/utilities/types"
 
 describe("submetricCombinations", () => {
     it("given a metric config, will return all combinations of submetrics to check", () => {

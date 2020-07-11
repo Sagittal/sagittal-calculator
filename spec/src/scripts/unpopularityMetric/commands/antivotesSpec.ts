@@ -2,7 +2,7 @@ import { runCommandAndGetConsoleOutput } from "../../../../helpers/specHelper"
 
 describe("antivotes", () => {
     it("gives you the antivotes of a specific ratio for the submetric combination set in the file", () => {
-        const command = "npm run antivotes"
+        const command = "npm run antivotes -- -d"
 
         const result = runCommandAndGetConsoleOutput(command)
 

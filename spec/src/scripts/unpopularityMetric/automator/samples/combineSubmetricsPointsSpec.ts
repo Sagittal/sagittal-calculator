@@ -1,9 +1,10 @@
-import { combineSubmetricsPoints } from "../../../../../src/scripts/unpopularityMetric/samples/combineSubmetricsPoints"
-import { DynamicParameter, Parameter, SubmetricType } from "../../../../../src/scripts/unpopularityMetric/types"
+import { combineSubmetricsPoints } from "../../../../../../src/scripts/unpopularityMetric/automator/samples/combineSubmetricsPoints"
+import { Parameter, SubmetricType } from "../../../../../../src/scripts/unpopularityMetric/types"
 import {
+    DynamicParameter,
     ParameterPoint,
     SubmetricPoint,
-} from "../../../../../src/scripts/unpopularityMetric/samples/types"
+} from "../../../../../../src/scripts/unpopularityMetric/automator/samples/types"
 
 describe("combineSubmetricsPoints", () => {
     it("takes the list of possible points for each submetric individually, and returns a list of every possible combination of them, along with its point, which is then called a 'submetric combination'", () => {
@@ -44,7 +45,12 @@ describe("combineSubmetricsPoints", () => {
             [submetricTwoPointOne, submetricTwoPointTwo, submetricTwoPointThree, submetricTwoPointFour],
         ]
         const dynamicParameters: DynamicParameter[] = [
-            { submetricIndex: 0, parameter: Parameter.Y, parameterPoints: [1.5, 1.2, 0.9] as ParameterPoint[], unit: 0 },
+            {
+                submetricIndex: 0,
+                parameter: Parameter.Y,
+                parameterPoints: [1.5, 1.2, 0.9] as ParameterPoint[],
+                unit: 0,
+            },
             { submetricIndex: 1, parameter: Parameter.Y, parameterPoints: [0.9, 1.1] as ParameterPoint[], unit: 0 },
             { submetricIndex: 1, parameter: Parameter.A, parameterPoints: [0.7, 0.6] as ParameterPoint[], unit: 0 },
         ]

@@ -1,10 +1,10 @@
 import { computeNextConfigs } from "../../../../../src/scripts/unpopularityMetric/automator/nextConfigs"
+import { Parameter, SubmetricConfig, SubmetricType } from "../../../../../src/scripts/unpopularityMetric/types"
 import {
     DynamicParameter,
-    Parameter, SubmetricConfig,
-    SubmetricType,
-} from "../../../../../src/scripts/unpopularityMetric/types"
-import { ParameterPoint, Point } from "../../../../../src/scripts/unpopularityMetric/samples/types"
+    ParameterPoint,
+    Point,
+} from "../../../../../src/scripts/unpopularityMetric/automator/samples/types"
 import { Combination } from "../../../../../src/utilities/types"
 
 describe("computeNextConfigs", () => {

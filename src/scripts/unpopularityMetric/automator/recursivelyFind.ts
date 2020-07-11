@@ -1,5 +1,5 @@
-import { computeSamples } from "../samples/samples"
-import { computeDynamicParameters } from "../samples/dynamicParameters"
+import { computeSamples } from "./samples/samples"
+import { computeDynamicParameters } from "./samples/dynamicParameters"
 import { computeNextConfigs } from "./nextConfigs"
 import { computeIndentation } from "./indentation"
 import { computeLocalMinima } from "./localMinima"
@@ -16,7 +16,7 @@ const recursivelyFindUnpopularityMetric = (submetricConfigs: Combination<Submetr
         progressMessage = "",
         localMinimum,
         recurse = true,
-        quiet = false,
+        debug = false,
     }: any = options
 
     const nextDepth = depth + 1
@@ -27,14 +27,14 @@ const recursivelyFindUnpopularityMetric = (submetricConfigs: Combination<Submetr
     const samples = computeSamples({ submetricConfigs, dynamicParameters })
 
     const sumsOfSquares: SumsOfSquares = []
-    let bestMetric = gatherSumsOfSquares(sumsOfSquares, samples, previousBestMetric, indentation, quiet)
+    let bestMetric = gatherSumsOfSquares(sumsOfSquares, samples, previousBestMetric, indentation, debug)
 
-    if (!quiet) console.log(`\n${indentation}local minima:`)
+    if (debug) console.log(`\n${indentation}local minima:`)
     const nextLocalMinima = computeLocalMinima(samples, sumsOfSquares)
     nextLocalMinima.forEach((nextLocalMinimum, index) => {
         const nextConfigs = computeNextConfigs(nextLocalMinimum.point, dynamicParameters, submetricConfigs)
         const nextProgressMessage = progressMessage + `${index}/${(nextLocalMinima.length)}@depth${nextDepth} `
-        if (!quiet) console.log(`${indentation}${nextProgressMessage}${JSON.stringify(nextLocalMinimum)}`)
+        if (debug) console.log(`${indentation}${nextProgressMessage}${JSON.stringify(nextLocalMinimum)}`)
 
         if (recurse && !deepEquals(localMinimum, nextLocalMinimum)) {
             bestMetric = recursivelyFindUnpopularityMetric(nextConfigs, {
@@ -42,7 +42,7 @@ const recursivelyFindUnpopularityMetric = (submetricConfigs: Combination<Submetr
                 bestMetric,
                 progressMessage: nextProgressMessage,
                 localMinimum: nextLocalMinimum,
-                quiet,
+                debug,
             })
         }
     })

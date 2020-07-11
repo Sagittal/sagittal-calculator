@@ -6,7 +6,7 @@ interface ComputeCommasOptions extends ComputeCommasFromFiveSlicedMonzoOptions {
     maximumFiveRoughSopfr: number,
     maximumFiveRoughCopfr: number,
     maximumPrimeLimit: Prime,
-    fiveSlicedMonzo?: Monzo,
+    fiveSlicedMonzo?: Monzo<5>,
     sortKey: string,
 }
 

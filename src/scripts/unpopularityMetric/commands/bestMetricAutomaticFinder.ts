@@ -6,12 +6,12 @@ import { computeInitialConfigs } from "../automator/initialConfigs"
 program
     .option("-l, --lower-bound-chunk-count <lowerBoundChunkCount>", "lower bound chunk count", parseInt)
     .option("-u, --upper-bound-chunk-count <upperBoundChunkCount>", "upper bound chunk count", parseInt)
-    .option("-i, --log-initial-configs", "log initial configs")
+    .option("-d, --debug", "debug")
     .parse(process.argv)
 
 const lowerBoundChunkCount = program.lowerBoundChunkCount || 1
 const upperBoundChunkCount = program.upperBoundChunkCount || 8
-const logInitialConfigs = !!program.logInitialConfigs
+const debug = !!program.debug
 
 for (let chunkCount = lowerBoundChunkCount; chunkCount < upperBoundChunkCount; chunkCount++) {
     const initialConfigs = computeInitialConfigs(chunkCount)
@@ -20,8 +20,8 @@ for (let chunkCount = lowerBoundChunkCount; chunkCount < upperBoundChunkCount; c
     let bestMetric = { sumOfSquares: Infinity }
     initialConfigs.forEach((initialConfig, index) => {
         try {
-            if (logInitialConfigs) console.log(JSON.stringify(initialConfig))
-            const bestMetricForConfig = recursivelyFindUnpopularityMetric(initialConfig, { quiet: true })
+            if (debug) console.log(JSON.stringify(initialConfig))
+            const bestMetricForConfig = recursivelyFindUnpopularityMetric(initialConfig, { debug })
 
             if (bestMetricForConfig.sumOfSquares < bestMetric.sumOfSquares) {
                 bestMetric = bestMetricForConfig
@@ -30,7 +30,7 @@ for (let chunkCount = lowerBoundChunkCount; chunkCount < upperBoundChunkCount; c
             // bad configs are still being computed... may not be a simple matter to not calculate them in the first place, so for now, just don't worry about them
         }
 
-        if (index > 0 && index % 100 === 0) console.log(`${index}/${initialConfigs.length} (${100 * index / initialConfigs.length}%)`[ "blue" ])
+        if (debug && index > 0 && index % 100 === 0) console.log(`${index}/${initialConfigs.length} (${100 * index / initialConfigs.length}%)`[ "blue" ])
     })
     console.log("best metric was", bestMetric)
 }

@@ -1,5 +1,5 @@
-import { ComputeParameterPointIndicesParameters, ParameterPoint } from "./types"
-import { DynamicParameter, Parameter } from "../types"
+import { ComputeParameterPointIndicesParameters, DynamicParameter, ParameterPoint } from "./types"
+import { Parameter } from "../../types"
 
 const computeParameterPointIndices = ({ dynamicParameters, submetricPoint, submetricIndex }: ComputeParameterPointIndicesParameters): number[] => {
     const parameterPointIndices: number[] = []

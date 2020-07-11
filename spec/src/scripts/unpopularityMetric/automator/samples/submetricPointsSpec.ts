@@ -1,5 +1,5 @@
-import { computeSubmetricPoints } from "../../../../../src/scripts/unpopularityMetric/samples/submetricPoints"
-import { Parameter } from "../../../../../src/scripts/unpopularityMetric/types"
+import { computeSubmetricPoints } from "../../../../../../src/scripts/unpopularityMetric/automator/samples/submetricPoints"
+import { Parameter } from "../../../../../../src/scripts/unpopularityMetric/types"
 
 describe("computeSubmetricPoints", () => {
     it("given this submetric's config (centers, ranges, and counts for each of its parameters) to compute each of its parameters' sample points, returns an array of all the possible combinations of those parameter sample points", () => {
