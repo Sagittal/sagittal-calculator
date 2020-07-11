@@ -1,7 +1,7 @@
 import { computeAntivotes } from "../antivotes/antivotes"
 import { presentRatio } from "../../../utilities/comma/present/ratio"
-import { Parameter, SubmetricType } from "../types"
-import { Ratio } from "../../../utilities/types"
+import { Parameter, Submetric, SubmetricType } from "../types"
+import { Combination, Ratio } from "../../../utilities/types"
 
 const submetrics =
     [
@@ -16,7 +16,8 @@ const submetrics =
             [ Parameter.SUBMETRIC_TYPE ]: SubmetricType.COAPFAR,
             [ Parameter.WEIGHT ]: 0.577,
         },
-    ]
+    ] as Combination<Submetric>
+
 const fiveRoughRatio: Ratio = [11, 7] as Ratio
 
 const antivotes = computeAntivotes(fiveRoughRatio, submetrics, { logSubmetricAntivotes: true })

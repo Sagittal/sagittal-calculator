@@ -2,27 +2,29 @@ import { computeLocalMinima } from "../../../../../src/scripts/unpopularityMetri
 import { SubmetricCombination } from "../../../../../src/scripts/unpopularityMetric/submetricCombinations/types"
 import { Point } from "../../../../../src/scripts/unpopularityMetric/automator/types"
 import { SumOfSquares, SumsOfSquares } from "../../../../../src/scripts/unpopularityMetric/sumOfSquares/types"
+import { Combination } from "../../../../../src/utilities/types"
+import { Submetric } from "../../../../../src/scripts/unpopularityMetric/types"
 
 describe("computeLocalMinima", () => {
     const submetricCombinations: SubmetricCombination[] = [
-        { point: [0, 0, 0] as Point, submetrics: [] },
-        { point: [0, 0, 1] as Point, submetrics: [] },
-        { point: [0, 0, 2] as Point, submetrics: [] },
-        { point: [0, 1, 0] as Point, submetrics: [] },
-        { point: [0, 1, 1] as Point, submetrics: [] },
-        { point: [0, 1, 2] as Point, submetrics: [] },
-        { point: [1, 0, 0] as Point, submetrics: [] },
-        { point: [1, 0, 1] as Point, submetrics: [] },
-        { point: [1, 0, 2] as Point, submetrics: [] },
-        { point: [1, 1, 0] as Point, submetrics: [] },
-        { point: [1, 1, 1] as Point, submetrics: [] },
-        { point: [1, 1, 2] as Point, submetrics: [] },
-        { point: [2, 0, 0] as Point, submetrics: [] },
-        { point: [2, 0, 1] as Point, submetrics: [] },
-        { point: [2, 0, 2] as Point, submetrics: [] },
-        { point: [2, 1, 0] as Point, submetrics: [] },
-        { point: [2, 1, 1] as Point, submetrics: [] },
-        { point: [2, 1, 2] as Point, submetrics: [] },
+        { point: [0, 0, 0] as Point, submetrics: [] as unknown as Combination<Submetric> },
+        { point: [0, 0, 1] as Point, submetrics: [] as unknown as Combination<Submetric> },
+        { point: [0, 0, 2] as Point, submetrics: [] as unknown as Combination<Submetric> },
+        { point: [0, 1, 0] as Point, submetrics: [] as unknown as Combination<Submetric> },
+        { point: [0, 1, 1] as Point, submetrics: [] as unknown as Combination<Submetric> },
+        { point: [0, 1, 2] as Point, submetrics: [] as unknown as Combination<Submetric> },
+        { point: [1, 0, 0] as Point, submetrics: [] as unknown as Combination<Submetric> },
+        { point: [1, 0, 1] as Point, submetrics: [] as unknown as Combination<Submetric> },
+        { point: [1, 0, 2] as Point, submetrics: [] as unknown as Combination<Submetric> },
+        { point: [1, 1, 0] as Point, submetrics: [] as unknown as Combination<Submetric> },
+        { point: [1, 1, 1] as Point, submetrics: [] as unknown as Combination<Submetric> },
+        { point: [1, 1, 2] as Point, submetrics: [] as unknown as Combination<Submetric> },
+        { point: [2, 0, 0] as Point, submetrics: [] as unknown as Combination<Submetric> },
+        { point: [2, 0, 1] as Point, submetrics: [] as unknown as Combination<Submetric> },
+        { point: [2, 0, 2] as Point, submetrics: [] as unknown as Combination<Submetric> },
+        { point: [2, 1, 0] as Point, submetrics: [] as unknown as Combination<Submetric> },
+        { point: [2, 1, 1] as Point, submetrics: [] as unknown as Combination<Submetric> },
+        { point: [2, 1, 2] as Point, submetrics: [] as unknown as Combination<Submetric> },
     ]
 
     it("returns an empty array if all the values are the same", () => {

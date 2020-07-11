@@ -1,10 +1,11 @@
 import { computeSubmetricCombinations } from "../../../../../src/scripts/unpopularityMetric/submetricCombinations/submetricCombinations"
 import { computeDynamicParameters } from "../../../../../src/scripts/unpopularityMetric/submetricCombinations/dynamicParameters"
-import { Parameter, SubmetricType } from "../../../../../src/scripts/unpopularityMetric/types"
+import { Parameter, SubmetricConfig, SubmetricType } from "../../../../../src/scripts/unpopularityMetric/types"
+import { Combination } from "../../../../../src/utilities/types"
 
 describe("submetricCombinations", () => {
     it("given a metric config, will return all combinations of submetrics to check", () => {
-        const metricConfig = [
+        const submetricConfigs = [
             {
                 [ Parameter.A ]: { center: 2, range: 2, count: 3 },
                 [ Parameter.K ]: { center: 0, range: 4, count: 2 },
@@ -14,10 +15,10 @@ describe("submetricCombinations", () => {
                 [ Parameter.A ]: { center: 1.5, range: 2, count: 2 },
                 [ Parameter.W ]: 3.3,
             },
-        ]
-        const dynamicParameters = computeDynamicParameters(metricConfig)
+        ] as Combination<SubmetricConfig>
+        const dynamicParameters = computeDynamicParameters(submetricConfigs)
 
-        const result = computeSubmetricCombinations({ metricConfig, dynamicParameters })
+        const result = computeSubmetricCombinations({ submetricConfigs: submetricConfigs, dynamicParameters })
 
         const expectedResult = [
             {
@@ -204,10 +205,10 @@ describe("submetricCombinations", () => {
                 [ Parameter.A ]: { center: 1, range: 2, count: 2 },
                 [ Parameter.K ]: 0,
             },
-        ]
+        ] as Combination<SubmetricConfig>
         const dynamicParameters = computeDynamicParameters(metricConfig)
 
-        const result = computeSubmetricCombinations({ metricConfig, dynamicParameters })
+        const result = computeSubmetricCombinations({ submetricConfigs: metricConfig, dynamicParameters })
 
         const expectedResult = [
             {

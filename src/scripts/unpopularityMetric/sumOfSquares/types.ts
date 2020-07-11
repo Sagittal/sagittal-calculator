@@ -19,7 +19,6 @@ interface RankedUnpopularity extends Unpopularity {
 }
 
 interface Popularity {
-    // index: number,
     fiveRoughRatio: Ratio,
     rank: PopularityRank,
     votes: Votes,

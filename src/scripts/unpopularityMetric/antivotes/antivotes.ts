@@ -1,9 +1,9 @@
 import { computeWeightedSubmetricAntivotes } from "./weightedSubmetricAntivotes"
 import { Parameter, Submetric, SubmetricType } from "../types"
-import { Ratio } from "../../../utilities/types"
+import { Combination, Ratio } from "../../../utilities/types"
 import { Antivotes } from "../sumOfSquares/types"
 
-const computeAntivotes = (fiveRoughRatio: Ratio, submetrics: Submetric[], { logSubmetricAntivotes = false } = {}): Antivotes => { // todo: should this now just be quiet true/false too?
+const computeAntivotes = (fiveRoughRatio: Ratio, submetrics: Combination<Submetric>, { logSubmetricAntivotes = false } = {}): Antivotes => { // todo: should this now just be quiet true/false too?
     return submetrics.reduce(
         (totalAntivotes: Antivotes, submetric: Submetric): Antivotes => {
             const weightedSubmetricAntivotes: Antivotes = computeWeightedSubmetricAntivotes(fiveRoughRatio, submetric)

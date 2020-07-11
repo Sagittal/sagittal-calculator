@@ -9,11 +9,11 @@ import {
     SUBMETRIC_CHUNKS,
 } from "./constants"
 import { ChunkCount, ParameterChunk, SubmetricChunk } from "./types"
-import { MetricConfig, SubmetricConfig } from "../types"
+import { SubmetricConfig } from "../types"
 import { Combination, Combinations } from "../../../utilities/types"
 
-const computeInitialConfigs = (chunkCount: ChunkCount, { quiet = false } = {}): MetricConfig[] => {
-    let initialConfigs: MetricConfig[] = []
+const computeInitialConfigs = (chunkCount: ChunkCount, { quiet = false } = {}): Combinations<SubmetricConfig> => {
+    let initialConfigs: Combinations<SubmetricConfig> = [] as unknown as Combinations<SubmetricConfig>
 
     if (!quiet) console.log(`calculating the initial configs: phase 1 of ${chunkCount}`)
     const submetricChunkCombinations: Combinations<SubmetricChunk> = computeCombinations(SUBMETRIC_CHUNKS, chunkCount)
@@ -41,14 +41,14 @@ const computeInitialConfigs = (chunkCount: ChunkCount, { quiet = false } = {}): 
 
         submetricChunkCombinations.forEach((submetricChunkCombination: Combination<SubmetricChunk>, sIndex) => {
             parameterChunkCombinations.forEach((parameterChunkCombination: Combination<ParameterChunk>, pIndex) => {
-                const baseInitialConfig: SubmetricConfig[] = computeDeepClone(submetricChunkCombination)
+                const baseInitialConfig: Combination<SubmetricConfig> = computeDeepClone(submetricChunkCombination)
 
                 const parameterChunkCombinationDistributions = computeDistributions(parameterChunkCombination, submetricChunkCombination.length)
 
                 parameterChunkCombinationDistributions.forEach(parameterChunkCombinationDistribution => {
-                    const initialConfig = baseInitialConfig.map((baseInitialSubmetricConfig, index) => {
+                    const initialConfig: Combination<SubmetricConfig> = baseInitialConfig.map((baseInitialSubmetricConfig, index) => {
                         return merge(baseInitialSubmetricConfig, ...parameterChunkCombinationDistribution[ index ])
-                    })
+                    }) as Combination<SubmetricConfig>
                     initialConfigs.push(initialConfig)
                 })
 

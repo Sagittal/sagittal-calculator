@@ -6,8 +6,9 @@ import { checkSubmetricsForIssues } from "./check"
 import { CUT_OFF_POPULARITY, ZIPF_EXPONENT } from "./constants"
 import { Submetric } from "../types"
 import { Popularity, SumOfSquares } from "./types"
+import { Combination } from "../../../utilities/types"
 
-const computeSumOfSquaresForSubmetrics = (submetrics: Submetric[], { logUnpopularities = false } = {}): SumOfSquares => {
+const computeSumOfSquaresForSubmetrics = (submetrics: Combination<Submetric>, { logUnpopularities = false } = {}): SumOfSquares => {
     checkSubmetricsForIssues(submetrics)
 
     const realPopularities: Popularity[] = COMMA_POPULARITIES.slice(0, CUT_OFF_POPULARITY)

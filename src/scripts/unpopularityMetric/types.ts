@@ -91,15 +91,12 @@ type ParameterConfigs = { // todo: uhhhh so this is exactly the same as a Submet
     [key in Parameter]?: ParameterType | ParameterConfig
 }
 
-type MetricConfig = SubmetricConfig[]
-
 export {
     Submetric,
     SubmetricType,
     SubmetricOperation,
     Parameter,
     SubmetricProperties,
-    MetricConfig,
     SubmetricConfig,
     ParameterConfig,
     DynamicParameter,

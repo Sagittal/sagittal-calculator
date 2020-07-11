@@ -1,5 +1,6 @@
 import { computeSumOfSquaresForSubmetrics } from "../sumOfSquares/sumOfSquaresForSubmetrics"
-import { Parameter, SubmetricType } from "../types"
+import { Parameter, Submetric, SubmetricType } from "../types"
+import { Combination } from "../../../utilities/types"
 
 const submetrics =
     [
@@ -16,7 +17,7 @@ const submetrics =
             [ Parameter.WEIGHT ]: 0.577,
             [ Parameter.NUMERATOR_IS_NUMINATOR ]: false,
         },
-    ]
+    ] as Combination<Submetric>
 
 const sumOfSquares = computeSumOfSquaresForSubmetrics(submetrics, { logUnpopularities: true })
 

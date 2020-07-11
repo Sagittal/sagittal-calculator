@@ -1,7 +1,8 @@
 import { Parameter, Submetric } from "../types"
 import { isNumber } from "../../../utilities/typeGuards"
+import { Combination } from "../../../utilities/types"
 
-const checkSubmetricsForIssues = (submetrics: Submetric[]) => {
+const checkSubmetricsForIssues = (submetrics: Combination<Submetric>) => {
     submetrics.forEach((submetric: Submetric) => {
         const {
             [ Parameter.A ]: a,

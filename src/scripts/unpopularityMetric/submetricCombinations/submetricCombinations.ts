@@ -1,10 +1,11 @@
 import { combineSubmetricsPoints } from "./combineSubmetricsPoints"
 import { computeSubmetricPoints } from "./submetricPoints"
-import { MetricConfig, DynamicParameter } from "../types"
+import { DynamicParameter, SubmetricConfig } from "../types"
 import { SubmetricCombination } from "./types"
+import { Combination } from "../../../utilities/types"
 
-const computeSubmetricCombinations = ({ metricConfig, dynamicParameters }: { metricConfig: MetricConfig, dynamicParameters: DynamicParameter[] }): SubmetricCombination[] => {
-    const submetricsPoints = metricConfig.map(computeSubmetricPoints)
+const computeSubmetricCombinations = ({ submetricConfigs, dynamicParameters }: { submetricConfigs: Combination<SubmetricConfig>, dynamicParameters: DynamicParameter[] }): SubmetricCombination[] => {
+    const submetricsPoints = submetricConfigs.map(computeSubmetricPoints)
 
     return combineSubmetricsPoints({ submetricsPoints, dynamicParameters })
 }

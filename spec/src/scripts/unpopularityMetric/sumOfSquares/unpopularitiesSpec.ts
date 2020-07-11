@@ -6,7 +6,7 @@ import {
     PopularityRank,
     Votes,
 } from "../../../../../src/scripts/unpopularityMetric/sumOfSquares/types"
-import { Ratio } from "../../../../../src/utilities/types"
+import { Combination, Ratio } from "../../../../../src/utilities/types"
 
 describe("computeUnpopularities", () => {
     it("given a list of real popularities and submetric combinations, returns our estimated unpopularities, which have antivotes instead of votes", () => {
@@ -15,7 +15,7 @@ describe("computeUnpopularities", () => {
             { rank: 8 as PopularityRank, fiveRoughRatio: [125, 1] as Ratio, votes: 492 as Votes },
             { rank: 39 as PopularityRank, fiveRoughRatio: [55, 49] as Ratio, votes: 51 as Votes },
         ]
-        const submetrics: Submetric[] = [
+        const submetrics: Combination<Submetric> = [
             {
                 [ Parameter.SUBMETRIC_TYPE ]: SubmetricType.SOAPFAR,
                 [ Parameter.WEIGHT ]: 0,
@@ -24,7 +24,7 @@ describe("computeUnpopularities", () => {
                 [ Parameter.SUBMETRIC_TYPE ]: SubmetricType.COAPF,
                 [ Parameter.WEIGHT ]: 1,
             },
-        ]
+        ] as Combination<Submetric>
 
         const result = computeUnpopularities(realPopularities, submetrics)
 

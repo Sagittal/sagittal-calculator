@@ -1,10 +1,11 @@
 import { DynamicParameter, Submetric, Parameter, SubmetricType } from "../types"
 import { Point } from "../automator/types"
+import { Combination } from "../../../utilities/types"
 
 type ParameterPoint = number & { _ParameterPointBrand: "ParameterPoint" }
 
 type SubmetricCombination = {
-    submetrics: Submetric[],
+    submetrics: Combination<Submetric>,
     point: Point,
 }
 

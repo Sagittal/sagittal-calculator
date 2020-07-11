@@ -1,7 +1,7 @@
 import { computeAntivotes } from "../../../../../src/scripts/unpopularityMetric/antivotes/antivotes"
 import { computeSubmetricAntivotes } from "../../../../../src/scripts/unpopularityMetric/antivotes/submetricAntivotes"
-import { Parameter, SubmetricType } from "../../../../../src/scripts/unpopularityMetric/types"
-import { Ratio } from "../../../../../src/utilities/types"
+import { Parameter, Submetric, SubmetricType } from "../../../../../src/scripts/unpopularityMetric/types"
+import { Combination, Ratio } from "../../../../../src/utilities/types"
 import { Monzo } from "../../../../../src/utilities/comma/types"
 import { Antivotes } from "../../../../../src/scripts/unpopularityMetric/sumOfSquares/types"
 
@@ -9,11 +9,11 @@ describe("computeAntivotes", () => {
     it("when k = 1 (default), and two 5-rough ratios have the same sopfr, but one has its primes all lopsided on one side, they still get ranked the same", () => {
         const balancedFiveRoughRatio: Ratio = [11, 7] as Ratio
         const lopsidedFiveRoughRatio = [77, 1] as Ratio
-        const submetrics = [
+        const submetrics: Combination<Submetric> = [
             {
                 [ Parameter.K ]: 1,
             },
-        ]
+        ] as Combination<Submetric>
 
         const balancedResult = computeAntivotes(balancedFiveRoughRatio, submetrics)
         const lopsidedResult = computeAntivotes(lopsidedFiveRoughRatio, submetrics)
@@ -28,7 +28,7 @@ describe("computeAntivotes", () => {
             {
                 [ Parameter.K ]: 0.9,
             },
-        ]
+        ] as Combination<Submetric>
 
         const balancedResult = computeAntivotes(balancedFiveRoughRatio, submetrics)
         const lopsidedResult = computeAntivotes(lopsidedFiveRoughRatio, submetrics)
@@ -46,7 +46,7 @@ describe("computeAntivotes", () => {
                 [ Parameter.SUBMETRIC_TYPE ]: SubmetricType.SOAPF,
                 [ Parameter.WEIGHT ]: 0.3,
             },
-        ]
+        ] as Combination<Submetric>
 
         const result = computeAntivotes(fiveRoughRatio, submetrics)
 
@@ -69,7 +69,7 @@ describe("computeAntivotes", () => {
                 // [Parameter.V]: -0.8571428571428572,
                 // [Parameter.T]: -1.6142857142857143,
             },
-        ]
+        ] as Combination<Submetric>
         const fiveRoughRatio = [5, 1] as Ratio
 
         const result = computeAntivotes(fiveRoughRatio, submetrics)

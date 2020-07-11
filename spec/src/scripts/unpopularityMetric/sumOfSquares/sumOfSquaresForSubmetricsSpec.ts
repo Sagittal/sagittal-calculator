@@ -1,6 +1,7 @@
 import { computeSumOfSquaresForSubmetrics } from "../../../../../src/scripts/unpopularityMetric/sumOfSquares/sumOfSquaresForSubmetrics"
-import { Parameter, SubmetricType } from "../../../../../src/scripts/unpopularityMetric/types"
+import { Parameter, Submetric, SubmetricType } from "../../../../../src/scripts/unpopularityMetric/types"
 import { SumOfSquares } from "../../../../../src/scripts/unpopularityMetric/sumOfSquares/types"
+import { Combination } from "../../../../../src/utilities/types"
 
 describe("computeSumOfSquaresForSubmetrics", () => {
     it("returns the sum-of-squares for a given submetric combination", () => {
@@ -18,7 +19,7 @@ describe("computeSumOfSquaresForSubmetrics", () => {
                 [ Parameter.WEIGHT ]: 0.577,
                 [ Parameter.NUMERATOR_IS_NUMINATOR ]: false,
             },
-        ]
+        ] as Combination<Submetric>
 
         const result = computeSumOfSquaresForSubmetrics(submetrics)
 
