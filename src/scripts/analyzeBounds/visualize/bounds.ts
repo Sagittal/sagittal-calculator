@@ -23,8 +23,8 @@ const visualizeBounds = (boundsAnalysis: AnalyzedBound[]) => {
     elements = elements.concat(visualizeLevels())
     elements = elements.concat(visualizeLevelBounds())
 
-    boundsAnalysis.forEach(boundAnalysis => {
-        elements = elements.concat(visualizeEvents(boundAnalysis.bestPossibleHistory.events))
+    boundsAnalysis.forEach(analyzedBound => {
+        elements = elements.concat(visualizeEvents(analyzedBound.bestPossibleHistory.events))
     })
 
     elements = elements.concat(visualizeSizeCategoryBounds())

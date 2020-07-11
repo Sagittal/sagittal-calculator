@@ -1,10 +1,10 @@
-import { presentBoundAnalysis } from "../../../../../src/scripts/analyzeBounds/present/boundAnalysis"
+import { presentBound } from "../../../../../src/scripts/analyzeBounds/present/bound"
 import { Bound, BoundId, Level } from "../../../../../src/notations/ji/types"
 import { AnalysisMode } from "../../../../../src/scripts/analyzeBounds/present/types"
 import { AnalyzedBound, AnalyzedEvent, AnalyzedHistory, EventRank } from "../../../../../src/scripts/analyzeBounds/types"
 import { Cents } from "../../../../../src/utilities/types"
 
-describe("presentBoundAnalysis", () => {
+describe("presentAnalyzedBound", () => {
     let mode: AnalysisMode
     describe("when formatting a summarized version to be presented in a list with all the other bounds", () => {
         beforeEach(() => {
@@ -16,7 +16,7 @@ describe("presentBoundAnalysis", () => {
                 position: 5.44763529181809 as Cents,
                 id: 10 as BoundId,
             } as Bound
-            const boundAnalysis: AnalyzedBound = { //todo: names
+            const analyzedBound: AnalyzedBound = {
                 bestPossibleHistory: {
                     events: [
                         { level: Level.ULTRA, rank: 0 as EventRank, distance: 0.000 as Cents, inaDistance: 0.000 },
@@ -31,7 +31,7 @@ describe("presentBoundAnalysis", () => {
                 bestPossibleHistoryInaDistance: 0.839,
             } as AnalyzedBound
 
-            const result = presentBoundAnalysis(boundAnalysis, { bound, mode })
+            const result = presentBound(analyzedBound, { bound, mode })
 
             expect(result).toEqual("10\t 10\t 11\t   ,,|( \t    ,|( \t \t \t0\t0\t1\t \t \t  0.333\t  0.022\t  0.355\t \t \t  0.682\t  0.157\t  0.839\t  5.448\t  5.485\t  0.039"[ "cyan" ])
         })
@@ -47,11 +47,11 @@ describe("presentBoundAnalysis", () => {
                 position: 5.44763529181809 as Cents,
                 id: 10 as BoundId,
             } as Bound
-            const boundAnalysis: AnalyzedBound = {
+            const analyzedBound: AnalyzedBound = {
                 bestRank: 2 as EventRank,
             } as AnalyzedBound
 
-            const result = presentBoundAnalysis(boundAnalysis, { bound, mode })
+            const result = presentBound(analyzedBound, { bound, mode })
 
             const expectedResult = [
                 `{`,

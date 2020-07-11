@@ -15,7 +15,7 @@ enum AnalysisMode {
     SUMMARY = "SUMMARY",
 }
 
-interface PresentBoundAnalysisParameters {
+interface PresentBoundParameters {
     mode?: AnalysisMode,
     bound: Bound
 }
@@ -24,7 +24,7 @@ type ColorMethods = "green" | "blue" | "cyan"
 
 export {
     BoundIdentifiers,
-    PresentBoundAnalysisParameters,
+    PresentBoundParameters,
     AnalysisMode,
     ColorMethods,
 }

@@ -4,7 +4,7 @@ import { BOUNDS } from "../../../notations/ji/bounds"
 import { computeHistories } from "../plot/histories"
 import { analyzeBound } from "../bound"
 import { BOUNDS_ANALYSIS_HEADER_ROW } from "../present/headerRow"
-import { presentBoundAnalysis } from "../present/boundAnalysis"
+import { presentBound } from "../present/bound"
 import { presentRankAnalyses } from "../present/rankAnalyses"
 import { presentLevelAnalyses } from "../present/levelAnalyses"
 import { visualizeBounds } from "../visualize/bounds"
@@ -24,11 +24,11 @@ let textOutput = BOUNDS_ANALYSIS_HEADER_ROW
 const boundsAnalysis: AnalyzedBound[] = []
 BOUNDS.map((bound, boundId) => {
     const histories = computeHistories(bound)
-    const boundAnalysis = analyzeBound(histories, bound)
+    const analyzedBound = analyzeBound(histories, bound)
 
-    textOutput = textOutput.concat(presentBoundAnalysis(boundAnalysis, { bound, mode: AnalysisMode.SUMMARY }) + "\n")
+    textOutput = textOutput.concat(presentBound(analyzedBound, { bound, mode: AnalysisMode.SUMMARY }) + "\n")
 
-    boundsAnalysis.push(boundAnalysis)
+    boundsAnalysis.push(analyzedBound)
 })
 
 textOutput = textOutput.concat(presentLevelAnalyses())

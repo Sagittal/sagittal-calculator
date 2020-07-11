@@ -3,7 +3,7 @@ import { program } from "commander"
 import { BOUNDS } from "../../../notations/ji/bounds"
 import { computeHistories } from "../plot/histories"
 import { analyzeBound } from "../bound"
-import { presentBoundAnalysis } from "../present/boundAnalysis"
+import { presentBound } from "../present/bound"
 import { AnalysisMode } from "../present/types"
 
 program.parse(process.argv)
@@ -14,9 +14,9 @@ const bound = boundId && BOUNDS.find(bound => bound.id === parseInt(boundId))
 
 if (bound) {
     const histories = computeHistories(bound)
-    const boundAnalysis = analyzeBound(histories, bound)
+    const analyzedBound = analyzeBound(histories, bound)
 
-    console.log(presentBoundAnalysis(boundAnalysis, { bound, mode: AnalysisMode.DETAILS }))
+    console.log(presentBound(analyzedBound, { bound, mode: AnalysisMode.DETAILS }))
 } else {
     throw new Error(`Could not find bound with ID ${boundId}`)
 }

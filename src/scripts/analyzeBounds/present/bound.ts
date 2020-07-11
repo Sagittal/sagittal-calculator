@@ -7,11 +7,11 @@ import { extractLevelRanks } from "./levelRanks"
 import { extractLevelDistances } from "./levelDistances"
 import { extractLevelInaDistances } from "./levelInaDistances"
 import { extractBoundIdentifiers } from "./boundIdentifiers"
-import { AnalysisMode, PresentBoundAnalysisParameters } from "./types"
+import { AnalysisMode, PresentBoundParameters } from "./types"
 import { AnalyzedBound } from "../types"
 
-const presentBoundAnalysis = (boundAnalysis: AnalyzedBound, { bound, mode = AnalysisMode.DETAILS }: PresentBoundAnalysisParameters) => {
-    let presentedBoundAnalysis
+const presentBound = (analyzedBound: AnalyzedBound, { bound, mode = AnalysisMode.DETAILS }: PresentBoundParameters) => {
+    let presentedBound
     const boundIdentifiers = extractBoundIdentifiers(bound)
 
     if (mode === AnalysisMode.SUMMARY && bound) {
@@ -29,7 +29,7 @@ const presentBoundAnalysis = (boundAnalysis: AnalyzedBound, { bound, mode = Anal
             initialPositionTinaDifference,
             bestPossibleHistoryDistance,
             bestPossibleHistoryInaDistance,
-        } = boundAnalysis
+        } = analyzedBound
 
         const [
             mediumLevelRank,
@@ -53,7 +53,7 @@ const presentBoundAnalysis = (boundAnalysis: AnalyzedBound, { bound, mode = Anal
         ] = extractLevelInaDistances(bestPossibleHistory)
 
         const color = COLORS[ bestRank ]
-        presentedBoundAnalysis = [
+        presentedBound = [
             bound.id,
             presentMina(lesserBoundedMina),
             presentMina(greaterBoundedMina),
@@ -79,19 +79,19 @@ const presentBoundAnalysis = (boundAnalysis: AnalyzedBound, { bound, mode = Anal
             alignFormattedNumber(presentNumber(initialPositionTinaDifference)),
         ].join("\t")
 
-        presentedBoundAnalysis = presentedBoundAnalysis[ color ]
+        presentedBound = presentedBound[ color ]
     } else if (mode === "DETAILS") {
-        presentedBoundAnalysis =
+        presentedBound =
             JSON.stringify(boundIdentifiers, null, 4)
                 .replace(/\\\\/g, "\\") +
             "\n" +
-            JSON.stringify(boundAnalysis, null, 4)
+            JSON.stringify(analyzedBound, null, 4)
                 .replace(/\\\\/g, "\\")
     }
 
-    return presentedBoundAnalysis
+    return presentedBound
 }
 
 export {
-    presentBoundAnalysis,
+    presentBound,
 }

@@ -17,6 +17,7 @@ enum SubmetricOperation {
     MAX = "max"
 }
 
+// todo: Include x v t still as capabilities but not in generared automatically configs
 enum Parameter {
     SUBMETRIC_TYPE = "submetricType",                // submetric type, which will be used to look up its properties (how it works) when computing antivotes
     WEIGHT = "weight",                               // submetric coefficient
