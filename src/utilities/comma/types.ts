@@ -6,6 +6,8 @@ type CommaName = string & { _CommaNameBrand: "CommaName" }
 type PrimeExponent = number & { _TermBrand: "PrimeExponent" }
 
 type Monzo = PrimeExponent[]
+// todo: Monzo<5,11>
+// BestMetric<ChunkCount>
 
 interface Comma {
     cents: Cents,
