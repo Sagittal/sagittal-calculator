@@ -18,7 +18,6 @@ enum SubmetricOperation {
     MAX = "max"
 }
 
-// todo: Include x v t still as capabilities but not in generared automatically configs
 enum Parameter {
     SUBMETRIC_TYPE = "submetricType",                // submetric type, which will be used to look up its properties (how it works) when computing antivotes
     WEIGHT = "weight",                               // submetric coefficient
@@ -34,7 +33,7 @@ enum Parameter {
     A_IS_BASE = "aIsBase",                           // use the prime coefficient instead as a base
     A_IS_EXPONENT = "aIsExponent",                   // use the prime coefficient instead as an exponent
     W = "w",                                         // prime constant (applied after applying exponent or base)
-    // X = "x",                                         // prime constant (applied before applying exponent or base) // todo = all these commented out ones lead to bad. this one froze = [{"submetricType" ="soapf"},{"submetricType" ="soapfar","x" ={"center" =0,"range" =6,"resolution" =2},"a" ={"center" =2,"range" =4,"resolution" =2}}]
+    // X = "x",                                         // prime constant (applied before applying exponent or base)
     Y = "y",                                         // prime exponent exponent
     // V = "v",                                         // prime exponent constant (applied before applying exponent, for non-zero terms)
     // T = "t",                                         // prime exponent constant (applied after applying exponent)

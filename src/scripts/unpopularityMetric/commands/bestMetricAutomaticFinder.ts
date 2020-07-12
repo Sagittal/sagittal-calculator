@@ -1,7 +1,7 @@
 import "colors"
 import { program } from "commander"
 import { recursivelyFindUnpopularityMetric } from "../automator/recursivelyFind"
-import { computeInitialConfigs } from "../automator/initialConfigs"
+import { computeConfigsForChunkCount } from "../automator/configsForChunkCount"
 import { Chunk } from "../automator/types"
 import { Count } from "../../../utilities/types"
 
@@ -16,14 +16,14 @@ const upperBoundChunkCount = program.upperBoundChunkCount || 8
 const debug = !!program.debug
 
 for (let chunkCount = lowerBoundChunkCount; chunkCount < upperBoundChunkCount; chunkCount = chunkCount + 1 as Count<Chunk>) {
-    const initialConfigs = computeInitialConfigs(chunkCount) // todo this could have a better name, like compute configs for chunk count
-    console.log(`investigating chunk count ${chunkCount} which has ${initialConfigs.length} configs to check`)
+    const configsForChunkCount = computeConfigsForChunkCount(chunkCount)
+    console.log(`investigating chunk count ${chunkCount} which has ${configsForChunkCount.length} configs to check`)
 
     let bestMetric = { sumOfSquares: Infinity }
-    initialConfigs.forEach((initialConfig, index) => {
+    configsForChunkCount.forEach((configForChunkCount, index) => {
         try {
-            if (debug) console.log(JSON.stringify(initialConfig))
-            const bestMetricForConfig = recursivelyFindUnpopularityMetric(initialConfig, { debug })
+            if (debug) console.log(JSON.stringify(configForChunkCount))
+            const bestMetricForConfig = recursivelyFindUnpopularityMetric(configForChunkCount, { debug })
 
             if (bestMetricForConfig.sumOfSquares < bestMetric.sumOfSquares) {
                 bestMetric = bestMetricForConfig
@@ -32,7 +32,7 @@ for (let chunkCount = lowerBoundChunkCount; chunkCount < upperBoundChunkCount; c
             // bad configs are still being computed... may not be a simple matter to not calculate them in the first place, so for now, just don't worry about them
         }
 
-        if (debug && index > 0 && index % 100 === 0) console.log(`${index}/${initialConfigs.length} (${100 * index / initialConfigs.length}%)`[ "blue" ])
+        if (debug && index > 0 && index % 100 === 0) console.log(`${index}/${configsForChunkCount.length} (${100 * index / configsForChunkCount.length}%)`[ "blue" ])
     })
     console.log("best metric was", bestMetric)
 }

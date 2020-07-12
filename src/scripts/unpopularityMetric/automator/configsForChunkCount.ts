@@ -12,13 +12,13 @@ import { Chunk, ParameterChunk, SubmetricChunk } from "./types"
 import { SubmetricConfig } from "../types"
 import { Combination, Combinations, Count } from "../../../utilities/types"
 
-const computeInitialConfigs = (chunkCount: Count<Chunk>, { debug = false } = {}): Combinations<SubmetricConfig> => {
-    let initialConfigs: Combinations<SubmetricConfig> = [] as unknown as Combinations<SubmetricConfig>
+const computeConfigsForChunkCount = (chunkCount: Count<Chunk>, { debug = false } = {}): Combinations<SubmetricConfig> => {
+    let configsForChunkCount: Combinations<SubmetricConfig> = [] as unknown as Combinations<SubmetricConfig>
 
-    if (debug) console.log(`calculating the initial configs: phase 1 of ${chunkCount}`)
+    if (debug) console.log(`calculating the configs for this chunk count: phase 1 of ${chunkCount}`)
     const submetricChunkCombinations: Combinations<SubmetricChunk> = computeCombinations(SUBMETRIC_CHUNKS, chunkCount)
     submetricChunkCombinations.forEach((submetricChunkCombination: Combination<SubmetricChunk>) => {
-        initialConfigs.push(submetricChunkCombination)
+        configsForChunkCount.push(submetricChunkCombination)
     })
 
     let chunkCountForSubmetrics: Count<Chunk> = chunkCount
@@ -26,7 +26,7 @@ const computeInitialConfigs = (chunkCount: Count<Chunk>, { debug = false } = {})
         chunkCountForSubmetrics = chunkCountForSubmetrics - 1 as Count<Chunk>
         const chunkCountForParameters: Count<ParameterChunk> = chunkCount - chunkCountForSubmetrics as Count<ParameterChunk>
 
-        if (debug) console.log(`calculating the initial configs: phase ${chunkCountForParameters + 1} of ${chunkCount} (give lead time for combinations calculation)`)
+        if (debug) console.log(`calculating the configs for this chunk count: phase ${chunkCountForParameters + 1} of ${chunkCount} (give lead time for combinations calculation)`)
 
         SUBMETRIC_CHUNK_COMBINATIONS[ chunkCountForSubmetrics ] = SUBMETRIC_CHUNK_COMBINATIONS[ chunkCountForSubmetrics ] || computeCombinations(SUBMETRIC_CHUNKS, chunkCountForSubmetrics, { withRepeatedElements: true })
         const submetricChunkCombinations: Combinations<SubmetricChunk> = SUBMETRIC_CHUNK_COMBINATIONS[ chunkCountForSubmetrics ]
@@ -47,7 +47,7 @@ const computeInitialConfigs = (chunkCount: Count<Chunk>, { debug = false } = {})
                     const initialConfig: Combination<SubmetricConfig> = baseInitialConfig.map((baseInitialSubmetricConfig, index) => {
                         return merge(baseInitialSubmetricConfig, ...parameterChunkCombinationDistribution[ index ]) as SubmetricConfig
                     }) as Combination<SubmetricConfig> // todo: although maybe it makes more sense for combination to be used in a more strict setting, so that you don't have to cast (except inside its method)
-                    initialConfigs.push(initialConfig)
+                    configsForChunkCount.push(initialConfig)
                 })
 
                 const index = sIndex * pTotal + pIndex
@@ -58,9 +58,9 @@ const computeInitialConfigs = (chunkCount: Count<Chunk>, { debug = false } = {})
         })
     }
 
-    return initialConfigs
+    return configsForChunkCount
 }
 
 export {
-    computeInitialConfigs,
+    computeConfigsForChunkCount,
 }
