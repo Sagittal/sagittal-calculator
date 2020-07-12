@@ -46,7 +46,7 @@ const computeConfigsForChunkCount = (chunkCount: Count<Chunk>, { debug = false }
                 parameterChunkCombinationDistributions.forEach(parameterChunkCombinationDistribution => {
                     const initialConfig: Combination<SubmetricConfig> = baseInitialConfig.map((baseInitialSubmetricConfig, index) => {
                         return merge(baseInitialSubmetricConfig, ...parameterChunkCombinationDistribution[ index ]) as SubmetricConfig
-                    }) as Combination<SubmetricConfig> // todo: although maybe it makes more sense for combination to be used in a more strict setting, so that you don't have to cast (except inside its method)
+                    }) as Combination<SubmetricConfig>
                     configsForChunkCount.push(initialConfig)
                 })
 

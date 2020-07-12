@@ -1,50 +1,49 @@
-import { combineSubmetricsPoints } from "../../../../../../src/scripts/unpopularityMetric/automator/samples/combineSubmetricsPoints"
+import { combineSubmetricsPossibilitiesIntoSamples } from "../../../../../../src/scripts/unpopularityMetric/automator/samples/combineSubmetricsPossibilitiesIntoSamples"
 import { Parameter, Submetric, SubmetricType } from "../../../../../../src/scripts/unpopularityMetric/types"
 import {
     DynamicParameter,
     DynamicParameterValue,
     ParameterUnit,
-    SubmetricValue,
 } from "../../../../../../src/scripts/unpopularityMetric/automator/samples/types"
-import { Index } from "../../../../../../src/utilities/types"
+import { Combination, Index } from "../../../../../../src/utilities/types"
 
-describe("combineSubmetricsPoints", () => {
-    it("takes the list of possible points for each submetric individually, and returns a list of every possible combination of them, along with its point, which is then called a 'submetric combination'", () => {
-        const submetricOnePointOne: SubmetricValue = {
+describe("combineSubmetricsPossibilitiesIntoSamples", () => {
+    it("takes the list of possible values for each submetric individually, and returns a list of every possible combination of them, along with its corresponding sample point, which is then called a Sample", () => {
+        const submetricOnePointOne: Submetric = {
             [ Parameter.A ]: 0.5 as DynamicParameterValue,
             [ Parameter.Y ]: 1.5 as DynamicParameterValue,
             [ Parameter.SUBMETRIC_TYPE ]: SubmetricType.SOAPFAR,
         }
-        const submetricOnePointTwo: SubmetricValue = {
+        const submetricOnePointTwo: Submetric = {
             [ Parameter.A ]: 0.5 as DynamicParameterValue,
             [ Parameter.Y ]: 1.2 as DynamicParameterValue,
             [ Parameter.SUBMETRIC_TYPE ]: SubmetricType.SOAPFAR,
         }
-        const submetricOnePointThree: SubmetricValue = {
+        const submetricOnePointThree: Submetric = {
             [ Parameter.A ]: 0.5 as DynamicParameterValue,
             [ Parameter.Y ]: 0.9 as DynamicParameterValue,
             [ Parameter.SUBMETRIC_TYPE ]: SubmetricType.SOAPFAR,
         }
-        const submetricTwoPointOne: SubmetricValue = {
+        const submetricTwoPointOne: Submetric = {
             [ Parameter.Y ]: 0.9 as DynamicParameterValue,
             [ Parameter.A ]: 0.7 as DynamicParameterValue,
         }
-        const submetricTwoPointTwo: SubmetricValue = {
+        const submetricTwoPointTwo: Submetric = {
             [ Parameter.Y ]: 1.1 as DynamicParameterValue,
             [ Parameter.A ]: 0.7 as DynamicParameterValue,
         }
-        const submetricTwoPointThree: SubmetricValue = {
+        const submetricTwoPointThree: Submetric = {
             [ Parameter.Y ]: 0.9 as DynamicParameterValue,
             [ Parameter.A ]: 0.6 as DynamicParameterValue,
         }
-        const submetricTwoPointFour: SubmetricValue = {
+        const submetricTwoPointFour: Submetric = {
             [ Parameter.Y ]: 1.1 as DynamicParameterValue,
             [ Parameter.A ]: 0.6 as DynamicParameterValue,
         }
 
-        const submetricsPoints: SubmetricValue[][] = [
-            [submetricOnePointOne, submetricOnePointTwo, submetricOnePointThree],
-            [submetricTwoPointOne, submetricTwoPointTwo, submetricTwoPointThree, submetricTwoPointFour],
+        const submetricsPossibilities: Combination<Submetric>[] = [
+            [submetricOnePointOne, submetricOnePointTwo, submetricOnePointThree] as Combination<Submetric>,
+            [submetricTwoPointOne, submetricTwoPointTwo, submetricTwoPointThree, submetricTwoPointFour] as Combination<Submetric>,
         ]
         const dynamicParameters: DynamicParameter[] = [
             {
@@ -67,7 +66,7 @@ describe("combineSubmetricsPoints", () => {
             },
         ]
 
-        const result = combineSubmetricsPoints({ submetricsPoints, dynamicParameters })
+        const result = combineSubmetricsPossibilitiesIntoSamples({ submetricsPossibilities, dynamicParameters })
 
         const expectedResult = [                                                                 // by submetric    // by submetric & parameter // by dynamic parameter
             { submetrics: [submetricOnePointOne, submetricTwoPointOne], point: [0, 0, 0] },      // [0, 0]          // [ [0, 0, 0], [0, 0] ]    // [ 0, 0, 0 ]

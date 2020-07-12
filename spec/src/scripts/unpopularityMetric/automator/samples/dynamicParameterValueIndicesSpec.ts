@@ -1,18 +1,17 @@
-import { computeParameterValueIndices } from "../../../../../../src/scripts/unpopularityMetric/automator/samples/parameterValueIndices"
+import { computeDynamicParameterValueIndices } from "../../../../../../src/scripts/unpopularityMetric/automator/samples/dynamicParameterValueIndices"
 import { Parameter, Submetric } from "../../../../../../src/scripts/unpopularityMetric/types"
 import {
     DynamicParameter,
     DynamicParameterValue,
     ParameterUnit,
-    SubmetricValue,
 } from "../../../../../../src/scripts/unpopularityMetric/automator/samples/types"
 import { Index } from "../../../../../../src/utilities/types"
 
-describe("computeParameterValueIndices", () => {
+describe("computeDynamicParameterValueIndices", () => {
     it("given the dynamic parameters and a submetric point, returns an array of, in order, for each of the submetric point's parameters which is dynamic, its index in the parameter points", () => {
         const dynamicParameters: DynamicParameter[] = [
             // don't pick me at all, since I'm submetric index 0 --
-            // I should have already been handled by a previous call to computeParameterValueIndices
+            // I should have already been handled by a previous call to computeDynamicParameterValueIndices
             // i.e. already be in the array which this call's returned array will be spread onto the end of
             {
                 submetricIndex: 0 as Index<Submetric>,
@@ -37,17 +36,17 @@ describe("computeParameterValueIndices", () => {
                 unit: 0 as ParameterUnit,
             },
         ]
-        const submetricPoint: SubmetricValue = {
+        const submetric: Submetric = {
             // the order of the keys should not matter! that required a complete refactor from
             /*
-                 Object.entries(submetricValue).forEach(([parameter, parameterPoint]) => {
+                 Object.entries(submetric).forEach(([parameter, dynamicParameterValue]) => {
                  const correspondingDynamicParameter = dynamicParameters.find(dynamicParameter => {
                      return dynamicParameter.submetricIndex === submetricIndex && dynamicParameter.parameter === parameter
                  })
 
                  if (correspondingDynamicParameter) {
-                     const parameterPointIndex = correspondingDynamicParameter.values.indexOf(parameterPoint)
-                     parameterPointIndices.push(parameterPointIndex)
+                     const dynamicParameterValueIndex = correspondingDynamicParameter.values.indexOf(dynamicParameterValue)
+                     dynamicParameterValueIndices.push(dynamicParameterValueIndex)
                  }
              */
             [ Parameter.A ]: 0.69 as DynamicParameterValue,
@@ -55,9 +54,9 @@ describe("computeParameterValueIndices", () => {
         }
         const submetricIndex = 1 as Index<Submetric>
 
-        const result = computeParameterValueIndices({
+        const result = computeDynamicParameterValueIndices({
             dynamicParameters,
-            submetricValue: submetricPoint,
+            submetric,
             submetricIndex,
         })
 

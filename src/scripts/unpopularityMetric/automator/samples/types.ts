@@ -11,19 +11,14 @@ type DynamicParameterValue = number & { _DynamicParameterValueBrand: "DynamicPar
 
 type ParameterValue = DynamicParameterValue | boolean | SubmetricType
 
-// todo: and how does this relate to Submetric? isn't it just the same?
-//  i wouldn't be super cavalier about consolidating them though cuz isn't there a subtle difference,
-//  a slicing and dicing? maybe refer to your draw.io again? or review some test descriptions
-type SubmetricValue = Partial<EnumHash<Parameter, ParameterValue>>
-
 type Sample = {
     submetrics: Combination<Submetric>,
     point: SamplePoint,
 }
 
-interface ComputeParameterValueIndicesParameters {
+interface ComputeDynamicParameterValueIndicesParameters {
     dynamicParameters: DynamicParameter[],
-    submetricValue: SubmetricValue,
+    submetric: Submetric,
     submetricIndex: Index<Submetric>,
 }
 
@@ -45,8 +40,7 @@ type SampleResolution = number & { _SampleResolutionBrand: "SampleResolution" }
 
 export {
     Sample,
-    ComputeParameterValueIndicesParameters,
-    SubmetricValue,
+    ComputeDynamicParameterValueIndicesParameters,
     SamplePoint,
     DynamicParameter,
     ParameterUnit,

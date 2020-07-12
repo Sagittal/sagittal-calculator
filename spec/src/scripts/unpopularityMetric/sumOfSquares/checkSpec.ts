@@ -88,4 +88,7 @@ describe("checkSubmetricsForIssues", () => {
     //  In the "related parameters" spec... i think this may only be for soapifar??
     //  i think we actually want a test not that the total SoS is the same, but that each and every ratio is the same
     //  if you can figure out what the relationship is, then you should add a ban for these to the "check" file
+    //  and we gotta check combos of submetrics out here like this
+    //  [{"submetricType":"soapf"},{"submetricType":"soapfar","w":{"center":0,"range":12,"resolution":2},"a":{"center":2,"range":4,"resolution":2}}]
+    //  [{"submetricType":"gpf","j":{"center":1,"range":2,"resolution":2}},{"submetricType":"soapfar","a":{"center":2,"range":4,"resolution":2}}]
 })

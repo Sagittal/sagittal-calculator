@@ -1,12 +1,13 @@
-import { combineSubmetricsPoints } from "./combineSubmetricsPoints"
-import { computeSubmetricPoints } from "./submetricPoints"
+import { combineSubmetricsPossibilitiesIntoSamples } from "./combineSubmetricsPossibilitiesIntoSamples"
+import { computeSubmetricPossibilities } from "./submetricPossibilities"
 import { DynamicParameter, Sample } from "./types"
-import { SubmetricConfig } from "../../types"
+import { Submetric, SubmetricConfig } from "../../types"
+import { Combination } from "../../../../utilities/types"
 
 const computeSamples = ({ submetricConfigs, dynamicParameters }: { submetricConfigs: SubmetricConfig[], dynamicParameters: DynamicParameter[] }): Sample[] => {
-    const submetricsPoints = submetricConfigs.map(computeSubmetricPoints)
+    const submetricsPossibilities: Combination<Submetric>[] = submetricConfigs.map(computeSubmetricPossibilities)
 
-    return combineSubmetricsPoints({ submetricsPoints, dynamicParameters })
+    return combineSubmetricsPossibilitiesIntoSamples({ submetricsPossibilities, dynamicParameters })
 }
 
 export {
