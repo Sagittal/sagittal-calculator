@@ -1,13 +1,22 @@
 import { computeInitialConsolidatedEvent } from "../../../../src/scripts/analyzeBounds/initialConsolidatedEvent"
-import { ConsolidatedEvent, EventType, EventRank, AnalyzedEvent } from "../../../../src/scripts/analyzeBounds/types"
+import {
+    ConsolidatedEvent,
+    EventType,
+    EventRank,
+    AnalyzedEvent,
+    EventName,
+} from "../../../../src/scripts/analyzeBounds/types"
+import { Cents } from "../../../../src/utilities/types"
+import { analyzedEventFixture } from "../../../helpers/scripts/analyzeBounds/fixtures"
 
 describe("computeInitialConsolidatedEvent", () => {
     let result: ConsolidatedEvent
-    const analyzedEvent: any = {
+    const analyzedEvent: AnalyzedEvent = {
+        ...analyzedEventFixture,
         type: EventType.INA,
-        name: "12.5°58",
-        rank: 4,
-        position: 43.343455,
+        name: "12.5°58" as EventName,
+        rank: 4 as EventRank,
+        position: 43.343455 as Cents,
     }
 
     beforeEach(() => {

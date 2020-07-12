@@ -22,7 +22,7 @@ const shouldUpdateFiles = !program.doNotUpdateFiles
 let textOutput = BOUNDS_ANALYSIS_HEADER_ROW
 
 const boundsAnalysis: AnalyzedBound[] = []
-BOUNDS.map((bound, boundId) => {
+BOUNDS.map(bound => {
     const histories = computeHistories(bound)
     const analyzedBound = analyzeBound(histories, bound)
 

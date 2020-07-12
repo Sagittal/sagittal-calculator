@@ -1,24 +1,44 @@
 import { computeSamples } from "../../../../../../src/scripts/unpopularityMetric/automator/samples/samples"
 import { computeDynamicParameters } from "../../../../../../src/scripts/unpopularityMetric/automator/samples/dynamicParameters"
-import { Parameter, SubmetricConfig, SubmetricType } from "../../../../../../src/scripts/unpopularityMetric/types"
-import { Combination } from "../../../../../../src/utilities/types"
+import {
+    Parameter,
+    SampleRange,
+    SampleResolution,
+    SubmetricType,
+} from "../../../../../../src/scripts/unpopularityMetric/types"
+import {
+    DynamicParameterValue,
+    ParameterValue,
+} from "../../../../../../src/scripts/unpopularityMetric/automator/samples/types"
 
 describe("submetricCombinations", () => {
     it("given a metric config, will return all combinations of submetrics to check", () => {
         const submetricConfigs = [
             {
-                [ Parameter.A ]: { center: 2, range: 2, resolution: 3 },
-                [ Parameter.K ]: { center: 0, range: 4, resolution: 2 },
+                [ Parameter.A ]: {
+                    center: 2 as DynamicParameterValue,
+                    range: 2 as SampleRange,
+                    resolution: 3 as SampleResolution,
+                },
+                [ Parameter.K ]: {
+                    center: 0 as DynamicParameterValue,
+                    range: 4 as SampleRange,
+                    resolution: 2 as SampleResolution,
+                },
             },
             {
                 [ Parameter.SUBMETRIC_TYPE ]: SubmetricType.COAPF,
-                [ Parameter.A ]: { center: 1.5, range: 2, resolution: 2 },
-                [ Parameter.W ]: 3.3,
+                [ Parameter.A ]: {
+                    center: 1.5 as DynamicParameterValue,
+                    range: 2 as SampleRange,
+                    resolution: 2 as SampleResolution,
+                },
+                [ Parameter.W ]: 3.3 as ParameterValue,
             },
-        ] as Combination<SubmetricConfig>
+        ]
         const dynamicParameters = computeDynamicParameters(submetricConfigs)
 
-        const result = computeSamples({ submetricConfigs: submetricConfigs, dynamicParameters })
+        const result = computeSamples({ submetricConfigs, dynamicParameters })
 
         const expectedResult = [
             {
@@ -194,21 +214,21 @@ describe("submetricCombinations", () => {
     })
 
     it("supports providing more than one submetric with the same submetric type", () => {
-        const metricConfig = [
+        const submetricConfigs = [
             {
                 [ Parameter.SUBMETRIC_TYPE ]: SubmetricType.COAPF,
-                [ Parameter.A ]: { center: 1.5, range: 2, resolution: 2 },
-                [ Parameter.K ]: 0.5,
+                [ Parameter.A ]: { center: 1.5 as DynamicParameterValue, range: 2 as SampleRange, resolution: 2 as SampleResolution },
+                [ Parameter.K ]: 0.5 as ParameterValue,
             },
             {
                 [ Parameter.SUBMETRIC_TYPE ]: SubmetricType.COAPF,
-                [ Parameter.A ]: { center: 1, range: 2, resolution: 2 },
-                [ Parameter.K ]: 0,
+                [ Parameter.A ]: { center: 1 as DynamicParameterValue, range: 2 as SampleRange, resolution: 2 as SampleResolution },
+                [ Parameter.K ]: 0 as ParameterValue,
             },
-        ] as Combination<SubmetricConfig>
-        const dynamicParameters = computeDynamicParameters(metricConfig)
+        ]
+        const dynamicParameters = computeDynamicParameters(submetricConfigs)
 
-        const result = computeSamples({ submetricConfigs: metricConfig, dynamicParameters })
+        const result = computeSamples({ submetricConfigs, dynamicParameters })
 
         const expectedResult = [
             {

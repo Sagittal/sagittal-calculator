@@ -8,7 +8,8 @@ import { Level, SagittalSymbol } from "../../../notations/ji/types"
 const visualizeLevelSymbols = () => {
     const levelSymbolElements: string[] = [] as string[]
 
-    (Object.entries(LEVELS_SYMBOLS) as Array<[Level, SagittalSymbol[]]>).forEach(([level, levelSymbols]: [Level, SagittalSymbol[]]) => {
+    const levelsSymbolsEntries = Object.entries(LEVELS_SYMBOLS) as Array<[Level, SagittalSymbol[]]>
+    levelsSymbolsEntries.forEach(([level, levelSymbols]: [Level, SagittalSymbol[]]) => {
         if (level === Level.INSANE) return
 
         const centerY = LEVEL_CENTERS[ level ]

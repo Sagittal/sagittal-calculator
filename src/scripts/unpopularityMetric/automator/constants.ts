@@ -1,28 +1,36 @@
-import { Parameter, DynamicParameterConfig, SubmetricType, SubmetricConfig, SampleResolution } from "../types"
+import {
+    Parameter,
+    DynamicParameterConfig,
+    SubmetricType,
+    SubmetricConfig,
+    SampleResolution,
+    SampleRange,
+} from "../types"
 import { Combinations } from "../../../utilities/types"
 import { ParameterChunk, SubmetricChunk } from "./types"
+import { DynamicParameterValue } from "./samples/types"
 
 const RESOLUTION: SampleResolution = 2 as SampleResolution
 
 // AKA: if they are going to be included in the automatically generated initial configs, what should they be set to
 const PARAMETER_INITIAL_CONFIGS: SubmetricConfig = {
-    [ Parameter.WEIGHT ]: { center: 0.5, range: 1, resolution: RESOLUTION } as DynamicParameterConfig,
+    [ Parameter.WEIGHT ]: { center: 0.5 as DynamicParameterValue, range: 1 as SampleRange, resolution: RESOLUTION },
     [ Parameter.WEIGHT_IS_BASE ]: true,
     [ Parameter.WEIGHT_IS_EXPONENT ]: true,
-    [ Parameter.K ]: { center: 1, range: 2, resolution: RESOLUTION } as DynamicParameterConfig,
+    [ Parameter.K ]: { center: 1 as DynamicParameterValue, range: 2 as SampleRange, resolution: RESOLUTION },
     [ Parameter.K_IS_BASE ]: true,
     [ Parameter.K_IS_EXPONENT ]: true,
-    [ Parameter.J ]: { center: 1, range: 2, resolution: RESOLUTION } as DynamicParameterConfig,
+    [ Parameter.J ]: { center: 1 as DynamicParameterValue, range: 2 as SampleRange, resolution: RESOLUTION },
     [ Parameter.J_IS_BASE ]: true,
     [ Parameter.J_IS_EXPONENT ]: true,
-    [ Parameter.A ]: { center: 2, range: 4, resolution: RESOLUTION } as DynamicParameterConfig,
+    [ Parameter.A ]: { center: 2 as DynamicParameterValue, range: 4 as SampleRange, resolution: RESOLUTION },
     [ Parameter.A_IS_BASE ]: true,
     [ Parameter.A_IS_EXPONENT ]: true,
-    [ Parameter.W ]: { center: 0, range: 12, resolution: RESOLUTION } as DynamicParameterConfig,
-    // [Parameter.X]: { center: 0, range: 6, resolution: RESOLUTION } as DynamicParameterConfig,
-    [ Parameter.Y ]: { center: 0, range: 6, resolution: RESOLUTION } as DynamicParameterConfig,
-    // [Parameter.V]: { center: 0, range: 6, resolution: RESOLUTION } as DynamicParameterConfig,
-    // [Parameter.T]: { center: 0, range: 6, resolution: RESOLUTION } as DynamicParameterConfig,
+    [ Parameter.W ]: { center: 0 as DynamicParameterValue, range: 12 as SampleRange, resolution: RESOLUTION },
+    // [Parameter.X]: { center: 0 as DynamicParameterValue, range: 6 as SampleRange, resolution: RESOLUTION },
+    [ Parameter.Y ]: { center: 0 as DynamicParameterValue, range: 6 as SampleRange, resolution: RESOLUTION },
+    // [Parameter.V]: { center: 0, range: 6, resolution: RESOLUTION },
+    // [Parameter.T]: { center: 0, range: 6, resolution: RESOLUTION },
     [ Parameter.NUMERATOR_IS_NUMINATOR ]: false,
     [ Parameter.MODIFIED_COUNT ]: true,
 }

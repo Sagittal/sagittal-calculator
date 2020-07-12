@@ -74,7 +74,7 @@ describe("analyzeBound", () => {
             distance: 0 as Cents,
             inaDistance: 0 as Proportion,
             exact: false,
-        } as AnalyzedEvent,
+        },
         {
             level: Level.EXTREME,
             type: EventType.INA,
@@ -84,7 +84,7 @@ describe("analyzeBound", () => {
             distance: 0.05000000000000071 as Cents,
             inaDistance: 0.10247613475154385 as Proportion,
             exact: false,
-        } as AnalyzedEvent,
+        },
         {
             level: Level.INSANE,
             type: EventType.INA,
@@ -94,7 +94,7 @@ describe("analyzeBound", () => {
             distance: 0.03358035044053054 as Cents,
             inaDistance: 0.238962941978454 as Proportion,
             exact: true,
-        } as AnalyzedEvent,
+        },
     ]
     const expectedBestPossibleHistory: AnalyzedHistory = {
         events: expectedBestHistoryEvents,

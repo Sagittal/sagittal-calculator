@@ -2,6 +2,7 @@ import { computeExtendedHistories } from "../../../../../src/scripts/analyzeBoun
 import { BoundId, Level } from "../../../../../src/notations/ji/types"
 import { EventName, EventType, HistoricalEvent, History } from "../../../../../src/scripts/analyzeBounds/types"
 import { Cents } from "../../../../../src/utilities/types"
+import { boundFixture } from "../../../../helpers/scripts/analyzeBounds/fixtures"
 
 describe("computeExtendedHistories", () => {
     let history: History
@@ -22,9 +23,9 @@ describe("computeExtendedHistories", () => {
         const actualBoundPosition = 45.4 as Cents
 
         const result = computeExtendedHistories(history, Level.ULTRA, {
+            ...boundFixture,
             position: actualBoundPosition,
             levels: [ Level.ULTRA, Level.EXTREME ],
-            id: 0 as BoundId,
         })
 
         expect(result).toEqual(jasmine.arrayWithExactContents([

@@ -1,19 +1,21 @@
 import { extractLevelDistances } from "../../../../../src/scripts/analyzeBounds/present/levelDistances"
 import { Level } from "../../../../../src/notations/ji/types"
-import { AnalyzedEvent, AnalyzedHistory } from "../../../../../src/scripts/analyzeBounds/types"
+import { AnalyzedHistory } from "../../../../../src/scripts/analyzeBounds/types"
 import { Cents } from "../../../../../src/utilities/types"
+import { analyzedEventFixture, analyzedHistoryFixture } from "../../../../helpers/scripts/analyzeBounds/fixtures"
 
 describe("extractLevelDistances", () => {
     it("returns an array of the distances of each event (from the previous event)", () => {
         const analyzedHistory: AnalyzedHistory = {
+            ...analyzedHistoryFixture,
             events: [
-                { level: Level.MEDIUM, distance: 0.00000 as Cents },
-                { level: Level.HIGH, distance: 4.44444444 as Cents },
-                { level: Level.ULTRA, distance: 3.33333333 as Cents },
-                { level: Level.EXTREME, distance: 2.222222 as Cents },
-                { level: Level.INSANE, distance: 1.111111 as Cents },
-            ] as AnalyzedEvent[],
-        } as AnalyzedHistory
+                { ...analyzedEventFixture, level: Level.MEDIUM, distance: 0.00000 as Cents },
+                { ...analyzedEventFixture, level: Level.HIGH, distance: 4.44444444 as Cents },
+                { ...analyzedEventFixture, level: Level.ULTRA, distance: 3.33333333 as Cents },
+                { ...analyzedEventFixture, level: Level.EXTREME, distance: 2.222222 as Cents },
+                { ...analyzedEventFixture, level: Level.INSANE, distance: 1.111111 as Cents },
+            ],
+        }
 
         const result = extractLevelDistances(analyzedHistory)
 
@@ -27,13 +29,14 @@ describe("extractLevelDistances", () => {
 
     it("works when a level is skipped", () => {
         const analyzedHistory = {
+            ...analyzedHistoryFixture,
             events: [
-                { level: Level.MEDIUM, distance: 0.00000 as Cents },
-                { level: Level.HIGH, distance: 4.44444444 as Cents },
-                { level: Level.EXTREME, distance: 2.222222 as Cents },
-                { level: Level.INSANE, distance: 1.111111 as Cents },
-            ] as AnalyzedEvent[],
-        } as AnalyzedHistory
+                { ...analyzedEventFixture, level: Level.MEDIUM, distance: 0.00000 as Cents },
+                { ...analyzedEventFixture, level: Level.HIGH, distance: 4.44444444 as Cents },
+                { ...analyzedEventFixture, level: Level.EXTREME, distance: 2.222222 as Cents },
+                { ...analyzedEventFixture, level: Level.INSANE, distance: 1.111111 as Cents },
+            ],
+        }
 
         const result = extractLevelDistances(analyzedHistory)
 

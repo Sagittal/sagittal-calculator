@@ -19,10 +19,20 @@ type ParameterChunk = SubmetricConfig
 
 type Chunk = SubmetricChunk | ParameterChunk
 
+interface RecursivelyFindUnpopularityMetricOptions {
+    depth?: number,
+    bestMetric?: Metric,
+    progressMessage?: string,
+    localMinimum?: LocalMinimum,
+    recurse?: boolean,
+    debug?: boolean,
+}
+
 export {
     LocalMinimum,
     Chunk,
     Metric,
     SubmetricChunk,
     ParameterChunk,
+    RecursivelyFindUnpopularityMetricOptions,
 }

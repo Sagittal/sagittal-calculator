@@ -10,14 +10,13 @@ describe("setSumOfSquaresAtCoordinate", () => {
 
         setSumOfSquaresAtPoint(sumOfSquares, sumsOfSquares, point)
 
-        expect(sumsOfSquares).toEqual(
+        const expectedSumsOfSquares = [
+            undefined,
+            undefined,
             [
-                undefined,
-                undefined,
-                [
-                    [undefined, undefined, undefined, 0.0045843033],
-                ],
-            ] as SumsOfSquares,
-        )
+                [undefined, undefined, undefined, sumOfSquares],
+            ],
+        ]
+        expect(sumsOfSquares).toEqual(expectedSumsOfSquares)
     })
 })

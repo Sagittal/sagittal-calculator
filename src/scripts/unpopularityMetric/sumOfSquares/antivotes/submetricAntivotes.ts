@@ -30,7 +30,7 @@ const computeSubmetricAntivotes = (fiveRoughNumberMonzo: Monzo, submetric = {}):
         withRepetition = true,
         operation = SubmetricOperation.SUM,
         usePrimeIndex,
-    } = SUBMETRIC_PROPERTIES[ submetricType as SubmetricType]
+    } = SUBMETRIC_PROPERTIES[ submetricType ]
 
     return fiveRoughNumberMonzo.reduce(
         (monzoAntivotes: Antivotes, term, index): Antivotes => {

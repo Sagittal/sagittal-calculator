@@ -11,10 +11,10 @@ import {
 describe("computeParameterValues", () => {
     it("given a parameter config (a center, a range, and a resolution), will return a block of points to sample", () => {
         const parameterConfig: DynamicParameterConfig = {
-            center: 1,
-            range: 0.5,
-            resolution: 5,
-        } as DynamicParameterConfig
+            center: 1 as DynamicParameterValue,
+            range: 0.5 as SampleRange,
+            resolution: 5 as SampleResolution,
+        }
 
         const result: DynamicParameterValue[] = computeParameterValues(parameterConfig)
 
@@ -75,7 +75,7 @@ describe("computeParameterValues", () => {
     it("works when the resolution is zero", () => {
         const parameterConfig: DynamicParameterConfig = {
             resolution: 0 as SampleResolution,
-        } // todo: ah ha, of course... I should only allow myself to do "as" for anything that is nominally typed.
+        }
 
         const result = computeParameterValues(parameterConfig)
 

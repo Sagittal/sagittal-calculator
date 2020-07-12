@@ -8,7 +8,8 @@ import { Px } from "./types"
 const visualizeLevelBounds = () => {
     const levelBoundElements: string[] = [] as string[]
 
-    (Object.entries(LEVELS_BOUNDS) as Array<[Level, Bound[]]>).forEach(([level, levelsBounds]: [Level, Bound[]]) => {
+    const levelsBoundsEntries = Object.entries(LEVELS_BOUNDS) as Array<[Level, Bound[]]>
+    levelsBoundsEntries.forEach(([level, levelsBounds]: [Level, Bound[]]) => {
         if (level === Level.INSANE) return
 
         levelsBounds.forEach((levelBound: Bound, index: number) => {

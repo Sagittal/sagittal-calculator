@@ -3,6 +3,7 @@ import { DynamicParameter, SamplePoint, Sample, SubmetricValue } from "./types"
 import { Submetric } from "../../types"
 import { Combination, Index } from "../../../../utilities/types"
 
+// todo: is it submetric poitns or values?
 const combineSubmetricsPoints = ({ submetricsPoints, dynamicParameters }: {submetricsPoints: SubmetricValue[][], dynamicParameters: DynamicParameter[]}): Sample[] => {
     let samples: Sample[] = [{ submetrics: [] as unknown as Combination<Submetric>, point: [] as unknown as SamplePoint }]
 
@@ -14,11 +15,11 @@ const combineSubmetricsPoints = ({ submetricsPoints, dynamicParameters }: {subme
                 const parameterPointIndices = computeParameterValueIndices({
                     dynamicParameters,
                     submetricValue: submetricPoint,
-                    submetricIndex: submetricIndex as Index,
+                    submetricIndex: submetricIndex as Index<Submetric>,
                 })
 
                 extendedSubmetricCombinations.push({
-                    submetrics: [...submetrics, submetricPoint] as Combination<Submetric>,
+                    submetrics: [...submetrics, submetricPoint] as Combination<Submetric>, // todo: I want to get rid of this casting but I can't figure out how at the moment
                     point: [...point, ...parameterPointIndices] as SamplePoint,
                 })
             })

@@ -7,6 +7,7 @@ import {
     Votes,
 } from "../../../../../src/scripts/unpopularityMetric/sumOfSquares/types"
 import { Combination, Index, Ratio } from "../../../../../src/utilities/types"
+import { DynamicParameterValue } from "../../../../../src/scripts/unpopularityMetric/automator/samples/types"
 
 describe("computeUnpopularities", () => {
     it("given a list of real popularities and submetric combinations, returns our estimated unpopularities, which have antivotes instead of votes", () => {
@@ -18,11 +19,11 @@ describe("computeUnpopularities", () => {
         const submetrics: Combination<Submetric> = [
             {
                 [ Parameter.SUBMETRIC_TYPE ]: SubmetricType.SOAPFAR,
-                [ Parameter.WEIGHT ]: 0,
+                [ Parameter.WEIGHT ]: 0 as DynamicParameterValue,
             },
             {
                 [ Parameter.SUBMETRIC_TYPE ]: SubmetricType.COAPF,
-                [ Parameter.WEIGHT ]: 1,
+                [ Parameter.WEIGHT ]: 1 as DynamicParameterValue,
             },
         ] as Combination<Submetric>
 

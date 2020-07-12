@@ -1,7 +1,7 @@
 import { computeNeighborPositionIndices } from "./neighborPositionIndices"
 import { Cents } from "../../utilities/types"
 
-const computeNeighborPositions = (position: Cents, targetPositions: Cents[]): [Cents, Cents] => {
+const computeNeighborPositions = (position: Cents, targetPositions: Cents[]): [Cents | undefined, Cents | undefined] => {
     const [lesserNeighborPositionIndex, greaterNeighborPositionIndex] = computeNeighborPositionIndices(position, targetPositions)
 
     return [

@@ -41,14 +41,14 @@ const computeInitialConfigs = (chunkCount: Count<Chunk>, { debug = false } = {})
 
         submetricChunkCombinations.forEach((submetricChunkCombination: Combination<SubmetricChunk>, sIndex) => {
             parameterChunkCombinations.forEach((parameterChunkCombination: Combination<ParameterChunk>, pIndex) => {
-                const baseInitialConfig: Combination<SubmetricConfig> = computeDeepClone(submetricChunkCombination)
+                const baseInitialConfig: SubmetricConfig[] = computeDeepClone(submetricChunkCombination)
 
                 const parameterChunkCombinationDistributions = computeDistributions(parameterChunkCombination, submetricChunkCombination.length)
 
                 parameterChunkCombinationDistributions.forEach(parameterChunkCombinationDistribution => {
                     const initialConfig: Combination<SubmetricConfig> = baseInitialConfig.map((baseInitialSubmetricConfig, index) => {
-                        return merge(baseInitialSubmetricConfig, ...parameterChunkCombinationDistribution[ index ])
-                    }) as Combination<SubmetricConfig>
+                        return merge(baseInitialSubmetricConfig, ...parameterChunkCombinationDistribution[ index ]) as SubmetricConfig
+                    }) as Combination<SubmetricConfig> // todo: although maybe it makes more sense for combination to be used in a more strict setting, so that you don't have to cast (except inside its method)
                     initialConfigs.push(initialConfig)
                 })
 

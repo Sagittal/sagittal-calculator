@@ -2,25 +2,29 @@ import { analyzeEvents } from "../../../../src/scripts/analyzeBounds/events"
 import { EventType, HistoricalEvent, History } from "../../../../src/scripts/analyzeBounds/types"
 import { Level } from "../../../../src/notations/ji/types"
 import { Cents } from "../../../../src/utilities/types"
+import { analyzedEventFixture, eventFixture } from "../../../helpers/scripts/analyzeBounds/fixtures"
 
 describe("analyzeEvents", () => {
     it("adds some analysis properties to each event: rank, distance, and exact", () => {
         const history: History = [
             {
+                ...eventFixture,
                 type: EventType.INA,
                 level: Level.HIGH,
                 position: 10.0 as Cents,
-            } as HistoricalEvent,
+            },
             {
+                ...eventFixture,
                 type: EventType.SIZE,
                 level: Level.ULTRA,
                 position: 10.2 as Cents,
-            } as HistoricalEvent,
+            },
             {
+                ...eventFixture,
                 type: EventType.MEAN,
                 level: Level.EXTREME,
                 position: 10.1 as Cents,
-            } as HistoricalEvent,
+            },
         ]
         const actualBoundPosition = 10.2 as Cents
 
@@ -28,6 +32,7 @@ describe("analyzeEvents", () => {
 
         expect(result).toEqual(jasmine.arrayWithExactContents([
             {
+                ...analyzedEventFixture,
                 type: EventType.INA,
                 level: Level.HIGH,
                 position: 10.0,
@@ -37,6 +42,7 @@ describe("analyzeEvents", () => {
                 inaDistance: 0,
             },
             {
+                ...analyzedEventFixture,
                 type: EventType.SIZE,
                 level: Level.ULTRA,
                 position: 10.2,
@@ -46,6 +52,7 @@ describe("analyzeEvents", () => {
                 inaDistance: 0.10203632301441096,
             },
             {
+                ...analyzedEventFixture,
                 type: EventType.MEAN,
                 level: Level.EXTREME,
                 position: 10.1,

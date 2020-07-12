@@ -5,7 +5,7 @@ import { TINA } from "../../notations/ji/intervals"
 import * as rankAnalysis from "./ranks"
 import * as levelAnalysis from "./levels"
 import { computeInitialPosition } from "./initialPosition"
-import { AnalyzedBound, History } from "./types"
+import { AnalyzedBound, AnalyzedHistory, History } from "./types"
 import { Bound } from "../../notations/ji/types"
 import { Count, Proportion } from "../../utilities/types"
 
@@ -14,7 +14,7 @@ const analyzeBound = (histories: History[], bound: Bound): AnalyzedBound => {
     const analyzedHistories = histories.map(history => analyzeHistory(history, bound, initialPosition))
 
     const possibleHistories = analyzedHistories.filter(analyzedHistory => analyzedHistory.possible)
-    const possibleHistoryCount = possibleHistories.length as Count
+    const possibleHistoryCount = possibleHistories.length as Count<AnalyzedHistory>
     const bestPossibleHistory = computeBestPossibleHistory(possibleHistories)
     const bestRank = bestPossibleHistory.rank
     const bestPossibleHistoryDistance = bestPossibleHistory.distance

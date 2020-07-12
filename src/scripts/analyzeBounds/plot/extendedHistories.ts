@@ -2,11 +2,12 @@ import { computeBoundedSymbolPositions } from "../../../notations/ji/boundedSymb
 import { computeEvents } from "./events"
 import { EventType, History } from "../types"
 import { Bound, Level } from "../../../notations/ji/types"
+import { Cents } from "../../../utilities/types"
 
 const computeExtendedHistories = (history: History, level: Level, bound: Bound) => {
     const extendedHistories: History[] = []
 
-    const boundedSymbolPositions: any = computeBoundedSymbolPositions(bound.position, level)
+    const boundedSymbolPositions: [Cents | undefined, Cents | undefined] = computeBoundedSymbolPositions(bound.position, level)
 
     const newEvents = [
         ...computeEvents(level, boundedSymbolPositions, EventType.INA),

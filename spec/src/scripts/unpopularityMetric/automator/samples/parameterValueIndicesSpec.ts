@@ -1,5 +1,5 @@
 import { computeParameterValueIndices } from "../../../../../../src/scripts/unpopularityMetric/automator/samples/parameterValueIndices"
-import { Parameter } from "../../../../../../src/scripts/unpopularityMetric/types"
+import { Parameter, Submetric } from "../../../../../../src/scripts/unpopularityMetric/types"
 import {
     DynamicParameter,
     DynamicParameterValue, ParameterUnit,
@@ -52,7 +52,7 @@ describe("computeParameterValueIndices", () => {
             [ Parameter.A ]: 0.69 as DynamicParameterValue,
             [ Parameter.Y ]: 1.1 as DynamicParameterValue,
         }
-        const submetricIndex = 1 as Index
+        const submetricIndex = 1 as Index<Submetric> // todo: is this ACTUALLY the index of a submetric though?
 
         const result = computeParameterValueIndices({ dynamicParameters, submetricValue: submetricPoint, submetricIndex })
 

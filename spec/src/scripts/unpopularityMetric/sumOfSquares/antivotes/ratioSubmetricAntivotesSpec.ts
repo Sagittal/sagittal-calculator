@@ -4,10 +4,11 @@ import { computeLog } from "../../../../../../src/utilities/log"
 import { Ratio } from "../../../../../../src/utilities/types"
 import { Monzo } from "../../../../../../src/utilities/comma/types"
 import { Antivotes } from "../../../../../../src/scripts/unpopularityMetric/sumOfSquares/types"
+import { DynamicParameterValue } from "../../../../../../src/scripts/unpopularityMetric/automator/samples/types"
 
 describe("computeRatioSubmetricAntivotes", () => {
     it("splits the ratio into numerator and denominator, computes their submetric antivotes separately, then adjusts the denominator by k", () => {
-        const k = 0.46
+        const k = 0.46 as DynamicParameterValue
         const fiveRoughRatio = [11, 7] as Ratio
         const submetric = { k }
 
@@ -20,7 +21,7 @@ describe("computeRatioSubmetricAntivotes", () => {
     })
 
     it("another example", () => {
-        const k = 0.46
+        const k = 0.46 as DynamicParameterValue
         const fiveRoughRatio = [25, 11] as Ratio // 10:11
         const submetric = { k }
 
@@ -44,7 +45,7 @@ describe("computeRatioSubmetricAntivotes", () => {
     })
 
     it("supports deciding the numinator and diminuator by which is the greater of the two", () => {
-        const k = 0.46
+        const k = 0.46 as DynamicParameterValue
         const fiveRoughRatio = [25, 11] as Ratio // 10:11
         const numeratorIsNuminator = false
         const submetric = { k, numeratorIsNuminator }
@@ -58,7 +59,7 @@ describe("computeRatioSubmetricAntivotes", () => {
     })
 
     it("works when k = 0 (and j = 1) therefore it only looks at the numerator", () => {
-        const k = 0
+        const k = 0 as DynamicParameterValue
         const fiveRoughRatio = [5, 7] as Ratio
         const submetric = { k }
 
@@ -70,7 +71,7 @@ describe("computeRatioSubmetricAntivotes", () => {
     })
 
     it("works when j = 0 (and k = 1) therefore it only looks at the denominator", () => {
-        const j = 0
+        const j = 0 as DynamicParameterValue
         const fiveRoughRatio = [5, 7] as Ratio
         const submetric = { j }
 
@@ -82,7 +83,7 @@ describe("computeRatioSubmetricAntivotes", () => {
     })
 
     it("works when k is a base", () => {
-        const k = 2
+        const k = 2 as DynamicParameterValue
         const kIsBase = true
         const fiveRoughRatio = [5, 7] as Ratio
         const submetric = { k, kIsBase }
@@ -96,7 +97,7 @@ describe("computeRatioSubmetricAntivotes", () => {
     })
 
     it("works when k is an exponent", () => {
-        const k = 2
+        const k = 2 as DynamicParameterValue
         const kIsExponent = true
         const fiveRoughRatio = [5, 7] as Ratio
         const submetric = { k, kIsExponent }
@@ -110,7 +111,7 @@ describe("computeRatioSubmetricAntivotes", () => {
     })
 
     it("works when j is a base", () => {
-        const j = 2
+        const j = 2 as DynamicParameterValue
         const jIsBase = true
         const fiveRoughRatio = [5, 7] as Ratio
         const submetric = { j, jIsBase }
@@ -124,7 +125,7 @@ describe("computeRatioSubmetricAntivotes", () => {
     })
 
     it("works when j is an exponent", () => {
-        const j = 2
+        const j = 2 as DynamicParameterValue
         const jIsExponent = true
         const fiveRoughRatio = [5, 7] as Ratio
         const submetric = { j, jIsExponent }

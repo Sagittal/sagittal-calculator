@@ -5,18 +5,19 @@ import { computeCopfr } from "../../utilities/comma/copfr"
 import { computeTrimmedMonzo } from "../../utilities/comma/trimmedMonzo"
 import { Prime } from "../../utilities/types"
 import { Monzo, PrimeExponent } from "../../utilities/comma/types"
+import { ComputeFiveSlicedMonzosToCheckParameters } from "./types"
+import { isUndefined } from "../../utilities/typeGuards"
 
-// todo: get rid of all "any"
-const computeFiveSlicedMonzosToCheck = ({ maximumPrimeLimit, maximumFiveRoughSopfr, maximumFiveRoughCopfr }: any = {}): Monzo<5>[] => {
-    if (typeof maximumFiveRoughSopfr === "undefined") {
-        if (typeof maximumPrimeLimit === "undefined") {
-            if (typeof maximumFiveRoughCopfr === "undefined") {
+const computeFiveSlicedMonzosToCheck = ({ maximumPrimeLimit, maximumFiveRoughSopfr, maximumFiveRoughCopfr }: ComputeFiveSlicedMonzosToCheckParameters = {}): Monzo<5>[] => {
+    if (isUndefined(maximumFiveRoughSopfr)) {
+        if (isUndefined(maximumPrimeLimit)) {
+            if (isUndefined(maximumFiveRoughCopfr)) {
                 throw new Error("The primes must be limited somehow.")
             } else {
                 throw new Error("The size of the primes must be limited somehow.")
             }
-        } else if (typeof maximumFiveRoughCopfr === "undefined") {
-            throw new Error("The resolution of the primes must be limited somehow.")
+        } else if (isUndefined(maximumFiveRoughCopfr)) {
+            throw new Error("The count of the primes must be limited somehow.")
         }
     }
 
@@ -28,7 +29,7 @@ const computeFiveSlicedMonzosToCheck = ({ maximumPrimeLimit, maximumFiveRoughSop
     if (maximumPrimeLimit) {
         maximumPrime = maximumPrimeLimit
     } else {
-        const possiblePrimes = PRIMES.filter(prime => prime < maximumFiveRoughSopfr)
+        const possiblePrimes = PRIMES.filter(prime => prime < (maximumFiveRoughSopfr || Infinity))
         maximumPrime = possiblePrimes[ possiblePrimes.length - 1 ]
     }
     const indexOfMaximumPrime = PRIMES.findIndex(prime => {

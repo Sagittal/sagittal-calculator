@@ -16,7 +16,7 @@ type EventName = string & { _EventNameBrand: "EventName"}
 interface SnappablePosition {
     position: Cents,
     name: EventName,
-    monzo: Monzo,
+    monzo?: Monzo,
 }
 
 interface HistoricalEvent {
@@ -61,14 +61,14 @@ type ConsolidatedHistories = { [key in Level]?: ConsolidatedEvent[] }
 
 interface UpdateConsolidatedEventParameters {
     analyzedEvent: AnalyzedEvent
-    nextAnalyzedEvent: AnalyzedEvent,
+    nextAnalyzedEvent?: AnalyzedEvent,
     analyzedHistory: AnalyzedHistory,
     bestPossibleHistory: AnalyzedHistory,
 }
 
 interface AnalyzedBound {
     initialPosition: Cents,
-    possibleHistoryCount: Count,
+    possibleHistoryCount: Count<AnalyzedHistory>, // todo: still need to parameterize some of these counts
     bestPossibleHistory: AnalyzedHistory,
     bestRank: EventRank,
     bestPossibleHistoryDistance: Cents,

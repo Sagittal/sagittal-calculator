@@ -2,9 +2,11 @@ import * as ratioSubmetricUnpopularity from "./ratioSubmetricAntivotes"
 import { computeLog } from "../../../../utilities/log"
 import { Ratio } from "../../../../utilities/types"
 import { Antivotes } from "../types"
+import { Submetric } from "../../types"
+import { DynamicParameterValue } from "../../automator/samples/types"
 
 const computeWeightedSubmetricAntivotes = (fiveRoughRatio: Ratio, submetric = {}): Antivotes => {
-    const { weight = 1, weightIsBase = false, weightIsExponent = false }: any = submetric
+    const { weight = 1 as DynamicParameterValue, weightIsBase = false, weightIsExponent = false }: Submetric = submetric
 
     let submetricAntivotes = 0 as Antivotes
     if (weight !== 0) {

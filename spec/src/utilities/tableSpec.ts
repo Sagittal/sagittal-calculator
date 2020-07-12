@@ -57,7 +57,7 @@ describe("alignTable", () => {
             "25/49M\t7\t24\t33.4\t[0 0⟩\t50/49\t-59.333",
         ]
 
-        const result = alignTable(data, { justification: [Justification.RIGHT, Justification.LEFT, Justification.CENTER, null, Justification.RIGHT] })
+        const result = alignTable(data, { justification: [Justification.RIGHT, Justification.LEFT, Justification.CENTER, undefined, Justification.RIGHT] })
 
         expect(result).toEqual([
             "comma name\tlimit\t5-rough sopfr\tcents\t  monzo\tratio\tapotome slope",

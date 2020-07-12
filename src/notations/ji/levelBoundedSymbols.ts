@@ -10,7 +10,7 @@ const computeLevelBoundedSymbols = (bound: Bound): BoundedSymbols => {
 
     return levels.reduce(
         (levels, level) => {
-            const levelBoundedSymbols: Array<SagittalSymbol | undefined> = computeBoundedSymbolPositions(position, level).map((position: Cents) => computePositionSymbol(position))
+            const levelBoundedSymbols: Array<SagittalSymbol | undefined> = computeBoundedSymbolPositions(position, level).map((position: Cents | undefined) => computePositionSymbol(position))
             const levelBoundedSymbolsWithDistance = levelBoundedSymbols.map(symbol => {
                 if (symbol) {
                     const distance: Cents = Math.abs(position - symbol.primaryComma.position) as Cents

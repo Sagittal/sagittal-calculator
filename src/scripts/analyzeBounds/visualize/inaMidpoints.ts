@@ -9,7 +9,8 @@ import { Level } from "../../../notations/ji/types"
 const visualizeInaMidpoints = () => {
     const inaMidpointElements: string[] = [] as string[]
 
-    (Object.entries(INA_MIDPOINTS) as Array<[Level, SnappablePosition[]]>).forEach(([level, inaMidpoints]: [Level, SnappablePosition[]]) => {
+    const inaMidpointEntries = Object.entries(INA_MIDPOINTS) as Array<[Level, SnappablePosition[]]>
+    inaMidpointEntries.forEach(([level, inaMidpoints]: [Level, SnappablePosition[]]) => {
         const centerY = LEVEL_CENTERS[ level ]
         const topY = centerY - HALF_TICK_SIZE
         const bottomY = centerY + HALF_TICK_SIZE

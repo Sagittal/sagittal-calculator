@@ -10,7 +10,8 @@ import { SnappablePosition } from "../types"
 const visualizeLevelCommaMeans = () => {
     const levelCommaMeanElements: string[] = [] as string[]
 
-    (Object.entries(LEVELS_COMMA_MEANS) as Array<[Level, SnappablePosition[]]>).forEach(([level, levelCommaMeans]: [Level, SnappablePosition[]]) => {
+    const levelCommaMeansEntries = Object.entries(LEVELS_COMMA_MEANS) as Array<[Level, SnappablePosition[]]>
+    levelCommaMeansEntries.forEach(([level, levelCommaMeans]: [Level, SnappablePosition[]]) => {
         if (level === Level.INSANE) return
 
         const centerY = LEVEL_CENTERS[ level ]

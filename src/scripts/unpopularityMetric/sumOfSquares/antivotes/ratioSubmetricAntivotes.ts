@@ -4,17 +4,19 @@ import { computeMonzoFromRatio } from "../../../../utilities/comma/monzoFromRati
 import { computeLog } from "../../../../utilities/log"
 import { Ratio } from "../../../../utilities/types"
 import { Antivotes } from "../../sumOfSquares/types"
+import { Submetric } from "../../types"
+import { DynamicParameterValue } from "../../automator/samples/types"
 
-const computeRatioSubmetricAntivotes = (fiveRoughRatio: Ratio, submetric = {}): Antivotes => {
+const computeRatioSubmetricAntivotes = (fiveRoughRatio: Ratio, submetric: Submetric = {}): Antivotes => {
     const {
-        k = 1,
-        j = 1,
+        k = 1 as DynamicParameterValue,
+        j = 1 as DynamicParameterValue,
         numeratorIsNuminator = true,
         jIsBase = false,
         jIsExponent = false,
         kIsBase = false,
         kIsExponent = false,
-    }: any = submetric
+    }: Submetric = submetric
 
     if (k === j) {
         const fiveRoughNumberMonzo = computeMonzoFromRatio(fiveRoughRatio)

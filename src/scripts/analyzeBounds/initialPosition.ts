@@ -6,7 +6,7 @@ import { Cents } from "../../utilities/types"
 const computeInitialPosition = (bound: Bound): Cents => {
     const { position, levels } = bound
     const initialLevel = levels[ 0 ]
-    const [lesserBoundedCommaPosition, greaterBoundedCommaPosition] = computeBoundedSymbolPositions(position, initialLevel)
+    const [lesserBoundedCommaPosition = 0, greaterBoundedCommaPosition] = computeBoundedSymbolPositions(position, initialLevel)
 
     return greaterBoundedCommaPosition ? (lesserBoundedCommaPosition + greaterBoundedCommaPosition) / 2 as Cents : MAXIMUM_POSITION
 }

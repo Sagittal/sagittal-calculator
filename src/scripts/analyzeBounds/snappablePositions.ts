@@ -13,7 +13,7 @@ const computeSnappablePositions = (computeLevelSnappablePositions: (level: Level
                 [ level ]: computeLevelSnappablePositions(level),
             }
         },
-        {} as { [key in Level]: SnappablePosition[] },
+        {} as { [key in Level]: SnappablePosition[] }, // todo: should probably have a Map<Level, SnappablePosition[]> type.. or EnumMap? how did i do it in muiscal patternS.?:
     )
 }
 

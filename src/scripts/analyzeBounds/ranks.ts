@@ -7,7 +7,7 @@ const RANKS: { [key in EventType]: EventRank } = {
     [ EventType.SIZE ]: 2 as EventRank,
 }
 
-const rankCounts: number[] = [
+const rankCounts: number[] = [ // todo: once sorting stuff out, this should be Count[]
     0, 0, 0,
 ]
 

@@ -21,6 +21,8 @@ enum Justification {
     CENTER = "center",
 }
 
+type JustificationOption = Justification | (Justification | undefined)[]
+
 export {
     Cents,
     Ratio,
@@ -36,4 +38,5 @@ export {
     Index,
     Count,
     Sum,
+    JustificationOption,
 }

@@ -3,7 +3,7 @@ import {
     BINARY_SCORE_REPRESENTATION_CARDINALITY,
     computeBinaryScoreRepresentationIndex,
 } from "./binaryScoreRepresentationCardinality"
-import { AnalyzedEvent, AnalyzedHistory, Score } from "./types"
+import { AnalyzedEvent, Score } from "./types"
 
 const computeScore = (analyzedEvents: AnalyzedEvent[]): Score => {
     const binaryScoreRepresentation = [...Array(BINARY_SCORE_REPRESENTATION_CARDINALITY).keys()].map(_ => 0)

@@ -1,7 +1,7 @@
-import { AnalyzedHistory } from "./types"
+import { AnalyzedHistory, Score } from "./types"
 
 const computeBestPossibleHistory = (analyzedHistories: AnalyzedHistory[]): AnalyzedHistory => {
-    let bestPossibleHistory: any = { score: Infinity }
+    let bestPossibleHistory: AnalyzedHistory = { score: Infinity as Score } as AnalyzedHistory
 
     if (analyzedHistories.some(analyzedHistory => !analyzedHistory.exact)) {
         let exactHistories: AnalyzedHistory[] = []

@@ -3,7 +3,7 @@ import { SubmetricConfig } from "../../types"
 import { Combination, Index } from "../../../../utilities/types"
 import { DynamicParameter } from "./types"
 
-const computeDynamicParameters = (submetricConfigs: Combination<SubmetricConfig>): DynamicParameter[] => {
+const computeDynamicParameters = (submetricConfigs: SubmetricConfig[]): DynamicParameter[] => {
     let dynamicParameters: DynamicParameter[] = []
 
     submetricConfigs.forEach((submetricConfig: SubmetricConfig, submetricIndex: number) => {

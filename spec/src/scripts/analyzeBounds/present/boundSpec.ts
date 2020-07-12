@@ -3,6 +3,7 @@ import { Bound, BoundId, Level } from "../../../../../src/notations/ji/types"
 import { AnalysisMode } from "../../../../../src/scripts/analyzeBounds/present/types"
 import { AnalyzedBound, AnalyzedEvent, AnalyzedHistory, EventRank } from "../../../../../src/scripts/analyzeBounds/types"
 import { Cents } from "../../../../../src/utilities/types"
+import { boundFixture } from "../../../../helpers/scripts/analyzeBounds/fixtures"
 
 describe("presentAnalyzedBound", () => {
     let mode: AnalysisMode
@@ -13,17 +14,18 @@ describe("presentAnalyzedBound", () => {
 
         it("returns a string of the bound id, identifying symbol, actual bound position, whether it has a possible history, the error in tinas, and the ranks at each level of the best possible history, separated by tabs in a single line, and makes it the correct color", () => {
             const bound: Bound = {
+                ...boundFixture,
                 position: 5.44763529181809 as Cents,
                 id: 10 as BoundId,
-            } as Bound
+            }
             const analyzedBound: AnalyzedBound = {
                 bestPossibleHistory: {
                     events: [
                         { level: Level.ULTRA, rank: 0 as EventRank, distance: 0.000 as Cents, inaDistance: 0.000 },
                         { level: Level.EXTREME, rank: 0 as EventRank, distance: 0.333 as Cents, inaDistance: 0.682 },
                         { level: Level.INSANE, rank: 1 as EventRank, distance: 0.022 as Cents, inaDistance: 0.157 },
-                    ] as AnalyzedEvent[],
-                } as AnalyzedHistory,
+                    ],
+                },
                 bestRank: 1 as EventRank,
                 initialPosition: 5.48533 as Cents,
                 initialPositionTinaDifference: 0.0393,
@@ -44,9 +46,10 @@ describe("presentAnalyzedBound", () => {
 
         it("returns a string which is a multi-line, properly indented rendition of the bound analysis object as well as identifying information for the bound", () => {
             const bound = {
+                ...boundFixture,
                 position: 5.44763529181809 as Cents,
                 id: 10 as BoundId,
-            } as Bound
+            }
             const analyzedBound: AnalyzedBound = {
                 bestRank: 2 as EventRank,
             } as AnalyzedBound

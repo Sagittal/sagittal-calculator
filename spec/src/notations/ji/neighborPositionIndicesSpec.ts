@@ -1,5 +1,5 @@
 import { computeNeighborPositionIndices } from "../../../../src/notations/ji/neighborPositionIndices"
-import { Cents } from "../../../../src/utilities/types"
+import { Cents, Index } from "../../../../src/utilities/types"
 
 describe("computeNeighborPositionIndices", () => {
     it("returns the indices of the positions in the list of sorted targets which are on either side of the position", () => {
@@ -14,8 +14,8 @@ describe("computeNeighborPositionIndices", () => {
         const result = computeNeighborPositionIndices(position, sortedTargets)
 
         expect(result).toEqual([
-            1,
-            2,
+            1 as Index,
+            2 as Index,
         ])
     })
 })

@@ -6,7 +6,7 @@ import { Cents } from "../../../../../src/utilities/types"
 
 describe("computeEvents", () => {
     let level: Level
-    let boundedSymbolPositions
+    let boundedSymbolPositions: [Cents | undefined, Cents | undefined]
     let eventType: EventType
 
     describe("returns an event for each snappable position between the bounded symbol positions for this event type and level", () => {

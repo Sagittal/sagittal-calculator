@@ -1,13 +1,14 @@
 import { computeHistoryInaDistance } from "../../../../src/scripts/analyzeBounds/historyInaDistance"
 import { AnalyzedEvent } from "../../../../src/scripts/analyzeBounds/types"
 import { Proportion } from "../../../../src/utilities/types"
+import { analyzedEventFixture } from "../../../helpers/scripts/analyzeBounds/fixtures"
 
 describe("computeHistoryInaDistance", () => {
     it("sums up the ina-distances of all the events in the history (they are already all positive)", () => {
         const analyzedEvents: AnalyzedEvent[] = [
-            { inaDistance: 0.4 } as AnalyzedEvent,
-            { inaDistance: 0.5 } as AnalyzedEvent,
-            { inaDistance: 0.6 } as AnalyzedEvent,
+            { ...analyzedEventFixture, inaDistance: 0.4 as Proportion },
+            { ...analyzedEventFixture, inaDistance: 0.5 as Proportion },
+            { ...analyzedEventFixture, inaDistance: 0.6 as Proportion },
         ]
 
         const result = computeHistoryInaDistance(analyzedEvents)

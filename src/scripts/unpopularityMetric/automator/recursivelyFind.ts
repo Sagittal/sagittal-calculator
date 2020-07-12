@@ -5,19 +5,20 @@ import { computeIndentation } from "./indentation"
 import { computeLocalMinima } from "./localMinima"
 import { deepEquals } from "../../../utilities/deepEquals"
 import { gatherSumsOfSquares } from "./gatherSumsOfSquares"
-import { SumsOfSquares } from "../sumOfSquares/types"
-import { SubmetricConfig } from "../types"
+import { SumOfSquares, SumsOfSquares } from "../sumOfSquares/types"
+import { Submetric, SubmetricConfig } from "../types"
 import { Combination } from "../../../utilities/types"
+import { RecursivelyFindUnpopularityMetricOptions } from "./types"
 
-const recursivelyFindUnpopularityMetric = (submetricConfigs: Combination<SubmetricConfig>, options = {}) => {
+const recursivelyFindUnpopularityMetric = (submetricConfigs: SubmetricConfig[], options: RecursivelyFindUnpopularityMetricOptions = {}) => {
     const {
         depth = 0,
-        bestMetric: previousBestMetric = { sumOfSquares: Infinity },
+        bestMetric: previousBestMetric = { sumOfSquares: Infinity as SumOfSquares, submetrics: [] as unknown as Combination<Submetric> },
         progressMessage = "",
         localMinimum,
         recurse = true,
         debug = false,
-    }: any = options
+    }: RecursivelyFindUnpopularityMetricOptions = options
 
     const nextDepth = depth + 1
 

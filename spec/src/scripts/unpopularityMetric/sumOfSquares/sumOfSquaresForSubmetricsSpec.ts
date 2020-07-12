@@ -1,22 +1,23 @@
 import { computeSumOfSquaresForSubmetrics } from "../../../../../src/scripts/unpopularityMetric/sumOfSquares/sumOfSquaresForSubmetrics"
 import { Parameter, Submetric, SubmetricType } from "../../../../../src/scripts/unpopularityMetric/types"
 import { SumOfSquares } from "../../../../../src/scripts/unpopularityMetric/sumOfSquares/types"
+import { DynamicParameterValue } from "../../../../../src/scripts/unpopularityMetric/automator/samples/types"
 import { Combination } from "../../../../../src/utilities/types"
 
 describe("computeSumOfSquaresForSubmetrics", () => {
     it("returns the sum-of-squares for a given submetric combination", () => {
         const submetrics = [
             {
-                [ Parameter.K ]: 0.038,
-                [ Parameter.A ]: 1.994,
+                [ Parameter.K ]: 0.038 as DynamicParameterValue,
+                [ Parameter.A ]: 1.994 as DynamicParameterValue,
                 [ Parameter.A_IS_BASE ]: true,
-                [ Parameter.Y ]: 0.455,
-                [ Parameter.W ]: -2.08,
+                [ Parameter.Y ]: 0.455 as DynamicParameterValue,
+                [ Parameter.W ]: -2.08 as DynamicParameterValue,
                 [ Parameter.NUMERATOR_IS_NUMINATOR ]: false,
             },
             {
                 [ Parameter.SUBMETRIC_TYPE ]: SubmetricType.COAPFAR,
-                [ Parameter.WEIGHT ]: 0.577,
+                [ Parameter.WEIGHT ]: 0.577 as DynamicParameterValue,
                 [ Parameter.NUMERATOR_IS_NUMINATOR ]: false,
             },
         ] as Combination<Submetric>

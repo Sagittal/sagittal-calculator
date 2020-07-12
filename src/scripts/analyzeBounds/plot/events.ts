@@ -3,15 +3,17 @@ import { EventType, HistoricalEvent, SnappablePosition } from "../types"
 import { Level } from "../../../notations/ji/types"
 import { Cents } from "../../../utilities/types"
 
-const computeEvents = (level: Level, [lesserBoundedSymbolPosition, greaterBoundedSymbolPosition]: [Cents, Cents], type: EventType) => {
+const computeEvents = (level: Level, [lesserBoundedSymbolPosition, greaterBoundedSymbolPosition]: [Cents | undefined, Cents | undefined], type: EventType) => {
     const events: HistoricalEvent[] = []
 
     const snappablePositions = EVENT_TYPE_SNAPPABLE_POSITIONS[ type ][ level ]
 
     snappablePositions.forEach((snappablePosition: SnappablePosition) => {
         if (
+            // @ts-ignore
             snappablePosition.position > lesserBoundedSymbolPosition &&
-            (snappablePosition.position < greaterBoundedSymbolPosition || !greaterBoundedSymbolPosition)
+            // (lesserBoundedSymbolPosition && snappablePosition.position > lesserBoundedSymbolPosition) &&
+            (!greaterBoundedSymbolPosition || snappablePosition.position < greaterBoundedSymbolPosition)
         ) {
             events.push({
                 level,

@@ -4,6 +4,7 @@ import { Parameter, Submetric, SubmetricType } from "../../../../../../src/scrip
 import { Combination, Ratio } from "../../../../../../src/utilities/types"
 import { Monzo } from "../../../../../../src/utilities/comma/types"
 import { Antivotes } from "../../../../../../src/scripts/unpopularityMetric/sumOfSquares/types"
+import { DynamicParameterValue } from "../../../../../../src/scripts/unpopularityMetric/automator/samples/types"
 
 describe("computeAntivotes", () => {
     it("when k = 1 (default), and two 5-rough ratios have the same sopfr, but one has its primes all lopsided on one side, they still get ranked the same", () => {
@@ -11,7 +12,7 @@ describe("computeAntivotes", () => {
         const lopsidedFiveRoughRatio = [77, 1] as Ratio
         const submetrics: Combination<Submetric> = [
             {
-                [ Parameter.K ]: 1,
+                [ Parameter.K ]: 1 as DynamicParameterValue,
             },
         ] as Combination<Submetric>
 
@@ -24,9 +25,9 @@ describe("computeAntivotes", () => {
     it("when k < 1, two 5-rough ratios have the same sopfr, but one has its primes all lopsided on one side, it gets ranked worse", () => {
         const balancedFiveRoughRatio = [11, 7] as Ratio
         const lopsidedFiveRoughRatio = [77, 1] as Ratio
-        const submetrics = [
+        const submetrics: Combination<Submetric> = [
             {
-                [ Parameter.K ]: 0.9,
+                [ Parameter.K ]: 0.9 as DynamicParameterValue,
             },
         ] as Combination<Submetric>
 
@@ -40,11 +41,11 @@ describe("computeAntivotes", () => {
         const fiveRoughRatio = [77, 1] as Ratio
         const submetrics = [
             {
-                [ Parameter.WEIGHT ]: 0.5,
+                [ Parameter.WEIGHT ]: 0.5 as DynamicParameterValue,
             },
             {
                 [ Parameter.SUBMETRIC_TYPE ]: SubmetricType.SOAPF,
-                [ Parameter.WEIGHT ]: 0.3,
+                [ Parameter.WEIGHT ]: 0.3 as DynamicParameterValue,
             },
         ] as Combination<Submetric>
 
@@ -59,15 +60,15 @@ describe("computeAntivotes", () => {
     it("should not return NaN", () => {
         const submetrics = [
             {
-                [ Parameter.WEIGHT ]: 1,
-                [ Parameter.K ]: 0,
-                [ Parameter.A ]: 2,
+                [ Parameter.WEIGHT ]: 1 as DynamicParameterValue,
+                [ Parameter.K ]: 0 as DynamicParameterValue,
+                [ Parameter.A ]: 2 as DynamicParameterValue,
                 [ Parameter.A_IS_BASE ]: true,
-                [ Parameter.W ]: -6,
-                // [Parameter.X]: -2,
-                [ Parameter.Y ]: 0.14285714285714285,
-                // [Parameter.V]: -0.8571428571428572,
-                // [Parameter.T]: -1.6142857142857143,
+                [ Parameter.W ]: -6 as DynamicParameterValue,
+                // [Parameter.X]: -2 as DynamicParameterValue,
+                [ Parameter.Y ]: 0.14285714285714285 as DynamicParameterValue,
+                // [Parameter.V]: -0.8571428571428572 as DynamicParameterValue,
+                // [Parameter.T]: -1.6142857142857143 as DynamicParameterValue,
             },
         ] as Combination<Submetric>
         const fiveRoughRatio = [5, 1] as Ratio

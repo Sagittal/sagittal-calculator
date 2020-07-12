@@ -3,11 +3,13 @@ import { HIGHINA } from "../../../../src/notations/ji/intervals"
 import { ACCURACY_THRESHOLD } from "../../../../src/utilities/constants"
 import { Level } from "../../../../src/notations/ji/types"
 import { HistoricalEvent, History } from "../../../../src/scripts/analyzeBounds/types"
+import { Cents } from "../../../../src/utilities/types"
+import { eventFixture } from "../../../helpers/scripts/analyzeBounds/fixtures"
 
 describe("computeEventInaDistance", () => {
     it("returns the difference in position between the event and the previous event in the history", () => {
-        const event = { position: 5, level: Level.HIGH } as HistoricalEvent
-        const history = [{ position: 3 }, event] as History
+        const event = { ...eventFixture, position: 5 as Cents, level: Level.HIGH }
+        const history = [{ ...eventFixture, position: 3 as Cents }, event]
         const index = 1
 
         const result = computeEventInaDistance(event, index, history)
