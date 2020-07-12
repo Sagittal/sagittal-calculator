@@ -3,7 +3,7 @@ import { Parameter, Submetric, SubmetricType } from "../../../../../../src/scrip
 import {
     DynamicParameter,
     DynamicParameterValue,
-    ParameterUnit,
+    ParameterUnit, SubmetricPossibility,
 } from "../../../../../../src/scripts/unpopularityMetric/automator/samples/types"
 import { Combination, Index } from "../../../../../../src/utilities/types"
 
@@ -41,9 +41,9 @@ describe("combineSubmetricsPossibilitiesIntoSamples", () => {
             [ Parameter.A ]: 0.6 as DynamicParameterValue,
         }
 
-        const submetricsPossibilities: Combination<Submetric>[] = [
-            [submetricOnePointOne, submetricOnePointTwo, submetricOnePointThree] as Combination<Submetric>,
-            [submetricTwoPointOne, submetricTwoPointTwo, submetricTwoPointThree, submetricTwoPointFour] as Combination<Submetric>,
+        const submetricsPossibilities: Combination<SubmetricPossibility>[] = [
+            [submetricOnePointOne, submetricOnePointTwo, submetricOnePointThree] as Combination<SubmetricPossibility>,
+            [submetricTwoPointOne, submetricTwoPointTwo, submetricTwoPointThree, submetricTwoPointFour] as Combination<SubmetricPossibility>,
         ]
         const dynamicParameters: DynamicParameter[] = [
             {

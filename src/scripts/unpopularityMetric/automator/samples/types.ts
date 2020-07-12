@@ -36,6 +36,8 @@ interface DynamicParameterSampleConfig {
 type SampleRange = number & { _SampleRangeBrand: "SampleRange" }
 type SampleResolution = number & { _SampleResolutionBrand: "SampleResolution" }
 
+type SubmetricPossibility = Submetric & { _SubmetricPossibilityBrand: "SubmetricPossibility" }
+
 export {
     Sample,
     ComputeDynamicParameterValueIndicesParameters,
@@ -47,4 +49,5 @@ export {
     DynamicParameterSampleConfig,
     SampleRange,
     SampleResolution,
+    SubmetricPossibility,
 }
