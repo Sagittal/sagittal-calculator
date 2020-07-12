@@ -1,8 +1,8 @@
 import { EventRank, EventType } from "./types"
 import { BoundId } from "../../notations/ji/types"
-import { Count } from "../../utilities/types"
+import { Count, EnumHash } from "../../utilities/types"
 
-const RANKS: { [key in EventType]: EventRank } = {
+const RANKS: EnumHash<EventType, EventRank> = {
     [ EventType.INA ]: 0 as EventRank,
     [ EventType.MEAN ]: 1 as EventRank,
     [ EventType.SIZE ]: 2 as EventRank,

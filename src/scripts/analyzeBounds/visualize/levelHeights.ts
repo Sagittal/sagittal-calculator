@@ -3,8 +3,9 @@ import { LEVEL_HEIGHT, MARGIN, Y_SCALE } from "./sizes"
 import { computeReversedLevelIndex } from "./reversedLevelIndex"
 import { Level } from "../../../notations/ji/types"
 import { Px } from "./types"
+import { EnumHash } from "../../../utilities/types"
 
-const computeLevelHeights = (withinLevelHeight: number): { [key in Level]: Px } => {
+const computeLevelHeights = (withinLevelHeight: number): EnumHash<Level, Px> => {
     return LEVELS.reduce(
         (levelTops, level, levelIndex) => {
             return {
@@ -12,7 +13,7 @@ const computeLevelHeights = (withinLevelHeight: number): { [key in Level]: Px } 
                 [ level ]: Y_SCALE * (MARGIN + (computeReversedLevelIndex(levelIndex) + withinLevelHeight) * LEVEL_HEIGHT) as Px,
             }
         },
-        {} as { [key in Level]: Px },
+        {} as EnumHash<Level, Px>,
     )
 }
 

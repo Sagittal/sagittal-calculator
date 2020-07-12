@@ -1,5 +1,5 @@
 import { Parameter, Submetric, SubmetricType } from "../../types"
-import { Combination, Index } from "../../../../utilities/types"
+import { Combination, EnumHash, Index } from "../../../../utilities/types"
 
 type ParameterUnit = number & { _ParameterUnitBrand: "ParameterUnit" }
 
@@ -14,7 +14,7 @@ type ParameterValue = DynamicParameterValue | boolean | SubmetricType
 // todo: and how does this relate to Submetric? isn't it just the same?
 //  i wouldn't be super cavalier about consolidating them though cuz isn't there a subtle difference,
 //  a slicing and dicing? maybe refer to your draw.io again? or review some test descriptiopns
-type SubmetricValue = { [key in Parameter]?: ParameterValue }
+type SubmetricValue = Partial<EnumHash<Parameter, ParameterValue>>
 
 type Sample = {
     submetrics: Combination<Submetric>,
@@ -24,10 +24,8 @@ type Sample = {
 interface ComputeParameterValueIndicesParameters {
     dynamicParameters: DynamicParameter[],
     submetricValue: SubmetricValue,
-    submetricIndex: Index<Submetric>, // todo: shite, maybe some of these so-called "combinations" of submetrics actually DO matter the order
+    submetricIndex: Index<Submetric>,
 }
-
-// todo: I failed to parameterize all of the Index types
 
 interface DynamicParameter {
     submetricIndex: Index<Submetric>,

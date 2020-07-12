@@ -1,7 +1,7 @@
 import { LEVELS } from "./levels"
 import { LEVEL_EDAS } from "./levelEdas"
 import { APOTOME } from "../intervals"
-import { Cents } from "../../utilities/types"
+import { Cents, EnumHash } from "../../utilities/types"
 import { Level } from "./types"
 
 const TINA: Cents = 1 / 809 * APOTOME as Cents      // 0.14052534741
@@ -16,15 +16,15 @@ const MAXIMUM_POSITION: Cents = Math.log2(
     Math.pow(2, 15),
 ) * 1200 as Cents                                   // 68.5725082211804
 
-const INA_SIZES: { [key in Level]: Cents } = LEVEL_EDAS.reduce(
+const INA_SIZES: EnumHash<Level, Cents> = LEVEL_EDAS.reduce(
     (levelEdaStepSizes, levelEda, index) => {
         return {
             ...levelEdaStepSizes,
             [ LEVELS[ index ] ]: APOTOME / levelEda,
         }
     },
-    {},
-) as { [key in Level]: Cents } // 5.41357171705, 2.41882991613, 1.96008631134, 0.48791848093, 0.14052534741
+    {} as EnumHash<Level, Cents>,
+) // 5.41357171705, 2.41882991613, 1.96008631134, 0.48791848093, 0.14052534741
 
 export {
     TINA,

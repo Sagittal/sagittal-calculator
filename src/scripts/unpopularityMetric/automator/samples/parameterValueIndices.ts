@@ -3,6 +3,7 @@ import { Parameter } from "../../types"
 
 // todo: is Index<Submetric> ACTUALLY the index of a submetric though?
 //  okay so the submetricIndex is more of a sumbetric id. i don't want the finding to be based on index alone. they truly are combinations
+//  maybe some of these so-called "combinations" of submetrics actually DO matter the order
 
 const computeParameterValueIndices = ({ dynamicParameters, submetricValue, submetricIndex }: ComputeParameterValueIndicesParameters): number[] => {
     const parameterPointIndices: number[] = []

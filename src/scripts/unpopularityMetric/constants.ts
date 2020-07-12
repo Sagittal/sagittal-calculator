@@ -1,6 +1,7 @@
 import { SubmetricOperation, SubmetricProperties, SubmetricType } from "./types"
+import { EnumHash } from "../../utilities/types"
 
-const SUBMETRIC_PROPERTIES: { [key in SubmetricType]: SubmetricProperties } = {
+const SUBMETRIC_PROPERTIES: EnumHash<SubmetricType, SubmetricProperties> = {
     [ SubmetricType.SOAPFAR ]: {
         withRepetition: true,
         operation: SubmetricOperation.SUM,

@@ -26,6 +26,8 @@ enum Justification {
 
 type JustificationOption = Justification | (Justification | undefined)[]
 
+type EnumHash<Enum extends string, ValueType> = { [key in Enum]: ValueType }
+
 export {
     Cents,
     Ratio,
@@ -42,4 +44,5 @@ export {
     Count,
     Sum,
     JustificationOption,
+    EnumHash,
 }

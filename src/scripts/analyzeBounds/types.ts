@@ -1,4 +1,4 @@
-import { Cents, Count, Proportion, Sum } from "../../utilities/types"
+import { Cents, Count, EnumHash, Proportion, Sum } from "../../utilities/types"
 import { Level } from "../../notations/ji/types"
 import { Monzo } from "../../utilities/comma/types"
 
@@ -57,7 +57,7 @@ interface AnalyzedHistory {
     initialPositionTinaDifference: Proportion<"Tina">,
 }
 
-type ConsolidatedHistories = { [key in Level]?: ConsolidatedEvent[] }
+type ConsolidatedHistories = Partial<EnumHash<Level, ConsolidatedEvent[]>>
 
 interface UpdateConsolidatedEventParameters {
     analyzedEvent: AnalyzedEvent

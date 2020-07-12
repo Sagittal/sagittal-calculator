@@ -1,5 +1,5 @@
 import { Monzo } from "../../utilities/comma/types"
-import { Cents, Proportion } from "../../utilities/types"
+import { Cents, EnumHash, Proportion } from "../../utilities/types"
 
 type SymbolLongAscii = string & { _SymbolLongAsciiBrand: "SymbolLongAscii" }
 type SymbolUnicode = string & { _SymbolUnicodeBrand: "SymbolUnicode" }
@@ -36,7 +36,7 @@ interface Bound {
     levels: Level[],
 }
 
-type BoundedSymbols = { id: BoundId } & { [key in Level]?: [BoundedSymbol | undefined, BoundedSymbol | undefined] }
+type BoundedSymbols = { id: BoundId } & Partial<EnumHash<Level, [BoundedSymbol | undefined, BoundedSymbol | undefined]>>
 
 interface BoundedSymbol extends SagittalSymbol {
     distance: Cents,
