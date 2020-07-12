@@ -4,7 +4,7 @@ import { computeLog } from "../../../../utilities/log"
 import { SUBMETRIC_PROPERTIES } from "../../constants"
 import { Monzo } from "../../../../utilities/comma/types"
 import { Submetric, SubmetricOperation, SubmetricType } from "../../types"
-import { Antivotes } from "../../sumOfSquares/types"
+import { Antivotes } from "../types"
 import { DynamicParameterValue } from "../../automator/samples/types"
 
 // (sum or resolution)
@@ -33,13 +33,13 @@ const computeSubmetricAntivotes = (fiveRoughNumberMonzo: Monzo, submetric = {}):
     } = SUBMETRIC_PROPERTIES[ submetricType ]
 
     return fiveRoughNumberMonzo.reduce(
-        (monzoAntivotes: Antivotes, term, index): Antivotes => {
+        (monzoAntivotes: Antivotes, primeExponent, index): Antivotes => {
             if (operation === SubmetricOperation.MAX && index < fiveRoughNumberMonzo.length - 1) return 0 as Antivotes
 
             const prime = PRIMES[ index ]
 
             let adjustedPrime
-            let adjustedTerm
+            let adjustedPrimeExponent
 
             adjustedPrime = operation === SubmetricOperation.COUNT ?
                 1 :
@@ -59,23 +59,23 @@ const computeSubmetricAntivotes = (fiveRoughNumberMonzo: Monzo, submetric = {}):
                     adjustedPrime * a
             adjustedPrime = adjustedPrime + w
 
-            if (term === 0) {
-                adjustedTerm = 0
+            if (primeExponent === 0) {
+                adjustedPrimeExponent = 0
             } else {
-                adjustedTerm = withRepetition ? Math.abs(term) : 1
-                // adjustedTerm = adjustedTerm + t
-                adjustedTerm = adjustedTerm >= 0 ? adjustedTerm ** y : 0
-                // adjustedTerm = adjustedTerm + v
+                adjustedPrimeExponent = withRepetition ? Math.abs(primeExponent) : 1
+                // adjustedPrimeExponent = adjustedPrimeExponent + t
+                adjustedPrimeExponent = adjustedPrimeExponent >= 0 ? adjustedPrimeExponent ** y : 0
+                // adjustedPrimeExponent = adjustedPrimeExponent + v
             }
 
-            let termAntivotes = adjustedTerm * adjustedPrime
+            let primeExponentAntivotes = adjustedPrimeExponent * adjustedPrime
             if (index === 2 && modifiedCount) {
-                termAntivotes = termAntivotes * 0.5
+                primeExponentAntivotes = primeExponentAntivotes * 0.5
             }
 
-            if (isNaN(termAntivotes)) throw new Error(`You got NaN! in submetricAntivotes ${fiveRoughNumberMonzo} ${JSON.stringify(submetric, null, 4)}`)
+            if (isNaN(primeExponentAntivotes)) throw new Error(`You got NaN! in submetricAntivotes ${fiveRoughNumberMonzo} ${JSON.stringify(submetric, null, 4)}`)
 
-            return monzoAntivotes + termAntivotes as Antivotes
+            return monzoAntivotes + primeExponentAntivotes as Antivotes
         },
         0 as Antivotes,
     )

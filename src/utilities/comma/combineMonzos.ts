@@ -5,8 +5,8 @@ const combineMonzos = (...monzos: Monzo[]): Monzo => {
 
     return [...Array(maximumMonzoLength).keys()].map((index: number) => {
         return monzos.reduce(
-            (term: PrimeExponent, monzo: Monzo) => {
-                return term + (monzo[ index ] || 0) as PrimeExponent
+            (primeExponent: PrimeExponent, monzo: Monzo) => {
+                return primeExponent + (monzo[ index ] || 0) as PrimeExponent
             },
             0 as PrimeExponent,
         )

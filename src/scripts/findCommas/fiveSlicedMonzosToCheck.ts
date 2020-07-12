@@ -1,5 +1,5 @@
 import { PRIMES } from "../../utilities/constants"
-import { computeTermRange } from "./termRange"
+import { computePrimeExponentRange } from "./primeExponentRange"
 import { computeSopfr } from "../../utilities/comma/sopfr"
 import { computeCopfr } from "../../utilities/comma/copfr"
 import { computeTrimmedMonzo } from "../../utilities/comma/trimmedMonzo"
@@ -45,7 +45,7 @@ const computeFiveSlicedMonzosToCheck = ({ maximumPrimeLimit, maximumFiveRoughSop
             const fiveRoughSopfr = computeSopfr([0, 0, ...fiveSlicedMonzoToCheck] as Monzo)
             const fiveRoughCopfr = computeCopfr([0, 0, ...fiveSlicedMonzoToCheck] as Monzo)
 
-            const termRange: PrimeExponent[] = computeTermRange(
+            const termRange: PrimeExponent[] = computePrimeExponentRange(
                 prime,
                 {
                     maximumFiveRoughSopfr: maximumFiveRoughSopfr ? maximumFiveRoughSopfr - fiveRoughSopfr : undefined,

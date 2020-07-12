@@ -12,8 +12,8 @@ const computeSopfr = (monzoOrInteger: Monzo | number): Sopfr => {
     }
 
     return monzo.reduce(
-        (sopfr: number, term: PrimeExponent, index: number): Sopfr => {
-            return sopfr + Math.abs(term * PRIMES[ index ]) as Sopfr
+        (sopfr: number, primeExponent: PrimeExponent, index: number): Sopfr => {
+            return sopfr + Math.abs(primeExponent * PRIMES[ index ]) as Sopfr
         },
         0 as Sopfr,
     )

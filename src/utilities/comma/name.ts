@@ -12,17 +12,17 @@ const primeFactorizeCommaName = (numeratorOrDenominator: number) => {
     const monzo = computeMonzoFromRatio([numeratorOrDenominator, 1] as Ratio)
     const factorizedTerms: string[] = []
 
-    monzo.forEach((term, termIndex) => {
-        if (term === 0) {
+    monzo.forEach((primeExponent, primeExponentIndex) => {
+        if (primeExponent === 0) {
             return
         }
 
-        if (term === 1) {
-            factorizedTerms.push(`${PRIMES[ termIndex ]}`)
+        if (primeExponent === 1) {
+            factorizedTerms.push(`${PRIMES[ primeExponentIndex ]}`)
         }
 
-        if (term > 1) {
-            factorizedTerms.push(`${PRIMES[ termIndex ]}${SUPERSCRIPT_NUMS[ term ]}`)
+        if (primeExponent > 1) {
+            factorizedTerms.push(`${PRIMES[ primeExponentIndex ]}${SUPERSCRIPT_NUMS[ primeExponent ]}`)
         }
     })
 

@@ -8,8 +8,8 @@ const RANKS: EnumHash<EventType, EventRank> = {
     [ EventType.SIZE ]: 2 as EventRank,
 }
 
-const rankCounts: Count[] = [
-    0 as Count, 0 as Count, 0 as Count,
+const rankCounts: Count<EventRank>[] = [
+    0 as Count<EventRank>, 0 as Count<EventRank>, 0 as Count<EventRank>,
 ]
 
 const rankBoundIndices: Id<Bound>[][] = [
@@ -17,7 +17,7 @@ const rankBoundIndices: Id<Bound>[][] = [
 ]
 
 const updateRankAnalysis = (bestRank: EventRank, boundId: Id<Bound>) => {
-    rankCounts[ bestRank ] = rankCounts[ bestRank ] + 1 as Count
+    rankCounts[ bestRank ] = rankCounts[ bestRank ] + 1 as Count<EventRank>
     rankBoundIndices[ bestRank ].push(boundId)
 }
 

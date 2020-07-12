@@ -5,7 +5,7 @@ import { Count } from "../../../src/utilities/types"
 describe("computeCombinations", () => {
     const set = ["a", "b", "c", "d"]
     it("given a set, will return all combinations of it with the specified count of elements", () => {
-        const count = 2 as Count
+        const count = 2 as Count<string>
 
         const result = computeCombinations(set, count)
 
@@ -20,7 +20,7 @@ describe("computeCombinations", () => {
     })
 
     it("when resolution is zero, returns an empty array", () => {
-        const count = 0 as Count
+        const count = 0 as Count<string>
 
         const result = computeCombinations(set, count)
 
@@ -28,7 +28,7 @@ describe("computeCombinations", () => {
     })
 
     it("works when with repeated elements is true", () => {
-        const count = 2 as Count
+        const count = 2 as Count<string>
 
         const result = computeCombinations(set, count, { withRepeatedElements: true })
 

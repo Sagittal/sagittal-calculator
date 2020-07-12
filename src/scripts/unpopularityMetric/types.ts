@@ -35,9 +35,9 @@ enum Parameter {
     A_IS_EXPONENT = "aIsExponent",                   // use the prime coefficient instead as an exponent
     W = "w",                                         // prime constant (applied after applying exponent or base)
     // X = "x",                                         // prime constant (applied before applying exponent or base) // todo = all these commented out ones lead to bad. this one froze = [{"submetricType" ="soapf"},{"submetricType" ="soapfar","x" ={"center" =0,"range" =6,"resolution" =2},"a" ={"center" =2,"range" =4,"resolution" =2}}]
-    Y = "y",                                         // term exponent
-    // V = "v",                                         // term constant (applied before applying exponent, for non-zero terms)
-    // T = "t",                                         // term constant (applied after applying exponent)
+    Y = "y",                                         // prime exponent exponent
+    // V = "v",                                         // prime exponent constant (applied before applying exponent, for non-zero terms)
+    // T = "t",                                         // prime exponent constant (applied after applying exponent)
     NUMERATOR_IS_NUMINATOR = "numeratorIsNuminator", // numinator is determined by the original ratio's numerator, not the greater of the two results of calling the submetric on the original ratio's numerator and denominator
     MODIFIED_COUNT = "modifiedCount",                // Dave's trick where 5's get a half-resolution
 }

@@ -6,12 +6,12 @@ const computeRatioFromMonzo = (monzo: Monzo): Ratio => {
     let numerator: Numerator = 1 as Numerator
     let denominator: Denominator = 1 as Denominator
 
-    monzo.forEach((term, index) => {
-        if (term > 0) {
-            numerator = numerator * PRIMES[ index ] ** term as Numerator
+    monzo.forEach((primeExponent, index) => {
+        if (primeExponent > 0) {
+            numerator = numerator * PRIMES[ index ] ** primeExponent as Numerator
         }
-        if (term < 0) {
-            denominator = denominator * PRIMES[ index ] ** -term as Denominator
+        if (primeExponent < 0) {
+            denominator = denominator * PRIMES[ index ] ** -primeExponent as Denominator
         }
     })
 

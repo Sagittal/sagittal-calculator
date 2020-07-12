@@ -104,7 +104,7 @@ describe("computeSubmetricAntivotes", () => {
         //     )
         // })
 
-        it("when y is provided, raises the term to an exponent", () => {
+        it("when y is provided, raises the prime exponent to an exponent", () => {
             const y = 0.81 as DynamicParameterValue
             submetric[ Parameter.Y ] = y
 
@@ -117,7 +117,7 @@ describe("computeSubmetricAntivotes", () => {
             )
         })
 
-        // it("when v is provided, adds a constant to each *non-zero* term after applying the exponent", () => {
+        // it("when v is provided, adds a constant to each *non-zero* prime exponent after applying the exponent", () => {
         //     const y = 0.81 as DynamicParameterValue
         //     const v = 0.34 as DynamicParameterValue
         //     submetric[Parameter.Y] = y
@@ -132,7 +132,7 @@ describe("computeSubmetricAntivotes", () => {
         //     )
         // })
 
-        // it("when t is provided, adds a constant to each *non-zero* term before applying the exponent", () => {
+        // it("when t is provided, adds a constant to each *non-zero* prime exponent before applying the exponent", () => {
         //     const y = 0.81 as DynamicParameterValue
         //     const t = 0.34 as DynamicParameterValue
         //     submetric[Parameter.Y] = y

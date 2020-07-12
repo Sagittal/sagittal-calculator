@@ -12,8 +12,8 @@ const computeSopf = (monzoOrInteger: Monzo | number) => {
     }
 
     return monzo.reduce(
-        (sopf, term, index) => {
-            const prime = term === 0 ? 0 : PRIMES[ index ]
+        (sopf, primeExponent, index) => {
+            const prime = primeExponent === 0 ? 0 : PRIMES[ index ]
 
             return sopf + prime
         },

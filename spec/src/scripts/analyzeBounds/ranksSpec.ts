@@ -18,7 +18,7 @@ describe("updateRankAnalysis", () => {
     })
 
     it("updates the count of bounds with this rank as their best rank", () => {
-        expect(rankCounts[ bestRank ]).toBe(previousRankAnalysis + 1 as Count)
+        expect(rankCounts[ bestRank ]).toBe(previousRankAnalysis + 1 as Count<EventRank>)
     })
 
     it("updates the rank to include this bound in the list of bounds with it as their best rank", () => {

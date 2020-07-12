@@ -6,14 +6,14 @@ describe("related parameters", () => {
     //     const submetricsOne = [
     //         {
     //             [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIFAR,
-    //             [Parameter.V]: -1,  // term constant (applied before applying exponent, for non-zero terms)
+    //             [Parameter.V]: -1,  // prime exponent constant (applied before applying exponent, for non-zero terms)
     //             [Parameter.W]: 1,   // prime constant (applied after applying exponent or base)
     //         }
     //     ]
     //     const submetricsTwo = [
     //         {
     //             [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIFAR,
-    //             [Parameter.V]: -2,  // if you subtract one more repetition from each non-zero term
+    //             [Parameter.V]: -2,  // if you subtract one more repetition from each non-zero prime exponent
     //             [Parameter.W]: 1,   // then you'd have to add
     //         }
     //     ]

@@ -68,7 +68,7 @@ interface UpdateConsolidatedEventParameters {
 
 interface AnalyzedBound {
     initialPosition: Cents,
-    possibleHistoryCount: Count<AnalyzedHistory>, // todo: still need to parameterize some of these counts
+    possibleHistoryCount: Count<AnalyzedHistory>,
     bestPossibleHistory: AnalyzedHistory,
     bestRank: EventRank,
     bestPossibleHistoryDistance: Cents,

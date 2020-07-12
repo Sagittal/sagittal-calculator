@@ -3,8 +3,8 @@ import { Monzo } from "./types"
 
 const computeCopfr = (monzo: Monzo) => {
     return monzo.reduce(
-        (copfr, term) => {
-            return copfr + Math.abs(term)
+        (copfr, primeExponent) => {
+            return copfr + Math.abs(primeExponent)
         },
         0,
     )
