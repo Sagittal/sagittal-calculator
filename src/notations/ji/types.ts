@@ -1,11 +1,9 @@
 import { Monzo } from "../../utilities/comma/types"
-import { Cents, EnumHash, Proportion } from "../../utilities/types"
+import { Cents, EnumHash, Id, Proportion } from "../../utilities/types"
 
 type SymbolLongAscii = string & { _SymbolLongAsciiBrand: "SymbolLongAscii" }
 type SymbolUnicode = string & { _SymbolUnicodeBrand: "SymbolUnicode" }
 
-type SymbolId = number & { _SymbolIdBrand: "SymbolId" }
-type BoundId = number & { _BoundIdBrand: "BoundId" }
 type Mina = number & { _MinaBrand: "Mina" }
 type ApotomeSlope = number & { _ApotomeSlopeBrand: "ApotomeSlope" }
 
@@ -18,7 +16,7 @@ enum Level {
 }
 
 interface SagittalSymbol {
-    id: SymbolId,
+    id: Id<SagittalSymbol>,
     ascii: SymbolLongAscii,
     unicode: SymbolUnicode,
     introducingLevel: Level,
@@ -31,12 +29,12 @@ interface SagittalSymbol {
 }
 
 interface Bound {
-    id: BoundId,
+    id: Id<Bound>,
     position: Cents,
     levels: Level[],
 }
 
-type BoundedSymbols = { id: BoundId } & Partial<EnumHash<Level, [BoundedSymbol | undefined, BoundedSymbol | undefined]>>
+type BoundedSymbols = { id: Id<Bound> } & Partial<EnumHash<Level, [BoundedSymbol | undefined, BoundedSymbol | undefined]>>
 
 interface BoundedSymbol extends SagittalSymbol {
     distance: Cents,
@@ -47,11 +45,9 @@ export {
     SymbolLongAscii,
     SymbolUnicode,
     SagittalSymbol,
-    SymbolId,
     Mina,
     Level,
     Bound,
-    BoundId,
     BoundedSymbols,
     BoundedSymbol,
     ApotomeSlope,

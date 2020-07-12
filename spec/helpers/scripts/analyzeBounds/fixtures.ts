@@ -8,8 +8,8 @@ import {
     HistoricalEvent,
     Score,
 } from "../../../../src/scripts/analyzeBounds/types"
-import { Cents, Proportion, Sum } from "../../../../src/utilities/types"
-import { Bound, BoundId, Level } from "../../../../src/notations/ji/types"
+import { Cents, Id, Proportion, Sum } from "../../../../src/utilities/types"
+import { Bound, Level } from "../../../../src/notations/ji/types"
 
 const eventFixture: HistoricalEvent = {
     position: 0 as Cents,
@@ -50,7 +50,7 @@ const consolidatedEventFixture: ConsolidatedEvent = {
 }
 
 const boundFixture: Bound = {
-    id: 0 as BoundId,
+    id: 0 as Id<Bound>,
     levels: [],
     position: 0 as Cents,
 }

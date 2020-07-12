@@ -1,8 +1,8 @@
 import { presentBound } from "../../../../../src/scripts/analyzeBounds/present/bound"
-import { Bound, BoundId, Level } from "../../../../../src/notations/ji/types"
+import { Bound, Level } from "../../../../../src/notations/ji/types"
 import { AnalysisMode } from "../../../../../src/scripts/analyzeBounds/present/types"
 import { AnalyzedBound, EventRank } from "../../../../../src/scripts/analyzeBounds/types"
-import { Cents } from "../../../../../src/utilities/types"
+import { Cents, Id } from "../../../../../src/utilities/types"
 import { boundFixture } from "../../../../helpers/scripts/analyzeBounds/fixtures"
 
 describe("presentAnalyzedBound", () => {
@@ -16,7 +16,7 @@ describe("presentAnalyzedBound", () => {
             const bound: Bound = {
                 ...boundFixture,
                 position: 5.44763529181809 as Cents,
-                id: 10 as BoundId,
+                id: 10 as Id<Bound>,
             }
             const analyzedBound: AnalyzedBound = {
                 bestPossibleHistory: {
@@ -48,7 +48,7 @@ describe("presentAnalyzedBound", () => {
             const bound = {
                 ...boundFixture,
                 position: 5.44763529181809 as Cents,
-                id: 10 as BoundId,
+                id: 10 as Id<Bound>,
             }
             const analyzedBound: AnalyzedBound = {
                 bestRank: 2 as EventRank,

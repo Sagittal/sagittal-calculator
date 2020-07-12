@@ -1,7 +1,7 @@
 import { computePositionSymbol } from "../../../../src/notations/ji/positionSymbol"
-import { Level, Mina, SymbolId, SymbolLongAscii, SymbolUnicode } from "../../../../src/notations/ji/types"
+import { Level, Mina, SagittalSymbol, SymbolLongAscii, SymbolUnicode } from "../../../../src/notations/ji/types"
 import { Monzo } from "../../../../src/utilities/comma/types"
-import { Cents } from "../../../../src/utilities/types"
+import { Cents, Id } from "../../../../src/utilities/types"
 
 describe("computePositionSymbol", () => {
     it("given a position, returns the symbol at that position", () => { // TODO: this could be used for the calculator?
@@ -10,7 +10,7 @@ describe("computePositionSymbol", () => {
         const result = computePositionSymbol(position)
 
         expect(result).toEqual({
-            id: 7 as SymbolId,
+            id: 7 as Id<SagittalSymbol>,
             ascii: ")|" as SymbolLongAscii,
             unicode: "" as SymbolUnicode,
             introducingLevel: Level.HIGH,

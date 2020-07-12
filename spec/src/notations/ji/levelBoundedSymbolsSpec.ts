@@ -1,14 +1,6 @@
 import { computeLevelBoundedSymbols } from "../../../../src/notations/ji/levelBoundedSymbols"
-import {
-    Bound,
-    BoundId,
-    Level,
-    Mina,
-    SymbolId,
-    SymbolLongAscii,
-    SymbolUnicode,
-} from "../../../../src/notations/ji/types"
-import { Cents, Proportion } from "../../../../src/utilities/types"
+import { Bound, Level, Mina, SagittalSymbol, SymbolLongAscii, SymbolUnicode } from "../../../../src/notations/ji/types"
+import { Cents, Id, Proportion } from "../../../../src/utilities/types"
 import { Monzo } from "../../../../src/utilities/comma/types"
 
 describe("computeLevelBoundedSymbols", () => {
@@ -16,13 +8,13 @@ describe("computeLevelBoundedSymbols", () => {
         const bound: Bound = {
             position: 24.66219847111080 as Cents,
             levels: [Level.MEDIUM, Level.EXTREME, Level.INSANE],
-            id: 54 as BoundId,
+            id: 54 as Id<Bound>,
         }
 
         const result = computeLevelBoundedSymbols(bound)
 
         expect(result).toEqual({
-            id: 54 as BoundId,
+            id: 54 as Id<Bound>,
             [ Level.MEDIUM ]: [
                 {
                     introducingLevel: Level.MEDIUM,
@@ -35,7 +27,7 @@ describe("computeLevelBoundedSymbols", () => {
                         monzo: [-4, 4, -1] as Monzo as Monzo,
                         position: 21.5062895967148 as Cents as Cents,
                     },
-                    id: 44 as SymbolId,
+                    id: 44 as Id<SagittalSymbol>,
                     elements: ["/|"] as SymbolLongAscii[] as SymbolLongAscii[],
                 },
                 {
@@ -49,7 +41,7 @@ describe("computeLevelBoundedSymbols", () => {
                         monzo: [6, -2, 0, -1] as Monzo,
                         position: 27.2640918001001 as Cents,
                     },
-                    id: 58 as SymbolId,
+                    id: 58 as Id<SagittalSymbol>,
                     elements: ["|)"] as SymbolLongAscii[],
                 },
             ],
@@ -65,7 +57,7 @@ describe("computeLevelBoundedSymbols", () => {
                         monzo: [-8, 3, 3, 0, 0, -1] as Monzo,
                         position: 24.2784824213563 as Cents,
                     },
-                    id: 51 as SymbolId,
+                    id: 51 as Id<SagittalSymbol>,
                     elements: [",|", ")|", "/|"] as SymbolLongAscii[],
                 },
                 {
@@ -79,7 +71,7 @@ describe("computeLevelBoundedSymbols", () => {
                         monzo: [-13, 7, -1, 0, 0, 0, 0, 1] as Monzo,
                         position: 24.8843083251798 as Cents,
                     },
-                    id: 52 as SymbolId,
+                    id: 52 as Id<SagittalSymbol>,
                     elements: [")|", "/|"] as SymbolLongAscii[],
                 },
             ],
@@ -95,7 +87,7 @@ describe("computeLevelBoundedSymbols", () => {
                         monzo: [-8, 3, 3, 0, 0, -1] as Monzo,
                         position: 24.2784824213563 as Cents,
                     },
-                    id: 51 as SymbolId,
+                    id: 51 as Id<SagittalSymbol>,
                     elements: [",|", ")|", "/|"] as SymbolLongAscii[],
                 },
                 {
@@ -109,7 +101,7 @@ describe("computeLevelBoundedSymbols", () => {
                         monzo: [-13, 7, -1, 0, 0, 0, 0, 1] as Monzo,
                         position: 24.8843083251798 as Cents,
                     },
-                    id: 52 as SymbolId,
+                    id: 52 as Id<SagittalSymbol>,
                     elements: [")|", "/|"] as SymbolLongAscii[],
                 },
             ],
@@ -120,19 +112,19 @@ describe("computeLevelBoundedSymbols", () => {
         const bound: Bound = {
             position: 68.57250822118040 as Cents,
             levels: [Level.MEDIUM, Level.HIGH, Level.ULTRA, Level.EXTREME, Level.INSANE],
-            id: 54 as BoundId,
+            id: 54 as Id<Bound>,
         }
 
         const result = computeLevelBoundedSymbols(bound)
 
         expect(result).toEqual({
-            id: 54 as BoundId,
+            id: 54 as Id<Bound>,
             [ Level.MEDIUM ]: [
                 {
                     introducingLevel: Level.MEDIUM,
                     ascii: "(|\\" as SymbolLongAscii,
                     unicode: "" as SymbolUnicode,
-                    id: 142 as SymbolId,
+                    id: 142 as Id<SagittalSymbol>,
                     mina: 133 as Mina,
                     distance: 3.6578835602835937 as Cents,
                     inaDistance: 0.6756876516060547 as Proportion,
@@ -150,7 +142,7 @@ describe("computeLevelBoundedSymbols", () => {
                     ascii: ")|\\\\" as SymbolLongAscii,
                     unicode: "" as SymbolUnicode,
                     mina: 138 as Mina,
-                    id: 147 as SymbolId,
+                    id: 147 as Id<SagittalSymbol>,
                     distance: 1.2814466063946952 as Cents,
                     inaDistance: 0.5297795425192314 as Proportion,
                     primaryComma: {
@@ -167,7 +159,7 @@ describe("computeLevelBoundedSymbols", () => {
                     ascii: ")|\\\\" as SymbolLongAscii,
                     unicode: "" as SymbolUnicode,
                     mina: 138 as Mina,
-                    id: 147 as SymbolId,
+                    id: 147 as Id<SagittalSymbol>,
                     distance: 1.2814466063946952 as Cents,
                     inaDistance: 0.6537704992790516 as Proportion,
                     primaryComma: {
@@ -183,7 +175,7 @@ describe("computeLevelBoundedSymbols", () => {
                     introducingLevel: Level.EXTREME,
                     ascii: "``)|\\\\" as SymbolLongAscii,
                     unicode: "" as SymbolUnicode,
-                    id: 149 as SymbolId,
+                    id: 149 as Id<SagittalSymbol>,
                     mina: 140 as Mina,
                     distance: 0.44892240228040237 as Cents,
                     inaDistance: 0.9200766517814528 as Proportion,
@@ -201,7 +193,7 @@ describe("computeLevelBoundedSymbols", () => {
                     ascii: "``)|\\\\" as SymbolLongAscii,
                     unicode: "" as SymbolUnicode,
                     mina: 140 as Mina,
-                    id: 149 as SymbolId,
+                    id: 149 as Id<SagittalSymbol>,
                     distance: 0.44892240228040237 as Cents,
                     inaDistance: 3.194600906829164 as Proportion,
                     primaryComma: {
@@ -219,13 +211,13 @@ describe("computeLevelBoundedSymbols", () => {
         const bound: Bound = {
             position: 0.210788021120605 as Cents,
             levels: [Level.EXTREME, Level.INSANE],
-            id: 55 as BoundId,
+            id: 55 as Id<Bound>,
         }
 
         const result = computeLevelBoundedSymbols(bound)
 
         expect(result).toEqual({
-            id: 55 as BoundId,
+            id: 55 as Id<Bound>,
             [ Level.EXTREME ]: [
                 undefined,
                 {
@@ -237,7 +229,7 @@ describe("computeLevelBoundedSymbols", () => {
                         monzo: [12, -2, -1, -1, 0, -1] as Monzo,
                         position: 0.42271616595482 as Cents,
                     },
-                    id: 1 as SymbolId,
+                    id: 1 as Id<SagittalSymbol>,
                     distance: 0.211928144834215 as Cents,
                     inaDistance: 0.43435154255350816 as Proportion,
                     elements: ["`|"] as SymbolLongAscii[],
@@ -254,7 +246,7 @@ describe("computeLevelBoundedSymbols", () => {
                         monzo: [12, -2, -1, -1, 0, -1] as Monzo,
                         position: 0.42271616595482 as Cents,
                     },
-                    id: 1 as SymbolId,
+                    id: 1 as Id<SagittalSymbol>,
                     distance: 0.211928144834215 as Cents,
                     inaDistance: 1.508113295818833 as Proportion,
                     elements: ["`|"] as SymbolLongAscii[],

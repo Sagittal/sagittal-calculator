@@ -1,6 +1,6 @@
 import { computeIsWithinLevel, computeLevelSymbols } from "../../../../src/notations/ji/levelsSymbols"
-import { Level, Mina, SymbolId, SymbolLongAscii, SymbolUnicode } from "../../../../src/notations/ji/types"
-import { Cents } from "../../../../src/utilities/types"
+import { Level, Mina, SagittalSymbol, SymbolLongAscii, SymbolUnicode } from "../../../../src/notations/ji/types"
+import { Cents, Id } from "../../../../src/utilities/types"
 import { Monzo } from "../../../../src/utilities/comma/types"
 
 describe("computeLevelSymbols", () => {
@@ -15,7 +15,7 @@ describe("computeLevelSymbols", () => {
         const levelCommas = computeLevelSymbols(Level.MEDIUM)
 
         expect(levelCommas[ 0 ]).toEqual({
-            id: 0 as SymbolId,
+            id: 0 as Id<SagittalSymbol>,
             introducingLevel: Level.MEDIUM,
             ascii: "|" as SymbolLongAscii,
             unicode: "" as SymbolUnicode,

@@ -1,10 +1,10 @@
-import { Level, Mina, SagittalSymbol, SymbolId, SymbolLongAscii, SymbolUnicode } from "./types"
-import { Cents } from "../../utilities/types"
+import { Level, Mina, SagittalSymbol, SymbolLongAscii, SymbolUnicode } from "./types"
+import { Cents, Id } from "../../utilities/types"
 import { Monzo } from "../../utilities/comma/types"
 
 const SYMBOLS: SagittalSymbol[] = [
     {
-        id: 0 as SymbolId,
+        id: 0 as Id<SagittalSymbol>,
         ascii: "|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.MEDIUM,
@@ -16,7 +16,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: [] as SymbolLongAscii[],
     },
     {
-        id: 1 as SymbolId,
+        id: 1 as Id<SagittalSymbol>,
         ascii: "`|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -28,7 +28,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: ["`|"] as SymbolLongAscii[],
     },
     {
-        id: 2 as SymbolId,
+        id: 2 as Id<SagittalSymbol>,
         ascii: "``|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -40,7 +40,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: ["``|"] as SymbolLongAscii[],
     },
     {
-        id: 3 as SymbolId,
+        id: 3 as Id<SagittalSymbol>,
         ascii: ".)|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.ULTRA,
@@ -52,7 +52,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: [".|", ")|"] as SymbolLongAscii[],
     },
     {
-        id: 4 as SymbolId,
+        id: 4 as Id<SagittalSymbol>,
         ascii: "'|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.ULTRA,
@@ -64,7 +64,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: ["'|"] as SymbolLongAscii[],
     },
     {
-        id: 5 as SymbolId,
+        id: 5 as Id<SagittalSymbol>,
         ascii: "`'|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -76,7 +76,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: ["`|", "'|"] as SymbolLongAscii[],
     },
     {
-        id: 6 as SymbolId,
+        id: 6 as Id<SagittalSymbol>,
         ascii: ",)|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -88,7 +88,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: [",|", ")|"] as SymbolLongAscii[],
     },
     {
-        id: 7 as SymbolId,
+        id: 7 as Id<SagittalSymbol>,
         ascii: ")|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.HIGH,
@@ -100,7 +100,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: [")|"] as SymbolLongAscii[],
     },
     {
-        id: 8 as SymbolId,
+        id: 8 as Id<SagittalSymbol>,
         ascii: "`)|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -112,7 +112,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: ["`|", ")|"] as SymbolLongAscii[],
     },
     {
-        id: 9 as SymbolId,
+        id: 9 as Id<SagittalSymbol>,
         ascii: "``)|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -124,7 +124,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: ["``|", ")|"] as SymbolLongAscii[],
     },
     {
-        id: 10 as SymbolId,
+        id: 10 as Id<SagittalSymbol>,
         ascii: ",,|(" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -136,7 +136,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: [",,|", "|("] as SymbolLongAscii[],
     },
     {
-        id: 11 as SymbolId,
+        id: 11 as Id<SagittalSymbol>,
         ascii: ",|(" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -148,7 +148,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: [",|", "|("] as SymbolLongAscii[],
     },
     {
-        id: 12 as SymbolId,
+        id: 12 as Id<SagittalSymbol>,
         ascii: "|(" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.MEDIUM,
@@ -160,7 +160,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: ["|("] as SymbolLongAscii[],
     },
     {
-        id: 13 as SymbolId,
+        id: 13 as Id<SagittalSymbol>,
         ascii: "`|(" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -172,7 +172,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: ["`|", "|("] as SymbolLongAscii[],
     },
     {
-        id: 14 as SymbolId,
+        id: 14 as Id<SagittalSymbol>,
         ascii: ".~|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.ULTRA,
@@ -184,7 +184,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: [".|", "~|"] as SymbolLongAscii[],
     },
     {
-        id: 15 as SymbolId,
+        id: 15 as Id<SagittalSymbol>,
         ascii: ",'|(" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -196,7 +196,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: [",|", "'|", "|("] as SymbolLongAscii[],
     },
     {
-        id: 16 as SymbolId,
+        id: 16 as Id<SagittalSymbol>,
         ascii: "'|(" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.ULTRA,
@@ -208,7 +208,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: ["'|", "|("] as SymbolLongAscii[],
     },
     {
-        id: 17 as SymbolId,
+        id: 17 as Id<SagittalSymbol>,
         ascii: ",~|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -220,7 +220,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: [",|", "~|"] as SymbolLongAscii[],
     },
     {
-        id: 18 as SymbolId,
+        id: 18 as Id<SagittalSymbol>,
         ascii: "~|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.HIGH,
@@ -232,7 +232,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: ["~|"] as SymbolLongAscii[],
     },
     {
-        id: 19 as SymbolId,
+        id: 19 as Id<SagittalSymbol>,
         ascii: ",)|(" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -244,7 +244,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: [",|", ")|", "|("] as SymbolLongAscii[],
     },
     {
-        id: 20 as SymbolId,
+        id: 20 as Id<SagittalSymbol>,
         ascii: ")|(" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.MEDIUM,
@@ -256,7 +256,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: [")|", "|("] as SymbolLongAscii[],
     },
     {
-        id: 21 as SymbolId,
+        id: 21 as Id<SagittalSymbol>,
         ascii: "`)|(" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -268,7 +268,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: ["`|", ")|", "|("] as SymbolLongAscii[],
     },
     {
-        id: 22 as SymbolId,
+        id: 22 as Id<SagittalSymbol>,
         ascii: "``)|(" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -280,7 +280,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: ["``|", ")|", "|("] as SymbolLongAscii[],
     },
     {
-        id: 23 as SymbolId,
+        id: 23 as Id<SagittalSymbol>,
         ascii: ",')|(" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -292,7 +292,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: [",|", "'|", ")|", "|("] as SymbolLongAscii[],
     },
     {
-        id: 24 as SymbolId,
+        id: 24 as Id<SagittalSymbol>,
         ascii: "')|(" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.ULTRA,
@@ -304,7 +304,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: ["'|", ")|", "|("] as SymbolLongAscii[],
     },
     {
-        id: 25 as SymbolId,
+        id: 25 as Id<SagittalSymbol>,
         ascii: ")~|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.HIGH,
@@ -316,7 +316,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: [")|", "~|"] as SymbolLongAscii[],
     },
     {
-        id: 26 as SymbolId,
+        id: 26 as Id<SagittalSymbol>,
         ascii: ".~|(" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.ULTRA,
@@ -328,7 +328,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: [".|", "~|", "|("] as SymbolLongAscii[],
     },
     {
-        id: 27 as SymbolId,
+        id: 27 as Id<SagittalSymbol>,
         ascii: "`.~|(" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -340,7 +340,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: ["`|", ".|", "~|", "|("] as SymbolLongAscii[],
     },
     {
-        id: 28 as SymbolId,
+        id: 28 as Id<SagittalSymbol>,
         ascii: ",,~|(" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -352,7 +352,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: [",,|", "~|", "|("] as SymbolLongAscii[],
     },
     {
-        id: 29 as SymbolId,
+        id: 29 as Id<SagittalSymbol>,
         ascii: ",~|(" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -364,7 +364,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: [",|", "~|", "|("] as SymbolLongAscii[],
     },
     {
-        id: 30 as SymbolId,
+        id: 30 as Id<SagittalSymbol>,
         ascii: "~|(" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.MEDIUM,
@@ -376,7 +376,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: ["~|", "|("] as SymbolLongAscii[],
     },
     {
-        id: 31 as SymbolId,
+        id: 31 as Id<SagittalSymbol>,
         ascii: "`~|(" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -388,7 +388,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: ["`|", "~|", "|("] as SymbolLongAscii[],
     },
     {
-        id: 32 as SymbolId,
+        id: 32 as Id<SagittalSymbol>,
         ascii: ",,|~" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -400,7 +400,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: [",,|", "|~"] as SymbolLongAscii[],
     },
     {
-        id: 33 as SymbolId,
+        id: 33 as Id<SagittalSymbol>,
         ascii: ",|~" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -412,7 +412,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: [",|", "|~"] as SymbolLongAscii[],
     },
     {
-        id: 34 as SymbolId,
+        id: 34 as Id<SagittalSymbol>,
         ascii: "|~" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.HIGH,
@@ -424,7 +424,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: ["|~"] as SymbolLongAscii[],
     },
     {
-        id: 35 as SymbolId,
+        id: 35 as Id<SagittalSymbol>,
         ascii: "`|~" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -436,7 +436,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: ["`|", "|~"] as SymbolLongAscii[],
     },
     {
-        id: 36 as SymbolId,
+        id: 36 as Id<SagittalSymbol>,
         ascii: "~~|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.HIGH,
@@ -448,7 +448,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: ["~|", "~|"] as SymbolLongAscii[],
     },
     {
-        id: 37 as SymbolId,
+        id: 37 as Id<SagittalSymbol>,
         ascii: "`~~|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -460,7 +460,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: ["`|", "~|", "~|"] as SymbolLongAscii[],
     },
     {
-        id: 38 as SymbolId,
+        id: 38 as Id<SagittalSymbol>,
         ascii: "``~~|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -472,7 +472,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: ["``|", "~|", "~|"] as SymbolLongAscii[],
     },
     {
-        id: 39 as SymbolId,
+        id: 39 as Id<SagittalSymbol>,
         ascii: ",./|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -484,7 +484,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: [",|", ".|", "/|"] as SymbolLongAscii[],
     },
     {
-        id: 40 as SymbolId,
+        id: 40 as Id<SagittalSymbol>,
         ascii: "./|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.ULTRA,
@@ -496,7 +496,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: [".|", "/|"] as SymbolLongAscii[],
     },
     {
-        id: 41 as SymbolId,
+        id: 41 as Id<SagittalSymbol>,
         ascii: ")|~" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.HIGH,
@@ -508,7 +508,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: [")|", "|~"] as SymbolLongAscii[],
     },
     {
-        id: 42 as SymbolId,
+        id: 42 as Id<SagittalSymbol>,
         ascii: ",,/|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -520,7 +520,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: [",,|", "/|"] as SymbolLongAscii[],
     },
     {
-        id: 43 as SymbolId,
+        id: 43 as Id<SagittalSymbol>,
         ascii: ",/|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -532,7 +532,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: [",|", "/|"] as SymbolLongAscii[],
     },
     {
-        id: 44 as SymbolId,
+        id: 44 as Id<SagittalSymbol>,
         ascii: "/|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.MEDIUM,
@@ -544,7 +544,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: ["/|"] as SymbolLongAscii[],
     },
     {
-        id: 45 as SymbolId,
+        id: 45 as Id<SagittalSymbol>,
         ascii: "`/|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -556,7 +556,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: ["`|", "/|"] as SymbolLongAscii[],
     },
     {
-        id: 46 as SymbolId,
+        id: 46 as Id<SagittalSymbol>,
         ascii: "``/|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -568,7 +568,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: ["``|", "/|"] as SymbolLongAscii[],
     },
     {
-        id: 47 as SymbolId,
+        id: 47 as Id<SagittalSymbol>,
         ascii: ".)/|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.ULTRA,
@@ -580,7 +580,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: [".|", ")|", "/|"] as SymbolLongAscii[],
     },
     {
-        id: 48 as SymbolId,
+        id: 48 as Id<SagittalSymbol>,
         ascii: "'/|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.ULTRA,
@@ -592,7 +592,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: ["'|", "/|"] as SymbolLongAscii[],
     },
     {
-        id: 49 as SymbolId,
+        id: 49 as Id<SagittalSymbol>,
         ascii: "`'/|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -604,7 +604,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: ["`|", "'|", "/|"] as SymbolLongAscii[],
     },
     {
-        id: 50 as SymbolId,
+        id: 50 as Id<SagittalSymbol>,
         ascii: ",,)/|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -616,7 +616,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: [",,|", ")|", "/|"] as SymbolLongAscii[],
     },
     {
-        id: 51 as SymbolId,
+        id: 51 as Id<SagittalSymbol>,
         ascii: ",)/|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -628,7 +628,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: [",|", ")|", "/|"] as SymbolLongAscii[],
     },
     {
-        id: 52 as SymbolId,
+        id: 52 as Id<SagittalSymbol>,
         ascii: ")/|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.HIGH,
@@ -640,7 +640,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: [")|", "/|"] as SymbolLongAscii[],
     },
     {
-        id: 53 as SymbolId,
+        id: 53 as Id<SagittalSymbol>,
         ascii: ",.|)" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -652,7 +652,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: [",|", ".|", "|)"] as SymbolLongAscii[],
     },
     {
-        id: 54 as SymbolId,
+        id: 54 as Id<SagittalSymbol>,
         ascii: ".|)" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.ULTRA,
@@ -664,7 +664,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: [".|", "|)"] as SymbolLongAscii[],
     },
     {
-        id: 55 as SymbolId,
+        id: 55 as Id<SagittalSymbol>,
         ascii: "`.|)" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -676,7 +676,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: ["`|", ".|", "|)"] as SymbolLongAscii[],
     },
     {
-        id: 56 as SymbolId,
+        id: 56 as Id<SagittalSymbol>,
         ascii: ",,|)" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -688,7 +688,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: [",,|", "|)"] as SymbolLongAscii[],
     },
     {
-        id: 57 as SymbolId,
+        id: 57 as Id<SagittalSymbol>,
         ascii: ",|)" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -700,7 +700,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: [",|", "|)"] as SymbolLongAscii[],
     },
     {
-        id: 58 as SymbolId,
+        id: 58 as Id<SagittalSymbol>,
         ascii: "|)" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.MEDIUM,
@@ -712,7 +712,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: ["|)"] as SymbolLongAscii[],
     },
     {
-        id: 59 as SymbolId,
+        id: 59 as Id<SagittalSymbol>,
         ascii: "`|)" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -724,7 +724,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: ["`|", "|)"] as SymbolLongAscii[],
     },
     {
-        id: 60 as SymbolId,
+        id: 60 as Id<SagittalSymbol>,
         ascii: "``|)" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -736,7 +736,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: ["``|", "|)"] as SymbolLongAscii[],
     },
     {
-        id: 61 as SymbolId,
+        id: 61 as Id<SagittalSymbol>,
         ascii: ",'|)" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -748,7 +748,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: [",|", "'|", "|)"] as SymbolLongAscii[],
     },
     {
-        id: 62 as SymbolId,
+        id: 62 as Id<SagittalSymbol>,
         ascii: "'|)" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.ULTRA,
@@ -760,7 +760,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: ["'|", "|)"] as SymbolLongAscii[],
     },
     {
-        id: 63 as SymbolId,
+        id: 63 as Id<SagittalSymbol>,
         ascii: "`'|)" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -772,7 +772,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: ["`|", "'|", "|)"] as SymbolLongAscii[],
     },
     {
-        id: 64 as SymbolId,
+        id: 64 as Id<SagittalSymbol>,
         ascii: ",)|)" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -784,7 +784,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: [",|", ")|", "|)"] as SymbolLongAscii[],
     },
     {
-        id: 65 as SymbolId,
+        id: 65 as Id<SagittalSymbol>,
         ascii: ")|)" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.HIGH,
@@ -796,7 +796,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: [")|", "|)"] as SymbolLongAscii[],
     },
     {
-        id: 66 as SymbolId,
+        id: 66 as Id<SagittalSymbol>,
         ascii: ".(|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.ULTRA,
@@ -808,7 +808,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: [".|", "(|"] as SymbolLongAscii[],
     },
     {
-        id: 67 as SymbolId,
+        id: 67 as Id<SagittalSymbol>,
         ascii: "|\\" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.HIGH,
@@ -820,7 +820,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: ["|\\"] as SymbolLongAscii[],
     },
     {
-        id: 68 as SymbolId,
+        id: 68 as Id<SagittalSymbol>,
         ascii: "`|\\" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -832,7 +832,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: ["`|", "|\\"] as SymbolLongAscii[],
     },
     {
-        id: 69 as SymbolId,
+        id: 69 as Id<SagittalSymbol>,
         ascii: ",(|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -844,7 +844,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: [",|", "(|"] as SymbolLongAscii[],
     },
     {
-        id: 70 as SymbolId,
+        id: 70 as Id<SagittalSymbol>,
         ascii: "(|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.MEDIUM,
@@ -856,7 +856,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: ["(|"] as SymbolLongAscii[],
     },
     {
-        id: 71 as SymbolId,
+        id: 71 as Id<SagittalSymbol>,
         ascii: "`(|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -868,7 +868,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: ["`|", "(|"] as SymbolLongAscii[],
     },
     {
-        id: 72 as SymbolId,
+        id: 72 as Id<SagittalSymbol>,
         ascii: "``(|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -880,7 +880,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: ["``|", "(|"] as SymbolLongAscii[],
     },
     {
-        id: 73 as SymbolId,
+        id: 73 as Id<SagittalSymbol>,
         ascii: ",'(|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -892,7 +892,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: [",|", "'|", "(|"] as SymbolLongAscii[],
     },
     {
-        id: 74 as SymbolId,
+        id: 74 as Id<SagittalSymbol>,
         ascii: "'(|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.ULTRA,
@@ -904,7 +904,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: ["'|", "(|"] as SymbolLongAscii[],
     },
     {
-        id: 75 as SymbolId,
+        id: 75 as Id<SagittalSymbol>,
         ascii: ",~|)" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -916,7 +916,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: [",|", "~|", "|)"] as SymbolLongAscii[],
     },
     {
-        id: 76 as SymbolId,
+        id: 76 as Id<SagittalSymbol>,
         ascii: "~|)" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.HIGH,
@@ -928,7 +928,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: ["~|", "|)"] as SymbolLongAscii[],
     },
     {
-        id: 77 as SymbolId,
+        id: 77 as Id<SagittalSymbol>,
         ascii: "`~|)" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -940,7 +940,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: ["`|", "~|", "|)"] as SymbolLongAscii[],
     },
     {
-        id: 79 as SymbolId,
+        id: 79 as Id<SagittalSymbol>,
         ascii: ",.(|(" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -952,7 +952,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: [",|", ".|", "(|", "|("] as SymbolLongAscii[],
     },
     {
-        id: 80 as SymbolId,
+        id: 80 as Id<SagittalSymbol>,
         ascii: ".(|(" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.ULTRA,
@@ -964,7 +964,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: [".|", "(|", "|("] as SymbolLongAscii[],
     },
     {
-        id: 81 as SymbolId,
+        id: 81 as Id<SagittalSymbol>,
         ascii: "'~|)" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.ULTRA,
@@ -976,7 +976,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: ["'|", "~|", "|)"] as SymbolLongAscii[],
     },
     {
-        id: 82 as SymbolId,
+        id: 82 as Id<SagittalSymbol>,
         ascii: "/|~" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.HIGH,
@@ -988,7 +988,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: ["/|", "|~"] as SymbolLongAscii[],
     },
     {
-        id: 83 as SymbolId,
+        id: 83 as Id<SagittalSymbol>,
         ascii: ",,(|(" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -1000,7 +1000,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: [",,|", "(|", "|("] as SymbolLongAscii[],
     },
     {
-        id: 84 as SymbolId,
+        id: 84 as Id<SagittalSymbol>,
         ascii: ",(|(" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -1012,7 +1012,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: [",|", "(|", "|("] as SymbolLongAscii[],
     },
     {
-        id: 85 as SymbolId,
+        id: 85 as Id<SagittalSymbol>,
         ascii: "(|(" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.MEDIUM,
@@ -1024,7 +1024,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: ["(|", "|("] as SymbolLongAscii[],
     },
     {
-        id: 86 as SymbolId,
+        id: 86 as Id<SagittalSymbol>,
         ascii: "`(|(" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -1036,7 +1036,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: ["`|", "(|", "|("] as SymbolLongAscii[],
     },
     {
-        id: 87 as SymbolId,
+        id: 87 as Id<SagittalSymbol>,
         ascii: "~|\\" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.HIGH,
@@ -1048,7 +1048,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: ["~|", "|\\"] as SymbolLongAscii[],
     },
     {
-        id: 88 as SymbolId,
+        id: 88 as Id<SagittalSymbol>,
         ascii: ",.//|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -1060,7 +1060,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: [",|", ".|", "/|", "/|"] as SymbolLongAscii[],
     },
     {
-        id: 89 as SymbolId,
+        id: 89 as Id<SagittalSymbol>,
         ascii: ".//|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.ULTRA,
@@ -1072,7 +1072,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: [".|", "/|", "/|"] as SymbolLongAscii[],
     },
     {
-        id: 90 as SymbolId,
+        id: 90 as Id<SagittalSymbol>,
         ascii: "`.//|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -1084,7 +1084,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: ["`|", ".|", "/|", "/|"] as SymbolLongAscii[],
     },
     {
-        id: 91 as SymbolId,
+        id: 91 as Id<SagittalSymbol>,
         ascii: ",,//|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -1096,7 +1096,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: [",,|", "/|", "/|"] as SymbolLongAscii[],
     },
     {
-        id: 92 as SymbolId,
+        id: 92 as Id<SagittalSymbol>,
         ascii: ",//|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -1108,7 +1108,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: [",|", "/|", "/|"] as SymbolLongAscii[],
     },
     {
-        id: 93 as SymbolId,
+        id: 93 as Id<SagittalSymbol>,
         ascii: "//|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.MEDIUM,
@@ -1120,7 +1120,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: ["/|", "/|"] as SymbolLongAscii[],
     },
     {
-        id: 94 as SymbolId,
+        id: 94 as Id<SagittalSymbol>,
         ascii: "`//|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -1132,7 +1132,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: ["`|", "/|", "/|"] as SymbolLongAscii[],
     },
     {
-        id: 95 as SymbolId,
+        id: 95 as Id<SagittalSymbol>,
         ascii: "``//|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -1144,7 +1144,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: ["``|", "/|", "/|"] as SymbolLongAscii[],
     },
     {
-        id: 96 as SymbolId,
+        id: 96 as Id<SagittalSymbol>,
         ascii: ",'//|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -1156,7 +1156,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: [",|", "'|", "/|", "/|"] as SymbolLongAscii[],
     },
     {
-        id: 97 as SymbolId,
+        id: 97 as Id<SagittalSymbol>,
         ascii: "'//|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.ULTRA,
@@ -1168,7 +1168,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: ["'|", "/|", "/|"] as SymbolLongAscii[],
     },
     {
-        id: 98 as SymbolId,
+        id: 98 as Id<SagittalSymbol>,
         ascii: ",,)//|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -1180,7 +1180,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: [",,|", ")|", "/|", "/|"] as SymbolLongAscii[],
     },
     {
-        id: 99 as SymbolId,
+        id: 99 as Id<SagittalSymbol>,
         ascii: ",)//|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -1192,7 +1192,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: [",|", ")|", "/|", "/|"] as SymbolLongAscii[],
     },
     {
-        id: 100 as SymbolId,
+        id: 100 as Id<SagittalSymbol>,
         ascii: ")//|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.HIGH,
@@ -1204,7 +1204,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: [")|", "/|", "/|"] as SymbolLongAscii[],
     },
     {
-        id: 101 as SymbolId,
+        id: 101 as Id<SagittalSymbol>,
         ascii: "`)//|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -1216,7 +1216,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: ["`|", ")|", "/|", "/|"] as SymbolLongAscii[],
     },
     {
-        id: 102 as SymbolId,
+        id: 102 as Id<SagittalSymbol>,
         ascii: "``)//|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -1228,7 +1228,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: ["``|", ")|", "/|", "/|"] as SymbolLongAscii[],
     },
     {
-        id: 103 as SymbolId,
+        id: 103 as Id<SagittalSymbol>,
         ascii: ",,/|)" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -1240,7 +1240,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: [",,|", "/|", "|)"] as SymbolLongAscii[],
     },
     {
-        id: 104 as SymbolId,
+        id: 104 as Id<SagittalSymbol>,
         ascii: ",/|)" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -1252,7 +1252,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: [",|", "/|", "|)"] as SymbolLongAscii[],
     },
     {
-        id: 105 as SymbolId,
+        id: 105 as Id<SagittalSymbol>,
         ascii: "/|)" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.MEDIUM,
@@ -1264,7 +1264,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: ["/|", "|)"] as SymbolLongAscii[],
     },
     {
-        id: 106 as SymbolId,
+        id: 106 as Id<SagittalSymbol>,
         ascii: "`/|)" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -1276,7 +1276,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: ["`|", "/|", "|)"] as SymbolLongAscii[],
     },
     {
-        id: 107 as SymbolId,
+        id: 107 as Id<SagittalSymbol>,
         ascii: "(|~" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.HIGH,
@@ -1288,7 +1288,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: ["(|", "|~"] as SymbolLongAscii[],
     },
     {
-        id: 108 as SymbolId,
+        id: 108 as Id<SagittalSymbol>,
         ascii: ",'/|)" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -1300,7 +1300,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: [",|", "'|", "/|", "|)"] as SymbolLongAscii[],
     },
     {
-        id: 109 as SymbolId,
+        id: 109 as Id<SagittalSymbol>,
         ascii: "'/|)" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.ULTRA,
@@ -1312,7 +1312,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: ["'|", "/|", "|)"] as SymbolLongAscii[],
     },
     {
-        id: 110 as SymbolId,
+        id: 110 as Id<SagittalSymbol>,
         ascii: "`'/|)" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -1324,7 +1324,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: ["`|", "'|", "/|", "|)"] as SymbolLongAscii[],
     },
     {
-        id: 111 as SymbolId,
+        id: 111 as Id<SagittalSymbol>,
         ascii: "./|\\" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.ULTRA,
@@ -1336,7 +1336,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: [".|", "/|", "|\\"] as SymbolLongAscii[],
     },
     {
-        id: 112 as SymbolId,
+        id: 112 as Id<SagittalSymbol>,
         ascii: "`./|\\" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -1348,7 +1348,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: ["`|", ".|", "/|", "|\\"] as SymbolLongAscii[],
     },
     {
-        id: 113 as SymbolId,
+        id: 113 as Id<SagittalSymbol>,
         ascii: ",,/|\\" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -1360,7 +1360,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: [",,|", "/|", "|\\"] as SymbolLongAscii[],
     },
     {
-        id: 114 as SymbolId,
+        id: 114 as Id<SagittalSymbol>,
         ascii: ",/|\\" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -1372,7 +1372,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: [",|", "/|", "|\\"] as SymbolLongAscii[],
     },
     {
-        id: 115 as SymbolId,
+        id: 115 as Id<SagittalSymbol>,
         ascii: "/|\\" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.MEDIUM,
@@ -1384,7 +1384,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: ["/|", "|\\"] as SymbolLongAscii[],
     },
     {
-        id: 116 as SymbolId,
+        id: 116 as Id<SagittalSymbol>,
         ascii: "`/|\\" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -1396,7 +1396,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: ["`|", "/|", "|\\"] as SymbolLongAscii[],
     },
     {
-        id: 117 as SymbolId,
+        id: 117 as Id<SagittalSymbol>,
         ascii: ",(/|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -1408,7 +1408,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: [",|", "(|", "/|"] as SymbolLongAscii[],
     },
     {
-        id: 118 as SymbolId,
+        id: 118 as Id<SagittalSymbol>,
         ascii: "(/|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.HIGH,
@@ -1420,7 +1420,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: ["(|", "/|"] as SymbolLongAscii[],
     },
     {
-        id: 119 as SymbolId,
+        id: 119 as Id<SagittalSymbol>,
         ascii: "`(/|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -1432,7 +1432,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: ["`|", "(|", "/|"] as SymbolLongAscii[],
     },
     {
-        id: 120 as SymbolId,
+        id: 120 as Id<SagittalSymbol>,
         ascii: "'/|\\" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.ULTRA,
@@ -1444,7 +1444,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: ["'|", "/|", "|\\"] as SymbolLongAscii[],
     },
     {
-        id: 121 as SymbolId,
+        id: 121 as Id<SagittalSymbol>,
         ascii: "`'/|\\" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -1456,7 +1456,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: ["`|", "'|", "/|", "|\\"] as SymbolLongAscii[],
     },
     {
-        id: 122 as SymbolId,
+        id: 122 as Id<SagittalSymbol>,
         ascii: ",)/|\\" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -1468,7 +1468,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: [",|", ")|", "/|", "|\\"] as SymbolLongAscii[],
     },
     {
-        id: 123 as SymbolId,
+        id: 123 as Id<SagittalSymbol>,
         ascii: ")/|\\" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.HIGH,
@@ -1480,7 +1480,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: [")|", "/|", "|\\"] as SymbolLongAscii[],
     },
     {
-        id: 124 as SymbolId,
+        id: 124 as Id<SagittalSymbol>,
         ascii: "`)/|\\" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -1492,7 +1492,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: ["`|", ")|", "/|", "|\\"] as SymbolLongAscii[],
     },
     {
-        id: 125 as SymbolId,
+        id: 125 as Id<SagittalSymbol>,
         ascii: "``)/|\\" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -1504,7 +1504,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: ["``|", ")|", "/|", "|\\"] as SymbolLongAscii[],
     },
     {
-        id: 126 as SymbolId,
+        id: 126 as Id<SagittalSymbol>,
         ascii: ",.(|)" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -1516,7 +1516,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: [",|", ".|", "(|", "|)"] as SymbolLongAscii[],
     },
     {
-        id: 127 as SymbolId,
+        id: 127 as Id<SagittalSymbol>,
         ascii: ".(|)" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.ULTRA,
@@ -1528,7 +1528,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: [".|", "(|", "|)"] as SymbolLongAscii[],
     },
     {
-        id: 128 as SymbolId,
+        id: 128 as Id<SagittalSymbol>,
         ascii: ",|\\)" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -1540,7 +1540,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: [",|", "|\\", "|)"] as SymbolLongAscii[],
     },
     {
-        id: 129 as SymbolId,
+        id: 129 as Id<SagittalSymbol>,
         ascii: "|\\)" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.HIGH,
@@ -1552,7 +1552,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: ["|\\", "|)"] as SymbolLongAscii[],
     },
     {
-        id: 130 as SymbolId,
+        id: 130 as Id<SagittalSymbol>,
         ascii: "`|\\)" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -1564,7 +1564,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: ["`|", "|\\", "|)"] as SymbolLongAscii[],
     },
     {
-        id: 131 as SymbolId,
+        id: 131 as Id<SagittalSymbol>,
         ascii: ",(|)" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -1576,7 +1576,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: [",|", "(|", "|)"] as SymbolLongAscii[],
     },
     {
-        id: 132 as SymbolId,
+        id: 132 as Id<SagittalSymbol>,
         ascii: "(|)" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.MEDIUM,
@@ -1588,7 +1588,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: ["(|", "|)"] as SymbolLongAscii[],
     },
     {
-        id: 133 as SymbolId,
+        id: 133 as Id<SagittalSymbol>,
         ascii: "`(|)" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -1600,7 +1600,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: ["`|", "(|", "|)"] as SymbolLongAscii[],
     },
     {
-        id: 134 as SymbolId,
+        id: 134 as Id<SagittalSymbol>,
         ascii: "``(|)" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -1612,7 +1612,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: ["``|", "(|", "|)"] as SymbolLongAscii[],
     },
     {
-        id: 135 as SymbolId,
+        id: 135 as Id<SagittalSymbol>,
         ascii: ",'(|)" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -1624,7 +1624,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: [",|", "'|", "(|", "|)"] as SymbolLongAscii[],
     },
     {
-        id: 136 as SymbolId,
+        id: 136 as Id<SagittalSymbol>,
         ascii: "'(|)" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.ULTRA,
@@ -1636,7 +1636,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: ["'|", "(|", "|)"] as SymbolLongAscii[],
     },
     {
-        id: 137 as SymbolId,
+        id: 137 as Id<SagittalSymbol>,
         ascii: ",.(|\\" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -1648,7 +1648,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: [",|", ".|", "(|", "|\\"] as SymbolLongAscii[],
     },
     {
-        id: 138 as SymbolId,
+        id: 138 as Id<SagittalSymbol>,
         ascii: ".(|\\" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.ULTRA,
@@ -1660,7 +1660,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: [".|", "(|", "|\\"] as SymbolLongAscii[],
     },
     {
-        id: 139 as SymbolId,
+        id: 139 as Id<SagittalSymbol>,
         ascii: "`.(|\\" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -1672,7 +1672,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: ["`|", ".|", "(|", "|\\"] as SymbolLongAscii[],
     },
     {
-        id: 140 as SymbolId,
+        id: 140 as Id<SagittalSymbol>,
         ascii: "|\\\\" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.HIGH,
@@ -1684,7 +1684,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: ["|\\", "|\\"] as SymbolLongAscii[],
     },
     {
-        id: 141 as SymbolId,
+        id: 141 as Id<SagittalSymbol>,
         ascii: ",(|\\" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -1696,7 +1696,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: [",|", "(|", "|\\"] as SymbolLongAscii[],
     },
     {
-        id: 142 as SymbolId,
+        id: 142 as Id<SagittalSymbol>,
         ascii: "(|\\" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.MEDIUM,
@@ -1708,7 +1708,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: ["(|", "|\\"] as SymbolLongAscii[],
     },
     {
-        id: 143 as SymbolId,
+        id: 143 as Id<SagittalSymbol>,
         ascii: "`(|\\" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -1720,7 +1720,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: ["`|", "(|", "|\\"] as SymbolLongAscii[],
     },
     {
-        id: 144 as SymbolId,
+        id: 144 as Id<SagittalSymbol>,
         ascii: "``(|\\" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -1732,7 +1732,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: ["``|", "(|", "|\\"] as SymbolLongAscii[],
     },
     {
-        id: 145 as SymbolId,
+        id: 145 as Id<SagittalSymbol>,
         ascii: ",,)|\\\\" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -1744,7 +1744,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: [",,|", ")|", "|\\", "|\\"] as SymbolLongAscii[],
     },
     {
-        id: 146 as SymbolId,
+        id: 146 as Id<SagittalSymbol>,
         ascii: ",)|\\\\" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -1756,7 +1756,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: [",|", ")|", "|\\", "|\\"] as SymbolLongAscii[],
     },
     {
-        id: 147 as SymbolId,
+        id: 147 as Id<SagittalSymbol>,
         ascii: ")|\\\\" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.HIGH,
@@ -1768,7 +1768,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: [")|", "|\\", "|\\"] as SymbolLongAscii[],
     },
     {
-        id: 148 as SymbolId,
+        id: 148 as Id<SagittalSymbol>,
         ascii: "`)|\\\\" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
@@ -1780,7 +1780,7 @@ const SYMBOLS: SagittalSymbol[] = [
         elements: ["`|", ")|", "|\\", "|\\"] as SymbolLongAscii[],
     },
     {
-        id: 149 as SymbolId,
+        id: 149 as Id<SagittalSymbol>,
         ascii: "``)|\\\\" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,

@@ -3,17 +3,16 @@ import {
     Level,
     Mina,
     SagittalSymbol,
-    SymbolId,
     SymbolLongAscii,
     SymbolUnicode,
 } from "../../../../src/notations/ji/types"
 import { Monzo } from "../../../../src/utilities/comma/types"
-import { Cents } from "../../../../src/utilities/types"
+import { Cents, Id } from "../../../../src/utilities/types"
 
 describe("secondaryCommaZone", () => {
     it("returns the lower and upper bound of where secondary commas are represented by the given symbol, i.e. its capture zone at its introducing level", () => {
         const symbol: SagittalSymbol = {
-            id: 82 as SymbolId,
+            id: 82 as Id<SagittalSymbol>,
             ascii: "/|~" as SymbolLongAscii,
             unicode: "" as SymbolUnicode,
             introducingLevel: Level.HIGH,
@@ -35,7 +34,7 @@ describe("secondaryCommaZone", () => {
 
     it("another example, at the Extreme level", () => {
         const symbol: SagittalSymbol = {
-            id: 83 as SymbolId,
+            id: 83 as Id<SagittalSymbol>,
             ascii: ",,(|(" as SymbolLongAscii,
             unicode: "" as SymbolUnicode,
             introducingLevel: Level.EXTREME,
@@ -57,7 +56,7 @@ describe("secondaryCommaZone", () => {
 
     it("another example, at the Medium level", () => {
         const symbol: SagittalSymbol = {
-            id: 85 as SymbolId,
+            id: 85 as Id<SagittalSymbol>,
             ascii: "(|(" as SymbolLongAscii,
             unicode: "" as SymbolUnicode,
             introducingLevel: Level.MEDIUM,
@@ -79,7 +78,7 @@ describe("secondaryCommaZone", () => {
 
     it("works for the initial symbol", () => {
         const symbol: SagittalSymbol = {
-            id: 0 as SymbolId,
+            id: 0 as Id<SagittalSymbol>,
             ascii: "|" as SymbolLongAscii,
             unicode: "" as SymbolUnicode,
             introducingLevel: Level.MEDIUM,

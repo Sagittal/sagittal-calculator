@@ -1,7 +1,7 @@
 import { analyzeBound } from "../../../../src/scripts/analyzeBounds/bound"
 import * as rankAnalysis from "../../../../src/scripts/analyzeBounds/ranks"
 import * as levelAnalysis from "../../../../src/scripts/analyzeBounds/levels"
-import { Bound, BoundId, Level } from "../../../../src/notations/ji/types"
+import { Bound, Level } from "../../../../src/notations/ji/types"
 import {
     AnalyzedBound,
     AnalyzedEvent,
@@ -13,7 +13,7 @@ import {
     History,
     Score,
 } from "../../../../src/scripts/analyzeBounds/types"
-import { Cents, Proportion, Sum } from "../../../../src/utilities/types"
+import { Cents, Id, Proportion, Sum } from "../../../../src/utilities/types"
 
 describe("analyzeBound", () => {
     const notBestHistory: History = [
@@ -65,7 +65,7 @@ describe("analyzeBound", () => {
     const bound: Bound = {
         position: 23.1164196495597 as Cents,
         levels: [Level.ULTRA, Level.EXTREME, Level.INSANE],
-        id: 47 as BoundId,
+        id: 47 as Id<Bound>,
     }
     const expectedBestHistoryEvents: AnalyzedEvent[] = [
         {

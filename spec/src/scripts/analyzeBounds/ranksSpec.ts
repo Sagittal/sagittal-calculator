@@ -1,14 +1,14 @@
 import { rankBoundIndices, rankCounts, updateRankAnalysis } from "../../../../src/scripts/analyzeBounds/ranks"
-import { BoundId } from "../../../../src/notations/ji/types"
 import { EventRank } from "../../../../src/scripts/analyzeBounds/types"
-import { Count } from "../../../../src/utilities/types"
+import { Count, Id } from "../../../../src/utilities/types"
+import { Bound } from "../../../../src/notations/ji/types"
 
 describe("updateRankAnalysis", () => {
     const bestRank: EventRank = 2 as EventRank
-    const boundId: BoundId = 88 as BoundId
+    const boundId: Id<Bound> = 88 as Id<Bound>
 
     let previousRankAnalysis: number
-    let previousRankBounds: BoundId[]
+    let previousRankBounds: Id<Bound>[]
 
     beforeAll(() => {
         previousRankAnalysis = rankCounts[ bestRank ]

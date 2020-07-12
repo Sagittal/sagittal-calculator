@@ -9,8 +9,6 @@ type Copfr<Roughness = void> = Count<Prime> & (Roughness extends number ? { _Rou
 
 type Monzo<Slice = void, Limit = void> = PrimeExponent[] & (Slice extends number ? { _MonzoSlice: Slice } : {})
 
-// todo: BestMetric<ChunkCount>
-
 interface Comma {
     cents: Cents,
     monzo: Monzo,

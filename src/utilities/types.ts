@@ -9,6 +9,7 @@ type Proportion<ProportionOf = void> =
 type Index<T = void> = number & { _IndexBrand: "Index" } & (T extends void ? {} : { _IndexOfBrand: T })
 type Count<T = void> = number & { _CountBrand: "Count" } & (T extends void ? {} : { _CountOfBrand: T })
 type Sum<T = void> = number & { _SumBrand: "Sum" } & (T extends void ? {} : { _SumOfBrand: T })
+type Id<T = void> = number & { _IdBrand: "Id" } & (T extends void ? {} : { _IdOfBrand: T })
 
 type Ratio = [Numerator, Denominator]
 
@@ -45,4 +46,5 @@ export {
     Sum,
     JustificationOption,
     EnumHash,
+    Id,
 }
