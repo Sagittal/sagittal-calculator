@@ -12,7 +12,7 @@
     "analyze-bounds": "ts-node src/scripts/analyzeBounds/commands/analyzeBounds.ts",
     "find-commas": "ts-node src/scripts/findCommas/commands/findCommas.ts",
     "analyze-comma": "ts-node src/scripts/analyzeComma/commands/analyzeComma.ts",
-    "best-metric-from-config": "ts-node src/scripts/unpopularityMetric/commands/bestMetricFromConfig.ts",
+    "best-metric-from-sample-config": "ts-node src/scripts/unpopularityMetric/commands/bestMetricFromSampleConfig.ts",
     "antivotes": "ts-node src/scripts/unpopularityMetric/commands/antivotes.ts",
     "sos": "ts-node src/scripts/unpopularityMetric/commands/sumOfSquares.ts",
     "best-metric-automatic-finder": "node -r ts-node/register --max-old-space-size=131072 src/scripts/unpopularityMetric/commands/bestMetricAutomaticFinder.ts"

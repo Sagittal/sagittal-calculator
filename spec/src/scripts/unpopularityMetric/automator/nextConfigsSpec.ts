@@ -1,8 +1,8 @@
-import { computeNextConfigs } from "../../../../../src/scripts/unpopularityMetric/automator/nextConfigs"
+import { computeNextSampleConfigs } from "../../../../../src/scripts/unpopularityMetric/automator/nextSampleConfigs"
 import {
     Parameter,
     Submetric,
-    SubmetricConfig,
+    SubmetricSampleConfig,
     SubmetricType,
 } from "../../../../../src/scripts/unpopularityMetric/types"
 import {
@@ -16,7 +16,7 @@ import {
 } from "../../../../../src/scripts/unpopularityMetric/automator/samples/types"
 import { Index } from "../../../../../src/utilities/types"
 
-describe("computeNextConfigs", () => {
+describe("computeNextSampleConfigs", () => {
     it("given a point (which has been identified as a local minimum) and the dynamic parameters, is able to tell you what the next configs should be to delve deeper in that vicinity", () => {
         const point = [1, 0, 3] as SamplePoint
         const dynamicParameters: DynamicParameter[] = [
@@ -39,7 +39,7 @@ describe("computeNextConfigs", () => {
                 unit: 0.02 as ParameterUnit,
             },
         ]
-        const submetricConfigs: SubmetricConfig[] = [
+        const submetricSampleConfigs: SubmetricSampleConfig[] = [
             {
                 [ Parameter.J ]: {
                     center: 0.1 as DynamicParameterValue,
@@ -63,7 +63,7 @@ describe("computeNextConfigs", () => {
             },
         ]
 
-        const result = computeNextConfigs(point, dynamicParameters, submetricConfigs)
+        const result = computeNextSampleConfigs(point, dynamicParameters, submetricSampleConfigs)
 
         expect(result).toEqual([
             {

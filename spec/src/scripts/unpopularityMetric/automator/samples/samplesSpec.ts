@@ -10,7 +10,7 @@ import {
 
 describe("submetricCombinations", () => {
     it("given a metric config, will return all combinations of submetrics to check", () => {
-        const submetricConfigs = [
+        const submetricSampleConfigs = [
             {
                 [ Parameter.A ]: {
                     center: 2 as DynamicParameterValue,
@@ -33,9 +33,9 @@ describe("submetricCombinations", () => {
                 [ Parameter.W ]: 3.3 as ParameterValue,
             },
         ]
-        const dynamicParameters = computeDynamicParameters(submetricConfigs)
+        const dynamicParameters = computeDynamicParameters(submetricSampleConfigs)
 
-        const result = computeSamples({ submetricConfigs, dynamicParameters })
+        const result = computeSamples({ submetricSampleConfigs, dynamicParameters })
 
         const expectedResult = [
             {
@@ -211,7 +211,7 @@ describe("submetricCombinations", () => {
     })
 
     it("supports providing more than one submetric with the same submetric type", () => {
-        const submetricConfigs = [
+        const submetricSampleConfigs = [
             {
                 [ Parameter.SUBMETRIC_TYPE ]: SubmetricType.COAPF,
                 [ Parameter.A ]: {
@@ -231,9 +231,9 @@ describe("submetricCombinations", () => {
                 [ Parameter.K ]: 0 as ParameterValue,
             },
         ]
-        const dynamicParameters = computeDynamicParameters(submetricConfigs)
+        const dynamicParameters = computeDynamicParameters(submetricSampleConfigs)
 
-        const result = computeSamples({ submetricConfigs, dynamicParameters })
+        const result = computeSamples({ submetricSampleConfigs, dynamicParameters })
 
         const expectedResult = [
             {

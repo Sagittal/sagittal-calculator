@@ -1,14 +1,14 @@
-// import {computeConfigsForChunkCount} from "../../../../../src/scripts/unpopularityMetric/automator/initialConfigs"
+// import {computeSampleConfigsForChunkCount} from "../../../../../src/scripts/unpopularityMetric/automator/initialSampleConfigs"
 // import {PARAMETER, SUBMETRIC_TYPE} from "../../../../../src/scripts/unpopularityMetric/constants"
 // import {PARAMETER_INITIAL_CONFIGS} from "../../../../../src/scripts/unpopularityMetric/automator/constants"
 // import {deepEquals} from "../../../../../src/utilities/deepEquals"
 // import {arraysHaveSameContents} from "../../../../../src/utilities/arraysHaveSameContents"
 //
-// describe("computeConfigsForChunkCount", () => {
+// describe("computeSampleConfigsForChunkCount", () => {
 //     it("given a chunk resolution, returns all possible combinations of those parameters - works for 1", () => {
 //         const chunkCount = 1
 //
-//         const result = computeConfigsForChunkCount(chunkCount, {quiet: true})
+//         const result = computeSampleConfigsForChunkCount(chunkCount, {quiet: true})
 //
 //         expect(result).toEqual(jasmine.arrayWithExactContents([
 //             [
@@ -41,7 +41,7 @@
 //     it("given a chunk resolution, returns all possible combinations of those parameters - works for 2", () => {
 //         const chunkCount = 2
 //
-//         const result = computeConfigsForChunkCount(chunkCount, {quiet: true})
+//         const result = computeSampleConfigsForChunkCount(chunkCount, {quiet: true})
 //
 //         const expectedResult = [
 //             // 7
@@ -966,7 +966,7 @@
 //     it("given a chunk resolution, returns all possible combinations of those parameters - works for 3", () => {
 //         const chunkCount = 3
 //
-//         const result = computeConfigsForChunkCount(chunkCount, {quiet: true})
+//         const result = computeSampleConfigsForChunkCount(chunkCount, {quiet: true})
 //
 //         expect(result.length).toEqual(
 //             56 +    // all combinations of 3 submetrics w/ 0 parameters each = 8 choose 3 =      (8!)/((3!)(5!))           = 56
@@ -1003,7 +1003,7 @@
 //     it("given a chunk resolution, returns all possible combinations of those parameters - works for 4", () => {
 //         const chunkCount = 4
 //
-//         const result = computeConfigsForChunkCount(chunkCount, {quiet: true})
+//         const result = computeSampleConfigsForChunkCount(chunkCount, {quiet: true})
 //
 //         expect(result.length).toEqual(
 //             70 +    // all combinations of 4 submetrics w/ 0 parameters = 8 choose 4      =  70

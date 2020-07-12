@@ -1,11 +1,11 @@
-import { DynamicParameterConfig, DynamicParameterValue, SampleRange, SampleResolution } from "./types"
+import { DynamicParameterSampleConfig, DynamicParameterValue, SampleRange, SampleResolution } from "./types"
 
-const computeParameterValues = (parameterConfig: DynamicParameterConfig): DynamicParameterValue[] => {
+const computeParameterValues = (parameterSampleConfig: DynamicParameterSampleConfig): DynamicParameterValue[] => {
     const {
         center = 0 as DynamicParameterValue,
         range = 0 as SampleRange,
         resolution = 1 as SampleResolution,
-    }: DynamicParameterConfig = parameterConfig
+    }: DynamicParameterSampleConfig = parameterSampleConfig
 
     if (resolution === 1) return [center as DynamicParameterValue]
 

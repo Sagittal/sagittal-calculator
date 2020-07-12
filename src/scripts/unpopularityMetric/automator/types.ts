@@ -1,5 +1,5 @@
 import { SumOfSquares } from "../sumOfSquares/types"
-import { Submetric, SubmetricConfig } from "../types"
+import { Submetric, SubmetricSampleConfig } from "../types"
 import { Combination } from "../../../utilities/types"
 import { SamplePoint } from "./samples/types"
 
@@ -14,8 +14,8 @@ interface LocalMinimum {
     submetrics: Combination<Submetric>,
 }
 
-type SubmetricChunk = SubmetricConfig
-type ParameterChunk = SubmetricConfig
+type SubmetricChunk = SubmetricSampleConfig
+type ParameterChunk = SubmetricSampleConfig
 
 type Chunk = SubmetricChunk | ParameterChunk
 

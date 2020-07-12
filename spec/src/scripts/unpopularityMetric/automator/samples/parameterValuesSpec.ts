@@ -1,6 +1,6 @@
 import { computeParameterValues } from "../../../../../../src/scripts/unpopularityMetric/automator/samples/parameterValues"
 import {
-    DynamicParameterConfig,
+    DynamicParameterSampleConfig,
     DynamicParameterValue,
     SampleRange,
     SampleResolution,
@@ -8,13 +8,13 @@ import {
 
 describe("computeParameterValues", () => {
     it("given a parameter config (a center, a range, and a resolution), will return a block of points to sample", () => {
-        const parameterConfig: DynamicParameterConfig = {
+        const parameterSampleConfig: DynamicParameterSampleConfig = {
             center: 1 as DynamicParameterValue,
             range: 0.5 as SampleRange,
             resolution: 5 as SampleResolution,
         }
 
-        const result: DynamicParameterValue[] = computeParameterValues(parameterConfig)
+        const result: DynamicParameterValue[] = computeParameterValues(parameterSampleConfig)
 
         expect(result).toEqual([
             0.75,
@@ -23,19 +23,19 @@ describe("computeParameterValues", () => {
             1.125,
             1.25,
         ] as DynamicParameterValue[])
-        expect(result.length).toBe(parameterConfig.resolution as number)
-        expect(result[ result.length - 1 ] - result[ 0 ]).toBe(parameterConfig.range as number)
-        expect(result[ Math.floor(result.length / 2) ] as number).toBe(parameterConfig.center as number)
+        expect(result.length).toBe(parameterSampleConfig.resolution as number)
+        expect(result[ result.length - 1 ] - result[ 0 ]).toBe(parameterSampleConfig.range as number)
+        expect(result[ Math.floor(result.length / 2) ] as number).toBe(parameterSampleConfig.center as number)
     })
 
     it("works when the resolution is even", () => {
-        const parameterConfig: DynamicParameterConfig = {
+        const parameterSampleConfig: DynamicParameterSampleConfig = {
             center: 5 as DynamicParameterValue,
             range: 1 as SampleRange,
             resolution: 4 as SampleResolution,
         }
 
-        const result = computeParameterValues(parameterConfig)
+        const result = computeParameterValues(parameterSampleConfig)
 
         expect(result).toEqual([
             4.5,
@@ -43,8 +43,8 @@ describe("computeParameterValues", () => {
             5.166666666666666666,
             5.5,
         ] as DynamicParameterValue[])
-        expect(result.length).toBe(parameterConfig.resolution as number)
-        expect(result[ result.length - 1 ] - result[ 0 ]).toBe(parameterConfig.range as number)
+        expect(result.length).toBe(parameterSampleConfig.resolution as number)
+        expect(result[ result.length - 1 ] - result[ 0 ]).toBe(parameterSampleConfig.range as number)
         expect(
             (
                 result[ Math.floor(result.length / 2) ] +
@@ -52,32 +52,32 @@ describe("computeParameterValues", () => {
             )
             /
             2,
-        ).toBe(parameterConfig.center as number)
+        ).toBe(parameterSampleConfig.center as number)
     })
 
     it("works when the resolution is one", () => {
-        const parameterConfig: DynamicParameterConfig = {
+        const parameterSampleConfig: DynamicParameterSampleConfig = {
             center: 5 as DynamicParameterValue,
             resolution: 1 as SampleResolution,
         }
 
-        const result = computeParameterValues(parameterConfig)
+        const result = computeParameterValues(parameterSampleConfig)
 
         expect(result).toEqual([
             5,
         ] as DynamicParameterValue[])
-        expect(result.length).toBe(parameterConfig.resolution as number)
-        expect(result[ Math.floor(result.length / 2) ] as number).toBe(parameterConfig.center as number)
+        expect(result.length).toBe(parameterSampleConfig.resolution as number)
+        expect(result[ Math.floor(result.length / 2) ] as number).toBe(parameterSampleConfig.center as number)
     })
 
     it("works when the resolution is zero", () => {
-        const parameterConfig: DynamicParameterConfig = {
+        const parameterSampleConfig: DynamicParameterSampleConfig = {
             resolution: 0 as SampleResolution,
         }
 
-        const result = computeParameterValues(parameterConfig)
+        const result = computeParameterValues(parameterSampleConfig)
 
         expect(result).toEqual([])
-        expect(result.length).toBe(parameterConfig.resolution as number)
+        expect(result.length).toBe(parameterSampleConfig.resolution as number)
     })
 })

@@ -1,8 +1,8 @@
 import { runCommandAndGetConsoleOutput } from "../../../../helpers/specHelper"
 
-describe("best metric from config", () => {
+describe("best metric from sample config", () => {
     xit("runs without error", () => {
-        const command = "npm run best-metric-from-config -- -q"
+        const command = "npm run best-metric-from-sample-config -- -q"
 
         const result = runCommandAndGetConsoleOutput(command)
 

@@ -2,7 +2,7 @@ import { computeDynamicParameters } from "../../../../../../src/scripts/unpopula
 import {
     Parameter,
     Submetric,
-    SubmetricConfig,
+    SubmetricSampleConfig,
     SubmetricType,
 } from "../../../../../../src/scripts/unpopularityMetric/types"
 import {
@@ -15,7 +15,7 @@ import { Index } from "../../../../../../src/utilities/types"
 
 describe("computeDynamicParameters", () => {
     it("returns a flattened array of all the parameters that are dynamic -- flattened across all the submetrics, that is", () => {
-        const submetricConfigs: SubmetricConfig[] = [
+        const submetricSampleConfigs: SubmetricSampleConfig[] = [
             {
                 [ Parameter.Y ]: {
                     center: 1.2 as DynamicParameterValue,
@@ -39,7 +39,7 @@ describe("computeDynamicParameters", () => {
             },
         ]
 
-        const result = computeDynamicParameters(submetricConfigs)
+        const result = computeDynamicParameters(submetricSampleConfigs)
 
         expect(result).toEqual([
             {

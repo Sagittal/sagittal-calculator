@@ -1,16 +1,16 @@
 import { computeSamples } from "./samples/samples"
 import { computeDynamicParameters } from "./samples/dynamicParameters"
-import { computeNextConfigs } from "./nextConfigs"
+import { computeNextSampleConfigs } from "./nextSampleConfigs"
 import { computeIndentation } from "./indentation"
 import { computeLocalMinima } from "./localMinima"
 import { deepEquals } from "../../../utilities/deepEquals"
 import { gatherSumsOfSquares } from "./gatherSumsOfSquares"
 import { SumOfSquares, SumsOfSquares } from "../sumOfSquares/types"
-import { Submetric, SubmetricConfig } from "../types"
+import { SampleConfig, Submetric } from "../types"
 import { Combination } from "../../../utilities/types"
 import { RecursivelyFindUnpopularityMetricOptions } from "./types"
 
-const recursivelyFindUnpopularityMetric = (submetricConfigs: SubmetricConfig[], options: RecursivelyFindUnpopularityMetricOptions = {}) => {
+const recursivelyFindUnpopularityMetric = (sampleConfig: SampleConfig, options: RecursivelyFindUnpopularityMetricOptions = {}) => {
     const {
         depth = 0,
         bestMetric: previousBestMetric = {
@@ -27,8 +27,8 @@ const recursivelyFindUnpopularityMetric = (submetricConfigs: SubmetricConfig[], 
 
     const indentation = computeIndentation(depth)
 
-    const dynamicParameters = computeDynamicParameters(submetricConfigs)
-    const samples = computeSamples({ submetricConfigs, dynamicParameters })
+    const dynamicParameters = computeDynamicParameters(sampleConfig)
+    const samples = computeSamples({ submetricSampleConfigs: sampleConfig, dynamicParameters })
 
     const sumsOfSquares: SumsOfSquares = []
     let bestMetric = gatherSumsOfSquares(sumsOfSquares, samples, previousBestMetric, indentation, debug)
@@ -36,12 +36,12 @@ const recursivelyFindUnpopularityMetric = (submetricConfigs: SubmetricConfig[], 
     if (debug) console.log(`\n${indentation}local minima:`)
     const nextLocalMinima = computeLocalMinima(samples, sumsOfSquares)
     nextLocalMinima.forEach((nextLocalMinimum, index) => {
-        const nextConfigs = computeNextConfigs(nextLocalMinimum.point, dynamicParameters, submetricConfigs)
+        const nextSampleConfigs = computeNextSampleConfigs(nextLocalMinimum.point, dynamicParameters, sampleConfig)
         const nextProgressMessage = progressMessage + `${index}/${(nextLocalMinima.length)}@depth${nextDepth} `
         if (debug) console.log(`${indentation}${nextProgressMessage}${JSON.stringify(nextLocalMinimum)}`)
 
         if (recurse && !deepEquals(localMinimum, nextLocalMinimum)) {
-            bestMetric = recursivelyFindUnpopularityMetric(nextConfigs, {
+            bestMetric = recursivelyFindUnpopularityMetric(nextSampleConfigs, {
                 depth: nextDepth,
                 bestMetric,
                 progressMessage: nextProgressMessage,

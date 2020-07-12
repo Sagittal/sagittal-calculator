@@ -1,5 +1,5 @@
 import { Parameter, Submetric, SubmetricType } from "../../types"
-import { Combination, EnumHash, Index } from "../../../../utilities/types"
+import { Combination, Index } from "../../../../utilities/types"
 
 type ParameterUnit = number & { _ParameterUnitBrand: "ParameterUnit" }
 
@@ -29,7 +29,7 @@ interface DynamicParameter {
     unit: ParameterUnit,
 }
 
-interface DynamicParameterConfig {
+interface DynamicParameterSampleConfig {
     center?: DynamicParameterValue,
     range?: SampleRange,
     resolution?: SampleResolution,
@@ -46,7 +46,7 @@ export {
     ParameterUnit,
     ParameterValue,
     DynamicParameterValue,
-    DynamicParameterConfig,
+    DynamicParameterSampleConfig,
     SampleRange,
     SampleResolution,
 }

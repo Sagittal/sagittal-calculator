@@ -1,21 +1,21 @@
 import { computeParameterValues } from "./parameterValues"
-import { DynamicParameterConfig, DynamicParameterValue } from "./types"
-import { Parameter, Submetric, SubmetricConfig } from "../../types"
+import { DynamicParameterSampleConfig, DynamicParameterValue } from "./types"
+import { Parameter, Submetric, SubmetricSampleConfig } from "../../types"
 import { Combination } from "../../../../utilities/types"
 
-const computeSubmetricPossibilities = (submetricConfig: SubmetricConfig = {}): Combination<Submetric> => {
+const computeSubmetricPossibilities = (submetricSampleConfig: SubmetricSampleConfig = {}): Combination<Submetric> => {
     let submetricPossibilities: Combination<Submetric> = [{}] as Combination<Submetric>
 
-    const submetricConfigEntries = Object.entries(submetricConfig) as Array<[Parameter, DynamicParameterConfig]>
+    const submetricSampleConfigEntries = Object.entries(submetricSampleConfig) as Array<[Parameter, DynamicParameterSampleConfig]>
 
-    submetricConfigEntries.forEach(([parameter, parameterConfig]: [Parameter, DynamicParameterConfig]) => {
+    submetricSampleConfigEntries.forEach(([parameter, parameterSampleConfig]: [Parameter, DynamicParameterSampleConfig]) => {
         let extendedSubmetricPossibilities: Combination<Submetric> = [] as unknown as Combination<Submetric>
 
         let values: DynamicParameterValue[]
-        if (typeof parameterConfig !== "object") {
-            values = [parameterConfig]
+        if (typeof parameterSampleConfig !== "object") {
+            values = [parameterSampleConfig]
         } else {
-            values = computeParameterValues(parameterConfig)
+            values = computeParameterValues(parameterSampleConfig)
         }
         if (values.length === 0) return
 

@@ -1,5 +1,5 @@
-import { DynamicParameterConfig, DynamicParameterValue, ParameterValue } from "./automator/samples/types"
-import { EnumHash } from "../../utilities/types"
+import { DynamicParameterSampleConfig, DynamicParameterValue, ParameterValue } from "./automator/samples/types"
+import { Combination, EnumHash } from "../../utilities/types"
 
 enum SubmetricType {
     SOAPFAR = "soapfar",
@@ -68,7 +68,9 @@ type SubmetricProperties = {
     usePrimeIndex?: boolean,
 }
 
-type SubmetricConfig = Partial<EnumHash<Parameter, ParameterValue | DynamicParameterConfig>>
+type SubmetricSampleConfig = Partial<EnumHash<Parameter, ParameterValue | DynamicParameterSampleConfig>>
+
+type SampleConfig = Combination<SubmetricSampleConfig>
 
 export {
     Submetric,
@@ -76,5 +78,6 @@ export {
     SubmetricOperation,
     Parameter,
     SubmetricProperties,
-    SubmetricConfig,
+    SubmetricSampleConfig,
+    SampleConfig,
 }

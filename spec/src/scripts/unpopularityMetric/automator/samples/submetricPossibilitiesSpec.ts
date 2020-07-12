@@ -7,7 +7,7 @@ import {
 
 describe("computeSubmetricPossibilities", () => {
     it("given this submetric's config (centers, ranges, and counts for each of its parameters) to compute each of its parameters' sample points, returns an array of all the possible combinations of those parameter sample points", () => {
-        const submetricConfig = {
+        const submetricSampleConfig = {
             [ Parameter.A ]: {
                 center: 1 as DynamicParameterValue,
                 range: 0.5 as SampleRange,
@@ -20,7 +20,7 @@ describe("computeSubmetricPossibilities", () => {
             },
         }
 
-        const result = computeSubmetricPossibilities(submetricConfig)
+        const result = computeSubmetricPossibilities(submetricSampleConfig)
 
         expect(result).toEqual(jasmine.arrayWithExactContents([
             { [ Parameter.A ]: 0.75, [ Parameter.W ]: 0.6 },
@@ -42,7 +42,7 @@ describe("computeSubmetricPossibilities", () => {
     })
 
     it("leaves a parameter out if it has a 0 resolution", () => {
-        const submetricConfig = {
+        const submetricSampleConfig = {
             [ Parameter.A ]: {
                 center: 1 as DynamicParameterValue,
                 range: 0.5 as SampleRange,
@@ -55,7 +55,7 @@ describe("computeSubmetricPossibilities", () => {
             },
         }
 
-        const result = computeSubmetricPossibilities(submetricConfig)
+        const result = computeSubmetricPossibilities(submetricSampleConfig)
 
         expect(result).toEqual(jasmine.arrayWithExactContents([
             { [ Parameter.A ]: 0.75 },
@@ -67,7 +67,7 @@ describe("computeSubmetricPossibilities", () => {
     })
 
     it("works when provided a flat value", () => {
-        const submetricConfigs = {
+        const submetricSampleConfigs = {
             [ Parameter.A ]: {
                 center: 1 as DynamicParameterValue,
                 range: 0.5 as SampleRange,
@@ -76,7 +76,7 @@ describe("computeSubmetricPossibilities", () => {
             [ Parameter.W ]: 0.7 as DynamicParameterValue,
         }
 
-        const result = computeSubmetricPossibilities(submetricConfigs)
+        const result = computeSubmetricPossibilities(submetricSampleConfigs)
 
         expect(result).toEqual(jasmine.arrayWithExactContents([
             { [ Parameter.A ]: 0.75, [ Parameter.W ]: 0.7 },

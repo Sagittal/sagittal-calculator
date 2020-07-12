@@ -9,16 +9,16 @@ import {
     SUBMETRIC_CHUNKS,
 } from "./constants"
 import { Chunk, ParameterChunk, SubmetricChunk } from "./types"
-import { SubmetricConfig } from "../types"
+import { SampleConfig, SubmetricSampleConfig } from "../types"
 import { Combination, Combinations, Count } from "../../../utilities/types"
 
-const computeConfigsForChunkCount = (chunkCount: Count<Chunk>, { debug = false } = {}): Combinations<SubmetricConfig> => {
-    let configsForChunkCount: Combinations<SubmetricConfig> = [] as unknown as Combinations<SubmetricConfig>
+const computeSampleConfigsForChunkCount = (chunkCount: Count<Chunk>, { debug = false } = {}): SampleConfig[] => {
+    let sampleConfigsForChunkCount: SampleConfig[] = [] as unknown as SampleConfig[]
 
     if (debug) console.log(`calculating the configs for this chunk count: phase 1 of ${chunkCount}`)
     const submetricChunkCombinations: Combinations<SubmetricChunk> = computeCombinations(SUBMETRIC_CHUNKS, chunkCount)
     submetricChunkCombinations.forEach((submetricChunkCombination: Combination<SubmetricChunk>) => {
-        configsForChunkCount.push(submetricChunkCombination)
+        sampleConfigsForChunkCount.push(submetricChunkCombination)
     })
 
     let chunkCountForSubmetrics: Count<Chunk> = chunkCount
@@ -39,15 +39,15 @@ const computeConfigsForChunkCount = (chunkCount: Count<Chunk>, { debug = false }
 
         submetricChunkCombinations.forEach((submetricChunkCombination: Combination<SubmetricChunk>, sIndex) => {
             parameterChunkCombinations.forEach((parameterChunkCombination: Combination<ParameterChunk>, pIndex) => {
-                const baseInitialConfig: SubmetricConfig[] = computeDeepClone(submetricChunkCombination)
+                const baseInitialSampleConfig: SubmetricSampleConfig[] = computeDeepClone(submetricChunkCombination)
 
                 const parameterChunkCombinationDistributions = computeDistributions(parameterChunkCombination, submetricChunkCombination.length)
 
                 parameterChunkCombinationDistributions.forEach(parameterChunkCombinationDistribution => {
-                    const initialConfig: Combination<SubmetricConfig> = baseInitialConfig.map((baseInitialSubmetricConfig, index) => {
-                        return merge(baseInitialSubmetricConfig, ...parameterChunkCombinationDistribution[ index ]) as SubmetricConfig
-                    }) as Combination<SubmetricConfig>
-                    configsForChunkCount.push(initialConfig)
+                    const initialSampleConfig: SampleConfig = baseInitialSampleConfig.map((baseInitialSubmetricSampleConfig, index) => {
+                        return merge(baseInitialSubmetricSampleConfig, ...parameterChunkCombinationDistribution[ index ]) as SubmetricSampleConfig
+                    }) as SampleConfig
+                    sampleConfigsForChunkCount.push(initialSampleConfig)
                 })
 
                 const index = sIndex * pTotal + pIndex
@@ -58,9 +58,9 @@ const computeConfigsForChunkCount = (chunkCount: Count<Chunk>, { debug = false }
         })
     }
 
-    return configsForChunkCount
+    return sampleConfigsForChunkCount
 }
 
 export {
-    computeConfigsForChunkCount,
+    computeSampleConfigsForChunkCount,
 }

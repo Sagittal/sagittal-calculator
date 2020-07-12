@@ -1,11 +1,11 @@
-import { Parameter, SubmetricConfig, SubmetricType } from "../types"
+import { Parameter, SubmetricSampleConfig, SubmetricType } from "../types"
 import { Combinations } from "../../../utilities/types"
 import { ParameterChunk, SubmetricChunk } from "./types"
 import { DynamicParameterValue, SampleRange } from "./samples/types"
 import { RESOLUTION } from "./samples/constants"
 
-// AKA: if they are going to be included in the automatically generated initial configs, what should they be set to
-const PARAMETER_INITIAL_CONFIGS: SubmetricConfig = {
+// AKA: if they are going to be included in the automatically generated configs per chunk count, what should they be set to
+const PARAMETER_INITIAL_CONFIGS: SubmetricSampleConfig = {
     [ Parameter.WEIGHT ]: { center: 0.5 as DynamicParameterValue, range: 1 as SampleRange, resolution: RESOLUTION },
     [ Parameter.WEIGHT_IS_BASE ]: true,
     [ Parameter.WEIGHT_IS_EXPONENT ]: true,
