@@ -1,6 +1,7 @@
 import { rankBoundIndices, rankCounts, updateRankAnalysis } from "../../../../src/scripts/analyzeBounds/ranks"
 import { BoundId } from "../../../../src/notations/ji/types"
 import { EventRank } from "../../../../src/scripts/analyzeBounds/types"
+import { Count } from "../../../../src/utilities/types"
 
 describe("updateRankAnalysis", () => {
     const bestRank: EventRank = 2 as EventRank
@@ -17,7 +18,7 @@ describe("updateRankAnalysis", () => {
     })
 
     it("updates the count of bounds with this rank as their best rank", () => {
-        expect(rankCounts[ bestRank ]).toBe(previousRankAnalysis + 1)
+        expect(rankCounts[ bestRank ]).toBe(previousRankAnalysis + 1 as Count)
     })
 
     it("updates the rank to include this bound in the list of bounds with it as their best rank", () => {

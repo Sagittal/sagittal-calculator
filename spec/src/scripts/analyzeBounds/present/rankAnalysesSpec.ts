@@ -3,11 +3,12 @@ import { rankBoundIndices, rankCounts } from "../../../../../src/scripts/analyze
 import { BOUNDS } from "../../../../../src/notations/ji/bounds"
 import { computeHistories } from "../../../../../src/scripts/analyzeBounds/plot/histories"
 import { analyzeBound } from "../../../../../src/scripts/analyzeBounds/bound"
+import { Count } from "../../../../../src/utilities/types"
 
 describe("presentRankAnalyses", () => {
     it("gives the correct answer", () => {
         // reset and then compute and analyze all the bounds as you would when running the main script in summary mode
-        rankCounts.forEach((_, index) => rankCounts[ index ] = 0)
+        rankCounts.forEach((_, index) => rankCounts[ index ] = 0 as Count)
         rankBoundIndices.forEach((_, index) => rankBoundIndices[ index ] = [])
         BOUNDS.map(bound => {
             const histories = computeHistories(bound)

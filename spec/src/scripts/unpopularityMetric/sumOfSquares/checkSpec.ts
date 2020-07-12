@@ -81,7 +81,6 @@ describe("checkSubmetricsForIssues", () => {
         expect(() => checkSubmetricsForIssues(submetrics)).toThrowError("Submetric cannot specify both j and k.")
     })
 
-    // todo: wait shouldn't it be bad if you got [{soapfar,k},{soapfar,j}] ??
-
-    // todo: okay this one crashes things though for sure: [{"submetricType":"soapf"},{"submetricType":"soapfar","w":{"center":0,"range":12,"resolution":2},"a":{"center":2,"range":4,"resolution":2}}]
+    // TODO: RELATED PARAMETERS wait shouldn't it be bad if you got [{soapfar,k},{soapfar,j}] ??
+    //  okay this one crashes things though for sure: [{"submetricType":"soapf"},{"submetricType":"soapfar","w":{"center":0,"range":12,"resolution":2},"a":{"center":2,"range":4,"resolution":2}}]
 })

@@ -4,7 +4,7 @@ import "colors"
 import { program } from "commander"
 import { RESOLUTION } from "../automator/constants"
 import { recursivelyFindUnpopularityMetric } from "../automator/recursivelyFind"
-import { Parameter, SubmetricConfig } from "../types"
+import { Parameter, Submetric, SubmetricConfig } from "../types"
 import { Combination } from "../../../utilities/types"
 
 program
@@ -24,7 +24,7 @@ const submetricConfigs = [ // todo: these should all be submetricConfigCombinati
         [ Parameter.Y ]: { center: 2, range: 4, resolution: RESOLUTION },
         [ Parameter.W ]: { center: -2.00001, range: 3, resolution: RESOLUTION },
     },
-]
+] as Combination<SubmetricConfig>
 
 const bestMetric = recursivelyFindUnpopularityMetric(submetricConfigs, { recurse, debug })
 

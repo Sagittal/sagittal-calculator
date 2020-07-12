@@ -1,4 +1,4 @@
-import { Cents, Count, Proportion } from "../../utilities/types"
+import { Cents, Count, Proportion, Sum } from "../../utilities/types"
 import { Level } from "../../notations/ji/types"
 import { Monzo } from "../../utilities/comma/types"
 
@@ -50,7 +50,7 @@ interface AnalyzedHistory {
     rank: EventRank,
     score: Score,
     distance: Cents,
-    inaDistance: Proportion,
+    inaDistance: Sum<Proportion>,
     exact: boolean,
     possible: boolean,
     tinaError: Proportion<"Tina">,
@@ -72,7 +72,7 @@ interface AnalyzedBound {
     bestPossibleHistory: AnalyzedHistory,
     bestRank: EventRank,
     bestPossibleHistoryDistance: Cents,
-    bestPossibleHistoryInaDistance: Proportion,
+    bestPossibleHistoryInaDistance: Sum<Proportion>,
     initialPositionTinaDifference: Proportion<"Tina">,
     consolidatedHistories: ConsolidatedHistories,
 }

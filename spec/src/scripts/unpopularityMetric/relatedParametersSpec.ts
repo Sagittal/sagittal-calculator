@@ -1,5 +1,5 @@
 describe("related parameters", () => {
-    // TODO: i think this may only be for soapifar??
+    // TODO: RELATED PARAMETERS i think this may only be for soapifar??
     //  i think we actually want a test not that the total SoS is the same, but that each and every ratio is the same
     //  if you can figure out what the relationship is, then you should add a ban for these to the "check" file
     // it("for the soapfar submetric, w and v are related", () => {

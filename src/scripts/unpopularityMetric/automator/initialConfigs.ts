@@ -26,15 +26,13 @@ const computeInitialConfigs = (chunkCount: Count<Chunk>, { debug = false } = {})
         chunkCountForSubmetrics = chunkCountForSubmetrics - 1 as Count<Chunk>
         const chunkCountForParameters: Count<ParameterChunk> = chunkCount - chunkCountForSubmetrics as Count<ParameterChunk>
 
-        // todo: this part can take a really long time, so perhaps it should also do some progress logging
+        if (debug) console.log(`calculating the initial configs: phase ${chunkCountForParameters + 1} of ${chunkCount} (give lead time for combinations calculation)`)
 
         SUBMETRIC_CHUNK_COMBINATIONS[ chunkCountForSubmetrics ] = SUBMETRIC_CHUNK_COMBINATIONS[ chunkCountForSubmetrics ] || computeCombinations(SUBMETRIC_CHUNKS, chunkCountForSubmetrics, { withRepeatedElements: true })
         const submetricChunkCombinations: Combinations<SubmetricChunk> = SUBMETRIC_CHUNK_COMBINATIONS[ chunkCountForSubmetrics ]
 
         PARAMETER_CHUNK_COMBINATIONS[ chunkCountForParameters ] = PARAMETER_CHUNK_COMBINATIONS[ chunkCountForParameters ] || computeCombinations(PARAMETER_CHUNKS, chunkCountForParameters, { withRepeatedElements: true })
         const parameterChunkCombinations: Combinations<ParameterChunk> = PARAMETER_CHUNK_COMBINATIONS[ chunkCountForParameters ]
-
-        if (debug) console.log(`calculating the initial configs: phase ${chunkCountForParameters + 1} of ${chunkCount}`)
 
         const pTotal = parameterChunkCombinations.length
         const total = submetricChunkCombinations.length * pTotal

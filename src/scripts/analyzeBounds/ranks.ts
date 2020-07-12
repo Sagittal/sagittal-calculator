@@ -1,5 +1,6 @@
-import { EventType, EventRank } from "./types"
+import { EventRank, EventType } from "./types"
 import { BoundId } from "../../notations/ji/types"
+import { Count } from "../../utilities/types"
 
 const RANKS: { [key in EventType]: EventRank } = {
     [ EventType.INA ]: 0 as EventRank,
@@ -7,8 +8,8 @@ const RANKS: { [key in EventType]: EventRank } = {
     [ EventType.SIZE ]: 2 as EventRank,
 }
 
-const rankCounts: number[] = [ // todo: once sorting stuff out, this should be Count[]
-    0, 0, 0,
+const rankCounts: Count[] = [
+    0 as Count, 0 as Count, 0 as Count,
 ]
 
 const rankBoundIndices: BoundId[][] = [
@@ -16,7 +17,7 @@ const rankBoundIndices: BoundId[][] = [
 ]
 
 const updateRankAnalysis = (bestRank: EventRank, boundId: BoundId) => {
-    rankCounts[ bestRank ] += 1
+    rankCounts[ bestRank ] = rankCounts[ bestRank ] + 1 as Count
     rankBoundIndices[ bestRank ].push(boundId)
 }
 

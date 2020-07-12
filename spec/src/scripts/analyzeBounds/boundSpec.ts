@@ -10,7 +10,7 @@ import {
     EventRank,
     Score,
 } from "../../../../src/scripts/analyzeBounds/types"
-import { Cents, Proportion } from "../../../../src/utilities/types"
+import { Cents, Proportion, Sum } from "../../../../src/utilities/types"
 
 describe("analyzeBound", () => {
     const notBestHistory: History = [
@@ -104,7 +104,7 @@ describe("analyzeBound", () => {
         possible: true,
         exact: false,
         distance: 0.08358035044053125 as Cents,
-        inaDistance: 0.34143907672999785 as Proportion,
+        inaDistance: 0.34143907672999785 as Sum<Proportion>,
         tinaError: 0 as Proportion<"Tina">,
         initialPositionTinaDifference: -0.5613173198970488 as Proportion<"Tina">,
     }

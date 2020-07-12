@@ -1,12 +1,12 @@
 import { AnalyzedEvent } from "./types"
-import { Proportion } from "../../utilities/types"
+import { Proportion, Sum } from "../../utilities/types"
 
-const computeHistoryInaDistance = (analyzedEvents: AnalyzedEvent[]): Proportion => {
+const computeHistoryInaDistance = (analyzedEvents: AnalyzedEvent[]): Sum<Proportion> => {
     return analyzedEvents.reduce(
-        (inaDistance: Proportion, analyzedEvent: AnalyzedEvent) => {
-            return inaDistance + analyzedEvent.inaDistance as Proportion
+        (inaDistance: Sum<Proportion>, analyzedEvent: AnalyzedEvent) => {
+            return inaDistance + analyzedEvent.inaDistance as Sum<Proportion>
         },
-        0 as Proportion,
+        0 as Sum<Proportion>,
     )
 }
 

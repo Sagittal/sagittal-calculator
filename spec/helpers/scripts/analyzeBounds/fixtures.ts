@@ -8,7 +8,7 @@ import {
     HistoricalEvent,
     Score,
 } from "../../../../src/scripts/analyzeBounds/types"
-import { Cents, Proportion } from "../../../../src/utilities/types"
+import { Cents, Proportion, Sum } from "../../../../src/utilities/types"
 import { Bound, BoundId, Level } from "../../../../src/notations/ji/types"
 
 const eventFixture: HistoricalEvent = {
@@ -33,7 +33,7 @@ const analyzedHistoryFixture: AnalyzedHistory = {
     score: 0 as Score,
     distance: 0 as Cents,
     exact: false,
-    inaDistance: 0 as Proportion,
+    inaDistance: 0 as Sum<Proportion>,
     possible: false,
     tinaError: 0 as Proportion<"Tina">,
     initialPositionTinaDifference: 0 as Proportion<"Tina">,

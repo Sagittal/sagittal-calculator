@@ -1,6 +1,6 @@
 import { computeHistoryInaDistance } from "../../../../src/scripts/analyzeBounds/historyInaDistance"
 import { AnalyzedEvent } from "../../../../src/scripts/analyzeBounds/types"
-import { Proportion } from "../../../../src/utilities/types"
+import { Proportion, Sum } from "../../../../src/utilities/types"
 import { analyzedEventFixture } from "../../../helpers/scripts/analyzeBounds/fixtures"
 
 describe("computeHistoryInaDistance", () => {
@@ -13,6 +13,6 @@ describe("computeHistoryInaDistance", () => {
 
         const result = computeHistoryInaDistance(analyzedEvents)
 
-        expect(result).toBe(1.5 as Proportion)
+        expect(result).toBe(1.5 as Sum<Proportion>)
     })
 })
