@@ -4,7 +4,7 @@ import { computeReversedLevelIndex } from "./reversedLevelIndex"
 import { Level } from "../../../notations/ji/types"
 import { Px } from "./types"
 
-const computeLevelHeights = (withinLevelHeight: number): {[key in Level]: Px} => {
+const computeLevelHeights = (withinLevelHeight: number): { [key in Level]: Px } => {
     return LEVELS.reduce(
         (levelTops, level, levelIndex) => {
             return {
@@ -12,7 +12,7 @@ const computeLevelHeights = (withinLevelHeight: number): {[key in Level]: Px} =>
                 [ level ]: Y_SCALE * (MARGIN + (computeReversedLevelIndex(levelIndex) + withinLevelHeight) * LEVEL_HEIGHT) as Px,
             }
         },
-        {} as {[key in Level]: Px},
+        {} as { [key in Level]: Px },
     )
 }
 

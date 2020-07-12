@@ -1,5 +1,5 @@
 import { computeEventDistance } from "../../../../src/scripts/analyzeBounds/eventDistance"
-import { HistoricalEvent, History } from "../../../../src/scripts/analyzeBounds/types"
+import { HistoricalEvent } from "../../../../src/scripts/analyzeBounds/types"
 import { Cents } from "../../../../src/utilities/types"
 import { eventFixture } from "../../../helpers/scripts/analyzeBounds/fixtures"
 

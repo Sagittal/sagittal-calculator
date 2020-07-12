@@ -68,11 +68,11 @@ describe("computeDoEventsContainEvent", () => {
     it("returns false when the events contain no events which have either the same name or the same level", () => {
         const analyzedEvents = [
             {
-            ...analyzedEventFixture,
-            name: "someName" as EventName,
-            level: "someLevel" as Level,
-            rank: 1 as EventRank,
-        }
+                ...analyzedEventFixture,
+                name: "someName" as EventName,
+                level: "someLevel" as Level,
+                rank: 1 as EventRank,
+            },
         ]
         const targetEvent = {
             ...analyzedEventFixture,

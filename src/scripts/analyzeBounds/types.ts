@@ -11,7 +11,7 @@ enum EventType {
 type EventRank = number & { _EventRankBrand: "EventRank" }
 type Score = number & { _ScoreBrand: "Score" }
 
-type EventName = string & { _EventNameBrand: "EventName"}
+type EventName = string & { _EventNameBrand: "EventName" }
 
 interface SnappablePosition {
     position: Cents,

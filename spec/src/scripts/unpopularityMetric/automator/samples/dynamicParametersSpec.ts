@@ -1,14 +1,10 @@
 import { computeDynamicParameters } from "../../../../../../src/scripts/unpopularityMetric/automator/samples/dynamicParameters"
-import {
-    Parameter,
-    SampleRange,
-    SampleResolution,
-    SubmetricConfig,
-    SubmetricType,
-} from "../../../../../../src/scripts/unpopularityMetric/types"
+import { Parameter, SubmetricConfig, SubmetricType } from "../../../../../../src/scripts/unpopularityMetric/types"
 import {
     DynamicParameterValue,
     ParameterUnit,
+    SampleRange,
+    SampleResolution,
 } from "../../../../../../src/scripts/unpopularityMetric/automator/samples/types"
 import { Index } from "../../../../../../src/utilities/types"
 

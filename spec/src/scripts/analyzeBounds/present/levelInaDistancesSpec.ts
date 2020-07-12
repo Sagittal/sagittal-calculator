@@ -1,6 +1,6 @@
 import { extractLevelInaDistances } from "../../../../../src/scripts/analyzeBounds/present/levelInaDistances"
 import { Level } from "../../../../../src/notations/ji/types"
-import { AnalyzedEvent, AnalyzedHistory } from "../../../../../src/scripts/analyzeBounds/types"
+import { AnalyzedHistory } from "../../../../../src/scripts/analyzeBounds/types"
 import { analyzedEventFixture, analyzedHistoryFixture } from "../../../../helpers/scripts/analyzeBounds/fixtures"
 import { Proportion } from "../../../../../src/utilities/types"
 
@@ -10,10 +10,10 @@ describe("extractLevelInaDistances", () => {
             ...analyzedHistoryFixture,
             events: [
                 { ...analyzedEventFixture, level: Level.MEDIUM, inaDistance: 0.00000 as Proportion },
-                { ...analyzedEventFixture,level: Level.HIGH, inaDistance: 4.44444444 as Proportion },
-                { ...analyzedEventFixture,level: Level.ULTRA, inaDistance: 3.33333333 as Proportion },
-                { ...analyzedEventFixture,level: Level.EXTREME, inaDistance: 2.222222 as Proportion },
-                { ...analyzedEventFixture,level: Level.INSANE, inaDistance: 1.111111 as Proportion },
+                { ...analyzedEventFixture, level: Level.HIGH, inaDistance: 4.44444444 as Proportion },
+                { ...analyzedEventFixture, level: Level.ULTRA, inaDistance: 3.33333333 as Proportion },
+                { ...analyzedEventFixture, level: Level.EXTREME, inaDistance: 2.222222 as Proportion },
+                { ...analyzedEventFixture, level: Level.INSANE, inaDistance: 1.111111 as Proportion },
             ],
         }
 
@@ -31,10 +31,10 @@ describe("extractLevelInaDistances", () => {
         const analyzedHistory: AnalyzedHistory = {
             ...analyzedHistoryFixture,
             events: [
-                { ...analyzedEventFixture,level: Level.MEDIUM, inaDistance: 0.00000 as Proportion },
-                { ...analyzedEventFixture,level: Level.HIGH, inaDistance: 4.44444444 as Proportion },
-                { ...analyzedEventFixture,level: Level.EXTREME, inaDistance: 2.222222 as Proportion },
-                { ...analyzedEventFixture,level: Level.INSANE, inaDistance: 1.111111 as Proportion },
+                { ...analyzedEventFixture, level: Level.MEDIUM, inaDistance: 0.00000 as Proportion },
+                { ...analyzedEventFixture, level: Level.HIGH, inaDistance: 4.44444444 as Proportion },
+                { ...analyzedEventFixture, level: Level.EXTREME, inaDistance: 2.222222 as Proportion },
+                { ...analyzedEventFixture, level: Level.INSANE, inaDistance: 1.111111 as Proportion },
             ],
         }
 

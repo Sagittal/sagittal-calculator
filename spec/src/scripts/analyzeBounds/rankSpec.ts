@@ -1,6 +1,6 @@
 import { computeRank } from "../../../../src/scripts/analyzeBounds/rank"
 import { Level } from "../../../../src/notations/ji/types"
-import { AnalyzedEvent, EventType, EventRank } from "../../../../src/scripts/analyzeBounds/types"
+import { AnalyzedEvent, EventRank, EventType } from "../../../../src/scripts/analyzeBounds/types"
 import { Cents } from "../../../../src/utilities/types"
 import { analyzedEventFixture } from "../../../helpers/scripts/analyzeBounds/fixtures"
 

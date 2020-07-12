@@ -1,6 +1,6 @@
 import { computeInaMidpoints } from "../../../../src/notations/ji/inaMidpoints"
 import { Level } from "../../../../src/notations/ji/types"
-import { EventName, SnappablePosition } from "../../../../src/scripts/analyzeBounds/types"
+import { EventName } from "../../../../src/scripts/analyzeBounds/types"
 import { Cents } from "../../../../src/utilities/types"
 
 describe("computeInaMidpoints", () => {

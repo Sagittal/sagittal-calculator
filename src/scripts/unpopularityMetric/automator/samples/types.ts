@@ -33,6 +33,15 @@ interface DynamicParameter {
     unit: ParameterUnit,
 }
 
+interface DynamicParameterConfig {
+    center?: DynamicParameterValue,
+    range?: SampleRange,
+    resolution?: SampleResolution,
+}
+
+type SampleRange = number & { _SampleRangeBrand: "SampleRange" }
+type SampleResolution = number & { _SampleResolutionBrand: "SampleResolution" }
+
 export {
     Sample,
     ComputeParameterValueIndicesParameters,
@@ -42,4 +51,7 @@ export {
     ParameterUnit,
     ParameterValue,
     DynamicParameterValue,
+    DynamicParameterConfig,
+    SampleRange,
+    SampleResolution,
 }

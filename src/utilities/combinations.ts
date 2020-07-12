@@ -52,11 +52,12 @@ const concatMap = <T, U>(f: (g: T) => U[], array: T[]): U[] =>
 
 const dropWhile = <T>(p: (q: T) => boolean, array: T[]): T[] => {
     let i = 0
-    for (let lng = array.length; (i < lng) && p(array[ i ]); i++) {}
+    for (let lng = array.length; (i < lng) && p(array[ i ]); i++) {
+    }
     return array.slice(i)
 }
 
-const head = <T>(array: T[]): T | undefined  => array.length ? array[ 0 ] : undefined
+const head = <T>(array: T[]): T | undefined => array.length ? array[ 0 ] : undefined
 
 const isNull = <T>(array: T[]): boolean => array instanceof Array ? array.length < 1 : false
 

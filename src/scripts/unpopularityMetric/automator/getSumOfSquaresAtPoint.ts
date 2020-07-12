@@ -8,7 +8,7 @@ const getSumOfSquaresAtPoint = (sumsOfSquares: SumsOfSquares, point: SamplePoint
     })
 
     if (cursor) {
-        return cursor[point[point.length - 1]] as SumOfSquares
+        return cursor[ point[ point.length - 1 ] ] as SumOfSquares
     }
 
     return undefined

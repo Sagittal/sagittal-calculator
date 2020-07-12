@@ -1,6 +1,6 @@
 import { SubmetricOperation, SubmetricProperties, SubmetricType } from "./types"
 
-const SUBMETRIC_PROPERTIES: {[key in SubmetricType]: SubmetricProperties } = {
+const SUBMETRIC_PROPERTIES: { [key in SubmetricType]: SubmetricProperties } = {
     [ SubmetricType.SOAPFAR ]: {
         withRepetition: true,
         operation: SubmetricOperation.SUM,

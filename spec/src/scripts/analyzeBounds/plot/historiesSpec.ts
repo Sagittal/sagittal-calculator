@@ -1,5 +1,5 @@
 import { computeHistories } from "../../../../../src/scripts/analyzeBounds/plot/histories"
-import { Bound, BoundId, Level } from "../../../../../src/notations/ji/types"
+import { Bound, Level } from "../../../../../src/notations/ji/types"
 import { EventType } from "../../../../../src/scripts/analyzeBounds/types"
 import { Cents } from "../../../../../src/utilities/types"
 import { boundFixture } from "../../../../helpers/scripts/analyzeBounds/fixtures"
@@ -7,7 +7,7 @@ import { boundFixture } from "../../../../helpers/scripts/analyzeBounds/fixtures
 describe("computeHistories", () => {
     it("given a bound, returns an array of all of its possible histories", () => {
         const bound: Bound = {
-    ...boundFixture,
+            ...boundFixture,
             position: 9.5 as Cents,
             levels: [Level.MEDIUM, Level.ULTRA, Level.EXTREME, Level.INSANE],
         }

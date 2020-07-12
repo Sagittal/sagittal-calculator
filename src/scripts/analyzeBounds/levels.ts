@@ -1,8 +1,8 @@
 import { AnalyzedHistory } from "./types"
 import { Level } from "../../notations/ji/types"
 
-const levelsBestHistoryRanks: { [key in Level]: { [index: number]: number | undefined }} = {} as { [key in Level]: { [index: number]: number | undefined }}
-const levelsBestCumulativeHistoryRanks: { [key in Level]: { [index: number]: number }} = {} as { [key in Level]: { [index: number]: number }}
+const levelsBestHistoryRanks: { [key in Level]: { [ index: number ]: number | undefined } } = {} as { [key in Level]: { [ index: number ]: number | undefined } }
+const levelsBestCumulativeHistoryRanks: { [key in Level]: { [ index: number ]: number } } = {} as { [key in Level]: { [ index: number ]: number } }
 
 const updateLevelAnalysis = (bestPossibleHistory: AnalyzedHistory) => {
     let cumulativeRank = 0

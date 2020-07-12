@@ -1,6 +1,6 @@
 import { computeParameterValues } from "./parameterValues"
-import { Parameter, DynamicParameterConfig, SubmetricConfig } from "../../types"
-import { DynamicParameter, ParameterUnit } from "./types"
+import { Parameter, SubmetricConfig } from "../../types"
+import { DynamicParameter, DynamicParameterConfig, ParameterUnit } from "./types"
 import { Index } from "../../../../utilities/types"
 
 const computeSubmetricDynamicParameters = (submetricConfig: SubmetricConfig = {}, submetricIndex: Index): DynamicParameter[] => {

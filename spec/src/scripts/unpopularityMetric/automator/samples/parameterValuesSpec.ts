@@ -1,12 +1,10 @@
 import { computeParameterValues } from "../../../../../../src/scripts/unpopularityMetric/automator/samples/parameterValues"
 import {
-    DynamicParameterValue,
-} from "../../../../../../src/scripts/unpopularityMetric/automator/samples/types"
-import {
     DynamicParameterConfig,
+    DynamicParameterValue,
     SampleRange,
     SampleResolution,
-} from "../../../../../../src/scripts/unpopularityMetric/types"
+} from "../../../../../../src/scripts/unpopularityMetric/automator/samples/types"
 
 describe("computeParameterValues", () => {
     it("given a parameter config (a center, a range, and a resolution), will return a block of points to sample", () => {

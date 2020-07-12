@@ -1,5 +1,4 @@
-import { DynamicParameterValue } from "./types"
-import { DynamicParameterConfig, SampleRange, SampleResolution } from "../../types"
+import { DynamicParameterConfig, DynamicParameterValue, SampleRange, SampleResolution } from "./types"
 
 const computeParameterValues = (parameterConfig: DynamicParameterConfig): DynamicParameterValue[] => {
     const {

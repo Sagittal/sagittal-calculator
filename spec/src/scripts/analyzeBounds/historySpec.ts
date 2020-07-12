@@ -3,7 +3,7 @@ import { computeInitialPosition } from "../../../../src/scripts/analyzeBounds/in
 import { TINA } from "../../../../src/notations/ji/intervals"
 import { ACCURACY_THRESHOLD } from "../../../../src/utilities/constants"
 import { EventRank, EventType, History } from "../../../../src/scripts/analyzeBounds/types"
-import { Bound, BoundId, Level } from "../../../../src/notations/ji/types"
+import { Bound, Level } from "../../../../src/notations/ji/types"
 import { Cents, Proportion } from "../../../../src/utilities/types"
 import { analyzedEventFixture, boundFixture, eventFixture } from "../../../helpers/scripts/analyzeBounds/fixtures"
 

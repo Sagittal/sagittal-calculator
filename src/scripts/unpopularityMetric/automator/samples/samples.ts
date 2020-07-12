@@ -1,7 +1,6 @@
 import { combineSubmetricsPoints } from "./combineSubmetricsPoints"
 import { computeSubmetricPoints } from "./submetricPoints"
 import { DynamicParameter, Sample } from "./types"
-import { Combination } from "../../../../utilities/types"
 import { SubmetricConfig } from "../../types"
 
 const computeSamples = ({ submetricConfigs, dynamicParameters }: { submetricConfigs: SubmetricConfig[], dynamicParameters: DynamicParameter[] }): Sample[] => {

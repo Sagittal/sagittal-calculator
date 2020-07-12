@@ -1,6 +1,5 @@
 import { checkSubmetricsForIssues } from "../../../../../src/scripts/unpopularityMetric/sumOfSquares/check"
 import { Parameter, Submetric } from "../../../../../src/scripts/unpopularityMetric/types"
-import { Combination } from "../../../../../src/utilities/types"
 import { DynamicParameterValue } from "../../../../../src/scripts/unpopularityMetric/automator/samples/types"
 
 describe("checkSubmetricsForIssues", () => {

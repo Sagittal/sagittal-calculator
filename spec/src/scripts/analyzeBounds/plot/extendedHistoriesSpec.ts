@@ -1,5 +1,5 @@
 import { computeExtendedHistories } from "../../../../../src/scripts/analyzeBounds/plot/extendedHistories"
-import { BoundId, Level } from "../../../../../src/notations/ji/types"
+import { Level } from "../../../../../src/notations/ji/types"
 import { EventName, EventType, HistoricalEvent, History } from "../../../../../src/scripts/analyzeBounds/types"
 import { Cents } from "../../../../../src/utilities/types"
 import { boundFixture } from "../../../../helpers/scripts/analyzeBounds/fixtures"
@@ -25,7 +25,7 @@ describe("computeExtendedHistories", () => {
         const result = computeExtendedHistories(history, Level.ULTRA, {
             ...boundFixture,
             position: actualBoundPosition,
-            levels: [ Level.ULTRA, Level.EXTREME ],
+            levels: [Level.ULTRA, Level.EXTREME],
         })
 
         expect(result).toEqual(jasmine.arrayWithExactContents([

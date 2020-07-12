@@ -4,7 +4,7 @@ import { presentCommas } from "../../../../src/utilities/comma/present/commas"
 import { computeCommaName } from "../../../../src/utilities/comma/name"
 import { SYMBOLS } from "../../../../src/notations/ji/symbols"
 import { ApotomeSlope } from "../../../../src/notations/ji/types"
-import { Copfr, Sopfr, PrimeExponent } from "../../../../src/utilities/comma/types"
+import { Copfr, PrimeExponent, Sopfr } from "../../../../src/utilities/comma/types"
 import { Prime } from "../../../../src/utilities/types"
 
 describe("verifying primary commas", () => {

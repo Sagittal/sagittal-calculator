@@ -4,7 +4,7 @@ import "colors"
 import { program } from "commander"
 import { RESOLUTION } from "../automator/constants"
 import { recursivelyFindUnpopularityMetric } from "../automator/recursivelyFind"
-import { Parameter, Submetric, SubmetricConfig } from "../types"
+import { Parameter, SubmetricConfig } from "../types"
 import { Combination } from "../../../utilities/types"
 
 program

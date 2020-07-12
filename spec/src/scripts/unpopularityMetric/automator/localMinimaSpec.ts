@@ -1,5 +1,5 @@
 import { computeLocalMinima } from "../../../../../src/scripts/unpopularityMetric/automator/localMinima"
-import { SamplePoint, Sample } from "../../../../../src/scripts/unpopularityMetric/automator/samples/types"
+import { Sample, SamplePoint } from "../../../../../src/scripts/unpopularityMetric/automator/samples/types"
 import { SumOfSquares, SumsOfSquares } from "../../../../../src/scripts/unpopularityMetric/sumOfSquares/types"
 import { Combination } from "../../../../../src/utilities/types"
 import { Submetric } from "../../../../../src/scripts/unpopularityMetric/types"

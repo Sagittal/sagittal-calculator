@@ -16,11 +16,11 @@ const computeMonzoInRange = (threeSlicedMonzo: Monzo<3>, lowerBound: Cents, uppe
     const monzo: Monzo = [0, ...threeSlicedMonzo] as Monzo
     let cents: Cents = computeCentsFromMonzo(monzo)
     while (cents > upperBound) {
-        monzo[ 0 ] = monzo[0] - 1 as PrimeExponent
+        monzo[ 0 ] = monzo[ 0 ] - 1 as PrimeExponent
         cents = computeCentsFromMonzo(monzo)
     }
     while (cents < lowerBound) {
-        monzo[ 0 ] = monzo[0] + 1 as PrimeExponent
+        monzo[ 0 ] = monzo[ 0 ] + 1 as PrimeExponent
         cents = computeCentsFromMonzo(monzo)
     }
 

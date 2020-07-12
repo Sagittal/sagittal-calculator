@@ -2,7 +2,6 @@ import { computeEventInaDistance } from "../../../../src/scripts/analyzeBounds/e
 import { HIGHINA } from "../../../../src/notations/ji/intervals"
 import { ACCURACY_THRESHOLD } from "../../../../src/utilities/constants"
 import { Level } from "../../../../src/notations/ji/types"
-import { HistoricalEvent, History } from "../../../../src/scripts/analyzeBounds/types"
 import { Cents } from "../../../../src/utilities/types"
 import { eventFixture } from "../../../helpers/scripts/analyzeBounds/fixtures"
 

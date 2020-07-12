@@ -1,17 +1,13 @@
 import { computeNextConfigs } from "../../../../../src/scripts/unpopularityMetric/automator/nextConfigs"
-import {
-    Parameter,
-    SampleRange,
-    SampleResolution,
-    SubmetricConfig,
-    SubmetricType,
-} from "../../../../../src/scripts/unpopularityMetric/types"
+import { Parameter, SubmetricConfig, SubmetricType } from "../../../../../src/scripts/unpopularityMetric/types"
 import {
     DynamicParameter,
     DynamicParameterValue,
     ParameterUnit,
     ParameterValue,
     SamplePoint,
+    SampleRange,
+    SampleResolution,
 } from "../../../../../src/scripts/unpopularityMetric/automator/samples/types"
 import { Index } from "../../../../../src/utilities/types"
 

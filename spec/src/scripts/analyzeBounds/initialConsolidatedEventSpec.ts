@@ -1,10 +1,10 @@
 import { computeInitialConsolidatedEvent } from "../../../../src/scripts/analyzeBounds/initialConsolidatedEvent"
 import {
-    ConsolidatedEvent,
-    EventType,
-    EventRank,
     AnalyzedEvent,
+    ConsolidatedEvent,
     EventName,
+    EventRank,
+    EventType,
 } from "../../../../src/scripts/analyzeBounds/types"
 import { Cents } from "../../../../src/utilities/types"
 import { analyzedEventFixture } from "../../../helpers/scripts/analyzeBounds/fixtures"

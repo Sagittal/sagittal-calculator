@@ -1,14 +1,11 @@
 import { computeSamples } from "../../../../../../src/scripts/unpopularityMetric/automator/samples/samples"
 import { computeDynamicParameters } from "../../../../../../src/scripts/unpopularityMetric/automator/samples/dynamicParameters"
-import {
-    Parameter,
-    SampleRange,
-    SampleResolution,
-    SubmetricType,
-} from "../../../../../../src/scripts/unpopularityMetric/types"
+import { Parameter, SubmetricType } from "../../../../../../src/scripts/unpopularityMetric/types"
 import {
     DynamicParameterValue,
     ParameterValue,
+    SampleRange,
+    SampleResolution,
 } from "../../../../../../src/scripts/unpopularityMetric/automator/samples/types"
 
 describe("submetricCombinations", () => {
@@ -217,12 +214,20 @@ describe("submetricCombinations", () => {
         const submetricConfigs = [
             {
                 [ Parameter.SUBMETRIC_TYPE ]: SubmetricType.COAPF,
-                [ Parameter.A ]: { center: 1.5 as DynamicParameterValue, range: 2 as SampleRange, resolution: 2 as SampleResolution },
+                [ Parameter.A ]: {
+                    center: 1.5 as DynamicParameterValue,
+                    range: 2 as SampleRange,
+                    resolution: 2 as SampleResolution,
+                },
                 [ Parameter.K ]: 0.5 as ParameterValue,
             },
             {
                 [ Parameter.SUBMETRIC_TYPE ]: SubmetricType.COAPF,
-                [ Parameter.A ]: { center: 1 as DynamicParameterValue, range: 2 as SampleRange, resolution: 2 as SampleResolution },
+                [ Parameter.A ]: {
+                    center: 1 as DynamicParameterValue,
+                    range: 2 as SampleRange,
+                    resolution: 2 as SampleResolution,
+                },
                 [ Parameter.K ]: 0 as ParameterValue,
             },
         ]

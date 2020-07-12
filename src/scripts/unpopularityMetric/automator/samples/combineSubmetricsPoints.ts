@@ -1,11 +1,14 @@
 import { computeParameterValueIndices } from "./parameterValueIndices"
-import { DynamicParameter, SamplePoint, Sample, SubmetricValue } from "./types"
+import { DynamicParameter, Sample, SamplePoint, SubmetricValue } from "./types"
 import { Submetric } from "../../types"
 import { Combination, Index } from "../../../../utilities/types"
 
 // todo: is it submetric poitns or values?
-const combineSubmetricsPoints = ({ submetricsPoints, dynamicParameters }: {submetricsPoints: SubmetricValue[][], dynamicParameters: DynamicParameter[]}): Sample[] => {
-    let samples: Sample[] = [{ submetrics: [] as unknown as Combination<Submetric>, point: [] as unknown as SamplePoint }]
+const combineSubmetricsPoints = ({ submetricsPoints, dynamicParameters }: { submetricsPoints: SubmetricValue[][], dynamicParameters: DynamicParameter[] }): Sample[] => {
+    let samples: Sample[] = [{
+        submetrics: [] as unknown as Combination<Submetric>,
+        point: [] as unknown as SamplePoint,
+    }]
 
     submetricsPoints.forEach((submetricPoints, submetricIndex) => {
         let extendedSubmetricCombinations: Sample[] = []

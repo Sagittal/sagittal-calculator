@@ -1,16 +1,8 @@
-import {
-    Parameter,
-    DynamicParameterConfig,
-    SubmetricType,
-    SubmetricConfig,
-    SampleResolution,
-    SampleRange,
-} from "../types"
+import { Parameter, SubmetricConfig, SubmetricType } from "../types"
 import { Combinations } from "../../../utilities/types"
 import { ParameterChunk, SubmetricChunk } from "./types"
-import { DynamicParameterValue } from "./samples/types"
-
-const RESOLUTION: SampleResolution = 2 as SampleResolution
+import { DynamicParameterValue, SampleRange } from "./samples/types"
+import { RESOLUTION } from "./samples/constants"
 
 // AKA: if they are going to be included in the automatically generated initial configs, what should they be set to
 const PARAMETER_INITIAL_CONFIGS: SubmetricConfig = {
@@ -80,7 +72,6 @@ const SUBMETRIC_CHUNK_COMBINATIONS: Combinations<SubmetricChunk>[] = []
 const PARAMETER_CHUNK_COMBINATIONS: Combinations<ParameterChunk>[] = []
 
 export {
-    RESOLUTION,
     SUBMETRIC_CHUNKS,
     PARAMETER_CHUNKS,
     SUBMETRIC_CHUNK_COMBINATIONS,

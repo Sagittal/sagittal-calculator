@@ -1,6 +1,6 @@
 import { computeScore } from "../../../../src/scripts/analyzeBounds/score"
 import { Level } from "../../../../src/notations/ji/types"
-import { AnalyzedEvent, History, EventRank } from "../../../../src/scripts/analyzeBounds/types"
+import { AnalyzedEvent, EventRank } from "../../../../src/scripts/analyzeBounds/types"
 import { analyzedEventFixture } from "../../../helpers/scripts/analyzeBounds/fixtures"
 
 describe("computeScore", () => {

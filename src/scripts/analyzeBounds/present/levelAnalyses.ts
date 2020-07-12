@@ -9,8 +9,8 @@ const presentLevelAnalyses = () => {
     LEVELS.slice().reverse().forEach(level => {
         if (level === Level.INSANE) return
 
-        const levelBestHistoryRanks: { [index: number]: number | undefined } = levelsBestHistoryRanks[ level ]
-        const levelBestCumulativeHistoryRanks: { [index: number]: number } = levelsBestCumulativeHistoryRanks[ level ]
+        const levelBestHistoryRanks: { [ index: number ]: number | undefined } = levelsBestHistoryRanks[ level ]
+        const levelBestCumulativeHistoryRanks: { [ index: number ]: number } = levelsBestCumulativeHistoryRanks[ level ]
 
         presentedLevelAnalysis.push(presentLevelAnalysis(level, levelBestHistoryRanks, levelBestCumulativeHistoryRanks))
     })

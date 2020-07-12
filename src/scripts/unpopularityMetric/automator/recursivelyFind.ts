@@ -13,7 +13,10 @@ import { RecursivelyFindUnpopularityMetricOptions } from "./types"
 const recursivelyFindUnpopularityMetric = (submetricConfigs: SubmetricConfig[], options: RecursivelyFindUnpopularityMetricOptions = {}) => {
     const {
         depth = 0,
-        bestMetric: previousBestMetric = { sumOfSquares: Infinity as SumOfSquares, submetrics: [] as unknown as Combination<Submetric> },
+        bestMetric: previousBestMetric = {
+            sumOfSquares: Infinity as SumOfSquares,
+            submetrics: [] as unknown as Combination<Submetric>,
+        },
         progressMessage = "",
         localMinimum,
         recurse = true,

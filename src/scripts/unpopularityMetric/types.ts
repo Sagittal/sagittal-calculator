@@ -1,4 +1,4 @@
-import { DynamicParameterValue, ParameterValue } from "./automator/samples/types"
+import { DynamicParameterConfig, DynamicParameterValue, ParameterValue } from "./automator/samples/types"
 
 enum SubmetricType {
     SOAPFAR = "soapfar",
@@ -68,15 +68,6 @@ type SubmetricProperties = {
     usePrimeIndex?: boolean,
 }
 
-// todo: these probably goes deeper somewhere
-type SampleRange = number & { _SampleRangeBrand: "SampleRange" }
-type SampleResolution = number & { _SampleResolutionBrand: "SampleResolution" }
-interface DynamicParameterConfig {
-    center?: DynamicParameterValue,
-    range?: SampleRange,
-    resolution?: SampleResolution,
-}
-
 type SubmetricConfig = {
     [key in Parameter]?: ParameterValue | DynamicParameterConfig
 }
@@ -88,7 +79,4 @@ export {
     Parameter,
     SubmetricProperties,
     SubmetricConfig,
-    DynamicParameterConfig,
-    SampleRange,
-    SampleResolution,
 }

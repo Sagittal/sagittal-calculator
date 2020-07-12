@@ -1,5 +1,5 @@
 import { analyzeEvents } from "../../../../src/scripts/analyzeBounds/events"
-import { EventType, HistoricalEvent, History } from "../../../../src/scripts/analyzeBounds/types"
+import { EventType, History } from "../../../../src/scripts/analyzeBounds/types"
 import { Level } from "../../../../src/notations/ji/types"
 import { Cents } from "../../../../src/utilities/types"
 import { analyzedEventFixture, eventFixture } from "../../../helpers/scripts/analyzeBounds/fixtures"

@@ -61,7 +61,10 @@ describe("updateConsolidatedEvent", () => {
         })
 
         it("when there is a next analyzed event, but an event with that name has already been updated into this consolidated event, the next events stays the same", () => {
-            const consolidatedEvent: ConsolidatedEvent = { ...consolidatedEventFixture, nextEvents: ["2.5°58"] as EventName[] }
+            const consolidatedEvent: ConsolidatedEvent = {
+                ...consolidatedEventFixture,
+                nextEvents: ["2.5°58"] as EventName[],
+            }
             nextAnalyzedEvent = { ...analyzedEventFixture, name: "2.5°58" as EventName }
 
             updateConsolidatedEvent(consolidatedEvent, {
@@ -141,7 +144,10 @@ describe("updateConsolidatedEvent", () => {
                 name: "eventName" as EventName,
                 level: Level.ULTRA,
             }
-            bestPossibleHistory = { ...analyzedHistoryFixture, events: [{ ...analyzedEventFixture, name: "eventName" as EventName, level: Level.ULTRA }] }
+            bestPossibleHistory = {
+                ...analyzedHistoryFixture,
+                events: [{ ...analyzedEventFixture, name: "eventName" as EventName, level: Level.ULTRA }],
+            }
 
             updateConsolidatedEvent(consolidatedEvent, {
                 analyzedHistory,
@@ -159,7 +165,10 @@ describe("updateConsolidatedEvent", () => {
                 isBestPossibleHistoryMember: true,
                 name: "eventName" as EventName,
             }
-            bestPossibleHistory = { ...analyzedHistoryFixture, events: [{ ...analyzedEventFixture, name: "eventName" as EventName, level: Level.EXTREME }] }
+            bestPossibleHistory = {
+                ...analyzedHistoryFixture,
+                events: [{ ...analyzedEventFixture, name: "eventName" as EventName, level: Level.EXTREME }],
+            }
 
             updateConsolidatedEvent(consolidatedEvent, {
                 analyzedHistory,
@@ -178,7 +187,10 @@ describe("updateConsolidatedEvent", () => {
                 name: "eventName" as EventName,
                 level: Level.ULTRA,
             }
-            bestPossibleHistory = { ...analyzedHistoryFixture, events: [{ ...analyzedEventFixture, name: "eventName" as EventName, level: Level.ULTRA }] }
+            bestPossibleHistory = {
+                ...analyzedHistoryFixture,
+                events: [{ ...analyzedEventFixture, name: "eventName" as EventName, level: Level.ULTRA }],
+            }
 
             updateConsolidatedEvent(consolidatedEvent, {
                 analyzedHistory,
@@ -197,7 +209,10 @@ describe("updateConsolidatedEvent", () => {
                 name: "eventName" as EventName,
                 level: Level.ULTRA,
             }
-            bestPossibleHistory = { ...analyzedHistoryFixture, events: [{ ...analyzedEventFixture, name: "eventName" as EventName, level: Level.EXTREME }] }
+            bestPossibleHistory = {
+                ...analyzedHistoryFixture,
+                events: [{ ...analyzedEventFixture, name: "eventName" as EventName, level: Level.EXTREME }],
+            }
 
             updateConsolidatedEvent(consolidatedEvent, {
                 analyzedHistory,
@@ -212,7 +227,10 @@ describe("updateConsolidatedEvent", () => {
 
     describe("rank of the best ranked history any event updated into this consolidated event was a member of", () => {
         it("when the analyzed history's rank is less than the rank of the best ranked history this consolidated event has so far been updated with an event from, it updates its rank of best ranked member history", () => {
-            const consolidatedEvent: ConsolidatedEvent = { ...consolidatedEventFixture, rankOfBestRankedMemberHistory: 3 as EventRank }
+            const consolidatedEvent: ConsolidatedEvent = {
+                ...consolidatedEventFixture,
+                rankOfBestRankedMemberHistory: 3 as EventRank,
+            }
             analyzedHistory = { ...analyzedHistoryFixture, rank: 2 as EventRank }
 
             updateConsolidatedEvent(consolidatedEvent, {
@@ -226,7 +244,10 @@ describe("updateConsolidatedEvent", () => {
         })
 
         it("when the analyzed history's rank is not less than the rank of the best ranked history this consolidated event has so far been updated with an event from, it keeps its rank of best ranked member history the same", () => {
-            const consolidatedEvent: ConsolidatedEvent = { ...consolidatedEventFixture, rankOfBestRankedMemberHistory: 1 as EventRank }
+            const consolidatedEvent: ConsolidatedEvent = {
+                ...consolidatedEventFixture,
+                rankOfBestRankedMemberHistory: 1 as EventRank,
+            }
             analyzedHistory = { ...analyzedHistoryFixture, rank: 2 as EventRank }
 
             updateConsolidatedEvent(consolidatedEvent, {
@@ -242,7 +263,10 @@ describe("updateConsolidatedEvent", () => {
 
     describe("rank of the best ranked event updated into this consolidated event", () => {
         it("when the analyzed event's rank is less than the rank of the best ranked event this consolidated event has so far been updated with, it updates its rank of best ranked event", () => {
-            const consolidatedEvent: ConsolidatedEvent = { ...consolidatedEventFixture, rankOfBestRankedEventInAnyMemberHistory: 3 as EventRank }
+            const consolidatedEvent: ConsolidatedEvent = {
+                ...consolidatedEventFixture,
+                rankOfBestRankedEventInAnyMemberHistory: 3 as EventRank,
+            }
             analyzedEvent = { ...analyzedEventFixture, rank: 2 as EventRank }
 
             updateConsolidatedEvent(consolidatedEvent, {
@@ -256,7 +280,10 @@ describe("updateConsolidatedEvent", () => {
         })
 
         it("when the analyzed event's rank is not less than the rank of the best ranked event this consolidated event has so far been updated with, it keeps its rank of best ranked event the same", () => {
-            const consolidatedEvent: ConsolidatedEvent = { ...consolidatedEventFixture, rankOfBestRankedEventInAnyMemberHistory: 1 as EventRank }
+            const consolidatedEvent: ConsolidatedEvent = {
+                ...consolidatedEventFixture,
+                rankOfBestRankedEventInAnyMemberHistory: 1 as EventRank,
+            }
             analyzedEvent = { ...analyzedEventFixture, rank: 2 as EventRank }
 
             updateConsolidatedEvent(consolidatedEvent, {

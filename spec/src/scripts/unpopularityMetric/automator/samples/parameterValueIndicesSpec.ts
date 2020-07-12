@@ -2,7 +2,8 @@ import { computeParameterValueIndices } from "../../../../../../src/scripts/unpo
 import { Parameter, Submetric } from "../../../../../../src/scripts/unpopularityMetric/types"
 import {
     DynamicParameter,
-    DynamicParameterValue, ParameterUnit,
+    DynamicParameterValue,
+    ParameterUnit,
     SubmetricValue,
 } from "../../../../../../src/scripts/unpopularityMetric/automator/samples/types"
 import { Index } from "../../../../../../src/utilities/types"
@@ -52,9 +53,13 @@ describe("computeParameterValueIndices", () => {
             [ Parameter.A ]: 0.69 as DynamicParameterValue,
             [ Parameter.Y ]: 1.1 as DynamicParameterValue,
         }
-        const submetricIndex = 1 as Index<Submetric> // todo: is this ACTUALLY the index of a submetric though?
+        const submetricIndex = 1 as Index<Submetric>
 
-        const result = computeParameterValueIndices({ dynamicParameters, submetricValue: submetricPoint, submetricIndex })
+        const result = computeParameterValueIndices({
+            dynamicParameters,
+            submetricValue: submetricPoint,
+            submetricIndex,
+        })
 
         expect(result).toEqual([4, 3])
     })

@@ -1,6 +1,6 @@
 import { computeHistoryPosition } from "../../../../src/scripts/analyzeBounds/historyPosition"
 import { Cents } from "../../../../src/utilities/types"
-import { HistoricalEvent, History } from "../../../../src/scripts/analyzeBounds/types"
+import { History } from "../../../../src/scripts/analyzeBounds/types"
 import { eventFixture } from "../../../helpers/scripts/analyzeBounds/fixtures"
 
 describe("computeHistoryPosition", () => {

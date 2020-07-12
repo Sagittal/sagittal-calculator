@@ -1,7 +1,7 @@
 import { presentBound } from "../../../../../src/scripts/analyzeBounds/present/bound"
 import { Bound, BoundId, Level } from "../../../../../src/notations/ji/types"
 import { AnalysisMode } from "../../../../../src/scripts/analyzeBounds/present/types"
-import { AnalyzedBound, AnalyzedEvent, AnalyzedHistory, EventRank } from "../../../../../src/scripts/analyzeBounds/types"
+import { AnalyzedBound, EventRank } from "../../../../../src/scripts/analyzeBounds/types"
 import { Cents } from "../../../../../src/utilities/types"
 import { boundFixture } from "../../../../helpers/scripts/analyzeBounds/fixtures"
 

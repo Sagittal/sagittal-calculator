@@ -3,11 +3,14 @@ import * as rankAnalysis from "../../../../src/scripts/analyzeBounds/ranks"
 import * as levelAnalysis from "../../../../src/scripts/analyzeBounds/levels"
 import { Bound, BoundId, Level } from "../../../../src/notations/ji/types"
 import {
-    AnalyzedBound, AnalyzedEvent,
+    AnalyzedBound,
+    AnalyzedEvent,
     AnalyzedHistory,
-    ConsolidatedHistories, EventName, EventType,
-    History,
+    ConsolidatedHistories,
+    EventName,
     EventRank,
+    EventType,
+    History,
     Score,
 } from "../../../../src/scripts/analyzeBounds/types"
 import { Cents, Proportion, Sum } from "../../../../src/utilities/types"

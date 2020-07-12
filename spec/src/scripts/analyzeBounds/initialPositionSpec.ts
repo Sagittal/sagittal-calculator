@@ -1,5 +1,5 @@
 import { computeInitialPosition } from "../../../../src/scripts/analyzeBounds/initialPosition"
-import { Bound, BoundId, Level } from "../../../../src/notations/ji/types"
+import { Bound, Level } from "../../../../src/notations/ji/types"
 import { Cents } from "../../../../src/utilities/types"
 import { boundFixture } from "../../../helpers/scripts/analyzeBounds/fixtures"
 

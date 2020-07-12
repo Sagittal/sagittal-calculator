@@ -1,14 +1,6 @@
 import { extractBoundIdentifiers } from "../../../../../src/scripts/analyzeBounds/present/boundIdentifiers"
 import { INA_SIZES } from "../../../../../src/notations/ji/intervals"
-import {
-    Bound,
-    BoundId,
-    Level,
-    Mina,
-    SymbolId,
-    SymbolLongAscii,
-    SymbolUnicode,
-} from "../../../../../src/notations/ji/types"
+import { BoundId, Level, Mina, SymbolId, SymbolLongAscii, SymbolUnicode } from "../../../../../src/notations/ji/types"
 import { BoundIdentifiers } from "../../../../../src/scripts/analyzeBounds/present/types"
 import { Cents } from "../../../../../src/utilities/types"
 import { Monzo } from "../../../../../src/utilities/comma/types"
@@ -16,7 +8,7 @@ import { Monzo } from "../../../../../src/utilities/comma/types"
 describe("extractBoundIdentifiers", () => {
     const bound = {
         position: 23.1164196495597 as Cents,
-        levels: [ Level.ULTRA, Level.EXTREME, Level.INSANE ],
+        levels: [Level.ULTRA, Level.EXTREME, Level.INSANE],
         id: 47 as BoundId,
     }
 
