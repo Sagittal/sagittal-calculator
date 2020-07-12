@@ -10,7 +10,7 @@ type SumsOfSquares = Array<SumsOfSquares | SumOfSquares | undefined>
 
 interface Unpopularity {
     antivotes: Antivotes,
-    index: Index,
+    index: Index<Unpopularity>,
     fiveRoughRatio: Ratio,
 }
 

@@ -1,5 +1,5 @@
 import { computeSubmetricDynamicParameters } from "../../../../../../src/scripts/unpopularityMetric/automator/samples/submetricDynamicParameters"
-import { Parameter, SubmetricConfig } from "../../../../../../src/scripts/unpopularityMetric/types"
+import { Parameter, Submetric, SubmetricConfig } from "../../../../../../src/scripts/unpopularityMetric/types"
 import { Index } from "../../../../../../src/utilities/types"
 import {
     DynamicParameterValue,
@@ -9,7 +9,7 @@ import {
 } from "../../../../../../src/scripts/unpopularityMetric/automator/samples/types"
 
 describe("computeSubmetricDynamicParameters", () => {
-    const submetricIndex = 5 as Index
+    const submetricIndex = 5 as Index<Submetric>
 
     it("given this submetric's config (centers, ranges, and counts for each parameter) to compute each of its parameters' sample points, returns an array of all the parameters which are dynamic (change, i.e. have a resolution > 1)", () => {
         const submetricConfig: SubmetricConfig = {

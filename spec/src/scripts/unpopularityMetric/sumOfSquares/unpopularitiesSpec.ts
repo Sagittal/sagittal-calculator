@@ -4,6 +4,7 @@ import {
     Antivotes,
     Popularity,
     PopularityRank,
+    Unpopularity,
     Votes,
 } from "../../../../../src/scripts/unpopularityMetric/sumOfSquares/types"
 import { Combination, Index, Ratio } from "../../../../../src/utilities/types"
@@ -30,9 +31,9 @@ describe("computeUnpopularities", () => {
         const result = computeUnpopularities(realPopularities, submetrics)
 
         expect(result).toEqual([
-            { antivotes: 2 as Antivotes, fiveRoughRatio: [7, 5] as Ratio, index: 0 as Index },
-            { antivotes: 1 as Antivotes, fiveRoughRatio: [125, 1] as Ratio, index: 1 as Index },
-            { antivotes: 3 as Antivotes, fiveRoughRatio: [55, 49] as Ratio, index: 2 as Index },
+            { antivotes: 2 as Antivotes, fiveRoughRatio: [7, 5] as Ratio, index: 0 as Index<Unpopularity> },
+            { antivotes: 1 as Antivotes, fiveRoughRatio: [125, 1] as Ratio, index: 1 as Index<Unpopularity> },
+            { antivotes: 3 as Antivotes, fiveRoughRatio: [55, 49] as Ratio, index: 2 as Index<Unpopularity> },
         ])
     })
 })

@@ -1,9 +1,9 @@
 import { computeParameterValues } from "./parameterValues"
-import { Parameter, SubmetricConfig } from "../../types"
+import { Parameter, Submetric, SubmetricConfig } from "../../types"
 import { DynamicParameter, DynamicParameterConfig, ParameterUnit } from "./types"
 import { Index } from "../../../../utilities/types"
 
-const computeSubmetricDynamicParameters = (submetricConfig: SubmetricConfig = {}, submetricIndex: Index): DynamicParameter[] => {
+const computeSubmetricDynamicParameters = (submetricConfig: SubmetricConfig = {}, submetricIndex: Index<Submetric>): DynamicParameter[] => {
     const submetricDynamicParameters: DynamicParameter[] = [] as DynamicParameter[]
 
     const submetricConfigEntries = Object.entries(submetricConfig) as Array<[Parameter, DynamicParameterConfig]>

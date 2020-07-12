@@ -1,5 +1,5 @@
 import { combineSubmetricsPoints } from "../../../../../../src/scripts/unpopularityMetric/automator/samples/combineSubmetricsPoints"
-import { Parameter, SubmetricType } from "../../../../../../src/scripts/unpopularityMetric/types"
+import { Parameter, Submetric, SubmetricType } from "../../../../../../src/scripts/unpopularityMetric/types"
 import {
     DynamicParameter,
     DynamicParameterValue,
@@ -48,19 +48,19 @@ describe("combineSubmetricsPoints", () => {
         ]
         const dynamicParameters: DynamicParameter[] = [
             {
-                submetricIndex: 0 as Index,
+                submetricIndex: 0 as Index<Submetric>,
                 parameter: Parameter.Y,
                 values: [1.5, 1.2, 0.9] as DynamicParameterValue[],
                 unit: 0 as ParameterUnit,
             },
             {
-                submetricIndex: 1 as Index,
+                submetricIndex: 1 as Index<Submetric>,
                 parameter: Parameter.Y,
                 values: [0.9, 1.1] as DynamicParameterValue[],
                 unit: 0 as ParameterUnit,
             },
             {
-                submetricIndex: 1 as Index,
+                submetricIndex: 1 as Index<Submetric>,
                 parameter: Parameter.A,
                 values: [0.7, 0.6] as DynamicParameterValue[],
                 unit: 0 as ParameterUnit,

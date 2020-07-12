@@ -6,7 +6,7 @@ import { computeAntivotes } from "./antivotes/antivotes"
 const computeUnpopularities = (realPopularities: Popularity[], submetrics: Combination<Submetric>): Unpopularity[] => {
     return realPopularities.map(({ fiveRoughRatio }: Popularity, index) => {
         return {
-            index: index as Index,
+            index: index as Index<Unpopularity>,
             antivotes: computeAntivotes(fiveRoughRatio, submetrics),
             fiveRoughRatio,
         }

@@ -1,5 +1,10 @@
 import { computeDynamicParameters } from "../../../../../../src/scripts/unpopularityMetric/automator/samples/dynamicParameters"
-import { Parameter, SubmetricConfig, SubmetricType } from "../../../../../../src/scripts/unpopularityMetric/types"
+import {
+    Parameter,
+    Submetric,
+    SubmetricConfig,
+    SubmetricType,
+} from "../../../../../../src/scripts/unpopularityMetric/types"
 import {
     DynamicParameterValue,
     ParameterUnit,
@@ -38,19 +43,19 @@ describe("computeDynamicParameters", () => {
 
         expect(result).toEqual([
             {
-                submetricIndex: 0 as Index,
+                submetricIndex: 0 as Index<Submetric>,
                 parameter: Parameter.Y,
                 values: [0.7, 1.2, 1.7] as DynamicParameterValue[],
                 unit: 0.5 as ParameterUnit,
             },
             {
-                submetricIndex: 1 as Index,
+                submetricIndex: 1 as Index<Submetric>,
                 parameter: Parameter.Y,
                 values: [0.9, 1.1] as DynamicParameterValue[],
                 unit: 0.2 as ParameterUnit,
             },
             {
-                submetricIndex: 1 as Index,
+                submetricIndex: 1 as Index<Submetric>,
                 parameter: Parameter.A,
                 values: [0.6, 0.7] as DynamicParameterValue[],
                 unit: 0.1 as ParameterUnit,

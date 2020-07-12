@@ -1,5 +1,10 @@
 import { computeNextConfigs } from "../../../../../src/scripts/unpopularityMetric/automator/nextConfigs"
-import { Parameter, SubmetricConfig, SubmetricType } from "../../../../../src/scripts/unpopularityMetric/types"
+import {
+    Parameter,
+    Submetric,
+    SubmetricConfig,
+    SubmetricType,
+} from "../../../../../src/scripts/unpopularityMetric/types"
 import {
     DynamicParameter,
     DynamicParameterValue,
@@ -16,19 +21,19 @@ describe("computeNextConfigs", () => {
         const point = [1, 0, 3] as SamplePoint
         const dynamicParameters: DynamicParameter[] = [
             {
-                submetricIndex: 0 as Index,
+                submetricIndex: 0 as Index<Submetric>,
                 parameter: Parameter.J,
                 values: [0, 0.1, 0.2, 0.3, 0.4, 0.5] as DynamicParameterValue[],
                 unit: 0.1 as ParameterUnit,
             },
             {
-                submetricIndex: 0 as Index,
+                submetricIndex: 0 as Index<Submetric>,
                 parameter: Parameter.W,
                 values: [0, 0.5, 1] as DynamicParameterValue[],
                 unit: 0.5 as ParameterUnit,
             },
             {
-                submetricIndex: 1 as Index,
+                submetricIndex: 1 as Index<Submetric>,
                 parameter: Parameter.Y,
                 values: [2, 2.02, 2.04, 2.06, 2.08, 2.1] as DynamicParameterValue[],
                 unit: 0.02 as ParameterUnit,

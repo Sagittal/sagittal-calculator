@@ -2,10 +2,10 @@
 
 import "colors"
 import { program } from "commander"
-import { RESOLUTION } from "../automator/constants"
 import { recursivelyFindUnpopularityMetric } from "../automator/recursivelyFind"
 import { Parameter, SubmetricConfig } from "../types"
 import { Combination } from "../../../utilities/types"
+import { RESOLUTION } from "../automator/samples/constants"
 
 program
     .option("-r, --recursive", "recursive")
