@@ -8,7 +8,7 @@ import {
 import { Index } from "../../../../../../src/utilities/types"
 
 describe("computeDynamicParameterValueIndices", () => {
-    it("given the dynamic parameters and a submetric point, returns an array of, in order, for each of the submetric point's parameters which is dynamic, its index in the parameter points", () => {
+    it("given the dynamic parameters and a submetric, returns an array of, in order, for each of the dynamic parameters, its index in the parameter points", () => {
         const dynamicParameters: DynamicParameter[] = [
             // don't pick me at all, since I'm submetric index 0 --
             // I should have already been handled by a previous call to computeDynamicParameterValueIndices
@@ -60,6 +60,6 @@ describe("computeDynamicParameterValueIndices", () => {
             submetricIndex,
         })
 
-        expect(result).toEqual([4, 3])
+        expect(result).toEqual([4, 3] as Index<DynamicParameterValue>[])
     })
 })

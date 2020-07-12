@@ -79,16 +79,4 @@ describe("checkSubmetricsForIssues", () => {
 
         expect(() => checkSubmetricsForIssues(submetrics)).toThrowError("Submetric cannot specify both j and k.")
     })
-
-    // TODO: RELATED PARAMETERS wait shouldn't it be bad if you got [{soapfar,k},{soapfar,j}] ??
-    //  okay this one crashes things though for sure: [{"submetricType":"soapf"},{"submetricType":"soapfar","w":{"center":0,"range":12,"resolution":2},"a":{"center":2,"range":4,"resolution":2}}]
-    //  I should include x v t still as capabilities but not in generared automatically configs
-    //  all these commented out ones lead to bad.
-    //  this one froze = [{"submetricType" ="soapf"},{"submetricType" ="soapfar","x" ={"center" =0,"range" =6,"resolution" =2},"a" ={"center" =2,"range" =4,"resolution" =2}}]
-    //  In the "related parameters" spec... i think this may only be for soapifar??
-    //  i think we actually want a test not that the total SoS is the same, but that each and every ratio is the same
-    //  if you can figure out what the relationship is, then you should add a ban for these to the "check" file
-    //  and we gotta check combos of submetrics out here like this
-    //  [{"submetricType":"soapf"},{"submetricType":"soapfar","w":{"center":0,"range":12,"resolution":2},"a":{"center":2,"range":4,"resolution":2}}]
-    //  [{"submetricType":"gpf","j":{"center":1,"range":2,"resolution":2}},{"submetricType":"soapfar","a":{"center":2,"range":4,"resolution":2}}]
 })

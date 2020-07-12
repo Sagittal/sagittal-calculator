@@ -3,9 +3,7 @@ import { Combination, Index } from "../../../../utilities/types"
 
 type ParameterUnit = number & { _ParameterUnitBrand: "ParameterUnit" }
 
-type SamplePoint = number[] & { _SamplePointBrand: "SamplePoint" }
-
-// todo: well actually a sample coordinate is like a ParameterValueIndex yeah? reconcile that
+type SamplePoint = Index<DynamicParameterValue>[] & { _SamplePointBrand: "SamplePoint" }
 
 type DynamicParameterValue = number & { _DynamicParameterValueBrand: "DynamicParameterValue" }
 
@@ -13,7 +11,7 @@ type ParameterValue = DynamicParameterValue | boolean | SubmetricType
 
 type Sample = {
     submetrics: Combination<Submetric>,
-    point: SamplePoint,
+    samplePoint: SamplePoint,
 }
 
 interface ComputeDynamicParameterValueIndicesParameters {

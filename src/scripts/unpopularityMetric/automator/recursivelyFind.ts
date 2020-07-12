@@ -36,7 +36,7 @@ const recursivelyFindUnpopularityMetric = (sampleConfig: SampleConfig, options: 
     if (debug) console.log(`\n${indentation}local minima:`)
     const nextLocalMinima = computeLocalMinima(samples, sumsOfSquares)
     nextLocalMinima.forEach((nextLocalMinimum, index) => {
-        const nextSampleConfigs = computeNextSampleConfigs(nextLocalMinimum.point, dynamicParameters, sampleConfig)
+        const nextSampleConfigs = computeNextSampleConfigs(nextLocalMinimum.samplePoint, dynamicParameters, sampleConfig)
         const nextProgressMessage = progressMessage + `${index}/${(nextLocalMinima.length)}@depth${nextDepth} `
         if (debug) console.log(`${indentation}${nextProgressMessage}${JSON.stringify(nextLocalMinimum)}`)
 

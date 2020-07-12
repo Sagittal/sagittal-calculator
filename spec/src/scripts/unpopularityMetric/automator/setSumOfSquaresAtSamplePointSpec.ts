@@ -1,14 +1,14 @@
-import { setSumOfSquaresAtPoint } from "../../../../../src/scripts/unpopularityMetric/automator/setSumOfSquaresAtPoint"
+import { setSumOfSquaresAtSamplePoint } from "../../../../../src/scripts/unpopularityMetric/automator/setSumOfSquaresAtSamplePoint"
 import { SumOfSquares, SumsOfSquares } from "../../../../../src/scripts/unpopularityMetric/sumOfSquares/types"
 import { SamplePoint } from "../../../../../src/scripts/unpopularityMetric/automator/samples/types"
 
-describe("setSumOfSquaresAtCoordinate", () => {
-    it("saves the sum of squares at the point", () => {
+describe("setSumOfSquaresAtPoint", () => {
+    it("saves the sum of squares at the sample point", () => {
         const sumsOfSquares: SumsOfSquares = []
         const sumOfSquares: SumOfSquares = 0.0045843033 as SumOfSquares
-        const point = [2, 0, 3] as SamplePoint
+        const samplePoint = [2, 0, 3] as SamplePoint
 
-        setSumOfSquaresAtPoint(sumOfSquares, sumsOfSquares, point)
+        setSumOfSquaresAtSamplePoint(sumOfSquares, sumsOfSquares, samplePoint)
 
         const expectedSumsOfSquares = [
             undefined,

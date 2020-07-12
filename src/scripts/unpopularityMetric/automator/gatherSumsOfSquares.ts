@@ -1,5 +1,5 @@
 import { computeSumOfSquaresForSubmetrics } from "../sumOfSquares/sumOfSquaresForSubmetrics"
-import { setSumOfSquaresAtPoint } from "./setSumOfSquaresAtPoint"
+import { setSumOfSquaresAtSamplePoint } from "./setSumOfSquaresAtSamplePoint"
 import { SumsOfSquares } from "../sumOfSquares/types"
 import { Metric } from "./types"
 import { Sample } from "./samples/types"
@@ -8,11 +8,11 @@ const gatherSumsOfSquares = (sumsOfSquares: SumsOfSquares, sample: Sample[], pre
     let bestMetric = previousBestMetric
 
     sample.forEach(sample => {
-        const { submetrics, point } = sample
+        const { submetrics, samplePoint } = sample
 
         const sumOfSquares = computeSumOfSquaresForSubmetrics(submetrics)
 
-        setSumOfSquaresAtPoint(sumOfSquares, sumsOfSquares, point)
+        setSumOfSquaresAtSamplePoint(sumOfSquares, sumsOfSquares, samplePoint)
 
         if (sumOfSquares < bestMetric.sumOfSquares) {
             bestMetric = { sumOfSquares, submetrics }

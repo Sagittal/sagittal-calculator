@@ -6,24 +6,24 @@ import { Submetric } from "../../../../../src/scripts/unpopularityMetric/types"
 
 describe("computeLocalMinima", () => {
     const samples: Sample[] = [
-        { point: [0, 0, 0] as SamplePoint, submetrics: [] as unknown as Combination<Submetric> },
-        { point: [0, 0, 1] as SamplePoint, submetrics: [] as unknown as Combination<Submetric> },
-        { point: [0, 0, 2] as SamplePoint, submetrics: [] as unknown as Combination<Submetric> },
-        { point: [0, 1, 0] as SamplePoint, submetrics: [] as unknown as Combination<Submetric> },
-        { point: [0, 1, 1] as SamplePoint, submetrics: [] as unknown as Combination<Submetric> },
-        { point: [0, 1, 2] as SamplePoint, submetrics: [] as unknown as Combination<Submetric> },
-        { point: [1, 0, 0] as SamplePoint, submetrics: [] as unknown as Combination<Submetric> },
-        { point: [1, 0, 1] as SamplePoint, submetrics: [] as unknown as Combination<Submetric> },
-        { point: [1, 0, 2] as SamplePoint, submetrics: [] as unknown as Combination<Submetric> },
-        { point: [1, 1, 0] as SamplePoint, submetrics: [] as unknown as Combination<Submetric> },
-        { point: [1, 1, 1] as SamplePoint, submetrics: [] as unknown as Combination<Submetric> },
-        { point: [1, 1, 2] as SamplePoint, submetrics: [] as unknown as Combination<Submetric> },
-        { point: [2, 0, 0] as SamplePoint, submetrics: [] as unknown as Combination<Submetric> },
-        { point: [2, 0, 1] as SamplePoint, submetrics: [] as unknown as Combination<Submetric> },
-        { point: [2, 0, 2] as SamplePoint, submetrics: [] as unknown as Combination<Submetric> },
-        { point: [2, 1, 0] as SamplePoint, submetrics: [] as unknown as Combination<Submetric> },
-        { point: [2, 1, 1] as SamplePoint, submetrics: [] as unknown as Combination<Submetric> },
-        { point: [2, 1, 2] as SamplePoint, submetrics: [] as unknown as Combination<Submetric> },
+        { samplePoint: [0, 0, 0] as SamplePoint, submetrics: [] as unknown as Combination<Submetric> },
+        { samplePoint: [0, 0, 1] as SamplePoint, submetrics: [] as unknown as Combination<Submetric> },
+        { samplePoint: [0, 0, 2] as SamplePoint, submetrics: [] as unknown as Combination<Submetric> },
+        { samplePoint: [0, 1, 0] as SamplePoint, submetrics: [] as unknown as Combination<Submetric> },
+        { samplePoint: [0, 1, 1] as SamplePoint, submetrics: [] as unknown as Combination<Submetric> },
+        { samplePoint: [0, 1, 2] as SamplePoint, submetrics: [] as unknown as Combination<Submetric> },
+        { samplePoint: [1, 0, 0] as SamplePoint, submetrics: [] as unknown as Combination<Submetric> },
+        { samplePoint: [1, 0, 1] as SamplePoint, submetrics: [] as unknown as Combination<Submetric> },
+        { samplePoint: [1, 0, 2] as SamplePoint, submetrics: [] as unknown as Combination<Submetric> },
+        { samplePoint: [1, 1, 0] as SamplePoint, submetrics: [] as unknown as Combination<Submetric> },
+        { samplePoint: [1, 1, 1] as SamplePoint, submetrics: [] as unknown as Combination<Submetric> },
+        { samplePoint: [1, 1, 2] as SamplePoint, submetrics: [] as unknown as Combination<Submetric> },
+        { samplePoint: [2, 0, 0] as SamplePoint, submetrics: [] as unknown as Combination<Submetric> },
+        { samplePoint: [2, 0, 1] as SamplePoint, submetrics: [] as unknown as Combination<Submetric> },
+        { samplePoint: [2, 0, 2] as SamplePoint, submetrics: [] as unknown as Combination<Submetric> },
+        { samplePoint: [2, 1, 0] as SamplePoint, submetrics: [] as unknown as Combination<Submetric> },
+        { samplePoint: [2, 1, 1] as SamplePoint, submetrics: [] as unknown as Combination<Submetric> },
+        { samplePoint: [2, 1, 2] as SamplePoint, submetrics: [] as unknown as Combination<Submetric> },
     ]
 
     it("returns an empty array if all the values are the same", () => {
@@ -108,8 +108,8 @@ describe("computeLocalMinima", () => {
         const result = computeLocalMinima(samples, sumsOfSquares)
 
         expect(result).toEqual(jasmine.arrayWithExactContents([
-            { sumOfSquares: 0.003 as SumOfSquares, point: [0, 1, 0], submetrics: [] },
-            { sumOfSquares: 0.002 as SumOfSquares, point: [1, 1, 2], submetrics: [] },
+            { sumOfSquares: 0.003 as SumOfSquares, samplePoint: [0, 1, 0], submetrics: [] },
+            { sumOfSquares: 0.002 as SumOfSquares, samplePoint: [1, 1, 2], submetrics: [] },
         ]))
     })
 })

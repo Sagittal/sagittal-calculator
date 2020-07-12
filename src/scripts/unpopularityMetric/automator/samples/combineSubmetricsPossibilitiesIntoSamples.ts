@@ -1,20 +1,20 @@
 import { computeDynamicParameterValueIndices } from "./dynamicParameterValueIndices"
-import { DynamicParameter, Sample, SamplePoint } from "./types"
+import { DynamicParameter, DynamicParameterValue, Sample, SamplePoint } from "./types"
 import { Submetric } from "../../types"
 import { Combination, Index } from "../../../../utilities/types"
 
 const combineSubmetricsPossibilitiesIntoSamples = ({ submetricsPossibilities, dynamicParameters }: { submetricsPossibilities: Combination<Submetric>[], dynamicParameters: DynamicParameter[] }): Sample[] => {
     let samples: Sample[] = [{
         submetrics: [] as unknown as Combination<Submetric>,
-        point: [] as unknown as SamplePoint,
+        samplePoint: [] as unknown as SamplePoint,
     }]
 
     submetricsPossibilities.forEach((submetricPossibilities: Submetric[], submetricIndex) => {
         let extendedSubmetricCombinations: Sample[] = []
 
-        samples.forEach(({ submetrics, point }) => {
+        samples.forEach(({ submetrics, samplePoint }) => {
             submetricPossibilities.forEach((submetricPossibility: Submetric) => {
-                const dynamicParameterValueIndices = computeDynamicParameterValueIndices({
+                const dynamicParameterValueIndices: Index<DynamicParameterValue>[] = computeDynamicParameterValueIndices({
                     dynamicParameters,
                     submetric: submetricPossibility,
                     submetricIndex: submetricIndex as Index<Submetric>,
@@ -22,7 +22,7 @@ const combineSubmetricsPossibilitiesIntoSamples = ({ submetricsPossibilities, dy
 
                 extendedSubmetricCombinations.push({
                     submetrics: [...submetrics, submetricPossibility] as Combination<Submetric>,
-                    point: [...point, ...dynamicParameterValueIndices] as SamplePoint,
+                    samplePoint: [...samplePoint, ...dynamicParameterValueIndices] as SamplePoint,
                 })
             })
         })

@@ -50,7 +50,7 @@ describe("submetricCombinations", () => {
                         [ Parameter.W ]: 3.3,
                     },
                 ],
-                point: [0, 0, 0],
+                samplePoint: [0, 0, 0],
             },
             {
                 submetrics: [
@@ -64,7 +64,7 @@ describe("submetricCombinations", () => {
                         [ Parameter.W ]: 3.3,
                     },
                 ],
-                point: [0, 0, 1],
+                samplePoint: [0, 0, 1],
             },
             {
                 submetrics: [
@@ -78,7 +78,7 @@ describe("submetricCombinations", () => {
                         [ Parameter.W ]: 3.3,
                     },
                 ],
-                point: [0, 1, 0],
+                samplePoint: [0, 1, 0],
             },
             {
                 submetrics: [
@@ -92,7 +92,7 @@ describe("submetricCombinations", () => {
                         [ Parameter.W ]: 3.3,
                     },
                 ],
-                point: [0, 1, 1],
+                samplePoint: [0, 1, 1],
             },
             {
                 submetrics: [
@@ -106,7 +106,7 @@ describe("submetricCombinations", () => {
                         [ Parameter.W ]: 3.3,
                     },
                 ],
-                point: [1, 0, 0],
+                samplePoint: [1, 0, 0],
             },
             {
                 submetrics: [
@@ -120,7 +120,7 @@ describe("submetricCombinations", () => {
                         [ Parameter.W ]: 3.3,
                     },
                 ],
-                point: [1, 0, 1],
+                samplePoint: [1, 0, 1],
             },
             {
                 submetrics: [
@@ -134,7 +134,7 @@ describe("submetricCombinations", () => {
                         [ Parameter.W ]: 3.3,
                     },
                 ],
-                point: [1, 1, 0],
+                samplePoint: [1, 1, 0],
             },
             {
                 submetrics: [
@@ -148,7 +148,7 @@ describe("submetricCombinations", () => {
                         [ Parameter.W ]: 3.3,
                     },
                 ],
-                point: [1, 1, 1],
+                samplePoint: [1, 1, 1],
             },
             {
                 submetrics: [
@@ -162,7 +162,7 @@ describe("submetricCombinations", () => {
                         [ Parameter.W ]: 3.3,
                     },
                 ],
-                point: [2, 0, 0],
+                samplePoint: [2, 0, 0],
             },
             {
                 submetrics: [
@@ -176,7 +176,7 @@ describe("submetricCombinations", () => {
                         [ Parameter.W ]: 3.3,
                     },
                 ],
-                point: [2, 0, 1],
+                samplePoint: [2, 0, 1],
             },
             {
                 submetrics: [
@@ -190,7 +190,7 @@ describe("submetricCombinations", () => {
                         [ Parameter.W ]: 3.3,
                     },
                 ],
-                point: [2, 1, 0],
+                samplePoint: [2, 1, 0],
             },
             {
                 submetrics: [
@@ -204,7 +204,7 @@ describe("submetricCombinations", () => {
                         [ Parameter.W ]: 3.3,
                     },
                 ],
-                point: [2, 1, 1],
+                samplePoint: [2, 1, 1],
             },
         ]
         expect(result).toEqual(jasmine.arrayWithExactContents(expectedResult))
@@ -249,7 +249,7 @@ describe("submetricCombinations", () => {
                         [ Parameter.K ]: 0,
                     },
                 ],
-                point: [0, 0],
+                samplePoint: [0, 0],
             },
             {
                 submetrics: [
@@ -264,7 +264,7 @@ describe("submetricCombinations", () => {
                         [ Parameter.K ]: 0,
                     },
                 ],
-                point: [0, 1],
+                samplePoint: [0, 1],
             },
             {
                 submetrics: [
@@ -279,7 +279,7 @@ describe("submetricCombinations", () => {
                         [ Parameter.K ]: 0,
                     },
                 ],
-                point: [1, 0],
+                samplePoint: [1, 0],
             },
             {
                 submetrics: [
@@ -294,7 +294,7 @@ describe("submetricCombinations", () => {
                         [ Parameter.K ]: 0,
                     },
                 ],
-                point: [1, 1],
+                samplePoint: [1, 1],
             },
         ]
         expect(result).toEqual(jasmine.arrayWithExactContents(expectedResult))

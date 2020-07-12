@@ -17,8 +17,8 @@ import {
 import { Index } from "../../../../../src/utilities/types"
 
 describe("computeNextSampleConfigs", () => {
-    it("given a point (which has been identified as a local minimum) and the dynamic parameters, is able to tell you what the next configs should be to delve deeper in that vicinity", () => {
-        const point = [1, 0, 3] as SamplePoint
+    it("given a sample point (which has been identified as a local minimum) and the dynamic parameters, is able to tell you what the next configs should be to delve deeper in that vicinity", () => {
+        const samplePoint = [1, 0, 3] as SamplePoint
         const dynamicParameters: DynamicParameter[] = [
             {
                 submetricIndex: 0 as Index<Submetric>,
@@ -63,7 +63,7 @@ describe("computeNextSampleConfigs", () => {
             },
         ]
 
-        const result = computeNextSampleConfigs(point, dynamicParameters, submetricSampleConfigs)
+        const result = computeNextSampleConfigs(samplePoint, dynamicParameters, submetricSampleConfigs)
 
         expect(result).toEqual([
             {
