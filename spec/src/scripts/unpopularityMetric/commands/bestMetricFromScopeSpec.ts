@@ -1,8 +1,8 @@
 import { runCommandAndGetConsoleOutput } from "../../../../helpers/specHelper"
 
 describe("best metric from scope", () => {
-    xit("runs without error", () => {
-        const command = "npm run best-metric-from-scope -- -q"
+    it("runs without error", () => {
+        const command = "npm run best-metric-from-scope"
 
         const result = runCommandAndGetConsoleOutput(command)
 

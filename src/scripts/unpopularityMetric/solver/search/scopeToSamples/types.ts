@@ -23,10 +23,15 @@ interface DynamicParameter {
 
 type SubmetricPossibility = Submetric & { _SubmetricPossibilityBrand: "SubmetricPossibility" }
 
+type ComputeResolutionOptions = Partial<{
+    maximumUnit: Unit<DynamicParameterValue>
+}>
+
 export {
     Sample,
     ComputeDynamicParameterValueIndicesOptions,
     SamplePoint,
     DynamicParameter,
     SubmetricPossibility,
+    ComputeResolutionOptions,
 }
