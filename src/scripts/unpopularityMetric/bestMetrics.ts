@@ -337,7 +337,7 @@ const sanityCheck = {
 //
 
 
-// Douglas's first run of the recursive automatic finder turned this up quick, 0.00406
+// Douglas's first run of the recursive automatic solver turned this up quick, 0.00406
 // Sun Jul 05, 2020 10:29 pm
 // http://forum.sagittal.org/viewtopic.php?p=2004#p2004
 const firstRecursiveRun = {

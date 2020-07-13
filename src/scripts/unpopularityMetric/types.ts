@@ -1,5 +1,5 @@
 import { Combination, EnumHash } from "../../utilities/types"
-import { SampleRange, SampleResolution } from "./automator/process/samples/types"
+import { SampleRange, SampleResolution } from "./solver/search/scopeToSamples/types"
 
 enum SubmetricType {
     SOAPFAR = "soapfar",
@@ -68,15 +68,15 @@ type SubmetricProperties = {
     usePrimeIndex?: boolean,
 }
 
-type SubmetricSampleConfig = Partial<EnumHash<Parameter, ParameterValue | DynamicParameterSampleConfig>>
+type SubmetricScope = Partial<EnumHash<Parameter, ParameterValue | DynamicParameterScope>>
 
-type SampleConfig = Combination<SubmetricSampleConfig>
+type Scope = Combination<SubmetricScope>
 
 type DynamicParameterValue = number & { _DynamicParameterValueBrand: "DynamicParameterValue" }
 
 type ParameterValue = DynamicParameterValue | boolean | SubmetricType
 
-type DynamicParameterSampleConfig = Partial<{
+type DynamicParameterScope = Partial<{
     center: DynamicParameterValue,
     range: SampleRange,
     resolution: SampleResolution,
@@ -88,9 +88,9 @@ export {
     SubmetricOperation,
     Parameter,
     SubmetricProperties,
-    SubmetricSampleConfig,
-    SampleConfig,
+    SubmetricScope,
+    Scope,
     DynamicParameterValue,
     ParameterValue,
-    DynamicParameterSampleConfig,
+    DynamicParameterScope,
 }
