@@ -1,5 +1,4 @@
-import { Combination, EnumHash } from "../../utilities/types"
-import { SampleRange, SampleResolution } from "./solver/search/scopeToSamples/types"
+import { Combination, EnumHash, Resolution, Span } from "../../utilities/types"
 
 enum SubmetricType {
     SOAPFAR = "soapfar",
@@ -78,8 +77,8 @@ type ParameterValue = DynamicParameterValue | boolean | SubmetricType
 
 type DynamicParameterScope = Partial<{
     center: DynamicParameterValue,
-    range: SampleRange,
-    resolution: SampleResolution,
+    range: Span<DynamicParameterValue>,
+    resolution: Resolution<DynamicParameterValue>,
 }>
 
 export {

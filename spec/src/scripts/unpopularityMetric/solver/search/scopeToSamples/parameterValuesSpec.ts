@@ -2,19 +2,16 @@ import {
     DynamicParameterScope,
     DynamicParameterValue,
 } from "../../../../../../../src/scripts/unpopularityMetric/types"
-import {
-    SampleRange,
-    SampleResolution,
-} from "../../../../../../../src/scripts/unpopularityMetric/solver/search/scopeToSamples/types"
 import { computeParameterValues } from "../../../../../../../src/scripts/unpopularityMetric/solver/search/scopeToSamples/parameterValues"
+import { Resolution, Span } from "../../../../../../../src/utilities/types"
 
 
 describe("computeParameterValues", () => {
     it("given a parameter scope (a center, a range, and a resolution), will return a block of points to sample", () => {
         const parameterScope: DynamicParameterScope = {
             center: 1 as DynamicParameterValue,
-            range: 0.5 as SampleRange,
-            resolution: 5 as SampleResolution,
+            range: 0.5 as Span<DynamicParameterValue>,
+            resolution: 5 as Resolution<DynamicParameterValue>,
         }
 
         const result: DynamicParameterValue[] = computeParameterValues(parameterScope)
@@ -34,8 +31,8 @@ describe("computeParameterValues", () => {
     it("works when the resolution is even", () => {
         const parameterScope: DynamicParameterScope = {
             center: 5 as DynamicParameterValue,
-            range: 1 as SampleRange,
-            resolution: 4 as SampleResolution,
+            range: 1 as Span<DynamicParameterValue>,
+            resolution: 4 as Resolution<DynamicParameterValue>,
         }
 
         const result = computeParameterValues(parameterScope)
@@ -61,7 +58,7 @@ describe("computeParameterValues", () => {
     it("works when the resolution is one", () => {
         const parameterScope: DynamicParameterScope = {
             center: 5 as DynamicParameterValue,
-            resolution: 1 as SampleResolution,
+            resolution: 1 as Resolution<DynamicParameterValue>,
         }
 
         const result = computeParameterValues(parameterScope)
@@ -75,7 +72,7 @@ describe("computeParameterValues", () => {
 
     it("works when the resolution is zero", () => {
         const parameterScope: DynamicParameterScope = {
-            resolution: 0 as SampleResolution,
+            resolution: 0 as Resolution<DynamicParameterValue>,
         }
 
         const result = computeParameterValues(parameterScope)

@@ -4,9 +4,9 @@ import {
     Submetric,
     SubmetricType,
 } from "../../../../../../../src/scripts/unpopularityMetric/types"
-import { Combination, Index } from "../../../../../../../src/utilities/types"
+import { Combination, Index, Unit } from "../../../../../../../src/utilities/types"
 import {
-    DynamicParameter, ParameterUnit,
+    DynamicParameter,
     SubmetricPossibility,
 } from "../../../../../../../src/scripts/unpopularityMetric/solver/search/scopeToSamples/types"
 import { combineSubmetricsPossibilitiesIntoSamples } from "../../../../../../../src/scripts/unpopularityMetric/solver/search/scopeToSamples/combineSubmetricsPossibilitiesIntoSamples"
@@ -54,19 +54,19 @@ describe("combineSubmetricsPossibilitiesIntoSamples", () => {
                 submetricIndex: 0 as Index<Submetric>,
                 parameter: Parameter.Y,
                 values: [1.5, 1.2, 0.9] as DynamicParameterValue[],
-                unit: 0 as ParameterUnit,
+                unit: 0 as Unit<DynamicParameterValue>,
             },
             {
                 submetricIndex: 1 as Index<Submetric>,
                 parameter: Parameter.Y,
                 values: [0.9, 1.1] as DynamicParameterValue[],
-                unit: 0 as ParameterUnit,
+                unit: 0 as Unit<DynamicParameterValue>,
             },
             {
                 submetricIndex: 1 as Index<Submetric>,
                 parameter: Parameter.A,
                 values: [0.7, 0.6] as DynamicParameterValue[],
-                unit: 0 as ParameterUnit,
+                unit: 0 as Unit<DynamicParameterValue>,
             },
         ]
 

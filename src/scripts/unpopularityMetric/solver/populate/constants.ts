@@ -1,25 +1,25 @@
 import { DynamicParameterValue, Parameter, SubmetricScope, SubmetricType } from "../../types"
-import { SampleRange } from "../search/scopeToSamples/types"
 import { ParameterChunk, SubmetricChunk } from "../types"
 import { computeResolution } from "../search/scopeToSamples/resolution"
+import { Span } from "../../../../utilities/types"
 
 // AKA: if they are going to be included in the automatically generated scopes per chunk count, what should they be set to
 const INITIAL_PARAMETER_SCOPES: SubmetricScope = {
-    [ Parameter.WEIGHT ]: { center: 0.5 as DynamicParameterValue, range: 1 as SampleRange, resolution: computeResolution(1 as SampleRange) },
+    [ Parameter.WEIGHT ]: { center: 0.5 as DynamicParameterValue, range: 1 as Span<DynamicParameterValue>, resolution: computeResolution(1 as Span<DynamicParameterValue>) },
     [ Parameter.WEIGHT_IS_BASE ]: true,
     [ Parameter.WEIGHT_IS_EXPONENT ]: true,
-    [ Parameter.K ]: { center: 1 as DynamicParameterValue, range: 2 as SampleRange, resolution: computeResolution(2 as SampleRange) },
+    [ Parameter.K ]: { center: 1 as DynamicParameterValue, range: 2 as Span<DynamicParameterValue>, resolution: computeResolution(2 as Span<DynamicParameterValue>) },
     [ Parameter.K_IS_BASE ]: true,
     [ Parameter.K_IS_EXPONENT ]: true,
-    [ Parameter.J ]: { center: 1 as DynamicParameterValue, range: 2 as SampleRange, resolution: computeResolution(2 as SampleRange) },
+    [ Parameter.J ]: { center: 1 as DynamicParameterValue, range: 2 as Span<DynamicParameterValue>, resolution: computeResolution(2 as Span<DynamicParameterValue>) },
     [ Parameter.J_IS_BASE ]: true,
     [ Parameter.J_IS_EXPONENT ]: true,
-    [ Parameter.A ]: { center: 2 as DynamicParameterValue, range: 4 as SampleRange, resolution: computeResolution(4 as SampleRange) },
+    [ Parameter.A ]: { center: 2 as DynamicParameterValue, range: 4 as Span<DynamicParameterValue>, resolution: computeResolution(4 as Span<DynamicParameterValue>) },
     [ Parameter.A_IS_BASE ]: true,
     [ Parameter.A_IS_EXPONENT ]: true,
-    [ Parameter.W ]: { center: 0 as DynamicParameterValue, range: 6 as SampleRange, resolution: computeResolution(6 as SampleRange) },
-    // [Parameter.X]: { center: 0 as DynamicParameterValue, range: 6 as SampleRange, resolution: computeResolution(6 as SampleRange) },
-    [ Parameter.Y ]: { center: 0 as DynamicParameterValue, range: 6 as SampleRange, resolution: computeResolution(6 as SampleRange) },
+    [ Parameter.W ]: { center: 0 as DynamicParameterValue, range: 6 as Span<DynamicParameterValue>, resolution: computeResolution(6 as Span<DynamicParameterValue>) },
+    // [Parameter.X]: { center: 0 as DynamicParameterValue, range: 6 as Span<DynamicParameterValue>, resolution: computeResolution(6 as Span<DynamicParameterValue>) },
+    [ Parameter.Y ]: { center: 0 as DynamicParameterValue, range: 6 as Span<DynamicParameterValue>, resolution: computeResolution(6 as Span<DynamicParameterValue>) },
     // [Parameter.V]: { center: 0, range: 6 },
     // [Parameter.T]: { center: 0, range: 6 },
     [ Parameter.NUMERATOR_IS_NUMINATOR ]: false,

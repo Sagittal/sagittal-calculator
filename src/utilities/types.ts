@@ -10,6 +10,9 @@ type Index<T = void> = number & { _IndexBrand: "Index" } & (T extends void ? {} 
 type Count<T = void> = number & { _CountBrand: "Count" } & (T extends void ? {} : { _CountOfBrand: T })
 type Sum<T = void> = number & { _SumBrand: "Sum" } & (T extends void ? {} : { _SumOfBrand: T })
 type Id<T = void> = number & { _IdBrand: "Id" } & (T extends void ? {} : { _IdOfBrand: T })
+type Span<T = void> = number & { _SpanBrand: "Id" } & (T extends void ? {} : { _SpanOfBrand: T })
+type Unit<T = void> = number & { _UnitBrand: "Id" } & (T extends void ? {} : { _UnitOfBrand: T })
+type Resolution<T = void> = number & { _UnitBrand: "Id" } & (T extends void ? {} : { _UnitOfBrand: T })
 
 type Ratio = [Numerator, Denominator]
 
@@ -47,4 +50,7 @@ export {
     JustificationOption,
     EnumHash,
     Id,
+    Span,
+    Unit,
+    Resolution,
 }

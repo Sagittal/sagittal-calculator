@@ -1,8 +1,7 @@
 import {
     DynamicParameter,
-    ParameterUnit,
 } from "../../../../../../../src/scripts/unpopularityMetric/solver/search/scopeToSamples/types"
-import { Index } from "../../../../../../../src/utilities/types"
+import { Index, Unit } from "../../../../../../../src/utilities/types"
 import { DynamicParameterValue, Parameter, Submetric } from "../../../../../../../src/scripts/unpopularityMetric/types"
 import { computeDynamicParameterValueIndices } from "../../../../../../../src/scripts/unpopularityMetric/solver/search/scopeToSamples/dynamicParameterValueIndices"
 
@@ -16,7 +15,7 @@ describe("computeDynamicParameterValueIndices", () => {
                 submetricIndex: 0 as Index<Submetric>,
                 parameter: Parameter.Y,
                 values: [1.5, 1.2, 0.9] as DynamicParameterValue[],
-                unit: 0 as ParameterUnit,
+                unit: 0 as Unit<DynamicParameterValue>,
             },
 
             // pick from me for the first index of the returned array
@@ -24,7 +23,7 @@ describe("computeDynamicParameterValueIndices", () => {
                 submetricIndex: 1 as Index<Submetric>,
                 parameter: Parameter.Y,
                 values: [0.9, 0.95, 1.0, 1.05, 1.1 /* pick my index as the value */] as DynamicParameterValue[],
-                unit: 0 as ParameterUnit,
+                unit: 0 as Unit<DynamicParameterValue>,
             },
 
             // pick from me for the second index of the returned array
@@ -32,7 +31,7 @@ describe("computeDynamicParameterValueIndices", () => {
                 submetricIndex: 1 as Index<Submetric>,
                 parameter: Parameter.A,
                 values: [0.6, 0.63, 0.66, 0.69 /*pick my index as the value*/, 0.72] as DynamicParameterValue[],
-                unit: 0 as ParameterUnit,
+                unit: 0 as Unit<DynamicParameterValue>,
             },
         ]
         const submetric: Submetric = {

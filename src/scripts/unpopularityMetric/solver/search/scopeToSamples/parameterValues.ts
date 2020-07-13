@@ -1,11 +1,11 @@
-import { SampleRange, SampleResolution } from "./types"
 import { DynamicParameterScope, DynamicParameterValue } from "../../../types"
+import { Resolution, Span } from "../../../../../utilities/types"
 
 const computeParameterValues = (parameterScope: DynamicParameterScope): DynamicParameterValue[] => {
     const {
         center = 0 as DynamicParameterValue,
-        range = 0 as SampleRange,
-        resolution = 1 as SampleResolution,
+        range = 0 as Span<DynamicParameterValue>,
+        resolution = 1 as Resolution<DynamicParameterValue>,
     }: DynamicParameterScope = parameterScope
 
     if (resolution === 1) return [center as DynamicParameterValue]

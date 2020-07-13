@@ -1,8 +1,9 @@
-import { SampleRange, SampleResolution } from "./types"
 import { MAXIMUM_PARAMETER_UNIT } from "./constants"
+import { DynamicParameterValue } from "../../../types"
+import { Resolution, Span } from "../../../../../utilities/types"
 
-const computeResolution = (range: SampleRange): SampleResolution => {
-    return Math.ceil(range / MAXIMUM_PARAMETER_UNIT) as SampleResolution
+const computeResolution = (range: Span<DynamicParameterValue>): Resolution<DynamicParameterValue> => {
+    return Math.ceil(range / MAXIMUM_PARAMETER_UNIT) as Resolution<DynamicParameterValue>
 }
 
 export {

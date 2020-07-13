@@ -4,10 +4,10 @@ import {
     Submetric,
     SubmetricScope, SubmetricType,
 } from "../../../../../../../src/scripts/unpopularityMetric/types"
-import { Index } from "../../../../../../../src/utilities/types"
+import { Index, Resolution, Span, Unit } from "../../../../../../../src/utilities/types"
 import {
     DynamicParameter,
-    ParameterUnit, SamplePoint, SampleRange, SampleResolution,
+    SamplePoint,
 } from "../../../../../../../src/scripts/unpopularityMetric/solver/search/scopeToSamples/types"
 import { computeNextScopes } from "../../../../../../../src/scripts/unpopularityMetric/solver/search/bestMetric/nextScopes"
 
@@ -19,40 +19,40 @@ describe("computeNextScopes", () => {
                 submetricIndex: 0 as Index<Submetric>,
                 parameter: Parameter.J,
                 values: [0, 0.1, 0.2, 0.3, 0.4, 0.5] as DynamicParameterValue[],
-                unit: 0.1 as ParameterUnit,
+                unit: 0.1 as Unit<DynamicParameterValue>,
             },
             {
                 submetricIndex: 0 as Index<Submetric>,
                 parameter: Parameter.W,
                 values: [0, 0.5, 1] as DynamicParameterValue[],
-                unit: 0.5 as ParameterUnit,
+                unit: 0.5 as Unit<DynamicParameterValue>,
             },
             {
                 submetricIndex: 1 as Index<Submetric>,
                 parameter: Parameter.Y,
                 values: [2, 2.02, 2.04, 2.06, 2.08, 2.1] as DynamicParameterValue[],
-                unit: 0.02 as ParameterUnit,
+                unit: 0.02 as Unit<DynamicParameterValue>,
             },
         ]
         const submetricScopes: SubmetricScope[] = [
             {
                 [ Parameter.J ]: {
                     center: 0.1 as DynamicParameterValue,
-                    range: 0.05 as SampleRange,
-                    resolution: 5 as SampleResolution,
+                    range: 0.05 as Span<DynamicParameterValue>,
+                    resolution: 5 as Resolution<DynamicParameterValue>,
                 }, // haha... it just doesn't care what your previous resolution was. well, that's why I had the top-level script point to the same constant that this module uses, to generally prevent that.
                 [ Parameter.W ]: {
                     center: 0 as DynamicParameterValue,
-                    range: 0.25 as SampleRange,
-                    resolution: 5 as SampleResolution,
+                    range: 0.25 as Span<DynamicParameterValue>,
+                    resolution: 5 as Resolution<DynamicParameterValue>,
                 },
                 [ Parameter.A ]: 2 as ParameterValue,
             },
             {
                 [ Parameter.Y ]: {
                     center: 2.06 as DynamicParameterValue,
-                    range: 0.01 as SampleRange,
-                    resolution: 5 as SampleResolution,
+                    range: 0.01 as Span<DynamicParameterValue>,
+                    resolution: 5 as Resolution<DynamicParameterValue>,
                 },
                 [ Parameter.SUBMETRIC_TYPE ]: SubmetricType.COAPFAR,
             },

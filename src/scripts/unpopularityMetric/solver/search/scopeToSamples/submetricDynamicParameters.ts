@@ -1,7 +1,7 @@
 import { computeParameterValues } from "./parameterValues"
-import { DynamicParameterScope, Parameter, Submetric, SubmetricScope } from "../../../types"
-import { DynamicParameter, ParameterUnit } from "./types"
-import { Index } from "../../../../../utilities/types"
+import { DynamicParameterScope, DynamicParameterValue, Parameter, Submetric, SubmetricScope } from "../../../types"
+import { DynamicParameter } from "./types"
+import { Index, Unit } from "../../../../../utilities/types"
 
 const computeSubmetricDynamicParameters = (submetricScope: SubmetricScope = {}, submetricIndex: Index<Submetric>): DynamicParameter[] => {
     const submetricDynamicParameters: DynamicParameter[] = [] as DynamicParameter[]
@@ -11,7 +11,7 @@ const computeSubmetricDynamicParameters = (submetricScope: SubmetricScope = {}, 
         const { resolution, range } = parameterScope
         if (typeof parameterScope === "object" && resolution && range && resolution > 1) {
             const values = computeParameterValues(parameterScope)
-            const unit = range / (resolution - 1) as ParameterUnit
+            const unit = range / (resolution - 1) as Unit<DynamicParameterValue>
             submetricDynamicParameters.push({ submetricIndex, parameter, values, unit })
         }
     })

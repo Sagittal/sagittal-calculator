@@ -3,12 +3,9 @@ import {
     Parameter, ParameterValue,
     SubmetricType,
 } from "../../../../../../../src/scripts/unpopularityMetric/types"
-import {
-    SampleRange,
-    SampleResolution,
-} from "../../../../../../../src/scripts/unpopularityMetric/solver/search/scopeToSamples/types"
 import { computeDynamicParameters } from "../../../../../../../src/scripts/unpopularityMetric/solver/search/scopeToSamples/dynamicParameters"
 import { computeSamples } from "../../../../../../../src/scripts/unpopularityMetric/solver/search/scopeToSamples/samples"
+import { Resolution, Span } from "../../../../../../../src/utilities/types"
 
 describe("submetricCombinations", () => {
     it("given some submetric scopes, will return all combinations of submetrics to check", () => {
@@ -16,21 +13,21 @@ describe("submetricCombinations", () => {
             {
                 [ Parameter.A ]: {
                     center: 2 as DynamicParameterValue,
-                    range: 2 as SampleRange,
-                    resolution: 3 as SampleResolution,
+                    range: 2 as Span<DynamicParameterValue>,
+                    resolution: 3 as Resolution<DynamicParameterValue>,
                 },
                 [ Parameter.K ]: {
                     center: 0 as DynamicParameterValue,
-                    range: 4 as SampleRange,
-                    resolution: 2 as SampleResolution,
+                    range: 4 as Span<DynamicParameterValue>,
+                    resolution: 2 as Resolution<DynamicParameterValue>,
                 },
             },
             {
                 [ Parameter.SUBMETRIC_TYPE ]: SubmetricType.COAPF,
                 [ Parameter.A ]: {
                     center: 1.5 as DynamicParameterValue,
-                    range: 2 as SampleRange,
-                    resolution: 2 as SampleResolution,
+                    range: 2 as Span<DynamicParameterValue>,
+                    resolution: 2 as Resolution<DynamicParameterValue>,
                 },
                 [ Parameter.W ]: 3.3 as ParameterValue,
             },
@@ -218,8 +215,8 @@ describe("submetricCombinations", () => {
                 [ Parameter.SUBMETRIC_TYPE ]: SubmetricType.COAPF,
                 [ Parameter.A ]: {
                     center: 1.5 as DynamicParameterValue,
-                    range: 2 as SampleRange,
-                    resolution: 2 as SampleResolution,
+                    range: 2 as Span<DynamicParameterValue>,
+                    resolution: 2 as Resolution<DynamicParameterValue>,
                 },
                 [ Parameter.K ]: 0.5 as ParameterValue,
             },
@@ -227,8 +224,8 @@ describe("submetricCombinations", () => {
                 [ Parameter.SUBMETRIC_TYPE ]: SubmetricType.COAPF,
                 [ Parameter.A ]: {
                     center: 1 as DynamicParameterValue,
-                    range: 2 as SampleRange,
-                    resolution: 2 as SampleResolution,
+                    range: 2 as Span<DynamicParameterValue>,
+                    resolution: 2 as Resolution<DynamicParameterValue>,
                 },
                 [ Parameter.K ]: 0 as ParameterValue,
             },
