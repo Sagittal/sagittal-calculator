@@ -16,11 +16,11 @@ const debug = !!program.debug
 
 const scope = [
     {
-        [ Parameter.K ]: { center: 1, range: 2 },
-        [ Parameter.A ]: { center: 2.00001, range: 2 },
+        [ Parameter.K ]: { center: 1, span: 2 },
+        [ Parameter.A ]: { center: 2.00001, span: 2 },
         [ Parameter.A_IS_BASE ]: true,
-        [ Parameter.Y ]: { center: 2, range: 4 },
-        [ Parameter.W ]: { center: -2.00001, range: 3 },
+        [ Parameter.Y ]: { center: 2, span: 4 },
+        [ Parameter.W ]: { center: -2.00001, span: 3 },
     },
 ] as Scope
 

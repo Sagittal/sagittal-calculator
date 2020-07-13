@@ -4,17 +4,17 @@ import { Resolution, Span } from "../../../../../../../src/utilities/types"
 
 describe("computeResolution", () => {
     it("returns the resolution required so that the unit will be no larger then the maximum parameter unit", () => {
-        const range: Span<DynamicParameterValue> = 0.05 as Span<DynamicParameterValue> // todo: maybe this is a Range<DynamicParameterValue>, as is a Unit... or a Span<>
+        const span: Span<DynamicParameterValue> = 0.05 as Span<DynamicParameterValue>
 
-        const result = computeResolution(range)
+        const result = computeResolution(span)
 
         expect(result).toBe(5 as Resolution<DynamicParameterValue>)
     })
 
     it("rounds up, even if it is closer to a smaller resolution, because that would otherwise result in something just above the maximum parameter unit", () => {
-        const range: Span<DynamicParameterValue> = 0.0491 as Span<DynamicParameterValue>
+        const span: Span<DynamicParameterValue> = 0.0491 as Span<DynamicParameterValue>
 
-        const result = computeResolution(range)
+        const result = computeResolution(span)
 
         expect(result).toBe(5 as Resolution<DynamicParameterValue>)
     })

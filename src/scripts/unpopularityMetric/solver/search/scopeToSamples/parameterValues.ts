@@ -4,7 +4,7 @@ import { Resolution, Span } from "../../../../../utilities/types"
 const computeParameterValues = (parameterScope: DynamicParameterScope): DynamicParameterValue[] => {
     const {
         center = 0 as DynamicParameterValue,
-        range = 0 as Span<DynamicParameterValue>,
+        span = 0 as Span<DynamicParameterValue>,
         resolution = 1 as Resolution<DynamicParameterValue>,
     }: DynamicParameterScope = parameterScope
 
@@ -12,10 +12,10 @@ const computeParameterValues = (parameterScope: DynamicParameterScope): DynamicP
 
     const keys = [...Array(resolution).keys()]
 
-    const offset = center - range / 2
+    const offset = center - span / 2
 
     return keys.map((key): DynamicParameterValue => {
-        const adjustedKey = key * range / (resolution - 1)
+        const adjustedKey = key * span / (resolution - 1)
 
         return offset + adjustedKey as DynamicParameterValue
     })

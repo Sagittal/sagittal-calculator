@@ -13,12 +13,12 @@ describe("submetricCombinations", () => {
             {
                 [ Parameter.A ]: {
                     center: 2 as DynamicParameterValue,
-                    range: 2 as Span<DynamicParameterValue>,
+                    span: 2 as Span<DynamicParameterValue>,
                     resolution: 3 as Resolution<DynamicParameterValue>,
                 },
                 [ Parameter.K ]: {
                     center: 0 as DynamicParameterValue,
-                    range: 4 as Span<DynamicParameterValue>,
+                    span: 4 as Span<DynamicParameterValue>,
                     resolution: 2 as Resolution<DynamicParameterValue>,
                 },
             },
@@ -26,7 +26,7 @@ describe("submetricCombinations", () => {
                 [ Parameter.SUBMETRIC_TYPE ]: SubmetricType.COAPF,
                 [ Parameter.A ]: {
                     center: 1.5 as DynamicParameterValue,
-                    range: 2 as Span<DynamicParameterValue>,
+                    span: 2 as Span<DynamicParameterValue>,
                     resolution: 2 as Resolution<DynamicParameterValue>,
                 },
                 [ Parameter.W ]: 3.3 as ParameterValue,
@@ -215,7 +215,7 @@ describe("submetricCombinations", () => {
                 [ Parameter.SUBMETRIC_TYPE ]: SubmetricType.COAPF,
                 [ Parameter.A ]: {
                     center: 1.5 as DynamicParameterValue,
-                    range: 2 as Span<DynamicParameterValue>,
+                    span: 2 as Span<DynamicParameterValue>,
                     resolution: 2 as Resolution<DynamicParameterValue>,
                 },
                 [ Parameter.K ]: 0.5 as ParameterValue,
@@ -224,7 +224,7 @@ describe("submetricCombinations", () => {
                 [ Parameter.SUBMETRIC_TYPE ]: SubmetricType.COAPF,
                 [ Parameter.A ]: {
                     center: 1 as DynamicParameterValue,
-                    range: 2 as Span<DynamicParameterValue>,
+                    span: 2 as Span<DynamicParameterValue>,
                     resolution: 2 as Resolution<DynamicParameterValue>,
                 },
                 [ Parameter.K ]: 0 as ParameterValue,

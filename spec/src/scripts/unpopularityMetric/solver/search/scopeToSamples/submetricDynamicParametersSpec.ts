@@ -9,16 +9,16 @@ import { computeSubmetricDynamicParameters } from "../../../../../../../src/scri
 describe("computeSubmetricDynamicParameters", () => {
     const submetricIndex = 5 as Index<Submetric>
 
-    it("given this submetric's scope (centers, ranges, and counts for each parameter) to compute each of its parameters' sample points, returns an array of all the parameters which are dynamic (change, i.e. have a resolution > 1)", () => {
+    it("given this submetric's scope (centers, spans, and counts for each parameter) to compute each of its parameters' sample points, returns an array of all the parameters which are dynamic (change, i.e. have a resolution > 1)", () => {
         const submetricScope: SubmetricScope = {
             [ Parameter.A ]: {
                 center: 1 as DynamicParameterValue,
-                range: 0.5 as Span<DynamicParameterValue>,
+                span: 0.5 as Span<DynamicParameterValue>,
                 resolution: 5 as Resolution<DynamicParameterValue>,
             },
             [ Parameter.W ]: {
                 center: 0.7 as DynamicParameterValue,
-                range: 0.2 as Span<DynamicParameterValue>,
+                span: 0.2 as Span<DynamicParameterValue>,
                 resolution: 3 as Resolution<DynamicParameterValue>,
             },
         }
@@ -35,12 +35,12 @@ describe("computeSubmetricDynamicParameters", () => {
         const submetricScope = {
             [ Parameter.A ]: {
                 center: 1 as DynamicParameterValue,
-                range: 0.5 as Span<DynamicParameterValue>,
+                span: 0.5 as Span<DynamicParameterValue>,
                 resolution: 5 as Resolution<DynamicParameterValue>,
             },
             [ Parameter.W ]: {
                 center: 0.7 as DynamicParameterValue,
-                range: 0.2 as Span<DynamicParameterValue>,
+                span: 0.2 as Span<DynamicParameterValue>,
                 resolution: 0 as Resolution<DynamicParameterValue>,
             },
         }
@@ -56,7 +56,7 @@ describe("computeSubmetricDynamicParameters", () => {
         const submetricScope: SubmetricScope = {
             [ Parameter.A ]: {
                 center: 1 as DynamicParameterValue,
-                range: 0.5 as Span<DynamicParameterValue>,
+                span: 0.5 as Span<DynamicParameterValue>,
                 resolution: 5 as Resolution<DynamicParameterValue>,
             },
             [ Parameter.W ]: 0.7 as ParameterValue,

@@ -12,7 +12,7 @@ describe("computeDynamicParameters", () => {
             {
                 [ Parameter.Y ]: {
                     center: 1.2 as DynamicParameterValue,
-                    range: 1 as Span<DynamicParameterValue>,
+                    span: 1 as Span<DynamicParameterValue>,
                     resolution: 3 as Resolution<DynamicParameterValue>,
                 },
                 [ Parameter.W ]: 4 as DynamicParameterValue,
@@ -21,12 +21,12 @@ describe("computeDynamicParameters", () => {
                 [ Parameter.SUBMETRIC_TYPE ]: SubmetricType.COAPF,
                 [ Parameter.Y ]: {
                     center: 1.0 as DynamicParameterValue,
-                    range: 0.2 as Span<DynamicParameterValue>,
+                    span: 0.2 as Span<DynamicParameterValue>,
                     resolution: 2 as Resolution<DynamicParameterValue>,
                 },
                 [ Parameter.A ]: {
                     center: 0.65 as DynamicParameterValue,
-                    range: 0.1 as Span<DynamicParameterValue>,
+                    span: 0.1 as Span<DynamicParameterValue>,
                     resolution: 2 as Resolution<DynamicParameterValue>,
                 },
             },

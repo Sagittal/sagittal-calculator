@@ -11,10 +11,10 @@ const computeNextScopes = (samplePoint: SamplePoint, dynamicParameters: DynamicP
         const { submetricIndex, parameter, values, unit } = dynamicParameters[ index ]
 
         const center = values[ dynamicParameterValueIndex ]
-        const range: Span<DynamicParameterValue> = unit * (2 / 3) as Span<DynamicParameterValue>
-        const resolution = computeResolution(range)
+        const span: Span<DynamicParameterValue> = unit * (2 / 3) as Span<DynamicParameterValue>
+        const resolution = computeResolution(span)
 
-        nextScopes[ submetricIndex ][ parameter ] = { center, range, resolution }
+        nextScopes[ submetricIndex ][ parameter ] = { center, span, resolution }
     })
 
     return nextScopes

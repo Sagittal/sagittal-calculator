@@ -77,7 +77,7 @@ type ParameterValue = DynamicParameterValue | boolean | SubmetricType
 
 type DynamicParameterScope = Partial<{
     center: DynamicParameterValue,
-    range: Span<DynamicParameterValue>,
+    span: Span<DynamicParameterValue>,
     resolution: Resolution<DynamicParameterValue>,
 }>
 

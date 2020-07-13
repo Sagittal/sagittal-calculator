@@ -7,10 +7,10 @@ import { Resolution, Span } from "../../../../../../../src/utilities/types"
 
 
 describe("computeParameterValues", () => {
-    it("given a parameter scope (a center, a range, and a resolution), will return a block of points to sample", () => {
+    it("given a parameter scope (a center, a span, and a resolution), will return a block of points to sample", () => {
         const parameterScope: DynamicParameterScope = {
             center: 1 as DynamicParameterValue,
-            range: 0.5 as Span<DynamicParameterValue>,
+            span: 0.5 as Span<DynamicParameterValue>,
             resolution: 5 as Resolution<DynamicParameterValue>,
         }
 
@@ -24,14 +24,14 @@ describe("computeParameterValues", () => {
             1.25,
         ] as DynamicParameterValue[])
         expect(result.length).toBe(parameterScope.resolution as number)
-        expect(result[ result.length - 1 ] - result[ 0 ]).toBe(parameterScope.range as number)
+        expect(result[ result.length - 1 ] - result[ 0 ]).toBe(parameterScope.span as number)
         expect(result[ Math.floor(result.length / 2) ] as number).toBe(parameterScope.center as number)
     })
 
     it("works when the resolution is even", () => {
         const parameterScope: DynamicParameterScope = {
             center: 5 as DynamicParameterValue,
-            range: 1 as Span<DynamicParameterValue>,
+            span: 1 as Span<DynamicParameterValue>,
             resolution: 4 as Resolution<DynamicParameterValue>,
         }
 
@@ -44,7 +44,7 @@ describe("computeParameterValues", () => {
             5.5,
         ] as DynamicParameterValue[])
         expect(result.length).toBe(parameterScope.resolution as number)
-        expect(result[ result.length - 1 ] - result[ 0 ]).toBe(parameterScope.range as number)
+        expect(result[ result.length - 1 ] - result[ 0 ]).toBe(parameterScope.span as number)
         expect(
             (
                 result[ Math.floor(result.length / 2) ] +

@@ -3,16 +3,16 @@ import { computeSubmetricPossibilities } from "../../../../../../../src/scripts/
 import { Resolution, Span } from "../../../../../../../src/utilities/types"
 
 describe("computeSubmetricPossibilities", () => {
-    it("given this submetric's scope (centers, ranges, and counts for each of its parameters) to compute each of its parameters' sample points, returns an array of all the possible combinations of those parameter sample points", () => {
+    it("given this submetric's scope (centers, spans, and counts for each of its parameters) to compute each of its parameters' sample points, returns an array of all the possible combinations of those parameter sample points", () => {
         const submetricScope = {
             [ Parameter.A ]: {
                 center: 1 as DynamicParameterValue,
-                range: 0.5 as Span<DynamicParameterValue>,
+                span: 0.5 as Span<DynamicParameterValue>,
                 resolution: 5 as Resolution<DynamicParameterValue>,
             },
             [ Parameter.W ]: {
                 center: 0.7 as DynamicParameterValue,
-                range: 0.2 as Span<DynamicParameterValue>,
+                span: 0.2 as Span<DynamicParameterValue>,
                 resolution: 3 as Resolution<DynamicParameterValue>,
             },
         }
@@ -42,12 +42,12 @@ describe("computeSubmetricPossibilities", () => {
         const submetricScope = {
             [ Parameter.A ]: {
                 center: 1 as DynamicParameterValue,
-                range: 0.5 as Span<DynamicParameterValue>,
+                span: 0.5 as Span<DynamicParameterValue>,
                 resolution: 5 as Resolution<DynamicParameterValue>,
             },
             [ Parameter.W ]: {
                 center: 0.7 as DynamicParameterValue,
-                range: 0.2 as Span<DynamicParameterValue>,
+                span: 0.2 as Span<DynamicParameterValue>,
                 resolution: 0 as Resolution<DynamicParameterValue>,
             },
         }
@@ -67,7 +67,7 @@ describe("computeSubmetricPossibilities", () => {
         const submetricScopes = {
             [ Parameter.A ]: {
                 center: 1 as DynamicParameterValue,
-                range: 0.5 as Span<DynamicParameterValue>,
+                span: 0.5 as Span<DynamicParameterValue>,
                 resolution: 5 as Resolution<DynamicParameterValue>,
             },
             [ Parameter.W ]: 0.7 as DynamicParameterValue,

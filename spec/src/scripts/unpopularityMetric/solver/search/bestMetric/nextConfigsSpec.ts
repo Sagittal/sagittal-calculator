@@ -38,12 +38,12 @@ describe("computeNextScopes", () => {
             {
                 [ Parameter.J ]: {
                     center: 0.1 as DynamicParameterValue,
-                    range: 0.05 as Span<DynamicParameterValue>,
+                    span: 0.05 as Span<DynamicParameterValue>,
                     resolution: 5 as Resolution<DynamicParameterValue>,
                 }, // haha... it just doesn't care what your previous resolution was. well, that's why I had the top-level script point to the same constant that this module uses, to generally prevent that.
                 [ Parameter.W ]: {
                     center: 0 as DynamicParameterValue,
-                    range: 0.25 as Span<DynamicParameterValue>,
+                    span: 0.25 as Span<DynamicParameterValue>,
                     resolution: 5 as Resolution<DynamicParameterValue>,
                 },
                 [ Parameter.A ]: 2 as ParameterValue,
@@ -51,7 +51,7 @@ describe("computeNextScopes", () => {
             {
                 [ Parameter.Y ]: {
                     center: 2.06 as DynamicParameterValue,
-                    range: 0.01 as Span<DynamicParameterValue>,
+                    span: 0.01 as Span<DynamicParameterValue>,
                     resolution: 5 as Resolution<DynamicParameterValue>,
                 },
                 [ Parameter.SUBMETRIC_TYPE ]: SubmetricType.COAPFAR,
@@ -62,12 +62,12 @@ describe("computeNextScopes", () => {
 
         expect(result).toEqual([
             {
-                [ Parameter.J ]: { center: 0.1, range: 0.06666666666666667, resolution: 7 },
-                [ Parameter.W ]: { center: 0, range: 0.3333333333333333, resolution: 34 },
+                [ Parameter.J ]: { center: 0.1, span: 0.06666666666666667, resolution: 7 },
+                [ Parameter.W ]: { center: 0, span: 0.3333333333333333, resolution: 34 },
                 [ Parameter.A ]: 2,
             },
             {
-                [ Parameter.Y ]: { center: 2.06, range: 0.013333333333333332, resolution: 2 },
+                [ Parameter.Y ]: { center: 2.06, span: 0.013333333333333332, resolution: 2 },
                 [ Parameter.SUBMETRIC_TYPE ]: SubmetricType.COAPFAR,
             },
         ])

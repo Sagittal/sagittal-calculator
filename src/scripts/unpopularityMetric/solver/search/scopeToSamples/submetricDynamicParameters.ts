@@ -8,10 +8,10 @@ const computeSubmetricDynamicParameters = (submetricScope: SubmetricScope = {}, 
 
     const submetricScopeEntries = Object.entries(submetricScope) as Array<[Parameter, DynamicParameterScope]>
     submetricScopeEntries.forEach(([parameter, parameterScope]: [Parameter, DynamicParameterScope]) => {
-        const { resolution, range } = parameterScope
-        if (typeof parameterScope === "object" && resolution && range && resolution > 1) {
+        const { resolution, span } = parameterScope
+        if (typeof parameterScope === "object" && resolution && span && resolution > 1) {
             const values = computeParameterValues(parameterScope)
-            const unit = range / (resolution - 1) as Unit<DynamicParameterValue>
+            const unit = span / (resolution - 1) as Unit<DynamicParameterValue>
             submetricDynamicParameters.push({ submetricIndex, parameter, values, unit })
         }
     })
