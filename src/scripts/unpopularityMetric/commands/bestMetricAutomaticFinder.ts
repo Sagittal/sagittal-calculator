@@ -1,9 +1,11 @@
 import "colors"
 import { program } from "commander"
-import { recursivelyFindUnpopularityMetric } from "../automator/recursivelyFind"
-import { computeSampleConfigsForChunkCount } from "../automator/sampleConfigsForChunkCount"
-import { Chunk } from "../automator/types"
 import { Count } from "../../../utilities/types"
+import { status, bestMetricsForChunkCount } from "../automator/globals"
+import { populateSampleConfigs } from "../automator/populate/sampleConfigs"
+import { processSampleConfigs } from "../automator/process/sampleConfigs"
+import { debugProcessedAndPopulated } from "../automator/debug"
+import { Chunk } from "../automator/types"
 
 program
     .option("-l, --lower-bound-chunk-count <lowerBoundChunkCount>", "lower bound chunk count", parseInt)
@@ -12,27 +14,27 @@ program
     .parse(process.argv)
 
 const lowerBoundChunkCount = program.lowerBoundChunkCount || 1
-const upperBoundChunkCount = program.upperBoundChunkCount || 8
+status.upperBoundChunkCount = program.upperBoundChunkCount || 3
 const debug = !!program.debug
 
-for (let chunkCount = lowerBoundChunkCount; chunkCount < upperBoundChunkCount; chunkCount = chunkCount + 1 as Count<Chunk>) {
-    const configsForChunkCount = computeSampleConfigsForChunkCount(chunkCount)
-    console.log(`investigating chunk count ${chunkCount} which has ${configsForChunkCount.length} configs to check`)
+status.populatingChunkCount = lowerBoundChunkCount as Count<Chunk>
+status.processingChunkCount = lowerBoundChunkCount as Count<Chunk>
 
-    let bestMetric = { sumOfSquares: Infinity }
-    configsForChunkCount.forEach((configForChunkCount, index) => {
-        try {
-            if (debug) console.log(JSON.stringify(configForChunkCount))
-            const bestMetricForSampleConfig = recursivelyFindUnpopularityMetric(configForChunkCount, { debug })
+// TODO: I feel like the biggest issue now is that they may not still be as interwoven as possible:
+//  populating and processing, that is.
+//  I'm slightly concerned that once it gets to huge lists of sample configs,
+//   we're going to get stuck on the populating step for too long.
+//  I guess that's an important thing to consider though:
+//   it doesn't really matter that much if we get stuck on the processing side;
+//   the risk, really, is getting stuck in the populating side and ending up with a giant object.
+//  However, if you put a console log right after the work it does in populateSampleConfigsForChunkCount,
+//   it does seem to be interruptable in a good way, so that's a good sign.
 
-            if (bestMetricForSampleConfig.sumOfSquares < bestMetric.sumOfSquares) {
-                bestMetric = bestMetricForSampleConfig
-            }
-        } catch (e) {
-            // bad configs are still being computed... may not be a simple matter to not calculate them in the first place, so for now, just don't worry about them
-        }
-
-        if (debug && index > 0 && index % 100 === 0) console.log(`${index}/${configsForChunkCount.length} (${100 * index / configsForChunkCount.length}%)`[ "blue" ])
-    })
-    console.log("best metric was", bestMetric)
-}
+populateSampleConfigs({ debug }).then(() => {
+    console.log("\n\nFINISHED POPULATING".cyan)
+    status.finishedPopulating = true
+})
+processSampleConfigs({ debug }).then(() => {
+    console.log(`\n\nFINAL STATUS ${debugProcessedAndPopulated()}`.yellow)
+    console.log(`\n\nAND THE BEST METRICS PER CHUNK COUNT WERE ${JSON.stringify(bestMetricsForChunkCount.slice(1, bestMetricsForChunkCount.length), undefined, 4)}`.red)
+})

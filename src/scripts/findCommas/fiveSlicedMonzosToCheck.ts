@@ -5,10 +5,10 @@ import { computeCopfr } from "../../utilities/comma/copfr"
 import { computeTrimmedMonzo } from "../../utilities/comma/trimmedMonzo"
 import { Prime } from "../../utilities/types"
 import { Monzo, PrimeExponent } from "../../utilities/comma/types"
-import { ComputeFiveSlicedMonzosToCheckParameters } from "./types"
+import { ComputeFiveSlicedMonzosToCheckOptions } from "./types"
 import { isUndefined } from "../../utilities/typeGuards"
 
-const computeFiveSlicedMonzosToCheck = ({ maximumPrimeLimit, maximumFiveRoughSopfr, maximumFiveRoughCopfr }: ComputeFiveSlicedMonzosToCheckParameters = {}): Monzo<5>[] => {
+const computeFiveSlicedMonzosToCheck = ({ maximumPrimeLimit, maximumFiveRoughSopfr, maximumFiveRoughCopfr }: ComputeFiveSlicedMonzosToCheckOptions = {}): Monzo<5>[] => {
     if (isUndefined(maximumFiveRoughSopfr)) {
         if (isUndefined(maximumPrimeLimit)) {
             if (isUndefined(maximumFiveRoughCopfr)) {

@@ -3,9 +3,8 @@ import { computePrimeCount } from "../../../../utilities/primeCount"
 import { computeLog } from "../../../../utilities/log"
 import { SUBMETRIC_PROPERTIES } from "../../constants"
 import { Monzo } from "../../../../utilities/comma/types"
-import { Submetric, SubmetricOperation, SubmetricType } from "../../types"
+import { DynamicParameterValue, Submetric, SubmetricOperation, SubmetricType } from "../../types"
 import { Antivotes } from "../types"
-import { DynamicParameterValue } from "../../automator/samples/types"
 
 // (sum or resolution)
 // of (maybe adjusted) prime factors

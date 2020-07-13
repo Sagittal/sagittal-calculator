@@ -10,21 +10,21 @@ interface ComputeCommasOptions extends ComputeCommasFromFiveSlicedMonzoOptions {
     sortKey: string,
 }
 
-interface ComputeCommasFromFiveSlicedMonzoOptions {
-    lowerBound?: Cents,
-    upperBound?: Cents,
-    maximumAbsoluteThreeExponent?: PrimeExponent,
-    maximumApotomeSlope?: ApotomeSlope,
-}
+type ComputeCommasFromFiveSlicedMonzoOptions = Partial<{
+    lowerBound: Cents,
+    upperBound: Cents,
+    maximumAbsoluteThreeExponent: PrimeExponent,
+    maximumApotomeSlope: ApotomeSlope,
+}>
 
-interface ComputeFiveSlicedMonzosToCheckParameters {
-    maximumPrimeLimit?: Prime,
-    maximumFiveRoughSopfr?: Sopfr<5>,
-    maximumFiveRoughCopfr?: Copfr<5>,
-}
+type ComputeFiveSlicedMonzosToCheckOptions = Partial<{
+    maximumPrimeLimit: Prime,
+    maximumFiveRoughSopfr: Sopfr<5>,
+    maximumFiveRoughCopfr: Copfr<5>,
+}>
 
 export {
     ComputeCommasOptions,
     ComputeCommasFromFiveSlicedMonzoOptions,
-    ComputeFiveSlicedMonzosToCheckParameters,
+    ComputeFiveSlicedMonzosToCheckOptions,
 }

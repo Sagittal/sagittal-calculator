@@ -1,9 +1,13 @@
 import { computeSubmetricAntivotes } from "../../../../../../src/scripts/unpopularityMetric/sumOfSquares/antivotes/submetricAntivotes"
 import { computeLog } from "../../../../../../src/utilities/log"
-import { Parameter, Submetric, SubmetricType } from "../../../../../../src/scripts/unpopularityMetric/types"
+import {
+    DynamicParameterValue,
+    Parameter,
+    Submetric,
+    SubmetricType,
+} from "../../../../../../src/scripts/unpopularityMetric/types"
 import { Monzo } from "../../../../../../src/utilities/comma/types"
 import { Antivotes } from "../../../../../../src/scripts/unpopularityMetric/sumOfSquares/types"
-import { DynamicParameterValue } from "../../../../../../src/scripts/unpopularityMetric/automator/samples/types"
 
 describe("computeSubmetricAntivotes", () => {
     let submetric: Submetric

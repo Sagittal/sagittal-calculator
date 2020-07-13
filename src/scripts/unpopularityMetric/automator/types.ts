@@ -1,15 +1,11 @@
-import { SumOfSquares } from "../sumOfSquares/types"
-import { Submetric, SubmetricSampleConfig } from "../types"
-import { Combination } from "../../../utilities/types"
-import { Sample } from "./samples/types"
+import { Count } from "../../../utilities/types"
+import { SubmetricSampleConfig } from "../types"
 
-interface Metric {
-    sumOfSquares: SumOfSquares,
-    submetrics: Combination<Submetric>,
-}
-
-interface LocalMinimum extends Sample {
-    sumOfSquares: SumOfSquares,
+interface Status {
+    finishedPopulating: boolean,
+    populatingChunkCount: Count<Chunk>,
+    upperBoundChunkCount: Count<Chunk>,
+    processingChunkCount: Count<Chunk>,
 }
 
 type SubmetricChunk = SubmetricSampleConfig
@@ -17,20 +13,9 @@ type ParameterChunk = SubmetricSampleConfig
 
 type Chunk = SubmetricChunk | ParameterChunk
 
-interface RecursivelyFindUnpopularityMetricOptions {
-    depth?: number,
-    bestMetric?: Metric,
-    progressMessage?: string,
-    localMinimum?: LocalMinimum,
-    recurse?: boolean,
-    debug?: boolean,
-}
-
 export {
-    LocalMinimum,
-    Chunk,
-    Metric,
-    SubmetricChunk,
+    Status,
     ParameterChunk,
-    RecursivelyFindUnpopularityMetricOptions,
+    SubmetricChunk,
+    Chunk,
 }

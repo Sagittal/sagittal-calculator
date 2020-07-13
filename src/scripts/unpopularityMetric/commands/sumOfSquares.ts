@@ -1,9 +1,8 @@
 import "colors"
 import { program } from "commander"
 import { computeSumOfSquaresForSubmetrics } from "../sumOfSquares/sumOfSquaresForSubmetrics"
-import { Parameter, Submetric, SubmetricType } from "../types"
+import { DynamicParameterValue, Parameter, Submetric, SubmetricType } from "../types"
 import { Combination } from "../../../utilities/types"
-import { DynamicParameterValue } from "../automator/samples/types"
 
 program
     .option("-d, --debug", "debug")

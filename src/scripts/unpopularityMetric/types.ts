@@ -1,5 +1,5 @@
-import { DynamicParameterSampleConfig, DynamicParameterValue, ParameterValue } from "./automator/samples/types"
 import { Combination, EnumHash } from "../../utilities/types"
+import { SampleRange, SampleResolution } from "./automator/process/samples/types"
 
 enum SubmetricType {
     SOAPFAR = "soapfar",
@@ -41,26 +41,26 @@ enum Parameter {
     MODIFIED_COUNT = "modifiedCount",                // Dave's trick where 5's get a half-resolution
 }
 
-type Submetric = {
-    [ Parameter.SUBMETRIC_TYPE ]?: SubmetricType,
-    [ Parameter.WEIGHT ]?: DynamicParameterValue,
-    [ Parameter.WEIGHT_IS_BASE ]?: boolean,
-    [ Parameter.WEIGHT_IS_EXPONENT ]?: boolean,
-    [ Parameter.K ]?: DynamicParameterValue
-    [ Parameter.K_IS_BASE ]?: boolean
-    [ Parameter.K_IS_EXPONENT ]?: boolean
-    [ Parameter.J ]?: DynamicParameterValue
-    [ Parameter.J_IS_BASE ]?: boolean
-    [ Parameter.J_IS_EXPONENT ]?: boolean
-    [ Parameter.A ]?: DynamicParameterValue
-    [ Parameter.A_IS_BASE ]?: boolean
-    [ Parameter.A_IS_EXPONENT ]?: boolean
-    [ Parameter.W ]?: DynamicParameterValue
-    [ Parameter.Y ]?: DynamicParameterValue
-    [ Parameter.NUMERATOR_IS_NUMINATOR ]?: boolean
-    [ Parameter.MODIFIED_COUNT ]?: boolean
-    // [Parameter.X]?: DynamicParameterValue
-}
+type Submetric = Partial<{
+    [ Parameter.SUBMETRIC_TYPE ]: SubmetricType,
+    [ Parameter.WEIGHT ]: DynamicParameterValue,
+    [ Parameter.WEIGHT_IS_BASE ]: boolean,
+    [ Parameter.WEIGHT_IS_EXPONENT ]: boolean,
+    [ Parameter.K ]: DynamicParameterValue
+    [ Parameter.K_IS_BASE ]: boolean
+    [ Parameter.K_IS_EXPONENT ]: boolean
+    [ Parameter.J ]: DynamicParameterValue
+    [ Parameter.J_IS_BASE ]: boolean
+    [ Parameter.J_IS_EXPONENT ]: boolean
+    [ Parameter.A ]: DynamicParameterValue
+    [ Parameter.A_IS_BASE ]: boolean
+    [ Parameter.A_IS_EXPONENT ]: boolean
+    [ Parameter.W ]: DynamicParameterValue
+    [ Parameter.Y ]: DynamicParameterValue
+    [ Parameter.NUMERATOR_IS_NUMINATOR ]: boolean
+    [ Parameter.MODIFIED_COUNT ]: boolean
+    // [Parameter.X]: DynamicParameterValue
+}>
 
 type SubmetricProperties = {
     withRepetition: boolean,
@@ -72,6 +72,16 @@ type SubmetricSampleConfig = Partial<EnumHash<Parameter, ParameterValue | Dynami
 
 type SampleConfig = Combination<SubmetricSampleConfig>
 
+type DynamicParameterValue = number & { _DynamicParameterValueBrand: "DynamicParameterValue" }
+
+type ParameterValue = DynamicParameterValue | boolean | SubmetricType
+
+type DynamicParameterSampleConfig = Partial<{
+    center: DynamicParameterValue,
+    range: SampleRange,
+    resolution: SampleResolution,
+}>
+
 export {
     Submetric,
     SubmetricType,
@@ -80,4 +90,7 @@ export {
     SubmetricProperties,
     SubmetricSampleConfig,
     SampleConfig,
+    DynamicParameterValue,
+    ParameterValue,
+    DynamicParameterSampleConfig,
 }

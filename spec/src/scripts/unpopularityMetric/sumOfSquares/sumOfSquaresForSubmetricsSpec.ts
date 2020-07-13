@@ -1,7 +1,11 @@
 import { computeSumOfSquaresForSubmetrics } from "../../../../../src/scripts/unpopularityMetric/sumOfSquares/sumOfSquaresForSubmetrics"
-import { Parameter, Submetric, SubmetricType } from "../../../../../src/scripts/unpopularityMetric/types"
+import {
+    DynamicParameterValue,
+    Parameter,
+    Submetric,
+    SubmetricType,
+} from "../../../../../src/scripts/unpopularityMetric/types"
 import { SumOfSquares } from "../../../../../src/scripts/unpopularityMetric/sumOfSquares/types"
-import { DynamicParameterValue } from "../../../../../src/scripts/unpopularityMetric/automator/samples/types"
 import { Combination } from "../../../../../src/utilities/types"
 
 describe("computeSumOfSquaresForSubmetrics", () => {

@@ -1,6 +1,5 @@
 import { checkSubmetricsForIssues } from "../../../../../src/scripts/unpopularityMetric/sumOfSquares/check"
-import { Parameter, Submetric } from "../../../../../src/scripts/unpopularityMetric/types"
-import { DynamicParameterValue } from "../../../../../src/scripts/unpopularityMetric/automator/samples/types"
+import { DynamicParameterValue, Parameter, Submetric } from "../../../../../src/scripts/unpopularityMetric/types"
 
 describe("checkSubmetricsForIssues", () => {
     it("gives a good error when a is a base but it is 1", () => {

@@ -1,10 +1,14 @@
 import { computeAntivotes } from "../../../../../../src/scripts/unpopularityMetric/sumOfSquares/antivotes/antivotes"
 import { computeSubmetricAntivotes } from "../../../../../../src/scripts/unpopularityMetric/sumOfSquares/antivotes/submetricAntivotes"
-import { Parameter, Submetric, SubmetricType } from "../../../../../../src/scripts/unpopularityMetric/types"
+import {
+    DynamicParameterValue,
+    Parameter,
+    Submetric,
+    SubmetricType,
+} from "../../../../../../src/scripts/unpopularityMetric/types"
 import { Combination, Ratio } from "../../../../../../src/utilities/types"
 import { Monzo } from "../../../../../../src/utilities/comma/types"
 import { Antivotes } from "../../../../../../src/scripts/unpopularityMetric/sumOfSquares/types"
-import { DynamicParameterValue } from "../../../../../../src/scripts/unpopularityMetric/automator/samples/types"
 
 describe("computeAntivotes", () => {
     it("when k = 1 (default), and two 5-rough ratios have the same sopfr, but one has its primes all lopsided on one side, they still get ranked the same", () => {

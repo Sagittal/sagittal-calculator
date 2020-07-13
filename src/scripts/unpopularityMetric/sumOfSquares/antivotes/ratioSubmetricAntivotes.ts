@@ -3,9 +3,8 @@ import { computeMonzoFromInteger } from "../../../../utilities/comma/monzoFromIn
 import { computeMonzoFromRatio } from "../../../../utilities/comma/monzoFromRatio"
 import { computeLog } from "../../../../utilities/log"
 import { Ratio } from "../../../../utilities/types"
-import { Antivotes } from "../../sumOfSquares/types"
-import { Submetric } from "../../types"
-import { DynamicParameterValue } from "../../automator/samples/types"
+import { Antivotes } from "../types"
+import { DynamicParameterValue, Submetric } from "../../types"
 
 const computeRatioSubmetricAntivotes = (fiveRoughRatio: Ratio, submetric: Submetric = {}): Antivotes => {
     const {

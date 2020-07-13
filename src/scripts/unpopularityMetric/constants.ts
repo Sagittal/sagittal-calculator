@@ -1,5 +1,6 @@
 import { SubmetricOperation, SubmetricProperties, SubmetricType } from "./types"
 import { EnumHash } from "../../utilities/types"
+import { SampleResolution } from "./automator/process/samples/types"
 
 const SUBMETRIC_PROPERTIES: EnumHash<SubmetricType, SubmetricProperties> = {
     [ SubmetricType.SOAPFAR ]: {
@@ -42,6 +43,9 @@ const SUBMETRIC_PROPERTIES: EnumHash<SubmetricType, SubmetricProperties> = {
     },
 }
 
+const RESOLUTION: SampleResolution = 2 as SampleResolution
+
 export {
     SUBMETRIC_PROPERTIES,
+    RESOLUTION,
 }
