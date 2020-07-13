@@ -363,6 +363,32 @@ const firstRecursiveRun = {
 //
 
 
+// Douglas's first attempt at lowest 2- and 3-chunk - the 3-chunk one was claimed to have 0.008291286 but Dave rejected that saying it actually has 0.018902286543139548, which I could not recreate at the time but then later recreated
+// Thu Jul 09, 2020 9:21 am
+// http://forum.sagittal.org/viewtopic.php?p=2036#p2036
+const firstAttemptAtLowestTwoChunk = {
+    sumOfSquares: 0.0094912434848982,
+    submetrics: [
+        {
+            [ Parameter.K ]: 0.7901234567901236,
+        },
+    ],
+}
+const firstAttemptAtLowestThreeChunk = {
+    sumOfSquares: 0.018902286543139548,
+    submetrics: [
+        {},
+        {
+            [ Parameter.SUBMETRIC_TYPE ]: SubmetricType.COAPFAR,
+            [ Parameter.K ]: -1.11111111111111111,
+        },
+    ],
+}
+
+
+//
+
+
 // Dave's b and u: SoS 0.00659
 // Fri Jul 10, 2020 2:57 am
 // http://forum.sagittal.org/viewtopic.php?p=2039#p2039
@@ -389,6 +415,30 @@ const firstRecursiveRun = {
 // }
 
 
+//
+
+
+// Douglas's second attempt at lowest 2-chunk
+const secondAttemptAtLowestTwoChunk = {
+    sumOfSquares: 0.00910097075832883,
+    submetrics: [
+        {
+            [ Parameter.J ]: 1.0954773869346734,
+            [ Parameter.J_IS_EXPONENT ]: true,
+        },
+    ],
+}
+const secondAttemptAtLowestThreeChunk = {
+    sumOfSquares: 0.008543707253092303,
+    submetrics: [
+        {
+            [ Parameter.Y ]: 0.96661101836394,
+            [ Parameter.J ]: 1.407035175879397,
+        },
+    ],
+}
+
+
 export {
     withPrimeLimit,
 
@@ -413,5 +463,11 @@ export {
 
     firstRecursiveRun,
 
+    firstAttemptAtLowestTwoChunk,
+    firstAttemptAtLowestThreeChunk,
+
     // bAndU,
+
+    secondAttemptAtLowestTwoChunk,
+    secondAttemptAtLowestThreeChunk,
 }

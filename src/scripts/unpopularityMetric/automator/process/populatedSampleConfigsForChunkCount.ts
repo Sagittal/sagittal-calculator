@@ -19,7 +19,7 @@ const processPopulatedSampleConfigsForChunkCount = async ({ debug }: { debug: bo
     const sampleConfigForChunkCount = processingSampleConfigs.pop() as SampleConfig
 
     try {
-        const bestMetricForSampleConfig = await recursivelyFindUnpopularityMetric(sampleConfigForChunkCount, { debug })
+        const bestMetricForSampleConfig = await recursivelyFindUnpopularityMetric(sampleConfigForChunkCount, { debug, bestMetric: bestMetricsForChunkCount[ processingChunkCount ] })
 
         if (!bestMetricsForChunkCount[ processingChunkCount ] || bestMetricForSampleConfig.sumOfSquares < bestMetricsForChunkCount[ processingChunkCount ].sumOfSquares) {
             bestMetricsForChunkCount[ processingChunkCount ] = bestMetricForSampleConfig
@@ -30,8 +30,8 @@ const processPopulatedSampleConfigsForChunkCount = async ({ debug }: { debug: bo
 
     processedForChunkCount[ processingChunkCount ] = processedForChunkCount[ processingChunkCount ] ? processedForChunkCount[ processingChunkCount ] + 1 : 1
 
-    if (processedForChunkCount[ processingChunkCount ] % 100 === 0) {
-        console.log(`processed/populated for chunk count ${processingChunkCount}: ${presentPercentage(processedForChunkCount[ processingChunkCount ], populatedForChunkCount[ processingChunkCount ])} ${debugProcessedAndPopulated()}`.yellow)
+    if (processedForChunkCount[ processingChunkCount ] % 10 === 0) {
+        console.log(`processed out of populated for chunk count ${processingChunkCount}: ${presentPercentage(processedForChunkCount[ processingChunkCount ], populatedForChunkCount[ processingChunkCount ])} ${debugProcessedAndPopulated()}`.yellow)
     }
 }
 

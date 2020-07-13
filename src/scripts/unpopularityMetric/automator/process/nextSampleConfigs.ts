@@ -1,7 +1,7 @@
 import { computeDeepClone } from "../../../../utilities/deepClone"
 import { SubmetricSampleConfig } from "../../types"
-import { DynamicParameter, SamplePoint } from "./samples/types"
-import { RESOLUTION } from "../../constants"
+import { DynamicParameter, SamplePoint, SampleRange } from "./samples/types"
+import { computeResolution } from "./samples/resolution"
 
 const computeNextSampleConfigs = (samplePoint: SamplePoint, dynamicParameters: DynamicParameter[], submetricSampleConfigs: SubmetricSampleConfig[]) => {
     const nextSampleConfigs = computeDeepClone(submetricSampleConfigs)
@@ -10,8 +10,8 @@ const computeNextSampleConfigs = (samplePoint: SamplePoint, dynamicParameters: D
         const { submetricIndex, parameter, values, unit } = dynamicParameters[ index ]
 
         const center = values[ dynamicParameterValueIndex ]
-        const range = unit * (2 / 3)
-        const resolution = RESOLUTION
+        const range: SampleRange = unit * (2 / 3) as SampleRange
+        const resolution = computeResolution(range)
 
         nextSampleConfigs[ submetricIndex ][ parameter ] = { center, range, resolution }
     })

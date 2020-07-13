@@ -1,27 +1,27 @@
 import { DynamicParameterValue, Parameter, SubmetricSampleConfig, SubmetricType } from "../../types"
 import { SampleRange } from "../process/samples/types"
 import { ParameterChunk, SubmetricChunk } from "../types"
-import { RESOLUTION } from "../../constants"
+import { computeResolution } from "../process/samples/resolution"
 
 // AKA: if they are going to be included in the automatically generated configs per chunk count, what should they be set to
 const PARAMETER_INITIAL_CONFIGS: SubmetricSampleConfig = {
-    [ Parameter.WEIGHT ]: { center: 0.5 as DynamicParameterValue, range: 1 as SampleRange, resolution: RESOLUTION },
+    [ Parameter.WEIGHT ]: { center: 0.5 as DynamicParameterValue, range: 1 as SampleRange, resolution: computeResolution(1 as SampleRange) },
     [ Parameter.WEIGHT_IS_BASE ]: true,
     [ Parameter.WEIGHT_IS_EXPONENT ]: true,
-    [ Parameter.K ]: { center: 1 as DynamicParameterValue, range: 2 as SampleRange, resolution: RESOLUTION },
+    [ Parameter.K ]: { center: 1 as DynamicParameterValue, range: 2 as SampleRange, resolution: computeResolution(2 as SampleRange) },
     [ Parameter.K_IS_BASE ]: true,
     [ Parameter.K_IS_EXPONENT ]: true,
-    [ Parameter.J ]: { center: 1 as DynamicParameterValue, range: 2 as SampleRange, resolution: RESOLUTION },
+    [ Parameter.J ]: { center: 1 as DynamicParameterValue, range: 2 as SampleRange, resolution: computeResolution(2 as SampleRange) },
     [ Parameter.J_IS_BASE ]: true,
     [ Parameter.J_IS_EXPONENT ]: true,
-    [ Parameter.A ]: { center: 2 as DynamicParameterValue, range: 4 as SampleRange, resolution: RESOLUTION },
+    [ Parameter.A ]: { center: 2 as DynamicParameterValue, range: 4 as SampleRange, resolution: computeResolution(4 as SampleRange) },
     [ Parameter.A_IS_BASE ]: true,
     [ Parameter.A_IS_EXPONENT ]: true,
-    [ Parameter.W ]: { center: 0 as DynamicParameterValue, range: 12 as SampleRange, resolution: RESOLUTION },
-    // [Parameter.X]: { center: 0 as DynamicParameterValue, range: 6 as SampleRange, resolution: RESOLUTION },
-    [ Parameter.Y ]: { center: 0 as DynamicParameterValue, range: 6 as SampleRange, resolution: RESOLUTION },
-    // [Parameter.V]: { center: 0, range: 6, resolution: RESOLUTION },
-    // [Parameter.T]: { center: 0, range: 6, resolution: RESOLUTION },
+    [ Parameter.W ]: { center: 0 as DynamicParameterValue, range: 6 as SampleRange, resolution: computeResolution(6 as SampleRange) },
+    // [Parameter.X]: { center: 0 as DynamicParameterValue, range: 6 as SampleRange, resolution: computeResolution(6 as SampleRange) },
+    [ Parameter.Y ]: { center: 0 as DynamicParameterValue, range: 6 as SampleRange, resolution: computeResolution(6 as SampleRange) },
+    // [Parameter.V]: { center: 0, range: 6 },
+    // [Parameter.T]: { center: 0, range: 6 },
     [ Parameter.NUMERATOR_IS_NUMINATOR ]: false,
     [ Parameter.MODIFIED_COUNT ]: true,
 }
