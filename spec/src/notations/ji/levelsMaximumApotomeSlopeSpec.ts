@@ -1,7 +1,7 @@
-import { computeApotomeSlope } from "../../../../src/utilities/comma/apotomeSlope"
-import { LEVELS_SYMBOLS } from "../../../../src/notations/ji/levelsSymbols"
-import { ApotomeSlope, Level, SagittalSymbol } from "../../../../src/notations/ji/types"
-import { EnumHash } from "../../../../src/utilities/types"
+import { EnumHash, Monzo } from "../../../../src/general"
+import { computeApotomeSlope } from "../../../../src/general/music/apotomeSlope"
+import { ApotomeSlope } from "../../../../src/general/music/types"
+import { Level, LEVELS_SYMBOLS, SagittalSymbol } from "../../../../src/notations/ji"
 
 describe("maximum apotome slope per level", () => {
     it("increases a bit at each level", () => {
@@ -9,7 +9,7 @@ describe("maximum apotome slope per level", () => {
             .map(([level, levelSymbols]: [Level, SagittalSymbol[]]): Partial<EnumHash<Level, ApotomeSlope>> => {
                 const levelMaximumApotomeSlope: ApotomeSlope = levelSymbols.reduce(
                     (levelMaximumApotomeSlope, levelSymbol) => {
-                        const apotomeSlope = Math.abs(computeApotomeSlope(levelSymbol.primaryComma.monzo))
+                        const apotomeSlope = Math.abs(computeApotomeSlope(levelSymbol.primaryComma.monzo as Monzo))
                         return apotomeSlope > levelMaximumApotomeSlope ? apotomeSlope : levelMaximumApotomeSlope
                     },
                     0,

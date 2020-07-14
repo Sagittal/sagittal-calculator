@@ -1,5 +1,5 @@
+import { Level } from "../../../../src/notations/ji"
 import { ensureOneBestPossibleEventPerLevel } from "../../../../src/scripts/analyzeBounds/ensureOneBestPossibleEventPerLevel"
-import { Level } from "../../../../src/notations/ji/types"
 import { ConsolidatedHistories } from "../../../../src/scripts/analyzeBounds/types"
 import { consolidatedEventFixture } from "../../../helpers/scripts/analyzeBounds/fixtures"
 

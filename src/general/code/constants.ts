@@ -1,0 +1,5 @@
+const ACCURACY_THRESHOLD = 6
+
+export {
+    ACCURACY_THRESHOLD,
+}

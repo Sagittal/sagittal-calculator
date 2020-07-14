@@ -1,6 +1,6 @@
+import { Count, EnumHash, Id } from "../../general"
+import { Bound } from "../../notations"
 import { EventRank, EventType } from "./types"
-import { Count, EnumHash, Id } from "../../utilities/types"
-import { Bound } from "../../notations/ji/types"
 
 const RANKS: EnumHash<EventType, EventRank> = {
     [ EventType.INA ]: 0 as EventRank,
@@ -8,11 +8,11 @@ const RANKS: EnumHash<EventType, EventRank> = {
     [ EventType.SIZE ]: 2 as EventRank,
 }
 
-const rankCounts: Count<EventRank>[] = [
+const rankCounts: Array<Count<EventRank>> = [
     0 as Count<EventRank>, 0 as Count<EventRank>, 0 as Count<EventRank>,
 ]
 
-const rankBoundIndices: Id<Bound>[][] = [
+const rankBoundIndices: Array<Id<Bound>>[] = [
     [], [], [],
 ]
 

@@ -1,12 +1,10 @@
-import { MAXIMUM_POSITION } from "../../notations/ji/intervals"
-import { computeBoundedSymbolPositions } from "../../notations/ji/boundedSymbolPositions"
-import { Bound } from "../../notations/ji/types"
-import { Cents } from "../../utilities/types"
+import { Cents } from "../../general"
+import { Bound, computeBoundedSymbolPositions, MAXIMUM_POSITION } from "../../notations"
 
 const computeInitialPosition = (bound: Bound): Cents => {
-    const { position, levels } = bound
+    const { cents, levels } = bound
     const initialLevel = levels[ 0 ]
-    const [lesserBoundedCommaPosition = 0, greaterBoundedCommaPosition] = computeBoundedSymbolPositions(position, initialLevel)
+    const [lesserBoundedCommaPosition = 0, greaterBoundedCommaPosition] = computeBoundedSymbolPositions(cents, initialLevel)
 
     return greaterBoundedCommaPosition ? (lesserBoundedCommaPosition + greaterBoundedCommaPosition) / 2 as Cents : MAXIMUM_POSITION
 }

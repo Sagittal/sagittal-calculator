@@ -1,6 +1,6 @@
 import { ColorMethods } from "./types"
 
-const COLORS: Array<ColorMethods> = [
+const COLORS: ColorMethods[] = [
     "blue",         // INA
     "cyan",         // MEAN
     "green",        // SIZE

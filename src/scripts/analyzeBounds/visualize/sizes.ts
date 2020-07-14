@@ -1,4 +1,4 @@
-import { Cents } from "../../../utilities/types"
+import { Cents } from "../../../general"
 
 const SCALE = 100
 const Y_SCALE = 1 * SCALE

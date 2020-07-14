@@ -1,5 +1,4 @@
-import { computePlusOrMinusRange } from "../../utilities/plusOrMinusRange"
-import { Prime } from "../../utilities/types"
+import { computePlusOrMinusRange, Prime } from "../../general"
 
 const computePrimeExponentRange = (prime: Prime, { maximumFiveRoughSopfr = Infinity, maximumFiveRoughCopfr = Infinity } = {}): number[] => {
     if (maximumFiveRoughSopfr === Infinity && maximumFiveRoughCopfr === Infinity) {

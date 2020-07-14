@@ -1,11 +1,10 @@
+import { Resolution, Span } from "../../../../../general"
+import { ParameterValue } from "../../../types"
 import { MAXIMUM_UNIT } from "./constants"
-import { DynamicParameterValue } from "../../../types"
-import { Resolution, Span } from "../../../../../utilities/types"
 import { ComputeResolutionOptions } from "./types"
 
-const computeResolution = (span: Span<DynamicParameterValue>, { maximumUnit = MAXIMUM_UNIT }: ComputeResolutionOptions = {}): Resolution<DynamicParameterValue> => {
-    return Math.ceil(span / maximumUnit) as Resolution<DynamicParameterValue>
-}
+const computeResolution = (span: Span<ParameterValue>, { maximumUnit = MAXIMUM_UNIT }: ComputeResolutionOptions = {}): Resolution<ParameterValue> =>
+    Math.ceil(span / maximumUnit) as Resolution<ParameterValue>
 
 export {
     computeResolution,

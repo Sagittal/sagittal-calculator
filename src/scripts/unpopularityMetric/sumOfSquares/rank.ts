@@ -1,24 +1,23 @@
-import { computeTriangularNumber } from "../../../utilities/triangularNumber"
+import { computeTriangularNumber } from "../../../general"
 import { RankedUnpopularity, Unpopularity, UnpopularityRank } from "./types"
 
 const addRankToUnpopularities = (unpopularities: Unpopularity[]): RankedUnpopularity[] => {
-    const unpopularitiesSortedByAntivotes = unpopularities.sort((unpopularity, nextUnpopularity) => {
-        return unpopularity.antivotes - nextUnpopularity.antivotes
-    })
+    const unpopularitiesSortedByAntivotes = unpopularities.sort((unpopularity, nextUnpopularity) =>
+        unpopularity.antivotes - nextUnpopularity.antivotes)
 
     const rankedUnpopularities: RankedUnpopularity[] = unpopularitiesSortedByAntivotes.map((unpopularity, index): RankedUnpopularity => {
-        if ((unpopularity as RankedUnpopularity).rank) return unpopularity as RankedUnpopularity
+        if ((unpopularity as RankedUnpopularity).rank) { return unpopularity as RankedUnpopularity }
 
         let tiesCount = 0
         unpopularitiesSortedByAntivotes.slice(index).forEach(worseOrTiedUnpopularity => {
             if (worseOrTiedUnpopularity.antivotes === unpopularity.antivotes) {
-                tiesCount++
+                tiesCount += 1
             }
         })
 
         let rank: UnpopularityRank
         if (tiesCount === 0) {
-            rank = index + 1 as UnpopularityRank // no zero-offset
+            rank = index + 1 as UnpopularityRank // No zero-offset
         } else {
             rank = ((index * tiesCount) + computeTriangularNumber(tiesCount)) / tiesCount as UnpopularityRank
 
@@ -30,9 +29,8 @@ const addRankToUnpopularities = (unpopularities: Unpopularity[]): RankedUnpopula
         return { ...unpopularity, rank }
     })
 
-    return rankedUnpopularities.sort((unpopularityRanked, nextUnpopularityRanked) => {
-        return unpopularityRanked.index - nextUnpopularityRanked.index
-    })
+    return rankedUnpopularities.sort((unpopularityRanked, nextUnpopularityRanked) =>
+        unpopularityRanked.index - nextUnpopularityRanked.index)
 }
 
 export {

@@ -5,7 +5,7 @@ const presentRankAnalyses = () => {
     const presentedRankAnalyses: string[] = []
 
     rankCounts.forEach((rankCount, rankIndex) => {
-        if (!rankCount || rankCount === 0) return
+        if (!rankCount || rankCount === 0) { return }
 
         presentedRankAnalyses.push(presentRankAnalysis(rankCount, rankIndex))
     })

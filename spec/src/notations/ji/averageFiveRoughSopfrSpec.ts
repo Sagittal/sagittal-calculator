@@ -1,8 +1,7 @@
-import { SYMBOLS } from "../../../../src/notations/ji/symbols"
-import { computeSopfr } from "../../../../src/utilities/comma/sopfr"
-import { computeRoughNumberMonzo } from "../../../../src/utilities/comma/rough"
-import { ACCURACY_THRESHOLD } from "../../../../src/utilities/constants"
-import { Monzo } from "../../../../src/utilities/comma/types"
+import { ACCURACY_THRESHOLD } from "../../../../src/general/code/constants"
+import { computeSopfr, Monzo } from "../../../../src/general/music"
+import { computeRoughNumberMonzo } from "../../../../src/general/music/rough"
+import { SYMBOLS } from "../../../../src/notations/ji"
 
 const AVERAGE_FIVE_ROUGH_SOPFR = 22.78523489932886
 

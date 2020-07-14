@@ -1,5 +1,6 @@
-import { SamplePoint } from "../scopeToSamples/types"
-import { SumOfSquares, SumsOfSquares } from "../../../sumOfSquares/types"
+import { SumOfSquares } from "../../../sumOfSquares"
+import { SamplePoint } from "../types"
+import { SumsOfSquares } from "./types"
 
 const setSumOfSquaresAtSamplePoint = (sumOfSquares: SumOfSquares, sumsOfSquares: SumsOfSquares, samplePoint: SamplePoint) => {
     let cursor = sumsOfSquares

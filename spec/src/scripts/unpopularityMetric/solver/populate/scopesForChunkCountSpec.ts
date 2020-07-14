@@ -1,10 +1,21 @@
 // import {populateScopesForChunkCount} from "../../../../../src/scripts/unpopularityMetric/solver/initialScopes"
+import { Count } from "../../../../../../src/general"
+import { debug } from "../../../../../../src/scripts/unpopularityMetric/debug"
+import { Chunk } from "../../../../../../src/scripts/unpopularityMetric/solver"
 // import {PARAMETER, SUBMETRIC_TYPE} from "../../../../../src/scripts/unpopularityMetric/constants"
 // import {INITIAL_PARAMETER_SCOPES} from "../../../../../src/scripts/unpopularityMetric/solver/constants"
 // import {deepEquals} from "../../../../../src/utilities/deepEquals"
 // import {arraysHaveSameContents} from "../../../../../src/utilities/arraysHaveSameContents"
 //
-// describe("populateScopesForChunkCount", () => {
+import { populateScopesForChunkCount } from "../../../../../../src/scripts/unpopularityMetric/solver/populate/scopesForChunkCount"
+
+describe("populateScopesForChunkCount", () => {
+    it("runs without error", () => {
+        const chunkCount = 0 as Count<Chunk>
+        debug.all = false
+
+        populateScopesForChunkCount(chunkCount)
+    })
 //     it("given a chunk count, returns all possible combinations of those parameters - works for 1", () => {
 //         const chunkCount = 1
 //
@@ -1012,4 +1023,4 @@
 //             5440,   // all combinations of 1 submetric  w/ 3 parameters = 8 choose 1      =   8, but that times 15 choose 3 w/re = 680, so   8*680 = 5440
 //         )
 //     })
-// })
+})

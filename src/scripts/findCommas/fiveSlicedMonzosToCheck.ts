@@ -1,14 +1,17 @@
-import { PRIMES } from "../../utilities/constants"
+import {
+    computeCopfr,
+    computeSopfr,
+    computeTrimmedMonzo,
+    isUndefined,
+    Monzo,
+    Prime,
+    PrimeExponent,
+    PRIMES,
+} from "../../general"
 import { computePrimeExponentRange } from "./primeExponentRange"
-import { computeSopfr } from "../../utilities/comma/sopfr"
-import { computeCopfr } from "../../utilities/comma/copfr"
-import { computeTrimmedMonzo } from "../../utilities/comma/trimmedMonzo"
-import { Prime } from "../../utilities/types"
-import { Monzo, PrimeExponent } from "../../utilities/comma/types"
 import { ComputeFiveSlicedMonzosToCheckOptions } from "./types"
-import { isUndefined } from "../../utilities/typeGuards"
 
-const computeFiveSlicedMonzosToCheck = ({ maximumPrimeLimit, maximumFiveRoughSopfr, maximumFiveRoughCopfr }: ComputeFiveSlicedMonzosToCheckOptions = {}): Monzo<5>[] => {
+const computeFiveSlicedMonzosToCheck = ({ maximumPrimeLimit, maximumFiveRoughSopfr, maximumFiveRoughCopfr }: ComputeFiveSlicedMonzosToCheckOptions = {}): Array<Monzo<5>> => {
     if (isUndefined(maximumFiveRoughSopfr)) {
         if (isUndefined(maximumPrimeLimit)) {
             if (isUndefined(maximumFiveRoughCopfr)) {
@@ -21,7 +24,7 @@ const computeFiveSlicedMonzosToCheck = ({ maximumPrimeLimit, maximumFiveRoughSop
         }
     }
 
-    let fiveSlicedMonzosToCheck: Monzo<5>[] = [
+    let fiveSlicedMonzosToCheck: Array<Monzo<5>> = [
         [] as unknown as Monzo<5>,
     ]
 
@@ -32,18 +35,17 @@ const computeFiveSlicedMonzosToCheck = ({ maximumPrimeLimit, maximumFiveRoughSop
         const possiblePrimes = PRIMES.filter(prime => prime < (maximumFiveRoughSopfr || Infinity))
         maximumPrime = possiblePrimes[ possiblePrimes.length - 1 ]
     }
-    const indexOfMaximumPrime = PRIMES.findIndex(prime => {
-        return prime === maximumPrime
-    })
+    const indexOfMaximumPrime = PRIMES.findIndex(prime =>
+        prime === maximumPrime)
 
     const primes = PRIMES.slice(2, indexOfMaximumPrime + 1)
 
     primes.forEach(prime => {
-        const extendedFiveSlicedMonzosToCheck: Monzo<5>[] = []
+        const extendedFiveSlicedMonzosToCheck: Array<Monzo<5>> = []
 
         fiveSlicedMonzosToCheck.forEach(fiveSlicedMonzoToCheck => {
-            const fiveRoughSopfr = computeSopfr([0, 0, ...fiveSlicedMonzoToCheck] as Monzo)
-            const fiveRoughCopfr = computeCopfr([0, 0, ...fiveSlicedMonzoToCheck] as Monzo)
+            const fiveRoughSopfr = computeSopfr([ 0, 0, ...fiveSlicedMonzoToCheck ] as Monzo)
+            const fiveRoughCopfr = computeCopfr([ 0, 0, ...fiveSlicedMonzoToCheck ] as Monzo)
 
             const termRange: PrimeExponent[] = computePrimeExponentRange(
                 prime,

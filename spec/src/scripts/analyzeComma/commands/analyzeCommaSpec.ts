@@ -1,5 +1,5 @@
-import { runCommandAndGetConsoleOutput } from "../../../../helpers/specHelper"
 import * as cp from "child_process"
+import { runCommandAndGetConsoleOutput } from "../../../../helpers/specHelper"
 
 describe("analyzeComma", () => {
     it("analyzes a comma, given it in monzo form", () => {

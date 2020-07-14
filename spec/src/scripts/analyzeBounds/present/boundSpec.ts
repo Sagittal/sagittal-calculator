@@ -1,8 +1,7 @@
-import { presentBound } from "../../../../../src/scripts/analyzeBounds/present/bound"
-import { Bound, Level } from "../../../../../src/notations/ji/types"
-import { AnalysisMode } from "../../../../../src/scripts/analyzeBounds/present/types"
+import { Cents, Id } from "../../../../../src/general"
+import { Bound, Level } from "../../../../../src/notations/ji"
+import { AnalysisMode, presentBound } from "../../../../../src/scripts/analyzeBounds/present"
 import { AnalyzedBound, EventRank } from "../../../../../src/scripts/analyzeBounds/types"
-import { Cents, Id } from "../../../../../src/utilities/types"
 import { boundFixture } from "../../../../helpers/scripts/analyzeBounds/fixtures"
 
 describe("presentAnalyzedBound", () => {
@@ -12,10 +11,10 @@ describe("presentAnalyzedBound", () => {
             mode = AnalysisMode.SUMMARY
         })
 
-        it("returns a string of the bound id, identifying symbol, actual bound position, whether it has a possible history, the error in tinas, and the ranks at each level of the best possible history, separated by tabs in a single line, and makes it the correct color", () => {
+        it("returns a string of the bound id, identifying symbol, actual bound cents, whether it has a possible history, the error in tinas, and the ranks at each level of the best possible history, separated by tabs in a single line, and makes it the correct color", () => {
             const bound: Bound = {
                 ...boundFixture,
-                position: 5.44763529181809 as Cents,
+                cents: 5.44763529181809 as Cents,
                 id: 10 as Id<Bound>,
             }
             const analyzedBound: AnalyzedBound = {
@@ -47,7 +46,7 @@ describe("presentAnalyzedBound", () => {
         it("returns a string which is a multi-line, properly indented rendition of the bound analysis object as well as identifying information for the bound", () => {
             const bound = {
                 ...boundFixture,
-                position: 5.44763529181809 as Cents,
+                cents: 5.44763529181809 as Cents,
                 id: 10 as Id<Bound>,
             }
             const analyzedBound: AnalyzedBound = {
@@ -60,7 +59,7 @@ describe("presentAnalyzedBound", () => {
                 `{`,
                 `    "extremeLevelLesserBoundedSymbol": ",,|(",`,
                 `    "extremeLevelGreaterBoundedSymbol": ",|(",`,
-                `    "position": 5.44763529181809,`,
+                `    "cents": 5.44763529181809,`,
                 `    "boundedSymbols": {`,
                 `        "id": 10,`,
                 `        "EXTREME": [`,
@@ -71,6 +70,13 @@ describe("presentAnalyzedBound", () => {
                 `                "introducingLevel": "EXTREME",`,
                 `                "mina": 10,`,
                 `                "primaryComma": {`,
+                `                    "apotomeSlope": -3.303,`,
+                `                    "fiveRoughSopfr": 24,`,
+                `                    "limit": 13,`,
+                `                    "ratio": [`,
+                `                        352,`,
+                `                        351`,
+                `                    ],`,
                 `                    "monzo": [`,
                 `                        5,`,
                 `                        -3,`,
@@ -79,7 +85,8 @@ describe("presentAnalyzedBound", () => {
                 `                        1,`,
                 `                        -1`,
                 `                    ],`,
-                `                    "position": 4.92527799928397`,
+                `                    "cents": 4.92527799928397,`,
+                `                    "name": "11/13k"`,
                 `                },`,
                 `                "elements": [`,
                 `                    ",,|",`,
@@ -95,6 +102,13 @@ describe("presentAnalyzedBound", () => {
                 `                "introducingLevel": "EXTREME",`,
                 `                "mina": 11,`,
                 `                "primaryComma": {`,
+                `                    "apotomeSlope": 5.665,`,
+                `                    "fiveRoughSopfr": 42,`,
+                `                    "limit": 31,`,
+                `                    "ratio": [`,
+                `                        22599,`,
+                `                        22528`,
+                `                    ],`,
                 `                    "monzo": [`,
                 `                        -11,`,
                 `                        6,`,
@@ -108,7 +122,8 @@ describe("presentAnalyzedBound", () => {
                 `                        0,`,
                 `                        1`,
                 `                    ],`,
-                `                    "position": 5.44763529181809`,
+                `                    "cents": 5.44763529181809,`,
+                `                    "name": "31/11k"`,
                 `                },`,
                 `                "elements": [`,
                 `                    ",|",`,
@@ -126,6 +141,13 @@ describe("presentAnalyzedBound", () => {
                 `                "introducingLevel": "EXTREME",`,
                 `                "mina": 10,`,
                 `                "primaryComma": {`,
+                `                    "apotomeSlope": -3.303,`,
+                `                    "fiveRoughSopfr": 24,`,
+                `                    "limit": 13,`,
+                `                    "ratio": [`,
+                `                        352,`,
+                `                        351`,
+                `                    ],`,
                 `                    "monzo": [`,
                 `                        5,`,
                 `                        -3,`,
@@ -134,7 +156,8 @@ describe("presentAnalyzedBound", () => {
                 `                        1,`,
                 `                        -1`,
                 `                    ],`,
-                `                    "position": 4.92527799928397`,
+                `                    "cents": 4.92527799928397,`,
+                `                    "name": "11/13k"`,
                 `                },`,
                 `                "elements": [`,
                 `                    ",,|",`,
@@ -150,6 +173,13 @@ describe("presentAnalyzedBound", () => {
                 `                "introducingLevel": "EXTREME",`,
                 `                "mina": 11,`,
                 `                "primaryComma": {`,
+                `                    "apotomeSlope": 5.665,`,
+                `                    "fiveRoughSopfr": 42,`,
+                `                    "limit": 31,`,
+                `                    "ratio": [`,
+                `                        22599,`,
+                `                        22528`,
+                `                    ],`,
                 `                    "monzo": [`,
                 `                        -11,`,
                 `                        6,`,
@@ -163,7 +193,8 @@ describe("presentAnalyzedBound", () => {
                 `                        0,`,
                 `                        1`,
                 `                    ],`,
-                `                    "position": 5.44763529181809`,
+                `                    "cents": 5.44763529181809,`,
+                `                    "name": "31/11k"`,
                 `                },`,
                 `                "elements": [`,
                 `                    ",|",`,

@@ -1,5 +1,5 @@
-import { SamplePoint } from "../../../../../../../src/scripts/unpopularityMetric/solver/search/scopeToSamples/types"
 import { computeAdjacentSamplePoints } from "../../../../../../../src/scripts/unpopularityMetric/solver/search/bestMetric/adjacentSamplePoints"
+import { SamplePoint } from "../../../../../../../src/scripts/unpopularityMetric/solver/search/types"
 
 describe("computeAdjacentSamplePoints", () => {
     it("returns the list of sample points adjacent to a given sample point", () => {

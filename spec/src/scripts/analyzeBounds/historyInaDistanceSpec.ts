@@ -1,6 +1,6 @@
+import { Proportion, Sum } from "../../../../src/general"
 import { computeHistoryInaDistance } from "../../../../src/scripts/analyzeBounds/historyInaDistance"
 import { AnalyzedEvent } from "../../../../src/scripts/analyzeBounds/types"
-import { Proportion, Sum } from "../../../../src/utilities/types"
 import { analyzedEventFixture } from "../../../helpers/scripts/analyzeBounds/fixtures"
 
 describe("computeHistoryInaDistance", () => {

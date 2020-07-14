@@ -1,9 +1,9 @@
-import { presentRankAnalyses } from "../../../../../src/scripts/analyzeBounds/present/rankAnalyses"
-import { rankBoundIndices, rankCounts } from "../../../../../src/scripts/analyzeBounds/ranks"
-import { BOUNDS } from "../../../../../src/notations/ji/bounds"
-import { computeHistories } from "../../../../../src/scripts/analyzeBounds/plot/histories"
+import { Count } from "../../../../../src/general"
+import { BOUNDS } from "../../../../../src/notations/ji"
 import { analyzeBound } from "../../../../../src/scripts/analyzeBounds/bound"
-import { Count } from "../../../../../src/utilities/types"
+import { computeHistories } from "../../../../../src/scripts/analyzeBounds/plot"
+import { presentRankAnalyses } from "../../../../../src/scripts/analyzeBounds/present"
+import { rankBoundIndices, rankCounts } from "../../../../../src/scripts/analyzeBounds/ranks"
 import { EventRank } from "../../../../../src/scripts/analyzeBounds/types"
 
 describe("presentRankAnalyses", () => {

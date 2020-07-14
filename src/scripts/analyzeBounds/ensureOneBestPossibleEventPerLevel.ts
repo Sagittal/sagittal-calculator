@@ -1,5 +1,5 @@
+import { Level } from "../../notations"
 import { ConsolidatedEvent, ConsolidatedHistories } from "./types"
-import { Level } from "../../notations/ji/types"
 
 const ensureOneBestPossibleEventPerLevel = (consolidatedHistories: ConsolidatedHistories) => {
     const consolidatedHistoriesEntries = Object.entries(consolidatedHistories) as Array<[Level, ConsolidatedEvent[]]>

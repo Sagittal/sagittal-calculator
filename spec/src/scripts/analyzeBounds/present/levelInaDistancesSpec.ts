@@ -1,8 +1,8 @@
+import { Proportion } from "../../../../../src/general"
+import { Level } from "../../../../../src/notations/ji"
 import { extractLevelInaDistances } from "../../../../../src/scripts/analyzeBounds/present/levelInaDistances"
-import { Level } from "../../../../../src/notations/ji/types"
 import { AnalyzedHistory } from "../../../../../src/scripts/analyzeBounds/types"
 import { analyzedEventFixture, analyzedHistoryFixture } from "../../../../helpers/scripts/analyzeBounds/fixtures"
-import { Proportion } from "../../../../../src/utilities/types"
 
 describe("extractLevelInaDistances", () => {
     it("returns an array of the ina-distances of each event (from the previous event)", () => {

@@ -1,5 +1,5 @@
-import "colors"
 import * as cp from "child_process"
+import "colors"
 
 const NPM_SCRIPT_HEADER_LINES_COUNT = 4
 const SKIP_THE_FINAL_EMPTY_LINE = 1

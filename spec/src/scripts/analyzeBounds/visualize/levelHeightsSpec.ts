@@ -1,6 +1,6 @@
+import { ACCURACY_THRESHOLD } from "../../../../../src/general/code/constants"
+import { Level } from "../../../../../src/notations/ji"
 import { computeLevelHeights } from "../../../../../src/scripts/analyzeBounds/visualize/levelHeights"
-import { ACCURACY_THRESHOLD } from "../../../../../src/utilities/constants"
-import { Level } from "../../../../../src/notations/ji/types"
 
 describe("computeLevelHeights", () => {
     it("gives the correct height for the tops of each level", () => {

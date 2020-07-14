@@ -1,5 +1,5 @@
+import { Level } from "../../../../../src/notations/ji"
 import { presentLevelAnalysis } from "../../../../../src/scripts/analyzeBounds/present/levelAnalysis"
-import { Level } from "../../../../../src/notations/ji/types"
 
 describe("presentLevelAnalysis", () => {
     it("gives an explanation per level of what bounds have what ranks there -- both purely within the level, and though all levels up to that point", () => {

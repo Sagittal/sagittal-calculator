@@ -1,5 +1,5 @@
+import { Prime } from "../../../../src/general"
 import { computePrimeExponentRange } from "../../../../src/scripts/findCommas/primeExponentRange"
-import { Prime } from "../../../../src/utilities/types"
 
 describe("computePrimeExponentRange", () => {
     it("gives the valid range of the prime exponent given a maximum 5-rough sopfr and a maximum 5-rough copfr where the 5-rough copfr is the limiting factor", () => {

@@ -4,13 +4,13 @@ const computeBestPossibleHistory = (analyzedHistories: AnalyzedHistory[]): Analy
     let bestPossibleHistory: AnalyzedHistory = { score: Infinity as Score } as AnalyzedHistory
 
     if (analyzedHistories.some(analyzedHistory => !analyzedHistory.exact)) {
-        let exactHistories: AnalyzedHistory[] = []
+        const exactHistories: AnalyzedHistory[] = []
         analyzedHistories.forEach(analyzedHistory => {
             if (analyzedHistory.exact) {
                 exactHistories.push(analyzedHistory)
             }
         })
-        if (exactHistories.length) return computeBestPossibleHistory(exactHistories)
+        if (exactHistories.length) { return computeBestPossibleHistory(exactHistories) }
     }
 
     analyzedHistories.forEach(analyzedHistory => {

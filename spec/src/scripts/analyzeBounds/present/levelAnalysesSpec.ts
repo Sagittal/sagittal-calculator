@@ -1,10 +1,9 @@
-import { presentLevelAnalyses } from "../../../../../src/scripts/analyzeBounds/present/levelAnalyses"
-import { LEVELS } from "../../../../../src/notations/ji/levels"
+import { Level, LEVELS } from "../../../../../src/notations/ji"
 import {
     levelsBestCumulativeHistoryRanks,
     levelsBestHistoryRanks,
 } from "../../../../../src/scripts/analyzeBounds/levels"
-import { Level } from "../../../../../src/notations/ji/types"
+import { presentLevelAnalyses } from "../../../../../src/scripts/analyzeBounds/present"
 
 describe("presentLevelAnalyses", () => {
     beforeEach(() => {

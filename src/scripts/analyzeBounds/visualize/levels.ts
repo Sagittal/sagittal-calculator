@@ -1,8 +1,7 @@
-import { MAXIMUM_POSITION } from "../../../notations/ji/intervals"
-import { computeX } from "./x"
-import { LEVELS } from "../../../notations/ji/levels"
+import { Cents } from "../../../general"
+import { LEVELS, MAXIMUM_POSITION } from "../../../notations"
 import { LEVEL_BOTTOMS } from "./levelHeights"
-import { Cents } from "../../../utilities/types"
+import { computeX } from "./x"
 
 const visualizeLevels = () => {
     const levelElements: string[] = []

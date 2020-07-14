@@ -1,8 +1,8 @@
 import { program } from "commander"
-import { presentCommas } from "../../../utilities/comma/present/commas"
-import { parseMonzo } from "../../../utilities/comma/monzo"
+import { parseMonzo } from "../../../general"
+import { MAXIMUM_POSITION } from "../../../notations"
 import { computeCommas } from "../commas"
-import { MAXIMUM_POSITION } from "../../../notations/ji/intervals"
+import { presentCommas } from "../present"
 
 program
     .option("-l, --lower-bound <lowerBound>", "lower bound", parseFloat)
@@ -19,7 +19,7 @@ program
 const lowerBound = program.lowerBound || 0
 const upperBound = program.upperBound || MAXIMUM_POSITION
 const maximumFiveRoughSopfr = program.fiveRoughSopfr || 61
-const maximumFiveRoughCopfr = program.fiveRoughCopfr || 555 // a silly number, unlikely to come close
+const maximumFiveRoughCopfr = program.fiveRoughCopfr || 555 // A silly number, unlikely to come close
 const maximumApotomeSlope = program.apotomeSlope || 14
 const maximumPrimeLimit = program.primeLimit || 47
 const maximumAbsoluteThreeExponent = program.absoluteThreeExponent || 15

@@ -5,7 +5,7 @@ const computeInitialConsolidatedEvent = (analyzedEvent: AnalyzedEvent): Consolid
     level: analyzedEvent.level,
     type: analyzedEvent.type,
     name: analyzedEvent.name,
-    position: analyzedEvent.position,
+    cents: analyzedEvent.cents,
     exact: analyzedEvent.exact,
     isPossibleHistoryMember: false,
     isBestPossibleHistoryMember: false,

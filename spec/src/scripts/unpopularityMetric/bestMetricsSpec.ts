@@ -1,6 +1,6 @@
 import * as bestMetrics from "../../../../src/scripts/unpopularityMetric/bestMetrics"
-import { computeSumOfSquaresForSubmetrics } from "../../../../src/scripts/unpopularityMetric/sumOfSquares/sumOfSquaresForSubmetrics"
-import { Metric } from "../../../../src/scripts/unpopularityMetric/solver/search/bestMetric/types"
+import { Metric } from "../../../../src/scripts/unpopularityMetric/solver/search/bestMetric"
+import { computeSumOfSquaresForSubmetrics } from "../../../../src/scripts/unpopularityMetric/sumOfSquares"
 
 describe("best metrics", () => {
     it("verifies all of the best metrics", () => {

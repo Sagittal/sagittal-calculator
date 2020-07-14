@@ -1,7 +1,8 @@
+import { Cents, Id, Name, Position, Prime, Ratio, Sopfr } from "../../../../src/general"
+import { Monzo } from "../../../../src/general/music"
+import { ApotomeSlope } from "../../../../src/general/music/types"
 import { computeIsWithinLevel, computeLevelSymbols } from "../../../../src/notations/ji/levelsSymbols"
 import { Level, Mina, SagittalSymbol, SymbolLongAscii, SymbolUnicode } from "../../../../src/notations/ji/types"
-import { Cents, Id } from "../../../../src/utilities/types"
-import { Monzo } from "../../../../src/utilities/comma/types"
 
 describe("computeLevelSymbols", () => {
     it("returns the symbols for the levels up to and including the target level", () => {
@@ -21,8 +22,13 @@ describe("computeLevelSymbols", () => {
             unicode: "" as SymbolUnicode,
             mina: 0 as Mina,
             primaryComma: {
-                position: 0 as Cents,
-                monzo: [] as Monzo,
+                apotomeSlope: 0.000 as ApotomeSlope,
+                fiveRoughSopfr: 0 as Sopfr<5>,
+                limit: 2 as Prime,
+                ratio: [1, 1] as Ratio,
+                monzo: [] as unknown as Monzo,
+                cents: 0 as Cents,
+                name: "1u" as Name<Position>,
             },
             elements: [] as SymbolLongAscii[],
         })

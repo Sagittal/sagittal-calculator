@@ -1,10 +1,10 @@
-import { Cents, Index } from "../../utilities/types"
+import { Cents, Index } from "../../general"
 
 const computeNeighborPositionIndices = (position: Cents, targetPositions: Cents[]): [Index, Index] => {
     let index = 0 as Index
     let target = targetPositions[ index ]
     while (target < position) {
-        index++
+        index = index + 1 as Index
         target = targetPositions[ index ]
     }
 
@@ -13,7 +13,6 @@ const computeNeighborPositionIndices = (position: Cents, targetPositions: Cents[
         index,
     ]
 }
-
 
 export {
     computeNeighborPositionIndices,

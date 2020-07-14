@@ -1,39 +1,38 @@
+import { Cents, Id, Name, Position, Proportion, Sum } from "../../../../src/general"
+import { Bound, Level } from "../../../../src/notations/ji"
 import { analyzeBound } from "../../../../src/scripts/analyzeBounds/bound"
-import * as rankAnalysis from "../../../../src/scripts/analyzeBounds/ranks"
 import * as levelAnalysis from "../../../../src/scripts/analyzeBounds/levels"
-import { Bound, Level } from "../../../../src/notations/ji/types"
+import * as rankAnalysis from "../../../../src/scripts/analyzeBounds/ranks"
 import {
     AnalyzedBound,
     AnalyzedEvent,
     AnalyzedHistory,
     ConsolidatedHistories,
-    EventName,
     EventRank,
     EventType,
     History,
     Score,
 } from "../../../../src/scripts/analyzeBounds/types"
-import { Cents, Id, Proportion, Sum } from "../../../../src/utilities/types"
 
 describe("analyzeBound", () => {
     const notBestHistory: History = [
         {
             level: Level.ULTRA,
             type: EventType.MEAN,
-            name: ".)/| '/|" as EventName,
-            position: 23.2 as Cents,
+            name: ".)/| '/|" as Name<Position>,
+            cents: 23.2 as Cents,
         },
         {
             level: Level.EXTREME,
             type: EventType.MEAN,
-            name: ".)/| '/|" as EventName,
-            position: 23.2 as Cents,
+            name: ".)/| '/|" as Name<Position>,
+            cents: 23.2 as Cents,
         },
         {
             level: Level.INSANE,
             type: EventType.INA,
-            name: "164.5°809" as EventName,
-            position: 23.116419649559468 as Cents,
+            name: "164.5°809" as Name<Position>,
+            cents: 23.116419649559468 as Cents,
             // this one gets rank 4
         },
     ]
@@ -41,20 +40,20 @@ describe("analyzeBound", () => {
         {
             level: Level.ULTRA,
             type: EventType.MEAN,
-            name: ".)/| '/|" as EventName,
-            position: 23.2 as Cents,
+            name: ".)/| '/|" as Name<Position>,
+            cents: 23.2 as Cents,
         },
         {
             level: Level.EXTREME,
             type: EventType.INA,
-            name: "47.5°233" as EventName,
-            position: 23.15 as Cents,
+            name: "47.5°233" as Name<Position>,
+            cents: 23.15 as Cents,
         },
         {
             level: Level.INSANE,
             type: EventType.INA,
-            name: "164.5°809" as EventName,
-            position: 23.116419649559468 as Cents,
+            name: "164.5°809" as Name<Position>,
+            cents: 23.116419649559468 as Cents,
             // this one gets rank 1
         },
     ]
@@ -63,7 +62,7 @@ describe("analyzeBound", () => {
         bestHistory,
     ]
     const bound: Bound = {
-        position: 23.1164196495597 as Cents,
+        cents: 23.1164196495597 as Cents,
         levels: [Level.ULTRA, Level.EXTREME, Level.INSANE],
         id: 47 as Id<Bound>,
     }
@@ -71,8 +70,8 @@ describe("analyzeBound", () => {
         {
             level: Level.ULTRA,
             type: EventType.MEAN,
-            name: ".)/| '/|" as EventName,
-            position: 23.2 as Cents,
+            name: ".)/| '/|" as Name<Position>,
+            cents: 23.2 as Cents,
             rank: 1 as EventRank,
             distance: 0 as Cents,
             inaDistance: 0 as Proportion,
@@ -81,8 +80,8 @@ describe("analyzeBound", () => {
         {
             level: Level.EXTREME,
             type: EventType.INA,
-            name: "47.5°233" as EventName,
-            position: 23.15 as Cents,
+            name: "47.5°233" as Name<Position>,
+            cents: 23.15 as Cents,
             rank: 0 as EventRank,
             distance: 0.05000000000000071 as Cents,
             inaDistance: 0.10247613475154385 as Proportion,
@@ -91,8 +90,8 @@ describe("analyzeBound", () => {
         {
             level: Level.INSANE,
             type: EventType.INA,
-            name: "164.5°809" as EventName,
-            position: 23.116419649559468 as Cents,
+            name: "164.5°809" as Name<Position>,
+            cents: 23.116419649559468 as Cents,
             rank: 0 as EventRank,
             distance: 0.03358035044053054 as Cents,
             inaDistance: 0.238962941978454 as Proportion,
@@ -101,7 +100,7 @@ describe("analyzeBound", () => {
     ]
     const expectedBestPossibleHistory: AnalyzedHistory = {
         events: expectedBestHistoryEvents,
-        position: 23.116419649559468 as Cents as Cents,
+        cents: 23.116419649559468 as Cents as Cents,
         rank: 1 as EventRank,
         score: 131 as Score,
         possible: true,
@@ -128,8 +127,8 @@ describe("analyzeBound", () => {
                     {
                         level: Level.ULTRA,
                         type: EventType.MEAN,
-                        name: ".)/| '/|" as EventName,
-                        position: 23.2 as Cents,
+                        name: ".)/| '/|" as Name<Position>,
+                        cents: 23.2 as Cents,
                         isPossibleHistoryMember: true,
                         isBestPossibleHistoryMember: true,
                         exact: false,
@@ -138,15 +137,15 @@ describe("analyzeBound", () => {
                         nextEvents: [
                             ".)/| '/|",
                             "47.5°233",
-                        ] as EventName[],
+                        ] as Name<Position>[],
                     },
                 ],
                 [ Level.EXTREME ]: [
                     {
                         level: Level.EXTREME,
                         type: EventType.MEAN,
-                        name: ".)/| '/|" as EventName,
-                        position: 23.2 as Cents,
+                        name: ".)/| '/|" as Name<Position>,
+                        cents: 23.2 as Cents,
                         isPossibleHistoryMember: true,
                         isBestPossibleHistoryMember: false,
                         exact: false,
@@ -154,13 +153,13 @@ describe("analyzeBound", () => {
                         rankOfBestRankedMemberHistory: 1 as EventRank,
                         nextEvents: [
                             "164.5°809",
-                        ] as EventName[],
+                        ] as Name<Position>[],
                     },
                     {
                         level: Level.EXTREME,
                         type: EventType.INA,
-                        name: "47.5°233" as EventName,
-                        position: 23.15 as Cents,
+                        name: "47.5°233" as Name<Position>,
+                        cents: 23.15 as Cents,
                         isPossibleHistoryMember: true,
                         isBestPossibleHistoryMember: true,
                         exact: false,
@@ -168,21 +167,21 @@ describe("analyzeBound", () => {
                         rankOfBestRankedMemberHistory: 1 as EventRank,
                         nextEvents: [
                             "164.5°809",
-                        ] as EventName[],
+                        ] as Name<Position>[],
                     },
                 ],
                 [ Level.INSANE ]: [
                     {
                         level: Level.INSANE,
                         type: EventType.INA,
-                        name: "164.5°809" as EventName,
-                        position: 23.116419649559468 as Cents,
+                        name: "164.5°809" as Name<Position>,
+                        cents: 23.116419649559468 as Cents,
                         isPossibleHistoryMember: true,
                         isBestPossibleHistoryMember: true,
                         exact: true,
                         rankOfBestRankedEventInAnyMemberHistory: 0 as EventRank,
                         rankOfBestRankedMemberHistory: 1 as EventRank,
-                        nextEvents: [] as EventName[],
+                        nextEvents: [] as Name<Position>[],
                     },
                 ],
             } as ConsolidatedHistories,

@@ -1,6 +1,6 @@
-import { ACCURACY_THRESHOLD } from "../../../../src/utilities/constants"
+import { ACCURACY_THRESHOLD } from "../../../../src/general/code/constants"
+import { Level } from "../../../../src/notations/ji"
 import { HIGHINA, INA_SIZES, MEDINA, MINA, TINA, ULTRINA } from "../../../../src/notations/ji/intervals"
-import { Level } from "../../../../src/notations/ji/types"
 
 describe("INA_SIZES", () => {
     it("has the levels' step sizes equal to the correct ina", () => {

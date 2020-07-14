@@ -1,10 +1,9 @@
 import "colors"
 import { program } from "commander"
-import { BOUNDS } from "../../../notations/ji/bounds"
-import { computeHistories } from "../plot/histories"
+import { BOUNDS } from "../../../notations"
 import { analyzeBound } from "../bound"
-import { presentBound } from "../present/bound"
-import { AnalysisMode } from "../present/types"
+import { computeHistories } from "../plot"
+import { AnalysisMode, presentBound } from "../present"
 
 program.parse(process.argv)
 

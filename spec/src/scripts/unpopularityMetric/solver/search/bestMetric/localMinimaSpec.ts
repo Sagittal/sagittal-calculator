@@ -1,7 +1,8 @@
+import { Combination } from "../../../../../../../src/general/math"
 import { computeLocalMinima } from "../../../../../../../src/scripts/unpopularityMetric/solver/search/bestMetric/localMinima"
-import { Sample, SamplePoint } from "../../../../../../../src/scripts/unpopularityMetric/solver/search/scopeToSamples/types"
-import { SumOfSquares, SumsOfSquares } from "../../../../../../../src/scripts/unpopularityMetric/sumOfSquares/types"
-import { Combination } from "../../../../../../../src/utilities/types"
+import { SumsOfSquares } from "../../../../../../../src/scripts/unpopularityMetric/solver/search/bestMetric/types"
+import { Sample, SamplePoint } from "../../../../../../../src/scripts/unpopularityMetric/solver/search/types"
+import { SumOfSquares } from "../../../../../../../src/scripts/unpopularityMetric/sumOfSquares"
 import { Submetric } from "../../../../../../../src/scripts/unpopularityMetric/types"
 
 describe("computeLocalMinima", () => {

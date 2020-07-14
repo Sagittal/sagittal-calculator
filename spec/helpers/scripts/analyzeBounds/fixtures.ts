@@ -1,21 +1,21 @@
+import { Cents, Id, Position, Proportion, Sum } from "../../../../src/general"
+import { Name } from "../../../../src/general/types"
+import { Bound, Level } from "../../../../src/notations/ji"
 import {
     AnalyzedEvent,
     AnalyzedHistory,
     ConsolidatedEvent,
-    EventName,
     EventRank,
     EventType,
     HistoricalEvent,
     Score,
 } from "../../../../src/scripts/analyzeBounds/types"
-import { Cents, Id, Proportion, Sum } from "../../../../src/utilities/types"
-import { Bound, Level } from "../../../../src/notations/ji/types"
 
 const eventFixture: HistoricalEvent = {
-    position: 0 as Cents,
+    cents: 0 as Cents,
     type: "" as EventType,
     level: "" as Level,
-    name: "" as EventName,
+    name: "" as Name<Position>,
 }
 
 const analyzedEventFixture: AnalyzedEvent = {
@@ -28,7 +28,7 @@ const analyzedEventFixture: AnalyzedEvent = {
 
 const analyzedHistoryFixture: AnalyzedHistory = {
     events: [],
-    position: 0 as Cents,
+    cents: 0 as Cents,
     rank: 0 as EventRank,
     score: 0 as Score,
     distance: 0 as Cents,
@@ -45,14 +45,14 @@ const consolidatedEventFixture: ConsolidatedEvent = {
     isBestPossibleHistoryMember: false,
     rankOfBestRankedMemberHistory: 0 as EventRank,
     rankOfBestRankedEventInAnyMemberHistory: 0 as EventRank,
-    nextEvents: [] as EventName[],
+    nextEvents: [] as Name<Position>[],
     exact: false,
 }
 
 const boundFixture: Bound = {
     id: 0 as Id<Bound>,
     levels: [],
-    position: 0 as Cents,
+    cents: 0 as Cents,
 }
 
 export {

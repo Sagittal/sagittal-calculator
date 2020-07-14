@@ -1,5 +1,5 @@
+import { Cents, Index } from "../../../../src/general"
 import { computeNeighborPositionIndices } from "../../../../src/notations/ji/neighborPositionIndices"
-import { Cents, Index } from "../../../../src/utilities/types"
 
 describe("computeNeighborPositionIndices", () => {
     it("returns the indices of the positions in the list of sorted targets which are on either side of the position", () => {

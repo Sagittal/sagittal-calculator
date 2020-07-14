@@ -1,4 +1,4 @@
-import { LEVELS } from "../../notations/ji/levels"
+import { LEVELS } from "../../notations"
 import {
     BINARY_SCORE_REPRESENTATION_CARDINALITY,
     computeBinaryScoreRepresentationIndex,
@@ -18,9 +18,8 @@ const computeScore = (analyzedEvents: AnalyzedEvent[]): Score => {
     })
 
     return binaryScoreRepresentation.reduce(
-        (score, binaryScoreRepresentationTerm, index): Score => {
-            return score + binaryScoreRepresentationTerm * Math.pow(2, index) as Score
-        },
+        (score, binaryScoreRepresentationTerm, index): Score =>
+            score + binaryScoreRepresentationTerm * Math.pow(2, index) as Score,
         0 as Score,
     ) as Score
 }

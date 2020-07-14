@@ -1,6 +1,6 @@
-import { computeExtendedHistories } from "./extendedHistories"
+import { Bound, Level } from "../../../notations"
 import { History } from "../types"
-import { Bound, Level } from "../../../notations/ji/types"
+import { computeExtendedHistories } from "./extendedHistories"
 
 const computeExtendedLevelHistories = (histories: History[], level: Level, bound: Bound) => {
     let extendedLevelHistories: History[] = []

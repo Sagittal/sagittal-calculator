@@ -1,10 +1,10 @@
-import { computeSumOfSquaresForSubmetrics } from "../../../sumOfSquares/sumOfSquaresForSubmetrics"
+import { debug } from "../../../debug"
+import { computeSumOfSquaresForSubmetrics } from "../../../sumOfSquares"
+import { Sample } from "../types"
 import { setSumOfSquaresAtSamplePoint } from "./setSumOfSquaresAtSamplePoint"
-import { SumsOfSquares } from "../../../sumOfSquares/types"
-import { Metric } from "./types"
-import { Sample } from "../scopeToSamples/types"
+import { Metric, SumsOfSquares } from "./types"
 
-const computePossiblyUpdatedBestMetricWhilePopulatingSumsOfSquares = (sumsOfSquares: SumsOfSquares, samples: Sample[], previousBestMetric: Metric, indentation: string, debug: boolean) => {
+const computePossiblyUpdatedBestMetricWhilePopulatingSumsOfSquares = (sumsOfSquares: SumsOfSquares, samples: Sample[], previousBestMetric: Metric, indentation: string) => {
     let bestMetric = previousBestMetric
 
     samples.forEach(sample => {
@@ -17,11 +17,11 @@ const computePossiblyUpdatedBestMetricWhilePopulatingSumsOfSquares = (sumsOfSqua
         if (sumOfSquares < bestMetric.sumOfSquares) {
             bestMetric = { sumOfSquares, submetrics }
             if (sumOfSquares === 0) {
-                computeSumOfSquaresForSubmetrics(submetrics, { debug })
+                computeSumOfSquaresForSubmetrics(submetrics)
                 throw new Error("This sum-of-squares was 0. That's extremely unlikely and probably means there's a bug in the code and that to continue searching now would be a waste of time.")
             }
 
-            if (debug) console.log(`${indentation}new best metric: ${JSON.stringify(bestMetric)}`[ "green" ])
+            if (debug.all) { console.log(`${indentation}new best metric: ${JSON.stringify(bestMetric)}`.green) }
         }
     })
 

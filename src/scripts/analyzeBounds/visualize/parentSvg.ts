@@ -1,9 +1,8 @@
-import { MAXIMUM_POSITION } from "../../../notations/ji/intervals"
-import { computeX } from "./x"
+import { Cents } from "../../../general"
+import { Level, MAXIMUM_POSITION} from "../../../notations"
 import { LEVEL_BOTTOMS } from "./levelHeights"
 import { MARGIN } from "./sizes"
-import { Level } from "../../../notations/ji/types"
-import { Cents } from "../../../utilities/types"
+import { computeX } from "./x"
 
 const addParentSvg = () => {
     const width = computeX(MARGIN + MAXIMUM_POSITION as Cents)

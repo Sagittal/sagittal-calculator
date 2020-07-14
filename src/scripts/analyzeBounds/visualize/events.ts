@@ -1,34 +1,34 @@
-import { LEVEL_BOTTOMS, LEVEL_CENTERS } from "./levelHeights"
+import { Level } from "../../../notations"
+import { AnalyzedEvent } from "../types"
 import { RANK_FILLS } from "./colors"
+import { LEVEL_BOTTOMS, LEVEL_CENTERS } from "./levelHeights"
 import { DOT_SIZE } from "./sizes"
 import { computeX } from "./x"
-import { Level } from "../../../notations/ji/types"
-import { AnalyzedEvent } from "../types"
 
 const visualizeEvents = (events: AnalyzedEvent[]) => {
     const eventElements = []
 
     const initialEvent = events[ 0 ]
-    const { position: initialPosition, rank: initialRank, level: initialLevel } = initialEvent
+    const { cents: initialPosition, rank: initialRank, level: initialLevel } = initialEvent
     const initialX = computeX(initialPosition)
     const initialY = LEVEL_CENTERS[ initialLevel ]
     const initialStroke = RANK_FILLS[ initialRank ]
     eventElements.push(`  <circle stroke="${initialStroke}" r="${DOT_SIZE}" cx="${initialX}" cy="${initialY}" />\n`)
 
     events.forEach((event, index) => {
-        const { level, position } = event
+        const { level, cents } = event
         if (level === Level.INSANE) {
             return
         }
 
-        const { level: nextLevel, position: nextPosition, rank: nextRank, distance: nextDistance, inaDistance: nextInaDistance } = events[ index + 1 ] || {}
+        const { level: nextLevel, cents: nextCents, rank: nextRank, distance: nextDistance, inaDistance: nextInaDistance } = events[ index + 1 ] || {}
 
         const stroke = RANK_FILLS[ nextRank ]
 
-        const positionX = computeX(position)
+        const positionX = computeX(cents)
         const positionY = level ? LEVEL_CENTERS[ level ] : LEVEL_BOTTOMS[ nextLevel ]
 
-        const nextPositionX = computeX(nextPosition)
+        const nextPositionX = computeX(nextCents)
         const nextPositionY = LEVEL_CENTERS[ nextLevel ]
 
         eventElements.push(`  <line stroke="${stroke}" x1="${positionX}" y1="${positionY}" x2="${nextPositionX}" y2="${nextPositionY}" />\n`)

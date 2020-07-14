@@ -1,14 +1,15 @@
-import { COMMA_POPULARITIES } from "./popularities"
-import { computeUnpopularities } from "./unpopularities"
-import { addRankToUnpopularities } from "./rank"
-import { computeSumOfSquares } from "./sumOfSquares"
+import { Combination } from "../../../general"
+import { debug } from "../debug"
+import { Submetric } from "../types"
 import { checkSubmetricsForIssues } from "./check"
 import { CUT_OFF_POPULARITY, ZIPF_EXPONENT } from "./constants"
-import { Submetric } from "../types"
+import { COMMA_POPULARITIES } from "./popularities"
+import { addRankToUnpopularities } from "./rank"
+import { computeSumOfSquares } from "./sumOfSquares"
 import { Popularity, SumOfSquares } from "./types"
-import { Combination } from "../../../utilities/types"
+import { computeUnpopularities } from "./unpopularities"
 
-const computeSumOfSquaresForSubmetrics = (submetrics: Combination<Submetric>, { debug = false } = {}): SumOfSquares => {
+const computeSumOfSquaresForSubmetrics = (submetrics: Combination<Submetric>): SumOfSquares => {
     checkSubmetricsForIssues(submetrics)
 
     const realPopularities: Popularity[] = COMMA_POPULARITIES.slice(0, CUT_OFF_POPULARITY)
@@ -16,7 +17,9 @@ const computeSumOfSquaresForSubmetrics = (submetrics: Combination<Submetric>, { 
     const unpopularities = computeUnpopularities(realPopularities, submetrics)
     const rankedUnpopularities = addRankToUnpopularities(unpopularities)
 
-    if (debug) rankedUnpopularities.map(rankedUnpopularity => console.log(JSON.stringify(rankedUnpopularity)))
+    if (debug.all || debug.rankedUnpopularities) {
+        rankedUnpopularities.map(rankedUnpopularity => console.log(JSON.stringify(rankedUnpopularity)))
+    }
 
     return computeSumOfSquares(rankedUnpopularities, realPopularities, ZIPF_EXPONENT)
 }

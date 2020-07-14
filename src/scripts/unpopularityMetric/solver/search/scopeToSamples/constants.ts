@@ -1,7 +1,7 @@
-import { Unit } from "../../../../../utilities/types"
-import { DynamicParameterValue } from "../../../types"
+import { Unit } from "../../../../../general"
+import { ParameterValue } from "../../../types"
 
-const MAXIMUM_UNIT: Unit<DynamicParameterValue> = 0.01 as Unit<DynamicParameterValue>
+const MAXIMUM_UNIT: Unit<ParameterValue> = 0.01 as Unit<ParameterValue>
 
 export {
     MAXIMUM_UNIT,

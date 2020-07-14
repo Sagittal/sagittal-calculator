@@ -1,7 +1,8 @@
+import { Combination } from "../../../../../general"
+import { DynamicParameterScope, Parameter, ParameterValue } from "../../../types"
+import { SubmetricScope } from "../../types"
 import { computeParameterValues } from "./parameterValues"
 import { SubmetricPossibility } from "./types"
-import { DynamicParameterScope, DynamicParameterValue, Parameter, SubmetricScope } from "../../../types"
-import { Combination } from "../../../../../utilities/types"
 
 const computeSubmetricPossibilities = (submetricScope: SubmetricScope = {}): Combination<SubmetricPossibility> => {
     let submetricPossibilities: Combination<SubmetricPossibility> = [ {} ] as Combination<SubmetricPossibility>
@@ -9,15 +10,15 @@ const computeSubmetricPossibilities = (submetricScope: SubmetricScope = {}): Com
     const submetricScopeEntries = Object.entries(submetricScope) as Array<[ Parameter, DynamicParameterScope ]>
 
     submetricScopeEntries.forEach(([ parameter, parameterScope ]: [ Parameter, DynamicParameterScope ]) => {
-        let extendedSubmetricPossibilities: Combination<SubmetricPossibility> = [] as unknown as Combination<SubmetricPossibility>
+        const extendedSubmetricPossibilities: Combination<SubmetricPossibility> = [] as unknown as Combination<SubmetricPossibility>
 
-        let values: DynamicParameterValue[]
+        let values: ParameterValue[]
         if (typeof parameterScope !== "object") {
             values = [ parameterScope ]
         } else {
             values = computeParameterValues(parameterScope)
         }
-        if (values.length === 0) return
+        if (values.length === 0) { return }
 
         submetricPossibilities.forEach(submetricPossibility => {
             values.forEach(value => {

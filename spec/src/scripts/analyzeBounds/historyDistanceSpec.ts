@@ -1,6 +1,6 @@
+import { Cents } from "../../../../src/general/music"
 import { computeHistoryDistance } from "../../../../src/scripts/analyzeBounds/historyDistance"
 import { AnalyzedEvent } from "../../../../src/scripts/analyzeBounds/types"
-import { Cents } from "../../../../src/utilities/types"
 import { analyzedEventFixture } from "../../../helpers/scripts/analyzeBounds/fixtures"
 
 describe("computeHistoryDistance", () => {

@@ -1,7 +1,7 @@
+import { Count, Id } from "../../../../src/general"
+import { Bound } from "../../../../src/notations/ji"
 import { rankBoundIndices, rankCounts, updateRankAnalysis } from "../../../../src/scripts/analyzeBounds/ranks"
 import { EventRank } from "../../../../src/scripts/analyzeBounds/types"
-import { Count, Id } from "../../../../src/utilities/types"
-import { Bound } from "../../../../src/notations/ji/types"
 
 describe("updateRankAnalysis", () => {
     const bestRank: EventRank = 2 as EventRank

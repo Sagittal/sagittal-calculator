@@ -1,6 +1,6 @@
+import { Cents } from "../../../../src/general/music"
 import { computeBestPossibleHistory } from "../../../../src/scripts/analyzeBounds/bestPossibleHistory"
 import { AnalyzedHistory, Score } from "../../../../src/scripts/analyzeBounds/types"
-import { Cents } from "../../../../src/utilities/types"
 import { analyzedHistoryFixture } from "../../../helpers/scripts/analyzeBounds/fixtures"
 
 describe("computeBestPossibleHistory", () => {
@@ -9,17 +9,17 @@ describe("computeBestPossibleHistory", () => {
             {
                 ...analyzedHistoryFixture,
                 score: 3436643 as Score,
-                position: 12.909 as Cents,
+                cents: 12.909 as Cents,
             },
             {
                 ...analyzedHistoryFixture,
                 score: 245444 as Score,
-                position: 13.235 as Cents,
+                cents: 13.235 as Cents,
             },
             {
                 ...analyzedHistoryFixture,
                 score: 2422436 as Score,
-                position: 13.47489 as Cents,
+                cents: 13.47489 as Cents,
             },
         ]
 
@@ -28,7 +28,7 @@ describe("computeBestPossibleHistory", () => {
         expect(result).toEqual({
             ...analyzedHistoryFixture,
             score: 245444 as Score,
-            position: 13.235 as Cents,
+            cents: 13.235 as Cents,
         })
     })
 
@@ -37,19 +37,19 @@ describe("computeBestPossibleHistory", () => {
             {
                 ...analyzedHistoryFixture,
                 score: 3436643 as Score,
-                position: 12.909 as Cents,
+                cents: 12.909 as Cents,
                 exact: true,
             },
             {
                 ...analyzedHistoryFixture,
                 score: 45575474 as Score,
-                position: 12.909 as Cents,
+                cents: 12.909 as Cents,
                 exact: true,
             },
             {
                 ...analyzedHistoryFixture,
                 score: 245444 as Score,
-                position: 13.235 as Cents,
+                cents: 13.235 as Cents,
             },
         ]
 
@@ -58,7 +58,7 @@ describe("computeBestPossibleHistory", () => {
         expect(result).toEqual({
             ...analyzedHistoryFixture,
             score: 3436643 as Score,
-            position: 12.909 as Cents,
+            cents: 12.909 as Cents,
             exact: true,
         })
     })
@@ -69,14 +69,14 @@ describe("computeBestPossibleHistory", () => {
                 ...analyzedHistoryFixture,
                 score: 3436643 as Score,
                 distance: 0.2 as Cents,
-                position: 12.909 as Cents,
+                cents: 12.909 as Cents,
                 exact: true,
             },
             {
                 ...analyzedHistoryFixture,
                 score: 3436643 as Score,
                 distance: 0.1 as Cents,
-                position: 12.909 as Cents,
+                cents: 12.909 as Cents,
                 exact: true,
             },
         ]
@@ -87,7 +87,7 @@ describe("computeBestPossibleHistory", () => {
             ...analyzedHistoryFixture,
             score: 3436643 as Score,
             distance: 0.1 as Cents,
-            position: 12.909 as Cents,
+            cents: 12.909 as Cents,
             exact: true,
         })
     })

@@ -1,5 +1,5 @@
+import { isNumber } from "../../../general"
 import { Parameter, Submetric } from "../types"
-import { isNumber } from "../../../utilities/typeGuards"
 
 const checkSubmetricsForIssues = (submetrics: Submetric[]) => {
     submetrics.forEach((submetric: Submetric) => {

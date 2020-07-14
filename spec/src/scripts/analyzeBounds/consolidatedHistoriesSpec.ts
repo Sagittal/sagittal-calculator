@@ -1,13 +1,12 @@
+import { Cents, Name, Position, Proportion } from "../../../../src/general"
+import { Level } from "../../../../src/notations/ji"
 import { computeConsolidatedHistories } from "../../../../src/scripts/analyzeBounds/consolidatedHistories"
-import { Level } from "../../../../src/notations/ji/types"
 import {
     AnalyzedEvent,
     AnalyzedHistory,
-    EventName,
     EventRank,
     EventType,
 } from "../../../../src/scripts/analyzeBounds/types"
-import { Cents, Proportion } from "../../../../src/utilities/types"
 import { analyzedEventFixture, analyzedHistoryFixture } from "../../../helpers/scripts/analyzeBounds/fixtures"
 
 describe("computeConsolidatedHistories", () => {
@@ -16,8 +15,8 @@ describe("computeConsolidatedHistories", () => {
             ...analyzedEventFixture,
             level: Level.ULTRA,
             type: EventType.MEAN,
-            name: "'/| )/|" as EventName,
-            position: 24.2 as Cents,
+            name: "'/| )/|" as Name<Position>,
+            cents: 24.2 as Cents,
             rank: 2 as EventRank,
             exact: false,
         }
@@ -25,8 +24,8 @@ describe("computeConsolidatedHistories", () => {
             ...analyzedEventFixture,
             level: Level.ULTRA,
             type: EventType.INA,
-            name: "12.5°58" as EventName,
-            position: 24.33333 as Cents,
+            name: "12.5°58" as Name<Position>,
+            cents: 24.33333 as Cents,
             rank: 1 as EventRank,
             exact: false,
         }
@@ -34,8 +33,8 @@ describe("computeConsolidatedHistories", () => {
             ...analyzedEventFixture,
             level: Level.EXTREME,
             type: EventType.MEAN,
-            name: ",)/|_)/|" as EventName,
-            position: 24.58139537326805 as Cents,
+            name: ",)/|_)/|" as Name<Position>,
+            cents: 24.58139537326805 as Cents,
             rank: 2 as EventRank,
             exact: false,
         }
@@ -43,8 +42,8 @@ describe("computeConsolidatedHistories", () => {
             ...analyzedEventFixture,
             level: Level.EXTREME,
             type: EventType.INA,
-            name: "50.5°233" as EventName,
-            position: 24.151964806252103 as Cents,
+            name: "50.5°233" as Name<Position>,
+            cents: 24.151964806252103 as Cents,
             rank: 1 as EventRank,
             exact: false,
         }
@@ -52,8 +51,8 @@ describe("computeConsolidatedHistories", () => {
             ...analyzedEventFixture,
             level: Level.EXTREME,
             type: EventType.MEAN,
-            name: ",)/|_)/|" as EventName,
-            position: 24.58139537326805 as Cents,
+            name: ",)/|_)/|" as Name<Position>,
+            cents: 24.58139537326805 as Cents,
             rank: 1 as EventRank,
             exact: false,
         }
@@ -67,7 +66,7 @@ describe("computeConsolidatedHistories", () => {
             rank: 1 as EventRank,
             possible: true,
             tinaError: 0 as Proportion<"Tina">,
-            position: 24.58139537326805 as Cents,
+            cents: 24.58139537326805 as Cents,
         }
         const analyzedHistories: AnalyzedHistory[] = [
             {
@@ -79,7 +78,7 @@ describe("computeConsolidatedHistories", () => {
                 rank: 2 as EventRank,
                 possible: true,
                 tinaError: 0 as Proportion<"Tina">,
-                position: 24.58139537326805 as Cents,
+                cents: 24.58139537326805 as Cents,
             },
             bestPossibleHistory,
             {
@@ -91,7 +90,7 @@ describe("computeConsolidatedHistories", () => {
                 rank: 2 as EventRank,
                 possible: false,
                 tinaError: 3.05589400712 as Proportion<"Tina">,
-                position: 24.151964806252103 as Cents,
+                cents: 24.151964806252103 as Cents,
             },
             {
                 ...analyzedHistoryFixture,
@@ -101,7 +100,7 @@ describe("computeConsolidatedHistories", () => {
                 rank: 8 as EventRank,
                 possible: false,
                 tinaError: 2.26723955922 as Proportion<"Tina">,
-                position: 24.9 as Cents,
+                cents: 24.9 as Cents,
             },
         ]
 
@@ -113,7 +112,7 @@ describe("computeConsolidatedHistories", () => {
                     type: eventOneGoesToEventThreeAndFour.type,
                     level: eventOneGoesToEventThreeAndFour.level,
                     name: eventOneGoesToEventThreeAndFour.name,
-                    position: eventOneGoesToEventThreeAndFour.position,
+                    cents: eventOneGoesToEventThreeAndFour.cents,
                     isPossibleHistoryMember: true,
                     isBestPossibleHistoryMember: false,
                     exact: false,
@@ -122,13 +121,13 @@ describe("computeConsolidatedHistories", () => {
                     nextEvents: [
                         eventThree.name,
                         eventFour.name,
-                    ] as EventName[],
+                    ] as Name<Position>[],
                 },
                 {
                     type: eventTwoGoesToEventThree.type,
                     level: eventTwoGoesToEventThree.level,
                     name: eventTwoGoesToEventThree.name,
-                    position: eventTwoGoesToEventThree.position,
+                    cents: eventTwoGoesToEventThree.cents,
                     isPossibleHistoryMember: true,
                     isBestPossibleHistoryMember: true,
                     exact: false,
@@ -137,7 +136,7 @@ describe("computeConsolidatedHistories", () => {
                     nextEvents: [
                         eventThree.name,
                         // eventImpossible.name,
-                    ] as EventName[],
+                    ] as Name<Position>[],
                 },
             ],
             [ Level.EXTREME ]: [
@@ -145,25 +144,25 @@ describe("computeConsolidatedHistories", () => {
                     type: eventThree.type,
                     level: eventThree.level,
                     name: eventThree.name,
-                    position: eventThree.position,
+                    cents: eventThree.cents,
                     isPossibleHistoryMember: true,
                     isBestPossibleHistoryMember: true,
                     exact: false,
                     rankOfBestRankedEventInAnyMemberHistory: 1 as EventRank,
                     rankOfBestRankedMemberHistory: 1 as EventRank,
-                    nextEvents: [] as EventName[],
+                    nextEvents: [] as Name<Position>[],
                 },
                 {
                     type: eventFour.type,
                     level: eventFour.level,
                     name: eventFour.name,
-                    position: eventFour.position,
+                    cents: eventFour.cents,
                     isPossibleHistoryMember: false,
                     isBestPossibleHistoryMember: false,
                     exact: false,
                     rankOfBestRankedEventInAnyMemberHistory: 1 as EventRank,
                     rankOfBestRankedMemberHistory: 2 as EventRank,
-                    nextEvents: [] as EventName[],
+                    nextEvents: [] as Name<Position>[],
                 },
             ],
         })

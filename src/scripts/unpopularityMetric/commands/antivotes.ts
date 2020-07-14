@@ -1,33 +1,33 @@
 import "colors"
 import { program } from "commander"
-import { computeAntivotes } from "../sumOfSquares/antivotes/antivotes"
-import { presentRatio } from "../../../utilities/comma/present/ratio"
-import { DynamicParameterValue, Parameter, Submetric, SubmetricType } from "../types"
-import { Combination, Ratio } from "../../../utilities/types"
+import { Combination, presentRatio, Ratio } from "../../../general"
+import { debug } from "../debug"
+import { computeAntivotes } from "../sumOfSquares"
+import { Parameter, ParameterValue, Submetric, SubmetricType } from "../types"
 
 program
     .option("-d, --debug", "debug")
     .parse(process.argv)
 
-const debug = !!program.debug
+debug.submetricAntivotes = !!program.debug
 
 const submetrics =
     [
         {
-            [ Parameter.K ]: 0 as DynamicParameterValue,
-            [ Parameter.A ]: 1.994 as DynamicParameterValue,
+            [ Parameter.K ]: 0 as ParameterValue,
+            [ Parameter.A ]: 1.994 as ParameterValue,
             [ Parameter.A_IS_BASE ]: true,
-            [ Parameter.Y ]: 0.455 as DynamicParameterValue,
-            [ Parameter.W ]: -2.08 as DynamicParameterValue,
+            [ Parameter.Y ]: 0.455 as ParameterValue,
+            [ Parameter.W ]: -2.08 as ParameterValue,
         },
         {
             [ Parameter.SUBMETRIC_TYPE ]: SubmetricType.COAPFAR,
-            [ Parameter.WEIGHT ]: 0.577 as DynamicParameterValue,
+            [ Parameter.WEIGHT ]: 0.577 as ParameterValue,
         },
     ] as Combination<Submetric>
 
 const fiveRoughRatio: Ratio = [11, 7] as Ratio
 
-const antivotes = computeAntivotes(fiveRoughRatio, submetrics, { debug })
+const antivotes = computeAntivotes(fiveRoughRatio, submetrics)
 
 console.log(`${presentRatio(fiveRoughRatio)}\n${JSON.stringify(submetrics)}\n${antivotes}`)

@@ -1,8 +1,7 @@
-import { computeFiveSlicedMonzosToCheck } from "./fiveSlicedMonzosToCheck"
+import { Comma, invertMonzo, Monzo } from "../../general"
 import { computeCommasFromFiveSlicedMonzo } from "./commasFromFiveSlicedMonzo"
-import { invertMonzo } from "../../utilities/comma/invertMonzo"
+import { computeFiveSlicedMonzosToCheck } from "./fiveSlicedMonzosToCheck"
 import { ComputeCommasOptions } from "./types"
-import { Comma, Monzo } from "../../utilities/comma/types"
 
 const computeCommas = (options: ComputeCommasOptions) => {
     const {
@@ -19,7 +18,7 @@ const computeCommas = (options: ComputeCommasOptions) => {
 
     let commas: Comma[] = []
 
-    const fiveSlicedMonzosToCheck: Monzo<5>[] = fiveSlicedMonzo ?
+    const fiveSlicedMonzosToCheck: Array<Monzo<5>> = fiveSlicedMonzo ?
         [fiveSlicedMonzo, invertMonzo(fiveSlicedMonzo)] :
         computeFiveSlicedMonzosToCheck({
             maximumPrimeLimit,
@@ -42,9 +41,8 @@ const computeCommas = (options: ComputeCommasOptions) => {
     })
 
     if (sortKey) {
-        commas.sort((comma, nextComma) => {
-            return (comma[ sortKey ] as number) - (nextComma[ sortKey ] as number)
-        })
+        commas.sort((comma, nextComma) =>
+            (comma[ sortKey ] as number) - (nextComma[ sortKey ] as number))
     }
 
     return commas

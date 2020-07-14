@@ -1,4 +1,4 @@
-import { Bound, Level } from "../../../notations/ji/types"
+import { Bound, Level } from "../../../notations"
 
 const computeBoundNextLevel = (bound: Bound, level: Level) => {
     const { levels } = bound

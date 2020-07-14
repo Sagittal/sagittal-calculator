@@ -1,9 +1,9 @@
+import { Level } from "../../../../src/notations/ji"
 import {
     levelsBestCumulativeHistoryRanks,
     levelsBestHistoryRanks,
     updateLevelAnalysis,
 } from "../../../../src/scripts/analyzeBounds/levels"
-import { Level } from "../../../../src/notations/ji/types"
 import { AnalyzedHistory, EventRank } from "../../../../src/scripts/analyzeBounds/types"
 import { analyzedEventFixture, analyzedHistoryFixture } from "../../../helpers/scripts/analyzeBounds/fixtures"
 

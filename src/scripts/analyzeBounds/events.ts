@@ -1,14 +1,13 @@
-import { RANKS } from "./ranks"
-import { computeIsCloseTo } from "../../utilities/isCloseTo"
+import { Cents, computeIsCloseTo } from "../../general"
 import { computeEventDistance } from "./eventDistance"
 import { computeEventInaDistance } from "./eventInaDistance"
+import { RANKS } from "./ranks"
 import { AnalyzedEvent, HistoricalEvent, History } from "./types"
-import { Cents } from "../../utilities/types"
 
-const analyzeEvents = (history: History, actualBoundPosition: Cents): AnalyzedEvent[] => {
-    return history.map((event: HistoricalEvent, index): AnalyzedEvent => {
-        const { position, type } = event
-        const exact = computeIsCloseTo(position, actualBoundPosition)
+const analyzeEvents = (history: History, actualBoundCents: Cents): AnalyzedEvent[] =>
+    history.map((event: HistoricalEvent, index): AnalyzedEvent => {
+        const { cents, type } = event
+        const exact = computeIsCloseTo(cents, actualBoundCents)
         const rank = RANKS[ type ]
         const distance = computeEventDistance(event, index, history)
         const inaDistance = computeEventInaDistance(event, index, history)
@@ -21,7 +20,6 @@ const analyzeEvents = (history: History, actualBoundPosition: Cents): AnalyzedEv
             inaDistance,
         }
     })
-}
 
 export {
     analyzeEvents,

@@ -1,7 +1,7 @@
+import { Cents } from "../../../../../src/general/music"
+import { Level } from "../../../../../src/notations/ji"
 import { extractLevelDistances } from "../../../../../src/scripts/analyzeBounds/present/levelDistances"
-import { Level } from "../../../../../src/notations/ji/types"
 import { AnalyzedHistory } from "../../../../../src/scripts/analyzeBounds/types"
-import { Cents } from "../../../../../src/utilities/types"
 import { analyzedEventFixture, analyzedHistoryFixture } from "../../../../helpers/scripts/analyzeBounds/fixtures"
 
 describe("extractLevelDistances", () => {

@@ -1,13 +1,12 @@
+import { Count, Proportion } from "../../general"
+import { Bound, TINA } from "../../notations"
+import { computeBestPossibleHistory } from "./bestPossibleHistory"
 import { computeConsolidatedHistories } from "./consolidatedHistories"
 import { analyzeHistory } from "./history"
-import { computeBestPossibleHistory } from "./bestPossibleHistory"
-import { TINA } from "../../notations/ji/intervals"
-import * as rankAnalysis from "./ranks"
-import * as levelAnalysis from "./levels"
 import { computeInitialPosition } from "./initialPosition"
+import * as levelAnalysis from "./levels"
+import * as rankAnalysis from "./ranks"
 import { AnalyzedBound, AnalyzedHistory, History } from "./types"
-import { Bound } from "../../notations/ji/types"
-import { Count, Proportion } from "../../utilities/types"
 
 const analyzeBound = (histories: History[], bound: Bound): AnalyzedBound => {
     const initialPosition = computeInitialPosition(bound)
@@ -20,7 +19,7 @@ const analyzeBound = (histories: History[], bound: Bound): AnalyzedBound => {
     const bestPossibleHistoryDistance = bestPossibleHistory.distance
     const bestPossibleHistoryInaDistance = bestPossibleHistory.inaDistance
 
-    const initialPositionTinaDifference = (bound.position - initialPosition) / TINA as Proportion<"Tina">
+    const initialPositionTinaDifference = (bound.cents - initialPosition) / TINA as Proportion<"Tina">
 
     rankAnalysis.updateRankAnalysis(bestRank, bound.id)
     levelAnalysis.updateLevelAnalysis(bestPossibleHistory)

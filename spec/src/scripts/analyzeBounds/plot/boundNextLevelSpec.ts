@@ -1,5 +1,5 @@
+import { Bound, Level } from "../../../../../src/notations/ji"
 import { computeBoundNextLevel } from "../../../../../src/scripts/analyzeBounds/plot/boundNextLevel"
-import { Bound, Level } from "../../../../../src/notations/ji/types"
 import { boundFixture } from "../../../../helpers/scripts/analyzeBounds/fixtures"
 
 describe("computeBoundNextLevel", () => {

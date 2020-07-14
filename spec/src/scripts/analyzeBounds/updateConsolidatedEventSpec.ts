@@ -1,12 +1,12 @@
-import { updateConsolidatedEvent } from "../../../../src/scripts/analyzeBounds/updateConsolidatedEvent"
+import { Name, Position } from "../../../../src/general"
+import { Level } from "../../../../src/notations/ji"
 import {
     AnalyzedEvent,
     AnalyzedHistory,
     ConsolidatedEvent,
-    EventName,
     EventRank,
 } from "../../../../src/scripts/analyzeBounds/types"
-import { Level } from "../../../../src/notations/ji/types"
+import { updateConsolidatedEvent } from "../../../../src/scripts/analyzeBounds/updateConsolidatedEvent"
 import {
     analyzedEventFixture,
     analyzedHistoryFixture,
@@ -30,7 +30,7 @@ describe("updateConsolidatedEvent", () => {
         it("when there is no next analyzed event (i.e. this is the last event of the analyzed history) the next events stays the same", () => {
             const consolidatedEvent: ConsolidatedEvent = {
                 ...consolidatedEventFixture,
-                nextEvents: ["2.5°58"] as EventName[],
+                nextEvents: ["2.5°58"] as Name<Position>[],
             }
 
             updateConsolidatedEvent(consolidatedEvent, {
@@ -40,15 +40,15 @@ describe("updateConsolidatedEvent", () => {
                 bestPossibleHistory,
             })
 
-            expect(consolidatedEvent.nextEvents).toEqual(["2.5°58"] as EventName[])
+            expect(consolidatedEvent.nextEvents).toEqual(["2.5°58"] as Name<Position>[])
         })
 
         it("when there is a next analyzed event, it adds its name to the next events", () => {
             const consolidatedEvent: ConsolidatedEvent = {
                 ...consolidatedEventFixture,
-                nextEvents: ["2.5°58"] as EventName[],
+                nextEvents: ["2.5°58"] as Name<Position>[],
             }
-            nextAnalyzedEvent = { ...analyzedEvent, name: ".)/| '/|" as EventName }
+            nextAnalyzedEvent = { ...analyzedEvent, name: ".)/| '/|" as Name<Position> }
 
             updateConsolidatedEvent(consolidatedEvent, {
                 analyzedHistory,
@@ -63,9 +63,9 @@ describe("updateConsolidatedEvent", () => {
         it("when there is a next analyzed event, but an event with that name has already been updated into this consolidated event, the next events stays the same", () => {
             const consolidatedEvent: ConsolidatedEvent = {
                 ...consolidatedEventFixture,
-                nextEvents: ["2.5°58"] as EventName[],
+                nextEvents: ["2.5°58"] as Name<Position>[],
             }
-            nextAnalyzedEvent = { ...analyzedEventFixture, name: "2.5°58" as EventName }
+            nextAnalyzedEvent = { ...analyzedEventFixture, name: "2.5°58" as Name<Position> }
 
             updateConsolidatedEvent(consolidatedEvent, {
                 analyzedHistory,
@@ -141,12 +141,12 @@ describe("updateConsolidatedEvent", () => {
             const consolidatedEvent: ConsolidatedEvent = {
                 ...consolidatedEventFixture,
                 isBestPossibleHistoryMember: true,
-                name: "eventName" as EventName,
+                name: "eventName" as Name<Position>,
                 level: Level.ULTRA,
             }
             bestPossibleHistory = {
                 ...analyzedHistoryFixture,
-                events: [{ ...analyzedEventFixture, name: "eventName" as EventName, level: Level.ULTRA }],
+                events: [{ ...analyzedEventFixture, name: "eventName" as Name<Position>, level: Level.ULTRA }],
             }
 
             updateConsolidatedEvent(consolidatedEvent, {
@@ -163,11 +163,11 @@ describe("updateConsolidatedEvent", () => {
             const consolidatedEvent: ConsolidatedEvent = {
                 ...consolidatedEventFixture,
                 isBestPossibleHistoryMember: true,
-                name: "eventName" as EventName,
+                name: "eventName" as Name<Position>,
             }
             bestPossibleHistory = {
                 ...analyzedHistoryFixture,
-                events: [{ ...analyzedEventFixture, name: "eventName" as EventName, level: Level.EXTREME }],
+                events: [{ ...analyzedEventFixture, name: "eventName" as Name<Position>, level: Level.EXTREME }],
             }
 
             updateConsolidatedEvent(consolidatedEvent, {
@@ -184,12 +184,12 @@ describe("updateConsolidatedEvent", () => {
             const consolidatedEvent: ConsolidatedEvent = {
                 ...consolidatedEventFixture,
                 isBestPossibleHistoryMember: false,
-                name: "eventName" as EventName,
+                name: "eventName" as Name<Position>,
                 level: Level.ULTRA,
             }
             bestPossibleHistory = {
                 ...analyzedHistoryFixture,
-                events: [{ ...analyzedEventFixture, name: "eventName" as EventName, level: Level.ULTRA }],
+                events: [{ ...analyzedEventFixture, name: "eventName" as Name<Position>, level: Level.ULTRA }],
             }
 
             updateConsolidatedEvent(consolidatedEvent, {
@@ -206,12 +206,12 @@ describe("updateConsolidatedEvent", () => {
             const consolidatedEvent: ConsolidatedEvent = {
                 ...consolidatedEventFixture,
                 isBestPossibleHistoryMember: false,
-                name: "eventName" as EventName,
+                name: "eventName" as Name<Position>,
                 level: Level.ULTRA,
             }
             bestPossibleHistory = {
                 ...analyzedHistoryFixture,
-                events: [{ ...analyzedEventFixture, name: "eventName" as EventName, level: Level.EXTREME }],
+                events: [{ ...analyzedEventFixture, name: "eventName" as Name<Position>, level: Level.EXTREME }],
             }
 
             updateConsolidatedEvent(consolidatedEvent, {

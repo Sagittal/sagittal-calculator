@@ -1,7 +1,8 @@
+import { Cents, Id, Name, Position, Prime, Ratio, Sopfr } from "../../../../src/general"
+import { Monzo } from "../../../../src/general/music"
+import { ApotomeSlope } from "../../../../src/general/music/types"
 import { computePositionSymbol } from "../../../../src/notations/ji/positionSymbol"
 import { Level, Mina, SagittalSymbol, SymbolLongAscii, SymbolUnicode } from "../../../../src/notations/ji/types"
-import { Monzo } from "../../../../src/utilities/comma/types"
-import { Cents, Id } from "../../../../src/utilities/types"
 
 describe("computePositionSymbol", () => {
     it("given a position, returns the symbol at that position", () => { // TODO: this could be used for the calculator?
@@ -16,8 +17,13 @@ describe("computePositionSymbol", () => {
             introducingLevel: Level.HIGH,
             mina: 7 as Mina,
             primaryComma: {
+                apotomeSlope: 2.792 as ApotomeSlope,
+                fiveRoughSopfr: 19 as Sopfr<5>,
+                limit: 19 as Prime,
+                ratio: [513, 512] as Ratio,
                 monzo: [-9, 3, 0, 0, 0, 0, 0, 1] as Monzo,
-                position: 3.37801872846485 as Cents,
+                cents: 3.37801872846485 as Cents,
+                name: "19s" as Name<Position>,
             },
             elements: [")|"] as SymbolLongAscii[],
         })

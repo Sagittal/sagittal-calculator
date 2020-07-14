@@ -1,10 +1,10 @@
-import { Index, Resolution, Span } from "../../../../../../../src/utilities/types"
-import {
-    DynamicParameterValue, Parameter, ParameterValue,
-    Submetric,
-    SubmetricScope,
-} from "../../../../../../../src/scripts/unpopularityMetric/types"
+import { Index, Resolution, Span } from "../../../../../../../src/general"
 import { computeSubmetricDynamicParameters } from "../../../../../../../src/scripts/unpopularityMetric/solver/search/scopeToSamples/submetricDynamicParameters"
+import { SubmetricScope } from "../../../../../../../src/scripts/unpopularityMetric/solver/types"
+import {
+    Parameter, ParameterValue,
+    Submetric,
+} from "../../../../../../../src/scripts/unpopularityMetric/types"
 
 describe("computeSubmetricDynamicParameters", () => {
     const submetricIndex = 5 as Index<Submetric>
@@ -12,14 +12,14 @@ describe("computeSubmetricDynamicParameters", () => {
     it("given this submetric's scope (centers, spans, and counts for each parameter) to compute each of its parameters' sample points, returns an array of all the parameters which are dynamic (change, i.e. have a resolution > 1)", () => {
         const submetricScope: SubmetricScope = {
             [ Parameter.A ]: {
-                center: 1 as DynamicParameterValue,
-                span: 0.5 as Span<DynamicParameterValue>,
-                resolution: 5 as Resolution<DynamicParameterValue>,
+                center: 1 as ParameterValue,
+                span: 0.5 as Span<ParameterValue>,
+                resolution: 5 as Resolution<ParameterValue>,
             },
             [ Parameter.W ]: {
-                center: 0.7 as DynamicParameterValue,
-                span: 0.2 as Span<DynamicParameterValue>,
-                resolution: 3 as Resolution<DynamicParameterValue>,
+                center: 0.7 as ParameterValue,
+                span: 0.2 as Span<ParameterValue>,
+                resolution: 3 as Resolution<ParameterValue>,
             },
         }
 
@@ -34,14 +34,14 @@ describe("computeSubmetricDynamicParameters", () => {
     it("leaves a parameter out if it has a 0 resolution", () => {
         const submetricScope = {
             [ Parameter.A ]: {
-                center: 1 as DynamicParameterValue,
-                span: 0.5 as Span<DynamicParameterValue>,
-                resolution: 5 as Resolution<DynamicParameterValue>,
+                center: 1 as ParameterValue,
+                span: 0.5 as Span<ParameterValue>,
+                resolution: 5 as Resolution<ParameterValue>,
             },
             [ Parameter.W ]: {
-                center: 0.7 as DynamicParameterValue,
-                span: 0.2 as Span<DynamicParameterValue>,
-                resolution: 0 as Resolution<DynamicParameterValue>,
+                center: 0.7 as ParameterValue,
+                span: 0.2 as Span<ParameterValue>,
+                resolution: 0 as Resolution<ParameterValue>,
             },
         }
 
@@ -55,9 +55,9 @@ describe("computeSubmetricDynamicParameters", () => {
     it("works when provided a flat value", () => {
         const submetricScope: SubmetricScope = {
             [ Parameter.A ]: {
-                center: 1 as DynamicParameterValue,
-                span: 0.5 as Span<DynamicParameterValue>,
-                resolution: 5 as Resolution<DynamicParameterValue>,
+                center: 1 as ParameterValue,
+                span: 0.5 as Span<ParameterValue>,
+                resolution: 5 as Resolution<ParameterValue>,
             },
             [ Parameter.W ]: 0.7 as ParameterValue,
         }

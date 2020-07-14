@@ -1,6 +1,5 @@
-import { computeBoundedSymbolPositions } from "../../../../src/notations/ji/boundedSymbolPositions"
-import { Cents } from "../../../../src/utilities/types"
-import { Level } from "../../../../src/notations/ji/types"
+import { Cents } from "../../../../src/general"
+import { computeBoundedSymbolPositions, Level } from "../../../../src/notations/ji"
 
 describe("computeBoundedSymbolPositions", () => {
     it("gives the positions of the symbol immediately lesser and greater than the position at that level", () => {

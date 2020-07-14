@@ -1,4 +1,4 @@
-import { SymbolLongAscii } from "../../../notations/ji/types"
+import { SymbolLongAscii } from "../../../notations"
 
 const presentSymbolAscii = (symbolAscii: SymbolLongAscii) => {
     const shaftIndex = symbolAscii.indexOf("|")

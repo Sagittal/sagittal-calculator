@@ -1,6 +1,5 @@
-import { Cents, Count, EnumHash, Proportion, Sum } from "../../utilities/types"
-import { Level } from "../../notations/ji/types"
-import { Monzo } from "../../utilities/comma/types"
+import { Cents, Count, EnumHash, Name, Position, Proportion, Sum } from "../../general"
+import { Level } from "../../notations"
 
 enum EventType {
     INA = "INA",
@@ -11,70 +10,62 @@ enum EventType {
 type EventRank = number & { _EventRankBrand: "EventRank" }
 type Score = number & { _ScoreBrand: "Score" }
 
-type EventName = string & { _EventNameBrand: "EventName" }
-
-interface SnappablePosition {
-    position: Cents,
-    name: EventName,
-    monzo?: Monzo,
-}
-
 interface HistoricalEvent {
-    position: Cents,
-    type: EventType,
     level: Level,
-    name: EventName,
+    name: Name<Position>,
+    cents: Cents,
+    type: EventType,
 }
 
 interface AnalyzedEvent extends HistoricalEvent {
     distance: Cents,
+    exact: boolean,
     inaDistance: Proportion,
     rank: EventRank,
-    exact: boolean,
 }
 
 interface ConsolidatedEvent extends HistoricalEvent {
-    isPossibleHistoryMember: boolean,
-    isBestPossibleHistoryMember: boolean,
-    rankOfBestRankedMemberHistory: EventRank,
-    rankOfBestRankedEventInAnyMemberHistory: EventRank,
-    nextEvents: EventName[],
     exact: boolean,
+    isBestPossibleHistoryMember: boolean,
+    isPossibleHistoryMember: boolean,
+    nextEvents: Name<Position>[],
+    rankOfBestRankedEventInAnyMemberHistory: EventRank,
+    rankOfBestRankedMemberHistory: EventRank,
 }
 
 type History = HistoricalEvent[]
 
 interface AnalyzedHistory {
+    distance: Cents,
     events: AnalyzedEvent[],
-    position: Cents,
+    exact: boolean,
+    inaDistance: Sum<Proportion>,
+    initialPositionTinaDifference: Proportion<"Tina">,
+    cents: Cents,
+    possible: boolean,
     rank: EventRank,
     score: Score,
-    distance: Cents,
-    inaDistance: Sum<Proportion>,
-    exact: boolean,
-    possible: boolean,
     tinaError: Proportion<"Tina">,
-    initialPositionTinaDifference: Proportion<"Tina">,
 }
 
 type ConsolidatedHistories = Partial<EnumHash<Level, ConsolidatedEvent[]>>
 
 interface UpdateConsolidatedEventParameters {
     analyzedEvent: AnalyzedEvent
-    nextAnalyzedEvent?: AnalyzedEvent,
     analyzedHistory: AnalyzedHistory,
     bestPossibleHistory: AnalyzedHistory,
+    nextAnalyzedEvent?: AnalyzedEvent,
 }
 
 interface AnalyzedBound {
-    initialPosition: Cents,
-    possibleHistoryCount: Count<AnalyzedHistory>,
     bestPossibleHistory: AnalyzedHistory,
-    bestRank: EventRank,
     bestPossibleHistoryDistance: Cents,
     bestPossibleHistoryInaDistance: Sum<Proportion>,
-    initialPositionTinaDifference: Proportion<"Tina">,
+    bestRank: EventRank,
     consolidatedHistories: ConsolidatedHistories,
+    initialPosition: Cents,
+    initialPositionTinaDifference: Proportion<"Tina">,
+    possibleHistoryCount: Count<AnalyzedHistory>,
 }
 
 export {
@@ -87,8 +78,6 @@ export {
     ConsolidatedHistories,
     AnalyzedEvent,
     EventType,
-    EventName,
     UpdateConsolidatedEventParameters,
     ConsolidatedEvent,
-    SnappablePosition,
 }

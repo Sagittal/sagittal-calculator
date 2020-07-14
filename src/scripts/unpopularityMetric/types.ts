@@ -1,4 +1,4 @@
-import { Combination, EnumHash, Resolution, Span } from "../../utilities/types"
+import { Resolution, Span } from "../../general"
 
 enum SubmetricType {
     SOAPFAR = "soapfar",
@@ -14,7 +14,7 @@ enum SubmetricType {
 enum SubmetricOperation {
     SUM = "sum",
     COUNT = "count",
-    MAX = "max"
+    MAX = "max",
 }
 
 enum Parameter {
@@ -42,44 +42,45 @@ enum Parameter {
 
 type Submetric = Partial<{
     [ Parameter.SUBMETRIC_TYPE ]: SubmetricType,
-    [ Parameter.WEIGHT ]: DynamicParameterValue,
+    [ Parameter.WEIGHT ]: ParameterValue,
     [ Parameter.WEIGHT_IS_BASE ]: boolean,
     [ Parameter.WEIGHT_IS_EXPONENT ]: boolean,
-    [ Parameter.K ]: DynamicParameterValue
+    [ Parameter.K ]: ParameterValue
     [ Parameter.K_IS_BASE ]: boolean
     [ Parameter.K_IS_EXPONENT ]: boolean
-    [ Parameter.J ]: DynamicParameterValue
+    [ Parameter.J ]: ParameterValue
     [ Parameter.J_IS_BASE ]: boolean
     [ Parameter.J_IS_EXPONENT ]: boolean
-    [ Parameter.A ]: DynamicParameterValue
+    [ Parameter.A ]: ParameterValue
     [ Parameter.A_IS_BASE ]: boolean
     [ Parameter.A_IS_EXPONENT ]: boolean
-    [ Parameter.W ]: DynamicParameterValue
-    [ Parameter.Y ]: DynamicParameterValue
+    [ Parameter.W ]: ParameterValue
+    [ Parameter.Y ]: ParameterValue
     [ Parameter.NUMERATOR_IS_NUMINATOR ]: boolean
-    [ Parameter.MODIFIED_COUNT ]: boolean
+    [ Parameter.MODIFIED_COUNT ]: boolean,
     // [Parameter.X]: DynamicParameterValue
 }>
 
-type SubmetricProperties = {
-    withRepetition: boolean,
+interface SubmetricProperties {
     operation: SubmetricOperation,
     usePrimeIndex?: boolean,
+    withRepetition: boolean,
 }
 
-type SubmetricScope = Partial<EnumHash<Parameter, ParameterValue | DynamicParameterScope>>
-
-type Scope = Combination<SubmetricScope>
-
-type DynamicParameterValue = number & { _DynamicParameterValueBrand: "DynamicParameterValue" }
-
-type ParameterValue = DynamicParameterValue | boolean | SubmetricType
+type ParameterValue = number & { _ParameterValueBrand: "ParameterValue" }
 
 type DynamicParameterScope = Partial<{
-    center: DynamicParameterValue,
-    span: Span<DynamicParameterValue>,
-    resolution: Resolution<DynamicParameterValue>,
+    center: ParameterValue,
+    resolution: Resolution<ParameterValue>,
+    span: Span<ParameterValue>,
 }>
+
+interface Debug {
+    all: boolean,
+    submetricAntivotes: boolean,
+    rankedUnpopularities: boolean,
+    solver: boolean,
+}
 
 export {
     Submetric,
@@ -87,9 +88,7 @@ export {
     SubmetricOperation,
     Parameter,
     SubmetricProperties,
-    SubmetricScope,
-    Scope,
-    DynamicParameterValue,
     ParameterValue,
     DynamicParameterScope,
+    Debug,
 }

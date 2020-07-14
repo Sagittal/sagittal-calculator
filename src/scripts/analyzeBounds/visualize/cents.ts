@@ -1,7 +1,7 @@
-import { MAXIMUM_POSITION } from "../../../notations/ji/intervals"
+import { Cents } from "../../../general"
+import { MAXIMUM_POSITION } from "../../../notations"
 import { MARGIN, Y_SCALE } from "./sizes"
 import { computeX } from "./x"
-import { Cents } from "../../../utilities/types"
 
 const visualizeCents = () => {
     const cents: Cents[] = [...Array(Math.ceil(MAXIMUM_POSITION)).keys()] as Cents[]

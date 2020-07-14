@@ -1,19 +1,19 @@
+import { Cents } from "../../general"
 import { computeBoundedSymbolPositions } from "./boundedSymbolPositions"
-import { computePositionSymbol } from "./positionSymbol"
-import { computeInaDistance } from "./inaDistance"
 import { BOUNDS } from "./bounds"
+import { computeInaDistance } from "./inaDistance"
+import { computePositionSymbol } from "./positionSymbol"
 import { Bound, BoundedSymbols, SagittalSymbol } from "./types"
-import { Cents } from "../../utilities/types"
 
 const computeLevelBoundedSymbols = (bound: Bound): BoundedSymbols => {
-    const { position, levels, id } = bound
+    const { cents, levels, id } = bound
 
     return levels.reduce(
         (levels, level) => {
-            const levelBoundedSymbols: Array<SagittalSymbol | undefined> = computeBoundedSymbolPositions(position, level).map((position: Cents | undefined) => computePositionSymbol(position))
+            const levelBoundedSymbols: Array<SagittalSymbol | undefined> = computeBoundedSymbolPositions(cents, level).map(computePositionSymbol)
             const levelBoundedSymbolsWithDistance = levelBoundedSymbols.map(symbol => {
                 if (symbol) {
-                    const distance: Cents = Math.abs(position - symbol.primaryComma.position) as Cents
+                    const distance: Cents = Math.abs(cents - symbol.primaryComma.cents) as Cents
 
                     return {
                         ...symbol,

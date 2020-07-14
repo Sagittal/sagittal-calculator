@@ -1,11 +1,11 @@
 import { checkSubmetricsForIssues } from "../../../../../src/scripts/unpopularityMetric/sumOfSquares/check"
-import { DynamicParameterValue, Parameter, Submetric } from "../../../../../src/scripts/unpopularityMetric/types"
+import { Parameter, ParameterValue, Submetric } from "../../../../../src/scripts/unpopularityMetric/types"
 
 describe("checkSubmetricsForIssues", () => {
     it("gives a good error when a is a base but it is 1", () => {
         const submetrics: Submetric[] = [
             {
-                [ Parameter.A ]: 1 as DynamicParameterValue,
+                [ Parameter.A ]: 1 as ParameterValue,
                 [ Parameter.A_IS_BASE ]: true,
             },
         ]
@@ -16,7 +16,7 @@ describe("checkSubmetricsForIssues", () => {
     it("gives a good error when a is a base but it is negative", () => {
         const submetrics = [
             {
-                [ Parameter.A ]: -2.23 as DynamicParameterValue,
+                [ Parameter.A ]: -2.23 as ParameterValue,
                 [ Parameter.A_IS_BASE ]: true,
             },
         ]
@@ -71,8 +71,8 @@ describe("checkSubmetricsForIssues", () => {
     it("gives a good error when both j and k are included on the same submetrics (because you could always forever increase them together to get the same result)", () => {
         const submetrics = [
             {
-                [ Parameter.J ]: 3 as DynamicParameterValue,
-                [ Parameter.K ]: 3 as DynamicParameterValue,
+                [ Parameter.J ]: 3 as ParameterValue,
+                [ Parameter.K ]: 3 as ParameterValue,
             },
         ]
 

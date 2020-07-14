@@ -1,32 +1,33 @@
 import "colors"
 import { program } from "commander"
-import { computeSumOfSquaresForSubmetrics } from "../sumOfSquares/sumOfSquaresForSubmetrics"
-import { DynamicParameterValue, Parameter, Submetric, SubmetricType } from "../types"
-import { Combination } from "../../../utilities/types"
+import { Combination } from "../../../general"
+import { debug } from "../debug"
+import { computeSumOfSquaresForSubmetrics } from "../sumOfSquares"
+import { Parameter, ParameterValue, Submetric, SubmetricType } from "../types"
 
 program
     .option("-d, --debug", "debug")
     .parse(process.argv)
 
-const debug = !!program.debug
+debug.rankedUnpopularities = !!program.debug
 
 const submetrics =
     [
         {
-            [ Parameter.K ]: 0.038 as DynamicParameterValue,
-            [ Parameter.A ]: 1.994 as DynamicParameterValue,
+            [ Parameter.K ]: 0.038 as ParameterValue,
+            [ Parameter.A ]: 1.994 as ParameterValue,
             [ Parameter.A_IS_BASE ]: true,
-            [ Parameter.Y ]: 0.455 as DynamicParameterValue,
-            [ Parameter.W ]: -2.08 as DynamicParameterValue,
+            [ Parameter.Y ]: 0.455 as ParameterValue,
+            [ Parameter.W ]: -2.08 as ParameterValue,
             [ Parameter.NUMERATOR_IS_NUMINATOR ]: false,
         },
         {
             [ Parameter.SUBMETRIC_TYPE ]: SubmetricType.COAPFAR,
-            [ Parameter.WEIGHT ]: 0.577 as DynamicParameterValue,
+            [ Parameter.WEIGHT ]: 0.577 as ParameterValue,
             [ Parameter.NUMERATOR_IS_NUMINATOR ]: false,
         },
     ] as Combination<Submetric>
 
-const sumOfSquares = computeSumOfSquaresForSubmetrics(submetrics, { debug })
+const sumOfSquares = computeSumOfSquaresForSubmetrics(submetrics)
 
 console.log(`${sumOfSquares}\n${JSON.stringify(submetrics)}`)

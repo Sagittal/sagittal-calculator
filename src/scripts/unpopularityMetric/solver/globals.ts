@@ -1,10 +1,9 @@
-import { Scope } from "../types"
-import { Combinations, Count } from "../../../utilities/types"
-import { Chunk, ParameterChunk, Status, SubmetricChunk } from "./types"
-import { Metric } from "./search/bestMetric/types"
+import { Combinations, Count } from "../../../general"
+import { Metric } from "./search"
+import { Chunk, ParameterChunk, Scope, Status, SubmetricChunk } from "./types"
 
-let populatedForChunkCount: number[] = []
-let searchedForChunkCount: number[] = []
+const populatedForChunkCount: number[] = []
+const searchedForChunkCount: number[] = []
 
 const scopesForChunkCount: Scope[][] = [] as unknown as Scope[][]
 
@@ -17,8 +16,8 @@ const status: Status = {
 
 const bestMetricsForChunkCount: Metric[] = []
 
-const cachedSubmetricChunkCombinations: Combinations<SubmetricChunk>[] = []
-const cachedParameterChunkCombinations: Combinations<ParameterChunk>[] = []
+const cachedSubmetricChunkCombinations: Array<Combinations<SubmetricChunk>> = []
+const cachedParameterChunkCombinations: Array<Combinations<ParameterChunk>> = []
 
 export {
     populatedForChunkCount,

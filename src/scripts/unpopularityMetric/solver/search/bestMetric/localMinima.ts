@@ -1,8 +1,7 @@
+import { computeDeepDistinct } from "../../../../../general"
+import { Sample } from "../types"
 import { getSumOfSquaresAtSamplePointIfLocalMinimum } from "./localMinimum"
-import { computeDeepDistinct } from "../../../../../utilities/deepDistinct"
-import { LocalMinimum } from "./types"
-import { SumsOfSquares } from "../../../sumOfSquares/types"
-import { Sample } from "../scopeToSamples/types"
+import { LocalMinimum, SumsOfSquares } from "./types"
 
 const computeLocalMinima = (samples: Sample[], sumsOfSquares: SumsOfSquares) => {
     const localMinima: LocalMinimum[] = []
@@ -14,9 +13,8 @@ const computeLocalMinima = (samples: Sample[], sumsOfSquares: SumsOfSquares) => 
         }
     })
 
-    localMinima.sort((localMinimum, nextLocalMinimum) => {
-        return localMinimum.sumOfSquares - nextLocalMinimum.sumOfSquares
-    })
+    localMinima.sort((localMinimum, nextLocalMinimum) =>
+        localMinimum.sumOfSquares - nextLocalMinimum.sumOfSquares)
 
     return computeDeepDistinct(localMinima)
 }

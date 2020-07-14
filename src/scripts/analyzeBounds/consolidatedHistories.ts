@@ -1,7 +1,7 @@
-import { computeInitialConsolidatedEvent } from "./initialConsolidatedEvent"
-import { updateConsolidatedEvent } from "./updateConsolidatedEvent"
 import { ensureOneBestPossibleEventPerLevel } from "./ensureOneBestPossibleEventPerLevel"
+import { computeInitialConsolidatedEvent } from "./initialConsolidatedEvent"
 import { AnalyzedHistory, ConsolidatedEvent, ConsolidatedHistories } from "./types"
+import { updateConsolidatedEvent } from "./updateConsolidatedEvent"
 
 const computeConsolidatedHistories = (analyzedHistories: AnalyzedHistory[], bestPossibleHistory: AnalyzedHistory): ConsolidatedHistories => {
     const consolidatedHistories: ConsolidatedHistories = {}

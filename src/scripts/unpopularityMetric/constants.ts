@@ -1,5 +1,5 @@
+import { EnumHash } from "../../general"
 import { SubmetricOperation, SubmetricProperties, SubmetricType } from "./types"
-import { EnumHash } from "../../utilities/types"
 
 const SUBMETRIC_PROPERTIES: EnumHash<SubmetricType, SubmetricProperties> = {
     [ SubmetricType.SOAPFAR ]: {

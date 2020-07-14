@@ -1,6 +1,6 @@
+import { Prime } from "../../../../src/general"
+import { Copfr, Sopfr } from "../../../../src/general/music"
 import { computeFiveSlicedMonzosToCheck } from "../../../../src/scripts/findCommas/fiveSlicedMonzosToCheck"
-import { Prime } from "../../../../src/utilities/types"
-import { Copfr, Sopfr } from "../../../../src/utilities/comma/types"
 
 describe("computeFiveSlicedMonzosToCheck", () => {
     it("returns the list of 5-sliced monzos to check, given a maximum prime limit, a maximum 5-rough sopfr, and a maximum 5-rough copfr", () => {

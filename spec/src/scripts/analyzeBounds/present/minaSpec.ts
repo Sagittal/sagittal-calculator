@@ -1,5 +1,5 @@
-import { presentMina } from "../../../../../src/scripts/analyzeBounds/present/mina"
-import { Mina } from "../../../../../src/notations/ji/types"
+import { Mina } from "../../../../../src/notations/ji"
+import { presentMina } from "../../../../../src/scripts/analyzeBounds/present"
 
 describe("presentMina", () => {
     it("returns a whole number with no decimal positions for whole minas", () => {

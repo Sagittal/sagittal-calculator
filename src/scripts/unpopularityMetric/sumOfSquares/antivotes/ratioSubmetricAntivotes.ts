@@ -1,15 +1,12 @@
-import { computeSubmetricAntivotes } from "./submetricAntivotes"
-import { computeMonzoFromInteger } from "../../../../utilities/comma/monzoFromInteger"
-import { computeMonzoFromRatio } from "../../../../utilities/comma/monzoFromRatio"
-import { computeLog } from "../../../../utilities/log"
-import { Ratio } from "../../../../utilities/types"
+import { computeLog, computeMonzoFromInteger, computeMonzoFromRatio, Ratio } from "../../../../general"
+import { ParameterValue, Submetric } from "../../types"
 import { Antivotes } from "../types"
-import { DynamicParameterValue, Submetric } from "../../types"
+import { computeSubmetricAntivotes } from "./submetricAntivotes"
 
 const computeRatioSubmetricAntivotes = (fiveRoughRatio: Ratio, submetric: Submetric = {}): Antivotes => {
     const {
-        k = 1 as DynamicParameterValue,
-        j = 1 as DynamicParameterValue,
+        k = 1 as ParameterValue,
+        j = 1 as ParameterValue,
         numeratorIsNuminator = true,
         jIsBase = false,
         jIsExponent = false,
@@ -23,7 +20,13 @@ const computeRatioSubmetricAntivotes = (fiveRoughRatio: Ratio, submetric: Submet
         return computeSubmetricAntivotes(fiveRoughNumberMonzo, submetric)
     }
 
-    const [numerator, denominator] = fiveRoughRatio
+    // TODO compare how it formats array bracket spacing on my desktop -
+    //  ok well tslint does not seem to have an opinion on it
+    //  and yet I told it to use tslint to set code style settings
+    //  but maybe that just wiped out a default
+    //  or maybe that's just a RubyMine failure vs WebStorm as I have on my desktop
+
+    const [ numerator, denominator ] = fiveRoughRatio
     const fiveRoughNumeratorMonzo = computeMonzoFromInteger(numerator)
     const fiveRoughDenominatorMonzo = computeMonzoFromInteger(denominator)
 
@@ -52,7 +55,9 @@ const computeRatioSubmetricAntivotes = (fiveRoughRatio: Ratio, submetric: Submet
             diminuator ** k :
             diminuator * k
 
-    if (isNaN(weightedNuminator) || isNaN(weightedDiminuator)) throw new Error(`You got NaN! in ratioSubmetricAntivotes ${fiveRoughRatio} ${JSON.stringify(submetric, null, 4)} ${weightedNuminator} ${weightedDiminuator} ${diminuator} ${k}`)
+    if (isNaN(weightedNuminator) || isNaN(weightedDiminuator)) {
+        throw new Error(`You got NaN! in ratioSubmetricAntivotes ${fiveRoughRatio} ${JSON.stringify(submetric, null, 4)} ${weightedNuminator} ${weightedDiminuator} ${diminuator} ${k}`)
+    }
 
     return weightedNuminator + weightedDiminuator as Antivotes
 }

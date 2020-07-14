@@ -1,17 +1,13 @@
 import "colors"
 import { program } from "commander"
-import { BOUNDS } from "../../../notations/ji/bounds"
-import { computeHistories } from "../plot/histories"
+import { BOUNDS } from "../../../notations"
 import { analyzeBound } from "../bound"
-import { BOUNDS_ANALYSIS_HEADER_ROW } from "../present/headerRow"
-import { presentBound } from "../present/bound"
-import { presentRankAnalyses } from "../present/rankAnalyses"
-import { presentLevelAnalyses } from "../present/levelAnalyses"
-import { visualizeBounds } from "../visualize/bounds"
-import { updateFile } from "../file"
 import { BOUNDS_ANALYSIS_TEXT_FILE, BOUNDS_ANALYSIS_VISUALIZATION_FILE } from "../constants"
+import { updateFile } from "../file"
+import { computeHistories } from "../plot"
+import { AnalysisMode, BOUNDS_ANALYSIS_HEADER_ROW, presentBound, presentLevelAnalyses, presentRankAnalyses} from "../present"
 import { AnalyzedBound } from "../types"
-import { AnalysisMode } from "../present/types"
+import { visualizeBounds } from "../visualize"
 
 program
     .option("-x, --do-not-update-files", "do not update files")
@@ -35,7 +31,7 @@ textOutput = textOutput.concat(presentLevelAnalyses())
 textOutput = textOutput.concat(presentRankAnalyses())
 
 if (shouldUpdateFiles) {
-    updateFile(BOUNDS_ANALYSIS_TEXT_FILE, textOutput.replace(/\[\d\dm/g, "")) // remove colors
+    updateFile(BOUNDS_ANALYSIS_TEXT_FILE, textOutput.replace(/\[\d\dm/g, "")) // Remove colors
 
     const visualizationOutput = visualizeBounds(boundsAnalysis)
     updateFile(BOUNDS_ANALYSIS_VISUALIZATION_FILE, visualizationOutput)

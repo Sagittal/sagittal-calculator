@@ -1,9 +1,5 @@
 import { program } from "commander"
-import { computeMonzoFromRatio } from "../../../utilities/comma/monzoFromRatio"
-import { presentComma } from "../../../utilities/comma/present/comma"
-import { parseRatio } from "../../../utilities/comma/ratio"
-import { parseMonzo } from "../../../utilities/comma/monzo"
-import { analyzeComma } from "../../../utilities/comma/comma"
+import { analyzeComma, computeMonzoFromRatio, parseMonzo, parseRatio, presentComma } from "../../../general"
 
 program
     .option("-m, --monzo <monzo>", "monzo", parseMonzo)
@@ -27,7 +23,9 @@ if (comma) {
     monzo = computeMonzoFromRatio(program.ratio)
 }
 
-if (!monzo) throw new Error("Unable to determine monzo for comma.")
+if (!monzo) {
+    throw new Error("Unable to determine monzo for comma.")
+}
 
 const analyzedComma = analyzeComma(monzo)
 

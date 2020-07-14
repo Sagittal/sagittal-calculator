@@ -1,4 +1,4 @@
-import { LEVELS } from "../../../notations/ji/levels"
+import { LEVELS } from "../../../notations"
 
 const computeReversedLevelIndex = (levelIndex: number) => LEVELS.length - 1 - levelIndex
 

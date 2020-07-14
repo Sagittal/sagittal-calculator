@@ -1,7 +1,7 @@
+import { Cents } from "../../../../src/general/music"
+import { Level } from "../../../../src/notations/ji"
 import { analyzeEvents } from "../../../../src/scripts/analyzeBounds/events"
 import { EventType, History } from "../../../../src/scripts/analyzeBounds/types"
-import { Level } from "../../../../src/notations/ji/types"
-import { Cents } from "../../../../src/utilities/types"
 import { analyzedEventFixture, eventFixture } from "../../../helpers/scripts/analyzeBounds/fixtures"
 
 describe("analyzeEvents", () => {
@@ -11,31 +11,31 @@ describe("analyzeEvents", () => {
                 ...eventFixture,
                 type: EventType.INA,
                 level: Level.HIGH,
-                position: 10.0 as Cents,
+                cents: 10.0 as Cents,
             },
             {
                 ...eventFixture,
                 type: EventType.SIZE,
                 level: Level.ULTRA,
-                position: 10.2 as Cents,
+                cents: 10.2 as Cents,
             },
             {
                 ...eventFixture,
                 type: EventType.MEAN,
                 level: Level.EXTREME,
-                position: 10.1 as Cents,
+                cents: 10.1 as Cents,
             },
         ]
-        const actualBoundPosition = 10.2 as Cents
+        const actualBoundCents = 10.2 as Cents
 
-        const result = analyzeEvents(history, actualBoundPosition)
+        const result = analyzeEvents(history, actualBoundCents)
 
         expect(result).toEqual(jasmine.arrayWithExactContents([
             {
                 ...analyzedEventFixture,
                 type: EventType.INA,
                 level: Level.HIGH,
-                position: 10.0,
+                cents: 10.0,
                 rank: 0,
                 exact: false,
                 distance: 0,
@@ -45,7 +45,7 @@ describe("analyzeEvents", () => {
                 ...analyzedEventFixture,
                 type: EventType.SIZE,
                 level: Level.ULTRA,
-                position: 10.2,
+                cents: 10.2,
                 rank: 2,
                 exact: true,
                 distance: 0.1999999999999993,
@@ -55,7 +55,7 @@ describe("analyzeEvents", () => {
                 ...analyzedEventFixture,
                 type: EventType.MEAN,
                 level: Level.EXTREME,
-                position: 10.1,
+                cents: 10.1,
                 rank: 1,
                 exact: false,
                 distance: 0.09999999999999964,

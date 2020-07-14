@@ -1,4 +1,4 @@
-import { Index, Ratio } from "../../../utilities/types"
+import { Index, Ratio } from "../../../general"
 
 type SumOfSquares = number & { _SumOfSquaresBrand: "SumOfSquares" }
 type UnpopularityRank = number & { _UnpopularityRankBrand: "UnpopularityRank" }
@@ -6,12 +6,10 @@ type PopularityRank = number & { _PopularityRankBrand: "PopularityRank" }
 type Votes = number & { _VotesBrand: "Votes" }
 type Antivotes = number & { _AntivotesBrand: "Antivotes" }
 
-type SumsOfSquares = Array<SumsOfSquares | SumOfSquares | undefined>
-
 interface Unpopularity {
     antivotes: Antivotes,
-    index: Index<Unpopularity>,
     fiveRoughRatio: Ratio,
+    index: Index<Unpopularity>,
 }
 
 interface RankedUnpopularity extends Unpopularity {
@@ -26,7 +24,6 @@ interface Popularity {
 
 export {
     SumOfSquares,
-    SumsOfSquares,
     Unpopularity,
     UnpopularityRank,
     Popularity,

@@ -1,4 +1,4 @@
-// per Scala statistics
+// Per Scala statistics
 import { Popularity } from "./types"
 
 const COMMA_POPULARITIES: Popularity[] = [
@@ -92,7 +92,7 @@ const COMMA_POPULARITIES: Popularity[] = [
     { rank: 88, fiveRoughRatio: [29, 11], votes: 13 },
     { rank: 89, fiveRoughRatio: [37, 13], votes: 13 },
     { rank: 90, fiveRoughRatio: [143, 5], votes: 13 },
-    { rank: 91, fiveRoughRatio: [211, 11], votes: 13 }, // this one is stricken from my spreadsheet
+    { rank: 91, fiveRoughRatio: [211, 11], votes: 13 }, // This one is stricken from my spreadsheet
     { rank: 92, fiveRoughRatio: [78125, 1], votes: 13 },
     { rank: 93, fiveRoughRatio: [37, 19], votes: 12 },
     { rank: 94, fiveRoughRatio: [475, 1], votes: 12 },
@@ -108,7 +108,7 @@ const COMMA_POPULARITIES: Popularity[] = [
     { rank: 104, fiveRoughRatio: [175, 11], votes: 11 },
     { rank: 105, fiveRoughRatio: [275, 49], votes: 11 },
     { rank: 106, fiveRoughRatio: [343, 125], votes: 11 },
-    { rank: 107, fiveRoughRatio: [433, 125], votes: 11 }, // this one is stricken from my spreadsheet
+    { rank: 107, fiveRoughRatio: [433, 125], votes: 11 }, // This one is stricken from my spreadsheet
     { rank: 108, fiveRoughRatio: [117649, 1], votes: 11 },
     { rank: 109, fiveRoughRatio: [29, 25], votes: 10 },
     { rank: 110, fiveRoughRatio: [31, 7], votes: 10 },

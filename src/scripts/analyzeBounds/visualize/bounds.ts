@@ -1,15 +1,15 @@
 import * as fs from "fs"
-import { addFont } from "./font"
-import { addParentSvg } from "./parentSvg"
-import { visualizeEvents } from "./events"
+import { AnalyzedBound } from "../types"
 import { visualizeCents } from "./cents"
+import { visualizeEvents } from "./events"
+import { addFont } from "./font"
+import { visualizeInaMidpoints } from "./inaMidpoints"
+import { visualizeLevelBounds } from "./levelBounds"
+import { visualizeLevelCommaMeans } from "./levelCommaMeans"
 import { visualizeLevels } from "./levels"
 import { visualizeLevelSymbols } from "./levelSymbols"
-import { visualizeLevelBounds } from "./levelBounds"
-import { visualizeInaMidpoints } from "./inaMidpoints"
-import { visualizeLevelCommaMeans } from "./levelCommaMeans"
+import { addParentSvg } from "./parentSvg"
 import { visualizeSizeCategoryBounds } from "./sizeCategoryBounds"
-import { AnalyzedBound } from "../types"
 
 const visualizeBounds = (boundsAnalysis: AnalyzedBound[]) => {
     fs.copyFileSync("assets/fonts/BravuraSagittalUpdate_v10.otf", "dist/analyzeBounds/BravuraSagittalUpdate_v10.otf")

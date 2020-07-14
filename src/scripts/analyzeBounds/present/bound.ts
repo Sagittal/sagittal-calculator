@@ -1,14 +1,14 @@
-import { COLORS } from "./colors"
-import { presentNumber } from "./number"
-import { presentSymbolAscii } from "./symbolAscii"
+import { AnalyzedBound } from "../types"
 import { alignFormattedNumber } from "./alignFormattedNumber"
-import { presentMina } from "./mina"
-import { extractLevelRanks } from "./levelRanks"
+import { extractBoundIdentifiers } from "./boundIdentifiers"
+import { COLORS } from "./colors"
 import { extractLevelDistances } from "./levelDistances"
 import { extractLevelInaDistances } from "./levelInaDistances"
-import { extractBoundIdentifiers } from "./boundIdentifiers"
+import { extractLevelRanks } from "./levelRanks"
+import { presentMina } from "./mina"
+import { presentNumber } from "./number"
+import { presentSymbolAscii } from "./symbolAscii"
 import { AnalysisMode, PresentBoundParameters } from "./types"
-import { AnalyzedBound } from "../types"
 
 const presentBound = (analyzedBound: AnalyzedBound, { bound, mode = AnalysisMode.DETAILS }: PresentBoundParameters) => {
     let presentedBound
@@ -18,7 +18,7 @@ const presentBound = (analyzedBound: AnalyzedBound, { bound, mode = AnalysisMode
         const {
             extremeLevelLesserBoundedSymbol,
             extremeLevelGreaterBoundedSymbol,
-            position,
+            cents,
             lesserBoundedMina,
             greaterBoundedMina,
         } = boundIdentifiers
@@ -74,7 +74,7 @@ const presentBound = (analyzedBound: AnalyzedBound, { bound, mode = AnalysisMode
             bestPossibleHistoryUltraInaDistance,
             bestPossibleHistoryExtremeInaDistance,
             alignFormattedNumber(presentNumber(bestPossibleHistoryInaDistance)),
-            alignFormattedNumber(presentNumber(position)),
+            alignFormattedNumber(presentNumber(cents)),
             alignFormattedNumber(presentNumber(initialPosition)),
             alignFormattedNumber(presentNumber(initialPositionTinaDifference)),
         ].join("\t")

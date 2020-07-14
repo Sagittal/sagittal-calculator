@@ -1,17 +1,17 @@
-import { SamplePoint } from "../scopeToSamples/types"
-import { Index } from "../../../../../utilities/types"
-import { DynamicParameterValue } from "../../../types"
+import { Index } from "../../../../../general"
+import { ParameterValue } from "../../../types"
+import { SamplePoint } from "../types"
 
 const computeAdjacentSamplePoints = (samplePoint: SamplePoint) => {
     const adjacentSamplePoints: SamplePoint[] = []
 
-    samplePoint.forEach((dynamicParameterValueIndex: Index<DynamicParameterValue>, index) => { // haha wow it's an index of an index
+    samplePoint.forEach((dynamicParameterValueIndex: Index<ParameterValue>, index) => { // haha wow it's an index of an index
         const adjacentSamplePointOne: SamplePoint = samplePoint.slice() as SamplePoint
-        adjacentSamplePointOne[ index ] = dynamicParameterValueIndex - 1 as Index<DynamicParameterValue>
+        adjacentSamplePointOne[ index ] = dynamicParameterValueIndex - 1 as Index<ParameterValue>
         adjacentSamplePoints.push(adjacentSamplePointOne)
 
         const adjacentSamplePointTwo: SamplePoint = samplePoint.slice() as SamplePoint
-        adjacentSamplePointTwo[ index ] = dynamicParameterValueIndex + 1 as Index<DynamicParameterValue>
+        adjacentSamplePointTwo[ index ] = dynamicParameterValueIndex + 1 as Index<ParameterValue>
         adjacentSamplePoints.push(adjacentSamplePointTwo)
     })
 

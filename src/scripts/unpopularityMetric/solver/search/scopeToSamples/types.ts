@@ -1,12 +1,5 @@
-import { DynamicParameterValue, Parameter, Submetric } from "../../../types"
-import { Combination, Index, Unit } from "../../../../../utilities/types"
-
-type SamplePoint = Index<DynamicParameterValue>[] & { _SamplePointBrand: "SamplePoint" }
-
-type Sample = {
-    submetrics: Combination<Submetric>,
-    samplePoint: SamplePoint,
-}
+import { Index, Unit } from "../../../../../general"
+import { Parameter, ParameterValue, Submetric } from "../../../types"
 
 interface ComputeDynamicParameterValueIndicesOptions {
     dynamicParameters: DynamicParameter[],
@@ -15,22 +8,20 @@ interface ComputeDynamicParameterValueIndicesOptions {
 }
 
 interface DynamicParameter {
-    submetricIndex: Index<Submetric>,
     parameter: Parameter,
-    values: DynamicParameterValue[],
-    unit: Unit<DynamicParameterValue>,
+    submetricIndex: Index<Submetric>,
+    unit: Unit<ParameterValue>,
+    values: ParameterValue[],
 }
 
 type SubmetricPossibility = Submetric & { _SubmetricPossibilityBrand: "SubmetricPossibility" }
 
 type ComputeResolutionOptions = Partial<{
-    maximumUnit: Unit<DynamicParameterValue>
+    maximumUnit: Unit<ParameterValue>,
 }>
 
 export {
-    Sample,
     ComputeDynamicParameterValueIndicesOptions,
-    SamplePoint,
     DynamicParameter,
     SubmetricPossibility,
     ComputeResolutionOptions,

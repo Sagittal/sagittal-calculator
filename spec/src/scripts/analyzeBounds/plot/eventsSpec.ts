@@ -1,8 +1,7 @@
-import { computeBoundedSymbolPositions } from "../../../../../src/notations/ji/boundedSymbolPositions"
+import { Cents, Name, Position } from "../../../../../src/general"
+import { computeBoundedSymbolPositions, Level } from "../../../../../src/notations/ji"
 import { computeEvents } from "../../../../../src/scripts/analyzeBounds/plot/events"
-import { Level } from "../../../../../src/notations/ji/types"
-import { EventName, EventType } from "../../../../../src/scripts/analyzeBounds/types"
-import { Cents } from "../../../../../src/utilities/types"
+import { EventType } from "../../../../../src/scripts/analyzeBounds/types"
 
 describe("computeEvents", () => {
     let level: Level
@@ -26,7 +25,7 @@ describe("computeEvents", () => {
                         level: Level.ULTRA,
                         type: EventType.INA,
                         name: "2.5°58",
-                        position: 4.900215778349652,
+                        cents: 4.900215778349652,
                     },
                 ]))
             })
@@ -42,7 +41,7 @@ describe("computeEvents", () => {
                         level: Level.ULTRA,
                         type: EventType.INA,
                         name: "2.5°58",
-                        position: 4.900215778349652,
+                        cents: 4.900215778349652,
                     },
                 ]))
             })
@@ -58,13 +57,13 @@ describe("computeEvents", () => {
                         level: Level.HIGH,
                         type: EventType.INA,
                         name: "11.5°47",
-                        position: 27.816544035397598,
+                        cents: 27.816544035397598,
                     },
                     {
                         level: Level.HIGH,
                         type: EventType.INA,
                         name: "12.5°47",
-                        position: 30.235373951519126,
+                        cents: 30.235373951519126,
                     },
                 ]))
             })
@@ -94,8 +93,8 @@ describe("computeEvents", () => {
                     {
                         level: Level.MEDIUM,
                         type: EventType.MEAN,
-                        name: "/| |)" as EventName,
-                        position: 24.38519069840745 as Cents,
+                        name: "/| |)" as Name<Position>,
+                        cents: 24.38519069840745 as Cents,
                     },
                 ])
             })
@@ -110,8 +109,8 @@ describe("computeEvents", () => {
                     {
                         level: Level.HIGH,
                         type: EventType.MEAN,
-                        name: ")/| |)" as EventName,
-                        position: 26.07420006263995 as Cents,
+                        name: ")/| |)" as Name<Position>,
+                        cents: 26.07420006263995 as Cents,
                     },
                 ])
             })
@@ -126,8 +125,8 @@ describe("computeEvents", () => {
                     {
                         level: Level.ULTRA,
                         type: EventType.MEAN,
-                        name: ".|) |)" as EventName,
-                        position: 26.287231406133 as Cents,
+                        name: ".|) |)" as Name<Position>,
+                        cents: 26.287231406133 as Cents,
                     },
                 ])
             })
@@ -142,8 +141,8 @@ describe("computeEvents", () => {
                     {
                         level: Level.EXTREME,
                         type: EventType.MEAN,
-                        name: "`.|) ,,|)" as EventName,
-                        position: 26.220209513021253 as Cents,
+                        name: "`.|) ,,|)" as Name<Position>,
+                        cents: 26.220209513021253 as Cents,
                     },
                 ])
             })
@@ -162,8 +161,8 @@ describe("computeEvents", () => {
                     {
                         level: Level.HIGH,
                         type: EventType.MEAN,
-                        name: "|) )|)" as EventName,
-                        position: 28.95310116433255 as Cents,
+                        name: "|) )|)" as Name<Position>,
+                        cents: 28.95310116433255 as Cents,
                     },
                 ])
             })
@@ -184,8 +183,8 @@ describe("computeEvents", () => {
                     {
                         level: Level.MEDIUM,
                         type: EventType.SIZE,
-                        name: "C|S" as EventName,
-                        position: 33.38249264420710 as Cents,
+                        name: "C|S" as Name<Position>,
+                        cents: 33.38249264420710 as Cents,
                     },
                 ])
             })

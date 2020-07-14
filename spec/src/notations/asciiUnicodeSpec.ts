@@ -1,4 +1,4 @@
-import { unicodeFromAscii } from "../../../src/notations/asciiUnicode"
+import { unicodeFromAscii } from "../../../src/notations"
 
 describe("asciiUnicode", () => {
     it("given an ascii representation of a symbol, it returns its unicode representation", () => {

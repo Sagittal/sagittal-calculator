@@ -1,7 +1,7 @@
-import { FORMATTED_RANK_NAMES } from "./rank"
-import { presentLevel } from "./level"
+import { Level } from "../../../notations"
 import { COLORS } from "./colors"
-import { Level } from "../../../notations/ji/types"
+import { presentLevel } from "./level"
+import { FORMATTED_RANK_NAMES } from "./rank"
 
 const presentLevelAnalysis = (level: Level, levelsBestHistoryRanks: { [ index: number ]: number | undefined }, levelsBestCumulativeHistoryRanks: { [ index: number ]: number }) => {
     const presentedLevelAnalysis: string[] = [`${presentLevel(level)}            \there\tcmltv`]

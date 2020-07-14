@@ -1,13 +1,13 @@
+import { computeLog } from "../../../../../../src/general/math"
+import { Monzo } from "../../../../../../src/general/music"
 import { computeSubmetricAntivotes } from "../../../../../../src/scripts/unpopularityMetric/sumOfSquares/antivotes/submetricAntivotes"
-import { computeLog } from "../../../../../../src/utilities/log"
+import { Antivotes } from "../../../../../../src/scripts/unpopularityMetric/sumOfSquares/types"
 import {
-    DynamicParameterValue,
     Parameter,
+    ParameterValue,
     Submetric,
     SubmetricType,
 } from "../../../../../../src/scripts/unpopularityMetric/types"
-import { Monzo } from "../../../../../../src/utilities/comma/types"
-import { Antivotes } from "../../../../../../src/scripts/unpopularityMetric/sumOfSquares/types"
 
 describe("computeSubmetricAntivotes", () => {
     let submetric: Submetric
@@ -38,7 +38,7 @@ describe("computeSubmetricAntivotes", () => {
         })
 
         it("when a is provided, multiplies the prime by it", () => {
-            const a = 0.56 as DynamicParameterValue
+            const a = 0.56 as ParameterValue
             submetric[ Parameter.A ] = a
 
             const result = computeSubmetricAntivotes(fiveRoughNumberMonzo, submetric)
@@ -51,7 +51,7 @@ describe("computeSubmetricAntivotes", () => {
         })
 
         it("when a is used as an exponent (not a coefficient)", () => {
-            const a = 0.56 as DynamicParameterValue
+            const a = 0.56 as ParameterValue
             submetric[ Parameter.A ] = a
             submetric[ Parameter.A_IS_EXPONENT ] = true
 
@@ -65,7 +65,7 @@ describe("computeSubmetricAntivotes", () => {
         })
 
         it("when a is used as a base (not a coefficient)", () => {
-            const a = 0.56 as DynamicParameterValue
+            const a = 0.56 as ParameterValue
             submetric[ Parameter.A ] = a
             submetric[ Parameter.A_IS_BASE ] = true
 
@@ -79,8 +79,8 @@ describe("computeSubmetricAntivotes", () => {
         })
 
         it("when w is provided, adds a constant to each prime after applying the coefficient, exponent, or base", () => {
-            const a = 0.56 as DynamicParameterValue
-            const w = 0.34 as DynamicParameterValue
+            const a = 0.56 as ParameterValue
+            const w = 0.34 as ParameterValue
             submetric[ Parameter.A ] = a
             submetric[ Parameter.W ] = w
 
@@ -109,7 +109,7 @@ describe("computeSubmetricAntivotes", () => {
         // })
 
         it("when y is provided, raises the prime exponent to an exponent", () => {
-            const y = 0.81 as DynamicParameterValue
+            const y = 0.81 as ParameterValue
             submetric[ Parameter.Y ] = y
 
             const result = computeSubmetricAntivotes(fiveRoughNumberMonzo, submetric)

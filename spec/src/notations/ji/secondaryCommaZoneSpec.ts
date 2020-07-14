@@ -1,3 +1,6 @@
+import { Cents, Id, Name, Position, Prime, Ratio, Sopfr } from "../../../../src/general"
+import { Monzo } from "../../../../src/general/music"
+import { ApotomeSlope } from "../../../../src/general/music/types"
 import { computeSecondaryCommaZone } from "../../../../src/notations/ji/secondaryCommaZone"
 import {
     Level,
@@ -6,8 +9,6 @@ import {
     SymbolLongAscii,
     SymbolUnicode,
 } from "../../../../src/notations/ji/types"
-import { Monzo } from "../../../../src/utilities/comma/types"
-import { Cents, Id } from "../../../../src/utilities/types"
 
 describe("secondaryCommaZone", () => {
     it("returns the lower and upper bound of where secondary commas are represented by the given symbol, i.e. its capture zone at its introducing level", () => {
@@ -18,8 +19,13 @@ describe("secondaryCommaZone", () => {
             introducingLevel: Level.HIGH,
             mina: 78 as Mina,
             primaryComma: {
+                apotomeSlope: -4.343 as ApotomeSlope,
+                fiveRoughSopfr: 28 as Sopfr<5>,
+                limit: 23 as Prime,
+                ratio: [46, 45] as Ratio,
                 monzo: [1, -2, -1, 0, 0, 0, 0, 0, 1] as Monzo,
-                position: 38.0506316728057 as Cents,
+                cents: 38.0506316728057 as Cents,
+                name: "23/5S" as Name<Position>,
             },
             elements: [],
         }
@@ -40,8 +46,13 @@ describe("secondaryCommaZone", () => {
             introducingLevel: Level.EXTREME,
             mina: 78.39014554523920 as Mina,
             primaryComma: {
+                apotomeSlope: 2.656 as ApotomeSlope,
+                fiveRoughSopfr: 20 as Sopfr<5>,
+                limit: 13 as Prime,
+                ratio: [1701, 1664] as Ratio,
                 monzo: [-7, 5, 0, 1, 0, -1] as Monzo,
-                position: 38.0732490267513 as Cents,
+                cents: 38.0732490267513 as Cents,
+                name: "7/13S" as Name<Position>,
             },
             elements: [],
         }
@@ -62,8 +73,13 @@ describe("secondaryCommaZone", () => {
             introducingLevel: Level.MEDIUM,
             mina: 80 as Mina,
             primaryComma: {
+                apotomeSlope: -0.396 as ApotomeSlope,
+                fiveRoughSopfr: 16 as Sopfr<5>,
+                limit: 11 as Prime,
+                ratio: [45, 44] as Ratio,
                 monzo: [-2, 2, 1, 0, -1] as Monzo,
-                position: 38.9057732308529 as Cents,
+                cents: 38.9057732308529 as Cents,
+                name: "5/11S" as Name<Position>,
             },
             elements: [],
         }
@@ -84,8 +100,13 @@ describe("secondaryCommaZone", () => {
             introducingLevel: Level.MEDIUM,
             mina: 0 as Mina,
             primaryComma: {
-                monzo: [] as Monzo,
-                position: 0.0000000000000 as Cents,
+                apotomeSlope: 0.000 as ApotomeSlope,
+                fiveRoughSopfr: 0 as Sopfr<5>,
+                limit: 2 as Prime,
+                ratio: [1, 1] as Ratio,
+                monzo: [] as unknown as Monzo,
+                cents: 0 as Cents,
+                name: "1u" as Name<Position>,
             },
             elements: [],
         }

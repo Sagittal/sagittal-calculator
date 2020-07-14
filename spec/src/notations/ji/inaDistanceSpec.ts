@@ -1,7 +1,6 @@
-import { computeInaDistance } from "../../../../src/notations/ji/inaDistance"
-import { ACCURACY_THRESHOLD } from "../../../../src/utilities/constants"
-import { Level } from "../../../../src/notations/ji/types"
-import { Cents } from "../../../../src/utilities/types"
+import { Cents } from "../../../../src/general"
+import { ACCURACY_THRESHOLD } from "../../../../src/general/code/constants"
+import { computeInaDistance, Level } from "../../../../src/notations/ji"
 
 describe("inaDistance", () => {
     it("returns the distance as a proportion of the size of the ina at that level", () => {

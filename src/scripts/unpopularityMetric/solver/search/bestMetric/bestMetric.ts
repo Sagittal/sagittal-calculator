@@ -1,14 +1,14 @@
-import { computeSamples } from "../scopeToSamples/samples"
-import { computeDynamicParameters } from "../scopeToSamples/dynamicParameters"
-import { computeNextScopes } from "./nextScopes"
+import { Combination, deepEquals } from "../../../../../general"
+import { debug } from "../../../debug"
+import { SumOfSquares } from "../../../sumOfSquares"
+import { Submetric } from "../../../types"
+import { Scope } from "../../types"
+import { computeDynamicParameters, computeSamples } from "../scopeToSamples"
 import { computeIndentation } from "./indentation"
 import { computeLocalMinima } from "./localMinima"
-import { deepEquals } from "../../../../../utilities/deepEquals"
+import { computeNextScopes } from "./nextScopes"
 import { computePossiblyUpdatedBestMetricWhilePopulatingSumsOfSquares } from "./sumsOfSquares"
-import { SumOfSquares, SumsOfSquares } from "../../../sumOfSquares/types"
-import { Scope, Submetric } from "../../../types"
-import { Combination } from "../../../../../utilities/types"
-import { Metric, ComputeBestMetricOptions } from "./types"
+import { ComputeBestMetricOptions, Metric, SumsOfSquares } from "./types"
 
 const computeBestMetric = (scope: Scope, options: ComputeBestMetricOptions = {}): Metric => {
     const {
@@ -20,7 +20,6 @@ const computeBestMetric = (scope: Scope, options: ComputeBestMetricOptions = {})
         progressMessage = "",
         localMinimum,
         recurse = true,
-        debug = false,
     }: ComputeBestMetricOptions = options
 
     const nextDepth = depth + 1
@@ -31,15 +30,19 @@ const computeBestMetric = (scope: Scope, options: ComputeBestMetricOptions = {})
     const samples = computeSamples({ submetricScopes: scope, dynamicParameters })
 
     const sumsOfSquares: SumsOfSquares = []
-    let bestMetric = computePossiblyUpdatedBestMetricWhilePopulatingSumsOfSquares(sumsOfSquares, samples, previousBestMetric, indentation, debug)
+    let bestMetric = computePossiblyUpdatedBestMetricWhilePopulatingSumsOfSquares(sumsOfSquares, samples, previousBestMetric, indentation)
 
-    if (debug) console.log(`\n${indentation}local minima:`)
+    if (debug.all) {
+        console.log(`\n${indentation}local minima:`)
+    }
     const nextLocalMinima = computeLocalMinima(samples, sumsOfSquares)
     for (const nextLocalMinimum of nextLocalMinima) {
-        let index = nextLocalMinima.indexOf(nextLocalMinimum)
+        const index = nextLocalMinima.indexOf(nextLocalMinimum)
         const nextScopes = computeNextScopes(nextLocalMinimum.samplePoint, dynamicParameters, scope)
         const nextProgressMessage = progressMessage + `${index}/${(nextLocalMinima.length)}@depth${nextDepth} `
-        if (debug) console.log(`${indentation}${nextProgressMessage}${JSON.stringify(nextLocalMinimum)}`)
+        if (debug.all) {
+            console.log(`${indentation}${nextProgressMessage}${JSON.stringify(nextLocalMinimum)}`)
+        }
 
         if (recurse && !deepEquals(localMinimum, nextLocalMinimum)) {
             bestMetric = computeBestMetric(nextScopes, {
@@ -47,7 +50,6 @@ const computeBestMetric = (scope: Scope, options: ComputeBestMetricOptions = {})
                 bestMetric,
                 progressMessage: nextProgressMessage,
                 localMinimum: nextLocalMinimum,
-                debug,
             })
         }
     }

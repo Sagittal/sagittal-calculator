@@ -1,34 +1,33 @@
-import { DynamicParameterValue, Parameter, SubmetricScope, SubmetricType } from "../../types"
-import { ParameterChunk, SubmetricChunk } from "../types"
-import { computeResolution } from "../search/scopeToSamples/resolution"
-import { Span } from "../../../../utilities/types"
+import { Span } from "../../../../general"
+import { Parameter, ParameterValue, SubmetricType } from "../../types"
+import { computeResolution } from "../search"
+import { ParameterChunk, SubmetricChunk, SubmetricScope } from "../types"
 
 // AKA: if they are going to be included in the automatically generated scopes per chunk count, what should they be set to
 const INITIAL_PARAMETER_SCOPES: SubmetricScope = {
-    [ Parameter.WEIGHT ]: { center: 0.5 as DynamicParameterValue, span: 1 as Span<DynamicParameterValue>, resolution: computeResolution(1 as Span<DynamicParameterValue>) },
+    [ Parameter.WEIGHT ]: { center: 0.5 as ParameterValue, span: 1 as Span<ParameterValue>, resolution: computeResolution(1 as Span<ParameterValue>) },
     [ Parameter.WEIGHT_IS_BASE ]: true,
     [ Parameter.WEIGHT_IS_EXPONENT ]: true,
-    [ Parameter.K ]: { center: 1 as DynamicParameterValue, span: 2 as Span<DynamicParameterValue>, resolution: computeResolution(2 as Span<DynamicParameterValue>) },
+    [ Parameter.K ]: { center: 1 as ParameterValue, span: 2 as Span<ParameterValue>, resolution: computeResolution(2 as Span<ParameterValue>) },
     [ Parameter.K_IS_BASE ]: true,
     [ Parameter.K_IS_EXPONENT ]: true,
-    [ Parameter.J ]: { center: 1 as DynamicParameterValue, span: 2 as Span<DynamicParameterValue>, resolution: computeResolution(2 as Span<DynamicParameterValue>) },
+    [ Parameter.J ]: { center: 1 as ParameterValue, span: 2 as Span<ParameterValue>, resolution: computeResolution(2 as Span<ParameterValue>) },
     [ Parameter.J_IS_BASE ]: true,
     [ Parameter.J_IS_EXPONENT ]: true,
-    [ Parameter.A ]: { center: 2 as DynamicParameterValue, span: 4 as Span<DynamicParameterValue>, resolution: computeResolution(4 as Span<DynamicParameterValue>) },
+    [ Parameter.A ]: { center: 2 as ParameterValue, span: 4 as Span<ParameterValue>, resolution: computeResolution(4 as Span<ParameterValue>) },
     [ Parameter.A_IS_BASE ]: true,
     [ Parameter.A_IS_EXPONENT ]: true,
-    [ Parameter.W ]: { center: 0 as DynamicParameterValue, span: 6 as Span<DynamicParameterValue>, resolution: computeResolution(6 as Span<DynamicParameterValue>) },
+    [ Parameter.W ]: { center: 0 as ParameterValue, span: 6 as Span<ParameterValue>, resolution: computeResolution(6 as Span<ParameterValue>) },
     // [Parameter.X]: { center: 0 as DynamicParameterValue, span: 6 as Span<DynamicParameterValue>, resolution: computeResolution(6 as Span<DynamicParameterValue>) },
-    [ Parameter.Y ]: { center: 0 as DynamicParameterValue, span: 6 as Span<DynamicParameterValue>, resolution: computeResolution(6 as Span<DynamicParameterValue>) },
+    [ Parameter.Y ]: { center: 0 as ParameterValue, span: 6 as Span<ParameterValue>, resolution: computeResolution(6 as Span<ParameterValue>) },
     // [Parameter.V]: { center: 0, span: 6 },
     // [Parameter.T]: { center: 0, span: 6 },
     [ Parameter.NUMERATOR_IS_NUMINATOR ]: false,
     [ Parameter.MODIFIED_COUNT ]: true,
 }
 
-const SUBMETRIC_CHUNKS: SubmetricChunk[] = Object.values(SubmetricType).map(submetricType => {
-    return { [ Parameter.SUBMETRIC_TYPE ]: submetricType }
-})
+const SUBMETRIC_CHUNKS: SubmetricChunk[] = Object.values(SubmetricType).map(submetricType =>
+    ({ [ Parameter.SUBMETRIC_TYPE ]: submetricType }))
 
 const PARAMETER_CHUNKS: ParameterChunk[] = [
     { [ Parameter.K ]: INITIAL_PARAMETER_SCOPES[ Parameter.K ] },

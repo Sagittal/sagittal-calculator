@@ -1,13 +1,13 @@
-import { Cents } from "../../../utilities/types"
-import { Bound, BoundedSymbols, Mina, SymbolLongAscii } from "../../../notations/ji/types"
+import { Cents } from "../../../general"
+import { Bound, BoundedSymbols, Mina, SymbolLongAscii } from "../../../notations"
 
 interface BoundIdentifiers {
-    extremeLevelLesserBoundedSymbol: SymbolLongAscii,
-    extremeLevelGreaterBoundedSymbol: SymbolLongAscii,
-    position: Cents,
     boundedSymbols: BoundedSymbols,
-    lesserBoundedMina: Mina | undefined,
+    extremeLevelGreaterBoundedSymbol: SymbolLongAscii,
+    extremeLevelLesserBoundedSymbol: SymbolLongAscii,
     greaterBoundedMina: Mina | undefined,
+    lesserBoundedMina: Mina | undefined,
+    cents: Cents,
 }
 
 enum AnalysisMode {
@@ -16,8 +16,8 @@ enum AnalysisMode {
 }
 
 interface PresentBoundParameters {
-    mode?: AnalysisMode,
     bound: Bound
+    mode?: AnalysisMode,
 }
 
 type ColorMethods = "green" | "blue" | "cyan"

@@ -1,5 +1,5 @@
+import { Level } from "../../../../../src/notations/ji"
 import { presentLevel } from "../../../../../src/scripts/analyzeBounds/present/level"
-import { Level } from "../../../../../src/notations/ji/types"
 
 describe("presentLevel", () => {
     it("makes levels nice for people to read", () => {

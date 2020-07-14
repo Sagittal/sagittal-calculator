@@ -1,11 +1,9 @@
-import { Monzo } from "../../utilities/comma/types"
-import { Cents, EnumHash, Id, Proportion } from "../../utilities/types"
+import { Cents, Comma, EnumHash, Id, Proportion } from "../../general"
 
 type SymbolLongAscii = string & { _SymbolLongAsciiBrand: "SymbolLongAscii" }
 type SymbolUnicode = string & { _SymbolUnicodeBrand: "SymbolUnicode" }
 
 type Mina = number & { _MinaBrand: "Mina" }
-type ApotomeSlope = number & { _ApotomeSlopeBrand: "ApotomeSlope" }
 
 enum Level {
     MEDIUM = "MEDIUM",
@@ -16,22 +14,19 @@ enum Level {
 }
 
 interface SagittalSymbol {
-    id: Id<SagittalSymbol>,
     ascii: SymbolLongAscii,
-    unicode: SymbolUnicode,
+    elements: SymbolLongAscii[],
+    id: Id<SagittalSymbol>,
     introducingLevel: Level,
     mina: Mina,
-    primaryComma: {
-        monzo: Monzo,
-        position: Cents,
-    },
-    elements: SymbolLongAscii[],
+    primaryComma: Comma,
+    unicode: SymbolUnicode,
 }
 
 interface Bound {
     id: Id<Bound>,
-    position: Cents,
     levels: Level[],
+    cents: Cents,
 }
 
 type BoundedSymbols = { id: Id<Bound> } & Partial<EnumHash<Level, [BoundedSymbol | undefined, BoundedSymbol | undefined]>>
@@ -50,5 +45,4 @@ export {
     Bound,
     BoundedSymbols,
     BoundedSymbol,
-    ApotomeSlope,
 }

@@ -1,12 +1,11 @@
+import { Cents, Name, Position } from "../../../../src/general"
 import { computeInitialConsolidatedEvent } from "../../../../src/scripts/analyzeBounds/initialConsolidatedEvent"
 import {
     AnalyzedEvent,
     ConsolidatedEvent,
-    EventName,
     EventRank,
     EventType,
 } from "../../../../src/scripts/analyzeBounds/types"
-import { Cents } from "../../../../src/utilities/types"
 import { analyzedEventFixture } from "../../../helpers/scripts/analyzeBounds/fixtures"
 
 describe("computeInitialConsolidatedEvent", () => {
@@ -14,9 +13,9 @@ describe("computeInitialConsolidatedEvent", () => {
     const analyzedEvent: AnalyzedEvent = {
         ...analyzedEventFixture,
         type: EventType.INA,
-        name: "12.5°58" as EventName,
+        name: "12.5°58" as Name<Position>,
         rank: 4 as EventRank,
-        position: 43.343455 as Cents,
+        cents: 43.343455 as Cents,
     }
 
     beforeEach(() => {
@@ -48,6 +47,6 @@ describe("computeInitialConsolidatedEvent", () => {
         expect(result.type).toBe(analyzedEvent.type)
         expect(result.level).toBe(analyzedEvent.level)
         expect(result.name).toBe(analyzedEvent.name)
-        expect(result.position).toBe(analyzedEvent.position)
+        expect(result.cents).toBe(analyzedEvent.cents)
     })
 })

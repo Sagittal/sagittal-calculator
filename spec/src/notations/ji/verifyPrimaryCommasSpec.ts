@@ -1,11 +1,11 @@
+import { Prime } from "../../../../src/general"
+import { Copfr, PrimeExponent, Sopfr } from "../../../../src/general/music"
+import { computeCommaName } from "../../../../src/general/music/name"
+import { ApotomeSlope } from "../../../../src/general/music/types"
+import { SYMBOLS } from "../../../../src/notations/ji"
 import { computeSecondaryCommaZone } from "../../../../src/notations/ji/secondaryCommaZone"
 import { computeCommas } from "../../../../src/scripts/findCommas/commas"
-import { presentCommas } from "../../../../src/utilities/comma/present/commas"
-import { computeCommaName } from "../../../../src/utilities/comma/name"
-import { SYMBOLS } from "../../../../src/notations/ji/symbols"
-import { ApotomeSlope } from "../../../../src/notations/ji/types"
-import { Copfr, PrimeExponent, Sopfr } from "../../../../src/utilities/comma/types"
-import { Prime } from "../../../../src/utilities/types"
+import { presentCommas } from "../../../../src/scripts/findCommas/present"
 
 describe("verifying primary commas", () => {
     xit("checks that every symbol's primary comma is its best-ranked comma in its secondary comma zone according to our metric", () => {
