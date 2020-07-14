@@ -13,15 +13,7 @@ import { LEVELS_SYMBOLS } from "./levelsSymbols"
 import { computeSizeCategoryBounds } from "./sizeCategoryBounds"
 import { SYMBOLS } from "./symbols"
 
-import {
-    Bound,
-    BoundedSymbol,
-    BoundedSymbols,
-    Level,
-    Mina,
-    SagittalSymbol,
-    SymbolLongAscii,
-} from "./types"
+import { Bound, BoundedSymbol, BoundedSymbols, Level, Mina, SagittalSymbol, SymbolLongAscii } from "./types"
 
 export {
     BOUNDS,

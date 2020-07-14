@@ -8,7 +8,7 @@ describe("searchPopulatedScopesForChunkCount", () => {
         debug.all = false
 
         const scope: Scope = [] as unknown as Scope
-        scopesForChunkCount[ 0 ] = [ scope ]
+        scopesForChunkCount[ 0 ] = [scope]
 
         await searchPopulatedScopesForChunkCount()
     })

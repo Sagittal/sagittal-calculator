@@ -44,8 +44,8 @@ const computeFiveSlicedMonzosToCheck = ({ maximumPrimeLimit, maximumFiveRoughSop
         const extendedFiveSlicedMonzosToCheck: Array<Monzo<5>> = []
 
         fiveSlicedMonzosToCheck.forEach(fiveSlicedMonzoToCheck => {
-            const fiveRoughSopfr = computeSopfr([ 0, 0, ...fiveSlicedMonzoToCheck ] as Monzo)
-            const fiveRoughCopfr = computeCopfr([ 0, 0, ...fiveSlicedMonzoToCheck ] as Monzo)
+            const fiveRoughSopfr = computeSopfr([0, 0, ...fiveSlicedMonzoToCheck] as Monzo)
+            const fiveRoughCopfr = computeCopfr([0, 0, ...fiveSlicedMonzoToCheck] as Monzo)
 
             const termRange: PrimeExponent[] = computePrimeExponentRange(
                 prime,

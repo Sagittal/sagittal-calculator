@@ -7,7 +7,7 @@ import { Chunk, ParameterChunk, SubmetricChunk } from "../../../../../../src/scr
 describe("populateScopesForSubmetricChunkCombination", () => {
     it("runs without error", () => {
         const submetricChunkCombination: Combination<SubmetricChunk> = [] as unknown as Combination<SubmetricChunk>
-        const parameterChunkCombinations: Array<Combination<ParameterChunk>> = [ [] as unknown as Combination<ParameterChunk> ]
+        const parameterChunkCombinations: Array<Combination<ParameterChunk>> = [[] as unknown as Combination<ParameterChunk>]
         const pIndex: number = 0
         const chunkCount: Count<Chunk> = 0 as Count<Chunk>
 

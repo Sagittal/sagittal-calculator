@@ -14,12 +14,20 @@ const updateLevelAnalysis = (bestPossibleHistory: AnalyzedHistory) => {
             cumulativeRank = rank
         }
 
-        if (!levelsBestHistoryRanks[ level ]) { levelsBestHistoryRanks[ level ] = [] }
-        if (!levelsBestHistoryRanks[ level ][ rank ]) { levelsBestHistoryRanks[ level ][ rank ] = 0 }
+        if (!levelsBestHistoryRanks[ level ]) {
+            levelsBestHistoryRanks[ level ] = []
+        }
+        if (!levelsBestHistoryRanks[ level ][ rank ]) {
+            levelsBestHistoryRanks[ level ][ rank ] = 0
+        }
         levelsBestHistoryRanks[ level ][ rank ] = (levelsBestHistoryRanks[ level ][ rank ] as number) + 1
 
-        if (!levelsBestCumulativeHistoryRanks[ level ]) { levelsBestCumulativeHistoryRanks[ level ] = [] }
-        if (!levelsBestCumulativeHistoryRanks[ level ][ cumulativeRank ]) { levelsBestCumulativeHistoryRanks[ level ][ cumulativeRank ] = 0 }
+        if (!levelsBestCumulativeHistoryRanks[ level ]) {
+            levelsBestCumulativeHistoryRanks[ level ] = []
+        }
+        if (!levelsBestCumulativeHistoryRanks[ level ][ cumulativeRank ]) {
+            levelsBestCumulativeHistoryRanks[ level ][ cumulativeRank ] = 0
+        }
         levelsBestCumulativeHistoryRanks[ level ][ cumulativeRank ] = levelsBestCumulativeHistoryRanks[ level ][ cumulativeRank ] + 1
     })
 }

@@ -11,7 +11,9 @@ const computeCentsFromMonzo = (monzo: Monzo): Cents => {
 }
 
 const computeMonzoInRange = (threeSlicedMonzo: Monzo<3>, lowerBound: Cents, upperBound: Cents) => {
-    if (upperBound - lowerBound > CENTS_PER_OCTAVE) { throw new Error("Cents range must be less than 1200.") }
+    if (upperBound - lowerBound > CENTS_PER_OCTAVE) {
+        throw new Error("Cents range must be less than 1200.")
+    }
 
     const monzo: Monzo = [0, ...threeSlicedMonzo] as Monzo
     let cents: Cents = computeCentsFromMonzo(monzo)

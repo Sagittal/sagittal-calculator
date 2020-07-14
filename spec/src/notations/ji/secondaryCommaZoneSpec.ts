@@ -2,13 +2,7 @@ import { Cents, Id, Name, Position, Prime, Ratio, Sopfr } from "../../../../src/
 import { Monzo } from "../../../../src/general/music"
 import { ApotomeSlope } from "../../../../src/general/music/types"
 import { computeSecondaryCommaZone } from "../../../../src/notations/ji/secondaryCommaZone"
-import {
-    Level,
-    Mina,
-    SagittalSymbol,
-    SymbolLongAscii,
-    SymbolUnicode,
-} from "../../../../src/notations/ji/types"
+import { Level, Mina, SagittalSymbol, SymbolLongAscii, SymbolUnicode } from "../../../../src/notations/ji/types"
 
 describe("secondaryCommaZone", () => {
     it("returns the lower and upper bound of where secondary commas are represented by the given symbol, i.e. its capture zone at its introducing level", () => {

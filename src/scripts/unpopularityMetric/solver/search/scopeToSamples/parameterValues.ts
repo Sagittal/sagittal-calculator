@@ -8,7 +8,9 @@ const computeParameterValues = (parameterScope: DynamicParameterScope): Paramete
         resolution = 1 as Resolution<ParameterValue>,
     }: DynamicParameterScope = parameterScope
 
-    if (resolution === 1) { return [center as ParameterValue] }
+    if (resolution === 1) {
+        return [center as ParameterValue]
+    }
 
     const keys = [...Array(resolution).keys()]
 

@@ -20,13 +20,7 @@ const computeRatioSubmetricAntivotes = (fiveRoughRatio: Ratio, submetric: Submet
         return computeSubmetricAntivotes(fiveRoughNumberMonzo, submetric)
     }
 
-    // TODO compare how it formats array bracket spacing on my desktop -
-    //  ok well tslint does not seem to have an opinion on it
-    //  and yet I told it to use tslint to set code style settings
-    //  but maybe that just wiped out a default
-    //  or maybe that's just a RubyMine failure vs WebStorm as I have on my desktop
-
-    const [ numerator, denominator ] = fiveRoughRatio
+    const [numerator, denominator] = fiveRoughRatio
     const fiveRoughNumeratorMonzo = computeMonzoFromInteger(numerator)
     const fiveRoughDenominatorMonzo = computeMonzoFromInteger(denominator)
 

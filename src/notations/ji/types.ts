@@ -29,7 +29,9 @@ interface Bound {
     cents: Cents,
 }
 
-type BoundedSymbols = { id: Id<Bound> } & Partial<EnumHash<Level, [BoundedSymbol | undefined, BoundedSymbol | undefined]>>
+type BoundedSymbols =
+    { id: Id<Bound> }
+    & Partial<EnumHash<Level, [BoundedSymbol | undefined, BoundedSymbol | undefined]>>
 
 interface BoundedSymbol extends SagittalSymbol {
     distance: Cents,

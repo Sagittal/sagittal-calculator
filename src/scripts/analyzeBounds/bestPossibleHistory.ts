@@ -10,7 +10,9 @@ const computeBestPossibleHistory = (analyzedHistories: AnalyzedHistory[]): Analy
                 exactHistories.push(analyzedHistory)
             }
         })
-        if (exactHistories.length) { return computeBestPossibleHistory(exactHistories) }
+        if (exactHistories.length) {
+            return computeBestPossibleHistory(exactHistories)
+        }
     }
 
     analyzedHistories.forEach(analyzedHistory => {

@@ -1,10 +1,7 @@
 import { Index, Resolution, Span } from "../../../../../../../src/general"
 import { computeSubmetricDynamicParameters } from "../../../../../../../src/scripts/unpopularityMetric/solver/search/scopeToSamples/submetricDynamicParameters"
 import { SubmetricScope } from "../../../../../../../src/scripts/unpopularityMetric/solver/types"
-import {
-    Parameter, ParameterValue,
-    Submetric,
-} from "../../../../../../../src/scripts/unpopularityMetric/types"
+import { Parameter, ParameterValue, Submetric } from "../../../../../../../src/scripts/unpopularityMetric/types"
 
 describe("computeSubmetricDynamicParameters", () => {
     const submetricIndex = 5 as Index<Submetric>

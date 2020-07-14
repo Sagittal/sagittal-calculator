@@ -1,5 +1,11 @@
 import { EnumHash, Position } from "../../../general"
-import { computeInaMidpoints, computeLevelCommaMeans, computeSizeCategoryBounds, Level, LEVELS } from "../../../notations"
+import {
+    computeInaMidpoints,
+    computeLevelCommaMeans,
+    computeSizeCategoryBounds,
+    Level,
+    LEVELS,
+} from "../../../notations"
 import { EventType } from "../types"
 
 const computeSnappablePositions = (computeLevelSnappablePositions: (level: Level) => Position[]): EnumHash<Level, Position[]> =>

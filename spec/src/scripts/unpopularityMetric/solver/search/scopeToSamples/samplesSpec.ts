@@ -1,10 +1,9 @@
 import { Resolution, Span } from "../../../../../../../src/general"
-import { computeDynamicParameters, computeSamples } from "../../../../../../../src/scripts/unpopularityMetric/solver/search/scopeToSamples"
 import {
-    Parameter,
-    ParameterValue,
-    SubmetricType,
-} from "../../../../../../../src/scripts/unpopularityMetric/types"
+    computeDynamicParameters,
+    computeSamples,
+} from "../../../../../../../src/scripts/unpopularityMetric/solver/search/scopeToSamples"
+import { Parameter, ParameterValue, SubmetricType } from "../../../../../../../src/scripts/unpopularityMetric/types"
 
 describe("submetricCombinations", () => {
     it("given some submetric scopes, will return all combinations of submetrics to check", () => {

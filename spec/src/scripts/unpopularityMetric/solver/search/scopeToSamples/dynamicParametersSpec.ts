@@ -3,7 +3,9 @@ import { computeDynamicParameters } from "../../../../../../../src/scripts/unpop
 import { SubmetricScope } from "../../../../../../../src/scripts/unpopularityMetric/solver/types"
 import {
     Parameter,
-    ParameterValue, Submetric, SubmetricType,
+    ParameterValue,
+    Submetric,
+    SubmetricType,
 } from "../../../../../../../src/scripts/unpopularityMetric/types"
 
 describe("computeDynamicParameters", () => {
@@ -38,19 +40,19 @@ describe("computeDynamicParameters", () => {
             {
                 submetricIndex: 0 as Index<Submetric>,
                 parameter: Parameter.Y,
-                values: [ 0.7, 1.2, 1.7 ] as ParameterValue[],
+                values: [0.7, 1.2, 1.7] as ParameterValue[],
                 unit: 0.5 as Unit<ParameterValue>,
             },
             {
                 submetricIndex: 1 as Index<Submetric>,
                 parameter: Parameter.Y,
-                values: [ 0.9, 1.1 ] as ParameterValue[],
+                values: [0.9, 1.1] as ParameterValue[],
                 unit: 0.2 as Unit<ParameterValue>,
             },
             {
                 submetricIndex: 1 as Index<Submetric>,
                 parameter: Parameter.A,
-                values: [ 0.6, 0.7 ] as ParameterValue[],
+                values: [0.6, 0.7] as ParameterValue[],
                 unit: 0.1 as Unit<ParameterValue>,
             },
         ])

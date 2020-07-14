@@ -6,7 +6,9 @@ const computeDynamicParameterValueIndices = ({ dynamicParameters, submetric, sub
     const dynamicParameterValueIndices: Array<Index<ParameterValue>> = []
 
     dynamicParameters.forEach((dynamicParameter: DynamicParameter) => {
-        if (dynamicParameter.submetricIndex !== submetricIndex) { return }
+        if (dynamicParameter.submetricIndex !== submetricIndex) {
+            return
+        }
 
         const submetricEntries = Object.entries(submetric) as Array<[Parameter, ParameterValue]>
         submetricEntries.forEach(([parameter, dynamicParameterValue]) => {

@@ -7,10 +7,10 @@ import { computeRatioFromMonzo } from "./ratioFromMonzo"
 import { computeSizeCategory } from "./sizeCategory"
 import { Monzo, Position, PrimeExponent, SizeCategoryOptions } from "./types"
 
-const SUPERSCRIPT_NUMS = [ "⁰", "¹", "²", "³", "⁴", "⁵", "⁶", "⁷", "⁸", "⁹" ]
+const SUPERSCRIPT_NUMS = ["⁰", "¹", "²", "³", "⁴", "⁵", "⁶", "⁷", "⁸", "⁹"]
 
 const primeFactorizeCommaName = (numeratorOrDenominator: number) => {
-    const monzo = computeMonzoFromRatio([ numeratorOrDenominator, 1 ] as Ratio)
+    const monzo = computeMonzoFromRatio([numeratorOrDenominator, 1] as Ratio)
     const factorizedTerms: string[] = []
 
     monzo.forEach((primeExponent, primeExponentIndex) => {
@@ -32,7 +32,7 @@ const primeFactorizeCommaName = (numeratorOrDenominator: number) => {
 
 const undirectCommaName = (commaResult: Ratio): Ratio =>
     commaResult[ 0 ] > commaResult[ 1 ] ?
-        [ commaResult[ 1 ] as unknown as Numerator, commaResult[ 0 ] as unknown as Denominator ] :
+        [commaResult[ 1 ] as unknown as Numerator, commaResult[ 0 ] as unknown as Denominator] :
         commaResult
 
 const sizeCategoryFromMonzo = (monzo: Monzo, { abbreviated }: SizeCategoryOptions) => {

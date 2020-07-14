@@ -1,7 +1,5 @@
 import { Index, Unit } from "../../../../../../../src/general"
-import {
-    DynamicParameter,
-} from "../../../../../../../src/scripts/unpopularityMetric/solver/search/scopeToSamples"
+import { DynamicParameter } from "../../../../../../../src/scripts/unpopularityMetric/solver/search/scopeToSamples"
 import { computeDynamicParameterValueIndices } from "../../../../../../../src/scripts/unpopularityMetric/solver/search/scopeToSamples/dynamicParameterValueIndices"
 import { Parameter, ParameterValue, Submetric } from "../../../../../../../src/scripts/unpopularityMetric/types"
 

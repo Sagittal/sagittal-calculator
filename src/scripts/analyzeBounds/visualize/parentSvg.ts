@@ -1,5 +1,5 @@
 import { Cents } from "../../../general"
-import { Level, MAXIMUM_POSITION} from "../../../notations"
+import { Level, MAXIMUM_POSITION } from "../../../notations"
 import { LEVEL_BOTTOMS } from "./levelHeights"
 import { MARGIN } from "./sizes"
 import { computeX } from "./x"

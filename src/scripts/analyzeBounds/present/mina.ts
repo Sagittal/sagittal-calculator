@@ -2,7 +2,9 @@ import { round } from "../../../general"
 import { Mina } from "../../../notations"
 
 const presentMina = (mina: Mina | undefined) => {
-    if (!mina) { return "       " }
+    if (!mina) {
+        return "       "
+    }
 
     let presentedMina = round(mina, 3).toString()
 

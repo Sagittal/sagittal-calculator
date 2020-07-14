@@ -1,4 +1,4 @@
-import { computeLog, computePrimeCount, Monzo, PRIMES} from "../../../../general"
+import { computeLog, computePrimeCount, Monzo, PRIMES } from "../../../../general"
 import { SUBMETRIC_PROPERTIES } from "../../constants"
 import { ParameterValue, Submetric, SubmetricOperation, SubmetricType } from "../../types"
 import { Antivotes } from "../types"
@@ -30,7 +30,9 @@ const computeSubmetricAntivotes = (fiveRoughNumberMonzo: Monzo, submetric = {}):
 
     return fiveRoughNumberMonzo.reduce(
         (monzoAntivotes: Antivotes, primeExponent, index): Antivotes => {
-            if (operation === SubmetricOperation.MAX && index < fiveRoughNumberMonzo.length - 1) { return 0 as Antivotes }
+            if (operation === SubmetricOperation.MAX && index < fiveRoughNumberMonzo.length - 1) {
+                return 0 as Antivotes
+            }
 
             const prime = PRIMES[ index ]
 
@@ -69,7 +71,9 @@ const computeSubmetricAntivotes = (fiveRoughNumberMonzo: Monzo, submetric = {}):
                 primeExponentAntivotes = primeExponentAntivotes * 0.5
             }
 
-            if (isNaN(primeExponentAntivotes)) { throw new Error(`You got NaN! in submetricAntivotes ${fiveRoughNumberMonzo} ${JSON.stringify(submetric, null, 4)}`) }
+            if (isNaN(primeExponentAntivotes)) {
+                throw new Error(`You got NaN! in submetricAntivotes ${fiveRoughNumberMonzo} ${JSON.stringify(submetric, null, 4)}`)
+            }
 
             return monzoAntivotes + primeExponentAntivotes as Antivotes
         },

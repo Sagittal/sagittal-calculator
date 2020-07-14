@@ -9,7 +9,9 @@ const visualizeLevelSymbols = () => {
 
     const levelsSymbolsEntries = Object.entries(LEVELS_SYMBOLS) as Array<[Level, SagittalSymbol[]]>
     levelsSymbolsEntries.forEach(([level, levelSymbols]: [Level, SagittalSymbol[]]) => {
-        if (level === Level.INSANE) { return }
+        if (level === Level.INSANE) {
+            return
+        }
 
         const centerY = LEVEL_CENTERS[ level ]
         const dotY = centerY - SYMBOL_OFFSET

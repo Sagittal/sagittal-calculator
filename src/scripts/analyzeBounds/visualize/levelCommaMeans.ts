@@ -11,7 +11,9 @@ const visualizeLevelCommaMeans = () => {
 
     const levelCommaMeansEntries = Object.entries(LEVELS_COMMA_MEANS) as Array<[Level, Position[]]>
     levelCommaMeansEntries.forEach(([level, levelCommaMeans]: [Level, Position[]]) => {
-        if (level === Level.INSANE) { return }
+        if (level === Level.INSANE) {
+            return
+        }
 
         const centerY = LEVEL_CENTERS[ level ]
         const topY = centerY - HALF_TICK_SIZE

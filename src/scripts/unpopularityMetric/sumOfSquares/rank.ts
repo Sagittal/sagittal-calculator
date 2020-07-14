@@ -6,7 +6,9 @@ const addRankToUnpopularities = (unpopularities: Unpopularity[]): RankedUnpopula
         unpopularity.antivotes - nextUnpopularity.antivotes)
 
     const rankedUnpopularities: RankedUnpopularity[] = unpopularitiesSortedByAntivotes.map((unpopularity, index): RankedUnpopularity => {
-        if ((unpopularity as RankedUnpopularity).rank) { return unpopularity as RankedUnpopularity }
+        if ((unpopularity as RankedUnpopularity).rank) {
+            return unpopularity as RankedUnpopularity
+        }
 
         let tiesCount = 0
         unpopularitiesSortedByAntivotes.slice(index).forEach(worseOrTiedUnpopularity => {

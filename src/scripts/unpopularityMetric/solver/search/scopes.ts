@@ -26,7 +26,7 @@ const searchScopes = async () => {
             setTimeout(async () => {
                 await searchScopes()
                 resolve()
-            },         populatingHasMovedOnToTheNextChunkCount ? 0 : ONE_SECOND_TO_GIVE_POPULATION_A_CHANCE_TO_CATCH_UP)
+            }, populatingHasMovedOnToTheNextChunkCount ? 0 : ONE_SECOND_TO_GIVE_POPULATION_A_CHANCE_TO_CATCH_UP)
         } else {
             resolve()
         }

@@ -1,8 +1,6 @@
 import { Index, Resolution, Span, Unit } from "../../../../../../../src/general"
 import { computeNextScopes } from "../../../../../../../src/scripts/unpopularityMetric/solver/search/bestMetric/nextScopes"
-import {
-    DynamicParameter,
-} from "../../../../../../../src/scripts/unpopularityMetric/solver/search/scopeToSamples"
+import { DynamicParameter } from "../../../../../../../src/scripts/unpopularityMetric/solver/search/scopeToSamples"
 import { SamplePoint } from "../../../../../../../src/scripts/unpopularityMetric/solver/search/types"
 import { SubmetricScope } from "../../../../../../../src/scripts/unpopularityMetric/solver/types"
 import {

@@ -1,5 +1,8 @@
 import { Combination } from "../../../../../src/general/math"
-import { computeSumOfSquaresForSubmetrics, SumOfSquares } from "../../../../../src/scripts/unpopularityMetric/sumOfSquares"
+import {
+    computeSumOfSquaresForSubmetrics,
+    SumOfSquares,
+} from "../../../../../src/scripts/unpopularityMetric/sumOfSquares"
 import {
     Parameter,
     ParameterValue,

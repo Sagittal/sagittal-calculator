@@ -21,7 +21,9 @@ const computePossiblyUpdatedBestMetricWhilePopulatingSumsOfSquares = (sumsOfSqua
                 throw new Error("This sum-of-squares was 0. That's extremely unlikely and probably means there's a bug in the code and that to continue searching now would be a waste of time.")
             }
 
-            if (debug.all) { console.log(`${indentation}new best metric: ${JSON.stringify(bestMetric)}`.green) }
+            if (debug.all) {
+                console.log(`${indentation}new best metric: ${JSON.stringify(bestMetric)}`.green)
+            }
         }
     })
 

@@ -48,18 +48,7 @@ import {
     Sopfr,
 } from "./music"
 import { alignTable } from "./table"
-import {
-    Count,
-    Id,
-    Index,
-    Name,
-    Prime,
-    Proportion,
-    Resolution,
-    Span,
-    Sum,
-    Unit,
-} from "./types"
+import { Count, Id, Index, Name, Prime, Proportion, Resolution, Span, Sum, Unit } from "./types"
 
 export {
     Cents,

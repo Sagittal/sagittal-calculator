@@ -5,10 +5,10 @@ import { debug } from "../debug"
 import { Chunk, populateAndSearchScopes, status } from "../solver"
 
 program
-.option("-l, --lower-bound-chunk-count <lowerBoundChunkCount>", "lower bound chunk count", parseInt)
-.option("-u, --upper-bound-chunk-count <upperBoundChunkCount>", "upper bound chunk count", parseInt)
-.option("-d, --debug", "debug")
-.parse(process.argv)
+    .option("-l, --lower-bound-chunk-count <lowerBoundChunkCount>", "lower bound chunk count", parseInt)
+    .option("-u, --upper-bound-chunk-count <upperBoundChunkCount>", "upper bound chunk count", parseInt)
+    .option("-d, --debug", "debug")
+    .parse(process.argv)
 
 const lowerBoundChunkCount = program.lowerBoundChunkCount || 1
 status.upperBoundChunkCount = program.upperBoundChunkCount || 3

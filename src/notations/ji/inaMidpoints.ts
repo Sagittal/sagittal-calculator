@@ -11,7 +11,9 @@ const computeInaMidpoints = (level: Level): Position[] => {
         const midpoint = degree + 0.5
         const cents = APOTOME * midpoint / eda as Cents
 
-        if (cents > MAXIMUM_POSITION) { return undefined }
+        if (cents > MAXIMUM_POSITION) {
+            return undefined
+        }
 
         const name: Name<Position> = `${midpoint}°${eda}` as Name<Position>
 

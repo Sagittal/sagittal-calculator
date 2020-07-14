@@ -15,7 +15,9 @@ const searchPopulatedScopesForChunkCount = async () => {
     const searchingScopes = scopesForChunkCount[ searchingChunkCount ]
     const searchingScopesCount = searchingScopes && searchingScopes.length
 
-    if (debug.all) { console.log(`scopes for chunk count remaining to search: ${searchingScopesCount}`.yellow) }
+    if (debug.all) {
+        console.log(`scopes for chunk count remaining to search: ${searchingScopesCount}`.yellow)
+    }
 
     const scopeForChunkCount = searchingScopes.pop() as Scope
 

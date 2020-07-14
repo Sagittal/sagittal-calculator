@@ -2,11 +2,15 @@ import { Count } from "../types"
 import { Combinations } from "./types"
 
 const computeCombinations = <T>(array: T[], count: Count<T>, { withRepeatedElements = false } = {}): Combinations<T> => {
-    if (withRepeatedElements) { return computeCombinationsWithRepetitions(array, count) }
+    if (withRepeatedElements) {
+        return computeCombinationsWithRepetitions(array, count)
+    }
 
     const combinations: number[][] = []
 
-    if (count === 0) { return [] as unknown as Combinations<T> }
+    if (count === 0) {
+        return [] as unknown as Combinations<T>
+    }
 
     const computeRecursiveCombinations = (integer: number, combination: number[]) => {
         if (combination.length === count) {
@@ -34,14 +38,18 @@ const computeCombinations = <T>(array: T[], count: Count<T>, { withRepeatedEleme
 
 const computeCombinationsWithRepetitions = <T>(array: T[], count: Count): Combinations<T> => {
     const comb = <U>(n: number, ys: U[][]): Combinations<U> => {
-        if (0 === n) { return ys as Combinations<U> }
-        if (isNull(ys)) { return comb(n - 1, map(pure, array as unknown as U[])) }
+        if (0 === n) {
+            return ys as Combinations<U>
+        }
+        if (isNull(ys)) {
+            return comb(n - 1, map(pure, array as unknown as U[]))
+        }
 
         return comb(n - 1, concatMap((zs: U[]) => {
             const h = head(zs)
 
             return map((x: U) => [x].concat(zs), dropWhile(x => x !== h, array as unknown as U[]))
-        },                           ys))
+        }, ys))
     }
 
     return comb(count, [] as unknown as Combinations<T>)

@@ -22,7 +22,7 @@ const computeCommasFromFiveSlicedMonzo = (fiveSlicedMonzo: Monzo<5>, options: Co
     const analyzedCommas: Comma[] = []
 
     computePlusOrMinusRange(maximumAbsoluteThreeExponent).forEach(three => {
-        const threeSlicedMonzo: Monzo<3> = [ three, ...fiveSlicedMonzo ] as Monzo<3>
+        const threeSlicedMonzo: Monzo<3> = [three, ...fiveSlicedMonzo] as Monzo<3>
         const monzo = computeMonzoInRange(threeSlicedMonzo, lowerBound, upperBound)
 
         if (monzo) {

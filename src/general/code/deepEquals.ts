@@ -1,7 +1,7 @@
 const deepEqualsArray = <T>(firstValue: T[], secondValue: T[]): boolean =>
     firstValue instanceof Array &&
-        firstValue.length === secondValue.length &&
-        secondValue.every((el, index) => deepEquals(el, firstValue[ index ]))
+    firstValue.length === secondValue.length &&
+    secondValue.every((el, index) => deepEquals(el, firstValue[ index ]))
 
 const deepEqualsObject =
     <T extends { [ index: string ]: unknown }>(firstValue: T, secondValue: T): boolean => {

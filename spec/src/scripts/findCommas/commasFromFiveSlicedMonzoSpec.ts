@@ -3,7 +3,7 @@ import { ApotomeSlope, Monzo, PrimeExponent } from "../../../../src/general/musi
 import { computeCommasFromFiveSlicedMonzo } from "../../../../src/scripts/findCommas/commasFromFiveSlicedMonzo"
 
 describe("computeCommasFromFiveSlicedMonzo", () => {
-    const fiveSlicedMonzo: Monzo<5> = [ 3, 5, -1 ] as Monzo<5>
+    const fiveSlicedMonzo: Monzo<5> = [3, 5, -1] as Monzo<5>
 
     it("returns analyzed commas with the prime content from the five-rough monzo", () => {
         const lowerBound = 40 as Cents
@@ -19,8 +19,8 @@ describe("computeCommasFromFiveSlicedMonzo", () => {
         expect(result).toEqual(jasmine.arrayWithExactContents([
             {
                 cents: 40.02272638304789,
-                monzo: [ -8, -6, 3, 5, -1 ],
-                ratio: [ 2100875, 2052864 ],
+                monzo: [-8, -6, 3, 5, -1],
+                ratio: [2100875, 2052864],
                 name: "2100875/11S",
                 limit: 11,
                 apotomeSlope: -8.464345074135046,
@@ -38,7 +38,7 @@ describe("computeCommasFromFiveSlicedMonzo", () => {
                 upperBound,
                 maximumAbsoluteThreeExponent,
             }))
-            .toThrowError("Lower bound must be supplied.")
+                .toThrowError("Lower bound must be supplied.")
         })
 
         it("throws an error if the upper bound is not supplied", () => {
@@ -49,7 +49,7 @@ describe("computeCommasFromFiveSlicedMonzo", () => {
                 lowerBound,
                 maximumAbsoluteThreeExponent,
             }))
-            .toThrowError("Upper bound must be supplied.")
+                .toThrowError("Upper bound must be supplied.")
         })
 
         it("throws an error if the maximum absolute three exponent is not supplied", () => {
@@ -57,7 +57,7 @@ describe("computeCommasFromFiveSlicedMonzo", () => {
             const upperBound = 40.1 as Cents
 
             expect(() => computeCommasFromFiveSlicedMonzo(fiveSlicedMonzo, { lowerBound, upperBound }))
-            .toThrowError("Maximum absolute three exponent must be supplied.")
+                .toThrowError("Maximum absolute three exponent must be supplied.")
         })
     })
 
@@ -80,8 +80,8 @@ describe("computeCommasFromFiveSlicedMonzo", () => {
             expect(resultWithHighMaximumApotomeSlope).toEqual(jasmine.arrayWithExactContents([
                 {
                     cents: 40.02272638304789,
-                    monzo: [ -8, -6, 3, 5, -1 ],
-                    ratio: [ 2100875, 2052864 ],
+                    monzo: [-8, -6, 3, 5, -1],
+                    ratio: [2100875, 2052864],
                     name: "2100875/11S",
                     limit: 11,
                     apotomeSlope: -8.464345074135046,

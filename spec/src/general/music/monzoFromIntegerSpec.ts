@@ -1,4 +1,4 @@
-import { computeMonzoFromInteger, Monzo} from "../../../../src/general/music"
+import { computeMonzoFromInteger, Monzo } from "../../../../src/general/music"
 
 describe("computeMonzoFromInteger", () => {
     it("prime factorizes the integer into a monzo", () => {

@@ -1,12 +1,7 @@
 import { Cents, Name, Position, Proportion } from "../../../../src/general"
 import { Level } from "../../../../src/notations/ji"
 import { computeConsolidatedHistories } from "../../../../src/scripts/analyzeBounds/consolidatedHistories"
-import {
-    AnalyzedEvent,
-    AnalyzedHistory,
-    EventRank,
-    EventType,
-} from "../../../../src/scripts/analyzeBounds/types"
+import { AnalyzedEvent, AnalyzedHistory, EventRank, EventType } from "../../../../src/scripts/analyzeBounds/types"
 import { analyzedEventFixture, analyzedHistoryFixture } from "../../../helpers/scripts/analyzeBounds/fixtures"
 
 describe("computeConsolidatedHistories", () => {

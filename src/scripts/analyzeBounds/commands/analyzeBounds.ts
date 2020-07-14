@@ -5,7 +5,13 @@ import { analyzeBound } from "../bound"
 import { BOUNDS_ANALYSIS_TEXT_FILE, BOUNDS_ANALYSIS_VISUALIZATION_FILE } from "../constants"
 import { updateFile } from "../file"
 import { computeHistories } from "../plot"
-import { AnalysisMode, BOUNDS_ANALYSIS_HEADER_ROW, presentBound, presentLevelAnalyses, presentRankAnalyses} from "../present"
+import {
+    AnalysisMode,
+    BOUNDS_ANALYSIS_HEADER_ROW,
+    presentBound,
+    presentLevelAnalyses,
+    presentRankAnalyses,
+} from "../present"
 import { AnalyzedBound } from "../types"
 import { visualizeBounds } from "../visualize"
 
