@@ -1,25 +1,20 @@
-import { Combination, deepEquals } from "../../../../../general"
 import { debug } from "../../../debug"
-import { SumOfSquares } from "../../../sumOfSquares"
-import { Submetric } from "../../../types"
+import { DUMMY_CHUNK_COUNT_FOR_ONE_OFF_BEST_METRIC_FROM_SCOPE } from "../../constants"
 import { Scope } from "../../types"
 import { computeDynamicParameters, computeSamples } from "../scopeToSamples"
 import { computeIndentation } from "./indentation"
 import { computeLocalMinima } from "./localMinima"
-import { computeNextScopes } from "./nextScopes"
-import { computePossiblyUpdatedBestMetricWhilePopulatingSumsOfSquares } from "./sumsOfSquares"
+import { searchNextLocalMinimum } from "./nextLocalMinimum"
+import { computeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffect } from "./sumsOfSquares"
 import { ComputeBestMetricOptions, Metric, SumsOfSquares } from "./types"
 
-const computeBestMetric = (scope: Scope, options: ComputeBestMetricOptions = {}): Metric => {
+const possiblyUpdateBestMetricAsSideEffect = async (scope: Scope, options: ComputeBestMetricOptions = {}) => {
     const {
         depth = 0,
-        bestMetric: previousBestMetric = {
-            sumOfSquares: Infinity as SumOfSquares,
-            submetrics: [] as unknown as Combination<Submetric>,
-        },
         progressMessage = "",
         localMinimum,
         recurse = true,
+        chunkCount = DUMMY_CHUNK_COUNT_FOR_ONE_OFF_BEST_METRIC_FROM_SCOPE,
     }: ComputeBestMetricOptions = options
 
     const nextDepth = depth + 1
@@ -27,36 +22,33 @@ const computeBestMetric = (scope: Scope, options: ComputeBestMetricOptions = {})
     const indentation = computeIndentation(depth)
 
     const dynamicParameters = computeDynamicParameters(scope)
-    const samples = computeSamples({ submetricScopes: scope, dynamicParameters })
+    const samples = computeSamples({ scope, dynamicParameters })
 
-    const sumsOfSquares: SumsOfSquares = []
-    let bestMetric = computePossiblyUpdatedBestMetricWhilePopulatingSumsOfSquares(sumsOfSquares, samples, previousBestMetric, indentation)
+    const sumsOfSquares: SumsOfSquares = computeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffect(samples, chunkCount, indentation)
 
     if (debug.all) {
         console.log(`\n${indentation}local minima:`)
     }
     const nextLocalMinima = computeLocalMinima(samples, sumsOfSquares)
-    for (const nextLocalMinimum of nextLocalMinima) {
-        const index = nextLocalMinima.indexOf(nextLocalMinimum)
-        const nextScopes = computeNextScopes(nextLocalMinimum.samplePoint, dynamicParameters, scope)
-        const nextProgressMessage = progressMessage + `${index}/${(nextLocalMinima.length)}@depth${nextDepth} `
-        if (debug.all) {
-            console.log(`${indentation}${nextProgressMessage}${JSON.stringify(nextLocalMinimum)}`)
-        }
 
-        if (recurse && !deepEquals(localMinimum, nextLocalMinimum)) {
-            bestMetric = computeBestMetric(nextScopes, {
-                depth: nextDepth,
-                bestMetric,
-                progressMessage: nextProgressMessage,
-                localMinimum: nextLocalMinimum,
-            })
-        }
-    }
+    const nextLocalMinimaPromises: Promise<Metric>[] = nextLocalMinima.map((nextLocalMinimum, index) => {
+        return searchNextLocalMinimum(nextLocalMinimum, {
+            dynamicParameters,
+            scope,
+            progressMessage,
+            index,
+            indentation,
+            nextDepth,
+            recurse,
+            localMinimum,
+            chunkCount,
+            nextLocalMinima
+        })
+    })
 
-    return bestMetric
+    await Promise.all(nextLocalMinimaPromises)
 }
 
 export {
-    computeBestMetric,
+    possiblyUpdateBestMetricAsSideEffect,
 }

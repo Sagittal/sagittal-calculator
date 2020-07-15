@@ -1,12 +1,12 @@
 import { setSumOfSquaresAtSamplePoint } from "../../../../../../../src/scripts/unpopularityMetric/solver/search/bestMetric/setSumOfSquaresAtSamplePoint"
 import { SumsOfSquares } from "../../../../../../../src/scripts/unpopularityMetric/solver/search/bestMetric/types"
 import { SamplePoint } from "../../../../../../../src/scripts/unpopularityMetric/solver/search/types"
-import { SumOfSquares } from "../../../../../../../src/scripts/unpopularityMetric/sumOfSquares"
+import { Sum } from "../../../../../../../src/general"
 
 describe("setSumOfSquaresAtPoint", () => {
     it("saves the sum of squares at the sample point", () => {
         const sumsOfSquares: SumsOfSquares = []
-        const sumOfSquares: SumOfSquares = 0.0045843033 as SumOfSquares
+        const sumOfSquares: Sum<"SquaredWeightedRankDifferences"> = 0.0045843033 as Sum<"SquaredWeightedRankDifferences">
         const samplePoint = [2, 0, 3] as SamplePoint
 
         setSumOfSquaresAtSamplePoint(sumOfSquares, sumsOfSquares, samplePoint)

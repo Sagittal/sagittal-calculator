@@ -1,10 +1,10 @@
-import { computeBestMetric, Metric } from "./bestMetric"
+import { Metric, possiblyUpdateBestMetricAsSideEffect } from "./bestMetric"
 import { searchScopes } from "./scopes"
 import { computeResolution } from "./scopeToSamples"
 
 export {
     searchScopes,
-    computeBestMetric,
+    possiblyUpdateBestMetricAsSideEffect,
     computeResolution,
     Metric,
 }

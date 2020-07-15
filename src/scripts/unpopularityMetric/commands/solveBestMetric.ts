@@ -2,7 +2,7 @@ import "colors"
 import { program } from "commander"
 import { Count } from "../../../general"
 import { debug } from "../debug"
-import { Chunk, populateAndSearchScopes, status } from "../solver"
+import { bestMetricsForChunkCount, Chunk, populateAndSearchScopes, status } from "../solver"
 
 program
     .option("-l, --lower-bound-chunk-count <lowerBoundChunkCount>", "lower bound chunk count", parseInt)
@@ -17,4 +17,7 @@ debug.all = !!program.debug
 status.populatingChunkCount = lowerBoundChunkCount as Count<Chunk>
 status.searchingChunkCount = lowerBoundChunkCount as Count<Chunk>
 
-populateAndSearchScopes()
+populateAndSearchScopes().then(() => {
+    const bestMetricsForNonzeroChunkCounts = bestMetricsForChunkCount.slice(1, bestMetricsForChunkCount.length)
+    console.log(`\n\nAND THE BEST METRICS PER CHUNK COUNT WERE ${JSON.stringify(bestMetricsForNonzeroChunkCounts, undefined, 4)}`.green)
+})

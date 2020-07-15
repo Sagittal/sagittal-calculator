@@ -1,10 +1,10 @@
 import { Scope } from "../../../../../../../src/scripts/unpopularityMetric/solver"
-import { computeBestMetric } from "../../../../../../../src/scripts/unpopularityMetric/solver/search/bestMetric"
+import { possiblyUpdateBestMetricAsSideEffect } from "../../../../../../../src/scripts/unpopularityMetric/solver/search/bestMetric"
 
-describe("computeBestMetric", () => {
+describe("possiblyUpdateBestMetricAsSideEffect", () => {
     it("runs without error", () => {
         const scope: Scope = [] as unknown as Scope
 
-        computeBestMetric(scope)
+        possiblyUpdateBestMetricAsSideEffect(scope)
     })
 })

@@ -1,20 +1,19 @@
-import { Combination, Count } from "../../../../../general"
-import { SumOfSquares } from "../../../sumOfSquares"
+import { Combination, Count, Sum } from "../../../../../general"
 import { Submetric } from "../../../types"
-import { Chunk } from "../../types"
+import { Chunk, Scope } from "../../types"
+import { DynamicParameter } from "../scopeToSamples"
 import { Sample } from "../types"
 
 interface Metric {
     submetrics: Combination<Submetric>,
-    sumOfSquares: SumOfSquares,
+    sumOfSquares: Sum<"SquaredWeightedRankDifferences">,
 }
 
 interface LocalMinimum extends Sample {
-    sumOfSquares: SumOfSquares,
+    sumOfSquares: Sum<"SquaredWeightedRankDifferences">,
 }
 
 type ComputeBestMetricOptions = Partial<{
-    bestMetric: Metric,
     chunkCount: Count<Chunk>,
     depth: number,
     localMinimum: LocalMinimum,
@@ -22,11 +21,25 @@ type ComputeBestMetricOptions = Partial<{
     recurse: boolean,
 }>
 
-type SumsOfSquares = Array<SumsOfSquares | SumOfSquares | undefined>
+type SearchLocalMinimumOptions = {
+    dynamicParameters: DynamicParameter[],
+    scope: Scope,
+    progressMessage: string,
+    index: number,
+    indentation: string,
+    nextDepth: number,
+    recurse: boolean,
+    localMinimum?: LocalMinimum,
+    chunkCount: Count<Chunk>,
+    nextLocalMinima: LocalMinimum[],
+}
+
+type SumsOfSquares = Array<SumsOfSquares | Sum<"SquaredWeightedRankDifferences"> | undefined>
 
 export {
     LocalMinimum,
     Metric,
     ComputeBestMetricOptions,
     SumsOfSquares,
+    SearchLocalMinimumOptions,
 }

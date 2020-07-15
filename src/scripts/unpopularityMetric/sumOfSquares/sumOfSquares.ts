@@ -1,15 +1,16 @@
-import { Popularity, RankedUnpopularity, SumOfSquares } from "./types"
+import { Popularity, RankedUnpopularity, } from "./types"
+import { Sum } from "../../../general"
 
-const computeSumOfSquares = (rankedUnpopularities: RankedUnpopularity[], realPopularities: Popularity[], zipfExponent: number): SumOfSquares =>
+const computeSumOfSquares = (rankedUnpopularities: RankedUnpopularity[], realPopularities: Popularity[], zipfExponent: number): Sum<"SquaredWeightedRankDifferences"> =>
     realPopularities.reduce(
         (sumOfSquares, commaPopularity, index) => {
             const ourRank = rankedUnpopularities[ index ].rank
             const rank = commaPopularity.rank
-            const squaredDistance = (ourRank ** zipfExponent - rank ** zipfExponent) ** 2
+            const squaredRankDifference = (ourRank ** zipfExponent - rank ** zipfExponent) ** 2
 
-            return sumOfSquares + squaredDistance as SumOfSquares
+            return sumOfSquares + squaredRankDifference as Sum<"SquaredWeightedRankDifferences">
         },
-        0 as SumOfSquares,
+        0 as Sum<"SquaredWeightedRankDifferences">,
     )
 
 export {

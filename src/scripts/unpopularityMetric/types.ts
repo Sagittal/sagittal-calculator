@@ -80,6 +80,7 @@ interface Debug {
     submetricAntivotes: boolean,
     rankedUnpopularities: boolean,
     solver: boolean,
+    newBestMetric: boolean,
 }
 
 export {

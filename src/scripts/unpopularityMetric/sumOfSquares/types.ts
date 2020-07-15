@@ -1,6 +1,5 @@
 import { Index, Ratio } from "../../../general"
 
-type SumOfSquares = number & { _SumOfSquaresBrand: "SumOfSquares" }
 type UnpopularityRank = number & { _UnpopularityRankBrand: "UnpopularityRank" }
 type PopularityRank = number & { _PopularityRankBrand: "PopularityRank" }
 type Votes = number & { _VotesBrand: "Votes" }
@@ -23,7 +22,6 @@ interface Popularity {
 }
 
 export {
-    SumOfSquares,
     Unpopularity,
     UnpopularityRank,
     Popularity,

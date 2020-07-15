@@ -1,10 +1,10 @@
-import { SumOfSquares } from "../../../sumOfSquares"
 import { SamplePoint } from "../types"
 import { computeAdjacentSamplePoints } from "./adjacentSamplePoints"
 import { getSumOfSquaresAtSamplePoint } from "./getSumOfSquaresAtSamplePoint"
 import { SumsOfSquares } from "./types"
+import { Sum } from "../../../../../general"
 
-const getSumOfSquaresAtSamplePointIfLocalMinimum = (sumsOfSquares: SumsOfSquares, samplePoint: SamplePoint): SumOfSquares | undefined => {
+const getSumOfSquaresAtSamplePointIfLocalMinimum = (sumsOfSquares: SumsOfSquares, samplePoint: SamplePoint): Sum<"SquaredWeightedRankDifferences"> | undefined => {
     const adjacentSamplePoints = computeAdjacentSamplePoints(samplePoint)
     const sumOfSquares = getSumOfSquaresAtSamplePoint(sumsOfSquares, samplePoint)
 

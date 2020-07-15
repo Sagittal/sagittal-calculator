@@ -1,4 +1,5 @@
 import { Resolution, Span } from "../../../../../../../src/general"
+import { Scope } from "../../../../../../../src/scripts/unpopularityMetric/solver"
 import {
     computeDynamicParameters,
     computeSamples,
@@ -7,7 +8,7 @@ import { Parameter, ParameterValue, SubmetricType } from "../../../../../../../s
 
 describe("submetricCombinations", () => {
     it("given some submetric scopes, will return all combinations of submetrics to check", () => {
-        const submetricScopes = [
+        const scope = [
             {
                 [ Parameter.A ]: {
                     center: 2 as ParameterValue,
@@ -29,10 +30,10 @@ describe("submetricCombinations", () => {
                 },
                 [ Parameter.W ]: 3.3 as ParameterValue,
             },
-        ]
-        const dynamicParameters = computeDynamicParameters(submetricScopes)
+        ] as Scope
+        const dynamicParameters = computeDynamicParameters(scope)
 
-        const result = computeSamples({ submetricScopes, dynamicParameters })
+        const result = computeSamples({ scope, dynamicParameters })
 
         const expectedResult = [
             {
@@ -208,7 +209,7 @@ describe("submetricCombinations", () => {
     })
 
     it("supports providing more than one submetric with the same submetric type", () => {
-        const submetricScopes = [
+        const scope = [
             {
                 [ Parameter.SUBMETRIC_TYPE ]: SubmetricType.COAPF,
                 [ Parameter.A ]: {
@@ -227,10 +228,10 @@ describe("submetricCombinations", () => {
                 },
                 [ Parameter.K ]: 0 as ParameterValue,
             },
-        ]
-        const dynamicParameters = computeDynamicParameters(submetricScopes)
+        ] as Scope
+        const dynamicParameters = computeDynamicParameters(scope)
 
-        const result = computeSamples({ submetricScopes, dynamicParameters })
+        const result = computeSamples({ scope, dynamicParameters })
 
         const expectedResult = [
             {

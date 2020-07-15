@@ -1,11 +1,14 @@
+import { Count } from "../../../../../general"
 import { debug } from "../../../debug"
 import { computeSumOfSquaresForSubmetrics } from "../../../sumOfSquares"
+import { bestMetricsForChunkCount } from "../../globals"
+import { Chunk } from "../../types"
 import { Sample } from "../types"
 import { setSumOfSquaresAtSamplePoint } from "./setSumOfSquaresAtSamplePoint"
-import { Metric, SumsOfSquares } from "./types"
+import { SumsOfSquares } from "./types"
 
-const computePossiblyUpdatedBestMetricWhilePopulatingSumsOfSquares = (sumsOfSquares: SumsOfSquares, samples: Sample[], previousBestMetric: Metric, indentation: string) => {
-    let bestMetric = previousBestMetric
+const computeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffect = (samples: Sample[], chunkCount: Count<Chunk>, indentation: string) => {
+    const sumsOfSquares: SumsOfSquares = []
 
     samples.forEach(sample => {
         const { submetrics, samplePoint } = sample
@@ -14,22 +17,22 @@ const computePossiblyUpdatedBestMetricWhilePopulatingSumsOfSquares = (sumsOfSqua
 
         setSumOfSquaresAtSamplePoint(sumOfSquares, sumsOfSquares, samplePoint)
 
-        if (sumOfSquares < bestMetric.sumOfSquares) {
-            bestMetric = { sumOfSquares, submetrics }
+        if (!bestMetricsForChunkCount[ chunkCount ] || sumOfSquares < bestMetricsForChunkCount[ chunkCount ].sumOfSquares) {
+            bestMetricsForChunkCount[ chunkCount ] = { sumOfSquares, submetrics }
             if (sumOfSquares === 0) {
                 computeSumOfSquaresForSubmetrics(submetrics)
                 throw new Error("This sum-of-squares was 0. That's extremely unlikely and probably means there's a bug in the code and that to continue searching now would be a waste of time.")
             }
 
-            if (debug.all) {
-                console.log(`${indentation}new best metric: ${JSON.stringify(bestMetric)}`.green)
+            if (debug.all || debug.newBestMetric) {
+                console.log(`${indentation}new best metric for chunk count ${chunkCount}: ${JSON.stringify(bestMetricsForChunkCount[ chunkCount ])}`.green)
             }
         }
     })
 
-    return bestMetric
+    return sumsOfSquares
 }
 
 export {
-    computePossiblyUpdatedBestMetricWhilePopulatingSumsOfSquares,
+    computeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffect,
 }

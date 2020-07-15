@@ -1,11 +1,11 @@
 import { computeDeepClone, Span } from "../../../../../general"
 import { ParameterValue } from "../../../types"
-import { SubmetricScope } from "../../types"
+import { Scope } from "../../types"
 import { computeResolution, DynamicParameter } from "../scopeToSamples"
 import { SamplePoint } from "../types"
 
-const computeNextScopes = (samplePoint: SamplePoint, dynamicParameters: DynamicParameter[], submetricScopes: SubmetricScope[]) => {
-    const nextScopes = computeDeepClone(submetricScopes)
+const computeNextScope = (samplePoint: SamplePoint, dynamicParameters: DynamicParameter[], scope: Scope): Scope => {
+    const nextScope = computeDeepClone(scope)
 
     samplePoint.forEach((dynamicParameterValueIndex, index) => {
         const { submetricIndex, parameter, values, unit } = dynamicParameters[ index ]
@@ -14,12 +14,12 @@ const computeNextScopes = (samplePoint: SamplePoint, dynamicParameters: DynamicP
         const span: Span<ParameterValue> = unit * (2 / 3) as Span<ParameterValue>
         const resolution = computeResolution(span)
 
-        nextScopes[ submetricIndex ][ parameter ] = { center, span, resolution }
+        nextScope[ submetricIndex ][ parameter ] = { center, span, resolution }
     })
 
-    return nextScopes
+    return nextScope
 }
 
 export {
-    computeNextScopes,
+    computeNextScope,
 }

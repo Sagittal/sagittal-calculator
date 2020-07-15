@@ -1,14 +1,12 @@
 import { Combination } from "../../../../../src/general/math"
-import {
-    computeSumOfSquaresForSubmetrics,
-    SumOfSquares,
-} from "../../../../../src/scripts/unpopularityMetric/sumOfSquares"
+import { computeSumOfSquaresForSubmetrics } from "../../../../../src/scripts/unpopularityMetric/sumOfSquares"
 import {
     Parameter,
     ParameterValue,
     Submetric,
     SubmetricType,
 } from "../../../../../src/scripts/unpopularityMetric/types"
+import { Sum } from "../../../../../src/general"
 
 describe("computeSumOfSquaresForSubmetrics", () => {
     it("returns the sum-of-squares for a given submetric combination", () => {
@@ -30,6 +28,6 @@ describe("computeSumOfSquaresForSubmetrics", () => {
 
         const result = computeSumOfSquaresForSubmetrics(submetrics)
 
-        expect(result).toBe(0.004260809896143936 as SumOfSquares)
+        expect(result).toBe(0.004260809896143936 as Sum<"SquaredWeightedRankDifferences">)
     })
 })

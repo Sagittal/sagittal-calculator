@@ -1,7 +1,7 @@
-import { computeBestMetric } from "./bestMetric"
+import { possiblyUpdateBestMetricAsSideEffect } from "./bestMetric"
 import { Metric } from "./types"
 
 export {
-    computeBestMetric,
+    possiblyUpdateBestMetricAsSideEffect,
     Metric,
 }

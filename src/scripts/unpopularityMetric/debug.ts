@@ -5,6 +5,7 @@ const debug: Debug = {
     submetricAntivotes: false,
     rankedUnpopularities: false,
     solver: false,
+    newBestMetric: false,
 }
 
 export {

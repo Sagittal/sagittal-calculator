@@ -10,19 +10,19 @@
 
 import { debug } from "../debug"
 import { debugSearchedAndPopulated } from "./debug"
-import { bestMetricsForChunkCount, status } from "./globals"
+import { status } from "./globals"
 import { populateScopes } from "./populate"
 import { searchScopes } from "./search"
 
-const populateAndSearchScopes = () => {
+const populateAndSearchScopes = async () => {
     populateScopes().then(() => {
         if (debug.all || debug.solver) console.log("\n\nFINISHED POPULATING".cyan)
         status.finishedPopulating = true
     })
-    searchScopes().then(() => {
-        if (debug.all || debug.solver) console.log(`\n\nFINAL STATUS ${debugSearchedAndPopulated()}`.yellow)
-        if (debug.all || debug.solver) console.log(`\n\nAND THE BEST METRICS PER CHUNK COUNT WERE ${JSON.stringify(bestMetricsForChunkCount.slice(1, bestMetricsForChunkCount.length), undefined, 4)}`.red)
-    })
+
+    await searchScopes()
+
+    if (debug.all || debug.solver) console.log(`\n\nFINAL STATUS ${debugSearchedAndPopulated()}`.yellow)
 }
 
 export {

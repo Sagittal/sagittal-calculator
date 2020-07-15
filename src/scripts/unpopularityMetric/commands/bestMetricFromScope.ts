@@ -4,7 +4,13 @@ import "colors"
 import { program } from "commander"
 import { Span } from "../../../general"
 import { debug } from "../debug"
-import { computeBestMetric, computeResolution, Scope } from "../solver"
+import {
+    bestMetricsForChunkCount,
+    computeResolution,
+    DUMMY_CHUNK_COUNT_FOR_ONE_OFF_BEST_METRIC_FROM_SCOPE,
+    possiblyUpdateBestMetricAsSideEffect,
+    Scope,
+} from "../solver"
 import { Parameter, ParameterValue } from "../types"
 
 program
@@ -43,6 +49,6 @@ const scope = [
     },
 ] as Scope
 
-const bestMetric = computeBestMetric(scope, { recurse })
-
-console.log(`\nbest metric: ${JSON.stringify(bestMetric)}`.green)
+possiblyUpdateBestMetricAsSideEffect(scope, { recurse }).then(() => {
+    console.log(`\nbest metric: ${JSON.stringify(bestMetricsForChunkCount[ DUMMY_CHUNK_COUNT_FOR_ONE_OFF_BEST_METRIC_FROM_SCOPE ])}`.green)
+})

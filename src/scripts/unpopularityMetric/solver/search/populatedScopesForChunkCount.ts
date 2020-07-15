@@ -8,7 +8,7 @@ import {
     status,
 } from "../globals"
 import { Scope } from "../types"
-import { computeBestMetric } from "./bestMetric"
+import { possiblyUpdateBestMetricAsSideEffect } from "./bestMetric"
 
 const searchPopulatedScopesForChunkCount = async () => {
     const searchingChunkCount = status.searchingChunkCount
@@ -22,13 +22,12 @@ const searchPopulatedScopesForChunkCount = async () => {
     const scopeForChunkCount = searchingScopes.pop() as Scope
 
     try {
-        const bestMetricForScope = await computeBestMetric(scopeForChunkCount, { bestMetric: bestMetricsForChunkCount[ searchingChunkCount ] })
-
-        if (!bestMetricsForChunkCount[ searchingChunkCount ] || bestMetricForScope.sumOfSquares < bestMetricsForChunkCount[ searchingChunkCount ].sumOfSquares) {
-            bestMetricsForChunkCount[ searchingChunkCount ] = bestMetricForScope
-        }
+        await possiblyUpdateBestMetricAsSideEffect(scopeForChunkCount, { chunkCount: searchingChunkCount }).then()
     } catch (e) {
-        // Bad scopes are still being computed... may not be a simple matter to not calculate them in the first place, so for now, just don't worry about them
+        // TODO: Bad scopes are still being computed...
+        //  it may not be a simple matter to not calculate them in the first place,
+        //  so for now, just don't worry about them
+        //  but it might be a good idea to have a separate debug key for metric errors
     }
 
     searchedForChunkCount[ searchingChunkCount ] = searchedForChunkCount[ searchingChunkCount ] ? searchedForChunkCount[ searchingChunkCount ] + 1 : 1

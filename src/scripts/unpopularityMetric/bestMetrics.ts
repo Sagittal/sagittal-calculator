@@ -4,7 +4,7 @@ import { Parameter, SubmetricType } from "./types"
 
 // Dave's log-α's (best SoS is 0.00613) some still with prime limit (s)
 // Mon Jun 29, 2020 7:07 pm
-// Http://forum.sagittal.org/viewtopic.php?p=1944#p1944
+// http://forum.sagittal.org/viewtopic.php?p=1944#p1944
 /*
 α		    w (your d)	    k		    y		    s		    SoS
 3.956349187	-0.619217685	0.638243216	0.883788532	0.020609268	0.006160415
@@ -37,7 +37,7 @@ const withPrimeLimit = {
 
 // Douglas's 8-chunk lowest-ever 0.00426 SoS
 // Mon Jun 29, 2020 7:36 pm
-// Http://forum.sagittal.org/viewtopic.php?p=1946#p1946
+// http://forum.sagittal.org/viewtopic.php?p=1946#p1946
 const lowestEver = {
     sumOfSquares: 0.004260809896143936,
     submetrics: [
@@ -61,7 +61,7 @@ const lowestEver = {
 
 // Douglas's response to Dave's ask for k vs. c wrt my lowest ever
 // Mon Jun 29, 2020 10:44 pm
-// Http://forum.sagittal.org/viewtopic.php?p=1951#p1951
+// http://forum.sagittal.org/viewtopic.php?p=1951#p1951
 // 0.00473
 const likeLowestEverButWithZeroK = {
     sumOfSquares: 0.004732527573659666,
@@ -100,7 +100,7 @@ const likeLowestEverButWithZeroC = {
 
 // Dave's "2-chunk" 0.00651 mcopfr claimed 0.00651 but I find 0.00721
 // Wed Jul 01, 2020 12:46 am
-// Http://forum.sagittal.org/viewtopic.php?p=1962#p1962
+// http://forum.sagittal.org/viewtopic.php?p=1962#p1962
 const notTwoChunkByCurrentDefinitionMcopfr = {
     sumOfSquares: 0.007205996505476978,
     submetrics: [
@@ -125,7 +125,7 @@ const notTwoChunkByCurrentDefinitionMcopfr = {
 
 // Dave's "3-chunk" mcopfr claimed 0.00614 but I find 0.00740
 // Wed Jul 01, 2020 2:46 am
-// Http://forum.sagittal.org/viewtopic.php?p=1964#p1964
+// http://forum.sagittal.org/viewtopic.php?p=1964#p1964
 const notThreeChunkByCurrentDefinitionMcopfr = {
     sumOfSquares: 0.0073967019283224696,
     submetrics: [
@@ -151,7 +151,7 @@ const notThreeChunkByCurrentDefinitionMcopfr = {
 
 // Dave's "4-chunk" mcopfr claimed 0.00660 but I find 0.00838
 // Wed Jul 01, 2020 7:07 pm
-// Http://forum.sagittal.org/viewtopic.php?p=1965#p1965
+// http://forum.sagittal.org/viewtopic.php?p=1965#p1965
 /*
 requires this hack to be added to `submetricAntivotes.js` to handle the "h" parameter
             if (index !== 2 && modifiedCount === true) {
@@ -183,11 +183,11 @@ const notFourChunkByCurrentDefinitionMcopfr = {
 
 // Douglas's 1-submetrics
 // Thu Jul 02, 2020 9:21 pm
-// Http://forum.sagittal.org/viewtopic.php?p=1978#p1978
+// http://forum.sagittal.org/viewtopic.php?p=1978#p1978
 // 1-submetric 9-chunk 0.00461
-// Const oneSubmetricNineChunk = {
-//     SumOfSquares: 0.0046106446887802695,
-//     Submetrics: [
+// const oneSubmetricNineChunk = {
+//     sumOfSquares: 0.0046106446887802695,
+//     submetrics: [
 //         {
 //             [Parameter.K]: 0.5920238095238095,              // ≈3/5
 //             [Parameter.A]: 2.0107142857142857,              // ≈2
@@ -202,9 +202,9 @@ const notFourChunkByCurrentDefinitionMcopfr = {
 //     ],
 // }
 // Golden 1-submetric 8-chunk 0.00468
-// Const goldenOneSubmetricEightChunk = {
-//     SumOfSquares: 0.0046831807461307174,
-//     Submetrics: [
+// const goldenOneSubmetricEightChunk = {
+//     sumOfSquares: 0.0046831807461307174,
+//     submetrics: [
 //         {
 //             [Parameter.K]: 0.5970238095238095,
 //             [Parameter.A]: 2.0125,
@@ -218,9 +218,9 @@ const notFourChunkByCurrentDefinitionMcopfr = {
 //     ],
 // }
 // // 1-submetric 7-chunk 0.00565
-// Const oneSubmetricSevenChunk = {
-//     SumOfSquares: 0.005646141896541448,
-//     Submetrics: [
+// const oneSubmetricSevenChunk = {
+//     sumOfSquares: 0.005646141896541448,
+//     submetrics: [
 //         {
 //             [Parameter.K]: 0.6328571428571429,
 //             [Parameter.A]: 1.5728571428571425,
@@ -251,7 +251,7 @@ const oneSubmetricSixChunk = {
 
 // Dave's similar to my lowest ever w/ exact a = 2 base 0.00445
 // Fri Jul 03, 2020 12:24 am
-// Http://forum.sagittal.org/viewtopic.php?p=1983#p1983
+// http://forum.sagittal.org/viewtopic.php?p=1983#p1983
 const almostLowestEverButWithExactA = {
     sumOfSquares: 0.004455901926266847,
     submetrics: [
@@ -275,7 +275,7 @@ const almostLowestEverButWithExactA = {
 
 // Dave's less fragile minimum 0.00559
 // Fri Jul 03, 2020 5:28 am
-// Http://forum.sagittal.org/viewtopic.php?p=1984#p1984
+// http://forum.sagittal.org/viewtopic.php?p=1984#p1984
 const lessFragileMinimum = {
     sumOfSquares: 0.005591116232258028,
     submetrics: [
@@ -299,7 +299,7 @@ const lessFragileMinimum = {
 
 // Dave's sanity check claimed 0.008325554
 // Sat Jul 04, 2020 3:17 am
-// Http://forum.sagittal.org/viewtopic.php?p=1995#p1995
+// http://forum.sagittal.org/viewtopic.php?p=1995#p1995
 const sanityCheck = {
     sumOfSquares: 0.00832555386875032,
     submetrics: [
@@ -318,7 +318,7 @@ const sanityCheck = {
 
 // Douglas's first run of the recursive automatic solver turned this up quick, 0.00406
 // Sun Jul 05, 2020 10:29 pm
-// Http://forum.sagittal.org/viewtopic.php?p=2004#p2004
+// http://forum.sagittal.org/viewtopic.php?p=2004#p2004
 const firstRecursiveRun = {
     sumOfSquares: 0.004059521951422367,
     submetrics: [
@@ -342,7 +342,7 @@ const firstRecursiveRun = {
 
 // Douglas's first attempt at lowest 2- and 3-chunk - the 3-chunk one was claimed to have 0.008291286 but Dave rejected that saying it actually has 0.018902286543139548, which I could not recreate at the time but then later recreated
 // Thu Jul 09, 2020 9:21 am
-// Http://forum.sagittal.org/viewtopic.php?p=2036#p2036
+// http://forum.sagittal.org/viewtopic.php?p=2036#p2036
 const firstAttemptAtLowestTwoChunk = {
     sumOfSquares: 0.0094912434848982,
     submetrics: [
@@ -366,10 +366,10 @@ const firstAttemptAtLowestThreeChunk = {
 
 // Dave's b and u: SoS 0.00659
 // Fri Jul 10, 2020 2:57 am
-// Http://forum.sagittal.org/viewtopic.php?p=2039#p2039
-// Const bAndU = {
-//     SumOfSquares: 0.006594234470005811,
-//     Submetrics: [
+// http://forum.sagittal.org/viewtopic.php?p=2039#p2039
+// const bAndU = {
+//     sumOfSquares: 0.006594234470005811,
+//     submetrics: [
 //         {
 //             [ Parameter.K ]: 0,
 //             [ Parameter.A ]: 2,
@@ -422,9 +422,9 @@ export {
     notThreeChunkByCurrentDefinitionMcopfr,
     notFourChunkByCurrentDefinitionMcopfr,
 
-    // OneSubmetricNineChunk,
-    // GoldenOneSubmetricEightChunk,
-    // OneSubmetricSevenChunk,
+    // oneSubmetricNineChunk,
+    // goldenOneSubmetricEightChunk,
+    // oneSubmetricSevenChunk,
     oneSubmetricSixChunk,
 
     almostLowestEverButWithExactA,
@@ -438,7 +438,7 @@ export {
     firstAttemptAtLowestTwoChunk,
     firstAttemptAtLowestThreeChunk,
 
-    // BAndU,
+    // bAndU,
 
     secondAttemptAtLowestTwoChunk,
     secondAttemptAtLowestThreeChunk,
