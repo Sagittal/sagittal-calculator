@@ -1,5 +1,5 @@
-import { Popularity, RankedUnpopularity, } from "./types"
 import { Sum } from "../../../general"
+import { Popularity, RankedUnpopularity, } from "./types"
 
 const computeSumOfSquares = (rankedUnpopularities: RankedUnpopularity[], realPopularities: Popularity[], zipfExponent: number): Sum<"SquaredWeightedRankDifferences"> =>
     realPopularities.reduce(

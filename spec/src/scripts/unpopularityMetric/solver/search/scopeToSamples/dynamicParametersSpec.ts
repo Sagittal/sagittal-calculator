@@ -5,7 +5,6 @@ import {
     Parameter,
     ParameterValue,
     Submetric,
-    SubmetricType,
 } from "../../../../../../../src/scripts/unpopularityMetric/types"
 
 describe("computeDynamicParameters", () => {
@@ -20,7 +19,7 @@ describe("computeDynamicParameters", () => {
                 [ Parameter.W ]: 4 as ParameterValue,
             },
             {
-                [ Parameter.SUBMETRIC_TYPE ]: SubmetricType.COAPF,
+                [ Parameter.COUNT ]: true,
                 [ Parameter.Y ]: {
                     center: 1.0 as ParameterValue,
                     span: 0.2 as Span<ParameterValue>,

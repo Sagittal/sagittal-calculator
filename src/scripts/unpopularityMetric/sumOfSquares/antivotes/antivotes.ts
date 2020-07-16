@@ -1,6 +1,6 @@
 import { Combination, Ratio } from "../../../../general"
 import { debug } from "../../debug"
-import { Parameter, Submetric, SubmetricType } from "../../types"
+import { Submetric } from "../../types"
 import { Antivotes } from "../types"
 import { computeWeightedSubmetricAntivotes } from "./weightedSubmetricAntivotes"
 
@@ -10,7 +10,7 @@ const computeAntivotes = (fiveRoughRatio: Ratio, submetrics: Combination<Submetr
             const weightedSubmetricAntivotes: Antivotes = computeWeightedSubmetricAntivotes(fiveRoughRatio, submetric)
 
             if (debug.all || debug.submetricAntivotes) {
-                console.log(`${submetric[ Parameter.SUBMETRIC_TYPE ] || SubmetricType.SOAPFAR}: ${weightedSubmetricAntivotes}`)
+                console.log(`${JSON.stringify(submetric)}: ${weightedSubmetricAntivotes}`)
             }
 
             return totalAntivotes + weightedSubmetricAntivotes as Antivotes

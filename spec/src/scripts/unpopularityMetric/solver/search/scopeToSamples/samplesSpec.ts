@@ -4,7 +4,7 @@ import {
     computeDynamicParameters,
     computeSamples,
 } from "../../../../../../../src/scripts/unpopularityMetric/solver/search/scopeToSamples"
-import { Parameter, ParameterValue, SubmetricType } from "../../../../../../../src/scripts/unpopularityMetric/types"
+import { Parameter, ParameterValue } from "../../../../../../../src/scripts/unpopularityMetric/types"
 
 describe("submetricCombinations", () => {
     it("given some submetric scopes, will return all combinations of submetrics to check", () => {
@@ -22,7 +22,7 @@ describe("submetricCombinations", () => {
                 },
             },
             {
-                [ Parameter.SUBMETRIC_TYPE ]: SubmetricType.COAPF,
+                [ Parameter.COUNT ]: true,
                 [ Parameter.A ]: {
                     center: 1.5 as ParameterValue,
                     span: 2 as Span<ParameterValue>,
@@ -43,7 +43,7 @@ describe("submetricCombinations", () => {
                         [ Parameter.K ]: -2,
                     },
                     {
-                        [ Parameter.SUBMETRIC_TYPE ]: SubmetricType.COAPF,
+                        [ Parameter.COUNT ]: true,
                         [ Parameter.A ]: 0.5,
                         [ Parameter.W ]: 3.3,
                     },
@@ -57,7 +57,7 @@ describe("submetricCombinations", () => {
                         [ Parameter.K ]: -2,
                     },
                     {
-                        [ Parameter.SUBMETRIC_TYPE ]: SubmetricType.COAPF,
+                        [ Parameter.COUNT ]: true,
                         [ Parameter.A ]: 2.5,
                         [ Parameter.W ]: 3.3,
                     },
@@ -71,7 +71,7 @@ describe("submetricCombinations", () => {
                         [ Parameter.K ]: 2,
                     },
                     {
-                        [ Parameter.SUBMETRIC_TYPE ]: SubmetricType.COAPF,
+                        [ Parameter.COUNT ]: true,
                         [ Parameter.A ]: 0.5,
                         [ Parameter.W ]: 3.3,
                     },
@@ -85,7 +85,7 @@ describe("submetricCombinations", () => {
                         [ Parameter.K ]: 2,
                     },
                     {
-                        [ Parameter.SUBMETRIC_TYPE ]: SubmetricType.COAPF,
+                        [ Parameter.COUNT ]: true,
                         [ Parameter.A ]: 2.5,
                         [ Parameter.W ]: 3.3,
                     },
@@ -99,7 +99,7 @@ describe("submetricCombinations", () => {
                         [ Parameter.K ]: -2,
                     },
                     {
-                        [ Parameter.SUBMETRIC_TYPE ]: SubmetricType.COAPF,
+                        [ Parameter.COUNT ]: true,
                         [ Parameter.A ]: 0.5,
                         [ Parameter.W ]: 3.3,
                     },
@@ -113,7 +113,7 @@ describe("submetricCombinations", () => {
                         [ Parameter.K ]: -2,
                     },
                     {
-                        [ Parameter.SUBMETRIC_TYPE ]: SubmetricType.COAPF,
+                        [ Parameter.COUNT ]: true,
                         [ Parameter.A ]: 2.5,
                         [ Parameter.W ]: 3.3,
                     },
@@ -127,7 +127,7 @@ describe("submetricCombinations", () => {
                         [ Parameter.K ]: 2,
                     },
                     {
-                        [ Parameter.SUBMETRIC_TYPE ]: SubmetricType.COAPF,
+                        [ Parameter.COUNT ]: true,
                         [ Parameter.A ]: 0.5,
                         [ Parameter.W ]: 3.3,
                     },
@@ -141,7 +141,7 @@ describe("submetricCombinations", () => {
                         [ Parameter.K ]: 2,
                     },
                     {
-                        [ Parameter.SUBMETRIC_TYPE ]: SubmetricType.COAPF,
+                        [ Parameter.COUNT ]: true,
                         [ Parameter.A ]: 2.5,
                         [ Parameter.W ]: 3.3,
                     },
@@ -155,7 +155,7 @@ describe("submetricCombinations", () => {
                         [ Parameter.K ]: -2,
                     },
                     {
-                        [ Parameter.SUBMETRIC_TYPE ]: SubmetricType.COAPF,
+                        [ Parameter.COUNT ]: true,
                         [ Parameter.A ]: 0.5,
                         [ Parameter.W ]: 3.3,
                     },
@@ -169,7 +169,7 @@ describe("submetricCombinations", () => {
                         [ Parameter.K ]: -2,
                     },
                     {
-                        [ Parameter.SUBMETRIC_TYPE ]: SubmetricType.COAPF,
+                        [ Parameter.COUNT ]: true,
                         [ Parameter.A ]: 2.5,
                         [ Parameter.W ]: 3.3,
                     },
@@ -183,7 +183,7 @@ describe("submetricCombinations", () => {
                         [ Parameter.K ]: 2,
                     },
                     {
-                        [ Parameter.SUBMETRIC_TYPE ]: SubmetricType.COAPF,
+                        [ Parameter.COUNT ]: true,
                         [ Parameter.A ]: 0.5,
                         [ Parameter.W ]: 3.3,
                     },
@@ -197,7 +197,7 @@ describe("submetricCombinations", () => {
                         [ Parameter.K ]: 2,
                     },
                     {
-                        [ Parameter.SUBMETRIC_TYPE ]: SubmetricType.COAPF,
+                        [ Parameter.COUNT ]: true,
                         [ Parameter.A ]: 2.5,
                         [ Parameter.W ]: 3.3,
                     },
@@ -211,7 +211,7 @@ describe("submetricCombinations", () => {
     it("supports providing more than one submetric with the same submetric type", () => {
         const scope = [
             {
-                [ Parameter.SUBMETRIC_TYPE ]: SubmetricType.COAPF,
+                [ Parameter.COUNT ]: true,
                 [ Parameter.A ]: {
                     center: 1.5 as ParameterValue,
                     span: 2 as Span<ParameterValue>,
@@ -220,7 +220,7 @@ describe("submetricCombinations", () => {
                 [ Parameter.K ]: 0.5 as ParameterValue,
             },
             {
-                [ Parameter.SUBMETRIC_TYPE ]: SubmetricType.COAPF,
+                [ Parameter.COUNT ]: true,
                 [ Parameter.A ]: {
                     center: 1 as ParameterValue,
                     span: 2 as Span<ParameterValue>,
@@ -237,12 +237,12 @@ describe("submetricCombinations", () => {
             {
                 submetrics: [
                     {
-                        [ Parameter.SUBMETRIC_TYPE ]: SubmetricType.COAPF,
+                        [ Parameter.COUNT ]: true,
                         [ Parameter.A ]: 0.5,
                         [ Parameter.K ]: 0.5,
                     },
                     {
-                        [ Parameter.SUBMETRIC_TYPE ]: SubmetricType.COAPF,
+                        [ Parameter.COUNT ]: true,
                         [ Parameter.A ]: 0,
                         [ Parameter.K ]: 0,
                     },
@@ -252,12 +252,12 @@ describe("submetricCombinations", () => {
             {
                 submetrics: [
                     {
-                        [ Parameter.SUBMETRIC_TYPE ]: SubmetricType.COAPF,
+                        [ Parameter.COUNT ]: true,
                         [ Parameter.A ]: 0.5,
                         [ Parameter.K ]: 0.5,
                     },
                     {
-                        [ Parameter.SUBMETRIC_TYPE ]: SubmetricType.COAPF,
+                        [ Parameter.COUNT ]: true,
                         [ Parameter.A ]: 2,
                         [ Parameter.K ]: 0,
                     },
@@ -267,12 +267,12 @@ describe("submetricCombinations", () => {
             {
                 submetrics: [
                     {
-                        [ Parameter.SUBMETRIC_TYPE ]: SubmetricType.COAPF,
+                        [ Parameter.COUNT ]: true,
                         [ Parameter.A ]: 2.5,
                         [ Parameter.K ]: 0.5,
                     },
                     {
-                        [ Parameter.SUBMETRIC_TYPE ]: SubmetricType.COAPF,
+                        [ Parameter.COUNT ]: true,
                         [ Parameter.A ]: 0,
                         [ Parameter.K ]: 0,
                     },
@@ -282,12 +282,12 @@ describe("submetricCombinations", () => {
             {
                 submetrics: [
                     {
-                        [ Parameter.SUBMETRIC_TYPE ]: SubmetricType.COAPF,
+                        [ Parameter.COUNT ]: true,
                         [ Parameter.A ]: 2.5,
                         [ Parameter.K ]: 0.5,
                     },
                     {
-                        [ Parameter.SUBMETRIC_TYPE ]: SubmetricType.COAPF,
+                        [ Parameter.COUNT ]: true,
                         [ Parameter.A ]: 2,
                         [ Parameter.K ]: 0,
                     },

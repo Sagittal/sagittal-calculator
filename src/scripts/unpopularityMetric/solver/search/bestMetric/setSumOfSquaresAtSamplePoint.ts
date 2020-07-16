@@ -1,6 +1,6 @@
+import { Sum } from "../../../../../general"
 import { SamplePoint } from "../types"
 import { SumsOfSquares } from "./types"
-import { Sum } from "../../../../../general"
 
 const setSumOfSquaresAtSamplePoint = (sumOfSquares: Sum<"SquaredWeightedRankDifferences">, sumsOfSquares: SumsOfSquares, samplePoint: SamplePoint) => {
     let cursor = sumsOfSquares

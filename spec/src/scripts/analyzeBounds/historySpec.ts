@@ -13,7 +13,7 @@ describe("analyzeHistory", () => {
     let bound: Bound
     let initialPosition
 
-    it("returns its history but with its event augmented with analysis properties, and calculates the final position of the history, and its distance from the initial position, and its overall distance the bound moved across all the events", () => {
+    it("returns its history but with its event augmented with analysis properties, and computes the final position of the history, and its distance from the initial position, and its overall distance the bound moved across all the events", () => {
         cents = actualBoundCents + 0.5 as Cents
         history = [
             { ...eventFixture, cents, type: EventType.INA, level: Level.EXTREME },

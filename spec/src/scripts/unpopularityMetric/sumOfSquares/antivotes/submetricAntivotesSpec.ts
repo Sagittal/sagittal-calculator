@@ -6,20 +6,19 @@ import {
     Parameter,
     ParameterValue,
     Submetric,
-    SubmetricType,
 } from "../../../../../../src/scripts/unpopularityMetric/types"
 
 describe("computeSubmetricAntivotes", () => {
     let submetric: Submetric
 
     const fiveRoughNumberMonzo: Monzo = [
-        0,                  // prime 2,  prime index 1 (from the prime resolution function)
-        0,                  // prime 3,  prime index 2 (from the prime resolution function)
-        0,                  // prime 5,  prime index 3 (from the prime resolution function)
-        0,                  // prime 7,  prime index 4 (from the prime resolution function)
-        1,                  // prime 11, prime index 5 (from the prime resolution function)
-        -1,                 // prime 13, prime index 6 (from the prime resolution function)
-        2,                  // prime 17, prime index 7 (from the prime resolution function)
+        0,                  // prime 2,  prime index 1 (from the prime count function)
+        0,                  // prime 3,  prime index 2 (from the prime count function)
+        0,                  // prime 5,  prime index 3 (from the prime count function)
+        0,                  // prime 7,  prime index 4 (from the prime count function)
+        1,                  // prime 11, prime index 5 (from the prime count function)
+        -1,                 // prime 13, prime index 6 (from the prime count function)
+        2,                  // prime 17, prime index 7 (from the prime count function)
     ] as Monzo
 
     beforeEach(() => {
@@ -27,6 +26,10 @@ describe("computeSubmetricAntivotes", () => {
     })
 
     describe("default case: submetric type is soapfar (all other parameters tested here)", () => {
+        beforeEach(() => {
+            submetric[ Parameter.SUM ] = true
+        })
+
         it("sums the absolute values of the prime factors in the 5-rough monzo", () => {
             const result = computeSubmetricAntivotes(fiveRoughNumberMonzo, submetric)
 
@@ -162,10 +165,17 @@ describe("computeSubmetricAntivotes", () => {
                 1 * 7 as Antivotes,
             )
         })
+
+        it("works for an empty monzo", () => {
+            const result = computeSubmetricAntivotes([], submetric)
+
+            expect(result).toBe(0 as Antivotes)
+        })
     })
 
     it("when the submetric type is soapf, sums the absolute values of the unique prime factors in the 5-rough monzo", () => {
-        submetric[ Parameter.SUBMETRIC_TYPE ] = SubmetricType.SOAPF
+        submetric[ Parameter.SUM ] = true
+        submetric[ Parameter.WITHOUT_REPETITION ] = true
 
         const result = computeSubmetricAntivotes(fiveRoughNumberMonzo, submetric)
 
@@ -176,8 +186,9 @@ describe("computeSubmetricAntivotes", () => {
         )
     })
 
-    it("when the submetric type is soapifar, sums the absolute values of the prime factors in the 5-rough monzo, mapped to the prime resolution function", () => {
-        submetric[ Parameter.SUBMETRIC_TYPE ] = SubmetricType.SOAPIFAR
+    it("when the submetric type is soapifar, sums the absolute values of the prime factors in the 5-rough monzo, mapped to the prime count function", () => {
+        submetric[ Parameter.SUM ] = true
+        submetric[ Parameter.USE_PRIME_INDEX ] = true
 
         const result = computeSubmetricAntivotes(fiveRoughNumberMonzo, submetric)
 
@@ -188,8 +199,10 @@ describe("computeSubmetricAntivotes", () => {
         )
     })
 
-    it("when the submetric type is soapif, sums the absolute values of the unique prime factors in the 5-rough monzo, mapped to the prime resolution function", () => {
-        submetric[ Parameter.SUBMETRIC_TYPE ] = SubmetricType.SOAPIF
+    it("when the submetric type is soapif, sums the absolute values of the unique prime factors in the 5-rough monzo, mapped to the prime count function", () => {
+        submetric[ Parameter.SUM ] = true
+        submetric[ Parameter.USE_PRIME_INDEX ] = true
+        submetric[ Parameter.WITHOUT_REPETITION ] = true
 
         const result = computeSubmetricAntivotes(fiveRoughNumberMonzo, submetric)
 
@@ -201,7 +214,7 @@ describe("computeSubmetricAntivotes", () => {
     })
 
     it("when the submetric type is coapfar, counts the prime factors in the 5-rough monzo", () => {
-        submetric[ Parameter.SUBMETRIC_TYPE ] = SubmetricType.COAPFAR
+        submetric[ Parameter.COUNT ] = true
 
         const result = computeSubmetricAntivotes(fiveRoughNumberMonzo, submetric)
 
@@ -213,7 +226,8 @@ describe("computeSubmetricAntivotes", () => {
     })
 
     it("when the submetric type is coapf, counts the unique prime factors in the 5-rough monzo", () => {
-        submetric[ Parameter.SUBMETRIC_TYPE ] = SubmetricType.COAPF
+        submetric[ Parameter.COUNT ] = true
+        submetric[ Parameter.WITHOUT_REPETITION ] = true
 
         const result = computeSubmetricAntivotes(fiveRoughNumberMonzo, submetric)
 
@@ -225,7 +239,8 @@ describe("computeSubmetricAntivotes", () => {
     })
 
     it("when the submetric type is gpf, takes the maximum prime factor in the 5-rough monzo", () => {
-        submetric[ Parameter.SUBMETRIC_TYPE ] = SubmetricType.GPF
+        submetric[ Parameter.MAX ] = true
+        submetric[ Parameter.WITHOUT_REPETITION ] = true
 
         const result = computeSubmetricAntivotes(fiveRoughNumberMonzo, submetric)
 
@@ -236,8 +251,10 @@ describe("computeSubmetricAntivotes", () => {
         )
     })
 
-    it("when the submetric type is gpf, takes the maximum prime factor index in the 5-rough monzo", () => {
-        submetric[ Parameter.SUBMETRIC_TYPE ] = SubmetricType.GPIF
+    it("when the submetric type is gpif, takes the maximum prime factor index in the 5-rough monzo", () => {
+        submetric[ Parameter.MAX ] = true
+        submetric[ Parameter.WITHOUT_REPETITION ] = true
+        submetric[ Parameter.USE_PRIME_INDEX ] = true
 
         const result = computeSubmetricAntivotes(fiveRoughNumberMonzo, submetric)
 
@@ -246,11 +263,5 @@ describe("computeSubmetricAntivotes", () => {
             0 * 6 +
             1 * 7 as Antivotes,
         )
-    })
-
-    it("works for an empty monzo", () => {
-        const result = computeSubmetricAntivotes([], submetric)
-
-        expect(result).toBe(0 as Antivotes)
     })
 })

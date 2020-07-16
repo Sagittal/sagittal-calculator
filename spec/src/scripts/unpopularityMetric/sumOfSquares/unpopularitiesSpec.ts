@@ -11,7 +11,6 @@ import {
     Parameter,
     ParameterValue,
     Submetric,
-    SubmetricType,
 } from "../../../../../src/scripts/unpopularityMetric/types"
 
 describe("computeUnpopularities", () => {
@@ -23,11 +22,11 @@ describe("computeUnpopularities", () => {
         ]
         const submetrics: Combination<Submetric> = [
             {
-                [ Parameter.SUBMETRIC_TYPE ]: SubmetricType.SOAPFAR,
                 [ Parameter.WEIGHT ]: 0 as ParameterValue,
             },
             {
-                [ Parameter.SUBMETRIC_TYPE ]: SubmetricType.COAPF,
+                [ Parameter.COUNT ]: true,
+                [ Parameter.WITHOUT_REPETITION ]: true,
                 [ Parameter.WEIGHT ]: 1 as ParameterValue,
             },
         ] as Combination<Submetric>

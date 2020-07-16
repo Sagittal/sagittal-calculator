@@ -25,6 +25,7 @@ const maximumUnit = program.maximumUnit
 
 const scope = [
     {
+        [ Parameter.SUM ]: true,
         [ Parameter.K ]: {
             center: 1,
             span: 0.02,

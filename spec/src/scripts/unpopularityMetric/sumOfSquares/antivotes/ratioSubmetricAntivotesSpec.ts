@@ -9,7 +9,7 @@ describe("computeRatioSubmetricAntivotes", () => {
     it("splits the ratio into numerator and denominator, computes their submetric antivotes separately, then adjusts the denominator by k", () => {
         const k = 0.46 as ParameterValue
         const fiveRoughRatio = [11, 7] as Ratio
-        const submetric = { k }
+        const submetric = { k, sum: true }
 
         const result = computeRatioSubmetricAntivotes(fiveRoughRatio, submetric)
 
@@ -22,7 +22,7 @@ describe("computeRatioSubmetricAntivotes", () => {
     it("another example", () => {
         const k = 0.46 as ParameterValue
         const fiveRoughRatio = [25, 11] as Ratio // 10:11
-        const submetric = { k }
+        const submetric = { k, sum: true }
 
         const result = computeRatioSubmetricAntivotes(fiveRoughRatio, submetric)
 
@@ -34,7 +34,7 @@ describe("computeRatioSubmetricAntivotes", () => {
 
     it("defaults k and j to 1", () => {
         const fiveRoughRatio = [5, 7] as Ratio
-        const submetric = {}
+        const submetric = { sum: true}
 
         const result = computeRatioSubmetricAntivotes(fiveRoughRatio, submetric)
 
@@ -47,7 +47,7 @@ describe("computeRatioSubmetricAntivotes", () => {
         const k = 0.46 as ParameterValue
         const fiveRoughRatio = [25, 11] as Ratio // 10:11
         const numeratorIsNuminator = false
-        const submetric = { k, numeratorIsNuminator }
+        const submetric = { k, numeratorIsNuminator, sum: true }
 
         const result = computeRatioSubmetricAntivotes(fiveRoughRatio, submetric)
 
@@ -60,7 +60,7 @@ describe("computeRatioSubmetricAntivotes", () => {
     it("works when k = 0 (and j = 1) therefore it only looks at the numerator", () => {
         const k = 0 as ParameterValue
         const fiveRoughRatio = [5, 7] as Ratio
-        const submetric = { k }
+        const submetric = { k, sum: true }
 
         const result = computeRatioSubmetricAntivotes(fiveRoughRatio, submetric)
 
@@ -72,7 +72,7 @@ describe("computeRatioSubmetricAntivotes", () => {
     it("works when j = 0 (and k = 1) therefore it only looks at the denominator", () => {
         const j = 0 as ParameterValue
         const fiveRoughRatio = [5, 7] as Ratio
-        const submetric = { j }
+        const submetric = { j, sum: true }
 
         const result = computeRatioSubmetricAntivotes(fiveRoughRatio, submetric)
 
@@ -85,7 +85,7 @@ describe("computeRatioSubmetricAntivotes", () => {
         const k = 2 as ParameterValue
         const kIsBase = true
         const fiveRoughRatio = [5, 7] as Ratio
-        const submetric = { k, kIsBase }
+        const submetric = { k, kIsBase, sum: true }
 
         const result = computeRatioSubmetricAntivotes(fiveRoughRatio, submetric)
 
@@ -99,7 +99,7 @@ describe("computeRatioSubmetricAntivotes", () => {
         const k = 2 as ParameterValue
         const kIsExponent = true
         const fiveRoughRatio = [5, 7] as Ratio
-        const submetric = { k, kIsExponent }
+        const submetric = { k, kIsExponent, sum: true }
 
         const result = computeRatioSubmetricAntivotes(fiveRoughRatio, submetric)
 
@@ -113,7 +113,7 @@ describe("computeRatioSubmetricAntivotes", () => {
         const j = 2 as ParameterValue
         const jIsBase = true
         const fiveRoughRatio = [5, 7] as Ratio
-        const submetric = { j, jIsBase }
+        const submetric = { j, jIsBase, sum: true }
 
         const result = computeRatioSubmetricAntivotes(fiveRoughRatio, submetric)
 
@@ -127,7 +127,7 @@ describe("computeRatioSubmetricAntivotes", () => {
         const j = 2 as ParameterValue
         const jIsExponent = true
         const fiveRoughRatio = [5, 7] as Ratio
-        const submetric = { j, jIsExponent }
+        const submetric = { j, jIsExponent, sum: true }
 
         const result = computeRatioSubmetricAntivotes(fiveRoughRatio, submetric)
 

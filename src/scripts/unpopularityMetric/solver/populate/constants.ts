@@ -1,7 +1,7 @@
 import { Span } from "../../../../general"
-import { Parameter, ParameterValue, SubmetricType } from "../../types"
+import { Parameter, ParameterValue } from "../../types"
 import { computeResolution } from "../search"
-import { ParameterChunk, SubmetricChunk, SubmetricScope } from "../types"
+import { Chunk, SubmetricScope } from "../types"
 
 // AKA: if they are going to be included in the automatically generated scopes per chunk count, what should they be set to
 const INITIAL_PARAMETER_SCOPES: SubmetricScope = {
@@ -48,13 +48,17 @@ const INITIAL_PARAMETER_SCOPES: SubmetricScope = {
     // [Parameter.T]: { center: 0, span: 6 },
     [ Parameter.NUMERATOR_IS_NUMINATOR ]: false,
     [ Parameter.MODIFIED_COUNT ]: true,
+    [ Parameter.SUM ]: true,
+    [ Parameter.COUNT ]: true,
+    [ Parameter.MAX ]: true,
+    [ Parameter.WITHOUT_REPETITION ]: true,
+    [ Parameter.USE_PRIME_INDEX ]: true,
 }
 
-const SUBMETRIC_CHUNKS: SubmetricChunk[] = Object.values(SubmetricType).map(submetricType =>
-    ({ [ Parameter.SUBMETRIC_TYPE ]: submetricType }))
-
-const PARAMETER_CHUNKS: ParameterChunk[] = [
-    { [ Parameter.K ]: INITIAL_PARAMETER_SCOPES[ Parameter.K ] },
+const CHUNKS: Chunk[] = [
+    {
+        [ Parameter.K ]: INITIAL_PARAMETER_SCOPES[ Parameter.K ],
+    },
     {
         [ Parameter.K ]: INITIAL_PARAMETER_SCOPES[ Parameter.K ],
         [ Parameter.K_IS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_IS_BASE ],
@@ -63,7 +67,9 @@ const PARAMETER_CHUNKS: ParameterChunk[] = [
         [ Parameter.K ]: INITIAL_PARAMETER_SCOPES[ Parameter.K ],
         [ Parameter.K_IS_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_IS_EXPONENT ],
     },
-    { [ Parameter.J ]: INITIAL_PARAMETER_SCOPES[ Parameter.J ] },
+    {
+        [ Parameter.J ]: INITIAL_PARAMETER_SCOPES[ Parameter.J ],
+    },
     {
         [ Parameter.J ]: INITIAL_PARAMETER_SCOPES[ Parameter.J ],
         [ Parameter.J_IS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.J_IS_BASE ],
@@ -72,7 +78,9 @@ const PARAMETER_CHUNKS: ParameterChunk[] = [
         [ Parameter.J ]: INITIAL_PARAMETER_SCOPES[ Parameter.J ],
         [ Parameter.J_IS_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.J_IS_EXPONENT ],
     },
-    { [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ] },
+    {
+        [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
+    },
     {
         [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
         [ Parameter.A_IS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_IS_BASE ],
@@ -81,15 +89,47 @@ const PARAMETER_CHUNKS: ParameterChunk[] = [
         [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
         [ Parameter.A_IS_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_IS_EXPONENT ],
     },
-    { [ Parameter.W ]: INITIAL_PARAMETER_SCOPES[ Parameter.W ] },
+    {
+        [ Parameter.W ]: INITIAL_PARAMETER_SCOPES[ Parameter.W ],
+    },
     // { [Parameter.X]: INITIAL_PARAMETER_SCOPES[Parameter.X]},
-    { [ Parameter.Y ]: INITIAL_PARAMETER_SCOPES[ Parameter.Y ] },
+    {
+        [ Parameter.Y ]: INITIAL_PARAMETER_SCOPES[ Parameter.Y ],
+    },
     // { [Parameter.V]: INITIAL_PARAMETER_SCOPES[Parameter.V]},
     // { [Parameter.T]: INITIAL_PARAMETER_SCOPES[Parameter.T]},
-    { [ Parameter.MODIFIED_COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.MODIFIED_COUNT ] },
-]
+    {
+        [ Parameter.MODIFIED_COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.MODIFIED_COUNT ],
+    },
+    {
+        [ Parameter.USE_PRIME_INDEX ]: INITIAL_PARAMETER_SCOPES[ Parameter.USE_PRIME_INDEX ],
+    },
+    { // SOAPFAR
+        [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+    },
+    { // SOAPF
+        [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+        [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+    },
+    { // COAPFAR
+        [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+    },
+    { // COAPF
+        [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+        [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+    },
+    { // GPF
+        [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+        [ Parameter.MAX ]: INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],
+    },
+    { // LOG BASE A OF N
+        [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+        [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
+        [ Parameter.A_IS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_IS_BASE ],
+    },
+] as Chunk[]
 
 export {
-    SUBMETRIC_CHUNKS,
-    PARAMETER_CHUNKS,
+    INITIAL_PARAMETER_SCOPES,
+    CHUNKS,
 }

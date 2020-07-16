@@ -7,7 +7,6 @@ import {
     Parameter,
     ParameterValue,
     Submetric,
-    SubmetricType,
 } from "../../../../../../src/scripts/unpopularityMetric/types"
 
 describe("computeAntivotes", () => {
@@ -16,6 +15,7 @@ describe("computeAntivotes", () => {
         const lopsidedFiveRoughRatio = [77, 1] as Ratio
         const submetrics: Combination<Submetric> = [
             {
+                [ Parameter.SUM ]: true,
                 [ Parameter.K ]: 1 as ParameterValue,
             },
         ] as Combination<Submetric>
@@ -31,6 +31,7 @@ describe("computeAntivotes", () => {
         const lopsidedFiveRoughRatio = [77, 1] as Ratio
         const submetrics: Combination<Submetric> = [
             {
+                [ Parameter.SUM ]: true,
                 [ Parameter.K ]: 0.9 as ParameterValue,
             },
         ] as Combination<Submetric>
@@ -45,10 +46,11 @@ describe("computeAntivotes", () => {
         const fiveRoughRatio = [77, 1] as Ratio
         const submetrics = [
             {
+                [ Parameter.SUM ]: true,
                 [ Parameter.WEIGHT ]: 0.5 as ParameterValue,
             },
             {
-                [ Parameter.SUBMETRIC_TYPE ]: SubmetricType.SOAPF,
+                [ Parameter.SUM ]: true,
                 [ Parameter.WEIGHT ]: 0.3 as ParameterValue,
             },
         ] as Combination<Submetric>
@@ -56,14 +58,15 @@ describe("computeAntivotes", () => {
         const result = computeAntivotes(fiveRoughRatio, submetrics)
 
         expect(result).toBe(
-            0.5 * computeSubmetricAntivotes([0, 0, 0, 1, 1] as Monzo) as Antivotes +
-            0.3 * computeSubmetricAntivotes([0, 0, 0, 1, 1] as Monzo, { withRepetition: false }) as Antivotes,
+            0.5 * computeSubmetricAntivotes([0, 0, 0, 1, 1] as Monzo, { [Parameter.SUM]: true }) as Antivotes +
+            0.3 * computeSubmetricAntivotes([0, 0, 0, 1, 1] as Monzo, { [Parameter.SUM]: true }) as Antivotes,
         )
     })
 
     it("should not return NaN", () => {
         const submetrics = [
             {
+                [ Parameter.SUM ]: true,
                 [ Parameter.WEIGHT ]: 1 as ParameterValue,
                 [ Parameter.K ]: 0 as ParameterValue,
                 [ Parameter.A ]: 2 as ParameterValue,

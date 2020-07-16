@@ -8,7 +8,6 @@ import {
     Parameter,
     ParameterValue,
     Submetric,
-    SubmetricType,
 } from "../../../../../../../src/scripts/unpopularityMetric/types"
 
 describe("combineSubmetricsPossibilitiesIntoSamples", () => {
@@ -16,17 +15,17 @@ describe("combineSubmetricsPossibilitiesIntoSamples", () => {
         const submetricOnePointOne: Submetric = {
             [ Parameter.A ]: 0.5 as ParameterValue,
             [ Parameter.Y ]: 1.5 as ParameterValue,
-            [ Parameter.SUBMETRIC_TYPE ]: SubmetricType.SOAPFAR,
+            [ Parameter.COUNT ]: true,
         }
         const submetricOnePointTwo: Submetric = {
             [ Parameter.A ]: 0.5 as ParameterValue,
             [ Parameter.Y ]: 1.2 as ParameterValue,
-            [ Parameter.SUBMETRIC_TYPE ]: SubmetricType.SOAPFAR,
+            [ Parameter.COUNT ]: true,
         }
         const submetricOnePointThree: Submetric = {
             [ Parameter.A ]: 0.5 as ParameterValue,
             [ Parameter.Y ]: 0.9 as ParameterValue,
-            [ Parameter.SUBMETRIC_TYPE ]: SubmetricType.SOAPFAR,
+            [ Parameter.COUNT ]: true,
         }
         const submetricTwoPointOne: Submetric = {
             [ Parameter.Y ]: 0.9 as ParameterValue,

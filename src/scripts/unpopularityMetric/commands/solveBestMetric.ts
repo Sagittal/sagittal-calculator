@@ -17,6 +17,8 @@ debug.all = !!program.debug
 status.populatingChunkCount = lowerBoundChunkCount as Count<Chunk>
 status.searchingChunkCount = lowerBoundChunkCount as Count<Chunk>
 
+// debug.solver = true
+
 populateAndSearchScopes().then(() => {
     const bestMetricsForNonzeroChunkCounts = bestMetricsForChunkCount.slice(1, bestMetricsForChunkCount.length)
     console.log(`\n\nAND THE BEST METRICS PER CHUNK COUNT WERE ${JSON.stringify(bestMetricsForNonzeroChunkCounts, undefined, 4)}`.green)

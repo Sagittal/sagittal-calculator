@@ -1,24 +1,6 @@
 import { Resolution, Span } from "../../general"
 
-enum SubmetricType {
-    SOAPFAR = "soapfar",
-    SOAPF = "soapf",
-    COAPFAR = "coapfar",
-    COAPF = "coapf",
-    SOAPIFAR = "soapifar",
-    SOAPIF = "soapif",
-    GPF = "gpf",
-    GPIF = "gpif",
-}
-
-enum SubmetricOperation {
-    SUM = "sum",
-    COUNT = "count",
-    MAX = "max",
-}
-
 enum Parameter {
-    SUBMETRIC_TYPE = "submetricType",                // submetric type, which will be used to look up its properties (how it works) when computing antivotes
     WEIGHT = "weight",                               // submetric coefficient
     WEIGHT_IS_BASE = "weightIsBase",                 // use the submetric coefficient instead as base
     WEIGHT_IS_EXPONENT = "weightIsExponent",         // use the submetric coefficient instead as an exponent
@@ -38,10 +20,14 @@ enum Parameter {
     // T = "t",                                         // prime exponent constant (applied after applying exponent)
     NUMERATOR_IS_NUMINATOR = "numeratorIsNuminator", // numinator is determined by the original ratio's numerator, not the greater of the two results of calling the submetric on the original ratio's numerator and denominator
     MODIFIED_COUNT = "modifiedCount",                // Dave's trick where 5's get a half-resolution
+    USE_PRIME_INDEX = "usePrimeIndex",               // use the prime index function instead of using the primes directly
+    WITHOUT_REPETITION = "withoutRepetition",        // send the prime exponent to 1 if abs is >0 and 0 if 0
+    SUM = "sum",                                     // operation to do on the monzo - sum (one of sum, count, or max must be provided)
+    COUNT = "count",                                 // operation to do on the monzo - count (one of sum, count, or max must be provided)
+    MAX = "max",                                     // operation to do on the monzo - max (one of sum, count, or max must be provided)
 }
 
 type Submetric = Partial<{
-    [ Parameter.SUBMETRIC_TYPE ]: SubmetricType,
     [ Parameter.WEIGHT ]: ParameterValue,
     [ Parameter.WEIGHT_IS_BASE ]: boolean,
     [ Parameter.WEIGHT_IS_EXPONENT ]: boolean,
@@ -59,13 +45,12 @@ type Submetric = Partial<{
     [ Parameter.NUMERATOR_IS_NUMINATOR ]: boolean
     [ Parameter.MODIFIED_COUNT ]: boolean,
     // [Parameter.X]: DynamicParameterValue
+    [ Parameter.USE_PRIME_INDEX ]: boolean,
+    [ Parameter.WITHOUT_REPETITION ]: boolean,
+    [ Parameter.SUM ]: boolean,
+    [ Parameter.COUNT ]: boolean,
+    [ Parameter.MAX ]: boolean,
 }>
-
-interface SubmetricProperties {
-    operation: SubmetricOperation,
-    usePrimeIndex?: boolean,
-    withRepetition: boolean,
-}
 
 type ParameterValue = number & { _ParameterValueBrand: "ParameterValue" }
 
@@ -85,10 +70,7 @@ interface Debug {
 
 export {
     Submetric,
-    SubmetricType,
-    SubmetricOperation,
     Parameter,
-    SubmetricProperties,
     ParameterValue,
     DynamicParameterScope,
     Debug,

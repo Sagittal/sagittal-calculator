@@ -3,7 +3,7 @@ import { program } from "commander"
 import { Combination, presentRatio, Ratio } from "../../../general"
 import { debug } from "../debug"
 import { computeAntivotes } from "../sumOfSquares"
-import { Parameter, ParameterValue, Submetric, SubmetricType } from "../types"
+import { Parameter, ParameterValue, Submetric } from "../types"
 
 program
     .option("-d, --debug", "debug")
@@ -14,6 +14,7 @@ debug.submetricAntivotes = !!program.debug
 const submetrics =
     [
         {
+            [ Parameter.SUM ]: true,
             [ Parameter.K ]: 0 as ParameterValue,
             [ Parameter.A ]: 1.994 as ParameterValue,
             [ Parameter.A_IS_BASE ]: true,
@@ -21,7 +22,7 @@ const submetrics =
             [ Parameter.W ]: -2.08 as ParameterValue,
         },
         {
-            [ Parameter.SUBMETRIC_TYPE ]: SubmetricType.COAPFAR,
+            [ Parameter.COUNT ]: true,
             [ Parameter.WEIGHT ]: 0.577 as ParameterValue,
         },
     ] as Combination<Submetric>

@@ -1,6 +1,6 @@
 import fontforge, psMat
 
-# Calculate the wonky Sagittal grid positions in PostScript font-units
+# Compute the wonky Sagittal grid positions in PostScript font-units
 
 # tt = TrueType
 # ps = PostScript

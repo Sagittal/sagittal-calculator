@@ -1,51 +1,37 @@
-import { Combination, Combinations, computeCombinations, Count } from "../../../../general"
+import { computeCombinations, computeDistributions, Count } from "../../../../general"
 import { debug } from "../../debug"
 import { debugSearchedAndPopulated } from "../debug"
-import { cachedParameterChunkCombinations, cachedSubmetricChunkCombinations, scopesForChunkCount } from "../globals"
-import { Chunk, ParameterChunk, SubmetricChunk } from "../types"
-import { PARAMETER_CHUNKS, SUBMETRIC_CHUNKS } from "./constants"
-import { populateScopeForChunkCount } from "./scopeForChunkCount"
-import { populateScopesForSubmetricChunkCombination } from "./scopesForSubmetricChunkCombination"
+import { Chunk, SubmetricScope } from "../types"
+import { CHUNKS } from "./constants"
+import { populateScopesForChunkCountAndSubmetricScopeCount } from "./scopesForChunkCountAndSubmetricScopeCount"
 
 const populateScopesForChunkCount = async (chunkCount: Count<Chunk>) => {
-    if (debug.all) {
-        console.log(`computing scopes for chunk count ${chunkCount}: phase 1 of ${chunkCount} (please give lead time for combinations calculation)`.cyan)
+    let submetricScopeCount: Count<SubmetricScope> = chunkCount
+
+    if (debug.all || debug.solver) {
+        console.log(`computing combinations for chunk count ${chunkCount}`.cyan)
     }
-    scopesForChunkCount[ chunkCount ] = scopesForChunkCount[ chunkCount ] || []
 
-    // TODO: I still believe there might be a way to get this thing inside that while loop... it shouldn't be exceptional
-    const submetricChunkCombinations: Combinations<SubmetricChunk> = computeCombinations(SUBMETRIC_CHUNKS, chunkCount)
-    submetricChunkCombinations.forEach((submetricChunkCombination: Combination<SubmetricChunk>) => {
-        populateScopeForChunkCount(submetricChunkCombination, chunkCount)
-    })
+    const chunkCombinations = computeCombinations(CHUNKS, chunkCount, { withRepeatedElements: true })
+    if (debug.all || debug.solver) {
+        console.log(`combinations computed: ${chunkCombinations.length} parameter combinations (with repetitions) for chunk count ${chunkCount}; formula is ((${chunkCount}+${CHUNKS.length}-1)!)/((${chunkCount}!)((${CHUNKS.length}-1)!)) where ${CHUNKS.length} is the total of possible existing chunks and ${chunkCount} is the count we are choosing at a time`.cyan)
+    }
 
-    if (debug.all || debug.solver) console.log(`finished phase 1/${chunkCount} of scope population for chunk count ${chunkCount} ${debugSearchedAndPopulated()}`.cyan)
-
-    let chunkCountForSubmetrics: Count<Chunk> = chunkCount
-    while (chunkCountForSubmetrics > 1) {
-        chunkCountForSubmetrics = chunkCountForSubmetrics - 1 as Count<Chunk>
-        const chunkCountForParameters: Count<ParameterChunk> = chunkCount - chunkCountForSubmetrics as Count<ParameterChunk>
-
-        if (debug.all) {
-            console.log(`computing scopes for chunk count ${chunkCount}: phase ${chunkCountForParameters + 1} of ${chunkCount} (please give lead time for combinations calculation)`.cyan)
+    while (submetricScopeCount > 0) {
+        if (debug.all || debug.solver) {
+            console.log(`computing scopes for chunk count ${chunkCount}: phase ${1 + chunkCount - submetricScopeCount}/${chunkCount}`.cyan)
         }
 
-        cachedSubmetricChunkCombinations[ chunkCountForSubmetrics ] = cachedSubmetricChunkCombinations[ chunkCountForSubmetrics ] || computeCombinations(SUBMETRIC_CHUNKS, chunkCountForSubmetrics, { withRepeatedElements: true })
-        const submetricChunkCombinations: Combinations<SubmetricChunk> = cachedSubmetricChunkCombinations[ chunkCountForSubmetrics ]
-
-        cachedParameterChunkCombinations[ chunkCountForParameters ] = cachedParameterChunkCombinations[ chunkCountForParameters ] || computeCombinations(PARAMETER_CHUNKS, chunkCountForParameters, { withRepeatedElements: true })
-        const parameterChunkCombinations: Combinations<ParameterChunk> = cachedParameterChunkCombinations[ chunkCountForParameters ]
-
-        if (debug.all) {
-            console.log(`combinations calculated: ${submetricChunkCombinations.length} submetric combinations and ${parameterChunkCombinations.length} parameter combinations`.cyan)
+        const exampleDistribution = computeDistributions(chunkCombinations[ 0 ], submetricScopeCount)
+        if (debug.all || debug.solver) {
+            console.log(`we find ${exampleDistribution.length} distributions of ${chunkCombinations[ 0 ].length} chunks across ${submetricScopeCount} submetric scope bins, which is how many more scopes should be contributed per each of the ${chunkCombinations.length} combinations in this phase, so expect a maximum ${exampleDistribution.length} * ${chunkCombinations.length} = ${exampleDistribution.length * chunkCombinations.length} new scopes from this phase (this does not factor for filtering out a huge number of distributions with invalid bins)`.cyan)
         }
-        for (const submetricChunkCombination of submetricChunkCombinations) {
-            await populateScopesForSubmetricChunkCombination(submetricChunkCombination, parameterChunkCombinations, 0, chunkCount)
-            if (debug.all) {
-                console.log(`finished for one submetric chunk combination within this phase ${debugSearchedAndPopulated()}`.cyan)
-            }
-        }
-        if (debug.all || debug.solver) console.log(`finished phase ${chunkCountForParameters + 1}/${chunkCount} of scope population for chunk count ${chunkCount} ${debugSearchedAndPopulated()}`.cyan)
+
+        await populateScopesForChunkCountAndSubmetricScopeCount(submetricScopeCount, chunkCombinations, 0, chunkCount)
+
+        if (debug.all || debug.solver) console.log(`finished phase ${1 + chunkCount - submetricScopeCount}/${chunkCount} of scope population for chunk count ${chunkCount} ${debugSearchedAndPopulated()}`.cyan)
+
+        submetricScopeCount = submetricScopeCount - 1 as Count<SubmetricScope>
     }
 
     if (debug.all || debug.solver) console.log(`FINISHED POPULATING CHUNK COUNT ${chunkCount} ${debugSearchedAndPopulated()}`.cyan)

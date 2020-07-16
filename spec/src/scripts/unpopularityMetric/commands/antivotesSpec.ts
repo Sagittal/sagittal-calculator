@@ -7,10 +7,10 @@ describe("antivotes", () => {
         const result = runCommandAndGetConsoleOutput(command)
 
         expect(result).toEqual([
-            `soapfar: 1.3944921183454442`,
-            `coapfar: 1.154`,
+            `{"sum":true,"k":0,"a":1.994,"aIsBase":true,"y":0.455,"w":-2.08}: 1.3944921183454442`,
+            `{"count":true,"weight":0.577}: 1.154`,
             `11/7`,
-            `[{"k":0,"a":1.994,"aIsBase":true,"y":0.455,"w":-2.08},{"submetricType":"coapfar","weight":0.577}]`,
+            `[{"sum":true,"k":0,"a":1.994,"aIsBase":true,"y":0.455,"w":-2.08},{"count":true,"weight":0.577}]`,
             `2.548492118345444`,
         ])
     })

@@ -1,7 +1,6 @@
 import { debug } from "../../debug"
 import { debugSearchedAndPopulated, presentPercentage } from "../debug"
 import {
-    bestMetricsForChunkCount,
     populatedForChunkCount,
     scopesForChunkCount,
     searchedForChunkCount,
@@ -13,19 +12,14 @@ import { possiblyUpdateBestMetricAsSideEffect } from "./bestMetric"
 const searchPopulatedScopesForChunkCount = async () => {
     const searchingChunkCount = status.searchingChunkCount
     const searchingScopes = scopesForChunkCount[ searchingChunkCount ]
-    const searchingScopesCount = searchingScopes && searchingScopes.length
-
-    if (debug.all) {
-        console.log(`scopes for chunk count remaining to search: ${searchingScopesCount}`.yellow)
-    }
 
     const scopeForChunkCount = searchingScopes.pop() as Scope
 
     try {
-        await possiblyUpdateBestMetricAsSideEffect(scopeForChunkCount, { chunkCount: searchingChunkCount }).then()
+        await possiblyUpdateBestMetricAsSideEffect(scopeForChunkCount, { chunkCount: searchingChunkCount })
     } catch (e) {
         // TODO: Bad scopes are still being computed...
-        //  it may not be a simple matter to not calculate them in the first place,
+        //  it may not be a simple matter to not compute them in the first place,
         //  so for now, just don't worry about them
         //  but it might be a good idea to have a separate debug key for metric errors
     }

@@ -1,4 +1,4 @@
-import { Parameter, SubmetricType } from "./types"
+import { Parameter } from "./types"
 
 //
 
@@ -24,9 +24,11 @@ const withPrimeLimit = {
             [ Parameter.W ]: -0.619217685,
             [ Parameter.Y ]: 0.883788532,
             [ Parameter.NUMERATOR_IS_NUMINATOR ]: false,
+            [ Parameter.SUM ]: true,
         },
         {
-            [ Parameter.SUBMETRIC_TYPE ]: SubmetricType.GPF,
+            [ Parameter.MAX ]: true,
+            [ Parameter.WITHOUT_REPETITION ]: true,
             [ Parameter.WEIGHT ]: 0.020609268,
             [ Parameter.NUMERATOR_IS_NUMINATOR ]: false,
         },
@@ -48,9 +50,10 @@ const lowestEver = {
             [ Parameter.Y ]: 0.455,
             [ Parameter.W ]: -2.08,
             [ Parameter.NUMERATOR_IS_NUMINATOR ]: false,
+            [ Parameter.SUM ]: true,
         },
         {
-            [ Parameter.SUBMETRIC_TYPE ]: SubmetricType.COAPFAR,
+            [ Parameter.COUNT ]: true,
             [ Parameter.WEIGHT ]: 0.577,
             [ Parameter.NUMERATOR_IS_NUMINATOR ]: false,
         },
@@ -73,9 +76,10 @@ const likeLowestEverButWithZeroK = {
             [ Parameter.Y ]: 0.473,
             [ Parameter.W ]: -2.62,
             [ Parameter.NUMERATOR_IS_NUMINATOR ]: false,
+            [ Parameter.SUM ]: true,
         },
         {
-            [ Parameter.SUBMETRIC_TYPE ]: SubmetricType.COAPFAR,
+            [ Parameter.COUNT ]: true,
             [ Parameter.WEIGHT ]: 0.723,
             [ Parameter.NUMERATOR_IS_NUMINATOR ]: false,
         },
@@ -92,6 +96,7 @@ const likeLowestEverButWithZeroC = {
             [ Parameter.Y ]: 0.85,
             [ Parameter.W ]: -2.77,
             [ Parameter.NUMERATOR_IS_NUMINATOR ]: false,
+            [ Parameter.SUM ]: true,
         },
     ],
 }
@@ -111,10 +116,11 @@ const notTwoChunkByCurrentDefinitionMcopfr = {
             [ Parameter.W ]: -1.453,
             [ Parameter.Y ]: 0.863,
             [ Parameter.NUMERATOR_IS_NUMINATOR ]: false,
+            [ Parameter.SUM ]: true,
         },
         {
             [ Parameter.J ]: 0,
-            [ Parameter.SUBMETRIC_TYPE ]: SubmetricType.COAPFAR,
+            [ Parameter.COUNT ]: true,
             [ Parameter.MODIFIED_COUNT ]: true,
             [ Parameter.NUMERATOR_IS_NUMINATOR ]: false,
         },
@@ -136,10 +142,11 @@ const notThreeChunkByCurrentDefinitionMcopfr = {
             [ Parameter.W ]: -1.431,
             [ Parameter.Y ]: 0.851,
             [ Parameter.NUMERATOR_IS_NUMINATOR ]: false,
+            [ Parameter.SUM ]: true,
         },
         {
             [ Parameter.J ]: 0,
-            [ Parameter.SUBMETRIC_TYPE ]: SubmetricType.COAPFAR,
+            [ Parameter.COUNT ]: true,
             [ Parameter.MODIFIED_COUNT ]: true,
             [ Parameter.Y ]: 1.332,
             [ Parameter.NUMERATOR_IS_NUMINATOR ]: false,
@@ -168,10 +175,11 @@ const notFourChunkByCurrentDefinitionMcopfr = {
             [ Parameter.W ]: -1.44,
             [ Parameter.Y ]: 0.86,
             [ Parameter.NUMERATOR_IS_NUMINATOR ]: false,
+            [ Parameter.SUM ]: true,
         },
         {
             [ Parameter.J ]: 0,
-            [ Parameter.SUBMETRIC_TYPE ]: SubmetricType.COAPFAR,
+            [ Parameter.COUNT ]: true,
             [ Parameter.MODIFIED_COUNT ]: true,
             [ Parameter.Y ]: 1.331,
             [ Parameter.NUMERATOR_IS_NUMINATOR ]: false,
@@ -198,6 +206,7 @@ const notFourChunkByCurrentDefinitionMcopfr = {
 //             [Parameter.T]: 1.658452380952381,               // ≈5/3
 //             [Parameter.Y]: 1.6476190476190475,              // ≈5/3
 //             [Parameter.NUMERATOR_IS_NUMINATOR]: false,
+//             [ Parameter.SUM ]: true,
 //         },
 //     ],
 // }
@@ -214,6 +223,7 @@ const notFourChunkByCurrentDefinitionMcopfr = {
 //             [Parameter.X]: 3.069642857142857,
 //             [Parameter.T]: 1.618452380952381,                           // ≈φ
 //             [Parameter.NUMERATOR_IS_NUMINATOR]: false,
+//             [ Parameter.SUM ]: true,
 //         },
 //     ],
 // }
@@ -229,6 +239,7 @@ const notFourChunkByCurrentDefinitionMcopfr = {
 //             [Parameter.Y]: 0.8571428571428571,
 //             [Parameter.X]: 1.607142857142857,
 //             [Parameter.NUMERATOR_IS_NUMINATOR]: false,
+//             [ Parameter.SUM ]: true,
 //         },
 //     ],
 // }
@@ -243,6 +254,7 @@ const oneSubmetricSixChunk = {
             [ Parameter.W ]: -1,
             [ Parameter.Y ]: 0.8766666666666667,
             [ Parameter.NUMERATOR_IS_NUMINATOR ]: false,
+            [ Parameter.SUM ]: true,
         },
     ],
 }
@@ -262,9 +274,10 @@ const almostLowestEverButWithExactA = {
             [ Parameter.A_IS_BASE ]: true,
             [ Parameter.W ]: -2.09,
             [ Parameter.NUMERATOR_IS_NUMINATOR ]: false,
+            [ Parameter.SUM ]: true,
         },
         {
-            [ Parameter.SUBMETRIC_TYPE ]: SubmetricType.COAPFAR,
+            [ Parameter.COUNT ]: true,
             [ Parameter.WEIGHT ]: 0.579,
             [ Parameter.NUMERATOR_IS_NUMINATOR ]: false,
         },
@@ -286,9 +299,10 @@ const lessFragileMinimum = {
             [ Parameter.A_IS_BASE ]: true,
             [ Parameter.W ]: -2.048657352,
             [ Parameter.NUMERATOR_IS_NUMINATOR ]: false,
+            [ Parameter.SUM ]: true,
         },
         {
-            [ Parameter.SUBMETRIC_TYPE ]: SubmetricType.COAPFAR,
+            [ Parameter.COUNT ]: true,
             [ Parameter.WEIGHT ]: 0.551650547,
             [ Parameter.NUMERATOR_IS_NUMINATOR ]: false,
         },
@@ -310,6 +324,7 @@ const sanityCheck = {
             [ Parameter.A_IS_BASE ]: true,
             [ Parameter.W ]: -1.415,
             [ Parameter.NUMERATOR_IS_NUMINATOR ]: false,
+            [ Parameter.SUM ]: true,
         },
     ],
 }
@@ -329,9 +344,10 @@ const firstRecursiveRun = {
             [ Parameter.Y ]: 0.4921875,
             [ Parameter.W ]: -1.986328125,
             [ Parameter.NUMERATOR_IS_NUMINATOR ]: false,
+            [ Parameter.SUM ]: true,
         },
         {
-            [ Parameter.SUBMETRIC_TYPE ]: SubmetricType.COAPFAR,
+            [ Parameter.COUNT ]: true,
             [ Parameter.WEIGHT ]: 0.5615234375,
             [ Parameter.NUMERATOR_IS_NUMINATOR ]: false,
         },
@@ -348,15 +364,18 @@ const firstAttemptAtLowestTwoChunk = {
     submetrics: [
         {
             [ Parameter.K ]: 0.7901234567901236,
+            [ Parameter.SUM ]: true,
         },
     ],
 }
 const firstAttemptAtLowestThreeChunk = {
     sumOfSquares: 0.018902286543139548,
     submetrics: [
-        {},
         {
-            [ Parameter.SUBMETRIC_TYPE ]: SubmetricType.COAPFAR,
+            [ Parameter.SUM ]: true,
+        },
+        {
+            [ Parameter.COUNT ]: true,
             [ Parameter.K ]: -1.11111111111111111,
         },
     ],
@@ -377,6 +396,7 @@ const firstAttemptAtLowestThreeChunk = {
 //             [ Parameter.Y ]: 0.861,
 //             [ Parameter.W ]: -2.656,
 //             [ Parameter.X ]: 4.471,
+//             [ Parameter.SUM ]: true,
 //         },
 //         {
 //             [ Parameter.J ]: 0,
@@ -385,6 +405,7 @@ const firstAttemptAtLowestThreeChunk = {
 //             [ Parameter.Y ]: 0.861,
 //             [ Parameter.W ]: -2.829,
 //             [ Parameter.X ]: 3.850,
+//             [ Parameter.SUM ]: true,
 //         },
 //     ]
 // }
@@ -398,6 +419,7 @@ const secondAttemptAtLowestTwoChunk = {
         {
             [ Parameter.J ]: 1.0954773869346734,
             [ Parameter.J_IS_EXPONENT ]: true,
+            [ Parameter.SUM ]: true,
         },
     ],
 }
@@ -407,6 +429,7 @@ const secondAttemptAtLowestThreeChunk = {
         {
             [ Parameter.Y ]: 0.96661101836394,
             [ Parameter.J ]: 1.407035175879397,
+            [ Parameter.SUM ]: true,
         },
     ],
 }

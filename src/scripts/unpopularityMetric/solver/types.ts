@@ -1,5 +1,5 @@
 import { Combination, Count, EnumHash } from "../../../general"
-import { DynamicParameterScope, Parameter, ParameterValue, SubmetricType } from "../types"
+import { DynamicParameterScope, Parameter, ParameterValue } from "../types"
 
 interface Status {
     finishedPopulating: boolean,
@@ -8,19 +8,14 @@ interface Status {
     upperBoundChunkCount: Count<Chunk>,
 }
 
-type SubmetricChunk = SubmetricScope
-type ParameterChunk = SubmetricScope
+type SubmetricScope = Partial<EnumHash<Parameter, ParameterValue | boolean | DynamicParameterScope>>
 
-type Chunk = SubmetricChunk | ParameterChunk
-
-type SubmetricScope = Partial<EnumHash<Parameter, ParameterValue | boolean | SubmetricType | DynamicParameterScope>>
+type Chunk = SubmetricScope & { _ChunkBrand: "Chunk"}
 
 type Scope = Combination<SubmetricScope>
 
 export {
     Status,
-    ParameterChunk,
-    SubmetricChunk,
     Chunk,
     SubmetricScope,
     Scope,

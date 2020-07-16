@@ -3,7 +3,7 @@ import { program } from "commander"
 import { Combination } from "../../../general"
 import { debug } from "../debug"
 import { computeSumOfSquaresForSubmetrics } from "../sumOfSquares"
-import { Parameter, ParameterValue, Submetric, SubmetricType } from "../types"
+import { Parameter, ParameterValue, Submetric } from "../types"
 
 program
     .option("-d, --debug", "debug")
@@ -14,6 +14,7 @@ debug.rankedUnpopularities = !!program.debug
 const submetrics =
     [
         {
+            [ Parameter.SUM ]: true,
             [ Parameter.K ]: 0.038 as ParameterValue,
             [ Parameter.A ]: 1.994 as ParameterValue,
             [ Parameter.A_IS_BASE ]: true,
@@ -22,7 +23,7 @@ const submetrics =
             [ Parameter.NUMERATOR_IS_NUMINATOR ]: false,
         },
         {
-            [ Parameter.SUBMETRIC_TYPE ]: SubmetricType.COAPFAR,
+            [ Parameter.COUNT ]: true,
             [ Parameter.WEIGHT ]: 0.577 as ParameterValue,
             [ Parameter.NUMERATOR_IS_NUMINATOR ]: false,
         },

@@ -1,9 +1,9 @@
+import { Sum } from "../../../../../../../src/general"
 import { Combination } from "../../../../../../../src/general/math"
 import { computeLocalMinima } from "../../../../../../../src/scripts/unpopularityMetric/solver/search/bestMetric/localMinima"
 import { SumsOfSquares } from "../../../../../../../src/scripts/unpopularityMetric/solver/search/bestMetric/types"
 import { Sample, SamplePoint } from "../../../../../../../src/scripts/unpopularityMetric/solver/search/types"
 import { Submetric } from "../../../../../../../src/scripts/unpopularityMetric/types"
-import { Sum } from "../../../../../../../src/general"
 
 describe("computeLocalMinima", () => {
     const samples: Sample[] = [

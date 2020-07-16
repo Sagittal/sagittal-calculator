@@ -1,11 +1,10 @@
 import { computeLog, computePrimeCount, Monzo, PRIMES } from "../../../../general"
-import { SUBMETRIC_PROPERTIES } from "../../constants"
-import { ParameterValue, Submetric, SubmetricOperation, SubmetricType } from "../../types"
+import { ParameterValue, Submetric } from "../../types"
 import { Antivotes } from "../types"
 
-// (sum or resolution)
+// (sum or count)
 // of (maybe adjusted) prime factors
-// (or prime factor indices via prime resolution function π)
+// (or prime factor indices via prime count function π)
 // (maybe with (maybe adjusted) repetition)
 
 const computeSubmetricAntivotes = (fiveRoughNumberMonzo: Monzo, submetric = {}): Antivotes => {
@@ -18,19 +17,19 @@ const computeSubmetricAntivotes = (fiveRoughNumberMonzo: Monzo, submetric = {}):
         y = 1 as ParameterValue,
         // v = 0 as DynamicParameterValue,
         // t = 0 as DynamicParameterValue,
-        submetricType = SubmetricType.SOAPFAR,
+        usePrimeIndex = false,
+        sum = false,
+        count = false,
+        max = false,
+        withoutRepetition = false,
         modifiedCount = false,
     }: Submetric = submetric
 
-    const {
-        withRepetition = true,
-        operation = SubmetricOperation.SUM,
-        usePrimeIndex,
-    } = SUBMETRIC_PROPERTIES[ submetricType ]
+    if (!count && !max && !sum) throw new Error("Attempted to compute antivotes without an operation (sum, count, or max).")
 
     return fiveRoughNumberMonzo.reduce(
         (monzoAntivotes: Antivotes, primeExponent, index): Antivotes => {
-            if (operation === SubmetricOperation.MAX && index < fiveRoughNumberMonzo.length - 1) {
+            if (max && index < fiveRoughNumberMonzo.length - 1) {
                 return 0 as Antivotes
             }
 
@@ -39,7 +38,7 @@ const computeSubmetricAntivotes = (fiveRoughNumberMonzo: Monzo, submetric = {}):
             let adjustedPrime
             let adjustedPrimeExponent
 
-            adjustedPrime = operation === SubmetricOperation.COUNT ?
+            adjustedPrime = count ?
                 1 :
                 usePrimeIndex ?
                     computePrimeCount(prime) :
@@ -60,13 +59,13 @@ const computeSubmetricAntivotes = (fiveRoughNumberMonzo: Monzo, submetric = {}):
             if (primeExponent === 0) {
                 adjustedPrimeExponent = 0
             } else {
-                adjustedPrimeExponent = withRepetition ? Math.abs(primeExponent) : 1
+                adjustedPrimeExponent = withoutRepetition ? 1 : Math.abs(primeExponent)
                 // adjustedPrimeExponent = adjustedPrimeExponent + t
                 adjustedPrimeExponent = adjustedPrimeExponent >= 0 ? adjustedPrimeExponent ** y : 0
                 // adjustedPrimeExponent = adjustedPrimeExponent + v
             }
 
-            let primeExponentAntivotes = adjustedPrimeExponent * adjustedPrime
+            let primeExponentAntivotes = adjustedPrime * adjustedPrimeExponent
             if (index === 2 && modifiedCount) {
                 primeExponentAntivotes = primeExponentAntivotes * 0.5
             }

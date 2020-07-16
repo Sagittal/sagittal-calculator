@@ -1,7 +1,7 @@
+import { Sum } from "../../../../../../../src/general"
 import { getSumOfSquaresAtSamplePoint } from "../../../../../../../src/scripts/unpopularityMetric/solver/search/bestMetric/getSumOfSquaresAtSamplePoint"
 import { SumsOfSquares } from "../../../../../../../src/scripts/unpopularityMetric/solver/search/bestMetric/types"
 import { SamplePoint } from "../../../../../../../src/scripts/unpopularityMetric/solver/search/types"
-import { Sum } from "../../../../../../../src/general"
 
 describe("getSumOfSquaresAtPoint", () => {
     it("returns the sum-of-squares at that sample point", () => {

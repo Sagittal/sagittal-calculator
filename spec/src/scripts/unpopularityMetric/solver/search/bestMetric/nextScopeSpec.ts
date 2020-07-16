@@ -7,7 +7,6 @@ import {
     Parameter,
     ParameterValue,
     Submetric,
-    SubmetricType,
 } from "../../../../../../../src/scripts/unpopularityMetric/types"
 
 describe("computeNextScope", () => {
@@ -53,7 +52,7 @@ describe("computeNextScope", () => {
                     span: 0.01 as Span<ParameterValue>,
                     resolution: 5 as Resolution<ParameterValue>,
                 },
-                [ Parameter.SUBMETRIC_TYPE ]: SubmetricType.COAPFAR,
+                [ Parameter.COUNT ]: true,
             },
         ] as Scope
 
@@ -79,7 +78,7 @@ describe("computeNextScope", () => {
                     span: 0.013333333333333332 as Span<ParameterValue>,
                     resolution: 2 as Resolution<ParameterValue>,
                 },
-                [ Parameter.SUBMETRIC_TYPE ]: SubmetricType.COAPFAR,
+                [ Parameter.COUNT ]: true,
             },
         ])
     })
