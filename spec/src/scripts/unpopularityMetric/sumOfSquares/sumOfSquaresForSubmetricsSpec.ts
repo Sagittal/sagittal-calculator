@@ -17,12 +17,12 @@ describe("computeSumOfSquaresForSubmetrics", () => {
                 [ Parameter.A_IS_BASE ]: true,
                 [ Parameter.Y ]: 0.455 as ParameterValue,
                 [ Parameter.W ]: -2.08 as ParameterValue,
-                [ Parameter.NUMERATOR_IS_NUMINATOR ]: false,
+                [ Parameter.USE_NUMINATOR ]: true,
             },
             {
                 [ Parameter.COUNT ]: true,
                 [ Parameter.WEIGHT ]: 0.577 as ParameterValue,
-                [ Parameter.NUMERATOR_IS_NUMINATOR ]: false,
+                [ Parameter.USE_NUMINATOR ]: true,
             },
         ] as Combination<Submetric>
 

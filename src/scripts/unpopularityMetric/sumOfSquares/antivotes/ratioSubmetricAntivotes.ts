@@ -7,7 +7,7 @@ const computeRatioSubmetricAntivotes = (fiveRoughRatio: Ratio, submetric: Submet
     const {
         k = 1 as ParameterValue,
         j = 1 as ParameterValue,
-        numeratorIsNuminator = true,
+        useNuminator = false,
         jIsBase = false,
         jIsExponent = false,
         kIsBase = false,
@@ -26,34 +26,35 @@ const computeRatioSubmetricAntivotes = (fiveRoughRatio: Ratio, submetric: Submet
 
     const numeratorPrimeContentAntivotes = computeSubmetricAntivotes(fiveRoughNumeratorMonzo, submetric)
     const denominatorPrimeContentAntivotes = computeSubmetricAntivotes(fiveRoughDenominatorMonzo, submetric)
-    const numinator = numeratorIsNuminator === true ?
-        numeratorPrimeContentAntivotes :
+    const outputNumerator = useNuminator ?
         numeratorPrimeContentAntivotes > denominatorPrimeContentAntivotes ?
             numeratorPrimeContentAntivotes :
-            denominatorPrimeContentAntivotes
-    const diminuator = numeratorIsNuminator === true ?
-        denominatorPrimeContentAntivotes :
+            denominatorPrimeContentAntivotes :
+        numeratorPrimeContentAntivotes
+
+    const outputDenominator = useNuminator ?
         numeratorPrimeContentAntivotes > denominatorPrimeContentAntivotes ?
             denominatorPrimeContentAntivotes :
-            numeratorPrimeContentAntivotes
+            numeratorPrimeContentAntivotes :
+        denominatorPrimeContentAntivotes
 
-    const weightedNuminator = jIsBase ?
-        computeLog(numinator, j) :
+    const weightedOutputNumerator = jIsBase ?
+        computeLog(outputNumerator, j) :
         jIsExponent ?
-            numinator ** j :
-            numinator * j
+            outputNumerator ** j :
+            outputNumerator * j
 
-    const weightedDiminuator = kIsBase ?
-        computeLog(diminuator, k) :
+    const weightedOutputDenominator = kIsBase ?
+        computeLog(outputDenominator, k) :
         kIsExponent ?
-            diminuator ** k :
-            diminuator * k
+            outputDenominator ** k :
+            outputDenominator * k
 
-    if (isNaN(weightedNuminator) || isNaN(weightedDiminuator)) {
-        throw new Error(`You got NaN! in ratioSubmetricAntivotes ${fiveRoughRatio} ${JSON.stringify(submetric, null, 4)} ${weightedNuminator} ${weightedDiminuator} ${diminuator} ${k}`)
+    if (isNaN(weightedOutputNumerator) || isNaN(weightedOutputDenominator)) {
+        throw new Error(`You got NaN! in ratioSubmetricAntivotes ${fiveRoughRatio} ${JSON.stringify(submetric, null, 4)} ${weightedOutputNumerator} ${weightedOutputDenominator} ${outputDenominator} ${k}`)
     }
 
-    return weightedNuminator + weightedDiminuator as Antivotes
+    return weightedOutputNumerator + weightedOutputDenominator as Antivotes
 }
 
 export {

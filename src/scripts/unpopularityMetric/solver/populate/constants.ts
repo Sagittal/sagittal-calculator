@@ -46,7 +46,7 @@ const INITIAL_PARAMETER_SCOPES: SubmetricScope = {
     },
     // [Parameter.V]: { center: 0, span: 6 },
     // [Parameter.T]: { center: 0, span: 6 },
-    [ Parameter.NUMERATOR_IS_NUMINATOR ]: false,
+    [ Parameter.USE_NUMINATOR ]: true,
     [ Parameter.MODIFIED_COUNT ]: true,
     [ Parameter.SUM ]: true,
     [ Parameter.COUNT ]: true,
@@ -100,6 +100,9 @@ const CHUNKS: Chunk[] = [
     // { [Parameter.T]: INITIAL_PARAMETER_SCOPES[Parameter.T]},
     {
         [ Parameter.MODIFIED_COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.MODIFIED_COUNT ],
+    },
+    {
+        [ Parameter.USE_NUMINATOR ]: INITIAL_PARAMETER_SCOPES[ Parameter.USE_NUMINATOR ],
     },
     {
         [ Parameter.USE_PRIME_INDEX ]: INITIAL_PARAMETER_SCOPES[ Parameter.USE_PRIME_INDEX ],

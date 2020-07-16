@@ -18,7 +18,7 @@ enum Parameter {
     Y = "y",                                         // prime exponent exponent
     // V = "v",                                         // prime exponent constant (applied before applying exponent, for non-zero terms)
     // T = "t",                                         // prime exponent constant (applied after applying exponent)
-    NUMERATOR_IS_NUMINATOR = "numeratorIsNuminator", // numinator is determined by the original ratio's numerator, not the greater of the two results of calling the submetric on the original ratio's numerator and denominator
+    USE_NUMINATOR = "useNuminator",                  // reorient the ratio to use as its numerator the greater of the two results (the numinator) of calling the submetric on the original ratio's numerator and denominator
     MODIFIED_COUNT = "modifiedCount",                // Dave's trick where 5's get a half-resolution
     USE_PRIME_INDEX = "usePrimeIndex",               // use the prime index function instead of using the primes directly
     WITHOUT_REPETITION = "withoutRepetition",        // send the prime exponent to 1 if abs is >0 and 0 if 0
@@ -42,7 +42,7 @@ type Submetric = Partial<{
     [ Parameter.A_IS_EXPONENT ]: boolean
     [ Parameter.W ]: ParameterValue
     [ Parameter.Y ]: ParameterValue
-    [ Parameter.NUMERATOR_IS_NUMINATOR ]: boolean
+    [ Parameter.USE_NUMINATOR ]: boolean
     [ Parameter.MODIFIED_COUNT ]: boolean,
     // [Parameter.X]: DynamicParameterValue
     [ Parameter.USE_PRIME_INDEX ]: boolean,

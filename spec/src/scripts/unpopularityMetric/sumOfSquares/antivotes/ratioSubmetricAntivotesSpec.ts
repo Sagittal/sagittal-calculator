@@ -46,8 +46,8 @@ describe("computeRatioSubmetricAntivotes", () => {
     it("supports deciding the numinator and diminuator by which is the greater of the two", () => {
         const k = 0.46 as ParameterValue
         const fiveRoughRatio = [25, 11] as Ratio // 10:11
-        const numeratorIsNuminator = false
-        const submetric = { k, numeratorIsNuminator, sum: true }
+        const useNuminator = true
+        const submetric = { k, useNuminator, sum: true }
 
         const result = computeRatioSubmetricAntivotes(fiveRoughRatio, submetric)
 
