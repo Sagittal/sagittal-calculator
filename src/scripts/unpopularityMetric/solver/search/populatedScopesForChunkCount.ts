@@ -11,6 +11,11 @@ import { possiblyUpdateBestMetricAsSideEffect } from "./bestMetric"
 
 const searchPopulatedScopesForChunkCount = async () => {
     const searchingChunkCount = status.searchingChunkCount
+
+    if (searchedForChunkCount[ searchingChunkCount ] % 1 === 0) {
+        if (debug.all || debug.solver) console.log(`searched out of populated for chunk count ${searchingChunkCount}: ${presentPercentage(searchedForChunkCount[ searchingChunkCount ], populatedForChunkCount[ searchingChunkCount ])} ${debugSearchedAndPopulated()}`.yellow)
+    }
+
     const searchingScopes = scopesForChunkCount[ searchingChunkCount ]
 
     const scopeForChunkCount = searchingScopes.pop() as Scope
@@ -24,11 +29,9 @@ const searchPopulatedScopesForChunkCount = async () => {
         //  but it might be a good idea to have a separate debug key for metric errors
     }
 
-    searchedForChunkCount[ searchingChunkCount ] = searchedForChunkCount[ searchingChunkCount ] ? searchedForChunkCount[ searchingChunkCount ] + 1 : 1
-
-    if (searchedForChunkCount[ searchingChunkCount ] % 10 === 0) {
-        if (debug.all || debug.solver) console.log(`searched out of populated for chunk count ${searchingChunkCount}: ${presentPercentage(searchedForChunkCount[ searchingChunkCount ], populatedForChunkCount[ searchingChunkCount ])} ${debugSearchedAndPopulated()}`.yellow)
-    }
+    searchedForChunkCount[ searchingChunkCount ] = searchedForChunkCount[ searchingChunkCount ] ?
+        searchedForChunkCount[ searchingChunkCount ] + 1 :
+        1
 }
 
 export {

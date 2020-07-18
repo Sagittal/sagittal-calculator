@@ -26,7 +26,7 @@ const possiblyUpdateBestMetricAsSideEffect = async (scope: Scope, options: Compu
 
     const sumsOfSquares: SumsOfSquares = computeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffect(samples, chunkCount, indentation)
 
-    if (debug.all) {
+    if (debug.all || debug.solver) {
         console.log(`\n${indentation}local minima:`)
     }
     const nextLocalMinima = computeLocalMinima(samples, sumsOfSquares)

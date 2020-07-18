@@ -20,6 +20,7 @@ const populateAndSearchScopes = async () => {
         status.finishedPopulating = true
     })
 
+    if (debug.all || debug.solver) console.log(`\n\nPROCESSING CHUNK COUNT ${status.searchingChunkCount} (${status.finishedPopulating ? `finished populating` : `still populating chunk count ${status.populatingChunkCount}`}) ${debugSearchedAndPopulated()}`.yellow)
     await searchScopes()
 
     if (debug.all || debug.solver) console.log(`\n\nFINAL STATUS ${debugSearchedAndPopulated()}`.yellow)

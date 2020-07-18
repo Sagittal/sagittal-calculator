@@ -9,7 +9,6 @@ const ONE_SECOND_TO_GIVE_POPULATION_A_CHANCE_TO_CATCH_UP = 1000
 
 const searchScopes = async () => {
     const searchingChunkCount = status.searchingChunkCount
-    if (debug.all || debug.solver) console.log(`\n\nPROCESSING CHUNK COUNT ${searchingChunkCount} (${status.finishedPopulating ? `finished populating` : `still populating chunk count ${status.populatingChunkCount}`}) ${debugSearchedAndPopulated()}`.yellow)
 
     while (scopesForChunkCount[ searchingChunkCount ] && scopesForChunkCount[ searchingChunkCount ].length > 0) {
         await searchPopulatedScopesForChunkCount()
@@ -23,6 +22,7 @@ const searchScopes = async () => {
 
     return new Promise(async resolve => {
         if (searchingChunkCount <= status.upperBoundChunkCount && !status.finishedPopulating) {
+            if (debug.all || debug.solver) console.log(`searching got ahead of populating; waiting 1 second for more scopes to be populated for ${searchingChunkCount} ${debugSearchedAndPopulated()}`.yellow)
             setTimeout(async () => {
                 await searchScopes()
                 resolve()

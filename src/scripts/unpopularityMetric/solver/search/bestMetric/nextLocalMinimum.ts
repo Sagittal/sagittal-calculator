@@ -21,7 +21,7 @@ const searchNextLocalMinimum = (nextLocalMinimum: LocalMinimum, options: SearchL
 
     const nextScope: Scope = computeNextScope(nextLocalMinimum.samplePoint, dynamicParameters, scope)
     const nextProgressMessage = progressMessage + `${index}/${(nextLocalMinima.length)}@depth${nextDepth} `
-    if (debug.all) {
+    if (debug.all || debug.solver) {
         console.log(`${indentation}${nextProgressMessage}${JSON.stringify(nextLocalMinimum)}`)
     }
 
