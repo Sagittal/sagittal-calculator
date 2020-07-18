@@ -41,7 +41,6 @@ const populateScopesForChunkCount = async (chunkCount: Count<Chunk>) => {
         }
 
         const exampleDistributions = computeDistributions(parameterChunkCombinations[ 0 ], submetricChunkCombinations[0].length)
-        console.log('#######well what the hell then', parameterChunkCombinations[ 0 ].length, submetricChunkCombinations[0].length)
         if (debug.all || debug.solver) {
             console.log(`we find ${exampleDistributions.length} distributions of ${parameterChunkCombinations[ 0 ].length} parameter chunks across ${submetricChunkCombinations[0].length} bins (assignments to each of a combination of submetrics), which is how many more scopes should be contributed per each of the ${parameterChunkCombinations.length} parameter chunk combinations in this phase, and that times the ${submetricChunkCombinations.length} submetric chunk combinations in this phase, so expect ${exampleDistributions.length} * ${parameterChunkCombinations.length} * ${submetricChunkCombinations.length} = ${exampleDistributions.length * parameterChunkCombinations.length * submetricChunkCombinations.length} new scopes from this phase, so we should end with a total of ${(populatedForChunkCount[chunkCount] || 0) + exampleDistributions.length * parameterChunkCombinations.length * submetricChunkCombinations.length}`.cyan)
         }
