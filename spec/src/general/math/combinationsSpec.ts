@@ -33,22 +33,30 @@ describe("computeCombinations", () => {
         const result = computeCombinations(set, count, { withRepeatedElements: true })
 
         const expectedResult = [
-            ["a", "a"],
-            ["a", "b"],
-            ["a", "c"],
-            ["a", "d"],
-            ["b", "b"],
-            ["b", "c"],
-            ["b", "d"],
-            ["c", "c"],
-            ["c", "d"],
-            ["d", "d"],
+            [ "a", "a" ],
+            [ "a", "b" ],
+            [ "a", "c" ],
+            [ "a", "d" ],
+            [ "b", "b" ],
+            [ "b", "c" ],
+            [ "b", "d" ],
+            [ "c", "c" ],
+            [ "c", "d" ],
+            [ "d", "d" ],
         ]
 
+        expect(result.length).toBe(expectedResult.length)
         expectedResult.forEach(expectedResultElement => {
             expect(result.some(resultElement => {
                 return arraysHaveSameContents(resultElement, expectedResultElement)
             })).toBeTruthy(`This expected element was not found: ${JSON.stringify(expectedResultElement)}`)
         })
+    })
+
+    it("works for big sets", () => {
+        const set = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19 ]
+        const count = 7 as Count<number>
+
+        computeCombinations(set, count, { withRepeatedElements: true })
     })
 })
