@@ -1,11 +1,10 @@
 import { computeDeepClone } from "../code"
 import { Count } from "../types"
-import { Combinations } from "./types"
+import { Combination, Combinations } from "./types"
 
 const computeCombinations = <T>(array: T[], count: Count<T>, { withRepeatedElements = false } = {}): Combinations<T> => {
     if (withRepeatedElements) {
-        // @ts-ignore
-        return combRep(array, count)
+        return computeCombinationsWithRepetitions(array, count)
     }
 
     const combinations: number[][] = []
@@ -38,65 +37,28 @@ const computeCombinations = <T>(array: T[], count: Count<T>, { withRepeatedEleme
             array[ index - 1 ])) as Combinations<T>
 }
 
-// todo obviously this is a mess but necessary to not crash at >18 things combining or choosing >6 things
-
-// const computeCombinationsWithRepetitions = <T>(array: T[], count: Count): Combinations<T> => {
-//     const comb = <U>(n: number, ys: U[][]): Combinations<U> => {
-//         if (0 === n) {
-//             return ys as Combinations<U>
-//         }
-//         if (isNull(ys)) {
-//             return comb(n - 1, map(pure, array as unknown as U[]))
-//         }
-//
-//         return comb(n - 1, concatMap((zs: U[]) => {
-//             const h = head(zs)
-//
-//             return map((x: U) => [x].concat(zs), dropWhile(x => x !== h, array as unknown as U[]))
-//         }, ys))
-//     }
-//
-//     return comb(count, [] as unknown as Combinations<T>)
-// }
-//
-// const concatMap = <T, U>(f: (g: T) => U[], array: T[]): U[] =>
-//     ([] as U[]).concat.apply([] as T[], array.map(f))
-//
-// const dropWhile = <T>(p: (q: T) => boolean, array: T[]): T[] => {
-//     let i = 0
-//     for (const lng = array.length; (i < lng) && p(array[ i ]); i++) {
-//     }
-//
-//     return array.slice(i)
-// }
-//
-// const head = <T>(array: T[]): T | undefined => array.length ? array[ 0 ] : undefined
-//
-// const isNull = <T>(array: T[]): boolean => array instanceof Array ? array.length < 1 : false
-//
-// const map = <T, U>(f: (g: T) => U, array: T[]): U[] => array.map(f)
-//
-// const pure = <T>(x: T): T[] => [x]
-
-// @ts-ignore
-function combRep(arr, l) {
-    if(l === void 0) l = arr.length; // Length of the combinations
-    var data = Array(l),             // Used to store state
-        results = [];                // Array of results
-    (function f(pos, start) {        // Recursive function
-        if(pos === l) {                // End reached
-            results.push(data.slice());  // Add a copy of data to results
-            return;
+const computeCombinationsWithRepetitions = <T>(array: T[], count: Count<T>): Combinations<T> => {
+    if (count === void 0) {
+        count = array.length as Count<T>
+    }
+    const data = Array(count) as Combination<T>
+    const results = [] as unknown as Combinations<T>
+    const computeCombinationsWithRepetitionsRecursively = (position: number, start: number) => {
+        if (position === count) {
+            results.push(data.slice() as Combination<T>)
+            return
         }
-        for(var i=start; i<arr.length; ++i) {
-            data[pos] = computeDeepClone(arr[i]);          // Update data
-            f(pos+1, i);                 // Call f recursively
+        for (let index = start; index < array.length; ++index) {
+            data[ position ] = computeDeepClone(array[ index ])
+            computeCombinationsWithRepetitionsRecursively(position + 1, index)
         }
-    })(0, 0);                        // Start at index 0
-    return results;                  // Return results
+    }
+    computeCombinationsWithRepetitionsRecursively(0, 0)
+
+    return results as Combinations<T>
 }
 
 export {
     computeCombinations,
-    combRep,
+    computeCombinationsWithRepetitions,
 }

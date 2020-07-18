@@ -16,7 +16,8 @@ const status: Status = {
 
 const bestMetricsForChunkCount: Metric[] = []
 
-// const cachedChunkCombinations: Array<Combinations<Chunk>> = []
+const cachedSubmetricChunkCombinations: Array<Combinations<Chunk>> = []
+const cachedParameterChunkCombinations: Array<Combinations<Chunk>> = []
 
 export {
     populatedForChunkCount,
@@ -24,5 +25,6 @@ export {
     scopesForChunkCount,
     status,
     bestMetricsForChunkCount,
-    // cachedChunkCombinations,
+    cachedSubmetricChunkCombinations,
+    cachedParameterChunkCombinations,
 }

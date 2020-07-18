@@ -1,5 +1,6 @@
 import { arraysHaveSameContents } from "../../../../src/general/code/arraysHaveSameContents"
 import { computeDistributions } from "../../../../src/general/math"
+import { Distribution } from "../../../../src/general/math/types"
 
 describe("computeDistributions", () => {
     it("given an array and a resolution of buckets, will return all the possible ways of distributing the elements across the buckets", () => {
@@ -445,7 +446,7 @@ describe("computeDistributions", () => {
             ],
         ]
 
-        expect(result.length).toEqual(expectedResult.length)
+        expect(result.length).toBe(expectedResult.length)
         expectedResult.forEach(expectedResultElement => {
             expect(result.some(resultElement => {
                 return resultElement.every((bucket, index) => {
@@ -453,5 +454,25 @@ describe("computeDistributions", () => {
                 })
             })).toBeTruthy(`This expected element was not found: ${JSON.stringify(expectedResultElement)}`)
         })
+    })
+
+    it("works for 1 thing across two bins", () => {
+        const array = ["a"]
+        const bucketCount = 2
+
+        const result = computeDistributions(array, bucketCount)
+
+        expect(result.length).toBe(2)
+        const expectedResult: Distribution<string>[] = [
+            [
+                ["a"],
+                [],
+            ],
+            [
+                [],
+                ["a"],
+            ]
+        ] as Distribution<string>[]
+        expect(result).toEqual(expectedResult)
     })
 })

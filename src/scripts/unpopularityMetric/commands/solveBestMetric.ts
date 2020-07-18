@@ -17,7 +17,7 @@ debug.all = !!program.debug
 status.populatingChunkCount = lowerBoundChunkCount as Count<Chunk>
 status.searchingChunkCount = lowerBoundChunkCount as Count<Chunk>
 
-// debug.solver = true
+debug.solver = true
 
 populateAndSearchScopes().then(() => {
     const bestMetricsForNonzeroChunkCounts = bestMetricsForChunkCount.slice(1, bestMetricsForChunkCount.length)
