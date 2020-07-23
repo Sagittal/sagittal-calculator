@@ -12,7 +12,7 @@ program
     .parse(process.argv)
 
 const lowerBoundChunkCount = program.lowerBoundChunkCount || 1
-status.upperBoundChunkCount = program.upperBoundChunkCount || 3
+status.upperBoundChunkCount = program.upperBoundChunkCount || 8
 debug.all = !!program.debug
 if (!!program.noColors) {
     colors.disable()
@@ -24,6 +24,6 @@ status.searchingChunkCount = lowerBoundChunkCount as Count<Chunk>
 debug.solver = true
 
 populateAndSearchScopes().then(() => {
-    const bestMetricsForNonzeroChunkCounts = bestMetricsForChunkCount.slice(1, bestMetricsForChunkCount.length)
+    const bestMetricsForNonzeroChunkCounts = bestMetricsForChunkCount.slice(lowerBoundChunkCount, status.upperBoundChunkCount + 1)
     console.log(`\n\nAND THE BEST METRICS PER CHUNK COUNT WERE ${JSON.stringify(bestMetricsForNonzeroChunkCounts, undefined, 4)}`.green)
 })
