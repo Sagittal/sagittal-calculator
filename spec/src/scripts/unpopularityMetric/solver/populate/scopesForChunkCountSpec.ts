@@ -906,7 +906,7 @@ describe("populateScopesForChunkCount", () => {
 
         const result: Scope[] = scopesForChunkCount[ chunkCount ]
 
-        expect(result.length).toEqual( // 1274
+        expect(result.length).toEqual( // 3458
             56 + // all combinations of 3 submetrics = 6 choose 3 w/re = ((3+6-1)!)/((3!)((6-1)!)) = 56, but that times all combinations of 0 parameters = 14 choose 0 w/re = ((0+14-1)!)/((0!)((14-1)!)) =   1, so 56 *  1 =  56, but then that times 1 bc for each one you can distribute the parameters across the submetrics 4^0 ways, so 56  * 1 =   56
             882 +         // all combinations of 2 submetrics = 6 choose 2 w/re = ((2+6-1)!)/((2!)((6-1)!)) = 21, but that times all combinations of 1 parameters = 14 choose 1 w/re = ((1+14-1)!)/((1!)((14-1)!)) =  14, so 21 * 14 = 294, but then that times 2 bc for each one you can distribute the parameters across the submetrics 3^1 ways, so 294 * 3 =  882
             2520,         // all combinations of 1 submetric  = 6 choose 1 w/re = ((1+6-1)!)/((1!)((6-1)!)) =  6, but that times all combinations of 2 parameters = 14 choose 2 w/re = ((2+14-1)!)/((2!)((14-1)!)) = 105, so 6 * 105 = 630, but then that times 1 bc for each one you can distribute the parameters across the submetrics 2^2 ways, so 630 * 4 = 2520
@@ -951,7 +951,7 @@ describe("populateScopesForChunkCount", () => {
 
         const result: Scope[] = scopesForChunkCount[ chunkCount ]
 
-        expect(result.length).toEqual( // 14658
+        expect(result.length).toEqual( // 49987
             126 + // all combinations of 4 submetrics = 6 choose 4 w/re = ((4+6-1)!)/((4!)((6-1)!)) = 126, but that times all combinations of 0 parameters = 14 choose 0 w/re = ((0+14-1)!)/((0!)((14-1)!)) =   1, so 126 *  1 =  126, but then that times 1 bc for each one you can distribute the parameters across the submetrics 5^0 ways, so  126 * 1 =   126
             3136 +         // all combinations of 3 submetrics = 6 choose 3 w/re = ((3+6-1)!)/((3!)((6-1)!)) =  56, but that times all combinations of 1 parameters = 14 choose 1 w/re = ((1+14-1)!)/((1!)((14-1)!)) =  14, so 56  * 14 =  784, but then that times 3 bc for each one you can distribute the parameters across the submetrics 4^1 ways, so  784 * 4 =  3136
             19845 +        // all combinations of 2 submetrics = 6 choose 2 w/re = ((2+6-1)!)/((2!)((6-1)!)) =  21, but that times all combinations of 2 parameters = 14 choose 2 w/re = ((2+14-1)!)/((2!)((14-1)!)) = 105, so 21 * 105 = 2205, but then that times 4 bc for each one you can distribute the parameters across the submetrics 3^2 ways, so 2205 * 9 = 19845
