@@ -29,7 +29,7 @@ const searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect = async (s
         indentation,
     })
 
-    if (debug.all) {
+    if (debug.all || debug.localMinima) {
         console.log(`\n${indentation}local minima:`)
     }
     const nextLocalMinima = computeLocalMinima(samples, sumsOfSquares)

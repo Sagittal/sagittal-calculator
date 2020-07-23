@@ -6,6 +6,7 @@ const debug: Debug = {
     rankedUnpopularities: false,
     solver: false,
     newBestMetric: false,
+    localMinima: false,
 }
 
 export {

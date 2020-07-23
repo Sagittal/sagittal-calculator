@@ -66,6 +66,7 @@ interface Debug {
     rankedUnpopularities: boolean,
     solver: boolean,
     newBestMetric: boolean,
+    localMinima: boolean,
 }
 
 export {
