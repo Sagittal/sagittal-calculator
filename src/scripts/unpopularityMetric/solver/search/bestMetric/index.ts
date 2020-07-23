@@ -1,7 +1,7 @@
-import { possiblyUpdateBestMetricAsSideEffect } from "./bestMetric"
+import { searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect } from "./bestMetric"
 import { Metric } from "./types"
 
 export {
-    possiblyUpdateBestMetricAsSideEffect,
+    searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect,
     Metric,
 }

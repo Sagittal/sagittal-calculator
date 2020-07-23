@@ -6,16 +6,16 @@ import { computeIndentation } from "./indentation"
 import { computeLocalMinima } from "./localMinima"
 import { searchNextLocalMinimum } from "./nextLocalMinimum"
 import { computeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffect } from "./sumsOfSquares"
-import { ComputeBestMetricOptions, Metric, SumsOfSquares } from "./types"
+import { SearchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffectOptions, SumsOfSquares } from "./types"
 
-const possiblyUpdateBestMetricAsSideEffect = async (scope: Scope, options: ComputeBestMetricOptions = {}) => {
+const searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect = async (scope: Scope, options: SearchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffectOptions = {}) => {
     const {
         depth = 0,
         progressMessage = "",
         localMinimum,
         recurse = true,
         chunkCount = DUMMY_CHUNK_COUNT_FOR_ONE_OFF_BEST_METRIC_FROM_SCOPE,
-    }: ComputeBestMetricOptions = options
+    }: SearchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffectOptions = options
 
     const nextDepth = depth + 1
 
@@ -24,14 +24,17 @@ const possiblyUpdateBestMetricAsSideEffect = async (scope: Scope, options: Compu
     const dynamicParameters = computeDynamicParameters(scope)
     const samples = computeSamples({ scope, dynamicParameters })
 
-    const sumsOfSquares: SumsOfSquares = computeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffect(samples, chunkCount, indentation)
+    const sumsOfSquares: SumsOfSquares = computeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffect(samples, {
+        chunkCount,
+        indentation,
+    })
 
     if (debug.all) {
         console.log(`\n${indentation}local minima:`)
     }
     const nextLocalMinima = computeLocalMinima(samples, sumsOfSquares)
 
-    const nextLocalMinimaPromises: Promise<Metric>[] = nextLocalMinima.map((nextLocalMinimum, index) => {
+    const nextLocalMinimaPromises: Promise<void>[] = nextLocalMinima.map((nextLocalMinimum, index) => {
         return searchNextLocalMinimum(nextLocalMinimum, {
             dynamicParameters,
             scope,
@@ -42,7 +45,7 @@ const possiblyUpdateBestMetricAsSideEffect = async (scope: Scope, options: Compu
             recurse,
             localMinimum,
             chunkCount,
-            nextLocalMinima
+            nextLocalMinima,
         })
     })
 
@@ -50,5 +53,5 @@ const possiblyUpdateBestMetricAsSideEffect = async (scope: Scope, options: Compu
 }
 
 export {
-    possiblyUpdateBestMetricAsSideEffect,
+    searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect,
 }

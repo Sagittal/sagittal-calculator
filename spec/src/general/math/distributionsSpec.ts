@@ -471,7 +471,7 @@ describe("computeDistributions", () => {
             [
                 [],
                 ["a"],
-            ]
+            ],
         ] as Distribution<string>[]
         expect(result).toEqual(expectedResult)
     })

@@ -1,6 +1,6 @@
 // This script is for developing the improvement to the "SoPF>3" metric. Once developed, it should become part of the analyzeComma script.
 
-import "colors"
+import * as colors from "colors"
 import { program } from "commander"
 import { Span } from "../../../general"
 import { debug } from "../debug"
@@ -8,8 +8,8 @@ import {
     bestMetricsForChunkCount,
     computeResolution,
     DUMMY_CHUNK_COUNT_FOR_ONE_OFF_BEST_METRIC_FROM_SCOPE,
-    possiblyUpdateBestMetricAsSideEffect,
     Scope,
+    searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect,
 } from "../solver"
 import { Parameter, ParameterValue } from "../types"
 
@@ -17,11 +17,15 @@ program
     .option("-r, --recursive", "recursive")
     .option("-d, --debug", "debug")
     .option("-m, --maximum-unit", "maximum unit")
+    .option("-n, --no-color", "no color")
     .parse(process.argv)
 
 const recurse = !!program.recursive
 debug.all = !!program.debug
 const maximumUnit = program.maximumUnit
+if (!!program.noColors) {
+    colors.disable()
+}
 
 const scope = [
     {
@@ -50,6 +54,6 @@ const scope = [
     },
 ] as Scope
 
-possiblyUpdateBestMetricAsSideEffect(scope, { recurse }).then(() => {
+searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect(scope, { recurse }).then(() => {
     console.log(`\nbest metric: ${JSON.stringify(bestMetricsForChunkCount[ DUMMY_CHUNK_COUNT_FOR_ONE_OFF_BEST_METRIC_FROM_SCOPE ])}`.green)
 })

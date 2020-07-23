@@ -16,7 +16,9 @@ describe("updateLevelAnalysis", () => {
                     { ...analyzedEventFixture, level: Level.MEDIUM, rank: 0 as EventRank },
                 ],
             }
-            if (Level.MEDIUM in levelsBestHistoryRanks) delete levelsBestHistoryRanks[ Level.MEDIUM ]
+            if (Level.MEDIUM in levelsBestHistoryRanks) {
+                delete levelsBestHistoryRanks[ Level.MEDIUM ]
+            }
             expect(levelsBestHistoryRanks[ Level.MEDIUM ]).toBeUndefined()
 
             updateLevelAnalysis(bestPossibleHistory)
@@ -55,10 +57,18 @@ describe("updateLevelAnalysis", () => {
                     { ...analyzedEventFixture, level: Level.EXTREME, rank: 3 as EventRank },
                 ],
             }
-            if (Level.MEDIUM in levelsBestCumulativeHistoryRanks) delete levelsBestCumulativeHistoryRanks[ Level.MEDIUM ]
-            if (Level.HIGH in levelsBestCumulativeHistoryRanks) delete levelsBestCumulativeHistoryRanks[ Level.HIGH ]
-            if (Level.ULTRA in levelsBestCumulativeHistoryRanks) delete levelsBestCumulativeHistoryRanks[ Level.ULTRA ]
-            if (Level.EXTREME in levelsBestCumulativeHistoryRanks) delete levelsBestCumulativeHistoryRanks[ Level.EXTREME ]
+            if (Level.MEDIUM in levelsBestCumulativeHistoryRanks) {
+                delete levelsBestCumulativeHistoryRanks[ Level.MEDIUM ]
+            }
+            if (Level.HIGH in levelsBestCumulativeHistoryRanks) {
+                delete levelsBestCumulativeHistoryRanks[ Level.HIGH ]
+            }
+            if (Level.ULTRA in levelsBestCumulativeHistoryRanks) {
+                delete levelsBestCumulativeHistoryRanks[ Level.ULTRA ]
+            }
+            if (Level.EXTREME in levelsBestCumulativeHistoryRanks) {
+                delete levelsBestCumulativeHistoryRanks[ Level.EXTREME ]
+            }
 
             updateLevelAnalysis(bestPossibleHistory)
 

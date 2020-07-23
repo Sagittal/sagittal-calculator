@@ -1,11 +1,12 @@
 import { deepEquals } from "../../../../../general"
+import { doOnNextEventLoop } from "../../../../../general/code/doOnNextEventLoop"
 import { debug } from "../../../debug"
 import { Scope } from "../../types"
-import { possiblyUpdateBestMetricAsSideEffect } from "./bestMetric"
+import { searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect } from "./bestMetric"
 import { computeNextScope } from "./nextScope"
-import { LocalMinimum, Metric, SearchLocalMinimumOptions } from "./types"
+import { LocalMinimum, SearchLocalMinimumOptions } from "./types"
 
-const searchNextLocalMinimum = (nextLocalMinimum: LocalMinimum, options: SearchLocalMinimumOptions): Promise<Metric> => {
+const searchNextLocalMinimum = (nextLocalMinimum: LocalMinimum, options: SearchLocalMinimumOptions): Promise<void> => {
     const {
         dynamicParameters,
         scope,
@@ -19,26 +20,23 @@ const searchNextLocalMinimum = (nextLocalMinimum: LocalMinimum, options: SearchL
         nextLocalMinima,
     } = options
 
+    if (!recurse || deepEquals(localMinimum, nextLocalMinimum)) {
+        return Promise.resolve()
+    }
+
     const nextScope: Scope = computeNextScope(nextLocalMinimum.samplePoint, dynamicParameters, scope)
     const nextProgressMessage = progressMessage + `${index}/${(nextLocalMinima.length)}@depth${nextDepth} `
     if (debug.all) {
         console.log(`${indentation}${nextProgressMessage}${JSON.stringify(nextLocalMinimum)}`)
     }
 
-    return new Promise(async resolve => {
-        if (recurse && !deepEquals(localMinimum, nextLocalMinimum)) {
-            setTimeout(async () => {
-                await possiblyUpdateBestMetricAsSideEffect(nextScope, {
-                    depth: nextDepth,
-                    progressMessage: nextProgressMessage,
-                    localMinimum: nextLocalMinimum,
-                    chunkCount,
-                })
-                resolve()
-            }, 0)
-        } else {
-            resolve()
-        }
+    return doOnNextEventLoop(async () => {
+        await searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect(nextScope, {
+            depth: nextDepth,
+            progressMessage: nextProgressMessage,
+            localMinimum: nextLocalMinimum,
+            chunkCount,
+        })
     })
 }
 

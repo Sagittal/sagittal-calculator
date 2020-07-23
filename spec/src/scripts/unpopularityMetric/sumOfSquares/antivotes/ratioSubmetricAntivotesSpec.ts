@@ -34,7 +34,7 @@ describe("computeRatioSubmetricAntivotes", () => {
 
     it("defaults k and j to 1", () => {
         const fiveRoughRatio = [5, 7] as Ratio
-        const submetric = { sum: true}
+        const submetric = { sum: true }
 
         const result = computeRatioSubmetricAntivotes(fiveRoughRatio, submetric)
 

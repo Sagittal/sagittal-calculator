@@ -3,7 +3,7 @@ import { Sample } from "../types"
 import { getSumOfSquaresAtSamplePointIfLocalMinimum } from "./localMinimum"
 import { LocalMinimum, SumsOfSquares } from "./types"
 
-const computeLocalMinima = (samples: Sample[], sumsOfSquares: SumsOfSquares) => {
+const computeLocalMinima = (samples: Sample[], sumsOfSquares: SumsOfSquares): LocalMinimum[] => {
     const localMinima: LocalMinimum[] = []
     samples.forEach(sample => {
         const { submetrics, samplePoint } = sample

@@ -4,11 +4,7 @@ import {
     DynamicParameter,
     SubmetricPossibility,
 } from "../../../../../../../src/scripts/unpopularityMetric/solver/search/scopeToSamples/types"
-import {
-    Parameter,
-    ParameterValue,
-    Submetric,
-} from "../../../../../../../src/scripts/unpopularityMetric/types"
+import { Parameter, ParameterValue, Submetric } from "../../../../../../../src/scripts/unpopularityMetric/types"
 
 describe("combineSubmetricsPossibilitiesIntoSamples", () => {
     it("takes the list of possible values for each submetric individually, and returns a list of every possible combination of them, along with its corresponding sample point, which is then called a Sample", () => {

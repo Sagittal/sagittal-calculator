@@ -3,7 +3,11 @@ import { debugSearchedAndPopulated } from "./debug"
 import { bestMetricsForChunkCount, status } from "./globals"
 import { populateScopes } from "./populate"
 import { populateAndSearchScopes } from "./populateAndSearchScopes"
-import { computeResolution, possiblyUpdateBestMetricAsSideEffect, searchScopes } from "./search"
+import {
+    computeResolution,
+    searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect,
+    searchScopes,
+} from "./search"
 import { Chunk, Scope } from "./types"
 
 export {
@@ -16,6 +20,6 @@ export {
     Chunk,
     Scope,
     computeResolution,
-    possiblyUpdateBestMetricAsSideEffect,
+    searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect,
     populateAndSearchScopes,
 }

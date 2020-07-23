@@ -1,15 +1,11 @@
 import { Index, Resolution, Span, Unit } from "../../../../../../../src/general"
 import { computeDynamicParameters } from "../../../../../../../src/scripts/unpopularityMetric/solver/search/scopeToSamples"
-import { SubmetricScope } from "../../../../../../../src/scripts/unpopularityMetric/solver/types"
-import {
-    Parameter,
-    ParameterValue,
-    Submetric,
-} from "../../../../../../../src/scripts/unpopularityMetric/types"
+import { Scope } from "../../../../../../../src/scripts/unpopularityMetric/solver/types"
+import { Parameter, ParameterValue, Submetric } from "../../../../../../../src/scripts/unpopularityMetric/types"
 
 describe("computeDynamicParameters", () => {
     it("returns a flattened array of all the parameters that are dynamic -- flattened across all the submetrics, that is", () => {
-        const submetricScopes: SubmetricScope[] = [
+        const scope: Scope = [
             {
                 [ Parameter.Y ]: {
                     center: 1.2 as ParameterValue,
@@ -31,9 +27,9 @@ describe("computeDynamicParameters", () => {
                     resolution: 2 as Resolution<ParameterValue>,
                 },
             },
-        ]
+        ] as Scope
 
-        const result = computeDynamicParameters(submetricScopes)
+        const result = computeDynamicParameters(scope)
 
         expect(result).toEqual([
             {

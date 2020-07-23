@@ -1,9 +1,10 @@
 import { Combinations, Count } from "../../../general"
+import { ParameterChunk, SubmetricChunk } from "./populate/types"
 import { Metric } from "./search"
 import { Chunk, Scope, Status } from "./types"
 
-const populatedForChunkCount: number[] = []
-const searchedForChunkCount: number[] = []
+const populatedsForChunkCount: number[] = []
+const searchedsForChunkCount: number[] = []
 
 const scopesForChunkCount: Scope[][] = [] as unknown as Scope[][]
 
@@ -16,12 +17,12 @@ const status: Status = {
 
 const bestMetricsForChunkCount: Metric[] = []
 
-const cachedSubmetricChunkCombinations: Array<Combinations<Chunk>> = []
-const cachedParameterChunkCombinations: Array<Combinations<Chunk>> = []
+const cachedSubmetricChunkCombinations: Array<Combinations<SubmetricChunk>> = []
+const cachedParameterChunkCombinations: Array<Combinations<ParameterChunk>> = []
 
 export {
-    populatedForChunkCount,
-    searchedForChunkCount,
+    populatedsForChunkCount,
+    searchedsForChunkCount,
     scopesForChunkCount,
     status,
     bestMetricsForChunkCount,

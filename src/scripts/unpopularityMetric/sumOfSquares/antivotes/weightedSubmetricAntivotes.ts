@@ -1,14 +1,14 @@
 import { computeLog, Ratio } from "../../../../general"
 import { ParameterValue, Submetric } from "../../types"
 import { Antivotes } from "../types"
-import * as ratioSubmetricUnpopularity from "./ratioSubmetricAntivotes"
+import { computeRatioSubmetricAntivotes } from "./ratioSubmetricAntivotes"
 
 const computeWeightedSubmetricAntivotes = (fiveRoughRatio: Ratio, submetric = {}): Antivotes => {
     const { weight = 1 as ParameterValue, weightIsBase = false, weightIsExponent = false }: Submetric = submetric
 
     let submetricAntivotes = 0 as Antivotes
     if (weight !== 0) {
-        submetricAntivotes = ratioSubmetricUnpopularity.computeRatioSubmetricAntivotes(fiveRoughRatio, submetric)
+        submetricAntivotes = computeRatioSubmetricAntivotes(fiveRoughRatio, submetric)
     }
 
     const weightedSubmetricAntivotes: Antivotes = weightIsBase ?

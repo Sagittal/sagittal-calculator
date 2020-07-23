@@ -3,11 +3,7 @@ import { Scope } from "../../../../../../../src/scripts/unpopularityMetric/solve
 import { computeNextScope } from "../../../../../../../src/scripts/unpopularityMetric/solver/search/bestMetric/nextScope"
 import { DynamicParameter } from "../../../../../../../src/scripts/unpopularityMetric/solver/search/scopeToSamples"
 import { SamplePoint } from "../../../../../../../src/scripts/unpopularityMetric/solver/search/types"
-import {
-    Parameter,
-    ParameterValue,
-    Submetric,
-} from "../../../../../../../src/scripts/unpopularityMetric/types"
+import { Parameter, ParameterValue, Submetric } from "../../../../../../../src/scripts/unpopularityMetric/types"
 
 describe("computeNextScope", () => {
     it("given a sample point (which has been identified as a local minimum) and the dynamic parameters, is able to tell you what the next scopes should be to delve deeper in that vicinity", () => {

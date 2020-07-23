@@ -25,7 +25,9 @@ const computeSubmetricAntivotes = (fiveRoughNumberMonzo: Monzo, submetric = {}):
         modifiedCount = false,
     }: Submetric = submetric
 
-    if (!count && !max && !sum) throw new Error("Attempted to compute antivotes without an operation (sum, count, or max).")
+    if (!count && !max && !sum) {
+        throw new Error("Attempted to compute antivotes without an operation (sum, count, or max).")
+    }
 
     return fiveRoughNumberMonzo.reduce(
         (monzoAntivotes: Antivotes, primeExponent, index): Antivotes => {

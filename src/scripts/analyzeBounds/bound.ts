@@ -4,8 +4,8 @@ import { computeBestPossibleHistory } from "./bestPossibleHistory"
 import { computeConsolidatedHistories } from "./consolidatedHistories"
 import { analyzeHistory } from "./history"
 import { computeInitialPosition } from "./initialPosition"
-import * as levelAnalysis from "./levels"
-import * as rankAnalysis from "./ranks"
+import { updateLevelAnalysis } from "./levels"
+import { updateRankAnalysis } from "./ranks"
 import { AnalyzedBound, AnalyzedHistory, History } from "./types"
 
 const analyzeBound = (histories: History[], bound: Bound): AnalyzedBound => {
@@ -21,8 +21,8 @@ const analyzeBound = (histories: History[], bound: Bound): AnalyzedBound => {
 
     const initialPositionTinaDifference = (bound.cents - initialPosition) / TINA as Proportion<"Tina">
 
-    rankAnalysis.updateRankAnalysis(bestRank, bound.id)
-    levelAnalysis.updateLevelAnalysis(bestPossibleHistory)
+    updateRankAnalysis(bestRank, bound.id)
+    updateLevelAnalysis(bestPossibleHistory)
 
     const consolidatedHistories = computeConsolidatedHistories(analyzedHistories, bestPossibleHistory)
 

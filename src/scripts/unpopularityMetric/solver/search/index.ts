@@ -1,10 +1,10 @@
-import { Metric, possiblyUpdateBestMetricAsSideEffect } from "./bestMetric"
+import { Metric, searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect } from "./bestMetric"
 import { searchScopes } from "./scopes"
 import { computeResolution } from "./scopeToSamples"
 
 export {
     searchScopes,
-    possiblyUpdateBestMetricAsSideEffect,
+    searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect,
     computeResolution,
     Metric,
 }

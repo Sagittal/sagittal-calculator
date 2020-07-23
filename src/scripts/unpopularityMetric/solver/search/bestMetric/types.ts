@@ -13,7 +13,7 @@ interface LocalMinimum extends Sample {
     sumOfSquares: Sum<"SquaredWeightedRankDifferences">,
 }
 
-type ComputeBestMetricOptions = Partial<{
+type SearchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffectOptions = Partial<{
     chunkCount: Count<Chunk>,
     depth: number,
     localMinimum: LocalMinimum,
@@ -36,10 +36,16 @@ type SearchLocalMinimumOptions = {
 
 type SumsOfSquares = Array<SumsOfSquares | Sum<"SquaredWeightedRankDifferences"> | undefined>
 
+type ComputeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffectOptions = Partial<{
+    chunkCount: Count<Chunk>,
+    indentation: string,
+}>
+
 export {
     LocalMinimum,
     Metric,
-    ComputeBestMetricOptions,
+    SearchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffectOptions,
     SumsOfSquares,
     SearchLocalMinimumOptions,
+    ComputeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffectOptions,
 }

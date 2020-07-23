@@ -1,7 +1,8 @@
 import { Span } from "../../../../general"
 import { Parameter, ParameterValue } from "../../types"
 import { computeResolution } from "../search"
-import { Chunk, SubmetricScope } from "../types"
+import { SubmetricScope } from "../types"
+import { ParameterChunk, SubmetricChunk } from "./types"
 
 // AKA: if they are going to be included in the automatically generated scopes per chunk count, what should they be set to
 const INITIAL_PARAMETER_SCOPES: SubmetricScope = {
@@ -55,12 +56,12 @@ const INITIAL_PARAMETER_SCOPES: SubmetricScope = {
     [ Parameter.USE_PRIME_INDEX ]: true,
 }
 
-const SUBMETRIC_CHUNKS: Chunk[] = [
+const SUBMETRIC_CHUNKS: SubmetricChunk[] = [
     { // SOAPFAR
-        [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+        [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
     },
     { // SOAPF
-        [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+        [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
         [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
     },
     { // COAPFAR
@@ -75,13 +76,13 @@ const SUBMETRIC_CHUNKS: Chunk[] = [
         [ Parameter.MAX ]: INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],
     },
     { // LOG BASE A OF N
-        [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+        [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
         [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
         [ Parameter.A_IS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_IS_BASE ],
     },
-] as Chunk[]
+] as SubmetricChunk[]
 
-const PARAMETER_CHUNKS: Chunk[] = [
+const PARAMETER_CHUNKS: ParameterChunk[] = [
     {
         [ Parameter.K ]: INITIAL_PARAMETER_SCOPES[ Parameter.K ],
     },
@@ -133,7 +134,7 @@ const PARAMETER_CHUNKS: Chunk[] = [
     {
         [ Parameter.USE_PRIME_INDEX ]: INITIAL_PARAMETER_SCOPES[ Parameter.USE_PRIME_INDEX ],
     },
-] as Chunk[]
+] as ParameterChunk[]
 
 export {
     INITIAL_PARAMETER_SCOPES,

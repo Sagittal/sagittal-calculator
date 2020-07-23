@@ -13,7 +13,7 @@ const checkSubmetricsForInvalidParameterValueCombinations = (submetrics: Submetr
         if (isNumber(a) && a < 0 && submetric[ Parameter.A_IS_BASE ]) {
             throw new Error("Submetric has negative base and will compute undefined antivotes.")
         }
-        if (!submetric[ Parameter.SUM ] && !submetric[ Parameter.COUNT ] && !submetric[ Parameter.MAX]) {
+        if (!submetric[ Parameter.SUM ] && !submetric[ Parameter.COUNT ] && !submetric[ Parameter.MAX ]) {
             throw new Error("Submetric has no provided operation parameter (sum, count, or max); exactly one of these is required.")
         }
         if (submetric[ Parameter.SUM ] && submetric[ Parameter.COUNT ]) {

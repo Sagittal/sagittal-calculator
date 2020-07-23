@@ -3,11 +3,7 @@ import { Monzo } from "../../../../../../src/general/music"
 import { computeAntivotes } from "../../../../../../src/scripts/unpopularityMetric/sumOfSquares/antivotes"
 import { computeSubmetricAntivotes } from "../../../../../../src/scripts/unpopularityMetric/sumOfSquares/antivotes/submetricAntivotes"
 import { Antivotes } from "../../../../../../src/scripts/unpopularityMetric/sumOfSquares/types"
-import {
-    Parameter,
-    ParameterValue,
-    Submetric,
-} from "../../../../../../src/scripts/unpopularityMetric/types"
+import { Parameter, ParameterValue, Submetric } from "../../../../../../src/scripts/unpopularityMetric/types"
 
 describe("computeAntivotes", () => {
     it("when k = 1 (default), and two 5-rough ratios have the same sopfr, but one has its primes all lopsided on one side, they still get ranked the same", () => {
@@ -58,8 +54,8 @@ describe("computeAntivotes", () => {
         const result = computeAntivotes(fiveRoughRatio, submetrics)
 
         expect(result).toBe(
-            0.5 * computeSubmetricAntivotes([0, 0, 0, 1, 1] as Monzo, { [Parameter.SUM]: true }) as Antivotes +
-            0.3 * computeSubmetricAntivotes([0, 0, 0, 1, 1] as Monzo, { [Parameter.SUM]: true }) as Antivotes,
+            0.5 * computeSubmetricAntivotes([0, 0, 0, 1, 1] as Monzo, { [ Parameter.SUM ]: true }) as Antivotes +
+            0.3 * computeSubmetricAntivotes([0, 0, 0, 1, 1] as Monzo, { [ Parameter.SUM ]: true }) as Antivotes,
         )
     })
 

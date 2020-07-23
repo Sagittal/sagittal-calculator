@@ -16,14 +16,20 @@ import { searchScopes } from "./search"
 
 const populateAndSearchScopes = async () => {
     populateScopes().then(() => {
-        if (debug.all || debug.solver) console.log("\n\nFINISHED POPULATING".cyan)
+        if (debug.all || debug.solver) {
+            console.log("\n\nFINISHED POPULATING".cyan)
+        }
         status.finishedPopulating = true
     })
 
-    if (debug.all || debug.solver) console.log(`\n\nPROCESSING CHUNK COUNT ${status.searchingChunkCount} (${status.finishedPopulating ? `finished populating` : `still populating chunk count ${status.populatingChunkCount}`}) ${debugSearchedAndPopulated()}`.yellow)
+    if (debug.all || debug.solver) {
+        console.log(`\n\nPROCESSING CHUNK COUNT ${status.searchingChunkCount} (${status.finishedPopulating ? `finished populating` : `still populating chunk count ${status.populatingChunkCount}`}) ${debugSearchedAndPopulated()}`.yellow)
+    }
     await searchScopes()
 
-    if (debug.all || debug.solver) console.log(`\n\nFINAL STATUS ${debugSearchedAndPopulated()}`.yellow)
+    if (debug.all || debug.solver) {
+        console.log(`\n\nFINAL STATUS ${debugSearchedAndPopulated()}`.yellow)
+    }
 }
 
 export {

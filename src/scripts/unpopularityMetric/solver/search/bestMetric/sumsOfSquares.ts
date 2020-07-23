@@ -1,13 +1,14 @@
-import { Count } from "../../../../../general"
 import { debug } from "../../../debug"
 import { computeSumOfSquaresForSubmetrics } from "../../../sumOfSquares"
+import { DUMMY_CHUNK_COUNT_FOR_ONE_OFF_BEST_METRIC_FROM_SCOPE } from "../../constants"
 import { bestMetricsForChunkCount } from "../../globals"
-import { Chunk } from "../../types"
 import { Sample } from "../types"
 import { setSumOfSquaresAtSamplePoint } from "./setSumOfSquaresAtSamplePoint"
-import { SumsOfSquares } from "./types"
+import { ComputeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffectOptions, SumsOfSquares } from "./types"
 
-const computeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffect = (samples: Sample[], chunkCount: Count<Chunk>, indentation: string) => {
+const computeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffect = (samples: Sample[], options: ComputeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffectOptions = {}) => {
+    const { chunkCount = DUMMY_CHUNK_COUNT_FOR_ONE_OFF_BEST_METRIC_FROM_SCOPE, indentation = "" } = options
+
     const sumsOfSquares: SumsOfSquares = []
 
     samples.forEach(sample => {

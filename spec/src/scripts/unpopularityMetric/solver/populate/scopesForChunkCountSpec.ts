@@ -1,1026 +1,955 @@
-// import {populateScopesForChunkCount} from "../../../../../src/scripts/unpopularityMetric/solver/initialScopes"
-import { Count } from "../../../../../../src/general"
-import { debug } from "../../../../../../src/scripts/unpopularityMetric/debug"
-import { Chunk } from "../../../../../../src/scripts/unpopularityMetric/solver"
-// import {PARAMETER, SUBMETRIC_TYPE} from "../../../../../src/scripts/unpopularityMetric/constants"
-// import {INITIAL_PARAMETER_SCOPES} from "../../../../../src/scripts/unpopularityMetric/solver/constants"
-// import {deepEquals} from "../../../../../src/utilities/deepEquals"
-// import {arraysHaveSameContents} from "../../../../../src/utilities/arraysHaveSameContents"
-//
+import { Count, deepEquals } from "../../../../../../src/general"
+import { arraysHaveSameContents } from "../../../../../../src/general/code/arraysHaveSameContents"
+import { Chunk, Scope, status } from "../../../../../../src/scripts/unpopularityMetric/solver"
+import { scopesForChunkCount } from "../../../../../../src/scripts/unpopularityMetric/solver/globals"
+import {
+    INITIAL_PARAMETER_SCOPES,
+    SUBMETRIC_CHUNKS,
+} from "../../../../../../src/scripts/unpopularityMetric/solver/populate/constants"
 import { populateScopesForChunkCount } from "../../../../../../src/scripts/unpopularityMetric/solver/populate/scopesForChunkCount"
+import { Parameter } from "../../../../../../src/scripts/unpopularityMetric/types"
 
 describe("populateScopesForChunkCount", () => {
-    it("runs without error", () => {
-        const chunkCount = 0 as Count<Chunk>
-        debug.all = false
+    let originalJasmineTimeoutInterval: number
+    beforeEach(() => {
+        originalJasmineTimeoutInterval = jasmine.DEFAULT_TIMEOUT_INTERVAL
 
-        populateScopesForChunkCount(chunkCount)
+        jasmine.DEFAULT_TIMEOUT_INTERVAL = 10000
     })
-//     it("given a chunk count, returns all possible combinations of those parameters - works for 1", () => {
-//         const chunkCount = 1
-//
-//         const result = populateScopesForChunkCount(chunkCount, {quiet: true})
-//
-//         expect(result).toEqual(jasmine.arrayWithExactContents([
-//             [
-//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPFAR},
-//             ],
-//             [
-//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPF},
-//             ],
-//             [
-//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.COAPFAR},
-//             ],
-//             [
-//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.COAPF},
-//             ],
-//             [
-//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIFAR},
-//             ],
-//             [
-//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIF},
-//             ],
-//             [
-//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.GPF},
-//             ],
-//             [
-//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.GPIF},
-//             ],
-//         ]))
-//     })
-//
-//     it("given a chunk count, returns all possible combinations of those parameters - works for 2", () => {
-//         const chunkCount = 2
-//
-//         const result = populateScopesForChunkCount(chunkCount, {quiet: true})
-//
-//         const expectedResult = [
-//             // 7
-//             [
-//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPFAR},
-//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPF},
-//             ],
-//             [
-//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPFAR},
-//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.COAPFAR},
-//             ],
-//             [
-//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPFAR},
-//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.COAPF},
-//             ],
-//             [
-//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPFAR},
-//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIFAR},
-//             ],
-//             [
-//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPFAR},
-//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIF},
-//             ],
-//             [
-//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPFAR},
-//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.GPF},
-//             ],
-//             [
-//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPFAR},
-//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.GPIF},
-//             ],
-//
-//             // 6
-//             [
-//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPF},
-//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.COAPFAR},
-//             ],
-//             [
-//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPF},
-//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.COAPF},
-//             ],
-//             [
-//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPF},
-//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIFAR},
-//             ],
-//             [
-//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPF},
-//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIF},
-//             ],
-//             [
-//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPF},
-//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.GPF},
-//             ],
-//             [
-//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPF},
-//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.GPIF},
-//             ],
-//
-//             // 5
-//             [
-//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.COAPFAR},
-//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.COAPF},
-//             ],
-//             [
-//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.COAPFAR},
-//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIFAR},
-//             ],
-//             [
-//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.COAPFAR},
-//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIF},
-//             ],
-//             [
-//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.COAPFAR},
-//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.GPF},
-//             ],
-//             [
-//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.COAPFAR},
-//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.GPIF},
-//             ],
-//
-//             // 4
-//             [
-//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.COAPF},
-//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIFAR},
-//             ],
-//             [
-//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.COAPF},
-//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIF},
-//             ],
-//             [
-//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.COAPF},
-//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.GPF},
-//             ],
-//             [
-//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.COAPF},
-//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.GPIF},
-//             ],
-//
-//             // 3
-//             [
-//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIFAR},
-//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIF},
-//             ],
-//             [
-//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIFAR},
-//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.GPF},
-//             ],
-//             [
-//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIFAR},
-//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.GPIF},
-//             ],
-//
-//             // 2
-//             [
-//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIF},
-//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.GPF},
-//             ],
-//             [
-//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIF},
-//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.GPIF},
-//             ],
-//
-//             // 1
-//             [
-//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.GPF},
-//                 {[Parameter.SUBMETRIC_TYPE]: SubmetricType.GPIF},
-//             ],
-//
-//             // SOAPFAR (15)
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPFAR,
-//                     [Parameter.K]: INITIAL_PARAMETER_SCOPES[Parameter.K],
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPFAR,
-//                     [Parameter.K]: INITIAL_PARAMETER_SCOPES[Parameter.K],
-//                     [Parameter.K_IS_BASE]: true,
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPFAR,
-//                     [Parameter.K]: INITIAL_PARAMETER_SCOPES[Parameter.K],
-//                     [Parameter.K_IS_EXPONENT]: true,
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPFAR,
-//                     [Parameter.J]: INITIAL_PARAMETER_SCOPES[Parameter.J],
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPFAR,
-//                     [Parameter.J]: INITIAL_PARAMETER_SCOPES[Parameter.J],
-//                     [Parameter.J_IS_BASE]: true,
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPFAR,
-//                     [Parameter.J]: INITIAL_PARAMETER_SCOPES[Parameter.J],
-//                     [Parameter.J_IS_EXPONENT]: true,
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPFAR,
-//                     [Parameter.A]: INITIAL_PARAMETER_SCOPES[Parameter.A],
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPFAR,
-//                     [Parameter.A]: INITIAL_PARAMETER_SCOPES[Parameter.A],
-//                     [Parameter.A_IS_BASE]: true,
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPFAR,
-//                     [Parameter.A]: INITIAL_PARAMETER_SCOPES[Parameter.A],
-//                     [Parameter.A_IS_EXPONENT]: true,
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPFAR,
-//                     [Parameter.W]: INITIAL_PARAMETER_SCOPES[Parameter.W],
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPFAR,
-//                     [Parameter.X]: INITIAL_PARAMETER_SCOPES[Parameter.X],
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPFAR,
-//                     [Parameter.Y]: INITIAL_PARAMETER_SCOPES[Parameter.Y],
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPFAR,
-//                     [Parameter.V]: INITIAL_PARAMETER_SCOPES[Parameter.V],
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPFAR,
-//                     [Parameter.T]: INITIAL_PARAMETER_SCOPES[Parameter.T],
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPFAR,
-//                     [Parameter.MODIFIED_COUNT]: INITIAL_PARAMETER_SCOPES[Parameter.MODIFIED_COUNT],
-//                 },
-//             ],
-//
-//             // SOAPF (15)
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPF,
-//                     [Parameter.K]: INITIAL_PARAMETER_SCOPES[Parameter.K],
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPF,
-//                     [Parameter.K]: INITIAL_PARAMETER_SCOPES[Parameter.K],
-//                     [Parameter.K_IS_BASE]: true,
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPF,
-//                     [Parameter.K]: INITIAL_PARAMETER_SCOPES[Parameter.K],
-//                     [Parameter.K_IS_EXPONENT]: true,
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPF,
-//                     [Parameter.J]: INITIAL_PARAMETER_SCOPES[Parameter.J],
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPF,
-//                     [Parameter.J]: INITIAL_PARAMETER_SCOPES[Parameter.J],
-//                     [Parameter.J_IS_BASE]: true,
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPF,
-//                     [Parameter.J]: INITIAL_PARAMETER_SCOPES[Parameter.J],
-//                     [Parameter.J_IS_EXPONENT]: true,
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPF,
-//                     [Parameter.A]: INITIAL_PARAMETER_SCOPES[Parameter.A],
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPF,
-//                     [Parameter.A]: INITIAL_PARAMETER_SCOPES[Parameter.A],
-//                     [Parameter.A_IS_BASE]: true,
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPF,
-//                     [Parameter.A]: INITIAL_PARAMETER_SCOPES[Parameter.A],
-//                     [Parameter.A_IS_EXPONENT]: true,
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPF,
-//                     [Parameter.W]: INITIAL_PARAMETER_SCOPES[Parameter.W],
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPF,
-//                     [Parameter.X]: INITIAL_PARAMETER_SCOPES[Parameter.X],
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPF,
-//                     [Parameter.Y]: INITIAL_PARAMETER_SCOPES[Parameter.Y],
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPF,
-//                     [Parameter.V]: INITIAL_PARAMETER_SCOPES[Parameter.V],
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPF,
-//                     [Parameter.T]: INITIAL_PARAMETER_SCOPES[Parameter.T],
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPF,
-//                     [Parameter.MODIFIED_COUNT]: INITIAL_PARAMETER_SCOPES[Parameter.MODIFIED_COUNT],
-//                 },
-//             ],
-//
-//             // COAPFAR (15)
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.COAPFAR,
-//                     [Parameter.K]: INITIAL_PARAMETER_SCOPES[Parameter.K],
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.COAPFAR,
-//                     [Parameter.K]: INITIAL_PARAMETER_SCOPES[Parameter.K],
-//                     [Parameter.K_IS_BASE]: true,
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.COAPFAR,
-//                     [Parameter.K]: INITIAL_PARAMETER_SCOPES[Parameter.K],
-//                     [Parameter.K_IS_EXPONENT]: true,
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.COAPFAR,
-//                     [Parameter.J]: INITIAL_PARAMETER_SCOPES[Parameter.J],
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.COAPFAR,
-//                     [Parameter.J]: INITIAL_PARAMETER_SCOPES[Parameter.J],
-//                     [Parameter.J_IS_BASE]: true,
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.COAPFAR,
-//                     [Parameter.J]: INITIAL_PARAMETER_SCOPES[Parameter.J],
-//                     [Parameter.J_IS_EXPONENT]: true,
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.COAPFAR,
-//                     [Parameter.A]: INITIAL_PARAMETER_SCOPES[Parameter.A],
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.COAPFAR,
-//                     [Parameter.A]: INITIAL_PARAMETER_SCOPES[Parameter.A],
-//                     [Parameter.A_IS_BASE]: true,
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.COAPFAR,
-//                     [Parameter.A]: INITIAL_PARAMETER_SCOPES[Parameter.A],
-//                     [Parameter.A_IS_EXPONENT]: true,
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.COAPFAR,
-//                     [Parameter.W]: INITIAL_PARAMETER_SCOPES[Parameter.W],
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.COAPFAR,
-//                     [Parameter.X]: INITIAL_PARAMETER_SCOPES[Parameter.X],
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.COAPFAR,
-//                     [Parameter.Y]: INITIAL_PARAMETER_SCOPES[Parameter.Y],
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.COAPFAR,
-//                     [Parameter.V]: INITIAL_PARAMETER_SCOPES[Parameter.V],
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.COAPFAR,
-//                     [Parameter.T]: INITIAL_PARAMETER_SCOPES[Parameter.T],
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.COAPFAR,
-//                     [Parameter.MODIFIED_COUNT]: INITIAL_PARAMETER_SCOPES[Parameter.MODIFIED_COUNT],
-//                 },
-//             ],
-//
-//             // COAPF (15)
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.COAPF,
-//                     [Parameter.K]: INITIAL_PARAMETER_SCOPES[Parameter.K],
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.COAPF,
-//                     [Parameter.K]: INITIAL_PARAMETER_SCOPES[Parameter.K],
-//                     [Parameter.K_IS_BASE]: true,
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.COAPF,
-//                     [Parameter.K]: INITIAL_PARAMETER_SCOPES[Parameter.K],
-//                     [Parameter.K_IS_EXPONENT]: true,
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.COAPF,
-//                     [Parameter.J]: INITIAL_PARAMETER_SCOPES[Parameter.J],
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.COAPF,
-//                     [Parameter.J]: INITIAL_PARAMETER_SCOPES[Parameter.J],
-//                     [Parameter.J_IS_BASE]: true,
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.COAPF,
-//                     [Parameter.J]: INITIAL_PARAMETER_SCOPES[Parameter.J],
-//                     [Parameter.J_IS_EXPONENT]: true,
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.COAPF,
-//                     [Parameter.A]: INITIAL_PARAMETER_SCOPES[Parameter.A],
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.COAPF,
-//                     [Parameter.A]: INITIAL_PARAMETER_SCOPES[Parameter.A],
-//                     [Parameter.A_IS_BASE]: true,
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.COAPF,
-//                     [Parameter.A]: INITIAL_PARAMETER_SCOPES[Parameter.A],
-//                     [Parameter.A_IS_EXPONENT]: true,
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.COAPF,
-//                     [Parameter.W]: INITIAL_PARAMETER_SCOPES[Parameter.W],
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.COAPF,
-//                     [Parameter.X]: INITIAL_PARAMETER_SCOPES[Parameter.X],
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.COAPF,
-//                     [Parameter.Y]: INITIAL_PARAMETER_SCOPES[Parameter.Y],
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.COAPF,
-//                     [Parameter.V]: INITIAL_PARAMETER_SCOPES[Parameter.V],
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.COAPF,
-//                     [Parameter.T]: INITIAL_PARAMETER_SCOPES[Parameter.T],
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.COAPF,
-//                     [Parameter.MODIFIED_COUNT]: INITIAL_PARAMETER_SCOPES[Parameter.MODIFIED_COUNT],
-//                 },
-//             ],
-//
-//             // SOAPIFAR (15)
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIFAR,
-//                     [Parameter.K]: INITIAL_PARAMETER_SCOPES[Parameter.K],
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIFAR,
-//                     [Parameter.K]: INITIAL_PARAMETER_SCOPES[Parameter.K],
-//                     [Parameter.K_IS_BASE]: true,
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIFAR,
-//                     [Parameter.K]: INITIAL_PARAMETER_SCOPES[Parameter.K],
-//                     [Parameter.K_IS_EXPONENT]: true,
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIFAR,
-//                     [Parameter.J]: INITIAL_PARAMETER_SCOPES[Parameter.J],
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIFAR,
-//                     [Parameter.J]: INITIAL_PARAMETER_SCOPES[Parameter.J],
-//                     [Parameter.J_IS_BASE]: true,
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIFAR,
-//                     [Parameter.J]: INITIAL_PARAMETER_SCOPES[Parameter.J],
-//                     [Parameter.J_IS_EXPONENT]: true,
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIFAR,
-//                     [Parameter.A]: INITIAL_PARAMETER_SCOPES[Parameter.A],
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIFAR,
-//                     [Parameter.A]: INITIAL_PARAMETER_SCOPES[Parameter.A],
-//                     [Parameter.A_IS_BASE]: true,
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIFAR,
-//                     [Parameter.A]: INITIAL_PARAMETER_SCOPES[Parameter.A],
-//                     [Parameter.A_IS_EXPONENT]: true,
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIFAR,
-//                     [Parameter.W]: INITIAL_PARAMETER_SCOPES[Parameter.W],
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIFAR,
-//                     [Parameter.X]: INITIAL_PARAMETER_SCOPES[Parameter.X],
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIFAR,
-//                     [Parameter.Y]: INITIAL_PARAMETER_SCOPES[Parameter.Y],
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIFAR,
-//                     [Parameter.V]: INITIAL_PARAMETER_SCOPES[Parameter.V],
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIFAR,
-//                     [Parameter.T]: INITIAL_PARAMETER_SCOPES[Parameter.T],
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIFAR,
-//                     [Parameter.MODIFIED_COUNT]: INITIAL_PARAMETER_SCOPES[Parameter.MODIFIED_COUNT],
-//                 },
-//             ],
-//
-//             // SOAPIF (15)
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIF,
-//                     [Parameter.K]: INITIAL_PARAMETER_SCOPES[Parameter.K],
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIF,
-//                     [Parameter.K]: INITIAL_PARAMETER_SCOPES[Parameter.K],
-//                     [Parameter.K_IS_BASE]: true,
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIF,
-//                     [Parameter.K]: INITIAL_PARAMETER_SCOPES[Parameter.K],
-//                     [Parameter.K_IS_EXPONENT]: true,
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIF,
-//                     [Parameter.J]: INITIAL_PARAMETER_SCOPES[Parameter.J],
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIF,
-//                     [Parameter.J]: INITIAL_PARAMETER_SCOPES[Parameter.J],
-//                     [Parameter.J_IS_BASE]: true,
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIF,
-//                     [Parameter.J]: INITIAL_PARAMETER_SCOPES[Parameter.J],
-//                     [Parameter.J_IS_EXPONENT]: true,
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIF,
-//                     [Parameter.A]: INITIAL_PARAMETER_SCOPES[Parameter.A],
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIF,
-//                     [Parameter.A]: INITIAL_PARAMETER_SCOPES[Parameter.A],
-//                     [Parameter.A_IS_BASE]: true,
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIF,
-//                     [Parameter.A]: INITIAL_PARAMETER_SCOPES[Parameter.A],
-//                     [Parameter.A_IS_EXPONENT]: true,
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIF,
-//                     [Parameter.W]: INITIAL_PARAMETER_SCOPES[Parameter.W],
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIF,
-//                     [Parameter.X]: INITIAL_PARAMETER_SCOPES[Parameter.X],
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIF,
-//                     [Parameter.Y]: INITIAL_PARAMETER_SCOPES[Parameter.Y],
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIF,
-//                     [Parameter.V]: INITIAL_PARAMETER_SCOPES[Parameter.V],
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIF,
-//                     [Parameter.T]: INITIAL_PARAMETER_SCOPES[Parameter.T],
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.SOAPIF,
-//                     [Parameter.MODIFIED_COUNT]: INITIAL_PARAMETER_SCOPES[Parameter.MODIFIED_COUNT],
-//                 },
-//             ],
-//
-//             // GPF (15)
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.GPF,
-//                     [Parameter.K]: INITIAL_PARAMETER_SCOPES[Parameter.K],
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.GPF,
-//                     [Parameter.K]: INITIAL_PARAMETER_SCOPES[Parameter.K],
-//                     [Parameter.K_IS_BASE]: true,
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.GPF,
-//                     [Parameter.K]: INITIAL_PARAMETER_SCOPES[Parameter.K],
-//                     [Parameter.K_IS_EXPONENT]: true,
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.GPF,
-//                     [Parameter.J]: INITIAL_PARAMETER_SCOPES[Parameter.J],
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.GPF,
-//                     [Parameter.J]: INITIAL_PARAMETER_SCOPES[Parameter.J],
-//                     [Parameter.J_IS_BASE]: true,
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.GPF,
-//                     [Parameter.J]: INITIAL_PARAMETER_SCOPES[Parameter.J],
-//                     [Parameter.J_IS_EXPONENT]: true,
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.GPF,
-//                     [Parameter.A]: INITIAL_PARAMETER_SCOPES[Parameter.A],
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.GPF,
-//                     [Parameter.A]: INITIAL_PARAMETER_SCOPES[Parameter.A],
-//                     [Parameter.A_IS_BASE]: true,
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.GPF,
-//                     [Parameter.A]: INITIAL_PARAMETER_SCOPES[Parameter.A],
-//                     [Parameter.A_IS_EXPONENT]: true,
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.GPF,
-//                     [Parameter.W]: INITIAL_PARAMETER_SCOPES[Parameter.W],
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.GPF,
-//                     [Parameter.X]: INITIAL_PARAMETER_SCOPES[Parameter.X],
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.GPF,
-//                     [Parameter.Y]: INITIAL_PARAMETER_SCOPES[Parameter.Y],
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.GPF,
-//                     [Parameter.V]: INITIAL_PARAMETER_SCOPES[Parameter.V],
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.GPF,
-//                     [Parameter.T]: INITIAL_PARAMETER_SCOPES[Parameter.T],
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.GPF,
-//                     [Parameter.MODIFIED_COUNT]: INITIAL_PARAMETER_SCOPES[Parameter.MODIFIED_COUNT],
-//                 },
-//             ],
-//
-//             // GPIF (15)
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.GPIF,
-//                     [Parameter.K]: INITIAL_PARAMETER_SCOPES[Parameter.K],
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.GPIF,
-//                     [Parameter.K]: INITIAL_PARAMETER_SCOPES[Parameter.K],
-//                     [Parameter.K_IS_BASE]: true,
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.GPIF,
-//                     [Parameter.K]: INITIAL_PARAMETER_SCOPES[Parameter.K],
-//                     [Parameter.K_IS_EXPONENT]: true,
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.GPIF,
-//                     [Parameter.J]: INITIAL_PARAMETER_SCOPES[Parameter.J],
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.GPIF,
-//                     [Parameter.J]: INITIAL_PARAMETER_SCOPES[Parameter.J],
-//                     [Parameter.J_IS_BASE]: true,
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.GPIF,
-//                     [Parameter.J]: INITIAL_PARAMETER_SCOPES[Parameter.J],
-//                     [Parameter.J_IS_EXPONENT]: true,
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.GPIF,
-//                     [Parameter.A]: INITIAL_PARAMETER_SCOPES[Parameter.A],
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.GPIF,
-//                     [Parameter.A]: INITIAL_PARAMETER_SCOPES[Parameter.A],
-//                     [Parameter.A_IS_BASE]: true,
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.GPIF,
-//                     [Parameter.A]: INITIAL_PARAMETER_SCOPES[Parameter.A],
-//                     [Parameter.A_IS_EXPONENT]: true,
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.GPIF,
-//                     [Parameter.W]: INITIAL_PARAMETER_SCOPES[Parameter.W],
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.GPIF,
-//                     [Parameter.X]: INITIAL_PARAMETER_SCOPES[Parameter.X],
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.GPIF,
-//                     [Parameter.Y]: INITIAL_PARAMETER_SCOPES[Parameter.Y],
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.GPIF,
-//                     [Parameter.V]: INITIAL_PARAMETER_SCOPES[Parameter.V],
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.GPIF,
-//                     [Parameter.T]: INITIAL_PARAMETER_SCOPES[Parameter.T],
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.GPIF,
-//                     [Parameter.MODIFIED_COUNT]: INITIAL_PARAMETER_SCOPES[Parameter.MODIFIED_COUNT],
-//                 },
-//             ],
-//         ]
-//
-//         expect(result.length).toEqual(expectedResult.length) // TODO: but what is that count? hardcode it too for reference
-//         expectedResult.forEach(expectedResultElement => {
-//             expect(result.some(resultElement => {
-//                 return deepEquals(resultElement, expectedResultElement)
-//             })).toBeTruthy(`This expected element was not found: ${JSON.stringify(expectedResultElement)}`)
-//         })
-//     })
-//
-//     it("given a chunk count, returns all possible combinations of those parameters - works for 3", () => {
-//         const chunkCount = 3
-//
-//         const result = populateScopesForChunkCount(chunkCount, {quiet: true})
-//
-//         expect(result.length).toEqual(
-//             56 +    // all combinations of 3 submetrics w/ 0 parameters each = 8 choose 3 =      (8!)/((3!)(5!))           = 56
-//             1080 +  // all combinations of 2 submetrics w/ 1 parameter  each = 8 choose 2 w/re = ((2+8-1)!)/((2!)((8-1)!)) = 36, but that times 15 choose 1      =  15, so 36*15 = 540, but then that times 2 bc for each one you can assign the parameter to either one of the two submetrics, so 540*2=1080
-//             960,    // all combinations of 1 submetric  w/ 2 parameters each = 8 choose 1 =      (8!)/((1!)(7!))           =  8, but that times 15 choose 2 w/re = 120, so 120*8 = 960
-//         )
-//         const exampleResultElements = [
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.GPIF,
-//                     [Parameter.T]: INITIAL_PARAMETER_SCOPES[Parameter.T],
-//                 },
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.GPF,
-//                 },
-//             ],
-//             [
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.GPIF,
-//                 },
-//                 {
-//                     [Parameter.SUBMETRIC_TYPE]: SubmetricType.GPF,
-//                     [Parameter.T]: INITIAL_PARAMETER_SCOPES[Parameter.T],
-//                 },
-//             ],
-//         ]
-//         exampleResultElements.forEach(expectedResultElement => {
-//             expect(result.some(resultElement => {
-//                 return arraysHaveSameContents(resultElement, expectedResultElement)
-//             })).toBeTruthy(`This expected element was not found: ${JSON.stringify(expectedResultElement)}`)
-//         })
-//     })
-//
-//     it("given a chunk count, returns all possible combinations of those parameters - works for 4", () => {
-//         const chunkCount = 4
-//
-//         const result = populateScopesForChunkCount(chunkCount, {quiet: true})
-//
-//         expect(result.length).toEqual(
-//             70 +    // all combinations of 4 submetrics w/ 0 parameters = 8 choose 4      =  70
-//             5400 +  // all combinations of 3 submetrics w/ 1 parameter  = 8 choose 3 w/re = 120, but that times 15 choose 1      =  15, so 120* 15 = 1800, but then that times 3 because you could assign the parameter to any of the 3 submetrics, so 1800*3=5400
-//             17280 + // all combinations of 2 submetrics w/ 2 parameters = 8 choose 2 w/re =  36, but that times 15 choose 2 w/re = 120, so  36*120 = 4320, but then that times 4 because you could both both parameters on the first submetric, both on the second submetric, or one on each, or the other way of assigning one on each, so 4320*4=17280
-//             5440,   // all combinations of 1 submetric  w/ 3 parameters = 8 choose 1      =   8, but that times 15 choose 3 w/re = 680, so   8*680 = 5440
-//         )
-//     })
+
+    afterEach(() => {
+        jasmine.DEFAULT_TIMEOUT_INTERVAL = originalJasmineTimeoutInterval
+    })
+
+    it("given a chunk count, populates all possible distributions of all possible combinations of parameter chunks across bins corresponding to all possible combinations of submetric chunks - works for 1, where each possibility is just a single submetric chunk", async () => {
+        const chunkCount = 1 as Count<Chunk>
+        status.populatingChunkCount = chunkCount
+        scopesForChunkCount[ chunkCount ] = []
+
+        await populateScopesForChunkCount()
+
+        expect(scopesForChunkCount[ chunkCount ]).toEqual(jasmine.arrayWithExactContents(SUBMETRIC_CHUNKS.map(chunk => [chunk])))
+    })
+
+    it("given a chunk count, populates all possible combinations of those parameters - works for 2", async () => {
+        const chunkCount = 2 as Count<Chunk>
+        status.populatingChunkCount = chunkCount
+        scopesForChunkCount[ chunkCount ] = []
+
+        await populateScopesForChunkCount()
+
+        const expectedResult = [
+            // 6
+            [ // with repetitions is not useful when the chunk count for submetrics is more than 1 more than the chunk count for parameters (because then you're inevitably going to end up with two submetric scopes that are identical) (and wait no, it's even more complicated than that, because if you had 3 submetric chunks you could have 2 of them repeat and the 3rd was different, so just 1 parameter would be enough to differentiate the 2 same submetrics), but due to the complications that would arise from caching those separately I am just not going to deal with it
+                { // SOAPFAR
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                },
+                { // SOAPFAR
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                },
+            ],
+            [
+                { // SOAPFAR
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                },
+                { // SOAPF
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                },
+            ],
+            [
+                { // SOAPFAR
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                },
+                { // COAPFAR
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                },
+            ],
+            [
+                { // SOAPFAR
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                },
+                { // COAPF
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                },
+            ],
+            [
+                { // SOAPFAR
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                },
+                { // GPF
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.MAX ]: INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],
+                },
+            ],
+            [
+                { // SOAPFAR
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                },
+                { // LOG BASE A OF N
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
+                    [ Parameter.A_IS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_IS_BASE ],
+                },
+            ],
+
+            // 5
+            [
+                { // SOAPF
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                },
+                { // SOAPF
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                },
+            ],
+            [
+                { // SOAPF
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                },
+                { // COAPFAR
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                },
+            ],
+            [
+                { // SOAPF
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                },
+                { // COAPF
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                },
+            ],
+            [
+                { // SOAPF
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                },
+                { // GPF
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.MAX ]: INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],
+                },
+            ],
+            [
+                { // SOAPF
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                },
+                { // LOG BASE A OF N
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
+                    [ Parameter.A_IS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_IS_BASE ],
+                },
+            ],
+
+            // 4
+            [
+                { // COAPFAR
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                },
+                { // COAPFAR
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                },
+            ],
+            [
+                { // COAPFAR
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                },
+                { // COAPF
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                },
+            ],
+            [
+                { // COAPFAR
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                },
+                { // GPF
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.MAX ]: INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],
+                },
+            ],
+            [
+                { // COAPFAR
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                },
+                { // LOG BASE A OF N
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
+                    [ Parameter.A_IS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_IS_BASE ],
+                },
+            ],
+
+            // 3
+            [
+                { // COAPF
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                },
+                { // COAPF
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                },
+            ],
+            [
+                { // COAPF
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                },
+                { // GPF
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.MAX ]: INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],
+                },
+            ],
+            [
+                { // COAPF
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                },
+                { // LOG BASE A OF N
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
+                    [ Parameter.A_IS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_IS_BASE ],
+                },
+            ],
+
+            // 2
+            [
+                { // GPF
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.MAX ]: INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],
+                },
+                { // GPF
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.MAX ]: INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],
+                },
+            ],
+            [
+                { // GPF
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.MAX ]: INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],
+                },
+                { // LOG BASE A OF N
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
+                    [ Parameter.A_IS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_IS_BASE ],
+                },
+            ],
+
+            // 1
+            [
+                { // LOG BASE A OF N
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
+                    [ Parameter.A_IS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_IS_BASE ],
+                },
+                { // LOG BASE A OF N
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
+                    [ Parameter.A_IS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_IS_BASE ],
+                },
+            ],
+
+            // SOAPFAR (14)
+            [
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.K ]: INITIAL_PARAMETER_SCOPES[ Parameter.K ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.K ]: INITIAL_PARAMETER_SCOPES[ Parameter.K ],
+                    [ Parameter.K_IS_BASE ]: true,
+                },
+            ],
+            [
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.K ]: INITIAL_PARAMETER_SCOPES[ Parameter.K ],
+                    [ Parameter.K_IS_EXPONENT ]: true,
+                },
+            ],
+            [
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.J ]: INITIAL_PARAMETER_SCOPES[ Parameter.J ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.J ]: INITIAL_PARAMETER_SCOPES[ Parameter.J ],
+                    [ Parameter.J_IS_BASE ]: true,
+                },
+            ],
+            [
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.J ]: INITIAL_PARAMETER_SCOPES[ Parameter.J ],
+                    [ Parameter.J_IS_EXPONENT ]: true,
+                },
+            ],
+            [
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
+                    [ Parameter.A_IS_BASE ]: true,
+                },
+            ],
+            [
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
+                    [ Parameter.A_IS_EXPONENT ]: true,
+                },
+            ],
+            [
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.W ]: INITIAL_PARAMETER_SCOPES[ Parameter.W ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.Y ]: INITIAL_PARAMETER_SCOPES[ Parameter.Y ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.USE_NUMINATOR ]: INITIAL_PARAMETER_SCOPES[ Parameter.USE_NUMINATOR ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.USE_PRIME_INDEX ]: INITIAL_PARAMETER_SCOPES[ Parameter.USE_PRIME_INDEX ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.MODIFIED_COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.MODIFIED_COUNT ],
+                },
+            ],
+
+            // SOAPF (14)
+            [
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.K ]: INITIAL_PARAMETER_SCOPES[ Parameter.K ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.K ]: INITIAL_PARAMETER_SCOPES[ Parameter.K ],
+                    [ Parameter.K_IS_BASE ]: true,
+                },
+            ],
+            [
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.K ]: INITIAL_PARAMETER_SCOPES[ Parameter.K ],
+                    [ Parameter.K_IS_EXPONENT ]: true,
+                },
+            ],
+            [
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.J ]: INITIAL_PARAMETER_SCOPES[ Parameter.J ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.J ]: INITIAL_PARAMETER_SCOPES[ Parameter.J ],
+                    [ Parameter.J_IS_BASE ]: true,
+                },
+            ],
+            [
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.J ]: INITIAL_PARAMETER_SCOPES[ Parameter.J ],
+                    [ Parameter.J_IS_EXPONENT ]: true,
+                },
+            ],
+            [
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
+                    [ Parameter.A_IS_BASE ]: true,
+                },
+            ],
+            [
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
+                    [ Parameter.A_IS_EXPONENT ]: true,
+                },
+            ],
+            [
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.W ]: INITIAL_PARAMETER_SCOPES[ Parameter.W ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.Y ]: INITIAL_PARAMETER_SCOPES[ Parameter.Y ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.USE_NUMINATOR ]: INITIAL_PARAMETER_SCOPES[ Parameter.USE_NUMINATOR ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.USE_PRIME_INDEX ]: INITIAL_PARAMETER_SCOPES[ Parameter.USE_PRIME_INDEX ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.MODIFIED_COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.MODIFIED_COUNT ],
+                },
+            ],
+
+            // COAPFAR (14)
+            [
+                {
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                    [ Parameter.K ]: INITIAL_PARAMETER_SCOPES[ Parameter.K ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                    [ Parameter.K ]: INITIAL_PARAMETER_SCOPES[ Parameter.K ],
+                    [ Parameter.K_IS_BASE ]: true,
+                },
+            ],
+            [
+                {
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                    [ Parameter.K ]: INITIAL_PARAMETER_SCOPES[ Parameter.K ],
+                    [ Parameter.K_IS_EXPONENT ]: true,
+                },
+            ],
+            [
+                {
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                    [ Parameter.J ]: INITIAL_PARAMETER_SCOPES[ Parameter.J ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                    [ Parameter.J ]: INITIAL_PARAMETER_SCOPES[ Parameter.J ],
+                    [ Parameter.J_IS_BASE ]: true,
+                },
+            ],
+            [
+                {
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                    [ Parameter.J ]: INITIAL_PARAMETER_SCOPES[ Parameter.J ],
+                    [ Parameter.J_IS_EXPONENT ]: true,
+                },
+            ],
+            [
+                {
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                    [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                    [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
+                    [ Parameter.A_IS_BASE ]: true,
+                },
+            ],
+            [
+                {
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                    [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
+                    [ Parameter.A_IS_EXPONENT ]: true,
+                },
+            ],
+            [
+                {
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                    [ Parameter.W ]: INITIAL_PARAMETER_SCOPES[ Parameter.W ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                    [ Parameter.Y ]: INITIAL_PARAMETER_SCOPES[ Parameter.Y ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                    [ Parameter.USE_NUMINATOR ]: INITIAL_PARAMETER_SCOPES[ Parameter.USE_NUMINATOR ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                    [ Parameter.USE_PRIME_INDEX ]: INITIAL_PARAMETER_SCOPES[ Parameter.USE_PRIME_INDEX ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                    [ Parameter.MODIFIED_COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.MODIFIED_COUNT ],
+                },
+            ],
+
+            // COAPF (14)
+            [
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                    [ Parameter.K ]: INITIAL_PARAMETER_SCOPES[ Parameter.K ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                    [ Parameter.K ]: INITIAL_PARAMETER_SCOPES[ Parameter.K ],
+                    [ Parameter.K_IS_BASE ]: true,
+                },
+            ],
+            [
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                    [ Parameter.K ]: INITIAL_PARAMETER_SCOPES[ Parameter.K ],
+                    [ Parameter.K_IS_EXPONENT ]: true,
+                },
+            ],
+            [
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                    [ Parameter.J ]: INITIAL_PARAMETER_SCOPES[ Parameter.J ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                    [ Parameter.J ]: INITIAL_PARAMETER_SCOPES[ Parameter.J ],
+                    [ Parameter.J_IS_BASE ]: true,
+                },
+            ],
+            [
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                    [ Parameter.J ]: INITIAL_PARAMETER_SCOPES[ Parameter.J ],
+                    [ Parameter.J_IS_EXPONENT ]: true,
+                },
+            ],
+            [
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                    [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                    [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
+                    [ Parameter.A_IS_BASE ]: true,
+                },
+            ],
+            [
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                    [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
+                    [ Parameter.A_IS_EXPONENT ]: true,
+                },
+            ],
+            [
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                    [ Parameter.W ]: INITIAL_PARAMETER_SCOPES[ Parameter.W ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                    [ Parameter.Y ]: INITIAL_PARAMETER_SCOPES[ Parameter.Y ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                    [ Parameter.USE_NUMINATOR ]: INITIAL_PARAMETER_SCOPES[ Parameter.USE_NUMINATOR ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                    [ Parameter.USE_PRIME_INDEX ]: INITIAL_PARAMETER_SCOPES[ Parameter.USE_PRIME_INDEX ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                    [ Parameter.MODIFIED_COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.MODIFIED_COUNT ],
+                },
+            ],
+
+            // GPF (14)
+            [
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.MAX ]: INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],
+                    [ Parameter.K ]: INITIAL_PARAMETER_SCOPES[ Parameter.K ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.MAX ]: INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],
+                    [ Parameter.K ]: INITIAL_PARAMETER_SCOPES[ Parameter.K ],
+                    [ Parameter.K_IS_BASE ]: true,
+                },
+            ],
+            [
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.MAX ]: INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],
+                    [ Parameter.K ]: INITIAL_PARAMETER_SCOPES[ Parameter.K ],
+                    [ Parameter.K_IS_EXPONENT ]: true,
+                },
+            ],
+            [
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.MAX ]: INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],
+                    [ Parameter.J ]: INITIAL_PARAMETER_SCOPES[ Parameter.J ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.MAX ]: INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],
+                    [ Parameter.J ]: INITIAL_PARAMETER_SCOPES[ Parameter.J ],
+                    [ Parameter.J_IS_BASE ]: true,
+                },
+            ],
+            [
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.MAX ]: INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],
+                    [ Parameter.J ]: INITIAL_PARAMETER_SCOPES[ Parameter.J ],
+                    [ Parameter.J_IS_EXPONENT ]: true,
+                },
+            ],
+            [
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.MAX ]: INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],
+                    [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.MAX ]: INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],
+                    [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
+                    [ Parameter.A_IS_BASE ]: true,
+                },
+            ],
+            [
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.MAX ]: INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],
+                    [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
+                    [ Parameter.A_IS_EXPONENT ]: true,
+                },
+            ],
+            [
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.MAX ]: INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],
+                    [ Parameter.W ]: INITIAL_PARAMETER_SCOPES[ Parameter.W ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.MAX ]: INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],
+                    [ Parameter.Y ]: INITIAL_PARAMETER_SCOPES[ Parameter.Y ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.MAX ]: INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],
+                    [ Parameter.USE_NUMINATOR ]: INITIAL_PARAMETER_SCOPES[ Parameter.USE_NUMINATOR ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.MAX ]: INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],
+                    [ Parameter.USE_PRIME_INDEX ]: INITIAL_PARAMETER_SCOPES[ Parameter.USE_PRIME_INDEX ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.MAX ]: INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],
+                    [ Parameter.MODIFIED_COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.MODIFIED_COUNT ],
+                },
+            ],
+
+            // LOG BASE A OF N (14)
+            [
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
+                    [ Parameter.A_IS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_IS_BASE ],
+                    [ Parameter.K ]: INITIAL_PARAMETER_SCOPES[ Parameter.K ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
+                    [ Parameter.A_IS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_IS_BASE ],
+                    [ Parameter.K ]: INITIAL_PARAMETER_SCOPES[ Parameter.K ],
+                    [ Parameter.K_IS_BASE ]: true,
+                },
+            ],
+            [
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
+                    [ Parameter.A_IS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_IS_BASE ],
+                    [ Parameter.K ]: INITIAL_PARAMETER_SCOPES[ Parameter.K ],
+                    [ Parameter.K_IS_EXPONENT ]: true,
+                },
+            ],
+            [
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
+                    [ Parameter.A_IS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_IS_BASE ],
+                    [ Parameter.J ]: INITIAL_PARAMETER_SCOPES[ Parameter.J ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
+                    [ Parameter.A_IS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_IS_BASE ],
+                    [ Parameter.J ]: INITIAL_PARAMETER_SCOPES[ Parameter.J ],
+                    [ Parameter.J_IS_BASE ]: true,
+                },
+            ],
+            [
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
+                    [ Parameter.A_IS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_IS_BASE ],
+                    [ Parameter.J ]: INITIAL_PARAMETER_SCOPES[ Parameter.J ],
+                    [ Parameter.J_IS_EXPONENT ]: true,
+                },
+            ],
+            [
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
+                    [ Parameter.A_IS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_IS_BASE ],
+                    [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
+                    [ Parameter.A_IS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_IS_BASE ],
+                    [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
+                    [ Parameter.A_IS_BASE ]: true,
+                },
+            ],
+            [
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
+                    [ Parameter.A_IS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_IS_BASE ],
+                    [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
+                    [ Parameter.A_IS_EXPONENT ]: true,
+                },
+            ],
+            [
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
+                    [ Parameter.A_IS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_IS_BASE ],
+                    [ Parameter.W ]: INITIAL_PARAMETER_SCOPES[ Parameter.W ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
+                    [ Parameter.A_IS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_IS_BASE ],
+                    [ Parameter.Y ]: INITIAL_PARAMETER_SCOPES[ Parameter.Y ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
+                    [ Parameter.A_IS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_IS_BASE ],
+                    [ Parameter.USE_NUMINATOR ]: INITIAL_PARAMETER_SCOPES[ Parameter.USE_NUMINATOR ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
+                    [ Parameter.A_IS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_IS_BASE ],
+                    [ Parameter.USE_PRIME_INDEX ]: INITIAL_PARAMETER_SCOPES[ Parameter.USE_PRIME_INDEX ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
+                    [ Parameter.A_IS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_IS_BASE ],
+                    [ Parameter.MODIFIED_COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.MODIFIED_COUNT ],
+                },
+            ],
+        ] as Scope[]
+
+        const result: Scope[] = scopesForChunkCount[ chunkCount ]
+
+        // 105 =
+        //      ((2+6-1)!)/((2!)((6-1)!)) * ((0+14-1)!)/((0!)((14-1)!)) * 2^0 = 21 * 1 * 1 = 21
+        //      +
+        //      ((1+6-1)!)/((1!)((6-1)!)) * ((1+14-1)!)/((1!)((14-1)!)) * 1^1 = 6 * 14 * 1 = 84
+        expect(result.length).toEqual(expectedResult.length)
+        expectedResult.forEach(expectedResultElement => {
+            expect(result.some(resultElement => {
+                return deepEquals(resultElement, expectedResultElement)
+            })).toBeTruthy(`This expected element was not found: ${JSON.stringify(expectedResultElement)}`)
+        })
+    })
+
+    it("given a chunk count, populates all possible combinations of those parameters - works for 3", async () => {
+        const chunkCount = 3 as Count<Chunk>
+        status.populatingChunkCount = chunkCount
+        scopesForChunkCount[ chunkCount ] = []
+
+        await populateScopesForChunkCount()
+
+        const result: Scope[] = scopesForChunkCount[ chunkCount ]
+
+        expect(result.length).toEqual( // 1274
+            56 +          // all combinations of 3 submetrics = 6 choose 3 w/re = ((3+6-1)!)/((3!)((6-1)!)) = 56, but that times all combinations of 0 parameters = 14 choose 0 w/re = ((0+14-1)!)/((0!)((14-1)!)) =   1, so 56 *  1 =  56, but then that times 1 bc for each one you can distribute the parameters across the submetrics 3^0 ways, so 56  * 1 =  56
+            588 +         // all combinations of 2 submetrics = 6 choose 2 w/re = ((2+6-1)!)/((2!)((6-1)!)) = 21, but that times all combinations of 1 parameters = 14 choose 1 w/re = ((1+14-1)!)/((1!)((14-1)!)) =  14, so 21 * 14 = 294, but then that times 2 bc for each one you can distribute the parameters across the submetrics 2^1 ways, so 294 * 2 = 588
+            630,          // all combinations of 1 submetric  = 6 choose 1 w/re = ((1+6-1)!)/((1!)((6-1)!)) =  6, but that times all combinations of 2 parameters = 14 choose 2 w/re = ((2+14-1)!)/((2!)((14-1)!)) = 105, so 6 * 105 = 630, but then that times 1 bc for each one you can distribute the parameters across the submetrics 1^2 ways, so 630 * 1 = 630
+        )
+        const exampleResultElements = [
+            [
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.MAX ]: INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],
+                    [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
+                    [ Parameter.A_IS_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_IS_EXPONENT ],
+                },
+                {
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.MAX ]: INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],
+                },
+                {
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                    [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
+                    [ Parameter.A_IS_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_IS_EXPONENT ],
+                },
+            ],
+        ]
+        exampleResultElements.forEach(expectedResultElement => {
+            expect(result.some(resultElement => {
+                return arraysHaveSameContents(resultElement, expectedResultElement)
+            })).toBeTruthy(`This expected element was not found: ${JSON.stringify(expectedResultElement)}`)
+        })
+    })
+
+    it("given a chunk count, populates all possible combinations of those parameters - works for 4", async () => {
+        const chunkCount = 4 as Count<Chunk>
+        status.populatingChunkCount = chunkCount
+        scopesForChunkCount[ chunkCount ] = []
+
+        await populateScopesForChunkCount()
+
+        const result: Scope[] = scopesForChunkCount[ chunkCount ]
+
+        expect(result.length).toEqual( // 14658
+            126 +          // all combinations of 4 submetrics = 6 choose 4 w/re = ((4+6-1)!)/((4!)((6-1)!)) = 126, but that times all combinations of 0 parameters = 14 choose 0 w/re = ((0+14-1)!)/((0!)((14-1)!)) =   1, so 126 *  1 =  126, but then that times 1 bc for each one you can distribute the parameters across the submetrics 4^0 ways, so  126 * 1 =  126
+            2352 +         // all combinations of 3 submetrics = 6 choose 3 w/re = ((3+6-1)!)/((3!)((6-1)!)) =  56, but that times all combinations of 1 parameters = 14 choose 1 w/re = ((1+14-1)!)/((1!)((14-1)!)) =  14, so 56  * 14 =  784, but then that times 3 bc for each one you can distribute the parameters across the submetrics 3^1 ways, so  784 * 3 = 2352
+            8820 +         // all combinations of 2 submetrics = 6 choose 2 w/re = ((2+6-1)!)/((2!)((6-1)!)) =  21, but that times all combinations of 2 parameters = 14 choose 2 w/re = ((2+14-1)!)/((2!)((14-1)!)) = 105, so 21 * 105 = 2205, but then that times 4 bc for each one you can distribute the parameters across the submetrics 2^2 ways, so 2205 * 4 = 8820
+            3360,          // all combinations of 1 submetric  = 6 choose 1 w/re = ((1+6-1)!)/((1!)((6-1)!)) =   6, but that times all combinations of 3 parameters = 14 choose 3 w/re = ((3+14-1)!)/((3!)((14-1)!)) = 560, so 6  * 560 = 3360, but then that times 1 bc for each one you can distribute the parameters across the submetrics 1^3 ways, so 3360 * 1 = 3360
+        )
+    })
 })
