@@ -108,7 +108,7 @@ describe("searchNextLocalMinimum", () => {
             ] as unknown as Scope,
             {
                 depth: nextDepth,
-                progressMessage: "7/9@depth5 ",
+                progressMessage: "8/9@depth5 ",
                 localMinimum: nextLocalMinimum,
                 chunkCount,
             },

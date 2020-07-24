@@ -7,6 +7,7 @@ const debug: Debug = {
     solver: false,
     newBestMetric: false,
     localMinima: false,
+    scope: false,
 }
 
 export {

@@ -31,7 +31,7 @@ describe("populateScopesForChunkCount", () => {
         expect(scopesForChunkCount[ chunkCount ]).toEqual(jasmine.arrayWithExactContents(SUBMETRIC_CHUNKS.map(chunk => [chunk])))
     })
 
-    fit("given a chunk count, populates all possible combinations of those parameters - works for 2", async () => {
+    it("given a chunk count, populates all possible combinations of those parameters - works for 2", async () => {
         const chunkCount = 2 as Count<Chunk>
         status.populatingChunkCount = chunkCount
         scopesForChunkCount[ chunkCount ] = []

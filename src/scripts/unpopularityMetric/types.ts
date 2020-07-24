@@ -67,6 +67,7 @@ interface Debug {
     solver: boolean,
     newBestMetric: boolean,
     localMinima: boolean,
+    scope: boolean,
 }
 
 export {
