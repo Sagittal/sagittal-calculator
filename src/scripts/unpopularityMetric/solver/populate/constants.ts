@@ -119,7 +119,7 @@ const PARAMETER_CHUNKS: ParameterChunk[] = [
     {
         [ Parameter.W ]: INITIAL_PARAMETER_SCOPES[ Parameter.W ],
     },
-    // { [Parameter.X]: INITIAL_PARAMETER_SCOPES[Parameter.X]},
+    // { [ Parameter.X ]: INITIAL_PARAMETER_SCOPES[ Parameter.X ]},
     {
         [ Parameter.Y ]: INITIAL_PARAMETER_SCOPES[ Parameter.Y ],
     },
