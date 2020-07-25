@@ -28,6 +28,7 @@ if (!!program.noColors) {
 }
 
 const scope = [
+    {},
     {
         [ Parameter.SUM ]: true,
         [ Parameter.K ]: {

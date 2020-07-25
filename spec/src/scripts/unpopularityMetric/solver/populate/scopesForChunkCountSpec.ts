@@ -21,14 +21,14 @@ describe("populateScopesForChunkCount", () => {
         jasmine.DEFAULT_TIMEOUT_INTERVAL = originalJasmineTimeoutInterval
     })
 
-    it("given a chunk count, populates all possible distributions of all possible combinations of parameter chunks across bins corresponding to all possible combinations of submetric chunks - works for 1, where each possibility is just a single submetric chunk", async () => {
+    it("given a chunk count, populates all possible distributions of all possible combinations of parameter chunks across bins corresponding to all possible combinations of submetric chunks - works for 1, where each possibility is just a single submetric chunk, plus an empty 'all bins' chunk because that's just how it works to be simple", async () => {
         const chunkCount = 1 as Count<Chunk>
         status.populatingChunkCount = chunkCount
         scopesForChunkCount[ chunkCount ] = []
 
         await populateScopesForChunkCount()
 
-        expect(scopesForChunkCount[ chunkCount ]).toEqual(jasmine.arrayWithExactContents(SUBMETRIC_CHUNKS.map(chunk => [chunk])))
+        expect(scopesForChunkCount[ chunkCount ]).toEqual(jasmine.arrayWithExactContents(SUBMETRIC_CHUNKS.map(chunk => [{}, chunk])))
     })
 
     it("given a chunk count, populates all possible combinations of those parameters - works for 2", async () => {
@@ -39,8 +39,11 @@ describe("populateScopesForChunkCount", () => {
         await populateScopesForChunkCount()
 
         const expectedResult = [
+            // submetrics: 2, parameters: 0
+
             // 6
             [ // with repetitions is not useful when the chunk count for submetrics is more than 1 more than the chunk count for parameters (because then you're inevitably going to end up with two submetric scopes that are identical) (and wait no, it's even more complicated than that, because if you had 3 submetric chunks you could have 2 of them repeat and the 3rd was different, so just 1 parameter would be enough to differentiate the 2 same submetrics), but due to the complications that would arise from caching those separately I am just not going to deal with it
+                {},
                 { // SOAPFAR
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
                 },
@@ -49,6 +52,7 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
             [
+                {},
                 { // SOAPFAR
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
                 },
@@ -58,6 +62,7 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
             [
+                {},
                 { // SOAPFAR
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
                 },
@@ -66,6 +71,7 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
             [
+                {},
                 { // SOAPFAR
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
                 },
@@ -75,6 +81,7 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
             [
+                {},
                 { // SOAPFAR
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
                 },
@@ -84,6 +91,7 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
             [
+                {},
                 { // SOAPFAR
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
                 },
@@ -96,6 +104,7 @@ describe("populateScopesForChunkCount", () => {
 
             // 5
             [
+                {},
                 { // SOAPF
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
@@ -106,6 +115,7 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
             [
+                {},
                 { // SOAPF
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
@@ -115,6 +125,7 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
             [
+                {},
                 { // SOAPF
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
@@ -125,6 +136,7 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
             [
+                {},
                 { // SOAPF
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
@@ -135,6 +147,7 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
             [
+                {},
                 { // SOAPF
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
@@ -148,6 +161,7 @@ describe("populateScopesForChunkCount", () => {
 
             // 4
             [
+                {},
                 { // COAPFAR
                     [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
                 },
@@ -156,6 +170,7 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
             [
+                {},
                 { // COAPFAR
                     [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
                 },
@@ -165,6 +180,7 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
             [
+                {},
                 { // COAPFAR
                     [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
                 },
@@ -174,6 +190,7 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
             [
+                {},
                 { // COAPFAR
                     [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
                 },
@@ -186,6 +203,7 @@ describe("populateScopesForChunkCount", () => {
 
             // 3
             [
+                {},
                 { // COAPF
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
                     [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
@@ -196,6 +214,7 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
             [
+                {},
                 { // COAPF
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
                     [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
@@ -206,6 +225,7 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
             [
+                {},
                 { // COAPF
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
                     [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
@@ -219,6 +239,7 @@ describe("populateScopesForChunkCount", () => {
 
             // 2
             [
+                {},
                 { // GPF
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
                     [ Parameter.MAX ]: INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],
@@ -229,6 +250,7 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
             [
+                {},
                 { // GPF
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
                     [ Parameter.MAX ]: INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],
@@ -242,6 +264,7 @@ describe("populateScopesForChunkCount", () => {
 
             // 1
             [
+                {},
                 { // LOG BASE A OF N
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
                     [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
@@ -254,14 +277,18 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
 
+            // submetrics 1, parameters 1: distributed parameters to the submetric directly
+
             // SOAPFAR (14)
             [
+                {},
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
                     [ Parameter.K ]: INITIAL_PARAMETER_SCOPES[ Parameter.K ],
                 },
             ],
             [
+                {},
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
                     [ Parameter.K ]: INITIAL_PARAMETER_SCOPES[ Parameter.K ],
@@ -269,6 +296,7 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
             [
+                {},
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
                     [ Parameter.K ]: INITIAL_PARAMETER_SCOPES[ Parameter.K ],
@@ -276,12 +304,14 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
             [
+                {},
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
                     [ Parameter.J ]: INITIAL_PARAMETER_SCOPES[ Parameter.J ],
                 },
             ],
             [
+                {},
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
                     [ Parameter.J ]: INITIAL_PARAMETER_SCOPES[ Parameter.J ],
@@ -289,6 +319,7 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
             [
+                {},
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
                     [ Parameter.J ]: INITIAL_PARAMETER_SCOPES[ Parameter.J ],
@@ -296,12 +327,14 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
             [
+                {},
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
                     [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
                 },
             ],
             [
+                {},
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
                     [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
@@ -309,6 +342,7 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
             [
+                {},
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
                     [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
@@ -316,30 +350,35 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
             [
+                {},
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
                     [ Parameter.W ]: INITIAL_PARAMETER_SCOPES[ Parameter.W ],
                 },
             ],
             [
+                {},
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
                     [ Parameter.Y ]: INITIAL_PARAMETER_SCOPES[ Parameter.Y ],
                 },
             ],
             [
+                {},
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
                     [ Parameter.USE_NUMINATOR ]: INITIAL_PARAMETER_SCOPES[ Parameter.USE_NUMINATOR ],
                 },
             ],
             [
+                {},
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
                     [ Parameter.USE_PRIME_INDEX ]: INITIAL_PARAMETER_SCOPES[ Parameter.USE_PRIME_INDEX ],
                 },
             ],
             [
+                {},
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
                     [ Parameter.MODIFIED_COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.MODIFIED_COUNT ],
@@ -348,6 +387,7 @@ describe("populateScopesForChunkCount", () => {
 
             // SOAPF (14)
             [
+                {},
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
@@ -355,6 +395,7 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
             [
+                {},
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
@@ -363,6 +404,7 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
             [
+                {},
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
@@ -371,6 +413,7 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
             [
+                {},
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
@@ -378,6 +421,7 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
             [
+                {},
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
@@ -386,6 +430,7 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
             [
+                {},
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
@@ -394,6 +439,7 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
             [
+                {},
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
@@ -401,6 +447,7 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
             [
+                {},
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
@@ -409,6 +456,7 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
             [
+                {},
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
@@ -417,6 +465,7 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
             [
+                {},
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
@@ -424,6 +473,7 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
             [
+                {},
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
@@ -431,6 +481,7 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
             [
+                {},
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
@@ -438,6 +489,7 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
             [
+                {},
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
@@ -445,6 +497,7 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
             [
+                {},
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
@@ -454,12 +507,14 @@ describe("populateScopesForChunkCount", () => {
 
             // COAPFAR (14)
             [
+                {},
                 {
                     [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
                     [ Parameter.K ]: INITIAL_PARAMETER_SCOPES[ Parameter.K ],
                 },
             ],
             [
+                {},
                 {
                     [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
                     [ Parameter.K ]: INITIAL_PARAMETER_SCOPES[ Parameter.K ],
@@ -467,6 +522,7 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
             [
+                {},
                 {
                     [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
                     [ Parameter.K ]: INITIAL_PARAMETER_SCOPES[ Parameter.K ],
@@ -474,12 +530,14 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
             [
+                {},
                 {
                     [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
                     [ Parameter.J ]: INITIAL_PARAMETER_SCOPES[ Parameter.J ],
                 },
             ],
             [
+                {},
                 {
                     [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
                     [ Parameter.J ]: INITIAL_PARAMETER_SCOPES[ Parameter.J ],
@@ -487,6 +545,7 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
             [
+                {},
                 {
                     [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
                     [ Parameter.J ]: INITIAL_PARAMETER_SCOPES[ Parameter.J ],
@@ -494,12 +553,14 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
             [
+                {},
                 {
                     [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
                     [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
                 },
             ],
             [
+                {},
                 {
                     [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
                     [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
@@ -507,6 +568,7 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
             [
+                {},
                 {
                     [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
                     [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
@@ -514,30 +576,35 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
             [
+                {},
                 {
                     [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
                     [ Parameter.W ]: INITIAL_PARAMETER_SCOPES[ Parameter.W ],
                 },
             ],
             [
+                {},
                 {
                     [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
                     [ Parameter.Y ]: INITIAL_PARAMETER_SCOPES[ Parameter.Y ],
                 },
             ],
             [
+                {},
                 {
                     [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
                     [ Parameter.USE_NUMINATOR ]: INITIAL_PARAMETER_SCOPES[ Parameter.USE_NUMINATOR ],
                 },
             ],
             [
+                {},
                 {
                     [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
                     [ Parameter.USE_PRIME_INDEX ]: INITIAL_PARAMETER_SCOPES[ Parameter.USE_PRIME_INDEX ],
                 },
             ],
             [
+                {},
                 {
                     [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
                     [ Parameter.MODIFIED_COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.MODIFIED_COUNT ],
@@ -546,6 +613,7 @@ describe("populateScopesForChunkCount", () => {
 
             // COAPF (14)
             [
+                {},
                 {
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
                     [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
@@ -553,6 +621,7 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
             [
+                {},
                 {
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
                     [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
@@ -561,6 +630,7 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
             [
+                {},
                 {
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
                     [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
@@ -569,6 +639,7 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
             [
+                {},
                 {
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
                     [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
@@ -576,6 +647,7 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
             [
+                {},
                 {
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
                     [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
@@ -584,6 +656,7 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
             [
+                {},
                 {
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
                     [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
@@ -592,6 +665,7 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
             [
+                {},
                 {
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
                     [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
@@ -599,6 +673,7 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
             [
+                {},
                 {
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
                     [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
@@ -607,6 +682,7 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
             [
+                {},
                 {
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
                     [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
@@ -615,6 +691,7 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
             [
+                {},
                 {
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
                     [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
@@ -622,6 +699,7 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
             [
+                {},
                 {
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
                     [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
@@ -629,6 +707,7 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
             [
+                {},
                 {
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
                     [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
@@ -636,6 +715,7 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
             [
+                {},
                 {
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
                     [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
@@ -643,6 +723,7 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
             [
+                {},
                 {
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
                     [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
@@ -652,6 +733,7 @@ describe("populateScopesForChunkCount", () => {
 
             // GPF (14)
             [
+                {},
                 {
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
                     [ Parameter.MAX ]: INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],
@@ -659,6 +741,7 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
             [
+                {},
                 {
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
                     [ Parameter.MAX ]: INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],
@@ -667,6 +750,7 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
             [
+                {},
                 {
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
                     [ Parameter.MAX ]: INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],
@@ -675,6 +759,7 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
             [
+                {},
                 {
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
                     [ Parameter.MAX ]: INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],
@@ -682,6 +767,7 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
             [
+                {},
                 {
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
                     [ Parameter.MAX ]: INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],
@@ -690,6 +776,7 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
             [
+                {},
                 {
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
                     [ Parameter.MAX ]: INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],
@@ -698,6 +785,7 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
             [
+                {},
                 {
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
                     [ Parameter.MAX ]: INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],
@@ -705,6 +793,7 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
             [
+                {},
                 {
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
                     [ Parameter.MAX ]: INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],
@@ -713,6 +802,7 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
             [
+                {},
                 {
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
                     [ Parameter.MAX ]: INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],
@@ -721,6 +811,7 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
             [
+                {},
                 {
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
                     [ Parameter.MAX ]: INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],
@@ -728,6 +819,7 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
             [
+                {},
                 {
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
                     [ Parameter.MAX ]: INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],
@@ -735,6 +827,7 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
             [
+                {},
                 {
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
                     [ Parameter.MAX ]: INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],
@@ -742,6 +835,7 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
             [
+                {},
                 {
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
                     [ Parameter.MAX ]: INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],
@@ -749,6 +843,7 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
             [
+                {},
                 {
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
                     [ Parameter.MAX ]: INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],
@@ -758,6 +853,7 @@ describe("populateScopesForChunkCount", () => {
 
             // LOG BASE A OF N (14)
             [
+                {},
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
                     [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
@@ -766,6 +862,7 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
             [
+                {},
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
                     [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
@@ -775,6 +872,7 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
             [
+                {},
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
                     [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
@@ -784,6 +882,7 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
             [
+                {},
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
                     [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
@@ -792,6 +891,7 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
             [
+                {},
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
                     [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
@@ -801,6 +901,7 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
             [
+                {},
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
                     [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
@@ -810,6 +911,7 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
             [
+                {},
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
                     [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
@@ -818,6 +920,7 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
             [
+                {},
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
                     [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
@@ -827,6 +930,7 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
             [
+                {},
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
                     [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
@@ -836,6 +940,7 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
             [
+                {},
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
                     [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
@@ -844,6 +949,7 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
             [
+                {},
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
                     [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
@@ -852,6 +958,7 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
             [
+                {},
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
                     [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
@@ -860,6 +967,7 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
             [
+                {},
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
                     [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
@@ -868,6 +976,7 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
             [
+                {},
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
                     [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
@@ -876,11 +985,797 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
 
-            // and the remaining 84 would be copies of the 84 previous here...
-            // it's just too complex to deal with filtering those out
-            // it happens whenever there is only a single submetric chunk...
-            // the "all" bin of course only maps to the 1 bin
-            // so it's redundant
+            // submetrics 1, parameters 1: distributed parameters to the 'all bins' submetric bin
+
+            // SOAPFAR (14)
+            [
+                {
+                    [ Parameter.K ]: INITIAL_PARAMETER_SCOPES[ Parameter.K ],
+                },
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.K ]: INITIAL_PARAMETER_SCOPES[ Parameter.K ],
+                    [ Parameter.K_IS_BASE ]: true,
+                },
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.K ]: INITIAL_PARAMETER_SCOPES[ Parameter.K ],
+                    [ Parameter.K_IS_EXPONENT ]: true,
+                },
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.J ]: INITIAL_PARAMETER_SCOPES[ Parameter.J ],
+                },
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.J ]: INITIAL_PARAMETER_SCOPES[ Parameter.J ],
+                    [ Parameter.J_IS_BASE ]: true,
+                },
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.J ]: INITIAL_PARAMETER_SCOPES[ Parameter.J ],
+                    [ Parameter.J_IS_EXPONENT ]: true,
+                },
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
+                },
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
+                    [ Parameter.A_IS_BASE ]: true,
+                },
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
+                    [ Parameter.A_IS_EXPONENT ]: true,
+                },
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.W ]: INITIAL_PARAMETER_SCOPES[ Parameter.W ],
+                },
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.Y ]: INITIAL_PARAMETER_SCOPES[ Parameter.Y ],
+                },
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.USE_NUMINATOR ]: INITIAL_PARAMETER_SCOPES[ Parameter.USE_NUMINATOR ],
+                },
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.USE_PRIME_INDEX ]: INITIAL_PARAMETER_SCOPES[ Parameter.USE_PRIME_INDEX ],
+                },
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.MODIFIED_COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.MODIFIED_COUNT ],
+                },
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                },
+            ],
+
+            // SOAPF (14)
+            [
+                {
+                    [ Parameter.K ]: INITIAL_PARAMETER_SCOPES[ Parameter.K ],
+                },
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.K ]: INITIAL_PARAMETER_SCOPES[ Parameter.K ],
+                    [ Parameter.K_IS_BASE ]: true,
+                },
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.K ]: INITIAL_PARAMETER_SCOPES[ Parameter.K ],
+                    [ Parameter.K_IS_EXPONENT ]: true,
+                },
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.J ]: INITIAL_PARAMETER_SCOPES[ Parameter.J ],
+                },
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.J ]: INITIAL_PARAMETER_SCOPES[ Parameter.J ],
+                    [ Parameter.J_IS_BASE ]: true,
+                },
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.J ]: INITIAL_PARAMETER_SCOPES[ Parameter.J ],
+                    [ Parameter.J_IS_EXPONENT ]: true,
+                },
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
+                },
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
+                    [ Parameter.A_IS_BASE ]: true,
+                },
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
+                    [ Parameter.A_IS_EXPONENT ]: true,
+                },
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.W ]: INITIAL_PARAMETER_SCOPES[ Parameter.W ],
+                },
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.Y ]: INITIAL_PARAMETER_SCOPES[ Parameter.Y ],
+                },
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.USE_NUMINATOR ]: INITIAL_PARAMETER_SCOPES[ Parameter.USE_NUMINATOR ],
+                },
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.USE_PRIME_INDEX ]: INITIAL_PARAMETER_SCOPES[ Parameter.USE_PRIME_INDEX ],
+                },
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.MODIFIED_COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.MODIFIED_COUNT ],
+                },
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                },
+            ],
+
+            // COAPFAR (14)
+            [
+                {
+                    [ Parameter.K ]: INITIAL_PARAMETER_SCOPES[ Parameter.K ],
+                },
+                {
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.K ]: INITIAL_PARAMETER_SCOPES[ Parameter.K ],
+                    [ Parameter.K_IS_BASE ]: true,
+                },
+                {
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.K ]: INITIAL_PARAMETER_SCOPES[ Parameter.K ],
+                    [ Parameter.K_IS_EXPONENT ]: true,
+                },
+                {
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.J ]: INITIAL_PARAMETER_SCOPES[ Parameter.J ],
+                },
+                {
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.J ]: INITIAL_PARAMETER_SCOPES[ Parameter.J ],
+                    [ Parameter.J_IS_BASE ]: true,
+                },
+                {
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.J ]: INITIAL_PARAMETER_SCOPES[ Parameter.J ],
+                    [ Parameter.J_IS_EXPONENT ]: true,
+                },
+                {
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
+                },
+                {
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
+                    [ Parameter.A_IS_BASE ]: true,
+                },
+                {
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
+                    [ Parameter.A_IS_EXPONENT ]: true,
+                },
+                {
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.W ]: INITIAL_PARAMETER_SCOPES[ Parameter.W ],
+                },
+                {
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.Y ]: INITIAL_PARAMETER_SCOPES[ Parameter.Y ],
+                },
+                {
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.USE_NUMINATOR ]: INITIAL_PARAMETER_SCOPES[ Parameter.USE_NUMINATOR ],
+                },
+                {
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.USE_PRIME_INDEX ]: INITIAL_PARAMETER_SCOPES[ Parameter.USE_PRIME_INDEX ],
+                },
+                {
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.MODIFIED_COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.MODIFIED_COUNT ],
+                },
+                {
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                },
+            ],
+
+            // COAPF (14)
+            [
+                {
+                    [ Parameter.K ]: INITIAL_PARAMETER_SCOPES[ Parameter.K ],
+                },
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.K ]: INITIAL_PARAMETER_SCOPES[ Parameter.K ],
+                    [ Parameter.K_IS_BASE ]: true,
+                },
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.K ]: INITIAL_PARAMETER_SCOPES[ Parameter.K ],
+                    [ Parameter.K_IS_EXPONENT ]: true,
+                },
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.J ]: INITIAL_PARAMETER_SCOPES[ Parameter.J ],
+                },
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.J ]: INITIAL_PARAMETER_SCOPES[ Parameter.J ],
+                    [ Parameter.J_IS_BASE ]: true,
+                },
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.J ]: INITIAL_PARAMETER_SCOPES[ Parameter.J ],
+                    [ Parameter.J_IS_EXPONENT ]: true,
+                },
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
+                },
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
+                    [ Parameter.A_IS_BASE ]: true,
+                },
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
+                    [ Parameter.A_IS_EXPONENT ]: true,
+                },
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.W ]: INITIAL_PARAMETER_SCOPES[ Parameter.W ],
+                },
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.Y ]: INITIAL_PARAMETER_SCOPES[ Parameter.Y ],
+                },
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.USE_NUMINATOR ]: INITIAL_PARAMETER_SCOPES[ Parameter.USE_NUMINATOR ],
+                },
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.USE_PRIME_INDEX ]: INITIAL_PARAMETER_SCOPES[ Parameter.USE_PRIME_INDEX ],
+                },
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.MODIFIED_COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.MODIFIED_COUNT ],
+                },
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                },
+            ],
+
+            // GPF (14)
+            [
+                {
+                    [ Parameter.K ]: INITIAL_PARAMETER_SCOPES[ Parameter.K ],
+                },
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.MAX ]: INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.K ]: INITIAL_PARAMETER_SCOPES[ Parameter.K ],
+                    [ Parameter.K_IS_BASE ]: true,
+                },
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.MAX ]: INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.K ]: INITIAL_PARAMETER_SCOPES[ Parameter.K ],
+                    [ Parameter.K_IS_EXPONENT ]: true,
+                },
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.MAX ]: INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.J ]: INITIAL_PARAMETER_SCOPES[ Parameter.J ],
+                },
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.MAX ]: INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.J ]: INITIAL_PARAMETER_SCOPES[ Parameter.J ],
+                    [ Parameter.J_IS_BASE ]: true,
+                },
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.MAX ]: INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.J ]: INITIAL_PARAMETER_SCOPES[ Parameter.J ],
+                    [ Parameter.J_IS_EXPONENT ]: true,
+                },
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.MAX ]: INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
+                },
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.MAX ]: INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
+                    [ Parameter.A_IS_BASE ]: true,
+                },
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.MAX ]: INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
+                    [ Parameter.A_IS_EXPONENT ]: true,
+                },
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.MAX ]: INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.W ]: INITIAL_PARAMETER_SCOPES[ Parameter.W ],
+                },
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.MAX ]: INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.Y ]: INITIAL_PARAMETER_SCOPES[ Parameter.Y ],
+                },
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.MAX ]: INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.USE_NUMINATOR ]: INITIAL_PARAMETER_SCOPES[ Parameter.USE_NUMINATOR ],
+                },
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.MAX ]: INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.USE_PRIME_INDEX ]: INITIAL_PARAMETER_SCOPES[ Parameter.USE_PRIME_INDEX ],
+                },
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.MAX ]: INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.MODIFIED_COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.MODIFIED_COUNT ],
+                },
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.MAX ]: INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],
+                },
+            ],
+
+            // LOG BASE A OF N (14)
+            [
+                {
+                    [ Parameter.K ]: INITIAL_PARAMETER_SCOPES[ Parameter.K ],
+                },
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
+                    [ Parameter.A_IS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_IS_BASE ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.K ]: INITIAL_PARAMETER_SCOPES[ Parameter.K ],
+                    [ Parameter.K_IS_BASE ]: true,
+                },
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
+                    [ Parameter.A_IS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_IS_BASE ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.K ]: INITIAL_PARAMETER_SCOPES[ Parameter.K ],
+                    [ Parameter.K_IS_EXPONENT ]: true,
+                },
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
+                    [ Parameter.A_IS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_IS_BASE ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.J ]: INITIAL_PARAMETER_SCOPES[ Parameter.J ],
+                },
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
+                    [ Parameter.A_IS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_IS_BASE ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.J ]: INITIAL_PARAMETER_SCOPES[ Parameter.J ],
+                    [ Parameter.J_IS_BASE ]: true,
+                },
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
+                    [ Parameter.A_IS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_IS_BASE ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.J ]: INITIAL_PARAMETER_SCOPES[ Parameter.J ],
+                    [ Parameter.J_IS_EXPONENT ]: true,
+                },
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
+                    [ Parameter.A_IS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_IS_BASE ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
+                },
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
+                    [ Parameter.A_IS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_IS_BASE ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
+                    [ Parameter.A_IS_BASE ]: true,
+                },
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
+                    [ Parameter.A_IS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_IS_BASE ],
+                },
+            ],
+            [
+                { // yes I see that this one is a problem... it'll just throw an error and it gets caught by that spot that is designed to catch such errors and move on
+                    [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
+                    [ Parameter.A_IS_EXPONENT ]: true,
+                },
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
+                    [ Parameter.A_IS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_IS_BASE ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.W ]: INITIAL_PARAMETER_SCOPES[ Parameter.W ],
+                },
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
+                    [ Parameter.A_IS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_IS_BASE ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.Y ]: INITIAL_PARAMETER_SCOPES[ Parameter.Y ],
+                },
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
+                    [ Parameter.A_IS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_IS_BASE ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.USE_NUMINATOR ]: INITIAL_PARAMETER_SCOPES[ Parameter.USE_NUMINATOR ],
+                },
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
+                    [ Parameter.A_IS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_IS_BASE ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.USE_PRIME_INDEX ]: INITIAL_PARAMETER_SCOPES[ Parameter.USE_PRIME_INDEX ],
+                },
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
+                    [ Parameter.A_IS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_IS_BASE ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.MODIFIED_COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.MODIFIED_COUNT ],
+                },
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
+                    [ Parameter.A_IS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_IS_BASE ],
+                },
+            ],
         ] as Scope[]
 
         const result: Scope[] = scopesForChunkCount[ chunkCount ]
@@ -889,7 +1784,7 @@ describe("populateScopesForChunkCount", () => {
         //      ((2+6-1)!)/((2!)((6-1)!)) * ((0+14-1)!)/((0!)((14-1)!)) * 3^0 = 21 * 1 * 1 = 21
         //      +
         //      ((1+6-1)!)/((1!)((6-1)!)) * ((1+14-1)!)/((1!)((14-1)!)) * 2^1 = 6 * 14 * 2 = 168
-        expect(result.length).toEqual(189)
+        expect(result.length).toEqual(expectedResult.length)
         expectedResult.forEach(expectedResultElement => {
             expect(result.some(resultElement => {
                 return deepEquals(resultElement, expectedResultElement)
@@ -913,6 +1808,7 @@ describe("populateScopesForChunkCount", () => {
         )
         const exampleResultElements = [
             [
+                {},
                 {
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
                     [ Parameter.MAX ]: INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],
@@ -924,6 +1820,7 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
             [
+                {},
                 {
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
                     [ Parameter.MAX ]: INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],

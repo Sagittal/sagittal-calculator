@@ -6,9 +6,10 @@ import {
 } from "../../../../../../../src/scripts/unpopularityMetric/solver/search/scopeToSamples"
 import { Parameter, ParameterValue } from "../../../../../../../src/scripts/unpopularityMetric/types"
 
-describe("submetricCombinations", () => {
+describe("computeSamples", () => {
     it("given some submetric scopes, will return all combinations of submetrics to check", () => {
         const scope = [
+            {},
             {
                 [ Parameter.A ]: {
                     center: 2 as ParameterValue,
@@ -210,6 +211,7 @@ describe("submetricCombinations", () => {
 
     it("supports providing more than one submetric with the same submetric type", () => {
         const scope = [
+            {},
             {
                 [ Parameter.COUNT ]: true,
                 [ Parameter.A ]: {

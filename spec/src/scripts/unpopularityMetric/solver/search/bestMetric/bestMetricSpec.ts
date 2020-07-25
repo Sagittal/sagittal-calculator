@@ -10,6 +10,7 @@ import { Parameter, ParameterValue, Submetric } from "../../../../../../../src/s
 describe("searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect", () => {
     it("searches each local minimum", () => {
         const scope = [
+            {},
             {
                 [ Parameter.SUM ]: true,
                 [ Parameter.A ]: {
@@ -84,13 +85,13 @@ describe("searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect", () =
         const expectedNextDepth = 9
         const expectedDynamicParameters = [
             {
-                submetricIndex: 0 as Index<Submetric>,
+                submetricIndex: 1 as Index<Submetric>,
                 parameter: Parameter.A,
                 values: [1, 2, 3] as ParameterValue[],
                 unit: 1 as Unit<ParameterValue>,
             },
             {
-                submetricIndex: 1 as Index<Submetric>,
+                submetricIndex: 2 as Index<Submetric>,
                 parameter: Parameter.W,
                 values: [0.5, 2.5] as ParameterValue[],
                 unit: 2 as Unit<ParameterValue>,

@@ -24,12 +24,10 @@ const populateScopesForChunkCountAndSubmetricChunkCombination = async (submetric
     const parameterChunkCombinationDistributions = computeDistributions(parameterChunkCombination, submetricChunkCombination.length)
 
     parameterChunkCombinationDistributions.forEach(parameterChunkCombinationDistribution => {
-        // todo perhaps this should just be extracted into its own thing
-        const scope: Scope = submetricChunkCombination.slice(0, submetricChunkCombination.length - 1).map((submetricChunkBin, index) => {
+        const scope: Scope = submetricChunkCombination.map((submetricChunkBin, index) => {
             const parametersDistributedToThisBin = parameterChunkCombinationDistribution[ index ]
-            const parametersDistributedToTheAllBinsBin = parameterChunkCombinationDistribution[ submetricChunkCombination.length - 1 ]
 
-            return merge(submetricChunkBin, ...parametersDistributedToTheAllBinsBin, ...parametersDistributedToThisBin) as SubmetricScope
+            return merge(submetricChunkBin, ...parametersDistributedToThisBin) as SubmetricScope
         }) as Scope
 
         populateScopeForChunkCount(scope, chunkCount)

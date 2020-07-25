@@ -28,7 +28,7 @@ const populateScopesForChunkCountPhase = async (chunkCount: Count<Chunk>, chunkC
         }
     }
     submetricChunkCombinations.forEach(submetricChunkCombination => {
-        submetricChunkCombination.push({} as SubmetricChunk)
+        submetricChunkCombination.unshift({} as SubmetricChunk)
     })
 
     let parameterChunkCombinations: Combinations<ParameterChunk>
