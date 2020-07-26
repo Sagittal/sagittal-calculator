@@ -2,8 +2,8 @@ import { Combination, Combinations, computeCombinations, Count, Index } from "..
 import * as combinations from "../../../../../../src/general/math/combinations"
 import { Chunk } from "../../../../../../src/scripts/unpopularityMetric/solver"
 import {
-    cachedParameterChunkCombinations,
-    cachedSubmetricChunkCombinations,
+    memoizedParameterChunkCombinations,
+    memoizedSubmetricChunkCombinations,
 } from "../../../../../../src/scripts/unpopularityMetric/solver/globals"
 import {
     INITIAL_PARAMETER_SCOPES,
@@ -54,9 +54,9 @@ describe("populateScopesForChunkCountPhase", () => {
         )
     })
 
-    it("calculates the correct combinations of parameters and submetrics and caches them", async () => {
-        delete cachedSubmetricChunkCombinations[ chunkCountForSubmetrics ]
-        delete cachedParameterChunkCombinations[ expectedChunkCountForParameters ]
+    it("calculates the correct combinations of parameters and submetrics and memoizes them", async () => {
+        delete memoizedSubmetricChunkCombinations[ chunkCountForSubmetrics ]
+        delete memoizedParameterChunkCombinations[ expectedChunkCountForParameters ]
 
         await populateScopesForChunkCountPhase(chunkCount, chunkCountForSubmetrics)
 
@@ -72,9 +72,9 @@ describe("populateScopesForChunkCountPhase", () => {
         )
     })
 
-    it("uses the cached chunk combinations when they are available", async () => {
-        cachedSubmetricChunkCombinations[ chunkCountForSubmetrics ] = submetricChunkCombinations
-        cachedParameterChunkCombinations[ expectedChunkCountForParameters ] = parameterChunkCombinations
+    it("uses the memoized chunk combinations when they are available", async () => {
+        memoizedSubmetricChunkCombinations[ chunkCountForSubmetrics ] = submetricChunkCombinations
+        memoizedParameterChunkCombinations[ expectedChunkCountForParameters ] = parameterChunkCombinations
 
         await populateScopesForChunkCountPhase(chunkCount, chunkCountForSubmetrics)
 
@@ -108,7 +108,7 @@ describe("populateScopesForChunkCountPhase", () => {
     })
 
     afterEach(() => {
-        expect(cachedSubmetricChunkCombinations[ chunkCountForSubmetrics ]).toEqual(submetricChunkCombinations)
-        expect(cachedParameterChunkCombinations[ expectedChunkCountForParameters ]).toEqual(parameterChunkCombinations)
+        expect(memoizedSubmetricChunkCombinations[ chunkCountForSubmetrics ]).toEqual(submetricChunkCombinations)
+        expect(memoizedParameterChunkCombinations[ expectedChunkCountForParameters ]).toEqual(parameterChunkCombinations)
     })
 })

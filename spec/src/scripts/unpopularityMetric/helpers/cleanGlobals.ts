@@ -3,8 +3,8 @@ import { cleanArray } from "../../../../../src/general/code/cleanArray"
 import { Chunk } from "../../../../../src/scripts/unpopularityMetric/solver"
 import {
     bestMetricsForChunkCount,
-    cachedParameterChunkCombinations,
-    cachedSubmetricChunkCombinations,
+    memoizedParameterChunkCombinations,
+    memoizedSubmetricChunkCombinations,
     populatedsForChunkCount,
     scopesForChunkCount,
     searchedsForChunkCount,
@@ -16,8 +16,8 @@ afterEach(() => {
     cleanArray(searchedsForChunkCount)
     cleanArray(scopesForChunkCount)
     cleanArray(bestMetricsForChunkCount)
-    cleanArray(cachedSubmetricChunkCombinations)
-    cleanArray(cachedParameterChunkCombinations)
+    cleanArray(memoizedSubmetricChunkCombinations)
+    cleanArray(memoizedParameterChunkCombinations)
 
     status.finishedPopulating = false
     status.populatingChunkCount = 0 as Count<Chunk>

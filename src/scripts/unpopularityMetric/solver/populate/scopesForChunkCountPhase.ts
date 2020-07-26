@@ -1,7 +1,7 @@
 import { Combination, Combinations, computeCombinations, computeDistributions, Count, Index } from "../../../../general"
 import { debug } from "../../debug"
 import { debugSearchedAndPopulated } from "../debug"
-import { cachedParameterChunkCombinations, cachedSubmetricChunkCombinations, populatedsForChunkCount } from "../globals"
+import { memoizedParameterChunkCombinations, memoizedSubmetricChunkCombinations, populatedsForChunkCount } from "../globals"
 import { Chunk } from "../types"
 import { PARAMETER_CHUNKS, SUBMETRIC_CHUNKS } from "./constants"
 import { populateScopesForChunkCountAndSubmetricChunkCombination } from "./scopesForChunkCountAndSubmetricChunkCombination"
@@ -15,14 +15,14 @@ const populateScopesForChunkCountPhase = async (chunkCount: Count<Chunk>, chunkC
     }
 
     let submetricChunkCombinations: Combinations<SubmetricChunk>
-    if (cachedSubmetricChunkCombinations[ chunkCountForSubmetrics ]) {
-        submetricChunkCombinations = cachedSubmetricChunkCombinations[ chunkCountForSubmetrics ]
+    if (memoizedSubmetricChunkCombinations[ chunkCountForSubmetrics ]) {
+        submetricChunkCombinations = memoizedSubmetricChunkCombinations[ chunkCountForSubmetrics ]
         if (debug.all || debug.solver) {
-            console.log(`used cached submetric combinations (with repetitions) for chunk count ${chunkCountForSubmetrics}`.cyan)
+            console.log(`used memoized submetric combinations (with repetitions) for chunk count ${chunkCountForSubmetrics}`.cyan)
         }
     } else {
         submetricChunkCombinations = computeCombinations(SUBMETRIC_CHUNKS, chunkCountForSubmetrics, { withRepeatedElements: true })
-        cachedSubmetricChunkCombinations[ chunkCountForSubmetrics ] = submetricChunkCombinations
+        memoizedSubmetricChunkCombinations[ chunkCountForSubmetrics ] = submetricChunkCombinations
         if (debug.all || debug.solver) {
             console.log(`submetric combinations (with repetitions) computed: ${submetricChunkCombinations.length}; formula is ((${chunkCountForSubmetrics}+${SUBMETRIC_CHUNKS.length}-1)!)/((${chunkCountForSubmetrics}!)((${SUBMETRIC_CHUNKS.length}-1)!)) where ${SUBMETRIC_CHUNKS.length} is the total of possible existing chunks and ${chunkCountForSubmetrics} is the count we are choosing at a time`.cyan)
         }
@@ -32,14 +32,14 @@ const populateScopesForChunkCountPhase = async (chunkCount: Count<Chunk>, chunkC
     })
 
     let parameterChunkCombinations: Combinations<ParameterChunk>
-    if (cachedParameterChunkCombinations[ chunkCountForParameters ]) {
-        parameterChunkCombinations = cachedParameterChunkCombinations[ chunkCountForParameters ]
+    if (memoizedParameterChunkCombinations[ chunkCountForParameters ]) {
+        parameterChunkCombinations = memoizedParameterChunkCombinations[ chunkCountForParameters ]
         if (debug.all || debug.solver) {
-            console.log(`used cached parameter combinations (with repetitions) for chunk count ${chunkCountForParameters}`.cyan)
+            console.log(`used memoized parameter combinations (with repetitions) for chunk count ${chunkCountForParameters}`.cyan)
         }
     } else {
         parameterChunkCombinations = computeCombinations(PARAMETER_CHUNKS, chunkCountForParameters, { withRepeatedElements: true })
-        cachedParameterChunkCombinations[ chunkCountForParameters ] = parameterChunkCombinations
+        memoizedParameterChunkCombinations[ chunkCountForParameters ] = parameterChunkCombinations
         if (debug.all || debug.solver) {
             console.log(`parameter combinations (with repetitions) computed: ${parameterChunkCombinations.length}; formula is ((${chunkCountForParameters}+${PARAMETER_CHUNKS.length}-1)!)/((${chunkCountForParameters}!)((${PARAMETER_CHUNKS.length}-1)!)) where ${PARAMETER_CHUNKS.length} is the total of possible existing chunks and ${chunkCountForParameters} is the count we are choosing at a time`.cyan)
         }
