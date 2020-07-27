@@ -21,7 +21,11 @@ const computeSumOfSquaresForSubmetrics = (submetrics: Combination<Submetric>): S
         rankedUnpopularities.map(rankedUnpopularity => console.log(JSON.stringify(rankedUnpopularity)))
     }
 
-    return computeSumOfSquares(rankedUnpopularities, realPopularities, ZIPF_EXPONENT)
+    const sumOfSquares = computeSumOfSquares(rankedUnpopularities, realPopularities, ZIPF_EXPONENT)
+
+    if (debug.all || debug.sumOfSquares) console.log(`sum-of-squares ${sumOfSquares}`)
+
+    return sumOfSquares
 }
 
 export {

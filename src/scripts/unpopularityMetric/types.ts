@@ -68,6 +68,7 @@ interface Debug {
     newBestMetric: boolean,
     localMinima: boolean,
     scope: boolean,
+    sumOfSquares: boolean,
 }
 
 export {

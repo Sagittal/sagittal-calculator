@@ -8,6 +8,7 @@ const debug: Debug = {
     newBestMetric: false,
     localMinima: false,
     scope: false,
+    sumOfSquares: false,
 }
 
 export {
