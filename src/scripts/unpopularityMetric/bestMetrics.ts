@@ -434,6 +434,31 @@ const secondAttemptAtLowestThreeChunk = {
     ],
 }
 
+//
+
+// Dave's wb: SoS 0.007345361
+// Tue Jul 28, 2020 12:36 am
+// http://forum.sagittal.org/viewtopic.php?p=2098#p2098
+const davesWb = {
+    sumOfSquares: 0.007345361244736918,
+    submetrics: [
+        {
+            [ Parameter.SUM ]: true,
+            [ Parameter.K ]: 0,
+            [ Parameter.A ]: 2,
+            [ Parameter.A_IS_BASE ]: true,
+            [ Parameter.W ]: -1.645808649,
+        },
+        {
+            [ Parameter.SUM ]: true,
+            [ Parameter.J ]: 0,
+            [ Parameter.A ]: 2,
+            [ Parameter.A_IS_BASE ]: true,
+            [ Parameter.W ]: -2.043765116,
+        },
+    ],
+}
+
 export {
     withPrimeLimit,
 
@@ -465,4 +490,6 @@ export {
 
     secondAttemptAtLowestTwoChunk,
     secondAttemptAtLowestThreeChunk,
+
+    davesWb,
 }
