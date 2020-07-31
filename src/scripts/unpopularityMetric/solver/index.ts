@@ -1,6 +1,6 @@
 import { DUMMY_CHUNK_COUNT_FOR_ONE_OFF_BEST_METRIC_FROM_SCOPE } from "./constants"
 import { debugSearchedAndPopulated } from "./debug"
-import { bestMetricsForChunkCount, status } from "./globals"
+import { bestMetricsForChunkCount, killedsForChunkCount, status } from "./globals"
 import { populateScopes } from "./populate"
 import { populateAndSearchScopes } from "./populateAndSearchScopes"
 import {
@@ -13,6 +13,7 @@ import { Chunk, Scope } from "./types"
 export {
     DUMMY_CHUNK_COUNT_FOR_ONE_OFF_BEST_METRIC_FROM_SCOPE,
     debugSearchedAndPopulated,
+    killedsForChunkCount,
     bestMetricsForChunkCount,
     status,
     populateScopes,

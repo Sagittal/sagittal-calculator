@@ -1,7 +1,11 @@
 import { Combination, Combinations, computeCombinations, computeDistributions, Count, Index } from "../../../../general"
 import { debug } from "../../debug"
 import { debugSearchedAndPopulated } from "../debug"
-import { memoizedParameterChunkCombinations, memoizedSubmetricChunkCombinations, populatedsForChunkCount } from "../globals"
+import {
+    memoizedParameterChunkCombinations,
+    memoizedSubmetricChunkCombinations,
+    populatedsForChunkCount,
+} from "../globals"
 import { Chunk } from "../types"
 import { PARAMETER_CHUNKS, SUBMETRIC_CHUNKS } from "./constants"
 import { populateScopesForChunkCountAndSubmetricChunkCombination } from "./scopesForChunkCountAndSubmetricChunkCombination"

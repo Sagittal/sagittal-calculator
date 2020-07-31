@@ -1,5 +1,5 @@
 import { Combinations, Count } from "../../../general"
-import { ParameterChunk, SubmetricChunk } from "./populate/types"
+import { ParameterChunk, SubmetricChunk } from "./populate"
 import { Metric } from "./search"
 import { Chunk, Scope, Status } from "./types"
 

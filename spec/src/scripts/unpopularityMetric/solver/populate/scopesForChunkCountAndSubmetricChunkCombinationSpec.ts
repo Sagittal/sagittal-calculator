@@ -4,9 +4,8 @@ import { Chunk } from "../../../../../../src/scripts/unpopularityMetric/solver"
 import { scopesForChunkCount } from "../../../../../../src/scripts/unpopularityMetric/solver/globals"
 import { INITIAL_PARAMETER_SCOPES } from "../../../../../../src/scripts/unpopularityMetric/solver/populate/constants"
 import { populateScopesForChunkCountAndSubmetricChunkCombination } from "../../../../../../src/scripts/unpopularityMetric/solver/populate/scopesForChunkCountAndSubmetricChunkCombination"
-import { ParameterChunk, SubmetricChunk } from "../../../../../../src/scripts/unpopularityMetric/solver/populate/types"
+import { ParameterChunk, SubmetricChunk } from "../../../../../../src/scripts/unpopularityMetric/solver/populate"
 import { Parameter } from "../../../../../../src/scripts/unpopularityMetric/types"
-import { cleanArray } from "../../../../../../src/general/code/cleanArray"
 
 describe("populateScopesForChunkCountAndSubmetricChunkCombination", () => {
     // TODO: really need to do something about these long test descriptions and multi-lining them;
@@ -14,8 +13,7 @@ describe("populateScopesForChunkCountAndSubmetricChunkCombination", () => {
     it("for the given submetric chunk combination, proceeds through each of the parameter chunk combinations, for each one computing all possible distributions across the submetric bins of this submetric chunk combination, and for each distribution populating a scope which is the merger of it with the submetrics, also handling how the first submetric bin actually represents the parameters which should be distributed to every submetric", async () => {
         const submetricChunkCombination: Combination<SubmetricChunk> = [
             // (the "all submetrics" bin, call it "AB")
-            {
-            },
+            {},
             // A
             {
                 [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
@@ -131,8 +129,7 @@ describe("populateScopesForChunkCountAndSubmetricChunkCombination", () => {
             ],
             // AB A i ii B
             [
-                {
-                },
+                {},
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
@@ -146,8 +143,7 @@ describe("populateScopesForChunkCountAndSubmetricChunkCombination", () => {
             ],
             // AB A ii B i
             [
-                {
-                },
+                {},
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
@@ -177,8 +173,7 @@ describe("populateScopesForChunkCountAndSubmetricChunkCombination", () => {
             ],
             // AB A i B ii
             [
-                {
-                },
+                {},
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
@@ -192,8 +187,7 @@ describe("populateScopesForChunkCountAndSubmetricChunkCombination", () => {
             ],
             // AB A B i ii
             [
-                {
-                },
+                {},
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
@@ -267,8 +261,7 @@ describe("populateScopesForChunkCountAndSubmetricChunkCombination", () => {
             ],
             // AB A i ii B
             [
-                {
-                },
+                {},
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
@@ -281,8 +274,7 @@ describe("populateScopesForChunkCountAndSubmetricChunkCombination", () => {
             ],
             // AB A ii B i
             [
-                {
-                },
+                {},
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
@@ -310,8 +302,7 @@ describe("populateScopesForChunkCountAndSubmetricChunkCombination", () => {
             ],
             // AB A i B ii
             [
-                {
-                },
+                {},
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
@@ -324,8 +315,7 @@ describe("populateScopesForChunkCountAndSubmetricChunkCombination", () => {
             ],
             // AB A B i ii
             [
-                {
-                },
+                {},
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],

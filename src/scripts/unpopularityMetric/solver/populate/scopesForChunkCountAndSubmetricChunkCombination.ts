@@ -1,5 +1,4 @@
-import { Combination, computeDistributions, Index, merge } from "../../../../general"
-import { doOnNextEventLoop } from "../../../../general/code/doOnNextEventLoop"
+import { Combination, computeDistributions, doOnNextEventLoop, Index, merge } from "../../../../general"
 import { debug } from "../../debug"
 import { debugSearchedAndPopulated } from "../debug"
 import { Chunk, Scope, SubmetricScope } from "../types"

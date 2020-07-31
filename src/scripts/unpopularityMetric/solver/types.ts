@@ -1,6 +1,6 @@
 import { Combination, Count, EnumHash } from "../../../general"
 import { DynamicParameterScope, Parameter, ParameterValue } from "../types"
-import { ParameterChunk, SubmetricChunk } from "./populate/types"
+import { ParameterChunk, SubmetricChunk } from "./populate"
 
 interface Status {
     finishedPopulating: boolean,

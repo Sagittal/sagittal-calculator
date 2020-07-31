@@ -4,10 +4,12 @@ import {
     computeIsCloseTo,
     computePlusOrMinusRange,
     deepEquals,
+    doOnNextEventLoop,
     EnumHash,
     isNumber,
     isUndefined,
     merge,
+    shuffle,
 } from "./code"
 import { PRIMES } from "./constants"
 import {
@@ -105,4 +107,6 @@ export {
     APOTOME,
     alignTable,
     ApotomeSlope,
+    doOnNextEventLoop,
+    shuffle,
 }

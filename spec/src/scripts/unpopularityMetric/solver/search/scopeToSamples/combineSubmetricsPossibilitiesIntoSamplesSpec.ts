@@ -109,7 +109,7 @@ describe("combineSubmetricsPossibilitiesIntoSamples", () => {
             { submetrics: [{...submetricOnePossibilityThree, ...submetricZeroPossibilityTwo} as Submetric, {...submetricTwoPossibilityFour, ...submetricZeroPossibilityTwo} as Submetric] as Combination<Submetric>, samplePoint: [1, 2, 1, 1] as SamplePoint },    // [2, 1]          // [ [0, 2, 0], [1, 1] ]    // [ 2, 1, 1 ]
         ] as Sample[]
 
-        // TODO perhaps we need some heleprs for this sort of thing
+        // TODO perhaps we need some helpers for this sort of thing
         expect(result.length).toBe(expectedResult.length)
         expectedResult.forEach(expectedResultElement => {
             expect(result.some(resultElement => {

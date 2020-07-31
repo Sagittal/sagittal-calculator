@@ -1,5 +1,5 @@
-import { Parameter, Submetric } from "../types"
 import { isNumber } from "../../../general"
+import { Parameter, Submetric } from "../types"
 
 const checkSubmetricsForInvalidParameterValueCombinations = (submetrics: Submetric[]) => {
     submetrics.forEach((submetric: Submetric) => {

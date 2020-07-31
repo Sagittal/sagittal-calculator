@@ -18,7 +18,7 @@ describe("populateAndSearchScopes", () => {
         bestMetricsForChunkCount[ chunkCount ] = undefined as unknown as Metric
     })
 
-    it("populates scopes",  async () => {
+    it("populates scopes", async () => {
         spyOn(populate, "populateScopes").and.callThrough()
 
         await populateAndSearchScopes()

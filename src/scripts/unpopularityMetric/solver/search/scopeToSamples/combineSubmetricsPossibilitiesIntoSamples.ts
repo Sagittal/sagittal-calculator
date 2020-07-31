@@ -44,7 +44,7 @@ const combineSubmetricsPossibilitiesIntoSamples = ({ submetricsPossibilities, dy
             })
 
             allBinMergedSamples.push({
-                submetrics: submetrics.map(submetric => ({...submetric, ...theAllBinSubmetricPossibility}) as Submetric) as Combination<Submetric>,
+                submetrics: submetrics.map(submetric => ({ ...submetric, ...theAllBinSubmetricPossibility }) as Submetric) as Combination<Submetric>,
                 samplePoint: [...dynamicParameterValueIndices, ...samplePoint] as SamplePoint,
             })
         })

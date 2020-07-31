@@ -1,12 +1,11 @@
-import { Sample } from "../types"
-import { Count, isUndefined, Sum } from "../../../../../general"
-import { Chunk } from "../../types"
-import { SumsOfSquares } from "./types"
-import { doOnNextEventLoop } from "../../../../../general/code/doOnNextEventLoop"
-import { computeSumOfSquaresForSubmetrics } from "../../../sumOfSquares"
-import { setSumOfSquaresAtSamplePoint } from "./setSumOfSquaresAtSamplePoint"
-import { bestMetricsForChunkCount } from "../../globals"
+import { Count, doOnNextEventLoop, isUndefined, Sum } from "../../../../../general"
 import { debug } from "../../../debug"
+import { computeSumOfSquaresForSubmetrics } from "../../../sumOfSquares"
+import { bestMetricsForChunkCount } from "../../globals"
+import { Chunk } from "../../types"
+import { Sample } from "../types"
+import { setSumOfSquaresAtSamplePoint } from "./setSumOfSquaresAtSamplePoint"
+import { SumsOfSquares } from "./types"
 
 const computeSumOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffect = (sample: Sample, chunkCount: Count<Chunk>, indentation: string, sumsOfSquares: SumsOfSquares, index: number): Promise<void> => {
     return doOnNextEventLoop(() => {

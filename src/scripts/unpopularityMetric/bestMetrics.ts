@@ -571,7 +571,7 @@ const hyg = {
             [ Parameter.SUM ]: true,
             [ Parameter.Y ]: 0.827031908,
         },
-    ]
+    ],
 }
 
 //
@@ -632,8 +632,8 @@ const cwyk = {
         {
             [ Parameter.COUNT ]: true,
             [ Parameter.WEIGHT ]: -0.352088418,
-        }
-    ]
+        },
+    ],
 }
 
 //
@@ -653,7 +653,7 @@ const wyks = {
             [ Parameter.USE_NUMINATOR ]: true,
             [ Parameter.K ]: 0.581696884,
         },
-    ]
+    ],
 }
 
 //

@@ -1,11 +1,11 @@
-import { DUMMY_CHUNK_COUNT_FOR_ONE_OFF_BEST_METRIC_FROM_SCOPE } from "../../constants"
-import { Sample } from "../types"
-import { ComputeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffectOptions, SumsOfSquares } from "./types"
-import { computeSumOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffect } from "./sumOfSquares"
-import { MAXIMUM_SEARCH_TIME } from "./constants"
+import { shuffle } from "../../../../../general"
 import { debug } from "../../../debug"
 import { checkSubmetricsForInvalidParameterCombinations } from "../../../sumOfSquares"
-import { shuffle } from "../../../../../general/code/shuffle"
+import { DUMMY_CHUNK_COUNT_FOR_ONE_OFF_BEST_METRIC_FROM_SCOPE } from "../../constants"
+import { Sample } from "../types"
+import { MAXIMUM_SEARCH_TIME } from "./constants"
+import { computeSumOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffect } from "./sumOfSquares"
+import { ComputeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffectOptions, SumsOfSquares } from "./types"
 
 const computeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffect = async (samples: Sample[], options: ComputeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffectOptions = {}): Promise<SumsOfSquares> => {
     const { chunkCount = DUMMY_CHUNK_COUNT_FOR_ONE_OFF_BEST_METRIC_FROM_SCOPE, indentation = "" } = options
@@ -19,7 +19,7 @@ const computeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffect =
     return new Promise(async resolve => {
         try {
             checkSubmetricsForInvalidParameterCombinations(samples[ 0 ].submetrics)
-        } catch(e) {
+        } catch (e) {
             resolve(sumsOfSquares)
             if (debug.all || debug.errors) console.log(`Not searching scope due to invalid parameter combinations: ${e.message}`.red)
             return

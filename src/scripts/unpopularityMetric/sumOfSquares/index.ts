@@ -1,6 +1,6 @@
 import { computeAntivotes } from "./antivotes"
-import { computeSumOfSquaresForSubmetrics } from "./sumOfSquaresForSubmetrics"
 import { checkSubmetricsForInvalidParameterCombinations } from "./checkParameters"
+import { computeSumOfSquaresForSubmetrics } from "./sumOfSquaresForSubmetrics"
 
 export {
     computeSumOfSquaresForSubmetrics,

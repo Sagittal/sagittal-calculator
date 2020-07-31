@@ -1,16 +1,16 @@
+import { clearTimeout } from "timers"
+import { shuffle } from "../../../../../general"
 import { debug } from "../../../debug"
 import { DUMMY_CHUNK_COUNT_FOR_ONE_OFF_BEST_METRIC_FROM_SCOPE } from "../../constants"
+import { killedsForChunkCount, searchedsForChunkCount } from "../../globals"
 import { Scope } from "../../types"
 import { computeDynamicParameters, computeSamples } from "../scopeToSamples"
+import { MAXIMUM_SEARCH_TIME } from "./constants"
 import { computeIndentation } from "./indentation"
 import { computeLocalMinima } from "./localMinima"
 import { searchNextLocalMinimum } from "./nextLocalMinimum"
 import { computeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffect } from "./sumsOfSquares"
 import { SearchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffectOptions, SumsOfSquares } from "./types"
-import { MAXIMUM_SEARCH_TIME } from "./constants"
-import { clearTimeout } from "timers"
-import { killedsForChunkCount, searchedsForChunkCount } from "../../globals"
-import { shuffle } from "../../../../../general/code/shuffle"
 
 const searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect = async (scope: Scope, options: SearchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffectOptions = {}): Promise<void | Error> => {
     return new Promise(async (resolve, reject) => {
@@ -42,7 +42,7 @@ const searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect = async (s
                 topLevelScopeHasBeenKilled.hasBeenKilled = true
                 timeUpdater && clearInterval(timeUpdater)
                 if ((debug.all || debug.scope) && depth === 0) {
-                    console.log(`${JSON.stringify(scope)} - killed search due to hitting the max; so far ${100 * ((killedsForChunkCount[chunkCount] || []).length + 1) / searchedsForChunkCount[chunkCount]}% have been killed`.red)
+                    console.log(`${JSON.stringify(scope)} - killed search due to hitting the max; so far ${100 * ((killedsForChunkCount[ chunkCount ] || []).length + 1) / searchedsForChunkCount[ chunkCount ]}% have been killed`.red)
                 }
                 killedsForChunkCount[ chunkCount ] = killedsForChunkCount[ chunkCount ] || []
                 killedsForChunkCount[ chunkCount ].push(scope)

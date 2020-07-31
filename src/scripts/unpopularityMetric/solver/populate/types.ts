@@ -1,5 +1,4 @@
-import { Count, Index } from "../../../../general"
-import { Combination } from "../../../../general/math"
+import { Combination, Count, Index } from "../../../../general"
 import { Chunk, SubmetricScope } from "../types"
 
 interface PopulateScoepsForChunkCountAndSubmetricChunkCombinationOptions {

@@ -2,8 +2,7 @@ import * as colors from "colors"
 import { program } from "commander"
 import { Count } from "../../../general"
 import { debug } from "../debug"
-import { bestMetricsForChunkCount, Chunk, populateAndSearchScopes, status } from "../solver"
-import { killedsForChunkCount } from "../solver/globals"
+import { bestMetricsForChunkCount, Chunk, killedsForChunkCount, populateAndSearchScopes, status } from "../solver"
 
 program
     .option("-l, --lower-bound-chunk-count <lowerBoundChunkCount>", "lower bound chunk count", parseInt)

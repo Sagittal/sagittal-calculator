@@ -1,5 +1,4 @@
-import { deepEquals } from "../../../../../general"
-import { doOnNextEventLoop } from "../../../../../general/code/doOnNextEventLoop"
+import { deepEquals, doOnNextEventLoop } from "../../../../../general"
 import { debug } from "../../../debug"
 import { Scope } from "../../types"
 import { searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect } from "./bestMetric"
@@ -45,7 +44,7 @@ const searchNextLocalMinimum = (nextLocalMinimum: LocalMinimum, options: SearchL
                 chunkCount,
                 recurse,
             })
-        } catch(e) {
+        } catch (e) {
             if (debug.all || debug.errors) console.log(`Error when searching: ${e.message}`.red)
         }
     }, index)

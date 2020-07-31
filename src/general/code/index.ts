@@ -4,6 +4,8 @@ import { deepEquals } from "./deepEquals"
 import { computeIsCloseTo } from "./isCloseTo"
 import { merge } from "./merge"
 import { computePlusOrMinusRange } from "./plusOrMinusRange"
+import { doOnNextEventLoop } from "./doOnNextEventLoop"
+import { shuffle } from "./shuffle"
 import { isNumber, isUndefined } from "./typeGuards"
 import { EnumHash } from "./types"
 
@@ -17,4 +19,6 @@ export {
     isNumber,
     isUndefined,
     EnumHash,
+    doOnNextEventLoop,
+    shuffle,
 }
