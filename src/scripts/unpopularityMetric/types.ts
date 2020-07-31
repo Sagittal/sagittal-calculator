@@ -69,6 +69,8 @@ interface Debug {
     localMinima: boolean,
     scope: boolean,
     sumOfSquares: boolean,
+    errors: boolean,
+    kills: boolean,
 }
 
 export {

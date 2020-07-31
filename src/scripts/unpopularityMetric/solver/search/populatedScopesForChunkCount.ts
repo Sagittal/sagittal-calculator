@@ -17,8 +17,7 @@ const searchPopulatedScopesForChunkCount = async () => {
     }
 
     try {
-        if (debug.all || debug.scope) console.log(`searching scope ${JSON.stringify(scopeForChunkCount)}`)
-        await searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect(scopeForChunkCount, { chunkCount: searchingChunkCount })
+        await searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect(scopeForChunkCount, { recurse: false, chunkCount: searchingChunkCount })
     } catch (e) {
         // TODO: Bad scopes are still being computed...
         //  it may not be a simple matter to not compute them in the first place,

@@ -18,18 +18,18 @@ describe("populateAndSearchScopes", () => {
         bestMetricsForChunkCount[ chunkCount ] = undefined as unknown as Metric
     })
 
-    it("populates scopes", () => {
+    it("populates scopes",  async () => {
         spyOn(populate, "populateScopes").and.callThrough()
 
-        populateAndSearchScopes()
+        await populateAndSearchScopes()
 
         expect(populate.populateScopes).toHaveBeenCalled()
     })
 
-    it("searches scopes", () => {
+    it("searches scopes", async () => {
         spyOn(search, "searchScopes").and.callThrough()
 
-        populateAndSearchScopes()
+        await populateAndSearchScopes()
 
         expect(search.searchScopes).toHaveBeenCalled()
     })

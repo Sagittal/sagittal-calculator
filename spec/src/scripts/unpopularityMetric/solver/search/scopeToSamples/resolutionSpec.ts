@@ -4,7 +4,7 @@ import { ParameterValue } from "../../../../../../../src/scripts/unpopularityMet
 
 describe("computeResolution", () => {
     it("returns the resolution required so that the unit will be no larger then the maximum parameter unit", () => {
-        const span: Span<ParameterValue> = 0.05 as Span<ParameterValue>
+        const span: Span<ParameterValue> = 0.5 as Span<ParameterValue>
 
         const result = computeResolution(span)
 
@@ -12,10 +12,12 @@ describe("computeResolution", () => {
     })
 
     it("rounds up, even if it is closer to a smaller resolution, because that would otherwise result in something just above the maximum parameter unit", () => {
-        const span: Span<ParameterValue> = 0.0491 as Span<ParameterValue>
+        const span: Span<ParameterValue> = 0.491 as Span<ParameterValue>
 
         const result = computeResolution(span)
 
         expect(result).toBe(5 as Resolution<ParameterValue>)
     })
+
+    // TODO: test never being less than 2
 })

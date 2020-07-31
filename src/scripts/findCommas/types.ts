@@ -1,5 +1,4 @@
-import { Cents, Copfr, Monzo, Prime, PrimeExponent, Sopfr } from "../../general"
-import { ApotomeSlope } from "../../notations"
+import { ApotomeSlope, Cents, Copfr, Monzo, Prime, PrimeExponent, Sopfr } from "../../general"
 
 interface ComputeCommasOptions extends ComputeCommasFromFiveSlicedMonzoOptions {
     fiveSlicedMonzo?: Monzo<5>,

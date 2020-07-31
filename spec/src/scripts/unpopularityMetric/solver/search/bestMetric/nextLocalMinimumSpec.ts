@@ -58,10 +58,17 @@ describe("searchNextLocalMinimum", () => {
     }
     const chunkCount = 3 as Count<Chunk>
     const nextLocalMinima = [{}, {}, {}, {}, {}, {}, {}, {}, {}] as LocalMinimum[]
+    const topLevelScopeHasBeenKilled = { hasBeenKilled: false }
 
     beforeEach(() => {
         spyOn(bestMetric, "searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect")
     })
+
+    // TODO: test the scheduling (by index)
+
+    // TODO: test the error catching
+
+    // TODO: test the killing of searches
 
     it("when not recursively searching, it does not continue searching", async () => {
         const recurse = false
@@ -77,6 +84,7 @@ describe("searchNextLocalMinimum", () => {
             localMinimum,
             chunkCount,
             nextLocalMinima,
+            topLevelScopeHasBeenKilled,
         })
 
         expect(bestMetric.searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect).not.toHaveBeenCalled()
@@ -96,14 +104,15 @@ describe("searchNextLocalMinimum", () => {
             localMinimum,
             chunkCount,
             nextLocalMinima,
+            topLevelScopeHasBeenKilled,
         })
 
         expect(bestMetric.searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect).toHaveBeenCalledWith(
             [
                 {
-                    [ Parameter.K ]: { center: undefined, span: 0.06666666666666667, resolution: 7 },
-                    [ Parameter.A ]: { center: undefined, span: 0.6666666666666666, resolution: 67 },
-                    [ Parameter.W ]: { center: 1.4, span: 0.06666666666666667, resolution: 7 },
+                    [ Parameter.K ]: { center: undefined, span: 0.06666666666666667, resolution: 2 },
+                    [ Parameter.A ]: { center: undefined, span: 0.6666666666666666, resolution: 7 },
+                    [ Parameter.W ]: { center: 1.4, span: 0.06666666666666667, resolution: 2 },
                 },
             ] as unknown as Scope,
             {
@@ -111,6 +120,7 @@ describe("searchNextLocalMinimum", () => {
                 progressMessage: "8/9@depth5 ",
                 localMinimum: nextLocalMinimum,
                 chunkCount,
+                recurse: true,
             },
         )
     })
@@ -138,6 +148,7 @@ describe("searchNextLocalMinimum", () => {
             localMinimum,
             chunkCount,
             nextLocalMinima,
+            topLevelScopeHasBeenKilled,
         })
 
         expect(bestMetric.searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect).not.toHaveBeenCalled()

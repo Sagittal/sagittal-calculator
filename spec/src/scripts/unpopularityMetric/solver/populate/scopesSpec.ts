@@ -4,6 +4,17 @@ import * as scopesForChunkCount
     from "../../../../../../src/scripts/unpopularityMetric/solver/populate/scopesForChunkCount"
 
 describe("populateScopes", () => {
+    let originalJasmineTimeoutInterval: number
+    beforeEach(() => {
+        originalJasmineTimeoutInterval = jasmine.DEFAULT_TIMEOUT_INTERVAL
+
+        jasmine.DEFAULT_TIMEOUT_INTERVAL = 20000
+    })
+
+    afterEach(() => {
+        jasmine.DEFAULT_TIMEOUT_INTERVAL = originalJasmineTimeoutInterval
+    })
+
     it("populates scopes for the currently populating chunk count, then increments it and keeps going until hitting the upper bound chunk count", async () => {
         const upperBoundChunkCount = 3 as Count<Chunk>
         status.populatingChunkCount = 1 as Count<Chunk>
@@ -15,5 +26,6 @@ describe("populateScopes", () => {
 
         expect(status.populatingChunkCount).toBe(upperBoundChunkCount)
         expect(scopesForChunkCount.populateScopesForChunkCount).toHaveBeenCalledTimes(upperBoundChunkCount)
+
     })
 })

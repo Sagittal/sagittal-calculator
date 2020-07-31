@@ -8,7 +8,7 @@ import { SamplePoint } from "../../../../../../../src/scripts/unpopularityMetric
 import { Parameter, ParameterValue, Submetric } from "../../../../../../../src/scripts/unpopularityMetric/types"
 
 describe("searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect", () => {
-    it("searches each local minimum", () => {
+    it("searches each local minimum", async () => {
         const scope = [
             {},
             {
@@ -41,7 +41,7 @@ describe("searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect", () =
 
         spyOn(nextLocalMinimum, "searchNextLocalMinimum").and.callThrough()
 
-        searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect(scope, {
+        await searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect(scope, {
             depth,
             progressMessage,
             localMinimum,
@@ -107,6 +107,7 @@ describe("searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect", () =
             localMinimum,
             chunkCount,
             nextLocalMinima: expectedNextLocalMinima,
+            topLevelScopeHasBeenKilled: { hasBeenKilled: false },
         }
 
         expect(nextLocalMinimum.searchNextLocalMinimum).toHaveBeenCalledWith(
@@ -118,4 +119,10 @@ describe("searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect", () =
             { ...expectedOptions, index: 1 },
         )
     })
+
+    // TODO: test killswitch
+
+    // TODO: test timeupdater
+
+    // TODO: test shuffling
 })

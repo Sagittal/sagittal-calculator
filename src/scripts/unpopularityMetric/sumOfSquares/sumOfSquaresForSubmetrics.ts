@@ -1,7 +1,7 @@
 import { Combination, Sum } from "../../../general"
 import { debug } from "../debug"
 import { Submetric } from "../types"
-import { checkSubmetricsForInvalidParameterValueCombinations } from "./check"
+import { checkSubmetricsForInvalidParameterValueCombinations } from "./checkParameterValues"
 import { CUT_OFF_POPULARITY, ZIPF_EXPONENT } from "./constants"
 import { COMMA_POPULARITIES } from "./popularities"
 import { addRankToUnpopularities } from "./rank"

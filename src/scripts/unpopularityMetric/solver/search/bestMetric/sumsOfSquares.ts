@@ -1,37 +1,37 @@
-import { debug } from "../../../debug"
-import { computeSumOfSquaresForSubmetrics } from "../../../sumOfSquares"
 import { DUMMY_CHUNK_COUNT_FOR_ONE_OFF_BEST_METRIC_FROM_SCOPE } from "../../constants"
-import { bestMetricsForChunkCount } from "../../globals"
 import { Sample } from "../types"
-import { setSumOfSquaresAtSamplePoint } from "./setSumOfSquaresAtSamplePoint"
 import { ComputeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffectOptions, SumsOfSquares } from "./types"
+import { computeSumOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffect } from "./sumOfSquares"
+import { MAXIMUM_SEARCH_TIME } from "./constants"
+import { debug } from "../../../debug"
+import { checkSubmetricsForInvalidParameterCombinations } from "../../../sumOfSquares"
+import { shuffle } from "../../../../../general/code/shuffle"
 
-const computeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffect = (samples: Sample[], options: ComputeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffectOptions = {}) => {
+const computeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffect = async (samples: Sample[], options: ComputeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffectOptions = {}): Promise<SumsOfSquares> => {
     const { chunkCount = DUMMY_CHUNK_COUNT_FOR_ONE_OFF_BEST_METRIC_FROM_SCOPE, indentation = "" } = options
 
     const sumsOfSquares: SumsOfSquares = []
 
-    samples.forEach(sample => {
-        const { submetrics, samplePoint } = sample
+    if (samples.length > MAXIMUM_SEARCH_TIME) {
+        shuffle(samples)
+    }
 
-        const sumOfSquares = computeSumOfSquaresForSubmetrics(submetrics)
-
-        setSumOfSquaresAtSamplePoint(sumOfSquares, sumsOfSquares, samplePoint)
-
-        if (!bestMetricsForChunkCount[ chunkCount ] || sumOfSquares < bestMetricsForChunkCount[ chunkCount ].sumOfSquares) {
-            bestMetricsForChunkCount[ chunkCount ] = { sumOfSquares, submetrics }
-            if (sumOfSquares === 0) {
-                computeSumOfSquaresForSubmetrics(submetrics)
-                throw new Error("This sum-of-squares was 0. That's extremely unlikely and probably means there's a bug in the code and that to continue searching now would be a waste of time.")
-            }
-
-            if (debug.all || debug.newBestMetric) {
-                console.log(`${indentation}new best metric for chunk count ${chunkCount}: ${JSON.stringify(bestMetricsForChunkCount[ chunkCount ])}`.green)
-            }
+    return new Promise(async resolve => {
+        try {
+            checkSubmetricsForInvalidParameterCombinations(samples[ 0 ].submetrics)
+        } catch(e) {
+            resolve(sumsOfSquares)
+            if (debug.all || debug.errors) console.log(`Not searching scope due to invalid parameter combinations: ${e.message}`.red)
+            return
         }
-    })
 
-    return sumsOfSquares
+        const samplePromises: Promise<void>[] = samples.slice(0, MAXIMUM_SEARCH_TIME).map((sample, index) => {
+            return computeSumOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffect(sample, chunkCount, indentation, sumsOfSquares, index, samples.length)
+        })
+
+        await Promise.all(samplePromises)
+        resolve(sumsOfSquares)
+    })
 }
 
 export {

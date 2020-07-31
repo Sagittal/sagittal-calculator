@@ -46,8 +46,8 @@ describe("computeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffe
         },
     ]
 
-    it("runs without error", () => {
-        const result = computeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffect(samples)
+    it("runs without error", async () => {
+        const result = await computeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffect(samples)
 
         expect(result).toEqual([
             [
@@ -61,10 +61,10 @@ describe("computeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffe
         ] as SumsOfSquares)
     })
 
-    it("works when the best metric for the chunk count has not yet been set", () => {
+    it("works when the best metric for the chunk count has not yet been set", async () => {
         delete bestMetricsForChunkCount[ chunkCount ]
 
-        computeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffect(samples, { chunkCount })
+        await computeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffect(samples, { chunkCount })
 
         expect(bestMetricsForChunkCount[ chunkCount ]).toEqual({
             sumOfSquares: 0.013983040590027893 as Sum<"SquaredWeightedRankDifferences">,
@@ -76,13 +76,13 @@ describe("computeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffe
         })
     })
 
-    it("sets the best metric when it beats it", () => {
+    it("sets the best metric when it beats it", async () => {
         bestMetricsForChunkCount[ chunkCount ] = {
             sumOfSquares: 0.01400000000000 as Sum<"SquaredWeightedRankDifferences">,
             submetrics: [{}] as Combination<Submetric>,
         }
 
-        computeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffect(samples, { chunkCount })
+        await computeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffect(samples, { chunkCount })
 
         expect(bestMetricsForChunkCount[ chunkCount ]).toEqual({
             sumOfSquares: 0.013983040590027893 as Sum<"SquaredWeightedRankDifferences">,
@@ -94,13 +94,13 @@ describe("computeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffe
         })
     })
 
-    it("does not set the best metric when it does not beat it", () => {
+    it("does not set the best metric when it does not beat it", async () => {
         bestMetricsForChunkCount[ chunkCount ] = {
             sumOfSquares: 0.01200000000000 as Sum<"SquaredWeightedRankDifferences">,
             submetrics: [{}] as Combination<Submetric>,
         }
 
-        computeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffect(samples, { chunkCount })
+        await computeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffect(samples, { chunkCount })
 
         expect(bestMetricsForChunkCount[ chunkCount ]).toEqual({
             sumOfSquares: 0.01200000000000 as Sum<"SquaredWeightedRankDifferences">,
@@ -108,10 +108,10 @@ describe("computeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffe
         })
     })
 
-    it("falls back to a chunk count of zero", () => {
+    it("falls back to a chunk count of zero", async () => {
         delete bestMetricsForChunkCount[ DUMMY_CHUNK_COUNT_FOR_ONE_OFF_BEST_METRIC_FROM_SCOPE ]
 
-        computeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffect(samples)
+        await computeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffect(samples)
 
         expect(bestMetricsForChunkCount[ DUMMY_CHUNK_COUNT_FOR_ONE_OFF_BEST_METRIC_FROM_SCOPE ]).toEqual({
             sumOfSquares: 0.013983040590027893 as Sum<"SquaredWeightedRankDifferences">,
@@ -122,4 +122,8 @@ describe("computeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffe
             }] as Combination<Submetric>,
         })
     })
+
+    // TODO: test shuffling
+
+    // TODO: test rejecting if example one's parameter combinations are invalid
 })

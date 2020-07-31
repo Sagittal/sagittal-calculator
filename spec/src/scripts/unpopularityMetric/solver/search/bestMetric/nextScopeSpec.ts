@@ -59,12 +59,12 @@ describe("computeNextScope", () => {
                 [ Parameter.J ]: {
                     center: 0.1 as ParameterValue,
                     span: 0.06666666666666667 as Span<ParameterValue>,
-                    resolution: 7 as Resolution<ParameterValue>,
+                    resolution: 2 as Resolution<ParameterValue>,
                 },
                 [ Parameter.W ]: {
                     center: 0 as ParameterValue,
                     span: 0.3333333333333333 as Span<ParameterValue>,
-                    resolution: 34 as Resolution<ParameterValue>,
+                    resolution: 4 as Resolution<ParameterValue>,
                 },
                 [ Parameter.A ]: 2 as ParameterValue,
             },

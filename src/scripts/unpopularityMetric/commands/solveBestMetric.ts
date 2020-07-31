@@ -3,6 +3,7 @@ import { program } from "commander"
 import { Count } from "../../../general"
 import { debug } from "../debug"
 import { bestMetricsForChunkCount, Chunk, populateAndSearchScopes, status } from "../solver"
+import { killedsForChunkCount } from "../solver/globals"
 
 program
     .option("-l, --lower-bound-chunk-count <lowerBoundChunkCount>", "lower bound chunk count", parseInt)
@@ -23,9 +24,11 @@ status.searchingChunkCount = lowerBoundChunkCount as Count<Chunk>
 
 debug.solver = true
 // debug.localMinima = true
+// debug.newBestMetric = true
 // debug.scope = true
 
 populateAndSearchScopes().then(() => {
     const bestMetricsForNonzeroChunkCounts = bestMetricsForChunkCount.slice(lowerBoundChunkCount, status.upperBoundChunkCount + 1)
     console.log(`\n\nAND THE BEST METRICS PER CHUNK COUNT WERE ${JSON.stringify(bestMetricsForNonzeroChunkCounts, undefined, 4)}`.green)
+    console.log(`\n\nAND THE KILLED METRIC COUNTS PER CHUNK COUNT WERE [${killedsForChunkCount.map(abandonedForChunkCount => abandonedForChunkCount.length).join(",")}]`.red)
 })

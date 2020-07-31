@@ -6,6 +6,7 @@ import { INITIAL_PARAMETER_SCOPES } from "../../../../../../src/scripts/unpopula
 import { populateScopesForChunkCountAndSubmetricChunkCombination } from "../../../../../../src/scripts/unpopularityMetric/solver/populate/scopesForChunkCountAndSubmetricChunkCombination"
 import { ParameterChunk, SubmetricChunk } from "../../../../../../src/scripts/unpopularityMetric/solver/populate/types"
 import { Parameter } from "../../../../../../src/scripts/unpopularityMetric/types"
+import { cleanArray } from "../../../../../../src/general/code/cleanArray"
 
 describe("populateScopesForChunkCountAndSubmetricChunkCombination", () => {
     // TODO: really need to do something about these long test descriptions and multi-lining them;

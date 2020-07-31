@@ -6,11 +6,15 @@ import { Sample } from "../types"
 
 interface Metric {
     submetrics: Combination<Submetric>,
-    sumOfSquares: Sum<"SquaredWeightedRankDifferences">,
+    sumOfSquares: Sum<"SquaredWeightedRankDifferences"> | undefined,
 }
 
 interface LocalMinimum extends Sample {
     sumOfSquares: Sum<"SquaredWeightedRankDifferences">,
+}
+
+interface TopLevelScopeHasBeenKilled {
+    hasBeenKilled: boolean
 }
 
 type SearchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffectOptions = Partial<{
@@ -32,6 +36,7 @@ type SearchLocalMinimumOptions = {
     localMinimum?: LocalMinimum,
     chunkCount: Count<Chunk>,
     nextLocalMinima: LocalMinimum[],
+    topLevelScopeHasBeenKilled: TopLevelScopeHasBeenKilled,
 }
 
 type SumsOfSquares = Array<SumsOfSquares | Sum<"SquaredWeightedRankDifferences"> | undefined>
@@ -39,6 +44,7 @@ type SumsOfSquares = Array<SumsOfSquares | Sum<"SquaredWeightedRankDifferences">
 type ComputeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffectOptions = Partial<{
     chunkCount: Count<Chunk>,
     indentation: string,
+    topLevelScopeHasBeenKilled: TopLevelScopeHasBeenKilled,
 }>
 
 export {

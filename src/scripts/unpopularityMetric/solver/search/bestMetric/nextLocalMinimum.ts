@@ -18,26 +18,37 @@ const searchNextLocalMinimum = (nextLocalMinimum: LocalMinimum, options: SearchL
         localMinimum,
         chunkCount,
         nextLocalMinima,
+        topLevelScopeHasBeenKilled,
     } = options
 
     if (!recurse || deepEquals(localMinimum, nextLocalMinimum)) {
         return Promise.resolve()
     }
 
-    const nextScope: Scope = computeNextScope(nextLocalMinimum.samplePoint, dynamicParameters, scope)
-    const nextProgressMessage = progressMessage + `${index + 1}/${(nextLocalMinima.length)}@depth${nextDepth} `
-    if (debug.all || debug.localMinima) {
-        console.log(`${indentation}${nextProgressMessage}${JSON.stringify(nextLocalMinimum)}`)
-    }
-
     return doOnNextEventLoop(async () => {
-        await searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect(nextScope, {
-            depth: nextDepth,
-            progressMessage: nextProgressMessage,
-            localMinimum: nextLocalMinimum,
-            chunkCount,
-        })
-    })
+        if (topLevelScopeHasBeenKilled.hasBeenKilled) {
+            if (debug.all || debug.kills) console.log(`Killed: ${scope}`.red)
+            return
+        }
+
+        const nextScope: Scope = computeNextScope(nextLocalMinimum.samplePoint, dynamicParameters, scope)
+        const nextProgressMessage = progressMessage + `${index + 1}/${(nextLocalMinima.length)}@depth${nextDepth} `
+        if (debug.all || debug.localMinima) {
+            console.log(`${indentation}${nextProgressMessage}${JSON.stringify(nextLocalMinimum)}`)
+        }
+
+        try {
+            await searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect(nextScope, {
+                depth: nextDepth,
+                progressMessage: nextProgressMessage,
+                localMinimum: nextLocalMinimum,
+                chunkCount,
+                recurse,
+            })
+        } catch(e) {
+            if (debug.all || debug.errors) console.log(`Error when searching: ${e.message}`.red)
+        }
+    }, index)
 }
 
 export {

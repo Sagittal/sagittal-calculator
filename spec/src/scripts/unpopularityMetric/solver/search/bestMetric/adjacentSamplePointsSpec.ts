@@ -17,7 +17,7 @@ describe("computeAdjacentSamplePoints", () => {
         ]))
     })
 
-    it("blindly returns sample points that are off the edge, but that's okay because getSumOfSquaresAtSamplePointIfLocalMinimum can handle that, and it has no concept of the upper edge of any dimension so it might as well not deal with it", () => {
+    it("blindly returns sample points that are off the edge, but that's parameterValueCombinationIsInvalid because getSumOfSquaresAtSamplePointIfLocalMinimum can handle that, and it has no concept of the upper edge of any dimension so it might as well not deal with it", () => {
         const samplePoint = [0, 0] as SamplePoint
 
         const result = computeAdjacentSamplePoints(samplePoint)

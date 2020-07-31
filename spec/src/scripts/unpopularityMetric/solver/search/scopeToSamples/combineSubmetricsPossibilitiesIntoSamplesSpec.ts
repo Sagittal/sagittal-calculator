@@ -81,7 +81,7 @@ describe("combineSubmetricsPossibilitiesIntoSamples", () => {
 
         const result = combineSubmetricsPossibilitiesIntoSamples({ submetricsPossibilities, dynamicParameters })
 
-                                                                                                        // todo this probably needs fixing
+                                                                                                        // TODO: these comments need updating, and this is just horrible to look at...
         const expectedResult = [                                                                        // by submetric    // by submetric & parameter // by dynamic parameter
             { submetrics: [{...submetricOnePossibilityOne, ...submetricZeroPossibilityOne} as Submetric, {...submetricTwoPossibilityOne, ...submetricZeroPossibilityOne} as Submetric] as Combination<Submetric>, samplePoint: [0, 0, 0, 0] as SamplePoint },       // [0, 0]          // [ [0, 0, 0], [0, 0] ]    // [ 0, 0, 0 ]
             { submetrics: [{...submetricOnePossibilityOne, ...submetricZeroPossibilityOne} as Submetric, {...submetricTwoPossibilityTwo, ...submetricZeroPossibilityOne} as Submetric] as Combination<Submetric>, samplePoint: [0, 0, 1, 0] as SamplePoint },       // [0, 1]          // [ [0, 0, 0], [1, 0] ]    // [ 0, 1, 0 ]

@@ -9,6 +9,8 @@ const debug: Debug = {
     localMinima: false,
     scope: false,
     sumOfSquares: false,
+    errors: false,
+    kills: false,
 }
 
 export {
