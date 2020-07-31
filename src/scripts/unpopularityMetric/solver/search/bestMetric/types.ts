@@ -23,6 +23,7 @@ type SearchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffectOptions = Pa
     localMinimum: LocalMinimum,
     progressMessage: string,
     recurse: boolean,
+    deterministic: boolean,
 }>
 
 type SearchLocalMinimumOptions = {

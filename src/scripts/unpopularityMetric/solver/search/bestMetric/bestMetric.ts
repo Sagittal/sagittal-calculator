@@ -20,6 +20,7 @@ const searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect = async (s
             localMinimum,
             recurse = true,
             chunkCount = DUMMY_CHUNK_COUNT_FOR_ONE_OFF_BEST_METRIC_FROM_SCOPE,
+            deterministic = false,
         }: SearchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffectOptions = options
 
         const topLevelScopeHasBeenKilled = { hasBeenKilled: false }
@@ -61,7 +62,7 @@ const searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect = async (s
 
         const nextLocalMinima = computeLocalMinima(samples, sumsOfSquares)
 
-        shuffle(nextLocalMinima)
+        if (!deterministic) shuffle(nextLocalMinima)
 
         let nextLocalMinimaPromises: Promise<void>[] = nextLocalMinima.slice(0, MAXIMUM_SEARCH_TIME).map((nextLocalMinimum, index) => {
             return searchNextLocalMinimum(nextLocalMinimum, {

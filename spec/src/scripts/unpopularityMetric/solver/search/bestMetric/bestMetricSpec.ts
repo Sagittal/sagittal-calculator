@@ -38,6 +38,7 @@ describe("searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect", () =
         }
         const recurse = false
         const chunkCount = 5 as Count<Chunk>
+        const deterministic = true
 
         spyOn(nextLocalMinimum, "searchNextLocalMinimum").and.callThrough()
 
@@ -47,6 +48,7 @@ describe("searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect", () =
             localMinimum,
             recurse,
             chunkCount,
+            deterministic,
         })
 
         const expectedNextLocalMinima = [
