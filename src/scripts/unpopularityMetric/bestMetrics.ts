@@ -459,6 +459,27 @@ const davesWb = {
     ],
 }
 
+//
+
+// Douglas's Solver - 3-chunk 0.007099822
+// Fri Jul 31, 2020 9:01 am
+// http://forum.sagittal.org/viewtopic.php?p=2113#p2113
+const douglasSolverThreeChunk = {
+    sumOfSquares: 0.007099822284635193,
+    submetrics: [
+        {
+            [ Parameter.WITHOUT_REPETITION ]: true,
+            [ Parameter.MAX ]: true,
+        },
+        {
+            [ Parameter.SUM ]: true,
+            [ Parameter.A ]: 1.3333333333333333,
+            [ Parameter.A_IS_BASE ]: true,
+            [ Parameter.J ]: 1.3,
+        },
+    ],
+}
+
 export {
     withPrimeLimit,
 
@@ -492,4 +513,5 @@ export {
     secondAttemptAtLowestThreeChunk,
 
     davesWb,
+    douglasSolverThreeChunk,
 }

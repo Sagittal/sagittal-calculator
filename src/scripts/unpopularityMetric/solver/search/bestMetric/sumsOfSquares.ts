@@ -26,7 +26,7 @@ const computeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffect =
         }
 
         const samplePromises: Promise<void>[] = samples.slice(0, MAXIMUM_SEARCH_TIME).map((sample, index) => {
-            return computeSumOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffect(sample, chunkCount, indentation, sumsOfSquares, index, samples.length)
+            return computeSumOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffect(sample, chunkCount, indentation, sumsOfSquares, index)
         })
 
         await Promise.all(samplePromises)

@@ -18,14 +18,20 @@ program
     .option("-d, --debug", "debug")
     .option("-m, --maximum-unit", "maximum unit")
     .option("-n, --no-color", "no color")
+    .option("-t, --timeout-enabled", "timeout enabled")
     .parse(process.argv)
 
 const recurse = !!program.recursive
 debug.all = !!program.debug
 const maximumUnit = program.maximumUnit
+const timeoutEnabled = program.timeoutEnabled
 if (!!program.noColors) {
     colors.disable()
 }
+
+// debug.scope = true
+// debug.errors = true
+// debug.newBestMetric = true
 
 const scope = [
     {},
@@ -55,6 +61,6 @@ const scope = [
     },
 ] as Scope
 
-searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect(scope, { recurse }).then(() => {
+searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect(scope, { recurse, timeoutEnabled }).then(() => {
     console.log(`\nbest metric: ${JSON.stringify(bestMetricsForChunkCount[ DUMMY_CHUNK_COUNT_FOR_ONE_OFF_BEST_METRIC_FROM_SCOPE ])}`.green)
 })

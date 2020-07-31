@@ -8,7 +8,7 @@ import { setSumOfSquaresAtSamplePoint } from "./setSumOfSquaresAtSamplePoint"
 import { bestMetricsForChunkCount } from "../../globals"
 import { debug } from "../../../debug"
 
-const computeSumOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffect = (sample: Sample, chunkCount: Count<Chunk>, indentation: string, sumsOfSquares: SumsOfSquares, index: number, total: number): Promise<void> => {
+const computeSumOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffect = (sample: Sample, chunkCount: Count<Chunk>, indentation: string, sumsOfSquares: SumsOfSquares, index: number): Promise<void> => {
     return doOnNextEventLoop(() => {
         const { submetrics, samplePoint } = sample
 

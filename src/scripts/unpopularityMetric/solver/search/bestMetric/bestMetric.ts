@@ -21,12 +21,12 @@ const searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect = async (s
             recurse = true,
             chunkCount = DUMMY_CHUNK_COUNT_FOR_ONE_OFF_BEST_METRIC_FROM_SCOPE,
             deterministic = false,
+            timeoutEnabled,
         }: SearchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffectOptions = options
 
         const topLevelScopeHasBeenKilled = { hasBeenKilled: false }
         let timeUpdater: NodeJS.Timeout | undefined
-        let killswitch: NodeJS.Timeout | undefined
-        if ((debug.all || debug.scope) && depth === 0) {
+        if (debug.all || debug.scope) {
             console.log(`${JSON.stringify(scope)} - beginning search`.yellow)
 
             let timeUnits = 0
@@ -34,7 +34,10 @@ const searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect = async (s
                 timeUnits = timeUnits + 1
                 console.log(`${JSON.stringify(scope)} - searching for ${timeUnits}s out of max ${MAXIMUM_SEARCH_TIME / 1000}s`.yellow)
             }, 1000)
+        }
 
+        let killswitch: NodeJS.Timeout | undefined
+        if (timeoutEnabled) {
             killswitch = setTimeout(() => {
                 topLevelScopeHasBeenKilled.hasBeenKilled = true
                 timeUpdater && clearInterval(timeUpdater)

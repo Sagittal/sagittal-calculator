@@ -17,7 +17,7 @@ const searchPopulatedScopesForChunkCount = async () => {
     }
 
     try {
-        await searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect(scopeForChunkCount, { recurse: false, chunkCount: searchingChunkCount })
+        await searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect(scopeForChunkCount, { recurse: false, timeoutEnabled: true, chunkCount: searchingChunkCount })
     } catch (e) {
         // TODO: Bad scopes are still being computed...
         //  it may not be a simple matter to not compute them in the first place,
