@@ -227,7 +227,7 @@ const notFourChunkByCurrentDefinitionMcopfr = {
 //         },
 //     ],
 // }
-// // 1-submetric 7-chunk 0.00565
+// // 1-submetric 7-chunk 0.00565 -- original xwyks
 // const oneSubmetricSevenChunk = {
 //     sumOfSquares: 0.005646141896541448,
 //     submetrics: [
@@ -331,10 +331,10 @@ const sanityCheck = {
 
 //
 
-// Douglas's first run of the recursive automatic solver turned this up quick, 0.00406
+// Douglas's first run of the recursive automatic solver turned this up quick, 0.00406 (now known as cwyks)
 // Sun Jul 05, 2020 10:29 pm
 // http://forum.sagittal.org/viewtopic.php?p=2004#p2004
-const firstRecursiveRun = {
+const cwyks = {
     sumOfSquares: 0.004059521951422367,
     submetrics: [
         {
@@ -359,7 +359,7 @@ const firstRecursiveRun = {
 // Douglas's first attempt at lowest 2- and 3-chunk - the 3-chunk one was claimed to have 0.008291286 but Dave rejected that saying it actually has 0.018902286543139548, which I could not recreate at the time but then later recreated
 // Thu Jul 09, 2020 9:21 am
 // http://forum.sagittal.org/viewtopic.php?p=2036#p2036
-const firstAttemptAtLowestTwoChunk = {
+const k = {
     sumOfSquares: 0.0094912434848982,
     submetrics: [
         {
@@ -377,6 +377,33 @@ const firstAttemptAtLowestThreeChunk = {
         {
             [ Parameter.COUNT ]: true,
             [ Parameter.K ]: -1.11111111111111111,
+        },
+    ],
+}
+
+//
+
+// Dave's maybe-minimum 0.007085843
+// Thu Jul 09, 2020 7:37 pm
+// http://forum.sagittal.org/viewtopic.php?p=2038#p2038
+const maybeMinimum = {
+    sumOfSquares: 0.007085843283776648,
+    submetrics: [
+        {
+            [ Parameter.SUM ]: true,
+            [ Parameter.A ]: 2,
+            [ Parameter.A_IS_BASE ]: true,
+            [ Parameter.Y ]: 0.839,
+            [ Parameter.W ]: -1.465,
+            [ Parameter.K ]: 0,
+        },
+        {
+            [ Parameter.SUM ]: true,
+            [ Parameter.A ]: 2,
+            [ Parameter.A_IS_BASE ]: true,
+            [ Parameter.Y ]: 0.839,
+            [ Parameter.W ]: -1.867,
+            [ Parameter.J ]: 0,
         },
     ],
 }
@@ -410,10 +437,96 @@ const firstAttemptAtLowestThreeChunk = {
 //     ]
 // }
 
+// Dave's improved maybe minimum 0.006282743
+// Sat Jul 11, 2020 1:30 am
+// http://forum.sagittal.org/viewtopic.php?p=2044#p2044
+const improvedMaybeMinimum = {
+    sumOfSquares: 0.0062827430776347054,
+    submetrics: [
+        {
+            [ Parameter.SUM ]: true,
+            [ Parameter.A ]: 2,
+            [ Parameter.A_IS_BASE ]: true,
+            [ Parameter.Y ]: 0.8568,
+            [ Parameter.W ]: -1.4457,
+            [ Parameter.K ]: 0,
+        },
+        {
+            [ Parameter.SUM ]: true,
+            [ Parameter.A ]: 2,
+            [ Parameter.A_IS_BASE ]: true,
+            [ Parameter.Y ]: 0.8568,
+            [ Parameter.W ]: -1.8630,
+            [ Parameter.J ]: 0,
+        },
+    ],
+}
+
+//
+
+// Dave's improved 4-param 6-chunk 0.006700181
+// Sat Jul 11, 2020 9:04 pm
+// http://forum.sagittal.org/viewtopic.php?p=2052#p2052
+const improvedFourParamSixChunk = {
+    sumOfSquares: 0.006700180663569215,
+    submetrics: [
+        {
+            [ Parameter.SUM ]: true,
+            [ Parameter.A ]: 2,
+            [ Parameter.A_IS_BASE ]: true,
+            [ Parameter.K ]: 0,
+            [ Parameter.WEIGHT ]: 0.6385,
+        },
+        {
+            [ Parameter.SUM ]: true,
+            [ Parameter.A ]: 2,
+            [ Parameter.A_IS_BASE ]: true,
+            [ Parameter.J ]: 0,
+            [ Parameter.WEIGHT ]: -1.6518,
+        },
+        {
+            [ Parameter.SUM ]: true,
+            [ Parameter.Y ]: 0.8023,
+            [ Parameter.K ]: 1.5289,
+        },
+    ],
+}
+
+//
+
+// Dave's improved 4-param 5-chunk 0.006926345
+// Sat Jul 11, 2020 9:04 pm
+// http://forum.sagittal.org/viewtopic.php?p=2052#p2052
+const improvedFourParamFiveChunk = {
+    sumOfSquares: 0.006926345329260278,
+    submetrics: [
+        {
+            [ Parameter.SUM ]: true,
+            [ Parameter.A ]: 2,
+            [ Parameter.A_IS_BASE ]: true,
+            [ Parameter.K ]: 0,
+            [ Parameter.WEIGHT ]: 0.6845,
+        },
+        {
+            [ Parameter.SUM ]: true,
+            [ Parameter.A ]: 2,
+            [ Parameter.A_IS_BASE ]: true,
+            [ Parameter.J ]: 0,
+            [ Parameter.WEIGHT ]: -0.3909,
+        },
+        {
+            [ Parameter.SUM ]: true,
+            [ Parameter.Y ]: 0.8006,
+        },
+    ],
+}
+
 //
 
 // Douglas's second attempt at lowest 2-chunk
-const secondAttemptAtLowestTwoChunk = {
+// Sun Jul 12, 2020 11:27 pm
+// http://forum.sagittal.org/viewtopic.php?p=2064#p2064
+const j = {
     sumOfSquares: 0.00910097075832883,
     submetrics: [
         {
@@ -434,12 +547,142 @@ const secondAttemptAtLowestThreeChunk = {
     ],
 }
 
+// Dave's hyg 0.006372713
+// Mon Jul 13, 2020 2:04 am
+// http://forum.sagittal.org/viewtopic.php?p=2065#p2065
+const hyg = {
+    sumOfSquares: 0.006372712986254571,
+    submetrics: [
+        {
+            [ Parameter.SUM ]: true,
+            [ Parameter.A ]: 2,
+            [ Parameter.A_IS_BASE ]: true,
+            [ Parameter.K ]: 0,
+            [ Parameter.WEIGHT ]: 0.692773045,
+        },
+        {
+            [ Parameter.SUM ]: true,
+            [ Parameter.A ]: 2,
+            [ Parameter.A_IS_BASE ]: true,
+            [ Parameter.J ]: 0,
+            [ Parameter.WEIGHT ]: -0.245303445,
+        },
+        {
+            [ Parameter.SUM ]: true,
+            [ Parameter.Y ]: 0.827031908,
+        },
+    ]
+}
+
+//
+
+// Dave's double-improved maybe minimum, now called wyb 0.006057649, and also wyk
+// Mon Jul 13, 2020 6:38 pm
+// http://forum.sagittal.org/viewtopic.php?p=2071#p2071
+const wyb = {
+    sumOfSquares: 0.006057649171028775,
+    submetrics: [
+        {
+            [ Parameter.SUM ]: true,
+            [ Parameter.A ]: 2,
+            [ Parameter.A_IS_BASE ]: true,
+            [ Parameter.Y ]: 0.865618551,
+            [ Parameter.W ]: -1.472615144,
+            [ Parameter.K ]: 0,
+        },
+        {
+            [ Parameter.SUM ]: true,
+            [ Parameter.A ]: 2,
+            [ Parameter.A_IS_BASE ]: true,
+            [ Parameter.Y ]: 0.865618551,
+            [ Parameter.W ]: -2.02634047,
+            [ Parameter.J ]: 0,
+        },
+    ],
+}
+const wyk = {
+    sumOfSquares: 0.007460443456132457,
+    submetrics: [
+        {
+            [ Parameter.SUM ]: true,
+            [ Parameter.A ]: 2,
+            [ Parameter.A_IS_BASE ]: true,
+            [ Parameter.Y ]: 0.861239895,
+            [ Parameter.W ]: -1.448663086,
+            [ Parameter.K ]: 0.683944325,
+        },
+    ],
+}
+
+//
+
+// Dave's cwyk
+// Mon Jul 13, 2020 11:57 pm
+// http://forum.sagittal.org/viewtopic.php?p=2072#p2072
+const cwyk = {
+    sumOfSquares: 0.007300195,
+    submetrics: [
+        {
+            [ Parameter.SUM ]: true,
+            [ Parameter.A ]: 2,
+            [ Parameter.A_IS_BASE ]: true,
+            [ Parameter.K ]: 0.74710179,
+            [ Parameter.Y ]: 0.903870452,
+        },
+        {
+            [ Parameter.COUNT ]: true,
+            [ Parameter.WEIGHT ]: -0.352088418,
+        }
+    ]
+}
+
+//
+
+// Dave's wyks 0.006406639
+// Tue Jul 14, 2020 2:47 am
+// http://forum.sagittal.org/viewtopic.php?p=2073#p2073
+const wyks = {
+    sumOfSquares: 0.006406638879234451,
+    submetrics: [
+        {
+            [ Parameter.SUM ]: true,
+            [ Parameter.A ]: 2,
+            [ Parameter.A_IS_BASE ]: true,
+            [ Parameter.Y ]: 0.86461511,
+            [ Parameter.W ]: -1.481526766,
+            [ Parameter.USE_NUMINATOR ]: true,
+            [ Parameter.K ]: 0.581696884,
+        },
+    ]
+}
+
+//
+
+// Dave's xwyks 0.00553892
+// Tue Jul 14, 2020 4:36 am
+// http://forum.sagittal.org/viewtopic.php?p=2074#p2074
+// const xwyks = {
+//     sumOfSquares: 0.00553892,
+//     submetrics: [
+//         {
+//             [ Parameter.SUM ]: true,
+//             [ Parameter.A ]: 2,
+//             [ Parameter.A_IS_BASE ]: true,
+//             [ Parameter.K ]: 0.612396631,
+//             [ Parameter.W ]: -1.94655685,
+//             [ Parameter.Y ]: 0.843016878,
+//             [ Parameter.X ]: 1.51639317,
+//             [ Parameter.USE_NUMINATOR ]: true,
+//         },
+//     ],
+// }
+
 //
 
 // Dave's wb: SoS 0.007345361
 // Tue Jul 28, 2020 12:36 am
 // http://forum.sagittal.org/viewtopic.php?p=2098#p2098
-const davesWb = {
+const wb = {
     sumOfSquares: 0.007345361244736918,
     submetrics: [
         {
@@ -464,7 +707,7 @@ const davesWb = {
 // Douglas's Solver - 3-chunk 0.007099822
 // Fri Jul 31, 2020 9:01 am
 // http://forum.sagittal.org/viewtopic.php?p=2113#p2113
-const douglasSolverThreeChunk = {
+const laj = {
     sumOfSquares: 0.007099822284635193,
     submetrics: [
         {
@@ -479,6 +722,25 @@ const douglasSolverThreeChunk = {
         },
     ],
 }
+
+/*
+
+Let's make sure we have all of these at the end
+
+k  	    0.009491243  	18757.5  	2
+j  	    0.009100365  	18637.5  	2
+wyk  	0.007460443  	17077.5  	5   GOT IT
+wb  	0.007345361  	16520.5  	4   GOT IT
+cwyk  	0.007300195  	16890.5  	7   GOT IT
+wyks  	0.006406639  	14125.5  	6   GOT IT
+hyg  	0.006372713  	17867.5  	5   GOT IT
+wyb  	0.006057649  	15638.5  	5   GOT IT
+xwyks  	0.00553892  	14309.5  	7   GOT IT
+cwyks  	0.004059522  	13440.5  	8   GOT IT
+ */
+
+// todo okay i think the reason some of these are commented out is because they were crashing the solver
+//  i need to bring those back and uncomment!
 
 export {
     withPrimeLimit,
@@ -502,16 +764,34 @@ export {
 
     sanityCheck,
 
-    firstRecursiveRun,
+    cwyks,
 
-    firstAttemptAtLowestTwoChunk,
+    k,
     firstAttemptAtLowestThreeChunk,
+
+    maybeMinimum,
 
     // bAndU,
 
-    secondAttemptAtLowestTwoChunk,
+    improvedMaybeMinimum,
+
+    improvedFourParamSixChunk,
+
+    improvedFourParamFiveChunk,
+
+    j,
     secondAttemptAtLowestThreeChunk,
 
-    davesWb,
-    douglasSolverThreeChunk,
+    hyg,
+
+    wyb,
+    wyk,
+
+    wyks,
+
+    // xwyks,
+
+    wb,
+
+    laj,
 }
