@@ -92,20 +92,20 @@ describe("computeSubmetricAntivotes", () => {
             )
         })
 
-        // it("when x is provided, adds a constant to each prime before applying the coefficient, exponent, or base", () => {
-        //     const a = 0.56
-        //     const x = -2.1
-        //     submetric[Parameter.A] = a
-        //     submetric[Parameter.X] = x
-        //
-        //     const result = computeSubmetricAntivotes(fiveRoughNumberMonzo, submetric)
-        //
-        //     expect(result).toBe(
-        //         1 * (11 + x) * a +
-        //         1 * (13 + x) * a +
-        //         2 * (17 + x) * a,
-        //     )
-        // })
+        it("when x is provided, adds a constant to each prime before applying the coefficient, exponent, or base", () => {
+            const a = 0.56 as ParameterValue
+            const x = -2.1 as ParameterValue
+            submetric[ Parameter.A ] = a
+            submetric[ Parameter.X ] = x
+
+            const result = computeSubmetricAntivotes(fiveRoughNumberMonzo, submetric)
+
+            expect(result).toBe(
+                1 * (11 + x) * a +
+                1 * (13 + x) * a +
+                2 * (17 + x) * a as Antivotes,
+            )
+        })
 
         it("when y is provided, raises the prime exponent to an exponent", () => {
             const y = 0.81 as ParameterValue
@@ -121,8 +121,8 @@ describe("computeSubmetricAntivotes", () => {
         })
 
         // it("when v is provided, adds a constant to each *non-zero* prime exponent after applying the exponent", () => {
-        //     const y = 0.81 as DynamicParameterValue
-        //     const v = 0.34 as DynamicParameterValue
+        //     const y = 0.81 as ParameterValue
+        //     const v = 0.34 as ParameterValue
         //     submetric[Parameter.Y] = y
         //     submetric[Parameter.V] = v
         //
@@ -136,8 +136,8 @@ describe("computeSubmetricAntivotes", () => {
         // })
 
         // it("when t is provided, adds a constant to each *non-zero* prime exponent before applying the exponent", () => {
-        //     const y = 0.81 as DynamicParameterValue
-        //     const t = 0.34 as DynamicParameterValue
+        //     const y = 0.81 as ParameterValue
+        //     const t = 0.34 as ParameterValue
         //     submetric[Parameter.Y] = y
         //     submetric[Parameter.T] = t
         //

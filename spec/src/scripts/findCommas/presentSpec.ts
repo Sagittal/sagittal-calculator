@@ -1,5 +1,5 @@
 import { Cents, Name, Prime, Ratio } from "../../../../src/general"
-import { ApotomeSlope, Comma, Monzo, Position, Sopfr } from "../../../../src/general/music/types"
+import { ApotomeSlope, Comma, Monzo, Position, Sopfr } from "../../../../src/general/music"
 import { presentCommas } from "../../../../src/scripts/findCommas/present"
 
 describe("presentCommas", () => {

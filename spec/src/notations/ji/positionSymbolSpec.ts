@@ -1,6 +1,5 @@
 import { Cents, Id, Name, Position, Prime, Ratio, Sopfr } from "../../../../src/general"
-import { Monzo } from "../../../../src/general/music"
-import { ApotomeSlope } from "../../../../src/general/music/types"
+import { ApotomeSlope, Monzo } from "../../../../src/general/music"
 import { computePositionSymbol } from "../../../../src/notations/ji/positionSymbol"
 import { Level, Mina, SagittalSymbol, SymbolLongAscii, SymbolUnicode } from "../../../../src/notations/ji/types"
 

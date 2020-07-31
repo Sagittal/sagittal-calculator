@@ -13,7 +13,7 @@ import {
 import * as scopesForChunkCountAndSubmetricChunkCombination
     from "../../../../../../src/scripts/unpopularityMetric/solver/populate/scopesForChunkCountAndSubmetricChunkCombination"
 import { populateScopesForChunkCountPhase } from "../../../../../../src/scripts/unpopularityMetric/solver/populate/scopesForChunkCountPhase"
-import { ParameterChunk, SubmetricChunk } from "../../../../../../src/scripts/unpopularityMetric/solver/populate/types"
+import { ParameterChunk, SubmetricChunk } from "../../../../../../src/scripts/unpopularityMetric/solver/populate"
 import { Parameter } from "../../../../../../src/scripts/unpopularityMetric/types"
 
 describe("populateScopesForChunkCountPhase", () => {

@@ -14,7 +14,7 @@ enum Parameter {
     A_IS_BASE = "aIsBase",                           // use the prime coefficient instead as a base
     A_IS_EXPONENT = "aIsExponent",                   // use the prime coefficient instead as an exponent
     W = "w",                                         // prime constant (applied after applying exponent or base)
-    // X = "x",                                         // prime constant (applied before applying exponent or base)
+    X = "x",                                         // prime constant (applied before applying exponent or base)
     Y = "y",                                         // prime exponent exponent
     // V = "v",                                         // prime exponent constant (applied before applying exponent, for non-zero terms)
     // T = "t",                                         // prime exponent constant (applied after applying exponent)
@@ -44,7 +44,7 @@ type Submetric = Partial<{
     [ Parameter.Y ]: ParameterValue
     [ Parameter.USE_NUMINATOR ]: boolean
     [ Parameter.MODIFIED_COUNT ]: boolean,
-    // [Parameter.X]: DynamicParameterValue
+    [ Parameter.X ]: ParameterValue,
     [ Parameter.USE_PRIME_INDEX ]: boolean,
     [ Parameter.WITHOUT_REPETITION ]: boolean,
     [ Parameter.SUM ]: boolean,

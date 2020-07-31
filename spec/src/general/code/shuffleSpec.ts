@@ -1,4 +1,4 @@
-import { shuffle } from "../../../../src/general/code/shuffle"
+import { shuffle } from "../../../../src/general/code"
 import { computeDeepClone } from "../../../../src/general"
 
 describe("shuffle", () => {

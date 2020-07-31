@@ -39,7 +39,11 @@ const INITIAL_PARAMETER_SCOPES: SubmetricScope = {
         span: 6 as Span<ParameterValue>,
         resolution: computeResolution(6 as Span<ParameterValue>),
     },
-    // [Parameter.X]: { center: 0 as DynamicParameterValue, span: 6 as Span<DynamicParameterValue>, resolution: computeResolution(6 as Span<DynamicParameterValue>) },
+    [ Parameter.X ]: {
+        center: 0 as ParameterValue,
+        span: 6 as Span<ParameterValue>,
+        resolution: computeResolution(6 as Span<ParameterValue>),
+    },
     [ Parameter.Y ]: {
         center: 0 as ParameterValue,
         span: 6 as Span<ParameterValue>,
@@ -119,7 +123,9 @@ const PARAMETER_CHUNKS: ParameterChunk[] = [
     {
         [ Parameter.W ]: INITIAL_PARAMETER_SCOPES[ Parameter.W ],
     },
-    // { [ Parameter.X ]: INITIAL_PARAMETER_SCOPES[ Parameter.X ]},
+    {
+        [ Parameter.X ]: INITIAL_PARAMETER_SCOPES[ Parameter.X ],
+    },
     {
         [ Parameter.Y ]: INITIAL_PARAMETER_SCOPES[ Parameter.Y ],
     },

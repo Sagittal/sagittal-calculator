@@ -279,7 +279,14 @@ describe("populateScopesForChunkCount", () => {
 
             // submetrics 1, parameters 1: distributed parameters to the submetric directly
 
-            // SOAPFAR (14)
+            // SOAPFAR (15)
+            [
+                {},
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.X ]: INITIAL_PARAMETER_SCOPES[ Parameter.X ],
+                },
+            ],
             [
                 {},
                 {
@@ -385,7 +392,15 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
 
-            // SOAPF (14)
+            // SOAPF (15)
+            [
+                {},
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.X ]: INITIAL_PARAMETER_SCOPES[ Parameter.X ],
+                },
+            ],
             [
                 {},
                 {
@@ -505,7 +520,14 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
 
-            // COAPFAR (14)
+            // COAPFAR (15)
+            [
+                {},
+                {
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                    [ Parameter.X ]: INITIAL_PARAMETER_SCOPES[ Parameter.X ],
+                },
+            ],
             [
                 {},
                 {
@@ -611,7 +633,15 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
 
-            // COAPF (14)
+            // COAPF (15)
+            [
+                {},
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                    [ Parameter.X ]: INITIAL_PARAMETER_SCOPES[ Parameter.X ],
+                },
+            ],
             [
                 {},
                 {
@@ -731,7 +761,15 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
 
-            // GPF (14)
+            // GPF (15)
+            [
+                {},
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.MAX ]: INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],
+                    [ Parameter.X ]: INITIAL_PARAMETER_SCOPES[ Parameter.X ],
+                },
+            ],
             [
                 {},
                 {
@@ -851,7 +889,16 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
 
-            // LOG BASE A OF N (14)
+            // LOG BASE A OF N (15)
+            [
+                {},
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
+                    [ Parameter.A_IS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_IS_BASE ],
+                    [ Parameter.X ]: INITIAL_PARAMETER_SCOPES[ Parameter.X ],
+                },
+            ],
             [
                 {},
                 {
@@ -987,7 +1034,15 @@ describe("populateScopesForChunkCount", () => {
 
             // submetrics 1, parameters 1: distributed parameters to the 'all bins' submetric bin
 
-            // SOAPFAR (14)
+            // SOAPFAR (15)
+            [
+                {
+                    [ Parameter.X ]: INITIAL_PARAMETER_SCOPES[ Parameter.X ],
+                },
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                },
+            ],
             [
                 {
                     [ Parameter.K ]: INITIAL_PARAMETER_SCOPES[ Parameter.K ],
@@ -1107,7 +1162,16 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
 
-            // SOAPF (14)
+            // SOAPF (15)
+            [
+                {
+                    [ Parameter.X ]: INITIAL_PARAMETER_SCOPES[ Parameter.X ],
+                },
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                },
+            ],
             [
                 {
                     [ Parameter.K ]: INITIAL_PARAMETER_SCOPES[ Parameter.K ],
@@ -1241,7 +1305,15 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
 
-            // COAPFAR (14)
+            // COAPFAR (15)
+            [
+                {
+                    [ Parameter.X ]: INITIAL_PARAMETER_SCOPES[ Parameter.X ],
+                },
+                {
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                },
+            ],
             [
                 {
                     [ Parameter.K ]: INITIAL_PARAMETER_SCOPES[ Parameter.K ],
@@ -1361,7 +1433,16 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
 
-            // COAPF (14)
+            // COAPF (15)
+            [
+                {
+                    [ Parameter.X ]: INITIAL_PARAMETER_SCOPES[ Parameter.X ],
+                },
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                },
+            ],
             [
                 {
                     [ Parameter.K ]: INITIAL_PARAMETER_SCOPES[ Parameter.K ],
@@ -1495,7 +1576,16 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
 
-            // GPF (14)
+            // GPF (15)
+            [
+                {
+                    [ Parameter.X ]: INITIAL_PARAMETER_SCOPES[ Parameter.X ],
+                },
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.MAX ]: INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],
+                },
+            ],
             [
                 {
                     [ Parameter.K ]: INITIAL_PARAMETER_SCOPES[ Parameter.K ],
@@ -1629,7 +1719,17 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
 
-            // LOG BASE A OF N (14)
+            // LOG BASE A OF N (15)
+            [
+                {
+                    [ Parameter.X ]: INITIAL_PARAMETER_SCOPES[ Parameter.X ],
+                },
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
+                    [ Parameter.A_IS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_IS_BASE ],
+                },
+            ],
             [
                 {
                     [ Parameter.K ]: INITIAL_PARAMETER_SCOPES[ Parameter.K ],
@@ -1780,10 +1880,10 @@ describe("populateScopesForChunkCount", () => {
 
         const result: Scope[] = scopesForChunkCount[ chunkCount ]
 
-        // 189 =
-        //      ((2+6-1)!)/((2!)((6-1)!)) * ((0+14-1)!)/((0!)((14-1)!)) * 3^0 = 21 * 1 * 1 = 21
+        // 201 =
+        //      ((2+6-1)!)/((2!)((6-1)!)) * ((0+15-1)!)/((0!)((15-1)!)) * 3^0 = 21 * 1 * 1 = 21
         //      +
-        //      ((1+6-1)!)/((1!)((6-1)!)) * ((1+14-1)!)/((1!)((14-1)!)) * 2^1 = 6 * 14 * 2 = 168
+        //      ((1+6-1)!)/((1!)((6-1)!)) * ((1+15-1)!)/((1!)((15-1)!)) * 2^1 = 6 * 15 * 2 = 180
         expect(result.length).toEqual(expectedResult.length)
         expectedResult.forEach(expectedResultElement => {
             expect(result.some(resultElement => {
@@ -1801,10 +1901,10 @@ describe("populateScopesForChunkCount", () => {
 
         const result: Scope[] = scopesForChunkCount[ chunkCount ]
 
-        expect(result.length).toEqual( // 3458
-            56 + // all combinations of 3 submetrics = 6 choose 3 w/re = ((3+6-1)!)/((3!)((6-1)!)) = 56, but that times all combinations of 0 parameters = 14 choose 0 w/re = ((0+14-1)!)/((0!)((14-1)!)) =   1, so 56 *  1 =  56, but then that times 1 bc for each one you can distribute the parameters across the submetrics 4^0 ways, so 56  * 1 =   56
-            882 +         // all combinations of 2 submetrics = 6 choose 2 w/re = ((2+6-1)!)/((2!)((6-1)!)) = 21, but that times all combinations of 1 parameters = 14 choose 1 w/re = ((1+14-1)!)/((1!)((14-1)!)) =  14, so 21 * 14 = 294, but then that times 2 bc for each one you can distribute the parameters across the submetrics 3^1 ways, so 294 * 3 =  882
-            2520,         // all combinations of 1 submetric  = 6 choose 1 w/re = ((1+6-1)!)/((1!)((6-1)!)) =  6, but that times all combinations of 2 parameters = 14 choose 2 w/re = ((2+14-1)!)/((2!)((14-1)!)) = 105, so 6 * 105 = 630, but then that times 1 bc for each one you can distribute the parameters across the submetrics 2^2 ways, so 630 * 4 = 2520
+        expect(result.length).toEqual( // 56 + 945 + 2880 = 3881
+            56 + // all combinations of 3 submetrics = 6 choose 3 w/re = ((3+6-1)!)/((3!)((6-1)!)) = 56, but that times all combinations of 0 parameters = 15 choose 0 w/re = ((0+15-1)!)/((0!)((15-1)!)) =   1, so 56 *  1 =  56, but then that times 1 bc for each one you can distribute the parameters across the submetrics 4^0 ways, so 56  * 1 =   56
+            945 +         // all combinations of 2 submetrics = 6 choose 2 w/re = ((2+6-1)!)/((2!)((6-1)!)) = 21, but that times all combinations of 1 parameters = 15 choose 1 w/re = ((1+15-1)!)/((1!)((15-1)!)) =  15, so 21 * 15 = 315, but then that times 2 bc for each one you can distribute the parameters across the submetrics 3^1 ways, so 315 * 3 =  945
+            2880,         // all combinations of 1 submetric  = 6 choose 1 w/re = ((1+6-1)!)/((1!)((6-1)!)) =  6, but that times all combinations of 2 parameters = 15 choose 2 w/re = ((2+15-1)!)/((2!)((15-1)!)) = 120, so 6 * 120 = 720, but then that times 1 bc for each one you can distribute the parameters across the submetrics 2^2 ways, so 720 * 4 = 2880
         )
         const exampleResultElements = [
             [
@@ -1849,11 +1949,11 @@ describe("populateScopesForChunkCount", () => {
 
         const result: Scope[] = scopesForChunkCount[ chunkCount ]
 
-        expect(result.length).toEqual( // 49987
-            126 + // all combinations of 4 submetrics = 6 choose 4 w/re = ((4+6-1)!)/((4!)((6-1)!)) = 126, but that times all combinations of 0 parameters = 14 choose 0 w/re = ((0+14-1)!)/((0!)((14-1)!)) =   1, so 126 *  1 =  126, but then that times 1 bc for each one you can distribute the parameters across the submetrics 5^0 ways, so  126 * 1 =   126
-            3136 +         // all combinations of 3 submetrics = 6 choose 3 w/re = ((3+6-1)!)/((3!)((6-1)!)) =  56, but that times all combinations of 1 parameters = 14 choose 1 w/re = ((1+14-1)!)/((1!)((14-1)!)) =  14, so 56  * 14 =  784, but then that times 3 bc for each one you can distribute the parameters across the submetrics 4^1 ways, so  784 * 4 =  3136
-            19845 +        // all combinations of 2 submetrics = 6 choose 2 w/re = ((2+6-1)!)/((2!)((6-1)!)) =  21, but that times all combinations of 2 parameters = 14 choose 2 w/re = ((2+14-1)!)/((2!)((14-1)!)) = 105, so 21 * 105 = 2205, but then that times 4 bc for each one you can distribute the parameters across the submetrics 3^2 ways, so 2205 * 9 = 19845
-            26880,         // all combinations of 1 submetric  = 6 choose 1 w/re = ((1+6-1)!)/((1!)((6-1)!)) =   6, but that times all combinations of 3 parameters = 14 choose 3 w/re = ((3+14-1)!)/((3!)((14-1)!)) = 560, so 6  * 560 = 3360, but then that times 1 bc for each one you can distribute the parameters across the submetrics 2^3 ways, so 3360 * 8 = 26880
+        expect(result.length).toEqual( // 126 + 3360 + 22680 + 32640 = 58806
+            126 + // all combinations of 4 submetrics = 6 choose 4 w/re = ((4+6-1)!)/((4!)((6-1)!)) = 126, but that times all combinations of 0 parameters = 15 choose 0 w/re = ((0+15-1)!)/((0!)((15-1)!)) =   1, so 126 *  1 =  126, but then that times 1 bc for each one you can distribute the parameters across the submetrics 5^0 ways, so  126 * 1 =   126
+            3360 +         // all combinations of 3 submetrics = 6 choose 3 w/re = ((3+6-1)!)/((3!)((6-1)!)) =  56, but that times all combinations of 1 parameters = 15 choose 1 w/re = ((1+15-1)!)/((1!)((15-1)!)) =  15, so 56  * 15 =  840, but then that times 3 bc for each one you can distribute the parameters across the submetrics 4^1 ways, so  840 * 4 =  3360
+            22680 +        // all combinations of 2 submetrics = 6 choose 2 w/re = ((2+6-1)!)/((2!)((6-1)!)) =  21, but that times all combinations of 2 parameters = 15 choose 2 w/re = ((2+15-1)!)/((2!)((15-1)!)) = 120, so 21 * 120 = 2520, but then that times 4 bc for each one you can distribute the parameters across the submetrics 3^2 ways, so 2520 * 9 = 22680
+            32640,         // all combinations of 1 submetric  = 6 choose 1 w/re = ((1+6-1)!)/((1!)((6-1)!)) =   6, but that times all combinations of 3 parameters = 15 choose 3 w/re = ((3+15-1)!)/((3!)((15-1)!)) = 680, so 6  * 680 = 4080, but then that times 1 bc for each one you can distribute the parameters across the submetrics 2^3 ways, so 4080 * 8 = 32640
         )
     })
 })

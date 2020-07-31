@@ -1,6 +1,5 @@
 import { Cents, Id, Name, Position, Prime, Proportion, Ratio, Sopfr } from "../../../../../src/general"
-import { Monzo } from "../../../../../src/general/music"
-import { ApotomeSlope } from "../../../../../src/general/music/types"
+import { ApotomeSlope, Monzo } from "../../../../../src/general/music"
 import { INA_SIZES } from "../../../../../src/notations/ji/intervals"
 import {
     Bound,

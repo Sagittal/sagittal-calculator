@@ -1,4 +1,4 @@
-import { doOnNextEventLoop } from "../../../../src/general/code/doOnNextEventLoop"
+import { doOnNextEventLoop } from "../../../../src/general/code"
 
 describe("doOnNextEventLoop", () => {
     it("resolves on the next event loop", async (done) => {

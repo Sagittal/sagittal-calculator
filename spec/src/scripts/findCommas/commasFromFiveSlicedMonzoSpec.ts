@@ -1,5 +1,5 @@
 import { Cents } from "../../../../src/general"
-import { ApotomeSlope, Monzo, PrimeExponent } from "../../../../src/general/music/types"
+import { ApotomeSlope, Monzo, PrimeExponent } from "../../../../src/general/music"
 import { computeCommasFromFiveSlicedMonzo } from "../../../../src/scripts/findCommas/commasFromFiveSlicedMonzo"
 
 describe("computeCommasFromFiveSlicedMonzo", () => {

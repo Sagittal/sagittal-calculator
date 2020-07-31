@@ -1,7 +1,7 @@
 import { Count } from "../../../../../../src/general"
 import { Chunk } from "../../../../../../src/scripts/unpopularityMetric/solver"
 import { computeInitialChunkCountForSubmetrics } from "../../../../../../src/scripts/unpopularityMetric/solver/populate/initialChunkCountForSubmetrics"
-import { SubmetricChunk } from "../../../../../../src/scripts/unpopularityMetric/solver/populate/types"
+import { SubmetricChunk } from "../../../../../../src/scripts/unpopularityMetric/solver/populate"
 
 describe("computeInitialChunkCountForSubmetrics", () => {
     it("when less than or equal to the total count of possible submetric chunks, returns the passed-in chunk count", () => {

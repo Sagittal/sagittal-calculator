@@ -1,7 +1,6 @@
 import { Prime } from "../../../../src/general"
-import { Copfr, PrimeExponent, Sopfr } from "../../../../src/general/music"
+import { ApotomeSlope, Copfr, PrimeExponent, Sopfr } from "../../../../src/general/music"
 import { computeCommaName } from "../../../../src/general/music/name"
-import { ApotomeSlope } from "../../../../src/general/music/types"
 import { SYMBOLS } from "../../../../src/notations/ji"
 import { computeSecondaryCommaZone } from "../../../../src/notations/ji/secondaryCommaZone"
 import { computeCommas } from "../../../../src/scripts/findCommas/commas"

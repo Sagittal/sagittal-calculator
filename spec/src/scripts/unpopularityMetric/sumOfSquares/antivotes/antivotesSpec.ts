@@ -68,10 +68,10 @@ describe("computeAntivotes", () => {
                 [ Parameter.A ]: 2 as ParameterValue,
                 [ Parameter.A_IS_BASE ]: true,
                 [ Parameter.W ]: -6 as ParameterValue,
-                // [Parameter.X]: -2 as DynamicParameterValue,
+                [ Parameter.X ]: -2 as ParameterValue,
                 [ Parameter.Y ]: 0.14285714285714285 as ParameterValue,
-                // [Parameter.V]: -0.8571428571428572 as DynamicParameterValue,
-                // [Parameter.T]: -1.6142857142857143 as DynamicParameterValue,
+                // [Parameter.V]: -0.8571428571428572 as ParameterValue,
+                // [Parameter.T]: -1.6142857142857143 as ParameterValue,
             },
         ] as Combination<Submetric>
         const fiveRoughRatio = [5, 1] as Ratio

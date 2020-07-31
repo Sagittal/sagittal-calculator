@@ -1,5 +1,4 @@
-import { Cents, Id, Position, Proportion, Sum } from "../../../../src/general"
-import { Name } from "../../../../src/general/types"
+import { Cents, Id, Name, Position, Proportion, Sum } from "../../../../src/general"
 import { Bound, Level } from "../../../../src/notations/ji"
 import {
     AnalyzedEvent,

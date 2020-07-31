@@ -227,22 +227,22 @@ const notFourChunkByCurrentDefinitionMcopfr = {
 //         },
 //     ],
 // }
-// // 1-submetric 7-chunk 0.00565 -- original xwyks
-// const oneSubmetricSevenChunk = {
-//     sumOfSquares: 0.005646141896541448,
-//     submetrics: [
-//         {
-//             [Parameter.K]: 0.6328571428571429,
-//             [Parameter.A]: 1.5728571428571425,
-//             [Parameter.A_IS_BASE]: true,
-//             [Parameter.W]: -3.0571428571428574,
-//             [Parameter.Y]: 0.8571428571428571,
-//             [Parameter.X]: 1.607142857142857,
-//             [ Parameter.USE_NUMINATOR ]: true,
-//             [ Parameter.SUM ]: true,
-//         },
-//     ],
-// }
+// 1-submetric 7-chunk 0.00565 -- original xwyks
+const oneSubmetricSevenChunk = {
+    sumOfSquares: 0.005646141896541448,
+    submetrics: [
+        {
+            [ Parameter.K ]: 0.6328571428571429,
+            [ Parameter.A ]: 1.5728571428571425,
+            [ Parameter.A_IS_BASE ]: true,
+            [ Parameter.W ]: -3.0571428571428574,
+            [ Parameter.Y ]: 0.8571428571428571,
+            [ Parameter.X ]: 1.607142857142857,
+            [ Parameter.USE_NUMINATOR ]: true,
+            [ Parameter.SUM ]: true,
+        },
+    ],
+}
 // 1-submetric 6-chunk 0.00947 (claimed to be near 0.00652, so these must have been approximations)
 const oneSubmetricSixChunk = {
     sumOfSquares: 0.00946539412309218,
@@ -413,29 +413,29 @@ const maybeMinimum = {
 // Dave's b and u: SoS 0.00659
 // Fri Jul 10, 2020 2:57 am
 // http://forum.sagittal.org/viewtopic.php?p=2039#p2039
-// const bAndU = {
-//     sumOfSquares: 0.006594234470005811,
-//     submetrics: [
-//         {
-//             [ Parameter.K ]: 0,
-//             [ Parameter.A ]: 2,
-//             [ Parameter.A_IS_BASE ]: true,
-//             [ Parameter.Y ]: 0.861,
-//             [ Parameter.W ]: -2.656,
-//             [ Parameter.X ]: 4.471,
-//             [ Parameter.SUM ]: true,
-//         },
-//         {
-//             [ Parameter.J ]: 0,
-//             [ Parameter.A ]: 2,
-//             [ Parameter.A_IS_BASE ]: true,
-//             [ Parameter.Y ]: 0.861,
-//             [ Parameter.W ]: -2.829,
-//             [ Parameter.X ]: 3.850,
-//             [ Parameter.SUM ]: true,
-//         },
-//     ]
-// }
+const bAndU = {
+    sumOfSquares: 0.006594234470005811,
+    submetrics: [
+        {
+            [ Parameter.K ]: 0,
+            [ Parameter.A ]: 2,
+            [ Parameter.A_IS_BASE ]: true,
+            [ Parameter.Y ]: 0.861,
+            [ Parameter.W ]: -2.656,
+            [ Parameter.X ]: 4.471,
+            [ Parameter.SUM ]: true,
+        },
+        {
+            [ Parameter.J ]: 0,
+            [ Parameter.A ]: 2,
+            [ Parameter.A_IS_BASE ]: true,
+            [ Parameter.Y ]: 0.861,
+            [ Parameter.W ]: -2.829,
+            [ Parameter.X ]: 3.850,
+            [ Parameter.SUM ]: true,
+        },
+    ],
+}
 
 // Dave's improved maybe minimum 0.006282743
 // Sat Jul 11, 2020 1:30 am
@@ -661,21 +661,21 @@ const wyks = {
 // Dave's xwyks 0.00553892
 // Tue Jul 14, 2020 4:36 am
 // http://forum.sagittal.org/viewtopic.php?p=2074#p2074
-// const xwyks = {
-//     sumOfSquares: 0.00553892,
-//     submetrics: [
-//         {
-//             [ Parameter.SUM ]: true,
-//             [ Parameter.A ]: 2,
-//             [ Parameter.A_IS_BASE ]: true,
-//             [ Parameter.K ]: 0.612396631,
-//             [ Parameter.W ]: -1.94655685,
-//             [ Parameter.Y ]: 0.843016878,
-//             [ Parameter.X ]: 1.51639317,
-//             [ Parameter.USE_NUMINATOR ]: true,
-//         },
-//     ],
-// }
+const xwyks = {
+    sumOfSquares: 0.0055389201901046405,
+    submetrics: [
+        {
+            [ Parameter.SUM ]: true,
+            [ Parameter.A ]: 2,
+            [ Parameter.A_IS_BASE ]: true,
+            [ Parameter.K ]: 0.612396631,
+            [ Parameter.W ]: -1.94655685,
+            [ Parameter.Y ]: 0.843016878,
+            [ Parameter.X ]: 1.51639317,
+            [ Parameter.USE_NUMINATOR ]: true,
+        },
+    ],
+}
 
 //
 
@@ -739,9 +739,6 @@ xwyks  	0.00553892  	14309.5  	7   GOT IT
 cwyks  	0.004059522  	13440.5  	8   GOT IT
  */
 
-// todo okay i think the reason some of these are commented out is because they were crashing the solver
-//  i need to bring those back and uncomment!
-
 export {
     withPrimeLimit,
 
@@ -755,7 +752,7 @@ export {
 
     // oneSubmetricNineChunk,
     // goldenOneSubmetricEightChunk,
-    // oneSubmetricSevenChunk,
+    oneSubmetricSevenChunk,
     oneSubmetricSixChunk,
 
     almostLowestEverButWithExactA,
@@ -771,7 +768,7 @@ export {
 
     maybeMinimum,
 
-    // bAndU,
+    bAndU,
 
     improvedMaybeMinimum,
 
@@ -789,7 +786,7 @@ export {
 
     wyks,
 
-    // xwyks,
+    xwyks,
 
     wb,
 

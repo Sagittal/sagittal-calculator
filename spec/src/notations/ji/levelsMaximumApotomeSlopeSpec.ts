@@ -1,6 +1,6 @@
 import { EnumHash, Monzo } from "../../../../src/general"
 import { computeApotomeSlope } from "../../../../src/general/music/apotomeSlope"
-import { ApotomeSlope } from "../../../../src/general/music/types"
+import { ApotomeSlope } from "../../../../src/general/music"
 import { Level, LEVELS_SYMBOLS, SagittalSymbol } from "../../../../src/notations/ji"
 
 describe("maximum apotome slope per level", () => {

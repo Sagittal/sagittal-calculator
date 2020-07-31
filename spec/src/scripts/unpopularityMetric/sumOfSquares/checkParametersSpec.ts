@@ -1,4 +1,4 @@
-import { checkSubmetricsForInvalidParameterCombinations } from "../../../../../src/scripts/unpopularityMetric/sumOfSquares/checkParameters"
+import { checkSubmetricsForInvalidParameterCombinations } from "../../../../../src/scripts/unpopularityMetric/sumOfSquares"
 import { Parameter, ParameterValue, Submetric } from "../../../../../src/scripts/unpopularityMetric/types"
 
 describe("checkSubmetricsForInvalidParameterCombinations", () => {

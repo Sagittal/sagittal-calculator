@@ -1,6 +1,5 @@
 import { Cents, Name, Prime, Ratio } from "../../../../src/general"
-import { analyzeComma, Position } from "../../../../src/general/music"
-import { ApotomeSlope, Monzo, Sopfr } from "../../../../src/general/music/types"
+import { analyzeComma, ApotomeSlope, Monzo, Position, Sopfr } from "../../../../src/general/music"
 
 describe("analyzeComma", () => {
     it("returns a bundle of analyzed properties of the comma", () => {

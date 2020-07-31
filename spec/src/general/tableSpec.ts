@@ -1,4 +1,4 @@
-import { alignTable } from "../../../src/general/table"
+import { alignTable } from "../../../src/general"
 import { Justification } from "../../../src/general/types"
 
 describe("alignTable", () => {

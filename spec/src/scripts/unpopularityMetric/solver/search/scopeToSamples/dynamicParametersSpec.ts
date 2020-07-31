@@ -1,6 +1,6 @@
 import { Index, Resolution, Span, Unit } from "../../../../../../../src/general"
 import { computeDynamicParameters } from "../../../../../../../src/scripts/unpopularityMetric/solver/search/scopeToSamples"
-import { Scope } from "../../../../../../../src/scripts/unpopularityMetric/solver/types"
+import { Scope } from "../../../../../../../src/scripts/unpopularityMetric/solver"
 import { Parameter, ParameterValue, Submetric } from "../../../../../../../src/scripts/unpopularityMetric/types"
 
 describe("computeDynamicParameters", () => {

@@ -13,10 +13,10 @@ const computeSubmetricAntivotes = (fiveRoughNumberMonzo: Monzo, submetric = {}):
         aIsExponent = false,
         aIsBase = false,
         w = 0 as ParameterValue,
-        // x = 0 as DynamicParameterValue,
+        x = 0 as ParameterValue,
         y = 1 as ParameterValue,
-        // v = 0 as DynamicParameterValue,
-        // t = 0 as DynamicParameterValue,
+        // v = 0 as ParameterValue,
+        // t = 0 as ParameterValue,
         usePrimeIndex = false,
         sum = false,
         count = false,
@@ -45,7 +45,7 @@ const computeSubmetricAntivotes = (fiveRoughNumberMonzo: Monzo, submetric = {}):
                 usePrimeIndex ?
                     computePrimeCount(prime) :
                     prime
-            // adjustedPrime = adjustedPrime + x
+            adjustedPrime = adjustedPrime + x
             adjustedPrime = aIsBase ?
                 adjustedPrime >= 1 ?
                     computeLog(adjustedPrime, a) :
