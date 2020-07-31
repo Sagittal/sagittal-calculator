@@ -1,18 +1,18 @@
 import { Resolution, Span } from "../../general"
 
 enum Parameter {
-    WEIGHT = "weight",                               // submetric coefficient
-    WEIGHT_IS_BASE = "weightIsBase",                 // use the submetric coefficient instead as base
-    WEIGHT_IS_EXPONENT = "weightIsExponent",         // use the submetric coefficient instead as an exponent
-    K = "k",                                         // diminuator coefficient
-    K_IS_BASE = "kIsBase",                           // use the diminuator coefficient instead as a base
-    K_IS_EXPONENT = "kIsExponent",                   // use the diminuator coefficient instead as an exponent
-    J = "j",                                         // numinator coefficient
-    J_IS_BASE = "jIsBase",                           // use the numinator coefficient instead as a base
-    J_IS_EXPONENT = "jIsExponent",                   // use the numinator coefficient instead as an exponent
-    A = "a",                                         // prime coefficient
-    A_IS_BASE = "aIsBase",                           // use the prime coefficient instead as a base
-    A_IS_EXPONENT = "aIsExponent",                   // use the prime coefficient instead as an exponent
+    WEIGHT_AS_COEFFICIENT = "weightAsCoefficient",   // coefficient used for submetric
+    WEIGHT_AS_BASE = "weightAsBase",                 // base used for submetric
+    WEIGHT_AS_EXPONENT = "weightAsExponent",         // exponent used for submetric
+    K_AS_COEFFICIENT = "kAsCoefficient",             // coefficient used for diminuator
+    K_AS_BASE = "kAsBase",                           // base used for diminuator
+    K_AS_EXPONENT = "kAsExponent",                   // exponent used for diminuator
+    J_AS_COEFFICIENT = "jAsCoefficient",             // coefficient used for numinator
+    J_AS_BASE = "jAsBase",                           // base used for numinator
+    J_AS_EXPONENT = "jAsExponent",                   // exponent used for numinator
+    A_AS_COEFFICIENT = "aAsCoefficient",             // coefficient used for prime
+    A_AS_BASE = "aAsBase",                           // base used for prime
+    A_AS_EXPONENT = "aAsExponent",                   // exponent used for prime
     W = "w",                                         // prime constant (applied after applying exponent or base)
     X = "x",                                         // prime constant (applied before applying exponent or base)
     Y = "y",                                         // prime exponent exponent
@@ -28,18 +28,18 @@ enum Parameter {
 }
 
 type Submetric = Partial<{
-    [ Parameter.WEIGHT ]: ParameterValue,
-    [ Parameter.WEIGHT_IS_BASE ]: boolean,
-    [ Parameter.WEIGHT_IS_EXPONENT ]: boolean,
-    [ Parameter.K ]: ParameterValue
-    [ Parameter.K_IS_BASE ]: boolean
-    [ Parameter.K_IS_EXPONENT ]: boolean
-    [ Parameter.J ]: ParameterValue
-    [ Parameter.J_IS_BASE ]: boolean
-    [ Parameter.J_IS_EXPONENT ]: boolean
-    [ Parameter.A ]: ParameterValue
-    [ Parameter.A_IS_BASE ]: boolean
-    [ Parameter.A_IS_EXPONENT ]: boolean
+    [ Parameter.WEIGHT_AS_COEFFICIENT ]: ParameterValue,
+    [ Parameter.WEIGHT_AS_BASE ]: ParameterValue,
+    [ Parameter.WEIGHT_AS_EXPONENT ]: ParameterValue,
+    [ Parameter.K_AS_COEFFICIENT ]: ParameterValue
+    [ Parameter.K_AS_BASE ]: ParameterValue
+    [ Parameter.K_AS_EXPONENT ]: ParameterValue
+    [ Parameter.J_AS_COEFFICIENT ]: ParameterValue
+    [ Parameter.J_AS_BASE ]: ParameterValue
+    [ Parameter.J_AS_EXPONENT ]: ParameterValue
+    [ Parameter.A_AS_COEFFICIENT ]: ParameterValue
+    [ Parameter.A_AS_BASE ]: ParameterValue
+    [ Parameter.A_AS_EXPONENT ]: ParameterValue
     [ Parameter.W ]: ParameterValue
     [ Parameter.Y ]: ParameterValue
     [ Parameter.USE_NUMINATOR ]: boolean

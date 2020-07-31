@@ -10,41 +10,41 @@ import { Parameter, ParameterValue, Submetric } from "../../../../../../../src/s
 describe("combineSubmetricsPossibilitiesIntoSamples", () => {
     it("takes the list of possible values for each submetric individually, and returns a list of every possible combination of them, along with its corresponding sample point, which is then called a Sample; it also takes the zeroth submetric scope ", () => {
         const submetricZeroPossibilityOne = {
-            [ Parameter.K ]: 0.33 as ParameterValue,
+            [ Parameter.K_AS_COEFFICIENT ]: 0.33 as ParameterValue,
         } as SubmetricPossibility
         const submetricZeroPossibilityTwo = {
-            [ Parameter.K ]: 0.45 as ParameterValue,
+            [ Parameter.K_AS_COEFFICIENT ]: 0.45 as ParameterValue,
         } as SubmetricPossibility
         const submetricOnePossibilityOne: SubmetricPossibility = {
-            [ Parameter.A ]: 0.5 as ParameterValue,
+            [ Parameter.A_AS_COEFFICIENT ]: 0.5 as ParameterValue,
             [ Parameter.Y ]: 1.5 as ParameterValue,
             [ Parameter.COUNT ]: true,
         } as SubmetricPossibility
         const submetricOnePossibilityTwo: SubmetricPossibility = {
-            [ Parameter.A ]: 0.5 as ParameterValue,
+            [ Parameter.A_AS_COEFFICIENT ]: 0.5 as ParameterValue,
             [ Parameter.Y ]: 1.2 as ParameterValue,
             [ Parameter.COUNT ]: true,
         } as SubmetricPossibility
         const submetricOnePossibilityThree: SubmetricPossibility = {
-            [ Parameter.A ]: 0.5 as ParameterValue,
+            [ Parameter.A_AS_COEFFICIENT ]: 0.5 as ParameterValue,
             [ Parameter.Y ]: 0.9 as ParameterValue,
             [ Parameter.COUNT ]: true,
         } as SubmetricPossibility
         const submetricTwoPossibilityOne: SubmetricPossibility = {
             [ Parameter.Y ]: 0.9 as ParameterValue,
-            [ Parameter.A ]: 0.7 as ParameterValue,
+            [ Parameter.A_AS_COEFFICIENT ]: 0.7 as ParameterValue,
         } as SubmetricPossibility
         const submetricTwoPossibilityTwo: SubmetricPossibility = {
             [ Parameter.Y ]: 1.1 as ParameterValue,
-            [ Parameter.A ]: 0.7 as ParameterValue,
+            [ Parameter.A_AS_COEFFICIENT ]: 0.7 as ParameterValue,
         } as SubmetricPossibility
         const submetricTwoPossibilityThree: SubmetricPossibility = {
             [ Parameter.Y ]: 0.9 as ParameterValue,
-            [ Parameter.A ]: 0.6 as ParameterValue,
+            [ Parameter.A_AS_COEFFICIENT ]: 0.6 as ParameterValue,
         } as SubmetricPossibility
         const submetricTwoPossibilityFour: SubmetricPossibility = {
             [ Parameter.Y ]: 1.1 as ParameterValue,
-            [ Parameter.A ]: 0.6 as ParameterValue,
+            [ Parameter.A_AS_COEFFICIENT ]: 0.6 as ParameterValue,
         } as SubmetricPossibility
 
         const submetricsPossibilities: Combination<SubmetricPossibility>[] = [
@@ -55,7 +55,7 @@ describe("combineSubmetricsPossibilitiesIntoSamples", () => {
         const dynamicParameters: DynamicParameter[] = [
             {
                 submetricIndex: 0 as Index<Submetric>,
-                parameter: Parameter.K,
+                parameter: Parameter.K_AS_COEFFICIENT,
                 values: [0.33, 0.45] as ParameterValue[],
                 unit: 0.12 as Unit<ParameterValue>,
             },
@@ -73,7 +73,7 @@ describe("combineSubmetricsPossibilitiesIntoSamples", () => {
             },
             {
                 submetricIndex: 2 as Index<Submetric>,
-                parameter: Parameter.A,
+                parameter: Parameter.A_AS_COEFFICIENT,
                 values: [0.7, 0.6] as ParameterValue[],
                 unit: 0 as Unit<ParameterValue>,
             },

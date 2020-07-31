@@ -1,39 +1,66 @@
-import { Span } from "../../../../general"
-import { Parameter, ParameterValue } from "../../types"
+import { EnumHash, Span } from "../../../../general"
+import { DynamicParameterScope, Parameter, ParameterValue } from "../../types"
 import { computeResolution } from "../search"
-import { SubmetricScope } from "../types"
 import { ParameterChunk, SubmetricChunk } from "./types"
 
 // AKA: if they are going to be included in the automatically generated scopes per chunk count, what should they be set to
-const INITIAL_PARAMETER_SCOPES: SubmetricScope = {
-    [ Parameter.WEIGHT ]: {
+const INITIAL_PARAMETER_SCOPES: Partial<EnumHash<Parameter, ParameterValue | boolean | DynamicParameterScope>> = {
+    [ Parameter.WEIGHT_AS_COEFFICIENT ]: {
         center: 0.5 as ParameterValue,
         span: 1 as Span<ParameterValue>,
         resolution: computeResolution(1 as Span<ParameterValue>),
     },
-    [ Parameter.WEIGHT_IS_BASE ]: true,
-    [ Parameter.WEIGHT_IS_EXPONENT ]: true,
-    [ Parameter.K ]: {
-        center: 1 as ParameterValue,
-        span: 2 as Span<ParameterValue>,
-        resolution: computeResolution(2 as Span<ParameterValue>),
-    },
-    [ Parameter.K_IS_BASE ]: true,
-    [ Parameter.K_IS_EXPONENT ]: true,
-    [ Parameter.J ]: {
-        center: 1 as ParameterValue,
-        span: 2 as Span<ParameterValue>,
-        resolution: computeResolution(2 as Span<ParameterValue>),
-    },
-    [ Parameter.J_IS_BASE ]: true,
-    [ Parameter.J_IS_EXPONENT ]: true,
-    [ Parameter.A ]: {
+    [ Parameter.WEIGHT_AS_BASE ]: {
         center: 2 as ParameterValue,
         span: 4 as Span<ParameterValue>,
         resolution: computeResolution(4 as Span<ParameterValue>),
     },
-    [ Parameter.A_IS_BASE ]: true,
-    [ Parameter.A_IS_EXPONENT ]: true,
+    [ Parameter.WEIGHT_AS_EXPONENT ]: {
+        center: 2 as ParameterValue,
+        span: 4 as Span<ParameterValue>,
+        resolution: computeResolution(4 as Span<ParameterValue>),
+    },
+    [ Parameter.K_AS_COEFFICIENT ]: {
+        center: 0.5 as ParameterValue,
+        span: 1 as Span<ParameterValue>,
+        resolution: computeResolution(1 as Span<ParameterValue>),
+    },
+    [ Parameter.K_AS_BASE ]: {
+        center: 2 as ParameterValue,
+        span: 4 as Span<ParameterValue>,
+        resolution: computeResolution(4 as Span<ParameterValue>),
+    },
+    [ Parameter.K_AS_EXPONENT ]: {
+        center: 2 as ParameterValue,
+        span: 4 as Span<ParameterValue>,
+        resolution: computeResolution(4 as Span<ParameterValue>),
+    },
+    [ Parameter.J_AS_COEFFICIENT ]: {
+        center: 0.5 as ParameterValue,
+        span: 1 as Span<ParameterValue>,
+        resolution: computeResolution(1 as Span<ParameterValue>),
+    },
+    [ Parameter.J_AS_BASE ]: {
+        center: 2 as ParameterValue,
+        span: 4 as Span<ParameterValue>,
+        resolution: computeResolution(4 as Span<ParameterValue>),
+    },
+    [ Parameter.J_AS_EXPONENT ]: {
+        center: 2 as ParameterValue,
+        span: 4 as Span<ParameterValue>,
+        resolution: computeResolution(4 as Span<ParameterValue>),
+    },
+    [ Parameter.A_AS_COEFFICIENT ]: {
+        center: 0.5 as ParameterValue,
+        span: 1 as Span<ParameterValue>,
+        resolution: computeResolution(1 as Span<ParameterValue>),
+    },
+    [ Parameter.A_AS_BASE ]: 2 as ParameterValue, // per forum discussion, lock it down http://forum.sagittal.org/viewtopic.php?p=2113#p2113
+    [ Parameter.A_AS_EXPONENT ]: {
+        center: 2 as ParameterValue,
+        span: 4 as Span<ParameterValue>,
+        resolution: computeResolution(4 as Span<ParameterValue>),
+    },
     [ Parameter.W ]: {
         center: 0 as ParameterValue,
         span: 6 as Span<ParameterValue>,
@@ -79,46 +106,39 @@ const SUBMETRIC_CHUNKS: SubmetricChunk[] = [
         [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
         [ Parameter.MAX ]: INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],
     },
-    { // LOG BASE A OF N
+    { // LOG BASE A_AS_COEFFICIENT OF N
         [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
-        [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
-        [ Parameter.A_IS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_IS_BASE ],
+        [ Parameter.A_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_BASE ],
     },
 ] as SubmetricChunk[]
 
 const PARAMETER_CHUNKS: ParameterChunk[] = [
     {
-        [ Parameter.K ]: INITIAL_PARAMETER_SCOPES[ Parameter.K ],
+        [ Parameter.K_AS_COEFFICIENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_COEFFICIENT ],
     },
     {
-        [ Parameter.K ]: INITIAL_PARAMETER_SCOPES[ Parameter.K ],
-        [ Parameter.K_IS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_IS_BASE ],
+        [ Parameter.K_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_BASE ],
     },
     {
-        [ Parameter.K ]: INITIAL_PARAMETER_SCOPES[ Parameter.K ],
-        [ Parameter.K_IS_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_IS_EXPONENT ],
+        [ Parameter.K_AS_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_EXPONENT ],
     },
     {
-        [ Parameter.J ]: INITIAL_PARAMETER_SCOPES[ Parameter.J ],
+        [ Parameter.J_AS_COEFFICIENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.J_AS_COEFFICIENT ],
     },
     {
-        [ Parameter.J ]: INITIAL_PARAMETER_SCOPES[ Parameter.J ],
-        [ Parameter.J_IS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.J_IS_BASE ],
+        [ Parameter.J_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.J_AS_BASE ],
     },
     {
-        [ Parameter.J ]: INITIAL_PARAMETER_SCOPES[ Parameter.J ],
-        [ Parameter.J_IS_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.J_IS_EXPONENT ],
+        [ Parameter.J_AS_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.J_AS_EXPONENT ],
     },
     {
-        [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
+        [ Parameter.A_AS_COEFFICIENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_COEFFICIENT ],
     },
     {
-        [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
-        [ Parameter.A_IS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_IS_BASE ],
+        [ Parameter.A_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_BASE ],
     },
     {
-        [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
-        [ Parameter.A_IS_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_IS_EXPONENT ],
+        [ Parameter.A_AS_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_EXPONENT ],
     },
     {
         [ Parameter.W ]: INITIAL_PARAMETER_SCOPES[ Parameter.W ],

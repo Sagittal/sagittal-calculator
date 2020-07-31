@@ -18,9 +18,8 @@ const withPrimeLimit = {
     sumOfSquares: 0.006127818362694095,
     submetrics: [
         {
-            [ Parameter.K ]: 0.638243216,
-            [ Parameter.A ]: 3.956349187,
-            [ Parameter.A_IS_BASE ]: true,
+            [ Parameter.K_AS_COEFFICIENT ]: 0.638243216,
+            [ Parameter.A_AS_BASE ]: 3.956349187,
             [ Parameter.W ]: -0.619217685,
             [ Parameter.Y ]: 0.883788532,
             [ Parameter.USE_NUMINATOR ]: true,
@@ -29,7 +28,7 @@ const withPrimeLimit = {
         {
             [ Parameter.MAX ]: true,
             [ Parameter.WITHOUT_REPETITION ]: true,
-            [ Parameter.WEIGHT ]: 0.020609268,
+            [ Parameter.WEIGHT_AS_COEFFICIENT ]: 0.020609268,
             [ Parameter.USE_NUMINATOR ]: true,
         },
     ],
@@ -44,9 +43,8 @@ const lowestEver = {
     sumOfSquares: 0.004260809896143936,
     submetrics: [
         {
-            [ Parameter.K ]: 0.038,
-            [ Parameter.A ]: 1.994,
-            [ Parameter.A_IS_BASE ]: true,
+            [ Parameter.K_AS_COEFFICIENT ]: 0.038,
+            [ Parameter.A_AS_BASE ]: 1.994,
             [ Parameter.Y ]: 0.455,
             [ Parameter.W ]: -2.08,
             [ Parameter.USE_NUMINATOR ]: true,
@@ -54,7 +52,7 @@ const lowestEver = {
         },
         {
             [ Parameter.COUNT ]: true,
-            [ Parameter.WEIGHT ]: 0.577,
+            [ Parameter.WEIGHT_AS_COEFFICIENT ]: 0.577,
             [ Parameter.USE_NUMINATOR ]: true,
         },
     ],
@@ -70,9 +68,8 @@ const likeLowestEverButWithZeroK = {
     sumOfSquares: 0.004732527573659666,
     submetrics: [
         {
-            [ Parameter.K ]: 0,
-            [ Parameter.A ]: 1.753,
-            [ Parameter.A_IS_BASE ]: true,
+            [ Parameter.K_AS_COEFFICIENT ]: 0,
+            [ Parameter.A_AS_BASE ]: 1.753,
             [ Parameter.Y ]: 0.473,
             [ Parameter.W ]: -2.62,
             [ Parameter.USE_NUMINATOR ]: true,
@@ -80,7 +77,7 @@ const likeLowestEverButWithZeroK = {
         },
         {
             [ Parameter.COUNT ]: true,
-            [ Parameter.WEIGHT ]: 0.723,
+            [ Parameter.WEIGHT_AS_COEFFICIENT ]: 0.723,
             [ Parameter.USE_NUMINATOR ]: true,
         },
     ],
@@ -90,9 +87,8 @@ const likeLowestEverButWithZeroC = {
     sumOfSquares: 0.006222012568306695,
     submetrics: [
         {
-            [ Parameter.K ]: 0.635,
-            [ Parameter.A ]: 1.43,
-            [ Parameter.A_IS_BASE ]: true,
+            [ Parameter.K_AS_COEFFICIENT ]: 0.635,
+            [ Parameter.A_AS_BASE ]: 1.43,
             [ Parameter.Y ]: 0.85,
             [ Parameter.W ]: -2.77,
             [ Parameter.USE_NUMINATOR ]: true,
@@ -110,16 +106,15 @@ const notTwoChunkByCurrentDefinitionMcopfr = {
     sumOfSquares: 0.007205996505476978,
     submetrics: [
         {
-            [ Parameter.K ]: 0,
-            [ Parameter.A ]: 2,
-            [ Parameter.A_IS_BASE ]: true,
+            [ Parameter.K_AS_COEFFICIENT ]: 0,
+            [ Parameter.A_AS_BASE ]: 2,
             [ Parameter.W ]: -1.453,
             [ Parameter.Y ]: 0.863,
             [ Parameter.USE_NUMINATOR ]: true,
             [ Parameter.SUM ]: true,
         },
         {
-            [ Parameter.J ]: 0,
+            [ Parameter.J_AS_COEFFICIENT ]: 0,
             [ Parameter.COUNT ]: true,
             [ Parameter.MODIFIED_COUNT ]: true,
             [ Parameter.USE_NUMINATOR ]: true,
@@ -136,16 +131,15 @@ const notThreeChunkByCurrentDefinitionMcopfr = {
     sumOfSquares: 0.0073967019283224696,
     submetrics: [
         {
-            [ Parameter.K ]: 0,
-            [ Parameter.A ]: 2,
-            [ Parameter.A_IS_BASE ]: true,
+            [ Parameter.K_AS_COEFFICIENT ]: 0,
+            [ Parameter.A_AS_BASE ]: 2,
             [ Parameter.W ]: -1.431,
             [ Parameter.Y ]: 0.851,
             [ Parameter.USE_NUMINATOR ]: true,
             [ Parameter.SUM ]: true,
         },
         {
-            [ Parameter.J ]: 0,
+            [ Parameter.J_AS_COEFFICIENT ]: 0,
             [ Parameter.COUNT ]: true,
             [ Parameter.MODIFIED_COUNT ]: true,
             [ Parameter.Y ]: 1.332,
@@ -169,16 +163,15 @@ const notFourChunkByCurrentDefinitionMcopfr = {
     sumOfSquares: 0.008200108887640998,
     submetrics: [
         {
-            [ Parameter.K ]: 0,
-            [ Parameter.A ]: 2,
-            [ Parameter.A_IS_BASE ]: true,
+            [ Parameter.K_AS_COEFFICIENT ]: 0,
+            [ Parameter.A_AS_BASE ]: 2,
             [ Parameter.W ]: -1.44,
             [ Parameter.Y ]: 0.86,
             [ Parameter.USE_NUMINATOR ]: true,
             [ Parameter.SUM ]: true,
         },
         {
-            [ Parameter.J ]: 0,
+            [ Parameter.J_AS_COEFFICIENT ]: 0,
             [ Parameter.COUNT ]: true,
             [ Parameter.MODIFIED_COUNT ]: true,
             [ Parameter.Y ]: 1.331,
@@ -197,9 +190,8 @@ const notFourChunkByCurrentDefinitionMcopfr = {
 //     sumOfSquares: 0.0046106446887802695,
 //     submetrics: [
 //         {
-//             [Parameter.K]: 0.5920238095238095,              // ≈3/5
-//             [Parameter.A]: 2.0107142857142857,              // ≈2
-//             [Parameter.A_IS_BASE]: true,
+//             [Parameter.K_AS_COEFFICIENT]: 0.5920238095238095,              // ≈3/5
+//             [Parameter.A_AS_BASE]: 2.0107142857142857,              // ≈2
 //             [Parameter.Y]: 0.455,                           // ≈√
 //             [Parameter.W]: -2.341928094887362,              // ≈log2(5)
 //             [Parameter.X]: 3.069642857142857,               // ≈3
@@ -215,9 +207,8 @@ const notFourChunkByCurrentDefinitionMcopfr = {
 //     sumOfSquares: 0.0046831807461307174,
 //     submetrics: [
 //         {
-//             [Parameter.K]: 0.5970238095238095,
-//             [Parameter.A]: 2.0125,
-//             [Parameter.A_IS_BASE]: true,
+//             [Parameter.K_AS_COEFFICIENT]: 0.5970238095238095,
+//             [Parameter.A_AS_BASE]: 2.0125,
 //             [Parameter.Y]: 1.6226190476190474,                          // ≈φ
 //             [Parameter.W]: -2.334428094887362,
 //             [Parameter.X]: 3.069642857142857,
@@ -232,9 +223,8 @@ const oneSubmetricSevenChunk = {
     sumOfSquares: 0.005646141896541448,
     submetrics: [
         {
-            [ Parameter.K ]: 0.6328571428571429,
-            [ Parameter.A ]: 1.5728571428571425,
-            [ Parameter.A_IS_BASE ]: true,
+            [ Parameter.K_AS_COEFFICIENT ]: 0.6328571428571429,
+            [ Parameter.A_AS_BASE ]: 1.5728571428571425,
             [ Parameter.W ]: -3.0571428571428574,
             [ Parameter.Y ]: 0.8571428571428571,
             [ Parameter.X ]: 1.607142857142857,
@@ -248,9 +238,8 @@ const oneSubmetricSixChunk = {
     sumOfSquares: 0.00946539412309218,
     submetrics: [
         {
-            [ Parameter.K ]: 0.6,
-            [ Parameter.A ]: 3,
-            [ Parameter.A_IS_BASE ]: true,
+            [ Parameter.K_AS_COEFFICIENT ]: 0.6,
+            [ Parameter.A_AS_BASE ]: 3,
             [ Parameter.W ]: -1,
             [ Parameter.Y ]: 0.8766666666666667,
             [ Parameter.USE_NUMINATOR ]: true,
@@ -268,17 +257,16 @@ const almostLowestEverButWithExactA = {
     sumOfSquares: 0.004455901926266847,
     submetrics: [
         {
-            [ Parameter.K ]: 0.038,
+            [ Parameter.K_AS_COEFFICIENT ]: 0.038,
             [ Parameter.Y ]: 0.455,
-            [ Parameter.A ]: 2,
-            [ Parameter.A_IS_BASE ]: true,
+            [ Parameter.A_AS_BASE ]: 2,
             [ Parameter.W ]: -2.09,
             [ Parameter.USE_NUMINATOR ]: true,
             [ Parameter.SUM ]: true,
         },
         {
             [ Parameter.COUNT ]: true,
-            [ Parameter.WEIGHT ]: 0.579,
+            [ Parameter.WEIGHT_AS_COEFFICIENT ]: 0.579,
             [ Parameter.USE_NUMINATOR ]: true,
         },
     ],
@@ -293,17 +281,16 @@ const lessFragileMinimum = {
     sumOfSquares: 0.005591116232258028,
     submetrics: [
         {
-            [ Parameter.K ]: 0.213895488,
+            [ Parameter.K_AS_COEFFICIENT ]: 0.213895488,
             [ Parameter.Y ]: 0.642099097,
-            [ Parameter.A ]: 2,
-            [ Parameter.A_IS_BASE ]: true,
+            [ Parameter.A_AS_BASE ]: 2,
             [ Parameter.W ]: -2.048657352,
             [ Parameter.USE_NUMINATOR ]: true,
             [ Parameter.SUM ]: true,
         },
         {
             [ Parameter.COUNT ]: true,
-            [ Parameter.WEIGHT ]: 0.551650547,
+            [ Parameter.WEIGHT_AS_COEFFICIENT ]: 0.551650547,
             [ Parameter.USE_NUMINATOR ]: true,
         },
     ],
@@ -318,10 +305,9 @@ const sanityCheck = {
     sumOfSquares: 0.00832555386875032,
     submetrics: [
         {
-            [ Parameter.K ]: 0.632,
+            [ Parameter.K_AS_COEFFICIENT ]: 0.632,
             [ Parameter.Y ]: 0.858,
-            [ Parameter.A ]: 2,
-            [ Parameter.A_IS_BASE ]: true,
+            [ Parameter.A_AS_BASE ]: 2,
             [ Parameter.W ]: -1.415,
             [ Parameter.USE_NUMINATOR ]: true,
             [ Parameter.SUM ]: true,
@@ -338,9 +324,8 @@ const cwyks = {
     sumOfSquares: 0.004059521951422367,
     submetrics: [
         {
-            [ Parameter.K ]: 0.1796875,
-            [ Parameter.A ]: 2.0234375,
-            [ Parameter.A_IS_BASE ]: true,
+            [ Parameter.K_AS_COEFFICIENT ]: 0.1796875,
+            [ Parameter.A_AS_BASE ]: 2.0234375,
             [ Parameter.Y ]: 0.4921875,
             [ Parameter.W ]: -1.986328125,
             [ Parameter.USE_NUMINATOR ]: true,
@@ -348,7 +333,7 @@ const cwyks = {
         },
         {
             [ Parameter.COUNT ]: true,
-            [ Parameter.WEIGHT ]: 0.5615234375,
+            [ Parameter.WEIGHT_AS_COEFFICIENT ]: 0.5615234375,
             [ Parameter.USE_NUMINATOR ]: true,
         },
     ],
@@ -363,7 +348,7 @@ const k = {
     sumOfSquares: 0.0094912434848982,
     submetrics: [
         {
-            [ Parameter.K ]: 0.7901234567901236,
+            [ Parameter.K_AS_COEFFICIENT ]: 0.7901234567901236,
             [ Parameter.SUM ]: true,
         },
     ],
@@ -376,7 +361,7 @@ const firstAttemptAtLowestThreeChunk = {
         },
         {
             [ Parameter.COUNT ]: true,
-            [ Parameter.K ]: -1.11111111111111111,
+            [ Parameter.K_AS_COEFFICIENT ]: -1.11111111111111111,
         },
     ],
 }
@@ -391,19 +376,17 @@ const maybeMinimum = {
     submetrics: [
         {
             [ Parameter.SUM ]: true,
-            [ Parameter.A ]: 2,
-            [ Parameter.A_IS_BASE ]: true,
+            [ Parameter.A_AS_BASE ]: 2,
             [ Parameter.Y ]: 0.839,
             [ Parameter.W ]: -1.465,
-            [ Parameter.K ]: 0,
+            [ Parameter.K_AS_COEFFICIENT ]: 0,
         },
         {
             [ Parameter.SUM ]: true,
-            [ Parameter.A ]: 2,
-            [ Parameter.A_IS_BASE ]: true,
+            [ Parameter.A_AS_BASE ]: 2,
             [ Parameter.Y ]: 0.839,
             [ Parameter.W ]: -1.867,
-            [ Parameter.J ]: 0,
+            [ Parameter.J_AS_COEFFICIENT ]: 0,
         },
     ],
 }
@@ -417,18 +400,16 @@ const bAndU = {
     sumOfSquares: 0.006594234470005811,
     submetrics: [
         {
-            [ Parameter.K ]: 0,
-            [ Parameter.A ]: 2,
-            [ Parameter.A_IS_BASE ]: true,
+            [ Parameter.K_AS_COEFFICIENT ]: 0,
+            [ Parameter.A_AS_BASE ]: 2,
             [ Parameter.Y ]: 0.861,
             [ Parameter.W ]: -2.656,
             [ Parameter.X ]: 4.471,
             [ Parameter.SUM ]: true,
         },
         {
-            [ Parameter.J ]: 0,
-            [ Parameter.A ]: 2,
-            [ Parameter.A_IS_BASE ]: true,
+            [ Parameter.J_AS_COEFFICIENT ]: 0,
+            [ Parameter.A_AS_BASE ]: 2,
             [ Parameter.Y ]: 0.861,
             [ Parameter.W ]: -2.829,
             [ Parameter.X ]: 3.850,
@@ -445,19 +426,17 @@ const improvedMaybeMinimum = {
     submetrics: [
         {
             [ Parameter.SUM ]: true,
-            [ Parameter.A ]: 2,
-            [ Parameter.A_IS_BASE ]: true,
+            [ Parameter.A_AS_BASE ]: 2,
             [ Parameter.Y ]: 0.8568,
             [ Parameter.W ]: -1.4457,
-            [ Parameter.K ]: 0,
+            [ Parameter.K_AS_COEFFICIENT ]: 0,
         },
         {
             [ Parameter.SUM ]: true,
-            [ Parameter.A ]: 2,
-            [ Parameter.A_IS_BASE ]: true,
+            [ Parameter.A_AS_BASE ]: 2,
             [ Parameter.Y ]: 0.8568,
             [ Parameter.W ]: -1.8630,
-            [ Parameter.J ]: 0,
+            [ Parameter.J_AS_COEFFICIENT ]: 0,
         },
     ],
 }
@@ -472,22 +451,20 @@ const improvedFourParamSixChunk = {
     submetrics: [
         {
             [ Parameter.SUM ]: true,
-            [ Parameter.A ]: 2,
-            [ Parameter.A_IS_BASE ]: true,
-            [ Parameter.K ]: 0,
-            [ Parameter.WEIGHT ]: 0.6385,
+            [ Parameter.A_AS_BASE ]: 2,
+            [ Parameter.K_AS_COEFFICIENT ]: 0,
+            [ Parameter.WEIGHT_AS_COEFFICIENT ]: 0.6385,
         },
         {
             [ Parameter.SUM ]: true,
-            [ Parameter.A ]: 2,
-            [ Parameter.A_IS_BASE ]: true,
-            [ Parameter.J ]: 0,
-            [ Parameter.WEIGHT ]: -1.6518,
+            [ Parameter.A_AS_BASE ]: 2,
+            [ Parameter.J_AS_COEFFICIENT ]: 0,
+            [ Parameter.WEIGHT_AS_COEFFICIENT ]: -1.6518,
         },
         {
             [ Parameter.SUM ]: true,
             [ Parameter.Y ]: 0.8023,
-            [ Parameter.K ]: 1.5289,
+            [ Parameter.K_AS_COEFFICIENT ]: 1.5289,
         },
     ],
 }
@@ -502,17 +479,15 @@ const improvedFourParamFiveChunk = {
     submetrics: [
         {
             [ Parameter.SUM ]: true,
-            [ Parameter.A ]: 2,
-            [ Parameter.A_IS_BASE ]: true,
-            [ Parameter.K ]: 0,
-            [ Parameter.WEIGHT ]: 0.6845,
+            [ Parameter.A_AS_BASE ]: 2,
+            [ Parameter.K_AS_COEFFICIENT ]: 0,
+            [ Parameter.WEIGHT_AS_COEFFICIENT ]: 0.6845,
         },
         {
             [ Parameter.SUM ]: true,
-            [ Parameter.A ]: 2,
-            [ Parameter.A_IS_BASE ]: true,
-            [ Parameter.J ]: 0,
-            [ Parameter.WEIGHT ]: -0.3909,
+            [ Parameter.A_AS_BASE ]: 2,
+            [ Parameter.J_AS_COEFFICIENT ]: 0,
+            [ Parameter.WEIGHT_AS_COEFFICIENT ]: -0.3909,
         },
         {
             [ Parameter.SUM ]: true,
@@ -530,8 +505,7 @@ const j = {
     sumOfSquares: 0.00910097075832883,
     submetrics: [
         {
-            [ Parameter.J ]: 1.0954773869346734,
-            [ Parameter.J_IS_EXPONENT ]: true,
+            [ Parameter.J_AS_EXPONENT ]: 1.0954773869346734,
             [ Parameter.SUM ]: true,
         },
     ],
@@ -541,7 +515,7 @@ const secondAttemptAtLowestThreeChunk = {
     submetrics: [
         {
             [ Parameter.Y ]: 0.96661101836394,
-            [ Parameter.J ]: 1.407035175879397,
+            [ Parameter.J_AS_COEFFICIENT ]: 1.407035175879397,
             [ Parameter.SUM ]: true,
         },
     ],
@@ -555,17 +529,15 @@ const hyg = {
     submetrics: [
         {
             [ Parameter.SUM ]: true,
-            [ Parameter.A ]: 2,
-            [ Parameter.A_IS_BASE ]: true,
-            [ Parameter.K ]: 0,
-            [ Parameter.WEIGHT ]: 0.692773045,
+            [ Parameter.A_AS_BASE ]: 2,
+            [ Parameter.K_AS_COEFFICIENT ]: 0,
+            [ Parameter.WEIGHT_AS_COEFFICIENT ]: 0.692773045,
         },
         {
             [ Parameter.SUM ]: true,
-            [ Parameter.A ]: 2,
-            [ Parameter.A_IS_BASE ]: true,
-            [ Parameter.J ]: 0,
-            [ Parameter.WEIGHT ]: -0.245303445,
+            [ Parameter.A_AS_BASE ]: 2,
+            [ Parameter.J_AS_COEFFICIENT ]: 0,
+            [ Parameter.WEIGHT_AS_COEFFICIENT ]: -0.245303445,
         },
         {
             [ Parameter.SUM ]: true,
@@ -584,19 +556,17 @@ const wyb = {
     submetrics: [
         {
             [ Parameter.SUM ]: true,
-            [ Parameter.A ]: 2,
-            [ Parameter.A_IS_BASE ]: true,
+            [ Parameter.A_AS_BASE ]: 2,
             [ Parameter.Y ]: 0.865618551,
             [ Parameter.W ]: -1.472615144,
-            [ Parameter.K ]: 0,
+            [ Parameter.K_AS_COEFFICIENT ]: 0,
         },
         {
             [ Parameter.SUM ]: true,
-            [ Parameter.A ]: 2,
-            [ Parameter.A_IS_BASE ]: true,
+            [ Parameter.A_AS_BASE ]: 2,
             [ Parameter.Y ]: 0.865618551,
             [ Parameter.W ]: -2.02634047,
-            [ Parameter.J ]: 0,
+            [ Parameter.J_AS_COEFFICIENT ]: 0,
         },
     ],
 }
@@ -605,11 +575,10 @@ const wyk = {
     submetrics: [
         {
             [ Parameter.SUM ]: true,
-            [ Parameter.A ]: 2,
-            [ Parameter.A_IS_BASE ]: true,
+            [ Parameter.A_AS_BASE ]: 2,
             [ Parameter.Y ]: 0.861239895,
             [ Parameter.W ]: -1.448663086,
-            [ Parameter.K ]: 0.683944325,
+            [ Parameter.K_AS_COEFFICIENT ]: 0.683944325,
         },
     ],
 }
@@ -624,14 +593,13 @@ const cwyk = {
     submetrics: [
         {
             [ Parameter.SUM ]: true,
-            [ Parameter.A ]: 2,
-            [ Parameter.A_IS_BASE ]: true,
-            [ Parameter.K ]: 0.74710179,
+            [ Parameter.A_AS_BASE ]: 2,
+            [ Parameter.K_AS_COEFFICIENT ]: 0.74710179,
             [ Parameter.Y ]: 0.903870452,
         },
         {
             [ Parameter.COUNT ]: true,
-            [ Parameter.WEIGHT ]: -0.352088418,
+            [ Parameter.WEIGHT_AS_COEFFICIENT ]: -0.352088418,
         },
     ],
 }
@@ -646,12 +614,11 @@ const wyks = {
     submetrics: [
         {
             [ Parameter.SUM ]: true,
-            [ Parameter.A ]: 2,
-            [ Parameter.A_IS_BASE ]: true,
+            [ Parameter.A_AS_BASE ]: 2,
             [ Parameter.Y ]: 0.86461511,
             [ Parameter.W ]: -1.481526766,
             [ Parameter.USE_NUMINATOR ]: true,
-            [ Parameter.K ]: 0.581696884,
+            [ Parameter.K_AS_COEFFICIENT ]: 0.581696884,
         },
     ],
 }
@@ -666,9 +633,8 @@ const xwyks = {
     submetrics: [
         {
             [ Parameter.SUM ]: true,
-            [ Parameter.A ]: 2,
-            [ Parameter.A_IS_BASE ]: true,
-            [ Parameter.K ]: 0.612396631,
+            [ Parameter.A_AS_BASE ]: 2,
+            [ Parameter.K_AS_COEFFICIENT ]: 0.612396631,
             [ Parameter.W ]: -1.94655685,
             [ Parameter.Y ]: 0.843016878,
             [ Parameter.X ]: 1.51639317,
@@ -687,16 +653,14 @@ const wb = {
     submetrics: [
         {
             [ Parameter.SUM ]: true,
-            [ Parameter.K ]: 0,
-            [ Parameter.A ]: 2,
-            [ Parameter.A_IS_BASE ]: true,
+            [ Parameter.K_AS_COEFFICIENT ]: 0,
+            [ Parameter.A_AS_BASE ]: 2,
             [ Parameter.W ]: -1.645808649,
         },
         {
             [ Parameter.SUM ]: true,
-            [ Parameter.J ]: 0,
-            [ Parameter.A ]: 2,
-            [ Parameter.A_IS_BASE ]: true,
+            [ Parameter.J_AS_COEFFICIENT ]: 0,
+            [ Parameter.A_AS_BASE ]: 2,
             [ Parameter.W ]: -2.043765116,
         },
     ],
@@ -716,28 +680,11 @@ const laj = {
         },
         {
             [ Parameter.SUM ]: true,
-            [ Parameter.A ]: 1.3333333333333333,
-            [ Parameter.A_IS_BASE ]: true,
-            [ Parameter.J ]: 1.3,
+            [ Parameter.A_AS_BASE ]: 1.3333333333333333,
+            [ Parameter.J_AS_COEFFICIENT ]: 1.3,
         },
     ],
 }
-
-/*
-
-Let's make sure we have all of these at the end
-
-k  	    0.009491243  	18757.5  	2
-j  	    0.009100365  	18637.5  	2
-wyk  	0.007460443  	17077.5  	5   GOT IT
-wb  	0.007345361  	16520.5  	4   GOT IT
-cwyk  	0.007300195  	16890.5  	7   GOT IT
-wyks  	0.006406639  	14125.5  	6   GOT IT
-hyg  	0.006372713  	17867.5  	5   GOT IT
-wyb  	0.006057649  	15638.5  	5   GOT IT
-xwyks  	0.00553892  	14309.5  	7   GOT IT
-cwyks  	0.004059522  	13440.5  	8   GOT IT
- */
 
 export {
     withPrimeLimit,

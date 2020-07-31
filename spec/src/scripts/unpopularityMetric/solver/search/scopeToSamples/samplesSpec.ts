@@ -11,12 +11,12 @@ describe("computeSamples", () => {
         const scope = [
             {},
             {
-                [ Parameter.A ]: {
+                [ Parameter.A_AS_COEFFICIENT ]: {
                     center: 2 as ParameterValue,
                     span: 2 as Span<ParameterValue>,
                     resolution: 3 as Resolution<ParameterValue>,
                 },
-                [ Parameter.K ]: {
+                [ Parameter.K_AS_COEFFICIENT ]: {
                     center: 0 as ParameterValue,
                     span: 4 as Span<ParameterValue>,
                     resolution: 2 as Resolution<ParameterValue>,
@@ -24,7 +24,7 @@ describe("computeSamples", () => {
             },
             {
                 [ Parameter.COUNT ]: true,
-                [ Parameter.A ]: {
+                [ Parameter.A_AS_COEFFICIENT ]: {
                     center: 1.5 as ParameterValue,
                     span: 2 as Span<ParameterValue>,
                     resolution: 2 as Resolution<ParameterValue>,
@@ -40,12 +40,12 @@ describe("computeSamples", () => {
             {
                 submetrics: [
                     {
-                        [ Parameter.A ]: 1,
-                        [ Parameter.K ]: -2,
+                        [ Parameter.A_AS_COEFFICIENT ]: 1,
+                        [ Parameter.K_AS_COEFFICIENT ]: -2,
                     },
                     {
                         [ Parameter.COUNT ]: true,
-                        [ Parameter.A ]: 0.5,
+                        [ Parameter.A_AS_COEFFICIENT ]: 0.5,
                         [ Parameter.W ]: 3.3,
                     },
                 ],
@@ -54,12 +54,12 @@ describe("computeSamples", () => {
             {
                 submetrics: [
                     {
-                        [ Parameter.A ]: 1,
-                        [ Parameter.K ]: -2,
+                        [ Parameter.A_AS_COEFFICIENT ]: 1,
+                        [ Parameter.K_AS_COEFFICIENT ]: -2,
                     },
                     {
                         [ Parameter.COUNT ]: true,
-                        [ Parameter.A ]: 2.5,
+                        [ Parameter.A_AS_COEFFICIENT ]: 2.5,
                         [ Parameter.W ]: 3.3,
                     },
                 ],
@@ -68,12 +68,12 @@ describe("computeSamples", () => {
             {
                 submetrics: [
                     {
-                        [ Parameter.A ]: 1,
-                        [ Parameter.K ]: 2,
+                        [ Parameter.A_AS_COEFFICIENT ]: 1,
+                        [ Parameter.K_AS_COEFFICIENT ]: 2,
                     },
                     {
                         [ Parameter.COUNT ]: true,
-                        [ Parameter.A ]: 0.5,
+                        [ Parameter.A_AS_COEFFICIENT ]: 0.5,
                         [ Parameter.W ]: 3.3,
                     },
                 ],
@@ -82,12 +82,12 @@ describe("computeSamples", () => {
             {
                 submetrics: [
                     {
-                        [ Parameter.A ]: 1,
-                        [ Parameter.K ]: 2,
+                        [ Parameter.A_AS_COEFFICIENT ]: 1,
+                        [ Parameter.K_AS_COEFFICIENT ]: 2,
                     },
                     {
                         [ Parameter.COUNT ]: true,
-                        [ Parameter.A ]: 2.5,
+                        [ Parameter.A_AS_COEFFICIENT ]: 2.5,
                         [ Parameter.W ]: 3.3,
                     },
                 ],
@@ -96,12 +96,12 @@ describe("computeSamples", () => {
             {
                 submetrics: [
                     {
-                        [ Parameter.A ]: 2,
-                        [ Parameter.K ]: -2,
+                        [ Parameter.A_AS_COEFFICIENT ]: 2,
+                        [ Parameter.K_AS_COEFFICIENT ]: -2,
                     },
                     {
                         [ Parameter.COUNT ]: true,
-                        [ Parameter.A ]: 0.5,
+                        [ Parameter.A_AS_COEFFICIENT ]: 0.5,
                         [ Parameter.W ]: 3.3,
                     },
                 ],
@@ -110,12 +110,12 @@ describe("computeSamples", () => {
             {
                 submetrics: [
                     {
-                        [ Parameter.A ]: 2,
-                        [ Parameter.K ]: -2,
+                        [ Parameter.A_AS_COEFFICIENT ]: 2,
+                        [ Parameter.K_AS_COEFFICIENT ]: -2,
                     },
                     {
                         [ Parameter.COUNT ]: true,
-                        [ Parameter.A ]: 2.5,
+                        [ Parameter.A_AS_COEFFICIENT ]: 2.5,
                         [ Parameter.W ]: 3.3,
                     },
                 ],
@@ -124,12 +124,12 @@ describe("computeSamples", () => {
             {
                 submetrics: [
                     {
-                        [ Parameter.A ]: 2,
-                        [ Parameter.K ]: 2,
+                        [ Parameter.A_AS_COEFFICIENT ]: 2,
+                        [ Parameter.K_AS_COEFFICIENT ]: 2,
                     },
                     {
                         [ Parameter.COUNT ]: true,
-                        [ Parameter.A ]: 0.5,
+                        [ Parameter.A_AS_COEFFICIENT ]: 0.5,
                         [ Parameter.W ]: 3.3,
                     },
                 ],
@@ -138,12 +138,12 @@ describe("computeSamples", () => {
             {
                 submetrics: [
                     {
-                        [ Parameter.A ]: 2,
-                        [ Parameter.K ]: 2,
+                        [ Parameter.A_AS_COEFFICIENT ]: 2,
+                        [ Parameter.K_AS_COEFFICIENT ]: 2,
                     },
                     {
                         [ Parameter.COUNT ]: true,
-                        [ Parameter.A ]: 2.5,
+                        [ Parameter.A_AS_COEFFICIENT ]: 2.5,
                         [ Parameter.W ]: 3.3,
                     },
                 ],
@@ -152,12 +152,12 @@ describe("computeSamples", () => {
             {
                 submetrics: [
                     {
-                        [ Parameter.A ]: 3,
-                        [ Parameter.K ]: -2,
+                        [ Parameter.A_AS_COEFFICIENT ]: 3,
+                        [ Parameter.K_AS_COEFFICIENT ]: -2,
                     },
                     {
                         [ Parameter.COUNT ]: true,
-                        [ Parameter.A ]: 0.5,
+                        [ Parameter.A_AS_COEFFICIENT ]: 0.5,
                         [ Parameter.W ]: 3.3,
                     },
                 ],
@@ -166,12 +166,12 @@ describe("computeSamples", () => {
             {
                 submetrics: [
                     {
-                        [ Parameter.A ]: 3,
-                        [ Parameter.K ]: -2,
+                        [ Parameter.A_AS_COEFFICIENT ]: 3,
+                        [ Parameter.K_AS_COEFFICIENT ]: -2,
                     },
                     {
                         [ Parameter.COUNT ]: true,
-                        [ Parameter.A ]: 2.5,
+                        [ Parameter.A_AS_COEFFICIENT ]: 2.5,
                         [ Parameter.W ]: 3.3,
                     },
                 ],
@@ -180,12 +180,12 @@ describe("computeSamples", () => {
             {
                 submetrics: [
                     {
-                        [ Parameter.A ]: 3,
-                        [ Parameter.K ]: 2,
+                        [ Parameter.A_AS_COEFFICIENT ]: 3,
+                        [ Parameter.K_AS_COEFFICIENT ]: 2,
                     },
                     {
                         [ Parameter.COUNT ]: true,
-                        [ Parameter.A ]: 0.5,
+                        [ Parameter.A_AS_COEFFICIENT ]: 0.5,
                         [ Parameter.W ]: 3.3,
                     },
                 ],
@@ -194,12 +194,12 @@ describe("computeSamples", () => {
             {
                 submetrics: [
                     {
-                        [ Parameter.A ]: 3,
-                        [ Parameter.K ]: 2,
+                        [ Parameter.A_AS_COEFFICIENT ]: 3,
+                        [ Parameter.K_AS_COEFFICIENT ]: 2,
                     },
                     {
                         [ Parameter.COUNT ]: true,
-                        [ Parameter.A ]: 2.5,
+                        [ Parameter.A_AS_COEFFICIENT ]: 2.5,
                         [ Parameter.W ]: 3.3,
                     },
                 ],
@@ -214,21 +214,21 @@ describe("computeSamples", () => {
             {},
             {
                 [ Parameter.COUNT ]: true,
-                [ Parameter.A ]: {
+                [ Parameter.A_AS_COEFFICIENT ]: {
                     center: 1.5 as ParameterValue,
                     span: 2 as Span<ParameterValue>,
                     resolution: 2 as Resolution<ParameterValue>,
                 },
-                [ Parameter.K ]: 0.5 as ParameterValue,
+                [ Parameter.K_AS_COEFFICIENT ]: 0.5 as ParameterValue,
             },
             {
                 [ Parameter.COUNT ]: true,
-                [ Parameter.A ]: {
+                [ Parameter.A_AS_COEFFICIENT ]: {
                     center: 1 as ParameterValue,
                     span: 2 as Span<ParameterValue>,
                     resolution: 2 as Resolution<ParameterValue>,
                 },
-                [ Parameter.K ]: 0 as ParameterValue,
+                [ Parameter.K_AS_COEFFICIENT ]: 0 as ParameterValue,
             },
         ] as Scope
         const dynamicParameters = computeDynamicParameters(scope)
@@ -240,13 +240,13 @@ describe("computeSamples", () => {
                 submetrics: [
                     {
                         [ Parameter.COUNT ]: true,
-                        [ Parameter.A ]: 0.5,
-                        [ Parameter.K ]: 0.5,
+                        [ Parameter.A_AS_COEFFICIENT ]: 0.5,
+                        [ Parameter.K_AS_COEFFICIENT ]: 0.5,
                     },
                     {
                         [ Parameter.COUNT ]: true,
-                        [ Parameter.A ]: 0,
-                        [ Parameter.K ]: 0,
+                        [ Parameter.A_AS_COEFFICIENT ]: 0,
+                        [ Parameter.K_AS_COEFFICIENT ]: 0,
                     },
                 ],
                 samplePoint: [0, 0],
@@ -255,13 +255,13 @@ describe("computeSamples", () => {
                 submetrics: [
                     {
                         [ Parameter.COUNT ]: true,
-                        [ Parameter.A ]: 0.5,
-                        [ Parameter.K ]: 0.5,
+                        [ Parameter.A_AS_COEFFICIENT ]: 0.5,
+                        [ Parameter.K_AS_COEFFICIENT ]: 0.5,
                     },
                     {
                         [ Parameter.COUNT ]: true,
-                        [ Parameter.A ]: 2,
-                        [ Parameter.K ]: 0,
+                        [ Parameter.A_AS_COEFFICIENT ]: 2,
+                        [ Parameter.K_AS_COEFFICIENT ]: 0,
                     },
                 ],
                 samplePoint: [0, 1],
@@ -270,13 +270,13 @@ describe("computeSamples", () => {
                 submetrics: [
                     {
                         [ Parameter.COUNT ]: true,
-                        [ Parameter.A ]: 2.5,
-                        [ Parameter.K ]: 0.5,
+                        [ Parameter.A_AS_COEFFICIENT ]: 2.5,
+                        [ Parameter.K_AS_COEFFICIENT ]: 0.5,
                     },
                     {
                         [ Parameter.COUNT ]: true,
-                        [ Parameter.A ]: 0,
-                        [ Parameter.K ]: 0,
+                        [ Parameter.A_AS_COEFFICIENT ]: 0,
+                        [ Parameter.K_AS_COEFFICIENT ]: 0,
                     },
                 ],
                 samplePoint: [1, 0],
@@ -285,13 +285,13 @@ describe("computeSamples", () => {
                 submetrics: [
                     {
                         [ Parameter.COUNT ]: true,
-                        [ Parameter.A ]: 2.5,
-                        [ Parameter.K ]: 0.5,
+                        [ Parameter.A_AS_COEFFICIENT ]: 2.5,
+                        [ Parameter.K_AS_COEFFICIENT ]: 0.5,
                     },
                     {
                         [ Parameter.COUNT ]: true,
-                        [ Parameter.A ]: 2,
-                        [ Parameter.K ]: 0,
+                        [ Parameter.A_AS_COEFFICIENT ]: 2,
+                        [ Parameter.K_AS_COEFFICIENT ]: 0,
                     },
                 ],
                 samplePoint: [1, 1],

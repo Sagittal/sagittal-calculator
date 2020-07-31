@@ -11,7 +11,7 @@ describe("search scopes", () => {
         const scopeOne = [
             {
                 [ Parameter.SUM ]: true,
-                [ Parameter.A ]: {
+                [ Parameter.A_AS_COEFFICIENT ]: {
                     center: 2 as ParameterValue,
                     resolution: 2 as Resolution<ParameterValue>,
                     span: 0.1 as Span<ParameterValue>,

@@ -1,4 +1,4 @@
-import { computeLog, computePrimeCount, Monzo, PRIMES } from "../../../../general"
+import { computeLog, computePrimeCount, isUndefined, Monzo, PRIMES } from "../../../../general"
 import { ParameterValue, Submetric } from "../../types"
 import { Antivotes } from "../types"
 
@@ -9,9 +9,9 @@ import { Antivotes } from "../types"
 
 const computeSubmetricAntivotes = (fiveRoughNumberMonzo: Monzo, submetric = {}): Antivotes => {
     const {
-        a = 1 as ParameterValue,
-        aIsExponent = false,
-        aIsBase = false,
+        aAsCoefficient = 1 as ParameterValue,
+        aAsExponent = undefined,
+        aAsBase = undefined,
         w = 0 as ParameterValue,
         x = 0 as ParameterValue,
         y = 1 as ParameterValue,
@@ -46,16 +46,16 @@ const computeSubmetricAntivotes = (fiveRoughNumberMonzo: Monzo, submetric = {}):
                     computePrimeCount(prime) :
                     prime
             adjustedPrime = adjustedPrime + x
-            adjustedPrime = aIsBase ?
+            adjustedPrime = !isUndefined(aAsBase) ?
                 adjustedPrime >= 1 ?
-                    computeLog(adjustedPrime, a) :
+                    computeLog(adjustedPrime, aAsBase) :
                     1 :
-                aIsExponent ?
+                !isUndefined(aAsExponent) ?
                     adjustedPrime >= 0 ?
-                        adjustedPrime ** a :
+                        adjustedPrime ** aAsExponent :
                         0
                     :
-                    adjustedPrime * a
+                    adjustedPrime * aAsCoefficient
             adjustedPrime = adjustedPrime + w
 
             if (primeExponent === 0) {

@@ -1,20 +1,20 @@
-import { computeLog, computeMonzoFromInteger, computeMonzoFromRatio, Ratio } from "../../../../general"
+import { computeLog, computeMonzoFromInteger, computeMonzoFromRatio, isUndefined, Ratio } from "../../../../general"
 import { ParameterValue, Submetric } from "../../types"
 import { Antivotes } from "../types"
 import { computeSubmetricAntivotes } from "./submetricAntivotes"
 
 const computeRatioSubmetricAntivotes = (fiveRoughRatio: Ratio, submetric: Submetric = {}): Antivotes => {
     const {
-        k = 1 as ParameterValue,
-        j = 1 as ParameterValue,
         useNuminator = false,
-        jIsBase = false,
-        jIsExponent = false,
-        kIsBase = false,
-        kIsExponent = false,
+        kAsCoefficient = 1 as ParameterValue,
+        jAsCoefficient = 1 as ParameterValue,
+        jAsBase = undefined,
+        jAsExponent = undefined,
+        kAsBase = undefined,
+        kAsExponent = undefined,
     }: Submetric = submetric
 
-    if (k === j) {
+    if (kAsCoefficient === jAsCoefficient && isUndefined(jAsBase) && isUndefined(jAsExponent) && isUndefined(kAsBase) && isUndefined(kAsExponent)) {
         const fiveRoughNumberMonzo = computeMonzoFromRatio(fiveRoughRatio)
 
         return computeSubmetricAntivotes(fiveRoughNumberMonzo, submetric)
@@ -38,20 +38,20 @@ const computeRatioSubmetricAntivotes = (fiveRoughRatio: Ratio, submetric: Submet
             numeratorPrimeContentAntivotes :
         denominatorPrimeContentAntivotes
 
-    const weightedOutputNumerator = jIsBase ?
-        computeLog(outputNumerator, j) :
-        jIsExponent ?
-            outputNumerator ** j :
-            outputNumerator * j
+    const weightedOutputNumerator = !isUndefined(jAsBase) ?
+        computeLog(outputNumerator, jAsBase) :
+        !isUndefined(jAsExponent) ?
+            outputNumerator ** jAsExponent :
+            outputNumerator * jAsCoefficient
 
-    const weightedOutputDenominator = kIsBase ?
-        computeLog(outputDenominator, k) :
-        kIsExponent ?
-            outputDenominator ** k :
-            outputDenominator * k
+    const weightedOutputDenominator = !isUndefined(kAsBase) ?
+        computeLog(outputDenominator, kAsBase) :
+        !isUndefined(kAsExponent) ?
+            outputDenominator ** kAsExponent :
+            outputDenominator * kAsCoefficient
 
     if (isNaN(weightedOutputNumerator) || isNaN(weightedOutputDenominator)) {
-        throw new Error(`You got NaN! in ratioSubmetricAntivotes ${fiveRoughRatio} ${JSON.stringify(submetric, null, 4)} ${weightedOutputNumerator} ${weightedOutputDenominator} ${outputDenominator} ${k}`)
+        throw new Error(`You got NaN! in ratioSubmetricAntivotes ${fiveRoughRatio} ${JSON.stringify(submetric, null, 4)} ${weightedOutputNumerator} ${weightedOutputDenominator} ${outputDenominator}`)
     }
 
     return weightedOutputNumerator + weightedOutputDenominator as Antivotes

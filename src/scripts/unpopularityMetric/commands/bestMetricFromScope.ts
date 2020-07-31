@@ -37,17 +37,16 @@ const scope = [
     {},
     {
         [ Parameter.SUM ]: true,
-        [ Parameter.K ]: {
+        [ Parameter.K_AS_COEFFICIENT ]: {
             center: 1,
             span: 0.02,
             resolution: computeResolution(0.02 as Span<ParameterValue>, { maximumUnit }),
         },
-        [ Parameter.A ]: {
+        [ Parameter.A_AS_BASE ]: {
             center: 2.00001,
             span: 0.02,
             resolution: computeResolution(0.02 as Span<ParameterValue>, { maximumUnit }),
         },
-        [ Parameter.A_IS_BASE ]: true,
         [ Parameter.Y ]: {
             center: 2,
             span: 0.04,

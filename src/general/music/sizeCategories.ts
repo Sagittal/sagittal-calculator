@@ -49,43 +49,43 @@ const SIZE_CATEGORIES = [
     },
     {
         name: "schisma-plus-Apotome",
-        abbreviation: "s+A",
+        abbreviation: "s+A_AS_COEFFICIENT",
     },
     {
         name: "kleisma-plus-Apotome",
-        abbreviation: "k+A",
+        abbreviation: "k+A_AS_COEFFICIENT",
     },
     {
         name: "Comma-plus-Apotome",
-        abbreviation: "C+A",
+        abbreviation: "C+A_AS_COEFFICIENT",
     },
     {
         name: "Small-Diesis-plus-Apotome",
-        abbreviation: "S+A",
+        abbreviation: "S+A_AS_COEFFICIENT",
     },
     {
         name: "Medium-Diesis-plus-Apotome",
-        abbreviation: "M+A",
+        abbreviation: "M+A_AS_COEFFICIENT",
     },
     {
         name: "Large-Diesis-plus-Apotome",
-        abbreviation: "L+A",
+        abbreviation: "L+A_AS_COEFFICIENT",
     },
     {
         name: "Small-Semitone-plus-Apotome",
-        abbreviation: "SS+A",
+        abbreviation: "SS+A_AS_COEFFICIENT",
     },
     {
         name: "Medium-Semitone-plus-Apotome",
-        abbreviation: "MS+A",
+        abbreviation: "MS+A_AS_COEFFICIENT",
     },
     {
         name: "Large-Semitone-plus-Apotome",
-        abbreviation: "LS+A",
+        abbreviation: "LS+A_AS_COEFFICIENT",
     },
     {
         name: "double-Apotome",
-        abbreviation: "A+A",
+        abbreviation: "A_AS_COEFFICIENT+A_AS_COEFFICIENT",
     },
 ]
 

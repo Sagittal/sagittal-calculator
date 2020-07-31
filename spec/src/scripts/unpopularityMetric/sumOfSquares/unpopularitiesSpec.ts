@@ -18,12 +18,13 @@ describe("computeUnpopularities", () => {
         ]
         const submetrics: Combination<Submetric> = [
             {
-                [ Parameter.WEIGHT ]: 0 as ParameterValue,
+                [ Parameter.SUM ]: true,
+                [ Parameter.WEIGHT_AS_COEFFICIENT ]: 0 as ParameterValue,
             },
             {
                 [ Parameter.COUNT ]: true,
                 [ Parameter.WITHOUT_REPETITION ]: true,
-                [ Parameter.WEIGHT ]: 1 as ParameterValue,
+                [ Parameter.WEIGHT_AS_COEFFICIENT ]: 1 as ParameterValue,
             },
         ] as Combination<Submetric>
 

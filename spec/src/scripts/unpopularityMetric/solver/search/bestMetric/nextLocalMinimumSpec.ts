@@ -17,21 +17,21 @@ describe("searchNextLocalMinimum", () => {
         sumOfSquares: 0.006454 as Sum<"SquaredWeightedRankDifferences">,
         samplePoint: [3, 7, 1] as unknown as SamplePoint,
         submetrics: [{
-            [ Parameter.K ]: 0.4,
-            [ Parameter.A ]: 2.1,
+            [ Parameter.K_AS_COEFFICIENT ]: 0.4,
+            [ Parameter.A_AS_COEFFICIENT ]: 2.1,
             [ Parameter.W ]: 1.3,
         }] as unknown as Combination<Submetric>,
     }
     const dynamicParameters: DynamicParameter[] = [
         {
             submetricIndex: 0 as Index<Submetric>,
-            parameter: Parameter.K,
+            parameter: Parameter.K_AS_COEFFICIENT,
             values: [0.3, 0.4, 0.5] as ParameterValue[],
             unit: 0.1 as Unit<ParameterValue>,
         },
         {
             submetricIndex: 0 as Index<Submetric>,
-            parameter: Parameter.A,
+            parameter: Parameter.A_AS_COEFFICIENT,
             values: [1.1, 2.1, 3.1] as ParameterValue[],
             unit: 1 as Unit<ParameterValue>,
         },
@@ -51,8 +51,8 @@ describe("searchNextLocalMinimum", () => {
         sumOfSquares: 0.0074849 as Sum<"SquaredWeightedRankDifferences">,
         samplePoint: [8, 8, 8] as unknown as SamplePoint,
         submetrics: [{
-            [ Parameter.K ]: 0.43,
-            [ Parameter.A ]: 2.14,
+            [ Parameter.K_AS_COEFFICIENT ]: 0.43,
+            [ Parameter.A_AS_COEFFICIENT ]: 2.14,
             [ Parameter.W ]: 1.31,
         }] as unknown as Combination<Submetric>,
     }
@@ -110,8 +110,8 @@ describe("searchNextLocalMinimum", () => {
         expect(bestMetric.searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect).toHaveBeenCalledWith(
             [
                 {
-                    [ Parameter.K ]: { center: undefined, span: 0.06666666666666667, resolution: 2 },
-                    [ Parameter.A ]: { center: undefined, span: 0.6666666666666666, resolution: 7 },
+                    [ Parameter.K_AS_COEFFICIENT ]: { center: undefined, span: 0.06666666666666667, resolution: 2 },
+                    [ Parameter.A_AS_COEFFICIENT ]: { center: undefined, span: 0.6666666666666666, resolution: 7 },
                     [ Parameter.W ]: { center: 1.4, span: 0.06666666666666667, resolution: 2 },
                 },
             ] as unknown as Scope,
@@ -131,8 +131,8 @@ describe("searchNextLocalMinimum", () => {
             sumOfSquares: 0.006454 as Sum<"SquaredWeightedRankDifferences">,
             samplePoint: [3, 7, 1] as unknown as SamplePoint,
             submetrics: [{
-                [ Parameter.K ]: 0.4,
-                [ Parameter.A ]: 2.1,
+                [ Parameter.K_AS_COEFFICIENT ]: 0.4,
+                [ Parameter.A_AS_COEFFICIENT ]: 2.1,
                 [ Parameter.W ]: 1.3,
             }] as unknown as Combination<Submetric>,
         }

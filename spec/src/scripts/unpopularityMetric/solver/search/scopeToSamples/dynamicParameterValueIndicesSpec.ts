@@ -27,7 +27,7 @@ describe("computeDynamicParameterValueIndices", () => {
             // pick from me for the second index of the returned array
             {
                 submetricIndex: 1 as Index<Submetric>,
-                parameter: Parameter.A,
+                parameter: Parameter.A_AS_COEFFICIENT,
                 values: [0.6, 0.63, 0.66, 0.69 /*pick my index as the value*/, 0.72] as ParameterValue[],
                 unit: 0 as Unit<ParameterValue>,
             },
@@ -45,7 +45,7 @@ describe("computeDynamicParameterValueIndices", () => {
                      dynamicParameterValueIndices.push(dynamicParameterValueIndex)
                  }
              */
-            [ Parameter.A ]: 0.69 as ParameterValue,
+            [ Parameter.A_AS_COEFFICIENT ]: 0.69 as ParameterValue,
             [ Parameter.Y ]: 1.1 as ParameterValue,
         }
         const submetricIndex = 1 as Index<Submetric>

@@ -11,7 +11,7 @@ import { Parameter } from "../../../../../../src/scripts/unpopularityMetric/type
 describe("searchPopulatedScopesForChunkCount", () => {
     const searchingChunkCount = 8 as Count<Chunk>
     const scope = [{ [ Parameter.MAX ]: true }] as Scope
-    const otherScope = [{ [ Parameter.A ]: 2 }] as Scope
+    const otherScope = [{ [ Parameter.A_AS_COEFFICIENT ]: 2 }] as Scope
 
     beforeEach(() => {
         status.searchingChunkCount = searchingChunkCount

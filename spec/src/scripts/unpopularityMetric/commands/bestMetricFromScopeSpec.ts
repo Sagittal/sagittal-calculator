@@ -8,7 +8,7 @@ describe("best metric from scope", () => {
 
         expect(result).toEqual([
             ``,
-            `best metric: {"sumOfSquares":0.04896782502024761,"submetrics":[{"sum":true,"k":0.99,"a":2.01001,"aIsBase":true,"y":1.98,"w":-2.01501}]}`,
+            `best metric: {"sumOfSquares":0.04896782502024761,"submetrics":[{"sum":true,"kAsCoefficient":0.99,"aAsBase":2.01001,"y":1.98,"w":-2.01501}]}`,
         ])
     })
 })

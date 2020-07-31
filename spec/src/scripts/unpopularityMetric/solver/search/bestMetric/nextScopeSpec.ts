@@ -11,7 +11,7 @@ describe("computeNextScope", () => {
         const dynamicParameters: DynamicParameter[] = [
             {
                 submetricIndex: 0 as Index<Submetric>,
-                parameter: Parameter.J,
+                parameter: Parameter.J_AS_COEFFICIENT,
                 values: [0, 0.1, 0.2, 0.3, 0.4, 0.5] as ParameterValue[],
                 unit: 0.1 as Unit<ParameterValue>,
             },
@@ -30,7 +30,7 @@ describe("computeNextScope", () => {
         ]
         const scope: Scope = [
             {
-                [ Parameter.J ]: {
+                [ Parameter.J_AS_COEFFICIENT ]: {
                     center: 0.1 as ParameterValue,
                     span: 0.05 as Span<ParameterValue>,
                     resolution: 5 as Resolution<ParameterValue>,
@@ -40,7 +40,7 @@ describe("computeNextScope", () => {
                     span: 0.25 as Span<ParameterValue>,
                     resolution: 5 as Resolution<ParameterValue>,
                 },
-                [ Parameter.A ]: 2 as ParameterValue,
+                [ Parameter.A_AS_COEFFICIENT ]: 2 as ParameterValue,
             },
             {
                 [ Parameter.Y ]: {
@@ -56,7 +56,7 @@ describe("computeNextScope", () => {
 
         expect(result).toEqual([
             {
-                [ Parameter.J ]: {
+                [ Parameter.J_AS_COEFFICIENT ]: {
                     center: 0.1 as ParameterValue,
                     span: 0.06666666666666667 as Span<ParameterValue>,
                     resolution: 2 as Resolution<ParameterValue>,
@@ -66,7 +66,7 @@ describe("computeNextScope", () => {
                     span: 0.3333333333333333 as Span<ParameterValue>,
                     resolution: 4 as Resolution<ParameterValue>,
                 },
-                [ Parameter.A ]: 2 as ParameterValue,
+                [ Parameter.A_AS_COEFFICIENT ]: 2 as ParameterValue,
             },
             {
                 [ Parameter.Y ]: {

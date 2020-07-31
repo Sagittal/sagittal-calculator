@@ -38,7 +38,7 @@ describe("computeSubmetricAntivotes", () => {
 
         it("when a is provided, multiplies the prime by it", () => {
             const a = 0.56 as ParameterValue
-            submetric[ Parameter.A ] = a
+            submetric[ Parameter.A_AS_COEFFICIENT ] = a
 
             const result = computeSubmetricAntivotes(fiveRoughNumberMonzo, submetric)
 
@@ -51,8 +51,7 @@ describe("computeSubmetricAntivotes", () => {
 
         it("when a is used as an exponent (not a coefficient)", () => {
             const a = 0.56 as ParameterValue
-            submetric[ Parameter.A ] = a
-            submetric[ Parameter.A_IS_EXPONENT ] = true
+            submetric[ Parameter.A_AS_EXPONENT ] = a
 
             const result = computeSubmetricAntivotes(fiveRoughNumberMonzo, submetric)
 
@@ -65,8 +64,7 @@ describe("computeSubmetricAntivotes", () => {
 
         it("when a is used as a base (not a coefficient)", () => {
             const a = 0.56 as ParameterValue
-            submetric[ Parameter.A ] = a
-            submetric[ Parameter.A_IS_BASE ] = true
+            submetric[ Parameter.A_AS_BASE ] = a
 
             const result = computeSubmetricAntivotes(fiveRoughNumberMonzo, submetric)
 
@@ -80,7 +78,7 @@ describe("computeSubmetricAntivotes", () => {
         it("when w is provided, adds a constant to each prime after applying the coefficient, exponent, or base", () => {
             const a = 0.56 as ParameterValue
             const w = 0.34 as ParameterValue
-            submetric[ Parameter.A ] = a
+            submetric[ Parameter.A_AS_COEFFICIENT ] = a
             submetric[ Parameter.W ] = w
 
             const result = computeSubmetricAntivotes(fiveRoughNumberMonzo, submetric)
@@ -95,7 +93,7 @@ describe("computeSubmetricAntivotes", () => {
         it("when x is provided, adds a constant to each prime before applying the coefficient, exponent, or base", () => {
             const a = 0.56 as ParameterValue
             const x = -2.1 as ParameterValue
-            submetric[ Parameter.A ] = a
+            submetric[ Parameter.A_AS_COEFFICIENT ] = a
             submetric[ Parameter.X ] = x
 
             const result = computeSubmetricAntivotes(fiveRoughNumberMonzo, submetric)

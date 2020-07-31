@@ -12,7 +12,7 @@ describe("computeAntivotes", () => {
         const submetrics: Combination<Submetric> = [
             {
                 [ Parameter.SUM ]: true,
-                [ Parameter.K ]: 1 as ParameterValue,
+                [ Parameter.K_AS_COEFFICIENT ]: 1 as ParameterValue,
             },
         ] as Combination<Submetric>
 
@@ -28,7 +28,7 @@ describe("computeAntivotes", () => {
         const submetrics: Combination<Submetric> = [
             {
                 [ Parameter.SUM ]: true,
-                [ Parameter.K ]: 0.9 as ParameterValue,
+                [ Parameter.K_AS_COEFFICIENT ]: 0.9 as ParameterValue,
             },
         ] as Combination<Submetric>
 
@@ -43,11 +43,11 @@ describe("computeAntivotes", () => {
         const submetrics = [
             {
                 [ Parameter.SUM ]: true,
-                [ Parameter.WEIGHT ]: 0.5 as ParameterValue,
+                [ Parameter.WEIGHT_AS_COEFFICIENT ]: 0.5 as ParameterValue,
             },
             {
                 [ Parameter.SUM ]: true,
-                [ Parameter.WEIGHT ]: 0.3 as ParameterValue,
+                [ Parameter.WEIGHT_AS_COEFFICIENT ]: 0.3 as ParameterValue,
             },
         ] as Combination<Submetric>
 
@@ -63,10 +63,9 @@ describe("computeAntivotes", () => {
         const submetrics = [
             {
                 [ Parameter.SUM ]: true,
-                [ Parameter.WEIGHT ]: 1 as ParameterValue,
-                [ Parameter.K ]: 0 as ParameterValue,
-                [ Parameter.A ]: 2 as ParameterValue,
-                [ Parameter.A_IS_BASE ]: true,
+                [ Parameter.WEIGHT_AS_COEFFICIENT ]: 1 as ParameterValue,
+                [ Parameter.K_AS_COEFFICIENT ]: 0 as ParameterValue,
+                [ Parameter.A_AS_BASE ]: 2 as ParameterValue,
                 [ Parameter.W ]: -6 as ParameterValue,
                 [ Parameter.X ]: -2 as ParameterValue,
                 [ Parameter.Y ]: 0.14285714285714285 as ParameterValue,

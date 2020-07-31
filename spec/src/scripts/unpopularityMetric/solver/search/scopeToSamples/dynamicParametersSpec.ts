@@ -21,7 +21,7 @@ describe("computeDynamicParameters", () => {
                     span: 0.2 as Span<ParameterValue>,
                     resolution: 2 as Resolution<ParameterValue>,
                 },
-                [ Parameter.A ]: {
+                [ Parameter.A_AS_COEFFICIENT ]: {
                     center: 0.65 as ParameterValue,
                     span: 0.1 as Span<ParameterValue>,
                     resolution: 2 as Resolution<ParameterValue>,
@@ -46,7 +46,7 @@ describe("computeDynamicParameters", () => {
             },
             {
                 submetricIndex: 1 as Index<Submetric>,
-                parameter: Parameter.A,
+                parameter: Parameter.A_AS_COEFFICIENT,
                 values: [0.6, 0.7] as ParameterValue[],
                 unit: 0.1 as Unit<ParameterValue>,
             },

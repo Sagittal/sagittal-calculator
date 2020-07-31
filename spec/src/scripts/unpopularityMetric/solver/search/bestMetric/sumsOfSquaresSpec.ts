@@ -16,7 +16,7 @@ describe("computeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffe
             samplePoint: [0, 0] as SamplePoint,
             submetrics: [{
                 [ Parameter.SUM ]: true,
-                [ Parameter.A ]: 1 as ParameterValue,
+                [ Parameter.A_AS_COEFFICIENT ]: 1 as ParameterValue,
                 [ Parameter.W ]: 0.5 as ParameterValue,
             }] as Combination<Submetric>,
         },
@@ -24,7 +24,7 @@ describe("computeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffe
             samplePoint: [0, 1] as SamplePoint,
             submetrics: [{
                 [ Parameter.SUM ]: true,
-                [ Parameter.A ]: 2 as ParameterValue,
+                [ Parameter.A_AS_COEFFICIENT ]: 2 as ParameterValue,
                 [ Parameter.W ]: 0.5 as ParameterValue,
             }] as Combination<Submetric>,
         },
@@ -32,7 +32,7 @@ describe("computeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffe
             samplePoint: [1, 0] as SamplePoint,
             submetrics: [{
                 [ Parameter.SUM ]: true,
-                [ Parameter.A ]: 1 as ParameterValue,
+                [ Parameter.A_AS_COEFFICIENT ]: 1 as ParameterValue,
                 [ Parameter.W ]: 1.5 as ParameterValue,
             }] as Combination<Submetric>,
         },
@@ -40,7 +40,7 @@ describe("computeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffe
             samplePoint: [1, 1] as SamplePoint,
             submetrics: [{
                 [ Parameter.SUM ]: true,
-                [ Parameter.A ]: 2 as ParameterValue,
+                [ Parameter.A_AS_COEFFICIENT ]: 2 as ParameterValue,
                 [ Parameter.W ]: 1.5 as ParameterValue,
             }] as Combination<Submetric>,
         },
@@ -70,7 +70,7 @@ describe("computeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffe
             sumOfSquares: 0.013983040590027893 as Sum<"SquaredWeightedRankDifferences">,
             submetrics: [{
                 [ Parameter.SUM ]: true,
-                [ Parameter.A ]: 2 as ParameterValue,
+                [ Parameter.A_AS_COEFFICIENT ]: 2 as ParameterValue,
                 [ Parameter.W ]: 1.5 as ParameterValue,
             }] as Combination<Submetric>,
         })
@@ -88,7 +88,7 @@ describe("computeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffe
             sumOfSquares: 0.013983040590027893 as Sum<"SquaredWeightedRankDifferences">,
             submetrics: [{
                 [ Parameter.SUM ]: true,
-                [ Parameter.A ]: 2 as ParameterValue,
+                [ Parameter.A_AS_COEFFICIENT ]: 2 as ParameterValue,
                 [ Parameter.W ]: 1.5 as ParameterValue,
             }] as Combination<Submetric>,
         })
@@ -117,7 +117,7 @@ describe("computeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffe
             sumOfSquares: 0.013983040590027893 as Sum<"SquaredWeightedRankDifferences">,
             submetrics: [{
                 [ Parameter.SUM ]: true,
-                [ Parameter.A ]: 2 as ParameterValue,
+                [ Parameter.A_AS_COEFFICIENT ]: 2 as ParameterValue,
                 [ Parameter.W ]: 1.5 as ParameterValue,
             }] as Combination<Submetric>,
         })

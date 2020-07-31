@@ -13,7 +13,7 @@ describe("searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect", () =
             {},
             {
                 [ Parameter.SUM ]: true,
-                [ Parameter.A ]: {
+                [ Parameter.A_AS_COEFFICIENT ]: {
                     center: 2 as ParameterValue,
                     span: 2 as Span<ParameterValue>,
                     resolution: 3 as Resolution<ParameterValue>,
@@ -26,7 +26,7 @@ describe("searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect", () =
                     span: 2 as Span<ParameterValue>,
                     resolution: 2 as Resolution<ParameterValue>,
                 },
-                [ Parameter.A ]: 3.3 as ParameterValue,
+                [ Parameter.A_AS_COEFFICIENT ]: 3.3 as ParameterValue,
             },
         ] as Scope
         const depth = 8
@@ -58,12 +58,12 @@ describe("searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect", () =
                 submetrics: [
                     {
                         [ Parameter.SUM ]: true,
-                        [ Parameter.A ]: 2 as ParameterValue,
+                        [ Parameter.A_AS_COEFFICIENT ]: 2 as ParameterValue,
                     },
                     {
                         [ Parameter.COUNT ]: true,
                         [ Parameter.W ]: 0.5 as ParameterValue,
-                        [ Parameter.A ]: 3.3 as ParameterValue,
+                        [ Parameter.A_AS_COEFFICIENT ]: 3.3 as ParameterValue,
                     },
                 ] as Combination<Submetric>,
             },
@@ -73,12 +73,12 @@ describe("searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect", () =
                 submetrics: [
                     {
                         [ Parameter.SUM ]: true,
-                        [ Parameter.A ]: 3 as ParameterValue,
+                        [ Parameter.A_AS_COEFFICIENT ]: 3 as ParameterValue,
                     },
                     {
                         [ Parameter.COUNT ]: true,
                         [ Parameter.W ]: 2.5 as ParameterValue,
-                        [ Parameter.A ]: 3.3 as ParameterValue,
+                        [ Parameter.A_AS_COEFFICIENT ]: 3.3 as ParameterValue,
                     },
                 ] as Combination<Submetric>,
             },
@@ -88,7 +88,7 @@ describe("searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect", () =
         const expectedDynamicParameters = [
             {
                 submetricIndex: 1 as Index<Submetric>,
-                parameter: Parameter.A,
+                parameter: Parameter.A_AS_COEFFICIENT,
                 values: [1, 2, 3] as ParameterValue[],
                 unit: 1 as Unit<ParameterValue>,
             },

@@ -37,11 +37,11 @@ describe("populateScopesForChunkCountPhase", () => {
     ] as unknown as Combination<SubmetricChunk>
     const parameterChunkCombination = [
         {
-            [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
+            [ Parameter.A_AS_COEFFICIENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_COEFFICIENT ],
         },
         {
-            [ Parameter.A ]: INITIAL_PARAMETER_SCOPES[ Parameter.A ],
-            [ Parameter.A_IS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_IS_BASE ],
+            [ Parameter.A_AS_COEFFICIENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_COEFFICIENT ],
+            [ Parameter.A_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_BASE ],
         },
     ] as unknown as Combination<ParameterChunk>
     const submetricChunkCombinations = [submetricChunkCombinationOne, submetricChunkCombinationTwo] as unknown as Combinations<SubmetricChunk>
