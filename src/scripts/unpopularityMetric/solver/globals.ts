@@ -16,7 +16,7 @@ const status: Status = {
     searchingChunkCount: 0 as Count<Chunk>,
 }
 
-const bestMetricsForChunkCount: Metric[] = []
+const bestMetricsForChunkCount: Array<Record<string, Metric>> = []
 
 const memoizedSubmetricChunkCombinations: Array<Combinations<SubmetricChunk>> = []
 const memoizedParameterChunkCombinations: Array<Combinations<ParameterChunk>> = []

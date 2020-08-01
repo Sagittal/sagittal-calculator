@@ -1,4 +1,16 @@
-import { Parameter } from "./types"
+import { Parameter, Submetric } from "./types"
+import { Metric } from "./solver/search/bestMetric"
+import { Combination, Sum } from "../../general"
+
+// Metric to beat: SoPF>3, or sopfr
+const sopfgtt: Metric = {
+    sumOfSquares: 0.014206086754420309 as Sum<"SquaredWeightedRankDifferences">,
+    submetrics: [
+        {
+            [ Parameter.SUM ]: true,
+        },
+    ] as Combination<Submetric>,
+}
 
 //
 
@@ -687,6 +699,8 @@ const laj = {
 }
 
 export {
+    sopfgtt,
+
     withPrimeLimit,
 
     lowestEver,

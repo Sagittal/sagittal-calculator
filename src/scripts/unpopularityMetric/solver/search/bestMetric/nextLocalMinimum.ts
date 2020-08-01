@@ -18,6 +18,7 @@ const searchNextLocalMinimum = (nextLocalMinimum: LocalMinimum, options: SearchL
         chunkCount,
         nextLocalMinima,
         topLevelScopeHasBeenKilled,
+        onlyWinners,
     } = options
 
     if (!recurse || deepEquals(localMinimum, nextLocalMinimum)) {
@@ -43,6 +44,7 @@ const searchNextLocalMinimum = (nextLocalMinimum: LocalMinimum, options: SearchL
                 localMinimum: nextLocalMinimum,
                 chunkCount,
                 recurse,
+                onlyWinners,
             })
         } catch (e) {
             if (debug.all || debug.errors) console.log(`Error when searching: ${e.message}`.red)

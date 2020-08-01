@@ -40,14 +40,14 @@ describe("searchPopulatedScopesForChunkCount", () => {
         expect(searchedsForChunkCount[ searchingChunkCount ]).toBe(156)
     })
 
-    it("searches the scope it pops off the stack, and does not recurse, and enables timeout", async () => {
+    it("searches the scope it pops off the stack, and does not recurse, and enables timeout, and only takes winners", async () => {
         spyOn(bestMetric, "searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect").and.callThrough()
 
         await searchPopulatedScopesForChunkCount()
 
         expect(bestMetric.searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect).toHaveBeenCalledWith(
             scope,
-            { chunkCount: searchingChunkCount, recurse: false, timeoutEnabled: true },
+            { chunkCount: searchingChunkCount, recurse: false, timeoutEnabled: true, onlyWinners: true },
         )
     })
 })

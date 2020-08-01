@@ -21,7 +21,8 @@ const searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect = async (s
             recurse = true,
             chunkCount = DUMMY_CHUNK_COUNT_FOR_ONE_OFF_BEST_METRIC_FROM_SCOPE,
             deterministic = false,
-            timeoutEnabled,
+            timeoutEnabled = false,
+            onlyWinners = false,
         }: SearchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffectOptions = options
 
         const topLevelScopeHasBeenKilled = { hasBeenKilled: false }
@@ -61,6 +62,7 @@ const searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect = async (s
         const sumsOfSquares: SumsOfSquares = await computeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffect(samples, {
             chunkCount,
             indentation,
+            onlyWinners,
         })
 
         const nextLocalMinima = computeLocalMinima(samples, sumsOfSquares)
@@ -80,6 +82,7 @@ const searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect = async (s
                 chunkCount,
                 nextLocalMinima,
                 topLevelScopeHasBeenKilled,
+                onlyWinners,
             })
         })
 

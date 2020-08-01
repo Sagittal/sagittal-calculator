@@ -20,6 +20,7 @@ const searchPopulatedScopesForChunkCount = async () => {
         await searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect(scopeForChunkCount, {
             recurse: false,
             timeoutEnabled: true,
+            onlyWinners: true,
             chunkCount: searchingChunkCount,
         })
     } catch (e) {

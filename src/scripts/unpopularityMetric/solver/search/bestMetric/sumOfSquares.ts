@@ -6,8 +6,10 @@ import { Chunk } from "../../types"
 import { Sample } from "../types"
 import { setSumOfSquaresAtSamplePoint } from "./setSumOfSquaresAtSamplePoint"
 import { SumsOfSquares } from "./types"
+import { computeMetricName } from "./metricName"
+import { SUM_OF_SQUARES_TO_BEAT } from "./constants"
 
-const computeSumOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffect = (sample: Sample, chunkCount: Count<Chunk>, indentation: string, sumsOfSquares: SumsOfSquares, index: number): Promise<void> => {
+const computeSumOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffect = (sample: Sample, chunkCount: Count<Chunk>, indentation: string, sumsOfSquares: SumsOfSquares, index: number, onlyWinners: boolean): Promise<void> => {
     return doOnNextEventLoop(() => {
         const { submetrics, samplePoint } = sample
 
@@ -20,8 +22,22 @@ const computeSumOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffect = 
 
         setSumOfSquaresAtSamplePoint(sumOfSquares, sumsOfSquares, samplePoint)
 
-        if (!bestMetricsForChunkCount[ chunkCount ] || (!isUndefined(sumOfSquares) && !isUndefined(bestMetricsForChunkCount[ chunkCount ].sumOfSquares) && sumOfSquares < (bestMetricsForChunkCount[ chunkCount ].sumOfSquares as Sum<"SquaredWeightedRankDifferences">))) {
-            bestMetricsForChunkCount[ chunkCount ] = { sumOfSquares, submetrics }
+        const metricName = computeMetricName(submetrics)
+        if (
+            !isUndefined(sumOfSquares) &&
+            (
+                !onlyWinners ||
+                sumOfSquares <= SUM_OF_SQUARES_TO_BEAT
+            ) &&
+            (
+                isUndefined(bestMetricsForChunkCount[ chunkCount ]) ||
+                isUndefined(bestMetricsForChunkCount[ chunkCount ][ metricName ]) ||
+                isUndefined(bestMetricsForChunkCount[ chunkCount ][ metricName ].sumOfSquares) ||
+                sumOfSquares < (bestMetricsForChunkCount[ chunkCount ][ metricName ].sumOfSquares as Sum<"SquaredWeightedRankDifferences">)
+            )
+        ) {
+            bestMetricsForChunkCount[ chunkCount ] = bestMetricsForChunkCount[ chunkCount ] || {}
+            bestMetricsForChunkCount[ chunkCount ][ metricName ] = { sumOfSquares, submetrics }
             if (sumOfSquares === 0) {
                 computeSumOfSquaresForSubmetrics(submetrics)
                 throw new Error("This sum-of-squares was 0. That's extremely unlikely and probably means there's a bug in the code and that to continue searching now would be a waste of time.")

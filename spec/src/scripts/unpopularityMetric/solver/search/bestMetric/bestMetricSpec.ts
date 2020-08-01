@@ -37,8 +37,9 @@ describe("searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect", () =
             submetrics: [] as unknown as Combination<Submetric>,
         }
         const recurse = false
-        const chunkCount = 5 as Count<Chunk>
         const deterministic = true
+        const onlyWinners = false
+        const chunkCount = 5 as Count<Chunk>
 
         spyOn(nextLocalMinimum, "searchNextLocalMinimum").and.callThrough()
 
@@ -110,6 +111,7 @@ describe("searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect", () =
             chunkCount,
             nextLocalMinima: expectedNextLocalMinima,
             topLevelScopeHasBeenKilled: { hasBeenKilled: false },
+            onlyWinners,
         }
 
         expect(nextLocalMinimum.searchNextLocalMinimum).toHaveBeenCalledWith(

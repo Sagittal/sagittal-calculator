@@ -25,6 +25,7 @@ type SearchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffectOptions = Pa
     recurse: boolean,
     deterministic: boolean,
     timeoutEnabled: boolean,
+    onlyWinners: boolean,
 }>
 
 type SearchLocalMinimumOptions = {
@@ -39,6 +40,7 @@ type SearchLocalMinimumOptions = {
     chunkCount: Count<Chunk>,
     nextLocalMinima: LocalMinimum[],
     topLevelScopeHasBeenKilled: TopLevelScopeHasBeenKilled,
+    onlyWinners: boolean,
 }
 
 type SumsOfSquares = Array<SumsOfSquares | Sum<"SquaredWeightedRankDifferences"> | undefined>
@@ -47,6 +49,7 @@ type ComputeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffectOpt
     chunkCount: Count<Chunk>,
     indentation: string,
     topLevelScopeHasBeenKilled: TopLevelScopeHasBeenKilled,
+    onlyWinners: boolean,
 }>
 
 export {

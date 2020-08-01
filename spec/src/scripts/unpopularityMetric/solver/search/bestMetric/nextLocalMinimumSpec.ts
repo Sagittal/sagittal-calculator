@@ -59,6 +59,7 @@ describe("searchNextLocalMinimum", () => {
     const chunkCount = 3 as Count<Chunk>
     const nextLocalMinima = [{}, {}, {}, {}, {}, {}, {}, {}, {}] as LocalMinimum[]
     const topLevelScopeHasBeenKilled = { hasBeenKilled: false }
+    const onlyWinners = false
 
     beforeEach(() => {
         spyOn(bestMetric, "searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect")
@@ -85,6 +86,7 @@ describe("searchNextLocalMinimum", () => {
             chunkCount,
             nextLocalMinima,
             topLevelScopeHasBeenKilled,
+            onlyWinners,
         })
 
         expect(bestMetric.searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect).not.toHaveBeenCalled()
@@ -105,6 +107,7 @@ describe("searchNextLocalMinimum", () => {
             chunkCount,
             nextLocalMinima,
             topLevelScopeHasBeenKilled,
+            onlyWinners,
         })
 
         expect(bestMetric.searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect).toHaveBeenCalledWith(
@@ -121,6 +124,7 @@ describe("searchNextLocalMinimum", () => {
                 localMinimum: nextLocalMinimum,
                 chunkCount,
                 recurse: true,
+                onlyWinners: false,
             },
         )
     })
@@ -149,6 +153,7 @@ describe("searchNextLocalMinimum", () => {
             chunkCount,
             nextLocalMinima,
             topLevelScopeHasBeenKilled,
+            onlyWinners,
         })
 
         expect(bestMetric.searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect).not.toHaveBeenCalled()

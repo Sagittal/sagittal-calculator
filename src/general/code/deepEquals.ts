@@ -4,7 +4,7 @@ const deepEqualsArray = <T>(firstValue: T[], secondValue: T[]): boolean =>
     secondValue.every((el, index) => deepEquals(el, firstValue[ index ]))
 
 const deepEqualsObject =
-    <T extends { [ index: string ]: unknown }>(firstValue: T, secondValue: T): boolean => {
+    <T extends Record<string, unknown>>(firstValue: T, secondValue: T): boolean => {
         let equal
 
         if (firstValue instanceof Array) {
@@ -29,7 +29,7 @@ const deepEquals = <T>(firstValue: T, secondValue: T) => {
     } else if (firstValue instanceof Array) {
         equal = deepEqualsArray(secondValue as T & unknown[], firstValue as T & unknown[])
     } else if (typeof firstValue === "object") {
-        equal = deepEqualsObject(secondValue as T & { [ index: string ]: unknown }, firstValue as T & { [ index: string ]: unknown })
+        equal = deepEqualsObject(secondValue as T & Record<string, unknown>, firstValue as T & { [ index: string ]: unknown })
     }
 
     return equal

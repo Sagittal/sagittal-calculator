@@ -15,7 +15,7 @@ describe("populateAndSearchScopes", () => {
         status.populatingChunkCount = chunkCount
         status.searchingChunkCount = chunkCount
         status.upperBoundChunkCount = chunkCount
-        bestMetricsForChunkCount[ chunkCount ] = undefined as unknown as Metric
+        bestMetricsForChunkCount[ chunkCount ] = {}
     })
 
     it("populates scopes", async () => {
@@ -37,7 +37,7 @@ describe("populateAndSearchScopes", () => {
     it("it completes searching scopes before resolving", async () => {
         await populateAndSearchScopes()
 
-        expect(bestMetricsForChunkCount[ chunkCount ]).toEqual({
+        expect(bestMetricsForChunkCount[ chunkCount ][ "{sum}" ]).toEqual({
             sumOfSquares: 0.014206086754420309,
             submetrics: [{ sum: true }],
         } as unknown as Metric)

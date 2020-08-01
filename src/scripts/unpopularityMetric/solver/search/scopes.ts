@@ -17,7 +17,7 @@ const searchScopes = async () => {
     const populatingHasMovedOnToTheNextChunkCount = status.populatingChunkCount > searchingChunkCount
     if (populatingHasMovedOnToTheNextChunkCount) {
         if (debug.all || debug.solver) {
-            console.log(`\n\nBEST METRIC FOR CHUNK COUNT ${searchingChunkCount} was ${JSON.stringify(bestMetricsForChunkCount[ searchingChunkCount ])}`.yellow)
+            console.log(`\n\nBEST METRICS FOR CHUNK COUNT ${searchingChunkCount} were ${JSON.stringify(bestMetricsForChunkCount[ searchingChunkCount ], undefined, 4)}`.yellow)
         }
         status.searchingChunkCount = searchingChunkCount + 1 as Count<Chunk>
     }
