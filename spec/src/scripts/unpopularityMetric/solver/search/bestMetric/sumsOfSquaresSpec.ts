@@ -70,7 +70,7 @@ describe("computeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffe
         await computeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffect(samples, { chunkCount })
 
         expect(bestMetricsForChunkCount[ chunkCount ]).toEqual({
-            "{sum,aAsCoefficient,w}": {
+            "{aAsCoefficient,sum,w}": {
                 sumOfSquares: 0.013983040590027893 as Sum<"SquaredWeightedRankDifferences">,
                 submetrics: [{
                     [ Parameter.SUM ]: true,
@@ -83,7 +83,7 @@ describe("computeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffe
 
     it("sets the best metric when it beats it", async () => {
         bestMetricsForChunkCount[ chunkCount ] = {
-            "{sum,aAsCoefficient,w}": {
+            "{aAsCoefficient,sum,w}": {
                 sumOfSquares: 0.01400000000000 as Sum<"SquaredWeightedRankDifferences">,
                 submetrics: [{
                     [ Parameter.SUM ]: true,
@@ -96,7 +96,7 @@ describe("computeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffe
         await computeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffect(samples, { chunkCount })
 
         expect(bestMetricsForChunkCount[ chunkCount ]).toEqual({
-            "{sum,aAsCoefficient,w}": {
+            "{aAsCoefficient,sum,w}": {
                 sumOfSquares: 0.013983040590027893 as Sum<"SquaredWeightedRankDifferences">,
                 submetrics: [{
                     [ Parameter.SUM ]: true,
@@ -109,7 +109,7 @@ describe("computeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffe
 
     it("does not set the best metric when it does not beat it", async () => {
         bestMetricsForChunkCount[ chunkCount ] = {
-            "{sum,aAsCoefficient,w}": {
+            "{aAsCoefficient,sum,w}": {
                 sumOfSquares: 0.01200000000000 as Sum<"SquaredWeightedRankDifferences">,
                 submetrics: [{
                     [ Parameter.SUM ]: true,
@@ -122,7 +122,7 @@ describe("computeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffe
         await computeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffect(samples, { chunkCount })
 
         expect(bestMetricsForChunkCount[ chunkCount ]).toEqual({
-            "{sum,aAsCoefficient,w}": {
+            "{aAsCoefficient,sum,w}": {
                 sumOfSquares: 0.01200000000000 as Sum<"SquaredWeightedRankDifferences">,
                 submetrics: [{
                     [ Parameter.SUM ]: true,
@@ -137,7 +137,7 @@ describe("computeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffe
         await computeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffect(samples)
 
         expect(bestMetricsForChunkCount[ DUMMY_CHUNK_COUNT_FOR_ONE_OFF_BEST_METRIC_FROM_SCOPE ]).toEqual({
-            "{sum,aAsCoefficient,w}": {
+            "{aAsCoefficient,sum,w}": {
                 sumOfSquares: 0.013983040590027893 as Sum<"SquaredWeightedRankDifferences">,
                 submetrics: [{
                     [ Parameter.SUM ]: true,
