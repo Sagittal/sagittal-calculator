@@ -3,7 +3,7 @@
 import * as colors from "colors"
 import { program } from "commander"
 import { Span } from "../../../general"
-import { clearLogs, debug, saveLog } from "../debug"
+import { clearLogs, debug, debugSettings, saveLog } from "../debug"
 import {
     bestMetricsForChunkCount,
     computeResolution,
@@ -13,23 +13,27 @@ import {
 } from "../solver"
 import { DebugTarget, Parameter, ParameterValue } from "../types"
 
-clearLogs()
-
 program
     .option("-r, --recursive", "recursive")
     .option("-d, --debug", "debug")
     .option("-m, --maximum-unit", "maximum unit")
     .option("-n, --no-color", "no color")
     .option("-t, --timeout-enabled", "timeout enabled")
+    .option("-w, --no-write", "no write")
     .parse(process.argv)
 
 const recurse = !!program.recursive
 debug[ DebugTarget.ALL ] = !!program.debug
 const maximumUnit = program.maximumUnit
 const timeoutEnabled = program.timeoutEnabled
+debugSettings.noWrite = !program.write
 
 if (!program.color) {
     colors.disable()
+}
+
+if (!debugSettings.noWrite) {
+    clearLogs()
 }
 
 // debug[ DebugTarget.SCOPE ] = true

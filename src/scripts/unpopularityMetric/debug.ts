@@ -16,6 +16,10 @@ const debug: Debug = {
     [ DebugTarget.KILLS ]: false,
 }
 
+const debugSettings = {
+    noWrite: false
+}
+
 const targetColors: EnumHash<DebugTarget, DebugColor> = {
     [ DebugTarget.ALL ]: "green",
     [ DebugTarget.SUBMETRIC_ANTIVOTES ]: "white",
@@ -32,10 +36,14 @@ const targetColors: EnumHash<DebugTarget, DebugColor> = {
 
 const saveLog = (message: string, target: DebugTarget) => {
     if (debug[ DebugTarget.ALL ] || debug[ target ] || target === DebugTarget.ALL) {
-        fs.existsSync("dist") || fs.mkdirSync("dist")
-        fs.existsSync("dist/unpopularityMetric") || fs.mkdirSync("dist/unpopularityMetric")
-        fs.appendFileSync(`dist/unpopularityMetric/${target}.txt`, `${message}\n`)
+        if (!debugSettings.noWrite) {
+            fs.existsSync("dist") || fs.mkdirSync("dist")
+            fs.existsSync("dist/unpopularityMetric") || fs.mkdirSync("dist/unpopularityMetric")
+            fs.appendFileSync(`dist/unpopularityMetric/${target}.txt`, `${message}\n`)
+        }
+
         const color = targetColors[ target ]
+        // @ts-ignore
         console.log(message[ color ])
     }
 }
@@ -48,4 +56,5 @@ export {
     debug,
     saveLog,
     clearLogs,
+    debugSettings,
 }

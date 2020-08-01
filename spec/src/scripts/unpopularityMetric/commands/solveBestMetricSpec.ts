@@ -2,7 +2,7 @@ import { runCommandAndGetConsoleOutput } from "../../../../helpers/specHelper"
 
 describe("solve best metric", () => {
     it("finds the best metric for the given range of chunk count", () => {
-        const command = "npm run solve-best-metric -- -l 1 -u 1 --no-color --no-time"
+        const command = "npm run solve-best-metric -- -l 1 -u 1 --no-color --no-time --no-write"
 
         const result = runCommandAndGetConsoleOutput(command)
 

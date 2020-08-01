@@ -1,13 +1,11 @@
 import * as colors from "colors"
 import { program } from "commander"
 import { Count } from "../../../general"
-import { clearLogs, debug, saveLog } from "../debug"
+import { clearLogs, debug, debugSettings, saveLog } from "../debug"
 import { bestMetricsForChunkCount, Chunk, killedsForChunkCount, populateAndSearchScopes, status } from "../solver"
 import { presentBestMetrics } from "../solver/present"
 import { performance } from "perf_hooks"
 import { DebugTarget } from "../types"
-
-clearLogs()
 
 program
     .option("-l, --lower-bound-chunk-count <lowerBoundChunkCount>", "lower bound chunk count", parseInt)
@@ -15,6 +13,7 @@ program
     .option("-d, --debug", "debug")
     .option("-c, --no-color", "no color")
     .option("-t, --no-time", "no time")
+    .option("-w, --no-write", "no write")
     .parse(process.argv)
 
 const lowerBoundChunkCount = program.lowerBoundChunkCount || 1
@@ -24,6 +23,11 @@ if (!program.color) {
     colors.disable()
 }
 const time = !!program.time
+debugSettings.noWrite = !program.write
+
+if (!debugSettings.noWrite) {
+    clearLogs()
+}
 
 status.populatingChunkCount = lowerBoundChunkCount as Count<Chunk>
 status.searchingChunkCount = lowerBoundChunkCount as Count<Chunk>

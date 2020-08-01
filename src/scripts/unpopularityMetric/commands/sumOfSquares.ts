@@ -1,22 +1,26 @@
 import "colors"
 import { program } from "commander"
 import { Combination } from "../../../general"
-import { clearLogs, debug, saveLog } from "../debug"
+import { clearLogs, debug, debugSettings, saveLog } from "../debug"
 import { computeSumOfSquaresForSubmetrics } from "../sumOfSquares"
 import { DebugTarget, Parameter, ParameterValue, Submetric } from "../types"
 import * as colors from "colors"
 
-clearLogs()
-
 program
     .option("-d, --debug", "debug")
     .option("-c, --no-color", "no color")
+    .option("-w, --no-write", "no write")
     .parse(process.argv)
 
 if (!program.color) {
     colors.disable()
 }
 debug[ DebugTarget.RANKED_UNPOPULARITIES ] = !!program.debug
+debugSettings.noWrite = !program.write
+
+if (!debugSettings.noWrite) {
+    clearLogs()
+}
 
 const submetrics =
     [

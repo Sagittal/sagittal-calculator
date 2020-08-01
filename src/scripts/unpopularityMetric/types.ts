@@ -60,18 +60,6 @@ type DynamicParameterScope = Partial<{
     span: Span<ParameterValue>,
 }>
 
-// type DebugTarget =
-    // "all" |
-    // "submetricAntivotes" |
-    // "rankedUnpopularities" |
-    // "solver" |
-    // "newBestMetric" |
-    // "localMinima" |
-    // "scope" |
-    // "sumOfSquares" |
-    // "errors" |
-    // "kills"
-
 enum DebugTarget {
     ALL = "ALL",
     SUBMETRIC_ANTIVOTES = "SUBMETRIC_ANTIVOTES",
