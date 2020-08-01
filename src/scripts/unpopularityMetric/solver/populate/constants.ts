@@ -106,7 +106,7 @@ const SUBMETRIC_CHUNKS: SubmetricChunk[] = [
         [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
         [ Parameter.MAX ]: INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],
     },
-    { // LOG BASE A_AS_COEFFICIENT OF N
+    { // LOG BASE A_AS_COEFFICIENT OF N http://forum.sagittal.org/viewtopic.php?p=2076#p2076
         [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
         [ Parameter.A_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_BASE ],
     },
