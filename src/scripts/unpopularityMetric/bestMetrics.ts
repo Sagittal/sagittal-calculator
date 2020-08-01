@@ -698,6 +698,27 @@ const laj = {
     ],
 }
 
+//
+
+// Dave's kl 0.006970591
+// Fri Jul 31, 2020 4:56 pm
+// http://forum.sagittal.org/viewtopic.php?p=2117#p2117
+const kl = {
+    sumOfSquares: 0.006970590852577876,
+    submetrics: [
+        {
+            [ Parameter.WEIGHT_AS_COEFFICIENT ]: 0.319583198,
+            [ Parameter.WITHOUT_REPETITION ]: true,
+            [ Parameter.MAX ]: true,
+        },
+        {
+            [ Parameter.SUM ]: true,
+            [ Parameter.A_AS_BASE ]: 2,
+            [ Parameter.K_AS_COEFFICIENT ]: 0.722866218,
+        },
+    ]
+}
+
 export {
     sopfgtt,
 
@@ -752,4 +773,6 @@ export {
     wb,
 
     laj,
+
+    kl,
 }
