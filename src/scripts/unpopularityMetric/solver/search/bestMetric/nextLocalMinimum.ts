@@ -1,9 +1,10 @@
 import { deepEquals, doOnNextEventLoop } from "../../../../../general"
-import { debug } from "../../../debug"
+import { saveLog } from "../../../debug"
 import { Scope } from "../../types"
 import { searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect } from "./bestMetric"
 import { computeNextScope } from "./nextScope"
 import { LocalMinimum, SearchLocalMinimumOptions } from "./types"
+import { DebugTarget } from "../../../types"
 
 const searchNextLocalMinimum = (nextLocalMinimum: LocalMinimum, options: SearchLocalMinimumOptions): Promise<void> => {
     const {
@@ -27,15 +28,13 @@ const searchNextLocalMinimum = (nextLocalMinimum: LocalMinimum, options: SearchL
 
     return doOnNextEventLoop(async () => {
         if (topLevelScopeHasBeenKilled.hasBeenKilled) {
-            if (debug.all || debug.kills) console.log(`Killed: ${scope}`.red)
+            saveLog(`Killed: ${scope}`, DebugTarget.KILLS)
             return
         }
 
         const nextScope: Scope = computeNextScope(nextLocalMinimum.samplePoint, dynamicParameters, scope)
         const nextProgressMessage = progressMessage + `${index + 1}/${(nextLocalMinima.length)}@depth${nextDepth} `
-        if (debug.all || debug.localMinima) {
-            console.log(`${indentation}${nextProgressMessage}${JSON.stringify(nextLocalMinimum)}`)
-        }
+        saveLog(`${indentation}${nextProgressMessage}${JSON.stringify(nextLocalMinimum)}`, DebugTarget.LOCAL_MINIMUM)
 
         try {
             await searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect(nextScope, {
@@ -47,7 +46,7 @@ const searchNextLocalMinimum = (nextLocalMinimum: LocalMinimum, options: SearchL
                 onlyWinners,
             })
         } catch (e) {
-            if (debug.all || debug.errors) console.log(`Error when searching: ${e.message}`.red)
+            saveLog(`Error when searching: ${e.message}`, DebugTarget.ERRORS)
         }
     }, index)
 }

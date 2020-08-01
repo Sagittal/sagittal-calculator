@@ -1,7 +1,8 @@
 import { Count } from "../../../../general"
-import { debug } from "../../debug"
+import { saveLog } from "../../debug"
 import { populatedsForChunkCount, scopesForChunkCount } from "../globals"
 import { Chunk, Scope } from "../types"
+import { DebugTarget } from "../../types"
 
 const populateScopeForChunkCount = (scope: Scope, chunkCount: Count<Chunk>) => {
     scopesForChunkCount[ chunkCount ] = scopesForChunkCount[ chunkCount ] || []
@@ -9,8 +10,8 @@ const populateScopeForChunkCount = (scope: Scope, chunkCount: Count<Chunk>) => {
 
     populatedsForChunkCount[ chunkCount ] = populatedsForChunkCount[ chunkCount ] ? populatedsForChunkCount[ chunkCount ] + 1 : 1
 
-    if ((debug.all || debug.solver) && populatedsForChunkCount[ chunkCount ] % 1000 === 0) {
-        console.log(`${populatedsForChunkCount[ chunkCount ]} scopes have been populated for chunk count ${chunkCount} so far`.cyan)
+    if (populatedsForChunkCount[ chunkCount ] % 1000 === 0) {
+        saveLog(`${populatedsForChunkCount[ chunkCount ]} scopes have been populated for chunk count ${chunkCount} so far`, DebugTarget.POPULATION)
     }
 }
 

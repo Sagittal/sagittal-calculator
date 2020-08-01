@@ -1,16 +1,15 @@
 import { Count } from "../../../../general"
-import { debug } from "../../debug"
+import { debug, saveLog } from "../../debug"
 import { status } from "../globals"
 import { Chunk } from "../types"
 import { populateScopesForChunkCount } from "./scopesForChunkCount"
+import { DebugTarget } from "../../types"
 
 const populateScopes = async () => {
-    if (debug.all || debug.solver) {
-        console.log(`\n\nPOPULATING CHUNK COUNT ${status.populatingChunkCount}/${status.upperBoundChunkCount}`.cyan)
-    }
+    saveLog(`\n\nPOPULATING CHUNK COUNT ${status.populatingChunkCount}/${status.upperBoundChunkCount}`, DebugTarget.POPULATION)
     await populateScopesForChunkCount()
-    if (debug.all) {
-        console.log(``.cyan)
+    if (debug[ DebugTarget.ALL ]) {
+        console.log(``)
     } // That yellow lines appear frequently in-between this line and the log just 2 lines above should be proof that what is happening in-between is interruptable in a good way
 
     if (status.populatingChunkCount < status.upperBoundChunkCount) {

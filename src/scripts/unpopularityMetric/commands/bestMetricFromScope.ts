@@ -3,7 +3,7 @@
 import * as colors from "colors"
 import { program } from "commander"
 import { Span } from "../../../general"
-import { debug } from "../debug"
+import { clearLogs, debug, saveLog } from "../debug"
 import {
     bestMetricsForChunkCount,
     computeResolution,
@@ -11,7 +11,9 @@ import {
     Scope,
     searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect,
 } from "../solver"
-import { Parameter, ParameterValue } from "../types"
+import { DebugTarget, Parameter, ParameterValue } from "../types"
+
+clearLogs()
 
 program
     .option("-r, --recursive", "recursive")
@@ -22,16 +24,17 @@ program
     .parse(process.argv)
 
 const recurse = !!program.recursive
-debug.all = !!program.debug
+debug[ DebugTarget.ALL ] = !!program.debug
 const maximumUnit = program.maximumUnit
 const timeoutEnabled = program.timeoutEnabled
-if (!!program.noColors) {
+
+if (!program.color) {
     colors.disable()
 }
 
-// debug.scope = true
-// debug.errors = true
-// debug.newBestMetric = true
+// debug[ DebugTarget.SCOPE ] = true
+// debug[ DebugTarget.ERRORS ] = true
+// debug[ DebugTarget.NEW_BEST_METRIC ] = true
 
 const scope = [
     {},
@@ -61,5 +64,5 @@ const scope = [
 ] as Scope
 
 searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect(scope, { recurse, timeoutEnabled }).then(() => {
-    console.log(`\nbest metric: ${JSON.stringify(bestMetricsForChunkCount[ DUMMY_CHUNK_COUNT_FOR_ONE_OFF_BEST_METRIC_FROM_SCOPE ])}`.green)
+    saveLog(`\nbest metric: ${JSON.stringify(bestMetricsForChunkCount[ DUMMY_CHUNK_COUNT_FOR_ONE_OFF_BEST_METRIC_FROM_SCOPE ])}`, DebugTarget.ALL)
 })

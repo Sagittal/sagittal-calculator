@@ -1,6 +1,6 @@
 import { Combination, Ratio } from "../../../../general"
-import { debug } from "../../debug"
-import { Submetric } from "../../types"
+import { saveLog } from "../../debug"
+import { DebugTarget, Submetric } from "../../types"
 import { Antivotes } from "../types"
 import { computeWeightedSubmetricAntivotes } from "./weightedSubmetricAntivotes"
 
@@ -9,9 +9,7 @@ const computeAntivotes = (fiveRoughRatio: Ratio, submetrics: Combination<Submetr
         (totalAntivotes: Antivotes, submetric: Submetric): Antivotes => {
             const weightedSubmetricAntivotes: Antivotes = computeWeightedSubmetricAntivotes(fiveRoughRatio, submetric)
 
-            if (debug.all || debug.submetricAntivotes) {
-                console.log(`${JSON.stringify(submetric)}: ${weightedSubmetricAntivotes}`)
-            }
+            saveLog(`${JSON.stringify(submetric)}: ${weightedSubmetricAntivotes}`, DebugTarget.SUBMETRIC_ANTIVOTES)
 
             return totalAntivotes + weightedSubmetricAntivotes as Antivotes
         },

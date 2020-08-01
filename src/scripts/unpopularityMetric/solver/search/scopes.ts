@@ -1,9 +1,10 @@
 import { Count, doOnNextEventLoop } from "../../../../general"
-import { debug } from "../../debug"
+import { saveLog } from "../../debug"
 import { debugSearchedAndPopulated } from "../debug"
 import { bestMetricsForChunkCount, scopesForChunkCount, status } from "../globals"
 import { Chunk } from "../types"
 import { searchPopulatedScopesForChunkCount } from "./populatedScopesForChunkCount"
+import { DebugTarget } from "../../types"
 
 const ONE_SECOND_TO_GIVE_POPULATION_A_CHANCE_TO_CATCH_UP = 1000
 
@@ -16,16 +17,12 @@ const searchScopes = async () => {
 
     const populatingHasMovedOnToTheNextChunkCount = status.populatingChunkCount > searchingChunkCount
     if (populatingHasMovedOnToTheNextChunkCount) {
-        if (debug.all || debug.solver) {
-            console.log(`\n\nBEST METRICS FOR CHUNK COUNT ${searchingChunkCount} were ${JSON.stringify(bestMetricsForChunkCount[ searchingChunkCount ], undefined, 4)}`.yellow)
-        }
+        saveLog(`\n\nBEST METRICS FOR CHUNK COUNT ${searchingChunkCount} were ${JSON.stringify(bestMetricsForChunkCount[ searchingChunkCount ], undefined, 4)}`, DebugTarget.SOLVER)
         status.searchingChunkCount = searchingChunkCount + 1 as Count<Chunk>
     }
 
     if (searchingChunkCount <= status.upperBoundChunkCount && !status.finishedPopulating) {
-        if (debug.all || debug.solver) {
-            console.log(`searching got ahead of populating; waiting 1 second for more scopes to be populated for ${searchingChunkCount} ${debugSearchedAndPopulated()}`.yellow)
-        }
+        saveLog(`searching got ahead of populating; waiting 1 second for more scopes to be populated for ${searchingChunkCount} ${debugSearchedAndPopulated()}`, DebugTarget.SOLVER)
 
         const timeout = populatingHasMovedOnToTheNextChunkCount ? 0 : ONE_SECOND_TO_GIVE_POPULATION_A_CHANCE_TO_CATCH_UP
 

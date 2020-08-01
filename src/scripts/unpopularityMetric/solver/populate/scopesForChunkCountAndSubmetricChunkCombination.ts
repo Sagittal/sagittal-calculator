@@ -1,9 +1,10 @@
 import { Combination, computeDistributions, doOnNextEventLoop, Index, merge } from "../../../../general"
-import { debug } from "../../debug"
+import { saveLog } from "../../debug"
 import { debugSearchedAndPopulated } from "../debug"
 import { Chunk, Scope, SubmetricScope } from "../types"
 import { populateScopeForChunkCount } from "./scopeForChunkCount"
 import { ParameterChunk, PopulateScoepsForChunkCountAndSubmetricChunkCombinationOptions, SubmetricChunk } from "./types"
+import { DebugTarget } from "../../types"
 
 const populateScopesForChunkCountAndSubmetricChunkCombination = async (submetricChunkCombination: Combination<SubmetricChunk>, options: PopulateScoepsForChunkCountAndSubmetricChunkCombinationOptions): Promise<void> => {
     const {
@@ -14,9 +15,7 @@ const populateScopesForChunkCountAndSubmetricChunkCombination = async (submetric
         submetricChunkCombinationCount,
     } = options
 
-    if (debug.all || debug.solver) {
-        console.log(`populating scopes for submetric chunk combination ${submetricChunkCombinationIndex + 1}/${submetricChunkCombinationCount} with parameter chunk combination ${parameterChunkCombinationIndex + 1}/${parameterChunkCombinations.length} (${100 * parameterChunkCombinationIndex / parameterChunkCombinations.length}%) ${debugSearchedAndPopulated()}`.cyan)
-    }
+    saveLog(`populating scopes for submetric chunk combination ${submetricChunkCombinationIndex + 1}/${submetricChunkCombinationCount} with parameter chunk combination ${parameterChunkCombinationIndex + 1}/${parameterChunkCombinations.length} (${100 * parameterChunkCombinationIndex / parameterChunkCombinations.length}%) ${debugSearchedAndPopulated()}`, DebugTarget.POPULATION)
 
     const parameterChunkCombination: Combination<Chunk> = parameterChunkCombinations[ parameterChunkCombinationIndex ]
 

@@ -1,8 +1,9 @@
-import { debug } from "../../debug"
+import { saveLog } from "../../debug"
 import { debugSearchedAndPopulated, presentPercentage } from "../debug"
 import { populatedsForChunkCount, scopesForChunkCount, searchedsForChunkCount, status } from "../globals"
 import { Scope } from "../types"
 import { searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect } from "./bestMetric"
+import { DebugTarget } from "../../types"
 
 const searchPopulatedScopesForChunkCount = async () => {
     const searchingChunkCount = status.searchingChunkCount
@@ -11,9 +12,7 @@ const searchPopulatedScopesForChunkCount = async () => {
     const scopeForChunkCount = searchingScopes && searchingScopes.pop() as Scope
 
     if (searchedForChunkCount % 1 === 0) {
-        if (debug.all || debug.solver) {
-            console.log(`searched out of populated for chunk count ${searchingChunkCount}: ${presentPercentage(searchedForChunkCount, populatedsForChunkCount[ searchingChunkCount ])} ${debugSearchedAndPopulated()}`.yellow)
-        }
+        saveLog(`searched out of populated for chunk count ${searchingChunkCount}: ${presentPercentage(searchedForChunkCount, populatedsForChunkCount[ searchingChunkCount ])} ${debugSearchedAndPopulated()}`, DebugTarget.SOLVER)
     }
 
     try {

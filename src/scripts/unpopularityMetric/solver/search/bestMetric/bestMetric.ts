@@ -1,6 +1,6 @@
 import { clearTimeout } from "timers"
 import { shuffle } from "../../../../../general"
-import { debug } from "../../../debug"
+import { debug, saveLog } from "../../../debug"
 import { DUMMY_CHUNK_COUNT_FOR_ONE_OFF_BEST_METRIC_FROM_SCOPE } from "../../constants"
 import { killedsForChunkCount, searchedsForChunkCount } from "../../globals"
 import { Scope } from "../../types"
@@ -11,6 +11,7 @@ import { computeLocalMinima } from "./localMinima"
 import { searchNextLocalMinimum } from "./nextLocalMinimum"
 import { computeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffect } from "./sumsOfSquares"
 import { SearchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffectOptions, SumsOfSquares } from "./types"
+import { DebugTarget } from "../../../types"
 
 const searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect = async (scope: Scope, options: SearchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffectOptions = {}): Promise<void | Error> => {
     return new Promise(async (resolve, reject) => {
@@ -27,8 +28,8 @@ const searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect = async (s
 
         const topLevelScopeHasBeenKilled = { hasBeenKilled: false }
         let timeUpdater: NodeJS.Timeout | undefined
-        if (debug.all || debug.scope) {
-            console.log(`${JSON.stringify(scope)} - beginning search`.yellow)
+        if (debug[DebugTarget.ALL] || debug[DebugTarget.SCOPE]) {
+            saveLog(`${JSON.stringify(scope)} - beginning search`, DebugTarget.SCOPE)
 
             let timeUnits = 0
             timeUpdater = setInterval(() => {
@@ -42,9 +43,7 @@ const searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect = async (s
             killswitch = setTimeout(() => {
                 topLevelScopeHasBeenKilled.hasBeenKilled = true
                 timeUpdater && clearInterval(timeUpdater)
-                if ((debug.all || debug.scope) && depth === 0) {
-                    console.log(`${JSON.stringify(scope)} - killed search due to hitting the max; so far ${100 * ((killedsForChunkCount[ chunkCount ] || []).length + 1) / searchedsForChunkCount[ chunkCount ]}% have been killed`.red)
-                }
+                saveLog(`${JSON.stringify(scope)} - killed search due to hitting the max; so far ${100 * ((killedsForChunkCount[ chunkCount ] || []).length + 1) / searchedsForChunkCount[ chunkCount ]}% have been killed`, DebugTarget.KILLS)
                 killedsForChunkCount[ chunkCount ] = killedsForChunkCount[ chunkCount ] || []
                 killedsForChunkCount[ chunkCount ].push(scope)
 
