@@ -1,10 +1,11 @@
 import { Combination, Combinations, computeCombinations, Count, Index } from "../../../../../../src/general"
 import * as combinations from "../../../../../../src/general/math/combinations"
-import { Chunk } from "../../../../../../src/scripts/unpopularityMetric/solver"
 import {
     memoizedParameterChunkCombinations,
     memoizedSubmetricChunkCombinations,
-} from "../../../../../../src/scripts/unpopularityMetric/solver/globals"
+} from "../../../../../../src/scripts/unpopularityMetric/globals"
+import { Chunk } from "../../../../../../src/scripts/unpopularityMetric/solver"
+import { ParameterChunk, SubmetricChunk } from "../../../../../../src/scripts/unpopularityMetric/solver/populate"
 import {
     INITIAL_PARAMETER_SCOPES,
     PARAMETER_CHUNKS,
@@ -13,8 +14,7 @@ import {
 import * as scopesForChunkCountAndSubmetricChunkCombination
     from "../../../../../../src/scripts/unpopularityMetric/solver/populate/scopesForChunkCountAndSubmetricChunkCombination"
 import { populateScopesForChunkCountPhase } from "../../../../../../src/scripts/unpopularityMetric/solver/populate/scopesForChunkCountPhase"
-import { ParameterChunk, SubmetricChunk } from "../../../../../../src/scripts/unpopularityMetric/solver/populate"
-import { Parameter } from "../../../../../../src/scripts/unpopularityMetric/types"
+import { Parameter } from "../../../../../../src/scripts/unpopularityMetric/sumOfSquares"
 
 describe("populateScopesForChunkCountPhase", () => {
     const chunkCount = 5 as Count<Chunk>

@@ -1,7 +1,11 @@
 import { Sum } from "../../../../../src/general"
 import { Combination } from "../../../../../src/general/math"
-import { computeSumOfSquaresForSubmetrics } from "../../../../../src/scripts/unpopularityMetric/sumOfSquares"
-import { Parameter, ParameterValue, Submetric } from "../../../../../src/scripts/unpopularityMetric/types"
+import {
+    computeSumOfSquaresForSubmetrics,
+    Parameter,
+    ParameterValue,
+    Submetric,
+} from "../../../../../src/scripts/unpopularityMetric/sumOfSquares"
 
 describe("computeSumOfSquaresForSubmetrics", () => {
     it("returns the sum-of-squares for a given submetric combination", () => {

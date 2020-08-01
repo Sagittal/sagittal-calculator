@@ -1,9 +1,9 @@
 import { computeLog, Ratio } from "../../../../../../src/general/math"
 import { Monzo } from "../../../../../../src/general/music"
+import { ParameterValue } from "../../../../../../src/scripts/unpopularityMetric/sumOfSquares"
 import { computeRatioSubmetricAntivotes } from "../../../../../../src/scripts/unpopularityMetric/sumOfSquares/antivotes/ratioSubmetricAntivotes"
 import { computeSubmetricAntivotes } from "../../../../../../src/scripts/unpopularityMetric/sumOfSquares/antivotes/submetricAntivotes"
 import { Antivotes } from "../../../../../../src/scripts/unpopularityMetric/sumOfSquares/types"
-import { ParameterValue } from "../../../../../../src/scripts/unpopularityMetric/types"
 
 describe("computeRatioSubmetricAntivotes", () => {
     it("splits the ratio into numerator and denominator, computes their submetric antivotes separately, then adjusts the denominator by k", () => {

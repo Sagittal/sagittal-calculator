@@ -1,6 +1,5 @@
 import { computeLog, isUndefined, Ratio } from "../../../../general"
-import { ParameterValue, Submetric } from "../../types"
-import { Antivotes } from "../types"
+import { Antivotes, ParameterValue, Submetric } from "../types"
 import { computeRatioSubmetricAntivotes } from "./ratioSubmetricAntivotes"
 
 const computeWeightedSubmetricAntivotes = (fiveRoughRatio: Ratio, submetric = {}): Antivotes => {

@@ -1,10 +1,11 @@
 import { Combination, computeDistributions, doOnNextEventLoop, Index, merge } from "../../../../general"
+import { Scope, SubmetricScope } from "../../bestMetric"
 import { saveLog } from "../../debug"
+import { DebugTarget } from "../../types"
 import { debugSearchedAndPopulated } from "../debug"
-import { Chunk, Scope, SubmetricScope } from "../types"
+import { Chunk } from "../types"
 import { populateScopeForChunkCount } from "./scopeForChunkCount"
 import { ParameterChunk, PopulateScoepsForChunkCountAndSubmetricChunkCombinationOptions, SubmetricChunk } from "./types"
-import { DebugTarget } from "../../types"
 
 const populateScopesForChunkCountAndSubmetricChunkCombination = async (submetricChunkCombination: Combination<SubmetricChunk>, options: PopulateScoepsForChunkCountAndSubmetricChunkCombinationOptions): Promise<void> => {
     const {

@@ -1,11 +1,11 @@
 import { Combinations, Count, deepEquals, Index } from "../../../../../../src/general"
 import { Combination } from "../../../../../../src/general/math"
+import { scopesForChunkCount } from "../../../../../../src/scripts/unpopularityMetric/globals"
 import { Chunk } from "../../../../../../src/scripts/unpopularityMetric/solver"
-import { scopesForChunkCount } from "../../../../../../src/scripts/unpopularityMetric/solver/globals"
+import { ParameterChunk, SubmetricChunk } from "../../../../../../src/scripts/unpopularityMetric/solver/populate"
 import { INITIAL_PARAMETER_SCOPES } from "../../../../../../src/scripts/unpopularityMetric/solver/populate/constants"
 import { populateScopesForChunkCountAndSubmetricChunkCombination } from "../../../../../../src/scripts/unpopularityMetric/solver/populate/scopesForChunkCountAndSubmetricChunkCombination"
-import { ParameterChunk, SubmetricChunk } from "../../../../../../src/scripts/unpopularityMetric/solver/populate"
-import { Parameter } from "../../../../../../src/scripts/unpopularityMetric/types"
+import { Parameter } from "../../../../../../src/scripts/unpopularityMetric/sumOfSquares"
 
 describe("populateScopesForChunkCountAndSubmetricChunkCombination", () => {
     // TODO: really need to do something about these long test descriptions and multi-lining them;

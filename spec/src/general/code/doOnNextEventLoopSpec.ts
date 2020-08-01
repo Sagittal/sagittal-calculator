@@ -1,7 +1,7 @@
 import { doOnNextEventLoop } from "../../../../src/general/code"
 
 describe("doOnNextEventLoop", () => {
-    it("resolves on the next event loop", async (done) => {
+    it("resolves on the next event loop", async done => {
         let thing = 0
         const fn = () => {
             thing = 1
@@ -15,7 +15,7 @@ describe("doOnNextEventLoop", () => {
         expect(thing).toBe(0)
     })
 
-    it("works when the function passed in is itself async", async (done) => {
+    it("works when the function passed in is itself async", async done => {
         let thing = 0
         const fn = () => {
             return new Promise(resolve => {
@@ -34,7 +34,7 @@ describe("doOnNextEventLoop", () => {
         expect(thing).toBe(0)
     })
 
-    it("supports having a longer timeout", async (done) => {
+    it("supports having a longer timeout", async done => {
         let thing = 0
         const fn = () => {
             thing = 1

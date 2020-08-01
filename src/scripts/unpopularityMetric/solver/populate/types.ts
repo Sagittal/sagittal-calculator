@@ -1,5 +1,6 @@
 import { Combination, Count, Index } from "../../../../general"
-import { Chunk, SubmetricScope } from "../types"
+import { SubmetricScope } from "../../bestMetric"
+import { Chunk } from "../types"
 
 interface PopulateScoepsForChunkCountAndSubmetricChunkCombinationOptions {
     parameterChunkCombinations: Array<Combination<ParameterChunk>>,

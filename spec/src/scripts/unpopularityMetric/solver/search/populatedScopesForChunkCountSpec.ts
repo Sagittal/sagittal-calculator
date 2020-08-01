@@ -1,12 +1,14 @@
 import { Count } from "../../../../../../src/general"
-import { Chunk, Scope, status } from "../../../../../../src/scripts/unpopularityMetric/solver"
+import { Scope } from "../../../../../../src/scripts/unpopularityMetric/bestMetric"
+import * as bestMetric from "../../../../../../src/scripts/unpopularityMetric/bestMetric/bestMetric"
 import {
     scopesForChunkCount,
     searchedsForChunkCount,
-} from "../../../../../../src/scripts/unpopularityMetric/solver/globals"
-import * as bestMetric from "../../../../../../src/scripts/unpopularityMetric/solver/search/bestMetric/bestMetric"
+    solverStatus,
+} from "../../../../../../src/scripts/unpopularityMetric/globals"
+import { Chunk } from "../../../../../../src/scripts/unpopularityMetric/solver"
 import { searchPopulatedScopesForChunkCount } from "../../../../../../src/scripts/unpopularityMetric/solver/search/populatedScopesForChunkCount"
-import { Parameter } from "../../../../../../src/scripts/unpopularityMetric/types"
+import { Parameter } from "../../../../../../src/scripts/unpopularityMetric/sumOfSquares"
 
 describe("searchPopulatedScopesForChunkCount", () => {
     const searchingChunkCount = 8 as Count<Chunk>
@@ -14,7 +16,7 @@ describe("searchPopulatedScopesForChunkCount", () => {
     const otherScope = [{ [ Parameter.A_AS_COEFFICIENT ]: 2 }] as Scope
 
     beforeEach(() => {
-        status.searchingChunkCount = searchingChunkCount
+        solverStatus.searchingChunkCount = searchingChunkCount
         searchedsForChunkCount[ searchingChunkCount ] = 155
         scopesForChunkCount[ searchingChunkCount ] = [otherScope, scope]
     })

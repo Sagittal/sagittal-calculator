@@ -1,6 +1,6 @@
-import { Debug, DebugColor, DebugTarget } from "./types"
 import * as fs from "fs"
-import { EnumHash } from "../../general/code"
+import { EnumHash } from "../../general"
+import { Debug, DebugColor, DebugTarget } from "./types"
 
 const debug: Debug = {
     [ DebugTarget.ALL ]: false,
@@ -17,7 +17,7 @@ const debug: Debug = {
 }
 
 const debugSettings = {
-    noWrite: false
+    noWrite: false,
 }
 
 const targetColors: EnumHash<DebugTarget, DebugColor> = {

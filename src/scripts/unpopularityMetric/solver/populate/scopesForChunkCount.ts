@@ -1,14 +1,14 @@
 import { Count } from "../../../../general"
 import { saveLog } from "../../debug"
+import { solverStatus } from "../../globals"
+import { DebugTarget } from "../../types"
 import { debugSearchedAndPopulated } from "../debug"
-import { status } from "../globals"
 import { computeInitialChunkCountForSubmetrics } from "./initialChunkCountForSubmetrics"
 import { populateScopesForChunkCountPhase } from "./scopesForChunkCountPhase"
 import { SubmetricChunk } from "./types"
-import { DebugTarget } from "../../types"
 
 const populateScopesForChunkCount = async () => {
-    const chunkCount = status.populatingChunkCount
+    const chunkCount = solverStatus.populatingChunkCount
     let chunkCountForSubmetrics: Count<SubmetricChunk> = computeInitialChunkCountForSubmetrics(chunkCount)
 
     saveLog(`computing combinations for chunk count ${chunkCount}`, DebugTarget.POPULATION)

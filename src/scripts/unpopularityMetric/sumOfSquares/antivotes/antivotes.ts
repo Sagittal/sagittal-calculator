@@ -1,7 +1,7 @@
 import { Combination, Ratio } from "../../../../general"
 import { saveLog } from "../../debug"
-import { DebugTarget, Submetric } from "../../types"
-import { Antivotes } from "../types"
+import { DebugTarget } from "../../types"
+import { Antivotes, Submetric } from "../types"
 import { computeWeightedSubmetricAntivotes } from "./weightedSubmetricAntivotes"
 
 const computeAntivotes = (fiveRoughRatio: Ratio, submetrics: Combination<Submetric>): Antivotes =>

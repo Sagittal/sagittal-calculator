@@ -3,15 +3,16 @@
 import * as colors from "colors"
 import { program } from "commander"
 import { Span } from "../../../general"
-import { clearLogs, debug, debugSettings, saveLog } from "../debug"
 import {
-    bestMetricsForChunkCount,
     computeResolution,
     DUMMY_CHUNK_COUNT_FOR_ONE_OFF_BEST_METRIC_FROM_SCOPE,
     Scope,
     searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect,
-} from "../solver"
-import { DebugTarget, Parameter, ParameterValue } from "../types"
+} from "../bestMetric"
+import { clearLogs, debug, debugSettings, saveLog } from "../debug"
+import { bestMetricsForChunkCount } from "../globals"
+import { Parameter, ParameterValue } from "../sumOfSquares"
+import { DebugTarget } from "../types"
 
 program
     .option("-r, --recursive", "recursive")

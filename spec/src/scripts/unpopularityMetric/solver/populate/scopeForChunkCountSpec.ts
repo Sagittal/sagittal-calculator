@@ -1,11 +1,9 @@
 import { Count } from "../../../../../../src/general"
-import { Chunk, Scope } from "../../../../../../src/scripts/unpopularityMetric/solver"
-import {
-    populatedsForChunkCount,
-    scopesForChunkCount,
-} from "../../../../../../src/scripts/unpopularityMetric/solver/globals"
+import { Scope } from "../../../../../../src/scripts/unpopularityMetric/bestMetric"
+import { populatedsForChunkCount, scopesForChunkCount } from "../../../../../../src/scripts/unpopularityMetric/globals"
+import { Chunk } from "../../../../../../src/scripts/unpopularityMetric/solver"
 import { populateScopeForChunkCount } from "../../../../../../src/scripts/unpopularityMetric/solver/populate/scopeForChunkCount"
-import { Parameter } from "../../../../../../src/scripts/unpopularityMetric/types"
+import { Parameter } from "../../../../../../src/scripts/unpopularityMetric/sumOfSquares"
 
 describe("populateScopeForChunkCount", () => {
     it("adds the scope to the stack and increments the count of the total ever populated", () => {

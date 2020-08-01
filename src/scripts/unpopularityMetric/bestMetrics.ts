@@ -1,6 +1,6 @@
-import { Parameter, Submetric } from "./types"
-import { Metric } from "./solver/search/bestMetric"
 import { Combination, Sum } from "../../general"
+import { Metric } from "./bestMetric"
+import { Parameter, Submetric } from "./sumOfSquares"
 
 // Metric to beat: SoPF>3, or sopfr
 const sopfgtt: Metric = {
@@ -716,7 +716,7 @@ const kl = {
             [ Parameter.A_AS_BASE ]: 2,
             [ Parameter.K_AS_COEFFICIENT ]: 0.722866218,
         },
-    ]
+    ],
 }
 
 export {

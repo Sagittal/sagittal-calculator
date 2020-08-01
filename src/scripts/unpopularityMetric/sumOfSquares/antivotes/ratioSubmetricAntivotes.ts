@@ -1,6 +1,5 @@
 import { computeLog, computeMonzoFromInteger, computeMonzoFromRatio, isUndefined, Ratio } from "../../../../general"
-import { ParameterValue, Submetric } from "../../types"
-import { Antivotes } from "../types"
+import { Antivotes, ParameterValue, Submetric } from "../types"
 import { computeSubmetricAntivotes } from "./submetricAntivotes"
 
 const computeRatioSubmetricAntivotes = (fiveRoughRatio: Ratio, submetric: Submetric = {}): Antivotes => {

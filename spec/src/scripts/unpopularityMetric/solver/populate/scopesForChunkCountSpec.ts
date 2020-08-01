@@ -1,13 +1,14 @@
 import { Count, deepEquals } from "../../../../../../src/general"
 import { arraysHaveSameContents } from "../../../../../../src/general/code/arraysHaveSameContents"
-import { Chunk, Scope, status } from "../../../../../../src/scripts/unpopularityMetric/solver"
-import { scopesForChunkCount } from "../../../../../../src/scripts/unpopularityMetric/solver/globals"
+import { Scope } from "../../../../../../src/scripts/unpopularityMetric/bestMetric"
+import { scopesForChunkCount, solverStatus } from "../../../../../../src/scripts/unpopularityMetric/globals"
+import { Chunk } from "../../../../../../src/scripts/unpopularityMetric/solver"
 import {
     INITIAL_PARAMETER_SCOPES,
     SUBMETRIC_CHUNKS,
 } from "../../../../../../src/scripts/unpopularityMetric/solver/populate/constants"
 import { populateScopesForChunkCount } from "../../../../../../src/scripts/unpopularityMetric/solver/populate/scopesForChunkCount"
-import { Parameter } from "../../../../../../src/scripts/unpopularityMetric/types"
+import { Parameter } from "../../../../../../src/scripts/unpopularityMetric/sumOfSquares"
 
 describe("populateScopesForChunkCount", () => {
     let originalJasmineTimeoutInterval: number
@@ -23,7 +24,7 @@ describe("populateScopesForChunkCount", () => {
 
     it("given a chunk count, populates all possible distributions of all possible combinations of parameter chunks across bins corresponding to all possible combinations of submetric chunks - works for 1, where each possibility is just a single submetric chunk, plus an empty 'all bins' chunk because that's just how it works to be simple", async () => {
         const chunkCount = 1 as Count<Chunk>
-        status.populatingChunkCount = chunkCount
+        solverStatus.populatingChunkCount = chunkCount
         scopesForChunkCount[ chunkCount ] = []
 
         await populateScopesForChunkCount()
@@ -33,7 +34,7 @@ describe("populateScopesForChunkCount", () => {
 
     it("given a chunk count, populates all possible combinations of those parameters - works for 2", async () => {
         const chunkCount = 2 as Count<Chunk>
-        status.populatingChunkCount = chunkCount
+        solverStatus.populatingChunkCount = chunkCount
         scopesForChunkCount[ chunkCount ] = []
 
         await populateScopesForChunkCount()
@@ -1785,7 +1786,7 @@ describe("populateScopesForChunkCount", () => {
 
     it("given a chunk count, populates all possible combinations of those parameters - works for 3", async () => {
         const chunkCount = 3 as Count<Chunk>
-        status.populatingChunkCount = chunkCount
+        solverStatus.populatingChunkCount = chunkCount
         scopesForChunkCount[ chunkCount ] = []
 
         await populateScopesForChunkCount()
@@ -1831,7 +1832,7 @@ describe("populateScopesForChunkCount", () => {
     // this one just started taking insanely long for no clear reason
     xit("given a chunk count, populates all possible combinations of those parameters - works for 4", async () => {
         const chunkCount = 4 as Count<Chunk>
-        status.populatingChunkCount = chunkCount
+        solverStatus.populatingChunkCount = chunkCount
         scopesForChunkCount[ chunkCount ] = []
 
         await populateScopesForChunkCount()

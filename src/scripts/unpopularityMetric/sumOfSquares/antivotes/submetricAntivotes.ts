@@ -1,6 +1,5 @@
 import { computeLog, computePrimeCount, isUndefined, Monzo, PRIMES } from "../../../../general"
-import { ParameterValue, Submetric } from "../../types"
-import { Antivotes } from "../types"
+import { Antivotes, ParameterValue, Submetric } from "../types"
 
 // (sum or count)
 // of (maybe adjusted) prime factors

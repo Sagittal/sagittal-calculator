@@ -1,16 +1,16 @@
 import { Combination, Combinations, computeCombinations, computeDistributions, Count, Index } from "../../../../general"
 import { saveLog } from "../../debug"
-import { debugSearchedAndPopulated } from "../debug"
 import {
     memoizedParameterChunkCombinations,
     memoizedSubmetricChunkCombinations,
     populatedsForChunkCount,
-} from "../globals"
+} from "../../globals"
+import { DebugTarget } from "../../types"
+import { debugSearchedAndPopulated } from "../debug"
 import { Chunk } from "../types"
 import { PARAMETER_CHUNKS, SUBMETRIC_CHUNKS } from "./constants"
 import { populateScopesForChunkCountAndSubmetricChunkCombination } from "./scopesForChunkCountAndSubmetricChunkCombination"
 import { ParameterChunk, SubmetricChunk } from "./types"
-import { DebugTarget } from "../../types"
 
 const populateScopesForChunkCountPhase = async (chunkCount: Count<Chunk>, chunkCountForSubmetrics: Count<SubmetricChunk>) => {
     const chunkCountForParameters: Count<Chunk> = chunkCount - chunkCountForSubmetrics as Count<ParameterChunk>

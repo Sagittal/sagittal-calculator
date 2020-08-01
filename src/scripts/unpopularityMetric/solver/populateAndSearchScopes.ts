@@ -9,19 +9,19 @@
 //   It does seem to be interruptable in a good way, so that's a good sign.
 
 import { saveLog } from "../debug"
+import { solverStatus } from "../globals"
+import { DebugTarget } from "../types"
 import { debugSearchedAndPopulated } from "./debug"
-import { status } from "./globals"
 import { populateScopes } from "./populate"
 import { searchScopes } from "./search"
-import { DebugTarget } from "../types"
 
 const populateAndSearchScopes = async () => {
     populateScopes().then(() => {
         saveLog("\n\nFINISHED POPULATING", DebugTarget.POPULATION)
-        status.finishedPopulating = true
+        solverStatus.finishedPopulating = true
     })
 
-    saveLog(`\n\nPROCESSING CHUNK COUNT ${status.searchingChunkCount} (${status.finishedPopulating ? `finished populating` : `still populating chunk count ${status.populatingChunkCount}`}) ${debugSearchedAndPopulated()}`, DebugTarget.SOLVER)
+    saveLog(`\n\nPROCESSING CHUNK COUNT ${solverStatus.searchingChunkCount} (${solverStatus.finishedPopulating ? `finished populating` : `still populating chunk count ${solverStatus.populatingChunkCount}`}) ${debugSearchedAndPopulated()}`, DebugTarget.SOLVER)
     await searchScopes()
 
     saveLog(`\n\nFINAL STATUS ${debugSearchedAndPopulated()}`, DebugTarget.SOLVER)

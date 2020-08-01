@@ -1,4 +1,4 @@
-import { populatedsForChunkCount, scopesForChunkCount, searchedsForChunkCount } from "./globals"
+import { populatedsForChunkCount, scopesForChunkCount, searchedsForChunkCount } from "../globals"
 
 const presentNums = (thing: number[]) =>
     JSON.stringify(Object.entries(thing).map(([k, v]) => `${k}: ${v}`))

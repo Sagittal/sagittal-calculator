@@ -1,9 +1,9 @@
 import { computeLog, Ratio } from "../../../../../../src/general"
+import { Parameter } from "../../../../../../src/scripts/unpopularityMetric/sumOfSquares"
 import * as ratioSubmetricAntivotes
     from "../../../../../../src/scripts/unpopularityMetric/sumOfSquares/antivotes/ratioSubmetricAntivotes"
 import { computeWeightedSubmetricAntivotes } from "../../../../../../src/scripts/unpopularityMetric/sumOfSquares/antivotes/weightedSubmetricAntivotes"
 import { Antivotes } from "../../../../../../src/scripts/unpopularityMetric/sumOfSquares/types"
-import { Parameter } from "../../../../../../src/scripts/unpopularityMetric/types"
 
 describe("computeWeightedSubmetricAntivotes", () => {
     it("returns 0 when the weight is 0", () => {

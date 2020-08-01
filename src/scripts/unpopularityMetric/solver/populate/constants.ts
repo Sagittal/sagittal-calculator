@@ -1,6 +1,6 @@
 import { EnumHash, Span } from "../../../../general"
-import { DynamicParameterScope, Parameter, ParameterValue } from "../../types"
-import { computeResolution } from "../search"
+import { computeResolution, DynamicParameterScope } from "../../bestMetric"
+import { Parameter, ParameterValue } from "../../sumOfSquares"
 import { ParameterChunk, SubmetricChunk } from "./types"
 
 // AKA: if they are going to be included in the automatically generated scopes per chunk count, what should they be set to

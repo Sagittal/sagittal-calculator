@@ -1,5 +1,5 @@
+import { Metric } from "../../../../src/scripts/unpopularityMetric/bestMetric"
 import * as bestMetrics from "../../../../src/scripts/unpopularityMetric/bestMetrics"
-import { Metric } from "../../../../src/scripts/unpopularityMetric/solver/search/bestMetric"
 import { computeSumOfSquaresForSubmetrics } from "../../../../src/scripts/unpopularityMetric/sumOfSquares"
 
 describe("best metrics", () => {

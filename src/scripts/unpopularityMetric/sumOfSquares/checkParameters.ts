@@ -1,4 +1,4 @@
-import { Parameter, Submetric } from "../types"
+import { Parameter, Submetric } from "./types"
 
 const checkSubmetricsForInvalidParameterCombinations = (submetrics: Submetric[]) => {
     submetrics.forEach((submetric: Submetric) => {

@@ -1,5 +1,5 @@
+import { Parameter, ParameterValue, Submetric } from "../../../../../src/scripts/unpopularityMetric/sumOfSquares"
 import { checkSubmetricsForInvalidParameterValueCombinations } from "../../../../../src/scripts/unpopularityMetric/sumOfSquares/checkParameterValues"
-import { Parameter, ParameterValue, Submetric } from "../../../../../src/scripts/unpopularityMetric/types"
 
 describe("checkSubmetricsForInvalidParameterValueCombinations", () => {
     it("gives a good error when a is a base but it is 1", () => {

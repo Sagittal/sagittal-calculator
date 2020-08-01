@@ -1,4 +1,4 @@
-import { Metric } from "./search/bestMetric"
+import { Metric } from "../bestMetric"
 
 const presentBestMetrics = (bestMetrics: Array<Record<string, Metric>>) => {
     return bestMetrics.map(bestMetricsForChunkCount => {

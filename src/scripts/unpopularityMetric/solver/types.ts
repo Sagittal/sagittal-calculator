@@ -1,23 +1,16 @@
-import { Combination, Count, EnumHash } from "../../../general"
-import { DynamicParameterScope, Parameter, ParameterValue } from "../types"
+import { Count } from "../../../general"
 import { ParameterChunk, SubmetricChunk } from "./populate"
 
-interface Status {
+type Chunk = SubmetricChunk | ParameterChunk
+
+interface SolverStatus { // todo actually this does feel a bit more like a solver-specific thing
     finishedPopulating: boolean,
     populatingChunkCount: Count<Chunk>,
     searchingChunkCount: Count<Chunk>,
     upperBoundChunkCount: Count<Chunk>,
 }
 
-type SubmetricScope = Partial<EnumHash<Parameter, ParameterValue | boolean | DynamicParameterScope>>
-
-type Chunk = SubmetricChunk | ParameterChunk
-
-type Scope = Combination<SubmetricScope>
-
 export {
-    Status,
     Chunk,
-    SubmetricScope,
-    Scope,
+    SolverStatus,
 }

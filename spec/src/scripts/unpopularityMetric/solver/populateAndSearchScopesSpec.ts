@@ -1,20 +1,19 @@
 import { Count } from "../../../../../src/general"
+import { Metric } from "../../../../../src/scripts/unpopularityMetric/bestMetric"
+import { bestMetricsForChunkCount, solverStatus } from "../../../../../src/scripts/unpopularityMetric/globals"
 import {
-    bestMetricsForChunkCount,
     Chunk,
     populateAndSearchScopes,
-    status,
 } from "../../../../../src/scripts/unpopularityMetric/solver"
 import * as populate from "../../../../../src/scripts/unpopularityMetric/solver/populate/scopes"
-import { Metric } from "../../../../../src/scripts/unpopularityMetric/solver/search/bestMetric"
 import * as search from "../../../../../src/scripts/unpopularityMetric/solver/search/scopes"
 
 describe("populateAndSearchScopes", () => {
     const chunkCount = 1 as Count<Chunk>
     beforeEach(() => {
-        status.populatingChunkCount = chunkCount
-        status.searchingChunkCount = chunkCount
-        status.upperBoundChunkCount = chunkCount
+        solverStatus.populatingChunkCount = chunkCount
+        solverStatus.searchingChunkCount = chunkCount
+        solverStatus.upperBoundChunkCount = chunkCount
         bestMetricsForChunkCount[ chunkCount ] = {}
     })
 

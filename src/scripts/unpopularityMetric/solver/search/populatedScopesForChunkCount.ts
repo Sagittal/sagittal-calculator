@@ -1,12 +1,11 @@
+import { Scope, searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect } from "../../bestMetric"
 import { saveLog } from "../../debug"
-import { debugSearchedAndPopulated, presentPercentage } from "../debug"
-import { populatedsForChunkCount, scopesForChunkCount, searchedsForChunkCount, status } from "../globals"
-import { Scope } from "../types"
-import { searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect } from "./bestMetric"
+import { populatedsForChunkCount, scopesForChunkCount, searchedsForChunkCount, solverStatus } from "../../globals"
 import { DebugTarget } from "../../types"
+import { debugSearchedAndPopulated, presentPercentage } from "../debug"
 
 const searchPopulatedScopesForChunkCount = async () => {
-    const searchingChunkCount = status.searchingChunkCount
+    const searchingChunkCount = solverStatus.searchingChunkCount
     const searchedForChunkCount = searchedsForChunkCount[ searchingChunkCount ]
     const searchingScopes = scopesForChunkCount[ searchingChunkCount ]
     const scopeForChunkCount = searchingScopes && searchingScopes.pop() as Scope

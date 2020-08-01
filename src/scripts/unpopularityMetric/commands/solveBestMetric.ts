@@ -1,10 +1,10 @@
 import * as colors from "colors"
 import { program } from "commander"
+import { performance } from "perf_hooks"
 import { Count } from "../../../general"
 import { clearLogs, debug, debugSettings, saveLog } from "../debug"
-import { bestMetricsForChunkCount, Chunk, killedsForChunkCount, populateAndSearchScopes, status } from "../solver"
-import { presentBestMetrics } from "../solver/present"
-import { performance } from "perf_hooks"
+import { bestMetricsForChunkCount, killedsForChunkCount, solverStatus } from "../globals"
+import { Chunk, populateAndSearchScopes, presentBestMetrics } from "../solver"
 import { DebugTarget } from "../types"
 
 program
@@ -17,7 +17,7 @@ program
     .parse(process.argv)
 
 const lowerBoundChunkCount = program.lowerBoundChunkCount || 1
-status.upperBoundChunkCount = program.upperBoundChunkCount || 8
+solverStatus.upperBoundChunkCount = program.upperBoundChunkCount || 8
 debug[ DebugTarget.ALL ] = !!program.debug
 if (!program.color) {
     colors.disable()
@@ -29,8 +29,8 @@ if (!debugSettings.noWrite) {
     clearLogs()
 }
 
-status.populatingChunkCount = lowerBoundChunkCount as Count<Chunk>
-status.searchingChunkCount = lowerBoundChunkCount as Count<Chunk>
+solverStatus.populatingChunkCount = lowerBoundChunkCount as Count<Chunk>
+solverStatus.searchingChunkCount = lowerBoundChunkCount as Count<Chunk>
 
 debug[ DebugTarget.SOLVER ] = true
 debug[ DebugTarget.POPULATION ] = true
@@ -40,7 +40,7 @@ debug[ DebugTarget.POPULATION ] = true
 
 const startTime = performance.now()
 populateAndSearchScopes().then(() => {
-    const bestMetricsForNonzeroChunkCounts = bestMetricsForChunkCount.slice(lowerBoundChunkCount, status.upperBoundChunkCount + 1)
+    const bestMetricsForNonzeroChunkCounts = bestMetricsForChunkCount.slice(lowerBoundChunkCount, solverStatus.upperBoundChunkCount + 1)
     saveLog(`\n\nAND THE BEST METRICS PER CHUNK COUNT WERE ${JSON.stringify(presentBestMetrics(bestMetricsForNonzeroChunkCounts), undefined, 4)}`, DebugTarget.ALL)
     saveLog(`\n\nAND THE KILLED METRIC COUNTS PER CHUNK COUNT WERE [${killedsForChunkCount.map(abandonedForChunkCount => abandonedForChunkCount.length).join(",")}]`, DebugTarget.ALL)
 

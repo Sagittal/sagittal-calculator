@@ -1,5 +1,9 @@
-import { checkSubmetricsForInvalidParameterCombinations } from "../../../../../src/scripts/unpopularityMetric/sumOfSquares"
-import { Parameter, ParameterValue, Submetric } from "../../../../../src/scripts/unpopularityMetric/types"
+import {
+    checkSubmetricsForInvalidParameterCombinations,
+    Parameter,
+    ParameterValue,
+    Submetric,
+} from "../../../../../src/scripts/unpopularityMetric/sumOfSquares"
 
 describe("checkSubmetricsForInvalidParameterCombinations", () => {
     it("gives a good error when none of sum, count, or max are provided", () => {
@@ -40,8 +44,8 @@ describe("checkSubmetricsForInvalidParameterCombinations", () => {
             const submetrics = [
                 {
                     [ Parameter.SUM ]: true,
-                    [ Parameter.J_AS_EXPONENT ]:  2 as ParameterValue,
-                    [ Parameter.J_AS_BASE ]:  2 as ParameterValue,
+                    [ Parameter.J_AS_EXPONENT ]: 2 as ParameterValue,
+                    [ Parameter.J_AS_BASE ]: 2 as ParameterValue,
                 },
             ]
 
@@ -52,8 +56,8 @@ describe("checkSubmetricsForInvalidParameterCombinations", () => {
             const submetrics = [
                 {
                     [ Parameter.SUM ]: true,
-                    [ Parameter.K_AS_EXPONENT ]:  2 as ParameterValue,
-                    [ Parameter.K_AS_BASE ]:  2 as ParameterValue,
+                    [ Parameter.K_AS_EXPONENT ]: 2 as ParameterValue,
+                    [ Parameter.K_AS_BASE ]: 2 as ParameterValue,
                 },
             ]
 
@@ -64,8 +68,8 @@ describe("checkSubmetricsForInvalidParameterCombinations", () => {
             const submetrics = [
                 {
                     [ Parameter.SUM ]: true,
-                    [ Parameter.WEIGHT_AS_EXPONENT ]:  2 as ParameterValue,
-                    [ Parameter.WEIGHT_AS_BASE ]:  2 as ParameterValue,
+                    [ Parameter.WEIGHT_AS_EXPONENT ]: 2 as ParameterValue,
+                    [ Parameter.WEIGHT_AS_BASE ]: 2 as ParameterValue,
                 },
             ]
 
@@ -90,8 +94,8 @@ describe("checkSubmetricsForInvalidParameterCombinations", () => {
             const submetrics = [
                 {
                     [ Parameter.SUM ]: true,
-                    [ Parameter.J_AS_COEFFICIENT ]:  2 as ParameterValue,
-                    [ Parameter.J_AS_BASE ]:  2 as ParameterValue,
+                    [ Parameter.J_AS_COEFFICIENT ]: 2 as ParameterValue,
+                    [ Parameter.J_AS_BASE ]: 2 as ParameterValue,
                 },
             ]
 
@@ -102,8 +106,8 @@ describe("checkSubmetricsForInvalidParameterCombinations", () => {
             const submetrics = [
                 {
                     [ Parameter.SUM ]: true,
-                    [ Parameter.K_AS_COEFFICIENT ]:  2 as ParameterValue,
-                    [ Parameter.K_AS_BASE ]:  2 as ParameterValue,
+                    [ Parameter.K_AS_COEFFICIENT ]: 2 as ParameterValue,
+                    [ Parameter.K_AS_BASE ]: 2 as ParameterValue,
                 },
             ]
 
@@ -114,8 +118,8 @@ describe("checkSubmetricsForInvalidParameterCombinations", () => {
             const submetrics = [
                 {
                     [ Parameter.SUM ]: true,
-                    [ Parameter.WEIGHT_AS_COEFFICIENT ]:  2 as ParameterValue,
-                    [ Parameter.WEIGHT_AS_BASE ]:  2 as ParameterValue,
+                    [ Parameter.WEIGHT_AS_COEFFICIENT ]: 2 as ParameterValue,
+                    [ Parameter.WEIGHT_AS_BASE ]: 2 as ParameterValue,
                 },
             ]
 
@@ -140,8 +144,8 @@ describe("checkSubmetricsForInvalidParameterCombinations", () => {
             const submetrics = [
                 {
                     [ Parameter.SUM ]: true,
-                    [ Parameter.J_AS_COEFFICIENT ]:  2 as ParameterValue,
-                    [ Parameter.J_AS_EXPONENT ]:  2 as ParameterValue,
+                    [ Parameter.J_AS_COEFFICIENT ]: 2 as ParameterValue,
+                    [ Parameter.J_AS_EXPONENT ]: 2 as ParameterValue,
                 },
             ]
 
@@ -152,8 +156,8 @@ describe("checkSubmetricsForInvalidParameterCombinations", () => {
             const submetrics = [
                 {
                     [ Parameter.SUM ]: true,
-                    [ Parameter.K_AS_COEFFICIENT ]:  2 as ParameterValue,
-                    [ Parameter.K_AS_EXPONENT ]:  2 as ParameterValue,
+                    [ Parameter.K_AS_COEFFICIENT ]: 2 as ParameterValue,
+                    [ Parameter.K_AS_EXPONENT ]: 2 as ParameterValue,
                 },
             ]
 
@@ -164,8 +168,8 @@ describe("checkSubmetricsForInvalidParameterCombinations", () => {
             const submetrics = [
                 {
                     [ Parameter.SUM ]: true,
-                    [ Parameter.WEIGHT_AS_COEFFICIENT ]:  2 as ParameterValue,
-                    [ Parameter.WEIGHT_AS_EXPONENT ]:  2 as ParameterValue,
+                    [ Parameter.WEIGHT_AS_COEFFICIENT ]: 2 as ParameterValue,
+                    [ Parameter.WEIGHT_AS_EXPONENT ]: 2 as ParameterValue,
                 },
             ]
 

@@ -1,8 +1,9 @@
 import { Count } from "../../../../general"
+import { Scope } from "../../bestMetric"
 import { saveLog } from "../../debug"
-import { populatedsForChunkCount, scopesForChunkCount } from "../globals"
-import { Chunk, Scope } from "../types"
+import { populatedsForChunkCount, scopesForChunkCount } from "../../globals"
 import { DebugTarget } from "../../types"
+import { Chunk } from "../types"
 
 const populateScopeForChunkCount = (scope: Scope, chunkCount: Count<Chunk>) => {
     scopesForChunkCount[ chunkCount ] = scopesForChunkCount[ chunkCount ] || []

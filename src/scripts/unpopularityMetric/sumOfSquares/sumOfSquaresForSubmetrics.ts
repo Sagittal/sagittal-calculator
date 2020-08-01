@@ -1,12 +1,12 @@
 import { Combination, Sum } from "../../../general"
 import { debug, saveLog } from "../debug"
-import { DebugTarget, Submetric } from "../types"
+import { DebugTarget } from "../types"
 import { checkSubmetricsForInvalidParameterValueCombinations } from "./checkParameterValues"
 import { CUT_OFF_POPULARITY, ZIPF_EXPONENT } from "./constants"
 import { COMMA_POPULARITIES } from "./popularities"
 import { addRankToUnpopularities } from "./rank"
 import { computeSumOfSquares } from "./sumOfSquares"
-import { Popularity } from "./types"
+import { Popularity, Submetric } from "./types"
 import { computeUnpopularities } from "./unpopularities"
 
 const computeSumOfSquaresForSubmetrics = (submetrics: Combination<Submetric>): Sum<"SquaredWeightedRankDifferences"> => {
@@ -17,7 +17,7 @@ const computeSumOfSquaresForSubmetrics = (submetrics: Combination<Submetric>): S
     const unpopularities = computeUnpopularities(realPopularities, submetrics)
     const rankedUnpopularities = addRankToUnpopularities(unpopularities)
 
-    if (debug[DebugTarget.ALL] || debug[DebugTarget.RANKED_UNPOPULARITIES]) {
+    if (debug[ DebugTarget.ALL ] || debug[ DebugTarget.RANKED_UNPOPULARITIES ]) {
         rankedUnpopularities.map(rankedUnpopularity => {
             saveLog(JSON.stringify(rankedUnpopularity), DebugTarget.RANKED_UNPOPULARITIES)
         })

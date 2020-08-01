@@ -1,10 +1,9 @@
-import "colors"
+import * as colors from "colors"
 import { program } from "commander"
 import { Combination } from "../../../general"
 import { clearLogs, debug, debugSettings, saveLog } from "../debug"
-import { computeSumOfSquaresForSubmetrics } from "../sumOfSquares"
-import { DebugTarget, Parameter, ParameterValue, Submetric } from "../types"
-import * as colors from "colors"
+import { computeSumOfSquaresForSubmetrics, Parameter, ParameterValue, Submetric } from "../sumOfSquares"
+import { DebugTarget } from "../types"
 
 program
     .option("-d, --debug", "debug")
