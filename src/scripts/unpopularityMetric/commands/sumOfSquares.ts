@@ -5,7 +5,6 @@ import {
     clearDebugLogFiles,
     debugSettings,
     DebugTarget,
-    debugTargets,
     saveDebugMessage,
     setDebugTargets,
 } from "../debug"

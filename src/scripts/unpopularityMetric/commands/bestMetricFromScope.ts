@@ -21,10 +21,10 @@ import { Parameter, ParameterValue } from "../sumOfSquares"
 
 program
     .option("-d, --debug-targets <debugTargets>", "debug targets")
-    .option("-m, --maximum-unit", "maximum unit")
-    .option("-n, --no-color", "no color")
-    .option("-t, --timeout-enabled", "timeout enabled")
+    .option("-c, --no-color", "no color")
     .option("-w, --no-write", "no write")
+    .option("-m, --maximum-unit", "maximum unit")
+    .option("-t, --timeout-enabled", "timeout enabled")
     .parse(process.argv)
 
 const recurse = true

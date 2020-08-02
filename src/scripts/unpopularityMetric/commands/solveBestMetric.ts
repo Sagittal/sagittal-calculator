@@ -14,12 +14,12 @@ import { bestMetricsForChunkCount, killedsForChunkCount, solverStatus } from "..
 import { Chunk, populateAndSearchScopes, presentBestMetrics } from "../solver"
 
 program
-    .option("-l, --lower-bound-chunk-count <lowerBoundChunkCount>", "lower bound chunk count", parseInt)
-    .option("-u, --upper-bound-chunk-count <upperBoundChunkCount>", "upper bound chunk count", parseInt)
     .option("-d, --debug-targets <debugTargets>", "debug targets")
     .option("-c, --no-color", "no color")
-    .option("-t, --no-time", "no time")
     .option("-w, --no-write", "no write")
+    .option("-t, --no-time", "no time")
+    .option("-l, --lower-bound-chunk-count <lowerBoundChunkCount>", "lower bound chunk count", parseInt)
+    .option("-u, --upper-bound-chunk-count <upperBoundChunkCount>", "upper bound chunk count", parseInt)
     .parse(process.argv)
 
 const lowerBoundChunkCount = program.lowerBoundChunkCount || 1
