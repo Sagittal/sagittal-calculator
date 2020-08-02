@@ -57,12 +57,6 @@ const checkSubmetricsForInvalidParameterCombinations = (submetrics: Submetric[])
         if (submetric[ Parameter.J_AS_COEFFICIENT ] && submetric[ Parameter.K_AS_COEFFICIENT ]) {
             throw new Error(`Submetric ${JSON.stringify(submetric)} cannot specify both j and k of the same type (coefficient).`)
         }
-        if (submetric[ Parameter.J_AS_BASE ] && submetric[ Parameter.K_AS_BASE ]) {
-            throw new Error(`Submetric ${JSON.stringify(submetric)} cannot specify both j and k of the same type (base).`)
-        }
-        if (submetric[ Parameter.J_AS_EXPONENT ] && submetric[ Parameter.K_AS_EXPONENT ]) {
-            throw new Error(`Submetric ${JSON.stringify(submetric)} cannot specify both j and k of the same type (exponent).`)
-        }
     })
 }
 

@@ -22,6 +22,7 @@ import {
     computeTriangularNumber,
     Ratio,
     round,
+    FractionalPart,
 } from "./math"
 import {
     analyzeComma,
@@ -109,4 +110,5 @@ export {
     ApotomeSlope,
     doOnNextEventLoop,
     shuffle,
+    FractionalPart,
 }

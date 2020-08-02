@@ -66,7 +66,17 @@ const INITIAL_PARAMETER_SCOPES: Partial<EnumHash<Parameter, ParameterValue | boo
         span: 6 as Span<ParameterValue>,
         resolution: computeResolution(6 as Span<ParameterValue>),
     },
+    [ Parameter.B ]: {
+        center: 0 as ParameterValue,
+        span: 6 as Span<ParameterValue>,
+        resolution: computeResolution(6 as Span<ParameterValue>),
+    },
     [ Parameter.X ]: {
+        center: 0 as ParameterValue,
+        span: 6 as Span<ParameterValue>,
+        resolution: computeResolution(6 as Span<ParameterValue>),
+    },
+    [ Parameter.U ]: {
         center: 0 as ParameterValue,
         span: 6 as Span<ParameterValue>,
         resolution: computeResolution(6 as Span<ParameterValue>),
@@ -76,7 +86,12 @@ const INITIAL_PARAMETER_SCOPES: Partial<EnumHash<Parameter, ParameterValue | boo
         span: 6 as Span<ParameterValue>,
         resolution: computeResolution(6 as Span<ParameterValue>),
     },
-    // [Parameter.V]: { center: 0, span: 6 },
+    [ Parameter.V ]: {
+        center: 0 as ParameterValue,
+        span: 6 as Span<ParameterValue>,
+        resolution: computeResolution(6 as Span<ParameterValue>),
+    },
+    // [Parameter.S]: { center: 0, span: 6 },
     // [Parameter.T]: { center: 0, span: 6 },
     [ Parameter.USE_NUMINATOR ]: true,
     [ Parameter.MODIFIED_COUNT ]: true,
@@ -144,12 +159,21 @@ const PARAMETER_CHUNKS: ParameterChunk[] = [
         [ Parameter.W ]: INITIAL_PARAMETER_SCOPES[ Parameter.W ],
     },
     {
+        [ Parameter.B ]: INITIAL_PARAMETER_SCOPES[ Parameter.B ],
+    },
+    {
         [ Parameter.X ]: INITIAL_PARAMETER_SCOPES[ Parameter.X ],
+    },
+    {
+        [ Parameter.U ]: INITIAL_PARAMETER_SCOPES[ Parameter.U ],
     },
     {
         [ Parameter.Y ]: INITIAL_PARAMETER_SCOPES[ Parameter.Y ],
     },
-    // { [Parameter.V]: INITIAL_PARAMETER_SCOPES[Parameter.V]},
+    {
+        [ Parameter.V ]: INITIAL_PARAMETER_SCOPES[ Parameter.V ],
+    },
+    // { [Parameter.S]: INITIAL_PARAMETER_SCOPES[Parameter.S]},
     // { [Parameter.T]: INITIAL_PARAMETER_SCOPES[Parameter.T]},
     {
         [ Parameter.MODIFIED_COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.MODIFIED_COUNT ],

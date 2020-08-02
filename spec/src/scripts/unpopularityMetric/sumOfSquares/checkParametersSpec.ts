@@ -189,29 +189,5 @@ describe("checkSubmetricsForInvalidParameterCombinations", () => {
 
             expect(() => checkSubmetricsForInvalidParameterCombinations(submetrics)).toThrowError(`Submetric {"sum":true,"jAsCoefficient":2,"kAsCoefficient":2} cannot specify both j and k of the same type (coefficient).`)
         })
-
-        it("gives a good error when both j and k are included on the same submetric as bases (because you could always forever increase/decrease them together to get the same result)", () => {
-            const submetrics = [
-                {
-                    [ Parameter.SUM ]: true,
-                    [ Parameter.J_AS_BASE ]: 2 as ParameterValue,
-                    [ Parameter.K_AS_BASE ]: 2 as ParameterValue,
-                },
-            ]
-
-            expect(() => checkSubmetricsForInvalidParameterCombinations(submetrics)).toThrowError(`Submetric {"sum":true,"jAsBase":2,"kAsBase":2} cannot specify both j and k of the same type (base).`)
-        })
-
-        it("gives a good error when both j and k are included on the same submetric as exponents (because you could always forever increase/decrease them together to get the same result)", () => {
-            const submetrics = [
-                {
-                    [ Parameter.SUM ]: true,
-                    [ Parameter.J_AS_EXPONENT ]: 2 as ParameterValue,
-                    [ Parameter.K_AS_EXPONENT ]: 2 as ParameterValue,
-                },
-            ]
-
-            expect(() => checkSubmetricsForInvalidParameterCombinations(submetrics)).toThrowError(`Submetric {"sum":true,"jAsExponent":2,"kAsExponent":2} cannot specify both j and k of the same type (exponent).`)
-        })
     })
 })

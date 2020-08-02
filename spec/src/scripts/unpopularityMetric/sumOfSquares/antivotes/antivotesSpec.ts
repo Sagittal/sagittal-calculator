@@ -69,7 +69,7 @@ describe("computeAntivotes", () => {
                 [ Parameter.W ]: -6 as ParameterValue,
                 [ Parameter.X ]: -2 as ParameterValue,
                 [ Parameter.Y ]: 0.14285714285714285 as ParameterValue,
-                // [Parameter.V]: -0.8571428571428572 as ParameterValue,
+                // [Parameter.S]: -0.8571428571428572 as ParameterValue,
                 // [Parameter.T]: -1.6142857142857143 as ParameterValue,
             },
         ] as Combination<Submetric>

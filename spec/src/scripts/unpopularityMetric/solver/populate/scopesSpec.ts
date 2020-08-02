@@ -9,7 +9,7 @@ describe("populateScopes", () => {
     beforeEach(() => {
         originalJasmineTimeoutInterval = jasmine.DEFAULT_TIMEOUT_INTERVAL
 
-        jasmine.DEFAULT_TIMEOUT_INTERVAL = 20000
+        jasmine.DEFAULT_TIMEOUT_INTERVAL = 30000
     })
 
     afterEach(() => {
@@ -27,6 +27,5 @@ describe("populateScopes", () => {
 
         expect(solverStatus.populatingChunkCount).toBe(upperBoundChunkCount)
         expect(scopesForChunkCount.populateScopesForChunkCount).toHaveBeenCalledTimes(upperBoundChunkCount)
-
     })
 })

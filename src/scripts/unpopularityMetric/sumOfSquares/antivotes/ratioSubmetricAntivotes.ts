@@ -1,4 +1,4 @@
-import { computeLog, computeMonzoFromInteger, computeMonzoFromRatio, isUndefined, Ratio } from "../../../../general"
+import { computeLog, computeMonzoFromInteger, computeMonzoFromRatio, FractionalPart, isUndefined, Ratio } from "../../../../general"
 import { Antivotes, ParameterValue, Submetric } from "../types"
 import { computeSubmetricAntivotes } from "./submetricAntivotes"
 
@@ -23,8 +23,8 @@ const computeRatioSubmetricAntivotes = (fiveRoughRatio: Ratio, submetric: Submet
     const fiveRoughNumeratorMonzo = computeMonzoFromInteger(numerator)
     const fiveRoughDenominatorMonzo = computeMonzoFromInteger(denominator)
 
-    const numeratorPrimeContentAntivotes = computeSubmetricAntivotes(fiveRoughNumeratorMonzo, submetric)
-    const denominatorPrimeContentAntivotes = computeSubmetricAntivotes(fiveRoughDenominatorMonzo, submetric)
+    const numeratorPrimeContentAntivotes = computeSubmetricAntivotes(fiveRoughNumeratorMonzo, submetric, FractionalPart.NUMERATOR)
+    const denominatorPrimeContentAntivotes = computeSubmetricAntivotes(fiveRoughDenominatorMonzo, submetric, FractionalPart.DENOMINATOR)
     const outputNumerator = useNuminator ?
         numeratorPrimeContentAntivotes > denominatorPrimeContentAntivotes ?
             numeratorPrimeContentAntivotes :

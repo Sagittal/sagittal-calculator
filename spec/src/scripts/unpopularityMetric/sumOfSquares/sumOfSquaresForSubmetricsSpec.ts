@@ -5,7 +5,7 @@ import {
     ParameterValue,
     Submetric,
 } from "../../../../../src/scripts/unpopularityMetric/sumOfSquares"
-import { SumOfSquares } from "../../../../../src/scripts/unpopularityMetric/bestMetric/types"
+import { SumOfSquares } from "../../../../../src/scripts/unpopularityMetric/bestMetric"
 
 describe("computeSumOfSquaresForSubmetrics", () => {
     it("returns the sum-of-squares for a given submetric combination", () => {

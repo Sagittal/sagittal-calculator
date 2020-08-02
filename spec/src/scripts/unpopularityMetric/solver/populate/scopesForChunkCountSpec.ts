@@ -273,7 +273,28 @@ describe("populateScopesForChunkCount", () => {
 
             // submetrics 1, parameters 1: distributed parameters to the submetric directly
 
-            // SOAPFAR (15)
+            // SOAPFAR (18)
+            [
+                {},
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.B ]: INITIAL_PARAMETER_SCOPES[ Parameter.B ],
+                },
+            ],
+            [
+                {},
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.U ]: INITIAL_PARAMETER_SCOPES[ Parameter.U ],
+                },
+            ],
+            [
+                {},
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.V ]: INITIAL_PARAMETER_SCOPES[ Parameter.V ],
+                },
+            ],
             [
                 {},
                 {
@@ -380,7 +401,31 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
 
-            // SOAPF (15)
+            // SOAPF (18)
+            [
+                {},
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.B ]: INITIAL_PARAMETER_SCOPES[ Parameter.B ],
+                },
+            ],
+            [
+                {},
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.U ]: INITIAL_PARAMETER_SCOPES[ Parameter.U ],
+                },
+            ],
+            [
+                {},
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.V ]: INITIAL_PARAMETER_SCOPES[ Parameter.V ],
+                },
+            ],
             [
                 {},
                 {
@@ -502,7 +547,28 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
 
-            // COAPFAR (15)
+            // COAPFAR (18)
+            [
+                {},
+                {
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                    [ Parameter.B ]: INITIAL_PARAMETER_SCOPES[ Parameter.B ],
+                },
+            ],
+            [
+                {},
+                {
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                    [ Parameter.U ]: INITIAL_PARAMETER_SCOPES[ Parameter.U ],
+                },
+            ],
+            [
+                {},
+                {
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                    [ Parameter.V ]: INITIAL_PARAMETER_SCOPES[ Parameter.V ],
+                },
+            ],
             [
                 {},
                 {
@@ -609,7 +675,31 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
 
-            // COAPF (15)
+            // COAPF (18)
+            [
+                {},
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                    [ Parameter.B ]: INITIAL_PARAMETER_SCOPES[ Parameter.B ],
+                },
+            ],
+            [
+                {},
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                    [ Parameter.U ]: INITIAL_PARAMETER_SCOPES[ Parameter.U ],
+                },
+            ],
+            [
+                {},
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                    [ Parameter.V ]: INITIAL_PARAMETER_SCOPES[ Parameter.V ],
+                },
+            ],
             [
                 {},
                 {
@@ -731,7 +821,31 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
 
-            // GPF (15)
+            // GPF (18)
+            [
+                {},
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.MAX ]: INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],
+                    [ Parameter.B ]: INITIAL_PARAMETER_SCOPES[ Parameter.B ],
+                },
+            ],
+            [
+                {},
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.MAX ]: INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],
+                    [ Parameter.U ]: INITIAL_PARAMETER_SCOPES[ Parameter.U ],
+                },
+            ],
+            [
+                {},
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.MAX ]: INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],
+                    [ Parameter.V ]: INITIAL_PARAMETER_SCOPES[ Parameter.V ],
+                },
+            ],
             [
                 {},
                 {
@@ -853,7 +967,31 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
 
-            // LOG BASE A_AS_COEFFICIENT OF N (15)
+            // LOG BASE A_AS_COEFFICIENT OF N (18)
+            [
+                {},
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.A_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_BASE ],
+                    [ Parameter.B ]: INITIAL_PARAMETER_SCOPES[ Parameter.B ],
+                },
+            ],
+            [
+                {},
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.A_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_BASE ],
+                    [ Parameter.U ]: INITIAL_PARAMETER_SCOPES[ Parameter.U ],
+                },
+            ],
+            [
+                {},
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.A_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_BASE ],
+                    [ Parameter.V ]: INITIAL_PARAMETER_SCOPES[ Parameter.V ],
+                },
+            ],
             [
                 {},
                 {
@@ -977,7 +1115,31 @@ describe("populateScopesForChunkCount", () => {
 
             // submetrics 1, parameters 1: distributed parameters to the 'all bins' submetric bin
 
-            // SOAPFAR (15)
+            // SOAPFAR (18)
+            [
+                {
+                    [ Parameter.B ]: INITIAL_PARAMETER_SCOPES[ Parameter.B ],
+                },
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.U ]: INITIAL_PARAMETER_SCOPES[ Parameter.U ],
+                },
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.V ]: INITIAL_PARAMETER_SCOPES[ Parameter.V ],
+                },
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                },
+            ],
             [
                 {
                     [ Parameter.X ]: INITIAL_PARAMETER_SCOPES[ Parameter.X ],
@@ -1099,7 +1261,34 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
 
-            // SOAPF (15)
+            // SOAPF (18)
+            [
+                {
+                    [ Parameter.B ]: INITIAL_PARAMETER_SCOPES[ Parameter.B ],
+                },
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.U ]: INITIAL_PARAMETER_SCOPES[ Parameter.U ],
+                },
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.V ]: INITIAL_PARAMETER_SCOPES[ Parameter.V ],
+                },
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                },
+            ],
             [
                 {
                     [ Parameter.X ]: INITIAL_PARAMETER_SCOPES[ Parameter.X ],
@@ -1236,7 +1425,31 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
 
-            // COAPFAR (15)
+            // COAPFAR (18)
+            [
+                {
+                    [ Parameter.B ]: INITIAL_PARAMETER_SCOPES[ Parameter.B ],
+                },
+                {
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.U ]: INITIAL_PARAMETER_SCOPES[ Parameter.U ],
+                },
+                {
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.V ]: INITIAL_PARAMETER_SCOPES[ Parameter.V ],
+                },
+                {
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                },
+            ],
             [
                 {
                     [ Parameter.X ]: INITIAL_PARAMETER_SCOPES[ Parameter.X ],
@@ -1358,7 +1571,34 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
 
-            // COAPF (15)
+            // COAPF (18)
+            [
+                {
+                    [ Parameter.B ]: INITIAL_PARAMETER_SCOPES[ Parameter.B ],
+                },
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.U ]: INITIAL_PARAMETER_SCOPES[ Parameter.U ],
+                },
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.V ]: INITIAL_PARAMETER_SCOPES[ Parameter.V ],
+                },
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                },
+            ],
             [
                 {
                     [ Parameter.X ]: INITIAL_PARAMETER_SCOPES[ Parameter.X ],
@@ -1495,7 +1735,34 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
 
-            // GPF (15)
+            // GPF (18)
+            [
+                {
+                    [ Parameter.B ]: INITIAL_PARAMETER_SCOPES[ Parameter.B ],
+                },
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.MAX ]: INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.U ]: INITIAL_PARAMETER_SCOPES[ Parameter.U ],
+                },
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.MAX ]: INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.V ]: INITIAL_PARAMETER_SCOPES[ Parameter.V ],
+                },
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.MAX ]: INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],
+                },
+            ],
             [
                 {
                     [ Parameter.X ]: INITIAL_PARAMETER_SCOPES[ Parameter.X ],
@@ -1632,7 +1899,34 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
 
-            // LOG BASE A_AS_COEFFICIENT OF N (15)
+            // LOG BASE A_AS_COEFFICIENT OF N (18)
+            [
+                {
+                    [ Parameter.B ]: INITIAL_PARAMETER_SCOPES[ Parameter.B ],
+                },
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.A_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_BASE ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.U ]: INITIAL_PARAMETER_SCOPES[ Parameter.U ],
+                },
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.A_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_BASE ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.V ]: INITIAL_PARAMETER_SCOPES[ Parameter.V ],
+                },
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.A_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_BASE ],
+                },
+            ],
             [
                 {
                     [ Parameter.X ]: INITIAL_PARAMETER_SCOPES[ Parameter.X ],
@@ -1772,10 +2066,10 @@ describe("populateScopesForChunkCount", () => {
 
         const result: Scope[] = scopesForChunkCount[ chunkCount ]
 
-        // 201 =
-        //      ((2+6-1)!)/((2!)((6-1)!)) * ((0+15-1)!)/((0!)((15-1)!)) * 3^0 = 21 * 1 * 1 = 21
+        // 237 =
+        //      ((2+6-1)!)/((2!)((6-1)!)) * ((0+18-1)!)/((0!)((18-1)!)) * 3^0 = 21 * 1 * 1 = 21
         //      +
-        //      ((1+6-1)!)/((1!)((6-1)!)) * ((1+15-1)!)/((1!)((15-1)!)) * 2^1 = 6 * 15 * 2 = 180
+        //      ((1+6-1)!)/((1!)((6-1)!)) * ((1+18-1)!)/((1!)((18-1)!)) * 2^1 = 6 * 18 * 2 = 216
         expect(result.length).toEqual(expectedResult.length)
         expectedResult.forEach(expectedResultElement => {
             expect(result.some(resultElement => {
@@ -1784,7 +2078,8 @@ describe("populateScopesForChunkCount", () => {
         })
     })
 
-    it("given a chunk count, populates all possible combinations of those parameters - works for 3", async () => {
+    // TODO: this one and the one below need to be recalculated for 18 instead of 15 parameters
+    xit("given a chunk count, populates all possible combinations of those parameters - works for 3", async () => {
         const chunkCount = 3 as Count<Chunk>
         solverStatus.populatingChunkCount = chunkCount
         scopesForChunkCount[ chunkCount ] = []

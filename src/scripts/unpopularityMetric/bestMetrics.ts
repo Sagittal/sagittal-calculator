@@ -571,14 +571,7 @@ const wyb = {
             [ Parameter.A_AS_BASE ]: 2,
             [ Parameter.Y ]: 0.865618551,
             [ Parameter.W ]: -1.472615144,
-            [ Parameter.K_AS_COEFFICIENT ]: 0,
-        },
-        {
-            [ Parameter.SUM ]: true,
-            [ Parameter.A_AS_BASE ]: 2,
-            [ Parameter.Y ]: 0.865618551,
-            [ Parameter.W ]: -2.02634047,
-            [ Parameter.J_AS_COEFFICIENT ]: 0,
+            [ Parameter.B ]: -2.02634047,
         },
     ],
 }
