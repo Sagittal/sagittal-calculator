@@ -1,11 +1,18 @@
 import * as colors from "colors"
 import { program } from "commander"
 import { Combination } from "../../../general"
-import { clearDebugLogFiles, debugSettings, DebugTarget, debugTargets, saveDebugMessage } from "../debug"
+import {
+    clearDebugLogFiles,
+    debugSettings,
+    DebugTarget,
+    debugTargets,
+    saveDebugMessage,
+    setDebugTargets,
+} from "../debug"
 import { computeSumOfSquaresForSubmetrics, Parameter, ParameterValue, Submetric } from "../sumOfSquares"
 
 program
-    .option("-d, --debugTargets", "debug")
+    .option("-d, --debug-targets <debugTargets>", "debug targets")
     .option("-c, --no-color", "no color")
     .option("-w, --no-write", "no write")
     .parse(process.argv)
@@ -13,7 +20,7 @@ program
 if (!program.color) {
     colors.disable()
 }
-debugTargets[ DebugTarget.RANKED_UNPOPULARITIES ] = !!program.debug
+setDebugTargets(program.debugTargets || DebugTarget.UNPOPULARITIES)
 debugSettings.noWrite = !program.write
 
 if (!debugSettings.noWrite) {

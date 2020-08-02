@@ -2,14 +2,21 @@ import * as colors from "colors"
 import { program } from "commander"
 import { performance } from "perf_hooks"
 import { Count } from "../../../general"
-import { clearDebugLogFiles, debugSettings, DebugTarget, debugTargets, saveDebugMessage } from "../debug"
+import {
+    clearDebugLogFiles,
+    debugSettings,
+    DebugTarget,
+    debugTargets,
+    saveDebugMessage,
+    setDebugTargets,
+} from "../debug"
 import { bestMetricsForChunkCount, killedsForChunkCount, solverStatus } from "../globals"
 import { Chunk, populateAndSearchScopes, presentBestMetrics } from "../solver"
 
 program
     .option("-l, --lower-bound-chunk-count <lowerBoundChunkCount>", "lower bound chunk count", parseInt)
     .option("-u, --upper-bound-chunk-count <upperBoundChunkCount>", "upper bound chunk count", parseInt)
-    .option("-d, --debugTargets", "debug")
+    .option("-d, --debug-targets <debugTargets>", "debug targets")
     .option("-c, --no-color", "no color")
     .option("-t, --no-time", "no time")
     .option("-w, --no-write", "no write")
@@ -17,7 +24,7 @@ program
 
 const lowerBoundChunkCount = program.lowerBoundChunkCount || 1
 solverStatus.upperBoundChunkCount = program.upperBoundChunkCount || 8
-debugTargets[ DebugTarget.ALL ] = !!program.debug
+setDebugTargets(program.debugTargets)
 if (!program.color) {
     colors.disable()
 }
@@ -31,8 +38,8 @@ if (!debugSettings.noWrite) {
 solverStatus.populatingChunkCount = lowerBoundChunkCount as Count<Chunk>
 solverStatus.searchingChunkCount = lowerBoundChunkCount as Count<Chunk>
 
-debugTargets[ DebugTarget.SOLVER ] = true
-debugTargets[ DebugTarget.POPULATION ] = true
+debugTargets[ DebugTarget.SEARCH ] = true
+debugTargets[ DebugTarget.POPULATE ] = true
 // debugTargets[ DebugTarget.LOCAL_MINIMUM ] = true
 // debugTargets[ DebugTarget.NEW_BEST_METRIC ] = true
 // debugTargets[ DebugTarget.SCOPE ] = true

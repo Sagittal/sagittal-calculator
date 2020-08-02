@@ -5,6 +5,8 @@ import { targetColors } from "./colors"
 import { debugSettings } from "./settings"
 
 const saveDebugMessage = (message: string, target: DebugTarget) => {
+    if (debugTargets[ DebugTarget.NONE ]) return
+
     if (debugTargets[ DebugTarget.ALL ] || debugTargets[ target ] || target === DebugTarget.ALL) {
         if (!debugSettings.noWrite) {
             fs.existsSync("dist") || fs.mkdirSync("dist")

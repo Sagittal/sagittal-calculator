@@ -16,9 +16,9 @@ const computeSumOfSquaresForSubmetrics = (submetrics: Combination<Submetric>): S
     const unpopularities = computeUnpopularities(realPopularities, submetrics)
     const rankedUnpopularities = addRankToUnpopularities(unpopularities)
 
-    if (debugTargets[ DebugTarget.ALL ] || debugTargets[ DebugTarget.RANKED_UNPOPULARITIES ]) {
+    if (debugTargets[ DebugTarget.ALL ] || debugTargets[ DebugTarget.UNPOPULARITIES ]) {
         rankedUnpopularities.map(rankedUnpopularity => {
-            saveDebugMessage(JSON.stringify(rankedUnpopularity), DebugTarget.RANKED_UNPOPULARITIES)
+            saveDebugMessage(JSON.stringify(rankedUnpopularity), DebugTarget.UNPOPULARITIES)
         })
     }
 

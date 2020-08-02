@@ -5,7 +5,7 @@ import { Chunk } from "../types"
 import { populateScopesForChunkCount } from "./scopesForChunkCount"
 
 const populateScopes = async () => {
-    saveDebugMessage(`\n\nPOPULATING CHUNK COUNT ${solverStatus.populatingChunkCount}/${solverStatus.upperBoundChunkCount}`, DebugTarget.POPULATION)
+    saveDebugMessage(`\n\nPOPULATING CHUNK COUNT ${solverStatus.populatingChunkCount}/${solverStatus.upperBoundChunkCount}`, DebugTarget.POPULATE)
     await populateScopesForChunkCount()
     if (debugTargets[ DebugTarget.ALL ]) {
         console.log(``)

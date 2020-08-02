@@ -2,7 +2,9 @@ import { runCommandAndGetConsoleOutput } from "../../../../helpers/specHelper"
 
 describe("sum-of-squares", () => {
     it("gives you the sum-of-squares given the submetric combination in the file, and also logs the full list of unpopularities", () => {
-        const command = "npm run sos -- -d --no-color --no-write"
+        // if you want you can pass something like --debug-target antivotes,newBestMetric,errors
+        //  to get exactly the debugging you want
+        const command = "npm run sos -- --no-color --no-write"
 
         const result = runCommandAndGetConsoleOutput(command)
 

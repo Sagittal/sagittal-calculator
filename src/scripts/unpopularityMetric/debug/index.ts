@@ -3,6 +3,7 @@ import { clearDebugLogFiles } from "./clear"
 import { debugSettings } from "./settings"
 import { debugTargets } from "./targets"
 import { DebugTarget } from "./types"
+import { setDebugTargets } from "./set"
 
 export {
     saveDebugMessage,
@@ -10,4 +11,5 @@ export {
     debugSettings,
     debugTargets,
     DebugTarget,
+    setDebugTargets,
 }

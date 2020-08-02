@@ -15,7 +15,7 @@ const populateScopesForChunkCountAndSubmetricChunkCombination = async (submetric
         submetricChunkCombinationCount,
     } = options
 
-    saveDebugMessage(`populating scopes for submetric chunk combination ${submetricChunkCombinationIndex + 1}/${submetricChunkCombinationCount} with parameter chunk combination ${parameterChunkCombinationIndex + 1}/${parameterChunkCombinations.length} (${100 * parameterChunkCombinationIndex / parameterChunkCombinations.length}%) ${presentSearchedAndPopulated()}`, DebugTarget.POPULATION)
+    saveDebugMessage(`populating scopes for submetric chunk combination ${submetricChunkCombinationIndex + 1}/${submetricChunkCombinationCount} with parameter chunk combination ${parameterChunkCombinationIndex + 1}/${parameterChunkCombinations.length} (${100 * parameterChunkCombinationIndex / parameterChunkCombinations.length}%) ${presentSearchedAndPopulated()}`, DebugTarget.POPULATE)
 
     const parameterChunkCombination: Combination<Chunk> = parameterChunkCombinations[ parameterChunkCombinationIndex ]
 

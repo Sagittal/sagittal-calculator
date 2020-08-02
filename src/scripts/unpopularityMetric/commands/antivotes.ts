@@ -1,11 +1,18 @@
 import * as colors from "colors"
 import { program } from "commander"
 import { Combination, presentRatio, Ratio } from "../../../general"
-import { clearDebugLogFiles, debugSettings, DebugTarget, debugTargets, saveDebugMessage } from "../debug"
+import {
+    clearDebugLogFiles,
+    debugSettings,
+    DebugTarget,
+    debugTargets,
+    saveDebugMessage,
+    setDebugTargets,
+} from "../debug"
 import { computeAntivotes, Parameter, ParameterValue, Submetric } from "../sumOfSquares"
 
 program
-    .option("-d, --debugTargets", "debug")
+    .option("-d, --debug-targets <debugTargets>", "debug targets")
     .option("-c, --no-color", "no color")
     .option("-w, --no-write", "no write")
     .parse(process.argv)
@@ -13,7 +20,8 @@ program
 if (!program.color) {
     colors.disable()
 }
-debugTargets[ DebugTarget.SUBMETRIC_ANTIVOTES ] = !!program.debug
+
+setDebugTargets(program.debugTargets || DebugTarget.ANTIVOTES)
 debugSettings.noWrite = !program.write
 
 if (!debugSettings.noWrite) {
@@ -39,4 +47,4 @@ const fiveRoughRatio: Ratio = [11, 7] as Ratio
 
 const antivotes = computeAntivotes(fiveRoughRatio, submetrics)
 
-saveDebugMessage(`${presentRatio(fiveRoughRatio)}\n${JSON.stringify(submetrics)}\n${antivotes}`, DebugTarget.SUBMETRIC_ANTIVOTES)
+saveDebugMessage(`${presentRatio(fiveRoughRatio)}\n${JSON.stringify(submetrics)}\n${antivotes}`, DebugTarget.ANTIVOTES)

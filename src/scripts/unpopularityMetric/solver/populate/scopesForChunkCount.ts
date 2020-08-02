@@ -10,14 +10,14 @@ const populateScopesForChunkCount = async () => {
     const chunkCount = solverStatus.populatingChunkCount
     let chunkCountForSubmetrics: Count<SubmetricChunk> = computeInitialChunkCountForSubmetrics(chunkCount)
 
-    saveDebugMessage(`computing combinations for chunk count ${chunkCount}`, DebugTarget.POPULATION)
+    saveDebugMessage(`computing combinations for chunk count ${chunkCount}`, DebugTarget.POPULATE)
 
     while (chunkCountForSubmetrics > 0) {
         await populateScopesForChunkCountPhase(chunkCount, chunkCountForSubmetrics)
         chunkCountForSubmetrics = chunkCountForSubmetrics - 1 as Count<SubmetricChunk>
     }
 
-    saveDebugMessage(`FINISHED POPULATING CHUNK COUNT ${chunkCount} ${presentSearchedAndPopulated()}`, DebugTarget.POPULATION)
+    saveDebugMessage(`FINISHED POPULATING CHUNK COUNT ${chunkCount} ${presentSearchedAndPopulated()}`, DebugTarget.POPULATE)
 }
 
 export {

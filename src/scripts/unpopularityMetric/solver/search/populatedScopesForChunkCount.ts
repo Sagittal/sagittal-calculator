@@ -10,7 +10,7 @@ const searchPopulatedScopesForChunkCount = async () => {
     const scopeForChunkCount = searchingScopes && searchingScopes.pop() as Scope
 
     if (searchedForChunkCount % 1 === 0) {
-        saveDebugMessage(`searched out of populated for chunk count ${searchingChunkCount}: ${presentPercentage(searchedForChunkCount, populatedsForChunkCount[ searchingChunkCount ])} ${presentSearchedAndPopulated()}`, DebugTarget.SOLVER)
+        saveDebugMessage(`searched out of populated for chunk count ${searchingChunkCount}: ${presentPercentage(searchedForChunkCount, populatedsForChunkCount[ searchingChunkCount ])} ${presentSearchedAndPopulated()}`, DebugTarget.SEARCH)
     }
 
     try {

@@ -9,12 +9,18 @@ import {
     Scope,
     searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect,
 } from "../bestMetric"
-import { clearDebugLogFiles, debugSettings, DebugTarget, debugTargets, saveDebugMessage } from "../debug"
+import {
+    clearDebugLogFiles,
+    debugSettings,
+    DebugTarget,
+    saveDebugMessage,
+    setDebugTargets,
+} from "../debug"
 import { bestMetricsForChunkCount } from "../globals"
 import { Parameter, ParameterValue } from "../sumOfSquares"
 
 program
-    .option("-d, --debugTargets", "debug")
+    .option("-d, --debug-targets <debugTargets>", "debug targets")
     .option("-m, --maximum-unit", "maximum unit")
     .option("-n, --no-color", "no color")
     .option("-t, --timeout-enabled", "timeout enabled")
@@ -22,7 +28,7 @@ program
     .parse(process.argv)
 
 const recurse = true
-debugTargets[ DebugTarget.ALL ] = !!program.debug
+setDebugTargets(program.debugTargets)
 const maximumUnit = program.maximumUnit
 const timeoutEnabled = program.timeoutEnabled
 debugSettings.noWrite = !program.write

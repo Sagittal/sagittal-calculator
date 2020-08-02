@@ -31,7 +31,7 @@ const searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect = async (s
             let timeUnits = 0
             timeUpdater = setInterval(() => {
                 timeUnits = timeUnits + 1
-                console.log(`${JSON.stringify(scope)} - searching for ${timeUnits}s out of max ${MAXIMUM_SEARCH_TIME / 1000}s`.yellow)
+                saveDebugMessage(`${JSON.stringify(scope)} - searching for ${timeUnits}s out of max ${MAXIMUM_SEARCH_TIME / 1000}s`, DebugTarget.SCOPE)
             }, 1000)
         }
 

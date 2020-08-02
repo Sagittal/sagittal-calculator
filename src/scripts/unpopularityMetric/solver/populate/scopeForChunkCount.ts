@@ -11,7 +11,7 @@ const populateScopeForChunkCount = (scope: Scope, chunkCount: Count<Chunk>) => {
     populatedsForChunkCount[ chunkCount ] = populatedsForChunkCount[ chunkCount ] ? populatedsForChunkCount[ chunkCount ] + 1 : 1
 
     if (populatedsForChunkCount[ chunkCount ] % 1000 === 0) {
-        saveDebugMessage(`${populatedsForChunkCount[ chunkCount ]} scopes have been populated for chunk count ${chunkCount} so far`, DebugTarget.POPULATION)
+        saveDebugMessage(`${populatedsForChunkCount[ chunkCount ]} scopes have been populated for chunk count ${chunkCount} so far`, DebugTarget.POPULATE)
     }
 }
 

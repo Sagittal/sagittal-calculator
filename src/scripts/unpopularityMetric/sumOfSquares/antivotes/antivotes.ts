@@ -8,7 +8,7 @@ const computeAntivotes = (fiveRoughRatio: Ratio, submetrics: Combination<Submetr
         (totalAntivotes: Antivotes, submetric: Submetric): Antivotes => {
             const weightedSubmetricAntivotes: Antivotes = computeWeightedSubmetricAntivotes(fiveRoughRatio, submetric)
 
-            saveDebugMessage(`${JSON.stringify(submetric)}: ${weightedSubmetricAntivotes}`, DebugTarget.SUBMETRIC_ANTIVOTES)
+            saveDebugMessage(`${JSON.stringify(submetric)}: ${weightedSubmetricAntivotes}`, DebugTarget.ANTIVOTES)
 
             return totalAntivotes + weightedSubmetricAntivotes as Antivotes
         },

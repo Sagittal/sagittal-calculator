@@ -16,12 +16,12 @@ const searchScopes = async () => {
 
     const populatingHasMovedOnToTheNextChunkCount = solverStatus.populatingChunkCount > searchingChunkCount
     if (populatingHasMovedOnToTheNextChunkCount) {
-        saveDebugMessage(`\n\nBEST METRICS FOR CHUNK COUNT ${searchingChunkCount} were ${JSON.stringify(bestMetricsForChunkCount[ searchingChunkCount ], undefined, 4)}`, DebugTarget.SOLVER)
+        saveDebugMessage(`\n\nBEST METRICS FOR CHUNK COUNT ${searchingChunkCount} were ${JSON.stringify(bestMetricsForChunkCount[ searchingChunkCount ], undefined, 4)}`, DebugTarget.SEARCH)
         solverStatus.searchingChunkCount = searchingChunkCount + 1 as Count<Chunk>
     }
 
     if (searchingChunkCount <= solverStatus.upperBoundChunkCount && !solverStatus.finishedPopulating) {
-        saveDebugMessage(`searching got ahead of populating; waiting 1 second for more scopes to be populated for ${searchingChunkCount} ${presentSearchedAndPopulated()}`, DebugTarget.SOLVER)
+        saveDebugMessage(`searching got ahead of populating; waiting 1 second for more scopes to be populated for ${searchingChunkCount} ${presentSearchedAndPopulated()}`, DebugTarget.SEARCH)
 
         const timeout = populatingHasMovedOnToTheNextChunkCount ? 0 : ONE_SECOND_TO_GIVE_POPULATION_A_CHANCE_TO_CATCH_UP
 

@@ -16,14 +16,14 @@ import { searchScopes } from "./search"
 
 const populateAndSearchScopes = async () => {
     populateScopes().then(() => {
-        saveDebugMessage("\n\nFINISHED POPULATING", DebugTarget.POPULATION)
+        saveDebugMessage("\n\nFINISHED POPULATING", DebugTarget.POPULATE)
         solverStatus.finishedPopulating = true
     })
 
-    saveDebugMessage(`\n\nPROCESSING CHUNK COUNT ${solverStatus.searchingChunkCount} (${solverStatus.finishedPopulating ? `finished populating` : `still populating chunk count ${solverStatus.populatingChunkCount}`}) ${presentSearchedAndPopulated()}`, DebugTarget.SOLVER)
+    saveDebugMessage(`\n\nPROCESSING CHUNK COUNT ${solverStatus.searchingChunkCount} (${solverStatus.finishedPopulating ? `finished populating` : `still populating chunk count ${solverStatus.populatingChunkCount}`}) ${presentSearchedAndPopulated()}`, DebugTarget.SEARCH)
     await searchScopes()
 
-    saveDebugMessage(`\n\nFINAL STATUS ${presentSearchedAndPopulated()}`, DebugTarget.SOLVER)
+    saveDebugMessage(`\n\nFINAL STATUS ${presentSearchedAndPopulated()}`, DebugTarget.SEARCH)
 }
 
 export {
