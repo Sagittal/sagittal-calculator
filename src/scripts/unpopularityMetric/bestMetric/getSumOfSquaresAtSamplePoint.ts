@@ -1,8 +1,7 @@
-import { Sum } from "../../../general"
 import { SamplePoint } from "./scopeToSamples"
-import { SumsOfSquares } from "./types"
+import { SumOfSquares, SumsOfSquares } from "./types"
 
-const getSumOfSquaresAtSamplePoint = (sumsOfSquares: SumsOfSquares, samplePoint: SamplePoint): Sum<"SquaredWeightedRankDifferences"> | undefined => {
+const getSumOfSquaresAtSamplePoint = (sumsOfSquares: SumsOfSquares, samplePoint: SamplePoint): SumOfSquares | undefined => {
     let cursor = sumsOfSquares
     samplePoint.slice(0, samplePoint.length - 1).forEach(dynamicParameterValueIndex => {
         if (cursor) {
@@ -11,7 +10,7 @@ const getSumOfSquaresAtSamplePoint = (sumsOfSquares: SumsOfSquares, samplePoint:
     })
 
     if (cursor) {
-        return cursor[ samplePoint[ samplePoint.length - 1 ] ] as Sum<"SquaredWeightedRankDifferences">
+        return cursor[ samplePoint[ samplePoint.length - 1 ] ] as SumOfSquares
     }
 
     return undefined

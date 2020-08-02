@@ -1,7 +1,7 @@
 import { clearTimeout } from "timers"
 import { shuffle } from "../../../general"
 import { DebugTarget, debugTargets, saveDebugMessage } from "../debug"
-import { timeoutsForChunkCount, searchedsForChunkCount } from "../globals"
+import { searchedsForChunkCount, timeoutsForChunkCount } from "../globals"
 import { DUMMY_CHUNK_COUNT_FOR_ONE_OFF_BEST_METRIC_FROM_SCOPE, MAXIMUM_SEARCH_TIME } from "./constants"
 import { computeIndentation } from "./indentation"
 import { computeLocalMinima } from "./localMinima"

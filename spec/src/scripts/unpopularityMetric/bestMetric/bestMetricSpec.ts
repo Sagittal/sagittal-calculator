@@ -1,8 +1,8 @@
-import { Combination, Count, Index, Resolution, Span, Sum, Unit } from "../../../../../src/general"
+import { Combination, Count, Index, Resolution, Span, Unit } from "../../../../../src/general"
 import { searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect } from "../../../../../src/scripts/unpopularityMetric/bestMetric"
 import * as nextLocalMinimum from "../../../../../src/scripts/unpopularityMetric/bestMetric/nextLocalMinimum"
 import { SamplePoint } from "../../../../../src/scripts/unpopularityMetric/bestMetric/scopeToSamples"
-import { LocalMinimum, Scope } from "../../../../../src/scripts/unpopularityMetric/bestMetric/types"
+import { LocalMinimum, Scope, SumOfSquares } from "../../../../../src/scripts/unpopularityMetric/bestMetric/types"
 import { Chunk } from "../../../../../src/scripts/unpopularityMetric/solver"
 import { Parameter, ParameterValue, Submetric } from "../../../../../src/scripts/unpopularityMetric/sumOfSquares"
 
@@ -31,7 +31,7 @@ describe("searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect", () =
         const depth = 8
         const progressMessage = "this is fun"
         const localMinimum = {
-            sumOfSquares: 0.04 as Sum<"SquaredWeightedRankDifferences">,
+            sumOfSquares: 0.04 as SumOfSquares,
             samplePoint: [77, 54] as SamplePoint,
             submetrics: [] as unknown as Combination<Submetric>,
         }
@@ -53,7 +53,7 @@ describe("searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect", () =
 
         const expectedNextLocalMinima = [
             {
-                sumOfSquares: 0.03168127512830582 as Sum<"SquaredWeightedRankDifferences">,
+                sumOfSquares: 0.03168127512830582 as SumOfSquares,
                 samplePoint: [1, 0] as SamplePoint,
                 submetrics: [
                     {
@@ -68,7 +68,7 @@ describe("searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect", () =
                 ] as Combination<Submetric>,
             },
             {
-                sumOfSquares: 0.03168127512830582 as Sum<"SquaredWeightedRankDifferences">,
+                sumOfSquares: 0.03168127512830582 as SumOfSquares,
                 samplePoint: [2, 1] as SamplePoint,
                 submetrics: [
                     {

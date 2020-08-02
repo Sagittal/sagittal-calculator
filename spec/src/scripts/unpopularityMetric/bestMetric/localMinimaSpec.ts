@@ -1,8 +1,7 @@
-import { Sum } from "../../../../../src/general"
 import { Combination } from "../../../../../src/general/math"
 import { computeLocalMinima } from "../../../../../src/scripts/unpopularityMetric/bestMetric/localMinima"
 import { Sample, SamplePoint } from "../../../../../src/scripts/unpopularityMetric/bestMetric/scopeToSamples"
-import { SumsOfSquares } from "../../../../../src/scripts/unpopularityMetric/bestMetric/types"
+import { SumOfSquares, SumsOfSquares } from "../../../../../src/scripts/unpopularityMetric/bestMetric/types"
 import { Submetric } from "../../../../../src/scripts/unpopularityMetric/sumOfSquares"
 
 describe("computeLocalMinima", () => {
@@ -30,16 +29,16 @@ describe("computeLocalMinima", () => {
     it("returns an empty array if all the values are the same", () => {
         const sumsOfSquares: SumsOfSquares = [
             [
-                [0.004 as Sum<"SquaredWeightedRankDifferences">, 0.004 as Sum<"SquaredWeightedRankDifferences">, 0.004 as Sum<"SquaredWeightedRankDifferences">],
-                [0.004 as Sum<"SquaredWeightedRankDifferences">, 0.004 as Sum<"SquaredWeightedRankDifferences">, 0.004 as Sum<"SquaredWeightedRankDifferences">],
+                [0.004 as SumOfSquares, 0.004 as SumOfSquares, 0.004 as SumOfSquares],
+                [0.004 as SumOfSquares, 0.004 as SumOfSquares, 0.004 as SumOfSquares],
             ],
             [
-                [0.004 as Sum<"SquaredWeightedRankDifferences">, 0.004 as Sum<"SquaredWeightedRankDifferences">, 0.004 as Sum<"SquaredWeightedRankDifferences">],
-                [0.004 as Sum<"SquaredWeightedRankDifferences">, 0.004 as Sum<"SquaredWeightedRankDifferences">, 0.004 as Sum<"SquaredWeightedRankDifferences">],
+                [0.004 as SumOfSquares, 0.004 as SumOfSquares, 0.004 as SumOfSquares],
+                [0.004 as SumOfSquares, 0.004 as SumOfSquares, 0.004 as SumOfSquares],
             ],
             [
-                [0.004 as Sum<"SquaredWeightedRankDifferences">, 0.004 as Sum<"SquaredWeightedRankDifferences">, 0.004 as Sum<"SquaredWeightedRankDifferences">],
-                [0.004 as Sum<"SquaredWeightedRankDifferences">, 0.004 as Sum<"SquaredWeightedRankDifferences">, 0.004 as Sum<"SquaredWeightedRankDifferences">],
+                [0.004 as SumOfSquares, 0.004 as SumOfSquares, 0.004 as SumOfSquares],
+                [0.004 as SumOfSquares, 0.004 as SumOfSquares, 0.004 as SumOfSquares],
             ],
         ]
 
@@ -51,16 +50,16 @@ describe("computeLocalMinima", () => {
     it("returns an empty area if it is just a boundary between two values", () => {
         const sumsOfSquares: SumsOfSquares = [
             [
-                [0.004 as Sum<"SquaredWeightedRankDifferences">, 0.004 as Sum<"SquaredWeightedRankDifferences">, 0.004 as Sum<"SquaredWeightedRankDifferences">],
-                [0.004 as Sum<"SquaredWeightedRankDifferences">, 0.004 as Sum<"SquaredWeightedRankDifferences">, 0.004 as Sum<"SquaredWeightedRankDifferences">],
+                [0.004 as SumOfSquares, 0.004 as SumOfSquares, 0.004 as SumOfSquares],
+                [0.004 as SumOfSquares, 0.004 as SumOfSquares, 0.004 as SumOfSquares],
             ],
             [
-                [0.003 as Sum<"SquaredWeightedRankDifferences">, 0.004 as Sum<"SquaredWeightedRankDifferences">, 0.004 as Sum<"SquaredWeightedRankDifferences">],
-                [0.003 as Sum<"SquaredWeightedRankDifferences">, 0.003 as Sum<"SquaredWeightedRankDifferences">, 0.004 as Sum<"SquaredWeightedRankDifferences">],
+                [0.003 as SumOfSquares, 0.004 as SumOfSquares, 0.004 as SumOfSquares],
+                [0.003 as SumOfSquares, 0.003 as SumOfSquares, 0.004 as SumOfSquares],
             ],
             [
-                [0.003 as Sum<"SquaredWeightedRankDifferences">, 0.003 as Sum<"SquaredWeightedRankDifferences">, 0.003 as Sum<"SquaredWeightedRankDifferences">],
-                [0.003 as Sum<"SquaredWeightedRankDifferences">, 0.003 as Sum<"SquaredWeightedRankDifferences">, 0.003 as Sum<"SquaredWeightedRankDifferences">],
+                [0.003 as SumOfSquares, 0.003 as SumOfSquares, 0.003 as SumOfSquares],
+                [0.003 as SumOfSquares, 0.003 as SumOfSquares, 0.003 as SumOfSquares],
             ],
         ]
 
@@ -72,16 +71,16 @@ describe("computeLocalMinima", () => {
     it("returns an empty array if it is an area surrounded by another area (this one I'm less sure about, but the issue might be precluded if we used a resolution of 2)", () => {
         const sumsOfSquares: SumsOfSquares = [
             [
-                [0.004 as Sum<"SquaredWeightedRankDifferences">, 0.004 as Sum<"SquaredWeightedRankDifferences">, 0.004 as Sum<"SquaredWeightedRankDifferences">],
-                [0.004 as Sum<"SquaredWeightedRankDifferences">, 0.004 as Sum<"SquaredWeightedRankDifferences">, 0.004 as Sum<"SquaredWeightedRankDifferences">],
+                [0.004 as SumOfSquares, 0.004 as SumOfSquares, 0.004 as SumOfSquares],
+                [0.004 as SumOfSquares, 0.004 as SumOfSquares, 0.004 as SumOfSquares],
             ],
             [
-                [0.004 as Sum<"SquaredWeightedRankDifferences">, 0.003 as Sum<"SquaredWeightedRankDifferences">, 0.004 as Sum<"SquaredWeightedRankDifferences">],
-                [0.004 as Sum<"SquaredWeightedRankDifferences">, 0.003 as Sum<"SquaredWeightedRankDifferences">, 0.004 as Sum<"SquaredWeightedRankDifferences">],
+                [0.004 as SumOfSquares, 0.003 as SumOfSquares, 0.004 as SumOfSquares],
+                [0.004 as SumOfSquares, 0.003 as SumOfSquares, 0.004 as SumOfSquares],
             ],
             [
-                [0.004 as Sum<"SquaredWeightedRankDifferences">, 0.004 as Sum<"SquaredWeightedRankDifferences">, 0.004 as Sum<"SquaredWeightedRankDifferences">],
-                [0.004 as Sum<"SquaredWeightedRankDifferences">, 0.004 as Sum<"SquaredWeightedRankDifferences">, 0.004 as Sum<"SquaredWeightedRankDifferences">],
+                [0.004 as SumOfSquares, 0.004 as SumOfSquares, 0.004 as SumOfSquares],
+                [0.004 as SumOfSquares, 0.004 as SumOfSquares, 0.004 as SumOfSquares],
             ],
         ]
 
@@ -93,24 +92,24 @@ describe("computeLocalMinima", () => {
     it("returns a result if there are local minima", () => {
         const sumsOfSquares: SumsOfSquares = [
             [
-                [0.004 as Sum<"SquaredWeightedRankDifferences">, 0.004 as Sum<"SquaredWeightedRankDifferences">, 0.004 as Sum<"SquaredWeightedRankDifferences">],
-                [0.003 as Sum<"SquaredWeightedRankDifferences">, 0.004 as Sum<"SquaredWeightedRankDifferences">, 0.004 as Sum<"SquaredWeightedRankDifferences">],
+                [0.004 as SumOfSquares, 0.004 as SumOfSquares, 0.004 as SumOfSquares],
+                [0.003 as SumOfSquares, 0.004 as SumOfSquares, 0.004 as SumOfSquares],
             ],
             [
-                [0.004 as Sum<"SquaredWeightedRankDifferences">, 0.004 as Sum<"SquaredWeightedRankDifferences">, 0.004 as Sum<"SquaredWeightedRankDifferences">],
-                [0.004 as Sum<"SquaredWeightedRankDifferences">, 0.004 as Sum<"SquaredWeightedRankDifferences">, 0.002 as Sum<"SquaredWeightedRankDifferences">],
+                [0.004 as SumOfSquares, 0.004 as SumOfSquares, 0.004 as SumOfSquares],
+                [0.004 as SumOfSquares, 0.004 as SumOfSquares, 0.002 as SumOfSquares],
             ],
             [
-                [0.004 as Sum<"SquaredWeightedRankDifferences">, 0.004 as Sum<"SquaredWeightedRankDifferences">, 0.004 as Sum<"SquaredWeightedRankDifferences">],
-                [0.004 as Sum<"SquaredWeightedRankDifferences">, 0.004 as Sum<"SquaredWeightedRankDifferences">, 0.004 as Sum<"SquaredWeightedRankDifferences">],
+                [0.004 as SumOfSquares, 0.004 as SumOfSquares, 0.004 as SumOfSquares],
+                [0.004 as SumOfSquares, 0.004 as SumOfSquares, 0.004 as SumOfSquares],
             ],
         ]
 
         const result = computeLocalMinima(samples, sumsOfSquares)
 
         expect(result).toEqual(jasmine.arrayWithExactContents([
-            { sumOfSquares: 0.003 as Sum<"SquaredWeightedRankDifferences">, samplePoint: [0, 1, 0], submetrics: [] },
-            { sumOfSquares: 0.002 as Sum<"SquaredWeightedRankDifferences">, samplePoint: [1, 1, 2], submetrics: [] },
+            { sumOfSquares: 0.003 as SumOfSquares, samplePoint: [0, 1, 0], submetrics: [] },
+            { sumOfSquares: 0.002 as SumOfSquares, samplePoint: [1, 1, 2], submetrics: [] },
         ]))
     })
 })

@@ -1,7 +1,6 @@
-import { Sum } from "../../../../../src/general"
 import { getSumOfSquaresAtSamplePoint } from "../../../../../src/scripts/unpopularityMetric/bestMetric/getSumOfSquaresAtSamplePoint"
 import { SamplePoint } from "../../../../../src/scripts/unpopularityMetric/bestMetric/scopeToSamples"
-import { SumsOfSquares } from "../../../../../src/scripts/unpopularityMetric/bestMetric/types"
+import { SumOfSquares, SumsOfSquares } from "../../../../../src/scripts/unpopularityMetric/bestMetric/types"
 
 describe("getSumOfSquaresAtPoint", () => {
     it("returns the sum-of-squares at that sample point", () => {
@@ -9,13 +8,13 @@ describe("getSumOfSquaresAtPoint", () => {
             undefined,
             undefined,
             [
-                [undefined, undefined, undefined, 0.0045843033 as Sum<"SquaredWeightedRankDifferences">],
+                [undefined, undefined, undefined, 0.0045843033 as SumOfSquares],
             ],
         ]
         const samplePoint = [2, 0, 3] as SamplePoint
 
         const result = getSumOfSquaresAtSamplePoint(sumsOfSquares, samplePoint)
 
-        expect(result).toEqual(0.0045843033 as Sum<"SquaredWeightedRankDifferences">)
+        expect(result).toEqual(0.0045843033 as SumOfSquares)
     })
 })

@@ -1,15 +1,15 @@
-import { Count, Index, Sum, Unit } from "../../../../../src/general"
+import { Count, Index, Unit } from "../../../../../src/general"
 import { Combination } from "../../../../../src/general/math"
 import * as bestMetric from "../../../../../src/scripts/unpopularityMetric/bestMetric/bestMetric"
 import { searchNextLocalMinimum } from "../../../../../src/scripts/unpopularityMetric/bestMetric/nextLocalMinimum"
 import { DynamicParameter, SamplePoint } from "../../../../../src/scripts/unpopularityMetric/bestMetric/scopeToSamples"
-import { LocalMinimum, Scope } from "../../../../../src/scripts/unpopularityMetric/bestMetric/types"
+import { LocalMinimum, Scope, SumOfSquares } from "../../../../../src/scripts/unpopularityMetric/bestMetric/types"
 import { Chunk } from "../../../../../src/scripts/unpopularityMetric/solver"
 import { Parameter, ParameterValue, Submetric } from "../../../../../src/scripts/unpopularityMetric/sumOfSquares"
 
 describe("searchNextLocalMinimum", () => {
     const nextLocalMinimum: LocalMinimum = {
-        sumOfSquares: 0.006454 as Sum<"SquaredWeightedRankDifferences">,
+        sumOfSquares: 0.006454 as SumOfSquares,
         samplePoint: [3, 7, 1] as unknown as SamplePoint,
         submetrics: [{
             [ Parameter.K_AS_COEFFICIENT ]: 0.4,
@@ -43,7 +43,7 @@ describe("searchNextLocalMinimum", () => {
     const indentation = ""
     const nextDepth = 5
     const localMinimum = {
-        sumOfSquares: 0.0074849 as Sum<"SquaredWeightedRankDifferences">,
+        sumOfSquares: 0.0074849 as SumOfSquares,
         samplePoint: [8, 8, 8] as unknown as SamplePoint,
         submetrics: [{
             [ Parameter.K_AS_COEFFICIENT ]: 0.43,
@@ -127,7 +127,7 @@ describe("searchNextLocalMinimum", () => {
     it("when recursively searching, but the next local minimum is equivalent to the current local minimum, it does not continue searching", async () => {
         const recurse = true
         const localMinimum = {
-            sumOfSquares: 0.006454 as Sum<"SquaredWeightedRankDifferences">,
+            sumOfSquares: 0.006454 as SumOfSquares,
             samplePoint: [3, 7, 1] as unknown as SamplePoint,
             submetrics: [{
                 [ Parameter.K_AS_COEFFICIENT ]: 0.4,

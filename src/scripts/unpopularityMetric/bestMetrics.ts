@@ -1,10 +1,10 @@
-import { Combination, Sum } from "../../general"
-import { Metric } from "./bestMetric"
+import { Combination } from "../../general"
+import { Metric, SumOfSquares } from "./bestMetric"
 import { Parameter, Submetric } from "./sumOfSquares"
 
 // Metric to beat: SoPF>3, or sopfr
 const sopfgtt: Metric = {
-    sumOfSquares: 0.014206086754420309 as Sum<"SquaredWeightedRankDifferences">,
+    sumOfSquares: 0.014206086754420309 as SumOfSquares,
     submetrics: [
         {
             [ Parameter.SUM ]: true,

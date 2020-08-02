@@ -1,8 +1,8 @@
-import { Combination, Count, Sum } from "../../../../../src/general"
+import { Combination, Count } from "../../../../../src/general"
 import { DUMMY_CHUNK_COUNT_FOR_ONE_OFF_BEST_METRIC_FROM_SCOPE } from "../../../../../src/scripts/unpopularityMetric/bestMetric/constants"
 import { SamplePoint } from "../../../../../src/scripts/unpopularityMetric/bestMetric/scopeToSamples"
 import { computeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffect } from "../../../../../src/scripts/unpopularityMetric/bestMetric/sumsOfSquares"
-import { SumsOfSquares } from "../../../../../src/scripts/unpopularityMetric/bestMetric/types"
+import { SumOfSquares, SumsOfSquares } from "../../../../../src/scripts/unpopularityMetric/bestMetric/types"
 import { bestMetricsForChunkCount } from "../../../../../src/scripts/unpopularityMetric/globals"
 import { Chunk } from "../../../../../src/scripts/unpopularityMetric/solver"
 import { Parameter, ParameterValue, Submetric } from "../../../../../src/scripts/unpopularityMetric/sumOfSquares"
@@ -54,12 +54,12 @@ describe("computeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffe
 
         expect(result).toEqual([
             [
-                0.013989168754342854 as Sum<"SquaredWeightedRankDifferences">,
-                0.014131740093722655 as Sum<"SquaredWeightedRankDifferences">,
+                0.013989168754342854 as SumOfSquares,
+                0.014131740093722655 as SumOfSquares,
             ],
             [
-                0.031710642770840390 as Sum<"SquaredWeightedRankDifferences">,
-                0.013983040590027893 as Sum<"SquaredWeightedRankDifferences">, // best!
+                0.031710642770840390 as SumOfSquares,
+                0.013983040590027893 as SumOfSquares, // best!
             ],
         ] as SumsOfSquares)
     })
@@ -69,7 +69,7 @@ describe("computeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffe
 
         expect(bestMetricsForChunkCount[ chunkCount ]).toEqual({
             "{aAsCoefficient,sum,w}": {
-                sumOfSquares: 0.013983040590027893 as Sum<"SquaredWeightedRankDifferences">,
+                sumOfSquares: 0.013983040590027893 as SumOfSquares,
                 submetrics: [{
                     [ Parameter.SUM ]: true,
                     [ Parameter.A_AS_COEFFICIENT ]: 2 as ParameterValue,
@@ -82,7 +82,7 @@ describe("computeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffe
     it("sets the best metric when it beats it", async () => {
         bestMetricsForChunkCount[ chunkCount ] = {
             "{aAsCoefficient,sum,w}": {
-                sumOfSquares: 0.01400000000000 as Sum<"SquaredWeightedRankDifferences">,
+                sumOfSquares: 0.01400000000000 as SumOfSquares,
                 submetrics: [{
                     [ Parameter.SUM ]: true,
                     [ Parameter.A_AS_COEFFICIENT ]: 2 as ParameterValue,
@@ -95,7 +95,7 @@ describe("computeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffe
 
         expect(bestMetricsForChunkCount[ chunkCount ]).toEqual({
             "{aAsCoefficient,sum,w}": {
-                sumOfSquares: 0.013983040590027893 as Sum<"SquaredWeightedRankDifferences">,
+                sumOfSquares: 0.013983040590027893 as SumOfSquares,
                 submetrics: [{
                     [ Parameter.SUM ]: true,
                     [ Parameter.A_AS_COEFFICIENT ]: 2 as ParameterValue,
@@ -108,7 +108,7 @@ describe("computeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffe
     it("does not set the best metric when it does not beat it", async () => {
         bestMetricsForChunkCount[ chunkCount ] = {
             "{aAsCoefficient,sum,w}": {
-                sumOfSquares: 0.01200000000000 as Sum<"SquaredWeightedRankDifferences">,
+                sumOfSquares: 0.01200000000000 as SumOfSquares,
                 submetrics: [{
                     [ Parameter.SUM ]: true,
                     [ Parameter.A_AS_COEFFICIENT ]: 2 as ParameterValue,
@@ -121,7 +121,7 @@ describe("computeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffe
 
         expect(bestMetricsForChunkCount[ chunkCount ]).toEqual({
             "{aAsCoefficient,sum,w}": {
-                sumOfSquares: 0.01200000000000 as Sum<"SquaredWeightedRankDifferences">,
+                sumOfSquares: 0.01200000000000 as SumOfSquares,
                 submetrics: [{
                     [ Parameter.SUM ]: true,
                     [ Parameter.A_AS_COEFFICIENT ]: 2 as ParameterValue,
@@ -136,7 +136,7 @@ describe("computeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffe
 
         expect(bestMetricsForChunkCount[ DUMMY_CHUNK_COUNT_FOR_ONE_OFF_BEST_METRIC_FROM_SCOPE ]).toEqual({
             "{aAsCoefficient,sum,w}": {
-                sumOfSquares: 0.013983040590027893 as Sum<"SquaredWeightedRankDifferences">,
+                sumOfSquares: 0.013983040590027893 as SumOfSquares,
                 submetrics: [{
                     [ Parameter.SUM ]: true,
                     [ Parameter.A_AS_COEFFICIENT ]: 2 as ParameterValue,

@@ -5,7 +5,7 @@ import { DynamicParameter, Sample } from "./scopeToSamples"
 
 interface Metric {
     submetrics: Combination<Submetric>,
-    sumOfSquares: Sum<"SquaredWeightedRankDifferences"> | undefined,
+    sumOfSquares: SumOfSquares | undefined,
 }
 
 type SubmetricScope = Partial<EnumHash<Parameter, ParameterValue | boolean | DynamicParameterScope>>
@@ -19,7 +19,7 @@ type DynamicParameterScope = Partial<{
 }>
 
 interface LocalMinimum extends Sample {
-    sumOfSquares: Sum<"SquaredWeightedRankDifferences">,
+    sumOfSquares: SumOfSquares,
 }
 
 interface TopLevelScopeTimer {
@@ -52,7 +52,9 @@ type SearchLocalMinimumOptions = {
     onlyWinners: boolean,
 }
 
-type SumsOfSquares = Array<SumsOfSquares | Sum<"SquaredWeightedRankDifferences"> | undefined>
+type SumOfSquares = Sum<"SquaredWeightedRankDifferences">
+
+type SumsOfSquares = Array<SumsOfSquares | SumOfSquares | undefined>
 
 type ComputeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffectOptions = Partial<{
     chunkCount: Count<Chunk>,
@@ -71,4 +73,5 @@ export {
     Scope,
     SubmetricScope,
     DynamicParameterScope,
+    SumOfSquares,
 }

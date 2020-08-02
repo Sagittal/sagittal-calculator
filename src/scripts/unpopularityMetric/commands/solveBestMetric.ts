@@ -10,7 +10,7 @@ import {
     saveDebugMessage,
     setDebugTargets,
 } from "../debug"
-import { bestMetricsForChunkCount, timeoutsForChunkCount, solverStatus } from "../globals"
+import { bestMetricsForChunkCount, solverStatus, timeoutsForChunkCount } from "../globals"
 import { Chunk, populateAndSearchScopes, presentBestMetrics } from "../solver"
 
 program

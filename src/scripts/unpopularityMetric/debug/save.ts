@@ -1,8 +1,8 @@
 import * as fs from "fs"
-import { debugTargets } from "./targets"
-import { DebugTarget } from "./types"
 import { targetColors } from "./colors"
 import { debugSettings } from "./settings"
+import { debugTargets } from "./targets"
+import { DebugTarget } from "./types"
 
 const saveDebugMessage = (message: string, target: DebugTarget) => {
     if (debugTargets[ DebugTarget.NONE ]) return

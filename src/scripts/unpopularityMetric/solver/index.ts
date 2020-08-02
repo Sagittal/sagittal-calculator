@@ -1,6 +1,6 @@
-import { presentBestMetrics, presentSearchedAndPopulated } from "./present"
 import { ParameterChunk, populateScopes, SubmetricChunk } from "./populate"
 import { populateAndSearchScopes } from "./populateAndSearchScopes"
+import { presentBestMetrics, presentSearchedAndPopulated } from "./present"
 import { searchScopes } from "./search"
 import { Chunk, SolverStatus } from "./types"
 

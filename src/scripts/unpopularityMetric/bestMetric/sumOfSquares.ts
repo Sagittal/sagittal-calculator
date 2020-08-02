@@ -1,4 +1,4 @@
-import { Count, doOnNextEventLoop, isUndefined, Sum } from "../../../general"
+import { Count, doOnNextEventLoop, isUndefined } from "../../../general"
 import { DebugTarget, saveDebugMessage } from "../debug"
 import { bestMetricsForChunkCount } from "../globals"
 import { Chunk } from "../solver"
@@ -7,7 +7,7 @@ import { SUM_OF_SQUARES_TO_BEAT } from "./constants"
 import { computeMetricName } from "./metricName"
 import { Sample } from "./scopeToSamples"
 import { setSumOfSquaresAtSamplePoint } from "./setSumOfSquaresAtSamplePoint"
-import { SumsOfSquares } from "./types"
+import { SumOfSquares, SumsOfSquares } from "./types"
 
 const computeSumOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffect = (sample: Sample, chunkCount: Count<Chunk>, indentation: string, sumsOfSquares: SumsOfSquares, index: number, onlyWinners: boolean): Promise<void> => {
     return doOnNextEventLoop(() => {
@@ -33,7 +33,7 @@ const computeSumOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffect = 
                 isUndefined(bestMetricsForChunkCount[ chunkCount ]) ||
                 isUndefined(bestMetricsForChunkCount[ chunkCount ][ metricName ]) ||
                 isUndefined(bestMetricsForChunkCount[ chunkCount ][ metricName ].sumOfSquares) ||
-                sumOfSquares < (bestMetricsForChunkCount[ chunkCount ][ metricName ].sumOfSquares as Sum<"SquaredWeightedRankDifferences">)
+                sumOfSquares < (bestMetricsForChunkCount[ chunkCount ][ metricName ].sumOfSquares as SumOfSquares)
             )
         ) {
             bestMetricsForChunkCount[ chunkCount ] = bestMetricsForChunkCount[ chunkCount ] || {}

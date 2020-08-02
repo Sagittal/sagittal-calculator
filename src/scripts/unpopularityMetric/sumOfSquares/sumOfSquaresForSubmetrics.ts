@@ -1,4 +1,5 @@
-import { Combination, Sum } from "../../../general"
+import { Combination } from "../../../general"
+import { SumOfSquares } from "../bestMetric"
 import { DebugTarget, debugTargets, saveDebugMessage } from "../debug"
 import { checkSubmetricsForInvalidParameterValueCombinations } from "./checkParameterValues"
 import { CUT_OFF_POPULARITY, ZIPF_EXPONENT } from "./constants"
@@ -8,7 +9,7 @@ import { computeSumOfSquares } from "./sumOfSquares"
 import { Popularity, Submetric } from "./types"
 import { computeUnpopularities } from "./unpopularities"
 
-const computeSumOfSquaresForSubmetrics = (submetrics: Combination<Submetric>): Sum<"SquaredWeightedRankDifferences"> => {
+const computeSumOfSquaresForSubmetrics = (submetrics: Combination<Submetric>): SumOfSquares => {
     checkSubmetricsForInvalidParameterValueCombinations(submetrics)
 
     const realPopularities: Popularity[] = COMMA_POPULARITIES.slice(0, CUT_OFF_POPULARITY)
