@@ -1,8 +1,6 @@
 import { Resolution, Span } from "../../../../../../src/general"
 import { computeParameterValues } from "../../../../../../src/scripts/unpopularityMetric/bestMetric/scopeToSamples/parameterValues"
-import {
-    DynamicParameterScope,
-} from "../../../../../../src/scripts/unpopularityMetric/bestMetric/types"
+import { DynamicParameterScope } from "../../../../../../src/scripts/unpopularityMetric/bestMetric/types"
 import { ParameterValue } from "../../../../../../src/scripts/unpopularityMetric/sumOfSquares"
 
 describe("computeParameterValues", () => {

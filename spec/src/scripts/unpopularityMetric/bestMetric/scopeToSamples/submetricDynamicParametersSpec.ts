@@ -23,7 +23,12 @@ describe("computeSubmetricDynamicParameters", () => {
         const result = computeSubmetricDynamicParameters(submetricScope, submetricIndex)
 
         expect(result).toEqual(jasmine.arrayWithExactContents([
-            { submetricIndex, parameter: Parameter.A_AS_COEFFICIENT, values: [0.75, 0.875, 1.0, 1.125, 1.25], unit: 0.125 },
+            {
+                submetricIndex,
+                parameter: Parameter.A_AS_COEFFICIENT,
+                values: [0.75, 0.875, 1.0, 1.125, 1.25],
+                unit: 0.125,
+            },
             { submetricIndex, parameter: Parameter.W, values: [0.6, 0.7, 0.8], unit: 0.1 },
         ]))
     })
@@ -45,7 +50,12 @@ describe("computeSubmetricDynamicParameters", () => {
         const result = computeSubmetricDynamicParameters(submetricScope, submetricIndex)
 
         expect(result).toEqual(jasmine.arrayWithExactContents([
-            { submetricIndex, parameter: Parameter.A_AS_COEFFICIENT, values: [0.75, 0.875, 1.0, 1.125, 1.25], unit: 0.125 },
+            {
+                submetricIndex,
+                parameter: Parameter.A_AS_COEFFICIENT,
+                values: [0.75, 0.875, 1.0, 1.125, 1.25],
+                unit: 0.125,
+            },
         ]))
     })
 
@@ -62,7 +72,12 @@ describe("computeSubmetricDynamicParameters", () => {
         const result = computeSubmetricDynamicParameters(submetricScope, submetricIndex)
 
         expect(result).toEqual(jasmine.arrayWithExactContents([
-            { submetricIndex, parameter: Parameter.A_AS_COEFFICIENT, values: [0.75, 0.875, 1.0, 1.125, 1.25], unit: 0.125 },
+            {
+                submetricIndex,
+                parameter: Parameter.A_AS_COEFFICIENT,
+                values: [0.75, 0.875, 1.0, 1.125, 1.25],
+                unit: 0.125,
+            },
         ]))
     })
 })

@@ -1,10 +1,7 @@
 import { Count } from "../../../../../src/general"
 import { Metric } from "../../../../../src/scripts/unpopularityMetric/bestMetric"
 import { bestMetricsForChunkCount, solverStatus } from "../../../../../src/scripts/unpopularityMetric/globals"
-import {
-    Chunk,
-    populateAndSearchScopes,
-} from "../../../../../src/scripts/unpopularityMetric/solver"
+import { Chunk, populateAndSearchScopes } from "../../../../../src/scripts/unpopularityMetric/solver"
 import * as populate from "../../../../../src/scripts/unpopularityMetric/solver/populate/scopes"
 import * as search from "../../../../../src/scripts/unpopularityMetric/solver/search/scopes"
 

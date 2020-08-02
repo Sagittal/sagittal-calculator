@@ -1,11 +1,7 @@
 import { Index, Resolution, Span, Unit } from "../../../../../../src/general"
 import { Scope } from "../../../../../../src/scripts/unpopularityMetric/bestMetric"
 import { computeDynamicParameters } from "../../../../../../src/scripts/unpopularityMetric/bestMetric/scopeToSamples"
-import {
-    Parameter,
-    ParameterValue,
-    Submetric,
-} from "../../../../../../src/scripts/unpopularityMetric/sumOfSquares"
+import { Parameter, ParameterValue, Submetric } from "../../../../../../src/scripts/unpopularityMetric/sumOfSquares"
 
 describe("computeDynamicParameters", () => {
     it("returns a flattened array of all the parameters that are dynamic -- flattened across all the submetrics, that is", () => {

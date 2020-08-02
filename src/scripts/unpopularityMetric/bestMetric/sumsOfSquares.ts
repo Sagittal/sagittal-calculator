@@ -1,7 +1,6 @@
 import { shuffle } from "../../../general"
-import { saveLog } from "../debug"
+import { DebugTarget, saveDebugMessage } from "../debug"
 import { checkSubmetricsForInvalidParameterCombinations } from "../sumOfSquares"
-import { DebugTarget } from "../types"
 import { DUMMY_CHUNK_COUNT_FOR_ONE_OFF_BEST_METRIC_FROM_SCOPE, MAXIMUM_SEARCH_TIME } from "./constants"
 import { Sample } from "./scopeToSamples"
 import { computeSumOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffect } from "./sumOfSquares"
@@ -21,7 +20,7 @@ const computeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffect =
             checkSubmetricsForInvalidParameterCombinations(samples[ 0 ].submetrics)
         } catch (e) {
             resolve(sumsOfSquares)
-            saveLog(`Not searching scope due to invalid parameter combinations: ${e.message}`, DebugTarget.ERRORS)
+            saveDebugMessage(`Not searching scope due to invalid parameter combinations: ${e.message}`, DebugTarget.ERRORS)
             return
         }
 

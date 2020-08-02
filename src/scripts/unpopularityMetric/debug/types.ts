@@ -1,4 +1,4 @@
-import { EnumHash } from "../../general"
+import { EnumHash } from "../../../general"
 
 enum DebugTarget {
     ALL = "ALL",
@@ -14,12 +14,9 @@ enum DebugTarget {
     KILLS = "KILLS", // todo should this go back to timeouts?
 }
 
-type Debug = EnumHash<DebugTarget, boolean>
-
-type DebugColor = "green" | "red" | "yellow" | "cyan" | "blue" | "white" // todo this is redundant kind of with something else
+type DebugTargets = EnumHash<DebugTarget, boolean>
 
 export {
-    Debug,
+    DebugTargets,
     DebugTarget,
-    DebugColor,
 }

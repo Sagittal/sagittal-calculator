@@ -12,7 +12,7 @@ describe("computeMetricName", () => {
             {
                 [ Parameter.MAX ]: true,
                 [ Parameter.WITHOUT_REPETITION ]: true,
-            }
+            },
         ] as Combination<Submetric>
 
         const result = computeMetricName(submetrics)
@@ -28,9 +28,9 @@ describe("computeMetricName", () => {
             },
             {
                 [ Parameter.WITHOUT_REPETITION ]: true,
-                [ Parameter.A_AS_EXPONENT]: true,
+                [ Parameter.A_AS_EXPONENT ]: true,
                 [ Parameter.MAX ]: true,
-            }
+            },
         ] as Combination<Submetric>
 
         const result = computeMetricName(submetrics)

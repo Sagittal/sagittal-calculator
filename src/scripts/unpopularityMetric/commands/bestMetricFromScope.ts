@@ -9,13 +9,12 @@ import {
     Scope,
     searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect,
 } from "../bestMetric"
-import { clearLogs, debug, debugSettings, saveLog } from "../debug"
+import { clearDebugLogFiles, debugSettings, DebugTarget, debugTargets, saveDebugMessage } from "../debug"
 import { bestMetricsForChunkCount } from "../globals"
 import { Parameter, ParameterValue } from "../sumOfSquares"
-import { DebugTarget } from "../types"
 
 program
-    .option("-d, --debug", "debug")
+    .option("-d, --debugTargets", "debug")
     .option("-m, --maximum-unit", "maximum unit")
     .option("-n, --no-color", "no color")
     .option("-t, --timeout-enabled", "timeout enabled")
@@ -23,7 +22,7 @@ program
     .parse(process.argv)
 
 const recurse = true
-debug[ DebugTarget.ALL ] = !!program.debug
+debugTargets[ DebugTarget.ALL ] = !!program.debug
 const maximumUnit = program.maximumUnit
 const timeoutEnabled = program.timeoutEnabled
 debugSettings.noWrite = !program.write
@@ -33,12 +32,12 @@ if (!program.color) {
 }
 
 if (!debugSettings.noWrite) {
-    clearLogs()
+    clearDebugLogFiles()
 }
 
-// debug[ DebugTarget.SCOPE ] = true
-// debug[ DebugTarget.ERRORS ] = true
-// debug[ DebugTarget.NEW_BEST_METRIC ] = true
+// debugTargets[ DebugTarget.SCOPE ] = true
+// debugTargets[ DebugTarget.ERRORS ] = true
+// debugTargets[ DebugTarget.NEW_BEST_METRIC ] = true
 
 const scope = [
     {},
@@ -68,5 +67,5 @@ const scope = [
 ] as Scope
 
 searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect(scope, { recurse, timeoutEnabled }).then(() => {
-    saveLog(`\nbest metric: ${JSON.stringify(bestMetricsForChunkCount[ DUMMY_CHUNK_COUNT_FOR_ONE_OFF_BEST_METRIC_FROM_SCOPE ])}`, DebugTarget.ALL)
+    saveDebugMessage(`\nbest metric: ${JSON.stringify(bestMetricsForChunkCount[ DUMMY_CHUNK_COUNT_FOR_ONE_OFF_BEST_METRIC_FROM_SCOPE ])}`, DebugTarget.ALL)
 })

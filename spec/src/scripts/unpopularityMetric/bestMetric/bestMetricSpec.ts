@@ -1,14 +1,9 @@
 import { Combination, Count, Index, Resolution, Span, Sum, Unit } from "../../../../../src/general"
 import { searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect } from "../../../../../src/scripts/unpopularityMetric/bestMetric"
-import * as nextLocalMinimum
-    from "../../../../../src/scripts/unpopularityMetric/bestMetric/nextLocalMinimum"
+import * as nextLocalMinimum from "../../../../../src/scripts/unpopularityMetric/bestMetric/nextLocalMinimum"
 import { SamplePoint } from "../../../../../src/scripts/unpopularityMetric/bestMetric/scopeToSamples"
-import {
-    LocalMinimum, Scope,
-} from "../../../../../src/scripts/unpopularityMetric/bestMetric/types"
-import {
-    Chunk,
-} from "../../../../../src/scripts/unpopularityMetric/solver"
+import { LocalMinimum, Scope } from "../../../../../src/scripts/unpopularityMetric/bestMetric/types"
+import { Chunk } from "../../../../../src/scripts/unpopularityMetric/solver"
 import { Parameter, ParameterValue, Submetric } from "../../../../../src/scripts/unpopularityMetric/sumOfSquares"
 
 describe("searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect", () => {

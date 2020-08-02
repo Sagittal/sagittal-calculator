@@ -1,8 +1,7 @@
 import { clearTimeout } from "timers"
 import { shuffle } from "../../../general"
-import { debug, saveLog } from "../debug"
+import { DebugTarget, debugTargets, saveDebugMessage } from "../debug"
 import { killedsForChunkCount, searchedsForChunkCount } from "../globals"
-import { DebugTarget } from "../types"
 import { DUMMY_CHUNK_COUNT_FOR_ONE_OFF_BEST_METRIC_FROM_SCOPE, MAXIMUM_SEARCH_TIME } from "./constants"
 import { computeIndentation } from "./indentation"
 import { computeLocalMinima } from "./localMinima"
@@ -26,8 +25,8 @@ const searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect = async (s
 
         const topLevelScopeHasBeenKilled = { hasBeenKilled: false }
         let timeUpdater: NodeJS.Timeout | undefined
-        if (debug[ DebugTarget.ALL ] || debug[ DebugTarget.SCOPE ]) {
-            saveLog(`${JSON.stringify(scope)} - beginning search`, DebugTarget.SCOPE)
+        if (debugTargets[ DebugTarget.ALL ] || debugTargets[ DebugTarget.SCOPE ]) {
+            saveDebugMessage(`${JSON.stringify(scope)} - beginning search`, DebugTarget.SCOPE)
 
             let timeUnits = 0
             timeUpdater = setInterval(() => {
@@ -41,7 +40,7 @@ const searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect = async (s
             killswitch = setTimeout(() => {
                 topLevelScopeHasBeenKilled.hasBeenKilled = true
                 timeUpdater && clearInterval(timeUpdater)
-                saveLog(`${JSON.stringify(scope)} - killed search due to hitting the max; so far ${100 * ((killedsForChunkCount[ chunkCount ] || []).length + 1) / searchedsForChunkCount[ chunkCount ]}% have been killed`, DebugTarget.KILLS)
+                saveDebugMessage(`${JSON.stringify(scope)} - killed search due to hitting the max; so far ${100 * ((killedsForChunkCount[ chunkCount ] || []).length + 1) / searchedsForChunkCount[ chunkCount ]}% have been killed`, DebugTarget.KILLS)
                 killedsForChunkCount[ chunkCount ] = killedsForChunkCount[ chunkCount ] || []
                 killedsForChunkCount[ chunkCount ].push(scope)
 

@@ -1,8 +1,7 @@
 import { Scope, searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect } from "../../bestMetric"
-import { saveLog } from "../../debug"
+import { DebugTarget, saveDebugMessage } from "../../debug"
 import { populatedsForChunkCount, scopesForChunkCount, searchedsForChunkCount, solverStatus } from "../../globals"
-import { DebugTarget } from "../../types"
-import { debugSearchedAndPopulated, presentPercentage } from "../debug"
+import { presentPercentage, presentSearchedAndPopulated } from "../present"
 
 const searchPopulatedScopesForChunkCount = async () => {
     const searchingChunkCount = solverStatus.searchingChunkCount
@@ -11,7 +10,7 @@ const searchPopulatedScopesForChunkCount = async () => {
     const scopeForChunkCount = searchingScopes && searchingScopes.pop() as Scope
 
     if (searchedForChunkCount % 1 === 0) {
-        saveLog(`searched out of populated for chunk count ${searchingChunkCount}: ${presentPercentage(searchedForChunkCount, populatedsForChunkCount[ searchingChunkCount ])} ${debugSearchedAndPopulated()}`, DebugTarget.SOLVER)
+        saveDebugMessage(`searched out of populated for chunk count ${searchingChunkCount}: ${presentPercentage(searchedForChunkCount, populatedsForChunkCount[ searchingChunkCount ])} ${presentSearchedAndPopulated()}`, DebugTarget.SOLVER)
     }
 
     try {
@@ -25,7 +24,7 @@ const searchPopulatedScopesForChunkCount = async () => {
         // TODO: Bad scopes are still being computed...
         //  it may not be a simple matter to not compute them in the first place,
         //  so for now, just don't worry about them
-        //  but it might be a good idea to have a separate debug key for metric errors
+        //  but it might be a good idea to have a separate debugTargets key for metric errors
     }
 
     searchedsForChunkCount[ searchingChunkCount ] = searchedForChunkCount ?

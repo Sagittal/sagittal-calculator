@@ -1,6 +1,5 @@
 import { deepEquals, doOnNextEventLoop } from "../../../general"
-import { saveLog } from "../debug"
-import { DebugTarget } from "../types"
+import { DebugTarget, saveDebugMessage } from "../debug"
 import { searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect } from "./bestMetric"
 import { computeNextScope } from "./nextScope"
 import { LocalMinimum, Scope, SearchLocalMinimumOptions } from "./types"
@@ -27,13 +26,13 @@ const searchNextLocalMinimum = (nextLocalMinimum: LocalMinimum, options: SearchL
 
     return doOnNextEventLoop(async () => {
         if (topLevelScopeHasBeenKilled.hasBeenKilled) {
-            saveLog(`Killed: ${scope}`, DebugTarget.KILLS)
+            saveDebugMessage(`Killed: ${scope}`, DebugTarget.KILLS)
             return
         }
 
         const nextScope: Scope = computeNextScope(nextLocalMinimum.samplePoint, dynamicParameters, scope)
         const nextProgressMessage = progressMessage + `${index + 1}/${(nextLocalMinima.length)}@depth${nextDepth} `
-        saveLog(`${indentation}${nextProgressMessage}${JSON.stringify(nextLocalMinimum)}`, DebugTarget.LOCAL_MINIMUM)
+        saveDebugMessage(`${indentation}${nextProgressMessage}${JSON.stringify(nextLocalMinimum)}`, DebugTarget.LOCAL_MINIMUM)
 
         try {
             await searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect(nextScope, {
@@ -45,7 +44,7 @@ const searchNextLocalMinimum = (nextLocalMinimum: LocalMinimum, options: SearchL
                 onlyWinners,
             })
         } catch (e) {
-            saveLog(`Error when searching: ${e.message}`, DebugTarget.ERRORS)
+            saveDebugMessage(`Error when searching: ${e.message}`, DebugTarget.ERRORS)
         }
     }, index)
 }

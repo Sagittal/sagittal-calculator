@@ -1,6 +1,6 @@
-import { ColorMethods } from "./types"
+import { ColorMethod } from "../../../types"
 
-const COLORS: ColorMethods[] = [
+const COLORS: ColorMethod[] = [
     "blue",         // INA
     "cyan",         // MEAN
     "green",        // SIZE

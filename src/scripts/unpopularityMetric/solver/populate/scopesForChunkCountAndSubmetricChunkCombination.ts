@@ -1,8 +1,7 @@
 import { Combination, computeDistributions, doOnNextEventLoop, Index, merge } from "../../../../general"
 import { Scope, SubmetricScope } from "../../bestMetric"
-import { saveLog } from "../../debug"
-import { DebugTarget } from "../../types"
-import { debugSearchedAndPopulated } from "../debug"
+import { DebugTarget, saveDebugMessage } from "../../debug"
+import { presentSearchedAndPopulated } from "../present"
 import { Chunk } from "../types"
 import { populateScopeForChunkCount } from "./scopeForChunkCount"
 import { ParameterChunk, PopulateScoepsForChunkCountAndSubmetricChunkCombinationOptions, SubmetricChunk } from "./types"
@@ -16,7 +15,7 @@ const populateScopesForChunkCountAndSubmetricChunkCombination = async (submetric
         submetricChunkCombinationCount,
     } = options
 
-    saveLog(`populating scopes for submetric chunk combination ${submetricChunkCombinationIndex + 1}/${submetricChunkCombinationCount} with parameter chunk combination ${parameterChunkCombinationIndex + 1}/${parameterChunkCombinations.length} (${100 * parameterChunkCombinationIndex / parameterChunkCombinations.length}%) ${debugSearchedAndPopulated()}`, DebugTarget.POPULATION)
+    saveDebugMessage(`populating scopes for submetric chunk combination ${submetricChunkCombinationIndex + 1}/${submetricChunkCombinationCount} with parameter chunk combination ${parameterChunkCombinationIndex + 1}/${parameterChunkCombinations.length} (${100 * parameterChunkCombinationIndex / parameterChunkCombinations.length}%) ${presentSearchedAndPopulated()}`, DebugTarget.POPULATION)
 
     const parameterChunkCombination: Combination<Chunk> = parameterChunkCombinations[ parameterChunkCombinationIndex ]
 

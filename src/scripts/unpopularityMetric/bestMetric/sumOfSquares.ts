@@ -1,9 +1,8 @@
 import { Count, doOnNextEventLoop, isUndefined, Sum } from "../../../general"
-import { saveLog } from "../debug"
+import { DebugTarget, saveDebugMessage } from "../debug"
 import { bestMetricsForChunkCount } from "../globals"
 import { Chunk } from "../solver"
 import { computeSumOfSquaresForSubmetrics } from "../sumOfSquares"
-import { DebugTarget } from "../types"
 import { SUM_OF_SQUARES_TO_BEAT } from "./constants"
 import { computeMetricName } from "./metricName"
 import { Sample } from "./scopeToSamples"
@@ -18,7 +17,7 @@ const computeSumOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffect = 
         try {
             sumOfSquares = computeSumOfSquaresForSubmetrics(submetrics)
         } catch (e) {
-            saveLog(`Err: ${e.message}`, DebugTarget.ERRORS)
+            saveDebugMessage(`Err: ${e.message}`, DebugTarget.ERRORS)
         }
 
         setSumOfSquaresAtSamplePoint(sumOfSquares, sumsOfSquares, samplePoint)
@@ -44,7 +43,7 @@ const computeSumOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffect = 
                 throw new Error("This sum-of-squares was 0. That's extremely unlikely and probably means there's a bug in the code and that to continue searching now would be a waste of time.")
             }
 
-            saveLog(`${indentation}new best metric for chunk count ${chunkCount}: ${JSON.stringify(bestMetricsForChunkCount[ chunkCount ])}`, DebugTarget.NEW_BEST_METRIC)
+            saveDebugMessage(`${indentation}new best metric for chunk count ${chunkCount}: ${JSON.stringify(bestMetricsForChunkCount[ chunkCount ])}`, DebugTarget.NEW_BEST_METRIC)
         }
     }, index)
 }

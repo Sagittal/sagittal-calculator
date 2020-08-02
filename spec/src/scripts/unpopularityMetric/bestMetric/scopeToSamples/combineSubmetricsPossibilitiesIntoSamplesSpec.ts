@@ -1,7 +1,9 @@
 import { Combination, deepEquals, Index, Unit } from "../../../../../../src/general"
 import { combineSubmetricsPossibilitiesIntoSamples } from "../../../../../../src/scripts/unpopularityMetric/bestMetric/scopeToSamples/combineSubmetricsPossibilitiesIntoSamples"
 import {
-    DynamicParameter, Sample, SamplePoint,
+    DynamicParameter,
+    Sample,
+    SamplePoint,
     SubmetricPossibility,
 } from "../../../../../../src/scripts/unpopularityMetric/bestMetric/scopeToSamples/types"
 import { Parameter, ParameterValue, Submetric } from "../../../../../../src/scripts/unpopularityMetric/sumOfSquares"

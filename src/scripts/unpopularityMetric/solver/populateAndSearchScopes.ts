@@ -8,23 +8,22 @@
 //  However, if you put a console log right after the work it does in populateScopesForChunkCount,
 //   It does seem to be interruptable in a good way, so that's a good sign.
 
-import { saveLog } from "../debug"
+import { DebugTarget, saveDebugMessage } from "../debug"
 import { solverStatus } from "../globals"
-import { DebugTarget } from "../types"
-import { debugSearchedAndPopulated } from "./debug"
+import { presentSearchedAndPopulated } from "./present"
 import { populateScopes } from "./populate"
 import { searchScopes } from "./search"
 
 const populateAndSearchScopes = async () => {
     populateScopes().then(() => {
-        saveLog("\n\nFINISHED POPULATING", DebugTarget.POPULATION)
+        saveDebugMessage("\n\nFINISHED POPULATING", DebugTarget.POPULATION)
         solverStatus.finishedPopulating = true
     })
 
-    saveLog(`\n\nPROCESSING CHUNK COUNT ${solverStatus.searchingChunkCount} (${solverStatus.finishedPopulating ? `finished populating` : `still populating chunk count ${solverStatus.populatingChunkCount}`}) ${debugSearchedAndPopulated()}`, DebugTarget.SOLVER)
+    saveDebugMessage(`\n\nPROCESSING CHUNK COUNT ${solverStatus.searchingChunkCount} (${solverStatus.finishedPopulating ? `finished populating` : `still populating chunk count ${solverStatus.populatingChunkCount}`}) ${presentSearchedAndPopulated()}`, DebugTarget.SOLVER)
     await searchScopes()
 
-    saveLog(`\n\nFINAL STATUS ${debugSearchedAndPopulated()}`, DebugTarget.SOLVER)
+    saveDebugMessage(`\n\nFINAL STATUS ${presentSearchedAndPopulated()}`, DebugTarget.SOLVER)
 }
 
 export {

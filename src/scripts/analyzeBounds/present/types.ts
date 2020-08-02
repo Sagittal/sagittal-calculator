@@ -20,11 +20,8 @@ interface PresentBoundParameters {
     mode?: AnalysisMode,
 }
 
-type ColorMethods = "green" | "blue" | "cyan"
-
 export {
     BoundIdentifiers,
     PresentBoundParameters,
     AnalysisMode,
-    ColorMethods,
 }

@@ -2,13 +2,9 @@ import { Combination, Count, Sum } from "../../../../../src/general"
 import { DUMMY_CHUNK_COUNT_FOR_ONE_OFF_BEST_METRIC_FROM_SCOPE } from "../../../../../src/scripts/unpopularityMetric/bestMetric/constants"
 import { SamplePoint } from "../../../../../src/scripts/unpopularityMetric/bestMetric/scopeToSamples"
 import { computeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffect } from "../../../../../src/scripts/unpopularityMetric/bestMetric/sumsOfSquares"
-import {
-    SumsOfSquares,
-} from "../../../../../src/scripts/unpopularityMetric/bestMetric/types"
+import { SumsOfSquares } from "../../../../../src/scripts/unpopularityMetric/bestMetric/types"
 import { bestMetricsForChunkCount } from "../../../../../src/scripts/unpopularityMetric/globals"
-import {
-    Chunk,
-} from "../../../../../src/scripts/unpopularityMetric/solver"
+import { Chunk } from "../../../../../src/scripts/unpopularityMetric/solver"
 import { Parameter, ParameterValue, Submetric } from "../../../../../src/scripts/unpopularityMetric/sumOfSquares"
 
 describe("computeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffect", () => {
@@ -79,7 +75,7 @@ describe("computeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffe
                     [ Parameter.A_AS_COEFFICIENT ]: 2 as ParameterValue,
                     [ Parameter.W ]: 1.5 as ParameterValue,
                 }] as Combination<Submetric>,
-            }
+            },
         })
     })
 
@@ -92,7 +88,7 @@ describe("computeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffe
                     [ Parameter.A_AS_COEFFICIENT ]: 2 as ParameterValue,
                     [ Parameter.W ]: 1.5 as ParameterValue,
                 }] as Combination<Submetric>,
-            }
+            },
         }
 
         await computeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffect(samples, { chunkCount })
@@ -105,7 +101,7 @@ describe("computeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffe
                     [ Parameter.A_AS_COEFFICIENT ]: 2 as ParameterValue,
                     [ Parameter.W ]: 1.5 as ParameterValue,
                 }] as Combination<Submetric>,
-            }
+            },
         })
     })
 
@@ -118,7 +114,7 @@ describe("computeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffe
                     [ Parameter.A_AS_COEFFICIENT ]: 2 as ParameterValue,
                     [ Parameter.W ]: 1.5 as ParameterValue,
                 }] as Combination<Submetric>,
-            }
+            },
         }
 
         await computeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffect(samples, { chunkCount })
@@ -131,7 +127,7 @@ describe("computeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffe
                     [ Parameter.A_AS_COEFFICIENT ]: 2 as ParameterValue,
                     [ Parameter.W ]: 1.5 as ParameterValue,
                 }] as Combination<Submetric>,
-            }
+            },
         })
     })
 
@@ -146,7 +142,7 @@ describe("computeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffe
                     [ Parameter.A_AS_COEFFICIENT ]: 2 as ParameterValue,
                     [ Parameter.W ]: 1.5 as ParameterValue,
                 }] as Combination<Submetric>,
-            }
+            },
         })
     })
 

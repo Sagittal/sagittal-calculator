@@ -1,12 +1,11 @@
 import * as colors from "colors"
 import { program } from "commander"
 import { Combination } from "../../../general"
-import { clearLogs, debug, debugSettings, saveLog } from "../debug"
+import { clearDebugLogFiles, debugSettings, DebugTarget, debugTargets, saveDebugMessage } from "../debug"
 import { computeSumOfSquaresForSubmetrics, Parameter, ParameterValue, Submetric } from "../sumOfSquares"
-import { DebugTarget } from "../types"
 
 program
-    .option("-d, --debug", "debug")
+    .option("-d, --debugTargets", "debug")
     .option("-c, --no-color", "no color")
     .option("-w, --no-write", "no write")
     .parse(process.argv)
@@ -14,11 +13,11 @@ program
 if (!program.color) {
     colors.disable()
 }
-debug[ DebugTarget.RANKED_UNPOPULARITIES ] = !!program.debug
+debugTargets[ DebugTarget.RANKED_UNPOPULARITIES ] = !!program.debug
 debugSettings.noWrite = !program.write
 
 if (!debugSettings.noWrite) {
-    clearLogs()
+    clearDebugLogFiles()
 }
 
 const submetrics =
@@ -40,4 +39,4 @@ const submetrics =
 
 const sumOfSquares = computeSumOfSquaresForSubmetrics(submetrics)
 
-saveLog(`${sumOfSquares}\n${JSON.stringify(submetrics)}`, DebugTarget.ALL)
+saveDebugMessage(`${sumOfSquares}\n${JSON.stringify(submetrics)}`, DebugTarget.ALL)
