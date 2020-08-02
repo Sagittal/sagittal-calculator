@@ -53,7 +53,7 @@ describe("searchNextLocalMinimum", () => {
     }
     const chunkCount = 3 as Count<Chunk>
     const nextLocalMinima = [{}, {}, {}, {}, {}, {}, {}, {}, {}] as LocalMinimum[]
-    const topLevelScopeHasBeenKilled = { hasBeenKilled: false }
+    const topLevelScopeTimer = { timedOut: false }
     const onlyWinners = false
 
     beforeEach(() => {
@@ -64,7 +64,7 @@ describe("searchNextLocalMinimum", () => {
 
     // TODO: test the error catching
 
-    // TODO: test the killing of searches
+    // TODO: test the timing out of searches
 
     it("when not recursively searching, it does not continue searching", async () => {
         const recurse = false
@@ -80,7 +80,7 @@ describe("searchNextLocalMinimum", () => {
             localMinimum,
             chunkCount,
             nextLocalMinima,
-            topLevelScopeHasBeenKilled,
+            topLevelScopeTimer,
             onlyWinners,
         })
 
@@ -101,7 +101,7 @@ describe("searchNextLocalMinimum", () => {
             localMinimum,
             chunkCount,
             nextLocalMinima,
-            topLevelScopeHasBeenKilled,
+            topLevelScopeTimer,
             onlyWinners,
         })
 
@@ -147,7 +147,7 @@ describe("searchNextLocalMinimum", () => {
             localMinimum,
             chunkCount,
             nextLocalMinima,
-            topLevelScopeHasBeenKilled,
+            topLevelScopeTimer,
             onlyWinners,
         })
 

@@ -17,7 +17,7 @@ const computeSumOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffect = 
         try {
             sumOfSquares = computeSumOfSquaresForSubmetrics(submetrics)
         } catch (e) {
-            saveDebugMessage(`Err: ${e.message}`, DebugTarget.ERRORS)
+            saveDebugMessage(`error when computing sum of squares: ${e.message}`, DebugTarget.ERRORS)
         }
 
         setSumOfSquaresAtSamplePoint(sumOfSquares, sumsOfSquares, samplePoint)

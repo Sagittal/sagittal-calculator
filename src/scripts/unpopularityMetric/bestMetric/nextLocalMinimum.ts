@@ -16,7 +16,7 @@ const searchNextLocalMinimum = (nextLocalMinimum: LocalMinimum, options: SearchL
         localMinimum,
         chunkCount,
         nextLocalMinima,
-        topLevelScopeHasBeenKilled,
+        topLevelScopeTimer,
         onlyWinners,
     } = options
 
@@ -25,8 +25,8 @@ const searchNextLocalMinimum = (nextLocalMinimum: LocalMinimum, options: SearchL
     }
 
     return doOnNextEventLoop(async () => {
-        if (topLevelScopeHasBeenKilled.hasBeenKilled) {
-            saveDebugMessage(`Killed: ${scope}`, DebugTarget.KILLS)
+        if (topLevelScopeTimer.timedOut) {
+            saveDebugMessage(`timed out: ${scope}`, DebugTarget.TIMEOUTS)
             return
         }
 
@@ -44,7 +44,7 @@ const searchNextLocalMinimum = (nextLocalMinimum: LocalMinimum, options: SearchL
                 onlyWinners,
             })
         } catch (e) {
-            saveDebugMessage(`Error when searching: ${e.message}`, DebugTarget.ERRORS)
+            saveDebugMessage(`error when searching: ${e.message}`, DebugTarget.ERRORS)
         }
     }, index)
 }

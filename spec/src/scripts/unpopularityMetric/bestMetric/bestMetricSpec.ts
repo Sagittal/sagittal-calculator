@@ -109,7 +109,7 @@ describe("searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect", () =
             localMinimum,
             chunkCount,
             nextLocalMinima: expectedNextLocalMinima,
-            topLevelScopeHasBeenKilled: { hasBeenKilled: false },
+            topLevelScopeTimer: { timedOut: false },
             onlyWinners,
         }
 
@@ -123,9 +123,9 @@ describe("searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect", () =
         )
     })
 
-    // TODO: test killswitch
+    // TODO: test timer
 
-    // TODO: test timeupdater
+    // TODO: test timeDebugger
 
     // TODO: test shuffling
 })

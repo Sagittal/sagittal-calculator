@@ -53,7 +53,7 @@ describe("solve best metric", () => {
             `]`,
             ``,
             ``,
-            `AND THE KILLED METRIC COUNTS PER CHUNK COUNT WERE []`,
+            `AND THE TIMED OUT METRIC COUNTS PER CHUNK COUNT WERE []`,
         ])
     })
 })

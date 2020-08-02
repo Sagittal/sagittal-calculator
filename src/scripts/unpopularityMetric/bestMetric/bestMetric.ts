@@ -1,7 +1,7 @@
 import { clearTimeout } from "timers"
 import { shuffle } from "../../../general"
 import { DebugTarget, debugTargets, saveDebugMessage } from "../debug"
-import { killedsForChunkCount, searchedsForChunkCount } from "../globals"
+import { timeoutsForChunkCount, searchedsForChunkCount } from "../globals"
 import { DUMMY_CHUNK_COUNT_FOR_ONE_OFF_BEST_METRIC_FROM_SCOPE, MAXIMUM_SEARCH_TIME } from "./constants"
 import { computeIndentation } from "./indentation"
 import { computeLocalMinima } from "./localMinima"
@@ -23,26 +23,26 @@ const searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect = async (s
             onlyWinners = false,
         }: SearchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffectOptions = options
 
-        const topLevelScopeHasBeenKilled = { hasBeenKilled: false }
-        let timeUpdater: NodeJS.Timeout | undefined
+        const topLevelScopeTimer = { timedOut: false }
+        let timeDebugger: NodeJS.Timeout | undefined
         if (debugTargets[ DebugTarget.ALL ] || debugTargets[ DebugTarget.SCOPE ]) {
             saveDebugMessage(`${JSON.stringify(scope)} - beginning search`, DebugTarget.SCOPE)
 
             let timeUnits = 0
-            timeUpdater = setInterval(() => {
+            timeDebugger = setInterval(() => {
                 timeUnits = timeUnits + 1
                 saveDebugMessage(`${JSON.stringify(scope)} - searching for ${timeUnits}s out of max ${MAXIMUM_SEARCH_TIME / 1000}s`, DebugTarget.SCOPE)
             }, 1000)
         }
 
-        let killswitch: NodeJS.Timeout | undefined
+        let timer: NodeJS.Timeout | undefined
         if (timeoutEnabled) {
-            killswitch = setTimeout(() => {
-                topLevelScopeHasBeenKilled.hasBeenKilled = true
-                timeUpdater && clearInterval(timeUpdater)
-                saveDebugMessage(`${JSON.stringify(scope)} - killed search due to hitting the max; so far ${100 * ((killedsForChunkCount[ chunkCount ] || []).length + 1) / searchedsForChunkCount[ chunkCount ]}% have been killed`, DebugTarget.KILLS)
-                killedsForChunkCount[ chunkCount ] = killedsForChunkCount[ chunkCount ] || []
-                killedsForChunkCount[ chunkCount ].push(scope)
+            timer = setTimeout(() => {
+                topLevelScopeTimer.timedOut = true
+                timeDebugger && clearInterval(timeDebugger)
+                saveDebugMessage(`${JSON.stringify(scope)} - timed out; so far ${100 * ((timeoutsForChunkCount[ chunkCount ] || []).length + 1) / searchedsForChunkCount[ chunkCount ]}% have timed out`, DebugTarget.TIMEOUTS)
+                timeoutsForChunkCount[ chunkCount ] = timeoutsForChunkCount[ chunkCount ] || []
+                timeoutsForChunkCount[ chunkCount ].push(scope)
 
                 reject()
             }, MAXIMUM_SEARCH_TIME)
@@ -77,14 +77,14 @@ const searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect = async (s
                 localMinimum,
                 chunkCount,
                 nextLocalMinima,
-                topLevelScopeHasBeenKilled,
+                topLevelScopeTimer,
                 onlyWinners,
             })
         })
 
         await Promise.all(nextLocalMinimaPromises)
-        killswitch && clearTimeout(killswitch)
-        timeUpdater && clearInterval(timeUpdater)
+        timer && clearTimeout(timer)
+        timeDebugger && clearInterval(timeDebugger)
         resolve()
     })
 }

@@ -11,7 +11,7 @@ enum DebugTarget {
     SCOPE = "scope",
     SUM_OF_SQUARES = "sumOfSquares",
     ERRORS = "errors",
-    KILLS = "kills", // todo should this go back to timeouts?
+    TIMEOUTS = "timeouts",
     NONE = "none",
 }
 

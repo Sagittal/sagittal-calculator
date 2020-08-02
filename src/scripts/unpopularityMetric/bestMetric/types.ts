@@ -22,8 +22,8 @@ interface LocalMinimum extends Sample {
     sumOfSquares: Sum<"SquaredWeightedRankDifferences">,
 }
 
-interface TopLevelScopeHasBeenKilled {
-    hasBeenKilled: boolean
+interface TopLevelScopeTimer {
+    timedOut: boolean
 }
 
 type SearchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffectOptions = Partial<{
@@ -48,7 +48,7 @@ type SearchLocalMinimumOptions = {
     localMinimum?: LocalMinimum,
     chunkCount: Count<Chunk>,
     nextLocalMinima: LocalMinimum[],
-    topLevelScopeHasBeenKilled: TopLevelScopeHasBeenKilled,
+    topLevelScopeTimer: TopLevelScopeTimer,
     onlyWinners: boolean,
 }
 
@@ -57,7 +57,7 @@ type SumsOfSquares = Array<SumsOfSquares | Sum<"SquaredWeightedRankDifferences">
 type ComputeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffectOptions = Partial<{
     chunkCount: Count<Chunk>,
     indentation: string,
-    topLevelScopeHasBeenKilled: TopLevelScopeHasBeenKilled,
+    topLevelScopeTimer: TopLevelScopeTimer,
     onlyWinners: boolean,
 }>
 

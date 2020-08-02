@@ -11,7 +11,7 @@ const debugTargets: DebugTargets = {
     [ DebugTarget.SCOPE ]: false,
     [ DebugTarget.SUM_OF_SQUARES ]: false,
     [ DebugTarget.ERRORS ]: false,
-    [ DebugTarget.KILLS ]: false,
+    [ DebugTarget.TIMEOUTS ]: false,
     [ DebugTarget.NONE ]: false,
 }
 

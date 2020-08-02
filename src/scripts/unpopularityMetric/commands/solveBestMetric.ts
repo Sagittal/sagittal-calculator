@@ -10,7 +10,7 @@ import {
     saveDebugMessage,
     setDebugTargets,
 } from "../debug"
-import { bestMetricsForChunkCount, killedsForChunkCount, solverStatus } from "../globals"
+import { bestMetricsForChunkCount, timeoutsForChunkCount, solverStatus } from "../globals"
 import { Chunk, populateAndSearchScopes, presentBestMetrics } from "../solver"
 
 program
@@ -48,7 +48,7 @@ const startTime = performance.now()
 populateAndSearchScopes().then(() => {
     const bestMetricsForNonzeroChunkCounts = bestMetricsForChunkCount.slice(lowerBoundChunkCount, solverStatus.upperBoundChunkCount + 1)
     saveDebugMessage(`\n\nAND THE BEST METRICS PER CHUNK COUNT WERE ${JSON.stringify(presentBestMetrics(bestMetricsForNonzeroChunkCounts), undefined, 4)}`, DebugTarget.ALL)
-    saveDebugMessage(`\n\nAND THE KILLED METRIC COUNTS PER CHUNK COUNT WERE [${killedsForChunkCount.map(abandonedForChunkCount => abandonedForChunkCount.length).join(",")}]`, DebugTarget.ALL)
+    saveDebugMessage(`\n\nAND THE TIMED OUT METRIC COUNTS PER CHUNK COUNT WERE [${timeoutsForChunkCount.map(abandonedForChunkCount => abandonedForChunkCount.length).join(",")}]`, DebugTarget.ALL)
 
     const endTime = performance.now()
     if (time) console.log(`\n\nTOOK ${endTime - startTime} MS`)

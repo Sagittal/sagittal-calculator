@@ -13,7 +13,7 @@ const targetColors: EnumHash<DebugTarget, ColorMethod> = {
     [ DebugTarget.SCOPE ]: "yellow",
     [ DebugTarget.SUM_OF_SQUARES ]: "white",
     [ DebugTarget.ERRORS ]: "red",
-    [ DebugTarget.KILLS ]: "red",
+    [ DebugTarget.TIMEOUTS ]: "red",
     [ DebugTarget.NONE ]: "white",
 }
 

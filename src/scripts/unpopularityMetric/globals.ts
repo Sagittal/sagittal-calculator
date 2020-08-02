@@ -6,7 +6,7 @@ const populatedsForChunkCount: number[] = []
 const searchedsForChunkCount: number[] = []
 
 const scopesForChunkCount: Scope[][] = [] as unknown as Scope[][]
-const killedsForChunkCount: Scope[][] = [] as unknown as Scope[][]
+const timeoutsForChunkCount: Scope[][] = [] as unknown as Scope[][]
 
 const solverStatus: SolverStatus = {
     finishedPopulating: false,
@@ -28,5 +28,5 @@ export {
     bestMetricsForChunkCount,
     memoizedSubmetricChunkCombinations,
     memoizedParameterChunkCombinations,
-    killedsForChunkCount,
+    timeoutsForChunkCount,
 }
