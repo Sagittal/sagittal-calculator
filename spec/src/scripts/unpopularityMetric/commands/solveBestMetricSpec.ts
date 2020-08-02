@@ -13,7 +13,7 @@ describe("solve best metric", () => {
             `computing combinations for chunk count 1`,
             `computing scopes for chunk count 1: phase 1/1`,
             `submetric combinations (with repetitions) computed: 6; formula is ((1+6-1)!)/((1!)((6-1)!)) where 6 is the total of possible existing chunks and 1 is the count we are choosing at a time`,
-            `parameter combinations (with repetitions) computed: 1; formula is ((0+18-1)!)/((0!)((18-1)!)) where 18 is the total of possible existing chunks and 0 is the count we are choosing at a time`,
+            `parameter combinations (with repetitions) computed: 1; formula is ((0+25-1)!)/((0!)((25-1)!)) where 25 is the total of possible existing chunks and 0 is the count we are choosing at a time`,
             `we find 1 distributions of 0 parameter chunks across 2 bins (assignments to each of a combination of submetrics, plus an extra bin for parameters which will get applied to every submetric), which is how many more scopes should be contributed per each of the 1 parameter chunk combinations in this phase, and that times the 6 submetric chunk combinations in this phase, so expect 1 * 1 * 6 = 6 new scopes from this phase, so we should end with a total of 6`,
             `populating scopes for submetric chunk combination 1/6 with parameter chunk combination 1/1 (0%) | populated [] | searched [] | in the queue []`,
             ``,

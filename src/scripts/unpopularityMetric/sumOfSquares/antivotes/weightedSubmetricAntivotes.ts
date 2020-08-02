@@ -5,8 +5,9 @@ import { computeRatioSubmetricAntivotes } from "./ratioSubmetricAntivotes"
 const computeWeightedSubmetricAntivotes = (fiveRoughRatio: Ratio, submetric = {}): Antivotes => {
     const {
         weightAsCoefficient = 1 as ParameterValue,
-        weightAsBase = undefined,
-        weightAsExponent = undefined,
+        weightAsLogarithmBase = undefined,
+        weightAsPowerExponent = undefined,
+        weightAsPowerBase = undefined,
     }: Submetric = submetric
 
     let submetricAntivotes = 0 as Antivotes
@@ -14,17 +15,25 @@ const computeWeightedSubmetricAntivotes = (fiveRoughRatio: Ratio, submetric = {}
         submetricAntivotes = computeRatioSubmetricAntivotes(fiveRoughRatio, submetric)
     }
 
-    const weightedSubmetricAntivotes: Antivotes = !isUndefined(weightAsBase) ?
-        computeLog(submetricAntivotes, weightAsBase) as Antivotes :
-        !isUndefined(weightAsExponent) ?
-            submetricAntivotes ** weightAsExponent as Antivotes :
-            submetricAntivotes * weightAsCoefficient as Antivotes
-
-    if (isNaN(weightedSubmetricAntivotes)) {
-        throw new Error(`You got NaN! ${fiveRoughRatio} ${JSON.stringify(submetric, null, 4)} ${submetricAntivotes} ${weightAsCoefficient} ${weightAsBase} ${weightAsExponent}`)
+    if (!isUndefined(weightAsLogarithmBase)) {
+        submetricAntivotes =  computeLog(submetricAntivotes, weightAsLogarithmBase) as Antivotes
     }
 
-    return weightedSubmetricAntivotes
+    if (!isUndefined(weightAsPowerExponent)) {
+        submetricAntivotes = submetricAntivotes ** weightAsPowerExponent as Antivotes
+    }
+
+    if (!isUndefined(weightAsPowerBase)) {
+        submetricAntivotes = weightAsPowerBase ** submetricAntivotes as Antivotes
+    }
+
+    submetricAntivotes = submetricAntivotes * weightAsCoefficient as Antivotes
+
+    if (isNaN(submetricAntivotes)) {
+        throw new Error(`You got NaN! ${fiveRoughRatio} ${JSON.stringify(submetric, null, 4)} ${submetricAntivotes} ${weightAsCoefficient} ${weightAsLogarithmBase} ${weightAsPowerExponent} ${weightAsPowerBase}`)
+    }
+
+    return submetricAntivotes
 }
 
 export {

@@ -2,7 +2,7 @@ import { computeLog } from "../../../../src/general"
 import { ACCURACY_THRESHOLD } from "../../../../src/general/code/constants"
 
 describe("computeLog", () => {
-    it("returns the logarithmic with the specified base of the value", () => {
+    it("returns the logarithm with the specified base of the value", () => {
         const value = 9
         const base = 3
 

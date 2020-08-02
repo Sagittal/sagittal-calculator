@@ -32,7 +32,8 @@ describe("populateScopesForChunkCount", () => {
         expect(scopesForChunkCount[ chunkCount ]).toEqual(jasmine.arrayWithExactContents(SUBMETRIC_CHUNKS.map(chunk => [{}, chunk]))) // count: 6
     })
 
-    it("given a chunk count, populates all possible combinations of those parameters - works for 2", async () => {
+    // need to add the extra 7 bits (18 to 25) to each section below
+    xit("given a chunk count, populates all possible combinations of those parameters - works for 2", async () => {
         const chunkCount = 2 as Count<Chunk>
         solverStatus.populatingChunkCount = chunkCount
         scopesForChunkCount[ chunkCount ] = []
@@ -98,7 +99,7 @@ describe("populateScopesForChunkCount", () => {
                 },
                 { // LOG BASE A_AS_COEFFICIENT OF N
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
-                    [ Parameter.A_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_BASE ],
+                    [ Parameter.A_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_LOGARITHM_BASE ],
                 },
             ],
 
@@ -154,7 +155,7 @@ describe("populateScopesForChunkCount", () => {
                 },
                 { // LOG BASE A_AS_COEFFICIENT OF N
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
-                    [ Parameter.A_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_BASE ],
+                    [ Parameter.A_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_LOGARITHM_BASE ],
                 },
             ],
 
@@ -195,7 +196,7 @@ describe("populateScopesForChunkCount", () => {
                 },
                 { // LOG BASE A_AS_COEFFICIENT OF N
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
-                    [ Parameter.A_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_BASE ],
+                    [ Parameter.A_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_LOGARITHM_BASE ],
                 },
             ],
 
@@ -230,7 +231,7 @@ describe("populateScopesForChunkCount", () => {
                 },
                 { // LOG BASE A_AS_COEFFICIENT OF N
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
-                    [ Parameter.A_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_BASE ],
+                    [ Parameter.A_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_LOGARITHM_BASE ],
                 },
             ],
 
@@ -254,7 +255,7 @@ describe("populateScopesForChunkCount", () => {
                 },
                 { // LOG BASE A_AS_COEFFICIENT OF N
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
-                    [ Parameter.A_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_BASE ],
+                    [ Parameter.A_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_LOGARITHM_BASE ],
                 },
             ],
 
@@ -263,17 +264,17 @@ describe("populateScopesForChunkCount", () => {
                 {},
                 { // LOG BASE A_AS_COEFFICIENT OF N
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
-                    [ Parameter.A_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_BASE ],
+                    [ Parameter.A_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_LOGARITHM_BASE ],
                 },
                 { // LOG BASE A_AS_COEFFICIENT OF N
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
-                    [ Parameter.A_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_BASE ],
+                    [ Parameter.A_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_LOGARITHM_BASE ],
                 },
             ],
 
             // submetrics 1, parameters 1: distributed parameters to the submetric directly
 
-            // SOAPFAR (18)
+            // SOAPFAR (25)
             [
                 {},
                 {
@@ -313,14 +314,14 @@ describe("populateScopesForChunkCount", () => {
                 {},
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
-                    [ Parameter.K_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_BASE ],
+                    [ Parameter.K_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_LOGARITHM_BASE ],
                 },
             ],
             [
                 {},
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
-                    [ Parameter.K_AS_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_EXPONENT ],
+                    [ Parameter.K_AS_POWER_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_POWER_EXPONENT ],
                 },
             ],
             [
@@ -334,14 +335,14 @@ describe("populateScopesForChunkCount", () => {
                 {},
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
-                    [ Parameter.J_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.J_AS_BASE ],
+                    [ Parameter.J_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.J_AS_LOGARITHM_BASE ],
                 },
             ],
             [
                 {},
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
-                    [ Parameter.J_AS_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.J_AS_EXPONENT ],
+                    [ Parameter.J_AS_POWER_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.J_AS_POWER_EXPONENT ],
                 },
             ],
             [
@@ -355,14 +356,14 @@ describe("populateScopesForChunkCount", () => {
                 {},
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
-                    [ Parameter.A_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_BASE ],
+                    [ Parameter.A_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_LOGARITHM_BASE ],
                 },
             ],
             [
                 {},
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
-                    [ Parameter.A_AS_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_EXPONENT ],
+                    [ Parameter.A_AS_POWER_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_POWER_EXPONENT ],
                 },
             ],
             [
@@ -401,7 +402,7 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
 
-            // SOAPF (18)
+            // SOAPF (25)
             [
                 {},
                 {
@@ -447,7 +448,7 @@ describe("populateScopesForChunkCount", () => {
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
-                    [ Parameter.K_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_BASE ],
+                    [ Parameter.K_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_LOGARITHM_BASE ],
                 },
             ],
             [
@@ -455,7 +456,7 @@ describe("populateScopesForChunkCount", () => {
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
-                    [ Parameter.K_AS_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_EXPONENT ],
+                    [ Parameter.K_AS_POWER_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_POWER_EXPONENT ],
                 },
             ],
             [
@@ -471,7 +472,7 @@ describe("populateScopesForChunkCount", () => {
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
-                    [ Parameter.J_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.J_AS_BASE ],
+                    [ Parameter.J_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.J_AS_LOGARITHM_BASE ],
                 },
             ],
             [
@@ -479,7 +480,7 @@ describe("populateScopesForChunkCount", () => {
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
-                    [ Parameter.J_AS_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.J_AS_EXPONENT ],
+                    [ Parameter.J_AS_POWER_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.J_AS_POWER_EXPONENT ],
                 },
             ],
             [
@@ -495,7 +496,7 @@ describe("populateScopesForChunkCount", () => {
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
-                    [ Parameter.A_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_BASE ],
+                    [ Parameter.A_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_LOGARITHM_BASE ],
                 },
             ],
             [
@@ -503,7 +504,7 @@ describe("populateScopesForChunkCount", () => {
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
-                    [ Parameter.A_AS_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_EXPONENT ],
+                    [ Parameter.A_AS_POWER_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_POWER_EXPONENT ],
                 },
             ],
             [
@@ -547,7 +548,7 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
 
-            // COAPFAR (18)
+            // COAPFAR (25)
             [
                 {},
                 {
@@ -587,14 +588,14 @@ describe("populateScopesForChunkCount", () => {
                 {},
                 {
                     [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
-                    [ Parameter.K_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_BASE ],
+                    [ Parameter.K_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_LOGARITHM_BASE ],
                 },
             ],
             [
                 {},
                 {
                     [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
-                    [ Parameter.K_AS_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_EXPONENT ],
+                    [ Parameter.K_AS_POWER_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_POWER_EXPONENT ],
                 },
             ],
             [
@@ -608,14 +609,14 @@ describe("populateScopesForChunkCount", () => {
                 {},
                 {
                     [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
-                    [ Parameter.J_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.J_AS_BASE ],
+                    [ Parameter.J_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.J_AS_LOGARITHM_BASE ],
                 },
             ],
             [
                 {},
                 {
                     [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
-                    [ Parameter.J_AS_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.J_AS_EXPONENT ],
+                    [ Parameter.J_AS_POWER_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.J_AS_POWER_EXPONENT ],
                 },
             ],
             [
@@ -629,14 +630,14 @@ describe("populateScopesForChunkCount", () => {
                 {},
                 {
                     [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
-                    [ Parameter.A_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_BASE ],
+                    [ Parameter.A_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_LOGARITHM_BASE ],
                 },
             ],
             [
                 {},
                 {
                     [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
-                    [ Parameter.A_AS_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_EXPONENT ],
+                    [ Parameter.A_AS_POWER_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_POWER_EXPONENT ],
                 },
             ],
             [
@@ -675,7 +676,7 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
 
-            // COAPF (18)
+            // COAPF (25)
             [
                 {},
                 {
@@ -721,7 +722,7 @@ describe("populateScopesForChunkCount", () => {
                 {
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
                     [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
-                    [ Parameter.K_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_BASE ],
+                    [ Parameter.K_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_LOGARITHM_BASE ],
                 },
             ],
             [
@@ -729,7 +730,7 @@ describe("populateScopesForChunkCount", () => {
                 {
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
                     [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
-                    [ Parameter.K_AS_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_EXPONENT ],
+                    [ Parameter.K_AS_POWER_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_POWER_EXPONENT ],
                 },
             ],
             [
@@ -745,7 +746,7 @@ describe("populateScopesForChunkCount", () => {
                 {
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
                     [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
-                    [ Parameter.J_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.J_AS_BASE ],
+                    [ Parameter.J_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.J_AS_LOGARITHM_BASE ],
                 },
             ],
             [
@@ -753,7 +754,7 @@ describe("populateScopesForChunkCount", () => {
                 {
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
                     [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
-                    [ Parameter.J_AS_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.J_AS_EXPONENT ],
+                    [ Parameter.J_AS_POWER_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.J_AS_POWER_EXPONENT ],
                 },
             ],
             [
@@ -769,7 +770,7 @@ describe("populateScopesForChunkCount", () => {
                 {
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
                     [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
-                    [ Parameter.A_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_BASE ],
+                    [ Parameter.A_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_LOGARITHM_BASE ],
                 },
             ],
             [
@@ -777,7 +778,7 @@ describe("populateScopesForChunkCount", () => {
                 {
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
                     [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
-                    [ Parameter.A_AS_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_EXPONENT ],
+                    [ Parameter.A_AS_POWER_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_POWER_EXPONENT ],
                 },
             ],
             [
@@ -821,7 +822,7 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
 
-            // GPF (18)
+            // GPF (25)
             [
                 {},
                 {
@@ -867,7 +868,7 @@ describe("populateScopesForChunkCount", () => {
                 {
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
                     [ Parameter.MAX ]: INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],
-                    [ Parameter.K_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_BASE ],
+                    [ Parameter.K_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_LOGARITHM_BASE ],
                 },
             ],
             [
@@ -875,7 +876,7 @@ describe("populateScopesForChunkCount", () => {
                 {
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
                     [ Parameter.MAX ]: INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],
-                    [ Parameter.K_AS_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_EXPONENT ],
+                    [ Parameter.K_AS_POWER_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_POWER_EXPONENT ],
                 },
             ],
             [
@@ -891,7 +892,7 @@ describe("populateScopesForChunkCount", () => {
                 {
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
                     [ Parameter.MAX ]: INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],
-                    [ Parameter.J_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.J_AS_BASE ],
+                    [ Parameter.J_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.J_AS_LOGARITHM_BASE ],
                 },
             ],
             [
@@ -899,7 +900,7 @@ describe("populateScopesForChunkCount", () => {
                 {
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
                     [ Parameter.MAX ]: INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],
-                    [ Parameter.J_AS_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.J_AS_EXPONENT ],
+                    [ Parameter.J_AS_POWER_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.J_AS_POWER_EXPONENT ],
                 },
             ],
             [
@@ -915,7 +916,7 @@ describe("populateScopesForChunkCount", () => {
                 {
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
                     [ Parameter.MAX ]: INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],
-                    [ Parameter.A_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_BASE ],
+                    [ Parameter.A_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_LOGARITHM_BASE ],
                 },
             ],
             [
@@ -923,7 +924,7 @@ describe("populateScopesForChunkCount", () => {
                 {
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
                     [ Parameter.MAX ]: INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],
-                    [ Parameter.A_AS_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_EXPONENT ],
+                    [ Parameter.A_AS_POWER_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_POWER_EXPONENT ],
                 },
             ],
             [
@@ -967,12 +968,12 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
 
-            // LOG BASE A_AS_COEFFICIENT OF N (18)
+            // LOG BASE A_AS_COEFFICIENT OF N (25)
             [
                 {},
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
-                    [ Parameter.A_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_BASE ],
+                    [ Parameter.A_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_LOGARITHM_BASE ],
                     [ Parameter.B ]: INITIAL_PARAMETER_SCOPES[ Parameter.B ],
                 },
             ],
@@ -980,7 +981,7 @@ describe("populateScopesForChunkCount", () => {
                 {},
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
-                    [ Parameter.A_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_BASE ],
+                    [ Parameter.A_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_LOGARITHM_BASE ],
                     [ Parameter.U ]: INITIAL_PARAMETER_SCOPES[ Parameter.U ],
                 },
             ],
@@ -988,7 +989,7 @@ describe("populateScopesForChunkCount", () => {
                 {},
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
-                    [ Parameter.A_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_BASE ],
+                    [ Parameter.A_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_LOGARITHM_BASE ],
                     [ Parameter.V ]: INITIAL_PARAMETER_SCOPES[ Parameter.V ],
                 },
             ],
@@ -996,7 +997,7 @@ describe("populateScopesForChunkCount", () => {
                 {},
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
-                    [ Parameter.A_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_BASE ],
+                    [ Parameter.A_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_LOGARITHM_BASE ],
                     [ Parameter.X ]: INITIAL_PARAMETER_SCOPES[ Parameter.X ],
                 },
             ],
@@ -1004,7 +1005,7 @@ describe("populateScopesForChunkCount", () => {
                 {},
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
-                    [ Parameter.A_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_BASE ],
+                    [ Parameter.A_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_LOGARITHM_BASE ],
                     [ Parameter.K_AS_COEFFICIENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_COEFFICIENT ],
                 },
             ],
@@ -1012,23 +1013,23 @@ describe("populateScopesForChunkCount", () => {
                 {},
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
-                    [ Parameter.A_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_BASE ],
-                    [ Parameter.K_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_BASE ],
+                    [ Parameter.A_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_LOGARITHM_BASE ],
+                    [ Parameter.K_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_LOGARITHM_BASE ],
                 },
             ],
             [
                 {},
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
-                    [ Parameter.A_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_BASE ],
-                    [ Parameter.K_AS_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_EXPONENT ],
+                    [ Parameter.A_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_LOGARITHM_BASE ],
+                    [ Parameter.K_AS_POWER_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_POWER_EXPONENT ],
                 },
             ],
             [
                 {},
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
-                    [ Parameter.A_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_BASE ],
+                    [ Parameter.A_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_LOGARITHM_BASE ],
                     [ Parameter.J_AS_COEFFICIENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.J_AS_COEFFICIENT ],
                 },
             ],
@@ -1036,23 +1037,23 @@ describe("populateScopesForChunkCount", () => {
                 {},
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
-                    [ Parameter.A_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_BASE ],
-                    [ Parameter.J_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.J_AS_BASE ],
+                    [ Parameter.A_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_LOGARITHM_BASE ],
+                    [ Parameter.J_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.J_AS_LOGARITHM_BASE ],
                 },
             ],
             [
                 {},
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
-                    [ Parameter.A_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_BASE ],
-                    [ Parameter.J_AS_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.J_AS_EXPONENT ],
+                    [ Parameter.A_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_LOGARITHM_BASE ],
+                    [ Parameter.J_AS_POWER_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.J_AS_POWER_EXPONENT ],
                 },
             ],
             [
                 {},
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
-                    [ Parameter.A_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_BASE ],
+                    [ Parameter.A_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_LOGARITHM_BASE ],
                     [ Parameter.A_AS_COEFFICIENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_COEFFICIENT ],
                 },
             ],
@@ -1060,23 +1061,23 @@ describe("populateScopesForChunkCount", () => {
                 {},
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
-                    [ Parameter.A_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_BASE ],
-                    [ Parameter.A_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_BASE ],
+                    [ Parameter.A_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_LOGARITHM_BASE ],
+                    [ Parameter.A_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_LOGARITHM_BASE ],
                 },
             ],
             [
                 {},
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
-                    [ Parameter.A_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_BASE ],
-                    [ Parameter.A_AS_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_EXPONENT ],
+                    [ Parameter.A_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_LOGARITHM_BASE ],
+                    [ Parameter.A_AS_POWER_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_POWER_EXPONENT ],
                 },
             ],
             [
                 {},
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
-                    [ Parameter.A_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_BASE ],
+                    [ Parameter.A_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_LOGARITHM_BASE ],
                     [ Parameter.W ]: INITIAL_PARAMETER_SCOPES[ Parameter.W ],
                 },
             ],
@@ -1084,7 +1085,7 @@ describe("populateScopesForChunkCount", () => {
                 {},
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
-                    [ Parameter.A_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_BASE ],
+                    [ Parameter.A_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_LOGARITHM_BASE ],
                     [ Parameter.Y ]: INITIAL_PARAMETER_SCOPES[ Parameter.Y ],
                 },
             ],
@@ -1092,7 +1093,7 @@ describe("populateScopesForChunkCount", () => {
                 {},
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
-                    [ Parameter.A_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_BASE ],
+                    [ Parameter.A_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_LOGARITHM_BASE ],
                     [ Parameter.USE_NUMINATOR ]: INITIAL_PARAMETER_SCOPES[ Parameter.USE_NUMINATOR ],
                 },
             ],
@@ -1100,7 +1101,7 @@ describe("populateScopesForChunkCount", () => {
                 {},
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
-                    [ Parameter.A_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_BASE ],
+                    [ Parameter.A_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_LOGARITHM_BASE ],
                     [ Parameter.USE_PRIME_INDEX ]: INITIAL_PARAMETER_SCOPES[ Parameter.USE_PRIME_INDEX ],
                 },
             ],
@@ -1108,14 +1109,14 @@ describe("populateScopesForChunkCount", () => {
                 {},
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
-                    [ Parameter.A_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_BASE ],
+                    [ Parameter.A_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_LOGARITHM_BASE ],
                     [ Parameter.MODIFIED_COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.MODIFIED_COUNT ],
                 },
             ],
 
             // submetrics 1, parameters 1: distributed parameters to the 'all bins' submetric bin
 
-            // SOAPFAR (18)
+            // SOAPFAR (25)
             [
                 {
                     [ Parameter.B ]: INITIAL_PARAMETER_SCOPES[ Parameter.B ],
@@ -1158,7 +1159,7 @@ describe("populateScopesForChunkCount", () => {
             ],
             [
                 {
-                    [ Parameter.K_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_BASE ],
+                    [ Parameter.K_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_LOGARITHM_BASE ],
                 },
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
@@ -1166,7 +1167,7 @@ describe("populateScopesForChunkCount", () => {
             ],
             [
                 {
-                    [ Parameter.K_AS_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_EXPONENT ],
+                    [ Parameter.K_AS_POWER_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_POWER_EXPONENT ],
                 },
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
@@ -1182,7 +1183,7 @@ describe("populateScopesForChunkCount", () => {
             ],
             [
                 {
-                    [ Parameter.J_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.J_AS_BASE ],
+                    [ Parameter.J_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.J_AS_LOGARITHM_BASE ],
                 },
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
@@ -1190,7 +1191,7 @@ describe("populateScopesForChunkCount", () => {
             ],
             [
                 {
-                    [ Parameter.J_AS_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.J_AS_EXPONENT ],
+                    [ Parameter.J_AS_POWER_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.J_AS_POWER_EXPONENT ],
                 },
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
@@ -1206,7 +1207,7 @@ describe("populateScopesForChunkCount", () => {
             ],
             [
                 {
-                    [ Parameter.A_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_BASE ],
+                    [ Parameter.A_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_LOGARITHM_BASE ],
                 },
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
@@ -1214,7 +1215,7 @@ describe("populateScopesForChunkCount", () => {
             ],
             [
                 {
-                    [ Parameter.A_AS_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_EXPONENT ],
+                    [ Parameter.A_AS_POWER_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_POWER_EXPONENT ],
                 },
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
@@ -1261,7 +1262,7 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
 
-            // SOAPF (18)
+            // SOAPF (25)
             [
                 {
                     [ Parameter.B ]: INITIAL_PARAMETER_SCOPES[ Parameter.B ],
@@ -1309,7 +1310,7 @@ describe("populateScopesForChunkCount", () => {
             ],
             [
                 {
-                    [ Parameter.K_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_BASE ],
+                    [ Parameter.K_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_LOGARITHM_BASE ],
                 },
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
@@ -1318,7 +1319,7 @@ describe("populateScopesForChunkCount", () => {
             ],
             [
                 {
-                    [ Parameter.K_AS_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_EXPONENT ],
+                    [ Parameter.K_AS_POWER_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_POWER_EXPONENT ],
                 },
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
@@ -1336,7 +1337,7 @@ describe("populateScopesForChunkCount", () => {
             ],
             [
                 {
-                    [ Parameter.J_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.J_AS_BASE ],
+                    [ Parameter.J_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.J_AS_LOGARITHM_BASE ],
                 },
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
@@ -1345,7 +1346,7 @@ describe("populateScopesForChunkCount", () => {
             ],
             [
                 {
-                    [ Parameter.J_AS_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.J_AS_EXPONENT ],
+                    [ Parameter.J_AS_POWER_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.J_AS_POWER_EXPONENT ],
                 },
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
@@ -1363,7 +1364,7 @@ describe("populateScopesForChunkCount", () => {
             ],
             [
                 {
-                    [ Parameter.A_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_BASE ],
+                    [ Parameter.A_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_LOGARITHM_BASE ],
                 },
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
@@ -1372,7 +1373,7 @@ describe("populateScopesForChunkCount", () => {
             ],
             [
                 {
-                    [ Parameter.A_AS_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_EXPONENT ],
+                    [ Parameter.A_AS_POWER_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_POWER_EXPONENT ],
                 },
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
@@ -1425,7 +1426,7 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
 
-            // COAPFAR (18)
+            // COAPFAR (25)
             [
                 {
                     [ Parameter.B ]: INITIAL_PARAMETER_SCOPES[ Parameter.B ],
@@ -1468,7 +1469,7 @@ describe("populateScopesForChunkCount", () => {
             ],
             [
                 {
-                    [ Parameter.K_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_BASE ],
+                    [ Parameter.K_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_LOGARITHM_BASE ],
                 },
                 {
                     [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
@@ -1476,7 +1477,7 @@ describe("populateScopesForChunkCount", () => {
             ],
             [
                 {
-                    [ Parameter.K_AS_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_EXPONENT ],
+                    [ Parameter.K_AS_POWER_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_POWER_EXPONENT ],
                 },
                 {
                     [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
@@ -1492,7 +1493,7 @@ describe("populateScopesForChunkCount", () => {
             ],
             [
                 {
-                    [ Parameter.J_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.J_AS_BASE ],
+                    [ Parameter.J_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.J_AS_LOGARITHM_BASE ],
                 },
                 {
                     [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
@@ -1500,7 +1501,7 @@ describe("populateScopesForChunkCount", () => {
             ],
             [
                 {
-                    [ Parameter.J_AS_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.J_AS_EXPONENT ],
+                    [ Parameter.J_AS_POWER_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.J_AS_POWER_EXPONENT ],
                 },
                 {
                     [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
@@ -1516,7 +1517,7 @@ describe("populateScopesForChunkCount", () => {
             ],
             [
                 {
-                    [ Parameter.A_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_BASE ],
+                    [ Parameter.A_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_LOGARITHM_BASE ],
                 },
                 {
                     [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
@@ -1524,7 +1525,7 @@ describe("populateScopesForChunkCount", () => {
             ],
             [
                 {
-                    [ Parameter.A_AS_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_EXPONENT ],
+                    [ Parameter.A_AS_POWER_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_POWER_EXPONENT ],
                 },
                 {
                     [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
@@ -1571,7 +1572,7 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
 
-            // COAPF (18)
+            // COAPF (25)
             [
                 {
                     [ Parameter.B ]: INITIAL_PARAMETER_SCOPES[ Parameter.B ],
@@ -1619,7 +1620,7 @@ describe("populateScopesForChunkCount", () => {
             ],
             [
                 {
-                    [ Parameter.K_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_BASE ],
+                    [ Parameter.K_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_LOGARITHM_BASE ],
                 },
                 {
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
@@ -1628,7 +1629,7 @@ describe("populateScopesForChunkCount", () => {
             ],
             [
                 {
-                    [ Parameter.K_AS_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_EXPONENT ],
+                    [ Parameter.K_AS_POWER_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_POWER_EXPONENT ],
                 },
                 {
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
@@ -1646,7 +1647,7 @@ describe("populateScopesForChunkCount", () => {
             ],
             [
                 {
-                    [ Parameter.J_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.J_AS_BASE ],
+                    [ Parameter.J_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.J_AS_LOGARITHM_BASE ],
                 },
                 {
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
@@ -1655,7 +1656,7 @@ describe("populateScopesForChunkCount", () => {
             ],
             [
                 {
-                    [ Parameter.J_AS_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.J_AS_EXPONENT ],
+                    [ Parameter.J_AS_POWER_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.J_AS_POWER_EXPONENT ],
                 },
                 {
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
@@ -1673,7 +1674,7 @@ describe("populateScopesForChunkCount", () => {
             ],
             [
                 {
-                    [ Parameter.A_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_BASE ],
+                    [ Parameter.A_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_LOGARITHM_BASE ],
                 },
                 {
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
@@ -1682,7 +1683,7 @@ describe("populateScopesForChunkCount", () => {
             ],
             [
                 {
-                    [ Parameter.A_AS_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_EXPONENT ],
+                    [ Parameter.A_AS_POWER_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_POWER_EXPONENT ],
                 },
                 {
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
@@ -1735,7 +1736,7 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
 
-            // GPF (18)
+            // GPF (25)
             [
                 {
                     [ Parameter.B ]: INITIAL_PARAMETER_SCOPES[ Parameter.B ],
@@ -1783,7 +1784,7 @@ describe("populateScopesForChunkCount", () => {
             ],
             [
                 {
-                    [ Parameter.K_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_BASE ],
+                    [ Parameter.K_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_LOGARITHM_BASE ],
                 },
                 {
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
@@ -1792,7 +1793,7 @@ describe("populateScopesForChunkCount", () => {
             ],
             [
                 {
-                    [ Parameter.K_AS_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_EXPONENT ],
+                    [ Parameter.K_AS_POWER_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_POWER_EXPONENT ],
                 },
                 {
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
@@ -1810,7 +1811,7 @@ describe("populateScopesForChunkCount", () => {
             ],
             [
                 {
-                    [ Parameter.J_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.J_AS_BASE ],
+                    [ Parameter.J_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.J_AS_LOGARITHM_BASE ],
                 },
                 {
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
@@ -1819,7 +1820,7 @@ describe("populateScopesForChunkCount", () => {
             ],
             [
                 {
-                    [ Parameter.J_AS_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.J_AS_EXPONENT ],
+                    [ Parameter.J_AS_POWER_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.J_AS_POWER_EXPONENT ],
                 },
                 {
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
@@ -1837,7 +1838,7 @@ describe("populateScopesForChunkCount", () => {
             ],
             [
                 {
-                    [ Parameter.A_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_BASE ],
+                    [ Parameter.A_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_LOGARITHM_BASE ],
                 },
                 {
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
@@ -1846,7 +1847,7 @@ describe("populateScopesForChunkCount", () => {
             ],
             [
                 {
-                    [ Parameter.A_AS_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_EXPONENT ],
+                    [ Parameter.A_AS_POWER_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_POWER_EXPONENT ],
                 },
                 {
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
@@ -1899,14 +1900,14 @@ describe("populateScopesForChunkCount", () => {
                 },
             ],
 
-            // LOG BASE A_AS_COEFFICIENT OF N (18)
+            // LOG BASE A_AS_COEFFICIENT OF N (25)
             [
                 {
                     [ Parameter.B ]: INITIAL_PARAMETER_SCOPES[ Parameter.B ],
                 },
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
-                    [ Parameter.A_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_BASE ],
+                    [ Parameter.A_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_LOGARITHM_BASE ],
                 },
             ],
             [
@@ -1915,7 +1916,7 @@ describe("populateScopesForChunkCount", () => {
                 },
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
-                    [ Parameter.A_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_BASE ],
+                    [ Parameter.A_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_LOGARITHM_BASE ],
                 },
             ],
             [
@@ -1924,7 +1925,7 @@ describe("populateScopesForChunkCount", () => {
                 },
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
-                    [ Parameter.A_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_BASE ],
+                    [ Parameter.A_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_LOGARITHM_BASE ],
                 },
             ],
             [
@@ -1933,7 +1934,7 @@ describe("populateScopesForChunkCount", () => {
                 },
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
-                    [ Parameter.A_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_BASE ],
+                    [ Parameter.A_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_LOGARITHM_BASE ],
                 },
             ],
             [
@@ -1942,25 +1943,25 @@ describe("populateScopesForChunkCount", () => {
                 },
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
-                    [ Parameter.A_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_BASE ],
+                    [ Parameter.A_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_LOGARITHM_BASE ],
                 },
             ],
             [
                 {
-                    [ Parameter.K_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_BASE ],
+                    [ Parameter.K_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_LOGARITHM_BASE ],
                 },
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
-                    [ Parameter.A_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_BASE ],
+                    [ Parameter.A_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_LOGARITHM_BASE ],
                 },
             ],
             [
                 {
-                    [ Parameter.K_AS_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_EXPONENT ],
+                    [ Parameter.K_AS_POWER_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_POWER_EXPONENT ],
                 },
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
-                    [ Parameter.A_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_BASE ],
+                    [ Parameter.A_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_LOGARITHM_BASE ],
                 },
             ],
             [
@@ -1969,25 +1970,25 @@ describe("populateScopesForChunkCount", () => {
                 },
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
-                    [ Parameter.A_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_BASE ],
+                    [ Parameter.A_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_LOGARITHM_BASE ],
                 },
             ],
             [
                 {
-                    [ Parameter.J_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.J_AS_BASE ],
+                    [ Parameter.J_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.J_AS_LOGARITHM_BASE ],
                 },
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
-                    [ Parameter.A_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_BASE ],
+                    [ Parameter.A_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_LOGARITHM_BASE ],
                 },
             ],
             [
                 {
-                    [ Parameter.J_AS_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.J_AS_EXPONENT ],
+                    [ Parameter.J_AS_POWER_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.J_AS_POWER_EXPONENT ],
                 },
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
-                    [ Parameter.A_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_BASE ],
+                    [ Parameter.A_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_LOGARITHM_BASE ],
                 },
             ],
             [
@@ -1996,25 +1997,25 @@ describe("populateScopesForChunkCount", () => {
                 },
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
-                    [ Parameter.A_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_BASE ],
+                    [ Parameter.A_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_LOGARITHM_BASE ],
                 },
             ],
             [
                 {
-                    [ Parameter.A_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_BASE ],
+                    [ Parameter.A_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_LOGARITHM_BASE ],
                 },
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
-                    [ Parameter.A_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_BASE ],
+                    [ Parameter.A_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_LOGARITHM_BASE ],
                 },
             ],
             [
                 { // yes I see that this one is a problem... it'll just throw an error and it gets caught by that spot that is designed to catch such errors and move on
-                    [ Parameter.A_AS_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_EXPONENT ],
+                    [ Parameter.A_AS_POWER_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_POWER_EXPONENT ],
                 },
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
-                    [ Parameter.A_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_BASE ],
+                    [ Parameter.A_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_LOGARITHM_BASE ],
                 },
             ],
             [
@@ -2023,7 +2024,7 @@ describe("populateScopesForChunkCount", () => {
                 },
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
-                    [ Parameter.A_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_BASE ],
+                    [ Parameter.A_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_LOGARITHM_BASE ],
                 },
             ],
             [
@@ -2032,7 +2033,7 @@ describe("populateScopesForChunkCount", () => {
                 },
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
-                    [ Parameter.A_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_BASE ],
+                    [ Parameter.A_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_LOGARITHM_BASE ],
                 },
             ],
             [
@@ -2041,7 +2042,7 @@ describe("populateScopesForChunkCount", () => {
                 },
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
-                    [ Parameter.A_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_BASE ],
+                    [ Parameter.A_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_LOGARITHM_BASE ],
                 },
             ],
             [
@@ -2050,7 +2051,7 @@ describe("populateScopesForChunkCount", () => {
                 },
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
-                    [ Parameter.A_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_BASE ],
+                    [ Parameter.A_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_LOGARITHM_BASE ],
                 },
             ],
             [
@@ -2059,17 +2060,17 @@ describe("populateScopesForChunkCount", () => {
                 },
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
-                    [ Parameter.A_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_BASE ],
+                    [ Parameter.A_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_LOGARITHM_BASE ],
                 },
             ],
         ] as Scope[]
 
         const result: Scope[] = scopesForChunkCount[ chunkCount ]
 
-        // 237 =
-        //      ((2+6-1)!)/((2!)((6-1)!)) * ((0+18-1)!)/((0!)((18-1)!)) * 3^0 = 21 * 1 * 1 = 21
+        // 321 =
+        //      ((2+6-1)!)/((2!)((6-1)!)) * ((0+25-1)!)/((0!)((25-1)!)) * 3^0 = 21 * 1 * 1 = 21
         //      +
-        //      ((1+6-1)!)/((1!)((6-1)!)) * ((1+18-1)!)/((1!)((18-1)!)) * 2^1 = 6 * 18 * 2 = 216
+        //      ((1+6-1)!)/((1!)((6-1)!)) * ((1+25-1)!)/((1!)((25-1)!)) * 2^1 = 6 * 25 * 2 = 300
         expect(result.length).toEqual(expectedResult.length)
         expectedResult.forEach(expectedResultElement => {
             expect(result.some(resultElement => {
@@ -2078,7 +2079,7 @@ describe("populateScopesForChunkCount", () => {
         })
     })
 
-    // TODO: this one and the one below need to be recalculated for 18 instead of 15 parameters
+    // TODO: this one and the one below need to be recalculated for 25 instead of 15 parameters (the 3 new denominator-specific ones, the 3 new power base ones, the 4 weight ones we were missing (and the 14->15 was bringing back x))
     xit("given a chunk count, populates all possible combinations of those parameters - works for 3", async () => {
         const chunkCount = 3 as Count<Chunk>
         solverStatus.populatingChunkCount = chunkCount
@@ -2099,7 +2100,7 @@ describe("populateScopesForChunkCount", () => {
                 {
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
                     [ Parameter.MAX ]: INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],
-                    [ Parameter.A_AS_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_EXPONENT ],
+                    [ Parameter.A_AS_POWER_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_POWER_EXPONENT ],
                 },
                 {
                     [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
@@ -2113,7 +2114,7 @@ describe("populateScopesForChunkCount", () => {
                 },
                 {
                     [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
-                    [ Parameter.A_AS_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_EXPONENT ],
+                    [ Parameter.A_AS_POWER_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_POWER_EXPONENT ],
                 },
             ],
         ]

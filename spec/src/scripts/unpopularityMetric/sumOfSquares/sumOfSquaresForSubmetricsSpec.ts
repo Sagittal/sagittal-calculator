@@ -13,7 +13,7 @@ describe("computeSumOfSquaresForSubmetrics", () => {
             {
                 [ Parameter.SUM ]: true,
                 [ Parameter.K_AS_COEFFICIENT ]: 0.038 as ParameterValue,
-                [ Parameter.A_AS_BASE ]: 1.994 as ParameterValue,
+                [ Parameter.A_AS_LOGARITHM_BASE ]: 1.994 as ParameterValue,
                 [ Parameter.Y ]: 0.455 as ParameterValue,
                 [ Parameter.W ]: -2.08 as ParameterValue,
                 [ Parameter.USE_NUMINATOR ]: true,

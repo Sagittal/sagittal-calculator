@@ -36,106 +36,119 @@ describe("computeSubmetricAntivotes", () => {
             )
         })
 
-        it("when a is provided, multiplies the prime by it", () => {
-            const a = 0.56 as ParameterValue
-            submetric[ Parameter.A_AS_COEFFICIENT ] = a
+        it("when a as a coefficient is provided, multiplies the prime by it", () => {
+            const aAsCoefficient = 0.56 as ParameterValue
+            submetric[ Parameter.A_AS_COEFFICIENT ] = aAsCoefficient
 
             const result = computeSubmetricAntivotes(fiveRoughNumberMonzo, submetric)
 
             expect(result).toBe(
-                1 * 11 * a +
-                1 * 13 * a +
-                2 * 17 * a as Antivotes,
+                1 * 11 * aAsCoefficient +
+                1 * 13 * aAsCoefficient +
+                2 * 17 * aAsCoefficient as Antivotes,
             )
         })
 
-        it("when a is used as an exponent (not a coefficient)", () => {
-            const a = 0.56 as ParameterValue
-            submetric[ Parameter.A_AS_EXPONENT ] = a
+        it("when a as a power exponent is provided, raises the prime to it", () => {
+            const aAsPowerExponent = 0.56 as ParameterValue
+            submetric[ Parameter.A_AS_POWER_EXPONENT ] = aAsPowerExponent
 
             const result = computeSubmetricAntivotes(fiveRoughNumberMonzo, submetric)
 
             expect(result).toBe(
-                1 * 11 ** a +
-                1 * 13 ** a +
-                2 * 17 ** a as Antivotes,
+                1 * 11 ** aAsPowerExponent +
+                1 * 13 ** aAsPowerExponent +
+                2 * 17 ** aAsPowerExponent as Antivotes,
             )
         })
 
-        it("when a is used as a base (not a coefficient)", () => {
-            const a = 0.56 as ParameterValue
-            submetric[ Parameter.A_AS_BASE ] = a
+        it("when a as a logarithm base is provided, takes the base a logarithm of it", () => {
+            const aAsLogarithmBase = 0.56 as ParameterValue
+            submetric[ Parameter.A_AS_LOGARITHM_BASE ] = aAsLogarithmBase
 
             const result = computeSubmetricAntivotes(fiveRoughNumberMonzo, submetric)
 
             expect(result).toBe(
-                1 * computeLog(11, a) +
-                1 * computeLog(13, a) +
-                2 * computeLog(17, a) as Antivotes,
+                1 * computeLog(11, aAsLogarithmBase) +
+                1 * computeLog(13, aAsLogarithmBase) +
+                2 * computeLog(17, aAsLogarithmBase) as Antivotes,
+            )
+        })
+
+        it("when a as a power base is provided, raises it to the prime", () => {
+            const aAsPowerBase = 0.56 as ParameterValue
+            submetric[ Parameter.A_AS_POWER_BASE ] = aAsPowerBase
+
+            const result = computeSubmetricAntivotes(fiveRoughNumberMonzo, submetric)
+
+            expect(result).toBe(
+                1 * aAsPowerBase ** 11 +
+                1 * aAsPowerBase ** 13 +
+                2 * aAsPowerBase ** 17 as Antivotes,
             )
         })
 
         it("when w is provided, adds a constant to each prime after applying the coefficient, exponent, or base", () => {
-            const a = 0.56 as ParameterValue
+            const aAsCoefficient = 0.56 as ParameterValue
             const w = 0.22 as ParameterValue
-            submetric[ Parameter.A_AS_COEFFICIENT ] = a
+            submetric[ Parameter.A_AS_COEFFICIENT ] = aAsCoefficient
             submetric[ Parameter.W ] = w
 
             const result = computeSubmetricAntivotes(fiveRoughNumberMonzo, submetric)
 
             expect(result).toBe(
-                1 * (11 * a + w) +
-                1 * (13 * a + w) +
-                2 * (17 * a + w) as Antivotes,
+                1 * (11 * aAsCoefficient + w) +
+                1 * (13 * aAsCoefficient + w) +
+                2 * (17 * aAsCoefficient + w) as Antivotes,
             )
         })
 
         it("when b is provided, adds a constant to each prime after applying the coefficient, exponent, or base, but using b for d and w for n", () => {
-            const a = 0.56 as ParameterValue
+            const aAsCoefficient = 0.56 as ParameterValue
             const w = 0.22 as ParameterValue
             const b = 0.34 as ParameterValue
-            submetric[ Parameter.A_AS_COEFFICIENT ] = a
+            submetric[ Parameter.A_AS_COEFFICIENT ] = aAsCoefficient
             submetric[ Parameter.W ] = w
             submetric[ Parameter.B ] = b
 
             const result = computeSubmetricAntivotes(fiveRoughNumberMonzo, submetric)
 
             expect(result).toBe(
-                1 * (11 * a + w) +
-                1 * (13 * a + b) +
-                2 * (17 * a + w) as Antivotes,
+                1 * (11 * aAsCoefficient + w) +
+                1 * (13 * aAsCoefficient + b) +
+                2 * (17 * aAsCoefficient + w) as Antivotes,
             )
         })
 
         it("when x is provided, adds a constant to each prime before applying the coefficient, exponent, or base", () => {
-            const a = 0.56 as ParameterValue
+            const aAsCoefficient = 0.56 as ParameterValue
             const x = -2.1 as ParameterValue
-            submetric[ Parameter.A_AS_COEFFICIENT ] = a
+            submetric[ Parameter.A_AS_COEFFICIENT ] = aAsCoefficient
             submetric[ Parameter.X ] = x
 
             const result = computeSubmetricAntivotes(fiveRoughNumberMonzo, submetric)
 
             expect(result).toBe(
-                1 * (11 + x) * a +
-                1 * (13 + x) * a +
-                2 * (17 + x) * a as Antivotes,
+                1 * (11 + x) * aAsCoefficient +
+                1 * (13 + x) * aAsCoefficient +
+                2 * (17 + x) * aAsCoefficient as Antivotes,
             )
         })
 
         it("when u is provided, adds a constant to each prime before applying the coefficient, exponent, or base, but using u for d and x for n", () => {
-            const a = 0.56 as ParameterValue
+            const aAsCoefficient = 0.56 as ParameterValue
             const x = -2.1 as ParameterValue
             const u = -1.1 as ParameterValue
-            submetric[ Parameter.A_AS_COEFFICIENT ] = a
+            submetric[ Parameter.A_AS_COEFFICIENT ] = aAsCoefficient
             submetric[ Parameter.X ] = x
             submetric[ Parameter.U ] = u
 
             const result = computeSubmetricAntivotes(fiveRoughNumberMonzo, submetric)
 
             expect(result).toBe(
-                1 * (11 + x) * a +
-                1 * (13 + u) * a +
-                2 * (17 + x) * a as Antivotes,
+                1 * (11 + x) * aAsCoefficient +
+                1 * (13 + u) * aAsCoefficient +
+                2 * (17 + x) * aAsCoefficient as Antivotes,
             )
         })
 

@@ -9,7 +9,7 @@ describe("populateScopes", () => {
     beforeEach(() => {
         originalJasmineTimeoutInterval = jasmine.DEFAULT_TIMEOUT_INTERVAL
 
-        jasmine.DEFAULT_TIMEOUT_INTERVAL = 30000
+        jasmine.DEFAULT_TIMEOUT_INTERVAL = 50000
     })
 
     afterEach(() => {

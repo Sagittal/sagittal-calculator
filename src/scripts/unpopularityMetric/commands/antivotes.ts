@@ -32,7 +32,7 @@ const submetrics =
         {
             [ Parameter.SUM ]: true,
             [ Parameter.K_AS_COEFFICIENT ]: 0 as ParameterValue,
-            [ Parameter.A_AS_BASE ]: 1.994 as ParameterValue,
+            [ Parameter.A_AS_LOGARITHM_BASE ]: 1.994 as ParameterValue,
             [ Parameter.Y ]: 0.455 as ParameterValue,
             [ Parameter.W ]: -2.08 as ParameterValue,
         },

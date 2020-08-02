@@ -52,21 +52,30 @@ describe("computeWeightedSubmetricAntivotes", () => {
         expect(result).toBe(17 as Antivotes)
     })
 
-    it("can use the weight as a base", () => {
+    it("can use the weight as a logarithm base", () => {
         const fiveRoughRatio = [15, 14] as Ratio
-        const submetric = { [ Parameter.WEIGHT_AS_BASE ]: 2, [ Parameter.SUM ]: true }
+        const submetric = { [ Parameter.WEIGHT_AS_LOGARITHM_BASE ]: 2, [ Parameter.SUM ]: true }
 
         const result = computeWeightedSubmetricAntivotes(fiveRoughRatio, submetric)
 
         expect(result).toBe(computeLog(ratioSubmetricAntivotes.computeRatioSubmetricAntivotes(fiveRoughRatio, { [ Parameter.SUM ]: true }), 2) as Antivotes)
     })
 
-    it("can use the weight as an exponent", () => {
+    it("can use the weight as a power exponent", () => {
         const fiveRoughRatio = [15, 14] as Ratio
-        const submetric = { [ Parameter.WEIGHT_AS_EXPONENT ]: 0.5, [ Parameter.SUM ]: true }
+        const submetric = { [ Parameter.WEIGHT_AS_POWER_EXPONENT ]: 2, [ Parameter.SUM ]: true }
 
         const result = computeWeightedSubmetricAntivotes(fiveRoughRatio, submetric)
 
-        expect(result).toBe(ratioSubmetricAntivotes.computeRatioSubmetricAntivotes(fiveRoughRatio, { [ Parameter.SUM ]: true }) ** 0.5 as Antivotes)
+        expect(result).toBe(ratioSubmetricAntivotes.computeRatioSubmetricAntivotes(fiveRoughRatio, { [ Parameter.SUM ]: true }) ** 2 as Antivotes)
+    })
+
+    it("can use the weight as a power base", () => {
+        const fiveRoughRatio = [15, 14] as Ratio
+        const submetric = { [ Parameter.WEIGHT_AS_POWER_BASE ]: 2, [ Parameter.SUM ]: true }
+
+        const result = computeWeightedSubmetricAntivotes(fiveRoughRatio, submetric)
+
+        expect(result).toBe(2 ** ratioSubmetricAntivotes.computeRatioSubmetricAntivotes(fiveRoughRatio, { [ Parameter.SUM ]: true }) as Antivotes)
     })
 })

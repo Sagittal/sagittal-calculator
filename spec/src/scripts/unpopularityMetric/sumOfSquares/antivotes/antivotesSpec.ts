@@ -65,7 +65,7 @@ describe("computeAntivotes", () => {
                 [ Parameter.SUM ]: true,
                 [ Parameter.WEIGHT_AS_COEFFICIENT ]: 1 as ParameterValue,
                 [ Parameter.K_AS_COEFFICIENT ]: 0 as ParameterValue,
-                [ Parameter.A_AS_BASE ]: 2 as ParameterValue,
+                [ Parameter.A_AS_LOGARITHM_BASE ]: 2 as ParameterValue,
                 [ Parameter.W ]: -6 as ParameterValue,
                 [ Parameter.X ]: -2 as ParameterValue,
                 [ Parameter.Y ]: 0.14285714285714285 as ParameterValue,

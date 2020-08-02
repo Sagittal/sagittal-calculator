@@ -81,10 +81,10 @@ describe("computeRatioSubmetricAntivotes", () => {
         )
     })
 
-    it("works when k is a base", () => {
-        const kAsBase = 2 as ParameterValue
+    it("works when k is a logarithm base", () => {
+        const kAsLogarithmBase = 2 as ParameterValue
         const fiveRoughRatio = [5, 7] as Ratio
-        const submetric = { kAsBase, sum: true }
+        const submetric = { kAsLogarithmBase, sum: true }
 
         const result = computeRatioSubmetricAntivotes(fiveRoughRatio, submetric)
 
@@ -94,10 +94,10 @@ describe("computeRatioSubmetricAntivotes", () => {
         )
     })
 
-    it("works when k is an exponent", () => {
-        const kAsExponent = 2 as ParameterValue
+    it("works when k is a power exponent", () => {
+        const kAsPowerExponent = 2 as ParameterValue
         const fiveRoughRatio = [5, 7] as Ratio
-        const submetric = { kAsExponent, sum: true }
+        const submetric = { kAsPowerExponent, sum: true }
 
         const result = computeRatioSubmetricAntivotes(fiveRoughRatio, submetric)
 
@@ -107,10 +107,23 @@ describe("computeRatioSubmetricAntivotes", () => {
         )
     })
 
-    it("works when j is a base", () => {
-        const jAsBase = 2 as ParameterValue
+    it("works when k is a power base", () => {
+        const kAsPowerBase = 2 as ParameterValue
         const fiveRoughRatio = [5, 7] as Ratio
-        const submetric = { jAsBase, sum: true }
+        const submetric = { kAsPowerBase, sum: true }
+
+        const result = computeRatioSubmetricAntivotes(fiveRoughRatio, submetric)
+
+        expect(result).toBe(
+            computeSubmetricAntivotes([0, 0, 1] as Monzo, submetric) as Antivotes +
+            2 ** computeSubmetricAntivotes([0, 0, 0, 1] as Monzo, submetric) as Antivotes,
+        )
+    })
+
+    it("works when j is a logarithm base", () => {
+        const jAsLogarithmBase = 2 as ParameterValue
+        const fiveRoughRatio = [5, 7] as Ratio
+        const submetric = { jAsLogarithmBase, sum: true }
 
         const result = computeRatioSubmetricAntivotes(fiveRoughRatio, submetric)
 
@@ -120,15 +133,28 @@ describe("computeRatioSubmetricAntivotes", () => {
         )
     })
 
-    it("works when j is an exponent", () => {
-        const jAsExponent = 2 as ParameterValue
+    it("works when j is a power exponent", () => {
+        const jAsPowerExponent = 2 as ParameterValue
         const fiveRoughRatio = [5, 7] as Ratio
-        const submetric = { jAsExponent, sum: true }
+        const submetric = { jAsPowerExponent, sum: true }
 
         const result = computeRatioSubmetricAntivotes(fiveRoughRatio, submetric)
 
         expect(result).toBe(
             computeSubmetricAntivotes([0, 0, 1] as Monzo, submetric) ** 2 as Antivotes +
+            computeSubmetricAntivotes([0, 0, 0, 1] as Monzo, submetric) as Antivotes,
+        )
+    })
+
+    it("works when j is a power base", () => {
+        const jAsPowerBase = 2 as ParameterValue
+        const fiveRoughRatio = [5, 7] as Ratio
+        const submetric = { jAsPowerBase, sum: true }
+
+        const result = computeRatioSubmetricAntivotes(fiveRoughRatio, submetric)
+
+        expect(result).toBe(
+            2 ** computeSubmetricAntivotes([0, 0, 1] as Monzo, submetric) as Antivotes +
             computeSubmetricAntivotes([0, 0, 0, 1] as Monzo, submetric) as Antivotes,
         )
     })

@@ -34,27 +34,27 @@ describe("presentBestMetrics", () => {
                 },
             },
             {
-                "{aAsBase}": {
+                "{aAsLogarithmBase}": {
                     sumOfSquares: 0.011 as SumOfSquares,
                     submetrics: [
                         {
-                            [ Parameter.A_AS_BASE ]: 2 as ParameterValue,
+                            [ Parameter.A_AS_LOGARITHM_BASE ]: 2 as ParameterValue,
                         },
                     ] as Combination<Submetric>,
                 },
-                "{jAsBase}": {
+                "{jAsLogarithmBase}": {
                     sumOfSquares: 0.0123 as SumOfSquares,
                     submetrics: [
                         {
-                            [ Parameter.J_AS_BASE ]: 2 as ParameterValue,
+                            [ Parameter.J_AS_LOGARITHM_BASE ]: 2 as ParameterValue,
                         },
                     ] as Combination<Submetric>,
                 },
-                "{kAsBase}": {
+                "{kAsLogarithmBase}": {
                     sumOfSquares: 0.0105 as SumOfSquares,
                     submetrics: [
                         {
-                            [ Parameter.K_AS_BASE ]: 2 as ParameterValue,
+                            [ Parameter.K_AS_LOGARITHM_BASE ]: 2 as ParameterValue,
                         },
                     ] as Combination<Submetric>,
                 },
@@ -91,27 +91,27 @@ describe("presentBestMetrics", () => {
                 },
             },
             {
-                "{jAsBase}": {
+                "{jAsLogarithmBase}": {
                     sumOfSquares: 0.0123 as SumOfSquares,
                     submetrics: [
                         {
-                            [ Parameter.J_AS_BASE ]: 2 as ParameterValue,
+                            [ Parameter.J_AS_LOGARITHM_BASE ]: 2 as ParameterValue,
                         },
                     ] as Combination<Submetric>,
                 },
-                "{aAsBase}": {
+                "{aAsLogarithmBase}": {
                     sumOfSquares: 0.011 as SumOfSquares,
                     submetrics: [
                         {
-                            [ Parameter.A_AS_BASE ]: 2 as ParameterValue,
+                            [ Parameter.A_AS_LOGARITHM_BASE ]: 2 as ParameterValue,
                         },
                     ] as Combination<Submetric>,
                 },
-                "{kAsBase}": {
+                "{kAsLogarithmBase}": {
                     sumOfSquares: 0.0105 as SumOfSquares,
                     submetrics: [
                         {
-                            [ Parameter.K_AS_BASE ]: 2 as ParameterValue,
+                            [ Parameter.K_AS_LOGARITHM_BASE ]: 2 as ParameterValue,
                         },
                     ] as Combination<Submetric>,
                 },

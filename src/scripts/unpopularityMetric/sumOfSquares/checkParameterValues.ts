@@ -4,34 +4,34 @@ import { Parameter, Submetric } from "./types"
 const checkSubmetricsForInvalidParameterValueCombinations = (submetrics: Submetric[]) => {
     submetrics.forEach((submetric: Submetric) => {
         const {
-            [ Parameter.A_AS_BASE ]: aAsBase,
-            [ Parameter.J_AS_BASE ]: jAsBase,
-            [ Parameter.K_AS_BASE ]: kAsBase,
-            [ Parameter.WEIGHT_AS_BASE ]: weightAsBase,
+            [ Parameter.A_AS_LOGARITHM_BASE ]: aAsLogarithmBase,
+            [ Parameter.J_AS_LOGARITHM_BASE ]: jAsLogarithmBase,
+            [ Parameter.K_AS_LOGARITHM_BASE ]: kAsLogarithmBase,
+            [ Parameter.WEIGHT_AS_LOGARITHM_BASE ]: weightAsLogarithmBase,
         } = submetric
 
-        if (aAsBase === 1) {
+        if (aAsLogarithmBase === 1) {
             throw new Error(`Submetric ${JSON.stringify(submetric)} has a of base 1 and will compute undefined antivotes.`)
         }
-        if (isNumber(aAsBase) && aAsBase < 0) {
+        if (isNumber(aAsLogarithmBase) && aAsLogarithmBase < 0) {
             throw new Error(`Submetric ${JSON.stringify(submetric)} has a of negative base and will compute undefined antivotes.`)
         }
-        if (jAsBase === 1) {
+        if (jAsLogarithmBase === 1) {
             throw new Error(`Submetric ${JSON.stringify(submetric)} has j of base 1 and will compute undefined antivotes.`)
         }
-        if (isNumber(jAsBase) && jAsBase < 0) {
+        if (isNumber(jAsLogarithmBase) && jAsLogarithmBase < 0) {
             throw new Error(`Submetric ${JSON.stringify(submetric)} has j of negative base and will compute undefined antivotes.`)
         }
-        if (kAsBase === 1) {
+        if (kAsLogarithmBase === 1) {
             throw new Error(`Submetric ${JSON.stringify(submetric)} has k of base 1 and will compute undefined antivotes.`)
         }
-        if (isNumber(kAsBase) && kAsBase < 0) {
+        if (isNumber(kAsLogarithmBase) && kAsLogarithmBase < 0) {
             throw new Error(`Submetric ${JSON.stringify(submetric)} has k of negative base and will compute undefined antivotes.`)
         }
-        if (weightAsBase === 1) {
+        if (weightAsLogarithmBase === 1) {
             throw new Error(`Submetric ${JSON.stringify(submetric)} has weight of base 1 and will compute undefined antivotes.`)
         }
-        if (isNumber(weightAsBase) && weightAsBase < 0) {
+        if (isNumber(weightAsLogarithmBase) && weightAsLogarithmBase < 0) {
             throw new Error(`Submetric ${JSON.stringify(submetric)} has weight of negative base and will compute undefined antivotes.`)
         }
     })

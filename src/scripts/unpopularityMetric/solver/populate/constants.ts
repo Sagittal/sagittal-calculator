@@ -10,45 +10,49 @@ const INITIAL_PARAMETER_SCOPES: Partial<EnumHash<Parameter, ParameterValue | boo
         span: 1 as Span<ParameterValue>,
         resolution: computeResolution(1 as Span<ParameterValue>),
     },
-    [ Parameter.WEIGHT_AS_BASE ]: 2 as ParameterValue, // locking the rest of these down too, per: http://forum.sagittal.org/viewtopic.php?p=2120#p2120
-    [ Parameter.WEIGHT_AS_EXPONENT ]: {
-        center: 2 as ParameterValue,
-        span: 4 as Span<ParameterValue>,
-        resolution: computeResolution(4 as Span<ParameterValue>),
+    [ Parameter.WEIGHT_AS_LOGARITHM_BASE ]: 2 as ParameterValue, // locking the rest of these down too, per: http://forum.sagittal.org/viewtopic.php?p=2120#p2120
+    [ Parameter.WEIGHT_AS_POWER_EXPONENT ]: {
+        center: 0 as ParameterValue,
+        span: 6 as Span<ParameterValue>,
+        resolution: computeResolution(6 as Span<ParameterValue>),
     },
+    [ Parameter.WEIGHT_AS_POWER_BASE ]: 2 as ParameterValue,
     [ Parameter.K_AS_COEFFICIENT ]: {
         center: 0.5 as ParameterValue,
         span: 1 as Span<ParameterValue>,
         resolution: computeResolution(1 as Span<ParameterValue>),
     },
-    [ Parameter.K_AS_BASE ]: 2 as ParameterValue,
-    [ Parameter.K_AS_EXPONENT ]: {
-        center: 2 as ParameterValue,
-        span: 4 as Span<ParameterValue>,
-        resolution: computeResolution(4 as Span<ParameterValue>),
+    [ Parameter.K_AS_LOGARITHM_BASE ]: 2 as ParameterValue,
+    [ Parameter.K_AS_POWER_EXPONENT ]: {
+        center: 0 as ParameterValue,
+        span: 6 as Span<ParameterValue>,
+        resolution: computeResolution(6 as Span<ParameterValue>),
     },
+    [ Parameter.K_AS_POWER_BASE ]: 2 as ParameterValue,
     [ Parameter.J_AS_COEFFICIENT ]: {
         center: 0.5 as ParameterValue,
         span: 1 as Span<ParameterValue>,
         resolution: computeResolution(1 as Span<ParameterValue>),
     },
-    [ Parameter.J_AS_BASE ]: 2 as ParameterValue,
-    [ Parameter.J_AS_EXPONENT ]: {
-        center: 2 as ParameterValue,
-        span: 4 as Span<ParameterValue>,
-        resolution: computeResolution(4 as Span<ParameterValue>),
+    [ Parameter.J_AS_LOGARITHM_BASE ]: 2 as ParameterValue,
+    [ Parameter.J_AS_POWER_EXPONENT ]: {
+        center: 0 as ParameterValue,
+        span: 6 as Span<ParameterValue>,
+        resolution: computeResolution(6 as Span<ParameterValue>),
     },
+    [ Parameter.J_AS_POWER_BASE ]: 2 as ParameterValue,
     [ Parameter.A_AS_COEFFICIENT ]: {
         center: 0.5 as ParameterValue,
         span: 1 as Span<ParameterValue>,
         resolution: computeResolution(1 as Span<ParameterValue>),
     },
-    [ Parameter.A_AS_BASE ]: 2 as ParameterValue, // per forum discussion, lock it down http://forum.sagittal.org/viewtopic.php?p=2113#p2113
-    [ Parameter.A_AS_EXPONENT ]: {
-        center: 2 as ParameterValue,
-        span: 4 as Span<ParameterValue>,
-        resolution: computeResolution(4 as Span<ParameterValue>),
+    [ Parameter.A_AS_LOGARITHM_BASE ]: 2 as ParameterValue, // per forum discussion, lock it down http://forum.sagittal.org/viewtopic.php?p=2113#p2113
+    [ Parameter.A_AS_POWER_EXPONENT ]: {
+        center: 0 as ParameterValue,
+        span: 6 as Span<ParameterValue>,
+        resolution: computeResolution(6 as Span<ParameterValue>),
     },
+    [ Parameter.A_AS_POWER_BASE ]: 2 as ParameterValue,
     [ Parameter.W ]: {
         center: 0 as ParameterValue,
         span: 6 as Span<ParameterValue>,
@@ -111,7 +115,7 @@ const SUBMETRIC_CHUNKS: SubmetricChunk[] = [
     },
     { // LOG BASE A_AS_COEFFICIENT OF N http://forum.sagittal.org/viewtopic.php?p=2076#p2076
         [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
-        [ Parameter.A_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_BASE ],
+        [ Parameter.A_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_LOGARITHM_BASE ],
     },
 ] as SubmetricChunk[]
 
@@ -120,28 +124,49 @@ const PARAMETER_CHUNKS: ParameterChunk[] = [
         [ Parameter.K_AS_COEFFICIENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_COEFFICIENT ],
     },
     {
-        [ Parameter.K_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_BASE ],
+        [ Parameter.K_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_LOGARITHM_BASE ],
     },
     {
-        [ Parameter.K_AS_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_EXPONENT ],
+        [ Parameter.K_AS_POWER_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_POWER_EXPONENT ],
+    },
+    {
+        [ Parameter.K_AS_POWER_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_POWER_BASE ],
     },
     {
         [ Parameter.J_AS_COEFFICIENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.J_AS_COEFFICIENT ],
     },
     {
-        [ Parameter.J_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.J_AS_BASE ],
+        [ Parameter.J_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.J_AS_LOGARITHM_BASE ],
     },
     {
-        [ Parameter.J_AS_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.J_AS_EXPONENT ],
+        [ Parameter.J_AS_POWER_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.J_AS_POWER_EXPONENT ],
+    },
+    {
+        [ Parameter.J_AS_POWER_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.J_AS_POWER_BASE ],
     },
     {
         [ Parameter.A_AS_COEFFICIENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_COEFFICIENT ],
     },
     {
-        [ Parameter.A_AS_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_BASE ],
+        [ Parameter.A_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_LOGARITHM_BASE ],
     },
     {
-        [ Parameter.A_AS_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_EXPONENT ],
+        [ Parameter.A_AS_POWER_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_POWER_EXPONENT ],
+    },
+    {
+        [ Parameter.A_AS_POWER_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_POWER_BASE ],
+    },
+    {
+        [ Parameter.WEIGHT_AS_COEFFICIENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.WEIGHT_AS_COEFFICIENT ],
+    },
+    {
+        [ Parameter.WEIGHT_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.WEIGHT_AS_LOGARITHM_BASE ],
+    },
+    {
+        [ Parameter.WEIGHT_AS_POWER_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.WEIGHT_AS_POWER_EXPONENT ],
+    },
+    {
+        [ Parameter.WEIGHT_AS_POWER_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.WEIGHT_AS_POWER_BASE ],
     },
     {
         [ Parameter.W ]: INITIAL_PARAMETER_SCOPES[ Parameter.W ],

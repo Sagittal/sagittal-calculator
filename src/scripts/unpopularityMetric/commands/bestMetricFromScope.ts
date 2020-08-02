@@ -54,7 +54,7 @@ const scope = [
             span: 0.02,
             resolution: computeResolution(0.02 as Span<ParameterValue>, { maximumUnit }),
         },
-        [ Parameter.A_AS_BASE ]: {
+        [ Parameter.A_AS_LOGARITHM_BASE ]: {
             center: 2.00001,
             span: 0.02,
             resolution: computeResolution(0.02 as Span<ParameterValue>, { maximumUnit }),

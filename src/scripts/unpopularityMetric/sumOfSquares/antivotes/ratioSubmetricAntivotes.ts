@@ -7,13 +7,23 @@ const computeRatioSubmetricAntivotes = (fiveRoughRatio: Ratio, submetric: Submet
         useNuminator = false,
         kAsCoefficient = 1 as ParameterValue,
         jAsCoefficient = 1 as ParameterValue,
-        jAsBase = undefined,
-        jAsExponent = undefined,
-        kAsBase = undefined,
-        kAsExponent = undefined,
+        jAsLogarithmBase = undefined,
+        jAsPowerExponent = undefined,
+        jAsPowerBase = undefined,
+        kAsLogarithmBase = undefined,
+        kAsPowerExponent = undefined,
+        kAsPowerBase = undefined,
     }: Submetric = submetric
 
-    if (kAsCoefficient === jAsCoefficient && isUndefined(jAsBase) && isUndefined(jAsExponent) && isUndefined(kAsBase) && isUndefined(kAsExponent)) {
+    if (
+        jAsCoefficient === kAsCoefficient &&
+        isUndefined(jAsLogarithmBase) &&
+        isUndefined(jAsPowerExponent) &&
+        isUndefined(jAsPowerBase) &&
+        isUndefined(kAsLogarithmBase) &&
+        isUndefined(kAsPowerExponent) &&
+        isUndefined(kAsPowerBase)
+    ) {
         const fiveRoughNumberMonzo = computeMonzoFromRatio(fiveRoughRatio)
 
         return computeSubmetricAntivotes(fiveRoughNumberMonzo, submetric)
@@ -37,17 +47,32 @@ const computeRatioSubmetricAntivotes = (fiveRoughRatio: Ratio, submetric: Submet
             numeratorPrimeContentAntivotes :
         denominatorPrimeContentAntivotes
 
-    const weightedOutputNumerator = !isUndefined(jAsBase) ?
-        computeLog(outputNumerator, jAsBase) :
-        !isUndefined(jAsExponent) ?
-            outputNumerator ** jAsExponent :
-            outputNumerator * jAsCoefficient
+    // todo duped code fragment, yes we can dry this up
+    let weightedOutputNumerator = outputNumerator
+    if (!isUndefined(jAsLogarithmBase)) {
+        weightedOutputNumerator = computeLog(weightedOutputNumerator, jAsLogarithmBase) as Antivotes
+    }
+    if (!isUndefined(jAsPowerExponent)) {
+        weightedOutputNumerator = weightedOutputNumerator ** jAsPowerExponent as Antivotes
+    }
+    if (!isUndefined(jAsPowerBase)) {
+        weightedOutputNumerator = jAsPowerBase ** weightedOutputNumerator as Antivotes
 
-    const weightedOutputDenominator = !isUndefined(kAsBase) ?
-        computeLog(outputDenominator, kAsBase) :
-        !isUndefined(kAsExponent) ?
-            outputDenominator ** kAsExponent :
-            outputDenominator * kAsCoefficient
+    }
+    weightedOutputNumerator = weightedOutputNumerator * jAsCoefficient as Antivotes
+
+    let weightedOutputDenominator = outputDenominator
+    if (!isUndefined(kAsLogarithmBase)) {
+        weightedOutputDenominator = computeLog(weightedOutputDenominator, kAsLogarithmBase) as Antivotes
+    }
+    if (!isUndefined(kAsPowerExponent)) {
+        weightedOutputDenominator = weightedOutputDenominator ** kAsPowerExponent as Antivotes
+    }
+    if (!isUndefined(kAsPowerBase)) {
+        weightedOutputDenominator = kAsPowerBase ** weightedOutputDenominator as Antivotes
+
+    }
+    weightedOutputDenominator = weightedOutputDenominator * kAsCoefficient as Antivotes
 
     if (isNaN(weightedOutputNumerator) || isNaN(weightedOutputDenominator)) {
         throw new Error(`You got NaN! in ratioSubmetricAntivotes ${fiveRoughRatio} ${JSON.stringify(submetric, null, 4)} ${weightedOutputNumerator} ${weightedOutputDenominator} ${outputDenominator}`)

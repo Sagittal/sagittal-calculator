@@ -10,8 +10,9 @@ import { secondaryParameterOverridesForDenominator } from "./secondaryParameter"
 const computeSubmetricAntivotes = (fiveRoughNumberMonzo: Monzo, submetric = {}, fractionalPart?: FractionalPart): Antivotes => {
     const {
         aAsCoefficient = 1 as ParameterValue,
-        aAsExponent = undefined,
-        aAsBase = undefined,
+        aAsPowerExponent = undefined,
+        aAsLogarithmBase = undefined,
+        aAsPowerBase = undefined,
         w = 0 as ParameterValue,
         b,
         x = 0 as ParameterValue,
@@ -49,16 +50,20 @@ const computeSubmetricAntivotes = (fiveRoughNumberMonzo: Monzo, submetric = {}, 
                     computePrimeCount(prime) :
                     prime
             adjustedPrime = adjustedPrime + secondaryParameterOverridesForDenominator(x, u, primeExponent, fractionalPart)
-            adjustedPrime = !isUndefined(aAsBase) ?
-                adjustedPrime >= 1 ?
-                    computeLog(adjustedPrime, aAsBase) :
-                    1 :
-                !isUndefined(aAsExponent) ?
-                    adjustedPrime >= 0 ?
-                        adjustedPrime ** aAsExponent :
-                        0
-                    :
-                    adjustedPrime * aAsCoefficient
+            if (!isUndefined(aAsLogarithmBase)) {
+                adjustedPrime = adjustedPrime >= 1 ?
+                    computeLog(adjustedPrime, aAsLogarithmBase) :
+                    1
+            }
+            if (!isUndefined(aAsPowerExponent)) {
+                adjustedPrime = adjustedPrime >= 0 ?
+                    adjustedPrime ** aAsPowerExponent :
+                    0
+            }
+            if (!isUndefined(aAsPowerBase)) {
+                adjustedPrime = aAsPowerBase ** adjustedPrime
+            }
+            adjustedPrime = adjustedPrime * aAsCoefficient
             adjustedPrime = adjustedPrime + secondaryParameterOverridesForDenominator(w, b, primeExponent, fractionalPart)
 
             if (primeExponent === 0) {
