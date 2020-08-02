@@ -51,5 +51,5 @@ populateAndSearchScopes().then(() => {
     saveDebugMessage(`\n\nAND THE TIMED OUT METRIC COUNTS PER CHUNK COUNT WERE [${timeoutsForChunkCount.map(abandonedForChunkCount => abandonedForChunkCount.length).join(",")}]`, DebugTarget.ALL)
 
     const endTime = performance.now()
-    if (time) console.log(`\n\nTOOK ${endTime - startTime} MS`)
+    if (time) saveDebugMessage(`\n\nTOOK ${endTime - startTime} MS`, DebugTarget.ALL)
 })

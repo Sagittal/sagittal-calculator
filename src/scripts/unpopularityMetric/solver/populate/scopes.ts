@@ -8,7 +8,7 @@ const populateScopes = async () => {
     saveDebugMessage(`\n\nPOPULATING CHUNK COUNT ${solverStatus.populatingChunkCount}/${solverStatus.upperBoundChunkCount}`, DebugTarget.POPULATE)
     await populateScopesForChunkCount()
     if (debugTargets[ DebugTarget.ALL ]) {
-        console.log(``)
+        saveDebugMessage(``, DebugTarget.ALL)
     } // That yellow lines appear frequently in-between this line and the log just 2 lines above should be proof that what is happening in-between is interruptable in a good way
 
     if (solverStatus.populatingChunkCount < solverStatus.upperBoundChunkCount) {
