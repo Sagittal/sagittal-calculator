@@ -20,7 +20,7 @@ import { bestMetricsForChunkCount } from "../globals"
 import { Parameter, ParameterValue } from "../sumOfSquares"
 
 program
-    .option("-d, --debug-targets <debugTargets>", "debug targets")
+    .option("-d, --debug-targets [debugTargets]", "debug targets")
     .option("-c, --no-color", "no color")
     .option("-w, --no-write", "no write")
     .option("-m, --maximum-unit", "maximum unit")

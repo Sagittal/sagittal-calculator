@@ -14,7 +14,7 @@ import { bestMetricsForChunkCount, solverStatus, timeoutsForChunkCount } from ".
 import { Chunk, populateAndSearchScopes, presentBestMetrics } from "../solver"
 
 program
-    .option("-d, --debug-targets <debugTargets>", "debug targets")
+    .option("-d, --debug-targets [debugTargets]", "debug targets")
     .option("-c, --no-color", "no color")
     .option("-w, --no-write", "no write")
     .option("-t, --no-time", "no time")
