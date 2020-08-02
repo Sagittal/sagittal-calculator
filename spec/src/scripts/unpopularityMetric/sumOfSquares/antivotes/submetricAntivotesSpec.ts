@@ -90,22 +90,7 @@ describe("computeSubmetricAntivotes", () => {
             )
         })
 
-        it("when b is provided, and w is not, adds a constant to each prime after applying the coefficient, exponent, or base, but only to d", () => {
-            const a = 0.56 as ParameterValue
-            const b = 0.34 as ParameterValue
-            submetric[ Parameter.A_AS_COEFFICIENT ] = a
-            submetric[ Parameter.B ] = b
-
-            const result = computeSubmetricAntivotes(fiveRoughNumberMonzo, submetric)
-
-            expect(result).toBe(
-                1 * (11 * a + 0) +
-                1 * (13 * a + b) +
-                2 * (17 * a + 0) as Antivotes,
-            )
-        })
-
-        it("when b is provided, and w is too, adds a constant to each prime after applying the coefficient, exponent, or base, but using b for d and w for n", () => {
+        it("when b is provided, adds a constant to each prime after applying the coefficient, exponent, or base, but using b for d and w for n", () => {
             const a = 0.56 as ParameterValue
             const w = 0.22 as ParameterValue
             const b = 0.34 as ParameterValue
@@ -137,22 +122,7 @@ describe("computeSubmetricAntivotes", () => {
             )
         })
 
-        it("when u is provided, and x is not, adds a constant to each prime before applying the coefficient, exponent, or base, but only to d", () => {
-            const a = 0.56 as ParameterValue
-            const u = -1.1 as ParameterValue
-            submetric[ Parameter.A_AS_COEFFICIENT ] = a
-            submetric[ Parameter.U ] = u
-
-            const result = computeSubmetricAntivotes(fiveRoughNumberMonzo, submetric)
-
-            expect(result).toBe(
-                1 * (11 + 0) * a +
-                1 * (13 + u) * a +
-                2 * (17 + 0) * a as Antivotes,
-            )
-        })
-
-        it("when u is provided, and x is too, adds a constant to each prime before applying the coefficient, exponent, or base, but using u for d and x for n", () => {
+        it("when u is provided, adds a constant to each prime before applying the coefficient, exponent, or base, but using u for d and x for n", () => {
             const a = 0.56 as ParameterValue
             const x = -2.1 as ParameterValue
             const u = -1.1 as ParameterValue
@@ -182,20 +152,7 @@ describe("computeSubmetricAntivotes", () => {
             )
         })
 
-        it("when v is provided, if y is not, raises the prime exponent to an exponent, but only for d", () => {
-            const v = 0.44 as ParameterValue
-            submetric[ Parameter.V ] = v
-
-            const result = computeSubmetricAntivotes(fiveRoughNumberMonzo, submetric)
-
-            expect(result).toBe(
-                1 ** 1 * 11 +
-                1 ** v * 13 +
-                2 ** 1 * 17 as Antivotes,
-            )
-        })
-
-        it("when v is provided, if y is too, raises the prime exponent to an exponent, but using v for d and y for n", () => {
+        it("when v is provided, raises the prime exponent to an exponent, but using v for d and y for n", () => {
             const y = 0.81 as ParameterValue
             const v = 0.44 as ParameterValue
             submetric[ Parameter.Y ] = y

@@ -190,4 +190,39 @@ describe("checkSubmetricsForInvalidParameterCombinations", () => {
             expect(() => checkSubmetricsForInvalidParameterCombinations(submetrics)).toThrowError(`Submetric {"sum":true,"jAsCoefficient":2,"kAsCoefficient":2} cannot specify both j and k of the same type (coefficient).`)
         })
     })
+
+    describe("denominator-specific parameters", () => {
+        it("gives a good error when b is provided but not w, since b is a denominator-specific alteration of w", () => {
+            const submetrics = [
+                {
+                    [ Parameter.SUM ]: true,
+                    [ Parameter.B ]: 2 as ParameterValue,
+                },
+            ]
+
+            expect(() => checkSubmetricsForInvalidParameterCombinations(submetrics)).toThrowError(`Submetric {"sum":true,"b":2} cannot specify b without w.`)
+        })
+
+        it("gives a good error when u is provided but not x, since u is a denominator-specific alteration of x", () => {
+            const submetrics = [
+                {
+                    [ Parameter.SUM ]: true,
+                    [ Parameter.U ]: 2 as ParameterValue,
+                },
+            ]
+
+            expect(() => checkSubmetricsForInvalidParameterCombinations(submetrics)).toThrowError(`Submetric {"sum":true,"u":2} cannot specify u without x.`)
+        })
+
+        it("gives a good error when v is provided but not y, since v is a denominator-specific alteration of y", () => {
+            const submetrics = [
+                {
+                    [ Parameter.SUM ]: true,
+                    [ Parameter.V ]: 2 as ParameterValue,
+                },
+            ]
+
+            expect(() => checkSubmetricsForInvalidParameterCombinations(submetrics)).toThrowError(`Submetric {"sum":true,"v":2} cannot specify v without y.`)
+        })
+    })
 })
