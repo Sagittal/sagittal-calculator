@@ -10,11 +10,7 @@ const INITIAL_PARAMETER_SCOPES: Partial<EnumHash<Parameter, ParameterValue | boo
         span: 1 as Span<ParameterValue>,
         resolution: computeResolution(1 as Span<ParameterValue>),
     },
-    [ Parameter.WEIGHT_AS_BASE ]: {
-        center: 2 as ParameterValue,
-        span: 4 as Span<ParameterValue>,
-        resolution: computeResolution(4 as Span<ParameterValue>),
-    },
+    [ Parameter.WEIGHT_AS_BASE ]: 2 as ParameterValue, // locking the rest of these down too, per: http://forum.sagittal.org/viewtopic.php?p=2120#p2120
     [ Parameter.WEIGHT_AS_EXPONENT ]: {
         center: 2 as ParameterValue,
         span: 4 as Span<ParameterValue>,
@@ -25,11 +21,7 @@ const INITIAL_PARAMETER_SCOPES: Partial<EnumHash<Parameter, ParameterValue | boo
         span: 1 as Span<ParameterValue>,
         resolution: computeResolution(1 as Span<ParameterValue>),
     },
-    [ Parameter.K_AS_BASE ]: {
-        center: 2 as ParameterValue,
-        span: 4 as Span<ParameterValue>,
-        resolution: computeResolution(4 as Span<ParameterValue>),
-    },
+    [ Parameter.K_AS_BASE ]: 2 as ParameterValue,
     [ Parameter.K_AS_EXPONENT ]: {
         center: 2 as ParameterValue,
         span: 4 as Span<ParameterValue>,
@@ -40,11 +32,7 @@ const INITIAL_PARAMETER_SCOPES: Partial<EnumHash<Parameter, ParameterValue | boo
         span: 1 as Span<ParameterValue>,
         resolution: computeResolution(1 as Span<ParameterValue>),
     },
-    [ Parameter.J_AS_BASE ]: {
-        center: 2 as ParameterValue,
-        span: 4 as Span<ParameterValue>,
-        resolution: computeResolution(4 as Span<ParameterValue>),
-    },
+    [ Parameter.J_AS_BASE ]: 2 as ParameterValue,
     [ Parameter.J_AS_EXPONENT ]: {
         center: 2 as ParameterValue,
         span: 4 as Span<ParameterValue>,

@@ -29,19 +29,6 @@ const checkSubmetricsForInvalidParameterCombinations = (submetrics: Submetric[])
             throw new Error(`Submetric ${JSON.stringify(submetric)} cannot specify weight to be both an exponent and a base.`)
         }
 
-        if (!isUndefined(submetric[ Parameter.A_AS_BASE ]) && !isUndefined(submetric[ Parameter.A_AS_COEFFICIENT ])) {
-            throw new Error(`Submetric ${JSON.stringify(submetric)} cannot specify a to be both a coefficient and a base.`)
-        }
-        if (!isUndefined(submetric[ Parameter.J_AS_BASE ]) && !isUndefined(submetric[ Parameter.J_AS_COEFFICIENT ])) {
-            throw new Error(`Submetric ${JSON.stringify(submetric)} cannot specify j to be both a coefficient and a base.`)
-        }
-        if (!isUndefined(submetric[ Parameter.K_AS_BASE ]) && !isUndefined(submetric[ Parameter.K_AS_COEFFICIENT ])) {
-            throw new Error(`Submetric ${JSON.stringify(submetric)} cannot specify k to be both a coefficient and a base.`)
-        }
-        if (!isUndefined(submetric[ Parameter.WEIGHT_AS_BASE ]) && !isUndefined(submetric[ Parameter.WEIGHT_AS_COEFFICIENT ])) {
-            throw new Error(`Submetric ${JSON.stringify(submetric)} cannot specify weight to be both a coefficient and a base.`)
-        }
-
         if (!isUndefined(submetric[ Parameter.A_AS_EXPONENT ]) && !isUndefined(submetric[ Parameter.A_AS_COEFFICIENT ])) {
             throw new Error(`Submetric ${JSON.stringify(submetric)} cannot specify a to be both a coefficient and an exponent.`)
         }

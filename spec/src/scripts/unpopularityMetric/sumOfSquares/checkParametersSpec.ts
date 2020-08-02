@@ -77,56 +77,6 @@ describe("checkSubmetricsForInvalidParameterCombinations", () => {
         })
     })
 
-    describe("base and coefficient", () => {
-        it("gives a good error when a is tried to be used both as a base and a coefficient", () => {
-            const submetrics = [
-                {
-                    [ Parameter.SUM ]: true,
-                    [ Parameter.A_AS_COEFFICIENT ]: 2 as ParameterValue,
-                    [ Parameter.A_AS_BASE ]: 2 as ParameterValue,
-                },
-            ]
-
-            expect(() => checkSubmetricsForInvalidParameterCombinations(submetrics)).toThrowError(`Submetric {"sum":true,"aAsCoefficient":2,"aAsBase":2} cannot specify a to be both a coefficient and a base.`)
-        })
-
-        it("gives a good error when j is tried to be used both as a base and a coefficient", () => {
-            const submetrics = [
-                {
-                    [ Parameter.SUM ]: true,
-                    [ Parameter.J_AS_COEFFICIENT ]: 2 as ParameterValue,
-                    [ Parameter.J_AS_BASE ]: 2 as ParameterValue,
-                },
-            ]
-
-            expect(() => checkSubmetricsForInvalidParameterCombinations(submetrics)).toThrowError(`Submetric {"sum":true,"jAsCoefficient":2,"jAsBase":2} cannot specify j to be both a coefficient and a base.`)
-        })
-
-        it("gives a good error when k is tried to be used both as a base and a coefficient", () => {
-            const submetrics = [
-                {
-                    [ Parameter.SUM ]: true,
-                    [ Parameter.K_AS_COEFFICIENT ]: 2 as ParameterValue,
-                    [ Parameter.K_AS_BASE ]: 2 as ParameterValue,
-                },
-            ]
-
-            expect(() => checkSubmetricsForInvalidParameterCombinations(submetrics)).toThrowError(`Submetric {"sum":true,"kAsCoefficient":2,"kAsBase":2} cannot specify k to be both a coefficient and a base.`)
-        })
-
-        it("gives a good error when weight is tried to be used both as a base and a coefficient", () => {
-            const submetrics = [
-                {
-                    [ Parameter.SUM ]: true,
-                    [ Parameter.WEIGHT_AS_COEFFICIENT ]: 2 as ParameterValue,
-                    [ Parameter.WEIGHT_AS_BASE ]: 2 as ParameterValue,
-                },
-            ]
-
-            expect(() => checkSubmetricsForInvalidParameterCombinations(submetrics)).toThrowError(`Submetric {"sum":true,"weightAsCoefficient":2,"weightAsBase":2} cannot specify weight to be both a coefficient and a base.`)
-        })
-    })
-
     describe("exponent and coefficient", () => {
         it("gives a good error when a is tried to be used both as an exponent and a coefficient", () => {
             const submetrics = [
