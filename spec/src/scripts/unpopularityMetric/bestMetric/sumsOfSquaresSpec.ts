@@ -53,7 +53,7 @@ describe("computeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffe
         delete bestMetricsForChunkCount[ chunkCount ]
     })
 
-    it("runs without error", async () => {
+    it("finds the sums of squares for each sample", async () => {
         const result = await computeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffect(samples)
 
         expect(result).toEqual([

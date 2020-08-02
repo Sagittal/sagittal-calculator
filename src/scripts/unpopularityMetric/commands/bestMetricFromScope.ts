@@ -15,7 +15,6 @@ import { Parameter, ParameterValue } from "../sumOfSquares"
 import { DebugTarget } from "../types"
 
 program
-    .option("-r, --recursive", "recursive")
     .option("-d, --debug", "debug")
     .option("-m, --maximum-unit", "maximum unit")
     .option("-n, --no-color", "no color")
@@ -23,7 +22,7 @@ program
     .option("-w, --no-write", "no write")
     .parse(process.argv)
 
-const recurse = !!program.recursive
+const recurse = true
 debug[ DebugTarget.ALL ] = !!program.debug
 const maximumUnit = program.maximumUnit
 const timeoutEnabled = program.timeoutEnabled
