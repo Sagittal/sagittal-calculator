@@ -1,15 +1,13 @@
-import { searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect } from "./bestMetric"
-import { DUMMY_CHUNK_COUNT_FOR_ONE_OFF_BEST_METRIC_FROM_SCOPE } from "./constants"
+import { searchScopeAndMaybeUpdateBestMetric } from "./bestMetric"
 import { computeResolution } from "./scopeToSamples"
 import { DynamicParameterScope, Metric, Scope, SubmetricScope, SumOfSquares } from "./types"
 
 export {
-    searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect,
+    searchScopeAndMaybeUpdateBestMetric,
     Metric,
     Scope,
     SubmetricScope,
     computeResolution,
     DynamicParameterScope,
-    DUMMY_CHUNK_COUNT_FOR_ONE_OFF_BEST_METRIC_FROM_SCOPE,
     SumOfSquares,
 }

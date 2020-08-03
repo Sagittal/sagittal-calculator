@@ -11,12 +11,12 @@ import {
     PARAMETER_CHUNKS,
     SUBMETRIC_CHUNKS,
 } from "../../../../../../src/scripts/unpopularityMetric/solver/populate/constants"
-import * as scopesForChunkCountAndSubmetricChunkCombination
-    from "../../../../../../src/scripts/unpopularityMetric/solver/populate/scopesForChunkCountAndSubmetricChunkCombination"
-import { populateScopesForChunkCountPhase } from "../../../../../../src/scripts/unpopularityMetric/solver/populate/scopesForChunkCountPhase"
+import * as submetricChunkCombination
+    from "../../../../../../src/scripts/unpopularityMetric/solver/populate/submetricChunkCombination"
+import { populateScopesPhase } from "../../../../../../src/scripts/unpopularityMetric/solver/populate/phase"
 import { Parameter } from "../../../../../../src/scripts/unpopularityMetric/sumOfSquares"
 
-describe("populateScopesForChunkCountPhase", () => {
+describe("populateScopesPhase", () => {
     const chunkCount = 5 as Count<Chunk>
     const chunkCountForSubmetrics = 3 as Count<SubmetricChunk>
     const expectedChunkCountForParameters = 2 as Count<ParameterChunk>
@@ -58,7 +58,7 @@ describe("populateScopesForChunkCountPhase", () => {
         delete memoizedSubmetricChunkCombinations[ chunkCountForSubmetrics ]
         delete memoizedParameterChunkCombinations[ expectedChunkCountForParameters ]
 
-        await populateScopesForChunkCountPhase(chunkCount, chunkCountForSubmetrics)
+        await populateScopesPhase(chunkCount, chunkCountForSubmetrics)
 
         expect(combinations.computeCombinations).toHaveBeenCalledWith(
             SUBMETRIC_CHUNKS,
@@ -76,33 +76,31 @@ describe("populateScopesForChunkCountPhase", () => {
         memoizedSubmetricChunkCombinations[ chunkCountForSubmetrics ] = submetricChunkCombinations
         memoizedParameterChunkCombinations[ expectedChunkCountForParameters ] = parameterChunkCombinations
 
-        await populateScopesForChunkCountPhase(chunkCount, chunkCountForSubmetrics)
+        await populateScopesPhase(chunkCount, chunkCountForSubmetrics)
 
         expect(combinations.computeCombinations).not.toHaveBeenCalled()
     })
 
     it("kicks off a chain of populations of scopes for each submetric chunk combination (it will recursively call itself for each next parameter chunk combination)", async () => {
-        spyOn(scopesForChunkCountAndSubmetricChunkCombination, "populateScopesForChunkCountAndSubmetricChunkCombination")
+        spyOn(submetricChunkCombination, "populateScopesForSubmetricChunkCombination")
 
-        await populateScopesForChunkCountPhase(chunkCount, chunkCountForSubmetrics)
+        await populateScopesPhase(chunkCount, chunkCountForSubmetrics)
 
-        expect(scopesForChunkCountAndSubmetricChunkCombination.populateScopesForChunkCountAndSubmetricChunkCombination).toHaveBeenCalledTimes(2)
-        expect(scopesForChunkCountAndSubmetricChunkCombination.populateScopesForChunkCountAndSubmetricChunkCombination).toHaveBeenCalledWith(
+        expect(submetricChunkCombination.populateScopesForSubmetricChunkCombination).toHaveBeenCalledTimes(2)
+        expect(submetricChunkCombination.populateScopesForSubmetricChunkCombination).toHaveBeenCalledWith(
             submetricChunkCombinationOne,
             {
                 parameterChunkCombinations,
                 submetricChunkCombinationIndex: 0 as Index<Combination<SubmetricChunk>>,
                 submetricChunkCombinationCount: 2 as Count<Combination<SubmetricChunk>>,
-                chunkCount,
             },
         )
-        expect(scopesForChunkCountAndSubmetricChunkCombination.populateScopesForChunkCountAndSubmetricChunkCombination).toHaveBeenCalledWith(
+        expect(submetricChunkCombination.populateScopesForSubmetricChunkCombination).toHaveBeenCalledWith(
             submetricChunkCombinationTwo,
             {
                 parameterChunkCombinations,
                 submetricChunkCombinationIndex: 1 as Index<Combination<SubmetricChunk>>,
                 submetricChunkCombinationCount: 2 as Count<Combination<SubmetricChunk>>,
-                chunkCount,
             },
         )
     })

@@ -1,13 +1,13 @@
 import { shuffle } from "../../../general"
 import { DebugTarget, saveDebugMessage } from "../debug"
 import { checkSubmetricsForInvalidParameterCombinations } from "../sumOfSquares"
-import { DUMMY_CHUNK_COUNT_FOR_ONE_OFF_BEST_METRIC_FROM_SCOPE, MAXIMUM_SEARCH_TIME } from "./constants"
+import { MAXIMUM_SEARCH_TIME } from "./constants"
 import { Sample } from "./scopeToSamples"
-import { computeSumOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffect } from "./sumOfSquares"
-import { ComputeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffectOptions, SumsOfSquares } from "./types"
+import { computeSumOfSquaresAndMaybeUpdateBestMetric } from "./sumOfSquares"
+import { ComputeSumsOfSquaresAndMaybeUpdateBestMetricOptions, SumsOfSquares } from "./types"
 
-const computeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffect = async (samples: Sample[], options: ComputeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffectOptions = {}): Promise<SumsOfSquares> => {
-    const { chunkCount = DUMMY_CHUNK_COUNT_FOR_ONE_OFF_BEST_METRIC_FROM_SCOPE, indentation = "", onlyWinners = false } = options
+const computeSumsOfSquaresAndMaybeUpdateBestMetric = async (samples: Sample[], options: ComputeSumsOfSquaresAndMaybeUpdateBestMetricOptions = {}): Promise<SumsOfSquares> => {
+    const { indentation = "", onlyWinners = false } = options
 
     const sumsOfSquares: SumsOfSquares = []
 
@@ -25,7 +25,12 @@ const computeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffect =
         }
 
         const samplePromises: Promise<void>[] = samples.slice(0, MAXIMUM_SEARCH_TIME).map((sample, index) => {
-            return computeSumOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffect(sample, chunkCount, indentation, sumsOfSquares, index, onlyWinners)
+            return computeSumOfSquaresAndMaybeUpdateBestMetric(sample, {
+                indentation,
+                sumsOfSquares,
+                index,
+                onlyWinners,
+            })
         })
 
         await Promise.all(samplePromises)
@@ -34,5 +39,5 @@ const computeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffect =
 }
 
 export {
-    computeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffect,
+    computeSumsOfSquaresAndMaybeUpdateBestMetric,
 }

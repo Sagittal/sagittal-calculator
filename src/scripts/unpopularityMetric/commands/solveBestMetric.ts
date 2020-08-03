@@ -10,7 +10,7 @@ import {
     saveDebugMessage,
     setDebugTargets,
 } from "../debug"
-import { bestMetricsForChunkCount, solverStatus, timeoutsForChunkCount } from "../globals"
+import { bestMetrics, solverStatus, scopesTimedOut } from "../globals"
 import { Chunk, populateAndSearchScopes, presentBestMetrics } from "../solver"
 
 program
@@ -18,12 +18,9 @@ program
     .option("-c, --no-color", "no color")
     .option("-w, --no-write", "no write")
     .option("-t, --no-time", "no time")
-    .option("-l, --lower-bound-chunk-count <lowerBoundChunkCount>", "lower bound chunk count", parseInt)
-    .option("-u, --upper-bound-chunk-count <upperBoundChunkCount>", "upper bound chunk count", parseInt)
     .parse(process.argv)
 
-const lowerBoundChunkCount = program.lowerBoundChunkCount || 1
-solverStatus.upperBoundChunkCount = program.upperBoundChunkCount || 8
+solverStatus.chunkCount = parseInt(program.args[ 0 ]) as Count<Chunk>
 setDebugTargets(program.debugTargets)
 if (!program.color) {
     colors.disable()
@@ -35,9 +32,6 @@ if (!debugSettings.noWrite) {
     clearDebugLogFiles()
 }
 
-solverStatus.populatingChunkCount = lowerBoundChunkCount as Count<Chunk>
-solverStatus.searchingChunkCount = lowerBoundChunkCount as Count<Chunk>
-
 debugTargets[ DebugTarget.SEARCH ] = true
 debugTargets[ DebugTarget.POPULATE ] = true
 // debugTargets[ DebugTarget.LOCAL_MINIMUM ] = true
@@ -46,9 +40,8 @@ debugTargets[ DebugTarget.POPULATE ] = true
 
 const startTime = performance.now()
 populateAndSearchScopes().then(() => {
-    const bestMetricsForNonzeroChunkCounts = bestMetricsForChunkCount.slice(lowerBoundChunkCount, solverStatus.upperBoundChunkCount + 1)
-    saveDebugMessage(`\n\nAND THE BEST METRICS PER CHUNK COUNT WERE ${JSON.stringify(presentBestMetrics(bestMetricsForNonzeroChunkCounts), undefined, 4)}`, DebugTarget.ALL)
-    saveDebugMessage(`\n\nAND THE TIMED OUT METRIC COUNTS PER CHUNK COUNT WERE [${timeoutsForChunkCount.map(abandonedForChunkCount => abandonedForChunkCount.length).join(",")}]`, DebugTarget.ALL)
+    saveDebugMessage(`\n\nAND THE BEST METRICS WERE ${JSON.stringify(presentBestMetrics(bestMetrics), undefined, 4)}`, DebugTarget.ALL)
+    saveDebugMessage(`\n\nAND THE COUNT OF TIMED OUT METRICS WAS ${scopesTimedOut.length}`, DebugTarget.ALL)
 
     const endTime = performance.now()
     if (time) saveDebugMessage(`\n\nTOOK ${endTime - startTime} MS`, DebugTarget.ALL)

@@ -1,15 +1,14 @@
 import { Count, Resolution, Span } from "../../../../../../src/general"
 import { Scope } from "../../../../../../src/scripts/unpopularityMetric/bestMetric"
 import {
-    scopesForChunkCount,
-    searchedsForChunkCount,
+    scopesToSearch,
     solverStatus,
 } from "../../../../../../src/scripts/unpopularityMetric/globals"
 import { Chunk, searchScopes } from "../../../../../../src/scripts/unpopularityMetric/solver"
 import { Parameter, ParameterValue } from "../../../../../../src/scripts/unpopularityMetric/sumOfSquares"
 
 describe("search scopes", () => {
-    it("searches all remaining scopes at the current chunk count then moves on to searching scopes the next chunk count, and upon finishing those, given scopes are finished populated by then, then searching finishes too", async () => {
+    it("searches all remaining scopes at the current chunk count and then, given scopes are finished populated by then, searching finishes too", async () => {
         const scopeOne = [
             {
                 [ Parameter.SUM ]: true,
@@ -24,13 +23,10 @@ describe("search scopes", () => {
         const scopeThree = [{ [ Parameter.COUNT ]: true }] as Scope
 
         solverStatus.finishedPopulating = false
-        solverStatus.searchingChunkCount = 1 as Count<Chunk>
-        solverStatus.populatingChunkCount = 2 as Count<Chunk>
-        solverStatus.upperBoundChunkCount = 2 as Count<Chunk>
-        scopesForChunkCount[ 1 ] = [scopeOne, scopeTwo]
-        scopesForChunkCount[ 2 ] = [scopeThree]
-        searchedsForChunkCount[ 1 ] = 0
-        searchedsForChunkCount[ 2 ] = 0
+        solverStatus.chunkCount = 1 as Count<Chunk>
+        scopesToSearch.push(scopeOne)
+        scopesToSearch.push(scopeTwo)
+        scopesToSearch.push(scopeThree)
 
         setTimeout(() => {
             solverStatus.finishedPopulating = true
@@ -38,10 +34,7 @@ describe("search scopes", () => {
 
         await searchScopes()
 
-        expect(solverStatus.searchingChunkCount).toBe(2 as Count<Chunk>)
-        expect(scopesForChunkCount[ 1 ]).toEqual([])
-        expect(scopesForChunkCount[ 2 ]).toEqual([])
-        expect(searchedsForChunkCount[ 1 ]).toBe(2) // TODO: this is flakey?
-        expect(searchedsForChunkCount[ 2 ]).toBe(1)
+        expect(scopesToSearch).toEqual([])
+        expect(solverStatus.searchedScopeCount).toBe(3 as Count<Scope>)
     })
 })

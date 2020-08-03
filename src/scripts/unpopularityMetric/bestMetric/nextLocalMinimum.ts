@@ -1,6 +1,6 @@
 import { deepEquals, doOnNextEventLoop } from "../../../general"
 import { DebugTarget, saveDebugMessage } from "../debug"
-import { searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect } from "./bestMetric"
+import { searchScopeAndMaybeUpdateBestMetric } from "./bestMetric"
 import { computeNextScope } from "./nextScope"
 import { LocalMinimum, Scope, SearchLocalMinimumOptions } from "./types"
 
@@ -14,7 +14,6 @@ const searchNextLocalMinimum = (nextLocalMinimum: LocalMinimum, options: SearchL
         nextDepth,
         recurse,
         localMinimum,
-        chunkCount,
         nextLocalMinima,
         topLevelScopeTimer,
         onlyWinners,
@@ -35,11 +34,10 @@ const searchNextLocalMinimum = (nextLocalMinimum: LocalMinimum, options: SearchL
         saveDebugMessage(`${indentation}${nextProgressMessage}${JSON.stringify(nextLocalMinimum)}`, DebugTarget.LOCAL_MINIMUM)
 
         try {
-            await searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect(nextScope, {
+            await searchScopeAndMaybeUpdateBestMetric(nextScope, {
                 depth: nextDepth,
                 progressMessage: nextProgressMessage,
                 localMinimum: nextLocalMinimum,
-                chunkCount,
                 recurse,
                 onlyWinners,
             })

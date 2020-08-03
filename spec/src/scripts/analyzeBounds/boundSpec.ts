@@ -1,8 +1,8 @@
 import { Cents, Id, Name, Position, Proportion, Sum } from "../../../../src/general"
 import { Bound, Level } from "../../../../src/notations/ji"
 import { analyzeBound } from "../../../../src/scripts/analyzeBounds/bound"
-import * as levelAnalysis from "../../../../src/scripts/analyzeBounds/levels"
-import * as rankAnalysis from "../../../../src/scripts/analyzeBounds/ranks"
+import * as levels from "../../../../src/scripts/analyzeBounds/levels"
+import * as ranks from "../../../../src/scripts/analyzeBounds/ranks"
 import {
     AnalyzedBound,
     AnalyzedEvent,
@@ -189,19 +189,19 @@ describe("analyzeBound", () => {
     })
 
     it("updates the rank analysis", () => {
-        spyOn(rankAnalysis, "updateRankAnalysis")
+        spyOn(ranks, "updateRankAnalysis")
 
         analyzeBound(histories, bound)
 
         const expectedBestHistoryRank = 1 as EventRank
-        expect(rankAnalysis.updateRankAnalysis).toHaveBeenCalledWith(expectedBestHistoryRank, bound.id)
+        expect(ranks.updateRankAnalysis).toHaveBeenCalledWith(expectedBestHistoryRank, bound.id)
     })
 
     it("updates the level analysis", () => {
-        spyOn(levelAnalysis, "updateLevelAnalysis")
+        spyOn(levels, "updateLevelAnalysis")
 
         analyzeBound(histories, bound)
 
-        expect(levelAnalysis.updateLevelAnalysis).toHaveBeenCalledWith(expectedBestPossibleHistory)
+        expect(levels.updateLevelAnalysis).toHaveBeenCalledWith(expectedBestPossibleHistory)
     })
 })

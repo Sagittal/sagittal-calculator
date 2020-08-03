@@ -3,14 +3,13 @@ import { Scope, SubmetricScope } from "../../bestMetric"
 import { DebugTarget, saveDebugMessage } from "../../debug"
 import { presentSearchedAndPopulated } from "../present"
 import { Chunk } from "../types"
-import { populateScopeForChunkCount } from "./scopeForChunkCount"
-import { ParameterChunk, PopulateScoepsForChunkCountAndSubmetricChunkCombinationOptions, SubmetricChunk } from "./types"
+import { populateScope } from "./scope"
+import { ParameterChunk, PopulateScopesForSubmetricChunkCombinationOptions, SubmetricChunk } from "./types"
 
-const populateScopesForChunkCountAndSubmetricChunkCombination = async (submetricChunkCombination: Combination<SubmetricChunk>, options: PopulateScoepsForChunkCountAndSubmetricChunkCombinationOptions): Promise<void> => {
+const populateScopesForSubmetricChunkCombination = async (submetricChunkCombination: Combination<SubmetricChunk>, options: PopulateScopesForSubmetricChunkCombinationOptions): Promise<void> => {
     const {
         parameterChunkCombinations,
         parameterChunkCombinationIndex = 0,
-        chunkCount,
         submetricChunkCombinationIndex,
         submetricChunkCombinationCount,
     } = options
@@ -28,7 +27,7 @@ const populateScopesForChunkCountAndSubmetricChunkCombination = async (submetric
             return merge(submetricChunkBin, ...parametersDistributedToThisBin) as SubmetricScope
         }) as Scope
 
-        populateScopeForChunkCount(scope, chunkCount)
+        populateScope(scope)
     })
 
     if (parameterChunkCombinationIndex === parameterChunkCombinations.length - 1) {
@@ -36,10 +35,9 @@ const populateScopesForChunkCountAndSubmetricChunkCombination = async (submetric
     }
 
     return doOnNextEventLoop(async () => {
-        await populateScopesForChunkCountAndSubmetricChunkCombination(submetricChunkCombination, {
+        await populateScopesForSubmetricChunkCombination(submetricChunkCombination, {
             parameterChunkCombinations,
             parameterChunkCombinationIndex: parameterChunkCombinationIndex + 1 as Index<Combination<ParameterChunk>>,
-            chunkCount,
             submetricChunkCombinationIndex,
             submetricChunkCombinationCount,
         })
@@ -47,5 +45,5 @@ const populateScopesForChunkCountAndSubmetricChunkCombination = async (submetric
 }
 
 export {
-    populateScopesForChunkCountAndSubmetricChunkCombination,
+    populateScopesForSubmetricChunkCombination,
 }

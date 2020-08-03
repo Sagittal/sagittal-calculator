@@ -1,13 +1,14 @@
 import { Count } from "../../../general"
 import { ParameterChunk, SubmetricChunk } from "./populate"
+import { Scope } from "../bestMetric"
 
 type Chunk = SubmetricChunk | ParameterChunk
 
 interface SolverStatus {
+    chunkCount: Count<Chunk>,
     finishedPopulating: boolean,
-    populatingChunkCount: Count<Chunk>,
-    searchingChunkCount: Count<Chunk>,
-    upperBoundChunkCount: Count<Chunk>,
+    populatedScopeCount: Count<Scope>,
+    searchedScopeCount: Count<Scope>,
 }
 
 export {

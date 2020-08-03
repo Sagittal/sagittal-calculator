@@ -51,13 +51,12 @@ describe("searchNextLocalMinimum", () => {
             [ Parameter.W ]: 1.31,
         }] as unknown as Combination<Submetric>,
     }
-    const chunkCount = 3 as Count<Chunk>
     const nextLocalMinima = [{}, {}, {}, {}, {}, {}, {}, {}, {}] as LocalMinimum[]
     const topLevelScopeTimer = { timedOut: false }
     const onlyWinners = false
 
     beforeEach(() => {
-        spyOn(bestMetric, "searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect")
+        spyOn(bestMetric, "searchScopeAndMaybeUpdateBestMetric")
     })
 
     // TODO: test the scheduling (by index)
@@ -78,13 +77,12 @@ describe("searchNextLocalMinimum", () => {
             nextDepth,
             recurse,
             localMinimum,
-            chunkCount,
             nextLocalMinima,
             topLevelScopeTimer,
             onlyWinners,
         })
 
-        expect(bestMetric.searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect).not.toHaveBeenCalled()
+        expect(bestMetric.searchScopeAndMaybeUpdateBestMetric).not.toHaveBeenCalled()
     })
 
     it("when recursively searching, it continues searching", async () => {
@@ -99,13 +97,12 @@ describe("searchNextLocalMinimum", () => {
             nextDepth,
             recurse,
             localMinimum,
-            chunkCount,
             nextLocalMinima,
             topLevelScopeTimer,
             onlyWinners,
         })
 
-        expect(bestMetric.searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect).toHaveBeenCalledWith(
+        expect(bestMetric.searchScopeAndMaybeUpdateBestMetric).toHaveBeenCalledWith(
             [
                 {
                     [ Parameter.K_AS_COEFFICIENT ]: { center: undefined, span: 0.06666666666666667, resolution: 2 },
@@ -117,7 +114,6 @@ describe("searchNextLocalMinimum", () => {
                 depth: nextDepth,
                 progressMessage: "8/9@depth5 ",
                 localMinimum: nextLocalMinimum,
-                chunkCount,
                 recurse: true,
                 onlyWinners: false,
             },
@@ -145,12 +141,11 @@ describe("searchNextLocalMinimum", () => {
             nextDepth,
             recurse,
             localMinimum,
-            chunkCount,
             nextLocalMinima,
             topLevelScopeTimer,
             onlyWinners,
         })
 
-        expect(bestMetric.searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect).not.toHaveBeenCalled()
+        expect(bestMetric.searchScopeAndMaybeUpdateBestMetric).not.toHaveBeenCalled()
     })
 })

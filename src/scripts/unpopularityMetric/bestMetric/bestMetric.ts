@@ -1,29 +1,27 @@
 import { clearTimeout } from "timers"
 import { shuffle } from "../../../general"
 import { DebugTarget, debugTargets, saveDebugMessage } from "../debug"
-import { searchedsForChunkCount, timeoutsForChunkCount } from "../globals"
-import { DUMMY_CHUNK_COUNT_FOR_ONE_OFF_BEST_METRIC_FROM_SCOPE, MAXIMUM_SEARCH_TIME } from "./constants"
+import { scopesTimedOut, solverStatus } from "../globals"
+import { MAXIMUM_SEARCH_TIME } from "./constants"
 import { computeIndentation } from "./indentation"
 import { computeLocalMinima } from "./localMinima"
 import { searchNextLocalMinimum } from "./nextLocalMinimum"
 import { computeDynamicParameters, computeSamples } from "./scopeToSamples"
-import { computeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffect } from "./sumsOfSquares"
-import { Scope, SearchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffectOptions, SumsOfSquares } from "./types"
+import { computeSumsOfSquaresAndMaybeUpdateBestMetric } from "./sumsOfSquares"
+import { Scope, SearchScopeAndMaybeUpdateBestMetricOptions, SumsOfSquares } from "./types"
 
-const searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect = async (scope: Scope, options: SearchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffectOptions = {}): Promise<void | Error> => {
+const searchScopeAndMaybeUpdateBestMetric = async (scope: Scope, options: SearchScopeAndMaybeUpdateBestMetricOptions = {}): Promise<void | Error> => {
     return new Promise(async (resolve, reject) => {
         const {
             depth = 0,
             progressMessage = "",
             localMinimum,
-            chunkCount = DUMMY_CHUNK_COUNT_FOR_ONE_OFF_BEST_METRIC_FROM_SCOPE,
             recurse = false,
             deterministic = false,
             timeoutEnabled = false,
             onlyWinners = false,
-        }: SearchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffectOptions = options
+        }: SearchScopeAndMaybeUpdateBestMetricOptions = options
 
-        const topLevelScopeTimer = { timedOut: false }
         let timeDebugger: NodeJS.Timeout | undefined
         if (debugTargets[ DebugTarget.ALL ] || debugTargets[ DebugTarget.SCOPE ]) {
             saveDebugMessage(`${JSON.stringify(scope)} - beginning search`, DebugTarget.SCOPE)
@@ -35,14 +33,14 @@ const searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect = async (s
             }, 1000)
         }
 
+        const topLevelScopeTimer = { timedOut: false }
         let timer: NodeJS.Timeout | undefined
         if (timeoutEnabled) {
             timer = setTimeout(() => {
                 topLevelScopeTimer.timedOut = true
                 timeDebugger && clearInterval(timeDebugger)
-                saveDebugMessage(`${JSON.stringify(scope)} - timed out; so far ${100 * ((timeoutsForChunkCount[ chunkCount ] || []).length + 1) / searchedsForChunkCount[ chunkCount ]}% have timed out`, DebugTarget.TIMEOUTS)
-                timeoutsForChunkCount[ chunkCount ] = timeoutsForChunkCount[ chunkCount ] || []
-                timeoutsForChunkCount[ chunkCount ].push(scope)
+                saveDebugMessage(`${JSON.stringify(scope)} - timed out; so far ${100 * (scopesTimedOut.length + 1) / solverStatus.searchedScopeCount}% have timed out`, DebugTarget.TIMEOUTS)
+                scopesTimedOut.push(scope)
 
                 reject()
             }, MAXIMUM_SEARCH_TIME)
@@ -55,8 +53,7 @@ const searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect = async (s
         const dynamicParameters = computeDynamicParameters(scope)
         const samples = computeSamples({ scope, dynamicParameters })
 
-        const sumsOfSquares: SumsOfSquares = await computeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffect(samples, {
-            chunkCount,
+        const sumsOfSquares: SumsOfSquares = await computeSumsOfSquaresAndMaybeUpdateBestMetric(samples, {
             indentation,
             onlyWinners,
         })
@@ -75,7 +72,6 @@ const searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect = async (s
                 nextDepth,
                 recurse,
                 localMinimum,
-                chunkCount,
                 nextLocalMinima,
                 topLevelScopeTimer,
                 onlyWinners,
@@ -90,5 +86,5 @@ const searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect = async (s
 }
 
 export {
-    searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect,
+    searchScopeAndMaybeUpdateBestMetric,
 }

@@ -26,8 +26,7 @@ interface TopLevelScopeTimer {
     timedOut: boolean
 }
 
-type SearchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffectOptions = Partial<{
-    chunkCount: Count<Chunk>,
+type SearchScopeAndMaybeUpdateBestMetricOptions = Partial<{
     depth: number,
     localMinimum: LocalMinimum,
     progressMessage: string,
@@ -46,7 +45,6 @@ type SearchLocalMinimumOptions = {
     nextDepth: number,
     recurse: boolean,
     localMinimum?: LocalMinimum,
-    chunkCount: Count<Chunk>,
     nextLocalMinima: LocalMinimum[],
     topLevelScopeTimer: TopLevelScopeTimer,
     onlyWinners: boolean,
@@ -56,22 +54,28 @@ type SumOfSquares = Sum<"SquaredWeightedRankDifferences">
 
 type SumsOfSquares = Array<SumsOfSquares | SumOfSquares | undefined>
 
-type ComputeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffectOptions = Partial<{
-    chunkCount: Count<Chunk>,
+type ComputeSumsOfSquaresAndMaybeUpdateBestMetricOptions = Partial<{
     indentation: string,
-    topLevelScopeTimer: TopLevelScopeTimer,
     onlyWinners: boolean,
 }>
 
+interface ComputeSumOfSquaresAndMaybeUpdateBestMetricOptions {
+    indentation: string,
+    sumsOfSquares: SumsOfSquares,
+    index: number,
+    onlyWinners: boolean,
+}
+
 export {
     LocalMinimum,
-    SearchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffectOptions,
+    SearchScopeAndMaybeUpdateBestMetricOptions,
     SumsOfSquares,
     SearchLocalMinimumOptions,
-    ComputeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffectOptions,
+    ComputeSumsOfSquaresAndMaybeUpdateBestMetricOptions,
     Metric,
     Scope,
     SubmetricScope,
     DynamicParameterScope,
     SumOfSquares,
+    ComputeSumOfSquaresAndMaybeUpdateBestMetricOptions,
 }

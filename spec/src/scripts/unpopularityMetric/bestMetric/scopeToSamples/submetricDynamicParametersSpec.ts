@@ -1,6 +1,6 @@
 import { Index, Resolution, Span } from "../../../../../../src/general"
 import { computeSubmetricDynamicParameters } from "../../../../../../src/scripts/unpopularityMetric/bestMetric/scopeToSamples/submetricDynamicParameters"
-import { SubmetricScope } from "../../../../../../src/scripts/unpopularityMetric/bestMetric/types"
+import { SubmetricScope } from "../../../../../../src/scripts/unpopularityMetric/bestMetric"
 import { Parameter, ParameterValue, Submetric } from "../../../../../../src/scripts/unpopularityMetric/sumOfSquares"
 
 describe("computeSubmetricDynamicParameters", () => {

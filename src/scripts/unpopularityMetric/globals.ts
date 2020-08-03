@@ -2,31 +2,26 @@ import { Combinations, Count } from "../../general"
 import { Metric, Scope } from "./bestMetric"
 import { Chunk, ParameterChunk, SolverStatus, SubmetricChunk } from "./solver"
 
-const populatedsForChunkCount: number[] = []
-const searchedsForChunkCount: number[] = []
-
-const scopesForChunkCount: Scope[][] = [] as unknown as Scope[][]
-const timeoutsForChunkCount: Scope[][] = [] as unknown as Scope[][]
+const scopesToSearch: Scope[] = [] as unknown as Scope[]
+const scopesTimedOut: Scope[] = [] as unknown as Scope[]
 
 const solverStatus: SolverStatus = {
+    chunkCount: 0 as Count<Chunk>,
     finishedPopulating: false,
-    populatingChunkCount: 0 as Count<Chunk>,
-    upperBoundChunkCount: 0 as Count<Chunk>,
-    searchingChunkCount: 0 as Count<Chunk>,
+    populatedScopeCount: 0 as Count<Scope>,
+    searchedScopeCount: 0 as Count<Scope>,
 }
 
-const bestMetricsForChunkCount: Array<Record<string, Metric>> = []
+const bestMetrics: Record<string, Metric> = { }
 
 const memoizedSubmetricChunkCombinations: Array<Combinations<SubmetricChunk>> = []
 const memoizedParameterChunkCombinations: Array<Combinations<ParameterChunk>> = []
 
 export {
-    populatedsForChunkCount,
-    searchedsForChunkCount,
-    scopesForChunkCount,
+    scopesToSearch,
     solverStatus,
-    bestMetricsForChunkCount,
+    bestMetrics,
     memoizedSubmetricChunkCombinations,
     memoizedParameterChunkCombinations,
-    timeoutsForChunkCount,
+    scopesTimedOut,
 }

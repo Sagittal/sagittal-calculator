@@ -47,7 +47,7 @@ const computeRatioSubmetricAntivotes = (fiveRoughRatio: Ratio, submetric: Submet
             numeratorPrimeContentAntivotes :
         denominatorPrimeContentAntivotes
 
-    // todo duped code fragment, yes we can dry this up
+    // TODO: duped code fragment, yes we can dry this up
     let weightedOutputNumerator = outputNumerator
     if (!isUndefined(jAsLogarithmBase)) {
         weightedOutputNumerator = computeLog(weightedOutputNumerator, jAsLogarithmBase) as Antivotes

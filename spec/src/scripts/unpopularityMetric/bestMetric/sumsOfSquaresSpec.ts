@@ -1,14 +1,12 @@
-import { Combination, Count } from "../../../../../src/general"
-import { DUMMY_CHUNK_COUNT_FOR_ONE_OFF_BEST_METRIC_FROM_SCOPE } from "../../../../../src/scripts/unpopularityMetric/bestMetric/constants"
+import { Combination } from "../../../../../src/general"
 import { SamplePoint } from "../../../../../src/scripts/unpopularityMetric/bestMetric/scopeToSamples"
-import { computeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffect } from "../../../../../src/scripts/unpopularityMetric/bestMetric/sumsOfSquares"
+import { computeSumsOfSquaresAndMaybeUpdateBestMetric } from "../../../../../src/scripts/unpopularityMetric/bestMetric/sumsOfSquares"
 import { SumOfSquares, SumsOfSquares } from "../../../../../src/scripts/unpopularityMetric/bestMetric/types"
-import { bestMetricsForChunkCount } from "../../../../../src/scripts/unpopularityMetric/globals"
-import { Chunk } from "../../../../../src/scripts/unpopularityMetric/solver"
+import { bestMetrics } from "../../../../../src/scripts/unpopularityMetric/globals"
 import { Parameter, ParameterValue, Submetric } from "../../../../../src/scripts/unpopularityMetric/sumOfSquares"
+import { cleanObject } from "../../../../../src/general/code/cleanObject"
 
-describe("computeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffect", () => {
-    const chunkCount = 3 as Count<Chunk>
+describe("computeSumsOfSquaresAndMaybeUpdateBestMetric", () => {
     const samples = [
         {
             samplePoint: [0, 0] as SamplePoint,
@@ -45,12 +43,11 @@ describe("computeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffe
     ]
 
     beforeEach(() => {
-        delete bestMetricsForChunkCount[ DUMMY_CHUNK_COUNT_FOR_ONE_OFF_BEST_METRIC_FROM_SCOPE ]
-        delete bestMetricsForChunkCount[ chunkCount ]
+        cleanObject(bestMetrics)
     })
 
     it("finds the sums of squares for each sample", async () => {
-        const result = await computeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffect(samples)
+        const result = await computeSumsOfSquaresAndMaybeUpdateBestMetric(samples)
 
         expect(result).toEqual([
             [
@@ -64,36 +61,19 @@ describe("computeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffe
         ] as SumsOfSquares)
     })
 
-    it("works when the best metric for the chunk count has not yet been set", async () => {
-        await computeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffect(samples, { chunkCount })
-
-        expect(bestMetricsForChunkCount[ chunkCount ]).toEqual({
-            "{aAsCoefficient,sum,w}": {
-                sumOfSquares: 0.013983040590027893 as SumOfSquares,
-                submetrics: [{
-                    [ Parameter.SUM ]: true,
-                    [ Parameter.A_AS_COEFFICIENT ]: 2 as ParameterValue,
-                    [ Parameter.W ]: 1.5 as ParameterValue,
-                }] as Combination<Submetric>,
-            },
-        })
-    })
-
     it("sets the best metric when it beats it", async () => {
-        bestMetricsForChunkCount[ chunkCount ] = {
-            "{aAsCoefficient,sum,w}": {
-                sumOfSquares: 0.01400000000000 as SumOfSquares,
-                submetrics: [{
-                    [ Parameter.SUM ]: true,
-                    [ Parameter.A_AS_COEFFICIENT ]: 2 as ParameterValue,
-                    [ Parameter.W ]: 1.5 as ParameterValue,
-                }] as Combination<Submetric>,
-            },
+        bestMetrics[ "{aAsCoefficient,sum,w}" ] = {
+            sumOfSquares: 0.01400000000000 as SumOfSquares,
+            submetrics: [{
+                [ Parameter.SUM ]: true,
+                [ Parameter.A_AS_COEFFICIENT ]: 2 as ParameterValue,
+                [ Parameter.W ]: 1.5 as ParameterValue,
+            }] as Combination<Submetric>,
         }
 
-        await computeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffect(samples, { chunkCount })
+        await computeSumsOfSquaresAndMaybeUpdateBestMetric(samples)
 
-        expect(bestMetricsForChunkCount[ chunkCount ]).toEqual({
+        expect(bestMetrics).toEqual({
             "{aAsCoefficient,sum,w}": {
                 sumOfSquares: 0.013983040590027893 as SumOfSquares,
                 submetrics: [{
@@ -106,37 +86,20 @@ describe("computeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffe
     })
 
     it("does not set the best metric when it does not beat it", async () => {
-        bestMetricsForChunkCount[ chunkCount ] = {
-            "{aAsCoefficient,sum,w}": {
-                sumOfSquares: 0.01200000000000 as SumOfSquares,
-                submetrics: [{
-                    [ Parameter.SUM ]: true,
-                    [ Parameter.A_AS_COEFFICIENT ]: 2 as ParameterValue,
-                    [ Parameter.W ]: 1.5 as ParameterValue,
-                }] as Combination<Submetric>,
-            },
+        bestMetrics[ "{aAsCoefficient,sum,w}" ] = {
+            sumOfSquares: 0.01200000000000 as SumOfSquares,
+            submetrics: [{
+                [ Parameter.SUM ]: true,
+                [ Parameter.A_AS_COEFFICIENT ]: 2 as ParameterValue,
+                [ Parameter.W ]: 1.5 as ParameterValue,
+            }] as Combination<Submetric>,
         }
 
-        await computeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffect(samples, { chunkCount })
+        await computeSumsOfSquaresAndMaybeUpdateBestMetric(samples)
 
-        expect(bestMetricsForChunkCount[ chunkCount ]).toEqual({
+        expect(bestMetrics).toEqual({
             "{aAsCoefficient,sum,w}": {
                 sumOfSquares: 0.01200000000000 as SumOfSquares,
-                submetrics: [{
-                    [ Parameter.SUM ]: true,
-                    [ Parameter.A_AS_COEFFICIENT ]: 2 as ParameterValue,
-                    [ Parameter.W ]: 1.5 as ParameterValue,
-                }] as Combination<Submetric>,
-            },
-        })
-    })
-
-    it("falls back to a chunk count of zero", async () => {
-        await computeSumsOfSquaresAndPossiblyUpdateBestMetricForChunkCountAsSideEffect(samples)
-
-        expect(bestMetricsForChunkCount[ DUMMY_CHUNK_COUNT_FOR_ONE_OFF_BEST_METRIC_FROM_SCOPE ]).toEqual({
-            "{aAsCoefficient,sum,w}": {
-                sumOfSquares: 0.013983040590027893 as SumOfSquares,
                 submetrics: [{
                     [ Parameter.SUM ]: true,
                     [ Parameter.A_AS_COEFFICIENT ]: 2 as ParameterValue,

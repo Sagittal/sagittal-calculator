@@ -1,13 +1,13 @@
 import { Combinations, Count, deepEquals, Index } from "../../../../../../src/general"
 import { Combination } from "../../../../../../src/general/math"
-import { scopesForChunkCount } from "../../../../../../src/scripts/unpopularityMetric/globals"
+import { scopesToSearch } from "../../../../../../src/scripts/unpopularityMetric/globals"
 import { Chunk } from "../../../../../../src/scripts/unpopularityMetric/solver"
 import { ParameterChunk, SubmetricChunk } from "../../../../../../src/scripts/unpopularityMetric/solver/populate"
 import { INITIAL_PARAMETER_SCOPES } from "../../../../../../src/scripts/unpopularityMetric/solver/populate/constants"
-import { populateScopesForChunkCountAndSubmetricChunkCombination } from "../../../../../../src/scripts/unpopularityMetric/solver/populate/scopesForChunkCountAndSubmetricChunkCombination"
+import { populateScopesForSubmetricChunkCombination } from "../../../../../../src/scripts/unpopularityMetric/solver/populate/submetricChunkCombination"
 import { Parameter } from "../../../../../../src/scripts/unpopularityMetric/sumOfSquares"
 
-describe("populateScopesForChunkCountAndSubmetricChunkCombination", () => {
+describe("populateScopesForSubmetricChunkCombination", () => {
     // TODO: really need to do something about these long test descriptions and multi-lining them;
     //  but we may as well wait for the day we add that linting rule
     it("for the given submetric chunk combination, proceeds through each of the parameter chunk combinations, for each one computing all possible distributions across the submetric bins of this submetric chunk combination, and for each distribution populating a scope which is the merger of it with the submetrics, also handling how the first submetric bin actually represents the parameters which should be distributed to every submetric", async () => {
@@ -50,18 +50,16 @@ describe("populateScopesForChunkCountAndSubmetricChunkCombination", () => {
             ],
         ] as Combinations<ParameterChunk>
         const parameterChunkCombinationIndex: Index<Combination<ParameterChunk>> = 0 as Index<Combination<ParameterChunk>>
-        const chunkCount: Count<Chunk> = 4 as Count<Chunk>
         const submetricChunkCombinationIndex: Index<Combination<SubmetricChunk>> = 0 as Index<Combination<SubmetricChunk>>
         const submetricChunkCombinationCount: Count<Combination<SubmetricChunk>> = 2 as Count<Combination<SubmetricChunk>>
 
-        await populateScopesForChunkCountAndSubmetricChunkCombination(submetricChunkCombination, {
+        await populateScopesForSubmetricChunkCombination(submetricChunkCombination, {
             parameterChunkCombinations,
             parameterChunkCombinationIndex,
-            chunkCount,
             submetricChunkCombinationIndex,
             submetricChunkCombinationCount,
         })
-        const result = scopesForChunkCount[ chunkCount ]
+        const result = scopesToSearch
 
         const expectedResult = [
             // 1

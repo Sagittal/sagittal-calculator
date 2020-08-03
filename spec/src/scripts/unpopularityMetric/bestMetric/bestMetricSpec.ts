@@ -1,12 +1,11 @@
-import { Combination, Count, Index, Resolution, Span, Unit } from "../../../../../src/general"
-import { searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect } from "../../../../../src/scripts/unpopularityMetric/bestMetric"
+import { Combination, Index, Resolution, Span, Unit } from "../../../../../src/general"
+import { searchScopeAndMaybeUpdateBestMetric } from "../../../../../src/scripts/unpopularityMetric/bestMetric"
 import * as nextLocalMinimum from "../../../../../src/scripts/unpopularityMetric/bestMetric/nextLocalMinimum"
 import { SamplePoint } from "../../../../../src/scripts/unpopularityMetric/bestMetric/scopeToSamples"
 import { LocalMinimum, Scope, SumOfSquares } from "../../../../../src/scripts/unpopularityMetric/bestMetric/types"
-import { Chunk } from "../../../../../src/scripts/unpopularityMetric/solver"
 import { Parameter, ParameterValue, Submetric } from "../../../../../src/scripts/unpopularityMetric/sumOfSquares"
 
-describe("searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect", () => {
+describe("searchScopeAndMaybeUpdateBestMetric", () => {
     it("searches each local minimum", async () => {
         const scope = [
             {},
@@ -38,16 +37,14 @@ describe("searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect", () =
         const recurse = false
         const deterministic = true
         const onlyWinners = false
-        const chunkCount = 5 as Count<Chunk>
 
         spyOn(nextLocalMinimum, "searchNextLocalMinimum").and.callThrough()
 
-        await searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect(scope, {
+        await searchScopeAndMaybeUpdateBestMetric(scope, {
             depth,
             progressMessage,
             localMinimum,
             recurse,
-            chunkCount,
             deterministic,
         })
 
@@ -107,7 +104,6 @@ describe("searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect", () =
             nextDepth: expectedNextDepth,
             recurse,
             localMinimum,
-            chunkCount,
             nextLocalMinima: expectedNextLocalMinima,
             topLevelScopeTimer: { timedOut: false },
             onlyWinners,

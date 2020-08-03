@@ -1,26 +1,22 @@
 import { Count } from "../../../../src/general"
 import { cleanArray } from "../../../../src/general/code/cleanArray"
 import {
-    bestMetricsForChunkCount,
+    bestMetrics,
     memoizedParameterChunkCombinations,
     memoizedSubmetricChunkCombinations,
-    populatedsForChunkCount,
-    scopesForChunkCount,
-    searchedsForChunkCount,
+    scopesToSearch,
     solverStatus,
 } from "../../../../src/scripts/unpopularityMetric/globals"
-import { Chunk } from "../../../../src/scripts/unpopularityMetric/solver"
+import { cleanObject } from "../../../../src/general/code/cleanObject"
+import { Scope } from "../../../../src/scripts/unpopularityMetric/bestMetric"
 
 afterEach(() => {
-    cleanArray(populatedsForChunkCount)
-    cleanArray(searchedsForChunkCount)
-    cleanArray(scopesForChunkCount)
-    cleanArray(bestMetricsForChunkCount)
+    cleanArray(scopesToSearch)
+    cleanObject(bestMetrics)
     cleanArray(memoizedSubmetricChunkCombinations)
     cleanArray(memoizedParameterChunkCombinations)
 
     solverStatus.finishedPopulating = false
-    solverStatus.populatingChunkCount = 0 as Count<Chunk>
-    solverStatus.upperBoundChunkCount = 0 as Count<Chunk>
-    solverStatus.searchingChunkCount = 0 as Count<Chunk>
+    solverStatus.populatedScopeCount = 0 as Count<Scope>
+    solverStatus.searchedScopeCount = 0 as Count<Scope>
 })

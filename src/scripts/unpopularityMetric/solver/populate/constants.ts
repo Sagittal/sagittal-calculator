@@ -3,7 +3,7 @@ import { computeResolution, DynamicParameterScope } from "../../bestMetric"
 import { Parameter, ParameterValue } from "../../sumOfSquares"
 import { ParameterChunk, SubmetricChunk } from "./types"
 
-// AKA: if they are going to be included in the automatically generated scopes per chunk count, what should they be set to
+// AKA: when included in the solver's generated scopes, what should they be scoped to
 const INITIAL_PARAMETER_SCOPES: Partial<EnumHash<Parameter, ParameterValue | boolean | DynamicParameterScope>> = {
     [ Parameter.WEIGHT_AS_COEFFICIENT ]: {
         center: 0.5 as ParameterValue,

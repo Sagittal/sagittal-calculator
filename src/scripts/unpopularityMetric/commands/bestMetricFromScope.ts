@@ -5,9 +5,8 @@ import { program } from "commander"
 import { Span } from "../../../general"
 import {
     computeResolution,
-    DUMMY_CHUNK_COUNT_FOR_ONE_OFF_BEST_METRIC_FROM_SCOPE,
     Scope,
-    searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect,
+    searchScopeAndMaybeUpdateBestMetric,
 } from "../bestMetric"
 import {
     clearDebugLogFiles,
@@ -16,7 +15,7 @@ import {
     saveDebugMessage,
     setDebugTargets,
 } from "../debug"
-import { bestMetricsForChunkCount } from "../globals"
+import { bestMetrics } from "../globals"
 import { Parameter, ParameterValue } from "../sumOfSquares"
 
 program
@@ -72,6 +71,6 @@ const scope = [
     },
 ] as Scope
 
-searchScopeAndPossiblyUpdateBestMetricForChunkCountAsSideEffect(scope, { recurse, timeoutEnabled }).then(() => {
-    saveDebugMessage(`\nbest metric: ${JSON.stringify(bestMetricsForChunkCount[ DUMMY_CHUNK_COUNT_FOR_ONE_OFF_BEST_METRIC_FROM_SCOPE ])}`, DebugTarget.ALL)
+searchScopeAndMaybeUpdateBestMetric(scope, { recurse, timeoutEnabled }).then(() => {
+    saveDebugMessage(`\nbest metric: ${JSON.stringify(bestMetrics)}`, DebugTarget.ALL)
 })

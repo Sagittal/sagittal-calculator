@@ -1,4 +1,4 @@
-import { ParameterChunk, populateScopes, SubmetricChunk } from "./populate"
+import { ParameterChunk, SubmetricChunk } from "./populate"
 import { populateAndSearchScopes } from "./populateAndSearchScopes"
 import { presentBestMetrics, presentSearchedAndPopulated } from "./present"
 import { searchScopes } from "./search"
@@ -6,7 +6,6 @@ import { Chunk, SolverStatus } from "./types"
 
 export {
     presentSearchedAndPopulated,
-    populateScopes,
     searchScopes,
     Chunk,
     populateAndSearchScopes,
