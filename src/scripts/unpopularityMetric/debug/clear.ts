@@ -1,7 +1,7 @@
 import * as fs from "fs"
 
 const clearDebugLogFiles = () => {
-    fs.rmdirSync("dist/unpopularityMetric", { recursive: true })
+    fs.existsSync("dist/unpopularityMetric") && fs.rmdirSync("dist/unpopularityMetric", { recursive: true })
 }
 
 export {

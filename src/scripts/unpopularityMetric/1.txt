@@ -1,0 +1,18 @@
+
+
+AND THE BEST METRICS WERE {
+    "{sum}": {
+        "sumOfSquares": 0.014206086754420309,
+        "submetrics": [
+            {
+                "sum": true
+            }
+        ]
+    }
+}
+
+
+AND THE COUNT OF TIMED OUT METRICS WAS 0
+
+
+TOOK 41.71168699860573 MS

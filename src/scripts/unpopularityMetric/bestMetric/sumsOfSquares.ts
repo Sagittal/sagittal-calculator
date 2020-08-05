@@ -11,7 +11,7 @@ const computeSumsOfSquaresAndMaybeUpdateBestMetric = async (samples: Sample[], o
 
     const sumsOfSquares: SumsOfSquares = []
 
-    if (samples.length > MAXIMUM_SEARCH_TIME) {
+    if (samples.length > MAXIMUM_SEARCH_TIME) { // todo shouldn't it be also w/r/t nondeterministic?
         shuffle(samples)
     }
 
