@@ -1,10 +1,9 @@
-import { Count, Index, Unit } from "../../../../../src/general"
+import { Index, Unit } from "../../../../../src/general"
 import { Combination } from "../../../../../src/general/math"
 import * as bestMetric from "../../../../../src/scripts/unpopularityMetric/bestMetric/bestMetric"
 import { searchNextLocalMinimum } from "../../../../../src/scripts/unpopularityMetric/bestMetric/nextLocalMinimum"
 import { DynamicParameter, SamplePoint } from "../../../../../src/scripts/unpopularityMetric/bestMetric/scopeToSamples"
 import { LocalMinimum, Scope, SumOfSquares } from "../../../../../src/scripts/unpopularityMetric/bestMetric/types"
-import { Chunk } from "../../../../../src/scripts/unpopularityMetric/solver"
 import { Parameter, ParameterValue, Submetric } from "../../../../../src/scripts/unpopularityMetric/sumOfSquares"
 
 describe("searchNextLocalMinimum", () => {
@@ -54,6 +53,7 @@ describe("searchNextLocalMinimum", () => {
     const nextLocalMinima = [{}, {}, {}, {}, {}, {}, {}, {}, {}] as LocalMinimum[]
     const topLevelScopeTimer = { timedOut: false }
     const onlyWinners = false
+    const timer = setTimeout(() => {}, 0) // todo seems like a ton of this test setup might not be necessary with reasonable default param values
 
     beforeEach(() => {
         spyOn(bestMetric, "searchScopeAndMaybeUpdateBestMetric")
@@ -80,6 +80,7 @@ describe("searchNextLocalMinimum", () => {
             nextLocalMinima,
             topLevelScopeTimer,
             onlyWinners,
+            timer,
         })
 
         expect(bestMetric.searchScopeAndMaybeUpdateBestMetric).not.toHaveBeenCalled()
@@ -100,6 +101,7 @@ describe("searchNextLocalMinimum", () => {
             nextLocalMinima,
             topLevelScopeTimer,
             onlyWinners,
+            timer,
         })
 
         expect(bestMetric.searchScopeAndMaybeUpdateBestMetric).toHaveBeenCalledWith(
@@ -116,6 +118,8 @@ describe("searchNextLocalMinimum", () => {
                 localMinimum: nextLocalMinimum,
                 recurse: true,
                 onlyWinners: false,
+                topLevelScopeTimer,
+                timer,
             },
         )
     })
@@ -144,6 +148,7 @@ describe("searchNextLocalMinimum", () => {
             nextLocalMinima,
             topLevelScopeTimer,
             onlyWinners,
+            timer,
         })
 
         expect(bestMetric.searchScopeAndMaybeUpdateBestMetric).not.toHaveBeenCalled()

@@ -37,6 +37,7 @@ describe("searchScopeAndMaybeUpdateBestMetric", () => {
         const recurse = false
         const deterministic = true
         const onlyWinners = false
+        const timer = setTimeout(() => {}, 0)
 
         spyOn(nextLocalMinimum, "searchNextLocalMinimum").and.callThrough()
 
@@ -46,6 +47,7 @@ describe("searchScopeAndMaybeUpdateBestMetric", () => {
             localMinimum,
             recurse,
             deterministic,
+            timer,
         })
 
         const expectedNextLocalMinima = [
@@ -107,6 +109,7 @@ describe("searchScopeAndMaybeUpdateBestMetric", () => {
             nextLocalMinima: expectedNextLocalMinima,
             topLevelScopeTimer: { timedOut: false },
             onlyWinners,
+            timer,
         }
 
         expect(nextLocalMinimum.searchNextLocalMinimum).toHaveBeenCalledWith(

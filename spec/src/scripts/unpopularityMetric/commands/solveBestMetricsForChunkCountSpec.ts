@@ -33,6 +33,7 @@ describe("solve best metric", () => {
             ``,
             ``,
             `PERFECTING BEST METRICS`,
+            `perfected 1/1`,
             ``,
             ``,
             `AND THE BEST METRICS WERE {`,

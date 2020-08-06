@@ -24,8 +24,8 @@ const populateAndSearchScopesAndPerfectMetrics = async () => {
 
     saveDebugMessage(`\n\nFINAL STATUS ${presentSearchedAndPopulated()}`, DebugTarget.SEARCH)
 
-    // todo: just tempoarary, so it's not a total bust if perfecting is still screwing up
-    saveDebugMessage(`\n\nAND THE BEST METRICS (BEFORE PERFECTING) WERE ${JSON.stringify(presentBestMetrics(bestMetrics), undefined, 4)}`, DebugTarget.ALL)
+    // // todo: just tempoarary, so it's not a total bust if perfecting is still screwing up
+    // saveDebugMessage(`\n\nAND THE BEST METRICS (BEFORE PERFECTING) WERE ${JSON.stringify(presentBestMetrics(bestMetrics), undefined, 4)}`, DebugTarget.ALL)
 
     await perfectMetrics()
 }

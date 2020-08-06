@@ -17,7 +17,7 @@ const searchNextLocalMinimum = (nextLocalMinimum: LocalMinimum, options: SearchL
         nextLocalMinima,
         topLevelScopeTimer,
         onlyWinners,
-        timer,
+        timer, // todo wait a second... what's the diff between this and the topLevelScopeTimer ??? oh right, the latter is the thing which holds the boolean whether it timed out... this is the actual setTimeout thing
     } = options
 
     if (!recurse || deepEquals(localMinimum, nextLocalMinimum)) {
