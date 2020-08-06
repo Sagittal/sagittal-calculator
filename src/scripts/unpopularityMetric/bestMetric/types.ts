@@ -1,5 +1,4 @@
-import { Combination, Count, EnumHash, Resolution, Span, Sum } from "../../../general"
-import { Chunk } from "../solver"
+import { Combination, EnumHash, Resolution, Span, Sum } from "../../../general"
 import { Parameter, ParameterValue, Submetric } from "../sumOfSquares"
 import { DynamicParameter, Sample } from "./scopeToSamples"
 
@@ -34,6 +33,8 @@ type SearchScopeAndMaybeUpdateBestMetricOptions = Partial<{
     deterministic: boolean,
     timeoutEnabled: boolean,
     onlyWinners: boolean,
+    topLevelScopeTimer: TopLevelScopeTimer, // todo lotta shared params in here!
+    timer: NodeJS.Timeout,
 }>
 
 type SearchLocalMinimumOptions = {
@@ -48,6 +49,7 @@ type SearchLocalMinimumOptions = {
     nextLocalMinima: LocalMinimum[],
     topLevelScopeTimer: TopLevelScopeTimer,
     onlyWinners: boolean,
+    timer: NodeJS.Timeout,
 }
 
 type SumOfSquares = Sum<"SquaredWeightedRankDifferences">

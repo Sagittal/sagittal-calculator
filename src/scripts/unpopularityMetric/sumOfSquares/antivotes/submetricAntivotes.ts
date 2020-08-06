@@ -10,9 +10,9 @@ import { secondaryParameterOverridesForDenominator } from "./secondaryParameter"
 const computeSubmetricAntivotes = (fiveRoughNumberMonzo: Monzo, submetric = {}, fractionalPart?: FractionalPart): Antivotes => {
     const {
         aAsCoefficient = 1 as ParameterValue,
-        aAsPowerExponent = undefined,
-        aAsLogarithmBase = undefined,
-        aAsPowerBase = undefined,
+        aAsPowerExponent,
+        aAsLogarithmBase,
+        aAsPowerBase,
         w = 0 as ParameterValue,
         b,
         x = 0 as ParameterValue,

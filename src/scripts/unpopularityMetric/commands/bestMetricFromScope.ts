@@ -15,7 +15,7 @@ import {
     saveDebugMessage,
     setDebugTargets,
 } from "../debug"
-import { bestMetrics } from "../globals"
+import { bestMetrics, solverStatus } from "../globals"
 import { Parameter, ParameterValue } from "../sumOfSquares"
 
 program
@@ -28,7 +28,7 @@ program
 
 const recurse = true
 setDebugTargets(program.debugTargets)
-const maximumUnit = program.maximumUnit
+solverStatus.maximumUnit = program.maximumUnit
 const timeoutEnabled = program.timeoutEnabled
 debugSettings.noWrite = !program.write
 
@@ -51,22 +51,22 @@ const scope = [
         [ Parameter.K_AS_COEFFICIENT ]: {
             center: 1,
             span: 0.02,
-            resolution: computeResolution(0.02 as Span<ParameterValue>, { maximumUnit }),
+            resolution: computeResolution(0.02 as Span<ParameterValue>),
         },
         [ Parameter.A_AS_LOGARITHM_BASE ]: {
             center: 2.00001,
             span: 0.02,
-            resolution: computeResolution(0.02 as Span<ParameterValue>, { maximumUnit }),
+            resolution: computeResolution(0.02 as Span<ParameterValue>),
         },
         [ Parameter.Y ]: {
             center: 2,
             span: 0.04,
-            resolution: computeResolution(0.04 as Span<ParameterValue>, { maximumUnit }),
+            resolution: computeResolution(0.04 as Span<ParameterValue>),
         },
         [ Parameter.W ]: {
             center: -2.00001,
             span: 0.03,
-            resolution: computeResolution(0.03 as Span<ParameterValue>, { maximumUnit }),
+            resolution: computeResolution(0.03 as Span<ParameterValue>),
         },
     },
 ] as Scope

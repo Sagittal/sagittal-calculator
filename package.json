@@ -16,7 +16,7 @@
     "best-metric-from-scope": "node -r ts-node/register --max-old-space-size=131072 src/scripts/unpopularityMetric/commands/bestMetricFromScope.ts",
     "antivotes": "node -r ts-node/register --max-old-space-size=131072 src/scripts/unpopularityMetric/commands/antivotes.ts",
     "sos": "node -r ts-node/register --max-old-space-size=131072 src/scripts/unpopularityMetric/commands/sumOfSquares.ts",
-    "solve-best-metric": "node -r ts-node/register --max-old-space-size=131072 src/scripts/unpopularityMetric/commands/solveBestMetric.ts"
+    "solve-best-metrics-for-chunk-count": "node -r ts-node/register --max-old-space-size=131072 src/scripts/unpopularityMetric/commands/solveBestMetricsForChunkCount.ts"
   },
   "devDependencies": {
     "@types/jasmine": "^3.5.11",

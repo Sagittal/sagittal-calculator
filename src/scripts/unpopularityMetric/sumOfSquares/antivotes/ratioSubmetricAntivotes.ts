@@ -7,12 +7,12 @@ const computeRatioSubmetricAntivotes = (fiveRoughRatio: Ratio, submetric: Submet
         useNuminator = false,
         kAsCoefficient = 1 as ParameterValue,
         jAsCoefficient = 1 as ParameterValue,
-        jAsLogarithmBase = undefined,
-        jAsPowerExponent = undefined,
-        jAsPowerBase = undefined,
-        kAsLogarithmBase = undefined,
-        kAsPowerExponent = undefined,
-        kAsPowerBase = undefined,
+        jAsLogarithmBase,
+        jAsPowerExponent,
+        jAsPowerBase,
+        kAsLogarithmBase,
+        kAsPowerExponent,
+        kAsPowerBase,
     }: Submetric = submetric
 
     if (

@@ -17,6 +17,7 @@ const searchNextLocalMinimum = (nextLocalMinimum: LocalMinimum, options: SearchL
         nextLocalMinima,
         topLevelScopeTimer,
         onlyWinners,
+        timer,
     } = options
 
     if (!recurse || deepEquals(localMinimum, nextLocalMinimum)) {
@@ -40,6 +41,8 @@ const searchNextLocalMinimum = (nextLocalMinimum: LocalMinimum, options: SearchL
                 localMinimum: nextLocalMinimum,
                 recurse,
                 onlyWinners,
+                topLevelScopeTimer,
+                timer,
             })
         } catch (e) {
             saveDebugMessage(`error when searching: ${e.message}`, DebugTarget.ERRORS)

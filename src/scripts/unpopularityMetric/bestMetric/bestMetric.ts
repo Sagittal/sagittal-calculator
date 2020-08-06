@@ -20,6 +20,8 @@ const searchScopeAndMaybeUpdateBestMetric = async (scope: Scope, options: Search
             deterministic = false,
             timeoutEnabled = false,
             onlyWinners = false,
+            topLevelScopeTimer = { timedOut: false }, // todo really should find a way to test that this thing can now be used in recursive mode but still abort itself
+            timer: topLevelTimer,
         }: SearchScopeAndMaybeUpdateBestMetricOptions = options
 
         let timeDebugger: NodeJS.Timeout | undefined
@@ -33,9 +35,8 @@ const searchScopeAndMaybeUpdateBestMetric = async (scope: Scope, options: Search
             }, 1000)
         }
 
-        const topLevelScopeTimer = { timedOut: false }
-        let timer: NodeJS.Timeout | undefined
-        if (timeoutEnabled) {
+        let timer: NodeJS.Timeout | undefined = topLevelTimer
+        if (timeoutEnabled && !timer) {
             timer = setTimeout(() => {
                 topLevelScopeTimer.timedOut = true
                 timeDebugger && clearInterval(timeDebugger)
@@ -75,6 +76,7 @@ const searchScopeAndMaybeUpdateBestMetric = async (scope: Scope, options: Search
                 nextLocalMinima,
                 topLevelScopeTimer,
                 onlyWinners,
+                timer: timer as NodeJS.Timeout,
             })
         })
 

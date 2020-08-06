@@ -1,5 +1,5 @@
 import { searchScopeAndMaybeUpdateBestMetric } from "./bestMetric"
-import { computeResolution } from "./scopeToSamples"
+import { computeResolution, MAXIMUM_UNIT } from "./scopeToSamples"
 import { DynamicParameterScope, Metric, Scope, SubmetricScope, SumOfSquares } from "./types"
 
 export {
@@ -10,4 +10,5 @@ export {
     computeResolution,
     DynamicParameterScope,
     SumOfSquares,
+    MAXIMUM_UNIT,
 }

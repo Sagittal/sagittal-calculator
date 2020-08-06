@@ -1,6 +1,7 @@
-import { Combinations, Count } from "../../general"
+import { Combinations, Count, Unit } from "../../general"
 import { Metric, Scope } from "./bestMetric"
 import { Chunk, ParameterChunk, SolverStatus, SubmetricChunk } from "./solver"
+import { ParameterValue } from "./sumOfSquares"
 
 const scopesToSearch: Scope[] = [] as unknown as Scope[]
 const scopesTimedOut: Scope[] = [] as unknown as Scope[]
@@ -10,6 +11,7 @@ const solverStatus: SolverStatus = {
     finishedPopulating: false,
     populatedScopeCount: 0 as Count<Scope>,
     searchedScopeCount: 0 as Count<Scope>,
+    maximumUnit: 0 as Unit<ParameterValue>,
 }
 
 const bestMetrics: Record<string, Metric> = { }

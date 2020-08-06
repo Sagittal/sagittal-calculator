@@ -1,7 +1,7 @@
 import * as colors from "colors"
 import { program } from "commander"
 import { performance } from "perf_hooks"
-import { Count } from "../../../general"
+import { Count, Unit } from "../../../general"
 import {
     clearDebugLogFiles,
     debugSettings,
@@ -11,7 +11,7 @@ import {
     setDebugTargets,
 } from "../debug"
 import { bestMetrics, solverStatus, scopesTimedOut } from "../globals"
-import { Chunk, populateAndSearchScopes, presentBestMetrics } from "../solver"
+import { Chunk, populateAndSearchScopesAndPerfectMetrics, presentBestMetrics } from "../solver"
 
 program
     .option("-d, --debug-targets [debugTargets]", "debug targets")
@@ -39,7 +39,7 @@ debugTargets[ DebugTarget.POPULATE ] = true
 // debugTargets[ DebugTarget.SCOPE ] = true
 
 const startTime = performance.now()
-populateAndSearchScopes().then(() => {
+populateAndSearchScopesAndPerfectMetrics().then(() => {
     saveDebugMessage(`\n\nAND THE BEST METRICS WERE ${JSON.stringify(presentBestMetrics(bestMetrics), undefined, 4)}`, DebugTarget.ALL)
     saveDebugMessage(`\n\nAND THE COUNT OF TIMED OUT METRICS WAS ${scopesTimedOut.length}`, DebugTarget.ALL)
 

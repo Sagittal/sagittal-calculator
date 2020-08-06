@@ -5,9 +5,9 @@ import { computeRatioSubmetricAntivotes } from "./ratioSubmetricAntivotes"
 const computeWeightedSubmetricAntivotes = (fiveRoughRatio: Ratio, submetric = {}): Antivotes => {
     const {
         weightAsCoefficient = 1 as ParameterValue,
-        weightAsLogarithmBase = undefined,
-        weightAsPowerExponent = undefined,
-        weightAsPowerBase = undefined,
+        weightAsLogarithmBase,
+        weightAsPowerExponent,
+        weightAsPowerBase,
     }: Submetric = submetric
 
     let submetricAntivotes = 0 as Antivotes
