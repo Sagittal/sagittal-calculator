@@ -1,11 +1,15 @@
-import { Metric } from "./bestMetric"
-import { computeUnpopularities } from "./sumOfSquares/unpopularities"
-import { isNumber } from "../../general/code"
-import { Popularity } from "./sumOfSquares/types"
-import { COMMA_POPULARITIES } from "./sumOfSquares/popularities"
-import { CUT_OFF_POPULARITY } from "./sumOfSquares/constants"
+import "colors"
+import { isNumber } from "../../../general/code"
+import { Metric } from "../bestMetric"
+import { DebugTarget, saveDebugMessage, setDebugTargets } from "../debug"
+import { CUT_OFF_POPULARITY } from "../sumOfSquares/constants"
+import { COMMA_POPULARITIES } from "../sumOfSquares/popularities"
+import { Popularity } from "../sumOfSquares/types"
+import { computeUnpopularities } from "../sumOfSquares/unpopularities"
 
-const potentiallyRottens = {} as unknown as Record<string, Metric> // could paste things in from 1.txt, 2.txt, etc.
+setDebugTargets(DebugTarget.ALL)
+
+const potentiallyRottens = {} as unknown as Record<string, Metric> // paste things in from 1.txt, 2.txt, etc.
 
 const realPopularities: Popularity[] = COMMA_POPULARITIES.slice(0, CUT_OFF_POPULARITY)
 
@@ -25,4 +29,4 @@ const noRottens = Object.entries(potentiallyRottens).reduce(
     {} as Record<string, Metric>,
 )
 
-console.log(JSON.stringify(noRottens, null, 4))
+saveDebugMessage(JSON.stringify(noRottens, null, 4), DebugTarget.ALL)

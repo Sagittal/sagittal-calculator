@@ -1,6 +1,6 @@
-import { Combination } from "../../general"
-import { Metric, SumOfSquares } from "./bestMetric"
-import { Parameter, Submetric } from "./sumOfSquares"
+import { Combination } from "../../../general"
+import { Metric, SumOfSquares } from "../bestMetric"
+import { Parameter, Submetric } from "../sumOfSquares"
 
 // Metric to beat: SoPF>3, or sopfr
 const sopfgtt: Metric = {

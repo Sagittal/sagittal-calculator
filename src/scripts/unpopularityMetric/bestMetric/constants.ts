@@ -1,4 +1,4 @@
-import { sopfgtt } from "../bestMetrics"
+import { sopfgtt } from "../results/bestMetrics"
 import { SumOfSquares } from "./types"
 
 const MAXIMUM_SEARCH_TIME: number = 10000
