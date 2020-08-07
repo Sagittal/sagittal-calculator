@@ -37,10 +37,6 @@ const computeSumOfSquaresAndMaybeUpdateBestMetric = (sample: Sample, options: Co
             )
         ) {
             bestMetrics[ metricName ] = { sumOfSquares, submetrics }
-            if (sumOfSquares === 0) {
-                computeSumOfSquaresForSubmetrics(submetrics)
-                throw new Error("This sum-of-squares was 0. That's extremely unlikely and probably means there's a bug in the code and that to continue searching now would be a waste of time.")
-            }
 
             saveDebugMessage(`${indentation}new best metric: ${JSON.stringify(bestMetrics[ metricName ])}`, DebugTarget.NEW_BEST_METRIC)
         }
