@@ -15,6 +15,7 @@ const targetColors: EnumHash<DebugTarget, ColorMethod> = {
     [ DebugTarget.ERRORS ]: "red",
     [ DebugTarget.TIMEOUTS ]: "red",
     [ DebugTarget.NONE ]: "white",
+    [ DebugTarget.FINAL_SOLVER_RESULTS ]: "green",
 }
 
 export {

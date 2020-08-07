@@ -34,15 +34,16 @@ if (!debugSettings.noWrite) {
 
 debugTargets[ DebugTarget.SEARCH ] = true
 debugTargets[ DebugTarget.POPULATE ] = true
+debugTargets[ DebugTarget.FINAL_SOLVER_RESULTS ] = true
 // debugTargets[ DebugTarget.LOCAL_MINIMUM ] = true
 // debugTargets[ DebugTarget.NEW_BEST_METRIC ] = true
 // debugTargets[ DebugTarget.SCOPE ] = true
 
 const startTime = performance.now()
 populateAndSearchScopesAndPerfectMetrics().then(() => {
-    saveDebugMessage(`\n\nAND THE BEST METRICS WERE ${JSON.stringify(presentBestMetrics(bestMetrics), undefined, 4)}`, DebugTarget.ALL)
-    saveDebugMessage(`\n\nAND THE COUNT OF TIMED OUT METRICS WAS ${scopesTimedOut.length}`, DebugTarget.ALL)
+    saveDebugMessage(`\n\nAND THE BEST METRICS WERE ${JSON.stringify(presentBestMetrics(bestMetrics), undefined, 4)}`, DebugTarget.FINAL_SOLVER_RESULTS)
+    saveDebugMessage(`\n\nAND THE COUNT OF TIMED OUT METRICS WAS ${scopesTimedOut.length}`, DebugTarget.FINAL_SOLVER_RESULTS)
 
     const endTime = performance.now()
-    if (time) saveDebugMessage(`\n\nTOOK ${endTime - startTime} MS`, DebugTarget.ALL)
+    if (time) saveDebugMessage(`\n\nTOOK ${endTime - startTime} MS`, DebugTarget.FINAL_SOLVER_RESULTS)
 })

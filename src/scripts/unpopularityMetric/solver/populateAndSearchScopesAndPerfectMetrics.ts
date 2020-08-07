@@ -21,7 +21,7 @@ const populateAndSearchScopesAndPerfectMetrics = async () => {
 
     await searchScopes()
 
-    saveDebugMessage(`\n\nFINAL STATUS ${presentSearchedAndPopulated()}`, DebugTarget.SEARCH)
+    saveDebugMessage(`\n\nFINAL STATUS ${presentSearchedAndPopulated()}`, DebugTarget.FINAL_SOLVER_RESULTS)
 }
 
 export {

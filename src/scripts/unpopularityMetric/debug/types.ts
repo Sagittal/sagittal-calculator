@@ -13,6 +13,7 @@ enum DebugTarget {
     ERRORS = "errors",
     TIMEOUTS = "timeouts",
     NONE = "none",
+    FINAL_SOLVER_RESULTS = "finalSolverResults"
 }
 
 type DebugTargets = EnumHash<DebugTarget, boolean>

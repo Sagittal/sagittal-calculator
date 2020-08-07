@@ -13,6 +13,7 @@ const debugTargets: DebugTargets = {
     [ DebugTarget.ERRORS ]: false,
     [ DebugTarget.TIMEOUTS ]: false,
     [ DebugTarget.NONE ]: false,
+    [ DebugTarget.FINAL_SOLVER_RESULTS ]: false,
 }
 
 export {
