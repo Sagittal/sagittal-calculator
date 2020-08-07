@@ -9,11 +9,10 @@
 //   It does seem to be interruptable in a good way, so that's a good sign.
 
 import { DebugTarget, saveDebugMessage } from "../debug"
-import { bestMetrics, solverStatus } from "../globals"
-import { presentBestMetrics, presentSearchedAndPopulated } from "./present"
+import { solverStatus } from "../globals"
+import { presentSearchedAndPopulated } from "./present"
 import { searchScopes } from "./search"
 import { populateScopes } from "./populate/scopes"
-import { perfectMetrics } from "./perfect"
 
 const populateAndSearchScopesAndPerfectMetrics = async () => {
     populateScopes().then(() => {
@@ -23,11 +22,6 @@ const populateAndSearchScopesAndPerfectMetrics = async () => {
     await searchScopes()
 
     saveDebugMessage(`\n\nFINAL STATUS ${presentSearchedAndPopulated()}`, DebugTarget.SEARCH)
-
-    // // todo: just tempoarary, so it's not a total bust if perfecting is still screwing up
-    // saveDebugMessage(`\n\nAND THE BEST METRICS (BEFORE PERFECTING) WERE ${JSON.stringify(presentBestMetrics(bestMetrics), undefined, 4)}`, DebugTarget.ALL)
-
-    await perfectMetrics()
 }
 
 export {
