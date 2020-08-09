@@ -11,6 +11,7 @@ import { ComputeSumOfSquaresAndMaybeUpdateBestMetricOptions, Metric, SumOfSquare
 const computeSumOfSquaresAndMaybeUpdateBestMetric = (sample: Sample, options: ComputeSumOfSquaresAndMaybeUpdateBestMetricOptions): Promise<void> => {
     const { indentation, sumsOfSquares, index, onlyWinners, spreadDynamicParameters } = options
 
+    // todo improve performance
     return doOnNextEventLoop(() => {
         const { submetrics, samplePoint } = sample
 

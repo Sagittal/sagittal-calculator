@@ -22,6 +22,7 @@ const searchNextLocalMinimum = (nextLocalMinimum: LocalMinimum, options: SearchL
     const nextMetricId = metricId + `.${index + 1}/${(nextLocalMinima.length)}`
     saveDebugMessage(`  ${indentation}id ${nextMetricId} - depth ${nextDepth}`, DebugTarget.PERFECT)
 
+    // todo improve performance
     return doOnNextEventLoop(async () => {
         try {
             await recursiveSearchScopeAndMaybeUpdateBestMetric(nextScope, {
