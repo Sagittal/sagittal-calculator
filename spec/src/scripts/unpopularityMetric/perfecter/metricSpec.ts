@@ -55,7 +55,7 @@ describe("perfectMetric", () => {
                     [ Parameter.K_AS_COEFFICIENT ]: 0.8,
                 },
             ] as Combination<Submetric>,
-            spreadParameters: [ Parameter.K_AS_COEFFICIENT ],
+            spreadDynamicParameters: [ Parameter.K_AS_COEFFICIENT ],
         }
 
         spyOn(recursiveBestMetric, "recursiveSearchScopeAndMaybeUpdateBestMetric")

@@ -1,9 +1,28 @@
+import "colors"
+import { Metric } from "../../bestMetric"
+import { clearDebugLogFiles, debugSettings, DebugTarget, saveDebugMessage, setDebugTargets } from "../../debug"
+import { Parameter, ParameterValue } from "../../sumOfSquares"
+import { PARAMETER_DYNAMISMS } from "../../perfecter"
+import { program } from "commander"
+import * as colors from "colors"
 
+program
+    .option("-d, --debug-targets [debugTargets]", "debug targets")
+    .option("-c, --no-color", "no color")
+    .option("-w, --no-write", "no write")
+    .parse(process.argv)
 
-FINAL STATUS | populated 207551 | searched 207551 | in the queue 0
+setDebugTargets(program.debugTargets || DebugTarget.ALL)
+if (!program.color) {
+    colors.disable()
+}
+debugSettings.noWrite = !program.write
 
+if (!debugSettings.noWrite) {
+    clearDebugLogFiles()
+}
 
-AND THE BEST METRICS WERE {
+const metricsMissingSpreadDynamicParameters = {
     "{sum},{sum},{sum,weightAsPowerExponent}": {
         "sumOfSquares": 0.014206086754420309,
         "submetrics": [
@@ -1075,9 +1094,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "weightAsPowerExponent": 0.05084745762711851
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum,weightAsLogarithmBase},{aAsLogarithmBase,count,withoutRepetition}": {
@@ -1135,9 +1151,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{sum},{aAsLogarithmBase,aAsPowerExponent,count,withoutRepetition}": {
@@ -1264,9 +1277,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "jAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{sum},{aAsLogarithmBase,count,kAsPowerExponent,withoutRepetition}": {
@@ -1481,9 +1491,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "weightAsPowerExponent": 0.05084745762711851
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum,weightAsLogarithmBase},{aAsLogarithmBase,count}": {
@@ -1537,9 +1544,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{sum},{aAsLogarithmBase,aAsPowerExponent,count}": {
@@ -1670,9 +1674,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "jAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{sum},{aAsLogarithmBase,count,kAsPowerExponent}": {
@@ -2051,9 +2052,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{sum},{aAsCoefficient,aAsPowerBase,sum,withoutRepetition}": {
@@ -2166,9 +2164,6 @@ AND THE BEST METRICS WERE {
                 "weightAsCoefficient": 0,
                 "jAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{sum},{aAsCoefficient,jAsCoefficient,sum,withoutRepetition}": {
@@ -2212,9 +2207,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0,
                 "jAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{sum},{kAsPowerBase,sum,weightAsCoefficient,withoutRepetition}": {
@@ -2466,9 +2458,6 @@ AND THE BEST METRICS WERE {
                 "useNuminator": true,
                 "weightAsPowerExponent": 0.05084745762711851
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum,useNuminator},{sum,weightAsPowerExponent}": {
@@ -2509,9 +2498,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "weightAsPowerExponent": 0.05084745762711851
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum,useNuminator},{sum,useNuminator,weightAsPowerExponent}": {
@@ -2555,9 +2541,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 0.05084745762711851,
                 "useNuminator": true
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum,weightAsPowerExponent},{sum,weightAsPowerBase}": {
@@ -2609,9 +2592,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "weightAsPowerExponent": 0.05084745762711851
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum,weightAsPowerExponent},{sum}": {
@@ -2867,9 +2847,6 @@ AND THE BEST METRICS WERE {
                 "weightAsLogarithmBase": 2,
                 "weightAsPowerExponent": 3
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum,weightAsLogarithmBase,weightAsPowerExponent},{sum,weightAsPowerExponent}": {
@@ -2884,9 +2861,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "weightAsPowerExponent": 3
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum,weightAsLogarithmBase,weightAsPowerExponent},{sum,weightAsLogarithmBase,weightAsPowerExponent}": {
@@ -2902,9 +2876,6 @@ AND THE BEST METRICS WERE {
                 "weightAsLogarithmBase": 2,
                 "weightAsPowerExponent": 3
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum},{sum,weightAsLogarithmBase}": {
@@ -2982,9 +2953,6 @@ AND THE BEST METRICS WERE {
                 "useNuminator": true,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{sum,useNuminator},{sum,weightAsCoefficient}": {
@@ -3025,9 +2993,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{sum,useNuminator},{sum,useNuminator,weightAsCoefficient}": {
@@ -3071,9 +3036,6 @@ AND THE BEST METRICS WERE {
                 "weightAsCoefficient": 0.1111111111111111,
                 "useNuminator": true
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{sum,weightAsCoefficient},{sum,weightAsPowerBase}": {
@@ -3101,9 +3063,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerBase": 2,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{sum,weightAsPowerBase},{sum,weightAsCoefficient}": {
@@ -3144,9 +3103,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{sum,weightAsPowerBase},{sum,weightAsCoefficient,weightAsPowerBase}": {
@@ -3190,9 +3146,6 @@ AND THE BEST METRICS WERE {
                 "weightAsCoefficient": 0.1111111111111111,
                 "weightAsPowerBase": 2
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{sum},{sum,weightAsCoefficient,weightAsPowerExponent}": {
@@ -3233,9 +3186,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 0.05084745762711851,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{sum,weightAsPowerExponent},{sum,weightAsCoefficient}": {
@@ -3276,9 +3226,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{sum,weightAsPowerExponent},{sum,weightAsCoefficient,weightAsPowerExponent}": {
@@ -3293,9 +3240,6 @@ AND THE BEST METRICS WERE {
                 "weightAsCoefficient": 0,
                 "weightAsPowerExponent": 0.05084745762711851
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum,weightAsCoefficient,weightAsPowerExponent},{sum,weightAsPowerExponent}": {
@@ -3310,9 +3254,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "weightAsPowerExponent": 0.05084745762711851
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum,weightAsCoefficient,weightAsPowerExponent},{sum,weightAsCoefficient,weightAsPowerExponent}": {
@@ -3328,10 +3269,6 @@ AND THE BEST METRICS WERE {
                 "weightAsCoefficient": 0.1111111111111111,
                 "weightAsPowerExponent": 0.05084745762711851
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient",
-            "weightAsPowerExponent"
         ]
     },
     "{sum},{sum,weightAsCoefficient,weightAsLogarithmBase}": {
@@ -3372,9 +3309,6 @@ AND THE BEST METRICS WERE {
                 "weightAsLogarithmBase": 2,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{sum,weightAsLogarithmBase},{sum,weightAsCoefficient}": {
@@ -3415,9 +3349,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{sum,weightAsLogarithmBase},{sum,weightAsCoefficient,weightAsLogarithmBase}": {
@@ -3461,9 +3392,6 @@ AND THE BEST METRICS WERE {
                 "weightAsCoefficient": 0.1111111111111111,
                 "weightAsLogarithmBase": 2
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{sum,weightAsCoefficient},{sum,weightAsCoefficient}": {
@@ -3659,9 +3587,6 @@ AND THE BEST METRICS WERE {
                 "useNuminator": true,
                 "jAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{sum,useNuminator},{jAsCoefficient,sum}": {
@@ -3702,9 +3627,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "jAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{sum,useNuminator},{jAsCoefficient,sum,useNuminator}": {
@@ -3748,9 +3670,6 @@ AND THE BEST METRICS WERE {
                 "jAsCoefficient": 1,
                 "useNuminator": true
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{sum},{jAsCoefficient,sum,weightAsPowerBase}": {
@@ -3791,9 +3710,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerBase": 2,
                 "jAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{sum,weightAsPowerBase},{jAsCoefficient,sum}": {
@@ -3834,9 +3750,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "jAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{sum,weightAsPowerBase},{jAsCoefficient,sum,weightAsPowerBase}": {
@@ -3880,9 +3793,6 @@ AND THE BEST METRICS WERE {
                 "jAsCoefficient": 1,
                 "weightAsPowerBase": 2
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{sum},{jAsCoefficient,sum,weightAsPowerExponent}": {
@@ -3923,9 +3833,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 0.05084745762711851,
                 "jAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{sum,weightAsPowerExponent},{jAsCoefficient,sum}": {
@@ -3966,9 +3873,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "jAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{sum,weightAsPowerExponent},{jAsCoefficient,sum,weightAsPowerExponent}": {
@@ -3983,9 +3887,6 @@ AND THE BEST METRICS WERE {
                 "jAsCoefficient": 1,
                 "weightAsPowerExponent": 0.05084745762711851
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{jAsCoefficient,sum,weightAsPowerExponent},{sum,weightAsPowerExponent}": {
@@ -4000,9 +3901,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "weightAsPowerExponent": 0.05084745762711851
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{jAsCoefficient,sum,weightAsPowerExponent},{jAsCoefficient,sum,weightAsPowerExponent}": {
@@ -4018,10 +3916,6 @@ AND THE BEST METRICS WERE {
                 "jAsCoefficient": 1,
                 "weightAsPowerExponent": 0.05084745762711851
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient",
-            "weightAsPowerExponent"
         ]
     },
     "{sum},{jAsCoefficient,sum,weightAsLogarithmBase}": {
@@ -4062,9 +3956,6 @@ AND THE BEST METRICS WERE {
                 "weightAsLogarithmBase": 2,
                 "jAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{sum,weightAsLogarithmBase},{jAsCoefficient,sum}": {
@@ -4105,9 +3996,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "jAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{sum,weightAsLogarithmBase},{jAsCoefficient,sum,weightAsLogarithmBase}": {
@@ -4151,9 +4039,6 @@ AND THE BEST METRICS WERE {
                 "jAsCoefficient": 1,
                 "weightAsLogarithmBase": 2
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{sum},{jAsCoefficient,sum,weightAsCoefficient}": {
@@ -4194,9 +4079,6 @@ AND THE BEST METRICS WERE {
                 "weightAsCoefficient": 0,
                 "jAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{sum,weightAsCoefficient},{jAsCoefficient,sum}": {
@@ -4237,9 +4119,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "jAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{sum,weightAsCoefficient},{jAsCoefficient,sum,weightAsCoefficient}": {
@@ -4254,9 +4133,6 @@ AND THE BEST METRICS WERE {
                 "jAsCoefficient": 1,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{jAsCoefficient,sum,weightAsCoefficient},{sum,weightAsCoefficient}": {
@@ -4271,9 +4147,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{jAsCoefficient,sum,weightAsCoefficient},{jAsCoefficient,sum,weightAsCoefficient}": {
@@ -4289,10 +4162,6 @@ AND THE BEST METRICS WERE {
                 "jAsCoefficient": 1,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient",
-            "weightAsCoefficient"
         ]
     },
     "{jAsCoefficient,sum},{jAsCoefficient,sum}": {
@@ -4306,9 +4175,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "jAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{jAsCoefficient,sum},{sum}": {
@@ -4592,9 +4458,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "weightAsPowerExponent": 0.05084745762711851
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum},{sum},{sum,weightAsLogarithmBase}": {
@@ -4719,9 +4582,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{sum},{sum},{jAsCoefficient,sum}": {
@@ -4784,9 +4644,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "jAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{sum},{sum},{sum},{sum}": {
@@ -4824,9 +4681,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "x": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,weightAsPowerBase,y},{max,withoutRepetition}": {
@@ -4856,9 +4710,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "y": 0.8644067796610169
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{sum,weightAsLogarithmBase},{aAsCoefficient,sum,weightAsLogarithmBase}": {
@@ -5029,9 +4880,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerBase": 2,
                 "weightAsPowerExponent": 1.9830508474576272
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum,weightAsPowerBase,weightAsPowerExponent},{sum}": {
@@ -5059,9 +4907,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "weightAsPowerExponent": 1.9830508474576272
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum,weightAsPowerBase},{sum,weightAsPowerBase,weightAsPowerExponent}": {
@@ -5105,9 +4950,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 1.9830508474576272,
                 "weightAsPowerBase": 2
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum},{aAsCoefficient,sum,weightAsLogarithmBase}": {
@@ -5308,9 +5150,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0.8888888888888888,
                 "jAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{aAsCoefficient,sum},{jAsCoefficient,sum}": {
@@ -5351,9 +5190,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "jAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{sum},{sum,weightAsLogarithmBase,weightAsPowerExponent,withoutRepetition}": {
@@ -5403,9 +5239,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "y": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{sum},{modifiedCount,sum,weightAsLogarithmBase,withoutRepetition}": {
@@ -5506,9 +5339,6 @@ AND THE BEST METRICS WERE {
                 "modifiedCount": true,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{aAsCoefficient,sum},{aAsCoefficient,aAsLogarithmBase,modifiedCount,sum}": {
@@ -5524,9 +5354,6 @@ AND THE BEST METRICS WERE {
                 "modifiedCount": true,
                 "aAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{sum},{aAsLogarithmBase,jAsCoefficient,modifiedCount,sum}": {
@@ -5570,9 +5397,6 @@ AND THE BEST METRICS WERE {
                 "modifiedCount": true,
                 "jAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{aAsLogarithmBase,modifiedCount,sum},{sum}": {
@@ -5662,9 +5486,6 @@ AND THE BEST METRICS WERE {
                 "withoutRepetition": true,
                 "weightAsPowerExponent": 2.593220338983051
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{max,modifiedCount,withoutRepetition},{aAsLogarithmBase,jAsPowerExponent,sum}": {
@@ -5888,9 +5709,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsCoefficient,sum,y}": {
@@ -5971,10 +5789,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0.1111111111111111,
                 "y": 0.8644067796610169
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient",
-            "y"
         ]
     },
     "{aAsCoefficient,sum,weightAsPowerExponent,y}": {
@@ -6003,9 +5817,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "aAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{sum},{sum},{aAsLogarithmBase,max,withoutRepetition}": {
@@ -6067,9 +5878,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "w": 3
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,x},{count,x},{max,withoutRepetition,x}": {
@@ -6088,9 +5896,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "x": 2.389830508474576
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,w},{count,w},{max,w,withoutRepetition}": {
@@ -6109,9 +5914,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "w": 2.389830508474576
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,w,x},{max,withoutRepetition}": {
@@ -6141,9 +5943,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "x": 3
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,w,x},{max,w,withoutRepetition,x}": {
@@ -6160,10 +5959,6 @@ AND THE BEST METRICS WERE {
                 "w": 2.796610169491525,
                 "x": 2.898305084745763
             }
-        ],
-        "spreadDynamicParameters": [
-            "w",
-            "x"
         ]
     },
     "{sum,weightAsPowerBase},{sum,usePrimeIndex}": {
@@ -6286,9 +6081,6 @@ AND THE BEST METRICS WERE {
                 "jAsLogarithmBase": 2,
                 "aAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{sum},{aAsLogarithmBase,modifiedCount,sum,weightAsCoefficient}": {
@@ -6690,9 +6482,6 @@ AND THE BEST METRICS WERE {
                 "weightAsLogarithmBase": 2,
                 "weightAsPowerExponent": 3
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum,weightAsPowerBase},{max,weightAsCoefficient,withoutRepetition}": {
@@ -6736,9 +6525,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{sum,weightAsPowerBase},{max,weightAsCoefficient,weightAsPowerBase,withoutRepetition}": {
@@ -6770,9 +6556,6 @@ AND THE BEST METRICS WERE {
                 "weightAsCoefficient": 0.1111111111111111,
                 "weightAsPowerBase": 2
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{sum},{max,weightAsCoefficient,weightAsLogarithmBase,withoutRepetition}": {
@@ -6959,9 +6742,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "jAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{sum,weightAsPowerBase},{jAsCoefficient,max,weightAsPowerBase,withoutRepetition}": {
@@ -7008,9 +6788,6 @@ AND THE BEST METRICS WERE {
                 "jAsCoefficient": 1,
                 "weightAsPowerBase": 2
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{sum,weightAsPowerBase},{kAsCoefficient,max,withoutRepetition}": {
@@ -7250,9 +7027,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 1.1694915254237293,
                 "weightAsPowerBase": 2
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{sum,weightAsPowerBase,weightAsPowerExponent},{aAsLogarithmBase,sum,weightAsPowerExponent}": {
@@ -7268,9 +7042,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "weightAsPowerExponent": 1.3728813559322033
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum,weightAsPowerBase,weightAsPowerExponent},{max,weightAsPowerBase,withoutRepetition}": {
@@ -7317,9 +7088,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerBase": 2,
                 "x": -2.389830508474576
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{aAsPowerExponent,sum},{count,weightAsPowerBase}": {
@@ -7347,9 +7115,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerBase": 2,
                 "aAsPowerExponent": 1.3728813559322033
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{sum},{sum,useNuminator,y}": {
@@ -7496,9 +7261,6 @@ AND THE BEST METRICS WERE {
                 "y": 1.0677966101694913,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{sum,weightAsCoefficient,y},{sum,weightAsCoefficient}": {
@@ -7513,9 +7275,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{sum},{jAsCoefficient,sum,y}": {
@@ -7556,9 +7315,6 @@ AND THE BEST METRICS WERE {
                 "y": 1.0677966101694913,
                 "jAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{sum,y},{jAsCoefficient,sum}": {
@@ -7599,9 +7355,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "jAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{sum,weightAsPowerBase},{max,weightAsPowerBase,withoutRepetition},{aAsLogarithmBase,sum,weightAsPowerBase}": {
@@ -7635,9 +7388,6 @@ AND THE BEST METRICS WERE {
                 "y": 1.0677966101694913,
                 "weightAsPowerExponent": 2.084745762711864
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum,weightAsPowerExponent,y},{sum,weightAsPowerExponent}": {
@@ -7652,9 +7402,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "weightAsPowerExponent": 2.084745762711864
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum,weightAsPowerBase},{count,usePrimeIndex}": {
@@ -7898,9 +7645,6 @@ AND THE BEST METRICS WERE {
                 "weightAsLogarithmBase": 2,
                 "weightAsPowerExponent": 3
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum,weightAsPowerBase},{count,weightAsCoefficient}": {
@@ -7941,9 +7685,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{sum,weightAsPowerBase},{count,weightAsCoefficient,weightAsPowerBase}": {
@@ -7987,9 +7728,6 @@ AND THE BEST METRICS WERE {
                 "weightAsCoefficient": 0.1111111111111111,
                 "weightAsPowerBase": 2
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{sum,weightAsPowerBase},{aAsPowerBase,count}": {
@@ -8111,9 +7849,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "jAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{sum,weightAsPowerBase},{count,jAsCoefficient,weightAsPowerBase}": {
@@ -8157,9 +7892,6 @@ AND THE BEST METRICS WERE {
                 "jAsCoefficient": 1,
                 "weightAsPowerBase": 2
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{sum,weightAsPowerBase},{sum,x}": {
@@ -8337,9 +8069,6 @@ AND THE BEST METRICS WERE {
                 "weightAsLogarithmBase": 2,
                 "y": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{sum,y},{aAsLogarithmBase,max,withoutRepetition}": {
@@ -8369,9 +8098,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "y": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{sum},{sum,weightAsLogarithmBase,x}": {
@@ -8469,9 +8195,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerBase": 2,
                 "y": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{aAsCoefficient,sum},{sum,y}": {
@@ -8638,9 +8361,6 @@ AND THE BEST METRICS WERE {
                 "withoutRepetition": true,
                 "weightAsPowerExponent": 0.35593220338983045
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum,withoutRepetition},{aAsLogarithmBase,sum,w,weightAsPowerExponent}": {
@@ -8768,9 +8488,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 1.4745762711864403,
                 "weightAsPowerBase": 2
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum,weightAsPowerBase,weightAsPowerExponent},{count}": {
@@ -8826,9 +8543,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "weightAsPowerExponent": 1.2711864406779663
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum,weightAsPowerExponent},{count,jAsLogarithmBase}": {
@@ -8910,9 +8624,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 0.4576271186440679,
                 "aAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{sum,weightAsLogarithmBase},{aAsLogarithmBase,sum,weightAsPowerExponent}": {
@@ -8957,9 +8668,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 3,
                 "x": 2.694915254237288
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{aAsPowerExponent,sum},{aAsPowerExponent,max,weightAsPowerBase,withoutRepetition}": {
@@ -8975,9 +8683,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerBase": 2,
                 "aAsPowerExponent": 0.35593220338983045
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,sum},{aAsPowerBase,aAsPowerExponent,max,withoutRepetition}": {
@@ -8993,9 +8698,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerBase": 2,
                 "aAsPowerExponent": 0.35593220338983045
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsCoefficient,max,withoutRepetition},{aAsCoefficient,aAsLogarithmBase,jAsPowerBase,sum}": {
@@ -9012,9 +8714,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerBase": 2,
                 "aAsCoefficient": 0.3333333333333333
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{aAsPowerExponent,jAsPowerExponent,max,withoutRepetition},{aAsLogarithmBase,jAsPowerExponent,sum}": {
@@ -9031,9 +8730,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "jAsPowerExponent": 1.3728813559322033
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{sum},{aAsLogarithmBase,sum,weightAsPowerExponent,y}": {
@@ -9088,9 +8784,6 @@ AND THE BEST METRICS WERE {
                 "usePrimeIndex": true,
                 "x": -0.05084745762711851
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,x},{count,useNuminator,withoutRepetition,x}": {
@@ -9106,9 +8799,6 @@ AND THE BEST METRICS WERE {
                 "useNuminator": true,
                 "x": -0.05084745762711851
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,useNuminator,x},{count,withoutRepetition,x}": {
@@ -9124,9 +8814,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "x": -0.05084745762711851
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,useNuminator,x},{count,useNuminator,withoutRepetition,x}": {
@@ -9143,9 +8830,6 @@ AND THE BEST METRICS WERE {
                 "x": -0.05084745762711851,
                 "useNuminator": true
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,x},{count,withoutRepetition,x,y}": {
@@ -9161,9 +8845,6 @@ AND THE BEST METRICS WERE {
                 "y": -3,
                 "x": -0.05084745762711851
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,w},{count,usePrimeIndex,w,withoutRepetition}": {
@@ -9179,9 +8860,6 @@ AND THE BEST METRICS WERE {
                 "usePrimeIndex": true,
                 "w": -0.05084745762711851
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,w},{count,useNuminator,w,withoutRepetition}": {
@@ -9197,9 +8875,6 @@ AND THE BEST METRICS WERE {
                 "useNuminator": true,
                 "w": -0.05084745762711851
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,useNuminator,w},{count,w,withoutRepetition}": {
@@ -9215,9 +8890,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "w": -0.05084745762711851
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,useNuminator,w},{count,useNuminator,w,withoutRepetition}": {
@@ -9234,9 +8906,6 @@ AND THE BEST METRICS WERE {
                 "w": -0.05084745762711851,
                 "useNuminator": true
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,w},{count,w,withoutRepetition,y}": {
@@ -9252,9 +8921,6 @@ AND THE BEST METRICS WERE {
                 "y": -3,
                 "w": -0.05084745762711851
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,w},{aAsPowerExponent,count,w,withoutRepetition}": {
@@ -9270,9 +8936,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": -3,
                 "w": -0.05084745762711851
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{jAsCoefficient,sum,x},{count,withoutRepetition,x}": {
@@ -9288,9 +8951,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "x": -0.05084745762711851
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{jAsCoefficient,sum,x},{count,jAsCoefficient,withoutRepetition,x}": {
@@ -9307,10 +8967,6 @@ AND THE BEST METRICS WERE {
                 "jAsCoefficient": 1,
                 "x": -0.05084745762711851
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient",
-            "x"
         ]
     },
     "{jAsCoefficient,sum,w},{count,w,withoutRepetition}": {
@@ -9326,9 +8982,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "w": -0.05084745762711851
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{jAsCoefficient,sum,w},{count,jAsCoefficient,w,withoutRepetition}": {
@@ -9345,10 +8998,6 @@ AND THE BEST METRICS WERE {
                 "jAsCoefficient": 1,
                 "w": -0.05084745762711851
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient",
-            "w"
         ]
     },
     "{sum,weightAsLogarithmBase},{max,weightAsCoefficient,weightAsLogarithmBase,withoutRepetition}": {
@@ -9413,9 +9062,6 @@ AND THE BEST METRICS WERE {
                 "x": 0.6610169491525424,
                 "usePrimeIndex": true
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{aAsPowerExponent,sum},{count,withoutRepetition,x}": {
@@ -9459,9 +9105,6 @@ AND THE BEST METRICS WERE {
                 "w": -1.0677966101694916,
                 "aAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{sum},{sum,y},{sum,withoutRepetition}": {
@@ -9539,9 +9182,6 @@ AND THE BEST METRICS WERE {
                 "withoutRepetition": true,
                 "jAsPowerExponent": 0.5593220338983049
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{sum},{sum},{aAsLogarithmBase,sum,y}": {
@@ -9574,10 +9214,6 @@ AND THE BEST METRICS WERE {
                 "weightAsCoefficient": 0.1111111111111111,
                 "x": -0.05084745762711851
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient",
-            "x"
         ]
     },
     "{sum,w,weightAsCoefficient},{count,w,weightAsCoefficient,withoutRepetition}": {
@@ -9594,10 +9230,6 @@ AND THE BEST METRICS WERE {
                 "weightAsCoefficient": 0.1111111111111111,
                 "w": -0.05084745762711851
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient",
-            "w"
         ]
     },
     "{sum,usePrimeIndex},{aAsPowerExponent,sum,usePrimeIndex}": {
@@ -9691,9 +9323,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "y": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{sum,weightAsPowerExponent},{modifiedCount,sum,withoutRepetition}": {
@@ -9752,9 +9381,6 @@ AND THE BEST METRICS WERE {
                 "jAsLogarithmBase": 2,
                 "weightAsPowerExponent": 3
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum,x},{count,withoutRepetition,x},{count,withoutRepetition,x}": {
@@ -9774,9 +9400,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "x": -1.0677966101694916
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,w},{count,w,withoutRepetition},{count,w,withoutRepetition}": {
@@ -9796,9 +9419,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "w": -1.0677966101694916
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,weightAsPowerExponent},{max,usePrimeIndex,withoutRepetition}": {
@@ -10176,9 +9796,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,sum,weightAsPowerBase},{aAsLogarithmBase,sum,weightAsPowerBase}": {
@@ -10210,9 +9827,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 1.1694915254237293,
                 "weightAsPowerBase": 2
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,sum,weightAsPowerBase},{max,withoutRepetition}": {
@@ -10242,9 +9856,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "aAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,sum,weightAsPowerBase},{max,weightAsPowerBase,withoutRepetition}": {
@@ -10289,9 +9900,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "aAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,sum,weightAsPowerBase},{count,weightAsPowerBase,withoutRepetition}": {
@@ -10323,9 +9931,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 1.1694915254237293,
                 "weightAsPowerBase": 2
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,sum,weightAsPowerExponent},{count,withoutRepetition}": {
@@ -10355,9 +9960,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "aAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,sum,weightAsPowerExponent},{count,weightAsPowerExponent,withoutRepetition}": {
@@ -10373,9 +9975,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "weightAsPowerExponent": 2.694915254237288
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,sum,weightAsPowerExponent},{aAsPowerExponent,count,weightAsPowerExponent,withoutRepetition}": {
@@ -10392,10 +9991,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 1.1694915254237293,
                 "weightAsPowerExponent": 2.694915254237288
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent",
-            "weightAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,sum},{aAsLogarithmBase,count,withoutRepetition}": {
@@ -10425,9 +10020,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,sum,weightAsPowerBase},{count}": {
@@ -10455,9 +10047,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "aAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,sum,weightAsPowerBase},{count,weightAsPowerBase}": {
@@ -10487,9 +10076,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 1.1694915254237293,
                 "weightAsPowerBase": 2
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,sum},{aAsLogarithmBase,count}": {
@@ -10517,9 +10103,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,sum,weightAsPowerBase},{sum,withoutRepetition}": {
@@ -10549,9 +10132,6 @@ AND THE BEST METRICS WERE {
                 "withoutRepetition": true,
                 "aAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,sum,weightAsPowerBase},{sum,weightAsPowerBase,withoutRepetition}": {
@@ -10596,9 +10176,6 @@ AND THE BEST METRICS WERE {
                 "weightAsCoefficient": 0,
                 "aAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,sum},{aAsCoefficient,sum,withoutRepetition}": {
@@ -10628,9 +10205,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0,
                 "aAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,sum},{aAsPowerExponent,sum,useNuminator}": {
@@ -10645,9 +10219,6 @@ AND THE BEST METRICS WERE {
                 "useNuminator": true,
                 "aAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,sum,useNuminator},{aAsPowerExponent,sum}": {
@@ -10662,9 +10233,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "aAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,sum,useNuminator},{aAsPowerExponent,sum,useNuminator}": {
@@ -10680,9 +10248,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 1.1694915254237293,
                 "useNuminator": true
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,sum},{aAsPowerExponent,sum,weightAsPowerBase}": {
@@ -10697,9 +10262,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerBase": 2,
                 "aAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,sum,weightAsPowerBase},{aAsPowerExponent,sum}": {
@@ -10714,9 +10276,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "aAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,sum,weightAsPowerBase},{aAsPowerExponent,sum,weightAsPowerBase}": {
@@ -10732,9 +10291,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 1.1694915254237293,
                 "weightAsPowerBase": 2
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,sum},{aAsPowerExponent,sum,weightAsPowerExponent}": {
@@ -10749,9 +10305,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 0.05084745762711851,
                 "aAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,sum,weightAsPowerExponent},{aAsPowerExponent,sum}": {
@@ -10766,9 +10319,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "aAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,sum,weightAsPowerExponent},{aAsPowerExponent,sum,weightAsPowerExponent}": {
@@ -10784,10 +10334,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 1.1694915254237293,
                 "weightAsPowerExponent": 0.05084745762711851
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent",
-            "weightAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,sum},{aAsPowerExponent,sum,weightAsLogarithmBase}": {
@@ -10802,9 +10348,6 @@ AND THE BEST METRICS WERE {
                 "weightAsLogarithmBase": 2,
                 "aAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,sum,weightAsLogarithmBase},{aAsPowerExponent,sum}": {
@@ -10819,9 +10362,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "aAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,sum,weightAsLogarithmBase},{aAsPowerExponent,sum,weightAsLogarithmBase}": {
@@ -10837,9 +10377,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 1.1694915254237293,
                 "weightAsLogarithmBase": 2
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,sum},{aAsPowerExponent,sum,weightAsCoefficient}": {
@@ -10854,9 +10391,6 @@ AND THE BEST METRICS WERE {
                 "weightAsCoefficient": 0,
                 "aAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,sum,weightAsCoefficient},{aAsPowerExponent,sum}": {
@@ -10871,9 +10405,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "aAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,sum,weightAsCoefficient},{aAsPowerExponent,sum,weightAsCoefficient}": {
@@ -10889,10 +10420,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 1.1694915254237293,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent",
-            "weightAsCoefficient"
         ]
     },
     "{aAsPowerExponent,sum},{aAsCoefficient,aAsPowerExponent,sum}": {
@@ -10907,9 +10434,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0,
                 "aAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsCoefficient,aAsPowerExponent,sum},{aAsPowerExponent,sum}": {
@@ -10924,9 +10448,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "aAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsCoefficient,aAsPowerExponent,sum},{aAsCoefficient,aAsPowerExponent,sum}": {
@@ -10942,10 +10463,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0.1111111111111111,
                 "aAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient",
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,sum},{aAsPowerExponent,jAsCoefficient,sum}": {
@@ -10960,9 +10477,6 @@ AND THE BEST METRICS WERE {
                 "jAsCoefficient": 1,
                 "aAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,jAsCoefficient,sum},{aAsPowerExponent,sum}": {
@@ -10977,9 +10491,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "aAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,jAsCoefficient,sum},{aAsPowerExponent,jAsCoefficient,sum}": {
@@ -10995,10 +10506,6 @@ AND THE BEST METRICS WERE {
                 "jAsCoefficient": 1,
                 "aAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient",
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,sum},{aAsPowerExponent,sum},{aAsPowerExponent,sum}": {
@@ -11016,9 +10523,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "aAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{sum},{sum},{count,weightAsLogarithmBase}": {
@@ -11049,9 +10553,6 @@ AND THE BEST METRICS WERE {
                 "usePrimeIndex": true,
                 "weightAsPowerExponent": 1.6779661016949152
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum,weightAsPowerBase},{jAsPowerExponent,sum,weightAsPowerBase,withoutRepetition}": {
@@ -11082,9 +10583,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "jAsPowerExponent": 1.9830508474576272
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{sum},{sum},{count,weightAsLogarithmBase,withoutRepetition}": {
@@ -11362,9 +10860,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "weightAsPowerExponent": 0.4576271186440679
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum,weightAsPowerBase},{count,weightAsPowerBase,weightAsPowerExponent,withoutRepetition}": {
@@ -11411,9 +10906,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 0.4576271186440679,
                 "weightAsPowerBase": 2
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum,weightAsPowerBase},{count,weightAsLogarithmBase,withoutRepetition}": {
@@ -11472,9 +10964,6 @@ AND THE BEST METRICS WERE {
                 "weightAsLogarithmBase": 2,
                 "weightAsPowerExponent": 3
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum,weightAsPowerBase},{count,weightAsCoefficient,withoutRepetition}": {
@@ -11518,9 +11007,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{sum,weightAsPowerBase},{count,weightAsCoefficient,weightAsPowerBase,withoutRepetition}": {
@@ -11567,9 +11053,6 @@ AND THE BEST METRICS WERE {
                 "weightAsCoefficient": 0.1111111111111111,
                 "weightAsPowerBase": 2
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{sum,weightAsPowerBase},{aAsPowerBase,count,withoutRepetition}": {
@@ -11700,9 +11183,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "jAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{sum,weightAsPowerBase},{count,jAsCoefficient,weightAsPowerBase,withoutRepetition}": {
@@ -11749,9 +11229,6 @@ AND THE BEST METRICS WERE {
                 "jAsCoefficient": 1,
                 "weightAsPowerBase": 2
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{sum,weightAsPowerBase},{count,kAsPowerBase,withoutRepetition}": {
@@ -11929,9 +11406,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "w": -1.7796610169491525
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,weightAsPowerExponent},{count,jAsLogarithmBase,withoutRepetition}": {
@@ -11996,9 +11470,6 @@ AND THE BEST METRICS WERE {
                 "withoutRepetition": true,
                 "y": 1.6779661016949152
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{sum,x},{count,jAsLogarithmBase,withoutRepetition}": {
@@ -12041,9 +11512,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "weightAsCoefficient": 0.3333333333333333
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{aAsCoefficient,sum},{aAsCoefficient,count,weightAsPowerBase,withoutRepetition}": {
@@ -12059,9 +11527,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerBase": 2,
                 "aAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{sum,weightAsLogarithmBase,x},{count,withoutRepetition,x}": {
@@ -12077,9 +11542,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "x": -1.0677966101694916
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,w,weightAsLogarithmBase},{count,w,withoutRepetition}": {
@@ -12095,9 +11557,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "w": -1.0677966101694916
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum},{sum},{sum},{count}": {
@@ -12144,9 +11603,6 @@ AND THE BEST METRICS WERE {
                 "weightAsLogarithmBase": 2,
                 "weightAsPowerExponent": 3
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum},{sum},{count,kAsPowerBase,withoutRepetition}": {
@@ -12389,9 +11845,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "jAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{sum},{sum},{count,kAsPowerExponent,withoutRepetition}": {
@@ -12627,9 +12080,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0.3333333333333333,
                 "weightAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{sum},{aAsCoefficient,max,withoutRepetition}": {
@@ -12686,9 +12136,6 @@ AND THE BEST METRICS WERE {
                 "weightAsCoefficient": 0.3333333333333333,
                 "jAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{jAsCoefficient,sum},{aAsCoefficient,max,withoutRepetition}": {
@@ -12718,9 +12165,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0.3333333333333333,
                 "jAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{sum},{kAsCoefficient,max,weightAsCoefficient,withoutRepetition}": {
@@ -12814,9 +12258,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "weightAsCoefficient": 0.3333333333333333
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{sum,weightAsPowerBase,y},{max,weightAsPowerBase,withoutRepetition}": {
@@ -12848,9 +12289,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerBase": 2,
                 "y": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{sum,weightAsPowerExponent},{count},{count,withoutRepetition}": {
@@ -13121,9 +12559,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "jAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{sum,w},{count,jAsCoefficient,withoutRepetition}": {
@@ -13167,9 +12602,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "jAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{sum,x},{count,kAsPowerBase,withoutRepetition}": {
@@ -13317,10 +12749,6 @@ AND THE BEST METRICS WERE {
                 "y": 0.9661016949152543,
                 "v": 0.4576271186440679
             }
-        ],
-        "spreadDynamicParameters": [
-            "y",
-            "v"
         ]
     },
     "{sum},{sum},{count,withoutRepetition,x}": {
@@ -13732,9 +13160,6 @@ AND THE BEST METRICS WERE {
                 "usePrimeIndex": true,
                 "weightAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum},{count,useNuminator,weightAsPowerExponent,withoutRepetition}": {
@@ -13778,9 +13203,6 @@ AND THE BEST METRICS WERE {
                 "useNuminator": true,
                 "weightAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum,useNuminator},{count,weightAsPowerExponent,withoutRepetition}": {
@@ -13824,9 +13246,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "weightAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum,useNuminator},{count,useNuminator,weightAsPowerExponent,withoutRepetition}": {
@@ -13873,9 +13292,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 1.0677966101694913,
                 "useNuminator": true
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum,weightAsPowerExponent},{count,withoutRepetition,y}": {
@@ -13905,9 +13321,6 @@ AND THE BEST METRICS WERE {
                 "y": -3,
                 "weightAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum},{count,weightAsPowerExponent,withoutRepetition,x}": {
@@ -14034,9 +13447,6 @@ AND THE BEST METRICS WERE {
                 "weightAsLogarithmBase": 2,
                 "weightAsPowerExponent": 3
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum},{count,usePrimeIndex,weightAsCoefficient,withoutRepetition}": {
@@ -14151,9 +13561,6 @@ AND THE BEST METRICS WERE {
                 "x": -0.4576271186440679,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{sum},{count,w,weightAsCoefficient,withoutRepetition}": {
@@ -14197,9 +13604,6 @@ AND THE BEST METRICS WERE {
                 "w": -0.4576271186440679,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{sum},{count,weightAsCoefficient,weightAsPowerBase,withoutRepetition}": {
@@ -14257,9 +13661,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 0.6610169491525424,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{sum,weightAsCoefficient,weightAsPowerExponent},{count,withoutRepetition}": {
@@ -14289,9 +13690,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{sum,weightAsCoefficient,weightAsPowerExponent},{count,weightAsPowerExponent,withoutRepetition}": {
@@ -14307,9 +13705,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "weightAsPowerExponent": 1.7796610169491522
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum,weightAsCoefficient,weightAsPowerExponent},{count,weightAsCoefficient,weightAsPowerExponent,withoutRepetition}": {
@@ -14326,10 +13721,6 @@ AND THE BEST METRICS WERE {
                 "weightAsCoefficient": 0.1111111111111111,
                 "weightAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient",
-            "weightAsPowerExponent"
         ]
     },
     "{sum},{count,weightAsCoefficient,weightAsLogarithmBase,withoutRepetition}": {
@@ -14428,9 +13819,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerBase": 2,
                 "weightAsPowerExponent": 1.5762711864406782
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum},{aAsPowerBase,count,weightAsCoefficient,withoutRepetition}": {
@@ -14502,9 +13890,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": -3,
                 "weightAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum},{aAsPowerExponent,count,weightAsCoefficient,withoutRepetition}": {
@@ -14703,9 +14088,6 @@ AND THE BEST METRICS WERE {
                 "x": -0.4576271186440679,
                 "jAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{jAsCoefficient,sum},{count,w,withoutRepetition}": {
@@ -14735,9 +14117,6 @@ AND THE BEST METRICS WERE {
                 "w": -0.4576271186440679,
                 "jAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{sum},{count,jAsCoefficient,weightAsPowerExponent,withoutRepetition}": {
@@ -14781,9 +14160,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 0.6610169491525424,
                 "jAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{sum,weightAsPowerExponent},{count,jAsCoefficient,withoutRepetition}": {
@@ -14827,9 +14203,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "jAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{sum,weightAsPowerExponent},{count,jAsCoefficient,weightAsPowerExponent,withoutRepetition}": {
@@ -14845,9 +14218,6 @@ AND THE BEST METRICS WERE {
                 "jAsCoefficient": 1,
                 "weightAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{jAsCoefficient,sum,weightAsPowerExponent},{count,weightAsPowerExponent,withoutRepetition}": {
@@ -14863,9 +14233,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "weightAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{jAsCoefficient,sum,weightAsPowerExponent},{count,jAsCoefficient,weightAsPowerExponent,withoutRepetition}": {
@@ -14882,10 +14249,6 @@ AND THE BEST METRICS WERE {
                 "jAsCoefficient": 1,
                 "weightAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient",
-            "weightAsPowerExponent"
         ]
     },
     "{sum},{count,jAsCoefficient,weightAsCoefficient,withoutRepetition}": {
@@ -14929,9 +14292,6 @@ AND THE BEST METRICS WERE {
                 "weightAsCoefficient": 0.5555555555555556,
                 "jAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{jAsCoefficient,sum},{aAsCoefficient,count,withoutRepetition}": {
@@ -14961,9 +14321,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0.5555555555555556,
                 "jAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{sum},{count,kAsPowerBase,weightAsPowerExponent,withoutRepetition}": {
@@ -15007,9 +14364,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerBase": 2,
                 "weightAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum},{count,kAsPowerBase,weightAsCoefficient,withoutRepetition}": {
@@ -15067,9 +14421,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerExponent": 0.05084745762711851,
                 "weightAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum},{count,kAsPowerExponent,weightAsCoefficient,withoutRepetition}": {
@@ -15171,9 +14522,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "weightAsPowerExponent": 1.3728813559322033
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum},{sum},{count,w,withoutRepetition}": {
@@ -15317,9 +14665,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "weightAsCoefficient": 0.3333333333333333
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{sum,w,weightAsCoefficient},{count,weightAsCoefficient,withoutRepetition}": {
@@ -15335,9 +14680,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "weightAsCoefficient": 0.3333333333333333
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{sum,x},{count,weightAsLogarithmBase,withoutRepetition}": {
@@ -15413,9 +14755,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerBase": 2,
                 "w": -1.0677966101694916
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{aAsCoefficient,sum,x},{count,withoutRepetition,x}": {
@@ -15431,9 +14770,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "x": -1.1694915254237288
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,x},{count},{count,withoutRepetition}": {
@@ -15508,9 +14844,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerBase": 2,
                 "x": -1.271186440677966
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{aAsPowerExponent,sum,y},{count,withoutRepetition}": {
@@ -15540,9 +14873,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "aAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,sum,y},{count,withoutRepetition,y}": {
@@ -15558,9 +14888,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "y": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{aAsPowerExponent,sum,y},{aAsPowerExponent,count,withoutRepetition,y}": {
@@ -15577,10 +14904,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 1.0677966101694913,
                 "y": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent",
-            "y"
         ]
     },
     "{max,usePrimeIndex,withoutRepetition},{aAsLogarithmBase,sum,usePrimeIndex,w}": {
@@ -15614,9 +14937,6 @@ AND THE BEST METRICS WERE {
                 "w": 0.35593220338983045,
                 "usePrimeIndex": true
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{kAsPowerExponent,sum},{count,weightAsPowerBase,withoutRepetition}": {
@@ -15646,9 +14966,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerBase": 2,
                 "kAsPowerExponent": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{sum,x},{count,modifiedCount,withoutRepetition,x}": {
@@ -15664,9 +14981,6 @@ AND THE BEST METRICS WERE {
                 "modifiedCount": true,
                 "x": -1.271186440677966
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,w},{count,modifiedCount,w,withoutRepetition}": {
@@ -15682,9 +14996,6 @@ AND THE BEST METRICS WERE {
                 "modifiedCount": true,
                 "w": -1.271186440677966
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum},{modifiedCount,sum,weightAsPowerExponent,withoutRepetition}": {
@@ -15714,10 +15025,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0.8888888888888888,
                 "weightAsCoefficient": 0.3333333333333333
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient",
-            "weightAsCoefficient"
         ]
     },
     "{sum,y},{aAsLogarithmBase,modifiedCount,sum}": {
@@ -15761,9 +15068,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "x": -1.0677966101694916
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,w,weightAsCoefficient},{count,w,withoutRepetition}": {
@@ -15779,9 +15083,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "w": -1.0677966101694916
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{aAsPowerExponent,sum},{aAsPowerExponent,count,withoutRepetition,x}": {
@@ -15797,9 +15098,6 @@ AND THE BEST METRICS WERE {
                 "x": -0.4576271186440679,
                 "aAsPowerExponent": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,sum},{count,weightAsCoefficient,withoutRepetition}": {
@@ -15829,9 +15127,6 @@ AND THE BEST METRICS WERE {
                 "weightAsCoefficient": 0.5555555555555556,
                 "aAsPowerExponent": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,sum},{aAsCoefficient,count,withoutRepetition}": {
@@ -15861,9 +15156,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0.5555555555555556,
                 "aAsPowerExponent": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{sum,weightAsPowerExponent,y},{count,y}": {
@@ -15878,9 +15170,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "y": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{sum},{aAsCoefficient,sum},{count,withoutRepetition}": {
@@ -15968,9 +15257,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "jAsPowerExponent": 0.5593220338983049
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{sum,x},{aAsLogarithmBase,count,withoutRepetition,x}": {
@@ -15986,9 +15272,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "x": 0.35593220338983045
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum},{sum,y},{count}": {
@@ -16048,9 +15331,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "w": 0.4576271186440679
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,w},{aAsCoefficient,sum,w,withoutRepetition}": {
@@ -16066,9 +15346,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0,
                 "w": 0.4576271186440679
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,weightAsPowerExponent,y},{count}": {
@@ -16111,9 +15388,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "aAsCoefficient": 0.5555555555555556
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{sum,weightAsPowerExponent},{count,weightAsPowerExponent},{count,weightAsPowerExponent,withoutRepetition}": {
@@ -16132,9 +15406,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "weightAsPowerExponent": 1.3728813559322033
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,sum},{aAsPowerExponent,modifiedCount,sum}": {
@@ -16149,9 +15420,6 @@ AND THE BEST METRICS WERE {
                 "modifiedCount": true,
                 "aAsPowerExponent": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,modifiedCount,sum},{aAsPowerExponent,sum}": {
@@ -16166,9 +15434,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "aAsPowerExponent": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{sum},{count,withoutRepetition},{max,weightAsPowerExponent,withoutRepetition}": {
@@ -16248,9 +15513,6 @@ AND THE BEST METRICS WERE {
                 "weightAsLogarithmBase": 2,
                 "aAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{sum},{sum},{count,kAsPowerBase}": {
@@ -16351,9 +15613,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "x": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,weightAsPowerBase,x},{count,weightAsPowerBase,withoutRepetition,x}": {
@@ -16370,9 +15629,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerBase": 2,
                 "x": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,w,weightAsPowerBase},{count,withoutRepetition}": {
@@ -16417,9 +15673,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "w": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,w,weightAsPowerBase},{count,w,weightAsPowerBase,withoutRepetition}": {
@@ -16436,9 +15689,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerBase": 2,
                 "w": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,weightAsPowerBase,x},{sum,withoutRepetition}": {
@@ -16483,9 +15733,6 @@ AND THE BEST METRICS WERE {
                 "withoutRepetition": true,
                 "x": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,weightAsPowerBase,x},{sum,weightAsPowerBase,withoutRepetition,x}": {
@@ -16502,9 +15749,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerBase": 2,
                 "x": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,w,weightAsPowerBase},{sum,withoutRepetition}": {
@@ -16549,9 +15793,6 @@ AND THE BEST METRICS WERE {
                 "withoutRepetition": true,
                 "w": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,w,weightAsPowerBase},{sum,w,weightAsPowerBase,withoutRepetition}": {
@@ -16568,9 +15809,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerBase": 2,
                 "w": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,x,y},{count,x}": {
@@ -16585,9 +15823,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "x": -0.05084745762711851
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,w,y},{count,w}": {
@@ -16602,9 +15837,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "w": -0.05084745762711851
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum},{aAsLogarithmBase,sum,w,withoutRepetition}": {
@@ -16637,9 +15869,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "weightAsPowerExponent": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum,weightAsPowerBase,weightAsPowerExponent},{sum,weightAsPowerBase,weightAsPowerExponent,withoutRepetition}": {
@@ -16656,9 +15885,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 0.8644067796610169,
                 "weightAsPowerBase": 2
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum,weightAsCoefficient,weightAsPowerBase},{sum,weightAsPowerBase,withoutRepetition}": {
@@ -16720,9 +15946,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "weightAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum,y},{count,weightAsPowerExponent,y}": {
@@ -16737,9 +15960,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 0.9661016949152543,
                 "y": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{sum,weightAsPowerExponent,y},{count,weightAsPowerExponent,y}": {
@@ -16755,10 +15975,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 1.0677966101694913,
                 "y": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent",
-            "y"
         ]
     },
     "{sum,y},{count,weightAsCoefficient}": {
@@ -16786,9 +16002,6 @@ AND THE BEST METRICS WERE {
                 "weightAsCoefficient": 0.8888888888888888,
                 "y": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{sum,y},{aAsCoefficient,count}": {
@@ -16816,9 +16029,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0.8888888888888888,
                 "y": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{sum,y},{sum,x,y}": {
@@ -16833,9 +16043,6 @@ AND THE BEST METRICS WERE {
                 "x": 1.7796610169491522,
                 "y": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{sum,x,y},{sum,y}": {
@@ -16850,9 +16057,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "y": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{sum,y},{sum,w,y}": {
@@ -16867,9 +16071,6 @@ AND THE BEST METRICS WERE {
                 "w": 1.7796610169491522,
                 "y": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{sum,w,y},{sum,y}": {
@@ -16884,9 +16085,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "y": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{sum,weightAsPowerExponent},{count,weightAsLogarithmBase}": {
@@ -16918,9 +16116,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "y": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{kAsCoefficient,sum},{jAsPowerExponent,max,withoutRepetition}": {
@@ -17017,9 +16212,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "weightAsPowerExponent": 3
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum},{aAsLogarithmBase,aAsPowerExponent,modifiedCount,sum}": {
@@ -17118,9 +16310,6 @@ AND THE BEST METRICS WERE {
                 "weightAsLogarithmBase": 2,
                 "aAsCoefficient": 0.5555555555555556
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{sum},{sum},{sum,usePrimeIndex}": {
@@ -17206,9 +16395,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerBase": 2,
                 "weightAsPowerExponent": 1.4745762711864403
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum},{count,kAsPowerBase,weightAsCoefficient}": {
@@ -17237,9 +16423,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 0.4576271186440679,
                 "weightAsPowerBase": 2
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum,y},{sum,v,y}": {
@@ -17254,9 +16437,6 @@ AND THE BEST METRICS WERE {
                 "v": -0.9661016949152543,
                 "y": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{sum,v,y},{sum,y}": {
@@ -17271,9 +16451,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "y": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{sum},{count,jAsPowerExponent,usePrimeIndex,withoutRepetition}": {
@@ -17443,9 +16620,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 2.084745762711864,
                 "jAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{sum},{count,jAsPowerExponent,kAsPowerBase,withoutRepetition}": {
@@ -17576,9 +16750,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 1.3728813559322033,
                 "usePrimeIndex": true
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{sum},{sum,weightAsLogarithmBase,withoutRepetition},{count}": {
@@ -17779,9 +16950,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "jAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{sum,x,y},{count,withoutRepetition,x}": {
@@ -17797,9 +16965,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "x": -0.05084745762711851
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,x,y},{count,withoutRepetition,x,y}": {
@@ -17816,10 +16981,6 @@ AND THE BEST METRICS WERE {
                 "x": -0.05084745762711851,
                 "y": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "x",
-            "y"
         ]
     },
     "{sum,w,y},{count,w,withoutRepetition}": {
@@ -17835,9 +16996,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "w": -0.05084745762711851
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,w,y},{count,w,withoutRepetition,y}": {
@@ -17854,10 +17012,6 @@ AND THE BEST METRICS WERE {
                 "w": -0.05084745762711851,
                 "y": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "w",
-            "y"
         ]
     },
     "{max,usePrimeIndex,weightAsPowerExponent,withoutRepetition},{aAsLogarithmBase,sum}": {
@@ -17928,9 +17082,6 @@ AND THE BEST METRICS WERE {
                 "weightAsLogarithmBase": 2,
                 "x": -0.05084745762711851
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,w},{count,w,weightAsLogarithmBase}": {
@@ -17945,9 +17096,6 @@ AND THE BEST METRICS WERE {
                 "weightAsLogarithmBase": 2,
                 "w": -0.05084745762711851
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum},{count,weightAsCoefficient,weightAsLogarithmBase}": {
@@ -17978,9 +17126,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "aAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{sum,y},{sum,y},{max,withoutRepetition,y}": {
@@ -17999,9 +17144,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "y": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{sum,weightAsCoefficient},{sum,weightAsCoefficient},{count,weightAsCoefficient}": {
@@ -18019,9 +17161,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "weightAsCoefficient": 0.3333333333333333
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{sum},{count,weightAsPowerBase,x}": {
@@ -18088,9 +17227,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerBase": 2,
                 "aAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{kAsPowerExponent,sum,weightAsCoefficient},{count,weightAsCoefficient}": {
@@ -18105,9 +17241,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "weightAsCoefficient": 0.3333333333333333
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{aAsCoefficient,sum},{aAsCoefficient,sum,weightAsLogarithmBase}": {
@@ -18122,9 +17255,6 @@ AND THE BEST METRICS WERE {
                 "weightAsLogarithmBase": 2,
                 "aAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{aAsCoefficient,sum,weightAsLogarithmBase},{aAsCoefficient,sum}": {
@@ -18139,9 +17269,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "aAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{sum},{sum},{count,kAsPowerExponent}": {
@@ -18381,9 +17508,6 @@ AND THE BEST METRICS WERE {
                 "usePrimeIndex": true,
                 "x": -0.15254237288135597
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,x},{count,useNuminator,x}": {
@@ -18398,9 +17522,6 @@ AND THE BEST METRICS WERE {
                 "useNuminator": true,
                 "x": -0.15254237288135597
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,useNuminator},{count,x}": {
@@ -18428,9 +17549,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "x": -0.15254237288135597
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,useNuminator},{count,useNuminator,x}": {
@@ -18460,9 +17578,6 @@ AND THE BEST METRICS WERE {
                 "x": -0.15254237288135597,
                 "useNuminator": true
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum},{count,usePrimeIndex,w}": {
@@ -18490,9 +17605,6 @@ AND THE BEST METRICS WERE {
                 "usePrimeIndex": true,
                 "w": -0.15254237288135597
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum},{count,useNuminator,w}": {
@@ -18520,9 +17632,6 @@ AND THE BEST METRICS WERE {
                 "useNuminator": true,
                 "w": -0.15254237288135597
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,useNuminator},{count,w}": {
@@ -18550,9 +17659,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "w": -0.15254237288135597
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,useNuminator},{count,useNuminator,w}": {
@@ -18582,9 +17688,6 @@ AND THE BEST METRICS WERE {
                 "w": -0.15254237288135597,
                 "useNuminator": true
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum},{count,w,x}": {
@@ -18638,9 +17741,6 @@ AND THE BEST METRICS WERE {
                 "usePrimeIndex": true,
                 "weightAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum},{count,useNuminator,weightAsPowerExponent}": {
@@ -18681,9 +17781,6 @@ AND THE BEST METRICS WERE {
                 "useNuminator": true,
                 "weightAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum,useNuminator},{count,weightAsPowerExponent}": {
@@ -18724,9 +17821,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "weightAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum,useNuminator},{count,useNuminator,weightAsPowerExponent}": {
@@ -18770,9 +17864,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 1.0677966101694913,
                 "useNuminator": true
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum},{count,weightAsPowerExponent,x}": {
@@ -18942,9 +18033,6 @@ AND THE BEST METRICS WERE {
                 "x": -0.4576271186440679,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{sum,weightAsCoefficient,x},{count,weightAsCoefficient,x}": {
@@ -18960,10 +18048,6 @@ AND THE BEST METRICS WERE {
                 "weightAsCoefficient": 0.1111111111111111,
                 "x": -0.15254237288135597
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient",
-            "x"
         ]
     },
     "{sum},{count,w,weightAsCoefficient}": {
@@ -19004,9 +18088,6 @@ AND THE BEST METRICS WERE {
                 "w": -0.4576271186440679,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{sum,w,weightAsCoefficient},{count,w,weightAsCoefficient}": {
@@ -19022,10 +18103,6 @@ AND THE BEST METRICS WERE {
                 "weightAsCoefficient": 0.1111111111111111,
                 "w": -0.15254237288135597
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient",
-            "w"
         ]
     },
     "{sum},{count,weightAsCoefficient,weightAsPowerExponent}": {
@@ -19066,9 +18143,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 0.7627118644067798,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{sum,weightAsCoefficient,weightAsPowerExponent},{count}": {
@@ -19096,9 +18170,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{sum,weightAsCoefficient,weightAsPowerExponent},{count,weightAsPowerExponent}": {
@@ -19113,9 +18184,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "weightAsPowerExponent": 1.8813559322033901
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum,weightAsCoefficient,weightAsPowerExponent},{count,weightAsCoefficient,weightAsPowerExponent}": {
@@ -19131,10 +18199,6 @@ AND THE BEST METRICS WERE {
                 "weightAsCoefficient": 0.1111111111111111,
                 "weightAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient",
-            "weightAsPowerExponent"
         ]
     },
     "{sum},{count,weightAsCoefficient}": {
@@ -19213,9 +18277,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerBase": 2,
                 "weightAsPowerExponent": 1.7796610169491522
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum},{aAsPowerBase,count,weightAsCoefficient}": {
@@ -19256,9 +18317,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": -3,
                 "w": -0.15254237288135597
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum},{aAsPowerExponent,count,weightAsPowerExponent}": {
@@ -19299,9 +18357,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": -3,
                 "weightAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum},{aAsPowerExponent,count,weightAsCoefficient}": {
@@ -19460,9 +18515,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0.5555555555555556,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{sum},{aAsCoefficient,aAsPowerBase,count}": {
@@ -19528,9 +18580,6 @@ AND THE BEST METRICS WERE {
                 "x": -0.4576271186440679,
                 "jAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{jAsCoefficient,sum,x},{count,x}": {
@@ -19545,9 +18594,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "x": -0.15254237288135597
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{jAsCoefficient,sum,x},{count,jAsCoefficient,x}": {
@@ -19563,10 +18609,6 @@ AND THE BEST METRICS WERE {
                 "jAsCoefficient": 1,
                 "x": -0.15254237288135597
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient",
-            "x"
         ]
     },
     "{jAsCoefficient,sum},{count,w}": {
@@ -19594,9 +18636,6 @@ AND THE BEST METRICS WERE {
                 "w": -0.4576271186440679,
                 "jAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{jAsCoefficient,sum,w},{count,w}": {
@@ -19611,9 +18650,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "w": -0.15254237288135597
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{jAsCoefficient,sum,w},{count,jAsCoefficient,w}": {
@@ -19629,10 +18665,6 @@ AND THE BEST METRICS WERE {
                 "jAsCoefficient": 1,
                 "w": -0.15254237288135597
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient",
-            "w"
         ]
     },
     "{jAsCoefficient,sum},{count,weightAsPowerExponent}": {
@@ -19660,9 +18692,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 0.7627118644067798,
                 "jAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{sum,weightAsPowerExponent},{count,jAsCoefficient}": {
@@ -19703,9 +18732,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "jAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{sum,weightAsPowerExponent},{count,jAsCoefficient,weightAsPowerExponent}": {
@@ -19720,9 +18746,6 @@ AND THE BEST METRICS WERE {
                 "jAsCoefficient": 1,
                 "weightAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{jAsCoefficient,sum,weightAsPowerExponent},{count,weightAsPowerExponent}": {
@@ -19737,9 +18760,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "weightAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{jAsCoefficient,sum,weightAsPowerExponent},{count,jAsCoefficient,weightAsPowerExponent}": {
@@ -19755,10 +18775,6 @@ AND THE BEST METRICS WERE {
                 "jAsCoefficient": 1,
                 "weightAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient",
-            "weightAsPowerExponent"
         ]
     },
     "{sum},{count,jAsCoefficient,weightAsCoefficient}": {
@@ -19799,9 +18815,6 @@ AND THE BEST METRICS WERE {
                 "weightAsCoefficient": 0.5555555555555556,
                 "jAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{jAsCoefficient,sum},{aAsCoefficient,count}": {
@@ -19829,9 +18842,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0.5555555555555556,
                 "jAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{sum,weightAsLogarithmBase,x},{sum,weightAsLogarithmBase,x}": {
@@ -19847,9 +18857,6 @@ AND THE BEST METRICS WERE {
                 "weightAsLogarithmBase": 2,
                 "x": 0.5593220338983049
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,w,weightAsLogarithmBase},{sum,w,weightAsLogarithmBase}": {
@@ -19865,9 +18872,6 @@ AND THE BEST METRICS WERE {
                 "weightAsLogarithmBase": 2,
                 "w": 0.5593220338983049
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,weightAsPowerExponent},{count},{count}": {
@@ -19900,9 +18904,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "weightAsPowerExponent": 1.4745762711864403
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum},{sum},{count,weightAsPowerExponent}": {
@@ -20256,9 +19257,6 @@ AND THE BEST METRICS WERE {
                 "x": 1.4745762711864403,
                 "jAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{sum,x},{jAsCoefficient,sum}": {
@@ -20299,9 +19297,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "jAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{sum},{jAsCoefficient,sum,w}": {
@@ -20342,9 +19337,6 @@ AND THE BEST METRICS WERE {
                 "w": 1.4745762711864403,
                 "jAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{sum,w},{jAsCoefficient,sum}": {
@@ -20385,9 +19377,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "jAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{sum},{aAsCoefficient,sum},{count}": {
@@ -20432,9 +19421,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "w": 0.25423728813559343
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,x},{count,usePrimeIndex}": {
@@ -20579,9 +19565,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{sum,weightAsCoefficient,x},{count,x}": {
@@ -20596,9 +19579,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "x": -0.6610169491525424
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,w,weightAsCoefficient},{count,weightAsCoefficient}": {
@@ -20613,9 +19593,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{sum,w,weightAsCoefficient},{count,w}": {
@@ -20630,9 +19607,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "w": -0.6610169491525424
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,x},{aAsPowerBase,count,x}": {
@@ -20647,9 +19621,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerBase": 2,
                 "x": -0.6610169491525424
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,w},{aAsPowerBase,count,w}": {
@@ -20664,9 +19635,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerBase": 2,
                 "w": -0.6610169491525424
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,x},{aAsPowerExponent,count}": {
@@ -20707,9 +19675,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "x": -0.35593220338983045
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,w},{aAsCoefficient,count,w}": {
@@ -20724,9 +19689,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0.4444444444444444,
                 "w": 0.05084745762711851
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,x},{count,jAsCoefficient}": {
@@ -20767,9 +19729,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "jAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{sum,w},{count,jAsCoefficient}": {
@@ -20810,9 +19769,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "jAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{sum,x},{count,x},{count,x}": {
@@ -20830,9 +19786,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "x": -0.35593220338983045
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,w},{count,w},{count,w}": {
@@ -20850,9 +19803,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "w": -0.35593220338983045
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,x},{sum,x},{count,x}": {
@@ -20870,9 +19820,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "x": 0.05084745762711851
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,w},{sum,w},{count,w}": {
@@ -20890,9 +19837,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "w": 0.05084745762711851
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,x},{count,weightAsPowerExponent,withoutRepetition,x}": {
@@ -20908,9 +19852,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 0.5593220338983049,
                 "x": 0.25423728813559343
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,w},{count,w,weightAsPowerExponent,withoutRepetition}": {
@@ -20926,9 +19867,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 0.5593220338983049,
                 "w": 0.25423728813559343
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,w},{aAsCoefficient,count,w,withoutRepetition}": {
@@ -20944,9 +19882,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0.3333333333333333,
                 "w": 0.25423728813559343
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,x},{sum,x},{count,withoutRepetition,x}": {
@@ -20965,9 +19900,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "x": 0.25423728813559343
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,w},{sum,w},{count,w,withoutRepetition}": {
@@ -20986,9 +19918,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "w": 0.25423728813559343
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{jAsCoefficient,sum,weightAsPowerExponent,x}": {
@@ -21248,9 +20177,6 @@ AND THE BEST METRICS WERE {
                 "weightAsCoefficient": 0,
                 "x": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,w},{count,weightAsCoefficient,withoutRepetition}": {
@@ -21280,9 +20206,6 @@ AND THE BEST METRICS WERE {
                 "weightAsCoefficient": 0,
                 "w": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,x},{aAsLogarithmBase,count,withoutRepetition}": {
@@ -21340,9 +20263,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0,
                 "x": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,w},{aAsCoefficient,count,withoutRepetition}": {
@@ -21398,9 +20318,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "x": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,weightAsPowerBase,x},{count,weightAsPowerBase,x}": {
@@ -21416,9 +20333,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerBase": 2,
                 "x": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,w,weightAsPowerBase},{count}": {
@@ -21460,9 +20374,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "w": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,w,weightAsPowerBase},{count,w,weightAsPowerBase}": {
@@ -21478,9 +20389,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerBase": 2,
                 "w": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,x},{count,weightAsPowerExponent,x}": {
@@ -21495,9 +20403,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 0.05084745762711851,
                 "x": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,w},{count,w,weightAsPowerExponent}": {
@@ -21512,9 +20417,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 0.05084745762711851,
                 "w": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,x},{count,weightAsCoefficient}": {
@@ -21542,9 +20444,6 @@ AND THE BEST METRICS WERE {
                 "weightAsCoefficient": 0,
                 "x": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,w},{count,weightAsCoefficient}": {
@@ -21572,9 +20471,6 @@ AND THE BEST METRICS WERE {
                 "weightAsCoefficient": 0,
                 "w": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,x},{aAsPowerExponent,count,x}": {
@@ -21589,9 +20485,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": -3,
                 "x": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,x},{aAsLogarithmBase,count}": {
@@ -21645,9 +20538,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0,
                 "x": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,w},{aAsCoefficient,count}": {
@@ -21675,9 +20565,6 @@ AND THE BEST METRICS WERE {
                 "useNuminator": true,
                 "x": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,useNuminator,x},{sum,x}": {
@@ -21692,9 +20579,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "x": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,useNuminator,x},{sum,useNuminator,x}": {
@@ -21710,9 +20594,6 @@ AND THE BEST METRICS WERE {
                 "x": 0.7627118644067798,
                 "useNuminator": true
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,w},{sum,useNuminator,w}": {
@@ -21727,9 +20608,6 @@ AND THE BEST METRICS WERE {
                 "useNuminator": true,
                 "w": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,useNuminator,w},{sum,w}": {
@@ -21744,9 +20622,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "w": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,useNuminator,w},{sum,useNuminator,w}": {
@@ -21762,9 +20637,6 @@ AND THE BEST METRICS WERE {
                 "w": 0.7627118644067798,
                 "useNuminator": true
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum},{sum,weightAsPowerBase,x}": {
@@ -21833,9 +20705,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerBase": 2,
                 "x": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,weightAsPowerBase,x},{sum,x}": {
@@ -21850,9 +20719,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "x": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,weightAsPowerBase,x},{sum,weightAsPowerBase,x}": {
@@ -21868,9 +20734,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerBase": 2,
                 "x": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum},{sum,w,weightAsPowerBase}": {
@@ -21939,9 +20802,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerBase": 2,
                 "w": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,w,weightAsPowerBase},{sum,w}": {
@@ -21956,9 +20816,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "w": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,w,weightAsPowerBase},{sum,w,weightAsPowerBase}": {
@@ -21974,9 +20831,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerBase": 2,
                 "w": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,weightAsPowerExponent,x},{sum,weightAsPowerExponent,x}": {
@@ -21992,10 +20846,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 0.5593220338983049,
                 "x": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent",
-            "x"
         ]
     },
     "{sum,w,weightAsPowerExponent},{sum,w,weightAsPowerExponent}": {
@@ -22011,10 +20861,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 0.5593220338983049,
                 "w": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent",
-            "w"
         ]
     },
     "{sum,x},{sum,weightAsLogarithmBase,x}": {
@@ -22029,9 +20875,6 @@ AND THE BEST METRICS WERE {
                 "weightAsLogarithmBase": 2,
                 "x": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,weightAsLogarithmBase,x},{sum,x}": {
@@ -22046,9 +20889,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "x": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,w},{sum,w,weightAsLogarithmBase}": {
@@ -22063,9 +20903,6 @@ AND THE BEST METRICS WERE {
                 "weightAsLogarithmBase": 2,
                 "w": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,w,weightAsLogarithmBase},{sum,w}": {
@@ -22080,9 +20917,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "w": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,x},{jAsCoefficient,sum,x}": {
@@ -22097,9 +20931,6 @@ AND THE BEST METRICS WERE {
                 "jAsCoefficient": 1,
                 "x": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{jAsCoefficient,sum,x},{sum,x}": {
@@ -22114,9 +20945,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "x": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{jAsCoefficient,sum,x},{jAsCoefficient,sum,x}": {
@@ -22132,10 +20960,6 @@ AND THE BEST METRICS WERE {
                 "jAsCoefficient": 1,
                 "x": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient",
-            "x"
         ]
     },
     "{sum,w},{jAsCoefficient,sum,w}": {
@@ -22150,9 +20974,6 @@ AND THE BEST METRICS WERE {
                 "jAsCoefficient": 1,
                 "w": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{jAsCoefficient,sum,w},{sum,w}": {
@@ -22167,9 +20988,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "w": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{jAsCoefficient,sum,w},{jAsCoefficient,sum,w}": {
@@ -22185,10 +21003,6 @@ AND THE BEST METRICS WERE {
                 "jAsCoefficient": 1,
                 "w": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient",
-            "w"
         ]
     },
     "{sum,x},{sum,x},{sum,x}": {
@@ -22206,9 +21020,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "x": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,w},{sum,w},{sum,w}": {
@@ -22226,9 +21037,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "w": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{kAsPowerExponent,sum,weightAsCoefficient},{count,kAsPowerExponent,weightAsCoefficient}": {
@@ -22244,10 +21052,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerExponent": 0.9661016949152543,
                 "weightAsCoefficient": 0.3333333333333333
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent",
-            "weightAsCoefficient"
         ]
     },
     "{sum,x},{aAsPowerExponent,count,withoutRepetition,x}": {
@@ -22263,9 +21067,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": -2.4915254237288136,
                 "x": 0.25423728813559343
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,weightAsCoefficient,x}": {
@@ -22366,9 +21167,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 0.7627118644067798,
                 "x": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,weightAsPowerExponent,x},{sum,x}": {
@@ -22383,9 +21181,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "x": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,w},{sum,w,weightAsPowerExponent}": {
@@ -22400,9 +21195,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 0.7627118644067798,
                 "w": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,w,weightAsPowerExponent},{sum,w}": {
@@ -22417,9 +21209,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "w": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,x},{sum,weightAsCoefficient,x}": {
@@ -22434,9 +21223,6 @@ AND THE BEST METRICS WERE {
                 "weightAsCoefficient": 0.5555555555555556,
                 "x": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,weightAsCoefficient,x},{sum,x}": {
@@ -22451,9 +21237,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "x": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,weightAsCoefficient,x},{sum,weightAsCoefficient,x}": {
@@ -22469,10 +21252,6 @@ AND THE BEST METRICS WERE {
                 "weightAsCoefficient": 0.7777777777777778,
                 "x": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient",
-            "x"
         ]
     },
     "{sum,w},{sum,w,weightAsCoefficient}": {
@@ -22487,9 +21266,6 @@ AND THE BEST METRICS WERE {
                 "weightAsCoefficient": 0.5555555555555556,
                 "w": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,w,weightAsCoefficient},{sum,w}": {
@@ -22504,9 +21280,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "w": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,w,weightAsCoefficient},{sum,w,weightAsCoefficient}": {
@@ -22522,10 +21295,6 @@ AND THE BEST METRICS WERE {
                 "weightAsCoefficient": 0.7777777777777778,
                 "w": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient",
-            "w"
         ]
     },
     "{sum,x},{count,x},{count,withoutRepetition,x}": {
@@ -22544,9 +21313,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "x": -0.35593220338983045
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,w},{count,w},{count,w,withoutRepetition}": {
@@ -22565,9 +21331,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "w": -0.35593220338983045
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{max,withoutRepetition},{aAsLogarithmBase,sum},{aAsLogarithmBase,sum,y}": {
@@ -22633,9 +21396,6 @@ AND THE BEST METRICS WERE {
                 "weightAsCoefficient": 0.6666666666666666,
                 "y": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{sum,y},{aAsCoefficient,count,withoutRepetition}": {
@@ -22665,9 +21425,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0.6666666666666666,
                 "y": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{sum,weightAsPowerBase,weightAsPowerExponent,x}": {
@@ -22747,9 +21504,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "y": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{sum,x},{sum,weightAsCoefficient,withoutRepetition,x}": {
@@ -22765,9 +21519,6 @@ AND THE BEST METRICS WERE {
                 "weightAsCoefficient": 0.1111111111111111,
                 "x": 0.8644067796610169
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,w},{sum,w,weightAsCoefficient,withoutRepetition}": {
@@ -22783,9 +21534,6 @@ AND THE BEST METRICS WERE {
                 "weightAsCoefficient": 0.1111111111111111,
                 "w": 0.8644067796610169
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,x},{aAsCoefficient,sum,withoutRepetition,x}": {
@@ -22801,9 +21549,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0.1111111111111111,
                 "x": 0.8644067796610169
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{aAsPowerExponent,sum,w,withoutRepetition},{aAsLogarithmBase,sum}": {
@@ -22848,9 +21593,6 @@ AND THE BEST METRICS WERE {
                 "x": -0.25423728813559343,
                 "y": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{sum,y},{count,w,withoutRepetition}": {
@@ -22880,9 +21622,6 @@ AND THE BEST METRICS WERE {
                 "w": -0.25423728813559343,
                 "y": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{sum,weightAsPowerExponent,y},{count,weightAsPowerExponent,withoutRepetition}": {
@@ -22898,9 +21637,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "weightAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum,weightAsPowerExponent,y},{count,weightAsPowerExponent,withoutRepetition,y}": {
@@ -22917,10 +21653,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 1.1694915254237293,
                 "y": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent",
-            "y"
         ]
     },
     "{sum,weightAsPowerExponent,y},{count,withoutRepetition}": {
@@ -22950,9 +21682,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "y": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{sum},{count,kAsPowerExponent,weightAsPowerExponent}": {
@@ -22993,9 +21722,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerExponent": 0.7627118644067798,
                 "weightAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum},{count,kAsPowerExponent,weightAsCoefficient}": {
@@ -23023,9 +21749,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0.8888888888888888,
                 "weightAsCoefficient": 0.5555555555555556
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{aAsCoefficient,sum,weightAsCoefficient},{sum,weightAsCoefficient}": {
@@ -23040,9 +21763,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "weightAsCoefficient": 0.5555555555555556
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{sum,weightAsCoefficient,x},{count,withoutRepetition}": {
@@ -23098,9 +21818,6 @@ AND THE BEST METRICS WERE {
                 "y": 1.0677966101694913,
                 "x": -0.15254237288135597
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,w},{count,w,y}": {
@@ -23115,9 +21832,6 @@ AND THE BEST METRICS WERE {
                 "y": 1.0677966101694913,
                 "w": -0.15254237288135597
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,x},{count,weightAsPowerExponent,withoutRepetition}": {
@@ -23212,9 +21926,6 @@ AND THE BEST METRICS WERE {
                 "y": 1.0677966101694913,
                 "weightAsPowerExponent": 1.2711864406779663
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum},{count,weightAsCoefficient,y}": {
@@ -23312,9 +22023,6 @@ AND THE BEST METRICS WERE {
                 "x": -1.9830508474576272,
                 "w": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,x},{count,w,withoutRepetition}": {
@@ -23344,9 +22052,6 @@ AND THE BEST METRICS WERE {
                 "w": -1.9830508474576272,
                 "x": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,w},{count,w,withoutRepetition}": {
@@ -23376,9 +22081,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "w": -0.4576271186440679
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,weightAsCoefficient,x},{count}": {
@@ -23452,9 +22154,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "x": -1.3728813559322033
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,x},{count,weightAsPowerBase,x}": {
@@ -23469,9 +22168,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerBase": 2,
                 "x": -0.4576271186440679
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,w},{count,w,weightAsPowerBase}": {
@@ -23486,9 +22182,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerBase": 2,
                 "w": -0.4576271186440679
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{aAsCoefficient,sum,useNuminator,weightAsLogarithmBase}": {
@@ -23547,9 +22240,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0.1111111111111111,
                 "weightAsLogarithmBase": 2
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{sum,weightAsPowerBase},{sum,weightAsPowerBase,withoutRepetition,x}": {
@@ -23609,9 +22299,6 @@ AND THE BEST METRICS WERE {
                 "weightAsCoefficient": 0.2222222222222222,
                 "weightAsPowerExponent": 1.8813559322033901
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum,weightAsPowerExponent},{aAsCoefficient,sum,weightAsPowerExponent,withoutRepetition}": {
@@ -23627,9 +22314,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0.4444444444444444,
                 "weightAsPowerExponent": 1.8813559322033901
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{aAsCoefficient,sum,useNuminator}": {
@@ -23728,9 +22412,6 @@ AND THE BEST METRICS WERE {
                 "weightAsCoefficient": 0,
                 "aAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{aAsCoefficient,sum},{aAsLogarithmBase,count,withoutRepetition}": {
@@ -23760,9 +22441,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{aAsCoefficient,sum},{aAsLogarithmBase,count}": {
@@ -23790,9 +22468,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{aAsCoefficient,sum},{sum,weightAsCoefficient,withoutRepetition}": {
@@ -23822,9 +22497,6 @@ AND THE BEST METRICS WERE {
                 "weightAsCoefficient": 0,
                 "aAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{aAsCoefficient,sum},{aAsCoefficient,sum,withoutRepetition}": {
@@ -23853,9 +22525,6 @@ AND THE BEST METRICS WERE {
                 "useNuminator": true,
                 "aAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{aAsCoefficient,sum,useNuminator},{aAsCoefficient,sum}": {
@@ -23870,9 +22539,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "aAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{aAsCoefficient,sum,useNuminator},{aAsCoefficient,sum,useNuminator}": {
@@ -23888,9 +22554,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0.1111111111111111,
                 "useNuminator": true
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{sum},{aAsCoefficient,sum,weightAsPowerBase}": {
@@ -23918,9 +22581,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerBase": 2,
                 "aAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{aAsCoefficient,sum,weightAsPowerBase},{sum}": {
@@ -23948,9 +22608,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "aAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{sum,weightAsPowerBase},{aAsCoefficient,sum,weightAsPowerBase}": {
@@ -23994,9 +22651,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0.1111111111111111,
                 "weightAsPowerBase": 2
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{aAsCoefficient,sum},{sum,weightAsLogarithmBase}": {
@@ -24076,9 +22730,6 @@ AND THE BEST METRICS WERE {
                 "jAsCoefficient": 1,
                 "aAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{aAsCoefficient,jAsCoefficient,sum},{aAsCoefficient,sum}": {
@@ -24093,9 +22744,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "aAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{aAsCoefficient,jAsCoefficient,sum},{aAsCoefficient,jAsCoefficient,sum}": {
@@ -24111,10 +22759,6 @@ AND THE BEST METRICS WERE {
                 "jAsCoefficient": 1,
                 "aAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient",
-            "aAsCoefficient"
         ]
     },
     "{aAsPowerExponent,sum},{count,kAsPowerBase}": {
@@ -24142,9 +22786,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerBase": 2,
                 "aAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{sum,y},{count,weightAsPowerExponent,withoutRepetition}": {
@@ -24174,9 +22815,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 0.25423728813559343,
                 "y": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{sum,weightAsPowerExponent,x},{count,withoutRepetition}": {
@@ -24207,10 +22845,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 1.3728813559322033,
                 "x": 0.25423728813559343
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent",
-            "x"
         ]
     },
     "{sum,w,weightAsPowerExponent},{count,withoutRepetition}": {
@@ -24241,10 +22875,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 1.3728813559322033,
                 "w": 0.25423728813559343
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent",
-            "w"
         ]
     },
     "{sum,x},{count,y}": {
@@ -24353,9 +22983,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "x": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,w},{sum,w},{max,w,withoutRepetition}": {
@@ -24374,9 +23001,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "w": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,weightAsCoefficient},{sum,weightAsCoefficient,withoutRepetition}": {
@@ -24420,9 +23044,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "weightAsPowerExponent": 0.8644067796610169
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum,w,weightAsPowerExponent},{count,weightAsPowerExponent,withoutRepetition}": {
@@ -24438,9 +23059,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "weightAsPowerExponent": 0.8644067796610169
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{aAsCoefficient,sum},{aAsCoefficient,sum,weightAsPowerExponent}": {
@@ -24455,9 +23073,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 0.4576271186440679,
                 "aAsCoefficient": 0.2222222222222222
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{aAsCoefficient,sum,weightAsPowerExponent},{aAsCoefficient,sum}": {
@@ -24472,9 +23087,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "aAsCoefficient": 0.2222222222222222
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{sum},{max,weightAsCoefficient,withoutRepetition,x}": {
@@ -24606,10 +23218,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0.2222222222222222,
                 "weightAsPowerExponent": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient",
-            "weightAsPowerExponent"
         ]
     },
     "{aAsCoefficient,sum,useNuminator,weightAsCoefficient}": {
@@ -24719,9 +23327,6 @@ AND THE BEST METRICS WERE {
                 "weightAsCoefficient": 0.2222222222222222,
                 "aAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{aAsCoefficient,sum,weightAsCoefficient},{aAsCoefficient,sum}": {
@@ -24736,9 +23341,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "aAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{aAsCoefficient,sum,weightAsCoefficient},{aAsCoefficient,sum,weightAsCoefficient}": {
@@ -24754,10 +23356,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0.1111111111111111,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient",
-            "weightAsCoefficient"
         ]
     },
     "{jAsPowerExponent,sum,withoutRepetition},{aAsLogarithmBase,jAsPowerExponent,sum,y}": {
@@ -24774,9 +23372,6 @@ AND THE BEST METRICS WERE {
                 "y": 1.6779661016949152,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum,withoutRepetition,y},{aAsLogarithmBase,jAsPowerExponent,sum,y}": {
@@ -24794,10 +23389,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.0677966101694913,
                 "y": 1.6779661016949152
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent",
-            "y"
         ]
     },
     "{sum,usePrimeIndex,y},{max,usePrimeIndex,withoutRepetition}": {
@@ -24829,9 +23420,6 @@ AND THE BEST METRICS WERE {
                 "y": 0.9661016949152543,
                 "usePrimeIndex": true
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{sum,weightAsPowerExponent},{sum,useNuminator,withoutRepetition}": {
@@ -24917,9 +23505,6 @@ AND THE BEST METRICS WERE {
                 "withoutRepetition": true,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{sum,weightAsPowerExponent},{jAsCoefficient,sum,withoutRepetition}": {
@@ -24963,9 +23548,6 @@ AND THE BEST METRICS WERE {
                 "withoutRepetition": true,
                 "jAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{max,withoutRepetition},{aAsLogarithmBase,sum},{aAsLogarithmBase,sum,x}": {
@@ -25016,9 +23598,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0.8888888888888888,
                 "weightAsPowerExponent": 1.3728813559322033
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{aAsCoefficient,sum,weightAsPowerExponent},{sum,weightAsPowerExponent}": {
@@ -25033,9 +23612,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "weightAsPowerExponent": 1.3728813559322033
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{aAsCoefficient,sum,weightAsPowerBase,weightAsPowerExponent}": {
@@ -25064,9 +23640,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "weightAsPowerExponent": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum},{sum,weightAsCoefficient,x}": {
@@ -25159,9 +23732,6 @@ AND THE BEST METRICS WERE {
                 "x": -3,
                 "w": 1.4745762711864403
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,x},{count,w}": {
@@ -25189,9 +23759,6 @@ AND THE BEST METRICS WERE {
                 "w": -3,
                 "x": 1.4745762711864403
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,w},{count,w}": {
@@ -25232,9 +23799,6 @@ AND THE BEST METRICS WERE {
                 "x": 1.4745762711864403,
                 "weightAsCoefficient": 0.5555555555555556
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{sum,x},{sum,weightAsCoefficient}": {
@@ -25262,9 +23826,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "weightAsCoefficient": 0.5555555555555556
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{sum,weightAsCoefficient},{sum,w}": {
@@ -25292,9 +23853,6 @@ AND THE BEST METRICS WERE {
                 "w": 1.4745762711864403,
                 "weightAsCoefficient": 0.5555555555555556
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{sum,w},{sum,weightAsCoefficient}": {
@@ -25322,9 +23880,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "weightAsCoefficient": 0.5555555555555556
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{sum,weightAsLogarithmBase},{aAsLogarithmBase,sum,weightAsLogarithmBase,weightAsPowerExponent}": {
@@ -25435,9 +23990,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "aAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{aAsCoefficient,sum,weightAsPowerBase},{count,weightAsPowerBase}": {
@@ -25467,9 +24019,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0.2222222222222222,
                 "weightAsPowerBase": 2
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{aAsCoefficient,sum},{aAsCoefficient,sum,y}": {
@@ -25484,9 +24033,6 @@ AND THE BEST METRICS WERE {
                 "y": 1.0677966101694913,
                 "aAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{aAsCoefficient,sum,y},{aAsCoefficient,sum}": {
@@ -25501,9 +24047,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "aAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{kAsPowerExponent,sum,y},{max,withoutRepetition}": {
@@ -25533,9 +24076,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "y": 1.2711864406779663
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{sum,weightAsCoefficient,weightAsPowerExponent},{sum,withoutRepetition}": {
@@ -25616,9 +24156,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "weightAsPowerExponent": 2.694915254237288
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum,weightAsPowerExponent,y},{max,weightAsPowerExponent,withoutRepetition,y}": {
@@ -25635,10 +24172,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 2.694915254237288,
                 "y": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent",
-            "y"
         ]
     },
     "{sum,weightAsPowerBase},{max,weightAsPowerBase,withoutRepetition},{max,weightAsPowerBase,withoutRepetition}": {
@@ -25683,9 +24216,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "w": -0.4576271186440679
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,weightAsPowerExponent},{max,usePrimeIndex,weightAsPowerExponent,withoutRepetition}": {
@@ -25701,9 +24231,6 @@ AND THE BEST METRICS WERE {
                 "usePrimeIndex": true,
                 "weightAsPowerExponent": 1.2711864406779663
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,sum},{count,weightAsLogarithmBase}": {
@@ -25731,9 +24258,6 @@ AND THE BEST METRICS WERE {
                 "weightAsLogarithmBase": 2,
                 "aAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{sum,weightAsPowerExponent},{max,weightAsPowerExponent,withoutRepetition},{aAsLogarithmBase,sum,weightAsPowerExponent}": {
@@ -25753,9 +24277,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "weightAsPowerExponent": 3
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{aAsCoefficient,sum,w},{aAsCoefficient,count,w,withoutRepetition}": {
@@ -25772,10 +24293,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0.7777777777777778,
                 "w": -0.05084745762711851
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient",
-            "w"
         ]
     },
     "{aAsPowerExponent,sum,y},{count}": {
@@ -25803,9 +24320,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "aAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum},{sum,withoutRepetition},{count,withoutRepetition}": {
@@ -25850,9 +24364,6 @@ AND THE BEST METRICS WERE {
                 "usePrimeIndex": true,
                 "aAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,sum},{count,useNuminator}": {
@@ -25880,9 +24391,6 @@ AND THE BEST METRICS WERE {
                 "useNuminator": true,
                 "aAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,sum,useNuminator},{count}": {
@@ -25910,9 +24418,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "aAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,sum,useNuminator},{count,useNuminator}": {
@@ -25942,9 +24447,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 1.0677966101694913,
                 "useNuminator": true
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,sum,weightAsCoefficient},{count,weightAsCoefficient}": {
@@ -25959,9 +24461,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{aAsPowerExponent,sum,weightAsCoefficient},{aAsPowerExponent,count,weightAsCoefficient}": {
@@ -25977,10 +24476,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 1.0677966101694913,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent",
-            "weightAsCoefficient"
         ]
     },
     "{aAsPowerExponent,sum},{aAsPowerExponent,count}": {
@@ -26020,9 +24515,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "aAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{aAsCoefficient,aAsPowerExponent,sum},{aAsCoefficient,aAsPowerExponent,count}": {
@@ -26038,10 +24530,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0.1111111111111111,
                 "aAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient",
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,sum},{count,jAsCoefficient}": {
@@ -26082,9 +24570,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "jAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{aAsPowerExponent,sum},{aAsPowerExponent,count,jAsCoefficient}": {
@@ -26099,9 +24584,6 @@ AND THE BEST METRICS WERE {
                 "jAsCoefficient": 1,
                 "aAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,jAsCoefficient,sum},{aAsPowerExponent,count}": {
@@ -26116,9 +24598,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "aAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,jAsCoefficient,sum},{aAsPowerExponent,count,jAsCoefficient}": {
@@ -26134,10 +24613,6 @@ AND THE BEST METRICS WERE {
                 "jAsCoefficient": 1,
                 "aAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient",
-            "aAsPowerExponent"
         ]
     },
     "{sum},{aAsPowerExponent,sum},{count}": {
@@ -26267,9 +24742,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,sum,x},{max,withoutRepetition}": {
@@ -26299,9 +24771,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "x": 2.796610169491525
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,weightAsPowerExponent},{sum,withoutRepetition},{count,withoutRepetition}": {
@@ -26481,9 +24950,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "y": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{sum,w,y},{count,withoutRepetition}": {
@@ -26513,9 +24979,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "y": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{sum,weightAsPowerExponent},{count,weightAsPowerExponent,withoutRepetition,x}": {
@@ -26531,9 +24994,6 @@ AND THE BEST METRICS WERE {
                 "x": -0.5593220338983049,
                 "weightAsPowerExponent": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum,weightAsPowerExponent},{count,w,weightAsPowerExponent,withoutRepetition}": {
@@ -26549,9 +25009,6 @@ AND THE BEST METRICS WERE {
                 "w": -0.5593220338983049,
                 "weightAsPowerExponent": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum,weightAsPowerExponent},{aAsCoefficient,count,weightAsPowerExponent,withoutRepetition}": {
@@ -26567,9 +25024,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0.4444444444444444,
                 "weightAsPowerExponent": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,sum},{aAsPowerExponent,sum,usePrimeIndex}": {
@@ -26584,9 +25038,6 @@ AND THE BEST METRICS WERE {
                 "usePrimeIndex": true,
                 "aAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,sum,usePrimeIndex},{aAsPowerExponent,sum}": {
@@ -26601,9 +25052,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "aAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{modifiedCount,sum},{aAsLogarithmBase,aAsPowerExponent,sum}": {
@@ -26645,9 +25093,6 @@ AND THE BEST METRICS WERE {
                 "weightAsCoefficient": 0.5555555555555556,
                 "aAsPowerExponent": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,sum},{aAsCoefficient,count}": {
@@ -26675,9 +25120,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0.5555555555555556,
                 "aAsPowerExponent": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{count},{max,withoutRepetition},{aAsLogarithmBase,sum,weightAsPowerExponent}": {
@@ -26738,9 +25180,6 @@ AND THE BEST METRICS WERE {
                 "weightAsCoefficient": 0.3333333333333333,
                 "aAsPowerExponent": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,sum},{aAsCoefficient,aAsLogarithmBase,aAsPowerExponent,sum}": {
@@ -26756,9 +25195,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0.3333333333333333,
                 "aAsPowerExponent": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,sum},{aAsLogarithmBase,sum,weightAsCoefficient}": {
@@ -26802,9 +25238,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 0.35593220338983045,
                 "x": -0.6610169491525424
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,w},{sum,w,weightAsPowerExponent,withoutRepetition}": {
@@ -26820,9 +25253,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 0.35593220338983045,
                 "w": -0.6610169491525424
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,w},{aAsLogarithmBase,sum,usePrimeIndex,w}": {
@@ -26838,9 +25268,6 @@ AND THE BEST METRICS WERE {
                 "usePrimeIndex": true,
                 "w": -0.05084745762711851
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,weightAsPowerExponent},{aAsLogarithmBase,sum,usePrimeIndex,weightAsPowerExponent}": {
@@ -26856,9 +25283,6 @@ AND THE BEST METRICS WERE {
                 "usePrimeIndex": true,
                 "weightAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum},{aAsLogarithmBase,sum,usePrimeIndex,weightAsCoefficient}": {
@@ -27108,9 +25532,6 @@ AND THE BEST METRICS WERE {
                 "withoutRepetition": true,
                 "aAsCoefficient": 0.2222222222222222
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{sum},{sum,x,y}": {
@@ -27290,9 +25711,6 @@ AND THE BEST METRICS WERE {
                 "x": -2.593220338983051,
                 "y": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{sum,x,y},{count,y}": {
@@ -27307,9 +25725,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "y": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{sum,x,y},{count,x,y}": {
@@ -27325,10 +25740,6 @@ AND THE BEST METRICS WERE {
                 "x": -1.271186440677966,
                 "y": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "x",
-            "y"
         ]
     },
     "{sum,y},{count,w,y}": {
@@ -27343,9 +25754,6 @@ AND THE BEST METRICS WERE {
                 "w": -2.593220338983051,
                 "y": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{sum,w,y},{count,y}": {
@@ -27360,9 +25768,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "y": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{sum,w,y},{count,w,y}": {
@@ -27378,10 +25783,6 @@ AND THE BEST METRICS WERE {
                 "w": -1.271186440677966,
                 "y": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "w",
-            "y"
         ]
     },
     "{sum,x,y},{sum}": {
@@ -27410,10 +25811,6 @@ AND THE BEST METRICS WERE {
                 "x": -1.576271186440678,
                 "y": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "x",
-            "y"
         ]
     },
     "{sum},{sum,w,y}": {
@@ -27455,10 +25852,6 @@ AND THE BEST METRICS WERE {
                 "w": -1.576271186440678,
                 "y": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "w",
-            "y"
         ]
     },
     "{aAsCoefficient,sum,weightAsPowerBase},{max,weightAsPowerBase,withoutRepetition}": {
@@ -27489,9 +25882,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerBase": 2,
                 "w": -1.3728813559322033
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum},{aAsLogarithmBase,sum,withoutRepetition,x}": {
@@ -27520,9 +25910,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "y": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{aAsPowerExponent,sum,y},{aAsPowerExponent,count,y}": {
@@ -27538,10 +25925,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 1.0677966101694913,
                 "y": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent",
-            "y"
         ]
     },
     "{sum},{aAsLogarithmBase,sum,weightAsPowerBase,weightAsPowerExponent}": {
@@ -27571,9 +25954,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "x": -0.25423728813559343
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,w,weightAsPowerExponent},{count,w,withoutRepetition}": {
@@ -27589,9 +25969,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "w": -0.25423728813559343
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{aAsPowerExponent,sum},{count,y}": {
@@ -27619,9 +25996,6 @@ AND THE BEST METRICS WERE {
                 "y": 0.6610169491525424,
                 "aAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{sum,y},{max,withoutRepetition,y},{aAsLogarithmBase,sum,y}": {
@@ -27641,9 +26015,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "y": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{aAsCoefficient,sum,w},{aAsCoefficient,count,withoutRepetition}": {
@@ -27659,9 +26030,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "aAsCoefficient": 0.8888888888888888
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{sum,x},{sum,y}": {
@@ -27829,9 +26197,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "kAsPowerExponent": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{sum,y},{sum,useNuminator,withoutRepetition}": {
@@ -27861,9 +26226,6 @@ AND THE BEST METRICS WERE {
                 "useNuminator": true,
                 "y": 1.3728813559322033
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{sum,useNuminator,y},{sum,withoutRepetition}": {
@@ -27893,9 +26255,6 @@ AND THE BEST METRICS WERE {
                 "withoutRepetition": true,
                 "y": 1.3728813559322033
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{sum,useNuminator,y},{sum,useNuminator,withoutRepetition}": {
@@ -27927,9 +26286,6 @@ AND THE BEST METRICS WERE {
                 "y": 1.3728813559322033,
                 "useNuminator": true
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{sum,y},{sum,v,withoutRepetition,y}": {
@@ -27945,9 +26301,6 @@ AND THE BEST METRICS WERE {
                 "v": -3,
                 "y": 1.3728813559322033
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{sum,y},{sum,withoutRepetition,y}": {
@@ -28004,9 +26357,6 @@ AND THE BEST METRICS WERE {
                 "withoutRepetition": true,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{sum,weightAsCoefficient,y},{sum,withoutRepetition,y}": {
@@ -28022,9 +26372,6 @@ AND THE BEST METRICS WERE {
                 "withoutRepetition": true,
                 "y": 1.3728813559322033
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{sum,weightAsCoefficient,y},{sum,weightAsCoefficient,withoutRepetition,y}": {
@@ -28041,10 +26388,6 @@ AND THE BEST METRICS WERE {
                 "weightAsCoefficient": 0.1111111111111111,
                 "y": 1.3728813559322033
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient",
-            "y"
         ]
     },
     "{aAsCoefficient,sum,y},{sum,withoutRepetition}": {
@@ -28074,9 +26417,6 @@ AND THE BEST METRICS WERE {
                 "withoutRepetition": true,
                 "y": 1.3728813559322033
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{sum,y},{jAsCoefficient,sum,withoutRepetition}": {
@@ -28120,9 +26460,6 @@ AND THE BEST METRICS WERE {
                 "withoutRepetition": true,
                 "jAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{sum,y},{jAsCoefficient,sum,withoutRepetition,y}": {
@@ -28138,9 +26475,6 @@ AND THE BEST METRICS WERE {
                 "jAsCoefficient": 1,
                 "y": 1.3728813559322033
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{jAsCoefficient,sum,y},{sum,withoutRepetition,y}": {
@@ -28156,9 +26490,6 @@ AND THE BEST METRICS WERE {
                 "withoutRepetition": true,
                 "y": 1.3728813559322033
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{jAsCoefficient,sum,y},{jAsCoefficient,sum,withoutRepetition,y}": {
@@ -28175,10 +26506,6 @@ AND THE BEST METRICS WERE {
                 "jAsCoefficient": 1,
                 "y": 1.3728813559322033
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient",
-            "y"
         ]
     },
     "{aAsCoefficient,sum,x},{aAsCoefficient,count,withoutRepetition,x}": {
@@ -28195,10 +26522,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0.1111111111111111,
                 "x": -0.05084745762711851
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient",
-            "x"
         ]
     },
     "{aAsLogarithmBase,sum,usePrimeIndex},{aAsLogarithmBase,aAsPowerExponent,sum,usePrimeIndex}": {
@@ -28291,9 +26614,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "aAsCoefficient": 0.2222222222222222
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{sum,weightAsPowerExponent},{max,weightAsPowerExponent,withoutRepetition,x}": {
@@ -28309,9 +26629,6 @@ AND THE BEST METRICS WERE {
                 "x": -2.7966101694915255,
                 "weightAsPowerExponent": 2.796610169491525
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum,weightAsPowerExponent},{max,w,weightAsPowerExponent,withoutRepetition}": {
@@ -28327,9 +26644,6 @@ AND THE BEST METRICS WERE {
                 "w": -2.7966101694915255,
                 "weightAsPowerExponent": 2.796610169491525
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum},{aAsPowerExponent,jAsCoefficient,sum,withoutRepetition}": {
@@ -28487,9 +26801,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": -1.1694915254237288,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{sum},{aAsPowerExponent,sum,withoutRepetition}": {
@@ -28532,9 +26843,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": -1.1694915254237288,
                 "aAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{jAsCoefficient,sum},{aAsPowerExponent,sum,withoutRepetition}": {
@@ -28564,9 +26872,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": -1.1694915254237288,
                 "jAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{sum},{sum},{aAsPowerExponent,sum,withoutRepetition}": {
@@ -28614,9 +26919,6 @@ AND THE BEST METRICS WERE {
                 "usePrimeIndex": true,
                 "x": -0.05084745762711851
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,usePrimeIndex,x},{sum,x}": {
@@ -28631,9 +26933,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "x": -0.05084745762711851
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,w},{sum,usePrimeIndex,w}": {
@@ -28648,9 +26947,6 @@ AND THE BEST METRICS WERE {
                 "usePrimeIndex": true,
                 "w": -0.05084745762711851
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,usePrimeIndex,w},{sum,w}": {
@@ -28665,9 +26961,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "w": -0.05084745762711851
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum},{sum,usePrimeIndex,weightAsPowerExponent}": {
@@ -28695,9 +26988,6 @@ AND THE BEST METRICS WERE {
                 "usePrimeIndex": true,
                 "weightAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum,usePrimeIndex,weightAsPowerExponent},{sum}": {
@@ -28725,9 +27015,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "weightAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum},{sum,usePrimeIndex,weightAsCoefficient}": {
@@ -28768,9 +27055,6 @@ AND THE BEST METRICS WERE {
                 "y": 1.1694915254237293,
                 "x": -1.6779661016949152
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,x,y},{sum,x}": {
@@ -28785,9 +27069,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "x": -1.6779661016949152
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,w},{sum,w,y}": {
@@ -28802,9 +27083,6 @@ AND THE BEST METRICS WERE {
                 "y": 1.1694915254237293,
                 "w": -1.6779661016949152
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,w,y},{sum,w}": {
@@ -28819,9 +27097,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "w": -1.6779661016949152
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{aAsPowerExponent,sum,x},{count,withoutRepetition}": {
@@ -28851,9 +27126,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "aAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,sum,w},{count,withoutRepetition}": {
@@ -28883,9 +27155,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "aAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{sum,y},{count,x}": {
@@ -28932,9 +27201,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "w": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum},{aAsCoefficient,sum,usePrimeIndex}": {
@@ -28991,9 +27257,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 1.0677966101694913,
                 "usePrimeIndex": true
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{kAsPowerExponent,sum,x},{sum,withoutRepetition}": {
@@ -29036,9 +27299,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0.1111111111111111,
                 "weightAsCoefficient": 0.3333333333333333
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{kAsCoefficient,sum,y},{max,withoutRepetition}": {
@@ -29068,9 +27328,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "y": 1.2711864406779663
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{sum,weightAsPowerExponent,y},{aAsLogarithmBase,sum,weightAsPowerExponent,y}": {
@@ -29087,10 +27344,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 1.3728813559322033,
                 "y": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent",
-            "y"
         ]
     },
     "{aAsPowerExponent,sum,weightAsPowerExponent},{sum,withoutRepetition}": {
@@ -29134,9 +27387,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "y": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{kAsPowerExponent,sum},{aAsLogarithmBase,kAsPowerExponent,sum,withoutRepetition}": {
@@ -29152,9 +27402,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "kAsPowerExponent": 0.8644067796610169
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{kAsPowerExponent,sum,weightAsPowerBase},{kAsPowerExponent,max,weightAsPowerBase,withoutRepetition}": {
@@ -29171,9 +27418,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerExponent": 0.8644067796610169,
                 "weightAsPowerBase": 2
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{max,withoutRepetition},{aAsLogarithmBase,sum},{aAsLogarithmBase,sum,w}": {
@@ -29225,9 +27469,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 1.5762711864406782
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsCoefficient,sum,weightAsPowerBase},{count,withoutRepetition}": {
@@ -29257,9 +27498,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "aAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{aAsCoefficient,sum,weightAsPowerBase},{count,weightAsPowerBase,withoutRepetition}": {
@@ -29291,9 +27529,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0.2222222222222222,
                 "weightAsPowerBase": 2
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{sum},{sum,weightAsCoefficient,y}": {
@@ -29375,9 +27610,6 @@ AND THE BEST METRICS WERE {
                 "usePrimeIndex": true,
                 "x": 2.796610169491525
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,w},{max,usePrimeIndex,withoutRepetition}": {
@@ -29407,9 +27639,6 @@ AND THE BEST METRICS WERE {
                 "usePrimeIndex": true,
                 "w": 2.796610169491525
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{aAsPowerExponent,sum,w},{max,withoutRepetition}": {
@@ -29439,9 +27668,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "w": 2.389830508474576
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,y},{max,weightAsCoefficient,withoutRepetition}": {
@@ -29471,9 +27697,6 @@ AND THE BEST METRICS WERE {
                 "weightAsCoefficient": 0.4444444444444444,
                 "y": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{sum,y},{aAsCoefficient,max,withoutRepetition}": {
@@ -29503,9 +27726,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0.4444444444444444,
                 "y": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{sum,weightAsCoefficient},{sum,weightAsPowerExponent,withoutRepetition}": {
@@ -29563,9 +27783,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "aAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{sum},{sum},{max,weightAsPowerExponent,withoutRepetition}": {
@@ -29624,9 +27841,6 @@ AND THE BEST METRICS WERE {
                 "withoutRepetition": true,
                 "aAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,sum,y},{aAsPowerExponent,sum,withoutRepetition,y}": {
@@ -29643,10 +27857,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 1.0677966101694913,
                 "y": 1.4745762711864403
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent",
-            "y"
         ]
     },
     "{aAsCoefficient,sum},{aAsCoefficient,count,withoutRepetition,x}": {
@@ -29662,9 +27872,6 @@ AND THE BEST METRICS WERE {
                 "x": -0.35593220338983045,
                 "aAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{aAsCoefficient,sum},{aAsCoefficient,count,w,withoutRepetition}": {
@@ -29680,9 +27887,6 @@ AND THE BEST METRICS WERE {
                 "w": -0.35593220338983045,
                 "aAsCoefficient": 0.8888888888888888
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{aAsCoefficient,sum},{count,weightAsPowerExponent,withoutRepetition}": {
@@ -29726,9 +27930,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "aAsCoefficient": 0.2222222222222222
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{aAsCoefficient,sum,weightAsPowerExponent},{count,weightAsPowerExponent,withoutRepetition}": {
@@ -29744,9 +27945,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "weightAsPowerExponent": 1.6779661016949152
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{aAsCoefficient,sum,weightAsPowerExponent},{aAsCoefficient,count,weightAsPowerExponent,withoutRepetition}": {
@@ -29763,10 +27961,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0.1111111111111111,
                 "weightAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient",
-            "weightAsPowerExponent"
         ]
     },
     "{sum},{sum,weightAsCoefficient,weightAsPowerExponent,withoutRepetition}": {
@@ -29796,9 +27990,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "aAsPowerExponent": 0.6610169491525424
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,sum,weightAsPowerExponent},{aAsPowerExponent,sum,withoutRepetition}": {
@@ -29814,9 +28005,6 @@ AND THE BEST METRICS WERE {
                 "withoutRepetition": true,
                 "aAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{sum,y},{sum,withoutRepetition,x}": {
@@ -29846,9 +28034,6 @@ AND THE BEST METRICS WERE {
                 "x": 0.4576271186440679,
                 "y": 1.3728813559322033
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{sum,y},{sum,w,withoutRepetition}": {
@@ -29878,9 +28063,6 @@ AND THE BEST METRICS WERE {
                 "w": 0.4576271186440679,
                 "y": 1.3728813559322033
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{sum,y},{sum,withoutRepetition},{count,withoutRepetition}": {
@@ -29917,9 +28099,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "y": 1.3728813559322033
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{aAsCoefficient,sum},{count,withoutRepetition,x}": {
@@ -29963,9 +28142,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 0.15254237288135597,
                 "aAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{sum},{sum,withoutRepetition},{aAsLogarithmBase,sum,y}": {
@@ -30133,9 +28309,6 @@ AND THE BEST METRICS WERE {
                 "modifiedCount": true,
                 "weightAsPowerExponent": 0.4576271186440679
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{aAsCoefficient,jAsLogarithmBase,sum,y}": {
@@ -30174,9 +28347,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerExponent": 0.05084745762711851,
                 "aAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{sum},{max,modifiedCount,weightAsCoefficient,withoutRepetition}": {
@@ -30221,9 +28391,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 0.7627118644067798,
                 "weightAsPowerBase": 2
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum},{kAsPowerExponent,sum,usePrimeIndex,withoutRepetition}": {
@@ -30280,9 +28447,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerBase": 2,
                 "w": -1.6779661016949152
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{aAsLogarithmBase,jAsPowerBase,sum,w},{aAsLogarithmBase,sum,w}": {
@@ -30299,9 +28463,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "w": -1.6779661016949152
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{max,usePrimeIndex,withoutRepetition},{aAsLogarithmBase,sum}": {
@@ -30423,9 +28584,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{aAsCoefficient,max,usePrimeIndex,withoutRepetition},{aAsCoefficient,aAsLogarithmBase,sum}": {
@@ -30442,9 +28600,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{max,usePrimeIndex,withoutRepetition},{aAsLogarithmBase,jAsCoefficient,sum}": {
@@ -30491,9 +28646,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "jAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{kAsCoefficient,max,usePrimeIndex,withoutRepetition},{aAsLogarithmBase,sum}": {
@@ -30525,9 +28677,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "kAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{aAsLogarithmBase,sum},{max,usePrimeIndex,withoutRepetition}": {
@@ -30603,9 +28752,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0.4444444444444444,
                 "weightAsPowerBase": 2
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{jAsPowerExponent,sum},{jAsPowerBase,jAsPowerExponent,sum}": {
@@ -30620,9 +28766,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerBase": 2,
                 "jAsPowerExponent": 0.5593220338983049
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{jAsPowerBase,jAsPowerExponent,sum},{jAsPowerExponent,sum}": {
@@ -30637,9 +28780,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "jAsPowerExponent": 0.5593220338983049
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{sum,y},{aAsPowerExponent,sum,y}": {
@@ -30654,9 +28794,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": -0.05084745762711851,
                 "y": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{aAsPowerExponent,sum,y},{sum,y}": {
@@ -30671,9 +28808,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "y": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{aAsCoefficient,sum,w},{count,withoutRepetition}": {
@@ -30779,9 +28913,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 0.8644067796610169,
                 "y": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{sum,weightAsPowerExponent},{count,weightAsCoefficient}": {
@@ -30851,9 +28982,6 @@ AND THE BEST METRICS WERE {
                 "y": 0.8644067796610169,
                 "weightAsPowerExponent": 1.3728813559322033
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{aAsCoefficient,sum,weightAsPowerBase},{aAsCoefficient,sum,weightAsPowerBase,withoutRepetition}": {
@@ -30870,9 +28998,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0.4444444444444444,
                 "weightAsPowerBase": 2
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{sum,weightAsPowerExponent},{aAsCoefficient,count,weightAsPowerExponent}": {
@@ -30887,9 +29012,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0.4444444444444444,
                 "weightAsPowerExponent": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum},{max,useNuminator,weightAsPowerExponent,withoutRepetition}": {
@@ -30975,9 +29097,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 0.6610169491525424,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{sum},{aAsPowerExponent,max,useNuminator,withoutRepetition}": {
@@ -31064,9 +29183,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 0.6610169491525424,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{sum},{aAsPowerExponent,max,withoutRepetition}": {
@@ -31095,9 +29211,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 0.6610169491525424,
                 "aAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{sum},{jAsCoefficient,max,weightAsPowerExponent,withoutRepetition}": {
@@ -31141,9 +29254,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 0.6610169491525424,
                 "jAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{sum},{aAsPowerExponent,jAsCoefficient,max,withoutRepetition}": {
@@ -31187,9 +29297,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 0.6610169491525424,
                 "jAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{sum},{kAsCoefficient,max,weightAsPowerExponent,withoutRepetition}": {
@@ -31233,9 +29340,6 @@ AND THE BEST METRICS WERE {
                 "weightAsCoefficient": 0.6666666666666666,
                 "y": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{sum,y},{aAsCoefficient,aAsLogarithmBase,sum,y}": {
@@ -31251,9 +29355,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0.6666666666666666,
                 "y": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{sum},{sum},{max,withoutRepetition},{aAsLogarithmBase,sum}": {
@@ -31302,9 +29403,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "w": -1.4745762711864407
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{jAsCoefficient,sum,w,x}": {
@@ -31344,10 +29442,6 @@ AND THE BEST METRICS WERE {
                 "w": -2.8983050847457625,
                 "x": 2.694915254237288
             }
-        ],
-        "spreadDynamicParameters": [
-            "w",
-            "x"
         ]
     },
     "{sum,weightAsPowerExponent,y},{sum,withoutRepetition}": {
@@ -31377,9 +29471,6 @@ AND THE BEST METRICS WERE {
                 "withoutRepetition": true,
                 "y": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{aAsCoefficient,sum},{count,x}": {
@@ -31407,9 +29498,6 @@ AND THE BEST METRICS WERE {
                 "x": -0.35593220338983045,
                 "aAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{aAsCoefficient,sum},{count,w}": {
@@ -31437,9 +29525,6 @@ AND THE BEST METRICS WERE {
                 "w": -0.35593220338983045,
                 "aAsCoefficient": 0.8888888888888888
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{aAsCoefficient,sum},{count,weightAsPowerExponent}": {
@@ -31467,9 +29552,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 0.4576271186440679,
                 "aAsCoefficient": 0.2222222222222222
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{aAsCoefficient,sum,weightAsPowerExponent},{count}": {
@@ -31497,9 +29579,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "weightAsPowerExponent": 1.9830508474576272
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{aAsCoefficient,sum},{count,weightAsCoefficient}": {
@@ -31527,9 +29606,6 @@ AND THE BEST METRICS WERE {
                 "weightAsCoefficient": 0.5555555555555556,
                 "aAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{aAsCoefficient,sum},{aAsCoefficient,count}": {
@@ -31560,9 +29636,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "aAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{sum,w},{sum,w,x}": {
@@ -31577,9 +29650,6 @@ AND THE BEST METRICS WERE {
                 "x": 2.694915254237288,
                 "w": -0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,w,x},{sum,w}": {
@@ -31594,9 +29664,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "w": -0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum},{aAsLogarithmBase,sum,usePrimeIndex,w}": {
@@ -31654,9 +29721,6 @@ AND THE BEST METRICS WERE {
                 "usePrimeIndex": true,
                 "x": -0.05084745762711851
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,weightAsPowerExponent},{count},{max,withoutRepetition}": {
@@ -31783,9 +29847,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "weightAsPowerExponent": 1.5762711864406782
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum,weightAsPowerExponent,y},{aAsLogarithmBase,sum,weightAsPowerExponent}": {
@@ -31801,9 +29862,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "weightAsPowerExponent": 1.3728813559322033
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum,weightAsPowerExponent},{sum,withoutRepetition,x}": {
@@ -31888,9 +29946,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "aAsCoefficient": 0.4444444444444444
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{aAsCoefficient,sum,weightAsPowerExponent},{aAsCoefficient,count,weightAsPowerExponent}": {
@@ -31906,10 +29961,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0.4444444444444444,
                 "weightAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient",
-            "weightAsPowerExponent"
         ]
     },
     "{sum,w},{aAsLogarithmBase,sum,w,weightAsLogarithmBase}": {
@@ -31925,9 +29976,6 @@ AND THE BEST METRICS WERE {
                 "weightAsLogarithmBase": 2,
                 "w": 0.4576271186440679
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum},{aAsCoefficient,aAsLogarithmBase,jAsCoefficient,sum}": {
@@ -32069,9 +30117,6 @@ AND THE BEST METRICS WERE {
                 "weightAsCoefficient": 0.6666666666666666,
                 "aAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{sum,weightAsCoefficient},{aAsCoefficient,aAsLogarithmBase,sum,weightAsCoefficient}": {
@@ -32087,9 +30132,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0.6666666666666666,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{sum},{aAsLogarithmBase,jAsCoefficient,sum,weightAsCoefficient}": {
@@ -32133,9 +30175,6 @@ AND THE BEST METRICS WERE {
                 "weightAsCoefficient": 0.6666666666666666,
                 "jAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{jAsCoefficient,sum},{aAsCoefficient,aAsLogarithmBase,sum}": {
@@ -32165,9 +30204,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0.6666666666666666,
                 "jAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{aAsLogarithmBase,sum,weightAsCoefficient},{sum}": {
@@ -32254,9 +30290,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 0.8644067796610169,
                 "usePrimeIndex": true
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum},{sum,w,x}": {
@@ -32298,10 +30331,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0.5555555555555556,
                 "x": -0.15254237288135597
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient",
-            "x"
         ]
     },
     "{sum,weightAsCoefficient},{aAsPowerExponent,sum,withoutRepetition}": {
@@ -32344,9 +30373,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0.5555555555555556,
                 "x": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{aAsCoefficient,sum,x},{sum,x}": {
@@ -32361,9 +30387,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "x": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,x},{count,x},{aAsLogarithmBase,sum,x}": {
@@ -32382,9 +30405,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "x": -0.6610169491525424
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum},{aAsPowerExponent,sum},{aAsLogarithmBase,sum}": {
@@ -32474,9 +30494,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": -0.15254237288135597,
                 "y": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{aAsCoefficient,sum},{aAsCoefficient,sum,weightAsPowerExponent,withoutRepetition}": {
@@ -32492,9 +30509,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 0.25423728813559343,
                 "aAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{aAsPowerExponent,max,usePrimeIndex,withoutRepetition},{aAsLogarithmBase,aAsPowerExponent,sum,usePrimeIndex}": {
@@ -32512,9 +30526,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 0.8644067796610169,
                 "usePrimeIndex": true
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{sum,x},{sum,weightAsLogarithmBase,withoutRepetition}": {
@@ -32559,9 +30570,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.2711864406779663,
                 "usePrimeIndex": true
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{sum,x},{aAsPowerExponent,sum,withoutRepetition}": {
@@ -32591,9 +30599,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": -0.35593220338983045,
                 "x": 0.15254237288135597
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,w},{aAsPowerExponent,sum,withoutRepetition}": {
@@ -32623,9 +30628,6 @@ AND THE BEST METRICS WERE {
                 "weightAsLogarithmBase": 2,
                 "x": -0.5593220338983049
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,w},{sum,w,weightAsLogarithmBase,withoutRepetition}": {
@@ -32641,9 +30643,6 @@ AND THE BEST METRICS WERE {
                 "weightAsLogarithmBase": 2,
                 "w": -0.5593220338983049
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum},{aAsCoefficient,sum,x}": {
@@ -32725,9 +30724,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0.8888888888888888,
                 "w": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{aAsCoefficient,sum,w},{sum,w}": {
@@ -32742,9 +30738,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "w": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{aAsCoefficient,sum},{aAsCoefficient,sum,x}": {
@@ -32759,9 +30752,6 @@ AND THE BEST METRICS WERE {
                 "x": 1.0677966101694913,
                 "aAsCoefficient": 0.5555555555555556
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{aAsCoefficient,sum,x},{aAsCoefficient,sum}": {
@@ -32776,9 +30766,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "aAsCoefficient": 0.5555555555555556
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{aAsPowerExponent,sum},{sum,weightAsLogarithmBase}": {
@@ -32848,9 +30835,6 @@ AND THE BEST METRICS WERE {
                 "useNuminator": true,
                 "w": -0.25423728813559343
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,useNuminator,w},{aAsLogarithmBase,sum,w}": {
@@ -32866,9 +30850,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "w": -0.25423728813559343
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,useNuminator,w},{aAsLogarithmBase,sum,useNuminator,w}": {
@@ -32885,9 +30866,6 @@ AND THE BEST METRICS WERE {
                 "w": -0.25423728813559343,
                 "useNuminator": true
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,w,weightAsCoefficient},{aAsLogarithmBase,sum,w,weightAsCoefficient}": {
@@ -32904,10 +30882,6 @@ AND THE BEST METRICS WERE {
                 "weightAsCoefficient": 0.1111111111111111,
                 "w": -0.25423728813559343
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient",
-            "w"
         ]
     },
     "{sum,w},{aAsLogarithmBase,jAsCoefficient,sum,w}": {
@@ -32923,9 +30897,6 @@ AND THE BEST METRICS WERE {
                 "jAsCoefficient": 1,
                 "w": -0.25423728813559343
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{jAsCoefficient,sum,w},{aAsLogarithmBase,sum,w}": {
@@ -32941,9 +30912,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "w": -0.25423728813559343
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{jAsCoefficient,sum,w},{aAsLogarithmBase,jAsCoefficient,sum,w}": {
@@ -32960,10 +30928,6 @@ AND THE BEST METRICS WERE {
                 "jAsCoefficient": 1,
                 "w": -0.25423728813559343
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient",
-            "w"
         ]
     },
     "{aAsLogarithmBase,sum,w},{sum,w}": {
@@ -32978,9 +30942,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "w": -0.25423728813559343
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,w},{sum,w},{aAsLogarithmBase,sum,w}": {
@@ -32999,9 +30960,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "w": 0.15254237288135597
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum},{sum,weightAsPowerExponent},{aAsLogarithmBase,sum}": {
@@ -33052,9 +31010,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "weightAsPowerExponent": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{aAsCoefficient,sum,x},{count,x}": {
@@ -33069,9 +31024,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "x": -0.35593220338983045
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum},{aAsCoefficient,sum,w}": {
@@ -33129,9 +31081,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "y": 1.9830508474576272
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{sum},{aAsPowerExponent,sum,weightAsPowerBase}": {
@@ -33185,9 +31134,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "aAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsCoefficient,aAsPowerExponent,sum},{count}": {
@@ -33215,9 +31161,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "aAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{sum},{sum},{aAsPowerExponent,sum}": {
@@ -33278,9 +31221,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 0.05084745762711851,
                 "kAsPowerExponent": 0.5593220338983049
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{aAsLogarithmBase,aAsPowerExponent,sum},{aAsLogarithmBase,aAsPowerExponent,modifiedCount,sum}": {
@@ -33297,9 +31237,6 @@ AND THE BEST METRICS WERE {
                 "modifiedCount": true,
                 "aAsPowerExponent": 1.8813559322033901
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsLogarithmBase,aAsPowerExponent,modifiedCount,sum},{aAsLogarithmBase,aAsPowerExponent,sum}": {
@@ -33316,9 +31253,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 1.8813559322033901
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{sum},{count},{max,weightAsCoefficient,withoutRepetition}": {
@@ -33365,9 +31299,6 @@ AND THE BEST METRICS WERE {
                 "modifiedCount": true,
                 "kAsCoefficient": 0.8888888888888888
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{kAsCoefficient,modifiedCount,sum},{kAsCoefficient,sum}": {
@@ -33382,9 +31313,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "kAsCoefficient": 0.8888888888888888
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{sum,withoutRepetition,x},{aAsLogarithmBase,sum,x,y}": {
@@ -33401,9 +31329,6 @@ AND THE BEST METRICS WERE {
                 "y": 1.7796610169491522,
                 "x": -1.9830508474576272
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,withoutRepetition,x,y},{aAsLogarithmBase,sum,x,y}": {
@@ -33421,10 +31346,6 @@ AND THE BEST METRICS WERE {
                 "x": -1.9830508474576272,
                 "y": 1.7796610169491522
             }
-        ],
-        "spreadDynamicParameters": [
-            "x",
-            "y"
         ]
     },
     "{sum,y},{sum,y},{sum,withoutRepetition,y}": {
@@ -33443,9 +31364,6 @@ AND THE BEST METRICS WERE {
                 "withoutRepetition": true,
                 "y": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{sum,weightAsLogarithmBase},{aAsLogarithmBase,sum,weightAsCoefficient,weightAsLogarithmBase}": {
@@ -33488,9 +31406,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "aAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{aAsCoefficient,sum},{aAsCoefficient,sum,w}": {
@@ -33505,9 +31420,6 @@ AND THE BEST METRICS WERE {
                 "w": 1.1694915254237293,
                 "aAsCoefficient": 0.8888888888888888
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{aAsCoefficient,sum,w},{aAsCoefficient,sum}": {
@@ -33522,9 +31434,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "aAsCoefficient": 0.8888888888888888
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{sum},{count},{aAsLogarithmBase,max,withoutRepetition}": {
@@ -33603,9 +31512,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "w": -0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,w,x},{sum,w,x}": {
@@ -33621,10 +31527,6 @@ AND THE BEST METRICS WERE {
                 "w": -0.7627118644067798,
                 "x": 1.4745762711864403
             }
-        ],
-        "spreadDynamicParameters": [
-            "w",
-            "x"
         ]
     },
     "{sum,x},{sum,w,x}": {
@@ -33639,9 +31541,6 @@ AND THE BEST METRICS WERE {
                 "w": -1.4745762711864407,
                 "x": 1.4745762711864403
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,w,x},{sum,x}": {
@@ -33656,9 +31555,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "x": 1.4745762711864403
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{aAsCoefficient,sum,useNuminator,x}": {
@@ -33728,10 +31624,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0.5555555555555556,
                 "x": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient",
-            "x"
         ]
     },
     "{aAsCoefficient,sum,weightAsPowerExponent,x}": {
@@ -33800,9 +31692,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "x": 0.5593220338983049
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,weightAsPowerBase,x},{max,weightAsPowerBase,withoutRepetition,x}": {
@@ -33819,9 +31708,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerBase": 2,
                 "x": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,w,weightAsPowerBase},{max,withoutRepetition}": {
@@ -33866,9 +31752,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "w": 0.5593220338983049
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,w,weightAsPowerBase},{max,w,weightAsPowerBase,withoutRepetition}": {
@@ -33885,9 +31768,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerBase": 2,
                 "w": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{aAsPowerExponent,sum},{aAsPowerExponent,count,x}": {
@@ -33902,9 +31782,6 @@ AND THE BEST METRICS WERE {
                 "x": 0.5593220338983049,
                 "aAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{sum},{aAsPowerExponent,sum,useNuminator}": {
@@ -34025,9 +31902,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": -0.4576271186440679,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{aAsPowerExponent,sum,weightAsCoefficient},{sum,weightAsCoefficient}": {
@@ -34042,9 +31916,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{sum},{aAsPowerExponent,sum}": {
@@ -34096,9 +31967,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": -0.4576271186440679,
                 "aAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{aAsPowerExponent,sum},{aAsCoefficient,sum}": {
@@ -34126,9 +31994,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "aAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{jAsCoefficient,sum},{aAsPowerExponent,sum}": {
@@ -34156,9 +32021,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": -0.4576271186440679,
                 "jAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{aAsPowerExponent,sum},{jAsCoefficient,sum}": {
@@ -34199,9 +32061,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "jAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{kAsCoefficient,sum,withoutRepetition},{aAsLogarithmBase,kAsCoefficient,sum,y}": {
@@ -34218,9 +32077,6 @@ AND THE BEST METRICS WERE {
                 "y": 1.6779661016949152,
                 "kAsCoefficient": 0.7777777777777778
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{kAsCoefficient,sum,withoutRepetition,y},{aAsLogarithmBase,kAsCoefficient,sum,y}": {
@@ -34238,10 +32094,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0.7777777777777778,
                 "y": 1.6779661016949152
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient",
-            "y"
         ]
     },
     "{sum},{aAsPowerExponent,sum,y}": {
@@ -34294,9 +32146,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": -1.0677966101694916,
                 "w": -1.0677966101694916
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,y},{sum,withoutRepetition,y},{count,y}": {
@@ -34315,9 +32164,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "y": 1.2711864406779663
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{sum,weightAsPowerExponent,x},{sum,weightAsPowerExponent,withoutRepetition}": {
@@ -34333,9 +32179,6 @@ AND THE BEST METRICS WERE {
                 "withoutRepetition": true,
                 "weightAsPowerExponent": 3
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum,w,weightAsPowerExponent},{sum,weightAsPowerExponent,withoutRepetition}": {
@@ -34351,9 +32194,6 @@ AND THE BEST METRICS WERE {
                 "withoutRepetition": true,
                 "weightAsPowerExponent": 3
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum,weightAsCoefficient},{count,usePrimeIndex,weightAsCoefficient,withoutRepetition}": {
@@ -34369,9 +32209,6 @@ AND THE BEST METRICS WERE {
                 "usePrimeIndex": true,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{sum,weightAsCoefficient},{count,useNuminator,weightAsCoefficient,withoutRepetition}": {
@@ -34387,9 +32224,6 @@ AND THE BEST METRICS WERE {
                 "useNuminator": true,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{sum,useNuminator,weightAsCoefficient},{count,weightAsCoefficient,withoutRepetition}": {
@@ -34405,9 +32239,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{sum,useNuminator,weightAsCoefficient},{count,useNuminator,weightAsCoefficient,withoutRepetition}": {
@@ -34424,9 +32255,6 @@ AND THE BEST METRICS WERE {
                 "weightAsCoefficient": 0.1111111111111111,
                 "useNuminator": true
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{sum,weightAsCoefficient},{count,weightAsCoefficient,withoutRepetition,y}": {
@@ -34442,9 +32270,6 @@ AND THE BEST METRICS WERE {
                 "y": -3,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{sum,weightAsCoefficient},{count,weightAsCoefficient,withoutRepetition}": {
@@ -34459,9 +32284,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{sum,weightAsCoefficient},{aAsPowerExponent,count,weightAsCoefficient,withoutRepetition}": {
@@ -34477,9 +32299,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": -3,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{sum,weightAsCoefficient},{aAsCoefficient,count,withoutRepetition}": {
@@ -34509,9 +32328,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 1,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{aAsCoefficient,sum,weightAsCoefficient},{count,weightAsCoefficient,withoutRepetition}": {
@@ -34527,9 +32343,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{sum,weightAsCoefficient},{count,jAsCoefficient,weightAsCoefficient,withoutRepetition}": {
@@ -34545,9 +32358,6 @@ AND THE BEST METRICS WERE {
                 "jAsCoefficient": 1,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{jAsCoefficient,sum,weightAsCoefficient},{count,weightAsCoefficient,withoutRepetition}": {
@@ -34563,9 +32373,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{jAsCoefficient,sum,weightAsCoefficient},{count,jAsCoefficient,weightAsCoefficient,withoutRepetition}": {
@@ -34582,10 +32389,6 @@ AND THE BEST METRICS WERE {
                 "jAsCoefficient": 1,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient",
-            "weightAsCoefficient"
         ]
     },
     "{sum,weightAsCoefficient},{count,kAsPowerExponent,weightAsCoefficient,withoutRepetition}": {
@@ -34601,9 +32404,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerExponent": 0.05084745762711851,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{aAsCoefficient,sum,useNuminator,w}": {
@@ -34662,10 +32462,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0.8888888888888888,
                 "w": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient",
-            "w"
         ]
     },
     "{sum,weightAsPowerExponent,x},{max,weightAsPowerExponent,withoutRepetition}": {
@@ -34681,9 +32477,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "weightAsPowerExponent": 3
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum,w,weightAsPowerExponent},{max,weightAsPowerExponent,withoutRepetition}": {
@@ -34699,9 +32492,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "weightAsPowerExponent": 3
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{aAsCoefficient,sum,w},{count}": {
@@ -34730,10 +32520,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0.4444444444444444,
                 "w": -0.05084745762711851
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient",
-            "w"
         ]
     },
     "{sum,w,weightAsPowerExponent,x}": {
@@ -34776,9 +32562,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "aAsCoefficient": 0.4444444444444444
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{aAsPowerExponent,max,usePrimeIndex,withoutRepetition},{aAsLogarithmBase,aAsPowerExponent,sum}": {
@@ -34795,9 +32578,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsCoefficient,sum,w,weightAsCoefficient}": {
@@ -34834,9 +32614,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "x": -1.271186440677966
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{kAsCoefficient,sum,weightAsCoefficient,withoutRepetition},{aAsLogarithmBase,kAsCoefficient,sum}": {
@@ -34853,9 +32630,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "kAsCoefficient": 0.6666666666666666
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{aAsCoefficient,kAsCoefficient,sum,withoutRepetition},{aAsLogarithmBase,kAsCoefficient,sum}": {
@@ -34872,9 +32646,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "kAsCoefficient": 0.6666666666666666
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{aAsCoefficient,sum,w,x}": {
@@ -34915,9 +32686,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 2.288135593220339
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,sum},{count,weightAsPowerExponent,withoutRepetition}": {
@@ -34947,9 +32715,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 0.6610169491525424,
                 "aAsPowerExponent": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{sum,x,y},{sum,withoutRepetition,x}": {
@@ -34965,9 +32730,6 @@ AND THE BEST METRICS WERE {
                 "withoutRepetition": true,
                 "x": 0.15254237288135597
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,x,y},{sum,withoutRepetition,x,y}": {
@@ -34984,10 +32746,6 @@ AND THE BEST METRICS WERE {
                 "x": 0.15254237288135597,
                 "y": 1.3728813559322033
             }
-        ],
-        "spreadDynamicParameters": [
-            "x",
-            "y"
         ]
     },
     "{sum,w,y},{sum,w,withoutRepetition}": {
@@ -35003,9 +32761,6 @@ AND THE BEST METRICS WERE {
                 "withoutRepetition": true,
                 "w": 0.15254237288135597
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,w,y},{sum,w,withoutRepetition,y}": {
@@ -35022,10 +32777,6 @@ AND THE BEST METRICS WERE {
                 "w": 0.15254237288135597,
                 "y": 1.3728813559322033
             }
-        ],
-        "spreadDynamicParameters": [
-            "w",
-            "y"
         ]
     },
     "{sum},{count},{max,weightAsPowerExponent,withoutRepetition}": {
@@ -35074,9 +32825,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 1.4745762711864403,
                 "usePrimeIndex": true
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{count},{aAsLogarithmBase,sum,w,weightAsPowerExponent}": {
@@ -35251,9 +32999,6 @@ AND THE BEST METRICS WERE {
                 "weightAsCoefficient": 0.6666666666666666,
                 "y": 1.2711864406779663
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{sum,y},{aAsCoefficient,sum,withoutRepetition}": {
@@ -35283,9 +33028,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0.6666666666666666,
                 "y": 1.2711864406779663
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{sum,withoutRepetition},{aAsLogarithmBase,aAsPowerExponent,sum,x}": {
@@ -35317,9 +33059,6 @@ AND THE BEST METRICS WERE {
                 "x": -0.05084745762711851,
                 "usePrimeIndex": true
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,usePrimeIndex,w},{max,usePrimeIndex,w,withoutRepetition}": {
@@ -35336,9 +33075,6 @@ AND THE BEST METRICS WERE {
                 "w": -0.05084745762711851,
                 "usePrimeIndex": true
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum},{aAsLogarithmBase,sum,weightAsCoefficient,y}": {
@@ -35453,9 +33189,6 @@ AND THE BEST METRICS WERE {
                 "withoutRepetition": true,
                 "aAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{aAsCoefficient,sum,y},{aAsCoefficient,sum,withoutRepetition,y}": {
@@ -35472,10 +33205,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0.1111111111111111,
                 "y": 1.3728813559322033
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient",
-            "y"
         ]
     },
     "{aAsCoefficient,sum,x,y}": {
@@ -35502,9 +33231,6 @@ AND THE BEST METRICS WERE {
                 "weightAsCoefficient": 0.1111111111111111,
                 "weightAsPowerExponent": 0.05084745762711851
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum,y},{aAsLogarithmBase,sum,weightAsCoefficient}": {
@@ -35618,9 +33344,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 0.9661016949152543,
                 "x": -1.7796610169491525
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,weightAsCoefficient},{aAsLogarithmBase,sum,weightAsPowerExponent}": {
@@ -35663,9 +33386,6 @@ AND THE BEST METRICS WERE {
                 "x": -0.8644067796610169,
                 "weightAsPowerExponent": 0.5593220338983049
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum,weightAsPowerExponent},{count,w,weightAsPowerExponent}": {
@@ -35680,9 +33400,6 @@ AND THE BEST METRICS WERE {
                 "w": -0.8644067796610169,
                 "weightAsPowerExponent": 0.5593220338983049
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum,withoutRepetition},{count,withoutRepetition},{aAsLogarithmBase,jAsPowerExponent,sum}": {
@@ -35802,9 +33519,6 @@ AND THE BEST METRICS WERE {
                 "useNuminator": true,
                 "aAsPowerExponent": 0.6610169491525424
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,max,useNuminator,withoutRepetition},{aAsLogarithmBase,aAsPowerExponent,sum}": {
@@ -35821,9 +33535,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 0.6610169491525424
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,max,useNuminator,withoutRepetition},{aAsLogarithmBase,aAsPowerExponent,sum,useNuminator}": {
@@ -35841,9 +33552,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 0.6610169491525424,
                 "useNuminator": true
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,max,withoutRepetition,y},{aAsLogarithmBase,aAsPowerExponent,sum}": {
@@ -35860,9 +33568,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 0.6610169491525424
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,max,w,withoutRepetition},{aAsLogarithmBase,aAsPowerExponent,sum}": {
@@ -35879,9 +33584,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 0.6610169491525424
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,max,weightAsCoefficient,withoutRepetition},{aAsLogarithmBase,aAsPowerExponent,sum,weightAsCoefficient}": {
@@ -35899,10 +33601,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 0.6610169491525424,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent",
-            "weightAsCoefficient"
         ]
     },
     "{aAsCoefficient,aAsPowerExponent,max,withoutRepetition},{aAsCoefficient,aAsLogarithmBase,aAsPowerExponent,sum}": {
@@ -35920,10 +33618,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0.1111111111111111,
                 "aAsPowerExponent": 0.6610169491525424
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient",
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,max,withoutRepetition},{aAsLogarithmBase,aAsPowerExponent,jAsCoefficient,sum}": {
@@ -35940,9 +33634,6 @@ AND THE BEST METRICS WERE {
                 "jAsCoefficient": 1,
                 "aAsPowerExponent": 0.6610169491525424
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,jAsCoefficient,max,withoutRepetition},{aAsLogarithmBase,aAsPowerExponent,sum}": {
@@ -35959,9 +33650,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 0.6610169491525424
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,jAsCoefficient,max,withoutRepetition},{aAsLogarithmBase,aAsPowerExponent,jAsCoefficient,sum}": {
@@ -35979,10 +33667,6 @@ AND THE BEST METRICS WERE {
                 "jAsCoefficient": 1,
                 "aAsPowerExponent": 0.6610169491525424
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient",
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,kAsCoefficient,max,withoutRepetition},{aAsLogarithmBase,aAsPowerExponent,sum}": {
@@ -35999,9 +33683,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 0.6610169491525424
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,kAsCoefficient,max,withoutRepetition},{aAsLogarithmBase,aAsPowerExponent,kAsCoefficient,sum}": {
@@ -36019,10 +33700,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 1,
                 "aAsPowerExponent": 0.6610169491525424
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient",
-            "aAsPowerExponent"
         ]
     },
     "{aAsLogarithmBase,aAsPowerExponent,sum},{aAsPowerExponent,max,withoutRepetition}": {
@@ -36038,9 +33715,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "aAsPowerExponent": 0.6610169491525424
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{kAsCoefficient,sum,withoutRepetition},{aAsLogarithmBase,sum,y}": {
@@ -36072,9 +33746,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "y": 1.6779661016949152
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{aAsPowerExponent,sum},{count,weightAsPowerExponent}": {
@@ -36102,9 +33773,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 0.6610169491525424,
                 "aAsPowerExponent": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,sum,weightAsPowerExponent},{count}": {
@@ -36132,9 +33800,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "aAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,sum},{sum,weightAsPowerExponent}": {
@@ -36226,9 +33891,6 @@ AND THE BEST METRICS WERE {
                 "withoutRepetition": true,
                 "x": -0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,w,weightAsPowerExponent},{sum,w,withoutRepetition}": {
@@ -36244,9 +33906,6 @@ AND THE BEST METRICS WERE {
                 "withoutRepetition": true,
                 "w": -0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{aAsPowerExponent,sum},{aAsLogarithmBase,modifiedCount,sum}": {
@@ -36276,9 +33935,6 @@ AND THE BEST METRICS WERE {
                 "modifiedCount": true,
                 "aAsPowerExponent": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,sum,x},{count,withoutRepetition,x}": {
@@ -36294,9 +33950,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "x": -0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum},{aAsPowerExponent,sum,w,withoutRepetition}": {
@@ -36326,9 +33979,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerExponent": 3,
                 "jAsPowerExponent": 2.084745762711864
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{sum,weightAsPowerBase},{sum,weightAsPowerBase,withoutRepetition},{max,weightAsPowerBase,withoutRepetition}": {
@@ -36377,9 +34027,6 @@ AND THE BEST METRICS WERE {
                 "withoutRepetition": true,
                 "y": 1.3728813559322033
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{sum},{aAsLogarithmBase,sum,w,weightAsLogarithmBase}": {
@@ -36464,10 +34111,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 1.1694915254237293,
                 "weightAsPowerExponent": 0.35593220338983045
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent",
-            "weightAsPowerExponent"
         ]
     },
     "{sum,y},{sum,withoutRepetition},{aAsLogarithmBase,sum}": {
@@ -36517,10 +34160,6 @@ AND THE BEST METRICS WERE {
                 "weightAsCoefficient": 0.1111111111111111,
                 "y": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient",
-            "y"
         ]
     },
     "{sum},{sum,v,y}": {
@@ -36576,9 +34215,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{aAsCoefficient,jAsPowerBase,sum,w}": {
@@ -36639,9 +34275,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "w": -1.271186440677966
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{max,usePrimeIndex,withoutRepetition},{aAsLogarithmBase,sum,weightAsCoefficient}": {
@@ -36686,9 +34319,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "x": -0.8644067796610169
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,w,weightAsLogarithmBase},{count,w}": {
@@ -36703,9 +34333,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "w": -0.8644067796610169
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,usePrimeIndex},{aAsLogarithmBase,aAsPowerExponent,sum}": {
@@ -36764,9 +34391,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "weightAsPowerExponent": 0.05084745762711851
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{aAsCoefficient,sum,usePrimeIndex,x}": {
@@ -36809,9 +34433,6 @@ AND THE BEST METRICS WERE {
                 "weightAsLogarithmBase": 2,
                 "y": 1.9830508474576272
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{aAsPowerExponent,max,weightAsLogarithmBase,withoutRepetition},{aAsLogarithmBase,sum,weightAsLogarithmBase}": {
@@ -36843,9 +34464,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 0.7627118644067798,
                 "aAsCoefficient": 0.4444444444444444
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{aAsCoefficient,sum,weightAsPowerExponent},{aAsLogarithmBase,sum}": {
@@ -36875,9 +34493,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsCoefficient": 0.4444444444444444
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{sum,weightAsPowerExponent,x},{sum,withoutRepetition}": {
@@ -36935,9 +34550,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 0.6610169491525424,
                 "y": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{sum,y},{aAsPowerExponent,max,withoutRepetition}": {
@@ -36967,9 +34579,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 0.6610169491525424,
                 "y": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{sum,weightAsCoefficient,y},{count,weightAsCoefficient,withoutRepetition}": {
@@ -36985,9 +34594,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{sum,weightAsCoefficient,y},{count,weightAsCoefficient,withoutRepetition,y}": {
@@ -37004,10 +34610,6 @@ AND THE BEST METRICS WERE {
                 "weightAsCoefficient": 0.1111111111111111,
                 "y": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient",
-            "y"
         ]
     },
     "{sum,w,x},{count,w,withoutRepetition,x}": {
@@ -37024,10 +34626,6 @@ AND THE BEST METRICS WERE {
                 "w": -1.4745762711864407,
                 "x": 1.4745762711864403
             }
-        ],
-        "spreadDynamicParameters": [
-            "w",
-            "x"
         ]
     },
     "{aAsPowerExponent,jAsPowerExponent,sum},{aAsPowerExponent,jAsPowerExponent,max,withoutRepetition}": {
@@ -37044,10 +34642,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.3728813559322033,
                 "aAsPowerExponent": 0.6610169491525424
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent",
-            "aAsPowerExponent"
         ]
     },
     "{sum,weightAsPowerExponent,y},{sum,weightAsPowerExponent,withoutRepetition}": {
@@ -37063,9 +34657,6 @@ AND THE BEST METRICS WERE {
                 "withoutRepetition": true,
                 "weightAsPowerExponent": 0.15254237288135597
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum,weightAsPowerExponent,y},{sum,weightAsPowerExponent,withoutRepetition,y}": {
@@ -37082,10 +34673,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 0.15254237288135597,
                 "y": 1.8813559322033901
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent",
-            "y"
         ]
     },
     "{aAsLogarithmBase,jAsPowerBase,sum,w,x}": {
@@ -37276,10 +34863,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0.4444444444444444,
                 "w": -0.15254237288135597
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient",
-            "w"
         ]
     },
     "{aAsCoefficient,sum},{aAsLogarithmBase,sum,weightAsCoefficient}": {
@@ -37472,9 +35055,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "w": -0.5593220338983049
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum},{sum,x},{aAsLogarithmBase,sum}": {
@@ -37525,9 +35105,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "x": 0.15254237288135597
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum},{sum},{aAsLogarithmBase,sum,w}": {
@@ -37674,9 +35251,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "aAsPowerExponent": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{sum,weightAsPowerExponent},{sum,withoutRepetition},{max,withoutRepetition}": {
@@ -37709,9 +35283,6 @@ AND THE BEST METRICS WERE {
                 "weightAsCoefficient": 0.3333333333333333,
                 "weightAsPowerExponent": 0.4576271186440679
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum,y},{aAsLogarithmBase,sum,x}": {
@@ -37740,9 +35311,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 0.25423728813559343,
                 "x": -2.084745762711864
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{aAsPowerExponent,sum,x},{sum,x}": {
@@ -37757,9 +35325,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "x": -2.084745762711864
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum},{aAsLogarithmBase,kAsPowerExponent,sum,withoutRepetition}": {
@@ -37903,9 +35468,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "x": -1.576271186440678
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum},{aAsPowerExponent,sum,weightAsPowerExponent,withoutRepetition}": {
@@ -37951,9 +35513,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "w": -0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{aAsPowerExponent,sum,w},{aAsPowerExponent,count,w,withoutRepetition}": {
@@ -37970,10 +35529,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 0.7627118644067798,
                 "w": -0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent",
-            "w"
         ]
     },
     "{sum,weightAsPowerExponent},{aAsLogarithmBase,sum,weightAsCoefficient}": {
@@ -38031,9 +35586,6 @@ AND THE BEST METRICS WERE {
                 "withoutRepetition": true,
                 "y": 1.3728813559322033
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{sum,v,y},{sum,v,withoutRepetition,y}": {
@@ -38050,10 +35602,6 @@ AND THE BEST METRICS WERE {
                 "y": 1.3728813559322033,
                 "v": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "y",
-            "v"
         ]
     },
     "{sum,weightAsCoefficient},{count,weightAsCoefficient,y}": {
@@ -38068,9 +35616,6 @@ AND THE BEST METRICS WERE {
                 "y": 0.4576271186440679,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{sum},{aAsLogarithmBase,sum,w}": {
@@ -38241,9 +35786,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "w": 0.15254237288135597
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,w},{aAsLogarithmBase,sum}": {
@@ -38272,9 +35814,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{sum},{aAsLogarithmBase,sum,w,weightAsCoefficient}": {
@@ -38304,9 +35843,6 @@ AND THE BEST METRICS WERE {
                 "w": -2.694915254237288,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{sum,w,weightAsCoefficient},{aAsLogarithmBase,sum,weightAsCoefficient}": {
@@ -38322,9 +35858,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{sum,w},{aAsLogarithmBase,sum,w,weightAsCoefficient}": {
@@ -38340,9 +35873,6 @@ AND THE BEST METRICS WERE {
                 "weightAsCoefficient": 0.1111111111111111,
                 "w": -1.0677966101694916
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{aAsCoefficient,sum,x},{aAsCoefficient,aAsLogarithmBase,sum}": {
@@ -38358,9 +35888,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{sum,w},{aAsCoefficient,aAsLogarithmBase,sum,w}": {
@@ -38376,9 +35903,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0.5555555555555556,
                 "w": -0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,x},{aAsLogarithmBase,jAsCoefficient,sum}": {
@@ -38422,9 +35946,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "jAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{jAsCoefficient,sum},{aAsLogarithmBase,sum,w}": {
@@ -38454,9 +35975,6 @@ AND THE BEST METRICS WERE {
                 "w": -2.694915254237288,
                 "jAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{sum,w},{aAsLogarithmBase,jAsCoefficient,sum}": {
@@ -38500,9 +36018,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "jAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{aAsLogarithmBase,sum},{sum,x}": {
@@ -38656,9 +36171,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 0.4576271186440679
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{sum,weightAsCoefficient,x},{aAsLogarithmBase,sum}": {
@@ -38800,9 +36312,6 @@ AND THE BEST METRICS WERE {
                 "x": -1.4745762711864407,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{aAsCoefficient,sum},{aAsCoefficient,aAsLogarithmBase,sum,x}": {
@@ -38818,9 +36327,6 @@ AND THE BEST METRICS WERE {
                 "x": -1.4745762711864407,
                 "aAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{sum},{aAsLogarithmBase,jAsCoefficient,sum,x}": {
@@ -38864,9 +36370,6 @@ AND THE BEST METRICS WERE {
                 "x": -1.4745762711864407,
                 "jAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{aAsLogarithmBase,sum,x},{sum}": {
@@ -38925,9 +36428,6 @@ AND THE BEST METRICS WERE {
                 "useNuminator": true,
                 "x": -1.88135593220339
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,useNuminator,x},{aAsLogarithmBase,sum,x}": {
@@ -38943,9 +36443,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "x": -1.88135593220339
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,useNuminator,x},{aAsLogarithmBase,sum,useNuminator,x}": {
@@ -38962,9 +36459,6 @@ AND THE BEST METRICS WERE {
                 "x": -1.88135593220339,
                 "useNuminator": true
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,weightAsCoefficient,x},{aAsLogarithmBase,sum,weightAsCoefficient,x}": {
@@ -38981,10 +36475,6 @@ AND THE BEST METRICS WERE {
                 "weightAsCoefficient": 0.1111111111111111,
                 "x": -1.88135593220339
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient",
-            "x"
         ]
     },
     "{aAsCoefficient,sum,x},{aAsCoefficient,aAsLogarithmBase,sum,x}": {
@@ -39001,10 +36491,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0.1111111111111111,
                 "x": -1.88135593220339
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient",
-            "x"
         ]
     },
     "{sum,x},{aAsLogarithmBase,jAsCoefficient,sum,x}": {
@@ -39020,9 +36506,6 @@ AND THE BEST METRICS WERE {
                 "jAsCoefficient": 1,
                 "x": -1.88135593220339
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{jAsCoefficient,sum,x},{aAsLogarithmBase,sum,x}": {
@@ -39038,9 +36521,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "x": -1.88135593220339
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{jAsCoefficient,sum,x},{aAsLogarithmBase,jAsCoefficient,sum,x}": {
@@ -39057,10 +36537,6 @@ AND THE BEST METRICS WERE {
                 "jAsCoefficient": 1,
                 "x": -1.88135593220339
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient",
-            "x"
         ]
     },
     "{aAsLogarithmBase,sum,x},{sum,x}": {
@@ -39075,9 +36551,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "x": -1.88135593220339
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{aAsLogarithmBase,jAsLogarithmBase,sum,w,x}": {
@@ -39121,9 +36594,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "y": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{aAsCoefficient,max,withoutRepetition},{aAsLogarithmBase,sum,y}": {
@@ -39155,9 +36625,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "y": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{sum,weightAsPowerExponent},{aAsCoefficient,aAsLogarithmBase,sum,weightAsPowerExponent}": {
@@ -39173,9 +36640,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0.7777777777777778,
                 "weightAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum,x},{aAsLogarithmBase,sum,weightAsCoefficient,x}": {
@@ -39191,9 +36655,6 @@ AND THE BEST METRICS WERE {
                 "weightAsCoefficient": 0.8888888888888888,
                 "x": -1.7796610169491525
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,x},{aAsCoefficient,aAsLogarithmBase,sum,x}": {
@@ -39209,9 +36670,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0.8888888888888888,
                 "x": -1.7796610169491525
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{count,kAsCoefficient},{jAsPowerExponent,kAsCoefficient,max,withoutRepetition}": {
@@ -39227,9 +36685,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 0.5593220338983049,
                 "kAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{sum},{aAsLogarithmBase,sum,x,y}": {
@@ -39259,9 +36714,6 @@ AND THE BEST METRICS WERE {
                 "x": -1.576271186440678,
                 "y": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{max,usePrimeIndex,weightAsCoefficient,withoutRepetition},{aAsLogarithmBase,sum,usePrimeIndex}": {
@@ -39372,9 +36824,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "x": -1.271186440677966
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,weightAsPowerBase,weightAsPowerExponent},{max,weightAsPowerExponent,withoutRepetition}": {
@@ -39390,9 +36839,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "weightAsPowerExponent": 0.35593220338983045
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum},{max,weightAsPowerExponent,withoutRepetition},{aAsLogarithmBase,sum}": {
@@ -39469,9 +36915,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "x": -0.4576271186440679
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,w,weightAsPowerExponent},{count,w}": {
@@ -39486,9 +36929,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "w": -0.4576271186440679
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,w},{aAsLogarithmBase,sum,w,x}": {
@@ -39504,9 +36944,6 @@ AND THE BEST METRICS WERE {
                 "x": -2.8983050847457625,
                 "w": -0.5593220338983049
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,w},{aAsLogarithmBase,sum,w},{aAsLogarithmBase,sum,w}": {
@@ -39526,9 +36963,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "w": -1.4745762711864407
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,x},{aAsLogarithmBase,sum,w,x}": {
@@ -39544,9 +36978,6 @@ AND THE BEST METRICS WERE {
                 "w": 1.9830508474576272,
                 "x": -3
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,w,x},{aAsLogarithmBase,sum,x}": {
@@ -39562,9 +36993,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "x": -3
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum},{max,weightAsLogarithmBase,withoutRepetition},{aAsLogarithmBase,sum}": {
@@ -39640,9 +37068,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 0.8644067796610169
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{sum},{aAsLogarithmBase,aAsPowerExponent,sum,useNuminator}": {
@@ -39701,9 +37126,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 1.8813559322033901,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{sum},{aAsLogarithmBase,aAsPowerExponent,sum}": {
@@ -39732,9 +37154,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 1.8813559322033901,
                 "aAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{sum},{aAsLogarithmBase,aAsPowerExponent,jAsCoefficient,sum}": {
@@ -39778,9 +37197,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 1.8813559322033901,
                 "jAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{aAsLogarithmBase,aAsPowerExponent,sum},{sum}": {
@@ -39852,9 +37268,6 @@ AND THE BEST METRICS WERE {
                 "x": -2.288135593220339,
                 "aAsPowerExponent": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,sum,x},{count}": {
@@ -39882,9 +37295,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "aAsPowerExponent": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,sum},{aAsPowerExponent,sum,x}": {
@@ -39899,9 +37309,6 @@ AND THE BEST METRICS WERE {
                 "x": -2.8983050847457625,
                 "aAsPowerExponent": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,sum,x},{aAsPowerExponent,sum}": {
@@ -39916,9 +37323,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "aAsPowerExponent": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{sum,weightAsPowerExponent},{aAsCoefficient,max,weightAsPowerExponent,withoutRepetition}": {
@@ -39934,9 +37338,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0.1111111111111111,
                 "weightAsPowerExponent": 0.6610169491525424
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum},{count},{aAsLogarithmBase,aAsPowerExponent,sum}": {
@@ -39996,9 +37397,6 @@ AND THE BEST METRICS WERE {
                 "usePrimeIndex": true,
                 "aAsPowerExponent": 2.491525423728813
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{count,usePrimeIndex},{aAsLogarithmBase,aAsPowerExponent,sum,usePrimeIndex}": {
@@ -40030,9 +37428,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 2.491525423728813,
                 "usePrimeIndex": true
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,sum,weightAsLogarithmBase},{aAsLogarithmBase,aAsPowerExponent,sum,weightAsLogarithmBase}": {
@@ -40049,9 +37444,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 1.2711864406779663,
                 "weightAsLogarithmBase": 2
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsCoefficient,sum,w,withoutRepetition},{aAsLogarithmBase,sum,w}": {
@@ -40068,9 +37460,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "w": -0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{jAsPowerExponent,sum},{modifiedCount,sum,withoutRepetition}": {
@@ -40100,9 +37489,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "aAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{sum,weightAsPowerExponent,x},{max,weightAsPowerExponent,withoutRepetition,x}": {
@@ -40119,10 +37505,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 1.8813559322033901,
                 "x": 1.5762711864406782
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent",
-            "x"
         ]
     },
     "{sum,w,weightAsPowerExponent},{max,w,weightAsPowerExponent,withoutRepetition}": {
@@ -40139,10 +37521,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 1.8813559322033901,
                 "w": 1.5762711864406782
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent",
-            "w"
         ]
     },
     "{sum,withoutRepetition},{aAsLogarithmBase,jAsPowerExponent,sum,usePrimeIndex}": {
@@ -40173,9 +37551,6 @@ AND THE BEST METRICS WERE {
                 "withoutRepetition": true,
                 "aAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{sum,w,y},{aAsLogarithmBase,sum,w,y}": {
@@ -40192,10 +37567,6 @@ AND THE BEST METRICS WERE {
                 "w": -1.3728813559322033,
                 "y": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "w",
-            "y"
         ]
     },
     "{sum},{count,jAsPowerExponent,y}": {
@@ -40266,9 +37637,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 2.694915254237288
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{count},{count},{aAsLogarithmBase,aAsPowerExponent,sum}": {
@@ -40303,9 +37671,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 2.694915254237288
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,kAsPowerBase,sum,weightAsPowerBase}": {
@@ -40348,9 +37713,6 @@ AND THE BEST METRICS WERE {
                 "x": -2.8983050847457625,
                 "y": 2.084745762711864
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{sum},{sum,x},{count,withoutRepetition}": {
@@ -40472,9 +37834,6 @@ AND THE BEST METRICS WERE {
                 "withoutRepetition": true,
                 "y": 1.2711864406779663
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{sum,w,y},{sum,withoutRepetition}": {
@@ -40504,9 +37863,6 @@ AND THE BEST METRICS WERE {
                 "withoutRepetition": true,
                 "y": 1.2711864406779663
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{sum,x},{aAsLogarithmBase,sum,y}": {
@@ -40550,9 +37906,6 @@ AND THE BEST METRICS WERE {
                 "weightAsCoefficient": 0.5555555555555556,
                 "weightAsPowerExponent": 2.898305084745763
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum,weightAsPowerExponent},{sum,weightAsPowerExponent},{max,weightAsPowerExponent,withoutRepetition}": {
@@ -40571,9 +37924,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "weightAsPowerExponent": 2.593220338983051
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum,usePrimeIndex},{aAsLogarithmBase,aAsPowerExponent,sum,usePrimeIndex}": {
@@ -40683,9 +38033,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 2.593220338983051
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{sum,usePrimeIndex,x},{aAsLogarithmBase,sum}": {
@@ -40850,9 +38197,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "w": -1.271186440677966
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{jAsLogarithmBase,kAsCoefficient,sum}": {
@@ -40911,9 +38255,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0.1111111111111111,
                 "jAsLogarithmBase": 2
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{sum,weightAsPowerExponent},{aAsPowerExponent,sum,withoutRepetition}": {
@@ -40955,9 +38296,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "x": -1.88135593220339
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{aAsPowerExponent,sum,x},{aAsLogarithmBase,sum}": {
@@ -41153,9 +38491,6 @@ AND THE BEST METRICS WERE {
                 "jAsCoefficient": 1,
                 "usePrimeIndex": true
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{sum,usePrimeIndex},{kAsCoefficient,max,usePrimeIndex,withoutRepetition}": {
@@ -41187,9 +38522,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 1,
                 "usePrimeIndex": true
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{max,modifiedCount,withoutRepetition},{aAsLogarithmBase,sum,weightAsPowerExponent}": {
@@ -41221,9 +38553,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "jAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{sum,y},{modifiedCount,sum,withoutRepetition}": {
@@ -41253,9 +38582,6 @@ AND THE BEST METRICS WERE {
                 "modifiedCount": true,
                 "y": 1.3728813559322033
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{sum,usePrimeIndex,w,x}": {
@@ -41338,10 +38664,6 @@ AND THE BEST METRICS WERE {
                 "w": -2.8983050847457625,
                 "x": 2.288135593220339
             }
-        ],
-        "spreadDynamicParameters": [
-            "w",
-            "x"
         ]
     },
     "{sum,x},{aAsLogarithmBase,sum,weightAsCoefficient}": {
@@ -41413,9 +38735,6 @@ AND THE BEST METRICS WERE {
                 "w": -2.593220338983051,
                 "aAsCoefficient": 0.8888888888888888
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{sum,w},{aAsCoefficient,aAsLogarithmBase,sum}": {
@@ -41445,9 +38764,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsCoefficient": 0.8888888888888888
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{aAsPowerExponent,sum},{sum,x}": {
@@ -41527,9 +38843,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 0.5593220338983049,
                 "w": -1.3728813559322033
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{aAsPowerExponent,sum,w},{sum,w}": {
@@ -41544,9 +38857,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "w": -1.3728813559322033
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,weightAsPowerExponent,withoutRepetition,x},{aAsLogarithmBase,sum,x}": {
@@ -41563,9 +38873,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "x": -2.288135593220339
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{kAsCoefficient,sum},{sum,usePrimeIndex,withoutRepetition}": {
@@ -41668,10 +38975,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0.7777777777777778,
                 "x": -2.8983050847457625
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient",
-            "x"
         ]
     },
     "{sum,x,y},{aAsLogarithmBase,sum,x,y}": {
@@ -41688,10 +38991,6 @@ AND THE BEST METRICS WERE {
                 "x": -1.88135593220339,
                 "y": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "x",
-            "y"
         ]
     },
     "{sum,x,y},{aAsLogarithmBase,sum,x}": {
@@ -41707,9 +39006,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "x": -1.9830508474576272
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum},{sum,weightAsLogarithmBase,withoutRepetition,x}": {
@@ -41823,9 +39119,6 @@ AND THE BEST METRICS WERE {
                 "w": -2.593220338983051,
                 "aAsPowerExponent": 0.6610169491525424
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,kAsPowerBase,sum},{aAsLogarithmBase,kAsPowerBase,sum}": {
@@ -42003,9 +39296,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 2.288135593220339,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{aAsLogarithmBase,aAsPowerExponent,sum,weightAsCoefficient},{aAsLogarithmBase,sum,weightAsCoefficient}": {
@@ -42022,9 +39312,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{aAsLogarithmBase,aAsPowerExponent,sum},{aAsLogarithmBase,sum}": {
@@ -42055,9 +39342,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 2.288135593220339,
                 "aAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{aAsCoefficient,aAsLogarithmBase,aAsPowerExponent,sum},{aAsCoefficient,aAsLogarithmBase,sum}": {
@@ -42074,9 +39358,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{aAsLogarithmBase,sum},{aAsLogarithmBase,aAsPowerExponent,jAsCoefficient,sum}": {
@@ -42123,9 +39404,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 2.288135593220339,
                 "jAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{aAsLogarithmBase,aAsPowerExponent,sum},{aAsLogarithmBase,jAsCoefficient,sum}": {
@@ -42172,9 +39450,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "jAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{kAsPowerExponent,sum},{jAsCoefficient,kAsPowerExponent,max,withoutRepetition}": {
@@ -42190,9 +39465,6 @@ AND THE BEST METRICS WERE {
                 "jAsCoefficient": 0,
                 "kAsPowerExponent": 0.5593220338983049
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{sum,x,y},{aAsLogarithmBase,sum,y}": {
@@ -42208,9 +39480,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "y": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{sum,y},{aAsLogarithmBase,sum,w}": {
@@ -42240,9 +39509,6 @@ AND THE BEST METRICS WERE {
                 "w": -2.694915254237288,
                 "y": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{sum,w,y},{aAsLogarithmBase,sum,y}": {
@@ -42258,9 +39524,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "y": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{sum,w},{aAsLogarithmBase,sum,w,y}": {
@@ -42276,9 +39539,6 @@ AND THE BEST METRICS WERE {
                 "y": 0.8644067796610169,
                 "w": -1.3728813559322033
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,w,y},{aAsLogarithmBase,sum,w}": {
@@ -42294,9 +39554,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "w": -1.3728813559322033
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{count,weightAsPowerBase,withoutRepetition},{aAsLogarithmBase,aAsPowerExponent,sum}": {
@@ -42328,9 +39585,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 2.288135593220339
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{count},{aAsLogarithmBase,aAsPowerExponent,jAsCoefficient,sum}": {
@@ -42387,9 +39641,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 2.593220338983051
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{count},{aAsLogarithmBase,aAsPowerExponent,sum,useNuminator}": {
@@ -42419,9 +39670,6 @@ AND THE BEST METRICS WERE {
                 "useNuminator": true,
                 "aAsPowerExponent": 2.593220338983051
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{count,useNuminator},{aAsLogarithmBase,aAsPowerExponent,sum}": {
@@ -42451,9 +39699,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 2.593220338983051
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{count,useNuminator},{aAsLogarithmBase,aAsPowerExponent,sum,useNuminator}": {
@@ -42485,9 +39730,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 2.593220338983051,
                 "useNuminator": true
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{count,weightAsCoefficient},{aAsLogarithmBase,aAsPowerExponent,sum,weightAsCoefficient}": {
@@ -42503,9 +39745,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 2.593220338983051,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{aAsPowerExponent,count,weightAsCoefficient},{aAsLogarithmBase,aAsPowerExponent,sum,weightAsCoefficient}": {
@@ -42522,10 +39761,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 2.593220338983051,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent",
-            "weightAsCoefficient"
         ]
     },
     "{aAsPowerExponent,count},{aAsLogarithmBase,aAsPowerExponent,sum}": {
@@ -42555,9 +39790,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 2.593220338983051,
                 "aAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{aAsCoefficient,aAsPowerExponent,count},{aAsCoefficient,aAsLogarithmBase,aAsPowerExponent,sum}": {
@@ -42574,10 +39806,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0.1111111111111111,
                 "aAsPowerExponent": 2.593220338983051
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient",
-            "aAsPowerExponent"
         ]
     },
     "{count,jAsCoefficient},{aAsLogarithmBase,aAsPowerExponent,sum}": {
@@ -42607,9 +39835,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 2.593220338983051,
                 "jAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{aAsPowerExponent,count},{aAsLogarithmBase,aAsPowerExponent,jAsCoefficient,sum}": {
@@ -42625,9 +39850,6 @@ AND THE BEST METRICS WERE {
                 "jAsCoefficient": 1,
                 "aAsPowerExponent": 2.593220338983051
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,count,jAsCoefficient},{aAsLogarithmBase,aAsPowerExponent,sum}": {
@@ -42643,9 +39865,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 2.593220338983051
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,count,jAsCoefficient},{aAsLogarithmBase,aAsPowerExponent,jAsCoefficient,sum}": {
@@ -42662,10 +39881,6 @@ AND THE BEST METRICS WERE {
                 "jAsCoefficient": 1,
                 "aAsPowerExponent": 2.593220338983051
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient",
-            "aAsPowerExponent"
         ]
     },
     "{aAsLogarithmBase,aAsPowerExponent,sum},{count}": {
@@ -42693,9 +39908,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "aAsPowerExponent": 2.593220338983051
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{max,withoutRepetition},{aAsLogarithmBase,sum},{aAsLogarithmBase,aAsPowerExponent,sum}": {
@@ -42829,9 +40041,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 2.491525423728813,
                 "weightAsPowerExponent": 3
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum,x,y},{aAsLogarithmBase,sum}": {
@@ -43164,9 +40373,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{aAsCoefficient,max,weightAsCoefficient,withoutRepetition},{aAsLogarithmBase,sum,weightAsCoefficient}": {
@@ -43183,9 +40389,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{aAsCoefficient,max,withoutRepetition},{aAsLogarithmBase,sum}": {
@@ -43246,9 +40449,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "jAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{aAsCoefficient,max,withoutRepetition},{aAsLogarithmBase,jAsCoefficient,sum}": {
@@ -43295,9 +40495,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "jAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{kAsCoefficient,max,weightAsCoefficient,withoutRepetition},{aAsLogarithmBase,sum}": {
@@ -43590,9 +40787,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 1.3728813559322033,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{max,withoutRepetition},{aAsLogarithmBase,jAsCoefficient,sum,weightAsPowerExponent}": {
@@ -43639,9 +40833,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 1.3728813559322033,
                 "jAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{kAsCoefficient,max,withoutRepetition},{aAsLogarithmBase,sum,weightAsPowerExponent}": {
@@ -43686,9 +40877,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 0.8644067796610169
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{sum,x},{aAsLogarithmBase,modifiedCount,sum}": {
@@ -43718,9 +40906,6 @@ AND THE BEST METRICS WERE {
                 "modifiedCount": true,
                 "x": 0.4576271186440679
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,w},{aAsLogarithmBase,modifiedCount,sum}": {
@@ -43826,9 +41011,6 @@ AND THE BEST METRICS WERE {
                 "jAsLogarithmBase": 2,
                 "aAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{count,withoutRepetition},{aAsLogarithmBase,sum,w,weightAsPowerExponent}": {
@@ -43873,10 +41055,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0.1111111111111111,
                 "y": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient",
-            "y"
         ]
     },
     "{max,weightAsPowerExponent,withoutRepetition},{aAsLogarithmBase,sum,weightAsLogarithmBase}": {
@@ -43922,9 +41100,6 @@ AND THE BEST METRICS WERE {
                 "withoutRepetition": true,
                 "jAsPowerExponent": 1.8813559322033901
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{aAsCoefficient,sum,y},{aAsCoefficient,count}": {
@@ -43939,9 +41114,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "aAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{sum,w},{aAsLogarithmBase,modifiedCount,sum,w}": {
@@ -43957,9 +41129,6 @@ AND THE BEST METRICS WERE {
                 "modifiedCount": true,
                 "w": 0.35593220338983045
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{max,weightAsCoefficient,withoutRepetition},{aAsLogarithmBase,sum,weightAsCoefficient}": {
@@ -44036,9 +41205,6 @@ AND THE BEST METRICS WERE {
                 "weightAsCoefficient": 0.7777777777777778,
                 "aAsPowerExponent": 0.5593220338983049
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,max,withoutRepetition},{aAsCoefficient,aAsLogarithmBase,aAsPowerExponent,sum}": {
@@ -44055,9 +41221,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0.7777777777777778,
                 "aAsPowerExponent": 0.5593220338983049
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{sum,usePrimeIndex},{max,usePrimeIndex,withoutRepetition,x}": {
@@ -44120,9 +41283,6 @@ AND THE BEST METRICS WERE {
                 "withoutRepetition": true,
                 "kAsCoefficient": 0.5555555555555556
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{kAsCoefficient,sum,w},{kAsCoefficient,sum,withoutRepetition}": {
@@ -44138,9 +41298,6 @@ AND THE BEST METRICS WERE {
                 "withoutRepetition": true,
                 "kAsCoefficient": 0.5555555555555556
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{count,withoutRepetition},{max,withoutRepetition},{aAsLogarithmBase,sum,weightAsPowerExponent}": {
@@ -44188,9 +41345,6 @@ AND THE BEST METRICS WERE {
                 "usePrimeIndex": true,
                 "aAsPowerExponent": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsCoefficient,sum},{aAsCoefficient,count,usePrimeIndex,withoutRepetition}": {
@@ -44206,9 +41360,6 @@ AND THE BEST METRICS WERE {
                 "usePrimeIndex": true,
                 "aAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{aAsCoefficient,sum},{aAsCoefficient,count,useNuminator,withoutRepetition}": {
@@ -44224,9 +41375,6 @@ AND THE BEST METRICS WERE {
                 "useNuminator": true,
                 "aAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{aAsCoefficient,sum,useNuminator},{aAsCoefficient,count,withoutRepetition}": {
@@ -44242,9 +41390,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "aAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{aAsCoefficient,sum,useNuminator},{aAsCoefficient,count,useNuminator,withoutRepetition}": {
@@ -44261,9 +41406,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0.1111111111111111,
                 "useNuminator": true
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{aAsCoefficient,sum},{aAsCoefficient,count,withoutRepetition,y}": {
@@ -44279,9 +41421,6 @@ AND THE BEST METRICS WERE {
                 "y": -3,
                 "aAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{aAsCoefficient,sum},{count,weightAsCoefficient,withoutRepetition}": {
@@ -44311,9 +41450,6 @@ AND THE BEST METRICS WERE {
                 "weightAsCoefficient": 1,
                 "aAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{aAsCoefficient,sum,weightAsCoefficient},{aAsCoefficient,count,withoutRepetition}": {
@@ -44329,9 +41465,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "aAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{aAsCoefficient,sum},{aAsCoefficient,aAsPowerExponent,count,withoutRepetition}": {
@@ -44347,9 +41480,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": -3,
                 "aAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{aAsCoefficient,sum},{aAsCoefficient,count,withoutRepetition}": {
@@ -44364,9 +41494,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "aAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{aAsCoefficient,sum},{aAsCoefficient,count,jAsCoefficient,withoutRepetition}": {
@@ -44382,9 +41509,6 @@ AND THE BEST METRICS WERE {
                 "jAsCoefficient": 1,
                 "aAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{aAsCoefficient,jAsCoefficient,sum},{aAsCoefficient,count,withoutRepetition}": {
@@ -44400,9 +41524,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "aAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{aAsCoefficient,jAsCoefficient,sum},{aAsCoefficient,count,jAsCoefficient,withoutRepetition}": {
@@ -44419,10 +41540,6 @@ AND THE BEST METRICS WERE {
                 "jAsCoefficient": 1,
                 "aAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient",
-            "aAsCoefficient"
         ]
     },
     "{sum,w,weightAsLogarithmBase},{aAsLogarithmBase,sum,w}": {
@@ -44438,9 +41555,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "w": -1.3728813559322033
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,weightAsPowerExponent},{max,useNuminator,withoutRepetition}": {
@@ -44554,9 +41668,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{sum,weightAsPowerExponent},{jAsCoefficient,max,withoutRepetition}": {
@@ -44600,9 +41711,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "jAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{sum,weightAsPowerExponent},{kAsCoefficient,max,withoutRepetition}": {
@@ -44646,9 +41754,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 2.593220338983051
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{sum},{sum},{kAsPowerExponent,sum,withoutRepetition}": {
@@ -44694,9 +41799,6 @@ AND THE BEST METRICS WERE {
                 "usePrimeIndex": true,
                 "kAsCoefficient": 0.5555555555555556
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{count},{count,withoutRepetition},{aAsLogarithmBase,aAsPowerExponent,sum}": {
@@ -44733,9 +41835,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 2.694915254237288
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsCoefficient,sum,y},{aAsCoefficient,count,withoutRepetition}": {
@@ -44751,9 +41850,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "aAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{aAsCoefficient,sum,y},{aAsCoefficient,count,withoutRepetition,y}": {
@@ -44770,10 +41866,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0.1111111111111111,
                 "y": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient",
-            "y"
         ]
     },
     "{aAsCoefficient,sum,weightAsCoefficient},{aAsCoefficient,count,weightAsCoefficient,withoutRepetition}": {
@@ -44790,10 +41882,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0.1111111111111111,
                 "weightAsCoefficient": 0.5555555555555556
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient",
-            "weightAsCoefficient"
         ]
     },
     "{jAsPowerExponent,kAsPowerBase,sum},{count}": {
@@ -44850,9 +41938,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 2.593220338983051
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsCoefficient,jAsLogarithmBase,sum,useNuminator}": {
@@ -44879,9 +41964,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerBase": 2,
                 "x": -2.7966101694915255
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,y},{count,jAsPowerExponent,withoutRepetition}": {
@@ -44911,9 +41993,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 2.084745762711864,
                 "y": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{sum,weightAsLogarithmBase},{aAsPowerExponent,sum,withoutRepetition}": {
@@ -44942,9 +42021,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerBase": 2,
                 "aAsCoefficient": 0.5555555555555556
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{count,modifiedCount,withoutRepetition},{aAsLogarithmBase,aAsPowerExponent,sum}": {
@@ -44976,9 +42052,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 2.186440677966102
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{sum,weightAsPowerExponent},{aAsPowerExponent,sum,weightAsPowerExponent,withoutRepetition}": {
@@ -44994,9 +42067,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": -2.7966101694915255,
                 "weightAsPowerExponent": 0.4576271186440679
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,sum,y},{aAsPowerExponent,max,withoutRepetition}": {
@@ -45012,9 +42082,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "aAsPowerExponent": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,sum,y},{aAsPowerExponent,max,withoutRepetition,y}": {
@@ -45031,10 +42098,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 0.7627118644067798,
                 "y": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent",
-            "y"
         ]
     },
     "{aAsCoefficient,sum},{aAsCoefficient,count,y}": {
@@ -45049,9 +42112,6 @@ AND THE BEST METRICS WERE {
                 "y": 0.4576271186440679,
                 "aAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{aAsPowerExponent,sum},{aAsPowerExponent,max,weightAsLogarithmBase,withoutRepetition}": {
@@ -45067,9 +42127,6 @@ AND THE BEST METRICS WERE {
                 "weightAsLogarithmBase": 2,
                 "aAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{max,w,weightAsPowerExponent,withoutRepetition},{aAsLogarithmBase,sum,w,weightAsPowerExponent}": {
@@ -45087,10 +42144,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 0.4576271186440679,
                 "w": 3
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent",
-            "w"
         ]
     },
     "{sum,weightAsLogarithmBase},{aAsLogarithmBase,sum,w,weightAsLogarithmBase}": {
@@ -45126,9 +42179,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 0.8644067796610169
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsLogarithmBase,jAsPowerExponent,sum,x}": {
@@ -45205,10 +42255,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.1694915254237293,
                 "x": -2.694915254237288
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent",
-            "x"
         ]
     },
     "{max,withoutRepetition},{aAsLogarithmBase,aAsPowerExponent,sum,y}": {
@@ -45240,9 +42286,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 2.593220338983051,
                 "y": 1.2711864406779663
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{sum,usePrimeIndex},{max,usePrimeIndex,weightAsPowerExponent,withoutRepetition}": {
@@ -45317,9 +42360,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.5762711864406782,
                 "kAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{aAsLogarithmBase,sum},{aAsLogarithmBase,sum},{aAsLogarithmBase,aAsPowerExponent,sum}": {
@@ -45405,9 +42445,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 2.186440677966102
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,kAsPowerBase,sum}": {
@@ -45477,9 +42514,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerBase": 2,
                 "jAsPowerExponent": 1.7796610169491522
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,sum,useNuminator,x}": {
@@ -45583,10 +42617,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 0.6610169491525424,
                 "x": -2.4915254237288136
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent",
-            "x"
         ]
     },
     "{aAsPowerExponent,sum,x},{aAsPowerExponent,count,x}": {
@@ -45602,10 +42632,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 0.6610169491525424,
                 "x": -2.4915254237288136
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent",
-            "x"
         ]
     },
     "{aAsPowerExponent,sum,x},{aAsPowerExponent,sum,x}": {
@@ -45621,10 +42647,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 0.6610169491525424,
                 "x": -2.4915254237288136
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent",
-            "x"
         ]
     },
     "{count,jAsLogarithmBase,withoutRepetition},{aAsLogarithmBase,aAsPowerExponent,sum}": {
@@ -45656,9 +42678,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 2.186440677966102
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{sum,weightAsPowerExponent},{aAsLogarithmBase,sum,w,weightAsPowerExponent}": {
@@ -45674,9 +42693,6 @@ AND THE BEST METRICS WERE {
                 "w": -1.88135593220339,
                 "weightAsPowerExponent": 0.15254237288135597
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{aAsPowerBase,count,withoutRepetition},{aAsLogarithmBase,aAsPowerExponent,sum}": {
@@ -45708,9 +42724,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 2.288135593220339
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{count,withoutRepetition},{count,withoutRepetition},{aAsLogarithmBase,aAsPowerExponent,sum}": {
@@ -45749,9 +42762,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 2.288135593220339
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsLogarithmBase,jAsPowerExponent,kAsCoefficient,sum,x}": {
@@ -45780,9 +42790,6 @@ AND THE BEST METRICS WERE {
                 "usePrimeIndex": true,
                 "w": -1.3728813559322033
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{aAsLogarithmBase,sum,usePrimeIndex,w},{aAsLogarithmBase,sum,w}": {
@@ -45799,9 +42806,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "w": -1.3728813559322033
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum},{aAsPowerExponent,sum,weightAsLogarithmBase,withoutRepetition}": {
@@ -45950,9 +42954,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 2.186440677966102
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{count,withoutRepetition},{aAsLogarithmBase,aAsPowerExponent,sum,useNuminator}": {
@@ -45984,9 +42985,6 @@ AND THE BEST METRICS WERE {
                 "useNuminator": true,
                 "aAsPowerExponent": 2.186440677966102
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{count,useNuminator,withoutRepetition},{aAsLogarithmBase,aAsPowerExponent,sum}": {
@@ -46018,9 +43016,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 2.186440677966102
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{count,useNuminator,withoutRepetition},{aAsLogarithmBase,aAsPowerExponent,sum,useNuminator}": {
@@ -46054,9 +43049,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 2.186440677966102,
                 "useNuminator": true
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{count,withoutRepetition,y},{aAsLogarithmBase,aAsPowerExponent,sum}": {
@@ -46088,9 +43080,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 2.186440677966102
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{count,weightAsCoefficient,withoutRepetition},{aAsLogarithmBase,aAsPowerExponent,sum,weightAsCoefficient}": {
@@ -46107,9 +43096,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 2.186440677966102,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{aAsPowerExponent,count,weightAsCoefficient,withoutRepetition},{aAsLogarithmBase,aAsPowerExponent,sum,weightAsCoefficient}": {
@@ -46127,10 +43113,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 2.186440677966102,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent",
-            "weightAsCoefficient"
         ]
     },
     "{aAsPowerExponent,count,withoutRepetition},{aAsLogarithmBase,aAsPowerExponent,sum}": {
@@ -46162,9 +43144,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 2.186440677966102,
                 "aAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{aAsCoefficient,aAsPowerExponent,count,withoutRepetition},{aAsCoefficient,aAsLogarithmBase,aAsPowerExponent,sum}": {
@@ -46182,10 +43161,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0.1111111111111111,
                 "aAsPowerExponent": 2.186440677966102
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient",
-            "aAsPowerExponent"
         ]
     },
     "{count,jAsCoefficient,withoutRepetition},{aAsLogarithmBase,aAsPowerExponent,sum}": {
@@ -46217,9 +43192,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 2.186440677966102,
                 "jAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{aAsPowerExponent,count,withoutRepetition},{aAsLogarithmBase,aAsPowerExponent,jAsCoefficient,sum}": {
@@ -46236,9 +43208,6 @@ AND THE BEST METRICS WERE {
                 "jAsCoefficient": 1,
                 "aAsPowerExponent": 2.186440677966102
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,count,jAsCoefficient,withoutRepetition},{aAsLogarithmBase,aAsPowerExponent,sum}": {
@@ -46255,9 +43224,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 2.186440677966102
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,count,jAsCoefficient,withoutRepetition},{aAsLogarithmBase,aAsPowerExponent,jAsCoefficient,sum}": {
@@ -46275,10 +43241,6 @@ AND THE BEST METRICS WERE {
                 "jAsCoefficient": 1,
                 "aAsPowerExponent": 2.186440677966102
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient",
-            "aAsPowerExponent"
         ]
     },
     "{count,kAsPowerBase,withoutRepetition},{aAsLogarithmBase,aAsPowerExponent,sum}": {
@@ -46310,9 +43272,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 2.186440677966102
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{count,kAsPowerExponent,withoutRepetition},{aAsLogarithmBase,aAsPowerExponent,sum}": {
@@ -46344,9 +43303,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 2.186440677966102
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsLogarithmBase,aAsPowerExponent,sum},{count,withoutRepetition}": {
@@ -46376,9 +43332,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "aAsPowerExponent": 2.186440677966102
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{sum,x},{aAsLogarithmBase,sum,x,y}": {
@@ -46394,9 +43347,6 @@ AND THE BEST METRICS WERE {
                 "y": 1.1694915254237293,
                 "x": -2.084745762711864
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{aAsLogarithmBase,sum,x},{aAsLogarithmBase,kAsCoefficient,sum,x}": {
@@ -46413,9 +43363,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0.4444444444444444,
                 "x": -2.8983050847457625
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{aAsLogarithmBase,kAsCoefficient,sum,x},{aAsLogarithmBase,sum,x}": {
@@ -46432,9 +43379,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "x": -2.8983050847457625
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{aAsPowerExponent,sum,x,y}": {
@@ -46462,9 +43406,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 1.4745762711864403,
                 "jAsPowerExponent": 1.2711864406779663
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{aAsLogarithmBase,aAsPowerExponent,sum},{aAsLogarithmBase,sum,usePrimeIndex}": {
@@ -46524,9 +43465,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "x": -1.88135593220339
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,w,weightAsPowerExponent},{aAsLogarithmBase,sum,w,weightAsPowerExponent}": {
@@ -46543,10 +43481,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 0.05084745762711851,
                 "w": -1.576271186440678
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent",
-            "w"
         ]
     },
     "{sum,weightAsCoefficient,withoutRepetition,x},{aAsLogarithmBase,sum,x}": {
@@ -46563,9 +43497,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "x": -2.389830508474576
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{aAsCoefficient,sum,withoutRepetition,x},{aAsLogarithmBase,sum,x}": {
@@ -46582,9 +43513,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "x": -2.389830508474576
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{aAsPowerExponent,sum,weightAsLogarithmBase},{aAsLogarithmBase,sum,weightAsLogarithmBase}": {
@@ -46644,9 +43572,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": -2.8983050847457625,
                 "weightAsPowerExponent": 0.4576271186440679
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,sum,weightAsPowerExponent},{sum,weightAsPowerExponent}": {
@@ -46661,9 +43586,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "weightAsPowerExponent": 0.4576271186440679
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum,weightAsPowerExponent},{count,weightAsPowerExponent}": {
@@ -46692,10 +43614,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 0.6610169491525424,
                 "x": -0.4576271186440679
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent",
-            "x"
         ]
     },
     "{sum,w,weightAsPowerExponent},{count,w,weightAsPowerExponent}": {
@@ -46711,10 +43629,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 0.6610169491525424,
                 "w": -0.4576271186440679
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent",
-            "w"
         ]
     },
     "{aAsPowerExponent,count,withoutRepetition},{aAsLogarithmBase,aAsPowerExponent,sum},{aAsLogarithmBase,aAsPowerExponent,sum}": {
@@ -46735,9 +43649,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 2.186440677966102
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{sum,weightAsPowerExponent},{aAsLogarithmBase,sum,x}": {
@@ -46766,9 +43677,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerBase": 2,
                 "jAsPowerExponent": 1.5762711864406782
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,kAsPowerBase,sum},{jAsPowerExponent,sum}": {
@@ -46783,9 +43691,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "jAsPowerExponent": 1.5762711864406782
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{kAsPowerExponent,sum},{aAsLogarithmBase,jAsLogarithmBase,sum}": {
@@ -46816,10 +43721,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 0.7627118644067798,
                 "x": -2.593220338983051
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent",
-            "x"
         ]
     },
     "{aAsPowerExponent,sum,withoutRepetition},{aAsLogarithmBase,sum,w}": {
@@ -46864,9 +43765,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "weightAsPowerExponent": 0.6610169491525424
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{count,weightAsPowerExponent},{max,weightAsPowerExponent,withoutRepetition},{aAsLogarithmBase,sum,weightAsPowerExponent}": {
@@ -46886,9 +43784,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "weightAsPowerExponent": 0.35593220338983045
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum,weightAsLogarithmBase},{aAsLogarithmBase,sum,w}": {
@@ -46963,9 +43858,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "aAsPowerExponent": 0.8644067796610169
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsCoefficient,max,withoutRepetition},{aAsCoefficient,aAsLogarithmBase,sum,weightAsPowerBase}": {
@@ -46982,9 +43874,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerBase": 2,
                 "aAsCoefficient": 0.3333333333333333
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{sum,weightAsPowerExponent},{count,weightAsCoefficient,weightAsPowerExponent}": {
@@ -46999,9 +43888,6 @@ AND THE BEST METRICS WERE {
                 "weightAsCoefficient": 0.1111111111111111,
                 "weightAsPowerExponent": 0.05084745762711851
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum,weightAsPowerExponent},{aAsLogarithmBase,sum,weightAsPowerExponent,x}": {
@@ -47017,9 +43903,6 @@ AND THE BEST METRICS WERE {
                 "x": -2.593220338983051,
                 "weightAsPowerExponent": 0.25423728813559343
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum},{kAsPowerExponent,sum},{sum,withoutRepetition}": {
@@ -47068,9 +43951,6 @@ AND THE BEST METRICS WERE {
                 "y": 1.0677966101694913,
                 "aAsPowerExponent": 0.6610169491525424
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,max,withoutRepetition,y},{aAsLogarithmBase,aAsPowerExponent,sum,y}": {
@@ -47088,10 +43968,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 0.6610169491525424,
                 "y": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent",
-            "y"
         ]
     },
     "{sum},{aAsLogarithmBase,sum,weightAsPowerExponent,x}": {
@@ -47135,9 +44011,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 2.186440677966102
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{sum,usePrimeIndex,x},{aAsLogarithmBase,sum,usePrimeIndex,x}": {
@@ -47154,9 +44027,6 @@ AND THE BEST METRICS WERE {
                 "x": -2.084745762711864,
                 "usePrimeIndex": true
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{kAsPowerExponent,sum},{kAsPowerExponent,modifiedCount,sum}": {
@@ -47171,9 +44041,6 @@ AND THE BEST METRICS WERE {
                 "modifiedCount": true,
                 "kAsPowerExponent": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{kAsPowerExponent,modifiedCount,sum},{kAsPowerExponent,sum}": {
@@ -47188,9 +44055,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "kAsPowerExponent": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{aAsLogarithmBase,sum,withoutRepetition},{aAsLogarithmBase,aAsPowerExponent,sum}": {
@@ -47252,9 +44116,6 @@ AND THE BEST METRICS WERE {
                 "weightAsLogarithmBase": 2,
                 "x": -1.7796610169491525
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,weightAsLogarithmBase},{aAsLogarithmBase,aAsPowerExponent,sum,weightAsLogarithmBase}": {
@@ -47298,9 +44159,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerBase": 2,
                 "w": -1.576271186440678
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum},{count,modifiedCount,w}": {
@@ -47358,10 +44216,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 0.5593220338983049,
                 "w": -1.3728813559322033
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent",
-            "w"
         ]
     },
     "{aAsLogarithmBase,sum},{aAsLogarithmBase,aAsPowerExponent,sum,y}": {
@@ -47408,10 +44262,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 0.05084745762711851,
                 "x": -1.7796610169491525
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent",
-            "x"
         ]
     },
     "{max,withoutRepetition},{aAsLogarithmBase,sum,usePrimeIndex,weightAsPowerExponent}": {
@@ -47446,9 +44296,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{max,usePrimeIndex,withoutRepetition},{aAsLogarithmBase,sum,w}": {
@@ -47480,9 +44327,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "w": -0.15254237288135597
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,x,y},{max,withoutRepetition}": {
@@ -47512,9 +44356,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "x": 3
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,x,y},{max,withoutRepetition,y}": {
@@ -47530,9 +44371,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "y": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{sum,x,y},{max,withoutRepetition,x,y}": {
@@ -47549,10 +44387,6 @@ AND THE BEST METRICS WERE {
                 "x": 3,
                 "y": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "x",
-            "y"
         ]
     },
     "{sum,w,y},{max,withoutRepetition}": {
@@ -47582,9 +44416,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "w": 3
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,w,y},{max,withoutRepetition,y}": {
@@ -47600,9 +44431,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "y": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{sum,w,y},{max,w,withoutRepetition,y}": {
@@ -47619,10 +44447,6 @@ AND THE BEST METRICS WERE {
                 "w": 3,
                 "y": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "w",
-            "y"
         ]
     },
     "{aAsLogarithmBase,aAsPowerExponent,sum,useNuminator,y}": {
@@ -47735,10 +44559,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 2.389830508474576,
                 "y": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent",
-            "y"
         ]
     },
     "{sum},{aAsLogarithmBase,sum},{aAsLogarithmBase,aAsPowerExponent,sum}": {
@@ -47789,10 +44609,6 @@ AND THE BEST METRICS WERE {
                 "x": 3,
                 "u": 2.389830508474576
             }
-        ],
-        "spreadDynamicParameters": [
-            "x",
-            "u"
         ]
     },
     "{b,count,w},{b,max,w,withoutRepetition}": {
@@ -47809,10 +44625,6 @@ AND THE BEST METRICS WERE {
                 "w": 3,
                 "b": 2.389830508474576
             }
-        ],
-        "spreadDynamicParameters": [
-            "w",
-            "b"
         ]
     },
     "{aAsPowerExponent,sum,w,y}": {
@@ -47854,9 +44666,6 @@ AND THE BEST METRICS WERE {
                 "weightAsLogarithmBase": 2,
                 "w": -1.576271186440678
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{kAsPowerExponent,sum},{jAsPowerExponent,kAsPowerExponent,sum,withoutRepetition}": {
@@ -47872,9 +44681,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 0.5593220338983049,
                 "kAsPowerExponent": 0.6610169491525424
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{sum,x},{aAsLogarithmBase,aAsPowerExponent,sum}": {
@@ -47931,9 +44737,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "aAsCoefficient": 0.3333333333333333
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{max,withoutRepetition},{aAsLogarithmBase,sum,weightAsPowerExponent,y}": {
@@ -47965,9 +44768,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 1.3728813559322033,
                 "y": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{sum},{sum,withoutRepetition},{count,jAsPowerExponent}": {
@@ -47999,9 +44799,6 @@ AND THE BEST METRICS WERE {
                 "jAsCoefficient": 0.2222222222222222,
                 "kAsPowerExponent": 0.6610169491525424
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{sum,weightAsPowerExponent,withoutRepetition},{aAsLogarithmBase,kAsPowerExponent,sum}": {
@@ -48032,9 +44829,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 2.593220338983051,
                 "y": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{aAsPowerExponent,sum,w,weightAsPowerBase}": {
@@ -48126,10 +44920,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 0.35593220338983045,
                 "w": -1.3728813559322033
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent",
-            "w"
         ]
     },
     "{aAsPowerExponent,sum,weightAsPowerExponent,withoutRepetition},{aAsLogarithmBase,aAsPowerExponent,sum}": {
@@ -48146,9 +44936,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 2.389830508474576
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{sum,weightAsLogarithmBase},{aAsLogarithmBase,aAsPowerExponent,sum}": {
@@ -48568,9 +45355,6 @@ AND THE BEST METRICS WERE {
                 "useNuminator": true,
                 "aAsPowerExponent": 2.389830508474576
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsLogarithmBase,aAsPowerExponent,sum,useNuminator},{aAsLogarithmBase,aAsPowerExponent,sum}": {
@@ -48587,9 +45371,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 2.389830508474576
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsLogarithmBase,aAsPowerExponent,sum,useNuminator},{aAsLogarithmBase,aAsPowerExponent,sum,useNuminator}": {
@@ -48607,9 +45388,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 2.389830508474576,
                 "useNuminator": true
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsLogarithmBase,aAsPowerExponent,sum},{aAsLogarithmBase,aAsPowerExponent,sum,weightAsPowerBase}": {
@@ -48626,9 +45404,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerBase": 2,
                 "aAsPowerExponent": 2.389830508474576
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsLogarithmBase,aAsPowerExponent,sum,weightAsPowerBase},{aAsLogarithmBase,sum}": {
@@ -48660,9 +45435,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 2.389830508474576
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsLogarithmBase,sum,weightAsPowerBase},{aAsLogarithmBase,aAsPowerExponent,sum,weightAsPowerBase}": {
@@ -48712,9 +45484,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 2.389830508474576,
                 "weightAsPowerBase": 2
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsLogarithmBase,aAsPowerExponent,sum},{aAsLogarithmBase,aAsPowerExponent,sum,weightAsPowerExponent}": {
@@ -48731,9 +45500,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 0.05084745762711851,
                 "aAsPowerExponent": 2.389830508474576
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsLogarithmBase,aAsPowerExponent,sum,weightAsPowerExponent},{aAsLogarithmBase,aAsPowerExponent,sum}": {
@@ -48750,9 +45516,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 2.389830508474576
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsLogarithmBase,aAsPowerExponent,sum,weightAsPowerExponent},{aAsLogarithmBase,aAsPowerExponent,sum,weightAsPowerExponent}": {
@@ -48770,10 +45533,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 2.389830508474576,
                 "weightAsPowerExponent": 0.05084745762711851
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent",
-            "weightAsPowerExponent"
         ]
     },
     "{aAsLogarithmBase,aAsPowerExponent,sum},{aAsLogarithmBase,aAsPowerExponent,sum,weightAsLogarithmBase}": {
@@ -48790,9 +45549,6 @@ AND THE BEST METRICS WERE {
                 "weightAsLogarithmBase": 2,
                 "aAsPowerExponent": 2.389830508474576
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsLogarithmBase,aAsPowerExponent,sum,weightAsLogarithmBase},{aAsLogarithmBase,aAsPowerExponent,sum}": {
@@ -48809,9 +45565,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 2.389830508474576
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsLogarithmBase,aAsPowerExponent,sum,weightAsLogarithmBase},{aAsLogarithmBase,aAsPowerExponent,sum,weightAsLogarithmBase}": {
@@ -48829,9 +45582,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 2.389830508474576,
                 "weightAsLogarithmBase": 2
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsLogarithmBase,aAsPowerExponent,sum},{aAsLogarithmBase,aAsPowerExponent,sum,weightAsCoefficient}": {
@@ -48848,9 +45598,6 @@ AND THE BEST METRICS WERE {
                 "weightAsCoefficient": 0,
                 "aAsPowerExponent": 2.389830508474576
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsLogarithmBase,aAsPowerExponent,sum,weightAsCoefficient},{aAsLogarithmBase,aAsPowerExponent,sum}": {
@@ -48867,9 +45614,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 2.389830508474576
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsLogarithmBase,aAsPowerExponent,sum,weightAsCoefficient},{aAsLogarithmBase,aAsPowerExponent,sum,weightAsCoefficient}": {
@@ -48887,10 +45631,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 2.389830508474576,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent",
-            "weightAsCoefficient"
         ]
     },
     "{aAsLogarithmBase,aAsPowerExponent,sum},{aAsCoefficient,aAsLogarithmBase,aAsPowerExponent,sum}": {
@@ -48907,9 +45647,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0,
                 "aAsPowerExponent": 2.389830508474576
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsCoefficient,aAsLogarithmBase,aAsPowerExponent,sum},{aAsLogarithmBase,aAsPowerExponent,sum}": {
@@ -48926,9 +45663,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 2.389830508474576
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsCoefficient,aAsLogarithmBase,aAsPowerExponent,sum},{aAsCoefficient,aAsLogarithmBase,aAsPowerExponent,sum}": {
@@ -48946,10 +45680,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0.1111111111111111,
                 "aAsPowerExponent": 2.389830508474576
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient",
-            "aAsPowerExponent"
         ]
     },
     "{aAsLogarithmBase,aAsPowerExponent,sum},{aAsLogarithmBase,aAsPowerExponent,jAsCoefficient,sum}": {
@@ -48966,9 +45696,6 @@ AND THE BEST METRICS WERE {
                 "jAsCoefficient": 1,
                 "aAsPowerExponent": 2.389830508474576
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsLogarithmBase,aAsPowerExponent,jAsCoefficient,sum},{aAsLogarithmBase,aAsPowerExponent,sum}": {
@@ -48985,9 +45712,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 2.389830508474576
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsLogarithmBase,aAsPowerExponent,jAsCoefficient,sum},{aAsLogarithmBase,aAsPowerExponent,jAsCoefficient,sum}": {
@@ -49005,10 +45729,6 @@ AND THE BEST METRICS WERE {
                 "jAsCoefficient": 1,
                 "aAsPowerExponent": 2.389830508474576
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient",
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,max,withoutRepetition},{aAsLogarithmBase,aAsPowerExponent,sum,weightAsPowerBase}": {
@@ -49025,9 +45745,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerBase": 2,
                 "aAsPowerExponent": 2.389830508474576
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{max,weightAsPowerBase,withoutRepetition},{aAsLogarithmBase,aAsPowerExponent,sum,weightAsPowerBase}": {
@@ -49060,9 +45777,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 2.389830508474576
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsCoefficient,aAsPowerExponent,max,withoutRepetition},{aAsLogarithmBase,aAsPowerExponent,sum}": {
@@ -49079,9 +45793,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 2.389830508474576
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,count,withoutRepetition},{aAsLogarithmBase,aAsPowerExponent,sum,weightAsPowerBase}": {
@@ -49098,9 +45809,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerBase": 2,
                 "aAsPowerExponent": 2.389830508474576
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{count,weightAsPowerBase,withoutRepetition},{aAsLogarithmBase,aAsPowerExponent,sum,weightAsPowerBase}": {
@@ -49134,9 +45842,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 2.389830508474576,
                 "weightAsPowerBase": 2
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{count,withoutRepetition},{aAsLogarithmBase,aAsPowerExponent,sum,weightAsPowerExponent}": {
@@ -49168,9 +45873,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 1.6779661016949152,
                 "aAsPowerExponent": 2.389830508474576
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{count,weightAsCoefficient,withoutRepetition},{aAsLogarithmBase,aAsPowerExponent,sum}": {
@@ -49202,9 +45904,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 2.389830508474576
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsLogarithmBase,count,withoutRepetition},{aAsLogarithmBase,aAsPowerExponent,sum}": {
@@ -49236,9 +45935,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 2.389830508474576
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsCoefficient,count,withoutRepetition},{aAsLogarithmBase,aAsPowerExponent,sum}": {
@@ -49270,9 +45966,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 2.389830508474576
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,count},{aAsLogarithmBase,aAsPowerExponent,sum,weightAsPowerBase}": {
@@ -49288,9 +45981,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerBase": 2,
                 "aAsPowerExponent": 2.389830508474576
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{count,weightAsPowerBase},{aAsLogarithmBase,aAsPowerExponent,sum,weightAsPowerBase}": {
@@ -49322,9 +46012,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 2.389830508474576,
                 "weightAsPowerBase": 2
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsLogarithmBase,count},{aAsLogarithmBase,aAsPowerExponent,sum}": {
@@ -49354,9 +46041,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 2.389830508474576
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,sum,withoutRepetition},{aAsLogarithmBase,aAsPowerExponent,sum,weightAsPowerBase}": {
@@ -49373,9 +46057,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerBase": 2,
                 "aAsPowerExponent": 2.389830508474576
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{sum,weightAsPowerBase,withoutRepetition},{aAsLogarithmBase,aAsPowerExponent,sum,weightAsPowerBase}": {
@@ -49408,9 +46089,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 2.389830508474576
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsCoefficient,aAsPowerExponent,sum,withoutRepetition},{aAsLogarithmBase,aAsPowerExponent,sum}": {
@@ -49427,9 +46105,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 2.389830508474576
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{sum},{aAsLogarithmBase,aAsPowerExponent,sum,weightAsPowerBase}": {
@@ -49459,9 +46134,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerBase": 2,
                 "aAsPowerExponent": 2.389830508474576
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{sum,weightAsPowerBase},{aAsLogarithmBase,aAsPowerExponent,sum,weightAsPowerBase}": {
@@ -49492,9 +46164,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 2.389830508474576
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsCoefficient,aAsPowerExponent,sum},{aAsLogarithmBase,aAsPowerExponent,sum}": {
@@ -49510,9 +46179,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 2.389830508474576
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsLogarithmBase,aAsPowerExponent,sum},{aAsLogarithmBase,count,withoutRepetition}": {
@@ -49544,9 +46210,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 2.389830508474576
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsLogarithmBase,aAsPowerExponent,sum},{aAsLogarithmBase,count}": {
@@ -49576,9 +46239,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 2.389830508474576
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsLogarithmBase,aAsPowerExponent,sum},{aAsLogarithmBase,aAsPowerExponent,sum},{aAsLogarithmBase,aAsPowerExponent,sum}": {
@@ -49599,9 +46259,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 2.389830508474576
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{sum},{aAsLogarithmBase,aAsPowerExponent,sum,y}": {
@@ -49673,9 +46330,6 @@ AND THE BEST METRICS WERE {
                 "w": -1.1694915254237288,
                 "x": -1.0677966101694916
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{max,weightAsPowerExponent,withoutRepetition},{aAsLogarithmBase,sum,useNuminator}": {
@@ -49767,9 +46421,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{aAsPowerExponent,max,withoutRepetition},{aAsLogarithmBase,sum,useNuminator}": {
@@ -49862,9 +46513,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{aAsPowerExponent,max,withoutRepetition},{aAsLogarithmBase,sum}": {
@@ -49895,9 +46543,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{max,weightAsPowerExponent,withoutRepetition},{aAsLogarithmBase,jAsCoefficient,sum}": {
@@ -49944,9 +46589,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "jAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{aAsPowerExponent,max,withoutRepetition},{aAsLogarithmBase,jAsCoefficient,sum}": {
@@ -49993,9 +46635,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "jAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{kAsCoefficient,max,weightAsPowerExponent,withoutRepetition},{aAsLogarithmBase,sum}": {
@@ -50042,9 +46681,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "kAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{aAsLogarithmBase,sum},{max,weightAsPowerExponent,withoutRepetition}": {
@@ -50130,9 +46766,6 @@ AND THE BEST METRICS WERE {
                 "weightAsLogarithmBase": 2,
                 "aAsCoefficient": 0.5555555555555556
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{aAsCoefficient,sum},{aAsLogarithmBase,max,withoutRepetition}": {
@@ -50162,9 +46795,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "jAsPowerExponent": 1.7796610169491522
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,kAsPowerBase,sum},{count,jAsPowerExponent,kAsPowerBase,withoutRepetition}": {
@@ -50181,9 +46811,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerBase": 2,
                 "jAsPowerExponent": 1.7796610169491522
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,sum},{aAsPowerExponent,max,withoutRepetition},{aAsPowerExponent,max,withoutRepetition}": {
@@ -50203,9 +46830,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "aAsPowerExponent": 0.5593220338983049
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{sum,weightAsPowerExponent},{aAsLogarithmBase,aAsPowerExponent,sum,weightAsPowerExponent}": {
@@ -50221,9 +46845,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 2.593220338983051,
                 "weightAsPowerExponent": 1.5762711864406782
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum,weightAsCoefficient},{aAsLogarithmBase,aAsPowerExponent,sum}": {
@@ -50266,9 +46887,6 @@ AND THE BEST METRICS WERE {
                 "w": -2.7966101694915255,
                 "aAsPowerExponent": 0.4576271186440679
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,sum,w},{aAsPowerExponent,sum}": {
@@ -50283,9 +46901,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "aAsPowerExponent": 0.4576271186440679
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{sum,weightAsPowerExponent,x},{aAsLogarithmBase,sum,weightAsPowerExponent}": {
@@ -50301,9 +46916,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "weightAsPowerExponent": 0.05084745762711851
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum,w,weightAsPowerExponent},{aAsLogarithmBase,sum,weightAsPowerExponent}": {
@@ -50319,9 +46931,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "weightAsPowerExponent": 0.05084745762711851
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{aAsCoefficient,jAsPowerExponent,sum},{aAsCoefficient,aAsLogarithmBase,jAsPowerExponent,sum}": {
@@ -50338,10 +46947,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.3728813559322033,
                 "aAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent",
-            "aAsCoefficient"
         ]
     },
     "{count,withoutRepetition},{aAsLogarithmBase,aAsPowerExponent,sum,y}": {
@@ -50373,9 +46978,6 @@ AND THE BEST METRICS WERE {
                 "y": 1.1694915254237293,
                 "aAsPowerExponent": 2.593220338983051
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{count,withoutRepetition,y},{aAsLogarithmBase,aAsPowerExponent,sum,y}": {
@@ -50392,9 +46994,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 2.593220338983051,
                 "y": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{aAsPowerExponent,count,withoutRepetition,y},{aAsLogarithmBase,aAsPowerExponent,sum,y}": {
@@ -50412,10 +47011,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 2.593220338983051,
                 "y": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent",
-            "y"
         ]
     },
     "{kAsCoefficient,sum,weightAsPowerExponent},{kAsCoefficient,sum,weightAsPowerExponent,withoutRepetition}": {
@@ -50432,10 +47027,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0.7777777777777778,
                 "weightAsPowerExponent": 3
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient",
-            "weightAsPowerExponent"
         ]
     },
     "{sum,weightAsLogarithmBase},{count,weightAsLogarithmBase},{max,weightAsLogarithmBase,withoutRepetition}": {
@@ -50593,10 +47184,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0.8888888888888888,
                 "aAsCoefficient": 0.3333333333333333
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient",
-            "aAsCoefficient"
         ]
     },
     "{kAsCoefficient,sum},{kAsCoefficient,sum},{kAsCoefficient,sum,withoutRepetition}": {
@@ -50615,9 +47202,6 @@ AND THE BEST METRICS WERE {
                 "withoutRepetition": true,
                 "kAsCoefficient": 0.7777777777777778
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{aAsPowerExponent,sum,w},{count,w}": {
@@ -50632,9 +47216,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "w": -1.271186440677966
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{aAsPowerExponent,sum,w},{aAsPowerExponent,count,w}": {
@@ -50650,10 +47231,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 0.4576271186440679,
                 "w": -1.271186440677966
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent",
-            "w"
         ]
     },
     "{sum},{aAsCoefficient,max,weightAsPowerExponent,withoutRepetition}": {
@@ -50712,9 +47289,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 2.694915254237288,
                 "y": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{aAsLogarithmBase,aAsPowerExponent,sum,y},{aAsLogarithmBase,sum,y}": {
@@ -50731,9 +47305,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "y": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{sum,w},{aAsLogarithmBase,sum,w,weightAsPowerBase}": {
@@ -50749,9 +47320,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerBase": 2,
                 "w": -1.576271186440678
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,weightAsLogarithmBase,withoutRepetition},{aAsLogarithmBase,aAsPowerExponent,sum}": {
@@ -50783,9 +47351,6 @@ AND THE BEST METRICS WERE {
                 "usePrimeIndex": true,
                 "aAsPowerExponent": 2.084745762711864
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsLogarithmBase,aAsPowerExponent,sum,usePrimeIndex},{aAsLogarithmBase,aAsPowerExponent,sum}": {
@@ -50802,9 +47367,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 2.084745762711864
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{sum,y},{aAsLogarithmBase,aAsPowerExponent,sum}": {
@@ -50835,9 +47397,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 2.593220338983051
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{sum,weightAsLogarithmBase,x},{aAsLogarithmBase,sum,weightAsLogarithmBase}": {
@@ -50883,9 +47442,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "w": -1.3728813559322033
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{count,w},{aAsLogarithmBase,sum,useNuminator,w}": {
@@ -50901,9 +47457,6 @@ AND THE BEST METRICS WERE {
                 "useNuminator": true,
                 "w": -1.3728813559322033
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{count,useNuminator,w},{aAsLogarithmBase,sum,w}": {
@@ -50919,9 +47472,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "w": -1.3728813559322033
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{count,useNuminator,w},{aAsLogarithmBase,sum,useNuminator,w}": {
@@ -50938,9 +47488,6 @@ AND THE BEST METRICS WERE {
                 "w": -1.3728813559322033,
                 "useNuminator": true
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{count,x},{aAsLogarithmBase,sum,w}": {
@@ -50999,10 +47546,6 @@ AND THE BEST METRICS WERE {
                 "weightAsCoefficient": 0.1111111111111111,
                 "w": -1.3728813559322033
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient",
-            "w"
         ]
     },
     "{aAsPowerExponent,count,w},{aAsLogarithmBase,sum,w}": {
@@ -51018,9 +47561,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "w": -1.3728813559322033
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{aAsCoefficient,count,w},{aAsCoefficient,aAsLogarithmBase,sum,w}": {
@@ -51037,10 +47577,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0.1111111111111111,
                 "w": -0.15254237288135597
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient",
-            "w"
         ]
     },
     "{count,w},{aAsLogarithmBase,jAsCoefficient,sum,w}": {
@@ -51056,9 +47592,6 @@ AND THE BEST METRICS WERE {
                 "jAsCoefficient": 1,
                 "w": -1.3728813559322033
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{count,jAsCoefficient,w},{aAsLogarithmBase,jAsCoefficient,sum,w}": {
@@ -51075,10 +47608,6 @@ AND THE BEST METRICS WERE {
                 "jAsCoefficient": 1,
                 "w": -1.3728813559322033
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient",
-            "w"
         ]
     },
     "{count,kAsCoefficient,w},{aAsLogarithmBase,sum,w}": {
@@ -51094,9 +47623,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "w": -1.3728813559322033
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{aAsLogarithmBase,sum,w},{count,w}": {
@@ -51111,9 +47637,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "w": -1.3728813559322033
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{jAsPowerExponent,kAsPowerBase,sum},{jAsPowerExponent,kAsPowerBase,max,withoutRepetition}": {
@@ -51130,9 +47653,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerBase": 2,
                 "jAsPowerExponent": 2.186440677966102
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{aAsLogarithmBase,aAsPowerExponent,sum,usePrimeIndex,x}": {
@@ -51191,9 +47711,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 2.593220338983051,
                 "weightAsPowerExponent": 0.8644067796610169
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,count,weightAsPowerExponent,withoutRepetition},{aAsLogarithmBase,aAsPowerExponent,sum,weightAsPowerExponent}": {
@@ -51211,10 +47728,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 2.593220338983051,
                 "weightAsPowerExponent": 0.8644067796610169
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent",
-            "weightAsPowerExponent"
         ]
     },
     "{count,withoutRepetition},{aAsLogarithmBase,aAsPowerExponent,sum,weightAsCoefficient}": {
@@ -51246,9 +47759,6 @@ AND THE BEST METRICS WERE {
                 "weightAsCoefficient": 0.6666666666666666,
                 "aAsPowerExponent": 2.593220338983051
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{count,withoutRepetition},{aAsCoefficient,aAsLogarithmBase,aAsPowerExponent,sum}": {
@@ -51280,9 +47790,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0.6666666666666666,
                 "aAsPowerExponent": 2.593220338983051
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{count,w,withoutRepetition},{aAsCoefficient,aAsLogarithmBase,sum,w}": {
@@ -51299,9 +47806,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0.6666666666666666,
                 "w": -1.0677966101694916
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{aAsPowerExponent,count},{aAsLogarithmBase,aAsPowerExponent,sum},{aAsLogarithmBase,aAsPowerExponent,sum}": {
@@ -51321,9 +47825,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 2.593220338983051
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsCoefficient,jAsPowerBase,sum,x}": {
@@ -51351,9 +47852,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerBase": 2,
                 "w": -1.576271186440678
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{count,weightAsPowerExponent,withoutRepetition},{aAsLogarithmBase,aAsPowerExponent,sum}": {
@@ -51385,9 +47883,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 2.593220338983051
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,count,x},{aAsLogarithmBase,aAsPowerExponent,sum}": {
@@ -51403,9 +47898,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 2.593220338983051
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{count,weightAsPowerExponent},{aAsLogarithmBase,aAsPowerExponent,sum,weightAsPowerExponent}": {
@@ -51421,9 +47913,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 2.593220338983051,
                 "weightAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,count,weightAsPowerExponent},{aAsLogarithmBase,aAsPowerExponent,sum,weightAsPowerExponent}": {
@@ -51440,10 +47929,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 2.593220338983051,
                 "weightAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent",
-            "weightAsPowerExponent"
         ]
     },
     "{count,weightAsCoefficient},{aAsLogarithmBase,aAsPowerExponent,sum}": {
@@ -51473,9 +47958,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 2.593220338983051
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsCoefficient,count},{aAsLogarithmBase,aAsPowerExponent,sum}": {
@@ -51505,9 +47987,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 2.593220338983051
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsLogarithmBase,sum},{aAsLogarithmBase,aAsPowerExponent,sum,weightAsPowerExponent}": {
@@ -51554,9 +48033,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 2.593220338983051,
                 "weightAsPowerExponent": 1.6779661016949152
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{aAsLogarithmBase,aAsPowerExponent,sum,weightAsPowerExponent},{aAsLogarithmBase,sum,weightAsPowerExponent}": {
@@ -51573,9 +48049,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "weightAsPowerExponent": 1.6779661016949152
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,sum,weightAsPowerExponent},{count,weightAsPowerExponent}": {
@@ -51590,9 +48063,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "weightAsPowerExponent": 0.15254237288135597
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,sum,weightAsPowerExponent},{aAsPowerExponent,count,weightAsPowerExponent}": {
@@ -51608,10 +48078,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 1.4745762711864403,
                 "weightAsPowerExponent": 0.15254237288135597
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent",
-            "weightAsPowerExponent"
         ]
     },
     "{aAsLogarithmBase,aAsPowerExponent,sum},{aAsLogarithmBase,sum,x}": {
@@ -51685,9 +48151,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "y": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{sum},{kAsPowerExponent,modifiedCount,sum}": {
@@ -51757,9 +48220,6 @@ AND THE BEST METRICS WERE {
                 "y": 1.0677966101694913,
                 "aAsPowerExponent": 2.694915254237288
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsLogarithmBase,aAsPowerExponent,sum,usePrimeIndex,w}": {
@@ -51862,9 +48322,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 2.491525423728813
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{kAsCoefficient,sum,withoutRepetition},{aAsLogarithmBase,kAsCoefficient,sum,weightAsPowerExponent}": {
@@ -51881,9 +48338,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 1.4745762711864403,
                 "kAsCoefficient": 0.6666666666666666
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{sum},{sum,usePrimeIndex,withoutRepetition,x}": {
@@ -51948,9 +48402,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "x": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum},{max,withoutRepetition},{aAsLogarithmBase,sum,w}": {
@@ -51999,9 +48450,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "aAsCoefficient": 0.6666666666666666
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{kAsPowerExponent,sum},{modifiedCount,sum}": {
@@ -52114,9 +48562,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 0.6610169491525424
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,sum,x},{aAsLogarithmBase,sum,x}": {
@@ -52132,9 +48577,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "x": -3
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,w},{max,w,withoutRepetition},{aAsLogarithmBase,sum,w}": {
@@ -52154,9 +48596,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "w": 0.6610169491525424
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{jAsPowerExponent,sum,weightAsPowerExponent,withoutRepetition},{aAsLogarithmBase,jAsPowerExponent,sum}": {
@@ -52173,9 +48612,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "jAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,sum,weightAsLogarithmBase},{aAsLogarithmBase,aAsPowerExponent,sum}": {
@@ -52191,9 +48627,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 2.389830508474576
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsLogarithmBase,kAsCoefficient,sum,u,x}": {
@@ -52222,9 +48655,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "kAsCoefficient": 0.5555555555555556
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{sum},{aAsLogarithmBase,max,weightAsPowerExponent,withoutRepetition}": {
@@ -52268,9 +48698,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "weightAsPowerExponent": 0.15254237288135597
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{count,weightAsPowerExponent,y},{max,weightAsPowerExponent,withoutRepetition,y}": {
@@ -52287,10 +48714,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 0.15254237288135597,
                 "y": 1.3728813559322033
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent",
-            "y"
         ]
     },
     "{sum},{aAsLogarithmBase,aAsPowerExponent,sum,weightAsPowerExponent}": {
@@ -52321,9 +48744,6 @@ AND THE BEST METRICS WERE {
                 "weightAsCoefficient": 0.1111111111111111,
                 "usePrimeIndex": true
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{aAsLogarithmBase,aAsPowerExponent,sum},{aAsLogarithmBase,sum,y}": {
@@ -52369,9 +48789,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 2.694915254237288,
                 "y": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{aAsPowerExponent,count,y},{aAsLogarithmBase,aAsPowerExponent,sum,y}": {
@@ -52388,10 +48805,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 2.694915254237288,
                 "y": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent",
-            "y"
         ]
     },
     "{aAsCoefficient,sum,usePrimeIndex},{aAsCoefficient,max,usePrimeIndex,withoutRepetition}": {
@@ -52408,9 +48821,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0.1111111111111111,
                 "usePrimeIndex": true
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{max,weightAsPowerExponent,withoutRepetition},{aAsLogarithmBase,aAsPowerExponent,sum,weightAsPowerExponent}": {
@@ -52427,9 +48837,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 2.186440677966102,
                 "weightAsPowerExponent": 3
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{aAsCoefficient,kAsPowerExponent,sum},{aAsCoefficient,count,kAsPowerExponent}": {
@@ -52445,10 +48852,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerExponent": 0.9661016949152543,
                 "aAsCoefficient": 0.6666666666666666
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent",
-            "aAsCoefficient"
         ]
     },
     "{aAsLogarithmBase,aAsPowerExponent,sum},{aAsLogarithmBase,aAsPowerExponent,sum,y}": {
@@ -52465,9 +48868,6 @@ AND THE BEST METRICS WERE {
                 "y": 0.9661016949152543,
                 "aAsPowerExponent": 2.491525423728813
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsLogarithmBase,aAsPowerExponent,sum,y},{aAsLogarithmBase,aAsPowerExponent,sum}": {
@@ -52484,9 +48884,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 2.491525423728813
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{count,jAsPowerBase,w,withoutRepetition},{aAsLogarithmBase,sum,w}": {
@@ -52503,9 +48900,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "w": -1.4745762711864407
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,y},{max,usePrimeIndex,withoutRepetition}": {
@@ -52535,9 +48929,6 @@ AND THE BEST METRICS WERE {
                 "usePrimeIndex": true,
                 "y": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{aAsPowerExponent,sum,weightAsPowerExponent},{aAsLogarithmBase,sum,weightAsPowerExponent}": {
@@ -52553,9 +48944,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "weightAsPowerExponent": 0.05084745762711851
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,sum},{aAsLogarithmBase,aAsPowerExponent,sum,weightAsPowerExponent}": {
@@ -52571,9 +48959,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 2.593220338983051,
                 "aAsPowerExponent": 2.288135593220339
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{kAsPowerExponent,max,withoutRepetition},{aAsLogarithmBase,jAsPowerExponent,sum}": {
@@ -52634,9 +49019,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 0.6610169491525424,
                 "weightAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{max,usePrimeIndex,withoutRepetition},{aAsLogarithmBase,sum,x}": {
@@ -52668,9 +49050,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "x": -0.4576271186440679
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{aAsPowerExponent,jAsPowerExponent,sum,usePrimeIndex}": {
@@ -52937,9 +49316,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "w": 0.15254237288135597
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{count},{aAsLogarithmBase,sum,w}": {
@@ -52981,9 +49357,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{count,weightAsCoefficient},{aAsLogarithmBase,sum,w,weightAsCoefficient}": {
@@ -52999,9 +49372,6 @@ AND THE BEST METRICS WERE {
                 "w": -2.694915254237288,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{count,w,weightAsCoefficient},{aAsLogarithmBase,sum,weightAsCoefficient}": {
@@ -53017,9 +49387,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{aAsPowerExponent,count},{aAsLogarithmBase,sum,w}": {
@@ -53063,9 +49430,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{count,x},{aAsLogarithmBase,jAsCoefficient,sum}": {
@@ -53095,9 +49459,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "jAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{count,jAsCoefficient},{aAsLogarithmBase,sum,w}": {
@@ -53127,9 +49488,6 @@ AND THE BEST METRICS WERE {
                 "w": -2.694915254237288,
                 "jAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{count,w},{aAsLogarithmBase,jAsCoefficient,sum}": {
@@ -53159,9 +49517,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "jAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{count,kAsCoefficient,x},{aAsLogarithmBase,sum}": {
@@ -53272,9 +49627,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 0.6610169491525424,
                 "aAsPowerExponent": 3
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{max,withoutRepetition},{aAsCoefficient,aAsLogarithmBase,sum,weightAsPowerExponent}": {
@@ -53320,9 +49672,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "y": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{count,y},{aAsLogarithmBase,sum,w,y}": {
@@ -53338,9 +49687,6 @@ AND THE BEST METRICS WERE {
                 "w": -2.694915254237288,
                 "y": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{count,w,y},{aAsLogarithmBase,sum,y}": {
@@ -53356,9 +49702,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "y": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{sum,weightAsPowerExponent},{sum,weightAsPowerExponent,x}": {
@@ -53373,9 +49716,6 @@ AND THE BEST METRICS WERE {
                 "x": -1.7796610169491525,
                 "weightAsPowerExponent": 0.05084745762711851
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum,weightAsPowerExponent,x},{sum,weightAsPowerExponent}": {
@@ -53390,9 +49730,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "weightAsPowerExponent": 0.05084745762711851
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum,weightAsPowerExponent},{sum,w,weightAsPowerExponent}": {
@@ -53407,9 +49744,6 @@ AND THE BEST METRICS WERE {
                 "w": -1.7796610169491525,
                 "weightAsPowerExponent": 0.05084745762711851
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum,w,weightAsPowerExponent},{sum,weightAsPowerExponent}": {
@@ -53424,9 +49758,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "weightAsPowerExponent": 0.05084745762711851
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum},{sum,usePrimeIndex,x}": {
@@ -53592,9 +49923,6 @@ AND THE BEST METRICS WERE {
                 "x": -0.35593220338983045,
                 "aAsPowerExponent": 2.389830508474576
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{sum},{kAsCoefficient,modifiedCount,sum}": {
@@ -53723,9 +50051,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "weightAsPowerExponent": 0.5593220338983049
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum,w,weightAsPowerExponent},{count,weightAsPowerExponent}": {
@@ -53740,9 +50065,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "weightAsPowerExponent": 0.5593220338983049
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{max,withoutRepetition},{max,withoutRepetition},{aAsLogarithmBase,sum,weightAsPowerExponent}": {
@@ -53804,9 +50126,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "jAsPowerExponent": 2.186440677966102
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{sum,weightAsPowerExponent},{max,weightAsLogarithmBase,withoutRepetition}": {
@@ -53864,9 +50183,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 2.694915254237288
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{sum,u,x},{sum,u,withoutRepetition,x}": {
@@ -53883,10 +50199,6 @@ AND THE BEST METRICS WERE {
                 "x": 2.593220338983051,
                 "u": -1.1694915254237288
             }
-        ],
-        "spreadDynamicParameters": [
-            "x",
-            "u"
         ]
     },
     "{b,sum,w},{b,sum,w,withoutRepetition}": {
@@ -53903,10 +50215,6 @@ AND THE BEST METRICS WERE {
                 "w": 2.593220338983051,
                 "b": -1.1694915254237288
             }
-        ],
-        "spreadDynamicParameters": [
-            "w",
-            "b"
         ]
     },
     "{sum},{max,weightAsCoefficient,weightAsPowerExponent,withoutRepetition}": {
@@ -53976,9 +50284,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "aAsPowerExponent": 2.491525423728813
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsLogarithmBase,aAsPowerExponent,sum},{aAsLogarithmBase,aAsPowerExponent,sum,w}": {
@@ -53995,9 +50300,6 @@ AND THE BEST METRICS WERE {
                 "w": -2.4915254237288136,
                 "aAsPowerExponent": 0.35593220338983045
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsLogarithmBase,aAsPowerExponent,sum,w},{aAsLogarithmBase,aAsPowerExponent,sum}": {
@@ -54014,9 +50316,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 0.35593220338983045
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsLogarithmBase,count,w},{aAsLogarithmBase,sum,w}": {
@@ -54032,9 +50331,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "w": -0.8644067796610169
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{aAsCoefficient,sum,w},{aAsLogarithmBase,sum,w}": {
@@ -54050,9 +50346,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "w": -0.8644067796610169
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{aAsLogarithmBase,sum,w},{aAsLogarithmBase,count,w}": {
@@ -54068,9 +50361,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "w": -0.8644067796610169
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum},{jAsPowerExponent,kAsPowerBase,sum}": {
@@ -54154,9 +50444,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "y": 0.4576271186440679
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{count,w,withoutRepetition},{aAsLogarithmBase,sum,y}": {
@@ -54188,9 +50475,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "y": 0.4576271186440679
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{count,w,withoutRepetition},{aAsLogarithmBase,sum,w,weightAsPowerExponent}": {
@@ -54207,9 +50491,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 1.7796610169491522,
                 "w": -1.576271186440678
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{aAsCoefficient,sum},{aAsCoefficient,count,kAsPowerExponent}": {
@@ -54224,9 +50505,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerExponent": 2.389830508474576,
                 "aAsCoefficient": 0.3333333333333333
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{aAsCoefficient,sum},{aAsCoefficient,count,kAsCoefficient}": {
@@ -54241,9 +50519,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0.6666666666666666,
                 "aAsCoefficient": 0.3333333333333333
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{sum,weightAsPowerExponent},{max,weightAsCoefficient,withoutRepetition}": {
@@ -54343,9 +50618,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 2.186440677966102
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,kAsCoefficient,sum,withoutRepetition},{aAsLogarithmBase,kAsCoefficient,sum}": {
@@ -54362,9 +50634,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "kAsCoefficient": 0.3333333333333333
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{max,withoutRepetition},{aAsLogarithmBase,sum,weightAsCoefficient,weightAsPowerExponent}": {
@@ -54399,9 +50668,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "w": -1.4745762711864407
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{jAsCoefficient,jAsPowerExponent,sum},{max,withoutRepetition}": {
@@ -54432,9 +50698,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 1.7796610169491522,
                 "x": -1.88135593220339
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,weightAsPowerExponent},{max,weightAsPowerExponent,withoutRepetition}": {
@@ -54478,9 +50741,6 @@ AND THE BEST METRICS WERE {
                 "useNuminator": true,
                 "aAsPowerExponent": 0.6610169491525424
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,sum,useNuminator},{aAsPowerExponent,max,withoutRepetition}": {
@@ -54496,9 +50756,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "aAsPowerExponent": 0.6610169491525424
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,sum,useNuminator},{aAsPowerExponent,max,useNuminator,withoutRepetition}": {
@@ -54515,9 +50772,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 0.6610169491525424,
                 "useNuminator": true
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,sum},{aAsPowerExponent,max,withoutRepetition,y}": {
@@ -54533,9 +50787,6 @@ AND THE BEST METRICS WERE {
                 "y": -3,
                 "aAsPowerExponent": 0.6610169491525424
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,sum},{aAsPowerExponent,max,withoutRepetition,x}": {
@@ -54551,9 +50802,6 @@ AND THE BEST METRICS WERE {
                 "x": -0.15254237288135597,
                 "aAsPowerExponent": 0.6610169491525424
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,sum},{aAsPowerExponent,max,w,withoutRepetition}": {
@@ -54569,9 +50817,6 @@ AND THE BEST METRICS WERE {
                 "w": -3,
                 "aAsPowerExponent": 0.6610169491525424
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,sum},{max,weightAsPowerExponent,withoutRepetition}": {
@@ -54602,10 +50847,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 0.6610169491525424,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent",
-            "weightAsCoefficient"
         ]
     },
     "{aAsPowerExponent,sum},{aAsPowerExponent,max,withoutRepetition}": {
@@ -54620,9 +50861,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "aAsPowerExponent": 0.6610169491525424
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsCoefficient,aAsPowerExponent,sum},{aAsCoefficient,aAsPowerExponent,max,withoutRepetition}": {
@@ -54639,10 +50877,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0.1111111111111111,
                 "aAsPowerExponent": 0.6610169491525424
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient",
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,sum},{aAsPowerExponent,jAsCoefficient,max,withoutRepetition}": {
@@ -54658,9 +50892,6 @@ AND THE BEST METRICS WERE {
                 "jAsCoefficient": 1,
                 "aAsPowerExponent": 0.6610169491525424
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,jAsCoefficient,sum},{aAsPowerExponent,max,withoutRepetition}": {
@@ -54676,9 +50907,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "aAsPowerExponent": 0.6610169491525424
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,jAsCoefficient,sum},{aAsPowerExponent,jAsCoefficient,max,withoutRepetition}": {
@@ -54695,10 +50923,6 @@ AND THE BEST METRICS WERE {
                 "jAsCoefficient": 1,
                 "aAsPowerExponent": 0.6610169491525424
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient",
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,sum},{aAsPowerExponent,kAsCoefficient,max,withoutRepetition}": {
@@ -54714,9 +50938,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 1,
                 "aAsPowerExponent": 0.6610169491525424
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,kAsCoefficient,sum},{aAsPowerExponent,kAsCoefficient,max,withoutRepetition}": {
@@ -54733,10 +50954,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 1,
                 "aAsPowerExponent": 0.6610169491525424
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient",
-            "aAsPowerExponent"
         ]
     },
     "{sum,w,withoutRepetition},{aAsLogarithmBase,sum,w,weightAsPowerExponent}": {
@@ -54753,9 +50970,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 3,
                 "w": -1.4745762711864407
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum},{aAsLogarithmBase,aAsPowerExponent,sum,weightAsCoefficient}": {
@@ -54841,9 +51055,6 @@ AND THE BEST METRICS WERE {
                 "jAsLogarithmBase": 2,
                 "kAsPowerExponent": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{sum,x},{max,weightAsPowerExponent,withoutRepetition}": {
@@ -54873,9 +51084,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 0.35593220338983045,
                 "x": -0.6610169491525424
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,w},{max,weightAsPowerExponent,withoutRepetition}": {
@@ -54905,9 +51113,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 0.35593220338983045,
                 "w": -0.6610169491525424
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,weightAsCoefficient},{max,weightAsPowerExponent,withoutRepetition}": {
@@ -54951,9 +51156,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 0.35593220338983045,
                 "x": -0.6610169491525424
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,w},{aAsPowerExponent,max,withoutRepetition}": {
@@ -54983,9 +51185,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 0.35593220338983045,
                 "w": -0.6610169491525424
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,weightAsCoefficient},{aAsPowerExponent,max,withoutRepetition}": {
@@ -55044,9 +51243,6 @@ AND THE BEST METRICS WERE {
                 "y": 1.4745762711864403,
                 "weightAsPowerExponent": 0.05084745762711851
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{max,weightAsPowerExponent,withoutRepetition,y},{aAsLogarithmBase,sum,weightAsPowerExponent,y}": {
@@ -55064,10 +51260,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 0.05084745762711851,
                 "y": 1.4745762711864403
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent",
-            "y"
         ]
     },
     "{aAsLogarithmBase,sum,useNuminator,w,y}": {
@@ -55168,10 +51360,6 @@ AND THE BEST METRICS WERE {
                 "w": -1.6779661016949152,
                 "y": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "w",
-            "y"
         ]
     },
     "{aAsPowerExponent,sum,weightAsLogarithmBase},{aAsLogarithmBase,sum}": {
@@ -55215,9 +51403,6 @@ AND THE BEST METRICS WERE {
                 "useNuminator": true,
                 "x": 3
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,useNuminator,x},{max,withoutRepetition}": {
@@ -55247,9 +51432,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "x": 3
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,useNuminator,x},{max,useNuminator,withoutRepetition}": {
@@ -55281,9 +51463,6 @@ AND THE BEST METRICS WERE {
                 "x": 3,
                 "useNuminator": true
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,x},{max,withoutRepetition,y}": {
@@ -55313,9 +51492,6 @@ AND THE BEST METRICS WERE {
                 "y": -3,
                 "x": 3
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,x},{max,u,withoutRepetition,x}": {
@@ -55331,9 +51507,6 @@ AND THE BEST METRICS WERE {
                 "u": 3,
                 "x": 3
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,x},{max,withoutRepetition}": {
@@ -55376,9 +51549,6 @@ AND THE BEST METRICS WERE {
                 "useNuminator": true,
                 "w": 3
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,useNuminator,w},{max,withoutRepetition}": {
@@ -55408,9 +51578,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "w": 3
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,useNuminator,w},{max,useNuminator,withoutRepetition}": {
@@ -55442,9 +51609,6 @@ AND THE BEST METRICS WERE {
                 "w": 3,
                 "useNuminator": true
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,w},{max,withoutRepetition,y}": {
@@ -55474,9 +51638,6 @@ AND THE BEST METRICS WERE {
                 "y": -3,
                 "w": 3
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,w},{b,max,w,withoutRepetition}": {
@@ -55492,9 +51653,6 @@ AND THE BEST METRICS WERE {
                 "b": 3,
                 "w": 3
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,w},{max,withoutRepetition}": {
@@ -55551,9 +51709,6 @@ AND THE BEST METRICS WERE {
                 "weightAsCoefficient": 1,
                 "x": 3
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,weightAsCoefficient,x},{max,withoutRepetition,x}": {
@@ -55569,9 +51724,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "x": 3
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,w},{max,weightAsCoefficient,withoutRepetition}": {
@@ -55615,9 +51767,6 @@ AND THE BEST METRICS WERE {
                 "weightAsCoefficient": 1,
                 "w": 3
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,w,weightAsCoefficient},{max,w,withoutRepetition}": {
@@ -55633,9 +51782,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "w": 3
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,x},{aAsCoefficient,max,withoutRepetition}": {
@@ -55679,9 +51825,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 1,
                 "x": 3
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{aAsCoefficient,sum,x},{max,withoutRepetition,x}": {
@@ -55697,9 +51840,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "x": 3
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,w},{aAsCoefficient,max,withoutRepetition}": {
@@ -55743,9 +51883,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "aAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{sum,w},{aAsCoefficient,max,w,withoutRepetition}": {
@@ -55761,9 +51898,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 1,
                 "w": 3
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{aAsCoefficient,sum,w},{max,w,withoutRepetition}": {
@@ -55779,9 +51913,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "w": 3
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{aAsCoefficient,sum,w},{aAsCoefficient,max,w,withoutRepetition}": {
@@ -55798,10 +51929,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 1,
                 "w": 3
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient",
-            "w"
         ]
     },
     "{sum,x},{jAsCoefficient,max,withoutRepetition}": {
@@ -55845,9 +51972,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "jAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{sum,x},{jAsCoefficient,max,withoutRepetition,x}": {
@@ -55863,9 +51987,6 @@ AND THE BEST METRICS WERE {
                 "jAsCoefficient": 1,
                 "x": 3
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{jAsCoefficient,sum,x},{max,withoutRepetition,x}": {
@@ -55881,9 +52002,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "x": 3
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{jAsCoefficient,sum,x},{jAsCoefficient,max,withoutRepetition,x}": {
@@ -55900,10 +52018,6 @@ AND THE BEST METRICS WERE {
                 "jAsCoefficient": 1,
                 "x": 3
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient",
-            "x"
         ]
     },
     "{sum,w},{jAsCoefficient,max,withoutRepetition}": {
@@ -55947,9 +52061,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "jAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{sum,w},{jAsCoefficient,max,w,withoutRepetition}": {
@@ -55965,9 +52076,6 @@ AND THE BEST METRICS WERE {
                 "jAsCoefficient": 1,
                 "w": 3
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{jAsCoefficient,sum,w},{max,w,withoutRepetition}": {
@@ -55983,9 +52091,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "w": 3
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{jAsCoefficient,sum,w},{jAsCoefficient,max,w,withoutRepetition}": {
@@ -56002,10 +52107,6 @@ AND THE BEST METRICS WERE {
                 "jAsCoefficient": 1,
                 "w": 3
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient",
-            "w"
         ]
     },
     "{sum,x},{kAsCoefficient,max,withoutRepetition}": {
@@ -56035,9 +52136,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 1,
                 "x": 3
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{kAsCoefficient,sum,x},{kAsCoefficient,max,withoutRepetition,x}": {
@@ -56054,10 +52152,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 1,
                 "x": 3
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient",
-            "x"
         ]
     },
     "{sum,w},{kAsCoefficient,max,withoutRepetition}": {
@@ -56087,9 +52181,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 1,
                 "w": 3
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{kAsCoefficient,sum,w},{kAsCoefficient,max,w,withoutRepetition}": {
@@ -56106,10 +52197,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 1,
                 "w": 3
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient",
-            "w"
         ]
     },
     "{sum,w},{max,w,withoutRepetition,x}": {
@@ -56125,9 +52212,6 @@ AND THE BEST METRICS WERE {
                 "x": 2.796610169491525,
                 "w": 3
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{aAsCoefficient,jAsPowerExponent,sum},{aAsCoefficient,max,withoutRepetition}": {
@@ -56143,9 +52227,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "aAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{count,w,weightAsPowerBase,withoutRepetition},{aAsLogarithmBase,sum,w,weightAsPowerBase}": {
@@ -56163,9 +52244,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerBase": 2,
                 "w": -1.6779661016949152
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{jAsPowerExponent,sum},{count,jAsPowerExponent},{count,jAsPowerExponent,withoutRepetition}": {
@@ -56184,9 +52262,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{sum,x},{max,w,withoutRepetition,x}": {
@@ -56202,9 +52277,6 @@ AND THE BEST METRICS WERE {
                 "w": 2.796610169491525,
                 "x": 3
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{aAsCoefficient,max,weightAsPowerExponent,withoutRepetition},{aAsLogarithmBase,sum}": {
@@ -56281,9 +52353,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.2711864406779663,
                 "x": -2.8983050847457625
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{aAsLogarithmBase,jAsPowerExponent,sum,x},{aAsLogarithmBase,sum,x}": {
@@ -56300,9 +52369,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "x": -2.8983050847457625
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{jAsPowerExponent,sum},{count,withoutRepetition},{max,withoutRepetition}": {
@@ -56335,9 +52401,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "x": -1.9830508474576272
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{aAsCoefficient,count,x},{aAsLogarithmBase,sum,x}": {
@@ -56353,9 +52416,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "x": -1.9830508474576272
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,x},{max,modifiedCount,withoutRepetition}": {
@@ -56399,9 +52459,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "aAsPowerExponent": 0.4576271186440679
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsCoefficient,aAsPowerExponent,sum},{aAsPowerExponent,max,withoutRepetition}": {
@@ -56417,9 +52474,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "aAsPowerExponent": 0.4576271186440679
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,sum,weightAsLogarithmBase},{count,weightAsLogarithmBase}": {
@@ -56449,9 +52503,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 1.9830508474576272,
                 "weightAsLogarithmBase": 2
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsCoefficient,sum,weightAsPowerBase},{max,withoutRepetition}": {
@@ -56481,9 +52532,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "x": -2.694915254237288
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{aAsPowerExponent,sum,weightAsLogarithmBase,withoutRepetition},{aAsLogarithmBase,aAsPowerExponent,sum}": {
@@ -56500,9 +52548,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 2.288135593220339
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{max,weightAsPowerExponent,withoutRepetition},{aAsLogarithmBase,sum,weightAsPowerExponent},{aAsLogarithmBase,sum,weightAsPowerExponent}": {
@@ -56523,9 +52568,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "weightAsPowerExponent": 0.25423728813559343
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum},{aAsPowerExponent,sum,weightAsLogarithmBase}": {
@@ -56568,9 +52610,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "w": -1.6779661016949152
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{jAsPowerExponent,kAsPowerBase,sum},{jAsPowerExponent,kAsPowerBase,sum,withoutRepetition}": {
@@ -56587,9 +52626,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerBase": 2,
                 "jAsPowerExponent": 2.084745762711864
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{sum,x},{aAsLogarithmBase,aAsPowerExponent,sum,x}": {
@@ -56605,9 +52641,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 3,
                 "x": 0.8644067796610169
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,weightAsPowerExponent,withoutRepetition},{aAsLogarithmBase,sum,w}": {
@@ -56639,9 +52672,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 2.084745762711864,
                 "aAsPowerExponent": 1.9830508474576272
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{sum,weightAsCoefficient,x},{max,weightAsCoefficient,withoutRepetition}": {
@@ -56657,9 +52687,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "weightAsCoefficient": 0.7777777777777778
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{sum,w,weightAsCoefficient},{max,weightAsCoefficient,withoutRepetition}": {
@@ -56675,9 +52702,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "weightAsCoefficient": 0.7777777777777778
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{count,w,withoutRepetition,x},{aAsLogarithmBase,sum,w}": {
@@ -56694,9 +52718,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "w": -1.6779661016949152
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{count,withoutRepetition},{aAsLogarithmBase,aAsPowerExponent,sum,w}": {
@@ -56728,9 +52749,6 @@ AND THE BEST METRICS WERE {
                 "w": -1.4745762711864407,
                 "aAsPowerExponent": 1.8813559322033901
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsCoefficient,jAsCoefficient,jAsPowerBase,sum}": {
@@ -56799,9 +52817,6 @@ AND THE BEST METRICS WERE {
                 "weightAsCoefficient": 0.2222222222222222,
                 "aAsPowerExponent": 2.898305084745763
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{count},{aAsCoefficient,aAsLogarithmBase,aAsPowerExponent,sum}": {
@@ -56831,9 +52846,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0.2222222222222222,
                 "aAsPowerExponent": 2.898305084745763
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,sum},{aAsPowerExponent,max,weightAsPowerExponent,withoutRepetition}": {
@@ -56849,9 +52861,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 0.9661016949152543,
                 "aAsPowerExponent": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,sum},{aAsPowerExponent,max,weightAsCoefficient,withoutRepetition}": {
@@ -56867,9 +52876,6 @@ AND THE BEST METRICS WERE {
                 "weightAsCoefficient": 0.8888888888888888,
                 "aAsPowerExponent": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,sum},{aAsCoefficient,aAsPowerExponent,max,withoutRepetition}": {
@@ -56885,9 +52891,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0.8888888888888888,
                 "aAsPowerExponent": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{count,y},{aAsLogarithmBase,sum,w}": {
@@ -56918,9 +52921,6 @@ AND THE BEST METRICS WERE {
                 "y": 0.8644067796610169,
                 "w": -1.3728813559322033
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{count,w,withoutRepetition,y},{aAsLogarithmBase,sum,w,y}": {
@@ -56938,10 +52938,6 @@ AND THE BEST METRICS WERE {
                 "w": -1.3728813559322033,
                 "y": 0.8644067796610169
             }
-        ],
-        "spreadDynamicParameters": [
-            "w",
-            "y"
         ]
     },
     "{aAsPowerExponent,max,weightAsPowerExponent,withoutRepetition},{aAsLogarithmBase,aAsPowerExponent,sum,weightAsPowerExponent}": {
@@ -56959,10 +52955,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 0.6610169491525424,
                 "weightAsPowerExponent": 0.6610169491525424
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent",
-            "weightAsPowerExponent"
         ]
     },
     "{aAsCoefficient,sum},{aAsCoefficient,max,weightAsPowerExponent,withoutRepetition}": {
@@ -56978,9 +52970,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 0.25423728813559343,
                 "aAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{jAsPowerExponent,sum},{count},{count,withoutRepetition}": {
@@ -57013,9 +53002,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 1.4745762711864403,
                 "jAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum,weightAsCoefficient,withoutRepetition},{aAsLogarithmBase,jAsPowerExponent,sum}": {
@@ -57032,9 +53018,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "jAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,max,weightAsPowerExponent,withoutRepetition},{aAsLogarithmBase,sum}": {
@@ -57064,9 +53047,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerBase": 2,
                 "aAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{aAsCoefficient,jAsPowerBase,sum},{aAsCoefficient,sum}": {
@@ -57081,9 +53061,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "aAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{count,x},{aAsLogarithmBase,sum,weightAsCoefficient,x}": {
@@ -57099,9 +53076,6 @@ AND THE BEST METRICS WERE {
                 "weightAsCoefficient": 0.8888888888888888,
                 "x": -1.7796610169491525
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{count,x},{aAsCoefficient,aAsLogarithmBase,sum,x}": {
@@ -57117,9 +53091,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0.8888888888888888,
                 "x": -1.7796610169491525
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{aAsLogarithmBase,max,withoutRepetition},{aAsLogarithmBase,max,withoutRepetition},{aAsLogarithmBase,sum}": {
@@ -57175,10 +53146,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 3,
                 "w": -1.576271186440678
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent",
-            "w"
         ]
     },
     "{jAsPowerBase,jAsPowerExponent,sum},{sum,withoutRepetition}": {
@@ -57208,9 +53175,6 @@ AND THE BEST METRICS WERE {
                 "withoutRepetition": true,
                 "jAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum,w},{jAsPowerExponent,sum,withoutRepetition}": {
@@ -57226,9 +53190,6 @@ AND THE BEST METRICS WERE {
                 "withoutRepetition": true,
                 "jAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{kAsCoefficient,max,withoutRepetition},{aAsLogarithmBase,kAsCoefficient,sum,w}": {
@@ -57245,9 +53206,6 @@ AND THE BEST METRICS WERE {
                 "w": 2.898305084745763,
                 "kAsCoefficient": 0.4444444444444444
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{sum},{sum},{kAsCoefficient,sum,withoutRepetition}": {
@@ -57278,9 +53236,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "x": -2.084745762711864
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,w},{aAsLogarithmBase,aAsPowerExponent,sum,w}": {
@@ -57296,9 +53251,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 3,
                 "w": 2.694915254237288
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{aAsCoefficient,sum,x},{aAsCoefficient,max,withoutRepetition,x}": {
@@ -57315,10 +53267,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0.7777777777777778,
                 "x": 3
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient",
-            "x"
         ]
     },
     "{sum,weightAsCoefficient,x},{aAsLogarithmBase,sum,x}": {
@@ -57334,9 +53282,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "x": -2.7966101694915255
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{aAsCoefficient,sum,x},{aAsLogarithmBase,sum,x}": {
@@ -57352,9 +53297,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "x": -2.7966101694915255
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{aAsCoefficient,sum,weightAsPowerExponent},{aAsCoefficient,max,withoutRepetition}": {
@@ -57370,9 +53312,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "aAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{aAsCoefficient,aAsLogarithmBase,sum},{aAsCoefficient,aAsLogarithmBase,sum,w}": {
@@ -57389,9 +53328,6 @@ AND THE BEST METRICS WERE {
                 "w": -3,
                 "aAsCoefficient": 0.8888888888888888
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{aAsCoefficient,aAsLogarithmBase,sum,w},{aAsCoefficient,aAsLogarithmBase,sum}": {
@@ -57408,9 +53344,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsCoefficient": 0.8888888888888888
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{count,weightAsCoefficient,x},{aAsLogarithmBase,sum}": {
@@ -57469,10 +53402,6 @@ AND THE BEST METRICS WERE {
                 "weightAsCoefficient": 0.7777777777777778,
                 "x": 3
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient",
-            "x"
         ]
     },
     "{sum,w,weightAsCoefficient},{max,w,weightAsCoefficient,withoutRepetition}": {
@@ -57489,10 +53418,6 @@ AND THE BEST METRICS WERE {
                 "weightAsCoefficient": 0.7777777777777778,
                 "w": 3
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient",
-            "w"
         ]
     },
     "{aAsPowerExponent,sum},{aAsLogarithmBase,aAsPowerExponent,sum,w}": {
@@ -57508,9 +53433,6 @@ AND THE BEST METRICS WERE {
                 "w": -2.4915254237288136,
                 "aAsPowerExponent": 0.25423728813559343
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,sum,w},{aAsLogarithmBase,aAsPowerExponent,sum}": {
@@ -57526,9 +53448,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 0.25423728813559343
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{count,withoutRepetition,x},{aAsLogarithmBase,sum,x,y}": {
@@ -57545,9 +53464,6 @@ AND THE BEST METRICS WERE {
                 "y": 0.6610169491525424,
                 "x": -1.88135593220339
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{count,withoutRepetition,x,y},{aAsLogarithmBase,sum,x,y}": {
@@ -57565,10 +53481,6 @@ AND THE BEST METRICS WERE {
                 "x": -1.88135593220339,
                 "y": 0.6610169491525424
             }
-        ],
-        "spreadDynamicParameters": [
-            "x",
-            "y"
         ]
     },
     "{kAsPowerExponent,sum},{max,withoutRepetition},{aAsLogarithmBase,sum}": {
@@ -57601,9 +53513,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "aAsPowerExponent": 0.8644067796610169
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsCoefficient,sum,x},{aAsCoefficient,max,withoutRepetition}": {
@@ -57619,9 +53528,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "aAsCoefficient": 0.7777777777777778
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{kAsCoefficient,sum},{aAsLogarithmBase,sum,withoutRepetition}": {
@@ -57652,10 +53558,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0.3333333333333333,
                 "weightAsPowerExponent": 0.05084745762711851
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient",
-            "weightAsPowerExponent"
         ]
     },
     "{sum,withoutRepetition},{max,withoutRepetition},{aAsLogarithmBase,jAsPowerExponent,sum}": {
@@ -57689,9 +53591,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 2.389830508474576,
                 "w": -1.576271186440678
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{jAsPowerExponent,kAsPowerBase,sum},{max,withoutRepetition}": {
@@ -57722,10 +53621,6 @@ AND THE BEST METRICS WERE {
                 "w": -1.3728813559322033,
                 "y": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "w",
-            "y"
         ]
     },
     "{sum,x},{max,withoutRepetition,x}": {
@@ -57856,9 +53751,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 2.186440677966102
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsLogarithmBase,aAsPowerExponent,kAsPowerExponent,sum,usePrimeIndex}": {
@@ -57934,9 +53826,6 @@ AND THE BEST METRICS WERE {
                 "w": -2.1864406779661016,
                 "aAsPowerExponent": 0.15254237288135597
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,sum,w},{count}": {
@@ -57964,9 +53853,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "aAsPowerExponent": 0.15254237288135597
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{sum,w,weightAsPowerExponent},{aAsLogarithmBase,sum,w}": {
@@ -57982,9 +53868,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "w": -1.6779661016949152
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{aAsLogarithmBase,aAsPowerExponent,jAsCoefficient,sum,x}": {
@@ -58037,9 +53920,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "weightAsPowerExponent": 0.4576271186440679
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,sum,weightAsPowerExponent},{aAsPowerExponent,max,weightAsPowerExponent,withoutRepetition}": {
@@ -58056,10 +53936,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 0.5593220338983049,
                 "weightAsPowerExponent": 0.4576271186440679
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent",
-            "weightAsPowerExponent"
         ]
     },
     "{aAsCoefficient,max,weightAsPowerExponent,withoutRepetition},{aAsLogarithmBase,sum,weightAsPowerExponent}": {
@@ -58076,9 +53952,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "weightAsPowerExponent": 0.5593220338983049
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{aAsLogarithmBase,aAsPowerExponent,sum,w}": {
@@ -58179,10 +54052,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 1.4745762711864403,
                 "w": -1.88135593220339
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent",
-            "w"
         ]
     },
     "{sum,x},{max,weightAsLogarithmBase,withoutRepetition,x}": {
@@ -58198,9 +54067,6 @@ AND THE BEST METRICS WERE {
                 "weightAsLogarithmBase": 2,
                 "x": -0.35593220338983045
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,w},{max,w,weightAsLogarithmBase,withoutRepetition}": {
@@ -58216,9 +54082,6 @@ AND THE BEST METRICS WERE {
                 "weightAsLogarithmBase": 2,
                 "w": -0.35593220338983045
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,x},{aAsLogarithmBase,max,withoutRepetition,x}": {
@@ -58234,9 +54097,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "x": -0.35593220338983045
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{aAsLogarithmBase,jAsPowerBase,jAsPowerExponent,sum,x}": {
@@ -58340,9 +54200,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.4745762711864403,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{sum,withoutRepetition},{aAsCoefficient,aAsLogarithmBase,jAsPowerExponent,sum}": {
@@ -58389,9 +54246,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.4745762711864403,
                 "jAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{sum,withoutRepetition},{aAsLogarithmBase,jAsPowerExponent,kAsCoefficient,sum}": {
@@ -58438,9 +54292,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.4745762711864403,
                 "kAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{aAsLogarithmBase,jAsPowerExponent,sum},{sum,withoutRepetition}": {
@@ -58597,9 +54448,6 @@ AND THE BEST METRICS WERE {
                 "weightAsLogarithmBase": 2,
                 "y": 1.4745762711864403
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{count,w},{aAsLogarithmBase,sum,w,y}": {
@@ -58615,9 +54463,6 @@ AND THE BEST METRICS WERE {
                 "y": 1.0677966101694913,
                 "w": -1.3728813559322033
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{aAsLogarithmBase,aAsPowerExponent,jAsLogarithmBase,sum,w}": {
@@ -58646,9 +54491,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 1.9830508474576272,
                 "aAsCoefficient": 0.2222222222222222
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{sum},{jAsPowerBase,max,weightAsPowerExponent,withoutRepetition}": {
@@ -58678,9 +54520,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "kAsCoefficient": 0.6666666666666666
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{aAsLogarithmBase,aAsPowerExponent,sum,x,y}": {
@@ -58722,9 +54561,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "weightAsPowerExponent": 0.6610169491525424
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum},{count,kAsPowerExponent,modifiedCount}": {
@@ -58753,9 +54589,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "weightAsPowerExponent": 0.15254237288135597
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{count,withoutRepetition,x},{aAsLogarithmBase,aAsPowerExponent,sum,x}": {
@@ -58772,9 +54605,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 1.5762711864406782,
                 "x": -1.4745762711864407
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{count,withoutRepetition,x},{aAsLogarithmBase,sum,w}": {
@@ -58960,9 +54790,6 @@ AND THE BEST METRICS WERE {
                 "usePrimeIndex": true,
                 "aAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{sum},{jAsCoefficient,max,usePrimeIndex,withoutRepetition}": {
@@ -59006,9 +54833,6 @@ AND THE BEST METRICS WERE {
                 "usePrimeIndex": true,
                 "jAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{sum},{kAsCoefficient,max,usePrimeIndex,withoutRepetition}": {
@@ -59038,9 +54862,6 @@ AND THE BEST METRICS WERE {
                 "usePrimeIndex": true,
                 "kAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{sum},{count,kAsPowerBase,modifiedCount,withoutRepetition}": {
@@ -59172,9 +54993,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 2.084745762711864,
                 "w": 2.898305084745763
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{aAsLogarithmBase,aAsPowerExponent,sum},{aAsLogarithmBase,aAsPowerExponent,sum,x}": {
@@ -59191,9 +55009,6 @@ AND THE BEST METRICS WERE {
                 "x": -2.4915254237288136,
                 "aAsPowerExponent": 1.7796610169491522
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsLogarithmBase,aAsPowerExponent,sum,x},{aAsLogarithmBase,aAsPowerExponent,sum}": {
@@ -59210,9 +55025,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 1.7796610169491522
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{sum,weightAsCoefficient,withoutRepetition},{aAsLogarithmBase,kAsCoefficient,sum}": {
@@ -59259,9 +55071,6 @@ AND THE BEST METRICS WERE {
                 "x": -1.3728813559322033,
                 "w": -1.0677966101694916
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{max,usePrimeIndex,withoutRepetition},{aAsLogarithmBase,aAsPowerExponent,sum}": {
@@ -59346,9 +55155,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "x": 3
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{count,kAsPowerExponent,w},{max,withoutRepetition}": {
@@ -59378,9 +55184,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "w": 3
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{count,kAsCoefficient,x},{max,withoutRepetition}": {
@@ -59410,9 +55213,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "x": 3
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{count,kAsCoefficient,w},{max,withoutRepetition}": {
@@ -59442,9 +55242,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "w": 3
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{count,u,x},{max,withoutRepetition,x}": {
@@ -59460,9 +55257,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "x": 3
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{b,count,w},{max,w,withoutRepetition}": {
@@ -59478,9 +55272,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "w": 3
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{aAsLogarithmBase,sum,w,x,y}": {
@@ -59586,9 +55377,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "w": -1.3728813559322033
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,weightAsCoefficient},{max,usePrimeIndex,weightAsCoefficient,withoutRepetition}": {
@@ -59604,9 +55392,6 @@ AND THE BEST METRICS WERE {
                 "usePrimeIndex": true,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{kAsCoefficient,sum},{modifiedCount,sum}": {
@@ -59649,9 +55434,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 1.7796610169491522,
                 "w": -1.6779661016949152
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{aAsLogarithmBase,aAsPowerExponent,sum,w},{aAsLogarithmBase,sum,w}": {
@@ -59668,9 +55450,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "w": -1.6779661016949152
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{count,w},{aAsLogarithmBase,aAsPowerExponent,sum,w}": {
@@ -59686,9 +55465,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 1.6779661016949152,
                 "w": -1.3728813559322033
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{aAsPowerExponent,count,w},{aAsLogarithmBase,aAsPowerExponent,sum,w}": {
@@ -59705,10 +55481,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 1.6779661016949152,
                 "w": -1.3728813559322033
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent",
-            "w"
         ]
     },
     "{aAsCoefficient,sum,withoutRepetition},{aAsCoefficient,aAsLogarithmBase,jAsPowerExponent,sum}": {
@@ -59725,9 +55497,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.5762711864406782,
                 "aAsCoefficient": 0.7777777777777778
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{count,weightAsPowerExponent},{aAsLogarithmBase,sum,w}": {
@@ -59772,9 +55541,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerBase": 2,
                 "weightAsPowerExponent": 0.25423728813559343
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{aAsCoefficient,sum},{max,weightAsCoefficient,withoutRepetition}": {
@@ -59834,9 +55600,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 2.593220338983051,
                 "y": 1.2711864406779663
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{count,weightAsPowerExponent},{aAsLogarithmBase,aAsPowerExponent,sum}": {
@@ -59866,9 +55629,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 2.796610169491525
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{sum},{aAsPowerExponent,max,weightAsLogarithmBase,withoutRepetition}": {
@@ -60016,9 +55776,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "y": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{aAsPowerExponent,max,withoutRepetition},{aAsLogarithmBase,sum,y}": {
@@ -60050,9 +55807,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "y": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{aAsCoefficient,jAsLogarithmBase,kAsPowerExponent,sum}": {
@@ -60121,9 +55875,6 @@ AND THE BEST METRICS WERE {
                 "withoutRepetition": true,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{aAsCoefficient,jAsPowerExponent,sum},{sum,withoutRepetition}": {
@@ -60194,9 +55945,6 @@ AND THE BEST METRICS WERE {
                 "withoutRepetition": true,
                 "kAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{max,weightAsCoefficient,weightAsPowerExponent,withoutRepetition},{aAsLogarithmBase,sum,weightAsPowerExponent}": {
@@ -60213,9 +55961,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "weightAsPowerExponent": 0.5593220338983049
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{count,weightAsPowerBase},{aAsLogarithmBase,aAsPowerExponent,sum}": {
@@ -60245,9 +55990,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 2.796610169491525
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{count,kAsPowerExponent},{aAsLogarithmBase,sum,w}": {
@@ -60277,9 +56019,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerBase": 2,
                 "w": -1.3728813559322033
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,x},{aAsLogarithmBase,sum,weightAsPowerExponent,x}": {
@@ -60295,9 +56034,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 1.9830508474576272,
                 "x": -2.694915254237288
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{max,weightAsPowerExponent,withoutRepetition,x},{aAsLogarithmBase,sum}": {
@@ -60418,9 +56154,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 1.2711864406779663,
                 "x": -1.6779661016949152
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{jAsCoefficient,jAsPowerExponent,sum},{sum,withoutRepetition}": {
@@ -60492,10 +56225,6 @@ AND THE BEST METRICS WERE {
                 "w": -1.9830508474576272,
                 "x": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "w",
-            "x"
         ]
     },
     "{aAsCoefficient,jAsPowerExponent,sum},{aAsCoefficient,sum,withoutRepetition}": {
@@ -60511,9 +56240,6 @@ AND THE BEST METRICS WERE {
                 "withoutRepetition": true,
                 "aAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{sum},{kAsCoefficient,sum},{max,withoutRepetition}": {
@@ -60574,9 +56300,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "w": -1.4745762711864407
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{aAsCoefficient,count},{aAsCoefficient,aAsLogarithmBase,sum,w}": {
@@ -60592,9 +56315,6 @@ AND THE BEST METRICS WERE {
                 "w": -2.084745762711864,
                 "aAsCoefficient": 0.7777777777777778
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{aAsCoefficient,count,w},{aAsCoefficient,aAsLogarithmBase,sum}": {
@@ -60610,9 +56330,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsCoefficient": 0.7777777777777778
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{sum,weightAsPowerExponent,x},{aAsLogarithmBase,sum,x}": {
@@ -60628,9 +56345,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "x": -2.7966101694915255
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{kAsPowerExponent,sum},{aAsPowerBase,count,kAsPowerExponent,withoutRepetition}": {
@@ -60646,9 +56360,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerBase": 2,
                 "kAsPowerExponent": 0.8644067796610169
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,kAsPowerExponent,sum},{jAsPowerExponent,kAsPowerExponent,max,withoutRepetition}": {
@@ -60665,10 +56376,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerExponent": 2.898305084745763,
                 "jAsPowerExponent": 2.491525423728813
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent",
-            "jAsPowerExponent"
         ]
     },
     "{modifiedCount,sum,withoutRepetition},{aAsLogarithmBase,jAsPowerExponent,sum}": {
@@ -60700,9 +56407,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 1.4745762711864403,
                 "x": -2.389830508474576
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{aAsLogarithmBase,aAsPowerExponent,sum,x},{aAsLogarithmBase,sum,x}": {
@@ -60719,9 +56423,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "x": -2.389830508474576
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{aAsPowerExponent,sum,w,x}": {
@@ -60776,9 +56477,6 @@ AND THE BEST METRICS WERE {
                 "w": -2.593220338983051,
                 "aAsPowerExponent": 0.8644067796610169
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{count,w},{aAsLogarithmBase,aAsPowerExponent,sum}": {
@@ -60808,9 +56506,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 0.8644067796610169
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{sum,weightAsPowerExponent,x},{max,withoutRepetition}": {
@@ -60840,9 +56535,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "x": -0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,w,weightAsPowerExponent},{max,withoutRepetition}": {
@@ -60872,9 +56564,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "w": -0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{max,modifiedCount,weightAsCoefficient,withoutRepetition},{aAsLogarithmBase,sum}": {
@@ -60981,9 +56670,6 @@ AND THE BEST METRICS WERE {
                 "w": -3,
                 "x": -0.4576271186440679
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{aAsLogarithmBase,sum,w,x},{aAsLogarithmBase,sum,x}": {
@@ -61000,9 +56686,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "x": -0.4576271186440679
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,withoutRepetition},{aAsLogarithmBase,jAsPowerExponent,sum,weightAsPowerExponent}": {
@@ -61132,10 +56815,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 1.3728813559322033,
                 "x": -2.1864406779661016
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent",
-            "x"
         ]
     },
     "{aAsPowerExponent,count,withoutRepetition,x},{aAsLogarithmBase,aAsPowerExponent,sum,x}": {
@@ -61153,10 +56832,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 1.3728813559322033,
                 "x": -2.1864406779661016
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent",
-            "x"
         ]
     },
     "{count},{aAsLogarithmBase,aAsPowerExponent,sum,x}": {
@@ -61186,9 +56861,6 @@ AND THE BEST METRICS WERE {
                 "x": -2.7966101694915255,
                 "aAsPowerExponent": 1.4745762711864403
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,count,x},{aAsLogarithmBase,aAsPowerExponent,sum,x}": {
@@ -61205,10 +56877,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 1.3728813559322033,
                 "x": -2.1864406779661016
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent",
-            "x"
         ]
     },
     "{jAsPowerExponent,sum,usePrimeIndex,x}": {
@@ -61331,10 +56999,6 @@ AND THE BEST METRICS WERE {
                 "w": -1.576271186440678,
                 "x": -0.25423728813559343
             }
-        ],
-        "spreadDynamicParameters": [
-            "w",
-            "x"
         ]
     },
     "{count,w},{aAsLogarithmBase,sum,w,x}": {
@@ -61350,9 +57014,6 @@ AND THE BEST METRICS WERE {
                 "x": -0.35593220338983045,
                 "w": -1.271186440677966
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{count,x},{aAsLogarithmBase,sum,w,x}": {
@@ -61368,9 +57029,6 @@ AND THE BEST METRICS WERE {
                 "w": -2.1864406779661016,
                 "x": -0.35593220338983045
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{count,w,x},{aAsLogarithmBase,sum,x}": {
@@ -61386,9 +57044,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "x": -0.35593220338983045
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{aAsLogarithmBase,sum,w},{aAsLogarithmBase,sum,w,x}": {
@@ -61405,9 +57060,6 @@ AND THE BEST METRICS WERE {
                 "x": -0.9661016949152543,
                 "w": -1.4745762711864407
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{aAsLogarithmBase,sum,w,x},{aAsLogarithmBase,sum,w}": {
@@ -61424,9 +57076,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "w": -1.4745762711864407
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{kAsPowerExponent,sum,withoutRepetition},{aAsLogarithmBase,jAsPowerExponent,sum}": {
@@ -61798,9 +57447,6 @@ AND THE BEST METRICS WERE {
                 "useNuminator": true,
                 "w": -1.6779661016949152
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{aAsLogarithmBase,sum,useNuminator,w},{aAsLogarithmBase,sum,w}": {
@@ -61817,9 +57463,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "w": -1.6779661016949152
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{aAsLogarithmBase,sum,useNuminator,w},{aAsLogarithmBase,sum,useNuminator,w}": {
@@ -61837,9 +57480,6 @@ AND THE BEST METRICS WERE {
                 "w": -1.6779661016949152,
                 "useNuminator": true
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{aAsLogarithmBase,sum,w},{aAsLogarithmBase,sum,w}": {
@@ -61871,9 +57511,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerBase": 2,
                 "w": -1.6779661016949152
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{aAsLogarithmBase,sum,w,weightAsPowerBase},{aAsLogarithmBase,sum,w}": {
@@ -61890,9 +57527,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "w": -1.6779661016949152
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{aAsLogarithmBase,sum,w,weightAsPowerBase},{aAsLogarithmBase,sum,w,weightAsPowerBase}": {
@@ -61910,9 +57544,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerBase": 2,
                 "w": -1.6779661016949152
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{aAsLogarithmBase,sum,w},{aAsLogarithmBase,sum,w,weightAsPowerExponent}": {
@@ -61929,9 +57560,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 0.05084745762711851,
                 "w": -1.6779661016949152
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{aAsLogarithmBase,sum,w,weightAsPowerExponent},{aAsLogarithmBase,sum,w}": {
@@ -61948,9 +57576,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "w": -1.6779661016949152
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{aAsLogarithmBase,sum,w,weightAsPowerExponent},{aAsLogarithmBase,sum,w,weightAsPowerExponent}": {
@@ -61968,10 +57593,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 0.05084745762711851,
                 "w": -1.6779661016949152
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent",
-            "w"
         ]
     },
     "{aAsLogarithmBase,sum,w},{aAsLogarithmBase,sum,w,weightAsLogarithmBase}": {
@@ -61988,9 +57609,6 @@ AND THE BEST METRICS WERE {
                 "weightAsLogarithmBase": 2,
                 "w": -1.6779661016949152
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{aAsLogarithmBase,sum,w,weightAsLogarithmBase},{aAsLogarithmBase,sum,w}": {
@@ -62007,9 +57625,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "w": -1.6779661016949152
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{aAsLogarithmBase,sum,w,weightAsLogarithmBase},{aAsLogarithmBase,sum,w,weightAsLogarithmBase}": {
@@ -62027,9 +57642,6 @@ AND THE BEST METRICS WERE {
                 "weightAsLogarithmBase": 2,
                 "w": -1.6779661016949152
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{aAsLogarithmBase,sum,weightAsCoefficient},{aAsLogarithmBase,sum,w}": {
@@ -62076,9 +57688,6 @@ AND THE BEST METRICS WERE {
                 "weightAsCoefficient": 0,
                 "w": -1.6779661016949152
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{aAsLogarithmBase,sum,w,weightAsCoefficient},{aAsLogarithmBase,sum,w}": {
@@ -62095,9 +57704,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "w": -1.6779661016949152
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{aAsLogarithmBase,sum,w,weightAsCoefficient},{aAsLogarithmBase,sum,w,weightAsCoefficient}": {
@@ -62115,10 +57721,6 @@ AND THE BEST METRICS WERE {
                 "weightAsCoefficient": 0.1111111111111111,
                 "w": -1.6779661016949152
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient",
-            "w"
         ]
     },
     "{aAsLogarithmBase,sum},{aAsCoefficient,aAsLogarithmBase,sum,w}": {
@@ -62195,9 +57797,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 1,
                 "w": -1.6779661016949152
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{aAsCoefficient,aAsLogarithmBase,sum,w},{aAsLogarithmBase,sum,w}": {
@@ -62214,9 +57813,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "w": -1.6779661016949152
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{aAsCoefficient,aAsLogarithmBase,sum,w},{aAsCoefficient,aAsLogarithmBase,sum,w}": {
@@ -62234,10 +57830,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0.3333333333333333,
                 "w": -0.5593220338983049
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient",
-            "w"
         ]
     },
     "{aAsLogarithmBase,sum,w},{aAsLogarithmBase,jAsCoefficient,sum,w}": {
@@ -62254,9 +57846,6 @@ AND THE BEST METRICS WERE {
                 "jAsCoefficient": 1,
                 "w": -1.6779661016949152
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{aAsLogarithmBase,jAsCoefficient,sum,w},{aAsLogarithmBase,sum,w}": {
@@ -62273,9 +57862,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "w": -1.6779661016949152
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{aAsLogarithmBase,jAsCoefficient,sum,w},{aAsLogarithmBase,jAsCoefficient,sum,w}": {
@@ -62293,10 +57879,6 @@ AND THE BEST METRICS WERE {
                 "jAsCoefficient": 1,
                 "w": -1.6779661016949152
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient",
-            "w"
         ]
     },
     "{count,weightAsCoefficient,withoutRepetition},{aAsLogarithmBase,sum,w}": {
@@ -62328,9 +57910,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "w": -1.6779661016949152
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{aAsLogarithmBase,count,withoutRepetition},{aAsLogarithmBase,sum,w}": {
@@ -62418,9 +57997,6 @@ AND THE BEST METRICS WERE {
                 "weightAsCoefficient": 0.1111111111111111,
                 "w": -1.0677966101694916
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{count,w,weightAsCoefficient},{aAsLogarithmBase,sum,w}": {
@@ -62436,9 +58012,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "w": -1.6779661016949152
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{aAsLogarithmBase,count},{aAsLogarithmBase,sum,w}": {
@@ -62552,9 +58125,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0.5555555555555556,
                 "w": -0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,weightAsCoefficient,withoutRepetition},{aAsLogarithmBase,sum,w}": {
@@ -62586,9 +58156,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "w": -1.6779661016949152
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{aAsCoefficient,sum,withoutRepetition},{aAsLogarithmBase,sum,w}": {
@@ -62633,9 +58200,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "w": -1.6779661016949152
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{aAsCoefficient,sum},{aAsLogarithmBase,sum,w}": {
@@ -62727,9 +58291,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "w": -1.6779661016949152
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,weightAsPowerExponent},{count,x}": {
@@ -62837,9 +58398,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "w": -1.1694915254237288
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{max,withoutRepetition},{aAsLogarithmBase,sum,w,weightAsPowerBase}": {
@@ -62871,9 +58429,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerBase": 2,
                 "w": -1.0677966101694916
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{aAsLogarithmBase,sum,w},{aAsLogarithmBase,sum,w,y}": {
@@ -62890,9 +58445,6 @@ AND THE BEST METRICS WERE {
                 "y": 1.0677966101694913,
                 "w": -1.6779661016949152
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{aAsLogarithmBase,sum,w,y},{aAsLogarithmBase,sum,w}": {
@@ -62909,9 +58461,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "w": -1.6779661016949152
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum},{max,usePrimeIndex,withoutRepetition,x}": {
@@ -62956,9 +58505,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 2.084745762711864,
                 "aAsPowerExponent": 1.8813559322033901
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{count,w,withoutRepetition},{aAsLogarithmBase,aAsPowerExponent,sum,w}": {
@@ -62975,9 +58521,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 1.6779661016949152,
                 "w": -1.3728813559322033
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{aAsPowerExponent,count,w,withoutRepetition},{aAsLogarithmBase,aAsPowerExponent,sum,w}": {
@@ -62995,10 +58538,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 1.6779661016949152,
                 "w": -1.3728813559322033
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent",
-            "w"
         ]
     },
     "{jAsCoefficient,jAsPowerExponent,sum,withoutRepetition},{aAsLogarithmBase,jAsPowerExponent,sum}": {
@@ -63015,9 +58554,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "jAsPowerExponent": 1.4745762711864403
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,sum},{aAsPowerExponent,max,modifiedCount,withoutRepetition}": {
@@ -63033,9 +58569,6 @@ AND THE BEST METRICS WERE {
                 "modifiedCount": true,
                 "aAsPowerExponent": 0.6610169491525424
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{sum},{sum},{count,x}": {
@@ -63391,9 +58924,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerBase": 2,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{aAsCoefficient,aAsLogarithmBase,aAsPowerExponent,sum,w}": {
@@ -63421,9 +58951,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 1.4745762711864403,
                 "w": -1.4745762711864407
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{aAsCoefficient,jAsPowerExponent,max,withoutRepetition},{aAsLogarithmBase,jAsPowerExponent,sum}": {
@@ -63440,9 +58967,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "jAsPowerExponent": 1.2711864406779663
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{count,x},{aAsLogarithmBase,sum,weightAsPowerExponent}": {
@@ -63502,9 +59026,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.2711864406779663,
                 "y": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{aAsCoefficient,aAsLogarithmBase,sum,w,x}": {
@@ -63575,10 +59096,6 @@ AND THE BEST METRICS WERE {
                 "w": -1.576271186440678,
                 "x": 0.35593220338983045
             }
-        ],
-        "spreadDynamicParameters": [
-            "w",
-            "x"
         ]
     },
     "{sum,weightAsPowerExponent},{aAsLogarithmBase,sum,w}": {
@@ -63608,9 +59125,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "w": -0.8644067796610169
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{aAsPowerExponent,sum,withoutRepetition},{aAsLogarithmBase,jAsPowerExponent,sum}": {
@@ -63657,9 +59171,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0.1111111111111111,
                 "y": 1.6779661016949152
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{jAsPowerExponent,sum,withoutRepetition},{aAsLogarithmBase,sum,weightAsPowerExponent}": {
@@ -63691,9 +59202,6 @@ AND THE BEST METRICS WERE {
                 "jAsLogarithmBase": 2,
                 "aAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{sum,x},{max,weightAsLogarithmBase,withoutRepetition}": {
@@ -63765,9 +59273,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "w": -0.35593220338983045
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{count,jAsLogarithmBase,kAsCoefficient},{jAsLogarithmBase,kAsCoefficient,max,withoutRepetition}": {
@@ -63784,9 +59289,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0.1111111111111111,
                 "jAsLogarithmBase": 2
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{aAsLogarithmBase,aAsPowerExponent,sum,w,x}": {
@@ -63877,9 +59379,6 @@ AND THE BEST METRICS WERE {
                 "usePrimeIndex": true,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum},{count,jAsPowerExponent,useNuminator}": {
@@ -63894,9 +59393,6 @@ AND THE BEST METRICS WERE {
                 "useNuminator": true,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum},{aAsPowerExponent,count,jAsPowerExponent}": {
@@ -63911,9 +59407,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": -3,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{aAsCoefficient,jAsPowerExponent,sum},{count,jAsPowerExponent}": {
@@ -63928,9 +59421,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,kAsCoefficient,sum},{count,jAsPowerExponent,kAsCoefficient}": {
@@ -63946,10 +59436,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 1,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient",
-            "jAsPowerExponent"
         ]
     },
     "{aAsLogarithmBase,kAsCoefficient,sum,x,y}": {
@@ -63995,9 +59481,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{sum,weightAsCoefficient,withoutRepetition},{aAsLogarithmBase,jAsPowerExponent,sum}": {
@@ -64066,9 +59549,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.4745762711864403,
                 "kAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{sum,withoutRepetition},{aAsLogarithmBase,jAsPowerExponent,sum,w}": {
@@ -64099,10 +59579,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.0677966101694913,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent",
-            "weightAsCoefficient"
         ]
     },
     "{count},{aAsLogarithmBase,modifiedCount,sum,w}": {
@@ -64132,9 +59608,6 @@ AND THE BEST METRICS WERE {
                 "modifiedCount": true,
                 "kAsPowerExponent": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{aAsCoefficient,max,weightAsPowerExponent,withoutRepetition},{aAsCoefficient,aAsLogarithmBase,sum}": {
@@ -64151,9 +59624,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{kAsCoefficient,sum},{max,withoutRepetition},{aAsLogarithmBase,sum}": {
@@ -64186,9 +59656,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "weightAsPowerExponent": 3
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum},{count,jAsPowerExponent,modifiedCount}": {
@@ -64255,9 +59722,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{jAsPowerExponent,sum},{aAsPowerExponent,count}": {
@@ -64297,9 +59761,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "kAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{max,withoutRepetition},{aAsLogarithmBase,aAsPowerExponent,sum,x}": {
@@ -64331,9 +59792,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 2.796610169491525,
                 "x": 1.8813559322033901
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{max,weightAsCoefficient,withoutRepetition},{aAsLogarithmBase,sum,w}": {
@@ -64365,9 +59823,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "w": -1.271186440677966
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{aAsCoefficient,max,withoutRepetition},{aAsLogarithmBase,sum,w}": {
@@ -64399,9 +59854,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "w": -1.271186440677966
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{jAsPowerExponent,sum,weightAsCoefficient},{count,jAsPowerExponent}": {
@@ -64416,9 +59868,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum,usePrimeIndex},{max,withoutRepetition}": {
@@ -64448,9 +59897,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "w": -1.4745762711864407
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{kAsPowerExponent,sum},{jAsPowerExponent,sum,withoutRepetition}": {
@@ -64550,9 +59996,6 @@ AND THE BEST METRICS WERE {
                 "usePrimeIndex": true,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum,usePrimeIndex},{jAsPowerExponent,sum}": {
@@ -64567,9 +60010,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum},{count,jAsPowerExponent,kAsPowerExponent}": {
@@ -64584,9 +60024,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerExponent": 0.15254237288135597,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{sum},{aAsPowerExponent,jAsPowerBase,sum}": {
@@ -64643,9 +60080,6 @@ AND THE BEST METRICS WERE {
                 "modifiedCount": true,
                 "kAsPowerExponent": 0.8644067796610169
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{kAsPowerExponent,sum},{count,modifiedCount}": {
@@ -64699,9 +60133,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum,useNuminator},{count,jAsPowerExponent,useNuminator}": {
@@ -64717,9 +60148,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.0677966101694913,
                 "useNuminator": true
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,sum,w},{aAsPowerExponent,max,withoutRepetition}": {
@@ -64735,9 +60163,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "aAsPowerExponent": 0.5593220338983049
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,sum,w},{aAsPowerExponent,max,w,withoutRepetition}": {
@@ -64754,10 +60179,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 0.5593220338983049,
                 "w": -0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent",
-            "w"
         ]
     },
     "{aAsPowerExponent,sum,weightAsLogarithmBase,withoutRepetition},{aAsLogarithmBase,sum}": {
@@ -64831,9 +60252,6 @@ AND THE BEST METRICS WERE {
                 "weightAsLogarithmBase": 2,
                 "kAsPowerExponent": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{aAsCoefficient,aAsLogarithmBase,jAsPowerExponent,sum,x}": {
@@ -64861,9 +60279,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerExponent": 0.9661016949152543,
                 "w": -1.271186440677966
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{jAsPowerExponent,sum,useNuminator},{count}": {
@@ -64932,9 +60347,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "kAsCoefficient": 0.5555555555555556
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{kAsCoefficient,sum,w},{kAsCoefficient,max,withoutRepetition}": {
@@ -64950,9 +60362,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "kAsCoefficient": 0.5555555555555556
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{sum},{aAsLogarithmBase,jAsPowerExponent,modifiedCount,sum}": {
@@ -64983,10 +60392,6 @@ AND THE BEST METRICS WERE {
                 "jAsCoefficient": 0.2222222222222222,
                 "jAsPowerExponent": 1.5762711864406782
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient",
-            "jAsPowerExponent"
         ]
     },
     "{count,modifiedCount,w},{aAsLogarithmBase,sum,w}": {
@@ -65002,9 +60407,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "w": -1.4745762711864407
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{aAsCoefficient,jAsLogarithmBase,sum,w}": {
@@ -65273,9 +60675,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerExponent": 0.8644067796610169,
                 "x": -1.7796610169491525
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{kAsCoefficient,sum,weightAsPowerBase},{sum,weightAsPowerBase,withoutRepetition}": {
@@ -65306,9 +60705,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "y": 0.8644067796610169
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{jAsPowerExponent,sum},{aAsLogarithmBase,jAsLogarithmBase,sum}": {
@@ -65419,9 +60815,6 @@ AND THE BEST METRICS WERE {
                 "usePrimeIndex": true,
                 "kAsCoefficient": 0.8888888888888888
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{sum,withoutRepetition},{aAsLogarithmBase,jAsPowerExponent,sum,y}": {
@@ -65453,9 +60846,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.3728813559322033,
                 "y": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{kAsCoefficient,sum},{count,weightAsPowerBase,withoutRepetition}": {
@@ -65512,9 +60902,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.0677966101694913,
                 "weightAsPowerBase": 2
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{kAsCoefficient,sum},{aAsLogarithmBase,sum,usePrimeIndex}": {
@@ -65544,9 +60931,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "weightAsPowerExponent": 2.898305084745763
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum},{jAsCoefficient,kAsPowerExponent,sum,withoutRepetition}": {
@@ -65576,9 +60960,6 @@ AND THE BEST METRICS WERE {
                 "usePrimeIndex": true,
                 "kAsPowerExponent": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{kAsCoefficient,max,withoutRepetition},{aAsLogarithmBase,kAsCoefficient,sum,weightAsPowerExponent}": {
@@ -65595,9 +60976,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 1.4745762711864403,
                 "kAsCoefficient": 0.5555555555555556
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{sum},{jAsPowerExponent,sum},{aAsLogarithmBase,sum}": {
@@ -65645,9 +61023,6 @@ AND THE BEST METRICS WERE {
                 "modifiedCount": true,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{sum},{aAsLogarithmBase,aAsPowerExponent,jAsPowerBase,sum}": {
@@ -65734,9 +61109,6 @@ AND THE BEST METRICS WERE {
                 "weightAsLogarithmBase": 2,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{kAsPowerExponent,sum,y},{aAsLogarithmBase,sum}": {
@@ -65767,9 +61139,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.0677966101694913,
                 "weightAsPowerBase": 2
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{kAsPowerExponent,sum,weightAsPowerBase},{aAsLogarithmBase,sum}": {
@@ -65799,9 +61168,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "kAsPowerExponent": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{kAsPowerExponent,sum,weightAsPowerBase},{aAsLogarithmBase,sum,weightAsPowerBase}": {
@@ -65833,9 +61199,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerExponent": 0.9661016949152543,
                 "weightAsPowerBase": 2
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{kAsPowerExponent,sum},{aAsPowerExponent,kAsPowerExponent,max,withoutRepetition}": {
@@ -65851,9 +61214,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": -3,
                 "kAsPowerExponent": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum,x},{sum,withoutRepetition,x}": {
@@ -65869,9 +61229,6 @@ AND THE BEST METRICS WERE {
                 "withoutRepetition": true,
                 "x": 1.5762711864406782
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{jAsPowerExponent,sum,w},{sum,w,withoutRepetition}": {
@@ -65887,9 +61244,6 @@ AND THE BEST METRICS WERE {
                 "withoutRepetition": true,
                 "w": 1.5762711864406782
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{kAsPowerExponent,sum,weightAsPowerBase},{sum,withoutRepetition}": {
@@ -65919,9 +61273,6 @@ AND THE BEST METRICS WERE {
                 "withoutRepetition": true,
                 "kAsPowerExponent": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{aAsCoefficient,kAsPowerBase,sum,useNuminator}": {
@@ -65949,9 +61300,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 1.6779661016949152
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{sum},{jAsLogarithmBase,sum,weightAsPowerExponent,withoutRepetition}": {
@@ -66022,9 +61370,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerBase": 2,
                 "aAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsCoefficient,sum},{aAsCoefficient,kAsPowerBase,sum}": {
@@ -66039,9 +61384,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerBase": 2,
                 "aAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{aAsCoefficient,kAsPowerBase,sum},{aAsCoefficient,sum}": {
@@ -66056,9 +61398,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "aAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{jAsPowerExponent,sum,x},{jAsPowerExponent,max,withoutRepetition}": {
@@ -66074,9 +61413,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "jAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum,w},{jAsPowerExponent,max,withoutRepetition}": {
@@ -66092,9 +61428,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "jAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{sum},{aAsLogarithmBase,kAsPowerExponent,sum,usePrimeIndex}": {
@@ -66124,9 +61457,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 2.084745762711864,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{kAsPowerExponent,sum,weightAsPowerBase},{max,withoutRepetition}": {
@@ -66156,9 +61486,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "kAsPowerExponent": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{kAsPowerExponent,sum},{kAsPowerExponent,sum,weightAsLogarithmBase,withoutRepetition}": {
@@ -66174,9 +61501,6 @@ AND THE BEST METRICS WERE {
                 "weightAsLogarithmBase": 2,
                 "kAsPowerExponent": 0.8644067796610169
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{sum},{jAsLogarithmBase,kAsCoefficient,sum}": {
@@ -66244,9 +61568,6 @@ AND THE BEST METRICS WERE {
                 "withoutRepetition": true,
                 "jAsPowerExponent": 1.8813559322033901
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{sum},{aAsLogarithmBase,jAsLogarithmBase,sum,weightAsPowerExponent}": {
@@ -66383,9 +61704,6 @@ AND THE BEST METRICS WERE {
                 "weightAsCoefficient": 0,
                 "kAsPowerExponent": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{kAsPowerExponent,sum},{aAsLogarithmBase,count,withoutRepetition}": {
@@ -66415,9 +61733,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "kAsPowerExponent": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{kAsPowerExponent,sum},{aAsLogarithmBase,count}": {
@@ -66445,9 +61760,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "kAsPowerExponent": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{kAsPowerExponent,sum},{kAsPowerExponent,sum,weightAsCoefficient,withoutRepetition}": {
@@ -66463,9 +61775,6 @@ AND THE BEST METRICS WERE {
                 "weightAsCoefficient": 0,
                 "kAsPowerExponent": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{sum},{kAsPowerExponent,sum,weightAsPowerBase}": {
@@ -66493,9 +61802,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerBase": 2,
                 "kAsPowerExponent": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{kAsPowerExponent,sum,weightAsPowerBase},{sum}": {
@@ -66523,9 +61829,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "kAsPowerExponent": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{kAsPowerExponent,sum,weightAsPowerBase},{kAsPowerExponent,sum,weightAsPowerBase}": {
@@ -66541,9 +61844,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerExponent": 0.9661016949152543,
                 "weightAsPowerBase": 2
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{kAsPowerExponent,sum},{kAsPowerExponent,sum,weightAsPowerExponent}": {
@@ -66558,9 +61858,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 0.05084745762711851,
                 "kAsPowerExponent": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{kAsPowerExponent,sum,weightAsPowerExponent},{kAsPowerExponent,sum}": {
@@ -66575,9 +61872,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "kAsPowerExponent": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{kAsPowerExponent,sum,weightAsPowerExponent},{kAsPowerExponent,sum,weightAsPowerExponent}": {
@@ -66593,10 +61887,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerExponent": 0.9661016949152543,
                 "weightAsPowerExponent": 0.05084745762711851
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent",
-            "weightAsPowerExponent"
         ]
     },
     "{kAsPowerExponent,sum},{kAsPowerExponent,sum,weightAsLogarithmBase}": {
@@ -66611,9 +61901,6 @@ AND THE BEST METRICS WERE {
                 "weightAsLogarithmBase": 2,
                 "kAsPowerExponent": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{kAsPowerExponent,sum,weightAsLogarithmBase},{kAsPowerExponent,sum}": {
@@ -66628,9 +61915,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "kAsPowerExponent": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{kAsPowerExponent,sum,weightAsLogarithmBase},{kAsPowerExponent,sum,weightAsLogarithmBase}": {
@@ -66646,9 +61930,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerExponent": 0.9661016949152543,
                 "weightAsLogarithmBase": 2
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{kAsPowerExponent,sum},{kAsPowerExponent,sum,weightAsCoefficient}": {
@@ -66663,9 +61944,6 @@ AND THE BEST METRICS WERE {
                 "weightAsCoefficient": 0,
                 "kAsPowerExponent": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{kAsPowerExponent,sum,weightAsCoefficient},{kAsPowerExponent,sum}": {
@@ -66680,9 +61958,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "kAsPowerExponent": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{kAsPowerExponent,sum,weightAsCoefficient},{kAsPowerExponent,sum,weightAsCoefficient}": {
@@ -66698,10 +61973,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerExponent": 0.9661016949152543,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent",
-            "weightAsCoefficient"
         ]
     },
     "{kAsPowerExponent,sum},{kAsPowerExponent,sum},{kAsPowerExponent,sum}": {
@@ -66719,9 +61990,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "kAsPowerExponent": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{sum},{jAsPowerExponent,kAsPowerExponent,sum,withoutRepetition}": {
@@ -66750,9 +62018,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerBase": 2,
                 "weightAsPowerExponent": 3
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{count,jAsPowerExponent},{max,usePrimeIndex,withoutRepetition}": {
@@ -67077,9 +62342,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "x": -1.7796610169491525
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{aAsCoefficient,max,withoutRepetition},{aAsLogarithmBase,sum,x}": {
@@ -67111,9 +62373,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "x": -1.7796610169491525
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum},{max,withoutRepetition},{aAsLogarithmBase,kAsCoefficient,sum}": {
@@ -67229,9 +62488,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "aAsPowerExponent": 0.5593220338983049
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum},{aAsLogarithmBase,sum,weightAsLogarithmBase}": {
@@ -67261,9 +62517,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.1694915254237293,
                 "weightAsPowerExponent": 2.796610169491525
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{kAsPowerExponent,sum,weightAsPowerBase},{count}": {
@@ -67291,9 +62544,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "kAsPowerExponent": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{kAsPowerExponent,sum,weightAsPowerBase},{count,weightAsPowerBase}": {
@@ -67323,9 +62573,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerExponent": 0.9661016949152543,
                 "weightAsPowerBase": 2
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{sum,weightAsPowerBase},{count,jAsPowerExponent,weightAsPowerBase}": {
@@ -67355,9 +62602,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "aAsPowerExponent": 0.5593220338983049
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{kAsPowerExponent,sum},{aAsLogarithmBase,kAsPowerExponent,sum,weightAsLogarithmBase}": {
@@ -67373,9 +62617,6 @@ AND THE BEST METRICS WERE {
                 "weightAsLogarithmBase": 2,
                 "kAsPowerExponent": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{sum,x},{count,jAsPowerBase,withoutRepetition,x}": {
@@ -67391,9 +62632,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerBase": 2,
                 "x": -0.25423728813559343
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,w},{count,jAsPowerBase,w,withoutRepetition}": {
@@ -67409,9 +62647,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerBase": 2,
                 "w": -0.25423728813559343
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{jAsPowerExponent,sum},{aAsLogarithmBase,jAsPowerExponent,sum,usePrimeIndex}": {
@@ -67427,9 +62662,6 @@ AND THE BEST METRICS WERE {
                 "usePrimeIndex": true,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum},{count,jAsPowerExponent,modifiedCount}": {
@@ -67444,9 +62676,6 @@ AND THE BEST METRICS WERE {
                 "modifiedCount": true,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{kAsPowerExponent,sum},{jAsCoefficient,sum,withoutRepetition}": {
@@ -67477,9 +62706,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "jAsPowerExponent": 1.2711864406779663
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{max,withoutRepetition},{aAsLogarithmBase,aAsPowerExponent,sum,weightAsPowerExponent}": {
@@ -67638,10 +62864,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.0677966101694913,
                 "weightAsPowerExponent": 1.2711864406779663
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent",
-            "weightAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum},{jAsPowerExponent,sum},{count,jAsPowerExponent}": {
@@ -67659,9 +62881,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{sum,x},{count,jAsPowerBase}": {
@@ -67749,9 +62968,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsCoefficient": 0.3333333333333333
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{aAsLogarithmBase,max,withoutRepetition},{aAsCoefficient,aAsLogarithmBase,sum}": {
@@ -67811,9 +63027,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0.5555555555555556,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{kAsPowerExponent,sum,y},{aAsLogarithmBase,kAsPowerExponent,sum,y}": {
@@ -67830,10 +63043,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerExponent": 0.8644067796610169,
                 "y": 0.8644067796610169
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent",
-            "y"
         ]
     },
     "{sum},{aAsPowerExponent,jAsLogarithmBase,sum,withoutRepetition}": {
@@ -67863,9 +63072,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0.1111111111111111,
                 "kAsPowerExponent": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum},{count,weightAsLogarithmBase}": {
@@ -67935,9 +63141,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "kAsPowerExponent": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{aAsCoefficient,kAsPowerBase,sum,weightAsPowerBase}": {
@@ -67996,9 +63199,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerBase": 2,
                 "aAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{jAsPowerExponent,sum,usePrimeIndex},{max,usePrimeIndex,withoutRepetition}": {
@@ -68078,9 +63278,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "kAsPowerExponent": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum},{count,jAsPowerExponent,weightAsLogarithmBase}": {
@@ -68095,9 +63292,6 @@ AND THE BEST METRICS WERE {
                 "weightAsLogarithmBase": 2,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{max,weightAsPowerExponent,withoutRepetition},{aAsLogarithmBase,sum,x}": {
@@ -68158,9 +63352,6 @@ AND THE BEST METRICS WERE {
                 "w": -0.9661016949152543,
                 "aAsPowerExponent": 0.25423728813559343
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,max,w,withoutRepetition},{aAsLogarithmBase,aAsPowerExponent,sum,w}": {
@@ -68178,10 +63369,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 0.25423728813559343,
                 "w": -0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent",
-            "w"
         ]
     },
     "{sum,x},{count,jAsPowerBase,x}": {
@@ -68196,9 +63383,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerBase": 2,
                 "x": -0.4576271186440679
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,w},{count,jAsPowerBase,w}": {
@@ -68213,9 +63397,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerBase": 2,
                 "w": -0.4576271186440679
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum},{aAsCoefficient,jAsPowerBase,sum}": {
@@ -68296,9 +63477,6 @@ AND THE BEST METRICS WERE {
                 "modifiedCount": true,
                 "kAsPowerExponent": 0.8644067796610169
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{sum},{jAsLogarithmBase,kAsCoefficient,sum,withoutRepetition}": {
@@ -68365,9 +63543,6 @@ AND THE BEST METRICS WERE {
                 "withoutRepetition": true,
                 "aAsPowerExponent": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{sum},{count,jAsPowerBase,weightAsCoefficient}": {
@@ -68395,9 +63570,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0.2222222222222222,
                 "kAsPowerExponent": 0.8644067796610169
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{aAsCoefficient,kAsPowerExponent,sum},{kAsPowerExponent,sum}": {
@@ -68412,9 +63584,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "kAsPowerExponent": 0.8644067796610169
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{aAsCoefficient,jAsLogarithmBase,sum,x}": {
@@ -68472,9 +63641,6 @@ AND THE BEST METRICS WERE {
                 "x": -2.4915254237288136,
                 "aAsPowerExponent": 0.5593220338983049
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum},{sum,withoutRepetition,x}": {
@@ -68646,9 +63812,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerBase": 2,
                 "kAsPowerExponent": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{kAsCoefficient,sum},{jAsLogarithmBase,sum,withoutRepetition}": {
@@ -68692,9 +63855,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "kAsPowerExponent": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{kAsPowerExponent,sum,weightAsPowerBase},{count,weightAsPowerBase,withoutRepetition}": {
@@ -68726,9 +63886,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerExponent": 0.9661016949152543,
                 "weightAsPowerBase": 2
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{kAsPowerExponent,sum,y},{aAsLogarithmBase,kAsPowerExponent,sum}": {
@@ -68744,9 +63901,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "kAsPowerExponent": 0.8644067796610169
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{sum},{sum},{count,jAsPowerBase,withoutRepetition}": {
@@ -68834,9 +63988,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 1.8813559322033901,
                 "x": -2.084745762711864
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{jAsPowerExponent,sum,weightAsPowerBase},{aAsLogarithmBase,sum}": {
@@ -68866,9 +64017,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum,weightAsPowerBase},{aAsLogarithmBase,sum,weightAsPowerBase}": {
@@ -68900,9 +64048,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.0677966101694913,
                 "weightAsPowerBase": 2
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{sum},{count,jAsPowerBase,weightAsPowerExponent}": {
@@ -69068,9 +64213,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerBase": 2,
                 "x": -0.25423728813559343
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,w},{count,kAsPowerBase,w}": {
@@ -69085,9 +64227,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerBase": 2,
                 "w": -0.25423728813559343
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,x},{count,kAsPowerExponent,x}": {
@@ -69102,9 +64241,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerExponent": 1.1694915254237293,
                 "x": -0.25423728813559343
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,w},{count,kAsPowerExponent,w}": {
@@ -69119,9 +64255,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerExponent": 1.1694915254237293,
                 "w": -0.25423728813559343
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,x},{count,kAsPowerBase,withoutRepetition,x}": {
@@ -69137,9 +64270,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerBase": 2,
                 "x": -0.05084745762711851
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,w},{count,kAsPowerBase,w,withoutRepetition}": {
@@ -69155,9 +64285,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerBase": 2,
                 "w": -0.05084745762711851
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,x},{count,kAsPowerExponent,withoutRepetition,x}": {
@@ -69173,9 +64300,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerExponent": 1.4745762711864403,
                 "x": -0.05084745762711851
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,w},{count,kAsPowerExponent,w,withoutRepetition}": {
@@ -69191,9 +64315,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerExponent": 1.4745762711864403,
                 "w": -0.05084745762711851
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum},{aAsCoefficient,count,jAsPowerBase}": {
@@ -69233,9 +64354,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "jAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{sum},{aAsLogarithmBase,kAsPowerExponent,modifiedCount,sum}": {
@@ -69303,9 +64421,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.0677966101694913,
                 "weightAsPowerExponent": 1.2711864406779663
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum},{count,kAsCoefficient,w}": {
@@ -69359,9 +64474,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0.8888888888888888,
                 "weightAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum},{count,kAsCoefficient,weightAsCoefficient}": {
@@ -69418,9 +64530,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "kAsPowerExponent": 0.8644067796610169
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{sum},{count,jAsPowerExponent,weightAsCoefficient}": {
@@ -69450,9 +64559,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "kAsCoefficient": 0.4444444444444444
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{aAsCoefficient,kAsCoefficient,max,withoutRepetition},{aAsLogarithmBase,kAsCoefficient,sum}": {
@@ -69469,9 +64575,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "kAsCoefficient": 0.4444444444444444
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{sum,weightAsPowerBase},{count,jAsPowerBase,withoutRepetition}": {
@@ -69558,9 +64661,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0.3333333333333333,
                 "x": -0.25423728813559343
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,w},{count,kAsCoefficient,w}": {
@@ -69575,9 +64675,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0.3333333333333333,
                 "w": -0.25423728813559343
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{jAsPowerExponent,sum},{count,kAsCoefficient}": {
@@ -69620,9 +64717,6 @@ AND THE BEST METRICS WERE {
                 "weightAsLogarithmBase": 2,
                 "kAsPowerExponent": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{sum,x},{count,jAsPowerExponent,x}": {
@@ -69637,9 +64731,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.0677966101694913,
                 "x": -0.25423728813559343
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,w},{count,jAsPowerExponent,w}": {
@@ -69654,9 +64745,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.0677966101694913,
                 "w": -0.25423728813559343
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{jAsPowerExponent,sum,weightAsPowerBase},{sum,withoutRepetition}": {
@@ -69686,9 +64774,6 @@ AND THE BEST METRICS WERE {
                 "withoutRepetition": true,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{sum},{count,kAsPowerBase,withoutRepetition,x}": {
@@ -69922,9 +65007,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum},{aAsLogarithmBase,count}": {
@@ -69952,9 +65034,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{sum},{jAsPowerExponent,sum,weightAsPowerBase}": {
@@ -69982,9 +65061,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerBase": 2,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum,weightAsPowerBase},{sum}": {
@@ -70012,9 +65088,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum,weightAsPowerBase},{jAsPowerExponent,sum,weightAsPowerBase}": {
@@ -70030,9 +65103,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.0677966101694913,
                 "weightAsPowerBase": 2
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum},{jAsPowerExponent,sum,weightAsPowerExponent}": {
@@ -70047,9 +65117,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 0.05084745762711851,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum,weightAsPowerExponent},{jAsPowerExponent,sum}": {
@@ -70064,9 +65131,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum,weightAsPowerExponent},{jAsPowerExponent,sum,weightAsPowerExponent}": {
@@ -70082,10 +65146,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.0677966101694913,
                 "weightAsPowerExponent": 0.05084745762711851
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent",
-            "weightAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum},{jAsPowerExponent,sum,weightAsLogarithmBase}": {
@@ -70100,9 +65160,6 @@ AND THE BEST METRICS WERE {
                 "weightAsLogarithmBase": 2,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum,weightAsLogarithmBase},{jAsPowerExponent,sum}": {
@@ -70117,9 +65174,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum,weightAsLogarithmBase},{jAsPowerExponent,sum,weightAsLogarithmBase}": {
@@ -70135,9 +65189,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.0677966101694913,
                 "weightAsLogarithmBase": 2
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum},{jAsPowerExponent,sum,weightAsCoefficient}": {
@@ -70152,9 +65203,6 @@ AND THE BEST METRICS WERE {
                 "weightAsCoefficient": 0,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum,weightAsCoefficient},{jAsPowerExponent,sum}": {
@@ -70169,9 +65217,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum,weightAsCoefficient},{jAsPowerExponent,sum,weightAsCoefficient}": {
@@ -70187,10 +65232,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.0677966101694913,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent",
-            "weightAsCoefficient"
         ]
     },
     "{jAsPowerExponent,sum},{jAsPowerExponent,sum},{jAsPowerExponent,sum}": {
@@ -70208,9 +65249,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{aAsCoefficient,aAsLogarithmBase,jAsLogarithmBase,sum,w}": {
@@ -70267,9 +65305,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerExponent": 0.9661016949152543,
                 "weightAsPowerBase": 2
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{sum},{aAsCoefficient,count,jAsPowerBase,withoutRepetition}": {
@@ -70299,9 +65334,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 0.7627118644067798,
                 "kAsPowerExponent": 0.8644067796610169
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{sum},{sum},{count,kAsCoefficient,withoutRepetition}": {
@@ -70332,9 +65364,6 @@ AND THE BEST METRICS WERE {
                 "jAsLogarithmBase": 2,
                 "x": -0.6610169491525424
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,w},{count,jAsLogarithmBase,w}": {
@@ -70349,9 +65378,6 @@ AND THE BEST METRICS WERE {
                 "jAsLogarithmBase": 2,
                 "w": -0.6610169491525424
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{jAsPowerExponent,sum,weightAsPowerBase,weightAsPowerExponent}": {
@@ -70392,9 +65418,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,jAsPowerExponent,sum},{max,withoutRepetition}": {
@@ -70470,9 +65493,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "w": -0.8644067796610169
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{kAsCoefficient,sum},{aAsLogarithmBase,kAsCoefficient,max,withoutRepetition}": {
@@ -70488,9 +65508,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "kAsCoefficient": 0.5555555555555556
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{kAsPowerExponent,sum},{kAsPowerExponent,sum,useNuminator}": {
@@ -70505,9 +65522,6 @@ AND THE BEST METRICS WERE {
                 "useNuminator": true,
                 "kAsPowerExponent": 0.8644067796610169
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{kAsPowerExponent,sum,useNuminator},{kAsPowerExponent,sum}": {
@@ -70522,9 +65536,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "kAsPowerExponent": 0.8644067796610169
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{kAsPowerExponent,sum},{count,usePrimeIndex,withoutRepetition}": {
@@ -70554,9 +65565,6 @@ AND THE BEST METRICS WERE {
                 "usePrimeIndex": true,
                 "kAsPowerExponent": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{kAsPowerExponent,sum},{count,useNuminator,withoutRepetition}": {
@@ -70586,9 +65594,6 @@ AND THE BEST METRICS WERE {
                 "useNuminator": true,
                 "kAsPowerExponent": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{kAsPowerExponent,sum},{count,withoutRepetition,y}": {
@@ -70618,9 +65623,6 @@ AND THE BEST METRICS WERE {
                 "y": -3,
                 "kAsPowerExponent": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{kAsPowerExponent,sum,weightAsCoefficient},{count,withoutRepetition}": {
@@ -70650,9 +65652,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "kAsPowerExponent": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{kAsPowerExponent,sum},{aAsPowerExponent,count,withoutRepetition}": {
@@ -70682,9 +65681,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": -3,
                 "kAsPowerExponent": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{aAsCoefficient,kAsPowerExponent,sum},{count,withoutRepetition}": {
@@ -70714,9 +65710,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "kAsPowerExponent": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{jAsCoefficient,kAsPowerExponent,sum},{count,withoutRepetition}": {
@@ -70746,9 +65739,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "kAsPowerExponent": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{kAsPowerExponent,sum},{count,kAsPowerBase,withoutRepetition}": {
@@ -70778,9 +65768,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerBase": 2,
                 "kAsPowerExponent": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{kAsPowerExponent,sum},{count,kAsPowerExponent,withoutRepetition}": {
@@ -70837,9 +65824,6 @@ AND THE BEST METRICS WERE {
                 "jAsLogarithmBase": 2,
                 "kAsPowerExponent": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{sum},{count,jAsPowerBase,weightAsCoefficient,withoutRepetition}": {
@@ -70883,9 +65867,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerBase": 2,
                 "weightAsPowerExponent": 2.084745762711864
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum,y},{aAsLogarithmBase,jAsPowerExponent,sum}": {
@@ -70929,9 +65910,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "x": -2.288135593220339
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{jAsPowerExponent,sum,weightAsPowerBase},{count}": {
@@ -70959,9 +65937,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum,weightAsPowerBase},{count,weightAsPowerBase}": {
@@ -70991,9 +65966,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.0677966101694913,
                 "weightAsPowerBase": 2
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum,weightAsPowerExponent},{count}": {
@@ -71034,9 +66006,6 @@ AND THE BEST METRICS WERE {
                 "weightAsCoefficient": 0.1111111111111111,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum},{aAsCoefficient,count}": {
@@ -71064,9 +66033,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0.1111111111111111,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum,weightAsPowerExponent},{count,jAsPowerExponent}": {
@@ -71081,9 +66047,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum,weightAsPowerExponent},{count,weightAsPowerExponent}": {
@@ -71098,9 +66061,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "weightAsPowerExponent": 2.186440677966102
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum,weightAsPowerExponent},{count,jAsPowerExponent,weightAsPowerExponent}": {
@@ -71116,10 +66076,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.0677966101694913,
                 "weightAsPowerExponent": 2.186440677966102
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent",
-            "weightAsPowerExponent"
         ]
     },
     "{kAsPowerExponent,sum},{kAsPowerExponent,sum},{count,kAsPowerExponent,withoutRepetition}": {
@@ -71138,9 +66094,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "kAsPowerExponent": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{max,weightAsPowerExponent,withoutRepetition},{aAsLogarithmBase,sum,weightAsCoefficient}": {
@@ -71218,10 +66171,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 0.4576271186440679,
                 "x": -2.7966101694915255
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent",
-            "x"
         ]
     },
     "{sum},{aAsCoefficient,count,kAsPowerExponent,withoutRepetition}": {
@@ -71278,9 +66227,6 @@ AND THE BEST METRICS WERE {
                 "jAsCoefficient": 0.1111111111111111,
                 "jAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{sum},{count,jAsPowerExponent,x}": {
@@ -71335,9 +66281,6 @@ AND THE BEST METRICS WERE {
                 "jAsCoefficient": 0.5555555555555556,
                 "kAsPowerExponent": 0.8644067796610169
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum},{aAsLogarithmBase,sum,useNuminator}": {
@@ -71381,9 +66324,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{jAsPowerExponent,sum},{aAsLogarithmBase,sum}": {
@@ -71440,9 +66380,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "jAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{jAsPowerExponent,sum},{aAsLogarithmBase,kAsCoefficient,sum}": {
@@ -71486,9 +66423,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "kAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{aAsLogarithmBase,sum},{jAsPowerExponent,sum}": {
@@ -71517,9 +66451,6 @@ AND THE BEST METRICS WERE {
                 "y": 0.35593220338983045,
                 "kAsPowerExponent": 0.8644067796610169
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum},{jAsPowerExponent,max,weightAsCoefficient,withoutRepetition}": {
@@ -71535,9 +66466,6 @@ AND THE BEST METRICS WERE {
                 "weightAsCoefficient": 0.1111111111111111,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum},{jAsPowerExponent,sum,useNuminator}": {
@@ -71552,9 +66480,6 @@ AND THE BEST METRICS WERE {
                 "useNuminator": true,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum,useNuminator},{jAsPowerExponent,sum}": {
@@ -71569,9 +66494,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{sum},{count,kAsCoefficient,modifiedCount}": {
@@ -71611,9 +66533,6 @@ AND THE BEST METRICS WERE {
                 "usePrimeIndex": true,
                 "jAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum},{count,jAsPowerExponent,weightAsPowerBase,withoutRepetition}": {
@@ -71629,9 +66548,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerBase": 2,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum},{count,jAsPowerExponent}": {
@@ -71720,9 +66636,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{count,kAsCoefficient},{max,weightAsCoefficient,withoutRepetition}": {
@@ -71766,9 +66679,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0.1111111111111111,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{kAsPowerExponent,sum,y}": {
@@ -71838,10 +66748,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerExponent": 0.8644067796610169,
                 "y": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent",
-            "y"
         ]
     },
     "{sum},{aAsPowerExponent,kAsPowerBase,sum}": {
@@ -71897,9 +66803,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "kAsPowerExponent": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{kAsPowerExponent,sum,weightAsPowerExponent},{count,weightAsPowerExponent,withoutRepetition}": {
@@ -71915,9 +66818,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "weightAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{kAsPowerExponent,sum,weightAsPowerExponent},{count,kAsPowerExponent,weightAsPowerExponent,withoutRepetition}": {
@@ -71934,10 +66834,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerExponent": 0.9661016949152543,
                 "weightAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent",
-            "weightAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum},{count,weightAsPowerBase,withoutRepetition}": {
@@ -71981,9 +66877,6 @@ AND THE BEST METRICS WERE {
                 "jAsCoefficient": 0.8888888888888888,
                 "kAsPowerExponent": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{sum,weightAsPowerExponent},{aAsLogarithmBase,kAsCoefficient,sum}": {
@@ -72078,9 +66971,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.0677966101694913,
                 "useNuminator": true
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{sum},{aAsLogarithmBase,aAsPowerExponent,kAsPowerBase,sum}": {
@@ -72111,9 +67001,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 1.5762711864406782
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsLogarithmBase,aAsPowerExponent,sum},{aAsLogarithmBase,aAsPowerExponent,max,withoutRepetition}": {
@@ -72130,9 +67017,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 1.5762711864406782
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum},{jAsPowerExponent,max,weightAsLogarithmBase,withoutRepetition}": {
@@ -72148,9 +67032,6 @@ AND THE BEST METRICS WERE {
                 "weightAsLogarithmBase": 2,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{jAsCoefficient,jAsPowerExponent,sum},{count,jAsPowerExponent}": {
@@ -72165,9 +67046,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "jAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{sum},{kAsPowerExponent,sum},{aAsLogarithmBase,sum}": {
@@ -72227,9 +67105,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 0.8644067796610169,
                 "kAsPowerExponent": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,kAsPowerBase,sum,x}": {
@@ -72281,9 +67156,6 @@ AND THE BEST METRICS WERE {
                 "x": -0.05084745762711851,
                 "kAsPowerExponent": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{kAsPowerExponent,sum},{count,kAsPowerExponent,w,withoutRepetition}": {
@@ -72299,9 +67171,6 @@ AND THE BEST METRICS WERE {
                 "w": -0.05084745762711851,
                 "kAsPowerExponent": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{kAsPowerExponent,sum},{count,weightAsPowerExponent,withoutRepetition}": {
@@ -72331,9 +67200,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 0.9661016949152543,
                 "kAsPowerExponent": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{kAsPowerExponent,sum},{count,weightAsCoefficient,withoutRepetition}": {
@@ -72363,9 +67229,6 @@ AND THE BEST METRICS WERE {
                 "weightAsCoefficient": 0.8888888888888888,
                 "kAsPowerExponent": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{kAsPowerExponent,sum},{aAsCoefficient,count,withoutRepetition}": {
@@ -72395,9 +67258,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0.8888888888888888,
                 "kAsPowerExponent": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{kAsPowerExponent,sum,y},{count,withoutRepetition}": {
@@ -72427,9 +67287,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "kAsPowerExponent": 0.8644067796610169
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{kAsPowerExponent,sum,y},{count,withoutRepetition,y}": {
@@ -72445,9 +67302,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "y": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{kAsPowerExponent,sum,y},{count,kAsPowerExponent,withoutRepetition,y}": {
@@ -72464,10 +67318,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerExponent": 0.8644067796610169,
                 "y": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent",
-            "y"
         ]
     },
     "{max,w,weightAsPowerExponent,withoutRepetition},{aAsLogarithmBase,sum,w}": {
@@ -72484,9 +67334,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "w": -1.1694915254237288
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum},{aAsPowerExponent,jAsPowerBase,sum,withoutRepetition}": {
@@ -72515,9 +67362,6 @@ AND THE BEST METRICS WERE {
                 "y": 0.7627118644067798,
                 "kAsPowerExponent": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{kAsPowerExponent,sum,y},{kAsPowerExponent,sum}": {
@@ -72532,9 +67376,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "kAsPowerExponent": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{sum},{sum},{aAsLogarithmBase,kAsCoefficient,sum}": {
@@ -72581,9 +67422,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.4745762711864403,
                 "weightAsPowerExponent": 0.4576271186440679
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{kAsPowerExponent,sum},{kAsPowerExponent,max,weightAsPowerExponent,withoutRepetition}": {
@@ -72599,9 +67437,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 0.25423728813559343,
                 "kAsPowerExponent": 0.8644067796610169
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum,weightAsPowerBase},{count,withoutRepetition}": {
@@ -72631,9 +67466,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum,weightAsPowerBase},{count,weightAsPowerBase,withoutRepetition}": {
@@ -72665,9 +67497,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.0677966101694913,
                 "weightAsPowerBase": 2
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{aAsCoefficient,sum},{aAsCoefficient,count,jAsLogarithmBase,withoutRepetition}": {
@@ -72683,9 +67512,6 @@ AND THE BEST METRICS WERE {
                 "jAsLogarithmBase": 2,
                 "aAsCoefficient": 0.3333333333333333
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{jAsPowerExponent,sum},{jAsPowerExponent,max,usePrimeIndex,withoutRepetition}": {
@@ -72701,9 +67527,6 @@ AND THE BEST METRICS WERE {
                 "usePrimeIndex": true,
                 "jAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum},{count,weightAsPowerExponent}": {
@@ -72731,9 +67554,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 0.25423728813559343,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{kAsPowerExponent,sum,v,y}": {
@@ -72760,9 +67580,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 2.186440677966102,
                 "aAsCoefficient": 0.8888888888888888
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{jAsPowerExponent,sum},{count,jAsPowerExponent,x}": {
@@ -72777,9 +67594,6 @@ AND THE BEST METRICS WERE {
                 "x": -0.8644067796610169,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum},{count,jAsPowerExponent,w}": {
@@ -72794,9 +67608,6 @@ AND THE BEST METRICS WERE {
                 "w": -0.8644067796610169,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{sum,weightAsPowerExponent},{aAsLogarithmBase,jAsPowerBase,sum}": {
@@ -72884,9 +67695,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "w": -1.0677966101694916
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{aAsLogarithmBase,sum,w},{aAsLogarithmBase,max,withoutRepetition}": {
@@ -72918,9 +67726,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "w": -1.0677966101694916
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{jAsPowerExponent,kAsCoefficient,sum},{count,jAsPowerExponent}": {
@@ -72935,9 +67740,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{kAsPowerExponent,sum},{aAsPowerExponent,sum,withoutRepetition}": {
@@ -72967,9 +67769,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": -0.05084745762711851,
                 "kAsPowerExponent": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{sum},{kAsPowerExponent,sum,weightAsLogarithmBase,withoutRepetition}": {
@@ -72999,9 +67798,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerBase": 2,
                 "kAsCoefficient": 0.7777777777777778
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{sum},{aAsLogarithmBase,kAsCoefficient,modifiedCount,sum}": {
@@ -73044,9 +67840,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "y": 0.8644067796610169
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{sum},{count,jAsLogarithmBase,withoutRepetition,x}": {
@@ -73120,10 +67913,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerExponent": 0.8644067796610169,
                 "y": 0.8644067796610169
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent",
-            "y"
         ]
     },
     "{kAsPowerExponent,sum,weightAsPowerExponent},{count,weightAsPowerExponent}": {
@@ -73138,9 +67927,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "weightAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{kAsPowerExponent,sum,weightAsPowerExponent},{count,kAsPowerExponent,weightAsPowerExponent}": {
@@ -73156,10 +67942,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerExponent": 0.9661016949152543,
                 "weightAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent",
-            "weightAsPowerExponent"
         ]
     },
     "{kAsPowerExponent,sum},{count,jAsCoefficient}": {
@@ -73187,9 +67969,6 @@ AND THE BEST METRICS WERE {
                 "jAsCoefficient": 0.7777777777777778,
                 "kAsPowerExponent": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{sum},{sum,withoutRepetition},{aAsLogarithmBase,jAsPowerExponent,sum}": {
@@ -73276,9 +68055,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerExponent": 0.8644067796610169,
                 "useNuminator": true
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{kAsPowerExponent,sum,useNuminator},{count,withoutRepetition}": {
@@ -73308,9 +68084,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "kAsPowerExponent": 0.8644067796610169
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{kAsPowerExponent,sum,useNuminator},{count,useNuminator,withoutRepetition}": {
@@ -73342,9 +68115,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerExponent": 0.8644067796610169,
                 "useNuminator": true
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,kAsPowerExponent,sum},{count}": {
@@ -73372,9 +68142,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "aAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{sum,y},{aAsLogarithmBase,jAsPowerExponent,sum,y}": {
@@ -73390,9 +68157,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.4745762711864403,
                 "y": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{kAsPowerExponent,sum},{count,weightAsPowerExponent}": {
@@ -73420,9 +68184,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 0.7627118644067798,
                 "kAsPowerExponent": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{kAsPowerExponent,sum,weightAsPowerExponent},{aAsLogarithmBase,kAsPowerExponent,sum,weightAsPowerExponent}": {
@@ -73439,10 +68200,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerExponent": 0.9661016949152543,
                 "weightAsPowerExponent": 1.3728813559322033
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent",
-            "weightAsPowerExponent"
         ]
     },
     "{kAsPowerExponent,sum},{aAsLogarithmBase,modifiedCount,sum}": {
@@ -73471,9 +68228,6 @@ AND THE BEST METRICS WERE {
                 "x": -0.35593220338983045,
                 "kAsPowerExponent": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{kAsPowerExponent,sum},{count,kAsPowerExponent,w}": {
@@ -73488,9 +68242,6 @@ AND THE BEST METRICS WERE {
                 "w": -0.35593220338983045,
                 "kAsPowerExponent": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{kAsPowerExponent,sum},{count,weightAsCoefficient}": {
@@ -73518,9 +68269,6 @@ AND THE BEST METRICS WERE {
                 "weightAsCoefficient": 0.6666666666666666,
                 "kAsPowerExponent": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{kAsPowerExponent,sum},{aAsCoefficient,count}": {
@@ -73548,9 +68296,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0.6666666666666666,
                 "kAsPowerExponent": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum},{aAsLogarithmBase,modifiedCount,sum}": {
@@ -73596,9 +68341,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "jAsCoefficient": 0.8888888888888888
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{jAsCoefficient,kAsPowerExponent,sum},{count,jAsCoefficient,kAsPowerExponent,withoutRepetition}": {
@@ -73615,10 +68357,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerExponent": 0.8644067796610169,
                 "jAsCoefficient": 0.8888888888888888
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent",
-            "jAsCoefficient"
         ]
     },
     "{max,withoutRepetition},{aAsLogarithmBase,jAsPowerExponent,sum,useNuminator}": {
@@ -73741,9 +68479,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.2711864406779663,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{max,withoutRepetition},{aAsLogarithmBase,jAsPowerExponent,sum}": {
@@ -73789,9 +68524,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.2711864406779663,
                 "aAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{max,withoutRepetition},{aAsLogarithmBase,jAsCoefficient,jAsPowerExponent,sum}": {
@@ -73838,9 +68570,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.2711864406779663,
                 "jAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{max,withoutRepetition},{aAsLogarithmBase,jAsPowerExponent,kAsCoefficient,sum}": {
@@ -73872,9 +68601,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.2711864406779663,
                 "kAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{aAsLogarithmBase,jAsPowerExponent,sum},{max,withoutRepetition}": {
@@ -73918,9 +68644,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerBase": 2,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,sum,x},{aAsPowerExponent,max,withoutRepetition,x}": {
@@ -73937,10 +68660,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 0.4576271186440679,
                 "x": -3
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent",
-            "x"
         ]
     },
     "{sum},{count,kAsCoefficient,modifiedCount,withoutRepetition}": {
@@ -73974,9 +68693,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{max,weightAsLogarithmBase,withoutRepetition,x},{aAsLogarithmBase,sum,x}": {
@@ -73993,9 +68709,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "x": -1.88135593220339
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{aAsLogarithmBase,max,withoutRepetition,x},{aAsLogarithmBase,sum,x}": {
@@ -74012,9 +68725,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "x": -1.88135593220339
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{aAsLogarithmBase,sum,x},{aAsLogarithmBase,max,withoutRepetition,x}": {
@@ -74031,9 +68741,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "x": -1.88135593220339
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{kAsCoefficient,sum},{aAsPowerBase,count,kAsCoefficient,withoutRepetition}": {
@@ -74049,9 +68756,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerBase": 2,
                 "kAsCoefficient": 0.7777777777777778
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{kAsCoefficient,sum},{count,kAsCoefficient,withoutRepetition},{count,kAsCoefficient,withoutRepetition}": {
@@ -74071,9 +68775,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "kAsCoefficient": 0.7777777777777778
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{kAsPowerExponent,sum,weightAsPowerExponent},{aAsLogarithmBase,sum,weightAsPowerExponent}": {
@@ -74089,9 +68790,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "weightAsPowerExponent": 1.5762711864406782
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum},{aAsPowerBase,count,withoutRepetition}": {
@@ -74137,9 +68835,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "kAsPowerExponent": 0.8644067796610169
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,kAsPowerExponent,sum},{aAsPowerExponent,count,kAsPowerExponent}": {
@@ -74155,10 +68850,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerExponent": 0.8644067796610169,
                 "aAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent",
-            "aAsPowerExponent"
         ]
     },
     "{kAsCoefficient,max,withoutRepetition},{aAsLogarithmBase,jAsPowerExponent,sum}": {
@@ -74190,9 +68881,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.5762711864406782,
                 "aAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{kAsPowerExponent,sum},{kAsPowerExponent,sum,weightAsPowerExponent,withoutRepetition}": {
@@ -74208,9 +68896,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 0.5593220338983049,
                 "kAsPowerExponent": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{max,weightAsPowerExponent,withoutRepetition,x},{aAsLogarithmBase,sum,x}": {
@@ -74227,9 +68912,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "x": -1.6779661016949152
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{aAsPowerExponent,max,withoutRepetition,x},{aAsLogarithmBase,sum,x}": {
@@ -74246,9 +68928,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "x": -1.6779661016949152
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{kAsPowerExponent,sum},{count,y}": {
@@ -74276,9 +68955,6 @@ AND THE BEST METRICS WERE {
                 "y": -2.389830508474576,
                 "kAsPowerExponent": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{sum},{aAsLogarithmBase,kAsPowerExponent,sum,y}": {
@@ -74334,9 +69010,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0.6666666666666666,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{sum,weightAsPowerExponent},{aAsLogarithmBase,kAsCoefficient,sum,weightAsPowerExponent}": {
@@ -74352,9 +69025,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0.2222222222222222,
                 "weightAsPowerExponent": 1.3728813559322033
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum,weightAsPowerExponent},{aAsLogarithmBase,kAsPowerExponent,sum,weightAsPowerExponent}": {
@@ -74370,9 +69040,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerExponent": 0.05084745762711851,
                 "weightAsPowerExponent": 1.3728813559322033
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{kAsPowerExponent,sum,weightAsPowerExponent},{aAsLogarithmBase,sum}": {
@@ -74402,9 +69069,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "kAsPowerExponent": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{kAsPowerExponent,sum},{kAsPowerExponent,sum},{aAsLogarithmBase,kAsPowerExponent,sum}": {
@@ -74423,9 +69087,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "kAsPowerExponent": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{jAsPowerBase,jAsPowerExponent,kAsCoefficient,sum}": {
@@ -74452,9 +69113,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 0.8644067796610169,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum,weightAsPowerExponent},{max,weightAsPowerExponent,withoutRepetition}": {
@@ -74470,9 +69128,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "weightAsPowerExponent": 2.796610169491525
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum,weightAsPowerExponent},{aAsLogarithmBase,kAsPowerExponent,sum}": {
@@ -74516,9 +69171,6 @@ AND THE BEST METRICS WERE {
                 "weightAsCoefficient": 0.6666666666666666,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{kAsPowerExponent,sum},{aAsLogarithmBase,sum,weightAsPowerExponent}": {
@@ -74578,9 +69230,6 @@ AND THE BEST METRICS WERE {
                 "jAsCoefficient": 0,
                 "x": -1.3728813559322033
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,w},{count,jAsCoefficient,w,withoutRepetition}": {
@@ -74596,9 +69245,6 @@ AND THE BEST METRICS WERE {
                 "jAsCoefficient": 0,
                 "w": -1.3728813559322033
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,x},{count,jAsCoefficient,x}": {
@@ -74613,9 +69259,6 @@ AND THE BEST METRICS WERE {
                 "jAsCoefficient": 0,
                 "x": -1.3728813559322033
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,w},{count,jAsCoefficient,w}": {
@@ -74630,9 +69273,6 @@ AND THE BEST METRICS WERE {
                 "jAsCoefficient": 0,
                 "w": -1.3728813559322033
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{jAsPowerExponent,sum,weightAsPowerExponent},{aAsLogarithmBase,sum,weightAsPowerExponent}": {
@@ -74648,9 +69288,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "weightAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum},{aAsLogarithmBase,jAsPowerExponent,sum,weightAsCoefficient}": {
@@ -74680,9 +69317,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 0.7627118644067798,
                 "kAsPowerExponent": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{max,withoutRepetition},{aAsLogarithmBase,sum,w,weightAsPowerExponent}": {
@@ -74714,9 +69348,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 1.8813559322033901,
                 "w": -1.0677966101694916
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{jAsPowerExponent,sum,weightAsPowerExponent},{aAsLogarithmBase,sum}": {
@@ -74816,9 +69447,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "jAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum,useNuminator},{aAsLogarithmBase,sum}": {
@@ -74863,9 +69491,6 @@ AND THE BEST METRICS WERE {
                 "weightAsCoefficient": 0.1111111111111111,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{sum,x},{count,jAsLogarithmBase,withoutRepetition,x}": {
@@ -74881,9 +69506,6 @@ AND THE BEST METRICS WERE {
                 "jAsLogarithmBase": 2,
                 "x": -0.5593220338983049
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,w},{count,jAsLogarithmBase,w,withoutRepetition}": {
@@ -74899,9 +69521,6 @@ AND THE BEST METRICS WERE {
                 "jAsLogarithmBase": 2,
                 "w": -0.5593220338983049
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{jAsPowerExponent,sum},{aAsLogarithmBase,sum,weightAsCoefficient}": {
@@ -74945,9 +69564,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerExponent": 2.898305084745763,
                 "jAsPowerExponent": 1.3728813559322033
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{aAsLogarithmBase,aAsPowerExponent,kAsCoefficient,sum,usePrimeIndex}": {
@@ -74975,9 +69591,6 @@ AND THE BEST METRICS WERE {
                 "weightAsLogarithmBase": 2,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,kAsCoefficient,sum},{count}": {
@@ -75006,9 +69619,6 @@ AND THE BEST METRICS WERE {
                 "jAsCoefficient": 0.6666666666666666,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{aAsLogarithmBase,jAsPowerExponent,sum,useNuminator,x}": {
@@ -75035,9 +69645,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "kAsPowerExponent": 0.8644067796610169
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{sum,y},{aAsLogarithmBase,kAsPowerExponent,sum,y}": {
@@ -75053,9 +69660,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerExponent": 0.15254237288135597,
                 "y": 0.8644067796610169
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{jAsPowerExponent,sum},{kAsPowerBase,sum,withoutRepetition}": {
@@ -75098,9 +69702,6 @@ AND THE BEST METRICS WERE {
                 "withoutRepetition": true,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum,y},{jAsPowerExponent,sum,withoutRepetition,y}": {
@@ -75117,10 +69718,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.0677966101694913,
                 "y": 1.2711864406779663
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent",
-            "y"
         ]
     },
     "{jAsPowerExponent,sum},{sum,weightAsLogarithmBase,withoutRepetition}": {
@@ -75150,9 +69747,6 @@ AND THE BEST METRICS WERE {
                 "withoutRepetition": true,
                 "kAsPowerExponent": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{kAsPowerExponent,sum,y},{kAsPowerExponent,sum,withoutRepetition,y}": {
@@ -75169,10 +69763,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerExponent": 0.9661016949152543,
                 "y": 1.3728813559322033
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent",
-            "y"
         ]
     },
     "{aAsPowerExponent,jAsPowerExponent,sum},{count}": {
@@ -75200,9 +69790,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "aAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsCoefficient,jAsPowerExponent,sum},{aAsCoefficient,count}": {
@@ -75217,9 +69804,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "aAsCoefficient": 0.5555555555555556
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{kAsPowerBase,kAsPowerExponent,sum},{count,withoutRepetition}": {
@@ -75249,9 +69833,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "kAsPowerExponent": 0.4576271186440679
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{kAsPowerBase,kAsPowerExponent,sum},{count,kAsPowerBase,withoutRepetition}": {
@@ -75283,9 +69864,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerExponent": 0.4576271186440679,
                 "kAsPowerBase": 2
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{aAsLogarithmBase,kAsPowerExponent,sum,usePrimeIndex,w}": {
@@ -75393,10 +69971,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0.6666666666666666,
                 "y": 0.8644067796610169
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient",
-            "y"
         ]
     },
     "{aAsLogarithmBase,b,sum,usePrimeIndex,w}": {
@@ -75438,9 +70012,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,jAsPowerExponent,sum},{aAsPowerExponent,count,jAsPowerExponent}": {
@@ -75456,10 +70027,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.0677966101694913,
                 "aAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent",
-            "aAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum},{jAsLogarithmBase,sum,withoutRepetition}": {
@@ -75556,9 +70123,6 @@ AND THE BEST METRICS WERE {
                 "jAsCoefficient": 0.7777777777777778,
                 "kAsPowerExponent": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{jAsCoefficient,kAsPowerExponent,sum},{kAsPowerExponent,sum}": {
@@ -75573,9 +70137,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "kAsPowerExponent": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{jAsCoefficient,kAsPowerExponent,sum},{jAsCoefficient,kAsPowerExponent,sum}": {
@@ -75591,10 +70152,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerExponent": 0.7627118644067798,
                 "jAsCoefficient": 0.8888888888888888
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent",
-            "jAsCoefficient"
         ]
     },
     "{kAsPowerExponent,sum},{aAsCoefficient,kAsPowerExponent,sum,withoutRepetition}": {
@@ -75610,9 +70167,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0.1111111111111111,
                 "kAsPowerExponent": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum},{max,withoutRepetition},{aAsLogarithmBase,sum}": {
@@ -75645,10 +70199,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.2711864406779663,
                 "aAsCoefficient": 0.2222222222222222
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent",
-            "aAsCoefficient"
         ]
     },
     "{sum,weightAsPowerExponent},{count,jAsPowerExponent,weightAsPowerExponent,withoutRepetition}": {
@@ -75664,9 +70214,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 2.288135593220339,
                 "weightAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{aAsCoefficient,aAsLogarithmBase,kAsPowerExponent,sum,x}": {
@@ -75694,9 +70241,6 @@ AND THE BEST METRICS WERE {
                 "weightAsCoefficient": 0.5555555555555556,
                 "kAsPowerExponent": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{kAsPowerExponent,sum},{aAsCoefficient,aAsLogarithmBase,kAsPowerExponent,sum}": {
@@ -75712,9 +70256,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0.5555555555555556,
                 "kAsPowerExponent": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{sum},{sum},{count,jAsPowerExponent,withoutRepetition}": {
@@ -75800,9 +70341,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerExponent": 0.4576271186440679,
                 "kAsPowerBase": 2
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,kAsPowerExponent,sum},{count,withoutRepetition}": {
@@ -75832,9 +70370,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "kAsPowerExponent": 0.8644067796610169
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,kAsPowerExponent,sum},{aAsPowerExponent,count,withoutRepetition}": {
@@ -75850,9 +70385,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "aAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,kAsPowerExponent,sum},{aAsPowerExponent,count,kAsPowerExponent,withoutRepetition}": {
@@ -75869,10 +70401,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerExponent": 0.8644067796610169,
                 "aAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent",
-            "aAsPowerExponent"
         ]
     },
     "{sum},{count,jAsPowerExponent,weightAsCoefficient,withoutRepetition}": {
@@ -76004,9 +70532,6 @@ AND THE BEST METRICS WERE {
                 "modifiedCount": true,
                 "kAsCoefficient": 0.6666666666666666
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{count},{aAsLogarithmBase,jAsPowerBase,sum,w}": {
@@ -76036,9 +70561,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "jAsCoefficient": 0.5555555555555556
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{aAsLogarithmBase,kAsCoefficient,kAsPowerExponent,sum,x}": {
@@ -76108,9 +70630,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.9830508474576272,
                 "kAsPowerExponent": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum},{jAsPowerExponent,sum,y}": {
@@ -76125,9 +70644,6 @@ AND THE BEST METRICS WERE {
                 "y": 0.9661016949152543,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum,y},{jAsPowerExponent,sum}": {
@@ -76142,9 +70658,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum},{jAsLogarithmBase,max,withoutRepetition}": {
@@ -76173,9 +70686,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "jAsCoefficient": 0.8888888888888888
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{sum},{count,kAsCoefficient,weightAsPowerExponent,withoutRepetition}": {
@@ -76233,9 +70743,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0,
                 "y": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{aAsLogarithmBase,kAsCoefficient,kAsPowerBase,sum,x}": {
@@ -76263,9 +70770,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "aAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{sum,weightAsPowerExponent},{count,kAsCoefficient,withoutRepetition}": {
@@ -76477,9 +70981,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "x": 2.796610169491525
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{count,jAsPowerExponent,w},{max,withoutRepetition}": {
@@ -76509,9 +71010,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "w": 2.796610169491525
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum},{count,kAsCoefficient,withoutRepetition,x}": {
@@ -76555,9 +71053,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0,
                 "weightAsPowerExponent": 0.6610169491525424
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum,weightAsCoefficient},{count,kAsCoefficient,withoutRepetition}": {
@@ -76687,9 +71182,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 0.15254237288135597,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{kAsPowerExponent,sum},{sum,weightAsLogarithmBase,withoutRepetition}": {
@@ -76719,9 +71211,6 @@ AND THE BEST METRICS WERE {
                 "withoutRepetition": true,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{jAsCoefficient,jAsPowerExponent,sum},{count,jAsCoefficient,jAsPowerExponent}": {
@@ -76737,10 +71226,6 @@ AND THE BEST METRICS WERE {
                 "jAsCoefficient": 0.8888888888888888,
                 "jAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient",
-            "jAsPowerExponent"
         ]
     },
     "{kAsPowerExponent,sum,weightAsCoefficient},{count,weightAsCoefficient,withoutRepetition}": {
@@ -76756,9 +71241,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{kAsPowerExponent,sum,weightAsCoefficient},{count,kAsPowerExponent,weightAsCoefficient,withoutRepetition}": {
@@ -76775,10 +71257,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerExponent": 0.9661016949152543,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent",
-            "weightAsCoefficient"
         ]
     },
     "{max,withoutRepetition},{aAsLogarithmBase,sum},{aAsLogarithmBase,kAsCoefficient,sum}": {
@@ -76830,9 +71308,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 2.084745762711864,
                 "x": -0.35593220338983045
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,w},{count,jAsPowerExponent,w,withoutRepetition}": {
@@ -76848,9 +71323,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 2.084745762711864,
                 "w": -0.35593220338983045
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{max,withoutRepetition},{aAsLogarithmBase,sum},{aAsLogarithmBase,kAsPowerExponent,sum}": {
@@ -77040,9 +71512,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{aAsLogarithmBase,jAsCoefficient,jAsPowerBase,sum,w}": {
@@ -77071,9 +71540,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.6779661016949152,
                 "w": -0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum},{count,jAsPowerExponent,weightAsPowerExponent}": {
@@ -77101,9 +71567,6 @@ AND THE BEST METRICS WERE {
                 "modifiedCount": true,
                 "kAsCoefficient": 0.6666666666666666
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{aAsCoefficient,jAsPowerExponent,sum},{aAsCoefficient,aAsLogarithmBase,sum}": {
@@ -77119,9 +71582,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsCoefficient": 0.3333333333333333
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{sum,y},{count,kAsCoefficient,y}": {
@@ -77136,9 +71596,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0,
                 "y": 0.8644067796610169
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{sum},{aAsPowerBase,count,kAsCoefficient,withoutRepetition}": {
@@ -77192,9 +71649,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0.2222222222222222,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{aAsCoefficient,jAsPowerExponent,sum},{jAsPowerExponent,sum}": {
@@ -77209,9 +71663,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum},{count,modifiedCount,withoutRepetition}": {
@@ -77314,9 +71765,6 @@ AND THE BEST METRICS WERE {
                 "y": 0.25423728813559343,
                 "kAsCoefficient": 0.5555555555555556
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{sum},{aAsCoefficient,aAsLogarithmBase,kAsPowerExponent,sum}": {
@@ -77347,9 +71795,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0.3333333333333333,
                 "weightAsLogarithmBase": 2
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{sum},{max,weightAsLogarithmBase,withoutRepetition,x}": {
@@ -77435,9 +71880,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerExponent": 1.0677966101694913,
                 "aAsCoefficient": 0.8888888888888888
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{aAsCoefficient,sum},{aAsCoefficient,count,kAsPowerBase,withoutRepetition}": {
@@ -77453,9 +71895,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerBase": 2,
                 "aAsCoefficient": 0.4444444444444444
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{aAsCoefficient,aAsLogarithmBase,aAsPowerExponent,kAsPowerBase,sum}": {
@@ -77497,9 +71936,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 2.186440677966102,
                 "aAsPowerExponent": 1.2711864406779663
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{sum,w},{aAsLogarithmBase,kAsPowerExponent,sum,w}": {
@@ -77515,9 +71951,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerExponent": 0.5593220338983049,
                 "w": -0.35593220338983045
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{kAsPowerExponent,sum},{count,modifiedCount,withoutRepetition}": {
@@ -77547,9 +71980,6 @@ AND THE BEST METRICS WERE {
                 "modifiedCount": true,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{kAsPowerExponent,sum},{aAsLogarithmBase,kAsPowerExponent,sum,x}": {
@@ -77565,9 +71995,6 @@ AND THE BEST METRICS WERE {
                 "x": -1.271186440677966,
                 "kAsPowerExponent": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{count,kAsCoefficient,x},{aAsLogarithmBase,kAsCoefficient,sum,x}": {
@@ -77584,10 +72011,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0.8888888888888888,
                 "x": -1.7796610169491525
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient",
-            "x"
         ]
     },
     "{sum},{aAsLogarithmBase,kAsPowerExponent,sum,weightAsCoefficient}": {
@@ -77685,10 +72108,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.1694915254237293,
                 "y": 0.8644067796610169
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent",
-            "y"
         ]
     },
     "{kAsPowerExponent,sum},{aAsLogarithmBase,jAsCoefficient,sum}": {
@@ -77746,10 +72165,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerExponent": 2.796610169491525,
                 "jAsPowerExponent": 2.186440677966102
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent",
-            "jAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum,v,y}": {
@@ -77937,10 +72352,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerExponent": 0.8644067796610169,
                 "aAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent",
-            "aAsPowerExponent"
         ]
     },
     "{jAsPowerBase,jAsPowerExponent,kAsPowerExponent,sum}": {
@@ -78000,9 +72411,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,kAsPowerBase,sum},{sum,withoutRepetition}": {
@@ -78032,9 +72440,6 @@ AND THE BEST METRICS WERE {
                 "weightAsLogarithmBase": 2,
                 "kAsCoefficient": 0.7777777777777778
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{sum},{sum},{aAsLogarithmBase,jAsPowerExponent,sum}": {
@@ -78066,9 +72471,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.0677966101694913,
                 "x": -1.88135593220339
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{kAsPowerExponent,sum,weightAsPowerExponent},{kAsPowerExponent,sum,withoutRepetition}": {
@@ -78084,9 +72486,6 @@ AND THE BEST METRICS WERE {
                 "withoutRepetition": true,
                 "kAsPowerExponent": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{sum},{kAsPowerExponent,sum},{count,withoutRepetition}": {
@@ -78134,9 +72533,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0,
                 "x": -0.05084745762711851
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,w},{count,kAsCoefficient,w,withoutRepetition}": {
@@ -78152,9 +72548,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0,
                 "w": -0.05084745762711851
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{kAsCoefficient,sum},{count,weightAsLogarithmBase,withoutRepetition}": {
@@ -78212,9 +72605,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "kAsCoefficient": 0.6666666666666666
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{sum},{aAsLogarithmBase,jAsPowerExponent,sum,y}": {
@@ -78284,9 +72674,6 @@ AND THE BEST METRICS WERE {
                 "usePrimeIndex": true,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum},{count,useNuminator,withoutRepetition}": {
@@ -78316,9 +72703,6 @@ AND THE BEST METRICS WERE {
                 "useNuminator": true,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum},{count,withoutRepetition,y}": {
@@ -78348,9 +72732,6 @@ AND THE BEST METRICS WERE {
                 "y": -3,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum,weightAsCoefficient},{count,weightAsCoefficient,withoutRepetition}": {
@@ -78366,9 +72747,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{jAsPowerExponent,sum,weightAsCoefficient},{count,jAsPowerExponent,weightAsCoefficient,withoutRepetition}": {
@@ -78385,10 +72763,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.0677966101694913,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent",
-            "weightAsCoefficient"
         ]
     },
     "{jAsPowerExponent,sum},{aAsPowerExponent,count,withoutRepetition}": {
@@ -78418,9 +72792,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": -3,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum},{count,withoutRepetition}": {
@@ -78463,9 +72834,6 @@ AND THE BEST METRICS WERE {
                 "jAsCoefficient": 1,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum},{count,kAsPowerBase,withoutRepetition}": {
@@ -78495,9 +72863,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerBase": 2,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum},{count,kAsPowerExponent,withoutRepetition}": {
@@ -78527,9 +72892,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerExponent": 0.05084745762711851,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{aAsLogarithmBase,kAsPowerBase,sum,w,y}": {
@@ -78680,9 +73042,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 0.6610169491525424,
                 "jAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{kAsCoefficient,sum},{count,jAsLogarithmBase,withoutRepetition}": {
@@ -78711,9 +73070,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{sum,weightAsPowerExponent},{aAsLogarithmBase,jAsPowerExponent,sum}": {
@@ -78743,9 +73099,6 @@ AND THE BEST METRICS WERE {
                 "weightAsCoefficient": 0.7777777777777778,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum,weightAsPowerExponent},{count,jAsPowerExponent,weightAsPowerExponent,withoutRepetition}": {
@@ -78762,10 +73115,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.0677966101694913,
                 "weightAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent",
-            "weightAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum,weightAsPowerExponent},{count,weightAsPowerExponent,withoutRepetition}": {
@@ -78781,9 +73130,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "weightAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{kAsPowerExponent,sum},{count,kAsCoefficient,withoutRepetition}": {
@@ -78813,9 +73159,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0.1111111111111111,
                 "kAsPowerExponent": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{aAsLogarithmBase,jAsPowerExponent,kAsPowerBase,sum,x}": {
@@ -78871,9 +73214,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0.7777777777777778,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum},{count,y}": {
@@ -78902,9 +73242,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 0.8644067796610169,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum},{count,jAsPowerExponent,withoutRepetition,x}": {
@@ -78920,9 +73257,6 @@ AND THE BEST METRICS WERE {
                 "x": -0.35593220338983045,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum},{count,jAsPowerExponent,w,withoutRepetition}": {
@@ -78938,9 +73272,6 @@ AND THE BEST METRICS WERE {
                 "w": -0.35593220338983045,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum,y},{count,y}": {
@@ -78955,9 +73286,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "y": 0.8644067796610169
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{jAsPowerExponent,sum,weightAsPowerExponent},{count,jAsPowerExponent,withoutRepetition}": {
@@ -78973,9 +73301,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum,weightAsCoefficient},{count,withoutRepetition}": {
@@ -79005,9 +73330,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum,weightAsPowerExponent},{count,withoutRepetition}": {
@@ -79051,9 +73373,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "kAsPowerExponent": 0.8644067796610169
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{kAsPowerExponent,sum,w},{count,withoutRepetition}": {
@@ -79083,9 +73402,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "kAsPowerExponent": 0.8644067796610169
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum},{aAsPowerExponent,jAsPowerExponent,sum,withoutRepetition}": {
@@ -79101,9 +73417,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": -0.15254237288135597,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum},{count,weightAsLogarithmBase,withoutRepetition}": {
@@ -79133,9 +73446,6 @@ AND THE BEST METRICS WERE {
                 "weightAsLogarithmBase": 2,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum},{count,jAsPowerExponent,y}": {
@@ -79150,9 +73460,6 @@ AND THE BEST METRICS WERE {
                 "y": 0.25423728813559343,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{aAsCoefficient,kAsPowerBase,sum},{aAsCoefficient,count,kAsPowerBase,withoutRepetition}": {
@@ -79169,9 +73476,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerBase": 2,
                 "aAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{aAsPowerExponent,kAsPowerExponent,sum},{aAsLogarithmBase,aAsPowerExponent,sum}": {
@@ -79187,9 +73491,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 1.2711864406779663
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsCoefficient,jAsPowerExponent,sum},{count,jAsPowerExponent,withoutRepetition}": {
@@ -79205,9 +73506,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{sum},{aAsLogarithmBase,kAsCoefficient,sum,w}": {
@@ -79249,9 +73547,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0.7777777777777778,
                 "x": -1.7796610169491525
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{aAsCoefficient,jAsPowerExponent,sum},{count,withoutRepetition}": {
@@ -79293,9 +73588,6 @@ AND THE BEST METRICS WERE {
                 "jAsLogarithmBase": 2,
                 "kAsCoefficient": 0.5555555555555556
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{jAsPowerExponent,sum},{count,weightAsPowerExponent,withoutRepetition}": {
@@ -79325,9 +73617,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerBase": 2,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{sum},{kAsPowerBase,kAsPowerExponent,sum}": {
@@ -79383,9 +73672,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "jAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{sum},{aAsLogarithmBase,jAsCoefficient,kAsPowerExponent,sum}": {
@@ -79457,9 +73743,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerExponent": 0.05084745762711851,
                 "weightAsPowerExponent": 3
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{jAsCoefficient,kAsPowerExponent,sum,y}": {
@@ -79501,9 +73784,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "w": -0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{aAsPowerExponent,max,weightAsLogarithmBase,withoutRepetition},{aAsLogarithmBase,sum}": {
@@ -79548,9 +73828,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{jAsPowerExponent,sum,y},{count,withoutRepetition}": {
@@ -79580,9 +73857,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "y": 0.8644067796610169
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{sum,weightAsLogarithmBase},{kAsPowerExponent,sum,weightAsLogarithmBase}": {
@@ -79699,9 +73973,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "w": -1.4745762711864407
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{jAsCoefficient,jAsLogarithmBase,jAsPowerExponent,sum}": {
@@ -79730,9 +74001,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "kAsCoefficient": 0.6666666666666666
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{kAsPowerExponent,sum},{sum,weightAsCoefficient,withoutRepetition}": {
@@ -79776,9 +74044,6 @@ AND THE BEST METRICS WERE {
                 "weightAsLogarithmBase": 2,
                 "kAsCoefficient": 0.6666666666666666
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{aAsLogarithmBase,kAsPowerExponent,sum,useNuminator,w}": {
@@ -79822,9 +74087,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.1694915254237293,
                 "x": 2.898305084745763
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{jAsPowerExponent,sum,useNuminator},{count,withoutRepetition}": {
@@ -79869,9 +74131,6 @@ AND THE BEST METRICS WERE {
                 "y": 0.35593220338983045,
                 "jAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{aAsLogarithmBase,sum,w},{aAsLogarithmBase,kAsPowerBase,sum,w}": {
@@ -79888,9 +74147,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerBase": 2,
                 "w": -1.6779661016949152
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{aAsLogarithmBase,kAsPowerBase,sum,w},{aAsLogarithmBase,sum,w}": {
@@ -79907,9 +74163,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "w": -1.6779661016949152
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{jAsPowerExponent,sum,y},{aAsLogarithmBase,jAsPowerExponent,sum,y}": {
@@ -79926,10 +74179,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.1694915254237293,
                 "y": 0.8644067796610169
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent",
-            "y"
         ]
     },
     "{aAsPowerExponent,jAsLogarithmBase,sum,w}": {
@@ -79956,9 +74205,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "jAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum,y},{count,jAsPowerExponent,withoutRepetition,y}": {
@@ -79975,10 +74221,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.1694915254237293,
                 "y": 0.8644067796610169
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent",
-            "y"
         ]
     },
     "{kAsCoefficient,sum},{count,jAsCoefficient,withoutRepetition}": {
@@ -80023,9 +74265,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "jAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum,useNuminator},{count,jAsPowerExponent,useNuminator,withoutRepetition}": {
@@ -80042,9 +74281,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.1694915254237293,
                 "useNuminator": true
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,jAsPowerExponent,sum},{count,withoutRepetition}": {
@@ -80074,9 +74310,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "aAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsCoefficient,jAsPowerExponent,sum},{aAsCoefficient,count,withoutRepetition}": {
@@ -80092,9 +74325,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "aAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{jAsPowerExponent,kAsCoefficient,sum},{count,jAsPowerExponent,kAsCoefficient,withoutRepetition}": {
@@ -80111,10 +74341,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0.7777777777777778,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient",
-            "jAsPowerExponent"
         ]
     },
     "{aAsCoefficient,jAsPowerExponent,sum},{aAsCoefficient,count,jAsPowerExponent,withoutRepetition}": {
@@ -80131,10 +74357,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.1694915254237293,
                 "aAsCoefficient": 0.5555555555555556
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent",
-            "aAsCoefficient"
         ]
     },
     "{aAsPowerExponent,jAsPowerExponent,sum},{count,jAsPowerExponent,withoutRepetition}": {
@@ -80150,9 +74372,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,jAsPowerExponent,sum},{aAsPowerExponent,count,jAsPowerExponent,withoutRepetition}": {
@@ -80169,10 +74388,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.0677966101694913,
                 "aAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent",
-            "aAsPowerExponent"
         ]
     },
     "{max,usePrimeIndex,withoutRepetition},{aAsLogarithmBase,jAsPowerExponent,sum,usePrimeIndex}": {
@@ -80232,9 +74447,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0.3333333333333333,
                 "jAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{sum,withoutRepetition,x},{aAsLogarithmBase,jAsPowerExponent,sum,x}": {
@@ -80251,9 +74463,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.4745762711864403,
                 "x": -1.1694915254237288
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{aAsLogarithmBase,kAsPowerBase,kAsPowerExponent,sum,w}": {
@@ -80354,9 +74563,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerBase": 2,
                 "w": -1.6779661016949152
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{kAsCoefficient,sum},{count,jAsPowerExponent,withoutRepetition}": {
@@ -80411,9 +74617,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "y": 0.8644067796610169
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{aAsLogarithmBase,jAsCoefficient,kAsPowerExponent,sum,w}": {
@@ -80442,10 +74645,6 @@ AND THE BEST METRICS WERE {
                 "x": 3,
                 "u": 1.4745762711864403
             }
-        ],
-        "spreadDynamicParameters": [
-            "x",
-            "u"
         ]
     },
     "{b,sum,w},{b,max,w,withoutRepetition}": {
@@ -80462,10 +74661,6 @@ AND THE BEST METRICS WERE {
                 "w": 3,
                 "b": 1.4745762711864403
             }
-        ],
-        "spreadDynamicParameters": [
-            "w",
-            "b"
         ]
     },
     "{sum},{count,jAsPowerExponent,weightAsPowerExponent,withoutRepetition}": {
@@ -80496,9 +74691,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerExponent": 1.5762711864406782,
                 "w": -1.6779661016949152
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{aAsLogarithmBase,kAsPowerExponent,sum,w},{aAsLogarithmBase,sum,w}": {
@@ -80515,9 +74707,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "w": -1.6779661016949152
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{aAsLogarithmBase,kAsPowerExponent,sum,w}": {
@@ -80594,10 +74783,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerExponent": 1.2711864406779663,
                 "w": -1.6779661016949152
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent",
-            "w"
         ]
     },
     "{kAsCoefficient,sum,useNuminator},{count,withoutRepetition}": {
@@ -80642,9 +74827,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "kAsCoefficient": 0.7777777777777778
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{sum},{sum},{jAsPowerExponent,sum}": {
@@ -80721,10 +74903,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerExponent": 0.8644067796610169,
                 "x": -1.3728813559322033
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent",
-            "x"
         ]
     },
     "{kAsPowerExponent,sum,usePrimeIndex},{max,usePrimeIndex,withoutRepetition}": {
@@ -80756,10 +74934,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0.6666666666666666,
                 "weightAsPowerExponent": 2.288135593220339
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient",
-            "weightAsPowerExponent"
         ]
     },
     "{kAsCoefficient,sum,y},{aAsLogarithmBase,kAsCoefficient,sum}": {
@@ -80775,9 +74949,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "kAsCoefficient": 0.5555555555555556
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{sum,y},{aAsLogarithmBase,kAsCoefficient,sum}": {
@@ -80849,9 +75020,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0,
                 "y": 0.8644067796610169
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{count,x},{aAsLogarithmBase,sum,u,x}": {
@@ -80867,9 +75035,6 @@ AND THE BEST METRICS WERE {
                 "u": -2.389830508474576,
                 "x": -1.7796610169491525
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{aAsPowerExponent,jAsPowerExponent,sum,y}": {
@@ -81013,9 +75178,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "y": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{jAsPowerExponent,sum,x},{sum,withoutRepetition}": {
@@ -81059,9 +75221,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0,
                 "aAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{count,withoutRepetition},{max,withoutRepetition},{aAsLogarithmBase,jAsPowerExponent,sum}": {
@@ -81136,10 +75295,6 @@ AND THE BEST METRICS WERE {
                 "x": -1.7796610169491525,
                 "u": -2.1864406779661016
             }
-        ],
-        "spreadDynamicParameters": [
-            "x",
-            "u"
         ]
     },
     "{kAsCoefficient,sum,weightAsCoefficient},{count,weightAsCoefficient,withoutRepetition}": {
@@ -81155,9 +75310,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{jAsPowerExponent,kAsCoefficient,max,withoutRepetition},{aAsLogarithmBase,kAsCoefficient,sum}": {
@@ -81174,9 +75326,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "kAsCoefficient": 0.2222222222222222
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{jAsPowerExponent,sum},{aAsPowerExponent,jAsPowerExponent,max,withoutRepetition}": {
@@ -81192,9 +75341,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 0.35593220338983045,
                 "jAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{sum},{kAsPowerExponent,sum}": {
@@ -81273,9 +75419,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerExponent": 0.6610169491525424,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{kAsPowerExponent,sum,weightAsCoefficient},{sum,weightAsCoefficient}": {
@@ -81290,9 +75433,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{sum},{aAsCoefficient,kAsPowerExponent,sum}": {
@@ -81411,9 +75551,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerExponent": 0.6610169491525424,
                 "jAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{jAsCoefficient,kAsPowerExponent,sum},{jAsCoefficient,sum}": {
@@ -81428,9 +75565,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "jAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{kAsPowerExponent,sum},{sum}": {
@@ -81486,9 +75620,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "aAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{sum},{kAsCoefficient,sum},{count}": {
@@ -81534,9 +75665,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "aAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{jAsPowerExponent,kAsPowerExponent,sum},{aAsLogarithmBase,jAsPowerExponent,sum}": {
@@ -81552,9 +75680,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "jAsPowerExponent": 1.6779661016949152
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{kAsCoefficient,sum},{aAsLogarithmBase,sum,weightAsLogarithmBase}": {
@@ -81583,9 +75708,6 @@ AND THE BEST METRICS WERE {
                 "jAsLogarithmBase": 2,
                 "kAsCoefficient": 0.4444444444444444
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{jAsLogarithmBase,kAsCoefficient,sum},{kAsCoefficient,sum}": {
@@ -81600,9 +75722,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "kAsCoefficient": 0.4444444444444444
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{aAsPowerExponent,kAsCoefficient,sum},{count,kAsCoefficient}": {
@@ -81617,9 +75736,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "kAsCoefficient": 0.8888888888888888
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{aAsPowerExponent,kAsCoefficient,sum},{aAsPowerExponent,count,kAsCoefficient}": {
@@ -81635,10 +75751,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0.8888888888888888,
                 "aAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient",
-            "aAsPowerExponent"
         ]
     },
     "{sum,weightAsPowerExponent},{kAsPowerExponent,sum,withoutRepetition}": {
@@ -81682,9 +75794,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0.3333333333333333,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{kAsPowerExponent,sum,x},{aAsLogarithmBase,kAsPowerExponent,sum}": {
@@ -81700,9 +75809,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "kAsPowerExponent": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{kAsPowerExponent,sum,w},{aAsLogarithmBase,kAsPowerExponent,sum}": {
@@ -81718,9 +75824,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "kAsPowerExponent": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,kAsCoefficient,sum,y}": {
@@ -81748,10 +75851,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerExponent": 0.9661016949152543,
                 "w": -1.271186440677966
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent",
-            "w"
         ]
     },
     "{aAsPowerExponent,sum},{count,jAsPowerBase}": {
@@ -81779,9 +75878,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerBase": 2,
                 "aAsPowerExponent": 1.2711864406779663
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{kAsCoefficient,sum},{count,jAsPowerBase,kAsCoefficient,withoutRepetition}": {
@@ -81797,9 +75893,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerBase": 2,
                 "kAsCoefficient": 0.6666666666666666
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{kAsCoefficient,sum,weightAsPowerExponent},{aAsLogarithmBase,sum,weightAsPowerExponent}": {
@@ -81815,9 +75908,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "weightAsPowerExponent": 2.694915254237288
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{kAsPowerExponent,sum,x},{count}": {
@@ -81845,9 +75935,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "kAsPowerExponent": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{kAsPowerExponent,sum,w},{count}": {
@@ -81875,9 +75962,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "kAsPowerExponent": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum,y},{count,jAsPowerExponent,y}": {
@@ -81893,10 +75977,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.1694915254237293,
                 "y": 0.8644067796610169
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent",
-            "y"
         ]
     },
     "{kAsPowerExponent,sum},{max,usePrimeIndex,withoutRepetition}": {
@@ -81926,9 +76006,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "x": -0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{kAsPowerExponent,sum,x},{count,kAsPowerExponent,withoutRepetition,x}": {
@@ -81945,10 +76022,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerExponent": 0.9661016949152543,
                 "x": -0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent",
-            "x"
         ]
     },
     "{kAsPowerExponent,sum,w},{count,w,withoutRepetition}": {
@@ -81964,9 +76037,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "w": -0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{kAsPowerExponent,sum,w},{count,kAsPowerExponent,w,withoutRepetition}": {
@@ -81983,10 +76053,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerExponent": 0.9661016949152543,
                 "w": -0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent",
-            "w"
         ]
     },
     "{kAsPowerExponent,sum,x},{aAsLogarithmBase,sum,x}": {
@@ -82002,9 +76068,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "x": -1.576271186440678
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,weightAsPowerExponent},{kAsCoefficient,sum,weightAsPowerExponent,withoutRepetition}": {
@@ -82020,9 +76083,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0,
                 "weightAsPowerExponent": 3
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,kAsPowerExponent,sum},{aAsLogarithmBase,kAsPowerExponent,sum}": {
@@ -82038,9 +76098,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "kAsPowerExponent": 0.8644067796610169
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{sum,y},{kAsPowerExponent,sum,withoutRepetition}": {
@@ -82070,9 +76127,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerExponent": 0.5593220338983049,
                 "y": 1.3728813559322033
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{aAsPowerExponent,kAsPowerExponent,sum},{aAsLogarithmBase,aAsPowerExponent,kAsPowerExponent,sum}": {
@@ -82089,10 +76143,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerExponent": 0.8644067796610169,
                 "aAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent",
-            "aAsPowerExponent"
         ]
     },
     "{kAsPowerExponent,sum,x},{count,kAsPowerExponent,x}": {
@@ -82108,10 +76158,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerExponent": 0.8644067796610169,
                 "x": -0.6610169491525424
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent",
-            "x"
         ]
     },
     "{kAsPowerExponent,sum,w},{count,kAsPowerExponent,w}": {
@@ -82127,10 +76173,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerExponent": 0.8644067796610169,
                 "w": -0.6610169491525424
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent",
-            "w"
         ]
     },
     "{kAsPowerBase,kAsPowerExponent,sum,useNuminator}": {
@@ -82199,9 +76241,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.6779661016949152,
                 "aAsPowerExponent": 1.2711864406779663
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{kAsPowerExponent,sum},{aAsLogarithmBase,sum,x}": {
@@ -82230,9 +76269,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "x": -0.6610169491525424
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{kAsPowerExponent,sum,w},{count,w}": {
@@ -82247,9 +76283,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "w": -0.6610169491525424
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{kAsPowerExponent,sum},{max,weightAsCoefficient,withoutRepetition}": {
@@ -82327,9 +76360,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "x": -1.7796610169491525
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{kAsPowerExponent,sum,x},{max,withoutRepetition}": {
@@ -82359,9 +76389,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "x": 3
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{kAsPowerExponent,sum,w},{max,withoutRepetition}": {
@@ -82391,9 +76418,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "w": 3
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{kAsPowerExponent,sum,weightAsPowerBase},{max,weightAsPowerBase,withoutRepetition}": {
@@ -82438,9 +76462,6 @@ AND THE BEST METRICS WERE {
                 "withoutRepetition": true,
                 "y": 1.3728813559322033
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{kAsPowerExponent,sum,w},{aAsLogarithmBase,sum,w}": {
@@ -82456,9 +76477,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "w": -1.271186440677966
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{jAsCoefficient,kAsPowerBase,kAsPowerExponent,sum}": {
@@ -82541,9 +76559,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0,
                 "aAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{kAsCoefficient,sum},{aAsLogarithmBase,jAsPowerExponent,kAsCoefficient,sum}": {
@@ -82559,9 +76574,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 0.4576271186440679,
                 "kAsCoefficient": 0.5555555555555556
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{kAsPowerExponent,sum},{aAsPowerExponent,kAsPowerExponent,sum}": {
@@ -82576,9 +76588,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 1.0677966101694913,
                 "kAsPowerExponent": 0.8644067796610169
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,kAsPowerExponent,sum},{kAsPowerExponent,sum}": {
@@ -82593,9 +76602,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "kAsPowerExponent": 0.8644067796610169
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{kAsCoefficient,sum,weightAsPowerBase},{kAsCoefficient,sum,weightAsPowerBase,withoutRepetition}": {
@@ -82612,9 +76618,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0.7777777777777778,
                 "weightAsPowerBase": 2
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{aAsPowerExponent,kAsPowerExponent,sum,x}": {
@@ -82640,9 +76643,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerExponent": 0.7627118644067798,
                 "aAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,kAsPowerExponent,sum},{aAsPowerExponent,sum}": {
@@ -82657,9 +76657,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "aAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{kAsCoefficient,max,weightAsPowerExponent,withoutRepetition},{aAsLogarithmBase,kAsCoefficient,sum}": {
@@ -82676,9 +76673,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "kAsCoefficient": 0.4444444444444444
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{kAsCoefficient,sum},{max,usePrimeIndex,withoutRepetition}": {
@@ -82708,9 +76702,6 @@ AND THE BEST METRICS WERE {
                 "w": -1.7796610169491525,
                 "kAsPowerExponent": 0.8644067796610169
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{kAsCoefficient,sum,weightAsPowerBase},{kAsCoefficient,max,weightAsPowerBase,withoutRepetition}": {
@@ -82727,9 +76718,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0.7777777777777778,
                 "weightAsPowerBase": 2
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{aAsLogarithmBase,kAsCoefficient,sum},{aAsLogarithmBase,kAsCoefficient,sum,w}": {
@@ -82746,9 +76734,6 @@ AND THE BEST METRICS WERE {
                 "w": -3,
                 "kAsCoefficient": 0.7777777777777778
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{aAsLogarithmBase,kAsCoefficient,sum,w},{aAsLogarithmBase,kAsCoefficient,sum}": {
@@ -82765,9 +76750,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "kAsCoefficient": 0.7777777777777778
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{aAsLogarithmBase,aAsPowerExponent,kAsPowerBase,kAsPowerExponent,sum}": {
@@ -82886,10 +76868,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0.7777777777777778,
                 "aAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient",
-            "aAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,kAsCoefficient,sum},{count,withoutRepetition}": {
@@ -82933,9 +76911,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.1694915254237293,
                 "y": 1.5762711864406782
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{aAsPowerExponent,sum},{count,kAsCoefficient}": {
@@ -82963,9 +76938,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0.1111111111111111,
                 "aAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{b,max,w,withoutRepetition},{aAsLogarithmBase,b,sum,w}": {
@@ -82983,10 +76955,6 @@ AND THE BEST METRICS WERE {
                 "w": 2.898305084745763,
                 "b": 1.6779661016949152
             }
-        ],
-        "spreadDynamicParameters": [
-            "w",
-            "b"
         ]
     },
     "{kAsCoefficient,sum},{kAsCoefficient,sum},{count,kAsCoefficient,withoutRepetition}": {
@@ -83005,9 +76973,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "kAsCoefficient": 0.6666666666666666
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{aAsPowerExponent,jAsPowerExponent,sum,weightAsPowerBase}": {
@@ -83077,10 +77042,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.0677966101694913,
                 "aAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent",
-            "aAsPowerExponent"
         ]
     },
     "{aAsCoefficient,aAsLogarithmBase,jAsPowerBase,sum,w}": {
@@ -83108,9 +77069,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "jAsCoefficient": 0.8888888888888888
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{sum,weightAsLogarithmBase},{jAsPowerExponent,sum,weightAsLogarithmBase}": {
@@ -83237,9 +77195,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerBase": 2,
                 "w": -1.4745762711864407
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{aAsCoefficient,aAsPowerExponent,kAsPowerBase,sum}": {
@@ -83293,10 +77248,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerExponent": 2.186440677966102,
                 "jAsPowerExponent": 1.7796610169491522
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent",
-            "jAsPowerExponent"
         ]
     },
     "{kAsPowerExponent,sum},{kAsPowerExponent,sum,x}": {
@@ -83311,9 +77262,6 @@ AND THE BEST METRICS WERE {
                 "x": -0.15254237288135597,
                 "kAsPowerExponent": 0.8644067796610169
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{kAsPowerExponent,sum,x},{kAsPowerExponent,sum}": {
@@ -83328,9 +77276,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "kAsPowerExponent": 0.8644067796610169
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{kAsPowerExponent,sum},{kAsPowerExponent,sum,w}": {
@@ -83345,9 +77290,6 @@ AND THE BEST METRICS WERE {
                 "w": -0.15254237288135597,
                 "kAsPowerExponent": 0.8644067796610169
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{kAsPowerExponent,sum,w},{kAsPowerExponent,sum}": {
@@ -83362,9 +77304,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "kAsPowerExponent": 0.8644067796610169
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{jAsCoefficient,kAsPowerExponent,sum,x}": {
@@ -83510,10 +77449,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerExponent": 0.8644067796610169,
                 "x": -0.05084745762711851
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent",
-            "x"
         ]
     },
     "{kAsPowerExponent,sum,w},{kAsPowerExponent,sum,w}": {
@@ -83529,10 +77464,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerExponent": 0.8644067796610169,
                 "w": -0.05084745762711851
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent",
-            "w"
         ]
     },
     "{jAsPowerExponent,sum},{aAsLogarithmBase,sum,withoutRepetition}": {
@@ -83573,9 +77504,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "kAsCoefficient": 0.6666666666666666
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{aAsPowerExponent,kAsCoefficient,sum},{aAsPowerExponent,count,kAsCoefficient,withoutRepetition}": {
@@ -83592,10 +77520,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0.6666666666666666,
                 "aAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient",
-            "aAsPowerExponent"
         ]
     },
     "{sum},{kAsCoefficient,sum,weightAsCoefficient,withoutRepetition}": {
@@ -83707,9 +77631,6 @@ AND THE BEST METRICS WERE {
                 "jAsLogarithmBase": 2,
                 "kAsCoefficient": 0.4444444444444444
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{jAsPowerExponent,sum},{count,withoutRepetition,x}": {
@@ -83783,9 +77704,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 2.593220338983051
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,jAsCoefficient,jAsPowerExponent,sum}": {
@@ -83812,9 +77730,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum},{jAsCoefficient,jAsPowerExponent,max,withoutRepetition}": {
@@ -83830,9 +77745,6 @@ AND THE BEST METRICS WERE {
                 "jAsCoefficient": 0.1111111111111111,
                 "jAsPowerExponent": 1.2711864406779663
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,kAsPowerExponent,sum},{aAsLogarithmBase,sum}": {
@@ -83915,9 +77827,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "x": -2.1864406779661016
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{jAsPowerExponent,sum,x},{count,withoutRepetition,x}": {
@@ -83933,9 +77842,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "x": -0.5593220338983049
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{jAsPowerExponent,sum,w},{count,w,withoutRepetition}": {
@@ -83951,9 +77857,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "w": -0.5593220338983049
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum},{kAsCoefficient,sum,weightAsPowerExponent,withoutRepetition}": {
@@ -84040,9 +77943,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 0.4576271186440679,
                 "kAsCoefficient": 0.4444444444444444
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{kAsPowerExponent,sum,x,y}": {
@@ -84094,9 +77994,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "kAsCoefficient": 0.7777777777777778
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{kAsCoefficient,sum,weightAsPowerBase},{aAsLogarithmBase,sum,weightAsPowerBase}": {
@@ -84128,9 +78025,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0.7777777777777778,
                 "weightAsPowerBase": 2
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{kAsCoefficient,sum},{aAsLogarithmBase,sum,weightAsPowerExponent}": {
@@ -84161,10 +78055,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.0677966101694913,
                 "w": -0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent",
-            "w"
         ]
     },
     "{kAsCoefficient,sum},{aAsPowerExponent,kAsCoefficient,max,withoutRepetition}": {
@@ -84180,9 +78070,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": -3,
                 "kAsCoefficient": 0.7777777777777778
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{jAsCoefficient,jAsPowerExponent,sum},{count,jAsCoefficient,jAsPowerExponent,withoutRepetition}": {
@@ -84199,10 +78086,6 @@ AND THE BEST METRICS WERE {
                 "jAsCoefficient": 0.8888888888888888,
                 "jAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient",
-            "jAsPowerExponent"
         ]
     },
     "{jAsCoefficient,jAsPowerExponent,sum},{count,jAsPowerExponent,withoutRepetition}": {
@@ -84218,9 +78101,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "jAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{kAsPowerExponent,sum,w,x}": {
@@ -84261,9 +78141,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "kAsCoefficient": 0.7777777777777778
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{sum},{kAsPowerExponent,sum,useNuminator}": {
@@ -84334,10 +78211,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.0677966101694913,
                 "x": -0.5593220338983049
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent",
-            "x"
         ]
     },
     "{jAsPowerExponent,sum,w},{count,jAsPowerExponent,w,withoutRepetition}": {
@@ -84354,10 +78227,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.0677966101694913,
                 "w": -0.5593220338983049
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent",
-            "w"
         ]
     },
     "{count,kAsCoefficient},{max,weightAsPowerExponent,withoutRepetition}": {
@@ -84401,9 +78270,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "aAsPowerExponent": 0.5593220338983049
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{kAsCoefficient,sum},{jAsLogarithmBase,kAsCoefficient,max,withoutRepetition}": {
@@ -84419,9 +78285,6 @@ AND THE BEST METRICS WERE {
                 "jAsLogarithmBase": 2,
                 "kAsCoefficient": 0.4444444444444444
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{kAsPowerExponent,sum},{count,x}": {
@@ -84477,9 +78340,6 @@ AND THE BEST METRICS WERE {
                 "withoutRepetition": true,
                 "kAsCoefficient": 0.7777777777777778
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{sum},{kAsCoefficient,sum,weightAsPowerBase}": {
@@ -84655,9 +78515,6 @@ AND THE BEST METRICS WERE {
                 "weightAsCoefficient": 0,
                 "kAsCoefficient": 0.7777777777777778
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{kAsCoefficient,sum},{aAsCoefficient,aAsLogarithmBase,sum}": {
@@ -84687,9 +78544,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0,
                 "kAsCoefficient": 0.7777777777777778
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{kAsCoefficient,sum},{aAsLogarithmBase,count,withoutRepetition}": {
@@ -84719,9 +78573,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "kAsCoefficient": 0.7777777777777778
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{kAsCoefficient,sum},{count,weightAsCoefficient}": {
@@ -84749,9 +78600,6 @@ AND THE BEST METRICS WERE {
                 "weightAsCoefficient": 0,
                 "kAsCoefficient": 0.7777777777777778
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{kAsCoefficient,sum},{aAsLogarithmBase,count}": {
@@ -84779,9 +78627,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "kAsCoefficient": 0.7777777777777778
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{kAsCoefficient,sum},{aAsCoefficient,count}": {
@@ -84809,9 +78654,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0,
                 "kAsCoefficient": 0.7777777777777778
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{kAsCoefficient,sum},{sum,useNuminator}": {
@@ -84852,9 +78694,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerBase": 2,
                 "kAsCoefficient": 0.7777777777777778
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{kAsCoefficient,sum,weightAsPowerBase},{kAsCoefficient,sum}": {
@@ -84869,9 +78708,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "kAsCoefficient": 0.7777777777777778
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{kAsCoefficient,sum,weightAsPowerBase},{kAsCoefficient,sum,weightAsPowerBase}": {
@@ -84887,9 +78723,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0.7777777777777778,
                 "weightAsPowerBase": 2
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{kAsCoefficient,sum},{kAsCoefficient,sum,weightAsPowerExponent}": {
@@ -84904,9 +78737,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 0.05084745762711851,
                 "kAsCoefficient": 0.7777777777777778
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{kAsCoefficient,sum,weightAsPowerExponent},{kAsCoefficient,sum}": {
@@ -84921,9 +78751,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "kAsCoefficient": 0.7777777777777778
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{kAsCoefficient,sum,weightAsPowerExponent},{kAsCoefficient,sum,weightAsPowerExponent}": {
@@ -84939,10 +78766,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0.7777777777777778,
                 "weightAsPowerExponent": 0.05084745762711851
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient",
-            "weightAsPowerExponent"
         ]
     },
     "{kAsCoefficient,sum},{kAsCoefficient,sum,weightAsLogarithmBase}": {
@@ -84957,9 +78780,6 @@ AND THE BEST METRICS WERE {
                 "weightAsLogarithmBase": 2,
                 "kAsCoefficient": 0.7777777777777778
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{kAsCoefficient,sum,weightAsLogarithmBase},{kAsCoefficient,sum}": {
@@ -84974,9 +78794,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "kAsCoefficient": 0.7777777777777778
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{kAsCoefficient,sum,weightAsLogarithmBase},{kAsCoefficient,sum,weightAsLogarithmBase}": {
@@ -84992,9 +78809,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0.7777777777777778,
                 "weightAsLogarithmBase": 2
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{kAsCoefficient,sum},{sum,weightAsCoefficient}": {
@@ -85022,9 +78836,6 @@ AND THE BEST METRICS WERE {
                 "weightAsCoefficient": 0,
                 "kAsCoefficient": 0.7777777777777778
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{sum,weightAsCoefficient},{kAsCoefficient,sum}": {
@@ -85052,9 +78863,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "kAsCoefficient": 0.7777777777777778
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{sum,weightAsCoefficient},{kAsCoefficient,sum,weightAsCoefficient}": {
@@ -85069,9 +78877,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0.5555555555555556,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{kAsCoefficient,sum,weightAsCoefficient},{sum,weightAsCoefficient}": {
@@ -85086,9 +78891,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{kAsCoefficient,sum,weightAsCoefficient},{kAsCoefficient,sum,weightAsCoefficient}": {
@@ -85104,10 +78906,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0.7777777777777778,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient",
-            "weightAsCoefficient"
         ]
     },
     "{kAsCoefficient,sum},{kAsCoefficient,sum}": {
@@ -85150,9 +78948,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "kAsCoefficient": 0.7777777777777778
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{kAsCoefficient,sum},{jAsCoefficient,sum}": {
@@ -85252,9 +79047,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0.2222222222222222,
                 "kAsCoefficient": 0.7777777777777778
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{aAsCoefficient,kAsCoefficient,sum},{kAsCoefficient,sum}": {
@@ -85269,9 +79061,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "kAsCoefficient": 0.7777777777777778
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{sum},{kAsCoefficient,sum,weightAsCoefficient}": {
@@ -85313,9 +79102,6 @@ AND THE BEST METRICS WERE {
                 "weightAsCoefficient": 0.1111111111111111,
                 "kAsCoefficient": 0.7777777777777778
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{kAsCoefficient,sum},{aAsCoefficient,kAsCoefficient,max,withoutRepetition}": {
@@ -85331,9 +79117,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0.1111111111111111,
                 "kAsCoefficient": 0.7777777777777778
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{jAsPowerExponent,sum,weightAsPowerBase},{max,weightAsPowerBase,withoutRepetition}": {
@@ -85364,9 +79147,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{aAsCoefficient,aAsPowerExponent,jAsPowerExponent,sum}": {
@@ -85433,9 +79213,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "kAsCoefficient": 0.7777777777777778
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{aAsPowerExponent,jAsPowerExponent,kAsCoefficient,sum}": {
@@ -85461,9 +79238,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0.6666666666666666,
                 "aAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,kAsCoefficient,sum},{aAsPowerExponent,sum}": {
@@ -85478,9 +79252,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "aAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{kAsCoefficient,sum,weightAsPowerBase},{count}": {
@@ -85508,9 +79279,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "kAsCoefficient": 0.7777777777777778
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{kAsCoefficient,sum,weightAsPowerBase},{count,weightAsPowerBase}": {
@@ -85540,9 +79308,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0.7777777777777778,
                 "weightAsPowerBase": 2
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{kAsCoefficient,sum},{count,weightAsPowerExponent}": {
@@ -85583,9 +79348,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "kAsCoefficient": 0.7777777777777778
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{kAsCoefficient,sum,weightAsPowerExponent},{count,kAsCoefficient,weightAsPowerExponent}": {
@@ -85601,10 +79363,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0.7777777777777778,
                 "weightAsPowerExponent": 2.389830508474576
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient",
-            "weightAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum,x},{count}": {
@@ -85645,9 +79403,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerExponent": 0.8644067796610169,
                 "x": -0.6610169491525424
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{kAsPowerExponent,sum,x},{sum,x}": {
@@ -85662,9 +79417,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "x": -0.6610169491525424
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,w},{kAsPowerExponent,sum,w}": {
@@ -85679,9 +79431,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerExponent": 0.8644067796610169,
                 "w": -0.6610169491525424
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{kAsPowerExponent,sum,w},{sum,w}": {
@@ -85696,9 +79445,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "w": -0.6610169491525424
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{kAsCoefficient,sum},{count,kAsCoefficient,weightAsPowerExponent}": {
@@ -85713,9 +79459,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 0.15254237288135597,
                 "kAsCoefficient": 0.7777777777777778
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{kAsCoefficient,sum,weightAsPowerExponent},{count,weightAsPowerExponent}": {
@@ -85730,9 +79473,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "weightAsPowerExponent": 2.288135593220339
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum},{jAsCoefficient,max,withoutRepetition}": {
@@ -85761,9 +79501,6 @@ AND THE BEST METRICS WERE {
                 "useNuminator": true,
                 "kAsCoefficient": 0.7777777777777778
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{kAsCoefficient,sum,useNuminator},{kAsCoefficient,sum}": {
@@ -85778,9 +79515,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "kAsCoefficient": 0.7777777777777778
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{kAsPowerExponent,sum},{kAsPowerExponent,sum}": {
@@ -85809,9 +79543,6 @@ AND THE BEST METRICS WERE {
                 "withoutRepetition": true,
                 "weightAsPowerExponent": 1.7796610169491522
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{kAsCoefficient,sum},{kAsCoefficient,max,weightAsLogarithmBase,withoutRepetition}": {
@@ -85827,9 +79558,6 @@ AND THE BEST METRICS WERE {
                 "weightAsLogarithmBase": 2,
                 "kAsCoefficient": 0.7777777777777778
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{aAsPowerExponent,kAsCoefficient,sum},{aAsLogarithmBase,aAsPowerExponent,sum}": {
@@ -85845,9 +79573,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{kAsPowerExponent,sum},{aAsLogarithmBase,aAsPowerExponent,kAsPowerExponent,sum}": {
@@ -85863,9 +79588,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 2.186440677966102,
                 "kAsPowerExponent": 0.8644067796610169
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum,w},{aAsLogarithmBase,sum,w}": {
@@ -85881,9 +79603,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "w": -0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{kAsCoefficient,sum},{aAsCoefficient,sum}": {
@@ -86005,9 +79724,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0.5555555555555556,
                 "aAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{aAsCoefficient,kAsCoefficient,sum},{aAsCoefficient,sum}": {
@@ -86022,9 +79738,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "aAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{aAsCoefficient,kAsCoefficient,sum},{aAsCoefficient,kAsCoefficient,sum}": {
@@ -86040,10 +79753,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0.7777777777777778,
                 "aAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient",
-            "aAsCoefficient"
         ]
     },
     "{aAsCoefficient,kAsCoefficient,sum,weightAsPowerExponent}": {
@@ -86211,9 +79920,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 0.25423728813559343,
                 "kAsCoefficient": 0.7777777777777778
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{kAsCoefficient,sum,useNuminator}": {
@@ -86283,9 +79989,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0.7777777777777778,
                 "useNuminator": true
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{jAsPowerExponent,sum},{aAsLogarithmBase,kAsPowerExponent,sum}": {
@@ -86351,9 +80054,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0.5555555555555556,
                 "y": 1.3728813559322033
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{aAsLogarithmBase,kAsCoefficient,sum,w,weightAsCoefficient}": {
@@ -86430,10 +80130,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0.8888888888888888,
                 "w": -1.6779661016949152
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient",
-            "w"
         ]
     },
     "{count,w},{aAsLogarithmBase,kAsCoefficient,sum,w}": {
@@ -86449,9 +80145,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0.7777777777777778,
                 "w": -1.271186440677966
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{kAsCoefficient,sum,y},{count,y}": {
@@ -86466,9 +80159,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "y": 0.8644067796610169
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{aAsPowerExponent,kAsCoefficient,sum},{aAsLogarithmBase,sum}": {
@@ -86497,9 +80187,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerBase": 2,
                 "kAsPowerExponent": 0.5593220338983049
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{kAsPowerBase,kAsPowerExponent,sum},{kAsPowerExponent,sum}": {
@@ -86514,9 +80201,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "kAsPowerExponent": 0.5593220338983049
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{aAsLogarithmBase,jAsPowerExponent,sum,w}": {
@@ -86593,10 +80277,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.0677966101694913,
                 "w": -1.6779661016949152
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent",
-            "w"
         ]
     },
     "{sum,withoutRepetition,x},{aAsLogarithmBase,jAsPowerExponent,sum}": {
@@ -86696,9 +80376,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "kAsCoefficient": 0.7777777777777778
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{kAsCoefficient,sum,weightAsPowerBase},{count,weightAsPowerBase,withoutRepetition}": {
@@ -86730,9 +80407,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0.7777777777777778,
                 "weightAsPowerBase": 2
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{aAsPowerExponent,sum},{aAsPowerExponent,jAsPowerExponent,sum}": {
@@ -86747,9 +80421,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.0677966101694913,
                 "aAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,jAsPowerExponent,sum},{aAsPowerExponent,sum}": {
@@ -86764,9 +80435,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "aAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{sum},{kAsCoefficient,sum,useNuminator}": {
@@ -86847,9 +80515,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 0.6610169491525424,
                 "kAsCoefficient": 0.4444444444444444
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{sum},{aAsPowerExponent,jAsPowerExponent,sum}": {
@@ -86944,9 +80609,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "x": 3
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{kAsCoefficient,sum,w},{max,withoutRepetition}": {
@@ -86976,9 +80638,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "w": 3
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{kAsPowerExponent,sum,useNuminator,y}": {
@@ -87099,9 +80758,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 2.389830508474576,
                 "kAsPowerExponent": 0.8644067796610169
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{aAsLogarithmBase,aAsPowerExponent,kAsPowerExponent,sum},{aAsLogarithmBase,kAsPowerExponent,sum}": {
@@ -87118,9 +80774,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "kAsPowerExponent": 0.8644067796610169
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum},{kAsPowerExponent,max,withoutRepetition}": {
@@ -87206,9 +80859,6 @@ AND THE BEST METRICS WERE {
                 "x": -3,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{kAsPowerExponent,sum},{aAsPowerExponent,sum}": {
@@ -87322,9 +80972,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "y": 0.8644067796610169
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{jAsPowerExponent,sum},{sum,weightAsPowerExponent}": {
@@ -87366,9 +81013,6 @@ AND THE BEST METRICS WERE {
                 "withoutRepetition": true,
                 "kAsCoefficient": 0.7777777777777778
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{kAsCoefficient,sum,y},{kAsCoefficient,sum,withoutRepetition,y}": {
@@ -87385,10 +81029,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0.7777777777777778,
                 "y": 1.3728813559322033
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient",
-            "y"
         ]
     },
     "{aAsCoefficient,kAsPowerExponent,sum,weightAsPowerBase}": {
@@ -87469,10 +81109,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerExponent": 1.7796610169491522,
                 "aAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent",
-            "aAsCoefficient"
         ]
     },
     "{kAsCoefficient,sum,y},{sum,withoutRepetition}": {
@@ -87502,9 +81138,6 @@ AND THE BEST METRICS WERE {
                 "withoutRepetition": true,
                 "y": 1.3728813559322033
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{kAsCoefficient,sum},{count,kAsCoefficient,kAsPowerBase,withoutRepetition}": {
@@ -87520,9 +81153,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerBase": 2,
                 "kAsCoefficient": 0.6666666666666666
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{sum},{aAsPowerExponent,kAsPowerExponent,sum}": {
@@ -87591,9 +81221,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerExponent": 2.491525423728813,
                 "aAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{aAsCoefficient,kAsPowerExponent,sum},{aAsCoefficient,sum}": {
@@ -87608,9 +81235,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "aAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{kAsCoefficient,sum},{count,kAsCoefficient,usePrimeIndex,withoutRepetition}": {
@@ -87626,9 +81250,6 @@ AND THE BEST METRICS WERE {
                 "usePrimeIndex": true,
                 "kAsCoefficient": 0.6666666666666666
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{kAsCoefficient,sum},{count,kAsCoefficient,useNuminator,withoutRepetition}": {
@@ -87644,9 +81265,6 @@ AND THE BEST METRICS WERE {
                 "useNuminator": true,
                 "kAsCoefficient": 0.6666666666666666
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{kAsCoefficient,sum},{count,kAsCoefficient,withoutRepetition,y}": {
@@ -87662,9 +81280,6 @@ AND THE BEST METRICS WERE {
                 "y": -3,
                 "kAsCoefficient": 0.6666666666666666
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{kAsCoefficient,sum,weightAsCoefficient},{count,kAsCoefficient,withoutRepetition}": {
@@ -87680,9 +81295,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "kAsCoefficient": 0.6666666666666666
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{kAsCoefficient,sum},{aAsPowerExponent,count,kAsCoefficient,withoutRepetition}": {
@@ -87698,9 +81310,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": -3,
                 "kAsCoefficient": 0.6666666666666666
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{aAsCoefficient,kAsCoefficient,sum},{count,kAsCoefficient,withoutRepetition}": {
@@ -87716,9 +81325,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "kAsCoefficient": 0.6666666666666666
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{kAsCoefficient,sum},{count,kAsCoefficient,kAsPowerExponent,withoutRepetition}": {
@@ -87734,9 +81340,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerExponent": 0.05084745762711851,
                 "kAsCoefficient": 0.6666666666666666
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{jAsPowerExponent,sum},{sum,weightAsPowerExponent,withoutRepetition}": {
@@ -87791,9 +81394,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "aAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{kAsCoefficient,sum},{count,jAsPowerExponent,kAsCoefficient}": {
@@ -87808,9 +81408,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 0.4576271186440679,
                 "kAsCoefficient": 0.6666666666666666
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{kAsCoefficient,sum},{count,jAsLogarithmBase,kAsCoefficient,withoutRepetition}": {
@@ -87826,9 +81423,6 @@ AND THE BEST METRICS WERE {
                 "jAsLogarithmBase": 2,
                 "kAsCoefficient": 0.6666666666666666
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{sum,x},{aAsLogarithmBase,kAsPowerExponent,sum,x}": {
@@ -87844,9 +81438,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerExponent": 0.15254237288135597,
                 "x": -1.3728813559322033
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{jAsPowerExponent,sum},{jAsPowerExponent,max,withoutRepetition}": {
@@ -87902,9 +81493,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": -0.35593220338983045,
                 "kAsCoefficient": 0.6666666666666666
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{kAsCoefficient,sum},{max,weightAsLogarithmBase,withoutRepetition}": {
@@ -87948,9 +81536,6 @@ AND THE BEST METRICS WERE {
                 "u": -3,
                 "x": -1.6779661016949152
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{kAsPowerExponent,sum},{sum,y}": {
@@ -87992,9 +81577,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum,x},{count,jAsPowerExponent}": {
@@ -88009,9 +81591,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum,w},{count,jAsPowerExponent}": {
@@ -88026,9 +81605,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{kAsCoefficient,sum,x},{count}": {
@@ -88083,9 +81659,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "x": -0.5593220338983049
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{jAsPowerExponent,sum,w},{count,w}": {
@@ -88100,9 +81673,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "w": -0.5593220338983049
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{kAsCoefficient,sum,w},{aAsLogarithmBase,sum,w}": {
@@ -88118,9 +81688,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "w": -0.8644067796610169
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{jAsPowerExponent,sum},{jAsCoefficient,sum,withoutRepetition}": {
@@ -88164,9 +81731,6 @@ AND THE BEST METRICS WERE {
                 "withoutRepetition": true,
                 "y": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{kAsPowerExponent,sum},{kAsCoefficient,kAsPowerExponent,sum}": {
@@ -88181,9 +81745,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0.1111111111111111,
                 "kAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{kAsCoefficient,kAsPowerExponent,sum},{kAsPowerExponent,sum}": {
@@ -88198,9 +81759,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "kAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{kAsPowerExponent,sum},{sum,x}": {
@@ -88269,10 +81827,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0.6666666666666666,
                 "weightAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient",
-            "weightAsPowerExponent"
         ]
     },
     "{sum},{kAsCoefficient,sum},{count,withoutRepetition}": {
@@ -88319,9 +81873,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0,
                 "jAsPowerExponent": 0.8644067796610169
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,kAsCoefficient,sum},{jAsPowerExponent,sum}": {
@@ -88336,9 +81887,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "jAsPowerExponent": 0.8644067796610169
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{max,usePrimeIndex,withoutRepetition},{aAsLogarithmBase,kAsCoefficient,sum,usePrimeIndex}": {
@@ -88383,9 +81931,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerExponent": 0.5593220338983049,
                 "y": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{kAsPowerExponent,sum,y},{sum,y}": {
@@ -88400,9 +81945,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "y": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{kAsCoefficient,sum},{count,withoutRepetition,x}": {
@@ -88432,9 +81974,6 @@ AND THE BEST METRICS WERE {
                 "x": -0.4576271186440679,
                 "kAsCoefficient": 0.6666666666666666
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{kAsCoefficient,sum},{count,w,withoutRepetition}": {
@@ -88464,9 +82003,6 @@ AND THE BEST METRICS WERE {
                 "w": -0.4576271186440679,
                 "kAsCoefficient": 0.6666666666666666
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{kAsCoefficient,sum},{count,weightAsPowerExponent,withoutRepetition}": {
@@ -88496,9 +82032,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 0.6610169491525424,
                 "kAsCoefficient": 0.6666666666666666
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{kAsCoefficient,sum,weightAsPowerExponent},{count,weightAsPowerExponent,withoutRepetition}": {
@@ -88514,9 +82047,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "weightAsPowerExponent": 1.2711864406779663
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{kAsCoefficient,sum},{count,weightAsCoefficient,withoutRepetition}": {
@@ -88546,9 +82076,6 @@ AND THE BEST METRICS WERE {
                 "weightAsCoefficient": 0.5555555555555556,
                 "kAsCoefficient": 0.6666666666666666
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{kAsCoefficient,sum},{aAsCoefficient,count,withoutRepetition}": {
@@ -88578,9 +82105,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0.5555555555555556,
                 "kAsCoefficient": 0.6666666666666666
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{kAsCoefficient,sum,x},{aAsLogarithmBase,sum,x}": {
@@ -88596,9 +82120,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "x": -1.0677966101694916
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{aAsCoefficient,kAsPowerBase,sum,w}": {
@@ -88625,9 +82146,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "kAsCoefficient": 0.7777777777777778
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{kAsCoefficient,sum,weightAsPowerExponent},{count,kAsCoefficient,withoutRepetition}": {
@@ -88643,9 +82161,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "kAsCoefficient": 0.6666666666666666
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{kAsCoefficient,sum,weightAsPowerExponent},{count,withoutRepetition}": {
@@ -88730,10 +82245,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.0677966101694913,
                 "aAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent",
-            "aAsPowerExponent"
         ]
     },
     "{kAsCoefficient,kAsPowerExponent,sum,useNuminator}": {
@@ -88761,10 +82272,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0.7777777777777778,
                 "aAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient",
-            "aAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum,x},{aAsLogarithmBase,jAsPowerExponent,sum,x}": {
@@ -88781,10 +82288,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.0677966101694913,
                 "x": -1.7796610169491525
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent",
-            "x"
         ]
     },
     "{count},{aAsLogarithmBase,jAsCoefficient,sum,w}": {
@@ -88826,9 +82329,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "x": -0.5593220338983049
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{kAsCoefficient,sum,w},{count,w}": {
@@ -88843,9 +82343,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "w": -0.5593220338983049
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{kAsCoefficient,kAsPowerExponent,sum,weightAsPowerBase}": {
@@ -88915,10 +82412,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0.3333333333333333,
                 "kAsPowerExponent": 1.4745762711864403
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient",
-            "kAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum,x},{count,jAsPowerExponent,x}": {
@@ -88934,10 +82427,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.0677966101694913,
                 "x": -0.5593220338983049
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent",
-            "x"
         ]
     },
     "{jAsPowerExponent,sum,w},{count,jAsPowerExponent,w}": {
@@ -88953,10 +82442,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.0677966101694913,
                 "w": -0.5593220338983049
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent",
-            "w"
         ]
     },
     "{kAsCoefficient,sum,x},{count,withoutRepetition}": {
@@ -89051,9 +82536,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.1694915254237293,
                 "x": -0.05084745762711851
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{jAsPowerExponent,sum,x},{sum,x}": {
@@ -89068,9 +82550,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "x": -0.05084745762711851
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,w},{jAsPowerExponent,sum,w}": {
@@ -89085,9 +82564,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.1694915254237293,
                 "w": -0.05084745762711851
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{jAsPowerExponent,sum,w},{sum,w}": {
@@ -89102,9 +82578,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "w": -0.05084745762711851
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{jAsPowerExponent,sum,weightAsPowerExponent},{sum,withoutRepetition}": {
@@ -89188,10 +82661,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0.2222222222222222,
                 "jAsPowerExponent": 0.6610169491525424
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient",
-            "jAsPowerExponent"
         ]
     },
     "{sum},{jAsPowerExponent,sum,w}": {
@@ -89259,9 +82728,6 @@ AND THE BEST METRICS WERE {
                 "weightAsCoefficient": 0.1111111111111111,
                 "kAsCoefficient": 0.7777777777777778
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{kAsCoefficient,sum},{aAsCoefficient,kAsCoefficient,sum,withoutRepetition}": {
@@ -89277,9 +82743,6 @@ AND THE BEST METRICS WERE {
                 "aAsCoefficient": 0.1111111111111111,
                 "kAsCoefficient": 0.7777777777777778
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{kAsCoefficient,sum},{kAsCoefficient,sum,weightAsLogarithmBase,withoutRepetition}": {
@@ -89295,9 +82758,6 @@ AND THE BEST METRICS WERE {
                 "weightAsLogarithmBase": 2,
                 "kAsCoefficient": 0.7777777777777778
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{kAsCoefficient,sum},{aAsPowerExponent,kAsCoefficient,sum}": {
@@ -89312,9 +82772,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 1.0677966101694913,
                 "kAsCoefficient": 0.7777777777777778
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{aAsPowerExponent,kAsCoefficient,sum},{kAsCoefficient,sum}": {
@@ -89329,9 +82786,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "kAsCoefficient": 0.7777777777777778
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{jAsPowerExponent,sum,x,y}": {
@@ -89357,9 +82811,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerExponent": 1.4745762711864403,
                 "kAsCoefficient": 0.4444444444444444
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{kAsCoefficient,kAsPowerExponent,sum},{kAsCoefficient,sum}": {
@@ -89374,9 +82825,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "kAsCoefficient": 0.4444444444444444
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{kAsCoefficient,sum,y}": {
@@ -89446,10 +82894,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0.7777777777777778,
                 "y": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient",
-            "y"
         ]
     },
     "{aAsPowerExponent,sum},{aAsLogarithmBase,jAsPowerExponent,sum}": {
@@ -89478,9 +82922,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "kAsCoefficient": 0.7777777777777778
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{kAsCoefficient,sum,w},{count,kAsCoefficient}": {
@@ -89495,9 +82936,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "kAsCoefficient": 0.7777777777777778
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{kAsCoefficient,sum,x}": {
@@ -89633,9 +83071,6 @@ AND THE BEST METRICS WERE {
                 "x": -1.1694915254237288,
                 "kAsCoefficient": 0.7777777777777778
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{kAsCoefficient,sum},{count,w}": {
@@ -89663,9 +83098,6 @@ AND THE BEST METRICS WERE {
                 "w": -1.1694915254237288,
                 "kAsCoefficient": 0.7777777777777778
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{kAsCoefficient,sum},{sum,x}": {
@@ -89706,9 +83138,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0.5555555555555556,
                 "x": -0.15254237288135597
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{kAsCoefficient,sum,x},{sum,x}": {
@@ -89723,9 +83152,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "x": -0.15254237288135597
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{kAsCoefficient,sum,x},{kAsCoefficient,sum,x}": {
@@ -89741,10 +83167,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0.7777777777777778,
                 "x": -0.15254237288135597
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient",
-            "x"
         ]
     },
     "{kAsCoefficient,sum},{sum,w}": {
@@ -89785,9 +83207,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0.5555555555555556,
                 "w": -0.15254237288135597
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{kAsCoefficient,sum,w},{sum,w}": {
@@ -89802,9 +83221,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "w": -0.15254237288135597
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{kAsCoefficient,sum,w},{kAsCoefficient,sum,w}": {
@@ -89820,10 +83236,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0.7777777777777778,
                 "w": -0.15254237288135597
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient",
-            "w"
         ]
     },
     "{kAsCoefficient,sum},{count,jAsPowerExponent,kAsCoefficient,withoutRepetition}": {
@@ -89839,9 +83251,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 0.6610169491525424,
                 "kAsCoefficient": 0.6666666666666666
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{jAsCoefficient,jAsPowerExponent,sum,weightAsPowerBase}": {
@@ -89910,9 +83319,6 @@ AND THE BEST METRICS WERE {
                 "jAsCoefficient": 0.5555555555555556,
                 "jAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{jAsCoefficient,jAsPowerExponent,sum},{jAsPowerExponent,sum}": {
@@ -89927,9 +83333,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "jAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{jAsCoefficient,jAsPowerExponent,sum},{jAsCoefficient,jAsPowerExponent,sum}": {
@@ -89945,10 +83348,6 @@ AND THE BEST METRICS WERE {
                 "jAsCoefficient": 0.7777777777777778,
                 "jAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient",
-            "jAsPowerExponent"
         ]
     },
     "{sum},{jAsPowerExponent,sum},{sum,withoutRepetition}": {
@@ -90006,9 +83405,6 @@ AND THE BEST METRICS WERE {
                 "x": -0.25423728813559343,
                 "kAsCoefficient": 0.7777777777777778
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{kAsCoefficient,sum,x},{kAsCoefficient,sum}": {
@@ -90023,9 +83419,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "kAsCoefficient": 0.7777777777777778
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{kAsCoefficient,sum},{kAsCoefficient,sum,w}": {
@@ -90040,9 +83433,6 @@ AND THE BEST METRICS WERE {
                 "w": -0.25423728813559343,
                 "kAsCoefficient": 0.7777777777777778
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{kAsCoefficient,sum,w},{kAsCoefficient,sum}": {
@@ -90057,9 +83447,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "kAsCoefficient": 0.7777777777777778
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{sum},{aAsPowerExponent,kAsCoefficient,sum}": {
@@ -90101,10 +83488,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0.7777777777777778,
                 "x": -0.5593220338983049
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient",
-            "x"
         ]
     },
     "{kAsCoefficient,sum,w},{count,kAsCoefficient,w}": {
@@ -90120,10 +83503,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0.7777777777777778,
                 "w": -0.5593220338983049
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient",
-            "w"
         ]
     },
     "{sum},{kAsCoefficient,sum,x}": {
@@ -90190,9 +83569,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 1.0677966101694913,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,jAsPowerExponent,sum},{jAsPowerExponent,sum}": {
@@ -90207,9 +83583,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{count,kAsCoefficient,x},{aAsLogarithmBase,kAsCoefficient,sum}": {
@@ -90225,9 +83598,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "kAsCoefficient": 0.8888888888888888
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{count,kAsCoefficient},{aAsLogarithmBase,kAsCoefficient,sum,w}": {
@@ -90243,9 +83613,6 @@ AND THE BEST METRICS WERE {
                 "w": -2.593220338983051,
                 "kAsCoefficient": 0.8888888888888888
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{count,kAsCoefficient,w},{aAsLogarithmBase,kAsCoefficient,sum}": {
@@ -90261,9 +83628,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "kAsCoefficient": 0.8888888888888888
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{jAsPowerExponent,sum},{max,weightAsCoefficient,withoutRepetition}": {
@@ -90306,9 +83670,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0.4444444444444444,
                 "y": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{kAsCoefficient,sum,y},{sum,y}": {
@@ -90323,9 +83684,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "y": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{kAsPowerExponent,sum},{aAsLogarithmBase,aAsPowerExponent,sum}": {
@@ -90380,9 +83738,6 @@ AND THE BEST METRICS WERE {
                 "y": 0.9661016949152543,
                 "kAsCoefficient": 0.7777777777777778
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{sum,y},{kAsCoefficient,sum}": {
@@ -90423,9 +83778,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "kAsCoefficient": 0.7777777777777778
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{sum},{jAsPowerExponent,sum}": {
@@ -90478,9 +83830,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.1694915254237293,
                 "weightAsPowerExponent": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum,weightAsPowerExponent},{sum,weightAsPowerExponent}": {
@@ -90495,9 +83844,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "weightAsPowerExponent": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum},{jAsPowerExponent,sum,weightAsCoefficient}": {
@@ -90564,9 +83910,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.1694915254237293,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{jAsPowerExponent,sum,weightAsCoefficient},{sum,weightAsCoefficient}": {
@@ -90581,9 +83924,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{sum},{aAsCoefficient,jAsPowerExponent,sum}": {
@@ -90650,9 +83990,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.1694915254237293,
                 "aAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{aAsCoefficient,jAsPowerExponent,sum},{aAsCoefficient,sum}": {
@@ -90667,9 +84004,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "aAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{jAsPowerExponent,sum},{sum}": {
@@ -90722,9 +84056,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.1694915254237293,
                 "jAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{jAsPowerExponent,sum},{jAsCoefficient,sum}": {
@@ -90765,9 +84096,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "jAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{sum},{jAsPowerExponent,kAsCoefficient,sum}": {
@@ -90808,9 +84136,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.1694915254237293,
                 "kAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{jAsPowerExponent,sum},{kAsCoefficient,sum}": {
@@ -90851,9 +84176,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "kAsCoefficient": 1
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{count,withoutRepetition},{aAsLogarithmBase,aAsPowerExponent,kAsPowerExponent,sum}": {
@@ -90885,9 +84207,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 2.288135593220339,
                 "kAsPowerExponent": 0.8644067796610169
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,count,withoutRepetition},{aAsLogarithmBase,aAsPowerExponent,kAsPowerExponent,sum}": {
@@ -90904,9 +84223,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerExponent": 0.8644067796610169,
                 "aAsPowerExponent": 2.288135593220339
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,count,kAsPowerExponent,withoutRepetition},{aAsLogarithmBase,aAsPowerExponent,kAsPowerExponent,sum}": {
@@ -90924,10 +84240,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerExponent": 0.8644067796610169,
                 "aAsPowerExponent": 2.288135593220339
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent",
-            "aAsPowerExponent"
         ]
     },
     "{sum,weightAsPowerExponent},{kAsPowerExponent,sum,weightAsPowerExponent}": {
@@ -90942,9 +84254,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerExponent": 0.4576271186440679,
                 "weightAsPowerExponent": 2.694915254237288
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{kAsPowerExponent,sum,weightAsPowerExponent},{sum,weightAsPowerExponent}": {
@@ -90959,9 +84268,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "weightAsPowerExponent": 2.694915254237288
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum},{aAsPowerExponent,sum,withoutRepetition}": {
@@ -91017,9 +84323,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerExponent": 0.05084745762711851,
                 "aAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsCoefficient,kAsCoefficient,sum,y}": {
@@ -91159,10 +84462,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.1694915254237293,
                 "aAsCoefficient": 0.2222222222222222
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent",
-            "aAsCoefficient"
         ]
     },
     "{jAsPowerExponent,sum,x},{count,jAsPowerExponent,withoutRepetition}": {
@@ -91178,9 +84477,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum,w},{count,jAsPowerExponent,withoutRepetition}": {
@@ -91196,9 +84492,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{aAsCoefficient,jAsPowerExponent,sum,weightAsPowerExponent}": {
@@ -91239,9 +84532,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 2.593220338983051
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum},{jAsPowerExponent,sum,withoutRepetition}": {
@@ -91324,9 +84614,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "aAsPowerExponent": 0.6610169491525424
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsCoefficient,kAsCoefficient,sum,w}": {
@@ -91415,9 +84702,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "x": -1.6779661016949152
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{jAsPowerExponent,kAsPowerBase,kAsPowerExponent,sum}": {
@@ -91500,9 +84784,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerExponent": 0.7627118644067798,
                 "w": 2.898305084745763
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{count,x},{aAsLogarithmBase,jAsPowerExponent,sum}": {
@@ -91709,10 +84990,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.0677966101694913,
                 "x": -0.15254237288135597
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent",
-            "x"
         ]
     },
     "{jAsPowerExponent,sum,w},{jAsPowerExponent,sum,w}": {
@@ -91728,10 +85005,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.0677966101694913,
                 "w": -0.15254237288135597
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent",
-            "w"
         ]
     },
     "{jAsPowerExponent,sum},{max,weightAsLogarithmBase,withoutRepetition}": {
@@ -91775,9 +85048,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum,w},{aAsLogarithmBase,jAsPowerExponent,sum}": {
@@ -91793,9 +85063,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{aAsCoefficient,jAsPowerExponent,sum,w}": {
@@ -91867,9 +85134,6 @@ AND THE BEST METRICS WERE {
                 "modifiedCount": true,
                 "kAsCoefficient": 0.6666666666666666
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{kAsCoefficient,sum},{sum,weightAsLogarithmBase,withoutRepetition}": {
@@ -91958,9 +85222,6 @@ AND THE BEST METRICS WERE {
                 "w": -1.6779661016949152,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{count,jAsPowerExponent,withoutRepetition},{aAsLogarithmBase,aAsPowerExponent,sum}": {
@@ -91992,9 +85253,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 2.593220338983051
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum,w,x}": {
@@ -92069,10 +85327,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0.7777777777777778,
                 "w": -0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient",
-            "w"
         ]
     },
     "{kAsCoefficient,kAsPowerExponent,sum,x}": {
@@ -92099,9 +85353,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "x": -0.25423728813559343
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{kAsCoefficient,sum,w},{count,w,withoutRepetition}": {
@@ -92117,9 +85368,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "w": -0.25423728813559343
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{kAsCoefficient,sum,v,y}": {
@@ -92160,9 +85408,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 0.15254237288135597,
                 "kAsCoefficient": 0.7777777777777778
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{aAsPowerExponent,sum},{aAsLogarithmBase,aAsPowerExponent,jAsPowerExponent,sum}": {
@@ -92178,9 +85423,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.2711864406779663,
                 "aAsPowerExponent": 1.2711864406779663
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{max,withoutRepetition},{aAsLogarithmBase,kAsCoefficient,sum,w}": {
@@ -92212,9 +85454,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0.7777777777777778,
                 "w": 2.898305084745763
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{jAsPowerExponent,sum},{jAsPowerExponent,sum,x}": {
@@ -92229,9 +85468,6 @@ AND THE BEST METRICS WERE {
                 "x": -0.15254237288135597,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum,x},{jAsPowerExponent,sum}": {
@@ -92246,9 +85482,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum},{jAsPowerExponent,sum,w}": {
@@ -92263,9 +85496,6 @@ AND THE BEST METRICS WERE {
                 "w": -0.15254237288135597,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum,w},{jAsPowerExponent,sum}": {
@@ -92280,9 +85510,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{kAsCoefficient,sum,weightAsPowerExponent},{max,withoutRepetition}": {
@@ -92312,9 +85539,6 @@ AND THE BEST METRICS WERE {
                 "weightAsPowerExponent": 0.15254237288135597,
                 "kAsCoefficient": 0.7777777777777778
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{jAsCoefficient,jAsPowerExponent,sum},{jAsCoefficient,sum,withoutRepetition}": {
@@ -92330,9 +85554,6 @@ AND THE BEST METRICS WERE {
                 "withoutRepetition": true,
                 "jAsCoefficient": 0.6666666666666666
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsCoefficient"
         ]
     },
     "{jAsPowerExponent,kAsPowerExponent,sum},{count,jAsPowerExponent,kAsPowerExponent}": {
@@ -92348,10 +85569,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerExponent": 1.6779661016949152,
                 "jAsPowerExponent": 1.4745762711864403
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent",
-            "jAsPowerExponent"
         ]
     },
     "{kAsCoefficient,sum},{max,weightAsPowerExponent,withoutRepetition}": {
@@ -92453,9 +85670,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "kAsCoefficient": 0.7777777777777778
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{jAsPowerExponent,kAsPowerExponent,sum},{count,jAsPowerExponent}": {
@@ -92470,9 +85684,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "jAsPowerExponent": 1.4745762711864403
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{sum},{aAsLogarithmBase,jAsPowerExponent,sum,weightAsPowerExponent}": {
@@ -92608,10 +85819,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0.7777777777777778,
                 "w": -1.271186440677966
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient",
-            "w"
         ]
     },
     "{aAsLogarithmBase,jAsPowerExponent,sum,useNuminator,w}": {
@@ -92664,9 +85871,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0.3333333333333333,
                 "weightAsPowerExponent": 2.898305084745763
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{kAsCoefficient,sum,weightAsPowerExponent},{sum,weightAsPowerExponent}": {
@@ -92681,9 +85885,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "weightAsPowerExponent": 2.898305084745763
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,sum},{jAsCoefficient,jAsPowerExponent,sum,withoutRepetition}": {
@@ -92699,9 +85900,6 @@ AND THE BEST METRICS WERE {
                 "jAsCoefficient": 0.1111111111111111,
                 "jAsPowerExponent": 1.2711864406779663
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,sum},{aAsLogarithmBase,kAsCoefficient,sum}": {
@@ -92745,9 +85943,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerExponent": 0.8644067796610169,
                 "aAsPowerExponent": 2.288135593220339
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{count},{max,withoutRepetition},{aAsLogarithmBase,jAsPowerExponent,sum}": {
@@ -92781,9 +85976,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0.6666666666666666,
                 "w": -1.576271186440678
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{aAsLogarithmBase,kAsCoefficient,sum,w},{aAsLogarithmBase,sum,w}": {
@@ -92800,9 +85992,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "w": -1.576271186440678
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{aAsPowerExponent,jAsPowerBase,sum,w}": {
@@ -92829,9 +86018,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0.2222222222222222,
                 "aAsPowerExponent": 1.1694915254237293
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{kAsCoefficient,sum,x},{aAsLogarithmBase,kAsCoefficient,sum,x}": {
@@ -92848,10 +86034,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0.7777777777777778,
                 "x": -1.0677966101694916
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient",
-            "x"
         ]
     },
     "{kAsCoefficient,sum,x},{aAsLogarithmBase,kAsCoefficient,sum}": {
@@ -92867,9 +86049,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "kAsCoefficient": 0.7777777777777778
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{kAsCoefficient,sum},{aAsLogarithmBase,kAsCoefficient,sum,w}": {
@@ -92885,9 +86064,6 @@ AND THE BEST METRICS WERE {
                 "w": -1.6779661016949152,
                 "kAsCoefficient": 0.7777777777777778
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{kAsCoefficient,sum,w},{aAsLogarithmBase,kAsCoefficient,sum}": {
@@ -92903,9 +86079,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "kAsCoefficient": 0.7777777777777778
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{sum,x},{count,kAsCoefficient}": {
@@ -92972,9 +86145,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 2.288135593220339,
                 "kAsPowerExponent": 0.8644067796610169
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,count,kAsPowerExponent},{aAsLogarithmBase,aAsPowerExponent,kAsPowerExponent,sum}": {
@@ -92991,10 +86161,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerExponent": 0.8644067796610169,
                 "aAsPowerExponent": 2.288135593220339
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent",
-            "aAsPowerExponent"
         ]
     },
     "{aAsLogarithmBase,sum},{aAsLogarithmBase,aAsPowerExponent,jAsPowerExponent,sum}": {
@@ -93098,9 +86264,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "x": -0.5593220338983049
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,u,x},{count,u,x}": {
@@ -93116,10 +86279,6 @@ AND THE BEST METRICS WERE {
                 "x": -0.5593220338983049,
                 "u": -1.0677966101694916
             }
-        ],
-        "spreadDynamicParameters": [
-            "x",
-            "u"
         ]
     },
     "{sum},{b,count,w}": {
@@ -93160,9 +86319,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "w": -0.5593220338983049
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{b,sum,w},{b,count,w}": {
@@ -93178,10 +86334,6 @@ AND THE BEST METRICS WERE {
                 "w": -0.5593220338983049,
                 "b": -1.0677966101694916
             }
-        ],
-        "spreadDynamicParameters": [
-            "w",
-            "b"
         ]
     },
     "{sum},{count,jAsCoefficient,x}": {
@@ -93383,10 +86535,6 @@ AND THE BEST METRICS WERE {
                 "x": -0.25423728813559343,
                 "u": -1.3728813559322033
             }
-        ],
-        "spreadDynamicParameters": [
-            "x",
-            "u"
         ]
     },
     "{b,sum,w},{b,sum,w}": {
@@ -93402,10 +86550,6 @@ AND THE BEST METRICS WERE {
                 "w": -0.25423728813559343,
                 "b": -1.3728813559322033
             }
-        ],
-        "spreadDynamicParameters": [
-            "w",
-            "b"
         ]
     },
     "{sum,x},{sum,u,x}": {
@@ -93420,9 +86564,6 @@ AND THE BEST METRICS WERE {
                 "u": -2.694915254237288,
                 "x": -0.25423728813559343
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,u,x},{sum,x}": {
@@ -93437,9 +86578,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "x": -0.25423728813559343
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,w},{b,sum,w}": {
@@ -93454,9 +86592,6 @@ AND THE BEST METRICS WERE {
                 "b": -2.694915254237288,
                 "w": -0.25423728813559343
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{b,sum,w},{sum,w}": {
@@ -93471,9 +86606,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "w": -0.25423728813559343
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum},{count,jAsPowerBase,x}": {
@@ -93540,9 +86672,6 @@ AND THE BEST METRICS WERE {
                 "u": -1.6779661016949152,
                 "x": -0.5593220338983049
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,w},{b,count,w}": {
@@ -93557,9 +86686,6 @@ AND THE BEST METRICS WERE {
                 "b": -1.6779661016949152,
                 "w": -0.5593220338983049
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{kAsCoefficient,sum},{aAsLogarithmBase,kAsCoefficient,sum,x}": {
@@ -93575,9 +86701,6 @@ AND THE BEST METRICS WERE {
                 "x": -2.593220338983051,
                 "kAsCoefficient": 0.7777777777777778
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{b,jAsCoefficient,sum,w}": {
@@ -93605,10 +86728,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0.6666666666666666,
                 "weightAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient",
-            "weightAsCoefficient"
         ]
     },
     "{jAsCoefficient,sum,u,x}": {
@@ -93742,9 +86861,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 2.389830508474576,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{aAsLogarithmBase,aAsPowerExponent,jAsPowerExponent,sum},{aAsLogarithmBase,jAsPowerExponent,sum}": {
@@ -93761,9 +86877,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{count,w},{aAsLogarithmBase,jAsPowerExponent,sum,w}": {
@@ -93779,9 +86892,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.1694915254237293,
                 "w": -1.3728813559322033
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{count},{aAsLogarithmBase,aAsPowerExponent,jAsPowerExponent,sum}": {
@@ -93811,9 +86921,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.0677966101694913,
                 "aAsPowerExponent": 2.288135593220339
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{sum,u,x},{max,withoutRepetition}": {
@@ -93843,9 +86950,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "x": 3
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{b,sum,w},{max,withoutRepetition}": {
@@ -93875,9 +86979,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "w": 3
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{kAsCoefficient,sum},{sum,weightAsPowerExponent,withoutRepetition}": {
@@ -93937,9 +87038,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0.2222222222222222,
                 "w": -0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{kAsCoefficient,sum,y},{count,kAsCoefficient}": {
@@ -93954,9 +87052,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "kAsCoefficient": 0.6666666666666666
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{jAsPowerExponent,kAsPowerExponent,sum},{aAsLogarithmBase,kAsPowerExponent,sum}": {
@@ -93972,9 +87067,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "kAsPowerExponent": 2.084745762711864
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,kAsCoefficient,sum,y}": {
@@ -94032,9 +87124,6 @@ AND THE BEST METRICS WERE {
                 "b": 1.0677966101694913,
                 "w": 2.898305084745763
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{aAsCoefficient,jAsPowerExponent,sum,useNuminator}": {
@@ -94060,9 +87149,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerExponent": 1.9830508474576272,
                 "jAsPowerExponent": 1.4745762711864403
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,kAsPowerExponent,sum},{jAsPowerExponent,sum}": {
@@ -94077,9 +87163,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "jAsPowerExponent": 1.4745762711864403
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{jAsCoefficient,jAsPowerExponent,sum,y}": {
@@ -94159,9 +87242,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "w": -1.3728813559322033
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{kAsCoefficient,sum,useNuminator},{count,kAsCoefficient,withoutRepetition}": {
@@ -94177,9 +87257,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "kAsCoefficient": 0.6666666666666666
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{kAsCoefficient,sum,useNuminator},{count,kAsCoefficient,useNuminator,withoutRepetition}": {
@@ -94196,9 +87273,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0.6666666666666666,
                 "useNuminator": true
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{kAsCoefficient,sum,weightAsPowerExponent},{kAsCoefficient,sum,withoutRepetition}": {
@@ -94214,9 +87288,6 @@ AND THE BEST METRICS WERE {
                 "withoutRepetition": true,
                 "kAsCoefficient": 0.6666666666666666
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{aAsCoefficient,sum,u,x}": {
@@ -94242,9 +87313,6 @@ AND THE BEST METRICS WERE {
                 "y": -0.4576271186440679,
                 "kAsCoefficient": 0.6666666666666666
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{jAsPowerExponent,sum},{sum,y}": {
@@ -94285,9 +87353,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.1694915254237293,
                 "y": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{jAsPowerExponent,sum,y},{sum,y}": {
@@ -94302,9 +87367,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "y": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "y"
         ]
     },
     "{aAsCoefficient,jAsPowerExponent,sum,y}": {
@@ -94456,9 +87518,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.1694915254237293,
                 "w": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{count,jAsPowerExponent},{aAsLogarithmBase,aAsPowerExponent,sum}": {
@@ -94488,9 +87547,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 2.593220338983051
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsLogarithmBase,aAsPowerExponent,sum},{aAsLogarithmBase,aAsPowerExponent,jAsPowerExponent,sum}": {
@@ -94507,9 +87563,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.1694915254237293,
                 "aAsPowerExponent": 2.186440677966102
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsLogarithmBase,aAsPowerExponent,jAsPowerExponent,sum},{aAsLogarithmBase,aAsPowerExponent,sum}": {
@@ -94526,9 +87579,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 2.186440677966102
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{b,kAsCoefficient,sum,w}": {
@@ -94605,9 +87655,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0.7777777777777778,
                 "aAsPowerExponent": 2.288135593220339
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{kAsCoefficient,sum,x},{count,kAsCoefficient,withoutRepetition}": {
@@ -94623,9 +87670,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "kAsCoefficient": 0.6666666666666666
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{kAsCoefficient,sum,w},{count,kAsCoefficient,withoutRepetition}": {
@@ -94641,9 +87685,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "kAsCoefficient": 0.6666666666666666
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{kAsCoefficient,sum},{count,kAsCoefficient,withoutRepetition}": {
@@ -94687,9 +87728,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 2.389830508474576
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{sum},{jAsPowerExponent,kAsPowerExponent,sum}": {
@@ -94812,9 +87850,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.2711864406779663,
                 "w": -1.576271186440678
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{aAsLogarithmBase,jAsPowerExponent,sum,w},{aAsLogarithmBase,sum,w}": {
@@ -94831,9 +87866,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "w": -1.576271186440678
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,x},{aAsLogarithmBase,kAsPowerExponent,sum}": {
@@ -94893,9 +87925,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 2.389830508474576
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{kAsPowerExponent,sum},{jAsPowerExponent,kAsPowerExponent,sum}": {
@@ -94910,9 +87939,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.7796610169491522,
                 "kAsPowerExponent": 1.8813559322033901
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,kAsPowerExponent,sum},{kAsPowerExponent,sum}": {
@@ -94927,9 +87953,6 @@ AND THE BEST METRICS WERE {
                 "sum": true,
                 "kAsPowerExponent": 1.8813559322033901
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{kAsCoefficient,sum},{aAsLogarithmBase,aAsPowerExponent,kAsCoefficient,sum}": {
@@ -94945,9 +87968,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 2.084745762711864,
                 "kAsCoefficient": 0.7777777777777778
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{kAsCoefficient,sum,x},{count,kAsCoefficient,withoutRepetition,x}": {
@@ -94964,10 +87984,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0.6666666666666666,
                 "x": -0.05084745762711851
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient",
-            "x"
         ]
     },
     "{kAsCoefficient,sum,w},{count,kAsCoefficient,w,withoutRepetition}": {
@@ -94984,10 +88000,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0.6666666666666666,
                 "w": -0.05084745762711851
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient",
-            "w"
         ]
     },
     "{count,x},{aAsLogarithmBase,kAsCoefficient,sum}": {
@@ -95032,10 +88044,6 @@ AND THE BEST METRICS WERE {
                 "w": -1.271186440677966,
                 "b": -1.3728813559322033
             }
-        ],
-        "spreadDynamicParameters": [
-            "w",
-            "b"
         ]
     },
     "{kAsCoefficient,sum,y},{count,kAsCoefficient,y}": {
@@ -95051,10 +88059,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0.6666666666666666,
                 "y": 0.8644067796610169
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient",
-            "y"
         ]
     },
     "{jAsPowerExponent,sum},{aAsLogarithmBase,aAsPowerExponent,jAsPowerExponent,sum}": {
@@ -95070,9 +88074,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 2.084745762711864,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{sum,x},{aAsLogarithmBase,kAsCoefficient,sum,x}": {
@@ -95088,9 +88089,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0.2222222222222222,
                 "x": -1.1694915254237288
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{kAsCoefficient,sum,y},{count,kAsCoefficient,withoutRepetition}": {
@@ -95106,9 +88104,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "kAsCoefficient": 0.6666666666666666
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{kAsCoefficient,sum,y},{count,kAsCoefficient,withoutRepetition,y}": {
@@ -95125,10 +88120,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0.6666666666666666,
                 "y": 0.9661016949152543
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient",
-            "y"
         ]
     },
     "{jAsPowerExponent,kAsPowerExponent,sum},{aAsLogarithmBase,sum}": {
@@ -95172,9 +88163,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "x": 2.898305084745763
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{jAsPowerExponent,sum,w},{max,withoutRepetition}": {
@@ -95204,9 +88192,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "w": 2.898305084745763
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{aAsLogarithmBase,aAsPowerExponent,kAsPowerBase,sum,w}": {
@@ -95234,9 +88219,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "w": -1.271186440677966
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{aAsCoefficient,jAsPowerExponent,kAsPowerBase,sum}": {
@@ -95263,9 +88245,6 @@ AND THE BEST METRICS WERE {
                 "b": -1.576271186440678,
                 "w": -1.271186440677966
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{count,jAsPowerExponent},{aAsLogarithmBase,aAsPowerExponent,jAsPowerExponent,sum}": {
@@ -95281,9 +88260,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 2.288135593220339,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,count,jAsPowerExponent},{aAsLogarithmBase,aAsPowerExponent,jAsPowerExponent,sum}": {
@@ -95300,10 +88276,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.0677966101694913,
                 "aAsPowerExponent": 2.288135593220339
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent",
-            "aAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,kAsPowerExponent,sum,useNuminator}": {
@@ -95380,10 +88352,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0.6666666666666666,
                 "aAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient",
-            "aAsCoefficient"
         ]
     },
     "{sum,u,x},{aAsLogarithmBase,sum,u,x}": {
@@ -95400,10 +88368,6 @@ AND THE BEST METRICS WERE {
                 "x": -0.4576271186440679,
                 "u": -2.1864406779661016
             }
-        ],
-        "spreadDynamicParameters": [
-            "x",
-            "u"
         ]
     },
     "{b,sum,w},{aAsLogarithmBase,sum,w}": {
@@ -95419,9 +88383,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "w": -0.25423728813559343
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{aAsLogarithmBase,aAsPowerExponent,jAsPowerExponent,sum,y}": {
@@ -95449,9 +88410,6 @@ AND THE BEST METRICS WERE {
                 "b": -2.694915254237288,
                 "w": -0.25423728813559343
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{b,sum,w},{aAsLogarithmBase,b,sum,w}": {
@@ -95468,10 +88426,6 @@ AND THE BEST METRICS WERE {
                 "w": -0.25423728813559343,
                 "b": -1.4745762711864407
             }
-        ],
-        "spreadDynamicParameters": [
-            "w",
-            "b"
         ]
     },
     "{aAsCoefficient,aAsLogarithmBase,kAsCoefficient,sum,w}": {
@@ -95612,10 +88566,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerExponent": 0.8644067796610169,
                 "aAsPowerExponent": 2.084745762711864
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent",
-            "aAsPowerExponent"
         ]
     },
     "{sum},{aAsLogarithmBase,aAsPowerExponent,jAsPowerExponent,sum}": {
@@ -95669,9 +88619,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 2.288135593220339,
                 "kAsCoefficient": 0.7777777777777778
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{aAsPowerExponent,count,kAsCoefficient},{aAsLogarithmBase,aAsPowerExponent,kAsCoefficient,sum}": {
@@ -95688,10 +88635,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0.7777777777777778,
                 "aAsPowerExponent": 2.288135593220339
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient",
-            "aAsPowerExponent"
         ]
     },
     "{aAsLogarithmBase,b,sum,useNuminator,w}": {
@@ -95792,10 +88735,6 @@ AND THE BEST METRICS WERE {
                 "w": -1.576271186440678,
                 "b": -1.88135593220339
             }
-        ],
-        "spreadDynamicParameters": [
-            "w",
-            "b"
         ]
     },
     "{sum},{jAsPowerExponent,sum,weightAsPowerExponent,withoutRepetition}": {
@@ -95825,9 +88764,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.3728813559322033,
                 "x": -1.7796610169491525
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{kAsCoefficient,sum,x,y}": {
@@ -95865,9 +88801,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "x": -0.4576271186440679
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{aAsLogarithmBase,aAsPowerExponent,sum},{aAsLogarithmBase,aAsPowerExponent,kAsPowerExponent,sum}": {
@@ -95884,9 +88817,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerExponent": 0.6610169491525424,
                 "aAsPowerExponent": 2.084745762711864
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsLogarithmBase,aAsPowerExponent,kAsPowerExponent,sum},{aAsLogarithmBase,aAsPowerExponent,sum}": {
@@ -95903,9 +88833,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 2.084745762711864
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsLogarithmBase,kAsCoefficient,kAsPowerExponent,sum,w}": {
@@ -95975,9 +88902,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "kAsPowerExponent": 1.7796610169491522
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{aAsCoefficient,aAsLogarithmBase,jAsPowerExponent,sum,w}": {
@@ -96020,9 +88944,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "kAsCoefficient": 0.4444444444444444
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{kAsCoefficient,kAsPowerExponent,sum},{count,kAsCoefficient,kAsPowerExponent,withoutRepetition}": {
@@ -96039,10 +88960,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0.4444444444444444,
                 "kAsPowerExponent": 1.2711864406779663
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient",
-            "kAsPowerExponent"
         ]
     },
     "{sum},{aAsLogarithmBase,jAsPowerExponent,sum,w}": {
@@ -96084,9 +89001,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "weightAsPowerExponent": 0.05084745762711851
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{count,u,x},{aAsLogarithmBase,sum}": {
@@ -96214,9 +89128,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.4745762711864403,
                 "w": -1.1694915254237288
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{aAsLogarithmBase,b,jAsCoefficient,sum,w}": {
@@ -96286,9 +89197,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.0677966101694913,
                 "aAsPowerExponent": 2.389830508474576
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{max,withoutRepetition},{aAsLogarithmBase,jAsPowerExponent,kAsPowerBase,sum}": {
@@ -96331,9 +89239,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 2.389830508474576,
                 "jAsPowerExponent": 1.0677966101694913
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,count,jAsPowerExponent,withoutRepetition},{aAsLogarithmBase,aAsPowerExponent,jAsPowerExponent,sum}": {
@@ -96351,10 +89256,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.0677966101694913,
                 "aAsPowerExponent": 2.389830508474576
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent",
-            "aAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,kAsPowerExponent,sum,x}": {
@@ -96423,9 +89324,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "kAsPowerExponent": 1.8813559322033901
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{sum,weightAsPowerExponent},{jAsPowerExponent,sum,withoutRepetition}": {
@@ -96455,9 +89353,6 @@ AND THE BEST METRICS WERE {
                 "u": -2.288135593220339,
                 "x": -0.05084745762711851
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{sum,w},{b,count,w,withoutRepetition}": {
@@ -96473,9 +89368,6 @@ AND THE BEST METRICS WERE {
                 "b": -2.288135593220339,
                 "w": -0.05084745762711851
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{aAsLogarithmBase,b,jAsPowerExponent,sum,w}": {
@@ -96604,10 +89496,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerExponent": 1.4745762711864403,
                 "jAsPowerExponent": 1.3728813559322033
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent",
-            "jAsPowerExponent"
         ]
     },
     "{aAsLogarithmBase,kAsPowerExponent,sum,w,x}": {
@@ -96657,9 +89545,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "kAsPowerExponent": 1.4745762711864403
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{sum,u,x},{count,u,withoutRepetition,x}": {
@@ -96676,10 +89561,6 @@ AND THE BEST METRICS WERE {
                 "x": -0.05084745762711851,
                 "u": -1.3728813559322033
             }
-        ],
-        "spreadDynamicParameters": [
-            "x",
-            "u"
         ]
     },
     "{b,sum,w},{b,count,w,withoutRepetition}": {
@@ -96696,10 +89577,6 @@ AND THE BEST METRICS WERE {
                 "w": -0.05084745762711851,
                 "b": -1.3728813559322033
             }
-        ],
-        "spreadDynamicParameters": [
-            "w",
-            "b"
         ]
     },
     "{aAsLogarithmBase,sum,w},{aAsLogarithmBase,b,sum,w}": {
@@ -96716,9 +89593,6 @@ AND THE BEST METRICS WERE {
                 "b": -2.084745762711864,
                 "w": -1.576271186440678
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{aAsLogarithmBase,b,sum,w},{aAsLogarithmBase,sum,w}": {
@@ -96735,9 +89609,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "w": -1.576271186440678
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{aAsLogarithmBase,jAsPowerExponent,kAsPowerExponent,sum,w}": {
@@ -96781,9 +89652,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0.6666666666666666,
                 "aAsPowerExponent": 2.186440677966102
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsLogarithmBase,aAsPowerExponent,jAsPowerExponent,sum,weightAsPowerBase}": {
@@ -96872,10 +89740,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.0677966101694913,
                 "aAsPowerExponent": 2.084745762711864
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent",
-            "aAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,kAsPowerExponent,sum},{count}": {
@@ -96976,9 +89840,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0.5555555555555556,
                 "aAsPowerExponent": 2.084745762711864
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsLogarithmBase,aAsPowerExponent,kAsCoefficient,sum},{aAsLogarithmBase,aAsPowerExponent,sum}": {
@@ -96995,9 +89856,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "aAsPowerExponent": 2.084745762711864
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsLogarithmBase,aAsPowerExponent,kAsCoefficient,sum},{aAsLogarithmBase,aAsPowerExponent,kAsCoefficient,sum}": {
@@ -97015,10 +89873,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0.7777777777777778,
                 "aAsPowerExponent": 2.084745762711864
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient",
-            "aAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,kAsPowerExponent,sum},{count,jAsPowerExponent,withoutRepetition}": {
@@ -97034,9 +89888,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "jAsPowerExponent": 1.3728813559322033
             }
-        ],
-        "spreadDynamicParameters": [
-            "jAsPowerExponent"
         ]
     },
     "{jAsPowerExponent,kAsPowerExponent,sum},{count,jAsPowerExponent,kAsPowerExponent,withoutRepetition}": {
@@ -97053,10 +89904,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerExponent": 1.4745762711864403,
                 "jAsPowerExponent": 1.3728813559322033
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent",
-            "jAsPowerExponent"
         ]
     },
     "{aAsLogarithmBase,aAsPowerExponent,jAsPowerExponent,sum,w}": {
@@ -97084,9 +89931,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "aAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{sum,u,x},{count,withoutRepetition,x}": {
@@ -97102,9 +89946,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "x": -0.05084745762711851
             }
-        ],
-        "spreadDynamicParameters": [
-            "x"
         ]
     },
     "{b,sum,w},{count,w,withoutRepetition}": {
@@ -97120,9 +89961,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "w": -0.05084745762711851
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{jAsPowerExponent,kAsPowerExponent,sum},{count,withoutRepetition}": {
@@ -97152,9 +89990,6 @@ AND THE BEST METRICS WERE {
                 "count": true,
                 "kAsPowerExponent": 1.4745762711864403
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{aAsLogarithmBase,kAsCoefficient,sum},{aAsLogarithmBase,aAsPowerExponent,kAsCoefficient,sum}": {
@@ -97171,9 +90006,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 2.288135593220339,
                 "kAsCoefficient": 0.7777777777777778
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{aAsLogarithmBase,aAsPowerExponent,kAsCoefficient,sum},{aAsLogarithmBase,kAsCoefficient,sum}": {
@@ -97190,9 +90022,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "kAsCoefficient": 0.7777777777777778
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{aAsLogarithmBase,aAsPowerExponent,jAsCoefficient,jAsPowerExponent,sum}": {
@@ -97288,10 +90117,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerExponent": 1.7796610169491522,
                 "aAsCoefficient": 0.1111111111111111
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent",
-            "aAsCoefficient"
         ]
     },
     "{max,weightAsLogarithmBase,withoutRepetition},{aAsLogarithmBase,jAsPowerExponent,sum,weightAsLogarithmBase}": {
@@ -97340,9 +90165,6 @@ AND THE BEST METRICS WERE {
                 "aAsLogarithmBase": 2,
                 "w": -1.4745762711864407
             }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{aAsCoefficient,aAsLogarithmBase,aAsPowerExponent,jAsPowerExponent,sum}": {
@@ -97423,9 +90245,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "weightAsPowerExponent": 0.35593220338983045
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{aAsLogarithmBase,aAsPowerExponent,jAsPowerExponent,sum,x}": {
@@ -97735,9 +90554,6 @@ AND THE BEST METRICS WERE {
                 "aAsPowerExponent": 2.186440677966102,
                 "kAsCoefficient": 0.6666666666666666
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient"
         ]
     },
     "{aAsPowerExponent,count,kAsCoefficient,withoutRepetition},{aAsLogarithmBase,aAsPowerExponent,kAsCoefficient,sum}": {
@@ -97755,10 +90571,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0.6666666666666666,
                 "aAsPowerExponent": 2.186440677966102
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsCoefficient",
-            "aAsPowerExponent"
         ]
     },
     "{max,weightAsCoefficient,withoutRepetition},{aAsLogarithmBase,kAsPowerExponent,sum}": {
@@ -97804,9 +90616,6 @@ AND THE BEST METRICS WERE {
                 "withoutRepetition": true,
                 "kAsPowerExponent": 1.3728813559322033
             }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,max,withoutRepetition},{aAsLogarithmBase,aAsPowerExponent,jAsPowerExponent,sum}": {
@@ -97823,9 +90632,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.1694915254237293,
                 "aAsPowerExponent": 0.7627118644067798
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{sum,u,x},{count,withoutRepetition}": {
@@ -97989,9 +90795,6 @@ AND THE BEST METRICS WERE {
                 "jAsPowerExponent": 1.3728813559322033,
                 "weightAsPowerExponent": 0.15254237288135597
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,max,withoutRepetition},{aAsLogarithmBase,aAsPowerExponent,kAsCoefficient,sum}": {
@@ -98008,9 +90811,6 @@ AND THE BEST METRICS WERE {
                 "kAsCoefficient": 0.6666666666666666,
                 "aAsPowerExponent": 0.6610169491525424
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsLogarithmBase,sum,u,w,x}": {
@@ -98038,9 +90838,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "aAsPowerExponent": 0.6610169491525424
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,kAsCoefficient,sum},{aAsPowerExponent,max,withoutRepetition}": {
@@ -98056,9 +90853,6 @@ AND THE BEST METRICS WERE {
                 "max": true,
                 "aAsPowerExponent": 0.6610169491525424
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsPowerExponent,max,withoutRepetition},{aAsLogarithmBase,aAsPowerExponent,kAsPowerExponent,sum}": {
@@ -98075,9 +90869,6 @@ AND THE BEST METRICS WERE {
                 "kAsPowerExponent": 0.4576271186440679,
                 "aAsPowerExponent": 0.6610169491525424
             }
-        ],
-        "spreadDynamicParameters": [
-            "aAsPowerExponent"
         ]
     },
     "{aAsLogarithmBase,aAsPowerExponent,sum,u,x}": {
@@ -98176,10 +90967,38 @@ AND THE BEST METRICS WERE {
             }
         ]
     }
-}
+} as unknown as Record<string, Metric> // paste things in from 1.txt, 2.txt, etc.
 
+const guessedBackfilledSpreadDynamicParametersMetrics = Object.entries(metricsMissingSpreadDynamicParameters).reduce(
+    (guessedBackfilledSpreadDynamicParametersMetrics: Record<string, Metric>, [metricName, metric]: [string, Metric]) => {
+        const parameterValues: Partial<Record<Parameter, ParameterValue>> = {}
 
-AND THE COUNT OF TIMED OUT METRICS WAS 8976
+        let spreadDynamicParameters: Parameter[] | undefined = undefined
 
+        metric.submetrics.forEach(submetric => {
+            Object.entries(submetric).forEach(submetricEntry => {
+                const [parameter, parameterValue] = submetricEntry as [Parameter, ParameterValue]
 
-TOOK 205207663.470801 MS
+                if (
+                    parameterValues[ parameter ] === parameterValue &&
+                    (spreadDynamicParameters ? !spreadDynamicParameters.includes(parameter) : true) &&
+                    PARAMETER_DYNAMISMS[ parameter ]
+                ) {
+                    spreadDynamicParameters = spreadDynamicParameters || []
+                    spreadDynamicParameters.push(parameter)
+                }
+                if (!parameterValues[ parameter ]) {
+                    parameterValues[ parameter ] = parameterValue
+                }
+            })
+        })
+
+        return {
+            ...guessedBackfilledSpreadDynamicParametersMetrics,
+            [ metricName ]: spreadDynamicParameters ? { ...metric, spreadDynamicParameters } : metric,
+        }
+    },
+    {} as Record<string, Metric>,
+)
+
+saveDebugMessage(JSON.stringify(guessedBackfilledSpreadDynamicParametersMetrics, null, 4), DebugTarget.ALL)

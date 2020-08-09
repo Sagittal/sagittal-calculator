@@ -1,10 +1,26 @@
 import "colors"
-import { isNumber } from "../../../general"
-import { Metric } from "../bestMetric"
-import { DebugTarget, saveDebugMessage, setDebugTargets } from "../debug"
-import { COMMA_POPULARITIES, computeUnpopularities, CUT_OFF_POPULARITY, Popularity } from "../sumOfSquares"
+import { isNumber } from "../../../../general"
+import { Metric } from "../../bestMetric"
+import { clearDebugLogFiles, debugSettings, DebugTarget, saveDebugMessage, setDebugTargets } from "../../debug"
+import { COMMA_POPULARITIES, computeUnpopularities, CUT_OFF_POPULARITY, Popularity } from "../../sumOfSquares"
+import { program } from "commander"
+import * as colors from "colors"
 
-setDebugTargets(DebugTarget.ALL)
+program
+    .option("-d, --debug-targets [debugTargets]", "debug targets")
+    .option("-c, --no-color", "no color")
+    .option("-w, --no-write", "no write")
+    .parse(process.argv)
+
+setDebugTargets(program.debugTargets || DebugTarget.ALL)
+if (!program.color) {
+    colors.disable()
+}
+debugSettings.noWrite = !program.write
+
+if (!debugSettings.noWrite) {
+    clearDebugLogFiles()
+}
 
 const potentiallyRottens = {} as unknown as Record<string, Metric> // paste things in from 1.txt, 2.txt, etc.
 

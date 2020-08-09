@@ -9,7 +9,7 @@ import { setSumOfSquaresAtSamplePoint } from "./setSumOfSquaresAtSamplePoint"
 import { ComputeSumOfSquaresAndMaybeUpdateBestMetricOptions, Metric, SumOfSquares } from "./types"
 
 const computeSumOfSquaresAndMaybeUpdateBestMetric = (sample: Sample, options: ComputeSumOfSquaresAndMaybeUpdateBestMetricOptions): Promise<void> => {
-    const { indentation, sumsOfSquares, index, onlyWinners, spreadParameters } = options
+    const { indentation, sumsOfSquares, index, onlyWinners, spreadDynamicParameters } = options
 
     return doOnNextEventLoop(() => {
         const { submetrics, samplePoint } = sample
@@ -36,8 +36,8 @@ const computeSumOfSquaresAndMaybeUpdateBestMetric = (sample: Sample, options: Co
                 sumOfSquares < (bestMetrics[ metricName ].sumOfSquares as SumOfSquares)
             )
         ) {
-            const metric: Metric = spreadParameters ?
-                { sumOfSquares, submetrics, spreadParameters } :
+            const metric: Metric = spreadDynamicParameters ?
+                { sumOfSquares, submetrics, spreadDynamicParameters } :
                 { sumOfSquares, submetrics }
 
             bestMetrics[ metricName ] = metric

@@ -64,7 +64,7 @@ THE PERFECTED METRICS ARE {
                 "weightAsPowerBase": 1.95
             }
         ],
-        "spreadParameters": [
+        "spreadDynamicParameters": [
             "weightAsPowerBase"
         ]
     },
@@ -104,7 +104,7 @@ THE PERFECTED METRICS ARE {
                 "useNuminator": 0.95
             }
         ],
-        "spreadParameters": [
+        "spreadDynamicParameters": [
             "useNuminator"
         ]
     },
@@ -144,7 +144,7 @@ THE PERFECTED METRICS ARE {
                 "weightAsPowerExponent": 0.0008474576271185058
             }
         ],
-        "spreadParameters": [
+        "spreadDynamicParameters": [
             "weightAsPowerExponent"
         ]
     },
@@ -193,7 +193,7 @@ THE PERFECTED METRICS ARE {
                 "weightAsLogarithmBase": 1.95
             }
         ],
-        "spreadParameters": [
+        "spreadDynamicParameters": [
             "weightAsLogarithmBase"
         ]
     },
@@ -233,7 +233,7 @@ THE PERFECTED METRICS ARE {
                 "weightAsCoefficient": 0.0611111111111111
             }
         ],
-        "spreadParameters": [
+        "spreadDynamicParameters": [
             "weightAsCoefficient"
         ]
     },
@@ -431,7 +431,7 @@ THE PERFECTED METRICS ARE {
                 "weightAsPowerBase": 2.05
             }
         ],
-        "spreadParameters": [
+        "spreadDynamicParameters": [
             "weightAsPowerBase"
         ]
     },
@@ -485,7 +485,7 @@ THE PERFECTED METRICS ARE {
                 "weightAsPowerBase": 1.95
             }
         ],
-        "spreadParameters": [
+        "spreadDynamicParameters": [
             "weightAsPowerBase"
         ]
     },
@@ -526,7 +526,7 @@ THE PERFECTED METRICS ARE {
                 "weightAsPowerBase": 1.95
             }
         ],
-        "spreadParameters": [
+        "spreadDynamicParameters": [
             "weightAsPowerBase"
         ]
     },
@@ -597,7 +597,7 @@ THE PERFECTED METRICS ARE {
                 "weightAsPowerExponent": 1.0177966101694913
             }
         ],
-        "spreadParameters": [
+        "spreadDynamicParameters": [
             "weightAsPowerExponent"
         ]
     },
@@ -692,7 +692,7 @@ THE PERFECTED METRICS ARE {
                 "x": -0.0008474576271185058
             }
         ],
-        "spreadParameters": [
+        "spreadDynamicParameters": [
             "x"
         ]
     },
@@ -709,7 +709,7 @@ THE PERFECTED METRICS ARE {
                 "w": -0.0008474576271185058
             }
         ],
-        "spreadParameters": [
+        "spreadDynamicParameters": [
             "w"
         ]
     },
@@ -918,7 +918,7 @@ THE PERFECTED METRICS ARE {
                 "weightAsPowerExponent": 1.0177966101694913
             }
         ],
-        "spreadParameters": [
+        "spreadDynamicParameters": [
             "weightAsPowerExponent"
         ]
     },
@@ -968,7 +968,7 @@ THE PERFECTED METRICS ARE {
                 "w": 0.6806130989746811
             }
         ],
-        "spreadParameters": [
+        "spreadDynamicParameters": [
             "w"
         ]
     },
@@ -984,7 +984,7 @@ THE PERFECTED METRICS ARE {
                 "w": -0.21365348399246706
             }
         ],
-        "spreadParameters": [
+        "spreadDynamicParameters": [
             "w"
         ]
     },
@@ -1000,7 +1000,7 @@ THE PERFECTED METRICS ARE {
                 "x": -0.21365348399246706
             }
         ],
-        "spreadParameters": [
+        "spreadDynamicParameters": [
             "x"
         ]
     },
@@ -1036,7 +1036,7 @@ THE PERFECTED METRICS ARE {
                 "x": 0.6806130989746811
             }
         ],
-        "spreadParameters": [
+        "spreadDynamicParameters": [
             "x"
         ]
     },
@@ -1124,7 +1124,7 @@ THE PERFECTED METRICS ARE {
                 "aAsCoefficient": 0.04999999999999999
             }
         ],
-        "spreadParameters": [
+        "spreadDynamicParameters": [
             "aAsCoefficient"
         ]
     },
@@ -1200,7 +1200,7 @@ THE PERFECTED METRICS ARE {
                 "x": -1.9091337099811678
             }
         ],
-        "spreadParameters": [
+        "spreadDynamicParameters": [
             "x"
         ]
     },
@@ -1257,7 +1257,7 @@ THE PERFECTED METRICS ARE {
                 "weightAsCoefficient": 0.0685185185185185
             }
         ],
-        "spreadParameters": [
+        "spreadDynamicParameters": [
             "weightAsCoefficient"
         ]
     },
@@ -1285,7 +1285,7 @@ THE PERFECTED METRICS ARE {
                 "aAsPowerExponent": 1.0177966101694913
             }
         ],
-        "spreadParameters": [
+        "spreadDynamicParameters": [
             "aAsPowerExponent"
         ]
     },
@@ -1359,7 +1359,7 @@ THE PERFECTED METRICS ARE {
                 "y": 1.400659133709981
             }
         ],
-        "spreadParameters": [
+        "spreadDynamicParameters": [
             "y"
         ]
     },
@@ -1412,7 +1412,7 @@ THE PERFECTED METRICS ARE {
                 "w": -0.3042372881355934
             }
         ],
-        "spreadParameters": [
+        "spreadDynamicParameters": [
             "w"
         ]
     },
@@ -1494,7 +1494,7 @@ THE PERFECTED METRICS ARE {
                 "aAsCoefficient": 0.09074074074074073
             }
         ],
-        "spreadParameters": [
+        "spreadDynamicParameters": [
             "aAsCoefficient"
         ]
     },
@@ -1521,7 +1521,7 @@ THE PERFECTED METRICS ARE {
                 "usePrimeIndex": 0.95
             }
         ],
-        "spreadParameters": [
+        "spreadDynamicParameters": [
             "usePrimeIndex"
         ]
     },
@@ -1539,7 +1539,7 @@ THE PERFECTED METRICS ARE {
                 "aAsPowerExponent": 0.7110169491525423
             }
         ],
-        "spreadParameters": [
+        "spreadDynamicParameters": [
             "aAsPowerExponent"
         ]
     },
@@ -1623,7 +1623,7 @@ THE PERFECTED METRICS ARE {
                 "aAsPowerExponent": 2.1994036409290656
             }
         ],
-        "spreadParameters": [
+        "spreadDynamicParameters": [
             "aAsPowerExponent"
         ]
     },
@@ -1738,7 +1738,7 @@ THE PERFECTED METRICS ARE {
                 "aAsPowerExponent": 2.4027934714375396
             }
         ],
-        "spreadParameters": [
+        "spreadDynamicParameters": [
             "aAsPowerExponent"
         ]
     },
@@ -1776,7 +1776,7 @@ THE PERFECTED METRICS ARE {
                 "aAsPowerExponent": 0.6110169491525423
             }
         ],
-        "spreadParameters": [
+        "spreadDynamicParameters": [
             "aAsPowerExponent"
         ]
     },
@@ -1806,7 +1806,7 @@ THE PERFECTED METRICS ARE {
                 "aAsPowerExponent": 2.6321092278719402
             }
         ],
-        "spreadParameters": [
+        "spreadDynamicParameters": [
             "aAsPowerExponent"
         ]
     },
@@ -1927,7 +1927,7 @@ THE PERFECTED METRICS ARE {
                 "w": -1.7168549905838042
             }
         ],
-        "spreadParameters": [
+        "spreadDynamicParameters": [
             "w"
         ]
     },
@@ -2044,7 +2044,7 @@ THE PERFECTED METRICS ARE {
                 "w": -1.3451035781544256
             }
         ],
-        "spreadParameters": [
+        "spreadDynamicParameters": [
             "w"
         ]
     },
@@ -2192,7 +2192,7 @@ THE PERFECTED METRICS ARE {
                 "jAsPowerExponent": 1.0177966101694913
             }
         ],
-        "spreadParameters": [
+        "spreadDynamicParameters": [
             "jAsPowerExponent"
         ]
     },
@@ -2261,7 +2261,7 @@ THE PERFECTED METRICS ARE {
                 "jAsCoefficient": 1.05
             }
         ],
-        "spreadParameters": [
+        "spreadDynamicParameters": [
             "jAsCoefficient"
         ]
     },
@@ -2329,7 +2329,7 @@ THE PERFECTED METRICS ARE {
                 "kAsPowerExponent": 0.9161016949152543
             }
         ],
-        "spreadParameters": [
+        "spreadDynamicParameters": [
             "kAsPowerExponent"
         ]
     },
@@ -2408,7 +2408,7 @@ THE PERFECTED METRICS ARE {
                 "kAsPowerExponent": 0.9161016949152543
             }
         ],
-        "spreadParameters": [
+        "spreadDynamicParameters": [
             "kAsPowerExponent"
         ]
     },
@@ -2482,7 +2482,7 @@ THE PERFECTED METRICS ARE {
                 "kAsCoefficient": 0.7166666666666666
             }
         ],
-        "spreadParameters": [
+        "spreadDynamicParameters": [
             "kAsCoefficient"
         ]
     },
@@ -2692,7 +2692,7 @@ THE PERFECTED METRICS ARE {
                 "kAsCoefficient": 0.7611111111111111
             }
         ],
-        "spreadParameters": [
+        "spreadDynamicParameters": [
             "kAsCoefficient"
         ]
     },
@@ -2783,7 +2783,7 @@ THE PERFECTED METRICS ARE {
                 "jAsPowerExponent": 1.131102508660575
             }
         ],
-        "spreadParameters": [
+        "spreadDynamicParameters": [
             "jAsPowerExponent"
         ]
     },
@@ -2899,7 +2899,7 @@ THE PERFECTED METRICS ARE {
                 "jAsPowerExponent": 1.095574387947269
             }
         ],
-        "spreadParameters": [
+        "spreadDynamicParameters": [
             "jAsPowerExponent"
         ]
     },
