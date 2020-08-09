@@ -5,7 +5,7 @@ import { ParameterValue } from "../sumOfSquares"
 const computeDynamicParameterScopeForPerfecting = (parameterValue: ParameterValue): DynamicParameterScope => ({
     center: parameterValue,
     span: MAXIMUM_UNIT as number as Span<ParameterValue>,
-    resolution: 2 as Resolution<ParameterValue>,
+    resolution: 3 as Resolution<ParameterValue>,
 })
 
 export {

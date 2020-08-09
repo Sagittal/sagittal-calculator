@@ -4,33 +4,6 @@ FINAL STATUS | populated 321 | searched 321 | in the queue 0
 
 
 THE PERFECTED METRICS ARE {
-    "{sum,weightAsPowerExponent}": {
-        "sumOfSquares": 0.014206086754420309,
-        "submetrics": [
-            {
-                "sum": true,
-                "weightAsPowerExponent": 0.0008474576271185058
-            }
-        ]
-    },
-    "{sum,weightAsCoefficient}": {
-        "sumOfSquares": 0.014206086754420309,
-        "submetrics": [
-            {
-                "sum": true,
-                "weightAsCoefficient": 0.0611111111111111
-            }
-        ]
-    },
-    "{sum,useNuminator}": {
-        "sumOfSquares": 0.014206086754420309,
-        "submetrics": [
-            {
-                "sum": true,
-                "useNuminator": true
-            }
-        ]
-    },
     "{sum,weightAsLogarithmBase}": {
         "sumOfSquares": 0.014206086754420309,
         "submetrics": [
@@ -46,6 +19,33 @@ THE PERFECTED METRICS ARE {
             {
                 "sum": true,
                 "weightAsPowerBase": 2
+            }
+        ]
+    },
+    "{sum,useNuminator}": {
+        "sumOfSquares": 0.014206086754420309,
+        "submetrics": [
+            {
+                "sum": true,
+                "useNuminator": true
+            }
+        ]
+    },
+    "{sum,weightAsPowerExponent}": {
+        "sumOfSquares": 0.014206086754420309,
+        "submetrics": [
+            {
+                "sum": true,
+                "weightAsPowerExponent": 0.0008474576271185058
+            }
+        ]
+    },
+    "{sum,weightAsCoefficient}": {
+        "sumOfSquares": 0.014206086754420309,
+        "submetrics": [
+            {
+                "sum": true,
+                "weightAsCoefficient": 0.0611111111111111
             }
         ]
     },
@@ -69,30 +69,30 @@ THE PERFECTED METRICS ARE {
             }
         ]
     },
-    "{aAsCoefficient,sum}": {
-        "sumOfSquares": 0.01398028983382364,
+    "{sum,x}": {
+        "sumOfSquares": 0.013980948374639321,
         "submetrics": [
             {
                 "sum": true,
-                "aAsCoefficient": 0.09444444444444444
+                "x": 0.7627118644067798
             }
         ]
     },
     "{sum,w}": {
-        "sumOfSquares": 0.013969002045691164,
+        "sumOfSquares": 0.013980948374639321,
         "submetrics": [
             {
                 "sum": true,
-                "w": 0.7250575434191255
+                "w": 0.7627118644067798
             }
         ]
     },
-    "{sum,x}": {
-        "sumOfSquares": 0.013969002045691164,
+    "{aAsCoefficient,sum}": {
+        "sumOfSquares": 0.013966994674845098,
         "submetrics": [
             {
                 "sum": true,
-                "x": 0.7250575434191255
+                "aAsCoefficient": 0.1111111111111111
             }
         ]
     },
@@ -102,35 +102,35 @@ THE PERFECTED METRICS ARE {
             {
                 "sum": true,
                 "aAsLogarithmBase": 2,
-                "aAsPowerExponent": 2.3842749529190206
+                "aAsPowerExponent": 2.389830508474576
             }
         ]
     },
     "{aAsLogarithmBase,sum,w}": {
-        "sumOfSquares": 0.012378423658214946,
+        "sumOfSquares": 0.012380683081847274,
         "submetrics": [
             {
                 "sum": true,
                 "aAsLogarithmBase": 2,
-                "w": -1.6736451140405944
+                "w": -1.6761142498430635
             }
         ]
     },
     "{jAsCoefficient,sum}": {
-        "sumOfSquares": 0.011916916032003604,
+        "sumOfSquares": 0.011916831500160992,
         "submetrics": [
             {
                 "sum": true,
-                "jAsCoefficient": 1.0055555555555555
+                "jAsCoefficient": 1.0555555555555556
             }
         ]
     },
     "{kAsPowerExponent,sum}": {
-        "sumOfSquares": 0.011427294372631899,
+        "sumOfSquares": 0.011620966003589951,
         "submetrics": [
             {
                 "sum": true,
-                "kAsPowerExponent": 0.919805398618958
+                "kAsPowerExponent": 0.9161016949152543
             }
         ]
     },
@@ -144,18 +144,18 @@ THE PERFECTED METRICS ARE {
         ]
     },
     "{jAsPowerExponent,sum}": {
-        "sumOfSquares": 0.00910097075832883,
+        "sumOfSquares": 0.009100365129371044,
         "submetrics": [
             {
                 "sum": true,
-                "jAsPowerExponent": 1.095574387947269
+                "jAsPowerExponent": 1.094957103996652
             }
         ]
     }
 }
 
 
-FINDING BEST METRICS TOOK 6411.562615990639 MS
+FINDING BEST METRICS TOOK 13801.802699999884 MS
 
 
-PERFECTING METRICS TOOK 251.5930880010128 MS
+PERFECTING METRICS TOOK 863.5334999999031 MS

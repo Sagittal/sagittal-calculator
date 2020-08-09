@@ -44,20 +44,14 @@ debugTargets[ DebugTarget.NEW_BEST_METRIC ] = true
 solverStatus.maximumUnit = MAXIMUM_UNIT / 10 as Unit<ParameterValue>
 
 const bestMetricsToBePerfected = {
-    "{sum},{sum},{sum}": {
+    "{sum}": {
         "sumOfSquares": 0.014206086754420309,
         "submetrics": [
             {
                 "sum": true
-            },
-            {
-                "sum": true
-            },
-            {
-                "sum": true
             }
         ]
-    },
+    }
 } as unknown as Record<string, Metric> // paste things in from 1.txt, 2.txt, etc.
 
 const startTime = performance.now()
