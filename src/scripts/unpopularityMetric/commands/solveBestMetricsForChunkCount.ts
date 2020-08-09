@@ -36,8 +36,6 @@ debugTargets[ DebugTarget.SEARCH ] = true
 debugTargets[ DebugTarget.POPULATE ] = true
 debugTargets[ DebugTarget.FINAL_SOLVER_RESULTS ] = true
 debugTargets[ DebugTarget.PERFECT ] = true
-// debugTargets[ DebugTarget.NEW_BEST_METRIC ] = true
-// debugTargets[ DebugTarget.SCOPE ] = true
 
 const startTime = performance.now()
 populateAndSearchScopesAndPerfectMetrics().then(() => {

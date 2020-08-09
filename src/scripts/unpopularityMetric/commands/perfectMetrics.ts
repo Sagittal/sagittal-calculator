@@ -38,7 +38,6 @@ debugTargets[ DebugTarget.PERFECT ] = true
 debugTargets[ DebugTarget.SEARCH ] = true
 debugTargets[ DebugTarget.POPULATE ] = true
 debugTargets[ DebugTarget.FINAL_SOLVER_RESULTS ] = true
-debugTargets[ DebugTarget.SCOPE ] = true
 debugTargets[ DebugTarget.NEW_BEST_METRIC ] = true
 
 solverStatus.maximumUnit = MAXIMUM_UNIT / 10 as Unit<ParameterValue>

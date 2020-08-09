@@ -7,7 +7,6 @@ enum DebugTarget {
     SEARCH = "search",
     POPULATE = "populate",
     NEW_BEST_METRIC = "newBestMetric",
-    SCOPE = "scope",
     SUM_OF_SQUARES = "sumOfSquares",
     ERRORS = "errors",
     NONE = "none",

@@ -28,7 +28,6 @@ if (!debugSettings.noWrite) {
     clearDebugLogFiles()
 }
 
-// debugTargets[ DebugTarget.SCOPE ] = true
 // debugTargets[ DebugTarget.ERRORS ] = true
 // debugTargets[ DebugTarget.NEW_BEST_METRIC ] = true
 

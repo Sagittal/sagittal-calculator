@@ -9,7 +9,6 @@ const targetColors: EnumHash<DebugTarget, ColorMethod> = {
     [ DebugTarget.SEARCH ]: "yellow",
     [ DebugTarget.POPULATE ]: "cyan",
     [ DebugTarget.NEW_BEST_METRIC ]: "green",
-    [ DebugTarget.SCOPE ]: "yellow",
     [ DebugTarget.SUM_OF_SQUARES ]: "white",
     [ DebugTarget.ERRORS ]: "red",
     [ DebugTarget.NONE ]: "white",
