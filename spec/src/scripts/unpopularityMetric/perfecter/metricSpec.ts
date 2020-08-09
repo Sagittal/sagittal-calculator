@@ -31,7 +31,7 @@ describe("perfectMetric", () => {
                 [ Parameter.K_AS_COEFFICIENT ]: {
                     center: 0.8 as ParameterValue,
                     span: 0.1 as Span<ParameterValue>,
-                    resolution: 2 as Resolution<ParameterValue>,
+                    resolution: 3 as Resolution<ParameterValue>,
                 },
             },
         ] as Combination<SubmetricScope>
@@ -67,7 +67,7 @@ describe("perfectMetric", () => {
                 [ Parameter.K_AS_COEFFICIENT ]: {
                     center: 0.8 as ParameterValue,
                     span: 0.1 as Span<ParameterValue>,
-                    resolution: 2 as Resolution<ParameterValue>,
+                    resolution: 3 as Resolution<ParameterValue>,
                 },
             },
             {
