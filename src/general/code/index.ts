@@ -18,7 +18,7 @@ export {
     merge,
     isNumber,
     isUndefined,
-    EnumHash,
+    EnumHash, // TODO: I think maybe the built in Record<> just works for this
     doOnNextEventLoop,
     shuffle,
 }

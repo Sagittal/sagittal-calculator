@@ -1,13 +1,14 @@
-import { Combination, EnumHash, Index, Resolution, Span, Sum } from "../../../general"
+import { Combination, Index, Resolution, Span, Sum } from "../../../general"
 import { Parameter, ParameterValue, Submetric } from "../sumOfSquares"
 import { DynamicParameter, Sample } from "./scopeToSamples"
 
 interface Metric {
+    spreadParameters?: Parameter[],
     submetrics: Combination<Submetric>,
     sumOfSquares: SumOfSquares | undefined,
 }
 
-type SubmetricScope = Partial<EnumHash<Parameter, ParameterValue | boolean | DynamicParameterScope>>
+type SubmetricScope = Partial<Record<Parameter, ParameterValue | boolean | DynamicParameterScope>>
 
 type Scope = Combination<SubmetricScope>
 
@@ -21,9 +22,13 @@ type SumOfSquares = Sum<"SquaredWeightedRankDifferences">
 
 type SumsOfSquares = Array<SumsOfSquares | SumOfSquares | undefined>
 
-interface ComputeSumOrSumsOfSquaresOptions {
+type NonRecursiveSearchScopeAndMaybeUpdateBestMetricOptions = Partial<{
     indentation: string,
     onlyWinners: boolean,
+}>
+
+interface ComputeSumOrSumsOfSquaresOptions extends NonRecursiveSearchScopeAndMaybeUpdateBestMetricOptions {
+    spreadParameters?: Parameter[],
 }
 
 type ComputeSumsOfSquaresAndMaybeUpdateBestMetricOptions = Partial<ComputeSumOrSumsOfSquaresOptions>
@@ -50,4 +55,5 @@ export {
     ComputeSumOfSquaresAndMaybeUpdateBestMetricOptions,
     ComputeSumOrSumsOfSquaresOptions,
     SearchScopeResults,
+    NonRecursiveSearchScopeAndMaybeUpdateBestMetricOptions,
 }

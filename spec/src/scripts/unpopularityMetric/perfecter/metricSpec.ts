@@ -1,31 +1,86 @@
+import { Resolution, Span } from "../../../../../src/general"
 import { Combination } from "../../../../../src/general/math"
-import { SumOfSquares } from "../../../../../src/scripts/unpopularityMetric/bestMetric"
+import { Scope, SubmetricScope, SumOfSquares } from "../../../../../src/scripts/unpopularityMetric/bestMetric"
+import { recursiveSearchScopeAndMaybeUpdateBestMetric } from "../../../../../src/scripts/unpopularityMetric/perfecter"
 import { perfectMetric } from "../../../../../src/scripts/unpopularityMetric/perfecter/metric"
-import { Submetric } from "../../../../../src/scripts/unpopularityMetric/sumOfSquares"
+import { Parameter, ParameterValue, Submetric } from "../../../../../src/scripts/unpopularityMetric/sumOfSquares"
+import * as recursiveBestMetric from "../../../../../src/scripts/unpopularityMetric/perfecter/recursiveBestMetric"
 
 describe("perfectMetric", () => {
+    const options = { metricId: "1/16" }
+
     it("takes a best metric and then converts it back into a scope in order to perfect it recursively", async () => {
         const metric = {
-            sumOfSquares: 0.009498003227551665 as SumOfSquares,
+            sumOfSquares: 0.009939068479730896 as SumOfSquares,
             submetrics: [
                 {
-                    "sum": true,
-                    "kAsCoefficient": 0.7777777777777778,
+                    [ Parameter.SUM ]: true,
+                    [ Parameter.K_AS_COEFFICIENT ]: 0.8,
                 },
             ] as Combination<Submetric>,
         }
-        const metricId = ""
 
-        const result = await perfectMetric(metric, { metricId })
+        spyOn(recursiveBestMetric, "recursiveSearchScopeAndMaybeUpdateBestMetric")
 
-        expect(result).toEqual({
-            sumOfSquares: 0.009498003227551665 as SumOfSquares,
+        await perfectMetric(metric, options)
+
+        const expectedScope: Scope = [
+            {},
+            {
+                [ Parameter.SUM ]: true,
+                [ Parameter.K_AS_COEFFICIENT ]: {
+                    center: 0.8 as ParameterValue,
+                    span: 0.1 as Span<ParameterValue>,
+                    resolution: 2 as Resolution<ParameterValue>,
+                },
+            },
+        ] as Combination<SubmetricScope>
+
+        expect(recursiveBestMetric.recursiveSearchScopeAndMaybeUpdateBestMetric).toHaveBeenCalledWith(
+            expectedScope,
+            options
+        )
+    })
+
+    it("when the metric had some spread parameters, it recreates them that way", async () => {
+        const metric = {
+            sumOfSquares: 0.009939068479730896 as SumOfSquares,
             submetrics: [
                 {
-                    "sum": true,
-                    "kAsCoefficient": 0.7777777777777778,
+                    [ Parameter.COUNT ]: true,
+                    [ Parameter.K_AS_COEFFICIENT ]: 0.8,
+                },
+                {
+                    [ Parameter.SUM ]: true,
+                    [ Parameter.K_AS_COEFFICIENT ]: 0.8,
                 },
             ] as Combination<Submetric>,
-        })
+            spreadParameters: [ Parameter.K_AS_COEFFICIENT ],
+        }
+
+        spyOn(recursiveBestMetric, "recursiveSearchScopeAndMaybeUpdateBestMetric")
+
+        await perfectMetric(metric, options)
+
+        const expectedScope: Scope = [
+            {
+                [ Parameter.K_AS_COEFFICIENT ]: {
+                    center: 0.8 as ParameterValue,
+                    span: 0.1 as Span<ParameterValue>,
+                    resolution: 2 as Resolution<ParameterValue>,
+                },
+            },
+            {
+                [ Parameter.COUNT ]: true,
+            },
+            {
+                [ Parameter.SUM ]: true,
+            },
+        ] as Combination<SubmetricScope>
+
+        expect(recursiveBestMetric.recursiveSearchScopeAndMaybeUpdateBestMetric).toHaveBeenCalledWith(
+            expectedScope,
+            options
+        )
     })
 })

@@ -3,7 +3,7 @@ import { ParameterValue, Submetric } from "../../sumOfSquares"
 import { computeDynamicParameterValueIndices } from "./dynamicParameterValueIndices"
 import { DynamicParameter, Sample, SamplePoint, SubmetricPossibility } from "./types"
 
-const combineSubmetricsPossibilitiesIntoSamples = ({ submetricsPossibilities, dynamicParameters }: { dynamicParameters: DynamicParameter[], submetricsPossibilities: Array<Combination<SubmetricPossibility>>, }): Sample[] => {
+const combineSubmetricsPossibilitiesIntoSamples = ({ submetricsPossibilities, dynamicParameters }: { dynamicParameters: DynamicParameter[], submetricsPossibilities: Array<Combination<SubmetricPossibility>> }): Sample[] => {
     let samples: Sample[] = [{
         submetrics: [] as unknown as Combination<Submetric>,
         samplePoint: [] as unknown as SamplePoint,
@@ -34,6 +34,8 @@ const combineSubmetricsPossibilitiesIntoSamples = ({ submetricsPossibilities, dy
 
     const allBinMergedSamples: Sample[] = []
 
+    // TODO: perhaps I should extract this so it's easier to find later
+    //  ...is this where we SET the sharedParameters?????
     samples.forEach(({ submetrics, samplePoint }) => {
         theAllBinSubmetricPossibilities.forEach((theAllBinSubmetricPossibility: SubmetricPossibility) => {
             const dynamicParameterValueIndices: Array<Index<ParameterValue>> = computeDynamicParameterValueIndices({

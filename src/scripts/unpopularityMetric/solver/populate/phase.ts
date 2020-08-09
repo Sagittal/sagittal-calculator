@@ -22,7 +22,7 @@ const populateScopesPhase = async (chunkCount: Count<Chunk>, chunkCountForSubmet
         saveDebugMessage(`submetric combinations (with repetitions) computed: ${submetricChunkCombinations.length}; formula is ((${chunkCountForSubmetrics}+${SUBMETRIC_CHUNKS.length}-1)!)/((${chunkCountForSubmetrics}!)((${SUBMETRIC_CHUNKS.length}-1)!)) where ${SUBMETRIC_CHUNKS.length} is the total of possible existing chunks and ${chunkCountForSubmetrics} is the count we are choosing at a time`, DebugTarget.POPULATE)
     }
     submetricChunkCombinations.forEach(submetricChunkCombination => {
-        submetricChunkCombination.unshift({} as SubmetricChunk)
+        submetricChunkCombination.unshift({} as SubmetricChunk) // TODO: you should probably name that this is what will become the all bins submetric scope, I think
     })
 
     let parameterChunkCombinations: Combinations<ParameterChunk>

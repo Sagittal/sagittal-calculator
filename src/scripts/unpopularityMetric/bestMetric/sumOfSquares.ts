@@ -6,10 +6,10 @@ import { SUM_OF_SQUARES_TO_BEAT } from "./constants"
 import { computeMetricName } from "./metricName"
 import { Sample } from "./scopeToSamples"
 import { setSumOfSquaresAtSamplePoint } from "./setSumOfSquaresAtSamplePoint"
-import { ComputeSumOfSquaresAndMaybeUpdateBestMetricOptions, SumOfSquares } from "./types"
+import { ComputeSumOfSquaresAndMaybeUpdateBestMetricOptions, Metric, SumOfSquares } from "./types"
 
 const computeSumOfSquaresAndMaybeUpdateBestMetric = (sample: Sample, options: ComputeSumOfSquaresAndMaybeUpdateBestMetricOptions): Promise<void> => {
-    const { indentation, sumsOfSquares, index, onlyWinners } = options
+    const { indentation, sumsOfSquares, index, onlyWinners, spreadParameters } = options
 
     return doOnNextEventLoop(() => {
         const { submetrics, samplePoint } = sample
@@ -36,7 +36,11 @@ const computeSumOfSquaresAndMaybeUpdateBestMetric = (sample: Sample, options: Co
                 sumOfSquares < (bestMetrics[ metricName ].sumOfSquares as SumOfSquares)
             )
         ) {
-            bestMetrics[ metricName ] = { sumOfSquares, submetrics }
+            const metric: Metric = spreadParameters ?
+                { sumOfSquares, submetrics, spreadParameters } :
+                { sumOfSquares, submetrics }
+
+            bestMetrics[ metricName ] = metric
 
             saveDebugMessage(`${indentation}new best metric: ${JSON.stringify(bestMetrics[ metricName ])}`, DebugTarget.NEW_BEST_METRIC)
         }

@@ -25,6 +25,7 @@ const computeSumsOfSquaresAndMaybeUpdateBestMetric = async (samples: Sample[], o
                 sumsOfSquares,
                 index: index as Index<Sample>,
                 onlyWinners,
+                ...options,
             })
         })
 
