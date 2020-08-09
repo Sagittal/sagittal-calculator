@@ -4,82 +4,6 @@ FINAL STATUS | populated 9431 | searched 9431 | in the queue 0
 
 
 THE PERFECTED METRICS ARE {
-    "{sum,weightAsCoefficient,weightAsLogarithmBase}": {
-        "sumOfSquares": 0.014206086754420309,
-        "submetrics": [
-            {
-                "sum": true,
-                "weightAsCoefficient": 0.17222222222222222,
-                "weightAsLogarithmBase": 2
-            }
-        ]
-    },
-    "{sum},{sum},{sum}": {
-        "sumOfSquares": 0.014206086754420309,
-        "submetrics": [
-            {
-                "sum": true
-            },
-            {
-                "sum": true
-            },
-            {
-                "sum": true
-            }
-        ]
-    },
-    "{sum,weightAsPowerExponent},{sum}": {
-        "sumOfSquares": 0.014206086754420309,
-        "submetrics": [
-            {
-                "sum": true,
-                "weightAsPowerExponent": 0.0008474576271185058
-            },
-            {
-                "sum": true
-            }
-        ]
-    },
-    "{sum},{sum,weightAsPowerExponent}": {
-        "sumOfSquares": 0.014206086754420309,
-        "submetrics": [
-            {
-                "sum": true
-            },
-            {
-                "sum": true,
-                "weightAsPowerExponent": 0.0008474576271185058
-            }
-        ]
-    },
-    "{sum,weightAsPowerBase},{sum,weightAsPowerBase}": {
-        "sumOfSquares": 0.014206086754420309,
-        "submetrics": [
-            {
-                "sum": true,
-                "weightAsPowerBase": 1.95
-            },
-            {
-                "sum": true,
-                "weightAsPowerBase": 1.95
-            }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerBase"
-        ]
-    },
-    "{sum,weightAsPowerBase},{sum}": {
-        "sumOfSquares": 0.014206086754420309,
-        "submetrics": [
-            {
-                "sum": true,
-                "weightAsPowerBase": 2
-            },
-            {
-                "sum": true
-            }
-        ]
-    },
     "{sum},{sum,weightAsPowerBase}": {
         "sumOfSquares": 0.014206086754420309,
         "submetrics": [
@@ -92,65 +16,12 @@ THE PERFECTED METRICS ARE {
             }
         ]
     },
-    "{sum,useNuminator},{sum,useNuminator}": {
-        "sumOfSquares": 0.014206086754420309,
-        "submetrics": [
-            {
-                "sum": true,
-                "useNuminator": 0.95
-            },
-            {
-                "sum": true,
-                "useNuminator": 0.95
-            }
-        ],
-        "spreadDynamicParameters": [
-            "useNuminator"
-        ]
-    },
-    "{sum,useNuminator},{sum}": {
-        "sumOfSquares": 0.014206086754420309,
-        "submetrics": [
-            {
-                "sum": true,
-                "useNuminator": true
-            },
-            {
-                "sum": true
-            }
-        ]
-    },
     "{sum},{sum,useNuminator}": {
         "sumOfSquares": 0.014206086754420309,
         "submetrics": [
             {
                 "sum": true
             },
-            {
-                "sum": true,
-                "useNuminator": true
-            }
-        ]
-    },
-    "{sum,weightAsPowerExponent},{sum,weightAsPowerExponent}": {
-        "sumOfSquares": 0.014206086754420309,
-        "submetrics": [
-            {
-                "sum": true,
-                "weightAsPowerExponent": 0.0008474576271185058
-            },
-            {
-                "sum": true,
-                "weightAsPowerExponent": 0.0008474576271185058
-            }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
-        ]
-    },
-    "{sum,useNuminator}": {
-        "sumOfSquares": 0.014206086754420309,
-        "submetrics": [
             {
                 "sum": true,
                 "useNuminator": true
@@ -169,72 +40,26 @@ THE PERFECTED METRICS ARE {
             }
         ]
     },
-    "{sum,weightAsLogarithmBase},{sum}": {
-        "sumOfSquares": 0.014206086754420309,
-        "submetrics": [
-            {
-                "sum": true,
-                "weightAsLogarithmBase": 2
-            },
-            {
-                "sum": true
-            }
-        ]
-    },
-    "{sum,weightAsLogarithmBase},{sum,weightAsLogarithmBase}": {
-        "sumOfSquares": 0.014206086754420309,
-        "submetrics": [
-            {
-                "sum": true,
-                "weightAsLogarithmBase": 1.95
-            },
-            {
-                "sum": true,
-                "weightAsLogarithmBase": 1.95
-            }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsLogarithmBase"
-        ]
-    },
-    "{sum},{sum,weightAsCoefficient}": {
+    "{sum},{aAsLogarithmBase,count,withoutRepetition}": {
         "sumOfSquares": 0.014206086754420309,
         "submetrics": [
             {
                 "sum": true
             },
             {
-                "sum": true,
-                "weightAsCoefficient": -0.05
+                "withoutRepetition": true,
+                "count": true,
+                "aAsLogarithmBase": 2
             }
         ]
     },
-    "{sum,weightAsCoefficient},{sum}": {
+    "{sum,useNuminator}": {
         "sumOfSquares": 0.014206086754420309,
         "submetrics": [
             {
                 "sum": true,
-                "weightAsCoefficient": -0.05
-            },
-            {
-                "sum": true
+                "useNuminator": true
             }
-        ]
-    },
-    "{sum,weightAsCoefficient},{sum,weightAsCoefficient}": {
-        "sumOfSquares": 0.014206086754420309,
-        "submetrics": [
-            {
-                "sum": true,
-                "weightAsCoefficient": 0.0611111111111111
-            },
-            {
-                "sum": true,
-                "weightAsCoefficient": 0.0611111111111111
-            }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsCoefficient"
         ]
     },
     "{sum,useNuminator,weightAsPowerBase}": {
@@ -244,18 +69,6 @@ THE PERFECTED METRICS ARE {
                 "sum": true,
                 "weightAsPowerBase": 2,
                 "useNuminator": true
-            }
-        ]
-    },
-    "{sum},{sum,weightAsLogarithmBase}": {
-        "sumOfSquares": 0.014206086754420309,
-        "submetrics": [
-            {
-                "sum": true
-            },
-            {
-                "sum": true,
-                "weightAsLogarithmBase": 2
             }
         ]
     },
@@ -316,25 +129,13 @@ THE PERFECTED METRICS ARE {
             }
         ]
     },
-    "{sum,weightAsCoefficient}": {
+    "{sum,weightAsCoefficient,weightAsPowerBase}": {
         "sumOfSquares": 0.014206086754420309,
         "submetrics": [
             {
                 "sum": true,
-                "weightAsCoefficient": 0.0611111111111111
-            }
-        ]
-    },
-    "{sum},{aAsLogarithmBase,count,withoutRepetition}": {
-        "sumOfSquares": 0.014206086754420309,
-        "submetrics": [
-            {
-                "sum": true
-            },
-            {
-                "withoutRepetition": true,
-                "count": true,
-                "aAsLogarithmBase": 2
+                "weightAsCoefficient": 0.0611111111111111,
+                "weightAsPowerBase": 2
             }
         ]
     },
@@ -348,13 +149,203 @@ THE PERFECTED METRICS ARE {
             }
         ]
     },
-    "{sum,weightAsCoefficient,weightAsPowerBase}": {
+    "{sum,weightAsCoefficient,weightAsLogarithmBase}": {
         "sumOfSquares": 0.014206086754420309,
         "submetrics": [
             {
                 "sum": true,
                 "weightAsCoefficient": 0.0611111111111111,
+                "weightAsLogarithmBase": 2
+            }
+        ]
+    },
+    "{sum,weightAsCoefficient}": {
+        "sumOfSquares": 0.014206086754420309,
+        "submetrics": [
+            {
+                "sum": true,
+                "weightAsCoefficient": 0.0611111111111111
+            }
+        ]
+    },
+    "{sum,useNuminator},{sum}": {
+        "sumOfSquares": 0.014206086754420309,
+        "submetrics": [
+            {
+                "sum": true,
+                "useNuminator": true
+            },
+            {
+                "sum": true
+            }
+        ]
+    },
+    "{sum,useNuminator},{sum,useNuminator}": {
+        "sumOfSquares": 0.014206086754420309,
+        "submetrics": [
+            {
+                "sum": true,
+                "useNuminator": true
+            },
+            {
+                "sum": true,
+                "useNuminator": true
+            }
+        ]
+    },
+    "{sum,weightAsPowerBase},{sum}": {
+        "sumOfSquares": 0.014206086754420309,
+        "submetrics": [
+            {
+                "sum": true,
                 "weightAsPowerBase": 2
+            },
+            {
+                "sum": true
+            }
+        ]
+    },
+    "{sum,weightAsPowerBase},{sum,weightAsPowerBase}": {
+        "sumOfSquares": 0.014206086754420309,
+        "submetrics": [
+            {
+                "sum": true,
+                "weightAsPowerBase": 2
+            },
+            {
+                "sum": true,
+                "weightAsPowerBase": 2
+            }
+        ]
+    },
+    "{sum},{sum,weightAsPowerExponent}": {
+        "sumOfSquares": 0.014206086754420309,
+        "submetrics": [
+            {
+                "sum": true
+            },
+            {
+                "sum": true,
+                "weightAsPowerExponent": 0.0008474576271185058
+            }
+        ]
+    },
+    "{sum,weightAsPowerExponent},{sum}": {
+        "sumOfSquares": 0.014206086754420309,
+        "submetrics": [
+            {
+                "sum": true,
+                "weightAsPowerExponent": 0.0008474576271185058
+            },
+            {
+                "sum": true
+            }
+        ]
+    },
+    "{sum,weightAsPowerExponent},{sum,weightAsPowerExponent}": {
+        "sumOfSquares": 0.014206086754420309,
+        "submetrics": [
+            {
+                "sum": true,
+                "weightAsPowerExponent": 0.0008474576271185058
+            },
+            {
+                "sum": true,
+                "weightAsPowerExponent": 0.0008474576271185058
+            }
+        ],
+        "spreadDynamicParameters": [
+            "weightAsPowerExponent"
+        ]
+    },
+    "{sum},{sum,weightAsLogarithmBase}": {
+        "sumOfSquares": 0.014206086754420309,
+        "submetrics": [
+            {
+                "sum": true
+            },
+            {
+                "sum": true,
+                "weightAsLogarithmBase": 2
+            }
+        ]
+    },
+    "{sum,weightAsLogarithmBase},{sum}": {
+        "sumOfSquares": 0.014206086754420309,
+        "submetrics": [
+            {
+                "sum": true,
+                "weightAsLogarithmBase": 2
+            },
+            {
+                "sum": true
+            }
+        ]
+    },
+    "{sum,weightAsLogarithmBase},{sum,weightAsLogarithmBase}": {
+        "sumOfSquares": 0.014206086754420309,
+        "submetrics": [
+            {
+                "sum": true,
+                "weightAsLogarithmBase": 2
+            },
+            {
+                "sum": true,
+                "weightAsLogarithmBase": 2
+            }
+        ]
+    },
+    "{sum},{sum,weightAsCoefficient}": {
+        "sumOfSquares": 0.014206086754420309,
+        "submetrics": [
+            {
+                "sum": true
+            },
+            {
+                "sum": true,
+                "weightAsCoefficient": -0.05
+            }
+        ]
+    },
+    "{sum,weightAsCoefficient},{sum}": {
+        "sumOfSquares": 0.014206086754420309,
+        "submetrics": [
+            {
+                "sum": true,
+                "weightAsCoefficient": -0.05
+            },
+            {
+                "sum": true
+            }
+        ]
+    },
+    "{sum,weightAsCoefficient},{sum,weightAsCoefficient}": {
+        "sumOfSquares": 0.014206086754420309,
+        "submetrics": [
+            {
+                "sum": true,
+                "weightAsCoefficient": 0.0611111111111111
+            },
+            {
+                "sum": true,
+                "weightAsCoefficient": 0.0611111111111111
+            }
+        ],
+        "spreadDynamicParameters": [
+            "weightAsCoefficient"
+        ]
+    },
+    "{sum},{sum},{sum}": {
+        "sumOfSquares": 0.014206086754420309,
+        "submetrics": [
+            {
+                "sum": true
+            },
+            {
+                "sum": true
+            },
+            {
+                "sum": true
             }
         ]
     },
@@ -423,16 +414,13 @@ THE PERFECTED METRICS ARE {
         "submetrics": [
             {
                 "sum": true,
-                "weightAsPowerBase": 2.05
+                "weightAsPowerBase": 2
             },
             {
                 "withoutRepetition": true,
                 "max": true,
-                "weightAsPowerBase": 2.05
+                "weightAsPowerBase": 2
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerBase"
         ]
     },
     "{sum},{sum,weightAsCoefficient,withoutRepetition}": {
@@ -478,15 +466,12 @@ THE PERFECTED METRICS ARE {
         "submetrics": [
             {
                 "sum": true,
-                "weightAsPowerBase": 1.95
+                "weightAsPowerBase": 2
             },
             {
                 "count": true,
-                "weightAsPowerBase": 1.95
+                "weightAsPowerBase": 2
             }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerBase"
         ]
     },
     "{sum},{aAsCoefficient,sum}": {
@@ -513,23 +498,6 @@ THE PERFECTED METRICS ARE {
             }
         ]
     },
-    "{sum,weightAsPowerBase},{count,weightAsPowerBase,withoutRepetition}": {
-        "sumOfSquares": 0.014068571875245416,
-        "submetrics": [
-            {
-                "sum": true,
-                "weightAsPowerBase": 1.95
-            },
-            {
-                "withoutRepetition": true,
-                "count": true,
-                "weightAsPowerBase": 1.95
-            }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerBase"
-        ]
-    },
     "{sum,weightAsPowerBase},{count,withoutRepetition}": {
         "sumOfSquares": 0.014068571875245416,
         "submetrics": [
@@ -540,6 +508,20 @@ THE PERFECTED METRICS ARE {
             {
                 "withoutRepetition": true,
                 "count": true
+            }
+        ]
+    },
+    "{sum,weightAsPowerBase},{count,weightAsPowerBase,withoutRepetition}": {
+        "sumOfSquares": 0.014068571875245416,
+        "submetrics": [
+            {
+                "sum": true,
+                "weightAsPowerBase": 2
+            },
+            {
+                "withoutRepetition": true,
+                "count": true,
+                "weightAsPowerBase": 2
             }
         ]
     },
@@ -558,7 +540,7 @@ THE PERFECTED METRICS ARE {
             }
         ]
     },
-    "{sum},{count,weightAsCoefficient,withoutRepetition}": {
+    "{sum},{count,withoutRepetition,x}": {
         "sumOfSquares": 0.014054771191801872,
         "submetrics": [
             {
@@ -567,7 +549,33 @@ THE PERFECTED METRICS ARE {
             {
                 "withoutRepetition": true,
                 "count": true,
-                "weightAsCoefficient": 0.5055555555555555
+                "x": -0.407627118644068
+            }
+        ]
+    },
+    "{sum},{count,w,withoutRepetition}": {
+        "sumOfSquares": 0.014054771191801872,
+        "submetrics": [
+            {
+                "sum": true
+            },
+            {
+                "withoutRepetition": true,
+                "count": true,
+                "w": -0.407627118644068
+            }
+        ]
+    },
+    "{sum},{count,weightAsPowerExponent,withoutRepetition}": {
+        "sumOfSquares": 0.014054771191801872,
+        "submetrics": [
+            {
+                "sum": true
+            },
+            {
+                "withoutRepetition": true,
+                "count": true,
+                "weightAsPowerExponent": 0.7110169491525423
             }
         ]
     },
@@ -601,6 +609,19 @@ THE PERFECTED METRICS ARE {
             "weightAsPowerExponent"
         ]
     },
+    "{sum},{count,weightAsCoefficient,withoutRepetition}": {
+        "sumOfSquares": 0.014054771191801872,
+        "submetrics": [
+            {
+                "sum": true
+            },
+            {
+                "withoutRepetition": true,
+                "count": true,
+                "weightAsCoefficient": 0.5055555555555555
+            }
+        ]
+    },
     "{sum},{aAsCoefficient,count,withoutRepetition}": {
         "sumOfSquares": 0.014054771191801872,
         "submetrics": [
@@ -614,42 +635,16 @@ THE PERFECTED METRICS ARE {
             }
         ]
     },
-    "{sum},{count,weightAsPowerExponent,withoutRepetition}": {
-        "sumOfSquares": 0.014054771191801872,
+    "{sum,x},{count,withoutRepetition}": {
+        "sumOfSquares": 0.014054123077642696,
         "submetrics": [
             {
-                "sum": true
+                "sum": true,
+                "x": -1.1177966101694916
             },
             {
                 "withoutRepetition": true,
-                "count": true,
-                "weightAsPowerExponent": 0.7110169491525423
-            }
-        ]
-    },
-    "{sum},{count,withoutRepetition,x}": {
-        "sumOfSquares": 0.014054771191801872,
-        "submetrics": [
-            {
-                "sum": true
-            },
-            {
-                "withoutRepetition": true,
-                "count": true,
-                "x": -0.407627118644068
-            }
-        ]
-    },
-    "{sum},{count,w,withoutRepetition}": {
-        "sumOfSquares": 0.014054771191801872,
-        "submetrics": [
-            {
-                "sum": true
-            },
-            {
-                "withoutRepetition": true,
-                "count": true,
-                "w": -0.407627118644068
+                "count": true
             }
         ]
     },
@@ -659,19 +654,6 @@ THE PERFECTED METRICS ARE {
             {
                 "sum": true,
                 "w": -1.1177966101694916
-            },
-            {
-                "withoutRepetition": true,
-                "count": true
-            }
-        ]
-    },
-    "{sum,x},{count,withoutRepetition}": {
-        "sumOfSquares": 0.014054123077642696,
-        "submetrics": [
-            {
-                "sum": true,
-                "x": -1.1177966101694916
             },
             {
                 "withoutRepetition": true,
@@ -713,22 +695,12 @@ THE PERFECTED METRICS ARE {
             "w"
         ]
     },
-    "{sum,w,weightAsPowerExponent}": {
+    "{sum,weightAsCoefficient,x}": {
         "sumOfSquares": 0.013996974615701333,
         "submetrics": [
             {
                 "sum": true,
-                "weightAsPowerExponent": 0.9161016949152543,
-                "w": 0.7127118644067798
-            }
-        ]
-    },
-    "{sum,weightAsPowerExponent,x}": {
-        "sumOfSquares": 0.013996974615701333,
-        "submetrics": [
-            {
-                "sum": true,
-                "weightAsPowerExponent": 0.9161016949152543,
+                "weightAsCoefficient": 0.7277777777777777,
                 "x": 0.7127118644067798
             }
         ]
@@ -740,16 +712,6 @@ THE PERFECTED METRICS ARE {
                 "sum": true,
                 "weightAsCoefficient": 0.7277777777777777,
                 "w": 0.7127118644067798
-            }
-        ]
-    },
-    "{sum,weightAsCoefficient,x}": {
-        "sumOfSquares": 0.013996974615701333,
-        "submetrics": [
-            {
-                "sum": true,
-                "weightAsCoefficient": 0.7277777777777777,
-                "x": 0.7127118644067798
             }
         ]
     },
@@ -780,6 +742,16 @@ THE PERFECTED METRICS ARE {
             }
         ]
     },
+    "{aAsCoefficient,sum,weightAsPowerExponent}": {
+        "sumOfSquares": 0.013985109145744863,
+        "submetrics": [
+            {
+                "sum": true,
+                "aAsCoefficient": 0.17222222222222222,
+                "weightAsPowerExponent": 0.7127118644067798
+            }
+        ]
+    },
     "{aAsCoefficient,sum,weightAsLogarithmBase}": {
         "sumOfSquares": 0.01398441358094894,
         "submetrics": [
@@ -787,52 +759,6 @@ THE PERFECTED METRICS ARE {
                 "sum": true,
                 "aAsCoefficient": 0.17222222222222222,
                 "weightAsLogarithmBase": 2
-            }
-        ]
-    },
-    "{sum,x},{sum}": {
-        "sumOfSquares": 0.013983040590027893,
-        "submetrics": [
-            {
-                "sum": true,
-                "x": 1.4245762711864403
-            },
-            {
-                "sum": true
-            }
-        ]
-    },
-    "{sum,w},{sum}": {
-        "sumOfSquares": 0.013983040590027893,
-        "submetrics": [
-            {
-                "sum": true,
-                "w": 1.4245762711864403
-            },
-            {
-                "sum": true
-            }
-        ]
-    },
-    "{sum},{sum,w}": {
-        "sumOfSquares": 0.013983040590027893,
-        "submetrics": [
-            {
-                "sum": true
-            },
-            {
-                "sum": true,
-                "w": 1.4245762711864403
-            }
-        ]
-    },
-    "{sum,weightAsLogarithmBase,x}": {
-        "sumOfSquares": 0.013983040590027893,
-        "submetrics": [
-            {
-                "sum": true,
-                "weightAsLogarithmBase": 2,
-                "x": 0.5093220338983049
             }
         ]
     },
@@ -848,39 +774,13 @@ THE PERFECTED METRICS ARE {
             }
         ]
     },
-    "{sum},{aAsCoefficient,count}": {
+    "{sum,weightAsLogarithmBase,x}": {
         "sumOfSquares": 0.013983040590027893,
         "submetrics": [
-            {
-                "sum": true
-            },
-            {
-                "count": true,
-                "aAsCoefficient": 0.5055555555555555
-            }
-        ]
-    },
-    "{sum},{count,weightAsCoefficient}": {
-        "sumOfSquares": 0.013983040590027893,
-        "submetrics": [
-            {
-                "sum": true
-            },
-            {
-                "count": true,
-                "weightAsCoefficient": 0.5055555555555555
-            }
-        ]
-    },
-    "{sum},{sum,x}": {
-        "sumOfSquares": 0.013983040590027893,
-        "submetrics": [
-            {
-                "sum": true
-            },
             {
                 "sum": true,
-                "x": 1.4245762711864403
+                "weightAsLogarithmBase": 2,
+                "x": 0.5093220338983049
             }
         ]
     },
@@ -904,22 +804,6 @@ THE PERFECTED METRICS ARE {
                 "count": true,
                 "w": -0.407627118644068
             }
-        ]
-    },
-    "{sum,weightAsPowerExponent},{count,weightAsPowerExponent}": {
-        "sumOfSquares": 0.013983040590027893,
-        "submetrics": [
-            {
-                "sum": true,
-                "weightAsPowerExponent": 1.0177966101694913
-            },
-            {
-                "count": true,
-                "weightAsPowerExponent": 1.0177966101694913
-            }
-        ],
-        "spreadDynamicParameters": [
-            "weightAsPowerExponent"
         ]
     },
     "{sum},{count,weightAsPowerExponent}": {
@@ -946,6 +830,114 @@ THE PERFECTED METRICS ARE {
             }
         ]
     },
+    "{sum,weightAsPowerExponent},{count,weightAsPowerExponent}": {
+        "sumOfSquares": 0.013983040590027893,
+        "submetrics": [
+            {
+                "sum": true,
+                "weightAsPowerExponent": 1.0177966101694913
+            },
+            {
+                "count": true,
+                "weightAsPowerExponent": 1.0177966101694913
+            }
+        ],
+        "spreadDynamicParameters": [
+            "weightAsPowerExponent"
+        ]
+    },
+    "{sum},{count,weightAsCoefficient}": {
+        "sumOfSquares": 0.013983040590027893,
+        "submetrics": [
+            {
+                "sum": true
+            },
+            {
+                "count": true,
+                "weightAsCoefficient": 0.5055555555555555
+            }
+        ]
+    },
+    "{sum},{aAsCoefficient,count}": {
+        "sumOfSquares": 0.013983040590027893,
+        "submetrics": [
+            {
+                "sum": true
+            },
+            {
+                "count": true,
+                "aAsCoefficient": 0.5055555555555555
+            }
+        ]
+    },
+    "{sum},{sum,x}": {
+        "sumOfSquares": 0.013983040590027893,
+        "submetrics": [
+            {
+                "sum": true
+            },
+            {
+                "sum": true,
+                "x": 1.4245762711864403
+            }
+        ]
+    },
+    "{sum,x},{sum}": {
+        "sumOfSquares": 0.013983040590027893,
+        "submetrics": [
+            {
+                "sum": true,
+                "x": 1.4245762711864403
+            },
+            {
+                "sum": true
+            }
+        ]
+    },
+    "{sum},{sum,w}": {
+        "sumOfSquares": 0.013983040590027893,
+        "submetrics": [
+            {
+                "sum": true
+            },
+            {
+                "sum": true,
+                "w": 1.4245762711864403
+            }
+        ]
+    },
+    "{sum,w},{sum}": {
+        "sumOfSquares": 0.013983040590027893,
+        "submetrics": [
+            {
+                "sum": true,
+                "w": 1.4245762711864403
+            },
+            {
+                "sum": true
+            }
+        ]
+    },
+    "{sum,weightAsPowerExponent,x}": {
+        "sumOfSquares": 0.013981309218743566,
+        "submetrics": [
+            {
+                "sum": true,
+                "weightAsPowerExponent": 0.47228499686126785,
+                "x": 0.7941933458882613
+            }
+        ]
+    },
+    "{sum,w,weightAsPowerExponent}": {
+        "sumOfSquares": 0.013981309218743566,
+        "submetrics": [
+            {
+                "sum": true,
+                "weightAsPowerExponent": 0.47969240426867527,
+                "w": 0.7941933458882613
+            }
+        ]
+    },
     "{aAsCoefficient,sum,weightAsPowerBase}": {
         "sumOfSquares": 0.01398028983382364,
         "submetrics": [
@@ -954,38 +946,6 @@ THE PERFECTED METRICS ARE {
                 "aAsCoefficient": 0.09444444444444444,
                 "weightAsPowerBase": 2
             }
-        ]
-    },
-    "{sum,w},{sum,w}": {
-        "sumOfSquares": 0.013969002045691164,
-        "submetrics": [
-            {
-                "sum": true,
-                "w": 0.6806130989746811
-            },
-            {
-                "sum": true,
-                "w": 0.6806130989746811
-            }
-        ],
-        "spreadDynamicParameters": [
-            "w"
-        ]
-    },
-    "{sum,w},{count,w}": {
-        "sumOfSquares": 0.013969002045691164,
-        "submetrics": [
-            {
-                "sum": true,
-                "w": -0.21365348399246706
-            },
-            {
-                "count": true,
-                "w": -0.21365348399246706
-            }
-        ],
-        "spreadDynamicParameters": [
-            "w"
         ]
     },
     "{sum,x},{count,x}": {
@@ -1004,6 +964,65 @@ THE PERFECTED METRICS ARE {
             "x"
         ]
     },
+    "{sum,w},{count,w}": {
+        "sumOfSquares": 0.013969002045691164,
+        "submetrics": [
+            {
+                "sum": true,
+                "w": -0.21365348399246706
+            },
+            {
+                "count": true,
+                "w": -0.21365348399246706
+            }
+        ],
+        "spreadDynamicParameters": [
+            "w"
+        ]
+    },
+    "{sum,x},{count}": {
+        "sumOfSquares": 0.013969002045691164,
+        "submetrics": [
+            {
+                "sum": true,
+                "x": -0.3059322033898304
+            },
+            {
+                "count": true
+            }
+        ]
+    },
+    "{sum,w},{count}": {
+        "sumOfSquares": 0.013969002045691164,
+        "submetrics": [
+            {
+                "sum": true,
+                "w": -0.3059322033898304
+            },
+            {
+                "count": true
+            }
+        ]
+    },
+    "{sum,useNuminator,x}": {
+        "sumOfSquares": 0.013969002045691164,
+        "submetrics": [
+            {
+                "sum": true,
+                "x": 0.6806130989746811,
+                "useNuminator": true
+            }
+        ]
+    },
+    "{sum,x}": {
+        "sumOfSquares": 0.013969002045691164,
+        "submetrics": [
+            {
+                "sum": true,
+                "x": 0.6806130989746811
+            }
+        ]
+    },
     "{sum,useNuminator,w}": {
         "sumOfSquares": 0.013969002045691164,
         "submetrics": [
@@ -1011,6 +1030,25 @@ THE PERFECTED METRICS ARE {
                 "sum": true,
                 "w": 0.6806130989746811,
                 "useNuminator": true
+            }
+        ]
+    },
+    "{sum,w}": {
+        "sumOfSquares": 0.013969002045691164,
+        "submetrics": [
+            {
+                "sum": true,
+                "w": 0.6806130989746811
+            }
+        ]
+    },
+    "{sum,weightAsPowerBase,x}": {
+        "sumOfSquares": 0.013969002045691164,
+        "submetrics": [
+            {
+                "sum": true,
+                "weightAsPowerBase": 2,
+                "x": 0.6806130989746811
             }
         ]
     },
@@ -1040,66 +1078,20 @@ THE PERFECTED METRICS ARE {
             "x"
         ]
     },
-    "{sum,x}": {
-        "sumOfSquares": 0.013969002045691164,
-        "submetrics": [
-            {
-                "sum": true,
-                "x": 0.6806130989746811
-            }
-        ]
-    },
-    "{sum,useNuminator,x}": {
-        "sumOfSquares": 0.013969002045691164,
-        "submetrics": [
-            {
-                "sum": true,
-                "x": 0.6806130989746811,
-                "useNuminator": true
-            }
-        ]
-    },
-    "{sum,weightAsPowerBase,x}": {
-        "sumOfSquares": 0.013969002045691164,
-        "submetrics": [
-            {
-                "sum": true,
-                "weightAsPowerBase": 2,
-                "x": 0.6806130989746811
-            }
-        ]
-    },
-    "{sum,w},{count}": {
-        "sumOfSquares": 0.013969002045691164,
-        "submetrics": [
-            {
-                "sum": true,
-                "w": -0.3059322033898304
-            },
-            {
-                "count": true
-            }
-        ]
-    },
-    "{sum,x},{count}": {
-        "sumOfSquares": 0.013969002045691164,
-        "submetrics": [
-            {
-                "sum": true,
-                "x": -0.3059322033898304
-            },
-            {
-                "count": true
-            }
-        ]
-    },
-    "{sum,w}": {
+    "{sum,w},{sum,w}": {
         "sumOfSquares": 0.013969002045691164,
         "submetrics": [
             {
                 "sum": true,
                 "w": 0.6806130989746811
+            },
+            {
+                "sum": true,
+                "w": 0.6806130989746811
             }
+        ],
+        "spreadDynamicParameters": [
+            "w"
         ]
     },
     "{sum,w,x}": {
@@ -1110,22 +1102,6 @@ THE PERFECTED METRICS ARE {
                 "w": -0.8460451977401132,
                 "x": 1.513465160075329
             }
-        ]
-    },
-    "{aAsCoefficient,sum},{aAsCoefficient,sum}": {
-        "sumOfSquares": 0.013964110397732087,
-        "submetrics": [
-            {
-                "sum": true,
-                "aAsCoefficient": 0.04999999999999999
-            },
-            {
-                "sum": true,
-                "aAsCoefficient": 0.04999999999999999
-            }
-        ],
-        "spreadDynamicParameters": [
-            "aAsCoefficient"
         ]
     },
     "{aAsCoefficient,sum,useNuminator}": {
@@ -1147,14 +1123,20 @@ THE PERFECTED METRICS ARE {
             }
         ]
     },
-    "{aAsCoefficient,sum,weightAsPowerExponent}": {
-        "sumOfSquares": 0.013935456641292759,
+    "{aAsCoefficient,sum},{aAsCoefficient,sum}": {
+        "sumOfSquares": 0.013964110397732087,
         "submetrics": [
             {
                 "sum": true,
-                "aAsCoefficient": 0.04999999999999999,
-                "weightAsPowerExponent": 0.29482109227871933
+                "aAsCoefficient": 0.04999999999999999
+            },
+            {
+                "sum": true,
+                "aAsCoefficient": 0.04999999999999999
             }
+        ],
+        "spreadDynamicParameters": [
+            "aAsCoefficient"
         ]
     },
     "{aAsPowerExponent,sum,usePrimeIndex}": {
@@ -1167,22 +1149,22 @@ THE PERFECTED METRICS ARE {
             }
         ]
     },
-    "{sum,w,y}": {
-        "sumOfSquares": 0.013889574694429306,
-        "submetrics": [
-            {
-                "sum": true,
-                "w": -1.5467101439166726,
-                "y": 1.0600462672339632
-            }
-        ]
-    },
     "{sum,x,y}": {
         "sumOfSquares": 0.013889574694429306,
         "submetrics": [
             {
                 "sum": true,
                 "x": -1.5467101439166726,
+                "y": 1.0600462672339632
+            }
+        ]
+    },
+    "{sum,w,y}": {
+        "sumOfSquares": 0.013889574694429306,
+        "submetrics": [
+            {
+                "sum": true,
+                "w": -1.5467101439166726,
                 "y": 1.0600462672339632
             }
         ]
@@ -1373,19 +1355,6 @@ THE PERFECTED METRICS ARE {
             }
         ]
     },
-    "{sum},{aAsCoefficient,aAsLogarithmBase,sum}": {
-        "sumOfSquares": 0.013616819480333832,
-        "submetrics": [
-            {
-                "sum": true
-            },
-            {
-                "sum": true,
-                "aAsLogarithmBase": 2,
-                "aAsCoefficient": 0.6166666666666666
-            }
-        ]
-    },
     "{sum},{aAsLogarithmBase,sum,weightAsCoefficient}": {
         "sumOfSquares": 0.013616819480333832,
         "submetrics": [
@@ -1396,6 +1365,19 @@ THE PERFECTED METRICS ARE {
                 "sum": true,
                 "aAsLogarithmBase": 2,
                 "weightAsCoefficient": 0.6166666666666666
+            }
+        ]
+    },
+    "{sum},{aAsCoefficient,aAsLogarithmBase,sum}": {
+        "sumOfSquares": 0.013616819480333832,
+        "submetrics": [
+            {
+                "sum": true
+            },
+            {
+                "sum": true,
+                "aAsLogarithmBase": 2,
+                "aAsCoefficient": 0.6166666666666666
             }
         ]
     },
@@ -1442,19 +1424,6 @@ THE PERFECTED METRICS ARE {
             }
         ]
     },
-    "{sum,w},{aAsLogarithmBase,sum}": {
-        "sumOfSquares": 0.013602108877571304,
-        "submetrics": [
-            {
-                "sum": true,
-                "w": -2.7115819209039542
-            },
-            {
-                "sum": true,
-                "aAsLogarithmBase": 2
-            }
-        ]
-    },
     "{sum},{aAsLogarithmBase,sum,w}": {
         "sumOfSquares": 0.013602108877571304,
         "submetrics": [
@@ -1465,6 +1434,19 @@ THE PERFECTED METRICS ARE {
                 "sum": true,
                 "aAsLogarithmBase": 2,
                 "w": -2.7115819209039542
+            }
+        ]
+    },
+    "{sum,w},{aAsLogarithmBase,sum}": {
+        "sumOfSquares": 0.013602108877571304,
+        "submetrics": [
+            {
+                "sum": true,
+                "w": -2.7115819209039542
+            },
+            {
+                "sum": true,
+                "aAsLogarithmBase": 2
             }
         ]
     },
@@ -1513,16 +1495,13 @@ THE PERFECTED METRICS ARE {
         "submetrics": [
             {
                 "sum": true,
-                "usePrimeIndex": 0.95
+                "usePrimeIndex": true
             },
             {
                 "withoutRepetition": true,
                 "max": true,
-                "usePrimeIndex": 0.95
+                "usePrimeIndex": true
             }
-        ],
-        "spreadDynamicParameters": [
-            "usePrimeIndex"
         ]
     },
     "{aAsPowerExponent,max,withoutRepetition},{aAsLogarithmBase,aAsPowerExponent,sum}": {
@@ -1609,6 +1588,20 @@ THE PERFECTED METRICS ARE {
             }
         ]
     },
+    "{count,withoutRepetition},{aAsLogarithmBase,aAsPowerExponent,sum}": {
+        "sumOfSquares": 0.013294199009460144,
+        "submetrics": [
+            {
+                "withoutRepetition": true,
+                "count": true
+            },
+            {
+                "sum": true,
+                "aAsLogarithmBase": 2,
+                "aAsPowerExponent": 2.1994036409290656
+            }
+        ]
+    },
     "{aAsPowerExponent,count,withoutRepetition},{aAsLogarithmBase,aAsPowerExponent,sum}": {
         "sumOfSquares": 0.013294199009460144,
         "submetrics": [
@@ -1627,17 +1620,17 @@ THE PERFECTED METRICS ARE {
             "aAsPowerExponent"
         ]
     },
-    "{count,withoutRepetition},{aAsLogarithmBase,aAsPowerExponent,sum}": {
-        "sumOfSquares": 0.013294199009460144,
+    "{aAsLogarithmBase,sum},{aAsLogarithmBase,aAsPowerExponent,sum}": {
+        "sumOfSquares": 0.013266360438109094,
         "submetrics": [
             {
-                "withoutRepetition": true,
-                "count": true
+                "sum": true,
+                "aAsLogarithmBase": 2
             },
             {
                 "sum": true,
                 "aAsLogarithmBase": 2,
-                "aAsPowerExponent": 2.1994036409290656
+                "aAsPowerExponent": 2.304802259887006
             }
         ]
     },
@@ -1655,28 +1648,14 @@ THE PERFECTED METRICS ARE {
             }
         ]
     },
-    "{aAsLogarithmBase,sum},{aAsLogarithmBase,aAsPowerExponent,sum}": {
-        "sumOfSquares": 0.013266360438109094,
-        "submetrics": [
-            {
-                "sum": true,
-                "aAsLogarithmBase": 2
-            },
-            {
-                "sum": true,
-                "aAsLogarithmBase": 2,
-                "aAsPowerExponent": 2.304802259887006
-            }
-        ]
-    },
-    "{aAsCoefficient,aAsLogarithmBase,aAsPowerExponent,sum}": {
+    "{aAsLogarithmBase,aAsPowerExponent,sum,weightAsPowerExponent}": {
         "sumOfSquares": 0.01325157472835409,
         "submetrics": [
             {
                 "sum": true,
                 "aAsLogarithmBase": 2,
-                "aAsCoefficient": 0.0611111111111111,
-                "aAsPowerExponent": 2.4398305084745764
+                "aAsPowerExponent": 2.4398305084745764,
+                "weightAsPowerExponent": 0.0008474576271185058
             }
         ]
     },
@@ -1691,14 +1670,14 @@ THE PERFECTED METRICS ARE {
             }
         ]
     },
-    "{aAsLogarithmBase,aAsPowerExponent,sum,weightAsPowerExponent}": {
+    "{aAsCoefficient,aAsLogarithmBase,aAsPowerExponent,sum}": {
         "sumOfSquares": 0.01325157472835409,
         "submetrics": [
             {
                 "sum": true,
                 "aAsLogarithmBase": 2,
-                "aAsPowerExponent": 2.4398305084745764,
-                "weightAsPowerExponent": 0.0008474576271185058
+                "aAsCoefficient": 0.0611111111111111,
+                "aAsPowerExponent": 2.4398305084745764
             }
         ]
     },
@@ -1724,6 +1703,27 @@ THE PERFECTED METRICS ARE {
             }
         ]
     },
+    "{aAsLogarithmBase,aAsPowerExponent,sum,weightAsLogarithmBase}": {
+        "sumOfSquares": 0.01317496208013917,
+        "submetrics": [
+            {
+                "sum": true,
+                "aAsLogarithmBase": 2,
+                "aAsPowerExponent": 2.4027934714375396,
+                "weightAsLogarithmBase": 2
+            }
+        ]
+    },
+    "{aAsLogarithmBase,aAsPowerExponent,sum}": {
+        "sumOfSquares": 0.01317496208013917,
+        "submetrics": [
+            {
+                "sum": true,
+                "aAsLogarithmBase": 2,
+                "aAsPowerExponent": 2.4027934714375396
+            }
+        ]
+    },
     "{aAsLogarithmBase,aAsPowerExponent,sum},{aAsLogarithmBase,aAsPowerExponent,sum}": {
         "sumOfSquares": 0.01317496208013917,
         "submetrics": [
@@ -1740,27 +1740,6 @@ THE PERFECTED METRICS ARE {
         ],
         "spreadDynamicParameters": [
             "aAsPowerExponent"
-        ]
-    },
-    "{aAsLogarithmBase,aAsPowerExponent,sum}": {
-        "sumOfSquares": 0.01317496208013917,
-        "submetrics": [
-            {
-                "sum": true,
-                "aAsLogarithmBase": 2,
-                "aAsPowerExponent": 2.4027934714375396
-            }
-        ]
-    },
-    "{aAsLogarithmBase,aAsPowerExponent,sum,weightAsLogarithmBase}": {
-        "sumOfSquares": 0.01317496208013917,
-        "submetrics": [
-            {
-                "sum": true,
-                "aAsLogarithmBase": 2,
-                "aAsPowerExponent": 2.4027934714375396,
-                "weightAsLogarithmBase": 2
-            }
         ]
     },
     "{aAsPowerExponent,sum},{aAsPowerExponent,max,withoutRepetition}": {
@@ -1846,17 +1825,6 @@ THE PERFECTED METRICS ARE {
             }
         ]
     },
-    "{aAsLogarithmBase,sum,w,weightAsCoefficient}": {
-        "sumOfSquares": 0.012961358503258066,
-        "submetrics": [
-            {
-                "sum": true,
-                "aAsLogarithmBase": 2,
-                "weightAsCoefficient": 0.0611111111111111,
-                "w": -1.7279661016949153
-            }
-        ]
-    },
     "{aAsLogarithmBase,sum,w,weightAsPowerExponent}": {
         "sumOfSquares": 0.012961358503258066,
         "submetrics": [
@@ -1864,6 +1832,17 @@ THE PERFECTED METRICS ARE {
                 "sum": true,
                 "aAsLogarithmBase": 2,
                 "weightAsPowerExponent": 0.0008474576271185058,
+                "w": -1.7279661016949153
+            }
+        ]
+    },
+    "{aAsLogarithmBase,sum,w,weightAsCoefficient}": {
+        "sumOfSquares": 0.012961358503258066,
+        "submetrics": [
+            {
+                "sum": true,
+                "aAsLogarithmBase": 2,
+                "weightAsCoefficient": 0.0611111111111111,
                 "w": -1.7279661016949153
             }
         ]
@@ -1881,6 +1860,17 @@ THE PERFECTED METRICS ARE {
             }
         ]
     },
+    "{aAsLogarithmBase,sum,useNuminator,w}": {
+        "sumOfSquares": 0.01294854795431553,
+        "submetrics": [
+            {
+                "sum": true,
+                "aAsLogarithmBase": 2,
+                "w": -1.7168549905838042,
+                "useNuminator": true
+            }
+        ]
+    },
     "{aAsLogarithmBase,sum,w}": {
         "sumOfSquares": 0.01294854795431553,
         "submetrics": [
@@ -1891,14 +1881,14 @@ THE PERFECTED METRICS ARE {
             }
         ]
     },
-    "{aAsLogarithmBase,sum,useNuminator,w}": {
+    "{aAsLogarithmBase,sum,w,weightAsPowerBase}": {
         "sumOfSquares": 0.01294854795431553,
         "submetrics": [
             {
                 "sum": true,
                 "aAsLogarithmBase": 2,
-                "w": -1.7168549905838042,
-                "useNuminator": true
+                "weightAsPowerBase": 2,
+                "w": -1.7168549905838042
             }
         ]
     },
@@ -1929,17 +1919,6 @@ THE PERFECTED METRICS ARE {
         ],
         "spreadDynamicParameters": [
             "w"
-        ]
-    },
-    "{aAsLogarithmBase,sum,w,weightAsPowerBase}": {
-        "sumOfSquares": 0.01294854795431553,
-        "submetrics": [
-            {
-                "sum": true,
-                "aAsLogarithmBase": 2,
-                "weightAsPowerBase": 2,
-                "w": -1.7168549905838042
-            }
         ]
     },
     "{sum},{max,weightAsPowerExponent,withoutRepetition}": {
@@ -1994,19 +1973,6 @@ THE PERFECTED METRICS ARE {
             }
         ]
     },
-    "{count,w},{aAsLogarithmBase,sum}": {
-        "sumOfSquares": 0.012928622677533334,
-        "submetrics": [
-            {
-                "count": true,
-                "w": -2.7115819209039542
-            },
-            {
-                "sum": true,
-                "aAsLogarithmBase": 2
-            }
-        ]
-    },
     "{count},{aAsLogarithmBase,sum,w}": {
         "sumOfSquares": 0.012928622677533334,
         "submetrics": [
@@ -2017,6 +1983,19 @@ THE PERFECTED METRICS ARE {
                 "sum": true,
                 "aAsLogarithmBase": 2,
                 "w": -2.7115819209039542
+            }
+        ]
+    },
+    "{count,w},{aAsLogarithmBase,sum}": {
+        "sumOfSquares": 0.012928622677533334,
+        "submetrics": [
+            {
+                "count": true,
+                "w": -2.7115819209039542
+            },
+            {
+                "sum": true,
+                "aAsLogarithmBase": 2
             }
         ]
     },
@@ -2082,19 +2061,6 @@ THE PERFECTED METRICS ARE {
             }
         ]
     },
-    "{sum},{aAsCoefficient,max,withoutRepetition}": {
-        "sumOfSquares": 0.012566593267814433,
-        "submetrics": [
-            {
-                "sum": true
-            },
-            {
-                "withoutRepetition": true,
-                "max": true,
-                "aAsCoefficient": 0.25
-            }
-        ]
-    },
     "{sum},{max,weightAsCoefficient,withoutRepetition}": {
         "sumOfSquares": 0.012566593267814433,
         "submetrics": [
@@ -2105,6 +2071,19 @@ THE PERFECTED METRICS ARE {
                 "withoutRepetition": true,
                 "max": true,
                 "weightAsCoefficient": 0.25
+            }
+        ]
+    },
+    "{sum},{aAsCoefficient,max,withoutRepetition}": {
+        "sumOfSquares": 0.012566593267814433,
+        "submetrics": [
+            {
+                "sum": true
+            },
+            {
+                "withoutRepetition": true,
+                "max": true,
+                "aAsCoefficient": 0.25
             }
         ]
     },
@@ -2218,12 +2197,23 @@ THE PERFECTED METRICS ARE {
             }
         ]
     },
-    "{jAsCoefficient,sum}": {
+    "{jAsCoefficient,sum,weightAsPowerExponent}": {
         "sumOfSquares": 0.011916916032003604,
         "submetrics": [
             {
                 "sum": true,
-                "jAsCoefficient": 1.05
+                "jAsCoefficient": 1.05,
+                "weightAsPowerExponent": 0.0008474576271185058
+            }
+        ]
+    },
+    "{jAsCoefficient,sum,weightAsLogarithmBase}": {
+        "sumOfSquares": 0.011916916032003604,
+        "submetrics": [
+            {
+                "sum": true,
+                "jAsCoefficient": 1.05,
+                "weightAsLogarithmBase": 2
             }
         ]
     },
@@ -2234,6 +2224,27 @@ THE PERFECTED METRICS ARE {
                 "sum": true,
                 "jAsCoefficient": 1.05,
                 "weightAsCoefficient": 0.0611111111111111
+            }
+        ]
+    },
+    "{jAsCoefficient,sum}": {
+        "sumOfSquares": 0.011916916032003604,
+        "submetrics": [
+            {
+                "sum": true,
+                "jAsCoefficient": 1.05
+            }
+        ]
+    },
+    "{sum},{jAsCoefficient,sum}": {
+        "sumOfSquares": 0.011916916032003604,
+        "submetrics": [
+            {
+                "sum": true
+            },
+            {
+                "sum": true,
+                "jAsCoefficient": 1.05
             }
         ]
     },
@@ -2265,38 +2276,6 @@ THE PERFECTED METRICS ARE {
             "jAsCoefficient"
         ]
     },
-    "{jAsCoefficient,sum,weightAsLogarithmBase}": {
-        "sumOfSquares": 0.011916916032003604,
-        "submetrics": [
-            {
-                "sum": true,
-                "jAsCoefficient": 1.05,
-                "weightAsLogarithmBase": 2
-            }
-        ]
-    },
-    "{jAsCoefficient,sum,weightAsPowerExponent}": {
-        "sumOfSquares": 0.011916916032003604,
-        "submetrics": [
-            {
-                "sum": true,
-                "jAsCoefficient": 1.05,
-                "weightAsPowerExponent": 0.0008474576271185058
-            }
-        ]
-    },
-    "{sum},{jAsCoefficient,sum}": {
-        "sumOfSquares": 0.011916916032003604,
-        "submetrics": [
-            {
-                "sum": true
-            },
-            {
-                "sum": true,
-                "jAsCoefficient": 1.05
-            }
-        ]
-    },
     "{jAsCoefficient,sum,useNuminator}": {
         "sumOfSquares": 0.01188514301866458,
         "submetrics": [
@@ -2317,32 +2296,6 @@ THE PERFECTED METRICS ARE {
             }
         ]
     },
-    "{kAsPowerExponent,sum},{kAsPowerExponent,sum}": {
-        "sumOfSquares": 0.011620966003589951,
-        "submetrics": [
-            {
-                "sum": true,
-                "kAsPowerExponent": 0.9161016949152543
-            },
-            {
-                "sum": true,
-                "kAsPowerExponent": 0.9161016949152543
-            }
-        ],
-        "spreadDynamicParameters": [
-            "kAsPowerExponent"
-        ]
-    },
-    "{kAsPowerExponent,sum,weightAsPowerExponent}": {
-        "sumOfSquares": 0.011620966003589951,
-        "submetrics": [
-            {
-                "sum": true,
-                "kAsPowerExponent": 0.9161016949152543,
-                "weightAsPowerExponent": 0.0008474576271185058
-            }
-        ]
-    },
     "{kAsPowerExponent,sum,weightAsPowerBase}": {
         "sumOfSquares": 0.011620966003589951,
         "submetrics": [
@@ -2353,12 +2306,13 @@ THE PERFECTED METRICS ARE {
             }
         ]
     },
-    "{kAsPowerExponent,sum}": {
+    "{kAsPowerExponent,sum,weightAsPowerExponent}": {
         "sumOfSquares": 0.011620966003589951,
         "submetrics": [
             {
                 "sum": true,
-                "kAsPowerExponent": 0.9161016949152543
+                "kAsPowerExponent": 0.9161016949152543,
+                "weightAsPowerExponent": 0.0008474576271185058
             }
         ]
     },
@@ -2380,6 +2334,31 @@ THE PERFECTED METRICS ARE {
                 "kAsPowerExponent": 0.9161016949152543,
                 "weightAsCoefficient": 0.0611111111111111
             }
+        ]
+    },
+    "{kAsPowerExponent,sum}": {
+        "sumOfSquares": 0.011620966003589951,
+        "submetrics": [
+            {
+                "sum": true,
+                "kAsPowerExponent": 0.9161016949152543
+            }
+        ]
+    },
+    "{kAsPowerExponent,sum},{kAsPowerExponent,sum}": {
+        "sumOfSquares": 0.011620966003589951,
+        "submetrics": [
+            {
+                "sum": true,
+                "kAsPowerExponent": 0.9161016949152543
+            },
+            {
+                "sum": true,
+                "kAsPowerExponent": 0.9161016949152543
+            }
+        ],
+        "spreadDynamicParameters": [
+            "kAsPowerExponent"
         ]
     },
     "{kAsPowerExponent,sum},{count,withoutRepetition}": {
@@ -2412,16 +2391,6 @@ THE PERFECTED METRICS ARE {
             "kAsPowerExponent"
         ]
     },
-    "{jAsCoefficient,sum,w}": {
-        "sumOfSquares": 0.011484427079521154,
-        "submetrics": [
-            {
-                "sum": true,
-                "jAsCoefficient": 1.05,
-                "w": 0.7238229755178909
-            }
-        ]
-    },
     "{jAsCoefficient,sum,x}": {
         "sumOfSquares": 0.011484427079521154,
         "submetrics": [
@@ -2429,6 +2398,16 @@ THE PERFECTED METRICS ARE {
                 "sum": true,
                 "jAsCoefficient": 1.05,
                 "x": 0.7238229755178909
+            }
+        ]
+    },
+    "{jAsCoefficient,sum,w}": {
+        "sumOfSquares": 0.011484427079521154,
+        "submetrics": [
+            {
+                "sum": true,
+                "jAsCoefficient": 1.05,
+                "w": 0.7238229755178909
             }
         ]
     },
@@ -2496,16 +2475,6 @@ THE PERFECTED METRICS ARE {
             }
         ]
     },
-    "{kAsPowerExponent,sum,x}": {
-        "sumOfSquares": 0.010507289859710283,
-        "submetrics": [
-            {
-                "sum": true,
-                "kAsPowerExponent": 0.8440364092906465,
-                "x": 0.02507846829880742
-            }
-        ]
-    },
     "{kAsPowerExponent,sum,w}": {
         "sumOfSquares": 0.010507289859710283,
         "submetrics": [
@@ -2513,6 +2482,16 @@ THE PERFECTED METRICS ARE {
                 "sum": true,
                 "kAsPowerExponent": 0.8440364092906465,
                 "w": 0.02507846829880742
+            }
+        ]
+    },
+    "{kAsPowerExponent,sum,x}": {
+        "sumOfSquares": 0.010507289859710283,
+        "submetrics": [
+            {
+                "sum": true,
+                "kAsPowerExponent": 0.8440364092906465,
+                "x": 0.02507846829880742
             }
         ]
     },
@@ -2529,16 +2508,6 @@ THE PERFECTED METRICS ARE {
             }
         ]
     },
-    "{jAsPowerExponent,sum,weightAsCoefficient}": {
-        "sumOfSquares": 0.010298457156490744,
-        "submetrics": [
-            {
-                "sum": true,
-                "jAsPowerExponent": 1.1177966101694914,
-                "weightAsCoefficient": 0.0611111111111111
-            }
-        ]
-    },
     "{jAsPowerExponent,sum,weightAsPowerExponent}": {
         "sumOfSquares": 0.010298457156490744,
         "submetrics": [
@@ -2546,6 +2515,16 @@ THE PERFECTED METRICS ARE {
                 "sum": true,
                 "jAsPowerExponent": 1.1177966101694914,
                 "weightAsPowerExponent": 0.0008474576271185058
+            }
+        ]
+    },
+    "{jAsPowerExponent,sum,weightAsCoefficient}": {
+        "sumOfSquares": 0.010298457156490744,
+        "submetrics": [
+            {
+                "sum": true,
+                "jAsPowerExponent": 1.1177966101694914,
+                "weightAsCoefficient": 0.0611111111111111
             }
         ]
     },
@@ -2573,18 +2552,6 @@ THE PERFECTED METRICS ARE {
             }
         ]
     },
-    "{jAsPowerExponent,sum},{sum}": {
-        "sumOfSquares": 0.010231985352249735,
-        "submetrics": [
-            {
-                "sum": true,
-                "jAsPowerExponent": 1.1861581920903959
-            },
-            {
-                "sum": true
-            }
-        ]
-    },
     "{sum},{jAsPowerExponent,sum}": {
         "sumOfSquares": 0.010231985352249735,
         "submetrics": [
@@ -2594,6 +2561,18 @@ THE PERFECTED METRICS ARE {
             {
                 "sum": true,
                 "jAsPowerExponent": 1.1861581920903959
+            }
+        ]
+    },
+    "{jAsPowerExponent,sum},{sum}": {
+        "sumOfSquares": 0.010231985352249735,
+        "submetrics": [
+            {
+                "sum": true,
+                "jAsPowerExponent": 1.1861581920903959
+            },
+            {
+                "sum": true
             }
         ]
     },
@@ -2617,16 +2596,6 @@ THE PERFECTED METRICS ARE {
             }
         ]
     },
-    "{kAsCoefficient,sum,weightAsCoefficient}": {
-        "sumOfSquares": 0.009748503250073481,
-        "submetrics": [
-            {
-                "sum": true,
-                "kAsCoefficient": 0.7277777777777777,
-                "weightAsCoefficient": 0.0611111111111111
-            }
-        ]
-    },
     "{kAsCoefficient,sum,weightAsPowerExponent}": {
         "sumOfSquares": 0.009748503250073481,
         "submetrics": [
@@ -2634,6 +2603,16 @@ THE PERFECTED METRICS ARE {
                 "sum": true,
                 "kAsCoefficient": 0.7277777777777777,
                 "weightAsPowerExponent": 0.0008474576271185058
+            }
+        ]
+    },
+    "{kAsCoefficient,sum,weightAsCoefficient}": {
+        "sumOfSquares": 0.009748503250073481,
+        "submetrics": [
+            {
+                "sum": true,
+                "kAsCoefficient": 0.7277777777777777,
+                "weightAsCoefficient": 0.0611111111111111
             }
         ]
     },
@@ -2661,12 +2640,13 @@ THE PERFECTED METRICS ARE {
             }
         ]
     },
-    "{kAsCoefficient,sum}": {
+    "{kAsCoefficient,sum,weightAsPowerBase}": {
         "sumOfSquares": 0.009589976676459168,
         "submetrics": [
             {
                 "sum": true,
-                "kAsCoefficient": 0.7611111111111111
+                "kAsCoefficient": 0.7611111111111111,
+                "weightAsPowerBase": 2
             }
         ]
     },
@@ -2677,6 +2657,15 @@ THE PERFECTED METRICS ARE {
                 "sum": true,
                 "kAsCoefficient": 0.7611111111111111,
                 "weightAsLogarithmBase": 2
+            }
+        ]
+    },
+    "{kAsCoefficient,sum}": {
+        "sumOfSquares": 0.009589976676459168,
+        "submetrics": [
+            {
+                "sum": true,
+                "kAsCoefficient": 0.7611111111111111
             }
         ]
     },
@@ -2694,16 +2683,6 @@ THE PERFECTED METRICS ARE {
         ],
         "spreadDynamicParameters": [
             "kAsCoefficient"
-        ]
-    },
-    "{kAsCoefficient,sum,weightAsPowerBase}": {
-        "sumOfSquares": 0.009589976676459168,
-        "submetrics": [
-            {
-                "sum": true,
-                "kAsCoefficient": 0.7611111111111111,
-                "weightAsPowerBase": 2
-            }
         ]
     },
     "{aAsPowerExponent,jAsCoefficient,sum}": {
@@ -2808,16 +2787,6 @@ THE PERFECTED METRICS ARE {
             }
         ]
     },
-    "{jAsPowerExponent,sum,w}": {
-        "sumOfSquares": 0.00930956822812768,
-        "submetrics": [
-            {
-                "sum": true,
-                "jAsPowerExponent": 1.0992780916509726,
-                "w": -0.12846829880728186
-            }
-        ]
-    },
     "{jAsPowerExponent,sum,x}": {
         "sumOfSquares": 0.00930956822812768,
         "submetrics": [
@@ -2825,6 +2794,16 @@ THE PERFECTED METRICS ARE {
                 "sum": true,
                 "jAsPowerExponent": 1.0992780916509726,
                 "x": -0.12846829880728186
+            }
+        ]
+    },
+    "{jAsPowerExponent,sum,w}": {
+        "sumOfSquares": 0.00930956822812768,
+        "submetrics": [
+            {
+                "sum": true,
+                "jAsPowerExponent": 1.0992780916509726,
+                "w": -0.12846829880728186
             }
         ]
     },
@@ -2878,6 +2857,16 @@ THE PERFECTED METRICS ARE {
             }
         ]
     },
+    "{jAsPowerExponent,sum,weightAsLogarithmBase}": {
+        "sumOfSquares": 0.00910097075832883,
+        "submetrics": [
+            {
+                "sum": true,
+                "jAsPowerExponent": 1.095574387947269,
+                "weightAsLogarithmBase": 2
+            }
+        ]
+    },
     "{jAsPowerExponent,sum}": {
         "sumOfSquares": 0.00910097075832883,
         "submetrics": [
@@ -2903,16 +2892,6 @@ THE PERFECTED METRICS ARE {
             "jAsPowerExponent"
         ]
     },
-    "{jAsPowerExponent,sum,weightAsLogarithmBase}": {
-        "sumOfSquares": 0.00910097075832883,
-        "submetrics": [
-            {
-                "sum": true,
-                "jAsPowerExponent": 1.095574387947269,
-                "weightAsLogarithmBase": 2
-            }
-        ]
-    },
     "{jAsPowerExponent,kAsCoefficient,sum}": {
         "sumOfSquares": 0.009095459111650456,
         "submetrics": [
@@ -2934,22 +2913,12 @@ THE PERFECTED METRICS ARE {
         ]
     },
     "{aAsCoefficient,jAsPowerExponent,sum}": {
-        "sumOfSquares": 0.009073934470391093,
+        "sumOfSquares": 0.009083396627950177,
         "submetrics": [
             {
                 "sum": true,
                 "jAsPowerExponent": 1.197269303201507,
                 "aAsCoefficient": 0.17222222222222222
-            }
-        ]
-    },
-    "{kAsCoefficient,sum,w}": {
-        "sumOfSquares": 0.00900808411869515,
-        "submetrics": [
-            {
-                "sum": true,
-                "kAsCoefficient": 0.8277777777777777,
-                "w": -0.16920903954802263
             }
         ]
     },
@@ -2960,6 +2929,16 @@ THE PERFECTED METRICS ARE {
                 "sum": true,
                 "kAsCoefficient": 0.8277777777777777,
                 "x": -0.16920903954802263
+            }
+        ]
+    },
+    "{kAsCoefficient,sum,w}": {
+        "sumOfSquares": 0.00900808411869515,
+        "submetrics": [
+            {
+                "sum": true,
+                "kAsCoefficient": 0.8277777777777777,
+                "w": -0.16920903954802263
             }
         ]
     },
@@ -3113,7 +3092,7 @@ THE PERFECTED METRICS ARE {
 }
 
 
-FINDING BEST METRICS TOOK 2990135.933264017 MS
+FINDING BEST METRICS TOOK 3172764.1728 MS
 
 
-PERFECTING METRICS TOOK 7619.339451998472 MS
+PERFECTING METRICS TOOK 23248.32319999952 MS
