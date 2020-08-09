@@ -20,9 +20,9 @@ import {
     computeLog,
     computePrimeCount,
     computeTriangularNumber,
+    FractionalPart,
     Ratio,
     round,
-    FractionalPart,
 } from "./math"
 import {
     analyzeComma,

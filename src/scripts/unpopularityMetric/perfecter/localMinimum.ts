@@ -1,7 +1,5 @@
+import { getSumOfSquaresAtSamplePoint, SamplePoint, SumOfSquares, SumsOfSquares } from "../bestMetric"
 import { computeAdjacentSamplePoints } from "./adjacentSamplePoints"
-import { getSumOfSquaresAtSamplePoint } from "./getSumOfSquaresAtSamplePoint"
-import { SamplePoint } from "./scopeToSamples"
-import { SumOfSquares, SumsOfSquares } from "./types"
 
 const getSumOfSquaresAtSamplePointIfLocalMinimum = (sumsOfSquares: SumsOfSquares, samplePoint: SamplePoint): SumOfSquares | undefined => {
     const adjacentSamplePoints = computeAdjacentSamplePoints(samplePoint)

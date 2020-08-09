@@ -16,7 +16,7 @@ const computeWeightedSubmetricAntivotes = (fiveRoughRatio: Ratio, submetric = {}
     }
 
     if (!isUndefined(weightAsLogarithmBase)) {
-        submetricAntivotes =  computeLog(submetricAntivotes, weightAsLogarithmBase) as Antivotes
+        submetricAntivotes = computeLog(submetricAntivotes, weightAsLogarithmBase) as Antivotes
     }
 
     if (!isUndefined(weightAsPowerExponent)) {

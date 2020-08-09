@@ -3,19 +3,10 @@
 import * as colors from "colors"
 import { program } from "commander"
 import { Span } from "../../../general"
-import {
-    computeResolution,
-    Scope,
-    searchScopeAndMaybeUpdateBestMetric,
-} from "../bestMetric"
-import {
-    clearDebugLogFiles,
-    debugSettings,
-    DebugTarget,
-    saveDebugMessage,
-    setDebugTargets,
-} from "../debug"
+import { computeResolution, Scope } from "../bestMetric"
+import { clearDebugLogFiles, debugSettings, DebugTarget, saveDebugMessage, setDebugTargets } from "../debug"
 import { bestMetrics, solverStatus } from "../globals"
+import { recursiveSearchScopeAndMaybeUpdateBestMetric } from "../perfecter"
 import { Parameter, ParameterValue } from "../sumOfSquares"
 
 program
@@ -23,13 +14,10 @@ program
     .option("-c, --no-color", "no color")
     .option("-w, --no-write", "no write")
     .option("-m, --maximum-unit", "maximum unit")
-    .option("-t, --timeout-enabled", "timeout enabled")
     .parse(process.argv)
 
-const recurse = true
 setDebugTargets(program.debugTargets)
 solverStatus.maximumUnit = program.maximumUnit
-const timeoutEnabled = program.timeoutEnabled
 debugSettings.noWrite = !program.write
 
 if (!program.color) {
@@ -71,6 +59,6 @@ const scope = [
     },
 ] as Scope
 
-searchScopeAndMaybeUpdateBestMetric(scope, { recurse, timeoutEnabled }).then(() => {
+recursiveSearchScopeAndMaybeUpdateBestMetric(scope, { onlyWinners: false }).then(() => {
     saveDebugMessage(`\nbest metric: ${JSON.stringify(bestMetrics)}`, DebugTarget.ALL)
 })

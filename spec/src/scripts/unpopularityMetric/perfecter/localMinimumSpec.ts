@@ -1,7 +1,7 @@
-import { getSumOfSquaresAtSamplePointIfLocalMinimum } from "../../../../../src/scripts/unpopularityMetric/bestMetric/localMinimum"
 import { SamplePoint } from "../../../../../src/scripts/unpopularityMetric/bestMetric/scopeToSamples"
 import { setSumOfSquaresAtSamplePoint } from "../../../../../src/scripts/unpopularityMetric/bestMetric/setSumOfSquaresAtSamplePoint"
 import { SumOfSquares, SumsOfSquares } from "../../../../../src/scripts/unpopularityMetric/bestMetric/types"
+import { getSumOfSquaresAtSamplePointIfLocalMinimum } from "../../../../../src/scripts/unpopularityMetric/perfecter/localMinimum"
 
 describe("getSumOfSquaresAtSamplePointIfLocalMinimum", () => {
     let sumsOfSquares: SumsOfSquares

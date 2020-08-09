@@ -10,9 +10,9 @@
 
 import { DebugTarget, saveDebugMessage } from "../debug"
 import { solverStatus } from "../globals"
+import { populateScopes } from "./populate"
 import { presentSearchedAndPopulated } from "./present"
 import { searchScopes } from "./search"
-import { populateScopes } from "./populate/scopes"
 
 const populateAndSearchScopesAndPerfectMetrics = async () => {
     populateScopes().then(() => {

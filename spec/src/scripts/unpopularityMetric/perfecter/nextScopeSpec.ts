@@ -1,7 +1,7 @@
 import { Index, Resolution, Span, Unit } from "../../../../../src/general"
 import { Scope } from "../../../../../src/scripts/unpopularityMetric/bestMetric"
-import { computeNextScope } from "../../../../../src/scripts/unpopularityMetric/bestMetric/nextScope"
 import { DynamicParameter, SamplePoint } from "../../../../../src/scripts/unpopularityMetric/bestMetric/scopeToSamples"
+import { computeNextScope } from "../../../../../src/scripts/unpopularityMetric/perfecter/nextScope"
 import { Parameter, ParameterValue, Submetric } from "../../../../../src/scripts/unpopularityMetric/sumOfSquares"
 
 describe("computeNextScope", () => {

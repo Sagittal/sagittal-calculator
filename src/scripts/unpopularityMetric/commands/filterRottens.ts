@@ -1,11 +1,8 @@
 import "colors"
-import { isNumber } from "../../../general/code"
+import { isNumber } from "../../../general"
 import { Metric } from "../bestMetric"
 import { DebugTarget, saveDebugMessage, setDebugTargets } from "../debug"
-import { CUT_OFF_POPULARITY } from "../sumOfSquares/constants"
-import { COMMA_POPULARITIES } from "../sumOfSquares/popularities"
-import { Popularity } from "../sumOfSquares/types"
-import { computeUnpopularities } from "../sumOfSquares/unpopularities"
+import { COMMA_POPULARITIES, computeUnpopularities, CUT_OFF_POPULARITY, Popularity } from "../sumOfSquares"
 
 setDebugTargets(DebugTarget.ALL)
 
@@ -23,7 +20,7 @@ const noRottens = Object.entries(potentiallyRottens).reduce(
 
         return {
             ...noRottens,
-            [potentiallyRottenName]: potentiallyRottenMetric,
+            [ potentiallyRottenName ]: potentiallyRottenMetric,
         }
     },
     {} as Record<string, Metric>,

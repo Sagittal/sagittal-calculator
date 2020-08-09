@@ -1,7 +1,7 @@
 import { Resolution, Span } from "../../../../general"
+import { solverStatus } from "../../globals"
 import { ParameterValue } from "../../sumOfSquares"
 import { MAXIMUM_UNIT } from "./constants"
-import { solverStatus } from "../../globals"
 
 const computeResolution = (span: Span<ParameterValue>): Resolution<ParameterValue> => {
     const maximumUnit = solverStatus.maximumUnit || MAXIMUM_UNIT

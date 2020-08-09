@@ -1,4 +1,4 @@
-import { Combination, EnumHash, Resolution, Span, Sum } from "../../../general"
+import { Combination, EnumHash, Index, Resolution, Span, Sum } from "../../../general"
 import { Parameter, ParameterValue, Submetric } from "../sumOfSquares"
 import { DynamicParameter, Sample } from "./scopeToSamples"
 
@@ -17,62 +17,30 @@ type DynamicParameterScope = Partial<{
     span: Span<ParameterValue>,
 }>
 
-interface LocalMinimum extends Sample {
-    sumOfSquares: SumOfSquares,
-}
-
-interface TopLevelScopeTimer {
-    timedOut: boolean
-}
-
-type SearchScopeAndMaybeUpdateBestMetricOptions = Partial<{
-    depth: number,
-    localMinimum: LocalMinimum,
-    progressMessage: string,
-    recurse: boolean,
-    deterministic: boolean,
-    timeoutEnabled: boolean,
-    onlyWinners: boolean,
-    topLevelScopeTimer: TopLevelScopeTimer, // todo lotta shared params in here!
-    timer: NodeJS.Timeout,
-}>
-
-type SearchLocalMinimumOptions = {
-    dynamicParameters: DynamicParameter[],
-    scope: Scope,
-    progressMessage: string,
-    index: number,
-    indentation: string,
-    nextDepth: number,
-    recurse: boolean,
-    localMinimum?: LocalMinimum,
-    nextLocalMinima: LocalMinimum[],
-    topLevelScopeTimer: TopLevelScopeTimer,
-    onlyWinners: boolean,
-    timer: NodeJS.Timeout,
-}
-
 type SumOfSquares = Sum<"SquaredWeightedRankDifferences">
 
 type SumsOfSquares = Array<SumsOfSquares | SumOfSquares | undefined>
 
-type ComputeSumsOfSquaresAndMaybeUpdateBestMetricOptions = Partial<{
+interface ComputeSumOrSumsOfSquaresOptions {
     indentation: string,
-    onlyWinners: boolean,
-}>
-
-interface ComputeSumOfSquaresAndMaybeUpdateBestMetricOptions {
-    indentation: string,
-    sumsOfSquares: SumsOfSquares,
-    index: number,
     onlyWinners: boolean,
 }
 
+type ComputeSumsOfSquaresAndMaybeUpdateBestMetricOptions = Partial<ComputeSumOrSumsOfSquaresOptions>
+
+interface ComputeSumOfSquaresAndMaybeUpdateBestMetricOptions extends ComputeSumOrSumsOfSquaresOptions {
+    sumsOfSquares: SumsOfSquares,
+    index: Index<Sample>,
+}
+
+interface SearchScopeResults {
+    dynamicParameters: DynamicParameter[],
+    sumsOfSquares: SumsOfSquares,
+    samples: Sample[],
+}
+
 export {
-    LocalMinimum,
-    SearchScopeAndMaybeUpdateBestMetricOptions,
     SumsOfSquares,
-    SearchLocalMinimumOptions,
     ComputeSumsOfSquaresAndMaybeUpdateBestMetricOptions,
     Metric,
     Scope,
@@ -80,4 +48,6 @@ export {
     DynamicParameterScope,
     SumOfSquares,
     ComputeSumOfSquaresAndMaybeUpdateBestMetricOptions,
+    ComputeSumOrSumsOfSquaresOptions,
+    SearchScopeResults,
 }

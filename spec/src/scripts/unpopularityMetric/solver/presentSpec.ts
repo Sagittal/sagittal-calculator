@@ -1,8 +1,7 @@
 import { Combination } from "../../../../../src/general"
-import { Metric } from "../../../../../src/scripts/unpopularityMetric/bestMetric"
+import { Metric, SumOfSquares } from "../../../../../src/scripts/unpopularityMetric/bestMetric"
 import { presentBestMetrics } from "../../../../../src/scripts/unpopularityMetric/solver"
 import { Parameter, Submetric } from "../../../../../src/scripts/unpopularityMetric/sumOfSquares"
-import { SumOfSquares } from "../../../../../src/scripts/unpopularityMetric/bestMetric"
 
 describe("presentBestMetrics", () => {
     it("sorts the best metrics by sum of squares", () => {

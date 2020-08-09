@@ -1,8 +1,9 @@
 import { Combination, Index, Resolution, Span, Unit } from "../../../../../src/general"
-import { searchScopeAndMaybeUpdateBestMetric } from "../../../../../src/scripts/unpopularityMetric/bestMetric"
-import * as nextLocalMinimum from "../../../../../src/scripts/unpopularityMetric/bestMetric/nextLocalMinimum"
+import { Scope, SumOfSquares } from "../../../../../src/scripts/unpopularityMetric/bestMetric"
 import { SamplePoint } from "../../../../../src/scripts/unpopularityMetric/bestMetric/scopeToSamples"
-import { LocalMinimum, Scope, SumOfSquares } from "../../../../../src/scripts/unpopularityMetric/bestMetric/types"
+import { recursiveSearchScopeAndMaybeUpdateBestMetric } from "../../../../../src/scripts/unpopularityMetric/perfecter"
+import * as nextLocalMinimum from "../../../../../src/scripts/unpopularityMetric/perfecter/nextLocalMinimum"
+import { LocalMinimum } from "../../../../../src/scripts/unpopularityMetric/perfecter/types"
 import { Parameter, ParameterValue, Submetric } from "../../../../../src/scripts/unpopularityMetric/sumOfSquares"
 
 describe("searchScopeAndMaybeUpdateBestMetric", () => {
@@ -28,26 +29,21 @@ describe("searchScopeAndMaybeUpdateBestMetric", () => {
             },
         ] as Scope
         const depth = 8
-        const progressMessage = "this is fun"
+        const metricId = "this is fun"
         const localMinimum = {
             sumOfSquares: 0.04 as SumOfSquares,
             samplePoint: [77, 54] as SamplePoint,
             submetrics: [] as unknown as Combination<Submetric>,
         }
-        const recurse = false
-        const deterministic = true
-        const onlyWinners = false
-        const timer = setTimeout(() => {}, 0)
+        const onlyWinners = true
 
         spyOn(nextLocalMinimum, "searchNextLocalMinimum").and.callThrough()
 
-        await searchScopeAndMaybeUpdateBestMetric(scope, {
+        await recursiveSearchScopeAndMaybeUpdateBestMetric(scope, {
             depth,
-            progressMessage,
+            metricId,
             localMinimum,
-            recurse,
-            deterministic,
-            timer,
+            onlyWinners,
         })
 
         const expectedNextLocalMinima = [
@@ -83,7 +79,6 @@ describe("searchScopeAndMaybeUpdateBestMetric", () => {
             },
         ] as LocalMinimum[]
         const expectedIndentation = "                "
-        const expectedNextDepth = 9
         const expectedDynamicParameters = [
             {
                 submetricIndex: 1 as Index<Submetric>,
@@ -101,15 +96,11 @@ describe("searchScopeAndMaybeUpdateBestMetric", () => {
         const expectedOptions = {
             dynamicParameters: expectedDynamicParameters,
             scope,
-            progressMessage,
+            metricId,
             indentation: expectedIndentation,
-            nextDepth: expectedNextDepth,
-            recurse,
-            localMinimum,
+            depth,
             nextLocalMinima: expectedNextLocalMinima,
-            topLevelScopeTimer: { timedOut: false },
             onlyWinners,
-            timer,
         }
 
         expect(nextLocalMinimum.searchNextLocalMinimum).toHaveBeenCalledWith(
@@ -121,10 +112,4 @@ describe("searchScopeAndMaybeUpdateBestMetric", () => {
             { ...expectedOptions, index: 1 },
         )
     })
-
-    // TODO: test timer
-
-    // TODO: test timeDebugger
-
-    // TODO: test shuffling
 })

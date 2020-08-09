@@ -1,7 +1,7 @@
 import { Count, Unit } from "../../../general"
-import { ParameterChunk, SubmetricChunk } from "./populate"
 import { Scope } from "../bestMetric"
 import { ParameterValue } from "../sumOfSquares"
+import { ParameterChunk, SubmetricChunk } from "./populate"
 
 type Chunk = SubmetricChunk | ParameterChunk
 

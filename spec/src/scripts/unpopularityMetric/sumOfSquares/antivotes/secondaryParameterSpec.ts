@@ -1,6 +1,6 @@
-import { secondaryParameterOverridesForDenominator } from "../../../../../../src/scripts/unpopularityMetric/sumOfSquares/antivotes/secondaryParameter"
-import { ParameterValue } from "../../../../../../src/scripts/unpopularityMetric/sumOfSquares"
 import { FractionalPart } from "../../../../../../src/general/math"
+import { ParameterValue } from "../../../../../../src/scripts/unpopularityMetric/sumOfSquares"
+import { secondaryParameterOverridesForDenominator } from "../../../../../../src/scripts/unpopularityMetric/sumOfSquares/antivotes/secondaryParameter"
 
 describe("secondaryParameterOverridesForDenominator", () => {
     const denominatorSpecificParameter = 5 as ParameterValue

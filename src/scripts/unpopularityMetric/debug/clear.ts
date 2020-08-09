@@ -1,7 +1,14 @@
 import * as fs from "fs"
+import * as path from "path"
 
 const clearDebugLogFiles = () => {
-    fs.existsSync("dist/unpopularityMetric") && fs.rmdirSync("dist/unpopularityMetric", { recursive: true })
+    const directory = "dist/unpopularityMetric"
+
+    const files = fs.readdirSync(directory)
+
+    for (const file of files) {
+        fs.unlinkSync(path.join(directory, file))
+    }
 }
 
 export {

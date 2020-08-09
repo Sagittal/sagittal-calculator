@@ -1,8 +1,12 @@
 import "colors"
 import { isNumber, isUndefined } from "../../../general"
 import { Metric } from "../bestMetric"
-import { DebugTarget, saveDebugMessage, setDebugTargets } from "../debug"
+import { clearDebugLogFiles, debugSettings, DebugTarget, saveDebugMessage, setDebugTargets } from "../debug"
 import { Parameter, ParameterValue } from "../sumOfSquares"
+
+if (!debugSettings.noWrite) {
+    clearDebugLogFiles()
+}
 
 setDebugTargets(DebugTarget.ALL)
 
@@ -11,7 +15,9 @@ const chunkCountResults = {} as unknown as Record<string, Metric> // paste thing
 const parameterExtremes = {} as Record<string, [ParameterValue | undefined, ParameterValue | undefined]>
 
 Object.values(Parameter).forEach(parameter => {
-    if (parameter.includes("Base")) return
+    if (parameter.includes("Base")) {
+        return
+    }
 
     let parameterMin: ParameterValue | undefined = undefined
     let parameterMax: ParameterValue | undefined = undefined

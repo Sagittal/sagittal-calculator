@@ -1,8 +1,8 @@
+import { MAXIMUM_UNIT } from "./constants"
 import { computeDynamicParameters } from "./dynamicParameters"
 import { computeResolution } from "./resolution"
 import { computeSamples } from "./samples"
 import { DynamicParameter, Sample, SamplePoint } from "./types"
-import { MAXIMUM_UNIT } from "./constants"
 
 export {
     DynamicParameter,

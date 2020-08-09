@@ -1,7 +1,8 @@
 import { Combination } from "../../../../../src/general/math"
-import { computeLocalMinima } from "../../../../../src/scripts/unpopularityMetric/bestMetric/localMinima"
 import { Sample, SamplePoint } from "../../../../../src/scripts/unpopularityMetric/bestMetric/scopeToSamples"
 import { SumOfSquares, SumsOfSquares } from "../../../../../src/scripts/unpopularityMetric/bestMetric/types"
+import { computeLocalMinima } from "../../../../../src/scripts/unpopularityMetric/perfecter/localMinima"
+import { LocalMinimum } from "../../../../../src/scripts/unpopularityMetric/perfecter/types"
 import { Submetric } from "../../../../../src/scripts/unpopularityMetric/sumOfSquares"
 
 describe("computeLocalMinima", () => {
@@ -111,5 +112,31 @@ describe("computeLocalMinima", () => {
             { sumOfSquares: 0.003 as SumOfSquares, samplePoint: [0, 1, 0], submetrics: [] },
             { sumOfSquares: 0.002 as SumOfSquares, samplePoint: [1, 1, 2], submetrics: [] },
         ]))
+    })
+
+    it("does not include results if the sum of squares is not appreciably lower than the current local minimum", () => {
+        const sumsOfSquares: SumsOfSquares = [
+            [
+                [0.004 as SumOfSquares, 0.004 as SumOfSquares, 0.004 as SumOfSquares],
+                [0.003 as SumOfSquares, 0.004 as SumOfSquares, 0.004 as SumOfSquares],
+            ],
+            [
+                [0.004 as SumOfSquares, 0.004 as SumOfSquares, 0.004 as SumOfSquares],
+                [0.004 as SumOfSquares, 0.004 as SumOfSquares, 0.004 as SumOfSquares],
+            ],
+            [
+                [0.004 as SumOfSquares, 0.004 as SumOfSquares, 0.004 as SumOfSquares],
+                [0.004 as SumOfSquares, 0.004 as SumOfSquares, 0.004 as SumOfSquares],
+            ],
+        ]
+        const localMinimum: LocalMinimum = {
+            sumOfSquares: 0.00300001 as SumOfSquares,
+            samplePoint: [0] as SamplePoint,
+            submetrics: [] as unknown as Combination<Submetric>,
+        }
+
+        const result = computeLocalMinima(samples, sumsOfSquares, localMinimum)
+
+        expect(result).toEqual(jasmine.arrayWithExactContents([]))
     })
 })

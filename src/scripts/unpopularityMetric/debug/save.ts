@@ -5,7 +5,9 @@ import { debugTargets } from "./targets"
 import { DebugTarget } from "./types"
 
 const saveDebugMessage = (message: string, target: DebugTarget) => {
-    if (debugTargets[ DebugTarget.NONE ]) return
+    if (debugTargets[ DebugTarget.NONE ]) {
+        return
+    }
 
     if (debugTargets[ DebugTarget.ALL ] || debugTargets[ target ] || target === DebugTarget.ALL) {
         if (!debugSettings.noWrite) {

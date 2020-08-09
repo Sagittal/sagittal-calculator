@@ -1,9 +1,6 @@
 import { Count, Resolution, Span } from "../../../../../../src/general"
 import { Scope } from "../../../../../../src/scripts/unpopularityMetric/bestMetric"
-import {
-    scopesToSearch,
-    solverStatus,
-} from "../../../../../../src/scripts/unpopularityMetric/globals"
+import { scopesToSearch, solverStatus } from "../../../../../../src/scripts/unpopularityMetric/globals"
 import { Chunk, searchScopes } from "../../../../../../src/scripts/unpopularityMetric/solver"
 import { Parameter, ParameterValue } from "../../../../../../src/scripts/unpopularityMetric/sumOfSquares"
 

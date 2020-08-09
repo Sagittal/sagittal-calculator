@@ -1,13 +1,7 @@
 import * as colors from "colors"
 import { program } from "commander"
 import { Combination, presentRatio, Ratio } from "../../../general"
-import {
-    clearDebugLogFiles,
-    debugSettings,
-    DebugTarget,
-    saveDebugMessage,
-    setDebugTargets,
-} from "../debug"
+import { clearDebugLogFiles, debugSettings, DebugTarget, saveDebugMessage, setDebugTargets } from "../debug"
 import { computeAntivotes, Parameter, ParameterValue, Submetric } from "../sumOfSquares"
 
 program

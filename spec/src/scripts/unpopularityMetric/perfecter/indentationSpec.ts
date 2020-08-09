@@ -1,4 +1,4 @@
-import { computeIndentation } from "../../../../../src/scripts/unpopularityMetric/bestMetric/indentation"
+import { computeIndentation } from "../../../../../src/scripts/unpopularityMetric/perfecter/indentation"
 
 describe("computeIndentation", () => {
     it("returns the number of spaces equal to 2x the recursive depth", () => {

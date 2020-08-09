@@ -1,7 +1,7 @@
 import * as colors from "colors"
 import { program } from "commander"
 import { performance } from "perf_hooks"
-import { Count, Unit } from "../../../general"
+import { Count } from "../../../general"
 import {
     clearDebugLogFiles,
     debugSettings,
@@ -10,7 +10,7 @@ import {
     saveDebugMessage,
     setDebugTargets,
 } from "../debug"
-import { bestMetrics, solverStatus, scopesTimedOut } from "../globals"
+import { bestMetrics, solverStatus } from "../globals"
 import { Chunk, populateAndSearchScopesAndPerfectMetrics, presentBestMetrics } from "../solver"
 
 program
@@ -35,15 +35,16 @@ if (!debugSettings.noWrite) {
 debugTargets[ DebugTarget.SEARCH ] = true
 debugTargets[ DebugTarget.POPULATE ] = true
 debugTargets[ DebugTarget.FINAL_SOLVER_RESULTS ] = true
-// debugTargets[ DebugTarget.LOCAL_MINIMUM ] = true
+debugTargets[ DebugTarget.PERFECT ] = true
 // debugTargets[ DebugTarget.NEW_BEST_METRIC ] = true
 // debugTargets[ DebugTarget.SCOPE ] = true
 
 const startTime = performance.now()
 populateAndSearchScopesAndPerfectMetrics().then(() => {
     saveDebugMessage(`\n\nAND THE BEST METRICS WERE ${JSON.stringify(presentBestMetrics(bestMetrics), undefined, 4)}`, DebugTarget.FINAL_SOLVER_RESULTS)
-    saveDebugMessage(`\n\nAND THE COUNT OF TIMED OUT METRICS WAS ${scopesTimedOut.length}`, DebugTarget.FINAL_SOLVER_RESULTS)
 
     const endTime = performance.now()
-    if (time) saveDebugMessage(`\n\nTOOK ${endTime - startTime} MS`, DebugTarget.FINAL_SOLVER_RESULTS)
+    if (time) {
+        saveDebugMessage(`\n\nFINDING BEST METRICS TOOK ${endTime - startTime} MS`, DebugTarget.FINAL_SOLVER_RESULTS)
+    }
 })

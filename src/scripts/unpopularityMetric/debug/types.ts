@@ -7,13 +7,12 @@ enum DebugTarget {
     SEARCH = "search",
     POPULATE = "populate",
     NEW_BEST_METRIC = "newBestMetric",
-    LOCAL_MINIMUM = "localMinimum",
     SCOPE = "scope",
     SUM_OF_SQUARES = "sumOfSquares",
     ERRORS = "errors",
-    TIMEOUTS = "timeouts",
     NONE = "none",
-    FINAL_SOLVER_RESULTS = "finalSolverResults"
+    FINAL_SOLVER_RESULTS = "finalSolverResults",
+    PERFECT = "perfect"
 }
 
 type DebugTargets = EnumHash<DebugTarget, boolean>

@@ -1,14 +1,14 @@
 import { computeDeepDistinct } from "../../../general"
+import { Sample, SumsOfSquares } from "../bestMetric"
 import { getSumOfSquaresAtSamplePointIfLocalMinimum } from "./localMinimum"
-import { Sample } from "./scopeToSamples"
-import { LocalMinimum, SumsOfSquares } from "./types"
+import { LocalMinimum } from "./types"
 
-const computeLocalMinima = (samples: Sample[], sumsOfSquares: SumsOfSquares): LocalMinimum[] => {
+const computeLocalMinima = (samples: Sample[], sumsOfSquares: SumsOfSquares, localMinimum?: LocalMinimum): LocalMinimum[] => {
     const localMinima: LocalMinimum[] = []
     samples.forEach(sample => {
         const { submetrics, samplePoint } = sample
         const sumOfSquares = getSumOfSquaresAtSamplePointIfLocalMinimum(sumsOfSquares, samplePoint)
-        if (sumOfSquares) {
+        if (sumOfSquares && (!localMinimum || localMinimum.sumOfSquares - sumOfSquares > 0.000001)) {
             localMinima.push({ sumOfSquares, samplePoint, submetrics })
         }
     })

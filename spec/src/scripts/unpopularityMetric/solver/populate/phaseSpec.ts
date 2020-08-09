@@ -11,9 +11,9 @@ import {
     PARAMETER_CHUNKS,
     SUBMETRIC_CHUNKS,
 } from "../../../../../../src/scripts/unpopularityMetric/solver/populate/constants"
+import { populateScopesPhase } from "../../../../../../src/scripts/unpopularityMetric/solver/populate/phase"
 import * as submetricChunkCombination
     from "../../../../../../src/scripts/unpopularityMetric/solver/populate/submetricChunkCombination"
-import { populateScopesPhase } from "../../../../../../src/scripts/unpopularityMetric/solver/populate/phase"
 import { Parameter } from "../../../../../../src/scripts/unpopularityMetric/sumOfSquares"
 
 describe("populateScopesPhase", () => {

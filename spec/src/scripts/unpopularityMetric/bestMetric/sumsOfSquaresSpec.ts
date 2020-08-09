@@ -1,10 +1,10 @@
 import { Combination } from "../../../../../src/general"
+import { cleanObject } from "../../../../../src/general/code/cleanObject"
 import { SamplePoint } from "../../../../../src/scripts/unpopularityMetric/bestMetric/scopeToSamples"
 import { computeSumsOfSquaresAndMaybeUpdateBestMetric } from "../../../../../src/scripts/unpopularityMetric/bestMetric/sumsOfSquares"
 import { SumOfSquares, SumsOfSquares } from "../../../../../src/scripts/unpopularityMetric/bestMetric/types"
 import { bestMetrics } from "../../../../../src/scripts/unpopularityMetric/globals"
 import { Parameter, ParameterValue, Submetric } from "../../../../../src/scripts/unpopularityMetric/sumOfSquares"
-import { cleanObject } from "../../../../../src/general/code/cleanObject"
 
 describe("computeSumsOfSquaresAndMaybeUpdateBestMetric", () => {
     const samples = [
@@ -108,8 +108,6 @@ describe("computeSumsOfSquaresAndMaybeUpdateBestMetric", () => {
             },
         })
     })
-
-    // TODO: test shuffling
 
     // TODO: test rejecting if example one's parameter combinations are invalid
 })

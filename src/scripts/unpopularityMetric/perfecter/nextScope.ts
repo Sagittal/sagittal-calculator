@@ -1,7 +1,6 @@
 import { computeDeepClone, Span } from "../../../general"
+import { computeResolution, DynamicParameter, SamplePoint, Scope } from "../bestMetric"
 import { ParameterValue } from "../sumOfSquares"
-import { computeResolution, DynamicParameter, SamplePoint } from "./scopeToSamples"
-import { Scope } from "./types"
 
 const computeNextScope = (samplePoint: SamplePoint, dynamicParameters: DynamicParameter[], scope: Scope): Scope => {
     const nextScope = computeDeepClone(scope)

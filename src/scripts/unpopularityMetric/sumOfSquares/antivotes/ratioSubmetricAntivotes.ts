@@ -1,4 +1,11 @@
-import { computeLog, computeMonzoFromInteger, computeMonzoFromRatio, FractionalPart, isUndefined, Ratio } from "../../../../general"
+import {
+    computeLog,
+    computeMonzoFromInteger,
+    computeMonzoFromRatio,
+    FractionalPart,
+    isUndefined,
+    Ratio,
+} from "../../../../general"
 import { Antivotes, ParameterValue, Submetric } from "../types"
 import { computeSubmetricAntivotes } from "./submetricAntivotes"
 

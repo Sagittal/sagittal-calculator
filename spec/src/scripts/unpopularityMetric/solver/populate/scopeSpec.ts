@@ -1,9 +1,9 @@
 import { Count } from "../../../../../../src/general"
+import { cleanArray } from "../../../../../../src/general/code/cleanArray"
 import { Scope } from "../../../../../../src/scripts/unpopularityMetric/bestMetric"
 import { scopesToSearch, solverStatus } from "../../../../../../src/scripts/unpopularityMetric/globals"
 import { populateScope } from "../../../../../../src/scripts/unpopularityMetric/solver/populate/scope"
 import { Parameter } from "../../../../../../src/scripts/unpopularityMetric/sumOfSquares"
-import { cleanArray } from "../../../../../../src/general/code/cleanArray"
 
 describe("populateScope", () => {
     it("adds the scope to the stack and increments the count of the total ever populated", () => {

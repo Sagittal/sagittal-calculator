@@ -46,9 +46,6 @@ describe("solve best metric", () => {
             `        ]`,
             `    }`,
             `}`,
-            ``,
-            ``,
-            `AND THE COUNT OF TIMED OUT METRICS WAS 0`,
         ])
     })
 })

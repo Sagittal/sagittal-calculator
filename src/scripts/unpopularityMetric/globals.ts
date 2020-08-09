@@ -4,7 +4,6 @@ import { Chunk, ParameterChunk, SolverStatus, SubmetricChunk } from "./solver"
 import { ParameterValue } from "./sumOfSquares"
 
 const scopesToSearch: Scope[] = [] as unknown as Scope[]
-const scopesTimedOut: Scope[] = [] as unknown as Scope[]
 
 const solverStatus: SolverStatus = {
     chunkCount: 0 as Count<Chunk>,
@@ -14,7 +13,7 @@ const solverStatus: SolverStatus = {
     maximumUnit: 0 as Unit<ParameterValue>,
 }
 
-const bestMetrics: Record<string, Metric> = { }
+const bestMetrics: Record<string, Metric> = {}
 
 const memoizedSubmetricChunkCombinations: Array<Combinations<SubmetricChunk>> = []
 const memoizedParameterChunkCombinations: Array<Combinations<ParameterChunk>> = []
@@ -25,5 +24,4 @@ export {
     bestMetrics,
     memoizedSubmetricChunkCombinations,
     memoizedParameterChunkCombinations,
-    scopesTimedOut,
 }

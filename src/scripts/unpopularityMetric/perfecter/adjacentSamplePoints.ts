@@ -1,6 +1,6 @@
 import { Index } from "../../../general"
+import { SamplePoint } from "../bestMetric"
 import { ParameterValue } from "../sumOfSquares"
-import { SamplePoint } from "./scopeToSamples"
 
 const computeAdjacentSamplePoints = (samplePoint: SamplePoint) => {
     const adjacentSamplePoints: SamplePoint[] = []

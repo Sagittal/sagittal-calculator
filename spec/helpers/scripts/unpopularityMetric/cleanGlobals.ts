@@ -1,5 +1,7 @@
 import { Count, Unit } from "../../../../src/general"
 import { cleanArray } from "../../../../src/general/code/cleanArray"
+import { cleanObject } from "../../../../src/general/code/cleanObject"
+import { Scope } from "../../../../src/scripts/unpopularityMetric/bestMetric"
 import {
     bestMetrics,
     memoizedParameterChunkCombinations,
@@ -7,8 +9,6 @@ import {
     scopesToSearch,
     solverStatus,
 } from "../../../../src/scripts/unpopularityMetric/globals"
-import { cleanObject } from "../../../../src/general/code/cleanObject"
-import { Scope } from "../../../../src/scripts/unpopularityMetric/bestMetric"
 import { ParameterValue } from "../../../../src/scripts/unpopularityMetric/sumOfSquares"
 
 afterEach(() => {

@@ -1,10 +1,8 @@
 import { Count } from "../../../../../../src/general"
 import { Scope } from "../../../../../../src/scripts/unpopularityMetric/bestMetric"
-import * as bestMetric from "../../../../../../src/scripts/unpopularityMetric/bestMetric/bestMetric"
-import {
-    scopesToSearch,
-    solverStatus,
-} from "../../../../../../src/scripts/unpopularityMetric/globals"
+import * as nonRecursiveBestMetric
+    from "../../../../../../src/scripts/unpopularityMetric/bestMetric/nonRecursiveBestMetric"
+import { scopesToSearch, solverStatus } from "../../../../../../src/scripts/unpopularityMetric/globals"
 import { searchPopulatedScopes } from "../../../../../../src/scripts/unpopularityMetric/solver/search/populatedScopes"
 import { Parameter } from "../../../../../../src/scripts/unpopularityMetric/sumOfSquares"
 
@@ -31,7 +29,7 @@ describe("searchPopulatedScopes", () => {
     })
 
     it("does those things even if there is an error while searching the scope", async () => {
-        spyOn(bestMetric, "searchScopeAndMaybeUpdateBestMetric").and.throwError("something")
+        spyOn(nonRecursiveBestMetric, "nonRecursiveSearchScopeAndMaybeUpdateBestMetric").and.throwError("something")
 
         await searchPopulatedScopes()
 
@@ -39,14 +37,11 @@ describe("searchPopulatedScopes", () => {
         expect(solverStatus.searchedScopeCount).toBe(156 as Count<Scope>)
     })
 
-    it("searches the scope it pops off the stack, and does not recurse, and enables timeout, and only takes winners", async () => {
-        spyOn(bestMetric, "searchScopeAndMaybeUpdateBestMetric").and.callThrough()
+    it("searches the scope it pops off the stack", async () => {
+        spyOn(nonRecursiveBestMetric, "nonRecursiveSearchScopeAndMaybeUpdateBestMetric").and.callThrough()
 
         await searchPopulatedScopes()
 
-        expect(bestMetric.searchScopeAndMaybeUpdateBestMetric).toHaveBeenCalledWith(
-            scope,
-            { recurse: false, timeoutEnabled: true, onlyWinners: true },
-        )
+        expect(nonRecursiveBestMetric.nonRecursiveSearchScopeAndMaybeUpdateBestMetric).toHaveBeenCalledWith(scope)
     })
 })

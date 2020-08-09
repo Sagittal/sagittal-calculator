@@ -1,9 +1,6 @@
 import { Combination, Combinations, computeCombinations, computeDistributions, Count, Index } from "../../../../general"
 import { DebugTarget, saveDebugMessage } from "../../debug"
-import {
-    memoizedParameterChunkCombinations,
-    memoizedSubmetricChunkCombinations, solverStatus,
-} from "../../globals"
+import { memoizedParameterChunkCombinations, memoizedSubmetricChunkCombinations, solverStatus } from "../../globals"
 import { presentSearchedAndPopulated } from "../present"
 import { Chunk } from "../types"
 import { PARAMETER_CHUNKS, SUBMETRIC_CHUNKS } from "./constants"

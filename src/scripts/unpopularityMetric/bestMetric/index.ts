@@ -1,9 +1,18 @@
-import { searchScopeAndMaybeUpdateBestMetric } from "./bestMetric"
-import { computeResolution, MAXIMUM_UNIT } from "./scopeToSamples"
-import { DynamicParameterScope, Metric, Scope, SubmetricScope, SumOfSquares } from "./types"
+import { getSumOfSquaresAtSamplePoint } from "./getSumOfSquaresAtSamplePoint"
+import { nonRecursiveSearchScopeAndMaybeUpdateBestMetric } from "./nonRecursiveBestMetric"
+import { computeResolution, DynamicParameter, MAXIMUM_UNIT, Sample, SamplePoint } from "./scopeToSamples"
+import {
+    ComputeSumOrSumsOfSquaresOptions,
+    DynamicParameterScope,
+    Metric,
+    Scope,
+    SubmetricScope,
+    SumOfSquares,
+    SumsOfSquares,
+} from "./types"
 
 export {
-    searchScopeAndMaybeUpdateBestMetric,
+    nonRecursiveSearchScopeAndMaybeUpdateBestMetric,
     Metric,
     Scope,
     SubmetricScope,
@@ -11,4 +20,10 @@ export {
     DynamicParameterScope,
     SumOfSquares,
     MAXIMUM_UNIT,
+    DynamicParameter,
+    SamplePoint,
+    SumsOfSquares,
+    Sample,
+    getSumOfSquaresAtSamplePoint,
+    ComputeSumOrSumsOfSquaresOptions,
 }

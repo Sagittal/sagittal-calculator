@@ -1,19 +1,14 @@
-import { shuffle } from "../../../general"
+import { Index } from "../../../general"
 import { DebugTarget, saveDebugMessage } from "../debug"
 import { checkSubmetricsForInvalidParameterCombinations } from "../sumOfSquares"
-import { MAXIMUM_SEARCH_TIME } from "./constants"
 import { Sample } from "./scopeToSamples"
 import { computeSumOfSquaresAndMaybeUpdateBestMetric } from "./sumOfSquares"
 import { ComputeSumsOfSquaresAndMaybeUpdateBestMetricOptions, SumsOfSquares } from "./types"
 
 const computeSumsOfSquaresAndMaybeUpdateBestMetric = async (samples: Sample[], options: ComputeSumsOfSquaresAndMaybeUpdateBestMetricOptions = {}): Promise<SumsOfSquares> => {
-    const { indentation = "", onlyWinners = false } = options
+    const { indentation = "", onlyWinners = true } = options
 
     const sumsOfSquares: SumsOfSquares = []
-
-    if (samples.length > MAXIMUM_SEARCH_TIME) { // todo shouldn't it be also w/r/t nondeterministic?
-        shuffle(samples)
-    }
 
     return new Promise(async resolve => {
         try {
@@ -24,11 +19,11 @@ const computeSumsOfSquaresAndMaybeUpdateBestMetric = async (samples: Sample[], o
             return
         }
 
-        const samplePromises: Promise<void>[] = samples.slice(0, MAXIMUM_SEARCH_TIME).map((sample, index) => {
+        const samplePromises: Promise<void>[] = samples.map((sample, index) => {
             return computeSumOfSquaresAndMaybeUpdateBestMetric(sample, {
                 indentation,
                 sumsOfSquares,
-                index,
+                index: index as Index<Sample>,
                 onlyWinners,
             })
         })
