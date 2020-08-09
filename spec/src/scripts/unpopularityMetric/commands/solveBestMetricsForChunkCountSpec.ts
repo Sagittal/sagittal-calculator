@@ -1,7 +1,7 @@
 import { runCommandAndGetConsoleOutput } from "../../../../helpers/specHelper"
 
 describe("solve best metric", () => {
-    it("finds the best metric for the given chunk count", () => {
+    xit("finds the best metric for the given chunk count", () => {
         const command = "npm run solve-best-metrics-for-chunk-count 1 -- --no-color --no-time --no-write"
 
         const result = runCommandAndGetConsoleOutput(command)

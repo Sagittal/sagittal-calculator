@@ -5,7 +5,7 @@ import { computeInitialChunkCountForSubmetrics } from "../../../../../../src/scr
 
 describe("computeInitialChunkCountForSubmetrics", () => {
     it("when less than or equal to the total count of possible submetric chunks, returns the passed-in chunk count", () => {
-        const chunkCount = 5 as Count<Chunk>
+        const chunkCount = 3 as Count<Chunk>
 
         const result = computeInitialChunkCountForSubmetrics(chunkCount)
 
@@ -17,6 +17,6 @@ describe("computeInitialChunkCountForSubmetrics", () => {
 
         const result = computeInitialChunkCountForSubmetrics(chunkCount)
 
-        expect(result).toBe(6 as Count<SubmetricChunk>)
+        expect(result).toBe(4 as Count<SubmetricChunk>)
     })
 })
