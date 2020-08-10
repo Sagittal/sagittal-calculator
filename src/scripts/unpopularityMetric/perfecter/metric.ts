@@ -7,7 +7,7 @@ import { computeDynamicParameterScopeForPerfecting } from "./dynamicParameterSco
 import { recursiveSearchScopeAndMaybeUpdateBestMetric } from "./recursiveBestMetric"
 import { PerfectMetricOptions } from "./types"
 
-const perfectMetric = async (metric: Metric, options: PerfectMetricOptions) => {
+const perfectMetric = (metric: Metric, options: PerfectMetricOptions) => {
     const spreadDynamicParameters = metric.spreadDynamicParameters
     const spreadDynamicParameterValues: Partial<Record<Parameter, ParameterValue>> = {}
 
@@ -51,7 +51,7 @@ const perfectMetric = async (metric: Metric, options: PerfectMetricOptions) => {
     scope.unshift(allBinsSubmetricScope)
 
     try {
-        await recursiveSearchScopeAndMaybeUpdateBestMetric(scope, options)
+        recursiveSearchScopeAndMaybeUpdateBestMetric(scope, options)
     } catch (error) {
         saveDebugMessage(`error when perfecting scope ${JSON.stringify(scope)}: ${error}`, DebugTarget.ERRORS)
     }

@@ -5,7 +5,7 @@ import { Chunk, searchScopes } from "../../../../../../src/scripts/unpopularityM
 import { Parameter, ParameterValue } from "../../../../../../src/scripts/unpopularityMetric/sumOfSquares"
 
 describe("search scopes", () => {
-    it("searches all remaining scopes at the current chunk count and then, given scopes are finished populated by then, searching finishes too", async () => {
+    it("searches all remaining scopes at the current chunk count and then, given scopes are finished populated by then, searching finishes too",  () => {
         const scopeOne = [
             {
                 [ Parameter.SUM ]: true,
@@ -25,11 +25,9 @@ describe("search scopes", () => {
         scopesToSearch.push(scopeTwo)
         scopesToSearch.push(scopeThree)
 
-        setTimeout(() => {
-            solverStatus.finishedPopulating = true
-        }, 100)
+        solverStatus.finishedPopulating = true
 
-        await searchScopes()
+        searchScopes()
 
         expect(scopesToSearch).toEqual([])
         expect(solverStatus.searchedScopeCount).toBe(3 as Count<Scope>)

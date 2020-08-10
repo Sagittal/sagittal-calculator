@@ -53,8 +53,8 @@ describe("searchNextLocalMinimum", () => {
 
     // TODO: test the error catching
 
-    it("it searches the next local minimum recursively and maybe updates the best metric", async () => {
-        await searchNextLocalMinimum(nextLocalMinimum, {
+    it("it searches the next local minimum recursively and maybe updates the best metric", () => {
+        searchNextLocalMinimum(nextLocalMinimum, {
             dynamicParameters,
             scope,
             metricId,

@@ -22,19 +22,19 @@ describe("populateScopes", () => {
         jasmine.DEFAULT_TIMEOUT_INTERVAL = originalJasmineTimeoutInterval
     })
 
-    it("given a chunk count, populates all possible distributions of all possible combinations of parameter chunks across bins corresponding to all possible combinations of submetric chunks - works for 1, where each possibility is just a single submetric chunk, plus an empty 'all bins' chunk because that's just how it works to be simple", async () => {
+    it("given a chunk count, populates all possible distributions of all possible combinations of parameter chunks across bins corresponding to all possible combinations of submetric chunks - works for 1, where each possibility is just a single submetric chunk, plus an empty 'all bins' chunk because that's just how it works to be simple",  () => {
         solverStatus.chunkCount = 1 as Count<Chunk>
 
-        await populateScopes()
+        populateScopes()
 
         expect(scopesToSearch).toEqual(jasmine.arrayWithExactContents(SUBMETRIC_CHUNKS.map(chunk => [{}, chunk]))) // count: 6
     })
 
     // need to add the extra 7 bits (18 to 25) to each section below
-    xit("given a chunk count, populates all possible combinations of those parameters - works for 2", async () => {
+    xit("given a chunk count, populates all possible combinations of those parameters - works for 2",  () => {
         solverStatus.chunkCount = 2 as Count<Chunk>
 
-        await populateScopes()
+        populateScopes()
 
         const expectedResult = [
             // submetrics: 2, parameters: 0
@@ -2076,10 +2076,10 @@ describe("populateScopes", () => {
     })
 
     // TODO: this one and the one below need to be recalculated for 25 instead of 15 parameters (the 3 new denominator-specific ones, the 3 new power base ones, the 4 weight ones we were missing (and the 14->15 was bringing back x))
-    xit("given a chunk count, populates all possible combinations of those parameters - works for 3", async () => {
+    xit("given a chunk count, populates all possible combinations of those parameters - works for 3",  () => {
         solverStatus.chunkCount = 3 as Count<Chunk>
 
-        await populateScopes()
+        populateScopes()
 
         const result: Scope[] = scopesToSearch
 
@@ -2120,11 +2120,11 @@ describe("populateScopes", () => {
     })
 
     // this one just started taking insanely long for no clear reason
-    xit("given a chunk count, populates all possible combinations of those parameters - works for 4", async () => {
+    xit("given a chunk count, populates all possible combinations of those parameters - works for 4",  () => {
         const chunkCount = 4 as Count<Chunk>
         solverStatus.chunkCount = chunkCount
 
-        await populateScopes()
+        populateScopes()
 
         const result: Scope[] = scopesToSearch
 

@@ -47,18 +47,19 @@ const bestMetricsToBePerfected = {
         "sumOfSquares": 0.014206086754420309,
         "submetrics": [
             {
-                "sum": true
-            }
-        ]
-    }
+                "sum": true,
+            },
+        ],
+    },
 } as unknown as Record<string, Metric> // paste things in from 1.txt, 2.txt, etc.
 
 const startTime = performance.now()
-perfectMetrics(Object.values(bestMetricsToBePerfected)).then(() => {
-    saveDebugMessage(`\n\nTHE PERFECTED METRICS ARE ${JSON.stringify(presentBestMetrics(bestMetrics), undefined, 4)}`, DebugTarget.PERFECT)
+perfectMetrics(Object.values(bestMetricsToBePerfected))
 
-    const endTime = performance.now()
-    if (time) {
-        saveDebugMessage(`\n\nPERFECTING METRICS TOOK ${endTime - startTime} MS`, DebugTarget.PERFECT)
-    }
-})
+saveDebugMessage(`\n\nTHE PERFECTED METRICS ARE ${JSON.stringify(presentBestMetrics(bestMetrics), undefined, 4)}`, DebugTarget.PERFECT)
+
+const endTime = performance.now()
+if (time) {
+    saveDebugMessage(`\n\nPERFECTING METRICS TOOK ${endTime - startTime} MS`, DebugTarget.PERFECT)
+}
+

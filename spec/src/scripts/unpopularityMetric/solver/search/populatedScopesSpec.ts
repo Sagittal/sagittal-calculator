@@ -16,31 +16,31 @@ describe("searchPopulatedScopes", () => {
         scopesToSearch.push(scope)
     })
 
-    it("increments the count of scopes which have been searched", async () => {
-        await searchPopulatedScopes()
+    it("increments the count of scopes which have been searched",  () => {
+        searchPopulatedScopes()
 
         expect(solverStatus.searchedScopeCount).toBe(156 as Count<Scope>)
     })
 
-    it("removes the searched scope from the stack", async () => {
-        await searchPopulatedScopes()
+    it("removes the searched scope from the stack",  () => {
+        searchPopulatedScopes()
 
         expect(scopesToSearch).toEqual([otherScope])
     })
 
-    it("does those things even if there is an error while searching the scope", async () => {
+    it("does those things even if there is an error while searching the scope",  () => {
         spyOn(nonRecursiveBestMetric, "nonRecursiveSearchScopeAndMaybeUpdateBestMetric").and.throwError("something")
 
-        await searchPopulatedScopes()
+        searchPopulatedScopes()
 
         expect(scopesToSearch).toEqual([otherScope])
         expect(solverStatus.searchedScopeCount).toBe(156 as Count<Scope>)
     })
 
-    it("searches the scope it pops off the stack", async () => {
+    it("searches the scope it pops off the stack",  () => {
         spyOn(nonRecursiveBestMetric, "nonRecursiveSearchScopeAndMaybeUpdateBestMetric").and.callThrough()
 
-        await searchPopulatedScopes()
+        searchPopulatedScopes()
 
         expect(nonRecursiveBestMetric.nonRecursiveSearchScopeAndMaybeUpdateBestMetric).toHaveBeenCalledWith(scope)
     })

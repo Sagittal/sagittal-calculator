@@ -7,7 +7,7 @@ import { LocalMinimum } from "../../../../../src/scripts/unpopularityMetric/perf
 import { Parameter, ParameterValue, Submetric } from "../../../../../src/scripts/unpopularityMetric/sumOfSquares"
 
 describe("searchScopeAndMaybeUpdateBestMetric", () => {
-    it("searches each local minimum", async () => {
+    it("searches each local minimum",  () => {
         const scope = [
             {},
             {
@@ -39,7 +39,7 @@ describe("searchScopeAndMaybeUpdateBestMetric", () => {
 
         spyOn(nextLocalMinimum, "searchNextLocalMinimum").and.callThrough()
 
-        await recursiveSearchScopeAndMaybeUpdateBestMetric(scope, {
+        recursiveSearchScopeAndMaybeUpdateBestMetric(scope, {
             depth,
             metricId,
             localMinimum,

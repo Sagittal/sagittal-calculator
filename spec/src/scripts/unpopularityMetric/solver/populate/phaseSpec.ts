@@ -54,11 +54,11 @@ describe("populateScopesPhase", () => {
         )
     })
 
-    it("calculates the correct combinations of parameters and submetrics and memoizes them", async () => {
+    it("calculates the correct combinations of parameters and submetrics and memoizes them",  () => {
         delete memoizedSubmetricChunkCombinations[ chunkCountForSubmetrics ]
         delete memoizedParameterChunkCombinations[ expectedChunkCountForParameters ]
 
-        await populateScopesPhase(chunkCount, chunkCountForSubmetrics)
+        populateScopesPhase(chunkCount, chunkCountForSubmetrics)
 
         expect(combinations.computeCombinations).toHaveBeenCalledWith(
             SUBMETRIC_CHUNKS,
@@ -72,19 +72,19 @@ describe("populateScopesPhase", () => {
         )
     })
 
-    it("uses the memoized chunk combinations when they are available", async () => {
+    it("uses the memoized chunk combinations when they are available",  () => {
         memoizedSubmetricChunkCombinations[ chunkCountForSubmetrics ] = submetricChunkCombinations
         memoizedParameterChunkCombinations[ expectedChunkCountForParameters ] = parameterChunkCombinations
 
-        await populateScopesPhase(chunkCount, chunkCountForSubmetrics)
+        populateScopesPhase(chunkCount, chunkCountForSubmetrics)
 
         expect(combinations.computeCombinations).not.toHaveBeenCalled()
     })
 
-    it("kicks off a chain of populations of scopes for each submetric chunk combination (it will recursively call itself for each next parameter chunk combination)", async () => {
+    it("kicks off a chain of populations of scopes for each submetric chunk combination (it will recursively call itself for each next parameter chunk combination)",  () => {
         spyOn(submetricChunkCombination, "populateScopesForSubmetricChunkCombination")
 
-        await populateScopesPhase(chunkCount, chunkCountForSubmetrics)
+        populateScopesPhase(chunkCount, chunkCountForSubmetrics)
 
         expect(submetricChunkCombination.populateScopesForSubmetricChunkCombination).toHaveBeenCalledTimes(2)
         expect(submetricChunkCombination.populateScopesForSubmetricChunkCombination).toHaveBeenCalledWith(

@@ -4,14 +4,14 @@ import { DebugTarget, saveDebugMessage } from "../../debug"
 import { scopesToSearch, solverStatus } from "../../globals"
 import { presentPercentage, presentSearchedAndPopulated } from "../present"
 
-const searchPopulatedScopes = async () => {
+const searchPopulatedScopes = () => {
     const scope = scopesToSearch.pop() as Scope
     if (!scope) {
         return
     }
 
     try {
-        await nonRecursiveSearchScopeAndMaybeUpdateBestMetric(scope)
+        nonRecursiveSearchScopeAndMaybeUpdateBestMetric(scope)
     } catch (e) {
         // TODO: bad scopes are still being computed...
         //  it may not be a simple matter to not compute them in the first place,
