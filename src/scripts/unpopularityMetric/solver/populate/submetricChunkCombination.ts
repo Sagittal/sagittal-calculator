@@ -34,7 +34,6 @@ const populateScopesForSubmetricChunkCombination = async (submetricChunkCombinat
         return
     }
 
-    // todo improve performance
     return doOnNextEventLoop(async () => {
         await populateScopesForSubmetricChunkCombination(submetricChunkCombination, {
             parameterChunkCombinations,
