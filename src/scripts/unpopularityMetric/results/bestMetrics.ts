@@ -408,7 +408,7 @@ const bAndU = {
             [ Parameter.A_AS_LOGARITHM_BASE ]: 2,
             [ Parameter.Y ]: 0.861,
             [ Parameter.W ]: -2.656,
-            [ Parameter.B ]:  -2.829,
+            [ Parameter.B ]: -2.829,
             [ Parameter.X ]: 4.471,
             [ Parameter.U ]: 3.850,
             [ Parameter.SUM ]: true,
@@ -510,7 +510,7 @@ const hyg = {
             [ Parameter.SUM ]: true,
             [ Parameter.A_AS_LOGARITHM_BASE ]: 2,
             [ Parameter.J_AS_COEFFICIENT ]: 0.692773045,
-            [ Parameter.K_AS_COEFFICIENT ]:  -0.245303445,
+            [ Parameter.K_AS_COEFFICIENT ]: -0.245303445,
         },
         {
             [ Parameter.SUM ]: true,
@@ -667,6 +667,76 @@ const kl = {
     ],
 }
 
+//
+
+// Douglas's solver 3-chunk and 4-chunk bests
+// Sun Aug 09, 2020 4:54 pm
+// http://forum.sagittal.org/viewtopic.php?p=2170#p2170
+const ak = {
+    sumOfSquares: 0.007593746935708874,
+    submetrics: [
+        {
+            [ Parameter.SUM ]: true,
+            [ Parameter.A_AS_LOGARITHM_BASE ]: 2,
+            "kAsCoefficient": 0.7981481481481482,
+            [ Parameter.A_AS_POWER_EXPONENT ]: 2.0717827997489016,
+        },
+    ],
+}
+const kj = {
+    sumOfSquares: 0.007969499349681162,
+    submetrics: [
+        {
+            [ Parameter.SUM ]: true,
+            [ Parameter.K_AS_POWER_EXPONENT ]: 1.4690207156308848,
+            "jAsPowerExponent": 1.3673258003766477,
+        },
+    ],
+}
+const lak = {
+    sumOfSquares: 0.0062107447110803975,
+    submetrics: [
+        {
+            [ Parameter.WITHOUT_REPETITION ]: true,
+            [ Parameter.MAX ]: true,
+            [ Parameter.A_AS_POWER_EXPONENT ]: 0.6165725047080979,
+        },
+        {
+            [ Parameter.SUM ]: true,
+            [ Parameter.A_AS_LOGARITHM_BASE ]: 2,
+            [ Parameter.K_AS_POWER_EXPONENT ]: 0.5242937853107347,
+            [ Parameter.A_AS_POWER_EXPONENT ]: 0.6165725047080979,
+        },
+    ],
+    "spreadDynamicParameters": [
+        [ Parameter.A_AS_POWER_EXPONENT ],
+    ],
+}
+const wab = {
+    sumOfSquares: 0.0068022046202959605,
+    submetrics: [
+        {
+            [ Parameter.SUM ]: true,
+            [ Parameter.A_AS_LOGARITHM_BASE ]: 2,
+            [ Parameter.A_AS_POWER_EXPONENT ]: 2.0791902071563086,
+            "w": -0.22090395480226008,
+            "b": -1.9497175141242935
+        }
+    ]
+}
+const aux = {
+    sumOfSquares: 0.006815231749228219,
+    submetrics: [
+        {
+            [ Parameter.SUM ]: true,
+            [ Parameter.A_AS_LOGARITHM_BASE ]: 2,
+            "u": -1.5128478761247126,
+            [ Parameter.A_AS_POWER_EXPONENT ]: 1.9713224523958988,
+            "x": -0.4582444025946853
+        }
+    ]
+}
+
 export {
     sopfgtt,
 
@@ -723,4 +793,10 @@ export {
     laj,
 
     kl,
+
+    ak,
+    kj,
+    aux,
+    wab,
+    lak,
 }
