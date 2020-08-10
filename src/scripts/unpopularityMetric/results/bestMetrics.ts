@@ -391,14 +391,7 @@ const maybeMinimum = {
             [ Parameter.A_AS_LOGARITHM_BASE ]: 2,
             [ Parameter.Y ]: 0.839,
             [ Parameter.W ]: -1.465,
-            [ Parameter.K_AS_COEFFICIENT ]: 0,
-        },
-        {
-            [ Parameter.SUM ]: true,
-            [ Parameter.A_AS_LOGARITHM_BASE ]: 2,
-            [ Parameter.Y ]: 0.839,
-            [ Parameter.W ]: -1.867,
-            [ Parameter.J_AS_COEFFICIENT ]: 0,
+            [ Parameter.B ]: -1.867,
         },
     ],
 }
@@ -412,19 +405,12 @@ const bAndU = {
     sumOfSquares: 0.006594234470005811,
     submetrics: [
         {
-            [ Parameter.K_AS_COEFFICIENT ]: 0,
             [ Parameter.A_AS_LOGARITHM_BASE ]: 2,
             [ Parameter.Y ]: 0.861,
             [ Parameter.W ]: -2.656,
+            [ Parameter.B ]:  -2.829,
             [ Parameter.X ]: 4.471,
-            [ Parameter.SUM ]: true,
-        },
-        {
-            [ Parameter.J_AS_COEFFICIENT ]: 0,
-            [ Parameter.A_AS_LOGARITHM_BASE ]: 2,
-            [ Parameter.Y ]: 0.861,
-            [ Parameter.W ]: -2.829,
-            [ Parameter.X ]: 3.850,
+            [ Parameter.U ]: 3.850,
             [ Parameter.SUM ]: true,
         },
     ],
@@ -441,14 +427,7 @@ const improvedMaybeMinimum = {
             [ Parameter.A_AS_LOGARITHM_BASE ]: 2,
             [ Parameter.Y ]: 0.8568,
             [ Parameter.W ]: -1.4457,
-            [ Parameter.K_AS_COEFFICIENT ]: 0,
-        },
-        {
-            [ Parameter.SUM ]: true,
-            [ Parameter.A_AS_LOGARITHM_BASE ]: 2,
-            [ Parameter.Y ]: 0.8568,
-            [ Parameter.W ]: -1.8630,
-            [ Parameter.J_AS_COEFFICIENT ]: 0,
+            [ Parameter.B ]: -1.8630,
         },
     ],
 }
@@ -464,14 +443,8 @@ const improvedFourParamSixChunk = {
         {
             [ Parameter.SUM ]: true,
             [ Parameter.A_AS_LOGARITHM_BASE ]: 2,
-            [ Parameter.K_AS_COEFFICIENT ]: 0,
-            [ Parameter.WEIGHT_AS_COEFFICIENT ]: 0.6385,
-        },
-        {
-            [ Parameter.SUM ]: true,
-            [ Parameter.A_AS_LOGARITHM_BASE ]: 2,
-            [ Parameter.J_AS_COEFFICIENT ]: 0,
-            [ Parameter.WEIGHT_AS_COEFFICIENT ]: -1.6518,
+            [ Parameter.J_AS_COEFFICIENT ]: 0.6385,
+            [ Parameter.K_AS_COEFFICIENT ]: -1.6518,
         },
         {
             [ Parameter.SUM ]: true,
@@ -492,14 +465,8 @@ const improvedFourParamFiveChunk = {
         {
             [ Parameter.SUM ]: true,
             [ Parameter.A_AS_LOGARITHM_BASE ]: 2,
-            [ Parameter.K_AS_COEFFICIENT ]: 0,
-            [ Parameter.WEIGHT_AS_COEFFICIENT ]: 0.6845,
-        },
-        {
-            [ Parameter.SUM ]: true,
-            [ Parameter.A_AS_LOGARITHM_BASE ]: 2,
-            [ Parameter.J_AS_COEFFICIENT ]: 0,
-            [ Parameter.WEIGHT_AS_COEFFICIENT ]: -0.3909,
+            [ Parameter.J_AS_COEFFICIENT ]: 0.6845,
+            [ Parameter.K_AS_COEFFICIENT ]: -0.3909,
         },
         {
             [ Parameter.SUM ]: true,
@@ -542,14 +509,8 @@ const hyg = {
         {
             [ Parameter.SUM ]: true,
             [ Parameter.A_AS_LOGARITHM_BASE ]: 2,
-            [ Parameter.K_AS_COEFFICIENT ]: 0,
-            [ Parameter.WEIGHT_AS_COEFFICIENT ]: 0.692773045,
-        },
-        {
-            [ Parameter.SUM ]: true,
-            [ Parameter.A_AS_LOGARITHM_BASE ]: 2,
-            [ Parameter.J_AS_COEFFICIENT ]: 0,
-            [ Parameter.WEIGHT_AS_COEFFICIENT ]: -0.245303445,
+            [ Parameter.J_AS_COEFFICIENT ]: 0.692773045,
+            [ Parameter.K_AS_COEFFICIENT ]:  -0.245303445,
         },
         {
             [ Parameter.SUM ]: true,
@@ -658,15 +619,9 @@ const wb = {
     submetrics: [
         {
             [ Parameter.SUM ]: true,
-            [ Parameter.K_AS_COEFFICIENT ]: 0,
             [ Parameter.A_AS_LOGARITHM_BASE ]: 2,
             [ Parameter.W ]: -1.645808649,
-        },
-        {
-            [ Parameter.SUM ]: true,
-            [ Parameter.J_AS_COEFFICIENT ]: 0,
-            [ Parameter.A_AS_LOGARITHM_BASE ]: 2,
-            [ Parameter.W ]: -2.043765116,
+            [ Parameter.B ]: -2.043765116,
         },
     ],
 }
