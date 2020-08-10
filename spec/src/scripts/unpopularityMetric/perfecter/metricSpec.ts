@@ -9,7 +9,7 @@ import * as recursiveBestMetric from "../../../../../src/scripts/unpopularityMet
 describe("perfectMetric", () => {
     const options = { metricId: "1/16" }
 
-    it("takes a best metric and then converts it back into a scope in order to perfect it recursively", () => {
+    it("takes a best metric and then converts it back into a scope in order to perfect it recursively", async () => {
         const metric = {
             sumOfSquares: 0.009939068479730896 as SumOfSquares,
             submetrics: [
@@ -22,7 +22,7 @@ describe("perfectMetric", () => {
 
         spyOn(recursiveBestMetric, "recursiveSearchScopeAndMaybeUpdateBestMetric")
 
-        perfectMetric(metric, options)
+        await perfectMetric(metric, options)
 
         const expectedScope: Scope = [
             {},
@@ -42,7 +42,7 @@ describe("perfectMetric", () => {
         )
     })
 
-    it("when the metric had some spread parameters, it recreates them that way",  () => {
+    it("when the metric had some spread parameters, it recreates them that way", async () => {
         const metric = {
             sumOfSquares: 0.009939068479730896 as SumOfSquares,
             submetrics: [
@@ -60,7 +60,7 @@ describe("perfectMetric", () => {
 
         spyOn(recursiveBestMetric, "recursiveSearchScopeAndMaybeUpdateBestMetric")
 
-        perfectMetric(metric, options)
+        await perfectMetric(metric, options)
 
         const expectedScope: Scope = [
             {

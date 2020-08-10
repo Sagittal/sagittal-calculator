@@ -5,7 +5,7 @@ import { computeLocalMinima } from "./localMinima"
 import { searchNextLocalMinimum } from "./nextLocalMinimum"
 import { RecursiveSearchScopeAndMaybeUpdateBestMetricOptions } from "./types"
 
-const recursiveSearchScopeAndMaybeUpdateBestMetric = (scope: Scope, options: RecursiveSearchScopeAndMaybeUpdateBestMetricOptions = {}) => {
+const recursiveSearchScopeAndMaybeUpdateBestMetric = async (scope: Scope, options: RecursiveSearchScopeAndMaybeUpdateBestMetricOptions = {}): Promise<void> => {
     const {
         depth = 0,
         metricId = "",
@@ -15,13 +15,13 @@ const recursiveSearchScopeAndMaybeUpdateBestMetric = (scope: Scope, options: Rec
 
     const indentation = computeIndentation(depth)
 
-    const { dynamicParameters, samples, sumsOfSquares } = nonRecursiveSearchScopeAndMaybeUpdateBestMetric(scope, { onlyWinners })
+    const { dynamicParameters, samples, sumsOfSquares } = await nonRecursiveSearchScopeAndMaybeUpdateBestMetric(scope, { onlyWinners })
 
     const nextLocalMinima = computeLocalMinima(samples, sumsOfSquares, localMinimum)
     saveDebugMessage(`${indentation}id ${metricId} - ${nextLocalMinima.length} lcl min / ${samples.length} samples (${Math.round(100 * nextLocalMinima.length / samples.length)}%)`, DebugTarget.PERFECT)
 
-    nextLocalMinima.forEach((nextLocalMinimum, index) => {
-        searchNextLocalMinimum(nextLocalMinimum, {
+    const nextLocalMinimaPromises: Promise<void>[] = nextLocalMinima.map((nextLocalMinimum, index) => {
+        return searchNextLocalMinimum(nextLocalMinimum, {
             dynamicParameters,
             scope,
             metricId,
@@ -32,6 +32,8 @@ const recursiveSearchScopeAndMaybeUpdateBestMetric = (scope: Scope, options: Rec
             onlyWinners,
         })
     })
+
+    await Promise.all(nextLocalMinimaPromises)
 }
 
 export {

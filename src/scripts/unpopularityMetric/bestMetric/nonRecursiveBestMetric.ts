@@ -7,7 +7,7 @@ import { computeSumsOfSquaresAndMaybeUpdateBestMetric } from "./sumsOfSquares"
 let totalSamples = 0
 let totalScopes = 0
 
-const nonRecursiveSearchScopeAndMaybeUpdateBestMetric = (scope: Scope, options: NonRecursiveSearchScopeAndMaybeUpdateBestMetricOptions = {}) => {
+const nonRecursiveSearchScopeAndMaybeUpdateBestMetric = async (scope: Scope, options: NonRecursiveSearchScopeAndMaybeUpdateBestMetricOptions = {}): Promise<SearchScopeResults> => {
     const dynamicParameters = computeDynamicParameters(scope)
     const samples = computeSamples({ scope, dynamicParameters })
     const spreadDynamicParameters = computeSpreadDynamicParameters(scope)
@@ -17,7 +17,7 @@ const nonRecursiveSearchScopeAndMaybeUpdateBestMetric = (scope: Scope, options: 
     saveDebugMessage(`about to search scope ${JSON.stringify(scope)}`, DebugTarget.SEARCH)
     saveDebugMessage(`which has ${samples.length} samples; average sample count is ${Math.round(totalSamples / totalScopes)}`, DebugTarget.SEARCH)
 
-    const sumsOfSquares = computeSumsOfSquaresAndMaybeUpdateBestMetric(samples, { spreadDynamicParameters, ...options })
+    const sumsOfSquares = await computeSumsOfSquaresAndMaybeUpdateBestMetric(samples, { spreadDynamicParameters, ...options })
 
     return { dynamicParameters, samples, sumsOfSquares }
 }

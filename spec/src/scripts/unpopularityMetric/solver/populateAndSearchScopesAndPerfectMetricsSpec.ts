@@ -17,25 +17,25 @@ describe("populateAndSearchScopesAndPerfectMetrics", () => {
         jasmine.DEFAULT_TIMEOUT_INTERVAL = originalJasmineTimeoutInterval
     })
 
-    it("populates scopes",  () => {
+    it("populates scopes", async () => {
         spyOn(populate, "populateScopes").and.callThrough()
 
-        populateAndSearchScopesAndPerfectMetrics()
+        await populateAndSearchScopesAndPerfectMetrics()
 
         expect(populate.populateScopes).toHaveBeenCalled()
     })
 
-    it("searches scopes",  () => {
+    it("searches scopes", async () => {
         spyOn(search, "searchScopes").and.callThrough()
 
-        populateAndSearchScopesAndPerfectMetrics()
+        await populateAndSearchScopesAndPerfectMetrics()
 
         expect(search.searchScopes).toHaveBeenCalled()
     })
 
-    it("completes searching scopes before resolving",  () => {
+    it("completes searching scopes before resolving", async () => {
         solverStatus.chunkCount = 1 as Count<Chunk>
-        populateAndSearchScopesAndPerfectMetrics()
+        await populateAndSearchScopesAndPerfectMetrics()
 
         expect(bestMetrics[ "{sum}" ]).toEqual({
             sumOfSquares: 0.014206086754420309,

@@ -38,11 +38,11 @@ debugTargets[ DebugTarget.FINAL_SOLVER_RESULTS ] = true
 debugTargets[ DebugTarget.PERFECT ] = true
 
 const startTime = performance.now()
-populateAndSearchScopesAndPerfectMetrics()
+populateAndSearchScopesAndPerfectMetrics().then(() => {
+    saveDebugMessage(`\n\nAND THE BEST METRICS WERE ${JSON.stringify(presentBestMetrics(bestMetrics), undefined, 4)}`, DebugTarget.FINAL_SOLVER_RESULTS)
 
-saveDebugMessage(`\n\nAND THE BEST METRICS WERE ${JSON.stringify(presentBestMetrics(bestMetrics), undefined, 4)}`, DebugTarget.FINAL_SOLVER_RESULTS)
-
-const endTime = performance.now()
-if (time) {
-    saveDebugMessage(`\n\nFINDING BEST METRICS TOOK ${endTime - startTime} MS`, DebugTarget.FINAL_SOLVER_RESULTS)
-}
+    const endTime = performance.now()
+    if (time) {
+        saveDebugMessage(`\n\nFINDING BEST METRICS TOOK ${endTime - startTime} MS`, DebugTarget.FINAL_SOLVER_RESULTS)
+    }
+})

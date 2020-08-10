@@ -10,7 +10,7 @@ import { Parameter } from "../../../../../../src/scripts/unpopularityMetric/sumO
 describe("populateScopesForSubmetricChunkCombination", () => {
     // TODO: really need to do something about these long test descriptions and multi-lining them;
     //  but we may as well wait for the day we add that linting rule
-    it("for the given submetric chunk combination, proceeds through each of the parameter chunk combinations, for each one computing all possible distributions across the submetric bins of this submetric chunk combination, and for each distribution populating a scope which is the merger of it with the submetrics, also handling how the first submetric bin actually represents the parameters which should be distributed to every submetric",  () => {
+    it("for the given submetric chunk combination, proceeds through each of the parameter chunk combinations, for each one computing all possible distributions across the submetric bins of this submetric chunk combination, and for each distribution populating a scope which is the merger of it with the submetrics, also handling how the first submetric bin actually represents the parameters which should be distributed to every submetric", async () => {
         const submetricChunkCombination: Combination<SubmetricChunk> = [
             // (the "all submetrics" bin, call it "AB")
             {},
@@ -53,7 +53,7 @@ describe("populateScopesForSubmetricChunkCombination", () => {
         const submetricChunkCombinationIndex: Index<Combination<SubmetricChunk>> = 0 as Index<Combination<SubmetricChunk>>
         const submetricChunkCombinationCount: Count<Combination<SubmetricChunk>> = 2 as Count<Combination<SubmetricChunk>>
 
-        populateScopesForSubmetricChunkCombination(submetricChunkCombination, {
+        await populateScopesForSubmetricChunkCombination(submetricChunkCombination, {
             parameterChunkCombinations,
             parameterChunkCombinationIndex,
             submetricChunkCombinationIndex,

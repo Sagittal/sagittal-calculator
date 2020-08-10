@@ -58,6 +58,6 @@ const scope = [
     },
 ] as Scope
 
-recursiveSearchScopeAndMaybeUpdateBestMetric(scope, { onlyWinners: false })
-
-saveDebugMessage(`\nbest metric: ${JSON.stringify(bestMetrics)}`, DebugTarget.ALL)
+recursiveSearchScopeAndMaybeUpdateBestMetric(scope, { onlyWinners: false }).then(() => {
+    saveDebugMessage(`\nbest metric: ${JSON.stringify(bestMetrics)}`, DebugTarget.ALL)
+})

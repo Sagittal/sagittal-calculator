@@ -14,12 +14,12 @@ import { populateScopes } from "./populate"
 import { presentSearchedAndPopulated } from "./present"
 import { searchScopes } from "./search"
 
-const populateAndSearchScopesAndPerfectMetrics = () => {
-    populateScopes()
+const populateAndSearchScopesAndPerfectMetrics = async () => {
+    populateScopes().then(() => {
+        solverStatus.finishedPopulating = true
+    })
 
-    solverStatus.finishedPopulating = true
-
-    searchScopes()
+    await searchScopes()
 
     saveDebugMessage(`\n\nFINAL STATUS ${presentSearchedAndPopulated()}`, DebugTarget.FINAL_SOLVER_RESULTS)
 }

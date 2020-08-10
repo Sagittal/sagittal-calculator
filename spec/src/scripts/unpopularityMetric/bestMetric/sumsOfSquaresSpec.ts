@@ -46,8 +46,8 @@ describe("computeSumsOfSquaresAndMaybeUpdateBestMetric", () => {
         cleanObject(bestMetrics)
     })
 
-    it("finds the sums of squares for each sample", () => {
-        const result = computeSumsOfSquaresAndMaybeUpdateBestMetric(samples)
+    it("finds the sums of squares for each sample", async () => {
+        const result = await computeSumsOfSquaresAndMaybeUpdateBestMetric(samples)
 
         expect(result).toEqual([
             [
@@ -61,7 +61,7 @@ describe("computeSumsOfSquaresAndMaybeUpdateBestMetric", () => {
         ] as SumsOfSquares)
     })
 
-    it("sets the best metric when it beats it", () => {
+    it("sets the best metric when it beats it", async () => {
         bestMetrics[ "{aAsCoefficient,sum,w}" ] = {
             sumOfSquares: 0.01400000000000 as SumOfSquares,
             submetrics: [{
@@ -71,7 +71,7 @@ describe("computeSumsOfSquaresAndMaybeUpdateBestMetric", () => {
             }] as Combination<Submetric>,
         }
 
-        computeSumsOfSquaresAndMaybeUpdateBestMetric(samples)
+        await computeSumsOfSquaresAndMaybeUpdateBestMetric(samples)
 
         expect(bestMetrics).toEqual({
             "{aAsCoefficient,sum,w}": {
@@ -85,7 +85,7 @@ describe("computeSumsOfSquaresAndMaybeUpdateBestMetric", () => {
         })
     })
 
-    it("does not set the best metric when it does not beat it",  () => {
+    it("does not set the best metric when it does not beat it", async () => {
         bestMetrics[ "{aAsCoefficient,sum,w}" ] = {
             sumOfSquares: 0.01200000000000 as SumOfSquares,
             submetrics: [{
@@ -95,7 +95,7 @@ describe("computeSumsOfSquaresAndMaybeUpdateBestMetric", () => {
             }] as Combination<Submetric>,
         }
 
-        computeSumsOfSquaresAndMaybeUpdateBestMetric(samples)
+        await computeSumsOfSquaresAndMaybeUpdateBestMetric(samples)
 
         expect(bestMetrics).toEqual({
             "{aAsCoefficient,sum,w}": {

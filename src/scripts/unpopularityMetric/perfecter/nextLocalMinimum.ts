@@ -1,10 +1,11 @@
+import { doOnNextEventLoop } from "../../../general"
 import { Scope } from "../bestMetric"
 import { DebugTarget, saveDebugMessage } from "../debug"
 import { computeNextScope } from "./nextScope"
 import { recursiveSearchScopeAndMaybeUpdateBestMetric } from "./recursiveBestMetric"
 import { LocalMinimum, SearchLocalMinimumOptions } from "./types"
 
-const searchNextLocalMinimum = (nextLocalMinimum: LocalMinimum, options: SearchLocalMinimumOptions) => {
+const searchNextLocalMinimum = (nextLocalMinimum: LocalMinimum, options: SearchLocalMinimumOptions): Promise<void> => {
     const {
         dynamicParameters,
         scope,
@@ -21,16 +22,18 @@ const searchNextLocalMinimum = (nextLocalMinimum: LocalMinimum, options: SearchL
     const nextMetricId = metricId + `.${index + 1}/${(nextLocalMinima.length)}`
     saveDebugMessage(`  ${indentation}id ${nextMetricId} - depth ${nextDepth}`, DebugTarget.PERFECT)
 
-    try {
-        recursiveSearchScopeAndMaybeUpdateBestMetric(nextScope, {
-            depth: nextDepth,
-            metricId: nextMetricId,
-            localMinimum: nextLocalMinimum,
-            onlyWinners,
-        })
-    } catch (e) {
-        saveDebugMessage(`error when searching: ${e.message}`, DebugTarget.ERRORS)
-    }
+    return doOnNextEventLoop(async () => {
+        try {
+            await recursiveSearchScopeAndMaybeUpdateBestMetric(nextScope, {
+                depth: nextDepth,
+                metricId: nextMetricId,
+                localMinimum: nextLocalMinimum,
+                onlyWinners,
+            })
+        } catch (e) {
+            saveDebugMessage(`error when searching: ${e.message}`, DebugTarget.ERRORS)
+        }
+    }, index)
 }
 
 export {

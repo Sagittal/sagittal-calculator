@@ -5,29 +5,33 @@ import { Sample } from "./scopeToSamples"
 import { computeSumOfSquaresAndMaybeUpdateBestMetric } from "./sumOfSquares"
 import { ComputeSumsOfSquaresAndMaybeUpdateBestMetricOptions, SumsOfSquares } from "./types"
 
-const computeSumsOfSquaresAndMaybeUpdateBestMetric = (samples: Sample[], options: ComputeSumsOfSquaresAndMaybeUpdateBestMetricOptions = {}) => {
+const computeSumsOfSquaresAndMaybeUpdateBestMetric = async (samples: Sample[], options: ComputeSumsOfSquaresAndMaybeUpdateBestMetricOptions = {}): Promise<SumsOfSquares> => {
     const { indentation = "", onlyWinners = true } = options
 
     const sumsOfSquares: SumsOfSquares = []
 
-    try {
-        checkSubmetricsForInvalidParameterCombinations(samples[ 0 ].submetrics)
-    } catch (e) {
-        saveDebugMessage(`Not searching scope due to invalid parameter combinations: ${e.message}`, DebugTarget.ERRORS)
-        return sumsOfSquares
-    }
+    return new Promise(async resolve => {
+        try {
+            checkSubmetricsForInvalidParameterCombinations(samples[ 0 ].submetrics)
+        } catch (e) {
+            resolve(sumsOfSquares)
+            saveDebugMessage(`Not searching scope due to invalid parameter combinations: ${e.message}`, DebugTarget.ERRORS)
+            return
+        }
 
-    samples.forEach((sample, index) => {
-        computeSumOfSquaresAndMaybeUpdateBestMetric(sample, {
-            indentation,
-            sumsOfSquares,
-            index: index as Index<Sample>,
-            onlyWinners,
-            ...options,
+        const samplePromises: Promise<void>[] = samples.map((sample, index) => {
+            return computeSumOfSquaresAndMaybeUpdateBestMetric(sample, {
+                indentation,
+                sumsOfSquares,
+                index: index as Index<Sample>,
+                onlyWinners,
+                ...options,
+            })
         })
-    })
 
-    return sumsOfSquares
+        await Promise.all(samplePromises)
+        resolve(sumsOfSquares)
+    })
 }
 
 export {

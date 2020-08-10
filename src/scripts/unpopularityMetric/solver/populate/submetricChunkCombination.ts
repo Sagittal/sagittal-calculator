@@ -1,4 +1,4 @@
-import { Combination, computeDistributions, Index, merge } from "../../../../general"
+import { Combination, computeDistributions, doOnNextEventLoop, Index, merge } from "../../../../general"
 import { Scope, SubmetricScope } from "../../bestMetric"
 import { DebugTarget, saveDebugMessage } from "../../debug"
 import { presentSearchedAndPopulated } from "../present"
@@ -6,7 +6,7 @@ import { Chunk } from "../types"
 import { populateScope } from "./scope"
 import { ParameterChunk, PopulateScopesForSubmetricChunkCombinationOptions, SubmetricChunk } from "./types"
 
-const populateScopesForSubmetricChunkCombination = (submetricChunkCombination: Combination<SubmetricChunk>, options: PopulateScopesForSubmetricChunkCombinationOptions) => {
+const populateScopesForSubmetricChunkCombination = async (submetricChunkCombination: Combination<SubmetricChunk>, options: PopulateScopesForSubmetricChunkCombinationOptions): Promise<void> => {
     const {
         parameterChunkCombinations,
         parameterChunkCombinationIndex = 0,
@@ -34,11 +34,13 @@ const populateScopesForSubmetricChunkCombination = (submetricChunkCombination: C
         return
     }
 
-    populateScopesForSubmetricChunkCombination(submetricChunkCombination, {
-        parameterChunkCombinations,
-        parameterChunkCombinationIndex: parameterChunkCombinationIndex + 1 as Index<Combination<ParameterChunk>>,
-        submetricChunkCombinationIndex,
-        submetricChunkCombinationCount,
+    return doOnNextEventLoop(async () => {
+        await populateScopesForSubmetricChunkCombination(submetricChunkCombination, {
+            parameterChunkCombinations,
+            parameterChunkCombinationIndex: parameterChunkCombinationIndex + 1 as Index<Combination<ParameterChunk>>,
+            submetricChunkCombinationIndex,
+            submetricChunkCombinationCount,
+        })
     })
 }
 
