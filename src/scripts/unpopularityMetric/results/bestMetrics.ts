@@ -678,7 +678,7 @@ const ak = {
         {
             [ Parameter.SUM ]: true,
             [ Parameter.A_AS_LOGARITHM_BASE ]: 2,
-            "kAsCoefficient": 0.7981481481481482,
+            [ Parameter.K_AS_COEFFICIENT ]: 0.7981481481481482,
             [ Parameter.A_AS_POWER_EXPONENT ]: 2.0717827997489016,
         },
     ],
@@ -689,7 +689,7 @@ const kj = {
         {
             [ Parameter.SUM ]: true,
             [ Parameter.K_AS_POWER_EXPONENT ]: 1.4690207156308848,
-            "jAsPowerExponent": 1.3673258003766477,
+            [ Parameter.J_AS_POWER_EXPONENT ]: 1.3673258003766477,
         },
     ],
 }
@@ -708,7 +708,7 @@ const lak = {
             [ Parameter.A_AS_POWER_EXPONENT ]: 0.6165725047080979,
         },
     ],
-    "spreadDynamicParameters": [
+    spreadDynamicParameters: [
         [ Parameter.A_AS_POWER_EXPONENT ],
     ],
 }
@@ -719,8 +719,8 @@ const wab = {
             [ Parameter.SUM ]: true,
             [ Parameter.A_AS_LOGARITHM_BASE ]: 2,
             [ Parameter.A_AS_POWER_EXPONENT ]: 2.0791902071563086,
-            "w": -0.22090395480226008,
-            "b": -1.9497175141242935
+            [ Parameter.W ]: -0.22090395480226008,
+            [ Parameter.B ]: -1.9497175141242935
         }
     ]
 }
@@ -730,9 +730,9 @@ const aux = {
         {
             [ Parameter.SUM ]: true,
             [ Parameter.A_AS_LOGARITHM_BASE ]: 2,
-            "u": -1.5128478761247126,
+            [ Parameter.U ]: -1.5128478761247126,
             [ Parameter.A_AS_POWER_EXPONENT ]: 1.9713224523958988,
-            "x": -0.4582444025946853
+            [ Parameter.X ]: -0.4582444025946853
         }
     ]
 }
