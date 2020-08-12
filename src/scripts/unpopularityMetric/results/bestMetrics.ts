@@ -669,6 +669,22 @@ const kl = {
 
 //
 
+// Dave's c
+// Sat Aug 08, 2020 2:04 am
+// http://forum.sagittal.org/viewtopic.php?p=2163#p2163
+const c = {
+    sumOfSquares: 0.009004460361166835,
+    submetrics: [
+        {
+            [ Parameter.SUM ]: true,
+            [ Parameter.W ]: 0,
+            [ Parameter.B ]: -1.75,
+        },
+    ],
+}
+
+//
+
 // Douglas's solver 3-chunk and 4-chunk bests
 // Sun Aug 09, 2020 4:54 pm
 // http://forum.sagittal.org/viewtopic.php?p=2170#p2170
@@ -802,7 +818,7 @@ const wbll = {
             [ Parameter.W ]: -0.676337296,
             [ Parameter.B ]: -1.344110019,
         },
-    ]
+    ],
 }
 const wybll = {
     sumOfSquares: 0.0026762735990075136,
@@ -820,7 +836,31 @@ const wybll = {
             [ Parameter.B ]: -1.406498345,
             [ Parameter.Y ]: 0.91746922,
         },
-    ]
+    ],
+}
+
+//
+
+// Doug's waybll
+// Wed Aug 12, 2020 9:32 am
+// http://forum.sagittal.org/viewtopic.php?p=2203#p2203
+const waybll = {
+    sumOfSquares: 0.0024616646376350447,
+    submetrics: [
+        {
+            [ Parameter.WEIGHT_AS_COEFFICIENT ]: 0.24501362468135826,
+            [ Parameter.WITHOUT_REPETITION ]: true,
+            [ Parameter.MAX ]: true,
+            [ Parameter.A_AS_LOGARITHM_BASE ]: 2,
+        }, {
+            [ Parameter.SUM ]: true,
+            [ Parameter.A_AS_LOGARITHM_BASE ]: 2,
+            [ Parameter.W ]: -0.9657624622268728,
+            [ Parameter.B ]: -1.1139840255018962,
+            [ Parameter.Y ]: 0.9045075315289748,
+            [ Parameter.A_AS_POWER_EXPONENT ]: 0.27731911914963275,
+        },
+    ],
 }
 
 export {
@@ -880,6 +920,8 @@ export {
 
     kl,
 
+    c,
+
     ak,
     kj,
     aux,
@@ -892,4 +934,6 @@ export {
 
     wbll,
     wybll,
+
+    waybll,
 }
