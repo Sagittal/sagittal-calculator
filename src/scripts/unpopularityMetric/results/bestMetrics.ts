@@ -709,7 +709,7 @@ const lak = {
         },
     ],
     spreadDynamicParameters: [
-        [ Parameter.A_AS_POWER_EXPONENT ],
+        Parameter.A_AS_POWER_EXPONENT,
     ],
 }
 const wab = {
@@ -720,9 +720,9 @@ const wab = {
             [ Parameter.A_AS_LOGARITHM_BASE ]: 2,
             [ Parameter.A_AS_POWER_EXPONENT ]: 2.0791902071563086,
             [ Parameter.W ]: -0.22090395480226008,
-            [ Parameter.B ]: -1.9497175141242935
-        }
-    ]
+            [ Parameter.B ]: -1.9497175141242935,
+        },
+    ],
 }
 const aux = {
     sumOfSquares: 0.006815231749228219,
@@ -732,9 +732,54 @@ const aux = {
             [ Parameter.A_AS_LOGARITHM_BASE ]: 2,
             [ Parameter.U ]: -1.5128478761247126,
             [ Parameter.A_AS_POWER_EXPONENT ]: 1.9713224523958988,
-            [ Parameter.X ]: -0.4582444025946853
-        }
-    ]
+            [ Parameter.X ]: -0.4582444025946853,
+        },
+    ],
+}
+
+//
+
+// Douglas's solver 5-chunk best
+// Tue Aug 11, 2020 9:25 am
+// http://forum.sagittal.org/viewtopic.php?p=2191#p2191
+const wbl = {
+    sumOfSquares: 0.003917415755348894,
+    submetrics: [
+        {
+            [ Parameter.WITHOUT_REPETITION ]: true,
+            [ Parameter.MAX ]: true,
+            [ Parameter.A_AS_LOGARITHM_BASE ]: 2,
+        },
+        {
+            [ Parameter.SUM ]: true,
+            [ Parameter.A_AS_LOGARITHM_BASE ]: 2,
+            [ Parameter.W ]: -0.9436666666666668,
+            [ Parameter.B ]: -1.6245833333333335,
+        },
+    ],
+}
+
+//
+
+// We found it?
+// Tue Aug 11, 2020 6:19 pm
+// http://forum.sagittal.org/viewtopic.php?p=2194#p2194
+const wybl = {
+    sumOfSquares: 0.0032401250853104067,
+    submetrics: [
+        {
+            [ Parameter.WITHOUT_REPETITION ]: true,
+            [ Parameter.MAX ]: true,
+            [ Parameter.A_AS_LOGARITHM_BASE ]: 2,
+        },
+        {
+            [ Parameter.SUM ]: true,
+            [ Parameter.A_AS_LOGARITHM_BASE ]: 2,
+            [ Parameter.W ]: -0.6722238433719913,
+            [ Parameter.B ]: -1.4491200586108,
+            [ Parameter.Y ]: 0.8749588677477244,
+        },
+    ],
 }
 
 export {
@@ -799,4 +844,8 @@ export {
     aux,
     wab,
     lak,
+
+    wbl,
+
+    wybl,
 }
