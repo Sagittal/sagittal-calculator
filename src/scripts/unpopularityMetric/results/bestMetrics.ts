@@ -739,11 +739,11 @@ const aux = {
 
 //
 
-// Douglas's solver 5-chunk best
+// Douglas's solver 5-chunk best (immediately improved by Dave: http://forum.sagittal.org/viewtopic.php?p=2193#p2193)
 // Tue Aug 11, 2020 9:25 am
 // http://forum.sagittal.org/viewtopic.php?p=2191#p2191
 const wbl = {
-    sumOfSquares: 0.003917415755348894,
+    sumOfSquares: 0.0038773496201431785,
     submetrics: [
         {
             [ Parameter.WITHOUT_REPETITION ]: true,
@@ -753,8 +753,8 @@ const wbl = {
         {
             [ Parameter.SUM ]: true,
             [ Parameter.A_AS_LOGARITHM_BASE ]: 2,
-            [ Parameter.W ]: -0.9436666666666668,
-            [ Parameter.B ]: -1.6245833333333335,
+            [ Parameter.W ]: -0.944786887715889,
+            [ Parameter.B ]: -1.561335378,
         },
     ],
 }
@@ -780,6 +780,47 @@ const wybl = {
             [ Parameter.Y ]: 0.8749588677477244,
         },
     ],
+}
+
+//
+
+// Dave's "true" wbl and wybl
+// Tue Aug 11, 2020 11:13 pm
+// http://forum.sagittal.org/viewtopic.php?p=2199#p2199
+const wbll = {
+    sumOfSquares: 0.0030322385583128613,
+    submetrics: [
+        {
+            [ Parameter.WITHOUT_REPETITION ]: true,
+            [ Parameter.MAX ]: true,
+            [ Parameter.A_AS_LOGARITHM_BASE ]: 2,
+            [ Parameter.WEIGHT_AS_COEFFICIENT ]: 1.39696749,
+        },
+        {
+            [ Parameter.SUM ]: true,
+            [ Parameter.A_AS_LOGARITHM_BASE ]: 2,
+            [ Parameter.W ]: -0.676337296,
+            [ Parameter.B ]: -1.344110019,
+        },
+    ]
+}
+const wybll = {
+    sumOfSquares: 0.0026762735990075136,
+    submetrics: [
+        {
+            [ Parameter.WITHOUT_REPETITION ]: true,
+            [ Parameter.MAX ]: true,
+            [ Parameter.A_AS_LOGARITHM_BASE ]: 2,
+            [ Parameter.WEIGHT_AS_COEFFICIENT ]: 1.273854435,
+        },
+        {
+            [ Parameter.SUM ]: true,
+            [ Parameter.A_AS_LOGARITHM_BASE ]: 2,
+            [ Parameter.W ]: -0.52569965,
+            [ Parameter.B ]: -1.406498345,
+            [ Parameter.Y ]: 0.91746922,
+        },
+    ]
 }
 
 export {
@@ -848,4 +889,7 @@ export {
     wbl,
 
     wybl,
+
+    wbll,
+    wybll,
 }
