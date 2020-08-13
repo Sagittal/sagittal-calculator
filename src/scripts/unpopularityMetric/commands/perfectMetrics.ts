@@ -14,8 +14,9 @@ import {
 import { bestMetrics, solverStatus } from "../globals"
 import { perfectMetrics } from "../perfecter"
 import { presentBestMetrics } from "../solver"
-import { ParameterValue } from "../sumOfSquares"
+import { CUT_OFF_POPULARITY, ParameterValue } from "../sumOfSquares"
 import { formatTime } from "../../../general/time"
+import { ZIPF_EXPONENT } from "../sumOfSquares/constants"
 
 program
     .option("-d, --debug-targets [debugTargets]", "debug targets")
@@ -63,4 +64,7 @@ perfectMetrics(Object.values(bestMetricsToBePerfected)).then(() => {
     if (time) {
         saveDebugMessage(`\n\nPERFECTING METRICS TOOK ${formatTime(endTime - startTime)}`, DebugTarget.FINAL_PERFECTER_RESULTS)
     }
+    saveDebugMessage(`MAXIMUM UNIT ${MAXIMUM_UNIT}`, DebugTarget.FINAL_PERFECTER_RESULTS)
+    saveDebugMessage(`ZIPF ${ZIPF_EXPONENT}`, DebugTarget.FINAL_PERFECTER_RESULTS)
+    saveDebugMessage(`TOP ${CUT_OFF_POPULARITY}`, DebugTarget.FINAL_PERFECTER_RESULTS)
 })

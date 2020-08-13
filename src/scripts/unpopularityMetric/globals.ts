@@ -1,5 +1,5 @@
 import { Combinations, Count, Unit } from "../../general"
-import { Metric, Scope } from "./bestMetric"
+import { Metric, Sample, Scope } from "./bestMetric"
 import { Chunk, ParameterChunk, SolverStatus, SubmetricChunk } from "./solver"
 import { ParameterValue } from "./sumOfSquares"
 
@@ -11,6 +11,8 @@ const solverStatus: SolverStatus = {
     populatedScopeCount: 0 as Count<Scope>,
     searchedScopeCount: 0 as Count<Scope>,
     maximumUnit: 0 as Unit<ParameterValue>,
+    averageSamplesPerScope: 0 as Count<Sample>,
+    sampleCount: 0 as Count<Sample>,
 }
 
 const bestMetrics: Record<string, Metric> = {}

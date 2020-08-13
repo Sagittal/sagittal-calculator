@@ -13,6 +13,8 @@ import {
 import { bestMetrics, solverStatus } from "../globals"
 import { Chunk, populateAndSearchScopesAndPerfectMetrics, presentBestMetrics } from "../solver"
 import { formatTime } from "../../../general/time"
+import { MAXIMUM_UNIT } from "../bestMetric/scopeToSamples"
+import { CUT_OFF_POPULARITY, ZIPF_EXPONENT } from "../sumOfSquares/constants"
 
 program
     .option("-d, --debug-targets [debugTargets]", "debug targets")
@@ -46,4 +48,8 @@ populateAndSearchScopesAndPerfectMetrics().then(() => {
     if (time) {
         saveDebugMessage(`\n\nFINDING BEST METRICS TOOK ${formatTime(endTime - startTime)}`, DebugTarget.FINAL_SOLVER_RESULTS)
     }
+    saveDebugMessage(`MAXIMUM UNIT ${MAXIMUM_UNIT}`, DebugTarget.FINAL_SOLVER_RESULTS)
+    saveDebugMessage(`AVERAGE SAMPLES/SCOPE ${solverStatus.averageSamplesPerScope}`, DebugTarget.FINAL_SOLVER_RESULTS)
+    saveDebugMessage(`ZIPF ${ZIPF_EXPONENT}`, DebugTarget.FINAL_SOLVER_RESULTS)
+    saveDebugMessage(`TOP ${CUT_OFF_POPULARITY}`, DebugTarget.FINAL_SOLVER_RESULTS)
 })
