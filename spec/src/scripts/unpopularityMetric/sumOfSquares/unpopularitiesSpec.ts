@@ -7,7 +7,7 @@ import {
     Unpopularity,
     Votes,
 } from "../../../../../src/scripts/unpopularityMetric/sumOfSquares/types"
-import { computeUnpopularities } from "../../../../../src/scripts/unpopularityMetric/sumOfSquares/unpopularities"
+import { computeUnpopularities } from "../../../../../src/scripts/unpopularityMetric/sumOfSquares"
 
 describe("computeUnpopularities", () => {
     it("given a list of real popularities and submetric combinations, returns our estimated unpopularities, which have antivotes instead of votes", () => {
