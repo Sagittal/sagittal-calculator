@@ -12,6 +12,7 @@ import {
 } from "../debug"
 import { bestMetrics, solverStatus } from "../globals"
 import { Chunk, populateAndSearchScopesAndPerfectMetrics, presentBestMetrics } from "../solver"
+import { formatTime } from "../../../general/time"
 
 program
     .option("-d, --debug-targets [debugTargets]", "debug targets")
@@ -43,6 +44,6 @@ populateAndSearchScopesAndPerfectMetrics().then(() => {
 
     const endTime = performance.now()
     if (time) {
-        saveDebugMessage(`\n\nFINDING BEST METRICS TOOK ${endTime - startTime} MS`, DebugTarget.FINAL_SOLVER_RESULTS)
+        saveDebugMessage(`\n\nFINDING BEST METRICS TOOK ${formatTime(endTime - startTime)}`, DebugTarget.FINAL_SOLVER_RESULTS)
     }
 })

@@ -15,6 +15,7 @@ import { bestMetrics, solverStatus } from "../globals"
 import { perfectMetrics } from "../perfecter"
 import { presentBestMetrics } from "../solver"
 import { ParameterValue } from "../sumOfSquares"
+import { formatTime } from "../../../general/time"
 
 program
     .option("-d, --debug-targets [debugTargets]", "debug targets")
@@ -59,6 +60,6 @@ perfectMetrics(Object.values(bestMetricsToBePerfected)).then(() => {
 
     const endTime = performance.now()
     if (time) {
-        saveDebugMessage(`\n\nPERFECTING METRICS TOOK ${endTime - startTime} MS`, DebugTarget.PERFECT)
+        saveDebugMessage(`\n\nPERFECTING METRICS TOOK ${formatTime(endTime - startTime)}`, DebugTarget.PERFECT)
     }
 })
