@@ -869,7 +869,7 @@ const waybl = {
 // Wed Aug 12, 2020 5:52 pm
 // http://forum.sagittal.org/viewtopic.php?p=2205#p2205
 const wabl1 = {
-    sumOfSquares: 0.0029673188530849625,
+    sumOfSquares: 0.0029769976555856672,
     submetrics: [
         {
             "withoutRepetition": true,
