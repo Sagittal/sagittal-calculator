@@ -9,7 +9,7 @@ describe("best metrics", () => {
         bestMetricsEntries.forEach(([bestMetricName, bestMetric]) => {
             const sumOfSquares = computeSumOfSquaresForSubmetrics(bestMetric.submetrics)
             // console.log(bestMetricName, sumOfSquares)
-            expect(bestMetric.sumOfSquares).toBe(sumOfSquares, `${bestMetricName} failed, has SoS ${bestMetric.sumOfSquares} but just computed ${sumOfSquares}`)
+            expect(bestMetric.sumOfSquares).toBeCloseTo(sumOfSquares, 4, `${bestMetricName} failed, has SoS ${bestMetric.sumOfSquares} but just computed ${sumOfSquares}`)
         })
     })
 })
