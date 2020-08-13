@@ -758,7 +758,7 @@ const aux = {
 // Douglas's solver 5-chunk best (immediately improved by Dave: http://forum.sagittal.org/viewtopic.php?p=2193#p2193)
 // Tue Aug 11, 2020 9:25 am
 // http://forum.sagittal.org/viewtopic.php?p=2191#p2191
-const wbl = {
+const wbl1 = {
     sumOfSquares: 0.0038773496201431785,
     submetrics: [
         {
@@ -780,7 +780,7 @@ const wbl = {
 // We found it?
 // Tue Aug 11, 2020 6:19 pm
 // http://forum.sagittal.org/viewtopic.php?p=2194#p2194
-const wybl = {
+const wybl1 = {
     sumOfSquares: 0.0032401250853104067,
     submetrics: [
         {
@@ -803,7 +803,7 @@ const wybl = {
 // Dave's "true" wbl and wybl
 // Tue Aug 11, 2020 11:13 pm
 // http://forum.sagittal.org/viewtopic.php?p=2199#p2199
-const wbll = {
+const wbl = {
     sumOfSquares: 0.0030322385583128613,
     submetrics: [
         {
@@ -820,7 +820,7 @@ const wbll = {
         },
     ],
 }
-const wybll = {
+const wybl = {
     sumOfSquares: 0.0026762735990075136,
     submetrics: [
         {
@@ -844,7 +844,7 @@ const wybll = {
 // Doug's waybll
 // Wed Aug 12, 2020 9:32 am
 // http://forum.sagittal.org/viewtopic.php?p=2203#p2203
-const waybll = {
+const waybl = {
     sumOfSquares: 0.0024616646376350447,
     submetrics: [
         {
@@ -859,6 +859,47 @@ const waybll = {
             [ Parameter.B ]: -1.1139840255018962,
             [ Parameter.Y ]: 0.9045075315289748,
             [ Parameter.A_AS_POWER_EXPONENT ]: 0.27731911914963275,
+        },
+    ],
+}
+
+//
+
+// Douglas's wb-cores
+// Wed Aug 12, 2020 5:52 pm
+// http://forum.sagittal.org/viewtopic.php?p=2205#p2205
+const wabl1 = {
+    sumOfSquares: 0.0029673188530849625,
+    submetrics: [
+        {
+            "withoutRepetition": true,
+            "max": true,
+            "aAsLogarithmBase": 2,
+        },
+        {
+            "sum": true,
+            "aAsLogarithmBase": 2,
+            "aAsPowerExponent": 0.7954545454545454,
+            "w": -0.8362010291300304,
+            "b": -1.311335378,
+        },
+    ],
+}
+const wabl = {
+    sumOfSquares: 0.0029517619226936613,
+    submetrics: [
+        {
+            "withoutRepetition": true,
+            "max": true,
+            "aAsLogarithmBase": 2,
+            "weightAsCoefficient": 0.8665946155658091,
+        },
+        {
+            "sum": true,
+            "aAsLogarithmBase": 2,
+            "aAsPowerExponent": 0.7313013537293375,
+            "w": -0.8796464573491212,
+            "b": -1.2979574284080588,
         },
     ],
 }
@@ -928,12 +969,15 @@ export {
     wab,
     lak,
 
-    wbl,
+    wbl1,
 
+    wybl1,
+
+    wbl,
     wybl,
 
-    wbll,
-    wybll,
+    waybl,
 
-    waybll,
+    wabl1,
+    wabl,
 }
