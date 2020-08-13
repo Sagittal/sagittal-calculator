@@ -40,6 +40,7 @@ debugTargets[ DebugTarget.SEARCH ] = true
 debugTargets[ DebugTarget.POPULATE ] = true
 debugTargets[ DebugTarget.FINAL_SOLVER_RESULTS ] = true
 debugTargets[ DebugTarget.NEW_BEST_METRIC ] = true
+debugTargets[ DebugTarget.FINAL_PERFECTER_RESULTS ] = true
 
 solverStatus.maximumUnit = MAXIMUM_UNIT / 10 as Unit<ParameterValue>
 
@@ -56,10 +57,10 @@ const bestMetricsToBePerfected = {
 
 const startTime = performance.now()
 perfectMetrics(Object.values(bestMetricsToBePerfected)).then(() => {
-    saveDebugMessage(`\n\nTHE PERFECTED METRICS ARE ${JSON.stringify(presentBestMetrics(bestMetrics), undefined, 4)}`, DebugTarget.PERFECT)
+    saveDebugMessage(`\n\nTHE PERFECTED METRICS ARE ${JSON.stringify(presentBestMetrics(bestMetrics), undefined, 4)}`, DebugTarget.FINAL_PERFECTER_RESULTS)
 
     const endTime = performance.now()
     if (time) {
-        saveDebugMessage(`\n\nPERFECTING METRICS TOOK ${formatTime(endTime - startTime)}`, DebugTarget.PERFECT)
+        saveDebugMessage(`\n\nPERFECTING METRICS TOOK ${formatTime(endTime - startTime)}`, DebugTarget.FINAL_PERFECTER_RESULTS)
     }
 })

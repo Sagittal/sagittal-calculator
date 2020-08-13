@@ -11,7 +11,8 @@ enum DebugTarget {
     ERRORS = "errors",
     NONE = "none",
     FINAL_SOLVER_RESULTS = "finalSolverResults",
-    PERFECT = "perfect"
+    PERFECT = "perfect",
+    FINAL_PERFECTER_RESULTS = "finalPerfecterResults"
 }
 
 type DebugTargets = EnumHash<DebugTarget, boolean>
