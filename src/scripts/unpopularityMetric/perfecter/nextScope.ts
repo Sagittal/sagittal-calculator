@@ -1,5 +1,5 @@
 import { computeDeepClone, Span } from "../../../general"
-import { computeResolution, DynamicParameter, SamplePoint, Scope } from "../bestMetric"
+import { computeDynamicParameterScope, DynamicParameter, SamplePoint, Scope } from "../bestMetric"
 import { ParameterValue } from "../sumOfSquares"
 
 const computeNextScope = (samplePoint: SamplePoint, dynamicParameters: DynamicParameter[], scope: Scope): Scope => {
@@ -10,9 +10,8 @@ const computeNextScope = (samplePoint: SamplePoint, dynamicParameters: DynamicPa
 
         const center = values[ dynamicParameterValueIndex ]
         const span: Span<ParameterValue> = unit * (2 / 3) as Span<ParameterValue>
-        const resolution = computeResolution(span)
 
-        nextScope[ submetricIndex ][ parameter ] = { center, span, resolution }
+        nextScope[ submetricIndex ][ parameter ] = computeDynamicParameterScope({ center, span })
     })
 
     return nextScope

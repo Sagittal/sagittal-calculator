@@ -10,7 +10,7 @@ import { Parameter, ParameterValue, Submetric } from "../../../../../src/scripts
 describe("searchNextLocalMinimum", () => {
     const nextLocalMinimum: LocalMinimum = {
         sumOfSquares: 0.006454 as SumOfSquares,
-        samplePoint: [3, 7, 1] as unknown as SamplePoint,
+        samplePoint: [2, 0, 1] as unknown as SamplePoint,
         submetrics: [{
             [ Parameter.K_AS_COEFFICIENT ]: 0.4,
             [ Parameter.A_AS_COEFFICIENT ]: 2.1,
@@ -68,8 +68,8 @@ describe("searchNextLocalMinimum", () => {
         expect(recursiveBestMetric.recursiveSearchScopeAndMaybeUpdateBestMetric).toHaveBeenCalledWith(
             [
                 {
-                    [ Parameter.K_AS_COEFFICIENT ]: { center: undefined, span: 0.06666666666666667, resolution: 2 },
-                    [ Parameter.A_AS_COEFFICIENT ]: { center: undefined, span: 0.6666666666666666, resolution: 7 },
+                    [ Parameter.K_AS_COEFFICIENT ]: { center: 0.5, span: 0.06666666666666667, resolution: 2 },
+                    [ Parameter.A_AS_COEFFICIENT ]: { center: 1.1, span: 0.6666666666666666, resolution: 7 },
                     [ Parameter.W ]: { center: 1.4, span: 0.06666666666666667, resolution: 2 },
                 },
             ] as unknown as Scope,

@@ -1,4 +1,4 @@
-import { Combination, Index, Unit } from "../../../../general"
+import { Combination, Index, Span, Unit } from "../../../../general"
 import { Parameter, ParameterValue, Submetric } from "../../sumOfSquares"
 
 interface ComputeDynamicParameterValueIndicesOptions {
@@ -23,10 +23,18 @@ interface Sample {
     submetrics: Combination<Submetric>,
 }
 
+type ComputeDynamicParameterScopeOptions = Partial<{
+    max: ParameterValue,
+    min: ParameterValue,
+    span: Span<ParameterValue>,
+    center: ParameterValue,
+}>
+
 export {
     ComputeDynamicParameterValueIndicesOptions,
     DynamicParameter,
     SubmetricPossibility,
     Sample,
     SamplePoint,
+    ComputeDynamicParameterScopeOptions,
 }
