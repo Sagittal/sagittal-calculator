@@ -1,18 +1,21 @@
-import { Combination, Ratio } from "../../../../general"
+import { Combination, Ratio, round } from "../../../../general"
 import { DebugTarget, saveDebugMessage } from "../../debug"
 import { Antivotes, Submetric } from "../types"
 import { computeWeightedSubmetricAntivotes } from "./weightedSubmetricAntivotes"
 
 const computeAntivotes = (fiveRoughRatio: Ratio, submetrics: Combination<Submetric>): Antivotes =>
-    submetrics.reduce(
-        (totalAntivotes: Antivotes, submetric: Submetric): Antivotes => {
-            const weightedSubmetricAntivotes: Antivotes = computeWeightedSubmetricAntivotes(fiveRoughRatio, submetric)
+    round(
+        submetrics.reduce(
+            (totalAntivotes: Antivotes, submetric: Submetric): Antivotes => {
+                const weightedSubmetricAntivotes: Antivotes = computeWeightedSubmetricAntivotes(fiveRoughRatio, submetric)
 
-            saveDebugMessage(`${JSON.stringify(submetric)}: ${weightedSubmetricAntivotes}`, DebugTarget.ANTIVOTES)
+                saveDebugMessage(`${JSON.stringify(submetric)}: ${weightedSubmetricAntivotes}`, DebugTarget.ANTIVOTES)
 
-            return totalAntivotes + weightedSubmetricAntivotes as Antivotes
-        },
-        0 as Antivotes,
+                return totalAntivotes + weightedSubmetricAntivotes as Antivotes
+            },
+            0 as Antivotes,
+        ),
+        9,
     )
 
 export {

@@ -728,7 +728,7 @@ const aux = {
 // Tue Aug 11, 2020 9:25 am
 // http://forum.sagittal.org/viewtopic.php?p=2191#p2191
 const wbl1 = {
-    sumOfSquares: 0.0038773496201431785,
+    sumOfSquares: 0.003886596371931313,
     submetrics: [
         {
             [ Parameter.WITHOUT_REPETITION ]: true,
@@ -855,7 +855,7 @@ const wabl1 = {
     ],
 }
 const wabl = {
-    sumOfSquares: 0.0029517619226936613,
+    sumOfSquares: 0.002961440725194366,
     submetrics: [
         {
             "withoutRepetition": true,
@@ -869,6 +869,28 @@ const wabl = {
             "aAsPowerExponent": 0.7313013537293375,
             "w": -0.8796464573491212,
             "b": -1.2979574284080588,
+        },
+    ],
+}
+
+//
+
+// Dave's rounded WBL-1
+// Thu Aug 13, 2020 4:42 am
+// http://forum.sagittal.org/viewtopic.php?p=2211#p2211
+const wBL1 = {
+    sumOfSquares: 0.00420582488763467,
+    submetrics: [
+        {
+            [ Parameter.WITHOUT_REPETITION ]: true,
+            [ Parameter.MAX ]: true,
+            [ Parameter.A_AS_LOGARITHM_BASE ]: 2,
+        },
+        {
+            [ Parameter.SUM ]: true,
+            [ Parameter.A_AS_LOGARITHM_BASE ]: 2,
+            [ Parameter.W ]: -1,
+            [ Parameter.B ]: -1.58496250072,
         },
     ],
 }
@@ -949,4 +971,6 @@ export {
 
     wabl1,
     wabl,
+
+    wBL1,
 }

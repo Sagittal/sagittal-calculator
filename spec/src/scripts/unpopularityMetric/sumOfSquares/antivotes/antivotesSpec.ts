@@ -77,4 +77,19 @@ describe("computeAntivotes", () => {
 
         expect(result).not.toBeNaN()
     })
+
+    it("should round results to billionths", () => {
+        const submetrics = [
+            {
+                [ Parameter.SUM ]: true,
+                [ Parameter.A_AS_LOGARITHM_BASE ]: 2 as ParameterValue,
+                [ Parameter.W ]: -2 as ParameterValue,
+            },
+        ] as Combination<Submetric>
+        const fiveRoughRatio = [5, 1] as Ratio
+
+        const result = computeAntivotes(fiveRoughRatio, submetrics)
+
+        expect(result).toBe(0.321928095 as Antivotes)
+    })
 })
