@@ -7,11 +7,11 @@ describe("antivotes", () => {
         const result = runCommandAndGetConsoleOutput(command)
 
         expect(result).toEqual([
-            `{"sum":true,"kAsCoefficient":0,"aAsLogarithmBase":1.994,"y":0.455,"w":-2.08}: 1.3944921183454442`,
-            `{"count":true,"weightAsCoefficient":0.577}: 1.154`,
+            `{"sum":true,"kAsCoefficient":0.038,"aAsLogarithmBase":1.994,"y":0.455,"w":-2.08,"useNuminator":true}: 1.422596030341406`,
+            `{"count":true,"weightAsCoefficient":0.577,"useNuminator":true}: 1.154`,
             `11/7`,
-            `[{"sum":true,"kAsCoefficient":0,"aAsLogarithmBase":1.994,"y":0.455,"w":-2.08},{"count":true,"weightAsCoefficient":0.577}]`,
-            `2.548492118`,
+            `[{"sum":true,"kAsCoefficient":0.038,"aAsLogarithmBase":1.994,"y":0.455,"w":-2.08,"useNuminator":true},{"count":true,"weightAsCoefficient":0.577,"useNuminator":true}]`,
+            `2.57659603`,
         ])
     })
 })

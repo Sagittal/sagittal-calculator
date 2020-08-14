@@ -4,10 +4,11 @@ import { Metric } from "../bestMetric"
 import { DebugTarget, saveDebugMessage } from "../debug"
 import { Parameter, ParameterValue } from "../sumOfSquares"
 import { applySharedUnpopularityMetricCommandSetup } from "./shared/shared"
+import { load } from "./shared/load"
 
 applySharedUnpopularityMetricCommandSetup(DebugTarget.ALL)
 
-const chunkCountResults = {} as unknown as Record<string, Metric> // paste things in from 1.txt, 2.txt, etc.
+const chunkCountResults = load("metrics") as Record<string, Metric>
 
 const parameterExtremes = {} as Record<string, [ParameterValue | undefined, ParameterValue | undefined]>
 

@@ -15,7 +15,7 @@ solverStatus.chunkCount = parseInt(program.args[ 0 ]) as Count<Chunk>
 
 const time = !!program.time
 
-debugTargets[ DebugTarget.SEARCH ] = true // todo it'd be nice (and better) if the default debug targets took an array
+debugTargets[ DebugTarget.SEARCH ] = true // todo it'd be nice (and better) if the default debug targets took an array (here and elsewhere)
 debugTargets[ DebugTarget.POPULATE ] = true
 debugTargets[ DebugTarget.FINAL_SOLVER_RESULTS ] = true
 debugTargets[ DebugTarget.PERFECT ] = true

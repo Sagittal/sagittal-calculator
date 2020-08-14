@@ -1,0 +1,10 @@
+{
+    "{sum}": {
+        "sumOfSquares": 0.014206086754420309,
+        "submetrics": [
+            {
+                "sum": true,
+            },
+        ],
+    },
+}

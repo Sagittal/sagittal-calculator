@@ -10,6 +10,7 @@ import { ParameterValue } from "../sumOfSquares"
 import { formatTime } from "../../../general/time"
 import { DEFAULT_MAXIMUM_UNIT } from "../constants"
 import { applySharedUnpopularityMetricCommandSetup } from "./shared/shared"
+import { load } from "./shared/load"
 
 program.option("-t, --no-time", "no time")
 
@@ -26,16 +27,7 @@ debugTargets[ DebugTarget.FINAL_PERFECTER_RESULTS ] = true
 
 unpopularityMetricSettings.maximumUnit = DEFAULT_MAXIMUM_UNIT / 10 as Unit<ParameterValue>
 
-const bestMetricsToBePerfected = {
-    "{sum}": {
-        "sumOfSquares": 0.014206086754420309,
-        "submetrics": [
-            {
-                "sum": true,
-            },
-        ],
-    },
-} as unknown as Record<string, Metric> // paste things in from 1.txt, 2.txt, etc.
+const bestMetricsToBePerfected = load("metrics") as Record<string, Metric>
 
 const startTime = performance.now()
 perfectMetrics(Object.values(bestMetricsToBePerfected)).then(() => {
