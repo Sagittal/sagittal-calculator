@@ -14,7 +14,6 @@ const defaultDebugTargets = [
     DebugTarget.POPULATE,
     DebugTarget.FINAL_SOLVER_RESULTS,
     DebugTarget.NEW_BEST_METRIC,
-    DebugTarget.ERRORS,
 ]
 applySharedUnpopularityMetricCommandSetup({ defaultDebugTargets })
 
@@ -32,6 +31,7 @@ populateAndSearchScopesAndPerfectMetrics().then(() => {
     }
     saveDebugMessage(`MAXIMUM UNIT ${unpopularityMetricSettings.maximumUnit}`, DebugTarget.FINAL_SOLVER_RESULTS)
     saveDebugMessage(`AVERAGE SAMPLES/SCOPE ${solverStatus.averageSamplesPerScope}`, DebugTarget.FINAL_SOLVER_RESULTS)
+    saveDebugMessage(`PARAMETER SCOPES @ ${unpopularityMetricSettings.noUseless ? "NO USELESS" : "ORIGINAL"} SETTINGS`, DebugTarget.FINAL_SOLVER_RESULTS)
     saveDebugMessage(`Z ${unpopularityMetricSettings.z}`, DebugTarget.FINAL_SOLVER_RESULTS)
     saveDebugMessage(`ONLY TOP ${unpopularityMetricSettings.onlyTop}`, DebugTarget.FINAL_SOLVER_RESULTS)
 })

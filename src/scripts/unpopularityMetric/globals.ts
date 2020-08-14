@@ -26,6 +26,7 @@ const unpopularityMetricSettings = {
     z: DEFAULT_Z,
     onlyTop: DEFAULT_ONLY_TOP,
     maximumUnit: DEFAULT_MAXIMUM_UNIT,
+    noUseless: false,
 }
 
 export {

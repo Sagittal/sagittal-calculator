@@ -1,9 +1,19 @@
 import { Combination, Combinations, computeCombinations, computeDistributions, Count, Index } from "../../../../general"
 import { DebugTarget, saveDebugMessage } from "../../debug"
-import { memoizedParameterChunkCombinations, memoizedSubmetricChunkCombinations, solverStatus } from "../../globals"
+import {
+    memoizedParameterChunkCombinations,
+    memoizedSubmetricChunkCombinations,
+    solverStatus,
+    unpopularityMetricSettings,
+} from "../../globals"
 import { presentSearchedAndPopulated } from "../present"
 import { Chunk } from "../types"
-import { PARAMETER_CHUNKS, SUBMETRIC_CHUNKS } from "./constants"
+import {
+    NO_USELESS_PARAMETER_CHUNKS,
+    NO_USELESS_SUBMETRIC_CHUNKS,
+    PARAMETER_CHUNKS,
+    SUBMETRIC_CHUNKS,
+} from "./constants"
 import { populateScopesForSubmetricChunkCombination } from "./submetricChunkCombination"
 import { ParameterChunk, SubmetricChunk } from "./types"
 
@@ -17,9 +27,10 @@ const populateScopesPhase = async (chunkCount: Count<Chunk>, chunkCountForSubmet
         submetricChunkCombinations = memoizedSubmetricChunkCombinations[ chunkCountForSubmetrics ]
         saveDebugMessage(`used memoized submetric combinations (with repetitions)`, DebugTarget.POPULATE)
     } else {
-        submetricChunkCombinations = computeCombinations(SUBMETRIC_CHUNKS, chunkCountForSubmetrics, { withRepeatedElements: true })
+        const submetricChunks = unpopularityMetricSettings.noUseless ? NO_USELESS_SUBMETRIC_CHUNKS : SUBMETRIC_CHUNKS
+        submetricChunkCombinations = computeCombinations(submetricChunks, chunkCountForSubmetrics, { withRepeatedElements: true })
         memoizedSubmetricChunkCombinations[ chunkCountForSubmetrics ] = submetricChunkCombinations
-        saveDebugMessage(`submetric combinations (with repetitions) computed: ${submetricChunkCombinations.length}; formula is ((${chunkCountForSubmetrics}+${SUBMETRIC_CHUNKS.length}-1)!)/((${chunkCountForSubmetrics}!)((${SUBMETRIC_CHUNKS.length}-1)!)) where ${SUBMETRIC_CHUNKS.length} is the total of possible existing chunks and ${chunkCountForSubmetrics} is the count we are choosing at a time`, DebugTarget.POPULATE)
+        saveDebugMessage(`submetric combinations (with repetitions) computed: ${submetricChunkCombinations.length}; formula is ((${chunkCountForSubmetrics}+${submetricChunks.length}-1)!)/((${chunkCountForSubmetrics}!)((${submetricChunks.length}-1)!)) where ${submetricChunks.length} is the total of possible existing chunks and ${chunkCountForSubmetrics} is the count we are choosing at a time`, DebugTarget.POPULATE)
     }
     submetricChunkCombinations.forEach(submetricChunkCombination => {
         submetricChunkCombination.unshift({} as SubmetricChunk) // TODO: you should probably name that this is what will become the all bins submetric scope, I think
@@ -30,9 +41,10 @@ const populateScopesPhase = async (chunkCount: Count<Chunk>, chunkCountForSubmet
         parameterChunkCombinations = memoizedParameterChunkCombinations[ chunkCountForParameters ]
         saveDebugMessage(`used memoized parameter combinations (with repetitions)`, DebugTarget.POPULATE)
     } else {
+        const parameterChunks = unpopularityMetricSettings.noUseless ? NO_USELESS_PARAMETER_CHUNKS : PARAMETER_CHUNKS
         parameterChunkCombinations = computeCombinations(PARAMETER_CHUNKS, chunkCountForParameters, { withRepeatedElements: true })
         memoizedParameterChunkCombinations[ chunkCountForParameters ] = parameterChunkCombinations
-        saveDebugMessage(`parameter combinations (with repetitions) computed: ${parameterChunkCombinations.length}; formula is ((${chunkCountForParameters}+${PARAMETER_CHUNKS.length}-1)!)/((${chunkCountForParameters}!)((${PARAMETER_CHUNKS.length}-1)!)) where ${PARAMETER_CHUNKS.length} is the total of possible existing chunks and ${chunkCountForParameters} is the count we are choosing at a time`, DebugTarget.POPULATE)
+        saveDebugMessage(`parameter combinations (with repetitions) computed: ${parameterChunkCombinations.length}; formula is ((${chunkCountForParameters}+${parameterChunks.length}-1)!)/((${chunkCountForParameters}!)((${parameterChunks.length}-1)!)) where ${parameterChunks.length} is the total of possible existing chunks and ${chunkCountForParameters} is the count we are choosing at a time`, DebugTarget.POPULATE)
     }
 
     const exampleDistributions = computeDistributions(parameterChunkCombinations[ 0 ], submetricChunkCombinations[ 0 ].length)

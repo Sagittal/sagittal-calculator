@@ -7,7 +7,7 @@ import {
     INITIAL_PARAMETER_SCOPES,
     SUBMETRIC_CHUNKS,
 } from "../../../../../../src/scripts/unpopularityMetric/solver/populate/constants"
-import { populateScopes } from "../../../../../../src/scripts/unpopularityMetric/solver/populate/scopes"
+import { populateScopes } from "../../../../../../src/scripts/unpopularityMetric/solver/populate"
 import { Parameter } from "../../../../../../src/scripts/unpopularityMetric/sumOfSquares"
 
 describe("populateScopes", () => {
