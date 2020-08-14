@@ -2,7 +2,7 @@ import { Combination } from "../../../general"
 import { SumOfSquares } from "../bestMetric"
 import { Parameter, Submetric } from "../sumOfSquares"
 
-// ALL VALUES ZIPF -1, TOP 80
+// ALL VALUES Z -1, ONLY TOP 80
 
 // Metric to beat: SoPF>3, or sopfr
 const sopfgtt = {

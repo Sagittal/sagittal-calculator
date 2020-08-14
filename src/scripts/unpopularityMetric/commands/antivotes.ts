@@ -1,25 +1,12 @@
-import * as colors from "colors"
 import { program } from "commander"
 import { Combination, presentRatio, Ratio } from "../../../general"
-import { clearDebugLogFiles, debugSettings, DebugTarget, saveDebugMessage, setDebugTargets } from "../debug"
+import { DebugTarget, saveDebugMessage } from "../debug"
 import { computeAntivotes, Parameter, ParameterValue, Submetric } from "../sumOfSquares"
+import { applySharedUnpopularityMetricCommandSetup } from "./shared/shared"
 
-program
-    .option("-d, --debug-targets [debugTargets]", "debug targets")
-    .option("-c, --no-color", "no color")
-    .option("-w, --no-write", "no write")
-    .parse(process.argv)
+applySharedUnpopularityMetricCommandSetup(DebugTarget.ANTIVOTES)
 
-if (!program.color) {
-    colors.disable()
-}
-
-setDebugTargets(program.debugTargets || DebugTarget.ANTIVOTES)
-debugSettings.noWrite = !program.write
-
-if (!debugSettings.noWrite) {
-    clearDebugLogFiles()
-}
+program.parse(process.argv)
 
 const submetrics =
     [

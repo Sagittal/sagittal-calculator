@@ -1,6 +1,5 @@
-import { Count, Unit } from "../../../general"
+import { Count } from "../../../general"
 import { Sample, Scope } from "../bestMetric"
-import { ParameterValue } from "../sumOfSquares"
 import { ParameterChunk, SubmetricChunk } from "./populate"
 
 type Chunk = SubmetricChunk | ParameterChunk
@@ -10,7 +9,6 @@ interface SolverStatus {
     finishedPopulating: boolean,
     populatedScopeCount: Count<Scope>,
     searchedScopeCount: Count<Scope>,
-    maximumUnit: Unit<ParameterValue>,
     averageSamplesPerScope: Count<Sample>,
     sampleCount: Count<Sample>,
 }

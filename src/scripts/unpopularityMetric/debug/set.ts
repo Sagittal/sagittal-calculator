@@ -1,7 +1,7 @@
 import { debugTargets } from "./targets"
 import { DebugTarget } from "./types"
 
-const setDebugTargets = (debugTargetsCommaSeparatedString: string | boolean = "") => {
+const setDebugTargets = (debugTargetsCommaSeparatedString: string | boolean | undefined = "") => {
     if (debugTargetsCommaSeparatedString === true) {
         debugTargets[ DebugTarget.ALL ] = true
         return

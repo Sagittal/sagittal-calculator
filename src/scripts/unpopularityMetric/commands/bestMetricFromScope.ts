@@ -1,32 +1,15 @@
 // This script is for developing the improvement to the "SoPF>3" metric. Once developed, it should become part of the analyzeComma script.
 
-import * as colors from "colors"
 import { program } from "commander"
 import { Span } from "../../../general"
 import { computeDynamicParameterScope, Scope } from "../bestMetric"
-import { clearDebugLogFiles, debugSettings, DebugTarget, saveDebugMessage, setDebugTargets } from "../debug"
-import { bestMetrics, solverStatus } from "../globals"
+import { DebugTarget, saveDebugMessage } from "../debug"
+import { bestMetrics } from "../globals"
 import { recursiveSearchScopeAndMaybeUpdateBestMetric } from "../perfecter"
 import { Parameter, ParameterValue } from "../sumOfSquares"
+import { applySharedUnpopularityMetricCommandSetup } from "./shared/shared"
 
-program
-    .option("-d, --debug-targets [debugTargets]", "debug targets")
-    .option("-c, --no-color", "no color")
-    .option("-w, --no-write", "no write")
-    .option("-m, --maximum-unit", "maximum unit")
-    .parse(process.argv)
-
-setDebugTargets(program.debugTargets)
-solverStatus.maximumUnit = program.maximumUnit
-debugSettings.noWrite = !program.write
-
-if (!program.color) {
-    colors.disable()
-}
-
-if (!debugSettings.noWrite) {
-    clearDebugLogFiles()
-}
+applySharedUnpopularityMetricCommandSetup()
 
 // debugTargets[ DebugTarget.ERRORS ] = true
 // debugTargets[ DebugTarget.NEW_BEST_METRIC ] = true

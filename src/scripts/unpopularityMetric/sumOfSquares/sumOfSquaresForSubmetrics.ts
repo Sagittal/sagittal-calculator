@@ -2,17 +2,17 @@ import { Combination, isNumber } from "../../../general"
 import { SumOfSquares } from "../bestMetric"
 import { DebugTarget, debugTargets, saveDebugMessage } from "../debug"
 import { checkSubmetricsForInvalidParameterValueCombinations } from "./checkParameterValues"
-import { CUT_OFF_POPULARITY, ZIPF_EXPONENT } from "./constants"
 import { COMMA_POPULARITIES } from "./popularities"
 import { addRankToUnpopularities } from "./rank"
 import { computeSumOfSquares } from "./sumOfSquares"
 import { Popularity, Submetric } from "./types"
 import { computeUnpopularities } from "./unpopularities"
+import { unpopularityMetricSettings } from "../globals"
 
 const computeSumOfSquaresForSubmetrics = (submetrics: Combination<Submetric>): SumOfSquares => {
     checkSubmetricsForInvalidParameterValueCombinations(submetrics)
 
-    const realPopularities: Popularity[] = COMMA_POPULARITIES.slice(0, CUT_OFF_POPULARITY)
+    const realPopularities: Popularity[] = COMMA_POPULARITIES.slice(0, unpopularityMetricSettings.onlyTop)
 
     const unpopularities = computeUnpopularities(realPopularities, submetrics)
     if (unpopularities.some(unpopularity => !isNumber(unpopularity.antivotes))) {
@@ -26,7 +26,7 @@ const computeSumOfSquaresForSubmetrics = (submetrics: Combination<Submetric>): S
         })
     }
 
-    const sumOfSquares = computeSumOfSquares(rankedUnpopularities, realPopularities, ZIPF_EXPONENT)
+    const sumOfSquares = computeSumOfSquares(rankedUnpopularities, realPopularities, unpopularityMetricSettings.z)
 
     saveDebugMessage(`sum-of-squares ${sumOfSquares}`, DebugTarget.SUM_OF_SQUARES)
 

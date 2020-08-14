@@ -17,7 +17,6 @@ afterEach(() => {
     cleanArray(memoizedSubmetricChunkCombinations)
     cleanArray(memoizedParameterChunkCombinations)
 
-    solverStatus.maximumUnit = 0 as Unit<ParameterValue>
     solverStatus.finishedPopulating = false
     solverStatus.populatedScopeCount = 0 as Count<Scope>
     solverStatus.searchedScopeCount = 0 as Count<Scope>

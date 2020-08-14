@@ -1,4 +1,3 @@
-import { MAXIMUM_UNIT } from "./constants"
 import { computeDynamicParameters } from "./dynamicParameters"
 import { computeDynamicParameterScope } from "./dynamicParameterScope"
 import { computeSamples } from "./samples"
@@ -11,5 +10,4 @@ export {
     computeDynamicParameterScope,
     computeSamples,
     computeDynamicParameters,
-    MAXIMUM_UNIT,
 }

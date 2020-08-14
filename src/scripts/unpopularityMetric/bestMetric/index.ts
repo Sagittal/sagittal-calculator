@@ -1,6 +1,6 @@
 import { getSumOfSquaresAtSamplePoint } from "./getSumOfSquaresAtSamplePoint"
 import { nonRecursiveSearchScopeAndMaybeUpdateBestMetric } from "./nonRecursiveBestMetric"
-import { computeDynamicParameterScope, DynamicParameter, MAXIMUM_UNIT, Sample, SamplePoint } from "./scopeToSamples"
+import { computeDynamicParameterScope, DynamicParameter, Sample, SamplePoint } from "./scopeToSamples"
 import {
     ComputeSumOrSumsOfSquaresOptions,
     DynamicParameterScope,
@@ -19,7 +19,6 @@ export {
     computeDynamicParameterScope,
     DynamicParameterScope,
     SumOfSquares,
-    MAXIMUM_UNIT,
     DynamicParameter,
     SamplePoint,
     SumsOfSquares,

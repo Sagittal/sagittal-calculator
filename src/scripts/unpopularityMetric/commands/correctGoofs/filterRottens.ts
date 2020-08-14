@@ -2,9 +2,10 @@ import "colors"
 import { isNumber } from "../../../../general"
 import { Metric } from "../../bestMetric"
 import { clearDebugLogFiles, debugSettings, DebugTarget, saveDebugMessage, setDebugTargets } from "../../debug"
-import { COMMA_POPULARITIES, computeUnpopularities, CUT_OFF_POPULARITY, Popularity } from "../../sumOfSquares"
+import { COMMA_POPULARITIES, computeUnpopularities, Popularity } from "../../sumOfSquares"
 import { program } from "commander"
 import * as colors from "colors"
+import { unpopularityMetricSettings } from "../../globals"
 
 program
     .option("-d, --debug-targets [debugTargets]", "debug targets")
@@ -24,7 +25,7 @@ if (!debugSettings.noWrite) {
 
 const potentiallyRottens = {} as unknown as Record<string, Metric> // paste things in from 1.txt, 2.txt, etc.
 
-const realPopularities: Popularity[] = COMMA_POPULARITIES.slice(0, CUT_OFF_POPULARITY)
+const realPopularities: Popularity[] = COMMA_POPULARITIES.slice(0, unpopularityMetricSettings.onlyTop)
 
 const noRottens = Object.entries(potentiallyRottens).reduce(
     (noRottens: Record<string, Metric>, [potentiallyRottenName, potentiallyRottenMetric]: [string, Metric]) => {

@@ -1,14 +1,11 @@
 import "colors"
 import { isNumber, isUndefined } from "../../../general"
 import { Metric } from "../bestMetric"
-import { clearDebugLogFiles, debugSettings, DebugTarget, saveDebugMessage, setDebugTargets } from "../debug"
+import { DebugTarget, saveDebugMessage } from "../debug"
 import { Parameter, ParameterValue } from "../sumOfSquares"
+import { applySharedUnpopularityMetricCommandSetup } from "./shared/shared"
 
-if (!debugSettings.noWrite) {
-    clearDebugLogFiles()
-}
-
-setDebugTargets(DebugTarget.ALL)
+applySharedUnpopularityMetricCommandSetup(DebugTarget.ALL)
 
 const chunkCountResults = {} as unknown as Record<string, Metric> // paste things in from 1.txt, 2.txt, etc.
 

@@ -1,5 +1,5 @@
-import { Combination, Resolution, Span } from "../../../general"
-import { MAXIMUM_UNIT, Metric, Scope, SubmetricScope } from "../bestMetric"
+import { Combination } from "../../../general"
+import { Metric, Scope, SubmetricScope } from "../bestMetric"
 import { DebugTarget, saveDebugMessage } from "../debug"
 import { Parameter, ParameterValue, Submetric } from "../sumOfSquares"
 import { PARAMETER_DYNAMISMS } from "./constants"

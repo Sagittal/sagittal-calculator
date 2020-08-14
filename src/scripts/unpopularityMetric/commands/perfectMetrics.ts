@@ -1,40 +1,21 @@
-import * as colors from "colors"
 import { program } from "commander"
 import { performance } from "perf_hooks"
 import { Unit } from "../../../general"
-import { MAXIMUM_UNIT, Metric } from "../bestMetric"
-import {
-    clearDebugLogFiles,
-    debugSettings,
-    DebugTarget,
-    debugTargets,
-    saveDebugMessage,
-    setDebugTargets,
-} from "../debug"
-import { solverStatus } from "../globals"
+import { Metric } from "../bestMetric"
+import { DebugTarget, debugTargets, saveDebugMessage } from "../debug"
+import { unpopularityMetricSettings } from "../globals"
 import { perfectMetrics } from "../perfecter"
 import { formatBestMetrics } from "../solver"
-import { CUT_OFF_POPULARITY, ParameterValue } from "../sumOfSquares"
+import { ParameterValue } from "../sumOfSquares"
 import { formatTime } from "../../../general/time"
-import { ZIPF_EXPONENT } from "../sumOfSquares/constants"
+import { DEFAULT_MAXIMUM_UNIT } from "../constants"
+import { applySharedUnpopularityMetricCommandSetup } from "./shared/shared"
 
-program
-    .option("-d, --debug-targets [debugTargets]", "debug targets")
-    .option("-c, --no-color", "no color")
-    .option("-w, --no-write", "no write")
-    .option("-t, --no-time", "no time")
-    .parse(process.argv)
+program.option("-t, --no-time", "no time")
 
-setDebugTargets(program.debugTargets)
-if (!program.color) {
-    colors.disable()
-}
+applySharedUnpopularityMetricCommandSetup()
+
 const time = !!program.time
-debugSettings.noWrite = !program.write
-
-if (!debugSettings.noWrite) {
-    clearDebugLogFiles()
-}
 
 debugTargets[ DebugTarget.PERFECT ] = true
 debugTargets[ DebugTarget.SEARCH ] = true
@@ -43,17 +24,17 @@ debugTargets[ DebugTarget.FINAL_SOLVER_RESULTS ] = true
 debugTargets[ DebugTarget.NEW_BEST_METRIC ] = true
 debugTargets[ DebugTarget.FINAL_PERFECTER_RESULTS ] = true
 
-solverStatus.maximumUnit = MAXIMUM_UNIT / 10 as Unit<ParameterValue>
+unpopularityMetricSettings.maximumUnit = DEFAULT_MAXIMUM_UNIT / 10 as Unit<ParameterValue>
 
 const bestMetricsToBePerfected = {
     "{sum}": {
         "sumOfSquares": 0.014206086754420309,
         "submetrics": [
             {
-                "sum": true
-            }
-        ]
-    }
+                "sum": true,
+            },
+        ],
+    },
 } as unknown as Record<string, Metric> // paste things in from 1.txt, 2.txt, etc.
 
 const startTime = performance.now()
@@ -64,7 +45,7 @@ perfectMetrics(Object.values(bestMetricsToBePerfected)).then(() => {
     if (time) {
         saveDebugMessage(`\n\nPERFECTING METRICS TOOK ${formatTime(endTime - startTime)}`, DebugTarget.FINAL_PERFECTER_RESULTS)
     }
-    saveDebugMessage(`MAXIMUM UNIT ${MAXIMUM_UNIT}`, DebugTarget.FINAL_PERFECTER_RESULTS)
-    saveDebugMessage(`ZIPF ${ZIPF_EXPONENT}`, DebugTarget.FINAL_PERFECTER_RESULTS)
-    saveDebugMessage(`TOP ${CUT_OFF_POPULARITY}`, DebugTarget.FINAL_PERFECTER_RESULTS)
+    saveDebugMessage(`MAXIMUM UNIT ${unpopularityMetricSettings.maximumUnit}`, DebugTarget.FINAL_PERFECTER_RESULTS)
+    saveDebugMessage(`Z ${unpopularityMetricSettings.z}`, DebugTarget.FINAL_PERFECTER_RESULTS)
+    saveDebugMessage(`ONLY TOP ${unpopularityMetricSettings.onlyTop}`, DebugTarget.FINAL_PERFECTER_RESULTS)
 })
