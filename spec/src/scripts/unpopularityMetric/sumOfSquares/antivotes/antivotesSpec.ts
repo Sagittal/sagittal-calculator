@@ -1,4 +1,4 @@
-import { Combination, Ratio } from "../../../../../../src/general/math"
+import { Combination, Ratio, round } from "../../../../../../src/general/math"
 import { Monzo } from "../../../../../../src/general/music"
 import { Parameter, ParameterValue, Submetric } from "../../../../../../src/scripts/unpopularityMetric/sumOfSquares"
 import { computeAntivotes } from "../../../../../../src/scripts/unpopularityMetric/sumOfSquares/antivotes"
@@ -53,10 +53,10 @@ describe("computeAntivotes", () => {
 
         const result = computeAntivotes(fiveRoughRatio, submetrics)
 
-        expect(result).toBe(
+        const expectedResult =
             0.5 * computeSubmetricAntivotes([0, 0, 0, 1, 1] as Monzo, { [ Parameter.SUM ]: true }) as Antivotes +
-            0.3 * computeSubmetricAntivotes([0, 0, 0, 1, 1] as Monzo, { [ Parameter.SUM ]: true }) as Antivotes,
-        )
+            0.3 * computeSubmetricAntivotes([0, 0, 0, 1, 1] as Monzo, { [ Parameter.SUM ]: true }) as Antivotes
+        expect(result).toBe(round(expectedResult, 9))
     })
 
     it("should not return NaN", () => {

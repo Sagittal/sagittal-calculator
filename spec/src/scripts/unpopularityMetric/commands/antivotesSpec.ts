@@ -11,7 +11,7 @@ describe("antivotes", () => {
             `{"count":true,"weightAsCoefficient":0.577}: 1.154`,
             `11/7`,
             `[{"sum":true,"kAsCoefficient":0,"aAsLogarithmBase":1.994,"y":0.455,"w":-2.08},{"count":true,"weightAsCoefficient":0.577}]`,
-            `2.548492118345444`,
+            `2.548492118`,
         ])
     })
 })
