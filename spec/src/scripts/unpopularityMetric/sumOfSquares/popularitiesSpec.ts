@@ -1,6 +1,7 @@
 import { COMMA_POPULARITIES } from "../../../../../src/scripts/unpopularityMetric/sumOfSquares"
 import { computeMonzoFromRatio } from "../../../../../src/general"
 import { computeRatioFromMonzo } from "../../../../../src/general/music/ratioFromMonzo"
+import { DEFAULT_ONLY_TOP } from "../../../../../src/scripts/unpopularityMetric/constants"
 
 describe("unpopularities", () => {
     it("is the case that all the ratios capable of being parsed by monzo from ratio correctly", () => {

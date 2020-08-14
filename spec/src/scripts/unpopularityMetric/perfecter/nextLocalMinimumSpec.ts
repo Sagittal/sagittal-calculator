@@ -6,6 +6,7 @@ import { searchNextLocalMinimum } from "../../../../../src/scripts/unpopularityM
 import * as recursiveBestMetric from "../../../../../src/scripts/unpopularityMetric/perfecter/recursiveBestMetric"
 import { LocalMinimum } from "../../../../../src/scripts/unpopularityMetric/perfecter/types"
 import { Parameter, ParameterValue, Submetric } from "../../../../../src/scripts/unpopularityMetric/sumOfSquares"
+import { MetricName } from "../../../../../src/scripts/unpopularityMetric/bestMetric/types"
 
 describe("searchNextLocalMinimum", () => {
     const nextLocalMinimum: LocalMinimum = {
@@ -44,6 +45,7 @@ describe("searchNextLocalMinimum", () => {
     const depth = 5
     const nextLocalMinima = [{}, {}, {}, {}, {}, {}, {}, {}, {}] as LocalMinimum[]
     const onlyWinners = true
+    const metricName = "" as MetricName
 
     beforeEach(() => {
         spyOn(recursiveBestMetric, "recursiveSearchScopeAndMaybeUpdateBestMetric")
@@ -63,6 +65,7 @@ describe("searchNextLocalMinimum", () => {
             depth,
             nextLocalMinima,
             onlyWinners,
+            metricName,
         })
 
         expect(recursiveBestMetric.recursiveSearchScopeAndMaybeUpdateBestMetric).toHaveBeenCalledWith(

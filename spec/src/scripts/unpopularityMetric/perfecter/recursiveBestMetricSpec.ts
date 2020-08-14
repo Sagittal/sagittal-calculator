@@ -5,6 +5,7 @@ import { recursiveSearchScopeAndMaybeUpdateBestMetric } from "../../../../../src
 import * as nextLocalMinimum from "../../../../../src/scripts/unpopularityMetric/perfecter/nextLocalMinimum"
 import { LocalMinimum } from "../../../../../src/scripts/unpopularityMetric/perfecter/types"
 import { Parameter, ParameterValue, Submetric } from "../../../../../src/scripts/unpopularityMetric/sumOfSquares"
+import { MetricName } from "../../../../../src/scripts/unpopularityMetric/bestMetric/types"
 
 describe("searchScopeAndMaybeUpdateBestMetric", () => {
     it("searches each local minimum", async () => {
@@ -36,6 +37,7 @@ describe("searchScopeAndMaybeUpdateBestMetric", () => {
             submetrics: [] as unknown as Combination<Submetric>,
         }
         const onlyWinners = true
+        const metricName = "{},{aAsCoefficient,count,w},{aAsCoefficient,sum}" as MetricName
 
         spyOn(nextLocalMinimum, "searchNextLocalMinimum").and.callThrough()
 
@@ -101,6 +103,7 @@ describe("searchScopeAndMaybeUpdateBestMetric", () => {
             depth,
             nextLocalMinima: expectedNextLocalMinima,
             onlyWinners,
+            metricName,
         }
 
         expect(nextLocalMinimum.searchNextLocalMinimum).toHaveBeenCalledWith(

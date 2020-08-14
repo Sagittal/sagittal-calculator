@@ -1,23 +1,33 @@
-import { Count, Unit } from "../../../../src/general"
+import { Count } from "../../../../src/general"
 import { cleanArray } from "../../../../src/general/code/cleanArray"
-import { cleanObject } from "../../../../src/general/code/cleanObject"
-import { Scope } from "../../../../src/scripts/unpopularityMetric/bestMetric"
+import { Sample, Scope } from "../../../../src/scripts/unpopularityMetric/bestMetric"
 import {
     bestMetrics,
     memoizedParameterChunkCombinations,
     memoizedSubmetricChunkCombinations,
+    metricNames,
     scopesToSearch,
     solverStatus,
+    unpopularityMetricSettings,
 } from "../../../../src/scripts/unpopularityMetric/globals"
-import { ParameterValue } from "../../../../src/scripts/unpopularityMetric/sumOfSquares"
+import { Chunk } from "../../../../src/scripts/unpopularityMetric/solver"
+import { DEFAULT_MAXIMUM_UNIT, DEFAULT_ONLY_TOP, DEFAULT_Z } from "../../../../src/scripts/unpopularityMetric/constants"
 
 afterEach(() => {
     cleanArray(scopesToSearch)
-    cleanObject(bestMetrics)
     cleanArray(memoizedSubmetricChunkCombinations)
     cleanArray(memoizedParameterChunkCombinations)
+    cleanArray(metricNames)
+    bestMetrics.clear()
 
     solverStatus.finishedPopulating = false
     solverStatus.populatedScopeCount = 0 as Count<Scope>
     solverStatus.searchedScopeCount = 0 as Count<Scope>
+    solverStatus.chunkCount = 0 as Count<Chunk>
+    solverStatus.averageSamplesPerScope = 0 as Count<Sample>
+    solverStatus.sampleCount = 0 as Count<Sample>
+
+    unpopularityMetricSettings.z = DEFAULT_Z
+    unpopularityMetricSettings.onlyTop = DEFAULT_ONLY_TOP
+    unpopularityMetricSettings.maximumUnit = DEFAULT_MAXIMUM_UNIT
 })

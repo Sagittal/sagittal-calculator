@@ -3,33 +3,43 @@ import { SumOfSquares } from "../../../../../src/scripts/unpopularityMetric/best
 import { presentBestMetrics } from "../../../../../src/scripts/unpopularityMetric/solver"
 import { Parameter, Submetric } from "../../../../../src/scripts/unpopularityMetric/sumOfSquares"
 import { bestMetrics } from "../../../../../src/scripts/unpopularityMetric/globals"
+import { MetricName } from "../../../../../src/scripts/unpopularityMetric/bestMetric/types"
 
 describe("presentBestMetrics", () => {
     it("sorts the best metrics by sum of squares", () => {
-        bestMetrics[ "{sum}" ] = {
-            sumOfSquares: 0.013 as SumOfSquares,
-            submetrics: [
-                {
-                    [ Parameter.SUM ]: true,
-                },
-            ] as Combination<Submetric>,
-        }
-        bestMetrics[ "{count}" ] = {
-            sumOfSquares: 0.012 as SumOfSquares,
-            submetrics: [
-                {
-                    [ Parameter.COUNT ]: true,
-                },
-            ] as Combination<Submetric>,
-        }
-        bestMetrics[ "{max}" ] = {
-            sumOfSquares: 0.014 as SumOfSquares,
-            submetrics: [
-                {
-                    [ Parameter.MAX ]: true,
-                },
-            ] as Combination<Submetric>,
-        }
+        bestMetrics.set(
+            "{sum}" as MetricName,
+            {
+                sumOfSquares: 0.013 as SumOfSquares,
+                submetrics: [
+                    {
+                        [ Parameter.SUM ]: true,
+                    },
+                ] as Combination<Submetric>,
+            },
+        )
+        bestMetrics.set(
+            "{count}" as MetricName,
+            {
+                sumOfSquares: 0.012 as SumOfSquares,
+                submetrics: [
+                    {
+                        [ Parameter.COUNT ]: true,
+                    },
+                ] as Combination<Submetric>,
+            },
+        )
+        bestMetrics.set(
+            "{max}" as MetricName,
+            {
+                sumOfSquares: 0.014 as SumOfSquares,
+                submetrics: [
+                    {
+                        [ Parameter.MAX ]: true,
+                    },
+                ] as Combination<Submetric>,
+            },
+        )
 
         const result = presentBestMetrics()
 

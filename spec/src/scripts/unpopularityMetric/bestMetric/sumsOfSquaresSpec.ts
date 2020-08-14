@@ -1,12 +1,12 @@
 import { Combination } from "../../../../../src/general"
-import { cleanObject } from "../../../../../src/general/code/cleanObject"
 import { SamplePoint } from "../../../../../src/scripts/unpopularityMetric/bestMetric/scopeToSamples"
 import { computeSumsOfSquaresAndMaybeUpdateBestMetric } from "../../../../../src/scripts/unpopularityMetric/bestMetric/sumsOfSquares"
-import { SumOfSquares, SumsOfSquares } from "../../../../../src/scripts/unpopularityMetric/bestMetric/types"
+import { MetricName, SumOfSquares, SumsOfSquares } from "../../../../../src/scripts/unpopularityMetric/bestMetric/types"
 import { bestMetrics } from "../../../../../src/scripts/unpopularityMetric/globals"
 import { Parameter, ParameterValue, Submetric } from "../../../../../src/scripts/unpopularityMetric/sumOfSquares"
 
 describe("computeSumsOfSquaresAndMaybeUpdateBestMetric", () => {
+    const metricName = "{aAsCoefficient,sum,w}" as MetricName
     const samples = [
         {
             samplePoint: [0, 0] as SamplePoint,
@@ -43,11 +43,11 @@ describe("computeSumsOfSquaresAndMaybeUpdateBestMetric", () => {
     ]
 
     beforeEach(() => {
-        cleanObject(bestMetrics)
+        bestMetrics.clear()
     })
 
     it("finds the sums of squares for each sample", async () => {
-        const result = await computeSumsOfSquaresAndMaybeUpdateBestMetric(samples)
+        const result = await computeSumsOfSquaresAndMaybeUpdateBestMetric(samples, { metricName })
 
         expect(result).toEqual([
             [
@@ -62,43 +62,34 @@ describe("computeSumsOfSquaresAndMaybeUpdateBestMetric", () => {
     })
 
     it("sets the best metric when it beats it", async () => {
-        bestMetrics[ "{aAsCoefficient,sum,w}" ] = {
-            sumOfSquares: 0.01400000000000 as SumOfSquares,
-            submetrics: [{
-                [ Parameter.SUM ]: true,
-                [ Parameter.A_AS_COEFFICIENT ]: 2 as ParameterValue,
-                [ Parameter.W ]: 1.5 as ParameterValue,
-            }] as Combination<Submetric>,
-        }
-
-        await computeSumsOfSquaresAndMaybeUpdateBestMetric(samples)
-
-        expect(bestMetrics).toEqual({
-            "{aAsCoefficient,sum,w}": {
-                sumOfSquares: 0.013983040590027893 as SumOfSquares,
+        bestMetrics.set(
+            metricName,
+            {
+                sumOfSquares: 0.01400000000000 as SumOfSquares,
                 submetrics: [{
                     [ Parameter.SUM ]: true,
                     [ Parameter.A_AS_COEFFICIENT ]: 2 as ParameterValue,
                     [ Parameter.W ]: 1.5 as ParameterValue,
                 }] as Combination<Submetric>,
             },
-        })
-    })
+        )
 
-    it("does not set the best metric when it does not beat it", async () => {
-        bestMetrics[ "{aAsCoefficient,sum,w}" ] = {
-            sumOfSquares: 0.01200000000000 as SumOfSquares,
+        await computeSumsOfSquaresAndMaybeUpdateBestMetric(samples, { metricName })
+
+        expect(bestMetrics.get(metricName)).toEqual({
+            sumOfSquares: 0.013983040590027893 as SumOfSquares,
             submetrics: [{
                 [ Parameter.SUM ]: true,
                 [ Parameter.A_AS_COEFFICIENT ]: 2 as ParameterValue,
                 [ Parameter.W ]: 1.5 as ParameterValue,
             }] as Combination<Submetric>,
-        }
+        })
+    })
 
-        await computeSumsOfSquaresAndMaybeUpdateBestMetric(samples)
-
-        expect(bestMetrics).toEqual({
-            "{aAsCoefficient,sum,w}": {
+    it("does not set the best metric when it does not beat it", async () => {
+        bestMetrics.set(
+            metricName,
+            {
                 sumOfSquares: 0.01200000000000 as SumOfSquares,
                 submetrics: [{
                     [ Parameter.SUM ]: true,
@@ -106,6 +97,17 @@ describe("computeSumsOfSquaresAndMaybeUpdateBestMetric", () => {
                     [ Parameter.W ]: 1.5 as ParameterValue,
                 }] as Combination<Submetric>,
             },
+        )
+
+        await computeSumsOfSquaresAndMaybeUpdateBestMetric(samples, { metricName })
+
+        expect(bestMetrics.get(metricName)).toEqual({
+            sumOfSquares: 0.01200000000000 as SumOfSquares,
+            submetrics: [{
+                [ Parameter.SUM ]: true,
+                [ Parameter.A_AS_COEFFICIENT ]: 2 as ParameterValue,
+                [ Parameter.W ]: 1.5 as ParameterValue,
+            }] as Combination<Submetric>,
         })
     })
 

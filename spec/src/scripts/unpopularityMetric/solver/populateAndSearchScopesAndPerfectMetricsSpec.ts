@@ -4,6 +4,7 @@ import { bestMetrics, solverStatus } from "../../../../../src/scripts/unpopulari
 import { Chunk, populateAndSearchScopesAndPerfectMetrics } from "../../../../../src/scripts/unpopularityMetric/solver"
 import * as populate from "../../../../../src/scripts/unpopularityMetric/solver/populate/scopes"
 import * as search from "../../../../../src/scripts/unpopularityMetric/solver/search/scopes"
+import { MetricName } from "../../../../../src/scripts/unpopularityMetric/bestMetric/types"
 
 describe("populateAndSearchScopesAndPerfectMetrics", () => {
     let originalJasmineTimeoutInterval: number
@@ -37,7 +38,7 @@ describe("populateAndSearchScopesAndPerfectMetrics", () => {
         solverStatus.chunkCount = 1 as Count<Chunk>
         await populateAndSearchScopesAndPerfectMetrics()
 
-        expect(bestMetrics[ "{sum}" ]).toEqual({
+        expect(bestMetrics.get("{},{sum}" as MetricName)).toEqual({
             sumOfSquares: 0.014206086754420309,
             submetrics: [{ sum: true }],
         } as unknown as Metric)

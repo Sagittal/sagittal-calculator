@@ -3,10 +3,10 @@ import { DebugTarget, saveDebugMessage } from "../debug"
 import { checkSubmetricsForInvalidParameterCombinations } from "../sumOfSquares"
 import { Sample } from "./scopeToSamples"
 import { computeSumOfSquaresAndMaybeUpdateBestMetric } from "./sumOfSquares"
-import { ComputeSumsOfSquaresAndMaybeUpdateBestMetricOptions, SumsOfSquares } from "./types"
+import { ComputeSumsOfSquaresAndMaybeUpdateBestMetricOptions, MetricName, SumsOfSquares } from "./types"
 
 const computeSumsOfSquaresAndMaybeUpdateBestMetric = async (samples: Sample[], options: ComputeSumsOfSquaresAndMaybeUpdateBestMetricOptions = {}): Promise<SumsOfSquares> => {
-    const { indentation = "", onlyWinners = true } = options
+    const { indentation = "", onlyWinners = true, metricName = "" as MetricName } = options
 
     const sumsOfSquares: SumsOfSquares = []
 
@@ -25,7 +25,7 @@ const computeSumsOfSquaresAndMaybeUpdateBestMetric = async (samples: Sample[], o
                 sumsOfSquares,
                 index: index as Index<Sample>,
                 onlyWinners,
-                ...options,
+                metricName,
             })
         })
 

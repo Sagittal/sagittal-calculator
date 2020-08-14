@@ -2,6 +2,7 @@ import { Combinations, Count } from "../../general"
 import { Metric, Sample, Scope } from "./bestMetric"
 import { Chunk, ParameterChunk, SolverStatus, SubmetricChunk } from "./solver"
 import { DEFAULT_MAXIMUM_UNIT, DEFAULT_ONLY_TOP, DEFAULT_Z } from "./constants"
+import { MetricName } from "./bestMetric/types"
 
 const scopesToSearch: Scope[] = [] as unknown as Scope[]
 
@@ -14,7 +15,9 @@ const solverStatus: SolverStatus = {
     sampleCount: 0 as Count<Sample>,
 }
 
-const bestMetrics: Record<string, Metric> = {}
+const bestMetrics: Map<MetricName, Metric> = new Map()
+
+const metricNames: MetricName[] = []
 
 const memoizedSubmetricChunkCombinations: Array<Combinations<SubmetricChunk>> = []
 const memoizedParameterChunkCombinations: Array<Combinations<ParameterChunk>> = []
@@ -32,4 +35,5 @@ export {
     memoizedSubmetricChunkCombinations,
     memoizedParameterChunkCombinations,
     unpopularityMetricSettings,
+    metricNames,
 }

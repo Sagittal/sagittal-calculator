@@ -1,12 +1,11 @@
-import { Combination } from "../../../general"
-import { Submetric } from "../sumOfSquares"
+import { MetricName, Scope } from "./types"
 
-const computeMetricName = (submetrics: Combination<Submetric>) => {
-    const submetricNames = submetrics.map(submetric => {
-        return Object.keys(submetric).sort().join(",")
+const computeMetricName = (scope: Scope): MetricName => {
+    const submetricNames = scope.map(submetricScope => {
+        return Object.keys(submetricScope).sort().join(",")
     })
 
-    return submetricNames.map(submetricName => `{${submetricName}}`).join(",")
+    return submetricNames.sort().map(submetricName => `{${submetricName}}`).join(",") as MetricName
 }
 
 export {

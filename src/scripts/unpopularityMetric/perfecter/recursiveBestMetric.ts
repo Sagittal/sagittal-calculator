@@ -15,7 +15,7 @@ const recursiveSearchScopeAndMaybeUpdateBestMetric = async (scope: Scope, option
 
     const indentation = computeIndentation(depth)
 
-    const { dynamicParameters, samples, sumsOfSquares } = await nonRecursiveSearchScopeAndMaybeUpdateBestMetric(scope, { onlyWinners })
+    const { dynamicParameters, samples, sumsOfSquares, metricName } = await nonRecursiveSearchScopeAndMaybeUpdateBestMetric(scope, { onlyWinners })
 
     const nextLocalMinima = computeLocalMinima(samples, sumsOfSquares, localMinimum)
     saveDebugMessage(`${indentation}id ${metricId} - ${nextLocalMinima.length} lcl min / ${samples.length} samples (${Math.round(100 * nextLocalMinima.length / samples.length)}%)`, DebugTarget.PERFECT)
@@ -30,6 +30,7 @@ const recursiveSearchScopeAndMaybeUpdateBestMetric = async (scope: Scope, option
             depth,
             nextLocalMinima,
             onlyWinners,
+            metricName
         })
     })
 

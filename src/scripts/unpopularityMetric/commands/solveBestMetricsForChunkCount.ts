@@ -19,6 +19,7 @@ debugTargets[ DebugTarget.SEARCH ] = true // todo it'd be nice (and better) if t
 debugTargets[ DebugTarget.POPULATE ] = true
 debugTargets[ DebugTarget.FINAL_SOLVER_RESULTS ] = true
 debugTargets[ DebugTarget.PERFECT ] = true
+debugTargets[ DebugTarget.ERRORS ] = true
 
 const startTime = performance.now()
 populateAndSearchScopesAndPerfectMetrics().then(() => {
