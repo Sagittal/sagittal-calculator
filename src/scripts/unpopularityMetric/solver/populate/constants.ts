@@ -69,8 +69,6 @@ const INITIAL_PARAMETER_SCOPES: Partial<EnumHash<Parameter, ParameterValue | boo
         center: 0.875 as ParameterValue,
         span: 0.75 as Span<ParameterValue>,
     }),
-    // [Parameter.S]: computeDynamicParameterScope({ center: 0, span: 6 },
-    // [Parameter.T]: computeDynamicParameterScope({ center: 0, span: 6 },
     [ Parameter.USE_NUMINATOR ]: true,
     [ Parameter.MODIFIED_COUNT ]: true,
     [ Parameter.SUM ]: true,
@@ -88,13 +86,13 @@ const SUBMETRIC_CHUNKS: SubmetricChunk[] = [
         [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
         [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
     },
-    // { // COAPFAR
-    //     [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
-    // },
-    // { // COAPF
-    //     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
-    //     [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
-    // },
+    { // COAPFAR
+        [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+    },
+    { // COAPF
+        [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+        [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+    },
     { // GPF
         [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
         [ Parameter.MAX ]: INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],
@@ -109,51 +107,51 @@ const PARAMETER_CHUNKS: ParameterChunk[] = [
     {
         [ Parameter.K_AS_COEFFICIENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_COEFFICIENT ],
     },
-    // {
-    //     [ Parameter.K_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_LOGARITHM_BASE ],
-    // },
+    {
+        [ Parameter.K_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_LOGARITHM_BASE ],
+    },
     {
         [ Parameter.K_AS_POWER_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_POWER_EXPONENT ],
     },
-    // {
-    //     [ Parameter.K_AS_POWER_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_POWER_BASE ],
-    // },
-    // {
-    //     [ Parameter.J_AS_COEFFICIENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.J_AS_COEFFICIENT ],
-    // },
-    // {
-    //     [ Parameter.J_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.J_AS_LOGARITHM_BASE ],
-    // },
+    {
+        [ Parameter.K_AS_POWER_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_POWER_BASE ],
+    },
+    {
+        [ Parameter.J_AS_COEFFICIENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.J_AS_COEFFICIENT ],
+    },
+    {
+        [ Parameter.J_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.J_AS_LOGARITHM_BASE ],
+    },
     {
         [ Parameter.J_AS_POWER_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.J_AS_POWER_EXPONENT ],
     },
-    // {
-    //     [ Parameter.J_AS_POWER_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.J_AS_POWER_BASE ],
-    // },
-    // {
-    //     [ Parameter.A_AS_COEFFICIENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_COEFFICIENT ],
-    // },
+    {
+        [ Parameter.J_AS_POWER_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.J_AS_POWER_BASE ],
+    },
+    {
+        [ Parameter.A_AS_COEFFICIENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_COEFFICIENT ],
+    },
     {
         [ Parameter.A_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_LOGARITHM_BASE ],
     },
     {
         [ Parameter.A_AS_POWER_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_POWER_EXPONENT ],
     },
-    // {
-    //     [ Parameter.A_AS_POWER_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_POWER_BASE ],
-    // },
-    // {
-    //     [ Parameter.WEIGHT_AS_COEFFICIENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.WEIGHT_AS_COEFFICIENT ],
-    // },
-    // {
-    //     [ Parameter.WEIGHT_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.WEIGHT_AS_LOGARITHM_BASE ],
-    // },
+    {
+        [ Parameter.A_AS_POWER_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_POWER_BASE ],
+    },
+    {
+        [ Parameter.WEIGHT_AS_COEFFICIENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.WEIGHT_AS_COEFFICIENT ],
+    },
+    {
+        [ Parameter.WEIGHT_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.WEIGHT_AS_LOGARITHM_BASE ],
+    },
     {
         [ Parameter.WEIGHT_AS_POWER_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.WEIGHT_AS_POWER_EXPONENT ],
     },
-    // {
-    //     [ Parameter.WEIGHT_AS_POWER_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.WEIGHT_AS_POWER_BASE ],
-    // },
+    {
+        [ Parameter.WEIGHT_AS_POWER_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.WEIGHT_AS_POWER_BASE ],
+    },
     {
         [ Parameter.W ]: INITIAL_PARAMETER_SCOPES[ Parameter.W ],
     },
@@ -172,17 +170,15 @@ const PARAMETER_CHUNKS: ParameterChunk[] = [
     {
         [ Parameter.V ]: INITIAL_PARAMETER_SCOPES[ Parameter.V ],
     },
-    // // { [Parameter.S]: INITIAL_PARAMETER_SCOPES[Parameter.S]},
-    // // { [Parameter.T]: INITIAL_PARAMETER_SCOPES[Parameter.T]},
-    // {
-    //     [ Parameter.MODIFIED_COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.MODIFIED_COUNT ],
-    // },
-    // {
-    //     [ Parameter.USE_NUMINATOR ]: INITIAL_PARAMETER_SCOPES[ Parameter.USE_NUMINATOR ],
-    // },
-    // {
-    //     [ Parameter.USE_PRIME_INDEX ]: INITIAL_PARAMETER_SCOPES[ Parameter.USE_PRIME_INDEX ],
-    // },
+    {
+        [ Parameter.MODIFIED_COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.MODIFIED_COUNT ],
+    },
+    {
+        [ Parameter.USE_NUMINATOR ]: INITIAL_PARAMETER_SCOPES[ Parameter.USE_NUMINATOR ],
+    },
+    {
+        [ Parameter.USE_PRIME_INDEX ]: INITIAL_PARAMETER_SCOPES[ Parameter.USE_PRIME_INDEX ],
+    },
 ] as ParameterChunk[]
 
 export {

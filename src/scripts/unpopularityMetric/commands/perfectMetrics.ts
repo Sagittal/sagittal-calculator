@@ -11,9 +11,9 @@ import {
     saveDebugMessage,
     setDebugTargets,
 } from "../debug"
-import { bestMetrics, solverStatus } from "../globals"
+import { solverStatus } from "../globals"
 import { perfectMetrics } from "../perfecter"
-import { presentBestMetrics } from "../solver"
+import { formatBestMetrics } from "../solver"
 import { CUT_OFF_POPULARITY, ParameterValue } from "../sumOfSquares"
 import { formatTime } from "../../../general/time"
 import { ZIPF_EXPONENT } from "../sumOfSquares/constants"
@@ -58,7 +58,7 @@ const bestMetricsToBePerfected = {
 
 const startTime = performance.now()
 perfectMetrics(Object.values(bestMetricsToBePerfected)).then(() => {
-    saveDebugMessage(`\n\nTHE PERFECTED METRICS ARE ${JSON.stringify(presentBestMetrics(bestMetrics), undefined, 4)}`, DebugTarget.FINAL_PERFECTER_RESULTS)
+    saveDebugMessage(`\n\nTHE PERFECTED METRICS ARE ${formatBestMetrics()}`, DebugTarget.FINAL_PERFECTER_RESULTS)
 
     const endTime = performance.now()
     if (time) {

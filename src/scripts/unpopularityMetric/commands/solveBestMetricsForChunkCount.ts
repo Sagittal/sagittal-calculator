@@ -10,8 +10,8 @@ import {
     saveDebugMessage,
     setDebugTargets,
 } from "../debug"
-import { bestMetrics, solverStatus } from "../globals"
-import { Chunk, populateAndSearchScopesAndPerfectMetrics, presentBestMetrics } from "../solver"
+import { solverStatus } from "../globals"
+import { Chunk, formatBestMetrics, populateAndSearchScopesAndPerfectMetrics, presentBestMetrics } from "../solver"
 import { formatTime } from "../../../general/time"
 import { MAXIMUM_UNIT } from "../bestMetric/scopeToSamples"
 import { CUT_OFF_POPULARITY, ZIPF_EXPONENT } from "../sumOfSquares/constants"
@@ -42,7 +42,7 @@ debugTargets[ DebugTarget.PERFECT ] = true
 
 const startTime = performance.now()
 populateAndSearchScopesAndPerfectMetrics().then(() => {
-    saveDebugMessage(`\n\nAND THE BEST METRICS WERE ${JSON.stringify(presentBestMetrics(bestMetrics), undefined, 4)}`, DebugTarget.FINAL_SOLVER_RESULTS)
+    saveDebugMessage(`\n\nAND THE BEST METRICS WERE ${formatBestMetrics()}`, DebugTarget.FINAL_SOLVER_RESULTS)
 
     const endTime = performance.now()
     if (time) {

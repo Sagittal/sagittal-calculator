@@ -180,36 +180,6 @@ describe("computeSubmetricAntivotes", () => {
             )
         })
 
-        // it("when s is provided, adds a constant to each *non-zero* prime exponent after applying the exponent", () => {
-        //     const y = 0.81 as ParameterValue
-        //     const s = 0.34 as ParameterValue
-        //     submetric[Parameter.Y] = y
-        //     submetric[Parameter.S] = s
-        //
-        //     const result = computeSubmetricAntivotes(fiveRoughNumberMonzo, submetric)
-        //
-        //     expect(result).toBe(
-        //         (1 ** y + s) * 11 +
-        //         (1 ** y + s) * 13 +
-        //         (2 ** y + s) * 17,
-        //     )
-        // })
-
-        // it("when t is provided, adds a constant to each *non-zero* prime exponent before applying the exponent", () => {
-        //     const y = 0.81 as ParameterValue
-        //     const t = 0.34 as ParameterValue
-        //     submetric[Parameter.Y] = y
-        //     submetric[Parameter.T] = t
-        //
-        //     const result = computeSubmetricAntivotes(fiveRoughNumberMonzo, submetric)
-        //
-        //     expect(result).toBe(
-        //         (1 + t) ** y * 11 +
-        //         (1 + t) ** y * 13 +
-        //         (2 + t) ** y * 17,
-        //     )
-        // })
-
         it("when Dave's modified resolution is provided, counts 5's half as much as normal", () => {
             submetric[ Parameter.MODIFIED_COUNT ] = true
             const fiveRoughNumberMonzo = [0, 0, 1, -1] as Monzo

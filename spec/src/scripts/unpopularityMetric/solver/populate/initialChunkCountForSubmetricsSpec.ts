@@ -17,6 +17,6 @@ describe("computeInitialChunkCountForSubmetrics", () => {
 
         const result = computeInitialChunkCountForSubmetrics(chunkCount)
 
-        expect(result).toBe(4 as Count<SubmetricChunk>)
+        expect(result).toBe(6 as Count<SubmetricChunk>)
     })
 })

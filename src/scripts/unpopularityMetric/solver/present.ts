@@ -1,7 +1,7 @@
 import { Metric } from "../bestMetric"
-import { scopesToSearch, solverStatus } from "../globals"
+import { bestMetrics, scopesToSearch, solverStatus } from "../globals"
 
-const presentBestMetrics = (bestMetrics: Record<string, Metric>) => {
+const presentBestMetrics = (): Record<string, Metric> => {
     const entriesSortedBySumOfSquares = Object.entries(bestMetrics).sort((a: [string, Metric], b: [string, Metric]): number => {
         return (b[ 1 ].sumOfSquares) as number - (a[ 1 ].sumOfSquares as number) as number
     })

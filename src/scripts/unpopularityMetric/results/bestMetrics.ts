@@ -2,6 +2,8 @@ import { Combination } from "../../../general"
 import { SumOfSquares } from "../bestMetric"
 import { Parameter, Submetric } from "../sumOfSquares"
 
+// ALL VALUES ZIPF -1, TOP 80
+
 // Metric to beat: SoPF>3, or sopfr
 const sopfgtt = {
     sumOfSquares: 0.014206086754420309 as SumOfSquares,
@@ -197,39 +199,6 @@ const notFourChunkByCurrentDefinitionMcopfr = {
 // Douglas's 1-submetrics
 // Thu Jul 02, 2020 9:21 pm
 // http://forum.sagittal.org/viewtopic.php?p=1978#p1978
-// 1-submetric 9-chunk 0.00461
-// const oneSubmetricNineChunk = {
-//     sumOfSquares: 0.0046106446887802695,
-//     submetrics: [
-//         {
-//             [Parameter.K_AS_COEFFICIENT]: 0.5920238095238095,              // ≈3/5
-//             [Parameter.A_AS_LOGARITHM_BASE]: 2.0107142857142857,              // ≈2
-//             [Parameter.Y]: 0.455,                           // ≈√
-//             [Parameter.W]: -2.341928094887362,              // ≈log2(5)
-//             [Parameter.X]: 3.069642857142857,               // ≈3
-//             [Parameter.T]: 1.658452380952381,               // ≈5/3
-//             [Parameter.Y]: 1.6476190476190475,              // ≈5/3
-//             [ Parameter.USE_NUMINATOR ]: true,
-//             [ Parameter.SUM ]: true,
-//         },
-//     ],
-// }
-// Golden 1-submetric 8-chunk 0.00468
-// const goldenOneSubmetricEightChunk = {
-//     sumOfSquares: 0.0046831807461307174,
-//     submetrics: [
-//         {
-//             [Parameter.K_AS_COEFFICIENT]: 0.5970238095238095,
-//             [Parameter.A_AS_LOGARITHM_BASE]: 2.0125,
-//             [Parameter.Y]: 1.6226190476190474,                          // ≈φ
-//             [Parameter.W]: -2.334428094887362,
-//             [Parameter.X]: 3.069642857142857,
-//             [Parameter.T]: 1.618452380952381,                           // ≈φ
-//             [ Parameter.USE_NUMINATOR ]: true,
-//             [ Parameter.SUM ]: true,
-//         },
-//     ],
-// }
 // 1-submetric 7-chunk 0.00565 -- original xwyks
 const oneSubmetricSevenChunk = {
     sumOfSquares: 0.005646141896541448,

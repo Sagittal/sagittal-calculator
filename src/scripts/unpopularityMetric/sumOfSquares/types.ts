@@ -44,8 +44,6 @@ enum Parameter {
     U = "u",                                                // prime constant (applied before applying exponent or base), but only applied to d and overriding x if present
     Y = "y",                                                // prime exponent exponent
     V = "v",                                                // prime exponent exponent, but only applied to d and overriding y if present
-    // S = "s",                                                // prime exponent constant (applied before applying exponent, for non-zero terms)
-    // T = "t",                                                // prime exponent constant (applied after applying exponent)
     USE_NUMINATOR = "useNuminator",                         // reorient the ratio to use as its numerator the greater of the two results (the numinator) of calling the submetric on the original ratio's numerator and denominator
     MODIFIED_COUNT = "modifiedCount",                       // Dave's trick where 5's get a half-resolution
     USE_PRIME_INDEX = "usePrimeIndex",                      // use the prime index function instead of using the primes directly
