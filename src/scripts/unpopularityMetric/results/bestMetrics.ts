@@ -19,15 +19,6 @@ const sopfgtt = {
 // Dave's log-α's (best SoS is 0.00613) some still with prime limit (s)
 // Mon Jun 29, 2020 7:07 pm
 // http://forum.sagittal.org/viewtopic.php?p=1944#p1944
-/*
-α		    w (your d)	    k		    y		    s		    SoS
-3.956349187	-0.619217685	0.638243216	0.883788532	0.020609268	0.006160415
-3		    -0.774993871	0.638278131	0.883803886	0.025836729	0.006160415
-2.718281828	-0.851411926	0.638277637	0.883804124	0.028385603	0.006160415
-3.018652175	-0.904768274	0.618447635	0.874496057	0		    0.007488211
-3		    -0.909855998	0.618460475	0.874485023	0		    0.007488211
-3		    -1		        0.67017005	0.955080391	0		    0.008473958
- */
 const withPrimeLimit = {
     sumOfSquares: 0.006127818362694095,
     submetrics: [
@@ -841,16 +832,16 @@ const wabl1 = {
     sumOfSquares: 0.0029769976555856672,
     submetrics: [
         {
-            "withoutRepetition": true,
-            "max": true,
-            "aAsLogarithmBase": 2,
+            [ Parameter.WITHOUT_REPETITION ]: true,
+            [ Parameter.MAX ]: true,
+            [ Parameter.A_AS_LOGARITHM_BASE ]: 2,
         },
         {
-            "sum": true,
-            "aAsLogarithmBase": 2,
-            "aAsPowerExponent": 0.7954545454545454,
-            "w": -0.8362010291300304,
-            "b": -1.311335378,
+            [ Parameter.SUM ]: true,
+            [ Parameter.A_AS_LOGARITHM_BASE ]: 2,
+            [ Parameter.A_AS_POWER_EXPONENT ]: 0.7954545454545454,
+            [ Parameter.W ]: -0.8362010291300304,
+            [ Parameter.B ]: -1.311335378,
         },
     ],
 }
@@ -858,17 +849,17 @@ const wabl = {
     sumOfSquares: 0.002961440725194366,
     submetrics: [
         {
-            "withoutRepetition": true,
-            "max": true,
-            "aAsLogarithmBase": 2,
-            "weightAsCoefficient": 0.8665946155658091,
+            [ Parameter.WITHOUT_REPETITION ]: true,
+            [ Parameter.MAX ]: true,
+            [ Parameter.A_AS_LOGARITHM_BASE ]: 2,
+            [ Parameter.WEIGHT_AS_COEFFICIENT ]: 0.8665946155658091,
         },
         {
-            "sum": true,
-            "aAsLogarithmBase": 2,
-            "aAsPowerExponent": 0.7313013537293375,
-            "w": -0.8796464573491212,
-            "b": -1.2979574284080588,
+            [ Parameter.SUM ]: true,
+            [ Parameter.A_AS_LOGARITHM_BASE ]: 2,
+            [ Parameter.A_AS_POWER_EXPONENT ]: 0.7313013537293375,
+            [ Parameter.W ]: -0.8796464573491212,
+            [ Parameter.B ]: -1.2979574284080588,
         },
     ],
 }
@@ -908,8 +899,6 @@ export {
     notThreeChunkByCurrentDefinitionMcopfr,
     notFourChunkByCurrentDefinitionMcopfr,
 
-    // oneSubmetricNineChunk,
-    // goldenOneSubmetricEightChunk,
     oneSubmetricSevenChunk,
     oneSubmetricSixChunk,
 

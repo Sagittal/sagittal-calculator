@@ -10,7 +10,7 @@ const applySharedUnpopularityMetricCommandSetup = ({ defaultDebugTargets }: { de
         .option("-w, --no-write", "no write")
         .option("-u, --no-useless", "eliminate probably useless parameters or parameter value scopes")
         .option("-z, --z <z>", "z", parseFloat)
-        .option("-o, --only-top <onlyTop>", "only top", parseInt)
+        .option("-o, --only-top <onlyTop>", "only top", parseInt) // todo: break out the huge list of primes into a file that only gets used in rare occasions, if only top > 80
         .option("-m, --maximum-unit <maximumUnit>", "maximum unit", parseFloat)
 
     program.parse(process.argv)
