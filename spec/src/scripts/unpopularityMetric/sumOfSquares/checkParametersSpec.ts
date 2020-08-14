@@ -170,4 +170,19 @@ describe("checkSubmetricsForInvalidParameterCombinations", () => {
             expect(() => checkSubmetricsForInvalidParameterCombinations(submetrics)).toThrowError(`Metric with only one submetric {"weightAsCoefficient":2} included a useless weight parameter.`)
         })
     })
+
+    it("gives a good error for metrics with duplicate submetrics", () => {
+        const submetrics: Submetric[] = [
+            {
+                [ Parameter.SUM ]: true,
+                [ Parameter.A_AS_POWER_BASE ]: 2 as ParameterValue,
+            },
+            {
+                [ Parameter.SUM ]: true,
+                [ Parameter.A_AS_POWER_BASE ]: 2 as ParameterValue,
+            },
+        ]
+
+        expect(() => checkSubmetricsForInvalidParameterCombinations(submetrics)).toThrowError(`Submetrics [{"sum":true,"aAsPowerBase":2},{"sum":true,"aAsPowerBase":2}] contain duplicates and thus are useless.`)
+    })
 })

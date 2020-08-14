@@ -1,4 +1,4 @@
-import { isUndefined } from "../../../general"
+import { computeDeepDistinct, isUndefined } from "../../../general"
 import { Parameter, Submetric } from "./types"
 
 const checkSubmetricsForInvalidParameterCombinations = (submetrics: Submetric[]) => {
@@ -12,6 +12,10 @@ const checkSubmetricsForInvalidParameterCombinations = (submetrics: Submetric[])
         ) {
             throw new Error(`Metric with only one submetric ${JSON.stringify(submetric)} included a useless weight parameter.`)
         }
+    }
+
+    if(computeDeepDistinct(submetrics).length < submetrics.length) {
+        throw new Error(`Submetrics ${JSON.stringify(submetrics)} contain duplicates and thus are useless.`)
     }
 
     submetrics.forEach((submetric: Submetric) => {
