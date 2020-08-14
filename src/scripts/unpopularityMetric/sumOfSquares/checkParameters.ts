@@ -2,6 +2,18 @@ import { isUndefined } from "../../../general"
 import { Parameter, Submetric } from "./types"
 
 const checkSubmetricsForInvalidParameterCombinations = (submetrics: Submetric[]) => {
+    if (submetrics.length === 1) {
+        const submetric = submetrics[0]
+        if (
+            !isUndefined(submetric[ Parameter.WEIGHT_AS_COEFFICIENT]) ||
+            !isUndefined(submetric[ Parameter.WEIGHT_AS_POWER_BASE]) ||
+            !isUndefined(submetric[ Parameter.WEIGHT_AS_LOGARITHM_BASE]) ||
+            !isUndefined(submetric[ Parameter.WEIGHT_AS_POWER_EXPONENT])
+        ) {
+            throw new Error(`Metric with only one submetric ${JSON.stringify(submetric)} included a useless weight parameter.`)
+        }
+    }
+
     submetrics.forEach((submetric: Submetric) => {
         // non-one operation parameter count
         if (!submetric[ Parameter.SUM ] && !submetric[ Parameter.COUNT ] && !submetric[ Parameter.MAX ]) {

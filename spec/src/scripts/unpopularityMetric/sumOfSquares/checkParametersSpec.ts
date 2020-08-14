@@ -67,6 +67,9 @@ describe("checkSubmetricsForInvalidParameterCombinations", () => {
         it("gives a good error when weight is tried to be used both as a logarithm base and a power base", () => {
             const submetrics = [
                 {
+                    [ Parameter.COUNT ]: true,
+                },
+                {
                     [ Parameter.SUM ]: true,
                     [ Parameter.WEIGHT_AS_LOGARITHM_BASE ]: 2 as ParameterValue,
                     [ Parameter.WEIGHT_AS_POWER_BASE ]: 2 as ParameterValue,
@@ -123,6 +126,48 @@ describe("checkSubmetricsForInvalidParameterCombinations", () => {
             ]
 
             expect(() => checkSubmetricsForInvalidParameterCombinations(submetrics)).toThrowError(`Submetric {"sum":true,"v":2} cannot specify v without y.`)
+        })
+    })
+
+    describe("weighting single-submetric metrics", () => {
+        it("gives a good error when a power exponent weight is provided but there's only one submetric", () => {
+            const submetrics: Submetric[] = [
+                {
+                    [ Parameter.WEIGHT_AS_POWER_EXPONENT ]: 2 as ParameterValue,
+                },
+            ]
+
+            expect(() => checkSubmetricsForInvalidParameterCombinations(submetrics)).toThrowError(`Metric with only one submetric {"weightAsPowerExponent":2} included a useless weight parameter.`)
+        })
+
+        it("gives a good error when a logarithm base weight is provided but there's only one submetric", () => {
+            const submetrics: Submetric[] = [
+                {
+                    [ Parameter.WEIGHT_AS_LOGARITHM_BASE ]: 2 as ParameterValue,
+                },
+            ]
+
+            expect(() => checkSubmetricsForInvalidParameterCombinations(submetrics)).toThrowError(`Metric with only one submetric {"weightAsLogarithmBase":2} included a useless weight parameter.`)
+        })
+
+        it("gives a good error when a power base weight is provided but there's only one submetric", () => {
+            const submetrics: Submetric[] = [
+                {
+                    [ Parameter.WEIGHT_AS_POWER_BASE ]: 2 as ParameterValue,
+                },
+            ]
+
+            expect(() => checkSubmetricsForInvalidParameterCombinations(submetrics)).toThrowError(`Metric with only one submetric {"weightAsPowerBase":2} included a useless weight parameter.`)
+        })
+
+        it("gives a good error when a coefficient weight is provided but there's only one submetric", () => {
+            const submetrics: Submetric[] = [
+                {
+                    [ Parameter.WEIGHT_AS_COEFFICIENT ]: 2 as ParameterValue,
+                },
+            ]
+
+            expect(() => checkSubmetricsForInvalidParameterCombinations(submetrics)).toThrowError(`Metric with only one submetric {"weightAsCoefficient":2} included a useless weight parameter.`)
         })
     })
 })
