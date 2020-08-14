@@ -3,7 +3,7 @@ import * as bestMetrics from "../../../../../src/scripts/unpopularityMetric/resu
 import { computeSumOfSquaresForSubmetrics } from "../../../../../src/scripts/unpopularityMetric/sumOfSquares"
 
 describe("best metrics", () => {
-    fit("verifies all of the best metrics", () => {
+    it("verifies all of the best metrics", () => {
         const bestMetricsEntries: Array<[string, Metric]> = Object.entries(bestMetrics) as Array<[string, Metric]>
 
         bestMetricsEntries.forEach(([bestMetricName, bestMetric]) => {
