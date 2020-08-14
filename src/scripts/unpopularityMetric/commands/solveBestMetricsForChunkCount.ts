@@ -9,17 +9,18 @@ import { applySharedUnpopularityMetricCommandSetup } from "./shared/shared"
 
 program.option("-t, --no-time", "no time")
 
-applySharedUnpopularityMetricCommandSetup()
+const defaultDebugTargets = [
+    DebugTarget.SEARCH,
+    DebugTarget.POPULATE,
+    DebugTarget.FINAL_SOLVER_RESULTS,
+    DebugTarget.NEW_BEST_METRIC,
+    DebugTarget.ERRORS,
+]
+applySharedUnpopularityMetricCommandSetup({ defaultDebugTargets })
 
 solverStatus.chunkCount = parseInt(program.args[ 0 ]) as Count<Chunk>
 
 const time = !!program.time
-
-debugTargets[ DebugTarget.SEARCH ] = true // todo it'd be nice (and better) if the default debug targets took an array (here and elsewhere)
-debugTargets[ DebugTarget.POPULATE ] = true
-debugTargets[ DebugTarget.FINAL_SOLVER_RESULTS ] = true
-debugTargets[ DebugTarget.PERFECT ] = true
-debugTargets[ DebugTarget.ERRORS ] = true
 
 const startTime = performance.now()
 populateAndSearchScopesAndPerfectMetrics().then(() => {

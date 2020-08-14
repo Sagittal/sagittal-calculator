@@ -5,7 +5,7 @@ import { computeAntivotes, Parameter, ParameterValue, Submetric } from "../sumOf
 import { applySharedUnpopularityMetricCommandSetup } from "./shared/shared"
 import { load } from "./shared/load"
 
-applySharedUnpopularityMetricCommandSetup(DebugTarget.ANTIVOTES)
+applySharedUnpopularityMetricCommandSetup({ defaultDebugTargets: [DebugTarget.ANTIVOTES] })
 
 program.parse(process.argv)
 

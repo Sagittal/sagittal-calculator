@@ -14,16 +14,17 @@ import { load } from "./shared/load"
 
 program.option("-t, --no-time", "no time")
 
-applySharedUnpopularityMetricCommandSetup()
+const defaultDebugTargets = [
+    DebugTarget.PERFECT,
+    DebugTarget.SEARCH,
+    DebugTarget.POPULATE,
+    DebugTarget.FINAL_SOLVER_RESULTS,
+    DebugTarget.NEW_BEST_METRIC,
+    DebugTarget.FINAL_PERFECTER_RESULTS,
+]
+applySharedUnpopularityMetricCommandSetup({ defaultDebugTargets })
 
 const time = !!program.time
-
-debugTargets[ DebugTarget.PERFECT ] = true
-debugTargets[ DebugTarget.SEARCH ] = true
-debugTargets[ DebugTarget.POPULATE ] = true
-debugTargets[ DebugTarget.FINAL_SOLVER_RESULTS ] = true
-debugTargets[ DebugTarget.NEW_BEST_METRIC ] = true
-debugTargets[ DebugTarget.FINAL_PERFECTER_RESULTS ] = true
 
 unpopularityMetricSettings.maximumUnit = DEFAULT_MAXIMUM_UNIT / 10 as Unit<ParameterValue>
 

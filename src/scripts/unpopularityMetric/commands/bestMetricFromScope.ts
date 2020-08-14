@@ -10,9 +10,6 @@ import { Span } from "../../../general"
 
 applySharedUnpopularityMetricCommandSetup()
 
-// debugTargets[ DebugTarget.ERRORS ] = true
-// debugTargets[ DebugTarget.NEW_BEST_METRIC ] = true
-
 const scope = [
     {},
     {

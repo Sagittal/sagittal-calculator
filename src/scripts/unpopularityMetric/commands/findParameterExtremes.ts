@@ -6,7 +6,7 @@ import { Parameter, ParameterValue } from "../sumOfSquares"
 import { applySharedUnpopularityMetricCommandSetup } from "./shared/shared"
 import { load } from "./shared/load"
 
-applySharedUnpopularityMetricCommandSetup(DebugTarget.ALL)
+applySharedUnpopularityMetricCommandSetup({ defaultDebugTargets: [DebugTarget.ALL] })
 
 const chunkCountResults = load("metrics") as Record<string, Metric>
 

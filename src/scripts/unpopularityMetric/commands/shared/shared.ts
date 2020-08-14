@@ -3,7 +3,7 @@ import { unpopularityMetricSettings } from "../../globals"
 import { clearDebugLogFiles, debugSettings, DebugTarget, setDebugTargets } from "../../debug"
 import * as colors from "colors"
 
-const applySharedUnpopularityMetricCommandSetup = (defaultDebugTarget?: DebugTarget) => {
+const applySharedUnpopularityMetricCommandSetup = ({ defaultDebugTargets }: { defaultDebugTargets?: DebugTarget[] } = {}) => {
     program
         .option("-d, --debug-targets [debugTargets]", "debug targets")
         .option("-c, --no-color", "no color")
@@ -14,7 +14,7 @@ const applySharedUnpopularityMetricCommandSetup = (defaultDebugTarget?: DebugTar
 
     program.parse(process.argv)
 
-    setDebugTargets(program.debugTargets || defaultDebugTarget)
+    setDebugTargets(program.debugTargets || defaultDebugTargets && defaultDebugTargets.join(","))
 
     if (!program.color) {
         colors.disable()

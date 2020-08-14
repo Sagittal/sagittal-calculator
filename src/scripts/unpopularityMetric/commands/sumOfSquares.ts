@@ -4,7 +4,7 @@ import { computeSumOfSquaresForSubmetrics, Submetric } from "../sumOfSquares"
 import { applySharedUnpopularityMetricCommandSetup } from "./shared/shared"
 import { load } from "./shared/load"
 
-applySharedUnpopularityMetricCommandSetup(DebugTarget.UNPOPULARITIES)
+applySharedUnpopularityMetricCommandSetup({ defaultDebugTargets: [DebugTarget.UNPOPULARITIES] })
 
 const submetrics = load("submetrics") as Combination<Submetric>
 
