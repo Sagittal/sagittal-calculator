@@ -720,6 +720,7 @@ const aux = {
 // http://forum.sagittal.org/viewtopic.php?p=2191#p2191
 const wbl1 = {
     sumOfSquares: 0.003886596371931313,
+    // todo would be great if these all had names. make it optional, and then ahve the test generate them.
     submetrics: [
         {
             [ Parameter.WITHOUT_REPETITION ]: true,

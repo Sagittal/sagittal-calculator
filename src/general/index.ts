@@ -11,7 +11,7 @@ import {
     merge,
     shuffle,
 } from "./code"
-import { PRIMES } from "./constants"
+import { PRIMES } from "./primes"
 import {
     Combination,
     Combinations,
@@ -23,6 +23,7 @@ import {
     FractionalPart,
     Ratio,
     round,
+    Exponent,
 } from "./math"
 import {
     analyzeComma,
@@ -46,7 +47,6 @@ import {
     presentComma,
     presentMonzo,
     presentRatio,
-    PrimeExponent,
     SIZE_CATEGORY_BOUNDS,
     Sopfr,
 } from "./music"
@@ -71,7 +71,6 @@ export {
     Monzo,
     invertMonzo,
     Comma,
-    PrimeExponent,
     analyzeComma,
     computeMonzoInRange,
     isUndefined,
@@ -111,4 +110,5 @@ export {
     doOnNextEventLoop,
     shuffle,
     FractionalPart,
+    Exponent,
 }

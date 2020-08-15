@@ -30,4 +30,5 @@ afterEach(() => {
     unpopularityMetricSettings.z = DEFAULT_Z
     unpopularityMetricSettings.onlyTop = DEFAULT_ONLY_TOP
     unpopularityMetricSettings.maximumUnit = DEFAULT_MAXIMUM_UNIT
+    unpopularityMetricSettings.noUseless = false
 })

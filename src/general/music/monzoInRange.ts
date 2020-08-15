@@ -1,8 +1,9 @@
-import { Ratio } from "../math"
+import { Exponent, Ratio } from "../math"
 import { computeCentsFromRatio } from "./centsFromRatio"
 import { CENTS_PER_OCTAVE } from "./constants"
 import { computeRatioFromMonzo } from "./ratioFromMonzo"
-import { Cents, Monzo, PrimeExponent } from "./types"
+import { Cents, Monzo } from "./types"
+import { Prime } from "../types"
 
 const computeCentsFromMonzo = (monzo: Monzo): Cents => {
     const ratio: Ratio = computeRatioFromMonzo(monzo)
@@ -18,11 +19,11 @@ const computeMonzoInRange = (threeSlicedMonzo: Monzo<3>, lowerBound: Cents, uppe
     const monzo: Monzo = [0, ...threeSlicedMonzo] as Monzo
     let cents: Cents = computeCentsFromMonzo(monzo)
     while (cents > upperBound) {
-        monzo[ 0 ] = monzo[ 0 ] - 1 as PrimeExponent
+        monzo[ 0 ] = monzo[ 0 ] - 1 as Exponent<Prime>
         cents = computeCentsFromMonzo(monzo)
     }
     while (cents < lowerBound) {
-        monzo[ 0 ] = monzo[ 0 ] + 1 as PrimeExponent
+        monzo[ 0 ] = monzo[ 0 ] + 1 as Exponent<Prime>
         cents = computeCentsFromMonzo(monzo)
     }
 

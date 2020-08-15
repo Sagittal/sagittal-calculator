@@ -1,4 +1,4 @@
-import { PRIMES } from "../constants"
+import { PRIMES } from "../primes"
 import { Prime } from "../types"
 import { computeTrimmedMonzo } from "./trimmedMonzo"
 import { Monzo } from "./types"

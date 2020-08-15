@@ -1,6 +1,7 @@
-import { Cents } from "../../../../src/general"
-import { ApotomeSlope, Monzo, PrimeExponent } from "../../../../src/general/music"
+import { Cents, Prime } from "../../../../src/general"
+import { ApotomeSlope, Monzo } from "../../../../src/general/music"
 import { computeCommasFromFiveSlicedMonzo } from "../../../../src/scripts/findCommas/commasFromFiveSlicedMonzo"
+import { Exponent } from "../../../../src/general/math"
 
 describe("computeCommasFromFiveSlicedMonzo", () => {
     const fiveSlicedMonzo: Monzo<5> = [3, 5, -1] as Monzo<5>
@@ -8,7 +9,7 @@ describe("computeCommasFromFiveSlicedMonzo", () => {
     it("returns analyzed commas with the prime content from the five-rough monzo", () => {
         const lowerBound = 40 as Cents
         const upperBound = 40.1 as Cents
-        const maximumAbsoluteThreeExponent = 12 as PrimeExponent
+        const maximumAbsoluteThreeExponent = 12 as Exponent<Prime>
 
         const result = computeCommasFromFiveSlicedMonzo(fiveSlicedMonzo, {
             lowerBound,
@@ -32,7 +33,7 @@ describe("computeCommasFromFiveSlicedMonzo", () => {
     describe("errors", () => {
         it("throws an error if the lower bound is not supplied", () => {
             const upperBound = 40.1 as Cents
-            const maximumAbsoluteThreeExponent = 12 as PrimeExponent
+            const maximumAbsoluteThreeExponent = 12 as Exponent<Prime>
 
             expect(() => computeCommasFromFiveSlicedMonzo(fiveSlicedMonzo, {
                 upperBound,
@@ -43,7 +44,7 @@ describe("computeCommasFromFiveSlicedMonzo", () => {
 
         it("throws an error if the upper bound is not supplied", () => {
             const lowerBound = 40.1 as Cents
-            const maximumAbsoluteThreeExponent = 12 as PrimeExponent
+            const maximumAbsoluteThreeExponent = 12 as Exponent<Prime>
 
             expect(() => computeCommasFromFiveSlicedMonzo(fiveSlicedMonzo, {
                 lowerBound,
@@ -65,7 +66,7 @@ describe("computeCommasFromFiveSlicedMonzo", () => {
         it("does not include commas with apotome slope greater than it", () => {
             const lowerBound = 40 as Cents
             const upperBound = 40.1 as Cents
-            const maximumAbsoluteThreeExponent = 12 as PrimeExponent
+            const maximumAbsoluteThreeExponent = 12 as Exponent<Prime>
 
             const highMaximumApotomeSlope = 10 as ApotomeSlope
             const lowMaximumApotomeSlope = 8 as ApotomeSlope

@@ -12,13 +12,12 @@ import { SIZE_CATEGORY_BOUNDS } from "./sizeCategoryBounds"
 import { computeSopf } from "./sopf"
 import { computeSopfr } from "./sopfr"
 import { computeTrimmedMonzo } from "./trimmedMonzo"
-import { ApotomeSlope, Cents, Comma, Copfr, Monzo, Position, PrimeExponent, Sopfr } from "./types"
+import { ApotomeSlope, Cents, Comma, Copfr, Monzo, Position, Sopfr } from "./types"
 
 export {
     APOTOME,
     Monzo,
     Comma,
-    PrimeExponent,
     Copfr,
     Sopfr,
     invertMonzo,

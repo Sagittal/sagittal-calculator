@@ -5,11 +5,11 @@ import {
     isUndefined,
     Monzo,
     Prime,
-    PrimeExponent,
     PRIMES,
 } from "../../general"
 import { computePrimeExponentRange } from "./primeExponentRange"
 import { ComputeFiveSlicedMonzosToCheckOptions } from "./types"
+import { Exponent } from "../../general/math"
 
 const computeFiveSlicedMonzosToCheck = ({ maximumPrimeLimit, maximumFiveRoughSopfr, maximumFiveRoughCopfr }: ComputeFiveSlicedMonzosToCheckOptions = {}): Array<Monzo<5>> => {
     if (isUndefined(maximumFiveRoughSopfr)) {
@@ -47,14 +47,14 @@ const computeFiveSlicedMonzosToCheck = ({ maximumPrimeLimit, maximumFiveRoughSop
             const fiveRoughSopfr = computeSopfr([0, 0, ...fiveSlicedMonzoToCheck] as Monzo)
             const fiveRoughCopfr = computeCopfr([0, 0, ...fiveSlicedMonzoToCheck] as Monzo)
 
-            const termRange: PrimeExponent[] = computePrimeExponentRange(
+            const termRange: Exponent<Prime>[] = computePrimeExponentRange(
                 prime,
                 {
                     maximumFiveRoughSopfr: maximumFiveRoughSopfr ? maximumFiveRoughSopfr - fiveRoughSopfr : undefined,
                     maximumFiveRoughCopfr: maximumFiveRoughCopfr ? maximumFiveRoughCopfr - fiveRoughCopfr : undefined,
                 },
-            ) as PrimeExponent[]
-            termRange.forEach((potentialNextTerm: PrimeExponent) => {
+            ) as Exponent<Prime>[]
+            termRange.forEach((potentialNextTerm: Exponent<Prime>) => {
                 extendedFiveSlicedMonzosToCheck.push(fiveSlicedMonzoToCheck.concat(potentialNextTerm) as Monzo<5>)
             })
         })

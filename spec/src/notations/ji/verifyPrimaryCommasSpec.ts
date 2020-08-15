@@ -1,10 +1,11 @@
 import { Prime } from "../../../../src/general"
-import { ApotomeSlope, Copfr, PrimeExponent, Sopfr } from "../../../../src/general/music"
+import { ApotomeSlope, Copfr, Sopfr } from "../../../../src/general/music"
 import { computeCommaName } from "../../../../src/general/music/name"
 import { SYMBOLS } from "../../../../src/notations/ji"
 import { computeSecondaryCommaZone } from "../../../../src/notations/ji/secondaryCommaZone"
 import { computeCommas } from "../../../../src/scripts/findCommas/commas"
 import { presentCommas } from "../../../../src/scripts/findCommas/present"
+import { Exponent } from "../../../../src/general/math/types"
 
 describe("verifying primary commas", () => {
     xit("checks that every symbol's primary comma is its best-ranked comma in its secondary comma zone according to our metric", () => {
@@ -20,7 +21,7 @@ describe("verifying primary commas", () => {
             const maximumFiveRoughCopfr = 555 as Copfr<5>
             const maximumApotomeSlope = 14 as ApotomeSlope
             const maximumPrimeLimit = 47 as Prime
-            const maximumAbsoluteThreeExponent = 15 as PrimeExponent
+            const maximumAbsoluteThreeExponent = 15 as Exponent<Prime>
             const fiveSlicedMonzo = undefined
             const sortKey = "fiveRoughSopfr"
 

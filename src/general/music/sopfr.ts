@@ -1,6 +1,8 @@
-import { PRIMES } from "../constants"
+import { PRIMES } from "../primes"
 import { computeMonzoFromInteger } from "./monzoFromInteger"
-import { Monzo, PrimeExponent, Sopfr } from "./types"
+import { Monzo, Sopfr } from "./types"
+import { Exponent } from "../math"
+import { Prime } from "../types"
 
 // Sum of prime factors
 const computeSopfr = (monzoOrInteger: Monzo | number): Sopfr => {
@@ -12,7 +14,7 @@ const computeSopfr = (monzoOrInteger: Monzo | number): Sopfr => {
     }
 
     return monzo.reduce(
-        (sopfr: number, primeExponent: PrimeExponent, index: number): Sopfr =>
+        (sopfr: number, primeExponent: Exponent<Prime>, index: number): Sopfr =>
             sopfr + Math.abs(primeExponent * PRIMES[ index ]) as Sopfr,
         0 as Sopfr,
     )

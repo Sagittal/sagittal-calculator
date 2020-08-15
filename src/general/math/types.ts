@@ -8,6 +8,8 @@ type Combinations<T> = Array<Combination<T>> & { _CombinationsBrand: "Combinatio
 type DistributionBin<T> = Combination<T> & { _DistributionBinBrand: "DistributionBin" }
 type Distribution<T> = Array<DistributionBin<T>> & { _DistributionBrand: "Distribution" }
 
+type Exponent<T = void> = number & { _ExponentBrand: "Exponent" } & (T extends void ? {} : { _ExponentOfBrand: T })
+
 enum FractionalPart {
     NUMERATOR = "numerator",
     DENOMINATOR = "denominator",
@@ -22,4 +24,5 @@ export {
     Distribution,
     DistributionBin,
     FractionalPart,
+    Exponent,
 }

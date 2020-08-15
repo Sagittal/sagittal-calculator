@@ -1,11 +1,11 @@
-import { PRIMES } from "../constants"
-import { Denominator, Numerator, Ratio } from "../math"
-import { Name } from "../types"
+import { PRIMES } from "../primes"
+import { Denominator, Exponent, Numerator, Ratio } from "../math"
+import { Name, Prime } from "../types"
 import { computeCentsFromRatio } from "./centsFromRatio"
 import { computeMonzoFromRatio } from "./monzoFromRatio"
 import { computeRatioFromMonzo } from "./ratioFromMonzo"
 import { computeSizeCategory } from "./sizeCategory"
-import { Monzo, Position, PrimeExponent, SizeCategoryOptions } from "./types"
+import { Monzo, Position, SizeCategoryOptions } from "./types"
 
 const SUPERSCRIPT_NUMS = ["⁰", "¹", "²", "³", "⁴", "⁵", "⁶", "⁷", "⁸", "⁹"]
 
@@ -44,8 +44,8 @@ const sizeCategoryFromMonzo = (monzo: Monzo, { abbreviated }: SizeCategoryOption
 
 const computeNoTwosOrThreesMonzo = (monzo: Monzo) => {
     const noTwosOrThreesMonzo = monzo.slice()
-    noTwosOrThreesMonzo[ 0 ] = 0 as PrimeExponent
-    noTwosOrThreesMonzo[ 1 ] = 0 as PrimeExponent
+    noTwosOrThreesMonzo[ 0 ] = 0 as Exponent<Prime>
+    noTwosOrThreesMonzo[ 1 ] = 0 as Exponent<Prime>
 
     return noTwosOrThreesMonzo
 }

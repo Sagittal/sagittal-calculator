@@ -1,15 +1,15 @@
 import { Ratio } from "../math"
 import { Count, Name, Prime, Sum } from "../types"
+import { Exponent } from "../math/types"
 
 type Cents = number & { _CentsBrand: "Cents" }
 
 type ApotomeSlope = number & { _ApotomeSlopeBrand: "ApotomeSlope" }
-type PrimeExponent = number & { _PrimeExponentBrand: "PrimeExponent" }
 
 type Sopfr<Roughness = void> = Sum<Prime> & (Roughness extends number ? { _RoughnessBrand: Roughness } : {})
 type Copfr<Roughness = void> = Count<Prime> & (Roughness extends number ? { _RoughnessBrand: Roughness } : {})
 
-type Monzo<Slice = void, Limit = void> = PrimeExponent[] & (Slice extends number ? { _MonzoSlice: Slice } : {})
+type Monzo<Slice = void, Limit = void> = Array<Exponent<Prime>> & (Slice extends number ? { _MonzoSlice: Slice } : {})
 
 interface Comma extends Position {
     apotomeSlope: ApotomeSlope,
@@ -33,7 +33,6 @@ interface SizeCategoryOptions {
 
 export {
     ApotomeSlope,
-    PrimeExponent,
     Monzo,
     Comma,
     SizeCategoryOptions,
