@@ -1,8 +1,7 @@
 import { Combination } from "../../../general"
 import { DebugTarget, saveDebugMessage } from "../debug"
 import { computeSumOfSquaresForSubmetrics, Submetric } from "../sumOfSquares"
-import { applySharedUnpopularityMetricCommandSetup } from "./shared/shared"
-import { load } from "./shared/load"
+import { applySharedUnpopularityMetricCommandSetup, load } from "./shared"
 
 applySharedUnpopularityMetricCommandSetup({ defaultDebugTargets: [DebugTarget.UNPOPULARITIES] })
 

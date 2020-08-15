@@ -1,9 +1,9 @@
 import { Combination } from "../../../../../src/general"
 import { SumOfSquares } from "../../../../../src/scripts/unpopularityMetric/bestMetric"
+import { MetricName } from "../../../../../src/scripts/unpopularityMetric/bestMetric/types"
+import { bestMetrics } from "../../../../../src/scripts/unpopularityMetric/globals"
 import { presentBestMetrics } from "../../../../../src/scripts/unpopularityMetric/solver"
 import { Parameter, Submetric } from "../../../../../src/scripts/unpopularityMetric/sumOfSquares"
-import { bestMetrics } from "../../../../../src/scripts/unpopularityMetric/globals"
-import { MetricName } from "../../../../../src/scripts/unpopularityMetric/bestMetric/types"
 
 describe("presentBestMetrics", () => {
     it("sorts the best metrics by sum of squares", () => {

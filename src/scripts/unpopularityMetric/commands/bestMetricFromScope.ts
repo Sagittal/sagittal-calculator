@@ -1,12 +1,12 @@
 // This script is for developing the improvement to the "SoPF>3" metric. Once developed, it should become part of the analyzeComma script.
 
+import { Span } from "../../../general"
 import { computeDynamicParameterScope, Scope } from "../bestMetric"
 import { DebugTarget, saveDebugMessage } from "../debug"
 import { bestMetrics } from "../globals"
 import { recursiveSearchScopeAndMaybeUpdateBestMetric } from "../perfecter"
-import { applySharedUnpopularityMetricCommandSetup } from "./shared/shared"
 import { Parameter, ParameterValue } from "../sumOfSquares"
-import { Span } from "../../../general"
+import { applySharedUnpopularityMetricCommandSetup } from "./shared"
 
 applySharedUnpopularityMetricCommandSetup()
 

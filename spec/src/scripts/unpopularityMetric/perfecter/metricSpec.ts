@@ -3,8 +3,8 @@ import { Combination } from "../../../../../src/general/math"
 import { Scope, SubmetricScope, SumOfSquares } from "../../../../../src/scripts/unpopularityMetric/bestMetric"
 import { recursiveSearchScopeAndMaybeUpdateBestMetric } from "../../../../../src/scripts/unpopularityMetric/perfecter"
 import { perfectMetric } from "../../../../../src/scripts/unpopularityMetric/perfecter/metric"
-import { Parameter, ParameterValue, Submetric } from "../../../../../src/scripts/unpopularityMetric/sumOfSquares"
 import * as recursiveBestMetric from "../../../../../src/scripts/unpopularityMetric/perfecter/recursiveBestMetric"
+import { Parameter, ParameterValue, Submetric } from "../../../../../src/scripts/unpopularityMetric/sumOfSquares"
 
 describe("perfectMetric", () => {
     const options = { metricId: "1/16" }
@@ -38,7 +38,7 @@ describe("perfectMetric", () => {
 
         expect(recursiveBestMetric.recursiveSearchScopeAndMaybeUpdateBestMetric).toHaveBeenCalledWith(
             expectedScope,
-            options
+            options,
         )
     })
 
@@ -55,7 +55,7 @@ describe("perfectMetric", () => {
                     [ Parameter.K_AS_COEFFICIENT ]: 0.8,
                 },
             ] as Combination<Submetric>,
-            spreadDynamicParameters: [ Parameter.K_AS_COEFFICIENT ],
+            spreadDynamicParameters: [Parameter.K_AS_COEFFICIENT],
         }
 
         spyOn(recursiveBestMetric, "recursiveSearchScopeAndMaybeUpdateBestMetric")
@@ -80,7 +80,7 @@ describe("perfectMetric", () => {
 
         expect(recursiveBestMetric.recursiveSearchScopeAndMaybeUpdateBestMetric).toHaveBeenCalledWith(
             expectedScope,
-            options
+            options,
         )
     })
 })

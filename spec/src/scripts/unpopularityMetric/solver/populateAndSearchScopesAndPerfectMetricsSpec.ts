@@ -1,10 +1,10 @@
 import { Count } from "../../../../../src/general"
 import { Metric } from "../../../../../src/scripts/unpopularityMetric/bestMetric"
+import { MetricName } from "../../../../../src/scripts/unpopularityMetric/bestMetric/types"
 import { bestMetrics, solverStatus } from "../../../../../src/scripts/unpopularityMetric/globals"
 import { Chunk, populateAndSearchScopesAndPerfectMetrics } from "../../../../../src/scripts/unpopularityMetric/solver"
 import * as populate from "../../../../../src/scripts/unpopularityMetric/solver/populate/scopes"
 import * as search from "../../../../../src/scripts/unpopularityMetric/solver/search/scopes"
-import { MetricName } from "../../../../../src/scripts/unpopularityMetric/bestMetric/types"
 
 describe("populateAndSearchScopesAndPerfectMetrics", () => {
     let originalJasmineTimeoutInterval: number

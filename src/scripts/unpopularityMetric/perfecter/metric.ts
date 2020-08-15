@@ -25,7 +25,7 @@ const perfectMetric = async (metric: Metric, options: PerfectMetricOptions) => {
                     ...submetricScope,
                     [ parameter ]: PARAMETER_DYNAMISMS[ parameter ] ?
                         // okay so it looks like we can either
-                        //  make this parameter dynamism thing something we check for the spread parameters too
+                        //  make this parameter dynamism something we check for the spread parameters too
                         //  or we could just not identify them as spread parameters in the first place
                         //  and leave it up to right here to handle it
                         //  I mean they are literally spread, even if they can't change,

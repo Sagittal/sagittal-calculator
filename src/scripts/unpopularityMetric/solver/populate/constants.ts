@@ -175,13 +175,13 @@ const SUBMETRIC_CHUNKS: SubmetricChunk[] = [
 
 const NO_USELESS_PARAMETER_CHUNKS = Object.entries(NO_USELESS_INITIAL_PARAMETER_SCOPES).map(([parameter, initialParameterScope]) => {
     return {
-        [parameter]: initialParameterScope
+        [ parameter ]: initialParameterScope,
     } as ParameterChunk
 })
 
 const PARAMETER_CHUNKS: ParameterChunk[] = Object.entries(INITIAL_PARAMETER_SCOPES).map(([parameter, initialParameterScope]) => {
     return {
-        [parameter]: initialParameterScope
+        [ parameter ]: initialParameterScope,
     } as ParameterChunk
 })
 

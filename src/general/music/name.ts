@@ -1,4 +1,4 @@
-import { PRIMES } from "../primes"
+import { PRIMES } from "../constants"
 import { Denominator, Exponent, Numerator, Ratio } from "../math"
 import { Name, Prime } from "../types"
 import { computeCentsFromRatio } from "./centsFromRatio"

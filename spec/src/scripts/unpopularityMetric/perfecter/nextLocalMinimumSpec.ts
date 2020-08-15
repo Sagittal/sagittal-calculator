@@ -2,11 +2,11 @@ import { Index, Unit } from "../../../../../src/general"
 import { Combination } from "../../../../../src/general/math"
 import { Scope, SumOfSquares } from "../../../../../src/scripts/unpopularityMetric/bestMetric"
 import { DynamicParameter, SamplePoint } from "../../../../../src/scripts/unpopularityMetric/bestMetric/scopeToSamples"
+import { MetricName } from "../../../../../src/scripts/unpopularityMetric/bestMetric/types"
 import { searchNextLocalMinimum } from "../../../../../src/scripts/unpopularityMetric/perfecter/nextLocalMinimum"
 import * as recursiveBestMetric from "../../../../../src/scripts/unpopularityMetric/perfecter/recursiveBestMetric"
 import { LocalMinimum } from "../../../../../src/scripts/unpopularityMetric/perfecter/types"
 import { Parameter, ParameterValue, Submetric } from "../../../../../src/scripts/unpopularityMetric/sumOfSquares"
-import { MetricName } from "../../../../../src/scripts/unpopularityMetric/bestMetric/types"
 
 describe("searchNextLocalMinimum", () => {
     const nextLocalMinimum: LocalMinimum = {

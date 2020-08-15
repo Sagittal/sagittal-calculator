@@ -11,7 +11,7 @@ import {
     merge,
     shuffle,
 } from "./code"
-import { PRIMES } from "./primes"
+import { PRIMES } from "./constants"
 import {
     Combination,
     Combinations,
@@ -20,10 +20,10 @@ import {
     computeLog,
     computePrimeCount,
     computeTriangularNumber,
+    Exponent,
     FractionalPart,
     Ratio,
     round,
-    Exponent,
 } from "./math"
 import {
     analyzeComma,
@@ -51,6 +51,7 @@ import {
     Sopfr,
 } from "./music"
 import { alignTable } from "./table"
+import { formatTime } from "./time"
 import { Count, Id, Index, Name, Prime, Proportion, Resolution, Span, Sum, Unit } from "./types"
 
 export {
@@ -111,4 +112,5 @@ export {
     shuffle,
     FractionalPart,
     Exponent,
+    formatTime,
 }

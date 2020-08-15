@@ -30,7 +30,7 @@ const recursiveSearchScopeAndMaybeUpdateBestMetric = async (scope: Scope, option
             depth,
             nextLocalMinima,
             onlyWinners,
-            metricName
+            metricName,
         })
     })
 

@@ -1,9 +1,9 @@
 import { Exponent, Ratio } from "../math"
+import { Prime } from "../types"
 import { computeCentsFromRatio } from "./centsFromRatio"
 import { CENTS_PER_OCTAVE } from "./constants"
 import { computeRatioFromMonzo } from "./ratioFromMonzo"
 import { Cents, Monzo } from "./types"
-import { Prime } from "../types"
 
 const computeCentsFromMonzo = (monzo: Monzo): Cents => {
     const ratio: Ratio = computeRatioFromMonzo(monzo)

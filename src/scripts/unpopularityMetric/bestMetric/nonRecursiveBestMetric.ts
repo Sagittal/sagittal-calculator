@@ -1,11 +1,11 @@
+import { Count } from "../../../general"
+import { DebugTarget, saveDebugMessage } from "../debug"
+import { metricNames, solverStatus } from "../globals"
+import { computeMetricName } from "./metricName"
 import { computeDynamicParameters, computeSamples, Sample } from "./scopeToSamples"
 import { computeSpreadDynamicParameters } from "./spreadDynamicParameters"
-import { NonRecursiveSearchScopeAndMaybeUpdateBestMetricOptions, Scope, SearchScopeResults } from "./types"
-import { DebugTarget, saveDebugMessage } from "../debug"
 import { computeSumsOfSquaresAndMaybeUpdateBestMetric } from "./sumsOfSquares"
-import { metricNames, solverStatus } from "../globals"
-import { Count } from "../../../general"
-import { computeMetricName } from "./metricName"
+import { NonRecursiveSearchScopeAndMaybeUpdateBestMetricOptions, Scope, SearchScopeResults } from "./types"
 
 const nonRecursiveSearchScopeAndMaybeUpdateBestMetric = async (scope: Scope, options: NonRecursiveSearchScopeAndMaybeUpdateBestMetricOptions = {}): Promise<SearchScopeResults> => {
     const metricName = computeMetricName(scope)
@@ -26,7 +26,10 @@ const nonRecursiveSearchScopeAndMaybeUpdateBestMetric = async (scope: Scope, opt
     saveDebugMessage(`about to search initial scope for metric ${metricName}`, DebugTarget.SEARCH)
     saveDebugMessage(`which has ${samples.length} samples; average sample count is ${solverStatus.averageSamplesPerScope}`, DebugTarget.SEARCH)
 
-    const sumsOfSquares = await computeSumsOfSquaresAndMaybeUpdateBestMetric(samples, { spreadDynamicParameters, metricName, ...options })
+    const sumsOfSquares = await computeSumsOfSquaresAndMaybeUpdateBestMetric(samples, {
+        spreadDynamicParameters,
+        metricName, ...options,
+    })
 
     return { dynamicParameters, samples, sumsOfSquares, metricName }
 }

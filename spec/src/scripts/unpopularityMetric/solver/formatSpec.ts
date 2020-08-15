@@ -1,9 +1,9 @@
-import { bestMetrics } from "../../../../../src/scripts/unpopularityMetric/globals"
-import { SumOfSquares } from "../../../../../src/scripts/unpopularityMetric/bestMetric"
-import { Parameter, Submetric } from "../../../../../src/scripts/unpopularityMetric/sumOfSquares"
 import { Combination } from "../../../../../src/general/math"
-import { formatBestMetrics } from "../../../../../src/scripts/unpopularityMetric/solver"
+import { SumOfSquares } from "../../../../../src/scripts/unpopularityMetric/bestMetric"
 import { MetricName } from "../../../../../src/scripts/unpopularityMetric/bestMetric/types"
+import { bestMetrics } from "../../../../../src/scripts/unpopularityMetric/globals"
+import { formatBestMetrics } from "../../../../../src/scripts/unpopularityMetric/solver"
+import { Parameter, Submetric } from "../../../../../src/scripts/unpopularityMetric/sumOfSquares"
 
 describe("formatBestMetrics", () => {
     it("sorts the best metrics by sum of squares, and formats them like how they look as enums", () => {

@@ -1,6 +1,6 @@
-import { ParameterValue } from "../../../../../../src/scripts/unpopularityMetric/sumOfSquares"
 import { Resolution, Span } from "../../../../../../src/general"
 import { computeDynamicParameterScope } from "../../../../../../src/scripts/unpopularityMetric/bestMetric/scopeToSamples/dynamicParameterScope"
+import { ParameterValue } from "../../../../../../src/scripts/unpopularityMetric/sumOfSquares"
 
 describe("computeDynamicParameterScope", () => {
     const expectedDynamicParameterScope = {
@@ -93,6 +93,11 @@ describe("computeDynamicParameterScope", () => {
         const center = -1 as ParameterValue
         const span = 2 as Span<ParameterValue>
 
-        expect(() => computeDynamicParameterScope({ min, max, center, span })).toThrowError("Exactly 2 options should be provided from min, max, center, and span in order to compute a dynamic parameter scope; 4 provided (min -2, max 0, center -1, span 2)")
+        expect(() => computeDynamicParameterScope({
+            min,
+            max,
+            center,
+            span,
+        })).toThrowError("Exactly 2 options should be provided from min, max, center, and span in order to compute a dynamic parameter scope; 4 provided (min -2, max 0, center -1, span 2)")
     })
 })

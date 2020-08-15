@@ -1,8 +1,7 @@
 import { Combinations, Count } from "../../general"
-import { Metric, Sample, Scope } from "./bestMetric"
-import { Chunk, ParameterChunk, SolverStatus, SubmetricChunk } from "./solver"
+import { Metric, MetricName, Sample, Scope } from "./bestMetric"
 import { DEFAULT_MAXIMUM_UNIT, DEFAULT_ONLY_TOP, DEFAULT_Z } from "./constants"
-import { MetricName } from "./bestMetric/types"
+import { Chunk, ParameterChunk, SolverStatus, SubmetricChunk } from "./solver"
 
 const scopesToSearch: Scope[] = [] as unknown as Scope[]
 

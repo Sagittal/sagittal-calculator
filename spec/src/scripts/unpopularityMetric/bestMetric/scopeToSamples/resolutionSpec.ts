@@ -1,6 +1,6 @@
 import { Resolution, Span } from "../../../../../../src/general"
-import { ParameterValue } from "../../../../../../src/scripts/unpopularityMetric/sumOfSquares"
 import { computeResolution } from "../../../../../../src/scripts/unpopularityMetric/bestMetric/scopeToSamples/resolution"
+import { ParameterValue } from "../../../../../../src/scripts/unpopularityMetric/sumOfSquares"
 
 describe("computeResolution", () => {
     it("returns the resolution required so that the unit will be no larger then the maximum parameter unit", () => {

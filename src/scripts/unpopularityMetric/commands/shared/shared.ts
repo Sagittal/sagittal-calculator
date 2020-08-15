@@ -1,7 +1,7 @@
-import { program } from "commander"
-import { unpopularityMetricSettings } from "../../globals"
-import { clearDebugLogFiles, debugSettings, DebugTarget, setDebugTargets } from "../../debug"
 import * as colors from "colors"
+import { program } from "commander"
+import { clearDebugLogFiles, debugSettings, DebugTarget, setDebugTargets } from "../../debug"
+import { unpopularityMetricSettings } from "../../globals"
 
 const applySharedUnpopularityMetricCommandSetup = ({ defaultDebugTargets }: { defaultDebugTargets?: DebugTarget[] } = {}) => {
     program

@@ -1,14 +1,10 @@
-import { PRIMES } from "../primes"
-import { Monzo } from "./types"
+import { PRIMES } from "../constants"
 import { Exponent } from "../math"
 import { Prime } from "../types"
-import { unpopularityMetricSettings } from "../../scripts/unpopularityMetric/globals"
-import { BIG_PRIMES } from "../bigPrimes"
+import { Monzo } from "./types"
 
 const computeMonzoFromInteger: (integer: number) => Monzo =
     (integer: number): Monzo => {
-        const primes = unpopularityMetricSettings.onlyTop <= 80 ? PRIMES : BIG_PRIMES
-
         if (integer === 0) {
             throw new Error("The prime factorization of zero is not defined.")
         }
@@ -17,7 +13,7 @@ const computeMonzoFromInteger: (integer: number) => Monzo =
         let remnant = integer
 
         const computePrimeFactorizationForPrimeAtIndexAndUpdateRemnant = (index: number) => {
-            const divisor = primes[ index ]
+            const divisor = PRIMES[ index ]
             let remainder = remnant % divisor
 
             if (remainder === 0) {
@@ -33,7 +29,7 @@ const computeMonzoFromInteger: (integer: number) => Monzo =
             }
         }
 
-        for (let index = 0; index <= primes.length - 1; index += 1) {
+        for (let index = 0; index <= PRIMES.length - 1; index += 1) {
             computePrimeFactorizationForPrimeAtIndexAndUpdateRemnant(index)
 
             if (remnant === 1) {

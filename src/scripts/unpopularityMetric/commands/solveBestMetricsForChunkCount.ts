@@ -1,11 +1,10 @@
 import { program } from "commander"
 import { performance } from "perf_hooks"
-import { Count } from "../../../general"
-import { DebugTarget, debugTargets, saveDebugMessage } from "../debug"
+import { Count, formatTime } from "../../../general"
+import { DebugTarget, saveDebugMessage } from "../debug"
 import { solverStatus, unpopularityMetricSettings } from "../globals"
 import { Chunk, formatBestMetrics, populateAndSearchScopesAndPerfectMetrics } from "../solver"
-import { formatTime } from "../../../general/time"
-import { applySharedUnpopularityMetricCommandSetup } from "./shared/shared"
+import { applySharedUnpopularityMetricCommandSetup } from "./shared"
 
 program.option("-t, --no-time", "no time")
 

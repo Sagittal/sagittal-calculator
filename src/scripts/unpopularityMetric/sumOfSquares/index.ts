@@ -2,7 +2,7 @@ import { computeAntivotes } from "./antivotes"
 import { checkSubmetricsForInvalidParameterCombinations } from "./checkParameters"
 import { COMMA_POPULARITIES } from "./popularities"
 import { computeSumOfSquaresForSubmetrics } from "./sumOfSquaresForSubmetrics"
-import { Parameter, ParameterValue, Popularity, Submetric } from "./types"
+import { Parameter, ParameterValue, Popularity, PopularityRank, Submetric, UnpopularityRank } from "./types"
 import { computeUnpopularities } from "./unpopularities"
 
 export {
@@ -15,4 +15,6 @@ export {
     COMMA_POPULARITIES,
     computeUnpopularities,
     Popularity,
+    PopularityRank,
+    UnpopularityRank,
 }

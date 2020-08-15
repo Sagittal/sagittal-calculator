@@ -1,8 +1,8 @@
 import { Count } from "../../../../../../src/general"
+import { unpopularityMetricSettings } from "../../../../../../src/scripts/unpopularityMetric/globals"
 import { Chunk } from "../../../../../../src/scripts/unpopularityMetric/solver"
 import { SubmetricChunk } from "../../../../../../src/scripts/unpopularityMetric/solver/populate"
 import { computeInitialChunkCountForSubmetrics } from "../../../../../../src/scripts/unpopularityMetric/solver/populate/initialChunkCountForSubmetrics"
-import { unpopularityMetricSettings } from "../../../../../../src/scripts/unpopularityMetric/globals"
 
 describe("computeInitialChunkCountForSubmetrics", () => {
     describe("when all chunks are being used, including probably useless ones", () => {

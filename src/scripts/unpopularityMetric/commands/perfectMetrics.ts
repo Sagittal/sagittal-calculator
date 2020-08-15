@@ -1,16 +1,14 @@
 import { program } from "commander"
 import { performance } from "perf_hooks"
-import { Unit } from "../../../general"
+import { formatTime, Unit } from "../../../general"
 import { Metric } from "../bestMetric"
-import { DebugTarget, debugTargets, saveDebugMessage } from "../debug"
+import { DEFAULT_MAXIMUM_UNIT } from "../constants"
+import { DebugTarget, saveDebugMessage } from "../debug"
 import { unpopularityMetricSettings } from "../globals"
 import { perfectMetrics } from "../perfecter"
 import { formatBestMetrics } from "../solver"
 import { ParameterValue } from "../sumOfSquares"
-import { formatTime } from "../../../general/time"
-import { DEFAULT_MAXIMUM_UNIT } from "../constants"
-import { applySharedUnpopularityMetricCommandSetup } from "./shared/shared"
-import { load } from "./shared/load"
+import { applySharedUnpopularityMetricCommandSetup, load } from "./shared"
 
 program.option("-t, --no-time", "no time")
 

@@ -1,11 +1,11 @@
-import "colors"
+import * as colors from "colors"
+import { program } from "commander"
 import { isNumber } from "../../../../general"
 import { Metric } from "../../bestMetric"
 import { clearDebugLogFiles, debugSettings, DebugTarget, saveDebugMessage, setDebugTargets } from "../../debug"
-import { COMMA_POPULARITIES, computeUnpopularities, Popularity } from "../../sumOfSquares"
-import { program } from "commander"
-import * as colors from "colors"
 import { unpopularityMetricSettings } from "../../globals"
+import { COMMA_POPULARITIES, computeUnpopularities, Popularity } from "../../sumOfSquares"
+import { load } from "../shared"
 
 program
     .option("-d, --debug-targets [debugTargets]", "debug targets")
@@ -23,7 +23,7 @@ if (!debugSettings.noWrite) {
     clearDebugLogFiles()
 }
 
-const potentiallyRottens = {} as unknown as Record<string, Metric> // paste things in from 1.txt, 2.txt, etc.
+const potentiallyRottens = load("metrics") as unknown as Record<string, Metric>
 
 const realPopularities: Popularity[] = COMMA_POPULARITIES.slice(0, unpopularityMetricSettings.onlyTop)
 
@@ -31,7 +31,6 @@ const noRottens = Object.entries(potentiallyRottens).reduce(
     (noRottens: Record<string, Metric>, [potentiallyRottenName, potentiallyRottenMetric]: [string, Metric]) => {
         const unpopularities = computeUnpopularities(realPopularities, potentiallyRottenMetric.submetrics)
         if (unpopularities.some(unpopularity => !isNumber(unpopularity.antivotes))) {
-            console.log("nope")
             return noRottens
         }
 

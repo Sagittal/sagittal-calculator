@@ -1,7 +1,7 @@
 import { Resolution, Span } from "../../../general"
 import { DynamicParameterScope } from "../bestMetric"
-import { ParameterValue } from "../sumOfSquares"
 import { unpopularityMetricSettings } from "../globals"
+import { ParameterValue } from "../sumOfSquares"
 
 const computeDynamicParameterScopeForPerfecting = (parameterValue: ParameterValue): DynamicParameterScope => ({
     center: parameterValue,

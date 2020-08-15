@@ -3,8 +3,7 @@ import { isNumber, isUndefined } from "../../../general"
 import { Metric } from "../bestMetric"
 import { DebugTarget, saveDebugMessage } from "../debug"
 import { Parameter, ParameterValue } from "../sumOfSquares"
-import { applySharedUnpopularityMetricCommandSetup } from "./shared/shared"
-import { load } from "./shared/load"
+import { applySharedUnpopularityMetricCommandSetup, load } from "./shared"
 
 applySharedUnpopularityMetricCommandSetup({ defaultDebugTargets: [DebugTarget.ALL] })
 

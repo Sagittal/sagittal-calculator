@@ -1,13 +1,9 @@
-import { computeTriangularNumber } from "../../../../general/math"
+import { computeTriangularNumber } from "../../../../general"
 import { DebugTarget, saveDebugMessage } from "../../debug"
-import { COMMA_POPULARITIES } from "../../sumOfSquares"
-import { Popularity, PopularityRank } from "../../sumOfSquares/types"
+import { COMMA_POPULARITIES, PopularityRank } from "../../sumOfSquares"
+import { FractionallyRankedPopularity } from "./types"
 
-interface FractionallyRankedPopularity extends Popularity {
-    fractionalRank: PopularityRank,
-}
-
-const doThing = () => {
+const fractionalizeRanks = () => {
     const rankedUnpopularities: FractionallyRankedPopularity[] = COMMA_POPULARITIES.map((popularity, index): FractionallyRankedPopularity => {
         if ((popularity as FractionallyRankedPopularity).fractionalRank) {
             return popularity as FractionallyRankedPopularity
@@ -33,7 +29,7 @@ const doThing = () => {
         }
     })
 
-   saveDebugMessage(JSON.stringify(rankedUnpopularities, null, 4), DebugTarget.ALL)
+    saveDebugMessage(JSON.stringify(rankedUnpopularities, null, 4), DebugTarget.ALL)
 }
 
-doThing()
+fractionalizeRanks()

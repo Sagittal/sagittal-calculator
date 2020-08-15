@@ -456,7 +456,7 @@ describe("computeDistributions", () => {
         })
     })
 
-    it("works for 1 thing across two bins", () => {
+    it("works for 1 element across two bins", () => {
         const array = ["a"]
         const bucketCount = 2
 

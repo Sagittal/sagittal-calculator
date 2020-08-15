@@ -3,11 +3,11 @@ import { arraysHaveSameContents } from "../../../../../../src/general/code/array
 import { Scope } from "../../../../../../src/scripts/unpopularityMetric/bestMetric"
 import { scopesToSearch, solverStatus } from "../../../../../../src/scripts/unpopularityMetric/globals"
 import { Chunk } from "../../../../../../src/scripts/unpopularityMetric/solver"
+import { populateScopes } from "../../../../../../src/scripts/unpopularityMetric/solver/populate"
 import {
     INITIAL_PARAMETER_SCOPES,
     SUBMETRIC_CHUNKS,
 } from "../../../../../../src/scripts/unpopularityMetric/solver/populate/constants"
-import { populateScopes } from "../../../../../../src/scripts/unpopularityMetric/solver/populate"
 import { Parameter } from "../../../../../../src/scripts/unpopularityMetric/sumOfSquares"
 
 describe("populateScopes", () => {

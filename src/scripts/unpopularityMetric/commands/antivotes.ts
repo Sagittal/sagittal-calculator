@@ -1,9 +1,8 @@
 import { program } from "commander"
 import { Combination, presentRatio, Ratio } from "../../../general"
 import { DebugTarget, saveDebugMessage } from "../debug"
-import { computeAntivotes, Parameter, ParameterValue, Submetric } from "../sumOfSquares"
-import { applySharedUnpopularityMetricCommandSetup } from "./shared/shared"
-import { load } from "./shared/load"
+import { computeAntivotes, Submetric } from "../sumOfSquares"
+import { applySharedUnpopularityMetricCommandSetup, load } from "./shared"
 
 applySharedUnpopularityMetricCommandSetup({ defaultDebugTargets: [DebugTarget.ANTIVOTES] })
 

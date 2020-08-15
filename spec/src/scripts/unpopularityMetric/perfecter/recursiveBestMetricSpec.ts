@@ -1,11 +1,11 @@
 import { Combination, Index, Resolution, Span, Unit } from "../../../../../src/general"
 import { Scope, SumOfSquares } from "../../../../../src/scripts/unpopularityMetric/bestMetric"
 import { SamplePoint } from "../../../../../src/scripts/unpopularityMetric/bestMetric/scopeToSamples"
+import { MetricName } from "../../../../../src/scripts/unpopularityMetric/bestMetric/types"
 import { recursiveSearchScopeAndMaybeUpdateBestMetric } from "../../../../../src/scripts/unpopularityMetric/perfecter"
 import * as nextLocalMinimum from "../../../../../src/scripts/unpopularityMetric/perfecter/nextLocalMinimum"
 import { LocalMinimum } from "../../../../../src/scripts/unpopularityMetric/perfecter/types"
 import { Parameter, ParameterValue, Submetric } from "../../../../../src/scripts/unpopularityMetric/sumOfSquares"
-import { MetricName } from "../../../../../src/scripts/unpopularityMetric/bestMetric/types"
 
 describe("searchScopeAndMaybeUpdateBestMetric", () => {
     it("searches each local minimum", async () => {

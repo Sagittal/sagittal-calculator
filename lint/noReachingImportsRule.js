@@ -69,7 +69,7 @@ function isSubmodulePath(path) {
 }
 function fixedSubmodulePath(path) {
     var steps = path.split('/');
-    var output = '\'';
+    var output = '\"';
     var finished = false;
     steps.forEach(function (step, index) {
         if (finished) {
@@ -83,6 +83,6 @@ function fixedSubmodulePath(path) {
             finished = true;
         }
     });
-    return output + '\'';
+    return output + '\"';
 }
 var templateObject_1, templateObject_2;

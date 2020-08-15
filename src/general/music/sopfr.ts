@@ -1,8 +1,8 @@
-import { PRIMES } from "../primes"
-import { computeMonzoFromInteger } from "./monzoFromInteger"
-import { Monzo, Sopfr } from "./types"
+import { PRIMES } from "../constants"
 import { Exponent } from "../math"
 import { Prime } from "../types"
+import { computeMonzoFromInteger } from "./monzoFromInteger"
+import { Monzo, Sopfr } from "./types"
 
 // Sum of prime factors
 const computeSopfr = (monzoOrInteger: Monzo | number): Sopfr => {

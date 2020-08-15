@@ -1,7 +1,7 @@
 import { Combination } from "../../../../../src/general/math"
-import { computeMetricName } from "../../../../../src/scripts/unpopularityMetric/bestMetric/metricName"
-import { Parameter, Submetric } from "../../../../../src/scripts/unpopularityMetric/sumOfSquares"
 import { SubmetricScope } from "../../../../../src/scripts/unpopularityMetric/bestMetric"
+import { computeMetricName } from "../../../../../src/scripts/unpopularityMetric/bestMetric/metricName"
+import { Parameter } from "../../../../../src/scripts/unpopularityMetric/sumOfSquares"
 
 describe("computeMetricName", () => {
     it("makes a string out of the parameters (ignoring values) in each submetric", () => {

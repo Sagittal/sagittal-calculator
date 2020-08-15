@@ -2,6 +2,7 @@ import {
     computeCopfr,
     computeSopfr,
     computeTrimmedMonzo,
+    Exponent,
     isUndefined,
     Monzo,
     Prime,
@@ -9,7 +10,6 @@ import {
 } from "../../general"
 import { computePrimeExponentRange } from "./primeExponentRange"
 import { ComputeFiveSlicedMonzosToCheckOptions } from "./types"
-import { Exponent } from "../../general/math"
 
 const computeFiveSlicedMonzosToCheck = ({ maximumPrimeLimit, maximumFiveRoughSopfr, maximumFiveRoughCopfr }: ComputeFiveSlicedMonzosToCheckOptions = {}): Array<Monzo<5>> => {
     if (isUndefined(maximumFiveRoughSopfr)) {

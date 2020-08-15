@@ -1,6 +1,6 @@
+import { PARAMETER_DYNAMISMS } from "../perfecter"
 import { Parameter } from "../sumOfSquares"
 import { Scope, SubmetricScope } from "./types"
-import { PARAMETER_DYNAMISMS } from "../perfecter"
 
 const computeSpreadDynamicParameters = (scope: Scope): Parameter[] | undefined => {
     const allBinsSubmetricScope: SubmetricScope = scope[ 0 ]

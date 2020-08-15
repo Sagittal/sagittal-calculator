@@ -1,4 +1,4 @@
-import { PRIMES } from "../primes"
+import { PRIMES } from "../constants"
 import { computeMonzoFromInteger } from "./monzoFromInteger"
 import { Monzo } from "./types"
 

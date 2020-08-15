@@ -3,18 +3,18 @@ import { Parameter, Submetric } from "./types"
 
 const checkSubmetricsForInvalidParameterCombinations = (submetrics: Submetric[]) => {
     if (submetrics.length === 1) {
-        const submetric = submetrics[0]
+        const submetric = submetrics[ 0 ]
         if (
-            !isUndefined(submetric[ Parameter.WEIGHT_AS_COEFFICIENT]) ||
-            !isUndefined(submetric[ Parameter.WEIGHT_AS_POWER_BASE]) ||
-            !isUndefined(submetric[ Parameter.WEIGHT_AS_LOGARITHM_BASE]) ||
-            !isUndefined(submetric[ Parameter.WEIGHT_AS_POWER_EXPONENT])
+            !isUndefined(submetric[ Parameter.WEIGHT_AS_COEFFICIENT ]) ||
+            !isUndefined(submetric[ Parameter.WEIGHT_AS_POWER_BASE ]) ||
+            !isUndefined(submetric[ Parameter.WEIGHT_AS_LOGARITHM_BASE ]) ||
+            !isUndefined(submetric[ Parameter.WEIGHT_AS_POWER_EXPONENT ])
         ) {
             throw new Error(`Metric with only one submetric ${JSON.stringify(submetric)} included a useless weight parameter.`)
         }
     }
 
-    if(computeDeepDistinct(submetrics).length < submetrics.length) {
+    if (computeDeepDistinct(submetrics).length < submetrics.length) {
         throw new Error(`Submetrics ${JSON.stringify(submetrics)} contain duplicates and thus are useless.`)
     }
 

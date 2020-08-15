@@ -1,6 +1,5 @@
-import { Ratio } from "../math"
+import { Exponent, Ratio } from "../math"
 import { Count, Name, Prime, Sum } from "../types"
-import { Exponent } from "../math/types"
 
 type Cents = number & { _CentsBrand: "Cents" }
 

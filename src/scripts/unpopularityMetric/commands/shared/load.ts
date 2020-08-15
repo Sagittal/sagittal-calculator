@@ -1,5 +1,5 @@
-import { unformat } from "../../solver/unformat"
 import * as fs from "fs"
+import { unformat } from "../../solver"
 
 const load = (filename: string) => {
     return JSON.parse(

@@ -1,6 +1,6 @@
+import { isUndefined, Span } from "../../../../general"
 import { ParameterValue } from "../../sumOfSquares"
 import { DynamicParameterScope } from "../types"
-import { isUndefined, Span } from "../../../../general"
 import { computeResolution } from "./resolution"
 import { ComputeDynamicParameterScopeOptions } from "./types"
 

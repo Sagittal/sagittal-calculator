@@ -1,7 +1,7 @@
 import { Cents, Prime } from "../../../../src/general"
+import { Exponent } from "../../../../src/general/math"
 import { ApotomeSlope, Monzo } from "../../../../src/general/music"
 import { computeCommasFromFiveSlicedMonzo } from "../../../../src/scripts/findCommas/commasFromFiveSlicedMonzo"
-import { Exponent } from "../../../../src/general/math"
 
 describe("computeCommasFromFiveSlicedMonzo", () => {
     const fiveSlicedMonzo: Monzo<5> = [3, 5, -1] as Monzo<5>
