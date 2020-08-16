@@ -1,8 +1,8 @@
 import { Cents } from "../../general"
 import { SYMBOLS } from "./symbols"
-import { SagittalSymbol } from "./types"
+import { JiSymbol } from "./types"
 
-const computePositionSymbol = (position: Cents | undefined): SagittalSymbol | undefined => {
+const computePositionSymbol = (position: Cents | undefined): JiSymbol | undefined => {
     if (!position) {
         return undefined
     }

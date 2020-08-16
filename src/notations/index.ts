@@ -16,11 +16,11 @@ import {
     LEVEL_EDAS,
     MAXIMUM_POSITION,
     Mina,
-    SagittalSymbol,
-    SymbolLongAscii,
+    JiSymbol,
     TINA,
     unicodeFromAscii,
 } from "./ji"
+import { SymbolLongAscii } from "./types"
 
 export {
     BOUNDS,
@@ -39,7 +39,7 @@ export {
     LEVELS_BOUNDS,
     LEVEL_EDAS,
     LEVELS_SYMBOLS,
-    SagittalSymbol,
+    JiSymbol,
     unicodeFromAscii,
     computeInaMidpoints,
     computeLevelCommaMeans,

@@ -1,16 +1,12 @@
 import { Cents, Id, Name, Position, Prime, Proportion, Ratio, Sopfr } from "../../../../../src/general"
 import { ApotomeSlope, Monzo } from "../../../../../src/general/music"
 import { INA_SIZES } from "../../../../../src/notations/ji/intervals"
-import {
-    Bound,
-    Level,
-    Mina,
-    SagittalSymbol,
-    SymbolLongAscii,
-    SymbolUnicode,
-} from "../../../../../src/notations/ji/types"
+import { Bound, JiSymbol, Level, Mina } from "../../../../../src/notations/ji"
 import { extractBoundIdentifiers } from "../../../../../src/scripts/analyzeBounds/present/boundIdentifiers"
 import { BoundIdentifiers } from "../../../../../src/scripts/analyzeBounds/present/types"
+import { N2D3P9 } from "../../../../../src/general/music/types"
+import { SymbolLongAscii } from "../../../../../src/notations"
+import { SymbolUnicode } from "../../../../../src/notations/types"
 
 describe("extractBoundIdentifiers", () => {
     const bound = {
@@ -44,8 +40,9 @@ describe("extractBoundIdentifiers", () => {
                             monzo: [2, -1, -2, 0, 0, 0, 0, 1] as Monzo,
                             cents: 22.9305875372457 as Cents,
                             name: "19/25C" as Name<Position>,
+                            n2d3p9: 55.70987654320989 as N2D3P9,
                         },
-                        id: 47 as Id<SagittalSymbol>, // not the best example since id and mina are the same up to this point
+                        id: 47 as Id<JiSymbol>, // not the best example since id and mina are the same up to this point
                         elements: [".|", ")|", "/|"] as SymbolLongAscii[],
                     },
                     {
@@ -63,8 +60,9 @@ describe("extractBoundIdentifiers", () => {
                             monzo: [-19, 12] as Monzo,
                             cents: 23.460010384649 as Cents,
                             name: "1C" as Name<Position>,
+                            n2d3p9: 0.1111111111111111 as N2D3P9,
                         },
-                        id: 48 as Id<SagittalSymbol>,
+                        id: 48 as Id<JiSymbol>,
                         elements: ["'|", "/|"] as SymbolLongAscii[],
                     },
                 ],
@@ -84,8 +82,9 @@ describe("extractBoundIdentifiers", () => {
                             monzo: [2, -1, -2, 0, 0, 0, 0, 1] as Monzo,
                             cents: 22.9305875372457 as Cents,
                             name: "19/25C" as Name<Position>,
+                            n2d3p9: 55.70987654320989 as N2D3P9,
                         },
-                        id: 47 as Id<SagittalSymbol>,
+                        id: 47 as Id<JiSymbol>,
                         elements: [".|", ")|", "/|"] as SymbolLongAscii[],
                     },
                     {
@@ -103,8 +102,9 @@ describe("extractBoundIdentifiers", () => {
                             monzo: [-19, 12] as Monzo,
                             cents: 23.460010384649 as Cents,
                             name: "1C" as Name<Position>,
+                            n2d3p9: 0.1111111111111111 as N2D3P9,
                         },
-                        id: 48 as Id<SagittalSymbol>,
+                        id: 48 as Id<JiSymbol>,
                         elements: ["'|", "/|"] as SymbolLongAscii[],
                     },
                 ],
@@ -116,7 +116,7 @@ describe("extractBoundIdentifiers", () => {
                         ascii: ".)/|" as SymbolLongAscii,
                         unicode: "" as SymbolUnicode,
                         mina: 47 as Mina,
-                        id: 47 as Id<SagittalSymbol>,
+                        id: 47 as Id<JiSymbol>,
                         primaryComma: {
                             apotomeSlope: -2.412 as ApotomeSlope,
                             fiveRoughSopfr: 29 as Sopfr<5>,
@@ -125,6 +125,7 @@ describe("extractBoundIdentifiers", () => {
                             monzo: [2, -1, -2, 0, 0, 0, 0, 1] as Monzo,
                             cents: 22.9305875372457 as Cents,
                             name: "19/25C" as Name<Position>,
+                            n2d3p9: 55.70987654320989 as N2D3P9,
                         },
                         elements: [".|", ")|", "/|"] as SymbolLongAscii[],
                     },
@@ -135,7 +136,7 @@ describe("extractBoundIdentifiers", () => {
                         ascii: "'/|" as SymbolLongAscii,
                         unicode: "" as SymbolUnicode,
                         mina: 48 as Mina,
-                        id: 48 as Id<SagittalSymbol>,
+                        id: 48 as Id<JiSymbol>,
                         primaryComma: {
                             apotomeSlope: 10.555 as ApotomeSlope,
                             fiveRoughSopfr: 0 as Sopfr<5>,
@@ -144,6 +145,7 @@ describe("extractBoundIdentifiers", () => {
                             monzo: [-19, 12] as Monzo,
                             cents: 23.460010384649 as Cents,
                             name: "1C" as Name<Position>,
+                            n2d3p9: 0.1111111111111111 as N2D3P9,
                         },
                         elements: ["'|", "/|"] as SymbolLongAscii[],
                     },

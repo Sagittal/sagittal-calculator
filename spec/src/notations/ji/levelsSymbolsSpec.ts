@@ -1,7 +1,10 @@
 import { Cents, Id, Name, Position, Prime, Ratio, Sopfr } from "../../../../src/general"
 import { ApotomeSlope, Monzo } from "../../../../src/general/music"
 import { computeIsWithinLevel, computeLevelSymbols } from "../../../../src/notations/ji/levelsSymbols"
-import { Level, Mina, SagittalSymbol, SymbolLongAscii, SymbolUnicode } from "../../../../src/notations/ji/types"
+import { Level, Mina, JiSymbol } from "../../../../src/notations/ji"
+import { N2D3P9 } from "../../../../src/general/music/types"
+import { SymbolLongAscii } from "../../../../src/notations"
+import { SymbolUnicode } from "../../../../src/notations/types"
 
 describe("computeLevelSymbols", () => {
     it("returns the symbols for the levels up to and including the target level", () => {
@@ -15,7 +18,7 @@ describe("computeLevelSymbols", () => {
         const levelCommas = computeLevelSymbols(Level.MEDIUM)
 
         expect(levelCommas[ 0 ]).toEqual({
-            id: 0 as Id<SagittalSymbol>,
+            id: 0 as Id<JiSymbol>,
             introducingLevel: Level.MEDIUM,
             ascii: "|" as SymbolLongAscii,
             unicode: "" as SymbolUnicode,
@@ -28,6 +31,7 @@ describe("computeLevelSymbols", () => {
                 monzo: [] as unknown as Monzo,
                 cents: 0 as Cents,
                 name: "1u" as Name<Position>,
+                n2d3p9: 0.1111111111111111 as N2D3P9,
             },
             elements: [] as SymbolLongAscii[],
         })

@@ -1,7 +1,5 @@
 import { Cents, Comma, EnumHash, Id, Proportion } from "../../general"
-
-type SymbolLongAscii = string & { _SymbolLongAsciiBrand: "SymbolLongAscii" }
-type SymbolUnicode = string & { _SymbolUnicodeBrand: "SymbolUnicode" }
+import { SymbolLongAscii, SymbolUnicode } from "../types"
 
 type Mina = number & { _MinaBrand: "Mina" }
 
@@ -13,10 +11,10 @@ enum Level {
     INSANE = "INSANE",
 }
 
-interface SagittalSymbol {
+interface JiSymbol {
     ascii: SymbolLongAscii,
     elements: SymbolLongAscii[],
-    id: Id<SagittalSymbol>,
+    id: Id<JiSymbol>,
     introducingLevel: Level,
     mina: Mina,
     primaryComma: Comma,
@@ -33,15 +31,13 @@ type BoundedSymbols =
     { id: Id<Bound> }
     & Partial<EnumHash<Level, [BoundedSymbol | undefined, BoundedSymbol | undefined]>>
 
-interface BoundedSymbol extends SagittalSymbol {
+interface BoundedSymbol extends JiSymbol {
     distance: Cents,
     inaDistance: Proportion,
 }
 
 export {
-    SymbolLongAscii,
-    SymbolUnicode,
-    SagittalSymbol,
+    JiSymbol,
     Mina,
     Level,
     Bound,

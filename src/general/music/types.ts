@@ -8,6 +8,8 @@ type ApotomeSlope = number & { _ApotomeSlopeBrand: "ApotomeSlope" }
 type Sopfr<Roughness = void> = Sum<Prime> & (Roughness extends number ? { _RoughnessBrand: Roughness } : {})
 type Copfr<Roughness = void> = Count<Prime> & (Roughness extends number ? { _RoughnessBrand: Roughness } : {})
 
+type N2D3P9 = number & { _N2D3P9Brand: "N2D3P9" }
+
 type Monzo<Slice = void, Limit = void> = Array<Exponent<Prime>> & (Slice extends number ? { _MonzoSlice: Slice } : {})
 
 interface Comma extends Position {
@@ -16,8 +18,9 @@ interface Comma extends Position {
     limit: Prime,
     monzo: Monzo,
     ratio: Ratio,
+    n2d3p9: N2D3P9,
 
-    [ index: string ]: Cents | Monzo | Ratio | Name<Position> | Prime | ApotomeSlope | Sopfr<5>,
+    [ index: string ]: Cents | Monzo | Ratio | Name<Position> | Prime | ApotomeSlope | Sopfr<5> | N2D3P9 | undefined,
 }
 
 interface Position {
@@ -39,4 +42,5 @@ export {
     Copfr,
     Position,
     Cents,
+    N2D3P9,
 }

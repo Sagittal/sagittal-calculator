@@ -11,6 +11,7 @@ const presentComma = (comma: Comma, { mode = "SUMMARY" } = {}) => {
         monzo,
         ratio,
         apotomeSlope,
+        n2d3p9,
     } = comma
 
     if (mode === "DETAILS") {
@@ -22,6 +23,7 @@ const presentComma = (comma: Comma, { mode = "SUMMARY" } = {}) => {
             `monzo:        \t${presentMonzo(monzo)}`,
             `ratio:        \t${presentRatio(ratio)}`,
             `apotome slope:\t${apotomeSlope}`,
+            `N2D3P9:       \t${n2d3p9}`,
         ].join("\n")
     } else {
         return [
@@ -32,6 +34,7 @@ const presentComma = (comma: Comma, { mode = "SUMMARY" } = {}) => {
             presentMonzo(monzo),
             presentRatio(ratio),
             apotomeSlope,
+            n2d3p9,
         ].join("\t")
     }
 }

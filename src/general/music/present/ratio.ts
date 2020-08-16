@@ -1,7 +1,7 @@
 import { Ratio } from "../../math"
 
-const presentRatio = (ratio: Ratio): string =>
-    `${ratio[ 0 ]}/${ratio[ 1 ]}`
+const presentRatio = (ratio: Ratio, { directed }: { directed: boolean } = { directed: true }): string =>
+    `${ratio[ 0 ]}${directed ? "/" : ":"}${ratio[ 1 ]}`
 
 export {
     presentRatio,

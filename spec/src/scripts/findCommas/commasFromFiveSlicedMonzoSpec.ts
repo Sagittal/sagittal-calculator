@@ -26,6 +26,7 @@ describe("computeCommasFromFiveSlicedMonzo", () => {
                 limit: 11,
                 apotomeSlope: -8.464345074135046,
                 fiveRoughSopfr: 61,
+                n2d3p9: 36777.47034143518,
             },
         ]))
     })
@@ -87,6 +88,7 @@ describe("computeCommasFromFiveSlicedMonzo", () => {
                     limit: 11,
                     apotomeSlope: -8.464345074135046,
                     fiveRoughSopfr: 61,
+                    n2d3p9: 36777.47034143518,
                 },
             ]))
 

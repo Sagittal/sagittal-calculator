@@ -15,6 +15,7 @@ describe("analyzeComma", () => {
             "monzo:        \t[ 3 -7 2 0 1 ⟩",
             "ratio:        \t2200/2187",
             "apotome slope:\t-7.631767994281849",
+            "N2D3P9:       \t42.013888888888886",
         ])
     })
 
@@ -31,6 +32,7 @@ describe("analyzeComma", () => {
             "monzo:        \t[ 3 -7 2 0 1 ⟩",
             "ratio:        \t2200/2187",
             "apotome slope:\t-7.631767994281849",
+            "N2D3P9:       \t42.013888888888886",
         ])
     })
 

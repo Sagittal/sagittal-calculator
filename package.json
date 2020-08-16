@@ -20,7 +20,8 @@
     "filter-rottens": "node -r ts-node/register --max-old-space-size=131072 src/scripts/unpopularityMetric/commands/correctGoofs/filterRottens.ts",
     "find-parameter-extremes": "node -r ts-node/register --max-old-space-size=131072 src/scripts/unpopularityMetric/commands/findParameterExtremes.ts",
     "perfect-metrics": "node -r ts-node/register --max-old-space-size=131072 src/scripts/unpopularityMetric/commands/perfectMetrics.ts",
-    "guess-backfill-spread-dynamic-parameters": "node -r ts-node/register --max-old-space-size=131072 src/scripts/unpopularityMetric/commands/correctGoofs/guessBackfillSpreadDynamicParameters.ts"
+    "guess-backfill-spread-dynamic-parameters": "node -r ts-node/register --max-old-space-size=131072 src/scripts/unpopularityMetric/commands/correctGoofs/guessBackfillSpreadDynamicParameters.ts",
+    "popular-ratios": "node -r ts-node/register --max-old-space-size=131072 src/scripts/unpopularityMetric/commands/popularRatios.ts"
   },
   "devDependencies": {
     "@types/jasmine": "^3.5.11",

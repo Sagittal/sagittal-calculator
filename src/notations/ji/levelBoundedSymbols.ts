@@ -3,14 +3,14 @@ import { computeBoundedSymbolPositions } from "./boundedSymbolPositions"
 import { BOUNDS } from "./bounds"
 import { computeInaDistance } from "./inaDistance"
 import { computePositionSymbol } from "./positionSymbol"
-import { Bound, BoundedSymbols, SagittalSymbol } from "./types"
+import { Bound, BoundedSymbols, JiSymbol } from "./types"
 
 const computeLevelBoundedSymbols = (bound: Bound): BoundedSymbols => {
     const { cents, levels, id } = bound
 
     return levels.reduce(
         (levels, level) => {
-            const levelBoundedSymbols: Array<SagittalSymbol | undefined> = computeBoundedSymbolPositions(cents, level).map(computePositionSymbol)
+            const levelBoundedSymbols: Array<JiSymbol | undefined> = computeBoundedSymbolPositions(cents, level).map(computePositionSymbol)
             const levelBoundedSymbolsWithDistance = levelBoundedSymbols.map(symbol => {
                 if (symbol) {
                     const distance: Cents = Math.abs(cents - symbol.primaryComma.cents) as Cents

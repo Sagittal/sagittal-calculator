@@ -1,6 +1,7 @@
 import { Cents, Name, Prime, Ratio } from "../../../../../src/general"
 import { ApotomeSlope, Comma, Monzo, Position, Sopfr } from "../../../../../src/general/music"
 import { presentComma } from "../../../../../src/general/music/present"
+import { N2D3P9 } from "../../../../../src/general/music/types"
 
 describe("presentComma", () => {
     const comma: Comma = {
@@ -11,12 +12,13 @@ describe("presentComma", () => {
         limit: 14 as Prime,
         apotomeSlope: 8.2 as ApotomeSlope,
         fiveRoughSopfr: 13 as Sopfr<5>,
+        n2d3p9: 18.4567 as N2D3P9,
     }
 
     it("formats it in a nice single line in the default summary mode", () => {
         const result = presentComma(comma)
 
-        expect(result).toEqual("6j\t14\t13\t11.2\t[ 0 -1 1 ⟩\t5/4\t8.2")
+        expect(result).toEqual("6j\t14\t13\t11.2\t[ 0 -1 1 ⟩\t5/4\t8.2\t18.4567")
     })
 
     it("can also format it in a details mode with lines with titles for each line", () => {
@@ -29,7 +31,8 @@ describe("presentComma", () => {
             "cents:        \t11.2\n" +
             "monzo:        \t[ 0 -1 1 ⟩\n" +
             "ratio:        \t5/4\n" +
-            "apotome slope:\t8.2",
+            "apotome slope:\t8.2\n" +
+            "N2D3P9:       \t18.4567",
         )
     })
 })

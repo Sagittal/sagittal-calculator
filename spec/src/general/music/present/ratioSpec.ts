@@ -9,4 +9,12 @@ describe("presentRatio", () => {
 
         expect(result).toBe("77/75")
     })
+
+    it("it can show it undirected, with a colon", () => {
+        const ratio = [77, 75] as Ratio
+
+        const result = presentRatio(ratio, { directed: false })
+
+        expect(result).toBe("77:75")
+    })
 })

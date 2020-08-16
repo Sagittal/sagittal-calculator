@@ -1,0 +1,60 @@
+import { Monzo, presentRatio } from "../../../../src/general/music"
+import { computeN2D3P9 } from "../../../../src/general/music/n2d3p9"
+import { N2D3P9 } from "../../../../src/general/music/types"
+import { SYMBOLS } from "../../../../src/notations/ji"
+import { round } from "../../../../src/general"
+import { computeSmileyFromAscii } from "../../../../src/notations/smiley"
+
+describe("computeN2d3p9", () => {
+    it("returns an approximate rank of the ratio's notational popularity", () => {
+        const monzo: Monzo = [-4, -1, 1, 0, 1] as Monzo // 55/48
+
+        const result = computeN2D3P9(monzo)
+
+        expect(result).toBe(16.432098765432094 as N2D3P9)
+    })
+
+    it("flips the ratio so that n > d after 5-roughening", () => {
+        const monzo: Monzo = [-1, 5, 0, 0, -2] as Monzo // 243/242
+
+        const result = computeN2D3P9(monzo)
+
+        expect(result).toBe(36.97222222222222 as N2D3P9)
+    })
+
+    it("another example", () => {
+        const monzo: Monzo = [-99, 99, 0, 0, 2] as Monzo // 242/1
+
+        const result = computeN2D3P9(monzo)
+
+        expect(result).toBe(36.97222222222222 as N2D3P9)
+    })
+
+    it("yet another example", () => {
+        const monzo: Monzo = [99, -99, 2, 2] as Monzo // 1225/1
+
+        const result = computeN2D3P9(monzo)
+
+        expect(result).toBe(59.548611111111114 as N2D3P9)
+    })
+
+    it("yet another 'nother example", () => {
+        const monzo: Monzo = [0, 0, 0, 0, -1, 0, 0, 0, 1] as Monzo // 23/11
+
+        const result = computeN2D3P9(monzo)
+
+        expect(result).toBe(107.75925925925925 as N2D3P9)
+    })
+
+    fit("help me", () => {
+        console.log(`[table]`)
+        console.log(`[tr][th]ratio[/th][th]N2D3P9[/th][th]symbol[/th][/tr]`)
+        SYMBOLS.forEach(symbol => {
+            const n2d3p9 = round(computeN2D3P9(symbol.primaryComma.monzo), 2)
+            if (n2d3p9 < 136) return
+
+            console.log(`[tr][td]${presentRatio(symbol.primaryComma.ratio)}[/td][td]${n2d3p9}[/td][td]${computeSmileyFromAscii(symbol.ascii)}[/td][/tr]`)
+        })
+        console.log(`[/table]`)
+    })
+})

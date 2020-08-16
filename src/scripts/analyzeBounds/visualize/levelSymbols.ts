@@ -1,4 +1,4 @@
-import { Level, LEVELS_SYMBOLS, SagittalSymbol } from "../../../notations"
+import { Level, LEVELS_SYMBOLS, JiSymbol } from "../../../notations"
 import { presentMina } from "../present"
 import { LEVEL_CENTERS } from "./levelHeights"
 import { DOT_SIZE, MINA_OFFSET, SYMBOL_OFFSET } from "./sizes"
@@ -7,8 +7,8 @@ import { computeX } from "./x"
 const visualizeLevelSymbols = () => {
     const levelSymbolElements: string[] = [] as string[]
 
-    const levelsSymbolsEntries = Object.entries(LEVELS_SYMBOLS) as Array<[Level, SagittalSymbol[]]>
-    levelsSymbolsEntries.forEach(([level, levelSymbols]: [Level, SagittalSymbol[]]) => {
+    const levelsSymbolsEntries = Object.entries(LEVELS_SYMBOLS) as Array<[Level, JiSymbol[]]>
+    levelsSymbolsEntries.forEach(([level, levelSymbols]: [Level, JiSymbol[]]) => {
         if (level === Level.INSANE) {
             return
         }

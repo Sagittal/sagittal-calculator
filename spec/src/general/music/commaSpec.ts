@@ -1,5 +1,6 @@
 import { Cents, Name, Prime, Ratio } from "../../../../src/general"
 import { analyzeComma, ApotomeSlope, Monzo, Position, Sopfr } from "../../../../src/general/music"
+import { N2D3P9 } from "../../../../src/general/music/types"
 
 describe("analyzeComma", () => {
     it("returns a bundle of analyzed properties of the comma", () => {
@@ -15,6 +16,7 @@ describe("analyzeComma", () => {
             limit: 11 as Prime,
             apotomeSlope: -8.464345074135046 as ApotomeSlope,
             fiveRoughSopfr: 61 as Sopfr<5>,
+            n2d3p9: 36777.47034143518 as N2D3P9,
         })
     })
 })
