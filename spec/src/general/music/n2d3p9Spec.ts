@@ -45,16 +45,4 @@ describe("computeN2d3p9", () => {
 
         expect(result).toBe(107.75925925925925 as N2D3P9)
     })
-
-    fit("help me", () => {
-        console.log(`[table]`)
-        console.log(`[tr][th]ratio[/th][th]N2D3P9[/th][th]symbol[/th][/tr]`)
-        SYMBOLS.forEach(symbol => {
-            const n2d3p9 = round(computeN2D3P9(symbol.primaryComma.monzo), 2)
-            if (n2d3p9 < 136) return
-
-            console.log(`[tr][td]${presentRatio(symbol.primaryComma.ratio)}[/td][td]${n2d3p9}[/td][td]${computeSmileyFromAscii(symbol.ascii)}[/td][/tr]`)
-        })
-        console.log(`[/table]`)
-    })
 })
