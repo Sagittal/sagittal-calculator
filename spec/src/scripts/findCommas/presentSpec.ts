@@ -1,7 +1,7 @@
 import { Cents, Name, Prime, Ratio } from "../../../../src/general"
 import { ApotomeSlope, Comma, Monzo, Position, Sopfr } from "../../../../src/general/music"
-import { presentCommas } from "../../../../src/scripts/findCommas/present"
 import { N2D3P9 } from "../../../../src/general/music/types"
+import { presentCommas } from "../../../../src/scripts/findCommas/present"
 
 describe("presentCommas", () => {
     it("aligns each comma output to the same width per column", () => {

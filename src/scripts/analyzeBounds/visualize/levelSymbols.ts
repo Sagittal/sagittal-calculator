@@ -1,4 +1,4 @@
-import { Level, LEVELS_SYMBOLS, JiSymbol } from "../../../notations"
+import { JiSymbol, Level, LEVELS_SYMBOLS } from "../../../notations"
 import { presentMina } from "../present"
 import { LEVEL_CENTERS } from "./levelHeights"
 import { DOT_SIZE, MINA_OFFSET, SYMBOL_OFFSET } from "./sizes"

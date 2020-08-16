@@ -1,9 +1,9 @@
 import { Cents, Id, Name, Position, Prime, Proportion, Ratio, Sopfr } from "../../../../src/general"
 import { ApotomeSlope, Monzo } from "../../../../src/general/music"
-import { computeLevelBoundedSymbols } from "../../../../src/notations/ji/levelBoundedSymbols"
-import { Bound, Level, Mina, JiSymbol } from "../../../../src/notations/ji"
 import { N2D3P9 } from "../../../../src/general/music/types"
 import { SymbolLongAscii } from "../../../../src/notations"
+import { Bound, JiSymbol, Level, Mina } from "../../../../src/notations/ji"
+import { computeLevelBoundedSymbols } from "../../../../src/notations/ji/levelBoundedSymbols"
 import { SymbolUnicode } from "../../../../src/notations/types"
 
 describe("computeLevelBoundedSymbols", () => {

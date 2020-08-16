@@ -1,9 +1,9 @@
 import { Cents, Id, Name, Position, Prime, Ratio, Sopfr } from "../../../../src/general"
 import { ApotomeSlope, Monzo } from "../../../../src/general/music"
-import { computeSecondaryCommaZone } from "../../../../src/notations/ji/secondaryCommaZone"
-import { Level, Mina, JiSymbol } from "../../../../src/notations/ji"
 import { N2D3P9 } from "../../../../src/general/music/types"
 import { SymbolLongAscii } from "../../../../src/notations"
+import { JiSymbol, Level, Mina } from "../../../../src/notations/ji"
+import { computeSecondaryCommaZone } from "../../../../src/notations/ji/secondaryCommaZone"
 import { SymbolUnicode } from "../../../../src/notations/types"
 
 describe("secondaryCommaZone", () => {

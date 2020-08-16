@@ -1,19 +1,22 @@
-import { computeTrimmedMonzo, invertMonzo, Monzo, presentRatio } from "../../../general/music"
-import { JiSymbol } from "../../../notations"
-import { SYMBOLS } from "../../../notations/ji"
-import { computeRoughNumberMonzo } from "../../../general/music/rough"
-import { deepEquals } from "../../../general/code"
-import { computeSmileyFromAscii } from "../../../notations/smiley"
-import { N2D3P9 } from "../../../general/music/types"
-import { computeCentsFromRatio } from "../../../general/music/centsFromRatio"
-import { computeRatioFromMonzo } from "../../../general/music/ratioFromMonzo"
-import { computeN2D3P9 } from "../../../general/music/n2d3p9"
-import { round } from "../../../general"
+import {
+    computeCentsFromRatio,
+    computeN2D3P9,
+    computeRatioFromMonzo,
+    computeRoughNumberMonzo,
+    computeTrimmedMonzo,
+    deepEquals,
+    invertMonzo,
+    Monzo,
+    N2D3P9,
+    presentRatio,
+    round,
+} from "../../../general"
+import { computeSmileyFromAscii, JI_SYMBOLS, JiSymbol } from "../../../notations"
 
 const computeNotatingSymbols = (monzo: Monzo) => { // TODO: this might be handy to just have available outside of here, tested and such
     const notatingSymbols: JiSymbol[] = []
 
-    SYMBOLS.forEach(symbol => {
+    JI_SYMBOLS.forEach(symbol => {
         const fiveRoughPrimaryCommaMonzo = computeRoughNumberMonzo(symbol.primaryComma.monzo, 5)
 
         if (deepEquals(monzo, fiveRoughPrimaryCommaMonzo) || deepEquals(monzo, invertMonzo(fiveRoughPrimaryCommaMonzo))) {

@@ -1,9 +1,8 @@
-import { ApotomeSlope, Cents, Id, Monzo, Name, Position, Prime, Ratio, Sopfr } from "../../general"
-import { Level, Mina, JiSymbol } from "./types"
-import { N2D3P9 } from "../../general/music/types"
+import { ApotomeSlope, Cents, Id, Monzo, N2D3P9, Name, Position, Prime, Ratio, Sopfr } from "../../general"
 import { SymbolLongAscii, SymbolUnicode } from "../types"
+import { JiSymbol, Level, Mina } from "./types"
 
-const SYMBOLS: JiSymbol[] = [
+const JI_SYMBOLS: JiSymbol[] = [
     {
         id: 0 as Id<JiSymbol>,
         ascii: "|" as SymbolLongAscii,
@@ -2689,5 +2688,5 @@ const SYMBOLS: JiSymbol[] = [
 ]
 
 export {
-    SYMBOLS,
+    JI_SYMBOLS,
 }

@@ -2,12 +2,12 @@ import { Name, Prime } from "../types"
 import { computeApotomeSlope } from "./apotomeSlope"
 import { computeCentsFromRatio } from "./centsFromRatio"
 import { computeGpf } from "./gpf"
+import { computeN2D3P9 } from "./n2d3p9"
 import { computeCommaName } from "./name"
 import { computeRatioFromMonzo } from "./ratioFromMonzo"
 import { computeRoughNumberMonzo } from "./rough"
 import { computeSopfr } from "./sopfr"
 import { Comma, Monzo, N2D3P9, Position, Sopfr } from "./types"
-import { computeN2D3P9 } from "./n2d3p9"
 
 const analyzeComma = (monzo: Monzo): Comma => {
     const apotomeSlope = computeApotomeSlope(monzo)

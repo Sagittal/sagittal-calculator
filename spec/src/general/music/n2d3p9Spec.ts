@@ -1,9 +1,4 @@
-import { Monzo, presentRatio } from "../../../../src/general/music"
-import { computeN2D3P9 } from "../../../../src/general/music/n2d3p9"
-import { N2D3P9 } from "../../../../src/general/music/types"
-import { SYMBOLS } from "../../../../src/notations/ji"
-import { round } from "../../../../src/general"
-import { computeSmileyFromAscii } from "../../../../src/notations/smiley"
+import { computeN2D3P9, Monzo, N2D3P9 } from "../../../../src/general/music"
 
 describe("computeN2d3p9", () => {
     it("returns an approximate rank of the ratio's notational popularity", () => {
@@ -11,7 +6,7 @@ describe("computeN2d3p9", () => {
 
         const result = computeN2D3P9(monzo)
 
-        expect(result).toBe(16.432098765432094 as N2D3P9)
+        expect(result).toBe(16.805555555555557 as N2D3P9)
     })
 
     it("flips the ratio so that n > d after 5-roughening", () => {

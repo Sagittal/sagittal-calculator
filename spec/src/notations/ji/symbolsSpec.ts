@@ -3,11 +3,11 @@ import { computeMonzoFromRatio } from "../../../../src/general/music"
 import { computeCentsFromRatio } from "../../../../src/general/music/centsFromRatio"
 import { computeCommaName } from "../../../../src/general/music/name"
 import { computeRatioFromMonzo } from "../../../../src/general/music/ratioFromMonzo"
-import { SYMBOLS } from "../../../../src/notations/ji"
+import { JI_SYMBOLS } from "../../../../src/notations/ji"
 
 describe("SYMBOLS", () => {
     it("is the case that the cents for each symbol agrees with its monzo", () => {
-        SYMBOLS.forEach(symbol => {
+        JI_SYMBOLS.forEach(symbol => {
             const ratio = computeRatioFromMonzo(symbol.primaryComma.monzo)
             const cents = computeCentsFromRatio(ratio)
 
@@ -16,7 +16,7 @@ describe("SYMBOLS", () => {
     })
 
     it("is the case that the name for each symbol agrees with its monzo", () => {
-        SYMBOLS.forEach(symbol => {
+        JI_SYMBOLS.forEach(symbol => {
             const name = computeCommaName(symbol.primaryComma.monzo)
 
             expect(name).toBe(symbol.primaryComma.name)
@@ -24,7 +24,7 @@ describe("SYMBOLS", () => {
     })
 
     it("is the case that the ratio for each symbol agrees with its monzo", () => {
-        SYMBOLS.forEach(symbol => {
+        JI_SYMBOLS.forEach(symbol => {
             const monzo = computeMonzoFromRatio(symbol.primaryComma.ratio)
 
             expect(monzo).toEqual(symbol.primaryComma.monzo)

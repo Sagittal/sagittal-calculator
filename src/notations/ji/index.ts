@@ -11,13 +11,13 @@ import { LEVELS } from "./levels"
 import { LEVELS_BOUNDS } from "./levelsBounds"
 import { LEVELS_SYMBOLS } from "./levelsSymbols"
 import { computeSizeCategoryBounds } from "./sizeCategoryBounds"
-import { SYMBOLS } from "./symbols"
+import { JI_SYMBOLS } from "./symbols"
 
-import { Bound, BoundedSymbol, BoundedSymbols, Level, Mina, JiSymbol } from "./types"
+import { Bound, BoundedSymbol, BoundedSymbols, JiSymbol, Level, Mina } from "./types"
 
 export {
     BOUNDS,
-    SYMBOLS,
+    JI_SYMBOLS,
     JiSymbol,
     Bound,
     Level,

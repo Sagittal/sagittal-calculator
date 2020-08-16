@@ -1,5 +1,5 @@
 import { Cents } from "../../general"
-import { SYMBOLS } from "./symbols"
+import { JI_SYMBOLS } from "./symbols"
 import { JiSymbol } from "./types"
 
 const computePositionSymbol = (position: Cents | undefined): JiSymbol | undefined => {
@@ -7,7 +7,7 @@ const computePositionSymbol = (position: Cents | undefined): JiSymbol | undefine
         return undefined
     }
 
-    return SYMBOLS.find(symbol =>
+    return JI_SYMBOLS.find(symbol =>
         symbol.primaryComma.cents === position)
 }
 

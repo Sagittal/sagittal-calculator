@@ -8,18 +8,20 @@ import {
     computeInaMidpoints,
     computeLevelCommaMeans,
     computeSizeCategoryBounds,
+    JI_SYMBOLS,
+    JiSymbol,
     Level,
+    LEVEL_BOUNDED_SYMBOLS,
+    LEVEL_EDAS,
     LEVELS,
     LEVELS_BOUNDS,
     LEVELS_SYMBOLS,
-    LEVEL_BOUNDED_SYMBOLS,
-    LEVEL_EDAS,
     MAXIMUM_POSITION,
     Mina,
-    JiSymbol,
     TINA,
     unicodeFromAscii,
 } from "./ji"
+import { computeSmileyFromAscii } from "./smiley"
 import { SymbolLongAscii } from "./types"
 
 export {
@@ -44,4 +46,6 @@ export {
     computeInaMidpoints,
     computeLevelCommaMeans,
     computeSizeCategoryBounds,
+    JI_SYMBOLS,
+    computeSmileyFromAscii,
 }

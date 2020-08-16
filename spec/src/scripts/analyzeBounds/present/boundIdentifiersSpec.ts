@@ -1,12 +1,12 @@
 import { Cents, Id, Name, Position, Prime, Proportion, Ratio, Sopfr } from "../../../../../src/general"
 import { ApotomeSlope, Monzo } from "../../../../../src/general/music"
-import { INA_SIZES } from "../../../../../src/notations/ji/intervals"
-import { Bound, JiSymbol, Level, Mina } from "../../../../../src/notations/ji"
-import { extractBoundIdentifiers } from "../../../../../src/scripts/analyzeBounds/present/boundIdentifiers"
-import { BoundIdentifiers } from "../../../../../src/scripts/analyzeBounds/present/types"
 import { N2D3P9 } from "../../../../../src/general/music/types"
 import { SymbolLongAscii } from "../../../../../src/notations"
+import { Bound, JiSymbol, Level, Mina } from "../../../../../src/notations/ji"
+import { INA_SIZES } from "../../../../../src/notations/ji/intervals"
 import { SymbolUnicode } from "../../../../../src/notations/types"
+import { extractBoundIdentifiers } from "../../../../../src/scripts/analyzeBounds/present/boundIdentifiers"
+import { BoundIdentifiers } from "../../../../../src/scripts/analyzeBounds/present/types"
 
 describe("extractBoundIdentifiers", () => {
     const bound = {

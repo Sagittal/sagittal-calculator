@@ -2,14 +2,14 @@ import { Prime } from "../../../../src/general"
 import { Exponent } from "../../../../src/general/math"
 import { ApotomeSlope, Copfr, Sopfr } from "../../../../src/general/music"
 import { computeCommaName } from "../../../../src/general/music/name"
-import { SYMBOLS } from "../../../../src/notations/ji"
+import { JI_SYMBOLS } from "../../../../src/notations/ji"
 import { computeSecondaryCommaZone } from "../../../../src/notations/ji/secondaryCommaZone"
 import { computeCommas } from "../../../../src/scripts/findCommas/commas"
 import { presentCommas } from "../../../../src/scripts/findCommas/present"
 
 describe("verifying primary commas", () => {
     xit("checks that every symbol's primary comma is its best-ranked comma in its secondary comma zone according to our metric", () => {
-        SYMBOLS.forEach(symbol => {
+        JI_SYMBOLS.forEach(symbol => {
             const commaName = computeCommaName(symbol.primaryComma.monzo)
 
             console.log(`\n\n${symbol.ascii} ${commaName}\n\n`)

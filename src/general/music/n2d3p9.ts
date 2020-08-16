@@ -1,12 +1,12 @@
-import { Monzo, N2D3P9 } from "./types"
-import { computeRoughNumberMonzo } from "./rough"
+import { PRIMES } from "../constants"
 import { Exponent } from "../math"
 import { Prime } from "../types"
-import { PRIMES } from "../constants"
-import { computeGpf } from "./gpf"
 import { computeCentsFromRatio } from "./centsFromRatio"
-import { computeRatioFromMonzo } from "./ratioFromMonzo"
+import { computeGpf } from "./gpf"
 import { invertMonzo } from "./invertMonzo"
+import { computeRatioFromMonzo } from "./ratioFromMonzo"
+import { computeRoughNumberMonzo } from "./rough"
+import { Monzo, N2D3P9 } from "./types"
 
 const computeN2D3P9 = (monzo: Monzo): N2D3P9 => {
     let fiveRoughMonzo = computeRoughNumberMonzo(monzo, 5)

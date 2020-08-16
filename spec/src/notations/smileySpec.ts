@@ -1,6 +1,6 @@
 import { SymbolLongAscii } from "../../../src/notations"
-import { SymbolSmiley } from "../../../src/notations/types"
 import { computeSmileyFromAscii } from "../../../src/notations/smiley"
+import { SymbolSmiley } from "../../../src/notations/types"
 
 describe("computeSmileyFromAscii", () => {
     it("converts ascii to smiley code", () => {
