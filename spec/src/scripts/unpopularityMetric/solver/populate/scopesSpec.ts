@@ -93,7 +93,7 @@ describe("populateScopes", () => {
                 { // SOAPFAR
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
                 },
-                { // LOG BASE A_AS_COEFFICIENT OF N
+                { // LOG BASE A OF N
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
                     [ Parameter.A_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_LOGARITHM_BASE ],
                 },
@@ -149,7 +149,7 @@ describe("populateScopes", () => {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
                 },
-                { // LOG BASE A_AS_COEFFICIENT OF N
+                { // LOG BASE A OF N
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
                     [ Parameter.A_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_LOGARITHM_BASE ],
                 },
@@ -190,7 +190,7 @@ describe("populateScopes", () => {
                 { // COAPFAR
                     [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
                 },
-                { // LOG BASE A_AS_COEFFICIENT OF N
+                { // LOG BASE A OF N
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
                     [ Parameter.A_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_LOGARITHM_BASE ],
                 },
@@ -225,7 +225,7 @@ describe("populateScopes", () => {
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
                     [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
                 },
-                { // LOG BASE A_AS_COEFFICIENT OF N
+                { // LOG BASE A OF N
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
                     [ Parameter.A_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_LOGARITHM_BASE ],
                 },
@@ -249,7 +249,7 @@ describe("populateScopes", () => {
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
                     [ Parameter.MAX ]: INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],
                 },
-                { // LOG BASE A_AS_COEFFICIENT OF N
+                { // LOG BASE A OF N
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
                     [ Parameter.A_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_LOGARITHM_BASE ],
                 },
@@ -258,11 +258,11 @@ describe("populateScopes", () => {
             // 1
             [
                 {},
-                { // LOG BASE A_AS_COEFFICIENT OF N
+                { // LOG BASE A OF N
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
                     [ Parameter.A_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_LOGARITHM_BASE ],
                 },
-                { // LOG BASE A_AS_COEFFICIENT OF N
+                { // LOG BASE A OF N
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
                     [ Parameter.A_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_LOGARITHM_BASE ],
                 },
@@ -964,7 +964,7 @@ describe("populateScopes", () => {
                 },
             ],
 
-            // LOG BASE A_AS_COEFFICIENT OF N (25)
+            // LOG BASE A OF N (25)
             [
                 {},
                 {
@@ -1896,7 +1896,7 @@ describe("populateScopes", () => {
                 },
             ],
 
-            // LOG BASE A_AS_COEFFICIENT OF N (25)
+            // LOG BASE A OF N (25)
             [
                 {
                     [ Parameter.B ]: INITIAL_PARAMETER_SCOPES[ Parameter.B ],

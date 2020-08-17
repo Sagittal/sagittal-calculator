@@ -12,6 +12,7 @@ const computeCommas = (options: ComputeCommasOptions) => {
         maximumApotomeSlope,
         maximumPrimeLimit,
         maximumAbsoluteThreeExponent,
+        maximumN2D3P9,
         fiveSlicedMonzo,
         sortKey,
     } = options
@@ -35,6 +36,7 @@ const computeCommas = (options: ComputeCommasOptions) => {
                     upperBound,
                     maximumApotomeSlope,
                     maximumAbsoluteThreeExponent,
+                    maximumN2D3P9,
                 },
             ),
         )

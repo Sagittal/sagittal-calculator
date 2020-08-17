@@ -55,9 +55,10 @@ import {
     SIZE_CATEGORY_BOUNDS,
     Sopfr,
 } from "./music"
-import { alignTable } from "./table"
+import { alignTable } from "./textTable"
 import { formatTime } from "./time"
 import { Count, Id, Index, Name, Prime, Proportion, Resolution, Span, Sum, Unit } from "./types"
+import { forumTable } from "./forumTable"
 
 export {
     Cents,
@@ -123,4 +124,5 @@ export {
     computeCentsFromRatio,
     computeRatioFromMonzo,
     computeN2D3P9,
+    forumTable,
 }

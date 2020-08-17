@@ -11,7 +11,7 @@ import {
     presentRatio,
     round,
 } from "../../../general"
-import { computeSmileyFromAscii, JI_SYMBOLS, JiSymbol } from "../../../notations"
+import { computeSmileyFromAscii, JI_SYMBOLS, JiSymbol, LEVELS } from "../../../notations"
 
 const computeNotatingSymbols = (monzo: Monzo) => { // TODO: this might be handy to just have available outside of here, tested and such
     const notatingSymbols: JiSymbol[] = []
@@ -66,12 +66,13 @@ primeExponentRanges[ 0 ].forEach(five => {
                                                     const n2d3p9 = round(computeN2D3P9(monzo), 2)
 
                                                     if (n2d3p9 < 136) {
-                                                        const ratio = presentRatio(computeRatioFromMonzo(monzo))
+                                                        const ratio = presentRatio(computeRatioFromMonzo(monzo), { directed: false })
                                                         const notatingSymbols = computeNotatingSymbols(monzo)
                                                         const smileys = notatingSymbols.map(symbol => computeSmileyFromAscii(symbol.ascii)).join(" ")
+                                                        const levels = notatingSymbols.map(symbol => LEVELS.indexOf(symbol.introducingLevel) + 1)
 
                                                         results.push({
-                                                            output: `[tr][td]${ratio}[/td][td]${n2d3p9}[/td][td]${smileys}[/td][/tr]`,
+                                                            output: `[tr][td]${ratio}[/td][td]${n2d3p9}[/td][td]${smileys}[/td][td]${levels}[/td][/tr]`,
                                                             n2d3p9,
                                                         })
                                                     }
@@ -95,7 +96,7 @@ results.sort((result, nextResult) =>
     result.n2d3p9 - nextResult.n2d3p9)
 
 console.log(`[table]`)
-console.log(`[tr][th]ratio[/th][th]N2D3P9[/th][th]symbol[/th][/tr]`)
+console.log(`[tr][th]ratio[/th][th]N2D3P9[/th][th]symbol[/th][th]levels[/th][/tr]`)
 results.forEach(result => {
     console.log(result.output)
 })

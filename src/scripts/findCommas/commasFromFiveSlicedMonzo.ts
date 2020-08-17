@@ -7,6 +7,7 @@ const computeCommasFromFiveSlicedMonzo = (fiveSlicedMonzo: Monzo<5>, options: Co
         upperBound,
         maximumAbsoluteThreeExponent,
         maximumApotomeSlope = Infinity,             // optional
+        maximumN2D3P9 = Infinity,                   // optional
     } = options || {}
 
     if (typeof lowerBound === "undefined") {
@@ -29,6 +30,10 @@ const computeCommasFromFiveSlicedMonzo = (fiveSlicedMonzo: Monzo<5>, options: Co
             const analyzedComma = analyzeComma(monzo)
 
             if (Math.abs(analyzedComma.apotomeSlope) > maximumApotomeSlope) {
+                return
+            }
+
+            if (analyzedComma.n2d3p9 > maximumN2D3P9) {
                 return
             }
 

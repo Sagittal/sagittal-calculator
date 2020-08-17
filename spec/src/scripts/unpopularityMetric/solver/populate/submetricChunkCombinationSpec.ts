@@ -14,7 +14,7 @@ describe("populateScopesForSubmetricChunkCombination", () => {
         const submetricChunkCombination: Combination<SubmetricChunk> = [
             // (the "all submetrics" bin, call it "AB")
             {},
-            // A_AS_COEFFICIENT
+            // A
             {
                 [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
                 [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
@@ -64,7 +64,7 @@ describe("populateScopesForSubmetricChunkCombination", () => {
         const expectedResult = [
             // 1
 
-            // AB i ii A_AS_COEFFICIENT B
+            // AB i ii A B
             [
                 {
                     [ Parameter.A_AS_COEFFICIENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_COEFFICIENT ],
@@ -79,7 +79,7 @@ describe("populateScopesForSubmetricChunkCombination", () => {
                     [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
                 },
             ],
-            // AB ii A_AS_COEFFICIENT i B
+            // AB ii A i B
             [
                 {
                     [ Parameter.K_AS_COEFFICIENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_COEFFICIENT ],
@@ -94,7 +94,7 @@ describe("populateScopesForSubmetricChunkCombination", () => {
                     [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
                 },
             ],
-            // AB ii A_AS_COEFFICIENT B i
+            // AB ii A B i
             [
                 {
                     [ Parameter.K_AS_COEFFICIENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_COEFFICIENT ],
@@ -103,50 +103,6 @@ describe("populateScopesForSubmetricChunkCombination", () => {
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
-                },
-                {
-                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
-                    [ Parameter.A_AS_COEFFICIENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_COEFFICIENT ],
-                },
-            ],
-
-            // AB i A_AS_COEFFICIENT ii B
-            [
-                {
-                    [ Parameter.A_AS_COEFFICIENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_COEFFICIENT ],
-                },
-                {
-                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
-                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
-                    [ Parameter.K_AS_COEFFICIENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_COEFFICIENT ],
-                    [ Parameter.K_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_LOGARITHM_BASE ],
-                },
-                {
-                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
-                },
-            ],
-            // AB A_AS_COEFFICIENT i ii B
-            [
-                {},
-                {
-                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
-                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
-                    [ Parameter.A_AS_COEFFICIENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_COEFFICIENT ],
-                    [ Parameter.K_AS_COEFFICIENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_COEFFICIENT ],
-                    [ Parameter.K_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_LOGARITHM_BASE ],
-                },
-                {
-                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
-                },
-            ],
-            // AB A_AS_COEFFICIENT ii B i
-            [
-                {},
-                {
-                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
-                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
-                    [ Parameter.K_AS_COEFFICIENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_COEFFICIENT ],
-                    [ Parameter.K_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_LOGARITHM_BASE ],
                 },
                 {
                     [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
@@ -154,7 +110,51 @@ describe("populateScopesForSubmetricChunkCombination", () => {
                 },
             ],
 
-            // AB i A_AS_COEFFICIENT B ii
+            // AB i A ii B
+            [
+                {
+                    [ Parameter.A_AS_COEFFICIENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_COEFFICIENT ],
+                },
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.K_AS_COEFFICIENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_COEFFICIENT ],
+                    [ Parameter.K_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_LOGARITHM_BASE ],
+                },
+                {
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                },
+            ],
+            // AB A i ii B
+            [
+                {},
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.A_AS_COEFFICIENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_COEFFICIENT ],
+                    [ Parameter.K_AS_COEFFICIENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_COEFFICIENT ],
+                    [ Parameter.K_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_LOGARITHM_BASE ],
+                },
+                {
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                },
+            ],
+            // AB A ii B i
+            [
+                {},
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.K_AS_COEFFICIENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_COEFFICIENT ],
+                    [ Parameter.K_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_LOGARITHM_BASE ],
+                },
+                {
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                    [ Parameter.A_AS_COEFFICIENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_COEFFICIENT ],
+                },
+            ],
+
+            // AB i A B ii
             [
                 {
                     [ Parameter.A_AS_COEFFICIENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_COEFFICIENT ],
@@ -169,7 +169,7 @@ describe("populateScopesForSubmetricChunkCombination", () => {
                     [ Parameter.K_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_LOGARITHM_BASE ],
                 },
             ],
-            // AB A_AS_COEFFICIENT i B ii
+            // AB A i B ii
             [
                 {},
                 {
@@ -183,7 +183,7 @@ describe("populateScopesForSubmetricChunkCombination", () => {
                     [ Parameter.K_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_LOGARITHM_BASE ],
                 },
             ],
-            // AB A_AS_COEFFICIENT B i ii
+            // AB A B i ii
             [
                 {},
                 {
@@ -200,7 +200,7 @@ describe("populateScopesForSubmetricChunkCombination", () => {
 
             // 2
 
-            // AB i ii A_AS_COEFFICIENT B
+            // AB i ii A B
             [
                 {
                     [ Parameter.MODIFIED_COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.MODIFIED_COUNT ],
@@ -214,7 +214,7 @@ describe("populateScopesForSubmetricChunkCombination", () => {
                     [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
                 },
             ],
-            // AB ii A_AS_COEFFICIENT i B
+            // AB ii A i B
             [
                 {
                     [ Parameter.MODIFIED_COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.MODIFIED_COUNT ],
@@ -228,7 +228,7 @@ describe("populateScopesForSubmetricChunkCombination", () => {
                     [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
                 },
             ],
-            // AB ii A_AS_COEFFICIENT B i
+            // AB ii A B i
             [
                 {
                     [ Parameter.MODIFIED_COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.MODIFIED_COUNT ],
@@ -243,7 +243,7 @@ describe("populateScopesForSubmetricChunkCombination", () => {
                 },
             ],
 
-            // AB i A_AS_COEFFICIENT ii B
+            // AB i A ii B
             [
                 {
                     [ Parameter.MODIFIED_COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.MODIFIED_COUNT ],
@@ -257,7 +257,7 @@ describe("populateScopesForSubmetricChunkCombination", () => {
                     [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
                 },
             ],
-            // AB A_AS_COEFFICIENT i ii B
+            // AB A i ii B
             [
                 {},
                 {
@@ -270,7 +270,7 @@ describe("populateScopesForSubmetricChunkCombination", () => {
                     [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
                 },
             ],
-            // AB A_AS_COEFFICIENT ii B i
+            // AB A ii B i
             [
                 {},
                 {
@@ -284,7 +284,7 @@ describe("populateScopesForSubmetricChunkCombination", () => {
                 },
             ],
 
-            // AB i A_AS_COEFFICIENT B ii
+            // AB i A B ii
             [
                 {
                     [ Parameter.MODIFIED_COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.MODIFIED_COUNT ],
@@ -298,7 +298,7 @@ describe("populateScopesForSubmetricChunkCombination", () => {
                     [ Parameter.J_AS_COEFFICIENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.J_AS_COEFFICIENT ],
                 },
             ],
-            // AB A_AS_COEFFICIENT i B ii
+            // AB A i B ii
             [
                 {},
                 {
@@ -311,7 +311,7 @@ describe("populateScopesForSubmetricChunkCombination", () => {
                     [ Parameter.J_AS_COEFFICIENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.J_AS_COEFFICIENT ],
                 },
             ],
-            // AB A_AS_COEFFICIENT B i ii
+            // AB A B i ii
             [
                 {},
                 {

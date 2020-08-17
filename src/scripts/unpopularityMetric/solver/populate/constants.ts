@@ -142,7 +142,7 @@ const NO_USELESS_SUBMETRIC_CHUNKS: SubmetricChunk[] = [
         [ Parameter.WITHOUT_REPETITION ]: NO_USELESS_INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
         [ Parameter.MAX ]: NO_USELESS_INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],
     },
-    { // LOG BASE A_AS_COEFFICIENT OF N http://forum.sagittal.org/viewtopic.php?p=2076#p2076
+    { // LOG BASE A OF N http://forum.sagittal.org/viewtopic.php?p=2076#p2076
         [ Parameter.SUM ]: NO_USELESS_INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
         [ Parameter.A_AS_LOGARITHM_BASE ]: NO_USELESS_INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_LOGARITHM_BASE ],
     },
@@ -167,7 +167,7 @@ const SUBMETRIC_CHUNKS: SubmetricChunk[] = [
         [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
         [ Parameter.MAX ]: INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],
     },
-    { // LOG BASE A_AS_COEFFICIENT OF N http://forum.sagittal.org/viewtopic.php?p=2076#p2076
+    { // LOG BASE A OF N http://forum.sagittal.org/viewtopic.php?p=2076#p2076
         [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
         [ Parameter.A_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_LOGARITHM_BASE ],
     },
