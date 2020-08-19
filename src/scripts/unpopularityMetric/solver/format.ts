@@ -6,6 +6,7 @@ const formatBestMetrics = () => {
     return JSON.stringify(presentedBestMetrics, undefined, 4)
         .replace(/\"sumOfSquares\"/g, "sumOfSquares")
         .replace(/\"submetrics\"/g, "submetrics")
+        .replace(/\"name\"/g, "name")
         .replace(/\"weightAsCoefficient\"/g, "[ Parameter.WEIGHT_AS_COEFFICIENT ]")
         .replace(/\"weightAsLogarithmBase\"/g, "[ Parameter.WEIGHT_AS_LOGARITHM_BASE ]")
         .replace(/\"weightAsPowerExponent\"/g, "[ Parameter.WEIGHT_AS_POWER_EXPONENT ]")

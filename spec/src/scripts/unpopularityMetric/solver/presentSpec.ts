@@ -11,6 +11,7 @@ describe("presentBestMetrics", () => {
             "{sum}" as MetricName,
             {
                 sumOfSquares: 0.013 as SumOfSquares,
+                name: "" as MetricName,
                 submetrics: [
                     {
                         [ Parameter.SUM ]: true,
@@ -22,6 +23,7 @@ describe("presentBestMetrics", () => {
             "{count}" as MetricName,
             {
                 sumOfSquares: 0.012 as SumOfSquares,
+                name: "" as MetricName,
                 submetrics: [
                     {
                         [ Parameter.COUNT ]: true,
@@ -33,6 +35,7 @@ describe("presentBestMetrics", () => {
             "{max}" as MetricName,
             {
                 sumOfSquares: 0.014 as SumOfSquares,
+                name: "" as MetricName,
                 submetrics: [
                     {
                         [ Parameter.MAX ]: true,
@@ -46,6 +49,7 @@ describe("presentBestMetrics", () => {
         expect(JSON.stringify(result)).toEqual(JSON.stringify({
             "{max}": {
                 sumOfSquares: 0.014 as SumOfSquares,
+                name: "",
                 submetrics: [
                     {
                         [ Parameter.MAX ]: true,
@@ -54,6 +58,7 @@ describe("presentBestMetrics", () => {
             },
             "{sum}": {
                 sumOfSquares: 0.013 as SumOfSquares,
+                name: "",
                 submetrics: [
                     {
                         [ Parameter.SUM ]: true,
@@ -62,6 +67,7 @@ describe("presentBestMetrics", () => {
             },
             "{count}": {
                 sumOfSquares: 0.012 as SumOfSquares,
+                name: "",
                 submetrics: [
                     {
                         [ Parameter.COUNT ]: true,

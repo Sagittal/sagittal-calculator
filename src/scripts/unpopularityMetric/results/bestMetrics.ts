@@ -7,6 +7,7 @@ import { Parameter, Submetric } from "../sumOfSquares"
 // Metric to beat: SoPF>3, or sopfr
 const sopfgtt = {
     sumOfSquares: 0.014206086754420309 as SumOfSquares,
+    name: "{sum}",
     submetrics: [
         {
             [ Parameter.SUM ]: true,
@@ -21,6 +22,7 @@ const sopfgtt = {
 // http://forum.sagittal.org/viewtopic.php?p=1944#p1944
 const withPrimeLimit = {
     sumOfSquares: 0.006127818362694095,
+    name: "{aAsLogarithmBase,kAsCoefficient,sum,useNuminator,w,y},{max,useNuminator,weightAsCoefficient,withoutRepetition}",
     submetrics: [
         {
             [ Parameter.K_AS_COEFFICIENT ]: 0.638243216,
@@ -46,6 +48,7 @@ const withPrimeLimit = {
 // http://forum.sagittal.org/viewtopic.php?p=1946#p1946
 const lowestEver = {
     sumOfSquares: 0.004260809896143936,
+    name: "{aAsLogarithmBase,kAsCoefficient,sum,useNuminator,w,y},{count,useNuminator,weightAsCoefficient}",
     submetrics: [
         {
             [ Parameter.K_AS_COEFFICIENT ]: 0.038,
@@ -71,6 +74,7 @@ const lowestEver = {
 // 0.00473
 const likeLowestEverButWithZeroK = {
     sumOfSquares: 0.004732527573659666,
+    name: "{aAsLogarithmBase,kAsCoefficient,sum,useNuminator,w,y},{count,useNuminator,weightAsCoefficient}",
     submetrics: [
         {
             [ Parameter.K_AS_COEFFICIENT ]: 0,
@@ -90,6 +94,7 @@ const likeLowestEverButWithZeroK = {
 // 0.00622
 const likeLowestEverButWithZeroC = {
     sumOfSquares: 0.006222012568306695,
+    name: "{aAsLogarithmBase,kAsCoefficient,sum,useNuminator,w,y}",
     submetrics: [
         {
             [ Parameter.K_AS_COEFFICIENT ]: 0.635,
@@ -109,6 +114,7 @@ const likeLowestEverButWithZeroC = {
 // http://forum.sagittal.org/viewtopic.php?p=1962#p1962
 const notTwoChunkByCurrentDefinitionMcopfr = {
     sumOfSquares: 0.007205996505476978,
+    name: "{aAsLogarithmBase,kAsCoefficient,sum,useNuminator,w,y},{count,jAsCoefficient,modifiedCount,useNuminator}",
     submetrics: [
         {
             [ Parameter.K_AS_COEFFICIENT ]: 0,
@@ -134,6 +140,7 @@ const notTwoChunkByCurrentDefinitionMcopfr = {
 // http://forum.sagittal.org/viewtopic.php?p=1964#p1964
 const notThreeChunkByCurrentDefinitionMcopfr = {
     sumOfSquares: 0.0073967019283224696,
+    name: "{aAsLogarithmBase,kAsCoefficient,sum,useNuminator,w,y},{count,jAsCoefficient,modifiedCount,useNuminator,y}",
     submetrics: [
         {
             [ Parameter.K_AS_COEFFICIENT ]: 0,
@@ -166,6 +173,7 @@ requires this hack to be added to `submetricAntivotes.js` to handle the "h" para
  */
 const notFourChunkByCurrentDefinitionMcopfr = {
     sumOfSquares: 0.008200108887640998,
+    name: "{aAsLogarithmBase,kAsCoefficient,sum,useNuminator,w,y},{count,jAsCoefficient,modifiedCount,useNuminator,y}",
     submetrics: [
         {
             [ Parameter.K_AS_COEFFICIENT ]: 0,
@@ -193,6 +201,7 @@ const notFourChunkByCurrentDefinitionMcopfr = {
 // 1-submetric 7-chunk 0.00565 -- original xwyks
 const oneSubmetricSevenChunk = {
     sumOfSquares: 0.005646141896541448,
+    name: "{aAsLogarithmBase,kAsCoefficient,sum,useNuminator,w,x,y}",
     submetrics: [
         {
             [ Parameter.K_AS_COEFFICIENT ]: 0.6328571428571429,
@@ -208,6 +217,7 @@ const oneSubmetricSevenChunk = {
 // 1-submetric 6-chunk 0.00947 (claimed to be near 0.00652, so these must have been approximations)
 const oneSubmetricSixChunk = {
     sumOfSquares: 0.00946539412309218,
+    name: "{aAsLogarithmBase,kAsCoefficient,sum,useNuminator,w,y}",
     submetrics: [
         {
             [ Parameter.K_AS_COEFFICIENT ]: 0.6,
@@ -227,6 +237,7 @@ const oneSubmetricSixChunk = {
 // http://forum.sagittal.org/viewtopic.php?p=1983#p1983
 const almostLowestEverButWithExactA = {
     sumOfSquares: 0.004455901926266847,
+    name: "{aAsLogarithmBase,kAsCoefficient,sum,useNuminator,w,y},{count,useNuminator,weightAsCoefficient}",
     submetrics: [
         {
             [ Parameter.K_AS_COEFFICIENT ]: 0.038,
@@ -251,6 +262,7 @@ const almostLowestEverButWithExactA = {
 // http://forum.sagittal.org/viewtopic.php?p=1984#p1984
 const lessFragileMinimum = {
     sumOfSquares: 0.005591116232258028,
+    name: "{aAsLogarithmBase,kAsCoefficient,sum,useNuminator,w,y},{count,useNuminator,weightAsCoefficient}",
     submetrics: [
         {
             [ Parameter.K_AS_COEFFICIENT ]: 0.213895488,
@@ -275,6 +287,7 @@ const lessFragileMinimum = {
 // http://forum.sagittal.org/viewtopic.php?p=1995#p1995
 const sanityCheck = {
     sumOfSquares: 0.00832555386875032,
+    name: "{aAsLogarithmBase,kAsCoefficient,sum,useNuminator,w,y}",
     submetrics: [
         {
             [ Parameter.K_AS_COEFFICIENT ]: 0.632,
@@ -294,6 +307,7 @@ const sanityCheck = {
 // http://forum.sagittal.org/viewtopic.php?p=2004#p2004
 const cwyks = {
     sumOfSquares: 0.004059521951422367,
+    name: "{aAsLogarithmBase,kAsCoefficient,sum,useNuminator,w,y},{count,useNuminator,weightAsCoefficient}",
     submetrics: [
         {
             [ Parameter.K_AS_COEFFICIENT ]: 0.1796875,
@@ -318,6 +332,7 @@ const cwyks = {
 // http://forum.sagittal.org/viewtopic.php?p=2036#p2036
 const k = {
     sumOfSquares: 0.0094912434848982,
+    name: "{kAsCoefficient,sum}",
     submetrics: [
         {
             [ Parameter.K_AS_COEFFICIENT ]: 0.7901234567901236,
@@ -327,6 +342,7 @@ const k = {
 }
 const firstAttemptAtLowestThreeChunk = {
     sumOfSquares: 0.018902286543139548,
+    name: "{count,kAsCoefficient},{sum}",
     submetrics: [
         {
             [ Parameter.SUM ]: true,
@@ -345,6 +361,7 @@ const firstAttemptAtLowestThreeChunk = {
 // http://forum.sagittal.org/viewtopic.php?p=2038#p2038
 const maybeMinimum = {
     sumOfSquares: 0.007085843283776648,
+    name: "{aAsLogarithmBase,b,sum,w,y}",
     submetrics: [
         {
             [ Parameter.SUM ]: true,
@@ -363,6 +380,7 @@ const maybeMinimum = {
 // http://forum.sagittal.org/viewtopic.php?p=2039#p2039
 const bAndU = {
     sumOfSquares: 0.006594234470005811,
+    name: "{aAsLogarithmBase,b,sum,u,w,x,y}",
     submetrics: [
         {
             [ Parameter.A_AS_LOGARITHM_BASE ]: 2,
@@ -381,6 +399,7 @@ const bAndU = {
 // http://forum.sagittal.org/viewtopic.php?p=2044#p2044
 const improvedMaybeMinimum = {
     sumOfSquares: 0.0062827430776347054,
+    name: "{aAsLogarithmBase,b,sum,w,y}",
     submetrics: [
         {
             [ Parameter.SUM ]: true,
@@ -399,6 +418,7 @@ const improvedMaybeMinimum = {
 // http://forum.sagittal.org/viewtopic.php?p=2052#p2052
 const improvedFourParamSixChunk = {
     sumOfSquares: 0.006700180663569215,
+    name: "{aAsLogarithmBase,jAsCoefficient,kAsCoefficient,sum},{kAsCoefficient,sum,y}",
     submetrics: [
         {
             [ Parameter.SUM ]: true,
@@ -421,6 +441,7 @@ const improvedFourParamSixChunk = {
 // http://forum.sagittal.org/viewtopic.php?p=2052#p2052
 const improvedFourParamFiveChunk = {
     sumOfSquares: 0.006926345329260278,
+    name: "{aAsLogarithmBase,jAsCoefficient,kAsCoefficient,sum},{sum,y}",
     submetrics: [
         {
             [ Parameter.SUM ]: true,
@@ -442,6 +463,7 @@ const improvedFourParamFiveChunk = {
 // http://forum.sagittal.org/viewtopic.php?p=2064#p2064
 const j = {
     sumOfSquares: 0.00910097075832883,
+    name: "{jAsPowerExponent,sum}",
     submetrics: [
         {
             [ Parameter.J_AS_POWER_EXPONENT ]: 1.0954773869346734,
@@ -451,6 +473,7 @@ const j = {
 }
 const secondAttemptAtLowestThreeChunk = {
     sumOfSquares: 0.008543707253092303,
+    name: "{jAsCoefficient,sum,y}",
     submetrics: [
         {
             [ Parameter.Y ]: 0.96661101836394,
@@ -465,6 +488,7 @@ const secondAttemptAtLowestThreeChunk = {
 // http://forum.sagittal.org/viewtopic.php?p=2065#p2065
 const hyg = {
     sumOfSquares: 0.006372712986254571,
+    name: "{aAsLogarithmBase,jAsCoefficient,kAsCoefficient,sum},{sum,y}",
     submetrics: [
         {
             [ Parameter.SUM ]: true,
@@ -486,6 +510,7 @@ const hyg = {
 // http://forum.sagittal.org/viewtopic.php?p=2071#p2071
 const wyb = {
     sumOfSquares: 0.006057649171028775,
+    name: "{aAsLogarithmBase,b,sum,w,y}",
     submetrics: [
         {
             [ Parameter.SUM ]: true,
@@ -498,6 +523,7 @@ const wyb = {
 }
 const wyk = {
     sumOfSquares: 0.007460443456132457,
+    name: "{aAsLogarithmBase,kAsCoefficient,sum,w,y}",
     submetrics: [
         {
             [ Parameter.SUM ]: true,
@@ -515,12 +541,14 @@ const wyk = {
 // Mon Jul 13, 2020 11:57 pm
 // http://forum.sagittal.org/viewtopic.php?p=2072#p2072
 const cwyk = {
-    sumOfSquares: 0.007300195,
+    sumOfSquares: 0.007300195297088744,
+    name: "{aAsLogarithmBase,kAsCoefficient,sum,y},{count,weightAsCoefficient}",
     submetrics: [
         {
             [ Parameter.SUM ]: true,
             [ Parameter.A_AS_LOGARITHM_BASE ]: 2,
             [ Parameter.K_AS_COEFFICIENT ]: 0.74710179,
+            [ Parameter.W ]: -1.09913086,
             [ Parameter.Y ]: 0.903870452,
         },
         {
@@ -537,6 +565,7 @@ const cwyk = {
 // http://forum.sagittal.org/viewtopic.php?p=2073#p2073
 const wyks = {
     sumOfSquares: 0.006406638879234451,
+    name: "{aAsLogarithmBase,kAsCoefficient,sum,useNuminator,w,y}",
     submetrics: [
         {
             [ Parameter.SUM ]: true,
@@ -556,6 +585,7 @@ const wyks = {
 // http://forum.sagittal.org/viewtopic.php?p=2074#p2074
 const xwyks = {
     sumOfSquares: 0.0055389201901046405,
+    name: "{aAsLogarithmBase,kAsCoefficient,sum,useNuminator,w,x,y}",
     submetrics: [
         {
             [ Parameter.SUM ]: true,
@@ -576,6 +606,7 @@ const xwyks = {
 // http://forum.sagittal.org/viewtopic.php?p=2098#p2098
 const wb = {
     sumOfSquares: 0.007345361244736918,
+    name: "{aAsLogarithmBase,b,sum,w}",
     submetrics: [
         {
             [ Parameter.SUM ]: true,
@@ -593,6 +624,7 @@ const wb = {
 // http://forum.sagittal.org/viewtopic.php?p=2113#p2113
 const laj = {
     sumOfSquares: 0.007099822284635193,
+    name: "{aAsLogarithmBase,jAsCoefficient,sum},{max,withoutRepetition}",
     submetrics: [
         {
             [ Parameter.WITHOUT_REPETITION ]: true,
@@ -613,6 +645,7 @@ const laj = {
 // http://forum.sagittal.org/viewtopic.php?p=2117#p2117
 const kl = {
     sumOfSquares: 0.006970590852577876,
+    name: "{aAsLogarithmBase,kAsCoefficient,sum},{max,weightAsCoefficient,withoutRepetition}",
     submetrics: [
         {
             [ Parameter.WEIGHT_AS_COEFFICIENT ]: 0.319583198,
@@ -634,6 +667,7 @@ const kl = {
 // http://forum.sagittal.org/viewtopic.php?p=2163#p2163
 const c = {
     sumOfSquares: 0.009004460361166835,
+    name: "{b,sum,w}",
     submetrics: [
         {
             [ Parameter.SUM ]: true,
@@ -650,6 +684,7 @@ const c = {
 // http://forum.sagittal.org/viewtopic.php?p=2170#p2170
 const ak = {
     sumOfSquares: 0.007593746935708874,
+    name: "{aAsLogarithmBase,aAsPowerExponent,kAsCoefficient,sum}",
     submetrics: [
         {
             [ Parameter.SUM ]: true,
@@ -661,6 +696,7 @@ const ak = {
 }
 const kj = {
     sumOfSquares: 0.007969499349681162,
+    name: "{jAsPowerExponent,kAsPowerExponent,sum}",
     submetrics: [
         {
             [ Parameter.SUM ]: true,
@@ -671,6 +707,7 @@ const kj = {
 }
 const lak = {
     sumOfSquares: 0.0062107447110803975,
+    name: "{aAsLogarithmBase,aAsPowerExponent,sum,u,x}",
     submetrics: [
         {
             [ Parameter.WITHOUT_REPETITION ]: true,
@@ -690,6 +727,7 @@ const lak = {
 }
 const wab = {
     sumOfSquares: 0.0068022046202959605,
+    name: "{aAsLogarithmBase,aAsPowerExponent,b,sum,w}",
     submetrics: [
         {
             [ Parameter.SUM ]: true,
@@ -702,6 +740,7 @@ const wab = {
 }
 const aux = {
     sumOfSquares: 0.006815231749228219,
+    name: "{aAsLogarithmBase,aAsPowerExponent,kAsPowerExponent,sum},{aAsPowerExponent,max,withoutRepetition}",
     submetrics: [
         {
             [ Parameter.SUM ]: true,
@@ -720,7 +759,7 @@ const aux = {
 // http://forum.sagittal.org/viewtopic.php?p=2191#p2191
 const wbl1 = {
     sumOfSquares: 0.003886596371931313,
-    // todo would be great if these all had names. make it optional, and then ahve the test generate them.
+    name: "{aAsLogarithmBase,b,sum,w},{aAsLogarithmBase,max,withoutRepetition}",
     submetrics: [
         {
             [ Parameter.WITHOUT_REPETITION ]: true,
@@ -743,6 +782,7 @@ const wbl1 = {
 // http://forum.sagittal.org/viewtopic.php?p=2194#p2194
 const wybl1 = {
     sumOfSquares: 0.0032401250853104067,
+    name: "{aAsLogarithmBase,b,sum,w,y},{aAsLogarithmBase,max,withoutRepetition}",
     submetrics: [
         {
             [ Parameter.WITHOUT_REPETITION ]: true,
@@ -766,6 +806,7 @@ const wybl1 = {
 // http://forum.sagittal.org/viewtopic.php?p=2199#p2199
 const wbl = {
     sumOfSquares: 0.0030322385583128613,
+    name: "{aAsLogarithmBase,b,sum,w},{aAsLogarithmBase,max,weightAsCoefficient,withoutRepetition}",
     submetrics: [
         {
             [ Parameter.WITHOUT_REPETITION ]: true,
@@ -783,6 +824,7 @@ const wbl = {
 }
 const wybl = {
     sumOfSquares: 0.0026762735990075136,
+    name: "{aAsLogarithmBase,b,sum,w,y},{aAsLogarithmBase,max,weightAsCoefficient,withoutRepetition}",
     submetrics: [
         {
             [ Parameter.WITHOUT_REPETITION ]: true,
@@ -807,6 +849,7 @@ const wybl = {
 // http://forum.sagittal.org/viewtopic.php?p=2203#p2203
 const waybl = {
     sumOfSquares: 0.0024616646376350447,
+    name: "{aAsLogarithmBase,aAsPowerExponent,b,sum,w,y},{aAsLogarithmBase,max,weightAsCoefficient,withoutRepetition}",
     submetrics: [
         {
             [ Parameter.WEIGHT_AS_COEFFICIENT ]: 0.24501362468135826,
@@ -831,6 +874,7 @@ const waybl = {
 // http://forum.sagittal.org/viewtopic.php?p=2205#p2205
 const wabl1 = {
     sumOfSquares: 0.0029769976555856672,
+    name: "{aAsLogarithmBase,aAsPowerExponent,b,sum,w},{aAsLogarithmBase,max,withoutRepetition}",
     submetrics: [
         {
             [ Parameter.WITHOUT_REPETITION ]: true,
@@ -848,6 +892,7 @@ const wabl1 = {
 }
 const wabl = {
     sumOfSquares: 0.002961440725194366,
+    name: "{aAsLogarithmBase,aAsPowerExponent,b,sum,w},{aAsLogarithmBase,max,weightAsCoefficient,withoutRepetition}",
     submetrics: [
         {
             [ Parameter.WITHOUT_REPETITION ]: true,
@@ -872,6 +917,7 @@ const wabl = {
 // http://forum.sagittal.org/viewtopic.php?p=2211#p2211
 const wBL1 = {
     sumOfSquares: 0.00420582488763467,
+    name: "{aAsLogarithmBase,b,sum,w},{aAsLogarithmBase,max,withoutRepetition}",
     submetrics: [
         {
             [ Parameter.WITHOUT_REPETITION ]: true,
@@ -931,6 +977,8 @@ export {
 
     wyb,
     wyk,
+
+    cwyk,
 
     wyks,
 

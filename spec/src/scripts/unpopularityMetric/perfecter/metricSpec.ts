@@ -1,6 +1,11 @@
 import { Resolution, Span } from "../../../../../src/general"
 import { Combination } from "../../../../../src/general/math"
-import { Scope, SubmetricScope, SumOfSquares } from "../../../../../src/scripts/unpopularityMetric/bestMetric"
+import {
+    MetricName,
+    Scope,
+    SubmetricScope,
+    SumOfSquares,
+} from "../../../../../src/scripts/unpopularityMetric/bestMetric"
 import { recursiveSearchScopeAndMaybeUpdateBestMetric } from "../../../../../src/scripts/unpopularityMetric/perfecter"
 import { perfectMetric } from "../../../../../src/scripts/unpopularityMetric/perfecter/metric"
 import * as recursiveBestMetric from "../../../../../src/scripts/unpopularityMetric/perfecter/recursiveBestMetric"
@@ -12,6 +17,7 @@ describe("perfectMetric", () => {
     it("takes a best metric and then converts it back into a scope in order to perfect it recursively", async () => {
         const metric = {
             sumOfSquares: 0.009939068479730896 as SumOfSquares,
+            name: "" as MetricName,
             submetrics: [
                 {
                     [ Parameter.SUM ]: true,
@@ -45,6 +51,7 @@ describe("perfectMetric", () => {
     it("when the metric had some spread parameters, it recreates them that way", async () => {
         const metric = {
             sumOfSquares: 0.009939068479730896 as SumOfSquares,
+            name: "" as MetricName,
             submetrics: [
                 {
                     [ Parameter.COUNT ]: true,

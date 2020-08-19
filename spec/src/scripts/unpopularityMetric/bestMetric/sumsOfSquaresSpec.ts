@@ -1,7 +1,7 @@
 import { Combination } from "../../../../../src/general"
 import { SamplePoint } from "../../../../../src/scripts/unpopularityMetric/bestMetric/scopeToSamples"
 import { computeSumsOfSquaresAndMaybeUpdateBestMetric } from "../../../../../src/scripts/unpopularityMetric/bestMetric/sumsOfSquares"
-import { MetricName, SumOfSquares, SumsOfSquares } from "../../../../../src/scripts/unpopularityMetric/bestMetric/types"
+import { MetricName, SumOfSquares, SumsOfSquares } from "../../../../../src/scripts/unpopularityMetric/bestMetric"
 import { bestMetrics } from "../../../../../src/scripts/unpopularityMetric/globals"
 import { Parameter, ParameterValue, Submetric } from "../../../../../src/scripts/unpopularityMetric/sumOfSquares"
 
@@ -66,6 +66,7 @@ describe("computeSumsOfSquaresAndMaybeUpdateBestMetric", () => {
             metricName,
             {
                 sumOfSquares: 0.01400000000000 as SumOfSquares,
+                name: "" as MetricName,
                 submetrics: [{
                     [ Parameter.SUM ]: true,
                     [ Parameter.A_AS_COEFFICIENT ]: 2 as ParameterValue,
@@ -78,6 +79,7 @@ describe("computeSumsOfSquaresAndMaybeUpdateBestMetric", () => {
 
         expect(bestMetrics.get(metricName)).toEqual({
             sumOfSquares: 0.013983040590027893 as SumOfSquares,
+            name: "{aAsCoefficient,sum,w}" as MetricName,
             submetrics: [{
                 [ Parameter.SUM ]: true,
                 [ Parameter.A_AS_COEFFICIENT ]: 2 as ParameterValue,
@@ -91,6 +93,7 @@ describe("computeSumsOfSquaresAndMaybeUpdateBestMetric", () => {
             metricName,
             {
                 sumOfSquares: 0.01200000000000 as SumOfSquares,
+                name: "" as MetricName,
                 submetrics: [{
                     [ Parameter.SUM ]: true,
                     [ Parameter.A_AS_COEFFICIENT ]: 2 as ParameterValue,
@@ -103,6 +106,7 @@ describe("computeSumsOfSquaresAndMaybeUpdateBestMetric", () => {
 
         expect(bestMetrics.get(metricName)).toEqual({
             sumOfSquares: 0.01200000000000 as SumOfSquares,
+            name: "" as MetricName,
             submetrics: [{
                 [ Parameter.SUM ]: true,
                 [ Parameter.A_AS_COEFFICIENT ]: 2 as ParameterValue,

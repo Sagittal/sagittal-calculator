@@ -40,6 +40,7 @@ describe("populateAndSearchScopesAndPerfectMetrics", () => {
 
         expect(bestMetrics.get("{},{sum}" as MetricName)).toEqual({
             sumOfSquares: 0.014206086754420309,
+            name: "{},{sum}",
             submetrics: [{ sum: true }],
         } as unknown as Metric)
     })

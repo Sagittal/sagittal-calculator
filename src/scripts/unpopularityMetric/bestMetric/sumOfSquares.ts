@@ -35,8 +35,8 @@ const computeSumOfSquaresAndMaybeUpdateBestMetric = (sample: Sample, options: Co
             )
         ) {
             const metric: Metric = spreadDynamicParameters ?
-                { sumOfSquares, submetrics, spreadDynamicParameters } :
-                { sumOfSquares, submetrics }
+                { sumOfSquares, submetrics, name: metricName, spreadDynamicParameters } :
+                { sumOfSquares, submetrics, name: metricName }
 
             bestMetrics.set(metricName, metric)
 

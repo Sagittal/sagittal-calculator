@@ -6,6 +6,7 @@ type MetricName = string & { _MetricNameBrand: "MetricName" }
 
 interface Metric {
     spreadDynamicParameters?: Parameter[],
+    name: MetricName,
     submetrics: Combination<Submetric>,
     sumOfSquares: SumOfSquares | undefined,
 }

@@ -1,6 +1,5 @@
 import { Combination } from "../../../../../src/general/math"
-import { SumOfSquares } from "../../../../../src/scripts/unpopularityMetric/bestMetric"
-import { MetricName } from "../../../../../src/scripts/unpopularityMetric/bestMetric/types"
+import { MetricName, SumOfSquares } from "../../../../../src/scripts/unpopularityMetric/bestMetric"
 import { bestMetrics } from "../../../../../src/scripts/unpopularityMetric/globals"
 import { formatBestMetrics } from "../../../../../src/scripts/unpopularityMetric/solver"
 import { Parameter, Submetric } from "../../../../../src/scripts/unpopularityMetric/sumOfSquares"
@@ -11,6 +10,7 @@ describe("formatBestMetrics", () => {
             "{sum}" as MetricName,
             {
                 sumOfSquares: 0.013 as SumOfSquares,
+                name: "" as MetricName,
                 submetrics: [
                     {
                         [ Parameter.SUM ]: true,
@@ -22,6 +22,7 @@ describe("formatBestMetrics", () => {
             "{count}" as MetricName,
             {
                 sumOfSquares: 0.012 as SumOfSquares,
+                name: "" as MetricName,
                 submetrics: [
                     {
                         [ Parameter.COUNT ]: true,
@@ -33,6 +34,7 @@ describe("formatBestMetrics", () => {
             "{max}" as MetricName,
             {
                 sumOfSquares: 0.014 as SumOfSquares,
+                name: "" as MetricName,
                 submetrics: [
                     {
                         [ Parameter.MAX ]: true,
@@ -47,6 +49,7 @@ describe("formatBestMetrics", () => {
             `{\n` +
             `    "{max}": {\n` +
             `        sumOfSquares: 0.014,\n` +
+            `        name: "",\n` +
             `        submetrics: [\n` +
             `            {\n` +
             `                [ Parameter.MAX ]: true\n` +
@@ -55,6 +58,7 @@ describe("formatBestMetrics", () => {
             `    },\n` +
             `    "{sum}": {\n` +
             `        sumOfSquares: 0.013,\n` +
+            `        name: "",\n` +
             `        submetrics: [\n` +
             `            {\n` +
             `                [ Parameter.SUM ]: true\n` +
@@ -63,6 +67,7 @@ describe("formatBestMetrics", () => {
             `    },\n` +
             `    "{count}": {\n` +
             `        sumOfSquares: 0.012,\n` +
+            `        name: "",\n` +
             `        submetrics: [\n` +
             `            {\n` +
             `                [ Parameter.COUNT ]: true\n` +
