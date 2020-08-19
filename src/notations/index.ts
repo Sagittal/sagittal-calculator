@@ -20,6 +20,7 @@ import {
     Mina,
     TINA,
     unicodeFromAscii,
+    getSymbol,
     computeNotatingSymbolIds,
 } from "./ji"
 import { computeSmileyFromAscii } from "./smiley"
@@ -50,4 +51,5 @@ export {
     JI_SYMBOLS,
     computeSmileyFromAscii,
     computeNotatingSymbolIds,
+    getSymbol,
 }

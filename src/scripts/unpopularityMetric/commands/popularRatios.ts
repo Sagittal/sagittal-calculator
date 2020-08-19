@@ -8,10 +8,13 @@ import {
     presentRatio,
     round,
 } from "../../../general"
-import { computeNotatingSymbolIds, computeSmileyFromAscii, LEVELS } from "../../../notations"
+import { computeNotatingSymbolIds, computeSmileyFromAscii, getSymbol, LEVELS } from "../../../notations"
 import { DebugTarget, saveDebugMessage } from "../debug"
+import { applySharedUnpopularityMetricCommandSetup } from "./shared"
 
 const CUT_OFF_N2D3P9 = 136
+
+applySharedUnpopularityMetricCommandSetup({ defaultDebugTargets: [DebugTarget.POPULAR_RATIOS] })
 
 // http://forum.sagittal.org/viewtopic.php?p=2243#p2243
 const primeExponentRanges = [
@@ -53,7 +56,8 @@ primeExponentRanges[ 0 ].forEach(five => {
 
                                                     if (n2d3p9 < 136) {
                                                         const ratio = presentRatio(computeRatioFromMonzo(monzo), { directed: false })
-                                                        const notatingSymbols = computeNotatingSymbolIds(monzo)
+                                                        const notatingSymbolIds = computeNotatingSymbolIds(monzo)
+                                                        const notatingSymbols = notatingSymbolIds.map(getSymbol)
                                                         const smileys = notatingSymbols.map(symbol => computeSmileyFromAscii(symbol.ascii)).join(" ")
                                                         const levels = notatingSymbols.map(symbol => LEVELS.indexOf(symbol.introducingLevel) + 1)
 
@@ -76,7 +80,7 @@ primeExponentRanges[ 0 ].forEach(five => {
     })
 })
 
-saveDebugMessage(`count of results with N2D3P9 < ${CUT_OFF_N2D3P9}: ${results.length}`, DebugTarget.POPULAR_RATIOS) // todo if tested (and save debug logs and shared setup etc) could follow Dave's formulas to give an arbitrary cut-off
+saveDebugMessage(`count of results with N2D3P9 < ${CUT_OFF_N2D3P9}: ${results.length}`, DebugTarget.POPULAR_RATIOS) // todo could follow Dave's formulas to give an arbitrary cut-off
 
 results.sort((result, nextResult) =>
     result.n2d3p9 - nextResult.n2d3p9)

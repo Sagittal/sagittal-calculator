@@ -13,6 +13,7 @@ import { LEVELS_BOUNDS } from "./levelsBounds"
 import { LEVELS_SYMBOL_IDS } from "./levelsSymbolIds"
 import { computeSizeCategoryBounds } from "./sizeCategoryBounds"
 import { JI_SYMBOLS } from "./symbols"
+import { getSymbol } from "./symbol"
 
 import { Bound, BoundedSymbolIdWithDistances, BoundIdWithBoundedSymbolIdWithDistancesPairsByLevel, JiSymbol, Level, Mina } from "./types"
 
@@ -39,4 +40,5 @@ export {
     computeLevelCommaMeans,
     computeSizeCategoryBounds,
     computeNotatingSymbolIds,
+    getSymbol,
 }

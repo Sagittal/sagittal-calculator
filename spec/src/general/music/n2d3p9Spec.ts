@@ -36,4 +36,12 @@ describe("computeN2d3p9", () => {
 
         expect(() => computeN2D3P9(monzo)).toThrowError("N2D3P9 must be given a superunison (n ≥ d) monzo; received [ 0 0 0 0 -2 ⟩")
     })
+
+    it("can handle 1/1, the empty monzo", () => {
+        const monzo: Monzo = [] as Monzo // 1/1
+
+        const result = computeN2D3P9(monzo)
+
+        expect(result).toBe(1 as N2D3P9)
+    })
 })
