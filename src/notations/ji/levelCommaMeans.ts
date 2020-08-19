@@ -1,14 +1,17 @@
 import { Cents, Name, Position } from "../../general"
-import { LEVELS_SYMBOLS } from "./levelsSymbols"
+import { LEVELS_SYMBOL_IDS } from "./levelsSymbolIds"
 import { Level } from "./types"
+import { getSymbol } from "./symbol"
 
 const computeLevelCommaMeans = (level: Level): Position[] => {
-    const levelSymbols = LEVELS_SYMBOLS[ level ]
+    const levelSymbolIds = LEVELS_SYMBOL_IDS[ level ]
 
-    const levelSymbolsExcludingTheLastSymbol = levelSymbols.slice(0, levelSymbols.length - 1)
+    const levelSymbolIdsExcludingTheLastSymbol = levelSymbolIds.slice(0, levelSymbolIds.length - 1)
 
-    return levelSymbolsExcludingTheLastSymbol.map((symbol, index): Position => {
-        const nextSymbol = levelSymbols[ index + 1 ]
+    return levelSymbolIdsExcludingTheLastSymbol.map((symbolId, index): Position => {
+        const nextSymbolId = levelSymbolIds[ index + 1 ]
+        const symbol = getSymbol(symbolId)
+        const nextSymbol = getSymbol(nextSymbolId)
 
         return {
             name: [symbol.ascii, nextSymbol.ascii].join(" ") as Name<Position>,

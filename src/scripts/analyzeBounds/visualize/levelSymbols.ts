@@ -1,14 +1,16 @@
-import { JiSymbol, Level, LEVELS_SYMBOLS } from "../../../notations"
+import { JiSymbol, Level, LEVELS_SYMBOL_IDS } from "../../../notations"
 import { presentMina } from "../present"
 import { LEVEL_CENTERS } from "./levelHeights"
 import { DOT_SIZE, MINA_OFFSET, SYMBOL_OFFSET } from "./sizes"
 import { computeX } from "./x"
+import { Id } from "../../../general"
+import { getSymbol } from "../../../notations/ji/symbol"
 
 const visualizeLevelSymbols = () => {
     const levelSymbolElements: string[] = [] as string[]
 
-    const levelsSymbolsEntries = Object.entries(LEVELS_SYMBOLS) as Array<[Level, JiSymbol[]]>
-    levelsSymbolsEntries.forEach(([level, levelSymbols]: [Level, JiSymbol[]]) => {
+    const levelsSymbolIdsEntries = Object.entries(LEVELS_SYMBOL_IDS) as Array<[Level, Array<Id<JiSymbol>>]>
+    levelsSymbolIdsEntries.forEach(([level, levelSymbolIds]: [Level, Array<Id<JiSymbol>>]) => {
         if (level === Level.INSANE) {
             return
         }
@@ -17,7 +19,8 @@ const visualizeLevelSymbols = () => {
         const dotY = centerY - SYMBOL_OFFSET
         const symbolY = centerY + SYMBOL_OFFSET
 
-        levelSymbols.forEach(levelSymbol => {
+        levelSymbolIds.forEach(levelSymbolId => {
+            const levelSymbol: JiSymbol = getSymbol(levelSymbolId)
             const { primaryComma, ascii, unicode, mina } = levelSymbol
 
             const positionX = computeX(primaryComma.cents)

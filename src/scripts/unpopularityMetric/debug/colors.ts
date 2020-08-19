@@ -15,6 +15,7 @@ const targetColors: EnumHash<DebugTarget, ColorMethod> = {
     [ DebugTarget.FINAL_SOLVER_RESULTS ]: "green",
     [ DebugTarget.PERFECT ]: "magenta",
     [ DebugTarget.FINAL_PERFECTER_RESULTS ]: "green",
+    [ DebugTarget.POPULAR_RATIOS ]: "yellow",
 }
 
 export {

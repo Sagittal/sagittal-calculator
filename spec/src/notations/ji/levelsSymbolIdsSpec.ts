@@ -1,40 +1,19 @@
-import { Cents, Id, Name, Position, Prime, Ratio, Sopfr } from "../../../../src/general"
-import { ApotomeSlope, Monzo } from "../../../../src/general/music"
-import { N2D3P9 } from "../../../../src/general/music/types"
-import { SymbolLongAscii } from "../../../../src/notations"
-import { JiSymbol, Level, Mina } from "../../../../src/notations/ji"
-import { computeIsWithinLevel, computeLevelSymbols } from "../../../../src/notations/ji/levelsSymbols"
-import { SymbolUnicode } from "../../../../src/notations/types"
+import { Id } from "../../../../src/general"
+import { JiSymbol, Level } from "../../../../src/notations/ji"
+import { computeIsWithinLevel, computeLevelSymbolIds } from "../../../../src/notations/ji/levelsSymbolIds"
 
-describe("computeLevelSymbols", () => {
+describe("computeLevelSymbolIds", () => {
     it("returns the symbols for the levels up to and including the target level", () => {
-        expect(computeLevelSymbols(Level.MEDIUM).length).toBe(13)
-        expect(computeLevelSymbols(Level.HIGH).length).toBe(32)
-        expect(computeLevelSymbols(Level.ULTRA).length).toBe(55)
-        expect(computeLevelSymbols(Level.EXTREME).length).toBe(149)
+        expect(computeLevelSymbolIds(Level.MEDIUM).length).toBe(13)
+        expect(computeLevelSymbolIds(Level.HIGH).length).toBe(32)
+        expect(computeLevelSymbolIds(Level.ULTRA).length).toBe(55)
+        expect(computeLevelSymbolIds(Level.EXTREME).length).toBe(149)
     })
 
     it("returns only the symbol data (not the bound data)", () => {
-        const levelCommas = computeLevelSymbols(Level.MEDIUM)
+        const levelSymbols = computeLevelSymbolIds(Level.MEDIUM)
 
-        expect(levelCommas[ 0 ]).toEqual({
-            id: 0 as Id<JiSymbol>,
-            introducingLevel: Level.MEDIUM,
-            ascii: "|" as SymbolLongAscii,
-            unicode: "" as SymbolUnicode,
-            mina: 0 as Mina,
-            primaryComma: {
-                apotomeSlope: 0.000 as ApotomeSlope,
-                fiveRoughSopfr: 0 as Sopfr<5>,
-                limit: 2 as Prime,
-                ratio: [1, 1] as Ratio,
-                monzo: [] as unknown as Monzo,
-                cents: 0 as Cents,
-                name: "1u" as Name<Position>,
-                n2d3p9: 0.1111111111111111 as N2D3P9,
-            },
-            elements: [] as SymbolLongAscii[],
-        })
+        expect(levelSymbols[ 3 ]).toEqual(30 as Id<JiSymbol>)
     })
 })
 

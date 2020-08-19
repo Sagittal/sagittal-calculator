@@ -1,11 +1,15 @@
 import { Cents, Id, Name, Position, Prime, Ratio, Sopfr } from "../../../../src/general"
 import { ApotomeSlope, Monzo } from "../../../../src/general/music"
-import { N2D3P9 } from "../../../../src/general/music/types"
+import { N2D3P9 } from "../../../../src/general/music"
 import { SymbolLongAscii } from "../../../../src/notations"
 import { JiSymbol, Level, Mina } from "../../../../src/notations/ji"
 import { computeSecondaryCommaZone } from "../../../../src/notations/ji/secondaryCommaZone"
 import { SymbolUnicode } from "../../../../src/notations/types"
 
+// TODO: perhaps secondary comma zone should be built-in to the JiSymbol model,
+//  and this test would be just to check that they all check out with themselves?
+//  sure, but first you'd want to include its capture zones per level at all.
+//  then work up to its secondary comma zone
 describe("secondaryCommaZone", () => {
     it("returns the lower and upper bound of where secondary commas are represented by the given symbol, i.e. its capture zone at its introducing level", () => {
         const symbol: JiSymbol = {

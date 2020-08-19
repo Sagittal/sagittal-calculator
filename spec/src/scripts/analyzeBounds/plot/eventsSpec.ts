@@ -9,12 +9,12 @@ describe("computeEvents", () => {
     let eventType: EventType
 
     describe("returns an event for each snappable position between the bounded symbol positions for this event type and level", () => {
-        describe("for events of snapping to INA midpoint positions", () => {
+        describe("for events of snapping to ina midpoint positions", () => {
             beforeEach(() => {
                 eventType = EventType.INA
             })
 
-            it("works when only one INA midpoint is between the bounded symbols", () => {
+            it("works when only one ina midpoint is between the bounded symbols", () => {
                 level = Level.ULTRA
                 boundedSymbolPositions = computeBoundedSymbolPositions(4.5 as Cents, level)
 
@@ -30,7 +30,7 @@ describe("computeEvents", () => {
                 ]))
             })
 
-            it("works when only one INA midpoint is between the bounded symbols, even if it is not within a half-ina", () => {
+            it("works when only one ina midpoint is between the bounded symbols, even if it is not within a half-ina", () => {
                 level = Level.ULTRA
                 boundedSymbolPositions = computeBoundedSymbolPositions(4.5 as Cents, level)
 

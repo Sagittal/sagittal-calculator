@@ -11,7 +11,7 @@ describe("presentLevelAnalysis", () => {
 
         expect(result).toBe([
             "Ultra            \there\tcmltv",
-            "INA midpoint       \t 18\t 18"[ "blue" ],
+            "ina midpoint       \t 18\t 18"[ "blue" ],
             "comma mean         \t 23\t 17"[ "cyan" ],
             "size category bound\t 13\t 15"[ "green" ],
         ].join("\n"))

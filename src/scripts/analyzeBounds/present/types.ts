@@ -1,5 +1,15 @@
-import { Cents } from "../../../general"
-import { Bound, BoundedSymbols, Mina, SymbolLongAscii } from "../../../notations"
+import { Cents, EnumHash, Id, Proportion } from "../../../general"
+import { Bound, JiSymbol, Level, Mina, SymbolLongAscii } from "../../../notations"
+
+interface BoundedSymbol extends JiSymbol {
+    distance: Cents,
+    inaDistance: Proportion,
+}
+
+type BoundedSymbolPair = [BoundedSymbol | undefined, BoundedSymbol | undefined]
+
+type BoundedSymbols = { id: Id<Bound> }
+    & Partial<EnumHash<Level, BoundedSymbolPair>>
 
 interface BoundIdentifiers {
     boundedSymbols: BoundedSymbols,
@@ -21,6 +31,8 @@ interface PresentBoundParameters {
 }
 
 export {
+    BoundedSymbol,
+    BoundedSymbols,
     BoundIdentifiers,
     PresentBoundParameters,
     AnalysisMode,

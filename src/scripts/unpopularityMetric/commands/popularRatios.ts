@@ -2,30 +2,16 @@ import {
     computeCentsFromRatio,
     computeN2D3P9,
     computeRatioFromMonzo,
-    computeRoughNumberMonzo,
     computeTrimmedMonzo,
-    deepEquals,
-    invertMonzo,
     Monzo,
     N2D3P9,
     presentRatio,
     round,
 } from "../../../general"
-import { computeSmileyFromAscii, JI_SYMBOLS, JiSymbol, LEVELS } from "../../../notations"
+import { computeNotatingSymbolIds, computeSmileyFromAscii, LEVELS } from "../../../notations"
+import { DebugTarget, saveDebugMessage } from "../debug"
 
-const computeNotatingSymbols = (monzo: Monzo) => { // TODO: this might be handy to just have available outside of here, tested and such
-    const notatingSymbols: JiSymbol[] = []
-
-    JI_SYMBOLS.forEach(symbol => {
-        const fiveRoughPrimaryCommaMonzo = computeRoughNumberMonzo(symbol.primaryComma.monzo, 5)
-
-        if (deepEquals(monzo, fiveRoughPrimaryCommaMonzo) || deepEquals(monzo, invertMonzo(fiveRoughPrimaryCommaMonzo))) {
-            notatingSymbols.push(symbol)
-        }
-    })
-
-    return notatingSymbols
-}
+const CUT_OFF_N2D3P9 = 136
 
 // http://forum.sagittal.org/viewtopic.php?p=2243#p2243
 const primeExponentRanges = [
@@ -67,7 +53,7 @@ primeExponentRanges[ 0 ].forEach(five => {
 
                                                     if (n2d3p9 < 136) {
                                                         const ratio = presentRatio(computeRatioFromMonzo(monzo), { directed: false })
-                                                        const notatingSymbols = computeNotatingSymbols(monzo)
+                                                        const notatingSymbols = computeNotatingSymbolIds(monzo)
                                                         const smileys = notatingSymbols.map(symbol => computeSmileyFromAscii(symbol.ascii)).join(" ")
                                                         const levels = notatingSymbols.map(symbol => LEVELS.indexOf(symbol.introducingLevel) + 1)
 
@@ -90,14 +76,14 @@ primeExponentRanges[ 0 ].forEach(five => {
     })
 })
 
-console.log("count of results with N2D3P9 < 136", results.length) // todo if tested (and save debug logs and shared setup etc) could follow Dave's formulas to give an arbitrary cut-off
+saveDebugMessage(`count of results with N2D3P9 < ${CUT_OFF_N2D3P9}: ${results.length}`, DebugTarget.POPULAR_RATIOS) // todo if tested (and save debug logs and shared setup etc) could follow Dave's formulas to give an arbitrary cut-off
 
 results.sort((result, nextResult) =>
     result.n2d3p9 - nextResult.n2d3p9)
 
-console.log(`[table]`)
-console.log(`[tr][th]ratio[/th][th]N2D3P9[/th][th]symbol[/th][th]levels[/th][/tr]`)
+saveDebugMessage(`[table]`, DebugTarget.POPULAR_RATIOS)
+saveDebugMessage(`[tr][th]ratio[/th][th]N2D3P9[/th][th]symbol[/th][th]levels[/th][/tr]`, DebugTarget.POPULAR_RATIOS)
 results.forEach(result => {
-    console.log(result.output)
+    saveDebugMessage(result.output, DebugTarget.POPULAR_RATIOS)
 })
-console.log(`[/table]`)
+saveDebugMessage(`[/table]`, DebugTarget.POPULAR_RATIOS)

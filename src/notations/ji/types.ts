@@ -27,20 +27,24 @@ interface Bound {
     cents: Cents,
 }
 
-type BoundedSymbols =
+type BoundIdWithBoundedSymbolIdWithDistancesPairsByLevel =
     { id: Id<Bound> }
-    & Partial<EnumHash<Level, [BoundedSymbol | undefined, BoundedSymbol | undefined]>>
+    & Partial<EnumHash<Level, BoundedSymbolIdWithDistancesPair>>
 
-interface BoundedSymbol extends JiSymbol {
+interface BoundedSymbolIdWithDistances {
+    id: Id<JiSymbol>,
     distance: Cents,
     inaDistance: Proportion,
 }
+
+type BoundedSymbolIdWithDistancesPair = [BoundedSymbolIdWithDistances | undefined, BoundedSymbolIdWithDistances | undefined]
 
 export {
     JiSymbol,
     Mina,
     Level,
     Bound,
-    BoundedSymbols,
-    BoundedSymbol,
+    BoundIdWithBoundedSymbolIdWithDistancesPairsByLevel,
+    BoundedSymbolIdWithDistances,
+    BoundedSymbolIdWithDistancesPair,
 }

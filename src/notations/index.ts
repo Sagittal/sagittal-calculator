@@ -1,7 +1,7 @@
 import {
     Bound,
-    BoundedSymbol,
-    BoundedSymbols,
+    BoundedSymbolIdWithDistances,
+    BoundIdWithBoundedSymbolIdWithDistancesPairsByLevel,
     BOUNDS,
     computeBoundedSymbolPositions,
     computeInaDistance,
@@ -15,11 +15,12 @@ import {
     LEVEL_EDAS,
     LEVELS,
     LEVELS_BOUNDS,
-    LEVELS_SYMBOLS,
+    LEVELS_SYMBOL_IDS,
     MAXIMUM_POSITION,
     Mina,
     TINA,
     unicodeFromAscii,
+    computeNotatingSymbolIds,
 } from "./ji"
 import { computeSmileyFromAscii } from "./smiley"
 import { SymbolLongAscii } from "./types"
@@ -34,13 +35,13 @@ export {
     computeBoundedSymbolPositions,
     MAXIMUM_POSITION,
     LEVEL_BOUNDED_SYMBOLS,
-    BoundedSymbol,
-    BoundedSymbols,
+    BoundedSymbolIdWithDistances,
+    BoundIdWithBoundedSymbolIdWithDistancesPairsByLevel,
     SymbolLongAscii,
     Mina,
     LEVELS_BOUNDS,
     LEVEL_EDAS,
-    LEVELS_SYMBOLS,
+    LEVELS_SYMBOL_IDS,
     JiSymbol,
     unicodeFromAscii,
     computeInaMidpoints,
@@ -48,4 +49,5 @@ export {
     computeSizeCategoryBounds,
     JI_SYMBOLS,
     computeSmileyFromAscii,
+    computeNotatingSymbolIds,
 }

@@ -3,17 +3,18 @@ import { computeBoundedSymbolPositions } from "./boundedSymbolPositions"
 import { BOUNDS } from "./bounds"
 import { computeInaDistance } from "./inaDistance"
 import { computeInaMidpoints } from "./inaMidpoints"
+import { computeNotatingSymbolIds } from "./notatingSymbolIds"
 import { MAXIMUM_POSITION, TINA } from "./intervals"
 import { LEVEL_BOUNDED_SYMBOLS } from "./levelBoundedSymbols"
 import { computeLevelCommaMeans } from "./levelCommaMeans"
 import { LEVEL_EDAS } from "./levelEdas"
 import { LEVELS } from "./levels"
 import { LEVELS_BOUNDS } from "./levelsBounds"
-import { LEVELS_SYMBOLS } from "./levelsSymbols"
+import { LEVELS_SYMBOL_IDS } from "./levelsSymbolIds"
 import { computeSizeCategoryBounds } from "./sizeCategoryBounds"
 import { JI_SYMBOLS } from "./symbols"
 
-import { Bound, BoundedSymbol, BoundedSymbols, JiSymbol, Level, Mina } from "./types"
+import { Bound, BoundedSymbolIdWithDistances, BoundIdWithBoundedSymbolIdWithDistancesPairsByLevel, JiSymbol, Level, Mina } from "./types"
 
 export {
     BOUNDS,
@@ -27,14 +28,15 @@ export {
     LEVEL_BOUNDED_SYMBOLS,
     computeInaDistance,
     computeBoundedSymbolPositions,
-    BoundedSymbols,
-    BoundedSymbol,
+    BoundIdWithBoundedSymbolIdWithDistancesPairsByLevel,
+    BoundedSymbolIdWithDistances,
     Mina,
     LEVELS_BOUNDS,
     LEVEL_EDAS,
-    LEVELS_SYMBOLS,
+    LEVELS_SYMBOL_IDS,
     unicodeFromAscii,
     computeInaMidpoints,
     computeLevelCommaMeans,
     computeSizeCategoryBounds,
+    computeNotatingSymbolIds,
 }

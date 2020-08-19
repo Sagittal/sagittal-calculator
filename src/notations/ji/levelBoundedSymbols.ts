@@ -2,21 +2,24 @@ import { Cents } from "../../general"
 import { computeBoundedSymbolPositions } from "./boundedSymbolPositions"
 import { BOUNDS } from "./bounds"
 import { computeInaDistance } from "./inaDistance"
-import { computePositionSymbol } from "./positionSymbol"
-import { Bound, BoundedSymbols, JiSymbol } from "./types"
+import { computePositionSymbolId } from "./positionSymbolId"
+import { Bound, BoundIdWithBoundedSymbolIdWithDistancesPairsByLevel, JiSymbol } from "./types"
+import { getSymbol } from "./symbol"
 
-const computeLevelBoundedSymbols = (bound: Bound): BoundedSymbols => {
+const computeLevelBoundedSymbolIdWithDistances = (bound: Bound): BoundIdWithBoundedSymbolIdWithDistancesPairsByLevel => {
     const { cents, levels, id } = bound
 
     return levels.reduce(
         (levels, level) => {
-            const levelBoundedSymbols: Array<JiSymbol | undefined> = computeBoundedSymbolPositions(cents, level).map(computePositionSymbol)
+            const levelBoundedSymbols: Array<JiSymbol | undefined> = computeBoundedSymbolPositions(cents, level)
+                .map(computePositionSymbolId)
+                .map(symbolId => symbolId && getSymbol(symbolId))
             const levelBoundedSymbolsWithDistance = levelBoundedSymbols.map(symbol => {
                 if (symbol) {
                     const distance: Cents = Math.abs(cents - symbol.primaryComma.cents) as Cents
 
                     return {
-                        ...symbol,
+                        id: symbol.id,
                         distance,
                         inaDistance: computeInaDistance(distance, level),
                     }
@@ -36,9 +39,9 @@ const computeLevelBoundedSymbols = (bound: Bound): BoundedSymbols => {
     )
 }
 
-const LEVEL_BOUNDED_SYMBOLS: BoundedSymbols[] = BOUNDS.map(computeLevelBoundedSymbols)
+const LEVEL_BOUNDED_SYMBOLS: BoundIdWithBoundedSymbolIdWithDistancesPairsByLevel[] = BOUNDS.map(computeLevelBoundedSymbolIdWithDistances)
 
 export {
-    computeLevelBoundedSymbols,
+    computeLevelBoundedSymbolIdWithDistances,
     LEVEL_BOUNDED_SYMBOLS,
 }
