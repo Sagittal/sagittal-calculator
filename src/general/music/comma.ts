@@ -8,6 +8,7 @@ import { computeRatioFromMonzo } from "./ratioFromMonzo"
 import { computeRoughNumberMonzo } from "./rough"
 import { computeSopfr } from "./sopfr"
 import { Comma, Monzo, N2D3P9, Position, Sopfr } from "./types"
+import { computeSuperunisonMonzo } from "./superunisonMonzo"
 
 const analyzeComma = (monzo: Monzo): Comma => {
     const apotomeSlope = computeApotomeSlope(monzo)
@@ -16,7 +17,7 @@ const analyzeComma = (monzo: Monzo): Comma => {
     const fiveRoughMonzo = computeRoughNumberMonzo(monzo, 5)
     const fiveRoughSopfr = computeSopfr(fiveRoughMonzo) as Sopfr<5>
     const limit: Prime = computeGpf(monzo)
-    const n2d3p9: N2D3P9 = computeN2D3P9(fiveRoughMonzo)
+    const n2d3p9: N2D3P9 = computeN2D3P9(computeSuperunisonMonzo(fiveRoughMonzo))
     const cents = computeCentsFromRatio(ratio)
 
     return {

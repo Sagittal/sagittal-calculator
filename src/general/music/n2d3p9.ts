@@ -3,18 +3,17 @@ import { Exponent } from "../math"
 import { Prime } from "../types"
 import { computeCentsFromRatio } from "./centsFromRatio"
 import { computeGpf } from "./gpf"
-import { invertMonzo } from "./invertMonzo"
 import { computeRatioFromMonzo } from "./ratioFromMonzo"
 import { Monzo, N2D3P9 } from "./types"
 import { presentMonzo } from "./present"
 
-const computeN2D3P9 = (monzo: Monzo): N2D3P9 => { // todo n>d should be outside N2D3P9 as well
+const computeN2D3P9 = (monzo: Monzo): N2D3P9 => {
     if (monzo[0] !== 0 || monzo[1] !== 0) {
         throw new Error(`N2D3P9 must be given a 5-roughened monzo; received ${presentMonzo(monzo)}`)
     }
 
     if (computeCentsFromRatio(computeRatioFromMonzo(monzo)) < 0) {
-        monzo = invertMonzo(monzo)
+        throw new Error(`N2D3P9 must be given a superunison (n ≥ d) monzo; received ${presentMonzo(monzo)}`)
     }
 
     return monzo.reduce(
