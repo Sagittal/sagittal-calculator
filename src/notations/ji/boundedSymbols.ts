@@ -1,8 +1,8 @@
 import { Cents } from "../../general"
 import { LEVELS_SYMBOL_IDS } from "./levelsSymbolIds"
 import { computeNeighborPositionIndices } from "./neighborPositionIndices"
-import { Level } from "./types"
 import { getSymbol } from "./symbol"
+import { Level } from "./types"
 
 const computeBoundedSymbols = (position: Cents, level: Level) => {
     const levelSymbolIds = LEVELS_SYMBOL_IDS[ level ]

@@ -1,5 +1,7 @@
+import { computeRange } from "./range"
+
 const computePlusOrMinusRange = <T extends number>(value: T): T[] =>
-    [...Array(value * 2 + 1).keys()].map(element => element - value) as T[]
+    computeRange(-value as T, value + 1 as T)
 
 export {
     computePlusOrMinusRange,

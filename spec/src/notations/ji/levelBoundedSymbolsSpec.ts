@@ -1,9 +1,6 @@
-import { Cents, Id, Name, Position, Prime, Proportion, Ratio, Sopfr } from "../../../../src/general"
-import { ApotomeSlope, Monzo, N2D3P9 } from "../../../../src/general/music"
-import { SymbolLongAscii } from "../../../../src/notations"
-import { Bound, JiSymbol, Level, Mina } from "../../../../src/notations/ji"
+import { Cents, Id, Proportion } from "../../../../src/general"
+import { Bound, JiSymbol, Level } from "../../../../src/notations/ji"
 import { computeLevelBoundedSymbolIdWithDistances } from "../../../../src/notations/ji/levelBoundedSymbols"
-import { SymbolUnicode } from "../../../../src/notations/types"
 
 describe("computeLevelBoundedSymbols", () => {
     it("returns, given a bound, for each of its levels, an array of the pair of symbols it bounds at that level, as well as their distances and ina-distances from the bound", () => {

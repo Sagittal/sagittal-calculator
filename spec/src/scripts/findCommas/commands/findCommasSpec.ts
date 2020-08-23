@@ -1,6 +1,6 @@
 import { runCommandAndGetConsoleOutput } from "../../../../helpers/specHelper"
 
-describe("findCommas", () => {
+describe("find-commas", () => {
     it("finds commas, given the finding options", () => {
         const command = "npm run find-commas -- -l 30 -u 30.5 -3 2 -# 3 -p 37 -+ 58 -a 3"
 

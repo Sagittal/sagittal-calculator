@@ -1,8 +1,6 @@
 import { ACCURACY_THRESHOLD } from "../../../../src/general/code/constants"
-import { computeMonzoFromRatio } from "../../../../src/general/music"
-import { computeCentsFromRatio } from "../../../../src/general/music/centsFromRatio"
+import { computeCentsFromRatio, computeMonzoFromRatio, computeRatioFromMonzo } from "../../../../src/general/music"
 import { computeCommaName } from "../../../../src/general/music/name"
-import { computeRatioFromMonzo } from "../../../../src/general/music/ratioFromMonzo"
 import { JI_SYMBOLS } from "../../../../src/notations/ji"
 
 describe("SYMBOLS", () => {

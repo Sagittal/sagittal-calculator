@@ -1,5 +1,6 @@
 import { computeCombinations } from "./combinations"
 import { computeDistributions } from "./distributions"
+import { dividesEvenly } from "./dividesEvenly"
 import { computeLog } from "./log"
 import { computePrimeCount } from "./primeCount"
 import { round } from "./round"
@@ -20,4 +21,5 @@ export {
     Denominator,
     FractionalPart,
     Exponent,
+    dividesEvenly,
 }

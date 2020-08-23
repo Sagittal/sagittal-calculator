@@ -1,6 +1,6 @@
 import { computeRoughNumberMonzo, deepEquals, Id, invertMonzo, Monzo } from "../../general"
-import { JiSymbol } from "./types"
 import { JI_SYMBOLS } from "./symbols"
+import { JiSymbol } from "./types"
 
 const computeNotatingSymbolIds = (monzo: Monzo): Array<Id<JiSymbol>> => {
     const notatingSymbols: Array<Id<JiSymbol>> = []

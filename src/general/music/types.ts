@@ -1,3 +1,4 @@
+import { N2D3P9 } from "../../n2d3p9"
 import { Exponent, Ratio } from "../math"
 import { Count, Name, Prime, Sum } from "../types"
 
@@ -7,8 +8,6 @@ type ApotomeSlope = number & { _ApotomeSlopeBrand: "ApotomeSlope" }
 
 type Sopfr<Roughness = void> = Sum<Prime> & (Roughness extends number ? { _RoughnessBrand: Roughness } : {})
 type Copfr<Roughness = void> = Count<Prime> & (Roughness extends number ? { _RoughnessBrand: Roughness } : {})
-
-type N2D3P9 = number & { _N2D3P9Brand: "N2D3P9" }
 
 type Monzo<Slice = void, Limit = void> = Array<Exponent<Prime>> & (Slice extends number ? { _MonzoSlice: Slice } : {})
 
@@ -42,5 +41,4 @@ export {
     Copfr,
     Position,
     Cents,
-    N2D3P9,
 }

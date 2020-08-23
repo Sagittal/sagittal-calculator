@@ -3,12 +3,22 @@ import { SymbolLongAscii, SymbolUnicode } from "../types"
 
 type Mina = number & { _MinaBrand: "Mina" }
 
+// TODO: for consistency, shouldn't these values be camelCase, not CONSTANT_CASE ?
 enum Level {
-    MEDIUM = "MEDIUM",
-    HIGH = "HIGH",
-    ULTRA = "ULTRA",
-    EXTREME = "EXTREME",
-    INSANE = "INSANE",
+    MEDIUM = "MEDIUM",          // corresponds closely with Athenian symbol set
+    HIGH = "HIGH",              // corresponds closely with Promethean symbol set
+    ULTRA = "ULTRA",            // corresponds closely with Herculean symbol set
+    EXTREME = "EXTREME",        // corresponds closely with Olympian symbol set
+    INSANE = "INSANE",          // corresponds closely with Magrathean symbol set
+}
+
+enum SymbolSet {
+    SPARTAN = "spartan",
+    ATHENIAN = "athenian",
+    PROMETHEAN = "promethean",
+    HERCULEAN = "herculean",
+    OLYMPIAN = "olympian",
+    MAGRATHEAN = "magrathean",
 }
 
 interface JiSymbol {
@@ -16,6 +26,7 @@ interface JiSymbol {
     elements: SymbolLongAscii[],
     id: Id<JiSymbol>,
     introducingLevel: Level,
+    lowestSymbolSet: SymbolSet,
     mina: Mina,
     primaryComma: Comma,
     unicode: SymbolUnicode,
@@ -47,4 +58,5 @@ export {
     BoundIdWithBoundedSymbolIdWithDistancesPairsByLevel,
     BoundedSymbolIdWithDistances,
     BoundedSymbolIdWithDistancesPair,
+    SymbolSet,
 }

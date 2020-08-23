@@ -1,6 +1,6 @@
 import { runCommandAndGetConsoleOutput } from "../../../../helpers/specHelper"
 
-describe("best metric from scope", () => {
+describe("best-metric-from-scope", () => {
     it("recursively finds the absolute perfect metric within the given scope", () => {
         const command = "npm run best-metric-from-scope -- --no-color --no-write"
 

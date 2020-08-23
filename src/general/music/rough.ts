@@ -3,7 +3,7 @@ import { Exponent } from "../math"
 import { Prime } from "../types"
 import { Monzo } from "./types"
 
-const computeRoughNumberMonzo = (monzo: Monzo, roughness: number): Monzo => {
+const computeRoughNumberMonzo = (monzo: Monzo, roughness: number): Monzo => { // TODO: should monzos really be treated as "music"? they are math... like consider isRough
     const roughnessIndex = PRIMES.findIndex(prime => prime === roughness)
 
     return monzo.map((primeExponent: Exponent<Prime>, index): Exponent<Prime> =>

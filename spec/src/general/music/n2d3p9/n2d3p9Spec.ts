@@ -1,4 +1,5 @@
-import { computeN2D3P9, Monzo, N2D3P9 } from "../../../../src/general/music"
+import { Monzo } from "../../../../../src/general"
+import { computeN2D3P9, N2D3P9 } from "../../../../../src/general/music/n2d3p9"
 
 describe("computeN2d3p9", () => {
     it("returns an approximate rank of the ratio's notational popularity", () => {

@@ -1,6 +1,6 @@
 import { runCommandAndGetConsoleOutput } from "../../../../helpers/specHelper"
 
-describe("sum-of-squares", () => {
+describe("sos (sum of squares)", () => {
     it("gives you the sum-of-squares given the submetric combination in the file, and also logs the full list of unpopularities", () => {
         const command = "npm run sos -- --no-color --no-write"
 

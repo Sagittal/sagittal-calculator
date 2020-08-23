@@ -1,4 +1,4 @@
-import { computeCopfr, Monzo } from "../../../../src/general/music"
+import { computeCopfr, Copfr, Monzo } from "../../../../src/general/music"
 
 describe("computeCopfr", () => {
     it("returns the resolution of prime factors (with repetition) in the monzo", () => {
@@ -6,6 +6,6 @@ describe("computeCopfr", () => {
 
         const result = computeCopfr(monzo)
 
-        expect(result).toBe(19)
+        expect(result).toBe(19 as Copfr)
     })
 })

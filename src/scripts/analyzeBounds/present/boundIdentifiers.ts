@@ -1,13 +1,13 @@
 import {
     Bound,
+    BoundedSymbolIdWithDistancesPair,
     BoundIdWithBoundedSymbolIdWithDistancesPairsByLevel,
+    getSymbol,
     Level,
     LEVEL_BOUNDED_SYMBOLS,
     SymbolLongAscii,
 } from "../../../notations"
 import { BoundedSymbol, BoundedSymbols, BoundIdentifiers } from "./types"
-import { getSymbol } from "../../../notations/ji/symbol"
-import { BoundedSymbolIdWithDistancesPair } from "../../../notations/ji/types"
 
 const extractBoundIdentifiers = (bound: Bound): BoundIdentifiers => {
     const { cents, id } = bound

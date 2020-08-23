@@ -3,8 +3,8 @@ import { computeBoundedSymbolPositions } from "./boundedSymbolPositions"
 import { BOUNDS } from "./bounds"
 import { computeInaDistance } from "./inaDistance"
 import { computePositionSymbolId } from "./positionSymbolId"
-import { Bound, BoundIdWithBoundedSymbolIdWithDistancesPairsByLevel, JiSymbol } from "./types"
 import { getSymbol } from "./symbol"
+import { Bound, BoundIdWithBoundedSymbolIdWithDistancesPairsByLevel, JiSymbol } from "./types"
 
 const computeLevelBoundedSymbolIdWithDistances = (bound: Bound): BoundIdWithBoundedSymbolIdWithDistancesPairsByLevel => {
     const { cents, levels, id } = bound

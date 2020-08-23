@@ -1,5 +1,5 @@
-import { computeSuperunisonMonzo } from "../../../../src/general/music/superunisonMonzo"
 import { Monzo } from "../../../../src/general/music"
+import { computeSuperunisonMonzo } from "../../../../src/general/music/superunisonMonzo"
 
 describe("computeSuperunisonMonzo", () => {
     it("returns the monzo if it is already superunison", () => {

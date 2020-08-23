@@ -1,7 +1,7 @@
 import { Combination } from "../../../../../src/general"
+import { MetricName, SumOfSquares, SumsOfSquares } from "../../../../../src/scripts/unpopularityMetric/bestMetric"
 import { SamplePoint } from "../../../../../src/scripts/unpopularityMetric/bestMetric/scopeToSamples"
 import { computeSumsOfSquaresAndMaybeUpdateBestMetric } from "../../../../../src/scripts/unpopularityMetric/bestMetric/sumsOfSquares"
-import { MetricName, SumOfSquares, SumsOfSquares } from "../../../../../src/scripts/unpopularityMetric/bestMetric"
 import { bestMetrics } from "../../../../../src/scripts/unpopularityMetric/globals"
 import { Parameter, ParameterValue, Submetric } from "../../../../../src/scripts/unpopularityMetric/sumOfSquares"
 

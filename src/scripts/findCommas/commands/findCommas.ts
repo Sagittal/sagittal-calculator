@@ -19,12 +19,12 @@ program
 
 const lowerBound = program.lowerBound || 0
 const upperBound = program.upperBound || MAXIMUM_POSITION
-const maximumFiveRoughSopfr = program.fiveRoughSopfr || 61  // todo I'm not seeing where this actually filters out sopfr greater than it. maybe try to produce a failing example.
+const maximumFiveRoughSopfr = program.fiveRoughSopfr || 61
 const maximumFiveRoughCopfr = program.fiveRoughCopfr || 555 // A silly number, unlikely to come close
 const maximumApotomeSlope = program.apotomeSlope || 14
 const maximumPrimeLimit = program.primeLimit || 47
 const maximumAbsoluteThreeExponent = program.absoluteThreeExponent || 15
-const maximumN2D3P9 = program.maximumN2d3p9 || 307 // todo currently in computeFiveSlicedMonzosToCheck if you don't provide sopfr you must provide both max copfr and prime limit. but a maximum N2D3P9 would also suffice. basically it's the same behavior as max sopfr. you could have either or both.
+const maximumN2D3P9 = program.maximumN2d3p9 || 307
 const fiveSlicedMonzo = program.fiveSlicedMonzo
 const sortKey = program.sortBy
 

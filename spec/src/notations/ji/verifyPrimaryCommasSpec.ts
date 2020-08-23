@@ -1,4 +1,4 @@
-import { Prime } from "../../../../src/general"
+import { N2D3P9, Prime } from "../../../../src/general"
 import { Exponent } from "../../../../src/general/math"
 import { ApotomeSlope, Copfr, Sopfr } from "../../../../src/general/music"
 import { computeCommaName } from "../../../../src/general/music/name"
@@ -22,6 +22,7 @@ describe("verifying primary commas", () => {
             const maximumApotomeSlope = 14 as ApotomeSlope
             const maximumPrimeLimit = 47 as Prime
             const maximumAbsoluteThreeExponent = 15 as Exponent<Prime>
+            const maximumN2D3P9 = 666 as N2D3P9
             const fiveSlicedMonzo = undefined
             const sortKey = "fiveRoughSopfr"
 
@@ -33,6 +34,7 @@ describe("verifying primary commas", () => {
                 maximumApotomeSlope,
                 maximumPrimeLimit,
                 maximumAbsoluteThreeExponent,
+                maximumN2D3P9,
                 fiveSlicedMonzo,
                 sortKey,
             })

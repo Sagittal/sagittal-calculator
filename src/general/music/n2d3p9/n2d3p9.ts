@@ -1,18 +1,19 @@
-import { PRIMES } from "../constants"
-import { Exponent } from "../math"
-import { Prime } from "../types"
-import { computeCentsFromRatio } from "./centsFromRatio"
-import { computeGpf } from "./gpf"
-import { computeRatioFromMonzo } from "./ratioFromMonzo"
-import { Monzo, N2D3P9 } from "./types"
-import { presentMonzo } from "./present"
+import { PRIMES } from "../../constants"
+import { Exponent } from "../../math"
+import { Prime } from "../../types"
+import { computeCentsFromRatio } from "../centsFromRatio"
+import { computeGpf } from "../gpf"
+import { presentMonzo } from "../present"
+import { computeRatioFromMonzo } from "../ratioFromMonzo"
+import { Monzo } from "../types"
+import { N2D3P9 } from "./types"
 
 const computeN2D3P9 = (monzo: Monzo): N2D3P9 => {
     if (monzo.length < 3) {
         return 1 as N2D3P9
     }
 
-    if (monzo[0] !== 0 || monzo[1] !== 0) {
+    if (monzo[ 0 ] !== 0 || monzo[ 1 ] !== 0) {
         throw new Error(`N2D3P9 must be given a 5-roughened monzo; received ${presentMonzo(monzo)}`)
     }
 

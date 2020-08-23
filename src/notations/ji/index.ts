@@ -3,7 +3,6 @@ import { computeBoundedSymbolPositions } from "./boundedSymbolPositions"
 import { BOUNDS } from "./bounds"
 import { computeInaDistance } from "./inaDistance"
 import { computeInaMidpoints } from "./inaMidpoints"
-import { computeNotatingSymbolIds } from "./notatingSymbolIds"
 import { MAXIMUM_POSITION, TINA } from "./intervals"
 import { LEVEL_BOUNDED_SYMBOLS } from "./levelBoundedSymbols"
 import { computeLevelCommaMeans } from "./levelCommaMeans"
@@ -11,11 +10,21 @@ import { LEVEL_EDAS } from "./levelEdas"
 import { LEVELS } from "./levels"
 import { LEVELS_BOUNDS } from "./levelsBounds"
 import { LEVELS_SYMBOL_IDS } from "./levelsSymbolIds"
+import { computeNotatingSymbolIds } from "./notatingSymbolIds"
 import { computeSizeCategoryBounds } from "./sizeCategoryBounds"
-import { JI_SYMBOLS } from "./symbols"
 import { getSymbol } from "./symbol"
+import { JI_SYMBOLS } from "./symbols"
+import { SYMBOL_SETS } from "./symbolSets"
 
-import { Bound, BoundedSymbolIdWithDistances, BoundIdWithBoundedSymbolIdWithDistancesPairsByLevel, JiSymbol, Level, Mina } from "./types"
+import {
+    Bound,
+    BoundedSymbolIdWithDistances,
+    BoundedSymbolIdWithDistancesPair,
+    BoundIdWithBoundedSymbolIdWithDistancesPairsByLevel,
+    JiSymbol,
+    Level,
+    Mina,
+} from "./types"
 
 export {
     BOUNDS,
@@ -41,4 +50,6 @@ export {
     computeSizeCategoryBounds,
     computeNotatingSymbolIds,
     getSymbol,
+    SYMBOL_SETS,
+    BoundedSymbolIdWithDistancesPair,
 }

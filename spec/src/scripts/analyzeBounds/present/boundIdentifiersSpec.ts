@@ -3,6 +3,7 @@ import { ApotomeSlope, Monzo, N2D3P9 } from "../../../../../src/general/music"
 import { SymbolLongAscii } from "../../../../../src/notations"
 import { Bound, JiSymbol, Level, Mina } from "../../../../../src/notations/ji"
 import { INA_SIZES } from "../../../../../src/notations/ji/intervals"
+import { SymbolSet } from "../../../../../src/notations/ji/types"
 import { SymbolUnicode } from "../../../../../src/notations/types"
 import { extractBoundIdentifiers } from "../../../../../src/scripts/analyzeBounds/present/boundIdentifiers"
 import { BoundIdentifiers } from "../../../../../src/scripts/analyzeBounds/present/types"
@@ -30,6 +31,7 @@ describe("extractBoundIdentifiers", () => {
                         inaDistance: (23.1164196495597 - 22.9305875372457) / INA_SIZES[ Level.ULTRA ] as Proportion,
                         ascii: ".)/|" as SymbolLongAscii,
                         unicode: "" as SymbolUnicode,
+                        lowestSymbolSet: SymbolSet.HERCULEAN,
                         mina: 47 as Mina,
                         primaryComma: {
                             apotomeSlope: -2.412 as ApotomeSlope,
@@ -50,6 +52,7 @@ describe("extractBoundIdentifiers", () => {
                         inaDistance: (23.46001038464900 - 23.1164196495597) / INA_SIZES[ Level.ULTRA ] as Proportion,
                         ascii: "'/|" as SymbolLongAscii,
                         unicode: "" as SymbolUnicode,
+                        lowestSymbolSet: SymbolSet.HERCULEAN,
                         mina: 48 as Mina,
                         primaryComma: {
                             apotomeSlope: 10.555 as ApotomeSlope,
@@ -72,6 +75,7 @@ describe("extractBoundIdentifiers", () => {
                         inaDistance: (23.1164196495597 - 22.9305875372457) / INA_SIZES[ Level.EXTREME ] as Proportion,
                         ascii: ".)/|" as SymbolLongAscii,
                         unicode: "" as SymbolUnicode,
+                        lowestSymbolSet: SymbolSet.HERCULEAN,
                         mina: 47 as Mina,
                         primaryComma: {
                             apotomeSlope: -2.412 as ApotomeSlope,
@@ -92,6 +96,7 @@ describe("extractBoundIdentifiers", () => {
                         inaDistance: (23.46001038464900 - 23.1164196495597) / INA_SIZES[ Level.EXTREME ] as Proportion,
                         ascii: "'/|" as SymbolLongAscii,
                         unicode: "" as SymbolUnicode,
+                        lowestSymbolSet: SymbolSet.HERCULEAN,
                         mina: 48 as Mina,
                         primaryComma: {
                             apotomeSlope: 10.555 as ApotomeSlope,
@@ -115,6 +120,7 @@ describe("extractBoundIdentifiers", () => {
                         ascii: ".)/|" as SymbolLongAscii,
                         unicode: "" as SymbolUnicode,
                         mina: 47 as Mina,
+                        lowestSymbolSet: SymbolSet.HERCULEAN,
                         id: 47 as Id<JiSymbol>,
                         primaryComma: {
                             apotomeSlope: -2.412 as ApotomeSlope,
@@ -135,6 +141,7 @@ describe("extractBoundIdentifiers", () => {
                         ascii: "'/|" as SymbolLongAscii,
                         unicode: "" as SymbolUnicode,
                         mina: 48 as Mina,
+                        lowestSymbolSet: SymbolSet.HERCULEAN,
                         id: 48 as Id<JiSymbol>,
                         primaryComma: {
                             apotomeSlope: 10.555 as ApotomeSlope,

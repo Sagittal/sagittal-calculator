@@ -3,15 +3,18 @@ import {
     computeDeepDistinct,
     computeIsCloseTo,
     computePlusOrMinusRange,
+    computeRange,
     deepEquals,
     doOnNextEventLoop,
     EnumHash,
+    fractionallyRank,
     isNumber,
     isUndefined,
     merge,
     shuffle,
 } from "./code"
 import { PRIMES } from "./constants"
+import { forumTable } from "./forumTable"
 import {
     Combination,
     Combinations,
@@ -20,8 +23,10 @@ import {
     computeLog,
     computePrimeCount,
     computeTriangularNumber,
+    dividesEvenly,
     Exponent,
     FractionalPart,
+    Numerator,
     Ratio,
     round,
 } from "./math"
@@ -33,10 +38,14 @@ import {
     Comma,
     computeCentsFromRatio,
     computeCopfr,
+    computeGpf,
+    computeIsRough,
     computeMonzoFromInteger,
     computeMonzoFromRatio,
     computeMonzoInRange,
     computeN2D3P9,
+    computePossibleMonzosFromPrimeExponentExtremas,
+    computePrimeExponentExtremasGivenMaximumN2D3P9,
     computeRatioFromMonzo,
     computeRoughNumberMonzo,
     computeSopf,
@@ -52,13 +61,13 @@ import {
     presentComma,
     presentMonzo,
     presentRatio,
+    PrimeExponentExtrema,
     SIZE_CATEGORY_BOUNDS,
     Sopfr,
 } from "./music"
 import { alignTable } from "./textTable"
 import { formatTime } from "./time"
 import { Count, Id, Index, Name, Prime, Proportion, Resolution, Span, Sum, Unit } from "./types"
-import { forumTable } from "./forumTable"
 
 export {
     Cents,
@@ -125,4 +134,13 @@ export {
     computeRatioFromMonzo,
     computeN2D3P9,
     forumTable,
+    computeRange,
+    Numerator,
+    computeGpf,
+    dividesEvenly,
+    computeIsRough,
+    PrimeExponentExtrema,
+    computePrimeExponentExtremasGivenMaximumN2D3P9,
+    fractionallyRank,
+    computePossibleMonzosFromPrimeExponentExtremas,
 }

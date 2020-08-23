@@ -1,7 +1,7 @@
 import * as cp from "child_process"
 import { runCommandAndGetConsoleOutput } from "../../../../helpers/specHelper"
 
-describe("analyzeComma", () => {
+describe("analyze-comma", () => {
     it("analyzes a comma, given it in monzo form", () => {
         const command = "npm run analyze-comma -- -m [3,-7,2,0,1]"
 

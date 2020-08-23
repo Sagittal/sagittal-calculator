@@ -1,7 +1,7 @@
-import { Monzo } from "./types"
 import { computeCentsFromRatio } from "./centsFromRatio"
-import { computeRatioFromMonzo } from "./ratioFromMonzo"
 import { invertMonzo } from "./invertMonzo"
+import { computeRatioFromMonzo } from "./ratioFromMonzo"
+import { Monzo } from "./types"
 
 const computeSuperunisonMonzo = (monzo: Monzo) => {
     if (computeCentsFromRatio(computeRatioFromMonzo(monzo)) < 0) {

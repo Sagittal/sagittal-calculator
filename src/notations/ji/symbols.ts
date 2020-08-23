@@ -1,6 +1,6 @@
 import { ApotomeSlope, Cents, Id, Monzo, N2D3P9, Name, Position, Prime, Ratio, Sopfr } from "../../general"
 import { SymbolLongAscii, SymbolUnicode } from "../types"
-import { JiSymbol, Level, Mina } from "./types"
+import { JiSymbol, Level, Mina, SymbolSet } from "./types"
 
 const JI_SYMBOLS: JiSymbol[] = [
     {
@@ -8,6 +8,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: "|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.MEDIUM,
+        lowestSymbolSet: SymbolSet.SPARTAN,
         mina: 0 as Mina,
         primaryComma: {
             apotomeSlope: 0.000 as ApotomeSlope,
@@ -26,6 +27,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: "`|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 1 as Mina,
         primaryComma: {
             apotomeSlope: -2.026 as ApotomeSlope,
@@ -44,6 +46,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: "``|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 2 as Mina,
         primaryComma: {
             apotomeSlope: -3.051 as ApotomeSlope,
@@ -62,6 +65,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: ".)|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.ULTRA,
+        lowestSymbolSet: SymbolSet.HERCULEAN,
         mina: 3 as Mina,
         primaryComma: {
             apotomeSlope: -5.088 as ApotomeSlope,
@@ -80,6 +84,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: "'|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.ULTRA,
+        lowestSymbolSet: SymbolSet.HERCULEAN,
         mina: 4 as Mina,
         primaryComma: {
             apotomeSlope: 7.880 as ApotomeSlope,
@@ -98,6 +103,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: "`'|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 5 as Mina,
         primaryComma: {
             apotomeSlope: 5.854 as ApotomeSlope,
@@ -116,6 +122,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: ",)|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 6 as Mina,
         primaryComma: {
             apotomeSlope: 9.816 as ApotomeSlope,
@@ -134,6 +141,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: ")|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.HIGH,
+        lowestSymbolSet: SymbolSet.PROMETHEAN,
         mina: 7 as Mina,
         primaryComma: {
             apotomeSlope: 2.792 as ApotomeSlope,
@@ -152,6 +160,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: "`)|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 8 as Mina,
         primaryComma: {
             apotomeSlope: 1.758 as ApotomeSlope,
@@ -170,6 +179,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: "``)|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 9 as Mina,
         primaryComma: {
             apotomeSlope: -1.277 as ApotomeSlope,
@@ -188,6 +198,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: ",,|(" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 10 as Mina,
         primaryComma: {
             apotomeSlope: -3.303 as ApotomeSlope,
@@ -206,6 +217,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: ",|(" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 11 as Mina,
         primaryComma: {
             apotomeSlope: 5.665 as ApotomeSlope,
@@ -224,6 +236,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: "|(" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.MEDIUM,
+        lowestSymbolSet: SymbolSet.SPARTAN,
         mina: 12 as Mina,
         primaryComma: {
             apotomeSlope: -6.355 as ApotomeSlope,
@@ -242,6 +255,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: "`|(" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 13 as Mina,
         primaryComma: {
             apotomeSlope: -7.399 as ApotomeSlope,
@@ -260,6 +274,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: ".~|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.ULTRA,
+        lowestSymbolSet: SymbolSet.HERCULEAN,
         mina: 14 as Mina,
         primaryComma: {
             apotomeSlope: -1.417 as ApotomeSlope,
@@ -278,6 +293,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: ",'|(" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 15 as Mina,
         primaryComma: {
             apotomeSlope: 8.550 as ApotomeSlope,
@@ -296,6 +312,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: "'|(" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.ULTRA,
+        lowestSymbolSet: SymbolSet.HERCULEAN,
         mina: 16 as Mina,
         primaryComma: {
             apotomeSlope: 1.525 as ApotomeSlope,
@@ -314,6 +331,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: ",~|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 17 as Mina,
         primaryComma: {
             apotomeSlope: 0.481 as ApotomeSlope,
@@ -332,6 +350,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: "~|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.HIGH,
+        lowestSymbolSet: SymbolSet.PROMETHEAN,
         mina: 18 as Mina,
         primaryComma: {
             apotomeSlope: 6.462 as ApotomeSlope,
@@ -350,6 +369,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: ",)|(" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 19 as Mina,
         primaryComma: {
             apotomeSlope: 1.435 as ApotomeSlope,
@@ -368,6 +388,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: ")|(" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.MEDIUM,
+        lowestSymbolSet: SymbolSet.ATHENIAN,
         mina: 20 as Mina,
         primaryComma: {
             apotomeSlope: -4.597 as ApotomeSlope,
@@ -386,6 +407,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: "`)|(" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 21 as Mina,
         primaryComma: {
             apotomeSlope: -7.632 as ApotomeSlope,
@@ -404,6 +426,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: "``)|(" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 22 as Mina,
         primaryComma: {
             apotomeSlope: 6.334 as ApotomeSlope,
@@ -422,6 +445,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: ",')|(" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 23 as Mina,
         primaryComma: {
             apotomeSlope: -5.685 as ApotomeSlope,
@@ -440,6 +464,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: "')|(" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.ULTRA,
+        lowestSymbolSet: SymbolSet.HERCULEAN,
         mina: 24 as Mina,
         primaryComma: {
             apotomeSlope: 3.283 as ApotomeSlope,
@@ -458,6 +483,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: ")~|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.HIGH,
+        lowestSymbolSet: SymbolSet.PROMETHEAN,
         mina: 25 as Mina,
         primaryComma: {
             apotomeSlope: 1.257 as ApotomeSlope,
@@ -476,6 +502,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: ".~|(" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.ULTRA,
+        lowestSymbolSet: SymbolSet.HERCULEAN,
         mina: 26 as Mina,
         primaryComma: {
             apotomeSlope: -3.787 as ApotomeSlope,
@@ -494,6 +521,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: "`.~|(" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 27 as Mina,
         primaryComma: {
             apotomeSlope: -5.817 as ApotomeSlope,
@@ -512,6 +540,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: ",,~|(" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 28 as Mina,
         primaryComma: {
             apotomeSlope: 1.151 as ApotomeSlope,
@@ -530,6 +559,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: ",~|(" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 29 as Mina,
         primaryComma: {
             apotomeSlope: -5.874 as ApotomeSlope,
@@ -548,6 +578,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: "~|(" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.MEDIUM,
+        lowestSymbolSet: SymbolSet.ATHENIAN,
         mina: 30 as Mina,
         primaryComma: {
             apotomeSlope: 4.093 as ApotomeSlope,
@@ -566,6 +597,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: "`~|(" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 31 as Mina,
         primaryComma: {
             apotomeSlope: -4.936 as ApotomeSlope,
@@ -584,6 +616,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: ",,|~" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 32 as Mina,
         primaryComma: {
             apotomeSlope: 9.030 as ApotomeSlope,
@@ -602,6 +635,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: ",|~" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 33 as Mina,
         primaryComma: {
             apotomeSlope: 2.006 as ApotomeSlope,
@@ -620,6 +654,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: "|~" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.HIGH,
+        lowestSymbolSet: SymbolSet.PROMETHEAN,
         mina: 34 as Mina,
         primaryComma: {
             apotomeSlope: -7.019 as ApotomeSlope,
@@ -638,6 +673,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: "`|~" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 35 as Mina,
         primaryComma: {
             apotomeSlope: -2.046 as ApotomeSlope,
@@ -656,6 +692,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: "~~|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.HIGH,
+        lowestSymbolSet: SymbolSet.PROMETHEAN,
         mina: 36 as Mina,
         primaryComma: {
             apotomeSlope: 0.918 as ApotomeSlope,
@@ -674,6 +711,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: "`~~|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 37 as Mina,
         primaryComma: {
             apotomeSlope: 4.891 as ApotomeSlope,
@@ -692,6 +730,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: "``~~|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 38 as Mina,
         primaryComma: {
             apotomeSlope: -10.141 as ApotomeSlope,
@@ -710,6 +749,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: ",./|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 39 as Mina,
         primaryComma: {
             apotomeSlope: -3.178 as ApotomeSlope,
@@ -728,6 +768,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: "./|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.ULTRA,
+        lowestSymbolSet: SymbolSet.HERCULEAN,
         mina: 40 as Mina,
         primaryComma: {
             apotomeSlope: -5.204 as ApotomeSlope,
@@ -746,6 +787,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: ")|~" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.HIGH,
+        lowestSymbolSet: SymbolSet.PROMETHEAN,
         mina: 41 as Mina,
         primaryComma: {
             apotomeSlope: 7.763 as ApotomeSlope,
@@ -764,6 +806,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: ",,/|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 42 as Mina,
         primaryComma: {
             apotomeSlope: -1.257 as ApotomeSlope,
@@ -782,6 +825,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: ",/|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 43 as Mina,
         primaryComma: {
             apotomeSlope: 4.702 as ApotomeSlope,
@@ -800,6 +844,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: "/|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.MEDIUM,
+        lowestSymbolSet: SymbolSet.SPARTAN,
         mina: 44 as Mina,
         primaryComma: {
             apotomeSlope: 2.676 as ApotomeSlope,
@@ -818,6 +863,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: "`/|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 45 as Mina,
         primaryComma: {
             apotomeSlope: -4.349 as ApotomeSlope,
@@ -836,6 +882,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: "``/|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 46 as Mina,
         primaryComma: {
             apotomeSlope: -6.375 as ApotomeSlope,
@@ -854,6 +901,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: ".)/|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.ULTRA,
+        lowestSymbolSet: SymbolSet.HERCULEAN,
         mina: 47 as Mina,
         primaryComma: {
             apotomeSlope: -2.412 as ApotomeSlope,
@@ -872,6 +920,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: "'/|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.ULTRA,
+        lowestSymbolSet: SymbolSet.HERCULEAN,
         mina: 48 as Mina,
         primaryComma: {
             apotomeSlope: 10.555 as ApotomeSlope,
@@ -890,6 +939,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: "`'/|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 49 as Mina,
         primaryComma: {
             apotomeSlope: 3.531 as ApotomeSlope,
@@ -908,6 +958,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: ",,)/|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 49.56756901073 as Mina,
         primaryComma: {
             apotomeSlope: -6.481 as ApotomeSlope,
@@ -926,6 +977,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: ",)/|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 50 as Mina,
         primaryComma: {
             apotomeSlope: 1.505 as ApotomeSlope,
@@ -944,6 +996,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: ")/|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.HIGH,
+        lowestSymbolSet: SymbolSet.PROMETHEAN,
         mina: 51 as Mina,
         primaryComma: {
             apotomeSlope: 5.468 as ApotomeSlope,
@@ -962,6 +1015,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: ",.|)" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 51.458648572106 as Mina,
         primaryComma: {
             apotomeSlope: -9.532 as ApotomeSlope,
@@ -980,6 +1034,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: ".|)" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.ULTRA,
+        lowestSymbolSet: SymbolSet.HERCULEAN,
         mina: 52 as Mina,
         primaryComma: {
             apotomeSlope: -11.558 as ApotomeSlope,
@@ -998,6 +1053,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: "`.|)" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 53 as Mina,
         primaryComma: {
             apotomeSlope: 1.399 as ApotomeSlope,
@@ -1016,6 +1072,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: ",,|)" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 54 as Mina,
         primaryComma: {
             apotomeSlope: -0.627 as ApotomeSlope,
@@ -1034,6 +1091,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: ",|)" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 55 as Mina,
         primaryComma: {
             apotomeSlope: -1.653 as ApotomeSlope,
@@ -1052,6 +1110,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: "|)" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.MEDIUM,
+        lowestSymbolSet: SymbolSet.SPARTAN,
         mina: 56 as Mina,
         primaryComma: {
             apotomeSlope: -3.679 as ApotomeSlope,
@@ -1070,6 +1129,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: "`|)" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 57 as Mina,
         primaryComma: {
             apotomeSlope: -10.703 as ApotomeSlope,
@@ -1088,6 +1148,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: "``|)" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 58 as Mina,
         primaryComma: {
             apotomeSlope: 7.252 as ApotomeSlope,
@@ -1106,6 +1167,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: ",'|)" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 59 as Mina,
         primaryComma: {
             apotomeSlope: 6.227 as ApotomeSlope,
@@ -1124,6 +1186,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: "'|)" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.ULTRA,
+        lowestSymbolSet: SymbolSet.HERCULEAN,
         mina: 60 as Mina,
         primaryComma: {
             apotomeSlope: 4.201 as ApotomeSlope,
@@ -1142,6 +1205,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: "`'|)" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 61 as Mina,
         primaryComma: {
             apotomeSlope: -2.823 as ApotomeSlope,
@@ -1160,6 +1224,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: ",)|)" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 62 as Mina,
         primaryComma: {
             apotomeSlope: -6.858 as ApotomeSlope,
@@ -1178,6 +1243,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: ")|)" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.HIGH,
+        lowestSymbolSet: SymbolSet.PROMETHEAN,
         mina: 63 as Mina,
         primaryComma: {
             apotomeSlope: -0.887 as ApotomeSlope,
@@ -1196,6 +1262,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: ".(|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.ULTRA,
+        lowestSymbolSet: SymbolSet.HERCULEAN,
         mina: 64 as Mina,
         primaryComma: {
             apotomeSlope: -1.921 as ApotomeSlope,
@@ -1213,7 +1280,8 @@ const JI_SYMBOLS: JiSymbol[] = [
         id: 67 as Id<JiSymbol>,
         ascii: "|\\" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
-        introducingLevel: Level.HIGH,
+        introducingLevel: Level.HIGH, // this is an exception. all other Athenian symbols already introduced at Medium precision
+        lowestSymbolSet: SymbolSet.ATHENIAN,
         mina: 65 as Mina,
         primaryComma: {
             apotomeSlope: -4.956 as ApotomeSlope,
@@ -1232,6 +1300,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: "`|\\" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 66 as Mina,
         primaryComma: {
             apotomeSlope: -6.982 as ApotomeSlope,
@@ -1250,6 +1319,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: ",(|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 67 as Mina,
         primaryComma: {
             apotomeSlope: -1.009 as ApotomeSlope,
@@ -1268,6 +1338,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: "(|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.MEDIUM,
+        lowestSymbolSet: SymbolSet.ATHENIAN,
         mina: 68 as Mina,
         primaryComma: {
             apotomeSlope: 5.959 as ApotomeSlope,
@@ -1286,6 +1357,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: "`(|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 69 as Mina,
         primaryComma: {
             apotomeSlope: -3.070 as ApotomeSlope,
@@ -1304,6 +1376,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: "``(|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 70 as Mina,
         primaryComma: {
             apotomeSlope: -1.111 as ApotomeSlope,
@@ -1322,6 +1395,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: ",'(|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 71 as Mina,
         primaryComma: {
             apotomeSlope: -0.136 as ApotomeSlope,
@@ -1340,6 +1414,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: "'(|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.ULTRA,
+        lowestSymbolSet: SymbolSet.HERCULEAN,
         mina: 72 as Mina,
         primaryComma: {
             apotomeSlope: -2.154 as ApotomeSlope,
@@ -1358,6 +1433,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: ",~|)" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 72.4048681076285 as Mina,
         primaryComma: {
             apotomeSlope: -7.171 as ApotomeSlope,
@@ -1376,6 +1452,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: "~|)" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.HIGH,
+        lowestSymbolSet: SymbolSet.PROMETHEAN,
         mina: 73 as Mina,
         primaryComma: {
             apotomeSlope: -3.198 as ApotomeSlope,
@@ -1394,6 +1471,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: "`~|)" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 74 as Mina,
         primaryComma: {
             apotomeSlope: 6.769 as ApotomeSlope,
@@ -1412,6 +1490,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: ",.(|(" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 75 as Mina,
         primaryComma: {
             apotomeSlope: 4.738 as ApotomeSlope,
@@ -1430,6 +1509,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: ".(|(" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.ULTRA,
+        lowestSymbolSet: SymbolSet.HERCULEAN,
         mina: 76 as Mina,
         primaryComma: {
             apotomeSlope: -8.275 as ApotomeSlope,
@@ -1448,6 +1528,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: "'~|)" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.ULTRA,
+        lowestSymbolSet: SymbolSet.HERCULEAN,
         mina: 77 as Mina,
         primaryComma: {
             apotomeSlope: 4.682 as ApotomeSlope,
@@ -1466,6 +1547,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: "/|~" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.HIGH,
+        lowestSymbolSet: SymbolSet.PROMETHEAN,
         mina: 78 as Mina,
         primaryComma: {
             apotomeSlope: -4.343 as ApotomeSlope,
@@ -1484,6 +1566,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: ",,(|(" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 78.3901455452392 as Mina,
         primaryComma: {
             apotomeSlope: 2.656 as ApotomeSlope,
@@ -1502,6 +1585,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: ",(|(" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 79 as Mina,
         primaryComma: {
             apotomeSlope: -6.373 as ApotomeSlope,
@@ -1520,6 +1604,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: "(|(" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.MEDIUM,
+        lowestSymbolSet: SymbolSet.ATHENIAN,
         mina: 80 as Mina,
         primaryComma: {
             apotomeSlope: -0.396 as ApotomeSlope,
@@ -1538,6 +1623,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: "`(|(" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 81 as Mina,
         primaryComma: {
             apotomeSlope: -2.422 as ApotomeSlope,
@@ -1556,6 +1642,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: "~|\\" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.HIGH,
+        lowestSymbolSet: SymbolSet.PROMETHEAN,
         mina: 82 as Mina,
         primaryComma: {
             apotomeSlope: 3.537 as ApotomeSlope,
@@ -1574,6 +1661,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: ",.//|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 83 as Mina,
         primaryComma: {
             apotomeSlope: -0.502 as ApotomeSlope,
@@ -1592,6 +1680,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: ".//|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.ULTRA,
+        lowestSymbolSet: SymbolSet.HERCULEAN,
         mina: 84 as Mina,
         primaryComma: {
             apotomeSlope: -2.528 as ApotomeSlope,
@@ -1610,6 +1699,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: "`.//|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 85 as Mina,
         primaryComma: {
             apotomeSlope: -9.553 as ApotomeSlope,
@@ -1628,6 +1718,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: ",,//|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 86 as Mina,
         primaryComma: {
             apotomeSlope: 0.414 as ApotomeSlope,
@@ -1646,6 +1737,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: ",//|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 87 as Mina,
         primaryComma: {
             apotomeSlope: 7.378 as ApotomeSlope,
@@ -1664,6 +1756,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: "//|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.MEDIUM,
+        lowestSymbolSet: SymbolSet.SPARTAN,
         mina: 88 as Mina,
         primaryComma: {
             apotomeSlope: 5.352 as ApotomeSlope,
@@ -1682,6 +1775,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: "`//|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 89 as Mina,
         primaryComma: {
             apotomeSlope: -1.673 as ApotomeSlope,
@@ -1700,6 +1794,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: "``//|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 90 as Mina,
         primaryComma: {
             apotomeSlope: -3.699 as ApotomeSlope,
@@ -1718,6 +1813,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: ",'//|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 91 as Mina,
         primaryComma: {
             apotomeSlope: 3.265 as ApotomeSlope,
@@ -1736,6 +1832,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: "'//|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.ULTRA,
+        lowestSymbolSet: SymbolSet.HERCULEAN,
         mina: 92 as Mina,
         primaryComma: {
             apotomeSlope: -1.769 as ApotomeSlope,
@@ -1754,6 +1851,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: ",,)//|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 93 as Mina,
         primaryComma: {
             apotomeSlope: -3.805 as ApotomeSlope,
@@ -1772,6 +1870,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: ",)//|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 94 as Mina,
         primaryComma: {
             apotomeSlope: 4.181 as ApotomeSlope,
@@ -1790,6 +1889,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: ")//|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.HIGH,
+        lowestSymbolSet: SymbolSet.PROMETHEAN,
         mina: 95 as Mina,
         primaryComma: {
             apotomeSlope: -6.857 as ApotomeSlope,
@@ -1808,6 +1908,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: "`)//|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 96 as Mina,
         primaryComma: {
             apotomeSlope: -8.883 as ApotomeSlope,
@@ -1826,6 +1927,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: "``)//|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 97 as Mina,
         primaryComma: {
             apotomeSlope: -4.921 as ApotomeSlope,
@@ -1844,6 +1946,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: ",,/|)" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 98 as Mina,
         primaryComma: {
             apotomeSlope: 2.048 as ApotomeSlope,
@@ -1862,6 +1965,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: ",/|)" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 99 as Mina,
         primaryComma: {
             apotomeSlope: 1.023 as ApotomeSlope,
@@ -1880,6 +1984,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: "/|)" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.MEDIUM,
+        lowestSymbolSet: SymbolSet.SPARTAN,
         mina: 100 as Mina,
         primaryComma: {
             apotomeSlope: -1.003 as ApotomeSlope,
@@ -1898,6 +2003,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: "`/|)" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 101 as Mina,
         primaryComma: {
             apotomeSlope: -8.027 as ApotomeSlope,
@@ -1916,6 +2022,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: "(|~" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.HIGH,
+        lowestSymbolSet: SymbolSet.PROMETHEAN,
         mina: 102 as Mina,
         primaryComma: {
             apotomeSlope: -5.072 as ApotomeSlope,
@@ -1934,6 +2041,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: ",'/|)" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 103 as Mina,
         primaryComma: {
             apotomeSlope: 8.903 as ApotomeSlope,
@@ -1952,6 +2060,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: "'/|)" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.ULTRA,
+        lowestSymbolSet: SymbolSet.HERCULEAN,
         mina: 104 as Mina,
         primaryComma: {
             apotomeSlope: 6.877 as ApotomeSlope,
@@ -1970,6 +2079,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: "`'/|)" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 105 as Mina,
         primaryComma: {
             apotomeSlope: -0.148 as ApotomeSlope,
@@ -1988,6 +2098,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: "./|\\" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.ULTRA,
+        lowestSymbolSet: SymbolSet.HERCULEAN,
         mina: 105.57202549664 as Mina,
         primaryComma: {
             apotomeSlope: -10.160 as ApotomeSlope,
@@ -2006,6 +2117,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: "`./|\\" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 106 as Mina,
         primaryComma: {
             apotomeSlope: -4.182 as ApotomeSlope,
@@ -2024,6 +2136,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: ",,/|\\" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 107 as Mina,
         primaryComma: {
             apotomeSlope: -6.213 as ApotomeSlope,
@@ -2042,6 +2155,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: ",/|\\" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 108 as Mina,
         primaryComma: {
             apotomeSlope: 0.755 as ApotomeSlope,
@@ -2060,6 +2174,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: "/|\\" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.MEDIUM,
+        lowestSymbolSet: SymbolSet.SPARTAN,
         mina: 109 as Mina,
         primaryComma: {
             apotomeSlope: -2.280 as ApotomeSlope,
@@ -2078,6 +2193,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: "`/|\\" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 110 as Mina,
         primaryComma: {
             apotomeSlope: 3.697 as ApotomeSlope,
@@ -2096,6 +2212,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: ",(/|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 111 as Mina,
         primaryComma: {
             apotomeSlope: -5.331 as ApotomeSlope,
@@ -2114,6 +2231,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: "(/|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.HIGH,
+        lowestSymbolSet: SymbolSet.PROMETHEAN,
         mina: 112 as Mina,
         primaryComma: {
             apotomeSlope: -7.357 as ApotomeSlope,
@@ -2132,6 +2250,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: "`(/|" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 113 as Mina,
         primaryComma: {
             apotomeSlope: -3.384 as ApotomeSlope,
@@ -2150,6 +2269,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: "'/|\\" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.ULTRA,
+        lowestSymbolSet: SymbolSet.HERCULEAN,
         mina: 113.451709907417 as Mina,
         primaryComma: {
             apotomeSlope: 5.599 as ApotomeSlope,
@@ -2168,6 +2288,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: "`'/|\\" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 114 as Mina,
         primaryComma: {
             apotomeSlope: 3.573 as ApotomeSlope,
@@ -2186,6 +2307,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: ",)/|\\" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 115 as Mina,
         primaryComma: {
             apotomeSlope: -5.460 as ApotomeSlope,
@@ -2204,6 +2326,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: ")/|\\" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.HIGH,
+        lowestSymbolSet: SymbolSet.PROMETHEAN,
         mina: 116 as Mina,
         primaryComma: {
             apotomeSlope: 0.522 as ApotomeSlope,
@@ -2222,6 +2345,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: "`)/|\\" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 117 as Mina,
         primaryComma: {
             apotomeSlope: -0.522 as ApotomeSlope,
@@ -2240,6 +2364,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: "``)/|\\" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 118 as Mina,
         primaryComma: {
             apotomeSlope: 5.460 as ApotomeSlope,
@@ -2258,6 +2383,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: ",.(|)" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 119 as Mina,
         primaryComma: {
             apotomeSlope: -3.573 as ApotomeSlope,
@@ -2276,6 +2402,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: ".(|)" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.ULTRA,
+        lowestSymbolSet: SymbolSet.HERCULEAN,
         mina: 120 as Mina,
         primaryComma: {
             apotomeSlope: -5.599 as ApotomeSlope,
@@ -2294,6 +2421,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: ",|\\)" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 120.700329647587 as Mina,
         primaryComma: {
             apotomeSlope: 3.384 as ApotomeSlope,
@@ -2312,6 +2440,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: "|\\)" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.HIGH,
+        lowestSymbolSet: SymbolSet.PROMETHEAN,
         mina: 121 as Mina,
         primaryComma: {
             apotomeSlope: 7.357 as ApotomeSlope,
@@ -2330,6 +2459,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: "`|\\)" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 122 as Mina,
         primaryComma: {
             apotomeSlope: 5.331 as ApotomeSlope,
@@ -2348,6 +2478,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: ",(|)" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 123 as Mina,
         primaryComma: {
             apotomeSlope: -3.697 as ApotomeSlope,
@@ -2366,6 +2497,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: "(|)" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.MEDIUM,
+        lowestSymbolSet: SymbolSet.SPARTAN,
         mina: 124 as Mina,
         primaryComma: {
             apotomeSlope: 2.280 as ApotomeSlope,
@@ -2384,6 +2516,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: "`(|)" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 125 as Mina,
         primaryComma: {
             apotomeSlope: -0.755 as ApotomeSlope,
@@ -2402,6 +2535,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: "``(|)" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 126 as Mina,
         primaryComma: {
             apotomeSlope: 6.213 as ApotomeSlope,
@@ -2420,6 +2554,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: ",'(|)" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 127 as Mina,
         primaryComma: {
             apotomeSlope: 4.182 as ApotomeSlope,
@@ -2438,6 +2573,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: "'(|)" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.ULTRA,
+        lowestSymbolSet: SymbolSet.HERCULEAN,
         mina: 128 as Mina,
         primaryComma: {
             apotomeSlope: 10.160 as ApotomeSlope,
@@ -2456,6 +2592,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: ",.(|\\" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 128.580014058364 as Mina,
         primaryComma: {
             apotomeSlope: 0.148 as ApotomeSlope,
@@ -2474,6 +2611,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: ".(|\\" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.ULTRA,
+        lowestSymbolSet: SymbolSet.HERCULEAN,
         mina: 129 as Mina,
         primaryComma: {
             apotomeSlope: -6.877 as ApotomeSlope,
@@ -2492,6 +2630,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: "`.(|\\" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 130 as Mina,
         primaryComma: {
             apotomeSlope: -8.903 as ApotomeSlope,
@@ -2510,6 +2649,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: "|\\\\" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.HIGH,
+        lowestSymbolSet: SymbolSet.PROMETHEAN,
         mina: 131 as Mina,
         primaryComma: {
             apotomeSlope: 5.072 as ApotomeSlope,
@@ -2528,6 +2668,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: ",(|\\" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 132 as Mina,
         primaryComma: {
             apotomeSlope: 8.027 as ApotomeSlope,
@@ -2546,6 +2687,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: "(|\\" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.MEDIUM,
+        lowestSymbolSet: SymbolSet.SPARTAN,
         mina: 133 as Mina,
         primaryComma: {
             apotomeSlope: 1.003 as ApotomeSlope,
@@ -2564,6 +2706,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: "`(|\\" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 134 as Mina,
         primaryComma: {
             apotomeSlope: -1.023 as ApotomeSlope,
@@ -2582,6 +2725,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: "``(|\\" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 135 as Mina,
         primaryComma: {
             apotomeSlope: -2.048 as ApotomeSlope,
@@ -2600,6 +2744,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: ",,)|\\\\" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 136 as Mina,
         primaryComma: {
             apotomeSlope: 4.921 as ApotomeSlope,
@@ -2618,6 +2763,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: ",)|\\\\" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 137 as Mina,
         primaryComma: {
             apotomeSlope: 8.883 as ApotomeSlope,
@@ -2636,6 +2782,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: ")|\\\\" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.HIGH,
+        lowestSymbolSet: SymbolSet.PROMETHEAN,
         mina: 138 as Mina,
         primaryComma: {
             apotomeSlope: 6.857 as ApotomeSlope,
@@ -2654,6 +2801,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: "`)|\\\\" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 139 as Mina,
         primaryComma: {
             apotomeSlope: -4.181 as ApotomeSlope,
@@ -2672,6 +2820,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         ascii: "``)|\\\\" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
         introducingLevel: Level.EXTREME,
+        lowestSymbolSet: SymbolSet.OLYMPIAN,
         mina: 140 as Mina,
         primaryComma: {
             apotomeSlope: 3.805 as ApotomeSlope,

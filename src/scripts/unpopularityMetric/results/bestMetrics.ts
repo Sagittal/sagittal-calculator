@@ -912,7 +912,7 @@ const wabl = {
 
 //
 
-// Dave's rounded WBL-1
+// Dave's rounded WBL-1 (aka N2D3P9, our final metric)
 // Thu Aug 13, 2020 4:42 am
 // http://forum.sagittal.org/viewtopic.php?p=2211#p2211
 const wBL1 = {

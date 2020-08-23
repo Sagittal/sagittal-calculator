@@ -12,8 +12,7 @@ const applySharedUnpopularityMetricCommandSetup = ({ defaultDebugTargets }: { de
         .option("-z, --z <z>", "z", parseFloat)
         .option("-o, --only-top <onlyTop>", "only top", parseInt)
         .option("-m, --maximum-unit <maximumUnit>", "maximum unit", parseFloat)
-
-    program.parse(process.argv)
+        .parse(process.argv)
 
     setDebugTargets(program.debugTargets || defaultDebugTargets && defaultDebugTargets.join(","))
 

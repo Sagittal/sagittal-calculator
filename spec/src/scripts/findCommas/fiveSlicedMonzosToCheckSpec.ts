@@ -2,6 +2,19 @@ import { Prime } from "../../../../src/general"
 import { Copfr, Sopfr } from "../../../../src/general/music"
 import { computeFiveSlicedMonzosToCheck } from "../../../../src/scripts/findCommas/fiveSlicedMonzosToCheck"
 
+// todo: currently if you don't provide sopfr you must provide both max copfr and prime limit.
+//  but a maximum N2D3P9 would also suffice.
+//  basically it's the same behavior as max sopfr. you could have either or both.
+//  Add tests to recognize that.
+//  I'm honestly not even sure if the way I've implemented the maximum N2D3P9 here now even works,
+//  so this is pretty high priority among the to-dos
+//  and wait... don't I need a way to find the maximum prime w/r/t maximum N2D3P9, too?
+//  it would be in the numerator, not the denominator, FWIW...
+//  I think we'd just take that easy peasy numerator formula and keep going until we exceeded max N2D3P9.
+//  or we could use the exponent extra we newly gather below
+//  also we should totally extract this and test it separately
+//  ...okay, it has been extracted, but not tested yet, and we're not using N2D3P9 there yet
+
 describe("computeFiveSlicedMonzosToCheck", () => {
     it("returns the list of 5-sliced monzos to check, given a maximum prime limit, a maximum 5-rough sopfr, and a maximum 5-rough copfr", () => {
         const maximumPrimeLimit = 7 as Prime

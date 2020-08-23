@@ -1,4 +1,4 @@
-import { JI_SYMBOLS, JiSymbol } from "./ji"
+import { JiSymbol, JI_SYMBOLS } from "./ji"
 
 const unicodeFromAscii: (ascii: string) => string =
     (ascii: string): string => {

@@ -1,10 +1,9 @@
-import { JiSymbol, Level, LEVELS_SYMBOL_IDS } from "../../../notations"
+import { Id } from "../../../general"
+import { getSymbol, JiSymbol, Level, LEVELS_SYMBOL_IDS } from "../../../notations"
 import { presentMina } from "../present"
 import { LEVEL_CENTERS } from "./levelHeights"
 import { DOT_SIZE, MINA_OFFSET, SYMBOL_OFFSET } from "./sizes"
 import { computeX } from "./x"
-import { Id } from "../../../general"
-import { getSymbol } from "../../../notations/ji/symbol"
 
 const visualizeLevelSymbols = () => {
     const levelSymbolElements: string[] = [] as string[]

@@ -1,7 +1,7 @@
 import { ApotomeSlope, Cents, Id, Monzo, N2D3P9, Name, Position, Prime, Ratio, Sopfr } from "../../../../src/general"
-import { getSymbol } from "../../../../src/notations/ji/symbol"
-import { JiSymbol, Level, Mina } from "../../../../src/notations/ji"
 import { SymbolLongAscii } from "../../../../src/notations"
+import { getSymbol, JiSymbol, Level, Mina } from "../../../../src/notations/ji"
+import { SymbolSet } from "../../../../src/notations/ji/types"
 import { SymbolUnicode } from "../../../../src/notations/types"
 
 describe("getSymbol", () => {
@@ -15,6 +15,7 @@ describe("getSymbol", () => {
             ascii: "`.|)" as SymbolLongAscii,
             unicode: "" as SymbolUnicode,
             introducingLevel: Level.EXTREME,
+            lowestSymbolSet: SymbolSet.OLYMPIAN,
             mina: 53 as Mina,
             primaryComma: {
                 apotomeSlope: 1.399 as ApotomeSlope,

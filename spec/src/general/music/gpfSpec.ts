@@ -1,6 +1,5 @@
 import { Prime } from "../../../../src/general"
-import { Monzo } from "../../../../src/general/music"
-import { computeGpf } from "../../../../src/general/music/gpf"
+import { computeGpf, Monzo } from "../../../../src/general/music"
 
 describe("computeGpf", () => {
     it("returns the greatest prime factor (AKA prime limit) of the given monzo", () => {
@@ -25,5 +24,13 @@ describe("computeGpf", () => {
         const result = computeGpf(monzo)
 
         expect(result).toBe(1 as Prime)
+    })
+
+    it("works for an integer", () => {
+        const integer = 35
+
+        const result = computeGpf(integer)
+
+        expect(result).toBe(7 as Prime)
     })
 })
