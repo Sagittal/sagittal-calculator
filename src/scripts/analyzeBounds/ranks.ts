@@ -1,8 +1,8 @@
-import { Count, EnumHash, Id } from "../../general"
+import { Count, Id } from "../../general"
 import { Bound } from "../../notations"
 import { EventRank, EventType } from "./types"
 
-const RANKS: EnumHash<EventType, EventRank> = {
+const RANKS: Record<EventType, EventRank> = {
     [ EventType.INA ]: 0 as EventRank,
     [ EventType.MEAN ]: 1 as EventRank,
     [ EventType.SIZE ]: 2 as EventRank,

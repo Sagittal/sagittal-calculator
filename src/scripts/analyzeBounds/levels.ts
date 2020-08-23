@@ -1,9 +1,8 @@
-import { EnumHash } from "../../general"
 import { Level } from "../../notations"
 import { AnalyzedHistory } from "./types"
 
-const levelsBestHistoryRanks: EnumHash<Level, { [ index: number ]: number | undefined }> = {} as EnumHash<Level, { [ index: number ]: number | undefined }>
-const levelsBestCumulativeHistoryRanks: EnumHash<Level, { [ index: number ]: number }> = {} as EnumHash<Level, { [ index: number ]: number }>
+const levelsBestHistoryRanks: Record<Level, { [ index: number ]: number | undefined }> = {} as Record<Level, { [ index: number ]: number | undefined }>
+const levelsBestCumulativeHistoryRanks: Record<Level, { [ index: number ]: number }> = {} as Record<Level, { [ index: number ]: number }>
 
 const updateLevelAnalysis = (bestPossibleHistory: AnalyzedHistory) => {
     let cumulativeRank = 0

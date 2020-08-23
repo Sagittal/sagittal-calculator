@@ -1,4 +1,5 @@
 import { Exponent, Prime } from "../../../../../../src/general"
+import { ACCURACY_THRESHOLD } from "../../../../../../src/general/code"
 import { computeD39ForCandidateMaximumDenominatorPrimeExponent } from "../../../../../../src/general/music/n2d3p9/primeExponentExtremas/d39"
 
 describe("computeD39ForCandidateMaximumDenominatorPrimeExponent", () => {
@@ -11,6 +12,6 @@ describe("computeD39ForCandidateMaximumDenominatorPrimeExponent", () => {
             denominatorPrime,
         })
 
-        expect(result).toBe(((11 / 3) ** 5) * (1 / 9))
+        expect(result).toBeCloseTo(((11 / 3) ** 5) * (1 / 9), ACCURACY_THRESHOLD)
     })
 })

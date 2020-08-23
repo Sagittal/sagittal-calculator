@@ -1,4 +1,4 @@
-import { EnumHash, Position } from "../../../general"
+import { Position } from "../../../general"
 import {
     computeInaMidpoints,
     computeLevelCommaMeans,
@@ -8,21 +8,21 @@ import {
 } from "../../../notations"
 import { EventType } from "../types"
 
-const computeSnappablePositions = (computeLevelSnappablePositions: (level: Level) => Position[]): EnumHash<Level, Position[]> =>
+const computeSnappablePositions = (computeLevelSnappablePositions: (level: Level) => Position[]): Record<Level, Position[]> =>
     LEVELS.reduce(
         (snappablePositions, level) =>
             ({
                 ...snappablePositions,
                 [ level ]: computeLevelSnappablePositions(level),
             }),
-        {} as EnumHash<Level, Position[]>,
+        {} as Record<Level, Position[]>,
     )
 
-const INA_MIDPOINTS: EnumHash<Level, Position[]> = computeSnappablePositions(computeInaMidpoints)
-const LEVELS_COMMA_MEANS: EnumHash<Level, Position[]> = computeSnappablePositions(computeLevelCommaMeans)
-const LEVELS_SIZE_CATEGORY_BOUNDS: EnumHash<Level, Position[]> = computeSnappablePositions(computeSizeCategoryBounds)
+const INA_MIDPOINTS: Record<Level, Position[]> = computeSnappablePositions(computeInaMidpoints)
+const LEVELS_COMMA_MEANS: Record<Level, Position[]> = computeSnappablePositions(computeLevelCommaMeans)
+const LEVELS_SIZE_CATEGORY_BOUNDS: Record<Level, Position[]> = computeSnappablePositions(computeSizeCategoryBounds)
 
-const EVENT_TYPE_SNAPPABLE_POSITIONS: EnumHash<EventType, EnumHash<Level, Position[]>> = {
+const EVENT_TYPE_SNAPPABLE_POSITIONS: Record<EventType, Record<Level, Position[]>> = {
     [ EventType.INA ]: INA_MIDPOINTS,
     [ EventType.SIZE ]: LEVELS_SIZE_CATEGORY_BOUNDS,
     [ EventType.MEAN ]: LEVELS_COMMA_MEANS,

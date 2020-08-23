@@ -1,10 +1,10 @@
-import { EnumHash, Span } from "../../../../general"
+import { Span } from "../../../../general"
 import { computeDynamicParameterScope, DynamicParameterScope } from "../../bestMetric"
 import { Parameter, ParameterValue } from "../../sumOfSquares"
 import { ParameterChunk, SubmetricChunk } from "./types"
 
 // AKA: when included in the solver's generated scopes, what should they be scoped to
-const NO_USELESS_INITIAL_PARAMETER_SCOPES: Partial<EnumHash<Parameter, ParameterValue | boolean | DynamicParameterScope>> = {
+const NO_USELESS_INITIAL_PARAMETER_SCOPES: Partial<Record<Parameter, ParameterValue | boolean | DynamicParameterScope>> = {
     [ Parameter.WEIGHT_AS_POWER_EXPONENT ]: computeDynamicParameterScope({
         center: 0.875 as ParameterValue,
         span: 1.75 as Span<ParameterValue>,
@@ -56,7 +56,7 @@ const NO_USELESS_INITIAL_PARAMETER_SCOPES: Partial<EnumHash<Parameter, Parameter
     [ Parameter.WITHOUT_REPETITION ]: true,
 }
 
-const INITIAL_PARAMETER_SCOPES: Partial<EnumHash<Parameter, ParameterValue | boolean | DynamicParameterScope>> = {
+const INITIAL_PARAMETER_SCOPES: Partial<Record<Parameter, ParameterValue | boolean | DynamicParameterScope>> = {
     [ Parameter.WEIGHT_AS_COEFFICIENT ]: computeDynamicParameterScope({
         center: 0.5 as ParameterValue,
         span: 1 as Span<ParameterValue>,

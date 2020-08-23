@@ -1,4 +1,4 @@
-import { Cents, Count, EnumHash, Name, Position, Proportion, Sum } from "../../general"
+import { Cents, Count, Name, Position, Proportion, Sum } from "../../general"
 import { Level } from "../../notations"
 
 enum EventType {
@@ -48,7 +48,7 @@ interface AnalyzedHistory {
     tinaError: Proportion<"Tina">,
 }
 
-type ConsolidatedHistories = Partial<EnumHash<Level, ConsolidatedEvent[]>>
+type ConsolidatedHistories = Partial<Record<Level, ConsolidatedEvent[]>>
 
 interface UpdateConsolidatedEventParameters {
     analyzedEvent: AnalyzedEvent

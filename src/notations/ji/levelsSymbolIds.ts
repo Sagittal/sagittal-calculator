@@ -1,4 +1,4 @@
-import { EnumHash, Id } from "../../general"
+import { Id } from "../../general"
 import { LEVELS } from "./levels"
 import { JI_SYMBOLS } from "./symbols"
 import { JiSymbol, Level } from "./types"
@@ -9,13 +9,13 @@ const computeIsWithinLevel = (level: Level, targetLevel: Level): boolean =>
 const computeLevelSymbolIds = (level: Level): Array<Id<JiSymbol>> =>
     JI_SYMBOLS.filter(symbol => computeIsWithinLevel(symbol.introducingLevel, level)).map(symbol => symbol.id)
 
-const LEVELS_SYMBOL_IDS: EnumHash<Level, Array<Id<JiSymbol>>> = LEVELS.reduce(
+const LEVELS_SYMBOL_IDS: Record<Level, Array<Id<JiSymbol>>> = LEVELS.reduce(
     (levelSymbols, level: Level) =>
         ({
             ...levelSymbols,
             [ level ]: computeLevelSymbolIds(level),
         }),
-    {} as EnumHash<Level, Array<Id<JiSymbol>>>,
+    {} as Record<Level, Array<Id<JiSymbol>>>,
 )
 
 export {

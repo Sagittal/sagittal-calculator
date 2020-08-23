@@ -1,5 +1,3 @@
-import { EnumHash } from "../../../general"
-
 enum DebugTarget {
     ALL = "all",
     ANTIVOTES = "antivotes",
@@ -15,7 +13,7 @@ enum DebugTarget {
     FINAL_PERFECTER_RESULTS = "finalPerfecterResults",
 }
 
-type DebugTargets = EnumHash<DebugTarget, boolean>
+type DebugTargets = Record<DebugTarget, boolean>
 
 export {
     DebugTargets,

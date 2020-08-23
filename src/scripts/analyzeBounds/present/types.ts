@@ -1,4 +1,4 @@
-import { Cents, EnumHash, Id, Proportion } from "../../../general"
+import { Cents, Id, Proportion } from "../../../general"
 import { Bound, JiSymbol, Level, Mina, SymbolLongAscii } from "../../../notations"
 
 interface BoundedSymbol extends JiSymbol {
@@ -9,7 +9,7 @@ interface BoundedSymbol extends JiSymbol {
 type BoundedSymbolPair = [BoundedSymbol | undefined, BoundedSymbol | undefined]
 
 type BoundedSymbols = { id: Id<Bound> }
-    & Partial<EnumHash<Level, BoundedSymbolPair>>
+    & Partial<Record<Level, BoundedSymbolPair>>
 
 interface BoundIdentifiers {
     boundedSymbols: BoundedSymbols,

@@ -1,8 +1,7 @@
-import { EnumHash } from "../../../general"
 import { ColorMethod } from "../../../types"
 import { DebugTarget } from "./types"
 
-const targetColors: EnumHash<DebugTarget, ColorMethod> = {
+const targetColors: Record<DebugTarget, ColorMethod> = {
     [ DebugTarget.ALL ]: "green",
     [ DebugTarget.ANTIVOTES ]: "white",
     [ DebugTarget.UNPOPULARITIES ]: "white",

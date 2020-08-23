@@ -1,4 +1,4 @@
-import { Cents, Comma, EnumHash, Id, Proportion } from "../../general"
+import { Cents, Comma, Id, Proportion } from "../../general"
 import { SymbolLongAscii, SymbolUnicode } from "../types"
 
 type Mina = number & { _MinaBrand: "Mina" }
@@ -40,7 +40,7 @@ interface Bound {
 
 type BoundIdWithBoundedSymbolIdWithDistancesPairsByLevel =
     { id: Id<Bound> }
-    & Partial<EnumHash<Level, BoundedSymbolIdWithDistancesPair>>
+    & Partial<Record<Level, BoundedSymbolIdWithDistancesPair>>
 
 interface BoundedSymbolIdWithDistances {
     id: Id<JiSymbol>,

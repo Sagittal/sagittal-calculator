@@ -1,4 +1,4 @@
-import { APOTOME, Cents, EnumHash } from "../../general"
+import { APOTOME, Cents } from "../../general"
 import { LEVEL_EDAS } from "./levelEdas"
 import { LEVELS } from "./levels"
 import { Level } from "./types"
@@ -15,13 +15,13 @@ const MAXIMUM_POSITION: Cents = Math.log2(
     Math.pow(2, 15),
 ) * 1200 as Cents                                   // 68.5725082211804
 
-const INA_SIZES: EnumHash<Level, Cents> = LEVEL_EDAS.reduce(
+const INA_SIZES: Record<Level, Cents> = LEVEL_EDAS.reduce(
     (levelEdaStepSizes, levelEda, index) =>
         ({
             ...levelEdaStepSizes,
             [ LEVELS[ index ] ]: APOTOME / levelEda,
         }),
-    {} as EnumHash<Level, Cents>,
+    {} as Record<Level, Cents>,
 ) // 5.41357171705, 2.41882991613, 1.96008631134, 0.48791848093, 0.14052534741
 
 export {
