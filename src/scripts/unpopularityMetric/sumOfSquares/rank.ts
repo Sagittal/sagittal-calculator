@@ -1,9 +1,8 @@
-import { computeTriangularNumber } from "../../../general"
+import { computeTriangularNumber, sort } from "../../../general"
 import { RankedUnpopularity, Unpopularity, UnpopularityRank } from "./types"
 
 const addRankToUnpopularities = (unpopularities: Unpopularity[]): RankedUnpopularity[] => {
-    const unpopularitiesSortedByAntivotes = unpopularities.sort((unpopularity, nextUnpopularity) =>
-        unpopularity.antivotes - nextUnpopularity.antivotes)
+    const unpopularitiesSortedByAntivotes = sort(unpopularities, { by: "antivotes"})
 
     const rankedUnpopularities: RankedUnpopularity[] = unpopularitiesSortedByAntivotes.map((unpopularity, index): RankedUnpopularity => {
         if ((unpopularity as RankedUnpopularity).rank) {
@@ -31,8 +30,7 @@ const addRankToUnpopularities = (unpopularities: Unpopularity[]): RankedUnpopula
         return { ...unpopularity, rank }
     })
 
-    return rankedUnpopularities.sort((unpopularityRanked, nextUnpopularityRanked) =>
-        unpopularityRanked.index - nextUnpopularityRanked.index)
+    return sort(rankedUnpopularities, {by: "index"})
 }
 
 export {

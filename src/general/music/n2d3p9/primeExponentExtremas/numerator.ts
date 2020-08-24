@@ -1,3 +1,4 @@
+import { sort } from "../../../code"
 import { Exponent, Numerator } from "../../../math"
 import { Prime } from "../../../types"
 import { computeIntegerFromMonzo } from "../../integerFromMonzo"
@@ -21,8 +22,8 @@ const computeMaximumNumeratorGivenMaximumN2D3P3 = (maximumN2D3P9: N2D3P9): Numer
         return computeN2D3P9(numeratorMonzoToCheck) < maximumN2D3P9
     })
 
-    let numeratorsToCheck = numeratorMonzosToCheck.map(computeIntegerFromMonzo)
-    numeratorsToCheck.sort((numeratorToCheck: Numerator, nextNumeratorToCheck: Numerator) => nextNumeratorToCheck - numeratorToCheck)
+    const numeratorsToCheck = numeratorMonzosToCheck.map(computeIntegerFromMonzo)
+    sort(numeratorsToCheck, { descending: true })
 
     return numeratorsToCheck[ 0 ]
 }

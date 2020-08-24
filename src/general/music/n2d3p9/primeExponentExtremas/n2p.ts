@@ -1,3 +1,4 @@
+import { sort } from "../../../code"
 import { dividesEvenly, Numerator } from "../../../math"
 import { computeGpf } from "../../gpf"
 import { computeN2 } from "./n2"
@@ -20,9 +21,7 @@ const computeNumeratorPossibilitiesGivenMaximumN2D3P9WithGreaterGpfThanDenominat
         return { ...numeratorPossibility, n2p: computeN2P(numeratorPossibility.numerator) }
     })
 
-    return numeratorPossibilitiesWithGreaterGpfIncludingN2P.sort((numeratorPossibility, nextNumeratorPossibility) => {
-        return numeratorPossibility.n2p - nextNumeratorPossibility.n2p
-    })
+    return sort(numeratorPossibilitiesWithGreaterGpfIncludingN2P, { by: "n2p" })
 }
 
 export {

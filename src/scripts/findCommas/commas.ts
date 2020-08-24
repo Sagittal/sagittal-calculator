@@ -1,4 +1,4 @@
-import { Comma, invertMonzo, Monzo } from "../../general"
+import { Comma, invertMonzo, Monzo, sort } from "../../general"
 import { computeCommasFromFiveSlicedMonzo } from "./commasFromFiveSlicedMonzo"
 import { computeFiveSlicedMonzosToCheck } from "./fiveSlicedMonzosToCheck"
 import { ComputeCommasOptions } from "./types"
@@ -43,8 +43,7 @@ const computeCommas = (options: ComputeCommasOptions) => {
     })
 
     if (sortKey) {
-        commas.sort((comma, nextComma) =>
-            (comma[ sortKey ] as number) - (nextComma[ sortKey ] as number))
+        sort(commas, { by: sortKey })
     }
 
     return commas

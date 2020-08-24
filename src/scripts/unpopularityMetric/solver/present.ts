@@ -1,12 +1,15 @@
+import { sort } from "../../../general"
 import { Metric } from "../bestMetric"
 import { bestMetrics, scopesToSearch, solverStatus } from "../globals"
 
 const presentBestMetrics = (): Record<string, Metric> => {
-    const entriesSortedBySumOfSquares = Array.from(bestMetrics.entries()).sort((a: [string, Metric], b: [string, Metric]): number => {
-        return (b[ 1 ].sumOfSquares) as number - (a[ 1 ].sumOfSquares as number) as number
-    })
+    const bestMetriesEntries = Array.from(bestMetrics.entries())
+    const bestMetricsEntriesSortedBySumOfSquares = sort(
+        bestMetriesEntries,
+        { descending: true, by: [1, "sumOfSquares"] },
+    )
 
-    return entriesSortedBySumOfSquares.reduce(
+    return bestMetricsEntriesSortedBySumOfSquares.reduce(
         (bestMetricsWithKeysSortedBySumOfSquares, [metricName, metric]) => {
             return {
                 ...bestMetricsWithKeysSortedBySumOfSquares,

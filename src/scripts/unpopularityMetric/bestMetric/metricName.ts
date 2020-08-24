@@ -1,11 +1,12 @@
+import { sort } from "../../../general"
 import { MetricName, Scope } from "./types"
 
 const computeMetricName = (scope: Scope): MetricName => {
     const submetricNames = scope.map(submetricScope => {
-        return Object.keys(submetricScope).sort().join(",")
+        return sort(Object.keys(submetricScope)).join(",")
     })
 
-    return submetricNames.sort().map(submetricName => `{${submetricName}}`).join(",") as MetricName
+    return sort(submetricNames).map(submetricName => `{${submetricName}}`).join(",") as MetricName
 }
 
 export {

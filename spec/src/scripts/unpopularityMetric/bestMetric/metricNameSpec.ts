@@ -3,7 +3,7 @@ import { SubmetricScope } from "../../../../../src/scripts/unpopularityMetric/be
 import { computeMetricName } from "../../../../../src/scripts/unpopularityMetric/bestMetric/metricName"
 import { Parameter } from "../../../../../src/scripts/unpopularityMetric/sumOfSquares"
 
-describe("computeMetricName", () => {
+fdescribe("computeMetricName", () => {
     it("makes a string out of the parameters (ignoring values) in each submetric", () => {
         const submetricScopes = [
             {

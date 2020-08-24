@@ -1,15 +1,12 @@
 import { computeDeepClone } from "./deepClone"
+import { sort } from "./sort"
 import { Rank } from "./types"
 
 // TODO: the other types of Rank throughout the code should be parameterized types of Rank
 
 const fractionallyRank = <T extends { [ index: string ]: unknown }, U>(arrayOfObjects: T[], rankKey: string): Array<T & { fractionalRank: Rank }> => {
-    let clonedArrayOfObjects = computeDeepClone(arrayOfObjects)
-    clonedArrayOfObjects = clonedArrayOfObjects.sort((element: T, nextElement: T) => {
-        // TODO: up your TypeScript game here by using type guards;
-        //  I think both strings and numbers should be okay to do subtraction on
-        return element[ rankKey ] as number - (nextElement[ rankKey ] as number)
-    })
+    const clonedArrayOfObjects = computeDeepClone(arrayOfObjects)
+    sort(clonedArrayOfObjects, { by: rankKey })
 
     return clonedArrayOfObjects.map((object: T, index: number): T & { fractionalRank: Rank } => {
         if ((object as T & { fractionalRank: Rank }).fractionalRank) {

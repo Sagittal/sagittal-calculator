@@ -11,6 +11,8 @@ import {
     isUndefined,
     merge,
     shuffle,
+    sort,
+    dig,
 } from "./code"
 import { PRIMES } from "./constants"
 import { forumTable } from "./forumTable"
@@ -141,4 +143,6 @@ export {
     computePrimeExponentExtremasGivenMaximumN2D3P9,
     fractionallyRank,
     computePossibleMonzosFromPrimeExponentExtremas,
+    sort,
+    dig,
 }

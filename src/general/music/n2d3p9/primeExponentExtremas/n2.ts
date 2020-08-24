@@ -1,3 +1,4 @@
+import { sort } from "../../../code"
 import { Numerator } from "../../../math"
 import { computeCopfr } from "../../copfr"
 import {
@@ -23,9 +24,7 @@ const computeNumeratorPossibilitiesGivenMaximumN2D3P9WithLesserGpfThanDenominato
         return { ...numeratorPossibility, n2: computeN2(numeratorPossibility.numerator) }
     })
 
-    return numeratorPossibilitiesWithLesserGpfIncludingN2.sort((numeratorPossibility, nextNumeratorPossibility) => {
-        return numeratorPossibility.n2 - nextNumeratorPossibility.n2
-    })
+    return sort(numeratorPossibilitiesWithLesserGpfIncludingN2, {by: "n2"})
 }
 
 export {

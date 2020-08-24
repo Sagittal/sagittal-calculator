@@ -1,6 +1,5 @@
 import { Combination } from "../../../../../src/general"
-import { SumOfSquares } from "../../../../../src/scripts/unpopularityMetric/bestMetric"
-import { MetricName } from "../../../../../src/scripts/unpopularityMetric/bestMetric/types"
+import { MetricName, SumOfSquares } from "../../../../../src/scripts/unpopularityMetric/bestMetric"
 import { bestMetrics } from "../../../../../src/scripts/unpopularityMetric/globals"
 import { presentBestMetrics } from "../../../../../src/scripts/unpopularityMetric/solver"
 import { Parameter, Submetric } from "../../../../../src/scripts/unpopularityMetric/sumOfSquares"
