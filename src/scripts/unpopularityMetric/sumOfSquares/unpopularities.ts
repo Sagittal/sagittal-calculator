@@ -1,6 +1,6 @@
-import { Combination, Index } from "../../../general"
+import { Combination, Index, Popularity } from "../../../general"
 import { computeAntivotes } from "./antivotes"
-import { Popularity, Submetric, Unpopularity } from "./types"
+import { Submetric, Unpopularity } from "./types"
 
 const computeUnpopularities = (realPopularities: Popularity[], submetrics: Combination<Submetric>): Unpopularity[] =>
     realPopularities.map(({ fiveRoughRatio }: Popularity, index) =>

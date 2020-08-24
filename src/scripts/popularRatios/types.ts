@@ -1,6 +1,4 @@
-import { N2D3P9, Rank } from "../../general"
-// tslint:disable-next-line no-reaching-imports
-import { Popularity } from "../unpopularityMetric/sumOfSquares"
+import { N2D3P9, Popularity, Rank } from "../../general"
 
 interface PopularRatioUnrankedResult {
     presentedRatio: string,

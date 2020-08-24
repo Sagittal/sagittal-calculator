@@ -1,26 +1,10 @@
-import * as colors from "colors"
-import { program } from "commander"
 import { Metric } from "../../bestMetric"
-import { clearDebugLogFiles, debugSettings, DebugTarget, saveDebugMessage, setDebugTargets } from "../../debug"
+import { DebugTarget, saveDebugMessage } from "../../debug"
 import { PARAMETER_DYNAMISMS } from "../../perfecter"
 import { Parameter, ParameterValue } from "../../sumOfSquares"
-import { load } from "../shared"
+import { applySharedUnpopularityMetricCommandSetup, load } from "../shared"
 
-program
-    .option("-d, --debug-targets [debugTargets]", "debug targets")
-    .option("-c, --no-color", "no color")
-    .option("-w, --no-write", "no write")
-    .parse(process.argv)
-
-setDebugTargets(program.debugTargets || DebugTarget.ALL)
-if (!program.color) {
-    colors.disable()
-}
-debugSettings.noWrite = !program.write
-
-if (!debugSettings.noWrite) {
-    clearDebugLogFiles()
-}
+applySharedUnpopularityMetricCommandSetup()
 
 const metricsMissingSpreadDynamicParameters = load("metrics") as unknown as Record<string, Metric>
 
