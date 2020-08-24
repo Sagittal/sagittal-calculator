@@ -11,9 +11,9 @@ describe("computeRatioSubmetricAntivotes", () => {
         const fiveRoughRatio = [11, 7] as Ratio
         const submetric = { kAsCoefficient, sum: true }
 
-        const result = computeRatioSubmetricAntivotes(fiveRoughRatio, submetric)
+        const actual = computeRatioSubmetricAntivotes(fiveRoughRatio, submetric)
 
-        expect(result).toBe(
+        expect(actual).toBe(
             computeSubmetricAntivotes([0, 0, 0, 0, 1] as Monzo, submetric) as Antivotes +
             kAsCoefficient * computeSubmetricAntivotes([0, 0, 0, 1] as Monzo, submetric) as Antivotes,
         )
@@ -24,9 +24,9 @@ describe("computeRatioSubmetricAntivotes", () => {
         const fiveRoughRatio = [25, 11] as Ratio // 10:11
         const submetric = { kAsCoefficient, sum: true }
 
-        const result = computeRatioSubmetricAntivotes(fiveRoughRatio, submetric)
+        const actual = computeRatioSubmetricAntivotes(fiveRoughRatio, submetric)
 
-        expect(result).toBe(
+        expect(actual).toBe(
             computeSubmetricAntivotes([0, 0, 2] as Monzo, submetric) as Antivotes +
             kAsCoefficient * computeSubmetricAntivotes([0, 0, 0, 0, 1] as Monzo, submetric) as Antivotes,
         )
@@ -36,9 +36,9 @@ describe("computeRatioSubmetricAntivotes", () => {
         const fiveRoughRatio = [5, 7] as Ratio
         const submetric = { sum: true }
 
-        const result = computeRatioSubmetricAntivotes(fiveRoughRatio, submetric)
+        const actual = computeRatioSubmetricAntivotes(fiveRoughRatio, submetric)
 
-        expect(result).toBe(
+        expect(actual).toBe(
             computeSubmetricAntivotes([0, 0, 1, -1] as Monzo, submetric),
         )
     })
@@ -49,9 +49,9 @@ describe("computeRatioSubmetricAntivotes", () => {
         const useNuminator = true
         const submetric = { kAsCoefficient, useNuminator, sum: true }
 
-        const result = computeRatioSubmetricAntivotes(fiveRoughRatio, submetric)
+        const actual = computeRatioSubmetricAntivotes(fiveRoughRatio, submetric)
 
-        expect(result).toBe(
+        expect(actual).toBe(
             computeSubmetricAntivotes([0, 0, 0, 0, 1] as Monzo, submetric) as Antivotes +
             kAsCoefficient * computeSubmetricAntivotes([0, 0, 2] as Monzo, submetric) as Antivotes,
         )
@@ -62,9 +62,9 @@ describe("computeRatioSubmetricAntivotes", () => {
         const fiveRoughRatio = [5, 7] as Ratio
         const submetric = { kAsCoefficient, sum: true }
 
-        const result = computeRatioSubmetricAntivotes(fiveRoughRatio, submetric)
+        const actual = computeRatioSubmetricAntivotes(fiveRoughRatio, submetric)
 
-        expect(result).toBe(
+        expect(actual).toBe(
             computeSubmetricAntivotes([0, 0, 1] as Monzo, submetric),
         )
     })
@@ -74,9 +74,9 @@ describe("computeRatioSubmetricAntivotes", () => {
         const fiveRoughRatio = [5, 7] as Ratio
         const submetric = { jAsCoefficient, sum: true }
 
-        const result = computeRatioSubmetricAntivotes(fiveRoughRatio, submetric)
+        const actual = computeRatioSubmetricAntivotes(fiveRoughRatio, submetric)
 
-        expect(result).toBe(
+        expect(actual).toBe(
             computeSubmetricAntivotes([0, 0, 0, 1] as Monzo, submetric),
         )
     })
@@ -86,9 +86,9 @@ describe("computeRatioSubmetricAntivotes", () => {
         const fiveRoughRatio = [5, 7] as Ratio
         const submetric = { kAsLogarithmBase, sum: true }
 
-        const result = computeRatioSubmetricAntivotes(fiveRoughRatio, submetric)
+        const actual = computeRatioSubmetricAntivotes(fiveRoughRatio, submetric)
 
-        expect(result).toBe(
+        expect(actual).toBe(
             computeSubmetricAntivotes([0, 0, 1] as Monzo, submetric) as Antivotes +
             computeLog(computeSubmetricAntivotes([0, 0, 0, 1] as Monzo, submetric), 2) as Antivotes,
         )
@@ -99,9 +99,9 @@ describe("computeRatioSubmetricAntivotes", () => {
         const fiveRoughRatio = [5, 7] as Ratio
         const submetric = { kAsPowerExponent, sum: true }
 
-        const result = computeRatioSubmetricAntivotes(fiveRoughRatio, submetric)
+        const actual = computeRatioSubmetricAntivotes(fiveRoughRatio, submetric)
 
-        expect(result).toBe(
+        expect(actual).toBe(
             computeSubmetricAntivotes([0, 0, 1] as Monzo, submetric) as Antivotes +
             computeSubmetricAntivotes([0, 0, 0, 1] as Monzo, submetric) ** 2 as Antivotes,
         )
@@ -112,9 +112,9 @@ describe("computeRatioSubmetricAntivotes", () => {
         const fiveRoughRatio = [5, 7] as Ratio
         const submetric = { kAsPowerBase, sum: true }
 
-        const result = computeRatioSubmetricAntivotes(fiveRoughRatio, submetric)
+        const actual = computeRatioSubmetricAntivotes(fiveRoughRatio, submetric)
 
-        expect(result).toBe(
+        expect(actual).toBe(
             computeSubmetricAntivotes([0, 0, 1] as Monzo, submetric) as Antivotes +
             2 ** computeSubmetricAntivotes([0, 0, 0, 1] as Monzo, submetric) as Antivotes,
         )
@@ -125,9 +125,9 @@ describe("computeRatioSubmetricAntivotes", () => {
         const fiveRoughRatio = [5, 7] as Ratio
         const submetric = { jAsLogarithmBase, sum: true }
 
-        const result = computeRatioSubmetricAntivotes(fiveRoughRatio, submetric)
+        const actual = computeRatioSubmetricAntivotes(fiveRoughRatio, submetric)
 
-        expect(result).toBe(
+        expect(actual).toBe(
             computeLog(computeSubmetricAntivotes([0, 0, 1] as Monzo, submetric), 2) as Antivotes +
             computeSubmetricAntivotes([0, 0, 0, 1] as Monzo, submetric) as Antivotes,
         )
@@ -138,9 +138,9 @@ describe("computeRatioSubmetricAntivotes", () => {
         const fiveRoughRatio = [5, 7] as Ratio
         const submetric = { jAsPowerExponent, sum: true }
 
-        const result = computeRatioSubmetricAntivotes(fiveRoughRatio, submetric)
+        const actual = computeRatioSubmetricAntivotes(fiveRoughRatio, submetric)
 
-        expect(result).toBe(
+        expect(actual).toBe(
             computeSubmetricAntivotes([0, 0, 1] as Monzo, submetric) ** 2 as Antivotes +
             computeSubmetricAntivotes([0, 0, 0, 1] as Monzo, submetric) as Antivotes,
         )
@@ -151,9 +151,9 @@ describe("computeRatioSubmetricAntivotes", () => {
         const fiveRoughRatio = [5, 7] as Ratio
         const submetric = { jAsPowerBase, sum: true }
 
-        const result = computeRatioSubmetricAntivotes(fiveRoughRatio, submetric)
+        const actual = computeRatioSubmetricAntivotes(fiveRoughRatio, submetric)
 
-        expect(result).toBe(
+        expect(actual).toBe(
             2 ** computeSubmetricAntivotes([0, 0, 1] as Monzo, submetric) as Antivotes +
             computeSubmetricAntivotes([0, 0, 0, 1] as Monzo, submetric) as Antivotes,
         )

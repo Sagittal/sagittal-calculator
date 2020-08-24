@@ -16,9 +16,9 @@ describe("extractBoundIdentifiers", () => {
     }
 
     it("returns helpful identifying information about the bound", () => {
-        const result: BoundIdentifiers = extractBoundIdentifiers(bound)
+        const actual: BoundIdentifiers = extractBoundIdentifiers(bound)
 
-        expect(result).toEqual({
+        const expected: BoundIdentifiers = {
             extremeLevelLesserBoundedSymbol: ".)/|" as SymbolLongAscii,
             extremeLevelGreaterBoundedSymbol: "'/|" as SymbolLongAscii,
             cents: 23.1164196495597 as Cents as Cents,
@@ -159,6 +159,7 @@ describe("extractBoundIdentifiers", () => {
             },
             lesserBoundedMina: 47 as Mina,
             greaterBoundedMina: 48 as Mina,
-        })
+        }
+        expect(actual).toEqual(expected)
     })
 })

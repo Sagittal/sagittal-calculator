@@ -29,9 +29,9 @@ describe("computeExtendedLevelHistories", () => {
             levels: [Level.MEDIUM, Level.HIGH, Level.ULTRA],
         }
 
-        const result = computeExtendedLevelHistories(histories, level, bound)
+        const actual = computeExtendedLevelHistories(histories, level, bound)
 
-        expect(result).toEqual([
+        const expected = [
             [
                 firstHistoryPriorEvent,
                 {
@@ -86,6 +86,7 @@ describe("computeExtendedLevelHistories", () => {
                     cents: 7.243699380344975 as Cents,
                 },
             ],
-        ])
+        ]
+        expect(actual).toEqual(expected)
     })
 })

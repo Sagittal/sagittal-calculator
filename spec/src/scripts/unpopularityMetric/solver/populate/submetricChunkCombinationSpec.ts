@@ -59,9 +59,9 @@ describe("populateScopesForSubmetricChunkCombination", () => {
             submetricChunkCombinationIndex,
             submetricChunkCombinationCount,
         })
-        const result = scopesToSearch
+        const actual = scopesToSearch
 
-        const expectedResult = [
+        const expected = [
             // 1
 
             // AB i ii A B
@@ -326,9 +326,9 @@ describe("populateScopesForSubmetricChunkCombination", () => {
             ],
         ] as Combinations<Chunk>
 
-        expect(result.length).toEqual(expectedResult.length)
-        expectedResult.forEach(expectedResultElement => {
-            expect(result.some(resultElement => {
+        expect(actual.length).toEqual(expected.length)
+        expected.forEach(expectedResultElement => {
+            expect(actual.some(resultElement => {
                 return deepEquals(resultElement, expectedResultElement)
             })).toBeTruthy(`This expected element was not found: ${JSON.stringify(expectedResultElement)}`)
         })

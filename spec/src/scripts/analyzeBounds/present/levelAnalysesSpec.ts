@@ -28,11 +28,11 @@ describe("presentLevelAnalyses", () => {
     })
 
     it("prints the levels in order from highest to lowest", () => {
-        const result = presentLevelAnalyses()
+        const actual = presentLevelAnalyses()
 
-        expect(result.indexOf("Insane")).toBeLessThan(result.indexOf("Extreme"))
-        expect(result.indexOf("Extreme")).toBeLessThan(result.indexOf("Ultra"))
-        expect(result.indexOf("Ultra")).toBeLessThan(result.indexOf("High"))
-        expect(result.indexOf("High")).toBeLessThan(result.indexOf("Medium"))
+        expect(actual.indexOf("Insane")).toBeLessThan(actual.indexOf("Extreme"))
+        expect(actual.indexOf("Extreme")).toBeLessThan(actual.indexOf("Ultra"))
+        expect(actual.indexOf("Ultra")).toBeLessThan(actual.indexOf("High"))
+        expect(actual.indexOf("High")).toBeLessThan(actual.indexOf("Medium"))
     })
 })

@@ -20,11 +20,13 @@ describe("computeMinimumN2D3P9ForCandidateMaximumDenominatorPrimeExponentGivenMa
         spyOn(d39, "computeD39ForCandidateMaximumDenominatorPrimeExponent")
             .and.returnValue(d39ForCandidateMaximumDenominatorPrimeExponent)
 
-        const result = computeMinimumN2D3P9ForCandidateMaximumDenominatorPrimeExponentGivenMaximumN2D3P9({
+        const actual = computeMinimumN2D3P9ForCandidateMaximumDenominatorPrimeExponentGivenMaximumN2D3P9({
             sortedNumeratorPossibilitiesForDenominatorPrimeGivenMaximumN2D3P9,
             denominatorPrime,
             candidateMaximumDenominatorPrimeExponentGivenMaximumN2D3P9,
         })
-        expect(result).toEqual(46.5)
+
+        const expected = 46.5
+        expect(actual).toEqual(expected)
     })
 })

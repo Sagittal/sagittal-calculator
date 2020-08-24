@@ -11,18 +11,19 @@ describe("computeParameterValues", () => {
             resolution: 5 as Resolution<ParameterValue>,
         }
 
-        const result: ParameterValue[] = computeParameterValues(parameterScope)
+        const actual: ParameterValue[] = computeParameterValues(parameterScope)
 
-        expect(result).toEqual([
+        const expected = [
             0.75,
             0.875,
             1.0,
             1.125,
             1.25,
-        ] as ParameterValue[])
-        expect(result.length).toBe(parameterScope.resolution as number)
-        expect(result[ result.length - 1 ] - result[ 0 ]).toBe(parameterScope.span as number)
-        expect(result[ Math.floor(result.length / 2) ] as number).toBe(parameterScope.center as number)
+        ] as ParameterValue[]
+        expect(actual).toEqual(expected)
+        expect(actual.length).toBe(parameterScope.resolution as number)
+        expect(actual[ actual.length - 1 ] - actual[ 0 ]).toBe(parameterScope.span as number)
+        expect(actual[ Math.floor(actual.length / 2) ] as number).toBe(parameterScope.center as number)
     })
 
     it("works when the resolution is even", () => {
@@ -32,20 +33,21 @@ describe("computeParameterValues", () => {
             resolution: 4 as Resolution<ParameterValue>,
         }
 
-        const result = computeParameterValues(parameterScope)
+        const actual = computeParameterValues(parameterScope)
 
-        expect(result).toEqual([
+        const expected = [
             4.5,
             4.833333333333333333,
             5.166666666666666666,
             5.5,
-        ] as ParameterValue[])
-        expect(result.length).toBe(parameterScope.resolution as number)
-        expect(result[ result.length - 1 ] - result[ 0 ]).toBe(parameterScope.span as number)
+        ] as ParameterValue[]
+        expect(actual).toEqual(expected)
+        expect(actual.length).toBe(parameterScope.resolution as number)
+        expect(actual[ actual.length - 1 ] - actual[ 0 ]).toBe(parameterScope.span as number)
         expect(
             (
-                result[ Math.floor(result.length / 2) ] +
-                result[ Math.floor(result.length / 2) - 1 ]
+                actual[ Math.floor(actual.length / 2) ] +
+                actual[ Math.floor(actual.length / 2) - 1 ]
             )
             /
             2,
@@ -58,13 +60,14 @@ describe("computeParameterValues", () => {
             resolution: 1 as Resolution<ParameterValue>,
         }
 
-        const result = computeParameterValues(parameterScope)
+        const actual = computeParameterValues(parameterScope)
 
-        expect(result).toEqual([
+        const expected = [
             5,
-        ] as ParameterValue[])
-        expect(result.length).toBe(parameterScope.resolution as number)
-        expect(result[ Math.floor(result.length / 2) ] as number).toBe(parameterScope.center as number)
+        ] as ParameterValue[]
+        expect(actual).toEqual(expected)
+        expect(actual.length).toBe(parameterScope.resolution as number)
+        expect(actual[ Math.floor(actual.length / 2) ] as number).toBe(parameterScope.center as number)
     })
 
     it("works when the resolution is zero", () => {
@@ -72,9 +75,10 @@ describe("computeParameterValues", () => {
             resolution: 0 as Resolution<ParameterValue>,
         }
 
-        const result = computeParameterValues(parameterScope)
+        const actual = computeParameterValues(parameterScope)
 
-        expect(result).toEqual([])
-        expect(result.length).toBe(parameterScope.resolution as number)
+        const expected: ParameterValue[] = []
+        expect(actual).toEqual(expected)
+        expect(actual.length).toBe(parameterScope.resolution as number)
     })
 })

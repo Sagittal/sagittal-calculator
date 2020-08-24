@@ -1,19 +1,21 @@
-import { formatTime } from "../../../src/general/time"
+import { formatTime } from "../../../src/general"
 
 describe("formatTime", () => {
     it("formats ms to hours", () => {
         const ms = 205207663.470801
 
-        const result = formatTime(ms)
+        const actual = formatTime(ms)
 
-        expect(result).toEqual("2d, 9h, 0m, 7s, 663ms")
+        const expected = "2d, 9h, 0m, 7s, 663ms"
+        expect(actual).toEqual(expected)
     })
 
     it("works for small times", () => {
         const ms = 13801.802699999884
 
-        const result = formatTime(ms)
+        const actual = formatTime(ms)
 
-        expect(result).toEqual("13s, 802ms")
+        const expected = "13s, 802ms"
+        expect(actual).toEqual(expected)
     })
 })

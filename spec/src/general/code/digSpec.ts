@@ -3,11 +3,12 @@ import { dig } from "../../../../src/general/code"
 describe("dig", () => {
     it("returns the value within the object following the path", () => {
         const path = ["a", "b"]
-        const object = { a: { b: 3 }}
+        const object = { a: { b: 3 } }
 
-        const result = dig(object, path)
+        const actual = dig(object, path)
 
-        expect(result).toBe(3)
+        const expected = 3
+        expect(actual).toBe(expected)
     })
 
     it("also works for nested arrays", () => {
@@ -21,26 +22,29 @@ describe("dig", () => {
             ],
         ]
 
-        const result = dig(object, path)
+        const actual = dig(object, path)
 
-        expect(result).toBe(3)
+        const expected = 3
+        expect(actual).toBe(expected)
     })
 
     it("works when the path is a single number (not in an array)", () => {
         const path = 1
-        const object = [ "a", "b", "c"]
+        const object = ["a", "b", "c"]
 
-        const result = dig(object, path)
+        const actual = dig(object, path)
 
-        expect(result).toBe("b")
+        const expected = "b"
+        expect(actual).toBe(expected)
     })
 
     it("works when the path is a single string (not in an array)", () => {
         const path = "b"
         const object = { a: 0, b: 1, c: 2 }
 
-        const result = dig(object, path)
+        const actual = dig(object, path)
 
-        expect(result).toBe(1)
+        const expected = 1
+        expect(actual).toBe(expected)
     })
 })

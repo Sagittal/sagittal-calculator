@@ -4,8 +4,9 @@ describe("asciiUnicode", () => {
     it("given an ascii representation of a symbol, it returns its unicode representation", () => {
         const symbolAscii = "``)|"
 
-        const result = unicodeFromAscii(symbolAscii)
+        const actual = unicodeFromAscii(symbolAscii)
 
-        expect(result).toBe("")
+        const expected = ""
+        expect(actual).toBe(expected)
     })
 })

@@ -4,7 +4,7 @@ import { AnalyzedEvent, ConsolidatedEvent, EventType } from "../../../../src/scr
 import { analyzedEventFixture } from "../../../helpers/src/scripts/analyzeBounds/fixtures"
 
 describe("computeInitialConsolidatedEvent", () => {
-    let result: ConsolidatedEvent
+    let actual: ConsolidatedEvent
     const analyzedEvent: AnalyzedEvent = {
         ...analyzedEventFixture,
         type: EventType.INA,
@@ -14,34 +14,34 @@ describe("computeInitialConsolidatedEvent", () => {
     }
 
     beforeEach(() => {
-        result = computeInitialConsolidatedEvent(analyzedEvent)
+        actual = computeInitialConsolidatedEvent(analyzedEvent)
     })
 
     it("initializes the rank related fields to the worst rank (so that there's nowhere to go but up when updating them with data from the analyzed histories", () => {
-        expect(result.rankOfBestRankedEventInAnyMemberHistory).toBe(2 as Rank<AnalyzedEvent>)
-        expect(result.rankOfBestRankedMemberHistory).toBe(2 as Rank<AnalyzedEvent>)
+        expect(actual.rankOfBestRankedEventInAnyMemberHistory).toBe(2 as Rank<AnalyzedEvent>)
+        expect(actual.rankOfBestRankedMemberHistory).toBe(2 as Rank<AnalyzedEvent>)
     })
 
     it("strips off the rank that was created in the analyze step, replacing it with the rank measurements that are appropriate for the consolidated history", () => {
-        expect((result as unknown as AnalyzedEvent).rank).toBeUndefined()
+        expect((actual as unknown as AnalyzedEvent).rank).toBeUndefined()
     })
 
     it("initializes to assume that it is not a member of a history which is possible (if one ever comes across which is possible, then it never goes back to being considered not possible)", () => {
-        expect(result.isPossibleHistoryMember).toBeFalsy()
+        expect(actual.isPossibleHistoryMember).toBeFalsy()
     })
 
     it("initializes to assume that it is not a member of the best possible history (if one ever comes across which is possible, then it never goes back to being considered not possible)", () => {
-        expect(result.isBestPossibleHistoryMember).toBeFalsy()
+        expect(actual.isBestPossibleHistoryMember).toBeFalsy()
     })
 
     it("initializes with an empty list of next events", () => {
-        expect(result.nextEvents).toEqual([])
+        expect(actual.nextEvents).toEqual([])
     })
 
     it("preserves most of the original information from the original event", () => {
-        expect(result.type).toBe(analyzedEvent.type)
-        expect(result.level).toBe(analyzedEvent.level)
-        expect(result.name).toBe(analyzedEvent.name)
-        expect(result.cents).toBe(analyzedEvent.cents)
+        expect(actual.type).toBe(analyzedEvent.type)
+        expect(actual.level).toBe(analyzedEvent.level)
+        expect(actual.name).toBe(analyzedEvent.name)
+        expect(actual.cents).toBe(analyzedEvent.cents)
     })
 })

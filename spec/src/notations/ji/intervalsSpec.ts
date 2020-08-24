@@ -1,4 +1,4 @@
-import { ACCURACY_THRESHOLD } from "../../../../src/general/code/constants"
+import { ACCURACY_THRESHOLD } from "../../../../src/general/code"
 import { Level } from "../../../../src/notations/ji"
 import { HIGHINA, INA_SIZES, MEDINA, MINA, TINA, ULTRINA } from "../../../../src/notations/ji/intervals"
 

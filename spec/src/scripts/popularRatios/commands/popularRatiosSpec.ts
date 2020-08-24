@@ -1,5 +1,5 @@
-import { runCommandAndGetConsoleOutput } from "../../../../helpers/src/scripts/runCommand"
 import { onlyRunInCi } from "../../../../helpers/onlyRunInCi"
+import { runCommandAndGetConsoleOutput } from "../../../../helpers/src/scripts/runCommand"
 
 describe("popular-ratios", () => {
     it("gives you the list of the most popular ratios, according to N2D3P9", () => {
@@ -7,10 +7,10 @@ describe("popular-ratios", () => {
 
         const command = "npm run popular-ratios -- -m 136"
 
-        const result = runCommandAndGetConsoleOutput(command)
+        const actual = runCommandAndGetConsoleOutput(command)
 
         // this is shared here: http://forum.sagittal.org/viewtopic.php?p=2246#p2246
-        expect(result).toEqual([
+        const expected = [
             "count of results with N2D3P9 <= 136: 131",
             "[table]",
             "[tr][th]ratio[/th][th]N2D3P9[/th][th]symbol[/th][th]symbol sets[/th][th]estimated rank[/th][th]actual rank[/th][/tr]",
@@ -146,7 +146,8 @@ describe("popular-ratios", () => {
             "[tr][td]155/1[/td][td]133.47[/td][td][/td][td][/td][td]130[/td][td]604.5[/td][/tr]",
             "[tr][td]15625/1[/td][td]135.63[/td][td][/td][td][/td][td]131[/td][td]63[/td][/tr]",
             "[/table]",
-        ])
+        ]
+        expect(actual).toEqual(expected)
     })
 
     it("works for a different maximum N2D3P9", () => {
@@ -154,9 +155,9 @@ describe("popular-ratios", () => {
 
         const command = "npm run popular-ratios -- -m 10"
 
-        const result = runCommandAndGetConsoleOutput(command)
+        const actual = runCommandAndGetConsoleOutput(command)
 
-        expect(result).toEqual([
+        const expected = [
             "count of results with N2D3P9 <= 10: 10",
             "[table]",
             "[tr][th]ratio[/th][th]N2D3P9[/th][th]symbol[/th][th]symbol sets[/th][th]estimated rank[/th][th]actual rank[/th][/tr]",
@@ -171,6 +172,7 @@ describe("popular-ratios", () => {
             "[tr][td]13/1[/td][td]9.39[/td][td]:,::.::|): :,::/|): :`::(|\\:[/td][td]4, 4, 4[/td][td]9[/td][td]10[/td][/tr]",
             "[tr][td]49/1[/td][td]9.53[/td][td]:~|): :(/|: :|\\):[/td][td]2, 2, 2[/td][td]10[/td][td]9[/td][/tr]",
             "[/table]",
-        ])
+        ]
+        expect(actual).toEqual(expected)
     })
 })

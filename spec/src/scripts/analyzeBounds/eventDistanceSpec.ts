@@ -9,8 +9,9 @@ describe("computeEventDistance", () => {
         const history = [{ ...eventFixture, cents: 3 as Cents }, event]
         const index = 1
 
-        const result = computeEventDistance(event, index, history)
+        const actual = computeEventDistance(event, index, history)
 
-        expect(result).toBe(2 as Cents)
+        const expected = 2 as Cents
+        expect(actual).toBe(expected)
     })
 })

@@ -22,7 +22,7 @@ if (!debugSettings.noWrite) {
     clearDebugLogFiles()
 }
 
-const metricsMissingSpreadDynamicParameters = load("metrics") as unknown as Record<string, Metric> // paste things in from 1.txt, 2.txt, etc.
+const metricsMissingSpreadDynamicParameters = load("metrics") as unknown as Record<string, Metric>
 
 const guessedBackfilledSpreadDynamicParametersMetrics = Object.entries(metricsMissingSpreadDynamicParameters).reduce(
     (guessedBackfilledSpreadDynamicParametersMetrics: Record<string, Metric>, [metricName, metric]: [string, Metric]) => {

@@ -5,8 +5,8 @@ describe("dividesEvenly", (): void => {
         const numeral = 5
         const modulus = 2
 
-        const result = dividesEvenly(numeral, modulus)
+        const actual = dividesEvenly(numeral, modulus)
 
-        expect(result).toEqual(false)
+        expect(actual).toBeFalsy()
     })
 })

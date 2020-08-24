@@ -16,9 +16,9 @@ describe("computeMetricName", () => {
             },
         ] as Combination<SubmetricScope>
 
-        const result = computeMetricName(submetricScopes)
+        const actual = computeMetricName(submetricScopes)
 
-        expect(result).toBe(`{aAsLogarithmBase,sum},{max,withoutRepetition}`)
+        expect(actual).toBe(`{aAsLogarithmBase,sum},{max,withoutRepetition}`)
     })
 
     it("sorts the parameters within each name (so that metrics which are the same get consolidated)", () => {
@@ -34,9 +34,9 @@ describe("computeMetricName", () => {
             },
         ] as Combination<SubmetricScope>
 
-        const result = computeMetricName(submetricScopes)
+        const actual = computeMetricName(submetricScopes)
 
-        expect(result).toBe(`{aAsLogarithmBase,sum},{aAsPowerExponent,max,withoutRepetition}`)
+        expect(actual).toBe(`{aAsLogarithmBase,sum},{aAsPowerExponent,max,withoutRepetition}`)
     })
 
     it("sorts by submetricScopes too", () => {
@@ -52,8 +52,8 @@ describe("computeMetricName", () => {
             },
         ] as Combination<SubmetricScope>
 
-        const result = computeMetricName(submetricScopes)
+        const actual = computeMetricName(submetricScopes)
 
-        expect(result).toBe(`{aAsLogarithmBase,sum},{aAsPowerExponent,max,withoutRepetition}`)
+        expect(actual).toBe(`{aAsLogarithmBase,sum},{aAsPowerExponent,max,withoutRepetition}`)
     })
 })

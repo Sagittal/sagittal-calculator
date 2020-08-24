@@ -4,8 +4,9 @@ describe("computeDeepDistinct", () => {
     it("removes duplicate objects from the array", () => {
         const array = [{ a: 1 }, { a: 1 }, { a: 0 }, { a: 1 }, { a: 2 }, { a: 3 }, { a: 4 }, { a: 2 }]
 
-        const result = computeDeepDistinct(array)
+        const actual = computeDeepDistinct(array)
 
-        expect(result).toEqual([{ a: 1 }, { a: 0 }, { a: 2 }, { a: 3 }, { a: 4 }])
+        const expected = [{ a: 1 }, { a: 0 }, { a: 2 }, { a: 3 }, { a: 4 }]
+        expect(actual).toEqual(expected)
     })
 })

@@ -80,10 +80,10 @@ describe("combineSubmetricsPossibilitiesIntoSamples", () => {
             },
         ]
 
-        const result = combineSubmetricsPossibilitiesIntoSamples({ submetricsPossibilities, dynamicParameters })
+        const actual = combineSubmetricsPossibilitiesIntoSamples({ submetricsPossibilities, dynamicParameters })
 
         // TODO: these comments need updating, and this is just horrible to look at...
-        const expectedResult = [                                                                        // by submetric    // by submetric & parameter // by dynamic parameter
+        const expected = [                                                                        // by submetric    // by submetric & parameter // by dynamic parameter
             {
                 submetrics: [{ ...submetricOnePossibilityOne, ...submetricZeroPossibilityOne } as Submetric, { ...submetricTwoPossibilityOne, ...submetricZeroPossibilityOne } as Submetric] as Combination<Submetric>,
                 samplePoint: [0, 0, 0, 0] as SamplePoint,
@@ -183,9 +183,9 @@ describe("combineSubmetricsPossibilitiesIntoSamples", () => {
         ] as Sample[]
 
         // TODO: perhaps we need some helpers for this sort of expectation
-        expect(result.length).toBe(expectedResult.length)
-        expectedResult.forEach(expectedResultElement => {
-            expect(result.some(resultElement => {
+        expect(actual.length).toBe(expected.length)
+        expected.forEach(expectedResultElement => {
+            expect(actual.some(resultElement => {
                 return deepEquals(resultElement, expectedResultElement)
             })).toBeTruthy(`This expected element was not found: ${JSON.stringify(expectedResultElement)}`)
         })

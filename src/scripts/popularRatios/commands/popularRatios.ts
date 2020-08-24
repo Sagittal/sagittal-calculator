@@ -73,9 +73,9 @@ const results = fractionallyRank(unrankedResults, "presentedN2D3P9")
 
 console.log(`[table]`)
 console.log(`[tr][th]ratio[/th][th]N2D3P9[/th][th]symbol[/th][th]symbol sets[/th][th]estimated rank[/th][th]actual rank[/th][/tr]`)
-results.forEach(result => {
+results.forEach(actual => {
     // TODO: extract this
-    const { presentedN2D3P9, presentedRatio, rank: estimatedRank, actualRank, symbolSets, smileys } = result
+    const { presentedN2D3P9, presentedRatio, rank: estimatedRank, actualRank, symbolSets, smileys } = actual
     console.log(`[tr][td]${presentedRatio}[/td][td]${presentedN2D3P9}[/td][td]${smileys}[/td][td]${symbolSets}[/td][td]${estimatedRank}[/td][td]${actualRank || "-"}[/td][/tr]`)
 })
 console.log(`[/table]`)

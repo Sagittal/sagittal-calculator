@@ -43,9 +43,9 @@ describe("formatBestMetrics", () => {
             },
         )
 
-        const result = formatBestMetrics()
+        const actual = formatBestMetrics()
 
-        const expectedResult =
+        const expected =
             `{\n` +
             `    "{max}": {\n` +
             `        sumOfSquares: 0.014,\n` +
@@ -75,6 +75,6 @@ describe("formatBestMetrics", () => {
             `        ]\n` +
             `    }\n` +
             `}`
-        expect(result).toEqual(expectedResult)
+        expect(actual).toEqual(expected)
     })
 })

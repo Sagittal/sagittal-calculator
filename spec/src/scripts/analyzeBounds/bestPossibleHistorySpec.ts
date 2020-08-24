@@ -23,13 +23,14 @@ describe("computeBestPossibleHistory", () => {
             },
         ]
 
-        const result = computeBestPossibleHistory(analyzedHistories)
+        const actual = computeBestPossibleHistory(analyzedHistories)
 
-        expect(result).toEqual({
+        const expected = {
             ...analyzedHistoryFixture,
             score: 245444 as Score,
             cents: 13.235 as Cents,
-        })
+        }
+        expect(actual).toEqual(expected)
     })
 
     it("returns the best exact history even if its score is not the best", () => {
@@ -53,14 +54,15 @@ describe("computeBestPossibleHistory", () => {
             },
         ]
 
-        const result = computeBestPossibleHistory(analyzedHistories)
+        const actual = computeBestPossibleHistory(analyzedHistories)
 
-        expect(result).toEqual({
+        const expected = {
             ...analyzedHistoryFixture,
             score: 3436643 as Score,
             cents: 12.909 as Cents,
             exact: true,
-        })
+        }
+        expect(actual).toEqual(expected)
     })
 
     it("tie-breaks by distance", () => {
@@ -81,14 +83,15 @@ describe("computeBestPossibleHistory", () => {
             },
         ]
 
-        const result = computeBestPossibleHistory(analyzedHistories)
+        const actual = computeBestPossibleHistory(analyzedHistories)
 
-        expect(result).toEqual({
+        const expected = {
             ...analyzedHistoryFixture,
             score: 3436643 as Score,
             distance: 0.1 as Cents,
             cents: 12.909 as Cents,
             exact: true,
-        })
+        }
+        expect(actual).toEqual(expected)
     })
 })

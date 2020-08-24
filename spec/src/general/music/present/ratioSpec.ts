@@ -5,24 +5,27 @@ describe("presentRatio", () => {
     it("it shows it with a slash", () => {
         const ratio = [77, 75] as Ratio
 
-        const result = presentRatio(ratio)
+        const actual = presentRatio(ratio)
 
-        expect(result).toBe("77/75")
+        const expected = "77/75"
+        expect(actual).toBe(expected)
     })
 
     it("it can show it undirected, with a colon", () => {
         const ratio = [64, 65] as Ratio
 
-        const result = presentRatio(ratio, { directed: false })
+        const actual = presentRatio(ratio, { directed: false })
 
-        expect(result).toBe("64:65")
+        const expected = "64:65"
+        expect(actual).toBe(expected)
     })
 
     it("it can show it undirected, with a colon, and orients it properly", () => {
         const ratio = [77, 75] as Ratio
 
-        const result = presentRatio(ratio, { directed: false })
+        const actual = presentRatio(ratio, { directed: false })
 
-        expect(result).toBe("75:77")
+        const expected = "75:77"
+        expect(actual).toBe(expected)
     })
 })

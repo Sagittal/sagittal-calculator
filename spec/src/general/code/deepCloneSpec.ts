@@ -6,8 +6,8 @@ describe("computeDeepClone", () => {
             { a: 1 },
         ]
 
-        const result = computeDeepClone(object)
-        result[ 0 ].a = 2
+        const actual = computeDeepClone(object)
+        actual[ 0 ].a = 2
 
         expect(object[ 0 ].a).toBe(1)
     })

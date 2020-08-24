@@ -51,12 +51,12 @@ describe("computeAntivotes", () => {
             },
         ] as Combination<Submetric>
 
-        const result = computeAntivotes(fiveRoughRatio, submetrics)
+        const actual = computeAntivotes(fiveRoughRatio, submetrics)
 
-        const expectedResult =
+        const expected =
             0.5 * computeSubmetricAntivotes([0, 0, 0, 1, 1] as Monzo, { [ Parameter.SUM ]: true }) as Antivotes +
             0.3 * computeSubmetricAntivotes([0, 0, 0, 1, 1] as Monzo, { [ Parameter.SUM ]: true }) as Antivotes
-        expect(result).toBe(round(expectedResult, 9))
+        expect(actual).toBe(round(expected, 9))
     })
 
     it("should not return NaN", () => {
@@ -73,9 +73,9 @@ describe("computeAntivotes", () => {
         ] as Combination<Submetric>
         const fiveRoughRatio = [5, 1] as Ratio
 
-        const result = computeAntivotes(fiveRoughRatio, submetrics)
+        const actual = computeAntivotes(fiveRoughRatio, submetrics)
 
-        expect(result).not.toBeNaN()
+        expect(actual).not.toBeNaN()
     })
 
     it("should round results to billionths", () => {
@@ -88,8 +88,9 @@ describe("computeAntivotes", () => {
         ] as Combination<Submetric>
         const fiveRoughRatio = [5, 1] as Ratio
 
-        const result = computeAntivotes(fiveRoughRatio, submetrics)
+        const actual = computeAntivotes(fiveRoughRatio, submetrics)
 
-        expect(result).toBe(0.321928095 as Antivotes)
+        const expected = 0.321928095 as Antivotes
+        expect(actual).toBe(expected)
     })
 })

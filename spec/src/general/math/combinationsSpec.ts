@@ -1,4 +1,4 @@
-import { Count } from "../../../../src/general"
+import { Combinations, Count } from "../../../../src/general"
 import { arraysHaveSameContents } from "../../../../src/general/code/arraysHaveSameContents"
 import { computeCombinations } from "../../../../src/general/math"
 
@@ -7,32 +7,34 @@ describe("computeCombinations", () => {
     it("given a set, will return all combinations of it with the specified count of elements", () => {
         const count = 2 as Count<string>
 
-        const result = computeCombinations(set, count)
+        const actual = computeCombinations(set, count)
 
-        expect(result).toEqual(jasmine.arrayWithExactContents([
+        const expected: jasmine.ArrayContaining<string[]> = jasmine.arrayWithExactContents([
             ["a", "b"],
             ["a", "c"],
             ["a", "d"],
             ["b", "c"],
             ["b", "d"],
             ["c", "d"],
-        ]))
+        ])
+        expect(actual).toEqual(expected)
     })
 
     it("when resolution is zero, returns an empty array", () => {
         const count = 0 as Count<string>
 
-        const result = computeCombinations(set, count)
+        const actual = computeCombinations(set, count)
 
-        expect(result).toEqual([])
+        const expected: Combinations<string> = [] as unknown as Combinations<string>
+        expect(actual).toEqual(expected)
     })
 
     it("works when with repeated elements is true", () => {
         const count = 2 as Count<string>
 
-        const result = computeCombinations(set, count, { withRepeatedElements: true })
+        const actual = computeCombinations(set, count, { withRepeatedElements: true })
 
-        const expectedResult = [
+        const expected = [
             ["a", "a"],
             ["a", "b"],
             ["a", "c"],
@@ -45,9 +47,9 @@ describe("computeCombinations", () => {
             ["d", "d"],
         ]
 
-        expect(result.length).toBe(expectedResult.length)
-        expectedResult.forEach(expectedResultElement => {
-            expect(result.some(resultElement => {
+        expect(actual.length).toBe(expected.length)
+        expected.forEach(expectedResultElement => {
+            expect(actual.some(resultElement => {
                 return arraysHaveSameContents(resultElement, expectedResultElement)
             })).toBeTruthy(`This expected element was not found: ${JSON.stringify(expectedResultElement)}`)
         })

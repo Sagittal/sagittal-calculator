@@ -1,5 +1,6 @@
 import { Cents } from "../../../../src/general"
 import { computeNeighborPositions } from "../../../../src/notations/ji/neighborPositions"
+import { NeighborPositions } from "../../../../src/notations/ji/types"
 
 describe("computeNeighborPositions", () => {
     it("returns the two positions in the list of sorted targets which are on either side of the position", () => {
@@ -11,12 +12,13 @@ describe("computeNeighborPositions", () => {
             0.66,
         ] as Cents[]
 
-        const result = computeNeighborPositions(position, targetPositions)
+        const actual = computeNeighborPositions(position, targetPositions)
 
-        expect(result).toEqual([
+        const expected = [
             0.10,
             0.50,
-        ] as [Cents | undefined, Cents | undefined])
+        ] as NeighborPositions
+        expect(actual).toEqual(expected)
     })
 
     it("returns a position as undefined if there is no target on one side of the position", () => {
@@ -28,11 +30,12 @@ describe("computeNeighborPositions", () => {
             0.66,
         ] as Cents[]
 
-        const result = computeNeighborPositions(position, targetPositions)
+        const actual = computeNeighborPositions(position, targetPositions)
 
-        expect(result).toEqual([
+        const expected = [
             0.66,
             undefined,
-        ] as [Cents | undefined, Cents | undefined])
+        ] as NeighborPositions
+        expect(actual).toEqual(expected)
     })
 })

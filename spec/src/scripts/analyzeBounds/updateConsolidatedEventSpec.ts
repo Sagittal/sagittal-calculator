@@ -1,10 +1,6 @@
 import { Name, Position, Rank } from "../../../../src/general"
 import { Level } from "../../../../src/notations/ji"
-import {
-    AnalyzedEvent,
-    AnalyzedHistory,
-    ConsolidatedEvent,
-} from "../../../../src/scripts/analyzeBounds/types"
+import { AnalyzedEvent, AnalyzedHistory, ConsolidatedEvent } from "../../../../src/scripts/analyzeBounds/types"
 import { updateConsolidatedEvent } from "../../../../src/scripts/analyzeBounds/updateConsolidatedEvent"
 import {
     analyzedEventFixture,

@@ -2,8 +2,9 @@ import { computeIndentation } from "../../../../../src/scripts/unpopularityMetri
 
 describe("computeIndentation", () => {
     it("returns the number of spaces equal to 2x the recursive depth", () => {
-        const result = computeIndentation(4)
+        const actual = computeIndentation(4)
 
-        expect(result).toBe("        ")
+        const expected = "        "
+        expect(actual).toBe(expected)
     })
 })

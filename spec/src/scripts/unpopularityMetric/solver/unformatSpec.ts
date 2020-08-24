@@ -1,4 +1,4 @@
-import { unformat } from "../../../../../src/scripts/unpopularityMetric/solver/unformat"
+import { unformat } from "../../../../../src/scripts/unpopularityMetric/solver"
 
 describe("unformat", () => {
     it("converts parameter enum form back into JSON form", () => {
@@ -10,15 +10,15 @@ describe("unformat", () => {
 ]
 `
 
-        const result = unformat(text)
+        const actual = unformat(text)
 
-        const expectedResult = `[
+        const expected = `[
     {
 \t"sum": true,
 \t"kAsCoefficient": 0.038
     }
 ]
 `
-        expect(result).toEqual(expectedResult)
+        expect(actual).toEqual(expected)
     })
 })

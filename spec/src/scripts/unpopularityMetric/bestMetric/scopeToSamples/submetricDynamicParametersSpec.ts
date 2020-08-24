@@ -20,9 +20,9 @@ describe("computeSubmetricDynamicParameters", () => {
             },
         }
 
-        const result = computeSubmetricDynamicParameters(submetricScope, submetricIndex)
+        const actual = computeSubmetricDynamicParameters(submetricScope, submetricIndex)
 
-        expect(result).toEqual(jasmine.arrayWithExactContents([
+        const expected = jasmine.arrayWithExactContents([
             {
                 submetricIndex,
                 parameter: Parameter.A_AS_COEFFICIENT,
@@ -30,7 +30,8 @@ describe("computeSubmetricDynamicParameters", () => {
                 unit: 0.125,
             },
             { submetricIndex, parameter: Parameter.W, values: [0.6, 0.7, 0.8], unit: 0.1 },
-        ]))
+        ])
+        expect(actual).toEqual(expected)
     })
 
     it("leaves a parameter out if it has a 0 resolution", () => {
@@ -47,16 +48,17 @@ describe("computeSubmetricDynamicParameters", () => {
             },
         }
 
-        const result = computeSubmetricDynamicParameters(submetricScope, submetricIndex)
+        const actual = computeSubmetricDynamicParameters(submetricScope, submetricIndex)
 
-        expect(result).toEqual(jasmine.arrayWithExactContents([
+        const expected = jasmine.arrayWithExactContents([
             {
                 submetricIndex,
                 parameter: Parameter.A_AS_COEFFICIENT,
                 values: [0.75, 0.875, 1.0, 1.125, 1.25],
                 unit: 0.125,
             },
-        ]))
+        ])
+        expect(actual).toEqual(expected)
     })
 
     it("works when provided a flat value", () => {
@@ -69,15 +71,16 @@ describe("computeSubmetricDynamicParameters", () => {
             [ Parameter.W ]: 0.7 as ParameterValue,
         }
 
-        const result = computeSubmetricDynamicParameters(submetricScope, submetricIndex)
+        const actual = computeSubmetricDynamicParameters(submetricScope, submetricIndex)
 
-        expect(result).toEqual(jasmine.arrayWithExactContents([
+        const expected = jasmine.arrayWithExactContents([
             {
                 submetricIndex,
                 parameter: Parameter.A_AS_COEFFICIENT,
                 values: [0.75, 0.875, 1.0, 1.125, 1.25],
                 unit: 0.125,
             },
-        ]))
+        ])
+        expect(actual).toEqual(expected)
     })
 })

@@ -12,9 +12,9 @@ describe("computeHistories", () => {
             levels: [Level.MEDIUM, Level.ULTRA, Level.EXTREME, Level.INSANE],
         }
 
-        const result = computeHistories(bound)
+        const actual = computeHistories(bound)
 
-        expect(result).toEqual(jasmine.arrayWithExactContents([
+        const expected = jasmine.arrayWithExactContents([
             [
                 {
                     level: Level.MEDIUM,
@@ -1055,7 +1055,8 @@ describe("computeHistories", () => {
                     cents: 9.434865916310185,
                 },
             ],
-        ]))
+        ])
+        expect(actual).toEqual(expected)
     })
 
     it("works for the final bound", () => {
@@ -1065,9 +1066,9 @@ describe("computeHistories", () => {
             levels: [Level.MEDIUM, Level.HIGH, Level.ULTRA, Level.EXTREME, Level.INSANE],
         }
 
-        const result = computeHistories(bound)
+        const actual = computeHistories(bound)
 
-        expect(result).toEqual(jasmine.arrayWithExactContents([
+        const expected = jasmine.arrayWithExactContents([
             [
                 {
                     level: Level.MEDIUM,
@@ -2092,6 +2093,7 @@ describe("computeHistories", () => {
                     cents: 68.5725082211804,
                 },
             ],
-        ]))
+        ])
+        expect(actual).toEqual(expected)
     })
 })

@@ -17,14 +17,15 @@ describe("extractLevelInaDistances", () => {
             ],
         }
 
-        const result = extractLevelInaDistances(analyzedHistory)
+        const actual = extractLevelInaDistances(analyzedHistory)
 
-        expect(result).toEqual([
+        const expected = [
             "  4.444",
             "  3.333",
             "  2.222",
             "  1.111",
-        ])
+        ]
+        expect(actual).toEqual(expected)
     })
 
     it("works when a level is skipped", () => {
@@ -38,13 +39,14 @@ describe("extractLevelInaDistances", () => {
             ],
         }
 
-        const result = extractLevelInaDistances(analyzedHistory)
+        const actual = extractLevelInaDistances(analyzedHistory)
 
-        expect(result).toEqual([
+        const expected = [
             "  4.444",
             "  2.222",
             " ",
             "  1.111",
-        ])
+        ]
+        expect(actual).toEqual(expected)
     })
 })

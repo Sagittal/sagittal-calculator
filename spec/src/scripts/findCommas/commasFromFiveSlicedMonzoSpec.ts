@@ -11,13 +11,13 @@ describe("computeCommasFromFiveSlicedMonzo", () => {
         const upperBound = 40.1 as Cents
         const maximumAbsoluteThreeExponent = 12 as Exponent<Prime>
 
-        const result = computeCommasFromFiveSlicedMonzo(fiveSlicedMonzo, {
+        const actual = computeCommasFromFiveSlicedMonzo(fiveSlicedMonzo, {
             lowerBound,
             upperBound,
             maximumAbsoluteThreeExponent,
         })
 
-        expect(result).toEqual(jasmine.arrayWithExactContents([
+        const expected = jasmine.arrayWithExactContents([
             {
                 cents: 40.02272638304789,
                 monzo: [-8, -6, 3, 5, -1],
@@ -28,7 +28,8 @@ describe("computeCommasFromFiveSlicedMonzo", () => {
                 fiveRoughSopfr: 61,
                 n2d3p9: 36777.47034143518,
             },
-        ]))
+        ])
+        expect(actual).toEqual(expected)
     })
 
     describe("errors", () => {

@@ -7,11 +7,12 @@ describe("computeD39ForCandidateMaximumDenominatorPrimeExponent", () => {
         const denominatorPrime = 11 as Prime
         const candidateMaximumDenominatorPrimeExponentGivenMaximumN2D3P9 = 5 as Exponent<Prime>
 
-        const result = computeD39ForCandidateMaximumDenominatorPrimeExponent({
+        const actual = computeD39ForCandidateMaximumDenominatorPrimeExponent({
             candidateMaximumDenominatorPrimeExponentGivenMaximumN2D3P9,
             denominatorPrime,
         })
 
-        expect(result).toBeCloseTo(((11 / 3) ** 5) * (1 / 9), ACCURACY_THRESHOLD)
+        const expected = ((11 / 3) ** 5) * (1 / 9)
+        expect(actual).toBeCloseTo(expected, ACCURACY_THRESHOLD)
     })
 })

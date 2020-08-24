@@ -1,25 +1,27 @@
 import * as cp from "child_process"
-import { runCommandAndGetConsoleOutput } from "../../../../helpers/src/scripts/runCommand"
 import { onlyRunInCi } from "../../../../helpers/onlyRunInCi"
+import { runCommandAndGetConsoleOutput } from "../../../../helpers/src/scripts/runCommand"
 
 describe("analyze-comma", () => {
+    const expected = [
+        "comma name:   \t275k",
+        "limit:        \t11",
+        "5-rough sopfr:\t21",
+        "cents:        \t10.26036403671435",
+        "monzo:        \t[ 3 -7 2 0 1 ⟩",
+        "ratio:        \t2200/2187",
+        "apotome slope:\t-7.631767994281849",
+        "N2D3P9:       \t42.013888888888886",
+    ]
+
     it("analyzes a comma, given it in monzo form", () => {
         onlyRunInCi()
 
         const command = "npm run analyze-comma -- -m [3,-7,2,0,1]"
 
-        const result = runCommandAndGetConsoleOutput(command)
+        const actual = runCommandAndGetConsoleOutput(command)
 
-        expect(result).toEqual([
-            "comma name:   \t275k",
-            "limit:        \t11",
-            "5-rough sopfr:\t21",
-            "cents:        \t10.26036403671435",
-            "monzo:        \t[ 3 -7 2 0 1 ⟩",
-            "ratio:        \t2200/2187",
-            "apotome slope:\t-7.631767994281849",
-            "N2D3P9:       \t42.013888888888886",
-        ])
+        expect(actual).toEqual(expected)
     })
 
     it("can appraise a ratio for you", () => {
@@ -27,18 +29,9 @@ describe("analyze-comma", () => {
 
         const command = "npm run analyze-comma -- -r 2200/2187"
 
-        const result = runCommandAndGetConsoleOutput(command)
+        const actual = runCommandAndGetConsoleOutput(command)
 
-        expect(result).toEqual([
-            "comma name:   \t275k",
-            "limit:        \t11",
-            "5-rough sopfr:\t21",
-            "cents:        \t10.26036403671435",
-            "monzo:        \t[ 3 -7 2 0 1 ⟩",
-            "ratio:        \t2200/2187",
-            "apotome slope:\t-7.631767994281849",
-            "N2D3P9:       \t42.013888888888886",
-        ])
+        expect(actual).toEqual(expected)
     })
 
     it("throws an error if you provide neither monzo nor ratio nor name", () => {

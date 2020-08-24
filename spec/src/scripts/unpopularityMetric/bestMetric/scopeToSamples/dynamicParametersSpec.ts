@@ -29,9 +29,9 @@ describe("computeDynamicParameters", () => {
             },
         ] as Scope
 
-        const result = computeDynamicParameters(scope)
+        const actual = computeDynamicParameters(scope)
 
-        expect(result).toEqual([
+        const expected = [
             {
                 submetricIndex: 0 as Index<Submetric>,
                 parameter: Parameter.Y,
@@ -50,6 +50,7 @@ describe("computeDynamicParameters", () => {
                 values: [0.6, 0.7] as ParameterValue[],
                 unit: 0.1 as Unit<ParameterValue>,
             },
-        ])
+        ]
+        expect(actual).toEqual(expected)
     })
 })

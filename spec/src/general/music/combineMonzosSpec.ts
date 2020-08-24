@@ -7,8 +7,9 @@ describe("combineMonzos", () => {
         const monzoTwo = [0, -2, 4, 7, -3, 6, 1] as Monzo
         const monzoThree = [1, 1, 0, 1, 1] as Monzo
 
-        const result = combineMonzos(monzoOne, monzoTwo, monzoThree)
+        const actual = combineMonzos(monzoOne, monzoTwo, monzoThree)
 
-        expect(result).toEqual([4, 1, 5, 8, -3, 1, 1] as Monzo)
+        const expected = [4, 1, 5, 8, -3, 1, 1] as Monzo
+        expect(actual).toEqual(expected)
     })
 })

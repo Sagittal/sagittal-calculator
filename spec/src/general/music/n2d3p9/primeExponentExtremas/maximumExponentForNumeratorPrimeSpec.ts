@@ -7,26 +7,29 @@ describe("computeMaximumNumeratorPrimeExponentGivenMaximumN2D3P3", () => {
         const numeratorPrime = 5 as Prime
         const maximumN2D3P9 = 136 as N2D3P9
 
-        const result = computeMaximumNumeratorPrimeExponentGivenMaximumN2D3P3(numeratorPrime, maximumN2D3P9)
+        const actual = computeMaximumNumeratorPrimeExponentGivenMaximumN2D3P3(numeratorPrime, maximumN2D3P9)
 
-        expect(result).toBe(6 as Exponent<Prime>)
+        const expected = 6 as Exponent<Prime>
+        expect(actual).toBe(expected)
     })
 
     it("another example, for prime 5", () => {
         const numeratorPrime = 5 as Prime
         const maximumN2D3P9 = 130 as N2D3P9
 
-        const result = computeMaximumNumeratorPrimeExponentGivenMaximumN2D3P3(numeratorPrime, maximumN2D3P9)
+        const actual = computeMaximumNumeratorPrimeExponentGivenMaximumN2D3P3(numeratorPrime, maximumN2D3P9)
 
-        expect(result).toBe(5 as Exponent<Prime>)
+        const expected = 5 as Exponent<Prime>
+        expect(actual).toBe(expected)
     })
 
     it("another example, for a different prime", () => {
         const numeratorPrime = 7 as Prime
         const maximumN2D3P9 = 10 as N2D3P9
 
-        const result = computeMaximumNumeratorPrimeExponentGivenMaximumN2D3P3(numeratorPrime, maximumN2D3P9)
+        const actual = computeMaximumNumeratorPrimeExponentGivenMaximumN2D3P3(numeratorPrime, maximumN2D3P9)
 
-        expect(result).toBe(2 as Exponent<Prime>)
+        const expected = 2 as Exponent<Prime>
+        expect(actual).toBe(expected)
     })
 })

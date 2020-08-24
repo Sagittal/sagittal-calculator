@@ -24,11 +24,12 @@ describe("computeSpreadDynamicParameters", () => {
             },
         ] as Combination<SubmetricScope>
 
-        const result = computeSpreadDynamicParameters(scope)
+        const actual = computeSpreadDynamicParameters(scope)
 
-        expect(result).toEqual([
+        const expected = [
             Parameter.K_AS_COEFFICIENT,
-        ])
+        ]
+        expect(actual).toEqual(expected)
     })
 
     it("if there are no parameters on the all-bins (first) submetric scope, it returns undefined", () => {
@@ -45,9 +46,9 @@ describe("computeSpreadDynamicParameters", () => {
             },
         ] as Combination<SubmetricScope>
 
-        const result = computeSpreadDynamicParameters(scope)
+        const actual = computeSpreadDynamicParameters(scope)
 
-        expect(result).toEqual(undefined)
+        expect(actual).toBeUndefined()
     })
 
     it("ignores non-dynamic parameters (such as the boolean ones and the logarithm bases which are locked down to 2)", () => {
@@ -71,10 +72,11 @@ describe("computeSpreadDynamicParameters", () => {
             },
         ] as Combination<SubmetricScope>
 
-        const result = computeSpreadDynamicParameters(scope)
+        const actual = computeSpreadDynamicParameters(scope)
 
-        expect(result).toEqual([
+        const expected = [
             Parameter.K_AS_COEFFICIENT,
-        ])
+        ]
+        expect(actual).toEqual(expected)
     })
 })

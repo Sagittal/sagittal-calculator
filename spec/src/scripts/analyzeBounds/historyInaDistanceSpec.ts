@@ -11,8 +11,9 @@ describe("computeHistoryInaDistance", () => {
             { ...analyzedEventFixture, inaDistance: 0.6 as Proportion },
         ]
 
-        const result = computeHistoryInaDistance(analyzedEvents)
+        const actual = computeHistoryInaDistance(analyzedEvents)
 
-        expect(result).toBe(1.5 as Sum<Proportion>)
+        const expected = 1.5 as Sum<Proportion>
+        expect(actual).toBe(expected)
     })
 })

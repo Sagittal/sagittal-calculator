@@ -2,6 +2,7 @@ import {
     Bound,
     BoundedSymbolIdWithDistances,
     BoundedSymbolIdWithDistancesPair,
+    BoundedSymbolPositions,
     BoundIdWithBoundedSymbolIdWithDistancesPairsByLevel,
     BOUNDS,
     computeBoundedSymbolPositions,
@@ -56,4 +57,5 @@ export {
     getSymbol,
     BoundedSymbolIdWithDistancesPair,
     SYMBOL_SETS,
+    BoundedSymbolPositions,
 }

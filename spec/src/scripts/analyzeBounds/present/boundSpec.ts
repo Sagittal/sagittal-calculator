@@ -20,9 +20,24 @@ describe("presentBound", () => {
             const analyzedBound: AnalyzedBound = {
                 bestPossibleHistory: {
                     events: [
-                        { level: Level.ULTRA, rank: 0 as Rank<AnalyzedEvent>, distance: 0.000 as Cents, inaDistance: 0.000 },
-                        { level: Level.EXTREME, rank: 0 as Rank<AnalyzedEvent>, distance: 0.333 as Cents, inaDistance: 0.682 },
-                        { level: Level.INSANE, rank: 1 as Rank<AnalyzedEvent>, distance: 0.022 as Cents, inaDistance: 0.157 },
+                        {
+                            level: Level.ULTRA,
+                            rank: 0 as Rank<AnalyzedEvent>,
+                            distance: 0.000 as Cents,
+                            inaDistance: 0.000,
+                        },
+                        {
+                            level: Level.EXTREME,
+                            rank: 0 as Rank<AnalyzedEvent>,
+                            distance: 0.333 as Cents,
+                            inaDistance: 0.682,
+                        },
+                        {
+                            level: Level.INSANE,
+                            rank: 1 as Rank<AnalyzedEvent>,
+                            distance: 0.022 as Cents,
+                            inaDistance: 0.157,
+                        },
                     ],
                 },
                 bestRank: 1 as Rank<AnalyzedEvent>,
@@ -32,9 +47,10 @@ describe("presentBound", () => {
                 bestPossibleHistoryInaDistance: 0.839,
             } as AnalyzedBound
 
-            const result = presentBound(analyzedBound, { bound, mode })
+            const actual = presentBound(analyzedBound, { bound, mode })
 
-            expect(result).toEqual("10\t 10\t 11\t   ,,|( \t    ,|( \t \t \t0\t0\t1\t \t \t  0.333\t  0.022\t  0.355\t \t \t  0.682\t  0.157\t  0.839\t  5.448\t  5.485\t  0.039"[ "cyan" ])
+            const expected = "10\t 10\t 11\t   ,,|( \t    ,|( \t \t \t0\t0\t1\t \t \t  0.333\t  0.022\t  0.355\t \t \t  0.682\t  0.157\t  0.839\t  5.448\t  5.485\t  0.039".cyan
+            expect(actual).toBe(expected)
         })
     })
 
@@ -53,9 +69,9 @@ describe("presentBound", () => {
                 bestRank: 2 as Rank<AnalyzedEvent>,
             } as AnalyzedBound
 
-            const result = presentBound(analyzedBound, { bound, mode })
+            const actual = presentBound(analyzedBound, { bound, mode })
 
-            const expectedResult = [
+            const expected = [
                 `{`,
                 `    "extremeLevelLesserBoundedSymbol": ",,|(",`,
                 `    "extremeLevelGreaterBoundedSymbol": ",|(",`,
@@ -221,7 +237,7 @@ describe("presentBound", () => {
                 `}`,
             ].join("\n")
 
-            expect(result).toEqual(expectedResult)
+            expect(actual).toEqual(expected)
         })
     })
 })

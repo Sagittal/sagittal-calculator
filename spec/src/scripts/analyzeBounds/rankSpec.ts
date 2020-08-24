@@ -31,8 +31,9 @@ describe("computeRank", () => {
             },
         ]
 
-        const result = computeRank(analyzedEvents)
+        const actual = computeRank(analyzedEvents)
 
-        expect(result).toBe(3 as Rank<AnalyzedEvent>)
+        const expected = 3 as Rank<AnalyzedEvent>
+        expect(actual).toBe(expected)
     })
 })

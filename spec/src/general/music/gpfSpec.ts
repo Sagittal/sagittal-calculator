@@ -5,32 +5,36 @@ describe("computeGpf", () => {
     it("returns the greatest prime factor (AKA prime limit) of the given monzo", () => {
         const monzo = [2, 3, 0, 0, 4] as Monzo
 
-        const result = computeGpf(monzo)
+        const actual = computeGpf(monzo)
 
-        expect(result).toBe(11 as Prime)
+        const expected = 11 as Prime
+        expect(actual).toBe(expected)
     })
 
     it("works when a monzo has trailing zeroes", () => {
         const monzo = [2, 3, 4, 0, 0] as Monzo
 
-        const result = computeGpf(monzo)
+        const actual = computeGpf(monzo)
 
-        expect(result).toBe(5 as Prime)
+        const expected = 5 as Prime
+        expect(actual).toBe(expected)
     })
 
     it("works for an empty monzo (AKA the ratio 1/1), giving the conventional value of 1", () => {
         const monzo = [] as Monzo
 
-        const result = computeGpf(monzo)
+        const actual = computeGpf(monzo)
 
-        expect(result).toBe(1 as Prime)
+        const expected = 1 as Prime
+        expect(actual).toBe(expected)
     })
 
     it("works for an integer", () => {
         const integer = 35
 
-        const result = computeGpf(integer)
+        const actual = computeGpf(integer)
 
-        expect(result).toBe(7 as Prime)
+        const expected = 7 as Prime
+        expect(actual).toBe(expected)
     })
 })

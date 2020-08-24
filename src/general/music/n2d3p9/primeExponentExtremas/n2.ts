@@ -24,7 +24,7 @@ const computeNumeratorPossibilitiesGivenMaximumN2D3P9WithLesserGpfThanDenominato
         return { ...numeratorPossibility, n2: computeN2(numeratorPossibility.numerator) }
     })
 
-    return sort(numeratorPossibilitiesWithLesserGpfIncludingN2, {by: "n2"})
+    return sort(numeratorPossibilitiesWithLesserGpfIncludingN2, { by: "n2" })
 }
 
 export {

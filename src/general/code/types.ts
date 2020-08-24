@@ -7,7 +7,7 @@ type SortOptions = Partial<{
 
 type Path = number | string | Array<number | string>
 
-type Sortable = { [ index: string ]: number}
+type Sortable = { [ index: string ]: number }
 
 type Ranked<T> = T & { rank: Rank<T> }
 

@@ -99,9 +99,9 @@ describe("computeConsolidatedHistories", () => {
             },
         ]
 
-        const result = computeConsolidatedHistories(analyzedHistories, bestPossibleHistory)
+        const actual = computeConsolidatedHistories(analyzedHistories, bestPossibleHistory)
 
-        expect(result).toEqual({
+        const expected = {
             [ Level.ULTRA ]: [
                 {
                     type: eventOneGoesToEventThreeAndFour.type,
@@ -160,6 +160,7 @@ describe("computeConsolidatedHistories", () => {
                     nextEvents: [] as Name<Position>[],
                 },
             ],
-        })
+        }
+        expect(actual).toEqual(expected)
     })
 })

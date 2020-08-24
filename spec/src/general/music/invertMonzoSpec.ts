@@ -4,8 +4,9 @@ describe("invertMonzo", () => {
     it("returns the inverted (negated) version of the monzo", () => {
         const monzo = [4, 0, -1, 1] as Monzo
 
-        const result = invertMonzo(monzo)
+        const actual = invertMonzo(monzo)
 
-        expect(result).toEqual([-4, 0, 1, -1] as Monzo)
+        const expected = [-4, 0, 1, -1] as Monzo
+        expect(actual).toEqual(expected)
     })
 })

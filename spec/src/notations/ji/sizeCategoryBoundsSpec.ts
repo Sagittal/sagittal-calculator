@@ -2,8 +2,8 @@ import { computeSizeCategoryBounds, MAXIMUM_POSITION } from "../../../../src/not
 
 describe("computeSizeCategoryBounds", () => {
     it("only returns the size category bounds that are less than or equal to the maximum position", () => {
-        const result = computeSizeCategoryBounds()
+        const actual = computeSizeCategoryBounds()
 
-        expect(Math.max(...result.map(r => r.cents))).toEqual(MAXIMUM_POSITION)
+        expect(Math.max(...actual.map(r => r.cents))).toEqual(MAXIMUM_POSITION)
     })
 })

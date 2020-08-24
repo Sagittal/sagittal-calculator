@@ -51,9 +51,9 @@ describe("computeNextScope", () => {
             },
         ] as Scope
 
-        const result = computeNextScope(samplePoint, dynamicParameters, scope)
+        const actual = computeNextScope(samplePoint, dynamicParameters, scope)
 
-        expect(result).toEqual([
+        const expected = [
             {
                 [ Parameter.J_AS_COEFFICIENT ]: {
                     center: 0.1 as ParameterValue,
@@ -75,6 +75,7 @@ describe("computeNextScope", () => {
                 },
                 [ Parameter.COUNT ]: true,
             },
-        ])
+        ]
+        expect(actual).toEqual(expected)
     })
 })

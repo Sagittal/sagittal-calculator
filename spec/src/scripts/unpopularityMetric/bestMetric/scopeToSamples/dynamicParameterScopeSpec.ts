@@ -1,5 +1,5 @@
 import { Resolution, Span } from "../../../../../../src/general"
-import { computeDynamicParameterScope } from "../../../../../../src/scripts/unpopularityMetric/bestMetric/scopeToSamples/dynamicParameterScope"
+import { computeDynamicParameterScope } from "../../../../../../src/scripts/unpopularityMetric/bestMetric/scopeToSamples"
 import { ParameterValue } from "../../../../../../src/scripts/unpopularityMetric/sumOfSquares"
 
 describe("computeDynamicParameterScope", () => {
@@ -13,54 +13,54 @@ describe("computeDynamicParameterScope", () => {
         const min = -2 as ParameterValue
         const max = 0 as ParameterValue
 
-        const result = computeDynamicParameterScope({ min, max })
+        const actual = computeDynamicParameterScope({ min, max })
 
-        expect(result).toEqual(expectedDynamicParameterScope)
+        expect(actual).toEqual(expectedDynamicParameterScope)
     })
 
     it("given a center and a span computes a dynamic parameter scope with the correct center, span, and resolution", () => {
         const center = -1 as ParameterValue
         const span = 2 as Span<ParameterValue>
 
-        const result = computeDynamicParameterScope({ center, span })
+        const actual = computeDynamicParameterScope({ center, span })
 
-        expect(result).toEqual(expectedDynamicParameterScope)
+        expect(actual).toEqual(expectedDynamicParameterScope)
     })
 
     it("given a min and a span computes a dynamic parameter scope with the correct center, span, and resolution", () => {
         const min = -2 as ParameterValue
         const span = 2 as Span<ParameterValue>
 
-        const result = computeDynamicParameterScope({ min, span })
+        const actual = computeDynamicParameterScope({ min, span })
 
-        expect(result).toEqual(expectedDynamicParameterScope)
+        expect(actual).toEqual(expectedDynamicParameterScope)
     })
 
     it("given a max and a span computes a dynamic parameter scope with the correct center, span, and resolution", () => {
         const max = 0 as ParameterValue
         const span = 2 as Span<ParameterValue>
 
-        const result = computeDynamicParameterScope({ max, span })
+        const actual = computeDynamicParameterScope({ max, span })
 
-        expect(result).toEqual(expectedDynamicParameterScope)
+        expect(actual).toEqual(expectedDynamicParameterScope)
     })
 
     it("given a min and a center computes a dynamic parameter scope with the correct center, span, and resolution", () => {
         const min = -2 as ParameterValue
         const center = -1 as ParameterValue
 
-        const result = computeDynamicParameterScope({ min, center })
+        const actual = computeDynamicParameterScope({ min, center })
 
-        expect(result).toEqual(expectedDynamicParameterScope)
+        expect(actual).toEqual(expectedDynamicParameterScope)
     })
 
     it("given a max and a center computes a dynamic parameter scope with the correct center, span, and resolution", () => {
         const max = 0 as ParameterValue
         const center = -1 as ParameterValue
 
-        const result = computeDynamicParameterScope({ max, center })
+        const actual = computeDynamicParameterScope({ max, center })
 
-        expect(result).toEqual(expectedDynamicParameterScope)
+        expect(actual).toEqual(expectedDynamicParameterScope)
     })
 
     it("given only a min, errors", () => {

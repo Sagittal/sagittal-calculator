@@ -7,13 +7,14 @@ describe("presentLevelAnalysis", () => {
         const levelBestHistoryRanks = [18, 23, 13]
         const levelBestCumulativeHistoryRanks = [18, 17, 15]
 
-        const result = presentLevelAnalysis(level, levelBestHistoryRanks, levelBestCumulativeHistoryRanks)
+        const actual = presentLevelAnalysis(level, levelBestHistoryRanks, levelBestCumulativeHistoryRanks)
 
-        expect(result).toBe([
+        const expected = [
             "Ultra            \there\tcmltv",
             "ina midpoint       \t 18\t 18"[ "blue" ],
             "comma mean         \t 23\t 17"[ "cyan" ],
             "size category bound\t 13\t 15"[ "green" ],
-        ].join("\n"))
+        ].join("\n")
+        expect(actual).toBe(expected)
     })
 })

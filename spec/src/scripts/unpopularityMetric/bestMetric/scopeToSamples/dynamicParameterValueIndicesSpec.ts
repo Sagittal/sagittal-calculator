@@ -50,12 +50,13 @@ describe("computeDynamicParameterValueIndices", () => {
         }
         const submetricIndex = 1 as Index<Submetric>
 
-        const result = computeDynamicParameterValueIndices({
+        const actual = computeDynamicParameterValueIndices({
             dynamicParameters,
             submetric,
             submetricIndex,
         })
 
-        expect(result).toEqual([4, 3] as Index<ParameterValue>[])
+        const expected = [4, 3] as Index<ParameterValue>[]
+        expect(actual).toEqual(expected)
     })
 })

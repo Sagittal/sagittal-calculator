@@ -32,12 +32,13 @@ describe("secondaryCommaZone", () => {
             elements: [],
         }
 
-        const result = computeSecondaryCommaZone(symbol)
+        const actual = computeSecondaryCommaZone(symbol)
 
-        expect(result).toEqual([
+        const expected = [
             37.30947973834720,
             38.06194034977850,
-        ] as [Cents, Cents])
+        ] as [Cents, Cents]
+        expect(actual).toEqual(expected)
     })
 
     it("another example, at the Extreme level", () => {
@@ -61,12 +62,13 @@ describe("secondaryCommaZone", () => {
             elements: [],
         }
 
-        const result = computeSecondaryCommaZone(symbol)
+        const actual = computeSecondaryCommaZone(symbol)
 
-        expect(result).toEqual([
+        const expected = [
             38.06194034977850,
             38.29315717024330,
-        ] as [Cents, Cents])
+        ] as [Cents, Cents]
+        expect(actual).toEqual(expected)
     })
 
     it("another example, at the Medium level", () => {
@@ -90,12 +92,13 @@ describe("secondaryCommaZone", () => {
             elements: [],
         }
 
-        const result = computeSecondaryCommaZone(symbol)
+        const actual = computeSecondaryCommaZone(symbol)
 
-        expect(result).toEqual([
+        const expected = [
             35.11809146436650,
             40.26051203403560,
-        ] as [Cents, Cents])
+        ] as [Cents, Cents]
+        expect(actual).toEqual(expected)
     })
 
     it("works for the initial symbol", () => {
@@ -119,11 +122,12 @@ describe("secondaryCommaZone", () => {
             elements: [],
         }
 
-        const result = computeSecondaryCommaZone(symbol)
+        const actual = computeSecondaryCommaZone(symbol)
 
-        expect(result).toEqual([
+        const expected = [
             0,
             2.74024427456787,
-        ] as [Cents, Cents])
+        ] as [Cents, Cents]
+        expect(actual).toEqual(expected)
     })
 })

@@ -2,22 +2,20 @@ import { performance } from "perf_hooks"
 import { sort } from "../../../src/general"
 import { COUNT_SLOW_SPECS_TO_SUMMARIZE, MAX_TEST_DESCRIPTION_LENGTH, WARN_THRESHOLD_MS } from "./constants"
 import { SpecTime } from "./types"
-import CustomReporterResult = jasmine.CustomReporterResult
-import CustomReporter = jasmine.CustomReporter
 
 const specTimes: SpecTime[] = []
 let specStartedTime = 0
 
-const slowReporter: CustomReporter = {
+const slowReporter: jasmine.CustomReporter = {
     specStarted() {
         specStartedTime = performance.now()
     },
 
-    specDone(result: CustomReporterResult) {
+    specDone(actual: jasmine.CustomReporterResult) {
         const time = Math.round(performance.now() - specStartedTime)
-        const description = result.fullName.length > MAX_TEST_DESCRIPTION_LENGTH ?
-            result.fullName.slice(0, MAX_TEST_DESCRIPTION_LENGTH) + "…" :
-            result.fullName
+        const description = actual.fullName.length > MAX_TEST_DESCRIPTION_LENGTH ?
+            actual.fullName.slice(0, MAX_TEST_DESCRIPTION_LENGTH) + "…" :
+            actual.fullName
         specTimes.push({ description: description, time: time })
 
         if (time >= WARN_THRESHOLD_MS) {

@@ -1,5 +1,10 @@
 import { Cents, Id, Proportion } from "../../../../src/general"
-import { Bound, JiSymbol, Level } from "../../../../src/notations/ji"
+import {
+    Bound,
+    BoundIdWithBoundedSymbolIdWithDistancesPairsByLevel,
+    JiSymbol,
+    Level,
+} from "../../../../src/notations/ji"
 import { computeLevelBoundedSymbolIdWithDistances } from "../../../../src/notations/ji/levelBoundedSymbols"
 
 describe("computeLevelBoundedSymbols", () => {
@@ -10,9 +15,9 @@ describe("computeLevelBoundedSymbols", () => {
             id: 54 as Id<Bound>,
         }
 
-        const result = computeLevelBoundedSymbolIdWithDistances(bound)
+        const actual = computeLevelBoundedSymbolIdWithDistances(bound)
 
-        expect(result).toEqual({
+        const expected: BoundIdWithBoundedSymbolIdWithDistancesPairsByLevel = {
             id: 54 as Id<Bound>,
             [ Level.MEDIUM ]: [
                 {
@@ -50,7 +55,8 @@ describe("computeLevelBoundedSymbols", () => {
                     inaDistance: 1.5805679057676565 as Proportion,
                 },
             ],
-        })
+        }
+        expect(actual).toEqual(expected)
     })
 
     it("works for the final bound", () => {
@@ -60,9 +66,9 @@ describe("computeLevelBoundedSymbols", () => {
             id: 54 as Id<Bound>,
         }
 
-        const result = computeLevelBoundedSymbolIdWithDistances(bound)
+        const actual = computeLevelBoundedSymbolIdWithDistances(bound)
 
-        expect(result).toEqual({
+        const expected: BoundIdWithBoundedSymbolIdWithDistancesPairsByLevel = {
             id: 54 as Id<Bound>,
             [ Level.MEDIUM ]: [
                 {
@@ -104,7 +110,8 @@ describe("computeLevelBoundedSymbols", () => {
                 },
                 undefined,
             ],
-        })
+        }
+        expect(actual).toEqual(expected)
     })
 
     it("works for the first bound", () => {
@@ -114,9 +121,9 @@ describe("computeLevelBoundedSymbols", () => {
             id: 55 as Id<Bound>,
         }
 
-        const result = computeLevelBoundedSymbolIdWithDistances(bound)
+        const actual = computeLevelBoundedSymbolIdWithDistances(bound)
 
-        expect(result).toEqual({
+        const expected: BoundIdWithBoundedSymbolIdWithDistancesPairsByLevel = {
             id: 55 as Id<Bound>,
             [ Level.EXTREME ]: [
                 undefined,
@@ -134,6 +141,7 @@ describe("computeLevelBoundedSymbols", () => {
                     inaDistance: 1.508113295818833 as Proportion,
                 },
             ],
-        })
+        }
+        expect(actual).toEqual(expected)
     })
 })

@@ -5,7 +5,7 @@ import { getSymbol, JiSymbol, Level, LEVELS_SYMBOL_IDS } from "../../../../src/n
 
 describe("maximum apotome slope per level", () => {
     it("increases a bit at each level", () => {
-        const result = (Object.entries(LEVELS_SYMBOL_IDS) as Array<[Level, Array<Id<JiSymbol>>]>)
+        const actual = (Object.entries(LEVELS_SYMBOL_IDS) as Array<[Level, Array<Id<JiSymbol>>]>)
             .map(([level, levelSymbolIds]: [Level, Array<Id<JiSymbol>>]): Partial<Record<Level, ApotomeSlope>> => {
                 const levelMaximumApotomeSlope: ApotomeSlope = levelSymbolIds.reduce(
                     (levelMaximumApotomeSlope, levelSymbolId) => {
@@ -20,13 +20,13 @@ describe("maximum apotome slope per level", () => {
                 return { [ level ]: levelMaximumApotomeSlope }
             })
 
-        const expectedLevelMaximumApotomeSlopes: Array<Partial<Record<Level, ApotomeSlope>>> = [
+        const expected: Array<Partial<Record<Level, ApotomeSlope>>> = [
             { [ Level.MEDIUM ]: 6.354528858477924 as ApotomeSlope },
             { [ Level.HIGH ]: 7.763478611049832 as ApotomeSlope },
             { [ Level.ULTRA ]: 11.558451753921005 as ApotomeSlope },
             { [ Level.EXTREME ]: 11.558451753921005 as ApotomeSlope },
             { [ Level.INSANE ]: 11.558451753921005 as ApotomeSlope },
         ]
-        expect(result).toEqual(expectedLevelMaximumApotomeSlopes)
+        expect(actual).toEqual(expected)
     })
 })

@@ -1,5 +1,5 @@
 import { Cents } from "../../../../src/general"
-import { ACCURACY_THRESHOLD } from "../../../../src/general/code/constants"
+import { ACCURACY_THRESHOLD } from "../../../../src/general/code"
 import { Level } from "../../../../src/notations/ji"
 import { HIGHINA } from "../../../../src/notations/ji/intervals"
 import { computeEventInaDistance } from "../../../../src/scripts/analyzeBounds/eventInaDistance"
@@ -11,8 +11,9 @@ describe("computeEventInaDistance", () => {
         const history = [{ ...eventFixture, cents: 3 as Cents }, event]
         const index = 1
 
-        const result = computeEventInaDistance(event, index, history)
+        const actual = computeEventInaDistance(event, index, history)
 
-        expect(result).toBeCloseTo(2 / HIGHINA, ACCURACY_THRESHOLD)
+        const expected = 2 / HIGHINA
+        expect(actual).toBeCloseTo(expected, ACCURACY_THRESHOLD)
     })
 })

@@ -11,9 +11,9 @@ describe("computeExact", () => {
             { ...analyzedEventFixture, exact: true },
         ]
 
-        const result = computeExact(analyzedEvents)
+        const actual = computeExact(analyzedEvents)
 
-        expect(result).toBeTruthy()
+        expect(actual).toBeTruthy()
     })
 
     it("returns false if a single event's position is not the same as the actual bound position", () => {
@@ -24,8 +24,8 @@ describe("computeExact", () => {
             { ...analyzedEventFixture, exact: true },
         ]
 
-        const result = computeExact(analyzedEvents)
+        const actual = computeExact(analyzedEvents)
 
-        expect(result).toBeFalsy()
+        expect(actual).toBeFalsy()
     })
 })

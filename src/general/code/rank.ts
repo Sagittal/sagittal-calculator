@@ -14,8 +14,8 @@ const fractionallyRank = <T>(arrayOfObjects: T[], rankKey: string): Array<T & { 
         let tiesCount = 0
         clonedArrayOfObjects.slice(index + 1).forEach((objectWithWorseOrTiedRank: T) => {
             if (
-                (objectWithWorseOrTiedRank as unknown as {[index: string]: unknown})[ rankKey ] ===
-                (object as unknown as {[index: string]: unknown})[ rankKey ]
+                (objectWithWorseOrTiedRank as unknown as { [ index: string ]: unknown })[ rankKey ] ===
+                (object as unknown as { [ index: string ]: unknown })[ rankKey ]
             ) {
                 tiesCount += 1
             }

@@ -50,6 +50,9 @@ interface BoundedSymbolIdWithDistances {
 
 type BoundedSymbolIdWithDistancesPair = [BoundedSymbolIdWithDistances | undefined, BoundedSymbolIdWithDistances | undefined]
 
+type NeighborPositions = [Cents | undefined, Cents | undefined]
+type BoundedSymbolPositions = NeighborPositions
+
 export {
     JiSymbol,
     Mina,
@@ -59,4 +62,6 @@ export {
     BoundedSymbolIdWithDistances,
     BoundedSymbolIdWithDistancesPair,
     SymbolSet,
+    NeighborPositions,
+    BoundedSymbolPositions,
 }

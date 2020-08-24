@@ -11,8 +11,9 @@ describe("computeHistoryPosition", () => {
             { ...eventFixture, cents: 10.020 as Cents },
         ]
 
-        const result = computeHistoryPosition(history)
+        const actual = computeHistoryPosition(history)
 
-        expect(result).toBe(10.020 as Cents)
+        const expected = 10.020 as Cents
+        expect(actual).toBe(expected)
     })
 })

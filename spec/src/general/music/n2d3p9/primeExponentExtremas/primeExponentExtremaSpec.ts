@@ -7,8 +7,9 @@ describe("computePrimeExponentExtremaGivenMaximumN2D3P3", () => {
         const prime = 5 as Prime
         const maximumN2D3P9 = 5 as N2D3P9 // TODO: I think you should add a new parameterized type Max<>
 
-        const result = computePrimeExponentExtremaGivenMaximumN2D3P3(prime, maximumN2D3P9)
+        const actual = computePrimeExponentExtremaGivenMaximumN2D3P3(prime, maximumN2D3P9)
 
-        expect(result).toEqual([-1, 2] as PrimeExponentExtrema)
+        const expected = [-1, 2] as PrimeExponentExtrema
+        expect(actual).toEqual(expected)
     })
 })

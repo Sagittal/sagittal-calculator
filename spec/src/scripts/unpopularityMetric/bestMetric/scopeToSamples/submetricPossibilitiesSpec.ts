@@ -17,9 +17,9 @@ describe("computeSubmetricPossibilities", () => {
             },
         }
 
-        const result = computeSubmetricPossibilities(submetricScope)
+        const actual = computeSubmetricPossibilities(submetricScope)
 
-        expect(result).toEqual(jasmine.arrayWithExactContents([
+        const expected = jasmine.arrayWithExactContents([
             { [ Parameter.A_AS_COEFFICIENT ]: 0.75, [ Parameter.W ]: 0.6 },
             { [ Parameter.A_AS_COEFFICIENT ]: 0.875, [ Parameter.W ]: 0.6 },
             { [ Parameter.A_AS_COEFFICIENT ]: 1.0, [ Parameter.W ]: 0.6 },
@@ -35,7 +35,8 @@ describe("computeSubmetricPossibilities", () => {
             { [ Parameter.A_AS_COEFFICIENT ]: 1.0, [ Parameter.W ]: 0.8 },
             { [ Parameter.A_AS_COEFFICIENT ]: 1.125, [ Parameter.W ]: 0.8 },
             { [ Parameter.A_AS_COEFFICIENT ]: 1.25, [ Parameter.W ]: 0.8 },
-        ]))
+        ])
+        expect(actual).toEqual(expected)
     })
 
     it("leaves a parameter out if it has a 0 resolution", () => {
@@ -52,15 +53,16 @@ describe("computeSubmetricPossibilities", () => {
             },
         }
 
-        const result = computeSubmetricPossibilities(submetricScope)
+        const actual = computeSubmetricPossibilities(submetricScope)
 
-        expect(result).toEqual(jasmine.arrayWithExactContents([
+        const expected = jasmine.arrayWithExactContents([
             { [ Parameter.A_AS_COEFFICIENT ]: 0.75 },
             { [ Parameter.A_AS_COEFFICIENT ]: 0.875 },
             { [ Parameter.A_AS_COEFFICIENT ]: 1.0 },
             { [ Parameter.A_AS_COEFFICIENT ]: 1.125 },
             { [ Parameter.A_AS_COEFFICIENT ]: 1.25 },
-        ]))
+        ])
+        expect(actual).toEqual(expected)
     })
 
     it("works when provided a flat value", () => {
@@ -73,14 +75,15 @@ describe("computeSubmetricPossibilities", () => {
             [ Parameter.W ]: 0.7 as ParameterValue,
         }
 
-        const result = computeSubmetricPossibilities(submetricScopes)
+        const actual = computeSubmetricPossibilities(submetricScopes)
 
-        expect(result).toEqual(jasmine.arrayWithExactContents([
+        const expected = jasmine.arrayWithExactContents([
             { [ Parameter.A_AS_COEFFICIENT ]: 0.75, [ Parameter.W ]: 0.7 },
             { [ Parameter.A_AS_COEFFICIENT ]: 0.875, [ Parameter.W ]: 0.7 },
             { [ Parameter.A_AS_COEFFICIENT ]: 1.0, [ Parameter.W ]: 0.7 },
             { [ Parameter.A_AS_COEFFICIENT ]: 1.125, [ Parameter.W ]: 0.7 },
             { [ Parameter.A_AS_COEFFICIENT ]: 1.25, [ Parameter.W ]: 0.7 },
-        ]))
+        ])
+        expect(actual).toEqual(expected)
     })
 })

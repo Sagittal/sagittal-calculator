@@ -1,6 +1,6 @@
+import { SumOfSquares, SumsOfSquares } from "../../../../../src/scripts/unpopularityMetric/bestMetric"
 import { SamplePoint } from "../../../../../src/scripts/unpopularityMetric/bestMetric/scopeToSamples"
 import { setSumOfSquaresAtSamplePoint } from "../../../../../src/scripts/unpopularityMetric/bestMetric/setSumOfSquaresAtSamplePoint"
-import { SumOfSquares, SumsOfSquares } from "../../../../../src/scripts/unpopularityMetric/bestMetric/types"
 import { getSumOfSquaresAtSamplePointIfLocalMinimum } from "../../../../../src/scripts/unpopularityMetric/perfecter/localMinimum"
 
 describe("getSumOfSquaresAtSamplePointIfLocalMinimum", () => {
@@ -42,32 +42,32 @@ describe("getSumOfSquaresAtSamplePointIfLocalMinimum", () => {
     it("returns the sum-of-squares if it is lower at the sample point than at every adjacent sample point", () => {
         const samplePoint = [1, 0, 3, 2] as SamplePoint
 
-        const result = getSumOfSquaresAtSamplePointIfLocalMinimum(sumsOfSquares, samplePoint)
+        const actual = getSumOfSquaresAtSamplePointIfLocalMinimum(sumsOfSquares, samplePoint)
 
-        expect(result).toEqual(0.00422 as SumOfSquares)
+        expect(actual).toEqual(0.00422 as SumOfSquares)
     })
 
     it("another example of a local minimum", () => {
         const samplePoint = [2, 2, 2, 2] as SamplePoint
 
-        const result = getSumOfSquaresAtSamplePointIfLocalMinimum(sumsOfSquares, samplePoint)
+        const actual = getSumOfSquaresAtSamplePointIfLocalMinimum(sumsOfSquares, samplePoint)
 
-        expect(result).toEqual(0.00454 as SumOfSquares)
+        expect(actual).toEqual(0.00454 as SumOfSquares)
     })
 
     it("returns undefined if the sum-of-squares is not lower at the sample point than at every adjacent sample point", () => {
         const samplePoint = [1, 1, 1, 1] as SamplePoint
 
-        const result = getSumOfSquaresAtSamplePointIfLocalMinimum(sumsOfSquares, samplePoint)
+        const actual = getSumOfSquaresAtSamplePointIfLocalMinimum(sumsOfSquares, samplePoint)
 
-        expect(result).toEqual(undefined)
+        expect(actual).toBeUndefined()
     })
 
     it("another example of not local minimum", () => {
         const samplePoint = [0, 3, 3, 1] as SamplePoint
 
-        const result = getSumOfSquaresAtSamplePointIfLocalMinimum(sumsOfSquares, samplePoint)
+        const actual = getSumOfSquaresAtSamplePointIfLocalMinimum(sumsOfSquares, samplePoint)
 
-        expect(result).toEqual(undefined)
+        expect(actual).toBeUndefined()
     })
 })

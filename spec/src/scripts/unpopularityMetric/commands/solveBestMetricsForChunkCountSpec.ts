@@ -4,9 +4,9 @@ describe("solve-best-metrics-for-chunk-count", () => {
     xit("finds the best metric for the given chunk count", () => {
         const command = "npm run solve-best-metrics-for-chunk-count 1 -- --no-color --no-time --no-write"
 
-        const result = runCommandAndGetConsoleOutput(command)
+        const actual = runCommandAndGetConsoleOutput(command)
 
-        expect(result).toEqual([
+        const expected = [
             `computing scopes: phase 1/1`,
             `submetric combinations (with repetitions) computed: 6; formula is ((1+6-1)!)/((1!)((6-1)!)) where 6 is the total of possible existing chunks and 1 is the count we are choosing at a time`,
             `parameter combinations (with repetitions) computed: 1; formula is ((0+25-1)!)/((0!)((25-1)!)) where 25 is the total of possible existing chunks and 0 is the count we are choosing at a time`,
@@ -42,6 +42,7 @@ describe("solve-best-metrics-for-chunk-count", () => {
             `        ]`,
             `    }`,
             `}`,
-        ])
+        ]
+        expect(actual).toEqual(expected)
     })
 })

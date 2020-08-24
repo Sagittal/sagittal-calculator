@@ -1,6 +1,5 @@
 import { Count } from "../../../../../src/general"
-import { Metric } from "../../../../../src/scripts/unpopularityMetric/bestMetric"
-import { MetricName } from "../../../../../src/scripts/unpopularityMetric/bestMetric/types"
+import { Metric, MetricName } from "../../../../../src/scripts/unpopularityMetric/bestMetric"
 import { bestMetrics, solverStatus } from "../../../../../src/scripts/unpopularityMetric/globals"
 import { Chunk, populateAndSearchScopesAndPerfectMetrics } from "../../../../../src/scripts/unpopularityMetric/solver"
 import * as populate from "../../../../../src/scripts/unpopularityMetric/solver/populate/scopes"
@@ -20,8 +19,10 @@ describe("populateAndSearchScopesAndPerfectMetrics", () => {
     })
 
     it("populates scopes", async () => {
-        spyOn(populate, "populateScopes").and.callFake(async () => {})
-        spyOn(search, "searchScopes").and.callFake(async () => {})
+        spyOn(populate, "populateScopes").and.callFake(async () => {
+        })
+        spyOn(search, "searchScopes").and.callFake(async () => {
+        })
 
         await populateAndSearchScopesAndPerfectMetrics()
 
@@ -29,8 +30,10 @@ describe("populateAndSearchScopesAndPerfectMetrics", () => {
     })
 
     it("searches scopes", async () => {
-        spyOn(populate, "populateScopes").and.callFake(async () => {})
-        spyOn(search, "searchScopes").and.callFake(async () => {})
+        spyOn(populate, "populateScopes").and.callFake(async () => {
+        })
+        spyOn(search, "searchScopes").and.callFake(async () => {
+        })
 
         await populateAndSearchScopesAndPerfectMetrics()
 
@@ -47,6 +50,6 @@ describe("populateAndSearchScopesAndPerfectMetrics", () => {
             sumOfSquares: 0.014206086754420309,
             name: "{},{sum}",
             submetrics: [{ sum: true }],
-        } as unknown as Metric)
+        } as Metric)
     })
 })

@@ -5,16 +5,17 @@ describe("computeSuperunisonMonzo", () => {
     it("returns the monzo if it is already superunison", () => {
         const monzo = [0, 0, 0, 0, 2] as Monzo
 
-        const result = computeSuperunisonMonzo(monzo)
+        const actual = computeSuperunisonMonzo(monzo)
 
-        expect(result).toEqual(monzo)
+        expect(actual).toEqual(monzo)
     })
 
     it("returns the reciprocal of the monzo if it is not already superunison", () => {
         const monzo = [0, 0, 0, 1, -2] as Monzo
 
-        const result = computeSuperunisonMonzo(monzo)
+        const actual = computeSuperunisonMonzo(monzo)
 
-        expect(result).toEqual([0, 0, 0, -1, 2] as Monzo)
+        const expected = [0, 0, 0, -1, 2] as Monzo
+        expect(actual).toEqual(expected)
     })
 })

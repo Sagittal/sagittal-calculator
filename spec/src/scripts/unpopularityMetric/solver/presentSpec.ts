@@ -43,9 +43,9 @@ describe("presentBestMetrics", () => {
             },
         )
 
-        const result = presentBestMetrics()
+        const actual = presentBestMetrics()
 
-        expect(JSON.stringify(result)).toEqual(JSON.stringify({
+        expect(JSON.stringify(actual)).toEqual(JSON.stringify({
             "{max}": {
                 sumOfSquares: 0.014 as SumOfSquares,
                 name: "",

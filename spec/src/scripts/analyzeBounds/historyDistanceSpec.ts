@@ -11,8 +11,9 @@ describe("computeHistoryDistance", () => {
             { ...analyzedEventFixture, distance: 6 as Cents },
         ]
 
-        const result = computeHistoryDistance(analyzedEvents)
+        const actual = computeHistoryDistance(analyzedEvents)
 
-        expect(result).toBe(15 as Cents)
+        const expected = 15 as Cents
+        expect(actual).toBe(expected)
     })
 })

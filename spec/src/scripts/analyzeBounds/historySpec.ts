@@ -26,9 +26,9 @@ describe("analyzeHistory", () => {
         }
         initialPosition = computeInitialPosition(bound)
 
-        const result = analyzeHistory(history, bound, initialPosition)
+        const actual = analyzeHistory(history, bound, initialPosition)
 
-        expect(result.events).toEqual([
+        expect(actual.events).toEqual([
             {
                 ...analyzedEventFixture,
                 cents,
@@ -50,10 +50,10 @@ describe("analyzeHistory", () => {
                 level: Level.INSANE,
             },
         ])
-        expect(result.cents).toBe(cents)
-        expect(result.rank).toBe(2 as Rank<AnalyzedEvent>)
-        expect(result.distance).toBe(0 as Cents)
-        expect(result.initialPositionTinaDifference).toBeCloseTo(3.681504379547852, ACCURACY_THRESHOLD)
+        expect(actual.cents).toBe(cents)
+        expect(actual.rank).toBe(2 as Rank<AnalyzedEvent>)
+        expect(actual.distance).toBe(0 as Cents)
+        expect(actual.initialPositionTinaDifference).toBeCloseTo(3.681504379547852, ACCURACY_THRESHOLD)
     })
 
     describe("when the history's position matches the actual bound position", () => {
@@ -70,10 +70,10 @@ describe("analyzeHistory", () => {
             }
             initialPosition = computeInitialPosition(bound)
 
-            const result = analyzeHistory(history, bound, initialPosition)
+            const actual = analyzeHistory(history, bound, initialPosition)
 
-            expect(result.possible).toBe(true)
-            expect(result.tinaError).toBeCloseTo(0, ACCURACY_THRESHOLD)
+            expect(actual.possible).toBe(true)
+            expect(actual.tinaError).toBeCloseTo(0, ACCURACY_THRESHOLD)
         })
     })
 
@@ -93,10 +93,10 @@ describe("analyzeHistory", () => {
             }
             initialPosition = computeInitialPosition(bound)
 
-            const result = analyzeHistory(history, bound, initialPosition)
+            const actual = analyzeHistory(history, bound, initialPosition)
 
-            expect(result.possible).toBe(false)
-            expect(result.tinaError).toBeCloseTo(expectedTinaError, ACCURACY_THRESHOLD)
+            expect(actual.possible).toBe(false)
+            expect(actual.tinaError).toBeCloseTo(expectedTinaError, ACCURACY_THRESHOLD)
         })
 
         it("works when the position is greater than the actual bound position by more than a tina", () => {
@@ -115,10 +115,10 @@ describe("analyzeHistory", () => {
             }
             initialPosition = computeInitialPosition(bound)
 
-            const result = analyzeHistory(history, bound, initialPosition)
+            const actual = analyzeHistory(history, bound, initialPosition)
 
-            expect(result.possible).toBe(false)
-            expect(result.tinaError).toBeCloseTo(expectedTinaError, ACCURACY_THRESHOLD)
+            expect(actual.possible).toBe(false)
+            expect(actual.tinaError).toBeCloseTo(expectedTinaError, ACCURACY_THRESHOLD)
         })
 
         it("works when the position is below the actual bound position by less than a tina", () => {
@@ -137,10 +137,10 @@ describe("analyzeHistory", () => {
             }
             initialPosition = computeInitialPosition(bound)
 
-            const result = analyzeHistory(history, bound, initialPosition)
+            const actual = analyzeHistory(history, bound, initialPosition)
 
-            expect(result.possible).toBe(false)
-            expect(result.tinaError).toBeCloseTo(expectedTinaError, ACCURACY_THRESHOLD)
+            expect(actual.possible).toBe(false)
+            expect(actual.tinaError).toBeCloseTo(expectedTinaError, ACCURACY_THRESHOLD)
         })
 
         it("works when the position is below the actual bound position by more than a tina", () => {
@@ -158,10 +158,10 @@ describe("analyzeHistory", () => {
             }
             initialPosition = computeInitialPosition(bound)
 
-            const result = analyzeHistory(history, bound, initialPosition)
+            const actual = analyzeHistory(history, bound, initialPosition)
 
-            expect(result.possible).toBe(false)
-            expect(result.tinaError).toBeCloseTo(expectedTinaError, ACCURACY_THRESHOLD)
+            expect(actual.possible).toBe(false)
+            expect(actual.tinaError).toBeCloseTo(expectedTinaError, ACCURACY_THRESHOLD)
         })
     })
 })

@@ -5,57 +5,64 @@ describe("computeCommaName", () => {
     it("given a monzo will return the name of the comma", () => {
         const monzo = [5, -7, -1, 3] as Monzo
 
-        const result = computeCommaName(monzo)
+        const actual = computeCommaName(monzo)
 
-        expect(result).toBe("343/5k")
+        const expected = "343/5k"
+        expect(actual).toBe(expected)
     })
 
     it("can return the name in undirected form", () => {
         const monzo = [5, -7, -1, 3] as Monzo
 
-        const result = computeCommaName(monzo, { directed: false })
+        const actual = computeCommaName(monzo, { directed: false })
 
-        expect(result).toBe("5:343k")
+        const expected = "5:343k"
+        expect(actual).toBe(expected)
     })
 
     it("can return the name in factored form", () => {
         const monzo = [5, -7, -1, 3] as Monzo
 
-        const result = computeCommaName(monzo, { factored: true })
+        const actual = computeCommaName(monzo, { factored: true })
 
-        expect(result).toBe("7³/5k")
+        const expected = "7³/5k"
+        expect(actual).toBe(expected)
     })
 
     it("can return the name in undirected and factored form", () => {
         const monzo = [5, -7, -1, 3] as Monzo
 
-        const result = computeCommaName(monzo, { directed: false, factored: true })
+        const actual = computeCommaName(monzo, { directed: false, factored: true })
 
-        expect(result).toBe("5:7³k")
+        const expected = "5:7³k"
+        expect(actual).toBe(expected)
     })
 
     it("can return the name in unabbreviated form", () => {
         const monzo = [5, -7, -1, 3] as Monzo
 
-        const result = computeCommaName(monzo, { abbreviated: false })
+        const actual = computeCommaName(monzo, { abbreviated: false })
 
-        expect(result).toBe("343/5-kleisma")
+        const expected = "343/5-kleisma"
+        expect(actual).toBe(expected)
     })
 
     it("works when there are only 2's and 3's in the prime factorization", () => {
         const monzo = [-19, 12] as Monzo
 
-        const result = computeCommaName(monzo)
+        const actual = computeCommaName(monzo)
 
-        expect(result).toBe("1C")
+        const expected = "1C"
+        expect(actual).toBe(expected)
     })
 
     it("works when the monzo is empty", () => {
         const monzo = [] as Monzo
 
-        const result = computeCommaName(monzo)
+        const actual = computeCommaName(monzo)
 
-        expect(result).toBe("1u")
+        const expected = "1u"
+        expect(actual).toBe(expected)
     })
 
     it("assigns the correct size category", () => {

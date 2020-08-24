@@ -1,6 +1,6 @@
 import { Combination } from "../../../../../src/general/math"
+import { SumOfSquares, SumsOfSquares } from "../../../../../src/scripts/unpopularityMetric/bestMetric"
 import { Sample, SamplePoint } from "../../../../../src/scripts/unpopularityMetric/bestMetric/scopeToSamples"
-import { SumOfSquares, SumsOfSquares } from "../../../../../src/scripts/unpopularityMetric/bestMetric/types"
 import { computeLocalMinima } from "../../../../../src/scripts/unpopularityMetric/perfecter/localMinima"
 import { LocalMinimum } from "../../../../../src/scripts/unpopularityMetric/perfecter/types"
 import { Submetric } from "../../../../../src/scripts/unpopularityMetric/sumOfSquares"
@@ -43,9 +43,10 @@ describe("computeLocalMinima", () => {
             ],
         ]
 
-        const result = computeLocalMinima(samples, sumsOfSquares)
+        const actual = computeLocalMinima(samples, sumsOfSquares)
 
-        expect(result).toEqual([])
+        const expected: LocalMinimum[] = []
+        expect(actual).toEqual(expected)
     })
 
     it("returns an empty area if it is just a boundary between two values", () => {
@@ -64,9 +65,10 @@ describe("computeLocalMinima", () => {
             ],
         ]
 
-        const result = computeLocalMinima(samples, sumsOfSquares)
+        const actual = computeLocalMinima(samples, sumsOfSquares)
 
-        expect(result).toEqual([])
+        const expected: LocalMinimum[] = []
+        expect(actual).toEqual(expected)
     })
 
     it("returns an empty array if it is an area surrounded by another area (this one I'm less sure about, but the issue might be precluded if we used a resolution of 2)", () => {
@@ -85,9 +87,10 @@ describe("computeLocalMinima", () => {
             ],
         ]
 
-        const result = computeLocalMinima(samples, sumsOfSquares)
+        const actual = computeLocalMinima(samples, sumsOfSquares)
 
-        expect(result).toEqual([])
+        const expected: LocalMinimum[] = []
+        expect(actual).toEqual(expected)
     })
 
     it("returns a result if there are local minima", () => {
@@ -106,12 +109,13 @@ describe("computeLocalMinima", () => {
             ],
         ]
 
-        const result = computeLocalMinima(samples, sumsOfSquares)
+        const actual = computeLocalMinima(samples, sumsOfSquares)
 
-        expect(result).toEqual(jasmine.arrayWithExactContents([
+        const expected = jasmine.arrayWithExactContents([
             { sumOfSquares: 0.003 as SumOfSquares, samplePoint: [0, 1, 0], submetrics: [] },
             { sumOfSquares: 0.002 as SumOfSquares, samplePoint: [1, 1, 2], submetrics: [] },
-        ]))
+        ])
+        expect(actual).toEqual(expected)
     })
 
     it("does not include results if the sum of squares is not appreciably lower than the current local minimum", () => {
@@ -135,8 +139,9 @@ describe("computeLocalMinima", () => {
             submetrics: [] as unknown as Combination<Submetric>,
         }
 
-        const result = computeLocalMinima(samples, sumsOfSquares, localMinimum)
+        const actual = computeLocalMinima(samples, sumsOfSquares, localMinimum)
 
-        expect(result).toEqual(jasmine.arrayWithExactContents([]))
+        const expected: LocalMinimum[] = []
+        expect(actual).toEqual(expected)
     })
 })

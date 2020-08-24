@@ -21,9 +21,9 @@ describe("computeDoEventsContainEvent", () => {
             rank: 2 as Rank<AnalyzedEvent>,
         }
 
-        const result = computeDoEventsContainEvent(analyzedEvents, targetEvent)
+        const actual = computeDoEventsContainEvent(analyzedEvents, targetEvent)
 
-        expect(result).toBe(true)
+        expect(actual).toBeTruthy()
     })
 
     it("returns false when the events contain an event which has the same name but not the same level", () => {
@@ -40,9 +40,9 @@ describe("computeDoEventsContainEvent", () => {
             name: "someName" as Name<Position>, level: "otherLevel" as Level, rank: 2 as Rank<AnalyzedEvent>,
         }
 
-        const result = computeDoEventsContainEvent(analyzedEvents, targetEvent)
+        const actual = computeDoEventsContainEvent(analyzedEvents, targetEvent)
 
-        expect(result).toBe(false)
+        expect(actual).toBeFalsy()
     })
 
     it("returns false when the events contain an event which has the same level but not the same name", () => {
@@ -61,9 +61,9 @@ describe("computeDoEventsContainEvent", () => {
             rank: 2 as Rank<AnalyzedEvent>,
         }
 
-        const result = computeDoEventsContainEvent(analyzedEvents, targetEvent)
+        const actual = computeDoEventsContainEvent(analyzedEvents, targetEvent)
 
-        expect(result).toBe(false)
+        expect(actual).toBeFalsy()
     })
 
     it("returns false when the events contain no events which have either the same name or the same level", () => {
@@ -82,8 +82,8 @@ describe("computeDoEventsContainEvent", () => {
             rank: 1 as Rank<AnalyzedEvent>,
         }
 
-        const result = computeDoEventsContainEvent(analyzedEvents, targetEvent)
+        const actual = computeDoEventsContainEvent(analyzedEvents, targetEvent)
 
-        expect(result).toBe(false)
+        expect(actual).toBeFalsy()
     })
 })

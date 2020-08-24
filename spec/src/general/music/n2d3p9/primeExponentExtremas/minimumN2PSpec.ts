@@ -57,7 +57,7 @@ describe("computeMinimumN2PForCandidateMaximumDenominatorPrimeExponentGivenMaxim
             ] as NumeratorPossibilityWithGreaterGpfThanDenominatorPrimeIncludingN2P[],
         }
 
-        const result = computeMinimumN2PForCandidateMaximumDenominatorPrimeExponentGivenMaximumN2D3P9({
+        const actual = computeMinimumN2PForCandidateMaximumDenominatorPrimeExponentGivenMaximumN2D3P9({
             sortedNumeratorPossibilitiesForDenominatorPrimeGivenMaximumN2D3P9,
             denominatorPrime,
             candidateMaximumDenominatorPrimeExponentGivenMaximumN2D3P9,
@@ -69,7 +69,8 @@ describe("computeMinimumN2PForCandidateMaximumDenominatorPrimeExponentGivenMaxim
         // because it will always be whatever the denominator prime is
         // so you actually have to multiply the 15.625 by the 7, getting 109.375
         // so the 35.75 wins
-        expect(result).toBe(35.75)
+        const expected = 35.75
+        expect(actual).toBe(expected)
     })
 
     it("another example where the minimum N2P from the list with the numerator possibilities with gcp < denominator prime is the one which gets picked", () => {
@@ -120,7 +121,7 @@ describe("computeMinimumN2PForCandidateMaximumDenominatorPrimeExponentGivenMaxim
             ] as NumeratorPossibilityWithGreaterGpfThanDenominatorPrimeIncludingN2P[],
         }
 
-        const result = computeMinimumN2PForCandidateMaximumDenominatorPrimeExponentGivenMaximumN2D3P9({
+        const actual = computeMinimumN2PForCandidateMaximumDenominatorPrimeExponentGivenMaximumN2D3P9({
             sortedNumeratorPossibilitiesForDenominatorPrimeGivenMaximumN2D3P9,
             denominatorPrime,
             candidateMaximumDenominatorPrimeExponentGivenMaximumN2D3P9,
@@ -129,6 +130,7 @@ describe("computeMinimumN2PForCandidateMaximumDenominatorPrimeExponentGivenMaxim
         // here, you still have to multiply the 15.625 by the 7, getting 109.375
         // but this time that's lower than the 132.25 N2P
         // which is the minimum for the list where the gcp > denominator prime
-        expect(result).toBe(109.375)
+        const expected = 109.375
+        expect(actual).toBe(expected)
     })
 })

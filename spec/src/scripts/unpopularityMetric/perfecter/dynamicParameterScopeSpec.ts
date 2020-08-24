@@ -7,12 +7,13 @@ describe("computeDynamicParameterScopeForPerfecting", () => {
     it("takes the given parameter value and makes a scope the size of the maximum unit for the best (not perfect) non-recursive run, and starts off doing a trinary (resolution 3) subdivision of it so that it includes the middle point but then also some other points that might be better", () => {
         const parameterValue = 0.5 as ParameterValue
 
-        const result = computeDynamicParameterScopeForPerfecting(parameterValue)
+        const actual = computeDynamicParameterScopeForPerfecting(parameterValue)
 
-        expect(result).toEqual({
+        const expected = {
             center: 0.5 as ParameterValue,
             span: unpopularityMetricSettings.maximumUnit as number as Span<ParameterValue>,
             resolution: 3 as Resolution<ParameterValue>,
-        })
+        }
+        expect(actual).toEqual(expected)
     })
 })

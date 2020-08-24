@@ -1,19 +1,19 @@
 import { computeTrimmedMonzo, Monzo } from "../../../../src/general/music"
 
 describe("computeTrimmedMonzo", () => {
+    const monzo = [4, -5, 0, 0, 0] as Monzo
+
     it("removes trailing zeroes from the monzo", () => {
-        const monzo = [4, -5, 0, 0, 0] as Monzo
+        const actual = computeTrimmedMonzo(monzo)
 
-        const result = computeTrimmedMonzo(monzo)
-
-        expect(result).toEqual([4, -5] as Monzo)
+        const expected = [4, -5] as Monzo
+        expect(actual).toEqual(expected)
     })
 
     it("does not mutate the original monzo", () => {
-        const monzo = [4, -5, 0, 0, 0] as Monzo
-
         computeTrimmedMonzo(monzo)
 
-        expect(monzo).toEqual([4, -5, 0, 0, 0] as Monzo)
+        const expected = [4, -5, 0, 0, 0] as Monzo
+        expect(monzo).toEqual(expected)
     })
 })

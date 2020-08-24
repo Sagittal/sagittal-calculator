@@ -10,13 +10,14 @@ describe("addRankToUnpopularities", () => {
             { index: 2, antivotes: 20 as Antivotes },
         ] as Unpopularity[]
 
-        const result = addRankToUnpopularities(unpopularities)
+        const actual = addRankToUnpopularities(unpopularities)
 
-        expect(result).toEqual([
+        const expected = [
             { index: 0, antivotes: 10 as Antivotes, rank: 2 as Rank<Unpopularity> },
             { index: 1, antivotes: 5 as Antivotes, rank: 1 as Rank<Unpopularity> },
             { index: 2, antivotes: 20 as Antivotes, rank: 3 as Rank<Unpopularity> },
-        ] as Array<Ranked<Unpopularity>>)
+        ] as Array<Ranked<Unpopularity>>
+        expect(actual).toEqual(expected)
     })
 
     it("uses fractional ranks if some are tied", () => {
@@ -27,14 +28,15 @@ describe("addRankToUnpopularities", () => {
             { index: 3, antivotes: 10 as Antivotes },
         ] as Unpopularity[]
 
-        const result = addRankToUnpopularities(unpopularities)
+        const actual = addRankToUnpopularities(unpopularities)
 
-        expect(result).toEqual([
+        const expected = [
             { index: 0, antivotes: 10 as Antivotes, rank: 2.5 as Rank<Unpopularity> },
             { index: 1, antivotes: 5 as Antivotes, rank: 1 as Rank<Unpopularity> },
             { index: 2, antivotes: 20 as Antivotes, rank: 4 as Rank<Unpopularity> },
             { index: 3, antivotes: 10 as Antivotes, rank: 2.5 as Rank<Unpopularity> },
-        ] as Array<Ranked<Unpopularity>>)
+        ] as Array<Ranked<Unpopularity>>
+        expect(actual).toEqual(expected)
     })
 
     it("another example of fractional ranks", () => {
@@ -46,14 +48,15 @@ describe("addRankToUnpopularities", () => {
             { index: 4, antivotes: 10 as Antivotes },
         ] as Unpopularity[]
 
-        const result = addRankToUnpopularities(unpopularities)
+        const actual = addRankToUnpopularities(unpopularities)
 
-        expect(result).toEqual([
+        const expected = [
             { index: 0, antivotes: 10 as Antivotes, rank: 3 as Rank<Unpopularity> },
             { index: 1, antivotes: 5 as Antivotes, rank: 1 as Rank<Unpopularity> },
             { index: 2, antivotes: 20 as Antivotes, rank: 5 as Rank<Unpopularity> },
             { index: 3, antivotes: 10 as Antivotes, rank: 3 as Rank<Unpopularity> },
             { index: 4, antivotes: 10 as Antivotes, rank: 3 as Rank<Unpopularity> },
-        ] as Array<Ranked<Unpopularity>>)
+        ] as Array<Ranked<Unpopularity>>
+        expect(actual).toEqual(expected)
     })
 })

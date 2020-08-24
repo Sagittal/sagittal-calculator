@@ -9,8 +9,9 @@ describe("computeBoundNextLevel", () => {
             levels: [Level.MEDIUM, Level.ULTRA],
         }
 
-        const result = computeBoundNextLevel(bound, Level.MEDIUM)
+        const actual = computeBoundNextLevel(bound, Level.MEDIUM)
 
-        expect(result).toBe(Level.ULTRA)
+        const expected = Level.ULTRA
+        expect(actual).toBe(expected)
     })
 })

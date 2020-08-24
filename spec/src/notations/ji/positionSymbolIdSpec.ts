@@ -6,16 +6,17 @@ describe("computePositionSymbolId", () => {
     it("given a position, returns the symbol at that position", () => { // TODO: this could be used for the calculator?
         const position: Cents = 3.37801872846485 as Cents
 
-        const result = computePositionSymbolId(position)
+        const actual = computePositionSymbolId(position)
 
-        expect(result).toEqual(7 as Id<JiSymbol>)
+        const expected = 7 as Id<JiSymbol>
+        expect(actual).toEqual(expected)
     })
 
     it("does not fail if given an undefined position", () => {
         const position = undefined
 
-        const result = computePositionSymbolId(position)
+        const actual = computePositionSymbolId(position)
 
-        expect(result).toEqual(undefined)
+        expect(actual).toBeUndefined()
     })
 })

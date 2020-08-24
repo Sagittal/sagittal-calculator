@@ -111,9 +111,9 @@ describe("analyzeBound", () => {
     }
 
     it("returns an analysis of the bound using its histories, including a consolidated presentation of said histories, and its best possible history, and the difference between the bound and its initial position", () => {
-        const result = analyzeBound(histories, bound)
+        const actual = analyzeBound(histories, bound)
 
-        expect(result).toEqual({
+        const expected = {
             bestRank: 1 as Rank<AnalyzedEvent>,
             initialPosition: 23.195298960947348 as Cents,
             initialPositionTinaDifference: -0.5613173198954056 as number,
@@ -184,7 +184,8 @@ describe("analyzeBound", () => {
                     },
                 ],
             } as ConsolidatedHistories,
-        } as AnalyzedBound)
+        } as AnalyzedBound
+        expect(actual).toEqual(expected)
     })
 
     it("updates the rank analysis", () => {

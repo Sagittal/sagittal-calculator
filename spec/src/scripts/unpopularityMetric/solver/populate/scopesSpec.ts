@@ -36,7 +36,7 @@ describe("populateScopes", () => {
 
         await populateScopes()
 
-        const expectedResult = [
+        const expected = [
             // submetrics: 2, parameters: 0
 
             // 6
@@ -2061,15 +2061,15 @@ describe("populateScopes", () => {
             ],
         ] as Scope[]
 
-        const result: Scope[] = scopesToSearch
+        const actual: Scope[] = scopesToSearch
 
         // 321 =
         //      ((2+6-1)!)/((2!)((6-1)!)) * ((0+25-1)!)/((0!)((25-1)!)) * 3^0 = 21 * 1 * 1 = 21
         //      +
         //      ((1+6-1)!)/((1!)((6-1)!)) * ((1+25-1)!)/((1!)((25-1)!)) * 2^1 = 6 * 25 * 2 = 300
-        expect(result.length).toEqual(expectedResult.length)
-        expectedResult.forEach(expectedResultElement => {
-            expect(result.some(resultElement => {
+        expect(actual.length).toEqual(expected.length)
+        expected.forEach(expectedResultElement => {
+            expect(actual.some(resultElement => {
                 return deepEquals(resultElement, expectedResultElement)
             })).toBeTruthy(`This expected element was not found: ${JSON.stringify(expectedResultElement)}`)
         })
@@ -2081,9 +2081,9 @@ describe("populateScopes", () => {
 
         await populateScopes()
 
-        const result: Scope[] = scopesToSearch
+        const actual: Scope[] = scopesToSearch
 
-        expect(result.length).toEqual( // 56 + 945 + 2880 = 3881
+        expect(actual.length).toEqual( // 56 + 945 + 2880 = 3881
             56 + // all combinations of 3 submetrics = 6 choose 3 w/re = ((3+6-1)!)/((3!)((6-1)!)) = 56, but that times all combinations of 0 parameters = 15 choose 0 w/re = ((0+15-1)!)/((0!)((15-1)!)) =   1, so 56 *  1 =  56, but then that times 1 bc for each one you can distribute the parameters across the submetrics 4^0 ways, so 56  * 1 =   56
             945 +         // all combinations of 2 submetrics = 6 choose 2 w/re = ((2+6-1)!)/((2!)((6-1)!)) = 21, but that times all combinations of 1 parameters = 15 choose 1 w/re = ((1+15-1)!)/((1!)((15-1)!)) =  15, so 21 * 15 = 315, but then that times 2 bc for each one you can distribute the parameters across the submetrics 3^1 ways, so 315 * 3 =  945
             2880,         // all combinations of 1 submetric  = 6 choose 1 w/re = ((1+6-1)!)/((1!)((6-1)!)) =  6, but that times all combinations of 2 parameters = 15 choose 2 w/re = ((2+15-1)!)/((2!)((15-1)!)) = 120, so 6 * 120 = 720, but then that times 1 bc for each one you can distribute the parameters across the submetrics 2^2 ways, so 720 * 4 = 2880
@@ -2113,7 +2113,7 @@ describe("populateScopes", () => {
             ],
         ]
         exampleResultElements.forEach(expectedResultElement => {
-            expect(result.some(resultElement => {
+            expect(actual.some(resultElement => {
                 return arraysHaveSameContents(resultElement, expectedResultElement)
             })).toBeTruthy(`This expected element was not found: ${JSON.stringify(expectedResultElement)}`)
         })
@@ -2126,9 +2126,9 @@ describe("populateScopes", () => {
 
         await populateScopes()
 
-        const result: Scope[] = scopesToSearch
+        const actual: Scope[] = scopesToSearch
 
-        expect(result.length).toEqual( // 126 + 3360 + 22680 + 32640 = 58806
+        expect(actual.length).toEqual( // 126 + 3360 + 22680 + 32640 = 58806
             126 + // all combinations of 4 submetrics = 6 choose 4 w/re = ((4+6-1)!)/((4!)((6-1)!)) = 126, but that times all combinations of 0 parameters = 15 choose 0 w/re = ((0+15-1)!)/((0!)((15-1)!)) =   1, so 126 *  1 =  126, but then that times 1 bc for each one you can distribute the parameters across the submetrics 5^0 ways, so  126 * 1 =   126
             3360 +         // all combinations of 3 submetrics = 6 choose 3 w/re = ((3+6-1)!)/((3!)((6-1)!)) =  56, but that times all combinations of 1 parameters = 15 choose 1 w/re = ((1+15-1)!)/((1!)((15-1)!)) =  15, so 56  * 15 =  840, but then that times 3 bc for each one you can distribute the parameters across the submetrics 4^1 ways, so  840 * 4 =  3360
             22680 +        // all combinations of 2 submetrics = 6 choose 2 w/re = ((2+6-1)!)/((2!)((6-1)!)) =  21, but that times all combinations of 2 parameters = 15 choose 2 w/re = ((2+15-1)!)/((2!)((15-1)!)) = 120, so 21 * 120 = 2520, but then that times 4 bc for each one you can distribute the parameters across the submetrics 3^2 ways, so 2520 * 9 = 22680

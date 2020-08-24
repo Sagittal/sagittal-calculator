@@ -5,26 +5,26 @@ describe("arraysHaveSameContents", () => {
         const arrayOne = [{ a: 1 }, { b: 2 }]
         const arrayTwo = [{ a: 1 }, { b: 2 }]
 
-        const result = arraysHaveSameContents(arrayOne, arrayTwo)
+        const actual = arraysHaveSameContents(arrayOne, arrayTwo)
 
-        expect(result).toBeTruthy()
+        expect(actual).toBeTruthy()
     })
 
     it("returns true if the arrays have the same contents in a different order", () => {
         const arrayOne = [{ a: 1 }, { b: 2 }]
         const arrayTwo = [{ b: 2 }, { a: 1 }]
 
-        const result = arraysHaveSameContents(arrayOne, arrayTwo)
+        const actual = arraysHaveSameContents(arrayOne, arrayTwo)
 
-        expect(result).toBeTruthy()
+        expect(actual).toBeTruthy()
     })
 
     it("returns false if the arrays have different contents", () => {
         const arrayOne: unknown[] = [{ a: 1 }, { b: 2 }]
         const arrayTwo: unknown[] = [{ a: 1 }, { c: 2 }]
 
-        const result = arraysHaveSameContents(arrayOne, arrayTwo)
+        const actual = arraysHaveSameContents(arrayOne, arrayTwo)
 
-        expect(result).toBeFalsy()
+        expect(actual).toBeFalsy()
     })
 })

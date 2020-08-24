@@ -1,6 +1,5 @@
-import { ACCURACY_THRESHOLD } from "../../../../src/general/code/constants"
-import { computeSopfr, Monzo } from "../../../../src/general/music"
-import { computeRoughNumberMonzo } from "../../../../src/general/music/rough"
+import { ACCURACY_THRESHOLD } from "../../../../src/general/code"
+import { computeRoughNumberMonzo, computeSopfr, Monzo } from "../../../../src/general/music"
 import { JI_SYMBOLS } from "../../../../src/notations/ji"
 
 const AVERAGE_FIVE_ROUGH_SOPFR = 22.78523489932886

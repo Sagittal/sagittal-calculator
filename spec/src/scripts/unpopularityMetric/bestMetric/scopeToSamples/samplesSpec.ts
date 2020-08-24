@@ -34,9 +34,9 @@ describe("computeSamples", () => {
         ] as Scope
         const dynamicParameters = computeDynamicParameters(scope)
 
-        const result = computeSamples({ scope, dynamicParameters })
+        const actual = computeSamples({ scope, dynamicParameters })
 
-        const expectedResult = [
+        const expected = jasmine.arrayWithExactContents([
             {
                 submetrics: [
                     {
@@ -205,8 +205,8 @@ describe("computeSamples", () => {
                 ],
                 samplePoint: [2, 1, 1],
             },
-        ]
-        expect(result).toEqual(jasmine.arrayWithExactContents(expectedResult))
+        ])
+        expect(actual).toEqual(expected)
     })
 
     it("supports providing more than one submetric with the same submetric type", () => {
@@ -233,9 +233,9 @@ describe("computeSamples", () => {
         ] as Scope
         const dynamicParameters = computeDynamicParameters(scope)
 
-        const result = computeSamples({ scope, dynamicParameters })
+        const actual = computeSamples({ scope, dynamicParameters })
 
-        const expectedResult = [
+        const expected = jasmine.arrayWithExactContents([
             {
                 submetrics: [
                     {
@@ -296,7 +296,7 @@ describe("computeSamples", () => {
                 ],
                 samplePoint: [1, 1],
             },
-        ]
-        expect(result).toEqual(jasmine.arrayWithExactContents(expectedResult))
+        ])
+        expect(actual).toEqual(expected)
     })
 })

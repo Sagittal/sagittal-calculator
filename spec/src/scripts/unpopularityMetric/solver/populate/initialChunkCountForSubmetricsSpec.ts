@@ -9,17 +9,18 @@ describe("computeInitialChunkCountForSubmetrics", () => {
         it("when less than or equal to the total count of possible submetric chunks (6), returns the passed-in chunk count", () => {
             const chunkCount = 3 as Count<Chunk>
 
-            const result = computeInitialChunkCountForSubmetrics(chunkCount)
+            const actual = computeInitialChunkCountForSubmetrics(chunkCount)
 
-            expect(result).toBe(chunkCount as Count<SubmetricChunk>)
+            expect(actual).toBe(chunkCount as Count<SubmetricChunk>)
         })
 
         it("when greater than the total count of possible submetric chunks (6), caps out at that total possible count", () => {
             const chunkCount = 7 as Count<Chunk>
 
-            const result = computeInitialChunkCountForSubmetrics(chunkCount)
+            const actual = computeInitialChunkCountForSubmetrics(chunkCount)
 
-            expect(result).toBe(6 as Count<SubmetricChunk>)
+            const expected = 6 as Count<SubmetricChunk>
+            expect(actual).toBe(expected)
         })
     })
 
@@ -31,17 +32,18 @@ describe("computeInitialChunkCountForSubmetrics", () => {
         it("when less than or equal to the total count of possible submetric chunks (4), returns the passed-in chunk count", () => {
             const chunkCount = 3 as Count<Chunk>
 
-            const result = computeInitialChunkCountForSubmetrics(chunkCount)
+            const actual = computeInitialChunkCountForSubmetrics(chunkCount)
 
-            expect(result).toBe(chunkCount as Count<SubmetricChunk>)
+            expect(actual).toBe(chunkCount as Count<SubmetricChunk>)
         })
 
         it("when greater than the total count of possible submetric chunks (4), caps out at that total possible count", () => {
             const chunkCount = 7 as Count<Chunk>
 
-            const result = computeInitialChunkCountForSubmetrics(chunkCount)
+            const actual = computeInitialChunkCountForSubmetrics(chunkCount)
 
-            expect(result).toBe(4 as Count<SubmetricChunk>)
+            const expected = 4 as Count<SubmetricChunk>
+            expect(actual).toBe(expected)
         })
     })
 })

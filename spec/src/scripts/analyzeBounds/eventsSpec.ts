@@ -28,9 +28,9 @@ describe("analyzeEvents", () => {
         ]
         const actualBoundCents = 10.2 as Cents
 
-        const result = analyzeEvents(history, actualBoundCents)
+        const actual = analyzeEvents(history, actualBoundCents)
 
-        expect(result).toEqual(jasmine.arrayWithExactContents([
+        const expected = jasmine.arrayWithExactContents([
             {
                 ...analyzedEventFixture,
                 type: EventType.INA,
@@ -61,6 +61,7 @@ describe("analyzeEvents", () => {
                 distance: 0.09999999999999964,
                 inaDistance: 0.20495226950308407,
             },
-        ]))
+        ])
+        expect(actual).toEqual(expected)
     })
 })

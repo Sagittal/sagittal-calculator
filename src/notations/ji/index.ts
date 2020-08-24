@@ -20,6 +20,7 @@ import {
     Bound,
     BoundedSymbolIdWithDistances,
     BoundedSymbolIdWithDistancesPair,
+    BoundedSymbolPositions,
     BoundIdWithBoundedSymbolIdWithDistancesPairsByLevel,
     JiSymbol,
     Level,
@@ -52,4 +53,5 @@ export {
     getSymbol,
     SYMBOL_SETS,
     BoundedSymbolIdWithDistancesPair,
+    BoundedSymbolPositions,
 }

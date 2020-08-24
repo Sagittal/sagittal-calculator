@@ -4,16 +4,18 @@ describe("parseRatio", () => {
     it("works for directed ratios", () => {
         const ratio = "5/4"
 
-        const result = parseRatio(ratio)
+        const actual = parseRatio(ratio)
 
-        expect(result).toEqual([5, 4] as Ratio)
+        const expected = [5, 4] as Ratio
+        expect(actual).toEqual(expected)
     })
 
     it("works for directed ratios", () => {
         const ratio = "5:4"
 
-        const result = parseRatio(ratio)
+        const actual = parseRatio(ratio)
 
-        expect(result).toEqual([4, 5] as Ratio)
+        const expected = [4, 5] as Ratio
+        expect(actual).toEqual(expected)
     })
 })

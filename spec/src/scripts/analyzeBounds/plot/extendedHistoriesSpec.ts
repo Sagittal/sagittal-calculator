@@ -22,13 +22,13 @@ describe("computeExtendedHistories", () => {
     it("returns an array with potentially many elements: for each snappable position of any event type, a new history which is like the passed-in history extended with a new event of snapping to that position, and its rank updated if necessary", () => {
         const actualBoundCents = 45.4 as Cents
 
-        const result = computeExtendedHistories(history, Level.ULTRA, {
+        const actual = computeExtendedHistories(history, Level.ULTRA, {
             ...boundFixture,
             cents: actualBoundCents,
             levels: [Level.ULTRA, Level.EXTREME],
         })
 
-        expect(result).toEqual(jasmine.arrayWithExactContents([
+        const expected = jasmine.arrayWithExactContents([
             [
                 passedInHistoryEvent,
                 {
@@ -56,6 +56,7 @@ describe("computeExtendedHistories", () => {
                     cents: 45.1124978365313,
                 },
             ],
-        ]))
+        ])
+        expect(actual).toEqual(expected)
     })
 })

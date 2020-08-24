@@ -1,6 +1,6 @@
 import "colors"
-import { specReporter } from "./specReporter"
 import { slowReporter } from "./slowReporter"
+import { specReporter } from "./specReporter"
 
 Error.stackTraceLimit = Infinity
 

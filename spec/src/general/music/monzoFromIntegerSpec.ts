@@ -4,9 +4,10 @@ describe("computeMonzoFromInteger", () => {
     it("prime factorizes the integer into a monzo", () => {
         const integer = 44
 
-        const result = computeMonzoFromInteger(integer)
+        const actual = computeMonzoFromInteger(integer)
 
-        expect(result).toEqual([2, 0, 0, 0, 1] as Monzo)
+        const expected = [2, 0, 0, 0, 1] as Monzo
+        expect(actual).toEqual(expected)
     })
 
     it("errors if the primes in the integer's factorization are too big", () => {

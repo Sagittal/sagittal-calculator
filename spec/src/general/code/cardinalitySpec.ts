@@ -17,8 +17,9 @@ describe("computeCardinality", () => {
             ],
         ]
 
-        const result = computeCardinality(array)
+        const actual = computeCardinality(array)
 
-        expect(result).toEqual([3, 2, 3])
+        const expected = [3, 2, 3]
+        expect(actual).toEqual(expected)
     })
 })

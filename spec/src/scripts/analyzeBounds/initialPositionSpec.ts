@@ -11,8 +11,9 @@ describe("computeInitialPosition", () => {
             cents: 42 as Cents, // between ~|\ (40.0043524607400) and //| (43.0125791934297) at the High level
         }
 
-        const result = computeInitialPosition(bound)
+        const actual = computeInitialPosition(bound)
 
-        expect(result).toEqual((40.0043524607400 + 43.0125791934297) / 2 as Cents)
+        const expected = (40.0043524607400 + 43.0125791934297) / 2 as Cents
+        expect(actual).toEqual(expected)
     })
 })

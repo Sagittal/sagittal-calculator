@@ -7,9 +7,9 @@ describe("computeDistributions", () => {
         const array = ["a", "b", "c", "d"]
         const bucketCount = 3
 
-        const result = computeDistributions(array, bucketCount)
+        const actual = computeDistributions(array, bucketCount)
 
-        const expectedResult = [
+        const expected = [
             // 4 0 0
             [
                 ["a", "b", "c", "d"],
@@ -446,9 +446,9 @@ describe("computeDistributions", () => {
             ],
         ]
 
-        expect(result.length).toBe(expectedResult.length)
-        expectedResult.forEach(expectedResultElement => {
-            expect(result.some(resultElement => {
+        expect(actual.length).toBe(expected.length)
+        expected.forEach(expectedResultElement => {
+            expect(actual.some(resultElement => {
                 return resultElement.every((bucket, index) => {
                     return arraysHaveSameContents(bucket, expectedResultElement[ index ])
                 })
@@ -460,10 +460,10 @@ describe("computeDistributions", () => {
         const array = ["a"]
         const bucketCount = 2
 
-        const result = computeDistributions(array, bucketCount)
+        const actual = computeDistributions(array, bucketCount)
 
-        expect(result.length).toBe(2)
-        const expectedResult: Distribution<string>[] = [
+        expect(actual.length).toBe(2)
+        const expected: Distribution<string>[] = [
             [
                 ["a"],
                 [],
@@ -473,6 +473,6 @@ describe("computeDistributions", () => {
                 ["a"],
             ],
         ] as Distribution<string>[]
-        expect(result).toEqual(expectedResult)
+        expect(actual).toEqual(expected)
     })
 })

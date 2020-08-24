@@ -9,13 +9,14 @@ describe("alignTable", () => {
             "25/49M\t7\t24\t33.4\t[0 0⟩\t50/49\t-59.333",
         ]
 
-        const result = alignTable(data)
+        const actual = alignTable(data)
 
-        expect(result).toEqual([
+        const expected = [
             "comma name\tlimit\t5-rough sopfr\tcents\tmonzo  \tratio\tapotome slope",
             "11M       \t11   \t11           \t45.45\t[0 0 1⟩\t33/32\t-4           ",
             "25/49M    \t7    \t24           \t33.4 \t[0 0⟩  \t50/49\t-59.333      ",
-        ])
+        ]
+        expect(actual).toEqual(expected)
     })
 
     it("can align all columns to the right", () => {
@@ -25,13 +26,14 @@ describe("alignTable", () => {
             "25/49M\t7\t24\t33.4\t[0 0⟩\t50/49\t-59.333",
         ]
 
-        const result = alignTable(data, { justification: Justification.RIGHT })
+        const actual = alignTable(data, { justification: Justification.RIGHT })
 
-        expect(result).toEqual([
+        const expected = [
             "comma name\tlimit\t5-rough sopfr\tcents\t  monzo\tratio\tapotome slope",
             "       11M\t   11\t           11\t45.45\t[0 0 1⟩\t33/32\t           -4",
             "    25/49M\t    7\t           24\t 33.4\t  [0 0⟩\t50/49\t      -59.333",
-        ])
+        ]
+        expect(actual).toEqual(expected)
     })
 
     it("can center columns", () => {
@@ -41,13 +43,14 @@ describe("alignTable", () => {
             "25/49M\t7\t24\t33.4\t[0 0⟩\t50/49\t-59.333",
         ]
 
-        const result = alignTable(data, { justification: Justification.CENTER })
+        const actual = alignTable(data, { justification: Justification.CENTER })
 
-        expect(result).toEqual([
+        const expected = [
             "comma name\tlimit\t5-rough sopfr\tcents\t monzo \tratio\tapotome slope",
             "   11M    \t  11 \t      11     \t45.45\t[0 0 1⟩\t33/32\t      -4     ",
             "  25/49M  \t  7  \t      24     \t 33.4\t [0 0⟩ \t50/49\t   -59.333   ",
-        ])
+        ]
+        expect(actual).toEqual(expected)
     })
 
     it("can align each column individually", () => {
@@ -57,12 +60,13 @@ describe("alignTable", () => {
             "25/49M\t7\t24\t33.4\t[0 0⟩\t50/49\t-59.333",
         ]
 
-        const result = alignTable(data, { justification: [Justification.RIGHT, Justification.LEFT, Justification.CENTER, undefined, Justification.RIGHT] })
+        const actual = alignTable(data, { justification: [Justification.RIGHT, Justification.LEFT, Justification.CENTER, undefined, Justification.RIGHT] })
 
-        expect(result).toEqual([
+        const expected = [
             "comma name\tlimit\t5-rough sopfr\tcents\t  monzo\tratio\tapotome slope",
             "       11M\t11   \t      11     \t45.45\t[0 0 1⟩\t33/32\t-4           ",
             "    25/49M\t7    \t      24     \t33.4 \t  [0 0⟩\t50/49\t-59.333      ",
-        ])
+        ]
+        expect(actual).toEqual(expected)
     })
 })

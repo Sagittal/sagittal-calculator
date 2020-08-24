@@ -8,9 +8,9 @@ describe("getSymbol", () => {
     it("given a symbol's ID, returns the full symbol", () => {
         const symbolId = 55 as Id<JiSymbol>
 
-        const result = getSymbol(symbolId)
+        const actual = getSymbol(symbolId)
 
-        expect(result).toEqual({
+        const expected = {
             id: 55 as Id<JiSymbol>,
             ascii: "`.|)" as SymbolLongAscii,
             unicode: "" as SymbolUnicode,
@@ -28,6 +28,7 @@ describe("getSymbol", () => {
                 n2d3p9: 23.52777777777778 as N2D3P9,
             },
             elements: ["`|", ".|", "|)"] as SymbolLongAscii[],
-        })
+        }
+        expect(actual).toEqual(expected)
     })
 })

@@ -21,13 +21,13 @@ describe("computeFiveSlicedMonzosToCheck", () => {
         const maximumFiveRoughSopfr = 15 as Sopfr<5>
         const maximumFiveRoughCopfr = 2 as Copfr<5>
 
-        const result = computeFiveSlicedMonzosToCheck({
+        const actual = computeFiveSlicedMonzosToCheck({
             maximumPrimeLimit,
             maximumFiveRoughSopfr,
             maximumFiveRoughCopfr,
         })
 
-        expect(result).toEqual(jasmine.arrayWithExactContents([
+        const expected = jasmine.arrayWithExactContents([
             [-2],
             [-1, -1],
             [-1],
@@ -41,16 +41,17 @@ describe("computeFiveSlicedMonzosToCheck", () => {
             [1],
             [1, 1],
             [2],
-        ]))
+        ])
+        expect(actual).toEqual(expected)
     })
 
     it("returns the list of 5-sliced monzos to check, given a maximum prime limit and a maximum 5-rough sopfr", () => {
         const maximumPrimeLimit = 7 as Prime
         const maximumFiveRoughSopfr = 15 as Sopfr<5>
 
-        const result = computeFiveSlicedMonzosToCheck({ maximumPrimeLimit, maximumFiveRoughSopfr })
+        const actual = computeFiveSlicedMonzosToCheck({ maximumPrimeLimit, maximumFiveRoughSopfr })
 
-        expect(result).toEqual(jasmine.arrayWithExactContents([
+        const expected = jasmine.arrayWithExactContents([
             [-3],
             [-2],
             [-1, -1],
@@ -66,16 +67,17 @@ describe("computeFiveSlicedMonzosToCheck", () => {
             [1, 1],
             [2],
             [3],
-        ]))
+        ])
+        expect(actual).toEqual(expected)
     })
 
     it("returns the list of 5-sliced monzos to check, given a maximum prime limit and a maximum 5-rough copfr", () => {
         const maximumPrimeLimit = 7 as Prime
         const maximumFiveRoughCopfr = 3 as Copfr<5>
 
-        const result = computeFiveSlicedMonzosToCheck({ maximumPrimeLimit, maximumFiveRoughCopfr })
+        const actual = computeFiveSlicedMonzosToCheck({ maximumPrimeLimit, maximumFiveRoughCopfr })
 
-        expect(result).toEqual(jasmine.arrayWithExactContents([
+        const expected = jasmine.arrayWithExactContents([
             [-3],
             [-2, -1],
             [-2],
@@ -101,16 +103,17 @@ describe("computeFiveSlicedMonzosToCheck", () => {
             [2],
             [2, 1],
             [3],
-        ]))
+        ])
+        expect(actual).toEqual(expected)
     })
 
     it("returns the list of 5-sliced monzos to check, given a maximum 5-rough sopfr and a maximum 5-rough copfr", () => {
         const maximumFiveRoughSopfr = 20 as Sopfr<5>
         const maximumFiveRoughCopfr = 3 as Copfr<5>
 
-        const result = computeFiveSlicedMonzosToCheck({ maximumFiveRoughSopfr, maximumFiveRoughCopfr })
+        const actual = computeFiveSlicedMonzosToCheck({ maximumFiveRoughSopfr, maximumFiveRoughCopfr })
 
-        expect(result).toEqual(jasmine.arrayWithExactContents([
+        const expected = jasmine.arrayWithExactContents([
             [-3],
             [-2, -1],
             [-2],
@@ -158,15 +161,16 @@ describe("computeFiveSlicedMonzosToCheck", () => {
             [2],
             [2, 1],
             [3],
-        ]))
+        ])
+        expect(actual).toEqual(expected)
     })
 
     it("returns the list of 5-sliced monzos to check, when given only a maximum 5-rough sopfr", () => {
         const maximumFiveRoughSopfr = 15 as Sopfr<5>
 
-        const result = computeFiveSlicedMonzosToCheck({ maximumFiveRoughSopfr })
+        const actual = computeFiveSlicedMonzosToCheck({ maximumFiveRoughSopfr })
 
-        expect(result).toEqual(jasmine.arrayWithExactContents([
+        const expected = jasmine.arrayWithExactContents([
             [-3],
             [-2],
             [-1, -1],
@@ -186,7 +190,8 @@ describe("computeFiveSlicedMonzosToCheck", () => {
             [1, 1],
             [2],
             [3],
-        ]))
+        ])
+        expect(actual).toEqual(expected)
     })
 
     it("fails when given only a maximum prime limit", () => {

@@ -8,12 +8,13 @@ describe("merge", () => {
             { a: 3, c: 5 },
         ]
 
-        const result = merge(...objects)
+        const actual = merge(...objects)
 
-        expect(result).toEqual({
+        const expected = {
             a: 3,
             b: 4,
             c: 5,
-        })
+        }
+        expect(actual).toEqual(expected)
     })
 })

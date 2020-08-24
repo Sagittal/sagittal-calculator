@@ -11,11 +11,12 @@ describe("computeNeighborPositionIndices", () => {
             0.66,
         ] as Cents[]
 
-        const result = computeNeighborPositionIndices(position, sortedTargetPositions)
+        const actual = computeNeighborPositionIndices(position, sortedTargetPositions)
 
-        expect(result).toEqual([
-            1 as Index,
-            2 as Index,
-        ])
+        const expected = [
+            1 as Index<Cents>,
+            2 as Index<Cents>,
+        ]
+        expect(actual).toEqual(expected)
     })
 })

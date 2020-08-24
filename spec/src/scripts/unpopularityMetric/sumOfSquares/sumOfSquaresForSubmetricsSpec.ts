@@ -25,8 +25,9 @@ describe("computeSumOfSquaresForSubmetrics", () => {
             },
         ] as Combination<Submetric>
 
-        const result = computeSumOfSquaresForSubmetrics(submetrics)
+        const actual = computeSumOfSquaresForSubmetrics(submetrics)
 
-        expect(result).toBe(0.004260809896143936 as SumOfSquares)
+        const expected = 0.004260809896143936 as SumOfSquares
+        expect(actual).toBe(expected)
     })
 })

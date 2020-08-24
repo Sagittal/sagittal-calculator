@@ -6,9 +6,10 @@ describe("computeMonzoInRange", () => {
         const lowerBound = 40.0 as Cents
         const upperBound = 40.1 as Cents
 
-        const result = computeMonzoInRange(threeRoughMonzo, lowerBound, upperBound)
+        const actual = computeMonzoInRange(threeRoughMonzo, lowerBound, upperBound)
 
-        expect(result).toEqual([-8, -6, 3, 5, -1] as Monzo)
+        const expected = [-8, -6, 3, 5, -1] as Monzo
+        expect(actual).toEqual(expected)
     })
 
     it("returns undefined if no (2-)monzo is within the cents range", () => {
@@ -16,9 +17,9 @@ describe("computeMonzoInRange", () => {
         const lowerBound = 40.1 as Cents
         const upperBound = 40.2 as Cents
 
-        const result = computeMonzoInRange(threeRoughMonzo, lowerBound, upperBound)
+        const actual = computeMonzoInRange(threeRoughMonzo, lowerBound, upperBound)
 
-        expect(result).toBeUndefined()
+        expect(actual).toBeUndefined()
     })
 
     it("throws an error if the cents range is greater than an octave (therefore more than one two monzo could be in range)", () => {
