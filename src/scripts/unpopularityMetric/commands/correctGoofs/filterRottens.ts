@@ -1,10 +1,10 @@
 import * as colors from "colors"
 import { program } from "commander"
-import { isNumber } from "../../../../general"
+import { COMMA_POPULARITIES, isNumber, Popularity } from "../../../../general"
 import { Metric } from "../../bestMetric"
 import { clearDebugLogFiles, debugSettings, DebugTarget, saveDebugMessage, setDebugTargets } from "../../debug"
 import { unpopularityMetricSettings } from "../../globals"
-import { COMMA_POPULARITIES, computeUnpopularities, Popularity } from "../../sumOfSquares"
+import { computeUnpopularities } from "../../sumOfSquares"
 import { load } from "../shared"
 
 program

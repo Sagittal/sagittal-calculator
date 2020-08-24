@@ -1,5 +1,6 @@
 import { program } from "commander"
 import {
+    COMMA_POPULARITIES,
     computeCentsFromRatio,
     computeN2D3P9,
     computePossibleMonzosFromPrimeExponentExtremas,
@@ -12,10 +13,6 @@ import {
     round,
 } from "../../../general"
 import { computeNotatingSymbolIds, computeSmileyFromAscii, getSymbol, SYMBOL_SETS } from "../../../notations"
-// TODO: we should not export from one command to another,
-//  so the popularities stuff should be relocated to a place where it can be shared
-// tslint:disable-next-line no-reaching-imports
-import { COMMA_POPULARITIES } from "../../unpopularityMetric/sumOfSquares"
 import { N2D3P9_MAX } from "../constants"
 import { PopularRatioUnrankedResult } from "../types"
 

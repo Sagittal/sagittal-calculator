@@ -1,12 +1,11 @@
-import { Combination, isNumber } from "../../../general"
+import { Combination, COMMA_POPULARITIES, isNumber, Popularity } from "../../../general"
 import { SumOfSquares } from "../bestMetric"
 import { DebugTarget, debugTargets, saveDebugMessage } from "../debug"
 import { unpopularityMetricSettings } from "../globals"
 import { checkSubmetricsForInvalidParameterValueCombinations } from "./checkParameterValues"
-import { COMMA_POPULARITIES } from "./popularities"
 import { addRankToUnpopularities } from "./rank"
 import { computeSumOfSquares } from "./sumOfSquares"
-import { Popularity, Submetric } from "./types"
+import { Submetric } from "./types"
 import { computeUnpopularities } from "./unpopularities"
 
 const computeSumOfSquaresForSubmetrics = (submetrics: Combination<Submetric>): SumOfSquares => {

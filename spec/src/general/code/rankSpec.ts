@@ -28,8 +28,6 @@ describe("fractionallyRank", () => {
     it("another example", () => {
         const actual = fractionallyRank(arrayOfObjects, "b")
 
-        console.log(actual)
-
         const expected = [
             { a: 1, b: 1, rank: 1 as Rank<{ [ index: string ]: number }> },
             { a: 2, b: 2, rank: 3 as Rank<{ [ index: string ]: number }> },

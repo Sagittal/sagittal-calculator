@@ -1,6 +1,6 @@
-// Per Scala statistics
 import { Popularity } from "./types"
 
+// Per Scala statistics
 const COMMA_POPULARITIES: Popularity[] = [
     { rank: 1, fiveRoughRatio: [1, 1], votes: 7624 },
     { rank: 2, fiveRoughRatio: [5, 1], votes: 5371 },

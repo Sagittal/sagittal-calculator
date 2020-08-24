@@ -1,6 +1,5 @@
-import { computeMonzoFromRatio } from "../../../../../src/general"
-import { computeRatioFromMonzo } from "../../../../../src/general/music"
-import { COMMA_POPULARITIES } from "../../../../../src/scripts/unpopularityMetric/sumOfSquares"
+import { computeMonzoFromRatio, computeRatioFromMonzo } from "../../../../src/general"
+import { COMMA_POPULARITIES } from "../../../../src/general/music"
 
 describe("COMMA_POPULARITIES", () => {
     it("is the case that all the ratios capable of being parsed by monzo from ratio correctly when only top is 80 or less", () => {

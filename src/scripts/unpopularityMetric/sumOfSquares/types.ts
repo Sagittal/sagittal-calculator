@@ -1,18 +1,11 @@
-import { Index, Rank, Ratio } from "../../../general"
+import { Index, Ratio } from "../../../general"
 
-type Votes = number & { _VotesBrand: "Votes" }
 type Antivotes = number & { _AntivotesBrand: "Antivotes" }
 
 interface Unpopularity {
     antivotes: Antivotes,
     fiveRoughRatio: Ratio,
-    index: Index<Unpopularity>,
-}
-
-interface Popularity {
-    fiveRoughRatio: Ratio,
-    rank: Rank<Popularity>,
-    votes: Votes,
+    index: Index<Unpopularity>, // TODO: Indexed<>
 }
 
 enum Parameter {
@@ -83,8 +76,6 @@ type ParameterValue = number & { _ParameterValueBrand: "ParameterValue" }
 
 export {
     Unpopularity,
-    Popularity,
-    Votes,
     Antivotes,
     Parameter,
     ParameterValue,
