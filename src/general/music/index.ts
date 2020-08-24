@@ -24,7 +24,7 @@ import { SIZE_CATEGORY_BOUNDS } from "./sizeCategoryBounds"
 import { computeSopf } from "./sopf"
 import { computeSopfr } from "./sopfr"
 import { computeTrimmedMonzo } from "./trimmedMonzo"
-import { ApotomeSlope, Cents, Comma, Copfr, Monzo, Popularity, Position, Sopfr } from "./types"
+import { ApotomeSlope, Cents, Comma, Copfr, Monzo, Popularity, Position, Sopfr, Votes } from "./types"
 export { COMMA_POPULARITIES } from "./popularities"
 
 // TODO: shouldn't about half of this stuff actually be in the math module, not the music module?
@@ -64,5 +64,6 @@ export {
     PrimeExponentExtrema,
     computePrimeExponentExtremasGivenMaximumN2D3P9,
     Popularity,
+    Votes,
     computePossibleMonzosFromPrimeExponentExtremas,
 }

@@ -70,6 +70,7 @@ import {
     PrimeExponentExtrema,
     SIZE_CATEGORY_BOUNDS,
     Sopfr,
+    Votes,
 } from "./music"
 import { alignTable } from "./textTable"
 import { formatTime } from "./time"
@@ -155,4 +156,5 @@ export {
     Ranked,
     COMMA_POPULARITIES,
     RankStrategy,
+    Votes,
 }

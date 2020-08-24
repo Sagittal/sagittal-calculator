@@ -12,6 +12,7 @@ import {
     rank,
     RankStrategy,
     round,
+    Votes,
 } from "../../../general"
 import { computeNotatingSymbolIds, computeSmileyFromAscii, getSymbol, SYMBOL_SETS } from "../../../notations"
 import { N2D3P9_MAX } from "../constants"
@@ -50,7 +51,9 @@ monzosToCheck.forEach(monzo => {
         const notatingSymbols = notatingSymbolIds.map(getSymbol)
         const smileys = notatingSymbols.map(symbol => computeSmileyFromAscii(symbol.ascii)).join(" ")
         const symbolSets = notatingSymbols.map(symbol => SYMBOL_SETS.indexOf(symbol.lowestSymbolSet)).join(", ")
-        const actualRank = COMMA_POPULARITIES.find(popularity => deepEquals(popularity.fiveRoughRatio, ratio))?.rank
+        const actualPopularity = COMMA_POPULARITIES.find(popularity => deepEquals(popularity.fiveRoughRatio, ratio))
+        const actualRank = actualPopularity?.rank || "-"
+        const votes = actualPopularity?.votes || 0 as Votes
 
         unrankedResults.push({
             presentedN2D3P9,
@@ -58,6 +61,7 @@ monzosToCheck.forEach(monzo => {
             smileys,
             symbolSets,
             actualRank,
+            votes,
         })
     }
 })
@@ -69,11 +73,14 @@ console.log(`count of results with N2D3P9 <= ${maximumN2D3P9}: ${unrankedResults
 
 const results = rank(unrankedResults, { by: "presentedN2D3P9", strategy: RankStrategy.FRACTIONAL })
 
+// TODO: extract this... and can you use a table helper
 console.log(`[table]`)
-console.log(`[tr][th]ratio[/th][th]N2D3P9[/th][th]symbol[/th][th]symbol sets[/th][th]estimated rank[/th][th]actual rank[/th][/tr]`)
-results.forEach(actual => {
-    // TODO: extract this
-    const { presentedN2D3P9, presentedRatio, rank: estimatedRank, actualRank, symbolSets, smileys } = actual
-    console.log(`[tr][td]${presentedRatio}[/td][td]${presentedN2D3P9}[/td][td]${smileys}[/td][td]${symbolSets}[/td][td]${estimatedRank}[/td][td]${actualRank || "-"}[/td][/tr]`)
+console.log("[tr][th]5-rough[/th][th][/th][th][/th][th]introducing[/th][th][/th][th][/th][th][/th][/tr]")
+console.log("[tr][th]ratio[/th][th][/th][th][/th][th]symbol[/th][th][/th][th]Scala[/th][th]Scala[/th][/tr]")
+console.log("[tr][th]equivalence[/th][th][/th][th][/th][th]subset[/th][th]N2D3P9[/th][th]archive[/th][th]archive[/th][/tr]")
+console.log("[tr][th]class[/th][th]N2D3P9[/th][th]symbol[/th][th]indices[/th][th]rank[/th][th]rank[/th][th]occurrences[/th][/tr]")
+results.forEach(result => {
+    const { presentedN2D3P9, presentedRatio, rank: estimatedRank, actualRank, symbolSets, smileys, votes } = result
+    console.log(`[tr][td]${presentedRatio}[/td][td]${presentedN2D3P9}[/td][td]${smileys}[/td][td]${symbolSets}[/td][td]${estimatedRank}[/td][td]${actualRank}[/td][td]${votes}[/td][/tr]`)
 })
 console.log(`[/table]`)
