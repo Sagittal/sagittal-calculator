@@ -2,13 +2,13 @@ import { computeDeepClone } from "./deepClone"
 import { sort } from "./sort"
 import { Rank } from "./types"
 
-const fractionallyRank = <T>(arrayOfObjects: T[], rankKey: string): Array<T & { fractionalRank: Rank<T> }> => {
+const fractionallyRank = <T>(arrayOfObjects: T[], rankKey: string): Array<T & { rank: Rank<T> }> => {
     const clonedArrayOfObjects = computeDeepClone(arrayOfObjects)
     sort(clonedArrayOfObjects, { by: rankKey })
 
-    return clonedArrayOfObjects.map((object: T, index: number): T & { fractionalRank: Rank<T> } => {
-        if ((object as T & { fractionalRank: Rank<T> }).fractionalRank) {
-            return object as T & { fractionalRank: Rank<T> }
+    return clonedArrayOfObjects.map((object: T, index: number): T & { rank: Rank<T> } => {
+        if ((object as T & { rank: Rank<T> }).rank) {
+            return object as T & { rank: Rank<T> }
         }
 
         let tiesCount = 0
@@ -22,15 +22,15 @@ const fractionallyRank = <T>(arrayOfObjects: T[], rankKey: string): Array<T & { 
         })
 
         if (tiesCount === 0) {
-            return { ...object, fractionalRank: index + 1 } as T & { fractionalRank: Rank<T> }
+            return { ...object, rank: index + 1 } as T & { rank: Rank<T> }
         } else {
-            const fractionalRank: Rank = (index + 1) + tiesCount / 2 as Rank<T>
+            const rank: Rank = (index + 1) + tiesCount / 2 as Rank<T>
 
             for (let i = index; i < index + tiesCount; i++) {
-                (clonedArrayOfObjects[ i + 1 ] as T & { fractionalRank: Rank<T> }).fractionalRank = fractionalRank as Rank<T>
+                (clonedArrayOfObjects[ i + 1 ] as T & { rank: Rank<T> }).rank = rank as Rank<T>
             }
 
-            return { ...object, fractionalRank } as T & { fractionalRank: Rank<T> }
+            return { ...object, rank } as T & { rank: Rank<T> }
         }
     })
 }

@@ -16,11 +16,11 @@ describe("fractionallyRank", () => {
         const result = fractionallyRank(arrayOfObjects, "a")
 
         expect(result).toEqual([
-            { a: 1, b: 1, fractionalRank: 1.5 as Rank<{ [index: string]: number }> },
-            { a: 1, b: 2, fractionalRank: 1.5 as Rank<{ [index: string]: number }> },
-            { a: 2, b: 2, fractionalRank: 3 as Rank<{ [index: string]: number }> },
-            { a: 4, b: 3, fractionalRank: 4.5 as Rank<{ [index: string]: number }> },
-            { a: 4, b: 2, fractionalRank: 4.5 as Rank<{ [index: string]: number }> },
+            { a: 1, b: 1, rank: 1.5 as Rank<{ [index: string]: number }> },
+            { a: 1, b: 2, rank: 1.5 as Rank<{ [index: string]: number }> },
+            { a: 2, b: 2, rank: 3 as Rank<{ [index: string]: number }> },
+            { a: 4, b: 3, rank: 4.5 as Rank<{ [index: string]: number }> },
+            { a: 4, b: 2, rank: 4.5 as Rank<{ [index: string]: number }> },
         ])
     })
 
@@ -30,11 +30,11 @@ describe("fractionallyRank", () => {
         console.log(result)
 
         expect(result).toEqual([
-            { a: 1, b: 1, fractionalRank: 1 as Rank<{ [index: string]: number }> },
-            { a: 2, b: 2, fractionalRank: 3 as Rank<{ [index: string]: number }> },
-            { a: 4, b: 2, fractionalRank: 3 as Rank<{ [index: string]: number }> },
-            { a: 1, b: 2, fractionalRank: 3 as Rank<{ [index: string]: number }> },
-            { a: 4, b: 3, fractionalRank: 5 as Rank<{ [index: string]: number }> },
+            { a: 1, b: 1, rank: 1 as Rank<{ [index: string]: number }> },
+            { a: 2, b: 2, rank: 3 as Rank<{ [index: string]: number }> },
+            { a: 4, b: 2, rank: 3 as Rank<{ [index: string]: number }> },
+            { a: 1, b: 2, rank: 3 as Rank<{ [index: string]: number }> },
+            { a: 4, b: 3, rank: 5 as Rank<{ [index: string]: number }> },
         ])
     })
 

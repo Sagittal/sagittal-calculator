@@ -11,7 +11,7 @@ interface Unpopularity {
 
 interface Popularity {
     fiveRoughRatio: Ratio,
-    fractionalRank: Rank<Popularity>,
+    rank: Rank<Popularity>,
     votes: Votes,
 }
 

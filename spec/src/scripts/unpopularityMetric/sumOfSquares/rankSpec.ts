@@ -13,9 +13,9 @@ describe("addRankToUnpopularities", () => {
         const result = addRankToUnpopularities(unpopularities)
 
         expect(result).toEqual([
-            { index: 0, antivotes: 10 as Antivotes, fractionalRank: 2 as Rank<Unpopularity> },
-            { index: 1, antivotes: 5 as Antivotes, fractionalRank: 1 as Rank<Unpopularity> },
-            { index: 2, antivotes: 20 as Antivotes, fractionalRank: 3 as Rank<Unpopularity> },
+            { index: 0, antivotes: 10 as Antivotes, rank: 2 as Rank<Unpopularity> },
+            { index: 1, antivotes: 5 as Antivotes, rank: 1 as Rank<Unpopularity> },
+            { index: 2, antivotes: 20 as Antivotes, rank: 3 as Rank<Unpopularity> },
         ] as Array<Ranked<Unpopularity>>)
     })
 
@@ -30,10 +30,10 @@ describe("addRankToUnpopularities", () => {
         const result = addRankToUnpopularities(unpopularities)
 
         expect(result).toEqual([
-            { index: 0, antivotes: 10 as Antivotes, fractionalRank: 2.5 as Rank<Unpopularity> },
-            { index: 1, antivotes: 5 as Antivotes, fractionalRank: 1 as Rank<Unpopularity> },
-            { index: 2, antivotes: 20 as Antivotes, fractionalRank: 4 as Rank<Unpopularity> },
-            { index: 3, antivotes: 10 as Antivotes, fractionalRank: 2.5 as Rank<Unpopularity> },
+            { index: 0, antivotes: 10 as Antivotes, rank: 2.5 as Rank<Unpopularity> },
+            { index: 1, antivotes: 5 as Antivotes, rank: 1 as Rank<Unpopularity> },
+            { index: 2, antivotes: 20 as Antivotes, rank: 4 as Rank<Unpopularity> },
+            { index: 3, antivotes: 10 as Antivotes, rank: 2.5 as Rank<Unpopularity> },
         ] as Array<Ranked<Unpopularity>>)
     })
 
@@ -49,11 +49,11 @@ describe("addRankToUnpopularities", () => {
         const result = addRankToUnpopularities(unpopularities)
 
         expect(result).toEqual([
-            { index: 0, antivotes: 10 as Antivotes, fractionalRank: 3 as Rank<Unpopularity> },
-            { index: 1, antivotes: 5 as Antivotes, fractionalRank: 1 as Rank<Unpopularity> },
-            { index: 2, antivotes: 20 as Antivotes, fractionalRank: 5 as Rank<Unpopularity> },
-            { index: 3, antivotes: 10 as Antivotes, fractionalRank: 3 as Rank<Unpopularity> },
-            { index: 4, antivotes: 10 as Antivotes, fractionalRank: 3 as Rank<Unpopularity> },
+            { index: 0, antivotes: 10 as Antivotes, rank: 3 as Rank<Unpopularity> },
+            { index: 1, antivotes: 5 as Antivotes, rank: 1 as Rank<Unpopularity> },
+            { index: 2, antivotes: 20 as Antivotes, rank: 5 as Rank<Unpopularity> },
+            { index: 3, antivotes: 10 as Antivotes, rank: 3 as Rank<Unpopularity> },
+            { index: 4, antivotes: 10 as Antivotes, rank: 3 as Rank<Unpopularity> },
         ] as Array<Ranked<Unpopularity>>)
     })
 })

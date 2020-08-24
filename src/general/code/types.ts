@@ -9,7 +9,7 @@ type Path = number | string | Array<number | string>
 
 type Sortable = { [ index: string ]: number}
 
-type Ranked<T> = T & { fractionalRank: Rank<T> }
+type Ranked<T> = T & { rank: Rank<T> }
 
 export {
     SortOptions,

@@ -15,9 +15,9 @@ import {
 describe("computeUnpopularities", () => {
     it("given a list of real popularities and submetric combinations, returns our estimated unpopularities, which have antivotes instead of votes", () => {
         const realPopularities: Popularity[] = [
-            { fractionalRank: 5 as Rank<Popularity>, fiveRoughRatio: [7, 5] as Ratio, votes: 1318 as Votes },
-            { fractionalRank: 8 as Rank<Popularity>, fiveRoughRatio: [125, 1] as Ratio, votes: 492 as Votes },
-            { fractionalRank: 39 as Rank<Popularity>, fiveRoughRatio: [55, 49] as Ratio, votes: 51 as Votes },
+            { rank: 5 as Rank<Popularity>, fiveRoughRatio: [7, 5] as Ratio, votes: 1318 as Votes },
+            { rank: 8 as Rank<Popularity>, fiveRoughRatio: [125, 1] as Ratio, votes: 492 as Votes },
+            { rank: 39 as Rank<Popularity>, fiveRoughRatio: [55, 49] as Ratio, votes: 51 as Votes },
         ]
         const submetrics: Combination<Submetric> = [
             {

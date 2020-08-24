@@ -52,7 +52,7 @@ monzosToCheck.forEach(monzo => {
         const notatingSymbols = notatingSymbolIds.map(getSymbol)
         const smileys = notatingSymbols.map(symbol => computeSmileyFromAscii(symbol.ascii)).join(" ")
         const symbolSets = notatingSymbols.map(symbol => SYMBOL_SETS.indexOf(symbol.lowestSymbolSet)).join(", ")
-        const actualRank = COMMA_POPULARITIES.find(popularity => deepEquals(popularity.fiveRoughRatio, ratio))?.fractionalRank
+        const actualRank = COMMA_POPULARITIES.find(popularity => deepEquals(popularity.fiveRoughRatio, ratio))?.rank
 
         unrankedResults.push({
             presentedN2D3P9,
@@ -75,7 +75,7 @@ console.log(`[table]`)
 console.log(`[tr][th]ratio[/th][th]N2D3P9[/th][th]symbol[/th][th]symbol sets[/th][th]estimated rank[/th][th]actual rank[/th][/tr]`)
 results.forEach(result => {
     // TODO: extract this
-    const { presentedN2D3P9, presentedRatio, fractionalRank: estimatedRank, actualRank, symbolSets, smileys } = result
+    const { presentedN2D3P9, presentedRatio, rank: estimatedRank, actualRank, symbolSets, smileys } = result
     console.log(`[tr][td]${presentedRatio}[/td][td]${presentedN2D3P9}[/td][td]${smileys}[/td][td]${symbolSets}[/td][td]${estimatedRank}[/td][td]${actualRank || "-"}[/td][/tr]`)
 })
 console.log(`[/table]`)
