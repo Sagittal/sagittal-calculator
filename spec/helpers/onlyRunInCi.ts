@@ -1,5 +1,5 @@
 const onlyRunInCi = () => {
-    if (!process.env.ON_CI) {
+    if (!process.env.CI) {
         pending("slow test only run in CI")
     }
 }
