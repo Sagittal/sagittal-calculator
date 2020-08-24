@@ -32,4 +32,14 @@ describe("computeMaximumNumeratorPrimeExponentGivenMaximumN2D3P3", () => {
         const expected = 2 as Exponent<Prime>
         expect(actual).toBe(expected)
     })
+
+    it("edge case: maximum N2D3P9 set to 0", () => {
+        const numeratorPrime = 7 as Prime
+        const maximumN2D3P9 = 0 as N2D3P9
+
+        const actual = computeMaximumNumeratorPrimeExponentGivenMaximumN2D3P3(numeratorPrime, maximumN2D3P9)
+
+        const expected = 0 as Exponent<Prime>
+        expect(actual).toBe(expected)
+    })
 })

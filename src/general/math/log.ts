@@ -1,5 +1,5 @@
-const computeLog = (value: number, base: number) =>
-    Math.log(value) / Math.log(base)
+const computeLog = (power: number, base: number) =>
+    Math.log(power) / Math.log(base)
 
 export {
     computeLog,

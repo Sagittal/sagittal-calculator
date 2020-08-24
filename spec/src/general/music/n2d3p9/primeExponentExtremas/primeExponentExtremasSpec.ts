@@ -5,12 +5,10 @@ import {
 } from "../../../../../../src/general/music/n2d3p9/primeExponentExtremas"
 import { onlyRunInCi } from "../../../../../helpers/onlyRunInCi"
 
-// TODO: I think you should link up with the other to-dos in popularRatios.ts
-//  so these are actually five-rough primes... should I acknowledge that in the name?
+// TODO: FIVE ROUGH LINK so these are actually five-rough primes... should I acknowledge that in the name?
 
 describe("computePrimeExponentExtremasGivenMaximumN2D3P9", () => {
-    // TODO: make this edge case actually work so you can comment out this test
-    xit("works for 1", () => {
+    it("works for 0", () => {
         const maximumN2D3P9 = 0 as N2D3P9
 
         const actual = computePrimeExponentExtremasGivenMaximumN2D3P9(maximumN2D3P9)
@@ -19,8 +17,14 @@ describe("computePrimeExponentExtremasGivenMaximumN2D3P9", () => {
         expect(actual).toEqual(expected)
     })
 
-    // TODO: okay i'm thinking that maybe we don't support N2D3P9 = 0 very well either
-    //  so write a test for that
+    it("works for 1", () => {
+        const maximumN2D3P9 = 1 as N2D3P9
+
+        const actual = computePrimeExponentExtremasGivenMaximumN2D3P9(maximumN2D3P9)
+
+        const expected = [] as Array<PrimeExponentExtrema>
+        expect(actual).toEqual(expected)
+    })
 
     it("works for 10", () => {
         const maximumN2D3P9 = 10 as N2D3P9
