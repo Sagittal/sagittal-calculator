@@ -7,9 +7,10 @@ import {
     computePrimeExponentExtremasGivenMaximumN2D3P9,
     computeRatioFromMonzo,
     deepEquals,
-    fractionallyRank,
     presentRatio,
     PrimeExponentExtrema,
+    rank,
+    RankStrategy,
     round,
 } from "../../../general"
 import { computeNotatingSymbolIds, computeSmileyFromAscii, getSymbol, SYMBOL_SETS } from "../../../notations"
@@ -66,7 +67,7 @@ monzosToCheck.forEach(monzo => {
 
 console.log(`count of results with N2D3P9 <= ${maximumN2D3P9}: ${unrankedResults.length}`)
 
-const results = fractionallyRank(unrankedResults, "presentedN2D3P9")
+const results = rank(unrankedResults, { by: "presentedN2D3P9", strategy: RankStrategy.FRACTIONAL })
 
 console.log(`[table]`)
 console.log(`[tr][th]ratio[/th][th]N2D3P9[/th][th]symbol[/th][th]symbol sets[/th][th]estimated rank[/th][th]actual rank[/th][/tr]`)

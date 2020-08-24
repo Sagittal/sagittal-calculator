@@ -8,11 +8,11 @@ import { computeIsCloseTo } from "./isCloseTo"
 import { merge } from "./merge"
 import { computePlusOrMinusRange } from "./plusOrMinusRange"
 import { computeRange } from "./range"
-import { fractionallyRank } from "./rank"
+import { rank } from "./rank"
 import { shuffle } from "./shuffle"
 import { sort } from "./sort"
 import { isNumber, isUndefined } from "./typeGuards"
-import { Rank, Ranked } from "./types"
+import { Rank, Ranked, RankStrategy } from "./types"
 
 export {
     computeDeepClone,
@@ -26,10 +26,11 @@ export {
     computeRange,
     doOnNextEventLoop,
     shuffle,
-    fractionallyRank,
+    rank,
     ACCURACY_THRESHOLD,
     sort,
     dig,
     Rank,
     Ranked,
+    RankStrategy,
 }

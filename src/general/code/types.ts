@@ -11,10 +11,23 @@ type Sortable = { [ index: string ]: number }
 
 type Ranked<T> = T & { rank: Rank<T> }
 
+enum RankStrategy {
+    FRACTIONAL = "fractional",
+    COMPETITION = "competition",
+    DENSE = "dense",
+    ORDINAL = "ordinal",
+}
+
+type RankOptions = SortOptions & Partial<{
+    strategy: RankStrategy
+}>
+
 export {
     SortOptions,
     Rank,
     Sortable,
     Path,
     Ranked,
+    RankOptions,
+    RankStrategy,
 }

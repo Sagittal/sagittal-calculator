@@ -1,39 +1,24 @@
-import { computeDeepClone } from "../../../../src/general"
-import { fractionallyRank, Rank } from "../../../../src/general/code"
+import { computeDeepClone, RankStrategy } from "../../../../src/general"
+import { rank, Rank } from "../../../../src/general/code"
 
-// TODO: probably it would be better if this was just a general ranking function
-//  which took fractional ranking as an option, along with the other ranking strategies listed on Wikipedia
-describe("fractionallyRank", () => {
-    const arrayOfObjects: Array<{ [ index: string ]: number }> = [
-        { a: 1, b: 1 },
-        { a: 4, b: 3 },
-        { a: 2, b: 2 },
-        { a: 4, b: 2 },
-        { a: 1, b: 2 },
+describe("rank", () => {
+    const arrayOfObjects: Array<unknown> = [
+        { value: 1, otherValue: 1 },
+        { value: 4, otherValue: 3 },
+        { value: 2, otherValue: 2 },
+        { value: 4, otherValue: 2 },
+        { value: 1, otherValue: 2 },
     ]
 
-    it("takes the existing array of objects, sorts and ranks it by the requested field, and adds a rank field", () => {
-        const actual = fractionallyRank(arrayOfObjects, "a")
+    it("takes the existing array of objects, sorts and ranks it by the requested field, and adds a rank field; defaults to ranking by the value field and a competition strategy", () => {
+        const actual = rank(arrayOfObjects)
 
         const expected = [
-            { a: 1, b: 1, rank: 1.5 as Rank<{ [ index: string ]: number }> },
-            { a: 1, b: 2, rank: 1.5 as Rank<{ [ index: string ]: number }> },
-            { a: 2, b: 2, rank: 3 as Rank<{ [ index: string ]: number }> },
-            { a: 4, b: 3, rank: 4.5 as Rank<{ [ index: string ]: number }> },
-            { a: 4, b: 2, rank: 4.5 as Rank<{ [ index: string ]: number }> },
-        ]
-        expect(actual).toEqual(expected)
-    })
-
-    it("another example", () => {
-        const actual = fractionallyRank(arrayOfObjects, "b")
-
-        const expected = [
-            { a: 1, b: 1, rank: 1 as Rank<{ [ index: string ]: number }> },
-            { a: 2, b: 2, rank: 3 as Rank<{ [ index: string ]: number }> },
-            { a: 4, b: 2, rank: 3 as Rank<{ [ index: string ]: number }> },
-            { a: 1, b: 2, rank: 3 as Rank<{ [ index: string ]: number }> },
-            { a: 4, b: 3, rank: 5 as Rank<{ [ index: string ]: number }> },
+            { value: 1, otherValue: 1, rank: 1 as Rank<unknown> },
+            { value: 1, otherValue: 2, rank: 1 as Rank<unknown> },
+            { value: 2, otherValue: 2, rank: 3 as Rank<unknown> },
+            { value: 4, otherValue: 3, rank: 4 as Rank<unknown> },
+            { value: 4, otherValue: 2, rank: 4 as Rank<unknown> },
         ]
         expect(actual).toEqual(expected)
     })
@@ -41,8 +26,66 @@ describe("fractionallyRank", () => {
     it("does not mutate the original array", () => {
         const originalArrayOfObjects = computeDeepClone(arrayOfObjects)
 
-        fractionallyRank(arrayOfObjects, "b")
+        rank(arrayOfObjects)
 
         expect(arrayOfObjects).toEqual(originalArrayOfObjects)
+    })
+
+    describe("when the strategy is fractional", () => {
+        it("splits the ranks across ties", () => {
+            const actual = rank(arrayOfObjects, { by: "value", strategy: RankStrategy.FRACTIONAL })
+
+            const expected = [
+                { value: 1, otherValue: 1, rank: 1.5 as Rank<unknown> },
+                { value: 1, otherValue: 2, rank: 1.5 as Rank<unknown> },
+                { value: 2, otherValue: 2, rank: 3 as Rank<unknown> },
+                { value: 4, otherValue: 3, rank: 4.5 as Rank<unknown> },
+                { value: 4, otherValue: 2, rank: 4.5 as Rank<unknown> },
+            ]
+            expect(actual).toEqual(expected)
+        })
+
+        it("another example", () => {
+            const actual = rank(arrayOfObjects, { by: "otherValue", strategy: RankStrategy.FRACTIONAL })
+
+            const expected = [
+                { value: 1, otherValue: 1, rank: 1 as Rank<unknown> },
+                { value: 2, otherValue: 2, rank: 3 as Rank<unknown> },
+                { value: 4, otherValue: 2, rank: 3 as Rank<unknown> },
+                { value: 1, otherValue: 2, rank: 3 as Rank<unknown> },
+                { value: 4, otherValue: 3, rank: 5 as Rank<unknown> },
+            ]
+            expect(actual).toEqual(expected)
+        })
+    })
+
+    describe("when the strategy is dense", () => {
+        it("it is like competition ranking, but does not skip ranks", () => {
+            const actual = rank(arrayOfObjects, { strategy: RankStrategy.DENSE })
+
+            const expected = [
+                { value: 1, otherValue: 1, rank: 1 as Rank<unknown> },
+                { value: 1, otherValue: 2, rank: 1 as Rank<unknown> },
+                { value: 2, otherValue: 2, rank: 2 as Rank<unknown> },
+                { value: 4, otherValue: 3, rank: 3 as Rank<unknown> },
+                { value: 4, otherValue: 2, rank: 3 as Rank<unknown> },
+            ]
+            expect(actual).toEqual(expected)
+        })
+    })
+
+    describe("when the strategy is ordinal", () => {
+        it("ties do not receive the same rank; the rank must go up", () => {
+            const actual = rank(arrayOfObjects, { strategy: RankStrategy.ORDINAL })
+
+            const expected = [
+                { value: 1, otherValue: 1, rank: 1 as Rank<unknown> },
+                { value: 1, otherValue: 2, rank: 2 as Rank<unknown> },
+                { value: 2, otherValue: 2, rank: 3 as Rank<unknown> },
+                { value: 4, otherValue: 3, rank: 4 as Rank<unknown> },
+                { value: 4, otherValue: 2, rank: 5 as Rank<unknown> },
+            ]
+            expect(actual).toEqual(expected)
+        })
     })
 })
