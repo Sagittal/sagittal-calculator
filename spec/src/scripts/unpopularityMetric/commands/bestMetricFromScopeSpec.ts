@@ -1,7 +1,10 @@
-import { runCommandAndGetConsoleOutput } from "../../../../helpers/specHelper"
+import { runCommandAndGetConsoleOutput } from "../../../../helpers/src/scripts/runCommand"
+import { onlyRunInCi } from "../../../../helpers/onlyRunInCi"
 
 describe("best-metric-from-scope", () => {
     it("recursively finds the absolute perfect metric within the given scope", () => {
+        onlyRunInCi()
+
         const command = "npm run best-metric-from-scope -- --no-color --no-write"
 
         const result = runCommandAndGetConsoleOutput(command)

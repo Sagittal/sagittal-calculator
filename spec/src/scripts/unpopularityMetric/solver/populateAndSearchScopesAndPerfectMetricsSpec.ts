@@ -5,6 +5,7 @@ import { bestMetrics, solverStatus } from "../../../../../src/scripts/unpopulari
 import { Chunk, populateAndSearchScopesAndPerfectMetrics } from "../../../../../src/scripts/unpopularityMetric/solver"
 import * as populate from "../../../../../src/scripts/unpopularityMetric/solver/populate/scopes"
 import * as search from "../../../../../src/scripts/unpopularityMetric/solver/search/scopes"
+import { onlyRunInCi } from "../../../../helpers/onlyRunInCi"
 
 describe("populateAndSearchScopesAndPerfectMetrics", () => {
     let originalJasmineTimeoutInterval: number
@@ -19,7 +20,8 @@ describe("populateAndSearchScopesAndPerfectMetrics", () => {
     })
 
     it("populates scopes", async () => {
-        spyOn(populate, "populateScopes").and.callThrough()
+        spyOn(populate, "populateScopes").and.callFake(async () => {})
+        spyOn(search, "searchScopes").and.callFake(async () => {})
 
         await populateAndSearchScopesAndPerfectMetrics()
 
@@ -27,7 +29,8 @@ describe("populateAndSearchScopesAndPerfectMetrics", () => {
     })
 
     it("searches scopes", async () => {
-        spyOn(search, "searchScopes").and.callThrough()
+        spyOn(populate, "populateScopes").and.callFake(async () => {})
+        spyOn(search, "searchScopes").and.callFake(async () => {})
 
         await populateAndSearchScopesAndPerfectMetrics()
 
@@ -35,6 +38,8 @@ describe("populateAndSearchScopesAndPerfectMetrics", () => {
     })
 
     it("completes searching scopes before resolving", async () => {
+        onlyRunInCi()
+
         solverStatus.chunkCount = 1 as Count<Chunk>
         await populateAndSearchScopesAndPerfectMetrics()
 

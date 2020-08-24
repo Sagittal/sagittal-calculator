@@ -2,7 +2,7 @@ import { Name, Position, Rank } from "../../../../src/general"
 import { Level } from "../../../../src/notations/ji"
 import { computeDoEventsContainEvent } from "../../../../src/scripts/analyzeBounds/doEventsContainEvent"
 import { AnalyzedEvent } from "../../../../src/scripts/analyzeBounds/types"
-import { analyzedEventFixture } from "../../../helpers/scripts/analyzeBounds/fixtures"
+import { analyzedEventFixture } from "../../../helpers/src/scripts/analyzeBounds/fixtures"
 
 describe("computeDoEventsContainEvent", () => {
     it("returns true when the events contain an event which has the same name and the same level", () => {

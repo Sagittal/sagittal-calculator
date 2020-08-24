@@ -1,7 +1,10 @@
-import { runCommandAndGetConsoleOutput } from "../../../../helpers/specHelper"
+import { runCommandAndGetConsoleOutput } from "../../../../helpers/src/scripts/runCommand"
+import { onlyRunInCi } from "../../../../helpers/onlyRunInCi"
 
 describe("sos (sum of squares)", () => {
     it("gives you the sum-of-squares given the submetric combination in the file, and also logs the full list of unpopularities", () => {
+        onlyRunInCi()
+
         const command = "npm run sos -- --no-color --no-write"
 
         const result = runCommandAndGetConsoleOutput(command)

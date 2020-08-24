@@ -1,6 +1,6 @@
 import { computeExact } from "../../../../src/scripts/analyzeBounds/exact"
 import { AnalyzedEvent } from "../../../../src/scripts/analyzeBounds/types"
-import { analyzedEventFixture } from "../../../helpers/scripts/analyzeBounds/fixtures"
+import { analyzedEventFixture } from "../../../helpers/src/scripts/analyzeBounds/fixtures"
 
 describe("computeExact", () => {
     it("returns true if every event's position is the same as the actual bound position", () => {

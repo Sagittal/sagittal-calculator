@@ -2,7 +2,7 @@ import { Cents, Name, Position, Proportion, Rank } from "../../../../src/general
 import { Level } from "../../../../src/notations/ji"
 import { computeConsolidatedHistories } from "../../../../src/scripts/analyzeBounds/consolidatedHistories"
 import { AnalyzedEvent, AnalyzedHistory, EventType } from "../../../../src/scripts/analyzeBounds/types"
-import { analyzedEventFixture, analyzedHistoryFixture } from "../../../helpers/scripts/analyzeBounds/fixtures"
+import { analyzedEventFixture, analyzedHistoryFixture } from "../../../helpers/src/scripts/analyzeBounds/fixtures"
 
 describe("computeConsolidatedHistories", () => {
     it("consolidates histories to collapse redundancies per level and show which events can lead into which events in the next level, and which ones are members of histories that are possible, and what the best rank is in any event that gets consolidated into this consolidated display, and what the best rank of any history this event is a member of is, and membership in the best possible history", () => {

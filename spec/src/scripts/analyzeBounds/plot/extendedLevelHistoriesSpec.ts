@@ -2,7 +2,7 @@ import { Cents, Name, Position } from "../../../../../src/general"
 import { Bound, Level } from "../../../../../src/notations/ji"
 import { computeExtendedLevelHistories } from "../../../../../src/scripts/analyzeBounds/plot/extendedLevelHistories"
 import { EventType, HistoricalEvent, History } from "../../../../../src/scripts/analyzeBounds/types"
-import { boundFixture } from "../../../../helpers/scripts/analyzeBounds/fixtures"
+import { boundFixture } from "../../../../helpers/src/scripts/analyzeBounds/fixtures"
 
 describe("computeExtendedLevelHistories", () => {
     it("given the histories for a bound up to the current level, returns the histories extended for all possible events at this level", () => {

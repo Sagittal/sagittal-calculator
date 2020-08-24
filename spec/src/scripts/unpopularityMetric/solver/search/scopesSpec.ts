@@ -27,7 +27,7 @@ describe("search scopes", () => {
 
         setTimeout(() => {
             solverStatus.finishedPopulating = true
-        }, 100)
+        }, 0)
 
         await searchScopes()
 

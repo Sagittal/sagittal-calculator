@@ -1,6 +1,6 @@
 import "colors"
-/* tslint:disable-next-line no-reaching-imports */
-import { slowReporter, specReporter } from "./reporters/index"
+import { specReporter } from "./specReporter"
+import { slowReporter } from "./slowReporter"
 
 Error.stackTraceLimit = Infinity
 

@@ -2,7 +2,7 @@ import { Rank } from "../../../../src/general"
 import { Level } from "../../../../src/notations/ji"
 import { computeScore } from "../../../../src/scripts/analyzeBounds/score"
 import { AnalyzedEvent } from "../../../../src/scripts/analyzeBounds/types"
-import { analyzedEventFixture } from "../../../helpers/scripts/analyzeBounds/fixtures"
+import { analyzedEventFixture } from "../../../helpers/src/scripts/analyzeBounds/fixtures"
 
 describe("computeScore", () => {
     it("scores histories with worse ranks worse", () => {

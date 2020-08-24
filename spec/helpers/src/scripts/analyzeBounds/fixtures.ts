@@ -1,5 +1,5 @@
-import { Cents, Id, Name, Position, Proportion, Rank, Sum } from "../../../../src/general"
-import { Bound, Level } from "../../../../src/notations/ji"
+import { Cents, Id, Name, Position, Proportion, Rank, Sum } from "../../../../../src/general"
+import { Bound, Level } from "../../../../../src/notations/ji"
 import {
     AnalyzedEvent,
     AnalyzedHistory,
@@ -7,7 +7,7 @@ import {
     EventType,
     HistoricalEvent,
     Score,
-} from "../../../../src/scripts/analyzeBounds/types"
+} from "../../../../../src/scripts/analyzeBounds/types"
 
 const eventFixture: HistoricalEvent = {
     cents: 0 as Cents,

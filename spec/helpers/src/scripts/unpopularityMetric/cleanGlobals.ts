@@ -1,7 +1,7 @@
-import { Count } from "../../../../src/general"
-import { cleanArray } from "../../../../src/general/code/cleanArray"
-import { Sample, Scope } from "../../../../src/scripts/unpopularityMetric/bestMetric"
-import { DEFAULT_MAXIMUM_UNIT, DEFAULT_ONLY_TOP, DEFAULT_Z } from "../../../../src/scripts/unpopularityMetric/constants"
+import { Count } from "../../../../../src/general"
+import { cleanArray } from "../../../../../src/general/code/cleanArray"
+import { Sample, Scope } from "../../../../../src/scripts/unpopularityMetric/bestMetric"
+import { DEFAULT_MAXIMUM_UNIT, DEFAULT_ONLY_TOP, DEFAULT_Z } from "../../../../../src/scripts/unpopularityMetric/constants"
 import {
     bestMetrics,
     memoizedParameterChunkCombinations,
@@ -10,8 +10,8 @@ import {
     scopesToSearch,
     solverStatus,
     unpopularityMetricSettings,
-} from "../../../../src/scripts/unpopularityMetric/globals"
-import { Chunk } from "../../../../src/scripts/unpopularityMetric/solver"
+} from "../../../../../src/scripts/unpopularityMetric/globals"
+import { Chunk } from "../../../../../src/scripts/unpopularityMetric/solver"
 
 afterEach(() => {
     cleanArray(scopesToSearch)

@@ -1,8 +1,11 @@
 import * as cp from "child_process"
-import { runCommandAndGetConsoleOutput } from "../../../../helpers/specHelper"
+import { runCommandAndGetConsoleOutput } from "../../../../helpers/src/scripts/runCommand"
+import { onlyRunInCi } from "../../../../helpers/onlyRunInCi"
 
 describe("analyze-comma", () => {
     it("analyzes a comma, given it in monzo form", () => {
+        onlyRunInCi()
+
         const command = "npm run analyze-comma -- -m [3,-7,2,0,1]"
 
         const result = runCommandAndGetConsoleOutput(command)
@@ -20,6 +23,8 @@ describe("analyze-comma", () => {
     })
 
     it("can appraise a ratio for you", () => {
+        onlyRunInCi()
+
         const command = "npm run analyze-comma -- -r 2200/2187"
 
         const result = runCommandAndGetConsoleOutput(command)
@@ -37,6 +42,8 @@ describe("analyze-comma", () => {
     })
 
     it("throws an error if you provide neither monzo nor ratio nor name", () => {
+        onlyRunInCi()
+
         const command = "npm run analyze-comma"
 
         expect(

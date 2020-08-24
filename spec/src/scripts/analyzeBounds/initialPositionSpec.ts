@@ -1,7 +1,7 @@
 import { Cents } from "../../../../src/general/music"
 import { Bound, Level } from "../../../../src/notations/ji"
 import { computeInitialPosition } from "../../../../src/scripts/analyzeBounds/initialPosition"
-import { boundFixture } from "../../../helpers/scripts/analyzeBounds/fixtures"
+import { boundFixture } from "../../../helpers/src/scripts/analyzeBounds/fixtures"
 
 describe("computeInitialPosition", () => {
     it("returns the mean of the bounded commas at the introducing level", () => {

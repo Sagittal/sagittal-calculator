@@ -2,7 +2,7 @@ import { Cents, Id, Rank } from "../../../../../src/general"
 import { Bound, Level } from "../../../../../src/notations/ji"
 import { AnalysisMode, presentBound } from "../../../../../src/scripts/analyzeBounds/present"
 import { AnalyzedBound, AnalyzedEvent } from "../../../../../src/scripts/analyzeBounds/types"
-import { boundFixture } from "../../../../helpers/scripts/analyzeBounds/fixtures"
+import { boundFixture } from "../../../../helpers/src/scripts/analyzeBounds/fixtures"
 
 describe("presentBound", () => {
     let mode: AnalysisMode

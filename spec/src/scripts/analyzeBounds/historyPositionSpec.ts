@@ -1,7 +1,7 @@
 import { Cents } from "../../../../src/general/music"
 import { computeHistoryPosition } from "../../../../src/scripts/analyzeBounds/historyPosition"
 import { History } from "../../../../src/scripts/analyzeBounds/types"
-import { eventFixture } from "../../../helpers/scripts/analyzeBounds/fixtures"
+import { eventFixture } from "../../../helpers/src/scripts/analyzeBounds/fixtures"
 
 describe("computeHistoryPosition", () => {
     it("returns the position of the history's final event", () => {

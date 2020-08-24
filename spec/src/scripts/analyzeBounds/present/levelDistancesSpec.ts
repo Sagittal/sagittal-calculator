@@ -2,7 +2,7 @@ import { Cents } from "../../../../../src/general/music"
 import { Level } from "../../../../../src/notations/ji"
 import { extractLevelDistances } from "../../../../../src/scripts/analyzeBounds/present/levelDistances"
 import { AnalyzedHistory } from "../../../../../src/scripts/analyzeBounds/types"
-import { analyzedEventFixture, analyzedHistoryFixture } from "../../../../helpers/scripts/analyzeBounds/fixtures"
+import { analyzedEventFixture, analyzedHistoryFixture } from "../../../../helpers/src/scripts/analyzeBounds/fixtures"
 
 describe("extractLevelDistances", () => {
     it("returns an array of the distances of each event (from the previous event)", () => {

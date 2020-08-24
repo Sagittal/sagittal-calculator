@@ -1,7 +1,10 @@
-import { runCommandAndGetConsoleOutput } from "../../../../helpers/specHelper"
+import { runCommandAndGetConsoleOutput } from "../../../../helpers/src/scripts/runCommand"
+import { onlyRunInCi } from "../../../../helpers/onlyRunInCi"
 
 describe("find-commas", () => {
     it("finds commas, given the finding options", () => {
+        onlyRunInCi()
+
         const command = "npm run find-commas -- -l 30 -u 30.5 -3 2 -# 3 -p 37 -+ 58 -a 3"
 
         const result = runCommandAndGetConsoleOutput(command)
@@ -13,6 +16,8 @@ describe("find-commas", () => {
     })
 
     it("can find commas with specific prime content (it includes inverses)", () => {
+        onlyRunInCi()
+
         const command = "npm run find-commas -- -f [0,0,0,0,0,-1,0,1]"
 
         const result = runCommandAndGetConsoleOutput(command)
@@ -27,6 +32,8 @@ describe("find-commas", () => {
     })
 
     it("can sort the resulting list", () => {
+        onlyRunInCi()
+
         const command = "npm run find-commas -- -f [0,0,0,0,0,-1,0,1] -s apotomeSlope"
 
         const result = runCommandAndGetConsoleOutput(command)

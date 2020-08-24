@@ -40,18 +40,18 @@ describe("doOnNextEventLoop", () => {
             work = 1
         }
 
-        doOnNextEventLoop(fn, 500).then(() => {
+        doOnNextEventLoop(fn, 30).then(() => {
             expect(work).toBe(1)
         })
 
         setTimeout(() => {
             expect(work).toBe(0)
-        }, 300)
+        }, 20)
 
         setTimeout(() => {
             expect(work).toBe(1)
             done()
-        }, 700)
+        }, 40)
 
         expect(work).toBe(0)
     })

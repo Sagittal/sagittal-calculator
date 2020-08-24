@@ -1,7 +1,10 @@
-import { runCommandAndGetConsoleOutput } from "../../../../helpers/specHelper"
+import { runCommandAndGetConsoleOutput } from "../../../../helpers/src/scripts/runCommand"
+import { onlyRunInCi } from "../../../../helpers/onlyRunInCi"
 
 describe("popular-ratios", () => {
     it("gives you the list of the most popular ratios, according to N2D3P9", () => {
+        onlyRunInCi()
+
         const command = "npm run popular-ratios -- -m 136"
 
         const result = runCommandAndGetConsoleOutput(command)
@@ -147,6 +150,8 @@ describe("popular-ratios", () => {
     })
 
     it("works for a different maximum N2D3P9", () => {
+        onlyRunInCi()
+
         const command = "npm run popular-ratios -- -m 10"
 
         const result = runCommandAndGetConsoleOutput(command)

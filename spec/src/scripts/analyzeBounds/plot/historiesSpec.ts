@@ -2,7 +2,7 @@ import { Cents } from "../../../../../src/general"
 import { Bound, Level } from "../../../../../src/notations/ji"
 import { computeHistories } from "../../../../../src/scripts/analyzeBounds/plot"
 import { EventType } from "../../../../../src/scripts/analyzeBounds/types"
-import { boundFixture } from "../../../../helpers/scripts/analyzeBounds/fixtures"
+import { boundFixture } from "../../../../helpers/src/scripts/analyzeBounds/fixtures"
 
 describe("computeHistories", () => {
     it("given a bound, returns an array of all of its possible histories", () => {

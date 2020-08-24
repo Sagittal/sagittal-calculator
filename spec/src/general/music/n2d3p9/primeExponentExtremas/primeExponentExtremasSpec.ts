@@ -3,6 +3,7 @@ import {
     computePrimeExponentExtremasGivenMaximumN2D3P9,
     PrimeExponentExtrema,
 } from "../../../../../../src/general/music/n2d3p9/primeExponentExtremas"
+import { onlyRunInCi } from "../../../../../helpers/onlyRunInCi"
 
 // TODO: I think you should link up with the other to-dos in popularRatios.ts
 //  so these are actually five-rough primes... should I acknowledge that in the name?
@@ -36,6 +37,8 @@ describe("computePrimeExponentExtremasGivenMaximumN2D3P9", () => {
     })
 
     it("works for 136, verifying the hardcoded table we first developed on the forum", () => {
+        onlyRunInCi()
+
         const maximumN2D3P9 = 136 as N2D3P9
 
         const result = computePrimeExponentExtremasGivenMaximumN2D3P9(maximumN2D3P9)

@@ -1,7 +1,7 @@
 import { Proportion, Sum } from "../../../../src/general"
 import { computeHistoryInaDistance } from "../../../../src/scripts/analyzeBounds/historyInaDistance"
 import { AnalyzedEvent } from "../../../../src/scripts/analyzeBounds/types"
-import { analyzedEventFixture } from "../../../helpers/scripts/analyzeBounds/fixtures"
+import { analyzedEventFixture } from "../../../helpers/src/scripts/analyzeBounds/fixtures"
 
 describe("computeHistoryInaDistance", () => {
     it("sums up the ina-distances of all the events in the history (they are already all positive)", () => {

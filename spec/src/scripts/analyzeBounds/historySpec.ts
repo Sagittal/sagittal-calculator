@@ -4,7 +4,7 @@ import { Bound, Level, TINA } from "../../../../src/notations/ji"
 import { analyzeHistory } from "../../../../src/scripts/analyzeBounds/history"
 import { computeInitialPosition } from "../../../../src/scripts/analyzeBounds/initialPosition"
 import { AnalyzedEvent, EventType, History } from "../../../../src/scripts/analyzeBounds/types"
-import { analyzedEventFixture, boundFixture, eventFixture } from "../../../helpers/scripts/analyzeBounds/fixtures"
+import { analyzedEventFixture, boundFixture, eventFixture } from "../../../helpers/src/scripts/analyzeBounds/fixtures"
 
 describe("analyzeHistory", () => {
     const actualBoundCents = 12.43789 as Cents

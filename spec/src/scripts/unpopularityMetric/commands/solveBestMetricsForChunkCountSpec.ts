@@ -1,4 +1,4 @@
-import { runCommandAndGetConsoleOutput } from "../../../../helpers/specHelper"
+import { runCommandAndGetConsoleOutput } from "../../../../helpers/src/scripts/runCommand"
 
 describe("solve-best-metrics-for-chunk-count", () => {
     xit("finds the best metric for the given chunk count", () => {

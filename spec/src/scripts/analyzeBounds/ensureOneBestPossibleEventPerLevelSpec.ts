@@ -1,7 +1,7 @@
 import { Level } from "../../../../src/notations/ji"
 import { ensureOneBestPossibleEventPerLevel } from "../../../../src/scripts/analyzeBounds/ensureOneBestPossibleEventPerLevel"
 import { ConsolidatedHistories } from "../../../../src/scripts/analyzeBounds/types"
-import { consolidatedEventFixture } from "../../../helpers/scripts/analyzeBounds/fixtures"
+import { consolidatedEventFixture } from "../../../helpers/src/scripts/analyzeBounds/fixtures"
 
 describe("ensureOneBestPossibleEventPerLevel", () => {
     it("throws an error if a consolidated history has more than one event in a single level which is considered to be the one which is a member of the best possible history", () => {

@@ -10,7 +10,7 @@ import {
     analyzedEventFixture,
     analyzedHistoryFixture,
     consolidatedEventFixture,
-} from "../../../helpers/scripts/analyzeBounds/fixtures"
+} from "../../../helpers/src/scripts/analyzeBounds/fixtures"
 
 describe("updateConsolidatedEvent", () => {
     let analyzedHistory: AnalyzedHistory

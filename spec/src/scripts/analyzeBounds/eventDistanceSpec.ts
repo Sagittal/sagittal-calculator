@@ -1,7 +1,7 @@
 import { Cents } from "../../../../src/general/music"
 import { computeEventDistance } from "../../../../src/scripts/analyzeBounds/eventDistance"
 import { HistoricalEvent } from "../../../../src/scripts/analyzeBounds/types"
-import { eventFixture } from "../../../helpers/scripts/analyzeBounds/fixtures"
+import { eventFixture } from "../../../helpers/src/scripts/analyzeBounds/fixtures"
 
 describe("computeEventDistance", () => {
     it("returns the difference in position between the event and the previous event in the history", () => {

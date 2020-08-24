@@ -1,7 +1,7 @@
 import { Cents } from "../../../../src/general/music"
 import { computeBestPossibleHistory } from "../../../../src/scripts/analyzeBounds/bestPossibleHistory"
 import { AnalyzedHistory, Score } from "../../../../src/scripts/analyzeBounds/types"
-import { analyzedHistoryFixture } from "../../../helpers/scripts/analyzeBounds/fixtures"
+import { analyzedHistoryFixture } from "../../../helpers/src/scripts/analyzeBounds/fixtures"
 
 describe("computeBestPossibleHistory", () => {
     it("returns the history with the best score (the not possible ones are all already filtered out)", () => {

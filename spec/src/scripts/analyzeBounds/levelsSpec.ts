@@ -6,7 +6,7 @@ import {
     updateLevelAnalysis,
 } from "../../../../src/scripts/analyzeBounds/levels"
 import { AnalyzedEvent, AnalyzedHistory } from "../../../../src/scripts/analyzeBounds/types"
-import { analyzedEventFixture, analyzedHistoryFixture } from "../../../helpers/scripts/analyzeBounds/fixtures"
+import { analyzedEventFixture, analyzedHistoryFixture } from "../../../helpers/src/scripts/analyzeBounds/fixtures"
 
 describe("updateLevelAnalysis", () => {
     describe("levelsBestHistoryRanks", () => {

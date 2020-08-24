@@ -3,7 +3,7 @@ import { Cents } from "../../../../src/general/music"
 import { Level } from "../../../../src/notations/ji"
 import { computeRank } from "../../../../src/scripts/analyzeBounds/rank"
 import { AnalyzedEvent, EventType } from "../../../../src/scripts/analyzeBounds/types"
-import { analyzedEventFixture } from "../../../helpers/scripts/analyzeBounds/fixtures"
+import { analyzedEventFixture } from "../../../helpers/src/scripts/analyzeBounds/fixtures"
 
 describe("computeRank", () => {
     it("returns the worst rank of any of the events in the history", () => {

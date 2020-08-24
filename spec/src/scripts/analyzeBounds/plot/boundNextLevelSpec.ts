@@ -1,6 +1,6 @@
 import { Bound, Level } from "../../../../../src/notations/ji"
 import { computeBoundNextLevel } from "../../../../../src/scripts/analyzeBounds/plot/boundNextLevel"
-import { boundFixture } from "../../../../helpers/scripts/analyzeBounds/fixtures"
+import { boundFixture } from "../../../../helpers/src/scripts/analyzeBounds/fixtures"
 
 describe("computeBoundNextLevel", () => {
     it("gives the next level for this bound (since some bounds skip levels)", () => {
