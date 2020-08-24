@@ -5,7 +5,7 @@ type Antivotes = number & { _AntivotesBrand: "Antivotes" }
 interface Unpopularity {
     antivotes: Antivotes,
     fiveRoughRatio: Ratio,
-    index: Index<Unpopularity>, // TODO: Indexed<>
+    index: Index<Unpopularity>,
 }
 
 enum Parameter {

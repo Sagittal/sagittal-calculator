@@ -1,7 +1,8 @@
+import { Ranked } from "../code"
 import { Popularity } from "./types"
 
 // Per Scala statistics
-const COMMA_POPULARITIES: Popularity[] = [
+const COMMA_POPULARITIES: Array<Ranked<Popularity>> = [
     { rank: 1, fiveRoughRatio: [1, 1], votes: 7624 },
     { rank: 2, fiveRoughRatio: [5, 1], votes: 5371 },
     { rank: 3, fiveRoughRatio: [7, 1], votes: 3016 },
@@ -822,7 +823,7 @@ const COMMA_POPULARITIES: Popularity[] = [
     { rank: 604.5, fiveRoughRatio: [420189749, 1953125], votes: 1 },
     { rank: 604.5, fiveRoughRatio: [1220703125, 1], votes: 1 },
     { rank: 604.5, fiveRoughRatio: [115, 7], votes: 1 },
-] as Popularity[]
+] as Array<Ranked<Popularity>>
 
 export {
     COMMA_POPULARITIES,

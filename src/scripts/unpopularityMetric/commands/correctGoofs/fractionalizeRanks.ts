@@ -3,11 +3,11 @@ import { DebugTarget, saveDebugMessage } from "../../debug"
 
 const fractionalizeRanks = () => {
     // this script is only kept for historical reasons
-    // when it used the existing rank which wasn't fractional
-    // and created the fractional rank "rank" which we use today
+    // when it was needed to replace the existing rank which wasn't fractional
     const rankedPopularities: Array<Ranked<Popularity>> = rank(COMMA_POPULARITIES, {
-        by: "nonFractionalRank",
+        by: "votes",
         strategy: RankStrategy.FRACTIONAL,
+        descending: true
     })
 
     saveDebugMessage(JSON.stringify(rankedPopularities, null, 4), DebugTarget.ALL)

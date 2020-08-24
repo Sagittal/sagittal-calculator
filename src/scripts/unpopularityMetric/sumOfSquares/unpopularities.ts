@@ -1,8 +1,8 @@
-import { Combination, Index, Popularity } from "../../../general"
+import { Combination, Index, Popularity, Ranked } from "../../../general"
 import { computeAntivotes } from "./antivotes"
 import { Submetric, Unpopularity } from "./types"
 
-const computeUnpopularities = (realPopularities: Popularity[], submetrics: Combination<Submetric>): Unpopularity[] =>
+const computeUnpopularities = (realPopularities: Array<Ranked<Popularity>>, submetrics: Combination<Submetric>): Unpopularity[] =>
     realPopularities.map(({ fiveRoughRatio }: Popularity, index) =>
         ({
             index: index as Index<Unpopularity>,

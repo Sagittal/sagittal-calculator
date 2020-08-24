@@ -35,7 +35,6 @@ type Votes = number & { _VotesBrand: "Votes" }
 
 interface Popularity {
     fiveRoughRatio: Ratio,
-    rank: Rank<Popularity>,
     votes: Votes,
 }
 
