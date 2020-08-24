@@ -1,9 +1,9 @@
-import { Cents, Proportion } from "../../../../src/general"
-import { ACCURACY_THRESHOLD } from "../../../../src/general/code/constants"
+import { Cents, Proportion, Rank } from "../../../../src/general"
+import { ACCURACY_THRESHOLD } from "../../../../src/general/code"
 import { Bound, Level, TINA } from "../../../../src/notations/ji"
 import { analyzeHistory } from "../../../../src/scripts/analyzeBounds/history"
 import { computeInitialPosition } from "../../../../src/scripts/analyzeBounds/initialPosition"
-import { EventRank, EventType, History } from "../../../../src/scripts/analyzeBounds/types"
+import { AnalyzedEvent, EventType, History } from "../../../../src/scripts/analyzeBounds/types"
 import { analyzedEventFixture, boundFixture, eventFixture } from "../../../helpers/scripts/analyzeBounds/fixtures"
 
 describe("analyzeHistory", () => {
@@ -33,7 +33,7 @@ describe("analyzeHistory", () => {
                 ...analyzedEventFixture,
                 cents,
                 type: EventType.INA,
-                rank: 0 as EventRank,
+                rank: 0 as Rank<AnalyzedEvent>,
                 exact: false,
                 distance: 0 as Cents,
                 inaDistance: 0 as Proportion,
@@ -43,7 +43,7 @@ describe("analyzeHistory", () => {
                 ...analyzedEventFixture,
                 cents,
                 type: EventType.SIZE,
-                rank: 2 as EventRank,
+                rank: 2 as Rank<AnalyzedEvent>,
                 exact: false,
                 distance: 0 as Cents,
                 inaDistance: 0 as Proportion,
@@ -51,7 +51,7 @@ describe("analyzeHistory", () => {
             },
         ])
         expect(result.cents).toBe(cents)
-        expect(result.rank).toBe(2 as EventRank)
+        expect(result.rank).toBe(2 as Rank<AnalyzedEvent>)
         expect(result.distance).toBe(0 as Cents)
         expect(result.initialPositionTinaDifference).toBeCloseTo(3.681504379547852, ACCURACY_THRESHOLD)
     })

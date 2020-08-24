@@ -18,8 +18,6 @@ interface Comma extends Position {
     monzo: Monzo,
     ratio: Ratio,
     n2d3p9: N2D3P9,
-
-    [ index: string ]: Cents | Monzo | Ratio | Name<Position> | Prime | ApotomeSlope | Sopfr<5> | N2D3P9 | undefined,
 }
 
 interface Position {

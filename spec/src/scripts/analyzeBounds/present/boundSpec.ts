@@ -1,7 +1,7 @@
-import { Cents, Id } from "../../../../../src/general"
+import { Cents, Id, Rank } from "../../../../../src/general"
 import { Bound, Level } from "../../../../../src/notations/ji"
 import { AnalysisMode, presentBound } from "../../../../../src/scripts/analyzeBounds/present"
-import { AnalyzedBound, EventRank } from "../../../../../src/scripts/analyzeBounds/types"
+import { AnalyzedBound, AnalyzedEvent } from "../../../../../src/scripts/analyzeBounds/types"
 import { boundFixture } from "../../../../helpers/scripts/analyzeBounds/fixtures"
 
 describe("presentBound", () => {
@@ -20,12 +20,12 @@ describe("presentBound", () => {
             const analyzedBound: AnalyzedBound = {
                 bestPossibleHistory: {
                     events: [
-                        { level: Level.ULTRA, rank: 0 as EventRank, distance: 0.000 as Cents, inaDistance: 0.000 },
-                        { level: Level.EXTREME, rank: 0 as EventRank, distance: 0.333 as Cents, inaDistance: 0.682 },
-                        { level: Level.INSANE, rank: 1 as EventRank, distance: 0.022 as Cents, inaDistance: 0.157 },
+                        { level: Level.ULTRA, rank: 0 as Rank<AnalyzedEvent>, distance: 0.000 as Cents, inaDistance: 0.000 },
+                        { level: Level.EXTREME, rank: 0 as Rank<AnalyzedEvent>, distance: 0.333 as Cents, inaDistance: 0.682 },
+                        { level: Level.INSANE, rank: 1 as Rank<AnalyzedEvent>, distance: 0.022 as Cents, inaDistance: 0.157 },
                     ],
                 },
-                bestRank: 1 as EventRank,
+                bestRank: 1 as Rank<AnalyzedEvent>,
                 initialPosition: 5.48533 as Cents,
                 initialPositionTinaDifference: 0.0393,
                 bestPossibleHistoryDistance: 0.355 as Cents,
@@ -50,7 +50,7 @@ describe("presentBound", () => {
                 id: 10 as Id<Bound>,
             }
             const analyzedBound: AnalyzedBound = {
-                bestRank: 2 as EventRank,
+                bestRank: 2 as Rank<AnalyzedEvent>,
             } as AnalyzedBound
 
             const result = presentBound(analyzedBound, { bound, mode })

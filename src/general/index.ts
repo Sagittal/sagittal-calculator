@@ -5,14 +5,16 @@ import {
     computePlusOrMinusRange,
     computeRange,
     deepEquals,
+    dig,
     doOnNextEventLoop,
     fractionallyRank,
     isNumber,
     isUndefined,
     merge,
+    Rank,
+    Ranked,
     shuffle,
     sort,
-    dig,
 } from "./code"
 import { PRIMES } from "./constants"
 import { forumTable } from "./forumTable"
@@ -145,4 +147,6 @@ export {
     computePossibleMonzosFromPrimeExponentExtremas,
     sort,
     dig,
+    Rank,
+    Ranked,
 }

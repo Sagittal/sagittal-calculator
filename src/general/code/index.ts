@@ -12,6 +12,7 @@ import { fractionallyRank } from "./rank"
 import { shuffle } from "./shuffle"
 import { sort } from "./sort"
 import { isNumber, isUndefined } from "./typeGuards"
+import { Rank, Ranked } from "./types"
 
 export {
     computeDeepClone,
@@ -29,4 +30,6 @@ export {
     ACCURACY_THRESHOLD,
     sort,
     dig,
+    Rank,
+    Ranked,
 }

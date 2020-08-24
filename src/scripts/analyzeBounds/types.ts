@@ -1,4 +1,4 @@
-import { Cents, Count, Name, Position, Proportion, Sum } from "../../general"
+import { Cents, Count, Name, Position, Proportion, Rank, Sum } from "../../general"
 import { Level } from "../../notations"
 
 enum EventType {
@@ -7,7 +7,6 @@ enum EventType {
     SIZE = "SIZE",
 }
 
-type EventRank = number & { _EventRankBrand: "EventRank" }
 type Score = number & { _ScoreBrand: "Score" }
 
 interface HistoricalEvent {
@@ -21,7 +20,7 @@ interface AnalyzedEvent extends HistoricalEvent {
     distance: Cents,
     exact: boolean,
     inaDistance: Proportion,
-    rank: EventRank,
+    rank: Rank<AnalyzedEvent>,
 }
 
 interface ConsolidatedEvent extends HistoricalEvent {
@@ -29,8 +28,8 @@ interface ConsolidatedEvent extends HistoricalEvent {
     isBestPossibleHistoryMember: boolean,
     isPossibleHistoryMember: boolean,
     nextEvents: Name<Position>[],
-    rankOfBestRankedEventInAnyMemberHistory: EventRank,
-    rankOfBestRankedMemberHistory: EventRank,
+    rankOfBestRankedEventInAnyMemberHistory: Rank<AnalyzedEvent>,
+    rankOfBestRankedMemberHistory: Rank<AnalyzedEvent>,
 }
 
 type History = HistoricalEvent[]
@@ -43,7 +42,7 @@ interface AnalyzedHistory {
     initialPositionTinaDifference: Proportion<"Tina">,
     cents: Cents,
     possible: boolean,
-    rank: EventRank,
+    rank: Rank<AnalyzedEvent>,
     score: Score,
     tinaError: Proportion<"Tina">,
 }
@@ -61,7 +60,7 @@ interface AnalyzedBound {
     bestPossibleHistory: AnalyzedHistory,
     bestPossibleHistoryDistance: Cents,
     bestPossibleHistoryInaDistance: Sum<Proportion>,
-    bestRank: EventRank,
+    bestRank: Rank<AnalyzedEvent>,
     consolidatedHistories: ConsolidatedHistories,
     initialPosition: Cents,
     initialPositionTinaDifference: Proportion<"Tina">,
@@ -72,7 +71,6 @@ export {
     History,
     AnalyzedHistory,
     Score,
-    EventRank,
     HistoricalEvent,
     AnalyzedBound,
     ConsolidatedHistories,

@@ -52,7 +52,7 @@ monzosToCheck.forEach(monzo => {
         const notatingSymbols = notatingSymbolIds.map(getSymbol)
         const smileys = notatingSymbols.map(symbol => computeSmileyFromAscii(symbol.ascii)).join(" ")
         const symbolSets = notatingSymbols.map(symbol => SYMBOL_SETS.indexOf(symbol.lowestSymbolSet)).join(", ")
-        const actualRank = COMMA_POPULARITIES.find(popularity => deepEquals(popularity.fiveRoughRatio, ratio))?.rank
+        const actualRank = COMMA_POPULARITIES.find(popularity => deepEquals(popularity.fiveRoughRatio, ratio))?.fractionalRank
 
         unrankedResults.push({
             presentedN2D3P9,

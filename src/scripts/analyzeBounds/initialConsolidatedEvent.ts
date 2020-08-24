@@ -1,5 +1,6 @@
+import { Rank } from "../../general"
 import { RANKS } from "./ranks"
-import { AnalyzedEvent, ConsolidatedEvent, EventRank } from "./types"
+import { AnalyzedEvent, ConsolidatedEvent } from "./types"
 
 const computeInitialConsolidatedEvent = (analyzedEvent: AnalyzedEvent): ConsolidatedEvent => ({
     level: analyzedEvent.level,
@@ -10,8 +11,8 @@ const computeInitialConsolidatedEvent = (analyzedEvent: AnalyzedEvent): Consolid
     isPossibleHistoryMember: false,
     isBestPossibleHistoryMember: false,
     nextEvents: [],
-    rankOfBestRankedMemberHistory: Object.keys(RANKS).length - 1 as EventRank,
-    rankOfBestRankedEventInAnyMemberHistory: Object.keys(RANKS).length - 1 as EventRank,
+    rankOfBestRankedMemberHistory: Object.keys(RANKS).length - 1 as Rank<AnalyzedEvent>,
+    rankOfBestRankedEventInAnyMemberHistory: Object.keys(RANKS).length - 1 as Rank<AnalyzedEvent>,
 })
 
 export {

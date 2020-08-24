@@ -1,7 +1,7 @@
-import { Name, Position } from "../../../../src/general"
+import { Name, Position, Rank } from "../../../../src/general"
 import { Level } from "../../../../src/notations/ji"
 import { computeDoEventsContainEvent } from "../../../../src/scripts/analyzeBounds/doEventsContainEvent"
-import { AnalyzedEvent, EventRank } from "../../../../src/scripts/analyzeBounds/types"
+import { AnalyzedEvent } from "../../../../src/scripts/analyzeBounds/types"
 import { analyzedEventFixture } from "../../../helpers/scripts/analyzeBounds/fixtures"
 
 describe("computeDoEventsContainEvent", () => {
@@ -11,14 +11,14 @@ describe("computeDoEventsContainEvent", () => {
                 ...analyzedEventFixture,
                 name: "someName" as Name<Position>,
                 level: "someLevel" as Level,
-                rank: 1 as EventRank,
+                rank: 1 as Rank<AnalyzedEvent>,
             },
         ]
         const targetEvent = {
             ...analyzedEventFixture,
             name: "someName" as Name<Position>,
             level: "someLevel" as Level,
-            rank: 2 as EventRank,
+            rank: 2 as Rank<AnalyzedEvent>,
         }
 
         const result = computeDoEventsContainEvent(analyzedEvents, targetEvent)
@@ -32,12 +32,12 @@ describe("computeDoEventsContainEvent", () => {
                 ...analyzedEventFixture,
                 name: "someName" as Name<Position>,
                 level: "someLevel" as Level,
-                rank: 1 as EventRank,
+                rank: 1 as Rank<AnalyzedEvent>,
             },
         ]
         const targetEvent = {
             ...analyzedEventFixture,
-            name: "someName" as Name<Position>, level: "otherLevel" as Level, rank: 2 as EventRank,
+            name: "someName" as Name<Position>, level: "otherLevel" as Level, rank: 2 as Rank<AnalyzedEvent>,
         }
 
         const result = computeDoEventsContainEvent(analyzedEvents, targetEvent)
@@ -51,14 +51,14 @@ describe("computeDoEventsContainEvent", () => {
                 ...analyzedEventFixture,
                 name: "someName" as Name<Position>,
                 level: "someLevel" as Level,
-                rank: 1 as EventRank,
+                rank: 1 as Rank<AnalyzedEvent>,
             },
         ]
         const targetEvent = {
             ...analyzedEventFixture,
             name: "otherName" as Name<Position>,
             level: "someLevel" as Level,
-            rank: 2 as EventRank,
+            rank: 2 as Rank<AnalyzedEvent>,
         }
 
         const result = computeDoEventsContainEvent(analyzedEvents, targetEvent)
@@ -72,14 +72,14 @@ describe("computeDoEventsContainEvent", () => {
                 ...analyzedEventFixture,
                 name: "someName" as Name<Position>,
                 level: "someLevel" as Level,
-                rank: 1 as EventRank,
+                rank: 1 as Rank<AnalyzedEvent>,
             },
         ]
         const targetEvent = {
             ...analyzedEventFixture,
             name: "otherName" as Name<Position>,
             level: "otherLevel" as Level,
-            rank: 1 as EventRank,
+            rank: 1 as Rank<AnalyzedEvent>,
         }
 
         const result = computeDoEventsContainEvent(analyzedEvents, targetEvent)

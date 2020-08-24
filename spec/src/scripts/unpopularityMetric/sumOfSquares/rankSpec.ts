@@ -1,10 +1,6 @@
+import { Rank, Ranked } from "../../../../../src/general"
 import { addRankToUnpopularities } from "../../../../../src/scripts/unpopularityMetric/sumOfSquares/rank"
-import {
-    Antivotes,
-    RankedUnpopularity,
-    Unpopularity,
-    UnpopularityRank,
-} from "../../../../../src/scripts/unpopularityMetric/sumOfSquares/types"
+import { Antivotes, Unpopularity } from "../../../../../src/scripts/unpopularityMetric/sumOfSquares/types"
 
 describe("addRankToUnpopularities", () => {
     it("adds rank to unpopularities", () => {
@@ -17,10 +13,10 @@ describe("addRankToUnpopularities", () => {
         const result = addRankToUnpopularities(unpopularities)
 
         expect(result).toEqual([
-            { index: 0, antivotes: 10 as Antivotes, rank: 2 as UnpopularityRank },
-            { index: 1, antivotes: 5 as Antivotes, rank: 1 as UnpopularityRank },
-            { index: 2, antivotes: 20 as Antivotes, rank: 3 as UnpopularityRank },
-        ] as RankedUnpopularity[])
+            { index: 0, antivotes: 10 as Antivotes, fractionalRank: 2 as Rank<Unpopularity> },
+            { index: 1, antivotes: 5 as Antivotes, fractionalRank: 1 as Rank<Unpopularity> },
+            { index: 2, antivotes: 20 as Antivotes, fractionalRank: 3 as Rank<Unpopularity> },
+        ] as Array<Ranked<Unpopularity>>)
     })
 
     it("uses fractional ranks if some are tied", () => {
@@ -34,11 +30,11 @@ describe("addRankToUnpopularities", () => {
         const result = addRankToUnpopularities(unpopularities)
 
         expect(result).toEqual([
-            { index: 0, antivotes: 10 as Antivotes, rank: 2.5 as UnpopularityRank },
-            { index: 1, antivotes: 5 as Antivotes, rank: 1 as UnpopularityRank },
-            { index: 2, antivotes: 20 as Antivotes, rank: 4 as UnpopularityRank },
-            { index: 3, antivotes: 10 as Antivotes, rank: 2.5 as UnpopularityRank },
-        ] as RankedUnpopularity[])
+            { index: 0, antivotes: 10 as Antivotes, fractionalRank: 2.5 as Rank<Unpopularity> },
+            { index: 1, antivotes: 5 as Antivotes, fractionalRank: 1 as Rank<Unpopularity> },
+            { index: 2, antivotes: 20 as Antivotes, fractionalRank: 4 as Rank<Unpopularity> },
+            { index: 3, antivotes: 10 as Antivotes, fractionalRank: 2.5 as Rank<Unpopularity> },
+        ] as Array<Ranked<Unpopularity>>)
     })
 
     it("another example of fractional ranks", () => {
@@ -53,11 +49,11 @@ describe("addRankToUnpopularities", () => {
         const result = addRankToUnpopularities(unpopularities)
 
         expect(result).toEqual([
-            { index: 0, antivotes: 10 as Antivotes, rank: 3 as UnpopularityRank },
-            { index: 1, antivotes: 5 as Antivotes, rank: 1 as UnpopularityRank },
-            { index: 2, antivotes: 20 as Antivotes, rank: 5 as UnpopularityRank },
-            { index: 3, antivotes: 10 as Antivotes, rank: 3 as UnpopularityRank },
-            { index: 4, antivotes: 10 as Antivotes, rank: 3 as UnpopularityRank },
-        ] as RankedUnpopularity[])
+            { index: 0, antivotes: 10 as Antivotes, fractionalRank: 3 as Rank<Unpopularity> },
+            { index: 1, antivotes: 5 as Antivotes, fractionalRank: 1 as Rank<Unpopularity> },
+            { index: 2, antivotes: 20 as Antivotes, fractionalRank: 5 as Rank<Unpopularity> },
+            { index: 3, antivotes: 10 as Antivotes, fractionalRank: 3 as Rank<Unpopularity> },
+            { index: 4, antivotes: 10 as Antivotes, fractionalRank: 3 as Rank<Unpopularity> },
+        ] as Array<Ranked<Unpopularity>>)
     })
 })

@@ -1,4 +1,4 @@
-import { Combination, Index, Ratio } from "../../../../../src/general"
+import { Combination, Index, Rank, Ratio } from "../../../../../src/general"
 import {
     computeUnpopularities,
     Parameter,
@@ -8,7 +8,6 @@ import {
 import {
     Antivotes,
     Popularity,
-    PopularityRank,
     Unpopularity,
     Votes,
 } from "../../../../../src/scripts/unpopularityMetric/sumOfSquares/types"
@@ -16,9 +15,9 @@ import {
 describe("computeUnpopularities", () => {
     it("given a list of real popularities and submetric combinations, returns our estimated unpopularities, which have antivotes instead of votes", () => {
         const realPopularities: Popularity[] = [
-            { rank: 5 as PopularityRank, fiveRoughRatio: [7, 5] as Ratio, votes: 1318 as Votes },
-            { rank: 8 as PopularityRank, fiveRoughRatio: [125, 1] as Ratio, votes: 492 as Votes },
-            { rank: 39 as PopularityRank, fiveRoughRatio: [55, 49] as Ratio, votes: 51 as Votes },
+            { fractionalRank: 5 as Rank<Popularity>, fiveRoughRatio: [7, 5] as Ratio, votes: 1318 as Votes },
+            { fractionalRank: 8 as Rank<Popularity>, fiveRoughRatio: [125, 1] as Ratio, votes: 492 as Votes },
+            { fractionalRank: 39 as Rank<Popularity>, fiveRoughRatio: [55, 49] as Ratio, votes: 51 as Votes },
         ]
         const submetrics: Combination<Submetric> = [
             {

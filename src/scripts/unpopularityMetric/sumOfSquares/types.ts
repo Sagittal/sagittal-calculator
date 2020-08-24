@@ -1,7 +1,5 @@
-import { Index, Ratio } from "../../../general"
+import { Index, Rank, Ratio } from "../../../general"
 
-type UnpopularityRank = number & { _UnpopularityRankBrand: "UnpopularityRank" }
-type PopularityRank = number & { _PopularityRankBrand: "PopularityRank" }
 type Votes = number & { _VotesBrand: "Votes" }
 type Antivotes = number & { _AntivotesBrand: "Antivotes" }
 
@@ -11,13 +9,9 @@ interface Unpopularity {
     index: Index<Unpopularity>,
 }
 
-interface RankedUnpopularity extends Unpopularity {
-    rank: UnpopularityRank,
-}
-
 interface Popularity {
     fiveRoughRatio: Ratio,
-    rank: PopularityRank,
+    fractionalRank: Rank<Popularity>,
     votes: Votes,
 }
 
@@ -89,12 +83,9 @@ type ParameterValue = number & { _ParameterValueBrand: "ParameterValue" }
 
 export {
     Unpopularity,
-    UnpopularityRank,
     Popularity,
     Votes,
-    PopularityRank,
     Antivotes,
-    RankedUnpopularity,
     Parameter,
     ParameterValue,
     Submetric,
