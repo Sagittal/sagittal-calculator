@@ -1,4 +1,3 @@
-type Prime = number & { _PrimeBrand: "Prime" }
 
 // Numeric types where parameter is not numeric
 type Index<T = void> = number & { _IndexBrand: "Index" } & (T extends void ? {} : { _IndexOfBrand: T })
@@ -13,6 +12,7 @@ type Unit<T extends number | void = void> = number & { _UnitBrand: "Unit" } & (T
 type Max<T extends number | void = void> = number & { _MaxBrand: "Max" } & (T extends void ? {} : T & { _MaxOfBrand: T })
 type Min<T extends number | void = void> = number & { _MinBrand: "Min" } & (T extends void ? {} : T & { _MinOfBrand: T })
 type Resolution<T = void> = number & { _ResolutionBrand: "Resolution" } & (T extends void ? {} : T & { _ResolutionOfBrand: T })
+type Prime<T = void> = number & { _PrimeBrand: "Prime" } & (T extends void ? {} : T & { _PrimeOfBrand: T })
 
 type Name<T = void> = string & { _NameBrand: "Name" } & (T extends void ? {} : { _NameOfBrand: T })
 

@@ -1,3 +1,4 @@
+import { Denominator } from "../../../math"
 import { Max, Prime } from "../../../types"
 import { N2D3P9 } from "../types"
 import { computeNumeratorPossibilitiesGivenMaxN2D3P9WithLesserGpfThanDenominatorPrimeSortedByN2 } from "./n2"
@@ -5,7 +6,7 @@ import { computeNumeratorPossibilitiesGivenMaxN2D3P9WithGreaterGpfThanDenominato
 import { computeNumeratorPossibilitiesGivenMaxN2D3P3 } from "./numeratorPossibilities"
 import { SortedNumeratorPossibilitiesForDenominatorPrimeGivenMaxN2D3P9 } from "./types"
 
-const computeSortedNumeratorPossibilitiesForDenominatorPrimeGivenMaxN2D3P9 = (denominatorPrime: Prime, maxN2D3P9: Max<N2D3P9>): SortedNumeratorPossibilitiesForDenominatorPrimeGivenMaxN2D3P9 => {
+const computeSortedNumeratorPossibilitiesForDenominatorPrimeGivenMaxN2D3P9 = (denominatorPrime: Prime<Denominator>, maxN2D3P9: Max<N2D3P9>): SortedNumeratorPossibilitiesForDenominatorPrimeGivenMaxN2D3P9 => {
     const numeratorPossibilitiesGivenMaxN2D3P3 = computeNumeratorPossibilitiesGivenMaxN2D3P3(maxN2D3P9)
 
     const numeratorPossibilitiesGivenMaxN2D3P9WithLesserGpfThanDenominatorPrimeSortedByN2 =

@@ -3,6 +3,8 @@ import { LEVELS } from "../../../notations"
 import { AnalyzedHistory } from "../types"
 import { alignFormattedNumber } from "./alignFormattedNumber"
 
+// TODO: duped code fragment, yes we can dry this up
+
 const extractLevelInaDistances = (analyzedHistory: AnalyzedHistory) => {
     const events = analyzedHistory.events
 

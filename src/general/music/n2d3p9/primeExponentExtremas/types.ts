@@ -1,4 +1,4 @@
-import { Exponent, Numerator } from "../../../math"
+import { Denominator, Exponent, Numerator } from "../../../math"
 import { Max, Min, Prime } from "../../../types"
 
 type N2 = number & { _N2Brand: "N2" }
@@ -28,8 +28,8 @@ interface SortedNumeratorPossibilitiesForDenominatorPrimeGivenMaxN2D3P9 {
 }
 
 interface ComputeD39ForCandidateMaxDenominatorPrimeExponentOptions {
-    denominatorPrime: Prime,
-    candidateMaxDenominatorPrimeExponentGivenMaxN2D3P9: Max<Exponent<Prime>>,
+    denominatorPrime: Prime<Denominator>,
+    candidateMaxDenominatorPrimeExponentGivenMaxN2D3P9: Max<Exponent<Prime<Denominator>>>,
 }
 
 interface ComputeMinN2PForCandidateMaxDenominatorPrimeExponentGivenMaxN2D3P9Options extends ComputeD39ForCandidateMaxDenominatorPrimeExponentOptions {
@@ -42,11 +42,11 @@ interface ComputeMinN2PForCandidateMaxDenominatorPrimeExponentGivenMaxN2D3P9Opti
 //  and then you just mix & match them
 
 interface ComputeSortedNumeratorPossibilitiesOptions {
-    denominatorPrime: Prime,
+    denominatorPrime: Prime<Denominator>,
     numeratorPossibilitiesGivenMaxN2D3P3: NumeratorPossibilityGivenMaxN2D3P3[],
 }
 
-type PrimeExponentExtrema = [Min<Exponent<Prime>>, Max<Exponent<Prime>>]
+type PrimeExponentExtrema = [Min<Exponent<Prime>>, Max<Exponent<Prime>>] | [Max<Exponent<Prime<Denominator>>>, Max<Exponent<Prime<Numerator>>>]
 
 export {
     NumeratorPossibilityGivenMaxN2D3P3,

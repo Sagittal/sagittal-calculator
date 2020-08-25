@@ -1,5 +1,5 @@
 import { Max, Min, Prime } from "../../../../../../src/general"
-import { Exponent, Numerator } from "../../../../../../src/general/math"
+import { Denominator, Exponent, Numerator } from "../../../../../../src/general/math"
 import { computeMinN2PForCandidateMaxDenominatorPrimeExponentGivenMaxN2D3P9 } from "../../../../../../src/general/music/n2d3p9/primeExponentExtremas/minN2P"
 import {
     N2,
@@ -75,8 +75,8 @@ describe("computeMinN2PForCandidateMaxDenominatorPrimeExponentGivenMaxN2D3P9", (
 
     it("another example where the min N2P from the list with the numerator possibilities with gcp < denominator prime is the one which gets picked", () => {
         // so the candidate max denominator power will be 7^2 = 49
-        const denominatorPrime = 7 as Prime // TODO: technically Prime could be parameterized so it could take things like Denominator and Numerator...
-        const candidateMaxDenominatorPrimeExponentGivenMaxN2D3P9 = 2 as Max<Exponent<Prime>>
+        const denominatorPrime = 7 as Prime<Denominator> // TODO: technically Prime could be parameterized so it could take things like Denominator and Numerator...
+        const candidateMaxDenominatorPrimeExponentGivenMaxN2D3P9 = 2 as Max<Exponent<Prime<Denominator>>>
 
         const sortedNumeratorPossibilitiesForDenominatorPrimeGivenMaxN2D3P9 = {
             numeratorPossibilitiesGivenMaxN2D3P9WithLesserGpfThanDenominatorPrimeSortedByN2: [
