@@ -43,4 +43,8 @@ describe("analyze-comma", () => {
             () => cp.execSync(command, { stdio: [null, null, null] }),
         ).toThrowError(/Unable to determine monzo for comma/)
     })
+
+    // TODO: currently npm run analyze-comma "[ -40 22 1 1 ⟩" returns a negative comma
+    //  -1.85¢ which it names as a "u" for unison
+    //  I would prefer if it could be smart enough to invert it in this case
 })
