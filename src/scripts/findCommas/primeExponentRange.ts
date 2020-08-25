@@ -1,39 +1,39 @@
-import { computeRange, Copfr, Prime, Sopfr } from "../../general"
+import { computeRange, Copfr, Exponent, Prime, Sopfr } from "../../general"
 import { ComputePrimeExponentRangeOptions } from "./types"
 
-const computePrimeExponentRange = (prime: Prime, options: ComputePrimeExponentRangeOptions = {}): number[] => {
+const computePrimeExponentRange = (prime: Prime, options: ComputePrimeExponentRangeOptions = {}): Array<Exponent<Prime>> => {
     const {
-        maximumFiveRoughSopfr = Infinity as Sopfr<5>,
-        maximumFiveRoughCopfr = Infinity as Copfr<5>,
-        primeExponentExtremaGivenMaximumN2D3P9,
+        maxFiveRoughSopfr = Infinity as Sopfr<5>,
+        maxFiveRoughCopfr = Infinity as Copfr<5>,
+        primeExponentExtremaGivenMaxN2D3P9,
     } = options
 
-    if (maximumFiveRoughSopfr === Infinity && maximumFiveRoughCopfr === Infinity && !primeExponentExtremaGivenMaximumN2D3P9) {
+    if (maxFiveRoughSopfr === Infinity && maxFiveRoughCopfr === Infinity && !primeExponentExtremaGivenMaxN2D3P9) {
         throw new Error("The range must be limited somehow.")
     }
 
-    const [minimumExponentForPrimeGivenMaximumN2D3P9, maximumExponentForPrimeGivenMaximumN2D3P9] = primeExponentExtremaGivenMaximumN2D3P9 || [-Infinity, Infinity]
+    const [minExponentForPrimeGivenMaxN2D3P9, maxExponentForPrimeGivenMaxN2D3P9] = primeExponentExtremaGivenMaxN2D3P9 || [-Infinity, Infinity]
 
     // TODO: also take integerDivide from Musical Pattern's utilities repo
     //  for places where you're using floor on a division
-    const maximumExponentForPrimeGivenMaximumSopfr = Math.floor(maximumFiveRoughSopfr / prime)
+    const maxExponentForPrimeGivenMaxSopfr = Math.floor(maxFiveRoughSopfr / prime)
 
-    const minimumExponentForPrimeGivenMaximumSopfr = -maximumExponentForPrimeGivenMaximumSopfr
-    const minimumFiveRoughCopfr = -maximumFiveRoughCopfr
+    const minExponentForPrimeGivenMaxSopfr = -maxExponentForPrimeGivenMaxSopfr
+    const minFiveRoughCopfr = -maxFiveRoughCopfr
 
-    const maximumPrimeExponent: number = Math.min(
-        maximumExponentForPrimeGivenMaximumSopfr,
-        maximumExponentForPrimeGivenMaximumN2D3P9,
-        maximumFiveRoughCopfr,
+    const maxPrimeExponent: number = Math.min(
+        maxExponentForPrimeGivenMaxSopfr,
+        maxExponentForPrimeGivenMaxN2D3P9,
+        maxFiveRoughCopfr,
     )
 
-    const minimumPrimeExponent = Math.max(
-        minimumExponentForPrimeGivenMaximumSopfr,
-        minimumExponentForPrimeGivenMaximumN2D3P9,
-        minimumFiveRoughCopfr,
+    const minPrimeExponent = Math.max(
+        minExponentForPrimeGivenMaxSopfr,
+        minExponentForPrimeGivenMaxN2D3P9,
+        minFiveRoughCopfr,
     )
 
-    return computeRange(minimumPrimeExponent, maximumPrimeExponent + 1)
+    return computeRange(minPrimeExponent, maxPrimeExponent + 1) as Array<Exponent<Prime>> // TODO: Range<>
 }
 
 export {

@@ -2,7 +2,7 @@ import { Combination } from "../../../../../src/general/math"
 import { SumOfSquares, SumsOfSquares } from "../../../../../src/scripts/unpopularityMetric/bestMetric"
 import { Sample, SamplePoint } from "../../../../../src/scripts/unpopularityMetric/bestMetric/scopeToSamples"
 import { computeLocalMinima } from "../../../../../src/scripts/unpopularityMetric/perfecter/localMinima"
-import { LocalMinimum } from "../../../../../src/scripts/unpopularityMetric/perfecter/types"
+import { LocalMin } from "../../../../../src/scripts/unpopularityMetric/perfecter/types"
 import { Submetric } from "../../../../../src/scripts/unpopularityMetric/sumOfSquares"
 
 describe("computeLocalMinima", () => {
@@ -45,7 +45,7 @@ describe("computeLocalMinima", () => {
 
         const actual = computeLocalMinima(samples, sumsOfSquares)
 
-        const expected: LocalMinimum[] = []
+        const expected: LocalMin[] = []
         expect(actual).toEqual(expected)
     })
 
@@ -67,7 +67,7 @@ describe("computeLocalMinima", () => {
 
         const actual = computeLocalMinima(samples, sumsOfSquares)
 
-        const expected: LocalMinimum[] = []
+        const expected: LocalMin[] = []
         expect(actual).toEqual(expected)
     })
 
@@ -89,7 +89,7 @@ describe("computeLocalMinima", () => {
 
         const actual = computeLocalMinima(samples, sumsOfSquares)
 
-        const expected: LocalMinimum[] = []
+        const expected: LocalMin[] = []
         expect(actual).toEqual(expected)
     })
 
@@ -118,7 +118,7 @@ describe("computeLocalMinima", () => {
         expect(actual).toEqual(expected)
     })
 
-    it("does not include results if the sum of squares is not appreciably lower than the current local minimum", () => {
+    it("does not include results if the sum of squares is not appreciably lower than the current local min", () => {
         const sumsOfSquares: SumsOfSquares = [
             [
                 [0.004 as SumOfSquares, 0.004 as SumOfSquares, 0.004 as SumOfSquares],
@@ -133,15 +133,15 @@ describe("computeLocalMinima", () => {
                 [0.004 as SumOfSquares, 0.004 as SumOfSquares, 0.004 as SumOfSquares],
             ],
         ]
-        const localMinimum: LocalMinimum = {
+        const localMin: LocalMin = {
             sumOfSquares: 0.00300001 as SumOfSquares,
             samplePoint: [0] as SamplePoint,
             submetrics: [] as unknown as Combination<Submetric>,
         }
 
-        const actual = computeLocalMinima(samples, sumsOfSquares, localMinimum)
+        const actual = computeLocalMinima(samples, sumsOfSquares, localMin)
 
-        const expected: LocalMinimum[] = []
+        const expected: LocalMin[] = []
         expect(actual).toEqual(expected)
     })
 })

@@ -1,10 +1,10 @@
 import { PRIMES } from "../constants"
-import { Prime } from "../types"
+import { Max, Prime } from "../types"
 import { computeMonzoFromInteger } from "./monzoFromInteger"
 import { computeTrimmedMonzo } from "./trimmedMonzo"
 import { Monzo } from "./types"
 
-const computeGpf = (monzoOrInteger: Monzo | number): Prime => {
+const computeGpf = (monzoOrInteger: Monzo | number): Max<Prime> => {
     let monzo
     if (typeof monzoOrInteger === "number") {
         monzo = computeMonzoFromInteger(monzoOrInteger)
@@ -14,10 +14,10 @@ const computeGpf = (monzoOrInteger: Monzo | number): Prime => {
     const trimmedMonzo = computeTrimmedMonzo(monzo)
 
     if (!trimmedMonzo.length) {
-        return 1 as Prime
+        return 1 as Max<Prime>
     }
 
-    return PRIMES[ trimmedMonzo.length - 1 ]
+    return PRIMES[ trimmedMonzo.length - 1 ] as Max<Prime>
 }
 
 export {

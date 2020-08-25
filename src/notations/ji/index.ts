@@ -3,7 +3,7 @@ import { computeBoundedSymbolPositions } from "./boundedSymbolPositions"
 import { BOUNDS } from "./bounds"
 import { computeInaDistance } from "./inaDistance"
 import { computeInaMidpoints } from "./inaMidpoints"
-import { MAXIMUM_POSITION, TINA } from "./intervals"
+import { MAX_POSITION, TINA } from "./intervals"
 import { LEVEL_BOUNDED_SYMBOLS } from "./levelBoundedSymbols"
 import { computeLevelCommaMeans } from "./levelCommaMeans"
 import { LEVEL_EDAS } from "./levelEdas"
@@ -25,6 +25,7 @@ import {
     JiSymbol,
     Level,
     Mina,
+    Tina,
 } from "./types"
 
 export {
@@ -35,7 +36,7 @@ export {
     Level,
     LEVELS,
     TINA,
-    MAXIMUM_POSITION,
+    MAX_POSITION,
     LEVEL_BOUNDED_SYMBOLS,
     computeInaDistance,
     computeBoundedSymbolPositions,
@@ -54,4 +55,5 @@ export {
     SYMBOL_SETS,
     BoundedSymbolIdWithDistancesPair,
     BoundedSymbolPositions,
+    Tina,
 }

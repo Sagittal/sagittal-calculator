@@ -21,7 +21,9 @@ type DynamicParameterScope = Partial<{
     span: Span<ParameterValue>,
 }>
 
-type SumOfSquares = Sum<"SquaredWeightedRankDifferences">
+type SquaredWeightedRankDifferences = number & { _SquaredWeightedRankDifferencesBrand: "SquaredWeightedRankDifferences" }
+
+type SumOfSquares = Sum<SquaredWeightedRankDifferences>
 
 type SumsOfSquares = Array<SumsOfSquares | SumOfSquares | undefined>
 

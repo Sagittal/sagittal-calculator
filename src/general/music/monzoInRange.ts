@@ -1,5 +1,5 @@
 import { Exponent, Ratio } from "../math"
-import { Prime } from "../types"
+import { Max, Min, Prime } from "../types"
 import { computeCentsFromRatio } from "./centsFromRatio"
 import { CENTS_PER_OCTAVE } from "./constants"
 import { computeRatioFromMonzo } from "./ratioFromMonzo"
@@ -11,7 +11,7 @@ const computeCentsFromMonzo = (monzo: Monzo): Cents => {
     return computeCentsFromRatio(ratio)
 }
 
-const computeMonzoInRange = (threeSlicedMonzo: Monzo<3>, lowerBound: Cents, upperBound: Cents) => {
+const computeMonzoInRange = (threeSlicedMonzo: Monzo<3>, lowerBound: Min<Cents>, upperBound: Max<Cents>) => {
     if (upperBound - lowerBound > CENTS_PER_OCTAVE) {
         throw new Error("Cents range must be less than 1200.")
     }

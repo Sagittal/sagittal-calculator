@@ -153,7 +153,7 @@ describe("popular-ratios", () => {
         expect(actual).toEqual(expected)
     })
 
-    it("works for a different maximum N2D3P9", () => {
+    it("works for a different max N2D3P9", () => {
         onlyRunInCi()
 
         const command = "npm run popular-ratios -- -m 10"

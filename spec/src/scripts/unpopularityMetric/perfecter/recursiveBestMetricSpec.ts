@@ -2,12 +2,12 @@ import { Combination, Index, Resolution, Span, Unit } from "../../../../../src/g
 import { MetricName, Scope, SumOfSquares } from "../../../../../src/scripts/unpopularityMetric/bestMetric"
 import { SamplePoint } from "../../../../../src/scripts/unpopularityMetric/bestMetric/scopeToSamples"
 import { recursiveSearchScopeAndMaybeUpdateBestMetric } from "../../../../../src/scripts/unpopularityMetric/perfecter"
-import * as nextLocalMinimum from "../../../../../src/scripts/unpopularityMetric/perfecter/nextLocalMinimum"
-import { LocalMinimum } from "../../../../../src/scripts/unpopularityMetric/perfecter/types"
+import * as nextLocalMin from "../../../../../src/scripts/unpopularityMetric/perfecter/nextLocalMin"
+import { LocalMin } from "../../../../../src/scripts/unpopularityMetric/perfecter/types"
 import { Parameter, ParameterValue, Submetric } from "../../../../../src/scripts/unpopularityMetric/sumOfSquares"
 
 describe("searchScopeAndMaybeUpdateBestMetric", () => {
-    it("searches each local minimum", async () => {
+    it("searches each local min", async () => {
         const scope = [
             {},
             {
@@ -30,7 +30,7 @@ describe("searchScopeAndMaybeUpdateBestMetric", () => {
         ] as Scope
         const depth = 8
         const metricId = "this is fun"
-        const localMinimum = {
+        const localMin = {
             sumOfSquares: 0.04 as SumOfSquares,
             samplePoint: [77, 54] as SamplePoint,
             submetrics: [] as unknown as Combination<Submetric>,
@@ -38,12 +38,12 @@ describe("searchScopeAndMaybeUpdateBestMetric", () => {
         const onlyWinners = true
         const metricName = "{},{aAsCoefficient,count,w},{aAsCoefficient,sum}" as MetricName
 
-        spyOn(nextLocalMinimum, "searchNextLocalMinimum").and.callThrough()
+        spyOn(nextLocalMin, "searchNextLocalMin").and.callThrough()
 
         await recursiveSearchScopeAndMaybeUpdateBestMetric(scope, {
             depth,
             metricId,
-            localMinimum,
+            localMin,
             onlyWinners,
         })
 
@@ -78,7 +78,7 @@ describe("searchScopeAndMaybeUpdateBestMetric", () => {
                     },
                 ] as Combination<Submetric>,
             },
-        ] as LocalMinimum[]
+        ] as LocalMin[]
         const expectedIndentation = "                "
         const expectedDynamicParameters = [
             {
@@ -105,11 +105,11 @@ describe("searchScopeAndMaybeUpdateBestMetric", () => {
             metricName,
         }
 
-        expect(nextLocalMinimum.searchNextLocalMinimum).toHaveBeenCalledWith(
+        expect(nextLocalMin.searchNextLocalMin).toHaveBeenCalledWith(
             expectedNextLocalMinima[ 0 ],
             { ...expectedOptions, index: 0 },
         )
-        expect(nextLocalMinimum.searchNextLocalMinimum).toHaveBeenCalledWith(
+        expect(nextLocalMin.searchNextLocalMin).toHaveBeenCalledWith(
             expectedNextLocalMinima[ 1 ],
             { ...expectedOptions, index: 1 },
         )

@@ -1,14 +1,15 @@
 import { Numerator } from "../../../math"
+import { Max } from "../../../types"
 import { computeIsRough } from "../../isRough"
 import { N2D3P9 } from "../types"
-import { computeMaximumNumeratorGivenMaximumN2D3P3 } from "./numerator"
+import { computeMaxNumeratorGivenMaxN2D3P3 } from "./numerator"
 
-const computePossibleNumeratorsGivenMaximumN2D3P3 = (maximumN2D3P9: N2D3P9): Numerator[] => {
-    const maximumNumerator = computeMaximumNumeratorGivenMaximumN2D3P3(maximumN2D3P9)
+const computePossibleNumeratorsGivenMaxN2D3P3 = (maxN2D3P9: Max<N2D3P9>): Numerator[] => {
+    const maxNumerator = computeMaxNumeratorGivenMaxN2D3P3(maxN2D3P9)
 
     const possibleNumerators = []
     let possibleNumerator = 7 as Numerator
-    while (possibleNumerator <= maximumNumerator) {
+    while (possibleNumerator <= maxNumerator) {
         if (computeIsRough(possibleNumerator, 5)) {
             possibleNumerators.push(possibleNumerator)
         }
@@ -20,5 +21,5 @@ const computePossibleNumeratorsGivenMaximumN2D3P3 = (maximumN2D3P9: N2D3P9): Num
 }
 
 export {
-    computePossibleNumeratorsGivenMaximumN2D3P3,
+    computePossibleNumeratorsGivenMaxN2D3P3,
 }

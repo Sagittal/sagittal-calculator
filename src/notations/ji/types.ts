@@ -1,7 +1,11 @@
-import { Cents, Comma, Id, Proportion } from "../../general"
+import { Cents, Comma, Id, Max, Min, Proportion } from "../../general"
 import { SymbolLongAscii, SymbolUnicode } from "../types"
 
-type Mina = number & { _MinaBrand: "Mina" }
+type Tina = Cents & { _TinaBrand: Tina }
+type Mina = Cents & { _MinaBrand: "Mina" }
+type Ultrina = Cents & { _MinaBrand: "Mina" }
+type Highina = Cents & { _MinaBrand: "Mina" }
+type Medina = Cents & { _MinaBrand: "Mina" }
 
 // TODO: for consistency, shouldn't these values be camelCase, not CONSTANT_CASE ?
 enum Level {
@@ -53,9 +57,15 @@ type BoundedSymbolIdWithDistancesPair = [BoundedSymbolIdWithDistances | undefine
 type NeighborPositions = [Cents | undefined, Cents | undefined]
 type BoundedSymbolPositions = NeighborPositions
 
+type SecondaryCommaZone = [Min<Cents>, Max<Cents>]
+
 export {
     JiSymbol,
+    Tina,
     Mina,
+    Ultrina,
+    Highina,
+    Medina,
     Level,
     Bound,
     BoundIdWithBoundedSymbolIdWithDistancesPairsByLevel,
@@ -64,4 +74,5 @@ export {
     SymbolSet,
     NeighborPositions,
     BoundedSymbolPositions,
+    SecondaryCommaZone,
 }

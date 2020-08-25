@@ -31,6 +31,7 @@ const slowReporter: jasmine.CustomReporter = {
         if (slowestSpecs.length) {
             console.log(`${slowestSpecs.length} slowest specs:`)
             // TODO: wow, console.table huh? I should see if some of the old stuff would look better this way
+            //  ...yeah, but then how could I test it.
             console.table(slowestSpecs)
         }
     },

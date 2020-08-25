@@ -257,10 +257,10 @@ const almostLowestEverButWithExactA = {
 
 //
 
-// Dave's less fragile minimum 0.00559
+// Dave's less fragile min 0.00559
 // Fri Jul 03, 2020 5:28 am
 // http://forum.sagittal.org/viewtopic.php?p=1984#p1984
-const lessFragileMinimum = {
+const lessFragileMin = {
     sumOfSquares: 0.005591116232258028,
     name: "{aAsLogarithmBase,kAsCoefficient,sum,useNuminator,w,y},{count,useNuminator,weightAsCoefficient}",
     submetrics: [
@@ -356,10 +356,10 @@ const firstAttemptAtLowestThreeChunk = {
 
 //
 
-// Dave's maybe-minimum 0.007085843
+// Dave's maybe-min 0.007085843
 // Thu Jul 09, 2020 7:37 pm
 // http://forum.sagittal.org/viewtopic.php?p=2038#p2038
-const maybeMinimum = {
+const maybeMin = {
     sumOfSquares: 0.007085843283776648,
     name: "{aAsLogarithmBase,b,sum,w,y}",
     submetrics: [
@@ -394,10 +394,10 @@ const bAndU = {
     ],
 }
 
-// Dave's improved maybe minimum 0.006282743
+// Dave's improved maybe min 0.006282743
 // Sat Jul 11, 2020 1:30 am
 // http://forum.sagittal.org/viewtopic.php?p=2044#p2044
-const improvedMaybeMinimum = {
+const improvedMaybeMin = {
     sumOfSquares: 0.0062827430776347054,
     name: "{aAsLogarithmBase,b,sum,w,y}",
     submetrics: [
@@ -505,7 +505,7 @@ const hyg = {
 
 //
 
-// Dave's double-improved maybe minimum, now called wyb 0.006057649, and also wyk
+// Dave's double-improved maybe min, now called wyb 0.006057649, and also wyk
 // Mon Jul 13, 2020 6:38 pm
 // http://forum.sagittal.org/viewtopic.php?p=2071#p2071
 const wyb = {
@@ -951,7 +951,7 @@ export {
 
     almostLowestEverButWithExactA,
 
-    lessFragileMinimum,
+    lessFragileMin,
 
     sanityCheck,
 
@@ -960,11 +960,11 @@ export {
     k,
     firstAttemptAtLowestThreeChunk,
 
-    maybeMinimum,
+    maybeMin,
 
     bAndU,
 
-    improvedMaybeMinimum,
+    improvedMaybeMin,
 
     improvedFourParamSixChunk,
 

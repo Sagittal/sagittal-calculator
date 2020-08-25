@@ -12,8 +12,8 @@ const computeN2 = (possibleNumerator: Numerator): N2 => {
     return possibleNumerator / Math.pow(2, computeCopfr(possibleNumerator)) as N2
 }
 
-const computeNumeratorPossibilitiesGivenMaximumN2D3P9WithLesserGpfThanDenominatorPrimeSortedByN2 = ({ denominatorPrime, numeratorPossibilitiesGivenMaximumN2D3P3 }: ComputeSortedNumeratorPossibilitiesOptions) => {
-    const numeratorPossibilitiesWithLesserGpf: NumeratorPossibilityWithLesserGpfThanDenominatorPrime[] = numeratorPossibilitiesGivenMaximumN2D3P3.filter(numeratorPossibility => {
+const computeNumeratorPossibilitiesGivenMaxN2D3P9WithLesserGpfThanDenominatorPrimeSortedByN2 = ({ denominatorPrime, numeratorPossibilitiesGivenMaxN2D3P3 }: ComputeSortedNumeratorPossibilitiesOptions) : NumeratorPossibilityWithLesserGpfThanDenominatorPrimeIncludingN2[] => {
+    const numeratorPossibilitiesWithLesserGpf: NumeratorPossibilityWithLesserGpfThanDenominatorPrime[] = numeratorPossibilitiesGivenMaxN2D3P3.filter(numeratorPossibility => {
         // unlike when computing numerator possibilities with greater gpf than the denominator prime
         // there is no need to filter by if it divides evenly
         // because when the gpf of the numerator is less than the denominator prime,
@@ -29,5 +29,5 @@ const computeNumeratorPossibilitiesGivenMaximumN2D3P9WithLesserGpfThanDenominato
 
 export {
     computeN2,
-    computeNumeratorPossibilitiesGivenMaximumN2D3P9WithLesserGpfThanDenominatorPrimeSortedByN2,
+    computeNumeratorPossibilitiesGivenMaxN2D3P9WithLesserGpfThanDenominatorPrimeSortedByN2,
 }

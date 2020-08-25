@@ -1,5 +1,5 @@
 import { Cents, computeIsCloseTo, Proportion } from "../../general"
-import { Bound, TINA } from "../../notations"
+import { Bound, Tina, TINA } from "../../notations"
 import { analyzeEvents } from "./events"
 import { computeExact } from "./exact"
 import { computeHistoryDistance } from "./historyDistance"
@@ -22,13 +22,13 @@ const analyzeHistory = (history: History, bound: Bound, initialPosition: Cents):
     const positionError = position - bound.cents
     const possible = computeIsCloseTo(positionError, 0)
 
-    let tinaError = positionError / TINA as Proportion<"Tina">
-    if (computeIsCloseTo(tinaError, 0 as Proportion<"Tina">)) {
-        tinaError = 0 as Proportion<"Tina">
+    let tinaError = positionError / TINA as Proportion<Tina>
+    if (computeIsCloseTo(tinaError, 0 as Proportion<Tina>)) {
+        tinaError = 0 as Proportion<Tina>
     }
 
     const initialPositionDistance = position - initialPosition
-    const initialPositionTinaDifference = initialPositionDistance / TINA as Proportion<"Tina">
+    const initialPositionTinaDifference = initialPositionDistance / TINA as Proportion<Tina>
 
     return {
         events: analyzedEvents,

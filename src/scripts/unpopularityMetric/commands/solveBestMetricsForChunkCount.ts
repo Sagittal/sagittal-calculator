@@ -18,7 +18,7 @@ applySharedUnpopularityMetricCommandSetup({ defaultDebugTargets })
 
 solverStatus.chunkCount = parseInt(program.args[ 0 ]) as Count<Chunk>
 
-const time = !!program.time
+const time = !!program.time // TODO: Time type
 
 const startTime = performance.now()
 populateAndSearchScopesAndPerfectMetrics().then(() => {
@@ -28,7 +28,7 @@ populateAndSearchScopesAndPerfectMetrics().then(() => {
     if (time) {
         saveDebugMessage(`\n\nFINDING BEST METRICS TOOK ${formatTime(endTime - startTime)}`, DebugTarget.FINAL_SOLVER_RESULTS)
     }
-    saveDebugMessage(`MAXIMUM UNIT ${unpopularityMetricSettings.maximumUnit}`, DebugTarget.FINAL_SOLVER_RESULTS)
+    saveDebugMessage(`MAX UNIT ${unpopularityMetricSettings.maxUnit}`, DebugTarget.FINAL_SOLVER_RESULTS)
     saveDebugMessage(`AVERAGE SAMPLES/SCOPE ${solverStatus.averageSamplesPerScope}`, DebugTarget.FINAL_SOLVER_RESULTS)
     saveDebugMessage(`PARAMETER SCOPES @ ${unpopularityMetricSettings.noUseless ? "NO USELESS" : "ORIGINAL"} SETTINGS`, DebugTarget.FINAL_SOLVER_RESULTS)
     saveDebugMessage(`Z ${unpopularityMetricSettings.z}`, DebugTarget.FINAL_SOLVER_RESULTS)

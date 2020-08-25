@@ -1,3 +1,3 @@
-describe("computeNumeratorPossibilitiesGivenMaximumN2D3P9WithGreaterGpfThanDenominatorPrimeSortedByN2P", () => {
+describe("computeNumeratorPossibilitiesGivenMaxN2D3P9WithGreaterGpfThanDenominatorPrimeSortedByN2P", () => {
     // TODO: write
 })

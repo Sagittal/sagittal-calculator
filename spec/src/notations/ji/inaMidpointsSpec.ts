@@ -2,7 +2,7 @@ import { Cents, Name, Position } from "../../../../src/general"
 import { computeInaMidpoints, Level } from "../../../../src/notations/ji"
 
 describe("computeInaMidpoints", () => {
-    it("works for the MEDIUM level, only including midpoints below the maximum position", () => {
+    it("works for the MEDIUM level, only including midpoints below the max position", () => {
         expect(computeInaMidpoints(Level.MEDIUM)).toEqual([
             { name: "0.5°21" as Name<Position>, cents: 2.7067858585169504 as Cents },
             { name: "1.5°21" as Name<Position>, cents: 8.120357575550852 as Cents },

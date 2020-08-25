@@ -50,7 +50,7 @@ import {
     computeMonzoInRange,
     computeN2D3P9,
     computePossibleMonzosFromPrimeExponentExtremas,
-    computePrimeExponentExtremasGivenMaximumN2D3P9,
+    computePrimeExponentExtremasGivenMaxN2D3P9,
     computeRatioFromMonzo,
     computeRoughNumberMonzo,
     computeSopf,
@@ -77,7 +77,7 @@ import {
 } from "./present"
 import { alignTable } from "./textTable"
 import { formatTime } from "./time"
-import { Count, Id, Index, Name, Prime, Proportion, Resolution, Span, Sum, Unit } from "./types"
+import { Count, Id, Index, Name, Prime, Proportion, Resolution, Span, Sum, Unit, Max, Min } from "./types"
 
 export {
     Cents,
@@ -150,7 +150,7 @@ export {
     dividesEvenly,
     computeIsRough,
     PrimeExponentExtrema,
-    computePrimeExponentExtremasGivenMaximumN2D3P9,
+    computePrimeExponentExtremasGivenMaxN2D3P9,
     rank,
     computePossibleMonzosFromPrimeExponentExtremas,
     sort,
@@ -161,4 +161,6 @@ export {
     RankStrategy,
     Votes,
     presentNumber,
+    Max,
+    Min,
 }

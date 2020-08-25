@@ -11,7 +11,7 @@ const applySharedUnpopularityMetricCommandSetup = ({ defaultDebugTargets }: { de
         .option("-u, --no-useless", "eliminate probably useless parameters or parameter value scopes")
         .option("-z, --z <z>", "z", parseFloat)
         .option("-o, --only-top <onlyTop>", "only top", parseInt)
-        .option("-m, --maximum-unit <maximumUnit>", "maximum unit", parseFloat)
+        .option("-m, --max-unit <maxUnit>", "max unit", parseFloat)
         .parse(process.argv)
 
     setDebugTargets(program.debugTargets || defaultDebugTargets && defaultDebugTargets.join(","))
@@ -27,7 +27,7 @@ const applySharedUnpopularityMetricCommandSetup = ({ defaultDebugTargets }: { de
 
     if (program.z) unpopularityMetricSettings.z = program.z
     if (program.onlyTop) unpopularityMetricSettings.onlyTop = program.onlyTop
-    if (program.maximumUnit) unpopularityMetricSettings.maximumUnit = program.maximumUnit
+    if (program.maxUnit) unpopularityMetricSettings.maxUnit = program.maxUnit
     if (!program.useless) unpopularityMetricSettings.noUseless = true
 }
 

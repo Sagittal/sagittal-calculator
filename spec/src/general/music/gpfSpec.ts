@@ -1,4 +1,4 @@
-import { Prime } from "../../../../src/general"
+import { Max, Prime } from "../../../../src/general"
 import { computeGpf, Monzo } from "../../../../src/general/music"
 
 describe("computeGpf", () => {
@@ -7,7 +7,7 @@ describe("computeGpf", () => {
 
         const actual = computeGpf(monzo)
 
-        const expected = 11 as Prime
+        const expected = 11 as Max<Prime>
         expect(actual).toBe(expected)
     })
 
@@ -16,7 +16,7 @@ describe("computeGpf", () => {
 
         const actual = computeGpf(monzo)
 
-        const expected = 5 as Prime
+        const expected = 5 as Max<Prime>
         expect(actual).toBe(expected)
     })
 
@@ -25,7 +25,7 @@ describe("computeGpf", () => {
 
         const actual = computeGpf(monzo)
 
-        const expected = 1 as Prime
+        const expected = 1 as Max<Prime>
         expect(actual).toBe(expected)
     })
 
@@ -34,7 +34,7 @@ describe("computeGpf", () => {
 
         const actual = computeGpf(integer)
 
-        const expected = 7 as Prime
+        const expected = 7 as Max<Prime>
         expect(actual).toBe(expected)
     })
 })

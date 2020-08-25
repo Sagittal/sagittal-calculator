@@ -1,4 +1,3 @@
-import { Rank } from "../code"
 import { Exponent, Ratio } from "../math"
 import { Count, Name, Prime, Sum } from "../types"
 import { N2D3P9 } from "./n2d3p9"

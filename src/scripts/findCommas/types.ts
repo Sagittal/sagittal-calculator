@@ -1,29 +1,41 @@
-import { ApotomeSlope, Cents, Copfr, Exponent, Monzo, N2D3P9, Prime, Sopfr } from "../../general"
+import {
+    ApotomeSlope,
+    Cents,
+    Copfr,
+    Exponent,
+    Max,
+    Min,
+    Monzo,
+    N2D3P9,
+    Prime,
+    PrimeExponentExtrema,
+    Sopfr,
+} from "../../general"
 
 interface ComputeCommasOptions extends ComputeCommasFromFiveSlicedMonzoOptions, ComputeFiveSlicedMonzosToCheckOptions {
     fiveSlicedMonzo?: Monzo<5>,
-    sortKey: string,
+    sortKey: string, // TODO: a type for keys
 }
 
 type ComputeCommasFromFiveSlicedMonzoOptions = Partial<{
-    lowerBound: Cents,
-    maximumAbsoluteThreeExponent: Exponent<Prime>,
-    maximumApotomeSlope: ApotomeSlope,
-    upperBound: Cents,
-    maximumN2D3P9: N2D3P9,
+    lowerBound: Min<Cents>, // TODO: all lower and upper bounds should just be min cents and max cents
+    maxAbsoluteThreeExponent: Max<Exponent<Prime>>,
+    maxApotomeSlope: Max<ApotomeSlope>,
+    upperBound: Max<Cents>,
+    maxN2D3P9: Max<N2D3P9>,
 }>
 
 type ComputeFiveSlicedMonzosToCheckOptions = Partial<{
-    maximumFiveRoughCopfr: Copfr<5>,
-    maximumFiveRoughSopfr: Sopfr<5>,
-    maximumPrimeLimit: Prime,
-    maximumN2D3P9: N2D3P9,
+    maxFiveRoughCopfr: Max<Copfr<5>>,
+    maxFiveRoughSopfr: Max<Sopfr<5>>,
+    maxPrimeLimit: Max<Max<Prime>>,
+    maxN2D3P9: Max<N2D3P9>,
 }>
 
 type ComputePrimeExponentRangeOptions = Partial<{
-    maximumFiveRoughCopfr: Copfr<5>,
-    maximumFiveRoughSopfr: Sopfr<5>,
-    primeExponentExtremaGivenMaximumN2D3P9?: PrimeExponentExtrema,
+    maxFiveRoughCopfr: Max<Copfr<5>>,
+    maxFiveRoughSopfr: Max<Sopfr<5>>,
+    primeExponentExtremaGivenMaxN2D3P9?: PrimeExponentExtrema,
 }>
 
 export {

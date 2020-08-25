@@ -1,5 +1,5 @@
 import { Cents, Id, Name, Position, Proportion, Rank, Sum } from "../../../../src/general"
-import { Bound, Level } from "../../../../src/notations/ji"
+import { Bound, Level, Tina } from "../../../../src/notations/ji"
 import { analyzeBound } from "../../../../src/scripts/analyzeBounds/bound"
 import * as levels from "../../../../src/scripts/analyzeBounds/levels"
 import * as ranks from "../../../../src/scripts/analyzeBounds/ranks"
@@ -106,8 +106,8 @@ describe("analyzeBound", () => {
         exact: false,
         distance: 0.08358035044053125 as Cents,
         inaDistance: 0.34143907672999785 as Sum<Proportion>,
-        tinaError: 0 as Proportion<"Tina">,
-        initialPositionTinaDifference: -0.5613173198970488 as Proportion<"Tina">,
+        tinaError: 0 as Proportion<Tina>,
+        initialPositionTinaDifference: -0.5613173198970488 as Proportion<Tina>,
     }
 
     it("returns an analysis of the bound using its histories, including a consolidated presentation of said histories, and its best possible history, and the difference between the bound and its initial position", () => {

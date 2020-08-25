@@ -12,7 +12,7 @@ import { computeMonzoInRange } from "./monzoInRange"
 import {
     computeN2D3P9,
     computePossibleMonzosFromPrimeExponentExtremas,
-    computePrimeExponentExtremasGivenMaximumN2D3P9,
+    computePrimeExponentExtremasGivenMaxN2D3P9,
     N2D3P9,
     PrimeExponentExtrema,
 } from "./n2d3p9"
@@ -58,7 +58,7 @@ export {
     computeGpf,
     computeIsRough,
     PrimeExponentExtrema,
-    computePrimeExponentExtremasGivenMaximumN2D3P9,
+    computePrimeExponentExtremasGivenMaxN2D3P9,
     Popularity,
     Votes,
     computePossibleMonzosFromPrimeExponentExtremas,

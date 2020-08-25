@@ -1,5 +1,5 @@
 import { Cents, Id, Name, Position, Proportion, Rank, Sum } from "../../../../../src/general"
-import { Bound, Level } from "../../../../../src/notations/ji"
+import { Bound, Level, Tina } from "../../../../../src/notations/ji"
 import {
     AnalyzedEvent,
     AnalyzedHistory,
@@ -33,8 +33,8 @@ const analyzedHistoryFixture: AnalyzedHistory = {
     exact: false,
     inaDistance: 0 as Sum<Proportion>,
     possible: false,
-    tinaError: 0 as Proportion<"Tina">,
-    initialPositionTinaDifference: 0 as Proportion<"Tina">,
+    tinaError: 0 as Proportion<Tina>,
+    initialPositionTinaDifference: 0 as Proportion<Tina>,
 }
 
 const consolidatedEventFixture: ConsolidatedEvent = {

@@ -1,14 +1,14 @@
-import { Prime } from "../../../../src/general"
+import { Max, Prime } from "../../../../src/general"
 import { Copfr, Sopfr } from "../../../../src/general/music"
 import { computeFiveSlicedMonzosToCheck } from "../../../../src/scripts/findCommas/fiveSlicedMonzosToCheck"
 
 // todo: currently if you don't provide sopfr you must provide both max copfr and prime limit.
-//  but a maximum N2D3P9 would also suffice.
+//  but a max N2D3P9 would also suffice.
 //  basically it's the same behavior as max sopfr. you could have either or both.
 //  Add tests to recognize that.
-//  I'm honestly not even sure if the way I've implemented the maximum N2D3P9 here now even works,
+//  I'm honestly not even sure if the way I've implemented the max N2D3P9 here now even works,
 //  so this is pretty high priority among the to-dos
-//  and wait... don't I need a way to find the maximum prime w/r/t maximum N2D3P9, too?
+//  and wait... don't I need a way to find the max prime w/r/t max N2D3P9, too?
 //  it would be in the numerator, not the denominator, FWIW...
 //  I think we'd just take that easy peasy numerator formula and keep going until we exceeded max N2D3P9.
 //  or we could use the exponent extra we newly gather below
@@ -16,15 +16,15 @@ import { computeFiveSlicedMonzosToCheck } from "../../../../src/scripts/findComm
 //  ...okay, it has been extracted, but not tested yet, and we're not using N2D3P9 there yet
 
 describe("computeFiveSlicedMonzosToCheck", () => {
-    it("returns the list of 5-sliced monzos to check, given a maximum prime limit, a maximum 5-rough sopfr, and a maximum 5-rough copfr", () => {
-        const maximumPrimeLimit = 7 as Prime
-        const maximumFiveRoughSopfr = 15 as Sopfr<5>
-        const maximumFiveRoughCopfr = 2 as Copfr<5>
+    it("returns the list of 5-sliced monzos to check, given a max prime limit, a max 5-rough sopfr, and a max 5-rough copfr", () => {
+        const maxPrimeLimit = 7 as Max<Max<Prime>>
+        const maxFiveRoughSopfr = 15 as Max<Sopfr<5>>
+        const maxFiveRoughCopfr = 2 as Max<Copfr<5>>
 
         const actual = computeFiveSlicedMonzosToCheck({
-            maximumPrimeLimit,
-            maximumFiveRoughSopfr,
-            maximumFiveRoughCopfr,
+            maxPrimeLimit,
+            maxFiveRoughSopfr,
+            maxFiveRoughCopfr,
         })
 
         const expected = jasmine.arrayWithExactContents([
@@ -45,11 +45,11 @@ describe("computeFiveSlicedMonzosToCheck", () => {
         expect(actual).toEqual(expected)
     })
 
-    it("returns the list of 5-sliced monzos to check, given a maximum prime limit and a maximum 5-rough sopfr", () => {
-        const maximumPrimeLimit = 7 as Prime
-        const maximumFiveRoughSopfr = 15 as Sopfr<5>
+    it("returns the list of 5-sliced monzos to check, given a max prime limit and a max 5-rough sopfr", () => {
+        const maxPrimeLimit = 7 as Max<Max<Prime>>
+        const maxFiveRoughSopfr = 15 as Max<Sopfr<5>>
 
-        const actual = computeFiveSlicedMonzosToCheck({ maximumPrimeLimit, maximumFiveRoughSopfr })
+        const actual = computeFiveSlicedMonzosToCheck({ maxPrimeLimit, maxFiveRoughSopfr })
 
         const expected = jasmine.arrayWithExactContents([
             [-3],
@@ -71,11 +71,11 @@ describe("computeFiveSlicedMonzosToCheck", () => {
         expect(actual).toEqual(expected)
     })
 
-    it("returns the list of 5-sliced monzos to check, given a maximum prime limit and a maximum 5-rough copfr", () => {
-        const maximumPrimeLimit = 7 as Prime
-        const maximumFiveRoughCopfr = 3 as Copfr<5>
+    it("returns the list of 5-sliced monzos to check, given a max prime limit and a max 5-rough copfr", () => {
+        const maxPrimeLimit = 7 as Max<Max<Prime>>
+        const maxFiveRoughCopfr = 3 as Max<Copfr<5>>
 
-        const actual = computeFiveSlicedMonzosToCheck({ maximumPrimeLimit, maximumFiveRoughCopfr })
+        const actual = computeFiveSlicedMonzosToCheck({ maxPrimeLimit, maxFiveRoughCopfr })
 
         const expected = jasmine.arrayWithExactContents([
             [-3],
@@ -107,11 +107,11 @@ describe("computeFiveSlicedMonzosToCheck", () => {
         expect(actual).toEqual(expected)
     })
 
-    it("returns the list of 5-sliced monzos to check, given a maximum 5-rough sopfr and a maximum 5-rough copfr", () => {
-        const maximumFiveRoughSopfr = 20 as Sopfr<5>
-        const maximumFiveRoughCopfr = 3 as Copfr<5>
+    it("returns the list of 5-sliced monzos to check, given a max 5-rough sopfr and a max 5-rough copfr", () => {
+        const maxFiveRoughSopfr = 20 as Max<Sopfr<5>>
+        const maxFiveRoughCopfr = 3 as Max<Copfr<5>>
 
-        const actual = computeFiveSlicedMonzosToCheck({ maximumFiveRoughSopfr, maximumFiveRoughCopfr })
+        const actual = computeFiveSlicedMonzosToCheck({ maxFiveRoughSopfr, maxFiveRoughCopfr })
 
         const expected = jasmine.arrayWithExactContents([
             [-3],
@@ -165,10 +165,10 @@ describe("computeFiveSlicedMonzosToCheck", () => {
         expect(actual).toEqual(expected)
     })
 
-    it("returns the list of 5-sliced monzos to check, when given only a maximum 5-rough sopfr", () => {
-        const maximumFiveRoughSopfr = 15 as Sopfr<5>
+    it("returns the list of 5-sliced monzos to check, when given only a max 5-rough sopfr", () => {
+        const maxFiveRoughSopfr = 15 as Max<Sopfr<5>>
 
-        const actual = computeFiveSlicedMonzosToCheck({ maximumFiveRoughSopfr })
+        const actual = computeFiveSlicedMonzosToCheck({ maxFiveRoughSopfr })
 
         const expected = jasmine.arrayWithExactContents([
             [-3],
@@ -194,19 +194,19 @@ describe("computeFiveSlicedMonzosToCheck", () => {
         expect(actual).toEqual(expected)
     })
 
-    it("fails when given only a maximum prime limit", () => {
-        const maximumPrimeLimit = 3 as Prime
+    it("fails when given only a max prime limit", () => {
+        const maxPrimeLimit = 3 as Max<Max<Prime>>
 
-        expect(() => computeFiveSlicedMonzosToCheck({ maximumPrimeLimit })).toThrowError("The count of the primes must be limited somehow.")
+        expect(() => computeFiveSlicedMonzosToCheck({ maxPrimeLimit })).toThrowError("The count of the primes must be limited somehow.")
     })
 
-    it("fails when given only a maximum 5-rough copfr", () => {
-        const maximumFiveRoughCopfr = 3 as Copfr<5>
+    it("fails when given only a max 5-rough copfr", () => {
+        const maxFiveRoughCopfr = 3 as Max<Copfr<5>>
 
-        expect(() => computeFiveSlicedMonzosToCheck({ maximumFiveRoughCopfr })).toThrowError("The size of the primes must be limited somehow.")
+        expect(() => computeFiveSlicedMonzosToCheck({ maxFiveRoughCopfr })).toThrowError("The size of the primes must be limited somehow.")
     })
 
-    it("fails when given none of the maximums", () => {
+    it("fails when given none of the maxs", () => {
         expect(() => computeFiveSlicedMonzosToCheck()).toThrowError("The primes must be limited somehow.")
     })
 })

@@ -5,7 +5,7 @@ import { computeNextScope } from "../../../../../src/scripts/unpopularityMetric/
 import { Parameter, ParameterValue, Submetric } from "../../../../../src/scripts/unpopularityMetric/sumOfSquares"
 
 describe("computeNextScope", () => {
-    it("given a sample point (which has been identified as a local minimum) and the dynamic parameters, is able to tell you what the next scopes should be to delve deeper in that vicinity", () => {
+    it("given a sample point (which has been identified as a local min) and the dynamic parameters, is able to tell you what the next scopes should be to delve deeper in that vicinity", () => {
         const samplePoint = [1, 0, 3] as SamplePoint
         const dynamicParameters: DynamicParameter[] = [
             {

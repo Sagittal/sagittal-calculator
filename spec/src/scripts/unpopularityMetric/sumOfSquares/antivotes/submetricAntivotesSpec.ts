@@ -265,7 +265,7 @@ describe("computeSubmetricAntivotes", () => {
         expect(actual).toBe(expected)
     })
 
-    it("when the submetric type is gpf, takes the maximum prime factor in the 5-rough monzo", () => {
+    it("when the submetric type is gpf, takes the max prime factor in the 5-rough monzo", () => {
         submetric[ Parameter.MAX ] = true
         submetric[ Parameter.WITHOUT_REPETITION ] = true
 
@@ -278,7 +278,7 @@ describe("computeSubmetricAntivotes", () => {
         expect(actual).toBe(expected)
     })
 
-    it("when the submetric type is gpif, takes the maximum prime factor index in the 5-rough monzo", () => {
+    it("when the submetric type is gpif, takes the max prime factor index in the 5-rough monzo", () => {
         submetric[ Parameter.MAX ] = true
         submetric[ Parameter.WITHOUT_REPETITION ] = true
         submetric[ Parameter.USE_PRIME_INDEX ] = true

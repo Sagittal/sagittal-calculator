@@ -1,5 +1,5 @@
 import { Count, Proportion } from "../../general"
-import { Bound, TINA } from "../../notations"
+import { Bound, Tina, TINA } from "../../notations"
 import { computeBestPossibleHistory } from "./bestPossibleHistory"
 import { computeConsolidatedHistories } from "./consolidatedHistories"
 import { analyzeHistory } from "./history"
@@ -19,7 +19,7 @@ const analyzeBound = (histories: History[], bound: Bound): AnalyzedBound => {
     const bestPossibleHistoryDistance = bestPossibleHistory.distance
     const bestPossibleHistoryInaDistance = bestPossibleHistory.inaDistance
 
-    const initialPositionTinaDifference = (bound.cents - initialPosition) / TINA as Proportion<"Tina">
+    const initialPositionTinaDifference = (bound.cents - initialPosition) / TINA as Proportion<Tina>
 
     updateRankAnalysis(bestRank, bound.id)
     updateLevelAnalysis(bestPossibleHistory)

@@ -1,4 +1,4 @@
-import { N2D3P9, Prime } from "../../../../src/general"
+import { Max, N2D3P9, Prime } from "../../../../src/general"
 import { Exponent } from "../../../../src/general/math"
 import { ApotomeSlope, Copfr, Sopfr } from "../../../../src/general/music"
 import { computeCommaName } from "../../../../src/general/music/name"
@@ -17,24 +17,24 @@ describe("verifying primary commas", () => {
             const secondaryCommaZone = computeSecondaryCommaZone(symbol)
             const lowerBound = secondaryCommaZone[ 0 ]
             const upperBound = secondaryCommaZone[ 1 ]
-            const maximumFiveRoughSopfr = 61 as Sopfr<5>
-            const maximumFiveRoughCopfr = 555 as Copfr<5>
-            const maximumApotomeSlope = 14 as ApotomeSlope
-            const maximumPrimeLimit = 47 as Prime
-            const maximumAbsoluteThreeExponent = 15 as Exponent<Prime>
-            const maximumN2D3P9 = 666 as N2D3P9
+            const maxFiveRoughSopfr = 61 as Max<Sopfr<5>>
+            const maxFiveRoughCopfr = 555 as Max<Copfr<5>>
+            const maxApotomeSlope = 14 as Max<ApotomeSlope>
+            const maxPrimeLimit = 47 as Max<Max<Prime>>
+            const maxAbsoluteThreeExponent = 15 as Max<Exponent<Prime>>
+            const maxN2D3P9 = 666 as Max<N2D3P9>
             const fiveSlicedMonzo = undefined
             const sortKey = "fiveRoughSopfr"
 
             const commas = computeCommas({
                 lowerBound,
                 upperBound,
-                maximumFiveRoughSopfr,
-                maximumFiveRoughCopfr,
-                maximumApotomeSlope,
-                maximumPrimeLimit,
-                maximumAbsoluteThreeExponent,
-                maximumN2D3P9,
+                maxFiveRoughSopfr,
+                maxFiveRoughCopfr,
+                maxApotomeSlope,
+                maxPrimeLimit,
+                maxAbsoluteThreeExponent,
+                maxN2D3P9,
                 fiveSlicedMonzo,
                 sortKey,
             })

@@ -1,17 +1,17 @@
 import { Prime, PRIMES } from "../../general"
 
-const computeFiveRoughPrimesToCheck = ({ maximumPrimeLimit, maximumFiveRoughSopfr, primeExponentExtremasGivenMaximumN2D3P9 }: any) => {
-    let maximumPrime: Prime
-    if (maximumPrimeLimit) {
-        maximumPrime = maximumPrimeLimit
+const computeFiveRoughPrimesToCheck = ({ maxPrimeLimit, maxFiveRoughSopfr, primeExponentExtremasGivenMaxN2D3P9 }: any) => {
+    let maxPrime: Prime
+    if (maxPrimeLimit) {
+        maxPrime = maxPrimeLimit
     } else {
-        const possiblePrimes = PRIMES.filter(prime => prime < (maximumFiveRoughSopfr || Infinity))
-        maximumPrime = possiblePrimes[ possiblePrimes.length - 1 ]
+        const possiblePrimes = PRIMES.filter(prime => prime < (maxFiveRoughSopfr || Infinity))
+        maxPrime = possiblePrimes[ possiblePrimes.length - 1 ]
     }
-    const indexOfMaximumPrime = PRIMES.findIndex(prime =>
-        prime === maximumPrime)
+    const indexOfMaxPrime = PRIMES.findIndex(prime =>
+        prime === maxPrime)
 
-    return PRIMES.slice(2, indexOfMaximumPrime + 1)
+    return PRIMES.slice(2, indexOfMaxPrime + 1)
 }
 
 export {

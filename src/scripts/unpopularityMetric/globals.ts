@@ -1,6 +1,6 @@
 import { Combinations, Count } from "../../general"
 import { Metric, MetricName, Sample, Scope } from "./bestMetric"
-import { DEFAULT_MAXIMUM_UNIT, DEFAULT_ONLY_TOP, DEFAULT_Z } from "./constants"
+import { DEFAULT_MAX_UNIT, DEFAULT_ONLY_TOP, DEFAULT_Z } from "./constants"
 import { Chunk, ParameterChunk, SolverStatus, SubmetricChunk } from "./solver"
 
 const scopesToSearch: Scope[] = [] as unknown as Scope[]
@@ -24,7 +24,7 @@ const memoizedParameterChunkCombinations: Array<Combinations<ParameterChunk>> = 
 const unpopularityMetricSettings = {
     z: DEFAULT_Z,
     onlyTop: DEFAULT_ONLY_TOP,
-    maximumUnit: DEFAULT_MAXIMUM_UNIT,
+    maxUnit: DEFAULT_MAX_UNIT,
     noUseless: false,
 }
 

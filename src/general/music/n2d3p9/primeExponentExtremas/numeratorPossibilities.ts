@@ -1,12 +1,13 @@
+import { Max } from "../../../types"
 import { computeGpf } from "../../gpf"
 import { N2D3P9 } from "../types"
-import { computePossibleNumeratorsGivenMaximumN2D3P3 } from "./possibleNumerators"
-import { NumeratorPossibilityGivenMaximumN2D3P3 } from "./types"
+import { computePossibleNumeratorsGivenMaxN2D3P3 } from "./possibleNumerators"
+import { NumeratorPossibilityGivenMaxN2D3P3 } from "./types"
 
-const computeNumeratorPossibilitiesGivenMaximumN2D3P3 = (maximumN2D3P9: N2D3P9): NumeratorPossibilityGivenMaximumN2D3P3[] => {
-    const possibleNumeratorsGivenMaximumN2D3P3 = computePossibleNumeratorsGivenMaximumN2D3P3(maximumN2D3P9)
+const computeNumeratorPossibilitiesGivenMaxN2D3P3 = (maxN2D3P9: Max<N2D3P9>): NumeratorPossibilityGivenMaxN2D3P3[] => {
+    const possibleNumeratorsGivenMaxN2D3P3 = computePossibleNumeratorsGivenMaxN2D3P3(maxN2D3P9)
 
-    return possibleNumeratorsGivenMaximumN2D3P3.map(possibleNumerator => {
+    return possibleNumeratorsGivenMaxN2D3P3.map(possibleNumerator => {
         return {
             numerator: possibleNumerator,
             gpf: computeGpf(possibleNumerator),
@@ -15,5 +16,5 @@ const computeNumeratorPossibilitiesGivenMaximumN2D3P3 = (maximumN2D3P9: N2D3P9):
 }
 
 export {
-    computeNumeratorPossibilitiesGivenMaximumN2D3P3,
+    computeNumeratorPossibilitiesGivenMaxN2D3P3,
 }

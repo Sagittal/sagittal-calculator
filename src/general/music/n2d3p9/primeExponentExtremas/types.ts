@@ -1,17 +1,17 @@
 import { Exponent, Numerator } from "../../../math"
-import { Prime } from "../../../types"
+import { Max, Min, Prime } from "../../../types"
 
 type N2 = number & { _N2Brand: "N2" }
 type N2P = number & { _N2PBrand: "N2P" }
 
-interface NumeratorPossibilityGivenMaximumN2D3P3 {
+interface NumeratorPossibilityGivenMaxN2D3P3 {
     numerator: Numerator,
     gpf: Prime,
 }
 
-type NumeratorPossibilityWithLesserGpfThanDenominatorPrime = NumeratorPossibilityGivenMaximumN2D3P3 &
+type NumeratorPossibilityWithLesserGpfThanDenominatorPrime = NumeratorPossibilityGivenMaxN2D3P3 &
     { _WithLesserGpfThanDenominatorPrimeBrand: "WithLesserGpfThanDenominatorPrime" }
-type NumeratorPossibilityWithGreaterGpfThanDenominatorPrime = NumeratorPossibilityGivenMaximumN2D3P3 &
+type NumeratorPossibilityWithGreaterGpfThanDenominatorPrime = NumeratorPossibilityGivenMaxN2D3P3 &
     { _WithGreaterGpfThanDenominatorPrimeBrand: "WithGreaterGpfThanDenominatorPrime" }
 
 interface NumeratorPossibilityWithLesserGpfThanDenominatorPrimeIncludingN2 extends NumeratorPossibilityWithLesserGpfThanDenominatorPrime {
@@ -22,18 +22,18 @@ interface NumeratorPossibilityWithGreaterGpfThanDenominatorPrimeIncludingN2P ext
     n2p: N2P,
 }
 
-interface SortedNumeratorPossibilitiesForDenominatorPrimeGivenMaximumN2D3P9 {
-    numeratorPossibilitiesGivenMaximumN2D3P9WithLesserGpfThanDenominatorPrimeSortedByN2: NumeratorPossibilityWithLesserGpfThanDenominatorPrimeIncludingN2[],
-    numeratorPossibilitiesGivenMaximumN2D3P9WithGreaterGpfThanDenominatorPrimeSortedByN2P: NumeratorPossibilityWithGreaterGpfThanDenominatorPrimeIncludingN2P[],
+interface SortedNumeratorPossibilitiesForDenominatorPrimeGivenMaxN2D3P9 {
+    numeratorPossibilitiesGivenMaxN2D3P9WithLesserGpfThanDenominatorPrimeSortedByN2: NumeratorPossibilityWithLesserGpfThanDenominatorPrimeIncludingN2[],
+    numeratorPossibilitiesGivenMaxN2D3P9WithGreaterGpfThanDenominatorPrimeSortedByN2P: NumeratorPossibilityWithGreaterGpfThanDenominatorPrimeIncludingN2P[],
 }
 
-interface ComputeD39ForCandidateMaximumDenominatorPrimeExponentOptions {
+interface ComputeD39ForCandidateMaxDenominatorPrimeExponentOptions {
     denominatorPrime: Prime,
-    candidateMaximumDenominatorPrimeExponentGivenMaximumN2D3P9: Exponent<Prime>,
+    candidateMaxDenominatorPrimeExponentGivenMaxN2D3P9: Max<Exponent<Prime>>,
 }
 
-interface ComputeMinimumN2PForCandidateMaximumDenominatorPrimeExponentGivenMaximumN2D3P9Options extends ComputeD39ForCandidateMaximumDenominatorPrimeExponentOptions {
-    sortedNumeratorPossibilitiesForDenominatorPrimeGivenMaximumN2D3P9: SortedNumeratorPossibilitiesForDenominatorPrimeGivenMaximumN2D3P9,
+interface ComputeMinN2PForCandidateMaxDenominatorPrimeExponentGivenMaxN2D3P9Options extends ComputeD39ForCandidateMaxDenominatorPrimeExponentOptions {
+    sortedNumeratorPossibilitiesForDenominatorPrimeGivenMaxN2D3P9: SortedNumeratorPossibilitiesForDenominatorPrimeGivenMaxN2D3P9,
 }
 
 // TODO: some of these options types are shared among multiple functions even though they are named only for one;
@@ -43,22 +43,22 @@ interface ComputeMinimumN2PForCandidateMaximumDenominatorPrimeExponentGivenMaxim
 
 interface ComputeSortedNumeratorPossibilitiesOptions {
     denominatorPrime: Prime,
-    numeratorPossibilitiesGivenMaximumN2D3P3: NumeratorPossibilityGivenMaximumN2D3P3[],
+    numeratorPossibilitiesGivenMaxN2D3P3: NumeratorPossibilityGivenMaxN2D3P3[],
 }
 
-type PrimeExponentExtrema = [Exponent<Prime>, Exponent<Prime>]
+type PrimeExponentExtrema = [Min<Exponent<Prime>>, Max<Exponent<Prime>>]
 
 export {
-    NumeratorPossibilityGivenMaximumN2D3P3,
+    NumeratorPossibilityGivenMaxN2D3P3,
     NumeratorPossibilityWithLesserGpfThanDenominatorPrime,
     NumeratorPossibilityWithGreaterGpfThanDenominatorPrime,
     NumeratorPossibilityWithLesserGpfThanDenominatorPrimeIncludingN2,
     NumeratorPossibilityWithGreaterGpfThanDenominatorPrimeIncludingN2P,
     N2,
     N2P,
-    ComputeMinimumN2PForCandidateMaximumDenominatorPrimeExponentGivenMaximumN2D3P9Options,
-    ComputeD39ForCandidateMaximumDenominatorPrimeExponentOptions,
+    ComputeMinN2PForCandidateMaxDenominatorPrimeExponentGivenMaxN2D3P9Options,
+    ComputeD39ForCandidateMaxDenominatorPrimeExponentOptions,
     ComputeSortedNumeratorPossibilitiesOptions,
-    SortedNumeratorPossibilitiesForDenominatorPrimeGivenMaximumN2D3P9,
+    SortedNumeratorPossibilitiesForDenominatorPrimeGivenMaxN2D3P9,
     PrimeExponentExtrema,
 }

@@ -1,5 +1,5 @@
 import { Cents, Count, Name, Position, Proportion, Rank, Sum } from "../../general"
-import { Level } from "../../notations"
+import { Level, Tina } from "../../notations"
 
 enum EventType {
     INA = "INA",
@@ -39,12 +39,12 @@ interface AnalyzedHistory {
     events: AnalyzedEvent[],
     exact: boolean,
     inaDistance: Sum<Proportion>,
-    initialPositionTinaDifference: Proportion<"Tina">,
+    initialPositionTinaDifference: Proportion<Tina>,
     cents: Cents,
     possible: boolean,
     rank: Rank<AnalyzedEvent>,
     score: Score,
-    tinaError: Proportion<"Tina">,
+    tinaError: Proportion<Tina>,
 }
 
 type ConsolidatedHistories = Partial<Record<Level, ConsolidatedEvent[]>>
@@ -63,7 +63,7 @@ interface AnalyzedBound {
     bestRank: Rank<AnalyzedEvent>,
     consolidatedHistories: ConsolidatedHistories,
     initialPosition: Cents,
-    initialPositionTinaDifference: Proportion<"Tina">,
+    initialPositionTinaDifference: Proportion<Tina>,
     possibleHistoryCount: Count<AnalyzedHistory>,
 }
 

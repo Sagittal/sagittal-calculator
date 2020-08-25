@@ -1,4 +1,4 @@
-import { Cents, Prime } from "../../../../src/general"
+import { Cents, Max, Min, Prime } from "../../../../src/general"
 import { Exponent } from "../../../../src/general/math"
 import { ApotomeSlope, Monzo } from "../../../../src/general/music"
 import { computeCommasFromFiveSlicedMonzo } from "../../../../src/scripts/findCommas/commasFromFiveSlicedMonzo"
@@ -7,14 +7,14 @@ describe("computeCommasFromFiveSlicedMonzo", () => {
     const fiveSlicedMonzo: Monzo<5> = [3, 5, -1] as Monzo<5>
 
     it("returns analyzed commas with the prime content from the five-rough monzo", () => {
-        const lowerBound = 40 as Cents
-        const upperBound = 40.1 as Cents
-        const maximumAbsoluteThreeExponent = 12 as Exponent<Prime>
+        const lowerBound = 40 as Min<Cents>
+        const upperBound = 40.1 as Max<Cents>
+        const maxAbsoluteThreeExponent = 12 as Max<Exponent<Prime>>
 
         const actual = computeCommasFromFiveSlicedMonzo(fiveSlicedMonzo, {
             lowerBound,
             upperBound,
-            maximumAbsoluteThreeExponent,
+            maxAbsoluteThreeExponent,
         })
 
         const expected = jasmine.arrayWithExactContents([
@@ -34,53 +34,53 @@ describe("computeCommasFromFiveSlicedMonzo", () => {
 
     describe("errors", () => {
         it("throws an error if the lower bound is not supplied", () => {
-            const upperBound = 40.1 as Cents
-            const maximumAbsoluteThreeExponent = 12 as Exponent<Prime>
+            const upperBound = 40.1 as Max<Cents>
+            const maxAbsoluteThreeExponent = 12 as Max<Exponent<Prime>>
 
             expect(() => computeCommasFromFiveSlicedMonzo(fiveSlicedMonzo, {
                 upperBound,
-                maximumAbsoluteThreeExponent,
+                maxAbsoluteThreeExponent,
             }))
                 .toThrowError("Lower bound must be supplied.")
         })
 
         it("throws an error if the upper bound is not supplied", () => {
-            const lowerBound = 40.1 as Cents
-            const maximumAbsoluteThreeExponent = 12 as Exponent<Prime>
+            const lowerBound = 40.1 as Min<Cents>
+            const maxAbsoluteThreeExponent = 12 as Max<Exponent<Prime>>
 
             expect(() => computeCommasFromFiveSlicedMonzo(fiveSlicedMonzo, {
                 lowerBound,
-                maximumAbsoluteThreeExponent,
+                maxAbsoluteThreeExponent,
             }))
                 .toThrowError("Upper bound must be supplied.")
         })
 
-        it("throws an error if the maximum absolute three exponent is not supplied", () => {
-            const lowerBound = 40 as Cents
-            const upperBound = 40.1 as Cents
+        it("throws an error if the max absolute three exponent is not supplied", () => {
+            const lowerBound = 40 as Min<Cents>
+            const upperBound = 40.1 as Max<Cents>
 
             expect(() => computeCommasFromFiveSlicedMonzo(fiveSlicedMonzo, { lowerBound, upperBound }))
-                .toThrowError("Maximum absolute three exponent must be supplied.")
+                .toThrowError("Max absolute three exponent must be supplied.")
         })
     })
 
-    describe("maximum apotome slope", () => {
+    describe("max apotome slope", () => {
         it("does not include commas with apotome slope greater than it", () => {
-            const lowerBound = 40 as Cents
-            const upperBound = 40.1 as Cents
-            const maximumAbsoluteThreeExponent = 12 as Exponent<Prime>
+            const lowerBound = 40 as Min<Cents>
+            const upperBound = 40.1 as Max<Cents>
+            const maxAbsoluteThreeExponent = 12 as Max<Exponent<Prime>>
 
-            const highMaximumApotomeSlope = 10 as ApotomeSlope
-            const lowMaximumApotomeSlope = 8 as ApotomeSlope
+            const highMaxApotomeSlope = 10 as Max<ApotomeSlope>
+            const lowMaxApotomeSlope = 8 as Max<ApotomeSlope>
 
-            const resultWithHighMaximumApotomeSlope = computeCommasFromFiveSlicedMonzo(fiveSlicedMonzo, {
+            const resultWithHighMaxApotomeSlope = computeCommasFromFiveSlicedMonzo(fiveSlicedMonzo, {
                 lowerBound,
                 upperBound,
-                maximumAbsoluteThreeExponent,
-                maximumApotomeSlope: highMaximumApotomeSlope,
+                maxAbsoluteThreeExponent,
+                maxApotomeSlope: highMaxApotomeSlope,
             })
 
-            expect(resultWithHighMaximumApotomeSlope).toEqual(jasmine.arrayWithExactContents([
+            expect(resultWithHighMaxApotomeSlope).toEqual(jasmine.arrayWithExactContents([
                 {
                     cents: 40.02272638304789,
                     monzo: [-8, -6, 3, 5, -1],
@@ -93,14 +93,14 @@ describe("computeCommasFromFiveSlicedMonzo", () => {
                 },
             ]))
 
-            const resultWithLowMaximumApotomeSlope = computeCommasFromFiveSlicedMonzo(fiveSlicedMonzo, {
+            const resultWithLowMaxApotomeSlope = computeCommasFromFiveSlicedMonzo(fiveSlicedMonzo, {
                 lowerBound,
                 upperBound,
-                maximumAbsoluteThreeExponent,
-                maximumApotomeSlope: lowMaximumApotomeSlope,
+                maxAbsoluteThreeExponent,
+                maxApotomeSlope: lowMaxApotomeSlope,
             })
 
-            expect(resultWithLowMaximumApotomeSlope).toEqual(jasmine.arrayWithExactContents([]))
+            expect(resultWithLowMaxApotomeSlope).toEqual(jasmine.arrayWithExactContents([]))
         })
     })
 })

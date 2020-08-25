@@ -1,8 +1,8 @@
 import { program } from "commander"
 import { performance } from "perf_hooks"
-import { formatTime, Unit } from "../../../general"
+import { formatTime, Max, Unit } from "../../../general"
 import { Metric } from "../bestMetric"
-import { DEFAULT_MAXIMUM_UNIT } from "../constants"
+import { DEFAULT_MAX_UNIT } from "../constants"
 import { DebugTarget, saveDebugMessage } from "../debug"
 import { unpopularityMetricSettings } from "../globals"
 import { perfectMetrics } from "../perfecter"
@@ -24,7 +24,7 @@ applySharedUnpopularityMetricCommandSetup({ defaultDebugTargets })
 
 const time = !!program.time
 
-unpopularityMetricSettings.maximumUnit = DEFAULT_MAXIMUM_UNIT / 10 as Unit<ParameterValue>
+unpopularityMetricSettings.maxUnit = DEFAULT_MAX_UNIT / 10 as Max<Unit<ParameterValue>>
 
 const bestMetricsToBePerfected = load("metrics") as Record<string, Metric>
 
@@ -36,7 +36,7 @@ perfectMetrics(Object.values(bestMetricsToBePerfected)).then(() => {
     if (time) {
         saveDebugMessage(`\n\nPERFECTING METRICS TOOK ${formatTime(endTime - startTime)}`, DebugTarget.FINAL_PERFECTER_RESULTS)
     }
-    saveDebugMessage(`MAXIMUM UNIT ${unpopularityMetricSettings.maximumUnit}`, DebugTarget.FINAL_PERFECTER_RESULTS)
+    saveDebugMessage(`MAX UNIT ${unpopularityMetricSettings.maxUnit}`, DebugTarget.FINAL_PERFECTER_RESULTS)
     saveDebugMessage(`Z ${unpopularityMetricSettings.z}`, DebugTarget.FINAL_PERFECTER_RESULTS)
     saveDebugMessage(`ONLY TOP ${unpopularityMetricSettings.onlyTop}`, DebugTarget.FINAL_PERFECTER_RESULTS)
 })

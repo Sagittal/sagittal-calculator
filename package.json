@@ -19,7 +19,7 @@
     "sos": "node -r ts-node/register/transpile-only src/scripts/unpopularityMetric/commands/sumOfSquares.ts",
     "solve-best-metrics-for-chunk-count": "node -r ts-node/register/transpile-only --max-old-space-size=131072 src/scripts/unpopularityMetric/commands/solveBestMetricsForChunkCount.ts",
     "filter-rottens": "node -r ts-node/register/transpile-only src/scripts/unpopularityMetric/commands/correctGoofs/filterRottens.ts",
-    "find-parameter-extremes": "node -r ts-node/register/transpile-only src/scripts/unpopularityMetric/commands/findParameterExtremes.ts",
+    "find-parameter-extrema": "node -r ts-node/register/transpile-only src/scripts/unpopularityMetric/commands/findParameterExtrema.ts",
     "perfect-metrics": "node -r ts-node/register/transpile-only --max-old-space-size=131072 src/scripts/unpopularityMetric/commands/perfectMetrics.ts",
     "guess-backfill-spread-dynamic-parameters": "node -r ts-node/register/transpile-only src/scripts/unpopularityMetric/commands/correctGoofs/guessBackfillSpreadDynamicParameters.ts",
     "popular-ratios": "node -r ts-node/register/transpile-only --max-old-space-size=131072 src/scripts/popularRatios/commands/popularRatios.ts",

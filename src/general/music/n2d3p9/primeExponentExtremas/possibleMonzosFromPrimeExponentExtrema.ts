@@ -8,7 +8,7 @@ import { PrimeExponentExtrema } from "./types"
 // TODO: this method is completely generic from N2D3P9 and thus should be extracted
 //  although I recognize that along with that you'd have to extract the PrimeExponentExtrema type
 
-const computePossibleMonzosFromPrimeExponentExtremas = (primeExponentExtremas: Array<PrimeExponentExtrema>) => {
+const computePossibleMonzosFromPrimeExponentExtremas = (primeExponentExtremas: Array<PrimeExponentExtrema>): Monzo[] => {
     let possibleMonzos = [
         // TODO: add a constant to describe this as an extension base, since I now use this strategy in so many places
         [],

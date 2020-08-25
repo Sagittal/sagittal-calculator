@@ -1,23 +1,23 @@
 import { ComputeSumOrSumsOfSquaresOptions, DynamicParameter, Sample, Scope, SumOfSquares } from "../bestMetric"
 
-interface LocalMinimum extends Sample {
+interface LocalMin extends Sample {
     sumOfSquares: SumOfSquares,
 }
 
 type RecursiveSearchScopeAndMaybeUpdateBestMetricOptions = Partial<{
     depth: number,
-    localMinimum: LocalMinimum,
+    localMin: LocalMin,
     metricId: string,
     onlyWinners: boolean,
 }>
 
-interface SearchLocalMinimumOptions extends ComputeSumOrSumsOfSquaresOptions {
+interface SearchLocalMinOptions extends ComputeSumOrSumsOfSquaresOptions {
     dynamicParameters: DynamicParameter[],
     scope: Scope,
     metricId: string,
     index: number,
     depth: number,
-    nextLocalMinima: LocalMinimum[],
+    nextLocalMinima: LocalMin[],
 }
 
 interface PerfectMetricOptions {
@@ -25,8 +25,8 @@ interface PerfectMetricOptions {
 }
 
 export {
-    SearchLocalMinimumOptions,
+    SearchLocalMinOptions,
     RecursiveSearchScopeAndMaybeUpdateBestMetricOptions,
-    LocalMinimum,
+    LocalMin,
     PerfectMetricOptions,
 }

@@ -7,12 +7,12 @@ const computeCommas = (options: ComputeCommasOptions) => {
     const {
         lowerBound,
         upperBound,
-        maximumFiveRoughSopfr,
-        maximumFiveRoughCopfr,
-        maximumApotomeSlope,
-        maximumPrimeLimit,
-        maximumAbsoluteThreeExponent,
-        maximumN2D3P9,
+        maxFiveRoughSopfr,
+        maxFiveRoughCopfr,
+        maxApotomeSlope,
+        maxPrimeLimit,
+        maxAbsoluteThreeExponent,
+        maxN2D3P9,
         fiveSlicedMonzo,
         sortKey,
     } = options
@@ -22,9 +22,9 @@ const computeCommas = (options: ComputeCommasOptions) => {
     const fiveSlicedMonzosToCheck: Array<Monzo<5>> = fiveSlicedMonzo ?
         [fiveSlicedMonzo, invertMonzo(fiveSlicedMonzo)] :
         computeFiveSlicedMonzosToCheck({
-            maximumPrimeLimit,
-            maximumFiveRoughSopfr,
-            maximumFiveRoughCopfr,
+            maxPrimeLimit,
+            maxFiveRoughSopfr,
+            maxFiveRoughCopfr,
         })
 
     fiveSlicedMonzosToCheck.forEach(fiveSlicedMonzoToCheck => {
@@ -34,9 +34,9 @@ const computeCommas = (options: ComputeCommasOptions) => {
                 {
                     lowerBound,
                     upperBound,
-                    maximumApotomeSlope,
-                    maximumAbsoluteThreeExponent,
-                    maximumN2D3P9,
+                    maxApotomeSlope,
+                    maxAbsoluteThreeExponent,
+                    maxN2D3P9,
                 },
             ),
         )

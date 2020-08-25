@@ -3,7 +3,7 @@ import { ApotomeSlope, Monzo, N2D3P9 } from "../../../../src/general/music"
 import { SymbolLongAscii } from "../../../../src/notations"
 import { JiSymbol, Level, Mina } from "../../../../src/notations/ji"
 import { computeSecondaryCommaZone } from "../../../../src/notations/ji/secondaryCommaZone"
-import { SymbolSet } from "../../../../src/notations/ji/types"
+import { SecondaryCommaZone, SymbolSet } from "../../../../src/notations/ji/types"
 import { SymbolUnicode } from "../../../../src/notations/types"
 
 // TODO: perhaps secondary comma zone should be built-in to the JiSymbol model,
@@ -37,7 +37,7 @@ describe("secondaryCommaZone", () => {
         const expected = [
             37.30947973834720,
             38.06194034977850,
-        ] as [Cents, Cents]
+        ] as SecondaryCommaZone
         expect(actual).toEqual(expected)
     })
 
@@ -67,7 +67,7 @@ describe("secondaryCommaZone", () => {
         const expected = [
             38.06194034977850,
             38.29315717024330,
-        ] as [Cents, Cents]
+        ] as SecondaryCommaZone
         expect(actual).toEqual(expected)
     })
 
@@ -97,7 +97,7 @@ describe("secondaryCommaZone", () => {
         const expected = [
             35.11809146436650,
             40.26051203403560,
-        ] as [Cents, Cents]
+        ] as SecondaryCommaZone
         expect(actual).toEqual(expected)
     })
 
@@ -127,7 +127,7 @@ describe("secondaryCommaZone", () => {
         const expected = [
             0,
             2.74024427456787,
-        ] as [Cents, Cents]
+        ] as SecondaryCommaZone
         expect(actual).toEqual(expected)
     })
 })

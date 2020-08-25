@@ -1,5 +1,5 @@
 import { APOTOME, Cents, Name, Position } from "../../general"
-import { MAXIMUM_POSITION } from "./intervals"
+import { MAX_POSITION } from "./intervals"
 import { LEVEL_EDAS } from "./levelEdas"
 import { LEVELS } from "./levels"
 import { Level } from "./types"
@@ -11,7 +11,7 @@ const computeInaMidpoints = (level: Level): Position[] => {
         const midpoint = degree + 0.5
         const cents = APOTOME * midpoint / eda as Cents
 
-        if (cents > MAXIMUM_POSITION) {
+        if (cents > MAX_POSITION) {
             return undefined
         }
 

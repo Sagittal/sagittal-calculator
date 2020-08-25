@@ -1,5 +1,5 @@
 import { Cents, Name, Position, Proportion, Rank } from "../../../../src/general"
-import { Level } from "../../../../src/notations/ji"
+import { Level, Tina } from "../../../../src/notations/ji"
 import { computeConsolidatedHistories } from "../../../../src/scripts/analyzeBounds/consolidatedHistories"
 import { AnalyzedEvent, AnalyzedHistory, EventType } from "../../../../src/scripts/analyzeBounds/types"
 import { analyzedEventFixture, analyzedHistoryFixture } from "../../../helpers/src/scripts/analyzeBounds/fixtures"
@@ -60,7 +60,7 @@ describe("computeConsolidatedHistories", () => {
             ],
             rank: 1 as Rank<AnalyzedEvent>,
             possible: true,
-            tinaError: 0 as Proportion<"Tina">,
+            tinaError: 0 as Proportion<Tina>,
             cents: 24.58139537326805 as Cents,
         }
         const analyzedHistories: AnalyzedHistory[] = [
@@ -72,7 +72,7 @@ describe("computeConsolidatedHistories", () => {
                 ],
                 rank: 2 as Rank<AnalyzedEvent>,
                 possible: true,
-                tinaError: 0 as Proportion<"Tina">,
+                tinaError: 0 as Proportion<Tina>,
                 cents: 24.58139537326805 as Cents,
             },
             bestPossibleHistory,
@@ -84,7 +84,7 @@ describe("computeConsolidatedHistories", () => {
                 ],
                 rank: 2 as Rank<AnalyzedEvent>,
                 possible: false,
-                tinaError: 3.05589400712 as Proportion<"Tina">,
+                tinaError: 3.05589400712 as Proportion<Tina>,
                 cents: 24.151964806252103 as Cents,
             },
             {
@@ -94,7 +94,7 @@ describe("computeConsolidatedHistories", () => {
                 ],
                 rank: 8 as Rank<AnalyzedEvent>,
                 possible: false,
-                tinaError: 2.26723955922 as Proportion<"Tina">,
+                tinaError: 2.26723955922 as Proportion<Tina>,
                 cents: 24.9 as Cents,
             },
         ]
