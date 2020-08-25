@@ -4,7 +4,6 @@ import { analyzeComma, computeMonzoFromRatio, parseMonzo, parseRatio, presentCom
 program
     .option("-m, --monzo <monzo>", "monzo", parseMonzo)
     .option("-r, --ratio <ratio>", "ratio", parseRatio)
-    .option("-n, --name <name>", "comma name")
     .parse(process.argv)
 
 const comma = program.args[ 0 ]

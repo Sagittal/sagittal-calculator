@@ -6,9 +6,9 @@ import { extractLevelDistances } from "./levelDistances"
 import { extractLevelInaDistances } from "./levelInaDistances"
 import { extractLevelRanks } from "./levelRanks"
 import { presentMina } from "./mina"
-import { presentNumber } from "./number"
 import { presentSymbolAscii } from "./symbolAscii"
 import { AnalysisMode, PresentBoundParameters } from "./types"
+import { presentNumber } from "../../../general"
 
 const presentBound = (analyzedBound: AnalyzedBound, { bound, mode = AnalysisMode.DETAILS }: PresentBoundParameters) => {
     let presentedBound

@@ -1,4 +1,4 @@
-import { Monzo } from "../types"
+import { Monzo } from "../music"
 
 const presentMonzo = (monzo: Monzo, { punctuated = false } = {}) => {
     let contents

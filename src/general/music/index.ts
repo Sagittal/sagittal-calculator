@@ -16,7 +16,6 @@ import {
     N2D3P9,
     PrimeExponentExtrema,
 } from "./n2d3p9"
-import { presentComma, presentMonzo, presentRatio } from "./present"
 import { parseRatio } from "./ratio"
 import { computeRatioFromMonzo } from "./ratioFromMonzo"
 import { computeRoughNumberMonzo } from "./rough"
@@ -43,13 +42,10 @@ export {
     computeSopf,
     computeSopfr,
     computeTrimmedMonzo,
-    presentRatio,
-    presentMonzo,
     computeMonzoFromRatio,
     computeMonzoFromInteger,
     parseMonzo,
     parseRatio,
-    presentComma,
     SIZE_CATEGORY_BOUNDS,
     Position,
     Cents,

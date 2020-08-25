@@ -1,7 +1,7 @@
+import { presentNumber } from "../../../general"
 import { LEVELS } from "../../../notations"
 import { AnalyzedHistory } from "../types"
 import { alignFormattedNumber } from "./alignFormattedNumber"
-import { presentNumber } from "./number"
 
 const extractLevelDistances = (analyzedHistory: AnalyzedHistory) => {
     const events = analyzedHistory.events

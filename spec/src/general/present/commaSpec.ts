@@ -1,6 +1,5 @@
-import { Cents, Name, Prime, Ratio } from "../../../../../src/general"
-import { ApotomeSlope, Comma, Monzo, N2D3P9, Position, Sopfr } from "../../../../../src/general/music"
-import { presentComma } from "../../../../../src/general/music/present"
+import { Cents, Name, presentComma, Prime, Ratio } from "../../../../src/general"
+import { ApotomeSlope, Comma, Monzo, N2D3P9, Position, Sopfr } from "../../../../src/general/music"
 
 describe("presentComma", () => {
     const comma: Comma = {

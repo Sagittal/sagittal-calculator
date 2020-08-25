@@ -1,5 +1,5 @@
-import { Monzo } from "../../../../../src/general/music"
-import { presentMonzo } from "../../../../../src/general/music/present"
+import { Monzo } from "../../../../src/general/music"
+import { presentMonzo } from "../../../../src/general/present"
 
 describe("presentMonzo", () => {
     it("formats it correctly", () => {

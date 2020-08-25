@@ -1,6 +1,5 @@
-import { round } from "../../../general"
-
-const PRESENTATIONAL_ACCURACY = 3
+import { round } from "../math"
+import { PRESENTATIONAL_ACCURACY } from "./constants"
 
 const presentNumber = (number: number) =>
     round(number, PRESENTATIONAL_ACCURACY)

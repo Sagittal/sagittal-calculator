@@ -1,4 +1,4 @@
-import { Ratio } from "../../math"
+import { Ratio } from "../math"
 
 const presentRatio = (ratio: Ratio, { directed }: { directed: boolean } = { directed: true }): string => {
     const first = !directed && ratio[ 1 ] < ratio[ 0 ] ? ratio[ 1 ] : ratio[ 0 ]

@@ -1,5 +1,5 @@
-import { Ratio } from "../../../../../src/general"
-import { presentRatio } from "../../../../../src/general/music/present"
+import { Ratio } from "../../../../src/general"
+import { presentRatio } from "../../../../src/general/present"
 
 describe("presentRatio", () => {
     it("it shows it with a slash", () => {

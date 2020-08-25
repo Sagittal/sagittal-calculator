@@ -64,14 +64,17 @@ import {
     parseRatio,
     Popularity,
     Position,
-    presentComma,
-    presentMonzo,
-    presentRatio,
     PrimeExponentExtrema,
     SIZE_CATEGORY_BOUNDS,
     Sopfr,
     Votes,
 } from "./music"
+import {
+    presentComma,
+    presentMonzo,
+    presentNumber,
+    presentRatio,
+} from "./present"
 import { alignTable } from "./textTable"
 import { formatTime } from "./time"
 import { Count, Id, Index, Name, Prime, Proportion, Resolution, Span, Sum, Unit } from "./types"
@@ -157,4 +160,5 @@ export {
     COMMA_POPULARITIES,
     RankStrategy,
     Votes,
+    presentNumber,
 }

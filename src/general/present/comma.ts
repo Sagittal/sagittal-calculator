@@ -1,4 +1,4 @@
-import { Comma } from "../types"
+import { Comma } from "../music"
 import { presentMonzo } from "./monzo"
 import { presentRatio } from "./ratio"
 

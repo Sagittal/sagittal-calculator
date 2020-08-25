@@ -22,7 +22,8 @@
     "find-parameter-extremes": "node -r ts-node/register/transpile-only src/scripts/unpopularityMetric/commands/findParameterExtremes.ts",
     "perfect-metrics": "node -r ts-node/register/transpile-only --max-old-space-size=131072 src/scripts/unpopularityMetric/commands/perfectMetrics.ts",
     "guess-backfill-spread-dynamic-parameters": "node -r ts-node/register/transpile-only src/scripts/unpopularityMetric/commands/correctGoofs/guessBackfillSpreadDynamicParameters.ts",
-    "popular-ratios": "node -r ts-node/register/transpile-only --max-old-space-size=131072 src/scripts/popularRatios/commands/popularRatios.ts"
+    "popular-ratios": "node -r ts-node/register/transpile-only --max-old-space-size=131072 src/scripts/popularRatios/commands/popularRatios.ts",
+    "notating-symbols": "node -r ts-node/register/transpile-only --max-old-space-size=131072 src/scripts/notatingSymbols/commands/notatingSymbols.ts"
   },
   "devDependencies": {
     "@types/jasmine": "^3.5.11",
