@@ -1,6 +1,6 @@
-import { Cents, Max, Min, Prime } from "../../../../src/general"
+import { Cents, Max, Min, Monzo, Prime } from "../../../../src/general"
 import { Exponent } from "../../../../src/general/math"
-import { ApotomeSlope, Monzo } from "../../../../src/general/music"
+import { ApotomeSlope } from "../../../../src/general/music"
 import { computeCommasFromFiveSlicedMonzo } from "../../../../src/scripts/findCommas/commasFromFiveSlicedMonzo"
 
 describe("computeCommasFromFiveSlicedMonzo", () => {

@@ -1,3 +1,4 @@
+import { analyzeComma } from "./comma"
 import {
     Bound,
     BoundedSymbolIdWithDistances,
@@ -10,7 +11,7 @@ import {
     computeInaMidpoints,
     computeLevelCommaMeans,
     computeNotatingSymbolIds,
-    computeSizeCategoryBounds,
+    computeSizeCategoryBoundsWithinMaximumPosition,
     getSymbol,
     JiSymbol,
     JI_SYMBOLS,
@@ -27,8 +28,9 @@ import {
     TINA,
     unicodeFromAscii,
 } from "./ji"
+import { presentComma } from "./presentComma"
 import { computeSmileyFromAscii } from "./smiley"
-import { SymbolLongAscii } from "./types"
+import { SagittalComma, SymbolLongAscii } from "./types"
 
 export {
     BOUNDS,
@@ -51,7 +53,7 @@ export {
     unicodeFromAscii,
     computeInaMidpoints,
     computeLevelCommaMeans,
-    computeSizeCategoryBounds,
+    computeSizeCategoryBoundsWithinMaximumPosition,
     JI_SYMBOLS,
     computeSmileyFromAscii,
     computeNotatingSymbolIds,
@@ -60,4 +62,7 @@ export {
     SYMBOL_SETS,
     BoundedSymbolPositions,
     Tina,
+    SagittalComma,
+    analyzeComma,
+    presentComma,
 }

@@ -1,5 +1,6 @@
 import { program } from "commander"
-import { analyzeComma, computeMonzoFromRatio, parseMonzo, parseRatio, presentComma } from "../../../general"
+import { computeMonzoFromRatio, parseMonzo, parseRatio } from "../../../general"
+import { analyzeComma, presentComma } from "../../../notations"
 
 program
     .option("-m, --monzo <monzo>", "monzo", parseMonzo)

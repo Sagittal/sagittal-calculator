@@ -1,6 +1,5 @@
 import { sort } from "../../../code"
-import { dividesEvenly, Numerator } from "../../../math"
-import { computeGpf } from "../../gpf"
+import { computeGpf, dividesEvenly, Numerator } from "../../../math"
 import { computeN2 } from "./n2"
 import {
     ComputeSortedNumeratorPossibilitiesOptions,

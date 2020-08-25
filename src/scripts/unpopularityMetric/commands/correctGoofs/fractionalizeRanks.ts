@@ -7,7 +7,7 @@ const fractionalizeRanks = () => {
     const rankedPopularities: Array<Ranked<Popularity>> = rank(COMMA_POPULARITIES, {
         by: "votes",
         strategy: RankStrategy.FRACTIONAL,
-        descending: true
+        descending: true,
     })
 
     saveDebugMessage(JSON.stringify(rankedPopularities, null, 4), DebugTarget.ALL)

@@ -1,15 +1,8 @@
-import { Exponent, Ratio } from "../math"
-import { Max, Min, Prime } from "../types"
-import { computeCentsFromRatio } from "./centsFromRatio"
+import { Exponent, Monzo, Prime } from "../math"
+import { computeCentsFromMonzo } from "../music"
+import { Max, Min } from "../types"
 import { CENTS_PER_OCTAVE } from "./constants"
-import { computeRatioFromMonzo } from "./ratioFromMonzo"
-import { Cents, Monzo } from "./types"
-
-const computeCentsFromMonzo = (monzo: Monzo): Cents => {
-    const ratio: Ratio = computeRatioFromMonzo(monzo)
-
-    return computeCentsFromRatio(ratio)
-}
+import { Cents } from "./types"
 
 const computeMonzoInRange = (threeSlicedMonzo: Monzo<3>, minCents: Min<Cents>, maxCents: Max<Cents>) => {
     if (maxCents - minCents > CENTS_PER_OCTAVE) {

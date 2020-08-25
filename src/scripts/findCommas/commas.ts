@@ -1,4 +1,5 @@
-import { Comma, invertMonzo, Monzo, sort } from "../../general"
+import { invertMonzo, Monzo, sort } from "../../general"
+import { SagittalComma } from "../../notations"
 import { computeCommasFromFiveSlicedMonzo } from "./commasFromFiveSlicedMonzo"
 import { computeFiveSlicedMonzosToCheck } from "./fiveSlicedMonzosToCheck"
 import { ComputeCommasOptions } from "./types"
@@ -17,7 +18,7 @@ const computeCommas = (options: ComputeCommasOptions) => {
         sortKey,
     } = options
 
-    let commas: Comma[] = []
+    let commas: SagittalComma[] = []
 
     const fiveSlicedMonzosToCheck: Array<Monzo<5>> = fiveSlicedMonzo ?
         [fiveSlicedMonzo, invertMonzo(fiveSlicedMonzo)] :

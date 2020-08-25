@@ -1,6 +1,6 @@
 import { program } from "commander"
 import { performance } from "perf_hooks"
-import { Count, formatTime } from "../../../general"
+import { Count, presentTime } from "../../../general"
 import { DebugTarget, saveDebugMessage } from "../debug"
 import { solverStatus, unpopularityMetricSettings } from "../globals"
 import { Chunk, formatBestMetrics, populateAndSearchScopesAndPerfectMetrics } from "../solver"
@@ -26,7 +26,7 @@ populateAndSearchScopesAndPerfectMetrics().then(() => {
 
     const endTime = performance.now()
     if (time) {
-        saveDebugMessage(`\n\nFINDING BEST METRICS TOOK ${formatTime(endTime - startTime)}`, DebugTarget.FINAL_SOLVER_RESULTS)
+        saveDebugMessage(`\n\nFINDING BEST METRICS TOOK ${presentTime(endTime - startTime)}`, DebugTarget.FINAL_SOLVER_RESULTS)
     }
     saveDebugMessage(`MAX UNIT ${unpopularityMetricSettings.maxUnit}`, DebugTarget.FINAL_SOLVER_RESULTS)
     saveDebugMessage(`AVERAGE SAMPLES/SCOPE ${solverStatus.averageSamplesPerScope}`, DebugTarget.FINAL_SOLVER_RESULTS)

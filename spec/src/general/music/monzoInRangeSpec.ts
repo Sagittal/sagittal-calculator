@@ -1,5 +1,5 @@
-import { Max, Min } from "../../../../src/general"
-import { Cents, computeMonzoInRange, Monzo } from "../../../../src/general/music"
+import { computeMonzoInRange, Max, Min, Monzo } from "../../../../src/general"
+import { Cents } from "../../../../src/general/music"
 
 describe("computeMonzoInRange", () => {
     it("given a 3-monzo, finds the (2-)monzo which is within the cents range", () => {

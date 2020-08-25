@@ -1,6 +1,6 @@
 import { deepEquals } from "../../../code"
-import { PRIMES } from "../../../constants"
-import { Index, Max, Prime } from "../../../types"
+import { Prime, PRIMES } from "../../../math"
+import { Index, Max } from "../../../types"
 import { N2D3P9 } from "../types"
 import { computePrimeExponentExtremaGivenMaxN2D3P3 } from "./primeExponentExtrema"
 import { PrimeExponentExtrema } from "./types"

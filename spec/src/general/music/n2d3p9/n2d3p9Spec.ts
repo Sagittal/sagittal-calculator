@@ -35,10 +35,10 @@ describe("computeN2d3p9", () => {
         expect(() => computeN2D3P9(monzo)).toThrowError("N2D3P9 must be given a 5-roughened monzo; received [ -4 -1 1 0 1 ⟩")
     })
 
-    it("errors if given a monzo for which the ratio is not superunison (n ≥ d)", () => {
+    it("errors if given a monzo for which the ratio is not super (n ≥ d)", () => {
         const monzo: Monzo = [0, 0, 0, 0, -2] as Monzo // 1/121
 
-        expect(() => computeN2D3P9(monzo)).toThrowError("N2D3P9 must be given a superunison (n ≥ d) monzo; received [ 0 0 0 0 -2 ⟩")
+        expect(() => computeN2D3P9(monzo)).toThrowError("N2D3P9 must be given a super (n ≥ d) monzo; received [ 0 0 0 0 -2 ⟩")
     })
 
     it("can handle 1/1, the empty monzo", () => {

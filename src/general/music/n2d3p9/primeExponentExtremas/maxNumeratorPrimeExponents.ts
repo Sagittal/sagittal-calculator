@@ -1,6 +1,5 @@
-import { PRIMES } from "../../../constants"
-import { Exponent, Numerator } from "../../../math"
-import { Index, Max, Prime } from "../../../types"
+import { Exponent, Numerator, Prime, PRIMES } from "../../../math"
+import { Index, Max } from "../../../types"
 import { N2D3P9 } from "../types"
 import { computeMaxNumeratorPrimeExponentGivenMaxN2D3P3 } from "./maxNumeratorPrimeExponent"
 

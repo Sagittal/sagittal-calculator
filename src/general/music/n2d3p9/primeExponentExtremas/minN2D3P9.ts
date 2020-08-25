@@ -24,7 +24,7 @@ const computeMinN2D3P9ForCandidateMaxDenominatorPrimeExponentGivenMaxN2D3P9 = (o
         })
 
     return minN2PForCandidateMaxDenominatorPrimeExponentGivenMaxN2D3P9 *
-        d39ForCandidateMaxDenominatorPrimeExponent as Min<N2D3P9>
+    d39ForCandidateMaxDenominatorPrimeExponent as Min<N2D3P9>
 }
 
 export {

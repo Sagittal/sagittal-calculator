@@ -1,6 +1,5 @@
+import { computeApotomeSlope, Monzo } from "../../../../src/general"
 import { ACCURACY_THRESHOLD } from "../../../../src/general/code"
-import { Monzo } from "../../../../src/general/music"
-import { computeApotomeSlope } from "../../../../src/general/music/apotomeSlope"
 
 describe("computeApotomeSlope", () => {
     it("gives the amount that the comma changes by when tempering the apotome", () => {

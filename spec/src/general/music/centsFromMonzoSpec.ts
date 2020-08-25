@@ -1,6 +1,6 @@
+import { computeCentsFromMonzo, Monzo } from "../../../../src/general"
 import { ACCURACY_THRESHOLD } from "../../../../src/general/code"
-import { Cents, Monzo } from "../../../../src/general/music"
-import { computeCentsFromMonzo } from "../../../../src/general/music/computeCentsFromMonzo"
+import { Cents } from "../../../../src/general/music"
 
 describe("computeCentsFromMonzo", () => {
     it("returns the cents of a monzo", () => {

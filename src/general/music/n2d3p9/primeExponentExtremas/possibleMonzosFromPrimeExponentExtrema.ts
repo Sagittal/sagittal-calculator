@@ -1,8 +1,5 @@
-import { computeRange } from "../../../code"
-import { Exponent } from "../../../math"
-import { Prime } from "../../../types"
-import { computeTrimmedMonzo } from "../../trimmedMonzo"
-import { Monzo } from "../../types"
+import { computeRange, computeTrimmedArray } from "../../../code"
+import { Exponent, Monzo, Prime } from "../../../math"
 import { PrimeExponentExtrema } from "./types"
 
 // TODO: this method is completely generic from N2D3P9 and thus should be extracted
@@ -29,7 +26,7 @@ const computePossibleMonzosFromPrimeExponentExtremas = (primeExponentExtremas: A
     })
 
     // TODO: make sure this is tested, the trimming
-    return possibleMonzos.map(computeTrimmedMonzo)
+    return possibleMonzos.map(computeTrimmedArray)
 }
 
 export {

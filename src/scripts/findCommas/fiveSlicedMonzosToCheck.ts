@@ -2,7 +2,7 @@ import {
     computeCopfr,
     computePrimeExponentExtremasGivenMaxN2D3P9,
     computeSopfr,
-    computeTrimmedMonzo,
+    computeTrimmedArray,
     Copfr,
     Exponent,
     isUndefined,
@@ -66,7 +66,7 @@ const computeFiveSlicedMonzosToCheck = ({ maxPrimeLimit, maxFiveRoughSopfr, maxF
         fiveSlicedMonzosToCheck = extendedFiveSlicedMonzosToCheck
     })
 
-    return fiveSlicedMonzosToCheck.map(computeTrimmedMonzo)
+    return fiveSlicedMonzosToCheck.map(computeTrimmedArray)
 }
 
 export {

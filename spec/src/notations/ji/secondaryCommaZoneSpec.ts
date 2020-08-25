@@ -1,6 +1,6 @@
-import { Cents, Id, Name, Position, Prime, Ratio, Sopfr } from "../../../../src/general"
-import { ApotomeSlope, Monzo, N2D3P9 } from "../../../../src/general/music"
-import { SymbolLongAscii } from "../../../../src/notations"
+import { Cents, Id, Monzo, Name, Prime, Ratio, Sopfr } from "../../../../src/general"
+import { ApotomeSlope, N2D3P9 } from "../../../../src/general/music"
+import { SagittalComma, SymbolLongAscii } from "../../../../src/notations"
 import { JiSymbol, Level, Mina } from "../../../../src/notations/ji"
 import { computeSecondaryCommaZone } from "../../../../src/notations/ji/secondaryCommaZone"
 import { SecondaryCommaZone, SymbolSet } from "../../../../src/notations/ji/types"
@@ -26,7 +26,7 @@ describe("secondaryCommaZone", () => {
                 ratio: [46, 45] as Ratio,
                 monzo: [1, -2, -1, 0, 0, 0, 0, 0, 1] as Monzo,
                 cents: 38.0506316728057 as Cents,
-                name: "23/5S" as Name<Position>,
+                name: "23/5S" as Name<SagittalComma>,
                 n2d3p9: 48.98148148148149 as N2D3P9,
             },
             elements: [],
@@ -56,7 +56,7 @@ describe("secondaryCommaZone", () => {
                 ratio: [1701, 1664] as Ratio,
                 monzo: [-7, 5, 0, 1, 0, -1] as Monzo,
                 cents: 38.0732490267513 as Cents,
-                name: "7/13S" as Name<Position>,
+                name: "7/13S" as Name<SagittalComma>,
                 n2d3p9: 21.907407407407405 as N2D3P9,
             },
             elements: [],
@@ -86,7 +86,7 @@ describe("secondaryCommaZone", () => {
                 ratio: [45, 44] as Ratio,
                 monzo: [-2, 2, 1, 0, -1] as Monzo,
                 cents: 38.9057732308529 as Cents,
-                name: "5/11S" as Name<Position>,
+                name: "5/11S" as Name<SagittalComma>,
                 n2d3p9: 11.203703703703702 as N2D3P9,
             },
             elements: [],
@@ -116,7 +116,7 @@ describe("secondaryCommaZone", () => {
                 ratio: [1, 1] as Ratio,
                 monzo: [] as unknown as Monzo,
                 cents: 0 as Cents,
-                name: "1u" as Name<Position>,
+                name: "1u" as Name<SagittalComma>,
                 n2d3p9: 0.1111111111111111 as N2D3P9,
             },
             elements: [],

@@ -1,5 +1,5 @@
-import { ApotomeSlope, Cents, Id, Monzo, N2D3P9, Name, Position, Prime, Ratio, Sopfr } from "../../../../src/general"
-import { SymbolLongAscii } from "../../../../src/notations"
+import { ApotomeSlope, Cents, Id, Monzo, N2D3P9, Name, Prime, Ratio, Sopfr } from "../../../../src/general"
+import { SagittalComma, SymbolLongAscii } from "../../../../src/notations"
 import { getSymbol, JiSymbol, Level, Mina } from "../../../../src/notations/ji"
 import { SymbolSet } from "../../../../src/notations/ji/types"
 import { SymbolUnicode } from "../../../../src/notations/types"
@@ -24,7 +24,7 @@ describe("getSymbol", () => {
                 ratio: [2079, 2048] as Ratio,
                 monzo: [-11, 3, 0, 1, 1] as Monzo,
                 cents: 26.0088514300439 as Cents,
-                name: "77C" as Name<Position>,
+                name: "77C" as Name<SagittalComma>,
                 n2d3p9: 23.52777777777778 as N2D3P9,
             },
             elements: ["`|", ".|", "|)"] as SymbolLongAscii[],

@@ -2,7 +2,7 @@ import { Position } from "../../../general"
 import {
     computeInaMidpoints,
     computeLevelCommaMeans,
-    computeSizeCategoryBounds,
+    computeSizeCategoryBoundsWithinMaximumPosition,
     Level,
     LEVELS,
 } from "../../../notations"
@@ -20,7 +20,7 @@ const computeSnappablePositions = (computeLevelSnappablePositions: (level: Level
 
 const INA_MIDPOINTS: Record<Level, Position[]> = computeSnappablePositions(computeInaMidpoints)
 const LEVELS_COMMA_MEANS: Record<Level, Position[]> = computeSnappablePositions(computeLevelCommaMeans)
-const LEVELS_SIZE_CATEGORY_BOUNDS: Record<Level, Position[]> = computeSnappablePositions(computeSizeCategoryBounds)
+const LEVELS_SIZE_CATEGORY_BOUNDS: Record<Level, Position[]> = computeSnappablePositions(computeSizeCategoryBoundsWithinMaximumPosition)
 
 const EVENT_TYPE_SNAPPABLE_POSITIONS: Record<EventType, Record<Level, Position[]>> = {
     [ EventType.INA ]: INA_MIDPOINTS,

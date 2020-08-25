@@ -1,5 +1,5 @@
-import { computeLog, Exponent, Numerator } from "../../../math"
-import { Max, Prime } from "../../../types"
+import { computeLog, Exponent, Numerator, Prime } from "../../../math"
+import { Max } from "../../../types"
 import { N2D3P9 } from "../types"
 
 const computeMaxNumeratorPrimeExponentGivenMaxN2D3P3 = (numeratorPrime: Prime<Numerator>, maxN2D3P9: Max<N2D3P9>): Max<Exponent<Prime<Numerator>>> => {

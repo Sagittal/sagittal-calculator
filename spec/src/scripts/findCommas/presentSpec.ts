@@ -1,11 +1,12 @@
-import { Cents, Name, Prime, Ratio } from "../../../../src/general"
-import { ApotomeSlope, Comma, Monzo, N2D3P9, Position, Sopfr } from "../../../../src/general/music"
+import { Cents, Monzo, Name, Prime, Ratio, Sopfr } from "../../../../src/general"
+import { ApotomeSlope, N2D3P9 } from "../../../../src/general/music"
+import { SagittalComma } from "../../../../src/notations"
 import { presentCommas } from "../../../../src/scripts/findCommas/present"
 
 describe("presentCommas", () => {
-    const commas: Comma[] = [
+    const commas: SagittalComma[] = [
         {
-            name: "11M" as Name<Position>,
+            name: "11M" as Name<SagittalComma>,
             limit: 11 as Prime,
             fiveRoughSopfr: 11 as Sopfr<5>,
             cents: 45.45 as Cents,
@@ -15,7 +16,7 @@ describe("presentCommas", () => {
             n2d3p9: 6.722 as N2D3P9,
         },
         {
-            name: "25/49M" as Name<Position>,
+            name: "25/49M" as Name<SagittalComma>,
             limit: 7 as Prime,
             fiveRoughSopfr: 24 as Sopfr<5>,
             cents: 33.4 as Cents,

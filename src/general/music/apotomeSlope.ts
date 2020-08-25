@@ -1,7 +1,7 @@
+import { computeRatioFromMonzo, Monzo } from "../math"
 import { computeCentsFromRatio } from "./centsFromRatio"
 import { APOTOME } from "./constants"
-import { computeRatioFromMonzo } from "./ratioFromMonzo"
-import { ApotomeSlope, Monzo } from "./types"
+import { ApotomeSlope } from "./types"
 
 const APOTOME_THREE_EXPONENT = 7
 

@@ -1,5 +1,4 @@
-import { Max, Prime } from "../../../../src/general"
-import { Copfr, Sopfr } from "../../../../src/general/music"
+import { Copfr, Max, Prime, Sopfr } from "../../../../src/general"
 import { computeFiveSlicedMonzosToCheck } from "../../../../src/scripts/findCommas/fiveSlicedMonzosToCheck"
 
 // todo: currently if you don't provide sopfr you must provide both max copfr and prime limit.

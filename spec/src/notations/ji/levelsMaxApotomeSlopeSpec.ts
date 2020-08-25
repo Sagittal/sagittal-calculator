@@ -1,6 +1,5 @@
 import { Id, Max, Monzo } from "../../../../src/general"
-import { ApotomeSlope } from "../../../../src/general/music"
-import { computeApotomeSlope } from "../../../../src/general/music/apotomeSlope"
+import { ApotomeSlope, computeApotomeSlope } from "../../../../src/general/music"
 import { getSymbol, JiSymbol, Level, LEVELS_SYMBOL_IDS } from "../../../../src/notations/ji"
 
 describe("max apotome slope per level", () => {

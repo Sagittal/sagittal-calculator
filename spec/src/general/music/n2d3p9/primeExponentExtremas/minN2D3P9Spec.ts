@@ -1,4 +1,4 @@
-import { Exponent, Max, Min, N2D3P9, Numerator, Prime } from "../../../../../../src/general"
+import { Exponent, Max, Min, N2D3P9, Prime } from "../../../../../../src/general"
 import { Denominator } from "../../../../../../src/general/math"
 import * as d39 from "../../../../../../src/general/music/n2d3p9/primeExponentExtremas/d39"
 import { computeMinN2D3P9ForCandidateMaxDenominatorPrimeExponentGivenMaxN2D3P9 } from "../../../../../../src/general/music/n2d3p9/primeExponentExtremas/minN2D3P9"

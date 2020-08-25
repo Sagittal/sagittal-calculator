@@ -11,6 +11,7 @@ import { computeRange } from "./range"
 import { rank } from "./rank"
 import { shuffle } from "./shuffle"
 import { sort } from "./sort"
+import { computeTrimmedArray } from "./trim"
 import { isNumber, isUndefined } from "./typeGuards"
 import { Rank, Ranked, RankStrategy } from "./types"
 
@@ -33,4 +34,5 @@ export {
     Rank,
     Ranked,
     RankStrategy,
+    computeTrimmedArray,
 }

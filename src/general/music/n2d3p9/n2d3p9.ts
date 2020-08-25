@@ -1,10 +1,5 @@
-import { PRIMES } from "../../constants"
-import { Exponent } from "../../math"
-import { presentMonzo } from "../../present"
-import { Prime } from "../../types"
-import { computeGpf } from "../gpf"
-import { isSubunison } from "../isSubunison"
-import { Monzo } from "../types"
+import { presentMonzo } from "../../io"
+import { computeGpf, Exponent, isSubMonzo, Monzo, Prime, PRIMES } from "../../math"
 import { N2D3P9 } from "./types"
 
 const computeN2D3P9 = (monzo: Monzo): N2D3P9 => {
@@ -16,8 +11,8 @@ const computeN2D3P9 = (monzo: Monzo): N2D3P9 => {
         throw new Error(`N2D3P9 must be given a 5-roughened monzo; received ${presentMonzo(monzo)}`)
     }
 
-    if (isSubunison(monzo)) {
-        throw new Error(`N2D3P9 must be given a superunison (n ≥ d) monzo; received ${presentMonzo(monzo)}`)
+    if (isSubMonzo(monzo)) {
+        throw new Error(`N2D3P9 must be given a super (n ≥ d) monzo; received ${presentMonzo(monzo)}`)
     }
 
     return monzo.reduce(

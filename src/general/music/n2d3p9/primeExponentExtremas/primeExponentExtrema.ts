@@ -1,5 +1,5 @@
-import { Denominator, Exponent, Numerator } from "../../../math"
-import { Max, Min, Prime } from "../../../types"
+import { Denominator, Exponent, Numerator, Prime } from "../../../math"
+import { Max, Min } from "../../../types"
 import { N2D3P9 } from "../types"
 import { computeMaxDenominatorPrimeExponentGivenMaxN2D3P3 } from "./maxDenominatorPrimeExponent"
 import { computeMaxNumeratorPrimeExponentGivenMaxN2D3P3 } from "./maxNumeratorPrimeExponent"

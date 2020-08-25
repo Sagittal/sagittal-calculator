@@ -1,6 +1,6 @@
-import { Cents, Id, Name, Position, Prime, Proportion, Ratio, Sopfr } from "../../../../../src/general"
-import { ApotomeSlope, Monzo, N2D3P9 } from "../../../../../src/general/music"
-import { SymbolLongAscii } from "../../../../../src/notations"
+import { Cents, Id, Monzo, Name, Prime, Proportion, Ratio, Sopfr } from "../../../../../src/general"
+import { ApotomeSlope, N2D3P9 } from "../../../../../src/general/music"
+import { SagittalComma, SymbolLongAscii } from "../../../../../src/notations"
 import { Bound, JiSymbol, Level, Mina } from "../../../../../src/notations/ji"
 import { INA_SIZES } from "../../../../../src/notations/ji/intervals"
 import { SymbolSet } from "../../../../../src/notations/ji/types"
@@ -40,7 +40,7 @@ describe("extractBoundIdentifiers", () => {
                             ratio: [76, 75] as Ratio,
                             monzo: [2, -1, -2, 0, 0, 0, 0, 1] as Monzo,
                             cents: 22.9305875372457 as Cents,
-                            name: "19/25C" as Name<Position>,
+                            name: "19/25C" as Name<SagittalComma>,
                             n2d3p9: 55.70987654320989 as N2D3P9,
                         },
                         id: 47 as Id<JiSymbol>, // not the best example since id and mina are the same up to this point
@@ -61,7 +61,7 @@ describe("extractBoundIdentifiers", () => {
                             ratio: [531441, 524288] as Ratio,
                             monzo: [-19, 12] as Monzo,
                             cents: 23.460010384649 as Cents,
-                            name: "1C" as Name<Position>,
+                            name: "1C" as Name<SagittalComma>,
                             n2d3p9: 0.1111111111111111 as N2D3P9,
                         },
                         id: 48 as Id<JiSymbol>,
@@ -84,7 +84,7 @@ describe("extractBoundIdentifiers", () => {
                             ratio: [76, 75] as Ratio,
                             monzo: [2, -1, -2, 0, 0, 0, 0, 1] as Monzo,
                             cents: 22.9305875372457 as Cents,
-                            name: "19/25C" as Name<Position>,
+                            name: "19/25C" as Name<SagittalComma>,
                             n2d3p9: 55.70987654320989 as N2D3P9,
                         },
                         id: 47 as Id<JiSymbol>,
@@ -105,7 +105,7 @@ describe("extractBoundIdentifiers", () => {
                             ratio: [531441, 524288] as Ratio,
                             monzo: [-19, 12] as Monzo,
                             cents: 23.460010384649 as Cents,
-                            name: "1C" as Name<Position>,
+                            name: "1C" as Name<SagittalComma>,
                             n2d3p9: 0.1111111111111111 as N2D3P9,
                         },
                         id: 48 as Id<JiSymbol>,
@@ -129,7 +129,7 @@ describe("extractBoundIdentifiers", () => {
                             ratio: [76, 75] as Ratio,
                             monzo: [2, -1, -2, 0, 0, 0, 0, 1] as Monzo,
                             cents: 22.9305875372457 as Cents,
-                            name: "19/25C" as Name<Position>,
+                            name: "19/25C" as Name<SagittalComma>,
                             n2d3p9: 55.70987654320989 as N2D3P9,
                         },
                         elements: [".|", ")|", "/|"] as SymbolLongAscii[],
@@ -150,7 +150,7 @@ describe("extractBoundIdentifiers", () => {
                             ratio: [531441, 524288] as Ratio,
                             monzo: [-19, 12] as Monzo,
                             cents: 23.460010384649 as Cents,
-                            name: "1C" as Name<Position>,
+                            name: "1C" as Name<SagittalComma>,
                             n2d3p9: 0.1111111111111111 as N2D3P9,
                         },
                         elements: ["'|", "/|"] as SymbolLongAscii[],

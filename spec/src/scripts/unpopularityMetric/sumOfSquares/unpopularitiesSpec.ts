@@ -1,15 +1,12 @@
 import { Combination, Index, Popularity, Rank, Ranked, Ratio } from "../../../../../src/general"
-import { Votes } from "../../../../../src/general/music/types"
+import { Votes } from "../../../../../src/general/music"
 import {
     computeUnpopularities,
     Parameter,
     ParameterValue,
     Submetric,
 } from "../../../../../src/scripts/unpopularityMetric/sumOfSquares"
-import {
-    Antivotes,
-    Unpopularity,
-} from "../../../../../src/scripts/unpopularityMetric/sumOfSquares/types"
+import { Antivotes, Unpopularity } from "../../../../../src/scripts/unpopularityMetric/sumOfSquares/types"
 
 describe("computeUnpopularities", () => {
     it("given a list of real popularities and submetric combinations, returns our estimated unpopularities, which have antivotes instead of votes", () => {

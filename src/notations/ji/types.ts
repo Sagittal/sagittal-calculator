@@ -1,5 +1,5 @@
-import { Cents, Comma, Id, Max, Min, Proportion } from "../../general"
-import { SymbolLongAscii, SymbolUnicode } from "../types"
+import { Cents, Id, Max, Min, Proportion } from "../../general"
+import { SagittalComma, SymbolLongAscii, SymbolUnicode } from "../types"
 
 type Tina = Cents & { _TinaBrand: Tina }
 type Mina = Cents & { _MinaBrand: "Mina" }
@@ -32,7 +32,7 @@ interface JiSymbol {
     introducingLevel: Level,
     lowestSymbolSet: SymbolSet,
     mina: Mina,
-    primaryComma: Comma,
+    primaryComma: SagittalComma,
     unicode: SymbolUnicode,
 }
 

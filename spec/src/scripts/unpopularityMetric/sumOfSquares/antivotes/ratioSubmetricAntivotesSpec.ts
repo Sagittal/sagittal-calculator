@@ -1,5 +1,4 @@
-import { computeLog, Ratio } from "../../../../../../src/general/math"
-import { Monzo } from "../../../../../../src/general/music"
+import { computeLog, Monzo, Ratio } from "../../../../../../src/general/math"
 import { ParameterValue } from "../../../../../../src/scripts/unpopularityMetric/sumOfSquares"
 import { computeRatioSubmetricAntivotes } from "../../../../../../src/scripts/unpopularityMetric/sumOfSquares/antivotes/ratioSubmetricAntivotes"
 import { computeSubmetricAntivotes } from "../../../../../../src/scripts/unpopularityMetric/sumOfSquares/antivotes/submetricAntivotes"

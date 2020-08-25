@@ -22,9 +22,16 @@ describe("COMMA_POPULARITIES", () => {
     it("is the case that the fractional ranks are correct", () => {
         onlyRunInCi()
 
-        const unrankedPopularities: Popularity[] = COMMA_POPULARITIES.map(popularity => ({ fiveRoughRatio: popularity.fiveRoughRatio, votes: popularity.votes }))
+        const unrankedPopularities: Popularity[] = COMMA_POPULARITIES.map(popularity => ({
+            fiveRoughRatio: popularity.fiveRoughRatio,
+            votes: popularity.votes,
+        }))
 
-        const rerankedPopularities: Array<Ranked<Popularity>> = rank(unrankedPopularities, { by: "votes", strategy: RankStrategy.FRACTIONAL, descending: true })
+        const rerankedPopularities: Array<Ranked<Popularity>> = rank(unrankedPopularities, {
+            by: "votes",
+            strategy: RankStrategy.FRACTIONAL,
+            descending: true,
+        })
 
         expect(rerankedPopularities).toEqual(COMMA_POPULARITIES)
     })

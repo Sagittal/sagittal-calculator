@@ -1,9 +1,9 @@
-import { computeSizeCategoryBounds, MAX_POSITION } from "../../../../src/notations/ji"
+import { computeSizeCategoryBoundsWithinMaximumPosition, MAX_POSITION } from "../../../../src/notations/ji"
 
-describe("computeSizeCategoryBounds", () => {
+describe("computeSizeCategoryBoundsWithinMaximumPosition", () => {
     it("only returns the size category bounds that are less than or equal to the max position", () => {
-        const actual = computeSizeCategoryBounds()
+        const actual = computeSizeCategoryBoundsWithinMaximumPosition()
 
-        expect(Math.max(...actual.map(r => r.cents))).toEqual(MAX_POSITION)
+        expect(Math.max(...actual.map(sizeCategoryBound => sizeCategoryBound.cents))).toEqual(MAX_POSITION)
     })
 })

@@ -11,7 +11,7 @@ import { LEVELS } from "./levels"
 import { LEVELS_BOUNDS } from "./levelsBounds"
 import { LEVELS_SYMBOL_IDS } from "./levelsSymbolIds"
 import { computeNotatingSymbolIds } from "./notatingSymbolIds"
-import { computeSizeCategoryBounds } from "./sizeCategoryBounds"
+import { computeSizeCategoryBoundsWithinMaximumPosition } from "./sizeCategoryBounds"
 import { getSymbol } from "./symbol"
 import { JI_SYMBOLS } from "./symbols"
 import { SYMBOL_SETS } from "./symbolSets"
@@ -49,7 +49,7 @@ export {
     unicodeFromAscii,
     computeInaMidpoints,
     computeLevelCommaMeans,
-    computeSizeCategoryBounds,
+    computeSizeCategoryBoundsWithinMaximumPosition,
     computeNotatingSymbolIds,
     getSymbol,
     SYMBOL_SETS,

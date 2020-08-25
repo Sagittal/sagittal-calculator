@@ -1,5 +1,4 @@
-import { Ratio } from "../../../../src/general/math"
-import { computeRatioFromMonzo, Monzo } from "../../../../src/general/music"
+import { computeRatioFromMonzo, Monzo, Ratio } from "../../../../src/general/math"
 
 describe("ratioFromMonzo", () => {
     it("converts a monzo into a two-element array representing the numerator and denominator", () => {
