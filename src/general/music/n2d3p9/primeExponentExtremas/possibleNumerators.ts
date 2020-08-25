@@ -1,4 +1,4 @@
-import { Numerator } from "../../../math"
+import { Integer, Numerator } from "../../../math"
 import { Max } from "../../../types"
 import { computeIsRough } from "../../isRough"
 import { N2D3P9 } from "../types"
@@ -10,7 +10,7 @@ const computePossibleNumeratorsGivenMaxN2D3P3 = (maxN2D3P9: Max<N2D3P9>): Numera
     const possibleNumerators = []
     let possibleNumerator = 7 as Numerator
     while (possibleNumerator <= maxNumerator) {
-        if (computeIsRough(possibleNumerator, 5)) {
+        if (computeIsRough(possibleNumerator, 5 as Integer)) { // TODO: Roughness type
             possibleNumerators.push(possibleNumerator)
         }
 

@@ -1,4 +1,5 @@
 import { computeSopfr, Monzo, Sopfr } from "../../../../src/general/music"
+import { Integer } from "../../../../src/general/math"
 
 describe("computeSopfr", () => {
     it("sums the absolute values of the prime factors (with repetition) in the monzo", () => {
@@ -20,7 +21,7 @@ describe("computeSopfr", () => {
     })
 
     it("works for a simple integer", () => {
-        const integer = 341
+        const integer = 341 as Integer
 
         const actual = computeSopfr(integer)
 

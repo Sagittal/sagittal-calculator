@@ -1,4 +1,5 @@
 import { computeSopf, Monzo } from "../../../../src/general/music"
+import { Integer } from "../../../../src/general/math"
 
 describe("computeSopf", () => {
     it("sums the absolute values of the unique prime factors in the monzo", () => {
@@ -20,7 +21,7 @@ describe("computeSopf", () => {
     })
 
     it("works for a simple integer", () => {
-        const integer = 3751
+        const integer = 3751 as Integer
 
         const actual = computeSopf(integer)
 

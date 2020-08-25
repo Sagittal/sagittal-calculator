@@ -1,7 +1,8 @@
+import { Integer } from "../math"
 import { computeRatioFromMonzo } from "./ratioFromMonzo"
 import { Monzo } from "./types"
 
-const computeIntegerFromMonzo = (monzo: Monzo) => {
+const computeIntegerFromMonzo = (monzo: Monzo): Integer => {
     const ratio = computeRatioFromMonzo(monzo)
     const [numerator, denominator] = ratio
 
@@ -9,7 +10,7 @@ const computeIntegerFromMonzo = (monzo: Monzo) => {
         throw new Error(`Tried to compute integer from non-integer monzo ${monzo} which equals ratio ${ratio}`)
     }
 
-    return numerator
+    return numerator as Integer
 }
 
 export {

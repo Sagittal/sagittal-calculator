@@ -1,12 +1,13 @@
+import { Integer } from "../math"
 import { computeMonzoFromInteger } from "./monzoFromInteger"
 import { Monzo } from "./types"
 
-const computeMonzoFromIntegerOrMonzo = (integerOrMonzo: number | Monzo): Monzo => { // TODO: Integer type
-    let monzo
+const computeMonzoFromIntegerOrMonzo = (integerOrMonzo: Integer | Monzo): Monzo => {
+    let monzo: Monzo
     if (typeof integerOrMonzo === "number") {
         monzo = computeMonzoFromInteger(integerOrMonzo)
     } else {
-        monzo = integerOrMonzo
+        monzo = integerOrMonzo as Monzo
     }
 
     return monzo

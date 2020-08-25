@@ -1,9 +1,11 @@
 import { PRIMES } from "../constants"
+import { Integer } from "../math"
 import { computeMonzoFromIntegerOrMonzo } from "./monzoFromIntegerOrMonzo"
 import { Monzo } from "./types"
 
 // Sum of prime factors (without repetition)
-const computeSopf = (integerOrMonzo: number | Monzo) => {
+
+const computeSopf = (integerOrMonzo: Integer | Monzo) => {
     const monzo = computeMonzoFromIntegerOrMonzo(integerOrMonzo)
 
     return monzo.reduce(

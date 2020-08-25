@@ -1,6 +1,6 @@
 import { computeDeepClone } from "../code"
 import { Count } from "../types"
-import { Combination, Combinations } from "./types"
+import { Combination, Combinations, Integer } from "./types"
 
 const computeCombinations = <T>(array: T[], count: Count<T>, { withRepeatedElements = false } = {}): Combinations<T> => {
     if (withRepeatedElements) {
@@ -13,7 +13,7 @@ const computeCombinations = <T>(array: T[], count: Count<T>, { withRepeatedEleme
         return [] as unknown as Combinations<T>
     }
 
-    const computeRecursiveCombinations = (integer: number, combination: number[]) => {
+    const computeRecursiveCombinations = (integer: Integer, combination: number[]) => {
         if (combination.length === count) {
             combinations.push(combination.slice())
 
@@ -24,13 +24,13 @@ const computeCombinations = <T>(array: T[], count: Count<T>, { withRepeatedEleme
             return
         }
 
-        computeRecursiveCombinations(integer + 1, combination)
+        computeRecursiveCombinations(integer + 1 as Integer, combination)
         combination.push(integer)
-        computeRecursiveCombinations(integer + 1, combination)
+        computeRecursiveCombinations(integer + 1 as Integer, combination)
         combination.pop()
     }
 
-    computeRecursiveCombinations(1, [])
+    computeRecursiveCombinations(1 as Integer, [])
 
     return combinations.map(combination =>
         combination.map(index =>

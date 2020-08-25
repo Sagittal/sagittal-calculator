@@ -1,8 +1,9 @@
+import { Integer } from "../../../../src/general/math"
 import { computeMonzoFromInteger, Monzo } from "../../../../src/general/music"
 
 describe("computeMonzoFromInteger", () => {
     it("prime factorizes the integer into a monzo", () => {
-        const integer = 44
+        const integer = 44 as Integer
 
         const actual = computeMonzoFromInteger(integer)
 
@@ -11,7 +12,7 @@ describe("computeMonzoFromInteger", () => {
     })
 
     it("errors if the primes in the integer's factorization are too big", () => {
-        const integer = 756065159
+        const integer = 756065159 as Integer
 
         expect(() => computeMonzoFromInteger(integer)).toThrowError("This number contains primes which are too big; remainder is 756065159")
     })

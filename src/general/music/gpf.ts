@@ -1,10 +1,11 @@
 import { PRIMES } from "../constants"
+import { Integer } from "../math"
 import { Max, Prime } from "../types"
 import { computeMonzoFromIntegerOrMonzo } from "./monzoFromIntegerOrMonzo"
 import { computeTrimmedMonzo } from "./trimmedMonzo"
 import { Monzo } from "./types"
 
-const computeGpf = (integerOrMonzo: number | Monzo): Max<Prime> => {
+const computeGpf = (integerOrMonzo: Integer | Monzo): Max<Prime> => {
     const monzo = computeMonzoFromIntegerOrMonzo(integerOrMonzo)
     const trimmedMonzo = computeTrimmedMonzo(monzo)
 

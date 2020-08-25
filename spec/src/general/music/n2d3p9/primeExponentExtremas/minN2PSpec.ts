@@ -11,8 +11,8 @@ import {
 describe("computeMinN2PForCandidateMaxDenominatorPrimeExponentGivenMaxN2D3P9", () => {
     it("finds the min N2P out of the numerator possibilities where the gpf is greater than the denominator prime, and the min N2P out of the numerator possibilities where the gpf is lesser than the denominator prime, and then returns the min of those two", () => {
         // so the candidate max denominator power will be 7^2 = 49
-        const denominatorPrime = 7 as Prime
-        const candidateMaxDenominatorPrimeExponentGivenMaxN2D3P9 = 2 as Max<Exponent<Prime>>
+        const denominatorPrime = 7 as Prime<Denominator>
+        const candidateMaxDenominatorPrimeExponentGivenMaxN2D3P9 = 2 as Max<Exponent<Prime<Denominator>>>
 
         const sortedNumeratorPossibilitiesForDenominatorPrimeGivenMaxN2D3P9 = {
             numeratorPossibilitiesGivenMaxN2D3P9WithLesserGpfThanDenominatorPrimeSortedByN2: [

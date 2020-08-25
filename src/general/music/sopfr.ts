@@ -1,11 +1,14 @@
 import { PRIMES } from "../constants"
-import { Exponent } from "../math"
+import { Exponent, Integer } from "../math"
 import { Prime } from "../types"
 import { computeMonzoFromIntegerOrMonzo } from "./monzoFromIntegerOrMonzo"
 import { Monzo, Sopfr } from "./types"
 
 // Sum of prime factors
-const computeSopfr = (integerOrMonzo: number | Monzo): Sopfr => {
+
+// TODO: perhaps without repetition should just be an option to this thing
+
+const computeSopfr = (integerOrMonzo: Integer | Monzo): Sopfr => {
     const monzo = computeMonzoFromIntegerOrMonzo(integerOrMonzo)
 
     return monzo.reduce(

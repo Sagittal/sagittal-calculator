@@ -1,8 +1,9 @@
-
 // Numeric types where parameter is not numeric
-type Index<T = void> = number & { _IndexBrand: "Index" } & (T extends void ? {} : { _IndexOfBrand: T })
-type Id<T = void> = number & { _IdBrand: "Id" } & (T extends void ? {} : { _IdOfBrand: T })
-type Count<T = void> = number & { _CountBrand: "Count" } & (T extends void ? {} : { _CountOfBrand: T })
+import { Integer } from "./math"
+
+type Index<T = void> = Integer & { _IndexBrand: "Index" } & (T extends void ? {} : { _IndexOfBrand: T })
+type Id<T = void> = Integer & { _IdBrand: "Id" } & (T extends void ? {} : { _IdOfBrand: T })
+type Count<T = void> = Integer & { _CountBrand: "Count" } & (T extends void ? {} : { _CountOfBrand: T })
 
 // Numeric types where parameter is also numeric
 type Proportion<T extends number | void = void> = number & { _ProportionBrand: "Proportion" } & (T extends void ? {} : T & { _ProportionOfBrand: T })
@@ -12,7 +13,7 @@ type Unit<T extends number | void = void> = number & { _UnitBrand: "Unit" } & (T
 type Max<T extends number | void = void> = number & { _MaxBrand: "Max" } & (T extends void ? {} : T & { _MaxOfBrand: T })
 type Min<T extends number | void = void> = number & { _MinBrand: "Min" } & (T extends void ? {} : T & { _MinOfBrand: T })
 type Resolution<T = void> = number & { _ResolutionBrand: "Resolution" } & (T extends void ? {} : T & { _ResolutionOfBrand: T })
-type Prime<T = void> = number & { _PrimeBrand: "Prime" } & (T extends void ? {} : T & { _PrimeOfBrand: T })
+type Prime<T = void> = Integer & { _PrimeBrand: "Prime" } & (T extends void ? {} : T & { _PrimeOfBrand: T })
 
 type Name<T = void> = string & { _NameBrand: "Name" } & (T extends void ? {} : { _NameOfBrand: T })
 

@@ -1,4 +1,5 @@
 import { Max, Prime } from "../../../../src/general"
+import { Integer } from "../../../../src/general/math"
 import { computeGpf, Monzo } from "../../../../src/general/music"
 
 describe("computeGpf", () => {
@@ -30,7 +31,7 @@ describe("computeGpf", () => {
     })
 
     it("works for an integer", () => {
-        const integer = 35
+        const integer = 35 as Integer
 
         const actual = computeGpf(integer)
 
