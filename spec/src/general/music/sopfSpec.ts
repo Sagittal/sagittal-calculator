@@ -1,5 +1,5 @@
-import { computeSopf, Monzo } from "../../../../src/general/music"
 import { Integer } from "../../../../src/general/math"
+import { computeSopf, Monzo } from "../../../../src/general/music"
 
 describe("computeSopf", () => {
     it("sums the absolute values of the unique prime factors in the monzo", () => {

@@ -77,7 +77,7 @@ import {
 } from "./present"
 import { alignTable } from "./textTable"
 import { formatTime } from "./time"
-import { Count, Id, Index, Name, Prime, Proportion, Resolution, Span, Sum, Unit, Max, Min } from "./types"
+import { Count, Id, Index, Max, Min, Name, Prime, Proportion, Resolution, Span, Sum, Unit } from "./types"
 
 export {
     Cents,

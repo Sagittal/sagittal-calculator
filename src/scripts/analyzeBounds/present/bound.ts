@@ -1,3 +1,4 @@
+import { presentNumber } from "../../../general"
 import { AnalyzedBound } from "../types"
 import { alignFormattedNumber } from "./alignFormattedNumber"
 import { extractBoundIdentifiers } from "./boundIdentifiers"
@@ -8,7 +9,6 @@ import { extractLevelRanks } from "./levelRanks"
 import { presentMina } from "./mina"
 import { presentSymbolAscii } from "./symbolAscii"
 import { AnalysisMode, PresentBoundParameters } from "./types"
-import { presentNumber } from "../../../general"
 
 const presentBound = (analyzedBound: AnalyzedBound, { bound, mode = AnalysisMode.DETAILS }: PresentBoundParameters) => {
     let presentedBound

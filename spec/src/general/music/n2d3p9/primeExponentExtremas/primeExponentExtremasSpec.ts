@@ -1,10 +1,10 @@
+import { Max } from "../../../../../../src/general"
 import { N2D3P9 } from "../../../../../../src/general/music/n2d3p9"
 import {
     computePrimeExponentExtremasGivenMaxN2D3P9,
     PrimeExponentExtrema,
 } from "../../../../../../src/general/music/n2d3p9/primeExponentExtremas"
 import { onlyRunInCi } from "../../../../../helpers/onlyRunInCi"
-import { Max } from "../../../../../../src/general"
 
 // TODO: FIVE ROUGH LINK so these are actually five-rough primes... should I acknowledge that in the name?
 

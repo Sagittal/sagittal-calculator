@@ -1,7 +1,7 @@
+import { Integer } from "../math"
 import { Count, Prime } from "../types"
 import { computeMonzoFromIntegerOrMonzo } from "./monzoFromIntegerOrMonzo"
 import { Copfr, Monzo } from "./types"
-import { Integer } from "../math"
 
 // Count Of Prime Factors with Repetition (big omega)
 

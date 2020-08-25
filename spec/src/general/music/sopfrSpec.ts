@@ -1,5 +1,5 @@
-import { computeSopfr, Monzo, Sopfr } from "../../../../src/general/music"
 import { Integer } from "../../../../src/general/math"
+import { computeSopfr, Monzo, Sopfr } from "../../../../src/general/music"
 
 describe("computeSopfr", () => {
     it("sums the absolute values of the prime factors (with repetition) in the monzo", () => {

@@ -22,8 +22,8 @@ import {
     LEVEL_EDAS,
     MAX_POSITION,
     Mina,
-    Tina,
     SYMBOL_SETS,
+    Tina,
     TINA,
     unicodeFromAscii,
 } from "./ji"
