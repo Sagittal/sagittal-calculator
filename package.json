@@ -9,7 +9,7 @@
   "scripts": {
     "lint": "tslint \"src/**/*.ts\" --fix && tslint \"spec/**/*.ts\" --fix",
     "test": "node -r ts-node/register/transpile-only node_modules/jasmine/bin/jasmine",
-    "test-ci": "node -r ts-node/register node_modules/jasmine/bin/jasmine",
+    "test-ci": "node -r ts-node/register node_modules/jasmine/bin/jasmine --ci=true",
     "analyze-bound": "node -r ts-node/register/transpile-only src/scripts/analyzeBounds/commands/analyzeBound.ts",
     "analyze-bounds": "node -r ts-node/register/transpile-only src/scripts/analyzeBounds/commands/analyzeBounds.ts",
     "find-commas": "node -r ts-node/register/transpile-only src/scripts/findCommas/commands/findCommas.ts",
