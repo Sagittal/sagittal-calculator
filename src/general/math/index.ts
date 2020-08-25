@@ -5,7 +5,17 @@ import { computeLog } from "./log"
 import { computePrimeCount } from "./primeCount"
 import { round } from "./round"
 import { computeTriangularNumber } from "./triangularNumber"
-import { Combination, Combinations, Denominator, Exponent, FractionalPart, Integer, Numerator, Ratio } from "./types"
+import {
+    Combination,
+    Combinations,
+    Denominator,
+    Exponent,
+    FractionalPart,
+    Integer,
+    Numerator,
+    Ratio,
+    UndirectedRatio,
+} from "./types"
 
 export {
     computeCombinations,
@@ -23,4 +33,5 @@ export {
     Exponent,
     dividesEvenly,
     Integer,
+    UndirectedRatio,
 }

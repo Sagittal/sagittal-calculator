@@ -1,6 +1,7 @@
 type Numerator = Integer & { _NumeratorBrand: "Numerator" }
 type Denominator = Integer & { _DenominatorBrand: "Denominator" }
 type Ratio = [Numerator, Denominator]
+type UndirectedRatio = Ratio & { _UndirectedRatioBrand: "UndirectedRatio" }
 
 type Combination<T> = T[] & { _CombinationBrand: "Combination" }
 type Combinations<T> = Array<Combination<T>> & { _CombinationsBrand: "Combinations" }
@@ -32,4 +33,5 @@ export {
     Base,
     Power,
     Integer,
+    UndirectedRatio,
 }

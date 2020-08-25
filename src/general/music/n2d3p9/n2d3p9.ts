@@ -2,9 +2,8 @@ import { PRIMES } from "../../constants"
 import { Exponent } from "../../math"
 import { presentMonzo } from "../../present"
 import { Prime } from "../../types"
-import { computeCentsFromRatio } from "../centsFromRatio"
 import { computeGpf } from "../gpf"
-import { computeRatioFromMonzo } from "../ratioFromMonzo"
+import { isSubunison } from "../isSubunison"
 import { Monzo } from "../types"
 import { N2D3P9 } from "./types"
 
@@ -17,7 +16,7 @@ const computeN2D3P9 = (monzo: Monzo): N2D3P9 => {
         throw new Error(`N2D3P9 must be given a 5-roughened monzo; received ${presentMonzo(monzo)}`)
     }
 
-    if (computeCentsFromRatio(computeRatioFromMonzo(monzo)) < 0) {
+    if (isSubunison(monzo)) {
         throw new Error(`N2D3P9 must be given a superunison (n ≥ d) monzo; received ${presentMonzo(monzo)}`)
     }
 

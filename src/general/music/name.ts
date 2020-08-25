@@ -1,11 +1,15 @@
 import { PRIMES } from "../constants"
-import { Denominator, Exponent, Numerator, Ratio } from "../math"
-import { Name, Prime } from "../types"
-import { computeCentsFromRatio } from "./centsFromRatio"
+import { Ratio } from "../math"
+import { Name } from "../types"
+import { computeCentsFromMonzo } from "./computeCentsFromMonzo"
+import { isSubunison } from "./isSubunison"
 import { computeMonzoFromRatio } from "./monzoFromRatio"
 import { computeRatioFromMonzo } from "./ratioFromMonzo"
+import { computeRoughNumberMonzo } from "./rough"
 import { computeSizeCategory } from "./sizeCategory"
-import { Monzo, Position, SizeCategoryOptions } from "./types"
+import { computeSuperunisonMonzo } from "./superunisonMonzo"
+import { Cents, Monzo, Position } from "./types"
+import { computeUndirectedRatio } from "./undirectedRatio"
 
 const SUPERSCRIPT_NUMS = ["⁰", "¹", "²", "³", "⁴", "⁵", "⁶", "⁷", "⁸", "⁹"]
 
@@ -30,41 +34,29 @@ const primeFactorizeCommaName = (numeratorOrDenominator: number) => {
     return factorizedTerms.join(".")
 }
 
-const undirectCommaName = (commaResult: Ratio): Ratio =>
-    commaResult[ 0 ] > commaResult[ 1 ] ?
-        [commaResult[ 1 ] as unknown as Numerator, commaResult[ 0 ] as unknown as Denominator] :
-        commaResult
-
-const sizeCategoryFromMonzo = (monzo: Monzo, { abbreviated }: SizeCategoryOptions) => {
-    const ratio = computeRatioFromMonzo(monzo)
-    const cents = computeCentsFromRatio(ratio)
-
-    return computeSizeCategory(cents, { abbreviated })
-}
-
-const computeNoTwosOrThreesMonzo = (monzo: Monzo) => {
-    const noTwosOrThreesMonzo = monzo.slice()
-    noTwosOrThreesMonzo[ 0 ] = 0 as Exponent<Prime>
-    noTwosOrThreesMonzo[ 1 ] = 0 as Exponent<Prime>
-
-    return noTwosOrThreesMonzo
-}
-
 const computeCommaName = (monzo: Monzo, { directed = true, factored = false, abbreviated = true } = {}): Name<Position> => {
-    const noTwosOrThreesMonzo = computeNoTwosOrThreesMonzo(monzo)
-    const commaResult: Ratio = computeRatioFromMonzo(noTwosOrThreesMonzo)
+    const subunison = isSubunison(monzo)
 
-    const directedCommaResult = directed ? commaResult : undirectCommaName(commaResult)
-    const stringifiedCommaResult = factored ? directedCommaResult.map(primeFactorizeCommaName) : directedCommaResult.map(n => n.toString())
+    const superunisonMonzo = computeSuperunisonMonzo(monzo)
+    const cents: Cents = computeCentsFromMonzo(superunisonMonzo)
+
+    const fiveRoughMonzo = computeRoughNumberMonzo(superunisonMonzo, 5)
+    const ratio: Ratio = computeRatioFromMonzo(fiveRoughMonzo)
+
+    const maybeDirectedRatio = directed ? ratio : computeUndirectedRatio(ratio)
+    const maybeFlippedRatio = directed ? maybeDirectedRatio : [maybeDirectedRatio[ 1 ], maybeDirectedRatio[ 0 ]]
+    const stringifiedRatio = factored ? maybeFlippedRatio.map(primeFactorizeCommaName) : maybeFlippedRatio.map(n => n.toString())
 
     const separator = directed ? "/" : ":"
-    const formattedCommaResult = stringifiedCommaResult[ 1 ] === "1" ? stringifiedCommaResult[ 0 ] : stringifiedCommaResult.join(separator)
+    const formattedRatio = stringifiedRatio[ 1 ] === "1" ? stringifiedRatio[ 0 ] : stringifiedRatio.join(separator)
 
     const maybeHyphen = abbreviated ? "" : "-"
 
-    const sizeCategory = sizeCategoryFromMonzo(monzo, { abbreviated })
+    const sizeCategory = computeSizeCategory(cents, { abbreviated })
 
-    return `${formattedCommaResult}${maybeHyphen}${sizeCategory}` as Name<Position>
+    const maybeDown = subunison ? " down" : ""
+
+    return `${formattedRatio}${maybeHyphen}${sizeCategory}${maybeDown}` as Name<Position>
 }
 
 export {

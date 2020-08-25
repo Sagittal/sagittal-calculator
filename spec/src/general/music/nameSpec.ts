@@ -74,4 +74,13 @@ describe("computeCommaName", () => {
         expect(computeCommaName([7, -3, 1, 0, 0, 0, 0, 0, -1] as Monzo)).toBe("5/23M")
         expect(computeCommaName([-18, 10, -1, 0, 0, 0, 0, 0, 1] as Monzo)).toBe("23/5L")
     })
+
+    it("does the right thing when the comma is negative", () => {
+        const monzo = [-40, 22, 1, 1] as Monzo
+
+        const actual = computeCommaName(monzo)
+
+        const expected = "1/35s down"
+        expect(actual).toBe(expected)
+    })
 })
