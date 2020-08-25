@@ -19,7 +19,7 @@ describe("computeScore", () => {
         expect(expectedWorseResult).toBeGreaterThan(expectedBetterResult)
     })
 
-    it("if two histories have the same total ranks but one incurs a worse rank at a lower level, it gets a lower score", () => {
+    it("if two histories have the same total ranks but one incurs a worse rank at an earlier level, it gets a lesser score", () => {
         const expectedWorseScoreHistories = [
             { ...analyzedEventFixture, level: Level.MEDIUM, rank: 2 as Rank<AnalyzedEvent> },
             { ...analyzedEventFixture, level: Level.HIGH, rank: 1 as Rank<AnalyzedEvent> },
@@ -35,7 +35,7 @@ describe("computeScore", () => {
         expect(expectedWorseResult).toBeGreaterThan(expectedBetterResult)
     })
 
-    it("a history with the lowest event rank must get the lower score, even in the most case leaning as much as possible in favor of otherwise", () => {
+    it("a history with the lowest event rank must get the lesser score, even in the most case leaning as much as possible in favor of otherwise", () => {
         const expectedWorseScoreHistories = [
             { ...analyzedEventFixture, level: Level.MEDIUM, rank: 0 as Rank<AnalyzedEvent> },
             { ...analyzedEventFixture, level: Level.HIGH, rank: 0 as Rank<AnalyzedEvent> },

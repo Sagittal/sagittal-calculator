@@ -11,23 +11,23 @@ const computeCentsFromMonzo = (monzo: Monzo): Cents => {
     return computeCentsFromRatio(ratio)
 }
 
-const computeMonzoInRange = (threeSlicedMonzo: Monzo<3>, lowerBound: Min<Cents>, upperBound: Max<Cents>) => {
-    if (upperBound - lowerBound > CENTS_PER_OCTAVE) {
+const computeMonzoInRange = (threeSlicedMonzo: Monzo<3>, minCents: Min<Cents>, maxCents: Max<Cents>) => {
+    if (maxCents - minCents > CENTS_PER_OCTAVE) {
         throw new Error("Cents range must be less than 1200.")
     }
 
     const monzo: Monzo = [0, ...threeSlicedMonzo] as Monzo
     let cents: Cents = computeCentsFromMonzo(monzo)
-    while (cents > upperBound) {
+    while (cents > maxCents) {
         monzo[ 0 ] = monzo[ 0 ] - 1 as Exponent<Prime>
         cents = computeCentsFromMonzo(monzo)
     }
-    while (cents < lowerBound) {
+    while (cents < minCents) {
         monzo[ 0 ] = monzo[ 0 ] + 1 as Exponent<Prime>
         cents = computeCentsFromMonzo(monzo)
     }
 
-    return cents > lowerBound && cents < upperBound ? monzo : undefined
+    return cents > minCents && cents < maxCents ? monzo : undefined
 }
 
 export {

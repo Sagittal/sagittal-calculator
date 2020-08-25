@@ -3,18 +3,18 @@ import { ComputeCommasFromFiveSlicedMonzoOptions } from "./types"
 
 const computeCommasFromFiveSlicedMonzo = (fiveSlicedMonzo: Monzo<5>, options: ComputeCommasFromFiveSlicedMonzoOptions) => {
     const {
-        lowerBound,
-        upperBound,
+        minCents,
+        maxCents,
         maxAbsoluteThreeExponent,
         maxApotomeSlope = Infinity,             // optional
         maxN2D3P9 = Infinity,                   // optional
     } = options || {}
 
-    if (typeof lowerBound === "undefined") {
-        throw new Error("Lower bound must be supplied.")
+    if (typeof minCents === "undefined") {
+        throw new Error("Min cents must be supplied.")
     }
-    if (typeof upperBound === "undefined") {
-        throw new Error("Upper bound must be supplied.")
+    if (typeof maxCents === "undefined") {
+        throw new Error("Max cents must be supplied.")
     }
     if (typeof maxAbsoluteThreeExponent === "undefined") {
         throw new Error("Max absolute three exponent must be supplied.")
@@ -24,7 +24,7 @@ const computeCommasFromFiveSlicedMonzo = (fiveSlicedMonzo: Monzo<5>, options: Co
 
     computePlusOrMinusRange(maxAbsoluteThreeExponent).forEach(three => {
         const threeSlicedMonzo: Monzo<3> = [three, ...fiveSlicedMonzo] as Monzo<3>
-        const monzo = computeMonzoInRange(threeSlicedMonzo, lowerBound, upperBound)
+        const monzo = computeMonzoInRange(threeSlicedMonzo, minCents, maxCents)
 
         if (monzo) {
             const analyzedComma = analyzeComma(monzo)

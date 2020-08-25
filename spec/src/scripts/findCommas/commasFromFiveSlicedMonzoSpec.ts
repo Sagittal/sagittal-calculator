@@ -7,13 +7,13 @@ describe("computeCommasFromFiveSlicedMonzo", () => {
     const fiveSlicedMonzo: Monzo<5> = [3, 5, -1] as Monzo<5>
 
     it("returns analyzed commas with the prime content from the five-rough monzo", () => {
-        const lowerBound = 40 as Min<Cents>
-        const upperBound = 40.1 as Max<Cents>
+        const minCents = 40 as Min<Cents>
+        const maxCents = 40.1 as Max<Cents>
         const maxAbsoluteThreeExponent = 12 as Max<Exponent<Prime>>
 
         const actual = computeCommasFromFiveSlicedMonzo(fiveSlicedMonzo, {
-            lowerBound,
-            upperBound,
+            minCents,
+            maxCents,
             maxAbsoluteThreeExponent,
         })
 
@@ -33,49 +33,49 @@ describe("computeCommasFromFiveSlicedMonzo", () => {
     })
 
     describe("errors", () => {
-        it("throws an error if the lower bound is not supplied", () => {
-            const upperBound = 40.1 as Max<Cents>
+        it("throws an error if the min cents is not supplied", () => {
+            const maxCents = 40.1 as Max<Cents>
             const maxAbsoluteThreeExponent = 12 as Max<Exponent<Prime>>
 
             expect(() => computeCommasFromFiveSlicedMonzo(fiveSlicedMonzo, {
-                upperBound,
+                maxCents,
                 maxAbsoluteThreeExponent,
             }))
-                .toThrowError("Lower bound must be supplied.")
+                .toThrowError("Min cents must be supplied.")
         })
 
-        it("throws an error if the upper bound is not supplied", () => {
-            const lowerBound = 40.1 as Min<Cents>
+        it("throws an error if the max cents is not supplied", () => {
+            const minCents = 40.1 as Min<Cents>
             const maxAbsoluteThreeExponent = 12 as Max<Exponent<Prime>>
 
             expect(() => computeCommasFromFiveSlicedMonzo(fiveSlicedMonzo, {
-                lowerBound,
+                minCents,
                 maxAbsoluteThreeExponent,
             }))
-                .toThrowError("Upper bound must be supplied.")
+                .toThrowError("Max cents must be supplied.")
         })
 
         it("throws an error if the max absolute three exponent is not supplied", () => {
-            const lowerBound = 40 as Min<Cents>
-            const upperBound = 40.1 as Max<Cents>
+            const minCents = 40 as Min<Cents>
+            const maxCents = 40.1 as Max<Cents>
 
-            expect(() => computeCommasFromFiveSlicedMonzo(fiveSlicedMonzo, { lowerBound, upperBound }))
+            expect(() => computeCommasFromFiveSlicedMonzo(fiveSlicedMonzo, { minCents, maxCents }))
                 .toThrowError("Max absolute three exponent must be supplied.")
         })
     })
 
     describe("max apotome slope", () => {
         it("does not include commas with apotome slope greater than it", () => {
-            const lowerBound = 40 as Min<Cents>
-            const upperBound = 40.1 as Max<Cents>
+            const minCents = 40 as Min<Cents>
+            const maxCents = 40.1 as Max<Cents>
             const maxAbsoluteThreeExponent = 12 as Max<Exponent<Prime>>
 
             const highMaxApotomeSlope = 10 as Max<ApotomeSlope>
             const lowMaxApotomeSlope = 8 as Max<ApotomeSlope>
 
             const resultWithHighMaxApotomeSlope = computeCommasFromFiveSlicedMonzo(fiveSlicedMonzo, {
-                lowerBound,
-                upperBound,
+                minCents,
+                maxCents,
                 maxAbsoluteThreeExponent,
                 maxApotomeSlope: highMaxApotomeSlope,
             })
@@ -94,8 +94,8 @@ describe("computeCommasFromFiveSlicedMonzo", () => {
             ]))
 
             const resultWithLowMaxApotomeSlope = computeCommasFromFiveSlicedMonzo(fiveSlicedMonzo, {
-                lowerBound,
-                upperBound,
+                minCents,
+                maxCents,
                 maxAbsoluteThreeExponent,
                 maxApotomeSlope: lowMaxApotomeSlope,
             })

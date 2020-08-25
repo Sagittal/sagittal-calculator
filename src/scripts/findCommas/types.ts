@@ -18,10 +18,10 @@ interface ComputeCommasOptions extends ComputeCommasFromFiveSlicedMonzoOptions, 
 }
 
 type ComputeCommasFromFiveSlicedMonzoOptions = Partial<{
-    lowerBound: Min<Cents>, // TODO: all lower and upper bounds should just be min cents and max cents
+    minCents: Min<Cents>,
+    maxCents: Max<Cents>,
     maxAbsoluteThreeExponent: Max<Exponent<Prime>>,
     maxApotomeSlope: Max<ApotomeSlope>,
-    upperBound: Max<Cents>,
     maxN2D3P9: Max<N2D3P9>,
 }>
 

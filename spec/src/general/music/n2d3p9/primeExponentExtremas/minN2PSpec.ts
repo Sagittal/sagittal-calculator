@@ -64,7 +64,7 @@ describe("computeMinN2PForCandidateMaxDenominatorPrimeExponentGivenMaxN2D3P9", (
         })
 
         // 15.625, the min from the list with gcp < denominator prime,
-        // is lower than 35.75, the min from the list with gcp > denominator prime;
+        // is less than 35.75, the min from the list with gcp > denominator prime;
         // however, the list with gcp < denominator prime therefore does not have the gcp included
         // because it will always be whatever the denominator prime is
         // so you actually have to multiply the 15.625 by the 7, getting 109.375
@@ -128,7 +128,7 @@ describe("computeMinN2PForCandidateMaxDenominatorPrimeExponentGivenMaxN2D3P9", (
         })
 
         // here, you still have to multiply the 15.625 by the 7, getting 109.375
-        // but this time that's lower than the 132.25 N2P
+        // but this time that's less than the 132.25 N2P
         // which is the min for the list where the gcp > denominator prime
         const expected = 109.375 as Min<N2P>
         expect(actual).toBe(expected)

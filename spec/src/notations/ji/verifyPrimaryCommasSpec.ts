@@ -15,8 +15,8 @@ describe("verifying primary commas", () => {
             console.log(`\n\n${symbol.ascii} ${commaName}\n\n`)
 
             const secondaryCommaZone = computeSecondaryCommaZone(symbol)
-            const lowerBound = secondaryCommaZone[ 0 ]
-            const upperBound = secondaryCommaZone[ 1 ]
+            const minCents = secondaryCommaZone[ 0 ]
+            const maxCents = secondaryCommaZone[ 1 ]
             const maxFiveRoughSopfr = 61 as Max<Sopfr<5>>
             const maxFiveRoughCopfr = 555 as Max<Copfr<5>>
             const maxApotomeSlope = 14 as Max<ApotomeSlope>
@@ -27,8 +27,8 @@ describe("verifying primary commas", () => {
             const sortKey = "fiveRoughSopfr"
 
             const commas = computeCommas({
-                lowerBound,
-                upperBound,
+                minCents,
+                maxCents,
                 maxFiveRoughSopfr,
                 maxFiveRoughCopfr,
                 maxApotomeSlope,

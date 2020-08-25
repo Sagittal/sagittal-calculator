@@ -39,7 +39,7 @@ describe("getSumOfSquaresAtSamplePointIfLocalMin", () => {
         // setSumOfSquaresAtSamplePoint(0.00666 as SumOfSquares, sumsOfSquares, [1, 1, 1, 2]) this example is NOT QUITE a local min!
     })
 
-    it("returns the sum-of-squares if it is lower at the sample point than at every adjacent sample point", () => {
+    it("returns the sum-of-squares if it is lesser at the sample point than at every adjacent sample point", () => {
         const samplePoint = [1, 0, 3, 2] as SamplePoint
 
         const actual = getSumOfSquaresAtSamplePointIfLocalMin(sumsOfSquares, samplePoint)
@@ -55,7 +55,7 @@ describe("getSumOfSquaresAtSamplePointIfLocalMin", () => {
         expect(actual).toEqual(0.00454 as SumOfSquares)
     })
 
-    it("returns undefined if the sum-of-squares is not lower at the sample point than at every adjacent sample point", () => {
+    it("returns undefined if the sum-of-squares is not less at the sample point than at every adjacent sample point", () => {
         const samplePoint = [1, 1, 1, 1] as SamplePoint
 
         const actual = getSumOfSquaresAtSamplePointIfLocalMin(sumsOfSquares, samplePoint)

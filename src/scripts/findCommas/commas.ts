@@ -5,8 +5,8 @@ import { ComputeCommasOptions } from "./types"
 
 const computeCommas = (options: ComputeCommasOptions) => {
     const {
-        lowerBound,
-        upperBound,
+        minCents,
+        maxCents,
         maxFiveRoughSopfr,
         maxFiveRoughCopfr,
         maxApotomeSlope,
@@ -32,8 +32,8 @@ const computeCommas = (options: ComputeCommasOptions) => {
             computeCommasFromFiveSlicedMonzo(
                 fiveSlicedMonzoToCheck,
                 {
-                    lowerBound,
-                    upperBound,
+                    minCents,
+                    maxCents,
                     maxApotomeSlope,
                     maxAbsoluteThreeExponent,
                     maxN2D3P9,

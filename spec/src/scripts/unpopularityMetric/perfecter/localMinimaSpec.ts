@@ -118,7 +118,7 @@ describe("computeLocalMinima", () => {
         expect(actual).toEqual(expected)
     })
 
-    it("does not include results if the sum of squares is not appreciably lower than the current local min", () => {
+    it("does not include results if the sum of squares is not appreciably less than the current local min", () => {
         const sumsOfSquares: SumsOfSquares = [
             [
                 [0.004 as SumOfSquares, 0.004 as SumOfSquares, 0.004 as SumOfSquares],
