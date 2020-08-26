@@ -1,7 +1,7 @@
 import * as fs from "fs"
 import { unformat } from "../../solver"
 
-const load = (filename: string) => {
+const load = (filename: string): Object => {
     return JSON.parse(
         unformat(
             fs.readFileSync(

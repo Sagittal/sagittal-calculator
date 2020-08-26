@@ -6,6 +6,7 @@ import { computeMonzoInRange } from "./monzoInRange"
 import {
     computeN2D3P9,
     computePrimeExponentExtremasGivenMaxN2D3P9,
+    DEFAULT_N2D3P9_PRECISION,
     N2D3P9,
 } from "./n2d3p9"
 import { ApotomeSlope, Cents, Popularity, Position, Votes } from "./types"
@@ -26,4 +27,5 @@ export {
     Votes,
     computeApotomeSlope,
     computeMonzoInRange,
+    DEFAULT_N2D3P9_PRECISION,
 }

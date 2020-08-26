@@ -1,4 +1,4 @@
-import { computeMonzoInRange, computePlusOrMinusRange, Monzo } from "../../general"
+import { abs, computeMonzoInRange, computePlusOrMinusRange, Monzo } from "../../general"
 import { analyzeComma, SagittalComma } from "../../notations"
 import { ComputeCommasFromFiveSlicedMonzoOptions } from "./types"
 
@@ -30,7 +30,7 @@ const computeCommasFromFiveSlicedMonzo = (fiveSlicedMonzo: Monzo<5>, options: Co
         if (monzo) {
             const analyzedComma = analyzeComma(monzo)
 
-            if (Math.abs(analyzedComma.apotomeSlope) > maxApotomeSlope) {
+            if (abs(analyzedComma.apotomeSlope) > maxApotomeSlope) {
                 return
             }
 

@@ -7,7 +7,7 @@ import { applySharedUnpopularityMetricCommandSetup, load } from "../shared"
 
 applySharedUnpopularityMetricCommandSetup()
 
-const potentiallyRottens = load("metrics") as unknown as Record<string, Metric>
+const potentiallyRottens = load("metrics") as Record<string, Metric>
 
 const realPopularities: Array<Ranked<Popularity>> = COMMA_POPULARITIES.slice(0, unpopularityMetricSettings.onlyTop)
 

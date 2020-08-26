@@ -7,24 +7,24 @@ import { Submetric } from "../../../../../src/scripts/unpopularityMetric/sumOfSq
 
 describe("computeLocalMinima", () => {
     const samples: Sample[] = [
-        { samplePoint: [0, 0, 0] as SamplePoint, submetrics: [] as unknown as Combination<Submetric> },
-        { samplePoint: [0, 0, 1] as SamplePoint, submetrics: [] as unknown as Combination<Submetric> },
-        { samplePoint: [0, 0, 2] as SamplePoint, submetrics: [] as unknown as Combination<Submetric> },
-        { samplePoint: [0, 1, 0] as SamplePoint, submetrics: [] as unknown as Combination<Submetric> },
-        { samplePoint: [0, 1, 1] as SamplePoint, submetrics: [] as unknown as Combination<Submetric> },
-        { samplePoint: [0, 1, 2] as SamplePoint, submetrics: [] as unknown as Combination<Submetric> },
-        { samplePoint: [1, 0, 0] as SamplePoint, submetrics: [] as unknown as Combination<Submetric> },
-        { samplePoint: [1, 0, 1] as SamplePoint, submetrics: [] as unknown as Combination<Submetric> },
-        { samplePoint: [1, 0, 2] as SamplePoint, submetrics: [] as unknown as Combination<Submetric> },
-        { samplePoint: [1, 1, 0] as SamplePoint, submetrics: [] as unknown as Combination<Submetric> },
-        { samplePoint: [1, 1, 1] as SamplePoint, submetrics: [] as unknown as Combination<Submetric> },
-        { samplePoint: [1, 1, 2] as SamplePoint, submetrics: [] as unknown as Combination<Submetric> },
-        { samplePoint: [2, 0, 0] as SamplePoint, submetrics: [] as unknown as Combination<Submetric> },
-        { samplePoint: [2, 0, 1] as SamplePoint, submetrics: [] as unknown as Combination<Submetric> },
-        { samplePoint: [2, 0, 2] as SamplePoint, submetrics: [] as unknown as Combination<Submetric> },
-        { samplePoint: [2, 1, 0] as SamplePoint, submetrics: [] as unknown as Combination<Submetric> },
-        { samplePoint: [2, 1, 1] as SamplePoint, submetrics: [] as unknown as Combination<Submetric> },
-        { samplePoint: [2, 1, 2] as SamplePoint, submetrics: [] as unknown as Combination<Submetric> },
+        { samplePoint: [0, 0, 0] as SamplePoint, submetrics: [] as unknown[] as Combination<Submetric> },
+        { samplePoint: [0, 0, 1] as SamplePoint, submetrics: [] as unknown[] as Combination<Submetric> },
+        { samplePoint: [0, 0, 2] as SamplePoint, submetrics: [] as unknown[] as Combination<Submetric> },
+        { samplePoint: [0, 1, 0] as SamplePoint, submetrics: [] as unknown[] as Combination<Submetric> },
+        { samplePoint: [0, 1, 1] as SamplePoint, submetrics: [] as unknown[] as Combination<Submetric> },
+        { samplePoint: [0, 1, 2] as SamplePoint, submetrics: [] as unknown[] as Combination<Submetric> },
+        { samplePoint: [1, 0, 0] as SamplePoint, submetrics: [] as unknown[] as Combination<Submetric> },
+        { samplePoint: [1, 0, 1] as SamplePoint, submetrics: [] as unknown[] as Combination<Submetric> },
+        { samplePoint: [1, 0, 2] as SamplePoint, submetrics: [] as unknown[] as Combination<Submetric> },
+        { samplePoint: [1, 1, 0] as SamplePoint, submetrics: [] as unknown[] as Combination<Submetric> },
+        { samplePoint: [1, 1, 1] as SamplePoint, submetrics: [] as unknown[] as Combination<Submetric> },
+        { samplePoint: [1, 1, 2] as SamplePoint, submetrics: [] as unknown[] as Combination<Submetric> },
+        { samplePoint: [2, 0, 0] as SamplePoint, submetrics: [] as unknown[] as Combination<Submetric> },
+        { samplePoint: [2, 0, 1] as SamplePoint, submetrics: [] as unknown[] as Combination<Submetric> },
+        { samplePoint: [2, 0, 2] as SamplePoint, submetrics: [] as unknown[] as Combination<Submetric> },
+        { samplePoint: [2, 1, 0] as SamplePoint, submetrics: [] as unknown[] as Combination<Submetric> },
+        { samplePoint: [2, 1, 1] as SamplePoint, submetrics: [] as unknown[] as Combination<Submetric> },
+        { samplePoint: [2, 1, 2] as SamplePoint, submetrics: [] as unknown[] as Combination<Submetric> },
     ]
 
     it("returns an empty array if all the values are the same", () => {
@@ -136,7 +136,7 @@ describe("computeLocalMinima", () => {
         const localMin: LocalMin = {
             sumOfSquares: 0.00300001 as SumOfSquares,
             samplePoint: [0] as SamplePoint,
-            submetrics: [] as unknown as Combination<Submetric>,
+            submetrics: [] as unknown[] as Combination<Submetric>,
         }
 
         const actual = computeLocalMinima(samples, sumsOfSquares, localMin)

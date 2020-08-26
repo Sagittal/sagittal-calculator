@@ -6,6 +6,7 @@ import { dig } from "./dig"
 import { doOnNextEventLoop } from "./doOnNextEventLoop"
 import { computeExtensionBase } from "./extensionBase"
 import { computeIsCloseTo } from "./isCloseTo"
+import { computeIsEmpty } from "./isEmpty"
 import { merge } from "./merge"
 import { computePlusOrMinusRange } from "./plusOrMinusRange"
 import { computeRange } from "./range"
@@ -37,5 +38,6 @@ export {
     RankStrategy,
     computeTrimmedArray,
     computeExtensionBase,
+    computeIsEmpty,
     ExtensionBaseType,
 }

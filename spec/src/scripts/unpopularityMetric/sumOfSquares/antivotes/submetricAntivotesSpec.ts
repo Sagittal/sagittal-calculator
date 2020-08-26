@@ -1,4 +1,5 @@
-import { computeLog, Monzo } from "../../../../../../src/general/math"
+import { log, Monzo } from "../../../../../../src/general/math"
+import { Base, Power } from "../../../../../../src/general/math/types"
 import { Parameter, ParameterValue, Submetric } from "../../../../../../src/scripts/unpopularityMetric/sumOfSquares"
 import { computeSubmetricAntivotes } from "../../../../../../src/scripts/unpopularityMetric/sumOfSquares/antivotes/submetricAntivotes"
 import { Antivotes } from "../../../../../../src/scripts/unpopularityMetric/sumOfSquares/types"
@@ -68,9 +69,9 @@ describe("computeSubmetricAntivotes", () => {
             const actual = computeSubmetricAntivotes(fiveRoughNumberMonzo, submetric)
 
             expect(actual).toBe(
-                1 * computeLog(11, aAsLogarithmBase) +
-                1 * computeLog(13, aAsLogarithmBase) +
-                2 * computeLog(17, aAsLogarithmBase) as Antivotes,
+                1 * log(11 as Power, aAsLogarithmBase as number as Base) +
+                1 * log(13 as Power, aAsLogarithmBase as number as Base) +
+                2 * log(17 as Power, aAsLogarithmBase as number as Base) as Antivotes,
             )
         })
 

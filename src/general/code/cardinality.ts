@@ -1,10 +1,13 @@
-const computeCardinality = <T>(array: T[]) => {
+import { count } from "../math"
+import { Count } from "../types"
+
+const computeCardinality = (array: unknown[]): Array<Count> => {
     const cardinality = []
 
     let cursor = array
     while (typeof cursor === "object") {
-        cardinality.push(cursor.length)
-        cursor = cursor[ 0 ] as unknown as T[]
+        cardinality.push(count(cursor))
+        cursor = cursor[ 0 ] as unknown[]
     }
 
     return cardinality

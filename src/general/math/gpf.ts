@@ -1,6 +1,5 @@
 import { computeTrimmedArray } from "../code"
-import { Integer, Prime, PRIMES } from "../math"
-import { Max } from "../types"
+import { Integer, Max, Prime, PRIMES } from "../math"
 import { computeMonzoFromIntegerOrMonzo } from "./monzoFromIntegerOrMonzo"
 import { Monzo } from "./types"
 

@@ -1,4 +1,4 @@
-import { round } from "../../../general"
+import { PRESENTATIONAL_PRECISION, round } from "../../../general"
 import { Mina } from "../../../notations"
 
 const presentMina = (mina: Mina | undefined) => {
@@ -6,7 +6,7 @@ const presentMina = (mina: Mina | undefined) => {
         return "       "
     }
 
-    let presentedMina = round(mina, 3).toString()
+    let presentedMina = round(mina, PRESENTATIONAL_PRECISION).toString()
 
     let decimalPointIndex = presentedMina.indexOf(".")
 

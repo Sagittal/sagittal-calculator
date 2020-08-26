@@ -1,3 +1,4 @@
+import { round } from "../../../general"
 import { nonRecursiveSearchScopeAndMaybeUpdateBestMetric, Scope } from "../bestMetric"
 import { DebugTarget, saveDebugMessage } from "../debug"
 import { computeIndentation } from "./indentation"
@@ -18,7 +19,7 @@ const recursiveSearchScopeAndMaybeUpdateBestMetric = async (scope: Scope, option
     const { dynamicParameters, samples, sumsOfSquares, metricName } = await nonRecursiveSearchScopeAndMaybeUpdateBestMetric(scope, { onlyWinners })
 
     const nextLocalMinima = computeLocalMinima(samples, sumsOfSquares, localMin)
-    saveDebugMessage(`${indentation}id ${metricId} - ${nextLocalMinima.length} lcl min / ${samples.length} samples (${Math.round(100 * nextLocalMinima.length / samples.length)}%)`, DebugTarget.PERFECT)
+    saveDebugMessage(`${indentation}id ${metricId} - ${nextLocalMinima.length} lcl min / ${samples.length} samples (${round(100 * nextLocalMinima.length / samples.length)}%)`, DebugTarget.PERFECT)
 
     const nextLocalMinimaPromises: Promise<void>[] = nextLocalMinima.map((nextLocalMin, index) => {
         return searchNextLocalMin(nextLocalMin, {

@@ -1,6 +1,5 @@
-import { Exponent, Monzo, Prime } from "../math"
+import { Exponent, Max, Min, Monzo, Prime } from "../math"
 import { computeCentsFromMonzo } from "../music"
-import { Max, Min } from "../types"
 import { CENTS_PER_OCTAVE } from "./constants"
 import { Cents } from "./types"
 

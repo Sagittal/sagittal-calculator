@@ -6,7 +6,7 @@ import { FORMATTED_RANK_NAMES } from "./rank"
 const presentLevelAnalysis = (level: Level, levelsBestHistoryRanks: { [ index: number ]: number | undefined }, levelsBestCumulativeHistoryRanks: { [ index: number ]: number }) => {
     const presentedLevelAnalysis: string[] = [`${presentLevel(level)}            \there\tcmltv`]
 
-    const levelsBestHistoryRanksEntries = Object.entries(levelsBestHistoryRanks) as unknown as Array<[number, number]>
+    const levelsBestHistoryRanksEntries = Object.entries(levelsBestHistoryRanks) as unknown[] as Array<[number, number]>
 
     levelsBestHistoryRanksEntries.forEach(([rankIndex, bestHistoryRankCount]) => {
         let presentedBestHistoryRankCount = bestHistoryRankCount.toString()

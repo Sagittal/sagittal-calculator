@@ -1,3 +1,4 @@
+import { BASE_2, Exponent, pow } from "../../general"
 import { LEVELS } from "../../notations"
 import {
     BINARY_SCORE_REPRESENTATION_CARDINALITY,
@@ -19,7 +20,7 @@ const computeScore = (analyzedEvents: AnalyzedEvent[]): Score => {
 
     return binaryScoreRepresentation.reduce(
         (score, binaryScoreRepresentationTerm, index): Score =>
-            score + binaryScoreRepresentationTerm * Math.pow(2, index) as Score,
+            score + binaryScoreRepresentationTerm * pow(BASE_2, index as Exponent) as Score,
         0 as Score,
     ) as Score
 }

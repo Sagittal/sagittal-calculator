@@ -1,5 +1,4 @@
-import { computeGpf } from "../../../math"
-import { Max } from "../../../types"
+import { computeGpf, Max } from "../../../math"
 import { N2D3P9 } from "../types"
 import { computePossibleNumeratorsGivenMaxN2D3P3 } from "./possibleNumerators"
 import { NumeratorPossibilityGivenMaxN2D3P3 } from "./types"

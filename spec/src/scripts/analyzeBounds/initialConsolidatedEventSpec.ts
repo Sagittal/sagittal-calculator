@@ -1,6 +1,11 @@
 import { Cents, Name, Position, Rank } from "../../../../src/general"
 import { computeInitialConsolidatedEvent } from "../../../../src/scripts/analyzeBounds/initialConsolidatedEvent"
-import { AnalyzedEvent, ConsolidatedEvent, EventType } from "../../../../src/scripts/analyzeBounds/types"
+import {
+    AnalyzedEvent,
+    ConsolidatedEvent,
+    EventType,
+    HistoricalEvent,
+} from "../../../../src/scripts/analyzeBounds/types"
 import { analyzedEventFixture } from "../../../helpers/src/scripts/analyzeBounds/fixtures"
 
 describe("computeInitialConsolidatedEvent", () => {
@@ -23,7 +28,7 @@ describe("computeInitialConsolidatedEvent", () => {
     })
 
     it("strips off the rank that was created in the analyze step, replacing it with the rank measurements that are appropriate for the consolidated history", () => {
-        expect((actual as unknown as AnalyzedEvent).rank).toBeUndefined()
+        expect((actual as HistoricalEvent as AnalyzedEvent).rank).toBeUndefined()
     })
 
     it("initializes to assume that it is not a member of a history which is possible (if one ever comes across which is possible, then it never goes back to being considered not possible)", () => {

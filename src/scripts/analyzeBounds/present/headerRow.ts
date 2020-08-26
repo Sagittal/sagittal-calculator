@@ -1,7 +1,9 @@
+import { max } from "../../../general"
+
 const COLUMN_WIDTH = 7
 
 const presentHeaderRow = (columnHeaders: string[][]) => {
-    const maxColumnHeaderHeight = Math.max(...columnHeaders.map(columnHeader => columnHeader.length))
+    const maxColumnHeaderHeight = max(...columnHeaders.map(columnHeader => columnHeader.length))
 
     const rows: string[][] = [...Array(maxColumnHeaderHeight).keys()].map(row => [] as string[])
 

@@ -1,4 +1,6 @@
-const ACCURACY_THRESHOLD = 6
+import { Integer } from "../math"
+
+const ACCURACY_THRESHOLD = 6 as Integer
 
 const ARRAY_EXTENSION_BASE: unknown[] = []
 const OBJECT_EXTENSION_BASE: unknown = {}

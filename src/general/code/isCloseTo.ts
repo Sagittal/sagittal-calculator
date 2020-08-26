@@ -1,10 +1,10 @@
-import { round } from "../math"
+import { abs, round } from "../math"
 import { ACCURACY_THRESHOLD } from "./constants"
 
-const computeIsCloseTo = <T extends number>(valueOne: T, valueTwo: T, accuracyThreshold = ACCURACY_THRESHOLD) => {
+const computeIsCloseTo = (valueOne: number, valueTwo: number, accuracyThreshold = ACCURACY_THRESHOLD): boolean => {
     const difference = valueOne - valueTwo
 
-    return Math.abs(round(difference, accuracyThreshold)) === 0
+    return abs(round(difference, accuracyThreshold)) === 0
 }
 
 export {

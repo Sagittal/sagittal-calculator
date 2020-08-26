@@ -1,5 +1,6 @@
 import { sort } from "../../../code"
-import { computeCopfr, Numerator } from "../../../math"
+import { BASE_2, computeCopfr, Exponent, Numerator, pow, Prime } from "../../../math"
+import { Count } from "../../../types"
 import {
     ComputeSortedNumeratorPossibilitiesOptions,
     N2,
@@ -8,7 +9,7 @@ import {
 } from "./types"
 
 const computeN2 = (possibleNumerator: Numerator): N2 => {
-    return possibleNumerator / Math.pow(2, computeCopfr(possibleNumerator)) as N2
+    return possibleNumerator / pow(BASE_2, computeCopfr(possibleNumerator) as Exponent<Count<Prime>>) as N2
 }
 
 const computeNumeratorPossibilitiesGivenMaxN2D3P9WithLesserGpfThanDenominatorPrimeSortedByN2 = ({ denominatorPrime, numeratorPossibilitiesGivenMaxN2D3P3 }: ComputeSortedNumeratorPossibilitiesOptions): NumeratorPossibilityWithLesserGpfThanDenominatorPrimeIncludingN2[] => {

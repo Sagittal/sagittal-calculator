@@ -1,5 +1,5 @@
-import { Exponent, Numerator, Prime } from "../../../math"
-import { Extrema, Max } from "../../../types"
+import { Exponent, Max, Numerator, Prime } from "../../../math"
+import { Extrema } from "../../../types"
 
 const INITIAL_MAX_NUMERATOR_PRIME_EXPONENTS_FOR_TWO_AND_THREE = [0, 0] as Array<Max<Exponent<Prime<Numerator>>>>
 

@@ -1,10 +1,10 @@
-import { Cents } from "../../../general"
+import { ceil, Cents } from "../../../general"
 import { MAX_POSITION } from "../../../notations"
 import { MARGIN, Y_SCALE } from "./sizes"
 import { computeX } from "./x"
 
 const visualizeCents = () => {
-    const cents: Cents[] = [...Array(Math.ceil(MAX_POSITION)).keys()] as Cents[]
+    const cents: Cents[] = [...Array(ceil(MAX_POSITION)).keys()] as Cents[]
 
     const centElements: string[] = []
     const centsY = Y_SCALE * MARGIN

@@ -25,7 +25,7 @@ describe("computeCombinations", () => {
 
         const actual = computeCombinations(set, count)
 
-        const expected: Combinations<string> = [] as unknown as Combinations<string>
+        const expected: Combinations<string> = [] as unknown[] as Combinations<string>
         expect(actual).toEqual(expected)
     })
 

@@ -1,10 +1,10 @@
-import { isSubMonzo, Monzo } from "../../../../src/general/math"
+import { computeIsSubMonzo, Monzo } from "../../../../src/general/math"
 
-describe("isSubMonzo", () => {
+describe("computeIsSubMonzo", () => {
     it("returns false if the monzo is super", () => {
         const monzo = [-1, 1] as Monzo      // 3/2 = 1.5 > 1
 
-        const actual = isSubMonzo(monzo)
+        const actual = computeIsSubMonzo(monzo)
 
         expect(actual).toBeFalsy()
     })
@@ -12,7 +12,7 @@ describe("isSubMonzo", () => {
     it("returns true if the monzo is sub", () => {
         const monzo = [1, -1] as Monzo      // 2/3 = 0.667 < 1
 
-        const actual = isSubMonzo(monzo)
+        const actual = computeIsSubMonzo(monzo)
 
         expect(actual).toBeTruthy()
     })

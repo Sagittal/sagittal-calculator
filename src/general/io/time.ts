@@ -1,9 +1,11 @@
+import { floor, round } from "../math"
+
 const presentTime = (ms: number) => {
-    const milliseconds = Math.round(ms % 1000)
-    const seconds = Math.floor((ms / 1000) % 60)
-    const minutes = Math.floor((ms / (1000 * 60)) % 60)
-    const hours = Math.floor((ms / (1000 * 60 * 60)) % 24)
-    const days = Math.floor((ms / (1000 * 60 * 60 * 24)) % 365.25)
+    const milliseconds = round(ms % 1000)
+    const seconds = floor((ms / 1000) % 60)
+    const minutes = floor((ms / (1000 * 60)) % 60)
+    const hours = floor((ms / (1000 * 60 * 60)) % 24)
+    const days = floor((ms / (1000 * 60 * 60 * 24)) % 365.25)
 
     const parts = []
 

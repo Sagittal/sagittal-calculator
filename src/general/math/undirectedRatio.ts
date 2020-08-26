@@ -5,7 +5,7 @@ const computeUndirectedRatio = (ratio: Ratio): UndirectedRatio => {
 
     return numerator > denominator ?
         ratio as UndirectedRatio :
-        [denominator as unknown as Numerator, numerator as unknown as Denominator] as UndirectedRatio
+        [denominator as number as Numerator, numerator as number as Denominator] as UndirectedRatio
 }
 
 export {

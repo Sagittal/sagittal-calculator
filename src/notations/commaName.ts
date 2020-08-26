@@ -6,7 +6,7 @@ import {
     computeRoughNumberMonzo,
     computeSuperMonzo,
     computeUndirectedRatio,
-    isSubMonzo,
+    computeIsSubMonzo,
     Monzo,
     Name,
     PRIMES,
@@ -39,7 +39,7 @@ const primeFactorizeCommaName = (numeratorOrDenominator: number) => {
 }
 
 const computeCommaName = (monzo: Monzo, { directed = true, factored = false, abbreviated = true } = {}): Name<SagittalComma> => {
-    const sub = isSubMonzo(monzo)
+    const sub = computeIsSubMonzo(monzo)
 
     const superMonzo = computeSuperMonzo(monzo)
     const cents: Cents = computeCentsFromMonzo(superMonzo)

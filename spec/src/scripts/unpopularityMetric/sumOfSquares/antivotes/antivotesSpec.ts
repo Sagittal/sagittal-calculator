@@ -1,6 +1,7 @@
 import { Combination, Monzo, Ratio, round } from "../../../../../../src/general/math"
 import { Parameter, ParameterValue, Submetric } from "../../../../../../src/scripts/unpopularityMetric/sumOfSquares"
 import { computeAntivotes } from "../../../../../../src/scripts/unpopularityMetric/sumOfSquares/antivotes"
+import { ANTIVOTES_PRECISION } from "../../../../../../src/scripts/unpopularityMetric/sumOfSquares/antivotes/constants"
 import { computeSubmetricAntivotes } from "../../../../../../src/scripts/unpopularityMetric/sumOfSquares/antivotes/submetricAntivotes"
 import { Antivotes } from "../../../../../../src/scripts/unpopularityMetric/sumOfSquares/types"
 
@@ -18,7 +19,7 @@ describe("computeAntivotes", () => {
         const balancedResult = computeAntivotes(balancedFiveRoughRatio, submetrics)
         const lopsidedResult = computeAntivotes(lopsidedFiveRoughRatio, submetrics)
 
-        expect(balancedResult).toBe(lopsidedResult)
+        expect(balancedResult).toBeCloseTo(lopsidedResult, ANTIVOTES_PRECISION)
     })
 
     it("when k < 1, two 5-rough ratios have the same sopfr, but one has its primes all lopsided on one side, it gets ranked worse", () => {
@@ -55,7 +56,7 @@ describe("computeAntivotes", () => {
         const expected =
             0.5 * computeSubmetricAntivotes([0, 0, 0, 1, 1] as Monzo, { [ Parameter.SUM ]: true }) as Antivotes +
             0.3 * computeSubmetricAntivotes([0, 0, 0, 1, 1] as Monzo, { [ Parameter.SUM ]: true }) as Antivotes
-        expect(actual).toBe(round(expected, 9))
+        expect(actual).toBeCloseTo(expected, ANTIVOTES_PRECISION)
     })
 
     it("should not return NaN", () => {
@@ -77,7 +78,7 @@ describe("computeAntivotes", () => {
         expect(actual).not.toBeNaN()
     })
 
-    it("should round results to billionths", () => {
+    it("antivotes precision should round results to billionths", () => {
         const submetrics = [
             {
                 [ Parameter.SUM ]: true,

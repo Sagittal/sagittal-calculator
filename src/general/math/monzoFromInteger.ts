@@ -1,4 +1,4 @@
-import { Exponent, Integer, Prime, PRIMES } from "../math"
+import { Exponent, floor, Integer, Prime, PRIMES } from "../math"
 import { Monzo } from "./types"
 
 const computeMonzoFromInteger = (integer: Integer): Monzo => {
@@ -6,7 +6,7 @@ const computeMonzoFromInteger = (integer: Integer): Monzo => {
         throw new Error("The prime factorization of zero is not defined.")
     }
 
-    const monzo: Monzo = [] as unknown as Monzo
+    const monzo: Monzo = [] as unknown[] as Monzo
     let remnant = integer
 
     const computePrimeFactorizationForPrimeAtIndexAndUpdateRemnant = (index: number) => {
@@ -19,7 +19,7 @@ const computeMonzoFromInteger = (integer: Integer): Monzo => {
             }
 
             while (remainder === 0) {
-                remnant = Math.floor(remnant / divisor) as Integer // TODO: floor and ceil helpers which return Integers can probably snag from Musical Patterns
+                remnant = floor(remnant / divisor)
                 monzo[ index ] = monzo[ index ] + 1 as Exponent<Prime>
                 remainder = remnant % divisor
             }

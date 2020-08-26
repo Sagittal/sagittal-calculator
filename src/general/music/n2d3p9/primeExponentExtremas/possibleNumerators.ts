@@ -1,5 +1,4 @@
-import { computeIsRough, FIVE_ROUGHNESS, Numerator } from "../../../math"
-import { Max } from "../../../types"
+import { computeIsRough, FIVE_ROUGHNESS, Max, Numerator } from "../../../math"
 import { N2D3P9 } from "../types"
 import { computeMaxNumeratorGivenMaxN2D3P3 } from "./numerator"
 

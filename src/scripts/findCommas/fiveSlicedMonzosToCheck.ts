@@ -30,7 +30,7 @@ const computeFiveSlicedMonzosToCheck = ({ maxPrimeLimit, maxFiveRoughSopfr, maxF
     }
 
     let fiveSlicedMonzosToCheck: Array<Monzo<5>> = [
-        [] as unknown as Monzo<5>,
+        [] as unknown[] as Monzo<5>,
     ]
 
     const primeExponentExtremasGivenMaxN2D3P9: Array<Extrema<Exponent<Prime>>> | undefined = maxN2D3P9 && computePrimeExponentExtremasGivenMaxN2D3P9(maxN2D3P9)

@@ -1,7 +1,7 @@
 import { computeRatioFromMonzo } from "./ratioFromMonzo"
 import { Monzo } from "./types"
 
-const isSubMonzo = (monzo: Monzo): boolean => {
+const computeIsSubMonzo = (monzo: Monzo): boolean => {
     const ratio = computeRatioFromMonzo(monzo)
     const value = ratio[ 0 ] / ratio[ 1 ]
 
@@ -9,5 +9,5 @@ const isSubMonzo = (monzo: Monzo): boolean => {
 }
 
 export {
-    isSubMonzo,
+    computeIsSubMonzo,
 }

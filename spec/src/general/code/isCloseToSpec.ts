@@ -1,4 +1,5 @@
 import { computeIsCloseTo } from "../../../../src/general/code"
+import { Integer } from "../../../../src/general/math"
 
 describe("computeIsCloseTo", () => {
     it("returns true if the two values are very close", () => {
@@ -23,7 +24,7 @@ describe("computeIsCloseTo", () => {
         const valueOne = 5.6862
         const valueTwo = 5.6858
 
-        const actual = computeIsCloseTo(valueOne, valueTwo, 3)
+        const actual = computeIsCloseTo(valueOne, valueTwo, 3 as Integer)
 
         expect(actual).toBeTruthy()
     })

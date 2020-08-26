@@ -1,6 +1,5 @@
 import { sort } from "../../../code"
-import { computeIntegerFromMonzo, Monzo, Numerator } from "../../../math"
-import { Max } from "../../../types"
+import { computeIntegerFromMonzo, Max, Monzo, Numerator } from "../../../math"
 import { computeN2D3P9 } from "../n2d3p9"
 import { N2D3P9 } from "../types"
 

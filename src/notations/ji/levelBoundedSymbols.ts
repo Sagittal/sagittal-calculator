@@ -1,4 +1,4 @@
-import { Cents } from "../../general"
+import { abs, Cents } from "../../general"
 import { computeBoundedSymbolPositions } from "./boundedSymbolPositions"
 import { BOUNDS } from "./bounds"
 import { computeInaDistance } from "./inaDistance"
@@ -16,7 +16,7 @@ const computeLevelBoundedSymbolIdWithDistances = (bound: Bound): BoundIdWithBoun
                 .map(symbolId => symbolId && getSymbol(symbolId))
             const levelBoundedSymbolsWithDistance = levelBoundedSymbols.map(symbol => {
                 if (symbol) {
-                    const distance: Cents = Math.abs(cents - symbol.primaryComma.cents) as Cents
+                    const distance: Cents = abs(cents - symbol.primaryComma.cents) as Cents
 
                     return {
                         id: symbol.id,

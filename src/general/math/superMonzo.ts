@@ -1,9 +1,9 @@
 import { invertMonzo } from "./invertMonzo"
-import { isSubMonzo } from "./isSubMonzo"
+import { computeIsSubMonzo } from "./isSubMonzo"
 import { Monzo } from "./types"
 
 const computeSuperMonzo = (monzo: Monzo) => {
-    if (isSubMonzo(monzo)) {
+    if (computeIsSubMonzo(monzo)) {
         return invertMonzo(monzo)
     }
 

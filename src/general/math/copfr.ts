@@ -1,4 +1,4 @@
-import { Integer, Prime } from "../math"
+import { abs, Integer, Prime } from "../math"
 import { Count } from "../types"
 import { computeMonzoFromIntegerOrMonzo } from "./monzoFromIntegerOrMonzo"
 import { Copfr, Monzo } from "./types"
@@ -10,7 +10,7 @@ const computeCopfr = (integerOrMonzo: Integer | Monzo): Copfr => {
 
     return monzo.reduce(
         (copfr, primeExponent) =>
-            copfr + Math.abs(primeExponent) as Count<Prime>,
+            copfr + abs(primeExponent) as Count<Prime>,
         0 as Copfr,
     )
 }

@@ -1,3 +1,4 @@
+import { Count } from "../../../../src/general"
 import { computeCardinality } from "../../../../src/general/code/cardinality"
 
 describe("computeCardinality", () => {
@@ -19,7 +20,7 @@ describe("computeCardinality", () => {
 
         const actual = computeCardinality(array)
 
-        const expected = [3, 2, 3]
+        const expected = [3, 2, 3] as Count[]
         expect(actual).toEqual(expected)
     })
 })

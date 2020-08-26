@@ -1,5 +1,5 @@
-import { Exponent, FIVE_PRIME_INDEX, Numerator, Prime, PRIMES } from "../../../math"
-import { Index, Max } from "../../../types"
+import { Exponent, FIVE_PRIME_INDEX, Max, Numerator, Prime, PRIMES } from "../../../math"
+import { Index } from "../../../types"
 import { N2D3P9 } from "../types"
 import { INITIAL_MAX_NUMERATOR_PRIME_EXPONENTS_FOR_TWO_AND_THREE } from "./constants"
 import { computeMaxNumeratorPrimeExponentGivenMaxN2D3P3 } from "./maxNumeratorPrimeExponent"

@@ -1,4 +1,4 @@
-import { Integer } from "./math"
+import { Integer, Min, Max } from "./math"
 
 // Numeric types where parameter is not numeric
 type Index<T = void> = Integer & { _IndexBrand: "Index" } & (T extends void ? {} : { _IndexOfBrand: T })
@@ -14,30 +14,15 @@ type Sum<T extends number | void = void> =
     number
     & { _SumBrand: "Sum" }
     & (T extends void ? {} : T & { _SumOfBrand: T })
-type Span<T extends number | void = void> =
-    number
-    & { _SpanBrand: "Span" }
-    & (T extends void ? {} : T & { _SpanOfBrand: T })
-type Unit<T extends number | void = void> =
-    number
-    & { _UnitBrand: "Unit" }
-    & (T extends void ? {} : T & { _UnitOfBrand: T })
-type Max<T extends number | void = void> =
-    number
-    & { _MaxBrand: "Max" }
-    & (T extends void ? {} : T & { _MaxOfBrand: T })
-type Min<T extends number | void = void> =
-    number
-    & { _MinBrand: "Min" }
-    & (T extends void ? {} : T & { _MinOfBrand: T })
-type Resolution<T = void> =
-    number
-    & { _ResolutionBrand: "Resolution" }
-    & (T extends void ? {} : T & { _ResolutionOfBrand: T })
+
+// These are more just like labels, not changing the fundamental numeric nature of the quantity
+type Span<T extends number = number> = T & { _SpanBrand: "Span" }
+type Unit<T extends number = number> = T & { _UnitBrand: "Unit" }
+type Resolution<T extends number = number> = T & { _ResolutionBrand: "Resolution" }
 
 type Name<T = void> = string & { _NameBrand: "Name" } & (T extends void ? {} : { _NameOfBrand: T })
 
-type Extrema<T extends number | void = void> = [Min<T>, Max<T>]
+type Extrema<T extends number = number> = [Min<T>, Max<T>]
 
 export {
     Proportion,
@@ -49,7 +34,5 @@ export {
     Unit,
     Resolution,
     Name,
-    Max,
-    Min,
     Extrema,
 }

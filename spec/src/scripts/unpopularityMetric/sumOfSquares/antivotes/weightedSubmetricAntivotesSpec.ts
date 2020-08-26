@@ -1,4 +1,6 @@
-import { computeLog, Ratio } from "../../../../../../src/general"
+import { log, Ratio } from "../../../../../../src/general"
+import { Power } from "../../../../../../src/general/math"
+import { BASE_2 } from "../../../../../../src/general/math/constants"
 import { Parameter } from "../../../../../../src/scripts/unpopularityMetric/sumOfSquares"
 import * as ratioSubmetricAntivotes
     from "../../../../../../src/scripts/unpopularityMetric/sumOfSquares/antivotes/ratioSubmetricAntivotes"
@@ -62,7 +64,7 @@ describe("computeWeightedSubmetricAntivotes", () => {
 
         const actual = computeWeightedSubmetricAntivotes(fiveRoughRatio, submetric)
 
-        const expected = computeLog(ratioSubmetricAntivotes.computeRatioSubmetricAntivotes(fiveRoughRatio, { [ Parameter.SUM ]: true }), 2) as Antivotes
+        const expected = log(ratioSubmetricAntivotes.computeRatioSubmetricAntivotes(fiveRoughRatio, { [ Parameter.SUM ]: true }) as number as Power, BASE_2) as number as Antivotes
         expect(actual).toBe(expected)
     })
 

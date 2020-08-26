@@ -1,5 +1,7 @@
-const PRESENTATIONAL_ACCURACY = 3
+import { Integer } from "../math"
+
+const PRESENTATIONAL_PRECISION = 3 as Integer
 
 export {
-    PRESENTATIONAL_ACCURACY,
+    PRESENTATIONAL_PRECISION,
 }

@@ -10,12 +10,12 @@ import { Parameter, ParameterValue, Submetric } from "../../../../../src/scripts
 describe("searchNextLocalMin", () => {
     const nextLocalMin: LocalMin = {
         sumOfSquares: 0.006454 as SumOfSquares,
-        samplePoint: [2, 0, 1] as unknown as SamplePoint,
+        samplePoint: [2, 0, 1] as unknown[] as SamplePoint,
         submetrics: [{
             [ Parameter.K_AS_COEFFICIENT ]: 0.4,
             [ Parameter.A_AS_COEFFICIENT ]: 2.1,
             [ Parameter.W ]: 1.3,
-        }] as unknown as Combination<Submetric>,
+        }] as unknown[] as Combination<Submetric>,
     }
     const dynamicParameters: DynamicParameter[] = [
         {
@@ -37,7 +37,7 @@ describe("searchNextLocalMin", () => {
             unit: 0.1 as Unit<ParameterValue>,
         },
     ]
-    const scope: Scope = [{}] as unknown as Scope
+    const scope: Scope = [{}] as unknown[] as Scope
     const index = 7
     const metricId = ""
     const indentation = ""
@@ -74,7 +74,7 @@ describe("searchNextLocalMin", () => {
                     [ Parameter.A_AS_COEFFICIENT ]: { center: 1.1, span: 0.6666666666666666, resolution: 7 },
                     [ Parameter.W ]: { center: 1.4, span: 0.06666666666666667, resolution: 2 },
                 },
-            ] as unknown as Scope,
+            ] as unknown[] as Scope,
             {
                 depth: 6,
                 metricId: ".8/9",

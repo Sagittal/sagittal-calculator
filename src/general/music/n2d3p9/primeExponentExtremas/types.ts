@@ -1,5 +1,4 @@
-import { Denominator, Exponent, Numerator, Prime } from "../../../math"
-import { Max, Min } from "../../../types"
+import { Denominator, Exponent, Max, Min, Numerator, Prime } from "../../../math"
 
 type N2 = number & { _N2Brand: "N2" }
 type N2P = number & { _N2PBrand: "N2P" }

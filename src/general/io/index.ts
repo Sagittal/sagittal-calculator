@@ -1,3 +1,4 @@
+import { PRESENTATIONAL_PRECISION } from "./constants"
 import { forumTable } from "./forumTable"
 import { parseMonzo } from "./parseMonzo"
 import { parseRatio } from "./parseRatio"
@@ -16,4 +17,5 @@ export {
     presentTime,
     parseMonzo,
     parseRatio,
+    PRESENTATIONAL_PRECISION,
 }

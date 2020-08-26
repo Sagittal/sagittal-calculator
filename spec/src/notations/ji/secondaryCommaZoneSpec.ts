@@ -114,7 +114,7 @@ describe("secondaryCommaZone", () => {
                 fiveRoughSopfr: 0 as Sopfr<5>,
                 limit: 2 as Prime,
                 ratio: [1, 1] as Ratio,
-                monzo: [] as unknown as Monzo,
+                monzo: [] as unknown[] as Monzo,
                 cents: 0 as Cents,
                 name: "1u" as Name<SagittalComma>,
                 n2d3p9: 0.1111111111111111 as N2D3P9,

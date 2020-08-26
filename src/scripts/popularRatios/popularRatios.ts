@@ -6,6 +6,7 @@ import {
     computePrimeExponentExtremasGivenMaxN2D3P9,
     computeRatioFromMonzo,
     deepEquals,
+    DEFAULT_N2D3P9_PRECISION,
     Max,
     N2D3P9,
     presentRatio,
@@ -31,7 +32,7 @@ const computePopularRatios = (maxN2D3P9: Max<N2D3P9>): Array<Ranked<PopularRatio
 
         if (n2d3p9 <= maxN2D3P9) {
             // TODO: extract this
-            const presentedN2D3P9 = round(n2d3p9, 2)
+            const presentedN2D3P9 = round(n2d3p9, DEFAULT_N2D3P9_PRECISION)
             const presentedRatio = presentRatio(ratio)
             const notatingSymbolIds = computeNotatingSymbolIds(monzo)
             const notatingSymbols = notatingSymbolIds.map(getSymbol)

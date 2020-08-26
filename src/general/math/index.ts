@@ -1,5 +1,5 @@
 import { computeCombinations } from "./combinations"
-import { FIVE_PRIME_INDEX, FIVE_ROUGHNESS } from "./constants"
+import { BASE_2, FIVE_PRIME_INDEX, FIVE_ROUGHNESS } from "./constants"
 import { computeCopfr } from "./copfr"
 import { computeDistributions } from "./distributions"
 import { dividesEvenly } from "./dividesEvenly"
@@ -7,8 +7,7 @@ import { computeGpf } from "./gpf"
 import { computeIntegerFromMonzo } from "./integerFromMonzo"
 import { invertMonzo } from "./invertMonzo"
 import { computeIsRough } from "./isRough"
-import { isSubMonzo } from "./isSubMonzo"
-import { computeLog } from "./log"
+import { computeIsSubMonzo } from "./isSubMonzo"
 import { computeMonzoFromInteger } from "./monzoFromInteger"
 import { computeMonzoFromRatio } from "./monzoFromRatio"
 import { computeMonzosFromPrimeExponentExtremas } from "./monzosFromPrimeExponentExtrema"
@@ -16,12 +15,13 @@ import { computePrimeCount } from "./primeCount"
 import { PRIMES } from "./primes"
 import { computeRatioFromMonzo } from "./ratioFromMonzo"
 import { computeRoughNumberMonzo } from "./rough"
-import { round } from "./round"
 import { computeSopf } from "./sopf"
 import { computeSopfr } from "./sopfr"
 import { computeSuperMonzo } from "./superMonzo"
 import { computeTriangularNumber } from "./triangularNumber"
+import { abs, ceil, floor, log, max, min, mod, negative, pow, round, sqrt, count } from "./typedOperations"
 import {
+    Base,
     Combination,
     Combinations,
     Copfr,
@@ -31,10 +31,13 @@ import {
     Integer,
     Monzo,
     Numerator,
+    Power,
     Prime,
     Ratio,
     Sopfr,
     UndirectedRatio,
+    Max,
+    Min,
 } from "./types"
 import { computeUndirectedRatio } from "./undirectedRatio"
 
@@ -42,7 +45,7 @@ export {
     computeCombinations,
     round,
     computeTriangularNumber,
-    computeLog,
+    log,
     computePrimeCount,
     computeDistributions,
     Ratio,
@@ -70,11 +73,26 @@ export {
     Monzo,
     Sopfr,
     computeSuperMonzo,
-    isSubMonzo,
+    computeIsSubMonzo,
     computeIntegerFromMonzo,
     PRIMES,
     computeMonzosFromPrimeExponentExtremas,
     Prime,
     FIVE_PRIME_INDEX,
     FIVE_ROUGHNESS,
+    Power,
+    Base,
+    abs,
+    max,
+    min,
+    negative,
+    mod,
+    ceil,
+    floor,
+    sqrt,
+    BASE_2,
+    pow,
+    Min,
+    Max,
+    count,
 }

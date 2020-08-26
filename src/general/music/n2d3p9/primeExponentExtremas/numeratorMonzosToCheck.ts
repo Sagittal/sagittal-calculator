@@ -1,5 +1,5 @@
-import { computeMonzosFromPrimeExponentExtremas, Exponent, Monzo, Prime } from "../../../math"
-import { Extrema, Max, Min } from "../../../types"
+import { computeMonzosFromPrimeExponentExtremas, Exponent, Max, Min, Monzo, Prime } from "../../../math"
+import { Extrema } from "../../../types"
 import { N2D3P9 } from "../types"
 import { computeMaxNumeratorPrimeExponentsGivenMaxN2D3P9 } from "./maxNumeratorPrimeExponents"
 

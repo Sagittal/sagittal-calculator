@@ -28,13 +28,13 @@ describe("populateScopesPhase", () => {
             [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
             [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
         },
-    ] as unknown as Combination<SubmetricChunk>
+    ] as unknown[] as Combination<SubmetricChunk>
     const submetricChunkCombinationTwo = [
         {
             [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
             [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
         },
-    ] as unknown as Combination<SubmetricChunk>
+    ] as unknown[] as Combination<SubmetricChunk>
     const parameterChunkCombination = [
         {
             [ Parameter.A_AS_COEFFICIENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_COEFFICIENT ],
@@ -43,9 +43,9 @@ describe("populateScopesPhase", () => {
             [ Parameter.A_AS_COEFFICIENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_COEFFICIENT ],
             [ Parameter.A_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_LOGARITHM_BASE ],
         },
-    ] as unknown as Combination<ParameterChunk>
-    const submetricChunkCombinations = [submetricChunkCombinationOne, submetricChunkCombinationTwo] as unknown as Combinations<SubmetricChunk>
-    const parameterChunkCombinations = [parameterChunkCombination] as unknown as Combinations<ParameterChunk>
+    ] as unknown[] as Combination<ParameterChunk>
+    const submetricChunkCombinations = [submetricChunkCombinationOne, submetricChunkCombinationTwo] as unknown[] as Combinations<SubmetricChunk>
+    const parameterChunkCombinations = [parameterChunkCombination] as unknown[] as Combinations<ParameterChunk>
 
     beforeEach(() => {
         spyOn(combinations, "computeCombinations").and.returnValues(

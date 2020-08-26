@@ -3,7 +3,7 @@ import { Metric, MetricName, Sample, Scope } from "./bestMetric"
 import { DEFAULT_MAX_UNIT, DEFAULT_ONLY_TOP, DEFAULT_Z } from "./constants"
 import { Chunk, ParameterChunk, SolverStatus, SubmetricChunk } from "./solver"
 
-const scopesToSearch: Scope[] = [] as unknown as Scope[]
+const scopesToSearch: Scope[] = [] as unknown[] as Scope[]
 
 const solverStatus: SolverStatus = {
     chunkCount: 0 as Count<Chunk>,

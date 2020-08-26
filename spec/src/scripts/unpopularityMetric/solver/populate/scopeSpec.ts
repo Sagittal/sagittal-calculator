@@ -21,7 +21,7 @@ describe("populateScope", () => {
     })
 
     it("works if its the first scope", () => {
-        const scope: Scope = [] as unknown as Scope
+        const scope: Scope = [] as unknown[] as Scope
 
         cleanArray(scopesToSearch)
 

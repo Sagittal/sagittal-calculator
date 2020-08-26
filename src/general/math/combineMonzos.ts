@@ -1,8 +1,8 @@
-import { Exponent, Prime } from "../math"
+import { Exponent, max, Prime } from "../math"
 import { Monzo } from "./types"
 
 const combineMonzos = (...monzos: Monzo[]): Monzo => {
-    const maxMonzoLength = Math.max(...monzos.map(monzo => monzo.length))
+    const maxMonzoLength = max(...monzos.map(monzo => monzo.length))
 
     return [...Array(maxMonzoLength).keys()].map((index: number) =>
         monzos.reduce(

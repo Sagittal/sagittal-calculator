@@ -1,6 +1,7 @@
 import { Combination, Ratio, round } from "../../../../general"
 import { DebugTarget, saveDebugMessage } from "../../debug"
 import { Antivotes, Submetric } from "../types"
+import { ANTIVOTES_PRECISION } from "./constants"
 import { computeWeightedSubmetricAntivotes } from "./weightedSubmetricAntivotes"
 
 const computeAntivotes = (fiveRoughRatio: Ratio, submetrics: Combination<Submetric>): Antivotes =>
@@ -15,7 +16,7 @@ const computeAntivotes = (fiveRoughRatio: Ratio, submetrics: Combination<Submetr
             },
             0 as Antivotes,
         ),
-        9,
+        ANTIVOTES_PRECISION,
     )
 
 export {

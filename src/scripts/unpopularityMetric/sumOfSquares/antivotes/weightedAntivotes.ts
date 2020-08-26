@@ -1,4 +1,4 @@
-import { computeLog, isUndefined } from "../../../../general"
+import { Base, isUndefined, log, Power } from "../../../../general"
 import { Antivotes, ComputeWeightedAntivotesOptions, ParameterValue } from "../types"
 
 const computeWeightedAntivotes = (antivotes: Antivotes, options: ComputeWeightedAntivotesOptions): Antivotes => {
@@ -12,7 +12,7 @@ const computeWeightedAntivotes = (antivotes: Antivotes, options: ComputeWeighted
     let weightedAntivotes = antivotes
 
     if (!isUndefined(logarithmBase)) {
-        weightedAntivotes = computeLog(weightedAntivotes, logarithmBase) as Antivotes
+        weightedAntivotes = log(weightedAntivotes as number as Power, logarithmBase as number as Base) as number as Antivotes
     }
     if (!isUndefined(powerExponent)) {
         weightedAntivotes = weightedAntivotes ** powerExponent as Antivotes

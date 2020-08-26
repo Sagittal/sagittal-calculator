@@ -33,7 +33,7 @@ describe("searchScopeAndMaybeUpdateBestMetric", () => {
         const localMin = {
             sumOfSquares: 0.04 as SumOfSquares,
             samplePoint: [77, 54] as SamplePoint,
-            submetrics: [] as unknown as Combination<Submetric>,
+            submetrics: [] as unknown[] as Combination<Submetric>,
         }
         const onlyWinners = true
         const metricName = "{},{aAsCoefficient,count,w},{aAsCoefficient,sum}" as MetricName

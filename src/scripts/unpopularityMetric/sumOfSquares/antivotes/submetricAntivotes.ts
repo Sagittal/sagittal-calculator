@@ -1,4 +1,4 @@
-import { computeLog, computePrimeCount, FractionalPart, isUndefined, Monzo, PRIMES } from "../../../../general"
+import { abs, Base, computePrimeCount, FractionalPart, isUndefined, log, Monzo, Power, PRIMES } from "../../../../general"
 import { Antivotes, ParameterValue, Submetric } from "../types"
 import { secondaryParameterOverridesForDenominator } from "./secondaryParameter"
 
@@ -52,7 +52,7 @@ const computeSubmetricAntivotes = (fiveRoughNumberMonzo: Monzo, submetric = {}, 
             adjustedPrime = adjustedPrime + secondaryParameterOverridesForDenominator(x, u, primeExponent, fractionalPart)
             if (!isUndefined(aAsLogarithmBase)) {
                 adjustedPrime = adjustedPrime >= 1 ?
-                    computeLog(adjustedPrime, aAsLogarithmBase) :
+                    log(adjustedPrime as Power, aAsLogarithmBase as number as Base) :
                     1
             }
             if (!isUndefined(aAsPowerExponent)) {
@@ -69,7 +69,7 @@ const computeSubmetricAntivotes = (fiveRoughNumberMonzo: Monzo, submetric = {}, 
             if (primeExponent === 0) {
                 adjustedPrimeExponent = 0
             } else {
-                adjustedPrimeExponent = withoutRepetition ? 1 : Math.abs(primeExponent)
+                adjustedPrimeExponent = withoutRepetition ? 1 : abs(primeExponent)
                 // adjustedPrimeExponent = adjustedPrimeExponent + t
                 adjustedPrimeExponent = adjustedPrimeExponent >= 0 ?
                     adjustedPrimeExponent ** secondaryParameterOverridesForDenominator(y, v, primeExponent, fractionalPart) :

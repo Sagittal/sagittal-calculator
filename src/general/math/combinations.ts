@@ -10,7 +10,7 @@ const computeCombinations = <T>(array: T[], count: Count<T>, { withRepeatedEleme
     const combinations: number[][] = []
 
     if (count === 0) {
-        return [] as unknown as Combinations<T>
+        return [] as unknown[] as Combinations<T>
     }
 
     const computeRecursiveCombinations = (integer: Integer, combination: number[]) => {
@@ -42,7 +42,7 @@ const computeCombinationsWithRepetitions = <T>(array: T[], count: Count<T>): Com
         count = array.length as Count<T>
     }
     const data = Array(count) as Combination<T>
-    const results = [] as unknown as Combinations<T>
+    const results = [] as unknown[] as Combinations<T>
     const computeCombinationsWithRepetitionsRecursively = (position: number, start: number) => {
         if (position === count) {
             results.push(data.slice() as Combination<T>)

@@ -5,8 +5,8 @@ import { DynamicParameter, Sample, SamplePoint, SubmetricPossibility } from "./t
 
 const combineSubmetricsPossibilitiesIntoSamples = ({ submetricsPossibilities, dynamicParameters }: { dynamicParameters: DynamicParameter[], submetricsPossibilities: Array<Combination<SubmetricPossibility>> }): Sample[] => {
     let samples: Sample[] = [{
-        submetrics: [] as unknown as Combination<Submetric>,
-        samplePoint: [] as unknown as SamplePoint,
+        submetrics: [] as unknown[] as Combination<Submetric>,
+        samplePoint: [] as unknown[] as SamplePoint,
     }]
 
     const theAllBinSubmetricPossibilities = submetricsPossibilities.shift() as Combination<SubmetricPossibility>

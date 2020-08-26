@@ -6,7 +6,7 @@ import { applySharedUnpopularityMetricCommandSetup, load } from "../shared"
 
 applySharedUnpopularityMetricCommandSetup()
 
-const metricsMissingSpreadDynamicParameters = load("metrics") as unknown as Record<string, Metric>
+const metricsMissingSpreadDynamicParameters = load("metrics") as Record<string, Metric>
 
 const guessedBackfilledSpreadDynamicParametersMetrics = Object.entries(metricsMissingSpreadDynamicParameters).reduce(
     (guessedBackfilledSpreadDynamicParametersMetrics: Record<string, Metric>, [metricName, metric]: [string, Metric]) => {

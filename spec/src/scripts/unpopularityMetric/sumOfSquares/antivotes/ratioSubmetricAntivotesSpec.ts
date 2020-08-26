@@ -1,4 +1,5 @@
-import { computeLog, Monzo, Ratio } from "../../../../../../src/general/math"
+import { log, Monzo, Power, Ratio } from "../../../../../../src/general/math"
+import { BASE_2 } from "../../../../../../src/general/math/constants"
 import { ParameterValue } from "../../../../../../src/scripts/unpopularityMetric/sumOfSquares"
 import { computeRatioSubmetricAntivotes } from "../../../../../../src/scripts/unpopularityMetric/sumOfSquares/antivotes/ratioSubmetricAntivotes"
 import { computeSubmetricAntivotes } from "../../../../../../src/scripts/unpopularityMetric/sumOfSquares/antivotes/submetricAntivotes"
@@ -89,7 +90,7 @@ describe("computeRatioSubmetricAntivotes", () => {
 
         expect(actual).toBe(
             computeSubmetricAntivotes([0, 0, 1] as Monzo, submetric) as Antivotes +
-            computeLog(computeSubmetricAntivotes([0, 0, 0, 1] as Monzo, submetric), 2) as Antivotes,
+            log(computeSubmetricAntivotes([0, 0, 0, 1] as Monzo, submetric) as number as Power, BASE_2) as Antivotes,
         )
     })
 
@@ -127,7 +128,7 @@ describe("computeRatioSubmetricAntivotes", () => {
         const actual = computeRatioSubmetricAntivotes(fiveRoughRatio, submetric)
 
         expect(actual).toBe(
-            computeLog(computeSubmetricAntivotes([0, 0, 1] as Monzo, submetric), 2) as Antivotes +
+            log(computeSubmetricAntivotes([0, 0, 1] as Monzo, submetric) as number as Power, BASE_2) as number as Antivotes +
             computeSubmetricAntivotes([0, 0, 0, 1] as Monzo, submetric) as Antivotes,
         )
     })
