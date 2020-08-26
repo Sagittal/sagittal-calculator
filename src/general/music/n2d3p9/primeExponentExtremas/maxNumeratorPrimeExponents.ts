@@ -1,12 +1,12 @@
-import { Exponent, Numerator, Prime, PRIMES } from "../../../math"
+import { Exponent, FIVE_PRIME_INDEX, Numerator, Prime, PRIMES } from "../../../math"
 import { Index, Max } from "../../../types"
 import { N2D3P9 } from "../types"
+import { INITIAL_MAX_NUMERATOR_PRIME_EXPONENTS_FOR_TWO_AND_THREE } from "./constants"
 import { computeMaxNumeratorPrimeExponentGivenMaxN2D3P3 } from "./maxNumeratorPrimeExponent"
 
 const computeMaxNumeratorPrimeExponentsGivenMaxN2D3P9 = (maxN2D3P9: Max<N2D3P9>): Array<Max<Exponent<Prime<Numerator>>>> => {
-    // TODO: FIVE ROUGH LINK add constants for the 2 and [0,0] re: five-rough
-    let numeratorPrimeIndex = 2 as Index<Prime<Numerator>>
-    const maxNumeratorPrimeExponentsGivenMaxN2D3P9 = [0, 0] as Array<Max<Exponent<Prime<Numerator>>>>
+    let numeratorPrimeIndex = FIVE_PRIME_INDEX
+    const maxNumeratorPrimeExponentsGivenMaxN2D3P9 = INITIAL_MAX_NUMERATOR_PRIME_EXPONENTS_FOR_TWO_AND_THREE.slice()
     while (true) {
         const numeratorPrime = PRIMES[ numeratorPrimeIndex ] as Prime<Numerator>
 

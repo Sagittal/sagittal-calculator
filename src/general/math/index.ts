@@ -1,5 +1,5 @@
 import { computeCombinations } from "./combinations"
-import { PRIMES } from "./constants"
+import { FIVE_PRIME_INDEX } from "./constants"
 import { computeCopfr } from "./copfr"
 import { computeDistributions } from "./distributions"
 import { dividesEvenly } from "./dividesEvenly"
@@ -13,6 +13,7 @@ import { computeMonzoFromInteger } from "./monzoFromInteger"
 import { computeMonzoFromRatio } from "./monzoFromRatio"
 import { computeMonzosFromPrimeExponentExtremas } from "./monzosFromPrimeExponentExtrema"
 import { computePrimeCount } from "./primeCount"
+import { PRIMES } from "./primes"
 import { computeRatioFromMonzo } from "./ratioFromMonzo"
 import { computeRoughNumberMonzo } from "./rough"
 import { round } from "./round"
@@ -74,4 +75,5 @@ export {
     PRIMES,
     computeMonzosFromPrimeExponentExtremas,
     Prime,
+    FIVE_PRIME_INDEX,
 }

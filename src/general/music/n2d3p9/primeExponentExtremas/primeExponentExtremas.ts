@@ -1,20 +1,20 @@
 import { deepEquals } from "../../../code"
-import { Exponent, Prime, PRIMES } from "../../../math"
+import { Exponent, FIVE_PRIME_INDEX, Prime, PRIMES } from "../../../math"
 import { Extrema, Index, Max } from "../../../types"
 import { N2D3P9 } from "../types"
+import { EMPTY_PRIME_EXPONENT_EXTREMA, INITIAL_PRIME_EXPONENT_EXTREMAS_FOR_TWO_AND_THREE } from "./constants"
 import { computePrimeExponentExtremaGivenMaxN2D3P3 } from "./primeExponentExtrema"
 
 const computePrimeExponentExtremasGivenMaxN2D3P9 = (maxN2D3P9: Max<N2D3P9>): Array<Extrema<Exponent<Prime>>> => {
-    const primeExponentExtremasGivenMaxN2D3P9 = []
+    const primeExponentExtremasGivenMaxN2D3P9 = INITIAL_PRIME_EXPONENT_EXTREMAS_FOR_TWO_AND_THREE
 
-    let primeIndex = 2 as Index<Prime> // TODO: FIVE ROUGH LINK and also make sure to be mindful of five rough vs five sliced!
+    let primeIndex = FIVE_PRIME_INDEX
     while (true) {
         const prime = PRIMES[ primeIndex ]
         const primeExponentExtremaGivenMaxN2D3P9: Extrema<Exponent<Prime>> =
             computePrimeExponentExtremaGivenMaxN2D3P3(prime, maxN2D3P9)
 
-        // TODO: use a constant for an empty prime exponent extrema, to avoid confusion with the [0,0] for five rough stuff
-        if (deepEquals(primeExponentExtremaGivenMaxN2D3P9, [0, 0])) {
+        if (deepEquals(primeExponentExtremaGivenMaxN2D3P9, EMPTY_PRIME_EXPONENT_EXTREMA)) {
             break
         } else {
             primeExponentExtremasGivenMaxN2D3P9.push(primeExponentExtremaGivenMaxN2D3P9)

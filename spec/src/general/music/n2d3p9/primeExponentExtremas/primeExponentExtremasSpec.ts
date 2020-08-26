@@ -3,15 +3,16 @@ import { N2D3P9 } from "../../../../../../src/general/music/n2d3p9"
 import { computePrimeExponentExtremasGivenMaxN2D3P9 } from "../../../../../../src/general/music/n2d3p9/primeExponentExtremas"
 import { onlyRunInCi } from "../../../../../helpers/onlyRunInCi"
 
-// TODO: FIVE ROUGH LINK so these are actually five-rough primes... should I acknowledge that in the name?
-
 describe("computePrimeExponentExtremasGivenMaxN2D3P9", () => {
     it("works for 0", () => {
         const maxN2D3P9 = 0 as Max<N2D3P9>
 
         const actual = computePrimeExponentExtremasGivenMaxN2D3P9(maxN2D3P9)
 
-        const expected = [] as Array<Extrema<Exponent<Prime>>>
+        const expected = [
+            [ 0, 0 ],   // 2
+            [ 0, 0 ],   // 3
+        ] as Array<Extrema<Exponent<Prime>>>
         expect(actual).toEqual(expected)
     })
 
@@ -20,7 +21,10 @@ describe("computePrimeExponentExtremasGivenMaxN2D3P9", () => {
 
         const actual = computePrimeExponentExtremasGivenMaxN2D3P9(maxN2D3P9)
 
-        const expected = [] as Array<Extrema<Exponent<Prime>>>
+        const expected = [
+            [ 0, 0 ],   // 2
+            [ 0, 0 ],   // 3
+        ] as Array<Extrema<Exponent<Prime>>>
         expect(actual).toEqual(expected)
     })
 
@@ -30,6 +34,8 @@ describe("computePrimeExponentExtremasGivenMaxN2D3P9", () => {
         const actual = computePrimeExponentExtremasGivenMaxN2D3P9(maxN2D3P9)
 
         const expected = [
+            [ 0, 0 ],   // 2
+            [ 0, 0 ],   // 3
             [-1, 3],    // 5
             [0, 2],     // 7
             [0, 1],     // 11
@@ -47,6 +53,8 @@ describe("computePrimeExponentExtremasGivenMaxN2D3P9", () => {
 
         // http://forum.sagittal.org/viewtopic.php?p=2243#p2243
         const expected = [
+            [ 0, 0 ],   // 2
+            [ 0, 0 ],   // 3
             [-2, 6],    // 5
             [-2, 4],    // 7
             [-1, 2],    // 11
