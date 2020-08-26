@@ -1,30 +1,13 @@
-import { sort } from "../../../code"
-import { computeIntegerFromMonzo, Exponent, Numerator, Prime } from "../../../math"
-import { Max, Min } from "../../../types"
-import { computeN2D3P9 } from "../n2d3p9"
+import { Numerator } from "../../../math"
+import { Max } from "../../../types"
 import { N2D3P9 } from "../types"
-import { computeMaxNumeratorPrimeExponentsGivenMaxN2D3P9 } from "./maxNumeratorPrimeExponents"
-import { computePossibleMonzosFromPrimeExponentExtremas } from "./possibleMonzosFromPrimeExponentExtrema"
-import { PrimeExponentExtrema } from "./types"
+import { computeMaxNumeratorWithLessN2D3P9ThanMaxN2D3P9 } from "./maxNumeratorWithLessN2D3P9"
+import { computeNumeratorMonzosToCheckGivenMaxN2D3P9 } from "./numeratorMonzosToCheck"
 
 const computeMaxNumeratorGivenMaxN2D3P3 = (maxN2D3P9: Max<N2D3P9>): Max<Numerator> => {
-    const maxNumeratorPrimeExponentsGivenMaxN2D3P9 = computeMaxNumeratorPrimeExponentsGivenMaxN2D3P9(maxN2D3P9)
+    const numeratorMonzosToCheck = computeNumeratorMonzosToCheckGivenMaxN2D3P9(maxN2D3P9)
 
-    const numeratorPrimeExponentExtremaGivenMaxN2D3P9: Array<PrimeExponentExtrema> = maxNumeratorPrimeExponentsGivenMaxN2D3P9.map(maxNumeratorPrimeExponentGivenMaxN2D3P9 => {
-        return [0 as Min<Exponent<Prime>>, maxNumeratorPrimeExponentGivenMaxN2D3P9]
-    })
-
-    let numeratorMonzosToCheck = computePossibleMonzosFromPrimeExponentExtremas(numeratorPrimeExponentExtremaGivenMaxN2D3P9)
-
-    // TODO: make sure a test covers this
-    numeratorMonzosToCheck = numeratorMonzosToCheck.filter(numeratorMonzoToCheck => {
-        return computeN2D3P9(numeratorMonzoToCheck) < maxN2D3P9
-    })
-
-    const numeratorsToCheck = numeratorMonzosToCheck.map(computeIntegerFromMonzo)
-    sort(numeratorsToCheck, { descending: true })
-
-    return numeratorsToCheck[ 0 ] as Max<Numerator>
+    return computeMaxNumeratorWithLessN2D3P9ThanMaxN2D3P9(numeratorMonzosToCheck, maxN2D3P9)
 }
 
 export {
