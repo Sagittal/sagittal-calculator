@@ -15,7 +15,6 @@ import { computePrimeCount } from "./primeCount"
 import { PRIMES } from "./primes"
 import { computeRatioFromMonzo } from "./ratioFromMonzo"
 import { computeRoughNumberMonzo } from "./rough"
-import { computeSopf } from "./sopf"
 import { computeSopfr } from "./sopfr"
 import { computeSuperMonzo } from "./superMonzo"
 import { computeTriangularNumber } from "./triangularNumber"
@@ -66,7 +65,6 @@ export {
     computeMonzoFromInteger,
     computeGpf,
     computeIsRough,
-    computeSopf,
     computeSopfr,
     computeRoughNumberMonzo,
     computeRatioFromMonzo,

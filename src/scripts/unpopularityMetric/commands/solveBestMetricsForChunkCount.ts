@@ -6,6 +6,9 @@ import { solverStatus, unpopularityMetricSettings } from "../globals"
 import { Chunk, formatBestMetrics, populateAndSearchScopesAndPerfectMetrics } from "../solver"
 import { applySharedUnpopularityMetricCommandSetup } from "./shared"
 
+// TODO: probably I should review the commit where I temporarily ripped out all of the async stuff
+//  and make a commit where I make it possible to switch between them
+
 program.option("-t, --no-time", "no time")
 
 const defaultDebugTargets = [

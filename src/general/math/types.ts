@@ -27,8 +27,8 @@ type Power<T extends number = number> = T & { _PowerBrand: "Power" }
 type Max<T extends number = number> = T & { _MaxBrand: "Max" }
 type Min<T extends number = number> = T & { _MinBrand: "Min" }
 
-type Sopfr<Roughness = void> = Sum<Prime> & (Roughness extends number ? { _RoughnessBrand: Roughness } : {})
-type Copfr<Roughness = void> = Count<Prime> & (Roughness extends number ? { _RoughnessBrand: Roughness } : {})
+type Sopfr<Roughness = void> = Sum<Prime> & { _SopfrBrand: "Sopfr" } & (Roughness extends number ? { _RoughnessBrand: Roughness } : {})
+type Copfr<Roughness = void> = Count<Prime> & { _CopfrBrand: "Copfr" } & (Roughness extends number ? { _RoughnessBrand: Roughness } : {})
 
 type Monzo<Slice = void, Limit = void> = Array<Exponent<Prime>> & (Slice extends number ? { _MonzoSlice: Slice } : {})
 
