@@ -4,6 +4,7 @@ import { computeDeepDistinct } from "./deepDistinct"
 import { deepEquals } from "./deepEquals"
 import { dig } from "./dig"
 import { doOnNextEventLoop } from "./doOnNextEventLoop"
+import { computeExtensionBase } from "./extensionBase"
 import { computeIsCloseTo } from "./isCloseTo"
 import { merge } from "./merge"
 import { computePlusOrMinusRange } from "./plusOrMinusRange"
@@ -13,7 +14,7 @@ import { shuffle } from "./shuffle"
 import { sort } from "./sort"
 import { computeTrimmedArray } from "./trim"
 import { isNumber, isUndefined } from "./typeGuards"
-import { Rank, Ranked, RankStrategy } from "./types"
+import { ExtensionBaseType, Rank, Ranked, RankStrategy } from "./types"
 
 export {
     computeDeepClone,
@@ -35,4 +36,6 @@ export {
     Ranked,
     RankStrategy,
     computeTrimmedArray,
+    computeExtensionBase,
+    ExtensionBaseType,
 }

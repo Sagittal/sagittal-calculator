@@ -22,6 +22,11 @@ type RankOptions = SortOptions & Partial<{
     strategy: RankStrategy
 }>
 
+enum ExtensionBaseType {
+    ARRAY = "array",
+    OBJECT = "object",
+}
+
 export {
     SortOptions,
     Rank,
@@ -30,4 +35,5 @@ export {
     Ranked,
     RankOptions,
     RankStrategy,
+    ExtensionBaseType,
 }

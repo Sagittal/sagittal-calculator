@@ -1,6 +1,7 @@
 import {
     computeDeepClone,
     computeDeepDistinct,
+    computeExtensionBase,
     computeIsCloseTo,
     computePlusOrMinusRange,
     computeRange,
@@ -8,6 +9,7 @@ import {
     deepEquals,
     dig,
     doOnNextEventLoop,
+    ExtensionBaseType,
     isNumber,
     isUndefined,
     merge,
@@ -78,7 +80,7 @@ import {
     Position,
     Votes,
 } from "./music"
-import { Count, Id, Index, Max, Min, Name, Proportion, Resolution, Span, Sum, Unit, Extrema } from "./types"
+import { Count, Extrema, Id, Index, Max, Min, Name, Proportion, Resolution, Span, Sum, Unit } from "./types"
 
 export {
     Cents,
@@ -165,4 +167,6 @@ export {
     computeApotomeSlope,
     computeCentsFromMonzo,
     Extrema,
+    computeExtensionBase,
+    ExtensionBaseType,
 }

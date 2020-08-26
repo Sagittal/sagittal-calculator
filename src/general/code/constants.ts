@@ -1,5 +1,10 @@
 const ACCURACY_THRESHOLD = 6
 
+const ARRAY_EXTENSION_BASE: unknown[] = []
+const OBJECT_EXTENSION_BASE: unknown = {}
+
 export {
+    ARRAY_EXTENSION_BASE,
+    OBJECT_EXTENSION_BASE,
     ACCURACY_THRESHOLD,
 }

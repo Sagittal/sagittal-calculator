@@ -1,4 +1,4 @@
-import { Combination, Index } from "../../../../general"
+import { Combination, computeExtensionBase, ExtensionBaseType, Index } from "../../../../general"
 import { ParameterValue, Submetric } from "../../sumOfSquares"
 import { computeDynamicParameterValueIndices } from "./dynamicParameterValueIndices"
 import { DynamicParameter, Sample, SamplePoint, SubmetricPossibility } from "./types"
@@ -12,7 +12,7 @@ const combineSubmetricsPossibilitiesIntoSamples = ({ submetricsPossibilities, dy
     const theAllBinSubmetricPossibilities = submetricsPossibilities.shift() as Combination<SubmetricPossibility>
 
     submetricsPossibilities.forEach((submetricPossibilities: Combination<SubmetricPossibility>, submetricIndex) => {
-        const extendedSamples: Sample[] = []
+        const extendedSamples: Sample[] = computeExtensionBase(ExtensionBaseType.ARRAY) as Sample[]
 
         samples.forEach(({ submetrics, samplePoint }) => {
             submetricPossibilities.forEach((submetricPossibility: SubmetricPossibility) => {

@@ -1,11 +1,11 @@
-import { Combination } from "../../../../general"
+import { Combination, computeExtensionBase, ExtensionBaseType } from "../../../../general"
 import { Parameter, ParameterValue } from "../../sumOfSquares"
 import { DynamicParameterScope, SubmetricScope } from "../types"
 import { computeParameterValues } from "./parameterValues"
 import { SubmetricPossibility } from "./types"
 
 const computeSubmetricPossibilities = (submetricScope: SubmetricScope = {}): Combination<SubmetricPossibility> => {
-    let submetricPossibilities: Combination<SubmetricPossibility> = [{}] as Combination<SubmetricPossibility>
+    let submetricPossibilities: Combination<SubmetricPossibility> = [computeExtensionBase(ExtensionBaseType.OBJECT)] as Combination<SubmetricPossibility>
 
     const submetricScopeEntries = Object.entries(submetricScope) as Array<[Parameter, DynamicParameterScope]>
 

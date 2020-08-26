@@ -1,12 +1,9 @@
-import { computeRange, computeTrimmedArray } from "../code"
+import { computeExtensionBase, computeRange, computeTrimmedArray, ExtensionBaseType } from "../code"
 import { Extrema } from "../types"
 import { Exponent, Monzo, Prime } from "./types"
 
 const computeMonzosFromPrimeExponentExtremas = (primeExponentExtremas: Array<Extrema<Exponent<Prime>>>): Monzo[] => {
-    let possibleMonzos = [
-        // TODO: add a constant to describe this as an extension base, since I now use this strategy in so many places
-        [],
-    ] as Monzo[]
+    let possibleMonzos = [computeExtensionBase(ExtensionBaseType.ARRAY)] as Monzo[]
 
     primeExponentExtremas.forEach(primeExponentExtrema => {
         const extendedPossibleMonzos = [] as Monzo[]

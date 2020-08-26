@@ -1,10 +1,10 @@
 import {
-    computeCopfr,
+    computeCopfr, computeExtensionBase,
     computePrimeExponentExtremasGivenMaxN2D3P9,
     computeSopfr,
     computeTrimmedArray,
     Copfr,
-    Exponent,
+    Exponent, ExtensionBaseType,
     Extrema,
     isUndefined,
     Max,
@@ -42,7 +42,7 @@ const computeFiveSlicedMonzosToCheck = ({ maxPrimeLimit, maxFiveRoughSopfr, maxF
     })
 
     fiveRoughPrimesToCheck.forEach((fiveRoughPrimeToCheck, index) => {
-        const extendedFiveSlicedMonzosToCheck: Array<Monzo<5>> = []
+        const extendedFiveSlicedMonzosToCheck: Array<Monzo<5>> = computeExtensionBase(ExtensionBaseType.ARRAY) as Array<Monzo<5>>
 
         const primeExponentExtremaGivenMaxN2D3P9: Extrema<Exponent<Prime>> | undefined = primeExponentExtremasGivenMaxN2D3P9 && primeExponentExtremasGivenMaxN2D3P9[ index ]
 
