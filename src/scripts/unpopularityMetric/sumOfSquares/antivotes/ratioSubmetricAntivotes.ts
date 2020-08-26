@@ -1,5 +1,4 @@
 import {
-    computeLog,
     computeMonzoFromInteger,
     computeMonzoFromRatio,
     FractionalPart,
@@ -8,6 +7,7 @@ import {
 } from "../../../../general"
 import { Antivotes, ParameterValue, Submetric } from "../types"
 import { computeSubmetricAntivotes } from "./submetricAntivotes"
+import { computeWeightedAntivotes } from "./weightedAntivotes"
 
 const computeRatioSubmetricAntivotes = (fiveRoughRatio: Ratio, submetric: Submetric = {}): Antivotes => {
     const {
@@ -37,55 +37,44 @@ const computeRatioSubmetricAntivotes = (fiveRoughRatio: Ratio, submetric: Submet
     }
 
     const [numerator, denominator] = fiveRoughRatio
+
     const fiveRoughNumeratorMonzo = computeMonzoFromInteger(numerator)
+    const numeratorAntivotesBeforeMaybeNuminatorSwap = computeSubmetricAntivotes(fiveRoughNumeratorMonzo, submetric, FractionalPart.NUMERATOR)
+
     const fiveRoughDenominatorMonzo = computeMonzoFromInteger(denominator)
+    const denominatorAntivotesBeforeMaybeNuminatorSwap = computeSubmetricAntivotes(fiveRoughDenominatorMonzo, submetric, FractionalPart.DENOMINATOR)
 
-    const numeratorPrimeContentAntivotes = computeSubmetricAntivotes(fiveRoughNumeratorMonzo, submetric, FractionalPart.NUMERATOR)
-    const denominatorPrimeContentAntivotes = computeSubmetricAntivotes(fiveRoughDenominatorMonzo, submetric, FractionalPart.DENOMINATOR)
-    const outputNumerator = useNuminator ?
-        numeratorPrimeContentAntivotes > denominatorPrimeContentAntivotes ?
-            numeratorPrimeContentAntivotes :
-            denominatorPrimeContentAntivotes :
-        numeratorPrimeContentAntivotes
+    // TODO: the numinator swap should be extracted because that was pretty painful
+    let numeratorAntivotes = useNuminator ?
+        numeratorAntivotesBeforeMaybeNuminatorSwap > denominatorAntivotesBeforeMaybeNuminatorSwap ?
+            numeratorAntivotesBeforeMaybeNuminatorSwap :
+            denominatorAntivotesBeforeMaybeNuminatorSwap :
+        numeratorAntivotesBeforeMaybeNuminatorSwap
+    let denominatorAntivotes = useNuminator ?
+        numeratorAntivotesBeforeMaybeNuminatorSwap > denominatorAntivotesBeforeMaybeNuminatorSwap ?
+            denominatorAntivotesBeforeMaybeNuminatorSwap :
+            numeratorAntivotesBeforeMaybeNuminatorSwap :
+        denominatorAntivotesBeforeMaybeNuminatorSwap
 
-    const outputDenominator = useNuminator ?
-        numeratorPrimeContentAntivotes > denominatorPrimeContentAntivotes ?
-            denominatorPrimeContentAntivotes :
-            numeratorPrimeContentAntivotes :
-        denominatorPrimeContentAntivotes
+    numeratorAntivotes = computeWeightedAntivotes(numeratorAntivotes, {
+        coefficient: jAsCoefficient,
+        logarithmBase: jAsLogarithmBase,
+        powerExponent: jAsPowerExponent,
+        powerBase: jAsPowerBase,
+    })
 
-    // TODO: duped code fragment, yes we can dry this up
-    let weightedOutputNumerator = outputNumerator
-    if (!isUndefined(jAsLogarithmBase)) {
-        weightedOutputNumerator = computeLog(weightedOutputNumerator, jAsLogarithmBase) as Antivotes
-    }
-    if (!isUndefined(jAsPowerExponent)) {
-        weightedOutputNumerator = weightedOutputNumerator ** jAsPowerExponent as Antivotes
-    }
-    if (!isUndefined(jAsPowerBase)) {
-        weightedOutputNumerator = jAsPowerBase ** weightedOutputNumerator as Antivotes
+    denominatorAntivotes = computeWeightedAntivotes(denominatorAntivotes, {
+        coefficient: kAsCoefficient,
+        logarithmBase: kAsLogarithmBase,
+        powerExponent: kAsPowerExponent,
+        powerBase: kAsPowerBase,
+    })
 
-    }
-    weightedOutputNumerator = weightedOutputNumerator * jAsCoefficient as Antivotes
-
-    let weightedOutputDenominator = outputDenominator
-    if (!isUndefined(kAsLogarithmBase)) {
-        weightedOutputDenominator = computeLog(weightedOutputDenominator, kAsLogarithmBase) as Antivotes
-    }
-    if (!isUndefined(kAsPowerExponent)) {
-        weightedOutputDenominator = weightedOutputDenominator ** kAsPowerExponent as Antivotes
-    }
-    if (!isUndefined(kAsPowerBase)) {
-        weightedOutputDenominator = kAsPowerBase ** weightedOutputDenominator as Antivotes
-
-    }
-    weightedOutputDenominator = weightedOutputDenominator * kAsCoefficient as Antivotes
-
-    if (isNaN(weightedOutputNumerator) || isNaN(weightedOutputDenominator)) {
-        throw new Error(`You got NaN! in ratioSubmetricAntivotes ${fiveRoughRatio} ${JSON.stringify(submetric, null, 4)} ${weightedOutputNumerator} ${weightedOutputDenominator} ${outputDenominator}`)
+    if (isNaN(numeratorAntivotesBeforeMaybeNuminatorSwap) || isNaN(denominatorAntivotesBeforeMaybeNuminatorSwap)) {
+        throw new Error(`You got NaN! in ratioSubmetricAntivotes ${fiveRoughRatio} ${JSON.stringify(submetric, null, 4)} ${numeratorAntivotesBeforeMaybeNuminatorSwap} ${denominatorAntivotesBeforeMaybeNuminatorSwap}`)
     }
 
-    return weightedOutputNumerator + weightedOutputDenominator as Antivotes
+    return numeratorAntivotes + denominatorAntivotes as Antivotes
 }
 
 export {

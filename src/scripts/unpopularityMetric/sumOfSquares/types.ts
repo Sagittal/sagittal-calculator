@@ -74,10 +74,18 @@ type Submetric = Partial<{
 
 type ParameterValue = number & { _ParameterValueBrand: "ParameterValue" }
 
+type ComputeWeightedAntivotesOptions = Partial<{
+    logarithmBase: ParameterValue,
+    powerExponent: ParameterValue
+    powerBase: ParameterValue,
+    coefficient: ParameterValue,
+}>
+
 export {
     Unpopularity,
     Antivotes,
     Parameter,
     ParameterValue,
     Submetric,
+    ComputeWeightedAntivotesOptions,
 }
