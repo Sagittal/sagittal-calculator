@@ -77,7 +77,7 @@ const results = rank(unrankedResults, { by: "presentedN2D3P9", strategy: RankStr
 
 // TODO: extract this... and can you use a table helper
 console.log(`[table]`)
-console.log("[tr][th]5-rough[/th][th][/th][th][/th][th]introducing[/th][th][/th][th][/th][th][/th][/tr]")
+console.log("[tr][th]2,3-equivalent[/th][th][/th][th][/th][th]introducing[/th][th][/th][th][/th][th][/th][/tr]")
 console.log("[tr][th]pitch[/th][th][/th][th][/th][th]symbol[/th][th][/th][th]Scala[/th][th]Scala[/th][/tr]")
 console.log("[tr][th]ratio[/th][th][/th][th][/th][th]subset[/th][th]N2D3P9[/th][th]archive[/th][th]archive[/th][/tr]")
 console.log("[tr][th]class[/th][th]N2D3P9[/th][th]symbol[/th][th]indices[/th][th]rank[/th][th]rank[/th][th]occurrences[/th][/tr]")
