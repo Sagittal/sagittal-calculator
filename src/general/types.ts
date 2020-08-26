@@ -1,4 +1,4 @@
-import { Integer, Min, Max } from "./math"
+import { Integer, Max, Min } from "./math"
 
 // Numeric types where parameter is not numeric
 type Index<T = void> = Integer & { _IndexBrand: "Index" } & (T extends void ? {} : { _IndexOfBrand: T })

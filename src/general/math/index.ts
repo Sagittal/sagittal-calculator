@@ -19,7 +19,7 @@ import { computeSopf } from "./sopf"
 import { computeSopfr } from "./sopfr"
 import { computeSuperMonzo } from "./superMonzo"
 import { computeTriangularNumber } from "./triangularNumber"
-import { abs, ceil, floor, log, max, min, mod, negative, pow, round, sqrt, count } from "./typedOperations"
+import { abs, ceil, count, floor, log, max, min, mod, negative, pow, round, sqrt } from "./typedOperations"
 import {
     Base,
     Combination,
@@ -29,6 +29,8 @@ import {
     Exponent,
     FractionalPart,
     Integer,
+    Max,
+    Min,
     Monzo,
     Numerator,
     Power,
@@ -36,8 +38,6 @@ import {
     Ratio,
     Sopfr,
     UndirectedRatio,
-    Max,
-    Min,
 } from "./types"
 import { computeUndirectedRatio } from "./undirectedRatio"
 

@@ -8,8 +8,8 @@ import { N2P } from "../../../../../../src/general/music/n2d3p9/primeExponentExt
 describe("computeMinN2D3P9ForCandidateMaxDenominatorPrimeExponentGivenMaxN2D3P9", () => {
     it("given a denominator prime and its candidate max prime exponent, plus the sorted numerator possibilities, will gather the D39 and the min N2P then combine them", () => {
         const sortedNumeratorPossibilitiesForDenominatorPrimeGivenMaxN2D3P9 = {
-            numeratorPossibilitiesGivenMaxN2D3P9WithLesserGpfThanDenominatorPrimeSortedByN2: [],
-            numeratorPossibilitiesGivenMaxN2D3P9WithGreaterGpfThanDenominatorPrimeSortedByN2P: [],
+            sortedNumeratorPossibilitiesGivenMaxN2D3P9WithLesserGpfThanDenominatorPrimeSortedByN2: [],
+            sortedNumeratorPossibilitiesGivenMaxN2D3P9WithGreaterGpfThanDenominatorPrimeSortedByN2P: [],
         }
         const denominatorPrime = 7 as Prime<Denominator>
         const candidateMaxDenominatorPrimeExponentGivenMaxN2D3P9 = 2 as Max<Exponent<Prime<Denominator>>>

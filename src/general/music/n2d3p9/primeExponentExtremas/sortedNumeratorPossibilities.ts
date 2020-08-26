@@ -1,27 +1,27 @@
 import { Denominator, Max, Prime } from "../../../math"
 import { N2D3P9 } from "../types"
-import { computeNumeratorPossibilitiesGivenMaxN2D3P9WithLesserGpfThanDenominatorPrimeSortedByN2 } from "./n2"
-import { computeNumeratorPossibilitiesGivenMaxN2D3P9WithGreaterGpfThanDenominatorPrimeSortedByN2P } from "./n2p"
+import { computeSortedNumeratorPossibilitiesGivenMaxN2D3P9WithLesserGpfThanDenominatorPrimeSortedByN2 } from "./n2"
+import { computeSortedNumeratorPossibilitiesGivenMaxN2D3P9WithGreaterGpfThanDenominatorPrimeSortedByN2P } from "./n2p"
 import { computeNumeratorPossibilitiesGivenMaxN2D3P3 } from "./numeratorPossibilities"
 import { SortedNumeratorPossibilitiesForDenominatorPrimeGivenMaxN2D3P9 } from "./types"
 
 const computeSortedNumeratorPossibilitiesForDenominatorPrimeGivenMaxN2D3P9 = (denominatorPrime: Prime<Denominator>, maxN2D3P9: Max<N2D3P9>): SortedNumeratorPossibilitiesForDenominatorPrimeGivenMaxN2D3P9 => {
     const numeratorPossibilitiesGivenMaxN2D3P3 = computeNumeratorPossibilitiesGivenMaxN2D3P3(maxN2D3P9)
 
-    const numeratorPossibilitiesGivenMaxN2D3P9WithLesserGpfThanDenominatorPrimeSortedByN2 =
-        computeNumeratorPossibilitiesGivenMaxN2D3P9WithLesserGpfThanDenominatorPrimeSortedByN2({
+    const sortedNumeratorPossibilitiesGivenMaxN2D3P9WithLesserGpfThanDenominatorPrimeSortedByN2 =
+        computeSortedNumeratorPossibilitiesGivenMaxN2D3P9WithLesserGpfThanDenominatorPrimeSortedByN2({
             denominatorPrime,
             numeratorPossibilitiesGivenMaxN2D3P3,
         })
-    const numeratorPossibilitiesGivenMaxN2D3P9WithGreaterGpfThanDenominatorPrimeSortedByN2P =
-        computeNumeratorPossibilitiesGivenMaxN2D3P9WithGreaterGpfThanDenominatorPrimeSortedByN2P({
+    const sortedNumeratorPossibilitiesGivenMaxN2D3P9WithGreaterGpfThanDenominatorPrimeSortedByN2P =
+        computeSortedNumeratorPossibilitiesGivenMaxN2D3P9WithGreaterGpfThanDenominatorPrimeSortedByN2P({
             denominatorPrime,
             numeratorPossibilitiesGivenMaxN2D3P3,
         })
 
     return {
-        numeratorPossibilitiesGivenMaxN2D3P9WithLesserGpfThanDenominatorPrimeSortedByN2,
-        numeratorPossibilitiesGivenMaxN2D3P9WithGreaterGpfThanDenominatorPrimeSortedByN2P,
+        sortedNumeratorPossibilitiesGivenMaxN2D3P9WithLesserGpfThanDenominatorPrimeSortedByN2,
+        sortedNumeratorPossibilitiesGivenMaxN2D3P9WithGreaterGpfThanDenominatorPrimeSortedByN2P,
     }
 }
 

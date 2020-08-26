@@ -3,7 +3,7 @@ import { Extrema } from "../types"
 import { Exponent, Monzo, Prime } from "./types"
 
 const computeMonzosFromPrimeExponentExtremas = (primeExponentExtremas: Array<Extrema<Exponent<Prime>>>): Monzo[] => {
-    let possibleMonzos = [computeExtensionBase(ExtensionBaseType.ARRAY)] as Monzo[]
+    let monzos = [computeExtensionBase(ExtensionBaseType.ARRAY)] as Monzo[]
 
     primeExponentExtremas.forEach(primeExponentExtrema => {
         const extendedPossibleMonzos = [] as Monzo[]
@@ -11,15 +11,15 @@ const computeMonzosFromPrimeExponentExtremas = (primeExponentExtremas: Array<Ext
         const range = computeRange(minPrimeExponent, maxPrimeExponent + 1 as Exponent<Prime>)
 
         range.forEach(primeExponent => {
-            possibleMonzos.forEach(numeratorMonzoToCheck => {
+            monzos.forEach(numeratorMonzoToCheck => {
                 extendedPossibleMonzos.push([...numeratorMonzoToCheck, primeExponent])
             })
         })
 
-        possibleMonzos = extendedPossibleMonzos
+        monzos = extendedPossibleMonzos
     })
 
-    return possibleMonzos.map(computeTrimmedArray)
+    return monzos.map(computeTrimmedArray)
 }
 
 export {

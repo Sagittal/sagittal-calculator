@@ -5,18 +5,18 @@ import {
     ComputeSortedNumeratorPossibilitiesOptions,
     N2P,
     NumeratorPossibilityWithGreaterGpfThanDenominatorPrime,
-    NumeratorPossibilityWithGreaterGpfThanDenominatorPrimeIncludingN2P,
+    SortedNumeratorPossibilityWithGreaterGpfThanDenominatorPrimeIncludingN2P,
 } from "./types"
 
-const computeN2P = (possibleNumerator: Numerator): N2P => {
-    return computeN2(possibleNumerator) * computeGpf(possibleNumerator) as N2P
+const computeN2P = (numerator: Numerator): N2P => {
+    return computeN2(numerator) * computeGpf(numerator) as N2P
 }
 
-const computeNumeratorPossibilitiesGivenMaxN2D3P9WithGreaterGpfThanDenominatorPrimeSortedByN2P = ({ denominatorPrime, numeratorPossibilitiesGivenMaxN2D3P3 }: ComputeSortedNumeratorPossibilitiesOptions): NumeratorPossibilityWithGreaterGpfThanDenominatorPrimeIncludingN2P[] => {
+const computeSortedNumeratorPossibilitiesGivenMaxN2D3P9WithGreaterGpfThanDenominatorPrimeSortedByN2P = ({ denominatorPrime, numeratorPossibilitiesGivenMaxN2D3P3 }: ComputeSortedNumeratorPossibilitiesOptions): SortedNumeratorPossibilityWithGreaterGpfThanDenominatorPrimeIncludingN2P[] => {
     const numeratorPossibilitiesWithGreaterGpf: NumeratorPossibilityWithGreaterGpfThanDenominatorPrime[] = numeratorPossibilitiesGivenMaxN2D3P3.filter(numeratorPossibility => {
         return numeratorPossibility.gpf > denominatorPrime && !dividesEvenly(numeratorPossibility.numerator, denominatorPrime)
     }) as NumeratorPossibilityWithGreaterGpfThanDenominatorPrime[]
-    const numeratorPossibilitiesWithGreaterGpfIncludingN2P: NumeratorPossibilityWithGreaterGpfThanDenominatorPrimeIncludingN2P[] = numeratorPossibilitiesWithGreaterGpf.map(numeratorPossibility => {
+    const numeratorPossibilitiesWithGreaterGpfIncludingN2P: SortedNumeratorPossibilityWithGreaterGpfThanDenominatorPrimeIncludingN2P[] = numeratorPossibilitiesWithGreaterGpf.map(numeratorPossibility => {
         return { ...numeratorPossibility, n2p: computeN2P(numeratorPossibility.numerator) }
     })
 
@@ -24,5 +24,5 @@ const computeNumeratorPossibilitiesGivenMaxN2D3P9WithGreaterGpfThanDenominatorPr
 }
 
 export {
-    computeNumeratorPossibilitiesGivenMaxN2D3P9WithGreaterGpfThanDenominatorPrimeSortedByN2P,
+    computeSortedNumeratorPossibilitiesGivenMaxN2D3P9WithGreaterGpfThanDenominatorPrimeSortedByN2P,
 }

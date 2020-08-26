@@ -1,4 +1,4 @@
-import { Denominator, Exponent, Max, Min, Numerator, Prime } from "../../../math"
+import { Denominator, Exponent, Max, Min, negative, Numerator, Prime } from "../../../math"
 import { Extrema } from "../../../types"
 import { N2D3P9 } from "../types"
 import { computeMaxDenominatorPrimeExponentGivenMaxN2D3P3 } from "./maxDenominatorPrimeExponent"
@@ -10,11 +10,8 @@ const computePrimeExponentExtremaGivenMaxN2D3P3 = (prime: Prime, maxN2D3P9: Max<
     const maxDenominatorPrimeExponentGivenMaxN2D3P3 =
         computeMaxDenominatorPrimeExponentGivenMaxN2D3P3(prime as Prime<Denominator>, maxN2D3P9)
 
-    // TODO: A "negate" function which preserved the nominal typed number and prevented negative zeroes would be nice
     return [
-        maxDenominatorPrimeExponentGivenMaxN2D3P3 === 0 ?
-            maxDenominatorPrimeExponentGivenMaxN2D3P3 as Exponent<Prime> as Min<Exponent<Prime>> :
-            -maxDenominatorPrimeExponentGivenMaxN2D3P3 as Min<Exponent<Prime>>,
+        negative(maxDenominatorPrimeExponentGivenMaxN2D3P3) as Exponent<Prime> as Min<Exponent<Prime>>,
         maxNumeratorPrimeExponentGivenMaxN2D3P3,
     ]
 }

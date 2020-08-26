@@ -4,8 +4,8 @@ import { computeMinN2PForCandidateMaxDenominatorPrimeExponentGivenMaxN2D3P9 } fr
 import {
     N2,
     N2P,
-    NumeratorPossibilityWithGreaterGpfThanDenominatorPrimeIncludingN2P,
-    NumeratorPossibilityWithLesserGpfThanDenominatorPrimeIncludingN2,
+    SortedNumeratorPossibilityWithGreaterGpfThanDenominatorPrimeIncludingN2P,
+    SortedNumeratorPossibilityWithLesserGpfThanDenominatorPrimeIncludingN2,
 } from "../../../../../../src/general/music/n2d3p9/primeExponentExtremas/types"
 
 describe("computeMinN2PForCandidateMaxDenominatorPrimeExponentGivenMaxN2D3P9", () => {
@@ -15,7 +15,7 @@ describe("computeMinN2PForCandidateMaxDenominatorPrimeExponentGivenMaxN2D3P9", (
         const candidateMaxDenominatorPrimeExponentGivenMaxN2D3P9 = 2 as Max<Exponent<Prime<Denominator>>>
 
         const sortedNumeratorPossibilitiesForDenominatorPrimeGivenMaxN2D3P9 = {
-            numeratorPossibilitiesGivenMaxN2D3P9WithLesserGpfThanDenominatorPrimeSortedByN2: [
+            sortedNumeratorPossibilitiesGivenMaxN2D3P9WithLesserGpfThanDenominatorPrimeSortedByN2: [
                 // this one will not make the cut because the numerator is less than the denominator (25 < 49)
                 {
                     numerator: 25 as Numerator,
@@ -34,8 +34,8 @@ describe("computeMinN2PForCandidateMaxDenominatorPrimeExponentGivenMaxN2D3P9", (
                     gpf: 5 as Prime,
                     n2: 39.0625 as N2,
                 },
-            ] as NumeratorPossibilityWithLesserGpfThanDenominatorPrimeIncludingN2[],
-            numeratorPossibilitiesGivenMaxN2D3P9WithGreaterGpfThanDenominatorPrimeSortedByN2P: [
+            ] as SortedNumeratorPossibilityWithLesserGpfThanDenominatorPrimeIncludingN2[],
+            sortedNumeratorPossibilitiesGivenMaxN2D3P9WithGreaterGpfThanDenominatorPrimeSortedByN2P: [
                 // this one will not make the cut because the numerator is less than the denominator (47 < 49)
                 {
                     numerator: 47 as Numerator,
@@ -54,7 +54,7 @@ describe("computeMinN2PForCandidateMaxDenominatorPrimeExponentGivenMaxN2D3P9", (
                     gpf: 17 as Prime,
                     n2p: 72.25 as N2P,
                 },
-            ] as NumeratorPossibilityWithGreaterGpfThanDenominatorPrimeIncludingN2P[],
+            ] as SortedNumeratorPossibilityWithGreaterGpfThanDenominatorPrimeIncludingN2P[],
         }
 
         const actual = computeMinN2PForCandidateMaxDenominatorPrimeExponentGivenMaxN2D3P9({
@@ -79,7 +79,7 @@ describe("computeMinN2PForCandidateMaxDenominatorPrimeExponentGivenMaxN2D3P9", (
         const candidateMaxDenominatorPrimeExponentGivenMaxN2D3P9 = 2 as Max<Exponent<Prime<Denominator>>>
 
         const sortedNumeratorPossibilitiesForDenominatorPrimeGivenMaxN2D3P9 = {
-            numeratorPossibilitiesGivenMaxN2D3P9WithLesserGpfThanDenominatorPrimeSortedByN2: [
+            sortedNumeratorPossibilitiesGivenMaxN2D3P9WithLesserGpfThanDenominatorPrimeSortedByN2: [
                 // this one will not make the cut because the numerator is less than the denominator (25 < 49)
                 {
                     numerator: 25 as Numerator,
@@ -98,8 +98,8 @@ describe("computeMinN2PForCandidateMaxDenominatorPrimeExponentGivenMaxN2D3P9", (
                     gpf: 5 as Prime,
                     n2: 39.0625 as N2,
                 },
-            ] as NumeratorPossibilityWithLesserGpfThanDenominatorPrimeIncludingN2[],
-            numeratorPossibilitiesGivenMaxN2D3P9WithGreaterGpfThanDenominatorPrimeSortedByN2P: [
+            ] as SortedNumeratorPossibilityWithLesserGpfThanDenominatorPrimeIncludingN2[],
+            sortedNumeratorPossibilitiesGivenMaxN2D3P9WithGreaterGpfThanDenominatorPrimeSortedByN2P: [
                 // this one will not make the cut because the numerator is less than the denominator (47 < 49)
                 {
                     numerator: 47 as Numerator,
@@ -118,7 +118,7 @@ describe("computeMinN2PForCandidateMaxDenominatorPrimeExponentGivenMaxN2D3P9", (
                     gpf: 29 as Prime,
                     n2p: 166.75 as N2P,
                 },
-            ] as NumeratorPossibilityWithGreaterGpfThanDenominatorPrimeIncludingN2P[],
+            ] as SortedNumeratorPossibilityWithGreaterGpfThanDenominatorPrimeIncludingN2P[],
         }
 
         const actual = computeMinN2PForCandidateMaxDenominatorPrimeExponentGivenMaxN2D3P9({

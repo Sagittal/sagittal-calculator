@@ -1,8 +1,8 @@
+import { Min } from "../../../math"
 import { N2D3P9 } from "../types"
 import { computeD39ForCandidateMaxDenominatorPrimeExponent } from "./d39"
 import { computeMinN2PForCandidateMaxDenominatorPrimeExponentGivenMaxN2D3P9 } from "./minN2P"
 import { ComputeMinN2PForCandidateMaxDenominatorPrimeExponentGivenMaxN2D3P9Options } from "./types"
-import { Min } from "../../../math"
 
 const computeMinN2D3P9ForCandidateMaxDenominatorPrimeExponentGivenMaxN2D3P9 = (options: ComputeMinN2PForCandidateMaxDenominatorPrimeExponentGivenMaxN2D3P9Options): Min<N2D3P9> => {
     const {

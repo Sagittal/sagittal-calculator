@@ -1,12 +1,12 @@
 import {
     Cents,
     computeCentsFromMonzo,
+    computeIsSubMonzo,
     computeMonzoFromRatio,
     computeRatioFromMonzo,
     computeRoughNumberMonzo,
     computeSuperMonzo,
     computeUndirectedRatio,
-    computeIsSubMonzo,
     Monzo,
     Name,
     PRIMES,
