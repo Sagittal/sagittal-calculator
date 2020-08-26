@@ -22,7 +22,7 @@ describe("presentComma", () => {
     })
 
     it("can also format it in a details mode with lines with titles for each line", () => {
-        const actual = presentComma(comma, { mode: "DETAILS" })
+        const actual = presentComma(comma, { mode: "details" })
 
         const expected =
             "comma name:   \t6j\n" +

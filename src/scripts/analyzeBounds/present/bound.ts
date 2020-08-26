@@ -80,7 +80,7 @@ const presentBound = (analyzedBound: AnalyzedBound, { bound, mode = AnalysisMode
         ].join("\t")
 
         presentedBound = presentedBound[ color ]
-    } else if (mode === "DETAILS") {
+    } else if (mode === "details") {
         presentedBound =
             JSON.stringify(boundIdentifiers, null, 4)
                 .replace(/\\\\/g, "\\") +

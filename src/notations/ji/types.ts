@@ -7,13 +7,12 @@ type Ultrina = Cents & { _MinaBrand: "Mina" }
 type Highina = Cents & { _MinaBrand: "Mina" }
 type Medina = Cents & { _MinaBrand: "Mina" }
 
-// TODO: for consistency, shouldn't these values be camelCase, not CONSTANT_CASE ?
 enum Level {
-    MEDIUM = "MEDIUM",          // corresponds closely with Athenian symbol set
-    HIGH = "HIGH",              // corresponds closely with Promethean symbol set
-    ULTRA = "ULTRA",            // corresponds closely with Herculean symbol set
-    EXTREME = "EXTREME",        // corresponds closely with Olympian symbol set
-    INSANE = "INSANE",          // corresponds closely with Magrathean symbol set
+    MEDIUM = "medium",          // corresponds closely with Athenian symbol set
+    HIGH = "high",              // corresponds closely with Promethean symbol set
+    ULTRA = "ultra",            // corresponds closely with Herculean symbol set
+    EXTREME = "extreme",        // corresponds closely with Olympian symbol set
+    INSANE = "insane",          // corresponds closely with Magrathean symbol set
 }
 
 enum SymbolSet {

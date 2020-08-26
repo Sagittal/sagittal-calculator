@@ -1,7 +1,7 @@
 import { presentMonzo, presentRatio } from "../general"
 import { SagittalComma } from "./types"
 
-const presentComma = (comma: SagittalComma, { mode = "SUMMARY" } = {}) => {
+const presentComma = (comma: SagittalComma, { mode = "summary" } = {}) => {
     const {
         name,
         limit,
@@ -13,7 +13,7 @@ const presentComma = (comma: SagittalComma, { mode = "SUMMARY" } = {}) => {
         n2d3p9,
     } = comma
 
-    if (mode === "DETAILS") {
+    if (mode === "details") {
         return [
             `comma name:   \t${name}`,
             `limit:        \t${limit}`,

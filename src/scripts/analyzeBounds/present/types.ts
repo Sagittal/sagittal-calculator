@@ -21,8 +21,8 @@ interface BoundIdentifiers {
 }
 
 enum AnalysisMode {
-    DETAILS = "DETAILS",
-    SUMMARY = "SUMMARY",
+    DETAILS = "details",
+    SUMMARY = "summary",
 }
 
 interface PresentBoundParameters {

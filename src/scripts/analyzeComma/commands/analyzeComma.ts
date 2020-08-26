@@ -29,4 +29,4 @@ if (!monzo) {
 
 const analyzedComma = analyzeComma(monzo)
 
-console.log(presentComma(analyzedComma, { mode: "DETAILS" }))
+console.log(presentComma(analyzedComma, { mode: "details" }))

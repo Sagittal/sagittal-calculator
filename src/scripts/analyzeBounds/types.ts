@@ -2,9 +2,9 @@ import { Cents, Count, Name, Position, Proportion, Rank, Sum } from "../../gener
 import { Level, Tina } from "../../notations"
 
 enum EventType {
-    INA = "INA",
-    MEAN = "MEAN",
-    SIZE = "SIZE",
+    INA = "ina",
+    MEAN = "mean",
+    SIZE = "size",
 }
 
 type Score = number & { _ScoreBrand: "Score" }
