@@ -16,8 +16,8 @@ const computeN2D3P9 = (monzo: Monzo): N2D3P9 => {
     }
 
     return monzo.reduce(
-        (n2d3p9: N2D3P9, primeExponent: Exponent<Prime>, primeIndex: number) => {
-            const prime = PRIMES[ primeIndex ]
+        (n2d3p9: N2D3P9, primeExponent: Exponent<Prime>, index: number) => {
+            const prime = PRIMES[ index ]
             const divisor = primeExponent < 0 ? 3 : 2
 
             return n2d3p9 * (prime / divisor) ** abs(primeExponent) as N2D3P9

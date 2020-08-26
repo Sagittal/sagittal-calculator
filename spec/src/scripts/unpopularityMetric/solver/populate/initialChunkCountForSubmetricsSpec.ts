@@ -1,8 +1,8 @@
 import { Count } from "../../../../../../src/general"
 import { unpopularityMetricSettings } from "../../../../../../src/scripts/unpopularityMetric/globals"
 import { Chunk } from "../../../../../../src/scripts/unpopularityMetric/solver"
-import { SubmetricChunk } from "../../../../../../src/scripts/unpopularityMetric/solver/populate"
 import { computeInitialChunkCountForSubmetrics } from "../../../../../../src/scripts/unpopularityMetric/solver/populate/initialChunkCountForSubmetrics"
+import { Submetric } from "../../../../../../src/scripts/unpopularityMetric/sumOfSquares"
 
 describe("computeInitialChunkCountForSubmetrics", () => {
     describe("when all chunks are being used, including probably useless ones", () => {
@@ -11,7 +11,7 @@ describe("computeInitialChunkCountForSubmetrics", () => {
 
             const actual = computeInitialChunkCountForSubmetrics(chunkCount)
 
-            expect(actual).toBe(chunkCount as Count<SubmetricChunk>)
+            expect(actual).toBe(chunkCount as Count<Chunk<Submetric>>)
         })
 
         it("when greater than the total count of possible submetric chunks (6), caps out at that total possible count", () => {
@@ -19,7 +19,7 @@ describe("computeInitialChunkCountForSubmetrics", () => {
 
             const actual = computeInitialChunkCountForSubmetrics(chunkCount)
 
-            const expected = 6 as Count<SubmetricChunk>
+            const expected = 6 as Count<Chunk<Submetric>>
             expect(actual).toBe(expected)
         })
     })
@@ -34,7 +34,7 @@ describe("computeInitialChunkCountForSubmetrics", () => {
 
             const actual = computeInitialChunkCountForSubmetrics(chunkCount)
 
-            expect(actual).toBe(chunkCount as Count<SubmetricChunk>)
+            expect(actual).toBe(chunkCount as Count<Chunk<Submetric>>)
         })
 
         it("when greater than the total count of possible submetric chunks (4), caps out at that total possible count", () => {
@@ -42,7 +42,7 @@ describe("computeInitialChunkCountForSubmetrics", () => {
 
             const actual = computeInitialChunkCountForSubmetrics(chunkCount)
 
-            const expected = 4 as Count<SubmetricChunk>
+            const expected = 4 as Count<Chunk<Submetric>>
             expect(actual).toBe(expected)
         })
     })

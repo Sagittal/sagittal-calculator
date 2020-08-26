@@ -5,9 +5,9 @@ import { Roughness } from "./types"
 const computeIsRough = (integer: Integer, roughness: Roughness): boolean => {
     let isRough = true
 
-    let primeIndex = 0 as Index<Prime>
+    let index = 0 as Index<Prime>
     while (true) {
-        const prime = PRIMES[ primeIndex ]
+        const prime = PRIMES[ index ]
         if (prime >= roughness) {
             break
         }
@@ -17,7 +17,7 @@ const computeIsRough = (integer: Integer, roughness: Roughness): boolean => {
             break
         }
 
-        primeIndex = primeIndex + 1 as Index<Prime>
+        index = index + 1 as Index<Prime>
     }
 
     return isRough

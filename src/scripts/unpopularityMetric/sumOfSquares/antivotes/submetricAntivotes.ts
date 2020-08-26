@@ -2,7 +2,7 @@ import {
     abs,
     Base,
     computePrimeCount,
-    FractionalPart,
+    FractionalPartType,
     isUndefined,
     log,
     Monzo,
@@ -17,7 +17,7 @@ import { secondaryParameterOverridesForDenominator } from "./secondaryParameter"
 // (or prime factor indices via prime count function π)
 // (maybe with (maybe adjusted) repetition)
 
-const computeSubmetricAntivotes = (fiveRoughNumberMonzo: Monzo, submetric = {}, fractionalPart?: FractionalPart): Antivotes => {
+const computeSubmetricAntivotes = (fiveRoughNumberMonzo: Monzo, submetric = {}, fractionalPartType?: FractionalPartType): Antivotes => {
     const {
         aAsCoefficient = 1 as ParameterValue,
         aAsPowerExponent,
@@ -59,7 +59,7 @@ const computeSubmetricAntivotes = (fiveRoughNumberMonzo: Monzo, submetric = {}, 
                 usePrimeIndex ?
                     computePrimeCount(prime) :
                     prime
-            adjustedPrime = adjustedPrime + secondaryParameterOverridesForDenominator(x, u, primeExponent, fractionalPart)
+            adjustedPrime = adjustedPrime + secondaryParameterOverridesForDenominator(x, u, primeExponent, fractionalPartType)
             if (!isUndefined(aAsLogarithmBase)) {
                 adjustedPrime = adjustedPrime >= 1 ?
                     log(adjustedPrime as Power, aAsLogarithmBase as number as Base) :
@@ -74,7 +74,7 @@ const computeSubmetricAntivotes = (fiveRoughNumberMonzo: Monzo, submetric = {}, 
                 adjustedPrime = aAsPowerBase ** adjustedPrime
             }
             adjustedPrime = adjustedPrime * aAsCoefficient
-            adjustedPrime = adjustedPrime + secondaryParameterOverridesForDenominator(w, b, primeExponent, fractionalPart)
+            adjustedPrime = adjustedPrime + secondaryParameterOverridesForDenominator(w, b, primeExponent, fractionalPartType)
 
             if (primeExponent === 0) {
                 adjustedPrimeExponent = 0
@@ -82,7 +82,7 @@ const computeSubmetricAntivotes = (fiveRoughNumberMonzo: Monzo, submetric = {}, 
                 adjustedPrimeExponent = withoutRepetition ? 1 : abs(primeExponent)
                 // adjustedPrimeExponent = adjustedPrimeExponent + t
                 adjustedPrimeExponent = adjustedPrimeExponent >= 0 ?
-                    adjustedPrimeExponent ** secondaryParameterOverridesForDenominator(y, v, primeExponent, fractionalPart) :
+                    adjustedPrimeExponent ** secondaryParameterOverridesForDenominator(y, v, primeExponent, fractionalPartType) :
                     0
                 // adjustedPrimeExponent = adjustedPrimeExponent + s
             }

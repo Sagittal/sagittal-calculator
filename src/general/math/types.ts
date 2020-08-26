@@ -8,6 +8,11 @@ type Numerator = Integer & { _NumeratorBrand: "Numerator" }
 type Denominator = Integer & { _DenominatorBrand: "Denominator" }
 type Ratio = [Numerator, Denominator]
 type UndirectedRatio = Ratio & { _UndirectedRatioBrand: "UndirectedRatio" }
+enum FractionalPartType {
+    NUMERATOR = "numerator",
+    DENOMINATOR = "denominator",
+}
+type FractionalPart = Numerator | Denominator
 
 type Combination<T> = T[] & { _CombinationBrand: "Combination" }
 type Combinations<T> = Array<Combination<T>> & { _CombinationsBrand: "Combinations" }
@@ -22,11 +27,6 @@ type Power<T extends number = number> = T & { _PowerBrand: "Power" }
 type Max<T extends number = number> = T & { _MaxBrand: "Max" }
 type Min<T extends number = number> = T & { _MinBrand: "Min" }
 
-enum FractionalPart {
-    NUMERATOR = "numerator",
-    DENOMINATOR = "denominator",
-}
-
 type Sopfr<Roughness = void> = Sum<Prime> & (Roughness extends number ? { _RoughnessBrand: Roughness } : {})
 type Copfr<Roughness = void> = Count<Prime> & (Roughness extends number ? { _RoughnessBrand: Roughness } : {})
 
@@ -40,6 +40,7 @@ export {
     Combinations,
     Distribution,
     DistributionBin,
+    FractionalPartType,
     FractionalPart,
     Exponent,
     Base,

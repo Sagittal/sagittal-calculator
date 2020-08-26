@@ -1,6 +1,9 @@
 import { PRIMES } from "../math"
 
-const computePrimeCount = (value: number) => // TODO: isn't this just copf ???
+// Prime Counting Function (π)
+// https://mathworld.wolfram.com/PrimeCountingFunction.html
+
+const computePrimeCount = (value: number) =>
     PRIMES.findIndex(prime => prime > value)
 
 export {

@@ -1,6 +1,6 @@
 const forumTable = (data: string[]) => {
-    const table = data.map((row, rowIndex) => {
-        const cellTag = rowIndex === 0 ? "th" : "td"
+    const table = data.map((row, index) => {
+        const cellTag = index === 0 ? "th" : "td"
 
         return `[tr][${cellTag}]` + row.split("\t").join(`[/${cellTag}][${cellTag}]`) + `[/${cellTag}][/tr]`
     })

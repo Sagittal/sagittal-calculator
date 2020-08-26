@@ -1,8 +1,8 @@
-import { presentTime } from "../../../../src/general"
+import { Ms, presentTime } from "../../../../src/general"
 
 describe("presentTime", () => {
     it("formats ms to hours", () => {
-        const ms = 205207663.470801
+        const ms = 205207663.470801 as Ms
 
         const actual = presentTime(ms)
 
@@ -11,7 +11,7 @@ describe("presentTime", () => {
     })
 
     it("works for small times", () => {
-        const ms = 13801.802699999884
+        const ms = 13801.802699999884 as Ms
 
         const actual = presentTime(ms)
 

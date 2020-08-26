@@ -1,12 +1,13 @@
 import {
     Cents,
     computeCentsFromMonzo,
-    computeIsSubMonzo,
+    computeIsSubMonzo, computeMonzoFromInteger,
     computeMonzoFromRatio,
     computeRatioFromMonzo,
     computeRoughNumberMonzo,
     computeSuperMonzo,
-    computeUndirectedRatio,
+    computeUndirectedRatio, FractionalPart,
+    FractionalPartType,
     Monzo,
     Name,
     PRIMES,
@@ -17,8 +18,8 @@ import { SagittalComma } from "./types"
 
 const SUPERSCRIPT_NUMS = ["⁰", "¹", "²", "³", "⁴", "⁵", "⁶", "⁷", "⁸", "⁹"]
 
-const primeFactorizeCommaName = (numeratorOrDenominator: number) => {
-    const monzo = computeMonzoFromRatio([numeratorOrDenominator, 1] as Ratio)
+const primeFactorizeCommaName = (numeratorOrDenominator: FractionalPart) => {
+    const monzo = computeMonzoFromInteger(numeratorOrDenominator)
     const factorizedTerms: string[] = []
 
     monzo.forEach((primeExponent, primeExponentIndex) => {

@@ -1,7 +1,8 @@
 import { Combinations, Count } from "../../general"
 import { Metric, MetricName, Sample, Scope } from "./bestMetric"
 import { DEFAULT_MAX_UNIT, DEFAULT_ONLY_TOP, DEFAULT_Z } from "./constants"
-import { Chunk, ParameterChunk, SolverStatus, SubmetricChunk } from "./solver"
+import { Chunk, SolverStatus } from "./solver"
+import { Parameter, Submetric } from "./sumOfSquares"
 
 const scopesToSearch: Scope[] = [] as unknown[] as Scope[]
 
@@ -18,8 +19,8 @@ const bestMetrics: Map<MetricName, Metric> = new Map()
 
 const metricNames: MetricName[] = []
 
-const memoizedSubmetricChunkCombinations: Array<Combinations<SubmetricChunk>> = []
-const memoizedParameterChunkCombinations: Array<Combinations<ParameterChunk>> = []
+const memoizedSubmetricChunkCombinations: Array<Combinations<Chunk<Submetric>>> = []
+const memoizedParameterChunkCombinations: Array<Combinations<Chunk<Parameter>>> = []
 
 const unpopularityMetricSettings = {
     z: DEFAULT_Z,

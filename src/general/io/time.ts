@@ -1,6 +1,7 @@
 import { floor, round } from "../math"
+import { Ms } from "../types"
 
-const presentTime = (ms: number) => {
+const presentTime = (ms: Ms): string => {
     const milliseconds = round(ms % 1000)
     const seconds = floor((ms / 1000) % 60)
     const minutes = floor((ms / (1000 * 60)) % 60)

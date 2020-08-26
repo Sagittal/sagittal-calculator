@@ -1,6 +1,6 @@
 import { program } from "commander"
 import { performance } from "perf_hooks"
-import { Count, presentTime } from "../../../general"
+import { Count, difference, Ms, presentTime } from "../../../general"
 import { DebugTarget, saveDebugMessage } from "../debug"
 import { solverStatus, unpopularityMetricSettings } from "../globals"
 import { Chunk, formatBestMetrics, populateAndSearchScopesAndPerfectMetrics } from "../solver"
@@ -18,15 +18,15 @@ applySharedUnpopularityMetricCommandSetup({ defaultDebugTargets })
 
 solverStatus.chunkCount = parseInt(program.args[ 0 ]) as Count<Chunk>
 
-const time = !!program.time // TODO: Time type
+const time = !!program.time
 
-const startTime = performance.now()
+const startTime = performance.now() as Ms
 populateAndSearchScopesAndPerfectMetrics().then(() => {
     saveDebugMessage(`\n\nAND THE BEST METRICS WERE ${formatBestMetrics()}`, DebugTarget.FINAL_SOLVER_RESULTS)
 
-    const endTime = performance.now()
+    const endTime = performance.now() as Ms
     if (time) {
-        saveDebugMessage(`\n\nFINDING BEST METRICS TOOK ${presentTime(endTime - startTime)}`, DebugTarget.FINAL_SOLVER_RESULTS)
+        saveDebugMessage(`\n\nFINDING BEST METRICS TOOK ${presentTime(difference(endTime, startTime))}`, DebugTarget.FINAL_SOLVER_RESULTS)
     }
     saveDebugMessage(`MAX UNIT ${unpopularityMetricSettings.maxUnit}`, DebugTarget.FINAL_SOLVER_RESULTS)
     saveDebugMessage(`AVERAGE SAMPLES/SCOPE ${solverStatus.averageSamplesPerScope}`, DebugTarget.FINAL_SOLVER_RESULTS)

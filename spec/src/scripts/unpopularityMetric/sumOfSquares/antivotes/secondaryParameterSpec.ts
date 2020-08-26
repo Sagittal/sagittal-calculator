@@ -1,4 +1,4 @@
-import { FractionalPart } from "../../../../../../src/general/math"
+import { Exponent, FractionalPartType, Prime } from "../../../../../../src/general/math"
 import { ParameterValue } from "../../../../../../src/scripts/unpopularityMetric/sumOfSquares"
 import { secondaryParameterOverridesForDenominator } from "../../../../../../src/scripts/unpopularityMetric/sumOfSquares/antivotes/secondaryParameter"
 
@@ -7,7 +7,7 @@ describe("secondaryParameterOverridesForDenominator", () => {
     const parameter = 3 as ParameterValue
 
     it("returns the parameter when the prime exponent is positive (it is in the numerator)", () => {
-        const primeExponent = 2
+        const primeExponent = 2 as Exponent<Prime>
 
         const actual = secondaryParameterOverridesForDenominator(parameter, denominatorSpecificParameter, primeExponent)
 
@@ -15,7 +15,7 @@ describe("secondaryParameterOverridesForDenominator", () => {
     })
 
     it("returns the denominator-specific parameter when the prime exponent is negative (it is in the denominator)", () => {
-        const primeExponent = -2
+        const primeExponent = -2 as Exponent<Prime>
 
         const actual = secondaryParameterOverridesForDenominator(parameter, denominatorSpecificParameter, primeExponent)
 
@@ -23,8 +23,8 @@ describe("secondaryParameterOverridesForDenominator", () => {
     })
 
     it("returns the parameter when the fractional part is stated to be the numerator, even if the prime exponent is negative (which should never happen, but just in case, I think the fractional part is a stronger message)", () => {
-        const primeExponent = -2
-        const fractionalPart = FractionalPart.NUMERATOR
+        const primeExponent = -2 as Exponent<Prime>
+        const fractionalPart = FractionalPartType.NUMERATOR
 
         const actual = secondaryParameterOverridesForDenominator(parameter, denominatorSpecificParameter, primeExponent, fractionalPart)
 
@@ -32,8 +32,8 @@ describe("secondaryParameterOverridesForDenominator", () => {
     })
 
     it("returns the denominator-specific parameter when the fractional part is stated to be the denominator, even if the prime exponent is positive (which would happen in real life, when a separate monzo for the denominator is calculated from an integer which was in a denominator)", () => {
-        const primeExponent = 2
-        const fractionalPart = FractionalPart.DENOMINATOR
+        const primeExponent = 2 as Exponent<Prime>
+        const fractionalPart = FractionalPartType.DENOMINATOR
 
         const actual = secondaryParameterOverridesForDenominator(parameter, denominatorSpecificParameter, primeExponent, fractionalPart)
 
@@ -41,8 +41,8 @@ describe("secondaryParameterOverridesForDenominator", () => {
     })
 
     it("returns the parameter when the denominator-specific parameter is not provided, even if the prime exponent is negative and the requested fractional part is denominator", () => {
-        const primeExponent = -2
-        const fractionalPart = FractionalPart.DENOMINATOR
+        const primeExponent = -2 as Exponent<Prime>
+        const fractionalPart = FractionalPartType.DENOMINATOR
 
         const actual = secondaryParameterOverridesForDenominator(parameter, undefined, primeExponent, fractionalPart)
 

@@ -1,4 +1,4 @@
-import { doOnNextEventLoop, isUndefined } from "../../../general"
+import { doOnNextEventLoop, isUndefined, Ms } from "../../../general"
 import { DebugTarget, saveDebugMessage } from "../debug"
 import { bestMetrics } from "../globals"
 import { computeSumOfSquaresForSubmetrics } from "../sumOfSquares"
@@ -42,7 +42,7 @@ const computeSumOfSquaresAndMaybeUpdateBestMetric = (sample: Sample, options: Co
 
             saveDebugMessage(`${indentation}new best metric: ${JSON.stringify(bestMetrics.get(metricName))}`, DebugTarget.NEW_BEST_METRIC)
         }
-    }, index)
+    }, index as number as Ms)
 }
 
 export {

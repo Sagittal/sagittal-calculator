@@ -9,10 +9,11 @@ import {
 import { recursiveSearchScopeAndMaybeUpdateBestMetric } from "../../../../../src/scripts/unpopularityMetric/perfecter"
 import { perfectMetric } from "../../../../../src/scripts/unpopularityMetric/perfecter/metric"
 import * as recursiveBestMetric from "../../../../../src/scripts/unpopularityMetric/perfecter/recursiveBestMetric"
+import { MetricTag } from "../../../../../src/scripts/unpopularityMetric/perfecter/types"
 import { Parameter, ParameterValue, Submetric } from "../../../../../src/scripts/unpopularityMetric/sumOfSquares"
 
 describe("perfectMetric", () => {
-    const options = { metricId: "1/16" }
+    const options = { metricTag: "1/16" as MetricTag }
 
     it("takes a best metric and then converts it back into a scope in order to perfect it recursively", async () => {
         const metric = {

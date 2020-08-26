@@ -1,20 +1,14 @@
 import { Combination, Count, Index } from "../../../../general"
-import { SubmetricScope } from "../../bestMetric"
+import { Parameter, Submetric } from "../../sumOfSquares"
+import { Chunk } from "../types"
 
 interface PopulateScopesForSubmetricChunkCombinationOptions {
-    parameterChunkCombinations: Array<Combination<ParameterChunk>>,
-    parameterChunkCombinationIndex?: Index<Combination<ParameterChunk>>,
-    submetricChunkCombinationIndex: Index<Combination<SubmetricChunk>>,
-    submetricChunkCombinationCount: Count<Combination<SubmetricChunk>>
+    parameterChunkCombinations: Array<Combination<Chunk<Parameter>>>,
+    parameterChunkCombinationIndex?: Index<Combination<Chunk<Parameter>>>,
+    submetricChunkCombinationIndex: Index<Combination<Chunk<Submetric>>>,
+    submetricChunkCombinationCount: Count<Combination<Chunk<Submetric>>>
 }
-
-// TODO: should I standardize around parameterization, i.e. do like Chunk<Submetric> and Chunk<Parameter> ? that way
-//  Chunk could just be Chunk, not an | type
-type SubmetricChunk = SubmetricScope & { _SubmetricChunkBrand: "SubmetricChunk" }
-type ParameterChunk = SubmetricScope & { _ParameterChunkBrand: "ParameterChunk" }
 
 export {
     PopulateScopesForSubmetricChunkCombinationOptions,
-    SubmetricChunk,
-    ParameterChunk,
 }

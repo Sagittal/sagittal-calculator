@@ -1,4 +1,4 @@
-import { Cents, Index } from "../../general"
+import { Cents, difference, Index } from "../../general"
 
 const computeNeighborPositionIndices = (position: Cents, sortedTargetPositions: Cents[]): [Index<Cents>, Index<Cents>] => {
     let index = 0 as Index<Cents>
@@ -9,7 +9,7 @@ const computeNeighborPositionIndices = (position: Cents, sortedTargetPositions: 
     }
 
     return [
-        index - 1 as Index<Cents>,
+        difference(index, 1 as Index<Cents>),
         index,
     ]
 }

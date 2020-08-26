@@ -1,9 +1,9 @@
-import { Combination, Index, Resolution, Span, Unit } from "../../../../../src/general"
+import { Combination, Index, Integer, Resolution, Span, Unit } from "../../../../../src/general"
 import { MetricName, Scope, SumOfSquares } from "../../../../../src/scripts/unpopularityMetric/bestMetric"
 import { SamplePoint } from "../../../../../src/scripts/unpopularityMetric/bestMetric/scopeToSamples"
 import { recursiveSearchScopeAndMaybeUpdateBestMetric } from "../../../../../src/scripts/unpopularityMetric/perfecter"
 import * as nextLocalMin from "../../../../../src/scripts/unpopularityMetric/perfecter/nextLocalMin"
-import { LocalMin } from "../../../../../src/scripts/unpopularityMetric/perfecter/types"
+import { LocalMin, MetricTag } from "../../../../../src/scripts/unpopularityMetric/perfecter/types"
 import { Parameter, ParameterValue, Submetric } from "../../../../../src/scripts/unpopularityMetric/sumOfSquares"
 
 describe("searchScopeAndMaybeUpdateBestMetric", () => {
@@ -28,8 +28,8 @@ describe("searchScopeAndMaybeUpdateBestMetric", () => {
                 [ Parameter.A_AS_COEFFICIENT ]: 3.3 as ParameterValue,
             },
         ] as Scope
-        const depth = 8
-        const metricId = "this is fun"
+        const depth = 8 as Integer
+        const metricTag = "this is fun" as MetricTag
         const localMin = {
             sumOfSquares: 0.04 as SumOfSquares,
             samplePoint: [77, 54] as SamplePoint,
@@ -42,7 +42,7 @@ describe("searchScopeAndMaybeUpdateBestMetric", () => {
 
         await recursiveSearchScopeAndMaybeUpdateBestMetric(scope, {
             depth,
-            metricId,
+            metricTag,
             localMin,
             onlyWinners,
         })
@@ -97,7 +97,7 @@ describe("searchScopeAndMaybeUpdateBestMetric", () => {
         const expectedOptions = {
             dynamicParameters: expectedDynamicParameters,
             scope,
-            metricId,
+            metricTag,
             indentation: expectedIndentation,
             depth,
             nextLocalMinima: expectedNextLocalMinima,

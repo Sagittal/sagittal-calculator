@@ -24,6 +24,8 @@ type Name<T = void> = string & { _NameBrand: "Name" } & (T extends void ? {} : {
 
 type Extrema<T extends number = number> = [Min<T>, Max<T>]
 
+type Ms = number & { _MsBrand: "Ms" }
+
 export {
     Proportion,
     Index,
@@ -35,4 +37,5 @@ export {
     Resolution,
     Name,
     Extrema,
+    Ms,
 }

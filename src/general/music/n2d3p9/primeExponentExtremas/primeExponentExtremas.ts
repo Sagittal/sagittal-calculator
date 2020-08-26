@@ -8,9 +8,9 @@ import { computePrimeExponentExtremaGivenMaxN2D3P3 } from "./primeExponentExtrem
 const computePrimeExponentExtremasGivenMaxN2D3P9 = (maxN2D3P9: Max<N2D3P9>): Array<Extrema<Exponent<Prime>>> => {
     const primeExponentExtremasGivenMaxN2D3P9 = INITIAL_PRIME_EXPONENT_EXTREMAS_FOR_TWO_AND_THREE.slice()
 
-    let primeIndex = FIVE_PRIME_INDEX
+    let index = FIVE_PRIME_INDEX
     while (true) {
-        const prime = PRIMES[ primeIndex ]
+        const prime = PRIMES[ index ]
         const primeExponentExtremaGivenMaxN2D3P9: Extrema<Exponent<Prime>> =
             computePrimeExponentExtremaGivenMaxN2D3P3(prime, maxN2D3P9)
 
@@ -18,7 +18,7 @@ const computePrimeExponentExtremasGivenMaxN2D3P9 = (maxN2D3P9: Max<N2D3P9>): Arr
             break
         } else {
             primeExponentExtremasGivenMaxN2D3P9.push(primeExponentExtremaGivenMaxN2D3P9)
-            primeIndex = primeIndex + 1 as Index<Prime>
+            index = index + 1 as Index<Prime>
         }
     }
 

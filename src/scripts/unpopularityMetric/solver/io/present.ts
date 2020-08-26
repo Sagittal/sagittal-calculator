@@ -1,6 +1,6 @@
-import { sort } from "../../../general"
-import { Metric } from "../bestMetric"
-import { bestMetrics, scopesToSearch, solverStatus } from "../globals"
+import { sort } from "../../../../general"
+import { Metric } from "../../bestMetric"
+import { bestMetrics, scopesToSearch, solverStatus } from "../../globals"
 
 const presentBestMetrics = (): Record<string, Metric> => {
     const bestMetriesEntries = Array.from(bestMetrics.entries())

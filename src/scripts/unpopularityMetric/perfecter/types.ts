@@ -1,27 +1,30 @@
+import { Integer } from "../../../general"
 import { ComputeSumOrSumsOfSquaresOptions, DynamicParameter, Sample, Scope, SumOfSquares } from "../bestMetric"
+
+type MetricTag = string & { _MetricTagBrand: "MetricTag" }
 
 interface LocalMin extends Sample {
     sumOfSquares: SumOfSquares,
 }
 
 type RecursiveSearchScopeAndMaybeUpdateBestMetricOptions = Partial<{
-    depth: number,
+    depth: Integer,
     localMin: LocalMin,
-    metricId: string,
+    metricTag: MetricTag,
     onlyWinners: boolean,
 }>
 
 interface SearchLocalMinOptions extends ComputeSumOrSumsOfSquaresOptions {
     dynamicParameters: DynamicParameter[],
     scope: Scope,
-    metricId: string,
+    metricTag: MetricTag,
     index: number,
-    depth: number,
+    depth: Integer,
     nextLocalMinima: LocalMin[],
 }
 
 interface PerfectMetricOptions {
-    metricId: string,
+    metricTag: MetricTag,
 }
 
 export {
@@ -29,4 +32,5 @@ export {
     RecursiveSearchScopeAndMaybeUpdateBestMetricOptions,
     LocalMin,
     PerfectMetricOptions,
+    MetricTag,
 }

@@ -6,8 +6,8 @@ import { AnalyzedEvent } from "./types"
 // TODO: move to constants, and look for others
 const BINARY_SCORE_REPRESENTATION_CARDINALITY = Object.keys(RANKS).length * LEVELS.length // 15
 
-const computeBinaryScoreRepresentationIndex = (rank: Rank<AnalyzedEvent>, levelIndex: number) =>
-    rank * LEVELS.length + (LEVELS.length - 1 - levelIndex)
+const computeBinaryScoreRepresentationIndex = (rank: Rank<AnalyzedEvent>, index: number) =>
+    rank * LEVELS.length + (LEVELS.length - 1 - index)
 
 export {
     BINARY_SCORE_REPRESENTATION_CARDINALITY,

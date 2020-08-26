@@ -2,16 +2,15 @@ import { Combinations, Count, deepEquals, Index } from "../../../../../../src/ge
 import { Combination } from "../../../../../../src/general/math"
 import { scopesToSearch } from "../../../../../../src/scripts/unpopularityMetric/globals"
 import { Chunk } from "../../../../../../src/scripts/unpopularityMetric/solver"
-import { ParameterChunk, SubmetricChunk } from "../../../../../../src/scripts/unpopularityMetric/solver/populate"
 import { INITIAL_PARAMETER_SCOPES } from "../../../../../../src/scripts/unpopularityMetric/solver/populate/constants"
 import { populateScopesForSubmetricChunkCombination } from "../../../../../../src/scripts/unpopularityMetric/solver/populate/submetricChunkCombination"
-import { Parameter } from "../../../../../../src/scripts/unpopularityMetric/sumOfSquares"
+import { Parameter, Submetric } from "../../../../../../src/scripts/unpopularityMetric/sumOfSquares"
 
 describe("populateScopesForSubmetricChunkCombination", () => {
     // TODO: really need to do something about these long test descriptions and multi-lining them;
     //  but we may as well wait for the day we add that linting rule
     it("for the given submetric chunk combination, proceeds through each of the parameter chunk combinations, for each one computing all possible distributions across the submetric bins of this submetric chunk combination, and for each distribution populating a scope which is the merger of it with the submetrics, also handling how the first submetric bin actually represents the parameters which should be distributed to every submetric", async () => {
-        const submetricChunkCombination: Combination<SubmetricChunk> = [
+        const submetricChunkCombination: Combination<Chunk<Submetric>> = [
             // (the "all submetrics" bin, call it "AB")
             {},
             // A
@@ -23,8 +22,8 @@ describe("populateScopesForSubmetricChunkCombination", () => {
             {
                 [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
             },
-        ] as Combination<SubmetricChunk>
-        const parameterChunkCombinations: Combinations<ParameterChunk> = [
+        ] as Combination<Chunk<Submetric>>
+        const parameterChunkCombinations: Combinations<Chunk<Parameter>> = [
             // 1
             [
                 // i
@@ -48,10 +47,10 @@ describe("populateScopesForSubmetricChunkCombination", () => {
                     [ Parameter.J_AS_COEFFICIENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.J_AS_COEFFICIENT ],
                 },
             ],
-        ] as Combinations<ParameterChunk>
-        const parameterChunkCombinationIndex: Index<Combination<ParameterChunk>> = 0 as Index<Combination<ParameterChunk>>
-        const submetricChunkCombinationIndex: Index<Combination<SubmetricChunk>> = 0 as Index<Combination<SubmetricChunk>>
-        const submetricChunkCombinationCount: Count<Combination<SubmetricChunk>> = 2 as Count<Combination<SubmetricChunk>>
+        ] as Combinations<Chunk<Parameter>>
+        const parameterChunkCombinationIndex: Index<Combination<Chunk<Parameter>>> = 0 as Index<Combination<Chunk<Parameter>>>
+        const submetricChunkCombinationIndex: Index<Combination<Chunk<Submetric>>> = 0 as Index<Combination<Chunk<Submetric>>>
+        const submetricChunkCombinationCount: Count<Combination<Chunk<Submetric>>> = 2 as Count<Combination<Chunk<Submetric>>>
 
         await populateScopesForSubmetricChunkCombination(submetricChunkCombination, {
             parameterChunkCombinations,

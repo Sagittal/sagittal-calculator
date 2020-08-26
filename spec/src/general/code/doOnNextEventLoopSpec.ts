@@ -1,3 +1,4 @@
+import { Ms } from "../../../../src/general"
 import { doOnNextEventLoop } from "../../../../src/general/code"
 
 describe("doOnNextEventLoop", () => {
@@ -40,18 +41,18 @@ describe("doOnNextEventLoop", () => {
             work = 1
         }
 
-        doOnNextEventLoop(fn, 30).then(() => {
+        doOnNextEventLoop(fn, 30 as Ms).then(() => {
             expect(work).toBe(1)
         })
 
         setTimeout(() => {
             expect(work).toBe(0)
-        }, 20)
+        }, 20 as Ms)
 
         setTimeout(() => {
             expect(work).toBe(1)
             done()
-        }, 40)
+        }, 40 as Ms)
 
         expect(work).toBe(0)
     })

@@ -2,7 +2,7 @@ import { Count } from "../../../../general"
 import { nonRecursiveSearchScopeAndMaybeUpdateBestMetric, Scope } from "../../bestMetric"
 import { DebugTarget, saveDebugMessage } from "../../debug"
 import { scopesToSearch, solverStatus } from "../../globals"
-import { presentPercentage, presentSearchedAndPopulated } from "../present"
+import { presentPercentage, presentSearchedAndPopulated } from "../io"
 
 const searchPopulatedScopes = async () => {
     const scope = scopesToSearch.pop() as Scope

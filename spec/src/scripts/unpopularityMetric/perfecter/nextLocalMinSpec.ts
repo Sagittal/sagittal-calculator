@@ -1,10 +1,10 @@
-import { Index, Unit } from "../../../../../src/general"
+import { Index, Integer, Unit } from "../../../../../src/general"
 import { Combination } from "../../../../../src/general/math"
 import { MetricName, Scope, SumOfSquares } from "../../../../../src/scripts/unpopularityMetric/bestMetric"
 import { DynamicParameter, SamplePoint } from "../../../../../src/scripts/unpopularityMetric/bestMetric/scopeToSamples"
 import { searchNextLocalMin } from "../../../../../src/scripts/unpopularityMetric/perfecter/nextLocalMin"
 import * as recursiveBestMetric from "../../../../../src/scripts/unpopularityMetric/perfecter/recursiveBestMetric"
-import { LocalMin } from "../../../../../src/scripts/unpopularityMetric/perfecter/types"
+import { LocalMin, MetricTag } from "../../../../../src/scripts/unpopularityMetric/perfecter/types"
 import { Parameter, ParameterValue, Submetric } from "../../../../../src/scripts/unpopularityMetric/sumOfSquares"
 
 describe("searchNextLocalMin", () => {
@@ -39,9 +39,9 @@ describe("searchNextLocalMin", () => {
     ]
     const scope: Scope = [{}] as unknown[] as Scope
     const index = 7
-    const metricId = ""
+    const metricTag = "" as MetricTag
     const indentation = ""
-    const depth = 5
+    const depth = 5 as Integer
     const nextLocalMinima = [{}, {}, {}, {}, {}, {}, {}, {}, {}] as LocalMin[]
     const onlyWinners = true
     const metricName = "" as MetricName
@@ -58,7 +58,7 @@ describe("searchNextLocalMin", () => {
         await searchNextLocalMin(nextLocalMin, {
             dynamicParameters,
             scope,
-            metricId,
+            metricTag,
             index,
             indentation,
             depth,
@@ -76,8 +76,8 @@ describe("searchNextLocalMin", () => {
                 },
             ] as unknown[] as Scope,
             {
-                depth: 6,
-                metricId: ".8/9",
+                depth: 6 as Integer,
+                metricTag: ".8/9" as MetricTag,
                 localMin: nextLocalMin,
                 onlyWinners,
             },

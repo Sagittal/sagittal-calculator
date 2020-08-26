@@ -1,12 +1,22 @@
-import { Combination, computeDistributions, doOnNextEventLoop, Index, merge } from "../../../../general"
+import {
+    Combination,
+    computeDistributions,
+    Count,
+    count,
+    DistributionBin,
+    doOnNextEventLoop,
+    Index,
+    merge,
+} from "../../../../general"
 import { Scope, SubmetricScope } from "../../bestMetric"
 import { DebugTarget, saveDebugMessage } from "../../debug"
-import { presentSearchedAndPopulated } from "../present"
+import { Parameter, Submetric } from "../../sumOfSquares"
+import { presentSearchedAndPopulated } from "../io"
 import { Chunk } from "../types"
 import { populateScope } from "./scope"
-import { ParameterChunk, PopulateScopesForSubmetricChunkCombinationOptions, SubmetricChunk } from "./types"
+import { PopulateScopesForSubmetricChunkCombinationOptions } from "./types"
 
-const populateScopesForSubmetricChunkCombination = async (submetricChunkCombination: Combination<SubmetricChunk>, options: PopulateScopesForSubmetricChunkCombinationOptions): Promise<void> => {
+const populateScopesForSubmetricChunkCombination = async (submetricChunkCombination: Combination<Chunk<Submetric>>, options: PopulateScopesForSubmetricChunkCombinationOptions): Promise<void> => {
     const {
         parameterChunkCombinations,
         parameterChunkCombinationIndex = 0,
@@ -18,7 +28,7 @@ const populateScopesForSubmetricChunkCombination = async (submetricChunkCombinat
 
     const parameterChunkCombination: Combination<Chunk> = parameterChunkCombinations[ parameterChunkCombinationIndex ]
 
-    const parameterChunkCombinationDistributions = computeDistributions(parameterChunkCombination, submetricChunkCombination.length)
+    const parameterChunkCombinationDistributions = computeDistributions(parameterChunkCombination, count(submetricChunkCombination) as Count as Count<DistributionBin<Chunk<Parameter>>>)
 
     parameterChunkCombinationDistributions.forEach(parameterChunkCombinationDistribution => {
         const scope: Scope = submetricChunkCombination.map((submetricChunkBin, index) => {
@@ -37,7 +47,7 @@ const populateScopesForSubmetricChunkCombination = async (submetricChunkCombinat
     return doOnNextEventLoop(async () => {
         await populateScopesForSubmetricChunkCombination(submetricChunkCombination, {
             parameterChunkCombinations,
-            parameterChunkCombinationIndex: parameterChunkCombinationIndex + 1 as Index<Combination<ParameterChunk>>,
+            parameterChunkCombinationIndex: parameterChunkCombinationIndex + 1 as Index<Combination<Chunk<Parameter>>>,
             submetricChunkCombinationIndex,
             submetricChunkCombinationCount,
         })

@@ -6,7 +6,7 @@ const computeRange = <T extends number>(firstParameter: T, secondParameter?: T):
     }
 
     return [...Array(secondParameter - firstParameter).keys()]
-        .map((numeral: number): number => numeral + firstParameter) as T[]
+        .map((number: number): number => number + firstParameter) as T[]
 }
 
 

@@ -22,11 +22,11 @@ const sum = <T extends number>(...numbers: T[]): T => {
         ADDITIVE_IDENTITY as T :
         sum(...numbers)
 
-    return (nextSum) + (previousValue) as T
+    return nextSum + (previousValue) as T
 }
 
 const difference = <T extends number>(minuend: T, subtrahend: T): T =>
-    (minuend) - (subtrahend) as T
+    minuend - subtrahend as T
 
 const product = <T extends number>(...numbers: T[]): T => {
     if (computeIsEmpty(numbers)) {
@@ -39,17 +39,17 @@ const product = <T extends number>(...numbers: T[]): T => {
         MULTIPLICATIVE_IDENTITY as T :
         product(...numbers)
 
-    return (nextProduct) * (previousValue) as T
+    return nextProduct * previousValue as T
 }
 
 const quotient = <T extends number>(dividend: T, divisor: T): T =>
-    (dividend) / (divisor) as T
+    dividend / divisor as T
 
 const mod = <T extends number>(dividend: T, divisor: T): Omit<T, "_IntegerBrand"> =>
-    (dividend) % (divisor) as unknown as Omit<T, "_IntegerBrand">
+    dividend % divisor as unknown as Omit<T, "_IntegerBrand">
 
 const reciprocal = <T extends number>(number: T): Omit<T, "_IntegerBrand"> =>
-    1 / (number) as unknown as Omit<T, "_IntegerBrand">
+    1 / number as unknown as Omit<T, "_IntegerBrand">
 
 const negative = <T extends number>(number: T): T =>
     number === 0 ? 0 as T : -number as T

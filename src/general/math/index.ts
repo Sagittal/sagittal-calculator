@@ -19,15 +19,17 @@ import { computeSopf } from "./sopf"
 import { computeSopfr } from "./sopfr"
 import { computeSuperMonzo } from "./superMonzo"
 import { computeTriangularNumber } from "./triangularNumber"
-import { abs, ceil, count, floor, log, max, min, mod, negative, pow, round, sqrt } from "./typedOperations"
+import { abs, ceil, count, difference, floor, log, max, min, mod, negative, pow, round, sqrt } from "./typedOperations"
 import {
     Base,
     Combination,
     Combinations,
     Copfr,
     Denominator,
+    DistributionBin,
     Exponent,
     FractionalPart,
+    FractionalPartType,
     Integer,
     Max,
     Min,
@@ -53,7 +55,7 @@ export {
     Combinations,
     Numerator,
     Denominator,
-    FractionalPart,
+    FractionalPartType,
     Exponent,
     dividesEvenly,
     Integer,
@@ -79,6 +81,8 @@ export {
     computeMonzosFromPrimeExponentExtremas,
     Prime,
     FIVE_PRIME_INDEX,
+    DistributionBin,
+    difference,
     FIVE_ROUGHNESS,
     Power,
     Base,
@@ -92,6 +96,7 @@ export {
     sqrt,
     BASE_2,
     pow,
+    FractionalPart,
     Min,
     Max,
     count,

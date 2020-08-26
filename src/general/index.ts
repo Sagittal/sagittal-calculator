@@ -57,10 +57,13 @@ import {
     computeUndirectedRatio,
     Copfr,
     count,
+    difference,
+    DistributionBin,
     dividesEvenly,
     Exponent,
     floor,
     FractionalPart,
+    FractionalPartType,
     Integer,
     invertMonzo,
     log,
@@ -98,7 +101,7 @@ import {
     Position,
     Votes,
 } from "./music"
-import { Count, Extrema, Id, Index, Name, Proportion, Resolution, Span, Sum, Unit } from "./types"
+import { Count, Extrema, Id, Index, Ms, Name, Proportion, Resolution, Span, Sum, Unit } from "./types"
 
 export {
     Cents,
@@ -152,7 +155,7 @@ export {
     Popularity,
     doOnNextEventLoop,
     shuffle,
-    FractionalPart,
+    FractionalPartType,
     Exponent,
     presentTime,
     N2D3P9,
@@ -178,6 +181,7 @@ export {
     Votes,
     presentNumber,
     Max,
+    FractionalPart,
     Min,
     computeSuperMonzo,
     computeUndirectedRatio,
@@ -203,4 +207,7 @@ export {
     pow,
     BASE_2,
     count,
+    Ms,
+    DistributionBin,
+    difference,
 }

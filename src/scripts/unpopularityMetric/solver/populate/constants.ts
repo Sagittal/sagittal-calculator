@@ -1,7 +1,7 @@
 import { Span } from "../../../../general"
 import { computeDynamicParameterScope, DynamicParameterScope } from "../../bestMetric"
-import { Parameter, ParameterValue } from "../../sumOfSquares"
-import { ParameterChunk, SubmetricChunk } from "./types"
+import { Parameter, ParameterValue, Submetric } from "../../sumOfSquares"
+import { Chunk } from "../types"
 
 // AKA: when included in the solver's generated scopes, what should they be scoped to
 const NO_USELESS_INITIAL_PARAMETER_SCOPES: Partial<Record<Parameter, ParameterValue | boolean | DynamicParameterScope>> = {
@@ -130,7 +130,7 @@ const INITIAL_PARAMETER_SCOPES: Partial<Record<Parameter, ParameterValue | boole
     [ Parameter.USE_PRIME_INDEX ]: true,
 }
 
-const NO_USELESS_SUBMETRIC_CHUNKS: SubmetricChunk[] = [
+const NO_USELESS_SUBMETRIC_CHUNKS: Array<Chunk<Submetric>> = [
     { // SOAPFAR
         [ Parameter.SUM ]: NO_USELESS_INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
     },
@@ -146,9 +146,9 @@ const NO_USELESS_SUBMETRIC_CHUNKS: SubmetricChunk[] = [
         [ Parameter.SUM ]: NO_USELESS_INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
         [ Parameter.A_AS_LOGARITHM_BASE ]: NO_USELESS_INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_LOGARITHM_BASE ],
     },
-] as SubmetricChunk[]
+] as Array<Chunk<Submetric>>
 
-const SUBMETRIC_CHUNKS: SubmetricChunk[] = [
+const SUBMETRIC_CHUNKS: Array<Chunk<Submetric>> = [
     { // SOAPFAR
         [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
     },
@@ -171,18 +171,18 @@ const SUBMETRIC_CHUNKS: SubmetricChunk[] = [
         [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
         [ Parameter.A_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_LOGARITHM_BASE ],
     },
-] as SubmetricChunk[]
+] as Array<Chunk<Submetric>>
 
-const NO_USELESS_PARAMETER_CHUNKS = Object.entries(NO_USELESS_INITIAL_PARAMETER_SCOPES).map(([parameter, initialParameterScope]) => {
+const NO_USELESS_PARAMETER_CHUNKS: Array<Chunk<Parameter>> = Object.entries(NO_USELESS_INITIAL_PARAMETER_SCOPES).map(([parameter, initialParameterScope]) => {
     return {
         [ parameter ]: initialParameterScope,
-    } as ParameterChunk
+    } as Chunk<Parameter>
 })
 
-const PARAMETER_CHUNKS: ParameterChunk[] = Object.entries(INITIAL_PARAMETER_SCOPES).map(([parameter, initialParameterScope]) => {
+const PARAMETER_CHUNKS: Array<Chunk<Parameter>> = Object.entries(INITIAL_PARAMETER_SCOPES).map(([parameter, initialParameterScope]) => {
     return {
         [ parameter ]: initialParameterScope,
-    } as ParameterChunk
+    } as Chunk<Parameter>
 })
 
 export {

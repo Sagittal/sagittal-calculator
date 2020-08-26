@@ -1,15 +1,15 @@
-import { doOnNextEventLoop } from "../../../general"
+import { doOnNextEventLoop, Integer, Ms } from "../../../general"
 import { Scope } from "../bestMetric"
 import { DebugTarget, saveDebugMessage } from "../debug"
 import { computeNextScope } from "./nextScope"
 import { recursiveSearchScopeAndMaybeUpdateBestMetric } from "./recursiveBestMetric"
-import { LocalMin, SearchLocalMinOptions } from "./types"
+import { LocalMin, MetricTag, SearchLocalMinOptions } from "./types"
 
 const searchNextLocalMin = (nextLocalMin: LocalMin, options: SearchLocalMinOptions): Promise<void> => {
     const {
         dynamicParameters,
         scope,
-        metricId,
+        metricTag,
         index,
         indentation,
         depth,
@@ -17,23 +17,23 @@ const searchNextLocalMin = (nextLocalMin: LocalMin, options: SearchLocalMinOptio
         onlyWinners,
     } = options
 
-    const nextDepth = depth + 1
+    const nextDepth = depth + 1 as Integer
     const nextScope: Scope = computeNextScope(nextLocalMin.samplePoint, dynamicParameters, scope)
-    const nextMetricId = metricId + `.${index + 1}/${(nextLocalMinima.length)}`
-    saveDebugMessage(`  ${indentation}id ${nextMetricId} - depth ${nextDepth}`, DebugTarget.PERFECT)
+    const nextMetricTag = metricTag + `.${index + 1}/${(nextLocalMinima.length)}` as MetricTag
+    saveDebugMessage(`  ${indentation}id ${nextMetricTag} - depth ${nextDepth}`, DebugTarget.PERFECT)
 
     return doOnNextEventLoop(async () => {
         try {
             await recursiveSearchScopeAndMaybeUpdateBestMetric(nextScope, {
                 depth: nextDepth,
-                metricId: nextMetricId,
+                metricTag: nextMetricTag,
                 localMin: nextLocalMin,
                 onlyWinners,
             })
         } catch (e) {
             saveDebugMessage(`error when searching: ${e.message}`, DebugTarget.ERRORS)
         }
-    }, index)
+    }, index as Ms)
 }
 
 export {
