@@ -1,7 +1,8 @@
 import { Integer, Prime, PRIMES } from "../math"
 import { Index } from "../types"
+import { Roughness } from "./types"
 
-const computeIsRough = (integer: Integer, roughness: Integer): boolean => {
+const computeIsRough = (integer: Integer, roughness: Roughness): boolean => {
     let isRough = true
 
     let primeIndex = 0 as Index<Prime>

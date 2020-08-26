@@ -40,6 +40,7 @@ type Copfr<Roughness = void> = Count<Prime> & (Roughness extends number ? { _Rou
 type Monzo<Slice = void, Limit = void> = Array<Exponent<Prime>> & (Slice extends number ? { _MonzoSlice: Slice } : {})
 
 type Prime<T = void> = Integer & { _PrimeBrand: "Prime" } & (T extends void ? {} : T & { _PrimeOfBrand: T })
+type Roughness<T = void> = Integer & { _RoughnessBrand: "Roughness" } & (T extends void ? {} : T & { _RoughnessOfBrand: T })
 
 export {
     Ratio,
@@ -59,4 +60,5 @@ export {
     Sopfr,
     Copfr,
     Prime,
+    Roughness,
 }

@@ -1,5 +1,5 @@
 import { computeCombinations } from "./combinations"
-import { FIVE_PRIME_INDEX } from "./constants"
+import { FIVE_PRIME_INDEX, FIVE_ROUGHNESS } from "./constants"
 import { computeCopfr } from "./copfr"
 import { computeDistributions } from "./distributions"
 import { dividesEvenly } from "./dividesEvenly"
@@ -76,4 +76,5 @@ export {
     computeMonzosFromPrimeExponentExtremas,
     Prime,
     FIVE_PRIME_INDEX,
+    FIVE_ROUGHNESS,
 }
