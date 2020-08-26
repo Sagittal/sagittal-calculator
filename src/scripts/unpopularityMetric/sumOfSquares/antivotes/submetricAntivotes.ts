@@ -1,4 +1,14 @@
-import { abs, Base, computePrimeCount, FractionalPart, isUndefined, log, Monzo, Power, PRIMES } from "../../../../general"
+import {
+    abs,
+    Base,
+    computePrimeCount,
+    FractionalPart,
+    isUndefined,
+    log,
+    Monzo,
+    Power,
+    PRIMES,
+} from "../../../../general"
 import { Antivotes, ParameterValue, Submetric } from "../types"
 import { secondaryParameterOverridesForDenominator } from "./secondaryParameter"
 

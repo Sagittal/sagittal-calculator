@@ -1,16 +1,10 @@
-import { sort } from "../../../code"
-import { BASE_2, computeCopfr, Exponent, Numerator, pow, Prime } from "../../../math"
-import { Count } from "../../../types"
+import { sort } from "../../../../../code"
+import { computeN2 } from "./n2"
 import {
     ComputeSortedNumeratorPossibilitiesOptions,
-    N2,
     NumeratorPossibilityWithLesserGpfThanDenominatorPrime,
     SortedNumeratorPossibilityWithLesserGpfThanDenominatorPrimeIncludingN2,
 } from "./types"
-
-const computeN2 = (numerator: Numerator): N2 => {
-    return numerator / pow(BASE_2, computeCopfr(numerator) as Exponent<Count<Prime>>) as N2
-}
 
 const computeSortedNumeratorPossibilitiesGivenMaxN2D3P9WithLesserGpfThanDenominatorPrimeSortedByN2 = ({ denominatorPrime, numeratorPossibilitiesGivenMaxN2D3P3 }: ComputeSortedNumeratorPossibilitiesOptions): SortedNumeratorPossibilityWithLesserGpfThanDenominatorPrimeIncludingN2[] => {
     const numeratorPossibilitiesWithLesserGpf: NumeratorPossibilityWithLesserGpfThanDenominatorPrime[] = numeratorPossibilitiesGivenMaxN2D3P3.filter(numeratorPossibility => {
@@ -28,6 +22,5 @@ const computeSortedNumeratorPossibilitiesGivenMaxN2D3P9WithLesserGpfThanDenomina
 }
 
 export {
-    computeN2,
     computeSortedNumeratorPossibilitiesGivenMaxN2D3P9WithLesserGpfThanDenominatorPrimeSortedByN2,
 }

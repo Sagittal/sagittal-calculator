@@ -9,7 +9,7 @@ const BASE_2: Base = 2 as Base
 
 const ADDITIVE_IDENTITY = 0
 const MULTIPLICATIVE_IDENTITY = 1
-const RATIONAL_IDENTITY = [ 1, 1 ] as Ratio
+const RATIONAL_IDENTITY = [1, 1] as Ratio
 
 const VALUE_BELOW_WHICH_ROUNDING_IMPLEMENTATION_BREAKS: number = 1 / 1000000
 

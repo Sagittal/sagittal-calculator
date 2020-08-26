@@ -1,4 +1,4 @@
-import { Base, pow } from "../../../math"
+import { Base, pow } from "../../../../math"
 import { ComputeD39ForCandidateMaxDenominatorPrimeExponentOptions } from "./types"
 
 const computeD39ForCandidateMaxDenominatorPrimeExponent = (options: ComputeD39ForCandidateMaxDenominatorPrimeExponentOptions) => {

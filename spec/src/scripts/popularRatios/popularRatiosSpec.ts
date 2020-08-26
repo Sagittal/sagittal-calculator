@@ -8,8 +8,6 @@ describe("computePopularRatios", () => {
 
         const actual = computePopularRatios(maxN2D3P9)
 
-        const expected = [
-
-        ]
+        const expected = []
     })
 })

@@ -10,8 +10,8 @@ describe("computePrimeExponentExtremasGivenMaxN2D3P9", () => {
         const actual = computePrimeExponentExtremasGivenMaxN2D3P9(maxN2D3P9)
 
         const expected = [
-            [ 0, 0 ],   // 2
-            [ 0, 0 ],   // 3
+            [0, 0],   // 2
+            [0, 0],   // 3
         ] as Array<Extrema<Exponent<Prime>>>
         expect(actual).toEqual(expected)
     })
@@ -22,8 +22,8 @@ describe("computePrimeExponentExtremasGivenMaxN2D3P9", () => {
         const actual = computePrimeExponentExtremasGivenMaxN2D3P9(maxN2D3P9)
 
         const expected = [
-            [ 0, 0 ],   // 2
-            [ 0, 0 ],   // 3
+            [0, 0],   // 2
+            [0, 0],   // 3
         ] as Array<Extrema<Exponent<Prime>>>
         expect(actual).toEqual(expected)
     })
@@ -34,8 +34,8 @@ describe("computePrimeExponentExtremasGivenMaxN2D3P9", () => {
         const actual = computePrimeExponentExtremasGivenMaxN2D3P9(maxN2D3P9)
 
         const expected = [
-            [ 0, 0 ],   // 2
-            [ 0, 0 ],   // 3
+            [0, 0],   // 2
+            [0, 0],   // 3
             [-1, 3],    // 5
             [0, 2],     // 7
             [0, 1],     // 11
@@ -53,8 +53,8 @@ describe("computePrimeExponentExtremasGivenMaxN2D3P9", () => {
 
         // http://forum.sagittal.org/viewtopic.php?p=2243#p2243
         const expected = [
-            [ 0, 0 ],   // 2
-            [ 0, 0 ],   // 3
+            [0, 0],   // 2
+            [0, 0],   // 3
             [-2, 6],    // 5
             [-2, 4],    // 7
             [-1, 2],    // 11

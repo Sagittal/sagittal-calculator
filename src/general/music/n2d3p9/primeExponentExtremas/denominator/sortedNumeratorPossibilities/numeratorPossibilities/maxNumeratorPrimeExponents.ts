@@ -1,8 +1,8 @@
-import { Exponent, FIVE_PRIME_INDEX, Max, Numerator, Prime, PRIMES } from "../../../math"
-import { Index } from "../../../types"
-import { N2D3P9 } from "../types"
+import { Exponent, FIVE_PRIME_INDEX, Max, Numerator, Prime, PRIMES } from "../../../../../../math"
+import { Index } from "../../../../../../types"
+import { N2D3P9 } from "../../../../types"
+import { computeMaxNumeratorPrimeExponentGivenMaxN2D3P3 } from "../../../maxNumeratorPrimeExponent"
 import { INITIAL_MAX_NUMERATOR_PRIME_EXPONENTS_FOR_TWO_AND_THREE } from "./constants"
-import { computeMaxNumeratorPrimeExponentGivenMaxN2D3P3 } from "./maxNumeratorPrimeExponent"
 
 const computeMaxNumeratorPrimeExponentsGivenMaxN2D3P9 = (maxN2D3P9: Max<N2D3P9>): Array<Max<Exponent<Prime<Numerator>>>> => {
     let numeratorPrimeIndex = FIVE_PRIME_INDEX

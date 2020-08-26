@@ -1,10 +1,10 @@
-import { Base, Denominator, Min, min, pow, Prime } from "../../../math"
+import { Base, Denominator, Min, min, pow, Prime } from "../../../../math"
 import {
-    ComputeMinN2PForCandidateMaxDenominatorPrimeExponentGivenMaxN2D3P9Options,
     N2P,
     SortedNumeratorPossibilityWithGreaterGpfThanDenominatorPrimeIncludingN2P,
     SortedNumeratorPossibilityWithLesserGpfThanDenominatorPrimeIncludingN2,
-} from "./types"
+} from "./sortedNumeratorPossibilities"
+import { ComputeMinN2PForCandidateMaxDenominatorPrimeExponentGivenMaxN2D3P9Options } from "./types"
 
 const computeMinN2PForCandidateMaxDenominatorPrimeExponentGivenMaxN2D3P9 = (options: ComputeMinN2PForCandidateMaxDenominatorPrimeExponentGivenMaxN2D3P9Options): Min<N2P> => {
     const {

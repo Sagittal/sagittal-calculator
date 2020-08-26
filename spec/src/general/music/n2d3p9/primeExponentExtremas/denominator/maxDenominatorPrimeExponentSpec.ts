@@ -1,10 +1,10 @@
-import { Exponent, Max, Min, Prime } from "../../../../../../src/general"
-import { Denominator } from "../../../../../../src/general/math"
-import { N2D3P9 } from "../../../../../../src/general/music/n2d3p9"
-import { computeMaxDenominatorPrimeExponentGivenMaxN2D3P3 } from "../../../../../../src/general/music/n2d3p9/primeExponentExtremas/maxDenominatorPrimeExponent"
-import * as minN2D3P9 from "../../../../../../src/general/music/n2d3p9/primeExponentExtremas/minN2D3P9"
+import { Exponent, Max, Min, Prime } from "../../../../../../../src/general"
+import { Denominator } from "../../../../../../../src/general/math"
+import { N2D3P9 } from "../../../../../../../src/general/music/n2d3p9"
+import { computeMaxDenominatorPrimeExponentGivenMaxN2D3P3 } from "../../../../../../../src/general/music/n2d3p9/primeExponentExtremas/denominator"
+import * as minN2D3P9 from "../../../../../../../src/general/music/n2d3p9/primeExponentExtremas/denominator/minN2D3P9"
 import * as sortedNumeratorPossibilities
-    from "../../../../../../src/general/music/n2d3p9/primeExponentExtremas/sortedNumeratorPossibilities"
+    from "../../../../../../../src/general/music/n2d3p9/primeExponentExtremas/denominator/sortedNumeratorPossibilities/sortedNumeratorPossibilities"
 
 describe("computeMaxDenominatorPrimeExponentGivenMaxN2D3P3", () => {
     it("returns the max exponent for a denominator prime given a max N2D3P9", () => {

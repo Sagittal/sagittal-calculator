@@ -1,6 +1,6 @@
-import { computeIsRough, FIVE_ROUGHNESS, Max, Numerator } from "../../../math"
-import { N2D3P9 } from "../types"
-import { computeMaxNumeratorGivenMaxN2D3P3 } from "./numerator"
+import { computeIsRough, FIVE_ROUGHNESS, Max, Numerator } from "../../../../../../math"
+import { N2D3P9 } from "../../../../types"
+import { computeMaxNumeratorGivenMaxN2D3P3 } from "./maxNumerator"
 
 const computePossibleNumeratorsGivenMaxN2D3P3 = (maxN2D3P9: Max<N2D3P9>): Numerator[] => {
     const maxNumerator = computeMaxNumeratorGivenMaxN2D3P3(maxN2D3P9)

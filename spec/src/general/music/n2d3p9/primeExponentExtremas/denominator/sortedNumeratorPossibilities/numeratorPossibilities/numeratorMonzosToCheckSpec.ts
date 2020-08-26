@@ -1,6 +1,6 @@
-import { Max, Monzo } from "../../../../../../src/general"
-import { N2D3P9 } from "../../../../../../src/general/music/n2d3p9"
-import { computeNumeratorMonzosToCheckGivenMaxN2D3P9 } from "../../../../../../src/general/music/n2d3p9/primeExponentExtremas/numeratorMonzosToCheck"
+import { Max, Monzo } from "../../../../../../../../../src/general"
+import { N2D3P9 } from "../../../../../../../../../src/general/music/n2d3p9"
+import { computeNumeratorMonzosToCheckGivenMaxN2D3P9 } from "../../../../../../../../../src/general/music/n2d3p9/primeExponentExtremas/denominator/sortedNumeratorPossibilities/numeratorPossibilities/numeratorMonzosToCheck"
 
 describe("computeNumeratorMonzosToCheckGivenMaxN2D3P9", () => {
     it("returns the monzos for numerators worth checking", () => {

@@ -1,7 +1,7 @@
-import { Max, Numerator, Prime } from "../../../../../../src/general"
-import { Exponent } from "../../../../../../src/general/math"
-import { N2D3P9 } from "../../../../../../src/general/music/n2d3p9"
-import { computeMaxNumeratorPrimeExponentsGivenMaxN2D3P9 } from "../../../../../../src/general/music/n2d3p9/primeExponentExtremas/maxNumeratorPrimeExponents"
+import { Max, Numerator, Prime } from "../../../../../../../../../src/general"
+import { Exponent } from "../../../../../../../../../src/general/math"
+import { N2D3P9 } from "../../../../../../../../../src/general/music/n2d3p9"
+import { computeMaxNumeratorPrimeExponentsGivenMaxN2D3P9 } from "../../../../../../../../../src/general/music/n2d3p9/primeExponentExtremas/denominator/sortedNumeratorPossibilities/numeratorPossibilities/maxNumeratorPrimeExponents"
 
 describe("computeMaxNumeratorPrimeExponentsGivenMaxN2D3P9", () => {
     it("returns an array of the max exponent per prime, cutting off at the first prime for which is it is zero (i.e. with this max N2D3P9, there is no way to have that prime in the numerator, even just to the first power, even in complete isolation) but where the first two elements are 0 (corresponding to primes 2 and 3 which have no effect in 5-rough land)", () => {

@@ -1,4 +1,4 @@
-import { Combination, Monzo, Ratio, round } from "../../../../../../src/general/math"
+import { Combination, Monzo, Ratio } from "../../../../../../src/general/math"
 import { Parameter, ParameterValue, Submetric } from "../../../../../../src/scripts/unpopularityMetric/sumOfSquares"
 import { computeAntivotes } from "../../../../../../src/scripts/unpopularityMetric/sumOfSquares/antivotes"
 import { ANTIVOTES_PRECISION } from "../../../../../../src/scripts/unpopularityMetric/sumOfSquares/antivotes/constants"

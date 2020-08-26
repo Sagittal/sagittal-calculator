@@ -1,6 +1,6 @@
-import { computeMonzosFromPrimeExponentExtremas, Exponent, Max, Min, Monzo, Prime } from "../../../math"
-import { Extrema } from "../../../types"
-import { N2D3P9 } from "../types"
+import { computeMonzosFromPrimeExponentExtremas, Exponent, Max, Min, Monzo, Prime } from "../../../../../../math"
+import { Extrema } from "../../../../../../types"
+import { N2D3P9 } from "../../../../types"
 import { computeMaxNumeratorPrimeExponentsGivenMaxN2D3P9 } from "./maxNumeratorPrimeExponents"
 
 const computeNumeratorMonzosToCheckGivenMaxN2D3P9 = (maxN2D3P9: Max<N2D3P9>): Monzo[] => {

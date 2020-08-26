@@ -1,7 +1,7 @@
-import { sort } from "../../../code"
-import { computeIntegerFromMonzo, Max, Monzo, Numerator } from "../../../math"
-import { computeN2D3P9 } from "../n2d3p9"
-import { N2D3P9 } from "../types"
+import { sort } from "../../../../code"
+import { computeIntegerFromMonzo, Max, Monzo, Numerator } from "../../../../math"
+import { computeN2D3P9 } from "../../n2d3p9"
+import { N2D3P9 } from "../../types"
 
 const computeMaxNumeratorWithLessN2D3P9ThanMaxN2D3P9 = (numeratorMonzosToCheck: Monzo[], maxN2D3P9: Max<N2D3P9>) => {
     const filteredNumeratorMonzosToCheck = numeratorMonzosToCheck.filter(numeratorMonzoToCheck => {

@@ -1,12 +1,13 @@
-import { Max, Min, Prime } from "../../../../../../src/general"
-import { Denominator, Exponent, Numerator } from "../../../../../../src/general/math"
-import { computeMinN2PForCandidateMaxDenominatorPrimeExponentGivenMaxN2D3P9 } from "../../../../../../src/general/music/n2d3p9/primeExponentExtremas/minN2P"
+import { Max, Min, Prime } from "../../../../../../../src/general"
+import { Denominator, Exponent, Numerator } from "../../../../../../../src/general/math"
+import { computeMinN2PForCandidateMaxDenominatorPrimeExponentGivenMaxN2D3P9 } from "../../../../../../../src/general/music/n2d3p9/primeExponentExtremas/denominator/minN2P"
 import {
     N2,
     N2P,
     SortedNumeratorPossibilityWithGreaterGpfThanDenominatorPrimeIncludingN2P,
     SortedNumeratorPossibilityWithLesserGpfThanDenominatorPrimeIncludingN2,
-} from "../../../../../../src/general/music/n2d3p9/primeExponentExtremas/types"
+} from "../../../../../../../src/general/music/n2d3p9/primeExponentExtremas/denominator/sortedNumeratorPossibilities/types"
+
 
 describe("computeMinN2PForCandidateMaxDenominatorPrimeExponentGivenMaxN2D3P9", () => {
     it("finds the min N2P out of the numerator possibilities where the gpf is greater than the denominator prime, and the min N2P out of the numerator possibilities where the gpf is lesser than the denominator prime, and then returns the min of those two", () => {

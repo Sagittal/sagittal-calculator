@@ -1,6 +1,6 @@
-import { Max, Monzo, Numerator } from "../../../../../../src/general"
-import { N2D3P9 } from "../../../../../../src/general/music/n2d3p9"
-import { computeMaxNumeratorWithLessN2D3P9ThanMaxN2D3P9 } from "../../../../../../src/general/music/n2d3p9/primeExponentExtremas/maxNumeratorWithLessN2D3P9"
+import { Max, Monzo, Numerator } from "../../../../../../../src/general"
+import { N2D3P9 } from "../../../../../../../src/general/music/n2d3p9"
+import { computeMaxNumeratorWithLessN2D3P9ThanMaxN2D3P9 } from "../../../../../../../src/general/music/n2d3p9/primeExponentExtremas/denominator/maxNumeratorWithLessN2D3P9"
 
 describe("computeMaxNumeratorWithLessN2D3P9ThanMaxN2D3P9", () => {
     it("chooses the max numerator with less N2D3P9 than the max N2D3P9", () => {

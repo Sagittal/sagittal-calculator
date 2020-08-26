@@ -1,5 +1,5 @@
-import { Min } from "../../../math"
-import { N2D3P9 } from "../types"
+import { Min } from "../../../../math"
+import { N2D3P9 } from "../../types"
 import { computeD39ForCandidateMaxDenominatorPrimeExponent } from "./d39"
 import { computeMinN2PForCandidateMaxDenominatorPrimeExponentGivenMaxN2D3P9 } from "./minN2P"
 import { ComputeMinN2PForCandidateMaxDenominatorPrimeExponentGivenMaxN2D3P9Options } from "./types"

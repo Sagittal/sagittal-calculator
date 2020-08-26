@@ -1,6 +1,6 @@
-import { Max, Numerator } from "../../../../../../src/general"
-import { N2D3P9 } from "../../../../../../src/general/music/n2d3p9"
-import { computeMaxNumeratorGivenMaxN2D3P3 } from "../../../../../../src/general/music/n2d3p9/primeExponentExtremas/numerator"
+import { Max, Numerator } from "../../../../../../../../../src/general"
+import { N2D3P9 } from "../../../../../../../../../src/general/music/n2d3p9"
+import { computeMaxNumeratorGivenMaxN2D3P3 } from "../../../../../../../../../src/general/music/n2d3p9/primeExponentExtremas/denominator/sortedNumeratorPossibilities/numeratorPossibilities/maxNumerator"
 
 describe("computeMaxNumeratorGivenMaxN2D3P3", () => {
     it("works for 136, for which the max numerator is a simple power of a single prime", () => {

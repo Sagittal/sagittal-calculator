@@ -7,5 +7,5 @@ export {
     computeN2D3P9,
     N2D3P9,
     computePrimeExponentExtremasGivenMaxN2D3P9,
-    DEFAULT_N2D3P9_PRECISION,
+    DEFAULT_N2D3P9_PRECISION, // TODO: I feel like this should not be exposed... either n2d3p9 module has its own presenter, or it's located in the io module
 }
