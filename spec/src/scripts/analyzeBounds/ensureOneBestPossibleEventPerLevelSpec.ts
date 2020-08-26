@@ -20,7 +20,7 @@ describe("ensureOneBestPossibleEventPerLevel", () => {
             ],
         }
 
-        expect(() => ensureOneBestPossibleEventPerLevel(consolidatedHistories)).toThrow(new Error("History had at the MEDIUM level more than one event marked as member of the best possible history."))
+        expect(() => ensureOneBestPossibleEventPerLevel(consolidatedHistories)).toThrow(new Error("History had at the medium level more than one event marked as member of the best possible history."))
     })
 
     it("throws an error if a consolidated history has, at a particular level, no event which is identified as being the member of the best possible history", () => {
@@ -39,7 +39,7 @@ describe("ensureOneBestPossibleEventPerLevel", () => {
             ],
         }
 
-        expect(() => ensureOneBestPossibleEventPerLevel(consolidatedHistories)).toThrow(new Error("History had at the MEDIUM level no event marked as member of the best possible history."))
+        expect(() => ensureOneBestPossibleEventPerLevel(consolidatedHistories)).toThrow(new Error("History had at the medium level no event marked as member of the best possible history."))
     })
 
     it("does not throw an error if a consolidated history does not have more than one best possible event per level", () => {
