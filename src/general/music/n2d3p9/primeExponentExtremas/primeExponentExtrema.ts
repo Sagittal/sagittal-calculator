@@ -1,11 +1,10 @@
 import { Denominator, Exponent, Numerator, Prime } from "../../../math"
-import { Max, Min } from "../../../types"
+import { Extrema, Max, Min } from "../../../types"
 import { N2D3P9 } from "../types"
 import { computeMaxDenominatorPrimeExponentGivenMaxN2D3P3 } from "./maxDenominatorPrimeExponent"
 import { computeMaxNumeratorPrimeExponentGivenMaxN2D3P3 } from "./maxNumeratorPrimeExponent"
-import { PrimeExponentExtrema } from "./types"
 
-const computePrimeExponentExtremaGivenMaxN2D3P3 = (prime: Prime, maxN2D3P9: Max<N2D3P9>): PrimeExponentExtrema => {
+const computePrimeExponentExtremaGivenMaxN2D3P3 = (prime: Prime, maxN2D3P9: Max<N2D3P9>): Extrema<Exponent<Prime>> => {
     const maxNumeratorPrimeExponentGivenMaxN2D3P3 =
         computeMaxNumeratorPrimeExponentGivenMaxN2D3P3(prime as Prime<Numerator>, maxN2D3P9)
     const maxDenominatorPrimeExponentGivenMaxN2D3P3 =

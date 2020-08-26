@@ -2,13 +2,15 @@ import { program } from "commander"
 import {
     COMMA_POPULARITIES,
     computeCentsFromRatio,
+    computeMonzosFromPrimeExponentExtremas,
     computeN2D3P9,
-    computePossibleMonzosFromPrimeExponentExtremas,
     computePrimeExponentExtremasGivenMaxN2D3P9,
     computeRatioFromMonzo,
     deepEquals,
+    Exponent,
+    Extrema,
     presentRatio,
-    PrimeExponentExtrema,
+    Prime,
     rank,
     RankStrategy,
     round,
@@ -30,12 +32,12 @@ const primeExponentExtremasGivenMaxN2D3P9 = computePrimeExponentExtremasGivenMax
 // TODO: FIVE ROUGH LINK there might be some better way to deal with the five rough vs. not five rough situation
 //  throughout this popular ratios / N2D3P9 code
 //  e.g. computeMaxNumeratorPrimeExponentsGivenMaxN2D3P9 has some stuff
-primeExponentExtremasGivenMaxN2D3P9.unshift([0, 0] as PrimeExponentExtrema)
-primeExponentExtremasGivenMaxN2D3P9.unshift([0, 0] as PrimeExponentExtrema)
+primeExponentExtremasGivenMaxN2D3P9.unshift([0, 0] as Extrema<Exponent<Prime>>)
+primeExponentExtremasGivenMaxN2D3P9.unshift([0, 0] as Extrema<Exponent<Prime>>)
 
 const unrankedResults = [] as Array<PopularRatioUnrankedResult>
 
-const monzosToCheck = computePossibleMonzosFromPrimeExponentExtremas(primeExponentExtremasGivenMaxN2D3P9)
+const monzosToCheck = computeMonzosFromPrimeExponentExtremas(primeExponentExtremasGivenMaxN2D3P9)
 
 monzosToCheck.forEach(monzo => {
     // TODO: extract this

@@ -1,4 +1,4 @@
-import { Cents, Id, Max, Min, Proportion } from "../../general"
+import { Cents, Extrema, Id, Proportion } from "../../general"
 import { SagittalComma, SymbolLongAscii, SymbolUnicode } from "../types"
 
 type Tina = Cents & { _TinaBrand: Tina }
@@ -56,7 +56,7 @@ type BoundedSymbolIdWithDistancesPair = [BoundedSymbolIdWithDistances | undefine
 type NeighborPositions = [Cents | undefined, Cents | undefined]
 type BoundedSymbolPositions = NeighborPositions
 
-type SecondaryCommaZone = [Min<Cents>, Max<Cents>]
+type SecondaryCommaZone = Extrema<Cents>
 
 export {
     JiSymbol,

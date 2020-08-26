@@ -1,16 +1,4 @@
-import {
-    ApotomeSlope,
-    Cents,
-    Copfr,
-    Exponent,
-    Max,
-    Min,
-    Monzo,
-    N2D3P9,
-    Prime,
-    PrimeExponentExtrema,
-    Sopfr,
-} from "../../general"
+import { ApotomeSlope, Cents, Copfr, Exponent, Extrema, Max, Min, Monzo, N2D3P9, Prime, Sopfr } from "../../general"
 
 interface ComputeCommasOptions extends ComputeCommasFromFiveSlicedMonzoOptions, ComputeFiveSlicedMonzosToCheckOptions {
     fiveSlicedMonzo?: Monzo<5>,
@@ -35,7 +23,7 @@ type ComputeFiveSlicedMonzosToCheckOptions = Partial<{
 type ComputePrimeExponentRangeOptions = Partial<{
     maxFiveRoughCopfr: Max<Copfr<5>>,
     maxFiveRoughSopfr: Max<Sopfr<5>>,
-    primeExponentExtremaGivenMaxN2D3P9?: PrimeExponentExtrema,
+    primeExponentExtremaGivenMaxN2D3P9?: Extrema<Exponent<Prime>>,
 }>
 
 export {

@@ -1,4 +1,4 @@
-import { Copfr, Exponent, Max, Prime, PrimeExponentExtrema, Sopfr } from "../../../../src/general"
+import { Copfr, Exponent, Extrema, Max, Prime, Sopfr } from "../../../../src/general"
 import { computePrimeExponentRange } from "../../../../src/scripts/findCommas/primeExponentRange"
 
 describe("computePrimeExponentRange", () => {
@@ -63,7 +63,7 @@ describe("computePrimeExponentRange", () => {
 
     it("gives the valid range of the prime exponent given only a max N2D3P9", () => {
         const prime = 7 as Prime
-        const primeExponentExtremaGivenMaxN2D3P9 = [-2, 4] as PrimeExponentExtrema
+        const primeExponentExtremaGivenMaxN2D3P9 = [-2, 4] as Extrema<Exponent<Prime>>
 
         const actual = computePrimeExponentRange(prime, { primeExponentExtremaGivenMaxN2D3P9 })
 

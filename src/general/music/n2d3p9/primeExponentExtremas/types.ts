@@ -46,10 +46,6 @@ interface ComputeSortedNumeratorPossibilitiesOptions {
     numeratorPossibilitiesGivenMaxN2D3P3: NumeratorPossibilityGivenMaxN2D3P3[],
 }
 
-type PrimeExponentExtrema =
-    [Min<Exponent<Prime>>, Max<Exponent<Prime>>]
-    | [Max<Exponent<Prime<Denominator>>>, Max<Exponent<Prime<Numerator>>>]
-
 export {
     NumeratorPossibilityGivenMaxN2D3P3,
     NumeratorPossibilityWithLesserGpfThanDenominatorPrime,
@@ -62,5 +58,4 @@ export {
     ComputeD39ForCandidateMaxDenominatorPrimeExponentOptions,
     ComputeSortedNumeratorPossibilitiesOptions,
     SortedNumeratorPossibilitiesForDenominatorPrimeGivenMaxN2D3P9,
-    PrimeExponentExtrema,
 }

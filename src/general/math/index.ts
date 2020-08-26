@@ -11,6 +11,7 @@ import { isSubMonzo } from "./isSubMonzo"
 import { computeLog } from "./log"
 import { computeMonzoFromInteger } from "./monzoFromInteger"
 import { computeMonzoFromRatio } from "./monzoFromRatio"
+import { computeMonzosFromPrimeExponentExtremas } from "./monzosFromPrimeExponentExtrema"
 import { computePrimeCount } from "./primeCount"
 import { computeRatioFromMonzo } from "./ratioFromMonzo"
 import { computeRoughNumberMonzo } from "./rough"
@@ -71,5 +72,6 @@ export {
     isSubMonzo,
     computeIntegerFromMonzo,
     PRIMES,
+    computeMonzosFromPrimeExponentExtremas,
     Prime,
 }

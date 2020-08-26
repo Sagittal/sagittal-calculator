@@ -1,9 +1,6 @@
-import { Max } from "../../../../../../src/general"
+import { Exponent, Extrema, Max, Prime } from "../../../../../../src/general"
 import { N2D3P9 } from "../../../../../../src/general/music/n2d3p9"
-import {
-    computePrimeExponentExtremasGivenMaxN2D3P9,
-    PrimeExponentExtrema,
-} from "../../../../../../src/general/music/n2d3p9/primeExponentExtremas"
+import { computePrimeExponentExtremasGivenMaxN2D3P9 } from "../../../../../../src/general/music/n2d3p9/primeExponentExtremas"
 import { onlyRunInCi } from "../../../../../helpers/onlyRunInCi"
 
 // TODO: FIVE ROUGH LINK so these are actually five-rough primes... should I acknowledge that in the name?
@@ -14,7 +11,7 @@ describe("computePrimeExponentExtremasGivenMaxN2D3P9", () => {
 
         const actual = computePrimeExponentExtremasGivenMaxN2D3P9(maxN2D3P9)
 
-        const expected = [] as Array<PrimeExponentExtrema>
+        const expected = [] as Array<Extrema<Exponent<Prime>>>
         expect(actual).toEqual(expected)
     })
 
@@ -23,7 +20,7 @@ describe("computePrimeExponentExtremasGivenMaxN2D3P9", () => {
 
         const actual = computePrimeExponentExtremasGivenMaxN2D3P9(maxN2D3P9)
 
-        const expected = [] as Array<PrimeExponentExtrema>
+        const expected = [] as Array<Extrema<Exponent<Prime>>>
         expect(actual).toEqual(expected)
     })
 
@@ -37,7 +34,7 @@ describe("computePrimeExponentExtremasGivenMaxN2D3P9", () => {
             [0, 2],     // 7
             [0, 1],     // 11
             [0, 1],     // 13
-        ] as Array<PrimeExponentExtrema>
+        ] as Array<Extrema<Exponent<Prime>>>
         expect(actual).toEqual(expected)
     })
 
@@ -63,7 +60,7 @@ describe("computePrimeExponentExtremasGivenMaxN2D3P9", () => {
             [0, 1],     // 41
             [0, 1],     // 43
             [0, 1],     // 47
-        ] as Array<PrimeExponentExtrema>
+        ] as Array<Extrema<Exponent<Prime>>>
         expect(actual).toEqual(expected)
     })
 })

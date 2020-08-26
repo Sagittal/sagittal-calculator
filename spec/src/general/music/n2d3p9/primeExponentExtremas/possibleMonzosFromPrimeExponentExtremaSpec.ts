@@ -1,3 +1,0 @@
-describe("computePossibleMonzosFromPrimeExponentExtremas", () => {
-    // TODO: write
-})

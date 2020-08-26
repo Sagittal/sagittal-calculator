@@ -1,5 +1,4 @@
-import { Max, N2D3P9, Prime } from "../../../../../../src/general"
-import { PrimeExponentExtrema } from "../../../../../../src/general/music/n2d3p9/primeExponentExtremas"
+import { Exponent, Extrema, Max, N2D3P9, Prime } from "../../../../../../src/general"
 import { computePrimeExponentExtremaGivenMaxN2D3P3 } from "../../../../../../src/general/music/n2d3p9/primeExponentExtremas/primeExponentExtrema"
 
 describe("computePrimeExponentExtremaGivenMaxN2D3P3", () => {
@@ -9,7 +8,7 @@ describe("computePrimeExponentExtremaGivenMaxN2D3P3", () => {
 
         const actual = computePrimeExponentExtremaGivenMaxN2D3P3(prime, maxN2D3P9)
 
-        const expected = [-1, 2] as PrimeExponentExtrema
+        const expected = [-1, 2] as Extrema<Exponent<Prime>>
         expect(actual).toEqual(expected)
     })
 })

@@ -39,6 +39,7 @@ import {
     computeLog,
     computeMonzoFromInteger,
     computeMonzoFromRatio,
+    computeMonzosFromPrimeExponentExtremas,
     computePrimeCount,
     computeRatioFromMonzo,
     computeRoughNumberMonzo,
@@ -71,15 +72,13 @@ import {
     computeCentsFromRatio,
     computeMonzoInRange,
     computeN2D3P9,
-    computePossibleMonzosFromPrimeExponentExtremas,
     computePrimeExponentExtremasGivenMaxN2D3P9,
     N2D3P9,
     Popularity,
     Position,
-    PrimeExponentExtrema,
     Votes,
 } from "./music"
-import { Count, Id, Index, Max, Min, Name, Proportion, Resolution, Span, Sum, Unit } from "./types"
+import { Count, Id, Index, Max, Min, Name, Proportion, Resolution, Span, Sum, Unit, Extrema } from "./types"
 
 export {
     Cents,
@@ -147,10 +146,9 @@ export {
     computeGpf,
     dividesEvenly,
     computeIsRough,
-    PrimeExponentExtrema,
     computePrimeExponentExtremasGivenMaxN2D3P9,
     rank,
-    computePossibleMonzosFromPrimeExponentExtremas,
+    computeMonzosFromPrimeExponentExtremas,
     sort,
     dig,
     Rank,
@@ -166,4 +164,5 @@ export {
     isSubMonzo,
     computeApotomeSlope,
     computeCentsFromMonzo,
+    Extrema,
 }
