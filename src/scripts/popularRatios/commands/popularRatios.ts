@@ -14,9 +14,10 @@ const popularRatios = computePopularRatios(maxN2D3P9)
 
 // TODO: this is all working okay for now,
 //  but ideally we'd have something that will generalize the saveDebugMessage trick across all the different scripts
+// TODO: also can we extract this... and can you use a table helper please...
+//  don't we have something that formats tables for the forum vs. for the console?
+//  it could even pass that on to something that will use smileys instead of just the symbols
 console.log(`count of results with N2D3P9 <= ${maxN2D3P9}: ${popularRatios.length}`)
-
-// TODO: extract this... and can you use a table helper please
 console.log(`[table]`)
 console.log("[tr][th]2,3-equivalent[/th][th][/th][th][/th][th]introducing[/th][th][/th][th][/th][th][/th][/tr]")
 console.log("[tr][th]pitch[/th][th][/th][th][/th][th]symbol[/th][th][/th][th]Scala[/th][th]Scala[/th][/tr]")
