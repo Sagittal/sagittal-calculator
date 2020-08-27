@@ -1,17 +1,9 @@
-import { Cents, Id, Monzo, Name, Prime, Ratio, Sopfr } from "../../../../src/general"
-import { ApotomeSlope, N2D3P9 } from "../../../../src/general/music"
+import { Id } from "../../../../src/general"
 import { SagittalComma, SymbolLongAscii } from "../../../../src/notations"
 import { JiSymbol, Level, Mina } from "../../../../src/notations/ji"
 import { computeSecondaryCommaZone } from "../../../../src/notations/ji/secondaryCommaZone"
 import { SecondaryCommaZone } from "../../../../src/notations/ji/types"
 import { SymbolSet, SymbolUnicode } from "../../../../src/notations/types"
-
-// TODO: perhaps secondary comma zone should be built-in to the JiSymbol model,
-//  and this test would be just to check that they all check out with themselves?
-//  sure, but first you'd want to include its capture zones per level at all.
-//  then work up to its secondary comma zone
-//  okay, but do we want it to be an array of Id<Bound>? that seems right
-//  but that makes me think that JiSymbol's primaryCommaId should have been just an Id pointer to a list of Commas
 
 describe("secondaryCommaZone", () => {
     it("returns the min and max cents of where secondary commas are represented by the given symbol, i.e. its capture zone at its introducing level", () => {

@@ -8,7 +8,12 @@ enum Justification {
 
 type JustificationOption = Justification | Array<Justification | undefined>
 
+type Px = number & { _PxBrand: "Px" }
+type HexColor = string & { _HexColorBrand: "HexColor" }
+
 export {
+    Px,
+    HexColor,
     Justification,
     JustificationOption,
     Formatted,

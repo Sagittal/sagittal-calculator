@@ -1,3 +1,3 @@
 describe("computeMonzosFromPrimeExponentExtremas", () => {
-    // TODO: write
+    // TODO: test
 })

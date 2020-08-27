@@ -1,5 +1,5 @@
 import { Index } from "../types"
-import { Base, Prime, Ratio, Roughness } from "./types"
+import { Base, Integer, Prime, Ratio, Roughness } from "./types"
 
 const FIVE_PRIME_INDEX: Index<Prime> = 2 as Index<Prime>
 
@@ -12,6 +12,8 @@ const MULTIPLICATIVE_IDENTITY = 1
 
 const VALUE_BELOW_WHICH_ROUNDING_IMPLEMENTATION_BREAKS: number = 1 / 1000000
 
+const ONE = 1 as Integer
+
 export {
     FIVE_PRIME_INDEX,
     FIVE_ROUGHNESS,
@@ -19,4 +21,5 @@ export {
     MULTIPLICATIVE_IDENTITY,
     VALUE_BELOW_WHICH_ROUNDING_IMPLEMENTATION_BREAKS,
     BASE_2,
+    ONE,
 }

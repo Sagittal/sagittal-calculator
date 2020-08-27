@@ -1,7 +1,22 @@
-import { computeRange, Copfr, Exponent, Extrema, floor, Max, max, Min, min, Prime, Sopfr } from "../../general"
+import {
+    computeRange,
+    Copfr,
+    Exponent,
+    Extrema,
+    floor,
+    Max,
+    max,
+    Min,
+    min,
+    ONE,
+    Prime,
+    Range,
+    Sopfr,
+    sum,
+} from "../../general"
 import { ComputePrimeExponentRangeOptions } from "./types"
 
-const computePrimeExponentRange = (prime: Prime, options: ComputePrimeExponentRangeOptions = {}): Array<Exponent<Prime>> => {
+const computePrimeExponentRange = (prime: Prime, options: ComputePrimeExponentRangeOptions = {}): Range<Exponent<Prime>> => {
     const {
         maxFiveRoughSopfr = Infinity as Sopfr<5>,
         maxFiveRoughCopfr = Infinity as Copfr<5>,
@@ -34,7 +49,7 @@ const computePrimeExponentRange = (prime: Prime, options: ComputePrimeExponentRa
         minPrimeExponentGivenMaxCopfr,
     )
 
-    return computeRange(minPrimeExponent, maxPrimeExponent + 1) as Array<Exponent<Prime>> // TODO: Range<>
+    return computeRange(minPrimeExponent, sum(maxPrimeExponent, ONE)) as Range<Exponent<Prime>>
 }
 
 export {

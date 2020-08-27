@@ -7,7 +7,7 @@ import { parseMonzo } from "./parseMonzo"
 import { parseRatio } from "./parseRatio"
 import { alignTable } from "./textTable"
 import { formatTime } from "./time"
-import { Formatted } from "./types"
+import { Formatted, HexColor, Px } from "./types"
 
 export {
     formatRatio,
@@ -20,4 +20,6 @@ export {
     parseRatio,
     FORMATATIONAL_PRECISION,
     Formatted,
+    Px,
+    HexColor,
 }

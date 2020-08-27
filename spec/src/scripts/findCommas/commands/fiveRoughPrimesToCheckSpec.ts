@@ -1,3 +1,3 @@
 describe("fiveRoughPrimesToCheck", () => {
-    // TODO: write
+    // TODO: test
 })

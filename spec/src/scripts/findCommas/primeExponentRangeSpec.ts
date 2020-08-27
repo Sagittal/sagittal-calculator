@@ -24,7 +24,7 @@ describe("computePrimeExponentRange", () => {
         expect(actual).toEqual(expected)
     })
 
-    // TODO: finish writing these
+    // TODO: test - finish these
     it("gives the valid range of the prime exponent given a max 5-rough sopfr and a max N2D3P9 where the 5-rough sopfr is the limiting factor", () => {
 
     })

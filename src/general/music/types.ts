@@ -1,5 +1,5 @@
 import { Monzo, Prime, Ratio, Sopfr } from "../math"
-import { Name } from "../types"
+import { Extrema, Name } from "../types"
 import { N2D3P9 } from "./n2d3p9"
 
 type Cents = number & { _CentsBrand: "Cents" }
@@ -39,6 +39,8 @@ interface Popularity {
     votes: Votes,
 }
 
+type Zone = Extrema<Cents>
+
 export {
     ApotomeSlope,
     Position,
@@ -46,4 +48,5 @@ export {
     Votes,
     Popularity,
     Comma,
+    Zone,
 }

@@ -1,5 +1,5 @@
 import { ACCURACY_THRESHOLD } from "../../../../src/general/code"
-import { Base, Integer, log, Power, round } from "../../../../src/general/math"
+import { Base, Exponent, Integer, log, Power, round } from "../../../../src/general/math"
 
 describe("log", () => {
     it("returns the logarithm with the specified base of the power", () => {
@@ -8,8 +8,8 @@ describe("log", () => {
 
         const actual = log(power, base)
 
-        const expected = 2
-        expect(actual).toBeCloseTo(expected, ACCURACY_THRESHOLD)
+        const expected = 2 as Exponent
+        expect(actual).toBeCloseToTyped(expected, ACCURACY_THRESHOLD)
     })
 
     it("is accurate", () => {
@@ -18,8 +18,8 @@ describe("log", () => {
 
         const actual = log(power, base)
 
-        const expected = 2.32192809489
-        expect(actual).toBeCloseTo(expected)
+        const expected = 2.32192809489 as Exponent
+        expect(actual).toBeCloseToTyped(expected)
     })
 })
 

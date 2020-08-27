@@ -9,6 +9,6 @@ describe("computeCentsFromMonzo", () => {
         const actual = computeCentsFromMonzo(monzo)
 
         const expected = 17.576131157281500 as Cents
-        expect(actual).toBeCloseTo(expected, ACCURACY_THRESHOLD)
+        expect(actual).toBeCloseToTyped(expected, ACCURACY_THRESHOLD)
     })
 })

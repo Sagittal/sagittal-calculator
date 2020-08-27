@@ -118,5 +118,5 @@ describe("computeSumsOfSquaresAndMaybeUpdateBestMetric", () => {
         expect(bestMetrics.get(metricName)).toEqual(expected)
     })
 
-    // TODO: test rejecting if example one's parameter combinations are invalid
+    // TODO: test - rejecting if example one's parameter combinations are invalid
 })

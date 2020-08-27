@@ -1,5 +1,4 @@
 import { Count, deepEquals } from "../../../../../../src/general"
-import { arraysHaveSameContents } from "../../../../../../src/general/code/arraysHaveSameContents"
 import { Scope } from "../../../../../../src/scripts/unpopularityMetric/bestMetric"
 import { scopesToSearch, solverStatus } from "../../../../../../src/scripts/unpopularityMetric/globals"
 import { Chunk } from "../../../../../../src/scripts/unpopularityMetric/solver"
@@ -2067,12 +2066,7 @@ describe("populateScopes", () => {
         //      ((2+6-1)!)/((2!)((6-1)!)) * ((0+25-1)!)/((0!)((25-1)!)) * 3^0 = 21 * 1 * 1 = 21
         //      +
         //      ((1+6-1)!)/((1!)((6-1)!)) * ((1+25-1)!)/((1!)((25-1)!)) * 2^1 = 6 * 25 * 2 = 300
-        expect(actual.length).toEqual(expected.length)
-        expected.forEach(expectedResultElement => {
-            expect(actual.some(resultElement => {
-                return deepEquals(resultElement, expectedResultElement)
-            })).toBeTruthy(`This expected element was not found: ${JSON.stringify(expectedResultElement)}`)
-        })
+        expect(actual).toBeArrayWithDeepEqualContents(expected)
     })
 
     // TODO: this one and the one below need to be recalculated for 25 instead of 15 parameters (the 3 new denominator-specific ones, the 3 new power base ones, the 4 weight ones we were missing (and the 14->15 was bringing back x))
@@ -2088,7 +2082,7 @@ describe("populateScopes", () => {
             945 +         // all combinations of 2 submetrics = 6 choose 2 w/re = ((2+6-1)!)/((2!)((6-1)!)) = 21, but that times all combinations of 1 parameters = 15 choose 1 w/re = ((1+15-1)!)/((1!)((15-1)!)) =  15, so 21 * 15 = 315, but then that times 2 bc for each one you can distribute the parameters across the submetrics 3^1 ways, so 315 * 3 =  945
             2880,         // all combinations of 1 submetric  = 6 choose 1 w/re = ((1+6-1)!)/((1!)((6-1)!)) =  6, but that times all combinations of 2 parameters = 15 choose 2 w/re = ((2+15-1)!)/((2!)((15-1)!)) = 120, so 6 * 120 = 720, but then that times 1 bc for each one you can distribute the parameters across the submetrics 2^2 ways, so 720 * 4 = 2880
         )
-        const exampleResultElements = [
+        const exampleExpectedElements: Scope[] = [
             [
                 {},
                 {
@@ -2111,12 +2105,8 @@ describe("populateScopes", () => {
                     [ Parameter.A_AS_POWER_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_POWER_EXPONENT ],
                 },
             ],
-        ]
-        exampleResultElements.forEach(expectedResultElement => {
-            expect(actual.some(resultElement => {
-                return arraysHaveSameContents(resultElement, expectedResultElement)
-            })).toBeTruthy(`This expected element was not found: ${JSON.stringify(expectedResultElement)}`)
-        })
+        ] as Scope[]
+        expect(actual).toBeArrayIncludingDeepEqual(exampleExpectedElements)
     })
 
     // this one just started taking insanely long for no clear reason

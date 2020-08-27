@@ -1,9 +1,11 @@
-import { Exponent, Max, Min, Monzo, Prime } from "../math"
+import { Exponent, Monzo, Prime } from "../math"
 import { computeCentsFromMonzo } from "../music"
 import { CENTS_PER_OCTAVE } from "./constants"
-import { Cents } from "./types"
+import { Cents, Zone } from "./types"
 
-const computeMonzoInRange = (threeSlicedMonzo: Monzo<3>, minCents: Min<Cents>, maxCents: Max<Cents>) => {
+const computeMonzoInZone = (threeSlicedMonzo: Monzo<3>, zone: Zone) => {
+    const [minCents, maxCents] = zone
+
     if (maxCents - minCents > CENTS_PER_OCTAVE) {
         throw new Error("Cents range must be less than 1200.")
     }
@@ -23,5 +25,5 @@ const computeMonzoInRange = (threeSlicedMonzo: Monzo<3>, minCents: Min<Cents>, m
 }
 
 export {
-    computeMonzoInRange,
+    computeMonzoInZone,
 }

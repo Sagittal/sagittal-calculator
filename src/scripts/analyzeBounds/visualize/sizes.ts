@@ -1,5 +1,7 @@
 import { Cents } from "../../../general"
 
+// TODO: probably some of these are Px, no?
+
 const SCALE = 100
 const Y_SCALE = 1 * SCALE
 const X_SCALE = 5 * SCALE

@@ -27,6 +27,8 @@ enum ExtensionBaseType {
     OBJECT = "object",
 }
 
+type Range<T> = Array<T> & { _RangeBrand: "Range" }
+
 export {
     SortOptions,
     Rank,
@@ -36,4 +38,5 @@ export {
     RankOptions,
     RankStrategy,
     ExtensionBaseType,
+    Range,
 }

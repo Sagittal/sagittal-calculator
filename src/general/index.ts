@@ -13,6 +13,7 @@ import {
     isNumber,
     isUndefined,
     merge,
+    Range,
     rank,
     Rank,
     Ranked,
@@ -29,8 +30,10 @@ import {
     Formatted,
     formatTime,
     forumTable,
+    HexColor,
     parseMonzo,
     parseRatio,
+    Px,
 } from "./io"
 import {
     abs,
@@ -76,6 +79,7 @@ import {
     Monzo,
     negative,
     Numerator,
+    ONE,
     pow,
     Power,
     Prime,
@@ -84,6 +88,7 @@ import {
     round,
     Sopfr,
     sqrt,
+    sum,
 } from "./math"
 import {
     APOTOME,
@@ -94,7 +99,7 @@ import {
     computeApotomeSlope,
     computeCentsFromMonzo,
     computeCentsFromRatio,
-    computeMonzoInRange,
+    computeMonzoInZone,
     computeN2D3P9,
     computePrimeExponentExtremasGivenMaxN2D3P9,
     formatN2D3P9,
@@ -121,7 +126,7 @@ export {
     Resolution,
     Monzo,
     invertMonzo,
-    computeMonzoInRange,
+    computeMonzoInZone,
     isUndefined,
     computePlusOrMinusRange,
     computeCopfr,
@@ -214,4 +219,9 @@ export {
     difference,
     Formatted,
     Comma,
+    Range,
+    sum,
+    ONE,
+    Px,
+    HexColor,
 }

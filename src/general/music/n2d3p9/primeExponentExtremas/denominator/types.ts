@@ -10,7 +10,10 @@ interface ComputeMinN2PForCandidateMaxDenominatorPrimeExponentGivenMaxN2D3P9Opti
     sortedNumeratorPossibilitiesForDenominatorPrimeGivenMaxN2D3P9: SortedNumeratorPossibilitiesForDenominatorPrimeGivenMaxN2D3P9,
 }
 
+type D39 = number & { _D39Brand: "D39" }
+
 export {
     ComputeMinN2PForCandidateMaxDenominatorPrimeExponentGivenMaxN2D3P9Options,
     ComputeD39ForCandidateMaxDenominatorPrimeExponentOptions,
+    D39,
 }

@@ -1,5 +1,5 @@
 import { computeCombinations } from "./combinations"
-import { BASE_2, FIVE_PRIME_INDEX, FIVE_ROUGHNESS } from "./constants"
+import { BASE_2, FIVE_PRIME_INDEX, FIVE_ROUGHNESS, ONE } from "./constants"
 import { computeCopfr } from "./copfr"
 import { computeDistributions } from "./distributions"
 import { dividesEvenly } from "./dividesEvenly"
@@ -18,7 +18,7 @@ import { computeRoughNumberMonzo } from "./rough"
 import { computeSopfr } from "./sopfr"
 import { computeSuperMonzo } from "./superMonzo"
 import { computeTriangularNumber } from "./triangularNumber"
-import { abs, ceil, count, difference, floor, log, max, min, mod, negative, pow, round, sqrt } from "./typedOperations"
+import { abs, ceil, count, difference, floor, log, max, min, mod, negative, pow, round, sqrt, sum } from "./typedOperations"
 import {
     Base,
     Combination,
@@ -91,6 +91,8 @@ export {
     mod,
     ceil,
     floor,
+    ONE,
+    sum,
     sqrt,
     BASE_2,
     pow,

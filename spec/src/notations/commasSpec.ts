@@ -9,7 +9,7 @@ describe("JI_SYMBOLS", () => {
             const ratio = computeRatioFromMonzo(comma.monzo)
             const cents = computeCentsFromRatio(ratio)
 
-            expect(cents).toBeCloseTo(comma.cents, ACCURACY_THRESHOLD)
+            expect(cents).toBeCloseToTyped(comma.cents, ACCURACY_THRESHOLD)
         })
     })
 

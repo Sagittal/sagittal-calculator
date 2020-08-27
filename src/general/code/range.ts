@@ -1,12 +1,13 @@
-import { isUndefined } from "./index"
+import { Integer } from "../math"
+import { isUndefined, Range } from "./index"
 
-const computeRange = <T extends number>(firstParameter: T, secondParameter?: T): T[] => {
+const computeRange = <T extends Integer>(firstParameter: T, secondParameter?: T): Range<T> => {
     if (isUndefined(secondParameter)) {
-        return [...Array(firstParameter).keys()] as T[]
+        return [...Array(firstParameter).keys()] as Range<T>
     }
 
     return [...Array(secondParameter - firstParameter).keys()]
-        .map((number: number): number => number + firstParameter) as T[]
+        .map((number: number): number => number + firstParameter) as Range<T>
 }
 
 

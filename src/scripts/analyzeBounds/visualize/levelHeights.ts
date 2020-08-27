@@ -1,7 +1,7 @@
+import { Px } from "../../../general"
 import { Level, LEVELS } from "../../../notations"
 import { computeReversedLevelIndex } from "./reversedLevelIndex"
 import { LEVEL_HEIGHT, MARGIN, Y_SCALE } from "./sizes"
-import { Px } from "./types"
 
 const computeLevelHeights = (withinLevelHeight: number): Record<Level, Px> =>
     LEVELS.reduce(

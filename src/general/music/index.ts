@@ -2,7 +2,7 @@ import { computeApotomeSlope } from "./apotomeSlope"
 import { computeCentsFromMonzo } from "./centsFromMonzo"
 import { computeCentsFromRatio } from "./centsFromRatio"
 import { APOTOME } from "./constants"
-import { computeMonzoInRange } from "./monzoInRange"
+import { computeMonzoInZone } from "./monzoInZone"
 import { computeN2D3P9, computePrimeExponentExtremasGivenMaxN2D3P9, formatN2D3P9, N2D3P9 } from "./n2d3p9"
 import { ApotomeSlope, Cents, Comma, Popularity, Position, Votes } from "./types"
 
@@ -21,7 +21,7 @@ export {
     Popularity,
     Votes,
     computeApotomeSlope,
-    computeMonzoInRange,
+    computeMonzoInZone,
     formatN2D3P9,
     Comma,
 }

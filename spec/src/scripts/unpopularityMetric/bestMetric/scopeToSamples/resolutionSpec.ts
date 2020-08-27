@@ -21,5 +21,5 @@ describe("computeResolution", () => {
         expect(actual).toBe(expected)
     })
 
-    // TODO: test never being less than 2
+    // TODO: test - never being less than 2
 })

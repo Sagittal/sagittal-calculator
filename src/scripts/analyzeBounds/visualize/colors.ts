@@ -1,4 +1,4 @@
-import { HexColor } from "./types"
+import { HexColor } from "../../../general"
 
 const INA_COLOR: HexColor = "#6666ff" as HexColor
 const MEAN_COLOR: HexColor = "#88cccc" as HexColor

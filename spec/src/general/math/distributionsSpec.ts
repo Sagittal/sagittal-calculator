@@ -1,14 +1,13 @@
 import { Count } from "../../../../src/general"
-import { arraysHaveSameContents } from "../../../../src/general/code/arraysHaveSameContents"
 import { computeDistributions, DistributionBin } from "../../../../src/general/math"
 import { Distribution } from "../../../../src/general/math/types"
 
 describe("computeDistributions", () => {
-    it("given an array and a resolution of buckets, will return all the possible ways of distributing the elements across the buckets", () => {
-        const array = ["a", "b", "c", "d"]
+    it("given an array and a resolution of bins, will return all the possible ways of distributing the elements across the bins", () => {
+        const array: string[] = ["a", "b", "c", "d"]
         const binCount = 3 as Count<DistributionBin<string>>
 
-        const actual = computeDistributions(array, binCount)
+        const actual: Array<Distribution<string>> = computeDistributions(array, binCount)
 
         const expected = [
             // 4 0 0
@@ -445,16 +444,9 @@ describe("computeDistributions", () => {
                 ["a"],
                 ["c", "d"],
             ],
-        ]
+        ] as Array<Distribution<string>>
 
-        expect(actual.length).toBe(expected.length)
-        expected.forEach(expectedResultElement => {
-            expect(actual.some(resultElement => {
-                return resultElement.every((bin, index) => {
-                    return arraysHaveSameContents(bin, expectedResultElement[ index ])
-                })
-            })).toBeTruthy(`This expected element was not found: ${JSON.stringify(expectedResultElement)}`)
-        })
+        expect(actual).toBeSameDistributionsAs(expected)
     })
 
     it("works for 1 element across two bins", () => {

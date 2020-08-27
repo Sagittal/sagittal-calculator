@@ -4,6 +4,7 @@ import * as d39 from "../../../../../../../src/general/music/n2d3p9/primeExponen
 import { computeMinN2D3P9ForCandidateMaxDenominatorPrimeExponentGivenMaxN2D3P9 } from "../../../../../../../src/general/music/n2d3p9/primeExponentExtremas/denominator/minN2D3P9"
 import * as minN2P from "../../../../../../../src/general/music/n2d3p9/primeExponentExtremas/denominator/minN2P"
 import { N2P } from "../../../../../../../src/general/music/n2d3p9/primeExponentExtremas/denominator/sortedNumeratorPossibilities"
+import { D39 } from "../../../../../../../src/general/music/n2d3p9/primeExponentExtremas/denominator/types"
 
 describe("computeMinN2D3P9ForCandidateMaxDenominatorPrimeExponentGivenMaxN2D3P9", () => {
     it("given a denominator prime and its candidate max prime exponent, plus the sorted numerator possibilities, will gather the D39 and the min N2P then combine them", () => {
@@ -15,7 +16,7 @@ describe("computeMinN2D3P9ForCandidateMaxDenominatorPrimeExponentGivenMaxN2D3P9"
         const candidateMaxDenominatorPrimeExponentGivenMaxN2D3P9 = 2 as Max<Exponent<Prime<Denominator>>>
 
         const minN2PForCandidateMaxDenominatorPrimeExponentGivenMaxN2D3P9 = 15.5 as Min<N2P>
-        const d39ForCandidateMaxDenominatorPrimeExponent = 3
+        const d39ForCandidateMaxDenominatorPrimeExponent = 3 as D39
 
         spyOn(minN2P, "computeMinN2PForCandidateMaxDenominatorPrimeExponentGivenMaxN2D3P9")
             .and.returnValue(minN2PForCandidateMaxDenominatorPrimeExponentGivenMaxN2D3P9)

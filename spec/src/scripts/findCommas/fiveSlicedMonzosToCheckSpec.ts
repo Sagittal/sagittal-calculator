@@ -1,7 +1,7 @@
 import { Copfr, Max, Prime, Sopfr } from "../../../../src/general"
 import { computeFiveSlicedMonzosToCheck } from "../../../../src/scripts/findCommas/fiveSlicedMonzosToCheck"
 
-// todo: currently if you don't provide sopfr you must provide both max copfr and prime limit.
+// todo: test - currently if you don't provide sopfr you must provide both max copfr and prime limit.
 //  but a max N2D3P9 would also suffice.
 //  basically it's the same behavior as max sopfr. you could have either or both.
 //  Add tests to recognize that.

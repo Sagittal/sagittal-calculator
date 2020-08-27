@@ -19,7 +19,7 @@ describe("computeAntivotes", () => {
         const balancedResult = computeAntivotes(balancedFiveRoughRatio, submetrics)
         const lopsidedResult = computeAntivotes(lopsidedFiveRoughRatio, submetrics)
 
-        expect(balancedResult).toBeCloseTo(lopsidedResult, ANTIVOTES_PRECISION)
+        expect(balancedResult).toBeCloseToTyped(lopsidedResult, ANTIVOTES_PRECISION)
     })
 
     it("when k < 1, two 5-rough ratios have the same sopfr, but one has its primes all lopsided on one side, it gets ranked worse", () => {
@@ -56,7 +56,7 @@ describe("computeAntivotes", () => {
         const expected =
             0.5 * computeSubmetricAntivotes([0, 0, 0, 1, 1] as Monzo, { [ Parameter.SUM ]: true }) as Antivotes +
             0.3 * computeSubmetricAntivotes([0, 0, 0, 1, 1] as Monzo, { [ Parameter.SUM ]: true }) as Antivotes
-        expect(actual).toBeCloseTo(expected, ANTIVOTES_PRECISION)
+        expect(actual).toBeCloseToTyped(expected, ANTIVOTES_PRECISION)
     })
 
     it("should not return NaN", () => {

@@ -1,9 +1,10 @@
 import { ACCURACY_THRESHOLD } from "../../../../src/general/code"
-import { computeRoughNumberMonzo, computeSopfr, FIVE_ROUGHNESS, Monzo } from "../../../../src/general/math"
+import { computeRoughNumberMonzo, computeSopfr, FIVE_ROUGHNESS, Monzo, Sopfr } from "../../../../src/general/math"
+import { Average } from "../../../../src/general/math/types"
 import { getSagittalComma } from "../../../../src/notations"
 import { JI_SYMBOLS } from "../../../../src/notations/ji"
 
-const AVERAGE_FIVE_ROUGH_SOPFR = 22.78523489932886
+const AVERAGE_FIVE_ROUGH_SOPFR: Average<Sopfr<5>> = 22.78523489932886 as Average<Sopfr<5>>
 
 describe("averageFiveRoughSopfr", () => {
     it("is about 23", () => {
@@ -18,6 +19,6 @@ describe("averageFiveRoughSopfr", () => {
             0,
         )
 
-        expect(total / JI_SYMBOLS.length).toBeCloseTo(AVERAGE_FIVE_ROUGH_SOPFR, ACCURACY_THRESHOLD)
+        expect(total / JI_SYMBOLS.length).toBeCloseToTyped(AVERAGE_FIVE_ROUGH_SOPFR, ACCURACY_THRESHOLD)
     })
 })

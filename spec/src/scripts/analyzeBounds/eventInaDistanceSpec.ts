@@ -1,4 +1,4 @@
-import { Cents } from "../../../../src/general"
+import { Cents, Proportion } from "../../../../src/general"
 import { ACCURACY_THRESHOLD } from "../../../../src/general/code"
 import { Level } from "../../../../src/notations/ji"
 import { HIGHINA } from "../../../../src/notations/ji/intervals"
@@ -13,7 +13,7 @@ describe("computeEventInaDistance", () => {
 
         const actual = computeEventInaDistance(event, index, history)
 
-        const expected = 2 / HIGHINA
-        expect(actual).toBeCloseTo(expected, ACCURACY_THRESHOLD)
+        const expected = 2 / HIGHINA as Proportion
+        expect(actual).toBeCloseToTyped(expected, ACCURACY_THRESHOLD)
     })
 })

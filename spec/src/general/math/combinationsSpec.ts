@@ -1,5 +1,4 @@
 import { Combinations, Count } from "../../../../src/general"
-import { arraysHaveSameContents } from "../../../../src/general/code/arraysHaveSameContents"
 import { computeCombinations } from "../../../../src/general/math"
 
 describe("computeCombinations", () => {
@@ -45,14 +44,9 @@ describe("computeCombinations", () => {
             ["c", "c"],
             ["c", "d"],
             ["d", "d"],
-        ]
+        ] as Combinations<string>
 
-        expect(actual.length).toBe(expected.length)
-        expected.forEach(expectedResultElement => {
-            expect(actual.some(resultElement => {
-                return arraysHaveSameContents(resultElement, expectedResultElement)
-            })).toBeTruthy(`This expected element was not found: ${JSON.stringify(expectedResultElement)}`)
-        })
+        expect(actual).toBeSameCombinationsAs(expected)
     })
 
     it("works for big sets", () => {

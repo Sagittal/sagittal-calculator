@@ -1,4 +1,4 @@
-import { abs, computeMonzoInRange, computePlusOrMinusRange, Monzo } from "../../general"
+import { abs, computeMonzoInZone, computePlusOrMinusRange, Monzo } from "../../general"
 import { analyzeComma, NamedComma } from "../../notations"
 import { ComputeCommasFromFiveSlicedMonzoOptions } from "./types"
 
@@ -25,7 +25,7 @@ const computeCommasFromFiveSlicedMonzo = (fiveSlicedMonzo: Monzo<5>, options: Co
 
     computePlusOrMinusRange(maxAbsoluteThreeExponent).forEach(three => {
         const threeSlicedMonzo: Monzo<3> = [three, ...fiveSlicedMonzo] as Monzo<3>
-        const monzo = computeMonzoInRange(threeSlicedMonzo, minCents, maxCents) // TODO: perhaps this should be one of those extrema types, just an array of [Min<>, Max<>]
+        const monzo = computeMonzoInZone(threeSlicedMonzo, [minCents, maxCents])
 
         if (monzo) {
             const analyzedComma: NamedComma = analyzeComma(monzo)

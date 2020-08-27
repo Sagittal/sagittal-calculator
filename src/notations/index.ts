@@ -31,7 +31,7 @@ import {
 } from "./ji"
 import { computeSmileyFromAscii } from "./smiley"
 import { SYMBOL_SETS } from "./symbolSets"
-import { SagittalComma, SymbolLongAscii, NamedComma } from "./types"
+import { NamedComma, SagittalComma, SymbolLongAscii } from "./types"
 
 export {
     BOUNDS,

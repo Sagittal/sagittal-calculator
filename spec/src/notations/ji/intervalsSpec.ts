@@ -4,10 +4,10 @@ import { HIGHINA, INA_SIZES, MEDINA, MINA, TINA, ULTRINA } from "../../../../src
 
 describe("INA_SIZES", () => {
     it("has the levels' step sizes equal to the correct ina", () => {
-        expect(INA_SIZES[ Level.INSANE ]).toBeCloseTo(TINA, ACCURACY_THRESHOLD)
-        expect(INA_SIZES[ Level.EXTREME ]).toBeCloseTo(MINA, ACCURACY_THRESHOLD)
-        expect(INA_SIZES[ Level.ULTRA ]).toBeCloseTo(ULTRINA, ACCURACY_THRESHOLD)
-        expect(INA_SIZES[ Level.HIGH ]).toBeCloseTo(HIGHINA, ACCURACY_THRESHOLD)
-        expect(INA_SIZES[ Level.MEDIUM ]).toBeCloseTo(MEDINA, ACCURACY_THRESHOLD)
+        expect(INA_SIZES[ Level.INSANE ]).toBeCloseToTyped(TINA, ACCURACY_THRESHOLD)
+        expect(INA_SIZES[ Level.EXTREME ]).toBeCloseToTyped(MINA, ACCURACY_THRESHOLD)
+        expect(INA_SIZES[ Level.ULTRA ]).toBeCloseToTyped(ULTRINA, ACCURACY_THRESHOLD)
+        expect(INA_SIZES[ Level.HIGH ]).toBeCloseToTyped(HIGHINA, ACCURACY_THRESHOLD)
+        expect(INA_SIZES[ Level.MEDIUM ]).toBeCloseToTyped(MEDINA, ACCURACY_THRESHOLD)
     })
 })

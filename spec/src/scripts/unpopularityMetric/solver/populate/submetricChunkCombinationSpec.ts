@@ -325,11 +325,6 @@ describe("populateScopesForSubmetricChunkCombination", () => {
             ],
         ] as Combinations<Chunk>
 
-        expect(actual.length).toEqual(expected.length)
-        expected.forEach(expectedResultElement => {
-            expect(actual.some(resultElement => {
-                return deepEquals(resultElement, expectedResultElement)
-            })).toBeTruthy(`This expected element was not found: ${JSON.stringify(expectedResultElement)}`)
-        })
+        expect(actual).toBeArrayWithDeepEqualContents(expected)
     })
 })

@@ -2,16 +2,12 @@ import { onlyRunInCi } from "../../../../helpers/onlyRunInCi"
 import { runCommandAndGetConsoleOutput } from "../../../../helpers/src/scripts/runCommand"
 
 describe("notating-symbols", () => {
-    it("gives you the list of the most popular ratios, according to N2D3P9", () => {
+    it("gives you the list of the symbols which exactly notate the given ji pitch", () => {
         onlyRunInCi()
 
         const command = "npm run notating-symbols -- -r 35/1"
 
         const actual = runCommandAndGetConsoleOutput(command)
-
-        // TODO: it might be nice to share the logic from formatSymbolAscii
-        //  for centering symbols on shafts, ratios on slash, and monzos on terms
-        //  into the alignTable method
 
         const expected = [
             "symbol\tname \tratio          \tmonzo           \tcents ",

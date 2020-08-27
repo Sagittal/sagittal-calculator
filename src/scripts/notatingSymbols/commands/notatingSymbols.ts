@@ -14,6 +14,10 @@ import { computeNotatingJiSymbolIds, getJiSymbol, getSagittalComma, JiSymbol } f
 // TODO: you should extract this shared between this and analyze-comma script for receiving input of a monzo or ratio
 //  (or name ... you should also make it accept -n name!
 
+// TODO: it might be nice to share the logic from formatSymbolAscii
+//  for centering symbols on shafts, ratios on slash, and monzos on terms
+//  into the alignTable method
+
 program
     .option("-m, --monzo <monzo>", "monzo", parseMonzo)
     .option("-r, --ratio <ratio>", "ratio", parseRatio)

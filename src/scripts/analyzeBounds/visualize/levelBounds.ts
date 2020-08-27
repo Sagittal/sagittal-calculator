@@ -1,7 +1,7 @@
+import { Px } from "../../../general"
 import { Bound, Level, LEVELS_BOUNDS } from "../../../notations"
 import { LEVEL_BOTTOMS, LEVEL_TOPS } from "./levelHeights"
 import { DASH_SIZE, SYMBOL_OFFSET } from "./sizes"
-import { Px } from "./types"
 import { computeX } from "./x"
 
 const visualizeLevelBounds = () => {
