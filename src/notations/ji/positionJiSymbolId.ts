@@ -1,8 +1,8 @@
 import { Cents, Id } from "../../general"
-import { JI_SYMBOLS } from "./symbols"
+import { JI_SYMBOLS } from "./jiSymbols"
 import { JiSymbol } from "./types"
 
-const computePositionSymbolId = (position: Cents | undefined): Id<JiSymbol> | undefined => {
+const computePositionJiSymbolId = (position: Cents | undefined): Id<JiSymbol> | undefined => {
     if (!position) {
         return undefined
     }
@@ -18,5 +18,5 @@ const computePositionSymbolId = (position: Cents | undefined): Id<JiSymbol> | un
 }
 
 export {
-    computePositionSymbolId,
+    computePositionJiSymbolId,
 }

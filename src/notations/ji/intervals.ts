@@ -1,4 +1,4 @@
-import { APOTOME, Cents, Max } from "../../general"
+import { APOTOME, Cents } from "../../general"
 import { LEVEL_EDAS } from "./levelEdas"
 import { LEVELS } from "./levels"
 import { Highina, Level, Medina, Mina, Tina, Ultrina } from "./types"
@@ -8,12 +8,6 @@ const MINA: Mina = 1 / 233 * APOTOME as Mina            // 0.48791848093
 const ULTRINA: Ultrina = 1 / 58 * APOTOME as Ultrina    // 1.96008631134
 const HIGHINA: Highina = 1 / 47 * APOTOME as Highina    // 2.41882991613
 const MEDINA: Medina = 1 / 21 * APOTOME as Medina       // 5.41357171705
-
-const MAX_POSITION: Max<Cents> = Math.log2(
-    Math.pow(3, 9.5)
-    /
-    Math.pow(2, 15),
-) * 1200 as Max<Cents>                                  // 68.5725082211804
 
 const INA_SIZES: Record<Level, Cents> = LEVEL_EDAS.reduce(
     (levelEdaStepSizes, levelEda, index) =>
@@ -30,6 +24,5 @@ export {
     ULTRINA,
     HIGHINA,
     MEDINA,
-    MAX_POSITION,
     INA_SIZES,
 }

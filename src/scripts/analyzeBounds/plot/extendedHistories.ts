@@ -1,12 +1,12 @@
 import { computeExtensionBase, ExtensionBaseType } from "../../../general"
-import { Bound, BoundedSymbolPositions, computeBoundedSymbolPositions, Level } from "../../../notations"
+import { Bound, BoundedSymbolPositions, computeBoundedJiSymbolPositions, Level } from "../../../notations"
 import { EventType, History } from "../types"
 import { computeEvents } from "./events"
 
 const computeExtendedHistories = (history: History, level: Level, bound: Bound) => {
     const extendedHistories: History[] = computeExtensionBase(ExtensionBaseType.ARRAY) as History[]
 
-    const boundedSymbolPositions: BoundedSymbolPositions = computeBoundedSymbolPositions(bound.cents, level)
+    const boundedSymbolPositions: BoundedSymbolPositions = computeBoundedJiSymbolPositions(bound.cents, level)
 
     const newEvents = [
         ...computeEvents(level, boundedSymbolPositions, EventType.INA),

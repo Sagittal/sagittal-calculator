@@ -1,5 +1,6 @@
 import { max } from "../../../../src/general"
-import { computeSizeCategoryBoundsWithinMaximumPosition, MAX_POSITION } from "../../../../src/notations/ji"
+import { MAX_POSITION } from "../../../../src/notations"
+import { computeSizeCategoryBoundsWithinMaximumPosition } from "../../../../src/notations/ji"
 
 describe("computeSizeCategoryBoundsWithinMaximumPosition", () => {
     it("only returns the size category bounds that are less than or equal to the max position", () => {

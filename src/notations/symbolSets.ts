@@ -1,7 +1,6 @@
 import { SymbolSet } from "./types"
 
-// TODO: this is not actually JI-notation specific and should be relocated
-const SYMBOL_SETS = [
+const SYMBOL_SETS: SymbolSet[] = [
     SymbolSet.SPARTAN,
     SymbolSet.ATHENIAN,
     SymbolSet.PROMETHEAN,

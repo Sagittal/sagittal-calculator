@@ -1,4 +1,6 @@
-const SIZE_CATEGORIES = [
+import { SizeCategory } from "./types"
+
+const SIZE_CATEGORIES: SizeCategory[] = [
     {
         name: "unison",
         abbreviation: "u",
@@ -87,7 +89,7 @@ const SIZE_CATEGORIES = [
         name: "double-Apotome",
         abbreviation: "A+A",
     },
-]
+] as SizeCategory[]
 
 export {
     SIZE_CATEGORIES,

@@ -8,7 +8,7 @@ import {
     N2D3P9,
     Votes,
 } from "../../general"
-import { computeNotatingSymbolIds, computeSmileyFromAscii, getSymbol, SYMBOL_SETS } from "../../notations"
+import { computeNotatingJiSymbolIds, computeSmileyFromAscii, getJiSymbol, SYMBOL_SETS } from "../../notations"
 import { PopularRatio } from "./types"
 
 const computePopularRatio = ({ monzo, n2d3p9 }: { monzo: Monzo, n2d3p9: N2D3P9 }): PopularRatio => {
@@ -20,8 +20,8 @@ const computePopularRatio = ({ monzo, n2d3p9 }: { monzo: Monzo, n2d3p9: N2D3P9 }
     const popularityRank = popularity?.rank || "-"
     const votes = popularity?.votes || 0 as Votes
 
-    const notatingSymbolIds = computeNotatingSymbolIds(monzo)
-    const notatingSymbols = notatingSymbolIds.map(getSymbol)
+    const notatingSymbolIds = computeNotatingJiSymbolIds(monzo)
+    const notatingSymbols = notatingSymbolIds.map(getJiSymbol)
     const smileys = notatingSymbols.map(symbol => computeSmileyFromAscii(symbol.ascii)).join(" ")
     const symbolSets = notatingSymbols.map(symbol => SYMBOL_SETS.indexOf(symbol.lowestSymbolSet)).join(", ")
 

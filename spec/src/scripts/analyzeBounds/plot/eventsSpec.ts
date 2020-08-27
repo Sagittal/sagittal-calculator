@@ -1,5 +1,5 @@
 import { Cents, Name, Position } from "../../../../../src/general"
-import { BoundedSymbolPositions, computeBoundedSymbolPositions, Level } from "../../../../../src/notations/ji"
+import { BoundedSymbolPositions, computeBoundedJiSymbolPositions, Level } from "../../../../../src/notations/ji"
 import { computeEvents } from "../../../../../src/scripts/analyzeBounds/plot/events"
 import { EventType, HistoricalEvent } from "../../../../../src/scripts/analyzeBounds/types"
 
@@ -16,7 +16,7 @@ describe("computeEvents", () => {
 
             it("works when only one ina midpoint is between the bounded symbols", () => {
                 level = Level.ULTRA
-                boundedSymbolPositions = computeBoundedSymbolPositions(4.5 as Cents, level)
+                boundedSymbolPositions = computeBoundedJiSymbolPositions(4.5 as Cents, level)
 
                 const actual = computeEvents(level, boundedSymbolPositions, eventType)
 
@@ -33,7 +33,7 @@ describe("computeEvents", () => {
 
             it("works when only one ina midpoint is between the bounded symbols, even if it is not within a half-ina", () => {
                 level = Level.ULTRA
-                boundedSymbolPositions = computeBoundedSymbolPositions(4.5 as Cents, level)
+                boundedSymbolPositions = computeBoundedJiSymbolPositions(4.5 as Cents, level)
 
                 const actual = computeEvents(level, boundedSymbolPositions, eventType)
 
@@ -50,7 +50,7 @@ describe("computeEvents", () => {
 
             it("works when multiple INA midpoints are between the bounded symbols", () => {
                 level = Level.HIGH
-                boundedSymbolPositions = computeBoundedSymbolPositions(28.0 as Cents, level)
+                boundedSymbolPositions = computeBoundedJiSymbolPositions(28.0 as Cents, level)
 
                 const actual = computeEvents(level, boundedSymbolPositions, eventType)
 
@@ -73,7 +73,7 @@ describe("computeEvents", () => {
 
             it("returns an empty array if there are no INA midpoints between the position's bounded symbols", () => {
                 level = Level.ULTRA
-                boundedSymbolPositions = computeBoundedSymbolPositions(6.05 as Cents, level)
+                boundedSymbolPositions = computeBoundedJiSymbolPositions(6.05 as Cents, level)
 
                 const actual = computeEvents(level, boundedSymbolPositions, eventType)
 
@@ -89,7 +89,7 @@ describe("computeEvents", () => {
 
             it("works at the Medium level", () => {
                 level = Level.MEDIUM
-                boundedSymbolPositions = computeBoundedSymbolPositions(26.25 as Cents, level)
+                boundedSymbolPositions = computeBoundedJiSymbolPositions(26.25 as Cents, level)
 
                 const actual = computeEvents(level, boundedSymbolPositions, eventType)
 
@@ -106,7 +106,7 @@ describe("computeEvents", () => {
 
             it("works at the High level", () => {
                 level = Level.HIGH
-                boundedSymbolPositions = computeBoundedSymbolPositions(26.25 as Cents, level)
+                boundedSymbolPositions = computeBoundedJiSymbolPositions(26.25 as Cents, level)
 
                 const actual = computeEvents(level, boundedSymbolPositions, eventType)
 
@@ -123,7 +123,7 @@ describe("computeEvents", () => {
 
             it("works at the Ultra level", () => {
                 level = Level.ULTRA
-                boundedSymbolPositions = computeBoundedSymbolPositions(26.25 as Cents, level)
+                boundedSymbolPositions = computeBoundedJiSymbolPositions(26.25 as Cents, level)
 
                 const actual = computeEvents(level, boundedSymbolPositions, eventType)
 
@@ -140,7 +140,7 @@ describe("computeEvents", () => {
 
             it("works at the Extreme level", () => {
                 level = Level.EXTREME
-                boundedSymbolPositions = computeBoundedSymbolPositions(26.25 as Cents, level)
+                boundedSymbolPositions = computeBoundedJiSymbolPositions(26.25 as Cents, level)
 
                 const actual = computeEvents(level, boundedSymbolPositions, eventType)
 
@@ -161,7 +161,7 @@ describe("computeEvents", () => {
                 // however, )|) is at 30.98583910472900, so the 30.5 position is between it and |), not between it and |\
 
                 level = Level.HIGH
-                boundedSymbolPositions = computeBoundedSymbolPositions(30.5 as Cents, level)
+                boundedSymbolPositions = computeBoundedJiSymbolPositions(30.5 as Cents, level)
 
                 const actual = computeEvents(level, boundedSymbolPositions, eventType)
 
@@ -184,7 +184,7 @@ describe("computeEvents", () => {
 
             it("returns one event for each size category bound between the position's bounded symbols", () => {
                 level = Level.MEDIUM
-                boundedSymbolPositions = computeBoundedSymbolPositions(34.0 as Cents, level)
+                boundedSymbolPositions = computeBoundedJiSymbolPositions(34.0 as Cents, level)
 
                 const actual = computeEvents(level, boundedSymbolPositions, eventType)
 
@@ -201,7 +201,7 @@ describe("computeEvents", () => {
 
             it("returns an empty array if there are no size category bounds between the position's bounded symbols", () => {
                 level = Level.ULTRA
-                boundedSymbolPositions = computeBoundedSymbolPositions(6.05 as Cents, level)
+                boundedSymbolPositions = computeBoundedJiSymbolPositions(6.05 as Cents, level)
 
                 const actual = computeEvents(level, boundedSymbolPositions, eventType)
 

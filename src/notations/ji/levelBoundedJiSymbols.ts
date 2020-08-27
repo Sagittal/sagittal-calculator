@@ -1,19 +1,19 @@
 import { abs, Cents, difference } from "../../general"
-import { computeBoundedSymbolPositions } from "./boundedSymbolPositions"
+import { computeBoundedJiSymbolPositions } from "./boundedJiSymbolPositions"
 import { BOUNDS } from "./bounds"
 import { computeInaDistance } from "./inaDistance"
-import { computePositionSymbolId } from "./positionSymbolId"
-import { getSymbol } from "./symbol"
+import { getJiSymbol } from "./jiSymbol"
+import { computePositionJiSymbolId } from "./positionJiSymbolId"
 import { Bound, BoundIdWithBoundedSymbolIdWithDistancesPairsByLevel, JiSymbol } from "./types"
 
-const computeLevelBoundedSymbolIdWithDistances = (bound: Bound): BoundIdWithBoundedSymbolIdWithDistancesPairsByLevel => {
+const computeLevelBoundedJiSymbolIdWithDistances = (bound: Bound): BoundIdWithBoundedSymbolIdWithDistancesPairsByLevel => {
     const { cents, levels, id } = bound
 
     return levels.reduce(
         (levels, level) => {
-            const levelBoundedSymbols: Array<JiSymbol | undefined> = computeBoundedSymbolPositions(cents, level)
-                .map(computePositionSymbolId)
-                .map(symbolId => symbolId && getSymbol(symbolId))
+            const levelBoundedSymbols: Array<JiSymbol | undefined> = computeBoundedJiSymbolPositions(cents, level)
+                .map(computePositionJiSymbolId)
+                .map(symbolId => symbolId && getJiSymbol(symbolId))
             const levelBoundedSymbolsWithDistance = levelBoundedSymbols.map(symbol => {
                 if (symbol) {
                     const distance: Cents = abs(difference(cents, symbol.primaryComma.cents))
@@ -39,9 +39,9 @@ const computeLevelBoundedSymbolIdWithDistances = (bound: Bound): BoundIdWithBoun
     )
 }
 
-const LEVEL_BOUNDED_SYMBOLS: BoundIdWithBoundedSymbolIdWithDistancesPairsByLevel[] = BOUNDS.map(computeLevelBoundedSymbolIdWithDistances)
+const LEVEL_BOUNDED_SYMBOLS: BoundIdWithBoundedSymbolIdWithDistancesPairsByLevel[] = BOUNDS.map(computeLevelBoundedJiSymbolIdWithDistances)
 
 export {
-    computeLevelBoundedSymbolIdWithDistances,
+    computeLevelBoundedJiSymbolIdWithDistances,
     LEVEL_BOUNDED_SYMBOLS,
 }

@@ -1,17 +1,17 @@
 import { Id } from "../../../../src/general"
 import { JiSymbol, Level } from "../../../../src/notations/ji"
-import { computeIsWithinLevel, computeLevelSymbolIds } from "../../../../src/notations/ji/levelsSymbolIds"
+import { computeIsWithinLevel, computeLevelJiSymbolIds } from "../../../../src/notations/ji/levelsJiSymbolIds"
 
-describe("computeLevelSymbolIds", () => {
+describe("computeLevelJiSymbolIds", () => {
     it("returns the symbols for the levels up to and including the target level", () => {
-        expect(computeLevelSymbolIds(Level.MEDIUM).length).toBe(13)
-        expect(computeLevelSymbolIds(Level.HIGH).length).toBe(32)
-        expect(computeLevelSymbolIds(Level.ULTRA).length).toBe(55)
-        expect(computeLevelSymbolIds(Level.EXTREME).length).toBe(149)
+        expect(computeLevelJiSymbolIds(Level.MEDIUM).length).toBe(13)
+        expect(computeLevelJiSymbolIds(Level.HIGH).length).toBe(32)
+        expect(computeLevelJiSymbolIds(Level.ULTRA).length).toBe(55)
+        expect(computeLevelJiSymbolIds(Level.EXTREME).length).toBe(149)
     })
 
     it("returns only the symbol data (not the bound data)", () => {
-        const levelSymbols = computeLevelSymbolIds(Level.MEDIUM)
+        const levelSymbols = computeLevelJiSymbolIds(Level.MEDIUM)
 
         expect(levelSymbols[ 3 ]).toEqual(30 as Id<JiSymbol>)
     })

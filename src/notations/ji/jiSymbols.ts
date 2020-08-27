@@ -1,6 +1,6 @@
 import { ApotomeSlope, Cents, Id, Monzo, N2D3P9, Name, Prime, Ratio, Sopfr } from "../../general"
-import { SagittalComma, SymbolLongAscii, SymbolUnicode } from "../types"
-import { JiSymbol, Level, Mina, SymbolSet } from "./types"
+import { SagittalComma, SymbolLongAscii, SymbolSet, SymbolUnicode } from "../types"
+import { JiSymbol, Level, Mina } from "./types"
 
 const JI_SYMBOLS: JiSymbol[] = [
     {

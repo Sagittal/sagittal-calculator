@@ -1,14 +1,13 @@
 import { ApotomeSlope, Cents, Id, Monzo, N2D3P9, Name, Prime, Ratio, Sopfr } from "../../../../src/general"
 import { SagittalComma, SymbolLongAscii } from "../../../../src/notations"
-import { getSymbol, JiSymbol, Level, Mina } from "../../../../src/notations/ji"
-import { SymbolSet } from "../../../../src/notations/ji/types"
-import { SymbolUnicode } from "../../../../src/notations/types"
+import { getJiSymbol, JiSymbol, Level, Mina } from "../../../../src/notations/ji"
+import { SymbolSet, SymbolUnicode } from "../../../../src/notations/types"
 
-describe("getSymbol", () => {
+describe("getJiSymbol", () => {
     it("given a symbol's ID, returns the full symbol", () => {
         const symbolId = 55 as Id<JiSymbol>
 
-        const actual = getSymbol(symbolId)
+        const actual = getJiSymbol(symbolId)
 
         const expected = {
             id: 55 as Id<JiSymbol>,

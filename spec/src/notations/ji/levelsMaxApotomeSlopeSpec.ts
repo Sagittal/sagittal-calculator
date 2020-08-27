@@ -1,6 +1,6 @@
 import { abs, Id, Max, Monzo } from "../../../../src/general"
 import { ApotomeSlope, computeApotomeSlope } from "../../../../src/general/music"
-import { getSymbol, JiSymbol, Level, LEVELS_SYMBOL_IDS } from "../../../../src/notations/ji"
+import { getJiSymbol, JiSymbol, Level, LEVELS_SYMBOL_IDS } from "../../../../src/notations/ji"
 
 describe("max apotome slope per level", () => {
     it("increases a bit at each level", () => {
@@ -8,7 +8,7 @@ describe("max apotome slope per level", () => {
             .map(([level, levelSymbolIds]: [Level, Array<Id<JiSymbol>>]): Partial<Record<Level, ApotomeSlope>> => {
                 const levelMaxApotomeSlope: Max<ApotomeSlope> = levelSymbolIds.reduce(
                     (levelMaxApotomeSlope, levelSymbolId) => {
-                        const levelSymbol = getSymbol(levelSymbolId)
+                        const levelSymbol = getJiSymbol(levelSymbolId)
                         const apotomeSlope = abs(computeApotomeSlope(levelSymbol.primaryComma.monzo as Monzo))
 
                         return apotomeSlope > levelMaxApotomeSlope ? apotomeSlope : levelMaxApotomeSlope

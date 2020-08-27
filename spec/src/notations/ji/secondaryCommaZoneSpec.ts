@@ -3,8 +3,8 @@ import { ApotomeSlope, N2D3P9 } from "../../../../src/general/music"
 import { SagittalComma, SymbolLongAscii } from "../../../../src/notations"
 import { JiSymbol, Level, Mina } from "../../../../src/notations/ji"
 import { computeSecondaryCommaZone } from "../../../../src/notations/ji/secondaryCommaZone"
-import { SecondaryCommaZone, SymbolSet } from "../../../../src/notations/ji/types"
-import { SymbolUnicode } from "../../../../src/notations/types"
+import { SecondaryCommaZone } from "../../../../src/notations/ji/types"
+import { SymbolSet, SymbolUnicode } from "../../../../src/notations/types"
 
 // TODO: perhaps secondary comma zone should be built-in to the JiSymbol model,
 //  and this test would be just to check that they all check out with themselves?

@@ -1,5 +1,5 @@
 import { APOTOME, Cents, Name, Position } from "../../general"
-import { MAX_POSITION } from "./intervals"
+import { MAX_POSITION } from "../intervals"
 import { LEVEL_EDAS } from "./levelEdas"
 import { LEVELS } from "./levels"
 import { Level } from "./types"

@@ -1,12 +1,12 @@
 import { Cents, Id } from "../../../../src/general"
 import { JiSymbol } from "../../../../src/notations/ji"
-import { computePositionSymbolId } from "../../../../src/notations/ji/positionSymbolId"
+import { computePositionJiSymbolId } from "../../../../src/notations/ji/positionJiSymbolId"
 
-describe("computePositionSymbolId", () => {
+describe("computePositionJiSymbolId", () => {
     it("given a position, returns the symbol at that position", () => { // TODO: this could be used for the calculator?
         const position: Cents = 3.37801872846485 as Cents
 
-        const actual = computePositionSymbolId(position)
+        const actual = computePositionJiSymbolId(position)
 
         const expected = 7 as Id<JiSymbol>
         expect(actual).toEqual(expected)
@@ -15,7 +15,7 @@ describe("computePositionSymbolId", () => {
     it("does not fail if given an undefined position", () => {
         const position = undefined
 
-        const actual = computePositionSymbolId(position)
+        const actual = computePositionJiSymbolId(position)
 
         expect(actual).toBeUndefined()
     })

@@ -1,5 +1,5 @@
 import { Cents, Extrema, Id, Proportion } from "../../general"
-import { SagittalComma, SymbolLongAscii, SymbolUnicode } from "../types"
+import { SagittalComma, SymbolLongAscii, SymbolSet, SymbolUnicode } from "../types"
 
 type Tina = Cents & { _TinaBrand: Tina }
 type Mina = Cents & { _MinaBrand: "Mina" }
@@ -13,15 +13,6 @@ enum Level {
     ULTRA = "ultra",            // corresponds closely with Herculean symbol set
     EXTREME = "extreme",        // corresponds closely with Olympian symbol set
     INSANE = "insane",          // corresponds closely with Magrathean symbol set
-}
-
-enum SymbolSet {
-    SPARTAN = "spartan",
-    ATHENIAN = "athenian",
-    PROMETHEAN = "promethean",
-    HERCULEAN = "herculean",
-    OLYMPIAN = "olympian",
-    MAGRATHEAN = "magrathean",
 }
 
 interface JiSymbol {
@@ -70,7 +61,6 @@ export {
     BoundIdWithBoundedSymbolIdWithDistancesPairsByLevel,
     BoundedSymbolIdWithDistances,
     BoundedSymbolIdWithDistancesPair,
-    SymbolSet,
     NeighborPositions,
     BoundedSymbolPositions,
     SecondaryCommaZone,

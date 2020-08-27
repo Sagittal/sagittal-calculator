@@ -1,5 +1,6 @@
 import { analyzeComma } from "./comma"
 import { formatComma } from "./format"
+import { MAX_POSITION } from "./intervals"
 import {
     Bound,
     BoundedSymbolIdWithDistances,
@@ -7,13 +8,13 @@ import {
     BoundedSymbolPositions,
     BoundIdWithBoundedSymbolIdWithDistancesPairsByLevel,
     BOUNDS,
-    computeBoundedSymbolPositions,
+    computeBoundedJiSymbolPositions,
     computeInaDistance,
     computeInaMidpoints,
     computeLevelCommaMeans,
-    computeNotatingSymbolIds,
+    computeNotatingJiSymbolIds,
     computeSizeCategoryBoundsWithinMaximumPosition,
-    getSymbol,
+    getJiSymbol,
     JiSymbol,
     JI_SYMBOLS,
     Level,
@@ -22,14 +23,13 @@ import {
     LEVELS_SYMBOL_IDS,
     LEVEL_BOUNDED_SYMBOLS,
     LEVEL_EDAS,
-    MAX_POSITION,
     Mina,
-    SYMBOL_SETS,
     Tina,
     TINA,
     unicodeFromAscii,
 } from "./ji"
 import { computeSmileyFromAscii } from "./smiley"
+import { SYMBOL_SETS } from "./symbolSets"
 import { SagittalComma, SymbolLongAscii } from "./types"
 
 export {
@@ -39,7 +39,7 @@ export {
     LEVELS,
     TINA,
     computeInaDistance,
-    computeBoundedSymbolPositions,
+    computeBoundedJiSymbolPositions,
     MAX_POSITION,
     LEVEL_BOUNDED_SYMBOLS,
     BoundedSymbolIdWithDistances,
@@ -56,8 +56,8 @@ export {
     computeSizeCategoryBoundsWithinMaximumPosition,
     JI_SYMBOLS,
     computeSmileyFromAscii,
-    computeNotatingSymbolIds,
-    getSymbol,
+    computeNotatingJiSymbolIds,
+    getJiSymbol,
     BoundedSymbolIdWithDistancesPair,
     SYMBOL_SETS,
     BoundedSymbolPositions,

@@ -5,9 +5,9 @@ import {
     JiSymbol,
     Level,
 } from "../../../../src/notations/ji"
-import { computeLevelBoundedSymbolIdWithDistances } from "../../../../src/notations/ji/levelBoundedSymbols"
+import { computeLevelBoundedJiSymbolIdWithDistances } from "../../../../src/notations/ji/levelBoundedJiSymbols"
 
-describe("computeLevelBoundedSymbols", () => {
+describe("computeLevelBoundedJiSymbolIdWithDistances", () => {
     it("returns, given a bound, for each of its levels, an array of the pair of symbols it bounds at that level, as well as their distances and ina-distances from the bound", () => {
         const bound: Bound = {
             cents: 24.66219847111080 as Cents,
@@ -15,7 +15,7 @@ describe("computeLevelBoundedSymbols", () => {
             id: 54 as Id<Bound>,
         }
 
-        const actual = computeLevelBoundedSymbolIdWithDistances(bound)
+        const actual = computeLevelBoundedJiSymbolIdWithDistances(bound)
 
         const expected: BoundIdWithBoundedSymbolIdWithDistancesPairsByLevel = {
             id: 54 as Id<Bound>,
@@ -66,7 +66,7 @@ describe("computeLevelBoundedSymbols", () => {
             id: 54 as Id<Bound>,
         }
 
-        const actual = computeLevelBoundedSymbolIdWithDistances(bound)
+        const actual = computeLevelBoundedJiSymbolIdWithDistances(bound)
 
         const expected: BoundIdWithBoundedSymbolIdWithDistancesPairsByLevel = {
             id: 54 as Id<Bound>,
@@ -121,7 +121,7 @@ describe("computeLevelBoundedSymbols", () => {
             id: 55 as Id<Bound>,
         }
 
-        const actual = computeLevelBoundedSymbolIdWithDistances(bound)
+        const actual = computeLevelBoundedJiSymbolIdWithDistances(bound)
 
         const expected: BoundIdWithBoundedSymbolIdWithDistancesPairsByLevel = {
             id: 55 as Id<Bound>,

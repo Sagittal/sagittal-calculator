@@ -1,8 +1,8 @@
 import { Id } from "../../general"
-import { JI_SYMBOLS } from "./symbols"
+import { JI_SYMBOLS } from "./jiSymbols"
 import { JiSymbol } from "./types"
 
-const getSymbol = (symbolId: Id<JiSymbol>): JiSymbol => {
+const getJiSymbol = (symbolId: Id<JiSymbol>): JiSymbol => {
     const symbol = JI_SYMBOLS.find(symbol => symbol.id === symbolId)
 
     if (!symbol) {
@@ -13,5 +13,5 @@ const getSymbol = (symbolId: Id<JiSymbol>): JiSymbol => {
 }
 
 export {
-    getSymbol,
+    getJiSymbol,
 }

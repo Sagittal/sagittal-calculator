@@ -2,7 +2,7 @@ import {
     Bound,
     BoundedSymbolIdWithDistancesPair,
     BoundIdWithBoundedSymbolIdWithDistancesPairsByLevel,
-    getSymbol,
+    getJiSymbol,
     Level,
     LEVEL_BOUNDED_SYMBOLS,
     SymbolLongAscii,
@@ -23,11 +23,11 @@ const extractBoundIdentifiers = (bound: Bound): BoundIdentifiers => {
 
     const lesserBoundedSymbol: BoundedSymbol | undefined = lesserBoundedSymbolIdWithDistance && {
         ...lesserBoundedSymbolIdWithDistance,
-        ...getSymbol(lesserBoundedSymbolIdWithDistance.id),
+        ...getJiSymbol(lesserBoundedSymbolIdWithDistance.id),
     } as BoundedSymbol
     const greaterBoundedSymbol: BoundedSymbol | undefined = greaterBoundedSymbolIdWithDistance && {
         ...greaterBoundedSymbolIdWithDistance,
-        ...getSymbol(greaterBoundedSymbolIdWithDistance.id),
+        ...getJiSymbol(greaterBoundedSymbolIdWithDistance.id),
     } as BoundedSymbol
 
     const boundedSymbols: BoundedSymbols = // boundIdWithBoundedSymbolIdWithDistancesPairsByLevel as BoundedSymbols
@@ -39,8 +39,8 @@ const extractBoundIdentifiers = (bound: Bound): BoundIdentifiers => {
                 return {
                     ...boundedSymbols,
                     [ level ]: [
-                        first && { ...first, ...getSymbol(first.id) },
-                        second && { ...second, ...getSymbol(second.id) },
+                        first && { ...first, ...getJiSymbol(first.id) },
+                        second && { ...second, ...getJiSymbol(second.id) },
                     ],
                 }
             },

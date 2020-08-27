@@ -4,7 +4,7 @@ import { computeCentsFromRatio } from "../../../../src/general/music"
 import { computeCommaName } from "../../../../src/notations/commaName"
 import { JI_SYMBOLS } from "../../../../src/notations/ji"
 
-describe("SYMBOLS", () => {
+describe("JI_SYMBOLS", () => {
     it("is the case that the cents for each symbol agrees with its monzo", () => {
         JI_SYMBOLS.forEach(symbol => {
             const ratio = computeRatioFromMonzo(symbol.primaryComma.monzo)

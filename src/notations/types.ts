@@ -8,6 +8,11 @@ interface SizeCategoryOptions {
     abbreviated?: boolean,
 }
 
+interface SizeCategory {
+    name: Name<SizeCategory>,
+    abbreviation: string,
+}
+
 interface SagittalComma {
     apotomeSlope: ApotomeSlope,
     cents: Cents,
@@ -19,10 +24,21 @@ interface SagittalComma {
     n2d3p9: N2D3P9,
 }
 
+enum SymbolSet {
+    SPARTAN = "spartan",
+    ATHENIAN = "athenian",
+    PROMETHEAN = "promethean",
+    HERCULEAN = "herculean",
+    OLYMPIAN = "olympian",
+    MAGRATHEAN = "magrathean",
+}
+
 export {
     SymbolLongAscii,
     SymbolUnicode,
     SymbolSmiley,
     SizeCategoryOptions,
     SagittalComma,
+    SymbolSet,
+    SizeCategory,
 }
