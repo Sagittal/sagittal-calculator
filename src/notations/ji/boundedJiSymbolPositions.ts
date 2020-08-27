@@ -1,7 +1,7 @@
 import { Cents, Id } from "../../general"
+import { getJiSymbol } from "./jiSymbol"
 import { LEVELS_SYMBOL_IDS } from "./levelsJiSymbolIds"
 import { computeNeighborPositions } from "./neighborPositions"
-import { getJiSymbol } from "./jiSymbol"
 import { BoundedSymbolPositions, JiSymbol, Level } from "./types"
 
 const computeBoundedJiSymbolPositions = (position: Cents, level: Level): BoundedSymbolPositions => {

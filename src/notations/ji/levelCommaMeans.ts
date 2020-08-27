@@ -1,6 +1,6 @@
 import { Cents, Name, Position } from "../../general"
-import { LEVELS_SYMBOL_IDS } from "./levelsJiSymbolIds"
 import { getJiSymbol } from "./jiSymbol"
+import { LEVELS_SYMBOL_IDS } from "./levelsJiSymbolIds"
 import { Level } from "./types"
 
 const computeLevelCommaMeans = (level: Level): Position[] => {
