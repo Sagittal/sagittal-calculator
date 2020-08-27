@@ -15,7 +15,7 @@ describe("populateScopes", () => {
     beforeEach(() => {
         originalJasmineTimeoutInterval = jasmine.DEFAULT_TIMEOUT_INTERVAL
 
-        jasmine.DEFAULT_TIMEOUT_INTERVAL = Infinity
+        jasmine.DEFAULT_TIMEOUT_INTERVAL = 1000000
     })
 
     afterEach(() => {
@@ -2798,22 +2798,5 @@ describe("populateScopes", () => {
             ],
         ] as Scope[]
         expect(actual).toBeArrayIncludingCombinations(exampleExpectedElements)
-    })
-
-    it("given a chunk count, populates all possible combinations of those parameters - works for 4", async () => {
-        onlyRunInCi()
-
-        solverStatus.chunkCount = 4 as Count<Chunk>
-
-        await populateScopes()
-
-        const actual: Scope[] = scopesToSearch
-
-        expect(actual.length).toEqual( // 126 + 5600 + 61425 + 140400 = 207551
-            126 +  // all combinations of 4 submetrics = 6 choose 4 w/re = ((4+6-1)!)/((4!)((6-1)!)) = 126, but that times all combinations of 0 parameters = 25 choose 0 w/re = ((0+25-1)!)/((0!)((25-1)!)) =    1, so 126 *   1 =   126, but then that times 1 bc for each one you can distribute the parameters across the submetrics 5^0 ways, so   126 * 1 =    126
-            5600 +          // all combinations of 3 submetrics = 6 choose 3 w/re = ((3+6-1)!)/((3!)((6-1)!)) =  56, but that times all combinations of 1 parameters = 25 choose 1 w/re = ((1+25-1)!)/((1!)((25-1)!)) =   25, so 56  *  25 =  1400, but then that times 3 bc for each one you can distribute the parameters across the submetrics 4^1 ways, so  1400 * 4 =   5600
-            61425 +         // all combinations of 2 submetrics = 6 choose 2 w/re = ((2+6-1)!)/((2!)((6-1)!)) =  21, but that times all combinations of 2 parameters = 25 choose 2 w/re = ((2+25-1)!)/((2!)((25-1)!)) =  325, so 21 *  325 =  6825, but then that times 4 bc for each one you can distribute the parameters across the submetrics 3^2 ways, so  6825 * 9 =  61425
-            140400,         // all combinations of 1 submetric  = 6 choose 1 w/re = ((1+6-1)!)/((1!)((6-1)!)) =   6, but that times all combinations of 3 parameters = 25 choose 3 w/re = ((3+25-1)!)/((3!)((25-1)!)) = 2925, so 6  * 2925 = 17550, but then that times 1 bc for each one you can distribute the parameters across the submetrics 2^3 ways, so 17550 * 8 = 140400
-        )
     })
 })
