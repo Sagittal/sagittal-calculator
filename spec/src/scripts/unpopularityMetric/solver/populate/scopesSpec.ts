@@ -1,4 +1,4 @@
-import { Count, deepEquals } from "../../../../../../src/general"
+import { Count } from "../../../../../../src/general"
 import { Scope } from "../../../../../../src/scripts/unpopularityMetric/bestMetric"
 import { scopesToSearch, solverStatus } from "../../../../../../src/scripts/unpopularityMetric/globals"
 import { Chunk } from "../../../../../../src/scripts/unpopularityMetric/solver"
@@ -8,13 +8,14 @@ import {
     SUBMETRIC_CHUNKS,
 } from "../../../../../../src/scripts/unpopularityMetric/solver/populate/constants"
 import { Parameter } from "../../../../../../src/scripts/unpopularityMetric/sumOfSquares"
+import { onlyRunInCi } from "../../../../../helpers/onlyRunInCi"
 
 describe("populateScopes", () => {
     let originalJasmineTimeoutInterval: number
     beforeEach(() => {
         originalJasmineTimeoutInterval = jasmine.DEFAULT_TIMEOUT_INTERVAL
 
-        jasmine.DEFAULT_TIMEOUT_INTERVAL = 100000
+        jasmine.DEFAULT_TIMEOUT_INTERVAL = Infinity
     })
 
     afterEach(() => {
@@ -30,7 +31,9 @@ describe("populateScopes", () => {
     })
 
     // need to add the extra 7 bits (18 to 25) to each section below
-    xit("given a chunk count, populates all possible combinations of those parameters - works for 2", async () => {
+    it("given a chunk count, populates all possible combinations of those parameters - works for 2", async () => {
+        onlyRunInCi()
+
         solverStatus.chunkCount = 2 as Count<Chunk>
 
         await populateScopes()
@@ -274,6 +277,55 @@ describe("populateScopes", () => {
                 {},
                 {
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.WEIGHT_AS_COEFFICIENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.WEIGHT_AS_COEFFICIENT ],
+                },
+            ],
+            [
+                {},
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.WEIGHT_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.WEIGHT_AS_LOGARITHM_BASE ],
+                },
+            ],
+            [
+                {},
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.WEIGHT_AS_POWER_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.WEIGHT_AS_POWER_EXPONENT ],
+                },
+            ],
+            [
+                {},
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.WEIGHT_AS_POWER_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.WEIGHT_AS_POWER_BASE ],
+                },
+            ],
+            [
+                {},
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.K_AS_POWER_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_POWER_BASE ],
+                },
+            ],
+            [
+                {},
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.J_AS_POWER_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.J_AS_POWER_BASE ],
+                },
+            ],
+            [
+                {},
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.A_AS_POWER_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_POWER_BASE ],
+                },
+            ],
+            [
+                {},
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
                     [ Parameter.B ]: INITIAL_PARAMETER_SCOPES[ Parameter.B ],
                 },
             ],
@@ -398,6 +450,62 @@ describe("populateScopes", () => {
             ],
 
             // SOAPF (25)
+            [
+                {},
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.WEIGHT_AS_COEFFICIENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.WEIGHT_AS_COEFFICIENT ],
+                },
+            ],
+            [
+                {},
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.WEIGHT_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.WEIGHT_AS_LOGARITHM_BASE ],
+                },
+            ],
+            [
+                {},
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.WEIGHT_AS_POWER_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.WEIGHT_AS_POWER_EXPONENT ],
+                },
+            ],
+            [
+                {},
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.WEIGHT_AS_POWER_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.WEIGHT_AS_POWER_BASE ],
+                },
+            ],
+            [
+                {},
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.K_AS_POWER_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_POWER_BASE ],
+                },
+            ],
+            [
+                {},
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.J_AS_POWER_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.J_AS_POWER_BASE ],
+                },
+            ],
+            [
+                {},
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.A_AS_POWER_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_POWER_BASE ],
+                },
+            ],
             [
                 {},
                 {
@@ -548,6 +656,55 @@ describe("populateScopes", () => {
                 {},
                 {
                     [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                    [ Parameter.WEIGHT_AS_COEFFICIENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.WEIGHT_AS_COEFFICIENT ],
+                },
+            ],
+            [
+                {},
+                {
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                    [ Parameter.WEIGHT_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.WEIGHT_AS_LOGARITHM_BASE ],
+                },
+            ],
+            [
+                {},
+                {
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                    [ Parameter.WEIGHT_AS_POWER_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.WEIGHT_AS_POWER_EXPONENT ],
+                },
+            ],
+            [
+                {},
+                {
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                    [ Parameter.WEIGHT_AS_POWER_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.WEIGHT_AS_POWER_BASE ],
+                },
+            ],
+            [
+                {},
+                {
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                    [ Parameter.K_AS_POWER_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_POWER_BASE ],
+                },
+            ],
+            [
+                {},
+                {
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                    [ Parameter.J_AS_POWER_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.J_AS_POWER_BASE ],
+                },
+            ],
+            [
+                {},
+                {
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                    [ Parameter.A_AS_POWER_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_POWER_BASE ],
+                },
+            ],
+            [
+                {},
+                {
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
                     [ Parameter.B ]: INITIAL_PARAMETER_SCOPES[ Parameter.B ],
                 },
             ],
@@ -672,6 +829,62 @@ describe("populateScopes", () => {
             ],
 
             // COAPF (25)
+            [
+                {},
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                    [ Parameter.WEIGHT_AS_COEFFICIENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.WEIGHT_AS_COEFFICIENT ],
+                },
+            ],
+            [
+                {},
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                    [ Parameter.WEIGHT_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.WEIGHT_AS_LOGARITHM_BASE ],
+                },
+            ],
+            [
+                {},
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                    [ Parameter.WEIGHT_AS_POWER_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.WEIGHT_AS_POWER_EXPONENT ],
+                },
+            ],
+            [
+                {},
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                    [ Parameter.WEIGHT_AS_POWER_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.WEIGHT_AS_POWER_BASE ],
+                },
+            ],
+            [
+                {},
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                    [ Parameter.K_AS_POWER_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_POWER_BASE ],
+                },
+            ],
+            [
+                {},
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                    [ Parameter.J_AS_POWER_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.J_AS_POWER_BASE ],
+                },
+            ],
+            [
+                {},
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                    [ Parameter.A_AS_POWER_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_POWER_BASE ],
+                },
+            ],
             [
                 {},
                 {
@@ -823,6 +1036,62 @@ describe("populateScopes", () => {
                 {
                     [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
                     [ Parameter.MAX ]: INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],
+                    [ Parameter.WEIGHT_AS_COEFFICIENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.WEIGHT_AS_COEFFICIENT ],
+                },
+            ],
+            [
+                {},
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.MAX ]: INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],
+                    [ Parameter.WEIGHT_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.WEIGHT_AS_LOGARITHM_BASE ],
+                },
+            ],
+            [
+                {},
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.MAX ]: INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],
+                    [ Parameter.WEIGHT_AS_POWER_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.WEIGHT_AS_POWER_EXPONENT ],
+                },
+            ],
+            [
+                {},
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.MAX ]: INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],
+                    [ Parameter.WEIGHT_AS_POWER_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.WEIGHT_AS_POWER_BASE ],
+                },
+            ],
+            [
+                {},
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.MAX ]: INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],
+                    [ Parameter.K_AS_POWER_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_POWER_BASE ],
+                },
+            ],
+            [
+                {},
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.MAX ]: INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],
+                    [ Parameter.J_AS_POWER_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.J_AS_POWER_BASE ],
+                },
+            ],
+            [
+                {},
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.MAX ]: INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],
+                    [ Parameter.A_AS_POWER_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_POWER_BASE ],
+                },
+            ],
+            [
+                {},
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.MAX ]: INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],
                     [ Parameter.B ]: INITIAL_PARAMETER_SCOPES[ Parameter.B ],
                 },
             ],
@@ -964,6 +1233,62 @@ describe("populateScopes", () => {
             ],
 
             // LOG BASE A OF N (25)
+            [
+                {},
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.A_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_LOGARITHM_BASE ],
+                    [ Parameter.WEIGHT_AS_COEFFICIENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.WEIGHT_AS_COEFFICIENT ],
+                },
+            ],
+            [
+                {},
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.A_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_LOGARITHM_BASE ],
+                    [ Parameter.WEIGHT_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.WEIGHT_AS_LOGARITHM_BASE ],
+                },
+            ],
+            [
+                {},
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.A_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_LOGARITHM_BASE ],
+                    [ Parameter.WEIGHT_AS_POWER_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.WEIGHT_AS_POWER_EXPONENT ],
+                },
+            ],
+            [
+                {},
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.A_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_LOGARITHM_BASE ],
+                    [ Parameter.WEIGHT_AS_POWER_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.WEIGHT_AS_POWER_BASE ],
+                },
+            ],
+            [
+                {},
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.A_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_LOGARITHM_BASE ],
+                    [ Parameter.K_AS_POWER_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_POWER_BASE ],
+                },
+            ],
+            [
+                {},
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.A_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_LOGARITHM_BASE ],
+                    [ Parameter.J_AS_POWER_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.J_AS_POWER_BASE ],
+                },
+            ],
+            [
+                {},
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.A_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_LOGARITHM_BASE ],
+                    [ Parameter.A_AS_POWER_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_POWER_BASE ],
+                },
+            ],
             [
                 {},
                 {
@@ -1114,6 +1439,62 @@ describe("populateScopes", () => {
             // SOAPFAR (25)
             [
                 {
+                    [ Parameter.WEIGHT_AS_COEFFICIENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.WEIGHT_AS_COEFFICIENT ],
+                },
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.WEIGHT_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.WEIGHT_AS_LOGARITHM_BASE ],
+                },
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.WEIGHT_AS_POWER_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.WEIGHT_AS_POWER_EXPONENT ],
+                },
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.WEIGHT_AS_POWER_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.WEIGHT_AS_POWER_BASE ],
+                },
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.K_AS_POWER_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_POWER_BASE ],
+                },
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.J_AS_POWER_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.J_AS_POWER_BASE ],
+                },
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.A_AS_POWER_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_POWER_BASE ],
+                },
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                },
+            ],
+            [
+                {
                     [ Parameter.B ]: INITIAL_PARAMETER_SCOPES[ Parameter.B ],
                 },
                 {
@@ -1258,6 +1639,69 @@ describe("populateScopes", () => {
             ],
 
             // SOAPF (25)
+            [
+                {
+                    [ Parameter.WEIGHT_AS_COEFFICIENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.WEIGHT_AS_COEFFICIENT ],
+                },
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.WEIGHT_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.WEIGHT_AS_LOGARITHM_BASE ],
+                },
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.WEIGHT_AS_POWER_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.WEIGHT_AS_POWER_EXPONENT ],
+                },
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.WEIGHT_AS_POWER_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.WEIGHT_AS_POWER_BASE ],
+                },
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.K_AS_POWER_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_POWER_BASE ],
+                },
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.J_AS_POWER_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.J_AS_POWER_BASE ],
+                },
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.A_AS_POWER_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_POWER_BASE ],
+                },
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                },
+            ],
             [
                 {
                     [ Parameter.B ]: INITIAL_PARAMETER_SCOPES[ Parameter.B ],
@@ -1424,6 +1868,62 @@ describe("populateScopes", () => {
             // COAPFAR (25)
             [
                 {
+                    [ Parameter.WEIGHT_AS_COEFFICIENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.WEIGHT_AS_COEFFICIENT ],
+                },
+                {
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.WEIGHT_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.WEIGHT_AS_LOGARITHM_BASE ],
+                },
+                {
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.WEIGHT_AS_POWER_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.WEIGHT_AS_POWER_EXPONENT ],
+                },
+                {
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.WEIGHT_AS_POWER_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.WEIGHT_AS_POWER_BASE ],
+                },
+                {
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.K_AS_POWER_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_POWER_BASE ],
+                },
+                {
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.J_AS_POWER_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.J_AS_POWER_BASE ],
+                },
+                {
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.A_AS_POWER_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_POWER_BASE ],
+                },
+                {
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                },
+            ],
+            [
+                {
                     [ Parameter.B ]: INITIAL_PARAMETER_SCOPES[ Parameter.B ],
                 },
                 {
@@ -1568,6 +2068,69 @@ describe("populateScopes", () => {
             ],
 
             // COAPF (25)
+            [
+                {
+                    [ Parameter.WEIGHT_AS_COEFFICIENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.WEIGHT_AS_COEFFICIENT ],
+                },
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.WEIGHT_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.WEIGHT_AS_LOGARITHM_BASE ],
+                },
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.WEIGHT_AS_POWER_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.WEIGHT_AS_POWER_EXPONENT ],
+                },
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.WEIGHT_AS_POWER_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.WEIGHT_AS_POWER_BASE ],
+                },
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.K_AS_POWER_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_POWER_BASE ],
+                },
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.J_AS_POWER_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.J_AS_POWER_BASE ],
+                },
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.A_AS_POWER_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_POWER_BASE ],
+                },
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+                },
+            ],
             [
                 {
                     [ Parameter.B ]: INITIAL_PARAMETER_SCOPES[ Parameter.B ],
@@ -1734,6 +2297,69 @@ describe("populateScopes", () => {
             // GPF (25)
             [
                 {
+                    [ Parameter.WEIGHT_AS_COEFFICIENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.WEIGHT_AS_COEFFICIENT ],
+                },
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.MAX ]: INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.WEIGHT_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.WEIGHT_AS_LOGARITHM_BASE ],
+                },
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.MAX ]: INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.WEIGHT_AS_POWER_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.WEIGHT_AS_POWER_EXPONENT ],
+                },
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.MAX ]: INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.WEIGHT_AS_POWER_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.WEIGHT_AS_POWER_BASE ],
+                },
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.MAX ]: INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.K_AS_POWER_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_POWER_BASE ],
+                },
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.MAX ]: INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.J_AS_POWER_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.J_AS_POWER_BASE ],
+                },
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.MAX ]: INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.A_AS_POWER_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_POWER_BASE ],
+                },
+                {
+                    [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+                    [ Parameter.MAX ]: INITIAL_PARAMETER_SCOPES[ Parameter.MAX ],
+                },
+            ],
+            [
+                {
                     [ Parameter.B ]: INITIAL_PARAMETER_SCOPES[ Parameter.B ],
                 },
                 {
@@ -1896,6 +2522,69 @@ describe("populateScopes", () => {
             ],
 
             // LOG BASE A OF N (25)
+            [
+                {
+                    [ Parameter.WEIGHT_AS_COEFFICIENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.WEIGHT_AS_COEFFICIENT ],
+                },
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.A_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_LOGARITHM_BASE ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.WEIGHT_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.WEIGHT_AS_LOGARITHM_BASE ],
+                },
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.A_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_LOGARITHM_BASE ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.WEIGHT_AS_POWER_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.WEIGHT_AS_POWER_EXPONENT ],
+                },
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.A_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_LOGARITHM_BASE ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.WEIGHT_AS_POWER_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.WEIGHT_AS_POWER_BASE ],
+                },
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.A_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_LOGARITHM_BASE ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.K_AS_POWER_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_POWER_BASE ],
+                },
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.A_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_LOGARITHM_BASE ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.J_AS_POWER_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.J_AS_POWER_BASE ],
+                },
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.A_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_LOGARITHM_BASE ],
+                },
+            ],
+            [
+                {
+                    [ Parameter.A_AS_POWER_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_POWER_BASE ],
+                },
+                {
+                    [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+                    [ Parameter.A_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_LOGARITHM_BASE ],
+                },
+            ],
             [
                 {
                     [ Parameter.B ]: INITIAL_PARAMETER_SCOPES[ Parameter.B ],
@@ -2066,21 +2755,23 @@ describe("populateScopes", () => {
         //      ((2+6-1)!)/((2!)((6-1)!)) * ((0+25-1)!)/((0!)((25-1)!)) * 3^0 = 21 * 1 * 1 = 21
         //      +
         //      ((1+6-1)!)/((1!)((6-1)!)) * ((1+25-1)!)/((1!)((25-1)!)) * 2^1 = 6 * 25 * 2 = 300
+        expect(actual.length).toBe(321)
         expect(actual).toBeArrayWithDeepEqualContents(expected)
     })
 
-    // TODO: this one and the one below need to be recalculated for 25 instead of 15 parameters (the 3 new denominator-specific ones, the 3 new power base ones, the 4 weight ones we were missing (and the 14->15 was bringing back x))
-    xit("given a chunk count, populates all possible combinations of those parameters - works for 3", async () => {
+    it("given a chunk count, populates all possible combinations of those parameters - works for 3", async () => {
+        onlyRunInCi()
+
         solverStatus.chunkCount = 3 as Count<Chunk>
 
         await populateScopes()
 
         const actual: Scope[] = scopesToSearch
 
-        expect(actual.length).toEqual( // 56 + 945 + 2880 = 3881
-            56 + // all combinations of 3 submetrics = 6 choose 3 w/re = ((3+6-1)!)/((3!)((6-1)!)) = 56, but that times all combinations of 0 parameters = 15 choose 0 w/re = ((0+15-1)!)/((0!)((15-1)!)) =   1, so 56 *  1 =  56, but then that times 1 bc for each one you can distribute the parameters across the submetrics 4^0 ways, so 56  * 1 =   56
-            945 +         // all combinations of 2 submetrics = 6 choose 2 w/re = ((2+6-1)!)/((2!)((6-1)!)) = 21, but that times all combinations of 1 parameters = 15 choose 1 w/re = ((1+15-1)!)/((1!)((15-1)!)) =  15, so 21 * 15 = 315, but then that times 2 bc for each one you can distribute the parameters across the submetrics 3^1 ways, so 315 * 3 =  945
-            2880,         // all combinations of 1 submetric  = 6 choose 1 w/re = ((1+6-1)!)/((1!)((6-1)!)) =  6, but that times all combinations of 2 parameters = 15 choose 2 w/re = ((2+15-1)!)/((2!)((15-1)!)) = 120, so 6 * 120 = 720, but then that times 1 bc for each one you can distribute the parameters across the submetrics 2^2 ways, so 720 * 4 = 2880
+        expect(actual.length).toEqual( // 56 + 1575 + 7800 = 9431
+            56 + // all combinations of 3 submetrics = 6 choose 3 w/re = ((3+6-1)!)/((3!)((6-1)!)) = 56, but that times all combinations of 0 parameters = 25 choose 0 w/re = ((0+25-1)!)/((0!)((25-1)!)) =   1, so 56 *  1 =   56, but then that times 1 bc for each one you can distribute the parameters across the submetrics 4^0 ways, so   56  * 1 =   56
+            1575 +         // all combinations of 2 submetrics = 6 choose 2 w/re = ((2+6-1)!)/((2!)((6-1)!)) = 21, but that times all combinations of 1 parameters = 25 choose 1 w/re = ((1+25-1)!)/((1!)((25-1)!)) =  25, so 21 * 25 =  525, but then that times 2 bc for each one you can distribute the parameters across the submetrics 3^1 ways, so  525 * 3 = 1575
+            7800,         // all combinations of 1 submetric  = 6 choose 1 w/re = ((1+6-1)!)/((1!)((6-1)!)) =  6, but that times all combinations of 2 parameters = 25 choose 2 w/re = ((2+25-1)!)/((2!)((25-1)!)) = 325, so 6 * 325 = 1950, but then that times 1 bc for each one you can distribute the parameters across the submetrics 2^2 ways, so 1950 * 4 = 7800
         )
         const exampleExpectedElements: Scope[] = [
             [
@@ -2106,23 +2797,23 @@ describe("populateScopes", () => {
                 },
             ],
         ] as Scope[]
-        expect(actual).toBeArrayIncludingDeepEqual(exampleExpectedElements)
+        expect(actual).toBeArrayIncludingCombinations(exampleExpectedElements)
     })
 
-    // this one just started taking insanely long for no clear reason
-    xit("given a chunk count, populates all possible combinations of those parameters - works for 4", async () => {
-        const chunkCount = 4 as Count<Chunk>
-        solverStatus.chunkCount = chunkCount
+    it("given a chunk count, populates all possible combinations of those parameters - works for 4", async () => {
+        onlyRunInCi()
+
+        solverStatus.chunkCount = 4 as Count<Chunk>
 
         await populateScopes()
 
         const actual: Scope[] = scopesToSearch
 
-        expect(actual.length).toEqual( // 126 + 3360 + 22680 + 32640 = 58806
-            126 + // all combinations of 4 submetrics = 6 choose 4 w/re = ((4+6-1)!)/((4!)((6-1)!)) = 126, but that times all combinations of 0 parameters = 15 choose 0 w/re = ((0+15-1)!)/((0!)((15-1)!)) =   1, so 126 *  1 =  126, but then that times 1 bc for each one you can distribute the parameters across the submetrics 5^0 ways, so  126 * 1 =   126
-            3360 +         // all combinations of 3 submetrics = 6 choose 3 w/re = ((3+6-1)!)/((3!)((6-1)!)) =  56, but that times all combinations of 1 parameters = 15 choose 1 w/re = ((1+15-1)!)/((1!)((15-1)!)) =  15, so 56  * 15 =  840, but then that times 3 bc for each one you can distribute the parameters across the submetrics 4^1 ways, so  840 * 4 =  3360
-            22680 +        // all combinations of 2 submetrics = 6 choose 2 w/re = ((2+6-1)!)/((2!)((6-1)!)) =  21, but that times all combinations of 2 parameters = 15 choose 2 w/re = ((2+15-1)!)/((2!)((15-1)!)) = 120, so 21 * 120 = 2520, but then that times 4 bc for each one you can distribute the parameters across the submetrics 3^2 ways, so 2520 * 9 = 22680
-            32640,         // all combinations of 1 submetric  = 6 choose 1 w/re = ((1+6-1)!)/((1!)((6-1)!)) =   6, but that times all combinations of 3 parameters = 15 choose 3 w/re = ((3+15-1)!)/((3!)((15-1)!)) = 680, so 6  * 680 = 4080, but then that times 1 bc for each one you can distribute the parameters across the submetrics 2^3 ways, so 4080 * 8 = 32640
+        expect(actual.length).toEqual( // 126 + 5600 + 61425 + 140400 = 207551
+            126 +  // all combinations of 4 submetrics = 6 choose 4 w/re = ((4+6-1)!)/((4!)((6-1)!)) = 126, but that times all combinations of 0 parameters = 25 choose 0 w/re = ((0+25-1)!)/((0!)((25-1)!)) =    1, so 126 *   1 =   126, but then that times 1 bc for each one you can distribute the parameters across the submetrics 5^0 ways, so   126 * 1 =    126
+            5600 +          // all combinations of 3 submetrics = 6 choose 3 w/re = ((3+6-1)!)/((3!)((6-1)!)) =  56, but that times all combinations of 1 parameters = 25 choose 1 w/re = ((1+25-1)!)/((1!)((25-1)!)) =   25, so 56  *  25 =  1400, but then that times 3 bc for each one you can distribute the parameters across the submetrics 4^1 ways, so  1400 * 4 =   5600
+            61425 +         // all combinations of 2 submetrics = 6 choose 2 w/re = ((2+6-1)!)/((2!)((6-1)!)) =  21, but that times all combinations of 2 parameters = 25 choose 2 w/re = ((2+25-1)!)/((2!)((25-1)!)) =  325, so 21 *  325 =  6825, but then that times 4 bc for each one you can distribute the parameters across the submetrics 3^2 ways, so  6825 * 9 =  61425
+            140400,         // all combinations of 1 submetric  = 6 choose 1 w/re = ((1+6-1)!)/((1!)((6-1)!)) =   6, but that times all combinations of 3 parameters = 25 choose 3 w/re = ((3+25-1)!)/((3!)((25-1)!)) = 2925, so 6  * 2925 = 17550, but then that times 1 bc for each one you can distribute the parameters across the submetrics 2^3 ways, so 17550 * 8 = 140400
         )
     })
 })

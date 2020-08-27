@@ -123,11 +123,11 @@ const INITIAL_PARAMETER_SCOPES: Partial<Record<Parameter, ParameterValue | boole
     }),
     [ Parameter.USE_NUMINATOR ]: true,
     [ Parameter.MODIFIED_COUNT ]: true,
+    [ Parameter.USE_PRIME_INDEX ]: true,
     [ Parameter.SUM ]: true,
     [ Parameter.COUNT ]: true,
     [ Parameter.MAX ]: true,
     [ Parameter.WITHOUT_REPETITION ]: true,
-    [ Parameter.USE_PRIME_INDEX ]: true,
 }
 
 const NO_USELESS_SUBMETRIC_CHUNKS: Array<Chunk<Submetric>> = [
@@ -173,17 +173,25 @@ const SUBMETRIC_CHUNKS: Array<Chunk<Submetric>> = [
     },
 ] as Array<Chunk<Submetric>>
 
-const NO_USELESS_PARAMETER_CHUNKS: Array<Chunk<Parameter>> = Object.entries(NO_USELESS_INITIAL_PARAMETER_SCOPES).map(([parameter, initialParameterScope]) => {
-    return {
-        [ parameter ]: initialParameterScope,
-    } as Chunk<Parameter>
-})
+const NO_USELESS_PARAMETER_CHUNKS: Array<Chunk<Parameter>> = Object.entries(NO_USELESS_INITIAL_PARAMETER_SCOPES)
+    .filter(([parameter]) => {
+        return ![Parameter.SUM, Parameter.COUNT, Parameter.MAX, Parameter.WITHOUT_REPETITION].includes(parameter as Parameter)
+    })
+    .map(([parameter, initialParameterScope]) => {
+        return {
+            [ parameter ]: initialParameterScope,
+        } as Chunk<Parameter>
+    })
 
-const PARAMETER_CHUNKS: Array<Chunk<Parameter>> = Object.entries(INITIAL_PARAMETER_SCOPES).map(([parameter, initialParameterScope]) => {
-    return {
-        [ parameter ]: initialParameterScope,
-    } as Chunk<Parameter>
-})
+const PARAMETER_CHUNKS: Array<Chunk<Parameter>> = Object.entries(INITIAL_PARAMETER_SCOPES)
+    .filter(([parameter]) => {
+        return ![Parameter.SUM, Parameter.COUNT, Parameter.MAX, Parameter.WITHOUT_REPETITION].includes(parameter as Parameter)
+    })
+    .map(([parameter, initialParameterScope]) => {
+        return {
+            [ parameter ]: initialParameterScope,
+        } as Chunk<Parameter>
+    })
 
 export {
     NO_USELESS_INITIAL_PARAMETER_SCOPES,

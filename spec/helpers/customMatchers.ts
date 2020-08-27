@@ -67,6 +67,28 @@ const arraysAreCloseUpThroughExpected = <T extends number>(expected: T[], actual
     })
 }
 
+const eachExpectedElementDeepEqualsSomeActualElement = <T>(expectedElements: T[], actual: T[], message?: string) => {
+    expectedElements.forEach(expectedElement => {
+        assert(
+            actual.some(actualElement => {
+                return deepEquals(actualElement, expectedElement)
+            }),
+            message || `This expected element was not found: ${JSON.stringify(expectedElement)}`,
+        )
+    })
+}
+
+const eachExpectedElementHasSameContentsAsSomeActualElement = <T>(expectedElements: T[][], actual: T[][], message?: string) => {
+    expectedElements.forEach(expectedElement => {
+        assert(
+            actual.some(actualElement => {
+                return arraysHaveSameContents(actualElement, expectedElement)
+            }),
+            message || `This expected element was not found: ${JSON.stringify(expectedElement)}`,
+        )
+    })
+}
+
 const customMatchers: CustomMatcherFactories = {
     toBeCloseToTyped: (util: MatchersUtil, customEqualityTesters: readonly CustomEqualityTester[]): CustomMatcher => ({
         compare: <T extends number>(actual: T, expected: T, precision?: Integer, negate: boolean = false, message?: string): CustomMatcherResult =>
@@ -95,60 +117,47 @@ const customMatchers: CustomMatcherFactories = {
     toBeArrayWithDeepEqualContents: (util: MatchersUtil, customEqualityTesters: readonly CustomEqualityTester[]): CustomMatcher => ({
         compare: <T extends number>(actual: T[], expected: T[], message?: string): CustomMatcherResult =>
             doAssertions((): void => {
-                expected.forEach(expectedResultElement => {
-                    assert(actual.length === expected.length, `Arrays did not have the same length, so there is no way they could have the same members.`)
-                    assert(
-                        actual.some(resultElement => {
-                            return deepEquals(resultElement, expectedResultElement)
-                        }),
-                        `This expected element was not found: ${JSON.stringify(expectedResultElement)}`,
-                    )
-                })
+                assert(actual.length === expected.length, `Arrays did not have the same length, so there is no way they could have the same members.`)
+                eachExpectedElementDeepEqualsSomeActualElement(expected, actual, message)
             }),
     }),
     // depth 1: any order, depth 2: any order, thenceforth: enforced order (deep equal)
     toBeSameCombinationsAs: (util: MatchersUtil, customEqualityTesters: readonly CustomEqualityTester[]): CustomMatcher => ({
         compare: <T extends number>(actual: T[][], expected: T[][], message?: string): CustomMatcherResult =>
             doAssertions((): void => {
-                expected.forEach(expectedResultElement => {
-                    assert(actual.length === expected.length, `Arrays did not have the same length, so there is no way they could have the same members.`)
-                    assert(
-                        actual.some(resultElement => {
-                            return arraysHaveSameContents(resultElement, expectedResultElement)
-                        }),
-                        `The actual array was searched but no element was found which had the same contents as this expected element: ${JSON.stringify(expectedResultElement)}`,
-                    )
-                })
+                assert(actual.length === expected.length, `Arrays did not have the same length, so there is no way they could have the same members.`)
+                eachExpectedElementHasSameContentsAsSomeActualElement(expected, actual, message)
             }),
     }),
     // depth 1: any order, depth 2: enforced order, depth 3: any order, thenceforth: enforced order (deep equal)
     toBeSameDistributionsAs: (util: MatchersUtil, customEqualityTesters: readonly CustomEqualityTester[]): CustomMatcher => ({
         compare: <T extends number>(actual: T[][][], expected: T[][][], message?: string): CustomMatcherResult =>
             doAssertions((): void => {
-                expected.forEach((expectedResultElement: T[][]) => {
-                    assert(actual.length === expected.length, `Arrays did not have the same length, so there is no way they could have the same members.`)
+                assert(actual.length === expected.length, `Arrays did not have the same length, so there is no way they could have the same members.`)
+                expected.forEach((expectedElement: T[][]) => {
                     assert(
-                        actual.some(resultElement => {
-                            return resultElement.every((resultElementElement: T[], index) => {
-                                return arraysHaveSameContents(resultElementElement, expectedResultElement[ index ])
+                        actual.some(actualElement => {
+                            return actualElement.every((actualElementElement: T[], index) => {
+                                return arraysHaveSameContents(actualElementElement, expectedElement[ index ])
                             })
                         }),
-                        `This expected element was not found: ${JSON.stringify(expectedResultElement)}`,
+                        message || `This expected element was not found: ${JSON.stringify(expectedElement)}`,
                     )
                 })
             }),
     }),
+    // same as toBeArrayWithDeepEqualContents, but without the length match
     toBeArrayIncludingDeepEqual: (util: MatchersUtil, customEqualityTesters: readonly CustomEqualityTester[]): CustomMatcher => ({
         compare: <T extends number>(actual: T[], expected: T[], message?: string): CustomMatcherResult =>
             doAssertions((): void => {
-                expected.forEach(expectedResultElement => {
-                    assert(
-                        actual.some(resultElement => {
-                            return deepEquals(resultElement, expectedResultElement)
-                        }),
-                        `This expected element was not found: ${JSON.stringify(expectedResultElement)}`,
-                    )
-                })
+                eachExpectedElementDeepEqualsSomeActualElement(expected, actual, message)
+            }),
+    }),
+    // same as toBeSameCombinationsAs, but without the length match
+    toBeArrayIncludingCombinations: (util: MatchersUtil, customEqualityTesters: readonly CustomEqualityTester[]): CustomMatcher => ({
+        compare: <T extends number>(actual: T[][], expected: T[][], message?: string): CustomMatcherResult =>
+            doAssertions((): void => {
+                eachExpectedElementHasSameContentsAsSomeActualElement(expected, actual, message)
             }),
     }),
 }

@@ -14,5 +14,7 @@ declare namespace jasmine {
         toBeSameDistributionsAs(expected: T, message?: string): CustomMatcherResult
 
         toBeArrayIncludingDeepEqual(expected: T, message?: string): CustomMatcherResult
+
+        toBeArrayIncludingCombinations(expected: T, message?: string): CustomMatcherResult
     }
 }

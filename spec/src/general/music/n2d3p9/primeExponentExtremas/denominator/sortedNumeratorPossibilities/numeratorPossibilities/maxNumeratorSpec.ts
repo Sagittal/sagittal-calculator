@@ -1,9 +1,12 @@
 import { Max, Numerator } from "../../../../../../../../../src/general"
 import { N2D3P9 } from "../../../../../../../../../src/general/music/n2d3p9"
 import { computeMaxNumeratorGivenMaxN2D3P3 } from "../../../../../../../../../src/general/music/n2d3p9/primeExponentExtremas/denominator/sortedNumeratorPossibilities/numeratorPossibilities/maxNumerator"
+import { onlyRunInCi } from "../../../../../../../../helpers/onlyRunInCi"
 
 describe("computeMaxNumeratorGivenMaxN2D3P3", () => {
     it("works for 136, for which the max numerator is a simple power of a single prime", () => {
+        onlyRunInCi()
+
         const maxN2D3P9: Max<N2D3P9> = 136 as Max<N2D3P9>
 
         const actual = computeMaxNumeratorGivenMaxN2D3P3(maxN2D3P9)
