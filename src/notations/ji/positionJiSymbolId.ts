@@ -1,4 +1,5 @@
 import { Cents, Id } from "../../general"
+import { getSagittalComma } from "../getComma"
 import { JI_SYMBOLS } from "./jiSymbols"
 import { JiSymbol } from "./types"
 
@@ -7,11 +8,14 @@ const computePositionJiSymbolId = (position: Cents | undefined): Id<JiSymbol> | 
         return undefined
     }
 
-    const symbol = JI_SYMBOLS.find(symbol =>
-        symbol.primaryComma.cents === position)
+    const jiSymbol = JI_SYMBOLS.find(jiSymbol => {
+        const primaryComma = getSagittalComma(jiSymbol.primaryCommaId)
 
-    if (symbol) {
-        return symbol.id
+        return primaryComma.cents === position
+    })
+
+    if (jiSymbol) {
+        return jiSymbol.id
     } else {
         return undefined
     }

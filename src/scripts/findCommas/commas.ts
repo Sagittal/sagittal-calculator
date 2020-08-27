@@ -1,10 +1,10 @@
 import { invertMonzo, Monzo, sort } from "../../general"
-import { SagittalComma } from "../../notations"
+import { NamedComma } from "../../notations"
 import { computeCommasFromFiveSlicedMonzo } from "./commasFromFiveSlicedMonzo"
 import { computeFiveSlicedMonzosToCheck } from "./fiveSlicedMonzosToCheck"
 import { ComputeCommasOptions } from "./types"
 
-const computeCommas = (options: ComputeCommasOptions) => {
+const computeCommas = (options: ComputeCommasOptions): NamedComma[] => {
     const {
         minCents,
         maxCents,
@@ -18,7 +18,7 @@ const computeCommas = (options: ComputeCommasOptions) => {
         sortKey,
     } = options
 
-    let commas: SagittalComma[] = []
+    let commas: NamedComma[] = []
 
     const fiveSlicedMonzosToCheck: Array<Monzo<5>> = fiveSlicedMonzo ?
         [fiveSlicedMonzo, invertMonzo(fiveSlicedMonzo)] :

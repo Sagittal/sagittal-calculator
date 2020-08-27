@@ -1,8 +1,8 @@
 import { abs, computeMonzoInRange, computePlusOrMinusRange, Monzo } from "../../general"
-import { analyzeComma, SagittalComma } from "../../notations"
+import { analyzeComma, NamedComma } from "../../notations"
 import { ComputeCommasFromFiveSlicedMonzoOptions } from "./types"
 
-const computeCommasFromFiveSlicedMonzo = (fiveSlicedMonzo: Monzo<5>, options: ComputeCommasFromFiveSlicedMonzoOptions) => {
+const computeCommasFromFiveSlicedMonzo = (fiveSlicedMonzo: Monzo<5>, options: ComputeCommasFromFiveSlicedMonzoOptions): NamedComma[] => {
     const {
         minCents,
         maxCents,
@@ -21,14 +21,14 @@ const computeCommasFromFiveSlicedMonzo = (fiveSlicedMonzo: Monzo<5>, options: Co
         throw new Error("Max absolute three exponent must be supplied.")
     }
 
-    const analyzedCommas: SagittalComma[] = []
+    const analyzedCommas: NamedComma[] = []
 
     computePlusOrMinusRange(maxAbsoluteThreeExponent).forEach(three => {
         const threeSlicedMonzo: Monzo<3> = [three, ...fiveSlicedMonzo] as Monzo<3>
         const monzo = computeMonzoInRange(threeSlicedMonzo, minCents, maxCents) // TODO: perhaps this should be one of those extrema types, just an array of [Min<>, Max<>]
 
         if (monzo) {
-            const analyzedComma = analyzeComma(monzo)
+            const analyzedComma: NamedComma = analyzeComma(monzo)
 
             if (abs(analyzedComma.apotomeSlope) > maxApotomeSlope) {
                 return

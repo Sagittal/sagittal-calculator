@@ -1,13 +1,13 @@
-import { ApotomeSlope, Cents, Id, Monzo, N2D3P9, Name, Prime, Ratio, Sopfr } from "../../../../src/general"
+import { Id } from "../../../../src/general"
 import { SagittalComma, SymbolLongAscii } from "../../../../src/notations"
 import { getJiSymbol, JiSymbol, Level, Mina } from "../../../../src/notations/ji"
 import { SymbolSet, SymbolUnicode } from "../../../../src/notations/types"
 
 describe("getJiSymbol", () => {
     it("given a symbol's ID, returns the full symbol", () => {
-        const symbolId = 55 as Id<JiSymbol>
+        const jiSymbolId = 55 as Id<JiSymbol>
 
-        const actual = getJiSymbol(symbolId)
+        const actual = getJiSymbol(jiSymbolId)
 
         const expected = {
             id: 55 as Id<JiSymbol>,
@@ -16,16 +16,7 @@ describe("getJiSymbol", () => {
             introducingLevel: Level.EXTREME,
             lowestSymbolSet: SymbolSet.OLYMPIAN,
             mina: 53 as Mina,
-            primaryComma: {
-                apotomeSlope: 1.399 as ApotomeSlope,
-                fiveRoughSopfr: 18 as Sopfr<5>,
-                limit: 11 as Prime,
-                ratio: [2079, 2048] as Ratio,
-                monzo: [-11, 3, 0, 1, 1] as Monzo,
-                cents: 26.0088514300439 as Cents,
-                name: "77C" as Name<SagittalComma>,
-                n2d3p9: 23.52777777777778 as N2D3P9,
-            },
+            primaryCommaId: 55 as Id<SagittalComma>,
             elements: ["`|", ".|", "|)"] as SymbolLongAscii[],
         }
         expect(actual).toEqual(expected)

@@ -1,5 +1,6 @@
-import { abs, Id, Max, Monzo } from "../../../../src/general"
+import { abs, Id, Max } from "../../../../src/general"
 import { ApotomeSlope, computeApotomeSlope } from "../../../../src/general/music"
+import { getSagittalComma } from "../../../../src/notations"
 import { getJiSymbol, JiSymbol, Level, LEVELS_SYMBOL_IDS } from "../../../../src/notations/ji"
 
 describe("max apotome slope per level", () => {
@@ -9,7 +10,8 @@ describe("max apotome slope per level", () => {
                 const levelMaxApotomeSlope: Max<ApotomeSlope> = levelSymbolIds.reduce(
                     (levelMaxApotomeSlope, levelSymbolId) => {
                         const levelSymbol = getJiSymbol(levelSymbolId)
-                        const apotomeSlope = abs(computeApotomeSlope(levelSymbol.primaryComma.monzo as Monzo))
+                        const primaryComma = getSagittalComma(levelSymbol.primaryCommaId)
+                        const apotomeSlope = abs(computeApotomeSlope(primaryComma.monzo))
 
                         return apotomeSlope > levelMaxApotomeSlope ? apotomeSlope : levelMaxApotomeSlope
                     },

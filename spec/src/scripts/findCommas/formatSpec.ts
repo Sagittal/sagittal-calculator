@@ -1,10 +1,10 @@
 import { Cents, Monzo, Name, Prime, Ratio, Sopfr } from "../../../../src/general"
 import { ApotomeSlope, N2D3P9 } from "../../../../src/general/music"
-import { SagittalComma } from "../../../../src/notations"
+import { NamedComma, SagittalComma } from "../../../../src/notations"
 import { formatCommas } from "../../../../src/scripts/findCommas/io"
 
 describe("formatCommas", () => {
-    const commas: SagittalComma[] = [
+    const commas: NamedComma[] = [
         {
             name: "11M" as Name<SagittalComma>,
             limit: 11 as Prime,

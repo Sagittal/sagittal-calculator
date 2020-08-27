@@ -3,7 +3,7 @@ import { JiSymbol } from "../../../../src/notations/ji"
 import { computePositionJiSymbolId } from "../../../../src/notations/ji/positionJiSymbolId"
 
 describe("computePositionJiSymbolId", () => {
-    it("given a position, returns the symbol at that position", () => { // TODO: this could be used for the calculator?
+    it("given a position, returns the symbol at that position", () => {
         const position: Cents = 3.37801872846485 as Cents
 
         const actual = computePositionJiSymbolId(position)

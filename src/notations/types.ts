@@ -1,4 +1,4 @@
-import { ApotomeSlope, Cents, Monzo, N2D3P9, Name, Prime, Ratio, Sopfr } from "../general"
+import { Comma, Id, Name } from "../general"
 
 type SymbolLongAscii = string & { _SymbolLongAsciiBrand: "SymbolLongAscii" }
 type SymbolUnicode = string & { _SymbolUnicodeBrand: "SymbolUnicode" }
@@ -13,15 +13,12 @@ interface SizeCategory {
     abbreviation: string,
 }
 
-interface SagittalComma {
-    apotomeSlope: ApotomeSlope,
-    cents: Cents,
-    name: Name<SagittalComma>,
-    fiveRoughSopfr: Sopfr<5>,
-    limit: Prime,
-    monzo: Monzo,
-    ratio: Ratio,
-    n2d3p9: N2D3P9,
+interface NamedComma extends Comma {
+    name: Name<Comma>,
+}
+
+interface SagittalComma extends NamedComma {
+    id: Id<SagittalComma>,
 }
 
 enum SymbolSet {
@@ -41,4 +38,5 @@ export {
     SagittalComma,
     SymbolSet,
     SizeCategory,
+    NamedComma,
 }

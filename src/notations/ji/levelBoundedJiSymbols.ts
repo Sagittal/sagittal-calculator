@@ -1,4 +1,5 @@
 import { abs, Cents, difference } from "../../general"
+import { getSagittalComma } from "../getComma"
 import { computeBoundedJiSymbolPositions } from "./boundedJiSymbolPositions"
 import { BOUNDS } from "./bounds"
 import { computeInaDistance } from "./inaDistance"
@@ -13,13 +14,14 @@ const computeLevelBoundedJiSymbolIdWithDistances = (bound: Bound): BoundIdWithBo
         (levels, level) => {
             const levelBoundedSymbols: Array<JiSymbol | undefined> = computeBoundedJiSymbolPositions(cents, level)
                 .map(computePositionJiSymbolId)
-                .map(symbolId => symbolId && getJiSymbol(symbolId))
-            const levelBoundedSymbolsWithDistance = levelBoundedSymbols.map(symbol => {
-                if (symbol) {
-                    const distance: Cents = abs(difference(cents, symbol.primaryComma.cents))
+                .map(jiSymbolId => jiSymbolId && getJiSymbol(jiSymbolId))
+            const levelBoundedSymbolsWithDistance = levelBoundedSymbols.map(jiSymbol => {
+                if (jiSymbol) {
+                    const primaryComma = getSagittalComma(jiSymbol.primaryCommaId)
+                    const distance: Cents = abs(difference(cents, primaryComma.cents))
 
                     return {
-                        id: symbol.id,
+                        id: jiSymbol.id,
                         distance,
                         inaDistance: computeInaDistance(distance, level),
                     }

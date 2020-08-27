@@ -9,7 +9,7 @@ import {
     parseMonzo,
     parseRatio,
 } from "../../../general"
-import { computeNotatingJiSymbolIds, getJiSymbol, JiSymbol } from "../../../notations"
+import { computeNotatingJiSymbolIds, getJiSymbol, getSagittalComma, JiSymbol } from "../../../notations"
 
 // TODO: you should extract this shared between this and analyze-comma script for receiving input of a monzo or ratio
 //  (or name ... you should also make it accept -n name!
@@ -41,8 +41,9 @@ if (!monzo) {
 
 const notatingSymbolIds = computeNotatingJiSymbolIds(monzo)
 
-const notatingSymbolTableData = notatingSymbolIds.map((symbolId: Id<JiSymbol>) => {
-    const { primaryComma: { name, monzo, cents, ratio }, ascii: symbol } = getJiSymbol(symbolId)
+const notatingSymbolTableData = notatingSymbolIds.map((jiSymbolId: Id<JiSymbol>) => {
+    const { primaryCommaId, ascii: symbol } = getJiSymbol(jiSymbolId)
+    const { name, monzo, cents, ratio } = getSagittalComma(primaryCommaId)
 
     const formattedRatio = formatRatio(ratio)
     const formattedMonzo = formatMonzo(monzo)

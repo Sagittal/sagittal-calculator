@@ -1,9 +1,9 @@
 import { Cents, Monzo, Name, Prime, Ratio, Sopfr } from "../../../src/general"
 import { ApotomeSlope, N2D3P9 } from "../../../src/general/music"
-import { formatComma, SagittalComma } from "../../../src/notations"
+import { formatComma, NamedComma, SagittalComma } from "../../../src/notations"
 
 describe("formatComma", () => {
-    const comma: SagittalComma = {
+    const comma: NamedComma = {
         cents: 11.2 as Cents,
         monzo: [0, -1, 1] as Monzo,
         ratio: [5, 4] as Ratio,

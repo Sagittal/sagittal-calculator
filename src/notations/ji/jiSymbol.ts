@@ -2,14 +2,14 @@ import { Id } from "../../general"
 import { JI_SYMBOLS } from "./jiSymbols"
 import { JiSymbol } from "./types"
 
-const getJiSymbol = (symbolId: Id<JiSymbol>): JiSymbol => {
-    const symbol = JI_SYMBOLS.find(symbol => symbol.id === symbolId)
+const getJiSymbol = (jiSymbolId: Id<JiSymbol>): JiSymbol => {
+    const jiSymbol = JI_SYMBOLS.find(jiSymbol => jiSymbol.id === jiSymbolId)
 
-    if (!symbol) {
-        throw new Error(`Symbol with id ${symbolId} not found`)
+    if (!jiSymbol) {
+        throw new Error(`Symbol with id ${jiSymbolId} not found`)
     }
 
-    return symbol
+    return jiSymbol
 }
 
 export {

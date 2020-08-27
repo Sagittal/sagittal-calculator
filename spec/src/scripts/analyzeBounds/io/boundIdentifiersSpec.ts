@@ -1,5 +1,15 @@
-import { Cents, Id, Monzo, Name, Prime, Proportion, Ratio, Sopfr } from "../../../../../src/general"
-import { ApotomeSlope, N2D3P9 } from "../../../../../src/general/music"
+import {
+    ApotomeSlope,
+    Cents,
+    Id,
+    Monzo,
+    N2D3P9,
+    Name,
+    Prime,
+    Proportion,
+    Ratio,
+    Sopfr,
+} from "../../../../../src/general"
 import { SagittalComma, SymbolLongAscii } from "../../../../../src/notations"
 import { Bound, JiSymbol, Level, Mina } from "../../../../../src/notations/ji"
 import { INA_SIZES } from "../../../../../src/notations/ji/intervals"
@@ -33,6 +43,7 @@ describe("extractBoundIdentifiers", () => {
                         lowestSymbolSet: SymbolSet.HERCULEAN,
                         mina: 47 as Mina,
                         primaryComma: {
+                            id: 47 as Id<SagittalComma>,
                             apotomeSlope: -2.412 as ApotomeSlope,
                             fiveRoughSopfr: 29 as Sopfr<5>,
                             limit: 19 as Prime,
@@ -54,6 +65,7 @@ describe("extractBoundIdentifiers", () => {
                         lowestSymbolSet: SymbolSet.HERCULEAN,
                         mina: 48 as Mina,
                         primaryComma: {
+                            id: 48 as Id<SagittalComma>,
                             apotomeSlope: 10.555 as ApotomeSlope,
                             fiveRoughSopfr: 0 as Sopfr<5>,
                             limit: 3 as Prime,
@@ -77,6 +89,7 @@ describe("extractBoundIdentifiers", () => {
                         lowestSymbolSet: SymbolSet.HERCULEAN,
                         mina: 47 as Mina,
                         primaryComma: {
+                            id: 47 as Id<SagittalComma>,
                             apotomeSlope: -2.412 as ApotomeSlope,
                             fiveRoughSopfr: 29 as Sopfr<5>,
                             limit: 19 as Prime,
@@ -98,6 +111,7 @@ describe("extractBoundIdentifiers", () => {
                         lowestSymbolSet: SymbolSet.HERCULEAN,
                         mina: 48 as Mina,
                         primaryComma: {
+                            id: 48 as Id<SagittalComma>,
                             apotomeSlope: 10.555 as ApotomeSlope,
                             fiveRoughSopfr: 0 as Sopfr<5>,
                             limit: 3 as Prime,
@@ -122,6 +136,7 @@ describe("extractBoundIdentifiers", () => {
                         lowestSymbolSet: SymbolSet.HERCULEAN,
                         id: 47 as Id<JiSymbol>,
                         primaryComma: {
+                            id: 47 as Id<SagittalComma>,
                             apotomeSlope: -2.412 as ApotomeSlope,
                             fiveRoughSopfr: 29 as Sopfr<5>,
                             limit: 19 as Prime,
@@ -143,6 +158,7 @@ describe("extractBoundIdentifiers", () => {
                         lowestSymbolSet: SymbolSet.HERCULEAN,
                         id: 48 as Id<JiSymbol>,
                         primaryComma: {
+                            id: 48 as Id<SagittalComma>,
                             apotomeSlope: 10.555 as ApotomeSlope,
                             fiveRoughSopfr: 0 as Sopfr<5>,
                             limit: 3 as Prime,

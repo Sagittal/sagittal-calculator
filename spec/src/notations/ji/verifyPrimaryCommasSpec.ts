@@ -1,6 +1,7 @@
 import { Copfr, Max, N2D3P9, Prime, Sopfr } from "../../../../src/general"
 import { Exponent } from "../../../../src/general/math"
 import { ApotomeSlope } from "../../../../src/general/music"
+import { getSagittalComma } from "../../../../src/notations"
 import { computeCommaName } from "../../../../src/notations/commaName"
 import { JI_SYMBOLS } from "../../../../src/notations/ji"
 import { computeSecondaryCommaZone } from "../../../../src/notations/ji/secondaryCommaZone"
@@ -10,7 +11,8 @@ import { formatCommas } from "../../../../src/scripts/findCommas/io"
 describe("verifying primary commas", () => {
     xit("checks that every symbol's primary comma is its best-ranked comma in its secondary comma zone according to our metric", () => {
         JI_SYMBOLS.forEach(symbol => {
-            const commaName = computeCommaName(symbol.primaryComma.monzo)
+            const primaryComma = getSagittalComma(symbol.primaryCommaId)
+            const commaName = computeCommaName(primaryComma.monzo)
 
             console.log(`\n\n${symbol.ascii} ${commaName}\n\n`)
 

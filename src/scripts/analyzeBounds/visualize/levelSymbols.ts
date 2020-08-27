@@ -1,5 +1,5 @@
 import { Id } from "../../../general"
-import { getJiSymbol, JiSymbol, Level, LEVELS_SYMBOL_IDS } from "../../../notations"
+import { getJiSymbol, getSagittalComma, JiSymbol, Level, LEVELS_SYMBOL_IDS } from "../../../notations"
 import { formatMina } from "../io"
 import { LEVEL_CENTERS } from "./levelHeights"
 import { DOT_SIZE, MINA_OFFSET, SYMBOL_OFFSET } from "./sizes"
@@ -20,7 +20,8 @@ const visualizeLevelSymbols = () => {
 
         levelSymbolIds.forEach(levelSymbolId => {
             const levelSymbol: JiSymbol = getJiSymbol(levelSymbolId)
-            const { primaryComma, ascii, unicode, mina } = levelSymbol
+            const { primaryCommaId, ascii, unicode, mina } = levelSymbol
+            const primaryComma = getSagittalComma(primaryCommaId)
 
             const positionX = computeX(primaryComma.cents)
 

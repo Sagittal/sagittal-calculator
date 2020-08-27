@@ -1,4 +1,5 @@
 import { Cents } from "../../general"
+import { getSagittalComma } from "../getComma"
 import { SymbolLongAscii } from "../types"
 import { getJiSymbol } from "./jiSymbol"
 import { LEVELS_SYMBOL_IDS } from "./levelsJiSymbolIds"
@@ -8,7 +9,9 @@ import { Level } from "./types"
 const computeBoundedJiSymbols = (position: Cents, level: Level): [ SymbolLongAscii, SymbolLongAscii ] => {
     const levelSymbolIds = LEVELS_SYMBOL_IDS[ level ]
     const levelSymbols = levelSymbolIds.map(getJiSymbol)
-    const levelSymbolPositions = levelSymbols.map(levelSymbol => levelSymbol.primaryComma.cents)
+    const levelPrimaryCommaIds = levelSymbols.map(symbol => symbol.primaryCommaId)
+    const levelPrimaryCommas = levelPrimaryCommaIds.map(getSagittalComma)
+    const levelSymbolPositions = levelPrimaryCommas.map(primaryComma => primaryComma.cents)
     const [lesserNeighborPositionIndex, greaterNeighborPositionIndex] = computeNeighborPositionIndices(position, levelSymbolPositions)
 
     return [

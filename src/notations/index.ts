@@ -1,5 +1,6 @@
-import { analyzeComma } from "./comma"
+import { analyzeComma } from "./analyzeComma"
 import { formatComma } from "./format"
+import { getSagittalComma } from "./getComma"
 import { MAX_POSITION } from "./intervals"
 import {
     Bound,
@@ -30,7 +31,7 @@ import {
 } from "./ji"
 import { computeSmileyFromAscii } from "./smiley"
 import { SYMBOL_SETS } from "./symbolSets"
-import { SagittalComma, SymbolLongAscii } from "./types"
+import { SagittalComma, SymbolLongAscii, NamedComma } from "./types"
 
 export {
     BOUNDS,
@@ -65,4 +66,6 @@ export {
     SagittalComma,
     analyzeComma,
     formatComma,
+    getSagittalComma,
+    NamedComma,
 }

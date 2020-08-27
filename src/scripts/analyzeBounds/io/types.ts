@@ -1,18 +1,23 @@
 import { Cents, Id, Proportion } from "../../../general"
-import { Bound, JiSymbol, Level, Mina, SymbolLongAscii } from "../../../notations"
+import { Bound, JiSymbol, Level, Mina, SagittalComma, SymbolLongAscii } from "../../../notations"
 
-interface BoundedSymbol extends JiSymbol {
+interface BoundedJiSymbol extends JiSymbol {
     distance: Cents,
     inaDistance: Proportion,
 }
 
-type BoundedSymbolPair = [BoundedSymbol | undefined, BoundedSymbol | undefined]
+interface BoundedJiSymbolWithPrimaryComma extends JiSymbolWithPrimaryComma {
+    distance: Cents,
+    inaDistance: Proportion,
+}
 
-type BoundedSymbols = { id: Id<Bound> }
-    & Partial<Record<Level, BoundedSymbolPair>>
+type BoundedJiSymbolWithPrimaryCommaPair = [BoundedJiSymbolWithPrimaryComma | undefined, BoundedJiSymbolWithPrimaryComma | undefined]
+
+type BoundedJiSymbolsWithPrimaryCommas = { id: Id<Bound> }
+    & Partial<Record<Level, BoundedJiSymbolWithPrimaryCommaPair>>
 
 interface BoundIdentifiers {
-    boundedSymbols: BoundedSymbols,
+    boundedSymbols: BoundedJiSymbolsWithPrimaryCommas,
     extremeLevelGreaterBoundedSymbol: SymbolLongAscii,
     extremeLevelLesserBoundedSymbol: SymbolLongAscii,
     greaterBoundedMina: Mina | undefined,
@@ -30,9 +35,15 @@ interface FormatBoundParameters {
     mode?: AnalysisMode,
 }
 
+type JiSymbolWithPrimaryComma = Omit<JiSymbol, "primaryCommaId"> & {
+    primaryComma: SagittalComma
+}
+
 export {
-    BoundedSymbol,
-    BoundedSymbols,
+    BoundedJiSymbol,
+    JiSymbolWithPrimaryComma,
+    BoundedJiSymbolWithPrimaryComma,
+    BoundedJiSymbolsWithPrimaryCommas,
     BoundIdentifiers,
     FormatBoundParameters,
     AnalysisMode,

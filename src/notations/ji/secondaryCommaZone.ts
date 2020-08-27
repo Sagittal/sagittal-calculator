@@ -1,11 +1,16 @@
 import { Cents, Max, Min } from "../../general"
+import { getSagittalComma } from "../getComma"
 import { LEVELS_BOUNDS } from "./levelsBounds"
 import { JiSymbol, SecondaryCommaZone } from "./types"
 
-const computeSecondaryCommaZone = (symbol: JiSymbol): SecondaryCommaZone => {
-    const levelBounds = LEVELS_BOUNDS[ symbol.introducingLevel ]
+const computeSecondaryCommaZone = (jiSymbol: JiSymbol): SecondaryCommaZone => {
+    const levelBounds = LEVELS_BOUNDS[ jiSymbol.introducingLevel ]
 
-    const indexOfBoundJustAboveSymbolAtThisLevel = levelBounds.findIndex(bound => bound.cents > symbol.primaryComma.cents)
+    const indexOfBoundJustAboveSymbolAtThisLevel = levelBounds.findIndex(bound => {
+        const primaryComma = getSagittalComma(jiSymbol.primaryCommaId)
+
+        return bound.cents > primaryComma.cents
+    })
     const indexOfBoundJustBelowSymbolAtThisLevel = indexOfBoundJustAboveSymbolAtThisLevel - 1
 
     const minCents = levelBounds[ indexOfBoundJustBelowSymbolAtThisLevel ]?.cents || 0

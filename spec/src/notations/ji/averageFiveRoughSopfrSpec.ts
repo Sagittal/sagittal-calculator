@@ -1,5 +1,6 @@
 import { ACCURACY_THRESHOLD } from "../../../../src/general/code"
-import { computeRoughNumberMonzo, computeSopfr, Monzo } from "../../../../src/general/math"
+import { computeRoughNumberMonzo, computeSopfr, FIVE_ROUGHNESS, Monzo } from "../../../../src/general/math"
+import { getSagittalComma } from "../../../../src/notations"
 import { JI_SYMBOLS } from "../../../../src/notations/ji"
 
 const AVERAGE_FIVE_ROUGH_SOPFR = 22.78523489932886
@@ -8,8 +9,8 @@ describe("averageFiveRoughSopfr", () => {
     it("is about 23", () => {
         const total: number = JI_SYMBOLS.reduce(
             (totalFiveRoughSopfr, symbol) => {
-                const monzo = symbol.primaryComma.monzo
-                const fiveRoughNumberMonzo: Monzo = computeRoughNumberMonzo(monzo, 5)
+                const primaryComma = getSagittalComma(symbol.primaryCommaId)
+                const fiveRoughNumberMonzo: Monzo = computeRoughNumberMonzo(primaryComma.monzo, FIVE_ROUGHNESS)
                 const fiveRoughSopfr = computeSopfr(fiveRoughNumberMonzo)
 
                 return totalFiveRoughSopfr + fiveRoughSopfr

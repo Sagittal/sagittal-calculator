@@ -1,3 +1,4 @@
+import { isUndefined } from "../../../general"
 import {
     Bound,
     BoundedSymbolIdWithDistancesPair,
@@ -7,7 +8,8 @@ import {
     LEVEL_BOUNDED_SYMBOLS,
     SymbolLongAscii,
 } from "../../../notations"
-import { BoundedSymbol, BoundedSymbols, BoundIdentifiers } from "./types"
+import { computeJiSymbolWithPrimaryComma } from "./jiSymbolWithPrimaryComma"
+import { BoundedJiSymbol, BoundedJiSymbolsWithPrimaryCommas, BoundIdentifiers } from "./types"
 
 const extractBoundIdentifiers = (bound: Bound): BoundIdentifiers => {
     const { cents, id } = bound
@@ -21,26 +23,39 @@ const extractBoundIdentifiers = (bound: Bound): BoundIdentifiers => {
     const [lesserBoundedSymbolIdWithDistance, greaterBoundedSymbolIdWithDistance]: BoundedSymbolIdWithDistancesPair =
         boundIdWithBoundedSymbolIdWithDistancesPairsByLevel[ Level.EXTREME ] as BoundedSymbolIdWithDistancesPair
 
-    const lesserBoundedSymbol: BoundedSymbol | undefined = lesserBoundedSymbolIdWithDistance && {
+    const lesserBoundedSymbol: BoundedJiSymbol | undefined = lesserBoundedSymbolIdWithDistance && {
         ...lesserBoundedSymbolIdWithDistance,
         ...getJiSymbol(lesserBoundedSymbolIdWithDistance.id),
-    } as BoundedSymbol
-    const greaterBoundedSymbol: BoundedSymbol | undefined = greaterBoundedSymbolIdWithDistance && {
+    } as BoundedJiSymbol
+    const greaterBoundedSymbol: BoundedJiSymbol | undefined = greaterBoundedSymbolIdWithDistance && {
         ...greaterBoundedSymbolIdWithDistance,
         ...getJiSymbol(greaterBoundedSymbolIdWithDistance.id),
-    } as BoundedSymbol
+    } as BoundedJiSymbol
 
-    const boundedSymbols: BoundedSymbols = // boundIdWithBoundedSymbolIdWithDistancesPairsByLevel as BoundedSymbols
+    const boundedSymbols: BoundedJiSymbolsWithPrimaryCommas =
         Object.entries(boundIdWithBoundedSymbolIdWithDistancesPairsByLevel).reduce(
             (boundedSymbols, [level, boundIdWithBoundedSymbolIdWithDistancesPair]) => {
                 if (level === "id") return boundedSymbols
 
                 const [first, second] = boundIdWithBoundedSymbolIdWithDistancesPair
+
+                let firstBoundedJiSymbolWithPrimaryComma
+                if (!isUndefined(first)) {
+                    const firstJiSymbolWithPrimaryComma = computeJiSymbolWithPrimaryComma(first.id)
+                    firstBoundedJiSymbolWithPrimaryComma = { ...first, ...firstJiSymbolWithPrimaryComma }
+                }
+
+                let secondBoundedJiSymbolWithPrimaryComma
+                if (!isUndefined(second)) {
+                    const secondJiSymbolWithPrimaryComma = computeJiSymbolWithPrimaryComma(second.id)
+                    secondBoundedJiSymbolWithPrimaryComma = { ...second, ...secondJiSymbolWithPrimaryComma }
+                }
+
                 return {
                     ...boundedSymbols,
                     [ level ]: [
-                        first && { ...first, ...getJiSymbol(first.id) },
-                        second && { ...second, ...getJiSymbol(second.id) },
+                        firstBoundedJiSymbolWithPrimaryComma,
+                        secondBoundedJiSymbolWithPrimaryComma,
                     ],
                 }
             },

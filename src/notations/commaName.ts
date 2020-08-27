@@ -7,6 +7,7 @@ import {
     computeRoughNumberMonzo,
     computeSuperMonzo,
     computeUndirectedRatio,
+    FIVE_ROUGHNESS,
     FractionalPart,
     Monzo,
     Name,
@@ -45,7 +46,7 @@ const computeCommaName = (monzo: Monzo, { directed = true, factored = false, abb
     const superMonzo = computeSuperMonzo(monzo)
     const cents: Cents = computeCentsFromMonzo(superMonzo)
 
-    const fiveRoughMonzo = computeRoughNumberMonzo(superMonzo, 5)
+    const fiveRoughMonzo = computeRoughNumberMonzo(superMonzo, FIVE_ROUGHNESS)
     const ratio: Ratio = computeRatioFromMonzo(fiveRoughMonzo)
 
     const maybeDirectedRatio = directed ? ratio : computeUndirectedRatio(ratio)

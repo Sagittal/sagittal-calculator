@@ -1,11 +1,11 @@
 import { Cents, Extrema, Id, Proportion } from "../../general"
 import { SagittalComma, SymbolLongAscii, SymbolSet, SymbolUnicode } from "../types"
 
-type Tina = Cents & { _TinaBrand: Tina }
+type Tina = Cents & { _TinaBrand: "Tina" }
 type Mina = Cents & { _MinaBrand: "Mina" }
-type Ultrina = Cents & { _MinaBrand: "Mina" }
-type Highina = Cents & { _MinaBrand: "Mina" }
-type Medina = Cents & { _MinaBrand: "Mina" }
+type Ultrina = Cents & { _UltrinaBrand: "Ultrina" }
+type Highina = Cents & { _HighinaBrand: "Highina" }
+type Medina = Cents & { _MedinaBrand: "Medina" }
 
 enum Level {
     MEDIUM = "medium",          // corresponds closely with Athenian symbol set
@@ -22,7 +22,7 @@ interface JiSymbol {
     introducingLevel: Level,
     lowestSymbolSet: SymbolSet,
     mina: Mina,
-    primaryComma: SagittalComma,
+    primaryCommaId: Id<SagittalComma>,
     unicode: SymbolUnicode,
 }
 

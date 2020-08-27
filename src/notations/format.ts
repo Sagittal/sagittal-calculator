@@ -1,7 +1,7 @@
 import { formatMonzo, formatRatio, Formatted } from "../general"
-import { SagittalComma } from "./types"
+import { NamedComma, SagittalComma } from "./types"
 
-const formatComma = (comma: SagittalComma, { mode = "summary" } = {}): Formatted<SagittalComma> => {
+const formatComma = (comma: NamedComma, { mode = "summary" } = {}): Formatted<NamedComma> => {
     const {
         name,
         limit,
