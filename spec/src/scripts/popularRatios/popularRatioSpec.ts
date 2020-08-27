@@ -8,11 +8,12 @@ import { PopularRatio } from "../../../../src/scripts/popularRatios/types"
 describe("computePopularRatio", () => {
     it("gathers helpful information about a ratio with a valid monzo & N2D3P9", () => {
         const monzo = [0, 0, 1] as Monzo
-        const n2d3p9 = 1.38888888888888 as N2D3P9
+        const n2d3p9 = 1.388889 as N2D3P9
 
         const actual = computePopularRatio({ monzo, n2d3p9 })
 
         const expected: PopularRatio = {
+            n2d3p9,
             formattedN2D3P9: "1.39" as Formatted<N2D3P9>,
             formattedRatio: "5/1" as Formatted<Ratio>,
             popularityRank: 2 as Rank<Popularity>,

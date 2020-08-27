@@ -1,13 +1,13 @@
 import { Monzo } from "../../../../../src/general"
 import { computeN2D3P9, N2D3P9 } from "../../../../../src/general/music/n2d3p9"
 
-describe("computeN2d3p9", () => {
+describe("computeN2D3P9", () => {
     it("returns an approximate rank of the ratio's notational popularity", () => {
         const monzo: Monzo = [0, 0, 1, 0, 1] as Monzo // 55/1
 
         const actual = computeN2D3P9(monzo)
 
-        const expected = 16.805555555555557 as N2D3P9
+        const expected = 16.805556 as N2D3P9
         expect(actual).toBe(expected)
     })
 
@@ -16,7 +16,7 @@ describe("computeN2d3p9", () => {
 
         const actual = computeN2D3P9(monzo)
 
-        const expected = 59.548611111111114 as N2D3P9
+        const expected = 59.548611 as N2D3P9
         expect(actual).toBe(expected)
     })
 
@@ -25,7 +25,7 @@ describe("computeN2d3p9", () => {
 
         const actual = computeN2D3P9(monzo)
 
-        const expected = 107.75925925925925 as N2D3P9
+        const expected = 107.759259 as N2D3P9
         expect(actual).toBe(expected)
     })
 

@@ -24,7 +24,7 @@ const computePopularRatios = (maxN2D3P9: Max<N2D3P9>): Array<Ranked<PopularRatio
         }
     })
 
-    return rank(popularRatios, { by: "formattedN2D3P9", strategy: RankStrategy.FRACTIONAL })
+    return rank(popularRatios, { by: "n2d3p9", strategy: RankStrategy.FRACTIONAL })
 }
 
 export {

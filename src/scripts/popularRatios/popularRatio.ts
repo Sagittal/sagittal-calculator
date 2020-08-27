@@ -26,6 +26,7 @@ const computePopularRatio = ({ monzo, n2d3p9 }: { monzo: Monzo, n2d3p9: N2D3P9 }
     const symbolSets = notatingSymbols.map(symbol => SYMBOL_SETS.indexOf(symbol.lowestSymbolSet)).join(", ")
 
     return {
+        n2d3p9,
         formattedN2D3P9,
         formattedRatio,
         popularityRank,
