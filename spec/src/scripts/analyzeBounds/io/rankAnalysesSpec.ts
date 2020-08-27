@@ -1,8 +1,8 @@
 import { Count, Rank } from "../../../../../src/general"
 import { BOUNDS } from "../../../../../src/notations/ji"
 import { analyzeBound } from "../../../../../src/scripts/analyzeBounds/bound"
-import { computeHistories } from "../../../../../src/scripts/analyzeBounds/plot"
 import { formatRankAnalyses } from "../../../../../src/scripts/analyzeBounds/io"
+import { computeHistories } from "../../../../../src/scripts/analyzeBounds/plot"
 import { rankBoundIndices, rankCounts } from "../../../../../src/scripts/analyzeBounds/ranks"
 import { AnalyzedEvent } from "../../../../../src/scripts/analyzeBounds/types"
 

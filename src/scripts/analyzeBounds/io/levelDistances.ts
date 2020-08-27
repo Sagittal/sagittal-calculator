@@ -3,7 +3,7 @@ import { LEVELS } from "../../../notations"
 import { AnalyzedHistory } from "../types"
 import { alignFormattedNumber } from "./alignFormattedNumber"
 
-const extractLevelDistances = (analyzedHistory: AnalyzedHistory) => {
+const extractLevelDistances = (analyzedHistory: AnalyzedHistory, { ina = false }: { ina?: boolean } = {}) => {
     const events = analyzedHistory.events
 
     return LEVELS.slice(0, LEVELS.length - 1).map(level => {
@@ -13,7 +13,7 @@ const extractLevelDistances = (analyzedHistory: AnalyzedHistory) => {
         }
         const levelEvent = events[ previousEventIndex + 1 ]
 
-        return alignFormattedNumber(formatNumber(levelEvent.distance))
+        return alignFormattedNumber(formatNumber(levelEvent[ ina ? "inaDistance" : "distance" ]))
     })
 }
 

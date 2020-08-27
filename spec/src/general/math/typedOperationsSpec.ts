@@ -1,6 +1,7 @@
 import { ACCURACY_THRESHOLD } from "../../../../src/general/code"
 import { Integer, log, round } from "../../../../src/general/math"
 import { Base, Power } from "../../../../src/general/math/types"
+import { reciprocal } from "../../../../src/general/math/typedOperations"
 
 describe("log", () => {
     it("returns the logarithm with the specified base of the power", () => {

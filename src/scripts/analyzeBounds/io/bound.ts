@@ -4,7 +4,6 @@ import { alignFormattedNumber } from "./alignFormattedNumber"
 import { extractBoundIdentifiers } from "./boundIdentifiers"
 import { COLORS } from "./colors"
 import { extractLevelDistances } from "./levelDistances"
-import { extractLevelInaDistances } from "./levelInaDistances"
 import { extractLevelRanks } from "./levelRanks"
 import { formatMina } from "./mina"
 import { formatSymbolAscii } from "./symbolAscii"
@@ -50,7 +49,7 @@ const formatBound = (analyzedBound: AnalyzedBound, { bound, mode = AnalysisMode.
             bestPossibleHistoryHighInaDistance,
             bestPossibleHistoryUltraInaDistance,
             bestPossibleHistoryExtremeInaDistance,
-        ] = extractLevelInaDistances(bestPossibleHistory)
+        ] = extractLevelDistances(bestPossibleHistory, { ina: true })
 
         const color = COLORS[ bestRank ]
         formattedBound = [
