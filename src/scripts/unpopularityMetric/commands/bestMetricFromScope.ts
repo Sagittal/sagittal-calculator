@@ -1,5 +1,3 @@
-// This script is for developing the improvement to the "SoPF>3" metric. Once developed, it should become part of the analyzeComma script.
-
 import { Span } from "../../../general"
 import { computeDynamicParameterScope, Scope } from "../bestMetric"
 import { DebugTarget, saveDebugMessage } from "../debug"

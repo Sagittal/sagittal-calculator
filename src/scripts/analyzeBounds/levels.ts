@@ -1,8 +1,10 @@
 import { Level } from "../../notations"
 import { AnalyzedHistory } from "./types"
 
-const levelsBestHistoryRanks: Record<Level, { [ index: number ]: number | undefined }> = {} as Record<Level, { [ index: number ]: number | undefined }>
-const levelsBestCumulativeHistoryRanks: Record<Level, { [ index: number ]: number }> = {} as Record<Level, { [ index: number ]: number }>
+const levelsBestHistoryRanks: Record<Level, { [ index: number ]: number | undefined }> =
+    {} as Record<Level, { [ index: number ]: number | undefined }>
+const levelsBestCumulativeHistoryRanks: Record<Level, { [ index: number ]: number }> =
+    {} as Record<Level, { [ index: number ]: number }>
 
 const updateLevelAnalysis = (bestPossibleHistory: AnalyzedHistory) => {
     let cumulativeRank = 0
@@ -27,7 +29,8 @@ const updateLevelAnalysis = (bestPossibleHistory: AnalyzedHistory) => {
         if (!levelsBestCumulativeHistoryRanks[ level ][ cumulativeRank ]) {
             levelsBestCumulativeHistoryRanks[ level ][ cumulativeRank ] = 0
         }
-        levelsBestCumulativeHistoryRanks[ level ][ cumulativeRank ] = levelsBestCumulativeHistoryRanks[ level ][ cumulativeRank ] + 1
+        levelsBestCumulativeHistoryRanks[ level ][ cumulativeRank ] =
+            levelsBestCumulativeHistoryRanks[ level ][ cumulativeRank ] + 1
     })
 }
 

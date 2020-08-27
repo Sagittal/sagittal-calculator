@@ -1,6 +1,8 @@
 import { Prime, PRIMES } from "../../general"
 
-const computeFiveRoughPrimesToCheck = ({ maxPrimeLimit, maxFiveRoughSopfr, primeExponentExtremasGivenMaxN2D3P9 }: any) => {
+const computeFiveRoughPrimesToCheck = (
+    { maxPrimeLimit, maxFiveRoughSopfr, primeExponentExtremasGivenMaxN2D3P9 }: any,
+) => {
     let maxPrime: Prime
     if (maxPrimeLimit) {
         maxPrime = maxPrimeLimit

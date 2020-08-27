@@ -2,7 +2,10 @@ import { dig } from "../../../general"
 import { SamplePoint, SumOfSquares, SumsOfSquares } from "../bestMetric"
 import { computeAdjacentSamplePoints } from "./adjacentSamplePoints"
 
-const getSumOfSquaresAtSamplePointIfLocalMin = (sumsOfSquares: SumsOfSquares, samplePoint: SamplePoint): SumOfSquares | undefined => {
+const getSumOfSquaresAtSamplePointIfLocalMin = (
+    sumsOfSquares: SumsOfSquares,
+    samplePoint: SamplePoint,
+): SumOfSquares | undefined => {
     const adjacentSamplePoints = computeAdjacentSamplePoints(samplePoint)
     const sumOfSquares = dig(sumsOfSquares, samplePoint) as SumOfSquares | undefined
 

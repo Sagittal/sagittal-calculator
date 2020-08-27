@@ -1,3 +1,5 @@
+// tslint:disable max-line-length
+
 import { computeIsCloseTo, deepEquals, Integer, isUndefined } from "../../src/general"
 import CustomEqualityTester = jasmine.CustomEqualityTester
 import CustomMatcher = jasmine.CustomMatcher

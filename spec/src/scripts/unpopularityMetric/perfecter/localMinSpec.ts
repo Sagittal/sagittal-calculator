@@ -12,7 +12,11 @@ describe("getSumOfSquaresAtSamplePointIfLocalMin", () => {
             for (let y = 0; y < 4; y++) {
                 for (let z = 0; z < 4; z++) {
                     for (let w = 0; w < 4; w++) {
-                        setSumOfSquaresAtSamplePoint(0.00454 as SumOfSquares, sumsOfSquares, [x, y, z, w] as SamplePoint)
+                        setSumOfSquaresAtSamplePoint(
+                            0.00454 as SumOfSquares,
+                            sumsOfSquares,
+                            [x, y, z, w] as SamplePoint,
+                        )
                     }
                 }
             }
@@ -36,10 +40,11 @@ describe("getSumOfSquaresAtSamplePointIfLocalMin", () => {
         setSumOfSquaresAtSamplePoint(0.00666 as SumOfSquares, sumsOfSquares, [1, 1, 0, 1] as SamplePoint)
         setSumOfSquaresAtSamplePoint(0.00666 as SumOfSquares, sumsOfSquares, [1, 1, 2, 1] as SamplePoint)
         setSumOfSquaresAtSamplePoint(0.00666 as SumOfSquares, sumsOfSquares, [1, 1, 1, 0] as SamplePoint)
-        // setSumOfSquaresAtSamplePoint(0.00666 as SumOfSquares, sumsOfSquares, [1, 1, 1, 2]) this example is NOT QUITE a local min!
+        // this example is NOT QUITE a local min!
+        // setSumOfSquaresAtSamplePoint(0.00666 as SumOfSquares, sumsOfSquares, [1, 1, 1, 2])
     })
 
-    it("returns the sum-of-squares if it is lesser at the sample point than at every adjacent sample point", () => {
+    it("returns the sum-of-squares if it is lesser at the sample point than at every adjacent one", () => {
         const samplePoint = [1, 0, 3, 2] as SamplePoint
 
         const actual = getSumOfSquaresAtSamplePointIfLocalMin(sumsOfSquares, samplePoint)
@@ -55,7 +60,7 @@ describe("getSumOfSquaresAtSamplePointIfLocalMin", () => {
         expect(actual).toEqual(0.00454 as SumOfSquares)
     })
 
-    it("returns undefined if the sum-of-squares is not less at the sample point than at every adjacent sample point", () => {
+    it("returns undefined if the sum-of-squares is not less at the sample point than at every adjacent one", () => {
         const samplePoint = [1, 1, 1, 1] as SamplePoint
 
         const actual = getSumOfSquaresAtSamplePointIfLocalMin(sumsOfSquares, samplePoint)

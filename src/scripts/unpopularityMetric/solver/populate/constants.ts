@@ -1,10 +1,10 @@
 import { Span } from "../../../../general"
-import { computeDynamicParameterScope, DynamicParameterScope } from "../../bestMetric"
+import { computeDynamicParameterScope, ParameterScopes } from "../../bestMetric"
 import { Parameter, ParameterValue, Submetric } from "../../sumOfSquares"
 import { Chunk } from "../types"
 
 // AKA: when included in the solver's generated scopes, what should they be scoped to
-const NO_USELESS_INITIAL_PARAMETER_SCOPES: Partial<Record<Parameter, ParameterValue | boolean | DynamicParameterScope>> = {
+const NO_USELESS_INITIAL_PARAMETER_SCOPES: ParameterScopes = {
     [ Parameter.WEIGHT_AS_POWER_EXPONENT ]: computeDynamicParameterScope({
         center: 0.875 as ParameterValue,
         span: 1.75 as Span<ParameterValue>,
@@ -21,7 +21,8 @@ const NO_USELESS_INITIAL_PARAMETER_SCOPES: Partial<Record<Parameter, ParameterVa
         center: 1.125 as ParameterValue,
         span: 1.25 as Span<ParameterValue>,
     }),
-    [ Parameter.A_AS_LOGARITHM_BASE ]: 2 as ParameterValue, // per forum discussion, lock it down http://forum.sagittal.org/viewtopic.php?p=2113#p2113
+    // per forum discussion, lock it down http://forum.sagittal.org/viewtopic.php?p=2113#p2113
+    [ Parameter.A_AS_LOGARITHM_BASE ]: 2 as ParameterValue,
     [ Parameter.A_AS_POWER_EXPONENT ]: computeDynamicParameterScope({
         center: 1.25 as ParameterValue,
         span: 2.5 as Span<ParameterValue>,
@@ -56,12 +57,12 @@ const NO_USELESS_INITIAL_PARAMETER_SCOPES: Partial<Record<Parameter, ParameterVa
     [ Parameter.WITHOUT_REPETITION ]: true,
 }
 
-const INITIAL_PARAMETER_SCOPES: Partial<Record<Parameter, ParameterValue | boolean | DynamicParameterScope>> = {
+const INITIAL_PARAMETER_SCOPES: ParameterScopes = {
     [ Parameter.WEIGHT_AS_COEFFICIENT ]: computeDynamicParameterScope({
         center: 0.5 as ParameterValue,
         span: 1 as Span<ParameterValue>,
     }),
-    [ Parameter.WEIGHT_AS_LOGARITHM_BASE ]: 2 as ParameterValue, // locking the rest of these down too, per: http://forum.sagittal.org/viewtopic.php?p=2120#p2120
+    [ Parameter.WEIGHT_AS_LOGARITHM_BASE ]: 2 as ParameterValue,
     [ Parameter.WEIGHT_AS_POWER_EXPONENT ]: computeDynamicParameterScope({
         center: 0 as ParameterValue,
         span: 6 as Span<ParameterValue>,
@@ -91,7 +92,7 @@ const INITIAL_PARAMETER_SCOPES: Partial<Record<Parameter, ParameterValue | boole
         center: 0.5 as ParameterValue,
         span: 1 as Span<ParameterValue>,
     }),
-    [ Parameter.A_AS_LOGARITHM_BASE ]: 2 as ParameterValue, // per forum discussion, lock it down http://forum.sagittal.org/viewtopic.php?p=2113#p2113
+    [ Parameter.A_AS_LOGARITHM_BASE ]: 2 as ParameterValue,
     [ Parameter.A_AS_POWER_EXPONENT ]: computeDynamicParameterScope({
         center: 0 as ParameterValue,
         span: 6 as Span<ParameterValue>,
@@ -173,9 +174,11 @@ const SUBMETRIC_CHUNKS: Array<Chunk<Submetric>> = [
     },
 ] as Array<Chunk<Submetric>>
 
+const SUBMETRIC_PARAMETERS = [Parameter.SUM, Parameter.COUNT, Parameter.MAX, Parameter.WITHOUT_REPETITION]
+
 const NO_USELESS_PARAMETER_CHUNKS: Array<Chunk<Parameter>> = Object.entries(NO_USELESS_INITIAL_PARAMETER_SCOPES)
     .filter(([parameter]) => {
-        return ![Parameter.SUM, Parameter.COUNT, Parameter.MAX, Parameter.WITHOUT_REPETITION].includes(parameter as Parameter)
+        return !SUBMETRIC_PARAMETERS.includes(parameter as Parameter)
     })
     .map(([parameter, initialParameterScope]) => {
         return {
@@ -185,7 +188,7 @@ const NO_USELESS_PARAMETER_CHUNKS: Array<Chunk<Parameter>> = Object.entries(NO_U
 
 const PARAMETER_CHUNKS: Array<Chunk<Parameter>> = Object.entries(INITIAL_PARAMETER_SCOPES)
     .filter(([parameter]) => {
-        return ![Parameter.SUM, Parameter.COUNT, Parameter.MAX, Parameter.WITHOUT_REPETITION].includes(parameter as Parameter)
+        return !SUBMETRIC_PARAMETERS.includes(parameter as Parameter)
     })
     .map(([parameter, initialParameterScope]) => {
         return {

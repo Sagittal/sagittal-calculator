@@ -11,7 +11,11 @@ interface Metric {
     sumOfSquares: SumOfSquares | undefined,
 }
 
-type SubmetricScope = Partial<Record<Parameter, ParameterValue | boolean | DynamicParameterScope>>
+type ParameterScope = ParameterValue | boolean | DynamicParameterScope
+
+type ParameterScopes = Partial<Record<Parameter, ParameterScope>>
+
+type SubmetricScope = ParameterScopes & { _SubmetricScopeBrand: "SubmetricScope" }
 
 type Scope = Combination<SubmetricScope>
 
@@ -66,4 +70,5 @@ export {
     SearchScopeResults,
     NonRecursiveSearchScopeAndMaybeUpdateBestMetricOptions,
     MetricName,
+    ParameterScopes,
 }

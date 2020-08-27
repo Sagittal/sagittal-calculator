@@ -5,7 +5,8 @@ import { ParameterValue } from "../sumOfSquares"
 const computeAdjacentSamplePoints = (samplePoint: SamplePoint) => {
     const adjacentSamplePoints: SamplePoint[] = []
 
-    samplePoint.forEach((dynamicParameterValueIndex: Index<ParameterValue>, index) => { // haha wow it's an index of an index
+    // Haha, wow. It's an index of an index.
+    samplePoint.forEach((dynamicParameterValueIndex: Index<ParameterValue>, index) => {
         const adjacentSamplePointOne: SamplePoint = samplePoint.slice() as SamplePoint
         adjacentSamplePointOne[ index ] = dynamicParameterValueIndex - 1 as Index<ParameterValue>
         adjacentSamplePoints.push(adjacentSamplePointOne)

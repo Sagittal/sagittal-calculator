@@ -6,8 +6,10 @@ interface ComputeD39ForCandidateMaxDenominatorPrimeExponentOptions {
     candidateMaxDenominatorPrimeExponentGivenMaxN2D3P9: Max<Exponent<Prime<Denominator>>>,
 }
 
-interface ComputeMinN2PForCandidateMaxDenominatorPrimeExponentGivenMaxN2D3P9Options extends ComputeD39ForCandidateMaxDenominatorPrimeExponentOptions {
-    sortedNumeratorPossibilitiesForDenominatorPrimeGivenMaxN2D3P9: SortedNumeratorPossibilitiesForDenominatorPrimeGivenMaxN2D3P9,
+interface ComputeMinN2PForCandidateMaxDenominatorPrimeExponentGivenMaxN2D3P9Options
+    extends ComputeD39ForCandidateMaxDenominatorPrimeExponentOptions {
+    sortedNumeratorPossibilitiesForDenominatorPrimeGivenMaxN2D3P9:
+        SortedNumeratorPossibilitiesForDenominatorPrimeGivenMaxN2D3P9,
 }
 
 type D39 = number & { _D39Brand: "D39" }

@@ -10,14 +10,18 @@ import {
     PRIMES,
 } from "../../../../general"
 import { Antivotes, ParameterValue, Submetric } from "../types"
-import { secondaryParameterOverridesForDenominator } from "./secondaryParameter"
+import { secondaryParameterOverride } from "./secondaryParameter"
 
 // (sum or count)
 // of (maybe adjusted) prime factors
 // (or prime factor indices via prime count function π)
 // (maybe with (maybe adjusted) repetition)
 
-const computeSubmetricAntivotes = (fiveRoughNumberMonzo: Monzo, submetric = {}, fractionalPartType?: FractionalPartType): Antivotes => {
+const computeSubmetricAntivotes = (
+    fiveRoughNumberMonzo: Monzo,
+    submetric = {},
+    fractionalPartType?: FractionalPartType,
+): Antivotes => {
     const {
         aAsCoefficient = 1 as ParameterValue,
         aAsPowerExponent,
@@ -59,7 +63,7 @@ const computeSubmetricAntivotes = (fiveRoughNumberMonzo: Monzo, submetric = {}, 
                 usePrimeIndex ?
                     computePrimeCount(prime) :
                     prime
-            adjustedPrime = adjustedPrime + secondaryParameterOverridesForDenominator(x, u, primeExponent, fractionalPartType)
+            adjustedPrime = adjustedPrime + secondaryParameterOverride(x, u, primeExponent, fractionalPartType)
             if (!isUndefined(aAsLogarithmBase)) {
                 adjustedPrime = adjustedPrime >= 1 ?
                     log(adjustedPrime as Power, aAsLogarithmBase as number as Base) :
@@ -74,7 +78,7 @@ const computeSubmetricAntivotes = (fiveRoughNumberMonzo: Monzo, submetric = {}, 
                 adjustedPrime = aAsPowerBase ** adjustedPrime
             }
             adjustedPrime = adjustedPrime * aAsCoefficient
-            adjustedPrime = adjustedPrime + secondaryParameterOverridesForDenominator(w, b, primeExponent, fractionalPartType)
+            adjustedPrime = adjustedPrime + secondaryParameterOverride(w, b, primeExponent, fractionalPartType)
 
             if (primeExponent === 0) {
                 adjustedPrimeExponent = 0
@@ -82,7 +86,7 @@ const computeSubmetricAntivotes = (fiveRoughNumberMonzo: Monzo, submetric = {}, 
                 adjustedPrimeExponent = withoutRepetition ? 1 : abs(primeExponent)
                 // adjustedPrimeExponent = adjustedPrimeExponent + t
                 adjustedPrimeExponent = adjustedPrimeExponent >= 0 ?
-                    adjustedPrimeExponent ** secondaryParameterOverridesForDenominator(y, v, primeExponent, fractionalPartType) :
+                    adjustedPrimeExponent ** secondaryParameterOverride(y, v, primeExponent, fractionalPartType) :
                     0
                 // adjustedPrimeExponent = adjustedPrimeExponent + s
             }

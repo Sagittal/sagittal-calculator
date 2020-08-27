@@ -29,6 +29,8 @@ enum ExtensionBaseType {
 
 type Range<T> = Array<T> & { _RangeBrand: "Range" }
 
+// TODO: Maybe<> type
+
 export {
     SortOptions,
     Rank,

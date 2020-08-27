@@ -21,7 +21,13 @@ const visualizeEvents = (events: AnalyzedEvent[]) => {
             return
         }
 
-        const { level: nextLevel, cents: nextCents, rank: nextRank, distance: nextDistance, inaDistance: nextInaDistance } = events[ index + 1 ] || {}
+        const {
+            level: nextLevel,
+            cents: nextCents,
+            rank: nextRank,
+            distance: nextDistance,
+            inaDistance: nextInaDistance,
+        } = events[ index + 1 ] || {}
 
         const stroke = RANK_FILLS[ nextRank ]
 

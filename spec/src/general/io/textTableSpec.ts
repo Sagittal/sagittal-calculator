@@ -59,8 +59,15 @@ describe("alignTable", () => {
             "11M\t11\t11\t45.45\t[0 0 1⟩\t33/32\t-4",
             "25/49M\t7\t24\t33.4\t[0 0⟩\t50/49\t-59.333",
         ]
+        const justification = [
+            Justification.RIGHT,
+            Justification.LEFT,
+            Justification.CENTER,
+            undefined,
+            Justification.RIGHT,
+        ]
 
-        const actual = alignTable(data, { justification: [Justification.RIGHT, Justification.LEFT, Justification.CENTER, undefined, Justification.RIGHT] })
+        const actual = alignTable(data, { justification })
 
         const expected = [
             "comma name\tlimit\t5-rough sopfr\tcents\t  monzo\tratio\tapotome slope",

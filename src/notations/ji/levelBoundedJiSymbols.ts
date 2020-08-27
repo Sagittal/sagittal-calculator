@@ -7,7 +7,9 @@ import { getJiSymbol } from "./jiSymbol"
 import { computePositionJiSymbolId } from "./positionJiSymbolId"
 import { Bound, BoundIdWithBoundedSymbolIdWithDistancesPairsByLevel, JiSymbol } from "./types"
 
-const computeLevelBoundedJiSymbolIdWithDistances = (bound: Bound): BoundIdWithBoundedSymbolIdWithDistancesPairsByLevel => {
+const computeLevelBoundedJiSymbolIdWithDistances = (
+    bound: Bound,
+): BoundIdWithBoundedSymbolIdWithDistancesPairsByLevel => {
     const { cents, levels, id } = bound
 
     return levels.reduce(
@@ -41,7 +43,8 @@ const computeLevelBoundedJiSymbolIdWithDistances = (bound: Bound): BoundIdWithBo
     )
 }
 
-const LEVEL_BOUNDED_SYMBOLS: BoundIdWithBoundedSymbolIdWithDistancesPairsByLevel[] = BOUNDS.map(computeLevelBoundedJiSymbolIdWithDistances)
+const LEVEL_BOUNDED_SYMBOLS: BoundIdWithBoundedSymbolIdWithDistancesPairsByLevel[] =
+    BOUNDS.map(computeLevelBoundedJiSymbolIdWithDistances)
 
 export {
     computeLevelBoundedJiSymbolIdWithDistances,

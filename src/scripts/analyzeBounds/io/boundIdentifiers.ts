@@ -2,7 +2,6 @@ import { isUndefined } from "../../../general"
 import {
     Bound,
     BoundedSymbolIdWithDistancesPair,
-    BoundIdWithBoundedSymbolIdWithDistancesPairsByLevel,
     getJiSymbol,
     Level,
     LEVEL_BOUNDED_SYMBOLS,
@@ -14,7 +13,7 @@ import { BoundedJiSymbol, BoundedJiSymbolsWithPrimaryCommas, BoundIdentifiers } 
 const extractBoundIdentifiers = (bound: Bound): BoundIdentifiers => {
     const { cents, id } = bound
 
-    const boundIdWithBoundedSymbolIdWithDistancesPairsByLevel: BoundIdWithBoundedSymbolIdWithDistancesPairsByLevel | undefined =
+    const boundIdWithBoundedSymbolIdWithDistancesPairsByLevel =
         LEVEL_BOUNDED_SYMBOLS.find(symbol => symbol.id === id)
     if (!boundIdWithBoundedSymbolIdWithDistancesPairsByLevel) {
         throw new Error(`Could not find bounded symbols for bound with ID ${id}`)

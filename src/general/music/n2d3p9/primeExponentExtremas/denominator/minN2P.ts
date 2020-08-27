@@ -1,12 +1,10 @@
 import { Base, Denominator, Min, min, pow, Prime } from "../../../../math"
-import {
-    N2P,
-    SortedNumeratorPossibilityWithGreaterGpfThanDenominatorPrimeIncludingN2P,
-    SortedNumeratorPossibilityWithLesserGpfThanDenominatorPrimeIncludingN2,
-} from "./sortedNumeratorPossibilities"
+import { N2P } from "./sortedNumeratorPossibilities"
 import { ComputeMinN2PForCandidateMaxDenominatorPrimeExponentGivenMaxN2D3P9Options } from "./types"
 
-const computeMinN2PForCandidateMaxDenominatorPrimeExponentGivenMaxN2D3P9 = (options: ComputeMinN2PForCandidateMaxDenominatorPrimeExponentGivenMaxN2D3P9Options): Min<N2P> => {
+const computeMinN2PForCandidateMaxDenominatorPrimeExponentGivenMaxN2D3P9 = (
+    options: ComputeMinN2PForCandidateMaxDenominatorPrimeExponentGivenMaxN2D3P9Options,
+): Min<N2P> => {
     const {
         sortedNumeratorPossibilitiesForDenominatorPrimeGivenMaxN2D3P9,
         denominatorPrime,
@@ -22,19 +20,21 @@ const computeMinN2PForCandidateMaxDenominatorPrimeExponentGivenMaxN2D3P9 = (opti
         candidateMaxDenominatorPrimeExponentGivenMaxN2D3P9,
     )
 
-    const actualNumeratorPossibilityWithLesserGpfThanDenominatorPrimeWithLeastN2: SortedNumeratorPossibilityWithLesserGpfThanDenominatorPrimeIncludingN2 | undefined =
-        sortedNumeratorPossibilitiesGivenMaxN2D3P9WithLesserGpfThanDenominatorPrimeSortedByN2.find(numeratorPossibility => {
-            return numeratorPossibility.numerator > candidateMaxDenominatorPower
-        })
+    const actualNumeratorPossibilityWithLesserGpfThanDenominatorPrimeWithLeastN2 =
+        sortedNumeratorPossibilitiesGivenMaxN2D3P9WithLesserGpfThanDenominatorPrimeSortedByN2
+            .find(numeratorPossibility => {
+                return numeratorPossibility.numerator > candidateMaxDenominatorPower
+            })
     const fromNumeratorsWithLesserGpfThanDenominatorPrimeDenominatorPowerMinN2P: Min<N2P> =
         actualNumeratorPossibilityWithLesserGpfThanDenominatorPrimeWithLeastN2 ?
             actualNumeratorPossibilityWithLesserGpfThanDenominatorPrimeWithLeastN2.n2 * denominatorPrime as Min<N2P> :
             Infinity as Min<N2P>
 
-    const actualNumeratorPossibilityWithGreaterGpfThanDenominatorPrimeWithLeastN2P: SortedNumeratorPossibilityWithGreaterGpfThanDenominatorPrimeIncludingN2P | undefined =
-        sortedNumeratorPossibilitiesGivenMaxN2D3P9WithGreaterGpfThanDenominatorPrimeSortedByN2P.find(numeratorPossibility => {
-            return numeratorPossibility.numerator > candidateMaxDenominatorPower
-        })
+    const actualNumeratorPossibilityWithGreaterGpfThanDenominatorPrimeWithLeastN2P =
+        sortedNumeratorPossibilitiesGivenMaxN2D3P9WithGreaterGpfThanDenominatorPrimeSortedByN2P
+            .find(numeratorPossibility => {
+                return numeratorPossibility.numerator > candidateMaxDenominatorPower
+            })
     const fromNumeratorsWithGreaterGpfThanDenominatorPrimeDenominatorPowerMinN2P: Min<N2P> =
         actualNumeratorPossibilityWithGreaterGpfThanDenominatorPrimeWithLeastN2P ?
             actualNumeratorPossibilityWithGreaterGpfThanDenominatorPrimeWithLeastN2P.n2p as Min<N2P> :

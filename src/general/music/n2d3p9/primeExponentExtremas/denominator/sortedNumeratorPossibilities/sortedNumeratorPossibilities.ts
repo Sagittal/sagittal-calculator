@@ -5,7 +5,10 @@ import { computeSortedNumeratorPossibilitiesGivenMaxN2D3P9WithGreaterGpfThanDeno
 import { computeSortedNumeratorPossibilitiesGivenMaxN2D3P9WithLesserGpfThanDenominatorPrimeSortedByN2 } from "./sortedNumeratorPossibilitiesWithLesserGpf"
 import { SortedNumeratorPossibilitiesForDenominatorPrimeGivenMaxN2D3P9 } from "./types"
 
-const computeSortedNumeratorPossibilitiesForDenominatorPrimeGivenMaxN2D3P9 = (denominatorPrime: Prime<Denominator>, maxN2D3P9: Max<N2D3P9>): SortedNumeratorPossibilitiesForDenominatorPrimeGivenMaxN2D3P9 => {
+const computeSortedNumeratorPossibilitiesForDenominatorPrimeGivenMaxN2D3P9 = (
+    denominatorPrime: Prime<Denominator>,
+    maxN2D3P9: Max<N2D3P9>,
+): SortedNumeratorPossibilitiesForDenominatorPrimeGivenMaxN2D3P9 => {
     const numeratorPossibilitiesGivenMaxN2D3P3 = computeNumeratorPossibilitiesGivenMaxN2D3P3(maxN2D3P9)
 
     const sortedNumeratorPossibilitiesGivenMaxN2D3P9WithLesserGpfThanDenominatorPrimeSortedByN2 =

@@ -9,7 +9,10 @@ import { formatMina } from "./mina"
 import { formatSymbolAscii } from "./symbolAscii"
 import { AnalysisMode, FormatBoundParameters } from "./types"
 
-const formatBound = (analyzedBound: AnalyzedBound, { bound, mode = AnalysisMode.DETAILS }: FormatBoundParameters): Formatted<AnalyzedBound> => {
+const formatBound = (
+    analyzedBound: AnalyzedBound,
+    { bound, mode = AnalysisMode.DETAILS }: FormatBoundParameters,
+): Formatted<AnalyzedBound> => {
     let formattedBound
     const boundIdentifiers = extractBoundIdentifiers(bound)
 

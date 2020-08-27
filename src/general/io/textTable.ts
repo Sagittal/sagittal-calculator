@@ -1,4 +1,4 @@
-import { Justification, JustificationOption } from "./types"
+import { AlignTableOptions, ComputeAlignedRowCellOptions, Justification, JustificationOption } from "./types"
 
 const computeColumnWidths = (data: string[], columnRange: number[]): number[] =>
     columnRange.map(columnIndex =>
@@ -38,7 +38,7 @@ const furtherAlignRowCell = (alignedRowCell: string, columnJustification: Justif
                 " " + alignedRowCell :
                 alignedRowCell + " "
 
-const computeAlignedRowCell = (rowCell: string, { columnWidth, columnJustification }: { columnJustification: Justification, columnWidth: number, }) => {
+const computeAlignedRowCell = (rowCell: string, { columnWidth, columnJustification }: ComputeAlignedRowCellOptions) => {
     let alignedRowCell = rowCell
     while (alignedRowCell.length < columnWidth) {
         alignedRowCell = furtherAlignRowCell(alignedRowCell, columnJustification)
@@ -47,7 +47,7 @@ const computeAlignedRowCell = (rowCell: string, { columnWidth, columnJustificati
     return alignedRowCell
 }
 
-const alignTable = (data: string[], { justification = Justification.LEFT }: { justification?: JustificationOption } = {}) => {
+const alignTable = (data: string[], { justification = Justification.LEFT }: AlignTableOptions = {}) => {
     const columnRange = computeColumnRange(data)
     const columnWidths = computeColumnWidths(data, columnRange)
 

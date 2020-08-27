@@ -11,7 +11,10 @@ interface BoundedJiSymbolWithPrimaryComma extends JiSymbolWithPrimaryComma {
     inaDistance: Proportion,
 }
 
-type BoundedJiSymbolWithPrimaryCommaPair = [BoundedJiSymbolWithPrimaryComma | undefined, BoundedJiSymbolWithPrimaryComma | undefined]
+type BoundedJiSymbolWithPrimaryCommaPair = [
+        BoundedJiSymbolWithPrimaryComma | undefined,
+        BoundedJiSymbolWithPrimaryComma | undefined
+]
 
 type BoundedJiSymbolsWithPrimaryCommas = { id: Id<Bound> }
     & Partial<Record<Level, BoundedJiSymbolWithPrimaryCommaPair>>

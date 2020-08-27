@@ -23,6 +23,7 @@ import {
 } from "./code"
 import {
     alignTable,
+    computeMonzoFromCommand,
     FORMATATIONAL_PRECISION,
     formatMonzo,
     formatNumber,
@@ -224,4 +225,5 @@ export {
     ONE,
     Px,
     HexColor,
+    computeMonzoFromCommand,
 }

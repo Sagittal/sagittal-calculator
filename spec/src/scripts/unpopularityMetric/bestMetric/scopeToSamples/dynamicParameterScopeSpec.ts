@@ -9,7 +9,7 @@ describe("computeDynamicParameterScope", () => {
         resolution: 20 as Resolution<ParameterValue>,
     }
 
-    it("given a min and a max computes a dynamic parameter scope with the correct center, span, and resolution", () => {
+    it("given a min and a max computes the correct dynamic parameter scope", () => {
         const min = -2 as Min<ParameterValue>
         const max = 0 as Max<ParameterValue>
 
@@ -18,7 +18,7 @@ describe("computeDynamicParameterScope", () => {
         expect(actual).toEqual(expectedDynamicParameterScope)
     })
 
-    it("given a center and a span computes a dynamic parameter scope with the correct center, span, and resolution", () => {
+    it("given a center and a span computes the correct dynamic parameter scope", () => {
         const center = -1 as ParameterValue
         const span = 2 as Span<ParameterValue>
 
@@ -27,7 +27,7 @@ describe("computeDynamicParameterScope", () => {
         expect(actual).toEqual(expectedDynamicParameterScope)
     })
 
-    it("given a min and a span computes a dynamic parameter scope with the correct center, span, and resolution", () => {
+    it("given a min and a span computes the correct dynamic parameter scope", () => {
         const min = -2 as Min<ParameterValue>
         const span = 2 as Span<ParameterValue>
 
@@ -36,7 +36,7 @@ describe("computeDynamicParameterScope", () => {
         expect(actual).toEqual(expectedDynamicParameterScope)
     })
 
-    it("given a max and a span computes a dynamic parameter scope with the correct center, span, and resolution", () => {
+    it("given a max and a span computes the correct dynamic parameter scope", () => {
         const max = 0 as Max<ParameterValue>
         const span = 2 as Span<ParameterValue>
 
@@ -45,7 +45,7 @@ describe("computeDynamicParameterScope", () => {
         expect(actual).toEqual(expectedDynamicParameterScope)
     })
 
-    it("given a min and a center computes a dynamic parameter scope with the correct center, span, and resolution", () => {
+    it("given a min and a center computes the correct dynamic parameter scope", () => {
         const min = -2 as Min<ParameterValue>
         const center = -1 as ParameterValue
 
@@ -54,7 +54,7 @@ describe("computeDynamicParameterScope", () => {
         expect(actual).toEqual(expectedDynamicParameterScope)
     })
 
-    it("given a max and a center computes a dynamic parameter scope with the correct center, span, and resolution", () => {
+    it("given a max and a center computes the correct dynamic parameter scope", () => {
         const max = 0 as Max<ParameterValue>
         const center = -1 as ParameterValue
 

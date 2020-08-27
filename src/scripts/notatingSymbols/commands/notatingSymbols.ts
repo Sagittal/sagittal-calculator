@@ -1,50 +1,18 @@
-import { program } from "commander"
-import {
-    alignTable,
-    computeMonzoFromRatio,
-    formatMonzo,
-    formatNumber,
-    formatRatio,
-    Id,
-    parseMonzo,
-    parseRatio,
-} from "../../../general"
+import { alignTable, computeMonzoFromCommand, formatMonzo, formatNumber, formatRatio, Id } from "../../../general"
 import { computeNotatingJiSymbolIds, getJiSymbol, getSagittalComma, JiSymbol } from "../../../notations"
-
-// TODO: you should extract this shared between this and analyze-comma script for receiving input of a monzo or ratio
-//  (or name ... you should also make it accept -n name!
 
 // TODO: it might be nice to share the logic from formatSymbolAscii
 //  for centering symbols on shafts, ratios on slash, and monzos on terms
 //  into the alignTable method
 
-program
-    .option("-m, --monzo <monzo>", "monzo", parseMonzo)
-    .option("-r, --ratio <ratio>", "ratio", parseRatio)
-    .parse(process.argv)
+// TODO: this is technically notating JI symbols... but it would be pretty cool if it could return all possible
+//  notating symbols and just not provide an ID if they aren't in Sagittal
 
-const comma = program.args[ 0 ]
-
-let monzo
-if (comma) {
-    if (comma.includes("/")) {
-        monzo = computeMonzoFromRatio(parseRatio(comma))
-    }
-    if (comma.includes("[") || comma.includes("|") || comma.includes(">") || comma.includes("⟩") || comma.includes("]")) {
-        monzo = parseMonzo(comma)
-    }
-} else if (program.monzo) {
-    monzo = program.monzo
-} else if (program.ratio) {
-    monzo = computeMonzoFromRatio(program.ratio)
-}
-
-if (!monzo) {
-    throw new Error("Unable to determine monzo for comma.")
-}
+const monzo = computeMonzoFromCommand()
 
 const notatingSymbolIds = computeNotatingJiSymbolIds(monzo)
 
+// TODO: extract this
 const notatingSymbolTableData = notatingSymbolIds.map((jiSymbolId: Id<JiSymbol>) => {
     const { primaryCommaId, ascii: symbol } = getJiSymbol(jiSymbolId)
     const { name, monzo, cents, ratio } = getSagittalComma(primaryCommaId)

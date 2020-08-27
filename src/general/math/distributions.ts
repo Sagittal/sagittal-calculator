@@ -3,7 +3,8 @@ import { Count } from "../types"
 import { Distribution, DistributionBin } from "./types"
 
 const computeDistributions = <T>(array: T[], binCount: Count<DistributionBin<T>>): Array<Distribution<T>> => {
-    const emptyDistribution: Distribution<T> = [...Array(binCount).keys()].map(_ => [] as unknown[] as DistributionBin<T>) as Distribution<T>
+    const emptyDistribution: Distribution<T> = [...Array(binCount).keys()]
+        .map(_ => [] as unknown[] as DistributionBin<T>) as Distribution<T>
     let distributions: Array<Distribution<T>> = [emptyDistribution]
 
     array.forEach(element => {

@@ -1,5 +1,4 @@
-import { log, Monzo } from "../../../../../../src/general/math"
-import { Base, Power } from "../../../../../../src/general/math/types"
+import { Base, log, Monzo, Power } from "../../../../../../src/general/math"
 import { Parameter, ParameterValue, Submetric } from "../../../../../../src/scripts/unpopularityMetric/sumOfSquares"
 import { computeSubmetricAntivotes } from "../../../../../../src/scripts/unpopularityMetric/sumOfSquares/antivotes/submetricAntivotes"
 import { Antivotes } from "../../../../../../src/scripts/unpopularityMetric/sumOfSquares/types"
@@ -88,20 +87,23 @@ describe("computeSubmetricAntivotes", () => {
             )
         })
 
-        it("when w is provided, adds a constant to each prime after applying the coefficient, exponent, or base", () => {
-            const aAsCoefficient = 0.56 as ParameterValue
-            const w = 0.22 as ParameterValue
-            submetric[ Parameter.A_AS_COEFFICIENT ] = aAsCoefficient
-            submetric[ Parameter.W ] = w
+        it(
+            `when w is provided, adds a constant to each prime after applying the coefficient, exponent, or base`,
+            () => {
+                const aAsCoefficient = 0.56 as ParameterValue
+                const w = 0.22 as ParameterValue
+                submetric[ Parameter.A_AS_COEFFICIENT ] = aAsCoefficient
+                submetric[ Parameter.W ] = w
 
-            const actual = computeSubmetricAntivotes(fiveRoughNumberMonzo, submetric)
+                const actual = computeSubmetricAntivotes(fiveRoughNumberMonzo, submetric)
 
-            expect(actual).toBe(
-                1 * (11 * aAsCoefficient + w) +
-                1 * (13 * aAsCoefficient + w) +
-                2 * (17 * aAsCoefficient + w) as Antivotes,
-            )
-        })
+                expect(actual).toBe(
+                    1 * (11 * aAsCoefficient + w) +
+                    1 * (13 * aAsCoefficient + w) +
+                    2 * (17 * aAsCoefficient + w) as Antivotes,
+                )
+            },
+        )
 
         it("when b is provided, adds a constant to each prime after applying the coefficient, exponent, or base, but using b for d and w for n", () => {
             const aAsCoefficient = 0.56 as ParameterValue
@@ -120,20 +122,23 @@ describe("computeSubmetricAntivotes", () => {
             )
         })
 
-        it("when x is provided, adds a constant to each prime before applying the coefficient, exponent, or base", () => {
-            const aAsCoefficient = 0.56 as ParameterValue
-            const x = -2.1 as ParameterValue
-            submetric[ Parameter.A_AS_COEFFICIENT ] = aAsCoefficient
-            submetric[ Parameter.X ] = x
+        it(
+            `when x is provided, adds a constant to each prime before applying the coefficient, exponent, or base`,
+            () => {
+                const aAsCoefficient = 0.56 as ParameterValue
+                const x = -2.1 as ParameterValue
+                submetric[ Parameter.A_AS_COEFFICIENT ] = aAsCoefficient
+                submetric[ Parameter.X ] = x
 
-            const actual = computeSubmetricAntivotes(fiveRoughNumberMonzo, submetric)
+                const actual = computeSubmetricAntivotes(fiveRoughNumberMonzo, submetric)
 
-            expect(actual).toBe(
-                1 * (11 + x) * aAsCoefficient +
-                1 * (13 + x) * aAsCoefficient +
-                2 * (17 + x) * aAsCoefficient as Antivotes,
-            )
-        })
+                expect(actual).toBe(
+                    1 * (11 + x) * aAsCoefficient +
+                    1 * (13 + x) * aAsCoefficient +
+                    2 * (17 + x) * aAsCoefficient as Antivotes,
+                )
+            },
+        )
 
         it("when u is provided, adds a constant to each prime before applying the coefficient, exponent, or base, but using u for d and x for n", () => {
             const aAsCoefficient = 0.56 as ParameterValue
@@ -200,18 +205,21 @@ describe("computeSubmetricAntivotes", () => {
         })
     })
 
-    it("when the submetric type is soapf, sums the absolute values of the unique prime factors in the 5-rough monzo", () => {
-        submetric[ Parameter.SUM ] = true
-        submetric[ Parameter.WITHOUT_REPETITION ] = true
+    it(
+        `when the submetric type is soapf, sums the absolute values of the unique prime factors in the 5-rough monzo`,
+        () => {
+            submetric[ Parameter.SUM ] = true
+            submetric[ Parameter.WITHOUT_REPETITION ] = true
 
-        const actual = computeSubmetricAntivotes(fiveRoughNumberMonzo, submetric)
+            const actual = computeSubmetricAntivotes(fiveRoughNumberMonzo, submetric)
 
-        const expected =
-            1 * 11 +
-            1 * 13 +
-            1 * 17 as Antivotes
-        expect(actual).toBe(expected)
-    })
+            const expected =
+                1 * 11 +
+                1 * 13 +
+                1 * 17 as Antivotes
+            expect(actual).toBe(expected)
+        },
+    )
 
     it("when the submetric type is soapifar, sums the absolute values of the prime factors in the 5-rough monzo, mapped to the prime count function", () => {
         submetric[ Parameter.SUM ] = true

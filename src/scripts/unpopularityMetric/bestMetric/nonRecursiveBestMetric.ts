@@ -7,7 +7,10 @@ import { computeSpreadDynamicParameters } from "./spreadDynamicParameters"
 import { computeSumsOfSquaresAndMaybeUpdateBestMetric } from "./sumsOfSquares"
 import { NonRecursiveSearchScopeAndMaybeUpdateBestMetricOptions, Scope, SearchScopeResults } from "./types"
 
-const nonRecursiveSearchScopeAndMaybeUpdateBestMetric = async (scope: Scope, options: NonRecursiveSearchScopeAndMaybeUpdateBestMetricOptions = {}): Promise<SearchScopeResults> => {
+const nonRecursiveSearchScopeAndMaybeUpdateBestMetric = async (
+    scope: Scope,
+    options: NonRecursiveSearchScopeAndMaybeUpdateBestMetricOptions = {},
+): Promise<SearchScopeResults> => {
     const metricName = computeMetricName(scope)
     if (metricNames.includes(metricName)) {
         const errorMessage = `Already searched equivalent initial scope for ${metricName}`
@@ -21,7 +24,8 @@ const nonRecursiveSearchScopeAndMaybeUpdateBestMetric = async (scope: Scope, opt
     const spreadDynamicParameters = computeSpreadDynamicParameters(scope)
 
     solverStatus.sampleCount = solverStatus.sampleCount + samples.length as Count<Sample>
-    solverStatus.averageSamplesPerScope = round(solverStatus.sampleCount / solverStatus.populatedScopeCount) as Count<Sample>
+    solverStatus.averageSamplesPerScope =
+        round(solverStatus.sampleCount / solverStatus.populatedScopeCount) as Count<Sample>
 
     saveDebugMessage(`about to search initial scope for metric ${metricName}`, DebugTarget.SEARCH)
     saveDebugMessage(`which has ${samples.length} samples; average sample count is ${solverStatus.averageSamplesPerScope}`, DebugTarget.SEARCH)

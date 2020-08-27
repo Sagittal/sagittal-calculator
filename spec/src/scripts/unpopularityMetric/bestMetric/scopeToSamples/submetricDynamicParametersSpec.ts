@@ -18,7 +18,7 @@ describe("computeSubmetricDynamicParameters", () => {
                 span: 0.2 as Span<ParameterValue>,
                 resolution: 3 as Resolution<ParameterValue>,
             },
-        }
+        } as SubmetricScope
 
         const actual = computeSubmetricDynamicParameters(submetricScope, submetricIndex)
 
@@ -46,7 +46,7 @@ describe("computeSubmetricDynamicParameters", () => {
                 span: 0.2 as Span<ParameterValue>,
                 resolution: 0 as Resolution<ParameterValue>,
             },
-        }
+        } as SubmetricScope
 
         const actual = computeSubmetricDynamicParameters(submetricScope, submetricIndex)
 
@@ -69,7 +69,7 @@ describe("computeSubmetricDynamicParameters", () => {
                 resolution: 5 as Resolution<ParameterValue>,
             },
             [ Parameter.W ]: 0.7 as ParameterValue,
-        }
+        } as SubmetricScope
 
         const actual = computeSubmetricDynamicParameters(submetricScope, submetricIndex)
 

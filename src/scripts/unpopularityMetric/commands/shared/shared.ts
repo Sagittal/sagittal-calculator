@@ -3,7 +3,9 @@ import { program } from "commander"
 import { clearDebugLogFiles, debugSettings, DebugTarget, setDebugTargets } from "../../debug"
 import { unpopularityMetricSettings } from "../../globals"
 
-const applySharedUnpopularityMetricCommandSetup = ({ defaultDebugTargets }: { defaultDebugTargets?: DebugTarget[] } = {}) => {
+const applySharedUnpopularityMetricCommandSetup = (
+    { defaultDebugTargets }: { defaultDebugTargets?: DebugTarget[] } = {},
+) => {
     program
         .option("-d, --debug-targets [debugTargets]", "debug targets")
         .option("-c, --no-color", "no color")

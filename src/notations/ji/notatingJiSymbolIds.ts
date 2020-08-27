@@ -12,7 +12,10 @@ const computeNotatingJiSymbolIds = (monzo: Monzo): Array<Id<JiSymbol>> => {
         const primaryComma = getSagittalComma(primaryCommaId)
         const fiveRoughPrimaryCommaMonzo = computeRoughNumberMonzo(primaryComma.monzo, FIVE_ROUGHNESS)
 
-        if (deepEquals(fiveRoughMonzo, fiveRoughPrimaryCommaMonzo) || deepEquals(fiveRoughMonzo, invertMonzo(fiveRoughPrimaryCommaMonzo))) {
+        if (
+            deepEquals(fiveRoughMonzo, fiveRoughPrimaryCommaMonzo) ||
+            deepEquals(fiveRoughMonzo, invertMonzo(fiveRoughPrimaryCommaMonzo))
+        ) {
             notatingJiSymbols.push(jiSymbol.id)
         }
     })

@@ -3,7 +3,10 @@ import { computeInitialConsolidatedEvent } from "./initialConsolidatedEvent"
 import { AnalyzedHistory, ConsolidatedEvent, ConsolidatedHistories } from "./types"
 import { updateConsolidatedEvent } from "./updateConsolidatedEvent"
 
-const computeConsolidatedHistories = (analyzedHistories: AnalyzedHistory[], bestPossibleHistory: AnalyzedHistory): ConsolidatedHistories => {
+const computeConsolidatedHistories = (
+    analyzedHistories: AnalyzedHistory[],
+    bestPossibleHistory: AnalyzedHistory,
+): ConsolidatedHistories => {
     const consolidatedHistories: ConsolidatedHistories = {}
 
     analyzedHistories.forEach(analyzedHistory => {

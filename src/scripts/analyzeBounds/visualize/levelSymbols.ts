@@ -25,7 +25,9 @@ const visualizeLevelSymbols = () => {
 
             const positionX = computeX(primaryComma.cents)
 
-            const adjustedUnicode = ascii === "/|~" ? unicode + "         " : ascii === ",,(|(" ? "         " + unicode : unicode
+            const adjustedUnicode = ascii === "/|~" ?
+                unicode + "         " :
+                ascii === ",,(|(" ? "         " + unicode : unicode
 
             levelSymbolElements.push(`  <circle stroke="black" cx="${positionX}" cy="${dotY}" r="${DOT_SIZE}" />\n`)
             levelSymbolElements.push(`  <text fill="white" text-anchor="middle" x="${positionX}" y="${symbolY}" font-size="10px" font-family="Helvetica">${ascii}</text>\n`) // For searchability by ascii

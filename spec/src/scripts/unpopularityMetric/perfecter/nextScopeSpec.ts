@@ -33,7 +33,10 @@ describe("computeNextScope", () => {
                     center: 0.1 as ParameterValue,
                     span: 0.05 as Span<ParameterValue>,
                     resolution: 5 as Resolution<ParameterValue>,
-                }, // haha... it just doesn't care what your previous resolution was. well, that's why I had the top-level script point to the same constant that this module uses, to generally prevent that.
+                },
+                // haha... it just doesn't care what your previous resolution was.
+                // well, that's why I had the top-level script point to the same constant that this module uses,
+                // to generally prevent that.
                 [ Parameter.W ]: {
                     center: 0 as ParameterValue,
                     span: 0.25 as Span<ParameterValue>,
@@ -75,7 +78,7 @@ describe("computeNextScope", () => {
                 },
                 [ Parameter.COUNT ]: true,
             },
-        ]
+        ] as Scope
         expect(actual).toEqual(expected)
     })
 })

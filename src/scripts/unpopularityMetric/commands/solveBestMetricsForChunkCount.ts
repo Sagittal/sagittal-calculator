@@ -29,11 +29,17 @@ populateAndSearchScopesAndPerfectMetrics().then(() => {
 
     const endTime = performance.now() as Ms
     if (time) {
-        saveDebugMessage(`\n\nFINDING BEST METRICS TOOK ${formatTime(difference(endTime, startTime))}`, DebugTarget.FINAL_SOLVER_RESULTS)
+        saveDebugMessage(
+            `\n\nFINDING BEST METRICS TOOK ${formatTime(difference(endTime, startTime))}`,
+            DebugTarget.FINAL_SOLVER_RESULTS,
+        )
     }
     saveDebugMessage(`MAX UNIT ${unpopularityMetricSettings.maxUnit}`, DebugTarget.FINAL_SOLVER_RESULTS)
     saveDebugMessage(`AVERAGE SAMPLES/SCOPE ${solverStatus.averageSamplesPerScope}`, DebugTarget.FINAL_SOLVER_RESULTS)
-    saveDebugMessage(`PARAMETER SCOPES @ ${unpopularityMetricSettings.noUseless ? "NO USELESS" : "ORIGINAL"} SETTINGS`, DebugTarget.FINAL_SOLVER_RESULTS)
+    saveDebugMessage(
+        `PARAMETER SCOPES @ ${unpopularityMetricSettings.noUseless ? "NO USELESS" : "ORIGINAL"} SETTINGS`,
+        DebugTarget.FINAL_SOLVER_RESULTS,
+    )
     saveDebugMessage(`Z ${unpopularityMetricSettings.z}`, DebugTarget.FINAL_SOLVER_RESULTS)
     saveDebugMessage(`ONLY TOP ${unpopularityMetricSettings.onlyTop}`, DebugTarget.FINAL_SOLVER_RESULTS)
 })

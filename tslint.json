@@ -24,6 +24,10 @@
       false,
       100
     ],
+    "max-line-length": [
+      true,
+      120
+    ],
     "no-console": false,
     "no-dynamic-delete": false,
     "no-duplicate-imports": true,

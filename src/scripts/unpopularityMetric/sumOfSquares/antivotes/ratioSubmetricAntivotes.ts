@@ -39,10 +39,12 @@ const computeRatioSubmetricAntivotes = (fiveRoughRatio: Ratio, submetric: Submet
     const [numerator, denominator] = fiveRoughRatio
 
     const fiveRoughNumeratorMonzo = computeMonzoFromInteger(numerator)
-    const numeratorAntivotesBeforeMaybeNuminatorSwap = computeSubmetricAntivotes(fiveRoughNumeratorMonzo, submetric, FractionalPartType.NUMERATOR)
+    const numeratorAntivotesBeforeMaybeNuminatorSwap =
+        computeSubmetricAntivotes(fiveRoughNumeratorMonzo, submetric, FractionalPartType.NUMERATOR)
 
     const fiveRoughDenominatorMonzo = computeMonzoFromInteger(denominator)
-    const denominatorAntivotesBeforeMaybeNuminatorSwap = computeSubmetricAntivotes(fiveRoughDenominatorMonzo, submetric, FractionalPartType.DENOMINATOR)
+    const denominatorAntivotesBeforeMaybeNuminatorSwap =
+        computeSubmetricAntivotes(fiveRoughDenominatorMonzo, submetric, FractionalPartType.DENOMINATOR)
 
     // TODO: the numinator swap should be extracted because that was pretty painful
     let numeratorAntivotes = useNuminator ?

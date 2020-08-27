@@ -8,7 +8,8 @@ const computeAntivotes = (fiveRoughRatio: Ratio, submetrics: Combination<Submetr
     round(
         submetrics.reduce(
             (totalAntivotes: Antivotes, submetric: Submetric): Antivotes => {
-                const weightedSubmetricAntivotes: Antivotes = computeWeightedSubmetricAntivotes(fiveRoughRatio, submetric)
+                const weightedSubmetricAntivotes: Antivotes =
+                    computeWeightedSubmetricAntivotes(fiveRoughRatio, submetric)
 
                 saveDebugMessage(`${JSON.stringify(submetric)}: ${weightedSubmetricAntivotes}`, DebugTarget.ANTIVOTES)
 

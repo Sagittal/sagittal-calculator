@@ -43,7 +43,8 @@ describe("populateScopesPhase", () => {
             [ Parameter.A_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_LOGARITHM_BASE ],
         },
     ] as unknown[] as Combination<Chunk<Parameter>>
-    const submetricChunkCombinations = [submetricChunkCombinationOne, submetricChunkCombinationTwo] as unknown[] as Combinations<Chunk<Submetric>>
+    const submetricChunkCombinations =
+        [submetricChunkCombinationOne, submetricChunkCombinationTwo] as unknown[] as Combinations<Chunk<Submetric>>
     const parameterChunkCombinations = [parameterChunkCombination] as unknown[] as Combinations<Chunk<Parameter>>
 
     beforeEach(() => {
@@ -105,7 +106,11 @@ describe("populateScopesPhase", () => {
     })
 
     afterEach(() => {
-        expect(memoizedSubmetricChunkCombinations[ chunkCountForSubmetrics ]).toEqual(submetricChunkCombinations)
-        expect(memoizedParameterChunkCombinations[ expectedChunkCountForParameters ]).toEqual(parameterChunkCombinations)
+        expect(
+            memoizedSubmetricChunkCombinations[ chunkCountForSubmetrics ],
+        ).toEqual(submetricChunkCombinations)
+        expect(
+            memoizedParameterChunkCombinations[ expectedChunkCountForParameters ],
+        ).toEqual(parameterChunkCombinations)
     })
 })

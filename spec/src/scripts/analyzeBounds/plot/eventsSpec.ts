@@ -31,22 +31,25 @@ describe("computeEvents", () => {
                 expect(actual).toEqual(expected)
             })
 
-            it("works when only one ina midpoint is between the bounded symbols, even if it is not within a half-ina", () => {
-                level = Level.ULTRA
-                boundedSymbolPositions = computeBoundedJiSymbolPositions(4.5 as Cents, level)
+            it(
+                `works when only one ina midpoint is between the bounded symbols, even if it is not within a half-ina`,
+                () => {
+                    level = Level.ULTRA
+                    boundedSymbolPositions = computeBoundedJiSymbolPositions(4.5 as Cents, level)
 
-                const actual = computeEvents(level, boundedSymbolPositions, eventType)
+                    const actual = computeEvents(level, boundedSymbolPositions, eventType)
 
-                const expected = jasmine.arrayWithExactContents([
-                    {
-                        level: Level.ULTRA,
-                        type: EventType.INA,
-                        name: "2.5°58",
-                        cents: 4.900215778349652,
-                    },
-                ])
-                expect(actual).toEqual(expected)
-            })
+                    const expected = jasmine.arrayWithExactContents([
+                        {
+                            level: Level.ULTRA,
+                            type: EventType.INA,
+                            name: "2.5°58",
+                            cents: 4.900215778349652,
+                        },
+                    ])
+                    expect(actual).toEqual(expected)
+                },
+            )
 
             it("works when multiple INA midpoints are between the bounded symbols", () => {
                 level = Level.HIGH
@@ -155,26 +158,30 @@ describe("computeEvents", () => {
                 expect(actual).toEqual(expected)
             })
 
-            it("works even if there is a closer comma mean to the position but it is not between the bounded symbols", () => {
-                // mean between )|) and |\ is 31.2043820809972, 0.20 away
-                // mean between |) and )|) is 28.95310116433255, 2.05 away
-                // however, )|) is at 30.98583910472900, so the 30.5 position is between it and |), not between it and |\
+            it(
+                `works even if there is a closer comma mean to the position but it is not between the bounded symbols`,
+                () => {
+                    // mean between )|) and |\ is 31.2043820809972, 0.20 away
+                    // mean between |) and )|) is 28.95310116433255, 2.05 away
+                    // however, )|) is at 30.98583910472900,
+                    // so the 30.5 position is between it and |), not between it and |\
 
-                level = Level.HIGH
-                boundedSymbolPositions = computeBoundedJiSymbolPositions(30.5 as Cents, level)
+                    level = Level.HIGH
+                    boundedSymbolPositions = computeBoundedJiSymbolPositions(30.5 as Cents, level)
 
-                const actual = computeEvents(level, boundedSymbolPositions, eventType)
+                    const actual = computeEvents(level, boundedSymbolPositions, eventType)
 
-                const expected = [
-                    {
-                        level: Level.HIGH,
-                        type: EventType.MEAN,
-                        name: "|) )|)" as Name<Position>,
-                        cents: 28.95310116433255 as Cents,
-                    },
-                ]
-                expect(actual).toEqual(expected)
-            })
+                    const expected = [
+                        {
+                            level: Level.HIGH,
+                            type: EventType.MEAN,
+                            name: "|) )|)" as Name<Position>,
+                            cents: 28.95310116433255 as Cents,
+                        },
+                    ]
+                    expect(actual).toEqual(expected)
+                },
+            )
         })
 
         describe("for events of snapping to size category bound positions", () => {
@@ -199,15 +206,18 @@ describe("computeEvents", () => {
                 expect(actual).toEqual(expected)
             })
 
-            it("returns an empty array if there are no size category bounds between the position's bounded symbols", () => {
-                level = Level.ULTRA
-                boundedSymbolPositions = computeBoundedJiSymbolPositions(6.05 as Cents, level)
+            it(
+                `returns an empty array if there are no size category bounds between the position's bounded symbols`,
+                () => {
+                    level = Level.ULTRA
+                    boundedSymbolPositions = computeBoundedJiSymbolPositions(6.05 as Cents, level)
 
-                const actual = computeEvents(level, boundedSymbolPositions, eventType)
+                    const actual = computeEvents(level, boundedSymbolPositions, eventType)
 
-                const expected = [] as HistoricalEvent[]
-                expect(actual).toEqual(expected)
-            })
+                    const expected = [] as HistoricalEvent[]
+                    expect(actual).toEqual(expected)
+                },
+            )
         })
     })
 })

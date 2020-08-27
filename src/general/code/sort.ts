@@ -13,13 +13,14 @@ const sort = <T>(array: T[], { by, descending }: SortOptions = {}): T[] => {
                     sorter < nextSorter ? -1 : 0
         })
     } else {
-        (array as unknown[] as Array<number | string>).sort((element: number | string, nextElement: number | string) => {
-            return descending ?
-                nextElement > element ? 1 :
-                    nextElement < element ? -1 : 0 :
-                element > nextElement ? 1 :
-                    element < nextElement ? -1 : 0
-        })
+        (array as unknown[] as Array<number | string>)
+            .sort((element: number | string, nextElement: number | string) => {
+                return descending ?
+                    nextElement > element ? 1 :
+                        nextElement < element ? -1 : 0 :
+                    element > nextElement ? 1 :
+                        element < nextElement ? -1 : 0
+            })
     }
 
     return array

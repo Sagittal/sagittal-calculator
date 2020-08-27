@@ -18,7 +18,9 @@ import { computeFiveRoughPrimesToCheck } from "./fiveRoughPrimesToCheck"
 import { computePrimeExponentRange } from "./primeExponentRange"
 import { ComputeFiveSlicedMonzosToCheckOptions } from "./types"
 
-const computeFiveSlicedMonzosToCheck = ({ maxPrimeLimit, maxFiveRoughSopfr, maxFiveRoughCopfr, maxN2D3P9 }: ComputeFiveSlicedMonzosToCheckOptions = {}): Array<Monzo<5>> => {
+const computeFiveSlicedMonzosToCheck = (
+    { maxPrimeLimit, maxFiveRoughSopfr, maxFiveRoughCopfr, maxN2D3P9 }: ComputeFiveSlicedMonzosToCheckOptions = {},
+): Array<Monzo<5>> => {
     if (isUndefined(maxFiveRoughSopfr)) {
         if (isUndefined(maxPrimeLimit)) {
             if (isUndefined(maxFiveRoughCopfr)) {
@@ -35,7 +37,8 @@ const computeFiveSlicedMonzosToCheck = ({ maxPrimeLimit, maxFiveRoughSopfr, maxF
         [] as unknown[] as Monzo<5>,
     ]
 
-    const primeExponentExtremasGivenMaxN2D3P9: Array<Extrema<Exponent<Prime>>> | undefined = maxN2D3P9 && computePrimeExponentExtremasGivenMaxN2D3P9(maxN2D3P9)
+    const primeExponentExtremasGivenMaxN2D3P9: Array<Extrema<Exponent<Prime>>> | undefined =
+        maxN2D3P9 && computePrimeExponentExtremasGivenMaxN2D3P9(maxN2D3P9)
 
     const fiveRoughPrimesToCheck = computeFiveRoughPrimesToCheck({
         maxPrimeLimit,
@@ -44,19 +47,24 @@ const computeFiveSlicedMonzosToCheck = ({ maxPrimeLimit, maxFiveRoughSopfr, maxF
     })
 
     fiveRoughPrimesToCheck.forEach((fiveRoughPrimeToCheck, index) => {
-        const extendedFiveSlicedMonzosToCheck: Array<Monzo<5>> = computeExtensionBase(ExtensionBaseType.ARRAY) as Array<Monzo<5>>
+        const extendedFiveSlicedMonzosToCheck: Array<Monzo<5>> =
+            computeExtensionBase(ExtensionBaseType.ARRAY) as Array<Monzo<5>>
 
-        const primeExponentExtremaGivenMaxN2D3P9: Extrema<Exponent<Prime>> | undefined = primeExponentExtremasGivenMaxN2D3P9 && primeExponentExtremasGivenMaxN2D3P9[ index ]
+        const primeExponentExtremaGivenMaxN2D3P9: Extrema<Exponent<Prime>> | undefined =
+            primeExponentExtremasGivenMaxN2D3P9 && primeExponentExtremasGivenMaxN2D3P9[ index ]
 
         fiveSlicedMonzosToCheck.forEach(fiveSlicedMonzoToCheck => {
             const fiveRoughSopfr = computeSopfr([0, 0, ...fiveSlicedMonzoToCheck] as Monzo)
             const fiveRoughCopfr = computeCopfr([0, 0, ...fiveSlicedMonzoToCheck] as Monzo)
 
+            const adjustedMaxFiveRoughSopfr = maxFiveRoughSopfr && maxFiveRoughSopfr - fiveRoughSopfr as Max<Sopfr<5>>
+            const adjustedMaxFiveRoughCopfr = maxFiveRoughCopfr && maxFiveRoughCopfr - fiveRoughCopfr as Max<Copfr<5>>
+
             const termRange: Exponent<Prime>[] = computePrimeExponentRange(
                 fiveRoughPrimeToCheck,
                 {
-                    maxFiveRoughSopfr: maxFiveRoughSopfr ? maxFiveRoughSopfr - fiveRoughSopfr as Max<Sopfr<5>> : undefined, // this is where the max five rough sopfr is enforced
-                    maxFiveRoughCopfr: maxFiveRoughCopfr ? maxFiveRoughCopfr - fiveRoughCopfr as Max<Copfr<5>> : undefined,
+                    maxFiveRoughSopfr: adjustedMaxFiveRoughSopfr, // this is where the max five rough sopfr is enforced
+                    maxFiveRoughCopfr: adjustedMaxFiveRoughCopfr,
                     primeExponentExtremaGivenMaxN2D3P9,
                 },
             ) as Exponent<Prime>[]

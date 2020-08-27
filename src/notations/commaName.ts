@@ -40,7 +40,10 @@ const primeFactorizeCommaName = (numeratorOrDenominator: FractionalPart) => {
     return factorizedTerms.join(".")
 }
 
-const computeCommaName = (monzo: Monzo, { directed = true, factored = false, abbreviated = true } = {}): Name<SagittalComma> => {
+const computeCommaName = (
+    monzo: Monzo,
+    { directed = true, factored = false, abbreviated = true } = {},
+): Name<SagittalComma> => {
     const sub = computeIsSubMonzo(monzo)
 
     const superMonzo = computeSuperMonzo(monzo)
@@ -51,7 +54,9 @@ const computeCommaName = (monzo: Monzo, { directed = true, factored = false, abb
 
     const maybeDirectedRatio = directed ? ratio : computeUndirectedRatio(ratio)
     const maybeFlippedRatio = directed ? maybeDirectedRatio : [maybeDirectedRatio[ 1 ], maybeDirectedRatio[ 0 ]]
-    const stringifiedRatio = factored ? maybeFlippedRatio.map(primeFactorizeCommaName) : maybeFlippedRatio.map(n => n.toString())
+    const stringifiedRatio = factored ?
+        maybeFlippedRatio.map(primeFactorizeCommaName) :
+        maybeFlippedRatio.map(n => n.toString())
 
     const separator = directed ? "/" : ":"
     const formattedRatio = stringifiedRatio[ 1 ] === "1" ? stringifiedRatio[ 0 ] : stringifiedRatio.join(separator)

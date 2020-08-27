@@ -1,3 +1,5 @@
+// tslint:disable max-line-length
+
 import { Count, Rank } from "../../../../../src/general"
 import { BOUNDS } from "../../../../../src/notations/ji"
 import { analyzeBound } from "../../../../../src/scripts/analyzeBounds/bound"

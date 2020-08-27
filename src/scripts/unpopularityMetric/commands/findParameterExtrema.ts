@@ -1,5 +1,5 @@
 import "colors"
-import { isNumber, isUndefined, Max, Min } from "../../../general"
+import { Extrema, isNumber, isUndefined, Max, Min } from "../../../general"
 import { Metric } from "../bestMetric"
 import { DebugTarget, saveDebugMessage } from "../debug"
 import { Parameter, ParameterValue } from "../sumOfSquares"
@@ -9,7 +9,7 @@ applySharedUnpopularityMetricCommandSetup({ defaultDebugTargets: [DebugTarget.AL
 
 const chunkCountResults = load("metrics") as Record<string, Metric>
 
-const parameterExtrema = {} as Record<string, [Min<ParameterValue> | undefined, Max<ParameterValue> | undefined]> // TODO: could have an Extrema<> type which takes as a second argument whether it's open-ended or not
+const parameterExtrema = {} as Record<string, Extrema<ParameterValue, "open">>
 
 Object.values(Parameter).forEach(parameter => {
     if (parameter.includes("Base")) {

@@ -3,7 +3,11 @@ import { COLORS } from "./colors"
 import { formatLevel } from "./level"
 import { FORMATTED_RANK_NAMES } from "./rank"
 
-const formatLevelAnalysis = (level: Level, levelsBestHistoryRanks: { [ index: number ]: number | undefined }, levelsBestCumulativeHistoryRanks: { [ index: number ]: number }): string => {
+const formatLevelAnalysis = (
+    level: Level,
+    levelsBestHistoryRanks: { [ index: number ]: number | undefined },
+    levelsBestCumulativeHistoryRanks: { [ index: number ]: number },
+): string => {
     const formattedLevelAnalysis: string[] = [`${formatLevel(level)}            \there\tcmltv`]
 
     const levelsBestHistoryRanksEntries = Object.entries(levelsBestHistoryRanks) as unknown[] as Array<[number, number]>

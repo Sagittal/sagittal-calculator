@@ -42,7 +42,10 @@ interface BoundedSymbolIdWithDistances {
     inaDistance: Proportion,
 }
 
-type BoundedSymbolIdWithDistancesPair = [BoundedSymbolIdWithDistances | undefined, BoundedSymbolIdWithDistances | undefined]
+type BoundedSymbolIdWithDistancesPair = [
+        BoundedSymbolIdWithDistances | undefined,
+        BoundedSymbolIdWithDistances | undefined
+]
 
 type NeighborPositions = [Cents | undefined, Cents | undefined]
 type BoundedSymbolPositions = NeighborPositions

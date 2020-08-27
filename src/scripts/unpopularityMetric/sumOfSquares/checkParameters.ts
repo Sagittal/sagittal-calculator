@@ -34,21 +34,36 @@ const checkSubmetricsForInvalidParameterCombinations = (submetrics: Submetric[])
         }
 
         // canceling-out bases
-        if (!isUndefined(submetric[ Parameter.A_AS_LOGARITHM_BASE ]) && !isUndefined(submetric[ Parameter.A_AS_POWER_BASE ])) {
+        if (
+            !isUndefined(submetric[ Parameter.A_AS_LOGARITHM_BASE ]) &&
+            !isUndefined(submetric[ Parameter.A_AS_POWER_BASE ])
+        ) {
             throw new Error(`Submetric ${JSON.stringify(submetric)} cannot specify a to be both a logarithm base and a power base.`)
         }
-        if (!isUndefined(submetric[ Parameter.J_AS_LOGARITHM_BASE ]) && !isUndefined(submetric[ Parameter.J_AS_POWER_BASE ])) {
+        if (
+            !isUndefined(submetric[ Parameter.J_AS_LOGARITHM_BASE ]) &&
+            !isUndefined(submetric[ Parameter.J_AS_POWER_BASE ])
+        ) {
             throw new Error(`Submetric ${JSON.stringify(submetric)} cannot specify j to be both a logarithm base and a power base.`)
         }
-        if (!isUndefined(submetric[ Parameter.K_AS_LOGARITHM_BASE ]) && !isUndefined(submetric[ Parameter.K_AS_POWER_BASE ])) {
+        if (
+            !isUndefined(submetric[ Parameter.K_AS_LOGARITHM_BASE ]) &&
+            !isUndefined(submetric[ Parameter.K_AS_POWER_BASE ])
+        ) {
             throw new Error(`Submetric ${JSON.stringify(submetric)} cannot specify k to be both a logarithm base and a power base.`)
         }
-        if (!isUndefined(submetric[ Parameter.WEIGHT_AS_LOGARITHM_BASE ]) && !isUndefined(submetric[ Parameter.WEIGHT_AS_POWER_BASE ])) {
+        if (
+            !isUndefined(submetric[ Parameter.WEIGHT_AS_LOGARITHM_BASE ]) &&
+            !isUndefined(submetric[ Parameter.WEIGHT_AS_POWER_BASE ])
+        ) {
             throw new Error(`Submetric ${JSON.stringify(submetric)} cannot specify weight to be both a logarithm base and a power base.`)
         }
 
         // j and k both as coefficients
-        if (!isUndefined(submetric[ Parameter.J_AS_COEFFICIENT ]) && !isUndefined(submetric[ Parameter.K_AS_COEFFICIENT ])) {
+        if (
+            !isUndefined(submetric[ Parameter.J_AS_COEFFICIENT ]) &&
+            !isUndefined(submetric[ Parameter.K_AS_COEFFICIENT ])
+        ) {
             throw new Error(`Submetric ${JSON.stringify(submetric)} cannot specify both j and k of the same type (coefficient).`)
         }
 

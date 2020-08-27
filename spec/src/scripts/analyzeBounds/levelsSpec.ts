@@ -42,8 +42,10 @@ describe("updateLevelAnalysis", () => {
 
             updateLevelAnalysis(bestPossibleHistory)
 
-            expect((levelsBestHistoryRanks[ Level.MEDIUM ] as { [ index: number ]: number })[ 0 ]).toBe(formerMediumIna + 1)
-            expect((levelsBestHistoryRanks[ Level.HIGH ] as { [ index: number ]: number })[ 1 ]).toBe(formerHighMean + 1)
+            expect((levelsBestHistoryRanks[ Level.MEDIUM ] as { [ index: number ]: number })[ 0 ])
+                .toBe(formerMediumIna + 1)
+            expect((levelsBestHistoryRanks[ Level.HIGH ] as { [ index: number ]: number })[ 1 ])
+                .toBe(formerHighMean + 1)
         })
     })
 

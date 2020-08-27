@@ -5,11 +5,14 @@ import { LEVEL_HEIGHT, MARGIN, Y_SCALE } from "./sizes"
 
 const computeLevelHeights = (withinLevelHeight: number): Record<Level, Px> =>
     LEVELS.reduce(
-        (levelTops, level, levelIndex) =>
-            ({
+        (levelTops, level, levelIndex) => {
+            const levelHeight = computeReversedLevelIndex(levelIndex) + withinLevelHeight
+
+            return {
                 ...levelTops,
-                [ level ]: Y_SCALE * (MARGIN + (computeReversedLevelIndex(levelIndex) + withinLevelHeight) * LEVEL_HEIGHT) as Px,
-            }),
+                [ level ]: Y_SCALE * (MARGIN + levelHeight * LEVEL_HEIGHT) as Px,
+            }
+        },
         {} as Record<Level, Px>,
     )
 

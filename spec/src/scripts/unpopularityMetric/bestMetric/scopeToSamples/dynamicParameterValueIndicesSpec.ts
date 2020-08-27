@@ -33,18 +33,6 @@ describe("computeDynamicParameterValueIndices", () => {
             },
         ]
         const submetric: Submetric = {
-            // the order of the keys should not matter! that required a complete refactor from
-            /*
-                 Object.entries(submetric).forEach(([parameter, dynamicParameterValue]) => {
-                 const correspondingDynamicParameter = dynamicParameters.find(dynamicParameter => {
-                     return dynamicParameter.submetricIndex === submetricIndex && dynamicParameter.parameter === parameter
-                 })
-
-                 if (correspondingDynamicParameter) {
-                     const dynamicParameterValueIndex = correspondingDynamicParameter.values.indexOf(dynamicParameterValue)
-                     dynamicParameterValueIndices.push(dynamicParameterValueIndex)
-                 }
-             */
             [ Parameter.A_AS_COEFFICIENT ]: 0.69 as ParameterValue,
             [ Parameter.Y ]: 1.1 as ParameterValue,
         }

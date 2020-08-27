@@ -5,7 +5,10 @@ import { Sample } from "./scopeToSamples"
 import { computeSumOfSquaresAndMaybeUpdateBestMetric } from "./sumOfSquares"
 import { ComputeSumsOfSquaresAndMaybeUpdateBestMetricOptions, MetricName, SumsOfSquares } from "./types"
 
-const computeSumsOfSquaresAndMaybeUpdateBestMetric = async (samples: Sample[], options: ComputeSumsOfSquaresAndMaybeUpdateBestMetricOptions = {}): Promise<SumsOfSquares> => {
+const computeSumsOfSquaresAndMaybeUpdateBestMetric = async (
+    samples: Sample[],
+    options: ComputeSumsOfSquaresAndMaybeUpdateBestMetricOptions = {},
+): Promise<SumsOfSquares> => {
     const { indentation = "", onlyWinners = true, metricName = "" as MetricName } = options
 
     const sumsOfSquares: SumsOfSquares = []
@@ -15,7 +18,11 @@ const computeSumsOfSquaresAndMaybeUpdateBestMetric = async (samples: Sample[], o
             checkSubmetricsForInvalidParameterCombinations(samples[ 0 ].submetrics)
         } catch (e) {
             resolve(sumsOfSquares)
-            saveDebugMessage(`Not searching scope due to invalid parameter combinations: ${e.message}`, DebugTarget.ERRORS)
+            saveDebugMessage(
+                `Not searching scope due to invalid parameter combinations: ${e.message}`,
+                DebugTarget.ERRORS,
+            )
+
             return
         }
 

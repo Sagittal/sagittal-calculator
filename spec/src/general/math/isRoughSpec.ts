@@ -30,7 +30,7 @@ describe("isRough", () => {
         expect(actual).toBeTruthy()
     })
 
-    it("trying to find whatever edge cases causes this insanely faster implementation to disagree with the old way", () => {
+    it("another example", () => {
         const integer = 10 as Integer
         const roughness = 11 as Roughness
 

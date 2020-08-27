@@ -18,7 +18,22 @@ import { computeRoughNumberMonzo } from "./rough"
 import { computeSopfr } from "./sopfr"
 import { computeSuperMonzo } from "./superMonzo"
 import { computeTriangularNumber } from "./triangularNumber"
-import { abs, ceil, count, difference, floor, log, max, min, mod, negative, pow, round, sqrt, sum } from "./typedOperations"
+import {
+    abs,
+    ceil,
+    count,
+    difference,
+    floor,
+    log,
+    max,
+    min,
+    mod,
+    negative,
+    pow,
+    round,
+    sqrt,
+    sum,
+} from "./typedOperations"
 import {
     Base,
     Combination,

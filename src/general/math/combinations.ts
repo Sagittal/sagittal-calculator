@@ -2,7 +2,11 @@ import { computeDeepClone } from "../code"
 import { Count } from "../types"
 import { Combination, Combinations, Integer } from "./types"
 
-const computeCombinations = <T>(array: T[], count: Count<T>, { withRepeatedElements = false } = {}): Combinations<T> => {
+const computeCombinations = <T>(
+    array: T[],
+    count: Count<T>,
+    { withRepeatedElements = false } = {},
+): Combinations<T> => {
     if (withRepeatedElements) {
         return computeCombinationsWithRepetitions(array, count)
     }

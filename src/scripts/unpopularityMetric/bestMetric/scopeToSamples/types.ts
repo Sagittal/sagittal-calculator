@@ -30,11 +30,17 @@ type ComputeDynamicParameterScopeOptions = Partial<{
     center: ParameterValue,
 }>
 
+interface CombineSubmetricsPossibilitiesIntoSamplesOptions {
+    dynamicParameters: DynamicParameter[ ],
+    submetricsPossibilities: Array<Combination<SubmetricPossibility>>
+}
+
 export {
     ComputeDynamicParameterValueIndicesOptions,
     DynamicParameter,
     SubmetricPossibility,
     Sample,
     SamplePoint,
+    CombineSubmetricsPossibilitiesIntoSamplesOptions,
     ComputeDynamicParameterScopeOptions,
 }

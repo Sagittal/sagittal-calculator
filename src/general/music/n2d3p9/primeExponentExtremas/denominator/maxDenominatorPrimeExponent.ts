@@ -15,11 +15,14 @@ http://forum.sagittal.org/viewtopic.php?p=2295#p2295
 
 */
 
-const computeMaxDenominatorPrimeExponentGivenMaxN2D3P3 = (denominatorPrime: Prime<Denominator>, maxN2D3P9: Max<N2D3P9>): Max<Exponent<Prime<Denominator>>> => {
+const computeMaxDenominatorPrimeExponentGivenMaxN2D3P3 = (
+    denominatorPrime: Prime<Denominator>,
+    maxN2D3P9: Max<N2D3P9>,
+): Max<Exponent<Prime<Denominator>>> => {
     const sortedNumeratorPossibilitiesForDenominatorPrimeGivenMaxN2D3P9 =
         computeSortedNumeratorPossibilitiesForDenominatorPrimeGivenMaxN2D3P9(denominatorPrime, maxN2D3P9)
 
-    let candidateMaxDenominatorPrimeExponentGivenMaxN2D3P9: Max<Exponent<Prime<Denominator>>> = 1 as Max<Exponent<Prime<Denominator>>>
+    let candidateMaxDenominatorPrimeExponentGivenMaxN2D3P9 = 1 as Max<Exponent<Prime<Denominator>>>
     while (true) {
         const minN2D3P9ForCandidateMaxDenominatorPrimeExponentGivenMaxN2D3P9 =
             computeMinN2D3P9ForCandidateMaxDenominatorPrimeExponentGivenMaxN2D3P9({

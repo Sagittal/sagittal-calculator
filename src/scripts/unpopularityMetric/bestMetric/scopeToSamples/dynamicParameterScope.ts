@@ -8,7 +8,11 @@ const countDefinedOption = (option: unknown) => isUndefined(option) ? 0 : 1
 
 const computeDynamicParameterScope = (options: ComputeDynamicParameterScopeOptions): DynamicParameterScope => {
     const { max, min, center: centerOption, span: spanOption } = options
-    const definedOptionCount = countDefinedOption(max) + countDefinedOption(min) + countDefinedOption(centerOption) + countDefinedOption(spanOption)
+    const definedOptionCount =
+        countDefinedOption(max) +
+        countDefinedOption(min) +
+        countDefinedOption(centerOption) +
+        countDefinedOption(spanOption)
 
     if (definedOptionCount !== 2) {
         const providedOptions = Object.entries(options).map(([k, v]) => `${k} ${v}`).join(", ")

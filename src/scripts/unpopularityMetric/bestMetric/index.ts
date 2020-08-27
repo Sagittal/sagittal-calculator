@@ -5,6 +5,7 @@ import {
     DynamicParameterScope,
     Metric,
     MetricName,
+    ParameterScopes,
     Scope,
     SubmetricScope,
     SumOfSquares,
@@ -25,4 +26,5 @@ export {
     Sample,
     ComputeSumOrSumsOfSquaresOptions,
     MetricName,
+    ParameterScopes,
 }

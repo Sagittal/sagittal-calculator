@@ -37,15 +37,16 @@ const perfectMetric = async (metric: Metric, options: PerfectMetricOptions) => {
                         parameterValue,
                 }
             },
-            {},
+            {} as SubmetricScope,
         )
     }) as Combination<SubmetricScope>
 
-    const allBinsSubmetricScope: SubmetricScope = {}
+    const allBinsSubmetricScope: SubmetricScope = {} as SubmetricScope
     if (spreadDynamicParameters) {
         spreadDynamicParameters.forEach(spreadDynamicParameter => {
             const spreadDynamicParameterValue = spreadDynamicParameterValues[ spreadDynamicParameter ] as ParameterValue
-            allBinsSubmetricScope[ spreadDynamicParameter ] = computeDynamicParameterScopeForPerfecting(spreadDynamicParameterValue)
+            allBinsSubmetricScope[ spreadDynamicParameter ] =
+                computeDynamicParameterScopeForPerfecting(spreadDynamicParameterValue)
         })
     }
     scope.unshift(allBinsSubmetricScope)

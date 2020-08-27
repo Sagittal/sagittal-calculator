@@ -4,7 +4,10 @@ import { DynamicParameterScope, SubmetricScope } from "../types"
 import { computeParameterValues } from "./parameterValues"
 import { DynamicParameter } from "./types"
 
-const computeSubmetricDynamicParameters = (submetricScope: SubmetricScope = {}, submetricIndex: Index<Submetric>): DynamicParameter[] => {
+const computeSubmetricDynamicParameters = (
+    submetricScope: SubmetricScope = {} as SubmetricScope,
+    submetricIndex: Index<Submetric>,
+): DynamicParameter[] => {
     const submetricDynamicParameters: DynamicParameter[] = [] as DynamicParameter[]
 
     const submetricScopeEntries = Object.entries(submetricScope) as Array<[Parameter, DynamicParameterScope]>

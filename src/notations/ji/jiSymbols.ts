@@ -677,7 +677,7 @@ const JI_SYMBOLS: JiSymbol[] = [
         id: 67 as Id<JiSymbol>,
         ascii: "|\\" as SymbolLongAscii,
         unicode: "" as SymbolUnicode,
-        introducingLevel: Level.HIGH, // this is an exception. all other Athenian symbols already introduced at Medium precision
+        introducingLevel: Level.HIGH, // Exceptional. All other Athenian symbols already introduced at Medium precision.
         lowestSymbolSet: SymbolSet.ATHENIAN,
         mina: 65 as Mina,
         primaryCommaId: 67 as Id<SagittalComma>,

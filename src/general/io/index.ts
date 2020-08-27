@@ -3,6 +3,7 @@ import { formatMonzo } from "./formatMonzo"
 import { formatNumber } from "./formatNumber"
 import { formatRatio } from "./formatRatio"
 import { forumTable } from "./forumTable"
+import { computeMonzoFromCommand } from "./monzoFromCommand"
 import { parseMonzo } from "./parseMonzo"
 import { parseRatio } from "./parseRatio"
 import { alignTable } from "./textTable"
@@ -22,4 +23,5 @@ export {
     Formatted,
     Px,
     HexColor,
+    computeMonzoFromCommand,
 }

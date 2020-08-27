@@ -1,3 +1,5 @@
+// tslint:disable max-line-length
+
 import { Count } from "../../../../../../src/general"
 import { Scope } from "../../../../../../src/scripts/unpopularityMetric/bestMetric"
 import { scopesToSearch, solverStatus } from "../../../../../../src/scripts/unpopularityMetric/globals"
@@ -22,13 +24,21 @@ describe("populateScopes", () => {
         jasmine.DEFAULT_TIMEOUT_INTERVAL = originalJasmineTimeoutInterval
     })
 
-    it("given a chunk count, populates all possible distributions of all possible combinations of parameter chunks across bins corresponding to all possible combinations of submetric chunks - works for 1, where each possibility is just a single submetric chunk, plus an empty 'all bins' chunk because that's just how it works to be simple", async () => {
-        solverStatus.chunkCount = 1 as Count<Chunk>
+    it(
+        `given a chunk count, populates all possible distributions of all possible combinations of
+         parameter chunks across bins corresponding to all possible combinations of submetric chunks - 
+         works for 1, where each possibility is just a single submetric chunk, 
+         plus an empty 'all bins' chunk because that's just how it works to be simple`,
+        async () => {
+            solverStatus.chunkCount = 1 as Count<Chunk>
 
-        await populateScopes()
+            await populateScopes()
 
-        expect(scopesToSearch).toEqual(jasmine.arrayWithExactContents(SUBMETRIC_CHUNKS.map(chunk => [{}, chunk]))) // count: 6
-    })
+            // count: 6
+            expect(scopesToSearch).toEqual(jasmine.arrayWithExactContents(SUBMETRIC_CHUNKS.map(chunk => [{}, chunk])))
+
+        },
+    )
 
     // need to add the extra 7 bits (18 to 25) to each section below
     it("given a chunk count, populates all possible combinations of those parameters - works for 2", async () => {
@@ -38,11 +48,19 @@ describe("populateScopes", () => {
 
         await populateScopes()
 
+        // with repetitions is not useful when the chunk count for submetrics is more than 1 more than
+        // the chunk count for parameters (because then you're inevitably going to end up with two submetric scopes
+        // that are identical) (and wait no, it's even more complicated than that,
+        // because if you had 3 submetric chunks you could have 2 of them repeat and the 3rd was different,
+        // so just 1 parameter would be enough to differentiate the 2 same submetrics),
+        // but due to the complications that would arise from memoizing those separately
+        // I am just not going to deal with it
+
         const expected = [
             // submetrics: 2, parameters: 0
 
             // 6
-            [ // with repetitions is not useful when the chunk count for submetrics is more than 1 more than the chunk count for parameters (because then you're inevitably going to end up with two submetric scopes that are identical) (and wait no, it's even more complicated than that, because if you had 3 submetric chunks you could have 2 of them repeat and the 3rd was different, so just 1 parameter would be enough to differentiate the 2 same submetrics), but due to the complications that would arise from memoizing those separately I am just not going to deal with it
+            [
                 {},
                 { // SOAPFAR
                     [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],

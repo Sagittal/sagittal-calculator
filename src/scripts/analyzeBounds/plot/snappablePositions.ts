@@ -8,7 +8,9 @@ import {
 } from "../../../notations"
 import { EventType } from "../types"
 
-const computeSnappablePositions = (computeLevelSnappablePositions: (level: Level) => Position[]): Record<Level, Position[]> =>
+const computeSnappablePositions = (
+    computeLevelSnappablePositions: (level: Level) => Position[],
+): Record<Level, Position[]> =>
     LEVELS.reduce(
         (snappablePositions, level) =>
             ({
@@ -18,9 +20,12 @@ const computeSnappablePositions = (computeLevelSnappablePositions: (level: Level
         {} as Record<Level, Position[]>,
     )
 
-const INA_MIDPOINTS: Record<Level, Position[]> = computeSnappablePositions(computeInaMidpoints)
-const LEVELS_COMMA_MEANS: Record<Level, Position[]> = computeSnappablePositions(computeLevelCommaMeans)
-const LEVELS_SIZE_CATEGORY_BOUNDS: Record<Level, Position[]> = computeSnappablePositions(computeSizeCategoryBoundsWithinMaximumPosition)
+const INA_MIDPOINTS: Record<Level, Position[]> =
+    computeSnappablePositions(computeInaMidpoints)
+const LEVELS_COMMA_MEANS: Record<Level, Position[]> =
+    computeSnappablePositions(computeLevelCommaMeans)
+const LEVELS_SIZE_CATEGORY_BOUNDS: Record<Level, Position[]> =
+    computeSnappablePositions(computeSizeCategoryBoundsWithinMaximumPosition)
 
 const EVENT_TYPE_SNAPPABLE_POSITIONS: Record<EventType, Record<Level, Position[]>> = {
     [ EventType.INA ]: INA_MIDPOINTS,

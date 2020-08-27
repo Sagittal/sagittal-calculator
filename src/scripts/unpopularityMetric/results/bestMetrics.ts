@@ -327,7 +327,7 @@ const cwyks = {
 
 //
 
-// Douglas's first attempt at lowest 2- and 3-chunk - the 3-chunk one was claimed to have 0.008291286 but Dave rejected that saying it actually has 0.018902286543139548, which I could not recreate at the time but then later recreated
+// Douglas's first attempt at lowest 2- and 3-chunk
 // Thu Jul 09, 2020 9:21 am
 // http://forum.sagittal.org/viewtopic.php?p=2036#p2036
 const k = {

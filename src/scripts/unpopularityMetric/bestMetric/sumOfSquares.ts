@@ -7,7 +7,10 @@ import { Sample } from "./scopeToSamples"
 import { setSumOfSquaresAtSamplePoint } from "./setSumOfSquaresAtSamplePoint"
 import { ComputeSumOfSquaresAndMaybeUpdateBestMetricOptions, Metric, SumOfSquares } from "./types"
 
-const computeSumOfSquaresAndMaybeUpdateBestMetric = (sample: Sample, options: ComputeSumOfSquaresAndMaybeUpdateBestMetricOptions): Promise<void> => {
+const computeSumOfSquaresAndMaybeUpdateBestMetric = (
+    sample: Sample,
+    options: ComputeSumOfSquaresAndMaybeUpdateBestMetricOptions,
+): Promise<void> => {
     const { indentation, sumsOfSquares, index, onlyWinners, spreadDynamicParameters, metricName } = options
 
     return doOnNextEventLoop(() => {
@@ -40,7 +43,10 @@ const computeSumOfSquaresAndMaybeUpdateBestMetric = (sample: Sample, options: Co
 
             bestMetrics.set(metricName, metric)
 
-            saveDebugMessage(`${indentation}new best metric: ${JSON.stringify(bestMetrics.get(metricName))}`, DebugTarget.NEW_BEST_METRIC)
+            saveDebugMessage(
+                `${indentation}new best metric: ${JSON.stringify(bestMetrics.get(metricName))}`,
+                DebugTarget.NEW_BEST_METRIC,
+            )
         }
     }, index as number as Ms)
 }

@@ -1,6 +1,9 @@
 import { Cents, difference, Index } from "../../general"
 
-const computeNeighborPositionIndices = (position: Cents, sortedTargetPositions: Cents[]): [Index<Cents>, Index<Cents>] => {
+const computeNeighborPositionIndices = (
+    position: Cents,
+    sortedTargetPositions: Cents[],
+): [Index<Cents>, Index<Cents>] => {
     let index = 0 as Index<Cents>
     let target = sortedTargetPositions[ index ]
     while (target < position) {

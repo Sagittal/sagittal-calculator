@@ -16,7 +16,10 @@ import { Chunk } from "../types"
 import { populateScope } from "./scope"
 import { PopulateScopesForSubmetricChunkCombinationOptions } from "./types"
 
-const populateScopesForSubmetricChunkCombination = async (submetricChunkCombination: Combination<Chunk<Submetric>>, options: PopulateScopesForSubmetricChunkCombinationOptions): Promise<void> => {
+const populateScopesForSubmetricChunkCombination = async (
+    submetricChunkCombination: Combination<Chunk<Submetric>>,
+    options: PopulateScopesForSubmetricChunkCombinationOptions,
+): Promise<void> => {
     const {
         parameterChunkCombinations,
         parameterChunkCombinationIndex = 0,
@@ -28,7 +31,10 @@ const populateScopesForSubmetricChunkCombination = async (submetricChunkCombinat
 
     const parameterChunkCombination: Combination<Chunk> = parameterChunkCombinations[ parameterChunkCombinationIndex ]
 
-    const parameterChunkCombinationDistributions = computeDistributions(parameterChunkCombination, count(submetricChunkCombination) as Count as Count<DistributionBin<Chunk<Parameter>>>)
+    const parameterChunkCombinationDistributions = computeDistributions(
+        parameterChunkCombination,
+        count(submetricChunkCombination) as Count as Count<DistributionBin<Chunk<Parameter>>>,
+    )
 
     parameterChunkCombinationDistributions.forEach(parameterChunkCombinationDistribution => {
         const scope: Scope = submetricChunkCombination.map((submetricChunkBin, index) => {

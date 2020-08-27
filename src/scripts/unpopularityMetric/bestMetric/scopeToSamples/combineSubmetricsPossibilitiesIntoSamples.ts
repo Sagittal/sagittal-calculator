@@ -1,9 +1,11 @@
 import { Combination, computeExtensionBase, ExtensionBaseType, Index } from "../../../../general"
 import { ParameterValue, Submetric } from "../../sumOfSquares"
 import { computeDynamicParameterValueIndices } from "./dynamicParameterValueIndices"
-import { DynamicParameter, Sample, SamplePoint, SubmetricPossibility } from "./types"
+import { CombineSubmetricsPossibilitiesIntoSamplesOptions, Sample, SamplePoint, SubmetricPossibility } from "./types"
 
-const combineSubmetricsPossibilitiesIntoSamples = ({ submetricsPossibilities, dynamicParameters }: { dynamicParameters: DynamicParameter[], submetricsPossibilities: Array<Combination<SubmetricPossibility>> }): Sample[] => {
+const combineSubmetricsPossibilitiesIntoSamples = (
+    { submetricsPossibilities, dynamicParameters }: CombineSubmetricsPossibilitiesIntoSamplesOptions,
+): Sample[] => {
     let samples: Sample[] = [{
         submetrics: [] as unknown[] as Combination<Submetric>,
         samplePoint: [] as unknown[] as SamplePoint,
@@ -45,7 +47,10 @@ const combineSubmetricsPossibilitiesIntoSamples = ({ submetricsPossibilities, dy
             })
 
             allBinMergedSamples.push({
-                submetrics: submetrics.map(submetric => ({ ...submetric, ...theAllBinSubmetricPossibility }) as Submetric) as Combination<Submetric>,
+                submetrics: submetrics.map(submetric => ({
+                    ...submetric,
+                    ...theAllBinSubmetricPossibility,
+                }) as Submetric) as Combination<Submetric>,
                 samplePoint: [...dynamicParameterValueIndices, ...samplePoint] as SamplePoint,
             })
         })

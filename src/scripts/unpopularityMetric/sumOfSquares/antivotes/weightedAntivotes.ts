@@ -12,7 +12,10 @@ const computeWeightedAntivotes = (antivotes: Antivotes, options: ComputeWeighted
     let weightedAntivotes = antivotes
 
     if (!isUndefined(logarithmBase)) {
-        weightedAntivotes = log(weightedAntivotes as number as Power, logarithmBase as number as Base) as number as Antivotes
+        weightedAntivotes = log(
+            weightedAntivotes as number as Power,
+            logarithmBase as number as Base,
+        ) as number as Antivotes
     }
     if (!isUndefined(powerExponent)) {
         weightedAntivotes = weightedAntivotes ** powerExponent as Antivotes

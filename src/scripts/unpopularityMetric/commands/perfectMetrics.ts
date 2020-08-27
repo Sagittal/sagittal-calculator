@@ -34,7 +34,10 @@ perfectMetrics(Object.values(bestMetricsToBePerfected)).then(() => {
 
     const endTime = performance.now() as Ms
     if (time) {
-        saveDebugMessage(`\n\nPERFECTING METRICS TOOK ${formatTime(difference(endTime, startTime))}`, DebugTarget.FINAL_PERFECTER_RESULTS)
+        saveDebugMessage(
+            `\n\nPERFECTING METRICS TOOK ${formatTime(difference(endTime, startTime))}`,
+            DebugTarget.FINAL_PERFECTER_RESULTS,
+        )
     }
     saveDebugMessage(`MAX UNIT ${unpopularityMetricSettings.maxUnit}`, DebugTarget.FINAL_PERFECTER_RESULTS)
     saveDebugMessage(`Z ${unpopularityMetricSettings.z}`, DebugTarget.FINAL_PERFECTER_RESULTS)

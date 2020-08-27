@@ -1,4 +1,5 @@
 import { Resolution, Span } from "../../../../../../src/general"
+import { SubmetricScope } from "../../../../../../src/scripts/unpopularityMetric/bestMetric"
 import { computeSubmetricPossibilities } from "../../../../../../src/scripts/unpopularityMetric/bestMetric/scopeToSamples/submetricPossibilities"
 import { Parameter, ParameterValue } from "../../../../../../src/scripts/unpopularityMetric/sumOfSquares"
 
@@ -15,7 +16,7 @@ describe("computeSubmetricPossibilities", () => {
                 span: 0.2 as Span<ParameterValue>,
                 resolution: 3 as Resolution<ParameterValue>,
             },
-        }
+        } as SubmetricScope
 
         const actual = computeSubmetricPossibilities(submetricScope)
 
@@ -51,7 +52,7 @@ describe("computeSubmetricPossibilities", () => {
                 span: 0.2 as Span<ParameterValue>,
                 resolution: 0 as Resolution<ParameterValue>,
             },
-        }
+        } as SubmetricScope
 
         const actual = computeSubmetricPossibilities(submetricScope)
 
@@ -73,7 +74,7 @@ describe("computeSubmetricPossibilities", () => {
                 resolution: 5 as Resolution<ParameterValue>,
             },
             [ Parameter.W ]: 0.7 as ParameterValue,
-        }
+        } as SubmetricScope
 
         const actual = computeSubmetricPossibilities(submetricScopes)
 

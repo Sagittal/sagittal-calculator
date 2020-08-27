@@ -9,7 +9,8 @@ applySharedUnpopularityMetricCommandSetup()
 const metricsMissingSpreadDynamicParameters = load("metrics") as Record<string, Metric>
 
 const guessedBackfilledSpreadDynamicParametersMetrics = Object.entries(metricsMissingSpreadDynamicParameters).reduce(
-    (guessedBackfilledSpreadDynamicParametersMetrics: Record<string, Metric>, [metricName, metric]: [string, Metric]) => {
+    (guessedBackfilledSpreadDynamicParametersMetrics: Record<string, Metric>, metricEntry: [string, Metric]) => {
+        const [metricName, metric] = metricEntry
         const parameterValues: Partial<Record<Parameter, ParameterValue>> = {}
 
         let spreadDynamicParameters: Parameter[] | undefined = undefined

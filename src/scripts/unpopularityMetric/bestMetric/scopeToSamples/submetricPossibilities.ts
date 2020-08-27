@@ -4,13 +4,17 @@ import { DynamicParameterScope, SubmetricScope } from "../types"
 import { computeParameterValues } from "./parameterValues"
 import { SubmetricPossibility } from "./types"
 
-const computeSubmetricPossibilities = (submetricScope: SubmetricScope = {}): Combination<SubmetricPossibility> => {
-    let submetricPossibilities: Combination<SubmetricPossibility> = [computeExtensionBase(ExtensionBaseType.OBJECT)] as Combination<SubmetricPossibility>
+const computeSubmetricPossibilities = (
+    submetricScope: SubmetricScope = {} as SubmetricScope,
+): Combination<SubmetricPossibility> => {
+    let submetricPossibilities: Combination<SubmetricPossibility> =
+        [computeExtensionBase(ExtensionBaseType.OBJECT)] as Combination<SubmetricPossibility>
 
     const submetricScopeEntries = Object.entries(submetricScope) as Array<[Parameter, DynamicParameterScope]>
 
     submetricScopeEntries.forEach(([parameter, parameterScope]: [Parameter, DynamicParameterScope]) => {
-        const extendedSubmetricPossibilities: Combination<SubmetricPossibility> = [] as unknown[] as Combination<SubmetricPossibility>
+        const extendedSubmetricPossibilities: Combination<SubmetricPossibility> =
+            [] as unknown[] as Combination<SubmetricPossibility>
 
         let values: ParameterValue[]
         if (typeof parameterScope !== "object") {

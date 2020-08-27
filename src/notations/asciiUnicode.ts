@@ -1,4 +1,4 @@
-import { JiSymbol, JI_SYMBOLS } from "./ji"
+import { JI_SYMBOLS, JiSymbol } from "./ji"
 import { SymbolLongAscii, SymbolUnicode } from "./types"
 
 const unicodeFromAscii = (ascii: SymbolLongAscii): SymbolUnicode => {

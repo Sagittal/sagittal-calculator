@@ -16,7 +16,10 @@ import {
 } from "../../general"
 import { ComputePrimeExponentRangeOptions } from "./types"
 
-const computePrimeExponentRange = (prime: Prime, options: ComputePrimeExponentRangeOptions = {}): Range<Exponent<Prime>> => {
+const computePrimeExponentRange = (
+    prime: Prime,
+    options: ComputePrimeExponentRangeOptions = {},
+): Range<Exponent<Prime>> => {
     const {
         maxFiveRoughSopfr = Infinity as Sopfr<5>,
         maxFiveRoughCopfr = Infinity as Copfr<5>,
@@ -27,7 +30,8 @@ const computePrimeExponentRange = (prime: Prime, options: ComputePrimeExponentRa
         throw new Error("The range must be limited somehow.")
     }
 
-    const [minPrimeExponentGivenMaxN2D3P9, maxPrimeExponentGivenMaxN2D3P9]: Extrema<Exponent<Prime>> = primeExponentExtremaGivenMaxN2D3P9 || [-Infinity, Infinity] as Extrema<Exponent<Prime>>
+    const [minPrimeExponentGivenMaxN2D3P9, maxPrimeExponentGivenMaxN2D3P9]: Extrema<Exponent<Prime>> =
+    primeExponentExtremaGivenMaxN2D3P9 || [-Infinity, Infinity] as Extrema<Exponent<Prime>>
 
     // TODO: also take integerDivide from Musical Pattern's utilities repo
     //  for places where you're using floor on a division

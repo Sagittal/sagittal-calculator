@@ -1,5 +1,5 @@
 import { Index } from "../types"
-import { Base, Integer, Prime, Ratio, Roughness } from "./types"
+import { Base, Integer, Prime, Roughness } from "./types"
 
 const FIVE_PRIME_INDEX: Index<Prime> = 2 as Index<Prime>
 

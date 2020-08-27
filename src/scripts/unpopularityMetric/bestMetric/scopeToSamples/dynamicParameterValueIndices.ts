@@ -2,7 +2,9 @@ import { Index } from "../../../../general"
 import { Parameter, ParameterValue } from "../../sumOfSquares"
 import { ComputeDynamicParameterValueIndicesOptions, DynamicParameter } from "./types"
 
-const computeDynamicParameterValueIndices = ({ dynamicParameters, submetric, submetricIndex }: ComputeDynamicParameterValueIndicesOptions): Array<Index<ParameterValue>> => {
+const computeDynamicParameterValueIndices = (
+    { dynamicParameters, submetric, submetricIndex }: ComputeDynamicParameterValueIndicesOptions,
+): Array<Index<ParameterValue>> => {
     const dynamicParameterValueIndices: Array<Index<ParameterValue>> = []
 
     dynamicParameters.forEach((dynamicParameter: DynamicParameter) => {
@@ -13,7 +15,8 @@ const computeDynamicParameterValueIndices = ({ dynamicParameters, submetric, sub
         const submetricEntries = Object.entries(submetric) as Array<[Parameter, ParameterValue]>
         submetricEntries.forEach(([parameter, dynamicParameterValue]) => {
             if (dynamicParameter.parameter === parameter) {
-                const dynamicParameterValueIndex: Index<ParameterValue> = dynamicParameter.values.indexOf(dynamicParameterValue) as Index<ParameterValue>
+                const dynamicParameterValueIndex: Index<ParameterValue> =
+                    dynamicParameter.values.indexOf(dynamicParameterValue) as Index<ParameterValue>
                 dynamicParameterValueIndices.push(dynamicParameterValueIndex)
             }
         })

@@ -1,5 +1,5 @@
 import { alignTable, forumTable } from "../../../general"
-import { formatComma, NamedComma, SagittalComma } from "../../../notations"
+import { formatComma, NamedComma } from "../../../notations"
 import { FIND_COMMAS_HEADER_ROW } from "./headerRow"
 
 const formatCommas = (commas: NamedComma[], { forForum = false }: { forForum?: boolean } = {}): string => {

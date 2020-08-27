@@ -9,17 +9,21 @@ type NumeratorPossibilityWithLesserGpfThanDenominatorPrime = NumeratorPossibilit
 type NumeratorPossibilityWithGreaterGpfThanDenominatorPrime = NumeratorPossibilityGivenMaxN2D3P3 &
     { _WithGreaterGpfThanDenominatorPrimeBrand: "WithGreaterGpfThanDenominatorPrime" }
 
-interface SortedNumeratorPossibilityWithLesserGpfThanDenominatorPrimeIncludingN2 extends NumeratorPossibilityWithLesserGpfThanDenominatorPrime {
+interface SortedNumeratorPossibilityWithLesserGpfThanDenominatorPrimeIncludingN2
+    extends NumeratorPossibilityWithLesserGpfThanDenominatorPrime {
     n2: N2,
 }
 
-interface SortedNumeratorPossibilityWithGreaterGpfThanDenominatorPrimeIncludingN2P extends NumeratorPossibilityWithGreaterGpfThanDenominatorPrime {
+interface SortedNumeratorPossibilityWithGreaterGpfThanDenominatorPrimeIncludingN2P
+    extends NumeratorPossibilityWithGreaterGpfThanDenominatorPrime {
     n2p: N2P,
 }
 
 interface SortedNumeratorPossibilitiesForDenominatorPrimeGivenMaxN2D3P9 {
-    sortedNumeratorPossibilitiesGivenMaxN2D3P9WithLesserGpfThanDenominatorPrimeSortedByN2: SortedNumeratorPossibilityWithLesserGpfThanDenominatorPrimeIncludingN2[],
-    sortedNumeratorPossibilitiesGivenMaxN2D3P9WithGreaterGpfThanDenominatorPrimeSortedByN2P: SortedNumeratorPossibilityWithGreaterGpfThanDenominatorPrimeIncludingN2P[],
+    sortedNumeratorPossibilitiesGivenMaxN2D3P9WithLesserGpfThanDenominatorPrimeSortedByN2:
+        SortedNumeratorPossibilityWithLesserGpfThanDenominatorPrimeIncludingN2[],
+    sortedNumeratorPossibilitiesGivenMaxN2D3P9WithGreaterGpfThanDenominatorPrimeSortedByN2P:
+        SortedNumeratorPossibilityWithGreaterGpfThanDenominatorPrimeIncludingN2P[],
 }
 
 interface ComputeSortedNumeratorPossibilitiesOptions {

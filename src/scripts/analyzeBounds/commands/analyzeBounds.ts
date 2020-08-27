@@ -4,13 +4,7 @@ import { BOUNDS } from "../../../notations"
 import { analyzeBound } from "../bound"
 import { BOUNDS_ANALYSIS_TEXT_FILE, BOUNDS_ANALYSIS_VISUALIZATION_FILE } from "../constants"
 import { updateFile } from "../file"
-import {
-    AnalysisMode,
-    BOUNDS_ANALYSIS_HEADER_ROW,
-    formatBound,
-    formatLevelAnalyses,
-    formatRankAnalyses,
-} from "../io"
+import { AnalysisMode, BOUNDS_ANALYSIS_HEADER_ROW, formatBound, formatLevelAnalyses, formatRankAnalyses } from "../io"
 import { computeHistories } from "../plot"
 import { AnalyzedBound } from "../types"
 import { visualizeBounds } from "../visualize"

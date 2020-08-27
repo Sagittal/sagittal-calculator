@@ -2,7 +2,10 @@ import { abs, computeMonzoInZone, computePlusOrMinusRange, Monzo } from "../../g
 import { analyzeComma, NamedComma } from "../../notations"
 import { ComputeCommasFromFiveSlicedMonzoOptions } from "./types"
 
-const computeCommasFromFiveSlicedMonzo = (fiveSlicedMonzo: Monzo<5>, options: ComputeCommasFromFiveSlicedMonzoOptions): NamedComma[] => {
+const computeCommasFromFiveSlicedMonzo = (
+    fiveSlicedMonzo: Monzo<5>,
+    options: ComputeCommasFromFiveSlicedMonzoOptions,
+): NamedComma[] => {
     const {
         minCents,
         maxCents,
