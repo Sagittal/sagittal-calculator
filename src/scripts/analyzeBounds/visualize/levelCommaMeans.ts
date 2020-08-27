@@ -1,5 +1,5 @@
 import { Position } from "../../../general"
-import { Level, unicodeFromAscii } from "../../../notations"
+import { Level, SymbolLongAscii, unicodeFromAscii } from "../../../notations"
 import { LEVELS_COMMA_MEANS } from "../plot"
 import { MEAN_COLOR } from "./colors"
 import { LEVEL_CENTERS } from "./levelHeights"
@@ -22,7 +22,7 @@ const visualizeLevelCommaMeans = () => {
         levelCommaMeans.forEach(levelCommaMean => {
             const { cents, name } = levelCommaMean
 
-            const formattedName = name.split(" ").map(unicodeFromAscii).join("   ")
+            const formattedName = name.split(" ").map(ascii => unicodeFromAscii(ascii as SymbolLongAscii)).join("   ")
             const positionX = computeX(cents)
 
             levelCommaMeanElements.push(`  <line stroke-dasharray="${DASH_SIZE}" stroke="${MEAN_COLOR}" x1="${positionX}" x2="${positionX}" y1="${topY}" y2="${bottomY}"/>\n`)

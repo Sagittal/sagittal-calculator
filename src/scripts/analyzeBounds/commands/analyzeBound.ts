@@ -2,8 +2,8 @@ import "colors"
 import { program } from "commander"
 import { BOUNDS } from "../../../notations"
 import { analyzeBound } from "../bound"
+import { AnalysisMode, formatBound } from "../io"
 import { computeHistories } from "../plot"
-import { AnalysisMode, presentBound } from "../present"
 
 program.parse(process.argv)
 
@@ -15,7 +15,7 @@ if (bound) {
     const histories = computeHistories(bound)
     const analyzedBound = analyzeBound(histories, bound)
 
-    console.log(presentBound(analyzedBound, { bound, mode: AnalysisMode.DETAILS }))
+    console.log(formatBound(analyzedBound, { bound, mode: AnalysisMode.DETAILS }))
 } else {
     throw new Error(`Could not find bound with ID ${boundId}`)
 }

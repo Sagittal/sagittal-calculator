@@ -2,7 +2,7 @@ import { ApotomeSlope, Cents, Copfr, Exponent, Extrema, Max, Min, Monzo, N2D3P9,
 
 interface ComputeCommasOptions extends ComputeCommasFromFiveSlicedMonzoOptions, ComputeFiveSlicedMonzosToCheckOptions {
     fiveSlicedMonzo?: Monzo<5>,
-    sortKey: string, // TODO: a type for keys
+    sortKey: string, // TODO: a type for keys, and then further string types, like file text
 }
 
 type ComputeCommasFromFiveSlicedMonzoOptions = Partial<{

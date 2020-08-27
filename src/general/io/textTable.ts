@@ -1,6 +1,6 @@
 import { Justification, JustificationOption } from "./types"
 
-const computeColumnWidths = (data: string[], columnRange: number[]) =>
+const computeColumnWidths = (data: string[], columnRange: number[]): number[] =>
     columnRange.map(columnIndex =>
         data.reduce(
             (columnWidth, row) => {

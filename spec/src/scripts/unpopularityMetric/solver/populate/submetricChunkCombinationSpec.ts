@@ -9,7 +9,7 @@ import { Parameter, Submetric } from "../../../../../../src/scripts/unpopularity
 describe("populateScopesForSubmetricChunkCombination", () => {
     // TODO: really need to do something about these long test descriptions and multi-lining them;
     //  but we may as well wait for the day we add that linting rule
-    it("for the given submetric chunk combination, proceeds through each of the parameter chunk combinations, for each one computing all possible distributions across the submetric bins of this submetric chunk combination, and for each distribution populating a scope which is the merger of it with the submetrics, also handling how the first submetric bin actually represents the parameters which should be distributed to every submetric", async () => {
+    it("for the given submetric chunk combination, proceeds through each of the parameter chunk combinations, for each one computing all possible distributions across the submetric bins of this submetric chunk combination, and for each distribution populating a scope which is the merger of it with the submetrics, also handling how the first submetric bin actually reformats the parameters which should be distributed to every submetric", async () => {
         const submetricChunkCombination: Combination<Chunk<Submetric>> = [
             // (the "all submetrics" bin, call it "AB")
             {},

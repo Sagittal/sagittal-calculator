@@ -2,7 +2,7 @@ import { program } from "commander"
 import { parseMonzo } from "../../../general"
 import { MAX_POSITION } from "../../../notations"
 import { computeCommas } from "../commas"
-import { presentCommas } from "../present"
+import { formatCommas } from "../io"
 
 program
     .option("-l, --min-cents <minCents>", "min cents", parseFloat)
@@ -40,4 +40,4 @@ const commas = computeCommas({
     fiveSlicedMonzo,
     sortKey,
 })
-console.log(presentCommas(commas))
+console.log(formatCommas(commas))

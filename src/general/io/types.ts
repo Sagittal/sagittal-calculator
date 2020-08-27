@@ -1,3 +1,5 @@
+type Formatted<T> = string & { _FormattedBrand: T }
+
 enum Justification {
     LEFT = "left",
     RIGHT = "right",
@@ -9,4 +11,5 @@ type JustificationOption = Justification | Array<Justification | undefined>
 export {
     Justification,
     JustificationOption,
+    Formatted,
 }

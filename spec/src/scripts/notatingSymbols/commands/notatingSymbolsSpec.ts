@@ -9,7 +9,7 @@ describe("notating-symbols", () => {
 
         const actual = runCommandAndGetConsoleOutput(command)
 
-        // TODO: it might be nice to share the logic from presentSymbolAscii
+        // TODO: it might be nice to share the logic from formatSymbolAscii
         //  for centering symbols on shafts, ratios on slash, and monzos on terms
         //  into the alignTable method
 

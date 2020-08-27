@@ -24,7 +24,7 @@ console.log("[tr][th]pitch[/th][th][/th][th][/th][th]symbol[/th][th][/th][th]Sca
 console.log("[tr][th]ratio[/th][th][/th][th][/th][th]subset[/th][th]N2D3P9[/th][th]archive[/th][th]archive[/th][/tr]")
 console.log("[tr][th]class[/th][th]N2D3P9[/th][th]symbol[/th][th]indices[/th][th]rank[/th][th]rank[/th][th]occurrences[/th][/tr]")
 popularRatios.forEach(result => {
-    const { presentedN2D3P9, presentedRatio, rank: estimatedRank, popularityRank: actualRank, symbolSets, smileys, votes } = result
-    console.log(`[tr][td]${presentedRatio}[/td][td]${presentedN2D3P9}[/td][td]${smileys}[/td][td]${symbolSets}[/td][td]${estimatedRank}[/td][td]${actualRank}[/td][td]${votes}[/td][/tr]`)
+    const { formattedN2D3P9, formattedRatio, rank: estimatedRank, popularityRank: actualRank, symbolSets, smileys, votes } = result
+    console.log(`[tr][td]${formattedRatio}[/td][td]${formattedN2D3P9}[/td][td]${smileys}[/td][td]${symbolSets}[/td][td]${estimatedRank}[/td][td]${actualRank}[/td][td]${votes}[/td][/tr]`)
 })
 console.log(`[/table]`)

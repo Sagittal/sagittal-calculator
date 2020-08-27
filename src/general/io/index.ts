@@ -1,21 +1,23 @@
-import { PRESENTATIONAL_PRECISION } from "./constants"
+import { FORMATATIONAL_PRECISION } from "./constants"
+import { formatMonzo } from "./formatMonzo"
+import { formatNumber } from "./formatNumber"
+import { formatRatio } from "./formatRatio"
 import { forumTable } from "./forumTable"
 import { parseMonzo } from "./parseMonzo"
 import { parseRatio } from "./parseRatio"
-import { presentMonzo } from "./presentMonzo"
-import { presentNumber } from "./presentNumber"
-import { presentRatio } from "./presentRatio"
 import { alignTable } from "./textTable"
-import { presentTime } from "./time"
+import { formatTime } from "./time"
+import { Formatted } from "./types"
 
 export {
-    presentRatio,
-    presentMonzo,
-    presentNumber,
+    formatRatio,
+    formatMonzo,
+    formatNumber,
     forumTable,
     alignTable,
-    presentTime,
+    formatTime,
     parseMonzo,
     parseRatio,
-    PRESENTATIONAL_PRECISION,
+    FORMATATIONAL_PRECISION,
+    Formatted,
 }

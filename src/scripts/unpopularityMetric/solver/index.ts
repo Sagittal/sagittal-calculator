@@ -1,15 +1,15 @@
-import { formatBestMetrics, presentBestMetrics, presentSearchedAndPopulated, unformat } from "./io"
+import { computeSortedBestMetrics, formatBestMetrics, formatSearchedAndPopulated, unformatParameters } from "./io"
 import { populateAndSearchScopesAndPerfectMetrics } from "./populateAndSearchScopesAndPerfectMetrics"
 import { searchScopes } from "./search"
 import { Chunk, SolverStatus } from "./types"
 
 export {
-    presentSearchedAndPopulated,
+    formatSearchedAndPopulated,
     searchScopes,
     Chunk,
     populateAndSearchScopesAndPerfectMetrics,
     SolverStatus,
-    presentBestMetrics,
+    computeSortedBestMetrics,
     formatBestMetrics,
-    unformat,
+    unformatParameters,
 }

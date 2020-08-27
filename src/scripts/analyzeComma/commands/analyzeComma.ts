@@ -1,6 +1,6 @@
 import { program } from "commander"
 import { computeMonzoFromRatio, parseMonzo, parseRatio } from "../../../general"
-import { analyzeComma, presentComma } from "../../../notations"
+import { analyzeComma, formatComma } from "../../../notations"
 
 program
     .option("-m, --monzo <monzo>", "monzo", parseMonzo)
@@ -29,4 +29,4 @@ if (!monzo) {
 
 const analyzedComma = analyzeComma(monzo)
 
-console.log(presentComma(analyzedComma, { mode: "details" }))
+console.log(formatComma(analyzedComma, { mode: "details" }))

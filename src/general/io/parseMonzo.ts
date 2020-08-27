@@ -1,4 +1,6 @@
-const parseMonzo = (monzoString: string) => {
+import { Monzo } from "../math"
+
+const parseMonzo = (monzoString: string): Monzo => {
     const preparsedMonzoString = monzoString
         .replace("⟩", "]")
         .replace(">", "]")

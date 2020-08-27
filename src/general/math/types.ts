@@ -1,5 +1,6 @@
 import { Count, Sum } from "../types"
 
+// TODO: you might want to bring in type guards and a test (not full-blown anti.test!) that Integer (and Omit) works
 type Integer = number & { _IntegerBrand: "Integer" }
 type Prime<T = void> = Integer & { _PrimeBrand: "Prime" } & (T extends void ? {} : T & { _PrimeOfBrand: T })
 type Roughness = Integer & { _RoughnessBrand: "Roughness" }

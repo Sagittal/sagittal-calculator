@@ -2,7 +2,7 @@ import { Count } from "../../../../general"
 import { nonRecursiveSearchScopeAndMaybeUpdateBestMetric, Scope } from "../../bestMetric"
 import { DebugTarget, saveDebugMessage } from "../../debug"
 import { scopesToSearch, solverStatus } from "../../globals"
-import { presentPercentage, presentSearchedAndPopulated } from "../io"
+import { formatPercentage, formatSearchedAndPopulated } from "../io"
 
 const searchPopulatedScopes = async () => {
     const scope = scopesToSearch.pop() as Scope
@@ -22,7 +22,7 @@ const searchPopulatedScopes = async () => {
 
     solverStatus.searchedScopeCount = solverStatus.searchedScopeCount + 1 as Count<Scope>
 
-    saveDebugMessage(`searched out of populated: ${presentPercentage(solverStatus.searchedScopeCount, solverStatus.populatedScopeCount)} ${presentSearchedAndPopulated()}`, DebugTarget.SEARCH)
+    saveDebugMessage(`searched out of populated: ${formatPercentage(solverStatus.searchedScopeCount, solverStatus.populatedScopeCount)} ${formatSearchedAndPopulated()}`, DebugTarget.SEARCH)
 }
 
 export {

@@ -1,5 +1,5 @@
 import { program } from "commander"
-import { Combination, presentRatio, Ratio } from "../../../general"
+import { Combination, formatRatio, Ratio } from "../../../general"
 import { DebugTarget, saveDebugMessage } from "../debug"
 import { computeAntivotes, Submetric } from "../sumOfSquares"
 import { applySharedUnpopularityMetricCommandSetup, load } from "./shared"
@@ -14,4 +14,4 @@ const fiveRoughRatio: Ratio = [11, 7] as Ratio
 
 const antivotes = computeAntivotes(fiveRoughRatio, submetrics)
 
-saveDebugMessage(`${presentRatio(fiveRoughRatio)}\n${JSON.stringify(submetrics)}\n${antivotes}`, DebugTarget.ANTIVOTES)
+saveDebugMessage(`${formatRatio(fiveRoughRatio)}\n${JSON.stringify(submetrics)}\n${antivotes}`, DebugTarget.ANTIVOTES)

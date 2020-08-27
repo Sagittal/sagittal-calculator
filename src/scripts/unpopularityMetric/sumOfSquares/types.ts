@@ -26,11 +26,11 @@ enum Parameter {
     A_AS_POWER_EXPONENT = "aAsPowerExponent",               // power exponent used for prime
     A_AS_POWER_BASE = "aAsPowerBase",                       // power base used for prime
     W = "w",                                                // prime constant (applied after applying exponent or base)
-    B = "b",                                                // prime constant (applied after applying exponent or base), but only applied to d and overriding w if present
+    B = "b",                                                // prime constant (applied after applying exponent or base), but only applied to d and overriding w if format
     X = "x",                                                // prime constant (applied before applying exponent or base)
-    U = "u",                                                // prime constant (applied before applying exponent or base), but only applied to d and overriding x if present
+    U = "u",                                                // prime constant (applied before applying exponent or base), but only applied to d and overriding x if format
     Y = "y",                                                // prime exponent exponent
-    V = "v",                                                // prime exponent exponent, but only applied to d and overriding y if present
+    V = "v",                                                // prime exponent exponent, but only applied to d and overriding y if format
     USE_NUMINATOR = "useNuminator",                         // reorient the ratio to use as its numerator the greater of the two results (the numinator) of calling the submetric on the original ratio's numerator and denominator
     MODIFIED_COUNT = "modifiedCount",                       // Dave's trick where 5's get a half-resolution
     USE_PRIME_INDEX = "usePrimeIndex",                      // use the prime index function instead of using the primes directly

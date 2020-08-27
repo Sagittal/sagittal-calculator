@@ -17,7 +17,7 @@ import {
     unpopularityMetricSettings,
 } from "../../globals"
 import { Parameter, Submetric } from "../../sumOfSquares"
-import { presentSearchedAndPopulated } from "../io"
+import { formatSearchedAndPopulated } from "../io"
 import { Chunk } from "../types"
 import {
     NO_USELESS_PARAMETER_CHUNKS,
@@ -68,7 +68,7 @@ const populateScopesPhase = async (chunkCount: Count<Chunk>, chunkCountForSubmet
         })
     }
 
-    saveDebugMessage(`finished phase ${1 + chunkCount - chunkCountForSubmetrics}/${chunkCount} of scope population ${presentSearchedAndPopulated()}`, DebugTarget.POPULATE)
+    saveDebugMessage(`finished phase ${1 + chunkCount - chunkCountForSubmetrics}/${chunkCount} of scope population ${formatSearchedAndPopulated()}`, DebugTarget.POPULATE)
 }
 
 export {

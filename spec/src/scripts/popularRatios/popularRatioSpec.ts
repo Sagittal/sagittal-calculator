@@ -1,4 +1,4 @@
-import { Rank } from "../../../../src/general"
+import { Formatted, Rank, Ratio } from "../../../../src/general"
 import { Monzo } from "../../../../src/general/math"
 import { Popularity, Votes } from "../../../../src/general/music"
 import { N2D3P9 } from "../../../../src/general/music/n2d3p9"
@@ -13,8 +13,8 @@ describe("computePopularRatio", () => {
         const actual = computePopularRatio({ monzo, n2d3p9 })
 
         const expected: PopularRatio = {
-            presentedN2D3P9: 1.39 as N2D3P9, // TODO: whoa what if there was a type called Presented<> which was a string and took another type?
-            presentedRatio: "5/1",
+            formattedN2D3P9: "1.39" as Formatted<N2D3P9>,
+            formattedRatio: "5/1" as Formatted<Ratio>,
             popularityRank: 2 as Rank<Popularity>,
             votes: 5371 as Votes,
             smileys: ":'::|: :/|:",

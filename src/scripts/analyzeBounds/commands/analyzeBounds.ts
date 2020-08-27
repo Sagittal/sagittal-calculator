@@ -4,14 +4,14 @@ import { BOUNDS } from "../../../notations"
 import { analyzeBound } from "../bound"
 import { BOUNDS_ANALYSIS_TEXT_FILE, BOUNDS_ANALYSIS_VISUALIZATION_FILE } from "../constants"
 import { updateFile } from "../file"
-import { computeHistories } from "../plot"
 import {
     AnalysisMode,
     BOUNDS_ANALYSIS_HEADER_ROW,
-    presentBound,
-    presentLevelAnalyses,
-    presentRankAnalyses,
-} from "../present"
+    formatBound,
+    formatLevelAnalyses,
+    formatRankAnalyses,
+} from "../io"
+import { computeHistories } from "../plot"
 import { AnalyzedBound } from "../types"
 import { visualizeBounds } from "../visualize"
 
@@ -28,13 +28,13 @@ BOUNDS.map(bound => {
     const histories = computeHistories(bound)
     const analyzedBound = analyzeBound(histories, bound)
 
-    textOutput = textOutput.concat(presentBound(analyzedBound, { bound, mode: AnalysisMode.SUMMARY }) + "\n")
+    textOutput = textOutput.concat(formatBound(analyzedBound, { bound, mode: AnalysisMode.SUMMARY }) + "\n")
 
     boundsAnalysis.push(analyzedBound)
 })
 
-textOutput = textOutput.concat(presentLevelAnalyses())
-textOutput = textOutput.concat(presentRankAnalyses())
+textOutput = textOutput.concat(formatLevelAnalyses())
+textOutput = textOutput.concat(formatRankAnalyses())
 
 if (shouldUpdateFiles) {
     updateFile(BOUNDS_ANALYSIS_TEXT_FILE, textOutput.replace(/\[\d\dm/g, "")) // Remove colors

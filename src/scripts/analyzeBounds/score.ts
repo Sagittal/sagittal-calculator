@@ -7,25 +7,24 @@ import {
 import { AnalyzedEvent, Score } from "./types"
 
 const computeScore = (analyzedEvents: AnalyzedEvent[]): Score => {
-    const binaryScoreRepresentation = [...Array(BINARY_SCORE_REPRESENTATION_CARDINALITY).keys()].map(_ => 0)
+    const binaryScoreReformatation = [...Array(BINARY_SCORE_REPRESENTATION_CARDINALITY).keys()].map(_ => 0)
 
     analyzedEvents.forEach(analyzedHistory => {
-        const binaryScoreRepresentationIndex = computeBinaryScoreRepresentationIndex(
+        const binaryScoreReformatationIndex = computeBinaryScoreRepresentationIndex(
             analyzedHistory.rank,
             LEVELS.indexOf(analyzedHistory.level),
         )
 
-        binaryScoreRepresentation[ binaryScoreRepresentationIndex ] += 1
+        binaryScoreReformatation[ binaryScoreReformatationIndex ] += 1
     })
 
-    return binaryScoreRepresentation.reduce(
-        (score, binaryScoreRepresentationTerm, index): Score =>
-            score + binaryScoreRepresentationTerm * pow(BASE_2, index as Exponent) as Score,
+    return binaryScoreReformatation.reduce(
+        (score, binaryScoreReformatationTerm, index): Score =>
+            score + binaryScoreReformatationTerm * pow(BASE_2, index as Exponent) as Score,
         0 as Score,
     ) as Score
 }
 
 export {
     computeScore,
-    computeBinaryScoreRepresentationIndex,
 }

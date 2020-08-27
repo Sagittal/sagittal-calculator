@@ -1,11 +1,11 @@
-import { formatBestMetrics } from "./format"
-import { presentBestMetrics, presentPercentage, presentSearchedAndPopulated } from "./present"
-import { unformat } from "./unformat"
+import { formatBestMetrics, formatPercentage, formatSearchedAndPopulated } from "./format"
+import { computeSortedBestMetrics } from "./sort"
+import { unformatParameters } from "./unformat"
 
 export {
-    presentSearchedAndPopulated,
-    presentPercentage,
+    formatSearchedAndPopulated,
+    formatPercentage,
     formatBestMetrics,
-    presentBestMetrics,
-    unformat,
+    computeSortedBestMetrics,
+    unformatParameters,
 }

@@ -1,4 +1,4 @@
-import { presentMonzo } from "../../io"
+import { formatMonzo } from "../../io"
 import { abs, computeGpf, computeIsSubMonzo, Exponent, Monzo, Prime, PRIMES } from "../../math"
 import { N2D3P9 } from "./types"
 
@@ -8,11 +8,11 @@ const computeN2D3P9 = (monzo: Monzo): N2D3P9 => {
     }
 
     if (monzo[ 0 ] !== 0 || monzo[ 1 ] !== 0) {
-        throw new Error(`N2D3P9 must be given a 5-roughened monzo; received ${presentMonzo(monzo)}`)
+        throw new Error(`N2D3P9 must be given a 5-roughened monzo; received ${formatMonzo(monzo)}`)
     }
 
     if (computeIsSubMonzo(monzo)) {
-        throw new Error(`N2D3P9 must be given a super (n ≥ d) monzo; received ${presentMonzo(monzo)}`)
+        throw new Error(`N2D3P9 must be given a super (n ≥ d) monzo; received ${formatMonzo(monzo)}`)
     }
 
     return monzo.reduce(

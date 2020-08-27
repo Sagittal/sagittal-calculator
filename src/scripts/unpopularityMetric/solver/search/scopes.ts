@@ -1,7 +1,7 @@
 import { doOnNextEventLoop } from "../../../../general"
 import { DebugTarget, saveDebugMessage } from "../../debug"
 import { scopesToSearch, solverStatus } from "../../globals"
-import { presentSearchedAndPopulated } from "../io"
+import { formatSearchedAndPopulated } from "../io"
 import { ONE_SECOND_TO_GIVE_POPULATION_A_CHANCE_TO_CATCH_UP } from "./constants"
 import { searchPopulatedScopes } from "./populatedScopes"
 
@@ -11,7 +11,7 @@ const searchScopes = async () => {
     }
 
     if (!solverStatus.finishedPopulating) {
-        saveDebugMessage(`searching got ahead of populating; waiting 1 second for more scopes to be populated ${presentSearchedAndPopulated()}`, DebugTarget.SEARCH)
+        saveDebugMessage(`searching got ahead of populating; waiting 1 second for more scopes to be populated ${formatSearchedAndPopulated()}`, DebugTarget.SEARCH)
 
         return doOnNextEventLoop(searchScopes, ONE_SECOND_TO_GIVE_POPULATION_A_CHANCE_TO_CATCH_UP)
     }

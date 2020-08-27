@@ -10,7 +10,7 @@
 
 import { DebugTarget, saveDebugMessage } from "../debug"
 import { solverStatus } from "../globals"
-import { presentSearchedAndPopulated } from "./io"
+import { formatSearchedAndPopulated } from "./io"
 import { populateScopes } from "./populate"
 import { searchScopes } from "./search"
 
@@ -21,7 +21,7 @@ const populateAndSearchScopesAndPerfectMetrics = async () => {
 
     await searchScopes()
 
-    saveDebugMessage(`\n\nFINAL STATUS ${presentSearchedAndPopulated()}`, DebugTarget.FINAL_SOLVER_RESULTS)
+    saveDebugMessage(`\n\nFINAL STATUS ${formatSearchedAndPopulated()}`, DebugTarget.FINAL_SOLVER_RESULTS)
 }
 
 export {

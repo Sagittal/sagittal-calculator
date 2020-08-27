@@ -2,12 +2,12 @@ import { program } from "commander"
 import {
     alignTable,
     computeMonzoFromRatio,
+    formatMonzo,
+    formatNumber,
+    formatRatio,
     Id,
     parseMonzo,
     parseRatio,
-    presentMonzo,
-    presentNumber,
-    presentRatio,
 } from "../../../general"
 import { computeNotatingSymbolIds, getSymbol, JiSymbol } from "../../../notations"
 
@@ -44,11 +44,11 @@ const notatingSymbolIds = computeNotatingSymbolIds(monzo)
 const notatingSymbolTableData = notatingSymbolIds.map((symbolId: Id<JiSymbol>) => {
     const { primaryComma: { name, monzo, cents, ratio }, ascii: symbol } = getSymbol(symbolId)
 
-    const presentedRatio = presentRatio(ratio)
-    const presentedMonzo = presentMonzo(monzo)
-    const presentedCents = presentNumber(cents)
+    const formattedRatio = formatRatio(ratio)
+    const formattedMonzo = formatMonzo(monzo)
+    const formattedCents = formatNumber(cents)
 
-    return `${symbol}\t${name}\t${presentedRatio}\t${presentedMonzo}\t${presentedCents}`
+    return `${symbol}\t${name}\t${formattedRatio}\t${formattedMonzo}\t${formattedCents}`
 })
 
 const NOTATING_SYMBOLS_HEADER_ROW = ["symbol", "name", "ratio", "monzo", "cents"].join("\t")

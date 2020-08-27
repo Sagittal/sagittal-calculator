@@ -11,7 +11,7 @@ import {
 import { Scope, SubmetricScope } from "../../bestMetric"
 import { DebugTarget, saveDebugMessage } from "../../debug"
 import { Parameter, Submetric } from "../../sumOfSquares"
-import { presentSearchedAndPopulated } from "../io"
+import { formatSearchedAndPopulated } from "../io"
 import { Chunk } from "../types"
 import { populateScope } from "./scope"
 import { PopulateScopesForSubmetricChunkCombinationOptions } from "./types"
@@ -24,7 +24,7 @@ const populateScopesForSubmetricChunkCombination = async (submetricChunkCombinat
         submetricChunkCombinationCount,
     } = options
 
-    saveDebugMessage(`populating scopes for submetric chunk combination ${submetricChunkCombinationIndex + 1}/${submetricChunkCombinationCount} with parameter chunk combination ${parameterChunkCombinationIndex + 1}/${parameterChunkCombinations.length} (${100 * parameterChunkCombinationIndex / parameterChunkCombinations.length}%) ${presentSearchedAndPopulated()}`, DebugTarget.POPULATE)
+    saveDebugMessage(`populating scopes for submetric chunk combination ${submetricChunkCombinationIndex + 1}/${submetricChunkCombinationCount} with parameter chunk combination ${parameterChunkCombinationIndex + 1}/${parameterChunkCombinations.length} (${100 * parameterChunkCombinationIndex / parameterChunkCombinations.length}%) ${formatSearchedAndPopulated()}`, DebugTarget.POPULATE)
 
     const parameterChunkCombination: Combination<Chunk> = parameterChunkCombinations[ parameterChunkCombinationIndex ]
 

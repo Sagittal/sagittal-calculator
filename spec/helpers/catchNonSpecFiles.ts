@@ -3,7 +3,7 @@ import * as path from "path"
 
 const regexp = new RegExp(".*Spec\.ts")
 
-const catchNonSpecFiles = (startPath: string) => {
+const catchNonSpecFiles = (startPath: string): void => {
     const files = fs.readdirSync(startPath)
     for (const file of files) {
         const filename = path.join(startPath, file)

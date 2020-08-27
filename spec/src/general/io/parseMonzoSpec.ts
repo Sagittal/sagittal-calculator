@@ -1,7 +1,8 @@
 import { parseMonzo } from "../../../../src/general/io"
+import { Monzo } from "../../../../src/general/math"
 
 describe("parseMonzo", () => {
-    const expected = [3, 4, 5]
+    const expected = [3, 4, 5] as Monzo
 
     it("parses monzos", () => {
         const monzo = "[3,4,5]"

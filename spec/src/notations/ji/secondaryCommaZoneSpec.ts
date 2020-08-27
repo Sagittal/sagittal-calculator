@@ -11,7 +11,7 @@ import { SymbolUnicode } from "../../../../src/notations/types"
 //  sure, but first you'd want to include its capture zones per level at all.
 //  then work up to its secondary comma zone
 describe("secondaryCommaZone", () => {
-    it("returns the min and max cents of where secondary commas are represented by the given symbol, i.e. its capture zone at its introducing level", () => {
+    it("returns the min and max cents of where secondary commas are reformatted by the given symbol, i.e. its capture zone at its introducing level", () => {
         const symbol: JiSymbol = {
             id: 82 as Id<JiSymbol>,
             ascii: "/|~" as SymbolLongAscii,

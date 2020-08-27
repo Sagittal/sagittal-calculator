@@ -110,7 +110,7 @@ describe("analyzeBound", () => {
         initialPositionTinaDifference: -0.5613173198970488 as Proportion<Tina>,
     }
 
-    it("returns an analysis of the bound using its histories, including a consolidated presentation of said histories, and its best possible history, and the difference between the bound and its initial position", () => {
+    it("returns an analysis of the bound using its histories, including a consolidated formatation of said histories, and its best possible history, and the difference between the bound and its initial position", () => {
         const actual = analyzeBound(histories, bound)
 
         const expected = {

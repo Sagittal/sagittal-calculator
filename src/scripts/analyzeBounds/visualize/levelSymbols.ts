@@ -1,6 +1,6 @@
 import { Id } from "../../../general"
 import { getSymbol, JiSymbol, Level, LEVELS_SYMBOL_IDS } from "../../../notations"
-import { presentMina } from "../present"
+import { formatMina } from "../io"
 import { LEVEL_CENTERS } from "./levelHeights"
 import { DOT_SIZE, MINA_OFFSET, SYMBOL_OFFSET } from "./sizes"
 import { computeX } from "./x"
@@ -32,7 +32,7 @@ const visualizeLevelSymbols = () => {
 
             if (level === Level.EXTREME) {
                 const minaY = symbolY - MINA_OFFSET
-                levelSymbolElements.push(`  <text text-anchor="middle" x="${positionX}" y="${minaY}" font-size="10px" font-family="Bravura">${presentMina(mina)}</text>\n`)
+                levelSymbolElements.push(`  <text text-anchor="middle" x="${positionX}" y="${minaY}" font-size="10px" font-family="Bravura">${formatMina(mina)}</text>\n`)
             }
         })
     })

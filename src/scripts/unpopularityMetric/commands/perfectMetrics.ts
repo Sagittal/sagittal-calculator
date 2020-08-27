@@ -1,6 +1,6 @@
 import { program } from "commander"
 import { performance } from "perf_hooks"
-import { difference, Max, Ms, presentTime, Unit } from "../../../general"
+import { difference, formatTime, Max, Ms, Unit } from "../../../general"
 import { Metric } from "../bestMetric"
 import { DEFAULT_MAX_UNIT } from "../constants"
 import { DebugTarget, saveDebugMessage } from "../debug"
@@ -34,7 +34,7 @@ perfectMetrics(Object.values(bestMetricsToBePerfected)).then(() => {
 
     const endTime = performance.now() as Ms
     if (time) {
-        saveDebugMessage(`\n\nPERFECTING METRICS TOOK ${presentTime(difference(endTime, startTime))}`, DebugTarget.FINAL_PERFECTER_RESULTS)
+        saveDebugMessage(`\n\nPERFECTING METRICS TOOK ${formatTime(difference(endTime, startTime))}`, DebugTarget.FINAL_PERFECTER_RESULTS)
     }
     saveDebugMessage(`MAX UNIT ${unpopularityMetricSettings.maxUnit}`, DebugTarget.FINAL_PERFECTER_RESULTS)
     saveDebugMessage(`Z ${unpopularityMetricSettings.z}`, DebugTarget.FINAL_PERFECTER_RESULTS)

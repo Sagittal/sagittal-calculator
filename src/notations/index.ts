@@ -1,4 +1,5 @@
 import { analyzeComma } from "./comma"
+import { formatComma } from "./format"
 import {
     Bound,
     BoundedSymbolIdWithDistances,
@@ -28,7 +29,6 @@ import {
     TINA,
     unicodeFromAscii,
 } from "./ji"
-import { presentComma } from "./presentComma"
 import { computeSmileyFromAscii } from "./smiley"
 import { SagittalComma, SymbolLongAscii } from "./types"
 
@@ -64,5 +64,5 @@ export {
     Tina,
     SagittalComma,
     analyzeComma,
-    presentComma,
+    formatComma,
 }

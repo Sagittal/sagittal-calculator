@@ -1,4 +1,4 @@
-const unformat = (text: string) => {
+const unformatParameters = (text: string) => {
     return text
         .replace(/\[ Parameter\.WEIGHT_AS_COEFFICIENT \]/g, "\"weightAsCoefficient\"")
         .replace(/\[ Parameter\.WEIGHT_AS_LOGARITHM_BASE \]/g, "\"weightAsLogarithmBase\"")
@@ -34,5 +34,5 @@ const unformat = (text: string) => {
 }
 
 export {
-    unformat,
+    unformatParameters,
 }

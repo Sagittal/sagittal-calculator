@@ -1,9 +1,10 @@
-import { presentBestMetrics } from "./present"
+import { scopesToSearch, solverStatus } from "../../globals"
+import { computeSortedBestMetrics } from "./sort"
 
-const formatBestMetrics = () => {
-    const presentedBestMetrics = presentBestMetrics()
+const formatBestMetrics = (): string => {
+    const sortedBestMetrics = computeSortedBestMetrics()
 
-    return JSON.stringify(presentedBestMetrics, undefined, 4)
+    return JSON.stringify(sortedBestMetrics, undefined, 4)
         .replace(/\"sumOfSquares\"/g, "sumOfSquares")
         .replace(/\"submetrics\"/g, "submetrics")
         .replace(/\"name\"/g, "name")
@@ -38,6 +39,14 @@ const formatBestMetrics = () => {
         .replace(/\"max\"/g, "[ Parameter.MAX ]")
 }
 
+const formatSearchedAndPopulated = (): string =>
+    `| populated ${solverStatus.populatedScopeCount} | searched ${solverStatus.searchedScopeCount} | in the queue ${scopesToSearch.length}`
+
+const formatPercentage = (a: number, b: number): string =>
+    `${a}/${b} (${(100 * a / b).toPrecision(3)}%)`
+
 export {
     formatBestMetrics,
+    formatSearchedAndPopulated,
+    formatPercentage,
 }
