@@ -6,6 +6,9 @@
     "lib": [
       "esnext"
     ],
+    "types": [
+      "node", "jasmine", "./spec"
+    ],
     "moduleResolution": "node",
     "noImplicitReturns": true,
     "resolveJsonModule": true,
