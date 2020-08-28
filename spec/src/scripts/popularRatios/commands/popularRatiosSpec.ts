@@ -150,6 +150,7 @@ describe("popular-ratios", () => {
             "[tr][td]155/1[/td][td]133.47[/td][td][/td][td][/td][td]130[/td][td]604.5[/td][td]1[/td][/tr]",
             "[tr][td]15625/1[/td][td]135.63[/td][td][/td][td][/td][td]131[/td][td]63[/td][td]27[/td][/tr]",
             "[/table]",
+            "",
         ] as IO[]
         expect(actual).toEqual(expected)
     })
@@ -179,6 +180,7 @@ describe("popular-ratios", () => {
             "[tr][td]13/1[/td][td]9.39[/td][td]:,::.::|): :,::/|): :`::(|\\:[/td][td]4, 4, 4[/td][td]9[/td][td]10[/td][td]447[/td][/tr]",
             "[tr][td]49/1[/td][td]9.53[/td][td]:~|): :(/|: :|\\):[/td][td]2, 2, 2[/td][td]10[/td][td]9[/td][td]463[/td][/tr]",
             "[/table]",
+            "",
         ] as IO[]
         expect(actual).toEqual(expected)
     })
