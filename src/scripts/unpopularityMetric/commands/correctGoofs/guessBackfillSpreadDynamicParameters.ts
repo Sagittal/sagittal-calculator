@@ -1,4 +1,4 @@
-import { Maybe } from "../../../../general"
+import { Filename, IO, Maybe } from "../../../../general"
 import { Metric } from "../../bestMetric"
 import { DebugTarget, saveDebugMessage } from "../../debug"
 import { PARAMETER_DYNAMISMS } from "../../perfecter"
@@ -7,7 +7,7 @@ import { applySharedUnpopularityMetricCommandSetup, load } from "../shared"
 
 applySharedUnpopularityMetricCommandSetup()
 
-const metricsMissingSpreadDynamicParameters = load("metrics") as Record<string, Metric>
+const metricsMissingSpreadDynamicParameters = load("metrics" as Filename) as Record<string, Metric>
 
 const guessedBackfilledSpreadDynamicParametersMetrics = Object.entries(metricsMissingSpreadDynamicParameters).reduce(
     (guessedBackfilledSpreadDynamicParametersMetrics: Record<string, Metric>, metricEntry: [string, Metric]) => {
@@ -42,4 +42,5 @@ const guessedBackfilledSpreadDynamicParametersMetrics = Object.entries(metricsMi
     {} as Record<string, Metric>,
 )
 
-saveDebugMessage(JSON.stringify(guessedBackfilledSpreadDynamicParametersMetrics, undefined, 4), DebugTarget.ALL)
+// TODO: this undefined, 4 shiznit should be extracted to an io helper
+saveDebugMessage(JSON.stringify(guessedBackfilledSpreadDynamicParametersMetrics, undefined, 4) as IO, DebugTarget.ALL)

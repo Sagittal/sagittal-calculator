@@ -1,4 +1,4 @@
-import { Count } from "../../../../general"
+import { Count, IO } from "../../../../general"
 import { DebugTarget, saveDebugMessage } from "../../debug"
 import { solverStatus } from "../../globals"
 import { Submetric } from "../../sumOfSquares"
@@ -16,7 +16,7 @@ const populateScopes = async () => {
         chunkCountForSubmetrics = chunkCountForSubmetrics - 1 as Count<Chunk<Submetric>>
     }
 
-    saveDebugMessage(`\n\nFINISHED POPULATING ${formatSearchedAndPopulated()}`, DebugTarget.POPULATE)
+    saveDebugMessage(`\n\nFINISHED POPULATING ${formatSearchedAndPopulated()}` as IO, DebugTarget.POPULATE)
 }
 
 export {

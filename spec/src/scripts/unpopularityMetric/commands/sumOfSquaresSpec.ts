@@ -1,3 +1,4 @@
+import { IO } from "../../../../../src/general"
 import { onlyRunInCi } from "../../../../helpers/onlyRunInCi"
 import { runCommandAndGetConsoleOutput } from "../../../../helpers/src/scripts/runCommand"
 
@@ -5,7 +6,7 @@ describe("sos (sum of squares)", () => {
     it("gives you the sum-of-squares given the submetric combination in the file, and also logs the full list of unpopularities", () => {
         onlyRunInCi()
 
-        const command = "npm run sos -- --no-color --no-write"
+        const command = "npm run sos -- --no-color --no-write" as IO
 
         const actual = runCommandAndGetConsoleOutput(command)
 

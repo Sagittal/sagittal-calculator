@@ -1,8 +1,9 @@
 import { program } from "commander"
-import { computeMonzoFromRatio, Monzo } from "../math"
+import { computeMonzoFromRatio, Monzo, Ratio } from "../math"
 import { ANY_MONZO_CHARS } from "./constants"
 import { parseMonzo } from "./parseMonzo"
 import { parseRatio } from "./parseRatio"
+import { Formatted, IO } from "./types"
 
 // TODO: you should also make it accept -n name!
 
@@ -10,19 +11,19 @@ import { parseRatio } from "./parseRatio"
 
 const computeMonzoFromCommand = (): Monzo => {
     program
-        .option("-m, --monzo <monzo>", "monzo", parseMonzo)
-        .option("-r, --ratio <ratio>", "ratio", parseRatio)
+        .option("-m, --monzo <monzo>", "monzo", (monzoText: string) => parseMonzo(monzoText as Formatted<Monzo>))
+        .option("-r, --ratio <ratio>", "ratio", (ratioText: string) => parseRatio(ratioText as Formatted<Ratio>))
         .parse(process.argv)
 
-    const comma = program.args[ 0 ]
+    const comma = program.args[ 0 ] as IO
 
     let monzo
     if (comma) {
         if (comma.includes("/")) {
-            monzo = computeMonzoFromRatio(parseRatio(comma))
+            monzo = computeMonzoFromRatio(parseRatio(comma as Formatted<Ratio>))
         }
         if (comma.match(ANY_MONZO_CHARS)) {
-            monzo = parseMonzo(comma)
+            monzo = parseMonzo(comma as Formatted<Monzo>)
         }
     } else if (program.monzo) {
         monzo = program.monzo

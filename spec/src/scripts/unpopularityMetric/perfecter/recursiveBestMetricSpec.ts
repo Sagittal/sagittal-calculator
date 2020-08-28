@@ -1,4 +1,4 @@
-import { Combination, Index, Integer, Resolution, Span, Unit } from "../../../../../src/general"
+import { Combination, Index, Integer, IO, Resolution, Span, Unit } from "../../../../../src/general"
 import { MetricName, Scope, SumOfSquares } from "../../../../../src/scripts/unpopularityMetric/bestMetric"
 import { SamplePoint } from "../../../../../src/scripts/unpopularityMetric/bestMetric/scopeToSamples"
 import { recursiveSearchScopeAndMaybeUpdateBestMetric } from "../../../../../src/scripts/unpopularityMetric/perfecter"
@@ -79,7 +79,7 @@ describe("searchScopeAndMaybeUpdateBestMetric", () => {
                 ] as Combination<Submetric>,
             },
         ] as LocalMin[]
-        const expectedIndentation = "                "
+        const expectedIndentation = "                " as IO
         const expectedDynamicParameters = [
             {
                 submetricIndex: 1 as Index<Submetric>,

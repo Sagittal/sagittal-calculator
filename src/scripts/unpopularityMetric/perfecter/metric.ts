@@ -1,4 +1,4 @@
-import { Combination } from "../../../general"
+import { Combination, IO } from "../../../general"
 import { Metric, Scope, SubmetricScope } from "../bestMetric"
 import { DebugTarget, saveDebugMessage } from "../debug"
 import { Parameter, ParameterValue, Submetric } from "../sumOfSquares"
@@ -54,7 +54,7 @@ const perfectMetric = async (metric: Metric, options: PerfectMetricOptions) => {
     try {
         await recursiveSearchScopeAndMaybeUpdateBestMetric(scope, options)
     } catch (error) {
-        saveDebugMessage(`error when perfecting scope ${JSON.stringify(scope)}: ${error}`, DebugTarget.ERRORS)
+        saveDebugMessage(`error when perfecting scope ${JSON.stringify(scope)}: ${error}` as IO, DebugTarget.ERRORS)
     }
 }
 

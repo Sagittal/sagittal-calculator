@@ -1,12 +1,13 @@
 import * as fs from "fs"
 import * as path from "path"
+import { Filename } from "../../src/general/io/types"
 
 const regexp = new RegExp(".*Spec\.ts")
 
-const catchNonSpecFiles = (startPath: string): void => {
+const catchNonSpecFiles = (startPath: Filename): void => {
     const files = fs.readdirSync(startPath)
     for (const file of files) {
-        const filename = path.join(startPath, file)
+        const filename = path.join(startPath, file) as Filename
         const stat = fs.lstatSync(filename)
 
         const match = regexp.test(filename)
@@ -19,4 +20,4 @@ const catchNonSpecFiles = (startPath: string): void => {
     }
 }
 
-catchNonSpecFiles("spec/src")
+catchNonSpecFiles("spec/src" as Filename)

@@ -1,4 +1,4 @@
-import { Index, Integer, Unit } from "../../../../../src/general"
+import { Index, Integer, IO, Unit } from "../../../../../src/general"
 import { Combination } from "../../../../../src/general/math"
 import { MetricName, Scope, SumOfSquares } from "../../../../../src/scripts/unpopularityMetric/bestMetric"
 import { DynamicParameter, SamplePoint } from "../../../../../src/scripts/unpopularityMetric/bestMetric/scopeToSamples"
@@ -40,7 +40,7 @@ describe("searchNextLocalMin", () => {
     const scope: Scope = [{}] as unknown[] as Scope
     const index = 7
     const metricTag = "" as MetricTag
-    const indentation = ""
+    const indentation = "" as IO
     const depth = 5 as Integer
     const nextLocalMinima = [{}, {}, {}, {}, {}, {}, {}, {}, {}] as LocalMin[]
     const onlyWinners = true

@@ -1,4 +1,4 @@
-import { Combination, Ratio, round } from "../../../../general"
+import { Combination, IO, Ratio, round } from "../../../../general"
 import { DebugTarget, saveDebugMessage } from "../../debug"
 import { Antivotes, Submetric } from "../types"
 import { ANTIVOTES_PRECISION } from "./constants"
@@ -11,7 +11,10 @@ const computeAntivotes = (fiveRoughRatio: Ratio, submetrics: Combination<Submetr
                 const weightedSubmetricAntivotes: Antivotes =
                     computeWeightedSubmetricAntivotes(fiveRoughRatio, submetric)
 
-                saveDebugMessage(`${JSON.stringify(submetric)}: ${weightedSubmetricAntivotes}`, DebugTarget.ANTIVOTES)
+                saveDebugMessage(
+                    `${JSON.stringify(submetric)}: ${weightedSubmetricAntivotes}` as IO,
+                    DebugTarget.ANTIVOTES
+                )
 
                 return totalAntivotes + weightedSubmetricAntivotes as Antivotes
             },

@@ -1,6 +1,5 @@
 import { Maybe } from "../code"
 
-type Formatted<T> = string & { _FormattedBrand: T }
 
 enum Justification {
     LEFT = "left",
@@ -11,7 +10,12 @@ enum Justification {
 type JustificationOption = Justification | Array<Maybe<Justification>>
 
 type Px = number & { _PxBrand: "Px" }
+
 type HexColor = string & { _HexColorBrand: "HexColor" }
+type Filename = string & { _FileBrand: "File" }
+
+type IO = string & { _IOBrand: "IO" }
+type Formatted<T> = IO & { _FormattedBrand: T }
 
 interface ComputeAlignedRowCellOptions {
     columnJustification: Justification,
@@ -30,4 +34,6 @@ export {
     Formatted,
     ComputeAlignedRowCellOptions,
     AlignTableOptions,
+    Filename,
+    IO,
 }

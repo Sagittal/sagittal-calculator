@@ -1,4 +1,4 @@
-import { alignTable } from "../../../../src/general"
+import { alignTable, IO } from "../../../../src/general"
 import { Justification } from "../../../../src/general/io/types"
 
 describe("alignTable", () => {
@@ -7,7 +7,7 @@ describe("alignTable", () => {
             "comma name\tlimit\t5-rough sopfr\tcents\tmonzo\tratio\tapotome slope",
             "11M\t11\t11\t45.45\t[0 0 1⟩\t33/32\t-4",
             "25/49M\t7\t24\t33.4\t[0 0⟩\t50/49\t-59.333",
-        ]
+        ] as IO[]
 
         const actual = alignTable(data)
 
@@ -15,7 +15,7 @@ describe("alignTable", () => {
             "comma name\tlimit\t5-rough sopfr\tcents\tmonzo  \tratio\tapotome slope",
             "11M       \t11   \t11           \t45.45\t[0 0 1⟩\t33/32\t-4           ",
             "25/49M    \t7    \t24           \t33.4 \t[0 0⟩  \t50/49\t-59.333      ",
-        ]
+        ] as IO[]
         expect(actual).toEqual(expected)
     })
 
@@ -24,7 +24,7 @@ describe("alignTable", () => {
             "comma name\tlimit\t5-rough sopfr\tcents\tmonzo\tratio\tapotome slope",
             "11M\t11\t11\t45.45\t[0 0 1⟩\t33/32\t-4",
             "25/49M\t7\t24\t33.4\t[0 0⟩\t50/49\t-59.333",
-        ]
+        ] as IO[]
 
         const actual = alignTable(data, { justification: Justification.RIGHT })
 
@@ -32,7 +32,7 @@ describe("alignTable", () => {
             "comma name\tlimit\t5-rough sopfr\tcents\t  monzo\tratio\tapotome slope",
             "       11M\t   11\t           11\t45.45\t[0 0 1⟩\t33/32\t           -4",
             "    25/49M\t    7\t           24\t 33.4\t  [0 0⟩\t50/49\t      -59.333",
-        ]
+        ] as IO[]
         expect(actual).toEqual(expected)
     })
 
@@ -41,7 +41,7 @@ describe("alignTable", () => {
             "comma name\tlimit\t5-rough sopfr\tcents\tmonzo\tratio\tapotome slope",
             "11M\t11\t11\t45.45\t[0 0 1⟩\t33/32\t-4",
             "25/49M\t7\t24\t33.4\t[0 0⟩\t50/49\t-59.333",
-        ]
+        ] as IO[]
 
         const actual = alignTable(data, { justification: Justification.CENTER })
 
@@ -49,7 +49,7 @@ describe("alignTable", () => {
             "comma name\tlimit\t5-rough sopfr\tcents\t monzo \tratio\tapotome slope",
             "   11M    \t  11 \t      11     \t45.45\t[0 0 1⟩\t33/32\t      -4     ",
             "  25/49M  \t  7  \t      24     \t 33.4\t [0 0⟩ \t50/49\t   -59.333   ",
-        ]
+        ] as IO[]
         expect(actual).toEqual(expected)
     })
 
@@ -58,7 +58,7 @@ describe("alignTable", () => {
             "comma name\tlimit\t5-rough sopfr\tcents\tmonzo\tratio\tapotome slope",
             "11M\t11\t11\t45.45\t[0 0 1⟩\t33/32\t-4",
             "25/49M\t7\t24\t33.4\t[0 0⟩\t50/49\t-59.333",
-        ]
+        ] as IO[]
         const justification = [
             Justification.RIGHT,
             Justification.LEFT,
@@ -73,7 +73,7 @@ describe("alignTable", () => {
             "comma name\tlimit\t5-rough sopfr\tcents\t  monzo\tratio\tapotome slope",
             "       11M\t11   \t      11     \t45.45\t[0 0 1⟩\t33/32\t-4           ",
             "    25/49M\t7    \t      24     \t33.4 \t  [0 0⟩\t50/49\t-59.333      ",
-        ]
+        ] as IO[]
         expect(actual).toEqual(expected)
     })
 })

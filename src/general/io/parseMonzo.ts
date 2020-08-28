@@ -1,7 +1,8 @@
 import { Monzo } from "../math"
+import { Formatted } from "./types"
 
-const parseMonzo = (monzoString: string): Monzo => {
-    const preparsedMonzoString = monzoString
+const parseMonzo = (monzoText: Formatted<Monzo>): Monzo => {
+    const preparsedMonzoText = monzoText
         .replace("⟩", "]")
         .replace(">", "]")
         .replace("|", "[")
@@ -9,7 +10,7 @@ const parseMonzo = (monzoString: string): Monzo => {
         .replace(" ]", "]")
         .replace(/\s/g, ",")
 
-    return JSON.parse(preparsedMonzoString)
+    return JSON.parse(preparsedMonzoText)
 }
 
 export {

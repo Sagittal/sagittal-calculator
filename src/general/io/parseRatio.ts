@@ -1,9 +1,10 @@
 import { Ratio } from "../math"
+import { Formatted, IO } from "./types"
 
-const parseRatio = (ratioString: string): Ratio => {
-    const ratio = ratioString.split(/[\/:]/).map(n => parseInt(n))
+const parseRatio = (ratioText: Formatted<Ratio>): Ratio => {
+    const ratio = ratioText.split(/[\/:]/).map(n => parseInt(n))
 
-    if (ratioString.includes(":")) {
+    if (ratioText.includes(":")) {
         ratio.reverse()
     }
 

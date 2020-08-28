@@ -1,4 +1,4 @@
-import { Maybe } from "../../../../general"
+import { IO, Maybe } from "../../../../general"
 import { Level } from "../../../../notations"
 import { COLORS } from "./colors"
 import { formatLevel } from "./level"
@@ -8,8 +8,8 @@ const formatLevelAnalysis = (
     level: Level,
     levelsBestHistoryRanks: { [ index: number ]: Maybe<number> },
     levelsBestCumulativeHistoryRanks: { [ index: number ]: number },
-): string => {
-    const formattedLevelAnalysis: string[] = [`${formatLevel(level)}            \there\tcmltv`]
+): IO => {
+    const formattedLevelAnalysis: IO[] = [`${formatLevel(level)}            \there\tcmltv` as IO]
 
     const levelsBestHistoryRanksEntries = Object.entries(levelsBestHistoryRanks) as unknown[] as Array<[number, number]>
 
@@ -25,10 +25,10 @@ const formatLevelAnalysis = (
             formattedBestCumulativeHistoryRankCount = " " + formattedBestCumulativeHistoryRankCount
         }
 
-        formattedLevelAnalysis.push(`${FORMATTED_RANK_NAMES[ rankIndex ]}\t${formattedBestHistoryRankCount}\t${formattedBestCumulativeHistoryRankCount}`[ COLORS[ rankIndex ] ])
+        formattedLevelAnalysis.push(`${FORMATTED_RANK_NAMES[ rankIndex ]}\t${formattedBestHistoryRankCount}\t${formattedBestCumulativeHistoryRankCount}`[ COLORS[ rankIndex ] ] as IO)
     })
 
-    return formattedLevelAnalysis.join("\n")
+    return formattedLevelAnalysis.join("\n") as IO
 }
 
 export {

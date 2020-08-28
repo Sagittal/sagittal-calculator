@@ -8,6 +8,7 @@
 //  However, if you put a console log right after the work it does in populateScopes,
 //   It does seem to be interruptable in a good way, so that's a good sign.
 
+import { IO } from "../../../general"
 import { DebugTarget, saveDebugMessage } from "../debug"
 import { solverStatus } from "../globals"
 import { formatSearchedAndPopulated } from "./io"
@@ -21,7 +22,7 @@ const populateAndSearchScopesAndPerfectMetrics = async () => {
 
     await searchScopes()
 
-    saveDebugMessage(`\n\nFINAL STATUS ${formatSearchedAndPopulated()}`, DebugTarget.FINAL_SOLVER_RESULTS)
+    saveDebugMessage(`\n\nFINAL STATUS ${formatSearchedAndPopulated()}` as IO, DebugTarget.FINAL_SOLVER_RESULTS)
 }
 
 export {

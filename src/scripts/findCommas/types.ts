@@ -1,8 +1,8 @@
-import { ApotomeSlope, Cents, Copfr, Exponent, Extrema, Max, Min, Monzo, N2D3P9, Prime, Sopfr } from "../../general"
+import { ApotomeSlope, Cents, Copfr, Exponent, Extrema, Max, Min, Monzo, N2D3P9, ObjectKey, Prime, Sopfr } from "../../general"
 
 interface ComputeCommasOptions extends ComputeCommasFromFiveSlicedMonzoOptions, ComputeFiveSlicedMonzosToCheckOptions {
     fiveSlicedMonzo?: Monzo<5>,
-    sortKey: string, // TODO: a type for keys, and then further string types, like file text
+    sortKey: ObjectKey,
 }
 
 type ComputeCommasFromFiveSlicedMonzoOptions = Partial<{

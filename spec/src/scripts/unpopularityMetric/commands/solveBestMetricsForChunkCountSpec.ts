@@ -1,8 +1,9 @@
+import { IO } from "../../../../../src/general"
 import { runCommandAndGetConsoleOutput } from "../../../../helpers/src/scripts/runCommand"
 
 describe("solve-best-metrics-for-chunk-count", () => {
     xit("finds the best metric for the given chunk count", () => {
-        const command = "npm run solve-best-metrics-for-chunk-count 1 -- --no-color --no-time --no-write"
+        const command = "npm run solve-best-metrics-for-chunk-count 1 -- --no-color --no-time --no-write" as IO
 
         const actual = runCommandAndGetConsoleOutput(command)
 
@@ -42,7 +43,7 @@ describe("solve-best-metrics-for-chunk-count", () => {
             `        ]`,
             `    }`,
             `}`,
-        ]
+        ] as IO[]
         expect(actual).toEqual(expected)
     })
 })

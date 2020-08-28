@@ -1,4 +1,4 @@
-import { Index } from "../../../general"
+import { Index, IO } from "../../../general"
 import { DebugTarget, saveDebugMessage } from "../debug"
 import { checkSubmetricsForInvalidParameterCombinations } from "../sumOfSquares"
 import { Sample } from "./scopeToSamples"
@@ -9,7 +9,7 @@ const computeSumsOfSquaresAndMaybeUpdateBestMetric = async (
     samples: Sample[],
     options: ComputeSumsOfSquaresAndMaybeUpdateBestMetricOptions = {},
 ): Promise<SumsOfSquares> => {
-    const { indentation = "", onlyWinners = true, metricName = "" as MetricName } = options
+    const { indentation = "" as IO, onlyWinners = true, metricName = "" as MetricName } = options
 
     const sumsOfSquares: SumsOfSquares = []
 
@@ -19,7 +19,7 @@ const computeSumsOfSquaresAndMaybeUpdateBestMetric = async (
         } catch (e) {
             resolve(sumsOfSquares)
             saveDebugMessage(
-                `Not searching scope due to invalid parameter combinations: ${e.message}`,
+                `Not searching scope due to invalid parameter combinations: ${e.message}` as IO,
                 DebugTarget.ERRORS,
             )
 

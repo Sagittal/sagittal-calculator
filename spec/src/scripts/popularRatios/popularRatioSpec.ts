@@ -1,4 +1,4 @@
-import { Formatted, Rank, Ratio } from "../../../../src/general"
+import { Formatted, IO, Rank, Ratio } from "../../../../src/general"
 import { Monzo } from "../../../../src/general/math"
 import { Popularity, Votes } from "../../../../src/general/music"
 import { N2D3P9 } from "../../../../src/general/music/n2d3p9"
@@ -18,8 +18,8 @@ describe("computePopularRatio", () => {
             formattedRatio: "5/1" as Formatted<Ratio>,
             popularityRank: 2 as Rank<Popularity>,
             votes: 5371 as Votes,
-            smileys: ":'::|: :/|:",
-            symbolSets: "3, 0",
+            smileys: ":'::|: :/|:" as IO,
+            symbolSets: "3, 0" as IO,
         }
         expect(actual).toEqual(expected)
     })

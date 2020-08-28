@@ -1,4 +1,4 @@
-import { Combination, COMMA_POPULARITIES, isNumber, Popularity, Ranked } from "../../../general"
+import { Combination, COMMA_POPULARITIES, IO, isNumber, Popularity, Ranked } from "../../../general"
 import { SumOfSquares } from "../bestMetric"
 import { DebugTarget, debugTargets, saveDebugMessage } from "../debug"
 import { unpopularityMetricSettings } from "../globals"
@@ -21,13 +21,13 @@ const computeSumOfSquaresForSubmetrics = (submetrics: Combination<Submetric>): S
 
     if (debugTargets[ DebugTarget.ALL ] || debugTargets[ DebugTarget.UNPOPULARITIES ]) {
         rankedUnpopularities.map(rankedUnpopularity => {
-            saveDebugMessage(JSON.stringify(rankedUnpopularity), DebugTarget.UNPOPULARITIES)
+            saveDebugMessage(JSON.stringify(rankedUnpopularity) as IO, DebugTarget.UNPOPULARITIES)
         })
     }
 
     const sumOfSquares = computeSumOfSquares(rankedUnpopularities, realPopularities, unpopularityMetricSettings.z)
 
-    saveDebugMessage(`sum-of-squares ${sumOfSquares}`, DebugTarget.SUM_OF_SQUARES)
+    saveDebugMessage(`sum-of-squares ${sumOfSquares}` as IO, DebugTarget.SUM_OF_SQUARES)
 
     return sumOfSquares
 }

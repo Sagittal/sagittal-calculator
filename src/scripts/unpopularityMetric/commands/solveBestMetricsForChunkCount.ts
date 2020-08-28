@@ -1,6 +1,6 @@
 import { program } from "commander"
 import { performance } from "perf_hooks"
-import { Count, difference, formatTime, Ms } from "../../../general"
+import { Count, difference, formatTime, IO, Ms } from "../../../general"
 import { DebugTarget, saveDebugMessage } from "../debug"
 import { solverStatus, unpopularityMetricSettings } from "../globals"
 import { Chunk, formatBestMetrics, populateAndSearchScopesAndPerfectMetrics } from "../solver"
@@ -25,21 +25,24 @@ const time = !!program.time
 
 const startTime = performance.now() as Ms
 populateAndSearchScopesAndPerfectMetrics().then(() => {
-    saveDebugMessage(`\n\nAND THE BEST METRICS WERE ${formatBestMetrics()}`, DebugTarget.FINAL_SOLVER_RESULTS)
+    saveDebugMessage(`\n\nAND THE BEST METRICS WERE ${formatBestMetrics()}` as IO, DebugTarget.FINAL_SOLVER_RESULTS)
 
     const endTime = performance.now() as Ms
     if (time) {
         saveDebugMessage(
-            `\n\nFINDING BEST METRICS TOOK ${formatTime(difference(endTime, startTime))}`,
+            `\n\nFINDING BEST METRICS TOOK ${formatTime(difference(endTime, startTime))}` as IO,
             DebugTarget.FINAL_SOLVER_RESULTS,
         )
     }
-    saveDebugMessage(`MAX UNIT ${unpopularityMetricSettings.maxUnit}`, DebugTarget.FINAL_SOLVER_RESULTS)
-    saveDebugMessage(`AVERAGE SAMPLES/SCOPE ${solverStatus.averageSamplesPerScope}`, DebugTarget.FINAL_SOLVER_RESULTS)
+    saveDebugMessage(`MAX UNIT ${unpopularityMetricSettings.maxUnit}` as IO, DebugTarget.FINAL_SOLVER_RESULTS)
     saveDebugMessage(
-        `PARAMETER SCOPES @ ${unpopularityMetricSettings.noUseless ? "NO USELESS" : "ORIGINAL"} SETTINGS`,
+        `AVERAGE SAMPLES/SCOPE ${solverStatus.averageSamplesPerScope}` as IO,
+        DebugTarget.FINAL_SOLVER_RESULTS
+    )
+    saveDebugMessage(
+        `PARAMETER SCOPES @ ${unpopularityMetricSettings.noUseless ? "NO USELESS" : "ORIGINAL"} SETTINGS` as IO,
         DebugTarget.FINAL_SOLVER_RESULTS,
     )
-    saveDebugMessage(`Z ${unpopularityMetricSettings.z}`, DebugTarget.FINAL_SOLVER_RESULTS)
-    saveDebugMessage(`ONLY TOP ${unpopularityMetricSettings.onlyTop}`, DebugTarget.FINAL_SOLVER_RESULTS)
+    saveDebugMessage(`Z ${unpopularityMetricSettings.z}` as IO, DebugTarget.FINAL_SOLVER_RESULTS)
+    saveDebugMessage(`ONLY TOP ${unpopularityMetricSettings.onlyTop}` as IO, DebugTarget.FINAL_SOLVER_RESULTS)
 })

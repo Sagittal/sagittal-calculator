@@ -1,4 +1,4 @@
-import { Count } from "../../../../general"
+import { Count, IO } from "../../../../general"
 import { nonRecursiveSearchScopeAndMaybeUpdateBestMetric, Scope } from "../../bestMetric"
 import { DebugTarget, saveDebugMessage } from "../../debug"
 import { scopesToSearch, solverStatus } from "../../globals"
@@ -13,12 +13,12 @@ const searchPopulatedScopes = async () => {
     try {
         await nonRecursiveSearchScopeAndMaybeUpdateBestMetric(scope)
     } catch (e) {
-        saveDebugMessage(`error when searching scope: ${e.message}`, DebugTarget.ERRORS)
+        saveDebugMessage(`error when searching scope: ${e.message}` as IO, DebugTarget.ERRORS)
     }
 
     solverStatus.searchedScopeCount = solverStatus.searchedScopeCount + 1 as Count<Scope>
 
-    saveDebugMessage(`searched out of populated: ${formatPercentage(solverStatus.searchedScopeCount, solverStatus.populatedScopeCount)} ${formatSearchedAndPopulated()}`, DebugTarget.SEARCH)
+    saveDebugMessage(`searched out of populated: ${formatPercentage(solverStatus.searchedScopeCount, solverStatus.populatedScopeCount)} ${formatSearchedAndPopulated()}` as IO, DebugTarget.SEARCH)
 }
 
 export {

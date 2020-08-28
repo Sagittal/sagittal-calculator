@@ -1,4 +1,4 @@
-import { Span } from "../../../general"
+import { IO, Span } from "../../../general"
 import { computeDynamicParameterScope, Scope } from "../bestMetric"
 import { DebugTarget, saveDebugMessage } from "../debug"
 import { bestMetrics } from "../globals"
@@ -32,5 +32,5 @@ const scope = [
 ] as Scope
 
 recursiveSearchScopeAndMaybeUpdateBestMetric(scope, { onlyWinners: false }).then(() => {
-    saveDebugMessage(`\nbest metric: ${JSON.stringify(Object.fromEntries(bestMetrics))}`, DebugTarget.ALL)
+    saveDebugMessage(`\nbest metric: ${JSON.stringify(Object.fromEntries(bestMetrics))}` as IO, DebugTarget.ALL)
 })

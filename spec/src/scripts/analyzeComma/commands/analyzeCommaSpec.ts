@@ -1,4 +1,5 @@
 import * as cp from "child_process"
+import { IO } from "../../../../../src/general/io"
 import { onlyRunInCi } from "../../../../helpers/onlyRunInCi"
 import { runCommandAndGetConsoleOutput } from "../../../../helpers/src/scripts/runCommand"
 
@@ -12,12 +13,12 @@ describe("analyze-comma", () => {
         "ratio:        \t2200/2187",
         "apotome slope:\t-7.631767994281849",
         "N2D3P9:       \t42.013889",
-    ]
+    ] as IO[]
 
     it("analyzes a comma, given it in monzo form", () => {
         onlyRunInCi()
 
-        const command = "npm run analyze-comma -- -m [3,-7,2,0,1]"
+        const command = "npm run analyze-comma -- -m [3,-7,2,0,1]" as IO
 
         const actual = runCommandAndGetConsoleOutput(command)
 
@@ -27,7 +28,7 @@ describe("analyze-comma", () => {
     it("can appraise a ratio for you", () => {
         onlyRunInCi()
 
-        const command = "npm run analyze-comma -- -r 2200/2187"
+        const command = "npm run analyze-comma -- -r 2200/2187" as IO
 
         const actual = runCommandAndGetConsoleOutput(command)
 
@@ -37,7 +38,7 @@ describe("analyze-comma", () => {
     it("throws an error if you provide neither monzo nor ratio nor name", () => {
         onlyRunInCi()
 
-        const command = "npm run analyze-comma"
+        const command = "npm run analyze-comma" as IO
 
         expect(
             () => cp.execSync(command, { stdio: [undefined, undefined, undefined] }),

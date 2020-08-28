@@ -1,12 +1,14 @@
-const forumTable = (data: string[]) => {
-    const table = data.map((row, index) => {
+import { IO } from "./types"
+
+const forumTable = (data: IO[]): IO[] => {
+    const table: IO[] = data.map((row, index) => {
         const cellTag = index === 0 ? "th" : "td"
 
-        return `[tr][${cellTag}]` + row.split("\t").join(`[/${cellTag}][${cellTag}]`) + `[/${cellTag}][/tr]`
+        return `[tr][${cellTag}]` + row.split("\t").join(`[/${cellTag}][${cellTag}]`) + `[/${cellTag}][/tr]` as IO
     })
 
-    table.unshift("[table]")
-    table.push("[/table]")
+    table.unshift("[table]" as IO)
+    table.push("[/table]" as IO)
 
     return table
 }

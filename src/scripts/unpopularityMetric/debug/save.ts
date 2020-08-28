@@ -1,10 +1,11 @@
 import * as fs from "fs"
+import { IO } from "../../../general"
 import { targetColors } from "./colors"
 import { debugSettings } from "./settings"
 import { debugTargets } from "./targets"
 import { DebugTarget } from "./types"
 
-const saveDebugMessage = (message: string, target: DebugTarget) => {
+const saveDebugMessage = (message: IO, target: DebugTarget) => {
     if (debugTargets[ DebugTarget.NONE ]) {
         return
     }

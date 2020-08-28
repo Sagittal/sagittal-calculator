@@ -1,5 +1,5 @@
 import "colors"
-import { Extrema, isNumber, isUndefined, Max, Maybe, Min } from "../../../general"
+import { Extrema, Filename, IO, isNumber, isUndefined, Max, Maybe, Min } from "../../../general"
 import { Metric } from "../bestMetric"
 import { DebugTarget, saveDebugMessage } from "../debug"
 import { Parameter, ParameterValue } from "../sumOfSquares"
@@ -7,7 +7,7 @@ import { applySharedUnpopularityMetricCommandSetup, load } from "./shared"
 
 applySharedUnpopularityMetricCommandSetup({ defaultDebugTargets: [DebugTarget.ALL] })
 
-const chunkCountResults = load("metrics") as Record<string, Metric>
+const chunkCountResults = load("metrics" as Filename) as Record<string, Metric>
 
 const parameterExtrema = {} as Record<string, Extrema<ParameterValue, "open">>
 
@@ -39,4 +39,4 @@ Object.values(Parameter).forEach(parameter => {
     }
 })
 
-saveDebugMessage(JSON.stringify(parameterExtrema, undefined, 4), DebugTarget.ALL)
+saveDebugMessage(JSON.stringify(parameterExtrema, undefined, 4) as IO, DebugTarget.ALL)

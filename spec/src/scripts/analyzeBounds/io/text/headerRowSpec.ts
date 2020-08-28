@@ -1,3 +1,4 @@
+import { IO } from "../../../../../../src/general"
 import { formatHeaderRow } from "../../../../../../src/scripts/analyzeBounds/io/text/headerRow"
 
 describe("formatHeaderRow", () => {
@@ -5,14 +6,14 @@ describe("formatHeaderRow", () => {
         const firstColumnHeader = [
             "bound",
             "index",
-        ]
+        ] as IO[]
         const secondColumnHeader = [
             "initial",
             "comma",
             "mean",
             "pos (¢)",
-        ]
-        const columnHeaders = [firstColumnHeader, secondColumnHeader]
+        ] as IO[]
+        const columnHeaders = [firstColumnHeader, secondColumnHeader] as IO[][]
 
         expect(formatHeaderRow(columnHeaders)).toEqual(
             "       \tinitial\n" +

@@ -1,10 +1,10 @@
-import { Maybe } from "../../../../general"
+import { IO, Maybe } from "../../../../general"
 import { Level, LEVELS } from "../../../../notations"
 import { levelsBestCumulativeHistoryRanks, levelsBestHistoryRanks } from "../../levels"
 import { formatLevelAnalysis } from "./levelAnalysis"
 
-const formatLevelAnalyses = (): string => {
-    const formattedLevelAnalysis: string[] = []
+const formatLevelAnalyses = (): IO => {
+    const formattedLevelAnalysis: IO[] = [] as IO[]
 
     LEVELS.slice().reverse().forEach(level => {
         if (level === Level.INSANE) {
@@ -17,7 +17,7 @@ const formatLevelAnalyses = (): string => {
         formattedLevelAnalysis.push(formatLevelAnalysis(level, levelBestHistoryRanks, levelBestCumulativeHistoryRanks))
     })
 
-    return "\n\n   ---   Level Analyses   ---   \n\n\n" + formattedLevelAnalysis.join("\n\n")
+    return "\n\n   ---   Level Analyses   ---   \n\n\n" + formattedLevelAnalysis.join("\n\n") as IO
 }
 
 export {

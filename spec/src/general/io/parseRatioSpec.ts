@@ -1,8 +1,8 @@
-import { parseRatio, Ratio } from "../../../../src/general"
+import { Formatted, parseRatio, Ratio } from "../../../../src/general"
 
 describe("parseRatio", () => {
     it("works for directed ratios", () => {
-        const ratio = "5/4"
+        const ratio = "5/4" as Formatted<Ratio>
 
         const actual = parseRatio(ratio)
 
@@ -11,7 +11,7 @@ describe("parseRatio", () => {
     })
 
     it("works for directed ratios", () => {
-        const ratio = "5:4"
+        const ratio = "5:4" as Formatted<Ratio>
 
         const actual = parseRatio(ratio)
 

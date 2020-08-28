@@ -1,4 +1,5 @@
 import * as fs from "fs"
+import { IO } from "../../../../general"
 import { AnalyzedBound } from "../../types"
 import { visualizeCents } from "./cents"
 import { visualizeEvents } from "./events"
@@ -14,7 +15,7 @@ import { visualizeSizeCategoryBounds } from "./sizeCategoryBounds"
 const visualizeBounds = (boundsAnalysis: AnalyzedBound[]) => {
     fs.copyFileSync("assets/fonts/BravuraSagittalUpdate_v10.otf", "dist/analyzeBounds/BravuraSagittalUpdate_v10.otf")
 
-    let elements: string[] = []
+    let elements: IO[] = []
 
     elements = elements.concat(addParentSvg())
     elements = elements.concat(addFont())
@@ -33,7 +34,7 @@ const visualizeBounds = (boundsAnalysis: AnalyzedBound[]) => {
 
     elements = elements.concat(visualizeLevelSymbols())
 
-    elements = elements.concat("</svg>\n")
+    elements = elements.concat("</svg>\n" as IO)
 
     return elements.join("")
 }

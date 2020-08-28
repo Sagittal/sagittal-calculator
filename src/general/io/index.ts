@@ -8,7 +8,7 @@ import { parseMonzo } from "./parseMonzo"
 import { parseRatio } from "./parseRatio"
 import { alignTable } from "./textTable"
 import { formatTime } from "./time"
-import { Formatted, HexColor, Px } from "./types"
+import { Filename, Formatted, HexColor, IO, Px } from "./types"
 
 export {
     formatRatio,
@@ -25,4 +25,6 @@ export {
     Px,
     HexColor,
     computeMonzoFromCommand,
+    Filename,
+    IO,
 }

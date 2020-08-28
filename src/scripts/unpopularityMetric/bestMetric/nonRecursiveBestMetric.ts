@@ -1,4 +1,4 @@
-import { Count, round } from "../../../general"
+import { Count, IO, round } from "../../../general"
 import { DebugTarget, saveDebugMessage } from "../debug"
 import { metricNames, solverStatus } from "../globals"
 import { computeMetricName } from "./metricName"
@@ -14,7 +14,7 @@ const nonRecursiveSearchScopeAndMaybeUpdateBestMetric = async (
     const metricName = computeMetricName(scope)
     if (metricNames.includes(metricName)) {
         const errorMessage = `Already searched equivalent initial scope for ${metricName}`
-        saveDebugMessage(errorMessage, DebugTarget.ERRORS)
+        saveDebugMessage(errorMessage as IO, DebugTarget.ERRORS)
         throw new Error(errorMessage)
     }
     metricNames.push(metricName)
@@ -27,8 +27,8 @@ const nonRecursiveSearchScopeAndMaybeUpdateBestMetric = async (
     solverStatus.averageSamplesPerScope =
         round(solverStatus.sampleCount / solverStatus.populatedScopeCount) as Count<Sample>
 
-    saveDebugMessage(`about to search initial scope for metric ${metricName}`, DebugTarget.SEARCH)
-    saveDebugMessage(`which has ${samples.length} samples; average sample count is ${solverStatus.averageSamplesPerScope}`, DebugTarget.SEARCH)
+    saveDebugMessage(`about to search initial scope for metric ${metricName}` as IO, DebugTarget.SEARCH)
+    saveDebugMessage(`which has ${samples.length} samples; average sample count is ${solverStatus.averageSamplesPerScope}` as IO, DebugTarget.SEARCH)
 
     const sumsOfSquares = await computeSumsOfSquaresAndMaybeUpdateBestMetric(samples, {
         spreadDynamicParameters,

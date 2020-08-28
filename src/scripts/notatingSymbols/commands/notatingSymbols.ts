@@ -1,4 +1,4 @@
-import { alignTable, computeMonzoFromCommand, formatMonzo, formatNumber, formatRatio, Id } from "../../../general"
+import { alignTable, computeMonzoFromCommand, formatMonzo, formatNumber, formatRatio, Id, IO } from "../../../general"
 import { computeNotatingJiSymbolIds, getJiSymbol, getSagittalComma, JiSymbol } from "../../../notations"
 import { computeNotatingSymbolDataRow, NOTATING_SYMBOLS_HEADER_ROW } from "../io"
 
@@ -13,7 +13,7 @@ const monzo = computeMonzoFromCommand()
 
 const notatingSymbolIds = computeNotatingJiSymbolIds(monzo)
 
-const notatingSymbolTableData = notatingSymbolIds.map(computeNotatingSymbolDataRow)
+const notatingSymbolTableData: IO[] = notatingSymbolIds.map(computeNotatingSymbolDataRow)
 
 notatingSymbolTableData.unshift(NOTATING_SYMBOLS_HEADER_ROW)
 

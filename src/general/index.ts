@@ -14,6 +14,7 @@ import {
     isUndefined,
     Maybe,
     merge,
+    ObjectKey,
     Range,
     rank,
     Rank,
@@ -25,6 +26,7 @@ import {
 import {
     alignTable,
     computeMonzoFromCommand,
+    Filename,
     FORMATATIONAL_PRECISION,
     formatMonzo,
     formatNumber,
@@ -33,10 +35,11 @@ import {
     formatTime,
     forumTable,
     HexColor,
+    IO,
     parseMonzo,
     parseRatio,
     Px,
-    SUPERSCRIPT_NUMS,
+    SUPERSCRIPT_NUMS
 } from "./io"
 import {
     abs,
@@ -232,4 +235,7 @@ export {
     computeMonzoFromCommand,
     SUPERSCRIPT_NUMS,
     integerDivide,
+    ObjectKey,
+    Filename,
+    IO,
 }

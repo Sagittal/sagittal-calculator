@@ -1,4 +1,4 @@
-import { Id } from "../../../../general"
+import { Id, IO } from "../../../../general"
 import { getJiSymbol, getSagittalComma, JiSymbol, Level, LEVELS_SYMBOL_IDS } from "../../../../notations"
 import { formatMina } from "../text"
 import { LEVEL_CENTERS } from "./levelHeights"
@@ -6,7 +6,7 @@ import { DOT_SIZE, MINA_OFFSET, SYMBOL_OFFSET } from "./sizes"
 import { computeX } from "./x"
 
 const visualizeLevelSymbols = () => {
-    const levelSymbolElements: string[] = [] as string[]
+    const levelSymbolElements: IO[] = [] as IO[]
 
     const levelsSymbolIdsEntries = Object.entries(LEVELS_SYMBOL_IDS) as Array<[Level, Array<Id<JiSymbol>>]>
     levelsSymbolIdsEntries.forEach(([level, levelSymbolIds]: [Level, Array<Id<JiSymbol>>]) => {
@@ -29,13 +29,15 @@ const visualizeLevelSymbols = () => {
                 unicode + "         " :
                 ascii === ",,(|(" ? "         " + unicode : unicode
 
-            levelSymbolElements.push(`  <circle stroke="black" cx="${positionX}" cy="${dotY}" r="${DOT_SIZE}" />\n`)
-            levelSymbolElements.push(`  <text fill="white" text-anchor="middle" x="${positionX}" y="${symbolY}" font-size="10px" font-family="Helvetica">${ascii}</text>\n`) // For searchability by ascii
-            levelSymbolElements.push(`  <text fill="black" text-anchor="middle" x="${positionX}" y="${symbolY}" font-size="40px" font-family="Bravura">${adjustedUnicode}</text>\n`)
+            levelSymbolElements.push(
+                `  <circle stroke="black" cx="${positionX}" cy="${dotY}" r="${DOT_SIZE}" />\n` as IO,
+            )
+            levelSymbolElements.push(`  <text fill="white" text-anchor="middle" x="${positionX}" y="${symbolY}" font-size="10px" font-family="Helvetica">${ascii}</text>\n` as IO) // For searchability by ascii
+            levelSymbolElements.push(`  <text fill="black" text-anchor="middle" x="${positionX}" y="${symbolY}" font-size="40px" font-family="Bravura">${adjustedUnicode}</text>\n` as IO)
 
             if (level === Level.EXTREME) {
                 const minaY = symbolY - MINA_OFFSET
-                levelSymbolElements.push(`  <text text-anchor="middle" x="${positionX}" y="${minaY}" font-size="10px" font-family="Bravura">${formatMina(mina)}</text>\n`)
+                levelSymbolElements.push(`  <text text-anchor="middle" x="${positionX}" y="${minaY}" font-size="10px" font-family="Bravura">${formatMina(mina)}</text>\n` as IO)
             }
         })
     })

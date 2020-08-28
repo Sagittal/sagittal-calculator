@@ -1,6 +1,6 @@
-import { AlignTableOptions, ComputeAlignedRowCellOptions, Justification, JustificationOption } from "./types"
+import { AlignTableOptions, ComputeAlignedRowCellOptions, IO, Justification, JustificationOption } from "./types"
 
-const computeColumnWidths = (data: string[], columnRange: number[]): number[] =>
+const computeColumnWidths = (data: IO[], columnRange: number[]): number[] =>
     columnRange.map(columnIndex =>
         data.reduce(
             (columnWidth, row) => {
@@ -16,7 +16,7 @@ const computeColumnWidths = (data: string[], columnRange: number[]): number[] =>
             0,
         ))
 
-const computeColumnRange = (data: string[]) => {
+const computeColumnRange = (data: IO[]) => {
     const exampleRow = data[ 0 ]
     const exampleRowCells = exampleRow.split("\t")
     const columnCount = exampleRowCells.length
@@ -29,16 +29,16 @@ const computeJustifications = (justification: JustificationOption, columnRange: 
         columnRange.map(_ => justification) :
         columnRange.map(index => justification[ index ] || Justification.LEFT)
 
-const furtherAlignRowCell = (alignedRowCell: string, columnJustification: Justification) =>
+const furtherAlignRowCell = (alignedRowCell: IO, columnJustification: Justification): IO =>
     columnJustification === Justification.LEFT ?
-        alignedRowCell + " " :
+        alignedRowCell + " " as IO :
         columnJustification === Justification.RIGHT ?
-            " " + alignedRowCell :
+            " " + alignedRowCell as IO :
             alignedRowCell.length % 2 === 0 ?
-                " " + alignedRowCell :
-                alignedRowCell + " "
+                " " + alignedRowCell as IO :
+                alignedRowCell + " " as IO
 
-const computeAlignedRowCell = (rowCell: string, { columnWidth, columnJustification }: ComputeAlignedRowCellOptions) => {
+const computeAlignedRowCell = (rowCell: IO, { columnWidth, columnJustification }: ComputeAlignedRowCellOptions) => {
     let alignedRowCell = rowCell
     while (alignedRowCell.length < columnWidth) {
         alignedRowCell = furtherAlignRowCell(alignedRowCell, columnJustification)
@@ -47,18 +47,18 @@ const computeAlignedRowCell = (rowCell: string, { columnWidth, columnJustificati
     return alignedRowCell
 }
 
-const alignTable = (data: string[], { justification = Justification.LEFT }: AlignTableOptions = {}) => {
+const alignTable = (data: IO[], { justification = Justification.LEFT }: AlignTableOptions = {}): IO[] => {
     const columnRange = computeColumnRange(data)
     const columnWidths = computeColumnWidths(data, columnRange)
 
     const justifications = computeJustifications(justification, columnRange)
 
-    return data.map(row => {
-        const rowCells = row.split("\t")
+    return data.map((row): IO => {
+        const rowCells = row.split("\t") as IO[]
         const finalIndex = rowCells.length - 1
 
         return rowCells.reduce(
-            (alignedRow, rowCell, index) => {
+            (alignedRow: IO, rowCell, index) => {
                 const columnWidth = columnWidths[ index ]
                 const columnJustification = justifications[ index ]
 
@@ -66,9 +66,9 @@ const alignTable = (data: string[], { justification = Justification.LEFT }: Alig
 
                 const maybeDelimeter = index === finalIndex ? "" : "\t"
 
-                return alignedRow + alignedRowCell + maybeDelimeter
+                return alignedRow + alignedRowCell + maybeDelimeter as IO
             },
-            "",
+            "" as IO,
         )
     })
 }

@@ -1,3 +1,4 @@
+import { IO } from "../../../general"
 import { Metric } from "../bestMetric"
 import { DebugTarget, saveDebugMessage } from "../debug"
 import { perfectMetric } from "./metric"
@@ -8,9 +9,12 @@ const perfectMetrics = async (bestMetricsValues: Metric[], index = 0, topLevelTo
     const metricToPerfect = bestMetricsValues[ index ]
     const metricTag = `${index + 1}/${totalToPerfect}` as MetricTag
 
-    saveDebugMessage(`\n\nabout to perfect id ${metricTag} ${JSON.stringify(metricToPerfect)}`, DebugTarget.PERFECT)
+    saveDebugMessage(
+        `\n\nabout to perfect id ${metricTag} ${JSON.stringify(metricToPerfect)}` as IO,
+        DebugTarget.PERFECT
+    )
     await perfectMetric(metricToPerfect, { metricTag })
-    saveDebugMessage(`perfected id ${metricTag}`, DebugTarget.PERFECT)
+    saveDebugMessage(`perfected id ${metricTag}` as IO, DebugTarget.PERFECT)
 
     if (index === totalToPerfect - 1) {
         return

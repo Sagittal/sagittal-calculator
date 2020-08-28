@@ -1,5 +1,7 @@
 type Rank<T = void> = number & { _RankBrand: "Rank" } & (T extends void ? {} : { _RankOfBrand: T })
 
+type ObjectKey = string & { _ObjectKeyBrand: "ObjectKey" }
+
 type SortOptions = Partial<{
     by: Path,
     descending: boolean,
@@ -42,4 +44,5 @@ export {
     ExtensionBaseType,
     Range,
     Maybe,
+    ObjectKey,
 }

@@ -1,4 +1,4 @@
-import { Copfr, Max, N2D3P9, Prime, Sopfr } from "../../../../src/general"
+import { Copfr, Max, N2D3P9, ObjectKey, Prime, Sopfr } from "../../../../src/general"
 import { Exponent } from "../../../../src/general/math"
 import { ApotomeSlope } from "../../../../src/general/music"
 import { getSagittalComma } from "../../../../src/notations"
@@ -26,7 +26,7 @@ describe("verifying primary commas", () => {
             const maxAbsoluteThreeExponent = 15 as Max<Exponent<Prime>>
             const maxN2D3P9 = 666 as Max<N2D3P9>
             const fiveSlicedMonzo = undefined
-            const sortKey = "fiveRoughSopfr"
+            const sortKey = "fiveRoughSopfr" as ObjectKey
 
             const commas = computeCommas({
                 minCents,

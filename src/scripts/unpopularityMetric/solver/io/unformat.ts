@@ -1,4 +1,6 @@
-const unformatParameters = (text: string) => {
+import { IO } from "../../../../general"
+
+const unformatParameters = (text: IO): IO => {
     return text
         .replace(/\[ Parameter\.WEIGHT_AS_COEFFICIENT \]/g, "\"weightAsCoefficient\"")
         .replace(/\[ Parameter\.WEIGHT_AS_LOGARITHM_BASE \]/g, "\"weightAsLogarithmBase\"")
@@ -30,7 +32,7 @@ const unformatParameters = (text: string) => {
         .replace(/\[ Parameter\.COUNT \]/g, "\"count\"")
         .replace(/\[ Parameter\.MAX \]/g, "\"max\"")
         .replace(/ as \w+/g, "")
-        .replace(/\,(?!\s*?[\{\[\"\'\w])/g, "")
+        .replace(/\,(?!\s*?[\{\[\"\'\w])/g, "") as IO
 }
 
 export {

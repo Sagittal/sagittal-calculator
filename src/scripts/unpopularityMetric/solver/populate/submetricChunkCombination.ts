@@ -5,7 +5,7 @@ import {
     count,
     DistributionBin,
     doOnNextEventLoop,
-    Index,
+    Index, IO,
     merge,
 } from "../../../../general"
 import { Scope, SubmetricScope } from "../../bestMetric"
@@ -27,7 +27,7 @@ const populateScopesForSubmetricChunkCombination = async (
         submetricChunkCombinationCount,
     } = options
 
-    saveDebugMessage(`populating scopes for submetric chunk combination ${submetricChunkCombinationIndex + 1}/${submetricChunkCombinationCount} with parameter chunk combination ${parameterChunkCombinationIndex + 1}/${parameterChunkCombinations.length} (${100 * parameterChunkCombinationIndex / parameterChunkCombinations.length}%) ${formatSearchedAndPopulated()}`, DebugTarget.POPULATE)
+    saveDebugMessage(`populating scopes for submetric chunk combination ${submetricChunkCombinationIndex + 1}/${submetricChunkCombinationCount} with parameter chunk combination ${parameterChunkCombinationIndex + 1}/${parameterChunkCombinations.length} (${100 * parameterChunkCombinationIndex / parameterChunkCombinations.length}%) ${formatSearchedAndPopulated()}` as IO, DebugTarget.POPULATE)
 
     const parameterChunkCombination: Combination<Chunk> = parameterChunkCombinations[ parameterChunkCombinationIndex ]
 

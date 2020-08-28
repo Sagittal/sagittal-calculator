@@ -1,4 +1,4 @@
-import { COMMA_POPULARITIES, Popularity, rank, Ranked, RankStrategy } from "../../../../general"
+import { COMMA_POPULARITIES, IO, Popularity, rank, Ranked, RankStrategy } from "../../../../general"
 import { DebugTarget, saveDebugMessage } from "../../debug"
 
 const fractionalizeRanks = () => {
@@ -10,7 +10,7 @@ const fractionalizeRanks = () => {
         descending: true,
     })
 
-    saveDebugMessage(JSON.stringify(rankedPopularities, undefined, 4), DebugTarget.ALL)
+    saveDebugMessage(JSON.stringify(rankedPopularities, undefined, 4) as IO, DebugTarget.ALL)
 }
 
 fractionalizeRanks()

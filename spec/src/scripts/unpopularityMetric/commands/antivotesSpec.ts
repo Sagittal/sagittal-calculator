@@ -1,3 +1,4 @@
+import { IO } from "../../../../../src/general/io"
 import { onlyRunInCi } from "../../../../helpers/onlyRunInCi"
 import { runCommandAndGetConsoleOutput } from "../../../../helpers/src/scripts/runCommand"
 
@@ -5,7 +6,7 @@ describe("antivotes", () => {
     it("gives you the antivotes of a specific ratio for the submetric combination set in the file", () => {
         onlyRunInCi()
 
-        const command = "npm run antivotes -- --no-color --no-write"
+        const command = "npm run antivotes -- --no-color --no-write" as IO
 
         const actual = runCommandAndGetConsoleOutput(command)
 
@@ -15,7 +16,7 @@ describe("antivotes", () => {
             `11/7`,
             `[{"sum":true,"kAsCoefficient":0.038,"aAsLogarithmBase":1.994,"y":0.455,"w":-2.08,"useNuminator":true},{"count":true,"weightAsCoefficient":0.577,"useNuminator":true}]`,
             `2.57659603`,
-        ]
+        ] as IO[]
         expect(actual).toEqual(expected)
     })
 })

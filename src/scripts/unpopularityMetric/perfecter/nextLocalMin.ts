@@ -1,4 +1,4 @@
-import { doOnNextEventLoop, Integer, Ms } from "../../../general"
+import { doOnNextEventLoop, Integer, IO, Ms } from "../../../general"
 import { Scope } from "../bestMetric"
 import { DebugTarget, saveDebugMessage } from "../debug"
 import { computeNextScope } from "./nextScope"
@@ -20,7 +20,7 @@ const searchNextLocalMin = (nextLocalMin: LocalMin, options: SearchLocalMinOptio
     const nextDepth = depth + 1 as Integer
     const nextScope: Scope = computeNextScope(nextLocalMin.samplePoint, dynamicParameters, scope)
     const nextMetricTag = metricTag + `.${index + 1}/${(nextLocalMinima.length)}` as MetricTag
-    saveDebugMessage(`  ${indentation}id ${nextMetricTag} - depth ${nextDepth}`, DebugTarget.PERFECT)
+    saveDebugMessage(`  ${indentation}id ${nextMetricTag} - depth ${nextDepth}` as IO, DebugTarget.PERFECT)
 
     return doOnNextEventLoop(async () => {
         try {
@@ -31,7 +31,7 @@ const searchNextLocalMin = (nextLocalMin: LocalMin, options: SearchLocalMinOptio
                 onlyWinners,
             })
         } catch (e) {
-            saveDebugMessage(`error when searching: ${e.message}`, DebugTarget.ERRORS)
+            saveDebugMessage(`error when searching: ${e.message}` as IO, DebugTarget.ERRORS)
         }
     }, index as Ms)
 }

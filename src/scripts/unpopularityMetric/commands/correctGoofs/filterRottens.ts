@@ -1,4 +1,4 @@
-import { COMMA_POPULARITIES, isNumber, Popularity, Ranked } from "../../../../general"
+import { COMMA_POPULARITIES, Filename, IO, isNumber, Popularity, Ranked } from "../../../../general"
 import { Metric } from "../../bestMetric"
 import { DebugTarget, saveDebugMessage } from "../../debug"
 import { unpopularityMetricSettings } from "../../globals"
@@ -7,7 +7,7 @@ import { applySharedUnpopularityMetricCommandSetup, load } from "../shared"
 
 applySharedUnpopularityMetricCommandSetup()
 
-const potentiallyRottens = load("metrics") as Record<string, Metric>
+const potentiallyRottens = load("metrics" as Filename) as Record<string, Metric>
 
 const realPopularities: Array<Ranked<Popularity>> = COMMA_POPULARITIES.slice(0, unpopularityMetricSettings.onlyTop)
 
@@ -26,4 +26,4 @@ const noRottens = Object.entries(potentiallyRottens).reduce(
     {} as Record<string, Metric>,
 )
 
-saveDebugMessage(JSON.stringify(noRottens, undefined, 4), DebugTarget.ALL)
+saveDebugMessage(JSON.stringify(noRottens, undefined, 4) as IO, DebugTarget.ALL)

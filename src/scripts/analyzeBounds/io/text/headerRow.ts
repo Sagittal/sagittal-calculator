@@ -1,28 +1,28 @@
-import { max } from "../../../../general"
+import { IO, max } from "../../../../general"
 import { BOUNDS_ANALYSIS_COLUMN_WIDTH } from "./constants"
 
-const formatHeaderRow = (columnHeaders: string[][]): string => {
+const formatHeaderRow = (columnHeaders: IO[][]): IO => {
     const maxColumnHeaderHeight = max(...columnHeaders.map(columnHeader => columnHeader.length))
 
-    const rows: string[][] = [...Array(maxColumnHeaderHeight).keys()].map(row => [] as string[])
+    const rows: IO[][] = [...Array(maxColumnHeaderHeight).keys()].map(row => [] as IO[])
 
     columnHeaders.forEach(columnHeader => {
         while (columnHeader.length < maxColumnHeaderHeight) {
-            columnHeader.unshift("       ")
+            columnHeader.unshift("       " as IO)
         }
 
         columnHeader.forEach((columnHeaderElement, index) => {
             let formattedColumnHeaderElement = columnHeaderElement
 
             while (formattedColumnHeaderElement.length < BOUNDS_ANALYSIS_COLUMN_WIDTH) {
-                formattedColumnHeaderElement = formattedColumnHeaderElement + " "
+                formattedColumnHeaderElement = formattedColumnHeaderElement + " " as IO
             }
 
             rows[ index ].push(formattedColumnHeaderElement)
         })
     })
 
-    return rows.map(row => row.join("\t")).join("\n") + "\n"
+    return rows.map(row => row.join("\t")).join("\n") + "\n" as IO
 }
 
 const BOUNDS_ANALYSIS_HEADER_ROW = "   ---   Bound Analyses   ---   \n\n\n" + formatHeaderRow([
@@ -141,7 +141,7 @@ const BOUNDS_ANALYSIS_HEADER_ROW = "   ---   Bound Analyses   ---   \n\n\n" + fo
         "  error",
         "(tinas)",
     ],
-])
+] as IO[][]) as IO
 
 export {
     formatHeaderRow,

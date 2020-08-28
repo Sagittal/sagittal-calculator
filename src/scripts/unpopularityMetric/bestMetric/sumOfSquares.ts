@@ -1,4 +1,4 @@
-import { doOnNextEventLoop, isUndefined, Ms } from "../../../general"
+import { doOnNextEventLoop, IO, isUndefined, Ms } from "../../../general"
 import { DebugTarget, saveDebugMessage } from "../debug"
 import { bestMetrics } from "../globals"
 import { computeSumOfSquaresForSubmetrics } from "../sumOfSquares"
@@ -20,7 +20,7 @@ const computeSumOfSquaresAndMaybeUpdateBestMetric = (
         try {
             sumOfSquares = computeSumOfSquaresForSubmetrics(submetrics)
         } catch (e) {
-            saveDebugMessage(`error when computing sum of squares: ${e.message}`, DebugTarget.ERRORS)
+            saveDebugMessage(`error when computing sum of squares: ${e.message}` as IO, DebugTarget.ERRORS)
         }
 
         setSumOfSquaresAtSamplePoint(sumOfSquares, sumsOfSquares, samplePoint)
@@ -44,7 +44,7 @@ const computeSumOfSquaresAndMaybeUpdateBestMetric = (
             bestMetrics.set(metricName, metric)
 
             saveDebugMessage(
-                `${indentation}new best metric: ${JSON.stringify(bestMetrics.get(metricName))}`,
+                `${indentation}new best metric: ${JSON.stringify(bestMetrics.get(metricName))}` as IO,
                 DebugTarget.NEW_BEST_METRIC,
             )
         }
