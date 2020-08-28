@@ -1,6 +1,6 @@
+import { IO } from "../../../../../src/general"
 import { onlyRunInCi } from "../../../../helpers/onlyRunInCi"
 import { runCommandAndGetConsoleOutput } from "../../../../helpers/src/scripts/runCommand"
-import { IO } from "../../../../../src/general"
 
 describe("notating-symbols", () => {
     it("gives you the list of the symbols which exactly notate the given ji pitch", () => {

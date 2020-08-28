@@ -6,6 +6,7 @@ import { forumTable } from "./forumTable"
 import { computeMonzoFromCommand } from "./monzoFromCommand"
 import { parseMonzo } from "./parseMonzo"
 import { parseRatio } from "./parseRatio"
+import { removeColor } from "./removeColor"
 import { alignTable } from "./textTable"
 import { formatTime } from "./time"
 import { Filename, Formatted, HexColor, IO, Px } from "./types"
@@ -27,4 +28,5 @@ export {
     computeMonzoFromCommand,
     Filename,
     IO,
+    removeColor,
 }

@@ -39,6 +39,7 @@ import {
     parseMonzo,
     parseRatio,
     Px,
+    removeColor,
     SUPERSCRIPT_NUMS
 } from "./io"
 import {
@@ -238,4 +239,5 @@ export {
     ObjectKey,
     Filename,
     IO,
+    removeColor,
 }

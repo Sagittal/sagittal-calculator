@@ -1,6 +1,6 @@
+import { IO } from "../../../../../src/general"
 import { onlyRunInCi } from "../../../../helpers/onlyRunInCi"
 import { runCommandAndGetConsoleOutput } from "../../../../helpers/src/scripts/runCommand"
-import { IO } from "../../../../../src/general"
 
 describe("best-metric-from-scope", () => {
     it("recursively finds the absolute perfect metric within the given scope", () => {

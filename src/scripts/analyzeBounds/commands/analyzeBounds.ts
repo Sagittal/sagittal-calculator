@@ -1,6 +1,6 @@
 import "colors"
 import { program } from "commander"
-import { IO } from "../../../general"
+import { IO, removeColor } from "../../../general"
 import { BOUNDS } from "../../../notations"
 import { analyzeBound } from "../bound"
 import { BOUNDS_ANALYSIS_TEXT_FILE, BOUNDS_ANALYSIS_VISUALIZATION_FILE } from "../constants"
@@ -40,7 +40,7 @@ textOutput = textOutput.concat(formatRankAnalyses()) as IO
 if (shouldUpdateFiles) {
     updateFile(
         BOUNDS_ANALYSIS_TEXT_FILE,
-        textOutput.replace(/\[\d\dm/g, "") as IO, // Remove colors TODO: should be a helper
+        removeColor(textOutput),
     )
 
     const visualizationOutput = visualizeBounds(boundsAnalysis) as IO
