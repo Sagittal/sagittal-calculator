@@ -6,6 +6,7 @@ import {
     Ratio,
 } from "../../../../general"
 import { Antivotes, ParameterValue, Submetric } from "../types"
+import { maybeNuminatorSwap } from "./numinator"
 import { computeSubmetricAntivotes } from "./submetricAntivotes"
 import { computeWeightedAntivotes } from "./weightedAntivotes"
 
@@ -37,26 +38,15 @@ const computeRatioSubmetricAntivotes = (fiveRoughRatio: Ratio, submetric: Submet
     }
 
     const [numerator, denominator] = fiveRoughRatio
-
-    const fiveRoughNumeratorMonzo = computeMonzoFromInteger(numerator)
-    const numeratorAntivotesBeforeMaybeNuminatorSwap =
-        computeSubmetricAntivotes(fiveRoughNumeratorMonzo, submetric, FractionalPartType.NUMERATOR)
-
-    const fiveRoughDenominatorMonzo = computeMonzoFromInteger(denominator)
-    const denominatorAntivotesBeforeMaybeNuminatorSwap =
-        computeSubmetricAntivotes(fiveRoughDenominatorMonzo, submetric, FractionalPartType.DENOMINATOR)
-
-    // TODO: the numinator swap should be extracted because that was pretty painful
-    let numeratorAntivotes = useNuminator ?
-        numeratorAntivotesBeforeMaybeNuminatorSwap > denominatorAntivotesBeforeMaybeNuminatorSwap ?
-            numeratorAntivotesBeforeMaybeNuminatorSwap :
-            denominatorAntivotesBeforeMaybeNuminatorSwap :
-        numeratorAntivotesBeforeMaybeNuminatorSwap
-    let denominatorAntivotes = useNuminator ?
-        numeratorAntivotesBeforeMaybeNuminatorSwap > denominatorAntivotesBeforeMaybeNuminatorSwap ?
-            denominatorAntivotesBeforeMaybeNuminatorSwap :
-            numeratorAntivotesBeforeMaybeNuminatorSwap :
-        denominatorAntivotesBeforeMaybeNuminatorSwap
+    let { numeratorAntivotes, denominatorAntivotes } = maybeNuminatorSwap({
+        useNuminator,
+        numeratorAntivotes: computeSubmetricAntivotes(
+            computeMonzoFromInteger(numerator), submetric, FractionalPartType.NUMERATOR,
+        ),
+        denominatorAntivotes: computeSubmetricAntivotes(
+            computeMonzoFromInteger(denominator), submetric, FractionalPartType.DENOMINATOR,
+        ),
+    })
 
     numeratorAntivotes = computeWeightedAntivotes(numeratorAntivotes, {
         coefficient: jAsCoefficient,
@@ -72,8 +62,8 @@ const computeRatioSubmetricAntivotes = (fiveRoughRatio: Ratio, submetric: Submet
         powerBase: kAsPowerBase,
     })
 
-    if (isNaN(numeratorAntivotesBeforeMaybeNuminatorSwap) || isNaN(denominatorAntivotesBeforeMaybeNuminatorSwap)) {
-        throw new Error(`You got NaN! in ratioSubmetricAntivotes ${fiveRoughRatio} ${JSON.stringify(submetric, undefined, 4)} ${numeratorAntivotesBeforeMaybeNuminatorSwap} ${denominatorAntivotesBeforeMaybeNuminatorSwap}`)
+    if (isNaN(numeratorAntivotes) || isNaN(denominatorAntivotes)) {
+        throw new Error(`You got NaN! in ratioSubmetricAntivotes ${fiveRoughRatio} ${JSON.stringify(submetric, undefined, 4)} ${numeratorAntivotes} ${denominatorAntivotes}`)
     }
 
     return numeratorAntivotes + denominatorAntivotes as Antivotes
