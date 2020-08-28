@@ -1,5 +1,6 @@
 import { program } from "commander"
 import { DEFAULT_MAX_N2D3P9 } from "../constants"
+import { computePopularRatiosTable } from "../io"
 import { computePopularRatios } from "../popularRatios"
 
 // TODO: consider adding a layer which pre-calculates numerators up to 3501 per Dave's suggestion on the forum
@@ -12,27 +13,4 @@ const maxN2D3P9 = program.maxN2d3p9 || DEFAULT_MAX_N2D3P9
 
 const popularRatios = computePopularRatios(maxN2D3P9)
 
-// TODO: this is all working okay for now,
-//  but ideally we'd have something that will generalize the saveDebugMessage trick across all the different scripts
-// TODO: also can we extract this... and can you use a table helper please...
-//  don't we have something that formats tables for the forum vs. for the console?
-//  it could even pass that on to something that will use smileys instead of just the symbols
-console.log(`count of results with N2D3P9 <= ${maxN2D3P9}: ${popularRatios.length}`)
-console.log(`[table]`)
-console.log("[tr][th]2,3-equivalent[/th][th][/th][th][/th][th]introducing[/th][th][/th][th][/th][th][/th][/tr]")
-console.log("[tr][th]pitch[/th][th][/th][th][/th][th]symbol[/th][th][/th][th]Scala[/th][th]Scala[/th][/tr]")
-console.log("[tr][th]ratio[/th][th][/th][th][/th][th]subset[/th][th]N2D3P9[/th][th]archive[/th][th]archive[/th][/tr]")
-console.log("[tr][th]class[/th][th]N2D3P9[/th][th]symbol[/th][th]indices[/th][th]rank[/th][th]rank[/th][th]occurrences[/th][/tr]")
-popularRatios.forEach(result => {
-    const {
-        formattedN2D3P9,
-        formattedRatio,
-        rank: estimatedRank,
-        popularityRank: actualRank,
-        symbolSets,
-        smileys,
-        votes,
-    } = result
-    console.log(`[tr][td]${formattedRatio}[/td][td]${formattedN2D3P9}[/td][td]${smileys}[/td][td]${symbolSets}[/td][td]${estimatedRank}[/td][td]${actualRank}[/td][td]${votes}[/td][/tr]`)
-})
-console.log(`[/table]`)
+console.log(computePopularRatiosTable(popularRatios, maxN2D3P9))

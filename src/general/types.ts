@@ -1,4 +1,5 @@
 import { Maybe } from "./code"
+import { IO } from "./io"
 import { Integer, Max, Min } from "./math"
 
 // Numeric types where parameter is not numeric
@@ -21,7 +22,7 @@ type Span<T extends number = number> = T & { _SpanBrand: "Span" }
 type Unit<T extends number = number> = T & { _UnitBrand: "Unit" }
 type Resolution<T extends number = number> = T & { _ResolutionBrand: "Resolution" }
 
-type Name<T = void> = string & { _NameBrand: "Name" } & (T extends void ? {} : { _NameOfBrand: T })
+type Name<T = void> = IO & { _NameBrand: "Name" } & (T extends void ? {} : { _NameOfBrand: T })
 
 type Extrema<T extends number = number, Open extends "open" | void = void> = [
     Open extends "open" ? Maybe<Min<T>> : Min<T>,

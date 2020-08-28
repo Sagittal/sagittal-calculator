@@ -1,6 +1,8 @@
+import { Ms } from "../../../src/general"
+
 interface SpecTime {
     description: string,
-    time: number,
+    time: Ms,
 }
 
 export {

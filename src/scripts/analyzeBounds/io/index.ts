@@ -1,17 +1,19 @@
 import { visualizeBounds } from "./image"
 import {
-    AnalysisMode,
-    BOUNDS_ANALYSIS_HEADER_ROW,
-    formatBound,
+    computeBoundRow,
+    computeBoundsAnalysisHeaderRows,
+    computeBoundsAnalysisTable,
+    computeFormattedBound,
     formatLevelAnalyses,
     formatRankAnalyses,
 } from "./terminal"
 
 export {
-    AnalysisMode,
-    BOUNDS_ANALYSIS_HEADER_ROW,
-    formatBound,
+    computeFormattedBound,
     formatLevelAnalyses,
     formatRankAnalyses,
     visualizeBounds,
+    computeBoundRow,
+    computeBoundsAnalysisHeaderRows,
+    computeBoundsAnalysisTable,
 }

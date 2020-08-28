@@ -17,6 +17,7 @@ import {
 } from "../general"
 import { computeCommaName } from "./commaName"
 
+// TODO: if we define a Comma as a thing with all these things ... is it really "analyze"? or just compute?
 const analyzeComma = (monzo: Monzo): Comma => {
     const apotomeSlope = computeApotomeSlope(monzo)
     const name: Name<Comma> = computeCommaName(monzo)

@@ -1,7 +1,7 @@
-import { formatMonzo, formatNumber, formatRatio, Id, IO } from "../../../general"
+import { formatMonzo, formatNumber, formatRatio, Id, IO, Row } from "../../../general"
 import { getJiSymbol, getSagittalComma, JiSymbol } from "../../../notations"
 
-const computeNotatingSymbolDataRow = (jiSymbolId: Id<JiSymbol>): IO => {
+const computeNotatingSymbolRow = (jiSymbolId: Id<JiSymbol>): Row => {
     const { primaryCommaId, ascii: symbol } = getJiSymbol(jiSymbolId)
     const { name, monzo, cents, ratio } = getSagittalComma(primaryCommaId)
 
@@ -9,9 +9,15 @@ const computeNotatingSymbolDataRow = (jiSymbolId: Id<JiSymbol>): IO => {
     const formattedMonzo = formatMonzo(monzo)
     const formattedCents = formatNumber(cents)
 
-    return `${symbol}\t${name}\t${formattedRatio}\t${formattedMonzo}\t${formattedCents}` as IO
+    return [
+        symbol,
+        name,
+        formattedRatio,
+        formattedMonzo,
+        formattedCents,
+    ] as IO[] as Row
 }
 
 export {
-    computeNotatingSymbolDataRow,
+    computeNotatingSymbolRow,
 }

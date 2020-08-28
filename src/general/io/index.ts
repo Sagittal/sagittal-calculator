@@ -1,29 +1,30 @@
-import { FORMATATIONAL_PRECISION, NEWLINE, SUPERSCRIPT_NUMS } from "./constants"
-import { formatComma } from "./formatComma"
+import { FORMATATIONAL_PRECISION, NEWLINE, SPACE, SUPERSCRIPT_NUMS } from "./constants"
 import { formatMonzo } from "./formatMonzo"
 import { formatNumber } from "./formatNumber"
 import { formatRatio } from "./formatRatio"
-import { computeForumTable } from "./forumTable"
+import { formatTableForForum } from "./tableForForum"
 import { computeMonzoFromCommand } from "./monzoFromCommand"
 import { parseMonzo } from "./parseMonzo"
 import { parseRatio } from "./parseRatio"
 import { removeColor } from "./removeColor"
-import { sumText } from "./sumText"
-import { computeTerminalTable } from "./textTable"
+import { addTexts } from "./typedOperations"
+import { formatTableForTerminal } from "./tableForTerminal"
+import { computeHeaderRowsFromColumnTitleColumns } from "./headerRowsFromColumnTitleColumns"
 import { formatTime } from "./time"
-import { Filename, Formatted, HexColor, IO, Px } from "./types"
+import { Column, Filename, Formatted, HexColor, IO, Px, Row, Table } from "./types"
 
 export {
     formatRatio,
     formatMonzo,
     formatNumber,
-    computeForumTable,
-    computeTerminalTable,
+    formatTableForForum,
+    formatTableForTerminal,
     formatTime,
     parseMonzo,
     parseRatio,
     FORMATATIONAL_PRECISION,
     SUPERSCRIPT_NUMS,
+    SPACE,
     Formatted,
     Px,
     HexColor,
@@ -32,6 +33,9 @@ export {
     IO,
     removeColor,
     NEWLINE,
-    formatComma,
-    sumText,
+    addTexts,
+    Row,
+    Column,
+    computeHeaderRowsFromColumnTitleColumns,
+    Table,
 }

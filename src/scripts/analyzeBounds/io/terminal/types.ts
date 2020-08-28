@@ -26,14 +26,8 @@ interface BoundIdentifiers {
     cents: Cents,
 }
 
-enum AnalysisMode {
-    DETAILS = "details",
-    SUMMARY = "summary",
-}
-
 interface FormatBoundParameters {
     bound: Bound
-    mode?: AnalysisMode,
 }
 
 type JiSymbolWithPrimaryComma = Omit<JiSymbol, "primaryCommaId"> & {
@@ -47,5 +41,4 @@ export {
     BoundedJiSymbolsWithPrimaryCommas,
     BoundIdentifiers,
     FormatBoundParameters,
-    AnalysisMode,
 }

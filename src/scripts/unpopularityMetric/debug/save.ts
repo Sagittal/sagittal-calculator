@@ -5,6 +5,8 @@ import { debugSettings } from "./settings"
 import { debugTargets } from "./targets"
 import { DebugTarget } from "./types"
 
+// TODO: extract this to be used by any of the scripts
+
 const saveDebugMessage = (message: IO, target: DebugTarget) => {
     if (debugTargets[ DebugTarget.NONE ]) {
         return
@@ -18,7 +20,6 @@ const saveDebugMessage = (message: IO, target: DebugTarget) => {
         }
 
         const color = targetColors[ target ]
-        // @ts-ignore
         console.log(message[ color ])
     }
 }

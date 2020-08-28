@@ -31,6 +31,8 @@ const maxN2D3P9 = program.maxN2d3p9 || 307
 const fiveSlicedMonzo = program.fiveSlicedMonzo
 const sortKey = program.sortBy
 
+// TODO: this should actually take for-forum as a CLI option
+
 const commas = computeCommas({
     minCents,
     maxCents,

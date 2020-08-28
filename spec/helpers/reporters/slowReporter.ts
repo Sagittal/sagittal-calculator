@@ -1,5 +1,5 @@
 import { performance } from "perf_hooks"
-import { count, round, sort } from "../../../src/general"
+import { count, Ms, round, sort } from "../../../src/general"
 import { COUNT_SLOW_SPECS_TO_SUMMARIZE, MAX_TEST_DESCRIPTION_LENGTH, WARN_THRESHOLD_MS } from "./constants"
 import { SpecTime } from "./types"
 
@@ -8,11 +8,11 @@ let specStartedTime = 0
 
 const slowReporter: jasmine.CustomReporter = {
     specStarted() {
-        specStartedTime = performance.now()
+        specStartedTime = performance.now() // TODO: perhaps a typedOperations module inside code/
     },
 
     specDone(actual: jasmine.CustomReporterResult) {
-        const time = round(performance.now() - specStartedTime)
+        const time = round(performance.now() - specStartedTime) as Ms
         const description = actual.fullName.length > MAX_TEST_DESCRIPTION_LENGTH ?
             actual.fullName.slice(0, MAX_TEST_DESCRIPTION_LENGTH) + "…" :
             actual.fullName

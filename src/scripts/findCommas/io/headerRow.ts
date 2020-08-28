@@ -1,6 +1,6 @@
-import { IO } from "../../../general"
+import { Row } from "../../../general"
 
-const FIND_COMMAS_HEADER_ROW: IO = [
+const FIND_COMMAS_HEADER_ROW: Row = [
     "comma name",
     "limit",
     "5-rough sopfr",
@@ -9,7 +9,7 @@ const FIND_COMMAS_HEADER_ROW: IO = [
     "ratio",
     "apotome slope",
     "N2D3P9",
-].join("\t") as IO
+] as Row
 
 export {
     FIND_COMMAS_HEADER_ROW,

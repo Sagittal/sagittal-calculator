@@ -1,8 +1,8 @@
-import { Comma, Id, Name } from "../general"
+import { Comma, Id, IO, Name } from "../general"
 
-type SymbolLongAscii = string & { _SymbolLongAsciiBrand: "SymbolLongAscii" }
-type SymbolUnicode = string & { _SymbolUnicodeBrand: "SymbolUnicode" }
-type SymbolSmiley = string & { _SymbolSmileyBrand: "SymbolSmiley" }
+type SymbolLongAscii = IO & { _SymbolLongAsciiBrand: "SymbolLongAscii" }
+type SymbolUnicode = IO & { _SymbolUnicodeBrand: "SymbolUnicode" }
+type SymbolSmiley = IO & { _SymbolSmileyBrand: "SymbolSmiley" }
 
 interface SizeCategoryOptions {
     abbreviated?: boolean,
@@ -10,7 +10,7 @@ interface SizeCategoryOptions {
 
 interface SizeCategory {
     name: Name<SizeCategory>,
-    abbreviation: string,
+    abbreviation: IO,
 }
 
 interface SagittalComma extends Comma {

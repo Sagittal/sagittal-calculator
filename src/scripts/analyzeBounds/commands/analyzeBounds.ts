@@ -1,20 +1,10 @@
 import "colors"
 import { program } from "commander"
-import { concat, IO, NEWLINE, removeColor, sumText } from "../../../general"
-import { BOUNDS } from "../../../notations"
-import { analyzeBound } from "../bound"
+import { concat, IO, removeColor } from "../../../general"
+import { analyzeBounds } from "../bounds"
 import { BOUNDS_ANALYSIS_TEXT_FILE, BOUNDS_ANALYSIS_VISUALIZATION_FILE } from "../constants"
 import { updateFile } from "../file"
-import {
-    AnalysisMode,
-    BOUNDS_ANALYSIS_HEADER_ROW,
-    formatBound,
-    formatLevelAnalyses,
-    formatRankAnalyses,
-    visualizeBounds,
-} from "../io"
-import { computeHistories } from "../plot"
-import { AnalyzedBound } from "../types"
+import { computeBoundsAnalysisTable, formatLevelAnalyses, formatRankAnalyses, visualizeBounds } from "../io"
 
 program
     .option("-x, --do-not-update-files", "do not update files")
@@ -22,29 +12,17 @@ program
 
 const shouldUpdateFiles = !program.doNotUpdateFiles
 
-let textOutput: IO = BOUNDS_ANALYSIS_HEADER_ROW
+const boundsAnalysis = analyzeBounds()
 
-const boundsAnalysis: AnalyzedBound[] = []
-BOUNDS.map(bound => {
-    const histories = computeHistories(bound)
-    const analyzedBound = analyzeBound(histories, bound)
-
-    textOutput = concat(textOutput, sumText(formatBound(analyzedBound, { bound, mode: AnalysisMode.SUMMARY }), NEWLINE))
-
-    boundsAnalysis.push(analyzedBound)
-})
-
-textOutput = concat(textOutput, formatLevelAnalyses())
-textOutput = concat(textOutput, formatRankAnalyses())
+let output: IO = computeBoundsAnalysisTable(boundsAnalysis)
+output = concat(output, formatLevelAnalyses()) // TODO: these should probably also use the table helpers
+output = concat(output, formatRankAnalyses())
 
 if (shouldUpdateFiles) {
-    updateFile(
-        BOUNDS_ANALYSIS_TEXT_FILE,
-        removeColor(textOutput),
-    )
+    updateFile(BOUNDS_ANALYSIS_TEXT_FILE, removeColor(output))
 
     const visualizationOutput = visualizeBounds(boundsAnalysis) as IO
     updateFile(BOUNDS_ANALYSIS_VISUALIZATION_FILE, visualizationOutput)
 }
 
-console.log(textOutput)
+console.log(output)

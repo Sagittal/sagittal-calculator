@@ -25,12 +25,14 @@ import {
     sort,
 } from "./code"
 import {
-    computeForumTable,
+    addTexts,
+    Column,
+    formatTableForForum,
+    computeHeaderRowsFromColumnTitleColumns,
     computeMonzoFromCommand,
-    computeTerminalTable,
+    formatTableForTerminal,
     Filename,
     FORMATATIONAL_PRECISION,
-    formatComma,
     formatMonzo,
     formatNumber,
     formatRatio,
@@ -43,8 +45,10 @@ import {
     parseRatio,
     Px,
     removeColor,
-    sumText,
+    Row,
+    SPACE,
     SUPERSCRIPT_NUMS,
+    Table,
 } from "./io"
 import {
     abs,
@@ -172,7 +176,7 @@ export {
     computeCombinations,
     deepEquals,
     APOTOME_CENTS,
-    computeTerminalTable,
+    formatTableForTerminal,
     ApotomeSlope,
     Popularity,
     doOnNextEventLoop,
@@ -186,7 +190,7 @@ export {
     computeCentsFromRatio,
     computeRatioFromMonzo,
     computeN2D3P9,
-    computeForumTable,
+    formatTableForForum,
     computeRange,
     Numerator,
     formatN2D3P9,
@@ -249,7 +253,13 @@ export {
     IO,
     removeColor,
     NEWLINE,
-    sumText,
+    addTexts,
     APOTOME,
-    formatComma,
+    // TODO: maybe eventually these (Rol and Column) shouldn't have to be exported
+    //  if all the table-building logic is quarantined to the general/io module
+    Row,
+    Column,
+    Table,
+    SPACE,
+    computeHeaderRowsFromColumnTitleColumns,
 }

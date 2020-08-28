@@ -1,6 +1,6 @@
 import { IO, Maybe } from "../../../../general"
 import { Level } from "../../../../notations"
-import { COLORS } from "./colors"
+import { BOUND_COLORS } from "./BOUND_COLORS"
 import { formatLevel } from "./level"
 import { FORMATTED_RANK_NAMES } from "./rank"
 
@@ -25,7 +25,7 @@ const formatLevelAnalysis = (
             formattedBestCumulativeHistoryRankCount = " " + formattedBestCumulativeHistoryRankCount
         }
 
-        formattedLevelAnalysis.push(`${FORMATTED_RANK_NAMES[ rankIndex ]}\t${formattedBestHistoryRankCount}\t${formattedBestCumulativeHistoryRankCount}`[ COLORS[ rankIndex ] ] as IO)
+        formattedLevelAnalysis.push(`${FORMATTED_RANK_NAMES[ rankIndex ]}\t${formattedBestHistoryRankCount}\t${formattedBestCumulativeHistoryRankCount}`[ BOUND_COLORS[ rankIndex ] ] as IO)
     })
 
     return formattedLevelAnalysis.join("\n") as IO

@@ -1,10 +1,6 @@
-import { computeMonzoFromCommand, computeTerminalTable, formatMonzo, formatNumber, formatRatio, Id, IO } from "../../../general"
-import { computeNotatingJiSymbolIds, getJiSymbol, getSagittalComma, JiSymbol } from "../../../notations"
-import { computeNotatingSymbolDataRow, NOTATING_SYMBOLS_HEADER_ROW } from "../io"
-
-// TODO: it might be nice to share the logic from formatSymbolAscii
-//  for centering symbols on shafts, ratios on slash, and monzos on terms
-//  into the computeTerminalTable method
+import { computeMonzoFromCommand, formatTableForTerminal, Row } from "../../../general"
+import { computeNotatingJiSymbolIds } from "../../../notations"
+import { computeNotatingSymbolRow, NOTATING_SYMBOLS_HEADER_ROW } from "../io"
 
 // TODO: this is technically notating JI symbols... but it would be pretty cool if it could return all possible
 //  notating symbols and just not provide an ID if they aren't in Sagittal
@@ -13,8 +9,10 @@ const monzo = computeMonzoFromCommand()
 
 const notatingSymbolIds = computeNotatingJiSymbolIds(monzo)
 
-const notatingSymbolTableData: IO[] = notatingSymbolIds.map(computeNotatingSymbolDataRow)
+const notatingSymbolRows: Row[] = notatingSymbolIds.map(computeNotatingSymbolRow)
 
-notatingSymbolTableData.unshift(NOTATING_SYMBOLS_HEADER_ROW)
+notatingSymbolRows.unshift(NOTATING_SYMBOLS_HEADER_ROW)
 
-console.log(computeTerminalTable(notatingSymbolTableData).join("\n"))
+// TODO: this like findCommas should probably have an io/table.ts which allows for either terminal or forum output
+
+console.log(formatTableForTerminal(notatingSymbolRows))

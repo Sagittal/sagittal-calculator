@@ -1,5 +1,5 @@
 import { Maybe } from "../code"
-
+import { ColorMethod } from "../../types"
 
 enum Justification {
     LEFT = "left",
@@ -14,8 +14,14 @@ type Px = number & { _PxBrand: "Px" }
 type HexColor = string & { _HexColorBrand: "HexColor" }
 type Filename = string & { _FileBrand: "File" }
 
+type Char = string & { _CharBrand: "Char" }
+
 type IO = string & { _IOBrand: "IO" }
 type Formatted<T> = IO & { _FormattedBrand: T }
+
+type Row = IO[] & { _RowBrand: "Row" }
+type Column = IO[] & { _ColBrand: "Col" }
+type Table = Row[]
 
 interface ComputeAlignedRowCellOptions {
     columnJustification: Justification,
@@ -24,6 +30,7 @@ interface ComputeAlignedRowCellOptions {
 
 interface AlignTableOptions {
     justification?: JustificationOption
+    colors?: ColorMethod[],
 }
 
 export {
@@ -36,4 +43,8 @@ export {
     AlignTableOptions,
     Filename,
     IO,
+    Row,
+    Column,
+    Table,
+    Char,
 }

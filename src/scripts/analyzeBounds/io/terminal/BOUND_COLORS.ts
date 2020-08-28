@@ -1,11 +1,11 @@
 import { ColorMethod } from "../../../../types"
 
-const COLORS: ColorMethod[] = [
+const BOUND_COLORS: ColorMethod[] = [
     "blue",         // INA
     "cyan",         // MEAN
     "green",        // SIZE
 ]
 
 export {
-    COLORS,
+    BOUND_COLORS,
 }

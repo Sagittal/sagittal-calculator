@@ -29,7 +29,7 @@ enum ExtensionBaseType {
     OBJECT = "object",
 }
 
-type Range<T> = Array<T> & { _RangeBrand: "Range" }
+type Range<T = number> = Array<T> & { _RangeBrand: "Range" }
 
 type Maybe<T> = T | undefined
 

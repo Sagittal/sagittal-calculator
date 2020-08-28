@@ -1,5 +1,6 @@
-import { Cents, Comma, formatComma, Monzo, Name, Prime, Ratio, Sopfr } from "../../../../src/general"
-import { ApotomeSlope, N2D3P9 } from "../../../../src/general/music"
+import { Cents, Comma, Monzo, Name, Prime, Ratio, Sopfr } from "../../../../../src/general"
+import { ApotomeSlope, N2D3P9 } from "../../../../../src/general/music"
+import { formatComma } from "../../../../../src/scripts/analyzeComma/io"
 
 describe("formatComma", () => {
     const comma: Comma = {
@@ -13,15 +14,8 @@ describe("formatComma", () => {
         n2d3p9: 18.4567 as N2D3P9,
     } as Comma
 
-    it("formats it in a nice single line in the default summary mode", () => {
+    it("formats it in a multi-line output with titles for each line", () => {
         const actual = formatComma(comma)
-
-        const expected = "6j\t14\t13\t11.2\t[ 0 -1 1 ⟩\t5/4\t8.2\t18.4567"
-        expect(actual).toEqual(expected)
-    })
-
-    it("can also format it in a details mode with lines with titles for each line", () => {
-        const actual = formatComma(comma, { mode: "details" })
 
         const expected =
             "comma name:   \t6j\n" +
