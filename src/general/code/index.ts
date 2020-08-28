@@ -1,3 +1,4 @@
+import { concat } from "./concat"
 import { ACCURACY_THRESHOLD } from "./constants"
 import { computeDeepClone } from "./deepClone"
 import { computeDeepDistinct } from "./deepDistinct"
@@ -42,5 +43,6 @@ export {
     ExtensionBaseType,
     Range,
     Maybe,
+    concat,
     ObjectKey,
 }

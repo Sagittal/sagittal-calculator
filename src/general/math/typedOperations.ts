@@ -22,7 +22,7 @@ const sum = <T extends number>(...numbers: T[]): T => {
         ADDITIVE_IDENTITY as T :
         sum(...numbers)
 
-    return nextSum + (previousValue) as T
+    return nextSum + previousValue as T
 }
 
 const difference = <T extends number>(minuend: T, subtrahend: T): T =>

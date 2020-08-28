@@ -3,7 +3,7 @@ import {
     computeExtensionBase,
     computePrimeExponentExtremasGivenMaxN2D3P9,
     computeSopfr,
-    computeTrimmedArray,
+    computeTrimmedArray, concat,
     Copfr,
     Exponent,
     ExtensionBaseType,

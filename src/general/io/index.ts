@@ -1,4 +1,4 @@
-import { FORMATATIONAL_PRECISION, SUPERSCRIPT_NUMS } from "./constants"
+import { FORMATATIONAL_PRECISION, NEWLINE, SUPERSCRIPT_NUMS } from "./constants"
 import { formatMonzo } from "./formatMonzo"
 import { formatNumber } from "./formatNumber"
 import { formatRatio } from "./formatRatio"
@@ -7,6 +7,7 @@ import { computeMonzoFromCommand } from "./monzoFromCommand"
 import { parseMonzo } from "./parseMonzo"
 import { parseRatio } from "./parseRatio"
 import { removeColor } from "./removeColor"
+import { sumText } from "./sumText"
 import { alignTable } from "./textTable"
 import { formatTime } from "./time"
 import { Filename, Formatted, HexColor, IO, Px } from "./types"
@@ -29,4 +30,6 @@ export {
     Filename,
     IO,
     removeColor,
+    NEWLINE,
+    sumText,
 }

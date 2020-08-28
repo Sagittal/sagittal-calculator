@@ -6,6 +6,7 @@ import {
     computePlusOrMinusRange,
     computeRange,
     computeTrimmedArray,
+    concat,
     deepEquals,
     dig,
     doOnNextEventLoop,
@@ -36,11 +37,13 @@ import {
     forumTable,
     HexColor,
     IO,
+    NEWLINE,
     parseMonzo,
     parseRatio,
     Px,
     removeColor,
-    SUPERSCRIPT_NUMS
+    sumText,
+    SUPERSCRIPT_NUMS,
 } from "./io"
 import {
     abs,
@@ -131,6 +134,7 @@ export {
     Id,
     Span,
     Unit,
+    concat,
     Resolution,
     Monzo,
     invertMonzo,
@@ -240,4 +244,6 @@ export {
     Filename,
     IO,
     removeColor,
+    NEWLINE,
+    sumText,
 }

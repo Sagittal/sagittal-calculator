@@ -15,7 +15,7 @@ import { visualizeSizeCategoryBounds } from "./sizeCategoryBounds"
 const visualizeBounds = (boundsAnalysis: AnalyzedBound[]) => {
     fs.copyFileSync("assets/fonts/BravuraSagittalUpdate_v10.otf", "dist/analyzeBounds/BravuraSagittalUpdate_v10.otf")
 
-    let elements: IO[] = []
+    let elements: IO[] = [] as IO[]
 
     elements = elements.concat(addParentSvg())
     elements = elements.concat(addFont())

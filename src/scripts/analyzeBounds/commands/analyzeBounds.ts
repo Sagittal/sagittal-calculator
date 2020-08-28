@@ -1,6 +1,6 @@
 import "colors"
 import { program } from "commander"
-import { IO, removeColor } from "../../../general"
+import { concat, IO, NEWLINE, removeColor, sumText } from "../../../general"
 import { BOUNDS } from "../../../notations"
 import { analyzeBound } from "../bound"
 import { BOUNDS_ANALYSIS_TEXT_FILE, BOUNDS_ANALYSIS_VISUALIZATION_FILE } from "../constants"
@@ -29,13 +29,13 @@ BOUNDS.map(bound => {
     const histories = computeHistories(bound)
     const analyzedBound = analyzeBound(histories, bound)
 
-    textOutput = textOutput.concat(formatBound(analyzedBound, { bound, mode: AnalysisMode.SUMMARY }) + "\n") as IO
+    textOutput = concat(textOutput, sumText(formatBound(analyzedBound, { bound, mode: AnalysisMode.SUMMARY }), NEWLINE))
 
     boundsAnalysis.push(analyzedBound)
 })
 
-textOutput = textOutput.concat(formatLevelAnalyses()) as IO // TODO: typed concat?
-textOutput = textOutput.concat(formatRankAnalyses()) as IO
+textOutput = concat(textOutput, formatLevelAnalyses())
+textOutput = concat(textOutput, formatRankAnalyses())
 
 if (shouldUpdateFiles) {
     updateFile(
