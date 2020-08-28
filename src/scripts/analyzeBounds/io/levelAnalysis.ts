@@ -1,3 +1,4 @@
+import { Maybe } from "../../../general"
 import { Level } from "../../../notations"
 import { COLORS } from "./colors"
 import { formatLevel } from "./level"
@@ -5,7 +6,7 @@ import { FORMATTED_RANK_NAMES } from "./rank"
 
 const formatLevelAnalysis = (
     level: Level,
-    levelsBestHistoryRanks: { [ index: number ]: number | undefined },
+    levelsBestHistoryRanks: { [ index: number ]: Maybe<number> },
     levelsBestCumulativeHistoryRanks: { [ index: number ]: number },
 ): string => {
     const formattedLevelAnalysis: string[] = [`${formatLevel(level)}            \there\tcmltv`]

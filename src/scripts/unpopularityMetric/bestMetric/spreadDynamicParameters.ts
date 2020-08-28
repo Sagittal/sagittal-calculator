@@ -1,8 +1,9 @@
+import { Maybe } from "../../../general"
 import { PARAMETER_DYNAMISMS } from "../perfecter"
 import { Parameter } from "../sumOfSquares"
 import { Scope, SubmetricScope } from "./types"
 
-const computeSpreadDynamicParameters = (scope: Scope): Parameter[] | undefined => {
+const computeSpreadDynamicParameters = (scope: Scope): Maybe<Parameter[]> => {
     const allBinsSubmetricScope: SubmetricScope = scope[ 0 ]
 
     const spreadParameters: Parameter[] = Object.keys(allBinsSubmetricScope) as Parameter[]

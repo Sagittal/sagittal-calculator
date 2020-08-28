@@ -73,7 +73,7 @@ const computeRatioSubmetricAntivotes = (fiveRoughRatio: Ratio, submetric: Submet
     })
 
     if (isNaN(numeratorAntivotesBeforeMaybeNuminatorSwap) || isNaN(denominatorAntivotesBeforeMaybeNuminatorSwap)) {
-        throw new Error(`You got NaN! in ratioSubmetricAntivotes ${fiveRoughRatio} ${JSON.stringify(submetric, null, 4)} ${numeratorAntivotesBeforeMaybeNuminatorSwap} ${denominatorAntivotesBeforeMaybeNuminatorSwap}`)
+        throw new Error(`You got NaN! in ratioSubmetricAntivotes ${fiveRoughRatio} ${JSON.stringify(submetric, undefined, 4)} ${numeratorAntivotesBeforeMaybeNuminatorSwap} ${denominatorAntivotesBeforeMaybeNuminatorSwap}`)
     }
 
     return numeratorAntivotes + denominatorAntivotes as Antivotes

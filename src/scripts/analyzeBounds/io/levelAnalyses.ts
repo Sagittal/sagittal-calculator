@@ -1,3 +1,4 @@
+import { Maybe } from "../../../general"
 import { Level, LEVELS } from "../../../notations"
 import { levelsBestCumulativeHistoryRanks, levelsBestHistoryRanks } from "../levels"
 import { formatLevelAnalysis } from "./levelAnalysis"
@@ -10,7 +11,7 @@ const formatLevelAnalyses = (): string => {
             return
         }
 
-        const levelBestHistoryRanks: { [ index: number ]: number | undefined } = levelsBestHistoryRanks[ level ]
+        const levelBestHistoryRanks: { [ index: number ]: Maybe<number> } = levelsBestHistoryRanks[ level ]
         const levelBestCumulativeHistoryRanks: { [ index: number ]: number } = levelsBestCumulativeHistoryRanks[ level ]
 
         formattedLevelAnalysis.push(formatLevelAnalysis(level, levelBestHistoryRanks, levelBestCumulativeHistoryRanks))

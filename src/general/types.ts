@@ -1,3 +1,4 @@
+import { Maybe } from "./code"
 import { Integer, Max, Min } from "./math"
 
 // Numeric types where parameter is not numeric
@@ -23,8 +24,8 @@ type Resolution<T extends number = number> = T & { _ResolutionBrand: "Resolution
 type Name<T = void> = string & { _NameBrand: "Name" } & (T extends void ? {} : { _NameOfBrand: T })
 
 type Extrema<T extends number = number, Open extends "open" | void = void> = [
-    Open extends "open" ? undefined | Min<T> : Min<T>,
-    Open extends "open" ? undefined | Max<T> : Max<T>,
+    Open extends "open" ? Maybe<Min<T>> : Min<T>,
+    Open extends "open" ? Maybe<Max<T>> : Max<T>,
 ]
 
 type Ms = number & { _MsBrand: "Ms" }

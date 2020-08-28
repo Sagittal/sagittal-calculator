@@ -15,7 +15,7 @@ import { shuffle } from "./shuffle"
 import { sort } from "./sort"
 import { computeTrimmedArray } from "./trim"
 import { isNumber, isUndefined } from "./typeGuards"
-import { ExtensionBaseType, Range, Rank, Ranked, RankStrategy } from "./types"
+import { ExtensionBaseType, Maybe, Range, Rank, Ranked, RankStrategy } from "./types"
 
 export {
     computeDeepClone,
@@ -41,4 +41,5 @@ export {
     computeIsEmpty,
     ExtensionBaseType,
     Range,
+    Maybe,
 }

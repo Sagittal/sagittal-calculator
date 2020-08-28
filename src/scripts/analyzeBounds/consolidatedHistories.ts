@@ -1,3 +1,4 @@
+import { Maybe } from "../../general"
 import { ensureOneBestPossibleEventPerLevel } from "./ensureOneBestPossibleEventPerLevel"
 import { computeInitialConsolidatedEvent } from "./initialConsolidatedEvent"
 import { AnalyzedHistory, ConsolidatedEvent, ConsolidatedHistories } from "./types"
@@ -12,11 +13,11 @@ const computeConsolidatedHistories = (
     analyzedHistories.forEach(analyzedHistory => {
         analyzedHistory.events.forEach((analyzedEvent, index) => {
             consolidatedHistories[ analyzedEvent.level ] = consolidatedHistories[ analyzedEvent.level ] || []
-            const consolidatedEvents: ConsolidatedEvent[] | undefined = consolidatedHistories[ analyzedEvent.level ]
+            const consolidatedEvents: Maybe<ConsolidatedEvent[]> = consolidatedHistories[ analyzedEvent.level ]
 
             const nextAnalyzedEvent = analyzedHistory.events[ index + 1 ]
 
-            const matchingConsolidatedEvent: ConsolidatedEvent | undefined = consolidatedEvents && consolidatedEvents
+            const matchingConsolidatedEvent: Maybe<ConsolidatedEvent> = consolidatedEvents && consolidatedEvents
                 .find(existingEvent => existingEvent.name === analyzedEvent.name)
 
             const updateConsolidatedEventParameters = {

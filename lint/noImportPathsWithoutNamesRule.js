@@ -10,7 +10,7 @@ var __extends = (this && this.__extends) || (function () {
     return function (d, b) {
         extendStatics(d, b);
         function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+        d.prototype = b === undefined ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
 var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cooked, raw) {
@@ -24,7 +24,7 @@ var tsutils_1 = require("tsutils");
 var Rule = /** @class */ (function (_super) {
     __extends(Rule, _super);
     function Rule() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        return _super !== undefined && _super.apply(this, arguments) || this;
     }
     Rule.prototype.apply = function (sourceFile) {
         return this.applyWithFunction(sourceFile, walk, this.ruleArguments);

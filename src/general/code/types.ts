@@ -29,7 +29,7 @@ enum ExtensionBaseType {
 
 type Range<T> = Array<T> & { _RangeBrand: "Range" }
 
-// TODO: Maybe<> type
+type Maybe<T> = T | undefined
 
 export {
     SortOptions,
@@ -41,4 +41,5 @@ export {
     RankStrategy,
     ExtensionBaseType,
     Range,
+    Maybe,
 }

@@ -1,9 +1,9 @@
-import { Cents, Id } from "../../general"
+import { Cents, Id, Maybe } from "../../general"
 import { getSagittalComma } from "../getComma"
 import { JI_SYMBOLS } from "./jiSymbols"
 import { JiSymbol } from "./types"
 
-const computePositionJiSymbolId = (position: Cents | undefined): Id<JiSymbol> | undefined => {
+const computePositionJiSymbolId = (position: Maybe<Cents>): Maybe<Id<JiSymbol>> => {
     if (!position) {
         return undefined
     }

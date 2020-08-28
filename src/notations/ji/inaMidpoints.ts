@@ -1,4 +1,4 @@
-import { APOTOME, Cents, Name, Position } from "../../general"
+import { APOTOME, Cents, Maybe, Name, Position } from "../../general"
 import { MAX_POSITION } from "../intervals"
 import { LEVEL_EDAS } from "./levelEdas"
 import { LEVELS } from "./levels"
@@ -7,7 +7,7 @@ import { Level } from "./types"
 const computeInaMidpoints = (level: Level): Position[] => {
     const eda = LEVEL_EDAS[ LEVELS.indexOf(level) ]
 
-    const inaMidpoints = [...Array(eda).keys()].map((degree): Position | undefined => {
+    const inaMidpoints = [...Array(eda).keys()].map((degree): Maybe<Position> => {
         const midpoint = degree + 0.5
         const cents = APOTOME * midpoint / eda as Cents
 

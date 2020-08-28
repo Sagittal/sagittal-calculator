@@ -1,4 +1,4 @@
-import { isUndefined } from "../../../general"
+import { isUndefined, Maybe } from "../../../general"
 import {
     Bound,
     BoundedSymbolIdWithDistancesPair,
@@ -22,11 +22,11 @@ const extractBoundIdentifiers = (bound: Bound): BoundIdentifiers => {
     const [lesserBoundedSymbolIdWithDistance, greaterBoundedSymbolIdWithDistance]: BoundedSymbolIdWithDistancesPair =
         boundIdWithBoundedSymbolIdWithDistancesPairsByLevel[ Level.EXTREME ] as BoundedSymbolIdWithDistancesPair
 
-    const lesserBoundedSymbol: BoundedJiSymbol | undefined = lesserBoundedSymbolIdWithDistance && {
+    const lesserBoundedSymbol: Maybe<BoundedJiSymbol> = lesserBoundedSymbolIdWithDistance && {
         ...lesserBoundedSymbolIdWithDistance,
         ...getJiSymbol(lesserBoundedSymbolIdWithDistance.id),
     } as BoundedJiSymbol
-    const greaterBoundedSymbol: BoundedJiSymbol | undefined = greaterBoundedSymbolIdWithDistance && {
+    const greaterBoundedSymbol: Maybe<BoundedJiSymbol> = greaterBoundedSymbolIdWithDistance && {
         ...greaterBoundedSymbolIdWithDistance,
         ...getJiSymbol(greaterBoundedSymbolIdWithDistance.id),
     } as BoundedJiSymbol

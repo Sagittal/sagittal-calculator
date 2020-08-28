@@ -84,10 +84,10 @@ const formatBound = (
         formattedBound = formattedBound[ color ]
     } else if (mode === "details") {
         formattedBound =
-            JSON.stringify(boundIdentifiers, null, 4)
+            JSON.stringify(boundIdentifiers, undefined, 4)
                 .replace(/\\\\/g, "\\") +
             "\n" +
-            JSON.stringify(analyzedBound, null, 4)
+            JSON.stringify(analyzedBound, undefined, 4)
                 .replace(/\\\\/g, "\\")
     }
 

@@ -1,5 +1,5 @@
 import "colors"
-import { Extrema, isNumber, isUndefined, Max, Min } from "../../../general"
+import { Extrema, isNumber, isUndefined, Max, Maybe, Min } from "../../../general"
 import { Metric } from "../bestMetric"
 import { DebugTarget, saveDebugMessage } from "../debug"
 import { Parameter, ParameterValue } from "../sumOfSquares"
@@ -16,8 +16,8 @@ Object.values(Parameter).forEach(parameter => {
         return
     }
 
-    let parameterMin: Min<ParameterValue> | undefined = undefined
-    let parameterMax: Max<ParameterValue> | undefined = undefined
+    let parameterMin: Maybe<Min<ParameterValue>> = undefined
+    let parameterMax: Maybe<Max<ParameterValue>> = undefined
 
     Object.values(chunkCountResults).forEach(chunkCountResult => {
         chunkCountResult.submetrics.forEach(submetric => {
@@ -39,4 +39,4 @@ Object.values(Parameter).forEach(parameter => {
     }
 })
 
-saveDebugMessage(JSON.stringify(parameterExtrema, null, 4), DebugTarget.ALL)
+saveDebugMessage(JSON.stringify(parameterExtrema, undefined, 4), DebugTarget.ALL)

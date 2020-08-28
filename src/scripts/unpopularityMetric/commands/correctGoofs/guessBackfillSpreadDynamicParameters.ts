@@ -1,3 +1,4 @@
+import { Maybe } from "../../../../general"
 import { Metric } from "../../bestMetric"
 import { DebugTarget, saveDebugMessage } from "../../debug"
 import { PARAMETER_DYNAMISMS } from "../../perfecter"
@@ -13,7 +14,7 @@ const guessedBackfilledSpreadDynamicParametersMetrics = Object.entries(metricsMi
         const [metricName, metric] = metricEntry
         const parameterValues: Partial<Record<Parameter, ParameterValue>> = {}
 
-        let spreadDynamicParameters: Parameter[] | undefined = undefined
+        let spreadDynamicParameters: Maybe<Parameter[]> = undefined
 
         metric.submetrics.forEach(submetric => {
             Object.entries(submetric).forEach(submetricEntry => {
@@ -41,4 +42,4 @@ const guessedBackfilledSpreadDynamicParametersMetrics = Object.entries(metricsMi
     {} as Record<string, Metric>,
 )
 
-saveDebugMessage(JSON.stringify(guessedBackfilledSpreadDynamicParametersMetrics, null, 4), DebugTarget.ALL)
+saveDebugMessage(JSON.stringify(guessedBackfilledSpreadDynamicParametersMetrics, undefined, 4), DebugTarget.ALL)

@@ -40,7 +40,7 @@ describe("analyze-comma", () => {
         const command = "npm run analyze-comma"
 
         expect(
-            () => cp.execSync(command, { stdio: [null, null, null] }),
+            () => cp.execSync(command, { stdio: [undefined, undefined, undefined] }),
         ).toThrowError(/Unable to determine monzo for comma/)
     })
 })

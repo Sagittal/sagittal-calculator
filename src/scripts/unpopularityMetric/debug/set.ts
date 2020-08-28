@@ -1,7 +1,8 @@
+import { Maybe } from "../../../general"
 import { debugTargets } from "./targets"
 import { DebugTarget } from "./types"
 
-const setDebugTargets = (debugTargetsCommaSeparatedString: string | boolean | undefined = "") => {
+const setDebugTargets = (debugTargetsCommaSeparatedString: Maybe<string | boolean> = "") => {
     if (debugTargetsCommaSeparatedString === true) {
         debugTargets[ DebugTarget.ALL ] = true
         return

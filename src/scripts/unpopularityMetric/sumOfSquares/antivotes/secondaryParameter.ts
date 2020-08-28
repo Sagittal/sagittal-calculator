@@ -1,9 +1,9 @@
-import { Exponent, FractionalPartType, isUndefined, Prime } from "../../../../general"
+import { Exponent, FractionalPartType, isUndefined, Maybe, Prime } from "../../../../general"
 import { ParameterValue } from "../types"
 
 const secondaryParameterOverride = (
     parameter: ParameterValue,
-    denominatorSpecificParameter: ParameterValue | undefined,
+    denominatorSpecificParameter: Maybe<ParameterValue>,
     primeExponent: Exponent<Prime>,
     fractionalPart?: FractionalPartType,
 ) =>

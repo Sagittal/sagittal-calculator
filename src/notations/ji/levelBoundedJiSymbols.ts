@@ -1,4 +1,4 @@
-import { abs, Cents, difference } from "../../general"
+import { abs, Cents, difference, Maybe } from "../../general"
 import { getSagittalComma } from "../getComma"
 import { computeBoundedJiSymbolPositions } from "./boundedJiSymbolPositions"
 import { BOUNDS } from "./bounds"
@@ -14,7 +14,7 @@ const computeLevelBoundedJiSymbolIdWithDistances = (
 
     return levels.reduce(
         (levels, level) => {
-            const levelBoundedSymbols: Array<JiSymbol | undefined> = computeBoundedJiSymbolPositions(cents, level)
+            const levelBoundedSymbols: Array<Maybe<JiSymbol>> = computeBoundedJiSymbolPositions(cents, level)
                 .map(computePositionJiSymbolId)
                 .map(jiSymbolId => jiSymbolId && getJiSymbol(jiSymbolId))
             const levelBoundedSymbolsWithDistance = levelBoundedSymbols.map(jiSymbol => {

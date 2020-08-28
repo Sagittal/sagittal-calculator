@@ -1,4 +1,4 @@
-import { Cents, Id, Proportion } from "../../../general"
+import { Cents, Id, Maybe, Proportion } from "../../../general"
 import { Bound, JiSymbol, Level, Mina, SagittalComma, SymbolLongAscii } from "../../../notations"
 
 interface BoundedJiSymbol extends JiSymbol {
@@ -11,10 +11,8 @@ interface BoundedJiSymbolWithPrimaryComma extends JiSymbolWithPrimaryComma {
     inaDistance: Proportion,
 }
 
-type BoundedJiSymbolWithPrimaryCommaPair = [
-        BoundedJiSymbolWithPrimaryComma | undefined,
-        BoundedJiSymbolWithPrimaryComma | undefined
-]
+type BoundedJiSymbolWithPrimaryCommaPair =
+    [Maybe<BoundedJiSymbolWithPrimaryComma>, Maybe<BoundedJiSymbolWithPrimaryComma>]
 
 type BoundedJiSymbolsWithPrimaryCommas = { id: Id<Bound> }
     & Partial<Record<Level, BoundedJiSymbolWithPrimaryCommaPair>>
@@ -23,8 +21,8 @@ interface BoundIdentifiers {
     boundedSymbols: BoundedJiSymbolsWithPrimaryCommas,
     extremeLevelGreaterBoundedSymbol: SymbolLongAscii,
     extremeLevelLesserBoundedSymbol: SymbolLongAscii,
-    greaterBoundedMina: Mina | undefined,
-    lesserBoundedMina: Mina | undefined,
+    greaterBoundedMina?: Mina,
+    lesserBoundedMina?: Mina,
     cents: Cents,
 }
 

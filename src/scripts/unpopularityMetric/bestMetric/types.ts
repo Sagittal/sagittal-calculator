@@ -1,4 +1,4 @@
-import { Combination, Index, Resolution, Span, Sum } from "../../../general"
+import { Combination, Index, Maybe, Resolution, Span, Sum } from "../../../general"
 import { Parameter, ParameterValue, Submetric } from "../sumOfSquares"
 import { DynamicParameter, Sample } from "./scopeToSamples"
 
@@ -8,7 +8,7 @@ interface Metric {
     spreadDynamicParameters?: Parameter[],
     name: MetricName,
     submetrics: Combination<Submetric>,
-    sumOfSquares: SumOfSquares | undefined,
+    sumOfSquares?: SumOfSquares,
 }
 
 type ParameterScope = ParameterValue | boolean | DynamicParameterScope
@@ -31,7 +31,7 @@ type SquaredWeightedRankDifferences =
 
 type SumOfSquares = Sum<SquaredWeightedRankDifferences>
 
-type SumsOfSquares = Array<SumsOfSquares | SumOfSquares | undefined>
+type SumsOfSquares = Array<Maybe<SumsOfSquares | SumOfSquares>>
 
 type NonRecursiveSearchScopeAndMaybeUpdateBestMetricOptions = Partial<{
     indentation: string,

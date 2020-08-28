@@ -1,8 +1,9 @@
+import { Maybe } from "../../general"
 import { Level } from "../../notations"
 import { AnalyzedHistory } from "./types"
 
-const levelsBestHistoryRanks: Record<Level, { [ index: number ]: number | undefined }> =
-    {} as Record<Level, { [ index: number ]: number | undefined }>
+const levelsBestHistoryRanks: Record<Level, { [ index: number ]: Maybe<number> }> =
+    {} as Record<Level, { [ index: number ]: Maybe<number> }>
 const levelsBestCumulativeHistoryRanks: Record<Level, { [ index: number ]: number }> =
     {} as Record<Level, { [ index: number ]: number }>
 

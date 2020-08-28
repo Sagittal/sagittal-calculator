@@ -1,8 +1,8 @@
-import { FORMATATIONAL_PRECISION, Formatted, round } from "../../../general"
+import { FORMATATIONAL_PRECISION, Formatted, isUndefined, Maybe, round } from "../../../general"
 import { Mina } from "../../../notations"
 
-const formatMina = (mina: Mina | undefined): Formatted<Mina> => {
-    if (!mina) {
+const formatMina = (mina: Maybe<Mina>): Formatted<Mina> => {
+    if (isUndefined(mina)) {
         return "       " as Formatted<Mina>
     }
 

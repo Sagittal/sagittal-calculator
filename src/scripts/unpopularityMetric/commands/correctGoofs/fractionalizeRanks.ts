@@ -10,7 +10,7 @@ const fractionalizeRanks = () => {
         descending: true,
     })
 
-    saveDebugMessage(JSON.stringify(rankedPopularities, null, 4), DebugTarget.ALL)
+    saveDebugMessage(JSON.stringify(rankedPopularities, undefined, 4), DebugTarget.ALL)
 }
 
 fractionalizeRanks()

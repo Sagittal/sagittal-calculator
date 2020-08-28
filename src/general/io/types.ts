@@ -1,3 +1,5 @@
+import { Maybe } from "../code"
+
 type Formatted<T> = string & { _FormattedBrand: T }
 
 enum Justification {
@@ -6,7 +8,7 @@ enum Justification {
     CENTER = "center",
 }
 
-type JustificationOption = Justification | Array<Justification | undefined>
+type JustificationOption = Justification | Array<Maybe<Justification>>
 
 type Px = number & { _PxBrand: "Px" }
 type HexColor = string & { _HexColorBrand: "HexColor" }

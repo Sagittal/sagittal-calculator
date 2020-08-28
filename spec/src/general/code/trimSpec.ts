@@ -37,7 +37,7 @@ describe("computeTrimmedArray", () => {
     })
 
     it("doesn't crash if given an array which will be trimmed to the point of emptiness", () => {
-        const array: unknown[] = [undefined, 0, null]
+        const array: unknown[] = [undefined, 0, undefined]
 
         const actual = computeTrimmedArray(array)
 

@@ -1,4 +1,4 @@
-import { Cents, Extrema, Id, Proportion } from "../../general"
+import { Cents, Extrema, Id, Maybe, Proportion } from "../../general"
 import { SagittalComma, SymbolLongAscii, SymbolSet, SymbolUnicode } from "../types"
 
 type Tina = Cents & { _TinaBrand: "Tina" }
@@ -42,12 +42,9 @@ interface BoundedSymbolIdWithDistances {
     inaDistance: Proportion,
 }
 
-type BoundedSymbolIdWithDistancesPair = [
-        BoundedSymbolIdWithDistances | undefined,
-        BoundedSymbolIdWithDistances | undefined
-]
+type BoundedSymbolIdWithDistancesPair = [Maybe<BoundedSymbolIdWithDistances>, Maybe<BoundedSymbolIdWithDistances>]
 
-type NeighborPositions = [Cents | undefined, Cents | undefined]
+type NeighborPositions = [Maybe<Cents>, Maybe<Cents>]
 type BoundedSymbolPositions = NeighborPositions
 
 type SecondaryCommaZone = Extrema<Cents>

@@ -12,6 +12,7 @@ import {
     ExtensionBaseType,
     isNumber,
     isUndefined,
+    Maybe,
     merge,
     Range,
     rank,
@@ -225,5 +226,6 @@ export {
     ONE,
     Px,
     HexColor,
+    Maybe,
     computeMonzoFromCommand,
 }

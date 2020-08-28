@@ -26,4 +26,4 @@ const noRottens = Object.entries(potentiallyRottens).reduce(
     {} as Record<string, Metric>,
 )
 
-saveDebugMessage(JSON.stringify(noRottens, null, 4), DebugTarget.ALL)
+saveDebugMessage(JSON.stringify(noRottens, undefined, 4), DebugTarget.ALL)

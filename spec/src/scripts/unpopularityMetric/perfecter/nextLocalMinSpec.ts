@@ -50,9 +50,9 @@ describe("searchNextLocalMin", () => {
         spyOn(recursiveBestMetric, "recursiveSearchScopeAndMaybeUpdateBestMetric")
     })
 
-    // TODO: test the scheduling (by index)
+    // TODO: test - the scheduling (by index)
 
-    // TODO: test the error catching
+    // TODO: test - the error catching
 
     it("it searches the next local min recursively and maybe updates the best metric", async () => {
         await searchNextLocalMin(nextLocalMin, {

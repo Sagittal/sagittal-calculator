@@ -24,7 +24,7 @@ const computeWeightedSubmetricAntivotes = (fiveRoughRatio: Ratio, submetric = {}
     })
 
     if (isNaN(submetricAntivotes)) {
-        throw new Error(`You got NaN! ${fiveRoughRatio} ${JSON.stringify(submetric, null, 4)} ${submetricAntivotes} ${weightAsCoefficient} ${weightAsLogarithmBase} ${weightAsPowerExponent} ${weightAsPowerBase}`)
+        throw new Error(`You got NaN! ${fiveRoughRatio} ${JSON.stringify(submetric, undefined, 4)} ${submetricAntivotes} ${weightAsCoefficient} ${weightAsLogarithmBase} ${weightAsPowerExponent} ${weightAsPowerBase}`)
     }
 
     return submetricAntivotes
