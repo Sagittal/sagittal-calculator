@@ -1,15 +1,17 @@
-import { formatBound } from "./bound"
-import { BOUNDS_ANALYSIS_HEADER_ROW } from "./headerRow"
-import { formatLevelAnalyses } from "./levelAnalyses"
-import { formatMina } from "./mina"
-import { formatRankAnalyses } from "./rankAnalyses"
-import { AnalysisMode } from "./types"
-
-export {
-    formatBound,
+import { visualizeBounds } from "./image"
+import {
     AnalysisMode,
     BOUNDS_ANALYSIS_HEADER_ROW,
+    formatBound,
     formatLevelAnalyses,
     formatRankAnalyses,
-    formatMina,
+} from "./text"
+
+export {
+    AnalysisMode,
+    BOUNDS_ANALYSIS_HEADER_ROW,
+    formatBound,
+    formatLevelAnalyses,
+    formatRankAnalyses,
+    visualizeBounds,
 }
