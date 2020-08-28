@@ -3,7 +3,7 @@ import { BOUNDS } from "../../../../notations"
 import { ColorMethod } from "../../../../types"
 import { AnalyzedBound } from "../../types"
 import { computeBoundRow } from "./boundRow"
-import { BOUND_COLORS } from "./BOUND_COLORS"
+import { BOUND_COLORS } from "./boundColors"
 import { computeBoundsAnalysisHeaderRows } from "./headerRows"
 
 // TODO: you could keep the color of the table rows test covered by testing at this level

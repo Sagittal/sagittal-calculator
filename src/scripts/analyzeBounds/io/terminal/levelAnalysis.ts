@@ -1,6 +1,6 @@
 import { IO, Maybe } from "../../../../general"
 import { Level } from "../../../../notations"
-import { BOUND_COLORS } from "./BOUND_COLORS"
+import { BOUND_COLORS } from "./boundColors"
 import { formatLevel } from "./level"
 import { FORMATTED_RANK_NAMES } from "./rank"
 

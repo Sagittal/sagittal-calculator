@@ -2,15 +2,15 @@ import { FORMATATIONAL_PRECISION, NEWLINE, SPACE, SUPERSCRIPT_NUMS } from "./con
 import { formatMonzo } from "./formatMonzo"
 import { formatNumber } from "./formatNumber"
 import { formatRatio } from "./formatRatio"
-import { formatTableForForum } from "./tableForForum"
+import { computeHeaderRowsFromColumnTitleColumns } from "./headerRowsFromColumnTitleColumns"
 import { computeMonzoFromCommand } from "./monzoFromCommand"
 import { parseMonzo } from "./parseMonzo"
 import { parseRatio } from "./parseRatio"
 import { removeColor } from "./removeColor"
-import { addTexts } from "./typedOperations"
+import { formatTableForForum } from "./tableForForum"
 import { formatTableForTerminal } from "./tableForTerminal"
-import { computeHeaderRowsFromColumnTitleColumns } from "./headerRowsFromColumnTitleColumns"
 import { formatTime } from "./time"
+import { addTexts } from "./typedOperations"
 import { Column, Filename, Formatted, HexColor, IO, Px, Row, Table } from "./types"
 
 export {

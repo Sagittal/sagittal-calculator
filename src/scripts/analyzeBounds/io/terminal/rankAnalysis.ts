@@ -1,7 +1,7 @@
 import { Count, IO, Rank } from "../../../../general"
 import { rankBoundIndices } from "../../ranks"
 import { AnalyzedEvent } from "../../types"
-import { BOUND_COLORS } from "./BOUND_COLORS"
+import { BOUND_COLORS } from "./boundColors"
 import { FORMATTED_RANK_NAMES } from "./rank"
 
 const formatRankAnalysis = (rankCount: Count<Rank<AnalyzedEvent>>, rankIndex: number): IO =>

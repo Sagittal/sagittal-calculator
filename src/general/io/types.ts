@@ -1,5 +1,5 @@
-import { Maybe } from "../code"
 import { ColorMethod } from "../../types"
+import { Maybe } from "../code"
 
 enum Justification {
     LEFT = "left",
