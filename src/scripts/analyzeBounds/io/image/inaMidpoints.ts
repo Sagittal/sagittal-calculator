@@ -1,5 +1,5 @@
 import { CentsPosition, IO } from "../../../../general"
-import { Level } from "../../../../notations"
+import { Level } from "../../../../sagittal"
 import { INA_MIDPOINTS } from "../../plot"
 import { INA_COLOR } from "./colors"
 import { LEVEL_CENTERS } from "./levelHeights"

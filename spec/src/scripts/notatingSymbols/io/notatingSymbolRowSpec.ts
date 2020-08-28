@@ -1,5 +1,5 @@
 import { Id, Row } from "../../../../../src/general"
-import { JiSymbol } from "../../../../../src/notations/ji"
+import { JiSymbol } from "../../../../../src/sagittal/notations/ji"
 import { computeNotatingSymbolRow } from "../../../../../src/scripts/notatingSymbols/io"
 
 describe("computeNotatingSymbolRow", () => {

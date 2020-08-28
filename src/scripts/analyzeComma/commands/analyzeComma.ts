@@ -1,5 +1,5 @@
 import { computeMonzoFromCommand } from "../../../general"
-import { analyzeComma } from "../../../notations"
+import { analyzeComma } from "../../../sagittal"
 import { formatComma } from "../io"
 
 const monzo = computeMonzoFromCommand()

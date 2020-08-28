@@ -1,4 +1,4 @@
-import { BOUNDS } from "../../notations"
+import { BOUNDS } from "../../sagittal"
 import { analyzeBound } from "./bound"
 import { computeHistories } from "./plot"
 import { AnalyzedBound } from "./types"

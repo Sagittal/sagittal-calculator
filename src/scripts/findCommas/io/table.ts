@@ -1,4 +1,5 @@
-import { Comma, formatTableForForum, formatTableForTerminal, IO, Table } from "../../../general"
+import { formatTableForForum, formatTableForTerminal, IO, Table } from "../../../general"
+import { Comma } from "../../../sagittal"
 import { computeCommaRow } from "./commaRow"
 import { FIND_COMMAS_HEADER_ROW } from "./headerRow"
 

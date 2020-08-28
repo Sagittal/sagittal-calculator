@@ -1,5 +1,5 @@
 import { Formatted } from "../../../../general"
-import { SymbolLongAscii } from "../../../../notations"
+import { SymbolLongAscii } from "../../../../sagittal"
 
 const formatSymbolAscii = (symbolAscii: SymbolLongAscii): Formatted<SymbolLongAscii> => {
     const shaftIndex = symbolAscii.indexOf("|")

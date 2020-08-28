@@ -1,5 +1,5 @@
 import { Cents, Name, Pitch, Proportion, Rank } from "../../../../src/general"
-import { Level, Tina } from "../../../../src/notations/ji"
+import { Level, Tina } from "../../../../src/sagittal/notations/ji"
 import { computeConsolidatedHistories } from "../../../../src/scripts/analyzeBounds/consolidatedHistories"
 import { AnalyzedEvent, AnalyzedHistory, EventType } from "../../../../src/scripts/analyzeBounds/types"
 import { analyzedEventFixture, analyzedHistoryFixture } from "../../../helpers/src/scripts/analyzeBounds/fixtures"

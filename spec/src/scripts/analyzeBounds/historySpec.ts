@@ -1,6 +1,6 @@
 import { Cents, Proportion, Rank } from "../../../../src/general"
 import { ACCURACY_THRESHOLD } from "../../../../src/general/code"
-import { Bound, Level, Tina, TINA } from "../../../../src/notations/ji"
+import { Bound, Level, Tina, TINA } from "../../../../src/sagittal/notations/ji"
 import { analyzeHistory } from "../../../../src/scripts/analyzeBounds/history"
 import { computeInitialPosition } from "../../../../src/scripts/analyzeBounds/initialPosition"
 import { AnalyzedEvent, EventType, History } from "../../../../src/scripts/analyzeBounds/types"

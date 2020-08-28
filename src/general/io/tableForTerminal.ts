@@ -1,4 +1,5 @@
-import { Range } from "../code"
+import { ColorMethod } from "../../types"
+import { isUndefined, Range } from "../code"
 import { Count } from "../types"
 import { NEWLINE } from "./constants"
 import { addTexts, length } from "./typedOperations"
@@ -62,6 +63,17 @@ const computeAlignedRowCell = (rowCell: IO, { columnWidth, columnJustification }
     return alignedRowCell
 }
 
+const maybeColor = (rowText: IO, rowIndex: number, colors?: ColorMethod[]): IO => {
+    if (isUndefined(colors)) {
+        return rowText
+    }
+
+    const rowColor: ColorMethod = colors[rowIndex]
+
+    // @ts-ignore
+    return rowText[ rowColor ] as IO
+}
+
 const formatTableForTerminal = (table: Table, options: AlignTableOptions = {}): IO => {
     const { justification = Justification.LEFT, colors } = options
     const columnRange = computeColumnRange(table)
@@ -85,7 +97,7 @@ const formatTableForTerminal = (table: Table, options: AlignTableOptions = {}): 
             "" as IO,
         )
 
-        return colors ? rowText[ colors[rowIndex] ] as IO : rowText
+        return maybeColor(rowText, rowIndex, colors)
     }).join(NEWLINE) as IO, NEWLINE) // TODO: a typed join in the io/typedOperations to clean up this "as"
 }
 

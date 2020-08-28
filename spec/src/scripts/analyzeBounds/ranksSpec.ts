@@ -1,5 +1,5 @@
 import { Count, Id, Rank } from "../../../../src/general"
-import { Bound } from "../../../../src/notations/ji"
+import { Bound } from "../../../../src/sagittal/notations/ji"
 import { rankBoundIndices, rankCounts, updateRankAnalysis } from "../../../../src/scripts/analyzeBounds/ranks"
 import { AnalyzedEvent } from "../../../../src/scripts/analyzeBounds/types"
 

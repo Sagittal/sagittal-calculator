@@ -1,6 +1,6 @@
 import { Px } from "../../../../../../src/general"
 import { ACCURACY_THRESHOLD } from "../../../../../../src/general/code"
-import { Level } from "../../../../../../src/notations/ji"
+import { Level } from "../../../../../../src/sagittal/notations/ji"
 import { computeLevelHeights } from "../../../../../../src/scripts/analyzeBounds/io/image/levelHeights"
 
 describe("computeLevelHeights", () => {

@@ -1,5 +1,5 @@
 import { BASE_2, Exponent, pow } from "../../general"
-import { LEVELS } from "../../notations"
+import { LEVELS } from "../../sagittal"
 import {
     BINARY_SCORE_REPRESENTATION_CARDINALITY,
     computeBinaryScoreRepresentationIndex,

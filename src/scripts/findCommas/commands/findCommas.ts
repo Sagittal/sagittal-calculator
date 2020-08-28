@@ -1,6 +1,6 @@
 import { program } from "commander"
 import { Formatted, IO, Monzo, parseMonzo } from "../../../general"
-import { MAX_SINGLE_SHAFT_CENTS } from "../../../notations"
+import { MAX_SINGLE_SHAFT_CENTS } from "../../../sagittal"
 import { computeCommas } from "../commas"
 import { computeFindCommasTable } from "../io"
 

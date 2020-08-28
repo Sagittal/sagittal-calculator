@@ -1,5 +1,5 @@
 import { Rank } from "../../general"
-import { LEVELS } from "../../notations"
+import { LEVELS } from "../../sagittal"
 import { RANKS } from "./ranks"
 import { AnalyzedEvent } from "./types"
 

@@ -1,4 +1,4 @@
-import { Level, LEVELS } from "../../../../../../src/notations/ji"
+import { Level, LEVELS } from "../../../../../../src/sagittal/notations/ji"
 import { formatLevelAnalyses } from "../../../../../../src/scripts/analyzeBounds/io"
 import {
     levelsBestCumulativeHistoryRanks,

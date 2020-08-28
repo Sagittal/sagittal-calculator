@@ -1,5 +1,5 @@
 import { formatNumber } from "../../../../general"
-import { LEVELS } from "../../../../notations"
+import { LEVELS } from "../../../../sagittal"
 import { AnalyzedHistory } from "../../types"
 import { alignFormattedNumber } from "./alignFormattedNumber"
 

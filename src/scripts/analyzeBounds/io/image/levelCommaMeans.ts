@@ -1,5 +1,5 @@
 import { CentsPosition, IO } from "../../../../general"
-import { Level, SymbolLongAscii, unicodeFromAscii } from "../../../../notations"
+import { Level, SymbolLongAscii, unicodeFromAscii } from "../../../../sagittal"
 import { LEVELS_COMMA_MEANS } from "../../plot"
 import { MEAN_COLOR } from "./colors"
 import { LEVEL_CENTERS } from "./levelHeights"

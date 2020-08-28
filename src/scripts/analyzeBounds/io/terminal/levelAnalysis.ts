@@ -1,5 +1,5 @@
 import { IO, Maybe } from "../../../../general"
-import { Level } from "../../../../notations"
+import { Level } from "../../../../sagittal"
 import { BOUND_COLORS } from "./boundColors"
 import { formatLevel } from "./level"
 import { FORMATTED_RANK_NAMES } from "./rank"

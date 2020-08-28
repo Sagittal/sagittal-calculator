@@ -1,4 +1,4 @@
-import { Level } from "../../../../../../src/notations/ji"
+import { Level } from "../../../../../../src/sagittal/notations/ji"
 import { formatLevel } from "../../../../../../src/scripts/analyzeBounds/io/terminal/level"
 
 describe("formatLevel", () => {

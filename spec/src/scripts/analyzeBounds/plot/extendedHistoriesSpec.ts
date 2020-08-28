@@ -1,5 +1,5 @@
 import { Cents, Name, Pitch } from "../../../../../src/general"
-import { Level } from "../../../../../src/notations/ji"
+import { Level } from "../../../../../src/sagittal/notations/ji"
 import { computeExtendedHistories } from "../../../../../src/scripts/analyzeBounds/plot/extendedHistories"
 import { EventType, HistoricalEvent, History } from "../../../../../src/scripts/analyzeBounds/types"
 import { boundFixture } from "../../../../helpers/src/scripts/analyzeBounds/fixtures"

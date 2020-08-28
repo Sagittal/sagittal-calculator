@@ -1,4 +1,5 @@
-import { Formatted, IO, N2D3P9, Popularity, Rank, Ratio, Votes } from "../../general"
+import { Formatted, IO, Popularity, Rank, Ratio, Votes } from "../../general"
+import { N2D3P9 } from "../../sagittal"
 
 interface PopularRatio {
     n2d3p9: N2D3P9,

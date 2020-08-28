@@ -1,5 +1,5 @@
 import { Cents, Id, Name, Pitch, Proportion, Rank, Sum } from "../../../../src/general"
-import { Bound, Level, Tina } from "../../../../src/notations/ji"
+import { Bound, Level, Tina } from "../../../../src/sagittal/notations/ji"
 import { analyzeBound } from "../../../../src/scripts/analyzeBounds/bound"
 import * as levels from "../../../../src/scripts/analyzeBounds/levels"
 import * as ranks from "../../../../src/scripts/analyzeBounds/ranks"

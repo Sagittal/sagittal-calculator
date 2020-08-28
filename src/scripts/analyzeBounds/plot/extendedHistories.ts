@@ -1,5 +1,5 @@
 import { computeExtensionBase, ExtensionBaseType } from "../../../general"
-import { Bound, BoundedSymbolPositions, computeBoundedJiSymbolPositions, Level } from "../../../notations"
+import { Bound, BoundedSymbolPositions, computeBoundedJiSymbolPositions, Level } from "../../../sagittal"
 import { EventType, History } from "../types"
 import { computeEvents } from "./events"
 

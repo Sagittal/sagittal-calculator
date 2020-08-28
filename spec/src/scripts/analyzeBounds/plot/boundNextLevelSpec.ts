@@ -1,4 +1,4 @@
-import { Bound, Level } from "../../../../../src/notations/ji"
+import { Bound, Level } from "../../../../../src/sagittal/notations/ji"
 import { computeBoundNextLevel } from "../../../../../src/scripts/analyzeBounds/plot/boundNextLevel"
 import { boundFixture } from "../../../../helpers/src/scripts/analyzeBounds/fixtures"
 

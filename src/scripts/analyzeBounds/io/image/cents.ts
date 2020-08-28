@@ -1,5 +1,5 @@
 import { ceil, Cents, IO } from "../../../../general"
-import { MAX_SINGLE_SHAFT_CENTS } from "../../../../notations"
+import { MAX_SINGLE_SHAFT_CENTS } from "../../../../sagittal"
 import { MARGIN, Y_SCALE } from "./sizes"
 import { computeX } from "./x"
 

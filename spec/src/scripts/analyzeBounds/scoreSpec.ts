@@ -1,5 +1,5 @@
 import { Rank } from "../../../../src/general"
-import { Level } from "../../../../src/notations/ji"
+import { Level } from "../../../../src/sagittal/notations/ji"
 import { computeScore } from "../../../../src/scripts/analyzeBounds/score"
 import { AnalyzedEvent } from "../../../../src/scripts/analyzeBounds/types"
 import { analyzedEventFixture } from "../../../helpers/src/scripts/analyzeBounds/fixtures"

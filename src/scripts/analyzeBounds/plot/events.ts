@@ -1,5 +1,5 @@
 import { CentsPosition, Name, Pitch } from "../../../general"
-import { BoundedSymbolPositions, Level } from "../../../notations"
+import { BoundedSymbolPositions, Level } from "../../../sagittal"
 import { EventType, HistoricalEvent } from "../types"
 import { EVENT_TYPE_SNAPPABLE_POSITIONS } from "./snappablePositions"
 

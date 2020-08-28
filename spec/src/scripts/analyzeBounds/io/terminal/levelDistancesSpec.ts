@@ -1,7 +1,7 @@
 import { Proportion } from "../../../../../../src/general"
 import { Formatted } from "../../../../../../src/general/io"
 import { Cents } from "../../../../../../src/general/music"
-import { Level } from "../../../../../../src/notations/ji"
+import { Level } from "../../../../../../src/sagittal/notations/ji"
 import { extractLevelDistances } from "../../../../../../src/scripts/analyzeBounds/io/terminal/levelDistances"
 import { AnalyzedHistory } from "../../../../../../src/scripts/analyzeBounds/types"
 import { analyzedEventFixture, analyzedHistoryFixture } from "../../../../../helpers/src/scripts/analyzeBounds/fixtures"

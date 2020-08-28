@@ -1,5 +1,6 @@
-import { Cents, Comma, Monzo, Name, Prime, Ratio, Row, Sopfr } from "../../../../../src/general"
-import { ApotomeSlope, N2D3P9 } from "../../../../../src/general/music"
+import { Cents, Monzo, Name, Prime, Ratio, Row, Sopfr } from "../../../../../src/general"
+import { N2D3P9 } from "../../../../../src/sagittal/n2d3p9"
+import { ApotomeSlope, Comma } from "../../../../../src/sagittal/types"
 import { computeCommaRow } from "../../../../../src/scripts/findCommas/io/commaRow"
 
 describe("computeCommaRow", () => {

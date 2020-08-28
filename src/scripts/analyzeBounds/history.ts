@@ -1,5 +1,5 @@
 import { Cents, computeIsCloseTo, Proportion } from "../../general"
-import { Bound, Tina, TINA } from "../../notations"
+import { Bound, Tina, TINA } from "../../sagittal"
 import { analyzeEvents } from "./events"
 import { computeExact } from "./exact"
 import { computeHistoryDistance } from "./historyDistance"

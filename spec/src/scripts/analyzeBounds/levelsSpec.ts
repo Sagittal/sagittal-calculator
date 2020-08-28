@@ -1,5 +1,5 @@
 import { Rank } from "../../../../src/general"
-import { Level } from "../../../../src/notations/ji"
+import { Level } from "../../../../src/sagittal/notations/ji"
 import {
     levelsBestCumulativeHistoryRanks,
     levelsBestHistoryRanks,

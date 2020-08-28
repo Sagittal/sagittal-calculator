@@ -1,5 +1,5 @@
 import { Name, Pitch, Rank } from "../../../../src/general"
-import { Level } from "../../../../src/notations/ji"
+import { Level } from "../../../../src/sagittal/notations/ji"
 import { AnalyzedEvent, AnalyzedHistory, ConsolidatedEvent } from "../../../../src/scripts/analyzeBounds/types"
 import { updateConsolidatedEvent } from "../../../../src/scripts/analyzeBounds/updateConsolidatedEvent"
 import {

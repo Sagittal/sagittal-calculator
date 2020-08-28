@@ -1,5 +1,5 @@
 import { computeExtensionBase, ExtensionBaseType } from "../../../general"
-import { Bound } from "../../../notations"
+import { Bound } from "../../../sagittal"
 import { History } from "../types"
 import { computeExtendedLevelHistories } from "./extendedLevelHistories"
 

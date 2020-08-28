@@ -1,7 +1,6 @@
 import {
     computeCopfr,
     computeExtensionBase,
-    computePrimeExponentExtremasGivenMaxN2D3P9,
     computeSopfr,
     computeTrimmedArray,
     Copfr,
@@ -16,6 +15,7 @@ import {
     Prime,
     Sopfr,
 } from "../../general"
+import { computePrimeExponentExtremasGivenMaxN2D3P9 } from "../../sagittal"
 import { computeFiveRoughPrimesToCheck } from "./fiveRoughPrimesToCheck"
 import { computePrimeExponentRange } from "./primeExponentRange"
 import { ComputeFiveSlicedMonzosToCheckOptions } from "./types"

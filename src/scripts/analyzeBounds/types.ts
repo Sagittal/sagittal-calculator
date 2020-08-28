@@ -1,5 +1,5 @@
 import { Cents, Count, Name, Pitch, Proportion, Rank, Sum } from "../../general"
-import { Level, Tina } from "../../notations"
+import { Level, Tina } from "../../sagittal"
 
 enum EventType {
     INA = "ina",

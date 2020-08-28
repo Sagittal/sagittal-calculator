@@ -1,5 +1,5 @@
 import { Count, Id, Rank } from "../../general"
-import { Bound } from "../../notations"
+import { Bound } from "../../sagittal"
 import { AnalyzedEvent, EventType } from "./types"
 
 const RANKS: Record<EventType, Rank<AnalyzedEvent>> = {

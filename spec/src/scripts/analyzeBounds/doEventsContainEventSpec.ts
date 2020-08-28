@@ -1,5 +1,5 @@
 import { Name, Pitch, Rank } from "../../../../src/general"
-import { Level } from "../../../../src/notations/ji"
+import { Level } from "../../../../src/sagittal/notations/ji"
 import { computeDoEventsContainEvent } from "../../../../src/scripts/analyzeBounds/doEventsContainEvent"
 import { AnalyzedEvent } from "../../../../src/scripts/analyzeBounds/types"
 import { analyzedEventFixture } from "../../../helpers/src/scripts/analyzeBounds/fixtures"

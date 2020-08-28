@@ -1,5 +1,5 @@
 import { Count, Proportion } from "../../general"
-import { Bound, Tina, TINA } from "../../notations"
+import { Bound, Tina, TINA } from "../../sagittal"
 import { computeBestPossibleHistory } from "./bestPossibleHistory"
 import { computeConsolidatedHistories } from "./consolidatedHistories"
 import { analyzeHistory } from "./history"

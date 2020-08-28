@@ -1,5 +1,5 @@
 import { Cents, Id, Maybe, Proportion } from "../../../../general"
-import { Bound, JiSymbol, Level, Mina, SagittalComma, SymbolLongAscii } from "../../../../notations"
+import { Bound, JiSymbol, Level, Mina, SagittalComma, SymbolLongAscii } from "../../../../sagittal"
 
 interface BoundedJiSymbol extends JiSymbol {
     distance: Cents,

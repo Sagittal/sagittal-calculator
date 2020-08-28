@@ -1,5 +1,5 @@
 import { Cents, Name, Pitch } from "../../../../../src/general"
-import { BoundedSymbolPositions, computeBoundedJiSymbolPositions, Level } from "../../../../../src/notations/ji"
+import { BoundedSymbolPositions, computeBoundedJiSymbolPositions, Level } from "../../../../../src/sagittal/notations/ji"
 import { computeEvents } from "../../../../../src/scripts/analyzeBounds/plot/events"
 import { EventType, HistoricalEvent } from "../../../../../src/scripts/analyzeBounds/types"
 

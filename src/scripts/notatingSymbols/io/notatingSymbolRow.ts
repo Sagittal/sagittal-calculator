@@ -1,5 +1,5 @@
 import { formatMonzo, formatNumber, formatRatio, Id, IO, Row } from "../../../general"
-import { getJiSymbol, getSagittalComma, JiSymbol } from "../../../notations"
+import { getJiSymbol, getSagittalComma, JiSymbol } from "../../../sagittal"
 
 const computeNotatingSymbolRow = (jiSymbolId: Id<JiSymbol>): Row => {
     const { primaryCommaId, ascii: symbol } = getJiSymbol(jiSymbolId)

@@ -1,5 +1,5 @@
 import { FORMATATIONAL_PRECISION, Formatted, isUndefined, Maybe, round } from "../../../../general"
-import { Mina } from "../../../../notations"
+import { Mina } from "../../../../sagittal"
 
 const formatMina = (mina: Maybe<Mina>): Formatted<Mina> => {
     if (isUndefined(mina)) {

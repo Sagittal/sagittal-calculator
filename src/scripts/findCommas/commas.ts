@@ -1,4 +1,5 @@
-import { Comma, Integer, invertMonzo, Monzo, sort } from "../../general"
+import { Integer, invertMonzo, Monzo, sort } from "../../general"
+import { Comma } from "../../sagittal"
 import { computeCommasFromFiveSlicedMonzo } from "./commasFromFiveSlicedMonzo"
 import { computeFiveSlicedMonzosToCheck } from "./fiveSlicedMonzosToCheck"
 import { ComputeCommasOptions } from "./types"

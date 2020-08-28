@@ -1,5 +1,5 @@
 import { IO } from "../../../../general"
-import { Level } from "../../../../notations"
+import { Level } from "../../../../sagittal"
 import { AnalyzedEvent } from "../../types"
 import { RANK_FILLS } from "./colors"
 import { LEVEL_BOTTOMS, LEVEL_CENTERS } from "./levelHeights"

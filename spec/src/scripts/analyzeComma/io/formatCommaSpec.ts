@@ -1,5 +1,7 @@
-import { Cents, Comma, Monzo, Name, Prime, Ratio, Sopfr } from "../../../../../src/general"
-import { ApotomeSlope, N2D3P9 } from "../../../../../src/general/music"
+import { Cents, Monzo, Name, Prime, Ratio, Sopfr } from "../../../../../src/general"
+import { Comma } from "../../../../../src/sagittal"
+import { N2D3P9 } from "../../../../../src/sagittal/n2d3p9"
+import { ApotomeSlope } from "../../../../../src/sagittal/types"
 import { formatComma } from "../../../../../src/scripts/analyzeComma/io"
 
 describe("formatComma", () => {

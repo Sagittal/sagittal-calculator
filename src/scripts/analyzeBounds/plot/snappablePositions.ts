@@ -5,7 +5,7 @@ import {
     computeSizeCategoryBoundsWithinMaximumPosition,
     Level,
     LEVELS,
-} from "../../../notations"
+} from "../../../sagittal"
 import { EventType } from "../types"
 
 const computeSnappablePositions = (

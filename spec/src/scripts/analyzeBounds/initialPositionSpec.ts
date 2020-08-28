@@ -1,5 +1,5 @@
 import { Cents } from "../../../../src/general/music"
-import { Bound, Level } from "../../../../src/notations/ji"
+import { Bound, Level } from "../../../../src/sagittal/notations/ji"
 import { computeInitialPosition } from "../../../../src/scripts/analyzeBounds/initialPosition"
 import { boundFixture } from "../../../helpers/src/scripts/analyzeBounds/fixtures"
 

@@ -1,4 +1,4 @@
-import { Level } from "../../notations"
+import { Level } from "../../sagittal"
 import { ConsolidatedEvent, ConsolidatedHistories } from "./types"
 
 const ensureOneBestPossibleEventPerLevel = (consolidatedHistories: ConsolidatedHistories) => {

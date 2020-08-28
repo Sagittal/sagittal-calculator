@@ -1,4 +1,4 @@
-import { Bound, Level } from "../../../notations"
+import { Bound, Level } from "../../../sagittal"
 
 const computeBoundNextLevel = (bound: Bound, level: Level) => {
     const { levels } = bound

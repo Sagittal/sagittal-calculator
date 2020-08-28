@@ -1,5 +1,5 @@
 import { Cents } from "../../../../src/general/music"
-import { Level } from "../../../../src/notations/ji"
+import { Level } from "../../../../src/sagittal/notations/ji"
 import { analyzeEvents } from "../../../../src/scripts/analyzeBounds/events"
 import { EventType, History } from "../../../../src/scripts/analyzeBounds/types"
 import { analyzedEventFixture, eventFixture } from "../../../helpers/src/scripts/analyzeBounds/fixtures"

@@ -1,4 +1,4 @@
-import { LEVELS } from "../../../../notations"
+import { LEVELS } from "../../../../sagittal"
 import { AnalyzedEvent, AnalyzedHistory } from "../../types"
 
 const extractLevelRanks = (analyzedHistory: AnalyzedHistory) =>

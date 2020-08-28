@@ -1,5 +1,5 @@
 import { Cents, Id, Rank, Row } from "../../../../../../src/general"
-import { Bound, Level } from "../../../../../../src/notations"
+import { Bound, Level } from "../../../../../../src/sagittal"
 import { computeBoundRow } from "../../../../../../src/scripts/analyzeBounds/io"
 import { AnalyzedBound, AnalyzedEvent } from "../../../../../../src/scripts/analyzeBounds/types"
 import { boundFixture } from "../../../../../helpers/src/scripts/analyzeBounds/fixtures"

@@ -1,5 +1,5 @@
 import { computeMonzoFromCommand, formatTableForTerminal, Row } from "../../../general"
-import { computeNotatingJiSymbolIds } from "../../../notations"
+import { computeNotatingJiSymbolIds } from "../../../sagittal"
 import { computeNotatingSymbolRow, NOTATING_SYMBOLS_HEADER_ROW } from "../io"
 
 // TODO: this is technically notating JI symbols... but it would be pretty cool if it could return all possible

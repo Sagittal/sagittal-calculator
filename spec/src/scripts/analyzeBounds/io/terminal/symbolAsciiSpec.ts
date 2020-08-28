@@ -1,4 +1,4 @@
-import { SymbolLongAscii } from "../../../../../../src/notations"
+import { SymbolLongAscii } from "../../../../../../src/sagittal"
 import { formatSymbolAscii } from "../../../../../../src/scripts/analyzeBounds/io/terminal/symbolAscii"
 
 describe("formatSymbolAscii", () => {

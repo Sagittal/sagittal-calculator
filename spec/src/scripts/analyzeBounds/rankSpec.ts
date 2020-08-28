@@ -1,6 +1,6 @@
 import { Rank } from "../../../../src/general"
 import { Cents } from "../../../../src/general/music"
-import { Level } from "../../../../src/notations/ji"
+import { Level } from "../../../../src/sagittal/notations/ji"
 import { computeRank } from "../../../../src/scripts/analyzeBounds/rank"
 import { AnalyzedEvent, EventType } from "../../../../src/scripts/analyzeBounds/types"
 import { analyzedEventFixture } from "../../../helpers/src/scripts/analyzeBounds/fixtures"

@@ -1,6 +1,6 @@
 import "colors"
 import { program } from "commander"
-import { BOUNDS } from "../../../notations"
+import { BOUNDS } from "../../../sagittal"
 import { analyzeBound } from "../bound"
 import { computeFormattedBound } from "../io"
 import { computeHistories } from "../plot"

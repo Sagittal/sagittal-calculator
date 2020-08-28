@@ -4,11 +4,11 @@ import {
     formatTableForForum,
     IO,
     Max,
-    N2D3P9,
     Ranked,
     Row,
     Table,
 } from "../../../general"
+import { N2D3P9 } from "../../../sagittal"
 import { PopularRatio } from "../types"
 import { POPULAR_RATIOS_COLUMN_TITLE_COLUMNS } from "./headerRows"
 

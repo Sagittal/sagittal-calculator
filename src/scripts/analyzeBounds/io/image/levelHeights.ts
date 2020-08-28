@@ -1,5 +1,5 @@
 import { Px } from "../../../../general"
-import { Level, LEVELS } from "../../../../notations"
+import { Level, LEVELS } from "../../../../sagittal"
 import { computeReversedLevelIndex } from "./reversedLevelIndex"
 import { LEVEL_HEIGHT, MARGIN, Y_SCALE } from "./sizes"
 

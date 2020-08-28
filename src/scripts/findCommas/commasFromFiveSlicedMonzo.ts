@@ -1,5 +1,5 @@
-import { abs, Comma, computeMonzoInZone, computePlusOrMinusRange, Integer, Monzo } from "../../general"
-import { analyzeComma } from "../../notations"
+import { abs, computeMonzoInZone, computePlusOrMinusRange, Integer, Monzo } from "../../general"
+import { analyzeComma, Comma } from "../../sagittal"
 import { ComputeCommasFromFiveSlicedMonzoOptions } from "./types"
 
 const computeCommasFromFiveSlicedMonzo = (

@@ -1,20 +1,17 @@
 import {
-    ApotomeSlope,
     Cents,
-    Comma,
     Id,
     Monzo,
-    N2D3P9,
     Name,
     Prime,
     Proportion,
     Ratio,
     Sopfr,
 } from "../../../../../../src/general"
-import { SagittalComma, SymbolLongAscii } from "../../../../../../src/notations"
-import { Bound, JiSymbol, Level, Mina } from "../../../../../../src/notations/ji"
-import { INA_SIZES } from "../../../../../../src/notations/ji/intervals"
-import { SymbolSet, SymbolUnicode } from "../../../../../../src/notations/types"
+import { ApotomeSlope, N2D3P9, SagittalComma, SymbolLongAscii } from "../../../../../../src/sagittal"
+import { Bound, JiSymbol, Level, Mina } from "../../../../../../src/sagittal/notations/ji"
+import { INA_SIZES } from "../../../../../../src/sagittal/notations/ji/intervals"
+import { SymbolSet, SymbolUnicode } from "../../../../../../src/sagittal/notations/types"
 import { extractBoundIdentifiers } from "../../../../../../src/scripts/analyzeBounds/io/terminal/boundIdentifiers"
 import { BoundIdentifiers } from "../../../../../../src/scripts/analyzeBounds/io/terminal/types"
 

@@ -1,5 +1,5 @@
 import { Id } from "../../../../general"
-import { getJiSymbol, getSagittalComma, JiSymbol } from "../../../../notations"
+import { getJiSymbol, getSagittalComma, JiSymbol } from "../../../../sagittal"
 import { JiSymbolWithPrimaryComma } from "./types"
 
 const computeJiSymbolWithPrimaryComma = (jiSymbolId: Id<JiSymbol>): JiSymbolWithPrimaryComma => {

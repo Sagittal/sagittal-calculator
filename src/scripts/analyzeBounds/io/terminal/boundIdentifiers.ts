@@ -6,7 +6,7 @@ import {
     Level,
     LEVEL_BOUNDED_SYMBOLS,
     SymbolLongAscii,
-} from "../../../../notations"
+} from "../../../../sagittal"
 import { computeJiSymbolWithPrimaryComma } from "./jiSymbolWithPrimaryComma"
 import { BoundedJiSymbol, BoundedJiSymbolsWithPrimaryCommas, BoundIdentifiers } from "./types"
 

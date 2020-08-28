@@ -1,7 +1,7 @@
 import { Cents, Proportion } from "../../../../src/general"
 import { ACCURACY_THRESHOLD } from "../../../../src/general/code"
-import { Level } from "../../../../src/notations/ji"
-import { HIGHINA } from "../../../../src/notations/ji/intervals"
+import { Level } from "../../../../src/sagittal/notations/ji"
+import { HIGHINA } from "../../../../src/sagittal/notations/ji/intervals"
 import { computeEventInaDistance } from "../../../../src/scripts/analyzeBounds/eventInaDistance"
 import { eventFixture } from "../../../helpers/src/scripts/analyzeBounds/fixtures"
 

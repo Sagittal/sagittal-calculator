@@ -1,5 +1,5 @@
 import { Cents, IO } from "../../../../general"
-import { LEVELS, MAX_SINGLE_SHAFT_CENTS } from "../../../../notations"
+import { LEVELS, MAX_SINGLE_SHAFT_CENTS } from "../../../../sagittal"
 import { LEVEL_BOTTOMS } from "./levelHeights"
 import { computeX } from "./x"
 

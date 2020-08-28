@@ -1,5 +1,5 @@
 import { Maybe } from "../../general"
-import { Level } from "../../notations"
+import { Level } from "../../sagittal"
 import { AnalyzedHistory } from "./types"
 
 const levelsBestHistoryRanks: Record<Level, { [ index: number ]: Maybe<number> }> =

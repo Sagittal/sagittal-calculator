@@ -1,4 +1,5 @@
-import { Comma, formatMonzo, formatRatio, IO, Row } from "../../../general"
+import { formatMonzo, formatRatio, Row } from "../../../general"
+import { Comma } from "../../../sagittal"
 
 // TODO: could row be parameterized to indicate what it is a row of?
 const computeCommaRow = (comma: Comma): Row => {

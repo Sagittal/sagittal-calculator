@@ -1,5 +1,5 @@
 import { IO } from "../../../../general"
-import { Level } from "../../../../notations"
+import { Level } from "../../../../sagittal"
 import { LEVELS_SIZE_CATEGORY_BOUNDS } from "../../plot"
 import { SIZE_COLOR } from "./colors"
 import { LEVEL_BOTTOMS, LEVEL_TOPS } from "./levelHeights"

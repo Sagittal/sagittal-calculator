@@ -1,4 +1,5 @@
-import { Comma, formatMonzo, formatRatio, Formatted } from "../../../general"
+import { formatMonzo, formatRatio, Formatted } from "../../../general"
+import { Comma } from "../../../sagittal"
 
 const formatComma = (comma: Comma): Formatted<Comma> => {
     const { name, limit, fiveRoughSopfr, cents, monzo, ratio, apotomeSlope, n2d3p9 } = comma

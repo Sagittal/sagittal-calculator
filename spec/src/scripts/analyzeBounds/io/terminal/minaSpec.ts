@@ -1,4 +1,4 @@
-import { Mina } from "../../../../../../src/notations/ji"
+import { Mina } from "../../../../../../src/sagittal/notations/ji"
 import { formatMina } from "../../../../../../src/scripts/analyzeBounds/io/terminal"
 
 describe("formatMina", () => {

@@ -1,5 +1,5 @@
 import { IO, Px } from "../../../../general"
-import { Bound, Level, LEVELS_BOUNDS } from "../../../../notations"
+import { Bound, Level, LEVELS_BOUNDS } from "../../../../sagittal"
 import { LEVEL_BOTTOMS, LEVEL_TOPS } from "./levelHeights"
 import { DASH_SIZE, SYMBOL_OFFSET } from "./sizes"
 import { computeX } from "./x"
