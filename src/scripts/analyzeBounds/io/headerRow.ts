@@ -1,6 +1,5 @@
 import { max } from "../../../general"
-
-const COLUMN_WIDTH = 7
+import { BOUNDS_ANALYSIS_COLUMN_WIDTH } from "./constants"
 
 const formatHeaderRow = (columnHeaders: string[][]): string => {
     const maxColumnHeaderHeight = max(...columnHeaders.map(columnHeader => columnHeader.length))
@@ -15,7 +14,7 @@ const formatHeaderRow = (columnHeaders: string[][]): string => {
         columnHeader.forEach((columnHeaderElement, index) => {
             let formattedColumnHeaderElement = columnHeaderElement
 
-            while (formattedColumnHeaderElement.length < COLUMN_WIDTH) {
+            while (formattedColumnHeaderElement.length < BOUNDS_ANALYSIS_COLUMN_WIDTH) {
                 formattedColumnHeaderElement = formattedColumnHeaderElement + " "
             }
 

@@ -1,5 +1,6 @@
 import { alignTable, computeMonzoFromCommand, formatMonzo, formatNumber, formatRatio, Id } from "../../../general"
 import { computeNotatingJiSymbolIds, getJiSymbol, getSagittalComma, JiSymbol } from "../../../notations"
+import { computeNotatingSymbolDataRow, NOTATING_SYMBOLS_HEADER_ROW } from "../io"
 
 // TODO: it might be nice to share the logic from formatSymbolAscii
 //  for centering symbols on shafts, ratios on slash, and monzos on terms
@@ -12,19 +13,8 @@ const monzo = computeMonzoFromCommand()
 
 const notatingSymbolIds = computeNotatingJiSymbolIds(monzo)
 
-// TODO: extract this
-const notatingSymbolTableData = notatingSymbolIds.map((jiSymbolId: Id<JiSymbol>) => {
-    const { primaryCommaId, ascii: symbol } = getJiSymbol(jiSymbolId)
-    const { name, monzo, cents, ratio } = getSagittalComma(primaryCommaId)
+const notatingSymbolTableData = notatingSymbolIds.map(computeNotatingSymbolDataRow)
 
-    const formattedRatio = formatRatio(ratio)
-    const formattedMonzo = formatMonzo(monzo)
-    const formattedCents = formatNumber(cents)
-
-    return `${symbol}\t${name}\t${formattedRatio}\t${formattedMonzo}\t${formattedCents}`
-})
-
-const NOTATING_SYMBOLS_HEADER_ROW = ["symbol", "name", "ratio", "monzo", "cents"].join("\t")
 notatingSymbolTableData.unshift(NOTATING_SYMBOLS_HEADER_ROW)
 
 console.log(alignTable(notatingSymbolTableData).join("\n"))

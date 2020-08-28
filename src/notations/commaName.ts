@@ -13,11 +13,10 @@ import {
     Name,
     PRIMES,
     Ratio,
+    SUPERSCRIPT_NUMS,
 } from "../general"
 import { computeSizeCategory } from "./sizeCategory"
 import { SagittalComma } from "./types"
-
-const SUPERSCRIPT_NUMS = ["⁰", "¹", "²", "³", "⁴", "⁵", "⁶", "⁷", "⁸", "⁹"]
 
 const primeFactorizeCommaName = (numeratorOrDenominator: FractionalPart) => {
     const monzo = computeMonzoFromInteger(numeratorOrDenominator)

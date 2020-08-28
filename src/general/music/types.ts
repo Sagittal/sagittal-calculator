@@ -12,7 +12,7 @@ interface Position {
     monzo?: Monzo,
 }
 
-// TODO: I'm concerned about this... like maybe I want a Comma to be anything that's been given a Name<Comma>
+// TODO: RATIO LINK I'm concerned about this... like maybe I want a Comma to be anything that's been given a Name<Comma>
 //  like maybe Position -> Pitch
 //  and this is just a JiPitch
 //  and Position should not have monzo? at all

@@ -36,6 +36,7 @@ import {
     parseMonzo,
     parseRatio,
     Px,
+    SUPERSCRIPT_NUMS,
 } from "./io"
 import {
     abs,
@@ -228,4 +229,5 @@ export {
     HexColor,
     Maybe,
     computeMonzoFromCommand,
+    SUPERSCRIPT_NUMS,
 }

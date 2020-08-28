@@ -39,7 +39,7 @@ type Copfr<Roughness = void> =
     & { _CopfrBrand: "Copfr" }
     & (Roughness extends number ? { _RoughnessBrand: Roughness } : {})
 
-// TODO: you're going to have to contend eventually with the notion of non-integer Monzos,
+// TODO: RATIO LINK you're going to have to contend eventually with the notion of non-integer Monzos,
 //  whose exponents may be integers or not... did Musical Patterns deal with this yet?
 //  or could these be Rational Monzos? and perhaps that's the difference between Ratio and Rational,
 //  is that Rationals have to have integers

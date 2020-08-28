@@ -1,4 +1,4 @@
-import { FORMATATIONAL_PRECISION } from "./constants"
+import { FORMATATIONAL_PRECISION, SUPERSCRIPT_NUMS } from "./constants"
 import { formatMonzo } from "./formatMonzo"
 import { formatNumber } from "./formatNumber"
 import { formatRatio } from "./formatRatio"
@@ -20,6 +20,7 @@ export {
     parseMonzo,
     parseRatio,
     FORMATATIONAL_PRECISION,
+    SUPERSCRIPT_NUMS,
     Formatted,
     Px,
     HexColor,

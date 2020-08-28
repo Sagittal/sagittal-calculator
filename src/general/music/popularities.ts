@@ -2,6 +2,8 @@ import { Ranked } from "../code"
 import { Popularity } from "./types"
 
 // Per Scala statistics
+// http://www.huygens-fokker.org/microtonality/scales.html
+
 const COMMA_POPULARITIES: Array<Ranked<Popularity>> = [
     { rank: 1, fiveRoughRatio: [1, 1], votes: 7624 },
     { rank: 2, fiveRoughRatio: [5, 1], votes: 5371 },
