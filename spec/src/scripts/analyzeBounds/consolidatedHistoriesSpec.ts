@@ -1,4 +1,4 @@
-import { Cents, Name, Position, Proportion, Rank } from "../../../../src/general"
+import { Cents, Name, Pitch, Proportion, Rank } from "../../../../src/general"
 import { Level, Tina } from "../../../../src/notations/ji"
 import { computeConsolidatedHistories } from "../../../../src/scripts/analyzeBounds/consolidatedHistories"
 import { AnalyzedEvent, AnalyzedHistory, EventType } from "../../../../src/scripts/analyzeBounds/types"
@@ -10,7 +10,7 @@ describe("computeConsolidatedHistories", () => {
             ...analyzedEventFixture,
             level: Level.ULTRA,
             type: EventType.MEAN,
-            name: "'/| )/|" as Name<Position>,
+            name: "'/| )/|" as Name<Pitch>,
             cents: 24.2 as Cents,
             rank: 2 as Rank<AnalyzedEvent>,
             exact: false,
@@ -19,7 +19,7 @@ describe("computeConsolidatedHistories", () => {
             ...analyzedEventFixture,
             level: Level.ULTRA,
             type: EventType.INA,
-            name: "12.5°58" as Name<Position>,
+            name: "12.5°58" as Name<Pitch>,
             cents: 24.33333 as Cents,
             rank: 1 as Rank<AnalyzedEvent>,
             exact: false,
@@ -28,7 +28,7 @@ describe("computeConsolidatedHistories", () => {
             ...analyzedEventFixture,
             level: Level.EXTREME,
             type: EventType.MEAN,
-            name: ",)/|_)/|" as Name<Position>,
+            name: ",)/|_)/|" as Name<Pitch>,
             cents: 24.58139537326805 as Cents,
             rank: 2 as Rank<AnalyzedEvent>,
             exact: false,
@@ -37,7 +37,7 @@ describe("computeConsolidatedHistories", () => {
             ...analyzedEventFixture,
             level: Level.EXTREME,
             type: EventType.INA,
-            name: "50.5°233" as Name<Position>,
+            name: "50.5°233" as Name<Pitch>,
             cents: 24.151964806252103 as Cents,
             rank: 1 as Rank<AnalyzedEvent>,
             exact: false,
@@ -46,7 +46,7 @@ describe("computeConsolidatedHistories", () => {
             ...analyzedEventFixture,
             level: Level.EXTREME,
             type: EventType.MEAN,
-            name: ",)/|_)/|" as Name<Position>,
+            name: ",)/|_)/|" as Name<Pitch>,
             cents: 24.58139537326805 as Cents,
             rank: 1 as Rank<AnalyzedEvent>,
             exact: false,
@@ -116,7 +116,7 @@ describe("computeConsolidatedHistories", () => {
                     nextEvents: [
                         eventThree.name,
                         eventFour.name,
-                    ] as Name<Position>[],
+                    ] as Name<Pitch>[],
                 },
                 {
                     type: eventTwoGoesToEventThree.type,
@@ -131,7 +131,7 @@ describe("computeConsolidatedHistories", () => {
                     nextEvents: [
                         eventThree.name,
                         // eventImpossible.name,
-                    ] as Name<Position>[],
+                    ] as Name<Pitch>[],
                 },
             ],
             [ Level.EXTREME ]: [
@@ -145,7 +145,7 @@ describe("computeConsolidatedHistories", () => {
                     exact: false,
                     rankOfBestRankedEventInAnyMemberHistory: 1 as Rank<AnalyzedEvent>,
                     rankOfBestRankedMemberHistory: 1 as Rank<AnalyzedEvent>,
-                    nextEvents: [] as Name<Position>[],
+                    nextEvents: [] as Name<Pitch>[],
                 },
                 {
                     type: eventFour.type,
@@ -157,7 +157,7 @@ describe("computeConsolidatedHistories", () => {
                     exact: false,
                     rankOfBestRankedEventInAnyMemberHistory: 1 as Rank<AnalyzedEvent>,
                     rankOfBestRankedMemberHistory: 2 as Rank<AnalyzedEvent>,
-                    nextEvents: [] as Name<Position>[],
+                    nextEvents: [] as Name<Pitch>[],
                 },
             ],
         }

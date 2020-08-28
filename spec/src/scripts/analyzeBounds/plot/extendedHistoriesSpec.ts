@@ -1,4 +1,4 @@
-import { Cents, Name, Position } from "../../../../../src/general"
+import { Cents, Name, Pitch } from "../../../../../src/general"
 import { Level } from "../../../../../src/notations/ji"
 import { computeExtendedHistories } from "../../../../../src/scripts/analyzeBounds/plot/extendedHistories"
 import { EventType, HistoricalEvent, History } from "../../../../../src/scripts/analyzeBounds/types"
@@ -10,7 +10,7 @@ describe("computeExtendedHistories", () => {
     let passedInHistoryEvent: HistoricalEvent = {
         level: Level.HIGH,
         type: EventType.INA,
-        name: "16.5°47" as Name<Position>,
+        name: "16.5°47" as Name<Pitch>,
         cents: 45.45 as Cents,
     }
     beforeEach(() => {

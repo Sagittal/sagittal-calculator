@@ -6,7 +6,7 @@ import { computeCommaName } from "../../../../src/notations/commaName"
 import { JI_SYMBOLS } from "../../../../src/notations/ji"
 import { computeSecondaryCommaZone } from "../../../../src/notations/ji/secondaryCommaZone"
 import { computeCommas } from "../../../../src/scripts/findCommas/commas"
-import { formatCommas } from "../../../../src/scripts/findCommas/io"
+import { computeFindCommasTable } from "../../../../src/scripts/findCommas/io"
 
 describe("verifying primary commas", () => {
     xit("checks that every symbol's primary comma is its best-ranked comma in its secondary comma zone according to our metric", () => {
@@ -41,7 +41,7 @@ describe("verifying primary commas", () => {
                 sortKey,
             })
 
-            console.log(formatCommas(commas))
+            console.log(computeFindCommasTable(commas))
         })
     })
 })

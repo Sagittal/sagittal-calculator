@@ -1,7 +1,7 @@
 import { computeCentsFromRatio, computeMonzoFromRatio, computeRatioFromMonzo } from "../../../src/general"
 import { ACCURACY_THRESHOLD } from "../../../src/general/code"
 import { computeCommaName } from "../../../src/notations/commaName"
-import { SAGITTAL_COMMAS } from "../../../src/notations/commas"
+import { SAGITTAL_COMMAS } from "../../../src/notations/sagittalCommas"
 
 describe("JI_SYMBOLS", () => {
     it("is the case that the cents for each symbol agrees with its monzo", () => {

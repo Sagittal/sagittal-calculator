@@ -1,10 +1,9 @@
-import { invertMonzo, Monzo, sort } from "../../general"
-import { NamedComma } from "../../notations"
+import { Comma, Integer, invertMonzo, Monzo, sort } from "../../general"
 import { computeCommasFromFiveSlicedMonzo } from "./commasFromFiveSlicedMonzo"
 import { computeFiveSlicedMonzosToCheck } from "./fiveSlicedMonzosToCheck"
 import { ComputeCommasOptions } from "./types"
 
-const computeCommas = (options: ComputeCommasOptions): NamedComma[] => {
+const computeCommas = (options: ComputeCommasOptions): Comma[] => {
     const {
         minCents,
         maxCents,
@@ -18,9 +17,9 @@ const computeCommas = (options: ComputeCommasOptions): NamedComma[] => {
         sortKey,
     } = options
 
-    let commas: NamedComma[] = []
+    let commas: Comma[] = []
 
-    const fiveSlicedMonzosToCheck: Array<Monzo<5>> = fiveSlicedMonzo ?
+    const fiveSlicedMonzosToCheck: Array<Monzo<Integer, 5>> = fiveSlicedMonzo ?
         [fiveSlicedMonzo, invertMonzo(fiveSlicedMonzo)] :
         computeFiveSlicedMonzosToCheck({
             maxPrimeLimit,

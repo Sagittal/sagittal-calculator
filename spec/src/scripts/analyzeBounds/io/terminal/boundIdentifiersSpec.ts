@@ -1,6 +1,7 @@
 import {
     ApotomeSlope,
     Cents,
+    Comma,
     Id,
     Monzo,
     N2D3P9,
@@ -14,8 +15,8 @@ import { SagittalComma, SymbolLongAscii } from "../../../../../../src/notations"
 import { Bound, JiSymbol, Level, Mina } from "../../../../../../src/notations/ji"
 import { INA_SIZES } from "../../../../../../src/notations/ji/intervals"
 import { SymbolSet, SymbolUnicode } from "../../../../../../src/notations/types"
-import { extractBoundIdentifiers } from "../../../../../../src/scripts/analyzeBounds/io/text/boundIdentifiers"
-import { BoundIdentifiers } from "../../../../../../src/scripts/analyzeBounds/io/text/types"
+import { extractBoundIdentifiers } from "../../../../../../src/scripts/analyzeBounds/io/terminal/boundIdentifiers"
+import { BoundIdentifiers } from "../../../../../../src/scripts/analyzeBounds/io/terminal/types"
 
 describe("extractBoundIdentifiers", () => {
     const bound = {
@@ -52,7 +53,7 @@ describe("extractBoundIdentifiers", () => {
                             cents: 22.9305875372457 as Cents,
                             name: "19/25C" as Name<SagittalComma>,
                             n2d3p9: 55.70987654320989 as N2D3P9,
-                        },
+                        } as SagittalComma,
                         id: 47 as Id<JiSymbol>, // not the best example since id and mina are the same up to this point
                         elements: [".|", ")|", "/|"] as SymbolLongAscii[],
                     },
@@ -74,7 +75,7 @@ describe("extractBoundIdentifiers", () => {
                             cents: 23.460010384649 as Cents,
                             name: "1C" as Name<SagittalComma>,
                             n2d3p9: 0.1111111111111111 as N2D3P9,
-                        },
+                        } as SagittalComma,
                         id: 48 as Id<JiSymbol>,
                         elements: ["'|", "/|"] as SymbolLongAscii[],
                     },
@@ -98,7 +99,7 @@ describe("extractBoundIdentifiers", () => {
                             cents: 22.9305875372457 as Cents,
                             name: "19/25C" as Name<SagittalComma>,
                             n2d3p9: 55.70987654320989 as N2D3P9,
-                        },
+                        } as SagittalComma,
                         id: 47 as Id<JiSymbol>,
                         elements: [".|", ")|", "/|"] as SymbolLongAscii[],
                     },
@@ -120,7 +121,7 @@ describe("extractBoundIdentifiers", () => {
                             cents: 23.460010384649 as Cents,
                             name: "1C" as Name<SagittalComma>,
                             n2d3p9: 0.1111111111111111 as N2D3P9,
-                        },
+                        } as SagittalComma,
                         id: 48 as Id<JiSymbol>,
                         elements: ["'|", "/|"] as SymbolLongAscii[],
                     },
@@ -145,7 +146,7 @@ describe("extractBoundIdentifiers", () => {
                             cents: 22.9305875372457 as Cents,
                             name: "19/25C" as Name<SagittalComma>,
                             n2d3p9: 55.70987654320989 as N2D3P9,
-                        },
+                        } as SagittalComma,
                         elements: [".|", ")|", "/|"] as SymbolLongAscii[],
                     },
                     {
@@ -167,7 +168,7 @@ describe("extractBoundIdentifiers", () => {
                             cents: 23.460010384649 as Cents,
                             name: "1C" as Name<SagittalComma>,
                             n2d3p9: 0.1111111111111111 as N2D3P9,
-                        },
+                        } as SagittalComma,
                         elements: ["'|", "/|"] as SymbolLongAscii[],
                     },
                 ],

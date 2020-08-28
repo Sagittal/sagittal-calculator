@@ -1,12 +1,11 @@
-import { Cents, Monzo, Name, Prime, Ratio, Sopfr } from "../../../../src/general"
-import { ApotomeSlope, N2D3P9 } from "../../../../src/general/music"
-import { NamedComma, SagittalComma } from "../../../../src/notations"
-import { formatCommas } from "../../../../src/scripts/findCommas/io"
+import { Cents, Comma, Monzo, Name, Prime, Ratio, Sopfr } from "../../../../../src/general"
+import { ApotomeSlope, N2D3P9 } from "../../../../../src/general/music"
+import { computeFindCommasTable } from "../../../../../src/scripts/findCommas/io"
 
-describe("formatCommas", () => {
-    const commas: NamedComma[] = [
+describe("computeFindCommasTable", () => {
+    const commas: Comma[] = [
         {
-            name: "11M" as Name<SagittalComma>,
+            name: "11M" as Name<Comma>,
             limit: 11 as Prime,
             fiveRoughSopfr: 11 as Sopfr<5>,
             cents: 45.45 as Cents,
@@ -16,7 +15,7 @@ describe("formatCommas", () => {
             n2d3p9: 6.722 as N2D3P9,
         },
         {
-            name: "25/49M" as Name<SagittalComma>,
+            name: "25/49M" as Name<Comma>,
             limit: 7 as Prime,
             fiveRoughSopfr: 24 as Sopfr<5>,
             cents: 33.4 as Cents,
@@ -25,10 +24,10 @@ describe("formatCommas", () => {
             apotomeSlope: -2.154 as ApotomeSlope,
             n2d3p9: 26.466 as N2D3P9,
         },
-    ]
+    ] as Comma[]
 
     it("aligns each comma output to the same width per column", () => {
-        const actual = formatCommas(commas)
+        const actual = computeFindCommasTable(commas)
 
         const expected = [
             "comma name\tlimit\t5-rough sopfr\tcents\tmonzo       \tratio\tapotome slope\tN2D3P9",
@@ -39,7 +38,7 @@ describe("formatCommas", () => {
     })
 
     it("can format tables for sharing on the Sagittal forum", () => {
-        const actual = formatCommas(commas, { forForum: true })
+        const actual = computeFindCommasTable(commas, { forForum: true })
 
         const expected = [
             "[table]",

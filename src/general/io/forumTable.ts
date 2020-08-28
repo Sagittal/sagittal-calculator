@@ -1,6 +1,6 @@
 import { IO } from "./types"
 
-const forumTable = (data: IO[]): IO[] => {
+const computeForumTable = (data: IO[]): IO[] => {
     const table: IO[] = data.map((row, index) => {
         const cellTag = index === 0 ? "th" : "td"
 
@@ -14,5 +14,5 @@ const forumTable = (data: IO[]): IO[] => {
 }
 
 export {
-    forumTable,
+    computeForumTable,
 }

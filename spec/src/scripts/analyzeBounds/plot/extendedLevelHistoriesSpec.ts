@@ -1,4 +1,4 @@
-import { Cents, Name, Position } from "../../../../../src/general"
+import { Cents, Name, Pitch } from "../../../../../src/general"
 import { Bound, Level } from "../../../../../src/notations/ji"
 import { computeExtendedLevelHistories } from "../../../../../src/scripts/analyzeBounds/plot/extendedLevelHistories"
 import { EventType, HistoricalEvent, History } from "../../../../../src/scripts/analyzeBounds/types"
@@ -9,13 +9,13 @@ describe("computeExtendedLevelHistories", () => {
         const firstHistoryPriorEvent: HistoricalEvent = {
             level: Level.MEDIUM,
             type: EventType.INA,
-            name: "1.5°21" as Name<Position>,
+            name: "1.5°21" as Name<Pitch>,
             cents: 8.120357575550852 as Cents,
         }
         const secondHistoryPriorEvent: HistoricalEvent = {
             level: Level.MEDIUM,
             type: EventType.MEAN,
-            name: "|( )|(" as Name<Position>,
+            name: "|( )|(" as Name<Pitch>,
             cents: 7.72288142310195 as Cents,
         }
         const histories: History[] = [
@@ -37,7 +37,7 @@ describe("computeExtendedLevelHistories", () => {
                 {
                     level: Level.HIGH,
                     type: EventType.INA,
-                    name: "2.5°47" as Name<Position>,
+                    name: "2.5°47" as Name<Pitch>,
                     cents: 6.047074790303825 as Cents,
                 },
             ],
@@ -46,7 +46,7 @@ describe("computeExtendedLevelHistories", () => {
                 {
                     level: Level.HIGH,
                     type: EventType.INA,
-                    name: "3.5°47" as Name<Position>,
+                    name: "3.5°47" as Name<Pitch>,
                     cents: 8.465904706425356 as Cents,
                 },
             ],
@@ -55,7 +55,7 @@ describe("computeExtendedLevelHistories", () => {
                 {
                     level: Level.HIGH,
                     type: EventType.MEAN,
-                    name: "|( ~|" as Name<Position>,
+                    name: "|( ~|" as Name<Pitch>,
                     cents: 7.243699380344975 as Cents,
                 },
             ],
@@ -64,7 +64,7 @@ describe("computeExtendedLevelHistories", () => {
                 {
                     level: Level.HIGH,
                     type: EventType.INA,
-                    name: "2.5°47" as Name<Position>,
+                    name: "2.5°47" as Name<Pitch>,
                     cents: 6.047074790303825 as Cents,
                 },
             ],
@@ -73,7 +73,7 @@ describe("computeExtendedLevelHistories", () => {
                 {
                     level: Level.HIGH,
                     type: EventType.INA,
-                    name: "3.5°47" as Name<Position>,
+                    name: "3.5°47" as Name<Pitch>,
                     cents: 8.465904706425356 as Cents,
                 },
             ],
@@ -82,7 +82,7 @@ describe("computeExtendedLevelHistories", () => {
                 {
                     level: Level.HIGH,
                     type: EventType.MEAN,
-                    name: "|( ~|" as Name<Position>,
+                    name: "|( ~|" as Name<Pitch>,
                     cents: 7.243699380344975 as Cents,
                 },
             ],

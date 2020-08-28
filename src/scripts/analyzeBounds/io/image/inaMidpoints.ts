@@ -1,4 +1,4 @@
-import { IO, Position } from "../../../../general"
+import { CentsPosition, IO } from "../../../../general"
 import { Level } from "../../../../notations"
 import { INA_MIDPOINTS } from "../../plot"
 import { INA_COLOR } from "./colors"
@@ -9,13 +9,13 @@ import { computeX } from "./x"
 const visualizeInaMidpoints = (): IO[] => {
     const inaMidpointElements: IO[] = [] as IO[]
 
-    const inaMidpointEntries = Object.entries(INA_MIDPOINTS) as Array<[Level, Position[]]>
-    inaMidpointEntries.forEach(([level, inaMidpoints]: [Level, Position[]]) => {
+    const inaMidpointEntries = Object.entries(INA_MIDPOINTS) as Array<[Level, CentsPosition[]]>
+    inaMidpointEntries.forEach(([level, inaMidpoints]: [Level, CentsPosition[]]) => {
         const centerY = LEVEL_CENTERS[ level ]
         const topY = centerY - HALF_TICK_SIZE
         const bottomY = centerY + HALF_TICK_SIZE
 
-        inaMidpoints.forEach((inaMidpoint: Position) => {
+        inaMidpoints.forEach((inaMidpoint: CentsPosition) => {
             const { name, cents } = inaMidpoint
 
             const x = computeX(cents)

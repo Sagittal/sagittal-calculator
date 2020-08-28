@@ -3,11 +3,12 @@ import {
     computeExtensionBase,
     computePrimeExponentExtremasGivenMaxN2D3P9,
     computeSopfr,
-    computeTrimmedArray, concat,
+    computeTrimmedArray,
     Copfr,
     Exponent,
     ExtensionBaseType,
     Extrema,
+    Integer,
     isUndefined,
     Max,
     Maybe,
@@ -21,7 +22,7 @@ import { ComputeFiveSlicedMonzosToCheckOptions } from "./types"
 
 const computeFiveSlicedMonzosToCheck = (
     { maxPrimeLimit, maxFiveRoughSopfr, maxFiveRoughCopfr, maxN2D3P9 }: ComputeFiveSlicedMonzosToCheckOptions = {},
-): Array<Monzo<5>> => {
+): Array<Monzo<Integer, 5>> => {
     if (isUndefined(maxFiveRoughSopfr)) {
         if (isUndefined(maxPrimeLimit)) {
             if (isUndefined(maxFiveRoughCopfr)) {
@@ -34,8 +35,8 @@ const computeFiveSlicedMonzosToCheck = (
         }
     }
 
-    let fiveSlicedMonzosToCheck: Array<Monzo<5>> = [
-        [] as unknown[] as Monzo<5>,
+    let fiveSlicedMonzosToCheck: Array<Monzo<Integer, 5>> = [
+        [] as unknown[] as Monzo<Integer, 5>,
     ]
 
     const primeExponentExtremasGivenMaxN2D3P9: Maybe<Array<Extrema<Exponent<Prime>>>> =
@@ -48,8 +49,8 @@ const computeFiveSlicedMonzosToCheck = (
     })
 
     fiveRoughPrimesToCheck.forEach((fiveRoughPrimeToCheck, index) => {
-        const extendedFiveSlicedMonzosToCheck: Array<Monzo<5>> =
-            computeExtensionBase(ExtensionBaseType.ARRAY) as Array<Monzo<5>>
+        const extendedFiveSlicedMonzosToCheck: Array<Monzo<Integer, 5>> =
+            computeExtensionBase(ExtensionBaseType.ARRAY) as Array<Monzo<Integer, 5>>
 
         const primeExponentExtremaGivenMaxN2D3P9: Maybe<Extrema<Exponent<Prime>>> =
             primeExponentExtremasGivenMaxN2D3P9 && primeExponentExtremasGivenMaxN2D3P9[ index ]
@@ -70,7 +71,9 @@ const computeFiveSlicedMonzosToCheck = (
                 },
             ) as Exponent<Prime>[]
             termRange.forEach((potentialNextTerm: Exponent<Prime>) => {
-                extendedFiveSlicedMonzosToCheck.push(fiveSlicedMonzoToCheck.concat(potentialNextTerm) as Monzo<5>)
+                extendedFiveSlicedMonzosToCheck.push(
+                    fiveSlicedMonzoToCheck.concat(potentialNextTerm) as Monzo<Integer, 5>,
+                )
             })
         })
 

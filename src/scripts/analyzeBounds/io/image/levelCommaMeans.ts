@@ -1,4 +1,4 @@
-import { IO, Position } from "../../../../general"
+import { CentsPosition, IO } from "../../../../general"
 import { Level, SymbolLongAscii, unicodeFromAscii } from "../../../../notations"
 import { LEVELS_COMMA_MEANS } from "../../plot"
 import { MEAN_COLOR } from "./colors"
@@ -9,8 +9,8 @@ import { computeX } from "./x"
 const visualizeLevelCommaMeans = (): IO[] => {
     const levelCommaMeanElements: IO[] = [] as IO[]
 
-    const levelCommaMeansEntries = Object.entries(LEVELS_COMMA_MEANS) as Array<[Level, Position[]]>
-    levelCommaMeansEntries.forEach(([level, levelCommaMeans]: [Level, Position[]]) => {
+    const levelCommaMeansEntries = Object.entries(LEVELS_COMMA_MEANS) as Array<[Level, CentsPosition[]]>
+    levelCommaMeansEntries.forEach(([level, levelCommaMeans]: [Level, CentsPosition[]]) => {
         if (level === Level.INSANE) {
             return
         }
@@ -22,7 +22,8 @@ const visualizeLevelCommaMeans = (): IO[] => {
         levelCommaMeans.forEach(levelCommaMean => {
             const { cents, name } = levelCommaMean
 
-            const formattedName = name.split(" ").map(ascii => unicodeFromAscii(ascii as SymbolLongAscii)).join("   ")
+            const formattedName = name?.split(" ")
+                .map(ascii => unicodeFromAscii(ascii as SymbolLongAscii)).join("   ") || ""
             const positionX = computeX(cents)
 
             levelCommaMeanElements.push(`  <line stroke-dasharray="${DASH_SIZE}" stroke="${MEAN_COLOR}" x1="${positionX}" x2="${positionX}" y1="${topY}" y2="${bottomY}"/>\n` as IO)

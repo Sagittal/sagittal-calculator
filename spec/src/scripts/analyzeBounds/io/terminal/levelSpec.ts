@@ -1,5 +1,5 @@
 import { Level } from "../../../../../../src/notations/ji"
-import { formatLevel } from "../../../../../../src/scripts/analyzeBounds/io/text/level"
+import { formatLevel } from "../../../../../../src/scripts/analyzeBounds/io/terminal/level"
 
 describe("formatLevel", () => {
     it("makes levels nice for people to read", () => {

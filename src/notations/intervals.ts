@@ -1,13 +1,12 @@
-import { Cents, Max } from "../general"
+import { Cents, CentsPosition, Max } from "../general"
+import { SIZE_CATEGORY_BOUNDS } from "./sizeCategoryBounds"
 
-// TODO: RATIO LINK - see this could be the first example of something you'd want to represent
-//  as a Monzo but which is not rational
-const MAX_POSITION: Max<Cents> = Math.log2(
-    Math.pow(3, 9.5)
-    /
-    Math.pow(2, 15),
-) * 1200 as Max<Cents>                                  // 68.5725082211804
+const MAX_SINGLE_SHAFT_POSITION: CentsPosition = SIZE_CATEGORY_BOUNDS[7]
+
+// Math.log2(Math.pow(3, 9.5) / Math.pow(2, 15)) * 1200 = 68.5725082211804
+const MAX_SINGLE_SHAFT_CENTS: Max<Cents> = MAX_SINGLE_SHAFT_POSITION.cents as Max<Cents>
 
 export {
-    MAX_POSITION,
+    MAX_SINGLE_SHAFT_POSITION,
+    MAX_SINGLE_SHAFT_CENTS,
 }

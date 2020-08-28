@@ -1,6 +1,6 @@
 import { Id, IO } from "../../../../general"
 import { getJiSymbol, getSagittalComma, JiSymbol, Level, LEVELS_SYMBOL_IDS } from "../../../../notations"
-import { formatMina } from "../text"
+import { formatMina } from "../terminal"
 import { LEVEL_CENTERS } from "./levelHeights"
 import { DOT_SIZE, MINA_OFFSET, SYMBOL_OFFSET } from "./sizes"
 import { computeX } from "./x"

@@ -1,5 +1,5 @@
 import {
-    Cents,
+    Cents, Comma,
     computeCentsFromMonzo,
     computeIsSubMonzo,
     computeMonzoFromInteger,
@@ -16,7 +16,6 @@ import {
     SUPERSCRIPT_NUMS,
 } from "../general"
 import { computeSizeCategory } from "./sizeCategory"
-import { SagittalComma } from "./types"
 
 const primeFactorizeCommaName = (numeratorOrDenominator: FractionalPart) => {
     const monzo = computeMonzoFromInteger(numeratorOrDenominator)
@@ -42,7 +41,7 @@ const primeFactorizeCommaName = (numeratorOrDenominator: FractionalPart) => {
 const computeCommaName = (
     monzo: Monzo,
     { directed = true, factored = false, abbreviated = true } = {},
-): Name<SagittalComma> => {
+): Name<Comma> => {
     const sub = computeIsSubMonzo(monzo)
 
     const superMonzo = computeSuperMonzo(monzo)
@@ -66,7 +65,7 @@ const computeCommaName = (
 
     const maybeDown = sub ? " down" : ""
 
-    return `${formattedRatio}${maybeHyphen}${sizeCategory}${maybeDown}` as Name<SagittalComma>
+    return `${formattedRatio}${maybeHyphen}${sizeCategory}${maybeDown}` as Name<Comma>
 }
 
 export {

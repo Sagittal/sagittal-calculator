@@ -1,9 +1,9 @@
-import { Exponent, Monzo, Prime } from "../math"
+import { Exponent, Integer, Monzo, Prime } from "../math"
 import { computeCentsFromMonzo } from "../music"
 import { CENTS_PER_OCTAVE } from "./constants"
 import { Cents, Zone } from "./types"
 
-const computeMonzoInZone = (threeSlicedMonzo: Monzo<3>, zone: Zone) => {
+const computeMonzoInZone = (threeSlicedMonzo: Monzo<Integer, 3>, zone: Zone) => {
     const [minCents, maxCents] = zone
 
     if (maxCents - minCents > CENTS_PER_OCTAVE) {

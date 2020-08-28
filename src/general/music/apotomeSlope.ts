@@ -1,6 +1,6 @@
 import { computeRatioFromMonzo, Monzo } from "../math"
 import { computeCentsFromRatio } from "./centsFromRatio"
-import { APOTOME, APOTOME_THREE_EXPONENT } from "./constants"
+import { APOTOME_CENTS, APOTOME_THREE_EXPONENT } from "./constants"
 import { ApotomeSlope } from "./types"
 
 const computeApotomeSlope = (monzo: Monzo): ApotomeSlope => {
@@ -9,7 +9,7 @@ const computeApotomeSlope = (monzo: Monzo): ApotomeSlope => {
 
     const monzoThreeExponent = monzo[ 1 ]
 
-    return monzoThreeExponent - APOTOME_THREE_EXPONENT * cents / APOTOME as ApotomeSlope
+    return monzoThreeExponent - APOTOME_THREE_EXPONENT * cents / APOTOME_CENTS as ApotomeSlope
 }
 
 export {

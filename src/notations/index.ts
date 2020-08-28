@@ -1,7 +1,6 @@
 import { analyzeComma } from "./analyzeComma"
-import { formatComma } from "./format"
 import { getSagittalComma } from "./getComma"
-import { MAX_POSITION } from "./intervals"
+import { MAX_SINGLE_SHAFT_CENTS } from "./intervals"
 import {
     Bound,
     BoundedSymbolIdWithDistances,
@@ -31,7 +30,11 @@ import {
 } from "./ji"
 import { computeSmileyFromAscii } from "./smiley"
 import { SYMBOL_SETS } from "./symbolSets"
-import { NamedComma, SagittalComma, SymbolLongAscii } from "./types"
+import { SagittalComma, SymbolLongAscii } from "./types"
+
+// TODO: okay here's what you need to do: you've thought about this before, but I now think it is right
+//  you gotta rename "notations" to "sagittal" and then nest notations underneath it
+//  and then have as a sibling to notations, "N2D3P9", and "commaName", and "apotomeSlope" at top level
 
 export {
     BOUNDS,
@@ -41,7 +44,7 @@ export {
     TINA,
     computeInaDistance,
     computeBoundedJiSymbolPositions,
-    MAX_POSITION,
+    MAX_SINGLE_SHAFT_CENTS,
     LEVEL_BOUNDED_SYMBOLS,
     BoundedSymbolIdWithDistances,
     BoundIdWithBoundedSymbolIdWithDistancesPairsByLevel,
@@ -65,7 +68,5 @@ export {
     Tina,
     SagittalComma,
     analyzeComma,
-    formatComma,
     getSagittalComma,
-    NamedComma,
 }

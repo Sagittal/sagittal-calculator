@@ -1,5 +1,5 @@
 import { Formatted } from "../../../../../../src/general/io"
-import { alignFormattedNumber } from "../../../../../../src/scripts/analyzeBounds/io/text/alignFormattedNumber"
+import { alignFormattedNumber } from "../../../../../../src/scripts/analyzeBounds/io/terminal/alignFormattedNumber"
 
 describe("alignFormattedNumber", () => {
     it("shifts over numbers so that the decimal places align", () => {

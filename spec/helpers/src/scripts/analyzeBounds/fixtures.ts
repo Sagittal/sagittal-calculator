@@ -1,4 +1,4 @@
-import { Cents, Id, Name, Position, Proportion, Rank, Sum } from "../../../../../src/general"
+import { Cents, Id, Name, Pitch, Proportion, Rank, Sum } from "../../../../../src/general"
 import { Bound, Level, Tina } from "../../../../../src/notations/ji"
 import {
     AnalyzedEvent,
@@ -13,7 +13,7 @@ const eventFixture: HistoricalEvent = {
     cents: 0 as Cents,
     type: "" as EventType,
     level: "" as Level,
-    name: "" as Name<Position>,
+    name: "" as Name<Pitch>,
 }
 
 const analyzedEventFixture: AnalyzedEvent = {
@@ -43,7 +43,7 @@ const consolidatedEventFixture: ConsolidatedEvent = {
     isBestPossibleHistoryMember: false,
     rankOfBestRankedMemberHistory: 0 as Rank<AnalyzedEvent>,
     rankOfBestRankedEventInAnyMemberHistory: 0 as Rank<AnalyzedEvent>,
-    nextEvents: [] as Name<Position>[],
+    nextEvents: [] as Name<Pitch>[],
     exact: false,
 }
 

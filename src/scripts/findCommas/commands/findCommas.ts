@@ -1,8 +1,8 @@
 import { program } from "commander"
 import { Formatted, IO, Monzo, parseMonzo } from "../../../general"
-import { MAX_POSITION } from "../../../notations"
+import { MAX_SINGLE_SHAFT_CENTS } from "../../../notations"
 import { computeCommas } from "../commas"
-import { formatCommas } from "../io"
+import { computeFindCommasTable } from "../io"
 
 program
     .option("-l, --min-cents <minCents>", "min cents", parseFloat)
@@ -21,7 +21,7 @@ program
     .parse(process.argv)
 
 const minCents = program.minCents || 0
-const maxCents = program.maxCents || MAX_POSITION
+const maxCents = program.maxCents || MAX_SINGLE_SHAFT_CENTS
 const maxFiveRoughSopfr = program.fiveRoughSopfr || 61
 const maxFiveRoughCopfr = program.fiveRoughCopfr || 555 // A silly number, unlikely to come close
 const maxApotomeSlope = program.apotomeSlope || 14
@@ -43,4 +43,4 @@ const commas = computeCommas({
     fiveSlicedMonzo,
     sortKey,
 })
-console.log(formatCommas(commas))
+console.log(computeFindCommasTable(commas))

@@ -1,5 +1,5 @@
 import { Level } from "../../../../../../src/notations/ji"
-import { formatLevelAnalysis } from "../../../../../../src/scripts/analyzeBounds/io/text/levelAnalysis"
+import { formatLevelAnalysis } from "../../../../../../src/scripts/analyzeBounds/io/terminal/levelAnalysis"
 
 describe("formatLevelAnalysis", () => {
     it("gives an explanation per level of what bounds have what ranks there -- both purely within the level, and though all levels up to that point", () => {

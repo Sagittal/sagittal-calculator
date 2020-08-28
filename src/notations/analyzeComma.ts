@@ -1,4 +1,5 @@
 import {
+    Comma,
     computeApotomeSlope,
     computeCentsFromRatio,
     computeGpf,
@@ -15,11 +16,10 @@ import {
     Sopfr,
 } from "../general"
 import { computeCommaName } from "./commaName"
-import { NamedComma, SagittalComma } from "./types"
 
-const analyzeComma = (monzo: Monzo): NamedComma => {
+const analyzeComma = (monzo: Monzo): Comma => {
     const apotomeSlope = computeApotomeSlope(monzo)
-    const name: Name<SagittalComma> = computeCommaName(monzo)
+    const name: Name<Comma> = computeCommaName(monzo)
     const ratio = computeRatioFromMonzo(monzo)
     const fiveRoughMonzo = computeRoughNumberMonzo(monzo, FIVE_ROUGHNESS)
     const fiveRoughSopfr = computeSopfr(fiveRoughMonzo) as Sopfr<5>
@@ -36,7 +36,7 @@ const analyzeComma = (monzo: Monzo): NamedComma => {
         apotomeSlope,
         fiveRoughSopfr,
         n2d3p9,
-    }
+    } as Comma
 }
 
 export {

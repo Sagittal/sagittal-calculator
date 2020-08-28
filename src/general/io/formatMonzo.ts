@@ -1,10 +1,10 @@
-import { Monzo } from "../math"
+import { Integer, Monzo } from "../math"
 import { Formatted } from "./types"
 
 const formatMonzo = (monzo: Monzo, { punctuated = false } = {}): Formatted<Monzo> => {
     let contents
     if (punctuated) {
-        const fiveSlicedMonzo: Monzo<5> = monzo.splice(2) as Monzo<5>
+        const fiveSlicedMonzo: Monzo<Integer, 5> = monzo.splice(2) as Monzo<Integer, 5>
         const twoThreeMonzo = monzo
         contents = twoThreeMonzo.join(" ") + ", "
 

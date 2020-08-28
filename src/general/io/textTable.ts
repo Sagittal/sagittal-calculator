@@ -47,7 +47,7 @@ const computeAlignedRowCell = (rowCell: IO, { columnWidth, columnJustification }
     return alignedRowCell
 }
 
-const alignTable = (data: IO[], { justification = Justification.LEFT }: AlignTableOptions = {}): IO[] => {
+const computeTerminalTable = (data: IO[], { justification = Justification.LEFT }: AlignTableOptions = {}): IO[] => {
     const columnRange = computeColumnRange(data)
     const columnWidths = computeColumnWidths(data, columnRange)
 
@@ -74,5 +74,5 @@ const alignTable = (data: IO[], { justification = Justification.LEFT }: AlignTab
 }
 
 export {
-    alignTable,
+    computeTerminalTable,
 }

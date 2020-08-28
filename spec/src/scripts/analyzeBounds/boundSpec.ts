@@ -1,4 +1,4 @@
-import { Cents, Id, Name, Position, Proportion, Rank, Sum } from "../../../../src/general"
+import { Cents, Id, Name, Pitch, Proportion, Rank, Sum } from "../../../../src/general"
 import { Bound, Level, Tina } from "../../../../src/notations/ji"
 import { analyzeBound } from "../../../../src/scripts/analyzeBounds/bound"
 import * as levels from "../../../../src/scripts/analyzeBounds/levels"
@@ -18,19 +18,19 @@ describe("analyzeBound", () => {
         {
             level: Level.ULTRA,
             type: EventType.MEAN,
-            name: ".)/| '/|" as Name<Position>,
+            name: ".)/| '/|" as Name<Pitch>,
             cents: 23.2 as Cents,
         },
         {
             level: Level.EXTREME,
             type: EventType.MEAN,
-            name: ".)/| '/|" as Name<Position>,
+            name: ".)/| '/|" as Name<Pitch>,
             cents: 23.2 as Cents,
         },
         {
             level: Level.INSANE,
             type: EventType.INA,
-            name: "164.5°809" as Name<Position>,
+            name: "164.5°809" as Name<Pitch>,
             cents: 23.116419649559468 as Cents,
             // this one gets rank 4
         },
@@ -39,19 +39,19 @@ describe("analyzeBound", () => {
         {
             level: Level.ULTRA,
             type: EventType.MEAN,
-            name: ".)/| '/|" as Name<Position>,
+            name: ".)/| '/|" as Name<Pitch>,
             cents: 23.2 as Cents,
         },
         {
             level: Level.EXTREME,
             type: EventType.INA,
-            name: "47.5°233" as Name<Position>,
+            name: "47.5°233" as Name<Pitch>,
             cents: 23.15 as Cents,
         },
         {
             level: Level.INSANE,
             type: EventType.INA,
-            name: "164.5°809" as Name<Position>,
+            name: "164.5°809" as Name<Pitch>,
             cents: 23.116419649559468 as Cents,
             // this one gets rank 1
         },
@@ -69,7 +69,7 @@ describe("analyzeBound", () => {
         {
             level: Level.ULTRA,
             type: EventType.MEAN,
-            name: ".)/| '/|" as Name<Position>,
+            name: ".)/| '/|" as Name<Pitch>,
             cents: 23.2 as Cents,
             rank: 1 as Rank<AnalyzedEvent>,
             distance: 0 as Cents,
@@ -79,7 +79,7 @@ describe("analyzeBound", () => {
         {
             level: Level.EXTREME,
             type: EventType.INA,
-            name: "47.5°233" as Name<Position>,
+            name: "47.5°233" as Name<Pitch>,
             cents: 23.15 as Cents,
             rank: 0 as Rank<AnalyzedEvent>,
             distance: 0.05000000000000071 as Cents,
@@ -89,7 +89,7 @@ describe("analyzeBound", () => {
         {
             level: Level.INSANE,
             type: EventType.INA,
-            name: "164.5°809" as Name<Position>,
+            name: "164.5°809" as Name<Pitch>,
             cents: 23.116419649559468 as Cents,
             rank: 0 as Rank<AnalyzedEvent>,
             distance: 0.03358035044053054 as Cents,
@@ -126,7 +126,7 @@ describe("analyzeBound", () => {
                     {
                         level: Level.ULTRA,
                         type: EventType.MEAN,
-                        name: ".)/| '/|" as Name<Position>,
+                        name: ".)/| '/|" as Name<Pitch>,
                         cents: 23.2 as Cents,
                         isPossibleHistoryMember: true,
                         isBestPossibleHistoryMember: true,
@@ -136,14 +136,14 @@ describe("analyzeBound", () => {
                         nextEvents: [
                             ".)/| '/|",
                             "47.5°233",
-                        ] as Name<Position>[],
+                        ] as Name<Pitch>[],
                     },
                 ],
                 [ Level.EXTREME ]: [
                     {
                         level: Level.EXTREME,
                         type: EventType.MEAN,
-                        name: ".)/| '/|" as Name<Position>,
+                        name: ".)/| '/|" as Name<Pitch>,
                         cents: 23.2 as Cents,
                         isPossibleHistoryMember: true,
                         isBestPossibleHistoryMember: false,
@@ -152,12 +152,12 @@ describe("analyzeBound", () => {
                         rankOfBestRankedMemberHistory: 1 as Rank<AnalyzedEvent>,
                         nextEvents: [
                             "164.5°809",
-                        ] as Name<Position>[],
+                        ] as Name<Pitch>[],
                     },
                     {
                         level: Level.EXTREME,
                         type: EventType.INA,
-                        name: "47.5°233" as Name<Position>,
+                        name: "47.5°233" as Name<Pitch>,
                         cents: 23.15 as Cents,
                         isPossibleHistoryMember: true,
                         isBestPossibleHistoryMember: true,
@@ -166,21 +166,21 @@ describe("analyzeBound", () => {
                         rankOfBestRankedMemberHistory: 1 as Rank<AnalyzedEvent>,
                         nextEvents: [
                             "164.5°809",
-                        ] as Name<Position>[],
+                        ] as Name<Pitch>[],
                     },
                 ],
                 [ Level.INSANE ]: [
                     {
                         level: Level.INSANE,
                         type: EventType.INA,
-                        name: "164.5°809" as Name<Position>,
+                        name: "164.5°809" as Name<Pitch>,
                         cents: 23.116419649559468 as Cents,
                         isPossibleHistoryMember: true,
                         isBestPossibleHistoryMember: true,
                         exact: true,
                         rankOfBestRankedEventInAnyMemberHistory: 0 as Rank<AnalyzedEvent>,
                         rankOfBestRankedMemberHistory: 1 as Rank<AnalyzedEvent>,
-                        nextEvents: [] as Name<Position>[],
+                        nextEvents: [] as Name<Pitch>[],
                     },
                 ],
             } as ConsolidatedHistories,

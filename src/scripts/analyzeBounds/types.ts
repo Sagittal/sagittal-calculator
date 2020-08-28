@@ -1,4 +1,4 @@
-import { Cents, Count, Name, Position, Proportion, Rank, Sum } from "../../general"
+import { Cents, Count, Name, Pitch, Proportion, Rank, Sum } from "../../general"
 import { Level, Tina } from "../../notations"
 
 enum EventType {
@@ -11,7 +11,7 @@ type Score = number & { _ScoreBrand: "Score" }
 
 interface HistoricalEvent {
     level: Level,
-    name: Name<Position>,
+    name: Name<Pitch>,
     cents: Cents,
     type: EventType,
 }
@@ -27,7 +27,7 @@ interface ConsolidatedEvent extends HistoricalEvent {
     exact: boolean,
     isBestPossibleHistoryMember: boolean,
     isPossibleHistoryMember: boolean,
-    nextEvents: Name<Position>[],
+    nextEvents: Name<Pitch>[],
     rankOfBestRankedEventInAnyMemberHistory: Rank<AnalyzedEvent>,
     rankOfBestRankedMemberHistory: Rank<AnalyzedEvent>,
 }

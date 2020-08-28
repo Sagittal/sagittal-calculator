@@ -1,4 +1,4 @@
-import { ApotomeSlope, Cents, Id, Monzo, N2D3P9, Name, Prime, Ratio, Sopfr } from "../general"
+import { APOTOME, ApotomeSlope, Cents, Comma, Id, Monzo, N2D3P9, Name, Prime, Ratio, Sopfr } from "../general"
 import { SagittalComma } from "./types"
 
 const SAGITTAL_COMMAS: SagittalComma[] = [
@@ -1641,7 +1641,14 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
         name: "25/77L" as Name<SagittalComma>,
         n2d3p9: 65.35493827160494 as N2D3P9,
     },
-]
+    {
+        ...APOTOME,
+        id: 1000 as Id<SagittalComma>,
+        name: "1A" as Name<SagittalComma>,
+        // TODO: this thing's apotome slope when run by npm run analyze-comma 2187/2048 is -8.881784197001252e-16...
+        //  you really should get rounding more nice on that and cents, like you did for N2D3P9.
+    },
+] as SagittalComma[]
 
 export {
     SAGITTAL_COMMAS,

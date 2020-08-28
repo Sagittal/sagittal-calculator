@@ -1,6 +1,6 @@
-import { forumTable, IO } from "../../../../src/general"
+import { computeForumTable, IO } from "../../../../src/general"
 
-describe("forumTable", () => {
+describe("computeForumTable", () => {
     it("formats a table to be posted on the Sagittal forum", () => {
         const data = [
             "comma name\tlimit\t5-rough sopfr\tcents\tmonzo\tratio\tapotome slope\tN2D3P9",
@@ -8,7 +8,7 @@ describe("forumTable", () => {
             "25/49M\t7\t24\t33.4\t[0 0⟩\t50/49\t-59.333\t26.466",
         ] as IO[]
 
-        const actual = forumTable(data)
+        const actual = computeForumTable(data)
 
         let expected = [
             "[table]",

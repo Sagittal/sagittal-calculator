@@ -4,10 +4,10 @@ type Integer = number & { _IntegerBrand: "Integer" }
 type Prime<T = void> = Integer & { _PrimeBrand: "Prime" } & (T extends void ? {} : T & { _PrimeOfBrand: T })
 type Roughness = Integer & { _RoughnessBrand: "Roughness" }
 
-type Numerator = Integer & { _NumeratorBrand: "Numerator" }
-type Denominator = Integer & { _DenominatorBrand: "Denominator" }
-type Ratio = [Numerator, Denominator]
-type UndirectedRatio = Ratio & { _UndirectedRatioBrand: "UndirectedRatio" }
+type Numerator<T extends number = Integer> = T & { _NumeratorBrand: "Numerator" }
+type Denominator<T extends number = Integer> = T & { _DenominatorBrand: "Denominator" }
+type Ratio<T extends number = Integer> = [Numerator<T>, Denominator<T>]
+type UndirectedRatio<T extends number = Integer> = Ratio<T> & { _UndirectedRatioBrand: "UndirectedRatio" }
 
 enum FractionalPartType {
     NUMERATOR = "numerator",
@@ -39,12 +39,10 @@ type Copfr<Roughness = void> =
     & { _CopfrBrand: "Copfr" }
     & (Roughness extends number ? { _RoughnessBrand: Roughness } : {})
 
-// TODO: RATIO LINK you're going to have to contend eventually with the notion of non-integer Monzos,
-//  whose exponents may be integers or not... did Musical Patterns deal with this yet?
-//  or could these be Rational Monzos? and perhaps that's the difference between Ratio and Rational,
-//  is that Rationals have to have integers
 // TODO: you could also use & { length: Length } possibily to enforce the Monzo length when provided Slice and Limit
-type Monzo<Slice = void, Limit = void> = Array<Exponent<Prime>> & (Slice extends number ? { _MonzoSlice: Slice } : {})
+type Monzo<T extends number = Integer, Slice = void, Limit = void> =
+    Array<T & Exponent<Prime>>
+    & (Slice extends number ? { _MonzoSlice: Slice } : {})
 
 export {
     Ratio,

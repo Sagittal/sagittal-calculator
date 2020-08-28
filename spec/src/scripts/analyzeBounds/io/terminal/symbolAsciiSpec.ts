@@ -1,5 +1,5 @@
 import { SymbolLongAscii } from "../../../../../../src/notations"
-import { formatSymbolAscii } from "../../../../../../src/scripts/analyzeBounds/io/text/symbolAscii"
+import { formatSymbolAscii } from "../../../../../../src/scripts/analyzeBounds/io/terminal/symbolAscii"
 
 describe("formatSymbolAscii", () => {
     it("shifts the ascii so that its shaft aligns with all the others' shafts", () => {

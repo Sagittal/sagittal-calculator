@@ -1,7 +1,7 @@
-import { alignTable, IO } from "../../../../src/general"
+import { computeTerminalTable, IO } from "../../../../src/general"
 import { Justification } from "../../../../src/general/io/types"
 
-describe("alignTable", () => {
+describe("computeTerminalTable", () => {
     it("gets each column to have the same width", () => {
         const data = [
             "comma name\tlimit\t5-rough sopfr\tcents\tmonzo\tratio\tapotome slope",
@@ -9,7 +9,7 @@ describe("alignTable", () => {
             "25/49M\t7\t24\t33.4\t[0 0⟩\t50/49\t-59.333",
         ] as IO[]
 
-        const actual = alignTable(data)
+        const actual = computeTerminalTable(data)
 
         const expected = [
             "comma name\tlimit\t5-rough sopfr\tcents\tmonzo  \tratio\tapotome slope",
@@ -26,7 +26,7 @@ describe("alignTable", () => {
             "25/49M\t7\t24\t33.4\t[0 0⟩\t50/49\t-59.333",
         ] as IO[]
 
-        const actual = alignTable(data, { justification: Justification.RIGHT })
+        const actual = computeTerminalTable(data, { justification: Justification.RIGHT })
 
         const expected = [
             "comma name\tlimit\t5-rough sopfr\tcents\t  monzo\tratio\tapotome slope",
@@ -43,7 +43,7 @@ describe("alignTable", () => {
             "25/49M\t7\t24\t33.4\t[0 0⟩\t50/49\t-59.333",
         ] as IO[]
 
-        const actual = alignTable(data, { justification: Justification.CENTER })
+        const actual = computeTerminalTable(data, { justification: Justification.CENTER })
 
         const expected = [
             "comma name\tlimit\t5-rough sopfr\tcents\t monzo \tratio\tapotome slope",
@@ -67,7 +67,7 @@ describe("alignTable", () => {
             Justification.RIGHT,
         ]
 
-        const actual = alignTable(data, { justification })
+        const actual = computeTerminalTable(data, { justification })
 
         const expected = [
             "comma name\tlimit\t5-rough sopfr\tcents\t  monzo\tratio\tapotome slope",

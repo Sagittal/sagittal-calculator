@@ -1,5 +1,5 @@
-import { formatCommas } from "./format"
+import { computeFindCommasTable } from "./table"
 
 export {
-    formatCommas,
+    computeFindCommasTable,
 }

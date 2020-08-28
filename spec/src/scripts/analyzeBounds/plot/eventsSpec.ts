@@ -1,4 +1,4 @@
-import { Cents, Name, Position } from "../../../../../src/general"
+import { Cents, Name, Pitch } from "../../../../../src/general"
 import { BoundedSymbolPositions, computeBoundedJiSymbolPositions, Level } from "../../../../../src/notations/ji"
 import { computeEvents } from "../../../../../src/scripts/analyzeBounds/plot/events"
 import { EventType, HistoricalEvent } from "../../../../../src/scripts/analyzeBounds/types"
@@ -100,7 +100,7 @@ describe("computeEvents", () => {
                     {
                         level: Level.MEDIUM,
                         type: EventType.MEAN,
-                        name: "/| |)" as Name<Position>,
+                        name: "/| |)" as Name<Pitch>,
                         cents: 24.38519069840745 as Cents,
                     },
                 ]
@@ -117,7 +117,7 @@ describe("computeEvents", () => {
                     {
                         level: Level.HIGH,
                         type: EventType.MEAN,
-                        name: ")/| |)" as Name<Position>,
+                        name: ")/| |)" as Name<Pitch>,
                         cents: 26.07420006263995 as Cents,
                     },
                 ]
@@ -134,7 +134,7 @@ describe("computeEvents", () => {
                     {
                         level: Level.ULTRA,
                         type: EventType.MEAN,
-                        name: ".|) |)" as Name<Position>,
+                        name: ".|) |)" as Name<Pitch>,
                         cents: 26.287231406133 as Cents,
                     },
                 ]
@@ -151,7 +151,7 @@ describe("computeEvents", () => {
                     {
                         level: Level.EXTREME,
                         type: EventType.MEAN,
-                        name: "`.|) ,,|)" as Name<Position>,
+                        name: "`.|) ,,|)" as Name<Pitch>,
                         cents: 26.220209513021253 as Cents,
                     },
                 ]
@@ -175,7 +175,7 @@ describe("computeEvents", () => {
                         {
                             level: Level.HIGH,
                             type: EventType.MEAN,
-                            name: "|) )|)" as Name<Position>,
+                            name: "|) )|)" as Name<Pitch>,
                             cents: 28.95310116433255 as Cents,
                         },
                     ]
@@ -199,7 +199,7 @@ describe("computeEvents", () => {
                     {
                         level: Level.MEDIUM,
                         type: EventType.SIZE,
-                        name: "C|S" as Name<Position>,
+                        name: "C|S" as Name<Pitch>,
                         cents: 33.38249264420710 as Cents,
                     },
                 ]

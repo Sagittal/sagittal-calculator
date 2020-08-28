@@ -1,5 +1,5 @@
 import { Mina } from "../../../../../../src/notations/ji"
-import { formatMina } from "../../../../../../src/scripts/analyzeBounds/io/text"
+import { formatMina } from "../../../../../../src/scripts/analyzeBounds/io/terminal"
 
 describe("formatMina", () => {
     it("returns a whole number with no decimal positions for whole minas", () => {

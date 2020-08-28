@@ -5,7 +5,7 @@ import {
     formatBound,
     formatLevelAnalyses,
     formatRankAnalyses,
-} from "./text"
+} from "./terminal"
 
 export {
     AnalysisMode,

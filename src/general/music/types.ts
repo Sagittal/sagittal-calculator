@@ -6,25 +6,20 @@ type Cents = number & { _CentsBrand: "Cents" }
 
 type ApotomeSlope = number & { _ApotomeSlopeBrand: "ApotomeSlope" }
 
-interface Position {
-    name: Name<Position>,
+type CentsPosition = Partial<Pitch> & {
     cents: Cents,
-    monzo?: Monzo,
 }
 
-// TODO: RATIO LINK I'm concerned about this... like maybe I want a Comma to be anything that's been given a Name<Comma>
-//  like maybe Position -> Pitch
-//  and this is just a JiPitch
-//  and Position should not have monzo? at all
-//  but I think that JiPitch should not extend a Pitch...
-//  because I want them to all be grouped together as different facets of the same thing
-//  could it be the other way around, that JiPitch has Cents? that feels right
-//  does this "Position" or "Pitch" interface even need to exist?
-//  maybe see if you can delete that stuff off
-
-interface Comma {
-    apotomeSlope: ApotomeSlope,
+interface Pitch {
+    name: Name<Pitch>,
     cents: Cents,
+    monzo: Monzo<number>,
+    ratio: Ratio<number>,
+}
+
+interface Comma extends Pitch {
+    apotomeSlope: ApotomeSlope,
+    name: Name<Comma>,
     fiveRoughSopfr: Sopfr<5>,
     limit: Prime,
     monzo: Monzo,
@@ -43,10 +38,11 @@ type Zone = Extrema<Cents>
 
 export {
     ApotomeSlope,
-    Position,
+    CentsPosition,
     Cents,
     Votes,
     Popularity,
     Comma,
     Zone,
+    Pitch,
 }

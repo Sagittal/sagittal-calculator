@@ -1,10 +1,10 @@
-import { Cents, Max, Min, Monzo, Prime } from "../../../../src/general"
+import { Cents, Integer, Max, Min, Monzo, Prime } from "../../../../src/general"
 import { Exponent } from "../../../../src/general/math"
 import { ApotomeSlope } from "../../../../src/general/music"
 import { computeCommasFromFiveSlicedMonzo } from "../../../../src/scripts/findCommas/commasFromFiveSlicedMonzo"
 
 describe("computeCommasFromFiveSlicedMonzo", () => {
-    const fiveSlicedMonzo: Monzo<5> = [3, 5, -1] as Monzo<5>
+    const fiveSlicedMonzo: Monzo<Integer, 5> = [3, 5, -1] as Monzo<Integer, 5>
 
     it("returns analyzed commas with the prime content from the five-rough monzo", () => {
         const minCents = 40 as Min<Cents>

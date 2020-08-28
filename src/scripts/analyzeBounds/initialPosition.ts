@@ -1,5 +1,5 @@
 import { Cents } from "../../general"
-import { Bound, computeBoundedJiSymbolPositions, MAX_POSITION } from "../../notations"
+import { Bound, computeBoundedJiSymbolPositions, MAX_SINGLE_SHAFT_CENTS } from "../../notations"
 
 const computeInitialPosition = (bound: Bound): Cents => {
     const { cents, levels } = bound
@@ -9,7 +9,7 @@ const computeInitialPosition = (bound: Bound): Cents => {
 
     return greaterBoundedCommaPosition ?
         (lesserBoundedCommaPosition + greaterBoundedCommaPosition) / 2 as Cents :
-        MAX_POSITION
+        MAX_SINGLE_SHAFT_CENTS
 }
 
 export {

@@ -1,4 +1,4 @@
-import { Position } from "../../../general"
+import { CentsPosition, Name, Pitch } from "../../../general"
 import { BoundedSymbolPositions, Level } from "../../../notations"
 import { EventType, HistoricalEvent } from "../types"
 import { EVENT_TYPE_SNAPPABLE_POSITIONS } from "./snappablePositions"
@@ -12,7 +12,7 @@ const computeEvents = (
 
     const snappablePositions = EVENT_TYPE_SNAPPABLE_POSITIONS[ type ][ level ]
 
-    snappablePositions.forEach((snappablePosition: Position) => {
+    snappablePositions.forEach((snappablePosition: CentsPosition) => {
         if (
             (!lesserBoundedSymbolPosition || snappablePosition.cents > lesserBoundedSymbolPosition) &&
             (!greaterBoundedSymbolPosition || snappablePosition.cents < greaterBoundedSymbolPosition)
@@ -20,7 +20,7 @@ const computeEvents = (
             events.push({
                 level,
                 type,
-                name: snappablePosition.name,
+                name: snappablePosition.name || "" as Name<Pitch>,
                 cents: snappablePosition.cents,
             })
         }

@@ -1,5 +1,5 @@
 import { Id } from "../general"
-import { SAGITTAL_COMMAS } from "./commas"
+import { SAGITTAL_COMMAS } from "./sagittalCommas"
 import { SagittalComma } from "./types"
 
 const getSagittalComma = (sagittalCommaId: Id<SagittalComma>): SagittalComma => {

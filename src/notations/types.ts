@@ -13,11 +13,7 @@ interface SizeCategory {
     abbreviation: string,
 }
 
-interface NamedComma extends Comma {
-    name: Name<Comma>,
-}
-
-interface SagittalComma extends NamedComma {
+interface SagittalComma extends Comma {
     id: Id<SagittalComma>,
 }
 
@@ -38,5 +34,4 @@ export {
     SagittalComma,
     SymbolSet,
     SizeCategory,
-    NamedComma,
 }

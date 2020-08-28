@@ -1,4 +1,4 @@
-import { Cents, Name, Position, Rank } from "../../../../src/general"
+import { Cents, Name, Pitch, Rank } from "../../../../src/general"
 import { computeInitialConsolidatedEvent } from "../../../../src/scripts/analyzeBounds/initialConsolidatedEvent"
 import {
     AnalyzedEvent,
@@ -13,7 +13,7 @@ describe("computeInitialConsolidatedEvent", () => {
     const analyzedEvent: AnalyzedEvent = {
         ...analyzedEventFixture,
         type: EventType.INA,
-        name: "12.5°58" as Name<Position>,
+        name: "12.5°58" as Name<Pitch>,
         rank: 4 as Rank<AnalyzedEvent>,
         cents: 43.343455 as Cents,
     }

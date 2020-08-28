@@ -1,7 +1,6 @@
-import { formatMonzo, formatRatio, Formatted } from "../general"
-import { NamedComma, SagittalComma } from "./types"
+import { Comma, formatMonzo, formatRatio, Formatted } from "../../general"
 
-const formatComma = (comma: NamedComma, { mode = "summary" } = {}): Formatted<NamedComma> => {
+const formatComma = (comma: Comma, { mode = "summary" } = {}): Formatted<Comma> => {
     const {
         name,
         limit,
@@ -23,7 +22,7 @@ const formatComma = (comma: NamedComma, { mode = "summary" } = {}): Formatted<Na
             `ratio:        \t${formatRatio(ratio)}`,
             `apotome slope:\t${apotomeSlope}`,
             `N2D3P9:       \t${n2d3p9}`,
-        ].join("\n") as Formatted<SagittalComma>
+        ].join("\n") as Formatted<Comma>
     } else {
         return [
             name,
@@ -34,7 +33,7 @@ const formatComma = (comma: NamedComma, { mode = "summary" } = {}): Formatted<Na
             formatRatio(ratio),
             apotomeSlope,
             n2d3p9,
-        ].join("\t") as Formatted<SagittalComma>
+        ].join("\t") as Formatted<Comma>
     }
 }
 

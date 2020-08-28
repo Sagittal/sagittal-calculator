@@ -1,5 +1,5 @@
 import { computeCombinations } from "./combinations"
-import { BASE_2, FIVE_PRIME_INDEX, FIVE_ROUGHNESS, ONE } from "./constants"
+import { BASE_2, FIVE_PRIME_INDEX, FIVE_ROUGHNESS, ONE, THREE_PRIME_INDEX } from "./constants"
 import { computeCopfr } from "./copfr"
 import { computeDistributions } from "./distributions"
 import { dividesEvenly } from "./dividesEvenly"
@@ -117,4 +117,5 @@ export {
     Max,
     count,
     integerDivide,
+    THREE_PRIME_INDEX,
 }

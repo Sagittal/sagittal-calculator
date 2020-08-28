@@ -1,10 +1,10 @@
 import { ceil, Cents, IO } from "../../../../general"
-import { MAX_POSITION } from "../../../../notations"
+import { MAX_SINGLE_SHAFT_CENTS } from "../../../../notations"
 import { MARGIN, Y_SCALE } from "./sizes"
 import { computeX } from "./x"
 
 const visualizeCents = () => {
-    const cents: Cents[] = [...Array(ceil(MAX_POSITION)).keys()] as Cents[]
+    const cents: Cents[] = [...Array(ceil(MAX_SINGLE_SHAFT_CENTS)).keys()] as Cents[]
 
     const centElements: IO[] = []
     const centsY = Y_SCALE * MARGIN

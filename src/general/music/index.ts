@@ -1,16 +1,17 @@
 import { computeApotomeSlope } from "./apotomeSlope"
 import { computeCentsFromMonzo } from "./centsFromMonzo"
 import { computeCentsFromRatio } from "./centsFromRatio"
-import { APOTOME } from "./constants"
+import { APOTOME, APOTOME_CENTS } from "./constants"
 import { computeMonzoInZone } from "./monzoInZone"
 import { computeN2D3P9, computePrimeExponentExtremasGivenMaxN2D3P9, formatN2D3P9, N2D3P9 } from "./n2d3p9"
-import { ApotomeSlope, Cents, Comma, Popularity, Position, Votes } from "./types"
+import { ApotomeSlope, Cents, CentsPosition, Comma, Pitch, Popularity, Votes } from "./types"
 
 export { COMMA_POPULARITIES } from "./popularities"
 
 export {
     APOTOME,
-    Position,
+    APOTOME_CENTS,
+    CentsPosition,
     Cents,
     ApotomeSlope,
     N2D3P9,
@@ -24,4 +25,5 @@ export {
     computeMonzoInZone,
     formatN2D3P9,
     Comma,
+    Pitch,
 }
