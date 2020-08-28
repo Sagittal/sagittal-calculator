@@ -1,4 +1,4 @@
-import { floor, Resolution, Span } from "../../../../../../src/general"
+import { integerDivide, Resolution, Span } from "../../../../../../src/general"
 import { DynamicParameterScope } from "../../../../../../src/scripts/unpopularityMetric/bestMetric"
 import { computeParameterValues } from "../../../../../../src/scripts/unpopularityMetric/bestMetric/scopeToSamples/parameterValues"
 import { ParameterValue } from "../../../../../../src/scripts/unpopularityMetric/sumOfSquares"
@@ -23,7 +23,7 @@ describe("computeParameterValues", () => {
         expect(actual).toEqual(expected)
         expect(actual.length).toBe(parameterScope.resolution as number)
         expect(actual[ actual.length - 1 ] - actual[ 0 ]).toBe(parameterScope.span as number)
-        expect(actual[ floor(actual.length / 2) ] as number).toBe(parameterScope.center as number)
+        expect(actual[ integerDivide(actual.length, 2) ] as number).toBe(parameterScope.center as number)
     })
 
     it("works when the resolution is even", () => {
@@ -46,8 +46,8 @@ describe("computeParameterValues", () => {
         expect(actual[ actual.length - 1 ] - actual[ 0 ]).toBe(parameterScope.span as number)
         expect(
             (
-                actual[ floor(actual.length / 2) ] +
-                actual[ floor(actual.length / 2) - 1 ]
+                actual[ integerDivide(actual.length, 2) ] +
+                actual[ integerDivide(actual.length, 2) - 1 ]
             )
             /
             2,
@@ -67,7 +67,7 @@ describe("computeParameterValues", () => {
         ] as ParameterValue[]
         expect(actual).toEqual(expected)
         expect(actual.length).toBe(parameterScope.resolution as number)
-        expect(actual[ floor(actual.length / 2) ] as number).toBe(parameterScope.center as number)
+        expect(actual[ integerDivide(actual.length, 2) ] as number).toBe(parameterScope.center as number)
     })
 
     it("works when the resolution is zero", () => {

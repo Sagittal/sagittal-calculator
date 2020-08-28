@@ -3,7 +3,7 @@ import {
     Copfr,
     Exponent,
     Extrema,
-    floor,
+    integerDivide,
     Max,
     max,
     Min,
@@ -33,9 +33,8 @@ const computePrimeExponentRange = (
     const [minPrimeExponentGivenMaxN2D3P9, maxPrimeExponentGivenMaxN2D3P9]: Extrema<Exponent<Prime>> =
     primeExponentExtremaGivenMaxN2D3P9 || [-Infinity, Infinity] as Extrema<Exponent<Prime>>
 
-    // TODO: also take integerDivide from Musical Pattern's utilities repo
-    //  for places where you're using floor on a division
-    const maxPrimeExponentGivenMaxSopfr: Max<Exponent<Prime>> = floor(maxFiveRoughSopfr / prime) as Max<Exponent<Prime>>
+    const maxPrimeExponentGivenMaxSopfr: Max<Exponent<Prime>> =
+        integerDivide(maxFiveRoughSopfr, prime) as Max<Exponent<Prime>>
     const maxPrimeExponentGivenMaxCopfr: Max<Exponent<Prime>> = maxFiveRoughCopfr as number as Max<Exponent<Prime>>
 
     const minPrimeExponentGivenMaxSopfr: Min<Exponent<Prime>> = -maxPrimeExponentGivenMaxSopfr as Min<Exponent<Prime>>

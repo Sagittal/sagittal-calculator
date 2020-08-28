@@ -72,6 +72,7 @@ import {
     FractionalPart,
     FractionalPartType,
     Integer,
+    integerDivide,
     invertMonzo,
     log,
     max,
@@ -230,4 +231,5 @@ export {
     Maybe,
     computeMonzoFromCommand,
     SUPERSCRIPT_NUMS,
+    integerDivide,
 }

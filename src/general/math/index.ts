@@ -24,6 +24,7 @@ import {
     count,
     difference,
     floor,
+    integerDivide,
     log,
     max,
     min,
@@ -115,4 +116,5 @@ export {
     Min,
     Max,
     count,
+    integerDivide,
 }

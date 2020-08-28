@@ -45,6 +45,9 @@ const product = <T extends number>(...numbers: T[]): T => {
 const quotient = <T extends number>(dividend: T, divisor: T): T =>
     dividend / divisor as T
 
+const integerDivide = <T extends number>(dividend: T, divisor: T): T & Integer =>
+    floor(dividend / divisor) as T & Integer
+
 const mod = <T extends number>(dividend: T, divisor: T): Omit<T, "_IntegerBrand"> =>
     dividend % divisor as unknown as Omit<T, "_IntegerBrand">
 
@@ -111,5 +114,6 @@ export {
     min,
     pow,
     log,
+    integerDivide,
     count,
 }

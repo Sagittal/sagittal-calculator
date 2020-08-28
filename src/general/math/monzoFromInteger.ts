@@ -1,4 +1,4 @@
-import { Exponent, floor, Integer, Prime, PRIMES } from "../math"
+import { Exponent, Integer, integerDivide, Prime, PRIMES } from "../math"
 import { Monzo } from "./types"
 
 const computeMonzoFromInteger = (integer: Integer): Monzo => {
@@ -19,7 +19,7 @@ const computeMonzoFromInteger = (integer: Integer): Monzo => {
             }
 
             while (remainder === 0) {
-                remnant = floor(remnant / divisor)
+                remnant = integerDivide(remnant, divisor)
                 monzo[ index ] = monzo[ index ] + 1 as Exponent<Prime>
                 remainder = remnant % divisor
             }
