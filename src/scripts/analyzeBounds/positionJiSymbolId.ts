@@ -1,7 +1,5 @@
-import { Cents, Id, Maybe } from "../../../general"
-import { getSagittalComma } from "../getSagittalComma"
-import { JI_SYMBOLS } from "./jiSymbols"
-import { JiSymbol } from "./types"
+import { Cents, Id, Maybe } from "../../general"
+import { getSagittalComma, JiSymbol, JI_SYMBOLS } from "../../sagittal"
 
 const computePositionJiSymbolId = (position: Maybe<Cents>): Maybe<Id<JiSymbol>> => {
     if (!position) {

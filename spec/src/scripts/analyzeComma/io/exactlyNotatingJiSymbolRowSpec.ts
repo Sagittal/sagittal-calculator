@@ -1,12 +1,12 @@
 import { Id, Row } from "../../../../../src/general"
 import { JiSymbol } from "../../../../../src/sagittal/notations/ji"
-import { computeNotatingSymbolRow } from "../../../../../src/scripts/analyzeComma/io"
+import { computeExactlyNotatingJiSymbolRow } from "../../../../../src/scripts/analyzeComma/io"
 
-describe("computeNotatingSymbolRow", () => {
+describe("computeExactlyNotatingJiSymbolRow", () => {
     it("given a JI symbol ID, return formatted data about it", () => {
         const jiSymbolId = 3 as Id<JiSymbol>
 
-        const actual = computeNotatingSymbolRow(jiSymbolId)
+        const actual = computeExactlyNotatingJiSymbolRow(jiSymbolId)
 
         const expected = [
             ".)|",

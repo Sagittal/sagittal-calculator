@@ -1,9 +1,13 @@
-import { Cents, Id } from "../../../general"
-import { getSagittalComma } from "../getSagittalComma"
-import { getJiSymbol } from "./jiSymbol"
-import { LEVELS_SYMBOL_IDS } from "./levelsJiSymbolIds"
+import { Cents, Id } from "../../general"
+import {
+    getJiSymbol,
+    getSagittalComma,
+    JiSymbol,
+    Level,
+    LEVELS_SYMBOL_IDS,
+} from "../../sagittal"
 import { computeNeighborPositions } from "./neighborPositions"
-import { BoundedSymbolPositions, JiSymbol, Level } from "./types"
+import { BoundedSymbolPositions } from "./types"
 
 const computeBoundedJiSymbolPositions = (position: Cents, level: Level): BoundedSymbolPositions => {
     const levelSymbolIds: Array<Id<JiSymbol>> = LEVELS_SYMBOL_IDS[ level ]

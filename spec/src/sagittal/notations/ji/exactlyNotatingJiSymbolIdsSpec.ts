@@ -1,13 +1,13 @@
 import { Id, Monzo } from "../../../../../src/general"
-import { computeNotatingJiSymbolIds, JiSymbol } from "../../../../../src/sagittal/notations/ji"
+import { computeExactlyNotatingJiSymbolIds, JiSymbol } from "../../../../../src/sagittal/notations/ji"
 
-describe("computeNotatingJiSymbols", () => {
+describe("computeExactlyNotatingJiSymbols", () => {
     it(
         `returns a list of JI symbols which exactly notate this pitch relative to a skeleton of Pythagorean nominals`,
         () => {
             const monzo: Monzo = [0, -2, 0, 0, 1] as Monzo
 
-            const actual = computeNotatingJiSymbolIds(monzo)
+            const actual = computeExactlyNotatingJiSymbolIds(monzo)
 
             const expected = [
                 80,     // 1/11S
@@ -21,7 +21,7 @@ describe("computeNotatingJiSymbols", () => {
     it("another example", () => {
         const monzo: Monzo = [0, 0, 1, 1] as Monzo
 
-        const actual = computeNotatingJiSymbolIds(monzo)
+        const actual = computeExactlyNotatingJiSymbolIds(monzo)
 
         const expected = [
             54,     // 1/35C

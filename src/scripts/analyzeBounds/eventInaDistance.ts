@@ -1,5 +1,5 @@
 import { abs, Cents, Proportion } from "../../general"
-import { computeInaDistance } from "../../sagittal"
+import { computeInaDistance } from "./inaDistance"
 import { HistoricalEvent, History } from "./types"
 
 const computeEventInaDistance = (event: HistoricalEvent, index: number, history: History): Proportion =>

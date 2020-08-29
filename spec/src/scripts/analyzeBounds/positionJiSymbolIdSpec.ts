@@ -1,6 +1,6 @@
-import { Cents, Id } from "../../../../../src/general"
-import { JiSymbol } from "../../../../../src/sagittal/notations/ji"
-import { computePositionJiSymbolId } from "../../../../../src/sagittal/notations/ji/positionJiSymbolId"
+import { Cents, Id } from "../../../../src/general"
+import { JiSymbol } from "../../../../src/sagittal/notations/ji"
+import { computePositionJiSymbolId } from "../../../../src/scripts/analyzeBounds/positionJiSymbolId"
 
 describe("computePositionJiSymbolId", () => {
     it("given a position, returns the symbol at that position", () => {

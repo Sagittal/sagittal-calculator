@@ -1,6 +1,6 @@
 import { COMMA_POPULARITIES, computeRatioFromMonzo, deepEquals, formatRatio, IO, Monzo, Votes } from "../../general"
 import {
-    computeNotatingJiSymbolIds,
+    computeExactlyNotatingJiSymbolIds,
     computeSmileyFromAscii,
     formatN2D3P9,
     getJiSymbol,
@@ -18,7 +18,7 @@ const computePopularRatio = ({ monzo, n2d3p9 }: { monzo: Monzo, n2d3p9: N2D3P9 }
     const popularityRank = popularity?.rank || "-" as IO
     const votes = popularity?.votes || 0 as Votes
 
-    const notatingSymbolIds = computeNotatingJiSymbolIds(monzo)
+    const notatingSymbolIds = computeExactlyNotatingJiSymbolIds(monzo)
     const notatingSymbols = notatingSymbolIds.map(getJiSymbol)
     const smileys = notatingSymbols.map(symbol => computeSmileyFromAscii(symbol.ascii)).join(" ") as IO
     const symbolSubsets = notatingSymbols.map(symbol => {

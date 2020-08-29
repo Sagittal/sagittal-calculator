@@ -1,20 +1,14 @@
+import { unicodeFromAscii } from "./asciiUnicode"
 import { analyzeComma } from "./comma"
 import { getSagittalComma } from "./getSagittalComma"
 import { MAX_SINGLE_SHAFT_CENTS } from "./intervals"
 import {
     Bound,
-    BoundedSymbolIdWithDistances,
-    BoundedSymbolIdWithDistancesPair,
-    BoundedSymbolPositions,
-    BoundIdWithBoundedSymbolIdWithDistancesPairsByLevel,
     BOUNDS,
-    computeBoundedJiSymbolPositions,
-    computeInaDistance,
+    computeExactlyNotatingJiSymbolIds,
     computeInaMidpoints,
-    computeLevelCommaMeans,
-    computeNotatingJiSymbolIds,
-    computeSizeCategoryBoundsWithinMaximumPosition,
     getJiSymbol,
+    INA_SIZES,
     JiSymbol,
     JI_SYMBOLS,
     JI_SYMBOL_SUBSETS,
@@ -22,19 +16,13 @@ import {
     LEVELS,
     LEVELS_BOUNDS,
     LEVELS_SYMBOL_IDS,
-    LEVEL_BOUNDED_SYMBOLS,
     LEVEL_EDAS,
     Mina,
     Tina,
     TINA,
-    unicodeFromAscii,
 } from "./ji"
 import { computeSmileyFromAscii } from "./smiley"
 import { SagittalComma, SymbolLongAscii } from "./types"
-
-// TODO: okay here's what you need to do: you've thought about this before, but I now think it is right
-//  you gotta rename "notations" to "sagittal" and then nest notations underneath it
-//  and then have as a sibling to notations, "N2D3P9", and "commaName", and "apotomeSlope" at top level
 
 export {
     BOUNDS,
@@ -42,12 +30,8 @@ export {
     Level,
     LEVELS,
     TINA,
-    computeInaDistance,
-    computeBoundedJiSymbolPositions,
+    INA_SIZES,
     MAX_SINGLE_SHAFT_CENTS,
-    LEVEL_BOUNDED_SYMBOLS,
-    BoundedSymbolIdWithDistances,
-    BoundIdWithBoundedSymbolIdWithDistancesPairsByLevel,
     SymbolLongAscii,
     Mina,
     LEVELS_BOUNDS,
@@ -56,15 +40,11 @@ export {
     JiSymbol,
     unicodeFromAscii,
     computeInaMidpoints,
-    computeLevelCommaMeans,
-    computeSizeCategoryBoundsWithinMaximumPosition,
     JI_SYMBOLS,
     computeSmileyFromAscii,
-    computeNotatingJiSymbolIds,
+    computeExactlyNotatingJiSymbolIds,
     getJiSymbol,
-    BoundedSymbolIdWithDistancesPair,
     JI_SYMBOL_SUBSETS,
-    BoundedSymbolPositions,
     Tina,
     SagittalComma,
     analyzeComma,

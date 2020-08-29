@@ -1,5 +1,6 @@
 import { Cents } from "../../../../../src/general"
-import { computeBoundedJiSymbolPositions, Level } from "../../../../../src/sagittal/notations/ji"
+import { Level } from "../../../../../src/sagittal/notations/ji"
+import { computeBoundedJiSymbolPositions } from "../../../../../src/scripts/analyzeBounds/boundedJiSymbolPositions"
 
 describe("computeBoundedJiSymbolPositions", () => {
     it("gives the positions of the symbol immediately lesser and greater than the position at that level", () => {

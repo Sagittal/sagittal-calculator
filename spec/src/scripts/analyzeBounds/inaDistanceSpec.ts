@@ -1,6 +1,7 @@
-import { Cents, Proportion } from "../../../../../src/general"
-import { ACCURACY_THRESHOLD } from "../../../../../src/general/code"
-import { computeInaDistance, Level } from "../../../../../src/sagittal/notations/ji"
+import { Cents, Proportion } from "../../../../src/general"
+import { ACCURACY_THRESHOLD } from "../../../../src/general/code"
+import { Level } from "../../../../src/sagittal/notations/ji"
+import { computeInaDistance } from "../../../../src/scripts/analyzeBounds/inaDistance"
 
 describe("inaDistance", () => {
     it("returns the distance as a proportion of the size of the ina at that level", () => {

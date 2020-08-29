@@ -1,6 +1,6 @@
-import { max } from "../../../../../src/general"
-import { MAX_SINGLE_SHAFT_CENTS } from "../../../../../src/sagittal"
-import { computeSizeCategoryBoundsWithinMaximumPosition } from "../../../../../src/sagittal/notations/ji"
+import { max } from "../../../../src/general"
+import { MAX_SINGLE_SHAFT_CENTS } from "../../../../src/sagittal"
+import { computeSizeCategoryBoundsWithinMaximumPosition } from "../../../../src/scripts/analyzeBounds/sizeCategoryBounds"
 
 describe("computeSizeCategoryBoundsWithinMaximumPosition", () => {
     it("only returns the size category bounds that are less than or equal to the max position", () => {

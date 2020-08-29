@@ -1,6 +1,6 @@
-import { Cents } from "../../../../../src/general"
-import { computeNeighborPositions } from "../../../../../src/sagittal/notations/ji/neighborPositions"
-import { NeighborPositions } from "../../../../../src/sagittal/notations/ji/types"
+import { Cents } from "../../../../src/general"
+import { computeNeighborPositions } from "../../../../src/scripts/analyzeBounds/neighborPositions"
+import { NeighborPositions } from "../../../../src/scripts/analyzeBounds/types"
 
 describe("computeNeighborPositions", () => {
     it("returns the two positions in the list of sorted targets which are on either side of the position", () => {

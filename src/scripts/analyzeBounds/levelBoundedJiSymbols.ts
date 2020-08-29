@@ -1,11 +1,14 @@
-import { abs, Cents, difference, Maybe } from "../../../general"
-import { getSagittalComma } from "../getSagittalComma"
+import { abs, Cents, difference, Maybe } from "../../general"
+import {
+    Bound,
+    BOUNDS,
+    getJiSymbol, getSagittalComma,
+    JiSymbol,
+} from "../../sagittal"
 import { computeBoundedJiSymbolPositions } from "./boundedJiSymbolPositions"
-import { BOUNDS } from "./bounds"
 import { computeInaDistance } from "./inaDistance"
-import { getJiSymbol } from "./jiSymbol"
 import { computePositionJiSymbolId } from "./positionJiSymbolId"
-import { Bound, BoundIdWithBoundedSymbolIdWithDistancesPairsByLevel, JiSymbol } from "./types"
+import { BoundIdWithBoundedSymbolIdWithDistancesPairsByLevel } from "./types"
 
 const computeLevelBoundedJiSymbolIdWithDistances = (
     bound: Bound,

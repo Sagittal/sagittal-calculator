@@ -17,8 +17,8 @@ import {
     saveLog,
     Table,
 } from "../../../general"
-import { analyzeComma, computeNotatingJiSymbolIds, JiSymbol } from "../../../sagittal"
-import { computeNotatingSymbolRow, formatComma, NOTATING_SYMBOLS_HEADER_ROW } from "../io"
+import { analyzeComma, computeExactlyNotatingJiSymbolIds, JiSymbol } from "../../../sagittal"
+import { computeExactlyNotatingJiSymbolRow, formatComma, NOTATING_SYMBOLS_HEADER_ROW } from "../io"
 
 // TODO: you should also make it accept -n name!
 
@@ -67,9 +67,9 @@ saveLog(formatComma(analyzedComma), LogTarget.ALL, "analyzeComma" as Filename)
 // TODO: this is technically notating JI symbols... but it would be pretty cool if it could return all possible
 //  notating symbols and just not provide an ID if they aren't in Sagittal
 
-const notatingSymbolIds = computeNotatingJiSymbolIds(monzo)
+const notatingSymbolIds = computeExactlyNotatingJiSymbolIds(monzo)
 
-const notatingSymbolTable: Table<JiSymbol> = notatingSymbolIds.map(computeNotatingSymbolRow)
+const notatingSymbolTable: Table<JiSymbol> = notatingSymbolIds.map(computeExactlyNotatingJiSymbolRow)
 
 notatingSymbolTable.unshift(NOTATING_SYMBOLS_HEADER_ROW)
 

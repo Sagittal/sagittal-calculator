@@ -1,6 +1,7 @@
 import { computeExtensionBase, ExtensionBaseType } from "../../../general"
-import { Bound, BoundedSymbolPositions, computeBoundedJiSymbolPositions, Level } from "../../../sagittal"
-import { EventType, History } from "../types"
+import { Bound, Level } from "../../../sagittal"
+import { computeBoundedJiSymbolPositions } from "../boundedJiSymbolPositions"
+import { BoundedSymbolPositions, EventType, History } from "../types"
 import { computeEvents } from "./events"
 
 const computeExtendedHistories = (history: History, level: Level, bound: Bound) => {

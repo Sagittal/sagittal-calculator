@@ -1,6 +1,5 @@
-import { CentsPosition } from "../../../general"
-import { SIZE_CATEGORY_BOUNDS } from "../../commaSizeName"
-import { MAX_SINGLE_SHAFT_CENTS } from "../intervals"
+import { CentsPosition } from "../../general"
+import { MAX_SINGLE_SHAFT_CENTS, SIZE_CATEGORY_BOUNDS } from "../../sagittal"
 
 const computeSizeCategoryBoundsWithinMaximumPosition = (): CentsPosition[] =>
     SIZE_CATEGORY_BOUNDS.slice(

@@ -1,11 +1,7 @@
-import { Cents, Id, Proportion } from "../../../../../src/general"
-import {
-    Bound,
-    BoundIdWithBoundedSymbolIdWithDistancesPairsByLevel,
-    JiSymbol,
-    Level,
-} from "../../../../../src/sagittal/notations/ji"
-import { computeLevelBoundedJiSymbolIdWithDistances } from "../../../../../src/sagittal/notations/ji/levelBoundedJiSymbols"
+import { Cents, Id, Proportion } from "../../../../src/general"
+import { Bound, JiSymbol, Level } from "../../../../src/sagittal/notations/ji"
+import { computeLevelBoundedJiSymbolIdWithDistances } from "../../../../src/scripts/analyzeBounds/levelBoundedJiSymbols"
+import { BoundIdWithBoundedSymbolIdWithDistancesPairsByLevel } from "../../../../src/scripts/analyzeBounds/types"
 
 describe("computeLevelBoundedJiSymbolIdWithDistances", () => {
     it("returns, given a bound, for each of its levels, an array of the pair of symbols it bounds at that level, as well as their distances and ina-distances from the bound", () => {

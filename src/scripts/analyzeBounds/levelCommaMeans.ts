@@ -1,8 +1,5 @@
-import { Cents, CentsPosition, Name, Pitch } from "../../../general"
-import { getSagittalComma } from "../getSagittalComma"
-import { getJiSymbol } from "./jiSymbol"
-import { LEVELS_SYMBOL_IDS } from "./levelsJiSymbolIds"
-import { Level } from "./types"
+import { Cents, CentsPosition, Name, Pitch } from "../../general"
+import { getJiSymbol, getSagittalComma, Level, LEVELS_SYMBOL_IDS } from "../../sagittal"
 
 const computeLevelCommaMeans = (level: Level): CentsPosition[] => {
     const levelSymbolIds = LEVELS_SYMBOL_IDS[ level ]

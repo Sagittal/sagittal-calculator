@@ -3,8 +3,7 @@ import { getSagittalComma } from "../getSagittalComma"
 import { JI_SYMBOLS } from "./jiSymbols"
 import { JiSymbol } from "./types"
 
-// TODO: this should live in the notating symbols script
-const computeNotatingJiSymbolIds = (monzo: Monzo): Array<Id<JiSymbol>> => {
+const computeExactlyNotatingJiSymbolIds = (monzo: Monzo): Array<Id<JiSymbol>> => {
     const notatingJiSymbols: Array<Id<JiSymbol>> = []
     const fiveRoughMonzo = computeRoughNumberMonzo(monzo, FIVE_ROUGHNESS)
 
@@ -25,5 +24,5 @@ const computeNotatingJiSymbolIds = (monzo: Monzo): Array<Id<JiSymbol>> => {
 }
 
 export {
-    computeNotatingJiSymbolIds,
+    computeExactlyNotatingJiSymbolIds,
 }

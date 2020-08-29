@@ -1,5 +1,5 @@
-import { Cents, Count, Integer, Name, Pitch, Proportion, Rank, Sum } from "../../general"
-import { Level, Tina } from "../../sagittal"
+import { Cents, Count, Id, Integer, Maybe, Name, Pitch, Proportion, Rank, Sum } from "../../general"
+import { Bound, JiSymbol, Level, Tina } from "../../sagittal"
 
 enum EventType {
     INA = "ina",
@@ -67,6 +67,21 @@ interface AnalyzedBound {
     possibleHistoryCount: Count<AnalyzedHistory>,
 }
 
+type NeighborPositions = [Maybe<Cents>, Maybe<Cents>]
+type BoundedSymbolPositions = NeighborPositions
+
+type BoundIdWithBoundedSymbolIdWithDistancesPairsByLevel =
+    { id: Id<Bound> }
+    & Partial<Record<Level, BoundedSymbolIdWithDistancesPair>>
+
+interface BoundedSymbolIdWithDistances {
+    id: Id<JiSymbol>,
+    distance: Cents,
+    inaDistance: Proportion,
+}
+
+type BoundedSymbolIdWithDistancesPair = [Maybe<BoundedSymbolIdWithDistances>, Maybe<BoundedSymbolIdWithDistances>]
+
 export {
     History,
     AnalyzedHistory,
@@ -78,4 +93,8 @@ export {
     EventType,
     UpdateConsolidatedEventOptions,
     ConsolidatedEvent,
+    NeighborPositions,
+    BoundedSymbolPositions,
+    BoundedSymbolIdWithDistancesPair,
+    BoundIdWithBoundedSymbolIdWithDistancesPairsByLevel,
 }

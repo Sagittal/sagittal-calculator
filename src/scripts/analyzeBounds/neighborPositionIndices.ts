@@ -1,4 +1,4 @@
-import { Cents, difference, Index } from "../../../general"
+import { Cents, difference, Index } from "../../general"
 
 const computeNeighborPositionIndices = (
     position: Cents,

@@ -1,5 +1,5 @@
-import { Cents, Index } from "../../../../../src/general"
-import { computeNeighborPositionIndices } from "../../../../../src/sagittal/notations/ji/neighborPositionIndices"
+import { Cents, Index } from "../../../../src/general"
+import { computeNeighborPositionIndices } from "../../../../src/scripts/analyzeBounds/neighborPositionIndices"
 
 describe("computeNeighborPositionIndices", () => {
     it(

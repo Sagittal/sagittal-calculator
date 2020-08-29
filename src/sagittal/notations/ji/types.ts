@@ -1,4 +1,4 @@
-import { Cents, Extrema, Id, Maybe, Proportion } from "../../../general"
+import { Cents, Extrema, Id } from "../../../general"
 import { SagittalComma, SymbolLongAscii, SymbolSubset, SymbolUnicode } from "../types"
 
 type Tina = Cents & { _TinaBrand: "Tina" }
@@ -32,21 +32,6 @@ interface Bound {
     cents: Cents,
 }
 
-type BoundIdWithBoundedSymbolIdWithDistancesPairsByLevel =
-    { id: Id<Bound> }
-    & Partial<Record<Level, BoundedSymbolIdWithDistancesPair>>
-
-interface BoundedSymbolIdWithDistances {
-    id: Id<JiSymbol>,
-    distance: Cents,
-    inaDistance: Proportion,
-}
-
-type BoundedSymbolIdWithDistancesPair = [Maybe<BoundedSymbolIdWithDistances>, Maybe<BoundedSymbolIdWithDistances>]
-
-type NeighborPositions = [Maybe<Cents>, Maybe<Cents>]
-type BoundedSymbolPositions = NeighborPositions
-
 type SecondaryCommaZone = Extrema<Cents>
 
 export {
@@ -58,10 +43,5 @@ export {
     Medina,
     Level,
     Bound,
-    BoundIdWithBoundedSymbolIdWithDistancesPairsByLevel,
-    BoundedSymbolIdWithDistances,
-    BoundedSymbolIdWithDistancesPair,
-    NeighborPositions,
-    BoundedSymbolPositions,
     SecondaryCommaZone,
 }

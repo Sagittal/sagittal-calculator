@@ -1,4 +1,4 @@
-import { Cents } from "../../../general"
+import { Cents } from "../../general"
 import { computeNeighborPositionIndices } from "./neighborPositionIndices"
 import { NeighborPositions } from "./types"
 

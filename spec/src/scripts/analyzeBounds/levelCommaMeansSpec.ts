@@ -1,5 +1,6 @@
-import { Cents, Name, Pitch } from "../../../../../src/general"
-import { computeLevelCommaMeans, Level } from "../../../../../src/sagittal/notations/ji"
+import { Cents, Name, Pitch } from "../../../../src/general"
+import { Level } from "../../../../src/sagittal/notations/ji"
+import { computeLevelCommaMeans } from "../../../../src/scripts/analyzeBounds/levelCommaMeans"
 
 describe("computeLevelCommaMeans", () => {
     it("can return the comma means for the Medium level, both the positions and the bounded commas' symbols", () => {

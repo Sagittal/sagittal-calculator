@@ -1,11 +1,7 @@
 import { CentsPosition } from "../../../general"
-import {
-    computeInaMidpoints,
-    computeLevelCommaMeans,
-    computeSizeCategoryBoundsWithinMaximumPosition,
-    Level,
-    LEVELS,
-} from "../../../sagittal"
+import { computeInaMidpoints, Level, LEVELS } from "../../../sagittal"
+import { computeLevelCommaMeans } from "../levelCommaMeans"
+import { computeSizeCategoryBoundsWithinMaximumPosition } from "../sizeCategoryBounds"
 import { EventType } from "../types"
 
 const computeSnappablePositions = (

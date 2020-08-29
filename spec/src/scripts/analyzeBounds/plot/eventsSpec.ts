@@ -1,11 +1,8 @@
 import { Cents, Name, Pitch } from "../../../../../src/general"
-import {
-    BoundedSymbolPositions,
-    computeBoundedJiSymbolPositions,
-    Level,
-} from "../../../../../src/sagittal/notations/ji"
+import { Level } from "../../../../../src/sagittal/notations/ji"
+import { computeBoundedJiSymbolPositions } from "../../../../../src/scripts/analyzeBounds/boundedJiSymbolPositions"
 import { computeEvents } from "../../../../../src/scripts/analyzeBounds/plot/events"
-import { EventType, HistoricalEvent } from "../../../../../src/scripts/analyzeBounds/types"
+import { BoundedSymbolPositions, EventType, HistoricalEvent } from "../../../../../src/scripts/analyzeBounds/types"
 
 describe("computeEvents", () => {
     let level: Level

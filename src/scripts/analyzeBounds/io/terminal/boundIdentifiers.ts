@@ -1,12 +1,12 @@
 import { isUndefined, Maybe } from "../../../../general"
 import {
     Bound,
-    BoundedSymbolIdWithDistancesPair,
     getJiSymbol,
     Level,
-    LEVEL_BOUNDED_SYMBOLS,
     SymbolLongAscii,
 } from "../../../../sagittal"
+import { LEVEL_BOUNDED_SYMBOLS } from "../../levelBoundedJiSymbols"
+import { BoundedSymbolIdWithDistancesPair } from "../../types"
 import { computeJiSymbolWithPrimaryComma } from "./jiSymbolWithPrimaryComma"
 import { BoundedJiSymbol, BoundedJiSymbolsWithPrimaryCommas, BoundIdentifiers } from "./types"
 

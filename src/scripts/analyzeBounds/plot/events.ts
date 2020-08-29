@@ -1,6 +1,6 @@
 import { CentsPosition, Name, Pitch } from "../../../general"
-import { BoundedSymbolPositions, Level } from "../../../sagittal"
-import { EventType, HistoricalEvent } from "../types"
+import { Level } from "../../../sagittal"
+import { BoundedSymbolPositions, EventType, HistoricalEvent } from "../types"
 import { EVENT_TYPE_SNAPPABLE_POSITIONS } from "./snappablePositions"
 
 const computeEvents = (

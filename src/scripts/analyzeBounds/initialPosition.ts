@@ -1,5 +1,6 @@
 import { Cents } from "../../general"
-import { Bound, computeBoundedJiSymbolPositions, MAX_SINGLE_SHAFT_CENTS } from "../../sagittal"
+import { Bound, MAX_SINGLE_SHAFT_CENTS } from "../../sagittal"
+import { computeBoundedJiSymbolPositions } from "./boundedJiSymbolPositions"
 
 const computeInitialPosition = (bound: Bound): Cents => {
     const { cents, levels } = bound
