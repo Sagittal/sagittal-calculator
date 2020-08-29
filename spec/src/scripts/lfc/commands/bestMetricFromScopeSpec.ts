@@ -6,7 +6,7 @@ describe("best-metric-from-scope", () => {
     it("recursively finds the absolute perfect metric within the given scope", () => {
         onlyRunInCi()
 
-        const command = "npm run best-metric-from-scope -- --no-color --no-write" as IO
+        const command = "npm run best-metric-from-scope" as IO
 
         const actual = runCommandAndGetConsoleOutput(command)
 

@@ -6,7 +6,7 @@ describe("antivotes", () => {
     it("gives you the antivotes of a specific ratio for the submetric combination set in the file", () => {
         onlyRunInCi()
 
-        const command = "npm run antivotes -- --no-color --no-write" as IO
+        const command = "npm run antivotes" as IO
 
         const actual = runCommandAndGetConsoleOutput(command)
 

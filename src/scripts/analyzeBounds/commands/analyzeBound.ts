@@ -2,7 +2,7 @@ import { program } from "commander"
 import { Filename, LogTarget, parseCommands, saveLog } from "../../../general"
 import { BOUNDS } from "../../../sagittal"
 import { analyzeBound } from "../bound"
-import { computeFormattedBound } from "../io"
+import { formatBound } from "../io"
 import { computeHistories } from "../plot"
 
 parseCommands("analyzeBounds" as Filename, [LogTarget.BOUND])
@@ -15,7 +15,7 @@ if (bound) {
     const histories = computeHistories(bound)
     const analyzedBound = analyzeBound(histories, bound)
 
-    const message = computeFormattedBound(analyzedBound, { bound })
+    const message = formatBound(analyzedBound, { bound })
     saveLog(message, LogTarget.BOUND, "analyzeBounds" as Filename)
 } else {
     throw new Error(`Could not find bound with ID ${boundId}`)

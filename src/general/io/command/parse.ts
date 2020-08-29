@@ -5,11 +5,6 @@ import { ioSettings } from "../settings"
 import { Filename } from "../types"
 import { CommandFlag } from "./types"
 
-// TODO: you'll want to refactor so that you can curry/chain these setups with a callback so you can compose them
-//  or maybe you won't have to deal with that if you're able to consolidate notating-symbols and analyze-comma
-
-// TODO: (hey or we could just do it based on CI env var?!) --no-write --no-color in each test
-
 const parseCommands = (
     scriptGroup: Filename,
     defaultLogTargets?: LogTarget[]
@@ -22,7 +17,7 @@ const parseCommands = (
 
     program.parse(process.argv)
 
-    ioSettings.noWrite = !program.write
+    ioSettings.noWrite = !program.write || !!process.env.TEST_MODE
     if (!ioSettings.noWrite) {
         clearLogFiles(scriptGroup)
     }
@@ -31,7 +26,7 @@ const parseCommands = (
 
     setLogTargets(program.logTargets || defaultLogTargets && defaultLogTargets.join(","))
 
-    if (!program.color) {
+    if (!program.color || !!process.env.TEST_MODE) {
         colors.disable()
     }
 }

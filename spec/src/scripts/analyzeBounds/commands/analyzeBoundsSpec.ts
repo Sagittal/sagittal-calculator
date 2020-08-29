@@ -7,7 +7,7 @@ describe("analyze-bounds", () => {
     it("runs without error", () => {
         onlyRunInCi()
 
-        const actual = runCommandAndGetConsoleOutput("npm run analyze-bounds -- --no-color --no-write" as IO)
+        const actual = runCommandAndGetConsoleOutput("npm run analyze-bounds" as IO)
 
         const expected = fs.readFileSync(
             "src/scripts/analyzeBounds/results/boundsTerminal.txt",

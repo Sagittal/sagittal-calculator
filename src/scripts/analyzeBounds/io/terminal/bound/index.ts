@@ -1,5 +1,5 @@
-import { computeFormattedBound } from "./formattedBound"
+import { formatBound } from "./formattedBound"
 
 export {
-    computeFormattedBound,
+    formatBound,
 }

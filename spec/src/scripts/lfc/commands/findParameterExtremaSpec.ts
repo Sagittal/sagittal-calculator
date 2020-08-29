@@ -1,1 +1,1 @@
-// TODO: test --no-color --no-write
+// TODO: test

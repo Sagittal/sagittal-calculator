@@ -32,7 +32,7 @@ describe("find-commas", () => {
     it("can find commas with specific prime content (it includes inverses)", () => {
         onlyRunInCi()
 
-        const command = "npm run find-commas -- --five-sliced-monzo [0,0,0,0,0,-1,0,1] --no-color --no-write" as IO
+        const command = "npm run find-commas -- --five-sliced-monzo [0,0,0,0,0,-1,0,1]" as IO
 
         const actual = runCommandAndGetConsoleOutput(command)
 
@@ -50,7 +50,7 @@ describe("find-commas", () => {
     it("can sort the resulting list", () => {
         onlyRunInCi()
 
-        const command = "npm run find-commas -- --five-sliced-monzo [0,0,0,0,0,-1,0,1] --sort-by apotomeSlope --no-color --no-write" as IO
+        const command = "npm run find-commas -- --five-sliced-monzo [0,0,0,0,0,-1,0,1] --sort-by apotomeSlope" as IO
 
         const actual = runCommandAndGetConsoleOutput(command)
 

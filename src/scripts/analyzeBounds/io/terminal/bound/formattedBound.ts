@@ -3,10 +3,7 @@ import { AnalyzedBound } from "../../../types"
 import { extractBoundIdentifiers } from "../boundIdentifiers"
 import { FormatBoundOptions } from "./types"
 
-const computeFormattedBound = (
-    analyzedBound: AnalyzedBound,
-    { bound }: FormatBoundOptions,
-): Formatted<AnalyzedBound> => {
+const formatBound = (analyzedBound: AnalyzedBound, { bound }: FormatBoundOptions): Formatted<AnalyzedBound> => {
     const boundIdentifiers = extractBoundIdentifiers(bound)
 
     const formattedBoundIdentifiers = stringify(boundIdentifiers, { multiline: true })
@@ -17,8 +14,6 @@ const computeFormattedBound = (
     return addTexts(formattedBoundIdentifiers, NEWLINE, formattedAnalyzedBound) as Formatted<AnalyzedBound>
 }
 
-// TODO: probably should go back and rename things that are called formatThis to computeFormattedThis
-
 export {
-    computeFormattedBound,
+    formatBound,
 }

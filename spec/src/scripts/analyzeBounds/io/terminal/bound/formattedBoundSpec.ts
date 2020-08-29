@@ -1,6 +1,6 @@
 import { Cents, Id, Integer, Rank } from "../../../../../../../src/general"
 import { Bound } from "../../../../../../../src/sagittal/notations/ji"
-import { computeFormattedBound } from "../../../../../../../src/scripts/analyzeBounds/io"
+import { formatBound } from "../../../../../../../src/scripts/analyzeBounds/io"
 import { AnalyzedBound, AnalyzedEvent } from "../../../../../../../src/scripts/analyzeBounds/types"
 import { boundFixture } from "../../../../../../helpers/src/scripts/analyzeBounds/fixtures"
 
@@ -15,7 +15,7 @@ describe("computeFormattedBound", () => {
             bestRank: 2 as Rank<AnalyzedEvent, Integer>,
         } as AnalyzedBound
 
-        const actual = computeFormattedBound(analyzedBound, { bound })
+        const actual = formatBound(analyzedBound, { bound })
 
         const expected = [
             `{`,

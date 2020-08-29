@@ -9,7 +9,7 @@ describe("computeExactlyNotatingJiSymbolRow", () => {
         const actual = computeExactlyNotatingJiSymbolRow(jiSymbolId)
 
         const expected = [
-            ".)|",
+            "   .)|  ",
             "19/5n",
             "1216/1215",
             "[ 6 -5 -1 0 0 0 0 1 ⟩",
