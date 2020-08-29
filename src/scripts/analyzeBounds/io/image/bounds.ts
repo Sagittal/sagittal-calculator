@@ -1,5 +1,5 @@
 import * as fs from "fs"
-import { IO } from "../../../../general"
+import { IO, logSettings } from "../../../../general"
 import { AnalyzedBound } from "../../types"
 import { visualizeCents } from "./cents"
 import { visualizeEvents } from "./events"
@@ -13,7 +13,12 @@ import { addParentSvg } from "./parentSvg"
 import { visualizeSizeCategoryBounds } from "./sizeCategoryBounds"
 
 const visualizeBounds = (boundsAnalysis: AnalyzedBound[]): IO => {
-    fs.copyFileSync("assets/fonts/BravuraSagittalUpdate_v10.otf", "dist/analyzeBounds/BravuraSagittalUpdate_v10.otf")
+    if (!logSettings.noWrite) {
+        fs.copyFileSync(
+            "assets/fonts/BravuraSagittalUpdate_v10.otf",
+            "dist/analyzeBounds/BravuraSagittalUpdate_v10.otf",
+        )
+    }
 
     let elements: IO[] = [] as IO[]
 

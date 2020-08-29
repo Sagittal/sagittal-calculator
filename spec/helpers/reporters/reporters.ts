@@ -1,4 +1,3 @@
-import "colors"
 import { slowReporter } from "./slowReporter"
 import { specReporter } from "./specReporter"
 

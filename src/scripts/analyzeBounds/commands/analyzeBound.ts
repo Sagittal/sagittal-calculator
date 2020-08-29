@@ -1,6 +1,3 @@
-// TODO: perhaps it would be nice if one of these log helpers ensured colors was required
-//  so we don't get those annoying "undefined" console logs
-import "colors"
 import { program } from "commander"
 import { Filename, LogTarget, parseCommands, saveLog } from "../../../general"
 import { BOUNDS } from "../../../sagittal"

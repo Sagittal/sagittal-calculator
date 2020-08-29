@@ -1,4 +1,3 @@
-import "colors"
 import { concat, Filename, IO, LogTarget, parseCommands, saveLog } from "../../../general"
 import { analyzeBounds } from "../bounds"
 import { computeBoundsAnalysisTable, formatLevelAnalyses, formatRankAnalyses, visualizeBounds } from "../io"

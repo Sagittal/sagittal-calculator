@@ -1,4 +1,3 @@
-import "colors"
 import { program } from "commander"
 import { Filename, Formatted, LogTarget, Monzo, parseCommands, parseMonzo, saveLog } from "../../../general"
 import { MAX_SINGLE_SHAFT_CENTS } from "../../../sagittal"

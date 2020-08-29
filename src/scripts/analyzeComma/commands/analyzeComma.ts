@@ -1,4 +1,3 @@
-import "colors"
 import { program } from "commander"
 import {
     ANY_MONZO_CHARS,

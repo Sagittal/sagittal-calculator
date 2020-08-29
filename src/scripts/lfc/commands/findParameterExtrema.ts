@@ -1,4 +1,3 @@
-import "colors"
 import { Extrema, Filename, IO, isNumber, isUndefined, LogTarget, Max, Maybe, Min, saveLog } from "../../../general"
 import { Metric } from "../bestMetric"
 import { LFC } from "../constants"

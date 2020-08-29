@@ -1,4 +1,4 @@
-import { CI_MODE } from "./specHelper"
+import { CI_MODE } from "./ciMode"
 
 const onlyRunInCi = () => {
     if (!CI_MODE) {

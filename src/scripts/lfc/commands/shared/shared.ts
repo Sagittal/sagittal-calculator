@@ -1,4 +1,3 @@
-import "colors"
 import { program } from "commander"
 import { LogTarget, parseCommands } from "../../../../general"
 import { LFC } from "../../constants"
