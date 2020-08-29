@@ -1,6 +1,5 @@
 import { program } from "commander"
-import { performance } from "perf_hooks"
-import { difference, Filename, formatTime, IO, LogTarget, Max, Ms, saveLog, Unit } from "../../../general"
+import { difference, Filename, formatTime, IO, LogTarget, Max, now, saveLog, Unit } from "../../../general"
 import { Metric } from "../bestMetric"
 import { DEFAULT_MAX_UNIT, LFC } from "../constants"
 import { lfcSettings } from "../globals"
@@ -27,11 +26,11 @@ lfcSettings.maxUnit = DEFAULT_MAX_UNIT / 10 as Max<Unit<ParameterValue>>
 
 const bestMetricsToBePerfected = load("metrics" as Filename) as Record<string, Metric>
 
-const startTime = performance.now() as Ms
+const startTime = now()
 perfectMetrics(Object.values(bestMetricsToBePerfected)).then(() => {
     saveLog(`\n\nTHE PERFECTED METRICS ARE ${formatBestMetrics()}` as IO, LogTarget.FINAL_PERFECTER_RESULTS, LFC)
 
-    const endTime = performance.now() as Ms
+    const endTime = now()
     if (time) {
         saveLog(
             `\n\nPERFECTING METRICS TOOK ${formatTime(difference(endTime, startTime))}` as IO,

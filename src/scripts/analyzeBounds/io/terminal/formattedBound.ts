@@ -5,7 +5,7 @@ import { FormatBoundParameters } from "./types"
 
 const computeFormattedBound = (
     analyzedBound: AnalyzedBound,
-    { bound }: FormatBoundParameters
+    { bound }: FormatBoundParameters,
 ): Formatted<AnalyzedBound> => {
     const boundIdentifiers = extractBoundIdentifiers(bound)
 

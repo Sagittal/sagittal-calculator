@@ -21,7 +21,7 @@ const computeSumsOfSquaresAndMaybeUpdateBestMetric = async (
             saveLog(
                 `Not searching scope due to invalid parameter combinations: ${e.message}` as IO,
                 LogTarget.ERRORS,
-                LFC
+                LFC,
             )
 
             return

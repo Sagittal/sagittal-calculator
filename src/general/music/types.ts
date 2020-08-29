@@ -1,4 +1,4 @@
-import { Monzo, Prime, Ratio, Sopfr } from "../math"
+import { Monzo, Ratio } from "../math"
 import { Extrema, Name } from "../types"
 
 type Cents = number & { _CentsBrand: "Cents" }

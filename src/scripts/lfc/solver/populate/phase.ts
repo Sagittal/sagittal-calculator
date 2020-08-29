@@ -7,7 +7,10 @@ import {
     Count,
     difference,
     DistributionBin,
-    Index, IO, LogTarget, saveLog
+    Index,
+    IO,
+    LogTarget,
+    saveLog,
 } from "../../../../general"
 import { LFC } from "../../constants"
 import {
@@ -34,7 +37,7 @@ const populateScopesPhase = async (chunkCount: Count<Chunk>, chunkCountForSubmet
     saveLog(
         `computing scopes: phase ${1 + chunkCount - chunkCountForSubmetrics}/${chunkCount}` as IO,
         LogTarget.POPULATE,
-        LFC
+        LFC,
     )
 
     let submetricChunkCombinations: Combinations<Chunk<Submetric>>

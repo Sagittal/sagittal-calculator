@@ -1,11 +1,4 @@
-import {
-    computeMonzosFromPrimeExponentExtremas,
-    isUndefined,
-    Max,
-    rank,
-    Ranked,
-    RankStrategy,
-} from "../../general"
+import { computeMonzosFromPrimeExponentExtremas, isUndefined, Max, rank, Ranked, RankStrategy } from "../../general"
 import { computePrimeExponentExtremasGivenMaxN2D3P9, N2D3P9 } from "../../sagittal"
 import { computeMaybePopularRatio } from "./maybePopularRatio"
 import { PopularRatio } from "./types"

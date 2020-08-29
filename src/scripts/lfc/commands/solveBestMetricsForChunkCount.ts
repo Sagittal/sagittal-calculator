@@ -1,6 +1,5 @@
 import { program } from "commander"
-import { performance } from "perf_hooks"
-import { Count, difference, formatTime, IO, LogTarget, Ms, saveLog } from "../../../general"
+import { Count, difference, formatTime, IO, LogTarget, now, saveLog } from "../../../general"
 import { LFC } from "../constants"
 import { lfcSettings, solverStatus } from "../globals"
 import { Chunk, formatBestMetrics, populateAndSearchScopesAndPerfectMetrics } from "../solver"
@@ -23,11 +22,11 @@ solverStatus.chunkCount = parseInt(program.args[ 0 ]) as Count<Chunk>
 
 const time = !!program.time
 
-const startTime = performance.now() as Ms
+const startTime = now()
 populateAndSearchScopesAndPerfectMetrics().then(() => {
     saveLog(`\n\nAND THE BEST METRICS WERE ${formatBestMetrics()}` as IO, LogTarget.FINAL_SOLVER_RESULTS, LFC)
 
-    const endTime = performance.now() as Ms
+    const endTime = now()
     if (time) {
         saveLog(
             `\n\nFINDING BEST METRICS TOOK ${formatTime(difference(endTime, startTime))}` as IO,
@@ -39,12 +38,12 @@ populateAndSearchScopesAndPerfectMetrics().then(() => {
     saveLog(
         `AVERAGE SAMPLES/SCOPE ${solverStatus.averageSamplesPerScope}` as IO,
         LogTarget.FINAL_SOLVER_RESULTS,
-        LFC
+        LFC,
     )
     saveLog(
         `PARAMETER SCOPES @ ${lfcSettings.noUseless ? "NO USELESS" : "ORIGINAL"} SETTINGS` as IO,
         LogTarget.FINAL_SOLVER_RESULTS,
-        LFC
+        LFC,
     )
     saveLog(`Z ${lfcSettings.z}` as IO, LogTarget.FINAL_SOLVER_RESULTS, LFC)
     saveLog(`ONLY TOP ${lfcSettings.onlyTop}` as IO, LogTarget.FINAL_SOLVER_RESULTS, LFC)

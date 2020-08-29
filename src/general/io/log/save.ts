@@ -28,6 +28,7 @@ const saveLog = (
 
         if (!writeOnly) {
             const color = targetColors[ target ]
+            // @ts-ignore // TODO: actually so you don't have to ts-ignore this in a million places just do a helper
             console.log(useTargetColor ? message[ color ] : message)
         }
     }

@@ -1,5 +1,5 @@
 import { Ratio } from "../math"
-import { Formatted, IO } from "./types"
+import { Formatted } from "./types"
 
 const parseRatio = (ratioText: Formatted<Ratio>): Ratio => {
     const ratio = ratioText.split(/[\/:]/).map(n => parseInt(n))

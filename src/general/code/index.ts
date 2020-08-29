@@ -12,6 +12,7 @@ import { merge } from "./merge"
 import { computePlusOrMinusRange } from "./plusOrMinusRange"
 import { computeRange } from "./range"
 import { rank } from "./rank"
+import { now } from "./typedOperations"
 import { shuffle } from "./shuffle"
 import { sort } from "./sort"
 import { computeTrimmedArray } from "./trim"
@@ -39,6 +40,7 @@ export {
     RankStrategy,
     computeTrimmedArray,
     computeExtensionBase,
+    now,
     computeIsEmpty,
     ExtensionBaseType,
     Range,

@@ -1,11 +1,6 @@
 import { Resolution, Span } from "../../../../../src/general"
 import { Combination } from "../../../../../src/general/math"
-import {
-    MetricName,
-    Scope,
-    SubmetricScope,
-    SumOfSquares,
-} from "../../../../../src/scripts/lfc/bestMetric"
+import { MetricName, Scope, SubmetricScope, SumOfSquares } from "../../../../../src/scripts/lfc/bestMetric"
 import { recursiveSearchScopeAndMaybeUpdateBestMetric } from "../../../../../src/scripts/lfc/perfecter"
 import { perfectMetric } from "../../../../../src/scripts/lfc/perfecter/metric"
 import * as recursiveBestMetric from "../../../../../src/scripts/lfc/perfecter/recursiveBestMetric"

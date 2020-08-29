@@ -4,10 +4,10 @@ import {
     concat,
     Filename,
     IO,
-    logSettings,
     LogTarget,
     maybeClearLogFiles,
-    saveLog, setLogTargets,
+    saveLog,
+    setLogTargets,
     setupToMaybeClearLogFiles,
 } from "../../../general"
 import { analyzeBounds } from "../bounds"

@@ -1,6 +1,9 @@
 import { Id } from "../../../../../src/general"
 import { JiSymbol, Level } from "../../../../../src/sagittal/notations/ji"
-import { computeIsWithinLevel, computeLevelJiSymbolIds } from "../../../../../src/sagittal/notations/ji/levelsJiSymbolIds"
+import {
+    computeIsWithinLevel,
+    computeLevelJiSymbolIds,
+} from "../../../../../src/sagittal/notations/ji/levelsJiSymbolIds"
 
 describe("computeLevelJiSymbolIds", () => {
     it("returns the symbols for the levels up to and including the target level", () => {

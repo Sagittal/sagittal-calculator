@@ -69,7 +69,7 @@ describe("computeBoundRow", () => {
             "  0.839",
             "  5.448",
             "  5.485",
-            "  0.039"
+            "  0.039",
         ] as Row
         expect(actual).toEqual(expected)
     })

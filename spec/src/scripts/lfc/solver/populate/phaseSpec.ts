@@ -11,8 +11,7 @@ import {
     SUBMETRIC_CHUNKS,
 } from "../../../../../../src/scripts/lfc/solver/populate/constants"
 import { populateScopesPhase } from "../../../../../../src/scripts/lfc/solver/populate/phase"
-import * as submetricChunkCombination
-    from "../../../../../../src/scripts/lfc/solver/populate/submetricChunkCombination"
+import * as submetricChunkCombination from "../../../../../../src/scripts/lfc/solver/populate/submetricChunkCombination"
 import { Parameter, Submetric } from "../../../../../../src/scripts/lfc/sumOfSquares"
 
 describe("populateScopesPhase", () => {

@@ -13,7 +13,7 @@ describe("computeNotatingSymbolRow", () => {
             "19/5n",
             "1216/1215",
             "[ 6 -5 -1 0 0 0 0 1 ⟩",
-            "1.424"
+            "1.424",
         ] as Row
         expect(actual).toEqual(expected)
     })

@@ -12,7 +12,7 @@ const populateScope = (scope: Scope) => {
         saveLog(
             `${solverStatus.populatedScopeCount} scopes have been populated so far` as IO,
             LogTarget.POPULATE,
-            LFC
+            LFC,
         )
     }
 }

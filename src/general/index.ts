@@ -16,6 +16,7 @@ import {
     isUndefined,
     Maybe,
     merge,
+    now,
     ObjectKey,
     Range,
     rank,
@@ -270,4 +271,5 @@ export {
     saveLog,
     maybeClearLogFiles,
     setupToMaybeClearLogFiles,
+    now,
 }

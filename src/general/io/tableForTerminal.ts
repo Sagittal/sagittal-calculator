@@ -68,7 +68,7 @@ const maybeColor = (rowText: IO, rowIndex: number, colors?: ColorMethod[]): IO =
         return rowText
     }
 
-    const rowColor: ColorMethod = colors[rowIndex]
+    const rowColor: ColorMethod = colors[ rowIndex ]
 
     // @ts-ignore
     return rowText[ rowColor ] as IO

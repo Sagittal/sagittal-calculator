@@ -1,9 +1,6 @@
 import { Resolution, Span } from "../../../../../../src/general"
 import { Scope } from "../../../../../../src/scripts/lfc/bestMetric"
-import {
-    computeDynamicParameters,
-    computeSamples,
-} from "../../../../../../src/scripts/lfc/bestMetric/scopeToSamples"
+import { computeDynamicParameters, computeSamples } from "../../../../../../src/scripts/lfc/bestMetric/scopeToSamples"
 import { Parameter, ParameterValue } from "../../../../../../src/scripts/lfc/sumOfSquares"
 
 describe("computeSamples", () => {

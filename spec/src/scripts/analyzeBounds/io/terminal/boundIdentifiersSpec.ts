@@ -1,13 +1,4 @@
-import {
-    Cents,
-    Id,
-    Monzo,
-    Name,
-    Prime,
-    Proportion,
-    Ratio,
-    Sopfr,
-} from "../../../../../../src/general"
+import { Cents, Id, Monzo, Name, Prime, Proportion, Ratio, Sopfr } from "../../../../../../src/general"
 import { ApotomeSlope, N2D3P9, SagittalComma, SymbolLongAscii } from "../../../../../../src/sagittal"
 import { Bound, JiSymbol, Level, Mina } from "../../../../../../src/sagittal/notations/ji"
 import { INA_SIZES } from "../../../../../../src/sagittal/notations/ji/intervals"

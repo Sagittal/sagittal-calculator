@@ -6,7 +6,8 @@ import {
     LogTarget,
     maybeClearLogFiles,
     Row,
-    saveLog, setupToMaybeClearLogFiles,
+    saveLog,
+    setupToMaybeClearLogFiles,
 } from "../../../general"
 import { computeNotatingJiSymbolIds } from "../../../sagittal"
 import { computeNotatingSymbolRow, NOTATING_SYMBOLS_HEADER_ROW } from "../io"

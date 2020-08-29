@@ -1,6 +1,7 @@
 import {
     addTexts,
-    computeHeaderRowsFromColumnTitleColumns, count,
+    computeHeaderRowsFromColumnTitleColumns,
+    count,
     formatTableForForum,
     IO,
     Max,
