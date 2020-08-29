@@ -3,7 +3,7 @@ import { SagittalComma, SymbolLongAscii } from "../../../../../src/sagittal"
 import { JiSymbol, Level, Mina } from "../../../../../src/sagittal/notations/ji"
 import { computeSecondaryCommaZone } from "../../../../../src/sagittal/notations/ji/secondaryCommaZone"
 import { SecondaryCommaZone } from "../../../../../src/sagittal/notations/ji/types"
-import { SymbolSet, SymbolUnicode } from "../../../../../src/sagittal/notations/types"
+import { SymbolSubset, SymbolUnicode } from "../../../../../src/sagittal/notations/types"
 
 describe("secondaryCommaZone", () => {
     it("returns the min and max cents of where secondary commas are represented by the given symbol, i.e. its capture zone at its introducing level", () => {
@@ -12,7 +12,7 @@ describe("secondaryCommaZone", () => {
             ascii: "/|~" as SymbolLongAscii,
             unicode: "" as SymbolUnicode,
             introducingLevel: Level.HIGH,
-            lowestSymbolSet: SymbolSet.PROMETHEAN,
+            smallestJiSymbolSubset: SymbolSubset.PROMETHEAN,
             mina: 78 as Mina,
             primaryCommaId: 82 as Id<SagittalComma>,
             elements: [],
@@ -33,7 +33,7 @@ describe("secondaryCommaZone", () => {
             ascii: ",,(|(" as SymbolLongAscii,
             unicode: "" as SymbolUnicode,
             introducingLevel: Level.EXTREME,
-            lowestSymbolSet: SymbolSet.OLYMPIAN,
+            smallestJiSymbolSubset: SymbolSubset.OLYMPIAN,
             mina: 78.39014554523920 as Mina,
             primaryCommaId: 83 as Id<SagittalComma>,
             elements: [],
@@ -54,7 +54,7 @@ describe("secondaryCommaZone", () => {
             ascii: "(|(" as SymbolLongAscii,
             unicode: "" as SymbolUnicode,
             introducingLevel: Level.MEDIUM,
-            lowestSymbolSet: SymbolSet.ATHENIAN,
+            smallestJiSymbolSubset: SymbolSubset.ATHENIAN,
             mina: 80 as Mina,
             primaryCommaId: 85 as Id<SagittalComma>,
             elements: [],
@@ -76,7 +76,7 @@ describe("secondaryCommaZone", () => {
             unicode: "" as SymbolUnicode,
             introducingLevel: Level.MEDIUM,
             mina: 0 as Mina,
-            lowestSymbolSet: SymbolSet.SPARTAN,
+            smallestJiSymbolSubset: SymbolSubset.SPARTAN,
             primaryCommaId: 0 as Id<SagittalComma>,
             elements: [],
         }

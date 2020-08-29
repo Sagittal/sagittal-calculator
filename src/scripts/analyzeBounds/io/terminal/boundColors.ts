@@ -1,4 +1,4 @@
-import { ColorMethod } from "../../../../types"
+import { ColorMethod } from "../../../../general"
 
 const BOUND_COLORS: ColorMethod[] = [
     "blue",         // INA

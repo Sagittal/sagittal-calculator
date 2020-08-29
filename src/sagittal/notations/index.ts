@@ -17,6 +17,7 @@ import {
     getJiSymbol,
     JiSymbol,
     JI_SYMBOLS,
+    JI_SYMBOL_SUBSETS,
     Level,
     LEVELS,
     LEVELS_BOUNDS,
@@ -29,7 +30,6 @@ import {
     unicodeFromAscii,
 } from "./ji"
 import { computeSmileyFromAscii } from "./smiley"
-import { SYMBOL_SETS } from "./symbolSets"
 import { SagittalComma, SymbolLongAscii } from "./types"
 
 // TODO: okay here's what you need to do: you've thought about this before, but I now think it is right
@@ -63,7 +63,7 @@ export {
     computeNotatingJiSymbolIds,
     getJiSymbol,
     BoundedSymbolIdWithDistancesPair,
-    SYMBOL_SETS,
+    JI_SYMBOL_SUBSETS,
     BoundedSymbolPositions,
     Tina,
     SagittalComma,

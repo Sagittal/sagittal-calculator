@@ -1,7 +1,7 @@
 import { Id } from "../../../../../src/general"
 import { SagittalComma, SymbolLongAscii } from "../../../../../src/sagittal"
 import { getJiSymbol, JiSymbol, Level, Mina } from "../../../../../src/sagittal/notations/ji"
-import { SymbolSet, SymbolUnicode } from "../../../../../src/sagittal/notations/types"
+import { SymbolSubset, SymbolUnicode } from "../../../../../src/sagittal/notations/types"
 
 describe("getJiSymbol", () => {
     it("given a symbol's ID, returns the full symbol", () => {
@@ -14,7 +14,7 @@ describe("getJiSymbol", () => {
             ascii: "`.|)" as SymbolLongAscii,
             unicode: "" as SymbolUnicode,
             introducingLevel: Level.EXTREME,
-            lowestSymbolSet: SymbolSet.OLYMPIAN,
+            smallestJiSymbolSubset: SymbolSubset.OLYMPIAN,
             mina: 53 as Mina,
             primaryCommaId: 55 as Id<SagittalComma>,
             elements: ["`|", ".|", "|)"] as SymbolLongAscii[],

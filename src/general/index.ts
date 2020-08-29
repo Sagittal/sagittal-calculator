@@ -31,6 +31,7 @@ import {
     ANY_MONZO_CHARS,
     Basis,
     clearLogFiles,
+    ColorMethod,
     Column,
     computeHeaderRowsFromColumnTitleColumns,
     computePx,
@@ -278,4 +279,5 @@ export {
     Scale,
     Basis,
     computePx,
+    ColorMethod,
 }

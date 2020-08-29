@@ -5,7 +5,7 @@ import {
     formatN2D3P9,
     getJiSymbol,
     N2D3P9,
-    SYMBOL_SETS,
+    JI_SYMBOL_SUBSETS,
 } from "../../sagittal"
 import { PopularRatio } from "./types"
 
@@ -21,7 +21,9 @@ const computePopularRatio = ({ monzo, n2d3p9 }: { monzo: Monzo, n2d3p9: N2D3P9 }
     const notatingSymbolIds = computeNotatingJiSymbolIds(monzo)
     const notatingSymbols = notatingSymbolIds.map(getJiSymbol)
     const smileys = notatingSymbols.map(symbol => computeSmileyFromAscii(symbol.ascii)).join(" ") as IO
-    const symbolSets = notatingSymbols.map(symbol => SYMBOL_SETS.indexOf(symbol.lowestSymbolSet)).join(", ") as IO
+    const symbolSubsets = notatingSymbols.map(symbol => {
+        return JI_SYMBOL_SUBSETS.indexOf(symbol.smallestJiSymbolSubset)
+    }).join(", ") as IO
 
     return {
         n2d3p9,
@@ -30,7 +32,7 @@ const computePopularRatio = ({ monzo, n2d3p9 }: { monzo: Monzo, n2d3p9: N2D3P9 }
         popularityRank,
         votes,
         smileys,
-        symbolSets,
+        symbolSubsets,
     }
 }
 

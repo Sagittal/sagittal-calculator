@@ -17,7 +17,7 @@ describe("computePopularRatios", () => {
                 popularityRank: 1,
                 votes: 7624,
                 smileys: ":|:",
-                symbolSets: "0",
+                symbolSubsets: "0",
                 rank: 1,
             },
             {
@@ -27,7 +27,7 @@ describe("computePopularRatios", () => {
                 popularityRank: 2,
                 votes: 5371,
                 smileys: ":'::|: :/|:",
-                symbolSets: "3, 0",
+                symbolSubsets: "3, 0",
                 rank: 2,
             },
             {
@@ -37,7 +37,7 @@ describe("computePopularRatios", () => {
                 popularityRank: 3,
                 votes: 3016,
                 smileys: ":|): :'::/|): :.::(|\\:",
-                symbolSets: "0, 3, 3",
+                symbolSubsets: "0, 3, 3",
                 rank: 3,
             },
             {
@@ -47,7 +47,7 @@ describe("computePopularRatios", () => {
                 popularityRank: 4,
                 votes: 1610,
                 smileys: ":.::/|: :/ /|:",
-                symbolSets: "3, 0",
+                symbolSubsets: "3, 0",
                 rank: 4,
             },
             {
@@ -57,7 +57,7 @@ describe("computePopularRatios", () => {
                 popularityRank: 5,
                 votes: 1318,
                 smileys: ":|(: :'::|):",
-                symbolSets: "0, 3",
+                symbolSubsets: "0, 3",
                 rank: 5,
             },
         ] as Array<Ranked<PopularRatio>>

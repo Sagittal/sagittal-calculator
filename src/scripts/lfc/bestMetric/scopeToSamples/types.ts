@@ -31,8 +31,14 @@ type ComputeDynamicParameterScopeOptions = Partial<{
 }>
 
 interface CombineSubmetricsPossibilitiesIntoSamplesOptions {
-    dynamicParameters: DynamicParameter[ ],
+    dynamicParameters: DynamicParameter[],
     submetricsPossibilities: Array<Combination<SubmetricPossibility>>
+}
+
+interface SpreadAllBinSubmetricsPossibilitiesAcrossSamplesOptions {
+    samples: Sample[],
+    allBinSubmetricPossibilities: SubmetricPossibility[]
+    dynamicParameters: DynamicParameter[],
 }
 
 export {
@@ -43,4 +49,5 @@ export {
     SamplePoint,
     CombineSubmetricsPossibilitiesIntoSamplesOptions,
     ComputeDynamicParameterScopeOptions,
+    SpreadAllBinSubmetricsPossibilitiesAcrossSamplesOptions,
 }

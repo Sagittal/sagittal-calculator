@@ -1,11 +1,10 @@
-import { ColorMethod } from "../../types"
 import { isUndefined, Range } from "../code"
 import { Count } from "../types"
 import { NEWLINE } from "./constants"
 import { addTexts, length } from "./typedOperations"
 import {
     AlignTableOptions,
-    Char,
+    Char, ColorMethod,
     ComputeAlignedRowCellOptions,
     IO,
     Justification,

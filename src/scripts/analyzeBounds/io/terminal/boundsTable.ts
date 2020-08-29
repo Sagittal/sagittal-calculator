@@ -1,6 +1,5 @@
-import { addTexts, formatTableForTerminal, IO, Table } from "../../../../general"
+import { addTexts, ColorMethod, formatTableForTerminal, IO, Table } from "../../../../general"
 import { BOUNDS } from "../../../../sagittal"
-import { ColorMethod } from "../../../../types"
 import { AnalyzedBound } from "../../types"
 import { BOUND_COLORS } from "./boundColors"
 import { computeBoundRow } from "./boundRow"

@@ -19,7 +19,7 @@ describe("computePopularRatio", () => {
             popularityRank: 2 as Rank<Popularity>,
             votes: 5371 as Votes,
             smileys: ":'::|: :/|:" as IO,
-            symbolSets: "3, 0" as IO,
+            symbolSubsets: "3, 0" as IO,
         }
         expect(actual).toEqual(expected)
     })

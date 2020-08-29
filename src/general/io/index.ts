@@ -13,7 +13,7 @@ import { formatTableForForum } from "./tableForForum"
 import { formatTableForTerminal } from "./tableForTerminal"
 import { formatTime } from "./time"
 import { addTexts } from "./typedOperations"
-import { Column, Filename, Formatted, HexColor, IO, Row, Table } from "./types"
+import { ColorMethod, Column, Filename, Formatted, HexColor, IO, Row, Table } from "./types"
 import { Basis, computePx, Px, Scale } from "./visualize"
 
 export {
@@ -52,4 +52,5 @@ export {
     Scale,
     Basis,
     computePx,
+    ColorMethod,
 }

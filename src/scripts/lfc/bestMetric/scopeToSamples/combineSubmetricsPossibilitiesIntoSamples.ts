@@ -1,18 +1,20 @@
 import { Combination, computeExtensionBase, ExtensionBaseType, Index } from "../../../../general"
 import { ParameterValue, Submetric } from "../../sumOfSquares"
 import { computeDynamicParameterValueIndices } from "./dynamicParameterValueIndices"
+import { spreadAllBinSubmetricsPossibilitiesAcrossSamples } from "./spreadAllBinSubmetricsPossibilities"
 import { CombineSubmetricsPossibilitiesIntoSamplesOptions, Sample, SamplePoint, SubmetricPossibility } from "./types"
 
 const combineSubmetricsPossibilitiesIntoSamples = (
     { submetricsPossibilities, dynamicParameters }: CombineSubmetricsPossibilitiesIntoSamplesOptions,
 ): Sample[] => {
+    // important to remove the first one before doing the next step
+    const allBinSubmetricPossibilities: SubmetricPossibility[] =
+        submetricsPossibilities.shift() as Combination<SubmetricPossibility>
+
     let samples: Sample[] = [{
         submetrics: [] as unknown[] as Combination<Submetric>,
         samplePoint: [] as unknown[] as SamplePoint,
     }]
-
-    const theAllBinSubmetricPossibilities = submetricsPossibilities.shift() as Combination<SubmetricPossibility>
-
     submetricsPossibilities.forEach((submetricPossibilities: Combination<SubmetricPossibility>, submetricIndex) => {
         const extendedSamples: Sample[] = computeExtensionBase(ExtensionBaseType.ARRAY) as Sample[]
 
@@ -34,29 +36,11 @@ const combineSubmetricsPossibilitiesIntoSamples = (
         samples = extendedSamples
     })
 
-    const allBinMergedSamples: Sample[] = []
-
-    // TODO: perhaps I should extract this so it's easier to find later
-    //  ...is this where we SET the sharedParameters?????
-    samples.forEach(({ submetrics, samplePoint }) => {
-        theAllBinSubmetricPossibilities.forEach((theAllBinSubmetricPossibility: SubmetricPossibility) => {
-            const dynamicParameterValueIndices: Array<Index<ParameterValue>> = computeDynamicParameterValueIndices({
-                dynamicParameters,
-                submetric: theAllBinSubmetricPossibility,
-                submetricIndex: 0 as Index<Submetric>,
-            })
-
-            allBinMergedSamples.push({
-                submetrics: submetrics.map(submetric => ({
-                    ...submetric,
-                    ...theAllBinSubmetricPossibility,
-                }) as Submetric) as Combination<Submetric>,
-                samplePoint: [...dynamicParameterValueIndices, ...samplePoint] as SamplePoint,
-            })
-        })
+    return spreadAllBinSubmetricsPossibilitiesAcrossSamples({
+        samples,
+        allBinSubmetricPossibilities,
+        dynamicParameters,
     })
-
-    return allBinMergedSamples
 }
 
 export {

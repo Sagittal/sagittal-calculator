@@ -6,6 +6,7 @@ import { computeInaMidpoints } from "./inaMidpoints"
 import { TINA } from "./intervals"
 import { getJiSymbol } from "./jiSymbol"
 import { JI_SYMBOLS } from "./jiSymbols"
+import { JI_SYMBOL_SUBSETS } from "./jiSymbolSubsets"
 import { LEVEL_BOUNDED_SYMBOLS } from "./levelBoundedJiSymbols"
 import { computeLevelCommaMeans } from "./levelCommaMeans"
 import { LEVEL_EDAS } from "./levelEdas"
@@ -37,6 +38,7 @@ export {
     TINA,
     LEVEL_BOUNDED_SYMBOLS,
     computeInaDistance,
+    JI_SYMBOL_SUBSETS,
     computeBoundedJiSymbolPositions,
     BoundIdWithBoundedSymbolIdWithDistancesPairsByLevel,
     BoundedSymbolIdWithDistances,

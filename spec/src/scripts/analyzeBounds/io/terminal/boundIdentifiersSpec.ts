@@ -2,7 +2,7 @@ import { Cents, Id, Monzo, Name, Prime, Proportion, Ratio, Sopfr } from "../../.
 import { ApotomeSlope, N2D3P9, SagittalComma, SymbolLongAscii } from "../../../../../../src/sagittal"
 import { Bound, JiSymbol, Level, Mina } from "../../../../../../src/sagittal/notations/ji"
 import { INA_SIZES } from "../../../../../../src/sagittal/notations/ji/intervals"
-import { SymbolSet, SymbolUnicode } from "../../../../../../src/sagittal/notations/types"
+import { SymbolSubset, SymbolUnicode } from "../../../../../../src/sagittal/notations/types"
 import { extractBoundIdentifiers } from "../../../../../../src/scripts/analyzeBounds/io/terminal/boundIdentifiers"
 import { BoundIdentifiers } from "../../../../../../src/scripts/analyzeBounds/io/terminal/types"
 
@@ -29,7 +29,7 @@ describe("extractBoundIdentifiers", () => {
                         inaDistance: (23.1164196495597 - 22.9305875372457) / INA_SIZES[ Level.ULTRA ] as Proportion,
                         ascii: ".)/|" as SymbolLongAscii,
                         unicode: "" as SymbolUnicode,
-                        lowestSymbolSet: SymbolSet.HERCULEAN,
+                        smallestJiSymbolSubset: SymbolSubset.HERCULEAN,
                         mina: 47 as Mina,
                         primaryComma: {
                             id: 47 as Id<SagittalComma>,
@@ -51,7 +51,7 @@ describe("extractBoundIdentifiers", () => {
                         inaDistance: (23.46001038464900 - 23.1164196495597) / INA_SIZES[ Level.ULTRA ] as Proportion,
                         ascii: "'/|" as SymbolLongAscii,
                         unicode: "" as SymbolUnicode,
-                        lowestSymbolSet: SymbolSet.HERCULEAN,
+                        smallestJiSymbolSubset: SymbolSubset.HERCULEAN,
                         mina: 48 as Mina,
                         primaryComma: {
                             id: 48 as Id<SagittalComma>,
@@ -75,7 +75,7 @@ describe("extractBoundIdentifiers", () => {
                         inaDistance: (23.1164196495597 - 22.9305875372457) / INA_SIZES[ Level.EXTREME ] as Proportion,
                         ascii: ".)/|" as SymbolLongAscii,
                         unicode: "" as SymbolUnicode,
-                        lowestSymbolSet: SymbolSet.HERCULEAN,
+                        smallestJiSymbolSubset: SymbolSubset.HERCULEAN,
                         mina: 47 as Mina,
                         primaryComma: {
                             id: 47 as Id<SagittalComma>,
@@ -97,7 +97,7 @@ describe("extractBoundIdentifiers", () => {
                         inaDistance: (23.46001038464900 - 23.1164196495597) / INA_SIZES[ Level.EXTREME ] as Proportion,
                         ascii: "'/|" as SymbolLongAscii,
                         unicode: "" as SymbolUnicode,
-                        lowestSymbolSet: SymbolSet.HERCULEAN,
+                        smallestJiSymbolSubset: SymbolSubset.HERCULEAN,
                         mina: 48 as Mina,
                         primaryComma: {
                             id: 48 as Id<SagittalComma>,
@@ -122,7 +122,7 @@ describe("extractBoundIdentifiers", () => {
                         ascii: ".)/|" as SymbolLongAscii,
                         unicode: "" as SymbolUnicode,
                         mina: 47 as Mina,
-                        lowestSymbolSet: SymbolSet.HERCULEAN,
+                        smallestJiSymbolSubset: SymbolSubset.HERCULEAN,
                         id: 47 as Id<JiSymbol>,
                         primaryComma: {
                             id: 47 as Id<SagittalComma>,
@@ -144,7 +144,7 @@ describe("extractBoundIdentifiers", () => {
                         ascii: "'/|" as SymbolLongAscii,
                         unicode: "" as SymbolUnicode,
                         mina: 48 as Mina,
-                        lowestSymbolSet: SymbolSet.HERCULEAN,
+                        smallestJiSymbolSubset: SymbolSubset.HERCULEAN,
                         id: 48 as Id<JiSymbol>,
                         primaryComma: {
                             id: 48 as Id<SagittalComma>,
