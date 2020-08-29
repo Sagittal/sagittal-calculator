@@ -33,6 +33,7 @@ import {
     clearLogFiles,
     ColorMethod,
     Column,
+    CommandFlag,
     computeHeaderRowsFromColumnTitleColumns,
     computePx,
     Filename,
@@ -282,4 +283,5 @@ export {
     computePx,
     ColorMethod,
     formatInteger,
+    CommandFlag,
 }

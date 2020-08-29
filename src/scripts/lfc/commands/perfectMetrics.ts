@@ -1,5 +1,5 @@
 import { program } from "commander"
-import { difference, Filename, formatTime, IO, LogTarget, Max, now, saveLog, Unit } from "../../../general"
+import { CommandFlag, difference, Filename, formatTime, IO, LogTarget, Max, now, saveLog, Unit } from "../../../general"
 import { Metric } from "../bestMetric"
 import { DEFAULT_MAX_UNIT, LFC } from "../constants"
 import { lfcSettings } from "../globals"
@@ -8,7 +8,7 @@ import { formatBestMetrics } from "../solver"
 import { ParameterValue } from "../sumOfSquares"
 import { applySharedLfcCommandSetup, load } from "./shared"
 
-program.option("-x, --no-time", "no time")
+program.option(`-${CommandFlag.NO_TIME}, --no-time`, "no time")
 
 const defaultLogTargets = [
     LogTarget.PERFECT,

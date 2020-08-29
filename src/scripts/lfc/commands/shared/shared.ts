@@ -1,14 +1,14 @@
 import { program } from "commander"
-import { LogTarget, parseCommands } from "../../../../general"
+import { CommandFlag, LogTarget, parseCommands } from "../../../../general"
 import { LFC } from "../../constants"
 import { lfcSettings } from "../../globals"
 
 const applySharedLfcCommandSetup = ({ defaultLogTargets }: { defaultLogTargets?: LogTarget[] } = {}) => {
     program
-        .option("-u, --no-useless", "eliminate probably useless parameters or parameter value scopes")
-        .option("-z, --z <z>", "z", parseFloat)
-        .option("-o, --only-top <onlyTop>", "only top", parseInt)
-        .option("-m, --max-unit <maxUnit>", "max unit", parseFloat)
+        .option(`-${CommandFlag.NO_USELESS}, --no-useless`, "eliminate probably useless parameters or parameter value scopes")
+        .option(`-${CommandFlag.Z}, --z <z>`, "z", parseFloat)
+        .option(`-${CommandFlag.ONLY_TOP}, --only-top <onlyTop>`, "only top", parseInt)
+        .option(`-${CommandFlag.MAX_UNIT}, --max-unit <maxUnit>`, "max unit", parseFloat)
 
     parseCommands(LFC, defaultLogTargets)
 

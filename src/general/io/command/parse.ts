@@ -2,6 +2,7 @@ import * as colors from "colors"
 import { program } from "commander"
 import { clearLogFiles, logSettings, LogTarget, setLogTargets } from "../log"
 import { Filename } from "../types"
+import { CommandFlag } from "./types"
 
 // TODO: you'll want to refactor so that you can curry/chain these setups with a callback so you can compose them
 //  or maybe you won't have to deal with that if you're able to consolidate notating-symbols and analyze-comma
@@ -13,9 +14,9 @@ const parseCommands = (
     defaultLogTargets?: LogTarget[]
 ) => {
     program
-        .option("-t, --log-targets [logTargets]", "log targets")
-        .option("-c, --no-color", "no color")
-        .option("-w, --no-write", "no write")
+        .option(`-${CommandFlag.LOG_TARGETS}, --log-targets [logTargets]`, "log targets")
+        .option(`-${CommandFlag.NO_COLOR}, --no-color`, "no color")
+        .option(`-${CommandFlag.NO_WRITE}, --no-write`, "no write")
 
     program.parse(process.argv)
 

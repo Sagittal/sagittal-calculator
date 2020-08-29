@@ -4,8 +4,8 @@ import { onlyRunInCi } from "../../../../helpers/onlyRunInCi"
 import { runCommandAndGetConsoleOutput } from "../../../../helpers/src/scripts/runCommand"
 
 describe("analyze-bounds", () => {
-    fit("runs without error", () => {
-        // onlyRunInCi()
+    it("runs without error", () => {
+        onlyRunInCi()
 
         const actual = runCommandAndGetConsoleOutput("npm run analyze-bounds -- --no-color --no-write" as IO)
 
@@ -16,4 +16,6 @@ describe("analyze-bounds", () => {
         expected.pop()
         expect(actual).toEqual(expected)
     })
+
+    // TODO: would like to have a snapshot test equivalent for the image (above, have the terminal)
 })

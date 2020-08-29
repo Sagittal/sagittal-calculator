@@ -1,6 +1,6 @@
 import { program } from "commander"
 import {
-    ANY_MONZO_CHARS,
+    ANY_MONZO_CHARS, CommandFlag,
     computeMonzoFromRatio,
     Filename,
     formatTableForTerminal,
@@ -21,8 +21,16 @@ import { computeNotatingSymbolRow, formatComma, NOTATING_SYMBOLS_HEADER_ROW } fr
 // TODO: you should also make it accept -n name!
 
 program
-    .option("-m, --monzo <monzo>", "monzo", (monzoText: string) => parseMonzo(monzoText as Formatted<Monzo>))
-    .option("-r, --ratio <ratio>", "ratio", (ratioText: string) => parseRatio(ratioText as Formatted<Ratio>))
+    .option(
+        `-${CommandFlag.MONZO}, --monzo <monzo>`,
+        "monzo",
+        (monzoText: string) => parseMonzo(monzoText as Formatted<Monzo>)
+    )
+    .option(
+        `-${CommandFlag.RATIO}, --ratio <ratio>`,
+        "ratio",
+        (ratioText: string) => parseRatio(ratioText as Formatted<Ratio>)
+    )
 
 parseCommands("analyzeComma" as Filename)
 
