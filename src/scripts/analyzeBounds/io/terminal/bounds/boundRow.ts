@@ -1,11 +1,11 @@
 import { formatInteger, formatNumber, Row } from "../../../../../general"
+import { formatSymbolAscii } from "../../../../../sagittal"
 import { AnalyzedBound } from "../../../types"
 import { extractBoundIdentifiers } from "../boundIdentifiers"
 import { alignFormattedNumber } from "./alignFormattedNumber"
 import { extractLevelDistances } from "./levelDistances"
 import { extractLevelRanks } from "./levelRanks"
 import { formatMina } from "./mina"
-import { formatSymbolAscii } from "./symbolAscii"
 import { ComputeBoundRowOptions } from "./types"
 
 const computeBoundRow = (analyzedBound: AnalyzedBound, { bound }: ComputeBoundRowOptions): Row<AnalyzedBound> => {

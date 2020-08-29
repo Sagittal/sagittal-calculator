@@ -1,7 +1,7 @@
 import { SymbolLongAscii, unicodeFromAscii } from "../../../../src/sagittal"
 
 describe("asciiUnicode", () => {
-    it("given an ascii reformatation of a symbol, it returns its unicode reformatation", () => {
+    it("given an ascii representation of a symbol, it returns its unicode representation", () => {
         const symbolAscii = "``)|" as SymbolLongAscii
 
         const actual = unicodeFromAscii(symbolAscii)

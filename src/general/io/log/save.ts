@@ -1,10 +1,10 @@
 import { colorize } from "../colorize"
+import { ioSettings } from "../settings"
 import { Filename, IO } from "../types"
 import { targetColors } from "./colors"
 import { logTargets } from "./targets"
 import { LogTarget, SaveLogOptions } from "./types"
 import { write } from "./write"
-import { ioSettings } from "../settings"
 
 const saveLog = (message: IO, target: LogTarget, scriptGroup: Filename, options: SaveLogOptions = {}) => {
     const { useTargetColor = true, fileExtensionProvided = false, writeOnly = false } = options

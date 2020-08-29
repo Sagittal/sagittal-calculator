@@ -16,8 +16,8 @@ describe("analyze-comma", () => {
         "",
         "   --- notating symbols ---",
         "",
-        "symbol\tname\tratio    \tmonzo         \tcents ",
-        "`)|(  \t275k\t2200/2187\t[ 3 -7 2 0 1 ⟩\t10.260",
+        "symbol  \tname\tratio    \tmonzo         \tcents ",
+        "   `)|( \t275k\t2200/2187\t[ 3 -7 2 0 1 ⟩\t10.260",
         "",
     ] as IO[]
 

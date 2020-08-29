@@ -13,6 +13,10 @@ import { MAX_SINGLE_SHAFT_CENTS } from "../../../sagittal"
 import { computeCommas } from "../commas"
 import { computeFindCommasTable } from "../io"
 
+// TODO: this should have a column for symbol, in case it finds a comma that already exists in Sagittal
+
+// TODO: perhaps to help enforce use of the formatting methods, a row should actually only be of Formatteds, not just IO
+
 program
     .option(
         `-${CommandFlag.MIN_CENTS}, --min-cents <minCents>`,
@@ -76,10 +80,6 @@ const maxAbsoluteThreeExponent = program.maxAbsoluteThreeExponent || 15
 const maxN2D3P9 = program.maxN2d3p9 || 307
 const fiveSlicedMonzo = program.fiveSlicedMonzo
 const sortKey = program.sortBy
-
-// TODO: this should actually take for-forum as a CLI option...
-//  but should it take that generically in parseCommands?
-//  at which point perhaps its not just ioSettings, but ioSettings? and needs to live in an according place
 
 const commas = computeCommas({
     minCents,

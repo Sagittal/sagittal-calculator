@@ -1,9 +1,10 @@
 import { Id } from "../../../../../src/general"
 import { SagittalComma, SymbolLongAscii } from "../../../../../src/sagittal"
+import { SymbolUnicode } from "../../../../../src/sagittal/io"
 import { JiSymbol, Level, Mina } from "../../../../../src/sagittal/notations/ji"
 import { computeSecondaryCommaZone } from "../../../../../src/sagittal/notations/ji/secondaryCommaZone"
 import { SecondaryCommaZone } from "../../../../../src/sagittal/notations/ji/types"
-import { SymbolSubset, SymbolUnicode } from "../../../../../src/sagittal/notations/types"
+import { SymbolSubset } from "../../../../../src/sagittal/notations/types"
 
 describe("secondaryCommaZone", () => {
     it("returns the min and max cents of where secondary commas are represented by the given symbol, i.e. its capture zone at its introducing level", () => {

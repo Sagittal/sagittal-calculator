@@ -1,7 +1,8 @@
 import { Id } from "../../../../../src/general"
 import { SagittalComma, SymbolLongAscii } from "../../../../../src/sagittal"
+import { SymbolUnicode } from "../../../../../src/sagittal/io"
 import { getJiSymbol, JiSymbol, Level, Mina } from "../../../../../src/sagittal/notations/ji"
-import { SymbolSubset, SymbolUnicode } from "../../../../../src/sagittal/notations/types"
+import { SymbolSubset } from "../../../../../src/sagittal/notations/types"
 
 describe("getJiSymbol", () => {
     it("given a symbol's ID, returns the full symbol", () => {

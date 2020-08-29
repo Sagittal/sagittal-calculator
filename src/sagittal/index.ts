@@ -6,13 +6,13 @@ import {
     N2D3P9,
 } from "./commaEvaluation"
 import { SIZE_CATEGORY_BOUNDS } from "./commaSizeName"
+import { computeSmileyFromAscii, formatSymbolAscii, SymbolLongAscii, unicodeFromAscii } from "./io"
 import {
     analyzeComma,
     Bound,
     BOUNDS,
     computeExactlyNotatingJiSymbolIds,
     computeInaMidpoints,
-    computeSmileyFromAscii,
     getJiSymbol,
     getSagittalComma,
     INA_SIZES,
@@ -27,10 +27,8 @@ import {
     MAX_SINGLE_SHAFT_CENTS,
     Mina,
     SagittalComma,
-    SymbolLongAscii,
     Tina,
     TINA,
-    unicodeFromAscii,
 } from "./notations"
 import { Comma } from "./types"
 
@@ -66,4 +64,5 @@ export {
     ApotomeSlope,
     SIZE_CATEGORY_BOUNDS,
     INA_SIZES,
+    formatSymbolAscii,
 }

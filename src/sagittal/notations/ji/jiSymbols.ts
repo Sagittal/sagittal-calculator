@@ -1,5 +1,6 @@
 import { Id } from "../../../general"
-import { SagittalComma, SymbolLongAscii, SymbolSubset, SymbolUnicode } from "../types"
+import { SymbolLongAscii, SymbolUnicode } from "../../io"
+import { SagittalComma, SymbolSubset } from "../types"
 import { JiSymbol, Level, Mina } from "./types"
 
 const JI_SYMBOLS: JiSymbol[] = [

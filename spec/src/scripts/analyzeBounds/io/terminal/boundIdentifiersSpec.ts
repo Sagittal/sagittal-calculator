@@ -1,8 +1,8 @@
 import { Cents, Id, Monzo, Name, Prime, Proportion, Ratio, Sopfr } from "../../../../../../src/general"
 import { ApotomeSlope, N2D3P9, SagittalComma, SymbolLongAscii } from "../../../../../../src/sagittal"
-import { Bound, JiSymbol, Level, Mina } from "../../../../../../src/sagittal/notations/ji"
-import { INA_SIZES } from "../../../../../../src/sagittal/notations/ji/intervals"
-import { SymbolSubset, SymbolUnicode } from "../../../../../../src/sagittal/notations/types"
+import { SymbolUnicode } from "../../../../../../src/sagittal/io"
+import { Bound, INA_SIZES, JiSymbol, Level, Mina } from "../../../../../../src/sagittal/notations/ji"
+import { SymbolSubset } from "../../../../../../src/sagittal/notations/types"
 import { extractBoundIdentifiers } from "../../../../../../src/scripts/analyzeBounds/io/terminal/boundIdentifiers"
 import { BoundIdentifiers } from "../../../../../../src/scripts/analyzeBounds/io/terminal/types"
 

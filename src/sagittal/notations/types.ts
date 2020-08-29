@@ -1,9 +1,5 @@
-import { Id, IO } from "../../general"
+import { Id } from "../../general"
 import { Comma } from "../types"
-
-type SymbolLongAscii = IO & { _SymbolLongAsciiBrand: "SymbolLongAscii" }
-type SymbolUnicode = IO & { _SymbolUnicodeBrand: "SymbolUnicode" }
-type SymbolSmiley = IO & { _SymbolSmileyBrand: "SymbolSmiley" }
 
 interface SagittalComma extends Comma {
     id: Id<SagittalComma>,
@@ -24,9 +20,6 @@ enum SymbolSubset {
 }
 
 export {
-    SymbolLongAscii,
-    SymbolUnicode,
-    SymbolSmiley,
     SagittalComma,
     SymbolSubset,
 }

@@ -1,4 +1,3 @@
-import { unicodeFromAscii } from "./asciiUnicode"
 import { analyzeComma } from "./comma"
 import { getSagittalComma } from "./getSagittalComma"
 import { MAX_SINGLE_SHAFT_CENTS } from "./intervals"
@@ -21,8 +20,7 @@ import {
     Tina,
     TINA,
 } from "./ji"
-import { computeSmileyFromAscii } from "./smiley"
-import { SagittalComma, SymbolLongAscii } from "./types"
+import { SagittalComma } from "./types"
 
 export {
     BOUNDS,
@@ -32,16 +30,13 @@ export {
     TINA,
     INA_SIZES,
     MAX_SINGLE_SHAFT_CENTS,
-    SymbolLongAscii,
     Mina,
     LEVELS_BOUNDS,
     LEVEL_EDAS,
     LEVELS_SYMBOL_IDS,
     JiSymbol,
-    unicodeFromAscii,
     computeInaMidpoints,
     JI_SYMBOLS,
-    computeSmileyFromAscii,
     computeExactlyNotatingJiSymbolIds,
     getJiSymbol,
     JI_SYMBOL_SUBSETS,
