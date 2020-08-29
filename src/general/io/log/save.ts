@@ -1,10 +1,10 @@
-import * as fs from "fs"
-import { removeColor } from "../removeColor"
+import { colorize } from "../colorize"
 import { Filename, IO } from "../types"
 import { targetColors } from "./colors"
 import { logSettings } from "./settings"
 import { logTargets } from "./targets"
 import { LogTarget, SaveLogOptions } from "./types"
+import { write } from "./write"
 
 const saveLog = (message: IO, target: LogTarget, scriptGroup: Filename, options: SaveLogOptions = {}) => {
     const { useTargetColor = true, fileExtensionProvided = false, writeOnly = false } = options
@@ -15,15 +15,12 @@ const saveLog = (message: IO, target: LogTarget, scriptGroup: Filename, options:
 
     if (logTargets[ LogTarget.ALL ] || logTargets[ target ] || target === LogTarget.ALL) {
         if (!logSettings.noWrite) {
-            fs.existsSync("dist") || fs.mkdirSync("dist")
-            fs.existsSync(`dist/${scriptGroup}`) || fs.mkdirSync(`dist/${scriptGroup}`)
-            fs.appendFileSync(`dist/${scriptGroup}/${target}${fileExtensionProvided ? "" : ".txt"}`, `${removeColor(message)}\n`)
+            write(message, target, scriptGroup, fileExtensionProvided)
         }
 
         if (!writeOnly) {
             const color = targetColors[ target ]
-            // @ts-ignore // TODO: actually so you don't have to ts-ignore this in a million places just do a helper
-            console.log(useTargetColor ? message[ color ] : message)
+            console.log(useTargetColor ? colorize(message, color) : message)
         }
     }
 }

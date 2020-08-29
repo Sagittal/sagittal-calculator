@@ -1,3 +1,4 @@
+import { colorize } from "./colorize"
 import { CommandFlag, parseCommands } from "./command"
 import { ANY_MONZO_CHARS, BLANK, IO_PRECISION, NEWLINE, SPACE, SUPERSCRIPT_NUMS } from "./constants"
 import { formatInteger } from "./formatInteger"
@@ -45,6 +46,7 @@ export {
     LogTarget,
     logTargets,
     saveLog,
+    colorize,
     stringify,
     clearLogFiles,
     logSettings,

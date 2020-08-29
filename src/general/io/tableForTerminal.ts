@@ -1,5 +1,6 @@
 import { isUndefined, Range } from "../code"
 import { Count } from "../types"
+import { colorize } from "./colorize"
 import { BLANK, NEWLINE } from "./constants"
 import { addTexts, length } from "./typedOperations"
 import {
@@ -69,8 +70,7 @@ const maybeColor = (rowText: IO, rowIndex: number, colors?: ColorMethod[]): IO =
 
     const rowColor: ColorMethod = colors[ rowIndex ]
 
-    // @ts-ignore
-    return rowText[ rowColor ] as IO
+    return colorize(rowText, rowColor)
 }
 
 const formatTableForTerminal = (table: Table, options: AlignTableOptions = {}): IO => {
