@@ -1,17 +1,22 @@
 import { Maybe } from "../../code"
-import { logTargets } from "./targets"
-import { LogTarget } from "./types"
+import { ioSettings } from "../settings"
+import { LogTarget, LogTargets } from "./types"
 
 const setLogTargets = (logTargetsCommaSeparatedString: Maybe<string | boolean> = "") => {
+    ioSettings.logTargets = Object.keys(LogTarget).reduce(
+        (logTargets, logTarget) => ({ ...logTargets, [ logTarget ]: false }),
+        {} as LogTargets,
+    )
+
     if (logTargetsCommaSeparatedString === true) {
-        logTargets[ LogTarget.ALL ] = true
+        ioSettings.logTargets[ LogTarget.ALL ] = true
         return
     }
 
     const targets: LogTarget[] = (logTargetsCommaSeparatedString as string).split(",") as LogTarget[]
 
     targets.forEach(target => {
-        logTargets[ target ] = true
+        ioSettings.logTargets[ target ] = true
     })
 }
 

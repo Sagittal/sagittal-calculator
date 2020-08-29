@@ -22,11 +22,11 @@ describe("formatComma", () => {
             "comma name:   \t6j\n" +
             "limit:        \t14\n" +
             "5-rough sopfr:\t13\n" +
-            "cents:        \t11.2\n" +
+            "cents:        \t11.200\n" +
             "monzo:        \t[ 0 -1 1 ⟩\n" +
             "ratio:        \t5/4\n" +
-            "apotome slope:\t8.2\n" +
-            "N2D3P9:       \t18.4567"
+            "apotome slope:\t8.200\n" +
+            "N2D3P9:       \t18.46"
         expect(actual).toEqual(expected)
     })
 })

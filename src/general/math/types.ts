@@ -39,7 +39,6 @@ type Copfr<Roughness = void> =
     & { _CopfrBrand: "Copfr" }
     & (Roughness extends number ? { _RoughnessBrand: Roughness } : {})
 
-// TODO: you could also use & { length: Length } possibily to enforce the Monzo length when provided Slice and Limit
 type Monzo<T extends number = Integer, Slice = void, Limit = void> =
     Array<T & Exponent<Prime>>
     & (Slice extends number ? { _MonzoSlice: Slice } : {})

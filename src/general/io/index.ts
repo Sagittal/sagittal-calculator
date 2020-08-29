@@ -6,7 +6,7 @@ import { formatMonzo } from "./formatMonzo"
 import { formatNumber } from "./formatNumber"
 import { formatRatio } from "./formatRatio"
 import { computeHeaderRowsFromColumnTitleColumns } from "./headerRowsFromColumnTitleColumns"
-import { clearLogFiles, LogTarget, logTargets, saveLog, setLogTargets } from "./log"
+import { clearLogFiles, LogTarget, saveLog, setLogTargets } from "./log"
 import { parseMonzo } from "./parseMonzo"
 import { parseRatio } from "./parseRatio"
 import { removeColor } from "./removeColor"
@@ -43,7 +43,6 @@ export {
     computeHeaderRowsFromColumnTitleColumns,
     Table,
     LogTarget,
-    logTargets,
     saveLog,
     colorize,
     stringify,

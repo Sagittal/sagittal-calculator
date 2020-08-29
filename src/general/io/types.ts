@@ -1,5 +1,6 @@
 import { Maybe } from "../code"
 import { Count } from "../types"
+import { LogTargets } from "./log"
 
 enum Justification {
     LEFT = "left",
@@ -47,6 +48,7 @@ type ColorMethod = "green" | "red" | "yellow" | "cyan" | "blue" | "white" | "mag
 interface IoSettings {
     noWrite: boolean,
     forForum: boolean,
+    logTargets: LogTargets
 }
 
 export {

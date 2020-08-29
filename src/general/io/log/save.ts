@@ -2,18 +2,17 @@ import { colorize } from "../colorize"
 import { ioSettings } from "../settings"
 import { Filename, IO } from "../types"
 import { targetColors } from "./colors"
-import { logTargets } from "./targets"
 import { LogTarget, SaveLogOptions } from "./types"
 import { write } from "./write"
 
 const saveLog = (message: IO, target: LogTarget, scriptGroup: Filename, options: SaveLogOptions = {}) => {
     const { useTargetColor = true, fileExtensionProvided = false, writeOnly = false } = options
 
-    if (logTargets[ LogTarget.NONE ]) {
+    if (ioSettings.logTargets[ LogTarget.NONE ]) {
         return
     }
 
-    if (logTargets[ LogTarget.ALL ] || logTargets[ target ] || target === LogTarget.ALL) {
+    if (ioSettings.logTargets[ LogTarget.ALL ] || ioSettings.logTargets[ target ] || target === LogTarget.ALL) {
         if (!ioSettings.noWrite) {
             write(message, target, scriptGroup, fileExtensionProvided)
         }

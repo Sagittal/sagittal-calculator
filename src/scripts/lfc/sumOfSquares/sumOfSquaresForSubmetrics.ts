@@ -2,9 +2,9 @@ import {
     Combination,
     COMMA_POPULARITIES,
     IO,
+    ioSettings,
     isNumber,
     LogTarget,
-    logTargets,
     Popularity,
     Ranked,
     saveLog,
@@ -30,7 +30,7 @@ const computeSumOfSquaresForSubmetrics = (submetrics: Combination<Submetric>): S
     }
     const rankedUnpopularities = addRankToUnpopularities(unpopularities)
 
-    if (logTargets[ LogTarget.ALL ] || logTargets[ LogTarget.UNPOPULARITIES ]) {
+    if (ioSettings.logTargets[ LogTarget.ALL ] || ioSettings.logTargets[ LogTarget.UNPOPULARITIES ]) {
         rankedUnpopularities.map(rankedUnpopularity => {
             saveLog(stringify(rankedUnpopularity) as IO, LogTarget.UNPOPULARITIES, LFC)
         })
