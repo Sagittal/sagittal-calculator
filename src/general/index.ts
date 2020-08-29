@@ -262,8 +262,6 @@ export {
     removeColor,
     NEWLINE,
     addTexts,
-    // TODO: maybe eventually these (Rol and Column) shouldn't have to be exported
-    //  if all the table-building logic is quarantined to the general/io module
     Row,
     Column,
     Table,

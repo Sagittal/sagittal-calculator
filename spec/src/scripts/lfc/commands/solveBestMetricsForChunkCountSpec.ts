@@ -1,9 +1,10 @@
 import { IO } from "../../../../../src/general"
+import { onlyRunInCi } from "../../../../helpers/onlyRunInCi"
 import { runCommandAndGetConsoleOutput } from "../../../../helpers/src/scripts/runCommand"
 
 describe("solve-best-metrics-for-chunk-count", () => {
-    // TODO: well there's no reason this should still be xit'd, right?
-    xit("finds the best metric for the given chunk count", () => {
+    it("finds the best metric for the given chunk count", () => {
+        onlyRunInCi()
         const command = "npm run solve-best-metrics-for-chunk-count 1 -- --no-color --no-time --no-write" as IO
 
         const actual = runCommandAndGetConsoleOutput(command)
@@ -23,11 +24,23 @@ describe("solve-best-metrics-for-chunk-count", () => {
             ``,
             ``,
             `FINISHED POPULATING | populated 6 | searched 0 | in the queue 6`,
+            `about to search initial scope for metric {},{aAsLogarithmBase,sum}`,
+            `which has 1 samples; average sample count is 0`,
             `searched out of populated: 1/6 (16.7%) | populated 6 | searched 1 | in the queue 5`,
+            `about to search initial scope for metric {},{max,withoutRepetition}`,
+            `which has 1 samples; average sample count is 0`,
             `searched out of populated: 2/6 (33.3%) | populated 6 | searched 2 | in the queue 4`,
+            `about to search initial scope for metric {},{count,withoutRepetition}`,
+            `which has 1 samples; average sample count is 1`,
             `searched out of populated: 3/6 (50.0%) | populated 6 | searched 3 | in the queue 3`,
+            `about to search initial scope for metric {},{count}`,
+            `which has 1 samples; average sample count is 1`,
             `searched out of populated: 4/6 (66.7%) | populated 6 | searched 4 | in the queue 2`,
+            `about to search initial scope for metric {},{sum,withoutRepetition}`,
+            `which has 1 samples; average sample count is 1`,
             `searched out of populated: 5/6 (83.3%) | populated 6 | searched 5 | in the queue 1`,
+            `about to search initial scope for metric {},{sum}`,
+            `which has 1 samples; average sample count is 1`,
             `searched out of populated: 6/6 (100%) | populated 6 | searched 6 | in the queue 0`,
             ``,
             ``,
@@ -35,15 +48,21 @@ describe("solve-best-metrics-for-chunk-count", () => {
             ``,
             ``,
             `AND THE BEST METRICS WERE {`,
-            `    "{sum}": {`,
-            `        "sumOfSquares": 0.014206086754420309,`,
-            `        "submetrics": [`,
+            `    "{},{sum}": {`,
+            `        sumOfSquares: 0.014206086754420309,`,
+            `        submetrics: [`,
             `            {`,
-            `                "sum": true`,
+            `                [ Parameter.SUM ]: true`,
             `            }`,
-            `        ]`,
+            `        ],`,
+            `        name: "{},{sum}"`,
             `    }`,
             `}`,
+            `MAX UNIT 0.1`,
+            `AVERAGE SAMPLES/SCOPE 1`,
+            `PARAMETER SCOPES @ ORIGINAL SETTINGS`,
+            `Z -1`,
+            `ONLY TOP 80`,
         ] as IO[]
         expect(actual).toEqual(expected)
     })

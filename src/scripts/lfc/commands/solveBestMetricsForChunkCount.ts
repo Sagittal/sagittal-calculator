@@ -14,7 +14,6 @@ const defaultLogTargets = [
     LogTarget.SEARCH,
     LogTarget.POPULATE,
     LogTarget.FINAL_SOLVER_RESULTS,
-    LogTarget.NEW_BEST_METRIC,
 ]
 applySharedLfcCommandSetup({ defaultLogTargets })
 
