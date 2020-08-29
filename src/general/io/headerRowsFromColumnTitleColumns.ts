@@ -1,9 +1,10 @@
 import { Column, IO, max, Row } from "../../general"
 
-const computeHeaderRowsFromColumnTitleColumns = (columnTitleColumns: Column[]): Row[] => {
+const computeHeaderRowsFromColumnTitleColumns = <T>(columnTitleColumns: Array<Column<T>>): Array<Row<T, "Header">> => {
     const maxColumnTitleHeaderRowCount = max(...columnTitleColumns.map(columnTitleColumn => columnTitleColumn.length))
 
-    const rows: Row[] = [...Array(maxColumnTitleHeaderRowCount).keys()].map(_ => [] as unknown[] as Row)
+    const rows: Array<Row<T, "Header">> = [...Array(maxColumnTitleHeaderRowCount).keys()]
+        .map(_ => [] as unknown[] as Row<T, "Header">)
 
     columnTitleColumns.forEach(columnTitleColumn => {
         while (columnTitleColumn.length < maxColumnTitleHeaderRowCount) {

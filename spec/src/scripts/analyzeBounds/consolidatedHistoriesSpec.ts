@@ -1,4 +1,4 @@
-import { Cents, Name, Pitch, Proportion, Rank } from "../../../../src/general"
+import { Cents, Integer, Name, Pitch, Proportion, Rank } from "../../../../src/general"
 import { Level, Tina } from "../../../../src/sagittal/notations/ji"
 import { computeConsolidatedHistories } from "../../../../src/scripts/analyzeBounds/consolidatedHistories"
 import { AnalyzedEvent, AnalyzedHistory, EventType } from "../../../../src/scripts/analyzeBounds/types"
@@ -12,7 +12,7 @@ describe("computeConsolidatedHistories", () => {
             type: EventType.MEAN,
             name: "'/| )/|" as Name<Pitch>,
             cents: 24.2 as Cents,
-            rank: 2 as Rank<AnalyzedEvent>,
+            rank: 2 as Rank<AnalyzedEvent, Integer>,
             exact: false,
         }
         const eventTwoGoesToEventThree: AnalyzedEvent = {
@@ -21,7 +21,7 @@ describe("computeConsolidatedHistories", () => {
             type: EventType.INA,
             name: "12.5°58" as Name<Pitch>,
             cents: 24.33333 as Cents,
-            rank: 1 as Rank<AnalyzedEvent>,
+            rank: 1 as Rank<AnalyzedEvent, Integer>,
             exact: false,
         }
         const eventThree: AnalyzedEvent = {
@@ -30,7 +30,7 @@ describe("computeConsolidatedHistories", () => {
             type: EventType.MEAN,
             name: ",)/|_)/|" as Name<Pitch>,
             cents: 24.58139537326805 as Cents,
-            rank: 2 as Rank<AnalyzedEvent>,
+            rank: 2 as Rank<AnalyzedEvent, Integer>,
             exact: false,
         }
         const eventFour: AnalyzedEvent = {
@@ -39,7 +39,7 @@ describe("computeConsolidatedHistories", () => {
             type: EventType.INA,
             name: "50.5°233" as Name<Pitch>,
             cents: 24.151964806252103 as Cents,
-            rank: 1 as Rank<AnalyzedEvent>,
+            rank: 1 as Rank<AnalyzedEvent, Integer>,
             exact: false,
         }
         const eventThreeButWithBetterRank: AnalyzedEvent = {
@@ -48,7 +48,7 @@ describe("computeConsolidatedHistories", () => {
             type: EventType.MEAN,
             name: ",)/|_)/|" as Name<Pitch>,
             cents: 24.58139537326805 as Cents,
-            rank: 1 as Rank<AnalyzedEvent>,
+            rank: 1 as Rank<AnalyzedEvent, Integer>,
             exact: false,
         }
 
@@ -58,7 +58,7 @@ describe("computeConsolidatedHistories", () => {
                 eventTwoGoesToEventThree,
                 eventThreeButWithBetterRank,
             ],
-            rank: 1 as Rank<AnalyzedEvent>,
+            rank: 1 as Rank<AnalyzedEvent, Integer>,
             possible: true,
             tinaError: 0 as Proportion<Tina>,
             cents: 24.58139537326805 as Cents,
@@ -70,7 +70,7 @@ describe("computeConsolidatedHistories", () => {
                     eventOneGoesToEventThreeAndFour,
                     eventThree,
                 ],
-                rank: 2 as Rank<AnalyzedEvent>,
+                rank: 2 as Rank<AnalyzedEvent, Integer>,
                 possible: true,
                 tinaError: 0 as Proportion<Tina>,
                 cents: 24.58139537326805 as Cents,
@@ -82,7 +82,7 @@ describe("computeConsolidatedHistories", () => {
                     eventOneGoesToEventThreeAndFour,
                     eventFour,
                 ],
-                rank: 2 as Rank<AnalyzedEvent>,
+                rank: 2 as Rank<AnalyzedEvent, Integer>,
                 possible: false,
                 tinaError: 3.05589400712 as Proportion<Tina>,
                 cents: 24.151964806252103 as Cents,
@@ -92,7 +92,7 @@ describe("computeConsolidatedHistories", () => {
                 events: [
                     eventTwoGoesToEventThree,
                 ],
-                rank: 8 as Rank<AnalyzedEvent>,
+                rank: 8 as Rank<AnalyzedEvent, Integer>,
                 possible: false,
                 tinaError: 2.26723955922 as Proportion<Tina>,
                 cents: 24.9 as Cents,
@@ -111,8 +111,8 @@ describe("computeConsolidatedHistories", () => {
                     isPossibleHistoryMember: true,
                     isBestPossibleHistoryMember: false,
                     exact: false,
-                    rankOfBestRankedEventInAnyMemberHistory: 2 as Rank<AnalyzedEvent>,
-                    rankOfBestRankedMemberHistory: 2 as Rank<AnalyzedEvent>,
+                    rankOfBestRankedEventInAnyMemberHistory: 2 as Rank<AnalyzedEvent, Integer>,
+                    rankOfBestRankedMemberHistory: 2 as Rank<AnalyzedEvent, Integer>,
                     nextEvents: [
                         eventThree.name,
                         eventFour.name,
@@ -126,8 +126,8 @@ describe("computeConsolidatedHistories", () => {
                     isPossibleHistoryMember: true,
                     isBestPossibleHistoryMember: true,
                     exact: false,
-                    rankOfBestRankedEventInAnyMemberHistory: 1 as Rank<AnalyzedEvent>,
-                    rankOfBestRankedMemberHistory: 1 as Rank<AnalyzedEvent>,
+                    rankOfBestRankedEventInAnyMemberHistory: 1 as Rank<AnalyzedEvent, Integer>,
+                    rankOfBestRankedMemberHistory: 1 as Rank<AnalyzedEvent, Integer>,
                     nextEvents: [
                         eventThree.name,
                         // eventImpossible.name,
@@ -143,8 +143,8 @@ describe("computeConsolidatedHistories", () => {
                     isPossibleHistoryMember: true,
                     isBestPossibleHistoryMember: true,
                     exact: false,
-                    rankOfBestRankedEventInAnyMemberHistory: 1 as Rank<AnalyzedEvent>,
-                    rankOfBestRankedMemberHistory: 1 as Rank<AnalyzedEvent>,
+                    rankOfBestRankedEventInAnyMemberHistory: 1 as Rank<AnalyzedEvent, Integer>,
+                    rankOfBestRankedMemberHistory: 1 as Rank<AnalyzedEvent, Integer>,
                     nextEvents: [] as Name<Pitch>[],
                 },
                 {
@@ -155,8 +155,8 @@ describe("computeConsolidatedHistories", () => {
                     isPossibleHistoryMember: false,
                     isBestPossibleHistoryMember: false,
                     exact: false,
-                    rankOfBestRankedEventInAnyMemberHistory: 1 as Rank<AnalyzedEvent>,
-                    rankOfBestRankedMemberHistory: 2 as Rank<AnalyzedEvent>,
+                    rankOfBestRankedEventInAnyMemberHistory: 1 as Rank<AnalyzedEvent, Integer>,
+                    rankOfBestRankedMemberHistory: 2 as Rank<AnalyzedEvent, Integer>,
                     nextEvents: [] as Name<Pitch>[],
                 },
             ],

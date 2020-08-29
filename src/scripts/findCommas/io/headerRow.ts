@@ -1,6 +1,7 @@
 import { Row } from "../../../general"
+import { Comma } from "../../../sagittal"
 
-const FIND_COMMAS_HEADER_ROW: Row = [
+const FIND_COMMAS_HEADER_ROW: Row<Comma, "Header"> = [
     "comma name",
     "limit",
     "5-rough sopfr",
@@ -9,7 +10,7 @@ const FIND_COMMAS_HEADER_ROW: Row = [
     "ratio",
     "apotome slope",
     "N2D3P9",
-] as Row
+] as Row<Comma, "Header">
 
 export {
     FIND_COMMAS_HEADER_ROW,

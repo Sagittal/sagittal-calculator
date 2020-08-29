@@ -1,5 +1,6 @@
 import { parseCommands } from "./command"
 import { ANY_MONZO_CHARS, FORMATATIONAL_PRECISION, NEWLINE, SPACE, SUPERSCRIPT_NUMS } from "./constants"
+import { formatInteger } from "./formatInteger"
 import { formatMonzo } from "./formatMonzo"
 import { formatNumber } from "./formatNumber"
 import { formatRatio } from "./formatRatio"
@@ -53,4 +54,5 @@ export {
     Basis,
     computePx,
     ColorMethod,
+    formatInteger,
 }

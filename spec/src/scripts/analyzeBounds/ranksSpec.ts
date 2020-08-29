@@ -1,10 +1,10 @@
-import { Count, Id, Rank } from "../../../../src/general"
+import { Count, Id, Integer, Rank } from "../../../../src/general"
 import { Bound } from "../../../../src/sagittal/notations/ji"
 import { rankBoundIndices, rankCounts, updateRankAnalysis } from "../../../../src/scripts/analyzeBounds/ranks"
 import { AnalyzedEvent } from "../../../../src/scripts/analyzeBounds/types"
 
 describe("updateRankAnalysis", () => {
-    const bestRank: Rank<AnalyzedEvent> = 2 as Rank<AnalyzedEvent>
+    const bestRank: Rank<AnalyzedEvent, Integer> = 2 as Rank<AnalyzedEvent, Integer>
     const boundId: Id<Bound> = 88 as Id<Bound>
 
     let previousRankAnalysis: number

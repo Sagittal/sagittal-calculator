@@ -1,6 +1,7 @@
 import {
     addTexts,
     computeHeaderRowsFromColumnTitleColumns,
+    Count,
     count,
     formatTableForForum,
     IO,
@@ -14,8 +15,8 @@ import { PopularRatio } from "../types"
 import { POPULAR_RATIOS_COLUMN_TITLE_COLUMNS } from "./headerRows"
 
 const computePopularRatiosTable = (popularRatios: Array<Ranked<PopularRatio>>, maxN2D3P9: Max<N2D3P9>): IO => {
-    const table: Table = computeHeaderRowsFromColumnTitleColumns(POPULAR_RATIOS_COLUMN_TITLE_COLUMNS)
-    const headerRowCount = count(table)
+    const table: Table<PopularRatio> = computeHeaderRowsFromColumnTitleColumns(POPULAR_RATIOS_COLUMN_TITLE_COLUMNS)
+    const headerRowCount = count(table) as Count<Row<PopularRatio, "Header">>
 
     popularRatios.forEach(popularRatio => {
         const {
@@ -28,7 +29,15 @@ const computePopularRatiosTable = (popularRatios: Array<Ranked<PopularRatio>>, m
             votes,
         } = popularRatio
 
-        table.push([formattedRatio, formattedN2D3P9, smileys, symbolSubsets, estimatedRank, actualRank, votes] as Row)
+        table.push([
+            formattedRatio,
+            formattedN2D3P9,
+            smileys,
+            symbolSubsets,
+            estimatedRank,
+            actualRank,
+            votes
+        ] as Row<PopularRatio>)
     })
 
     const popularRatiosTableTitle = `count of results with N2D3P9 <= ${maxN2D3P9}: ${popularRatios.length}\n` as IO

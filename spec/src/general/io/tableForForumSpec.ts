@@ -6,7 +6,7 @@ describe("formatTableForForum", () => {
             ["comma name", "limit", "5-rough sopfr", "cents", "monzo", "ratio", "apotome slope", "N2D3P9"],
             ["11M", "11", "11", "45.45", "[0 0 1⟩", "33/32", "-4", "6.722"],
             ["25/49M", "7", "24", "33.4", "[0 0⟩", "50/49", "-59.333", "26.466"],
-        ] as Table
+        ] as Table<IO>
 
         const actual = formatTableForForum(table)
 
@@ -25,9 +25,9 @@ describe("formatTableForForum", () => {
             ["name", "limit", "sopfr", "cents", "monzo", "ratio", "slope", "N2D3P9"],
             ["11M", "11", "11", "45.45", "[0 0 1⟩", "33/32", "-4", "6.722"],
             ["25/49M", "7", "24", "33.4", "[0 0⟩", "50/49", "-59.333", "26.466"],
-        ] as Table
+        ] as Table<IO>
 
-        const actual = formatTableForForum(table, { headerRowCount: 2 as Count<Row> })
+        const actual = formatTableForForum(table, { headerRowCount: 2 as Count<Row<string, "Header">> })
 
         let expected =
             "[table]\n" +

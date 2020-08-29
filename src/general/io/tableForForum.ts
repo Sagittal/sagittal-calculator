@@ -4,7 +4,7 @@ import { IO, Row, Table } from "./types"
 
 // TODO: it could even automatically convert symbols to smileys?
 
-const formatTableForForum = (table: Table, options: { headerRowCount?: Count<Row> } = {}): IO => {
+const formatTableForForum = (table: Table, options: { headerRowCount?: Count<Row<unknown, "Header">> } = {}): IO => {
     const { headerRowCount = 1 as Count<Row> } = options
 
     const formattedRows: IO[] = table.map((row: Row, index): IO => {

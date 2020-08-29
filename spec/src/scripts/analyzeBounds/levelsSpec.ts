@@ -1,4 +1,4 @@
-import { Rank } from "../../../../src/general"
+import { Integer, Rank } from "../../../../src/general"
 import { Level } from "../../../../src/sagittal/notations/ji"
 import {
     levelsBestCumulativeHistoryRanks,
@@ -14,7 +14,7 @@ describe("updateLevelAnalysis", () => {
             const bestPossibleHistory = {
                 ...analyzedHistoryFixture,
                 events: [
-                    { ...analyzedEventFixture, level: Level.MEDIUM, rank: 0 as Rank<AnalyzedEvent> },
+                    { ...analyzedEventFixture, level: Level.MEDIUM, rank: 0 as Rank<AnalyzedEvent, Integer> },
                 ],
             }
             if (Level.MEDIUM in levelsBestHistoryRanks) {
@@ -31,8 +31,8 @@ describe("updateLevelAnalysis", () => {
             const bestPossibleHistory: AnalyzedHistory = {
                 ...analyzedHistoryFixture,
                 events: [
-                    { ...analyzedEventFixture, level: Level.MEDIUM, rank: 0 as Rank<AnalyzedEvent> },
-                    { ...analyzedEventFixture, level: Level.HIGH, rank: 1 as Rank<AnalyzedEvent> },
+                    { ...analyzedEventFixture, level: Level.MEDIUM, rank: 0 as Rank<AnalyzedEvent, Integer> },
+                    { ...analyzedEventFixture, level: Level.HIGH, rank: 1 as Rank<AnalyzedEvent, Integer> },
                 ],
             }
             let formerMediumIna = 3
@@ -54,10 +54,10 @@ describe("updateLevelAnalysis", () => {
             const bestPossibleHistory = {
                 ...analyzedHistoryFixture,
                 events: [
-                    { ...analyzedEventFixture, level: Level.MEDIUM, rank: 0 as Rank<AnalyzedEvent> },
-                    { ...analyzedEventFixture, level: Level.HIGH, rank: 2 as Rank<AnalyzedEvent> },
-                    { ...analyzedEventFixture, level: Level.ULTRA, rank: 1 as Rank<AnalyzedEvent> },
-                    { ...analyzedEventFixture, level: Level.EXTREME, rank: 3 as Rank<AnalyzedEvent> },
+                    { ...analyzedEventFixture, level: Level.MEDIUM, rank: 0 as Rank<AnalyzedEvent, Integer> },
+                    { ...analyzedEventFixture, level: Level.HIGH, rank: 2 as Rank<AnalyzedEvent, Integer> },
+                    { ...analyzedEventFixture, level: Level.ULTRA, rank: 1 as Rank<AnalyzedEvent, Integer> },
+                    { ...analyzedEventFixture, level: Level.EXTREME, rank: 3 as Rank<AnalyzedEvent, Integer> },
                 ],
             }
             if (Level.MEDIUM in levelsBestCumulativeHistoryRanks) {

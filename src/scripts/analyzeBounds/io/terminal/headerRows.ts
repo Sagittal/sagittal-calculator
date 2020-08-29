@@ -1,4 +1,5 @@
 import { Column, computeHeaderRowsFromColumnTitleColumns, Row } from "../../../../general"
+import { AnalyzedBound } from "../../types"
 
 const BOUNDS_ANALYSIS_COLUMN_TITLE_COLUMNS = [
     "bound id",
@@ -24,13 +25,13 @@ const BOUNDS_ANALYSIS_COLUMN_TITLE_COLUMNS = [
     "actual bound pos (¢)",
     "initial comma mean pos (¢)",
     "a.b.vs i.c.m. error (tinas)",
-].map(columnTitle => columnTitle.split(" ")) as Column[]
+].map(columnTitle => columnTitle.split(" ")) as Array<Column<AnalyzedBound>>
 
-const computeBoundsAnalysisHeaderRows = (): Row[] => {
+const computeBoundsAnalysisHeaderRows = (): Array<Row<AnalyzedBound, "Header">> => {
     return [
         ...computeHeaderRowsFromColumnTitleColumns(BOUNDS_ANALYSIS_COLUMN_TITLE_COLUMNS),
         // TODO: perhaps there is a better way to just insert a blank space between the headers and the data rows...
-        [...Array(BOUNDS_ANALYSIS_COLUMN_TITLE_COLUMNS.length).keys()].map(_ => "") as Row,
+        [...Array(BOUNDS_ANALYSIS_COLUMN_TITLE_COLUMNS.length).keys()].map(_ => "") as Row<AnalyzedBound, "Header">,
     ]
 }
 

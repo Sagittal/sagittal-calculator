@@ -4,8 +4,8 @@ import { onlyRunInCi } from "../../../../helpers/onlyRunInCi"
 import { runCommandAndGetConsoleOutput } from "../../../../helpers/src/scripts/runCommand"
 
 describe("analyze-bounds", () => {
-    it("runs without error", () => {
-        onlyRunInCi()
+    fit("runs without error", () => {
+        // onlyRunInCi()
 
         const actual = runCommandAndGetConsoleOutput("npm run analyze-bounds -- --no-color --no-write" as IO)
 

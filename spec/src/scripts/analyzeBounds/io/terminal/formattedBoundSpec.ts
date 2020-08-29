@@ -1,4 +1,4 @@
-import { Cents, Id, Rank } from "../../../../../../src/general"
+import { Cents, Id, Integer, Rank } from "../../../../../../src/general"
 import { Bound } from "../../../../../../src/sagittal/notations/ji"
 import { computeFormattedBound } from "../../../../../../src/scripts/analyzeBounds/io"
 import { AnalyzedBound, AnalyzedEvent } from "../../../../../../src/scripts/analyzeBounds/types"
@@ -12,7 +12,7 @@ describe("computeFormattedBound", () => {
             id: 10 as Id<Bound>,
         }
         const analyzedBound: AnalyzedBound = {
-            bestRank: 2 as Rank<AnalyzedEvent>,
+            bestRank: 2 as Rank<AnalyzedEvent, Integer>,
         } as AnalyzedBound
 
         const actual = computeFormattedBound(analyzedBound, { bound })

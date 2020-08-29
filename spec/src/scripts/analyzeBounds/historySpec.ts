@@ -1,4 +1,4 @@
-import { Cents, Proportion, Rank } from "../../../../src/general"
+import { Cents, Integer, Proportion, Rank } from "../../../../src/general"
 import { ACCURACY_THRESHOLD } from "../../../../src/general/code"
 import { Bound, Level, Tina, TINA } from "../../../../src/sagittal/notations/ji"
 import { analyzeHistory } from "../../../../src/scripts/analyzeBounds/history"
@@ -38,7 +38,7 @@ describe("analyzeHistory", () => {
                     ...analyzedEventFixture,
                     cents,
                     type: EventType.INA,
-                    rank: 0 as Rank<AnalyzedEvent>,
+                    rank: 0 as Rank<AnalyzedEvent, Integer>,
                     exact: false,
                     distance: 0 as Cents,
                     inaDistance: 0 as Proportion,
@@ -48,7 +48,7 @@ describe("analyzeHistory", () => {
                     ...analyzedEventFixture,
                     cents,
                     type: EventType.SIZE,
-                    rank: 2 as Rank<AnalyzedEvent>,
+                    rank: 2 as Rank<AnalyzedEvent, Integer>,
                     exact: false,
                     distance: 0 as Cents,
                     inaDistance: 0 as Proportion,
@@ -56,7 +56,7 @@ describe("analyzeHistory", () => {
                 },
             ])
             expect(actual.cents).toBe(cents)
-            expect(actual.rank).toBe(2 as Rank<AnalyzedEvent>)
+            expect(actual.rank).toBe(2 as Rank<AnalyzedEvent, Integer>)
             expect(actual.distance).toBe(0 as Cents)
             expect(actual.initialPositionTinaDifference)
                 .toBeCloseToTyped(3.681504379547852 as Proportion<Tina>, ACCURACY_THRESHOLD)

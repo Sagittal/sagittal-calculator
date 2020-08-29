@@ -6,7 +6,7 @@ describe("formatTableForTerminal", () => {
         ["comma name", "limit", "5-rough sopfr", "cents", "monzo", "ratio", "apotome slope"],
         ["11M", "11", "11", "45.45", "[0 0 1⟩", "33/32", "-4"],
         ["25/49M", "7", "24", "33.4", "[0 0⟩", "50/49", "-59.333"],
-    ] as Table
+    ] as Table<IO>
 
     it("makes each column such that each of its cells has the same width", () => {
         const actual = formatTableForTerminal(table)

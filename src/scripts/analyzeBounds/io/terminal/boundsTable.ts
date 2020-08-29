@@ -8,7 +8,7 @@ import { computeBoundsAnalysisHeaderRows } from "./headerRows"
 // TODO: you could keep the color of the table rows test covered by testing at this level
 
 const computeBoundsAnalysisTable = (boundsAnalysis: AnalyzedBound[]): IO => {
-    const table: Table = computeBoundsAnalysisHeaderRows()
+    const table: Table<AnalyzedBound> = computeBoundsAnalysisHeaderRows()
     const colors: ColorMethod[] = ["white", "white", "white", "white", "white", "white"]
 
     boundsAnalysis.forEach((analyzedBound, index) => {

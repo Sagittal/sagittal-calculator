@@ -1,4 +1,4 @@
-import { Cents, Count, Name, Pitch, Proportion, Rank, Sum } from "../../general"
+import { Cents, Count, Integer, Name, Pitch, Proportion, Rank, Sum } from "../../general"
 import { Level, Tina } from "../../sagittal"
 
 enum EventType {
@@ -20,7 +20,7 @@ interface AnalyzedEvent extends HistoricalEvent {
     distance: Cents,
     exact: boolean,
     inaDistance: Proportion,
-    rank: Rank<AnalyzedEvent>,
+    rank: Rank<AnalyzedEvent, Integer>,
 }
 
 interface ConsolidatedEvent extends HistoricalEvent {
@@ -28,8 +28,8 @@ interface ConsolidatedEvent extends HistoricalEvent {
     isBestPossibleHistoryMember: boolean,
     isPossibleHistoryMember: boolean,
     nextEvents: Name<Pitch>[],
-    rankOfBestRankedEventInAnyMemberHistory: Rank<AnalyzedEvent>,
-    rankOfBestRankedMemberHistory: Rank<AnalyzedEvent>,
+    rankOfBestRankedEventInAnyMemberHistory: Rank<AnalyzedEvent, Integer>,
+    rankOfBestRankedMemberHistory: Rank<AnalyzedEvent, Integer>,
 }
 
 type History = HistoricalEvent[]
@@ -42,7 +42,7 @@ interface AnalyzedHistory {
     initialPositionTinaDifference: Proportion<Tina>,
     cents: Cents,
     possible: boolean,
-    rank: Rank<AnalyzedEvent>,
+    rank: Rank<AnalyzedEvent, Integer>,
     score: Score,
     tinaError: Proportion<Tina>,
 }
@@ -60,7 +60,7 @@ interface AnalyzedBound {
     bestPossibleHistory: AnalyzedHistory,
     bestPossibleHistoryDistance: Cents,
     bestPossibleHistoryInaDistance: Sum<Proportion>,
-    bestRank: Rank<AnalyzedEvent>,
+    bestRank: Rank<AnalyzedEvent, Integer>,
     consolidatedHistories: ConsolidatedHistories,
     initialPosition: Cents,
     initialPositionTinaDifference: Proportion<Tina>,

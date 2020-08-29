@@ -14,7 +14,7 @@ describe("computeHeaderRowsFromColumnTitleColumns", () => {
                 "mean",
                 "pos (¢)",
             ],
-        ] as Column[]
+        ] as Array<Column<string>>
 
         const actual = computeHeaderRowsFromColumnTitleColumns(columnTitleColumns)
 
@@ -23,7 +23,7 @@ describe("computeHeaderRowsFromColumnTitleColumns", () => {
             ["", "comma"],
             ["bound", "mean"],
             ["index", "pos (¢)"],
-        ] as Row[]
+        ] as Array<Row<string, "Header">>
         expect(actual).toEqual(expected)
     })
 })

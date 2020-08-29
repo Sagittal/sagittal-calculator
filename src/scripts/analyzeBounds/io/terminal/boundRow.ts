@@ -1,4 +1,4 @@
-import { formatNumber, Row } from "../../../../general"
+import { formatInteger, formatNumber, Row } from "../../../../general"
 import { AnalyzedBound } from "../../types"
 import { alignFormattedNumber } from "./alignFormattedNumber"
 import { extractBoundIdentifiers } from "./boundIdentifiers"
@@ -8,8 +8,8 @@ import { formatMina } from "./mina"
 import { formatSymbolAscii } from "./symbolAscii"
 import { FormatBoundParameters } from "./types"
 
-const computeBoundRow = (analyzedBound: AnalyzedBound, { bound }: FormatBoundParameters): Row => {
-    let boundRow: Row
+const computeBoundRow = (analyzedBound: AnalyzedBound, { bound }: FormatBoundParameters): Row<AnalyzedBound> => {
+    let boundRow: Row<AnalyzedBound>
     const boundIdentifiers = extractBoundIdentifiers(bound)
 
     const {
@@ -55,11 +55,11 @@ const computeBoundRow = (analyzedBound: AnalyzedBound, { bound }: FormatBoundPar
         formatMina(greaterBoundedMina),
         formatSymbolAscii(extremeLevelLesserBoundedSymbol),
         formatSymbolAscii(extremeLevelGreaterBoundedSymbol),
-        mediumLevelRank.toString(),
-        highLevelRank.toString(),
-        veryHighLevelRank.toString(),
-        extremeLevelRank.toString(),
-        bestRank.toString(),
+        mediumLevelRank,
+        highLevelRank,
+        veryHighLevelRank,
+        extremeLevelRank,
+        formatInteger(bestRank),
         bestPossibleHistoryMediumDistance,
         bestPossibleHistoryHighDistance,
         bestPossibleHistoryUltraDistance,
@@ -73,7 +73,7 @@ const computeBoundRow = (analyzedBound: AnalyzedBound, { bound }: FormatBoundPar
         alignFormattedNumber(formatNumber(cents)),
         alignFormattedNumber(formatNumber(initialPosition)),
         alignFormattedNumber(formatNumber(initialPositionTinaDifference)),
-    ] as Row
+    ] as Row<AnalyzedBound>
 
     return boundRow
 }

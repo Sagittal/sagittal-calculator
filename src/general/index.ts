@@ -37,6 +37,7 @@ import {
     computePx,
     Filename,
     FORMATATIONAL_PRECISION,
+    formatInteger,
     formatMonzo,
     formatNumber,
     formatRatio,
@@ -280,4 +281,5 @@ export {
     Basis,
     computePx,
     ColorMethod,
+    formatInteger,
 }

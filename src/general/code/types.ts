@@ -1,4 +1,4 @@
-type Rank<T = void> = number & { _RankBrand: "Rank" } & (T extends void ? {} : { _RankOfBrand: T })
+import { Integer } from "../math"
 
 type ObjectKey = string & { _ObjectKeyBrand: "ObjectKey" }
 
@@ -10,6 +10,11 @@ type SortOptions = Partial<{
 type Path = number | string | Array<number | string>
 
 type Sortable = { [ index: string ]: number }
+
+type Rank<T = void, IsInteger extends Integer | number = number> =
+    IsInteger
+    & { _RankBrand: "Rank" }
+    & (T extends void ? {} : { _RankOfBrand: T })
 
 type Ranked<T> = T & { rank: Rank<T> }
 

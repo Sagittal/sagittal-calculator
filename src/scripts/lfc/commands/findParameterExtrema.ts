@@ -20,7 +20,7 @@ applySharedLfcCommandSetup({ defaultLogTargets: [LogTarget.ALL] })
 
 const chunkCountResults = load("metrics" as Filename) as Record<string, Metric>
 
-const parameterExtrema = {} as Record<string, Extrema<ParameterValue, "open">>
+const parameterExtrema = {} as Record<string, Extrema<ParameterValue, "Open">>
 
 Object.values(Parameter).forEach(parameter => {
     if (parameter.includes("Base")) {

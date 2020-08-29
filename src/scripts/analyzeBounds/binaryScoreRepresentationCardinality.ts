@@ -1,11 +1,11 @@
-import { Rank } from "../../general"
+import { Integer, Rank } from "../../general"
 import { LEVELS } from "../../sagittal"
 import { RANKS } from "./ranks"
 import { AnalyzedEvent } from "./types"
 
 const BINARY_SCORE_REPRESENTATION_CARDINALITY = Object.keys(RANKS).length * LEVELS.length // 15
 
-const computeBinaryScoreRepresentationIndex = (rank: Rank<AnalyzedEvent>, index: number) =>
+const computeBinaryScoreRepresentationIndex = (rank: Rank<AnalyzedEvent, Integer>, index: number) =>
     rank * LEVELS.length + (LEVELS.length - 1 - index)
 
 export {

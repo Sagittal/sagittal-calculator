@@ -16,9 +16,13 @@ type Char = string & { _CharBrand: "Char" }
 type IO = string & { _IOBrand: "IO" }
 type Formatted<T> = IO & { _FormattedBrand: T }
 
-type Row = IO[] & { _RowBrand: "Row" }
-type Column = IO[] & { _ColBrand: "Col" }
-type Table = Row[]
+type Row<T = void, Header extends "Header" | void = void> =
+    IO[]
+    & { _RowBrand: "Row" }
+    & (T extends void ? {} : { _RowOfBrand: T })
+    & (Header extends "Header" ? { _HeaderBrand: "Header" } : {})
+type Column<T = void> = IO[] & { _ColumnBrand: "Column" } & (T extends void ? {} : { _ColumnOfBrand: T })
+type Table<T = void> = Array<Row<T>>
 
 interface ComputeAlignedRowCellOptions {
     columnJustification: Justification,

@@ -13,9 +13,9 @@ import {
     parseRatio,
     Ratio,
     Row,
-    saveLog,
+    saveLog, Table,
 } from "../../../general"
-import { analyzeComma, computeNotatingJiSymbolIds } from "../../../sagittal"
+import { analyzeComma, computeNotatingJiSymbolIds, JiSymbol } from "../../../sagittal"
 import { computeNotatingSymbolRow, formatComma, NOTATING_SYMBOLS_HEADER_ROW } from "../io"
 
 // TODO: you should also make it accept -n name!
@@ -59,9 +59,9 @@ saveLog(formatComma(analyzedComma), LogTarget.ALL, "analyzeComma" as Filename)
 
 const notatingSymbolIds = computeNotatingJiSymbolIds(monzo)
 
-const notatingSymbolRows: Row[] = notatingSymbolIds.map(computeNotatingSymbolRow)
+const notatingSymbolTable: Table<JiSymbol> = notatingSymbolIds.map(computeNotatingSymbolRow)
 
-notatingSymbolRows.unshift(NOTATING_SYMBOLS_HEADER_ROW)
+notatingSymbolTable.unshift(NOTATING_SYMBOLS_HEADER_ROW)
 
 // TODO: this like findCommas should probably have an io/table.ts which allows for either terminal or forum output
 //  which would also take the stuff like a pre-header-row as we see in some of the others
@@ -69,4 +69,4 @@ saveLog("" as IO, LogTarget.ALL, "notatingSymbols" as Filename)
 saveLog("   --- notating symbols ---" as IO, LogTarget.ALL, "notatingSymbols" as Filename)
 saveLog("" as IO, LogTarget.ALL, "notatingSymbols" as Filename) // TODO: EMPTY as IO constant
 
-saveLog(formatTableForTerminal(notatingSymbolRows), LogTarget.ALL, "notatingSymbols" as Filename)
+saveLog(formatTableForTerminal(notatingSymbolTable), LogTarget.ALL, "notatingSymbols" as Filename)

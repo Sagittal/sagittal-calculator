@@ -1,7 +1,9 @@
 import { formatMonzo, formatNumber, formatRatio, Id, IO, Row } from "../../../general"
 import { getJiSymbol, getSagittalComma, JiSymbol } from "../../../sagittal"
 
-const computeNotatingSymbolRow = (jiSymbolId: Id<JiSymbol>): Row => {
+// TODO: is this actually "computeExactlyNotatingJiSymbolRow"?
+
+const computeNotatingSymbolRow = (jiSymbolId: Id<JiSymbol>): Row<JiSymbol> => {
     const { primaryCommaId, ascii: symbol } = getJiSymbol(jiSymbolId)
     const { name, monzo, cents, ratio } = getSagittalComma(primaryCommaId)
 
@@ -15,7 +17,7 @@ const computeNotatingSymbolRow = (jiSymbolId: Id<JiSymbol>): Row => {
         formattedRatio,
         formattedMonzo,
         formattedCents,
-    ] as IO[] as Row
+    ] as IO[] as Row<JiSymbol>
 }
 
 export {

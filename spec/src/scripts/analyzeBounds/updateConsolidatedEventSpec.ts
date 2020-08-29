@@ -1,4 +1,4 @@
-import { Name, Pitch, Rank } from "../../../../src/general"
+import { Integer, Name, Pitch, Rank } from "../../../../src/general"
 import { Level } from "../../../../src/sagittal/notations/ji"
 import { AnalyzedEvent, AnalyzedHistory, ConsolidatedEvent } from "../../../../src/scripts/analyzeBounds/types"
 import { updateConsolidatedEvent } from "../../../../src/scripts/analyzeBounds/updateConsolidatedEvent"
@@ -224,9 +224,9 @@ describe("updateConsolidatedEvent", () => {
         it("when the analyzed history's rank is less than the rank of the best ranked history this consolidated event has so far been updated with an event from, it updates its rank of best ranked member history", () => {
             const consolidatedEvent: ConsolidatedEvent = {
                 ...consolidatedEventFixture,
-                rankOfBestRankedMemberHistory: 3 as Rank<AnalyzedEvent>,
+                rankOfBestRankedMemberHistory: 3 as Rank<AnalyzedEvent, Integer>,
             }
-            analyzedHistory = { ...analyzedHistoryFixture, rank: 2 as Rank<AnalyzedEvent> }
+            analyzedHistory = { ...analyzedHistoryFixture, rank: 2 as Rank<AnalyzedEvent, Integer> }
 
             updateConsolidatedEvent(consolidatedEvent, {
                 analyzedHistory,
@@ -235,15 +235,15 @@ describe("updateConsolidatedEvent", () => {
                 bestPossibleHistory,
             })
 
-            expect(consolidatedEvent.rankOfBestRankedMemberHistory).toBe(2 as Rank<AnalyzedEvent>)
+            expect(consolidatedEvent.rankOfBestRankedMemberHistory).toBe(2 as Rank<AnalyzedEvent, Integer>)
         })
 
         it("when the analyzed history's rank is not less than the rank of the best ranked history this consolidated event has so far been updated with an event from, it keeps its rank of best ranked member history the same", () => {
             const consolidatedEvent: ConsolidatedEvent = {
                 ...consolidatedEventFixture,
-                rankOfBestRankedMemberHistory: 1 as Rank<AnalyzedEvent>,
+                rankOfBestRankedMemberHistory: 1 as Rank<AnalyzedEvent, Integer>,
             }
-            analyzedHistory = { ...analyzedHistoryFixture, rank: 2 as Rank<AnalyzedEvent> }
+            analyzedHistory = { ...analyzedHistoryFixture, rank: 2 as Rank<AnalyzedEvent, Integer> }
 
             updateConsolidatedEvent(consolidatedEvent, {
                 analyzedHistory,
@@ -252,7 +252,7 @@ describe("updateConsolidatedEvent", () => {
                 bestPossibleHistory,
             })
 
-            expect(consolidatedEvent.rankOfBestRankedMemberHistory).toBe(1 as Rank<AnalyzedEvent>)
+            expect(consolidatedEvent.rankOfBestRankedMemberHistory).toBe(1 as Rank<AnalyzedEvent, Integer>)
         })
     })
 
@@ -260,9 +260,9 @@ describe("updateConsolidatedEvent", () => {
         it("when the analyzed event's rank is less than the rank of the best ranked event this consolidated event has so far been updated with, it updates its rank of best ranked event", () => {
             const consolidatedEvent: ConsolidatedEvent = {
                 ...consolidatedEventFixture,
-                rankOfBestRankedEventInAnyMemberHistory: 3 as Rank<AnalyzedEvent>,
+                rankOfBestRankedEventInAnyMemberHistory: 3 as Rank<AnalyzedEvent, Integer>,
             }
-            analyzedEvent = { ...analyzedEventFixture, rank: 2 as Rank<AnalyzedEvent> }
+            analyzedEvent = { ...analyzedEventFixture, rank: 2 as Rank<AnalyzedEvent, Integer> }
 
             updateConsolidatedEvent(consolidatedEvent, {
                 analyzedHistory,
@@ -271,15 +271,15 @@ describe("updateConsolidatedEvent", () => {
                 bestPossibleHistory,
             })
 
-            expect(consolidatedEvent.rankOfBestRankedEventInAnyMemberHistory).toBe(2 as Rank<AnalyzedEvent>)
+            expect(consolidatedEvent.rankOfBestRankedEventInAnyMemberHistory).toBe(2 as Rank<AnalyzedEvent, Integer>)
         })
 
         it("when the analyzed event's rank is not less than the rank of the best ranked event this consolidated event has so far been updated with, it keeps its rank of best ranked event the same", () => {
             const consolidatedEvent: ConsolidatedEvent = {
                 ...consolidatedEventFixture,
-                rankOfBestRankedEventInAnyMemberHistory: 1 as Rank<AnalyzedEvent>,
+                rankOfBestRankedEventInAnyMemberHistory: 1 as Rank<AnalyzedEvent, Integer>,
             }
-            analyzedEvent = { ...analyzedEventFixture, rank: 2 as Rank<AnalyzedEvent> }
+            analyzedEvent = { ...analyzedEventFixture, rank: 2 as Rank<AnalyzedEvent, Integer> }
 
             updateConsolidatedEvent(consolidatedEvent, {
                 analyzedHistory,
@@ -288,7 +288,7 @@ describe("updateConsolidatedEvent", () => {
                 bestPossibleHistory,
             })
 
-            expect(consolidatedEvent.rankOfBestRankedEventInAnyMemberHistory).toBe(1 as Rank<AnalyzedEvent>)
+            expect(consolidatedEvent.rankOfBestRankedEventInAnyMemberHistory).toBe(1 as Rank<AnalyzedEvent, Integer>)
         })
     })
 })

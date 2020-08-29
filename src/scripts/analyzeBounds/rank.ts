@@ -1,10 +1,10 @@
-import { Rank } from "../../general"
+import { Integer, Rank } from "../../general"
 import { AnalyzedEvent } from "./types"
 
-const computeRank = (analyzedEvents: AnalyzedEvent[]): Rank<AnalyzedEvent> => analyzedEvents.reduce(
+const computeRank = (analyzedEvents: AnalyzedEvent[]): Rank<AnalyzedEvent, Integer> => analyzedEvents.reduce(
     (rank, analyzedEvent) =>
         rank > analyzedEvent.rank ? rank : analyzedEvent.rank,
-    0 as Rank<AnalyzedEvent>,
+    0 as Rank<AnalyzedEvent, Integer>,
 )
 
 export {

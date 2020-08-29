@@ -1,8 +1,7 @@
-import { formatMonzo, formatRatio, Row } from "../../../general"
-import { Comma } from "../../../sagittal"
+import { formatInteger, formatMonzo, formatNumber, formatRatio, IO, Row } from "../../../general"
+import { Comma, formatN2D3P9 } from "../../../sagittal"
 
-// TODO: could row be parameterized to indicate what it is a row of?
-const computeCommaRow = (comma: Comma): Row => {
+const computeCommaRow = (comma: Comma): Row<Comma> => {
     const {
         name,
         limit,
@@ -16,14 +15,14 @@ const computeCommaRow = (comma: Comma): Row => {
 
     return [
         name,
-        limit.toString(), // TODO: really we should just have formatters for each of these (also boundRow needs them)
-        fiveRoughSopfr.toString(),
-        cents.toString(),
+        formatInteger(limit),
+        formatInteger(fiveRoughSopfr),
+        formatNumber(cents),
         formatMonzo(monzo),
         formatRatio(ratio),
-        apotomeSlope.toString(),
-        n2d3p9.toString(),
-    ] as Row
+        formatNumber(apotomeSlope),
+        formatN2D3P9(n2d3p9),
+    ] as IO[] as Row<Comma>
 }
 
 export {

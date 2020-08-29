@@ -24,9 +24,9 @@ type Resolution<T extends number = number> = T & { _ResolutionBrand: "Resolution
 
 type Name<T = void> = IO & { _NameBrand: "Name" } & (T extends void ? {} : { _NameOfBrand: T })
 
-type Extrema<T extends number = number, Open extends "open" | void = void> = [
-    Open extends "open" ? Maybe<Min<T>> : Min<T>,
-    Open extends "open" ? Maybe<Max<T>> : Max<T>,
+type Extrema<T extends number = number, Open extends "Open" | void = void> = [
+    Open extends "Open" ? Maybe<Min<T>> : Min<T>,
+    Open extends "Open" ? Maybe<Max<T>> : Max<T>,
 ]
 
 type Ms = number & { _MsBrand: "Ms" }

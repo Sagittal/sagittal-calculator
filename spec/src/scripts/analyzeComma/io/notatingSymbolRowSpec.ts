@@ -14,7 +14,7 @@ describe("computeNotatingSymbolRow", () => {
             "1216/1215",
             "[ 6 -5 -1 0 0 0 0 1 ⟩",
             "1.424",
-        ] as Row
+        ] as Row<JiSymbol>
         expect(actual).toEqual(expected)
     })
 })
