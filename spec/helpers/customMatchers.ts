@@ -41,12 +41,12 @@ const testIsCloseTo = <T extends number>(actual: T, expected: T, precision?: Int
         assert(
             !isClose,
             message ||
-            `expected ${JSON.stringify(actual)} not to be close to ${JSON.stringify(expected)}${precisionMessage(precision)}`,
+            `Expected '${JSON.stringify(actual)}' not to be close to '${JSON.stringify(expected)}${precisionMessage(precision)}'.`,
         )
     } else {
         assert(
             isClose,
-            message || `expected ${JSON.stringify(actual)} to be close to ${JSON.stringify(expected)}${precisionMessage(precision)}`,
+            message || `Expected '${JSON.stringify(actual)}' to be close to '${JSON.stringify(expected)}${precisionMessage(precision)}'.`,
         )
     }
 }
@@ -75,7 +75,7 @@ const eachExpectedElementDeepEqualsSomeActualElement = <T>(expectedElements: T[]
             actual.some(actualElement => {
                 return deepEquals(actualElement, expectedElement)
             }),
-            message || `This expected element was not found: ${JSON.stringify(expectedElement)}`,
+            message || `This expected element was not found: '${JSON.stringify(expectedElement)}'.`,
         )
     })
 }
@@ -103,7 +103,7 @@ const customMatchers: CustomMatcherFactories = {
             doAssertions((): void => {
                 assert(
                     actual.length === expected.length,
-                    message || `Expected actual's ${actual.length} length to be ${expected.length}`,
+                    message || `Expected actual's length to be ${expected.length}. It was ${actual.length} instead.`,
                 )
 
                 arraysAreCloseUpThroughExpected(expected, actual, precision, negate, message)
@@ -117,7 +117,7 @@ const customMatchers: CustomMatcherFactories = {
     }),
     // depth 1: any order, thenceforth: enforced order (deep equal)
     toBeArrayWithDeepEqualContents: (util: MatchersUtil, customEqualityTesters: readonly CustomEqualityTester[]): CustomMatcher => ({
-        compare: <T extends number>(actual: T[], expected: T[], message?: string): CustomMatcherResult =>
+        compare: <T>(actual: T[], expected: T[], message?: string): CustomMatcherResult =>
             doAssertions((): void => {
                 assert(actual.length === expected.length, `Arrays did not have the same length, so there is no way they could have the same members.`)
                 eachExpectedElementDeepEqualsSomeActualElement(expected, actual, message)
@@ -125,7 +125,7 @@ const customMatchers: CustomMatcherFactories = {
     }),
     // depth 1: any order, depth 2: any order, thenceforth: enforced order (deep equal)
     toBeSameCombinationsAs: (util: MatchersUtil, customEqualityTesters: readonly CustomEqualityTester[]): CustomMatcher => ({
-        compare: <T extends number>(actual: T[][], expected: T[][], message?: string): CustomMatcherResult =>
+        compare: <T>(actual: T[][], expected: T[][], message?: string): CustomMatcherResult =>
             doAssertions((): void => {
                 assert(actual.length === expected.length, `Arrays did not have the same length, so there is no way they could have the same members.`)
                 eachExpectedElementHasSameContentsAsSomeActualElement(expected, actual, message)
@@ -133,7 +133,7 @@ const customMatchers: CustomMatcherFactories = {
     }),
     // depth 1: any order, depth 2: enforced order, depth 3: any order, thenceforth: enforced order (deep equal)
     toBeSameDistributionsAs: (util: MatchersUtil, customEqualityTesters: readonly CustomEqualityTester[]): CustomMatcher => ({
-        compare: <T extends number>(actual: T[][][], expected: T[][][], message?: string): CustomMatcherResult =>
+        compare: <T>(actual: T[][][], expected: T[][][], message?: string): CustomMatcherResult =>
             doAssertions((): void => {
                 assert(actual.length === expected.length, `Arrays did not have the same length, so there is no way they could have the same members.`)
                 expected.forEach((expectedElement: T[][]) => {
@@ -143,21 +143,21 @@ const customMatchers: CustomMatcherFactories = {
                                 return arraysHaveSameContents(actualElementElement, expectedElement[ index ])
                             })
                         }),
-                        message || `This expected element was not found: ${JSON.stringify(expectedElement)}`,
+                        message || `This expected element was not found: '${JSON.stringify(expectedElement)}'`,
                     )
                 })
             }),
     }),
     // same as toBeArrayWithDeepEqualContents, but without the length match
     toBeArrayIncludingDeepEqual: (util: MatchersUtil, customEqualityTesters: readonly CustomEqualityTester[]): CustomMatcher => ({
-        compare: <T extends number>(actual: T[], expected: T[], message?: string): CustomMatcherResult =>
+        compare: <T>(actual: T[], expected: T[], message?: string): CustomMatcherResult =>
             doAssertions((): void => {
                 eachExpectedElementDeepEqualsSomeActualElement(expected, actual, message)
             }),
     }),
     // same as toBeSameCombinationsAs, but without the length match
     toBeArrayIncludingCombinations: (util: MatchersUtil, customEqualityTesters: readonly CustomEqualityTester[]): CustomMatcher => ({
-        compare: <T extends number>(actual: T[][], expected: T[][], message?: string): CustomMatcherResult =>
+        compare: <T>(actual: T[][], expected: T[][], message?: string): CustomMatcherResult =>
             doAssertions((): void => {
                 eachExpectedElementHasSameContentsAsSomeActualElement(expected, actual, message)
             }),

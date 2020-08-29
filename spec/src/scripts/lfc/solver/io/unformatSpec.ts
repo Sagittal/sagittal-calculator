@@ -20,6 +20,6 @@ describe("unformatParameters", () => {
     }
 ]
 ` as IO
-        expect(actual).toEqual(expected) // TODO: do we need a "toEqualTyped" ?
+        expect(actual).toEqual(expected)
     })
 })
