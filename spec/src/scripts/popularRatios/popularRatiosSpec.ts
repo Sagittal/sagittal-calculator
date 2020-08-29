@@ -1,5 +1,5 @@
 import { Max, Ranked } from "../../../../src/general"
-import { N2D3P9 } from "../../../../src/sagittal/n2d3p9"
+import { N2D3P9 } from "../../../../src/sagittal/commaEvaluation/n2d3p9"
 import { computePopularRatios } from "../../../../src/scripts/popularRatios/popularRatios"
 import { PopularRatio } from "../../../../src/scripts/popularRatios/types"
 

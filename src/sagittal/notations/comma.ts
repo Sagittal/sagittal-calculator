@@ -11,9 +11,8 @@ import {
     Prime,
     Sopfr,
 } from "../../general"
-import { computeApotomeSlope } from "../apotomeSlope"
+import { computeApotomeSlope, computeN2D3P9, N2D3P9 } from "../commaEvaluation"
 import { computeCommaName } from "../commaSizeName"
-import { computeN2D3P9, N2D3P9 } from "../n2d3p9"
 import { Comma } from "../types"
 
 const analyzeComma = (monzo: Monzo): Comma => {

@@ -1,7 +1,5 @@
 import { Monzo, Name, Pitch, Prime, Ratio, Sopfr } from "../general"
-import { N2D3P9 } from "./n2d3p9"
-
-type ApotomeSlope = number & { _ApotomeSlopeBrand: "ApotomeSlope" }
+import { ApotomeSlope, N2D3P9 } from "./commaEvaluation"
 
 interface Comma extends Pitch {
     apotomeSlope: ApotomeSlope,
@@ -14,6 +12,5 @@ interface Comma extends Pitch {
 }
 
 export {
-    ApotomeSlope,
     Comma,
 }

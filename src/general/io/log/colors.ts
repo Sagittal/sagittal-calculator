@@ -1,5 +1,5 @@
-import { LogTarget } from "./types"
 import { ColorMethod } from "../types"
+import { LogTarget } from "./types"
 
 const targetColors: Record<LogTarget, ColorMethod> = {
     [ LogTarget.ALL ]: "green",

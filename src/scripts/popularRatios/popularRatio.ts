@@ -4,8 +4,8 @@ import {
     computeSmileyFromAscii,
     formatN2D3P9,
     getJiSymbol,
-    N2D3P9,
     JI_SYMBOL_SUBSETS,
+    N2D3P9,
 } from "../../sagittal"
 import { PopularRatio } from "./types"
 

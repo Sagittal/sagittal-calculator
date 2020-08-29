@@ -1,7 +1,6 @@
 import { Cents, Id, Monzo, Name, Prime, Ratio, Sopfr } from "../../general"
+import { ApotomeSlope, N2D3P9 } from "../commaEvaluation"
 import { APOTOME } from "../constants"
-import { N2D3P9 } from "../n2d3p9"
-import { ApotomeSlope } from "../types"
 import { SagittalComma } from "./types"
 
 const SAGITTAL_COMMAS: SagittalComma[] = [

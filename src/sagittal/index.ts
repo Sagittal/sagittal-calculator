@@ -1,4 +1,10 @@
-import { computeN2D3P9, computePrimeExponentExtremasGivenMaxN2D3P9, formatN2D3P9, N2D3P9 } from "./n2d3p9"
+import {
+    ApotomeSlope,
+    computeN2D3P9,
+    computePrimeExponentExtremasGivenMaxN2D3P9,
+    formatN2D3P9,
+    N2D3P9,
+} from "./commaEvaluation"
 import {
     analyzeComma,
     Bound,
@@ -18,6 +24,7 @@ import {
     getSagittalComma,
     JiSymbol,
     JI_SYMBOLS,
+    JI_SYMBOL_SUBSETS,
     Level,
     LEVELS,
     LEVELS_BOUNDS,
@@ -28,12 +35,11 @@ import {
     Mina,
     SagittalComma,
     SymbolLongAscii,
-    JI_SYMBOL_SUBSETS,
     Tina,
     TINA,
     unicodeFromAscii,
 } from "./notations"
-import { ApotomeSlope, Comma } from "./types"
+import { Comma } from "./types"
 
 export {
     BOUNDS,
