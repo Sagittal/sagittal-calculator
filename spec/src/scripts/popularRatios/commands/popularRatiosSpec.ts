@@ -6,7 +6,7 @@ describe("popular-ratios", () => {
     it("gives you the list of the most popular ratios, according to N2D3P9", () => {
         onlyRunInCi()
 
-        const command = "npm run popular-ratios -- -m 136" as IO
+        const command = "npm run popular-ratios -- -m 136 --no-color --no-write" as IO
 
         const actual = runCommandAndGetConsoleOutput(command)
 
@@ -158,7 +158,7 @@ describe("popular-ratios", () => {
     it("works for a different max N2D3P9", () => {
         onlyRunInCi()
 
-        const command = "npm run popular-ratios -- -m 10" as IO
+        const command = "npm run popular-ratios -- -m 10 --no-color --no-write" as IO
 
         const actual = runCommandAndGetConsoleOutput(command)
 

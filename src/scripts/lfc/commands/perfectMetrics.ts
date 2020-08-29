@@ -8,7 +8,7 @@ import { formatBestMetrics } from "../solver"
 import { ParameterValue } from "../sumOfSquares"
 import { applySharedLfcCommandSetup, load } from "./shared"
 
-program.option("-t, --no-time", "no time")
+program.option("-x, --no-time", "no time")
 
 const defaultLogTargets = [
     LogTarget.PERFECT,

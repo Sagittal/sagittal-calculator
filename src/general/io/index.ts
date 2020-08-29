@@ -1,19 +1,10 @@
-import { FORMATATIONAL_PRECISION, NEWLINE, SPACE, SUPERSCRIPT_NUMS } from "./constants"
+import { parseCommands } from "./command"
+import { ANY_MONZO_CHARS, FORMATATIONAL_PRECISION, NEWLINE, SPACE, SUPERSCRIPT_NUMS } from "./constants"
 import { formatMonzo } from "./formatMonzo"
 import { formatNumber } from "./formatNumber"
 import { formatRatio } from "./formatRatio"
 import { computeHeaderRowsFromColumnTitleColumns } from "./headerRowsFromColumnTitleColumns"
-import {
-    clearLogFiles,
-    logSettings,
-    LogTarget,
-    logTargets,
-    maybeClearLogFiles,
-    saveLog,
-    setLogTargets,
-    setupToMaybeClearLogFiles,
-} from "./log"
-import { computeMonzoFromCommand } from "./monzoFromCommand"
+import { clearLogFiles, logSettings, LogTarget, logTargets, saveLog, setLogTargets } from "./log"
 import { parseMonzo } from "./parseMonzo"
 import { parseRatio } from "./parseRatio"
 import { removeColor } from "./removeColor"
@@ -38,7 +29,6 @@ export {
     Formatted,
     Px,
     HexColor,
-    computeMonzoFromCommand,
     Filename,
     IO,
     removeColor,
@@ -54,6 +44,6 @@ export {
     clearLogFiles,
     logSettings,
     setLogTargets,
-    maybeClearLogFiles,
-    setupToMaybeClearLogFiles,
+    parseCommands,
+    ANY_MONZO_CHARS,
 }

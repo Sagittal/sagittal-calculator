@@ -2,26 +2,13 @@
 //  so we don't get those annoying "undefined" console logs
 import "colors"
 import { program } from "commander"
-import {
-    Filename,
-    LogTarget,
-    maybeClearLogFiles,
-    saveLog,
-    setLogTargets,
-    setupToMaybeClearLogFiles,
-} from "../../../general"
+import { Filename, LogTarget, parseCommands, saveLog } from "../../../general"
 import { BOUNDS } from "../../../sagittal"
 import { analyzeBound } from "../bound"
 import { computeFormattedBound } from "../io"
 import { computeHistories } from "../plot"
 
-setLogTargets(LogTarget.BOUND)
-
-setupToMaybeClearLogFiles()
-
-program.parse(process.argv)
-
-maybeClearLogFiles("analyzeBounds" as Filename)
+parseCommands("analyzeBounds" as Filename, [LogTarget.BOUND])
 
 const boundId = program.args[ 0 ]
 

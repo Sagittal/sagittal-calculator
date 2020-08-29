@@ -8,7 +8,7 @@ import { applySharedLfcCommandSetup } from "./shared"
 // TODO: probably I should review the commit where I temporarily ripped out all of the async stuff
 //  and make a commit where I make it possible to switch between them
 
-program.option("-t, --no-time", "no time")
+program.option("-x, --no-time", "no time")
 
 const defaultLogTargets = [
     LogTarget.SEARCH,

@@ -1,25 +1,9 @@
 import "colors"
-import { program } from "commander"
-import {
-    concat,
-    Filename,
-    IO,
-    LogTarget,
-    maybeClearLogFiles,
-    saveLog,
-    setLogTargets,
-    setupToMaybeClearLogFiles,
-} from "../../../general"
+import { concat, Filename, IO, LogTarget, parseCommands, saveLog } from "../../../general"
 import { analyzeBounds } from "../bounds"
 import { computeBoundsAnalysisTable, formatLevelAnalyses, formatRankAnalyses, visualizeBounds } from "../io"
 
-setLogTargets([LogTarget.BOUNDS_TERMINAL, LogTarget.BOUNDS_IMAGE].join(","))
-
-setupToMaybeClearLogFiles()
-
-program.parse(process.argv)
-
-maybeClearLogFiles("analyzeBounds" as Filename)
+parseCommands("analyzeBounds" as Filename, [LogTarget.BOUNDS_TERMINAL, LogTarget.BOUNDS_IMAGE])
 
 const boundsAnalysis = analyzeBounds()
 

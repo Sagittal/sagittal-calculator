@@ -1,6 +1,6 @@
 import { Id, Row } from "../../../../../src/general"
 import { JiSymbol } from "../../../../../src/sagittal/notations/ji"
-import { computeNotatingSymbolRow } from "../../../../../src/scripts/notatingSymbols/io"
+import { computeNotatingSymbolRow } from "../../../../../src/scripts/analyzeComma/io"
 
 describe("computeNotatingSymbolRow", () => {
     it("given a JI symbol ID, return formatted data about it", () => {

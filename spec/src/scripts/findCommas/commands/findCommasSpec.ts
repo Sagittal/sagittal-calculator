@@ -6,7 +6,7 @@ describe("find-commas", () => {
     it("finds commas, given the finding options", () => {
         onlyRunInCi()
 
-        const command = "npm run find-commas -- -l 30 -u 30.5 -3 2 -# 3 -p 37 -+ 58 -a 3" as IO
+        const command = "npm run find-commas -- -l 30 -u 30.5 -3 2 -# 3 -p 37 -+ 58 -a 3 --no-color --no-write" as IO
 
         const actual = runCommandAndGetConsoleOutput(command)
 
@@ -21,7 +21,7 @@ describe("find-commas", () => {
     it("can find commas with specific prime content (it includes inverses)", () => {
         onlyRunInCi()
 
-        const command = "npm run find-commas -- -f [0,0,0,0,0,-1,0,1]" as IO
+        const command = "npm run find-commas -- -f [0,0,0,0,0,-1,0,1] --no-color --no-write" as IO
 
         const actual = runCommandAndGetConsoleOutput(command)
 
@@ -39,7 +39,7 @@ describe("find-commas", () => {
     it("can sort the resulting list", () => {
         onlyRunInCi()
 
-        const command = "npm run find-commas -- -f [0,0,0,0,0,-1,0,1] -s apotomeSlope" as IO
+        const command = "npm run find-commas -- -f [0,0,0,0,0,-1,0,1] -s apotomeSlope --no-color --no-write" as IO
 
         const actual = runCommandAndGetConsoleOutput(command)
 

@@ -5,6 +5,6 @@ describe("analyze-bounds", () => {
     it("runs without error", () => {
         onlyRunInCi()
 
-        cp.execSync("npm run analyze-bounds -- --do-not-update-files")
+        cp.execSync("npm run analyze-bounds -- --no-color --no-write")
     })
 })

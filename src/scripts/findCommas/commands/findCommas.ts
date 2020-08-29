@@ -1,20 +1,12 @@
 import "colors"
 import { program } from "commander"
-import {
-    Filename,
-    Formatted,
-    LogTarget,
-    maybeClearLogFiles,
-    Monzo,
-    parseMonzo,
-    saveLog,
-    setupToMaybeClearLogFiles,
-} from "../../../general"
+import { Filename, Formatted, LogTarget, Monzo, parseCommands, parseMonzo, saveLog } from "../../../general"
 import { MAX_SINGLE_SHAFT_CENTS } from "../../../sagittal"
 import { computeCommas } from "../commas"
 import { computeFindCommasTable } from "../io"
 
-setupToMaybeClearLogFiles()
+// TODO: I probably should have a registry of CLI option char flags to prevent that collision from happening again!
+//  between -l for min-cents and -l for log-targets
 
 program
     .option("-l, --min-cents <minCents>", "min cents", parseFloat)
@@ -30,9 +22,8 @@ program
         (monzoText: string) => parseMonzo(monzoText as Formatted<Monzo>),
     )
     .option("-s, --sort-by <sortBy>", "sort by")
-    .parse(process.argv)
 
-maybeClearLogFiles("findCommas" as Filename)
+parseCommands("findCommas" as Filename)
 
 const minCents = program.minCents || 0
 const maxCents = program.maxCents || MAX_SINGLE_SHAFT_CENTS

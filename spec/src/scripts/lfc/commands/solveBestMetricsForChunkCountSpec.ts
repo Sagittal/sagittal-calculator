@@ -2,6 +2,7 @@ import { IO } from "../../../../../src/general"
 import { runCommandAndGetConsoleOutput } from "../../../../helpers/src/scripts/runCommand"
 
 describe("solve-best-metrics-for-chunk-count", () => {
+    // TODO: well there's no reason this should still be xit'd, right?
     xit("finds the best metric for the given chunk count", () => {
         const command = "npm run solve-best-metrics-for-chunk-count 1 -- --no-color --no-time --no-write" as IO
 
