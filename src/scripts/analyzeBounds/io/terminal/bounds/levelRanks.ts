@@ -1,6 +1,6 @@
-import { formatInteger, Formatted, Rank } from "../../../../general"
-import { LEVELS } from "../../../../sagittal"
-import { AnalyzedEvent, AnalyzedHistory } from "../../types"
+import { formatInteger, Formatted, Rank } from "../../../../../general"
+import { LEVELS } from "../../../../../sagittal"
+import { AnalyzedEvent, AnalyzedHistory } from "../../../types"
 
 const extractLevelRanks = (analyzedHistory: AnalyzedHistory): Array<Formatted<Rank<AnalyzedEvent>>> =>
     LEVELS.map(level => {

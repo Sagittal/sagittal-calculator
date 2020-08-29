@@ -1,19 +1,9 @@
-import { computeBoundRow } from "./boundRow"
-import { computeBoundsAnalysisTable } from "./boundsTable"
-import { computeFormattedBound } from "./formattedBound"
-import { computeBoundsAnalysisHeaderRows } from "./headerRows"
-import { formatLevelAnalyses } from "./levelAnalyses"
-import { formatMina } from "./mina"
-import { formatRankAnalyses } from "./rankAnalyses"
-
-// TODO: perhaps this folder should be broken down by the different analyses it does: bound, rank, level
+import { computeFormattedBound } from "./bound"
+import { formatMina } from "./bounds"
+import { computeBoundsTables } from "./tables"
 
 export {
-    computeBoundsAnalysisTable,
+    computeBoundsTables,
     computeFormattedBound,
-    computeBoundsAnalysisHeaderRows,
-    formatLevelAnalyses,
-    formatRankAnalyses,
     formatMina,
-    computeBoundRow,
 }

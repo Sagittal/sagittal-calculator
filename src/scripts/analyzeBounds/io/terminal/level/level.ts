@@ -1,5 +1,5 @@
-import { Formatted } from "../../../../general"
-import { Level } from "../../../../sagittal"
+import { Formatted } from "../../../../../general"
+import { Level } from "../../../../../sagittal"
 
 const formatLevel = (level: Level): Formatted<Level> => {
     const almostFormattedLevel = level.replace(/(\_\w)/g, match => ` ${match[ 1 ].toUpperCase()}`)

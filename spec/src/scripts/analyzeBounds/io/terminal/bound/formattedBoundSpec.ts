@@ -1,8 +1,8 @@
-import { Cents, Id, Integer, Rank } from "../../../../../../src/general"
-import { Bound } from "../../../../../../src/sagittal/notations/ji"
-import { computeFormattedBound } from "../../../../../../src/scripts/analyzeBounds/io"
-import { AnalyzedBound, AnalyzedEvent } from "../../../../../../src/scripts/analyzeBounds/types"
-import { boundFixture } from "../../../../../helpers/src/scripts/analyzeBounds/fixtures"
+import { Cents, Id, Integer, Rank } from "../../../../../../../src/general"
+import { Bound } from "../../../../../../../src/sagittal/notations/ji"
+import { computeFormattedBound } from "../../../../../../../src/scripts/analyzeBounds/io"
+import { AnalyzedBound, AnalyzedEvent } from "../../../../../../../src/scripts/analyzeBounds/types"
+import { boundFixture } from "../../../../../../helpers/src/scripts/analyzeBounds/fixtures"
 
 describe("computeFormattedBound", () => {
     it("returns a string which is a multi-line, properly indented rendition of the analyzed bound, as well as identifying information for the bound", () => {

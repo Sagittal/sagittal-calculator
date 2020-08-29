@@ -49,7 +49,7 @@ interface AnalyzedHistory {
 
 type ConsolidatedHistories = Partial<Record<Level, ConsolidatedEvent[]>>
 
-interface UpdateConsolidatedEventParameters {
+interface UpdateConsolidatedEventOptions {
     analyzedEvent: AnalyzedEvent
     analyzedHistory: AnalyzedHistory,
     bestPossibleHistory: AnalyzedHistory,
@@ -76,6 +76,6 @@ export {
     ConsolidatedHistories,
     AnalyzedEvent,
     EventType,
-    UpdateConsolidatedEventParameters,
+    UpdateConsolidatedEventOptions,
     ConsolidatedEvent,
 }

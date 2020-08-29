@@ -1,9 +1,9 @@
-import { Level, LEVELS } from "../../../../../../src/sagittal/notations/ji"
-import { formatLevelAnalyses } from "../../../../../../src/scripts/analyzeBounds/io"
+import { Level, LEVELS } from "../../../../../../../src/sagittal/notations/ji"
+import { formatLevelAnalyses } from "../../../../../../../src/scripts/analyzeBounds/io/terminal/level"
 import {
     levelsBestCumulativeHistoryRanks,
     levelsBestHistoryRanks,
-} from "../../../../../../src/scripts/analyzeBounds/levels"
+} from "../../../../../../../src/scripts/analyzeBounds/levels"
 
 describe("formatLevelAnalyses", () => {
     beforeEach(() => {

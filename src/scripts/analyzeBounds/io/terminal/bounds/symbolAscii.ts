@@ -1,5 +1,7 @@
-import { Formatted } from "../../../../general"
-import { SymbolLongAscii } from "../../../../sagittal"
+import { Formatted } from "../../../../../general"
+import { SymbolLongAscii } from "../../../../../sagittal"
+
+// TODO: does the sagittal/ module need an io/ folder with stuff like this?
 
 const formatSymbolAscii = (symbolAscii: SymbolLongAscii): Formatted<SymbolLongAscii> => {
     const shaftIndex = symbolAscii.indexOf("|")

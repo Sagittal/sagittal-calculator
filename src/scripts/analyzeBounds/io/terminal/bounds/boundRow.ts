@@ -1,14 +1,14 @@
-import { formatInteger, formatNumber, Row } from "../../../../general"
-import { AnalyzedBound } from "../../types"
+import { formatInteger, formatNumber, Row } from "../../../../../general"
+import { AnalyzedBound } from "../../../types"
 import { alignFormattedNumber } from "./alignFormattedNumber"
-import { extractBoundIdentifiers } from "./boundIdentifiers"
+import { extractBoundIdentifiers } from "../boundIdentifiers"
 import { extractLevelDistances } from "./levelDistances"
 import { extractLevelRanks } from "./levelRanks"
 import { formatMina } from "./mina"
 import { formatSymbolAscii } from "./symbolAscii"
-import { FormatBoundParameters } from "./types"
+import { ComputeBoundRowOptions } from "./types"
 
-const computeBoundRow = (analyzedBound: AnalyzedBound, { bound }: FormatBoundParameters): Row<AnalyzedBound> => {
+const computeBoundRow = (analyzedBound: AnalyzedBound, { bound }: ComputeBoundRowOptions): Row<AnalyzedBound> => {
     let boundRow: Row<AnalyzedBound>
     const boundIdentifiers = extractBoundIdentifiers(bound)
 

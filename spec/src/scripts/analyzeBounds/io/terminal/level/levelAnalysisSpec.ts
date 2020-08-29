@@ -1,5 +1,5 @@
-import { Level } from "../../../../../../src/sagittal/notations/ji"
-import { formatLevelAnalysis } from "../../../../../../src/scripts/analyzeBounds/io/terminal/levelAnalysis"
+import { Level } from "../../../../../../../src/sagittal/notations/ji"
+import { formatLevelAnalysis } from "../../../../../../../src/scripts/analyzeBounds/io/terminal/level/levelAnalysis"
 
 describe("formatLevelAnalysis", () => {
     it("gives an explanation per level of what bounds have what ranks there -- both purely within the level, and though all levels up to that point", () => {

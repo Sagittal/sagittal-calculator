@@ -20,7 +20,7 @@ const computeConsolidatedHistories = (
             const matchingConsolidatedEvent: Maybe<ConsolidatedEvent> = consolidatedEvents && consolidatedEvents
                 .find(existingEvent => existingEvent.name === analyzedEvent.name)
 
-            const updateConsolidatedEventParameters = {
+            const UpdateConsolidatedEventOptions = {
                 nextAnalyzedEvent,
                 analyzedHistory,
                 analyzedEvent,
@@ -28,11 +28,11 @@ const computeConsolidatedHistories = (
             }
 
             if (matchingConsolidatedEvent) {
-                updateConsolidatedEvent(matchingConsolidatedEvent, updateConsolidatedEventParameters)
+                updateConsolidatedEvent(matchingConsolidatedEvent, UpdateConsolidatedEventOptions)
             } else {
                 const newConsolidatedEvent: ConsolidatedEvent = computeInitialConsolidatedEvent(analyzedEvent)
 
-                updateConsolidatedEvent(newConsolidatedEvent, updateConsolidatedEventParameters)
+                updateConsolidatedEvent(newConsolidatedEvent, UpdateConsolidatedEventOptions)
 
                 consolidatedEvents && consolidatedEvents.push(newConsolidatedEvent)
             }

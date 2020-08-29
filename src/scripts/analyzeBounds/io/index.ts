@@ -1,19 +1,8 @@
-import { visualizeBounds } from "./image"
-import {
-    computeBoundRow,
-    computeBoundsAnalysisHeaderRows,
-    computeBoundsAnalysisTable,
-    computeFormattedBound,
-    formatLevelAnalyses,
-    formatRankAnalyses,
-} from "./terminal"
+import { computeBoundsImage } from "./image"
+import { computeBoundsTables, computeFormattedBound } from "./terminal"
 
 export {
+    computeBoundsTables,
+    computeBoundsImage,
     computeFormattedBound,
-    formatLevelAnalyses,
-    formatRankAnalyses,
-    visualizeBounds,
-    computeBoundRow,
-    computeBoundsAnalysisHeaderRows,
-    computeBoundsAnalysisTable,
 }

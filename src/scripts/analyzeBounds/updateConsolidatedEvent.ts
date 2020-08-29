@@ -1,9 +1,9 @@
 import { computeDoEventsContainEvent } from "./doEventsContainEvent"
-import { ConsolidatedEvent, UpdateConsolidatedEventParameters } from "./types"
+import { ConsolidatedEvent, UpdateConsolidatedEventOptions } from "./types"
 
 const updateConsolidatedEvent = (
     consolidatedEvent: ConsolidatedEvent,
-    { nextAnalyzedEvent, analyzedHistory, analyzedEvent, bestPossibleHistory }: UpdateConsolidatedEventParameters,
+    { nextAnalyzedEvent, analyzedHistory, analyzedEvent, bestPossibleHistory }: UpdateConsolidatedEventOptions,
 ) => {
     if (nextAnalyzedEvent && !consolidatedEvent.nextEvents.includes(nextAnalyzedEvent.name)) {
         consolidatedEvent.nextEvents.push(nextAnalyzedEvent.name)

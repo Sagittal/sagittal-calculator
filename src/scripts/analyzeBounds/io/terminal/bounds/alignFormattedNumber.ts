@@ -1,4 +1,4 @@
-import { Formatted } from "../../../../general"
+import { Formatted } from "../../../../../general"
 
 const alignFormattedNumber = (formattedNumber: Formatted<number>): Formatted<number> => {
     while (formattedNumber.length < 7) {

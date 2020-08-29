@@ -1,6 +1,6 @@
-import { IO, Maybe } from "../../../../general"
-import { Level, LEVELS } from "../../../../sagittal"
-import { levelsBestCumulativeHistoryRanks, levelsBestHistoryRanks } from "../../levels"
+import { IO, Maybe } from "../../../../../general"
+import { Level, LEVELS } from "../../../../../sagittal"
+import { levelsBestCumulativeHistoryRanks, levelsBestHistoryRanks } from "../../../levels"
 import { formatLevelAnalysis } from "./levelAnalysis"
 
 const formatLevelAnalyses = (): IO => {

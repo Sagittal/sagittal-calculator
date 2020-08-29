@@ -1,5 +1,5 @@
-import { visualizeBounds } from "./bounds"
+import { computeBoundsImage } from "./bounds"
 
 export {
-    visualizeBounds,
+    computeBoundsImage,
 }

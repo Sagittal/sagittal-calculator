@@ -1,7 +1,7 @@
-import { addTexts, ColorMethod, formatTableForTerminal, IO, Table } from "../../../../general"
-import { BOUNDS } from "../../../../sagittal"
-import { AnalyzedBound } from "../../types"
-import { BOUND_COLORS } from "./boundColors"
+import { addTexts, ColorMethod, formatTableForTerminal, IO, Table } from "../../../../../general"
+import { BOUNDS } from "../../../../../sagittal"
+import { AnalyzedBound } from "../../../types"
+import { BOUND_COLORS } from "../boundColors"
 import { computeBoundRow } from "./boundRow"
 import { computeBoundsAnalysisHeaderRows } from "./headerRows"
 

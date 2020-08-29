@@ -1,6 +1,6 @@
-import { formatNumber } from "../../../../general"
-import { LEVELS } from "../../../../sagittal"
-import { AnalyzedHistory } from "../../types"
+import { formatNumber } from "../../../../../general"
+import { LEVELS } from "../../../../../sagittal"
+import { AnalyzedHistory } from "../../../types"
 import { alignFormattedNumber } from "./alignFormattedNumber"
 
 const extractLevelDistances = (analyzedHistory: AnalyzedHistory, { ina = false }: { ina?: boolean } = {}) => {

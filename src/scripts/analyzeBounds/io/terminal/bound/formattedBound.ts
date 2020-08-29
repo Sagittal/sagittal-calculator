@@ -1,11 +1,11 @@
-import { addTexts, Formatted, NEWLINE, stringify } from "../../../../general"
-import { AnalyzedBound } from "../../types"
-import { extractBoundIdentifiers } from "./boundIdentifiers"
-import { FormatBoundParameters } from "./types"
+import { addTexts, Formatted, NEWLINE, stringify } from "../../../../../general"
+import { AnalyzedBound } from "../../../types"
+import { extractBoundIdentifiers } from "../boundIdentifiers"
+import { FormatBoundOptions } from "./types"
 
 const computeFormattedBound = (
     analyzedBound: AnalyzedBound,
-    { bound }: FormatBoundParameters,
+    { bound }: FormatBoundOptions,
 ): Formatted<AnalyzedBound> => {
     const boundIdentifiers = extractBoundIdentifiers(bound)
 

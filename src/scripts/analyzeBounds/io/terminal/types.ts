@@ -26,10 +26,6 @@ interface BoundIdentifiers {
     cents: Cents,
 }
 
-interface FormatBoundParameters {
-    bound: Bound
-}
-
 type JiSymbolWithPrimaryComma = Omit<JiSymbol, "primaryCommaId"> & {
     primaryComma: SagittalComma
 }
@@ -37,8 +33,6 @@ type JiSymbolWithPrimaryComma = Omit<JiSymbol, "primaryCommaId"> & {
 export {
     BoundedJiSymbol,
     JiSymbolWithPrimaryComma,
-    BoundedJiSymbolWithPrimaryComma,
     BoundedJiSymbolsWithPrimaryCommas,
     BoundIdentifiers,
-    FormatBoundParameters,
 }

@@ -1,5 +1,5 @@
-import { Column, computeHeaderRowsFromColumnTitleColumns, Row } from "../../../../general"
-import { AnalyzedBound } from "../../types"
+import { Column, computeHeaderRowsFromColumnTitleColumns, Row } from "../../../../../general"
+import { AnalyzedBound } from "../../../types"
 
 const BOUNDS_ANALYSIS_COLUMN_TITLE_COLUMNS = [
     "bound id",

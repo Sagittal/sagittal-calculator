@@ -7,8 +7,8 @@ import {
     LEVEL_BOUNDED_SYMBOLS,
     SymbolLongAscii,
 } from "../../../../sagittal"
-import { computeJiSymbolWithPrimaryComma } from "./jiSymbolWithPrimaryComma"
 import { BoundedJiSymbol, BoundedJiSymbolsWithPrimaryCommas, BoundIdentifiers } from "./types"
+import { computeJiSymbolWithPrimaryComma } from "./jiSymbolWithPrimaryComma"
 
 const extractBoundIdentifiers = (bound: Bound): BoundIdentifiers => {
     const { cents, id } = bound

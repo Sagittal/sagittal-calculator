@@ -1,5 +1,5 @@
-import { IO } from "../../../../general"
-import { rankCounts } from "../../ranks"
+import { IO } from "../../../../../general"
+import { rankCounts } from "../../../ranks"
 import { formatRankAnalysis } from "./rankAnalysis"
 
 const formatRankAnalyses = (): IO => {

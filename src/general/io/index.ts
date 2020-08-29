@@ -1,4 +1,4 @@
-import { parseCommands, CommandFlag } from "./command"
+import { CommandFlag, parseCommands } from "./command"
 import { ANY_MONZO_CHARS, FORMATATIONAL_PRECISION, NEWLINE, SPACE, SUPERSCRIPT_NUMS } from "./constants"
 import { formatInteger } from "./formatInteger"
 import { formatMonzo } from "./formatMonzo"

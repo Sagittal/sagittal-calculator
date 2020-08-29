@@ -1,8 +1,8 @@
-import { IO, Maybe } from "../../../../general"
-import { Level } from "../../../../sagittal"
-import { BOUND_COLORS } from "./boundColors"
+import { IO, Maybe } from "../../../../../general"
+import { Level } from "../../../../../sagittal"
+import { BOUND_COLORS } from "../boundColors"
+import { FORMATTED_RANK_NAMES } from "../rankNames"
 import { formatLevel } from "./level"
-import { FORMATTED_RANK_NAMES } from "./rank"
 
 const formatLevelAnalysis = (
     level: Level,
