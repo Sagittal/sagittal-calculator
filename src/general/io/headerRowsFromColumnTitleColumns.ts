@@ -1,4 +1,4 @@
-import { Column, IO, max, Row } from "../../general"
+import { BLANK, Column, IO, max, Row } from "../../general"
 
 const computeHeaderRowsFromColumnTitleColumns = <T>(
     columnTitleColumns: Array<Column<T>>,
@@ -11,7 +11,7 @@ const computeHeaderRowsFromColumnTitleColumns = <T>(
 
     columnTitleColumns.forEach(columnTitleColumn => {
         while (columnTitleColumn.length < maxColumnTitleHeaderRowCount) {
-            columnTitleColumn.unshift("" as IO)
+            columnTitleColumn.unshift(BLANK)
         }
 
         columnTitleColumn.forEach((columnTitleCell: IO, index) => {

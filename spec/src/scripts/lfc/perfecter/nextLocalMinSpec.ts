@@ -1,4 +1,4 @@
-import { Index, Integer, IO, Unit } from "../../../../../src/general"
+import { BLANK, Index, Integer, IO, Unit } from "../../../../../src/general"
 import { Combination } from "../../../../../src/general/math"
 import { MetricName, Scope, SumOfSquares } from "../../../../../src/scripts/lfc/bestMetric"
 import { DynamicParameter, SamplePoint } from "../../../../../src/scripts/lfc/bestMetric/scopeToSamples"
@@ -40,7 +40,7 @@ describe("searchNextLocalMin", () => {
     const scope: Scope = [{}] as unknown[] as Scope
     const index = 7
     const metricTag = "" as MetricTag
-    const indentation = "" as IO
+    const indentation = BLANK
     const depth = 5 as Integer
     const nextLocalMinima = [{}, {}, {}, {}, {}, {}, {}, {}, {}] as LocalMin[]
     const onlyWinners = true

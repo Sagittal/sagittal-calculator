@@ -1,6 +1,6 @@
 import { isUndefined, Range } from "../code"
 import { Count } from "../types"
-import { NEWLINE } from "./constants"
+import { BLANK, NEWLINE } from "./constants"
 import { addTexts, length } from "./typedOperations"
 import {
     AlignTableOptions,
@@ -93,7 +93,7 @@ const formatTableForTerminal = (table: Table, options: AlignTableOptions = {}): 
 
                 return alignedRow + alignedRowCell + maybeDelimeter as IO
             },
-            "" as IO,
+            BLANK,
         )
 
         return maybeColor(rowText, rowIndex, colors)

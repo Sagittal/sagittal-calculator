@@ -1,4 +1,4 @@
-import { Index, IO, LogTarget, saveLog } from "../../../general"
+import { BLANK, Index, IO, LogTarget, saveLog } from "../../../general"
 import { LFC } from "../constants"
 import { checkSubmetricsForInvalidParameterCombinations } from "../sumOfSquares"
 import { Sample } from "./scopeToSamples"
@@ -9,7 +9,7 @@ const computeSumsOfSquaresAndMaybeUpdateBestMetric = async (
     samples: Sample[],
     options: ComputeSumsOfSquaresAndMaybeUpdateBestMetricOptions = {},
 ): Promise<SumsOfSquares> => {
-    const { indentation = "" as IO, onlyWinners = true, metricName = "" as MetricName } = options
+    const { indentation = BLANK, onlyWinners = true, metricName = "" as MetricName } = options
 
     const sumsOfSquares: SumsOfSquares = []
 

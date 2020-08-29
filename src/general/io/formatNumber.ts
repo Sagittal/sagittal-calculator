@@ -1,9 +1,9 @@
 import { round } from "../math"
-import { FORMATATIONAL_PRECISION } from "./constants"
+import { IO_PRECISION } from "./constants"
 import { Formatted } from "./types"
 
 const formatNumber = (number: number): Formatted<number> =>
-    round(number, FORMATATIONAL_PRECISION)
+    round(number, IO_PRECISION)
         .toPrecision(5)
         .replace(/\.(\d\d\d)0*$/, ".$1") as Formatted<number>
 

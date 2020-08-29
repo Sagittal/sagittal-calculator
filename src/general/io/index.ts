@@ -1,5 +1,5 @@
 import { CommandFlag, parseCommands } from "./command"
-import { ANY_MONZO_CHARS, FORMATATIONAL_PRECISION, NEWLINE, SPACE, SUPERSCRIPT_NUMS } from "./constants"
+import { ANY_MONZO_CHARS, BLANK, IO_PRECISION, NEWLINE, SPACE, SUPERSCRIPT_NUMS } from "./constants"
 import { formatInteger } from "./formatInteger"
 import { formatMonzo } from "./formatMonzo"
 import { formatNumber } from "./formatNumber"
@@ -26,7 +26,8 @@ export {
     formatTime,
     parseMonzo,
     parseRatio,
-    FORMATATIONAL_PRECISION,
+    IO_PRECISION,
+    BLANK,
     SUPERSCRIPT_NUMS,
     SPACE,
     Formatted,

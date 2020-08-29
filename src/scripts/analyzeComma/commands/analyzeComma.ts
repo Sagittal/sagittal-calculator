@@ -1,6 +1,8 @@
 import { program } from "commander"
 import {
-    ANY_MONZO_CHARS, CommandFlag,
+    ANY_MONZO_CHARS,
+    BLANK,
+    CommandFlag,
     computeMonzoFromRatio,
     Filename,
     formatTableForTerminal,
@@ -12,8 +14,8 @@ import {
     parseMonzo,
     parseRatio,
     Ratio,
-    Row,
-    saveLog, Table,
+    saveLog,
+    Table,
 } from "../../../general"
 import { analyzeComma, computeNotatingJiSymbolIds, JiSymbol } from "../../../sagittal"
 import { computeNotatingSymbolRow, formatComma, NOTATING_SYMBOLS_HEADER_ROW } from "../io"
@@ -24,12 +26,12 @@ program
     .option(
         `-${CommandFlag.MONZO}, --monzo <monzo>`,
         "monzo",
-        (monzoText: string) => parseMonzo(monzoText as Formatted<Monzo>)
+        (monzoText: string) => parseMonzo(monzoText as Formatted<Monzo>),
     )
     .option(
         `-${CommandFlag.RATIO}, --ratio <ratio>`,
         "ratio",
-        (ratioText: string) => parseRatio(ratioText as Formatted<Ratio>)
+        (ratioText: string) => parseRatio(ratioText as Formatted<Ratio>),
     )
 
 parseCommands("analyzeComma" as Filename)
@@ -73,8 +75,8 @@ notatingSymbolTable.unshift(NOTATING_SYMBOLS_HEADER_ROW)
 
 // TODO: this like findCommas should probably have an io/table.ts which allows for either terminal or forum output
 //  which would also take the stuff like a pre-header-row as we see in some of the others
-saveLog("" as IO, LogTarget.ALL, "notatingSymbols" as Filename)
+saveLog(BLANK, LogTarget.ALL, "notatingSymbols" as Filename)
 saveLog("   --- notating symbols ---" as IO, LogTarget.ALL, "notatingSymbols" as Filename)
-saveLog("" as IO, LogTarget.ALL, "notatingSymbols" as Filename) // TODO: EMPTY as IO constant
+saveLog(BLANK, LogTarget.ALL, "notatingSymbols" as Filename)
 
 saveLog(formatTableForTerminal(notatingSymbolTable), LogTarget.ALL, "notatingSymbols" as Filename)

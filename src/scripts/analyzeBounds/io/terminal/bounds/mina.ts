@@ -1,4 +1,4 @@
-import { FORMATATIONAL_PRECISION, Formatted, isUndefined, Maybe, round } from "../../../../../general"
+import { Formatted, IO_PRECISION, isUndefined, Maybe, round } from "../../../../../general"
 import { Mina } from "../../../../../sagittal"
 
 const formatMina = (mina: Maybe<Mina>): Formatted<Mina> => {
@@ -6,7 +6,7 @@ const formatMina = (mina: Maybe<Mina>): Formatted<Mina> => {
         return "       " as Formatted<Mina>
     }
 
-    let formattedMina = round(mina, FORMATATIONAL_PRECISION).toString()
+    let formattedMina = round(mina, IO_PRECISION).toString()
 
     let decimalPointIndex = formattedMina.indexOf(".")
 
