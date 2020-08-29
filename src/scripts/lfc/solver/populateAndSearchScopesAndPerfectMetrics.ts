@@ -1,4 +1,5 @@
-// TODO: I feel like the biggest issue now is that they may not still be as interwoven as possible:
+// A thought in case this ever comes up again:
+//  I feel like the biggest issue now is that they may not still be as interwoven as possible:
 //  Populating and searching, that is.
 //  I'm slightly concerned that once it gets to huge lists of scopes,
 //   We're going to get stuck on the populating step for too long.

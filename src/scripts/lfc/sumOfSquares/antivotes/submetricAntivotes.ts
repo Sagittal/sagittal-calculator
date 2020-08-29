@@ -7,7 +7,7 @@ import {
     log,
     Monzo,
     Power,
-    PRIMES,
+    PRIMES, stringify,
 } from "../../../../general"
 import { Antivotes, ParameterValue, Submetric } from "../types"
 import { secondaryParameterOverride } from "./secondaryParameter"
@@ -97,7 +97,7 @@ const computeSubmetricAntivotes = (
             }
 
             if (isNaN(primeExponentAntivotes)) {
-                throw new Error(`You got NaN! in submetricAntivotes ${fiveRoughNumberMonzo} ${JSON.stringify(submetric, undefined, 4)}`)
+                throw new Error(`You got NaN! in submetricAntivotes ${fiveRoughNumberMonzo} ${stringify(submetric, { multiline: true })}`)
             }
 
             return monzoAntivotes + primeExponentAntivotes as Antivotes

@@ -56,6 +56,7 @@ import {
     saveLog,
     setLogTargets,
     SPACE,
+    stringify,
     SUPERSCRIPT_NUMS,
     Table,
 } from "./io"
@@ -269,5 +270,6 @@ export {
     saveLog,
     parseCommands,
     now,
+    stringify,
     ANY_MONZO_CHARS,
 }

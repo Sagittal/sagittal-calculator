@@ -1,4 +1,4 @@
-import { addTexts, Formatted, NEWLINE } from "../../../../general"
+import { addTexts, Formatted, NEWLINE, stringify } from "../../../../general"
 import { AnalyzedBound } from "../../types"
 import { extractBoundIdentifiers } from "./boundIdentifiers"
 import { FormatBoundParameters } from "./types"
@@ -9,11 +9,9 @@ const computeFormattedBound = (
 ): Formatted<AnalyzedBound> => {
     const boundIdentifiers = extractBoundIdentifiers(bound)
 
-    const formattedBoundIdentifiers = JSON
-        .stringify(boundIdentifiers, undefined, 4)
+    const formattedBoundIdentifiers = stringify(boundIdentifiers, { multiline: true })
         .replace(/\\\\/g, "\\")
-    const formattedAnalyzedBound = JSON
-        .stringify(analyzedBound, undefined, 4)
+    const formattedAnalyzedBound = stringify(analyzedBound, { multiline: true })
         .replace(/\\\\/g, "\\")
 
     return addTexts(formattedBoundIdentifiers, NEWLINE, formattedAnalyzedBound) as Formatted<AnalyzedBound>

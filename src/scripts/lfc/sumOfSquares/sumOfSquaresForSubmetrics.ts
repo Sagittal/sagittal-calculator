@@ -8,6 +8,7 @@ import {
     Popularity,
     Ranked,
     saveLog,
+    stringify,
 } from "../../../general"
 import { SumOfSquares } from "../bestMetric"
 import { LFC } from "../constants"
@@ -31,7 +32,7 @@ const computeSumOfSquaresForSubmetrics = (submetrics: Combination<Submetric>): S
 
     if (logTargets[ LogTarget.ALL ] || logTargets[ LogTarget.UNPOPULARITIES ]) {
         rankedUnpopularities.map(rankedUnpopularity => {
-            saveLog(JSON.stringify(rankedUnpopularity) as IO, LogTarget.UNPOPULARITIES, LFC)
+            saveLog(stringify(rankedUnpopularity) as IO, LogTarget.UNPOPULARITIES, LFC)
         })
     }
 

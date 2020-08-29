@@ -1,4 +1,4 @@
-import { Combination } from "../../../../../../src/general"
+import { Combination, stringify } from "../../../../../../src/general"
 import { MetricName, SumOfSquares } from "../../../../../../src/scripts/lfc/bestMetric"
 import { bestMetrics } from "../../../../../../src/scripts/lfc/globals"
 import { computeSortedBestMetrics } from "../../../../../../src/scripts/lfc/solver"
@@ -45,7 +45,7 @@ describe("computeSortedBestMetrics", () => {
 
         const actual = computeSortedBestMetrics()
 
-        expect(JSON.stringify(actual)).toEqual(JSON.stringify({
+        expect(stringify(actual)).toEqual(stringify({
             "{max}": {
                 sumOfSquares: 0.014 as SumOfSquares,
                 name: "",

@@ -1,4 +1,14 @@
-import { COMMA_POPULARITIES, IO, LogTarget, Popularity, rank, Ranked, RankStrategy, saveLog } from "../../../../general"
+import {
+    COMMA_POPULARITIES,
+    IO,
+    LogTarget,
+    Popularity,
+    rank,
+    Ranked,
+    RankStrategy,
+    saveLog,
+    stringify,
+} from "../../../../general"
 import { LFC } from "../../constants"
 
 const fractionalizeRanks = () => {
@@ -10,7 +20,7 @@ const fractionalizeRanks = () => {
         descending: true,
     })
 
-    saveLog(JSON.stringify(rankedPopularities, undefined, 4) as IO, LogTarget.ALL, LFC)
+    saveLog(stringify(rankedPopularities, { multiline: true }) as IO, LogTarget.ALL, LFC)
 }
 
 fractionalizeRanks()

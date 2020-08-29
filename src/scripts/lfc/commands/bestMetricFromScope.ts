@@ -1,4 +1,4 @@
-import { IO, LogTarget, saveLog, Span } from "../../../general"
+import { IO, LogTarget, saveLog, Span, stringify } from "../../../general"
 import { computeDynamicParameterScope, Scope } from "../bestMetric"
 import { LFC } from "../constants"
 import { bestMetrics } from "../globals"
@@ -32,5 +32,5 @@ const scope = [
 ] as Scope
 
 recursiveSearchScopeAndMaybeUpdateBestMetric(scope, { onlyWinners: false }).then(() => {
-    saveLog(`\nbest metric: ${JSON.stringify(Object.fromEntries(bestMetrics))}` as IO, LogTarget.ALL, LFC)
+    saveLog(`\nbest metric: ${stringify(Object.fromEntries(bestMetrics))}` as IO, LogTarget.ALL, LFC)
 })

@@ -1,4 +1,4 @@
-import { Filename, IO, LogTarget, Maybe, saveLog } from "../../../../general"
+import { Filename, IO, LogTarget, Maybe, saveLog, stringify } from "../../../../general"
 import { Metric } from "../../bestMetric"
 import { LFC } from "../../constants"
 import { PARAMETER_DYNAMISMS } from "../../perfecter"
@@ -42,5 +42,4 @@ const guessedBackfilledSpreadDynamicParametersMetrics = Object.entries(metricsMi
     {} as Record<string, Metric>,
 )
 
-// TODO: this undefined, 4 shiznit should be extracted to an io helper
-saveLog(JSON.stringify(guessedBackfilledSpreadDynamicParametersMetrics, undefined, 4) as IO, LogTarget.ALL, LFC)
+saveLog(stringify(guessedBackfilledSpreadDynamicParametersMetrics, { multiline: true }) as IO, LogTarget.ALL, LFC)

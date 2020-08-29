@@ -1,4 +1,4 @@
-import { doOnNextEventLoop, IO, isUndefined, LogTarget, Ms, saveLog } from "../../../general"
+import { doOnNextEventLoop, IO, isUndefined, LogTarget, Ms, saveLog, stringify } from "../../../general"
 import { LFC } from "../constants"
 import { bestMetrics } from "../globals"
 import { computeSumOfSquaresForSubmetrics } from "../sumOfSquares"
@@ -44,7 +44,7 @@ const computeSumOfSquaresAndMaybeUpdateBestMetric = (
             bestMetrics.set(metricName, metric)
 
             saveLog(
-                `${indentation}new best metric: ${JSON.stringify(bestMetrics.get(metricName))}` as IO,
+                `${indentation}new best metric: ${stringify(bestMetrics.get(metricName))}` as IO,
                 LogTarget.NEW_BEST_METRIC,
                 LFC,
             )

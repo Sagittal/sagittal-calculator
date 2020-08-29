@@ -1,4 +1,4 @@
-import { Ratio } from "../../../../general"
+import { Ratio, stringify } from "../../../../general"
 import { Antivotes, ParameterValue, Submetric } from "../types"
 import { computeRatioSubmetricAntivotes } from "./ratioSubmetricAntivotes"
 import { computeWeightedAntivotes } from "./weightedAntivotes"
@@ -24,7 +24,7 @@ const computeWeightedSubmetricAntivotes = (fiveRoughRatio: Ratio, submetric = {}
     })
 
     if (isNaN(submetricAntivotes)) {
-        throw new Error(`You got NaN! ${fiveRoughRatio} ${JSON.stringify(submetric, undefined, 4)} ${submetricAntivotes} ${weightAsCoefficient} ${weightAsLogarithmBase} ${weightAsPowerExponent} ${weightAsPowerBase}`)
+        throw new Error(`You got NaN! ${fiveRoughRatio} ${stringify(submetric, { multiline: true })} ${submetricAntivotes} ${weightAsCoefficient} ${weightAsLogarithmBase} ${weightAsPowerExponent} ${weightAsPowerBase}`)
     }
 
     return submetricAntivotes

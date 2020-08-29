@@ -3,7 +3,7 @@ import {
     computeMonzoFromRatio,
     FractionalPartType,
     isUndefined,
-    Ratio,
+    Ratio, stringify,
 } from "../../../../general"
 import { Antivotes, ParameterValue, Submetric } from "../types"
 import { maybeNuminatorSwap } from "./numinator"
@@ -63,7 +63,7 @@ const computeRatioSubmetricAntivotes = (fiveRoughRatio: Ratio, submetric: Submet
     })
 
     if (isNaN(numeratorAntivotes) || isNaN(denominatorAntivotes)) {
-        throw new Error(`You got NaN! in ratioSubmetricAntivotes ${fiveRoughRatio} ${JSON.stringify(submetric, undefined, 4)} ${numeratorAntivotes} ${denominatorAntivotes}`)
+        throw new Error(`You got NaN! in ratioSubmetricAntivotes ${fiveRoughRatio} ${stringify(submetric, { multiline: true })} ${numeratorAntivotes} ${denominatorAntivotes}`)
     }
 
     return numeratorAntivotes + denominatorAntivotes as Antivotes

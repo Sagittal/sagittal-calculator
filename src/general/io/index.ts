@@ -13,6 +13,7 @@ import { formatTableForTerminal } from "./tableForTerminal"
 import { formatTime } from "./time"
 import { addTexts } from "./typedOperations"
 import { Column, Filename, Formatted, HexColor, IO, Px, Row, Table } from "./types"
+import { stringify } from "./stringify"
 
 export {
     formatRatio,
@@ -41,6 +42,7 @@ export {
     LogTarget,
     logTargets,
     saveLog,
+    stringify,
     clearLogFiles,
     logSettings,
     setLogTargets,

@@ -1,6 +1,6 @@
 // tslint:disable max-line-length
 
-import { computeIsCloseTo, deepEquals, Integer, isUndefined } from "../../src/general"
+import { computeIsCloseTo, deepEquals, Integer, isUndefined, stringify } from "../../src/general"
 import CustomEqualityTester = jasmine.CustomEqualityTester
 import CustomMatcher = jasmine.CustomMatcher
 import CustomMatcherFactories = jasmine.CustomMatcherFactories
@@ -41,12 +41,12 @@ const testIsCloseTo = <T extends number>(actual: T, expected: T, precision?: Int
         assert(
             !isClose,
             message ||
-            `Expected '${JSON.stringify(actual)}' not to be close to '${JSON.stringify(expected)}${precisionMessage(precision)}'.`,
+            `Expected '${stringify(actual)}' not to be close to '${stringify(expected)}${precisionMessage(precision)}'.`,
         )
     } else {
         assert(
             isClose,
-            message || `Expected '${JSON.stringify(actual)}' to be close to '${JSON.stringify(expected)}${precisionMessage(precision)}'.`,
+            message || `Expected '${stringify(actual)}' to be close to '${stringify(expected)}${precisionMessage(precision)}'.`,
         )
     }
 }
@@ -75,7 +75,7 @@ const eachExpectedElementDeepEqualsSomeActualElement = <T>(expectedElements: T[]
             actual.some(actualElement => {
                 return deepEquals(actualElement, expectedElement)
             }),
-            message || `This expected element was not found: '${JSON.stringify(expectedElement)}'.`,
+            message || `This expected element was not found: '${stringify(expectedElement)}'.`,
         )
     })
 }
@@ -86,7 +86,7 @@ const eachExpectedElementHasSameContentsAsSomeActualElement = <T>(expectedElemen
             actual.some(actualElement => {
                 return arraysHaveSameContents(actualElement, expectedElement)
             }),
-            message || `This expected element was not found: ${JSON.stringify(expectedElement)}`,
+            message || `This expected element was not found: ${stringify(expectedElement)}`,
         )
     })
 }
@@ -143,7 +143,7 @@ const customMatchers: CustomMatcherFactories = {
                                 return arraysHaveSameContents(actualElementElement, expectedElement[ index ])
                             })
                         }),
-                        message || `This expected element was not found: '${JSON.stringify(expectedElement)}'`,
+                        message || `This expected element was not found: '${stringify(expectedElement)}'`,
                     )
                 })
             }),

@@ -1,4 +1,16 @@
-import { Extrema, Filename, IO, isNumber, isUndefined, LogTarget, Max, Maybe, Min, saveLog } from "../../../general"
+import {
+    Extrema,
+    Filename,
+    IO,
+    isNumber,
+    isUndefined,
+    LogTarget,
+    Max,
+    Maybe,
+    Min,
+    saveLog,
+    stringify,
+} from "../../../general"
 import { Metric } from "../bestMetric"
 import { LFC } from "../constants"
 import { Parameter, ParameterValue } from "../sumOfSquares"
@@ -38,4 +50,4 @@ Object.values(Parameter).forEach(parameter => {
     }
 })
 
-saveLog(JSON.stringify(parameterExtrema, undefined, 4) as IO, LogTarget.ALL, LFC)
+saveLog(stringify(parameterExtrema, { multiline: true }) as IO, LogTarget.ALL, LFC)

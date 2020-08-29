@@ -1,4 +1,14 @@
-import { COMMA_POPULARITIES, Filename, IO, isNumber, LogTarget, Popularity, Ranked, saveLog } from "../../../../general"
+import {
+    COMMA_POPULARITIES,
+    Filename,
+    IO,
+    isNumber,
+    LogTarget,
+    Popularity,
+    Ranked,
+    saveLog,
+    stringify,
+} from "../../../../general"
 import { Metric } from "../../bestMetric"
 import { LFC } from "../../constants"
 import { lfcSettings } from "../../globals"
@@ -26,4 +36,4 @@ const noRottens = Object.entries(potentiallyRottens).reduce(
     {} as Record<string, Metric>,
 )
 
-saveLog(JSON.stringify(noRottens, undefined, 4) as IO, LogTarget.ALL, LFC)
+saveLog(stringify(noRottens, { multiline: true }) as IO, LogTarget.ALL, LFC)
