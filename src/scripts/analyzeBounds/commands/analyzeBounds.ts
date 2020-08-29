@@ -29,5 +29,9 @@ output = concat(output, formatRankAnalyses())
 
 const visualizationOutput = visualizeBounds(boundsAnalysis)
 
-saveLog(output, LogTarget.BOUNDS_TERMINAL, "analyzeBounds" as Filename, false)
-saveLog(visualizationOutput, LogTarget.BOUNDS_IMAGE, "analyzeBounds" as Filename, false, true, true)
+saveLog(output, LogTarget.BOUNDS_TERMINAL, "analyzeBounds" as Filename, { useTargetColor: false })
+saveLog(visualizationOutput, LogTarget.BOUNDS_IMAGE, "analyzeBounds" as Filename, {
+    useTargetColor: false,
+    fileExtensionProvided: true,
+    writeOnly: true,
+})

@@ -1,5 +1,5 @@
 import { Maybe } from "../../general"
-import { JI_SYMBOLS, JiSymbol } from "./ji"
+import { JiSymbol, JI_SYMBOLS } from "./ji"
 import { SymbolLongAscii, SymbolUnicode } from "./types"
 
 const unicodeFromAscii = (ascii: SymbolLongAscii): SymbolUnicode => {

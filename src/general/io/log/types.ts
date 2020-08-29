@@ -16,9 +16,16 @@ enum LogTarget {
     FINAL_PERFECTER_RESULTS = "finalPerfecterResults",
 }
 
+type SaveLogOptions = Partial<{
+    useTargetColor: boolean,
+    fileExtensionProvided: boolean,
+    writeOnly: boolean,
+}>
+
 type LogTargets = Record<LogTarget, boolean>
 
 export {
     LogTargets,
     LogTarget,
+    SaveLogOptions,
 }

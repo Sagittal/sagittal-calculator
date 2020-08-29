@@ -4,17 +4,11 @@ import { Filename, IO } from "../types"
 import { targetColors } from "./colors"
 import { logSettings } from "./settings"
 import { logTargets } from "./targets"
-import { LogTarget } from "./types"
+import { LogTarget, SaveLogOptions } from "./types"
 
-// TODO: this should be options... got out of hand
-const saveLog = (
-    message: IO,
-    target: LogTarget,
-    scriptGroup: Filename,
-    useTargetColor: boolean = true,
-    fileExtensionProvided: boolean = false,
-    writeOnly: boolean = false,
-) => {
+const saveLog = (message: IO, target: LogTarget, scriptGroup: Filename, options: SaveLogOptions = {}) => {
+    const { useTargetColor = true, fileExtensionProvided = false, writeOnly = false } = options
+
     if (logTargets[ LogTarget.NONE ]) {
         return
     }
