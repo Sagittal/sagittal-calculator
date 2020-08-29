@@ -3,6 +3,16 @@ import { formatMonzo } from "./formatMonzo"
 import { formatNumber } from "./formatNumber"
 import { formatRatio } from "./formatRatio"
 import { computeHeaderRowsFromColumnTitleColumns } from "./headerRowsFromColumnTitleColumns"
+import {
+    clearLogFiles,
+    logSettings,
+    LogTarget,
+    logTargets,
+    maybeClearLogFiles,
+    saveLog,
+    setLogTargets,
+    setupToMaybeClearLogFiles,
+} from "./log"
 import { computeMonzoFromCommand } from "./monzoFromCommand"
 import { parseMonzo } from "./parseMonzo"
 import { parseRatio } from "./parseRatio"
@@ -38,4 +48,12 @@ export {
     Column,
     computeHeaderRowsFromColumnTitleColumns,
     Table,
+    LogTarget,
+    logTargets,
+    saveLog,
+    clearLogFiles,
+    logSettings,
+    setLogTargets,
+    maybeClearLogFiles,
+    setupToMaybeClearLogFiles,
 }

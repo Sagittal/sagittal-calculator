@@ -1,16 +1,25 @@
 import "colors"
 import { program } from "commander"
-import { concat, IO, removeColor } from "../../../general"
+import {
+    concat,
+    Filename,
+    IO,
+    logSettings,
+    LogTarget,
+    maybeClearLogFiles,
+    saveLog, setLogTargets,
+    setupToMaybeClearLogFiles,
+} from "../../../general"
 import { analyzeBounds } from "../bounds"
-import { BOUNDS_ANALYSIS_TEXT_FILE, BOUNDS_ANALYSIS_VISUALIZATION_FILE } from "../constants"
-import { updateFile } from "../file"
 import { computeBoundsAnalysisTable, formatLevelAnalyses, formatRankAnalyses, visualizeBounds } from "../io"
 
-program
-    .option("-x, --do-not-update-files", "do not update files")
-    .parse(process.argv)
+setLogTargets([LogTarget.BOUNDS_TERMINAL, LogTarget.BOUNDS_IMAGE].join(","))
 
-const shouldUpdateFiles = !program.doNotUpdateFiles
+setupToMaybeClearLogFiles()
+
+program.parse(process.argv)
+
+maybeClearLogFiles("analyzeBounds" as Filename)
 
 const boundsAnalysis = analyzeBounds()
 
@@ -18,11 +27,7 @@ let output: IO = computeBoundsAnalysisTable(boundsAnalysis)
 output = concat(output, formatLevelAnalyses()) // TODO: these should probably also use the table helpers
 output = concat(output, formatRankAnalyses())
 
-if (shouldUpdateFiles) {
-    updateFile(BOUNDS_ANALYSIS_TEXT_FILE, removeColor(output))
+const visualizationOutput = visualizeBounds(boundsAnalysis)
 
-    const visualizationOutput = visualizeBounds(boundsAnalysis) as IO
-    updateFile(BOUNDS_ANALYSIS_VISUALIZATION_FILE, visualizationOutput)
-}
-
-console.log(output)
+saveLog(output, LogTarget.BOUNDS_TERMINAL, "analyzeBounds" as Filename, false)
+saveLog(visualizationOutput, LogTarget.BOUNDS_IMAGE, "analyzeBounds" as Filename, false, true, true)

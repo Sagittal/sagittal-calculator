@@ -1,8 +1,20 @@
+import "colors"
 import { program } from "commander"
-import { Formatted, IO, Monzo, parseMonzo } from "../../../general"
+import {
+    Filename,
+    Formatted,
+    LogTarget,
+    maybeClearLogFiles,
+    Monzo,
+    parseMonzo,
+    saveLog,
+    setupToMaybeClearLogFiles,
+} from "../../../general"
 import { MAX_SINGLE_SHAFT_CENTS } from "../../../sagittal"
 import { computeCommas } from "../commas"
 import { computeFindCommasTable } from "../io"
+
+setupToMaybeClearLogFiles()
 
 program
     .option("-l, --min-cents <minCents>", "min cents", parseFloat)
@@ -19,6 +31,8 @@ program
     )
     .option("-s, --sort-by <sortBy>", "sort by")
     .parse(process.argv)
+
+maybeClearLogFiles("findCommas" as Filename)
 
 const minCents = program.minCents || 0
 const maxCents = program.maxCents || MAX_SINGLE_SHAFT_CENTS
@@ -45,4 +59,5 @@ const commas = computeCommas({
     fiveSlicedMonzo,
     sortKey,
 })
-console.log(computeFindCommasTable(commas))
+
+saveLog(computeFindCommasTable(commas), LogTarget.ALL, "findCommas" as Filename)

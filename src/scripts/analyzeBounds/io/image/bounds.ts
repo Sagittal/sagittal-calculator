@@ -12,7 +12,7 @@ import { visualizeLevelSymbols } from "./levelSymbols"
 import { addParentSvg } from "./parentSvg"
 import { visualizeSizeCategoryBounds } from "./sizeCategoryBounds"
 
-const visualizeBounds = (boundsAnalysis: AnalyzedBound[]) => {
+const visualizeBounds = (boundsAnalysis: AnalyzedBound[]): IO => {
     fs.copyFileSync("assets/fonts/BravuraSagittalUpdate_v10.otf", "dist/analyzeBounds/BravuraSagittalUpdate_v10.otf")
 
     let elements: IO[] = [] as IO[]
@@ -36,7 +36,7 @@ const visualizeBounds = (boundsAnalysis: AnalyzedBound[]) => {
 
     elements = elements.concat("</svg>\n" as IO)
 
-    return elements.join("")
+    return elements.join("") as IO
 }
 
 export {

@@ -1,6 +1,6 @@
 import * as fs from "fs"
 import * as path from "path"
-import { Filename } from "../../src/general/io/types"
+import { Filename } from "../../src/general/io"
 
 const regexp = new RegExp(".*Spec\.ts")
 

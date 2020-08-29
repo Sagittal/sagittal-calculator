@@ -1,11 +1,10 @@
 import { Copfr, Max, ObjectKey, Prime, Sopfr } from "../../../../../src/general"
 import { Exponent } from "../../../../../src/general/math"
-import { getSagittalComma } from "../../../../../src/sagittal"
+import { ApotomeSlope, getSagittalComma } from "../../../../../src/sagittal"
 import { computeCommaName } from "../../../../../src/sagittal/commaSizeName"
 import { N2D3P9 } from "../../../../../src/sagittal/n2d3p9"
 import { JI_SYMBOLS } from "../../../../../src/sagittal/notations/ji"
 import { computeSecondaryCommaZone } from "../../../../../src/sagittal/notations/ji/secondaryCommaZone"
-import { ApotomeSlope } from "../../../../../src/sagittal/types"
 import { computeCommas } from "../../../../../src/scripts/findCommas/commas"
 import { computeFindCommasTable } from "../../../../../src/scripts/findCommas/io"
 
