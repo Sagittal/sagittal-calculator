@@ -1,4 +1,4 @@
-import { IO } from "../../../../general"
+import { difference, HexColor, IO, Proportion, Px } from "../../../../general"
 import { Level } from "../../../../sagittal"
 import { AnalyzedEvent } from "../../types"
 import { RANK_FILLS } from "./colors"
@@ -9,11 +9,11 @@ import { computeX } from "./x"
 const visualizeEvents = (events: AnalyzedEvent[]): IO[] => {
     const eventElements: IO[] = []
 
-    const initialEvent = events[ 0 ]
+    const initialEvent: AnalyzedEvent = events[ 0 ]
     const { cents: initialPosition, rank: initialRank, level: initialLevel } = initialEvent
-    const initialX = computeX(initialPosition)
-    const initialY = LEVEL_CENTERS[ initialLevel ]
-    const initialStroke = RANK_FILLS[ initialRank ]
+    const initialX: Px = computeX(initialPosition)
+    const initialY: Px = LEVEL_CENTERS[ initialLevel ]
+    const initialStroke: HexColor = RANK_FILLS[ initialRank ]
     eventElements.push(
         `  <circle stroke="${initialStroke}" r="${DOT_SIZE}" cx="${initialX}" cy="${initialY}" />\n` as IO,
     )
@@ -32,13 +32,13 @@ const visualizeEvents = (events: AnalyzedEvent[]): IO[] => {
             inaDistance: nextInaDistance,
         } = events[ index + 1 ] || {}
 
-        const stroke = RANK_FILLS[ nextRank ]
+        const stroke: HexColor = RANK_FILLS[ nextRank ]
 
-        const positionX = computeX(cents)
-        const positionY = level ? LEVEL_CENTERS[ level ] : LEVEL_BOTTOMS[ nextLevel ]
+        const positionX: Px = computeX(cents)
+        const positionY: Px = level ? LEVEL_CENTERS[ level ] : LEVEL_BOTTOMS[ nextLevel ]
 
-        const nextPositionX = computeX(nextCents)
-        const nextPositionY = LEVEL_CENTERS[ nextLevel ]
+        const nextPositionX: Px = computeX(nextCents)
+        const nextPositionY: Px = LEVEL_CENTERS[ nextLevel ]
 
         eventElements.push(`  <line stroke="${stroke}" x1="${positionX}" y1="${positionY}" x2="${nextPositionX}" y2="${nextPositionY}" />\n` as IO)
         eventElements.push(`  <circle stroke="${stroke}" r="${DOT_SIZE}" cx="${nextPositionX}" cy="${nextPositionY}" />\n` as IO)
@@ -46,11 +46,11 @@ const visualizeEvents = (events: AnalyzedEvent[]): IO[] => {
         const formattedDistance = nextDistance.toPrecision(5)
         const formattedInaDistance = `${(nextInaDistance * 100).toPrecision(3)}%`
 
-        const textX = (positionX + nextPositionX) / 2
-        const textY = (positionY + nextPositionY) / 2
-        const rise = nextPositionY - positionY
-        const run = nextPositionX - positionX
-        const slope = rise / run
+        const textX: Px = (positionX + nextPositionX) / 2 as Px
+        const textY: Px = (positionY + nextPositionY) / 2 as Px
+        const rise: Px = difference(nextPositionY, positionY)
+        const run: Px = difference(nextPositionX, positionX)
+        const slope: Proportion<Px> = rise / run as Proportion<Px>
         const angle = Math.atan(slope) * (180 / Math.PI)
         eventElements.push(`  <text stroke="white" stroke-width="0.45em" transform="rotate(${angle} ${textX} ${textY})" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="${textX}" y="${textY}">${formattedDistance} (${formattedInaDistance})</text>\n` as IO)
         eventElements.push(`  <text fill="red" transform="rotate(${angle} ${textX} ${textY})" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="${textX}" y="${textY}">${formattedDistance} (${formattedInaDistance})</text>\n` as IO)

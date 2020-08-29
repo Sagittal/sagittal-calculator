@@ -8,12 +8,13 @@ import { clearLogFiles, logSettings, LogTarget, logTargets, saveLog, setLogTarge
 import { parseMonzo } from "./parseMonzo"
 import { parseRatio } from "./parseRatio"
 import { removeColor } from "./removeColor"
+import { stringify } from "./stringify"
 import { formatTableForForum } from "./tableForForum"
 import { formatTableForTerminal } from "./tableForTerminal"
 import { formatTime } from "./time"
 import { addTexts } from "./typedOperations"
-import { Column, Filename, Formatted, HexColor, IO, Px, Row, Table } from "./types"
-import { stringify } from "./stringify"
+import { Column, Filename, Formatted, HexColor, IO, Row, Table } from "./types"
+import { Basis, computePx, Px, Scale } from "./visualize"
 
 export {
     formatRatio,
@@ -48,4 +49,7 @@ export {
     setLogTargets,
     parseCommands,
     ANY_MONZO_CHARS,
+    Scale,
+    Basis,
+    computePx,
 }

@@ -16,11 +16,11 @@ const computeLevelHeights = (withinLevelHeight: number): Record<Level, Px> =>
         {} as Record<Level, Px>,
     )
 
-const LEVEL_TOPS = computeLevelHeights(0)
+const LEVEL_TOPS: Record<Level, Px> = computeLevelHeights(0)
 
-const LEVEL_CENTERS = computeLevelHeights(0.5)
+const LEVEL_CENTERS: Record<Level, Px> = computeLevelHeights(0.5)
 
-const LEVEL_BOTTOMS = computeLevelHeights(1)
+const LEVEL_BOTTOMS: Record<Level, Px> = computeLevelHeights(1)
 
 export {
     LEVEL_TOPS,

@@ -9,8 +9,6 @@ enum Justification {
 
 type JustificationOption = Justification | Array<Maybe<Justification>>
 
-type Px = number & { _PxBrand: "Px" }
-
 type HexColor = string & { _HexColorBrand: "HexColor" }
 type Filename = string & { _FileBrand: "File" }
 
@@ -34,7 +32,6 @@ interface AlignTableOptions {
 }
 
 export {
-    Px,
     HexColor,
     Justification,
     JustificationOption,

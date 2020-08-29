@@ -1,4 +1,4 @@
-import { CentsPosition, IO } from "../../../../general"
+import { CentsPosition, difference, IO, Px } from "../../../../general"
 import { Level, SymbolLongAscii, unicodeFromAscii } from "../../../../sagittal"
 import { LEVELS_COMMA_MEANS } from "../../plot"
 import { MEAN_COLOR } from "./colors"
@@ -15,16 +15,16 @@ const visualizeLevelCommaMeans = (): IO[] => {
             return
         }
 
-        const centerY = LEVEL_CENTERS[ level ]
-        const topY = centerY - HALF_TICK_SIZE
-        const bottomY = centerY + HALF_TICK_SIZE
+        const centerY: Px = LEVEL_CENTERS[ level ]
+        const topY: Px = difference(centerY, HALF_TICK_SIZE)
+        const bottomY: Px = difference(centerY, HALF_TICK_SIZE)
 
         levelCommaMeans.forEach(levelCommaMean => {
             const { cents, name } = levelCommaMean
 
             const formattedName = name?.split(" ")
                 .map(ascii => unicodeFromAscii(ascii as SymbolLongAscii)).join("   ") || ""
-            const positionX = computeX(cents)
+            const positionX: Px = computeX(cents)
 
             levelCommaMeanElements.push(`  <line stroke-dasharray="${DASH_SIZE}" stroke="${MEAN_COLOR}" x1="${positionX}" x2="${positionX}" y1="${topY}" y2="${bottomY}"/>\n` as IO)
             levelCommaMeanElements.push(`  <text fill="white" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="${positionX}" y="${bottomY}" font-size="6px" font-family="Helvetica">${name}</text>\n` as IO) // For searchability by ascii

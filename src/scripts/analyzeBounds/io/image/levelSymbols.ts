@@ -1,5 +1,5 @@
-import { Id, IO } from "../../../../general"
-import { getJiSymbol, getSagittalComma, JiSymbol, Level, LEVELS_SYMBOL_IDS } from "../../../../sagittal"
+import { difference, Id, IO, Px, sum } from "../../../../general"
+import { getJiSymbol, getSagittalComma, JiSymbol, Level, LEVELS_SYMBOL_IDS, SagittalComma } from "../../../../sagittal"
 import { formatMina } from "../terminal"
 import { LEVEL_CENTERS } from "./levelHeights"
 import { DOT_SIZE, MINA_OFFSET, SYMBOL_OFFSET } from "./sizes"
@@ -14,16 +14,16 @@ const visualizeLevelSymbols = () => {
             return
         }
 
-        const centerY = LEVEL_CENTERS[ level ]
-        const dotY = centerY - SYMBOL_OFFSET
-        const symbolY = centerY + SYMBOL_OFFSET
+        const centerY: Px = LEVEL_CENTERS[ level ]
+        const dotY: Px = difference(centerY, SYMBOL_OFFSET)
+        const symbolY: Px = sum(centerY, SYMBOL_OFFSET)
 
         levelSymbolIds.forEach(levelSymbolId => {
             const levelSymbol: JiSymbol = getJiSymbol(levelSymbolId)
             const { primaryCommaId, ascii, unicode, mina } = levelSymbol
-            const primaryComma = getSagittalComma(primaryCommaId)
+            const primaryComma: SagittalComma = getSagittalComma(primaryCommaId)
 
-            const positionX = computeX(primaryComma.cents)
+            const positionX: Px = computeX(primaryComma.cents)
 
             const adjustedUnicode = ascii === "/|~" ?
                 unicode + "         " :
@@ -36,7 +36,7 @@ const visualizeLevelSymbols = () => {
             levelSymbolElements.push(`  <text fill="black" text-anchor="middle" x="${positionX}" y="${symbolY}" font-size="40px" font-family="Bravura">${adjustedUnicode}</text>\n` as IO)
 
             if (level === Level.EXTREME) {
-                const minaY = symbolY - MINA_OFFSET
+                const minaY: Px = difference(symbolY, MINA_OFFSET)
                 levelSymbolElements.push(`  <text text-anchor="middle" x="${positionX}" y="${minaY}" font-size="10px" font-family="Bravura">${formatMina(mina)}</text>\n` as IO)
             }
         })

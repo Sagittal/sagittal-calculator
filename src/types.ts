@@ -1,3 +1,5 @@
+// TODO: move this into io/
+
 type ColorMethod = "green" | "red" | "yellow" | "cyan" | "blue" | "white" | "magenta"
 
 // TODO: no good place to put this, but tslint is deprecated now; use typescript-eslint

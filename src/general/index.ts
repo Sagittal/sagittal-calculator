@@ -29,9 +29,11 @@ import {
 import {
     addTexts,
     ANY_MONZO_CHARS,
+    Basis,
     clearLogFiles,
     Column,
     computeHeaderRowsFromColumnTitleColumns,
+    computePx,
     Filename,
     FORMATATIONAL_PRECISION,
     formatMonzo,
@@ -54,6 +56,7 @@ import {
     removeColor,
     Row,
     saveLog,
+    Scale,
     setLogTargets,
     SPACE,
     stringify,
@@ -272,4 +275,7 @@ export {
     now,
     stringify,
     ANY_MONZO_CHARS,
+    Scale,
+    Basis,
+    computePx,
 }

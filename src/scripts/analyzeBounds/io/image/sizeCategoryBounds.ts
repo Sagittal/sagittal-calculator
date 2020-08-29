@@ -1,4 +1,4 @@
-import { IO } from "../../../../general"
+import { IO, Px } from "../../../../general"
 import { Level } from "../../../../sagittal"
 import { LEVELS_SIZE_CATEGORY_BOUNDS } from "../../plot"
 import { SIZE_COLOR } from "./colors"
@@ -14,9 +14,9 @@ const visualizeSizeCategoryBounds = () => {
     sizeCategoryBounds.forEach(sizeCategoryBound => {
         const { name, cents } = sizeCategoryBound
 
-        const topEdgeY = LEVEL_TOPS[ Level.INSANE ]
-        const bottomEdgeY = LEVEL_BOTTOMS[ Level.MEDIUM ]
-        const centerY = (topEdgeY + bottomEdgeY) / 2
+        const topEdgeY: Px = LEVEL_TOPS[ Level.INSANE ]
+        const bottomEdgeY: Px = LEVEL_BOTTOMS[ Level.MEDIUM ]
+        const centerY: Px = (topEdgeY + bottomEdgeY) / 2 as Px
 
         const positionX = computeX(cents)
 
