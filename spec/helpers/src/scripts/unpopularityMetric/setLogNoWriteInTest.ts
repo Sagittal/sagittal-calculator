@@ -1,5 +1,5 @@
-import { logSettings } from "../../../../../src/general"
+import { ioSettings } from "../../../../../src/general"
 
 beforeEach(() => {
-    logSettings.noWrite = true
+    ioSettings.noWrite = true
 })

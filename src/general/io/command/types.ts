@@ -6,6 +6,7 @@ enum CommandFlag {
     MAX_N2D3P9 = "2",
     ABSOLUTE_THREE = "3",
     APOTOME_SLOPE = "a",
+    FOR_FORUM = "b",
     NO_COLOR = "c",
     NO_USELESS = "e",
     FIVE_SLICED = "f",

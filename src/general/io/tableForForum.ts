@@ -4,6 +4,8 @@ import { IO, Row, Table } from "./types"
 
 // TODO: it could even automatically convert symbols to smileys?
 
+// TODO: this should support colors and justifications, now that it shares options w/ for terminal version
+
 const formatTableForForum = (table: Table, options: { headerRowCount?: Count<Row<unknown, "Header">> } = {}): IO => {
     const { headerRowCount = 1 as Count<Row> } = options
 

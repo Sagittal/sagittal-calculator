@@ -1,4 +1,4 @@
-import { addTexts, Count, count, formatTableForForum, IO, Max, Ranked, Row, Table } from "../../../general"
+import { addTexts, Count, count, formatTable, IO, Max, Ranked, Row, Table } from "../../../general"
 import { N2D3P9 } from "../../../sagittal"
 import { PopularRatio } from "../types"
 import { computePopularRatiosHeaderRows } from "./headerRows"
@@ -31,7 +31,7 @@ const computePopularRatiosTable = (popularRatios: Array<Ranked<PopularRatio>>, m
 
     const popularRatiosTableTitle = `count of results with N2D3P9 <= ${maxN2D3P9}: ${popularRatios.length}\n` as IO
 
-    return addTexts(popularRatiosTableTitle, formatTableForForum(table, { headerRowCount }))
+    return addTexts(popularRatiosTableTitle, formatTable(table, { headerRowCount }))
 }
 
 export {

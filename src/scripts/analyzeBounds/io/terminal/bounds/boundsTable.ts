@@ -1,4 +1,4 @@
-import { addTexts, ColorMethod, formatTableForTerminal, IO, Table } from "../../../../../general"
+import { addTexts, ColorMethod, formatTable, IO, Table } from "../../../../../general"
 import { BOUNDS } from "../../../../../sagittal"
 import { AnalyzedBound } from "../../../types"
 import { BOUND_COLORS } from "../boundColors"
@@ -19,7 +19,7 @@ const computeBoundsAnalysisTable = (boundsAnalysis: AnalyzedBound[]): IO => {
 
     const boundsAnalysisTableTitle = "   ---   Bound Analyses   ---   \n\n\n" as IO
 
-    return addTexts(boundsAnalysisTableTitle, formatTableForTerminal(table, { colors }))
+    return addTexts(boundsAnalysisTableTitle, formatTable(table, { colors }))
 }
 
 export {

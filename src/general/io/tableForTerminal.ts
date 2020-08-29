@@ -4,9 +4,9 @@ import { colorize } from "./colorize"
 import { BLANK, NEWLINE } from "./constants"
 import { addTexts, length } from "./typedOperations"
 import {
-    AlignTableOptions,
-    Char, ColorMethod,
-    ComputeAlignedRowCellOptions,
+    Char,
+    ColorMethod,
+    ComputeAlignedRowCellOptions, FormatTableOptions,
     IO,
     Justification,
     JustificationOption,
@@ -73,7 +73,9 @@ const maybeColor = (rowText: IO, rowIndex: number, colors?: ColorMethod[]): IO =
     return colorize(rowText, rowColor)
 }
 
-const formatTableForTerminal = (table: Table, options: AlignTableOptions = {}): IO => {
+// todo: this should support header row count now that it shares options with for forum version
+
+const formatTableForTerminal = (table: Table, options: FormatTableOptions = {}): IO => {
     const { justification = Justification.LEFT, colors } = options
     const columnRange = computeColumnRange(table)
     const columnWidths = computeColumnWidths(table, columnRange)

@@ -1,4 +1,4 @@
-import { Cents, IO, Monzo, Name, Prime, Ratio, Sopfr } from "../../../../../src/general"
+import { Cents, IO, ioSettings, Monzo, Name, Prime, Ratio, Sopfr } from "../../../../../src/general"
 import { ApotomeSlope, Comma } from "../../../../../src/sagittal"
 import { N2D3P9 } from "../../../../../src/sagittal/commaEvaluation/n2d3p9"
 import { computeFindCommasTable } from "../../../../../src/scripts/findCommas/io"
@@ -38,7 +38,9 @@ describe("computeFindCommasTable", () => {
     })
 
     it("can format tables for sharing on the Sagittal forum", () => {
-        const actual = computeFindCommasTable(commas, { forForum: true })
+        ioSettings.forForum = true
+        const actual = computeFindCommasTable(commas)
+        ioSettings.forForum = false
 
         const expected =
             "[table]\n" +

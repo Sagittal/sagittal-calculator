@@ -1,4 +1,5 @@
 import { Maybe } from "../code"
+import { Count } from "../types"
 
 enum Justification {
     LEFT = "left",
@@ -29,9 +30,10 @@ interface ComputeAlignedRowCellOptions {
     columnWidth: number,
 }
 
-interface AlignTableOptions {
+interface FormatTableOptions {
     justification?: JustificationOption
     colors?: ColorMethod[],
+    headerRowCount?: Count<Row<unknown, "Header">>,
 }
 
 type ColorMethod = "green" | "red" | "yellow" | "cyan" | "blue" | "white" | "magenta"
@@ -42,6 +44,11 @@ type ColorMethod = "green" | "red" | "yellow" | "cyan" | "blue" | "white" | "mag
 //  note that you'll have to rewrite your custom rules. this might help:
 //  https://timdeschryver.dev/blog/migrating-a-tslint-rule-to-eslint-with-typescript-eslint
 
+interface IoSettings {
+    noWrite: boolean,
+    forForum: boolean,
+}
+
 export {
     ColorMethod,
     HexColor,
@@ -49,11 +56,12 @@ export {
     JustificationOption,
     Formatted,
     ComputeAlignedRowCellOptions,
-    AlignTableOptions,
+    FormatTableOptions,
     Filename,
     IO,
     Row,
     Column,
     Table,
     Char,
+    IoSettings,
 }

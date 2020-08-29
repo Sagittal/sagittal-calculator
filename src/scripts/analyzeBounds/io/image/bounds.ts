@@ -1,5 +1,5 @@
 import * as fs from "fs"
-import { IO, logSettings } from "../../../../general"
+import { IO, ioSettings } from "../../../../general"
 import { AnalyzedBound } from "../../types"
 import { visualizeCents } from "./cents"
 import { visualizeEvents } from "./events"
@@ -13,7 +13,7 @@ import { addParentSvg } from "./parentSvg"
 import { visualizeSizeCategoryBounds } from "./sizeCategoryBounds"
 
 const computeBoundsImage = (boundsAnalysis: AnalyzedBound[]): IO => {
-    if (!logSettings.noWrite) {
+    if (!ioSettings.noWrite) {
         fs.copyFileSync(
             "assets/fonts/BravuraSagittalUpdate_v10.otf",
             "dist/analyzeBounds/BravuraSagittalUpdate_v10.otf",

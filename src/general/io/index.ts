@@ -6,13 +6,13 @@ import { formatMonzo } from "./formatMonzo"
 import { formatNumber } from "./formatNumber"
 import { formatRatio } from "./formatRatio"
 import { computeHeaderRowsFromColumnTitleColumns } from "./headerRowsFromColumnTitleColumns"
-import { clearLogFiles, logSettings, LogTarget, logTargets, saveLog, setLogTargets } from "./log"
+import { clearLogFiles, LogTarget, logTargets, saveLog, setLogTargets } from "./log"
 import { parseMonzo } from "./parseMonzo"
 import { parseRatio } from "./parseRatio"
 import { removeColor } from "./removeColor"
+import { ioSettings } from "./settings"
 import { stringify } from "./stringify"
-import { formatTableForForum } from "./tableForForum"
-import { formatTableForTerminal } from "./tableForTerminal"
+import { formatTable } from "./table"
 import { formatTime } from "./time"
 import { addTexts } from "./typedOperations"
 import { ColorMethod, Column, Filename, Formatted, HexColor, IO, Row, Table } from "./types"
@@ -22,8 +22,7 @@ export {
     formatRatio,
     formatMonzo,
     formatNumber,
-    formatTableForForum,
-    formatTableForTerminal,
+    formatTable,
     formatTime,
     parseMonzo,
     parseRatio,
@@ -49,7 +48,7 @@ export {
     colorize,
     stringify,
     clearLogFiles,
-    logSettings,
+    ioSettings,
     setLogTargets,
     parseCommands,
     ANY_MONZO_CHARS,

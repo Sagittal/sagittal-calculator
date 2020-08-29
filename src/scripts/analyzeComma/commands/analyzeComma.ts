@@ -4,8 +4,7 @@ import {
     BLANK,
     CommandFlag,
     computeMonzoFromRatio,
-    Filename,
-    formatTableForTerminal,
+    Filename, formatTable,
     Formatted,
     IO,
     LogTarget,
@@ -85,4 +84,4 @@ saveLog(BLANK, LogTarget.ALL, "notatingSymbols" as Filename)
 saveLog("   --- notating symbols ---" as IO, LogTarget.ALL, "notatingSymbols" as Filename)
 saveLog(BLANK, LogTarget.ALL, "notatingSymbols" as Filename)
 
-saveLog(formatTableForTerminal(notatingSymbolTable), LogTarget.ALL, "notatingSymbols" as Filename)
+saveLog(formatTable(notatingSymbolTable), LogTarget.ALL, "notatingSymbols" as Filename)

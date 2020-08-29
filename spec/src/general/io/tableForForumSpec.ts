@@ -1,4 +1,5 @@
-import { Count, formatTableForForum, IO, Row, Table } from "../../../../src/general"
+import { Count, IO, Row, Table } from "../../../../src/general"
+import { formatTableForForum } from "../../../../src/general/io/tableForForum"
 
 describe("formatTableForForum", () => {
     it("formats a table to be posted on the Sagittal forum", () => {

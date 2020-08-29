@@ -1,4 +1,5 @@
-import { ColorMethod, formatTableForTerminal, IO, NEWLINE, Table } from "../../../../src/general"
+import { ColorMethod, IO, NEWLINE, Table } from "../../../../src/general"
+import { formatTableForTerminal } from "../../../../src/general/io/tableForTerminal"
 import { Justification } from "../../../../src/general/io/types"
 
 describe("formatTableForTerminal", () => {
