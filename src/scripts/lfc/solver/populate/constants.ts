@@ -196,6 +196,8 @@ const PARAMETER_CHUNKS: Array<Chunk<Parameter>> = Object.entries(INITIAL_PARAMET
         } as Chunk<Parameter>
     })
 
+const ALL_BINS_SUBMETRIC_SCOPE: Chunk<Submetric> = {} as Chunk<Submetric>
+
 export {
     NO_USELESS_INITIAL_PARAMETER_SCOPES,
     INITIAL_PARAMETER_SCOPES,
@@ -203,4 +205,5 @@ export {
     SUBMETRIC_CHUNKS,
     NO_USELESS_PARAMETER_CHUNKS,
     PARAMETER_CHUNKS,
+    ALL_BINS_SUBMETRIC_SCOPE,
 }

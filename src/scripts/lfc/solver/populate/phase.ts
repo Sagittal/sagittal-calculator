@@ -23,6 +23,7 @@ import { Parameter, Submetric } from "../../sumOfSquares"
 import { formatSearchedAndPopulated } from "../io"
 import { Chunk } from "../types"
 import {
+    ALL_BINS_SUBMETRIC_SCOPE,
     NO_USELESS_PARAMETER_CHUNKS,
     NO_USELESS_SUBMETRIC_CHUNKS,
     PARAMETER_CHUNKS,
@@ -52,8 +53,7 @@ const populateScopesPhase = async (chunkCount: Count<Chunk>, chunkCountForSubmet
         saveLog(`submetric combinations (with repetitions) computed: ${submetricChunkCombinations.length}; formula is ((${chunkCountForSubmetrics}+${submetricChunks.length}-1)!)/((${chunkCountForSubmetrics}!)((${submetricChunks.length}-1)!)) where ${submetricChunks.length} is the total of possible existing chunks and ${chunkCountForSubmetrics} is the count we are choosing at a time` as IO, LogTarget.POPULATE, LFC)
     }
     submetricChunkCombinations.forEach(submetricChunkCombination => {
-        // TODO: you should probably name that this is what will become the all bins submetric scope, I think
-        submetricChunkCombination.unshift({} as Chunk<Submetric>)
+        submetricChunkCombination.unshift(ALL_BINS_SUBMETRIC_SCOPE)
     })
 
     let parameterChunkCombinations: Combinations<Chunk<Parameter>>

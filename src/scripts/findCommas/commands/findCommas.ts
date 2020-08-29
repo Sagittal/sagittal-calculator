@@ -77,7 +77,9 @@ const maxN2D3P9 = program.maxN2d3p9 || 307
 const fiveSlicedMonzo = program.fiveSlicedMonzo
 const sortKey = program.sortBy
 
-// TODO: this should actually take for-forum as a CLI option
+// TODO: this should actually take for-forum as a CLI option...
+//  but should it take that generically in parseCommands?
+//  at which point perhaps its not just logSettings, but ioSettings? and needs to live in an according place
 
 const commas = computeCommas({
     minCents,

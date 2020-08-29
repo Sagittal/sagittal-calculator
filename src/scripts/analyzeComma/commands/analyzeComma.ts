@@ -22,6 +22,21 @@ import { computeExactlyNotatingJiSymbolRow, formatComma, NOTATING_SYMBOLS_HEADER
 
 // TODO: you should also make it accept -n name!
 
+// TODO: perhaps this should actually return the comma info as a row,
+//  so you can more easily compare it with the notating symbols
+//  though that decision will be intertwined with the one below about the notating symbols table.ts
+//  in which case there's a chance that the method we're using to format comma multiline doesn't get used anymore
+//  okay, I think there's some confusion about what the purpose of this script is
+//  between the analyzedComma part and the exactlyNotatingJiSymbols part...
+//  the notating symobls needs to include all possible commas that would exactly notate it if they had a symbol
+//  and include apotome slope
+//  and then the top part needs to NOT return the 5-rough version
+//  and the top part should be called "rational pitch" and this whole thing is analyze rational pitch
+//  and the bottom part should be called "notating commas" and it should include the symbol subset too
+
+// TODO: this like findCommas should probably have an io/table.ts which allows for either terminal or forum output
+//  which would also take the stuff like a pre-header-row as we see in some of the others
+
 program
     .option(
         `-${CommandFlag.MONZO}, --monzo <monzo>`,
@@ -56,16 +71,9 @@ if (!monzo) {
     throw new Error("Unable to determine monzo for comma.")
 }
 
-// TODO: perhaps this should actually return the comma info as a row,
-//  so you can more easily compare it with the notating symbols
-//  though that decision will be intertwined with the one below about the notating symbols table.ts
-
 const analyzedComma = analyzeComma(monzo)
 
 saveLog(formatComma(analyzedComma), LogTarget.ALL, "analyzeComma" as Filename)
-
-// TODO: this is technically notating JI symbols... but it would be pretty cool if it could return all possible
-//  notating symbols and just not provide an ID if they aren't in Sagittal
 
 const notatingSymbolIds = computeExactlyNotatingJiSymbolIds(monzo)
 
@@ -73,8 +81,6 @@ const notatingSymbolTable: Table<JiSymbol> = notatingSymbolIds.map(computeExactl
 
 notatingSymbolTable.unshift(NOTATING_SYMBOLS_HEADER_ROW)
 
-// TODO: this like findCommas should probably have an io/table.ts which allows for either terminal or forum output
-//  which would also take the stuff like a pre-header-row as we see in some of the others
 saveLog(BLANK, LogTarget.ALL, "notatingSymbols" as Filename)
 saveLog("   --- notating symbols ---" as IO, LogTarget.ALL, "notatingSymbols" as Filename)
 saveLog(BLANK, LogTarget.ALL, "notatingSymbols" as Filename)
