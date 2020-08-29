@@ -1,21 +1,10 @@
-import {
-    addTexts,
-    computeHeaderRowsFromColumnTitleColumns,
-    Count,
-    count,
-    formatTableForForum,
-    IO,
-    Max,
-    Ranked,
-    Row,
-    Table,
-} from "../../../general"
+import { addTexts, Count, count, formatTableForForum, IO, Max, Ranked, Row, Table } from "../../../general"
 import { N2D3P9 } from "../../../sagittal"
 import { PopularRatio } from "../types"
-import { POPULAR_RATIOS_COLUMN_TITLE_COLUMNS } from "./headerRows"
+import { computePopularRatiosHeaderRows } from "./headerRows"
 
 const computePopularRatiosTable = (popularRatios: Array<Ranked<PopularRatio>>, maxN2D3P9: Max<N2D3P9>): IO => {
-    const table: Table<PopularRatio> = computeHeaderRowsFromColumnTitleColumns(POPULAR_RATIOS_COLUMN_TITLE_COLUMNS)
+    const table: Table<PopularRatio> = computePopularRatiosHeaderRows()
     const headerRowCount = count(table) as Count<Row<PopularRatio, "Header">>
 
     popularRatios.forEach(popularRatio => {
@@ -36,7 +25,7 @@ const computePopularRatiosTable = (popularRatios: Array<Ranked<PopularRatio>>, m
             symbolSubsets,
             estimatedRank,
             actualRank,
-            votes
+            votes,
         ] as Row<PopularRatio>)
     })
 

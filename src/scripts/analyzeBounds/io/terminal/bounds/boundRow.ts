@@ -1,7 +1,7 @@
 import { formatInteger, formatNumber, Row } from "../../../../../general"
 import { AnalyzedBound } from "../../../types"
-import { alignFormattedNumber } from "./alignFormattedNumber"
 import { extractBoundIdentifiers } from "../boundIdentifiers"
+import { alignFormattedNumber } from "./alignFormattedNumber"
 import { extractLevelDistances } from "./levelDistances"
 import { extractLevelRanks } from "./levelRanks"
 import { formatMina } from "./mina"
