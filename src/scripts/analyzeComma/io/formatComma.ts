@@ -1,18 +1,18 @@
-import { formatMonzo, formatRatio, Formatted } from "../../../general"
-import { Comma } from "../../../sagittal"
+import { formatInteger, formatMonzo, formatNumber, formatRatio, Formatted } from "../../../general"
+import { Comma, formatN2D3P9 } from "../../../sagittal"
 
 const formatComma = (comma: Comma): Formatted<Comma> => {
     const { name, limit, fiveRoughSopfr, cents, monzo, ratio, apotomeSlope, n2d3p9 } = comma
 
     return [
         `comma name:   \t${name}`,
-        `limit:        \t${limit}`,
-        `5-rough sopfr:\t${fiveRoughSopfr}`,
-        `cents:        \t${cents}`,
+        `limit:        \t${formatInteger(limit)}`,
+        `5-rough sopfr:\t${formatInteger(fiveRoughSopfr)}`,
+        `cents:        \t${formatNumber(cents)}`,
         `monzo:        \t${formatMonzo(monzo)}`,
         `ratio:        \t${formatRatio(ratio)}`,
-        `apotome slope:\t${apotomeSlope}`,
-        `N2D3P9:       \t${n2d3p9}`,
+        `apotome slope:\t${formatNumber(apotomeSlope)}`,
+        `N2D3P9:       \t${formatN2D3P9(n2d3p9)}`,
     ].join("\n") as Formatted<Comma>
 }
 

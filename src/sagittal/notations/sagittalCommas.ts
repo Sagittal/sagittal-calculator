@@ -1647,8 +1647,6 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
         ...APOTOME,
         id: 1000 as Id<SagittalComma>,
         name: "1A" as Name<SagittalComma>,
-        // TODO: this thing's apotome slope when run by npm run analyze-comma 2187/2048 is -8.881784197001252e-16...
-        //  you really should get rounding more nice on that and cents, like you did for N2D3P9.
     },
 ] as SagittalComma[]
 

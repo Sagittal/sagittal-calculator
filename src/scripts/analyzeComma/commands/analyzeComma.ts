@@ -25,6 +25,8 @@ import { computeExactlyNotatingJiSymbolRow, formatComma, NOTATING_SYMBOLS_HEADER
 //  so you can more easily compare it with the notating symbols
 //  though that decision will be intertwined with the one below about the notating symbols table.ts
 //  in which case there's a chance that the method we're using to format comma multiline doesn't get used anymore
+//  and that may actually be the only multiline thing left at all,
+//  which doesn't play well with formatNumber aligning decimal points...
 //  okay, I think there's some confusion about what the purpose of this script is
 //  between the analyzedComma part and the exactlyNotatingJiSymbols part...
 //  the notating symobls needs to include all possible commas that would exactly notate it if they had a symbol
