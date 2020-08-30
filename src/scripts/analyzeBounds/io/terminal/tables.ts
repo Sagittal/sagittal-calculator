@@ -1,5 +1,5 @@
 import { concat, IO } from "../../../../general"
-import { AnalyzedBound } from "../../types"
+import { AnalyzedBound } from "../../analyzeBound"
 import { computeBoundsAnalysisTable } from "./bounds"
 import { formatLevelAnalyses } from "./level"
 import { formatRankAnalyses } from "./rank"

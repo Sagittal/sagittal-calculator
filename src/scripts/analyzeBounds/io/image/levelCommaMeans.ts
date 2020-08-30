@@ -1,6 +1,6 @@
 import { CentsPosition, difference, IO, Px } from "../../../../general"
 import { Level, SymbolLongAscii, unicodeFromAscii } from "../../../../sagittal"
-import { LEVELS_COMMA_MEANS } from "../../plot"
+import { LEVELS_COMMA_MEANS } from "../../histories"
 import { MEAN_COLOR } from "./colors"
 import { LEVEL_CENTERS } from "./levelHeights"
 import { DASH_SIZE, HALF_TICK_SIZE } from "./sizes"

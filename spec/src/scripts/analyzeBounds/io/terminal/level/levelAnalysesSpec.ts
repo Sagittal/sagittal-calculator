@@ -1,10 +1,10 @@
-import { shallowClone } from "../../../../../../../src/general/code/clone"
+import { shallowClone } from "../../../../../../../src/general/code"
 import { Level, LEVELS } from "../../../../../../../src/sagittal/notations/ji"
-import { formatLevelAnalyses } from "../../../../../../../src/scripts/analyzeBounds/io/terminal/level"
 import {
     levelsBestCumulativeHistoryRanks,
     levelsBestHistoryRanks,
-} from "../../../../../../../src/scripts/analyzeBounds/levels"
+} from "../../../../../../../src/scripts/analyzeBounds/analyzeBound"
+import { formatLevelAnalyses } from "../../../../../../../src/scripts/analyzeBounds/io/terminal/level"
 
 describe("formatLevelAnalyses", () => {
     beforeEach(() => {

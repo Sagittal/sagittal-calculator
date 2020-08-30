@@ -1,6 +1,6 @@
 import { addTexts, ColorMethod, formatTable, IO, Table } from "../../../../../general"
 import { BOUNDS } from "../../../../../sagittal"
-import { AnalyzedBound } from "../../../types"
+import { AnalyzedBound } from "../../../analyzeBound"
 import { BOUND_COLORS } from "../boundColors"
 import { computeBoundRow } from "./boundRow"
 import { computeBoundsAnalysisHeaderRows } from "./headerRows"

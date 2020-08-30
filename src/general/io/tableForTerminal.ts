@@ -6,7 +6,8 @@ import { addTexts, length } from "./typedOperations"
 import {
     Char,
     ColorMethod,
-    ComputeAlignedRowCellOptions, FormatTableOptions,
+    ComputeAlignedRowCellOptions,
+    FormatTableOptions,
     IO,
     Justification,
     JustificationOption,

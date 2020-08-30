@@ -1,7 +1,8 @@
 import { Cents, Id, Integer, Rank } from "../../../../../../../src/general"
 import { Bound } from "../../../../../../../src/sagittal/notations/ji"
+import { AnalyzedBound } from "../../../../../../../src/scripts/analyzeBounds/analyzeBound"
+import { AnalyzedEvent } from "../../../../../../../src/scripts/analyzeBounds/analyzedHistory"
 import { formatBound } from "../../../../../../../src/scripts/analyzeBounds/io"
-import { AnalyzedBound, AnalyzedEvent } from "../../../../../../../src/scripts/analyzeBounds/types"
 import { boundFixture } from "../../../../../../helpers/src/scripts/analyzeBounds/fixtures"
 
 describe("computeFormattedBound", () => {

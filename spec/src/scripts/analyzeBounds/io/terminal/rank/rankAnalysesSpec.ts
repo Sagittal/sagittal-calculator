@@ -2,11 +2,10 @@
 
 import { Count, Rank } from "../../../../../../../src/general"
 import { BOUNDS } from "../../../../../../../src/sagittal/notations/ji"
-import { analyzeBound } from "../../../../../../../src/scripts/analyzeBounds/bound"
+import { analyzeBound, rankBoundIndices, rankCounts } from "../../../../../../../src/scripts/analyzeBounds/analyzeBound"
+import { AnalyzedEvent } from "../../../../../../../src/scripts/analyzeBounds/analyzedHistory"
+import { computeHistories } from "../../../../../../../src/scripts/analyzeBounds/histories"
 import { formatRankAnalyses } from "../../../../../../../src/scripts/analyzeBounds/io/terminal/rank"
-import { computeHistories } from "../../../../../../../src/scripts/analyzeBounds/plot"
-import { rankBoundIndices, rankCounts } from "../../../../../../../src/scripts/analyzeBounds/ranks"
-import { AnalyzedEvent } from "../../../../../../../src/scripts/analyzeBounds/types"
 
 describe("formatRankAnalyses", () => {
     it("gives the correct answer", () => {

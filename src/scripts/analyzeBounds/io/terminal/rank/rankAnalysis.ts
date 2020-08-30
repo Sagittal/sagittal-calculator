@@ -1,6 +1,6 @@
 import { colorize, Count, IO, Rank } from "../../../../../general"
-import { rankBoundIndices } from "../../../ranks"
-import { AnalyzedEvent } from "../../../types"
+import { rankBoundIndices } from "../../../analyzeBound"
+import { AnalyzedEvent } from "../../../analyzedHistory"
 import { BOUND_COLORS } from "../boundColors"
 import { FORMATTED_RANK_NAMES } from "../rankNames"
 

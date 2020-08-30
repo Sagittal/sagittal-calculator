@@ -1,7 +1,8 @@
 import { Cents, Id, Integer, Rank, Row } from "../../../../../../../src/general"
 import { Bound, Level } from "../../../../../../../src/sagittal"
+import { AnalyzedBound } from "../../../../../../../src/scripts/analyzeBounds/analyzeBound"
+import { AnalyzedEvent } from "../../../../../../../src/scripts/analyzeBounds/analyzedHistory"
 import { computeBoundRow } from "../../../../../../../src/scripts/analyzeBounds/io/terminal/bounds/boundRow"
-import { AnalyzedBound, AnalyzedEvent } from "../../../../../../../src/scripts/analyzeBounds/types"
 import { boundFixture } from "../../../../../../helpers/src/scripts/analyzeBounds/fixtures"
 
 describe("computeBoundRow", () => {

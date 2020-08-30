@@ -1,6 +1,6 @@
 import { formatInteger, formatNumber, Row } from "../../../../../general"
 import { formatSymbolAscii } from "../../../../../sagittal"
-import { AnalyzedBound } from "../../../types"
+import { AnalyzedBound } from "../../../analyzeBound"
 import { extractBoundIdentifiers } from "../boundIdentifiers"
 import { alignFormattedNumber } from "./alignFormattedNumber"
 import { extractLevelDistances } from "./levelDistances"

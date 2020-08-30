@@ -1,9 +1,9 @@
 import { program } from "commander"
 import { Filename, LogTarget, parseCommands, saveLog } from "../../../general"
 import { BOUNDS } from "../../../sagittal"
-import { analyzeBound } from "../bound"
+import { analyzeBound } from "../analyzeBound"
+import { computeHistories } from "../histories"
 import { formatBound } from "../io"
-import { computeHistories } from "../plot"
 
 parseCommands("analyzeBounds" as Filename, [LogTarget.BOUND])
 

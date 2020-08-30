@@ -9,7 +9,7 @@ import {
 } from "./types"
 
 const spreadAllBinSubmetricsPossibilitiesAcrossSamples = (
-    options: SpreadAllBinSubmetricsPossibilitiesAcrossSamplesOptions
+    options: SpreadAllBinSubmetricsPossibilitiesAcrossSamplesOptions,
 ) => {
     const {
         dynamicParameters,

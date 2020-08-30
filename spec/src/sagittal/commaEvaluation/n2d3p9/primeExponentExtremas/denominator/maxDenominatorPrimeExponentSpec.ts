@@ -2,7 +2,8 @@ import { Exponent, Max, Min, Prime } from "../../../../../../../src/general"
 import { Denominator } from "../../../../../../../src/general/math"
 import { N2D3P9 } from "../../../../../../../src/sagittal/commaEvaluation/n2d3p9"
 import { computeMaxDenominatorPrimeExponentGivenMaxN2D3P3 } from "../../../../../../../src/sagittal/commaEvaluation/n2d3p9/primeExponentExtremas/denominator"
-import * as minN2D3P9 from "../../../../../../../src/sagittal/commaEvaluation/n2d3p9/primeExponentExtremas/denominator/minN2D3P9"
+import * as minN2D3P9
+    from "../../../../../../../src/sagittal/commaEvaluation/n2d3p9/primeExponentExtremas/denominator/minN2D3P9"
 import * as sortedNumeratorPossibilities
     from "../../../../../../../src/sagittal/commaEvaluation/n2d3p9/primeExponentExtremas/denominator/sortedNumeratorPossibilities/sortedNumeratorPossibilities"
 

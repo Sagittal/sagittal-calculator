@@ -1,5 +1,5 @@
 import { addTexts, Formatted, NEWLINE, stringify } from "../../../../../general"
-import { AnalyzedBound } from "../../../types"
+import { AnalyzedBound } from "../../../analyzeBound"
 import { extractBoundIdentifiers } from "../boundIdentifiers"
 import { FormatBoundOptions } from "./types"
 

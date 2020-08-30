@@ -1,6 +1,6 @@
 import { difference, HexColor, IO, Proportion, Px } from "../../../../general"
 import { Level } from "../../../../sagittal"
-import { AnalyzedEvent } from "../../types"
+import { AnalyzedEvent } from "../../analyzedHistory"
 import { RANK_FILLS } from "./colors"
 import { LEVEL_BOTTOMS, LEVEL_CENTERS } from "./levelHeights"
 import { DOT_SIZE } from "./sizes"

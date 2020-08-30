@@ -1,5 +1,5 @@
 import { Monzo } from "../../../../src/general"
-import { computeCommaName } from "../../../../src/sagittal/commaSizeName/commaName"
+import { computeCommaName } from "../../../../src/sagittal/commaSizeName"
 
 describe("computeCommaName", () => {
     it("given a monzo will return the name of the comma", () => {

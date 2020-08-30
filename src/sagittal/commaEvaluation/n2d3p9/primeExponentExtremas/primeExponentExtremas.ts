@@ -1,4 +1,14 @@
-import { deepEquals, Exponent, Extrema, FIVE_PRIME_INDEX, Index, Max, Prime, PRIMES, shallowClone } from "../../../../general"
+import {
+    deepEquals,
+    Exponent,
+    Extrema,
+    FIVE_PRIME_INDEX,
+    Index,
+    Max,
+    Prime,
+    PRIMES,
+    shallowClone,
+} from "../../../../general"
 import { N2D3P9 } from "../types"
 import { EMPTY_PRIME_EXPONENT_EXTREMA, INITIAL_PRIME_EXPONENT_EXTREMAS_FOR_TWO_AND_THREE } from "./constants"
 import { computePrimeExponentExtremaGivenMaxN2D3P3 } from "./primeExponentExtrema"

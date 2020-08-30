@@ -1,6 +1,6 @@
 import { IO, Px } from "../../../../general"
 import { Level } from "../../../../sagittal"
-import { LEVELS_SIZE_CATEGORY_BOUNDS } from "../../plot"
+import { LEVELS_SIZE_CATEGORY_BOUNDS } from "../../histories"
 import { SIZE_COLOR } from "./colors"
 import { LEVEL_BOTTOMS, LEVEL_TOPS } from "./levelHeights"
 import { DASH_SIZE } from "./sizes"

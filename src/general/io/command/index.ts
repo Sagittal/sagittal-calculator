@@ -1,5 +1,5 @@
-import { parseCommands } from "./parse";
-import { CommandFlag } from "./types";
+import { parseCommands } from "./parse"
+import { CommandFlag } from "./types"
 
 export {
     parseCommands,

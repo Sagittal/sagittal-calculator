@@ -1,6 +1,6 @@
 import { CentsPosition, difference, IO, Px, sum } from "../../../../general"
 import { Level } from "../../../../sagittal"
-import { INA_MIDPOINTS } from "../../plot"
+import { INA_MIDPOINTS } from "../../histories"
 import { INA_COLOR } from "./colors"
 import { LEVEL_CENTERS } from "./levelHeights"
 import { DASH_SIZE, HALF_TICK_SIZE } from "./sizes"

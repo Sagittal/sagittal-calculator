@@ -7,7 +7,8 @@ import {
     log,
     Monzo,
     Power,
-    PRIMES, stringify,
+    PRIMES,
+    stringify,
 } from "../../../../general"
 import { Antivotes, ParameterValue, Submetric } from "../types"
 import { secondaryParameterOverride } from "./secondaryParameter"

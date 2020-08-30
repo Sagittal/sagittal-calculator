@@ -1,7 +1,6 @@
 import { BOUNDS } from "../../sagittal"
-import { analyzeBound } from "./bound"
-import { computeHistories } from "./plot"
-import { AnalyzedBound } from "./types"
+import { analyzeBound, AnalyzedBound } from "./analyzeBound"
+import { computeHistories } from "./histories"
 
 const analyzeBounds = (): AnalyzedBound[] => {
     return BOUNDS.map(bound => {

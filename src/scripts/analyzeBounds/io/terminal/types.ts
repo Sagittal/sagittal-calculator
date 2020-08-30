@@ -30,9 +30,23 @@ type JiSymbolWithPrimaryComma = Omit<JiSymbol, "primaryCommaId"> & {
     primaryComma: SagittalComma
 }
 
+type BoundIdWithBoundedSymbolIdWithDistancesPairsByLevel =
+    { id: Id<Bound> }
+    & Partial<Record<Level, BoundedSymbolIdWithDistancesPair>>
+
+interface BoundedSymbolIdWithDistances {
+    id: Id<JiSymbol>,
+    distance: Cents,
+    inaDistance: Proportion,
+}
+
+type BoundedSymbolIdWithDistancesPair = [Maybe<BoundedSymbolIdWithDistances>, Maybe<BoundedSymbolIdWithDistances>]
+
 export {
     BoundedJiSymbol,
     JiSymbolWithPrimaryComma,
     BoundedJiSymbolsWithPrimaryCommas,
     BoundIdentifiers,
+    BoundIdWithBoundedSymbolIdWithDistancesPairsByLevel,
+    BoundedSymbolIdWithDistancesPair,
 }

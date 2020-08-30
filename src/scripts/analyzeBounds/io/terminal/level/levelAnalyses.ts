@@ -1,6 +1,6 @@
 import { IO, Maybe, shallowClone } from "../../../../../general"
 import { Level, LEVELS } from "../../../../../sagittal"
-import { levelsBestCumulativeHistoryRanks, levelsBestHistoryRanks } from "../../../levels"
+import { levelsBestCumulativeHistoryRanks, levelsBestHistoryRanks } from "../../../analyzeBound"
 import { formatLevelAnalysis } from "./levelAnalysis"
 
 const formatLevelAnalyses = (): IO => {

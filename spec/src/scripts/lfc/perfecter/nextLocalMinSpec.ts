@@ -1,4 +1,4 @@
-import { BLANK, Index, Integer, IO, Unit } from "../../../../../src/general"
+import { BLANK, Index, Integer, Unit } from "../../../../../src/general"
 import { Combination } from "../../../../../src/general/math"
 import { MetricName, Scope, SumOfSquares } from "../../../../../src/scripts/lfc/bestMetric"
 import { DynamicParameter, SamplePoint } from "../../../../../src/scripts/lfc/bestMetric/scopeToSamples"

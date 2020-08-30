@@ -10,13 +10,7 @@ import { LEVELS } from "./levels"
 import { LEVELS_BOUNDS } from "./levelsBounds"
 import { LEVELS_SYMBOL_IDS } from "./levelsJiSymbolIds"
 
-import {
-    Bound,
-    JiSymbol,
-    Level,
-    Mina,
-    Tina,
-} from "./types"
+import { Bound, JiSymbol, Level, Mina, Tina } from "./types"
 
 export {
     BOUNDS,

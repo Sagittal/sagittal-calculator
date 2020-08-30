@@ -2,9 +2,12 @@ import { Proportion } from "../../../../../../../src/general"
 import { Formatted } from "../../../../../../../src/general/io"
 import { Cents } from "../../../../../../../src/general/music"
 import { Level } from "../../../../../../../src/sagittal/notations/ji"
+import { AnalyzedHistory } from "../../../../../../../src/scripts/analyzeBounds/analyzedHistory"
 import { extractLevelDistances } from "../../../../../../../src/scripts/analyzeBounds/io/terminal/bounds/levelDistances"
-import { AnalyzedHistory } from "../../../../../../../src/scripts/analyzeBounds/types"
-import { analyzedEventFixture, analyzedHistoryFixture } from "../../../../../../helpers/src/scripts/analyzeBounds/fixtures"
+import {
+    analyzedEventFixture,
+    analyzedHistoryFixture,
+} from "../../../../../../helpers/src/scripts/analyzeBounds/fixtures"
 
 describe("extractLevelDistances", () => {
     it("returns an array of the distances of each event (from the previous event)", () => {

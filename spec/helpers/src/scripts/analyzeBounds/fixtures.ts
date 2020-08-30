@@ -1,13 +1,8 @@
 import { Cents, Id, Integer, Name, Pitch, Proportion, Rank, Sum } from "../../../../../src/general"
 import { Bound, Level, Tina } from "../../../../../src/sagittal/notations/ji"
-import {
-    AnalyzedEvent,
-    AnalyzedHistory,
-    ConsolidatedEvent,
-    EventType,
-    HistoricalEvent,
-    Score,
-} from "../../../../../src/scripts/analyzeBounds/types"
+import { AnalyzedEvent, AnalyzedHistory, Score } from "../../../../../src/scripts/analyzeBounds/analyzedHistory"
+import { ConsolidatedEvent } from "../../../../../src/scripts/analyzeBounds/consolidatedHistories/types"
+import { EventType, HistoricalEvent } from "../../../../../src/scripts/analyzeBounds/histories"
 
 const eventFixture: HistoricalEvent = {
     cents: 0 as Cents,

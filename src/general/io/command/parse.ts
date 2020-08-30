@@ -7,7 +7,7 @@ import { CommandFlag } from "./types"
 
 const parseCommands = (
     scriptGroup: Filename,
-    defaultLogTargets?: LogTarget[]
+    defaultLogTargets?: LogTarget[],
 ) => {
     program
         .option(`-${CommandFlag.LOG_TARGETS}, --log-targets [logTargets]`, "log targets")

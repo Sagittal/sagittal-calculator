@@ -1,6 +1,6 @@
 import * as fs from "fs"
 import { IO, ioSettings } from "../../../../general"
-import { AnalyzedBound } from "../../types"
+import { AnalyzedBound } from "../../analyzeBound"
 import { visualizeCents } from "./cents"
 import { visualizeEvents } from "./events"
 import { addFont } from "./font"

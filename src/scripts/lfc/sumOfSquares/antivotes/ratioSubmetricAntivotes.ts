@@ -3,7 +3,8 @@ import {
     computeMonzoFromRatio,
     FractionalPartType,
     isUndefined,
-    Ratio, stringify,
+    Ratio,
+    stringify,
 } from "../../../../general"
 import { Antivotes, ParameterValue, Submetric } from "../types"
 import { maybeNuminatorSwap } from "./numinator"

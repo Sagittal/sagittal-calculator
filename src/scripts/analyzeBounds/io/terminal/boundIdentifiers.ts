@@ -1,14 +1,13 @@
 import { isUndefined, Maybe } from "../../../../general"
-import {
-    Bound,
-    getJiSymbol,
-    Level,
-    SymbolLongAscii,
-} from "../../../../sagittal"
-import { LEVEL_BOUNDED_SYMBOLS } from "../../levelBoundedJiSymbols"
-import { BoundedSymbolIdWithDistancesPair } from "../../types"
+import { Bound, getJiSymbol, Level, SymbolLongAscii } from "../../../../sagittal"
 import { computeJiSymbolWithPrimaryComma } from "./jiSymbolWithPrimaryComma"
-import { BoundedJiSymbol, BoundedJiSymbolsWithPrimaryCommas, BoundIdentifiers } from "./types"
+import { LEVEL_BOUNDED_SYMBOLS } from "./levelBoundedJiSymbols"
+import {
+    BoundedJiSymbol,
+    BoundedJiSymbolsWithPrimaryCommas,
+    BoundedSymbolIdWithDistancesPair,
+    BoundIdentifiers,
+} from "./types"
 
 const extractBoundIdentifiers = (bound: Bound): BoundIdentifiers => {
     const { cents, id } = bound
