@@ -18,7 +18,7 @@ describe("computeCommaRow", () => {
     it("takes the properties of the comma and puts them in order in a row", () => {
         const actual = computeCommaRow(comma)
 
-        const expected = ["6j", "14", "13", "11.200", "[ 0 -1 1 ⟩", "5/4", "8.200", "18.46"] as Row<Comma>
+        const expected = ["6j", "14", "13", "11.200", "[   0  -1   1 ⟩", "5/4", "8.200", "18.46"] as Row<Comma>
         expect(actual).toEqual(expected)
     })
 })

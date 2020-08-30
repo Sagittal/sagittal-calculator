@@ -2,12 +2,12 @@ import { Monzo } from "../../../../src/general"
 import { formatMonzo } from "../../../../src/general/io"
 
 describe("formatMonzo", () => {
-    it("formats it correctly", () => {
+    it("formats it correctly, with enough space that 2-digit negative exponents will line up", () => {
         const monzo = [-8, -6, 3, 5, -1] as Monzo
 
         const actual = formatMonzo(monzo)
 
-        const expected = `[ -8 -6 3 5 -1 ⟩`
+        const expected = `[  -8  -6   3   5  -1 ⟩`
         expect(actual).toBe(expected)
     })
 
@@ -16,7 +16,7 @@ describe("formatMonzo", () => {
 
         const actual = formatMonzo(monzo, { punctuated: true })
 
-        const expected = `[ -8 -6, 3 5 -1, 0 0 0, 5 4 2, 3 ⟩`
+        const expected = `[  -8  -6,   3   5  -1,   0   0   0,   5   4   2,   3 ⟩`
         expect(actual).toBe(expected)
     })
 })

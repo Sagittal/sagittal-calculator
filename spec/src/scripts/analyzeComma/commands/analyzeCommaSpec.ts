@@ -9,15 +9,15 @@ describe("analyze-comma", () => {
         "limit:        \t11",
         "5-rough sopfr:\t21",
         "cents:        \t10.260",
-        "monzo:        \t[ 3 -7 2 0 1 ⟩",
+        "monzo:        \t[   3  -7   2   0   1 ⟩",
         "ratio:        \t2200/2187",
         "apotome slope:\t-7.632",
         "N2D3P9:       \t42.01",
         "",
         "   --- notating symbols ---",
         "",
-        "symbol  \tname\tratio    \tmonzo         \tcents ",
-        "   `)|( \t275k\t2200/2187\t[ 3 -7 2 0 1 ⟩\t10.260",
+        "symbol  \tname\tratio    \tmonzo                  \tcents ",
+        "   `)|( \t275k\t2200/2187\t[   3  -7   2   0   1 ⟩\t10.260",
         "",
     ] as IO[]
 
