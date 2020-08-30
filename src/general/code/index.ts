@@ -1,6 +1,6 @@
+import { deepClone, shallowClone } from "./clone"
 import { concat } from "./concat"
 import { ACCURACY_THRESHOLD } from "./constants"
-import { computeDeepClone } from "./deepClone"
 import { computeDeepDistinct } from "./deepDistinct"
 import { deepEquals } from "./deepEquals"
 import { dig } from "./dig"
@@ -20,7 +20,7 @@ import { isNumber, isUndefined } from "./typeGuards"
 import { ExtensionBaseType, Maybe, ObjectKey, Range, Rank, Ranked, RankStrategy } from "./types"
 
 export {
-    computeDeepClone,
+    deepClone,
     computeDeepDistinct,
     computeIsCloseTo,
     computePlusOrMinusRange,
@@ -47,4 +47,5 @@ export {
     Maybe,
     concat,
     ObjectKey,
+    shallowClone,
 }

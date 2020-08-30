@@ -1,6 +1,6 @@
 import { Integer } from "../math"
 import { Count } from "../types"
-import { computeDeepClone } from "./deepClone"
+import { deepClone } from "./clone"
 import { dig } from "./dig"
 import { sort } from "./sort"
 import { Rank, RankOptions, RankStrategy } from "./types"
@@ -8,7 +8,7 @@ import { Rank, RankOptions, RankStrategy } from "./types"
 const rank = <T>(arrayOfObjects: T[], options: RankOptions = {}): Array<T & { rank: Rank<T> }> => {
     const { by = "value", strategy = RankStrategy.COMPETITION, descending } = options
 
-    const clonedArrayOfObjects = computeDeepClone(arrayOfObjects)
+    const clonedArrayOfObjects = deepClone(arrayOfObjects)
     sort(clonedArrayOfObjects, { by, descending })
 
     let rank = 0 as Rank<T>

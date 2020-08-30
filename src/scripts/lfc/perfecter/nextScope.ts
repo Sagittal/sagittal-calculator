@@ -1,9 +1,9 @@
-import { computeDeepClone, Span } from "../../../general"
+import { deepClone, Span } from "../../../general"
 import { computeDynamicParameterScope, DynamicParameter, SamplePoint, Scope } from "../bestMetric"
 import { ParameterValue } from "../sumOfSquares"
 
 const computeNextScope = (samplePoint: SamplePoint, dynamicParameters: DynamicParameter[], scope: Scope): Scope => {
-    const nextScope = computeDeepClone(scope)
+    const nextScope = deepClone(scope)
 
     samplePoint.forEach((dynamicParameterValueIndex, index) => {
         const { submetricIndex, parameter, values, unit } = dynamicParameters[ index ]

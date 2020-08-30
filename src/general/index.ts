@@ -1,6 +1,5 @@
 import {
     ACCURACY_THRESHOLD,
-    computeDeepClone,
     computeDeepDistinct,
     computeExtensionBase,
     computeIsCloseTo,
@@ -8,6 +7,7 @@ import {
     computeRange,
     computeTrimmedArray,
     concat,
+    deepClone,
     deepEquals,
     dig,
     doOnNextEventLoop,
@@ -23,6 +23,7 @@ import {
     Rank,
     Ranked,
     RankStrategy,
+    shallowClone,
     shuffle,
     sort,
 } from "./code"
@@ -181,7 +182,7 @@ export {
     computeMonzoFromInteger,
     computePrimeCount,
     computeDeepDistinct,
-    computeDeepClone,
+    deepClone,
     parseMonzo,
     parseRatio,
     computeDistributions,
@@ -282,4 +283,5 @@ export {
     BLANK,
     CommandFlag,
     formatTable,
+    shallowClone,
 }

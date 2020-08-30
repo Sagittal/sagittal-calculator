@@ -1,4 +1,5 @@
 import { Count, Id, Integer, Rank } from "../../../../src/general"
+import { shallowClone } from "../../../../src/general/code/clone"
 import { Bound } from "../../../../src/sagittal/notations/ji"
 import { rankBoundIndices, rankCounts, updateRankAnalysis } from "../../../../src/scripts/analyzeBounds/ranks"
 import { AnalyzedEvent } from "../../../../src/scripts/analyzeBounds/types"
@@ -12,7 +13,7 @@ describe("updateRankAnalysis", () => {
 
     beforeAll(() => {
         previousRankAnalysis = rankCounts[ bestRank ]
-        previousRankBounds = rankBoundIndices[ bestRank ].slice()
+        previousRankBounds = shallowClone(rankBoundIndices[ bestRank ])
 
         updateRankAnalysis(bestRank, boundId)
     })

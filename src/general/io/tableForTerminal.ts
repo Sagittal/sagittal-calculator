@@ -14,10 +14,6 @@ import {
     Table,
 } from "./types"
 
-// TODO: it might be nice to share the logic from formatSymbolAscii
-//  for centering symbols on shafts, ratios on slash, and monzos on terms
-//  into the formatTableForTerminal method
-
 const computeColumnWidths = (table: Table, columnRange: Range): Array<Count<Char>> =>
     columnRange.map(columnIndex =>
         table.reduce(

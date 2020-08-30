@@ -1,4 +1,4 @@
-import { computeDeepClone, RankStrategy } from "../../../../src/general"
+import { deepClone, RankStrategy } from "../../../../src/general"
 import { rank, Rank } from "../../../../src/general/code"
 
 describe("rank", () => {
@@ -24,7 +24,7 @@ describe("rank", () => {
     })
 
     it("does not mutate the original array", () => {
-        const originalArrayOfObjects = computeDeepClone(arrayOfObjects)
+        const originalArrayOfObjects = deepClone(arrayOfObjects)
 
         rank(arrayOfObjects)
 

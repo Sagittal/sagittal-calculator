@@ -1,4 +1,4 @@
-import { computeDeepClone } from "../code"
+import { deepClone, shallowClone } from "../code"
 import { Count } from "../types"
 import { Combination, Combinations, Integer } from "./types"
 
@@ -19,7 +19,7 @@ const computeCombinations = <T>(
 
     const computeRecursiveCombinations = (integer: Integer, combination: number[]) => {
         if (combination.length === count) {
-            combinations.push(combination.slice())
+            combinations.push(shallowClone(combination))
 
             return
         }
@@ -49,11 +49,11 @@ const computeCombinationsWithRepetitions = <T>(array: T[], count: Count<T>): Com
     const results = [] as unknown[] as Combinations<T>
     const computeCombinationsWithRepetitionsRecursively = (position: number, start: number) => {
         if (position === count) {
-            results.push(data.slice() as Combination<T>)
+            results.push(shallowClone(data) as Combination<T>)
             return
         }
         for (let index = start; index < array.length; ++index) {
-            data[ position ] = computeDeepClone(array[ index ])
+            data[ position ] = deepClone(array[ index ])
             computeCombinationsWithRepetitionsRecursively(position + 1, index)
         }
     }

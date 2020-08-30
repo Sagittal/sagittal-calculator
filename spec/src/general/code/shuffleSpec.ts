@@ -1,10 +1,10 @@
-import { computeDeepClone } from "../../../../src/general"
+import { deepClone } from "../../../../src/general"
 import { shuffle } from "../../../../src/general/code"
 
 describe("shuffle", () => {
     it("randomly changes the order of the elemnets in the array", () => {
         const array = [...Array(50).keys()]
-        const originalArray = computeDeepClone(array)
+        const originalArray = deepClone(array)
 
         shuffle(array)
 

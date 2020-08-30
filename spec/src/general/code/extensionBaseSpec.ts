@@ -15,14 +15,14 @@ describe("computeExtensionBase", () => {
 
         const actual = computeExtensionBase(extensionBaseType)
 
-        const expected: unknown = {}
+        const expected: Object = {}
         expect(actual).toEqual(expected)
     })
 
     it("does not return the same array each time", () => {
         const extensionBaseType = ExtensionBaseType.ARRAY
 
-        const previousActual = computeExtensionBase(extensionBaseType)
+        const previousActual: unknown[] = computeExtensionBase(extensionBaseType) as unknown[]
         previousActual.push(3)
 
         const actual = computeExtensionBase(extensionBaseType)
@@ -34,12 +34,12 @@ describe("computeExtensionBase", () => {
     it("returns an empty object when object is asked for", () => {
         const extensionBaseType = ExtensionBaseType.OBJECT
 
-        const previousActual = computeExtensionBase(extensionBaseType)
+        const previousActual: { key: number } = computeExtensionBase(extensionBaseType) as { key: number }
         previousActual.key = 3
 
         const actual = computeExtensionBase(extensionBaseType)
 
-        const expected: unknown = {}
+        const expected: Object = {}
         expect(actual).toEqual(expected)
     })
 })

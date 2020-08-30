@@ -1,4 +1,4 @@
-import { IO, Maybe } from "../../../../../general"
+import { IO, Maybe, shallowClone } from "../../../../../general"
 import { Level, LEVELS } from "../../../../../sagittal"
 import { levelsBestCumulativeHistoryRanks, levelsBestHistoryRanks } from "../../../levels"
 import { formatLevelAnalysis } from "./levelAnalysis"
@@ -6,7 +6,7 @@ import { formatLevelAnalysis } from "./levelAnalysis"
 const formatLevelAnalyses = (): IO => {
     const formattedLevelAnalysis: IO[] = [] as IO[]
 
-    LEVELS.slice().reverse().forEach(level => {
+    shallowClone(LEVELS).reverse().forEach(level => {
         if (level === Level.INSANE) {
             return
         }

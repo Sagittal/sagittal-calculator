@@ -1,3 +1,4 @@
+import { shallowClone } from "../../../../../../../src/general/code/clone"
 import { Level, LEVELS } from "../../../../../../../src/sagittal/notations/ji"
 import { formatLevelAnalyses } from "../../../../../../../src/scripts/analyzeBounds/io/terminal/level"
 import {
@@ -20,7 +21,7 @@ describe("formatLevelAnalyses", () => {
     })
 
     it("does not mutate LEVELS", () => {
-        const formerLevels = LEVELS.slice()
+        const formerLevels = shallowClone(LEVELS)
 
         formatLevelAnalyses()
 
