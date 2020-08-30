@@ -4,19 +4,23 @@ import { computeCopfr } from "./copfr"
 import { computeDistributions } from "./distributions"
 import { dividesEvenly } from "./dividesEvenly"
 import { computeGpf } from "./gpf"
-import { computeIntegerFromMonzo } from "./integerFromMonzo"
-import { invertMonzo } from "./invertMonzo"
 import { computeIsRough } from "./isRough"
-import { computeIsSubMonzo } from "./isSubMonzo"
-import { computeMonzoFromInteger } from "./monzoFromInteger"
-import { computeMonzoFromRatio } from "./monzoFromRatio"
-import { computeMonzosFromPrimeExponentExtremas } from "./monzosFromPrimeExponentExtrema"
+import {
+    computeIntegerFromMonzo,
+    computeIsSubMonzo,
+    computeMonzoFromInteger,
+    computeMonzoFromRatio,
+    computeMonzosFromPrimeExponentExtremas,
+    computeMonzoSlicedToPrimeIndex,
+    computeRatioFromMonzo,
+    computeSuperMonzo,
+    invertMonzo,
+    Monzo,
+} from "./monzo"
 import { computePrimeCount } from "./primeCount"
 import { PRIMES } from "./primes"
-import { computeRatioFromMonzo } from "./ratioFromMonzo"
 import { computeRoughNumberMonzo } from "./rough"
 import { computeSopfr } from "./sopfr"
-import { computeSuperMonzo } from "./superMonzo"
 import { computeTriangularNumber } from "./triangularNumber"
 import {
     abs,
@@ -48,7 +52,6 @@ import {
     Integer,
     Max,
     Min,
-    Monzo,
     Numerator,
     Power,
     Prime,
@@ -86,7 +89,6 @@ export {
     computeRatioFromMonzo,
     computeUndirectedRatio,
     Copfr,
-    Monzo,
     Sopfr,
     computeSuperMonzo,
     computeIsSubMonzo,
@@ -118,4 +120,6 @@ export {
     count,
     integerDivide,
     THREE_PRIME_INDEX,
+    computeMonzoSlicedToPrimeIndex,
+    Monzo,
 }

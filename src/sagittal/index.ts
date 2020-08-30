@@ -1,17 +1,15 @@
 import {
     ApotomeSlope,
+    computeApotomeSlope,
     computeN2D3P9,
     computePrimeExponentExtremasGivenMaxN2D3P9,
     formatN2D3P9,
     N2D3P9,
 } from "./commaEvaluation"
-import { SIZE_CATEGORY_BOUNDS } from "./commaSizeName"
 import { computeSmileyFromAscii, formatSymbolAscii, SymbolLongAscii, unicodeFromAscii } from "./io"
 import {
-    analyzeComma,
     Bound,
     BOUNDS,
-    computeExactlyNotatingJiSymbolIds,
     computeInaMidpoints,
     getJiSymbol,
     getSagittalComma,
@@ -30,7 +28,8 @@ import {
     Tina,
     TINA,
 } from "./notations"
-import { Comma } from "./types"
+import { computeSagittalRationalPitchName, SIZE_CATEGORY_BOUNDS } from "./rationalPitchSizeName"
+import { AnalyzedRationalPitch } from "./types"
 
 export {
     BOUNDS,
@@ -49,14 +48,12 @@ export {
     computeInaMidpoints,
     JI_SYMBOLS,
     computeSmileyFromAscii,
-    computeExactlyNotatingJiSymbolIds,
     getJiSymbol,
     JI_SYMBOL_SUBSETS,
     Tina,
     SagittalComma,
-    analyzeComma,
     getSagittalComma,
-    Comma,
+    AnalyzedRationalPitch,
     N2D3P9,
     computePrimeExponentExtremasGivenMaxN2D3P9,
     formatN2D3P9,
@@ -65,4 +62,6 @@ export {
     SIZE_CATEGORY_BOUNDS,
     INA_SIZES,
     formatSymbolAscii,
+    computeApotomeSlope,
+    computeSagittalRationalPitchName,
 }

@@ -1,9 +1,9 @@
 import { Monzo, Name, Pitch, Prime, Ratio, Sopfr } from "../general"
 import { ApotomeSlope, N2D3P9 } from "./commaEvaluation"
 
-interface Comma extends Pitch {
+interface AnalyzedRationalPitch extends Pitch {
     apotomeSlope: ApotomeSlope,
-    name: Name<Comma>,
+    name: Name<AnalyzedRationalPitch>,
     fiveRoughSopfr: Sopfr<5>,
     limit: Prime,
     monzo: Monzo,
@@ -12,5 +12,5 @@ interface Comma extends Pitch {
 }
 
 export {
-    Comma,
+    AnalyzedRationalPitch,
 }

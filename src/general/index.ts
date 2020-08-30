@@ -84,6 +84,7 @@ import {
     computeMonzoFromInteger,
     computeMonzoFromRatio,
     computeMonzosFromPrimeExponentExtremas,
+    computeMonzoSlicedToPrimeIndex,
     computePrimeCount,
     computeRatioFromMonzo,
     computeRoughNumberMonzo,
@@ -284,4 +285,5 @@ export {
     CommandFlag,
     formatTable,
     shallowClone,
+    computeMonzoSlicedToPrimeIndex,
 }

@@ -9,7 +9,6 @@ enum CommandFlag {
     FOR_FORUM = "b",
     NO_COLOR = "c",
     NO_USELESS = "e",
-    FIVE_SLICED = "f",
     MAX_UNIT = "i",
     MIN_CENTS = "l",
     MONZO = "m",

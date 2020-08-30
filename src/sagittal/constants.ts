@@ -1,11 +1,11 @@
 import { Cents, Monzo, Name, Prime, Ratio, Sopfr, THREE_PRIME_INDEX } from "../general"
 import { ApotomeSlope, N2D3P9 } from "./commaEvaluation"
-import { Comma } from "./types"
+import { AnalyzedRationalPitch } from "./types"
 
-const APOTOME: Comma = {
+const APOTOME: AnalyzedRationalPitch = {
     apotomeSlope: 0 as ApotomeSlope,
     cents: 113.68500605771192 as Cents,
-    name: "apotome" as Name<Comma>,
+    name: "apotome" as Name<AnalyzedRationalPitch>,
     fiveRoughSopfr: 0 as Sopfr<5>,
     limit: 3 as Prime,
     monzo: [-11, 7] as Monzo,

@@ -1,12 +1,6 @@
 import { COMMA_POPULARITIES, computeRatioFromMonzo, deepEquals, formatRatio, IO, Monzo, Votes } from "../../general"
-import {
-    computeExactlyNotatingJiSymbolIds,
-    computeSmileyFromAscii,
-    formatN2D3P9,
-    getJiSymbol,
-    JI_SYMBOL_SUBSETS,
-    N2D3P9,
-} from "../../sagittal"
+import { computeSmileyFromAscii, formatN2D3P9, getJiSymbol, JI_SYMBOL_SUBSETS, N2D3P9 } from "../../sagittal"
+import { computeExactlyNotatingJiSymbolIds } from "./exactlyNotatingJiSymbolIds"
 import { PopularRatio } from "./types"
 
 const computePopularRatio = ({ monzo, n2d3p9 }: { monzo: Monzo, n2d3p9: N2D3P9 }): PopularRatio => {

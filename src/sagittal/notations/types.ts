@@ -1,7 +1,7 @@
 import { Id } from "../../general"
-import { Comma } from "../types"
+import { AnalyzedRationalPitch } from "../types"
 
-interface SagittalComma extends Comma {
+interface SagittalComma extends AnalyzedRationalPitch {
     id: Id<SagittalComma>,
 }
 

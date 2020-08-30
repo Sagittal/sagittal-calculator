@@ -13,6 +13,7 @@ const spaceTerm = (term: Exponent<Prime>): IO => {
 const formatMonzo = (monzo: Monzo, { punctuated = false } = {}): Formatted<Monzo> => {
     let contents
     if (punctuated) {
+        // TODO just made a monzo slice helper, reconcile this with that
         const fiveSlicedMonzo: Monzo<Integer, 5> = monzo.splice(2) as Monzo<Integer, 5>
         const twoThreeMonzo = monzo
         contents = twoThreeMonzo.map(spaceTerm).join(" ") + ", "

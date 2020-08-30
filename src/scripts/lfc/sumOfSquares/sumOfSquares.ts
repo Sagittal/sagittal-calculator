@@ -8,10 +8,10 @@ const computeSumOfSquares = (
     z: number,
 ): SumOfSquares =>
     realPopularities.reduce(
-        (sumOfSquares, commaPopularity, index) => {
+        (sumOfSquares, popularity, index) => {
             const rankedUnpopularity: Ranked<Unpopularity> = rankedUnpopularities[ index ]
             const ourRank = rankedUnpopularity.rank
-            const rank = commaPopularity.rank
+            const rank = popularity.rank
             const squaredRankDifference = (ourRank ** z - rank ** z) ** 2
 
             return sumOfSquares + squaredRankDifference as SumOfSquares

@@ -39,10 +39,6 @@ type Copfr<Roughness = void> =
     & { _CopfrBrand: "Copfr" }
     & (Roughness extends number ? { _RoughnessBrand: Roughness } : {})
 
-type Monzo<T extends number = Integer, Slice = void, Limit = void> =
-    Array<T & Exponent<Prime>>
-    & (Slice extends number ? { _MonzoSlice: Slice } : {})
-
 export {
     Ratio,
     Numerator,
@@ -58,7 +54,6 @@ export {
     Power,
     Integer,
     UndirectedRatio,
-    Monzo,
     Sopfr,
     Copfr,
     Prime,

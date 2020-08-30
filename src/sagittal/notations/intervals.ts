@@ -1,5 +1,5 @@
 import { Cents, CentsPosition, Max } from "../../general"
-import { SIZE_CATEGORY_BOUNDS } from "../commaSizeName"
+import { SIZE_CATEGORY_BOUNDS } from "../rationalPitchSizeName"
 
 const MAX_SINGLE_SHAFT_POSITION: CentsPosition = SIZE_CATEGORY_BOUNDS[ 7 ]
 

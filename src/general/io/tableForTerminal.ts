@@ -70,7 +70,7 @@ const maybeColor = (rowText: IO, rowIndex: number, colors?: ColorMethod[]): IO =
     return colorize(rowText, rowColor)
 }
 
-// todo: this should support header row count now that it shares options with for forum version
+// TODO: this should support header row count now that it shares options with for forum version
 
 const formatTableForTerminal = (table: Table, options: FormatTableOptions = {}): IO => {
     const { justification = Justification.LEFT, colors } = options

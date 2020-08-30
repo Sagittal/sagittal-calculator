@@ -1,5 +1,4 @@
 import { BOUNDS } from "./bounds"
-import { computeExactlyNotatingJiSymbolIds } from "./exactlyNotatingJiSymbolIds"
 import { computeInaMidpoints } from "./inaMidpoints"
 import { INA_SIZES, TINA } from "./intervals"
 import { getJiSymbol } from "./jiSymbol"
@@ -27,7 +26,6 @@ export {
     LEVEL_EDAS,
     LEVELS_SYMBOL_IDS,
     computeInaMidpoints,
-    computeExactlyNotatingJiSymbolIds,
     getJiSymbol,
     Tina,
 }

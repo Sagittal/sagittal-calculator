@@ -1,7 +1,6 @@
 import { computeTrimmedArray } from "../code"
 import { Integer, Max, Prime, PRIMES } from "../math"
-import { computeMonzoFromIntegerOrMonzo } from "./monzoFromIntegerOrMonzo"
-import { Monzo } from "./types"
+import { computeMonzoFromIntegerOrMonzo, Monzo } from "./monzo"
 
 const computeGpf = (integerOrMonzo: Integer | Monzo): Max<Prime> => {
     const monzo = computeMonzoFromIntegerOrMonzo(integerOrMonzo)

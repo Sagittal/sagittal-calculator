@@ -1,6 +1,6 @@
 import { abs, Exponent, Integer, Prime, PRIMES } from "../math"
-import { computeMonzoFromIntegerOrMonzo } from "./monzoFromIntegerOrMonzo"
-import { Monzo, Sopfr } from "./types"
+import { computeMonzoFromIntegerOrMonzo, Monzo } from "./monzo"
+import { Sopfr } from "./types"
 
 // Sum of prime factors
 

@@ -1,10 +1,8 @@
-import { analyzeComma } from "./comma"
 import { getSagittalComma } from "./getSagittalComma"
 import { MAX_SINGLE_SHAFT_CENTS } from "./intervals"
 import {
     Bound,
     BOUNDS,
-    computeExactlyNotatingJiSymbolIds,
     computeInaMidpoints,
     getJiSymbol,
     INA_SIZES,
@@ -37,11 +35,9 @@ export {
     JiSymbol,
     computeInaMidpoints,
     JI_SYMBOLS,
-    computeExactlyNotatingJiSymbolIds,
     getJiSymbol,
     JI_SYMBOL_SUBSETS,
     Tina,
     SagittalComma,
-    analyzeComma,
     getSagittalComma,
 }
