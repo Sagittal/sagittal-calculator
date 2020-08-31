@@ -10,12 +10,13 @@ import { computeSagittalCommaName, SIZE_CATEGORY_BOUNDS } from "./commaSizeName"
 import { computeSmileyFromAscii, formatSymbolAscii, SymbolLongAscii, unicodeFromAscii } from "./io"
 import {
     Bound,
-    JI_BOUNDS,
     computeInaMidpoints,
+    formatLevel,
     getJiSymbol,
     getSagittalComma,
     INA_SIZES,
     JiSymbol,
+    JI_BOUNDS,
     JI_SYMBOLS,
     JI_SYMBOL_SUBSETS,
     Level,
@@ -64,4 +65,5 @@ export {
     formatSymbolAscii,
     computeApotomeSlope,
     computeSagittalCommaName,
+    formatLevel,
 }

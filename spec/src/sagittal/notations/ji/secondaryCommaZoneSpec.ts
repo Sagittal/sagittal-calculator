@@ -1,13 +1,12 @@
-import { Id } from "../../../../../src/general"
+import { Id, Zone } from "../../../../../src/general"
 import { SagittalComma, SymbolLongAscii } from "../../../../../src/sagittal"
 import { SymbolUnicode } from "../../../../../src/sagittal/io"
 import { JiSymbol, Level, Mina } from "../../../../../src/sagittal/notations/ji"
 import { computeSecondaryCommaZone } from "../../../../../src/sagittal/notations/ji/secondaryCommaZone"
-import { SecondaryCommaZone } from "../../../../../src/sagittal/notations/ji/types"
 import { SymbolSubset } from "../../../../../src/sagittal/notations/types"
 
 describe("secondaryCommaZone", () => {
-    it("returns the min and max cents of where secondary commas are represented by the given symbol, i.e. its capture zone at its introducing level", () => {
+    it("returns the min and max cents of where secondary commas are represented by the given JI symbol, i.e. its capture zone at its introducing level", () => {
         const symbol: JiSymbol = {
             id: 82 as Id<JiSymbol>,
             ascii: "/|~" as SymbolLongAscii,
@@ -22,9 +21,9 @@ describe("secondaryCommaZone", () => {
         const actual = computeSecondaryCommaZone(symbol)
 
         const expected = [
-            37.30947973834720,
+            37.30947973834710,
             38.06194034977850,
-        ] as SecondaryCommaZone
+        ] as Zone<SagittalComma>
         expect(actual).toEqual(expected)
     })
 
@@ -45,7 +44,7 @@ describe("secondaryCommaZone", () => {
         const expected = [
             38.06194034977850,
             38.29315717024330,
-        ] as SecondaryCommaZone
+        ] as Zone<SagittalComma>
         expect(actual).toEqual(expected)
     })
 
@@ -66,7 +65,7 @@ describe("secondaryCommaZone", () => {
         const expected = [
             35.11809146436650,
             40.26051203403560,
-        ] as SecondaryCommaZone
+        ] as Zone<SagittalComma>
         expect(actual).toEqual(expected)
     })
 
@@ -87,7 +86,7 @@ describe("secondaryCommaZone", () => {
         const expected = [
             0,
             2.74024427456787,
-        ] as SecondaryCommaZone
+        ] as Zone<SagittalComma>
         expect(actual).toEqual(expected)
     })
 })

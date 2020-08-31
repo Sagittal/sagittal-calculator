@@ -1,5 +1,5 @@
 import { abs, Cents, difference, Maybe } from "../../../../general"
-import { Bound, JI_BOUNDS, getJiSymbol, getSagittalComma, JiSymbol } from "../../../../sagittal"
+import { Bound, getJiSymbol, getSagittalComma, JiSymbol, JI_BOUNDS } from "../../../../sagittal"
 import { computeInaDistance } from "../../analyzedHistory"
 import { computeBoundedJiSymbolPositions } from "../../boundedPositions"
 import { computePositionJiSymbolId } from "./positionJiSymbolId"

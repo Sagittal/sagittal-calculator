@@ -3,12 +3,23 @@ import { ApotomeSlope, N2D3P9 } from "../commaEvaluation"
 import { APOTOME } from "../constants"
 import { SagittalComma } from "./types"
 
+// TODO: I wonder if the philosophy should be this:
+//  in the implementation, have the absolute minimum amount of info
+//  and have things like this exist as tests
+//  that might solve the dilemma of the "Analyzed<>" parameterized type
+//  and some of the rational/not-rational stuff too
+//  if this was literally just an id and monzo. everything else could be calculated
+//  there are questions of performance, I suppose
+//  but also of page load time...
+//  yes and perhaps in such a test the comma information would be regrouped with the symbol information, 
+//  so it'd be a quick reference
+
 const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 0 as Id<SagittalComma>,
         apotomeSlope: 0.000 as ApotomeSlope,
         fiveRoughSopfr: 0 as Sopfr<5>,
-        limit: 2 as Prime,
+        limit: 1 as Prime,
         ratio: [1, 1] as Ratio,
         monzo: [] as unknown[] as Monzo,
         cents: 0 as Cents,

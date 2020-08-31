@@ -2,7 +2,6 @@ import {
     ACCURACY_THRESHOLD,
     computeDeepDistinct,
     computeExtensionBase,
-    isCloseTo,
     computePlusOrMinusRange,
     computeRange,
     computeTrimmedArray,
@@ -12,6 +11,7 @@ import {
     dig,
     doOnNextEventLoop,
     ExtensionBaseType,
+    isCloseTo,
     isNumber,
     isUndefined,
     Maybe,
@@ -139,6 +139,7 @@ import {
     Pitch,
     Popularity,
     Votes,
+    Zone,
 } from "./music"
 import { Count, Extrema, Id, Index, Ms, Name, Proportion, Resolution, Span, Sum, Unit } from "./types"
 
@@ -200,6 +201,7 @@ export {
     FractionalPartType,
     Exponent,
     FIVE_ROUGHNESS,
+    Zone,
     formatTime,
     computeRoughNumberMonzo,
     computeCentsFromRatio,

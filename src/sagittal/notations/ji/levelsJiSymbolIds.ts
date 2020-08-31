@@ -1,13 +1,11 @@
 import { Id } from "../../../general"
+import { isWithinLevel } from "./isWithinLevel"
 import { JI_SYMBOLS } from "./jiSymbols"
 import { LEVELS } from "./levels"
 import { JiSymbol, Level } from "./types"
 
-const computeIsWithinLevel = (level: Level, targetLevel: Level): boolean =>
-    LEVELS.indexOf(level) <= LEVELS.indexOf(targetLevel)
-
 const computeLevelJiSymbolIds = (level: Level): Array<Id<JiSymbol>> =>
-    JI_SYMBOLS.filter(jiSymbol => computeIsWithinLevel(jiSymbol.introducingLevel, level)).map(jiSymbol => jiSymbol.id)
+    JI_SYMBOLS.filter(jiSymbol => isWithinLevel(jiSymbol.introducingLevel, level)).map(jiSymbol => jiSymbol.id)
 
 const LEVELS_SYMBOL_IDS: Record<Level, Array<Id<JiSymbol>>> = LEVELS.reduce(
     (levelSymbols, level: Level) =>
@@ -20,6 +18,5 @@ const LEVELS_SYMBOL_IDS: Record<Level, Array<Id<JiSymbol>>> = LEVELS.reduce(
 
 export {
     LEVELS_SYMBOL_IDS,
-    computeIsWithinLevel,
     computeLevelJiSymbolIds,
 }

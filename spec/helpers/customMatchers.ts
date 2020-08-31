@@ -93,7 +93,7 @@ const eachExpectedElementHasSameContentsAsSomeActualElement = <T>(expectedElemen
 
 const customMatchers: CustomMatcherFactories = {
     toBeCloseToTyped: (util: MatchersUtil, customEqualityTesters: readonly CustomEqualityTester[]): CustomMatcher => ({
-        compare: <T extends number>(actual: T, expected: T, precision?: Integer, negate: boolean = false, message?: string): CustomMatcherResult =>
+        compare: <T extends number>(actual: T, expected: T, precision?: Integer, negate?: boolean, message?: string): CustomMatcherResult =>
             doAssertions((): void => {
                 testIsCloseTo(actual, expected, precision, negate, message)
             }),

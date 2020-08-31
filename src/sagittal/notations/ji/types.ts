@@ -1,4 +1,4 @@
-import { Cents, Extrema, Id } from "../../../general"
+import { Cents, Id } from "../../../general"
 import { SymbolLongAscii, SymbolUnicode } from "../../io"
 import { SagittalComma, SymbolSubset } from "../types"
 
@@ -33,8 +33,6 @@ interface Bound {
     cents: Cents,
 }
 
-type SecondaryCommaZone = Extrema<Cents>
-
 export {
     JiSymbol,
     Tina,
@@ -44,5 +42,4 @@ export {
     Medina,
     Level,
     Bound,
-    SecondaryCommaZone,
 }

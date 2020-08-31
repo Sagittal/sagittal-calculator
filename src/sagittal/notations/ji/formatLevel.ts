@@ -1,5 +1,7 @@
-import { Formatted } from "../../../../../general"
-import { Level } from "../../../../../sagittal"
+import { Formatted } from "../../../general"
+import { Level } from "./types"
+
+// not moving into an io folder for JI dir until there's at least one other thing
 
 const formatLevel = (level: Level): Formatted<Level> => {
     const almostFormattedLevel = level.replace(/(\_\w)/g, match => ` ${match[ 1 ].toUpperCase()}`)

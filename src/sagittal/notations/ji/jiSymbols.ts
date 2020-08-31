@@ -7,7 +7,11 @@ import { JiSymbol, Level, Mina } from "./types"
 //  - ascii, unicode, elements, symbolSubset, isMultishaft
 //  (and smallestJiSymbolSubset should just be a thing you ask of it, a separate list of a sorted subset of subsets)
 //  (there'd be a method which would get you the mixed versions of ascii and unicode from the pure)
-//  so are these JiSagittals?
+//  and it would include tons of stuff from the SMuFL Map, like SMuFL class name and description
+//  and heraldic and graphical glyph description
+//  like its Sagispeak (just the spelling, all else could be calculated from that)
+//  before you go through with this, review all the stuff about elements vs symbols though
+//  so are these JiSagittals here?
 
 const JI_SYMBOLS: JiSymbol[] = [
     {

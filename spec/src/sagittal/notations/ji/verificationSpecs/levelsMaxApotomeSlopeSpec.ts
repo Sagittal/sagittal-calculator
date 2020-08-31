@@ -1,7 +1,7 @@
-import { Abs, abs, Id, Max } from "../../../../../src/general"
-import { getSagittalComma } from "../../../../../src/sagittal"
-import { ApotomeSlope, computeApotomeSlope } from "../../../../../src/sagittal/commaEvaluation"
-import { getJiSymbol, JiSymbol, Level, LEVELS_SYMBOL_IDS } from "../../../../../src/sagittal/notations/ji"
+import { Abs, abs, Id, Max } from "../../../../../../src/general"
+import { getSagittalComma } from "../../../../../../src/sagittal"
+import { ApotomeSlope, computeApotomeSlope } from "../../../../../../src/sagittal/commaEvaluation"
+import { getJiSymbol, JiSymbol, Level, LEVELS_SYMBOL_IDS } from "../../../../../../src/sagittal/notations/ji"
 
 describe("max absolute apotome slope per level", () => {
     it("increases a bit at each level", () => {

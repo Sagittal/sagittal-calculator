@@ -1,8 +1,7 @@
 import { colorize, Io, Maybe } from "../../../../../general"
-import { Level } from "../../../../../sagittal"
+import { formatLevel, Level } from "../../../../../sagittal"
 import { BOUND_COLORS } from "../boundColors"
 import { FORMATTED_RANK_NAMES } from "../rankNames"
-import { formatLevel } from "./level"
 
 const formatLevelAnalysis = (
     level: Level,

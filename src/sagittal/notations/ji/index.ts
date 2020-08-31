@@ -1,3 +1,4 @@
+import { formatLevel } from "./formatLevel"
 import { computeInaMidpoints } from "./inaMidpoints"
 import { INA_SIZES, TINA } from "./intervals"
 import { JI_BOUNDS } from "./jiBounds"
@@ -8,7 +9,6 @@ import { LEVEL_EDAS } from "./levelEdas"
 import { LEVELS } from "./levels"
 import { LEVELS_BOUNDS } from "./levelsBounds"
 import { LEVELS_SYMBOL_IDS } from "./levelsJiSymbolIds"
-
 import { Bound, JiSymbol, Level, Mina, Tina } from "./types"
 
 export {
@@ -28,4 +28,5 @@ export {
     computeInaMidpoints,
     getJiSymbol,
     Tina,
+    formatLevel,
 }

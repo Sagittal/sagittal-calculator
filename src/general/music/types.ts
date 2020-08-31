@@ -21,7 +21,7 @@ interface Popularity {
     votes: Votes,
 }
 
-type Zone = Extrema<Cents>
+type Zone<T = void> = Extrema<Cents> & (T extends void ? {} : { _ZoneOfBrand: T })
 
 export {
     CentsPosition,

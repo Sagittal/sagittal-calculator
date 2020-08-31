@@ -1,12 +1,12 @@
-import { ACCURACY_THRESHOLD } from "../../../../../src/general/code"
-import { computeRoughNumberMonzo, computeSopfr, FIVE_ROUGHNESS, Monzo, Sopfr } from "../../../../../src/general/math"
-import { Average } from "../../../../../src/general/math/types"
-import { getSagittalComma } from "../../../../../src/sagittal"
-import { JI_SYMBOLS } from "../../../../../src/sagittal/notations/ji"
+import { ACCURACY_THRESHOLD } from "../../../../../../src/general/code"
+import { computeRoughNumberMonzo, computeSopfr, FIVE_ROUGHNESS, Monzo, Sopfr } from "../../../../../../src/general/math"
+import { Average } from "../../../../../../src/general/math/types"
+import { getSagittalComma } from "../../../../../../src/sagittal"
+import { JI_SYMBOLS } from "../../../../../../src/sagittal/notations/ji"
 
 const AVERAGE_FIVE_ROUGH_SOPFR: Average<Sopfr<5>> = 22.78523489932886 as Average<Sopfr<5>>
 
-describe("averageFiveRoughSopfr", () => {
+describe("average 5-rough sopfr", () => {
     it("is about 23", () => {
         const total: number = JI_SYMBOLS.reduce(
             (totalFiveRoughSopfr, symbol) => {
