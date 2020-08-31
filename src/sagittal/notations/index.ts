@@ -2,7 +2,7 @@ import { getSagittalComma } from "./getSagittalComma"
 import { MAX_SINGLE_SHAFT_CENTS } from "./intervals"
 import {
     Bound,
-    BOUNDS,
+    JI_BOUNDS,
     computeInaMidpoints,
     getJiSymbol,
     INA_SIZES,
@@ -21,7 +21,7 @@ import {
 import { SagittalComma } from "./types"
 
 export {
-    BOUNDS,
+    JI_BOUNDS,
     Bound,
     Level,
     LEVELS,

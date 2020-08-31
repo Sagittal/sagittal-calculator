@@ -8,7 +8,6 @@ import { JiSymbol, SecondaryCommaZone } from "./types"
 //  sure, but first you'd want to include its capture zones per level at all.
 //  then work up to its secondary comma zone
 //  okay, but do we want it to be an array of Id<Bound>? that seems right
-//  but that makes me think that JiSymbol's primaryCommaId should have been just an Id pointer to a list of Commas
 
 const computeSecondaryCommaZone = (jiSymbol: JiSymbol): SecondaryCommaZone => {
     const levelBounds = LEVELS_BOUNDS[ jiSymbol.introducingLevel ]

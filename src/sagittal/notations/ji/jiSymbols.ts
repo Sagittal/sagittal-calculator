@@ -3,6 +3,12 @@ import { SymbolLongAscii, SymbolUnicode } from "../../io"
 import { SagittalComma, SymbolSubset } from "../types"
 import { JiSymbol, Level, Mina } from "./types"
 
+// TODO: This is perhaps not truly "symbols", because a symbol should be something which contains 
+//  - ascii, unicode, elements, symbolSubset, isMultishaft
+//  (and smallestJiSymbolSubset should just be a thing you ask of it, a separate list of a sorted subset of subsets)
+//  (there'd be a method which would get you the mixed versions of ascii and unicode from the pure)
+//  so are these JiSagittals?
+
 const JI_SYMBOLS: JiSymbol[] = [
     {
         id: 0 as Id<JiSymbol>,

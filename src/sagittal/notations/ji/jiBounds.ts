@@ -1,7 +1,11 @@
 import { Cents, Id } from "../../../general"
 import { Bound, Level } from "./types"
 
-const BOUNDS: Bound[] = [
+// Note: the bounds analysis I have proposed here: http://forum.sagittal.org/viewtopic.php?p=1808#p1808
+// might stipulate a reorganizing of these, where each level is a separate list
+// because some of these bounds bound symbols which are unrelated from one level to the next, so maybe can be different
+
+const JI_BOUNDS: Bound[] = [
     {
         id: 0 as Id<Bound>,
         cents: 0.210788021120605 as Cents,
@@ -750,5 +754,5 @@ const BOUNDS: Bound[] = [
 ]
 
 export {
-    BOUNDS,
+    JI_BOUNDS,
 }

@@ -6,7 +6,7 @@ import { deepEquals } from "./deepEquals"
 import { dig } from "./dig"
 import { doOnNextEventLoop } from "./doOnNextEventLoop"
 import { computeExtensionBase } from "./extensionBase"
-import { computeIsCloseTo } from "./isCloseTo"
+import { isCloseTo } from "./isCloseTo"
 import { computeIsEmpty } from "./isEmpty"
 import { merge } from "./merge"
 import { computePlusOrMinusRange } from "./plusOrMinusRange"
@@ -22,7 +22,7 @@ import { ExtensionBaseType, Maybe, ObjectKey, Range, Rank, Ranked, RankStrategy 
 export {
     deepClone,
     computeDeepDistinct,
-    computeIsCloseTo,
+    isCloseTo,
     computePlusOrMinusRange,
     deepEquals,
     merge,

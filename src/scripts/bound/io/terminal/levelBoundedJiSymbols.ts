@@ -1,5 +1,5 @@
 import { abs, Cents, difference, Maybe } from "../../../../general"
-import { Bound, BOUNDS, getJiSymbol, getSagittalComma, JiSymbol } from "../../../../sagittal"
+import { Bound, JI_BOUNDS, getJiSymbol, getSagittalComma, JiSymbol } from "../../../../sagittal"
 import { computeInaDistance } from "../../analyzedHistory"
 import { computeBoundedJiSymbolPositions } from "../../boundedPositions"
 import { computePositionJiSymbolId } from "./positionJiSymbolId"
@@ -42,7 +42,7 @@ const computeLevelBoundedJiSymbolIdWithDistances = (
 }
 
 const LEVEL_BOUNDED_SYMBOLS: BoundIdWithBoundedSymbolIdWithDistancesPairsByLevel[] =
-    BOUNDS.map(computeLevelBoundedJiSymbolIdWithDistances)
+    JI_BOUNDS.map(computeLevelBoundedJiSymbolIdWithDistances)
 
 export {
     computeLevelBoundedJiSymbolIdWithDistances,

@@ -80,7 +80,7 @@ const SIZE_CATEGORY_BOUNDS: CentsPosition[] = [
     {
         name: "S+A|M+A" as Name<Pitch>,
         cents: APOTOME_CENTS + 45.1124978365313 as Cents, // 158.797503894
-        monzo: [-7, -4.5] as Monzo<number>,
+        monzo: [-7, 4.5] as Monzo<number>,
     },
     {
         name: "M+A|L+A" as Name<Pitch>,

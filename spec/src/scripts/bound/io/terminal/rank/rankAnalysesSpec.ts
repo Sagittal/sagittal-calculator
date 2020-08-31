@@ -1,7 +1,7 @@
 // tslint:disable max-line-length
 
 import { Count, Rank } from "../../../../../../../src/general"
-import { BOUNDS } from "../../../../../../../src/sagittal/notations/ji"
+import { JI_BOUNDS } from "../../../../../../../src/sagittal/notations/ji"
 import { analyzeBound, rankBoundIndices, rankCounts } from "../../../../../../../src/scripts/bound/analyzeBound"
 import { AnalyzedEvent } from "../../../../../../../src/scripts/bound/analyzedHistory"
 import { computeHistories } from "../../../../../../../src/scripts/bound/histories"
@@ -12,7 +12,7 @@ describe("formatRankAnalyses", () => {
         // reset and then compute and analyze all the bounds as you would when running the main script in summary mode
         rankCounts.forEach((_, index) => rankCounts[ index ] = 0 as Count<Rank<AnalyzedEvent>>)
         rankBoundIndices.forEach((_, index) => rankBoundIndices[ index ] = [])
-        BOUNDS.map(bound => {
+        JI_BOUNDS.map(bound => {
             const histories = computeHistories(bound)
             analyzeBound(histories, bound)
         })

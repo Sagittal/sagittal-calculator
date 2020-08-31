@@ -1,5 +1,5 @@
 import { addTexts, ColorMethod, formatTable, Io, Table } from "../../../../../general"
-import { BOUNDS } from "../../../../../sagittal"
+import { JI_BOUNDS } from "../../../../../sagittal"
 import { AnalyzedBound } from "../../../analyzeBound"
 import { BOUND_COLORS } from "../boundColors"
 import { computeBoundRow } from "./boundRow"
@@ -12,7 +12,7 @@ const computeBoundsAnalysisTable = (boundsAnalysis: AnalyzedBound[]): Io => {
     const colors: ColorMethod[] = ["white", "white", "white", "white", "white", "white"]
 
     boundsAnalysis.forEach((analyzedBound, index) => {
-        const bound = BOUNDS[ index ]
+        const bound = JI_BOUNDS[ index ]
         table.push(computeBoundRow(analyzedBound, { bound }))
         colors.push(BOUND_COLORS[ analyzedBound.bestRank ])
     })

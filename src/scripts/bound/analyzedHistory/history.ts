@@ -1,4 +1,4 @@
-import { Cents, computeIsCloseTo, Proportion } from "../../../general"
+import { Cents, isCloseTo, Proportion } from "../../../general"
 import { Bound, Tina, TINA } from "../../../sagittal"
 import { History } from "../histories"
 import { analyzeEvents } from "./analyzeEvents"
@@ -21,10 +21,10 @@ const computeAnalyzedHistory = (history: History, bound: Bound, initialPosition:
     const inaDistance = computeHistoryInaDistance(analyzedEvents)
 
     const positionError = position - bound.cents
-    const possible = computeIsCloseTo(positionError, 0)
+    const possible = isCloseTo(positionError, 0)
 
     let tinaError = positionError / TINA as Proportion<Tina>
-    if (computeIsCloseTo(tinaError, 0 as Proportion<Tina>)) {
+    if (isCloseTo(tinaError, 0 as Proportion<Tina>)) {
         tinaError = 0 as Proportion<Tina>
     }
 

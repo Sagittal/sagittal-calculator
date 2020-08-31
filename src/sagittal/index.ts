@@ -10,7 +10,7 @@ import { computeSagittalCommaName, SIZE_CATEGORY_BOUNDS } from "./commaSizeName"
 import { computeSmileyFromAscii, formatSymbolAscii, SymbolLongAscii, unicodeFromAscii } from "./io"
 import {
     Bound,
-    BOUNDS,
+    JI_BOUNDS,
     computeInaMidpoints,
     getJiSymbol,
     getSagittalComma,
@@ -32,7 +32,7 @@ import {
 import { AnalyzedRationalPitch } from "./types"
 
 export {
-    BOUNDS,
+    JI_BOUNDS,
     Bound,
     Level,
     LEVELS,

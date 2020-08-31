@@ -1,6 +1,6 @@
 // tslint:disable max-line-length
 
-import { computeIsCloseTo, deepEquals, Integer, isUndefined, stringify } from "../../src/general"
+import { deepEquals, Integer, isCloseTo, isUndefined, stringify } from "../../src/general"
 import CustomEqualityTester = jasmine.CustomEqualityTester
 import CustomMatcher = jasmine.CustomMatcher
 import CustomMatcherFactories = jasmine.CustomMatcherFactories
@@ -35,7 +35,7 @@ const assert = (condition: boolean, message: string): void => {
 }
 
 const testIsCloseTo = <T extends number>(actual: T, expected: T, precision?: Integer, negate?: boolean, message?: string): void => {
-    const isClose: boolean = computeIsCloseTo(actual, expected, precision)
+    const isClose: boolean = isCloseTo(actual, expected, precision)
 
     if (negate) {
         assert(

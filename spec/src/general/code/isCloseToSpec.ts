@@ -1,12 +1,12 @@
-import { computeIsCloseTo } from "../../../../src/general/code"
+import { isCloseTo } from "../../../../src/general/code"
 import { Integer } from "../../../../src/general/math"
 
-describe("computeIsCloseTo", () => {
+describe("isCloseTo", () => {
     it("returns true if the two values are very close", () => {
         const valueOne = 5.68598945
         const valueTwo = 5.68598948
 
-        const actual = computeIsCloseTo(valueOne, valueTwo)
+        const actual = isCloseTo(valueOne, valueTwo)
 
         expect(actual).toBeTruthy()
     })
@@ -15,7 +15,7 @@ describe("computeIsCloseTo", () => {
         const valueOne = 5.68598945
         const valueTwo = 5.68598845
 
-        const actual = computeIsCloseTo(valueOne, valueTwo)
+        const actual = isCloseTo(valueOne, valueTwo)
 
         expect(actual).toBeFalsy()
     })
@@ -24,7 +24,7 @@ describe("computeIsCloseTo", () => {
         const valueOne = 5.6862
         const valueTwo = 5.6858
 
-        const actual = computeIsCloseTo(valueOne, valueTwo, 3 as Integer)
+        const actual = isCloseTo(valueOne, valueTwo, 3 as Integer)
 
         expect(actual).toBeTruthy()
     })

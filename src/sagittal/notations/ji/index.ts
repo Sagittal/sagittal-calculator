@@ -1,6 +1,6 @@
-import { BOUNDS } from "./bounds"
 import { computeInaMidpoints } from "./inaMidpoints"
 import { INA_SIZES, TINA } from "./intervals"
+import { JI_BOUNDS } from "./jiBounds"
 import { getJiSymbol } from "./jiSymbol"
 import { JI_SYMBOLS } from "./jiSymbols"
 import { JI_SYMBOL_SUBSETS } from "./jiSymbolSubsets"
@@ -12,7 +12,7 @@ import { LEVELS_SYMBOL_IDS } from "./levelsJiSymbolIds"
 import { Bound, JiSymbol, Level, Mina, Tina } from "./types"
 
 export {
-    BOUNDS,
+    JI_BOUNDS,
     JI_SYMBOLS,
     INA_SIZES,
     JiSymbol,
