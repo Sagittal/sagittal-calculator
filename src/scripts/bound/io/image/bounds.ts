@@ -16,7 +16,7 @@ const computeBoundsImage = (boundsAnalysis: AnalyzedBound[]): Io => {
     if (!ioSettings.noWrite) {
         fs.copyFileSync(
             "assets/fonts/BravuraSagittalUpdate_v10.otf",
-            "dist/analyzeBounds/BravuraSagittalUpdate_v10.otf",
+            "dist/bound/BravuraSagittalUpdate_v10.otf",
         )
     }
 

@@ -6,6 +6,7 @@ import { AnalyzedRationalPitch, getSagittalComma, JI_SYMBOLS, SymbolLongAscii } 
 //  you should really go back to finding it by the monzo
 //  but this is a helfpul step for now I think
 //  you should probably write a test that catches and fixes that.
+//  but I guess first it should let you ever ask for comma names in another form
 const getMaybeSagittalSymbolWithPrimaryCommaName = (name: Name<AnalyzedRationalPitch>): Maybe<SymbolLongAscii> => {
     const jiSymbol = JI_SYMBOLS.find(jiSymbol => {
         const primaryComma = getSagittalComma(jiSymbol.primaryCommaId)

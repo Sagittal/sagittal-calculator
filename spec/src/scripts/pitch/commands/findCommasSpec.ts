@@ -14,7 +14,7 @@ describe("find-commas", () => {
          --max-five-rough-copfr 3           \
          --max-prime-limit 37               \
          --max-five-rough-sopfr 58          \
-         --max-apotome-slope 3              \
+         --max-absolute-apotome-slope 3     \
          --no-color                         \
          --no-write                         \
         ` as Io
