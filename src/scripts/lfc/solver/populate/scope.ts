@@ -1,6 +1,6 @@
 import { Count, IO, LogTarget, saveLog } from "../../../../general"
 import { Scope } from "../../bestMetric"
-import { LFC } from "../../constants"
+import { LFC_SCRIPT_GROUP } from "../../constants"
 import { scopesToSearch, solverStatus } from "../../globals"
 
 const populateScope = (scope: Scope) => {
@@ -12,7 +12,7 @@ const populateScope = (scope: Scope) => {
         saveLog(
             `${solverStatus.populatedScopeCount} scopes have been populated so far` as IO,
             LogTarget.POPULATE,
-            LFC,
+            LFC_SCRIPT_GROUP,
         )
     }
 }

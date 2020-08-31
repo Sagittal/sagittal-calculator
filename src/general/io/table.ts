@@ -1,4 +1,4 @@
-import { ioSettings } from "./settings"
+import { ioSettings } from "./globals"
 import { formatTableForForum } from "./tableForForum"
 import { formatTableForTerminal } from "./tableForTerminal"
 import { FormatTableOptions, Table } from "./types"

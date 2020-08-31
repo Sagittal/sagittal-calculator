@@ -1,6 +1,7 @@
-import { abs, computeMonzoInZone, computePlusOrMinusRange, Integer, Monzo } from "../../general"
-import { AnalyzedRationalPitch } from "../../sagittal"
+import { abs, Cents, computeMonzoInZone, computePlusOrMinusRange, Integer, Min, Monzo } from "../../general"
+import { AnalyzedRationalPitch, MAX_SINGLE_SHAFT_CENTS } from "../../sagittal"
 import { analyzeRationalPitch } from "./analyzeRationalPitch"
+import { DEFAULT_MAX_ABSOLUTE_THREE_EXPONENT } from "./constants"
 import { ComputeCommasFromFiveSlicedMonzoOptions } from "./types"
 
 const computeCommasFromFiveSlicedMonzo = (
@@ -8,22 +9,12 @@ const computeCommasFromFiveSlicedMonzo = (
     options?: ComputeCommasFromFiveSlicedMonzoOptions,
 ): AnalyzedRationalPitch[] => {
     const {
-        minCents,
-        maxCents,
-        maxAbsoluteThreeExponent,
-        maxApotomeSlope = Infinity,             // optional
+        minCents = 0 as Min<Cents>,
+        maxCents = MAX_SINGLE_SHAFT_CENTS,
+        maxAbsoluteThreeExponent = DEFAULT_MAX_ABSOLUTE_THREE_EXPONENT,
+        maxAbsoluteApotomeSlope = Infinity,             // optional
         maxN2D3P9 = Infinity,                   // optional
     } = options || {}
-
-    if (typeof minCents === "undefined") {
-        throw new Error("Min cents must be supplied.")
-    }
-    if (typeof maxCents === "undefined") {
-        throw new Error("Max cents must be supplied.")
-    }
-    if (typeof maxAbsoluteThreeExponent === "undefined") {
-        throw new Error("Max absolute three exponent must be supplied.")
-    }
 
     const analyzedCommas: AnalyzedRationalPitch[] = []
 
@@ -34,7 +25,7 @@ const computeCommasFromFiveSlicedMonzo = (
         if (monzo) {
             const analyzedComma: AnalyzedRationalPitch = analyzeRationalPitch(monzo)
 
-            if (abs(analyzedComma.apotomeSlope) > maxApotomeSlope) {
+            if (abs(analyzedComma.apotomeSlope) > maxAbsoluteApotomeSlope) {
                 return
             }
 

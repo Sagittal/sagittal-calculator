@@ -1,4 +1,6 @@
+import { Abs, Cents, Max } from "../../../../src/general"
 import { Monzo } from "../../../../src/general/math/monzo"
+import { ApotomeSlope } from "../../../../src/sagittal/commaEvaluation"
 import { computeNotatingCommas } from "../../../../src/scripts/pitch/notatingCommas"
 import { AnalyzedRationalPitchWithMaybeSagittalSymbol } from "../../../../src/scripts/pitch/types"
 
@@ -46,6 +48,38 @@ describe("computeNotatingCommas", () => {
                 name: "1/11L",
                 limit: 11,
                 apotomeSlope: 2.280209198578947,
+                fiveRoughSopfr: 11,
+                n2d3p9: 6.722222,
+            },
+        ] as AnalyzedRationalPitchWithMaybeSagittalSymbol[]
+        expect(actual).toEqual(expected)
+    })
+
+    it("can filter", () => {
+        const monzo = [0, 0, 0, 0, 1] as Monzo
+        const maxAbsoluteApotomeSlope = 9 as Max<Abs<ApotomeSlope>>
+        const maxCents = 55 as Max<Cents>
+
+        const actual = computeNotatingCommas(monzo, { maxAbsoluteApotomeSlope, maxCents })
+
+        const expected = [
+            {
+                cents: 53.27294323014412,
+                monzo: [-5, 1, 0, 0, 1],
+                ratio: [33, 32],
+                name: "11M",
+                limit: 11,
+                apotomeSlope: -2.2802091985789374,
+                fiveRoughSopfr: 11,
+                n2d3p9: 6.722222,
+            },
+            {
+                cents: 36.952052442918934,
+                monzo: [13, -6, 0, 0, -1],
+                ratio: [8192, 8019],
+                name: "1/11S",
+                limit: 11,
+                apotomeSlope: -8.275272492567069,
                 fiveRoughSopfr: 11,
                 n2d3p9: 6.722222,
             },

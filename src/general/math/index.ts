@@ -40,6 +40,7 @@ import {
     sum,
 } from "./typedOperations"
 import {
+    Abs,
     Base,
     Combination,
     Combinations,
@@ -122,4 +123,5 @@ export {
     THREE_PRIME_INDEX,
     computeMonzoSlicedToPrimeIndex,
     Monzo,
+    Abs,
 }

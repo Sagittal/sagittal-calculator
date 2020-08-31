@@ -4,7 +4,7 @@ import { Sample, Scope } from "../../../../../src/scripts/lfc/bestMetric"
 import { DEFAULT_MAX_UNIT, DEFAULT_ONLY_TOP, DEFAULT_Z } from "../../../../../src/scripts/lfc/constants"
 import {
     bestMetrics,
-    lfcSettings,
+    lfcScriptGroupSettings,
     memoizedParameterChunkCombinations,
     memoizedSubmetricChunkCombinations,
     metricNames,
@@ -27,8 +27,8 @@ afterEach(() => {
     solverStatus.averageSamplesPerScope = 0 as Count<Sample>
     solverStatus.sampleCount = 0 as Count<Sample>
 
-    lfcSettings.z = DEFAULT_Z
-    lfcSettings.onlyTop = DEFAULT_ONLY_TOP
-    lfcSettings.maxUnit = DEFAULT_MAX_UNIT
-    lfcSettings.noUseless = false
+    lfcScriptGroupSettings.z = DEFAULT_Z
+    lfcScriptGroupSettings.onlyTop = DEFAULT_ONLY_TOP
+    lfcScriptGroupSettings.maxUnit = DEFAULT_MAX_UNIT
+    lfcScriptGroupSettings.noUseless = false
 })

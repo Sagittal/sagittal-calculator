@@ -1,5 +1,5 @@
 import { BLANK, Index, IO, LogTarget, saveLog } from "../../../general"
-import { LFC } from "../constants"
+import { LFC_SCRIPT_GROUP } from "../constants"
 import { checkSubmetricsForInvalidParameterCombinations } from "../sumOfSquares"
 import { Sample } from "./scopeToSamples"
 import { computeSumOfSquaresAndMaybeUpdateBestMetric } from "./sumOfSquares"
@@ -21,7 +21,7 @@ const computeSumsOfSquaresAndMaybeUpdateBestMetric = async (
             saveLog(
                 `Not searching scope due to invalid parameter combinations: ${e.message}` as IO,
                 LogTarget.ERRORS,
-                LFC,
+                LFC_SCRIPT_GROUP,
             )
 
             return

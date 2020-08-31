@@ -10,7 +10,7 @@ const computeCommas = (options: ComputeCommasOptions): AnalyzedRationalPitch[] =
         maxCents,
         maxFiveRoughSopfr,
         maxFiveRoughCopfr,
-        maxApotomeSlope,
+        maxAbsoluteApotomeSlope,
         maxPrimeLimit,
         maxAbsoluteThreeExponent,
         maxN2D3P9,
@@ -32,7 +32,7 @@ const computeCommas = (options: ComputeCommasOptions): AnalyzedRationalPitch[] =
                 {
                     minCents,
                     maxCents,
-                    maxApotomeSlope,
+                    maxAbsoluteApotomeSlope,
                     maxAbsoluteThreeExponent,
                     maxN2D3P9,
                 },

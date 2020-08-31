@@ -1,5 +1,5 @@
 import { Combination, Filename, formatRatio, IO, LogTarget, Ratio, saveLog, stringify } from "../../../general"
-import { LFC } from "../constants"
+import { LFC_SCRIPT_GROUP } from "../constants"
 import { computeAntivotes, Submetric } from "../sumOfSquares"
 import { applySharedLfcCommandSetup, load } from "./shared"
 
@@ -14,5 +14,5 @@ const antivotes = computeAntivotes(fiveRoughRatio, submetrics)
 saveLog(
     `${formatRatio(fiveRoughRatio)}\n${stringify(submetrics)}\n${antivotes}` as IO,
     LogTarget.ANTIVOTES,
-    LFC,
+    LFC_SCRIPT_GROUP,
 )

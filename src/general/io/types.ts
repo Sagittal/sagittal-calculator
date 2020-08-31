@@ -18,6 +18,7 @@ type Char = string & { _CharBrand: "Char" }
 type IO = string & { _IOBrand: "IO" }
 type Formatted<T> = IO & { _FormattedBrand: T }
 
+// TODO: perhaps to help enforce use of the formatting methods, a row should actually only be of Formatteds, not just IO
 type Row<T = void, Header extends "Header" | void = void> =
     IO[]
     & { _RowBrand: "Row" }

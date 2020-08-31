@@ -1,5 +1,5 @@
 import { Count, IO, LogTarget, saveLog } from "../../../../general"
-import { LFC } from "../../constants"
+import { LFC_SCRIPT_GROUP } from "../../constants"
 import { solverStatus } from "../../globals"
 import { Submetric } from "../../sumOfSquares"
 import { formatSearchedAndPopulated } from "../io"
@@ -16,7 +16,7 @@ const populateScopes = async () => {
         chunkCountForSubmetrics = chunkCountForSubmetrics - 1 as Count<Chunk<Submetric>>
     }
 
-    saveLog(`\n\nFINISHED POPULATING ${formatSearchedAndPopulated()}` as IO, LogTarget.POPULATE, LFC)
+    saveLog(`\n\nFINISHED POPULATING ${formatSearchedAndPopulated()}` as IO, LogTarget.POPULATE, LFC_SCRIPT_GROUP)
 }
 
 export {

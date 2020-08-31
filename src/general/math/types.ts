@@ -28,6 +28,7 @@ type Base<T extends number = number> = T & { _BaseBrand: "Base" }
 type Power<T extends number = number> = T & { _PowerBrand: "Power" }
 type Max<T extends number = number> = T & { _MaxBrand: "Max" }
 type Min<T extends number = number> = T & { _MinBrand: "Min" }
+type Abs<T extends number = number> = T & { _AbsBrand: "Abs" }
 type Average<T extends number = number> = T & { _AverageBrand: "Average" }
 
 type Sopfr<Roughness = void> =
@@ -61,4 +62,5 @@ export {
     Max,
     Min,
     Average,
+    Abs,
 }

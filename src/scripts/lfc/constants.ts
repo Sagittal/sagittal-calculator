@@ -12,11 +12,11 @@ const DEFAULT_ONLY_TOP = 80 as Count<Popularity>
 const DEFAULT_MAX_UNIT = 0.1 as Max<Unit<ParameterValue>>
 
 // the "Large Function Collider" as Dave likes to call it
-const LFC = "lfc" as Filename
+const LFC_SCRIPT_GROUP = "lfc" as Filename
 
 export {
     DEFAULT_Z,
     DEFAULT_ONLY_TOP,
     DEFAULT_MAX_UNIT,
-    LFC,
+    LFC_SCRIPT_GROUP,
 }

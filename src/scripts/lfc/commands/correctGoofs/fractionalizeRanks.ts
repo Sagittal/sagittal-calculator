@@ -9,7 +9,7 @@ import {
     saveLog,
     stringify,
 } from "../../../../general"
-import { LFC } from "../../constants"
+import { LFC_SCRIPT_GROUP } from "../../constants"
 
 const fractionalizeRanks = () => {
     // this script is only kept for historical reasons
@@ -20,7 +20,7 @@ const fractionalizeRanks = () => {
         descending: true,
     })
 
-    saveLog(stringify(rankedPopularities, { multiline: true }) as IO, LogTarget.ALL, LFC)
+    saveLog(stringify(rankedPopularities, { multiline: true }) as IO, LogTarget.ALL, LFC_SCRIPT_GROUP)
 }
 
 fractionalizeRanks()

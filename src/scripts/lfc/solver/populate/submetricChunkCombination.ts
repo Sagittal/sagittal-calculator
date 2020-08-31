@@ -12,7 +12,7 @@ import {
     saveLog,
 } from "../../../../general"
 import { Scope, SubmetricScope } from "../../bestMetric"
-import { LFC } from "../../constants"
+import { LFC_SCRIPT_GROUP } from "../../constants"
 import { Parameter, Submetric } from "../../sumOfSquares"
 import { formatSearchedAndPopulated } from "../io"
 import { Chunk } from "../types"
@@ -30,7 +30,7 @@ const populateScopesForSubmetricChunkCombination = async (
         submetricChunkCombinationCount,
     } = options
 
-    saveLog(`populating scopes for submetric chunk combination ${submetricChunkCombinationIndex + 1}/${submetricChunkCombinationCount} with parameter chunk combination ${parameterChunkCombinationIndex + 1}/${parameterChunkCombinations.length} (${100 * parameterChunkCombinationIndex / parameterChunkCombinations.length}%) ${formatSearchedAndPopulated()}` as IO, LogTarget.POPULATE, LFC)
+    saveLog(`populating scopes for submetric chunk combination ${submetricChunkCombinationIndex + 1}/${submetricChunkCombinationCount} with parameter chunk combination ${parameterChunkCombinationIndex + 1}/${parameterChunkCombinations.length} (${100 * parameterChunkCombinationIndex / parameterChunkCombinations.length}%) ${formatSearchedAndPopulated()}` as IO, LogTarget.POPULATE, LFC_SCRIPT_GROUP)
 
     const parameterChunkCombination: Combination<Chunk> = parameterChunkCombinations[ parameterChunkCombinationIndex ]
 

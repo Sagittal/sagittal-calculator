@@ -54,4 +54,30 @@ describe("analyze-rational-pitch", () => {
             () => cp.execSync(command, { stdio: [undefined, undefined, undefined] }),
         ).toThrowError(/Unable to determine monzo for rational pitch/)
     })
+
+    it("can filter the notating commas", () => {
+        onlyRunInCi()
+
+        const expected = [
+            "ratio:        \t2200/2187",
+            "monzo:        \t[   3  -7   2   0   1 ⟩",
+            "cents:        \t10.260",
+            "limit:        \t11",
+            "5-rough sopfr:\t21",
+            "N2D3P9:       \t42.01",
+            "apotome slope:\t-7.632",
+            "",
+            "   --- notating commas ---",
+            "",
+            "symbol\tname\tratio      \tmonzo                  \tcents \tapotome slope",
+            "      \t275S\t66825/65536\t[ -16   5   2   0   1 ⟩\t33.720\t2.924        ",
+            "",
+        ] as IO[]
+
+        const command = "npm run analyze-rational-pitch -- -m [3,-7,2,0,1] --max-cents 50 --max-apotome-slope 3" as IO
+
+        const actual = runCommandAndGetConsoleOutput(command)
+
+        expect(actual).toEqual(expected)
+    })
 })

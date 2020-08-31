@@ -1,7 +1,7 @@
 import { program } from "commander"
 import { CommandFlag, LogTarget, parseCommands } from "../../../../general"
-import { LFC } from "../../constants"
-import { lfcSettings } from "../../globals"
+import { LFC_SCRIPT_GROUP } from "../../constants"
+import { lfcScriptGroupSettings } from "../../globals"
 
 const applySharedLfcCommandSetup = ({ defaultLogTargets }: { defaultLogTargets?: LogTarget[] } = {}) => {
     program
@@ -10,12 +10,12 @@ const applySharedLfcCommandSetup = ({ defaultLogTargets }: { defaultLogTargets?:
         .option(`-${CommandFlag.ONLY_TOP}, --only-top <onlyTop>`, "only top", parseInt)
         .option(`-${CommandFlag.MAX_UNIT}, --max-unit <maxUnit>`, "max unit", parseFloat)
 
-    parseCommands(LFC, defaultLogTargets)
+    parseCommands(LFC_SCRIPT_GROUP, defaultLogTargets)
 
-    if (program.z) lfcSettings.z = program.z
-    if (program.onlyTop) lfcSettings.onlyTop = program.onlyTop
-    if (program.maxUnit) lfcSettings.maxUnit = program.maxUnit
-    if (!program.useless) lfcSettings.noUseless = true
+    if (program.z) lfcScriptGroupSettings.z = program.z
+    if (program.onlyTop) lfcScriptGroupSettings.onlyTop = program.onlyTop
+    if (program.maxUnit) lfcScriptGroupSettings.maxUnit = program.maxUnit
+    if (!program.useless) lfcScriptGroupSettings.noUseless = true
 }
 
 export {

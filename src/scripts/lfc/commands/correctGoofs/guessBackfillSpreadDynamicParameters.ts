@@ -1,6 +1,6 @@
 import { Filename, IO, LogTarget, Maybe, saveLog, stringify } from "../../../../general"
 import { Metric } from "../../bestMetric"
-import { LFC } from "../../constants"
+import { LFC_SCRIPT_GROUP } from "../../constants"
 import { PARAMETER_DYNAMISMS } from "../../perfecter"
 import { Parameter, ParameterValue } from "../../sumOfSquares"
 import { applySharedLfcCommandSetup, load } from "../shared"
@@ -42,4 +42,8 @@ const guessedBackfilledSpreadDynamicParametersMetrics = Object.entries(metricsMi
     {} as Record<string, Metric>,
 )
 
-saveLog(stringify(guessedBackfilledSpreadDynamicParametersMetrics, { multiline: true }) as IO, LogTarget.ALL, LFC)
+saveLog(
+    stringify(guessedBackfilledSpreadDynamicParametersMetrics, { multiline: true }) as IO,
+    LogTarget.ALL,
+    LFC_SCRIPT_GROUP,
+)

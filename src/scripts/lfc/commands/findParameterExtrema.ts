@@ -12,7 +12,7 @@ import {
     stringify,
 } from "../../../general"
 import { Metric } from "../bestMetric"
-import { LFC } from "../constants"
+import { LFC_SCRIPT_GROUP } from "../constants"
 import { Parameter, ParameterValue } from "../sumOfSquares"
 import { applySharedLfcCommandSetup, load } from "./shared"
 
@@ -50,4 +50,4 @@ Object.values(Parameter).forEach(parameter => {
     }
 })
 
-saveLog(stringify(parameterExtrema, { multiline: true }) as IO, LogTarget.ALL, LFC)
+saveLog(stringify(parameterExtrema, { multiline: true }) as IO, LogTarget.ALL, LFC_SCRIPT_GROUP)

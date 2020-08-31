@@ -1,9 +1,9 @@
 import { ceil, Resolution, Span } from "../../../../general"
-import { lfcSettings } from "../../globals"
+import { lfcScriptGroupSettings } from "../../globals"
 import { ParameterValue } from "../../sumOfSquares"
 
 const computeResolution = (span: Span<ParameterValue>): Resolution<ParameterValue> => {
-    const maxUnit = lfcSettings.maxUnit
+    const maxUnit = lfcScriptGroupSettings.maxUnit
 
     const resolution = ceil(span / maxUnit as Resolution<ParameterValue>)
 

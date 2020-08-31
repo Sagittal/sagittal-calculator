@@ -10,7 +10,7 @@
 //   It does seem to be interruptable in a good way, so that's a good sign.
 
 import { IO, LogTarget, saveLog } from "../../../general"
-import { LFC } from "../constants"
+import { LFC_SCRIPT_GROUP } from "../constants"
 import { solverStatus } from "../globals"
 import { formatSearchedAndPopulated } from "./io"
 import { populateScopes } from "./populate"
@@ -23,7 +23,7 @@ const populateAndSearchScopesAndPerfectMetrics = async () => {
 
     await searchScopes()
 
-    saveLog(`\n\nFINAL STATUS ${formatSearchedAndPopulated()}` as IO, LogTarget.FINAL_SOLVER_RESULTS, LFC)
+    saveLog(`\n\nFINAL STATUS ${formatSearchedAndPopulated()}` as IO, LogTarget.FINAL_SOLVER_RESULTS, LFC_SCRIPT_GROUP)
 }
 
 export {

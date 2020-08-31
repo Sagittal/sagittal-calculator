@@ -1,5 +1,5 @@
 import { colorize } from "../colorize"
-import { ioSettings } from "../settings"
+import { ioSettings } from "../globals"
 import { Filename, IO } from "../types"
 import { targetColors } from "./colors"
 import { LogTarget, SaveLogOptions } from "./types"

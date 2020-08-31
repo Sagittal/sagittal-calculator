@@ -1,4 +1,4 @@
-import { Copfr, Max, ObjectKey, Prime, Sopfr } from "../../../../../src/general"
+import { Abs, Copfr, Max, ObjectKey, Prime, Sopfr } from "../../../../../src/general"
 import { Exponent } from "../../../../../src/general/math"
 import { ApotomeSlope, getSagittalComma } from "../../../../../src/sagittal"
 import { N2D3P9 } from "../../../../../src/sagittal/commaEvaluation/n2d3p9"
@@ -21,9 +21,9 @@ describe("verifying primary commas", () => {
             const maxCents = secondaryCommaZone[ 1 ]
             const maxFiveRoughSopfr = 61 as Max<Sopfr<5>>
             const maxFiveRoughCopfr = 555 as Max<Copfr<5>>
-            const maxApotomeSlope = 14 as Max<ApotomeSlope>
+            const maxAbsoluteApotomeSlope = 14 as Max<Abs<ApotomeSlope>>
             const maxPrimeLimit = 47 as Max<Max<Prime>>
-            const maxAbsoluteThreeExponent = 15 as Max<Exponent<Prime>>
+            const maxAbsoluteThreeExponent = 15 as Max<Abs<Exponent<Prime>>>
             const maxN2D3P9 = 666 as Max<N2D3P9>
             const sortKey = "fiveRoughSopfr" as ObjectKey
 
@@ -32,7 +32,7 @@ describe("verifying primary commas", () => {
                 maxCents,
                 maxFiveRoughSopfr,
                 maxFiveRoughCopfr,
-                maxApotomeSlope,
+                maxAbsoluteApotomeSlope,
                 maxPrimeLimit,
                 maxAbsoluteThreeExponent,
                 maxN2D3P9,

@@ -1,7 +1,7 @@
 import * as colors from "colors"
 import { program } from "commander"
+import { ioSettings } from "../globals"
 import { clearLogFiles, LogTarget, setLogTargets } from "../log"
-import { ioSettings } from "../settings"
 import { Filename } from "../types"
 import { CommandFlag } from "./types"
 

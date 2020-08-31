@@ -1,7 +1,7 @@
 import { program } from "commander"
 import { CommandFlag, Count, difference, formatTime, IO, LogTarget, now, saveLog } from "../../../general"
-import { LFC } from "../constants"
-import { lfcSettings, solverStatus } from "../globals"
+import { LFC_SCRIPT_GROUP } from "../constants"
+import { lfcScriptGroupSettings, solverStatus } from "../globals"
 import { Chunk, formatBestMetrics, populateAndSearchScopesAndPerfectMetrics } from "../solver"
 import { applySharedLfcCommandSetup } from "./shared"
 
@@ -23,27 +23,31 @@ const time = !!program.time
 
 const startTime = now()
 populateAndSearchScopesAndPerfectMetrics().then(() => {
-    saveLog(`\n\nAND THE BEST METRICS WERE ${formatBestMetrics()}` as IO, LogTarget.FINAL_SOLVER_RESULTS, LFC)
+    saveLog(
+        `\n\nAND THE BEST METRICS WERE ${formatBestMetrics()}` as IO,
+        LogTarget.FINAL_SOLVER_RESULTS,
+        LFC_SCRIPT_GROUP,
+    )
 
     const endTime = now()
     if (time) {
         saveLog(
             `\n\nFINDING BEST METRICS TOOK ${formatTime(difference(endTime, startTime))}` as IO,
             LogTarget.FINAL_SOLVER_RESULTS,
-            LFC,
+            LFC_SCRIPT_GROUP,
         )
     }
-    saveLog(`MAX UNIT ${lfcSettings.maxUnit}` as IO, LogTarget.FINAL_SOLVER_RESULTS, LFC)
+    saveLog(`MAX UNIT ${lfcScriptGroupSettings.maxUnit}` as IO, LogTarget.FINAL_SOLVER_RESULTS, LFC_SCRIPT_GROUP)
     saveLog(
         `AVERAGE SAMPLES/SCOPE ${solverStatus.averageSamplesPerScope}` as IO,
         LogTarget.FINAL_SOLVER_RESULTS,
-        LFC,
+        LFC_SCRIPT_GROUP,
     )
     saveLog(
-        `PARAMETER SCOPES @ ${lfcSettings.noUseless ? "NO USELESS" : "ORIGINAL"} SETTINGS` as IO,
+        `PARAMETER SCOPES @ ${lfcScriptGroupSettings.noUseless ? "NO USELESS" : "ORIGINAL"} SETTINGS` as IO,
         LogTarget.FINAL_SOLVER_RESULTS,
-        LFC,
+        LFC_SCRIPT_GROUP,
     )
-    saveLog(`Z ${lfcSettings.z}` as IO, LogTarget.FINAL_SOLVER_RESULTS, LFC)
-    saveLog(`ONLY TOP ${lfcSettings.onlyTop}` as IO, LogTarget.FINAL_SOLVER_RESULTS, LFC)
+    saveLog(`Z ${lfcScriptGroupSettings.z}` as IO, LogTarget.FINAL_SOLVER_RESULTS, LFC_SCRIPT_GROUP)
+    saveLog(`ONLY TOP ${lfcScriptGroupSettings.onlyTop}` as IO, LogTarget.FINAL_SOLVER_RESULTS, LFC_SCRIPT_GROUP)
 })

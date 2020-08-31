@@ -1,6 +1,6 @@
 import { IO, LogTarget, saveLog, stringify } from "../../../general"
 import { Metric } from "../bestMetric"
-import { LFC } from "../constants"
+import { LFC_SCRIPT_GROUP } from "../constants"
 import { perfectMetric } from "./metric"
 import { MetricTag } from "./types"
 
@@ -12,10 +12,10 @@ const perfectMetrics = async (bestMetricsValues: Metric[], index = 0, topLevelTo
     saveLog(
         `\n\nabout to perfect id ${metricTag} ${stringify(metricToPerfect)}` as IO,
         LogTarget.PERFECT,
-        LFC,
+        LFC_SCRIPT_GROUP,
     )
     await perfectMetric(metricToPerfect, { metricTag })
-    saveLog(`perfected id ${metricTag}` as IO, LogTarget.PERFECT, LFC)
+    saveLog(`perfected id ${metricTag}` as IO, LogTarget.PERFECT, LFC_SCRIPT_GROUP)
 
     if (index === totalToPerfect - 1) {
         return

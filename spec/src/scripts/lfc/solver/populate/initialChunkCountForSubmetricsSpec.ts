@@ -1,5 +1,5 @@
 import { Count } from "../../../../../../src/general"
-import { lfcSettings } from "../../../../../../src/scripts/lfc/globals"
+import { lfcScriptGroupSettings } from "../../../../../../src/scripts/lfc/globals"
 import { Chunk } from "../../../../../../src/scripts/lfc/solver"
 import { computeInitialChunkCountForSubmetrics } from "../../../../../../src/scripts/lfc/solver/populate/initialChunkCountForSubmetrics"
 import { Submetric } from "../../../../../../src/scripts/lfc/sumOfSquares"
@@ -26,7 +26,7 @@ describe("computeInitialChunkCountForSubmetrics", () => {
 
     describe("when no useless chunks are being used", () => {
         beforeEach(() => {
-            lfcSettings.noUseless = true
+            lfcScriptGroupSettings.noUseless = true
         })
 
         it("when <= the total count of possible submetric chunks (4), returns the passed-in chunk count", () => {

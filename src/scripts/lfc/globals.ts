@@ -22,7 +22,7 @@ const metricNames: MetricName[] = []
 const memoizedSubmetricChunkCombinations: Array<Combinations<Chunk<Submetric>>> = []
 const memoizedParameterChunkCombinations: Array<Combinations<Chunk<Parameter>>> = []
 
-const lfcSettings = {
+const lfcScriptGroupSettings = {
     z: DEFAULT_Z,
     onlyTop: DEFAULT_ONLY_TOP,
     maxUnit: DEFAULT_MAX_UNIT,
@@ -35,6 +35,6 @@ export {
     bestMetrics,
     memoizedSubmetricChunkCombinations,
     memoizedParameterChunkCombinations,
-    lfcSettings,
+    lfcScriptGroupSettings,
     metricNames,
 }

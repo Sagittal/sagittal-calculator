@@ -69,6 +69,7 @@ import {
 } from "./io"
 import {
     abs,
+    Abs,
     Base,
     BASE_2,
     ceil,
@@ -142,6 +143,7 @@ import {
 import { Count, Extrema, Id, Index, Ms, Name, Proportion, Resolution, Span, Sum, Unit } from "./types"
 
 export {
+    Abs,
     Cents,
     Ratio,
     Prime,

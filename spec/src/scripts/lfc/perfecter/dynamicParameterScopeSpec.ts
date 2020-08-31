@@ -1,5 +1,5 @@
 import { Resolution, Span } from "../../../../../src/general"
-import { lfcSettings } from "../../../../../src/scripts/lfc/globals"
+import { lfcScriptGroupSettings } from "../../../../../src/scripts/lfc/globals"
 import { computeDynamicParameterScopeForPerfecting } from "../../../../../src/scripts/lfc/perfecter/dynamicParameterScope"
 import { ParameterValue } from "../../../../../src/scripts/lfc/sumOfSquares"
 
@@ -11,7 +11,7 @@ describe("computeDynamicParameterScopeForPerfecting", () => {
 
         const expected = {
             center: 0.5 as ParameterValue,
-            span: lfcSettings.maxUnit as number as Span<ParameterValue>,
+            span: lfcScriptGroupSettings.maxUnit as number as Span<ParameterValue>,
             resolution: 3 as Resolution<ParameterValue>,
         }
         expect(actual).toEqual(expected)

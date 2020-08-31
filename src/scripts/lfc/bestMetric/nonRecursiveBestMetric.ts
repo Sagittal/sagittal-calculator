@@ -1,5 +1,5 @@
 import { Count, IO, LogTarget, round, saveLog } from "../../../general"
-import { LFC } from "../constants"
+import { LFC_SCRIPT_GROUP } from "../constants"
 import { metricNames, solverStatus } from "../globals"
 import { computeMetricName } from "./metricName"
 import { computeDynamicParameters, computeSamples, Sample } from "./scopeToSamples"
@@ -14,7 +14,7 @@ const nonRecursiveSearchScopeAndMaybeUpdateBestMetric = async (
     const metricName = computeMetricName(scope)
     if (metricNames.includes(metricName)) {
         const errorMessage = `Already searched equivalent initial scope for ${metricName}`
-        saveLog(errorMessage as IO, LogTarget.ERRORS, LFC)
+        saveLog(errorMessage as IO, LogTarget.ERRORS, LFC_SCRIPT_GROUP)
         throw new Error(errorMessage)
     }
     metricNames.push(metricName)
@@ -27,11 +27,11 @@ const nonRecursiveSearchScopeAndMaybeUpdateBestMetric = async (
     solverStatus.averageSamplesPerScope =
         round(solverStatus.sampleCount / solverStatus.populatedScopeCount) as Count<Sample>
 
-    saveLog(`about to search initial scope for metric ${metricName}` as IO, LogTarget.SEARCH, LFC)
+    saveLog(`about to search initial scope for metric ${metricName}` as IO, LogTarget.SEARCH, LFC_SCRIPT_GROUP)
     saveLog(
         `which has ${samples.length} samples; average sample count is ${solverStatus.averageSamplesPerScope}` as IO,
         LogTarget.SEARCH,
-        LFC,
+        LFC_SCRIPT_GROUP,
     )
 
     const sumsOfSquares = await computeSumsOfSquaresAndMaybeUpdateBestMetric(samples, {

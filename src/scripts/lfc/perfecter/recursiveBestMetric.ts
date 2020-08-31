@@ -1,6 +1,6 @@
 import { Integer, IO, LogTarget, round, saveLog } from "../../../general"
 import { nonRecursiveSearchScopeAndMaybeUpdateBestMetric, Scope } from "../bestMetric"
-import { LFC } from "../constants"
+import { LFC_SCRIPT_GROUP } from "../constants"
 import { computeIndentation } from "./indentation"
 import { computeLocalMinima } from "./localMinima"
 import { searchNextLocalMin } from "./nextLocalMin"
@@ -23,7 +23,7 @@ const recursiveSearchScopeAndMaybeUpdateBestMetric = async (
         await nonRecursiveSearchScopeAndMaybeUpdateBestMetric(scope, { onlyWinners })
 
     const nextLocalMinima = computeLocalMinima(samples, sumsOfSquares, localMin)
-    saveLog(`${indentation}id ${metricTag} - ${nextLocalMinima.length} lcl min / ${samples.length} samples (${round(100 * nextLocalMinima.length / samples.length)}%)` as IO, LogTarget.PERFECT, LFC)
+    saveLog(`${indentation}id ${metricTag} - ${nextLocalMinima.length} lcl min / ${samples.length} samples (${round(100 * nextLocalMinima.length / samples.length)}%)` as IO, LogTarget.PERFECT, LFC_SCRIPT_GROUP)
 
     const nextLocalMinimaPromises: Promise<void>[] = nextLocalMinima.map((nextLocalMin, index) => {
         return searchNextLocalMin(nextLocalMin, {

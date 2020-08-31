@@ -9,7 +9,6 @@ import {
     IO,
     LogTarget,
     Monzo,
-    parseCommands,
     parseMonzo,
     parseRatio,
     Ratio,
@@ -18,7 +17,8 @@ import {
 } from "../../../general"
 import { addMaybeSagittalSymbol } from "../addMaybeSagittalSymbol"
 import { analyzeRationalPitch } from "../analyzeRationalPitch"
-import { PITCH } from "../constants"
+import { PITCH_SCRIPT_GROUP } from "../constants"
+import { pitchScriptGroupSettings } from "../globals"
 import {
     computeNotatingCommaWithMaybeSagittalSymbolRow,
     formatRationalPitch,
@@ -26,6 +26,7 @@ import {
 } from "../io"
 import { computeNotatingCommas } from "../notatingCommas"
 import { AnalyzedRationalPitchWithMaybeSagittalSymbol } from "../types"
+import { applySharedPitchCommandSetup } from "./shared"
 
 program
     .option(
@@ -38,7 +39,8 @@ program
         "ratio",
         (ratioText: string) => parseRatio(ratioText as Formatted<Ratio>),
     )
-parseCommands(PITCH)
+
+applySharedPitchCommandSetup()
 
 // TODO: you should also make it accept -n name!
 const rationalPitch = program.args[ 0 ] as IO
@@ -65,16 +67,16 @@ if (!monzo) {
 //  and that may actually be the only multiline thing left at all,
 //  which doesn't play well with formatNumber aligning decimal points...
 const analyzedRationalPitch = analyzeRationalPitch(monzo)
-saveLog(formatRationalPitch(analyzedRationalPitch), LogTarget.ALL, PITCH)
+saveLog(formatRationalPitch(analyzedRationalPitch), LogTarget.ALL, PITCH_SCRIPT_GROUP)
 
 // TODO: this like findCommas should probably have an io/table.ts which allows for either terminal or forum output
 //  which would also take the stuff like a pre-header-row as we see in some of the others
-const notatingCommas = computeNotatingCommas(monzo)
+const notatingCommas = computeNotatingCommas(monzo, pitchScriptGroupSettings)
 const notatingCommaWithMaybeSagittalSymbols = notatingCommas.map(addMaybeSagittalSymbol)
 const maybeNotatingCommaWithMaybeSagittalSymbolsTable: Table<AnalyzedRationalPitchWithMaybeSagittalSymbol> =
     notatingCommaWithMaybeSagittalSymbols.map(computeNotatingCommaWithMaybeSagittalSymbolRow)
 maybeNotatingCommaWithMaybeSagittalSymbolsTable.unshift(NOTATING_COMMA_WITH_MAYBE_SAGITTAL_SYMBOLS_HEADER_ROW)
-saveLog(BLANK, LogTarget.ALL, PITCH)
-saveLog("   --- notating commas ---" as IO, LogTarget.ALL, PITCH)
-saveLog(BLANK, LogTarget.ALL, PITCH)
-saveLog(formatTable(maybeNotatingCommaWithMaybeSagittalSymbolsTable), LogTarget.ALL, PITCH)
+saveLog(BLANK, LogTarget.ALL, PITCH_SCRIPT_GROUP)
+saveLog("   --- notating commas ---" as IO, LogTarget.ALL, PITCH_SCRIPT_GROUP)
+saveLog(BLANK, LogTarget.ALL, PITCH_SCRIPT_GROUP)
+saveLog(formatTable(maybeNotatingCommaWithMaybeSagittalSymbolsTable), LogTarget.ALL, PITCH_SCRIPT_GROUP)

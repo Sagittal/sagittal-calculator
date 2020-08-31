@@ -1,5 +1,5 @@
 import { Maybe } from "../../code"
-import { ioSettings } from "../settings"
+import { ioSettings } from "../globals"
 import { LogTarget, LogTargets } from "./types"
 
 const setLogTargets = (logTargetsCommaSeparatedString: Maybe<string | boolean> = "") => {
