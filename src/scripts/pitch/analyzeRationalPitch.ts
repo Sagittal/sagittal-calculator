@@ -6,6 +6,7 @@ import {
     computeSopfr,
     computeSuperMonzo,
     FIVE_ROUGHNESS,
+    Maybe,
     Monzo,
     Name,
     Prime,
@@ -15,13 +16,25 @@ import {
     AnalyzedRationalPitch,
     computeApotomeSlope,
     computeN2D3P9,
-    computeSagittalRationalPitchName,
+    computeSagittalCommaName,
     N2D3P9,
 } from "../../sagittal"
+import { pitchScriptGroupSettings } from "./globals"
 
-const analyzeRationalPitch = (monzo: Monzo): AnalyzedRationalPitch => {
+const analyzeRationalPitch = (
+    monzo: Monzo,
+    { giveName = true }: { giveName?: boolean } = {},
+): AnalyzedRationalPitch => {
     const apotomeSlope = computeApotomeSlope(monzo)
-    const name: Name<AnalyzedRationalPitch> = computeSagittalRationalPitchName(monzo)
+
+    let name: Maybe<Name<AnalyzedRationalPitch>> = undefined
+    if (giveName) {
+        name = computeSagittalCommaName(
+            monzo,
+            pitchScriptGroupSettings.commaNameOptions,
+        )
+    }
+
     const ratio = computeRatioFromMonzo(monzo)
     const fiveRoughMonzo = computeRoughNumberMonzo(monzo, FIVE_ROUGHNESS)
     const fiveRoughSopfr = computeSopfr(fiveRoughMonzo) as Sopfr<5>

@@ -19,6 +19,8 @@ import { AnalyzedRationalPitch } from "../types"
 import { computeSizeCategory } from "./sizeCategory"
 
 const primeFactorizeCommaName = (numeratorOrDenominator: FractionalPart) => {
+    if (numeratorOrDenominator === 1) return "1"
+
     const monzo = computeMonzoFromInteger(numeratorOrDenominator)
     const factorizedTerms: string[] = []
 
@@ -41,7 +43,7 @@ const primeFactorizeCommaName = (numeratorOrDenominator: FractionalPart) => {
 
 // "Secor-Keenan systematic name" or "Sagittal name"
 
-const computeSagittalRationalPitchName = (
+const computeSagittalCommaName = (
     monzo: Monzo,
     { directed = true, factored = false, abbreviated = true } = {},
 ): Name<AnalyzedRationalPitch> => {
@@ -60,7 +62,9 @@ const computeSagittalRationalPitchName = (
         maybeFlippedRatio.map(n => n.toString())
 
     const separator = directed ? "/" : ":"
-    const formattedRatio = stringifiedRatio[ 1 ] === "1" ? stringifiedRatio[ 0 ] : stringifiedRatio.join(separator)
+    const formattedRatio = directed ?
+        stringifiedRatio[ 1 ] === "1" ? stringifiedRatio[ 0 ] : stringifiedRatio.join(separator) :
+        stringifiedRatio[ 0 ] === "1" ? stringifiedRatio[ 1 ] : stringifiedRatio.join(separator)
 
     const maybeHyphen = abbreviated ? "" : "-"
 
@@ -72,5 +76,5 @@ const computeSagittalRationalPitchName = (
 }
 
 export {
-    computeSagittalRationalPitchName,
+    computeSagittalCommaName,
 }

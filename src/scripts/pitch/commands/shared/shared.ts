@@ -34,6 +34,9 @@ const applySharedPitchCommandSetup = () => {
             `-${CommandFlag.SORT_BY}, --sort-by <sortBy>`,
             "sort by",
         )
+        .option(`-${CommandFlag.UNDIRECTED_COMMA_NAME}, --undirected`, "undirected comma name")
+        .option(`-${CommandFlag.FACTORED_COMMA_NAME}, --factored`, "factored comma name")
+        .option(`-${CommandFlag.UNABBREVIATED_COMMA_NAME}, --unabbreviated`, "unabbreviated comma name")
 
     parseCommands(PITCH_SCRIPT_GROUP)
 
@@ -47,6 +50,12 @@ const applySharedPitchCommandSetup = () => {
     }
     if (program.maxN2d3p9) pitchScriptGroupSettings.maxN2D3P9 = program.maxN2d3p9
     if (program.sortBy) pitchScriptGroupSettings.sortKey = program.sortBy
+
+    pitchScriptGroupSettings.commaNameOptions = {
+        directed: !program.undirected,
+        factored: !!program.factored,
+        abbreviated: !program.unabbreviated,
+    }
 }
 
 export {

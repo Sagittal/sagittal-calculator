@@ -1,5 +1,5 @@
 import { Cents } from "../../../../src/general"
-import { computeSizeCategory } from "../../../../src/sagittal/rationalPitchSizeName/sizeCategory"
+import { computeSizeCategory } from "../../../../src/sagittal/commaSizeName/sizeCategory"
 
 describe("computeSizeCategory", () => {
     it("returns the correct size category per the amount of cents", () => {

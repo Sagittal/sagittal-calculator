@@ -66,7 +66,7 @@ if (!monzo) {
 //  in which case there's a chance that the method we're using to format comma multiline doesn't get used anymore
 //  and that may actually be the only multiline thing left at all,
 //  which doesn't play well with formatNumber aligning decimal points...
-const analyzedRationalPitch = analyzeRationalPitch(monzo)
+const analyzedRationalPitch = analyzeRationalPitch(monzo, { giveName: false })
 saveLog(formatRationalPitch(analyzedRationalPitch), LogTarget.ALL, PITCH_SCRIPT_GROUP)
 
 // TODO: this like findCommas should probably have an io/table.ts which allows for either terminal or forum output

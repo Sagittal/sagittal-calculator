@@ -1,15 +1,20 @@
-import { Maybe } from "../../general"
-import { AnalyzedRationalPitch, SymbolLongAscii } from "../../sagittal"
-import { getMaybeSagittalSymbolWithPrimaryCommaName } from "./maybeSagittalSymbolFromCommaName"
+import { deepEquals, isUndefined, Maybe } from "../../general"
+import { AnalyzedRationalPitch, getSagittalComma, JiSymbol, JI_SYMBOLS } from "../../sagittal"
 import { AnalyzedRationalPitchWithMaybeSagittalSymbol } from "./types"
 
-const addMaybeSagittalSymbol = (rationalPitch: AnalyzedRationalPitch): AnalyzedRationalPitchWithMaybeSagittalSymbol => {
-    const maybeSymbol: Maybe<SymbolLongAscii> = getMaybeSagittalSymbolWithPrimaryCommaName(rationalPitch.name)
+const addMaybeSagittalSymbol = (comma: AnalyzedRationalPitch): AnalyzedRationalPitchWithMaybeSagittalSymbol => {
+    const maybeSymbol: Maybe<JiSymbol> = JI_SYMBOLS.find(jiSymbol => {
+        const primaryComma = getSagittalComma(jiSymbol.primaryCommaId)
 
-    return { ...rationalPitch, symbol: maybeSymbol }
+        return deepEquals(comma.monzo, primaryComma.monzo)
+    })
+
+    if (isUndefined(maybeSymbol)) {
+        return comma
+    } else {
+        return { ...comma, symbol: maybeSymbol.ascii }
+    }
 }
-
-// TODO: test, and/or do we really need both this and getMaybeSagittalSymbolWithPrimaryCommaName ?
 
 export {
     addMaybeSagittalSymbol,

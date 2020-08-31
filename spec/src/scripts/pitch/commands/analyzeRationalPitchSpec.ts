@@ -23,8 +23,9 @@ describe("analyze-rational-pitch", () => {
     ] as Io[]
 
     it(
-        `analyzes a rational pitch, given it in monzo form (note that it includes inverses in the notating commas list)`
-        , () => {
+        `analyzes a rational pitch, 
+        given it in monzo form (note that it includes inverses in the notating commas list)`,
+        () => {
             onlyRunInCi()
 
             const command = "npm run analyze-rational-pitch -- -m [3,-7,2,0,1]" as Io

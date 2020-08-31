@@ -21,4 +21,12 @@ describe("analyzeRationalPitch", () => {
         } as AnalyzedRationalPitch
         expect(actual).toEqual(expected)
     })
+
+    it("for example when the pitch may be too big to be a comma, can say to not give it a name", () => {
+        const monzo = [0, 0, -1, 2, 0, 0, 0, -1] as Monzo
+
+        const actual = analyzeRationalPitch(monzo, { giveName: false })
+
+        expect(actual.name).toBeUndefined()
+    })
 })

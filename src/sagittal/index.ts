@@ -6,6 +6,7 @@ import {
     formatN2D3P9,
     N2D3P9,
 } from "./commaEvaluation"
+import { computeSagittalCommaName, SIZE_CATEGORY_BOUNDS } from "./commaSizeName"
 import { computeSmileyFromAscii, formatSymbolAscii, SymbolLongAscii, unicodeFromAscii } from "./io"
 import {
     Bound,
@@ -28,7 +29,6 @@ import {
     Tina,
     TINA,
 } from "./notations"
-import { computeSagittalRationalPitchName, SIZE_CATEGORY_BOUNDS } from "./rationalPitchSizeName"
 import { AnalyzedRationalPitch } from "./types"
 
 export {
@@ -63,5 +63,5 @@ export {
     INA_SIZES,
     formatSymbolAscii,
     computeApotomeSlope,
-    computeSagittalRationalPitchName,
+    computeSagittalCommaName,
 }

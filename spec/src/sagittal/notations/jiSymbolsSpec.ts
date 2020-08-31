@@ -1,7 +1,7 @@
 import { computeCentsFromRatio, computeMonzoFromRatio, computeRatioFromMonzo } from "../../../../src/general"
 import { ACCURACY_THRESHOLD } from "../../../../src/general/code"
+import { computeSagittalCommaName } from "../../../../src/sagittal/commaSizeName"
 import { SAGITTAL_COMMAS } from "../../../../src/sagittal/notations/sagittalCommas"
-import { computeSagittalRationalPitchName } from "../../../../src/sagittal/rationalPitchSizeName"
 
 describe("JI_SYMBOLS", () => {
     it("is the case that the cents for each symbol agrees with its monzo", () => {
@@ -15,7 +15,7 @@ describe("JI_SYMBOLS", () => {
 
     it("is the case that the name for each symbol agrees with its monzo", () => {
         SAGITTAL_COMMAS.forEach(comma => {
-            const name = computeSagittalRationalPitchName(comma.monzo)
+            const name = computeSagittalCommaName(comma.monzo)
 
             expect(name).toBe(comma.name)
         })

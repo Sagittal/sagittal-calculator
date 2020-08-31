@@ -46,4 +46,22 @@ describe("find-commas", () => {
         ] as Io[]
         expect(actual).toEqual(expected)
     })
+
+    it("can set the format of the comma names", () => {
+        onlyRunInCi()
+
+        const command = `npm run find-commas -- --min-cents 50 --max-cents 50.31 --undirected --factored --unabbreviated` as Io
+
+        const actual = runCommandAndGetConsoleOutput(command)
+
+        const expected = [
+            "symbol  \tname                 \tratio            \tmonzo                              \tcents \tapotome slope\tlimit\t5-rough sopfr\tN2D3P9",
+            "        \t5².11²-Medium-Diesis \t1594323/1548800  \t[  -9  13  -2   0  -2 ⟩            \t50.152\t9.912        \t11   \t32           \t231.08",
+            "        \t17:5.7-Medium-Diesis \t35/34            \t[  -1   0   1   1   0   0  -1 ⟩    \t50.184\t-3.090       \t17   \t29           \t93.66 ",
+            "        \t19:5².7-Medium-Diesis\t4864/4725        \t[   8  -3  -2  -1   0   0   0   1 ⟩\t50.195\t-6.091       \t19   \t36           \t292.48",
+            "  ,'/|) \t5.13-Medium-Diesis   \t34543665/33554432\t[ -25  12   1   0   0   1 ⟩        \t50.301\t8.903        \t13   \t18           \t23.47 ",
+            "",
+        ] as Io[]
+        expect(actual).toEqual(expected)
+    })
 })

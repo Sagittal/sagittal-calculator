@@ -19,7 +19,7 @@ const slowReporter: jasmine.CustomReporter = {
         specTimes.push({ description: description, time: time })
 
         if (time >= WARN_THRESHOLD_MS) {
-            console.log(`      took ${time}ms`.yellow)
+            console.warn(`      took ${time}ms`.yellow)
         }
     },
 
@@ -30,7 +30,7 @@ const slowReporter: jasmine.CustomReporter = {
 
         const slowestSpecCount = count(slowestSpecs)
         if (slowestSpecCount) {
-            console.log(`${slowestSpecCount} slowest specs:`)
+            console.warn(`${slowestSpecCount} slowest specs:`)
             console.table(slowestSpecs)
         }
     },

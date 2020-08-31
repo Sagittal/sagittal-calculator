@@ -14,6 +14,7 @@ const pitchScriptGroupSettings = {
     maxAbsoluteApotomeSlope: DEFAULT_MAX_ABSOLUTE_APOTOME_SLOPE,
     maxN2D3P9: DEFAULT_PITCH_SCRIPT_GROUP_MAX_N2D3P9,
     sortKey: DEFAULT_SORT_KEY,
+    commaNameOptions: {},
 }
 
 export {
