@@ -15,7 +15,7 @@ import { stringify } from "./stringify"
 import { formatTable } from "./table"
 import { formatTime } from "./time"
 import { addTexts } from "./typedOperations"
-import { ColorMethod, Column, Filename, Formatted, HexColor, IO, Row, Table } from "./types"
+import { ColorMethod, Column, Filename, Formatted, HexColor, Io, Row, Table } from "./types"
 import { Basis, computePx, Px, Scale } from "./visualize"
 
 export {
@@ -34,7 +34,7 @@ export {
     Px,
     HexColor,
     Filename,
-    IO,
+    Io,
     removeColor,
     NEWLINE,
     addTexts,

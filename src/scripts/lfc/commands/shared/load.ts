@@ -1,5 +1,5 @@
 import * as fs from "fs"
-import { Filename, IO } from "../../../../general"
+import { Filename, Io } from "../../../../general"
 import { unformatParameters } from "../../solver"
 
 const load = (filename: Filename): Object => {
@@ -8,7 +8,7 @@ const load = (filename: Filename): Object => {
             fs.readFileSync(
                 `src/scripts/lfc/input/${filename}.txt`,
                 { encoding: "utf8" },
-            ) as IO,
+            ) as Io,
         ),
     )
 }

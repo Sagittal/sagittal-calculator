@@ -6,7 +6,7 @@ import {
     DistributionBin,
     doOnNextEventLoop,
     Index,
-    IO,
+    Io,
     LogTarget,
     merge,
     saveLog,
@@ -30,7 +30,7 @@ const populateScopesForSubmetricChunkCombination = async (
         submetricChunkCombinationCount,
     } = options
 
-    saveLog(`populating scopes for submetric chunk combination ${submetricChunkCombinationIndex + 1}/${submetricChunkCombinationCount} with parameter chunk combination ${parameterChunkCombinationIndex + 1}/${parameterChunkCombinations.length} (${100 * parameterChunkCombinationIndex / parameterChunkCombinations.length}%) ${formatSearchedAndPopulated()}` as IO, LogTarget.POPULATE, LFC_SCRIPT_GROUP)
+    saveLog(`populating scopes for submetric chunk combination ${submetricChunkCombinationIndex + 1}/${submetricChunkCombinationCount} with parameter chunk combination ${parameterChunkCombinationIndex + 1}/${parameterChunkCombinations.length} (${100 * parameterChunkCombinationIndex / parameterChunkCombinations.length}%) ${formatSearchedAndPopulated()}` as Io, LogTarget.POPULATE, LFC_SCRIPT_GROUP)
 
     const parameterChunkCombination: Combination<Chunk> = parameterChunkCombinations[ parameterChunkCombinationIndex ]
 

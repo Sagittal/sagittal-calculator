@@ -1,6 +1,6 @@
 import {
     COMMA_POPULARITIES,
-    IO,
+    Io,
     LogTarget,
     Popularity,
     rank,
@@ -20,7 +20,7 @@ const fractionalizeRanks = () => {
         descending: true,
     })
 
-    saveLog(stringify(rankedPopularities, { multiline: true }) as IO, LogTarget.ALL, LFC_SCRIPT_GROUP)
+    saveLog(stringify(rankedPopularities, { multiline: true }) as Io, LogTarget.ALL, LFC_SCRIPT_GROUP)
 }
 
 fractionalizeRanks()

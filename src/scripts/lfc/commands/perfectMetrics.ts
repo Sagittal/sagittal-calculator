@@ -1,5 +1,5 @@
 import { program } from "commander"
-import { CommandFlag, difference, Filename, formatTime, IO, LogTarget, Max, now, saveLog, Unit } from "../../../general"
+import { CommandFlag, difference, Filename, formatTime, Io, LogTarget, Max, now, saveLog, Unit } from "../../../general"
 import { Metric } from "../bestMetric"
 import { DEFAULT_MAX_UNIT, LFC_SCRIPT_GROUP } from "../constants"
 import { lfcScriptGroupSettings } from "../globals"
@@ -29,7 +29,7 @@ const bestMetricsToBePerfected = load("metrics" as Filename) as Record<string, M
 const startTime = now()
 perfectMetrics(Object.values(bestMetricsToBePerfected)).then(() => {
     saveLog(
-        `\n\nTHE PERFECTED METRICS ARE ${formatBestMetrics()}` as IO,
+        `\n\nTHE PERFECTED METRICS ARE ${formatBestMetrics()}` as Io,
         LogTarget.FINAL_PERFECTER_RESULTS,
         LFC_SCRIPT_GROUP,
     )
@@ -37,12 +37,12 @@ perfectMetrics(Object.values(bestMetricsToBePerfected)).then(() => {
     const endTime = now()
     if (time) {
         saveLog(
-            `\n\nPERFECTING METRICS TOOK ${formatTime(difference(endTime, startTime))}` as IO,
+            `\n\nPERFECTING METRICS TOOK ${formatTime(difference(endTime, startTime))}` as Io,
             LogTarget.FINAL_PERFECTER_RESULTS,
             LFC_SCRIPT_GROUP,
         )
     }
-    saveLog(`MAX UNIT ${lfcScriptGroupSettings.maxUnit}` as IO, LogTarget.FINAL_PERFECTER_RESULTS, LFC_SCRIPT_GROUP)
-    saveLog(`Z ${lfcScriptGroupSettings.z}` as IO, LogTarget.FINAL_PERFECTER_RESULTS, LFC_SCRIPT_GROUP)
-    saveLog(`ONLY TOP ${lfcScriptGroupSettings.onlyTop}` as IO, LogTarget.FINAL_PERFECTER_RESULTS, LFC_SCRIPT_GROUP)
+    saveLog(`MAX UNIT ${lfcScriptGroupSettings.maxUnit}` as Io, LogTarget.FINAL_PERFECTER_RESULTS, LFC_SCRIPT_GROUP)
+    saveLog(`Z ${lfcScriptGroupSettings.z}` as Io, LogTarget.FINAL_PERFECTER_RESULTS, LFC_SCRIPT_GROUP)
+    saveLog(`ONLY TOP ${lfcScriptGroupSettings.onlyTop}` as Io, LogTarget.FINAL_PERFECTER_RESULTS, LFC_SCRIPT_GROUP)
 })

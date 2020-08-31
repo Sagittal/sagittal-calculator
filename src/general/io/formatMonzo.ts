@@ -1,19 +1,18 @@
 import { Exponent, Integer, Monzo, Prime } from "../math"
-import { Formatted, IO } from "./types"
+import { Formatted, Io } from "./types"
 
-const spaceTerm = (term: Exponent<Prime>): IO => {
+const spaceTerm = (term: Exponent<Prime>): Io => {
     let termText = term.toString()
     while (termText.length < 3) {
         termText = " " + termText
     }
 
-    return termText as IO
+    return termText as Io
 }
 
 const formatMonzo = (monzo: Monzo, { punctuated = false } = {}): Formatted<Monzo> => {
     let contents
     if (punctuated) {
-        // TODO just made a monzo slice helper, reconcile this with that
         const fiveSlicedMonzo: Monzo<Integer, 5> = monzo.splice(2) as Monzo<Integer, 5>
         const twoThreeMonzo = monzo
         contents = twoThreeMonzo.map(spaceTerm).join(" ") + ", "

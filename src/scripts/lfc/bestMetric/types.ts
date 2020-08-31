@@ -1,4 +1,4 @@
-import { Combination, Index, IO, Maybe, Resolution, Span, Sum } from "../../../general"
+import { Combination, Index, Io, Maybe, Resolution, Span, Sum } from "../../../general"
 import { Parameter, ParameterValue, Submetric } from "../sumOfSquares"
 import { DynamicParameter, Sample } from "./scopeToSamples"
 
@@ -34,7 +34,7 @@ type SumOfSquares = Sum<SquaredWeightedRankDifferences>
 type SumsOfSquares = Array<Maybe<SumsOfSquares | SumOfSquares>>
 
 type NonRecursiveSearchScopeAndMaybeUpdateBestMetricOptions = Partial<{
-    indentation: IO,
+    indentation: Io,
     onlyWinners: boolean,
 }>
 

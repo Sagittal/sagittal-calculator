@@ -8,7 +8,7 @@ import {
     ColorMethod,
     ComputeAlignedRowCellOptions,
     FormatTableOptions,
-    IO,
+    Io,
     Justification,
     JustificationOption,
     Row,
@@ -42,16 +42,16 @@ const computeJustifications = (justification: JustificationOption, columnRange: 
         columnRange.map(_ => justification) :
         columnRange.map(index => justification[ index ] || Justification.LEFT)
 
-const furtherAlignRowCell = (alignedRowCell: IO, columnJustification: Justification): IO =>
+const furtherAlignRowCell = (alignedRowCell: Io, columnJustification: Justification): Io =>
     columnJustification === Justification.LEFT ?
-        alignedRowCell + " " as IO :
+        alignedRowCell + " " as Io :
         columnJustification === Justification.RIGHT ?
-            " " + alignedRowCell as IO :
+            " " + alignedRowCell as Io :
             alignedRowCell.length % 2 === 0 ?
-                " " + alignedRowCell as IO :
-                alignedRowCell + " " as IO
+                " " + alignedRowCell as Io :
+                alignedRowCell + " " as Io
 
-const computeAlignedRowCell = (rowCell: IO, { columnWidth, columnJustification }: ComputeAlignedRowCellOptions) => {
+const computeAlignedRowCell = (rowCell: Io, { columnWidth, columnJustification }: ComputeAlignedRowCellOptions) => {
     let alignedRowCell = rowCell
     while (alignedRowCell.length < columnWidth) {
         alignedRowCell = furtherAlignRowCell(alignedRowCell, columnJustification)
@@ -60,7 +60,7 @@ const computeAlignedRowCell = (rowCell: IO, { columnWidth, columnJustification }
     return alignedRowCell
 }
 
-const maybeColor = (rowText: IO, rowIndex: number, colors?: ColorMethod[]): IO => {
+const maybeColor = (rowText: Io, rowIndex: number, colors?: ColorMethod[]): Io => {
     if (isUndefined(colors)) {
         return rowText
     }
@@ -72,17 +72,17 @@ const maybeColor = (rowText: IO, rowIndex: number, colors?: ColorMethod[]): IO =
 
 // TODO: this should support header row count now that it shares options with for forum version
 
-const formatTableForTerminal = (table: Table, options: FormatTableOptions = {}): IO => {
+const formatTableForTerminal = (table: Table, options: FormatTableOptions = {}): Io => {
     const { justification = Justification.LEFT, colors } = options
     const columnRange = computeColumnRange(table)
     const columnWidths = computeColumnWidths(table, columnRange)
     const justifications = computeJustifications(justification, columnRange)
 
-    return addTexts(table.map((row: Row, rowIndex): IO => {
+    return addTexts(table.map((row: Row, rowIndex): Io => {
         const finalIndex = row.length - 1
 
         const rowText = row.reduce(
-            (alignedRow: IO, rowCell, rowCellIndex) => {
+            (alignedRow: Io, rowCell, rowCellIndex) => {
                 const columnWidth = columnWidths[ rowCellIndex ]
                 const columnJustification = justifications[ rowCellIndex ]
 
@@ -90,13 +90,13 @@ const formatTableForTerminal = (table: Table, options: FormatTableOptions = {}):
 
                 const maybeDelimeter = rowCellIndex === finalIndex ? "" : "\t"
 
-                return alignedRow + alignedRowCell + maybeDelimeter as IO
+                return alignedRow + alignedRowCell + maybeDelimeter as Io
             },
             BLANK,
         )
 
         return maybeColor(rowText, rowIndex, colors)
-    }).join(NEWLINE) as IO, NEWLINE) // TODO: a typed join in the io/typedOperations to clean up this "as"
+    }).join(NEWLINE) as Io, NEWLINE) // TODO: a typed join in the io/typedOperations to clean up this "as"
 }
 
 export {

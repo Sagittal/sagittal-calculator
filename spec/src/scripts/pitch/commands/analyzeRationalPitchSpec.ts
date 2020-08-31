@@ -1,5 +1,5 @@
 import * as cp from "child_process"
-import { IO } from "../../../../../src/general/io"
+import { Io } from "../../../../../src/general/io"
 import { onlyRunInCi } from "../../../../helpers/onlyRunInCi"
 import { runCommandAndGetConsoleOutput } from "../../../../helpers/src/scripts/runCommand"
 
@@ -20,14 +20,14 @@ describe("analyze-rational-pitch", () => {
         "        \t275S  \t66825/65536      \t[ -16   5   2   0   1 ⟩\t33.720\t2.924        ",
         "        \t1/275M\t16777216/16238475\t[  24 -10  -2   0  -1 ⟩\t56.505\t-13.479      ",
         "",
-    ] as IO[]
+    ] as Io[]
 
     it(
         `analyzes a rational pitch, given it in monzo form (note that it includes inverses in the notating commas list)`
         , () => {
             onlyRunInCi()
 
-            const command = "npm run analyze-rational-pitch -- -m [3,-7,2,0,1]" as IO
+            const command = "npm run analyze-rational-pitch -- -m [3,-7,2,0,1]" as Io
 
             const actual = runCommandAndGetConsoleOutput(command)
 
@@ -38,7 +38,7 @@ describe("analyze-rational-pitch", () => {
     it("can appraise a rational pitch for you", () => {
         onlyRunInCi()
 
-        const command = "npm run analyze-rational-pitch -- -r 2200/2187" as IO
+        const command = "npm run analyze-rational-pitch -- -r 2200/2187" as Io
 
         const actual = runCommandAndGetConsoleOutput(command)
 
@@ -48,7 +48,7 @@ describe("analyze-rational-pitch", () => {
     it("throws an error if you provide neither monzo nor ratio nor name", () => {
         onlyRunInCi()
 
-        const command = "npm run analyze-rational-pitch" as IO
+        const command = "npm run analyze-rational-pitch" as Io
 
         expect(
             () => cp.execSync(command, { stdio: [undefined, undefined, undefined] }),
@@ -72,9 +72,9 @@ describe("analyze-rational-pitch", () => {
             "symbol\tname\tratio      \tmonzo                  \tcents \tapotome slope",
             "      \t275S\t66825/65536\t[ -16   5   2   0   1 ⟩\t33.720\t2.924        ",
             "",
-        ] as IO[]
+        ] as Io[]
 
-        const command = "npm run analyze-rational-pitch -- -m [3,-7,2,0,1] --max-cents 50 --max-apotome-slope 3" as IO
+        const command = "npm run analyze-rational-pitch -- -m [3,-7,2,0,1] --max-cents 50 --max-absolute-apotome-slope 3" as Io
 
         const actual = runCommandAndGetConsoleOutput(command)
 

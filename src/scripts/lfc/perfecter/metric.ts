@@ -1,4 +1,4 @@
-import { Combination, IO, LogTarget, saveLog, stringify } from "../../../general"
+import { Combination, Io, LogTarget, saveLog, stringify } from "../../../general"
 import { Metric, Scope, SubmetricScope } from "../bestMetric"
 import { LFC_SCRIPT_GROUP } from "../constants"
 import { Parameter, ParameterValue, Submetric } from "../sumOfSquares"
@@ -54,7 +54,7 @@ const perfectMetric = async (metric: Metric, options: PerfectMetricOptions) => {
     try {
         await recursiveSearchScopeAndMaybeUpdateBestMetric(scope, options)
     } catch (error) {
-        saveLog(`error when perfecting scope ${stringify(scope)}: ${error}` as IO, LogTarget.ERRORS, LFC_SCRIPT_GROUP)
+        saveLog(`error when perfecting scope ${stringify(scope)}: ${error}` as Io, LogTarget.ERRORS, LFC_SCRIPT_GROUP)
     }
 }
 

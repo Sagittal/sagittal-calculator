@@ -1,7 +1,7 @@
-import { IO } from "../../../general"
+import { Io } from "../../../general"
 
-const computeIndentation = (depth: number): IO =>
-    Array(depth * 2 + 1).join(" ") as IO
+const computeIndentation = (depth: number): Io =>
+    Array(depth * 2 + 1).join(" ") as Io
 
 export {
     computeIndentation,

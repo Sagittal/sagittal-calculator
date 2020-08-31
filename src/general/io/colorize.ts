@@ -1,8 +1,8 @@
-import { ColorMethod, IO } from "./types"
+import { ColorMethod, Io } from "./types"
 
-const colorize = (text: IO, color: ColorMethod): IO => {
+const colorize = (text: Io, color: ColorMethod): Io => {
     // @ts-ignore
-    return text[ color ] as IO
+    return text[ color ] as Io
 }
 
 export {

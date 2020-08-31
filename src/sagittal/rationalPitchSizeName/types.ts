@@ -1,4 +1,4 @@
-import { IO, Name } from "../../general"
+import { Io, Name } from "../../general"
 
 interface SizeCategoryOptions {
     abbreviated?: boolean,
@@ -6,7 +6,7 @@ interface SizeCategoryOptions {
 
 interface SizeCategory {
     name: Name<SizeCategory>,
-    abbreviation: IO,
+    abbreviation: Io,
 }
 
 export {

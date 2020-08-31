@@ -1,4 +1,4 @@
-import { IO } from "../../../../../src/general/io"
+import { Io } from "../../../../../src/general/io"
 import { onlyRunInCi } from "../../../../helpers/onlyRunInCi"
 import { runCommandAndGetConsoleOutput } from "../../../../helpers/src/scripts/runCommand"
 
@@ -6,7 +6,7 @@ describe("popular-ratios", () => {
     it("gives you the list of the most popular ratios, according to N2D3P9", () => {
         onlyRunInCi()
 
-        const command = "npm run popular-ratios -- --max-n2d3p9 136 --for-forum" as IO
+        const command = "npm run popular-ratios -- --max-n2d3p9 136 --for-forum" as Io
 
         const actual = runCommandAndGetConsoleOutput(command)
 
@@ -151,14 +151,14 @@ describe("popular-ratios", () => {
             "[tr][td]15625/1[/td][td]135.63[/td][td][/td][td][/td][td]131[/td][td]63[/td][td]27[/td][/tr]",
             "[/table]",
             "",
-        ] as IO[]
+        ] as Io[]
         expect(actual).toEqual(expected)
     })
 
     it("works for a different max N2D3P9", () => {
         onlyRunInCi()
 
-        const command = "npm run popular-ratios -- --max-n2d3p9 10 --for-forum" as IO
+        const command = "npm run popular-ratios -- --max-n2d3p9 10 --for-forum" as Io
 
         const actual = runCommandAndGetConsoleOutput(command)
 
@@ -181,7 +181,7 @@ describe("popular-ratios", () => {
             "[tr][td]49/1[/td][td]9.53[/td][td]:~|): :(/|: :|\\):[/td][td]2, 2, 2[/td][td]10[/td][td]9[/td][td]463[/td][/tr]",
             "[/table]",
             "",
-        ] as IO[]
+        ] as Io[]
         expect(actual).toEqual(expected)
     })
 })

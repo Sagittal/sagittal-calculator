@@ -1,7 +1,7 @@
-import { formatInteger, formatMonzo, formatNumber, formatRatio, Formatted, IO } from "../../../general"
+import { formatInteger, formatMonzo, formatNumber, formatRatio, Formatted, Io } from "../../../general"
 import { AnalyzedRationalPitch, formatN2D3P9 } from "../../../sagittal"
 
-const formatRationalPitch = (rationalPitch: AnalyzedRationalPitch): IO => {
+const formatRationalPitch = (rationalPitch: AnalyzedRationalPitch): Io => {
     const { limit, fiveRoughSopfr, cents, monzo, ratio, apotomeSlope, n2d3p9 } = rationalPitch
 
     return [

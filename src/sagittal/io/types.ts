@@ -1,8 +1,8 @@
-import { IO } from "../../general"
+import { Io } from "../../general"
 
-type SymbolLongAscii = IO & { _SymbolLongAsciiBrand: "SymbolLongAscii" }
-type SymbolUnicode = IO & { _SymbolUnicodeBrand: "SymbolUnicode" }
-type SymbolSmiley = IO & { _SymbolSmileyBrand: "SymbolSmiley" }
+type SymbolLongAscii = Io & { _SymbolLongAsciiBrand: "SymbolLongAscii" }
+type SymbolUnicode = Io & { _SymbolUnicodeBrand: "SymbolUnicode" }
+type SymbolSmiley = Io & { _SymbolSmileyBrand: "SymbolSmiley" }
 
 export {
     SymbolLongAscii,

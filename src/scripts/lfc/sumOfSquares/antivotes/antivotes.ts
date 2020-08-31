@@ -1,4 +1,4 @@
-import { Combination, IO, LogTarget, Ratio, round, saveLog, stringify } from "../../../../general"
+import { Combination, Io, LogTarget, Ratio, round, saveLog, stringify } from "../../../../general"
 import { LFC_SCRIPT_GROUP } from "../../constants"
 import { Antivotes, Submetric } from "../types"
 import { ANTIVOTES_PRECISION } from "./constants"
@@ -12,7 +12,7 @@ const computeAntivotes = (fiveRoughRatio: Ratio, submetrics: Combination<Submetr
                     computeWeightedSubmetricAntivotes(fiveRoughRatio, submetric)
 
                 saveLog(
-                    `${stringify(submetric)}: ${weightedSubmetricAntivotes}` as IO,
+                    `${stringify(submetric)}: ${weightedSubmetricAntivotes}` as Io,
                     LogTarget.ANTIVOTES,
                     LFC_SCRIPT_GROUP,
                 )

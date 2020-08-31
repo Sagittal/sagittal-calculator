@@ -1,4 +1,4 @@
-import { colorize, IO, Maybe } from "../../../../../general"
+import { colorize, Io, Maybe } from "../../../../../general"
 import { Level } from "../../../../../sagittal"
 import { BOUND_COLORS } from "../boundColors"
 import { FORMATTED_RANK_NAMES } from "../rankNames"
@@ -8,8 +8,8 @@ const formatLevelAnalysis = (
     level: Level,
     levelsBestHistoryRanks: { [ index: number ]: Maybe<number> },
     levelsBestCumulativeHistoryRanks: { [ index: number ]: number },
-): IO => {
-    const formattedLevelAnalysis: IO[] = [`${formatLevel(level)}            \there\tcmltv` as IO]
+): Io => {
+    const formattedLevelAnalysis: Io[] = [`${formatLevel(level)}            \there\tcmltv` as Io]
 
     const levelsBestHistoryRanksEntries = Object.entries(levelsBestHistoryRanks) as unknown[] as Array<[number, number]>
 
@@ -25,12 +25,12 @@ const formatLevelAnalysis = (
             formattedBestCumulativeHistoryRankCount = " " + formattedBestCumulativeHistoryRankCount
         }
 
-        const levelRankRowText = `${FORMATTED_RANK_NAMES[ rankIndex ]}\t${formattedBestHistoryRankCount}\t${formattedBestCumulativeHistoryRankCount}` as IO
+        const levelRankRowText = `${FORMATTED_RANK_NAMES[ rankIndex ]}\t${formattedBestHistoryRankCount}\t${formattedBestCumulativeHistoryRankCount}` as Io
         const color = BOUND_COLORS[ rankIndex ]
         formattedLevelAnalysis.push(colorize(levelRankRowText, color))
     })
 
-    return formattedLevelAnalysis.join("\n") as IO
+    return formattedLevelAnalysis.join("\n") as Io
 }
 
 export {

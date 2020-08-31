@@ -1,5 +1,5 @@
 import { Integer } from "../math"
-import { Char, IO } from "./types"
+import { Char, Io } from "./types"
 
 const IO_PRECISION = 3 as Integer
 
@@ -7,9 +7,9 @@ const ANY_MONZO_CHARS = /.*[\[|>\]⟩].*/
 
 const SUPERSCRIPT_NUMS: Char[] = ["⁰", "¹", "²", "³", "⁴", "⁵", "⁶", "⁷", "⁸", "⁹"] as Char[]
 
-const NEWLINE = "\n" as IO & Char
-const SPACE = " " as IO & Char
-const BLANK = "" as IO
+const NEWLINE = "\n" as Io & Char
+const SPACE = " " as Io & Char
+const BLANK = "" as Io
 
 export {
     IO_PRECISION,

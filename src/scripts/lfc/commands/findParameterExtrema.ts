@@ -1,7 +1,7 @@
 import {
     Extrema,
     Filename,
-    IO,
+    Io,
     isNumber,
     isUndefined,
     LogTarget,
@@ -50,4 +50,4 @@ Object.values(Parameter).forEach(parameter => {
     }
 })
 
-saveLog(stringify(parameterExtrema, { multiline: true }) as IO, LogTarget.ALL, LFC_SCRIPT_GROUP)
+saveLog(stringify(parameterExtrema, { multiline: true }) as Io, LogTarget.ALL, LFC_SCRIPT_GROUP)

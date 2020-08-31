@@ -1,8 +1,8 @@
-import { IO, stringify } from "../../../../general"
+import { Io, stringify } from "../../../../general"
 import { scopesToSearch, solverStatus } from "../../globals"
 import { computeSortedBestMetrics } from "./sort"
 
-const formatBestMetrics = (): IO => {
+const formatBestMetrics = (): Io => {
     const sortedBestMetrics = computeSortedBestMetrics()
 
     return stringify(sortedBestMetrics, { multiline: true })
@@ -37,14 +37,14 @@ const formatBestMetrics = (): IO => {
         .replace(/\"withoutRepetition\"/g, "[ Parameter.WITHOUT_REPETITION ]")
         .replace(/\"sum\"/g, "[ Parameter.SUM ]")
         .replace(/\"count\"/g, "[ Parameter.COUNT ]")
-        .replace(/\"max\"/g, "[ Parameter.MAX ]") as IO
+        .replace(/\"max\"/g, "[ Parameter.MAX ]") as Io
 }
 
-const formatSearchedAndPopulated = (): IO =>
-    `| populated ${solverStatus.populatedScopeCount} | searched ${solverStatus.searchedScopeCount} | in the queue ${scopesToSearch.length}` as IO
+const formatSearchedAndPopulated = (): Io =>
+    `| populated ${solverStatus.populatedScopeCount} | searched ${solverStatus.searchedScopeCount} | in the queue ${scopesToSearch.length}` as Io
 
-const formatPercentage = (a: number, b: number): IO =>
-    `${a}/${b} (${(100 * a / b).toPrecision(3)}%)` as IO
+const formatPercentage = (a: number, b: number): Io =>
+    `${a}/${b} (${(100 * a / b).toPrecision(3)}%)` as Io
 
 export {
     formatBestMetrics,

@@ -1,4 +1,4 @@
-import { doOnNextEventLoop, IO, isUndefined, LogTarget, Ms, saveLog, stringify } from "../../../general"
+import { doOnNextEventLoop, Io, isUndefined, LogTarget, Ms, saveLog, stringify } from "../../../general"
 import { LFC_SCRIPT_GROUP } from "../constants"
 import { bestMetrics } from "../globals"
 import { computeSumOfSquaresForSubmetrics } from "../sumOfSquares"
@@ -20,7 +20,7 @@ const computeSumOfSquaresAndMaybeUpdateBestMetric = (
         try {
             sumOfSquares = computeSumOfSquaresForSubmetrics(submetrics)
         } catch (e) {
-            saveLog(`error when computing sum of squares: ${e.message}` as IO, LogTarget.ERRORS, LFC_SCRIPT_GROUP)
+            saveLog(`error when computing sum of squares: ${e.message}` as Io, LogTarget.ERRORS, LFC_SCRIPT_GROUP)
         }
 
         setSumOfSquaresAtSamplePoint(sumOfSquares, sumsOfSquares, samplePoint)
@@ -44,7 +44,7 @@ const computeSumOfSquaresAndMaybeUpdateBestMetric = (
             bestMetrics.set(metricName, metric)
 
             saveLog(
-                `${indentation}new best metric: ${stringify(bestMetrics.get(metricName))}` as IO,
+                `${indentation}new best metric: ${stringify(bestMetrics.get(metricName))}` as Io,
                 LogTarget.NEW_BEST_METRIC,
                 LFC_SCRIPT_GROUP,
             )

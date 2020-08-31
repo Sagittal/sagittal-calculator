@@ -1,4 +1,4 @@
-import { doOnNextEventLoop, Integer, IO, LogTarget, Ms, saveLog } from "../../../general"
+import { doOnNextEventLoop, Integer, Io, LogTarget, Ms, saveLog } from "../../../general"
 import { Scope } from "../bestMetric"
 import { LFC_SCRIPT_GROUP } from "../constants"
 import { computeNextScope } from "./nextScope"
@@ -20,7 +20,7 @@ const searchNextLocalMin = (nextLocalMin: LocalMin, options: SearchLocalMinOptio
     const nextDepth = depth + 1 as Integer
     const nextScope: Scope = computeNextScope(nextLocalMin.samplePoint, dynamicParameters, scope)
     const nextMetricTag = metricTag + `.${index + 1}/${(nextLocalMinima.length)}` as MetricTag
-    saveLog(`  ${indentation}id ${nextMetricTag} - depth ${nextDepth}` as IO, LogTarget.PERFECT, LFC_SCRIPT_GROUP)
+    saveLog(`  ${indentation}id ${nextMetricTag} - depth ${nextDepth}` as Io, LogTarget.PERFECT, LFC_SCRIPT_GROUP)
 
     return doOnNextEventLoop(async () => {
         try {
@@ -31,7 +31,7 @@ const searchNextLocalMin = (nextLocalMin: LocalMin, options: SearchLocalMinOptio
                 onlyWinners,
             })
         } catch (e) {
-            saveLog(`error when searching: ${e.message}` as IO, LogTarget.ERRORS, LFC_SCRIPT_GROUP)
+            saveLog(`error when searching: ${e.message}` as Io, LogTarget.ERRORS, LFC_SCRIPT_GROUP)
         }
     }, index as Ms)
 }

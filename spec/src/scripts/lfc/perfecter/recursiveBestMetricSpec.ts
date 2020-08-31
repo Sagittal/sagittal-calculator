@@ -1,4 +1,4 @@
-import { Combination, Index, Integer, IO, Resolution, Span, Unit } from "../../../../../src/general"
+import { Combination, Index, Integer, Io, Resolution, Span, Unit } from "../../../../../src/general"
 import { MetricName, Scope, SumOfSquares } from "../../../../../src/scripts/lfc/bestMetric"
 import { SamplePoint } from "../../../../../src/scripts/lfc/bestMetric/scopeToSamples"
 import { recursiveSearchScopeAndMaybeUpdateBestMetric } from "../../../../../src/scripts/lfc/perfecter"
@@ -79,7 +79,7 @@ describe("searchScopeAndMaybeUpdateBestMetric", () => {
                 ] as Combination<Submetric>,
             },
         ] as LocalMin[]
-        const expectedIndentation = "                " as IO
+        const expectedIndentation = "                " as Io
         const expectedDynamicParameters = [
             {
                 submetricIndex: 1 as Index<Submetric>,

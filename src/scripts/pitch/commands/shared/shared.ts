@@ -16,7 +16,7 @@ const applySharedPitchCommandSetup = () => {
             parseFloat,
         )
         .option(
-            `-${CommandFlag.APOTOME_SLOPE}, --max-apotome-slope <maxAbsoluteApotomeSlope>`,
+            `-${CommandFlag.APOTOME_SLOPE}, --max-absolute-apotome-slope <maxAbsoluteApotomeSlope>`,
             "max absolute apotome slope",
             parseFloat,
         )

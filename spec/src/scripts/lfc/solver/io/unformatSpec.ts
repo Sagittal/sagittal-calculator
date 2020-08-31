@@ -1,4 +1,4 @@
-import { IO } from "../../../../../../src/general"
+import { Io } from "../../../../../../src/general"
 import { unformatParameters } from "../../../../../../src/scripts/lfc/solver"
 
 describe("unformatParameters", () => {
@@ -9,7 +9,7 @@ describe("unformatParameters", () => {
 \t[ Parameter.K_AS_COEFFICIENT ]: 0.038 as ParameterValue,
     },
 ]
-` as IO
+` as Io
 
         const actual = unformatParameters(text)
 
@@ -19,7 +19,7 @@ describe("unformatParameters", () => {
 \t"kAsCoefficient": 0.038
     }
 ]
-` as IO
+` as Io
         expect(actual).toEqual(expected)
     })
 })

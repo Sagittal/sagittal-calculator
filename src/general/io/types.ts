@@ -15,16 +15,18 @@ type Filename = string & { _FileBrand: "File" }
 
 type Char = string & { _CharBrand: "Char" }
 
-type IO = string & { _IOBrand: "IO" }
-type Formatted<T> = IO & { _FormattedBrand: T }
+type Io = string & { _IOBrand: "IO" }
+type Formatted<T> = Io & { _FormattedBrand: T }
 
-// TODO: perhaps to help enforce use of the formatting methods, a row should actually only be of Formatteds, not just IO
 type Row<T = void, Header extends "Header" | void = void> =
-    IO[]
+    Array<Formatted<unknown>>
     & { _RowBrand: "Row" }
     & (T extends void ? {} : { _RowOfBrand: T })
     & (Header extends "Header" ? { _HeaderBrand: "Header" } : {})
-type Column<T = void> = IO[] & { _ColumnBrand: "Column" } & (T extends void ? {} : { _ColumnOfBrand: T })
+type Column<T = void> =
+    Array<Formatted<unknown>>
+    & { _ColumnBrand: "Column" }
+    & (T extends void ? {} : { _ColumnOfBrand: T })
 type Table<T = void> = Array<Row<T>>
 
 interface ComputeAlignedRowCellOptions {
@@ -61,7 +63,7 @@ export {
     ComputeAlignedRowCellOptions,
     FormatTableOptions,
     Filename,
-    IO,
+    Io,
     Row,
     Column,
     Table,

@@ -6,7 +6,7 @@ import {
     computeMonzoFromRatio,
     formatTable,
     Formatted,
-    IO,
+    Io,
     LogTarget,
     Monzo,
     parseMonzo,
@@ -43,7 +43,7 @@ program
 applySharedPitchCommandSetup()
 
 // TODO: you should also make it accept -n name!
-const rationalPitch = program.args[ 0 ] as IO
+const rationalPitch = program.args[ 0 ] as Io
 let monzo
 if (rationalPitch) {
     if (rationalPitch.includes("/")) {
@@ -77,6 +77,6 @@ const maybeNotatingCommaWithMaybeSagittalSymbolsTable: Table<AnalyzedRationalPit
     notatingCommaWithMaybeSagittalSymbols.map(computeNotatingCommaWithMaybeSagittalSymbolRow)
 maybeNotatingCommaWithMaybeSagittalSymbolsTable.unshift(NOTATING_COMMA_WITH_MAYBE_SAGITTAL_SYMBOLS_HEADER_ROW)
 saveLog(BLANK, LogTarget.ALL, PITCH_SCRIPT_GROUP)
-saveLog("   --- notating commas ---" as IO, LogTarget.ALL, PITCH_SCRIPT_GROUP)
+saveLog("   --- notating commas ---" as Io, LogTarget.ALL, PITCH_SCRIPT_GROUP)
 saveLog(BLANK, LogTarget.ALL, PITCH_SCRIPT_GROUP)
 saveLog(formatTable(maybeNotatingCommaWithMaybeSagittalSymbolsTable), LogTarget.ALL, PITCH_SCRIPT_GROUP)

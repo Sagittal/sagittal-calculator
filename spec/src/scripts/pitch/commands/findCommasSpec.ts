@@ -1,4 +1,4 @@
-import { IO } from "../../../../../src/general/io"
+import { Io } from "../../../../../src/general/io"
 import { onlyRunInCi } from "../../../../helpers/onlyRunInCi"
 import { runCommandAndGetConsoleOutput } from "../../../../helpers/src/scripts/runCommand"
 
@@ -17,7 +17,7 @@ describe("find-commas", () => {
          --max-apotome-slope 3              \
          --no-color                         \
          --no-write                         \
-        ` as IO
+        ` as Io
 
         const actual = runCommandAndGetConsoleOutput(command)
 
@@ -25,14 +25,14 @@ describe("find-commas", () => {
             "symbol\tname  \tratio\tmonzo                                      \tcents \tapotome slope\tlimit\t5-rough sopfr\tN2D3P9",
             "      \t29/19C\t58/57\t[   1  -1   0   0   0   0   0  -1   0   1 ⟩\t30.109\t-2.854       \t29   \t48           \t295.91",
             "",
-        ] as IO[]
+        ] as Io[]
         expect(actual).toEqual(expected)
     })
 
     it("can sort the resulting list", () => {
         onlyRunInCi()
 
-        const command = "npm run find-commas -- --min-cents 50 --max-cents 50.31 --sort-by apotomeSlope" as IO
+        const command = "npm run find-commas -- --min-cents 50 --max-cents 50.31 --sort-by apotomeSlope" as Io
 
         const actual = runCommandAndGetConsoleOutput(command)
 
@@ -43,7 +43,7 @@ describe("find-commas", () => {
             "  ,'/|) \t65M    \t34543665/33554432\t[ -25  12   1   0   0   1 ⟩        \t50.301\t8.903        \t13   \t18           \t23.47 ",
             "        \t1/3025M\t1594323/1548800  \t[  -9  13  -2   0  -2 ⟩            \t50.152\t9.912        \t11   \t32           \t231.08",
             "",
-        ] as IO[]
+        ] as Io[]
         expect(actual).toEqual(expected)
     })
 })

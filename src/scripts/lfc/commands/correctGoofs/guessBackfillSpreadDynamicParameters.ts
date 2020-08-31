@@ -1,4 +1,4 @@
-import { Filename, IO, LogTarget, Maybe, saveLog, stringify } from "../../../../general"
+import { Filename, Io, LogTarget, Maybe, saveLog, stringify } from "../../../../general"
 import { Metric } from "../../bestMetric"
 import { LFC_SCRIPT_GROUP } from "../../constants"
 import { PARAMETER_DYNAMISMS } from "../../perfecter"
@@ -43,7 +43,7 @@ const guessedBackfilledSpreadDynamicParametersMetrics = Object.entries(metricsMi
 )
 
 saveLog(
-    stringify(guessedBackfilledSpreadDynamicParametersMetrics, { multiline: true }) as IO,
+    stringify(guessedBackfilledSpreadDynamicParametersMetrics, { multiline: true }) as Io,
     LogTarget.ALL,
     LFC_SCRIPT_GROUP,
 )

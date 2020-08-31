@@ -1,11 +1,11 @@
-import { IO } from "../../../../../src/general"
+import { Io } from "../../../../../src/general"
 import { onlyRunInCi } from "../../../../helpers/onlyRunInCi"
 import { runCommandAndGetConsoleOutput } from "../../../../helpers/src/scripts/runCommand"
 
 describe("solve-best-metrics-for-chunk-count", () => {
     it("finds the best metric for the given chunk count", () => {
         onlyRunInCi()
-        const command = "npm run solve-best-metrics-for-chunk-count 1 -- --no-color --no-time --no-write" as IO
+        const command = "npm run solve-best-metrics-for-chunk-count 1 -- --no-color --no-time --no-write" as Io
 
         const actual = runCommandAndGetConsoleOutput(command)
 
@@ -63,7 +63,7 @@ describe("solve-best-metrics-for-chunk-count", () => {
             `PARAMETER SCOPES @ ORIGINAL SETTINGS`,
             `Z -1`,
             `ONLY TOP 80`,
-        ] as IO[]
+        ] as Io[]
         expect(actual).toEqual(expected)
     })
 })

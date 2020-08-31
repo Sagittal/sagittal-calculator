@@ -1,7 +1,7 @@
-import { IO } from "./types"
+import { Io } from "./types"
 
-const removeColor = (text: IO): IO => {
-    return text.replace(/\[\d\dm/g, "") as IO
+const removeColor = (text: Io): Io => {
+    return text.replace(/\[\d\dm/g, "") as Io
 }
 
 export {
