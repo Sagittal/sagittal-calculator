@@ -17,5 +17,5 @@ saveLog(terminalOutput, LogTarget.BOUNDS_TERMINAL, BOUND_SCRIPT_GROUP, {
 saveLog(imageOutput, LogTarget.BOUNDS_IMAGE, BOUND_SCRIPT_GROUP, {
     useTargetColor: false,
     fileExtensionProvided: true,
-    writeOnly: true,
+    writeOnly: !process.env.TEST_MODE,
 })
