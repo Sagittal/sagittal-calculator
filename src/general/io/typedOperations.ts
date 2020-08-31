@@ -20,7 +20,12 @@ const length = <T extends string>(string: T): Count<Char & T> => {
     return string.length as Count<Char & T>
 }
 
+const join = <T extends string>(array: T[], separator?: T): T => {
+    return array.join(separator) as T
+}
+
 export {
     addTexts,
     length,
+    join,
 }

@@ -2,7 +2,7 @@ import { isUndefined, Range } from "../code"
 import { Count } from "../types"
 import { colorize } from "./colorize"
 import { BLANK, NEWLINE } from "./constants"
-import { addTexts, length } from "./typedOperations"
+import { addTexts, join, length } from "./typedOperations"
 import {
     Char,
     ColorMethod,
@@ -78,7 +78,7 @@ const formatTableForTerminal = (table: Table, options: FormatTableOptions = {}):
     const columnWidths = computeColumnWidths(table, columnRange)
     const justifications = computeJustifications(justification, columnRange)
 
-    return addTexts(table.map((row: Row, rowIndex): Io => {
+    const formattedRows = table.map((row: Row, rowIndex): Io => {
         const finalIndex = row.length - 1
 
         const rowText = row.reduce(
@@ -96,7 +96,10 @@ const formatTableForTerminal = (table: Table, options: FormatTableOptions = {}):
         )
 
         return maybeColor(rowText, rowIndex, colors)
-    }).join(NEWLINE) as Io, NEWLINE) // TODO: a typed join in the io/typedOperations to clean up this "as"
+    })
+    const formattedTable: Io = join(formattedRows, NEWLINE)
+    
+    return addTexts(formattedTable, NEWLINE)
 }
 
 export {
