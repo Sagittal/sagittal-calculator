@@ -1,7 +1,7 @@
 import { computeExtensionBase, computeRange, computeTrimmedArray, ExtensionBaseType } from "../../code"
 import { Extrema } from "../../types"
-import { Monzo } from "../index"
 import { Exponent, Prime } from "../types"
+import { Monzo } from "./types"
 
 const computeMonzosFromPrimeExponentExtremas = (primeExponentExtremas: Array<Extrema<Exponent<Prime>>>): Monzo[] => {
     let monzos = [computeExtensionBase(ExtensionBaseType.ARRAY)] as Monzo[]
