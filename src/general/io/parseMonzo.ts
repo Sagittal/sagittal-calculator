@@ -6,9 +6,9 @@ const parseMonzo = (monzoText: Formatted<Monzo>): Monzo => {
         .replace("⟩", "]")
         .replace(">", "]")
         .replace("|", "[")
-        .replace("[ ", "[")
-        .replace(" ]", "]")
-        .replace(/\s/g, ",")
+        .replace(/\s*\[\s+/, "[")
+        .replace(/\s+]\s*/, "]")
+        .replace(/\s+/g, ",")
 
     return JSON.parse(preparsedMonzoText)
 }

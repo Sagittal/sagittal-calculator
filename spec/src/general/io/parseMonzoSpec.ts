@@ -44,5 +44,11 @@ describe("parseMonzo", () => {
         expect(actual).toEqual(expected)
     })
 
-    // TODO: does monzo parsing work with the new extra spaces?
+    it("parses monzos as they are returned by scripts, with the extra spaces to align them", () => {
+        const monzo = "[   3   4   5 ⟩" as Formatted<Monzo>
+
+        const actual = parseMonzo(monzo)
+
+        expect(actual).toEqual(expected)
+    })
 })
