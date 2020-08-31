@@ -107,7 +107,11 @@ const SIZE_CATEGORY_BOUNDS: CentsPosition[] = [
         cents: APOTOME_CENTS + 111.877483124945 as Cents, // 225.562489183
         monzo: [20, -12.5] as Monzo<number>,
     },
-    // TODO: should there be one more size category bound which divides A+A (double apotome) from "beyond commas"?
+    {
+        name: "A+A|" as Name<Pitch>,
+        cents: APOTOME_CENTS + APOTOME_CENTS as Cents,    // 227.370012115
+        monzo: [-22, 14] as Monzo<number>,
+    }
 ]
 
 export {

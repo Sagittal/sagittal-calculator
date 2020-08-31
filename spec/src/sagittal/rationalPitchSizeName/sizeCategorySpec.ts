@@ -24,7 +24,7 @@ describe("computeSizeCategory", () => {
         expect(computeSizeCategory(190 as Cents)).toBe("SS+A")
         expect(computeSizeCategory(200 as Cents)).toBe("MS+A")
         expect(computeSizeCategory(220 as Cents)).toBe("LS+A")
-        expect(computeSizeCategory(230 as Cents)).toBe("A+A")
+        expect(computeSizeCategory(227 as Cents)).toBe("A+A")
     })
 
     it("works when not abbreviated", () => {
@@ -49,10 +49,10 @@ describe("computeSizeCategory", () => {
         expect(computeSizeCategory(190 as Cents, { abbreviated: false })).toBe("Small-Semitone-plus-Apotome")
         expect(computeSizeCategory(200 as Cents, { abbreviated: false })).toBe("Medium-Semitone-plus-Apotome")
         expect(computeSizeCategory(220 as Cents, { abbreviated: false })).toBe("Large-Semitone-plus-Apotome")
-        expect(computeSizeCategory(230 as Cents, { abbreviated: false })).toBe("double-Apotome")
+        expect(computeSizeCategory(227 as Cents, { abbreviated: false })).toBe("double-Apotome")
     })
 
-    it("works when the size is huge", () => {
-        expect(computeSizeCategory(999999 as Cents)).toBe("A+A")
+    it("throws an error if the size category of an pitch which is too big is requested", () => {
+        expect(() => computeSizeCategory(230 as Cents)).toThrowError("230¢ is beyond the maximum size category's bounds.")
     })
 })

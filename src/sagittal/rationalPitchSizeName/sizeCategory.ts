@@ -1,4 +1,4 @@
-import { Cents } from "../../general"
+import { Cents, isUndefined } from "../../general"
 import { SIZE_CATEGORIES } from "./sizeCategories"
 import { SIZE_CATEGORY_BOUNDS } from "./sizeCategoryBounds"
 import { SizeCategoryOptions } from "./types"
@@ -11,6 +11,10 @@ const computeSizeCategory = (cents: Cents, { abbreviated = true }: SizeCategoryO
             sizeCategory = SIZE_CATEGORIES[ index + 1 ]
         }
     })
+
+    if (isUndefined(sizeCategory)) {
+        throw new Error(`${cents}¢ is beyond the maximum size category's bounds.`)
+    }
 
     return abbreviated ? sizeCategory.abbreviation : sizeCategory.name
 }
