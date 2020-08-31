@@ -1,11 +1,10 @@
-import { Basis, Cents, computePx, Px, Scale } from "../../../../general"
+import { Basis, Cents, computePx, Multiplier, multiply, Px, Scale } from "../../../../general"
 
-const SIZE = 100
-const X_VS_Y_STRETCH = 5
+const X_VS_Y_STRETCH: Multiplier<Scale<Cents>> = 5 as Multiplier<Scale<Cents>>
 
-const SCALE: Scale<Cents> = SIZE as Scale<Cents>
-const Y_SCALE: Scale<Cents> = 1 * SCALE as Scale<Cents>
-const X_SCALE: Scale<Cents> = X_VS_Y_STRETCH * SCALE as Scale<Cents>
+const SCALE: Scale<Cents> = 100 as Scale<Cents>
+const Y_SCALE: Scale<Cents> = multiply(SCALE, 1 as Multiplier<Scale<Cents>>)
+const X_SCALE: Scale<Cents> = multiply(SCALE, X_VS_Y_STRETCH)
 
 const MARGIN: Basis<Cents> = 0.1 as Basis<Cents>
 const LEVEL_HEIGHT: Basis<Cents> = 1 as Basis<Cents>

@@ -1,5 +1,5 @@
 import { computeIsEmpty, isUndefined } from "../code"
-import { Count } from "../types"
+import { Count, Multiplier } from "../types"
 import {
     ADDITIVE_IDENTITY,
     MULTIPLICATIVE_IDENTITY,
@@ -42,8 +42,9 @@ const product = <T extends number>(...numbers: T[]): T => {
     return nextProduct * previousValue as T
 }
 
-const quotient = <T extends number>(dividend: T, divisor: T): T =>
-    dividend / divisor as T
+const multiply = <T extends number>(number: T, multiplier: Multiplier<T>): T => {
+    return number * multiplier as T
+}
 
 const integerDivide = <T extends number>(dividend: T, divisor: T): T & Integer =>
     floor(dividend / divisor) as T & Integer
@@ -100,7 +101,7 @@ export {
     sum,
     difference,
     product,
-    quotient,
+    multiply,
     mod,
     reciprocal,
     negative,

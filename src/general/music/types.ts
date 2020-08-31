@@ -23,6 +23,8 @@ interface Popularity {
 
 type Zone<T = void> = Extrema<Cents> & (T extends void ? {} : { _ZoneOfBrand: T })
 
+type Apotome = Cents & { _ApotomeBrand: "Apotome" }
+
 export {
     CentsPosition,
     Cents,
@@ -30,4 +32,5 @@ export {
     Popularity,
     Zone,
     Pitch,
+    Apotome,
 }

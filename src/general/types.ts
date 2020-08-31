@@ -8,11 +8,10 @@ type Id<T = void> = Integer & { _IdBrand: "Id" } & (T extends void ? {} : { _IdO
 type Count<T = void> = Integer & { _CountBrand: "Count" } & (T extends void ? {} : { _CountOfBrand: T })
 
 // Numeric types where parameter is also numeric
-// TODO: is Proportion my "Scalar"? should it be "Mag<>" for Magnitude?
-type Proportion<T extends number | void = void> =
+type Multiplier<T extends number | void = void> =
     number
-    & { _ProportionBrand: "Proportion" }
-    & (T extends void ? {} : T & { _ProportionOfBrand: T }) 
+    & { _MultiplierBrand: "Multiplier" }
+    & (T extends void ? {} : T & { _MultiplierOfBrand: T }) 
 type Sum<T extends number | void = void> =
     number
     & { _SumBrand: "Sum" }
@@ -33,7 +32,7 @@ type Extrema<T extends number = number, Open extends "Open" | void = void> = [
 type Ms = number & { _MsBrand: "Ms" }
 
 export {
-    Proportion,
+    Multiplier,
     Index,
     Count,
     Sum,

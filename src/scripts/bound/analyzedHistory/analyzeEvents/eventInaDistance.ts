@@ -1,8 +1,9 @@
-import { abs, Cents, Proportion } from "../../../../general"
+import { abs, Cents, Multiplier } from "../../../../general"
+import { Ina } from "../../../../sagittal"
 import { HistoricalEvent, History } from "../../histories"
 import { computeInaDistance } from "./inaDistance"
 
-const computeEventInaDistance = (event: HistoricalEvent, index: number, history: History): Proportion =>
+const computeEventInaDistance = (event: HistoricalEvent, index: number, history: History): Multiplier<Ina> =>
     computeInaDistance(
         abs(
             index === 0 ?

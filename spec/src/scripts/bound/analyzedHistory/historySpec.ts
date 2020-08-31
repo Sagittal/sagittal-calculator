@@ -1,6 +1,7 @@
-import { Cents, Integer, Proportion, Rank } from "../../../../../src/general"
+import { Cents, Integer, Multiplier, Rank, sum } from "../../../../../src/general"
 import { ACCURACY_THRESHOLD } from "../../../../../src/general/code"
-import { Bound, Level, Tina, TINA } from "../../../../../src/sagittal/notations/ji"
+import { multiply } from "../../../../../src/general/math/typedOperations"
+import { Bound, Ina, Level, Tina, TINA } from "../../../../../src/sagittal/notations/ji"
 import { computeInitialPosition } from "../../../../../src/scripts/bound/analyzeBound/initialPosition"
 import { AnalyzedEvent, computeAnalyzedHistory } from "../../../../../src/scripts/bound/analyzedHistory"
 import { EventType, History } from "../../../../../src/scripts/bound/histories"
@@ -45,7 +46,7 @@ describe("computeAnalyzedHistory", () => {
                     rank: 0 as Rank<AnalyzedEvent, Integer>,
                     exact: false,
                     distance: 0 as Cents,
-                    inaDistance: 0 as Proportion,
+                    inaDistance: 0 as Multiplier<Ina>,
                     level: Level.EXTREME,
                 },
                 {
@@ -55,15 +56,15 @@ describe("computeAnalyzedHistory", () => {
                     rank: 2 as Rank<AnalyzedEvent, Integer>,
                     exact: false,
                     distance: 0 as Cents,
-                    inaDistance: 0 as Proportion,
+                    inaDistance: 0 as Multiplier<Ina>,
                     level: Level.INSANE,
                 },
             ])
             expect(actual.cents).toBe(cents)
             expect(actual.rank).toBe(2 as Rank<AnalyzedEvent, Integer>)
-            expect(actual.distance).toBe(0 as Cents)
-            expect(actual.initialPositionTinaDifference)
-                .toBeCloseToTyped(3.681504379547852 as Proportion<Tina>, ACCURACY_THRESHOLD)
+            expect(actual.totalDistance).toBe(0 as Cents)
+            expect(actual.initialPositionTinaDistance)
+                .toBeCloseToTyped(3.681504379547852 as Multiplier<Tina>, ACCURACY_THRESHOLD)
         },
     )
 
@@ -86,7 +87,7 @@ describe("computeAnalyzedHistory", () => {
                 const actual = computeAnalyzedHistory(history, bound, initialPosition)
 
                 expect(actual.possible).toBe(true)
-                expect(actual.tinaError).toBeCloseToTyped(0 as Proportion<Tina>, ACCURACY_THRESHOLD)
+                expect(actual.tinaError).toBeCloseToTyped(0 as Multiplier<Tina>, ACCURACY_THRESHOLD)
             },
         )
     })
@@ -96,8 +97,8 @@ describe("computeAnalyzedHistory", () => {
         returns the history plus false for the possible property and the error in tinas`,
         () => {
             it("works when the position is greater than the actual bound position by less than a tina", () => {
-                const expectedTinaError = 2 / 5 as Proportion<Tina>
-                cents = actualBoundCents + TINA * expectedTinaError as Cents
+                const expectedTinaError = 2 / 5 as Multiplier<Tina>
+                cents = sum(actualBoundCents, multiply(TINA, expectedTinaError))
                 history = [{ ...eventFixture, type: EventType.INA, cents }, {
                     ...eventFixture,
                     cents,
@@ -117,8 +118,8 @@ describe("computeAnalyzedHistory", () => {
             })
 
             it("works when the position is greater than the actual bound position by more than a tina", () => {
-                const expectedTinaError = 5 / 2 as Proportion<Tina>
-                cents = actualBoundCents + TINA * expectedTinaError as Cents
+                const expectedTinaError = 5 / 2 as Multiplier<Tina>
+                cents = sum(actualBoundCents, multiply(TINA, expectedTinaError))
                 history = [{ ...eventFixture, type: EventType.INA, cents }, {
                     ...eventFixture,
                     cents,
@@ -139,8 +140,8 @@ describe("computeAnalyzedHistory", () => {
             })
 
             it("works when the position is below the actual bound position by less than a tina", () => {
-                const expectedTinaError = -2 / 5 as Proportion<Tina>
-                cents = actualBoundCents + TINA * expectedTinaError as Cents
+                const expectedTinaError = -2 / 5 as Multiplier<Tina>
+                cents = sum(actualBoundCents, multiply(TINA, expectedTinaError))
                 history = [{ ...eventFixture, type: EventType.INA, cents, level: Level.EXTREME }, {
                     ...eventFixture,
                     cents,
@@ -161,8 +162,8 @@ describe("computeAnalyzedHistory", () => {
             })
 
             it("works when the position is below the actual bound position by more than a tina", () => {
-                const expectedTinaError = -5 / 2 as Proportion<Tina>
-                cents = actualBoundCents + TINA * expectedTinaError as Cents
+                const expectedTinaError = -5 / 2 as Multiplier<Tina>
+                cents = sum(actualBoundCents, multiply(TINA, expectedTinaError))
                 history = [{ ...eventFixture, type: EventType.INA, cents }, {
                     ...eventFixture,
                     cents,

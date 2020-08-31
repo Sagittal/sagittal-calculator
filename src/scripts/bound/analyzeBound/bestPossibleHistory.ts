@@ -20,7 +20,7 @@ const computeBestPossibleHistory = (analyzedHistories: AnalyzedHistory[]): Analy
             analyzedHistory.score < bestPossibleHistory.score ||
             (
                 analyzedHistory.score === bestPossibleHistory.score &&
-                analyzedHistory.distance < bestPossibleHistory.distance
+                analyzedHistory.totalDistance < bestPossibleHistory.totalDistance
             )
         ) {
             bestPossibleHistory = analyzedHistory

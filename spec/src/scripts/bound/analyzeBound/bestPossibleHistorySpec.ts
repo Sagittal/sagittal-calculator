@@ -66,18 +66,18 @@ describe("computeBestPossibleHistory", () => {
     })
 
     it("tie-breaks by distance", () => {
-        const analyzedHistories = [
+        const analyzedHistories: AnalyzedHistory[] = [
             {
                 ...analyzedHistoryFixture,
                 score: 3436643 as Score,
-                distance: 0.2 as Cents,
+                totalDistance: 0.2 as Cents,
                 cents: 12.909 as Cents,
                 exact: true,
             },
             {
                 ...analyzedHistoryFixture,
                 score: 3436643 as Score,
-                distance: 0.1 as Cents,
+                totalDistance: 0.1 as Cents,
                 cents: 12.909 as Cents,
                 exact: true,
             },
@@ -85,10 +85,10 @@ describe("computeBestPossibleHistory", () => {
 
         const actual = computeBestPossibleHistory(analyzedHistories)
 
-        const expected = {
+        const expected: AnalyzedHistory = {
             ...analyzedHistoryFixture,
             score: 3436643 as Score,
-            distance: 0.1 as Cents,
+            totalDistance: 0.1 as Cents,
             cents: 12.909 as Cents,
             exact: true,
         }

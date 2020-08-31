@@ -8,20 +8,20 @@ import { Score } from "./types"
 const computeScore = (analyzedEvents: AnalyzedEvent[]): Score => {
     const binaryScoreRepresentationCardinality = Object.keys(RANKS).length * LEVELS.length // 15
 
-    const binaryScoreReformatation = [...Array(binaryScoreRepresentationCardinality).keys()].map(_ => 0)
+    const binaryScoreRepresentation = [...Array(binaryScoreRepresentationCardinality).keys()].map(_ => 0)
 
     analyzedEvents.forEach(analyzedHistory => {
-        const binaryScoreReformatationIndex = computeBinaryScoreRepresentationIndex(
+        const binaryScoreRepresentationIndex = computeBinaryScoreRepresentationIndex(
             analyzedHistory.rank,
             LEVELS.indexOf(analyzedHistory.level),
         )
 
-        binaryScoreReformatation[ binaryScoreReformatationIndex ] += 1
+        binaryScoreRepresentation[ binaryScoreRepresentationIndex ] += 1
     })
 
-    return binaryScoreReformatation.reduce(
-        (score, binaryScoreReformatationTerm, index): Score =>
-            score + binaryScoreReformatationTerm * pow(BASE_2, index as Exponent) as Score,
+    return binaryScoreRepresentation.reduce(
+        (score, binaryScoreRepresentationTerm, index): Score =>
+            score + binaryScoreRepresentationTerm * pow(BASE_2, index as Exponent) as Score,
         0 as Score,
     ) as Score
 }

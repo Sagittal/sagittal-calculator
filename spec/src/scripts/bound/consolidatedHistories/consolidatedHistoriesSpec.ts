@@ -1,4 +1,4 @@
-import { Cents, Integer, Name, Pitch, Proportion, Rank } from "../../../../../src/general"
+import { Cents, Integer, Multiplier, Name, Pitch, Rank } from "../../../../../src/general"
 import { Level, Tina } from "../../../../../src/sagittal/notations/ji"
 import { AnalyzedEvent, AnalyzedHistory } from "../../../../../src/scripts/bound/analyzedHistory"
 import { computeConsolidatedHistories } from "../../../../../src/scripts/bound/consolidatedHistories"
@@ -61,7 +61,7 @@ describe("computeConsolidatedHistories", () => {
             ],
             rank: 1 as Rank<AnalyzedEvent, Integer>,
             possible: true,
-            tinaError: 0 as Proportion<Tina>,
+            tinaError: 0 as Multiplier<Tina>,
             cents: 24.58139537326805 as Cents,
         }
         const analyzedHistories: AnalyzedHistory[] = [
@@ -73,7 +73,7 @@ describe("computeConsolidatedHistories", () => {
                 ],
                 rank: 2 as Rank<AnalyzedEvent, Integer>,
                 possible: true,
-                tinaError: 0 as Proportion<Tina>,
+                tinaError: 0 as Multiplier<Tina>,
                 cents: 24.58139537326805 as Cents,
             },
             bestPossibleHistory,
@@ -85,7 +85,7 @@ describe("computeConsolidatedHistories", () => {
                 ],
                 rank: 2 as Rank<AnalyzedEvent, Integer>,
                 possible: false,
-                tinaError: 3.05589400712 as Proportion<Tina>,
+                tinaError: 3.05589400712 as Multiplier<Tina>,
                 cents: 24.151964806252103 as Cents,
             },
             {
@@ -95,7 +95,7 @@ describe("computeConsolidatedHistories", () => {
                 ],
                 rank: 8 as Rank<AnalyzedEvent, Integer>,
                 possible: false,
-                tinaError: 2.26723955922 as Proportion<Tina>,
+                tinaError: 2.26723955922 as Multiplier<Tina>,
                 cents: 24.9 as Cents,
             },
         ]

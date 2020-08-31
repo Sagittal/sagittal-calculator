@@ -1,10 +1,9 @@
-import { Cents, Id, Integer, Name, Pitch, Proportion, Rank, Sum } from "../../../../../src/general"
-import { Bound, Level, Tina } from "../../../../../src/sagittal/notations/ji"
-import { analyzeBound, AnalyzedBound } from "../../../../../src/scripts/bound/analyzeBound"
+import { Cents, Count, Id, Integer, Multiplier, Name, Pitch, Rank, Sum } from "../../../../../src/general"
+import { Bound, Ina, Level, Tina } from "../../../../../src/sagittal/notations/ji"
+import { analyzeBound } from "../../../../../src/scripts/bound/analyzeBound"
 import * as levels from "../../../../../src/scripts/bound/analyzeBound/levels"
 import * as ranks from "../../../../../src/scripts/bound/analyzeBound/ranks"
 import { AnalyzedEvent, AnalyzedHistory, Score } from "../../../../../src/scripts/bound/analyzedHistory"
-import { ConsolidatedHistories } from "../../../../../src/scripts/bound/consolidatedHistories"
 import { EventType, History } from "../../../../../src/scripts/bound/histories"
 
 describe("analyzeBound", () => {
@@ -67,7 +66,7 @@ describe("analyzeBound", () => {
             cents: 23.2 as Cents,
             rank: 1 as Rank<AnalyzedEvent, Integer>,
             distance: 0 as Cents,
-            inaDistance: 0 as Proportion,
+            inaDistance: 0 as Multiplier<Ina>,
             exact: false,
         },
         {
@@ -77,7 +76,7 @@ describe("analyzeBound", () => {
             cents: 23.15 as Cents,
             rank: 0 as Rank<AnalyzedEvent, Integer>,
             distance: 0.05000000000000071 as Cents,
-            inaDistance: 0.10247613475154385 as Proportion,
+            inaDistance: 0.10247613475154385 as Multiplier<Ina>,
             exact: false,
         },
         {
@@ -87,7 +86,7 @@ describe("analyzeBound", () => {
             cents: 23.116419649559468 as Cents,
             rank: 0 as Rank<AnalyzedEvent, Integer>,
             distance: 0.03358035044053054 as Cents,
-            inaDistance: 0.238962941978454 as Proportion,
+            inaDistance: 0.238962941978454 as Multiplier<Ina>,
             exact: true,
         },
     ]
@@ -98,23 +97,23 @@ describe("analyzeBound", () => {
         score: 131 as Score,
         possible: true,
         exact: false,
-        distance: 0.08358035044053125 as Cents,
-        inaDistance: 0.34143907672999785 as Sum<Proportion>,
-        tinaError: 0 as Proportion<Tina>,
-        initialPositionTinaDifference: -0.5613173198970488 as Proportion<Tina>,
+        totalDistance: 0.08358035044053125 as Cents,
+        totalInaDistance: 0.34143907672999785 as Sum<Multiplier<Ina>>,
+        tinaError: 0 as Multiplier<Tina>,
+        initialPositionTinaDistance: -0.5613173198970488 as Multiplier<Tina>,
     }
 
-    it("returns an analysis of the bound using its histories, including a consolidated formatation of said histories, and its best possible history, and the difference between the bound and its initial position", () => {
+    it("returns an analysis of the bound using its histories, including a consolidated presentation of said histories, and its best possible history, and the difference between the bound and its initial position", () => {
         const actual = analyzeBound(histories, bound)
 
         const expected = {
             bestRank: 1 as Rank<AnalyzedEvent, Integer>,
             initialPosition: 23.195298960947348 as Cents,
-            initialPositionTinaDifference: -0.5613173198954056 as number,
-            possibleHistoryCount: 2 as number,
+            initialPositionTinaDistance: -0.5613173198954056 as Multiplier<Tina>,
+            possibleHistoryCount: 2 as Count<AnalyzedHistory>,
             bestPossibleHistory: expectedBestPossibleHistory,
-            bestPossibleHistoryDistance: 0.08358035044053125 as Cents,
-            bestPossibleHistoryInaDistance: 0.34143907672999785 as number,
+            bestPossibleHistoryTotalDistance: 0.08358035044053125 as Cents,
+            bestPossibleHistoryTotalInaDistance: 0.34143907672999785 as Sum<Multiplier<Ina>>,
             consolidatedHistories: {
                 [ Level.ULTRA ]: [
                     {
@@ -177,8 +176,8 @@ describe("analyzeBound", () => {
                         nextEvents: [] as Name<Pitch>[],
                     },
                 ],
-            } as ConsolidatedHistories,
-        } as AnalyzedBound
+            },
+        }
         expect(actual).toEqual(expected)
     })
 

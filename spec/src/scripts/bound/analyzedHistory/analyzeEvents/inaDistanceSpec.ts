@@ -1,5 +1,5 @@
-import { ACCURACY_THRESHOLD, Cents, Proportion } from "../../../../../../src/general"
-import { Level } from "../../../../../../src/sagittal"
+import { ACCURACY_THRESHOLD, Cents, Multiplier } from "../../../../../../src/general"
+import { Ina, Level } from "../../../../../../src/sagittal"
 import { computeInaDistance } from "../../../../../../src/scripts/bound/analyzedHistory"
 
 describe("inaDistance", () => {
@@ -7,14 +7,14 @@ describe("inaDistance", () => {
         const distance: Cents = 0.1 as Cents
 
         expect(computeInaDistance(distance, Level.MEDIUM))
-            .toBeCloseToTyped(0.0184720929595055 as Proportion, ACCURACY_THRESHOLD)
+            .toBeCloseToTyped(0.0184720929595055 as Multiplier<Ina>, ACCURACY_THRESHOLD)
         expect(computeInaDistance(distance, Level.HIGH))
-            .toBeCloseToTyped(0.041342303290321826 as Proportion, ACCURACY_THRESHOLD)
+            .toBeCloseToTyped(0.041342303290321826 as Multiplier<Ina>, ACCURACY_THRESHOLD)
         expect(computeInaDistance(distance, Level.ULTRA))
-            .toBeCloseToTyped(0.05101816150720566 as Proportion, ACCURACY_THRESHOLD)
+            .toBeCloseToTyped(0.05101816150720566 as Multiplier<Ina>, ACCURACY_THRESHOLD)
         expect(computeInaDistance(distance, Level.EXTREME))
-            .toBeCloseToTyped(0.20495226950308482 as Proportion, ACCURACY_THRESHOLD)
+            .toBeCloseToTyped(0.20495226950308482 as Multiplier<Ina>, ACCURACY_THRESHOLD)
         expect(computeInaDistance(distance, Level.INSANE))
-            .toBeCloseToTyped(0.7116153906780928 as Proportion, ACCURACY_THRESHOLD)
+            .toBeCloseToTyped(0.7116153906780928 as Multiplier<Ina>, ACCURACY_THRESHOLD)
     })
 })

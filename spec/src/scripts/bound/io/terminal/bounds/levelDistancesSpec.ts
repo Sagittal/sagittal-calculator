@@ -1,7 +1,7 @@
-import { Proportion } from "../../../../../../../src/general"
+import { Multiplier } from "../../../../../../../src/general"
 import { Formatted } from "../../../../../../../src/general/io"
 import { Cents } from "../../../../../../../src/general/music"
-import { Level } from "../../../../../../../src/sagittal/notations/ji"
+import { Ina, Level } from "../../../../../../../src/sagittal/notations/ji"
 import { AnalyzedHistory } from "../../../../../../../src/scripts/bound/analyzedHistory"
 import { extractLevelDistances } from "../../../../../../../src/scripts/bound/io/terminal/bounds/levelDistances"
 import {
@@ -60,11 +60,11 @@ describe("extractLevelDistances", () => {
             const analyzedHistory: AnalyzedHistory = {
                 ...analyzedHistoryFixture,
                 events: [
-                    { ...analyzedEventFixture, level: Level.MEDIUM, inaDistance: 0.00000 as Proportion },
-                    { ...analyzedEventFixture, level: Level.HIGH, inaDistance: 4.44444444 as Proportion },
-                    { ...analyzedEventFixture, level: Level.ULTRA, inaDistance: 3.33333333 as Proportion },
-                    { ...analyzedEventFixture, level: Level.EXTREME, inaDistance: 2.222222 as Proportion },
-                    { ...analyzedEventFixture, level: Level.INSANE, inaDistance: 1.111111 as Proportion },
+                    { ...analyzedEventFixture, level: Level.MEDIUM, inaDistance: 0.00000 as Multiplier<Ina> },
+                    { ...analyzedEventFixture, level: Level.HIGH, inaDistance: 4.44444444 as Multiplier<Ina> },
+                    { ...analyzedEventFixture, level: Level.ULTRA, inaDistance: 3.33333333 as Multiplier<Ina> },
+                    { ...analyzedEventFixture, level: Level.EXTREME, inaDistance: 2.222222 as Multiplier<Ina> },
+                    { ...analyzedEventFixture, level: Level.INSANE, inaDistance: 1.111111 as Multiplier<Ina> },
                 ],
             }
 
@@ -83,10 +83,10 @@ describe("extractLevelDistances", () => {
             const analyzedHistory: AnalyzedHistory = {
                 ...analyzedHistoryFixture,
                 events: [
-                    { ...analyzedEventFixture, level: Level.MEDIUM, inaDistance: 0.00000 as Proportion },
-                    { ...analyzedEventFixture, level: Level.HIGH, inaDistance: 4.44444444 as Proportion },
-                    { ...analyzedEventFixture, level: Level.EXTREME, inaDistance: 2.222222 as Proportion },
-                    { ...analyzedEventFixture, level: Level.INSANE, inaDistance: 1.111111 as Proportion },
+                    { ...analyzedEventFixture, level: Level.MEDIUM, inaDistance: 0.00000 as Multiplier<Ina> },
+                    { ...analyzedEventFixture, level: Level.HIGH, inaDistance: 4.44444444 as Multiplier<Ina> },
+                    { ...analyzedEventFixture, level: Level.EXTREME, inaDistance: 2.222222 as Multiplier<Ina> },
+                    { ...analyzedEventFixture, level: Level.INSANE, inaDistance: 1.111111 as Multiplier<Ina> },
                 ],
             }
 

@@ -23,9 +23,9 @@ const computeBoundRow = (analyzedBound: AnalyzedBound, { bound }: ComputeBoundRo
         bestRank,
         bestPossibleHistory,
         initialPosition,
-        initialPositionTinaDifference,
-        bestPossibleHistoryDistance,
-        bestPossibleHistoryInaDistance,
+        initialPositionTinaDistance,
+        bestPossibleHistoryTotalDistance,
+        bestPossibleHistoryTotalInaDistance,
     } = analyzedBound
 
     const [
@@ -64,15 +64,15 @@ const computeBoundRow = (analyzedBound: AnalyzedBound, { bound }: ComputeBoundRo
         bestPossibleHistoryHighDistance,
         bestPossibleHistoryUltraDistance,
         bestPossibleHistoryExtremeDistance,
-        alignFormattedNumber(formatNumber(bestPossibleHistoryDistance)),
+        alignFormattedNumber(formatNumber(bestPossibleHistoryTotalDistance)),
         bestPossibleHistoryMediumInaDistance,
         bestPossibleHistoryHighInaDistance,
         bestPossibleHistoryUltraInaDistance,
         bestPossibleHistoryExtremeInaDistance,
-        alignFormattedNumber(formatNumber(bestPossibleHistoryInaDistance)),
+        alignFormattedNumber(formatNumber(bestPossibleHistoryTotalInaDistance)),
         alignFormattedNumber(formatNumber(cents)),
         alignFormattedNumber(formatNumber(initialPosition)),
-        alignFormattedNumber(formatNumber(initialPositionTinaDifference)),
+        alignFormattedNumber(formatNumber(initialPositionTinaDistance)),
     ] as Row<AnalyzedBound>
 
     return boundRow

@@ -1,4 +1,4 @@
-import { Count, Proportion } from "../../../general"
+import { Count, Multiplier } from "../../../general"
 import { Bound, Tina, TINA } from "../../../sagittal"
 import { AnalyzedHistory, computeAnalyzedHistory } from "../analyzedHistory"
 import { computeConsolidatedHistories } from "../consolidatedHistories"
@@ -17,10 +17,10 @@ const analyzeBound = (histories: History[], bound: Bound): AnalyzedBound => {
     const possibleHistoryCount = possibleHistories.length as Count<AnalyzedHistory>
     const bestPossibleHistory = computeBestPossibleHistory(possibleHistories)
     const bestRank = bestPossibleHistory.rank
-    const bestPossibleHistoryDistance = bestPossibleHistory.distance
-    const bestPossibleHistoryInaDistance = bestPossibleHistory.inaDistance
+    const bestPossibleHistoryTotalDistance = bestPossibleHistory.totalDistance
+    const bestPossibleHistoryTotalInaDistance = bestPossibleHistory.totalInaDistance
 
-    const initialPositionTinaDifference = (bound.cents - initialPosition) / TINA as Proportion<Tina>
+    const initialPositionTinaDistance = (bound.cents - initialPosition) / TINA as Multiplier<Tina>
 
     updateRankAnalysis(bestRank, bound.id)
     updateLevelAnalysis(bestPossibleHistory)
@@ -32,9 +32,9 @@ const analyzeBound = (histories: History[], bound: Bound): AnalyzedBound => {
         possibleHistoryCount,
         bestPossibleHistory,
         bestRank,
-        bestPossibleHistoryDistance,
-        bestPossibleHistoryInaDistance,
-        initialPositionTinaDifference,
+        bestPossibleHistoryTotalDistance,
+        bestPossibleHistoryTotalInaDistance,
+        initialPositionTinaDistance,
         consolidatedHistories,
     }
 }

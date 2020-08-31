@@ -1,11 +1,11 @@
-import { Cents, isCloseTo, Proportion } from "../../../general"
+import { Cents, isCloseTo, Multiplier } from "../../../general"
 import { Bound, Tina, TINA } from "../../../sagittal"
 import { History } from "../histories"
 import { analyzeEvents } from "./analyzeEvents"
 import { computeExact } from "./exact"
-import { computeHistoryDistance } from "./historyDistance"
-import { computeHistoryInaDistance } from "./historyInaDistance"
 import { computeHistoryPosition } from "./historyPosition"
+import { computeHistoryTotalDistance } from "./historyTotalDistance"
+import { computeHistoryTotalInaDistance } from "./historyTotalInaDistance"
 import { computeRank } from "./rank"
 import { computeScore } from "./score"
 import { AnalyzedHistory } from "./types"
@@ -17,31 +17,31 @@ const computeAnalyzedHistory = (history: History, bound: Bound, initialPosition:
     const rank = computeRank(analyzedEvents)
     const score = computeScore(analyzedEvents)
     const exact = computeExact(analyzedEvents)
-    const distance = computeHistoryDistance(analyzedEvents)
-    const inaDistance = computeHistoryInaDistance(analyzedEvents)
+    const totalDistance = computeHistoryTotalDistance(analyzedEvents)
+    const totalInaDistance = computeHistoryTotalInaDistance(analyzedEvents)
 
     const positionError = position - bound.cents
     const possible = isCloseTo(positionError, 0)
 
-    let tinaError = positionError / TINA as Proportion<Tina>
-    if (isCloseTo(tinaError, 0 as Proportion<Tina>)) {
-        tinaError = 0 as Proportion<Tina>
+    let tinaError = positionError / TINA as Multiplier<Tina>
+    if (isCloseTo(tinaError, 0 as Multiplier<Tina>)) {
+        tinaError = 0 as Multiplier<Tina>
     }
 
     const initialPositionDistance = position - initialPosition
-    const initialPositionTinaDifference = initialPositionDistance / TINA as Proportion<Tina>
+    const initialPositionTinaDistance = initialPositionDistance / TINA as Multiplier<Tina>
 
     return {
         events: analyzedEvents,
         cents: position,
         rank,
         score,
-        distance,
-        inaDistance,
+        totalDistance,
+        totalInaDistance,
         exact,
         possible,
         tinaError,
-        initialPositionTinaDifference,
+        initialPositionTinaDistance,
     }
 }
 

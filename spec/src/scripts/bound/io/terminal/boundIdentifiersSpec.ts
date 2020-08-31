@@ -1,7 +1,8 @@
-import { Cents, Id, Monzo, Name, Prime, Proportion, Ratio, Sopfr } from "../../../../../../src/general"
-import { ApotomeSlope, N2D3P9, SagittalComma, SymbolLongAscii } from "../../../../../../src/sagittal"
+import { Cents, Id, Monzo, Multiplier, Name, Prime, Ratio, Sopfr } from "../../../../../../src/general"
+import { ApotomeSlope, Ina, N2D3P9, SagittalComma, SymbolLongAscii, TINA } from "../../../../../../src/sagittal"
 import { SymbolUnicode } from "../../../../../../src/sagittal/io"
-import { Bound, INA_SIZES, JiSymbol, Level, Mina } from "../../../../../../src/sagittal/notations/ji"
+import { Bound, JiSymbol, Level, Mina } from "../../../../../../src/sagittal/notations/ji"
+import { MINA, ULTRINA } from "../../../../../../src/sagittal/notations/ji/intervals"
 import { SymbolSubset } from "../../../../../../src/sagittal/notations/types"
 import { extractBoundIdentifiers } from "../../../../../../src/scripts/bound/io/terminal/boundIdentifiers"
 import { BoundIdentifiers } from "../../../../../../src/scripts/bound/io/terminal/types"
@@ -26,7 +27,7 @@ describe("extractBoundIdentifiers", () => {
                     {
                         introducingLevel: Level.ULTRA,
                         distance: 23.1164196495597 - 22.9305875372457 as Cents,
-                        inaDistance: (23.1164196495597 - 22.9305875372457) / INA_SIZES[ Level.ULTRA ] as Proportion,
+                        inaDistance: (23.1164196495597 - 22.9305875372457) / ULTRINA as Multiplier<Ina>,
                         ascii: ".)/|" as SymbolLongAscii,
                         unicode: "" as SymbolUnicode,
                         smallestJiSymbolSubset: SymbolSubset.HERCULEAN,
@@ -48,7 +49,7 @@ describe("extractBoundIdentifiers", () => {
                     {
                         introducingLevel: Level.ULTRA,
                         distance: 23.46001038464900 - 23.1164196495597 as Cents,
-                        inaDistance: (23.46001038464900 - 23.1164196495597) / INA_SIZES[ Level.ULTRA ] as Proportion,
+                        inaDistance: (23.46001038464900 - 23.1164196495597) / ULTRINA as Multiplier<Ina>,
                         ascii: "'/|" as SymbolLongAscii,
                         unicode: "" as SymbolUnicode,
                         smallestJiSymbolSubset: SymbolSubset.HERCULEAN,
@@ -72,7 +73,7 @@ describe("extractBoundIdentifiers", () => {
                     {
                         introducingLevel: Level.ULTRA,
                         distance: 23.1164196495597 - 22.9305875372457 as Cents,
-                        inaDistance: (23.1164196495597 - 22.9305875372457) / INA_SIZES[ Level.EXTREME ] as Proportion,
+                        inaDistance: (23.1164196495597 - 22.9305875372457) / MINA as Multiplier<Ina>,
                         ascii: ".)/|" as SymbolLongAscii,
                         unicode: "" as SymbolUnicode,
                         smallestJiSymbolSubset: SymbolSubset.HERCULEAN,
@@ -94,7 +95,7 @@ describe("extractBoundIdentifiers", () => {
                     {
                         introducingLevel: Level.ULTRA,
                         distance: 23.46001038464900 - 23.1164196495597 as Cents,
-                        inaDistance: (23.46001038464900 - 23.1164196495597) / INA_SIZES[ Level.EXTREME ] as Proportion,
+                        inaDistance: (23.46001038464900 - 23.1164196495597) / MINA as Multiplier<Ina>,
                         ascii: "'/|" as SymbolLongAscii,
                         unicode: "" as SymbolUnicode,
                         smallestJiSymbolSubset: SymbolSubset.HERCULEAN,
@@ -118,7 +119,7 @@ describe("extractBoundIdentifiers", () => {
                     {
                         introducingLevel: Level.ULTRA,
                         distance: 23.1164196495597 - 22.9305875372457 as Cents,
-                        inaDistance: (23.1164196495597 - 22.9305875372457) / INA_SIZES[ Level.INSANE ] as Proportion,
+                        inaDistance: (23.1164196495597 - 22.9305875372457) / TINA as Multiplier<Ina>,
                         ascii: ".)/|" as SymbolLongAscii,
                         unicode: "" as SymbolUnicode,
                         mina: 47 as Mina,
@@ -140,7 +141,7 @@ describe("extractBoundIdentifiers", () => {
                     {
                         introducingLevel: Level.ULTRA,
                         distance: 23.46001038464900 - 23.1164196495597 as Cents,
-                        inaDistance: (23.46001038464900 - 23.1164196495597) / INA_SIZES[ Level.INSANE ] as Proportion,
+                        inaDistance: (23.46001038464900 - 23.1164196495597) / TINA as Multiplier<Ina>,
                         ascii: "'/|" as SymbolLongAscii,
                         unicode: "" as SymbolUnicode,
                         mina: 48 as Mina,

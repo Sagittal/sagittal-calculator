@@ -115,6 +115,7 @@ import {
     Min,
     mod,
     Monzo,
+    multiply,
     negative,
     Numerator,
     ONE,
@@ -141,7 +142,7 @@ import {
     Votes,
     Zone,
 } from "./music"
-import { Count, Extrema, Id, Index, Ms, Name, Proportion, Resolution, Span, Sum, Unit } from "./types"
+import { Count, Extrema, Id, Index, Ms, Multiplier, Name, Resolution, Span, Sum, Unit } from "./types"
 
 export {
     Abs,
@@ -150,7 +151,7 @@ export {
     Prime,
     Combination,
     Combinations,
-    Proportion,
+    Multiplier,
     Index,
     Count,
     Sum,
@@ -217,6 +218,7 @@ export {
     dig,
     Rank,
     Ranked,
+    multiply,
     COMMA_POPULARITIES,
     RankStrategy,
     Votes,

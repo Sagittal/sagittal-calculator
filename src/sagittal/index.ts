@@ -14,6 +14,7 @@ import {
     formatLevel,
     getJiSymbol,
     getSagittalComma,
+    Ina,
     INA_SIZES,
     JiSymbol,
     JI_BOUNDS,
@@ -66,4 +67,5 @@ export {
     computeApotomeSlope,
     computeSagittalCommaName,
     formatLevel,
+    Ina,
 }

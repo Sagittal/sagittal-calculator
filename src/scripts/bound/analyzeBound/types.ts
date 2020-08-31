@@ -1,16 +1,16 @@
-import { Cents, Count, Integer, Proportion, Rank, Sum } from "../../../general"
-import { Tina } from "../../../sagittal"
+import { Cents, Count, Integer, Multiplier, Rank, Sum } from "../../../general"
+import { Ina, Tina } from "../../../sagittal"
 import { AnalyzedEvent, AnalyzedHistory } from "../analyzedHistory"
 import { ConsolidatedHistories } from "../consolidatedHistories"
 
 interface AnalyzedBound {
     bestPossibleHistory: AnalyzedHistory,
-    bestPossibleHistoryDistance: Cents,
-    bestPossibleHistoryInaDistance: Sum<Proportion>,
+    bestPossibleHistoryTotalDistance: Cents,
+    bestPossibleHistoryTotalInaDistance: Sum<Multiplier<Ina>>,
     bestRank: Rank<AnalyzedEvent, Integer>,
     consolidatedHistories: ConsolidatedHistories,
     initialPosition: Cents,
-    initialPositionTinaDifference: Proportion<Tina>,
+    initialPositionTinaDistance: Multiplier<Tina>,
     possibleHistoryCount: Count<AnalyzedHistory>,
 }
 

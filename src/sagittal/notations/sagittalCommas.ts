@@ -5,7 +5,7 @@ import { SagittalComma } from "./types"
 
 // TODO: I wonder if the philosophy should be this:
 //  in the implementation, have the absolute minimum amount of info
-//  and have things like this exist as tests
+//  and have things like this exist as tests (could use JiSymbolWithPrimaryComma type)
 //  that might solve the dilemma of the "Analyzed<>" parameterized type
 //  and some of the rational/not-rational stuff too
 //  if this was literally just an id and monzo. everything else could be calculated

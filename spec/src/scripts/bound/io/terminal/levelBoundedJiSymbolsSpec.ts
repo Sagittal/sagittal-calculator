@@ -1,5 +1,5 @@
-import { Cents, Id, Proportion } from "../../../../../../src/general"
-import { Bound, JiSymbol, Level } from "../../../../../../src/sagittal/notations/ji"
+import { Cents, Id, Multiplier } from "../../../../../../src/general"
+import { Bound, Ina, JiSymbol, Level } from "../../../../../../src/sagittal/notations/ji"
 import { computeLevelBoundedJiSymbolIdWithDistances } from "../../../../../../src/scripts/bound/io/terminal/levelBoundedJiSymbols"
 import { BoundIdWithBoundedSymbolIdWithDistancesPairsByLevel } from "../../../../../../src/scripts/bound/io/terminal/types"
 
@@ -19,36 +19,36 @@ describe("computeLevelBoundedJiSymbolIdWithDistances", () => {
                 {
                     id: 44 as Id<JiSymbol>,
                     distance: 3.1559088743959975 as Cents,
-                    inaDistance: 0.5829624209957123 as Proportion,
+                    inaDistance: 0.5829624209957123 as Multiplier<Ina>,
                 },
                 {
                     id: 58 as Id<JiSymbol>,
                     distance: 2.601893328989302 as Cents,
-                    inaDistance: 0.48062415443807605 as Proportion,
+                    inaDistance: 0.48062415443807605 as Multiplier<Ina>,
                 },
             ],
             [ Level.EXTREME ]: [
                 {
                     id: 51 as Id<JiSymbol>,
                     distance: 0.38371604975449713 as Cents,
-                    inaDistance: 0.786434752419428 as Proportion,
+                    inaDistance: 0.786434752419428 as Multiplier<Ina>,
                 },
                 {
                     id: 52 as Id<JiSymbol>,
                     distance: 0.22210985406900008 as Cents,
-                    inaDistance: 0.4552191867044054 as Proportion,
+                    inaDistance: 0.4552191867044054 as Multiplier<Ina>,
                 },
             ],
             [ Level.INSANE ]: [
                 {
                     id: 51 as Id<JiSymbol>,
                     distance: 0.38371604975449713 as Cents,
-                    inaDistance: 2.7305824665550094 as Proportion,
+                    inaDistance: 2.7305824665550094 as Multiplier<Ina>,
                 },
                 {
                     id: 52 as Id<JiSymbol>,
                     distance: 0.22210985406900008 as Cents,
-                    inaDistance: 1.5805679057676565 as Proportion,
+                    inaDistance: 1.5805679057676565 as Multiplier<Ina>,
                 },
             ],
         }
@@ -70,7 +70,7 @@ describe("computeLevelBoundedJiSymbolIdWithDistances", () => {
                 {
                     id: 142 as Id<JiSymbol>,
                     distance: 3.6578835602835937 as Cents,
-                    inaDistance: 0.6756876516060547 as Proportion,
+                    inaDistance: 0.6756876516060547 as Multiplier<Ina>,
                 },
                 undefined,
             ],
@@ -78,7 +78,7 @@ describe("computeLevelBoundedJiSymbolIdWithDistances", () => {
                 {
                     id: 147 as Id<JiSymbol>,
                     distance: 1.2814466063946952 as Cents,
-                    inaDistance: 0.5297795425192314 as Proportion,
+                    inaDistance: 0.5297795425192314 as Multiplier<Ina>,
                 },
                 undefined,
             ],
@@ -86,7 +86,7 @@ describe("computeLevelBoundedJiSymbolIdWithDistances", () => {
                 {
                     id: 147 as Id<JiSymbol>,
                     distance: 1.2814466063946952 as Cents,
-                    inaDistance: 0.6537704992790516 as Proportion,
+                    inaDistance: 0.6537704992790516 as Multiplier<Ina>,
                 },
                 undefined,
             ],
@@ -94,7 +94,7 @@ describe("computeLevelBoundedJiSymbolIdWithDistances", () => {
                 {
                     id: 149 as Id<JiSymbol>,
                     distance: 0.44892240228040237 as Cents,
-                    inaDistance: 0.9200766517814528 as Proportion,
+                    inaDistance: 0.9200766517814528 as Multiplier<Ina>,
                 },
                 undefined,
             ],
@@ -102,7 +102,7 @@ describe("computeLevelBoundedJiSymbolIdWithDistances", () => {
                 {
                     id: 149 as Id<JiSymbol>,
                     distance: 0.44892240228040237 as Cents,
-                    inaDistance: 3.194600906829164 as Proportion,
+                    inaDistance: 3.194600906829164 as Multiplier<Ina>,
                 },
                 undefined,
             ],
@@ -126,7 +126,7 @@ describe("computeLevelBoundedJiSymbolIdWithDistances", () => {
                 {
                     id: 1 as Id<JiSymbol>,
                     distance: 0.211928144834215 as Cents,
-                    inaDistance: 0.43435154255350816 as Proportion,
+                    inaDistance: 0.43435154255350816 as Multiplier<Ina>,
                 },
             ],
             [ Level.INSANE ]: [
@@ -134,7 +134,7 @@ describe("computeLevelBoundedJiSymbolIdWithDistances", () => {
                 {
                     id: 1 as Id<JiSymbol>,
                     distance: 0.211928144834215 as Cents,
-                    inaDistance: 1.508113295818833 as Proportion,
+                    inaDistance: 1.508113295818833 as Multiplier<Ina>,
                 },
             ],
         }

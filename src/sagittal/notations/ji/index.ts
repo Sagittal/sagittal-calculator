@@ -9,7 +9,7 @@ import { LEVEL_EDAS } from "./levelEdas"
 import { LEVELS } from "./levels"
 import { LEVELS_BOUNDS } from "./levelsBounds"
 import { LEVELS_SYMBOL_IDS } from "./levelsJiSymbolIds"
-import { Bound, JiSymbol, Level, Mina, Tina } from "./types"
+import { Bound, Ina, JiSymbol, Level, Mina, Tina } from "./types"
 
 export {
     JI_BOUNDS,
@@ -29,4 +29,5 @@ export {
     getJiSymbol,
     Tina,
     formatLevel,
+    Ina,
 }

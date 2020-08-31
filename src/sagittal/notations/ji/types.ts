@@ -2,11 +2,13 @@ import { Cents, Id } from "../../../general"
 import { SymbolLongAscii, SymbolUnicode } from "../../io"
 import { SagittalComma, SymbolSubset } from "../types"
 
-type Tina = Cents & { _TinaBrand: "Tina" }
-type Mina = Cents & { _MinaBrand: "Mina" }
-type Ultrina = Cents & { _UltrinaBrand: "Ultrina" }
-type Highina = Cents & { _HighinaBrand: "Highina" }
-type Medina = Cents & { _MedinaBrand: "Medina" }
+type Tina = Cents & { _InaBrand: "Tina" }
+type Mina = Cents & { _InaBrand: "Mina" }
+type Ultrina = Cents & { _InaBrand: "Ultrina" }
+type Highina = Cents & { _InaBrand: "Highina" }
+type Medina = Cents & { _InaBrand: "Medina" }
+
+type Ina = Cents & { _InaBrand: "Tina" | "Mina" | "Ultrina" | "Highina" | "Medina" }
 
 enum Level {
     MEDIUM = "medium",          // corresponds closely with Athenian symbol subset
@@ -42,4 +44,5 @@ export {
     Medina,
     Level,
     Bound,
+    Ina,
 }

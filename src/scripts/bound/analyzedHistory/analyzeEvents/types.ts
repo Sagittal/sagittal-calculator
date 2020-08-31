@@ -1,10 +1,11 @@
-import { Cents, Integer, Proportion, Rank } from "../../../../general"
+import { Cents, Integer, Multiplier, Rank } from "../../../../general"
+import { Ina } from "../../../../sagittal"
 import { HistoricalEvent } from "../../histories"
 
 interface AnalyzedEvent extends HistoricalEvent {
     distance: Cents,
     exact: boolean,
-    inaDistance: Proportion,
+    inaDistance: Multiplier<Ina>,
     rank: Rank<AnalyzedEvent, Integer>,
 }
 

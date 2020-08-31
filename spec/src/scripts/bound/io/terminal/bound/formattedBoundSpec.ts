@@ -3,7 +3,7 @@ import { Bound } from "../../../../../../../src/sagittal/notations/ji"
 import { AnalyzedBound } from "../../../../../../../src/scripts/bound/analyzeBound"
 import { AnalyzedEvent } from "../../../../../../../src/scripts/bound/analyzedHistory"
 import { formatBound } from "../../../../../../../src/scripts/bound/io"
-import { boundFixture } from "../../../../../../helpers/src/scripts/bound/fixtures"
+import { analyzedBoundFixture, boundFixture } from "../../../../../../helpers/src/scripts/bound/fixtures"
 
 describe("computeFormattedBound", () => {
     it("returns a string which is a multi-line, properly indented rendition of the analyzed bound, as well as identifying information for the bound", () => {
@@ -13,8 +13,9 @@ describe("computeFormattedBound", () => {
             id: 10 as Id<Bound>,
         }
         const analyzedBound: AnalyzedBound = {
+            ...analyzedBoundFixture,
             bestRank: 2 as Rank<AnalyzedEvent, Integer>,
-        } as AnalyzedBound
+        }
 
         const actual = formatBound(analyzedBound, { bound })
 
@@ -32,7 +33,7 @@ describe("computeFormattedBound", () => {
             `                "inaDistance": 0.4178919005628725,`,
             `                "ascii": ",,|(",`,
             `                "unicode": "",`,
-            `                "introducingLevel": "extreme",`,
+            `                "introducingLevel": "extreme",`,                   // TODO: if this is a "formatted" thing, shouldn't the levels actually be formatted?! i.e. uppercase
             `                "smallestJiSymbolSubset": "olympian",`,
             `                "mina": 10,`,
             `                "elements": [`,
@@ -184,7 +185,25 @@ describe("computeFormattedBound", () => {
             `    "greaterBoundedMina": 11`,
             `}`,
             `{`,
-            `    "bestRank": 2`,
+            `    "bestPossibleHistory": {`,
+            `        "events": [],`,
+            `        "cents": 0,`,
+            `        "rank": 0,`,
+            `        "score": 0,`,
+            `        "totalDistance": 0,`,
+            `        "exact": false,`,
+            `        "totalInaDistance": 0,`,
+            `        "possible": false,`,
+            `        "tinaError": 0,`,
+            `        "initialPositionTinaDistance": 0`,
+            `    },`,
+            `    "bestRank": 2,`,
+            `    "initialPosition": 0,`,
+            `    "initialPositionTinaDistance": 0,`,
+            `    "bestPossibleHistoryTotalDistance": 0,`,
+            `    "bestPossibleHistoryTotalInaDistance": 0,`,
+            `    "consolidatedHistories": {},`,
+            `    "possibleHistoryCount": 0`,
             `}`,
         ].join("\n")
 

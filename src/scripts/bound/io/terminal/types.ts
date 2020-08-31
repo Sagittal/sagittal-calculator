@@ -1,14 +1,14 @@
-import { Cents, Id, Maybe, Proportion } from "../../../../general"
-import { Bound, JiSymbol, Level, Mina, SagittalComma, SymbolLongAscii } from "../../../../sagittal"
+import { Cents, Id, Maybe, Multiplier } from "../../../../general"
+import { Bound, Ina, JiSymbol, Level, Mina, SagittalComma, SymbolLongAscii } from "../../../../sagittal"
 
 interface BoundedJiSymbol extends JiSymbol {
     distance: Cents,
-    inaDistance: Proportion,
+    inaDistance: Multiplier,
 }
 
 interface BoundedJiSymbolWithPrimaryComma extends JiSymbolWithPrimaryComma {
     distance: Cents,
-    inaDistance: Proportion,
+    inaDistance: Multiplier,
 }
 
 type BoundedJiSymbolWithPrimaryCommaPair =
@@ -37,7 +37,7 @@ type BoundIdWithBoundedSymbolIdWithDistancesPairsByLevel =
 interface BoundedSymbolIdWithDistances {
     id: Id<JiSymbol>,
     distance: Cents,
-    inaDistance: Proportion,
+    inaDistance: Multiplier<Ina>,
 }
 
 type BoundedSymbolIdWithDistancesPair = [Maybe<BoundedSymbolIdWithDistances>, Maybe<BoundedSymbolIdWithDistances>]

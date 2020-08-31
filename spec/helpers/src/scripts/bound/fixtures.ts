@@ -1,5 +1,6 @@
-import { Cents, Id, Integer, Name, Pitch, Proportion, Rank, Sum } from "../../../../../src/general"
-import { Bound, Level, Tina } from "../../../../../src/sagittal/notations/ji"
+import { Cents, Count, Id, Integer, Multiplier, Name, Pitch, Rank, Sum } from "../../../../../src/general"
+import { Bound, Ina, Level, Tina } from "../../../../../src/sagittal/notations/ji"
+import { AnalyzedBound } from "../../../../../src/scripts/bound/analyzeBound"
 import { AnalyzedEvent, AnalyzedHistory, Score } from "../../../../../src/scripts/bound/analyzedHistory"
 import { ConsolidatedEvent } from "../../../../../src/scripts/bound/consolidatedHistories/types"
 import { EventType, HistoricalEvent } from "../../../../../src/scripts/bound/histories"
@@ -14,7 +15,7 @@ const eventFixture: HistoricalEvent = {
 const analyzedEventFixture: AnalyzedEvent = {
     ...eventFixture,
     distance: 0 as Cents,
-    inaDistance: 0 as Proportion,
+    inaDistance: 0 as Multiplier<Ina>,
     rank: 0 as Rank<AnalyzedEvent, Integer>,
     exact: false,
 }
@@ -24,12 +25,12 @@ const analyzedHistoryFixture: AnalyzedHistory = {
     cents: 0 as Cents,
     rank: 0 as Rank<AnalyzedEvent, Integer>,
     score: 0 as Score,
-    distance: 0 as Cents,
+    totalDistance: 0 as Cents,
     exact: false,
-    inaDistance: 0 as Sum<Proportion>,
+    totalInaDistance: 0 as Sum<Multiplier<Ina>>,
     possible: false,
-    tinaError: 0 as Proportion<Tina>,
-    initialPositionTinaDifference: 0 as Proportion<Tina>,
+    tinaError: 0 as Multiplier<Tina>,
+    initialPositionTinaDistance: 0 as Multiplier<Tina>,
 }
 
 const consolidatedEventFixture: ConsolidatedEvent = {
@@ -48,10 +49,22 @@ const boundFixture: Bound = {
     cents: 0 as Cents,
 }
 
+const analyzedBoundFixture: AnalyzedBound = {
+    bestPossibleHistory: analyzedHistoryFixture,
+    bestRank: 0 as Rank<AnalyzedEvent, Integer>,
+    initialPosition: 0 as Cents,
+    initialPositionTinaDistance: 0 as Multiplier<Tina>,
+    bestPossibleHistoryTotalDistance: 0 as Cents,
+    bestPossibleHistoryTotalInaDistance: 0 as Sum<Multiplier<Ina>>,
+    consolidatedHistories: {},
+    possibleHistoryCount: 0 as Count<AnalyzedHistory>,
+}
+
 export {
     eventFixture,
     analyzedEventFixture,
     analyzedHistoryFixture,
     consolidatedEventFixture,
     boundFixture,
+    analyzedBoundFixture,
 }
