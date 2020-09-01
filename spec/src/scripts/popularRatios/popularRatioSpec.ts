@@ -18,7 +18,7 @@ describe("computePopularRatio", () => {
             formattedRatio: "5/1" as Formatted<Ratio>,
             popularityRank: 2 as Rank<Popularity>,
             votes: 5371 as Votes,
-            formattedSymbols: "    '|       /|  " as Io,
+            formattedExactlyNotatingJiSymbols: "    '|       /|  " as Io,
             symbolSubsets: "3, 0" as Io,
         }
         expect(actual).toEqual(expected)
@@ -38,7 +38,7 @@ describe("computePopularRatio", () => {
             formattedRatio: "5/1" as Formatted<Ratio>,
             popularityRank: 2 as Rank<Popularity>,
             votes: 5371 as Votes,
-            formattedSymbols: ":'::|: :/|:" as Io,
+            formattedExactlyNotatingJiSymbols: ":'::|: :/|:" as Io,
             symbolSubsets: "3, 0" as Io,
         }
         expect(actual).toEqual(expected)

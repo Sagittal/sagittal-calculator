@@ -6,7 +6,7 @@ interface PopularRatio {
     formattedRatio: Formatted<Ratio>,
     formattedN2D3P9: Formatted<N2D3P9>,
     symbolSubsets: Io,
-    formattedSymbols: Io,
+    formattedExactlyNotatingJiSymbols: Io,
     votes: Votes,
     popularityRank: Rank<Popularity> | Io,
 }

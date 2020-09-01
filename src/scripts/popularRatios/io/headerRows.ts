@@ -4,7 +4,7 @@ import { PopularRatio } from "../types"
 const POPULAR_RATIOS_COLUMN_TITLES = [
     "2,3-equivalent pitch ratio class",
     "N2D3P9",
-    "symbols",
+    "exactly notating JI symbols",
     "introducing symbol subset indices",
     "N2D3P9 rank",
     "Scala archive rank",

@@ -24,12 +24,12 @@ const computePopularRatio = ({ monzo, n2d3p9 }: { monzo: Monzo, n2d3p9: N2D3P9 }
     const popularityRank = popularity?.rank || "-" as Io
     const votes = popularity?.votes || 0 as Votes
 
-    const notatingSymbolIds = computeExactlyNotatingJiSymbolIds(monzo)
-    const notatingSymbols = notatingSymbolIds.map(getJiSymbol)
-    const formattedSymbols = join(notatingSymbols.map(symbol => {
+    const exactlyNotatingJiSymbolIds = computeExactlyNotatingJiSymbolIds(monzo)
+    const exactlyNotatingJiSymbols = exactlyNotatingJiSymbolIds.map(getJiSymbol)
+    const formattedExactlyNotatingJiSymbols = join(exactlyNotatingJiSymbols.map(symbol => {
         return ioSettings.forForum ? computeSmileyFromAscii(symbol.ascii) : formatSymbolAscii(symbol.ascii)
     }), SPACE)
-    const symbolSubsets = notatingSymbols.map(symbol => {
+    const symbolSubsets = exactlyNotatingJiSymbols.map(symbol => {
         return JI_SYMBOL_SUBSETS.indexOf(symbol.smallestJiSymbolSubset)
     }).join(", ") as Io
 
@@ -39,7 +39,7 @@ const computePopularRatio = ({ monzo, n2d3p9 }: { monzo: Monzo, n2d3p9: N2D3P9 }
         formattedRatio,
         popularityRank,
         votes,
-        formattedSymbols,
+        formattedExactlyNotatingJiSymbols,
         symbolSubsets,
     }
 }

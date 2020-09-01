@@ -14,14 +14,14 @@ const computePopularRatiosTable = (popularRatios: Array<Ranked<PopularRatio>>, m
             rank: estimatedRank,
             popularityRank: actualRank,
             symbolSubsets,
-            formattedSymbols,
+            formattedExactlyNotatingJiSymbols,
             votes,
         } = popularRatio
 
         table.push([
             formattedRatio,
             formattedN2D3P9,
-            formattedSymbols,
+            formattedExactlyNotatingJiSymbols,
             symbolSubsets,
             estimatedRank,
             actualRank,
