@@ -1,6 +1,6 @@
 import { Cents, Integer, Multiplier, Rank, sum } from "../../../../../src/general"
 import { ACCURACY_THRESHOLD } from "../../../../../src/general/code"
-import { multiply } from "../../../../../src/general/math/typedOperations"
+import { multiply } from "../../../../../src/general/math"
 import { Bound, Ina, Level, Tina, TINA } from "../../../../../src/sagittal/notations/ji"
 import { computeInitialPosition } from "../../../../../src/scripts/bound/analyzeBound/initialPosition"
 import { AnalyzedEvent, computeAnalyzedHistory } from "../../../../../src/scripts/bound/analyzedHistory"

@@ -1,3 +1,4 @@
+import { computeCardinality } from "./cardinality"
 import { deepClone, shallowClone } from "./clone"
 import { concat } from "./concat"
 import { ACCURACY_THRESHOLD } from "./constants"
@@ -48,4 +49,5 @@ export {
     concat,
     ObjectKey,
     shallowClone,
+    computeCardinality,
 }

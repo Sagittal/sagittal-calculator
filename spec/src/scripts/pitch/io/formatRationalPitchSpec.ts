@@ -1,4 +1,6 @@
-import { Cents, Monzo, Name, Prime, Ratio, Sopfr } from "../../../../../src/general"
+// tslint:disable max-line-length
+
+import { Cents, Io, Monzo, Name, NEWLINE, Prime, Ratio, Sopfr } from "../../../../../src/general"
 import { AnalyzedRationalPitch, ApotomeSlope } from "../../../../../src/sagittal"
 import { N2D3P9 } from "../../../../../src/sagittal/commaEvaluation/n2d3p9"
 import { formatRationalPitch } from "../../../../../src/scripts/pitch/io"
@@ -19,13 +21,8 @@ describe("formatRationalPitch", () => {
         const actual = formatRationalPitch(rationalPitch)
 
         const expected =
-            "ratio:        \t5/4\n" +
-            "monzo:        \t[   0  -1   1 ⟩\n" +
-            "cents:        \t 11.200\n" +
-            "limit:        \t 14    \n" +
-            "5-rough sopfr:\t 13    \n" +
-            "N2D3P9:       \t 18.457\n" +
-            "apotome slope:\t  8.200"
+            "        \t       \tratio\tmonzo          \tcents  \tapotome slope\tlimit  \t5-rough sopfr\tN2D3P9 ".underline + NEWLINE +
+            "        \t       \t5/4  \t[   0  -1   1 ⟩\t 11.200\t  8.200      \t 14    \t 13          \t 18.457" + NEWLINE as Io
         expect(actual).toEqual(expected)
     })
 })

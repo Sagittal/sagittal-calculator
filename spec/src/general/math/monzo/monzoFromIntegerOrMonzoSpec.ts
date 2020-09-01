@@ -1,5 +1,5 @@
 import { Integer, Monzo } from "../../../../../src/general/math"
-import { computeMonzoFromIntegerOrMonzo } from "../../../../../src/general/math/monzo/monzoFromIntegerOrMonzo"
+import { computeMonzoFromIntegerOrMonzo } from "../../../../../src/general/math/monzo"
 
 describe("computeMonzoFromIntegerOrMonzo", () => {
     const expected = [1, 0, 0, 0, 1] as Monzo

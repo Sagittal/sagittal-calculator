@@ -1,9 +1,8 @@
-import { concat, Row } from "../../../general"
+import { addTexts, concat, Formatted, Row, shallowClone } from "../../../general"
 import { AnalyzedRationalPitch } from "../../../sagittal"
 
 const NOTATING_COMMA_WITH_MAYBE_SAGITTAL_SYMBOLS_HEADER_ROW = [
-    "symbol",
-    // TODO: should include symbol subset
+    "symbol  ", // Extra space to attempt to stay lined up with the rational pitch table
     "name",
     "ratio",
     "monzo",
@@ -23,7 +22,22 @@ const FIND_COMMAS_HEADER_ROW: Row<AnalyzedRationalPitch, "Header"> = concat(
     ] as Row<AnalyzedRationalPitch, "Header">,
 )
 
+const TWO_TABBED_COLUMN_WIDE_SPACE_INSTEAD_OF_SYMBOLS = "        " as Formatted<AnalyzedRationalPitch>
+const ONE_TABBED_COLUMN_WIDE_SPACE_INSTEAD_OF_NAME = "       " as Formatted<AnalyzedRationalPitch>
+const EXTRA_COLUMN_ASSUMING_SOME_LONG_RATIOS = "     " as Formatted<AnalyzedRationalPitch>
+
+const computeRationalPitchHeaderRow = (): Row<AnalyzedRationalPitch, "Header"> => {
+    const headerRow = shallowClone(FIND_COMMAS_HEADER_ROW)
+    headerRow[ 0 ] = TWO_TABBED_COLUMN_WIDE_SPACE_INSTEAD_OF_SYMBOLS
+    headerRow[ 1 ] = ONE_TABBED_COLUMN_WIDE_SPACE_INSTEAD_OF_NAME
+
+    headerRow[ 2 ] = addTexts(headerRow[ 2 ], EXTRA_COLUMN_ASSUMING_SOME_LONG_RATIOS)
+
+    return headerRow
+}
+
 export {
+    computeRationalPitchHeaderRow,
     NOTATING_COMMA_WITH_MAYBE_SAGITTAL_SYMBOLS_HEADER_ROW,
     FIND_COMMAS_HEADER_ROW,
 }

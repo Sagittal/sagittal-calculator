@@ -1,3 +1,4 @@
+import { computeDeepDistinct, isUndefined } from "../../code"
 import { ioSettings } from "../globals"
 import { formatTableForForum } from "./tableForForum"
 import { formatTableForTerminal } from "./tableForTerminal"
@@ -12,6 +13,13 @@ import { FormatTableOptions, Table } from "./types"
 //  variable entries, as a pass at the end
 
 const formatTable = (table: Table, options?: Partial<FormatTableOptions>) => {
+    const rowLengths = table.map(row => row.length)
+    const distinctRowLengths = computeDeepDistinct(rowLengths)
+
+    if (distinctRowLengths.length > 1) {
+        throw new Error(`Table does not have rows with all the same lengths. Row lengths are ${rowLengths}.`)
+    }
+
     return ioSettings.forForum ? formatTableForForum(table, options) : formatTableForTerminal(table, options)
 }
 

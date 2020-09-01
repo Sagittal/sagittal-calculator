@@ -1,5 +1,5 @@
 import { Level } from "../../../../../src/sagittal"
-import { formatLevel } from "../../../../../src/sagittal/notations/ji/formatLevel"
+import { formatLevel } from "../../../../../src/sagittal/notations/ji"
 
 describe("formatLevel", () => {
     it("makes levels nice for people to read", () => {

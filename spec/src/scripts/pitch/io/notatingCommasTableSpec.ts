@@ -1,6 +1,6 @@
 // tslint:disable max-line-length
 import { Io, ioSettings, Monzo, NEWLINE } from "../../../../../src/general"
-import { computeNotatingCommasTable } from "../../../../../src/scripts/pitch/io/notatingCommasTable"
+import { computeNotatingCommasTable } from "../../../../../src/scripts/pitch/io"
 
 describe("computeNotatingCommasTable", () => {
     it("can format the symbols for the terminal", () => {
@@ -9,7 +9,6 @@ describe("computeNotatingCommasTable", () => {
         const actual = computeNotatingCommasTable(monzo)
 
         const expected =
-            "" + NEWLINE +
             "   --- notating commas ---" + NEWLINE +
             "" + NEWLINE +
             "symbol  \tname \tratio    \tmonzo          \tcents  \tapotome slope".underline + NEWLINE +
@@ -26,7 +25,6 @@ describe("computeNotatingCommasTable", () => {
         ioSettings.forForum = false
 
         const expected =
-            "" + NEWLINE +
             "   --- notating commas ---" + NEWLINE +
             "" + NEWLINE +
             "[table]" + NEWLINE +

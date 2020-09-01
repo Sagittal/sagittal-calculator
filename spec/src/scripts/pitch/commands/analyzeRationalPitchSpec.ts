@@ -1,3 +1,5 @@
+// tslint:disable max-line-length
+
 import * as cp from "child_process"
 import { Io } from "../../../../../src/general/io"
 import { onlyRunInCi } from "../../../../helpers/onlyRunInCi"
@@ -5,13 +7,8 @@ import { runCommandAndGetConsoleOutput } from "../../../../helpers/src/scripts/r
 
 describe("analyze-rational-pitch", () => {
     const expected = [
-        "ratio:        \t2200/2187",
-        "monzo:        \t[   3  -7   2   0   1 ⟩",
-        "cents:        \t 10.260",
-        "limit:        \t 11    ",
-        "5-rough sopfr:\t 21    ",
-        "N2D3P9:       \t 42.014",
-        "apotome slope:\t -7.632",
+        "        \t       \tratio     \tmonzo                  \tcents  \tapotome slope\tlimit  \t5-rough sopfr\tN2D3P9 ",
+        "        \t       \t2200/2187 \t[   3  -7   2   0   1 ⟩\t 10.260\t -7.632      \t 11    \t 21          \t 42.014",
         "",
         "   --- notating commas ---",
         "",
@@ -60,21 +57,19 @@ describe("analyze-rational-pitch", () => {
         onlyRunInCi()
 
         const expected = [
-            "ratio:        \t2200/2187",
-            "monzo:        \t[   3  -7   2   0   1 ⟩",
-            "cents:        \t 10.260",
-            "limit:        \t 11    ",
-            "5-rough sopfr:\t 21    ",
-            "N2D3P9:       \t 42.014",
-            "apotome slope:\t -7.632",
+            "        \t       \tratio     \tmonzo                  \tcents  \tapotome slope\tlimit  \t5-rough sopfr\tN2D3P9 ",
+            "        \t       \t2200/2187 \t[   3  -7   2   0   1 ⟩\t 10.260\t -7.632      \t 11    \t 21          \t 42.014",
             "",
             "   --- notating commas ---",
             "",
-            "symbol\tname\tratio      \tmonzo                  \tcents  \tapotome slope",
-            "      \t275S\t66825/65536\t[ -16   5   2   0   1 ⟩\t 33.720\t  2.924      ",
+            "symbol  \tname\tratio      \tmonzo                  \tcents  \tapotome slope",
+            "        \t275S\t66825/65536\t[ -16   5   2   0   1 ⟩\t 33.720\t  2.924      ",
             "",
         ] as Io[]
 
+        // Note: because the absolute apotome slope is filtered to 3,
+        // the comma itself does not appear in the list of notating commas
+        // otherwise it would, as the 275k, `)|(
         const command = "npm run analyze-rational-pitch -- -m [3,-7,2,0,1] --max-cents 50 --max-absolute-apotome-slope 3" as Io
 
         const actual = runCommandAndGetConsoleOutput(command)

@@ -2,10 +2,10 @@ import { Formatted, parseMonzo } from "../../../../src/general/io"
 import { Monzo } from "../../../../src/general/math"
 
 describe("parseMonzo", () => {
-    const expected = [3, 4, 5] as Monzo
+    const expected = [3, 4, -5] as Monzo
 
     it("parses monzos", () => {
-        const monzo = "[3,4,5]" as Formatted<Monzo>
+        const monzo = "[3,4,-5]" as Formatted<Monzo>
 
         const actual = parseMonzo(monzo)
 
@@ -13,7 +13,7 @@ describe("parseMonzo", () => {
     })
 
     it("parses formatted monzos", () => {
-        const monzo = "[ 3 4 5 ⟩" as Formatted<Monzo>
+        const monzo = "[ 3 4 -5 ⟩" as Formatted<Monzo>
 
         const actual = parseMonzo(monzo)
 
@@ -21,7 +21,7 @@ describe("parseMonzo", () => {
     })
 
     it("parses monzos given with greater than signs", () => {
-        const monzo = "[ 3 4 5 >" as Formatted<Monzo>
+        const monzo = "[ 3 4 -5 >" as Formatted<Monzo>
 
         const actual = parseMonzo(monzo)
 
@@ -29,7 +29,7 @@ describe("parseMonzo", () => {
     })
 
     it("parses monzos given with pipes", () => {
-        const monzo = "| 3 4 5 ⟩" as Formatted<Monzo>
+        const monzo = "| 3 4 -5 ⟩" as Formatted<Monzo>
 
         const actual = parseMonzo(monzo)
 
@@ -37,7 +37,7 @@ describe("parseMonzo", () => {
     })
 
     it("parses monzos given with no spaces on the ends", () => {
-        const monzo = "[3 4 5⟩" as Formatted<Monzo>
+        const monzo = "[3 4 -5⟩" as Formatted<Monzo>
 
         const actual = parseMonzo(monzo)
 
@@ -45,7 +45,15 @@ describe("parseMonzo", () => {
     })
 
     it("parses monzos as they are returned by scripts, with the extra spaces to align them", () => {
-        const monzo = "[   3   4   5 ⟩" as Formatted<Monzo>
+        const monzo = "[   3   4  -5 ⟩" as Formatted<Monzo>
+
+        const actual = parseMonzo(monzo)
+
+        expect(actual).toEqual(expected)
+    })
+
+    it("can handle the situation where there are both commas and spaces", () => {
+        const monzo = "[3, 4, -5]" as Formatted<Monzo>
 
         const actual = parseMonzo(monzo)
 
