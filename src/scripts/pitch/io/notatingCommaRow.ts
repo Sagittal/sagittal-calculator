@@ -9,6 +9,10 @@ const computeNotatingCommaWithMaybeSagittalSymbolRow = (
 
     return [
         symbol ?
+            // TODO: this happens in two places, here and in popularRatios
+            //  maybe there should be a formatSymbol method which lives in sagittal/io
+            //  and which has a second argument which is required and which is an ioSettings object
+            //  so it just pulls whatever it needs and then decides which one to render
             ioSettings.forForum ?
                 computeSmileyFromAscii(symbol) :
                 formatSymbolAscii(symbol) :
