@@ -22,8 +22,8 @@ describe("find-commas", () => {
         const actual = runCommandAndGetConsoleOutput(command)
 
         const expected = [
-            "symbol\tname  \tratio\tmonzo                                      \tcents  \tapotome slope\tlimit  \t5-rough sopfr\tN2D3P9 ",
-            "      \t29/19C\t58/57\t[   1  -1   0   0   0   0   0  -1   0   1 ⟩\t 30.109\t -2.854      \t 29    \t 48          \t295.907",
+            "symbol  \tname  \tratio\tmonzo                                      \tcents  \tapotome slope\tlimit  \t5-rough sopfr\tN2D3P9 ",
+            "        \t29/19C\t58/57\t[   1  -1   0   0   0   0   0  -1   0   1 ⟩\t 30.109\t -2.854      \t 29    \t 48          \t295.907",
             "",
         ] as Io[]
         expect(actual).toEqual(expected)

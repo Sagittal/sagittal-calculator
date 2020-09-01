@@ -51,7 +51,7 @@ describe("computeFindCommasTable", () => {
 
         const expected =
             "[table]" + NEWLINE +
-            "[tr][th]symbol[/th][th]name[/th][th]ratio[/th][th]monzo[/th][th]cents[/th][th]apotome slope[/th][th]limit[/th][th]5-rough sopfr[/th][th]N2D3P9[/th][/tr]" + NEWLINE +
+            "[tr][th]symbol  [/th][th]name[/th][th]ratio[/th][th]monzo[/th][th]cents[/th][th]apotome slope[/th][th]limit[/th][th]5-rough sopfr[/th][th]N2D3P9[/th][/tr]" + NEWLINE +
             "[tr][td]:/|\\:[/td][td]11M[/td][td]33/32[/td][td][   0   0   1 ⟩[/td][td] 45.450[/td][td] -4.000[/td][td] 11    [/td][td] 11    [/td][td]  6.722[/td][/tr]" + NEWLINE +
             "[tr][td][/td][td]25/49M[/td][td]50/49[/td][td][   1   0   2  -2 ⟩[/td][td] 33.400[/td][td] -2.154[/td][td]  7    [/td][td] 24    [/td][td] 26.466[/td][/tr]" + NEWLINE +
             "[/table]" + NEWLINE as Io

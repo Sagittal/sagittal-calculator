@@ -28,7 +28,7 @@ describe("computeNotatingCommasTable", () => {
             "   --- notating commas ---" + NEWLINE +
             "" + NEWLINE +
             "[table]" + NEWLINE +
-            "[tr][th]symbol[/th][th]name[/th][th]ratio[/th][th]monzo[/th][th]cents[/th][th]apotome slope[/th][/tr]" + NEWLINE +
+            "[tr][th]symbol  [/th][th]name[/th][th]ratio[/th][th]monzo[/th][th]cents[/th][th]apotome slope[/th][/tr]" + NEWLINE +
             "[tr][td]:.::/|:[/td][td]1/25C[/td][td]2048/2025[/td][td][  11  -4  -2 ⟩[/td][td] 19.553[/td][td] -5.204[/td][/tr]" + NEWLINE +
             "[tr][td]:/ /|:[/td][td]1/25S[/td][td]6561/6400[/td][td][  -8   8  -2 ⟩[/td][td] 43.013[/td][td]  5.352[/td][/tr]" + NEWLINE +
             "[/table]" + NEWLINE as Io
