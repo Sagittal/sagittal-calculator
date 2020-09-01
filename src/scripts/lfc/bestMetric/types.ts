@@ -38,14 +38,14 @@ type NonRecursiveSearchScopeAndMaybeUpdateBestMetricOptions = Partial<{
     onlyWinners: boolean,
 }>
 
-interface ComputeSumOrSumsOfSquaresOptions extends NonRecursiveSearchScopeAndMaybeUpdateBestMetricOptions {
+interface SumOrSumsOfSquaresOptions extends NonRecursiveSearchScopeAndMaybeUpdateBestMetricOptions {
     spreadDynamicParameters?: Parameter[],
     metricName: MetricName,
 }
 
-type ComputeSumsOfSquaresAndMaybeUpdateBestMetricOptions = Partial<ComputeSumOrSumsOfSquaresOptions>
+type SumsOfSquaresAndMaybeUpdateBestMetricOptions = Partial<SumOrSumsOfSquaresOptions>
 
-interface ComputeSumOfSquaresAndMaybeUpdateBestMetricOptions extends ComputeSumOrSumsOfSquaresOptions {
+interface SumOfSquaresAndMaybeUpdateBestMetricOptions extends SumOrSumsOfSquaresOptions {
     sumsOfSquares: SumsOfSquares,
     index: Index<Sample>,
 }
@@ -59,14 +59,14 @@ interface SearchScopeResults {
 
 export {
     SumsOfSquares,
-    ComputeSumsOfSquaresAndMaybeUpdateBestMetricOptions,
+    SumsOfSquaresAndMaybeUpdateBestMetricOptions,
     Metric,
     Scope,
     SubmetricScope,
     DynamicParameterScope,
     SumOfSquares,
-    ComputeSumOfSquaresAndMaybeUpdateBestMetricOptions,
-    ComputeSumOrSumsOfSquaresOptions,
+    SumOfSquaresAndMaybeUpdateBestMetricOptions,
+    SumOrSumsOfSquaresOptions,
     SearchScopeResults,
     NonRecursiveSearchScopeAndMaybeUpdateBestMetricOptions,
     MetricName,

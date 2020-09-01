@@ -10,7 +10,7 @@ describe("remove color", () => {
         const expected = "hello there" as Io
         expect(actual).toBe(expected)
     })
-    
+
     it("removes underlines from text", () => {
         const text = "hello there".underline as Io
 

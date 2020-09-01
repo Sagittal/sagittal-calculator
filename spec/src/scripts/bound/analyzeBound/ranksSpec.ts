@@ -1,11 +1,7 @@
 import { Count, Id, Integer, Rank } from "../../../../../src/general"
 import { shallowClone } from "../../../../../src/general/code"
 import { Bound } from "../../../../../src/sagittal/notations/ji"
-import {
-    rankBoundIndices,
-    rankCounts,
-    updateRankAnalysis,
-} from "../../../../../src/scripts/bound/analyzeBound/ranks"
+import { rankBoundIndices, rankCounts, updateRankAnalysis } from "../../../../../src/scripts/bound/analyzeBound/ranks"
 import { AnalyzedEvent } from "../../../../../src/scripts/bound/analyzedHistory"
 
 describe("updateRankAnalysis", () => {

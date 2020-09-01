@@ -1,7 +1,6 @@
 import { nonRecursiveSearchScopeAndMaybeUpdateBestMetric } from "./nonRecursiveBestMetric"
 import { computeDynamicParameterScope, DynamicParameter, Sample, SamplePoint } from "./scopeToSamples"
 import {
-    ComputeSumOrSumsOfSquaresOptions,
     DynamicParameterScope,
     Metric,
     MetricName,
@@ -9,6 +8,7 @@ import {
     Scope,
     SubmetricScope,
     SumOfSquares,
+    SumOrSumsOfSquaresOptions,
     SumsOfSquares,
 } from "./types"
 
@@ -24,7 +24,7 @@ export {
     SamplePoint,
     SumsOfSquares,
     Sample,
-    ComputeSumOrSumsOfSquaresOptions,
+    SumOrSumsOfSquaresOptions,
     MetricName,
     ParameterScopes,
 }

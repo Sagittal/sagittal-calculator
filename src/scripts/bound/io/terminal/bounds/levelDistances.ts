@@ -14,7 +14,7 @@ const extractLevelDistances = (
         }
         const levelEvent: AnalyzedEvent = events[ previousEventIndex + 1 ]
 
-        
+
         return formatNumber(ina ? levelEvent.inaDistance : levelEvent.distance) as Formatted<Multiplier<Ina> | Cents>
     })
 }

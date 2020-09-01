@@ -5,9 +5,9 @@ import { extractBoundIdentifiers } from "../boundIdentifiers"
 import { extractLevelDistances } from "./levelDistances"
 import { extractLevelRanks } from "./levelRanks"
 import { formatMina } from "./mina"
-import { ComputeBoundRowOptions } from "./types"
+import { BoundRowOptions } from "./types"
 
-const computeBoundRow = (analyzedBound: AnalyzedBound, { bound }: ComputeBoundRowOptions): Row<AnalyzedBound> => {
+const computeBoundRow = (analyzedBound: AnalyzedBound, { bound }: BoundRowOptions): Row<AnalyzedBound> => {
     let boundRow: Row<AnalyzedBound>
     const boundIdentifiers = extractBoundIdentifiers(bound)
 

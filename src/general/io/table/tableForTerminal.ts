@@ -35,7 +35,7 @@ const formatTableForTerminal = (table: Table, options?: Partial<FormatTableOptio
         const rowText = row.reduce(
             (justifiedRow: Io, cell, cellIndex): Io => {
                 const columnWidth = columnWidths[ cellIndex ]
-                
+
                 const columnJustification = justifications[ cellIndex ]
 
                 const justifiedCell = computeJustifiedCellForTerminal(cell, { columnWidth, columnJustification })
@@ -54,7 +54,7 @@ const formatTableForTerminal = (table: Table, options?: Partial<FormatTableOptio
 
         return maybeColoredRowText
     })
-    
+
     const formattedTable: Io = join(formattedRows, NEWLINE)
 
     return addTexts(formattedTable, NEWLINE)

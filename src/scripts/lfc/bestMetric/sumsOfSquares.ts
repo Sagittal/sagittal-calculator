@@ -3,11 +3,11 @@ import { LFC_SCRIPT_GROUP } from "../constants"
 import { checkSubmetricsForInvalidParameterCombinations } from "../sumOfSquares"
 import { Sample } from "./scopeToSamples"
 import { computeSumOfSquaresAndMaybeUpdateBestMetric } from "./sumOfSquares"
-import { ComputeSumsOfSquaresAndMaybeUpdateBestMetricOptions, MetricName, SumsOfSquares } from "./types"
+import { MetricName, SumsOfSquares, SumsOfSquaresAndMaybeUpdateBestMetricOptions } from "./types"
 
 const computeSumsOfSquaresAndMaybeUpdateBestMetric = async (
     samples: Sample[],
-    options: ComputeSumsOfSquaresAndMaybeUpdateBestMetricOptions = {},
+    options: SumsOfSquaresAndMaybeUpdateBestMetricOptions = {},
 ): Promise<SumsOfSquares> => {
     const { indentation = BLANK, onlyWinners = true, metricName = "" as MetricName } = options
 

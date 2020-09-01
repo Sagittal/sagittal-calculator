@@ -21,7 +21,7 @@ type Column<T = void> =
     & (T extends void ? {} : { _ColumnOfBrand: T })
 type Table<T = void> = Array<Row<T>>
 
-interface ComputeJustifiedCellOptions {
+interface JustifiedCellOptions {
     columnJustification: Justification,
     columnWidth: number,
 }
@@ -32,7 +32,7 @@ type FormatTableOptions = {
     headerRowCount: Count<Row<unknown, "Header">>,
 }
 
-interface ComputeTableForForumStuffOptions {
+interface TableForForumStuffOptions {
     index: number,
     colors: Maybe<Array<ColorMethod>>,
     headerRowCount: Count<Row<unknown, "Header">>,
@@ -41,10 +41,10 @@ interface ComputeTableForForumStuffOptions {
 export {
     Justification,
     JustificationOption,
-    ComputeJustifiedCellOptions,
+    JustifiedCellOptions,
     FormatTableOptions,
     Row,
     Column,
     Table,
-    ComputeTableForForumStuffOptions,
+    TableForForumStuffOptions,
 }

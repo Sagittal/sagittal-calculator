@@ -2,11 +2,11 @@ import { isUndefined, Span } from "../../../../general"
 import { ParameterValue } from "../../sumOfSquares"
 import { DynamicParameterScope } from "../types"
 import { computeResolution } from "./resolution"
-import { ComputeDynamicParameterScopeOptions } from "./types"
+import { DynamicParameterScopeOptions } from "./types"
 
 const countDefinedOption = (option: unknown) => isUndefined(option) ? 0 : 1
 
-const computeDynamicParameterScope = (options: ComputeDynamicParameterScopeOptions): DynamicParameterScope => {
+const computeDynamicParameterScope = (options: DynamicParameterScopeOptions): DynamicParameterScope => {
     const { max, min, center: centerOption, span: spanOption } = options
     const definedOptionCount =
         countDefinedOption(max) +

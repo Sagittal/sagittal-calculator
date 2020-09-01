@@ -1,8 +1,4 @@
-import { Maybe } from "../code"
-import { Count } from "../types"
 import { LogTargets } from "./log"
-
-
 
 type HexColor = string & { _HexColorBrand: "HexColor" }
 type Filename = string & { _FileBrand: "File" }
@@ -11,9 +7,6 @@ type Char = string & { _CharBrand: "Char" }
 
 type Io = string & { _IOBrand: "IO" }
 type Formatted<T = unknown> = Io & { _FormattedBrand: T }
-
-
-
 
 type ColorMethod =
     "white" |

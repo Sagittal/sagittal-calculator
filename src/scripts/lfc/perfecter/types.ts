@@ -1,5 +1,5 @@
 import { Integer } from "../../../general"
-import { ComputeSumOrSumsOfSquaresOptions, DynamicParameter, Sample, Scope, SumOfSquares } from "../bestMetric"
+import { DynamicParameter, Sample, Scope, SumOfSquares, SumOrSumsOfSquaresOptions } from "../bestMetric"
 
 type MetricTag = string & { _MetricTagBrand: "MetricTag" }
 
@@ -14,7 +14,7 @@ type RecursiveSearchScopeAndMaybeUpdateBestMetricOptions = Partial<{
     onlyWinners: boolean,
 }>
 
-interface SearchLocalMinOptions extends ComputeSumOrSumsOfSquaresOptions {
+interface SearchLocalMinOptions extends SumOrSumsOfSquaresOptions {
     dynamicParameters: DynamicParameter[],
     scope: Scope,
     metricTag: MetricTag,

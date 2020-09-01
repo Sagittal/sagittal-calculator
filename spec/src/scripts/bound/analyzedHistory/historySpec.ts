@@ -5,11 +5,7 @@ import { Bound, Ina, Level, Tina, TINA } from "../../../../../src/sagittal/notat
 import { computeInitialPosition } from "../../../../../src/scripts/bound/analyzeBound/initialPosition"
 import { AnalyzedEvent, computeAnalyzedHistory } from "../../../../../src/scripts/bound/analyzedHistory"
 import { EventType, History } from "../../../../../src/scripts/bound/histories"
-import {
-    analyzedEventFixture,
-    boundFixture,
-    eventFixture,
-} from "../../../../helpers/src/scripts/bound/fixtures"
+import { analyzedEventFixture, boundFixture, eventFixture } from "../../../../helpers/src/scripts/bound/fixtures"
 
 describe("computeAnalyzedHistory", () => {
     const actualBoundCents = 12.43789 as Cents

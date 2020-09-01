@@ -1,13 +1,13 @@
 import { sort } from "../../../../../../general"
 import { computeN2 } from "./n2"
 import {
-    ComputeSortedNumeratorPossibilitiesOptions,
     NumeratorPossibilityWithLesserGpfThanDenominatorPrime,
+    SortedNumeratorPossibilitiesOptions,
     SortedNumeratorPossibilityWithLesserGpfThanDenominatorPrimeIncludingN2,
 } from "./types"
 
 const computeSortedNumeratorPossibilitiesGivenMaxN2D3P9WithLesserGpfThanDenominatorPrimeSortedByN2 = (
-    { denominatorPrime, numeratorPossibilitiesGivenMaxN2D3P3 }: ComputeSortedNumeratorPossibilitiesOptions,
+    { denominatorPrime, numeratorPossibilitiesGivenMaxN2D3P3 }: SortedNumeratorPossibilitiesOptions,
 ): SortedNumeratorPossibilityWithLesserGpfThanDenominatorPrimeIncludingN2[] => {
     const numeratorPossibilitiesWithLesserGpf: NumeratorPossibilityWithLesserGpfThanDenominatorPrime[] =
         numeratorPossibilitiesGivenMaxN2D3P3.filter(numeratorPossibility => {

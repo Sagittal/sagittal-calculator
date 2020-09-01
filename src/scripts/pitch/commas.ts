@@ -2,9 +2,9 @@ import { Integer, Monzo, sort } from "../../general"
 import { AnalyzedRationalPitch } from "../../sagittal"
 import { computeCommasFromFiveSlicedMonzo } from "./commasFromFiveSlicedMonzo"
 import { computeFiveSlicedMonzosToCheck } from "./fiveSlicedMonzosToCheck"
-import { ComputeCommasOptions } from "./types"
+import { CommasOptions } from "./types"
 
-const computeCommas = (options: ComputeCommasOptions): AnalyzedRationalPitch[] => {
+const computeCommas = (options: CommasOptions): AnalyzedRationalPitch[] => {
     const {
         minCents,
         maxCents,

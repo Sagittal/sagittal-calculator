@@ -111,7 +111,7 @@ const SIZE_CATEGORY_BOUNDS: CentsPosition[] = [
         name: "A+A|" as Name<Pitch>,
         cents: APOTOME_CENTS + APOTOME_CENTS as Cents,    // 227.370012115
         monzo: [-22, 14] as Monzo<number>,
-    }
+    },
 ]
 
 export {

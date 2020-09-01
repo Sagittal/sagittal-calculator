@@ -1,4 +1,4 @@
-import { BLANK, formatMonzo, formatNumber, formatRatio, Io, Row } from "../../../general"
+import { BLANK, formatMonzo, formatNumber, formatRatio, Row } from "../../../general"
 import { formatSymbolAscii } from "../../../sagittal"
 import { AnalyzedRationalPitchWithMaybeSagittalSymbol } from "../types"
 

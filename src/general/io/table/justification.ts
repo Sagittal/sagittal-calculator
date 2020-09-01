@@ -2,7 +2,7 @@ import { Range } from "../../code"
 import { Count } from "../../types"
 import { length } from "../typedOperations"
 import { Char, Io } from "../types"
-import { ComputeJustifiedCellOptions, Justification, JustificationOption, Row, Table } from "./types"
+import { Justification, JustificationOption, JustifiedCellOptions, Row, Table } from "./types"
 
 const computeJustifications = (justification: JustificationOption, columnRange: number[]): Justification[] =>
     typeof justification === "string" ?
@@ -36,7 +36,7 @@ const furtherJustifyCell = (justifiedCell: Io, columnJustification: Justificatio
 
 const computeJustifiedCellForTerminal = (
     cell: Io,
-    { columnWidth, columnJustification }: ComputeJustifiedCellOptions,
+    { columnWidth, columnJustification }: JustifiedCellOptions,
 ) => {
     let justifiedCell = cell
     while (justifiedCell.length < columnWidth) {

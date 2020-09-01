@@ -26,7 +26,7 @@ interface SortedNumeratorPossibilitiesForDenominatorPrimeGivenMaxN2D3P9 {
         SortedNumeratorPossibilityWithGreaterGpfThanDenominatorPrimeIncludingN2P[],
 }
 
-interface ComputeSortedNumeratorPossibilitiesOptions {
+interface SortedNumeratorPossibilitiesOptions {
     denominatorPrime: Prime<Denominator>,
     numeratorPossibilitiesGivenMaxN2D3P3: NumeratorPossibilityGivenMaxN2D3P3[],
 }
@@ -39,5 +39,5 @@ export {
     N2,
     N2P,
     SortedNumeratorPossibilitiesForDenominatorPrimeGivenMaxN2D3P9,
-    ComputeSortedNumeratorPossibilitiesOptions,
+    SortedNumeratorPossibilitiesOptions,
 }

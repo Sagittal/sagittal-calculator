@@ -40,7 +40,7 @@ describe("formatTableForForum", () => {
             "[/table]\n" as Io
         expect(actual).toEqual(expected)
     })
-    
+
     it("supports colors per row", () => {
         const table = [
             ["comma", "", "5-rough", "", "", "", "apotome", ""],
@@ -60,7 +60,7 @@ describe("formatTableForForum", () => {
             "[/table]\n" as Io
         expect(actual).toEqual(expected)
     })
-    
+
     it("supports justification", () => {
         const table = [
             ["comma", "", "5-rough", "", "", "", "apotome", ""],
@@ -69,7 +69,7 @@ describe("formatTableForForum", () => {
             ["25/49M", "7", "24", "33.4", "[0 0⟩", "50/49", "-59.333", "26.466"],
         ] as Table<Io>
 
-        const actual = formatTableForForum(table, { justification: [ Justification.RIGHT, Justification.CENTER ] })
+        const actual = formatTableForForum(table, { justification: [Justification.RIGHT, Justification.CENTER] })
 
         let expected =
             "[table]\n" +

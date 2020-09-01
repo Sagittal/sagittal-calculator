@@ -1,11 +1,11 @@
 import { computeMonzoSlicedToPrimeIndex, Integer, invertMonzo, Monzo } from "../../general"
 import { AnalyzedRationalPitch } from "../../sagittal"
 import { computeCommasFromFiveSlicedMonzo } from "./commasFromFiveSlicedMonzo"
-import { ComputeCommasFromFiveSlicedMonzoOptions } from "./types"
+import { CommasFromFiveSlicedMonzoOptions } from "./types"
 
 const computeNotatingCommas = (
     monzo: Monzo,
-    options?: ComputeCommasFromFiveSlicedMonzoOptions,
+    options?: CommasFromFiveSlicedMonzoOptions,
 ): Array<AnalyzedRationalPitch> => {
     const fiveSlicedMonzo: Monzo<Integer, 5> = computeMonzoSlicedToPrimeIndex(monzo, 5)
 

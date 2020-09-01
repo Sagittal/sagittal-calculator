@@ -1,7 +1,7 @@
 import { Base, isUndefined, log, Power } from "../../../../general"
-import { Antivotes, ComputeWeightedAntivotesOptions, ParameterValue } from "../types"
+import { Antivotes, ParameterValue, WeightedAntivotesOptions } from "../types"
 
-const computeWeightedAntivotes = (antivotes: Antivotes, options: ComputeWeightedAntivotesOptions): Antivotes => {
+const computeWeightedAntivotes = (antivotes: Antivotes, options: WeightedAntivotesOptions): Antivotes => {
     const {
         coefficient = 1 as ParameterValue,
         logarithmBase,

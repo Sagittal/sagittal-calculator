@@ -1,8 +1,8 @@
 import { Base, pow } from "../../../../../general"
-import { ComputeD39ForCandidateMaxDenominatorPrimeExponentOptions, D39 } from "./types"
+import { D39, D39ForCandidateMaxDenominatorPrimeExponentOptions } from "./types"
 
 const computeD39ForCandidateMaxDenominatorPrimeExponent = (
-    options: ComputeD39ForCandidateMaxDenominatorPrimeExponentOptions,
+    options: D39ForCandidateMaxDenominatorPrimeExponentOptions,
 ): D39 => {
     const { denominatorPrime, candidateMaxDenominatorPrimeExponentGivenMaxN2D3P9 } = options
 

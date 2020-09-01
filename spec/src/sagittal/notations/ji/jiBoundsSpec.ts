@@ -4,7 +4,7 @@ import { Bound, JI_BOUNDS, TINA } from "../../../../../src/sagittal"
 describe("JI_BOUNDS", () => {
     it("almost every bound in the JI notation is snapped to a half-tina", () => {
         let currentHalfTina = 0.5
-        
+
         const exceptionalBoundIds: Array<Id<Bound>> = [
             49,     // comma mean
             52,     // comma mean
@@ -15,9 +15,9 @@ describe("JI_BOUNDS", () => {
             119,    // comma mean
             127,    // comma mean
             136,    // comma mean
-            149     // size category bound
+            149,    // size category bound
         ] as Array<Id<Bound>>
-        
+
         JI_BOUNDS.forEach(jiBound => {
             const boundCents = jiBound.cents
 
@@ -30,7 +30,7 @@ describe("JI_BOUNDS", () => {
                     if (!exceptionalBoundIds.includes(jiBound.id)) {
                         fail(`Bound id ${jiBound.id} was not close to a half-tina, nor registered as an exceptional bound.`)
                     }
-                    
+
                     break
                 }
 

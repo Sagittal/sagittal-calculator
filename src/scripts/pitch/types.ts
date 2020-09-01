@@ -1,11 +1,11 @@
 import { Abs, Cents, Copfr, Exponent, Extrema, Max, Min, ObjectKey, Prime, Sopfr } from "../../general"
 import { AnalyzedRationalPitch, ApotomeSlope, N2D3P9, SymbolLongAscii } from "../../sagittal"
 
-interface ComputeCommasOptions extends ComputeCommasFromFiveSlicedMonzoOptions, ComputeFiveSlicedMonzosToCheckOptions {
+interface CommasOptions extends CommasFromFiveSlicedMonzoOptions, FiveSlicedMonzosToCheckOptions {
     sortKey?: ObjectKey,
 }
 
-type ComputeCommasFromFiveSlicedMonzoOptions = Partial<{
+type CommasFromFiveSlicedMonzoOptions = Partial<{
     minCents: Min<Cents>,
     maxCents: Max<Cents>,
     maxAbsoluteThreeExponent: Max<Abs<Exponent<Prime>>>,
@@ -13,14 +13,14 @@ type ComputeCommasFromFiveSlicedMonzoOptions = Partial<{
     maxN2D3P9: Max<N2D3P9>,
 }>
 
-type ComputeFiveSlicedMonzosToCheckOptions = Partial<{
+type FiveSlicedMonzosToCheckOptions = Partial<{
     maxFiveRoughCopfr: Max<Copfr<5>>,
     maxFiveRoughSopfr: Max<Sopfr<5>>,
     maxPrimeLimit: Max<Max<Prime>>,
     maxN2D3P9: Max<N2D3P9>,
 }>
 
-type ComputePrimeExponentRangeOptions = Partial<{
+type PrimeExponentRangeOptions = Partial<{
     maxFiveRoughCopfr: Max<Copfr<5>>,
     maxFiveRoughSopfr: Max<Sopfr<5>>,
     primeExponentExtremaGivenMaxN2D3P9?: Extrema<Exponent<Prime>>,
@@ -32,9 +32,9 @@ interface AnalyzedRationalPitchWithMaybeSagittalSymbol extends AnalyzedRationalP
 
 
 export {
-    ComputeCommasOptions,
-    ComputeCommasFromFiveSlicedMonzoOptions,
-    ComputeFiveSlicedMonzosToCheckOptions,
-    ComputePrimeExponentRangeOptions,
+    CommasOptions,
+    CommasFromFiveSlicedMonzoOptions,
+    FiveSlicedMonzosToCheckOptions,
+    PrimeExponentRangeOptions,
     AnalyzedRationalPitchWithMaybeSagittalSymbol,
 }

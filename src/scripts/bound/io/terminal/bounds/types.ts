@@ -1,9 +1,9 @@
 import { Bound } from "../../../../../sagittal"
 
-interface ComputeBoundRowOptions {
+interface BoundRowOptions {
     bound: Bound
 }
 
 export {
-    ComputeBoundRowOptions,
+    BoundRowOptions,
 }

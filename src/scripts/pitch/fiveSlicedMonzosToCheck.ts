@@ -18,10 +18,10 @@ import {
 import { computePrimeExponentExtremasGivenMaxN2D3P9 } from "../../sagittal"
 import { computeFiveRoughPrimesToCheck } from "./fiveRoughPrimesToCheck"
 import { computePrimeExponentRange } from "./primeExponentRange"
-import { ComputeFiveSlicedMonzosToCheckOptions } from "./types"
+import { FiveSlicedMonzosToCheckOptions } from "./types"
 
 const computeFiveSlicedMonzosToCheck = (
-    { maxPrimeLimit, maxFiveRoughSopfr, maxFiveRoughCopfr, maxN2D3P9 }: ComputeFiveSlicedMonzosToCheckOptions = {},
+    { maxPrimeLimit, maxFiveRoughSopfr, maxFiveRoughCopfr, maxN2D3P9 }: FiveSlicedMonzosToCheckOptions = {},
 ): Array<Monzo<Integer, 5>> => {
     if (isUndefined(maxFiveRoughSopfr)) {
         if (isUndefined(maxPrimeLimit)) {

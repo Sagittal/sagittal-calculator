@@ -103,7 +103,7 @@ describe("computeSagittalCommaName", () => {
     })
 
     it("another example, not sure what was up, maybe some edge case", () => {
-        const monzo = [-9, 13, -2,  0, -2] as Monzo
+        const monzo = [-9, 13, -2, 0, -2] as Monzo
 
         const actual = computeSagittalCommaName(monzo, { directed: false, abbreviated: false, factored: true })
 

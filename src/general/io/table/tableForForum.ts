@@ -4,10 +4,9 @@ import { Io } from "../types"
 import { computeColumnRange } from "./columnRange"
 import { DEFAULT_FORMAT_TABLE_OPTIONS } from "./constants"
 import { computeJustifications, computeJustifiedCellForForum } from "./justification"
-import { ComputeTableForForumStuffOptions, FormatTableOptions, Row, Table } from "./types"
+import { FormatTableOptions, Row, Table, TableForForumStuffOptions } from "./types"
 
-// TODO: remove "Compute" from names of these types of objects
-const computeTableForForumStuff = ({ index, headerRowCount, colors }: ComputeTableForForumStuffOptions) => {
+const computeTableForForumStuff = ({ index, headerRowCount, colors }: TableForForumStuffOptions) => {
     const cellTag: Io = index < headerRowCount ? "th" as Io : "td" as Io
 
     const hiliteOpen: Io = colors ? `[hilite=${colors[ index ]}]` as Io : BLANK

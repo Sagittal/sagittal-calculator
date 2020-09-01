@@ -11,7 +11,7 @@ type Count<T = void> = Integer & { _CountBrand: "Count" } & (T extends void ? {}
 type Multiplier<T extends number | void = void> =
     number
     & { _MultiplierBrand: "Multiplier" }
-    & (T extends void ? {} : T & { _MultiplierOfBrand: T }) 
+    & (T extends void ? {} : T & { _MultiplierOfBrand: T })
 type Sum<T extends number | void = void> =
     number
     & { _SumBrand: "Sum" }

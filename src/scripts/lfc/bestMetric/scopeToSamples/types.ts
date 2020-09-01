@@ -1,7 +1,7 @@
 import { Combination, Index, Max, Min, Span, Unit } from "../../../../general"
 import { Parameter, ParameterValue, Submetric } from "../../sumOfSquares"
 
-interface ComputeDynamicParameterValueIndicesOptions {
+interface DynamicParameterValueIndicesOptions {
     dynamicParameters: DynamicParameter[],
     submetric: Submetric,
     submetricIndex: Index<Submetric>,
@@ -23,7 +23,7 @@ interface Sample {
     submetrics: Combination<Submetric>,
 }
 
-type ComputeDynamicParameterScopeOptions = Partial<{
+type DynamicParameterScopeOptions = Partial<{
     max: Max<ParameterValue>,
     min: Min<ParameterValue>,
     span: Span<ParameterValue>,
@@ -42,12 +42,12 @@ interface SpreadAllBinSubmetricsPossibilitiesAcrossSamplesOptions {
 }
 
 export {
-    ComputeDynamicParameterValueIndicesOptions,
+    DynamicParameterValueIndicesOptions,
     DynamicParameter,
     SubmetricPossibility,
     Sample,
     SamplePoint,
     CombineSubmetricsPossibilitiesIntoSamplesOptions,
-    ComputeDynamicParameterScopeOptions,
+    DynamicParameterScopeOptions,
     SpreadAllBinSubmetricsPossibilitiesAcrossSamplesOptions,
 }

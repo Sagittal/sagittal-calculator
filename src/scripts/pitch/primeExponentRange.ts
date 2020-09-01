@@ -14,11 +14,11 @@ import {
     Sopfr,
     sum,
 } from "../../general"
-import { ComputePrimeExponentRangeOptions } from "./types"
+import { PrimeExponentRangeOptions } from "./types"
 
 const computePrimeExponentRange = (
     prime: Prime,
-    options: ComputePrimeExponentRangeOptions = {},
+    options: PrimeExponentRangeOptions = {},
 ): Range<Exponent<Prime>> => {
     const {
         maxFiveRoughSopfr = Infinity as Sopfr<5>,

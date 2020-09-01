@@ -2,11 +2,11 @@ import { abs, Cents, computeMonzoInZone, computePlusOrMinusRange, Integer, Min, 
 import { AnalyzedRationalPitch, MAX_SINGLE_SHAFT_CENTS } from "../../sagittal"
 import { analyzeRationalPitch } from "./analyzeRationalPitch"
 import { DEFAULT_MAX_ABSOLUTE_THREE_EXPONENT } from "./constants"
-import { ComputeCommasFromFiveSlicedMonzoOptions } from "./types"
+import { CommasFromFiveSlicedMonzoOptions } from "./types"
 
 const computeCommasFromFiveSlicedMonzo = (
     fiveSlicedMonzo: Monzo<Integer, 5>,
-    options?: ComputeCommasFromFiveSlicedMonzoOptions,
+    options?: CommasFromFiveSlicedMonzoOptions,
 ): AnalyzedRationalPitch[] => {
     const {
         minCents = 0 as Min<Cents>,

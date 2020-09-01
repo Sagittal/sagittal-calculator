@@ -5,11 +5,11 @@ import { computeSumOfSquaresForSubmetrics } from "../sumOfSquares"
 import { SUM_OF_SQUARES_TO_BEAT } from "./constants"
 import { Sample } from "./scopeToSamples"
 import { setSumOfSquaresAtSamplePoint } from "./setSumOfSquaresAtSamplePoint"
-import { ComputeSumOfSquaresAndMaybeUpdateBestMetricOptions, Metric, SumOfSquares } from "./types"
+import { Metric, SumOfSquares, SumOfSquaresAndMaybeUpdateBestMetricOptions } from "./types"
 
 const computeSumOfSquaresAndMaybeUpdateBestMetric = (
     sample: Sample,
-    options: ComputeSumOfSquaresAndMaybeUpdateBestMetricOptions,
+    options: SumOfSquaresAndMaybeUpdateBestMetricOptions,
 ): Promise<void> => {
     const { indentation, sumsOfSquares, index, onlyWinners, spreadDynamicParameters, metricName } = options
 
