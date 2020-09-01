@@ -1,4 +1,4 @@
-import * as colors from "colors"
+import "colors"
 import { program } from "commander"
 import { ioSettings } from "../globals"
 import { clearLogFiles, LogTarget, setLogTargets } from "../log"
@@ -23,9 +23,7 @@ const parseCommands = (scriptGroup: Filename, defaultLogTargets?: LogTarget[]) =
 
     setLogTargets(program.logTargets || defaultLogTargets && defaultLogTargets.join(","))
 
-    if (!program.color || !!process.env.TEST_MODE) {
-        colors.disable()
-    }
+    ioSettings.disableColors = !program.color || !!process.env.TEST_MODE
 }
 
 export {

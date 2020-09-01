@@ -1,5 +1,4 @@
-import { concat, formatInteger, Io, Row } from "../../../general"
-import { formatN2D3P9 } from "../../../sagittal"
+import { concat, formatInteger, formatNumber, Io, Row } from "../../../general"
 import { AnalyzedRationalPitchWithMaybeSagittalSymbol } from "../types"
 import { computeNotatingCommaWithMaybeSagittalSymbolRow } from "./notatingCommaRow"
 
@@ -13,7 +12,7 @@ const computeCommaRow = (
         [
             formatInteger(limit),
             formatInteger(fiveRoughSopfr),
-            formatN2D3P9(n2d3p9),
+            formatNumber(n2d3p9),
         ] as Row<AnalyzedRationalPitchWithMaybeSagittalSymbol>,
     )
 }

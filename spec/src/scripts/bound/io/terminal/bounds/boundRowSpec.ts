@@ -55,7 +55,7 @@ describe("computeBoundRow", () => {
         const actual = computeBoundRow(analyzedBound, { bound })
 
         const expected = [
-            "10",
+            " 10    ",
             " 10",
             " 11",
             "   ," +
@@ -65,16 +65,16 @@ describe("computeBoundRow", () => {
             "|( ",
             " ",
             " ",
-            "0",
-            "0",
-            "1",
-            " ",
-            " ",
+            "  0    ",
+            "  0    ",
+            "  1    ",
+            "",
+            "",
             "  0.333",
             "  0.022",
             "  0.355",
-            " ",
-            " ",
+            "",
+            "",
             "  0.682",
             "  0.157",
             "  0.839",

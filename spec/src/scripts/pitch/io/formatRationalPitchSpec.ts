@@ -21,11 +21,11 @@ describe("formatRationalPitch", () => {
         const expected =
             "ratio:        \t5/4\n" +
             "monzo:        \t[   0  -1   1 ⟩\n" +
-            "cents:        \t11.200\n" +
-            "limit:        \t14\n" +
-            "5-rough sopfr:\t13\n" +
-            "N2D3P9:       \t18.46\n" +
-            "apotome slope:\t8.200"
+            "cents:        \t 11.200\n" +
+            "limit:        \t 14    \n" +
+            "5-rough sopfr:\t 13    \n" +
+            "N2D3P9:       \t 18.457\n" +
+            "apotome slope:\t  8.200"
         expect(actual).toEqual(expected)
     })
 })

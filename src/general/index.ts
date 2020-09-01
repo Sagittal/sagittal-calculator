@@ -29,6 +29,7 @@ import {
 } from "./code"
 import {
     addTexts,
+    alignFormattedNumber,
     ANY_MONZO_CHARS,
     Basis,
     BLANK,
@@ -294,4 +295,5 @@ export {
     formatTable,
     shallowClone,
     computeMonzoSlicedToPrimeIndex,
+    alignFormattedNumber,
 }

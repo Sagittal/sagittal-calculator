@@ -29,7 +29,7 @@ describe("extractLevelDistances", () => {
             "  3.333",
             "  2.222",
             "  1.111",
-        ] as Array<Formatted<number>>
+        ] as Array<Formatted<Cents>>
         expect(actual).toEqual(expected)
     })
 
@@ -49,9 +49,9 @@ describe("extractLevelDistances", () => {
         const expected = [
             "  4.444",
             "  2.222",
-            " ",
+            "",
             "  1.111",
-        ] as Array<Formatted<number>>
+        ] as Array<Formatted<Cents>>
         expect(actual).toEqual(expected)
     })
 
@@ -75,7 +75,7 @@ describe("extractLevelDistances", () => {
                 "  3.333",
                 "  2.222",
                 "  1.111",
-            ] as Array<Formatted<number>>
+            ] as Array<Formatted<Multiplier<Ina>>>
             expect(actual).toEqual(expected)
         })
 
@@ -95,9 +95,9 @@ describe("extractLevelDistances", () => {
             const expected = [
                 "  4.444",
                 "  2.222",
-                " ",
+                "",
                 "  1.111",
-            ] as Array<Formatted<number>>
+            ] as Array<Formatted<Multiplier<Ina>>>
             expect(actual).toEqual(expected)
         })
     })

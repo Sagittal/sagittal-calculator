@@ -27,11 +27,11 @@ describe("computeCommaRow", () => {
             "1/5C",
             "5/4",
             "[   0  -1   1 ⟩",
-            "11.200",
-            "8.200",
-            "14",
-            "13",
-            "18.46",
+            " 11.200",
+            "  8.200",
+            " 14    ",
+            " 13    ",
+            " 18.457",
         ] as Row<AnalyzedRationalPitch>
         expect(actual).toEqual(expected)
     })

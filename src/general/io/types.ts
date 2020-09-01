@@ -10,7 +10,7 @@ type Filename = string & { _FileBrand: "File" }
 type Char = string & { _CharBrand: "Char" }
 
 type Io = string & { _IOBrand: "IO" }
-type Formatted<T> = Io & { _FormattedBrand: T }
+type Formatted<T = unknown> = Io & { _FormattedBrand: T }
 
 
 
@@ -35,7 +35,8 @@ type ColorMethod =
 interface IoSettings {
     noWrite: boolean,
     forForum: boolean,
-    logTargets: LogTargets
+    logTargets: LogTargets,
+    disableColors: boolean,
 }
 
 export {

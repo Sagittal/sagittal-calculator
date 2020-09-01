@@ -47,7 +47,7 @@ const formatTableForTerminal = (table: Table, options?: Partial<FormatTableOptio
             BLANK,
         )
 
-        const maybeColoredRowText = maybeColor(rowText, rowIndex, colors)
+        const maybeColoredRowText: Io = maybeColor(rowText, rowIndex, colors)
         if (rowIndex === headerRowCount - 1) {
             return colorize(maybeColoredRowText, "underline" as ColorMethod)
         }

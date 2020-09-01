@@ -1,4 +1,4 @@
-import { addTexts, ColorMethod, formatTable, Io, Table } from "../../../../../general"
+import { addTexts, ColorMethod, Count, formatTable, Io, Row, Table } from "../../../../../general"
 import { JI_BOUNDS } from "../../../../../sagittal"
 import { AnalyzedBound } from "../../../analyzeBound"
 import { BOUND_COLORS } from "../boundColors"
@@ -10,6 +10,7 @@ import { computeBoundsAnalysisHeaderRows } from "./headerRows"
 const computeBoundsAnalysisTable = (boundsAnalysis: AnalyzedBound[]): Io => {
     const table: Table<AnalyzedBound> = computeBoundsAnalysisHeaderRows()
     const colors: ColorMethod[] = ["white", "white", "white", "white", "white", "white"]
+    const headerRowCount: Count<Row<unknown, "Header">> = 5 as Count<Row<unknown, "Header">>
 
     boundsAnalysis.forEach((analyzedBound, index) => {
         const bound = JI_BOUNDS[ index ]
@@ -19,7 +20,7 @@ const computeBoundsAnalysisTable = (boundsAnalysis: AnalyzedBound[]): Io => {
 
     const boundsAnalysisTableTitle = "   ---   Bound Analyses   ---   \n\n\n" as Io
 
-    return addTexts(boundsAnalysisTableTitle, formatTable(table, { colors }))
+    return addTexts(boundsAnalysisTableTitle, formatTable(table, { colors, headerRowCount }))
 }
 
 export {

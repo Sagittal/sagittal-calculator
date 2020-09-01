@@ -22,8 +22,8 @@ describe("find-commas", () => {
         const actual = runCommandAndGetConsoleOutput(command)
 
         const expected = [
-            "symbol\tname  \tratio\tmonzo                                      \tcents \tapotome slope\tlimit\t5-rough sopfr\tN2D3P9",
-            "      \t29/19C\t58/57\t[   1  -1   0   0   0   0   0  -1   0   1 ⟩\t30.109\t-2.854       \t29   \t48           \t295.91",
+            "symbol\tname  \tratio\tmonzo                                      \tcents  \tapotome slope\tlimit  \t5-rough sopfr\tN2D3P9 ",
+            "      \t29/19C\t58/57\t[   1  -1   0   0   0   0   0  -1   0   1 ⟩\t 30.109\t -2.854      \t 29    \t 48          \t295.907",
             "",
         ] as Io[]
         expect(actual).toEqual(expected)
@@ -37,11 +37,11 @@ describe("find-commas", () => {
         const actual = runCommandAndGetConsoleOutput(command)
 
         const expected = [
-            "symbol  \tname   \tratio            \tmonzo                              \tcents \tapotome slope\tlimit\t5-rough sopfr\tN2D3P9",
-            "        \t19/175M\t4864/4725        \t[   8  -3  -2  -1   0   0   0   1 ⟩\t50.195\t-6.091       \t19   \t36           \t292.48",
-            "        \t35/17M \t35/34            \t[  -1   0   1   1   0   0  -1 ⟩    \t50.184\t-3.090       \t17   \t29           \t93.66 ",
-            "  ,'/|) \t65M    \t34543665/33554432\t[ -25  12   1   0   0   1 ⟩        \t50.301\t8.903        \t13   \t18           \t23.47 ",
-            "        \t1/3025M\t1594323/1548800  \t[  -9  13  -2   0  -2 ⟩            \t50.152\t9.912        \t11   \t32           \t231.08",
+            "symbol  \tname   \tratio            \tmonzo                              \tcents  \tapotome slope\tlimit  \t5-rough sopfr\tN2D3P9 ",
+            "        \t19/175M\t4864/4725        \t[   8  -3  -2  -1   0   0   0   1 ⟩\t 50.195\t -6.091      \t 19    \t 36          \t292.477",
+            "        \t35/17M \t35/34            \t[  -1   0   1   1   0   0  -1 ⟩    \t 50.184\t -3.090      \t 17    \t 29          \t 93.657",
+            "  ,'/|) \t65M    \t34543665/33554432\t[ -25  12   1   0   0   1 ⟩        \t 50.301\t  8.903      \t 13    \t 18          \t 23.472",
+            "        \t1/3025M\t1594323/1548800  \t[  -9  13  -2   0  -2 ⟩            \t 50.152\t  9.912      \t 11    \t 32          \t231.076",
             "",
         ] as Io[]
         expect(actual).toEqual(expected)
@@ -55,11 +55,11 @@ describe("find-commas", () => {
         const actual = runCommandAndGetConsoleOutput(command)
 
         const expected = [
-            "symbol  \tname                 \tratio            \tmonzo                              \tcents \tapotome slope\tlimit\t5-rough sopfr\tN2D3P9",
-            "        \t5².11²-Medium-Diesis \t1594323/1548800  \t[  -9  13  -2   0  -2 ⟩            \t50.152\t9.912        \t11   \t32           \t231.08",
-            "        \t17:5.7-Medium-Diesis \t35/34            \t[  -1   0   1   1   0   0  -1 ⟩    \t50.184\t-3.090       \t17   \t29           \t93.66 ",
-            "        \t19:5².7-Medium-Diesis\t4864/4725        \t[   8  -3  -2  -1   0   0   0   1 ⟩\t50.195\t-6.091       \t19   \t36           \t292.48",
-            "  ,'/|) \t5.13-Medium-Diesis   \t34543665/33554432\t[ -25  12   1   0   0   1 ⟩        \t50.301\t8.903        \t13   \t18           \t23.47 ",
+            "symbol  \tname                 \tratio            \tmonzo                              \tcents  \tapotome slope\tlimit  \t5-rough sopfr\tN2D3P9 ",
+            "  ,'/|) \t5.13-Medium-Diesis   \t34543665/33554432\t[ -25  12   1   0   0   1 ⟩        \t 50.301\t  8.903      \t 13    \t 18          \t 23.472",
+            "        \t17:5.7-Medium-Diesis \t35/34            \t[  -1   0   1   1   0   0  -1 ⟩    \t 50.184\t -3.090      \t 17    \t 29          \t 93.657",
+            "        \t5².11²-Medium-Diesis \t1594323/1548800  \t[  -9  13  -2   0  -2 ⟩            \t 50.152\t  9.912      \t 11    \t 32          \t231.076",
+            "        \t19:5².7-Medium-Diesis\t4864/4725        \t[   8  -3  -2  -1   0   0   0   1 ⟩\t 50.195\t -6.091      \t 19    \t 36          \t292.477",
             "",
         ] as Io[]
         expect(actual).toEqual(expected)

@@ -1,3 +1,4 @@
+import { alignFormattedNumber } from "./alignFormattedNumber"
 import { colorize } from "./colorize"
 import { CommandFlag, parseCommands } from "./command"
 import { ANY_MONZO_CHARS, BLANK, IO_PRECISION, NEWLINE, SPACE, SUPERSCRIPT_NUMS, TAB } from "./constants"
@@ -30,6 +31,7 @@ export {
     SUPERSCRIPT_NUMS,
     SPACE,
     TAB,
+    alignFormattedNumber,
     Formatted,
     Px,
     HexColor,

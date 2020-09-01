@@ -3,7 +3,6 @@ import {
     computeApotomeSlope,
     computeN2D3P9,
     computePrimeExponentExtremasGivenMaxN2D3P9,
-    formatN2D3P9,
     N2D3P9,
 } from "./commaEvaluation"
 import { computeSagittalCommaName, SIZE_CATEGORY_BOUNDS } from "./commaSizeName"
@@ -58,7 +57,6 @@ export {
     AnalyzedRationalPitch,
     N2D3P9,
     computePrimeExponentExtremasGivenMaxN2D3P9,
-    formatN2D3P9,
     computeN2D3P9,
     ApotomeSlope,
     SIZE_CATEGORY_BOUNDS,

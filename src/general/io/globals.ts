@@ -5,6 +5,7 @@ const ioSettings: IoSettings = {
     noWrite: false,
     forForum: false,
     logTargets: {} as LogTargets,
+    disableColors: false,
 }
 
 export {

@@ -14,7 +14,7 @@ describe("computePopularRatio", () => {
 
         const expected: PopularRatio = {
             n2d3p9,
-            formattedN2D3P9: "1.39" as Formatted<N2D3P9>,
+            formattedN2D3P9: "  1.389" as Formatted<N2D3P9>,
             formattedRatio: "5/1" as Formatted<Ratio>,
             popularityRank: 2 as Rank<Popularity>,
             votes: 5371 as Votes,
