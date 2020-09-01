@@ -13,6 +13,8 @@ const computeNotatingCommaWithMaybeSagittalSymbolRow = (
             //  maybe there should be a formatSymbol method which lives in sagittal/io
             //  and which has a second argument which is required and which is an ioSettings object
             //  so it just pulls whatever it needs and then decides which one to render
+            //  - probably we should change addMaybeSagittalSymbol so it just gets the symbol by id
+            //  and wait to resolve it until the last moment
             ioSettings.forForum ?
                 computeSmileyFromAscii(symbol) :
                 formatSymbolAscii(symbol) :
