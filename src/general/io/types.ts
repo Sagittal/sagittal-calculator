@@ -2,13 +2,7 @@ import { Maybe } from "../code"
 import { Count } from "../types"
 import { LogTargets } from "./log"
 
-enum Justification {
-    LEFT = "left",
-    RIGHT = "right",
-    CENTER = "center",
-}
 
-type JustificationOption = Justification | Array<Maybe<Justification>>
 
 type HexColor = string & { _HexColorBrand: "HexColor" }
 type Filename = string & { _FileBrand: "File" }
@@ -18,29 +12,19 @@ type Char = string & { _CharBrand: "Char" }
 type Io = string & { _IOBrand: "IO" }
 type Formatted<T> = Io & { _FormattedBrand: T }
 
-type Row<T = void, Header extends "Header" | void = void> =
-    Array<Formatted<unknown>>
-    & { _RowBrand: "Row" }
-    & (T extends void ? {} : { _RowOfBrand: T })
-    & (Header extends "Header" ? { _HeaderBrand: "Header" } : {})
-type Column<T = void> =
-    Array<Formatted<unknown>>
-    & { _ColumnBrand: "Column" }
-    & (T extends void ? {} : { _ColumnOfBrand: T })
-type Table<T = void> = Array<Row<T>>
 
-interface ComputeAlignedRowCellOptions {
-    columnJustification: Justification,
-    columnWidth: number,
-}
 
-interface FormatTableOptions {
-    justification?: JustificationOption
-    colors?: ColorMethod[],
-    headerRowCount?: Count<Row<unknown, "Header">>,
-}
 
-type ColorMethod = "green" | "red" | "yellow" | "cyan" | "blue" | "white" | "magenta"
+type ColorMethod =
+    "white" |
+    "gray" |
+    "black" |
+    "red" |
+    "yellow" |
+    "green" |
+    "cyan" |
+    "blue" |
+    "magenta"
 
 // TODO: no good place to put this, but tslint is deprecated now; use typescript-eslint
 //  https://github.com/typescript-eslint/typescript-eslint
@@ -57,16 +41,9 @@ interface IoSettings {
 export {
     ColorMethod,
     HexColor,
-    Justification,
-    JustificationOption,
     Formatted,
-    ComputeAlignedRowCellOptions,
-    FormatTableOptions,
     Filename,
     Io,
-    Row,
-    Column,
-    Table,
     Char,
     IoSettings,
 }

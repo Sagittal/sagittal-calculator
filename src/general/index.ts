@@ -65,6 +65,7 @@ import {
     SPACE,
     stringify,
     SUPERSCRIPT_NUMS,
+    TAB,
     Table,
 } from "./io"
 import {
@@ -288,6 +289,7 @@ export {
     ColorMethod,
     formatInteger,
     BLANK,
+    TAB,
     CommandFlag,
     formatTable,
     shallowClone,

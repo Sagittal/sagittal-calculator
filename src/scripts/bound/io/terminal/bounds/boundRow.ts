@@ -64,6 +64,7 @@ const computeBoundRow = (analyzedBound: AnalyzedBound, { bound }: ComputeBoundRo
         bestPossibleHistoryHighDistance,
         bestPossibleHistoryUltraDistance,
         bestPossibleHistoryExtremeDistance,
+        // TODO: when would we want to format but not align?
         alignFormattedNumber(formatNumber(bestPossibleHistoryTotalDistance)),
         bestPossibleHistoryMediumInaDistance,
         bestPossibleHistoryHighInaDistance,

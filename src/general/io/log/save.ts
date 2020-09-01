@@ -5,6 +5,10 @@ import { targetColors } from "./colors"
 import { LogTarget, SaveLogOptions } from "./types"
 import { write } from "./write"
 
+// TODO: the LogTargets should not have to do with the scripts, should be generic
+//  And file name should be different
+//  Maybe it should just be the friggin filename
+
 const saveLog = (message: Io, target: LogTarget, scriptGroup: Filename, options: SaveLogOptions = {}) => {
     const { useTargetColor = true, fileExtensionProvided = false, writeOnly = false } = options
 

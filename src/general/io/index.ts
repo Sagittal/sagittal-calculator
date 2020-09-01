@@ -1,21 +1,20 @@
 import { colorize } from "./colorize"
 import { CommandFlag, parseCommands } from "./command"
-import { ANY_MONZO_CHARS, BLANK, IO_PRECISION, NEWLINE, SPACE, SUPERSCRIPT_NUMS } from "./constants"
+import { ANY_MONZO_CHARS, BLANK, IO_PRECISION, NEWLINE, SPACE, SUPERSCRIPT_NUMS, TAB } from "./constants"
 import { formatInteger } from "./formatInteger"
 import { formatMonzo } from "./formatMonzo"
 import { formatNumber } from "./formatNumber"
 import { formatRatio } from "./formatRatio"
 import { ioSettings } from "./globals"
-import { computeHeaderRowsFromColumnTitleColumns } from "./headerRowsFromColumnTitleColumns"
 import { clearLogFiles, LogTarget, saveLog, setLogTargets } from "./log"
 import { parseMonzo } from "./parseMonzo"
 import { parseRatio } from "./parseRatio"
 import { removeColor } from "./removeColor"
 import { stringify } from "./stringify"
-import { formatTable } from "./table"
+import { Column, computeHeaderRowsFromColumnTitleColumns, formatTable, Row, Table } from "./table"
 import { formatTime } from "./time"
 import { addTexts } from "./typedOperations"
-import { ColorMethod, Column, Filename, Formatted, HexColor, Io, Row, Table } from "./types"
+import { ColorMethod, Filename, Formatted, HexColor, Io } from "./types"
 import { Basis, computePx, Px, Scale } from "./visualize"
 
 export {
@@ -30,6 +29,7 @@ export {
     BLANK,
     SUPERSCRIPT_NUMS,
     SPACE,
+    TAB,
     Formatted,
     Px,
     HexColor,

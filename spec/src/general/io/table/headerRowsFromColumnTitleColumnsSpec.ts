@@ -1,5 +1,5 @@
-import { Column, Row } from "../../../../src/general"
-import { computeHeaderRowsFromColumnTitleColumns } from "../../../../src/general/io"
+import { Column, Row } from "../../../../../src/general"
+import { computeHeaderRowsFromColumnTitleColumns } from "../../../../../src/general/io"
 
 describe("computeHeaderRowsFromColumnTitleColumns", () => {
     const columnTitleColumns = [

@@ -5,10 +5,7 @@ import { clearLogFiles, LogTarget, setLogTargets } from "../log"
 import { Filename } from "../types"
 import { CommandFlag } from "./types"
 
-const parseCommands = (
-    scriptGroup: Filename,
-    defaultLogTargets?: LogTarget[],
-) => {
+const parseCommands = (scriptGroup: Filename, defaultLogTargets?: LogTarget[]) => {
     program
         .option(`-${CommandFlag.LOG_TARGETS}, --log-targets [logTargets]`, "log targets")
         .option(`-${CommandFlag.NO_COLOR}, --no-color`, "no color")

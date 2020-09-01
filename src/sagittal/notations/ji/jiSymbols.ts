@@ -3,7 +3,17 @@ import { SymbolLongAscii, SymbolUnicode } from "../../io"
 import { SagittalComma, SymbolSubset } from "../types"
 import { JiSymbol, Level, Mina } from "./types"
 
-// TODO: This is perhaps not truly "symbols", because a symbol should be something which contains 
+// TODO: - I wonder if the philosophy should be this:
+//  in the implementation, have the absolute minimum amount of info
+//  and have things like this exist as tests (could use JiSymbolWithPrimaryComma type)
+//  that might solve the dilemma of the "Analyzed<>" parameterized type
+//  and some of the rational/not-rational stuff too
+//  if this was literally just an id and monzo. everything else could be calculated
+//  there are questions of performance, I suppose
+//  but also of page load time...
+//  yes and perhaps in such a test the comma information would be regrouped with the symbol information, 
+//  so it'd be a quick reference
+//  This here is perhaps not truly "symbols", because a symbol should be something which contains 
 //  - ascii, unicode, elements, symbolSubset, isMultishaft
 //  (and smallestJiSymbolSubset should just be a thing you ask of it, a separate list of a sorted subset of subsets)
 //  (there'd be a method which would get you the mixed versions of ascii and unicode from the pure)
@@ -11,7 +21,7 @@ import { JiSymbol, Level, Mina } from "./types"
 //  and heraldic and graphical glyph description
 //  like its Sagispeak (just the spelling, all else could be calculated from that)
 //  before you go through with this, review all the stuff about elements vs symbols though
-//  so are these JiSagittals here?
+//  so are these JiSagittals here? 
 
 const JI_SYMBOLS: JiSymbol[] = [
     {

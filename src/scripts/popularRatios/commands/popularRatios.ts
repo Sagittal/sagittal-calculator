@@ -1,4 +1,3 @@
-import "colors"
 import { program } from "commander"
 import { CommandFlag, Filename, LogTarget, parseCommands, saveLog } from "../../../general"
 import { DEFAULT_MAX_N2D3P9 } from "../constants"

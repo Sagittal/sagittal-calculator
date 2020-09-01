@@ -1,7 +1,3 @@
-// TODO: Debug targets should not have to do with the scripts, should be generic
-//  And file name should be different
-//  Maybe it should just be the friggin filename
-
 enum LogTarget {
     ALL = "all",
     ANTIVOTES = "antivotes",

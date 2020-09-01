@@ -1,4 +1,4 @@
-import { ioSettings } from "./globals"
+import { ioSettings } from "../globals"
 import { formatTableForForum } from "./tableForForum"
 import { formatTableForTerminal } from "./tableForTerminal"
 import { FormatTableOptions, Table } from "./types"
@@ -15,7 +15,7 @@ import { FormatTableOptions, Table } from "./types"
 //  the point is: a robust alignment capability must process all entries in a column,
 //  variable entries, as a pass at the end
 
-const formatTable = (table: Table, options: FormatTableOptions = {}) => {
+const formatTable = (table: Table, options?: Partial<FormatTableOptions>) => {
     return ioSettings.forForum ? formatTableForForum(table, options) : formatTableForTerminal(table, options)
 }
 

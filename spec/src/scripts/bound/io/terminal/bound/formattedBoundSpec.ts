@@ -33,7 +33,7 @@ describe("computeFormattedBound", () => {
             `                "inaDistance": 0.4178919005628725,`,
             `                "ascii": ",,|(",`,
             `                "unicode": "",`,
-            `                "introducingLevel": "extreme",`,                   // TODO: if this is a "formatted" thing, shouldn't the levels actually be formatted?! i.e. uppercase
+            `                "introducingLevel": "extreme",`,
             `                "smallestJiSymbolSubset": "olympian",`,
             `                "mina": 10,`,
             `                "elements": [`,

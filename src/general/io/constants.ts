@@ -10,6 +10,7 @@ const SUPERSCRIPT_NUMS: Char[] = ["⁰", "¹", "²", "³", "⁴", "⁵", "⁶", 
 const NEWLINE = "\n" as Io & Char
 const SPACE = " " as Io & Char
 const BLANK = "" as Io
+const TAB = "\t" as Io
 
 export {
     IO_PRECISION,
@@ -18,4 +19,5 @@ export {
     NEWLINE,
     SPACE,
     BLANK,
+    TAB,
 }

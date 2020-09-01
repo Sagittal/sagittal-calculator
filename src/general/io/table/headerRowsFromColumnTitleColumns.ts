@@ -1,4 +1,4 @@
-import { BLANK, Column, Formatted, max, Row } from "../../general"
+import { BLANK, Column, Formatted, max, Row } from "../../../general"
 
 const computeHeaderRowsFromColumnTitleColumns = <T>(
     columnTitleColumns: Array<Column<T>>,
@@ -14,7 +14,7 @@ const computeHeaderRowsFromColumnTitleColumns = <T>(
             columnTitleColumn.unshift(BLANK as Formatted<unknown>)
         }
 
-        columnTitleColumn.forEach((columnTitleCell: Formatted<unknown>, index) => {
+        columnTitleColumn.forEach((columnTitleCell: Formatted<unknown>, index: number) => {
             rows[ index ].push(columnTitleCell)
         })
     })
