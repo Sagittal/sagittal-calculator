@@ -15,11 +15,12 @@ describe("popular-ratios", () => {
         // this is shared here: http://forum.sagittal.org/viewtopic.php?p=2246#p2246
         const expected = [
             "count of results with N2D3P9 <= 136: 131",
+            "",
             "[table]",
             "[tr][th]2,3-equivalent[/th][th][/th][th][/th][th]introducing[/th][th][/th][th][/th][th][/th][/tr]",
             "[tr][th]pitch[/th][th][/th][th][/th][th]symbol[/th][th][/th][th]Scala[/th][th]Scala[/th][/tr]",
             "[tr][th]ratio[/th][th][/th][th][/th][th]subset[/th][th]N2D3P9[/th][th]archive[/th][th]archive[/th][/tr]",
-            "[tr][th]class[/th][th]N2D3P9[/th][th]symbol[/th][th]indices[/th][th]rank[/th][th]rank[/th][th]occurrences[/th][/tr]",
+            "[tr][th]class[/th][th]N2D3P9[/th][th]symbols[/th][th]indices[/th][th]rank[/th][th]rank[/th][th]occurrences[/th][/tr]",
             "[tr][td]1/1[/td][td]  1.000[/td][td]:|:[/td][td]0[/td][td]1[/td][td]1[/td][td]7624[/td][/tr]",
             "[tr][td]5/1[/td][td]  1.389[/td][td]:'::|: :/|:[/td][td]3, 0[/td][td]2[/td][td]2[/td][td]5371[/td][/tr]",
             "[tr][td]7/1[/td][td]  2.722[/td][td]:|): :'::/|): :.::(|\\:[/td][td]0, 3, 3[/td][td]3[/td][td]3[/td][td]3016[/td][/tr]",
@@ -166,11 +167,12 @@ describe("popular-ratios", () => {
 
         const expected = [
             "count of results with N2D3P9 <= 10: 10",
+            "",
             "[table]",
             "[tr][th]2,3-equivalent[/th][th][/th][th][/th][th]introducing[/th][th][/th][th][/th][th][/th][/tr]",
             "[tr][th]pitch[/th][th][/th][th][/th][th]symbol[/th][th][/th][th]Scala[/th][th]Scala[/th][/tr]",
             "[tr][th]ratio[/th][th][/th][th][/th][th]subset[/th][th]N2D3P9[/th][th]archive[/th][th]archive[/th][/tr]",
-            "[tr][th]class[/th][th]N2D3P9[/th][th]symbol[/th][th]indices[/th][th]rank[/th][th]rank[/th][th]occurrences[/th][/tr]",
+            "[tr][th]class[/th][th]N2D3P9[/th][th]symbols[/th][th]indices[/th][th]rank[/th][th]rank[/th][th]occurrences[/th][/tr]",
             "[tr][td]1/1[/td][td]  1.000[/td][td]:|:[/td][td]0[/td][td]1[/td][td]1[/td][td]7624[/td][/tr]",
             "[tr][td]5/1[/td][td]  1.389[/td][td]:'::|: :/|:[/td][td]3, 0[/td][td]2[/td][td]2[/td][td]5371[/td][/tr]",
             "[tr][td]7/1[/td][td]  2.722[/td][td]:|): :'::/|): :.::(|\\:[/td][td]0, 3, 3[/td][td]3[/td][td]3[/td][td]3016[/td][/tr]",

@@ -1,10 +1,8 @@
 import { program } from "commander"
 import {
     ANY_MONZO_CHARS,
-    BLANK,
     CommandFlag,
     computeMonzoFromRatio,
-    formatTable,
     Formatted,
     Io,
     LogTarget,
@@ -13,19 +11,10 @@ import {
     parseRatio,
     Ratio,
     saveLog,
-    Table,
 } from "../../../general"
-import { addMaybeSagittalSymbol } from "../addMaybeSagittalSymbol"
 import { analyzeRationalPitch } from "../analyzeRationalPitch"
 import { PITCH_SCRIPT_GROUP } from "../constants"
-import { pitchScriptGroupSettings } from "../globals"
-import {
-    computeNotatingCommaWithMaybeSagittalSymbolRow,
-    formatRationalPitch,
-    NOTATING_COMMA_WITH_MAYBE_SAGITTAL_SYMBOLS_HEADER_ROW,
-} from "../io"
-import { computeNotatingCommas } from "../notatingCommas"
-import { AnalyzedRationalPitchWithMaybeSagittalSymbol } from "../types"
+import { computeNotatingCommasTable, formatRationalPitch } from "../io"
 import { applySharedPitchCommandSetup } from "./shared"
 
 program
@@ -69,14 +58,5 @@ if (!monzo) {
 const analyzedRationalPitch = analyzeRationalPitch(monzo, { giveName: false })
 saveLog(formatRationalPitch(analyzedRationalPitch), LogTarget.ALL, PITCH_SCRIPT_GROUP)
 
-// TODO: this like findCommas should probably have an io/table.ts which allows for either terminal or forum output
-//  which would also take the stuff like a pre-header-row as we see in some of the others
-const notatingCommas = computeNotatingCommas(monzo, pitchScriptGroupSettings)
-const notatingCommaWithMaybeSagittalSymbols = notatingCommas.map(addMaybeSagittalSymbol)
-const maybeNotatingCommaWithMaybeSagittalSymbolsTable: Table<AnalyzedRationalPitchWithMaybeSagittalSymbol> =
-    notatingCommaWithMaybeSagittalSymbols.map(computeNotatingCommaWithMaybeSagittalSymbolRow)
-maybeNotatingCommaWithMaybeSagittalSymbolsTable.unshift(NOTATING_COMMA_WITH_MAYBE_SAGITTAL_SYMBOLS_HEADER_ROW)
-saveLog(BLANK, LogTarget.ALL, PITCH_SCRIPT_GROUP)
-saveLog("   --- notating commas ---" as Io, LogTarget.ALL, PITCH_SCRIPT_GROUP)
-saveLog(BLANK, LogTarget.ALL, PITCH_SCRIPT_GROUP)
-saveLog(formatTable(maybeNotatingCommaWithMaybeSagittalSymbolsTable), LogTarget.ALL, PITCH_SCRIPT_GROUP)
+const notatingCommasFormattedTable = computeNotatingCommasTable(monzo)
+saveLog(notatingCommasFormattedTable, LogTarget.ALL, PITCH_SCRIPT_GROUP)

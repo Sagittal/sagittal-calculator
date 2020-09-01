@@ -14,14 +14,14 @@ const computePopularRatiosTable = (popularRatios: Array<Ranked<PopularRatio>>, m
             rank: estimatedRank,
             popularityRank: actualRank,
             symbolSubsets,
-            smileys,
+            formattedSymbols,
             votes,
         } = popularRatio
 
         table.push([
             formattedRatio,
             formattedN2D3P9,
-            smileys,
+            formattedSymbols,
             symbolSubsets,
             estimatedRank,
             actualRank,
@@ -29,7 +29,7 @@ const computePopularRatiosTable = (popularRatios: Array<Ranked<PopularRatio>>, m
         ] as Row<PopularRatio>)
     })
 
-    const popularRatiosTableTitle = `count of results with N2D3P9 <= ${maxN2D3P9}: ${popularRatios.length}\n` as Io
+    const popularRatiosTableTitle = `count of results with N2D3P9 <= ${maxN2D3P9}: ${popularRatios.length}\n\n` as Io
 
     return addTexts(popularRatiosTableTitle, formatTable(table, { headerRowCount }))
 }

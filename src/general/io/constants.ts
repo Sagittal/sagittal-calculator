@@ -7,8 +7,8 @@ const ANY_MONZO_CHARS = /.*[\[|>\]⟩].*/
 
 const SUPERSCRIPT_NUMS: Char[] = ["⁰", "¹", "²", "³", "⁴", "⁵", "⁶", "⁷", "⁸", "⁹"] as Char[]
 
-const NEWLINE = "\n" as Io & Char
-const SPACE = " " as Io & Char
+const NEWLINE = "\n" as Io
+const SPACE = " " as Io
 const BLANK = "" as Io
 const TAB = "\t" as Io
 

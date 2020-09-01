@@ -1,5 +1,5 @@
-import { BLANK, formatMonzo, formatNumber, formatRatio, Row } from "../../../general"
-import { formatSymbolAscii } from "../../../sagittal"
+import { BLANK, formatMonzo, formatNumber, formatRatio, ioSettings, Row } from "../../../general"
+import { computeSmileyFromAscii, formatSymbolAscii } from "../../../sagittal"
 import { AnalyzedRationalPitchWithMaybeSagittalSymbol } from "../types"
 
 const computeNotatingCommaWithMaybeSagittalSymbolRow = (
@@ -8,7 +8,11 @@ const computeNotatingCommaWithMaybeSagittalSymbolRow = (
     const { name, monzo, cents, ratio, symbol, apotomeSlope } = notatingCommaWithMaybeSagittalSymbol
 
     return [
-        symbol ? formatSymbolAscii(symbol) : BLANK,
+        symbol ?
+            ioSettings.forForum ?
+                computeSmileyFromAscii(symbol) :
+                formatSymbolAscii(symbol) :
+            BLANK,
         name,
         formatRatio(ratio),
         formatMonzo(monzo),

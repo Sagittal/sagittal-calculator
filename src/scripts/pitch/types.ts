@@ -1,4 +1,4 @@
-import { Abs, Cents, Copfr, Exponent, Extrema, Max, Min, ObjectKey, Prime, Sopfr } from "../../general"
+import { Abs, Cents, Copfr, Exponent, Extrema, Io, Max, Min, ObjectKey, Prime, Sopfr } from "../../general"
 import { AnalyzedRationalPitch, ApotomeSlope, N2D3P9, SymbolLongAscii } from "../../sagittal"
 
 interface CommasOptions extends CommasFromFiveSlicedMonzoOptions, FiveSlicedMonzosToCheckOptions {
@@ -29,7 +29,6 @@ type PrimeExponentRangeOptions = Partial<{
 interface AnalyzedRationalPitchWithMaybeSagittalSymbol extends AnalyzedRationalPitch {
     symbol?: SymbolLongAscii
 }
-
 
 export {
     CommasOptions,

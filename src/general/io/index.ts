@@ -14,7 +14,7 @@ import { removeColor } from "./removeColor"
 import { stringify } from "./stringify"
 import { Column, computeHeaderRowsFromColumnTitleColumns, formatTable, Row, Table } from "./table"
 import { formatTime } from "./time"
-import { addTexts } from "./typedOperations"
+import { addTexts, join } from "./typedOperations"
 import { ColorMethod, Filename, Formatted, HexColor, Io } from "./types"
 import { Basis, computePx, Px, Scale } from "./visualize"
 
@@ -59,4 +59,5 @@ export {
     ColorMethod,
     formatInteger,
     CommandFlag,
+    join,
 }
