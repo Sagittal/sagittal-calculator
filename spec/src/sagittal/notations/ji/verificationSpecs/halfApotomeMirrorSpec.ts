@@ -1,4 +1,4 @@
-import { getSagittalComma, JI_SYMBOLS, SagittalComma } from "../../../../../../src/sagittal"
+import { getSagittalComma, JI_SYMBOLS } from "../../../../../../src/sagittal"
 import { APOTOME_CENTS } from "../../../../../../src/sagittal/constants"
 
 describe("half-apotome mirror", () => {
@@ -14,8 +14,8 @@ describe("half-apotome mirror", () => {
             const index = firstCommaGreaterThanHalfApotomeMirrorIndex + indexOffset
             const mirroredIndex = firstCommaGreaterThanHalfApotomeMirrorIndex - 1 - indexOffset
 
-            const comma = sagittalJiCommas[index]
-            const mirroredComma = sagittalJiCommas[mirroredIndex]
+            const comma = sagittalJiCommas[ index ]
+            const mirroredComma = sagittalJiCommas[ mirroredIndex ]
 
             expect(comma.cents - halfApotomeCents).toBeCloseTo(halfApotomeCents - mirroredComma.cents)
 
