@@ -1,7 +1,16 @@
 import { alignFormattedNumber } from "./alignFormattedNumber"
 import { colorize } from "./colorize"
 import { CommandFlag, parseCommands } from "./command"
-import { ANY_MONZO_CHARS, BLANK, IO_PRECISION, NEWLINE, SPACE, SUPERSCRIPT_NUMS, TAB } from "./constants"
+import {
+    ANY_COMMA_NAME_CHARS,
+    ANY_MONZO_CHARS,
+    BLANK,
+    IO_PRECISION,
+    NEWLINE,
+    SPACE,
+    SUPERSCRIPT_NUMS,
+    TAB,
+} from "./constants"
 import { formatInteger } from "./formatInteger"
 import { formatMonzo } from "./formatMonzo"
 import { formatNumber } from "./formatNumber"
@@ -45,6 +54,7 @@ export {
     computeHeaderRowsFromColumnTitleColumns,
     Table,
     LogTarget,
+    ANY_COMMA_NAME_CHARS,
     saveLog,
     colorize,
     stringify,

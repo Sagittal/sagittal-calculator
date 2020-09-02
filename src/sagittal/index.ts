@@ -5,7 +5,7 @@ import {
     computePrimeExponentExtremasGivenMaxN2D3P9,
     N2D3P9,
 } from "./commaEvaluation"
-import { computeSagittalCommaName, SIZE_CATEGORY_BOUNDS } from "./commaSizeName"
+import { computeMonzoFromCommaName, computeSagittalCommaName, SIZE_CATEGORY_BOUNDS } from "./commaSizeName"
 import { formatSymbol, formatSymbolAscii, SymbolLongAscii, unicodeFromAscii } from "./io"
 import {
     Bound,
@@ -45,7 +45,8 @@ export {
     LEVEL_EDAS,
     LEVELS_SYMBOL_IDS,
     JiSymbol,
-    unicodeFromAscii, // todo this is used outside?
+    unicodeFromAscii,
+    computeMonzoFromCommaName,
     computeInaMidpoints,
     JI_SYMBOLS,
     getJiSymbol,

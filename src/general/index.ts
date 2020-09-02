@@ -30,6 +30,7 @@ import {
 import {
     addTexts,
     alignFormattedNumber,
+    ANY_COMMA_NAME_CHARS,
     ANY_MONZO_CHARS,
     Basis,
     BLANK,
@@ -257,6 +258,7 @@ export {
     difference,
     Formatted,
     Range,
+    ANY_COMMA_NAME_CHARS,
     sum,
     ONE,
     Px,

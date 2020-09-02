@@ -11,6 +11,7 @@ enum CommandFlag {
     UNDIRECTED_COMMA_NAME = "d",
     NO_USELESS = "e",
     FACTORED_COMMA_NAME = "f",
+    COMMA_NAME = "g",
     MAX_UNIT = "i",
     MIN_CENTS = "l",
     MONZO = "m",

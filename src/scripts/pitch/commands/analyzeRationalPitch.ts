@@ -1,17 +1,19 @@
 import { program } from "commander"
 import {
+    ANY_COMMA_NAME_CHARS,
     ANY_MONZO_CHARS,
     CommandFlag,
     computeMonzoFromRatio,
     Formatted,
     Io,
     LogTarget,
-    Monzo,
+    Monzo, Name,
     parseMonzo,
     parseRatio,
     Ratio,
     saveLog,
 } from "../../../general"
+import { AnalyzedRationalPitch, computeMonzoFromCommaName } from "../../../sagittal"
 import { analyzeRationalPitch } from "../analyzeRationalPitch"
 import { PITCH_SCRIPT_GROUP } from "../constants"
 import { computeNotatingCommasTable, formatRationalPitch } from "../io"
@@ -28,33 +30,34 @@ program
         "ratio",
         (ratioText: string) => parseRatio(ratioText as Formatted<Ratio>),
     )
+    .option(
+        `-${CommandFlag.COMMA_NAME}, --comma-name <commaName>`,
+        "ratio",
+    )
 
 applySharedPitchCommandSetup()
 
-// TODO: you should also make it accept -n name!
 const rationalPitch = program.args[ 0 ] as Io
 let monzo
 if (rationalPitch) {
-    if (rationalPitch.includes("/")) {
+    if (rationalPitch.match(ANY_COMMA_NAME_CHARS)) {
+        monzo = computeMonzoFromCommaName(rationalPitch as Name<AnalyzedRationalPitch>)
+    } else if (rationalPitch.includes("/")) {
         monzo = computeMonzoFromRatio(parseRatio(rationalPitch as Formatted<Ratio>))
-    }
-    if (rationalPitch.match(ANY_MONZO_CHARS)) {
+    } else if (rationalPitch.match(ANY_MONZO_CHARS)) {
         monzo = parseMonzo(rationalPitch as Formatted<Monzo>)
     }
 } else if (program.monzo) {
-    monzo = program.monzo
+    monzo = program.monzo // todo why not parse here?
 } else if (program.ratio) {
-    monzo = computeMonzoFromRatio(program.ratio)
+    monzo = computeMonzoFromRatio(program.ratio) // todo why not parse here? should? test drive out motivation to do so?
+} else if (program.commaName) {
+    monzo = computeMonzoFromCommaName(program.commaName)
 }
 if (!monzo) {
     throw new Error("Unable to determine monzo for rational pitch.")
 }
 
-// TODO: this should actually return the rational pitch info as a row,
-//  so you can more easily compare it with the notating commas
-//  in which case there's a chance that the method we're using to format comma multiline doesn't get used anymore
-//  and that may actually be the only multiline thing left at all,
-//  which doesn't play well with formatNumber aligning decimal points...
 const analyzedRationalPitch = analyzeRationalPitch(monzo, { giveName: false })
 saveLog(formatRationalPitch(analyzedRationalPitch), LogTarget.ALL, PITCH_SCRIPT_GROUP)
 
