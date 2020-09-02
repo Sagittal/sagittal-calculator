@@ -1,4 +1,5 @@
-import { computeSmileyFromAscii, SymbolLongAscii } from "../../../../src/sagittal"
+import { SymbolLongAscii } from "../../../../src/sagittal"
+import { computeSmileyFromAscii } from "../../../../src/sagittal/io/smiley"
 import { SymbolSmiley } from "../../../../src/sagittal/io/types"
 
 describe("computeSmileyFromAscii", () => {

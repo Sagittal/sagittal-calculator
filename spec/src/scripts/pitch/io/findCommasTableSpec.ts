@@ -1,14 +1,13 @@
-import { Cents, Io, ioSettings, Monzo, Name, NEWLINE, Prime, Ratio, Sopfr } from "../../../../../src/general"
-import { AnalyzedRationalPitch, ApotomeSlope, SymbolLongAscii } from "../../../../../src/sagittal"
+import { Cents, Id, Io, ioSettings, Monzo, Name, NEWLINE, Prime, Ratio, Sopfr } from "../../../../../src/general"
+import { AnalyzedRationalPitch, ApotomeSlope, JiSymbol, SymbolLongAscii } from "../../../../../src/sagittal"
 import { N2D3P9 } from "../../../../../src/sagittal/commaEvaluation/n2d3p9"
 import { computeFindCommasTable } from "../../../../../src/scripts/pitch/io"
-import { AnalyzedRationalPitchWithMaybeSagittalSymbol } from "../../../../../src/scripts/pitch/types"
 
 describe("computeFindCommasTable", () => {
     // note: I'm pretty sure that this is not realistic comma data, since these commas are unrelated
-    const commas: AnalyzedRationalPitchWithMaybeSagittalSymbol[] = [
+    const commas: Array<AnalyzedRationalPitch & { symbolId?: Id<JiSymbol> }> = [
         {
-            symbol: "/|\\" as SymbolLongAscii,
+            symbolId: 115 as Id<JiSymbol>,
             name: "11M" as Name<AnalyzedRationalPitch>,
             limit: 11 as Prime,
             fiveRoughSopfr: 11 as Sopfr<5>,
@@ -19,7 +18,6 @@ describe("computeFindCommasTable", () => {
             n2d3p9: 6.722 as N2D3P9,
         },
         {
-            symbol: undefined,
             name: "25/49M" as Name<AnalyzedRationalPitch>,
             limit: 7 as Prime,
             fiveRoughSopfr: 24 as Sopfr<5>,

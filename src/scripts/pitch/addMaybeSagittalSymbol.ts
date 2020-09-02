@@ -1,8 +1,7 @@
-import { deepEquals, isUndefined, Maybe } from "../../general"
+import { deepEquals, Id, isUndefined, Maybe } from "../../general"
 import { AnalyzedRationalPitch, getSagittalComma, JiSymbol, JI_SYMBOLS } from "../../sagittal"
-import { AnalyzedRationalPitchWithMaybeSagittalSymbol } from "./types"
 
-const addMaybeSagittalSymbol = (comma: AnalyzedRationalPitch): AnalyzedRationalPitchWithMaybeSagittalSymbol => {
+const addMaybeSagittalSymbol = (comma: AnalyzedRationalPitch): AnalyzedRationalPitch & { symbolId?: Id<JiSymbol> } => {
     const maybeSymbol: Maybe<JiSymbol> = JI_SYMBOLS.find(jiSymbol => {
         const primaryComma = getSagittalComma(jiSymbol.primaryCommaId)
 
@@ -12,7 +11,7 @@ const addMaybeSagittalSymbol = (comma: AnalyzedRationalPitch): AnalyzedRationalP
     if (isUndefined(maybeSymbol)) {
         return comma
     } else {
-        return { ...comma, symbol: maybeSymbol.ascii }
+        return { ...comma, symbolId: maybeSymbol.id }
     }
 }
 

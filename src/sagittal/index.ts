@@ -6,7 +6,7 @@ import {
     N2D3P9,
 } from "./commaEvaluation"
 import { computeSagittalCommaName, SIZE_CATEGORY_BOUNDS } from "./commaSizeName"
-import { computeSmileyFromAscii, formatSymbolAscii, SymbolLongAscii, unicodeFromAscii } from "./io"
+import { formatSymbol, formatSymbolAscii, SymbolLongAscii, unicodeFromAscii } from "./io"
 import {
     Bound,
     computeInaMidpoints,
@@ -45,10 +45,9 @@ export {
     LEVEL_EDAS,
     LEVELS_SYMBOL_IDS,
     JiSymbol,
-    unicodeFromAscii,
+    unicodeFromAscii, // todo this is used outside?
     computeInaMidpoints,
     JI_SYMBOLS,
-    computeSmileyFromAscii,
     getJiSymbol,
     JI_SYMBOL_SUBSETS,
     Tina,
@@ -61,9 +60,10 @@ export {
     ApotomeSlope,
     SIZE_CATEGORY_BOUNDS,
     INA_SIZES,
-    formatSymbolAscii,
     computeApotomeSlope,
     computeSagittalCommaName,
     formatLevel,
     Ina,
+    formatSymbol,
+    formatSymbolAscii,
 }

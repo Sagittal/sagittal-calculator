@@ -11,7 +11,7 @@ import {
     SPACE,
     Votes,
 } from "../../general"
-import { computeSmileyFromAscii, formatSymbolAscii, getJiSymbol, JI_SYMBOL_SUBSETS, N2D3P9 } from "../../sagittal"
+import { formatSymbol, getJiSymbol, JI_SYMBOL_SUBSETS, N2D3P9 } from "../../sagittal"
 import { computeExactlyNotatingJiSymbolIds } from "./exactlyNotatingJiSymbolIds"
 import { PopularRatio } from "./types"
 
@@ -25,12 +25,12 @@ const computePopularRatio = ({ monzo, n2d3p9 }: { monzo: Monzo, n2d3p9: N2D3P9 }
     const votes = popularity?.votes || 0 as Votes
 
     const exactlyNotatingJiSymbolIds = computeExactlyNotatingJiSymbolIds(monzo)
-    const exactlyNotatingJiSymbols = exactlyNotatingJiSymbolIds.map(getJiSymbol)
-    const formattedExactlyNotatingJiSymbols = join(exactlyNotatingJiSymbols.map(symbol => {
-        return ioSettings.forForum ? computeSmileyFromAscii(symbol.ascii) : formatSymbolAscii(symbol.ascii)
+    const formattedExactlyNotatingJiSymbols = join(exactlyNotatingJiSymbolIds.map(symbolId => {
+        return formatSymbol(symbolId, ioSettings)
     }), SPACE)
-    const symbolSubsets = exactlyNotatingJiSymbols.map(symbol => {
-        return JI_SYMBOL_SUBSETS.indexOf(symbol.smallestJiSymbolSubset)
+
+    const symbolSubsets = exactlyNotatingJiSymbolIds.map(symbolId => {
+        return JI_SYMBOL_SUBSETS.indexOf(getJiSymbol(symbolId).smallestJiSymbolSubset)
     }).join(", ") as Io
 
     return {

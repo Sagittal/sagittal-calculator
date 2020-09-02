@@ -1,10 +1,10 @@
-import { formatTable, Io, Table } from "../../../general"
-import { AnalyzedRationalPitchWithMaybeSagittalSymbol } from "../types"
+import { formatTable, Id, Io, Table } from "../../../general"
+import { AnalyzedRationalPitch, JiSymbol } from "../../../sagittal"
 import { computeCommaRow } from "./commaRow"
 import { FIND_COMMAS_HEADER_ROW } from "./headerRows"
 
-const computeFindCommasTable = (commas: AnalyzedRationalPitchWithMaybeSagittalSymbol[]): Io => {
-    const commaTable: Table<AnalyzedRationalPitchWithMaybeSagittalSymbol> = commas.map(computeCommaRow)
+const computeFindCommasTable = (commas: Array<AnalyzedRationalPitch & { symbolId?: Id<JiSymbol> }>): Io => {
+    const commaTable: Table<AnalyzedRationalPitch & { symbolId?: Id<JiSymbol> }> = commas.map(computeCommaRow)
     commaTable.unshift(FIND_COMMAS_HEADER_ROW)
 
     return formatTable(commaTable)

@@ -1,5 +1,5 @@
-import { Cents, Monzo, Name, Prime, Ratio, Sopfr } from "../../../../src/general"
-import { AnalyzedRationalPitch, ApotomeSlope, N2D3P9, SagittalComma, SymbolLongAscii } from "../../../../src/sagittal"
+import { Cents, Id, Monzo, Name, Prime, Ratio, Sopfr } from "../../../../src/general"
+import { AnalyzedRationalPitch, ApotomeSlope, JiSymbol, N2D3P9, SagittalComma } from "../../../../src/sagittal"
 import { addMaybeSagittalSymbol } from "../../../../src/scripts/pitch/addMaybeSagittalSymbol"
 
 describe("addMaybeSagittalSymbol", () => {
@@ -18,7 +18,7 @@ describe("addMaybeSagittalSymbol", () => {
         const actual = addMaybeSagittalSymbol(comma)
 
         expect(actual).toEqual({
-            symbol: "/|\\" as SymbolLongAscii,
+            symbolId: 115 as Id<JiSymbol>,
             apotomeSlope: -2.280 as ApotomeSlope,
             fiveRoughSopfr: 11 as Sopfr<5>,
             limit: 11 as Prime,

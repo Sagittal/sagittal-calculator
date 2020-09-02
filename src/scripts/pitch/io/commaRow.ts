@@ -1,10 +1,10 @@
-import { concat, formatInteger, formatNumber, Row } from "../../../general"
-import { AnalyzedRationalPitchWithMaybeSagittalSymbol } from "../types"
+import { concat, formatInteger, formatNumber, Id, Row } from "../../../general"
+import { AnalyzedRationalPitch, JiSymbol } from "../../../sagittal"
 import { computeNotatingCommaWithMaybeSagittalSymbolRow } from "./notatingCommaRow"
 
 const computeCommaRow = (
-    commaWithMaybeSagittalSymbol: AnalyzedRationalPitchWithMaybeSagittalSymbol,
-): Row<AnalyzedRationalPitchWithMaybeSagittalSymbol> => {
+    commaWithMaybeSagittalSymbol: AnalyzedRationalPitch & { symbolId?: Id<JiSymbol> },
+): Row<AnalyzedRationalPitch & { symbolId?: Id<JiSymbol> }> => {
     const { limit, fiveRoughSopfr, n2d3p9 } = commaWithMaybeSagittalSymbol
 
     return concat(
@@ -13,7 +13,7 @@ const computeCommaRow = (
             formatInteger(limit),
             formatInteger(fiveRoughSopfr),
             formatNumber(n2d3p9),
-        ] as Row<AnalyzedRationalPitchWithMaybeSagittalSymbol>,
+        ] as Row<AnalyzedRationalPitch & { symbolId?: Id<JiSymbol> }>,
     )
 }
 

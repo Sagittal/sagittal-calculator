@@ -1,14 +1,13 @@
-import { Cents, Monzo, Name, Prime, Ratio, Row, Sopfr } from "../../../../../src/general"
-import { AnalyzedRationalPitch, ApotomeSlope, SymbolLongAscii } from "../../../../../src/sagittal"
+import { Cents, Id, Monzo, Name, Prime, Ratio, Row, Sopfr } from "../../../../../src/general"
+import { AnalyzedRationalPitch, ApotomeSlope, JiSymbol, SymbolLongAscii } from "../../../../../src/sagittal"
 import { N2D3P9 } from "../../../../../src/sagittal/commaEvaluation/n2d3p9"
 import { computeCommaRow } from "../../../../../src/scripts/pitch/io/commaRow"
-import { AnalyzedRationalPitchWithMaybeSagittalSymbol } from "../../../../../src/scripts/pitch/types"
 
 describe("computeCommaRow", () => {
     // Note: this comma is made up and internally inconsistent.
     // Only the name is important as it is used to find the symbol.
-    const comma: AnalyzedRationalPitchWithMaybeSagittalSymbol = {
-        symbol: "/|" as SymbolLongAscii,
+    const comma: AnalyzedRationalPitch & { symbolId?: Id<JiSymbol> } = {
+        symbolId: 44 as Id<JiSymbol>,
         cents: 11.2 as Cents,
         monzo: [0, -1, 1] as Monzo,
         ratio: [5, 4] as Ratio,
