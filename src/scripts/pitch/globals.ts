@@ -7,6 +7,8 @@ import {
     DEFAULT_SORT_KEY,
 } from "./constants"
 
+// TODO: and maybe the script group is called "jiPitch" since it's only about JI pitches
+
 const pitchScriptGroupSettings = {
     minCents: DEFAULT_MIN_CENTS,
     maxCents: DEFAULT_MAX_CENTS,
