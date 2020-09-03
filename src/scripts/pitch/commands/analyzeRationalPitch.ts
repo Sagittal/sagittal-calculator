@@ -58,6 +58,22 @@ if (!monzo) {
     throw new Error("Unable to determine monzo for rational pitch.")
 }
 
+// TODO:
+/*
+I think it should tell you what maxes, mins, etc. it used when it analyzes/finds pitches
+
+and I also think it should adjust the defaults if your own rational pitch is outside them
+so that it will always be the case that your rational pitch appears in its own notating commas list
+
+the difference between
+
+npm run analyze-rational-pitch 209/208
+
+and
+
+npm run analyze-rational-pitch 209/208 -- --max-n2d3p9 500
+*/
+
 const analyzedRationalPitch = analyzeRationalPitch(monzo, { giveName: false })
 saveLog(formatRationalPitch(analyzedRationalPitch), LogTarget.ALL, PITCH_SCRIPT_GROUP)
 

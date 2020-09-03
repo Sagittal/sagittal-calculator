@@ -18,6 +18,15 @@ describe("sort", () => {
         expect(actual).toEqual(array)
     })
 
+    it("it isn't dumb and can actually sort things numerically", () => {
+        const array = [ 2000, 300, 5, 10000, 40]
+
+        const actual = sort(array)
+
+        const expected = [5, 40, 300, 2000, 10000]
+        expect(actual).toEqual(expected)
+    })
+
     it("when provided a key to sort by, assumes the array is of objects with that key", () => {
         const array = [{ a: 5, b: 9 }, { a: 1, b: 8 }, { a: 7, b: 7 }, { a: 2, b: 6 }, { a: 4, b: 5 }, { a: 3, b: 4 }]
 

@@ -1,11 +1,11 @@
-import { Id, Io } from "../../../../src/general"
+import { Id, Io, ioSettings } from "../../../../src/general"
 import { formatSymbol, JiSymbol } from "../../../../src/sagittal"
 
 describe("formatSymbol", () => {
     const symbolId: Id<JiSymbol> = 117 as Id<JiSymbol>
 
     it("returns the symbol in long ASCII form by default (or configured for display on a terminal)", () => {
-        const actual = formatSymbol(symbolId)
+        const actual = formatSymbol(symbolId, ioSettings)
 
         const expected = "  ,(/|  " as Io
         expect(actual).toBe(expected)

@@ -1,6 +1,6 @@
 import { program } from "commander"
 import { CommandFlag, Filename, LogTarget, parseCommands, saveLog } from "../../../general"
-import { DEFAULT_MAX_N2D3P9 } from "../constants"
+import { DEFAULT_MAX_N2D3P9, POPULAR_RATIOS_SCRIPT_GROUP } from "../constants"
 import { computePopularRatiosTable } from "../io"
 import { computePopularRatios } from "../popularRatios"
 
@@ -9,10 +9,10 @@ import { computePopularRatios } from "../popularRatios"
 program
     .option(`-${CommandFlag.MAX_N2D3P9}, --max-n2d3p9 [maxN2D3P9]`, "max N2D3P9", parseFloat)
 
-parseCommands("popularRatios" as Filename)
+parseCommands(POPULAR_RATIOS_SCRIPT_GROUP)
 
 const maxN2D3P9 = program.maxN2d3p9 || DEFAULT_MAX_N2D3P9
 
 const popularRatios = computePopularRatios(maxN2D3P9)
 
-saveLog(computePopularRatiosTable(popularRatios, maxN2D3P9), LogTarget.ALL, "popularRatios" as Filename)
+saveLog(computePopularRatiosTable(popularRatios, maxN2D3P9), LogTarget.ALL, POPULAR_RATIOS_SCRIPT_GROUP)

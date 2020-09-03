@@ -3,7 +3,8 @@ import { getJiSymbol, JiSymbol } from "../notations"
 import { computeSmileyFromAscii } from "./smiley"
 import { formatSymbolAscii } from "./symbolAscii"
 
-const formatSymbol = (symbolId: Id<JiSymbol>, { forForum }: { forForum?: boolean } = {}) => {
+// these options are required by design, to force you to pass it the ioSettings global
+const formatSymbol = (symbolId: Id<JiSymbol>, { forForum }: { forForum?: boolean }) => {
     const symbol: JiSymbol = getJiSymbol(symbolId)
     const ascii = symbol.ascii
 
