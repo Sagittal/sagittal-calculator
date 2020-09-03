@@ -1,9 +1,7 @@
 import { Exponent, max, Prime } from "../../math"
 import { Monzo } from "./types"
 
-// TODO: rename this. horrible name could not find it ... just like sumMonzos???
-
-const combineMonzos = (...monzos: Monzo[]): Monzo => {
+const sumMonzos = (...monzos: Monzo[]): Monzo => {
     const maxMonzoLength = max(...monzos.map(monzo => monzo.length))
 
     return [...Array(maxMonzoLength).keys()].map((index: number) =>
@@ -15,5 +13,5 @@ const combineMonzos = (...monzos: Monzo[]): Monzo => {
 }
 
 export {
-    combineMonzos,
+    sumMonzos,
 }

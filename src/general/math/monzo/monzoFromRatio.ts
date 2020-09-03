@@ -1,5 +1,5 @@
 import { Exponent, Prime, Ratio } from "../types"
-import { combineMonzos } from "./combineMonzos"
+import { sumMonzos } from "./sumMonzos"
 import { invertMonzo } from "./invertMonzo"
 import { computeMonzoFromInteger } from "./monzoFromInteger"
 import { Monzo } from "./types"
@@ -12,7 +12,7 @@ const computeMonzoFromRatio = (ratio: Ratio): Monzo => {
         positiveFactors.push(0 as Exponent<Prime>)
     }
 
-    return combineMonzos(positiveFactors, negativeFactors)
+    return sumMonzos(positiveFactors, negativeFactors)
 }
 
 export {

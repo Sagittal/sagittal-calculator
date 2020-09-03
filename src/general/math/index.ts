@@ -6,7 +6,7 @@ import { dividesEvenly } from "./dividesEvenly"
 import { computeGpf } from "./gpf"
 import { computeIsRough } from "./isRough"
 import {
-    combineMonzos,
+    sumMonzos,
     computeIntegerFromMonzo,
     computeIsSubMonzo,
     computeMonzoFromInteger,
@@ -120,7 +120,7 @@ export {
     pow,
     FractionalPart,
     Min,
-    combineMonzos,
+    sumMonzos,
     Max,
     count,
     integerDivide,

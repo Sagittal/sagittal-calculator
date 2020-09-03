@@ -1,6 +1,6 @@
 import {
     abs,
-    combineMonzos,
+    sumMonzos,
     computeRatioFromMonzo,
     computeRoughNumberMonzo,
     computeSuperMonzo,
@@ -61,7 +61,7 @@ const computeMetacommasTable = (
                 const monzoA = parseMonzo(popularRatioA.monzoOfNotatingCommaWithLeastAbsoluteApotomeSlope)
                 const monzoB = parseMonzo(popularRatioB.monzoOfNotatingCommaWithLeastAbsoluteApotomeSlope)
 
-                const monzoDifference = computeSuperMonzo(combineMonzos(monzoA, invertMonzo(monzoB)))
+                const monzoDifference = computeSuperMonzo(sumMonzos(monzoA, invertMonzo(monzoB)))
 
                 const ratioA = formatRatio(
                     computeRatioFromMonzo(computeSuperMonzo(computeRoughNumberMonzo(monzoA, FIVE_ROUGHNESS))),
