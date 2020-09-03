@@ -6,6 +6,9 @@ import { DEFAULT_FORMAT_TABLE_OPTIONS } from "./constants"
 import { computeJustifications, computeJustifiedCellForForum } from "./justification"
 import { FormatTableOptions, Row, Table, TableForForumStuffOptions } from "./types"
 
+// TODO add [pre] between cellTag and hilite, to keep things monospaced
+//  the terminal output is always monospaced, so I figure this should be too
+
 const computeTableForForumStuff = ({ index, headerRowCount, colors }: TableForForumStuffOptions) => {
     const cellTag: Io = index < headerRowCount ? "th" as Io : "td" as Io
 
