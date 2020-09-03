@@ -27,6 +27,9 @@ describe("sort", () => {
         expect(actual).toEqual(expected)
     })
 
+    // TODO: weird okay i had to do [0] instead of 0 for somer eason, cover that iwth a test and fix it in "sort" module
+    // }), { by: [0] }).forEach(result => {
+
     it("when provided a key to sort by, assumes the array is of objects with that key", () => {
         const array = [{ a: 5, b: 9 }, { a: 1, b: 8 }, { a: 7, b: 7 }, { a: 2, b: 6 }, { a: 4, b: 5 }, { a: 3, b: 4 }]
 

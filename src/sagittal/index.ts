@@ -6,6 +6,7 @@ import {
     N2D3P9,
 } from "./commaEvaluation"
 import { computeMonzoFromCommaName, computeSagittalCommaName, SIZE_CATEGORY_BOUNDS } from "./commaSizeName"
+import { APOTOME } from "./constants"
 import { formatSymbol, formatSymbolAscii, SymbolLongAscii, unicodeFromAscii } from "./io"
 import {
     Bound,
@@ -67,4 +68,5 @@ export {
     Ina,
     formatSymbol,
     formatSymbolAscii,
+    APOTOME,
 }

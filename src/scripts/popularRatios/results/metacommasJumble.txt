@@ -1,0 +1,1259 @@
+[
+    "25/11",
+    "121/1",
+    "29/1",
+    "95/1",
+    "35/13",
+    "119/1",
+    "121/5",
+    "125/49",
+    "23/7",
+    "125/11",
+    "133/1",
+    "625/7",
+    "115/1",
+    "29/5",
+    "539/1",
+    "1715/1",
+    "55/13",
+    "143/5",
+    "121/7",
+    "187/1",
+    "31/5",
+    "605/1",
+    "343/25",
+    "41/1",
+    "35/17",
+    "85/7",
+    "119/5",
+    "175/11",
+    "425/1",
+    "169/5",
+    "121/25",
+    "43/1",
+    "161/1",
+    "221/1",
+    "1375/1",
+    "29/7",
+    "209/1",
+    "19/17",
+    "637/1",
+    "2401/1",
+    "145/1",
+    "35/19",
+    "95/7",
+    "133/5",
+    "77/13",
+    "25/23",
+    "47/1",
+    "31/7",
+    "475/1",
+    "37/5",
+    "23/13",
+    "65/49",
+    "715/1",
+    "847/1",
+    "29/25",
+    "247/1",
+    "155/1",
+    "15625/1"
+]
+[
+    [
+        "123201/123200",
+        {
+            "notatings": {
+                "169/5": "385/1"
+            },
+            "tinas": 0.1
+        }
+    ],
+    [
+        "1990656/1990625",
+        {
+            "notatings": {
+                "637/1": "3125/1"
+            },
+            "tinas": 0.192
+        }
+    ],
+    [
+        "655371/655360",
+        {
+            "notatings": {
+                "29/5": "31/1"
+            },
+            "tinas": 0.206
+        }
+    ],
+    [
+        "17826237/17825792",
+        {
+            "notatings": {
+                "247/1": "17/11"
+            },
+            "tinas": 0.313
+        }
+    ],
+    [
+        "37180/37179",
+        {
+            "notatings": {
+                "715/1": "17/13"
+            },
+            "tinas": 0.327
+        }
+    ],
+    [
+        "20736/20735",
+        {
+            "notatings": {
+                "145/1": "143/1"
+            },
+            "tinas": 0.591
+        }
+    ],
+    [
+        "19684/19683",
+        {
+            "notatings": {
+                "133/1": "37/1"
+            },
+            "tinas": 0.626
+        }
+    ],
+    [
+        "213003/212992",
+        {
+            "notatings": {
+                "23/13": "343/1"
+            },
+            "tinas": 0.64
+        }
+    ],
+    [
+        "3408075/3407872",
+        {
+            "notatings": {
+                "187/1": "25/13",
+                "55/13": "85/1"
+            },
+            "tinas": 0.733
+        }
+    ],
+    [
+        "14400/14399",
+        {
+            "notatings": {
+                "187/1": "77/25",
+                "847/1": "25/17"
+            },
+            "tinas": 0.854
+        }
+    ],
+    [
+        "426496/426465",
+        {
+            "notatings": {
+                "119/1": "65/7"
+            },
+            "tinas": 0.897
+        }
+    ],
+    [
+        "13312/13311",
+        {
+            "notatings": {
+                "29/1": "17/13"
+            },
+            "tinas": 0.925
+        }
+    ],
+    [
+        "196625/196608",
+        {
+            "notatings": {
+                "715/1": "275/1",
+                "1375/1": "143/1",
+                "605/1": "325/1"
+            },
+            "tinas": 1.06
+        }
+    ],
+    [
+        "10241/10240",
+        {
+            "notatings": {
+                "209/1": "49/5",
+                "133/5": "77/1",
+                "539/1": "19/5",
+                "133/1": "77/5"
+            },
+            "tinas": 1.203
+        }
+    ],
+    [
+        "9801/9800",
+        {
+            "notatings": {
+                "121/25": "49/1",
+                "175/11": "11/7",
+                "121/7": "175/1",
+                "25/11": "49/11"
+            },
+            "tinas": 1.252
+        }
+    ],
+    [
+        "184549376/184528125",
+        {
+            "notatings": {
+                "125/11": "25/1",
+                "15625/1": "55/1"
+            },
+            "tinas": 1.423
+        }
+    ],
+    [
+        "4100625/4100096",
+        {
+            "notatings": {
+                "125/11": "91/5"
+            },
+            "tinas": 1.587
+        }
+    ],
+    [
+        "7696/7695",
+        {
+            "notatings": {
+                "37/5": "19/13"
+            },
+            "tinas": 1.601
+        }
+    ],
+    [
+        "7425/7424",
+        {
+            "notatings": {
+                "29/25": "11/1",
+                "29/1": "275/1",
+                "29/7": "275/7"
+            },
+            "tinas": 1.658
+        }
+    ],
+    [
+        "163863/163840",
+        {
+            "notatings": {
+                "119/5": "17/1"
+            },
+            "tinas": 1.729
+        }
+    ],
+    [
+        "1146880/1146717",
+        {
+            "notatings": {
+                "121/7": "13/5",
+                "143/5": "11/7",
+                "121/25": "65/7"
+            },
+            "tinas": 1.758
+        }
+    ],
+    [
+        "6656/6655",
+        {
+            "notatings": {
+                "605/1": "13/11"
+            },
+            "tinas": 1.85
+        }
+    ],
+    [
+        "1703936/1703673",
+        {
+            "notatings": {
+                "41/1": "19/13"
+            },
+            "tinas": 1.907
+        }
+    ],
+    [
+        "6273/6272",
+        {
+            "notatings": {
+                "41/1": "49/17"
+            },
+            "tinas": 1.964
+        }
+    ],
+    [
+        "376893/376832",
+        {
+            "notatings": {
+                "47/1": "23/11"
+            },
+            "tinas": 2
+        }
+    ],
+    [
+        "6076/6075",
+        {
+            "notatings": {
+                "31/5": "49/5"
+            },
+            "tinas": 2.028
+        }
+    ],
+    [
+        "5985/5984",
+        {
+            "notatings": {
+                "19/17": "35/11",
+                "35/17": "19/11"
+            },
+            "tinas": 2.064
+        }
+    ],
+    [
+        "5832/5831",
+        {
+            "notatings": {
+                "119/1": "49/1",
+                "1715/1": "17/5"
+            },
+            "tinas": 2.113
+        }
+    ],
+    [
+        "655473/655360",
+        {
+            "notatings": {
+                "2401/1": "91/5",
+                "637/1": "343/5"
+            },
+            "tinas": 2.128
+        }
+    ],
+    [
+        "5440/5439",
+        {
+            "notatings": {
+                "37/5": "49/17"
+            },
+            "tinas": 2.27
+        }
+    ],
+    [
+        "5376/5375",
+        {
+            "notatings": {
+                "43/1": "125/7"
+            },
+            "tinas": 2.291
+        }
+    ],
+    [
+        "250047/250000",
+        {
+            "notatings": {
+                "625/7": "49/25",
+                "125/49": "125/7"
+            },
+            "tinas": 2.313
+        }
+    ],
+    [
+        "5265/5264",
+        {
+            "notatings": {
+                "47/1": "65/7"
+            },
+            "tinas": 2.334
+        }
+    ],
+    [
+        "5104/5103",
+        {
+            "notatings": {
+                "29/7": "11/1",
+                "145/1": "35/11",
+                "29/25": "275/7"
+            },
+            "tinas": 2.412
+        }
+    ],
+    [
+        "61965/61952",
+        {
+            "notatings": {
+                "121/5": "17/1",
+                "121/1": "85/1"
+            },
+            "tinas": 2.583
+        }
+    ],
+    [
+        "32775/32768",
+        {
+            "notatings": {
+                "475/1": "23/1"
+            },
+            "tinas": 2.626
+        }
+    ],
+    [
+        "1879453125/1879048192",
+        {
+            "notatings": {
+                "15625/1": "55/7"
+            },
+            "tinas": 2.654
+        }
+    ],
+    [
+        "4375/4374",
+        {
+            "notatings": {
+                "625/7": "49/1"
+            },
+            "tinas": 2.818
+        }
+    ],
+    [
+        "14417920/14414517",
+        {
+            "notatings": {
+                "169/5": "13/11"
+            },
+            "tinas": 2.903
+        }
+    ],
+    [
+        "4225/4224",
+        {
+            "notatings": {
+                "25/11": "169/1"
+            },
+            "tinas": 2.911
+        }
+    ],
+    [
+        "4096/4095",
+        {
+            "notatings": {
+                "637/1": "7/5",
+                "65/49": "343/1",
+                "35/13": "169/1",
+                "1715/1": "49/13"
+            },
+            "tinas": 3.003
+        }
+    ],
+    [
+        "3969/3968",
+        {
+            "notatings": {
+                "31/7": "7/1",
+                "155/1": "245/1"
+            },
+            "tinas": 3.11
+        }
+    ],
+    [
+        "67392/67375",
+        {
+            "notatings": {
+                "77/13": "875/1",
+                "1375/1": "49/13"
+            },
+            "tinas": 3.11
+        }
+    ],
+    [
+        "152361/152320",
+        {
+            "notatings": {
+                "35/19": "17/11"
+            },
+            "tinas": 3.316
+        }
+    ],
+    [
+        "3565/3564",
+        {
+            "notatings": {
+                "155/1": "23/11"
+            },
+            "tinas": 3.451
+        }
+    ],
+    [
+        "33564375/33554432",
+        {
+            "notatings": {
+                "221/1": "625/1"
+            },
+            "tinas": 3.651
+        }
+    ],
+    [
+        "3136/3135",
+        {
+            "notatings": {
+                "95/7": "11/7",
+                "95/1": "49/11",
+                "35/19": "275/7"
+            },
+            "tinas": 3.928
+        }
+    ],
+    [
+        "557056/556875",
+        {
+            "notatings": {
+                "1375/1": "17/5"
+            },
+            "tinas": 4.006
+        }
+    ],
+    [
+        "3025/3024",
+        {
+            "notatings": {
+                "121/1": "25/7",
+                "847/1": "49/25",
+                "121/5": "125/7",
+                "1375/1": "35/11"
+            },
+            "tinas": 4.078
+        }
+    ],
+    [
+        "50193/50176",
+        {
+            "notatings": {
+                "169/5": "55/49"
+            },
+            "tinas": 4.177
+        }
+    ],
+    [
+        "2926/2925",
+        {
+            "notatings": {
+                "77/13": "25/19",
+                "133/5": "65/11"
+            },
+            "tinas": 4.213
+        }
+    ],
+    [
+        "1393119/1392640",
+        {
+            "notatings": {
+                "85/7": "91/1"
+            },
+            "tinas": 4.241
+        }
+    ],
+    [
+        "20007/20000",
+        {
+            "notatings": {
+                "247/1": "625/1"
+            },
+            "tinas": 4.312
+        }
+    ],
+    [
+        "46592/46575",
+        {
+            "notatings": {
+                "23/13": "25/7",
+                "23/7": "25/13",
+                "115/1": "91/5"
+            },
+            "tinas": 4.49
+        }
+    ],
+    [
+        "2640/2639",
+        {
+            "notatings": {
+                "29/5": "91/11"
+            },
+            "tinas": 4.668
+        }
+    ],
+    [
+        "28431/28420",
+        {
+            "notatings": {
+                "145/1": "49/13"
+            },
+            "tinas": 4.768
+        }
+    ],
+    [
+        "2097152/2096325",
+        {
+            "notatings": {
+                "847/1": "275/1",
+                "605/1": "385/1"
+            },
+            "tinas": 4.86
+        }
+    ],
+    [
+        "2500/2499",
+        {
+            "notatings": {
+                "125/49": "17/5",
+                "119/5": "125/7"
+            },
+            "tinas": 4.924
+        }
+    ],
+    [
+        "17415/17408",
+        {
+            "notatings": {
+                "43/1": "17/5"
+            },
+            "tinas": 4.953
+        }
+    ],
+    [
+        "194560/194481",
+        {
+            "notatings": {
+                "95/7": "343/1"
+            },
+            "tinas": 5.003
+        }
+    ],
+    [
+        "2432/2431",
+        {
+            "notatings": {
+                "19/17": "143/1",
+                "221/1": "19/11",
+                "187/1": "19/13"
+            },
+            "tinas": 5.067
+        }
+    ],
+    [
+        "2431/2430",
+        {
+            "notatings": {
+                "715/1": "25/17",
+                "119/5": "143/7"
+            },
+            "tinas": 5.067
+        }
+    ],
+    [
+        "2401/2400",
+        {
+            "notatings": {
+                "343/25": "7/1",
+                "2401/1": "25/1",
+                "1715/1": "125/7"
+            },
+            "tinas": 5.138
+        }
+    ],
+    [
+        "2376/2375",
+        {
+            "notatings": {
+                "475/1": "11/5"
+            },
+            "tinas": 5.188
+        }
+    ],
+    [
+        "11781/11776",
+        {
+            "notatings": {
+                "119/1": "23/11"
+            },
+            "tinas": 5.23
+        }
+    ],
+    [
+        "2304/2303",
+        {
+            "notatings": {
+                "47/1": "49/1"
+            },
+            "tinas": 5.344
+        }
+    ],
+    [
+        "11016/11011",
+        {
+            "notatings": {
+                "847/1": "17/13"
+            },
+            "tinas": 5.593
+        }
+    ],
+    [
+        "2176/2175",
+        {
+            "notatings": {
+                "145/1": "17/5",
+                "29/1": "25/17"
+            },
+            "tinas": 5.664
+        }
+    ],
+    [
+        "91168/91125",
+        {
+            "notatings": {
+                "37/5": "77/25"
+            },
+            "tinas": 5.807
+        }
+    ],
+    [
+        "256000/255879",
+        {
+            "notatings": {
+                "625/7": "65/7",
+                "169/5": "325/1",
+                "125/49": "49/13"
+            },
+            "tinas": 5.821
+        }
+    ],
+    [
+        "2107/2106",
+        {
+            "notatings": {
+                "43/1": "49/13"
+            },
+            "tinas": 5.849
+        }
+    ],
+    [
+        "2080/2079",
+        {
+            "notatings": {
+                "77/13": "5/1",
+                "55/13": "25/7",
+                "65/49": "11/7",
+                "121/5": "143/7",
+                "539/1": "455/1"
+            },
+            "tinas": 5.928
+        }
+    ],
+    [
+        "188416/188325",
+        {
+            "notatings": {
+                "155/1": "23/5",
+                "25/23": "31/1"
+            },
+            "tinas": 5.956
+        }
+    ],
+    [
+        "2058/2057",
+        {
+            "notatings": {
+                "121/7": "49/17"
+            },
+            "tinas": 5.985
+        }
+    ],
+    [
+        "2025/2024",
+        {
+            "notatings": {
+                "25/23": "11/1",
+                "23/7": "77/25",
+                "121/25": "23/11"
+            },
+            "tinas": 6.084
+        }
+    ],
+    [
+        "2016/2015",
+        {
+            "notatings": {
+                "155/1": "13/7",
+                "31/7": "65/1"
+            },
+            "tinas": 6.113
+        }
+    ],
+    [
+        "20185088/20175075",
+        {
+            "notatings": {
+                "41/1": "77/25"
+            },
+            "tinas": 6.113
+        }
+    ],
+    [
+        "10491039/10485760",
+        {
+            "notatings": {
+                "41/1": "13/5"
+            },
+            "tinas": 6.198
+        }
+    ],
+    [
+        "160083/160000",
+        {
+            "notatings": {
+                "121/25": "49/25"
+            },
+            "tinas": 6.383
+        }
+    ],
+    [
+        "9477/9472",
+        {
+            "notatings": {
+                "37/5": "13/5"
+            },
+            "tinas": 6.504
+        }
+    ],
+    [
+        "5635/5632",
+        {
+            "notatings": {
+                "161/1": "35/11",
+                "115/1": "49/11"
+            },
+            "tinas": 6.561
+        }
+    ],
+    [
+        "79734375/79691776",
+        {
+            "notatings": {
+                "15625/1": "19/7"
+            },
+            "tinas": 6.582
+        }
+    ],
+    [
+        "57375/57344",
+        {
+            "notatings": {
+                "85/7": "25/1",
+                "425/1": "7/5",
+                "35/17": "625/1"
+            },
+            "tinas": 6.661
+        }
+    ],
+    [
+        "1835008/1833975",
+        {
+            "notatings": {
+                "247/1": "275/7"
+            },
+            "tinas": 6.938
+        }
+    ],
+    [
+        "1729/1728",
+        {
+            "notatings": {
+                "133/1": "13/1",
+                "133/5": "65/1",
+                "637/1": "19/7",
+                "95/1": "91/5",
+                "475/1": "91/25",
+                "209/1": "91/11"
+            },
+            "tinas": 7.123
+        }
+    ],
+    [
+        "1716/1715",
+        {
+            "notatings": {
+                "143/5": "343/1",
+                "1715/1": "143/1",
+                "35/13": "49/11"
+            },
+            "tinas": 7.18
+        }
+    ],
+    [
+        "1702/1701",
+        {
+            "notatings": {
+                "23/7": "37/1"
+            },
+            "tinas": 7.237
+        }
+    ],
+    [
+        "1701/1700",
+        {
+            "notatings": {
+                "85/7": "5/1",
+                "425/1": "7/1",
+                "119/1": "49/25",
+                "625/7": "25/17"
+            },
+            "tinas": 7.244
+        }
+    ],
+    [
+        "21888/21875",
+        {
+            "notatings": {
+                "35/19": "625/1"
+            },
+            "tinas": 7.315
+        }
+    ],
+    [
+        "72171/72128",
+        {
+            "notatings": {
+                "161/1": "11/7"
+            },
+            "tinas": 7.344
+        }
+    ],
+    [
+        "1665/1664",
+        {
+            "notatings": {
+                "37/5": "25/13"
+            },
+            "tinas": 7.401
+        }
+    ],
+    [
+        "2097152/2095875",
+        {
+            "notatings": {
+                "115/1": "25/1"
+            },
+            "tinas": 7.508
+        }
+    ],
+    [
+        "11271/11264",
+        {
+            "notatings": {
+                "221/1": "17/11"
+            },
+            "tinas": 7.65
+        }
+    ],
+    [
+        "1600/1599",
+        {
+            "notatings": {
+                "41/1": "25/13"
+            },
+            "tinas": 7.707
+        }
+    ],
+    [
+        "7344675/7340032",
+        {
+            "notatings": {
+                "155/1": "65/7"
+            },
+            "tinas": 7.785
+        }
+    ],
+    [
+        "20493/20480",
+        {
+            "notatings": {
+                "23/7": "77/5"
+            },
+            "tinas": 7.814
+        }
+    ],
+    [
+        "361088/360855",
+        {
+            "notatings": {
+                "31/5": "91/11"
+            },
+            "tinas": 7.956
+        }
+    ],
+    [
+        "13640319/13631488",
+        {
+            "notatings": {
+                "77/13": "1/1"
+            },
+            "tinas": 7.977
+        }
+    ],
+    [
+        "1540/1539",
+        {
+            "notatings": {
+                "35/19": "11/1"
+            },
+            "tinas": 8.006
+        }
+    ],
+    [
+        "1521/1520",
+        {
+            "notatings": {
+                "169/5": "19/1",
+                "95/1": "169/1"
+            },
+            "tinas": 8.105
+        }
+    ],
+    [
+        "43904/43875",
+        {
+            "notatings": {
+                "65/49": "25/7",
+                "343/25": "65/1"
+            },
+            "tinas": 8.134
+        }
+    ],
+    [
+        "8394435/8388608",
+        {
+            "notatings": {
+                "47/1": "245/1"
+            },
+            "tinas": 8.561
+        }
+    ],
+    [
+        "2460375/2458624",
+        {
+            "notatings": {
+                "343/25": "7/5"
+            },
+            "tinas": 8.774
+        }
+    ],
+    [
+        "505197/504832",
+        {
+            "notatings": {
+                "29/7": "17/11"
+            },
+            "tinas": 8.909
+        }
+    ],
+    [
+        "131072/130977",
+        {
+            "notatings": {
+                "25/11": "1225/1",
+                "77/13": "91/1",
+                "2401/1": "49/11",
+                "187/1": "49/17",
+                "605/1": "55/49"
+            },
+            "tinas": 8.938
+        }
+    ],
+    [
+        "1377/1376",
+        {
+            "notatings": {
+                "43/1": "17/1"
+            },
+            "tinas": 8.945
+        }
+    ],
+    [
+        "16395939/16384000",
+        {
+            "notatings": {
+                "125/49": "17/1"
+            },
+            "tinas": 8.973
+        }
+    ],
+    [
+        "1365/1364",
+        {
+            "notatings": {
+                "31/7": "65/11"
+            },
+            "tinas": 9.023
+        }
+    ],
+    [
+        "41503/41472",
+        {
+            "notatings": {
+                "847/1": "49/1",
+                "121/1": "343/1"
+            },
+            "tinas": 9.208
+        }
+    ],
+    [
+        "89667/89600",
+        {
+            "notatings": {
+                "41/1": "175/1"
+            },
+            "tinas": 9.208
+        }
+    ],
+    [
+        "6669/6664",
+        {
+            "notatings": {
+                "19/17": "49/13"
+            },
+            "tinas": 9.244
+        }
+    ],
+    [
+        "1328125/1327104",
+        {
+            "notatings": {
+                "425/1": "3125/1"
+            },
+            "tinas": 9.479
+        }
+    ]
+]
+[table]
+[tr][th]metacomma[/th][th]tinas[/th][th]25/11[/th][th]121/1[/th][th]29/1[/th][th]95/1[/th][th]35/13[/th][th]119/1[/th][th]121/5[/th][th]125/49[/th][th]23/7[/th][th]125/11[/th][th]133/1[/th][th]625/7[/th][th]115/1[/th][th]29/5[/th][th]539/1[/th][th]1715/1[/th][th]55/13[/th][th]143/5[/th][th]121/7[/th][th]187/1[/th][th]31/5[/th][th]605/1[/th][th]343/25[/th][th]41/1[/th][th]35/17[/th][th]85/7[/th][th]119/5[/th][th]175/11[/th][th]425/1[/th][th]169/5[/th][th]121/25[/th][th]43/1[/th][th]161/1[/th][th]221/1[/th][th]1375/1[/th][th]29/7[/th][th]209/1[/th][th]19/17[/th][th]637/1[/th][th]2401/1[/th][th]145/1[/th][th]35/19[/th][th]95/7[/th][th]133/5[/th][th]77/13[/th][th]25/23[/th][th]47/1[/th][th]31/7[/th][th]475/1[/th][th]37/5[/th][th]23/13[/th][th]65/49[/th][th]715/1[/th][th]847/1[/th][th]29/25[/th][th]247/1[/th][th]155/1[/th][th]15625/1[/th][/tr]
+[tr][td]123201/123200[/td][td]0.1[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]385/1[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]1990656/1990625[/td][td]0.192[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]3125/1[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]655371/655360[/td][td]0.206[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]31/1[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]17826237/17825792[/td][td]0.313[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]17/11[/td][td][/td][td][/td][/tr]
+[tr][td]37180/37179[/td][td]0.327[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]17/13[/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]20736/20735[/td][td]0.591[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]143/1[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]19684/19683[/td][td]0.626[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]37/1[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]213003/212992[/td][td]0.64[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]343/1[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]3408075/3407872[/td][td]0.733[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]85/1[/td][td][/td][td][/td][td]25/13[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]14400/14399[/td][td]0.854[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]77/25[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]25/17[/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]426496/426465[/td][td]0.897[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]65/7[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]13312/13311[/td][td]0.925[/td][td][/td][td][/td][td]17/13[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]196625/196608[/td][td]1.06[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]325/1[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]143/1[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]275/1[/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]10241/10240[/td][td]1.203[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]77/5[/td][td][/td][td][/td][td][/td][td]19/5[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]49/5[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]77/1[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]9801/9800[/td][td]1.252[/td][td]49/11[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]175/1[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]11/7[/td][td][/td][td][/td][td]49/1[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]184549376/184528125[/td][td]1.423[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]25/1[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]55/1[/td][/tr]
+[tr][td]4100625/4100096[/td][td]1.587[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]91/5[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]7696/7695[/td][td]1.601[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]19/13[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]7425/7424[/td][td]1.658[/td][td][/td][td][/td][td]275/1[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]275/7[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]11/1[/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]163863/163840[/td][td]1.729[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]17/1[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]1146880/1146717[/td][td]1.758[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]11/7[/td][td]13/5[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]65/7[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]6656/6655[/td][td]1.85[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]13/11[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]1703936/1703673[/td][td]1.907[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]19/13[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]6273/6272[/td][td]1.964[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]49/17[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]376893/376832[/td][td]2[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]23/11[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]6076/6075[/td][td]2.028[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]49/5[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]5985/5984[/td][td]2.064[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]19/11[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]35/11[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]5832/5831[/td][td]2.113[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]49/1[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]17/5[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]655473/655360[/td][td]2.128[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]343/5[/td][td]91/5[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]5440/5439[/td][td]2.27[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]49/17[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]5376/5375[/td][td]2.291[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]125/7[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]250047/250000[/td][td]2.313[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]125/7[/td][td][/td][td][/td][td][/td][td]49/25[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]5265/5264[/td][td]2.334[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]65/7[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]5104/5103[/td][td]2.412[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]11/1[/td][td][/td][td][/td][td][/td][td][/td][td]35/11[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]275/7[/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]61965/61952[/td][td]2.583[/td][td][/td][td]85/1[/td][td][/td][td][/td][td][/td][td][/td][td]17/1[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]32775/32768[/td][td]2.626[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]23/1[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]1879453125/1879048192[/td][td]2.654[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]55/7[/td][/tr]
+[tr][td]4375/4374[/td][td]2.818[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]49/1[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]14417920/14414517[/td][td]2.903[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]13/11[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]4225/4224[/td][td]2.911[/td][td]169/1[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]4096/4095[/td][td]3.003[/td][td][/td][td][/td][td][/td][td][/td][td]169/1[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]49/13[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]7/5[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]343/1[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]3969/3968[/td][td]3.11[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]7/1[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]245/1[/td][td][/td][/tr]
+[tr][td]67392/67375[/td][td]3.11[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]49/13[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]875/1[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]152361/152320[/td][td]3.316[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]17/11[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]3565/3564[/td][td]3.451[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]23/11[/td][td][/td][/tr]
+[tr][td]33564375/33554432[/td][td]3.651[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]625/1[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]3136/3135[/td][td]3.928[/td][td][/td][td][/td][td][/td][td]49/11[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]275/7[/td][td]11/7[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]557056/556875[/td][td]4.006[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]17/5[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]3025/3024[/td][td]4.078[/td][td][/td][td]25/7[/td][td][/td][td][/td][td][/td][td][/td][td]125/7[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]35/11[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]49/25[/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]50193/50176[/td][td]4.177[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]55/49[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]2926/2925[/td][td]4.213[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]65/11[/td][td]25/19[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]1393119/1392640[/td][td]4.241[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]91/1[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]20007/20000[/td][td]4.312[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]625/1[/td][td][/td][td][/td][/tr]
+[tr][td]46592/46575[/td][td]4.49[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]25/13[/td][td][/td][td][/td][td][/td][td]91/5[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]25/7[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]2640/2639[/td][td]4.668[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]91/11[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]28431/28420[/td][td]4.768[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]49/13[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]2097152/2096325[/td][td]4.86[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]385/1[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]275/1[/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]2500/2499[/td][td]4.924[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]17/5[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]125/7[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]17415/17408[/td][td]4.953[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]17/5[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]194560/194481[/td][td]5.003[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]343/1[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]2432/2431[/td][td]5.067[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]19/13[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]19/11[/td][td][/td][td][/td][td][/td][td]143/1[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]2431/2430[/td][td]5.067[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]143/7[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]25/17[/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]2401/2400[/td][td]5.138[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]125/7[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]7/1[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]25/1[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]2376/2375[/td][td]5.188[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]11/5[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]11781/11776[/td][td]5.23[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]23/11[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]2304/2303[/td][td]5.344[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]49/1[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]11016/11011[/td][td]5.593[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]17/13[/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]2176/2175[/td][td]5.664[/td][td][/td][td][/td][td]25/17[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]17/5[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]91168/91125[/td][td]5.807[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]77/25[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]256000/255879[/td][td]5.821[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]49/13[/td][td][/td][td][/td][td][/td][td]65/7[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]325/1[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]2107/2106[/td][td]5.849[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]49/13[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]2080/2079[/td][td]5.928[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]143/7[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]455/1[/td][td][/td][td]25/7[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]5/1[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]11/7[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]188416/188325[/td][td]5.956[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]31/1[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]23/5[/td][td][/td][/tr]
+[tr][td]2058/2057[/td][td]5.985[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]49/17[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]2025/2024[/td][td]6.084[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]77/25[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]23/11[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]11/1[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]2016/2015[/td][td]6.113[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]65/1[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]13/7[/td][td][/td][/tr]
+[tr][td]20185088/20175075[/td][td]6.113[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]77/25[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]10491039/10485760[/td][td]6.198[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]13/5[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]160083/160000[/td][td]6.383[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]49/25[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]9477/9472[/td][td]6.504[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]13/5[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]5635/5632[/td][td]6.561[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]49/11[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]35/11[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]79734375/79691776[/td][td]6.582[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]19/7[/td][/tr]
+[tr][td]57375/57344[/td][td]6.661[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]625/1[/td][td]25/1[/td][td][/td][td][/td][td]7/5[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]1835008/1833975[/td][td]6.938[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]275/7[/td][td][/td][td][/td][/tr]
+[tr][td]1729/1728[/td][td]7.123[/td][td][/td][td][/td][td][/td][td]91/5[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]13/1[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]91/11[/td][td][/td][td]19/7[/td][td][/td][td][/td][td][/td][td][/td][td]65/1[/td][td][/td][td][/td][td][/td][td][/td][td]91/25[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]1716/1715[/td][td]7.18[/td][td][/td][td][/td][td][/td][td][/td][td]49/11[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]143/1[/td][td][/td][td]343/1[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]1702/1701[/td][td]7.237[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]37/1[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]1701/1700[/td][td]7.244[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]49/25[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]25/17[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]5/1[/td][td][/td][td][/td][td]7/1[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]21888/21875[/td][td]7.315[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]625/1[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]72171/72128[/td][td]7.344[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]11/7[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]1665/1664[/td][td]7.401[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]25/13[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]2097152/2095875[/td][td]7.508[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]25/1[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]11271/11264[/td][td]7.65[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]17/11[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]1600/1599[/td][td]7.707[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]25/13[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]7344675/7340032[/td][td]7.785[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]65/7[/td][td][/td][/tr]
+[tr][td]20493/20480[/td][td]7.814[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]77/5[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]361088/360855[/td][td]7.956[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]91/11[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]13640319/13631488[/td][td]7.977[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]1/1[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]1540/1539[/td][td]8.006[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]11/1[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]1521/1520[/td][td]8.105[/td][td][/td][td][/td][td][/td][td]169/1[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]19/1[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]43904/43875[/td][td]8.134[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]65/1[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]25/7[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]8394435/8388608[/td][td]8.561[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]245/1[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]2460375/2458624[/td][td]8.774[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]7/5[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]505197/504832[/td][td]8.909[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]17/11[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]131072/130977[/td][td]8.938[/td][td]1225/1[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]49/17[/td][td][/td][td]55/49[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]49/11[/td][td][/td][td][/td][td][/td][td][/td][td]91/1[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]1377/1376[/td][td]8.945[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]17/1[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]16395939/16384000[/td][td]8.973[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]17/1[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]1365/1364[/td][td]9.023[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]65/11[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]41503/41472[/td][td]9.208[/td][td][/td][td]343/1[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]49/1[/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]89667/89600[/td][td]9.208[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]175/1[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]6669/6664[/td][td]9.244[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]49/13[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[tr][td]1328125/1327104[/td][td]9.479[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td]3125/1[/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][td][/td][/tr]
+[/table]
+

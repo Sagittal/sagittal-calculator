@@ -1,3 +1,4 @@
+import { combineMonzos } from "./combineMonzos"
 import { computeIntegerFromMonzo } from "./integerFromMonzo"
 import { invertMonzo } from "./invertMonzo"
 import { computeIsSubMonzo } from "./isSubMonzo"
@@ -21,5 +22,6 @@ export {
     computeRatioFromMonzo,
     computeSuperMonzo,
     invertMonzo,
+    combineMonzos,
     computeMonzoSlicedToPrimeIndex,
 }
