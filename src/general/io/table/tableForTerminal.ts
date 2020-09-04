@@ -1,4 +1,4 @@
-import { isUndefined } from "../../code"
+import { isUndefined, Maybe } from "../../code"
 import { colorize } from "../colorize"
 import { BLANK, NEWLINE, TAB } from "../constants"
 import { addTexts, join } from "../typedOperations"
@@ -8,14 +8,14 @@ import { DEFAULT_FORMAT_TABLE_OPTIONS } from "./constants"
 import { computeColumnWidths, computeJustifications, computeJustifiedCellForTerminal } from "./justification"
 import { FormatTableOptions, Row, Table } from "./types"
 
-const maybeColor = (rowText: Io, rowIndex: number, colors?: ColorMethod[]): Io => {
+const maybeColor = (rowText: Io, rowIndex: number, colors: Maybe<Array<Maybe<ColorMethod>>>): Io => {
     if (isUndefined(colors)) {
         return rowText
     }
 
-    const rowColor: ColorMethod = colors[ rowIndex ]
+    const rowColor: Maybe<ColorMethod> = colors[ rowIndex ]
 
-    return colorize(rowText, rowColor)
+    return rowColor ? colorize(rowText, rowColor) : rowText
 }
 
 const formatTableForTerminal = (table: Table, options?: Partial<FormatTableOptions>): Io => {

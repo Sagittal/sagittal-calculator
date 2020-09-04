@@ -28,13 +28,13 @@ interface JustifiedCellOptions {
 
 type FormatTableOptions = {
     justification: JustificationOption
-    colors: Maybe<Array<ColorMethod>>,
+    colors: Maybe<Array<Maybe<ColorMethod>>>,
     headerRowCount: Count<Row<unknown, "Header">>,
 }
 
 interface TableForForumStuffOptions {
     index: number,
-    colors: Maybe<Array<ColorMethod>>,
+    colors: Maybe<Array<Maybe<ColorMethod>>>,
     headerRowCount: Count<Row<unknown, "Header">>,
 }
 

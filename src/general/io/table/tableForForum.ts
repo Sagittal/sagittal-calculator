@@ -12,8 +12,9 @@ import { FormatTableOptions, Row, Table, TableForForumStuffOptions } from "./typ
 const computeTableForForumStuff = ({ index, headerRowCount, colors }: TableForForumStuffOptions) => {
     const cellTag: Io = index < headerRowCount ? "th" as Io : "td" as Io
 
-    const hiliteOpen: Io = colors ? `[hilite=${colors[ index ]}]` as Io : BLANK
-    const hiliteClose: Io = colors ? "[/hilite]" as Io : BLANK
+    // TODO: clean this up and test it
+    const hiliteOpen: Io = colors ? colors[ index ] ? `[hilite=${colors[ index ]}]` as Io : BLANK as Io : BLANK
+    const hiliteClose: Io = colors ? colors[ index ] ? "[/hilite]" as Io : BLANK : BLANK
 
     const cellOpen: Io = `[${cellTag}]${hiliteOpen}` as Io
     const cellClose: Io = `${hiliteClose}[/${cellTag}]` as Io
