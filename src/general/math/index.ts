@@ -6,7 +6,6 @@ import { dividesEvenly } from "./dividesEvenly"
 import { computeGpf } from "./gpf"
 import { computeIsRough } from "./isRough"
 import {
-    sumMonzos,
     computeIntegerFromMonzo,
     computeIsSubMonzo,
     computeMonzoFromInteger,
@@ -17,6 +16,7 @@ import {
     computeSuperMonzo,
     invertMonzo,
     Monzo,
+    sumMonzos,
 } from "./monzo"
 import { computePrimeCount } from "./primeCount"
 import { PRIMES } from "./primes"

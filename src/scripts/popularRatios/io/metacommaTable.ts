@@ -1,6 +1,5 @@
 import {
     abs,
-    sumMonzos,
     computeRatioFromMonzo,
     computeRoughNumberMonzo,
     computeSuperMonzo,
@@ -21,6 +20,7 @@ import {
     saveLog,
     sort,
     stringify,
+    sumMonzos,
     Table,
 } from "../../../general"
 import { Tina, TINA } from "../../../sagittal"

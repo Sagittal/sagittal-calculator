@@ -1,4 +1,3 @@
-import { sumMonzos } from "./sumMonzos"
 import { computeIntegerFromMonzo } from "./integerFromMonzo"
 import { invertMonzo } from "./invertMonzo"
 import { computeIsSubMonzo } from "./isSubMonzo"
@@ -8,6 +7,7 @@ import { computeMonzoFromRatio } from "./monzoFromRatio"
 import { computeMonzosFromPrimeExponentExtremas } from "./monzosFromPrimeExponentExtrema"
 import { computeRatioFromMonzo } from "./ratioFromMonzo"
 import { computeMonzoSlicedToPrimeIndex } from "./slicedMonzo"
+import { sumMonzos } from "./sumMonzos"
 import { computeSuperMonzo } from "./superMonzo"
 import { Monzo } from "./types"
 

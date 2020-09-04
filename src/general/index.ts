@@ -79,7 +79,6 @@ import {
     ceil,
     Combination,
     Combinations,
-    sumMonzos,
     computeCombinations,
     computeCopfr,
     computeDistributions,
@@ -133,6 +132,7 @@ import {
     Sopfr,
     sqrt,
     sum,
+    sumMonzos,
     THREE_PRIME_INDEX,
 } from "./math"
 import {

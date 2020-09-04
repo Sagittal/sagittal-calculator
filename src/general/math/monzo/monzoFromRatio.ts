@@ -1,7 +1,7 @@
 import { Exponent, Prime, Ratio } from "../types"
-import { sumMonzos } from "./sumMonzos"
 import { invertMonzo } from "./invertMonzo"
 import { computeMonzoFromInteger } from "./monzoFromInteger"
+import { sumMonzos } from "./sumMonzos"
 import { Monzo } from "./types"
 
 const computeMonzoFromRatio = (ratio: Ratio): Monzo => {
