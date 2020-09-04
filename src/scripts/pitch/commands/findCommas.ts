@@ -2,7 +2,12 @@ import { program } from "commander"
 import { CommandFlag, LogTarget, saveLog } from "../../../general"
 import { addMaybeSagittalSymbol } from "../addMaybeSagittalSymbol"
 import { computeCommas } from "../commas"
-import { PITCH_SCRIPT_GROUP } from "../constants"
+import {
+    DEFAULT_MAX_FIVE_ROUGH_COPFR,
+    DEFAULT_MAX_FIVE_ROUGH_SOPFR,
+    DEFAULT_MAX_PRIME_LIMIT,
+    PITCH_SCRIPT_GROUP,
+} from "../constants"
 import { pitchScriptGroupSettings } from "../globals"
 import { computeFindCommasTable } from "../io"
 import { applySharedPitchCommandSetup } from "./shared"
@@ -26,9 +31,9 @@ program
 
 applySharedPitchCommandSetup()
 
-const maxFiveRoughSopfr = program.maxFiveRoughSopfr || 61
-const maxFiveRoughCopfr = program.maxFiveRoughCopfr || 555 // A silly number, unlikely to come close
-const maxPrimeLimit = program.maxPrimeLimit || 47
+const maxFiveRoughSopfr = program.maxFiveRoughSopfr || DEFAULT_MAX_FIVE_ROUGH_SOPFR
+const maxFiveRoughCopfr = program.maxFiveRoughCopfr || DEFAULT_MAX_FIVE_ROUGH_COPFR
+const maxPrimeLimit = program.maxPrimeLimit || DEFAULT_MAX_PRIME_LIMIT
 
 const commas = computeCommas({
     ...pitchScriptGroupSettings,
