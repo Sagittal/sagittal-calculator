@@ -1,4 +1,4 @@
-import { Count, Resolution, Span } from "../../../../../../src/general"
+import { Count, Ed, Window } from "../../../../../../src/general"
 import { Scope } from "../../../../../../src/scripts/lfc/bestMetric"
 import { scopesToSearch, solverStatus } from "../../../../../../src/scripts/lfc/globals"
 import { Chunk, searchScopes } from "../../../../../../src/scripts/lfc/solver"
@@ -11,8 +11,8 @@ describe("search scopes", () => {
                 [ Parameter.SUM ]: true,
                 [ Parameter.A_AS_COEFFICIENT ]: {
                     center: 2 as ParameterValue,
-                    resolution: 2 as Resolution<ParameterValue>,
-                    span: 0.1 as Span<ParameterValue>,
+                    ed: 2 as Ed<ParameterValue>,
+                    window: 0.1 as Window<ParameterValue>,
                 },
             },
         ] as Scope

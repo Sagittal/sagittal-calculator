@@ -1,4 +1,4 @@
-import { Exponent, Max, Min, Prime } from "../../../../../../../src/general"
+import { Exponent, Integer, Max, Min, Prime } from "../../../../../../../src/general"
 import { Denominator } from "../../../../../../../src/general/math"
 import { N2D3P9 } from "../../../../../../../src/sagittal/commaEvaluation/n2d3p9"
 import { computeMaxDenominatorPrimeExponentGivenMaxN2D3P3 } from "../../../../../../../src/sagittal/commaEvaluation/n2d3p9/primeExponentExtremas/denominator"
@@ -14,7 +14,7 @@ describe("computeMaxDenominatorPrimeExponentGivenMaxN2D3P3", () => {
 
         const actual = computeMaxDenominatorPrimeExponentGivenMaxN2D3P3(denominatorPrime, maxN2D3P9)
 
-        const expected = 2 as Max<Exponent<Prime<Denominator>>>
+        const expected = 2 as Max<Integer & Exponent<Prime<Denominator>>>
         expect(actual).toBe(expected)
     })
 
@@ -49,14 +49,14 @@ describe("computeMaxDenominatorPrimeExponentGivenMaxN2D3P3", () => {
         expect(minN2D3P9.computeMinN2D3P9ForCandidateMaxDenominatorPrimeExponentGivenMaxN2D3P9).toHaveBeenCalledWith({
             sortedNumeratorPossibilitiesForDenominatorPrimeGivenMaxN2D3P9,
             denominatorPrime,
-            candidateMaxDenominatorPrimeExponentGivenMaxN2D3P9: 1 as Max<Exponent<Prime<Denominator>>>,
+            candidateMaxDenominatorPrimeExponentGivenMaxN2D3P9: 1 as Max<Integer & Exponent<Prime<Denominator>>>,
         })
         expect(minN2D3P9.computeMinN2D3P9ForCandidateMaxDenominatorPrimeExponentGivenMaxN2D3P9).toHaveBeenCalledWith({
             sortedNumeratorPossibilitiesForDenominatorPrimeGivenMaxN2D3P9,
             denominatorPrime,
-            candidateMaxDenominatorPrimeExponentGivenMaxN2D3P9: 2 as Max<Exponent<Prime<Denominator>>>,
+            candidateMaxDenominatorPrimeExponentGivenMaxN2D3P9: 2 as Max<Integer & Exponent<Prime<Denominator>>>,
         })
-        const expected = 2 as Max<Exponent<Prime<Denominator>>>
+        const expected = 2 as Max<Integer & Exponent<Prime<Denominator>>>
         expect(actual).toBe(expected)
     })
 })

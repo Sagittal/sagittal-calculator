@@ -17,10 +17,15 @@ type Sum<T extends number | void = void> =
     & { _SumBrand: "Sum" }
     & (T extends void ? {} : T & { _SumOfBrand: T })
 
-// These are more just like labels, not changing the fundamental numeric nature of the quantity
-type Span<T extends number = number> = T & { _SpanBrand: "Span" }
-type Unit<T extends number = number> = T & { _UnitBrand: "Unit" }
-type Resolution<T extends number = number> = T & { _ResolutionBrand: "Resolution" }
+type Step<EdCount extends number | void = void, T extends number = Integer> =
+    T
+    & { _StepBrand: "Step", _StepOfEdBrand: EdCount }
+type Ed<WindowSize extends number | void = void, T extends number = Integer> =
+    T
+    & { _EdBrand: "Ed", _WindowSizeBrand: WindowSize }
+type Window<WindowSize extends number | unknown = unknown, T extends number = Integer> =
+    T
+    & { _WindowBrand: "Window", _WindowSizeBrand: WindowSize }
 
 type Name<T = void> = Io & { _NameBrand: "Name" } & (T extends void ? {} : { _NameOfBrand: T })
 
@@ -37,9 +42,9 @@ export {
     Count,
     Sum,
     Id,
-    Span,
-    Unit,
-    Resolution,
+    Window,
+    Step,
+    Ed,
     Name,
     Extrema,
     Ms,

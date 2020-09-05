@@ -1,7 +1,7 @@
 import {
     Exponent,
     FIVE_PRIME_INDEX,
-    Index,
+    Index, Integer,
     Max,
     Numerator,
     Prime,
@@ -14,7 +14,7 @@ import { INITIAL_MAX_NUMERATOR_PRIME_EXPONENTS_FOR_TWO_AND_THREE } from "./const
 
 const computeMaxNumeratorPrimeExponentsGivenMaxN2D3P9 = (
     maxN2D3P9: Max<N2D3P9>,
-): Array<Max<Exponent<Prime<Numerator>>>> => {
+): Array<Max<Integer & Exponent<Prime<Numerator>>>> => {
     let numeratorPrimeIndex = FIVE_PRIME_INDEX
     const maxNumeratorPrimeExponentsGivenMaxN2D3P9 =
         shallowClone(INITIAL_MAX_NUMERATOR_PRIME_EXPONENTS_FOR_TWO_AND_THREE)

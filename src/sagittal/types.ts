@@ -11,7 +11,7 @@ import { ApotomeSlope, N2D3P9 } from "./commaEvaluation"
 //  whereas Analyzed would just extend the object
 //  - I want to be sensitive to the issue of the type names reading in a consistent direction
 //  relative to the variable names, i.e. in the opposite order
-//  like how primeExponentExtremas: Array<Extrema<Exponent<Prime>>>
+//  like how primeExponentExtremas: Array<Extrema<Integer & Exponent<Prime>>>
 //  so you'd have an analyzedRationalPitch, which would be a Pitch<Ji<Analyzed>> by that pattern
 //  but I'm sure you can see how that doesn't really make sense!
 //  which maybe just means that the variable name should be jiPitchAnalyzed: Analyzed<Pitch<Ji>>

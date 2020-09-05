@@ -1,4 +1,4 @@
-import { Index, Unit } from "../../../../general"
+import { Index, Step } from "../../../../general"
 import { Parameter, ParameterValue, Submetric } from "../../sumOfSquares"
 import { DynamicParameterScope, SubmetricScope } from "../types"
 import { computeParameterValues } from "./parameterValues"
@@ -12,10 +12,10 @@ const computeSubmetricDynamicParameters = (
 
     const submetricScopeEntries = Object.entries(submetricScope) as Array<[Parameter, DynamicParameterScope]>
     submetricScopeEntries.forEach(([parameter, parameterScope]: [Parameter, DynamicParameterScope]) => {
-        const { resolution, span } = parameterScope
-        if (typeof parameterScope === "object" && resolution && span && resolution > 1) {
+        const { ed, window } = parameterScope
+        if (typeof parameterScope === "object" && ed && window && ed > 1) {
             const values = computeParameterValues(parameterScope)
-            const unit = span / (resolution - 1) as Unit<ParameterValue>
+            const unit = window / (ed - 1) as Step<ParameterValue>
             submetricDynamicParameters.push({ submetricIndex, parameter, values, unit })
         }
     })

@@ -71,7 +71,7 @@ describe("computeLocalMinima", () => {
         expect(actual).toEqual(expected)
     })
 
-    it("returns an empty array if it is an area surrounded by another area (this one I'm less sure about, but the issue might be precluded if we used a resolution of 2)", () => {
+    it("returns an empty array if it is an area surrounded by another area (this one I'm less sure about, but the issue might be precluded if we used a ED of 2)", () => {
         const sumsOfSquares: SumsOfSquares = [
             [
                 [0.004 as SumOfSquares, 0.004 as SumOfSquares, 0.004 as SumOfSquares],

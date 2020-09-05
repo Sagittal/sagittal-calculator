@@ -1,4 +1,4 @@
-import { Index, Resolution, Span, Unit } from "../../../../../src/general"
+import { Index, Ed, Window, Step } from "../../../../../src/general"
 import { Scope } from "../../../../../src/scripts/lfc/bestMetric"
 import { DynamicParameter, SamplePoint } from "../../../../../src/scripts/lfc/bestMetric/scopeToSamples"
 import { computeNextScope } from "../../../../../src/scripts/lfc/perfecter/nextScope"
@@ -12,43 +12,43 @@ describe("computeNextScope", () => {
                 submetricIndex: 0 as Index<Submetric>,
                 parameter: Parameter.J_AS_COEFFICIENT,
                 values: [0, 0.1, 0.2, 0.3, 0.4, 0.5] as ParameterValue[],
-                unit: 0.1 as Unit<ParameterValue>,
+                unit: 0.1 as Step<ParameterValue>,
             },
             {
                 submetricIndex: 0 as Index<Submetric>,
                 parameter: Parameter.W,
                 values: [0, 0.5, 1] as ParameterValue[],
-                unit: 0.5 as Unit<ParameterValue>,
+                unit: 0.5 as Step<ParameterValue>,
             },
             {
                 submetricIndex: 1 as Index<Submetric>,
                 parameter: Parameter.Y,
                 values: [2, 2.02, 2.04, 2.06, 2.08, 2.1] as ParameterValue[],
-                unit: 0.02 as Unit<ParameterValue>,
+                unit: 0.02 as Step<ParameterValue>,
             },
         ]
         const scope: Scope = [
             {
                 [ Parameter.J_AS_COEFFICIENT ]: {
                     center: 0.1 as ParameterValue,
-                    span: 0.05 as Span<ParameterValue>,
-                    resolution: 5 as Resolution<ParameterValue>,
+                    window: 0.05 as Window<ParameterValue>,
+                    ed: 5 as Ed<ParameterValue>,
                 },
-                // haha... it just doesn't care what your previous resolution was.
+                // haha... it just doesn't care what your previous ED was.
                 // well, that's why I had the top-level script point to the same constant that this module uses,
                 // to generally prevent that.
                 [ Parameter.W ]: {
                     center: 0 as ParameterValue,
-                    span: 0.25 as Span<ParameterValue>,
-                    resolution: 5 as Resolution<ParameterValue>,
+                    window: 0.25 as Window<ParameterValue>,
+                    ed: 5 as Ed<ParameterValue>,
                 },
                 [ Parameter.A_AS_COEFFICIENT ]: 2 as ParameterValue,
             },
             {
                 [ Parameter.Y ]: {
                     center: 2.06 as ParameterValue,
-                    span: 0.01 as Span<ParameterValue>,
-                    resolution: 5 as Resolution<ParameterValue>,
+                    window: 0.01 as Window<ParameterValue>,
+                    ed: 5 as Ed<ParameterValue>,
                 },
                 [ Parameter.COUNT ]: true,
             },
@@ -60,21 +60,21 @@ describe("computeNextScope", () => {
             {
                 [ Parameter.J_AS_COEFFICIENT ]: {
                     center: 0.1 as ParameterValue,
-                    span: 0.06666666666666667 as Span<ParameterValue>,
-                    resolution: 2 as Resolution<ParameterValue>,
+                    window: 0.06666666666666667 as Window<ParameterValue>,
+                    ed: 2 as Ed<ParameterValue>,
                 },
                 [ Parameter.W ]: {
                     center: 0 as ParameterValue,
-                    span: 0.3333333333333333 as Span<ParameterValue>,
-                    resolution: 4 as Resolution<ParameterValue>,
+                    window: 0.3333333333333333 as Window<ParameterValue>,
+                    ed: 4 as Ed<ParameterValue>,
                 },
                 [ Parameter.A_AS_COEFFICIENT ]: 2 as ParameterValue,
             },
             {
                 [ Parameter.Y ]: {
                     center: 2.06 as ParameterValue,
-                    span: 0.013333333333333332 as Span<ParameterValue>,
-                    resolution: 2 as Resolution<ParameterValue>,
+                    window: 0.013333333333333332 as Window<ParameterValue>,
+                    ed: 2 as Ed<ParameterValue>,
                 },
                 [ Parameter.COUNT ]: true,
             },

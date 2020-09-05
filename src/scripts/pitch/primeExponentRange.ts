@@ -2,7 +2,7 @@ import {
     computeRange,
     Copfr,
     Exponent,
-    Extrema,
+    Extrema, Integer,
     integerDivide,
     Max,
     max,
@@ -19,7 +19,7 @@ import { PrimeExponentRangeOptions } from "./types"
 const computePrimeExponentRange = (
     prime: Prime,
     options: PrimeExponentRangeOptions = {},
-): Range<Exponent<Prime>> => {
+): Range<Integer & Exponent<Prime>> => {
     const {
         maxFiveRoughSopfr = Infinity as Sopfr<5>,
         maxFiveRoughCopfr = Infinity as Copfr<5>,
@@ -30,29 +30,32 @@ const computePrimeExponentRange = (
         throw new Error("The range must be limited somehow.")
     }
 
-    const [minPrimeExponentGivenMaxN2D3P9, maxPrimeExponentGivenMaxN2D3P9]: Extrema<Exponent<Prime>> =
-    primeExponentExtremaGivenMaxN2D3P9 || [-Infinity, Infinity] as Extrema<Exponent<Prime>>
+    const [minPrimeExponentGivenMaxN2D3P9, maxPrimeExponentGivenMaxN2D3P9]: Extrema<Integer & Exponent<Prime>> =
+    primeExponentExtremaGivenMaxN2D3P9 || [-Infinity, Infinity] as Extrema<Integer & Exponent<Prime>>
 
-    const maxPrimeExponentGivenMaxSopfr: Max<Exponent<Prime>> =
-        integerDivide(maxFiveRoughSopfr, prime) as Max<Exponent<Prime>>
-    const maxPrimeExponentGivenMaxCopfr: Max<Exponent<Prime>> = maxFiveRoughCopfr as number as Max<Exponent<Prime>>
+    const maxPrimeExponentGivenMaxSopfr: Max<Integer & Exponent<Prime>> =
+        integerDivide(maxFiveRoughSopfr, prime) as number as Max<Integer & Exponent<Prime>>
+    const maxPrimeExponentGivenMaxCopfr: Max<Integer & Exponent<Prime>> =
+        maxFiveRoughCopfr as number as Max<Integer & Exponent<Prime>>
 
-    const minPrimeExponentGivenMaxSopfr: Min<Exponent<Prime>> = -maxPrimeExponentGivenMaxSopfr as Min<Exponent<Prime>>
-    const minPrimeExponentGivenMaxCopfr: Min<Exponent<Prime>> = -maxFiveRoughCopfr as Min<Exponent<Prime>>
+    const minPrimeExponentGivenMaxSopfr: Min<Integer & Exponent<Prime>> =
+        -maxPrimeExponentGivenMaxSopfr as Min<Integer & Exponent<Prime>>
+    const minPrimeExponentGivenMaxCopfr: Min<Integer & Exponent<Prime>> =
+        -maxFiveRoughCopfr as Min<Integer & Exponent<Prime>>
 
-    const maxPrimeExponent: Min<Max<Exponent<Prime>>> = min(
+    const maxPrimeExponent: Min<Max<Integer & Exponent<Prime>>> = min(
         maxPrimeExponentGivenMaxSopfr,
         maxPrimeExponentGivenMaxN2D3P9,
         maxPrimeExponentGivenMaxCopfr,
     )
 
-    const minPrimeExponent: Max<Min<Exponent<Prime>>> = max(
+    const minPrimeExponent: Integer & Max<Min<Integer & Exponent<Prime>>> = max(
         minPrimeExponentGivenMaxSopfr,
         minPrimeExponentGivenMaxN2D3P9,
         minPrimeExponentGivenMaxCopfr,
     )
 
-    return computeRange(minPrimeExponent, sum(maxPrimeExponent, ONE)) as Range<Exponent<Prime>>
+    return computeRange(minPrimeExponent, sum(maxPrimeExponent, ONE)) as Range<Integer & Exponent<Prime>>
 }
 
 export {

@@ -1,4 +1,4 @@
-import { Index, Unit } from "../../../../../../src/general"
+import { Index, Step } from "../../../../../../src/general"
 import { DynamicParameter } from "../../../../../../src/scripts/lfc/bestMetric/scopeToSamples"
 import { computeDynamicParameterValueIndices } from "../../../../../../src/scripts/lfc/bestMetric/scopeToSamples/dynamicParameterValueIndices"
 import { Parameter, ParameterValue, Submetric } from "../../../../../../src/scripts/lfc/sumOfSquares"
@@ -13,7 +13,7 @@ describe("computeDynamicParameterValueIndices", () => {
                 submetricIndex: 0 as Index<Submetric>,
                 parameter: Parameter.Y,
                 values: [1.5, 1.2, 0.9] as ParameterValue[],
-                unit: 0 as Unit<ParameterValue>,
+                unit: 0 as Step<ParameterValue>,
             },
 
             // pick from me for the first index of the returned array
@@ -21,7 +21,7 @@ describe("computeDynamicParameterValueIndices", () => {
                 submetricIndex: 1 as Index<Submetric>,
                 parameter: Parameter.Y,
                 values: [0.9, 0.95, 1.0, 1.05, 1.1 /* pick my index as the value */] as ParameterValue[],
-                unit: 0 as Unit<ParameterValue>,
+                unit: 0 as Step<ParameterValue>,
             },
 
             // pick from me for the second index of the returned array
@@ -29,7 +29,7 @@ describe("computeDynamicParameterValueIndices", () => {
                 submetricIndex: 1 as Index<Submetric>,
                 parameter: Parameter.A_AS_COEFFICIENT,
                 values: [0.6, 0.63, 0.66, 0.69 /*pick my index as the value*/, 0.72] as ParameterValue[],
-                unit: 0 as Unit<ParameterValue>,
+                unit: 0 as Step<ParameterValue>,
             },
         ]
         const submetric: Submetric = {

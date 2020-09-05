@@ -1,6 +1,6 @@
 import {
     computeTrimmedArray,
-    Exponent,
+    Exponent, Integer,
     isUndefined,
     Max,
     Monzo,
@@ -45,7 +45,7 @@ const computePopularRatios = (maxN2D3P9: Max<N2D3P9>): Array<Ranked<PopularRatio
         }
 
         // otherwise increment the term at this not-yet-maxed index toward its max
-        monzo[ indexToTick ] = monzo[ indexToTick ] + 1 as Exponent<Prime>
+        monzo[ indexToTick ] = monzo[ indexToTick ] + 1 as Integer & Exponent<Prime>
 
         // and reset the term at every other index before this one to its min,
         // so we can repeat everything we've done so far but for this index being one higher than it was previously

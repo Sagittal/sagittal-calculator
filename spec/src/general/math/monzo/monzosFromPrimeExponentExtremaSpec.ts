@@ -1,4 +1,4 @@
-import { computeMonzosFromPrimeExponentExtremas, Exponent, Extrema, Prime } from "../../../../../src/general"
+import { computeMonzosFromPrimeExponentExtremas, Exponent, Extrema, Integer, Prime } from "../../../../../src/general"
 
 describe("computeMonzosFromPrimeExponentExtremas", () => {
     it("returns the monzos that are possible given the corresponding prime exponent extremas", () => {
@@ -7,7 +7,7 @@ describe("computeMonzosFromPrimeExponentExtremas", () => {
             [-2, -1],
             [0, 0],
             [4, 6],
-        ] as Array<Extrema<Exponent<Prime>>>
+        ] as Array<Extrema<Integer & Exponent<Prime>>>
 
         const actual = computeMonzosFromPrimeExponentExtremas(primeExponentExtremas)
 
@@ -38,7 +38,7 @@ describe("computeMonzosFromPrimeExponentExtremas", () => {
         const primeExponentExtremas = [
             [1, 1],
             [-1, 1],
-        ] as Array<Extrema<Exponent<Prime>>>
+        ] as Array<Extrema<Integer & Exponent<Prime>>>
 
         const actual = computeMonzosFromPrimeExponentExtremas(primeExponentExtremas)
 

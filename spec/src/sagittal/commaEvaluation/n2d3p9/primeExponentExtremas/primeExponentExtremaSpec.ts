@@ -1,4 +1,4 @@
-import { Exponent, Extrema, Max, Prime } from "../../../../../../src/general"
+import { Exponent, Extrema, Integer, Max, Prime } from "../../../../../../src/general"
 import { N2D3P9 } from "../../../../../../src/sagittal"
 import { computePrimeExponentExtremaGivenMaxN2D3P3 } from "../../../../../../src/sagittal/commaEvaluation/n2d3p9/primeExponentExtremas/primeExponentExtrema"
 
@@ -9,7 +9,7 @@ describe("computePrimeExponentExtremaGivenMaxN2D3P3", () => {
 
         const actual = computePrimeExponentExtremaGivenMaxN2D3P3(prime, maxN2D3P9)
 
-        const expected = [-1, 2] as Extrema<Exponent<Prime>>
+        const expected = [-1, 2] as Extrema<Integer & Exponent<Prime>>
         expect(actual).toEqual(expected)
     })
 })

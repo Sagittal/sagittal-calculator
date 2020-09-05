@@ -1,14 +1,14 @@
-import { integerDivide, Resolution, Span } from "../../../../../../src/general"
+import { integerDivide, Ed, Window } from "../../../../../../src/general"
 import { DynamicParameterScope } from "../../../../../../src/scripts/lfc/bestMetric"
 import { computeParameterValues } from "../../../../../../src/scripts/lfc/bestMetric/scopeToSamples/parameterValues"
 import { ParameterValue } from "../../../../../../src/scripts/lfc/sumOfSquares"
 
 describe("computeParameterValues", () => {
-    it("given a parameter scope (a center, a span, and a resolution), will return a block of points to sample", () => {
+    it("given a parameter scope (a center, a window, and a ED), will return a block of points to sample", () => {
         const parameterScope: DynamicParameterScope = {
             center: 1 as ParameterValue,
-            span: 0.5 as Span<ParameterValue>,
-            resolution: 5 as Resolution<ParameterValue>,
+            window: 0.5 as Window<ParameterValue>,
+            ed: 5 as Ed<ParameterValue>,
         }
 
         const actual: ParameterValue[] = computeParameterValues(parameterScope)
@@ -21,16 +21,16 @@ describe("computeParameterValues", () => {
             1.25,
         ] as ParameterValue[]
         expect(actual).toEqual(expected)
-        expect(actual.length).toBe(parameterScope.resolution as number)
-        expect(actual[ actual.length - 1 ] - actual[ 0 ]).toBe(parameterScope.span as number)
+        expect(actual.length).toBe(parameterScope.ed as number)
+        expect(actual[ actual.length - 1 ] - actual[ 0 ]).toBe(parameterScope.window as number)
         expect(actual[ integerDivide(actual.length, 2) ] as number).toBe(parameterScope.center as number)
     })
 
-    it("works when the resolution is even", () => {
+    it("works when the ED is even", () => {
         const parameterScope: DynamicParameterScope = {
             center: 5 as ParameterValue,
-            span: 1 as Span<ParameterValue>,
-            resolution: 4 as Resolution<ParameterValue>,
+            window: 1 as Window<ParameterValue>,
+            ed: 4 as Ed<ParameterValue>,
         }
 
         const actual = computeParameterValues(parameterScope)
@@ -42,8 +42,8 @@ describe("computeParameterValues", () => {
             5.5,
         ] as ParameterValue[]
         expect(actual).toEqual(expected)
-        expect(actual.length).toBe(parameterScope.resolution as number)
-        expect(actual[ actual.length - 1 ] - actual[ 0 ]).toBe(parameterScope.span as number)
+        expect(actual.length).toBe(parameterScope.ed as number)
+        expect(actual[ actual.length - 1 ] - actual[ 0 ]).toBe(parameterScope.window as number)
         expect(
             (
                 actual[ integerDivide(actual.length, 2) ] +
@@ -54,10 +54,10 @@ describe("computeParameterValues", () => {
         ).toBe(parameterScope.center as number)
     })
 
-    it("works when the resolution is one", () => {
+    it("works when the ED is one", () => {
         const parameterScope: DynamicParameterScope = {
             center: 5 as ParameterValue,
-            resolution: 1 as Resolution<ParameterValue>,
+            ed: 1 as Ed<ParameterValue>,
         }
 
         const actual = computeParameterValues(parameterScope)
@@ -66,19 +66,19 @@ describe("computeParameterValues", () => {
             5,
         ] as ParameterValue[]
         expect(actual).toEqual(expected)
-        expect(actual.length).toBe(parameterScope.resolution as number)
+        expect(actual.length).toBe(parameterScope.ed as number)
         expect(actual[ integerDivide(actual.length, 2) ] as number).toBe(parameterScope.center as number)
     })
 
-    it("works when the resolution is zero", () => {
+    it("works when the ED is zero", () => {
         const parameterScope: DynamicParameterScope = {
-            resolution: 0 as Resolution<ParameterValue>,
+            ed: 0 as Ed<ParameterValue>,
         }
 
         const actual = computeParameterValues(parameterScope)
 
         const expected: ParameterValue[] = []
         expect(actual).toEqual(expected)
-        expect(actual.length).toBe(parameterScope.resolution as number)
+        expect(actual.length).toBe(parameterScope.ed as number)
     })
 })

@@ -56,7 +56,7 @@ enum Parameter {
     // reorient the ratio to use as its numerator the greater of the two results (the numinator)
     // of calling the submetric on the original ratio's numerator and denominator
     USE_NUMINATOR = "useNuminator",
-    // Dave's trick where 5's get a half-resolution
+    // Dave's trick where 5's get a half-count
     MODIFIED_COUNT = "modifiedCount",
     // use the prime index function instead of using the primes directly
     USE_PRIME_INDEX = "usePrimeIndex",

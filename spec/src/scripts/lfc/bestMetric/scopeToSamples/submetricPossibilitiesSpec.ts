@@ -1,20 +1,20 @@
-import { Resolution, Span } from "../../../../../../src/general"
+import { Ed, Window } from "../../../../../../src/general"
 import { SubmetricScope } from "../../../../../../src/scripts/lfc/bestMetric"
 import { computeSubmetricPossibilities } from "../../../../../../src/scripts/lfc/bestMetric/scopeToSamples/submetricPossibilities"
 import { Parameter, ParameterValue } from "../../../../../../src/scripts/lfc/sumOfSquares"
 
 describe("computeSubmetricPossibilities", () => {
-    it("given this submetric's scope (centers, spans, and counts for each of its parameters) to compute each of its parameters' sample points, returns an array of all the possible combinations of those parameter sample points", () => {
+    it("given this submetric's scope (centers, windows, and counts for each of its parameters) to compute each of its parameters' sample points, returns an array of all the possible combinations of those parameter sample points", () => {
         const submetricScope = {
             [ Parameter.A_AS_COEFFICIENT ]: {
                 center: 1 as ParameterValue,
-                span: 0.5 as Span<ParameterValue>,
-                resolution: 5 as Resolution<ParameterValue>,
+                window: 0.5 as Window<ParameterValue>,
+                ed: 5 as Ed<ParameterValue>,
             },
             [ Parameter.W ]: {
                 center: 0.7 as ParameterValue,
-                span: 0.2 as Span<ParameterValue>,
-                resolution: 3 as Resolution<ParameterValue>,
+                window: 0.2 as Window<ParameterValue>,
+                ed: 3 as Ed<ParameterValue>,
             },
         } as SubmetricScope
 
@@ -40,17 +40,17 @@ describe("computeSubmetricPossibilities", () => {
         expect(actual).toEqual(expected)
     })
 
-    it("leaves a parameter out if it has a 0 resolution", () => {
+    it("leaves a parameter out if it has a 0 ED", () => {
         const submetricScope = {
             [ Parameter.A_AS_COEFFICIENT ]: {
                 center: 1 as ParameterValue,
-                span: 0.5 as Span<ParameterValue>,
-                resolution: 5 as Resolution<ParameterValue>,
+                window: 0.5 as Window<ParameterValue>,
+                ed: 5 as Ed<ParameterValue>,
             },
             [ Parameter.W ]: {
                 center: 0.7 as ParameterValue,
-                span: 0.2 as Span<ParameterValue>,
-                resolution: 0 as Resolution<ParameterValue>,
+                window: 0.2 as Window<ParameterValue>,
+                ed: 0 as Ed<ParameterValue>,
             },
         } as SubmetricScope
 
@@ -70,8 +70,8 @@ describe("computeSubmetricPossibilities", () => {
         const submetricScopes = {
             [ Parameter.A_AS_COEFFICIENT ]: {
                 center: 1 as ParameterValue,
-                span: 0.5 as Span<ParameterValue>,
-                resolution: 5 as Resolution<ParameterValue>,
+                window: 0.5 as Window<ParameterValue>,
+                ed: 5 as Ed<ParameterValue>,
             },
             [ Parameter.W ]: 0.7 as ParameterValue,
         } as SubmetricScope

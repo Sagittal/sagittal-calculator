@@ -13,11 +13,11 @@ const computeMonzoInZone = (threeSlicedMonzo: Monzo<Integer, 3>, zone: Zone) => 
     const monzo: Monzo = [0, ...threeSlicedMonzo] as Monzo
     let cents: Cents = computeCentsFromMonzo(monzo)
     while (cents > maxCents) {
-        monzo[ 0 ] = monzo[ 0 ] - 1 as Exponent<Prime>
+        monzo[ 0 ] = monzo[ 0 ] - 1 as Integer & Exponent<Prime>
         cents = computeCentsFromMonzo(monzo)
     }
     while (cents < minCents) {
-        monzo[ 0 ] = monzo[ 0 ] + 1 as Exponent<Prime>
+        monzo[ 0 ] = monzo[ 0 ] + 1 as Integer & Exponent<Prime>
         cents = computeCentsFromMonzo(monzo)
     }
 

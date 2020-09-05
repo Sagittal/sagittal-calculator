@@ -1,12 +1,13 @@
-import { Max, Min, Resolution, Span } from "../../../../../../src/general"
+import { Max, Min, Ed, Window } from "../../../../../../src/general"
+import { DynamicParameterScope } from "../../../../../../src/scripts/lfc/bestMetric"
 import { computeDynamicParameterScope } from "../../../../../../src/scripts/lfc/bestMetric/scopeToSamples"
 import { ParameterValue } from "../../../../../../src/scripts/lfc/sumOfSquares"
 
 describe("computeDynamicParameterScope", () => {
-    const expectedDynamicParameterScope = {
+    const expectedDynamicParameterScope: DynamicParameterScope = {
         center: -1 as ParameterValue,
-        span: 2 as Span<ParameterValue>,
-        resolution: 20 as Resolution<ParameterValue>,
+        window: 2 as Window<ParameterValue>,
+        ed: 20 as Ed<ParameterValue>,
     }
 
     it("given a min and a max computes the correct dynamic parameter scope", () => {
@@ -18,29 +19,29 @@ describe("computeDynamicParameterScope", () => {
         expect(actual).toEqual(expectedDynamicParameterScope)
     })
 
-    it("given a center and a span computes the correct dynamic parameter scope", () => {
+    it("given a center and a window computes the correct dynamic parameter scope", () => {
         const center = -1 as ParameterValue
-        const span = 2 as Span<ParameterValue>
+        const window = 2 as Window<ParameterValue>
 
-        const actual = computeDynamicParameterScope({ center, span })
+        const actual = computeDynamicParameterScope({ center, window })
 
         expect(actual).toEqual(expectedDynamicParameterScope)
     })
 
-    it("given a min and a span computes the correct dynamic parameter scope", () => {
+    it("given a min and a window computes the correct dynamic parameter scope", () => {
         const min = -2 as Min<ParameterValue>
-        const span = 2 as Span<ParameterValue>
+        const window = 2 as Window<ParameterValue>
 
-        const actual = computeDynamicParameterScope({ min, span })
+        const actual = computeDynamicParameterScope({ min, window })
 
         expect(actual).toEqual(expectedDynamicParameterScope)
     })
 
-    it("given a max and a span computes the correct dynamic parameter scope", () => {
+    it("given a max and a window computes the correct dynamic parameter scope", () => {
         const max = 0 as Max<ParameterValue>
-        const span = 2 as Span<ParameterValue>
+        const window = 2 as Window<ParameterValue>
 
-        const actual = computeDynamicParameterScope({ max, span })
+        const actual = computeDynamicParameterScope({ max, window })
 
         expect(actual).toEqual(expectedDynamicParameterScope)
     })
@@ -66,38 +67,38 @@ describe("computeDynamicParameterScope", () => {
     it("given only a min, errors", () => {
         const min = -2 as Min<ParameterValue>
 
-        expect(() => computeDynamicParameterScope({ min })).toThrowError("Exactly 2 options should be provided from min, max, center, and span in order to compute a dynamic parameter scope; 1 provided (min -2)")
+        expect(() => computeDynamicParameterScope({ min })).toThrowError("Exactly 2 options should be provided from min, max, center, and window in order to compute a dynamic parameter scope; 1 provided (min -2)")
     })
 
     it("given only a max, errors", () => {
         const max = 0 as Max<ParameterValue>
 
-        expect(() => computeDynamicParameterScope({ max })).toThrowError("Exactly 2 options should be provided from min, max, center, and span in order to compute a dynamic parameter scope; 1 provided (max 0)")
+        expect(() => computeDynamicParameterScope({ max })).toThrowError("Exactly 2 options should be provided from min, max, center, and window in order to compute a dynamic parameter scope; 1 provided (max 0)")
     })
 
     it("given only a max, errors", () => {
-        const span = 2 as Span<ParameterValue>
+        const window = 2 as Window<ParameterValue>
 
-        expect(() => computeDynamicParameterScope({ span })).toThrowError("Exactly 2 options should be provided from min, max, center, and span in order to compute a dynamic parameter scope; 1 provided (span 2)")
+        expect(() => computeDynamicParameterScope({ window })).toThrowError("Exactly 2 options should be provided from min, max, center, and window in order to compute a dynamic parameter scope; 1 provided (window 2)")
     })
 
     it("given only a max, errors", () => {
         const center = -1 as ParameterValue
 
-        expect(() => computeDynamicParameterScope({ center })).toThrowError("Exactly 2 options should be provided from min, max, center, and span in order to compute a dynamic parameter scope; 1 provided (center -1)")
+        expect(() => computeDynamicParameterScope({ center })).toThrowError("Exactly 2 options should be provided from min, max, center, and window in order to compute a dynamic parameter scope; 1 provided (center -1)")
     })
 
     it("given more than two options, errors", () => {
         const min = -2 as Min<ParameterValue>
         const max = 0 as Max<ParameterValue>
         const center = -1 as ParameterValue
-        const span = 2 as Span<ParameterValue>
+        const window = 2 as Window<ParameterValue>
 
         expect(() => computeDynamicParameterScope({
             min,
             max,
             center,
-            span,
-        })).toThrowError("Exactly 2 options should be provided from min, max, center, and span in order to compute a dynamic parameter scope; 4 provided (min -2, max 0, center -1, span 2)")
+            window,
+        })).toThrowError("Exactly 2 options should be provided from min, max, center, and window in order to compute a dynamic parameter scope; 4 provided (min -2, max 0, center -1, window 2)")
     })
 })

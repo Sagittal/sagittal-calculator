@@ -1,4 +1,4 @@
-import { Denominator, Exponent, Max, Prime } from "../../../../../general"
+import { Denominator, Exponent, Integer, Max, Prime } from "../../../../../general"
 import { N2D3P9 } from "../../types"
 import { computeMinN2D3P9ForCandidateMaxDenominatorPrimeExponentGivenMaxN2D3P9 } from "./minN2D3P9"
 import { computeSortedNumeratorPossibilitiesForDenominatorPrimeGivenMaxN2D3P9 } from "./sortedNumeratorPossibilities"
@@ -18,11 +18,11 @@ http://forum.sagittal.org/viewtopic.php?p=2295#p2295
 const computeMaxDenominatorPrimeExponentGivenMaxN2D3P3 = (
     denominatorPrime: Prime<Denominator>,
     maxN2D3P9: Max<N2D3P9>,
-): Max<Exponent<Prime<Denominator>>> => {
+): Max<Integer & Exponent<Prime<Denominator>>> => {
     const sortedNumeratorPossibilitiesForDenominatorPrimeGivenMaxN2D3P9 =
         computeSortedNumeratorPossibilitiesForDenominatorPrimeGivenMaxN2D3P9(denominatorPrime, maxN2D3P9)
 
-    let candidateMaxDenominatorPrimeExponentGivenMaxN2D3P9 = 1 as Max<Exponent<Prime<Denominator>>>
+    let candidateMaxDenominatorPrimeExponentGivenMaxN2D3P9 = 1 as Max<Integer & Exponent<Prime<Denominator>>>
     while (true) {
         const minN2D3P9ForCandidateMaxDenominatorPrimeExponentGivenMaxN2D3P9 =
             computeMinN2D3P9ForCandidateMaxDenominatorPrimeExponentGivenMaxN2D3P9({
@@ -33,15 +33,15 @@ const computeMaxDenominatorPrimeExponentGivenMaxN2D3P3 = (
 
         if (minN2D3P9ForCandidateMaxDenominatorPrimeExponentGivenMaxN2D3P9 > maxN2D3P9) {
             candidateMaxDenominatorPrimeExponentGivenMaxN2D3P9 =
-                candidateMaxDenominatorPrimeExponentGivenMaxN2D3P9 - 1 as Max<Exponent<Prime<Denominator>>>
+                candidateMaxDenominatorPrimeExponentGivenMaxN2D3P9 - 1 as Max<Integer & Exponent<Prime<Denominator>>>
             break
         } else {
             candidateMaxDenominatorPrimeExponentGivenMaxN2D3P9 =
-                candidateMaxDenominatorPrimeExponentGivenMaxN2D3P9 + 1 as Max<Exponent<Prime<Denominator>>>
+                candidateMaxDenominatorPrimeExponentGivenMaxN2D3P9 + 1 as Max<Integer & Exponent<Prime<Denominator>>>
         }
     }
 
-    return candidateMaxDenominatorPrimeExponentGivenMaxN2D3P9 as Max<Exponent<Prime<Denominator>>>
+    return candidateMaxDenominatorPrimeExponentGivenMaxN2D3P9 as Max<Integer & Exponent<Prime<Denominator>>>
 }
 
 export {

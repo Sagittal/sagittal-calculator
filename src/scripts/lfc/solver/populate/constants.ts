@@ -1,4 +1,4 @@
-import { Span } from "../../../../general"
+import { Window } from "../../../../general"
 import { computeDynamicParameterScope, ParameterScopes } from "../../bestMetric"
 import { Parameter, ParameterValue, Submetric } from "../../sumOfSquares"
 import { Chunk } from "../types"
@@ -7,49 +7,49 @@ import { Chunk } from "../types"
 const NO_USELESS_INITIAL_PARAMETER_SCOPES: ParameterScopes = {
     [ Parameter.WEIGHT_AS_POWER_EXPONENT ]: computeDynamicParameterScope({
         center: 0.875 as ParameterValue,
-        span: 1.75 as Span<ParameterValue>,
+        window: 1.75 as Window<ParameterValue>,
     }),
     [ Parameter.K_AS_COEFFICIENT ]: computeDynamicParameterScope({
         center: 0.5 as ParameterValue,
-        span: 1 as Span<ParameterValue>,
+        window: 1 as Window<ParameterValue>,
     }),
     [ Parameter.K_AS_POWER_EXPONENT ]: computeDynamicParameterScope({
         center: 1.375 as ParameterValue,
-        span: 2.25 as Span<ParameterValue>,
+        window: 2.25 as Window<ParameterValue>,
     }),
     [ Parameter.J_AS_POWER_EXPONENT ]: computeDynamicParameterScope({
         center: 1.125 as ParameterValue,
-        span: 1.25 as Span<ParameterValue>,
+        window: 1.25 as Window<ParameterValue>,
     }),
     // per forum discussion, lock it down http://forum.sagittal.org/viewtopic.php?p=2113#p2113
     [ Parameter.A_AS_LOGARITHM_BASE ]: 2 as ParameterValue,
     [ Parameter.A_AS_POWER_EXPONENT ]: computeDynamicParameterScope({
         center: 1.25 as ParameterValue,
-        span: 2.5 as Span<ParameterValue>,
+        window: 2.5 as Window<ParameterValue>,
     }),
     [ Parameter.W ]: computeDynamicParameterScope({
         center: -0.25 as ParameterValue,
-        span: 5.5 as Span<ParameterValue>,
+        window: 5.5 as Window<ParameterValue>,
     }),
     [ Parameter.B ]: computeDynamicParameterScope({
         center: -2.625 as ParameterValue,
-        span: 2.75 as Span<ParameterValue>,
+        window: 2.75 as Window<ParameterValue>,
     }),
     [ Parameter.X ]: computeDynamicParameterScope({
         center: -0.375 as ParameterValue,
-        span: 5.25 as Span<ParameterValue>,
+        window: 5.25 as Window<ParameterValue>,
     }),
     [ Parameter.U ]: computeDynamicParameterScope({
         center: -1.375 as ParameterValue,
-        span: 5.25 as Span<ParameterValue>,
+        window: 5.25 as Window<ParameterValue>,
     }),
     [ Parameter.Y ]: computeDynamicParameterScope({
         center: 0.875 as ParameterValue,
-        span: 0.75 as Span<ParameterValue>,
+        window: 0.75 as Window<ParameterValue>,
     }),
     [ Parameter.V ]: computeDynamicParameterScope({
         center: 0.875 as ParameterValue,
-        span: 0.75 as Span<ParameterValue>,
+        window: 0.75 as Window<ParameterValue>,
     }),
     [ Parameter.SUM ]: true,
     [ Parameter.COUNT ]: true,
@@ -60,67 +60,67 @@ const NO_USELESS_INITIAL_PARAMETER_SCOPES: ParameterScopes = {
 const INITIAL_PARAMETER_SCOPES: ParameterScopes = {
     [ Parameter.WEIGHT_AS_COEFFICIENT ]: computeDynamicParameterScope({
         center: 0.5 as ParameterValue,
-        span: 1 as Span<ParameterValue>,
+        window: 1 as Window<ParameterValue>,
     }),
     [ Parameter.WEIGHT_AS_LOGARITHM_BASE ]: 2 as ParameterValue,
     [ Parameter.WEIGHT_AS_POWER_EXPONENT ]: computeDynamicParameterScope({
         center: 0 as ParameterValue,
-        span: 6 as Span<ParameterValue>,
+        window: 6 as Window<ParameterValue>,
     }),
     [ Parameter.WEIGHT_AS_POWER_BASE ]: 2 as ParameterValue,
     [ Parameter.K_AS_COEFFICIENT ]: computeDynamicParameterScope({
         center: 0.5 as ParameterValue,
-        span: 1 as Span<ParameterValue>,
+        window: 1 as Window<ParameterValue>,
     }),
     [ Parameter.K_AS_LOGARITHM_BASE ]: 2 as ParameterValue,
     [ Parameter.K_AS_POWER_EXPONENT ]: computeDynamicParameterScope({
         center: 0 as ParameterValue,
-        span: 6 as Span<ParameterValue>,
+        window: 6 as Window<ParameterValue>,
     }),
     [ Parameter.K_AS_POWER_BASE ]: 2 as ParameterValue,
     [ Parameter.J_AS_COEFFICIENT ]: computeDynamicParameterScope({
         center: 0.5 as ParameterValue,
-        span: 1 as Span<ParameterValue>,
+        window: 1 as Window<ParameterValue>,
     }),
     [ Parameter.J_AS_LOGARITHM_BASE ]: 2 as ParameterValue,
     [ Parameter.J_AS_POWER_EXPONENT ]: computeDynamicParameterScope({
         center: 0 as ParameterValue,
-        span: 6 as Span<ParameterValue>,
+        window: 6 as Window<ParameterValue>,
     }),
     [ Parameter.J_AS_POWER_BASE ]: 2 as ParameterValue,
     [ Parameter.A_AS_COEFFICIENT ]: computeDynamicParameterScope({
         center: 0.5 as ParameterValue,
-        span: 1 as Span<ParameterValue>,
+        window: 1 as Window<ParameterValue>,
     }),
     [ Parameter.A_AS_LOGARITHM_BASE ]: 2 as ParameterValue,
     [ Parameter.A_AS_POWER_EXPONENT ]: computeDynamicParameterScope({
         center: 0 as ParameterValue,
-        span: 6 as Span<ParameterValue>,
+        window: 6 as Window<ParameterValue>,
     }),
     [ Parameter.A_AS_POWER_BASE ]: 2 as ParameterValue,
     [ Parameter.W ]: computeDynamicParameterScope({
         center: 0 as ParameterValue,
-        span: 6 as Span<ParameterValue>,
+        window: 6 as Window<ParameterValue>,
     }),
     [ Parameter.B ]: computeDynamicParameterScope({
         center: 0 as ParameterValue,
-        span: 6 as Span<ParameterValue>,
+        window: 6 as Window<ParameterValue>,
     }),
     [ Parameter.X ]: computeDynamicParameterScope({
         center: 0 as ParameterValue,
-        span: 6 as Span<ParameterValue>,
+        window: 6 as Window<ParameterValue>,
     }),
     [ Parameter.U ]: computeDynamicParameterScope({
         center: 0 as ParameterValue,
-        span: 6 as Span<ParameterValue>,
+        window: 6 as Window<ParameterValue>,
     }),
     [ Parameter.Y ]: computeDynamicParameterScope({
         center: 0 as ParameterValue,
-        span: 6 as Span<ParameterValue>,
+        window: 6 as Window<ParameterValue>,
     }),
     [ Parameter.V ]: computeDynamicParameterScope({
         center: 0 as ParameterValue,
-        span: 6 as Span<ParameterValue>,
+        window: 6 as Window<ParameterValue>,
     }),
     [ Parameter.USE_NUMINATOR ]: true,
     [ Parameter.MODIFIED_COUNT ]: true,

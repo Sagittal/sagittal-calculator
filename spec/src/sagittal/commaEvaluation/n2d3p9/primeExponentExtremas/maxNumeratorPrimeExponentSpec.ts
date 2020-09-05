@@ -1,4 +1,4 @@
-import { Exponent, Max, Numerator, Prime } from "../../../../../../src/general"
+import { Exponent, Integer, Max, Numerator, Prime } from "../../../../../../src/general"
 import { N2D3P9 } from "../../../../../../src/sagittal/commaEvaluation/n2d3p9"
 import { computeMaxNumeratorPrimeExponentGivenMaxN2D3P3 } from "../../../../../../src/sagittal/commaEvaluation/n2d3p9/primeExponentExtremas/maxNumeratorPrimeExponent"
 
@@ -9,7 +9,7 @@ describe("computeMaxNumeratorPrimeExponentGivenMaxN2D3P3", () => {
 
         const actual = computeMaxNumeratorPrimeExponentGivenMaxN2D3P3(numeratorPrime, maxN2D3P9)
 
-        const expected = 6 as Max<Exponent<Prime<Numerator>>>
+        const expected = 6 as Max<Integer & Exponent<Prime<Numerator>>>
         expect(actual).toBe(expected)
     })
 
@@ -19,7 +19,7 @@ describe("computeMaxNumeratorPrimeExponentGivenMaxN2D3P3", () => {
 
         const actual = computeMaxNumeratorPrimeExponentGivenMaxN2D3P3(numeratorPrime, maxN2D3P9)
 
-        const expected = 5 as Max<Exponent<Prime<Numerator>>>
+        const expected = 5 as Max<Integer & Exponent<Prime<Numerator>>>
         expect(actual).toBe(expected)
     })
 
@@ -29,7 +29,7 @@ describe("computeMaxNumeratorPrimeExponentGivenMaxN2D3P3", () => {
 
         const actual = computeMaxNumeratorPrimeExponentGivenMaxN2D3P3(numeratorPrime, maxN2D3P9)
 
-        const expected = 2 as Max<Exponent<Prime<Numerator>>>
+        const expected = 2 as Max<Integer & Exponent<Prime<Numerator>>>
         expect(actual).toBe(expected)
     })
 
@@ -39,7 +39,7 @@ describe("computeMaxNumeratorPrimeExponentGivenMaxN2D3P3", () => {
 
         const actual = computeMaxNumeratorPrimeExponentGivenMaxN2D3P3(numeratorPrime, maxN2D3P9)
 
-        const expected = 0 as Max<Exponent<Prime<Numerator>>>
+        const expected = 0 as Max<Integer & Exponent<Prime<Numerator>>>
         expect(actual).toBe(expected)
     })
 })

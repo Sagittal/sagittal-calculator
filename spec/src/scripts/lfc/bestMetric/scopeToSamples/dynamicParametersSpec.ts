@@ -1,4 +1,4 @@
-import { Index, Resolution, Span, Unit } from "../../../../../../src/general"
+import { Index, Ed, Window, Step } from "../../../../../../src/general"
 import { Scope } from "../../../../../../src/scripts/lfc/bestMetric"
 import { computeDynamicParameters } from "../../../../../../src/scripts/lfc/bestMetric/scopeToSamples"
 import { Parameter, ParameterValue, Submetric } from "../../../../../../src/scripts/lfc/sumOfSquares"
@@ -9,8 +9,8 @@ describe("computeDynamicParameters", () => {
             {
                 [ Parameter.Y ]: {
                     center: 1.2 as ParameterValue,
-                    span: 1 as Span<ParameterValue>,
-                    resolution: 3 as Resolution<ParameterValue>,
+                    window: 1 as Window<ParameterValue>,
+                    ed: 3 as Ed<ParameterValue>,
                 },
                 [ Parameter.W ]: 4 as ParameterValue,
             },
@@ -18,13 +18,13 @@ describe("computeDynamicParameters", () => {
                 [ Parameter.COUNT ]: true,
                 [ Parameter.Y ]: {
                     center: 1.0 as ParameterValue,
-                    span: 0.2 as Span<ParameterValue>,
-                    resolution: 2 as Resolution<ParameterValue>,
+                    window: 0.2 as Window<ParameterValue>,
+                    ed: 2 as Ed<ParameterValue>,
                 },
                 [ Parameter.A_AS_COEFFICIENT ]: {
                     center: 0.65 as ParameterValue,
-                    span: 0.1 as Span<ParameterValue>,
-                    resolution: 2 as Resolution<ParameterValue>,
+                    window: 0.1 as Window<ParameterValue>,
+                    ed: 2 as Ed<ParameterValue>,
                 },
             },
         ] as Scope
@@ -36,19 +36,19 @@ describe("computeDynamicParameters", () => {
                 submetricIndex: 0 as Index<Submetric>,
                 parameter: Parameter.Y,
                 values: [0.7, 1.2, 1.7] as ParameterValue[],
-                unit: 0.5 as Unit<ParameterValue>,
+                unit: 0.5 as Step<ParameterValue>,
             },
             {
                 submetricIndex: 1 as Index<Submetric>,
                 parameter: Parameter.Y,
                 values: [0.9, 1.1] as ParameterValue[],
-                unit: 0.2 as Unit<ParameterValue>,
+                unit: 0.2 as Step<ParameterValue>,
             },
             {
                 submetricIndex: 1 as Index<Submetric>,
                 parameter: Parameter.A_AS_COEFFICIENT,
                 values: [0.6, 0.7] as ParameterValue[],
-                unit: 0.1 as Unit<ParameterValue>,
+                unit: 0.1 as Step<ParameterValue>,
             },
         ]
         expect(actual).toEqual(expected)

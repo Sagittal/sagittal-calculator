@@ -1,4 +1,4 @@
-import { deepClone, Span } from "../../../general"
+import { deepClone, Window } from "../../../general"
 import { computeDynamicParameterScope, DynamicParameter, SamplePoint, Scope } from "../bestMetric"
 import { ParameterValue } from "../sumOfSquares"
 
@@ -9,9 +9,9 @@ const computeNextScope = (samplePoint: SamplePoint, dynamicParameters: DynamicPa
         const { submetricIndex, parameter, values, unit } = dynamicParameters[ index ]
 
         const center = values[ dynamicParameterValueIndex ]
-        const span: Span<ParameterValue> = unit * (2 / 3) as Span<ParameterValue>
+        const window: Window<ParameterValue> = unit * (2 / 3) as Window<ParameterValue>
 
-        nextScope[ submetricIndex ][ parameter ] = computeDynamicParameterScope({ center, span })
+        nextScope[ submetricIndex ][ parameter ] = computeDynamicParameterScope({ center, window })
     })
 
     return nextScope

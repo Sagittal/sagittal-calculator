@@ -1,4 +1,4 @@
-import { Combination, Index, Io, Maybe, Resolution, Span, Sum } from "../../../general"
+import { Combination, Ed, Index, Io, Maybe, Sum, Window } from "../../../general"
 import { Parameter, ParameterValue, Submetric } from "../sumOfSquares"
 import { DynamicParameter, Sample } from "./scopeToSamples"
 
@@ -21,8 +21,8 @@ type Scope = Combination<SubmetricScope>
 
 type DynamicParameterScope = Partial<{
     center: ParameterValue,
-    resolution: Resolution<ParameterValue>,
-    span: Span<ParameterValue>,
+    ed: Ed<ParameterValue>,
+    window: Window<ParameterValue>,
 }>
 
 type SquaredWeightedRankDifferences =

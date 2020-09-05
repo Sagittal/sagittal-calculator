@@ -147,7 +147,7 @@ import {
     Votes,
     Zone,
 } from "./music"
-import { Count, Extrema, Id, Index, Ms, Multiplier, Name, Resolution, Span, Sum, Unit } from "./types"
+import { Count, Ed, Extrema, Id, Index, Ms, Multiplier, Name, Step, Sum, Window } from "./types"
 
 export {
     Abs,
@@ -161,10 +161,10 @@ export {
     Count,
     Sum,
     Id,
-    Span,
-    Unit,
+    Window,
+    Step,
     concat,
-    Resolution,
+    Ed,
     Monzo,
     Pitch,
     invertMonzo,

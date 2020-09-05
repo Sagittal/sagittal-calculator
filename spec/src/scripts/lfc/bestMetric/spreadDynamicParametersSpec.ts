@@ -1,4 +1,4 @@
-import { Combination, Resolution, Span } from "../../../../../src/general"
+import { Combination, Ed, Window } from "../../../../../src/general"
 import { SubmetricScope } from "../../../../../src/scripts/lfc/bestMetric"
 import { computeSpreadDynamicParameters } from "../../../../../src/scripts/lfc/bestMetric/spreadDynamicParameters"
 import { Parameter, ParameterValue } from "../../../../../src/scripts/lfc/sumOfSquares"
@@ -11,8 +11,8 @@ describe("computeSpreadDynamicParameters", () => {
                 {
                     [ Parameter.K_AS_COEFFICIENT ]: {
                         center: 1 as ParameterValue,
-                        span: 2 as Span<ParameterValue>,
-                        resolution: 2 as Resolution<ParameterValue>,
+                        window: 2 as Window<ParameterValue>,
+                        ed: 2 as Ed<ParameterValue>,
                     },
                 },
                 {
@@ -20,8 +20,8 @@ describe("computeSpreadDynamicParameters", () => {
                     [ Parameter.A_AS_LOGARITHM_BASE ]: 2 as ParameterValue,
                     [ Parameter.J_AS_POWER_EXPONENT ]: {
                         center: 3 as ParameterValue,
-                        span: 1 as Span<ParameterValue>,
-                        resolution: 5 as Resolution<ParameterValue>,
+                        window: 1 as Window<ParameterValue>,
+                        ed: 5 as Ed<ParameterValue>,
                     },
                 },
             ] as Combination<SubmetricScope>
@@ -43,8 +43,8 @@ describe("computeSpreadDynamicParameters", () => {
                 [ Parameter.A_AS_LOGARITHM_BASE ]: 2 as ParameterValue,
                 [ Parameter.J_AS_POWER_EXPONENT ]: {
                     center: 3 as ParameterValue,
-                    span: 1 as Span<ParameterValue>,
-                    resolution: 5 as Resolution<ParameterValue>,
+                    window: 1 as Window<ParameterValue>,
+                    ed: 5 as Ed<ParameterValue>,
                 },
             },
         ] as Combination<SubmetricScope>
@@ -61,8 +61,8 @@ describe("computeSpreadDynamicParameters", () => {
                 {
                     [ Parameter.K_AS_COEFFICIENT ]: {
                         center: 1 as ParameterValue,
-                        span: 2 as Span<ParameterValue>,
-                        resolution: 2 as Resolution<ParameterValue>,
+                        window: 2 as Window<ParameterValue>,
+                        ed: 2 as Ed<ParameterValue>,
                     },
                     [ Parameter.J_AS_LOGARITHM_BASE ]: 2 as ParameterValue,
                 },
@@ -71,8 +71,8 @@ describe("computeSpreadDynamicParameters", () => {
                     [ Parameter.A_AS_LOGARITHM_BASE ]: 2 as ParameterValue,
                     [ Parameter.J_AS_POWER_EXPONENT ]: {
                         center: 3 as ParameterValue,
-                        span: 1 as Span<ParameterValue>,
-                        resolution: 5 as Resolution<ParameterValue>,
+                        window: 1 as Window<ParameterValue>,
+                        ed: 5 as Ed<ParameterValue>,
                     },
                 },
             ] as Combination<SubmetricScope>

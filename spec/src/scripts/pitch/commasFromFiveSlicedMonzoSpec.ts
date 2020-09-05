@@ -9,7 +9,7 @@ describe("computeCommasFromFiveSlicedMonzo", () => {
     it("returns analyzed commas with the prime content from the five-rough monzo", () => {
         const minCents = 40 as Min<Cents>
         const maxCents = 40.1 as Max<Cents>
-        const maxAbsoluteThreeExponent = 12 as Max<Abs<Exponent<Prime>>>
+        const maxAbsoluteThreeExponent = 12 as Max<Abs<Integer & Exponent<Prime>>>
 
         const actual = computeCommasFromFiveSlicedMonzo(fiveSlicedMonzo, {
             minCents,
@@ -36,7 +36,7 @@ describe("computeCommasFromFiveSlicedMonzo", () => {
         it("does not include commas with apotome slope greater than it", () => {
             const minCents = 40 as Min<Cents>
             const maxCents = 40.1 as Max<Cents>
-            const maxAbsoluteThreeExponent = 12 as Max<Abs<Exponent<Prime>>>
+            const maxAbsoluteThreeExponent = 12 as Max<Abs<Integer & Exponent<Prime>>>
 
             const highMaxAbsoluteApotomeSlope = 10 as Max<Abs<ApotomeSlope>>
             const lowMaxAbsoluteApotomeSlope = 8 as Max<Abs<ApotomeSlope>>

@@ -185,7 +185,7 @@ describe("computeSubmetricAntivotes", () => {
             )
         })
 
-        it("when Dave's modified resolution is provided, counts 5's half as much as normal", () => {
+        it("when Dave's modified count is provided, counts 5's half as much as normal", () => {
             submetric[ Parameter.MODIFIED_COUNT ] = true
             const fiveRoughNumberMonzo = [0, 0, 1, -1] as Monzo
 

@@ -1,4 +1,4 @@
-import { Exponent, Extrema, Max, Prime } from "../../../../../../src/general"
+import { Exponent, Extrema, Integer, Max, Prime } from "../../../../../../src/general"
 import { N2D3P9 } from "../../../../../../src/sagittal/commaEvaluation/n2d3p9"
 import { computePrimeExponentExtremasGivenMaxN2D3P9 } from "../../../../../../src/sagittal/commaEvaluation/n2d3p9/primeExponentExtremas"
 import { onlyRunInCi } from "../../../../../helpers/onlyRunInCi"
@@ -12,7 +12,7 @@ describe("computePrimeExponentExtremasGivenMaxN2D3P9", () => {
         const expected = [
             [0, 0],   // 2
             [0, 0],   // 3
-        ] as Array<Extrema<Exponent<Prime>>>
+        ] as Array<Extrema<Integer & Exponent<Prime>>>
         expect(actual).toEqual(expected)
     })
 
@@ -24,7 +24,7 @@ describe("computePrimeExponentExtremasGivenMaxN2D3P9", () => {
         const expected = [
             [0, 0],   // 2
             [0, 0],   // 3
-        ] as Array<Extrema<Exponent<Prime>>>
+        ] as Array<Extrema<Integer & Exponent<Prime>>>
         expect(actual).toEqual(expected)
     })
 
@@ -40,7 +40,7 @@ describe("computePrimeExponentExtremasGivenMaxN2D3P9", () => {
             [0, 2],     // 7
             [0, 1],     // 11
             [0, 1],     // 13
-        ] as Array<Extrema<Exponent<Prime>>>
+        ] as Array<Extrema<Integer & Exponent<Prime>>>
         expect(actual).toEqual(expected)
     })
 
@@ -68,7 +68,7 @@ describe("computePrimeExponentExtremasGivenMaxN2D3P9", () => {
             [0, 1],     // 41
             [0, 1],     // 43
             [0, 1],     // 47
-        ] as Array<Extrema<Exponent<Prime>>>
+        ] as Array<Extrema<Integer & Exponent<Prime>>>
         expect(actual).toEqual(expected)
     })
 })

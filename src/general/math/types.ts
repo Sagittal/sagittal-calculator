@@ -23,13 +23,16 @@ type DistributionBin<T> = Combination<T> & { _DistributionBinBrand: "Distributio
 type Distribution<T> = Array<DistributionBin<T>> & { _DistributionBrand: "Distribution" }
 
 // Numeric types where parameter is also numeric
-type Exponent<T extends number = number> = T & { _ExponentBrand: "Exponent" }
-type Base<T extends number = number> = T & { _BaseBrand: "Base" }
-type Power<T extends number = number> = T & { _PowerBrand: "Power" }
+type Exponent<T extends number = number> = number & { _ExponentBrand: "Exponent", _ExponentOfBrand: T }
+type Base<T extends number = number> = number & { _BaseBrand: "Base", _BaseOfBrand: T }
+type Power<T extends number = number> = number & { _PowerBrand: "Power", _PowerOfBrand: T }
+
+// Qualities of numerics
 type Max<T extends number = number> = T & { _MaxBrand: "Max" }
 type Min<T extends number = number> = T & { _MinBrand: "Min" }
 type Abs<T extends number = number> = T & { _AbsBrand: "Abs" }
 type Average<T extends number = number> = T & { _AverageBrand: "Average" }
+type Approx<T extends number = number> = T & { _ApproxBrand: "Approx" }
 
 type Sopfr<Roughness = void> =
     Sum<Prime>

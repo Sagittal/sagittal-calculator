@@ -3,7 +3,7 @@ import { computeDistributions, DistributionBin } from "../../../../src/general/m
 import { Distribution } from "../../../../src/general/math/types"
 
 describe("computeDistributions", () => {
-    it("given an array and a resolution of bins, will return all the possible ways of distributing the elements across the bins", () => {
+    it("given an array and a count of bins, will return all the possible ways of distributing the elements across the bins", () => {
         const array: string[] = ["a", "b", "c", "d"]
         const binCount = 3 as Count<DistributionBin<string>>
 

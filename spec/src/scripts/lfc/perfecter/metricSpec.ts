@@ -1,4 +1,4 @@
-import { Resolution, Span } from "../../../../../src/general"
+import { Ed, Window } from "../../../../../src/general"
 import { Combination } from "../../../../../src/general/math"
 import { MetricName, Scope, SubmetricScope, SumOfSquares } from "../../../../../src/scripts/lfc/bestMetric"
 import { recursiveSearchScopeAndMaybeUpdateBestMetric } from "../../../../../src/scripts/lfc/perfecter"
@@ -32,8 +32,8 @@ describe("perfectMetric", () => {
                 [ Parameter.SUM ]: true,
                 [ Parameter.K_AS_COEFFICIENT ]: {
                     center: 0.8 as ParameterValue,
-                    span: 0.1 as Span<ParameterValue>,
-                    resolution: 3 as Resolution<ParameterValue>,
+                    window: 0.1 as Window<ParameterValue>,
+                    ed: 3 as Ed<ParameterValue>,
                 },
             },
         ] as Combination<SubmetricScope>
@@ -69,8 +69,8 @@ describe("perfectMetric", () => {
             {
                 [ Parameter.K_AS_COEFFICIENT ]: {
                     center: 0.8 as ParameterValue,
-                    span: 0.1 as Span<ParameterValue>,
-                    resolution: 3 as Resolution<ParameterValue>,
+                    window: 0.1 as Window<ParameterValue>,
+                    ed: 3 as Ed<ParameterValue>,
                 },
             },
             {

@@ -1,4 +1,4 @@
-import { Copfr, Exponent, Extrema, Max, Prime, Sopfr } from "../../../../src/general"
+import { Copfr, Exponent, Extrema, Integer, Max, Prime, Sopfr } from "../../../../src/general"
 import { computePrimeExponentRange } from "../../../../src/scripts/pitch/primeExponentRange"
 
 describe("computePrimeExponentRange", () => {
@@ -9,7 +9,7 @@ describe("computePrimeExponentRange", () => {
 
         const actual = computePrimeExponentRange(prime, { maxFiveRoughSopfr, maxFiveRoughCopfr })
 
-        const expected = [-3, -2, -1, 0, 1, 2, 3] as Array<Exponent<Prime>>
+        const expected = [-3, -2, -1, 0, 1, 2, 3] as Array<Integer & Exponent<Prime>>
         expect(actual).toEqual(expected)
     })
 
@@ -20,7 +20,7 @@ describe("computePrimeExponentRange", () => {
 
         const actual = computePrimeExponentRange(prime, { maxFiveRoughSopfr, maxFiveRoughCopfr })
 
-        const expected = [-2, -1, 0, 1, 2] as Array<Exponent<Prime>>
+        const expected = [-2, -1, 0, 1, 2] as Array<Integer & Exponent<Prime>>
         expect(actual).toEqual(expected)
     })
 
@@ -47,7 +47,7 @@ describe("computePrimeExponentRange", () => {
 
         const actual = computePrimeExponentRange(prime, { maxFiveRoughSopfr })
 
-        const expected = [-4, -3, -2, -1, 0, 1, 2, 3, 4] as Array<Exponent<Prime>>
+        const expected = [-4, -3, -2, -1, 0, 1, 2, 3, 4] as Array<Integer & Exponent<Prime>>
         expect(actual).toEqual(expected)
     })
 
@@ -57,17 +57,17 @@ describe("computePrimeExponentRange", () => {
 
         const actual = computePrimeExponentRange(prime, { maxFiveRoughCopfr })
 
-        const expected = [-3, -2, -1, 0, 1, 2, 3] as Array<Exponent<Prime>>
+        const expected = [-3, -2, -1, 0, 1, 2, 3] as Array<Integer & Exponent<Prime>>
         expect(actual).toEqual(expected)
     })
 
     it("gives the valid range of the prime exponent given only a max N2D3P9", () => {
         const prime = 7 as Prime
-        const primeExponentExtremaGivenMaxN2D3P9 = [-2, 4] as Extrema<Exponent<Prime>>
+        const primeExponentExtremaGivenMaxN2D3P9 = [-2, 4] as Extrema<Integer & Exponent<Prime>>
 
         const actual = computePrimeExponentRange(prime, { primeExponentExtremaGivenMaxN2D3P9 })
 
-        const expected = [-2, -1, 0, 1, 2, 3, 4] as Array<Exponent<Prime>>
+        const expected = [-2, -1, 0, 1, 2, 3, 4] as Array<Integer & Exponent<Prime>>
         expect(actual).toEqual(expected)
     })
 

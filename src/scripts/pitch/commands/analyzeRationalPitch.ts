@@ -48,9 +48,10 @@ if (rationalPitch) {
         monzo = parseMonzo(rationalPitch as Formatted<Monzo>)
     }
 } else if (program.monzo) {
-    monzo = program.monzo // todo why not parse here?
+    monzo = program.monzo // TODO: why not parse here?
 } else if (program.ratio) {
-    monzo = computeMonzoFromRatio(program.ratio) // todo why not parse here? should? test drive out motivation to do so?
+    // TODO: why not parse here? should? test drive out motivation to do so?
+    monzo = computeMonzoFromRatio(program.ratio)
 } else if (program.commaName) {
     monzo = computeMonzoFromCommaName(program.commaName)
 }

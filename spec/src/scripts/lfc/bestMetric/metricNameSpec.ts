@@ -7,7 +7,7 @@ describe("computeMetricName", () => {
     it("makes a string out of the parameters (ignoring values) in each submetric", () => {
         const submetricScopes = [
             {
-                [ Parameter.A_AS_LOGARITHM_BASE ]: { center: 2.1, span: 3, resolution: 30 },
+                [ Parameter.A_AS_LOGARITHM_BASE ]: { center: 2.1, window: 3, ed: 30 },
                 [ Parameter.SUM ]: true,
             },
             {
@@ -25,7 +25,7 @@ describe("computeMetricName", () => {
         const submetricScopes = [
             {
                 [ Parameter.SUM ]: true,
-                [ Parameter.A_AS_LOGARITHM_BASE ]: { center: 2.1, span: 3, resolution: 30 },
+                [ Parameter.A_AS_LOGARITHM_BASE ]: { center: 2.1, window: 3, ed: 30 },
             },
             {
                 [ Parameter.WITHOUT_REPETITION ]: true,
@@ -48,7 +48,7 @@ describe("computeMetricName", () => {
             },
             {
                 [ Parameter.SUM ]: true,
-                [ Parameter.A_AS_LOGARITHM_BASE ]: { center: 2.1, span: 3, resolution: 30 },
+                [ Parameter.A_AS_LOGARITHM_BASE ]: { center: 2.1, window: 3, ed: 30 },
             },
         ] as Combination<SubmetricScope>
 

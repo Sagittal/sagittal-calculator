@@ -1,4 +1,4 @@
-import { Combination, Index, Integer, Io, Resolution, Span, Unit } from "../../../../../src/general"
+import { Combination, Index, Integer, Io, Ed, Window, Step } from "../../../../../src/general"
 import { MetricName, Scope, SumOfSquares } from "../../../../../src/scripts/lfc/bestMetric"
 import { SamplePoint } from "../../../../../src/scripts/lfc/bestMetric/scopeToSamples"
 import { recursiveSearchScopeAndMaybeUpdateBestMetric } from "../../../../../src/scripts/lfc/perfecter"
@@ -14,16 +14,16 @@ describe("searchScopeAndMaybeUpdateBestMetric", () => {
                 [ Parameter.SUM ]: true,
                 [ Parameter.A_AS_COEFFICIENT ]: {
                     center: 2 as ParameterValue,
-                    span: 2 as Span<ParameterValue>,
-                    resolution: 3 as Resolution<ParameterValue>,
+                    window: 2 as Window<ParameterValue>,
+                    ed: 3 as Ed<ParameterValue>,
                 },
             },
             {
                 [ Parameter.COUNT ]: true,
                 [ Parameter.W ]: {
                     center: 1.5 as ParameterValue,
-                    span: 2 as Span<ParameterValue>,
-                    resolution: 2 as Resolution<ParameterValue>,
+                    window: 2 as Window<ParameterValue>,
+                    ed: 2 as Ed<ParameterValue>,
                 },
                 [ Parameter.A_AS_COEFFICIENT ]: 3.3 as ParameterValue,
             },
@@ -85,13 +85,13 @@ describe("searchScopeAndMaybeUpdateBestMetric", () => {
                 submetricIndex: 1 as Index<Submetric>,
                 parameter: Parameter.A_AS_COEFFICIENT,
                 values: [1, 2, 3] as ParameterValue[],
-                unit: 1 as Unit<ParameterValue>,
+                unit: 1 as Step<ParameterValue>,
             },
             {
                 submetricIndex: 2 as Index<Submetric>,
                 parameter: Parameter.W,
                 values: [0.5, 2.5] as ParameterValue[],
-                unit: 2 as Unit<ParameterValue>,
+                unit: 2 as Step<ParameterValue>,
             },
         ]
         const expectedOptions = {

@@ -19,7 +19,7 @@ describe("computeCombinations", () => {
         expect(actual).toEqual(expected)
     })
 
-    it("when resolution is zero, returns an empty array", () => {
+    it("when count is zero, returns an empty array", () => {
         const count = 0 as Count<string>
 
         const actual = computeCombinations(set, count)

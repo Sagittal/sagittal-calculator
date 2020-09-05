@@ -1,12 +1,12 @@
-import { Resolution, Span } from "../../../general"
+import { Ed, Window } from "../../../general"
 import { DynamicParameterScope } from "../bestMetric"
 import { lfcScriptGroupSettings } from "../globals"
 import { ParameterValue } from "../sumOfSquares"
 
 const computeDynamicParameterScopeForPerfecting = (parameterValue: ParameterValue): DynamicParameterScope => ({
     center: parameterValue,
-    span: lfcScriptGroupSettings.maxUnit as number as Span<ParameterValue>,
-    resolution: 3 as Resolution<ParameterValue>,
+    window: lfcScriptGroupSettings.maxUnit as number as Window<ParameterValue>,
+    ed: 3 as Ed<ParameterValue>,
 })
 
 export {

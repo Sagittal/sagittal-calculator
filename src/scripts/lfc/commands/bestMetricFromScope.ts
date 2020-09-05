@@ -1,4 +1,4 @@
-import { Io, LogTarget, saveLog, Span, stringify } from "../../../general"
+import { Io, LogTarget, saveLog, stringify, Window } from "../../../general"
 import { computeDynamicParameterScope, Scope } from "../bestMetric"
 import { LFC_SCRIPT_GROUP } from "../constants"
 import { bestMetrics } from "../globals"
@@ -14,19 +14,19 @@ const scope = [
         [ Parameter.SUM ]: true,
         [ Parameter.K_AS_COEFFICIENT ]: computeDynamicParameterScope({
             center: 1 as ParameterValue,
-            span: 0.02 as Span<ParameterValue>,
+            window: 0.02 as Window<ParameterValue>,
         }),
         [ Parameter.A_AS_LOGARITHM_BASE ]: computeDynamicParameterScope({
             center: 2.00001 as ParameterValue,
-            span: 0.02 as Span<ParameterValue>,
+            window: 0.02 as Window<ParameterValue>,
         }),
         [ Parameter.Y ]: computeDynamicParameterScope({
             center: 2 as ParameterValue,
-            span: 0.04 as Span<ParameterValue>,
+            window: 0.04 as Window<ParameterValue>,
         }),
         [ Parameter.W ]: computeDynamicParameterScope({
             center: -2.00001 as ParameterValue,
-            span: 0.03 as Span<ParameterValue>,
+            window: 0.03 as Window<ParameterValue>,
         }),
     },
 ] as Scope

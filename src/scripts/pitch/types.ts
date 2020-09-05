@@ -1,4 +1,4 @@
-import { Abs, Cents, Copfr, Exponent, Extrema, Max, Min, ObjectKey, Prime, Sopfr } from "../../general"
+import { Abs, Cents, Copfr, Exponent, Extrema, Integer, Max, Min, ObjectKey, Prime, Sopfr } from "../../general"
 import { ApotomeSlope, N2D3P9 } from "../../sagittal"
 
 interface CommasOptions extends CommasFromFiveSlicedMonzoOptions, FiveSlicedMonzosToCheckOptions {
@@ -8,7 +8,7 @@ interface CommasOptions extends CommasFromFiveSlicedMonzoOptions, FiveSlicedMonz
 type CommasFromFiveSlicedMonzoOptions = Partial<{
     minCents: Min<Cents>,
     maxCents: Max<Cents>,
-    maxAbsoluteThreeExponent: Max<Abs<Exponent<Prime>>>,
+    maxAbsoluteThreeExponent: Max<Abs<Integer & Exponent<Prime>>>,
     maxAbsoluteApotomeSlope: Max<Abs<ApotomeSlope>>,
     maxN2D3P9: Max<N2D3P9>,
 }>
@@ -23,7 +23,7 @@ type FiveSlicedMonzosToCheckOptions = Partial<{
 type PrimeExponentRangeOptions = Partial<{
     maxFiveRoughCopfr: Max<Copfr<5>>,
     maxFiveRoughSopfr: Max<Sopfr<5>>,
-    primeExponentExtremaGivenMaxN2D3P9?: Extrema<Exponent<Prime>>,
+    primeExponentExtremaGivenMaxN2D3P9?: Extrema<Integer & Exponent<Prime>>,
 }>
 
 export {

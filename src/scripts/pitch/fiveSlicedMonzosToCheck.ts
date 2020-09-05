@@ -10,7 +10,7 @@ import {
     Integer,
     isUndefined,
     Max,
-    Maybe,
+    Maybe, Min,
     Monzo,
     Prime,
     Sopfr,
@@ -39,7 +39,7 @@ const computeFiveSlicedMonzosToCheck = (
         [] as unknown[] as Monzo<Integer, 5>,
     ]
 
-    const primeExponentExtremasGivenMaxN2D3P9: Maybe<Array<Extrema<Exponent<Prime>>>> =
+    const primeExponentExtremasGivenMaxN2D3P9: Maybe<Array<Extrema<Integer & Exponent<Prime>>>> =
         maxN2D3P9 && computePrimeExponentExtremasGivenMaxN2D3P9(maxN2D3P9)
 
     const fiveRoughPrimesToCheck = computeFiveRoughPrimesToCheck({
@@ -52,7 +52,7 @@ const computeFiveSlicedMonzosToCheck = (
         const extendedFiveSlicedMonzosToCheck: Array<Monzo<Integer, 5>> =
             computeExtensionBase(ExtensionBaseType.ARRAY) as Array<Monzo<Integer, 5>>
 
-        const primeExponentExtremaGivenMaxN2D3P9: Maybe<Extrema<Exponent<Prime>>> =
+        const primeExponentExtremaGivenMaxN2D3P9: Maybe<Extrema<Integer & Exponent<Prime>>> =
             primeExponentExtremasGivenMaxN2D3P9 && primeExponentExtremasGivenMaxN2D3P9[ index ]
 
         fiveSlicedMonzosToCheck.forEach(fiveSlicedMonzoToCheck => {
@@ -62,15 +62,15 @@ const computeFiveSlicedMonzosToCheck = (
             const adjustedMaxFiveRoughSopfr = maxFiveRoughSopfr && maxFiveRoughSopfr - fiveRoughSopfr as Max<Sopfr<5>>
             const adjustedMaxFiveRoughCopfr = maxFiveRoughCopfr && maxFiveRoughCopfr - fiveRoughCopfr as Max<Copfr<5>>
 
-            const termRange: Exponent<Prime>[] = computePrimeExponentRange(
+            const termRange: Array<Integer & Exponent<Prime>> = computePrimeExponentRange(
                 fiveRoughPrimeToCheck,
                 {
                     maxFiveRoughSopfr: adjustedMaxFiveRoughSopfr, // this is where the max five rough sopfr is enforced
                     maxFiveRoughCopfr: adjustedMaxFiveRoughCopfr,
                     primeExponentExtremaGivenMaxN2D3P9,
                 },
-            ) as Exponent<Prime>[]
-            termRange.forEach((potentialNextTerm: Exponent<Prime>) => {
+            ) as Array<Integer & Exponent<Prime>>
+            termRange.forEach((potentialNextTerm: Integer & Exponent<Prime>) => {
                 extendedFiveSlicedMonzosToCheck.push(
                     fiveSlicedMonzoToCheck.concat(potentialNextTerm) as Monzo<Integer, 5>,
                 )

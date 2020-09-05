@@ -1,5 +1,5 @@
 import { program } from "commander"
-import { CommandFlag, LogTarget, saveLog } from "../../../general"
+import { CommandFlag, LogTarget, Max, Prime, saveLog } from "../../../general"
 import { addMaybeSagittalSymbol } from "../addMaybeSagittalSymbol"
 import { computeCommas } from "../commas"
 import {
@@ -33,7 +33,7 @@ applySharedPitchCommandSetup()
 
 const maxFiveRoughSopfr = program.maxFiveRoughSopfr || DEFAULT_MAX_FIVE_ROUGH_SOPFR
 const maxFiveRoughCopfr = program.maxFiveRoughCopfr || DEFAULT_MAX_FIVE_ROUGH_COPFR
-const maxPrimeLimit = program.maxPrimeLimit || DEFAULT_MAX_PRIME_LIMIT
+const maxPrimeLimit: Max<Max<Prime>> = program.maxPrimeLimit || DEFAULT_MAX_PRIME_LIMIT
 
 const commas = computeCommas({
     ...pitchScriptGroupSettings,

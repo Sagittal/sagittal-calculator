@@ -7,7 +7,7 @@ const computeNotatingCommas = (
     monzo: Monzo,
     options?: CommasFromFiveSlicedMonzoOptions,
 ): Array<AnalyzedRationalPitch> => {
-    const fiveSlicedMonzo: Monzo<Integer, 5> = computeMonzoSlicedToPrimeIndex(monzo, 5)
+    const fiveSlicedMonzo: Monzo<Integer, 5> = computeMonzoSlicedToPrimeIndex(monzo, 5) as Monzo<Integer, 5>
 
     return [
         ...computeCommasFromFiveSlicedMonzo(fiveSlicedMonzo, options),

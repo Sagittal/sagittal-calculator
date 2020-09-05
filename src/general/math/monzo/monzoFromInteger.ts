@@ -17,12 +17,12 @@ const computeMonzoFromInteger = (integer: Integer): Monzo => {
 
         if (remainder === 0) {
             while (monzo.length <= index) {
-                monzo.push(0 as Exponent<Prime>)
+                monzo.push(0 as Integer & Exponent<Prime>)
             }
 
             while (remainder === 0) {
                 remnant = integerDivide(remnant, divisor)
-                monzo[ index ] = monzo[ index ] + 1 as Exponent<Prime>
+                monzo[ index ] = monzo[ index ] + 1 as Integer & Exponent<Prime>
                 remainder = remnant % divisor
             }
         }

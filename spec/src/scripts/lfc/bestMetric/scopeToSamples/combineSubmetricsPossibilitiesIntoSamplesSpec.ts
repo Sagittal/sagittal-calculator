@@ -1,4 +1,4 @@
-import { Combination, Index, Unit } from "../../../../../../src/general"
+import { Combination, Index, Step } from "../../../../../../src/general"
 import { combineSubmetricsPossibilitiesIntoSamples } from "../../../../../../src/scripts/lfc/bestMetric/scopeToSamples/combineSubmetricsPossibilitiesIntoSamples"
 import {
     DynamicParameter,
@@ -86,7 +86,7 @@ describe("combineSubmetricsPossibilitiesIntoSamples", () => {
                     submetricIndex: 0 as Index<Submetric>,
                     parameter: Parameter.K_AS_COEFFICIENT,
                     values: [0.33, 0.45] as ParameterValue[],       // here's the two possibilities
-                    unit: 0.12 as Unit<ParameterValue>,
+                    unit: 0.12 as Step<ParameterValue>,
                 },
 
                 // submetric one had 3 possibilities, all variants of a single dynamic parameter
@@ -94,7 +94,7 @@ describe("combineSubmetricsPossibilitiesIntoSamples", () => {
                     submetricIndex: 1 as Index<Submetric>,
                     parameter: Parameter.Y,
                     values: [1.5, 1.2, 0.9] as ParameterValue[],    // here's the three possibilities
-                    unit: 0 as Unit<ParameterValue>,
+                    unit: 0 as Step<ParameterValue>,
                 },
 
                 // submetric two had 4 possibilities, combinations of 2 dynamic parameters each with 2 possibilities
@@ -104,13 +104,13 @@ describe("combineSubmetricsPossibilitiesIntoSamples", () => {
                     submetricIndex: 2 as Index<Submetric>,
                     parameter: Parameter.Y,
                     values: [0.9, 1.1] as ParameterValue[],        // here's the first of two sets of two possibilities
-                    unit: 0 as Unit<ParameterValue>,
+                    unit: 0 as Step<ParameterValue>,
                 },
                 {
                     submetricIndex: 2 as Index<Submetric>,
                     parameter: Parameter.A_AS_COEFFICIENT,
                     values: [0.7, 0.6] as ParameterValue[],        // here's the second of two sets of two possibilities
-                    unit: 0 as Unit<ParameterValue>,
+                    unit: 0 as Step<ParameterValue>,
                 },
             ]
 

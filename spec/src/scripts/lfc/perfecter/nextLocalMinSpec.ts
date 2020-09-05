@@ -1,4 +1,4 @@
-import { BLANK, Index, Integer, Unit } from "../../../../../src/general"
+import { BLANK, Index, Integer, Step } from "../../../../../src/general"
 import { Combination } from "../../../../../src/general/math"
 import { MetricName, Scope, SumOfSquares } from "../../../../../src/scripts/lfc/bestMetric"
 import { DynamicParameter, SamplePoint } from "../../../../../src/scripts/lfc/bestMetric/scopeToSamples"
@@ -22,19 +22,19 @@ describe("searchNextLocalMin", () => {
             submetricIndex: 0 as Index<Submetric>,
             parameter: Parameter.K_AS_COEFFICIENT,
             values: [0.3, 0.4, 0.5] as ParameterValue[],
-            unit: 0.1 as Unit<ParameterValue>,
+            unit: 0.1 as Step<ParameterValue>,
         },
         {
             submetricIndex: 0 as Index<Submetric>,
             parameter: Parameter.A_AS_COEFFICIENT,
             values: [1.1, 2.1, 3.1] as ParameterValue[],
-            unit: 1 as Unit<ParameterValue>,
+            unit: 1 as Step<ParameterValue>,
         },
         {
             submetricIndex: 0 as Index<Submetric>,
             parameter: Parameter.W,
             values: [1.3, 1.4, 1.5] as ParameterValue[],
-            unit: 0.1 as Unit<ParameterValue>,
+            unit: 0.1 as Step<ParameterValue>,
         },
     ]
     const scope: Scope = [{}] as unknown[] as Scope
@@ -70,9 +70,9 @@ describe("searchNextLocalMin", () => {
         expect(recursiveBestMetric.recursiveSearchScopeAndMaybeUpdateBestMetric).toHaveBeenCalledWith(
             [
                 {
-                    [ Parameter.K_AS_COEFFICIENT ]: { center: 0.5, span: 0.06666666666666667, resolution: 2 },
-                    [ Parameter.A_AS_COEFFICIENT ]: { center: 1.1, span: 0.6666666666666666, resolution: 7 },
-                    [ Parameter.W ]: { center: 1.4, span: 0.06666666666666667, resolution: 2 },
+                    [ Parameter.K_AS_COEFFICIENT ]: { center: 0.5, window: 0.06666666666666667, ed: 2 },
+                    [ Parameter.A_AS_COEFFICIENT ]: { center: 1.1, window: 0.6666666666666666, ed: 7 },
+                    [ Parameter.W ]: { center: 1.4, window: 0.06666666666666667, ed: 2 },
                 },
             ] as unknown[] as Scope,
             {

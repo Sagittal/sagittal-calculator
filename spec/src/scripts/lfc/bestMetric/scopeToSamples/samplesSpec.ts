@@ -1,4 +1,4 @@
-import { Resolution, Span } from "../../../../../../src/general"
+import { Ed, Window } from "../../../../../../src/general"
 import { Scope } from "../../../../../../src/scripts/lfc/bestMetric"
 import { computeDynamicParameters, computeSamples } from "../../../../../../src/scripts/lfc/bestMetric/scopeToSamples"
 import { Parameter, ParameterValue } from "../../../../../../src/scripts/lfc/sumOfSquares"
@@ -10,21 +10,21 @@ describe("computeSamples", () => {
             {
                 [ Parameter.A_AS_COEFFICIENT ]: {
                     center: 2 as ParameterValue,
-                    span: 2 as Span<ParameterValue>,
-                    resolution: 3 as Resolution<ParameterValue>,
+                    window: 2 as Window<ParameterValue>,
+                    ed: 3 as Ed<ParameterValue>,
                 },
                 [ Parameter.K_AS_COEFFICIENT ]: {
                     center: 0 as ParameterValue,
-                    span: 4 as Span<ParameterValue>,
-                    resolution: 2 as Resolution<ParameterValue>,
+                    window: 4 as Window<ParameterValue>,
+                    ed: 2 as Ed<ParameterValue>,
                 },
             },
             {
                 [ Parameter.COUNT ]: true,
                 [ Parameter.A_AS_COEFFICIENT ]: {
                     center: 1.5 as ParameterValue,
-                    span: 2 as Span<ParameterValue>,
-                    resolution: 2 as Resolution<ParameterValue>,
+                    window: 2 as Window<ParameterValue>,
+                    ed: 2 as Ed<ParameterValue>,
                 },
                 [ Parameter.W ]: 3.3 as ParameterValue,
             },
@@ -213,8 +213,8 @@ describe("computeSamples", () => {
                 [ Parameter.COUNT ]: true,
                 [ Parameter.A_AS_COEFFICIENT ]: {
                     center: 1.5 as ParameterValue,
-                    span: 2 as Span<ParameterValue>,
-                    resolution: 2 as Resolution<ParameterValue>,
+                    window: 2 as Window<ParameterValue>,
+                    ed: 2 as Ed<ParameterValue>,
                 },
                 [ Parameter.K_AS_COEFFICIENT ]: 0.5 as ParameterValue,
             },
@@ -222,8 +222,8 @@ describe("computeSamples", () => {
                 [ Parameter.COUNT ]: true,
                 [ Parameter.A_AS_COEFFICIENT ]: {
                     center: 1 as ParameterValue,
-                    span: 2 as Span<ParameterValue>,
-                    resolution: 2 as Resolution<ParameterValue>,
+                    window: 2 as Window<ParameterValue>,
+                    ed: 2 as Ed<ParameterValue>,
                 },
                 [ Parameter.K_AS_COEFFICIENT ]: 0 as ParameterValue,
             },
