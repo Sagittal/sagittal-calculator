@@ -1,4 +1,4 @@
-import { Index, Ed, Window } from "../../../../../../src/general"
+import { Ed, Index, Window } from "../../../../../../src/general"
 import { SubmetricScope } from "../../../../../../src/scripts/lfc/bestMetric"
 import { computeSubmetricDynamicParameters } from "../../../../../../src/scripts/lfc/bestMetric/scopeToSamples/submetricDynamicParameters"
 import { Parameter, ParameterValue, Submetric } from "../../../../../../src/scripts/lfc/sumOfSquares"

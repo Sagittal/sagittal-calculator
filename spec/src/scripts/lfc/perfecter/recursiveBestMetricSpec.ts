@@ -1,4 +1,4 @@
-import { Combination, Index, Integer, Io, Ed, Window, Step } from "../../../../../src/general"
+import { Combination, Ed, Index, Integer, Io, Step, Window } from "../../../../../src/general"
 import { MetricName, Scope, SumOfSquares } from "../../../../../src/scripts/lfc/bestMetric"
 import { SamplePoint } from "../../../../../src/scripts/lfc/bestMetric/scopeToSamples"
 import { recursiveSearchScopeAndMaybeUpdateBestMetric } from "../../../../../src/scripts/lfc/perfecter"

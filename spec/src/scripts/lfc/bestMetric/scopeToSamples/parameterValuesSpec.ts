@@ -1,4 +1,4 @@
-import { integerDivide, Ed, Window } from "../../../../../../src/general"
+import { Ed, integerDivide, Window } from "../../../../../../src/general"
 import { DynamicParameterScope } from "../../../../../../src/scripts/lfc/bestMetric"
 import { computeParameterValues } from "../../../../../../src/scripts/lfc/bestMetric/scopeToSamples/parameterValues"
 import { ParameterValue } from "../../../../../../src/scripts/lfc/sumOfSquares"

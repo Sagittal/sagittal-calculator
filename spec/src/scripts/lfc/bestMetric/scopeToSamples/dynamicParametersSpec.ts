@@ -1,4 +1,4 @@
-import { Index, Ed, Window, Step } from "../../../../../../src/general"
+import { Ed, Index, Step, Window } from "../../../../../../src/general"
 import { Scope } from "../../../../../../src/scripts/lfc/bestMetric"
 import { computeDynamicParameters } from "../../../../../../src/scripts/lfc/bestMetric/scopeToSamples"
 import { Parameter, ParameterValue, Submetric } from "../../../../../../src/scripts/lfc/sumOfSquares"

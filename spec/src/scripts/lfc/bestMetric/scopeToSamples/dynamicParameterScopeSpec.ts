@@ -1,4 +1,4 @@
-import { Max, Min, Ed, Window } from "../../../../../../src/general"
+import { Ed, Max, Min, Window } from "../../../../../../src/general"
 import { DynamicParameterScope } from "../../../../../../src/scripts/lfc/bestMetric"
 import { computeDynamicParameterScope } from "../../../../../../src/scripts/lfc/bestMetric/scopeToSamples"
 import { ParameterValue } from "../../../../../../src/scripts/lfc/sumOfSquares"
