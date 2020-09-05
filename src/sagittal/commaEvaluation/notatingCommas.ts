@@ -1,5 +1,5 @@
 import { computeMonzoSlicedToPrimeIndex, Integer, invertMonzo, Monzo } from "../../general"
-import { AnalyzedRationalPitch } from "../../sagittal"
+import { AnalyzedRationalPitch } from "../types"
 import { computeCommasFromFiveSlicedMonzo } from "./commasFromFiveSlicedMonzo"
 import { CommasFromFiveSlicedMonzoOptions } from "./types"
 

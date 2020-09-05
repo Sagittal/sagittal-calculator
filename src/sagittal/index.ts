@@ -1,14 +1,28 @@
 import {
+    analyzeRationalPitch,
     ApotomeSlope,
+    CommasFromFiveSlicedMonzoOptions,
     computeApotomeSlope,
+    computeCommasFromFiveSlicedMonzo,
     computeN2D3P9,
+    computeNotatingCommas,
     computePrimeExponentExtremasGivenMaxN2D3P9,
+    DEFAULT_MAX_ABSOLUTE_APOTOME_SLOPE,
+    DEFAULT_MAX_ABSOLUTE_THREE_EXPONENT,
+    DEFAULT_MAX_CENTS,
+    DEFAULT_MAX_FIVE_ROUGH_COPFR,
+    DEFAULT_MAX_FIVE_ROUGH_SOPFR,
+    DEFAULT_MAX_PRIME_LIMIT,
+    DEFAULT_MIN_CENTS,
+    DEFAULT_PITCH_SCRIPT_GROUP_MAX_N2D3P9,
+    DEFAULT_SORT_KEY,
     N2D3P9,
 } from "./commaEvaluation"
 import { computeMonzoFromCommaName, computeSagittalCommaName, SIZE_CATEGORY_BOUNDS } from "./commaSizeName"
 import { APOTOME } from "./constants"
 import { formatSymbol, formatSymbolAscii, SymbolLongAscii, unicodeFromAscii } from "./io"
 import {
+    addMaybeJiSymbol,
     Bound,
     computeInaMidpoints,
     formatLevel,
@@ -69,4 +83,18 @@ export {
     formatSymbol,
     formatSymbolAscii,
     APOTOME,
+    analyzeRationalPitch,
+    addMaybeJiSymbol,
+    computeNotatingCommas,
+    CommasFromFiveSlicedMonzoOptions,
+    computeCommasFromFiveSlicedMonzo,
+    DEFAULT_MAX_ABSOLUTE_APOTOME_SLOPE,
+    DEFAULT_MAX_ABSOLUTE_THREE_EXPONENT,
+    DEFAULT_MAX_CENTS,
+    DEFAULT_MIN_CENTS,
+    DEFAULT_PITCH_SCRIPT_GROUP_MAX_N2D3P9,
+    DEFAULT_SORT_KEY,
+    DEFAULT_MAX_FIVE_ROUGH_COPFR,
+    DEFAULT_MAX_FIVE_ROUGH_SOPFR,
+    DEFAULT_MAX_PRIME_LIMIT,
 }

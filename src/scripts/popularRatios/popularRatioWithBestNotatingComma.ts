@@ -16,12 +16,14 @@ import {
     Monzo,
     Votes,
 } from "../../general"
-import { AnalyzedRationalPitch, APOTOME, formatSymbol, N2D3P9 } from "../../sagittal"
-// TODO: this is not great. perhaps these scripts need to be moved into sagittal/
-// tslint:disable-next-line:no-reaching-imports
-import { addMaybeSagittalSymbol } from "../pitch/addMaybeSagittalSymbol"
-// tslint:disable-next-line:no-reaching-imports
-import { computeNotatingCommas } from "../pitch/notatingCommas"
+import {
+    addMaybeJiSymbol,
+    AnalyzedRationalPitch,
+    APOTOME,
+    computeNotatingCommas,
+    formatSymbol,
+    N2D3P9,
+} from "../../sagittal"
 import { computeExactlyNotatingJiSymbolIds } from "./exactlyNotatingJiSymbolIds"
 import { popularRatiosScriptGroupSettings } from "./globals"
 import { PopularRatioWithBestNotatingComma } from "./types"
@@ -70,7 +72,7 @@ const computePopularRatioWithBestNotatingComma = (
         throw new Error("did not find") // TODO: you didn't finish this it would seem
     }
 
-    const commaWithMaybeSagittalSymbol = addMaybeSagittalSymbol(bestNotatingComma)
+    const commaWithMaybeSagittalSymbol = addMaybeJiSymbol(bestNotatingComma)
 
     return {
         n2d3p9,

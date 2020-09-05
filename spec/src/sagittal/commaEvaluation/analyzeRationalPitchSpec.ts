@@ -1,7 +1,6 @@
 import { Cents, Monzo, Name, Prime, Ratio, Sopfr } from "../../../../src/general"
-import { AnalyzedRationalPitch, ApotomeSlope } from "../../../../src/sagittal"
-import { N2D3P9 } from "../../../../src/sagittal/commaEvaluation/n2d3p9"
-import { analyzeRationalPitch } from "../../../../src/scripts/pitch/analyzeRationalPitch"
+import { AnalyzedRationalPitch, ApotomeSlope, N2D3P9 } from "../../../../src/sagittal"
+import { analyzeRationalPitch } from "../../../../src/sagittal/commaEvaluation"
 
 describe("analyzeRationalPitch", () => {
     it("returns a bundle of analyzed properties of a comma, given its monzo", () => {

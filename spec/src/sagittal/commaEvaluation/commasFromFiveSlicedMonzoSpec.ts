@@ -1,7 +1,5 @@
-import { Abs, Cents, Integer, Max, Min, Monzo, Prime } from "../../../../src/general"
-import { Exponent } from "../../../../src/general/math"
-import { ApotomeSlope } from "../../../../src/sagittal"
-import { computeCommasFromFiveSlicedMonzo } from "../../../../src/scripts/pitch/commasFromFiveSlicedMonzo"
+import { Abs, Cents, Exponent, Integer, Max, Min, Monzo, Prime } from "../../../../src/general"
+import { ApotomeSlope, computeCommasFromFiveSlicedMonzo, N2D3P9 } from "../../../../src/sagittal"
 
 describe("computeCommasFromFiveSlicedMonzo", () => {
     const fiveSlicedMonzo: Monzo<Integer, 5> = [3, 5, -1] as Monzo<Integer, 5>
@@ -10,11 +8,13 @@ describe("computeCommasFromFiveSlicedMonzo", () => {
         const minCents = 40 as Min<Cents>
         const maxCents = 40.1 as Max<Cents>
         const maxAbsoluteThreeExponent = 12 as Max<Abs<Integer & Exponent<Prime>>>
+        const maxN2D3P9 = 40000 as Max<N2D3P9>
 
         const actual = computeCommasFromFiveSlicedMonzo(fiveSlicedMonzo, {
             minCents,
             maxCents,
             maxAbsoluteThreeExponent,
+            maxN2D3P9,
         })
 
         const expected = jasmine.arrayWithExactContents([

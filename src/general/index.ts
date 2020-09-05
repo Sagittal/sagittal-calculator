@@ -138,6 +138,7 @@ import {
 import {
     Cents,
     CentsPosition,
+    CENTS_PER_OCTAVE,
     COMMA_POPULARITIES,
     computeCentsFromMonzo,
     computeCentsFromRatio,
@@ -302,4 +303,5 @@ export {
     shallowClone,
     computeMonzoSlicedToPrimeIndex,
     alignFormattedNumber,
+    CENTS_PER_OCTAVE,
 }

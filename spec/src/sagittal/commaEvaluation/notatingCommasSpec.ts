@@ -1,8 +1,6 @@
-import { Abs, Cents, Id, Max } from "../../../../src/general"
-import { Monzo } from "../../../../src/general/math/monzo"
-import { AnalyzedRationalPitch, JiSymbol } from "../../../../src/sagittal"
-import { ApotomeSlope } from "../../../../src/sagittal/commaEvaluation"
-import { computeNotatingCommas } from "../../../../src/scripts/pitch/notatingCommas"
+import { Abs, Cents, Id, Max, Monzo } from "../../../../src/general"
+import { AnalyzedRationalPitch, ApotomeSlope, JiSymbol } from "../../../../src/sagittal"
+import { computeNotatingCommas } from "../../../../src/sagittal/commaEvaluation"
 
 describe("computeNotatingCommas", () => {
     it("given a monzo, returns a list of the commas that notate it, plus the symbol if that comma is a primary comma for a Sagittal JI symbol", () => {
@@ -40,17 +38,7 @@ describe("computeNotatingCommas", () => {
                 apotomeSlope: -8.275272492567069,
                 fiveRoughSopfr: 11,
                 n2d3p9: 6.722222,
-            },
-            {
-                cents: 60.41206282756764,
-                monzo: [-6, 6, 0, 0, -1],
-                ratio: [729, 704],
-                name: "1/11L",
-                limit: 11,
-                apotomeSlope: 2.280209198578947,
-                fiveRoughSopfr: 11,
-                n2d3p9: 6.722222,
-            },
+            }
         ] as Array<AnalyzedRationalPitch & { symbolId?: Id<JiSymbol> }>
         expect(actual).toEqual(expected)
     })

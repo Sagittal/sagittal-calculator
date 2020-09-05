@@ -12,26 +12,25 @@ import {
     Prime,
     Sopfr,
 } from "../../general"
-import {
-    AnalyzedRationalPitch,
-    computeApotomeSlope,
-    computeN2D3P9,
-    computeSagittalCommaName,
-    N2D3P9,
-} from "../../sagittal"
-import { pitchScriptGroupSettings } from "./globals"
+import { computeSagittalCommaName } from "../commaSizeName"
+import { AnalyzedRationalPitch } from "../types"
+import { computeApotomeSlope } from "./apotomeSlope"
+import { computeN2D3P9, N2D3P9 } from "./n2d3p9"
+
+// TODO: work out whether you think this is really evaluation or analysis
 
 const analyzeRationalPitch = (
     monzo: Monzo,
-    { giveName = true }: { giveName?: boolean } = {},
+    options: { giveName?: boolean, directed?: boolean, factored?: boolean, abbreviated?: boolean } = {},
 ): AnalyzedRationalPitch => {
+    const { giveName = true, directed = true, factored = false, abbreviated = true } = options
     const apotomeSlope = computeApotomeSlope(monzo)
 
     let name: Maybe<Name<AnalyzedRationalPitch>> = undefined
     if (giveName) {
         name = computeSagittalCommaName(
             monzo,
-            pitchScriptGroupSettings.commaNameOptions,
+            { directed, factored, abbreviated },
         )
     }
 

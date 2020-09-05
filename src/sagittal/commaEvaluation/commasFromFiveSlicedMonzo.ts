@@ -1,7 +1,13 @@
-import { abs, Cents, computeMonzoInZone, computePlusOrMinusRange, Integer, Min, Monzo } from "../../general"
-import { AnalyzedRationalPitch, MAX_SINGLE_SHAFT_CENTS } from "../../sagittal"
+import { abs, computeMonzoInZone, computePlusOrMinusRange, Integer, Monzo } from "../../general"
+import { AnalyzedRationalPitch } from "../types"
 import { analyzeRationalPitch } from "./analyzeRationalPitch"
-import { DEFAULT_MAX_ABSOLUTE_THREE_EXPONENT } from "./constants"
+import {
+    DEFAULT_MAX_ABSOLUTE_APOTOME_SLOPE,
+    DEFAULT_MAX_ABSOLUTE_THREE_EXPONENT,
+    DEFAULT_MAX_CENTS,
+    DEFAULT_MAX_N2D3P9,
+    DEFAULT_MIN_CENTS,
+} from "./constants"
 import { CommasFromFiveSlicedMonzoOptions } from "./types"
 
 const computeCommasFromFiveSlicedMonzo = (
@@ -9,11 +15,11 @@ const computeCommasFromFiveSlicedMonzo = (
     options?: CommasFromFiveSlicedMonzoOptions,
 ): AnalyzedRationalPitch[] => {
     const {
-        minCents = 0 as Min<Cents>,
-        maxCents = MAX_SINGLE_SHAFT_CENTS,
+        minCents = DEFAULT_MIN_CENTS,
+        maxCents = DEFAULT_MAX_CENTS,
         maxAbsoluteThreeExponent = DEFAULT_MAX_ABSOLUTE_THREE_EXPONENT,
-        maxAbsoluteApotomeSlope = Infinity,             // optional
-        maxN2D3P9 = Infinity,                   // optional
+        maxAbsoluteApotomeSlope = DEFAULT_MAX_ABSOLUTE_APOTOME_SLOPE,
+        maxN2D3P9 = Infinity // DEFAULT_MAX_N2D3P9,
     } = options || {}
 
     const analyzedCommas: AnalyzedRationalPitch[] = []

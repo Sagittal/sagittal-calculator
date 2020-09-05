@@ -1,6 +1,7 @@
 import { getSagittalComma } from "./getSagittalComma"
 import { MAX_SINGLE_SHAFT_CENTS } from "./intervals"
 import {
+    addMaybeJiSymbol,
     Bound,
     computeInaMidpoints,
     formatLevel,
@@ -44,4 +45,5 @@ export {
     SagittalComma,
     getSagittalComma,
     formatLevel,
+    addMaybeJiSymbol,
 }

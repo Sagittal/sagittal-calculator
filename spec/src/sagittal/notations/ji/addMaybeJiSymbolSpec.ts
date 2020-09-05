@@ -1,9 +1,9 @@
-import { Cents, Id, Monzo, Name, Prime, Ratio, Sopfr } from "../../../../src/general"
-import { AnalyzedRationalPitch, ApotomeSlope, JiSymbol, N2D3P9, SagittalComma } from "../../../../src/sagittal"
-import { addMaybeSagittalSymbol } from "../../../../src/scripts/pitch/addMaybeSagittalSymbol"
+import { Cents, Id, Monzo, Name, Prime, Ratio, Sopfr } from "../../../../../src/general"
+import { AnalyzedRationalPitch, ApotomeSlope, JiSymbol, N2D3P9, SagittalComma } from "../../../../../src/sagittal"
+import { addMaybeJiSymbol } from "../../../../../src/sagittal/notations/ji/addMaybeJiSymbol"
 
-describe("addMaybeSagittalSymbol", () => {
-    it(`adds the ASCII for a Sagittal symbol if there is one whose primary comma has this name`, () => {
+describe("addMaybeJiSymbol", () => {
+    it(`adds the ASCII for a Sagittal JI symbol if there is one whose primary comma has this name`, () => {
         const comma: AnalyzedRationalPitch = {
             apotomeSlope: -2.280 as ApotomeSlope,
             fiveRoughSopfr: 11 as Sopfr<5>,
@@ -15,7 +15,7 @@ describe("addMaybeSagittalSymbol", () => {
             n2d3p9: 6.722222222222222 as N2D3P9,
         }
 
-        const actual = addMaybeSagittalSymbol(comma)
+        const actual = addMaybeJiSymbol(comma)
 
         expect(actual).toEqual({
             symbolId: 115 as Id<JiSymbol>,
@@ -30,7 +30,7 @@ describe("addMaybeSagittalSymbol", () => {
         })
     })
 
-    it(`leaves the comma unchanged if there is no Sagittal symbol whose primary comma has this name`, () => {
+    it(`leaves the comma unchanged if there is no Sagittal JI symbol whose primary comma has this name`, () => {
         const comma: AnalyzedRationalPitch = {
             apotomeSlope: 70.574 as ApotomeSlope,
             fiveRoughSopfr: 11 as Sopfr<5>,
@@ -42,7 +42,7 @@ describe("addMaybeSagittalSymbol", () => {
             n2d3p9: 272.98 as N2D3P9,
         }
 
-        const actual = addMaybeSagittalSymbol(comma)
+        const actual = addMaybeJiSymbol(comma)
 
         expect(actual).toEqual(comma)
     })

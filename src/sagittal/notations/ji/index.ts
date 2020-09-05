@@ -1,3 +1,4 @@
+import { addMaybeJiSymbol } from "./addMaybeJiSymbol"
 import { formatLevel } from "./formatLevel"
 import { computeInaMidpoints } from "./inaMidpoints"
 import { INA_SIZES, TINA } from "./intervals"
@@ -30,4 +31,5 @@ export {
     Tina,
     formatLevel,
     Ina,
+    addMaybeJiSymbol,
 }

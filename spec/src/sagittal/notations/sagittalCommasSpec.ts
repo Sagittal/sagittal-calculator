@@ -3,8 +3,8 @@ import { ACCURACY_THRESHOLD } from "../../../../src/general/code"
 import { computeSagittalCommaName } from "../../../../src/sagittal/commaSizeName"
 import { SAGITTAL_COMMAS } from "../../../../src/sagittal/notations/sagittalCommas"
 
-describe("JI_SYMBOLS", () => {
-    it("is the case that the cents for each symbol agrees with its monzo", () => {
+describe("SAGITTAL_COMMAS", () => {
+    it("is the case that the cents for each comma agrees with its monzo", () => {
         SAGITTAL_COMMAS.forEach(comma => {
             const ratio = computeRatioFromMonzo(comma.monzo)
             const cents = computeCentsFromRatio(ratio)
@@ -13,7 +13,7 @@ describe("JI_SYMBOLS", () => {
         })
     })
 
-    it("is the case that the name for each symbol agrees with its monzo", () => {
+    it("is the case that the name for each comma agrees with its monzo", () => {
         SAGITTAL_COMMAS.forEach(comma => {
             const name = computeSagittalCommaName(comma.monzo)
 
@@ -21,7 +21,7 @@ describe("JI_SYMBOLS", () => {
         })
     })
 
-    it("is the case that the ratio for each symbol agrees with its monzo", () => {
+    it("is the case that the ratio for each comma agrees with its monzo", () => {
         SAGITTAL_COMMAS.forEach(comma => {
             const monzo = computeMonzoFromRatio(comma.ratio)
 

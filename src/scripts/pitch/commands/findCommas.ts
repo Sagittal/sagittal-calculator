@@ -1,13 +1,13 @@
 import { program } from "commander"
 import { CommandFlag, LogTarget, Max, Prime, saveLog } from "../../../general"
-import { addMaybeSagittalSymbol } from "../addMaybeSagittalSymbol"
-import { computeCommas } from "../commas"
 import {
+    addMaybeJiSymbol,
     DEFAULT_MAX_FIVE_ROUGH_COPFR,
     DEFAULT_MAX_FIVE_ROUGH_SOPFR,
     DEFAULT_MAX_PRIME_LIMIT,
-    PITCH_SCRIPT_GROUP,
-} from "../constants"
+} from "../../../sagittal"
+import { computeCommas } from "../commas"
+import { PITCH_SCRIPT_GROUP } from "../constants"
 import { pitchScriptGroupSettings } from "../globals"
 import { computeFindCommasTable } from "../io"
 import { applySharedPitchCommandSetup } from "./shared"
@@ -42,6 +42,6 @@ const commas = computeCommas({
     maxPrimeLimit,
 })
 
-const commasWithMaybeSymbols = commas.map(addMaybeSagittalSymbol)
+const commasWithMaybeSymbols = commas.map(addMaybeJiSymbol)
 
 saveLog(computeFindCommasTable(commasWithMaybeSymbols), LogTarget.ALL, PITCH_SCRIPT_GROUP)

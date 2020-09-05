@@ -5,7 +5,7 @@ import {
     DEFAULT_MIN_CENTS,
     DEFAULT_PITCH_SCRIPT_GROUP_MAX_N2D3P9,
     DEFAULT_SORT_KEY,
-} from "./constants"
+} from "../../sagittal"
 
 // TODO: and maybe the script group is called "jiPitch" since it's only about JI pitches
 

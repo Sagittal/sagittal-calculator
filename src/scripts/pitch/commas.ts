@@ -1,6 +1,5 @@
 import { Integer, Monzo, sort } from "../../general"
-import { AnalyzedRationalPitch } from "../../sagittal"
-import { computeCommasFromFiveSlicedMonzo } from "./commasFromFiveSlicedMonzo"
+import { AnalyzedRationalPitch, computeCommasFromFiveSlicedMonzo } from "../../sagittal"
 import { computeFiveSlicedMonzosToCheck } from "./fiveSlicedMonzosToCheck"
 import { CommasOptions } from "./types"
 

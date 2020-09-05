@@ -1,16 +1,18 @@
 import {
+    Abs,
     ANY_COMMA_NAME_CHARS,
     Cents,
-    computeMonzoFromRatio,
-    Extrema, Formatted,
-    isUndefined,
+    computeMonzoFromRatio, Exponent,
+    Extrema,
+    Formatted, Integer,
+    isUndefined, Max,
     Maybe,
     Monzo,
-    Name, parseRatio,
+    Name,
+    parseRatio, Prime,
     Ratio,
 } from "../../general"
-// tslint:disable-next-line:no-reaching-imports
-import { computeNotatingCommas } from "../../scripts/pitch/notatingCommas"
+import { computeNotatingCommas } from "../commaEvaluation"
 import { AnalyzedRationalPitch } from "../types"
 import { SizeCategory } from "./types"
 
@@ -93,13 +95,7 @@ const computeMonzoFromCommaName = (name: Name<AnalyzedRationalPitch>): Monzo => 
     const monzo = computeMonzoFromRatio(ratio)
     const [minCents, maxCents] = computeSizeCategoryExtrema(sizeCategoryName)
 
-    const commas = computeNotatingCommas(
-        monzo,
-        {
-            minCents,
-            maxCents,
-        },
-    )
+    const commas = computeNotatingCommas(monzo, { minCents, maxCents })
 
     if (commas.length !== 1) {
         throw new Error(`For whatever reason the number of commas notating the monzo ${monzo} in the range of that size category ${sizeCategoryName} was not 1. It was ${commas.length}.`)

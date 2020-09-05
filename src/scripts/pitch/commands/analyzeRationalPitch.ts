@@ -7,15 +7,16 @@ import {
     Formatted,
     Io,
     LogTarget,
-    Monzo, Name,
+    Monzo,
+    Name,
     parseMonzo,
     parseRatio,
     Ratio,
     saveLog,
 } from "../../../general"
-import { AnalyzedRationalPitch, computeMonzoFromCommaName } from "../../../sagittal"
-import { analyzeRationalPitch } from "../analyzeRationalPitch"
+import { AnalyzedRationalPitch, analyzeRationalPitch, computeMonzoFromCommaName } from "../../../sagittal"
 import { PITCH_SCRIPT_GROUP } from "../constants"
+import { pitchScriptGroupSettings } from "../globals"
 import { computeNotatingCommasTable, formatRationalPitch } from "../io"
 import { applySharedPitchCommandSetup } from "./shared"
 
@@ -75,7 +76,10 @@ and
 npm run analyze-rational-pitch 209/208 -- --max-n2d3p9 500
 */
 
-const analyzedRationalPitch = analyzeRationalPitch(monzo, { giveName: false })
+const analyzedRationalPitch = analyzeRationalPitch(
+    monzo,
+    { giveName: false, ...pitchScriptGroupSettings.commaNameOptions },
+) // todo maybe don't need these settings if you do this here now
 saveLog(formatRationalPitch(analyzedRationalPitch), LogTarget.ALL, PITCH_SCRIPT_GROUP)
 
 const notatingCommasFormattedTable = computeNotatingCommasTable(monzo)
