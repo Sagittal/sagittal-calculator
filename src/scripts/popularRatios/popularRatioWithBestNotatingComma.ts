@@ -23,7 +23,21 @@ import { addMaybeSagittalSymbol } from "../pitch/addMaybeSagittalSymbol"
 // tslint:disable-next-line:no-reaching-imports
 import { computeNotatingCommas } from "../pitch/notatingCommas"
 import { computeExactlyNotatingJiSymbolIds } from "./exactlyNotatingJiSymbolIds"
+import { popularRatiosScriptGroupSettings } from "./globals"
 import { PopularRatioWithBestNotatingComma } from "./types"
+
+// TODO: not yet tested
+const isLate = (notatingComma: AnalyzedRationalPitch, bestNotatingComma: AnalyzedRationalPitch) => {
+    return abs(notatingComma.monzo[ 1 ]) < abs(bestNotatingComma.monzo[ 1 ]) ||
+        (
+            abs(notatingComma.monzo[ 1 ]) === abs(bestNotatingComma.monzo[ 1 ]) &&
+            notatingComma.cents < bestNotatingComma.cents
+        )
+}
+
+const isLaas = (notatingComma: AnalyzedRationalPitch, bestNotatingComma: AnalyzedRationalPitch) => {
+    return abs(notatingComma.apotomeSlope) < abs(bestNotatingComma.apotomeSlope)
+}
 
 const computePopularRatioWithBestNotatingComma = (
     { monzo, n2d3p9 }: { monzo: Monzo, n2d3p9: N2D3P9 },
@@ -40,21 +54,23 @@ const computePopularRatioWithBestNotatingComma = (
 
     const notatingCommas = computeNotatingCommas(monzo, { maxCents: APOTOME.cents / 2 as Max<Cents> })
 
-    let notatingCommaWithLeastAbsoluteApotomeSlope: Maybe<AnalyzedRationalPitch> = undefined
+    let bestNotatingComma: Maybe<AnalyzedRationalPitch> = undefined
     for (const notatingComma of notatingCommas) {
         if (
-            isUndefined(notatingCommaWithLeastAbsoluteApotomeSlope) ||
-            abs(notatingComma.apotomeSlope) < abs(notatingCommaWithLeastAbsoluteApotomeSlope.apotomeSlope)
+            isUndefined(bestNotatingComma) ||
+            popularRatiosScriptGroupSettings.useLate ?
+                isLate(notatingComma, bestNotatingComma as AnalyzedRationalPitch) :
+                isLaas(notatingComma, bestNotatingComma)
         ) {
-            notatingCommaWithLeastAbsoluteApotomeSlope = notatingComma
+            bestNotatingComma = notatingComma
         }
     }
 
-    if (isUndefined(notatingCommaWithLeastAbsoluteApotomeSlope)) {
-        throw new Error("did not find")
+    if (isUndefined(bestNotatingComma)) {
+        throw new Error("did not find") // TODO: you didn't finish this it would seem
     }
 
-    const commaWithMaybeSagittalSymbol = addMaybeSagittalSymbol(notatingCommaWithLeastAbsoluteApotomeSlope)
+    const commaWithMaybeSagittalSymbol = addMaybeSagittalSymbol(bestNotatingComma)
 
     return {
         n2d3p9,
@@ -62,9 +78,9 @@ const computePopularRatioWithBestNotatingComma = (
         formattedRatio,
         popularityRank,
         votes,
-        centsOfNotatingCommaWithLeastAbsoluteApotomeSlope: formatNumber(commaWithMaybeSagittalSymbol.cents),
-        monzoOfNotatingCommaWithLeastAbsoluteApotomeSlope: formatMonzo(commaWithMaybeSagittalSymbol.monzo),
-        maybeSymbolForNotatingCommaWithLeastAbsoluteApotomeSlope:
+        centsOfBestNotatingComma: formatNumber(commaWithMaybeSagittalSymbol.cents),
+        monzoOfBestNotatingComma: formatMonzo(commaWithMaybeSagittalSymbol.monzo),
+        maybeSymbolForBestNotatingComma:
             commaWithMaybeSagittalSymbol.symbolId ?
                 formatSymbol(commaWithMaybeSagittalSymbol.symbolId, ioSettings) :
                 BLANK,

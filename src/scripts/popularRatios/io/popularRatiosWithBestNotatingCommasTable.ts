@@ -1,30 +1,30 @@
-import { addTexts, Count, count, formatTable, Io, Max, Ranked, Row, Table } from "../../../general"
+import { addTexts, ColorMethod, Count, count, formatTable, Io, Max, Maybe, Ranked, Row, Table } from "../../../general"
 import { N2D3P9 } from "../../../sagittal"
 import { PopularRatio, PopularRatioWithBestNotatingComma } from "../types"
-import { computePopularRatiosHeaderRows } from "./headerRows"
+import { computeBestNotatingCommaHeaderRows } from "./headerRows"
 
 const computePopularRatiosWithBestNotatingCommasTable = (
     popularRatios: Array<Ranked<PopularRatioWithBestNotatingComma>>,
     maxN2D3P9: Max<N2D3P9>
 ): Io => {
-    const table: Table<PopularRatio> = computePopularRatiosHeaderRows()
+    const table: Table<PopularRatio> = computeBestNotatingCommaHeaderRows()
     const headerRowCount = count(table) as Count<Row<PopularRatio, "Header">>
 
     popularRatios.forEach(popularRatio => {
         const {
             formattedRatio,
             rank: estimatedRank,
-            centsOfNotatingCommaWithLeastAbsoluteApotomeSlope,
-            monzoOfNotatingCommaWithLeastAbsoluteApotomeSlope,
-            maybeSymbolForNotatingCommaWithLeastAbsoluteApotomeSlope,
+            centsOfBestNotatingComma,
+            monzoOfBestNotatingComma,
+            maybeSymbolForBestNotatingComma,
         } = popularRatio
 
         table.push([
             formattedRatio,
             estimatedRank,
-            centsOfNotatingCommaWithLeastAbsoluteApotomeSlope,
-            monzoOfNotatingCommaWithLeastAbsoluteApotomeSlope,
-            maybeSymbolForNotatingCommaWithLeastAbsoluteApotomeSlope,
+            centsOfBestNotatingComma,
+            monzoOfBestNotatingComma,
+            maybeSymbolForBestNotatingComma,
         ] as Row<PopularRatio>)
     })
 

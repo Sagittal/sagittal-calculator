@@ -12,7 +12,7 @@ enum CommandFlag {
     NO_USELESS = "e",
     FACTORED_COMMA_NAME = "f",
     COMMA_NAME = "g",
-    WITH_BEST_NOTATING_COMMAS = "h",
+    USE_LATE = "h",
     MAX_UNIT = "i",
     KNOWN_POPULAR_RATIOS = "k",
     MIN_CENTS = "l",

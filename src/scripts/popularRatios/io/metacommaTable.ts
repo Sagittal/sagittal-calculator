@@ -49,8 +49,8 @@ const computeMetacommasTable = (
     popularRatiosWithBestNotatingCommas.forEach(popularRatioA => {
         popularRatiosWithBestNotatingCommas.forEach(popularRatioB => {
             const centsDifference = abs(
-                parseFloat(popularRatioA.centsOfNotatingCommaWithLeastAbsoluteApotomeSlope) -
-                parseFloat(popularRatioB.centsOfNotatingCommaWithLeastAbsoluteApotomeSlope),
+                parseFloat(popularRatioA.centsOfBestNotatingComma) -
+                parseFloat(popularRatioB.centsOfBestNotatingComma),
             )
 
             // TODO: it is horrible that these are already formatted
@@ -58,8 +58,8 @@ const computeMetacommasTable = (
             //  amongst the scripts
 
             if (centsDifference !== 0 && centsDifference < 9.5 * TINA) {
-                const monzoA = parseMonzo(popularRatioA.monzoOfNotatingCommaWithLeastAbsoluteApotomeSlope)
-                const monzoB = parseMonzo(popularRatioB.monzoOfNotatingCommaWithLeastAbsoluteApotomeSlope)
+                const monzoA = parseMonzo(popularRatioA.monzoOfBestNotatingComma)
+                const monzoB = parseMonzo(popularRatioB.monzoOfBestNotatingComma)
 
                 const monzoDifference = computeSuperMonzo(sumMonzos(monzoA, invertMonzo(monzoB)))
 

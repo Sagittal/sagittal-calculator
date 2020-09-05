@@ -3,6 +3,8 @@ import { computeN2D3P9 } from "../../sagittal"
 import { computePopularRatio } from "./popularRatio"
 import { PopularRatio } from "./types"
 
+// TODO: ideally the best notating commas script would also be able to use this
+
 // use this instead of popular ratios when you already have the list but you just need to gather the extra data on them
 const computeKnownPopularRatios = (): Array<Ranked<PopularRatio>> => {
     const knownPopularRatios = [

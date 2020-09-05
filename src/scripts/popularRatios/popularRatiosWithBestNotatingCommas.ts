@@ -1,21 +1,22 @@
 import {
     computeTrimmedArray,
-    Exponent, Integer,
+    Exponent,
+    Integer,
     isUndefined,
     Max,
-    Monzo, ONE,
+    Monzo,
     Prime,
     rank,
     Ranked,
     RankStrategy,
-    shallowClone, sum,
+    shallowClone,
 } from "../../general"
 import { computePrimeExponentExtremasGivenMaxN2D3P9, N2D3P9 } from "../../sagittal"
 import { computeMaybePopularRatioWithBestNotatingComma } from "./maybePopularRatioWithBestNotatingComma"
 import { PopularRatioWithBestNotatingComma } from "./types"
 
 const computePopularRatiosWithBestNotatingCommas = (
-    maxN2D3P9: Max<N2D3P9>
+    maxN2D3P9: Max<N2D3P9>,
 ): Array<Ranked<PopularRatioWithBestNotatingComma>> => {
     const primeExponentExtremasGivenMaxN2D3P9 = computePrimeExponentExtremasGivenMaxN2D3P9(maxN2D3P9)
 
