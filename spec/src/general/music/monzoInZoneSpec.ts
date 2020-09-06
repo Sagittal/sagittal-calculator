@@ -22,12 +22,4 @@ describe("computeMonzoInZone", () => {
 
         expect(actual).toBeUndefined()
     })
-
-    it("throws an error if the cents range is greater than an octave (therefore more than one two monzo could be in range)", () => {
-        const threeRoughMonzo = [-6, 3, 5, -1] as Monzo<Integer, 3>
-        const minCents = 40.0 as Min<Cents>
-        const maxCents = 1240.1 as Max<Cents>
-
-        expect(() => computeMonzoInZone(threeRoughMonzo, [minCents, maxCents])).toThrowError("Cents range must be less than 1200.")
-    })
 })

@@ -24,21 +24,48 @@ describe("computePrimeExponentRange", () => {
         expect(actual).toEqual(expected)
     })
 
-    // TODO: test - finish these
     it("gives the valid range of the prime exponent given a max 5-rough sopfr and a max N2D3P9 where the 5-rough sopfr is the limiting factor", () => {
+        const prime = 7 as Prime
+        const maxFiveRoughSopfr = 999 as Max<Sopfr<5>>
+        const primeExponentExtremaGivenMaxN2D3P9 = [-2, 4] as Extrema<Integer & Exponent<Prime>>
 
+        const actual = computePrimeExponentRange(prime, { maxFiveRoughSopfr, primeExponentExtremaGivenMaxN2D3P9 })
+
+        const expected = [-2, -1, 0, 1, 2, 3, 4] as Array<Integer & Exponent<Prime>>
+        expect(actual).toEqual(expected)
     })
 
     it("gives the valid range of the prime exponent given a max 5-rough sopfr and a max N2D3P9 where the N2D3P9 is the limiting factor", () => {
+        const prime = 7 as Prime
+        const maxFiveRoughSopfr = 14 as Max<Sopfr<5>>
+        const primeExponentExtremaGivenMaxN2D3P9 = [-5, 8] as Extrema<Integer & Exponent<Prime>>
 
+        const actual = computePrimeExponentRange(prime, { maxFiveRoughSopfr, primeExponentExtremaGivenMaxN2D3P9 })
+
+        const expected = [-2, -1, 0, 1, 2] as Array<Integer & Exponent<Prime>>
+        expect(actual).toEqual(expected)
     })
 
     it("gives the valid range of the prime exponent given a max 5-rough copfr and a max N2D3P9 where the 5-rough copfr is the limiting factor", () => {
+        const prime = 11 as Prime
+        const maxFiveRoughCopfr = 3 as Max<Copfr<5>>
+        const primeExponentExtremaGivenMaxN2D3P9 = [-5, 9] as Extrema<Integer & Exponent<Prime>>
 
+        const actual = computePrimeExponentRange(prime, { primeExponentExtremaGivenMaxN2D3P9, maxFiveRoughCopfr })
+
+        const expected = [-3, -2, -1, 0, 1, 2, 3] as Array<Integer & Exponent<Prime>>
+        expect(actual).toEqual(expected)
     })
 
     it("gives the valid range of the prime exponent given a max 5-rough copfr and a max N2D3P9 where the N2D3P9 is the limiting factor", () => {
+        const prime = 11 as Prime
+        const maxFiveRoughCopfr = 3 as Max<Copfr<5>>
+        const primeExponentExtremaGivenMaxN2D3P9 = [-1, 2] as Extrema<Integer & Exponent<Prime>>
 
+        const actual = computePrimeExponentRange(prime, { primeExponentExtremaGivenMaxN2D3P9, maxFiveRoughCopfr })
+
+        const expected = [-1, 0, 1, 2] as Array<Integer & Exponent<Prime>>
+        expect(actual).toEqual(expected)
     })
 
     it("gives the valid range of the prime exponent given only a max 5-rough sopfr", () => {

@@ -12,6 +12,13 @@ import {
 import { AnalyzedRationalPitch } from "../../../sagittal"
 import { computeRationalPitchHeaderRow } from "./headerRows"
 
+// TODO: is this computeRationalPitchTable or formatRationalPitch? get these all straight
+//  I think you already have a to-do re: this problem
+
+// TODO: I think now that we've clarified that this is the N2D3P9 of its 2,3-free class,
+//  you should actually include the 2,3-free class on it!
+//  but perhaps it's a branded Ratio type?
+
 const formatRationalPitch = (rationalPitch: AnalyzedRationalPitch): Io => {
     const { limit, fiveRoughSopfr, cents, monzo, ratio, apotomeSlope, n2d3p9 } = rationalPitch
 

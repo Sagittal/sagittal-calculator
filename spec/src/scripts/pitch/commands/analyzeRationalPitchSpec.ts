@@ -7,8 +7,8 @@ import { runCommandAndGetConsoleOutput } from "../../../../helpers/src/scripts/r
 
 describe("analyze-rational-pitch", () => {
     const expected = [
-        "        \t       \tratio     \tmonzo                  \tcents  \tapotome slope\tlimit  \t5-rough sopfr\tN2D3P9 ",
-        "        \t       \t2200/2187 \t[   3  -7   2   0   1 ⟩\t 10.260\t -7.632      \t 11    \t 21          \t 42.014",
+        "        \t       \tratio     \tmonzo                  \tcents  \tapotome slope\tlimit  \t5-rough sopfr\t2,3-free class N2D3P9",
+        "        \t       \t2200/2187 \t[   3  -7   2   0   1 ⟩\t 10.260\t -7.632      \t 11    \t 21          \t 42.014              ",
         "",
         "   --- notating commas ---",
         "",
@@ -67,8 +67,8 @@ describe("analyze-rational-pitch", () => {
         onlyRunInCi()
 
         const expected = [
-            "        \t       \tratio     \tmonzo                  \tcents  \tapotome slope\tlimit  \t5-rough sopfr\tN2D3P9 ",
-            "        \t       \t2200/2187 \t[   3  -7   2   0   1 ⟩\t 10.260\t -7.632      \t 11    \t 21          \t 42.014",
+            "        \t       \tratio     \tmonzo                  \tcents  \tapotome slope\tlimit  \t5-rough sopfr\t2,3-free class N2D3P9",
+            "        \t       \t2200/2187 \t[   3  -7   2   0   1 ⟩\t 10.260\t -7.632      \t 11    \t 21          \t 42.014              ",
             "",
             "   --- notating commas ---",
             "",

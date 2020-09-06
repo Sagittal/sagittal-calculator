@@ -1,10 +1,10 @@
 import { Copfr, Exponent, Extrema, Integer, Max, ObjectKey, Prime, Sopfr } from "../../general"
 import { CommaNameOptions, CommasFromFiveSlicedMonzoOptions, N2D3P9 } from "../../sagittal"
 
-interface CommasOptions extends CommasFromFiveSlicedMonzoOptions, FiveSlicedMonzosToCheckOptions {
-    sortKey?: ObjectKey,
-    commaNameOptions?: CommaNameOptions,
-}
+type CommasOptions = CommasFromFiveSlicedMonzoOptions & FiveSlicedMonzosToCheckOptions & Partial<{
+    sortKey: ObjectKey,
+    commaNameOptions: CommaNameOptions,
+}>
 
 type FiveSlicedMonzosToCheckOptions = Partial<{
     maxFiveRoughCopfr: Max<Copfr<5>>,
@@ -16,10 +16,17 @@ type FiveSlicedMonzosToCheckOptions = Partial<{
 type PrimeExponentRangeOptions = Partial<{
     maxFiveRoughCopfr: Max<Copfr<5>>,
     maxFiveRoughSopfr: Max<Sopfr<5>>,
-    primeExponentExtremaGivenMaxN2D3P9?: Extrema<Integer & Exponent<Prime>>,
+    primeExponentExtremaGivenMaxN2D3P9: Extrema<Integer & Exponent<Prime>>,
+}>
+
+type FiveRoughPrimesToCheckOptions = Partial<{
+    maxPrimeLimit: Max<Max<Prime>>,
+    maxFiveRoughSopfr: Max<Sopfr<5>>,
+    primeExponentExtremasGivenMaxN2D3P9: Array<Extrema<Integer & Exponent<Prime>>>,
 }>
 
 export {
+    FiveRoughPrimesToCheckOptions,
     CommasOptions,
     FiveSlicedMonzosToCheckOptions,
     PrimeExponentRangeOptions,

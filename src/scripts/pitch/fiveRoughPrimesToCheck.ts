@@ -1,17 +1,25 @@
-import { Prime, PRIMES } from "../../general"
+import { isUndefined, min, PRIMES } from "../../general"
+import { FiveRoughPrimesToCheckOptions } from "./types"
 
-const computeFiveRoughPrimesToCheck = (
-    { maxPrimeLimit, maxFiveRoughSopfr, primeExponentExtremasGivenMaxN2D3P9 }: any,
-) => {
-    let maxPrime: Prime
-    if (maxPrimeLimit) {
-        maxPrime = maxPrimeLimit
-    } else {
-        const possiblePrimes = PRIMES.filter(prime => prime < (maxFiveRoughSopfr || Infinity))
-        maxPrime = possiblePrimes[ possiblePrimes.length - 1 ]
+const computeFiveRoughPrimesToCheck = (options: FiveRoughPrimesToCheckOptions) => {
+    const { maxPrimeLimit, maxFiveRoughSopfr, primeExponentExtremasGivenMaxN2D3P9 } = options
+
+    if (
+        isUndefined(maxPrimeLimit) &&
+        isUndefined(maxFiveRoughSopfr) &&
+        isUndefined(primeExponentExtremasGivenMaxN2D3P9)
+    ) {
+        throw new Error("The maximum prime must be limited somehow.")
     }
-    const indexOfMaxPrime = PRIMES.findIndex(prime =>
-        prime === maxPrime)
+
+    const indexOfMaxPrimeByPrimeLimit =
+        !isUndefined(maxPrimeLimit) ? PRIMES.findIndex(prime => prime === maxPrimeLimit) : Infinity
+    const indexOfMaxPrimeByFiveRoughSopfr =
+        !isUndefined(maxFiveRoughSopfr) ? PRIMES.findIndex(prime => prime > maxFiveRoughSopfr) - 1 : Infinity
+    const indexOfMaxPrimeByN2D3P9 =
+        !isUndefined(primeExponentExtremasGivenMaxN2D3P9) ? primeExponentExtremasGivenMaxN2D3P9.length - 1 : Infinity
+
+    const indexOfMaxPrime = min(indexOfMaxPrimeByPrimeLimit, indexOfMaxPrimeByFiveRoughSopfr, indexOfMaxPrimeByN2D3P9)
 
     return PRIMES.slice(2, indexOfMaxPrime + 1)
 }

@@ -6,7 +6,7 @@ import {
     Copfr,
     Exponent,
     ExtensionBaseType,
-    Extrema,
+    Extrema, FIVE_PRIME_INDEX,
     Integer,
     isUndefined,
     Max,
@@ -23,7 +23,7 @@ import { FiveSlicedMonzosToCheckOptions } from "./types"
 const computeFiveSlicedMonzosToCheck = (
     { maxPrimeLimit, maxFiveRoughSopfr, maxFiveRoughCopfr, maxN2D3P9 }: FiveSlicedMonzosToCheckOptions = {},
 ): Array<Monzo<Integer, 5>> => {
-    if (isUndefined(maxFiveRoughSopfr)) {
+    if (isUndefined(maxFiveRoughSopfr) && isUndefined(maxN2D3P9)) {
         if (isUndefined(maxPrimeLimit)) {
             if (isUndefined(maxFiveRoughCopfr)) {
                 throw new Error("The primes must be limited somehow.")
@@ -35,12 +35,8 @@ const computeFiveSlicedMonzosToCheck = (
         }
     }
 
-    let fiveSlicedMonzosToCheck: Array<Monzo<Integer, 5>> = [
-        [] as unknown[] as Monzo<Integer, 5>,
-    ]
-
     const primeExponentExtremasGivenMaxN2D3P9: Maybe<Array<Extrema<Integer & Exponent<Prime>>>> =
-        maxN2D3P9 && computePrimeExponentExtremasGivenMaxN2D3P9(maxN2D3P9)
+        maxN2D3P9 && computePrimeExponentExtremasGivenMaxN2D3P9(maxN2D3P9, { mirrored: true })
 
     const fiveRoughPrimesToCheck = computeFiveRoughPrimesToCheck({
         maxPrimeLimit,
@@ -48,12 +44,15 @@ const computeFiveSlicedMonzosToCheck = (
         primeExponentExtremasGivenMaxN2D3P9,
     })
 
+    let fiveSlicedMonzosToCheck: Array<Monzo<Integer, 5>> = [
+        [] as unknown[] as Monzo<Integer, 5>,
+    ]
     fiveRoughPrimesToCheck.forEach((fiveRoughPrimeToCheck, index) => {
         const extendedFiveSlicedMonzosToCheck: Array<Monzo<Integer, 5>> =
             computeExtensionBase(ExtensionBaseType.ARRAY) as Array<Monzo<Integer, 5>>
 
         const primeExponentExtremaGivenMaxN2D3P9: Maybe<Extrema<Integer & Exponent<Prime>>> =
-            primeExponentExtremasGivenMaxN2D3P9 && primeExponentExtremasGivenMaxN2D3P9[ index ]
+            primeExponentExtremasGivenMaxN2D3P9 && primeExponentExtremasGivenMaxN2D3P9[ index + FIVE_PRIME_INDEX ]
 
         fiveSlicedMonzosToCheck.forEach(fiveSlicedMonzoToCheck => {
             const fiveRoughSopfr = computeSopfr([0, 0, ...fiveSlicedMonzoToCheck] as Monzo)

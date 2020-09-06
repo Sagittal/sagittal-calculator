@@ -18,7 +18,7 @@ const FIND_COMMAS_HEADER_ROW: Row<AnalyzedRationalPitch, "Header"> = concat(
     [
         "limit",
         "5-rough sopfr",
-        "N2D3P9",
+        "2,3-free class N2D3P9",
     ] as Row<AnalyzedRationalPitch, "Header">,
 )
 
