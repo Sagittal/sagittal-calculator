@@ -56,6 +56,7 @@ const computePopularRatiosWithBestNotatingCommas = (
         }
 
         // ok so now we're at the first term which isn't at its max
+        saveLog(`have now reached prime index ${indexToTick}` as Io, LogTarget.PROGRESS, POPULAR_RATIOS_SCRIPT_GROUP)
 
         // quit now if apparently ALL the terms are at their maxes
         if (indexToTick === monzo.length) {
