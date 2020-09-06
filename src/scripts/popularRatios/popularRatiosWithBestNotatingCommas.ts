@@ -1,24 +1,38 @@
 import {
     computeTrimmedArray,
     Exponent,
-    Integer,
+    Integer, Io,
     isUndefined,
+    LogTarget,
     Max,
     Monzo,
     Prime,
     rank,
     Ranked,
     RankStrategy,
+    saveLog,
     shallowClone,
+    stringify,
 } from "../../general"
 import { computePrimeExponentExtremasGivenMaxN2D3P9, N2D3P9 } from "../../sagittal"
+import { POPULAR_RATIOS_SCRIPT_GROUP } from "./constants"
 import { computeMaybePopularRatioWithBestNotatingComma } from "./maybePopularRatioWithBestNotatingComma"
 import { PopularRatioWithBestNotatingComma } from "./types"
 
 const computePopularRatiosWithBestNotatingCommas = (
     maxN2D3P9: Max<N2D3P9>,
 ): Array<Ranked<PopularRatioWithBestNotatingComma>> => {
+    saveLog(
+        "About to calculate prime exponent extremas given max N2D3P9" as Io,
+        LogTarget.PROGRESS,
+        POPULAR_RATIOS_SCRIPT_GROUP
+    )
     const primeExponentExtremasGivenMaxN2D3P9 = computePrimeExponentExtremasGivenMaxN2D3P9(maxN2D3P9)
+    saveLog(
+        `prime exponent extremas given max N2D3P9: ${stringify(primeExponentExtremasGivenMaxN2D3P9)}` as Io,
+        LogTarget.PROGRESS,
+        POPULAR_RATIOS_SCRIPT_GROUP
+    )
 
     const initialMonzo: Monzo = primeExponentExtremasGivenMaxN2D3P9.map(([minPrimeExponent, _]) => minPrimeExponent)
     const finalMonzo: Monzo = primeExponentExtremasGivenMaxN2D3P9.map(([_, maxPrimeExponent]) => maxPrimeExponent)
@@ -30,6 +44,7 @@ const computePopularRatiosWithBestNotatingCommas = (
         const maybePopularRatio = computeMaybePopularRatioWithBestNotatingComma(computeTrimmedArray(monzo), maxN2D3P9)
 
         if (!isUndefined(maybePopularRatio)) {
+            saveLog(stringify(maybePopularRatio) as Io, LogTarget.PROGRESS, POPULAR_RATIOS_SCRIPT_GROUP)
             popularRatios.push(maybePopularRatio)
         }
 

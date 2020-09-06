@@ -14,6 +14,7 @@ enum LogTarget {
     FINAL_SOLVER_RESULTS = "finalSolverResults",
     PERFECT = "perfect",
     FINAL_PERFECTER_RESULTS = "finalPerfecterResults",
+    PROGRESS = "progress",
 }
 
 type SaveLogOptions = Partial<{

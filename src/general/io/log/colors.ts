@@ -18,6 +18,7 @@ const targetColors: Record<LogTarget, ColorMethod> = {
     [ LogTarget.FINAL_SOLVER_RESULTS ]: "green",
     [ LogTarget.PERFECT ]: "magenta",
     [ LogTarget.FINAL_PERFECTER_RESULTS ]: "green",
+    [ LogTarget.PROGRESS ]: "yellow",
 }
 
 export {
