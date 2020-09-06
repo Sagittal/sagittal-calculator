@@ -1,5 +1,5 @@
 import { Max, Monzo } from "../../../../src/general/math"
-import { N2D3P9 } from "../../../../src/sagittal/commaEvaluation/n2d3p9"
+import { N2D3P9 } from "../../../../src/sagittal/comma/evaluation/n2d3p9"
 import { computeMaybePopularRatio } from "../../../../src/scripts/popularRatios/maybePopularRatio"
 
 describe("computeMaybePopularRatio", () => {

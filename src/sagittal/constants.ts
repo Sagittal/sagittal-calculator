@@ -1,5 +1,5 @@
 import { Cents, Monzo, Name, Prime, Ratio, Sopfr, THREE_PRIME_INDEX } from "../general"
-import { ApotomeSlope, N2D3P9 } from "./commaEvaluation"
+import { ApotomeSlope, N2D3P9 } from "./comma"
 import { AnalyzedRationalPitch } from "./types"
 
 const APOTOME: AnalyzedRationalPitch = {

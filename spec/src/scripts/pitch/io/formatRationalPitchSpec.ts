@@ -2,7 +2,7 @@
 
 import { Cents, Io, Monzo, Name, NEWLINE, Prime, Ratio, Sopfr } from "../../../../../src/general"
 import { AnalyzedRationalPitch, ApotomeSlope } from "../../../../../src/sagittal"
-import { N2D3P9 } from "../../../../../src/sagittal/commaEvaluation/n2d3p9"
+import { N2D3P9 } from "../../../../../src/sagittal/comma/evaluation/n2d3p9"
 import { formatRationalPitch } from "../../../../../src/scripts/pitch/io"
 
 describe("formatRationalPitch", () => {

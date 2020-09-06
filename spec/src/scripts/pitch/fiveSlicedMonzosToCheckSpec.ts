@@ -1,5 +1,5 @@
 import { Copfr, Max, Prime, Sopfr } from "../../../../src/general"
-import { N2D3P9 } from "../../../../src/sagittal/commaEvaluation/n2d3p9"
+import { N2D3P9 } from "../../../../src/sagittal/comma/evaluation/n2d3p9"
 import { computeFiveSlicedMonzosToCheck } from "../../../../src/scripts/pitch/fiveSlicedMonzosToCheck"
 
 // TODO: Might it be preferable to do the strategy where instead of populating the whole list of monzos to check

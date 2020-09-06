@@ -1,6 +1,6 @@
 import { computeCentsFromRatio, computeMonzoFromRatio, computeRatioFromMonzo } from "../../../../src/general"
 import { ACCURACY_THRESHOLD } from "../../../../src/general/code"
-import { computeSagittalCommaName } from "../../../../src/sagittal/commaSizeName"
+import { computeSagittalCommaName } from "../../../../src/sagittal/comma/name"
 import { SAGITTAL_COMMAS } from "../../../../src/sagittal/notations/sagittalCommas"
 
 describe("SAGITTAL_COMMAS", () => {

@@ -1,7 +1,7 @@
 import { Formatted, Io, ioSettings, Rank, Ratio } from "../../../../src/general"
 import { Monzo } from "../../../../src/general/math"
 import { Popularity, Votes } from "../../../../src/general/music"
-import { N2D3P9 } from "../../../../src/sagittal/commaEvaluation/n2d3p9"
+import { N2D3P9 } from "../../../../src/sagittal/comma/evaluation/n2d3p9"
 import { computePopularRatio } from "../../../../src/scripts/popularRatios/popularRatio"
 import { PopularRatio } from "../../../../src/scripts/popularRatios/types"
 

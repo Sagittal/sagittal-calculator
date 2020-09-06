@@ -1,5 +1,5 @@
 import { Monzo, Name, Pitch, Prime, Ratio, Sopfr } from "../general"
-import { ApotomeSlope, N2D3P9 } from "./commaEvaluation"
+import { ApotomeSlope, N2D3P9 } from "./comma"
 
 // TODO: should i just use "Ji" as the standardized signal of Rationality through the codebase?
 //  though that doesn't really work with the number vs. Integer distinction, which is really the same

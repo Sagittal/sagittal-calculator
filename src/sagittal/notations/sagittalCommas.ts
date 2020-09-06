@@ -1,5 +1,5 @@
 import { Cents, Id, Monzo, Name, Prime, Ratio, Sopfr } from "../../general"
-import { ApotomeSlope, N2D3P9 } from "../commaEvaluation"
+import { ApotomeSlope, N2D3P9 } from "../comma"
 import { APOTOME } from "../constants"
 import { SagittalComma } from "./types"
 

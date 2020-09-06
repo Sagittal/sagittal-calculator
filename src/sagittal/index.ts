@@ -18,8 +18,10 @@ export {
     DEFAULT_PITCH_SCRIPT_GROUP_MAX_N2D3P9,
     DEFAULT_SORT_KEY,
     N2D3P9,
-} from "./commaEvaluation"
-export { computeMonzoFromCommaName, computeSagittalCommaName, SIZE_CATEGORY_BOUNDS } from "./commaSizeName"
+    computeMonzoFromCommaName,
+    computeSagittalCommaName,
+    SIZE_CATEGORY_BOUNDS,
+} from "./comma"
 export { APOTOME } from "./constants"
 export { formatSymbol, formatSymbolAscii, SymbolLongAscii, unicodeFromAscii } from "./io"
 export {
