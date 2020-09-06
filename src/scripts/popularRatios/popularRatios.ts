@@ -35,6 +35,10 @@ const computePopularRatios = (
         POPULAR_RATIOS_SCRIPT_GROUP,
     )
 
+    const monzoCount = primeExponentExtremasGivenMaxN2D3P9.reduce((total, [min, max]) => total * (max - min + 1), 1)
+    saveLog(`total monzos to check: ${monzoCount}` as Io, LogTarget.PROGRESS, POPULAR_RATIOS_SCRIPT_GROUP)
+    let monzosCheckedCount = 0
+
     const initialMonzo: Monzo = primeExponentExtremasGivenMaxN2D3P9.map(([minPrimeExponent, _]) => minPrimeExponent)
     const finalMonzo: Monzo = primeExponentExtremasGivenMaxN2D3P9.map(([_, maxPrimeExponent]) => maxPrimeExponent)
     let monzo: Monzo = shallowClone(initialMonzo)
@@ -43,6 +47,16 @@ const computePopularRatios = (
     while (true) {
         // do the work
         const maybePopularRatio = computeMaybePopularRatio(computeTrimmedArray(monzo), maxN2D3P9)
+
+        // log progress
+        monzosCheckedCount = monzosCheckedCount + 1
+        if (monzosCheckedCount % 1000000 === 0) {
+            saveLog(
+                `done: ${monzosCheckedCount} (${100 * monzosCheckedCount / monzoCount}%)` as Io,
+                LogTarget.PROGRESS,
+                POPULAR_RATIOS_SCRIPT_GROUP,
+            )
+        }
 
         if (!isUndefined(maybePopularRatio)) {
             saveLog(stringify(maybePopularRatio) as Io, LogTarget.PROGRESS, POPULAR_RATIOS_SCRIPT_GROUP)
@@ -57,7 +71,6 @@ const computePopularRatios = (
         }
 
         // ok so now we're at the first term which isn't at its max
-        saveLog(`have now reached prime index ${indexToTick}` as Io, LogTarget.PROGRESS, POPULAR_RATIOS_SCRIPT_GROUP)
 
         // quit now if apparently ALL the terms are at their maxes
         if (indexToTick === monzo.length) {
