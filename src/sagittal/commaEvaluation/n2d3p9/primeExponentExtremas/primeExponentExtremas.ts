@@ -3,7 +3,8 @@ import {
     Exponent,
     Extrema,
     FIVE_PRIME_INDEX,
-    Index, Integer,
+    Index,
+    Integer,
     Max,
     Prime,
     PRIMES,
@@ -14,7 +15,7 @@ import { EMPTY_PRIME_EXPONENT_EXTREMA, INITIAL_PRIME_EXPONENT_EXTREMAS_FOR_TWO_A
 import { computePrimeExponentExtremaGivenMaxN2D3P3 } from "./primeExponentExtrema"
 
 const computePrimeExponentExtremasGivenMaxN2D3P9 = (
-    maxN2D3P9: Max<N2D3P9>
+    maxN2D3P9: Max<N2D3P9>,
 ): Array<Extrema<Integer & Exponent<Prime>>> => {
     const primeExponentExtremasGivenMaxN2D3P9: Array<Extrema<Integer & Exponent<Prime>>> =
         shallowClone(INITIAL_PRIME_EXPONENT_EXTREMAS_FOR_TWO_AND_THREE)

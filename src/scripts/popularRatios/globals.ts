@@ -3,5 +3,5 @@ const popularRatiosScriptGroupSettings = {
 }
 
 export {
-    popularRatiosScriptGroupSettings
+    popularRatiosScriptGroupSettings,
 }

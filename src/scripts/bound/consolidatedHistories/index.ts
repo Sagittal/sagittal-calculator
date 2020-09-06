@@ -1,8 +1,2 @@
-import { computeConsolidatedHistories } from "./consolidatedHistories"
-import { ConsolidatedHistories } from "./types"
-
-export {
-    computeConsolidatedHistories,
-    ConsolidatedHistories,
-}
-
+export { computeConsolidatedHistories } from "./consolidatedHistories"
+export { ConsolidatedHistories } from "./types"

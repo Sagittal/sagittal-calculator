@@ -1,5 +1,1 @@
-import { computeBoundsImage } from "./bounds"
-
-export {
-    computeBoundsImage,
-}
+export { computeBoundsImage } from "./bounds"

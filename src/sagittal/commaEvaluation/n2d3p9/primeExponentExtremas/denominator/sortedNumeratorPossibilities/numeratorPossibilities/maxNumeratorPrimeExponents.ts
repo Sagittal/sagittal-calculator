@@ -1,7 +1,8 @@
 import {
     Exponent,
     FIVE_PRIME_INDEX,
-    Index, Integer,
+    Index,
+    Integer,
     Max,
     Numerator,
     Prime,

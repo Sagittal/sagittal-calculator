@@ -38,7 +38,7 @@ describe("computeNotatingCommas", () => {
                 apotomeSlope: -8.275272492567069,
                 fiveRoughSopfr: 11,
                 n2d3p9: 6.722222,
-            }
+            },
         ] as Array<AnalyzedRationalPitch & { symbolId?: Id<JiSymbol> }>
         expect(actual).toEqual(expected)
     })

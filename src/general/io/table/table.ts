@@ -1,4 +1,4 @@
-import { computeDeepDistinct, isUndefined } from "../../code"
+import { computeDeepDistinct } from "../../code"
 import { ioSettings } from "../globals"
 import { formatTableForForum } from "./tableForForum"
 import { formatTableForTerminal } from "./tableForTerminal"

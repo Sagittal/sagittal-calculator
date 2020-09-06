@@ -5,7 +5,7 @@ import { PopularRatioWithBestNotatingComma } from "./types"
 
 const computeMaybePopularRatioWithBestNotatingComma = (
     monzo: Monzo,
-    maxN2D3P9: Max<N2D3P9>
+    maxN2D3P9: Max<N2D3P9>,
 ): Maybe<PopularRatioWithBestNotatingComma> => {
     if (computeIsSubMonzo(monzo)) return
 

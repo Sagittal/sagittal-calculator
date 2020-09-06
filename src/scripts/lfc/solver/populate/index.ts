@@ -1,5 +1,1 @@
-import { populateScopes } from "./scopes"
-
-export {
-    populateScopes,
-}
+export { populateScopes } from "./scopes"

@@ -1,13 +1,3 @@
-import { computeHistories } from "./histories"
-import { INA_MIDPOINTS, LEVELS_COMMA_MEANS, LEVELS_SIZE_CATEGORY_BOUNDS } from "./snappablePositions"
-import { EventType, HistoricalEvent, History } from "./types"
-
-export {
-    computeHistories,
-    INA_MIDPOINTS,
-    LEVELS_COMMA_MEANS,
-    LEVELS_SIZE_CATEGORY_BOUNDS,
-    History,
-    EventType,
-    HistoricalEvent,
-}
+export { computeHistories } from "./histories"
+export { INA_MIDPOINTS, LEVELS_COMMA_MEANS, LEVELS_SIZE_CATEGORY_BOUNDS } from "./snappablePositions"
+export { EventType, HistoricalEvent, History } from "./types"

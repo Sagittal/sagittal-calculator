@@ -1,5 +1,1 @@
-import { searchScopes } from "./scopes"
-
-export {
-    searchScopes,
-}
+export { searchScopes } from "./scopes"

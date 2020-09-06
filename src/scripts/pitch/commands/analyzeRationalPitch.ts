@@ -79,7 +79,7 @@ npm run analyze-rational-pitch 209/208 -- --max-n2d3p9 500
 const analyzedRationalPitch = analyzeRationalPitch(
     monzo,
     { giveName: false, ...pitchScriptGroupSettings.commaNameOptions },
-) // todo maybe don't need these settings if you do this here now
+)
 saveLog(formatRationalPitch(analyzedRationalPitch), LogTarget.ALL, PITCH_SCRIPT_GROUP)
 
 const notatingCommasFormattedTable = computeNotatingCommasTable(monzo)

@@ -1,8 +1,2 @@
-import { computeBoundsImage } from "./image"
-import { computeBoundsTables, formatBound } from "./terminal"
-
-export {
-    computeBoundsTables,
-    computeBoundsImage,
-    formatBound,
-}
+export { computeBoundsImage } from "./image"
+export { computeBoundsTables, formatBound } from "./terminal"

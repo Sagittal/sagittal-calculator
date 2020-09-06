@@ -1,9 +1,3 @@
-import { analyzeEvents } from "./events"
-import { computeInaDistance } from "./inaDistance"
-import { AnalyzedEvent } from "./types"
-
-export {
-    analyzeEvents,
-    computeInaDistance,
-    AnalyzedEvent,
-}
+export { analyzeEvents } from "./events"
+export { computeInaDistance } from "./inaDistance"
+export { AnalyzedEvent } from "./types"

@@ -1,5 +1,1 @@
-import { sopfgtt } from "./bestMetrics"
-
-export {
-    sopfgtt,
-}
+export { sopfgtt } from "./bestMetrics"

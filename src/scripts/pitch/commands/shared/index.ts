@@ -1,5 +1,1 @@
-import { applySharedPitchCommandSetup } from "./shared"
-
-export {
-    applySharedPitchCommandSetup,
-}
+export { applySharedPitchCommandSetup } from "./shared"

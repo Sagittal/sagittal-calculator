@@ -1,15 +1,14 @@
 import {
-    Abs,
     ANY_COMMA_NAME_CHARS,
     Cents,
-    computeMonzoFromRatio, Exponent,
+    computeMonzoFromRatio,
     Extrema,
-    Formatted, Integer,
-    isUndefined, Max,
+    Formatted,
+    isUndefined,
     Maybe,
     Monzo,
     Name,
-    parseRatio, Prime,
+    parseRatio,
     Ratio,
 } from "../../general"
 import { computeNotatingCommas } from "../commaEvaluation"

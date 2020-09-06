@@ -1,7 +1,2 @@
-import { parseCommands } from "./parse"
-import { CommandFlag } from "./types"
-
-export {
-    parseCommands,
-    CommandFlag,
-}
+export { parseCommands } from "./parse"
+export { CommandFlag } from "./types"

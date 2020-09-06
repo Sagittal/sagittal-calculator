@@ -10,7 +10,7 @@ import {
     Integer,
     isUndefined,
     Max,
-    Maybe, Min,
+    Maybe,
     Monzo,
     Prime,
     Sopfr,

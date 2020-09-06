@@ -1,11 +1,3 @@
-import { computeHeaderRowsFromColumnTitleColumns } from "./headerRowsFromColumnTitleColumns"
-import { formatTable } from "./table"
-import { Column, Row, Table } from "./types"
-
-export {
-    Table,
-    Row,
-    Column,
-    computeHeaderRowsFromColumnTitleColumns,
-    formatTable,
-}
+export { computeHeaderRowsFromColumnTitleColumns } from "./headerRowsFromColumnTitleColumns"
+export { formatTable } from "./table"
+export { Column, Row, Table } from "./types"

@@ -1,5 +1,1 @@
-import { formatRankAnalyses } from "./rankAnalyses"
-
-export {
-    formatRankAnalyses,
-}
+export { formatRankAnalyses } from "./rankAnalyses"

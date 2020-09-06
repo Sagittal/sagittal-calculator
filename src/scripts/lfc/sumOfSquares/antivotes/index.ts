@@ -1,5 +1,1 @@
-import { computeAntivotes } from "./antivotes"
-
-export {
-    computeAntivotes,
-}
+export { computeAntivotes } from "./antivotes"

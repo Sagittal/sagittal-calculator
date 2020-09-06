@@ -1,7 +1,7 @@
-import { alignFormattedNumber } from "./alignFormattedNumber"
-import { colorize } from "./colorize"
-import { CommandFlag, parseCommands } from "./command"
-import {
+export { alignFormattedNumber } from "./alignFormattedNumber"
+export { colorize } from "./colorize"
+export { CommandFlag, parseCommands } from "./command"
+export {
     ANY_COMMA_NAME_CHARS,
     ANY_MONZO_CHARS,
     BLANK,
@@ -11,63 +11,18 @@ import {
     SUPERSCRIPT_NUMS,
     TAB,
 } from "./constants"
-import { formatInteger } from "./formatInteger"
-import { formatMonzo } from "./formatMonzo"
-import { formatNumber } from "./formatNumber"
-import { formatRatio } from "./formatRatio"
-import { ioSettings } from "./globals"
-import { clearLogFiles, LogTarget, saveLog, setLogTargets } from "./log"
-import { parseMonzo } from "./parseMonzo"
-import { parseRatio } from "./parseRatio"
-import { removeColor } from "./removeColor"
-import { stringify } from "./stringify"
-import { Column, computeHeaderRowsFromColumnTitleColumns, formatTable, Row, Table } from "./table"
-import { formatTime } from "./time"
-import { addTexts, join } from "./typedOperations"
-import { ColorMethod, Filename, Formatted, HexColor, Io } from "./types"
-import { Basis, computePx, Px, Scale } from "./visualize"
-
-export {
-    formatRatio,
-    formatMonzo,
-    formatNumber,
-    formatTable,
-    formatTime,
-    parseMonzo,
-    parseRatio,
-    IO_PRECISION,
-    BLANK,
-    SUPERSCRIPT_NUMS,
-    SPACE,
-    TAB,
-    alignFormattedNumber,
-    Formatted,
-    Px,
-    HexColor,
-    Filename,
-    Io,
-    removeColor,
-    NEWLINE,
-    addTexts,
-    Row,
-    Column,
-    computeHeaderRowsFromColumnTitleColumns,
-    Table,
-    LogTarget,
-    ANY_COMMA_NAME_CHARS,
-    saveLog,
-    colorize,
-    stringify,
-    clearLogFiles,
-    ioSettings,
-    setLogTargets,
-    parseCommands,
-    ANY_MONZO_CHARS,
-    Scale,
-    Basis,
-    computePx,
-    ColorMethod,
-    formatInteger,
-    CommandFlag,
-    join,
-}
+export { formatInteger } from "./formatInteger"
+export { formatMonzo } from "./formatMonzo"
+export { formatNumber } from "./formatNumber"
+export { formatRatio } from "./formatRatio"
+export { ioSettings } from "./globals"
+export { clearLogFiles, LogTarget, saveLog, setLogTargets } from "./log"
+export { parseMonzo } from "./parseMonzo"
+export { parseRatio } from "./parseRatio"
+export { removeColor } from "./removeColor"
+export { stringify } from "./stringify"
+export { Column, computeHeaderRowsFromColumnTitleColumns, formatTable, Row, Table } from "./table"
+export { formatTime } from "./time"
+export { addTexts, join } from "./typedOperations"
+export { ColorMethod, Filename, Formatted, HexColor, Io } from "./types"
+export { Basis, computePx, Px, Scale } from "./visualize"

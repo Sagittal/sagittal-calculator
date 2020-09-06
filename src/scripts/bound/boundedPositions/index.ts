@@ -1,7 +1,2 @@
-import { computeBoundedJiSymbolPositions } from "./boundedJiSymbolPositions"
-import { BoundedSymbolPositions } from "./types"
-
-export {
-    BoundedSymbolPositions,
-    computeBoundedJiSymbolPositions,
-}
+export { computeBoundedJiSymbolPositions } from "./boundedJiSymbolPositions"
+export { BoundedSymbolPositions } from "./types"

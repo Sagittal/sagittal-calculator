@@ -1,5 +1,1 @@
-import { formatBound } from "./formattedBound"
-
-export {
-    formatBound,
-}
+export { formatBound } from "./formattedBound"

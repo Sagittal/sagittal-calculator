@@ -1,7 +1,8 @@
 import {
     computeMonzosFromPrimeExponentExtremas,
     Exponent,
-    Extrema, Integer,
+    Extrema,
+    Integer,
     Max,
     Min,
     Monzo,

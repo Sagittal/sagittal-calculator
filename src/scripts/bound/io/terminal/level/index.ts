@@ -1,5 +1,1 @@
-import { formatLevelAnalyses } from "./levelAnalyses"
-
-export {
-    formatLevelAnalyses,
-}
+export { formatLevelAnalyses } from "./levelAnalyses"
