@@ -3,13 +3,12 @@ import { ApotomeSlope, computeCommasFromFiveSlicedMonzo, N2D3P9 } from "../../..
 
 describe("computeCommasFromFiveSlicedMonzo", () => {
     const fiveSlicedMonzo: Monzo<Integer, 5> = [3, 5, -1] as Monzo<Integer, 5>
+    const minCents = 40 as Min<Cents>
+    const maxCents = 40.1 as Max<Cents>
+    const maxAbsoluteThreeExponent = 12 as Max<Abs<Integer & Exponent<Prime>>>
+    const maxN2D3P9 = 40000 as Max<N2D3P9>
 
     it("returns analyzed commas with the prime content from the five-rough monzo", () => {
-        const minCents = 40 as Min<Cents>
-        const maxCents = 40.1 as Max<Cents>
-        const maxAbsoluteThreeExponent = 12 as Max<Abs<Integer & Exponent<Prime>>>
-        const maxN2D3P9 = 40000 as Max<N2D3P9>
-
         const actual = computeCommasFromFiveSlicedMonzo(fiveSlicedMonzo, {
             minCents,
             maxCents,
@@ -34,10 +33,6 @@ describe("computeCommasFromFiveSlicedMonzo", () => {
 
     describe("max apotome slope", () => {
         it("does not include commas with apotome slope greater than it", () => {
-            const minCents = 40 as Min<Cents>
-            const maxCents = 40.1 as Max<Cents>
-            const maxAbsoluteThreeExponent = 12 as Max<Abs<Integer & Exponent<Prime>>>
-
             const highMaxAbsoluteApotomeSlope = 10 as Max<Abs<ApotomeSlope>>
             const lowMaxAbsoluteApotomeSlope = 8 as Max<Abs<ApotomeSlope>>
 
@@ -46,6 +41,7 @@ describe("computeCommasFromFiveSlicedMonzo", () => {
                 maxCents,
                 maxAbsoluteThreeExponent,
                 maxAbsoluteApotomeSlope: highMaxAbsoluteApotomeSlope,
+                maxN2D3P9,
             })
 
             expect(resultWithHighMaxAbsoluteApotomeSlope).toEqual(jasmine.arrayWithExactContents([
