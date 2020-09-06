@@ -5,7 +5,7 @@ import { Char, Io } from "./types"
 const IO_PRECISION = 3 as Integer
 
 const ANY_MONZO_CHARS = /[\[|>\]⟩]/
-const ANY_COMMA_NAME_CHARS = /[unskCSMLA]/
+const ANY_COMMA_NAME_CHARS = /[unskCSMLA+]/g
 
 const SUPERSCRIPT_NUMS: Char[] = ["⁰", "¹", "²", "³", "⁴", "⁵", "⁶", "⁷", "⁸", "⁹"] as Char[]
 
