@@ -1,7 +1,8 @@
 import {
     computeTrimmedArray,
     Exponent,
-    Integer, Io,
+    Integer,
+    Io,
     isUndefined,
     LogTarget,
     Max,
@@ -25,13 +26,13 @@ const computePopularRatiosWithBestNotatingCommas = (
     saveLog(
         "About to calculate prime exponent extremas given max N2D3P9" as Io,
         LogTarget.PROGRESS,
-        POPULAR_RATIOS_SCRIPT_GROUP
+        POPULAR_RATIOS_SCRIPT_GROUP,
     )
     const primeExponentExtremasGivenMaxN2D3P9 = computePrimeExponentExtremasGivenMaxN2D3P9(maxN2D3P9)
     saveLog(
         `prime exponent extremas given max N2D3P9: ${stringify(primeExponentExtremasGivenMaxN2D3P9)}` as Io,
         LogTarget.PROGRESS,
-        POPULAR_RATIOS_SCRIPT_GROUP
+        POPULAR_RATIOS_SCRIPT_GROUP,
     )
 
     const initialMonzo: Monzo = primeExponentExtremasGivenMaxN2D3P9.map(([minPrimeExponent, _]) => minPrimeExponent)
