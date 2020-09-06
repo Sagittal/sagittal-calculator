@@ -1,4 +1,4 @@
-const deepClone = <T extends Object | unknown[]>(object: T): T =>
+const deepClone = <T extends unknown>(object: T): T =>
     JSON.parse(JSON.stringify(object))
 
 const shallowClone = <T extends Object | unknown[] | string>(object: T): T =>

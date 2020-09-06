@@ -1,12 +1,8 @@
-import { LogTargets } from "./log"
+import { deepClone } from "../code"
+import { INITIAL_IO_SETTINGS } from "./constants"
 import { IoSettings } from "./types"
 
-const ioSettings: IoSettings = {
-    noWrite: false,
-    forForum: false,
-    logTargets: {} as LogTargets,
-    disableColors: false,
-}
+const ioSettings: IoSettings = deepClone(INITIAL_IO_SETTINGS)
 
 export {
     ioSettings,

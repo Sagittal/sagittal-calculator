@@ -6,7 +6,7 @@ import { computeMaxNumeratorPrimeExponentGivenMaxN2D3P3 } from "./maxNumeratorPr
 const computePrimeExponentExtremaGivenMaxN2D3P3 = (
     prime: Prime,
     maxN2D3P9: Max<N2D3P9>,
-    { mirrored }: { mirrored?: boolean } = {},  // todo test
+    { mirrored }: { mirrored?: boolean } = {},
 ): Extrema<Integer & Exponent<Prime>> => {
     const maxNumeratorPrimeExponentGivenMaxN2D3P3: Max<Integer & Exponent<Prime<Numerator>>> =
         computeMaxNumeratorPrimeExponentGivenMaxN2D3P3(prime as Prime<Numerator>, maxN2D3P9)

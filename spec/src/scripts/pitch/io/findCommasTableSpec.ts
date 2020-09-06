@@ -41,11 +41,8 @@ describe("computeFindCommasTable", () => {
     })
 
     it("can format tables for sharing on the Sagittal forum", () => {
-        // TODO: it might be preferable to have a test helper which resets ioSettings
-        //  like the other globals for like LFC
         ioSettings.forForum = true
         const actual = computeFindCommasTable(commas)
-        ioSettings.forForum = false
 
         const expected =
             "[table]" + NEWLINE +

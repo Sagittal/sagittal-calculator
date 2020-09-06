@@ -30,7 +30,6 @@ describe("computePopularRatio", () => {
 
         ioSettings.forForum = true
         const actual = computePopularRatio({ monzo, n2d3p9 })
-        ioSettings.forForum = false
 
         const expected: PopularRatio = {
             n2d3p9,

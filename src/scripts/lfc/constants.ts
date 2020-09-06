@@ -1,4 +1,6 @@
 import { Count, Exponent, Filename, Max, Popularity, Rank, Step } from "../../general"
+import { Sample, Scope } from "./bestMetric"
+import { Chunk } from "./solver"
 import { ParameterValue, Unpopularity } from "./sumOfSquares"
 
 // "Zipf exponent"; Applied to the ranks before calculating sum-of-squares, in accordance with the data,
@@ -14,9 +16,28 @@ const DEFAULT_MAX_UNIT = 0.1 as Max<Step<ParameterValue>>
 // the "Large Function Collider" as Dave likes to call it
 const LFC_SCRIPT_GROUP = "lfc" as Filename
 
+const INITIAL_SOLVER_STATUS = {
+    chunkCount: 0 as Count<Chunk>,
+    finishedPopulating: false,
+    populatedScopeCount: 0 as Count<Scope>,
+    searchedScopeCount: 0 as Count<Scope>,
+    averageSamplesPerScope: 0 as Count<Sample>,
+    sampleCount: 0 as Count<Sample>,
+}
+
+const INITIAL_LFC_SCRIPT_GROUP_SETTINGS = {
+    z: DEFAULT_Z,
+    onlyTop: DEFAULT_ONLY_TOP,
+    maxUnit: DEFAULT_MAX_UNIT,
+    noUseless: false,
+}
+
+// An order of magnitude higher precision when perfecting
+const DEFAULT_MAX_UNIT_WHEN_PERFECTING = DEFAULT_MAX_UNIT / 10 as Max<Step<ParameterValue>>
+
 export {
-    DEFAULT_Z,
-    DEFAULT_ONLY_TOP,
-    DEFAULT_MAX_UNIT,
     LFC_SCRIPT_GROUP,
+    INITIAL_SOLVER_STATUS,
+    INITIAL_LFC_SCRIPT_GROUP_SETTINGS,
+    DEFAULT_MAX_UNIT_WHEN_PERFECTING,
 }

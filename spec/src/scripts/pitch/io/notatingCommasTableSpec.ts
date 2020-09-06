@@ -22,7 +22,6 @@ describe("computeNotatingCommasTable", () => {
 
         ioSettings.forForum = true
         const actual = computeNotatingCommasTable(monzo)
-        ioSettings.forForum = false
 
         const expected =
             "   --- notating commas ---" + NEWLINE +

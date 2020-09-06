@@ -1,4 +1,5 @@
 import { Integer } from "../math"
+import { LogTargets } from "./log"
 import { Char, Io } from "./types"
 
 const IO_PRECISION = 3 as Integer
@@ -13,6 +14,13 @@ const SPACE = " " as Io
 const BLANK = "" as Io
 const TAB = "\t" as Io
 
+const INITIAL_IO_SETTINGS = {
+    noWrite: false,
+    forForum: false,
+    logTargets: {} as LogTargets,
+    disableColors: false,
+}
+
 export {
     IO_PRECISION,
     ANY_MONZO_CHARS,
@@ -22,4 +30,5 @@ export {
     BLANK,
     TAB,
     ANY_COMMA_NAME_CHARS,
+    INITIAL_IO_SETTINGS,
 }

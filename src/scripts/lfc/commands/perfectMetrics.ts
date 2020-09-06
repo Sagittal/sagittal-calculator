@@ -1,11 +1,10 @@
 import { program } from "commander"
 import { CommandFlag, difference, Filename, formatTime, Io, LogTarget, Max, now, saveLog, Step } from "../../../general"
 import { Metric } from "../bestMetric"
-import { DEFAULT_MAX_UNIT, LFC_SCRIPT_GROUP } from "../constants"
+import { DEFAULT_MAX_UNIT_WHEN_PERFECTING, LFC_SCRIPT_GROUP } from "../constants"
 import { lfcScriptGroupSettings } from "../globals"
 import { perfectMetrics } from "../perfecter"
 import { formatBestMetrics } from "../solver"
-import { ParameterValue } from "../sumOfSquares"
 import { applySharedLfcCommandSetup, load } from "./shared"
 
 program.option(`-${CommandFlag.NO_TIME}, --no-time`, "no time")
@@ -22,7 +21,7 @@ applySharedLfcCommandSetup({ defaultLogTargets })
 
 const time = !!program.time
 
-lfcScriptGroupSettings.maxUnit = DEFAULT_MAX_UNIT / 10 as Max<Step<ParameterValue>>
+lfcScriptGroupSettings.maxUnit = DEFAULT_MAX_UNIT_WHEN_PERFECTING
 
 const bestMetricsToBePerfected = load("metrics" as Filename) as Record<string, Metric>
 
