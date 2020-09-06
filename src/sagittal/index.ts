@@ -1,6 +1,7 @@
 import {
     analyzeRationalPitch,
     ApotomeSlope,
+    CommaNameOptions,
     CommasFromFiveSlicedMonzoOptions,
     computeApotomeSlope,
     computeCommasFromFiveSlicedMonzo,
@@ -97,4 +98,5 @@ export {
     DEFAULT_MAX_FIVE_ROUGH_COPFR,
     DEFAULT_MAX_FIVE_ROUGH_SOPFR,
     DEFAULT_MAX_PRIME_LIMIT,
+    CommaNameOptions,
 }

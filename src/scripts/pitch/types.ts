@@ -1,8 +1,9 @@
 import { Copfr, Exponent, Extrema, Integer, Max, ObjectKey, Prime, Sopfr } from "../../general"
-import { CommasFromFiveSlicedMonzoOptions, N2D3P9 } from "../../sagittal"
+import { CommaNameOptions, CommasFromFiveSlicedMonzoOptions, N2D3P9 } from "../../sagittal"
 
 interface CommasOptions extends CommasFromFiveSlicedMonzoOptions, FiveSlicedMonzosToCheckOptions {
     sortKey?: ObjectKey,
+    commaNameOptions?: CommaNameOptions,
 }
 
 type FiveSlicedMonzosToCheckOptions = Partial<{

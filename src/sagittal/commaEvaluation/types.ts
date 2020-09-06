@@ -9,9 +9,22 @@ type CommasFromFiveSlicedMonzoOptions = Partial<{
     maxAbsoluteThreeExponent: Max<Abs<Integer & Exponent<Prime>>>,
     maxAbsoluteApotomeSlope: Max<Abs<ApotomeSlope>>,
     maxN2D3P9: Max<N2D3P9>,
+    commaNameOptions: CommaNameOptions,
+}>
+
+type CommaNameOptions = Partial<{
+    directed: boolean,
+    factored: boolean,
+    abbreviated: boolean
+}>
+
+type AnalyzeRationalPitchOptions = CommaNameOptions & Partial<{
+    giveName: boolean
 }>
 
 export {
     ApotomeSlope,
     CommasFromFiveSlicedMonzoOptions,
+    CommaNameOptions,
+    AnalyzeRationalPitchOptions,
 }

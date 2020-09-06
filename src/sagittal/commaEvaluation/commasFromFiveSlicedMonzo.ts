@@ -19,7 +19,8 @@ const computeCommasFromFiveSlicedMonzo = (
         maxCents = DEFAULT_MAX_CENTS,
         maxAbsoluteThreeExponent = DEFAULT_MAX_ABSOLUTE_THREE_EXPONENT,
         maxAbsoluteApotomeSlope = DEFAULT_MAX_ABSOLUTE_APOTOME_SLOPE,
-        maxN2D3P9 = Infinity // DEFAULT_MAX_N2D3P9,
+        maxN2D3P9 = DEFAULT_MAX_N2D3P9,
+        commaNameOptions,
     } = options || {}
 
     const analyzedCommas: AnalyzedRationalPitch[] = []
@@ -29,7 +30,7 @@ const computeCommasFromFiveSlicedMonzo = (
         const monzo = computeMonzoInZone(threeSlicedMonzo, [minCents, maxCents])
 
         if (monzo) {
-            const analyzedComma: AnalyzedRationalPitch = analyzeRationalPitch(monzo)
+            const analyzedComma: AnalyzedRationalPitch = analyzeRationalPitch(monzo, commaNameOptions)
 
             if (abs(analyzedComma.apotomeSlope) > maxAbsoluteApotomeSlope) {
                 return

@@ -14,6 +14,7 @@ const computeCommas = (options: CommasOptions): AnalyzedRationalPitch[] => {
         maxAbsoluteThreeExponent,
         maxN2D3P9,
         sortKey,
+        commaNameOptions,
     } = options
 
     let commas: AnalyzedRationalPitch[] = []
@@ -34,6 +35,7 @@ const computeCommas = (options: CommasOptions): AnalyzedRationalPitch[] => {
                     maxAbsoluteApotomeSlope,
                     maxAbsoluteThreeExponent,
                     maxN2D3P9,
+                    commaNameOptions,
                 },
             ),
         )
