@@ -60,9 +60,11 @@ const computePopularRatioWithBestNotatingComma = (
     for (const notatingComma of notatingCommas) {
         if (
             isUndefined(bestNotatingComma) ||
-            popularRatiosScriptGroupSettings.useLate ?
-                isLate(notatingComma, bestNotatingComma as AnalyzedRationalPitch) :
-                isLaas(notatingComma, bestNotatingComma)
+            (
+                popularRatiosScriptGroupSettings.useLate ?
+                    isLate(notatingComma, bestNotatingComma) :
+                    isLaas(notatingComma, bestNotatingComma)
+            )
         ) {
             bestNotatingComma = notatingComma
         }
