@@ -3,9 +3,6 @@ import { computeNotatingCommas } from "../notatingCommas"
 import { computeSizeCategoryExtrema } from "./sizeCategoryExtrema"
 import { SizeCategoryName } from "./types"
 
-// TODO: we probably need to consider inclusive/exclusive extrema,
-//  since the schismina size category includes 0
-
 const computeMonzoFromFiveRoughRatioAndSizeCategoryName = (
     { fiveRoughRatio, sizeCategoryName }: { fiveRoughRatio: Ratio, sizeCategoryName: SizeCategoryName },
 ): Monzo => {
