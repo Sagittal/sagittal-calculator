@@ -53,6 +53,16 @@ describe("analyze-rational-pitch", () => {
         expect(actual).toEqual(expected)
     })
 
+    it("can appraise a comma name for you, in a completely different format", () => {
+        onlyRunInCi()
+
+        const command = "npm run analyze-rational-pitch -- --comma-name 5².11-kleisma" as Io
+
+        const actual = runCommandAndGetConsoleOutput(command)
+
+        expect(actual).toEqual(expected)
+    })
+
     it("throws an error if you provide neither monzo nor ratio nor name", () => {
         onlyRunInCi()
 

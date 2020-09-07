@@ -1,4 +1,5 @@
-export { computeMonzoFromCommaName } from "./monzoFromCommaName"
+export { computeMonzoFromFiveRoughRatioAndSizeCategoryName } from "./monzoFromCommaName"
 export { computeSagittalCommaName } from "./sagittalCommaName"
+export { parseCommaName } from "./parseCommaName"
 export { SIZE_CATEGORY_BOUNDS } from "./sizeCategoryBounds"
 export { MAX_SIZE_CATEGORY_BOUND } from "./constants"

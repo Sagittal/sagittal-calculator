@@ -2,7 +2,7 @@ export { alignFormattedNumber } from "./alignFormattedNumber"
 export { colorize } from "./colorize"
 export { CommandFlag, parseCommands } from "./command"
 export {
-    ANY_COMMA_NAME_CHARS,
+    IDENTIFYING_COMMA_NAME_CHARS,
     ANY_MONZO_CHARS,
     BLANK,
     IO_PRECISION,

@@ -29,7 +29,7 @@ enum SizeCategoryName {
     SMALL_SEMITONE_PLUS_APOTOME = "Small-Semitone-plus-Apotome",
     MEDIUM_SEMITONE_PLUS_APOTOME = "Medium-Semitone-plus-Apotome",
     LARGE_SEMITONE_PLUS_APOTOME = "Large-Semitone-plus-Apotome" ,
-    APOTOME_PLUS_APOTOME = "double-Apotome",
+    DOUBLE_APOTOME = "double-Apotome",
 }
 
 enum SizeCategoryAbbreviation {
@@ -54,7 +54,7 @@ enum SizeCategoryAbbreviation {
     SMALL_SEMITONE_PLUS_APOTOME = "SS+A",
     MEDIUM_SEMITONE_PLUS_APOTOME = "MS+A",
     LARGE_SEMITONE_PLUS_APOTOME = "LS+A" ,
-    APOTOME_PLUS_APOTOME = "A+A",
+    DOUBLE_APOTOME = "A+A",
 }
 
 export {

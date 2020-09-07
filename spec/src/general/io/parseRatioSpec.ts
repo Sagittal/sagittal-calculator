@@ -18,4 +18,22 @@ describe("parseRatio", () => {
         const expected = [4, 5] as Ratio
         expect(actual).toEqual(expected)
     })
+
+    it("works for ratios which are implictly over 1", () => {
+        const ratio = "275" as Formatted<Ratio>
+
+        const actual = parseRatio(ratio)
+
+        const expected = [275, 1] as Ratio
+        expect(actual).toEqual(expected)
+    })
+
+    it("works for factored ratios", () => {
+        const ratio = "5².11" as Formatted<Ratio>
+
+        const actual = parseRatio(ratio)
+
+        const expected = [275, 1] as Ratio
+        expect(actual).toEqual(expected)
+    })
 })

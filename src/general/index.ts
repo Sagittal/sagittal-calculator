@@ -30,7 +30,7 @@ export {
 export {
     addTexts,
     alignFormattedNumber,
-    ANY_COMMA_NAME_CHARS,
+    IDENTIFYING_COMMA_NAME_CHARS,
     ANY_MONZO_CHARS,
     Basis,
     BLANK,

@@ -18,7 +18,8 @@ export {
     DEFAULT_PITCH_SCRIPT_GROUP_MAX_N2D3P9,
     DEFAULT_SORT_KEY,
     N2D3P9,
-    computeMonzoFromCommaName,
+    computeMonzoFromFiveRoughRatioAndSizeCategoryName,
+    parseCommaName,
     computeSagittalCommaName,
     SIZE_CATEGORY_BOUNDS,
 } from "./comma"

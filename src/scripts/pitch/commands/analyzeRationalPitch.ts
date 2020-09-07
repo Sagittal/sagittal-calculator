@@ -1,10 +1,10 @@
 import { program } from "commander"
 import {
-    ANY_COMMA_NAME_CHARS,
     ANY_MONZO_CHARS,
     CommandFlag,
     computeMonzoFromRatio,
     Formatted,
+    IDENTIFYING_COMMA_NAME_CHARS,
     Io,
     LogTarget,
     Monzo,
@@ -14,7 +14,12 @@ import {
     Ratio,
     saveLog,
 } from "../../../general"
-import { AnalyzedRationalPitch, analyzeRationalPitch, computeMonzoFromCommaName } from "../../../sagittal"
+import {
+    AnalyzedRationalPitch,
+    analyzeRationalPitch,
+    computeMonzoFromFiveRoughRatioAndSizeCategoryName,
+    parseCommaName,
+} from "../../../sagittal"
 import { PITCH_SCRIPT_GROUP } from "../constants"
 import { pitchScriptGroupSettings } from "../globals"
 import { computeNotatingCommasTable, formatRationalPitch } from "../io"
@@ -33,7 +38,8 @@ program
     )
     .option(
         `-${CommandFlag.COMMA_NAME}, --comma-name <commaName>`,
-        "ratio",
+        "comma name",
+        (commaNameText: string) => parseCommaName(commaNameText as Name<AnalyzedRationalPitch>)
     )
 
 applySharedPitchCommandSetup()
@@ -41,20 +47,21 @@ applySharedPitchCommandSetup()
 const rationalPitch = program.args[ 0 ] as Io
 let monzo
 if (rationalPitch) {
-    if (rationalPitch.match(ANY_COMMA_NAME_CHARS)) {
-        monzo = computeMonzoFromCommaName(rationalPitch as Name<AnalyzedRationalPitch>)
+    if (rationalPitch.match(IDENTIFYING_COMMA_NAME_CHARS)) {
+        const { fiveRoughRatio, sizeCategoryName } = parseCommaName(rationalPitch as Name<AnalyzedRationalPitch>)
+        monzo = computeMonzoFromFiveRoughRatioAndSizeCategoryName({ fiveRoughRatio, sizeCategoryName })
     } else if (rationalPitch.includes("/")) {
-        monzo = computeMonzoFromRatio(parseRatio(rationalPitch as Formatted<Ratio>))
+        const ratio = parseRatio(rationalPitch as Formatted<Ratio>)
+        monzo = computeMonzoFromRatio(ratio)
     } else if (rationalPitch.match(ANY_MONZO_CHARS)) {
         monzo = parseMonzo(rationalPitch as Formatted<Monzo>)
     }
 } else if (program.monzo) {
-    monzo = program.monzo // TODO: why not parse here?
+    monzo = program.monzo
 } else if (program.ratio) {
-    // TODO: why not parse here? should? test drive out motivation to do so?
     monzo = computeMonzoFromRatio(program.ratio)
 } else if (program.commaName) {
-    monzo = computeMonzoFromCommaName(program.commaName)
+    monzo = computeMonzoFromFiveRoughRatioAndSizeCategoryName(program.commaName)
 }
 if (!monzo) {
     throw new Error("Unable to determine monzo for rational pitch.")

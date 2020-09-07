@@ -1,15 +1,15 @@
-import { ANY_COMMA_NAME_CHARS, Formatted, isUndefined, Maybe, Name, parseRatio, Ratio } from "../../../general"
+import { Formatted, isUndefined, Maybe, Name, parseRatio, Ratio } from "../../../general"
 import { AnalyzedRationalPitch } from "../../types"
 import { SIZE_CATEGORIES } from "./sizeCategories"
 import { SizeCategoryName } from "./types"
 
 const parseCommaName = (
     commaName: Name<AnalyzedRationalPitch>,
-): { ratio: Ratio, sizeCategoryName: SizeCategoryName } => {
-    const ratioPartOfCommaName = commaName.replace(ANY_COMMA_NAME_CHARS, "") as Formatted<Ratio>
-    const sizeCategoryPartOfCommaName = commaName.replace(ratioPartOfCommaName, "")
+): { fiveRoughRatio: Ratio, sizeCategoryName: SizeCategoryName } => {
+    const ratioPartOfCommaName = commaName.replace(/[a-zA-Z+\-]/g, "") as Formatted<Ratio>
+    const sizeCategoryPartOfCommaName = commaName.replace(ratioPartOfCommaName, "").replace(/-/, "")
 
-    const ratio = parseRatio(ratioPartOfCommaName)
+    const fiveRoughRatio = parseRatio(ratioPartOfCommaName)
 
     let maybeSizeCategoryName: Maybe<SizeCategoryName> = undefined
 
@@ -26,7 +26,7 @@ const parseCommaName = (
         throw new Error(`No size category found for comma name ${commaName}.`)
     }
 
-    return { ratio, sizeCategoryName: maybeSizeCategoryName }
+    return { fiveRoughRatio, sizeCategoryName: maybeSizeCategoryName }
 }
 
 export {
