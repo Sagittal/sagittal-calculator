@@ -49,4 +49,13 @@ describe("computeN2D3P9", () => {
         const expected = 1 as N2D3P9
         expect(actual).toBe(expected)
     })
+
+    it("in case it receives a non-trimmed monzo, doesn't break", () => {
+        const monzo: Monzo = [0, 0, 0, 0] as Monzo
+
+        const actual = computeN2D3P9(monzo)
+
+        const expected = 1 as N2D3P9
+        expect(actual).toBe(expected)
+    })
 })

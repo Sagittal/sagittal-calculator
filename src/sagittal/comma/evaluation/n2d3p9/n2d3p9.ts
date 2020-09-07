@@ -2,7 +2,7 @@ import {
     abs,
     ACCURACY_THRESHOLD,
     computeGpf,
-    computeIsSubMonzo,
+    computeIsSubMonzo, computeTrimmedArray,
     Exponent,
     formatMonzo,
     Monzo,
@@ -13,8 +13,7 @@ import {
 import { N2D3P9 } from "./types"
 
 const computeN2D3P9 = (monzo: Monzo): N2D3P9 => {
-    // TODO: this breaks when the monzo hasn't been trimmed!
-    if (monzo.length < 3) {
+    if (computeTrimmedArray(monzo).length < 3) {
         return 1 as N2D3P9
     }
 
