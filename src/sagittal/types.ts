@@ -17,6 +17,11 @@ import { ApotomeSlope, N2D3P9 } from "./comma"
 //  which maybe just means that the variable name should be jiPitchAnalyzed: Analyzed<Pitch<Ji>>
 //  okay so would type Analyzed<T> = T & T<"Analyzed"> which would allow you to write it like the above...
 //  no wait, then "Analyzed" would conflict with the Ji part...
+//  - also consider how Rank<_, Integer> is how you make it an Integer... should that just be Integer & Rank?
+//  like should Ji<T> just mean Integer & T?
+//  yeah but you wouldn't want a Just Intoned Rank... so you should probably have it be Whole<>
+//  except Whole numbers are technically only positive... so wouldn't it just be Integer<>?
+//  why isn't Integer already parameterized? or is it?
 interface AnalyzedRationalPitch extends Pitch {
     apotomeSlope: ApotomeSlope,
     name: Name<AnalyzedRationalPitch>,

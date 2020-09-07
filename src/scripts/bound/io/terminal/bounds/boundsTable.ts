@@ -6,8 +6,6 @@ import { computeBoundRow } from "./boundRow"
 import { BOUNDS_ANALYSIS_TABLE_TITLE } from "./constants"
 import { computeBoundsAnalysisHeaderRows } from "./headerRows"
 
-// TODO: you could keep the color of the table rows test covered by testing at this level
-
 const computeBoundsAnalysisTable = (boundsAnalysis: AnalyzedBound[]): Io => {
     const table: Table<AnalyzedBound> = computeBoundsAnalysisHeaderRows()
     const colors: ColorMethod[] = ["white", "white", "white", "white", "white", "white"]
