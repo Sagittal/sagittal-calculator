@@ -24,7 +24,8 @@
     "perfect-metrics": "node -r ts-node/register/transpile-only --max-old-space-size=131072 src/scripts/lfc/commands/perfectMetrics.ts",
     "guess-backfill-spread-dynamic-parameters": "node -r ts-node/register/transpile-only src/scripts/lfc/commands/correctGoofs/guessBackfillSpreadDynamicParameters.ts",
     "popular-ratios": "node -r ts-node/register/transpile-only --max-old-space-size=131072 src/scripts/popularRatios/commands/popularRatios.ts",
-    "popular-ratios-with-best-notating-commas": "node -r ts-node/register/transpile-only --max-old-space-size=131072 src/scripts/popularRatios/commands/popularRatiosWithBestNotatingCommas.ts"
+    "popular-ratios-with-best-notating-commas": "node -r ts-node/register/transpile-only --max-old-space-size=131072 src/scripts/popularRatios/commands/popularRatiosWithBestNotatingCommas.ts",
+    "tina-commas": "node -r ts-node/register/transpile-only --max-old-space-size=131072 src/scripts/pitch/commands/tinaCommas.ts"
   },
   "devDependencies": {
     "@types/jasmine": "^3.5.11",
