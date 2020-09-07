@@ -1,5 +1,6 @@
 import {
     abs,
+    BLANK,
     computeRatioFromMonzo,
     computeRoughNumberMonzo,
     computeSuperMonzo,
@@ -34,7 +35,7 @@ const computeMetacommasTable = (
 ): Io => {
     const popularRatiosNotExactlyNotated: Array<Formatted<Ratio>> = []
     popularRatiosWithBestNotatingCommas.forEach(popularRatio => {
-        if (popularRatio.symbolSubsets.length === 0) {
+        if (popularRatio.maybeSymbolForBestNotatingComma === BLANK) {
             popularRatiosNotExactlyNotated.push(popularRatio.formattedRatio)
         }
     })

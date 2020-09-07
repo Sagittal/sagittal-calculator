@@ -88,7 +88,6 @@ const computePopularRatioWithBestNotatingComma = (
             commaWithMaybeSagittalSymbol.symbolId ?
                 formatSymbol(commaWithMaybeSagittalSymbol.symbolId, ioSettings) :
                 BLANK,
-        symbolSubsets: exactlyNotatingJiSymbolIds,
     }
 }
 
