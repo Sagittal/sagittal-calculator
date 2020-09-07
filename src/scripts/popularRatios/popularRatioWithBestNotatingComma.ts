@@ -52,8 +52,6 @@ const computePopularRatioWithBestNotatingComma = (
     const popularityRank = popularity?.rank || "-" as Io
     const votes = popularity?.votes || 0 as Votes
 
-    const exactlyNotatingJiSymbolIds = computeExactlyNotatingJiSymbolIds(monzo)
-
     const notatingCommas = computeNotatingCommas(monzo, { maxCents: APOTOME.cents / 2 as Max<Cents> })
 
     let bestNotatingComma: Maybe<AnalyzedRationalPitch> = undefined
@@ -71,7 +69,7 @@ const computePopularRatioWithBestNotatingComma = (
     }
 
     if (isUndefined(bestNotatingComma)) {
-        throw new Error("did not find") // TODO: you didn't finish this it would seem
+        throw new Error("did not find a best notating comma for this ratio")
     }
 
     const commaWithMaybeSagittalSymbol = addMaybeJiSymbol(bestNotatingComma)
