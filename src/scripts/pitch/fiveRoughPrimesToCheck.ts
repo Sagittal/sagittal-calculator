@@ -1,4 +1,4 @@
-import { isUndefined, min, PRIMES } from "../../general"
+import { computePrimeCount, isUndefined, min, PRIMES, ZERO_ONE_INDEX_DIFF } from "../../general"
 import { FiveRoughPrimesToCheckOptions } from "./types"
 
 const computeFiveRoughPrimesToCheck = (options: FiveRoughPrimesToCheckOptions) => {
@@ -13,9 +13,9 @@ const computeFiveRoughPrimesToCheck = (options: FiveRoughPrimesToCheckOptions) =
     }
 
     const indexOfMaxPrimeByPrimeLimit =
-        !isUndefined(maxPrimeLimit) ? PRIMES.findIndex(prime => prime === maxPrimeLimit) : Infinity
+        !isUndefined(maxPrimeLimit) ? computePrimeCount(maxPrimeLimit) - ZERO_ONE_INDEX_DIFF : Infinity
     const indexOfMaxPrimeByFiveRoughSopfr =
-        !isUndefined(maxFiveRoughSopfr) ? PRIMES.findIndex(prime => prime > maxFiveRoughSopfr) - 1 : Infinity
+        !isUndefined(maxFiveRoughSopfr) ? computePrimeCount(maxFiveRoughSopfr) - ZERO_ONE_INDEX_DIFF : Infinity
     const indexOfMaxPrimeByN2D3P9 =
         !isUndefined(primeExponentExtremasGivenMaxN2D3P9) ? primeExponentExtremasGivenMaxN2D3P9.length - 1 : Infinity
 

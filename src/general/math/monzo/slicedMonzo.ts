@@ -1,13 +1,16 @@
-import { PRIMES } from "../primes"
-import { Prime } from "../types"
+import { ZERO_ONE_INDEX_DIFF } from "../../code"
+import { computePrimeCount } from "../primeCount"
 import { Monzo } from "./types"
 
-const computeMonzoSlicedToPrimeIndex = <T extends number, S extends number>(monzo: Monzo<T>, prime: S): Monzo<T, S> => {
-    const sliceIndex = PRIMES.findIndex(p => p === prime as number as Prime)
+const computeMonzoSlicedToPrime = <T extends number, S extends number>(
+    monzo: Monzo<T>,
+    slicingPrime: S
+): Monzo<T, S> => {
+    const sliceIndex = computePrimeCount(slicingPrime) - ZERO_ONE_INDEX_DIFF
 
     return monzo.slice(sliceIndex) as Monzo<T, S>
 }
 
 export {
-    computeMonzoSlicedToPrimeIndex,
+    computeMonzoSlicedToPrime,
 }

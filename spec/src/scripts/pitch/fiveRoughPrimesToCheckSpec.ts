@@ -8,7 +8,16 @@ describe("computeFiveRoughPrimesToCheck", () => {
     })
 
     describe("when only the prime limit is provided", () => {
-        it("that becomes the maximum prime to check", () => {
+        it("if it is not a prime (for whatever reason), the last prime less than it is the max prime", () => {
+            const maxPrimeLimit = 20 as Max<Max<Prime>>
+
+            const actual = computeFiveRoughPrimesToCheck({ maxPrimeLimit })
+
+            const expected = [5, 7, 11, 13, 17, 19] as Prime[]
+            expect(actual).toEqual(expected)
+        })
+
+        it("if it is a prime, that becomes the maximum prime to check", () => {
             const maxPrimeLimit = 19 as Max<Max<Prime>>
 
             const actual = computeFiveRoughPrimesToCheck({ maxPrimeLimit })

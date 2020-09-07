@@ -3,8 +3,6 @@ import { AnalyzedRationalPitch, computeCommasFromFiveSlicedMonzo } from "../../s
 import { computeFiveSlicedMonzosToCheck } from "./fiveSlicedMonzosToCheck"
 import { CommasOptions } from "./types"
 
-// todo okay that's not cool that if it's not a prime it just empty-lists you silently
-
 const computeCommas = (options: CommasOptions): AnalyzedRationalPitch[] => {
     const {
         minCents,

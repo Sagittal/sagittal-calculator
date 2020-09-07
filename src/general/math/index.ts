@@ -11,7 +11,7 @@ export {
     computeMonzoFromInteger,
     computeMonzoFromRatio,
     computeMonzosFromPrimeExponentExtremas,
-    computeMonzoSlicedToPrimeIndex,
+    computeMonzoSlicedToPrime,
     computeRatioFromMonzo,
     computeSuperMonzo,
     invertMonzo,

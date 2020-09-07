@@ -26,6 +26,7 @@ export {
     shallowClone,
     shuffle,
     sort,
+    ZERO_ONE_INDEX_DIFF,
 } from "./code"
 export {
     addTexts,
@@ -89,7 +90,7 @@ export {
     computeMonzoFromInteger,
     computeMonzoFromRatio,
     computeMonzosFromPrimeExponentExtremas,
-    computeMonzoSlicedToPrimeIndex,
+    computeMonzoSlicedToPrime,
     computePrimeCount,
     computeRatioFromMonzo,
     computeRoughNumberMonzo,
