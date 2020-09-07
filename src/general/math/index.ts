@@ -36,6 +36,7 @@ export {
     mod,
     multiply,
     negative,
+    parseInteger,
     pow,
     round,
     sqrt,

@@ -124,6 +124,7 @@ export {
     negative,
     Numerator,
     ONE,
+    parseInteger,
     pow,
     Power,
     Prime,

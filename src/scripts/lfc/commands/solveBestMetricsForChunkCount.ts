@@ -1,5 +1,5 @@
 import { program } from "commander"
-import { CommandFlag, Count, difference, formatTime, Io, LogTarget, now, saveLog } from "../../../general"
+import { CommandFlag, Count, difference, formatTime, Io, LogTarget, now, parseInteger, saveLog } from "../../../general"
 import { LFC_SCRIPT_GROUP } from "../constants"
 import { lfcScriptGroupSettings, solverStatus } from "../globals"
 import { Chunk, formatBestMetrics, populateAndSearchScopesAndPerfectMetrics } from "../solver"
@@ -17,7 +17,7 @@ const defaultLogTargets = [
 ]
 applySharedLfcCommandSetup({ defaultLogTargets })
 
-solverStatus.chunkCount = parseInt(program.args[ 0 ]) as Count<Chunk>
+solverStatus.chunkCount = parseInteger(program.args[ 0 ]) as Count<Chunk>
 
 const time = !!program.time
 

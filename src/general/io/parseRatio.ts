@@ -1,4 +1,4 @@
-import { Ratio } from "../math"
+import { parseInteger, Ratio } from "../math"
 import { BLANK, SUPERSCRIPT_NUMS } from "./constants"
 import { Char, Formatted } from "./types"
 
@@ -13,7 +13,7 @@ const parseRatio = (ratioText: Formatted<Ratio>): Ratio => {
                     const exponentPartOfFactorPower: string = factorPower.replace(new RegExp(`[^${superscriptNums}]`, "g"), "")
                     const basePartOfFactorPower = factorPower.replace(exponentPartOfFactorPower, "")
 
-                    const base = parseInt(basePartOfFactorPower)
+                    const base = parseInteger(basePartOfFactorPower)
                     const power = exponentPartOfFactorPower === BLANK ?
                         1 :
                         SUPERSCRIPT_NUMS.indexOf(exponentPartOfFactorPower as Char)
@@ -23,7 +23,7 @@ const parseRatio = (ratioText: Formatted<Ratio>): Ratio => {
                 1,
             )
         } else {
-            return parseInt(fractionalPartText)
+            return parseInteger(fractionalPartText)
         }
     })
 

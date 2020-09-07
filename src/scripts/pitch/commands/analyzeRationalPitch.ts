@@ -4,11 +4,12 @@ import {
     CommandFlag, computeMonzoFromInteger,
     computeMonzoFromRatio,
     Formatted,
-    IDENTIFYING_COMMA_NAME_CHARS, Integer,
+    IDENTIFYING_COMMA_NAME_CHARS,
     Io,
     LogTarget,
     Monzo,
     Name,
+    parseInteger,
     parseMonzo,
     parseRatio,
     Ratio,
@@ -56,7 +57,7 @@ if (rationalPitch) {
     } else if (rationalPitch.match(ANY_MONZO_CHARS)) {
         monzo = parseMonzo(rationalPitch as Formatted<Monzo>)
     } else {
-        const integer = parseInt(rationalPitch) as Integer // todo test this, and also create a typed parseInt
+        const integer = parseInteger(rationalPitch)
         monzo = computeMonzoFromInteger(integer)
     }
 } else if (program.monzo) {

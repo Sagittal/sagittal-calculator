@@ -7,6 +7,10 @@ import {
 } from "./constants"
 import { Base, Exponent, Integer, Max, Min, Power } from "./types"
 
+const parseInteger = (integerText: string): Integer => {
+    return parseInt(integerText) as Integer
+}
+
 const count = <T>(array: T[]): Count<T> => {
     return array.length as Count<T>
 }
@@ -116,5 +120,6 @@ export {
     pow,
     log,
     integerDivide,
+    parseInteger,
     count,
 }
