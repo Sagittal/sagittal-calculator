@@ -6,8 +6,6 @@ const compute23FreeClass = (monzo: Monzo): TwoThreeFreeClass => {
     const numeratorGreaterThanDenominatorMonzo = computeSuperMonzo(twoThreeFreeMonzo)
     const twoThreeFreeClass = computeRatioFromMonzo(numeratorGreaterThanDenominatorMonzo) as TwoThreeFreeClass
 
-    console.log("just converted", monzo, "to", twoThreeFreeClass)
-
     return twoThreeFreeClass
 }
 
