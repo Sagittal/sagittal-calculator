@@ -22,6 +22,25 @@ import { ApotomeSlope, N2D3P9, TwoThreeFreeClass } from "./comma"
 //  yeah but you wouldn't want a Just Intoned Rank... so you should probably have it be Whole<>
 //  except Whole numbers are technically only positive... so wouldn't it just be Integer<>?
 //  why isn't Integer already parameterized? or is it?
+// tslint:disable max-line-length
+/*
+Also parameteized types are great when realistically it could be a ton of different things
+But avoid it when it’s just either number or integer...
+
+I think we just need to represent everything as monzos all the time
+
+Like just have a JiMonzo and a Monzo
+
+and then a Comma is just a JiMonzo which is tagged to indicate it is small, and should be able to be named with the naming scheme
+
+Object of parameters for types so monzo parameters don’t order matter and can add “sub”
+
+Pitch<JI> = JI? Monzo : Value
+maybe
+
+Still kinda working it out in my head. Monzos are not necessarily JI / rational (consider the monzos given [url=http://forum.sagittal.org/viewtopic.php?p=582#p582]here[/url] for the size category bounds, the square roots of Pythagorean intervals
+*/
+
 interface AnalyzedRationalPitch extends Pitch {
     apotomeSlope: ApotomeSlope,
     name: Name<AnalyzedRationalPitch>,
