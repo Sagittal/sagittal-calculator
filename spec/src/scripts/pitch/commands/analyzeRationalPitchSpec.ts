@@ -7,8 +7,9 @@ import { runCommandAndGetConsoleOutput } from "../../../../helpers/src/scripts/r
 
 describe("analyze-rational-pitch", () => {
     const expected = [
-        "        \t       \tratio     \tmonzo                  \tcents  \tapotome slope\tlimit  \t5-rough sopfr\t2,3-free class N2D3P9",
-        "        \t       \t2200/2187 \t[   3  -7   2   0   1 ⟩\t 10.260\t -7.632      \t 11    \t 21          \t 42.014              ",
+        // TODO: need to include a print-out of what the mins and maxes that were used were
+        "        \t       \tratio     \tmonzo                  \tcents  \tapotome slope\tlimit  \t2,3-free sopfr\t2,3-free class N2D3P9",
+        "        \t       \t2200/2187 \t[   3  -7   2   0   1 ⟩\t 10.260\t -7.632      \t 11    \t 21           \t 42.014              ",
         "",
         "   --- notating commas ---",
         "",
@@ -17,6 +18,11 @@ describe("analyze-rational-pitch", () => {
         "        \t275S  \t66825/65536      \t[ -16   5   2   0   1 ⟩\t 33.720\t  2.924      ",
         "        \t1/275M\t16777216/16238475\t[  24 -10  -2   0  -1 ⟩\t 56.505\t-13.479      ",
         "",
+        // TODO: okay so I guess we still didn't actually get to it, but I'd like to see this:
+        //  extricate the limit, 2,3-free sopfr, N2D3P9 from above and put it in a new chart at the bottom
+        //  --- 2,3-free class ---
+        //  and then it can have simpler column titles
+        //  and I think it'll be clearer how that shares all the stuff with the above
     ] as Io[]
 
     it(
@@ -77,8 +83,8 @@ describe("analyze-rational-pitch", () => {
         onlyRunInCi()
 
         const expected = [
-            "        \t       \tratio     \tmonzo                  \tcents  \tapotome slope\tlimit  \t5-rough sopfr\t2,3-free class N2D3P9",
-            "        \t       \t2200/2187 \t[   3  -7   2   0   1 ⟩\t 10.260\t -7.632      \t 11    \t 21          \t 42.014              ",
+            "        \t       \tratio     \tmonzo                  \tcents  \tapotome slope\tlimit  \t2,3-free sopfr\t2,3-free class N2D3P9",
+            "        \t       \t2200/2187 \t[   3  -7   2   0   1 ⟩\t 10.260\t -7.632      \t 11    \t 21           \t 42.014              ",
             "",
             "   --- notating commas ---",
             "",
@@ -105,8 +111,8 @@ describe("analyze-rational-pitch", () => {
         const actual = runCommandAndGetConsoleOutput(command)
 
         const expected = [
-            "        \t       \tratio     \tmonzo                  \tcents  \tapotome slope\tlimit  \t5-rough sopfr\t2,3-free class N2D3P9",
-            "        \t       \t275/1     \t[   0   0   2   0   1 ⟩\t9723.94\t-598.739     \t 11    \t 21          \t 42.014              ",
+            "        \t       \tratio     \tmonzo                  \tcents  \tapotome slope\tlimit  \t2,3-free sopfr\t2,3-free class N2D3P9",
+            "        \t       \t275/1     \t[   0   0   2   0   1 ⟩\t9723.94\t-598.739     \t 11    \t 21           \t 42.014              ",
             "",
             "   --- notating commas ---",
             "",

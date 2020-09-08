@@ -5,7 +5,6 @@ import {
     computeRatioFromMonzo,
     computeRoughNumberMonzo,
     computeSopfr,
-    computeSuperMonzo,
     FIVE_ROUGHNESS,
     Maybe,
     Monzo,
@@ -16,6 +15,7 @@ import {
 import { AnalyzedRationalPitch } from "../types"
 import { computeApotomeSlope, computeN2D3P9, N2D3P9 } from "./evaluation"
 import { computeSagittalCommaName, MAX_SIZE_CATEGORY_BOUND } from "./name"
+import { computeTwoThreeFreeClass } from "./twoThreeFreeClass"
 import { AnalyzeRationalPitchOptions } from "./types"
 
 const analyzeRationalPitch = (monzo: Monzo, options: AnalyzeRationalPitchOptions = {}): AnalyzedRationalPitch => {
@@ -32,11 +32,11 @@ const analyzeRationalPitch = (monzo: Monzo, options: AnalyzeRationalPitchOptions
         )
     }
 
-    const fiveRoughMonzo = computeRoughNumberMonzo(monzo, FIVE_ROUGHNESS)
+    const twoThreeFreeMonzo = computeRoughNumberMonzo(monzo, FIVE_ROUGHNESS)
 
-    const fiveRoughSopfr = computeSopfr(fiveRoughMonzo) as Sopfr<5>
-    const limit: Prime = computeGpf(fiveRoughMonzo)
-    const n2d3p9: N2D3P9 = computeN2D3P9(computeSuperMonzo(fiveRoughMonzo))
+    const twoThreeFreeSopfr = computeSopfr(twoThreeFreeMonzo) as Sopfr<5>
+    const limit: Prime = computeGpf(twoThreeFreeMonzo)
+    const n2d3p9: N2D3P9 = computeN2D3P9(computeTwoThreeFreeClass(twoThreeFreeMonzo))
 
     return {
         cents,
@@ -45,7 +45,7 @@ const analyzeRationalPitch = (monzo: Monzo, options: AnalyzeRationalPitchOptions
         name,
         limit,
         apotomeSlope,
-        fiveRoughSopfr,
+        twoThreeFreeSopfr,
         n2d3p9,
     } as AnalyzedRationalPitch
 }

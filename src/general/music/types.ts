@@ -1,3 +1,4 @@
+import { TwoThreeFreeClass } from "../../sagittal"
 import { Monzo, Ratio } from "../math"
 import { Extrema, Name } from "../types"
 
@@ -20,7 +21,7 @@ interface Pitch {
 type Votes = number & { _VotesBrand: "Votes" }
 
 interface Popularity {
-    fiveRoughRatio: Ratio,
+    twoThreeFreeClass: TwoThreeFreeClass,
     votes: Votes,
 }
 

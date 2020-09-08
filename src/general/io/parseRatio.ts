@@ -4,7 +4,7 @@ import { Char, Formatted } from "./types"
 
 const superscriptNums = ["⁰", "¹", "²", "³", "⁴", "⁵", "⁶", "⁷", "⁸", "⁹"].join()
 
-const parseRatio = (ratioText: Formatted<Ratio>): Ratio => {
+const parseRatio = <T extends Ratio>(ratioText: Formatted<T>): T => {
     const ratio = ratioText.split(/[\/:]/).map(fractionalPartText => {
         if (fractionalPartText.match(new RegExp(`[${superscriptNums}.]`))) {
             const factorPowers = fractionalPartText.split(".")
@@ -35,7 +35,7 @@ const parseRatio = (ratioText: Formatted<Ratio>): Ratio => {
         ratio.reverse()
     }
 
-    return ratio as Ratio
+    return ratio as T
 }
 
 export {

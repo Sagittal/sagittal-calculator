@@ -2,9 +2,9 @@ import { program } from "commander"
 import { CommandFlag, LogTarget, Max, Prime, saveLog } from "../../../general"
 import {
     addMaybeJiSymbol,
-    DEFAULT_MAX_FIVE_ROUGH_COPFR,
-    DEFAULT_MAX_FIVE_ROUGH_SOPFR,
     DEFAULT_MAX_PRIME_LIMIT,
+    DEFAULT_MAX_TWO_THREE_FREE_COPFR,
+    DEFAULT_MAX_TWO_THREE_FREE_SOPFR,
 } from "../../../sagittal"
 import { computeCommas } from "../commas"
 import { PITCH_SCRIPT_GROUP } from "../constants"
@@ -19,26 +19,26 @@ program
         parseInt,
     )
     .option(
-        `-${CommandFlag.FIVE_ROUGH_SOPFR}, --max-five-rough-sopfr <maxFiveRoughSopfr>`,
-        "max 5-rough sopfr",
+        `-${CommandFlag.TWO_THREE_FREE_SOPFR}, --max-2-3-free-sopfr <maxTwoThreeFreeSopfr>`,
+        "max 2,3-free sopfr",
         parseInt,
     )
     .option(
-        `-${CommandFlag.FIVE_ROUGH_COPFR}, --max-five-rough-copfr <maxFiveRoughCopfr>`,
-        "max 5-rough copfr",
+        `-${CommandFlag.TWO_THREE_FREE_COPFR}, --max-2-3-free-copfr <maxTwoThreeFreeCopfr>`,
+        "max 2,3-free copfr",
         parseInt,
     )
 
 applySharedPitchCommandSetup()
 
-const maxFiveRoughSopfr = program.maxFiveRoughSopfr || DEFAULT_MAX_FIVE_ROUGH_SOPFR
-const maxFiveRoughCopfr = program.maxFiveRoughCopfr || DEFAULT_MAX_FIVE_ROUGH_COPFR
+const maxTwoThreeFreeSopfr = program.maxTwoThreeFreeSopfr || DEFAULT_MAX_TWO_THREE_FREE_SOPFR
+const maxTwoThreeFreeCopfr = program.maxTwoThreeFreeCopfr || DEFAULT_MAX_TWO_THREE_FREE_COPFR
 const maxPrimeLimit: Max<Max<Prime>> = program.maxPrimeLimit || DEFAULT_MAX_PRIME_LIMIT
 
 const commas = computeCommas({
     ...pitchScriptGroupSettings,
-    maxFiveRoughCopfr,
-    maxFiveRoughSopfr,
+    maxTwoThreeFreeCopfr,
+    maxTwoThreeFreeSopfr,
     maxPrimeLimit,
 })
 

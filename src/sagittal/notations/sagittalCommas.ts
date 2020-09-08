@@ -1,5 +1,5 @@
 import { Cents, Id, Monzo, Name, Prime, Ratio, Sopfr } from "../../general"
-import { ApotomeSlope, N2D3P9 } from "../comma"
+import { ApotomeSlope, N2D3P9, TwoThreeFreeClass } from "../comma"
 import { APOTOME } from "../constants"
 import { SagittalComma } from "./types"
 
@@ -7,7 +7,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 0 as Id<SagittalComma>,
         apotomeSlope: 0.000 as ApotomeSlope,
-        fiveRoughSopfr: 0 as Sopfr<5>,
+        twoThreeFreeSopfr: 0 as Sopfr<5>,
+        twoThreeFreeClass: [ 1, 1 ] as TwoThreeFreeClass,
         limit: 1 as Prime,
         ratio: [1, 1] as Ratio,
         monzo: [] as unknown[] as Monzo,
@@ -18,7 +19,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 1 as Id<SagittalComma>,
         apotomeSlope: -2.026 as ApotomeSlope,
-        fiveRoughSopfr: 25 as Sopfr<5>,
+        twoThreeFreeSopfr: 25 as Sopfr<5>,
+        twoThreeFreeClass: [ 455, 1 ] as TwoThreeFreeClass,
         limit: 13 as Prime,
         ratio: [4096, 4095] as Ratio,
         monzo: [12, -2, -1, -1, 0, -1] as Monzo,
@@ -29,7 +31,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 2 as Id<SagittalComma>,
         apotomeSlope: -3.051 as ApotomeSlope,
-        fiveRoughSopfr: 36 as Sopfr<5>,
+        twoThreeFreeSopfr: 36 as Sopfr<5>,
+        twoThreeFreeClass: [ 77, 65 ] as TwoThreeFreeClass,
         limit: 13 as Prime,
         ratio: [2080, 2079] as Ratio,
         monzo: [5, -3, 1, -1, -1, 1] as Monzo,
@@ -40,7 +43,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 3 as Id<SagittalComma>,
         apotomeSlope: -5.088 as ApotomeSlope,
-        fiveRoughSopfr: 24 as Sopfr<5>,
+        twoThreeFreeSopfr: 24 as Sopfr<5>,
+        twoThreeFreeClass: [ 19, 5 ] as TwoThreeFreeClass,
         limit: 19 as Prime,
         ratio: [1216, 1215] as Ratio,
         monzo: [6, -5, -1, 0, 0, 0, 0, 1] as Monzo,
@@ -51,7 +55,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 4 as Id<SagittalComma>,
         apotomeSlope: 7.880 as ApotomeSlope,
-        fiveRoughSopfr: 5 as Sopfr<5>,
+        twoThreeFreeSopfr: 5 as Sopfr<5>,
+        twoThreeFreeClass: [ 5, 1 ] as TwoThreeFreeClass,
         limit: 5 as Prime,
         ratio: [32805, 32768] as Ratio,
         monzo: [-15, 8, 1] as Monzo,
@@ -62,7 +67,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 5 as Id<SagittalComma>,
         apotomeSlope: 5.854 as ApotomeSlope,
-        fiveRoughSopfr: 20 as Sopfr<5>,
+        twoThreeFreeSopfr: 20 as Sopfr<5>,
+        twoThreeFreeClass: [ 91, 1 ] as TwoThreeFreeClass,
         limit: 13 as Prime,
         ratio: [729, 728] as Ratio,
         monzo: [-3, 6, 0, -1, 0, -1] as Monzo,
@@ -73,7 +79,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 6 as Id<SagittalComma>,
         apotomeSlope: 9.816 as ApotomeSlope,
-        fiveRoughSopfr: 46 as Sopfr<5>,
+        twoThreeFreeSopfr: 46 as Sopfr<5>,
+        twoThreeFreeClass: [ 4375, 19 ] as TwoThreeFreeClass,
         limit: 19 as Prime,
         ratio: [1121931, 1120000] as Ratio,
         monzo: [-8, 10, -4, -1, 0, 0, 0, 1] as Monzo,
@@ -84,7 +91,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 7 as Id<SagittalComma>,
         apotomeSlope: 2.792 as ApotomeSlope,
-        fiveRoughSopfr: 19 as Sopfr<5>,
+        twoThreeFreeSopfr: 19 as Sopfr<5>,
+        twoThreeFreeClass: [ 19, 1 ] as TwoThreeFreeClass,
         limit: 19 as Prime,
         ratio: [513, 512] as Ratio,
         monzo: [-9, 3, 0, 0, 0, 0, 0, 1] as Monzo,
@@ -95,7 +103,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 8 as Id<SagittalComma>,
         apotomeSlope: 1.758 as ApotomeSlope,
-        fiveRoughSopfr: 30 as Sopfr<5>,
+        twoThreeFreeSopfr: 30 as Sopfr<5>,
+        twoThreeFreeClass: [ 55, 49 ] as TwoThreeFreeClass,
         limit: 11 as Prime,
         ratio: [441, 440] as Ratio,
         monzo: [-3, 2, -1, 2, -1] as Monzo,
@@ -106,7 +115,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 9 as Id<SagittalComma>,
         apotomeSlope: -1.277 as ApotomeSlope,
-        fiveRoughSopfr: 23 as Sopfr<5>,
+        twoThreeFreeSopfr: 23 as Sopfr<5>,
+        twoThreeFreeClass: [ 385, 1 ] as TwoThreeFreeClass,
         limit: 11 as Prime,
         ratio: [385, 384] as Ratio,
         monzo: [-7, -1, 1, 1, 1] as Monzo,
@@ -117,7 +127,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 10 as Id<SagittalComma>,
         apotomeSlope: -3.303 as ApotomeSlope,
-        fiveRoughSopfr: 24 as Sopfr<5>,
+        twoThreeFreeSopfr: 24 as Sopfr<5>,
+        twoThreeFreeClass: [ 13, 11 ] as TwoThreeFreeClass,
         limit: 13 as Prime,
         ratio: [352, 351] as Ratio,
         monzo: [5, -3, 0, 0, 1, -1] as Monzo,
@@ -128,7 +139,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 11 as Id<SagittalComma>,
         apotomeSlope: 5.665 as ApotomeSlope,
-        fiveRoughSopfr: 42 as Sopfr<5>,
+        twoThreeFreeSopfr: 42 as Sopfr<5>,
+        twoThreeFreeClass: [ 31, 11 ] as TwoThreeFreeClass,
         limit: 31 as Prime,
         ratio: [22599, 22528] as Ratio,
         monzo: [-11, 6, 0, 0, -1, 0, 0, 0, 0, 0, 1] as Monzo,
@@ -139,7 +151,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 12 as Id<SagittalComma>,
         apotomeSlope: -6.355 as ApotomeSlope,
-        fiveRoughSopfr: 12 as Sopfr<5>,
+        twoThreeFreeSopfr: 12 as Sopfr<5>,
+        twoThreeFreeClass: [ 7, 5 ] as TwoThreeFreeClass,
         limit: 7 as Prime,
         ratio: [5120, 5103] as Ratio,
         monzo: [10, -6, 1, -1] as Monzo,
@@ -150,7 +163,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 13 as Id<SagittalComma>,
         apotomeSlope: -7.399 as ApotomeSlope,
-        fiveRoughSopfr: 26 as Sopfr<5>,
+        twoThreeFreeSopfr: 26 as Sopfr<5>,
+        twoThreeFreeClass: [ 343, 5 ] as TwoThreeFreeClass,
         limit: 7 as Prime,
         ratio: [10976, 10935] as Ratio,
         monzo: [5, -7, -1, 3] as Monzo,
@@ -161,7 +175,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 14 as Id<SagittalComma>,
         apotomeSlope: -1.417 as ApotomeSlope,
-        fiveRoughSopfr: 22 as Sopfr<5>,
+        twoThreeFreeSopfr: 22 as Sopfr<5>,
+        twoThreeFreeClass: [ 85, 1 ] as TwoThreeFreeClass,
         limit: 17 as Prime,
         ratio: [256, 255] as Ratio,
         monzo: [8, -1, -1, 0, 0, 0, -1] as Monzo,
@@ -172,7 +187,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 15 as Id<SagittalComma>,
         apotomeSlope: 8.550 as ApotomeSlope,
-        fiveRoughSopfr: 24 as Sopfr<5>,
+        twoThreeFreeSopfr: 24 as Sopfr<5>,
+        twoThreeFreeClass: [ 1225, 1 ] as TwoThreeFreeClass,
         limit: 7 as Prime,
         ratio: [19683, 19600] as Ratio,
         monzo: [-4, 9, -2, -2] as Monzo,
@@ -183,7 +199,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 16 as Id<SagittalComma>,
         apotomeSlope: 1.525 as ApotomeSlope,
-        fiveRoughSopfr: 17 as Sopfr<5>,
+        twoThreeFreeSopfr: 17 as Sopfr<5>,
+        twoThreeFreeClass: [ 25, 7 ] as TwoThreeFreeClass,
         limit: 7 as Prime,
         ratio: [225, 224] as Ratio,
         monzo: [-5, 2, 2, -1] as Monzo,
@@ -194,7 +211,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 17 as Id<SagittalComma>,
         apotomeSlope: 0.481 as ApotomeSlope,
-        fiveRoughSopfr: 21 as Sopfr<5>,
+        twoThreeFreeSopfr: 21 as Sopfr<5>,
+        twoThreeFreeClass: [ 343, 1 ] as TwoThreeFreeClass,
         limit: 7 as Prime,
         ratio: [1029, 1024] as Ratio,
         monzo: [-10, 1, 0, 3] as Monzo,
@@ -205,7 +223,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 18 as Id<SagittalComma>,
         apotomeSlope: 6.462 as ApotomeSlope,
-        fiveRoughSopfr: 17 as Sopfr<5>,
+        twoThreeFreeSopfr: 17 as Sopfr<5>,
+        twoThreeFreeClass: [ 17, 1 ] as TwoThreeFreeClass,
         limit: 17 as Prime,
         ratio: [2187, 2176] as Ratio,
         monzo: [-7, 7, 0, 0, 0, 0, -1] as Monzo,
@@ -216,7 +235,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 19 as Id<SagittalComma>,
         apotomeSlope: 1.435 as ApotomeSlope,
-        fiveRoughSopfr: 44 as Sopfr<5>,
+        twoThreeFreeSopfr: 44 as Sopfr<5>,
+        twoThreeFreeClass: [ 14641, 1 ] as TwoThreeFreeClass,
         limit: 11 as Prime,
         ratio: [131769, 131072] as Ratio,
         monzo: [-17, 2, 0, 0, 4] as Monzo,
@@ -227,7 +247,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 20 as Id<SagittalComma>,
         apotomeSlope: -4.597 as ApotomeSlope,
-        fiveRoughSopfr: 18 as Sopfr<5>,
+        twoThreeFreeSopfr: 18 as Sopfr<5>,
+        twoThreeFreeClass: [ 11, 7 ] as TwoThreeFreeClass,
         limit: 11 as Prime,
         ratio: [896, 891] as Ratio,
         monzo: [7, -4, 0, 1, -1] as Monzo,
@@ -238,7 +259,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 21 as Id<SagittalComma>,
         apotomeSlope: -7.632 as ApotomeSlope,
-        fiveRoughSopfr: 21 as Sopfr<5>,
+        twoThreeFreeSopfr: 21 as Sopfr<5>,
+        twoThreeFreeClass: [ 275, 1 ] as TwoThreeFreeClass,
         limit: 11 as Prime,
         ratio: [2200, 2187] as Ratio,
         monzo: [3, -7, 2, 0, 1] as Monzo,
@@ -249,7 +271,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 22 as Id<SagittalComma>,
         apotomeSlope: 6.334 as ApotomeSlope,
-        fiveRoughSopfr: 27 as Sopfr<5>,
+        twoThreeFreeSopfr: 27 as Sopfr<5>,
+        twoThreeFreeClass: [ 49, 13 ] as TwoThreeFreeClass,
         limit: 13 as Prime,
         ratio: [107163, 106496] as Ratio,
         monzo: [-13, 7, 0, 2, 0, -1] as Monzo,
@@ -260,7 +283,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 23 as Id<SagittalComma>,
         apotomeSlope: -5.685 as ApotomeSlope,
-        fiveRoughSopfr: 31 as Sopfr<5>,
+        twoThreeFreeSopfr: 31 as Sopfr<5>,
+        twoThreeFreeClass: [ 8575, 1 ] as TwoThreeFreeClass,
         limit: 7 as Prime,
         ratio: [2097152, 2083725] as Ratio,
         monzo: [21, -5, -2, -3] as Monzo,
@@ -271,7 +295,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 24 as Id<SagittalComma>,
         apotomeSlope: 3.283 as ApotomeSlope,
-        fiveRoughSopfr: 23 as Sopfr<5>,
+        twoThreeFreeSopfr: 23 as Sopfr<5>,
+        twoThreeFreeClass: [ 35, 11 ] as TwoThreeFreeClass,
         limit: 11 as Prime,
         ratio: [2835, 2816] as Ratio,
         monzo: [-8, 4, 1, 1, -1] as Monzo,
@@ -282,7 +307,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 25 as Id<SagittalComma>,
         apotomeSlope: 1.257 as ApotomeSlope,
-        fiveRoughSopfr: 24 as Sopfr<5>,
+        twoThreeFreeSopfr: 24 as Sopfr<5>,
+        twoThreeFreeClass: [ 143, 1 ] as TwoThreeFreeClass,
         limit: 13 as Prime,
         ratio: [144, 143] as Ratio,
         monzo: [4, 2, 0, 0, -1, -1] as Monzo,
@@ -293,7 +319,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 26 as Id<SagittalComma>,
         apotomeSlope: -3.787 as ApotomeSlope,
-        fiveRoughSopfr: 22 as Sopfr<5>,
+        twoThreeFreeSopfr: 22 as Sopfr<5>,
+        twoThreeFreeClass: [ 17, 5 ] as TwoThreeFreeClass,
         limit: 17 as Prime,
         ratio: [136, 135] as Ratio,
         monzo: [3, -3, -1, 0, 0, 0, 1] as Monzo,
@@ -304,7 +331,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 27 as Id<SagittalComma>,
         apotomeSlope: -5.817 as ApotomeSlope,
-        fiveRoughSopfr: 34 as Sopfr<5>,
+        twoThreeFreeSopfr: 34 as Sopfr<5>,
+        twoThreeFreeClass: [ 23, 11 ] as TwoThreeFreeClass,
         limit: 23 as Prime,
         ratio: [5632, 5589] as Ratio,
         monzo: [9, -5, 0, 0, 1, 0, 0, 0, -1] as Monzo,
@@ -315,7 +343,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 28 as Id<SagittalComma>,
         apotomeSlope: 1.151 as ApotomeSlope,
-        fiveRoughSopfr: 22 as Sopfr<5>,
+        twoThreeFreeSopfr: 22 as Sopfr<5>,
+        twoThreeFreeClass: [ 125, 7 ] as TwoThreeFreeClass,
         limit: 7 as Prime,
         ratio: [126, 125] as Ratio,
         monzo: [1, 2, -3, 1] as Monzo,
@@ -326,7 +355,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 29 as Id<SagittalComma>,
         apotomeSlope: -5.874 as ApotomeSlope,
-        fiveRoughSopfr: 19 as Sopfr<5>,
+        twoThreeFreeSopfr: 19 as Sopfr<5>,
+        twoThreeFreeClass: [ 245, 1 ] as TwoThreeFreeClass,
         limit: 7 as Prime,
         ratio: [245, 243] as Ratio,
         monzo: [0, -5, 1, 2] as Monzo,
@@ -337,7 +367,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 30 as Id<SagittalComma>,
         apotomeSlope: 4.093 as ApotomeSlope,
-        fiveRoughSopfr: 17 as Sopfr<5>,
+        twoThreeFreeSopfr: 17 as Sopfr<5>,
+        twoThreeFreeClass: [ 17, 1 ] as TwoThreeFreeClass,
         limit: 17 as Prime,
         ratio: [4131, 4096] as Ratio,
         monzo: [-12, 5, 0, 0, 0, 0, 1] as Monzo,
@@ -348,7 +379,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 31 as Id<SagittalComma>,
         apotomeSlope: -4.936 as ApotomeSlope,
-        fiveRoughSopfr: 31 as Sopfr<5>,
+        twoThreeFreeSopfr: 31 as Sopfr<5>,
+        twoThreeFreeClass: [ 143, 7 ] as TwoThreeFreeClass,
         limit: 13 as Prime,
         ratio: [572, 567] as Ratio,
         monzo: [2, -4, 0, -1, 1, 1] as Monzo,
@@ -359,7 +391,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 32 as Id<SagittalComma>,
         apotomeSlope: 9.030 as ApotomeSlope,
-        fiveRoughSopfr: 17 as Sopfr<5>,
+        twoThreeFreeSopfr: 17 as Sopfr<5>,
+        twoThreeFreeClass: [ 25, 7 ] as TwoThreeFreeClass,
         limit: 7 as Prime,
         ratio: [413343, 409600] as Ratio,
         monzo: [-14, 10, -2, 1] as Monzo,
@@ -370,7 +403,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 33 as Id<SagittalComma>,
         apotomeSlope: 2.006 as ApotomeSlope,
-        fiveRoughSopfr: 24 as Sopfr<5>,
+        twoThreeFreeSopfr: 24 as Sopfr<5>,
+        twoThreeFreeClass: [ 1225, 1 ] as TwoThreeFreeClass,
         limit: 7 as Prime,
         ratio: [33075, 32768] as Ratio,
         monzo: [-15, 3, 2, 2] as Monzo,
@@ -381,7 +415,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 34 as Id<SagittalComma>,
         apotomeSlope: -7.019 as ApotomeSlope,
-        fiveRoughSopfr: 23 as Sopfr<5>,
+        twoThreeFreeSopfr: 23 as Sopfr<5>,
+        twoThreeFreeClass: [ 23, 1 ] as TwoThreeFreeClass,
         limit: 23 as Prime,
         ratio: [736, 729] as Ratio,
         monzo: [5, -6, 0, 0, 0, 0, 0, 0, 1] as Monzo,
@@ -392,7 +427,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 35 as Id<SagittalComma>,
         apotomeSlope: -2.046 as ApotomeSlope,
-        fiveRoughSopfr: 26 as Sopfr<5>,
+        twoThreeFreeSopfr: 26 as Sopfr<5>,
+        twoThreeFreeClass: [ 169, 1 ] as TwoThreeFreeClass,
         limit: 13 as Prime,
         ratio: [512, 507] as Ratio,
         monzo: [9, -1, 0, 0, 0, -2] as Monzo,
@@ -403,7 +439,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 36 as Id<SagittalComma>,
         apotomeSlope: 0.918 as ApotomeSlope,
-        fiveRoughSopfr: 25 as Sopfr<5>,
+        twoThreeFreeSopfr: 25 as Sopfr<5>,
+        twoThreeFreeClass: [ 49, 11 ] as TwoThreeFreeClass,
         limit: 11 as Prime,
         ratio: [99, 98] as Ratio,
         monzo: [-1, 2, 0, -2, 1] as Monzo,
@@ -414,7 +451,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 37 as Id<SagittalComma>,
         apotomeSlope: 4.891 as ApotomeSlope,
-        fiveRoughSopfr: 42 as Sopfr<5>,
+        twoThreeFreeSopfr: 42 as Sopfr<5>,
+        twoThreeFreeClass: [ 31, 11 ] as TwoThreeFreeClass,
         limit: 31 as Prime,
         ratio: [8019, 7936] as Ratio,
         monzo: [-8, 6, 0, 0, 1, 0, 0, 0, 0, 0, -1] as Monzo,
@@ -425,7 +463,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 38 as Id<SagittalComma>,
         apotomeSlope: -10.141 as ApotomeSlope,
-        fiveRoughSopfr: 24 as Sopfr<5>,
+        twoThreeFreeSopfr: 24 as Sopfr<5>,
+        twoThreeFreeClass: [ 17, 7 ] as TwoThreeFreeClass,
         limit: 17 as Prime,
         ratio: [139264, 137781] as Ratio,
         monzo: [13, -9, 0, -1, 0, 0, 1] as Monzo,
@@ -436,7 +475,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 39 as Id<SagittalComma>,
         apotomeSlope: -3.178 as ApotomeSlope,
-        fiveRoughSopfr: 25 as Sopfr<5>,
+        twoThreeFreeSopfr: 25 as Sopfr<5>,
+        twoThreeFreeClass: [ 91, 5 ] as TwoThreeFreeClass,
         limit: 13 as Prime,
         ratio: [91, 90] as Ratio,
         monzo: [-1, -2, -1, 1, 0, 1] as Monzo,
@@ -447,7 +487,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 40 as Id<SagittalComma>,
         apotomeSlope: -5.204 as ApotomeSlope,
-        fiveRoughSopfr: 10 as Sopfr<5>,
+        twoThreeFreeSopfr: 10 as Sopfr<5>,
+        twoThreeFreeClass: [ 25, 1 ] as TwoThreeFreeClass,
         limit: 5 as Prime,
         ratio: [2048, 2025] as Ratio,
         monzo: [11, -4, -2] as Monzo,
@@ -458,7 +499,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 41 as Id<SagittalComma>,
         apotomeSlope: 7.763 as ApotomeSlope,
-        fiveRoughSopfr: 19 as Sopfr<5>,
+        twoThreeFreeSopfr: 19 as Sopfr<5>,
+        twoThreeFreeClass: [ 19, 1 ] as TwoThreeFreeClass,
         limit: 19 as Prime,
         ratio: [19683, 19456] as Ratio,
         monzo: [-10, 9, 0, 0, 0, 0, 0, -1] as Monzo,
@@ -469,7 +511,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 42 as Id<SagittalComma>,
         apotomeSlope: -1.257 as ApotomeSlope,
-        fiveRoughSopfr: 34 as Sopfr<5>,
+        twoThreeFreeSopfr: 34 as Sopfr<5>,
+        twoThreeFreeClass: [ 253, 1 ] as TwoThreeFreeClass,
         limit: 23 as Prime,
         ratio: [256, 253] as Ratio,
         monzo: [8, 0, 0, 0, -1, 0, 0, 0, -1] as Monzo,
@@ -480,7 +523,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 43 as Id<SagittalComma>,
         apotomeSlope: 4.702 as ApotomeSlope,
-        fiveRoughSopfr: 20 as Sopfr<5>,
+        twoThreeFreeSopfr: 20 as Sopfr<5>,
+        twoThreeFreeClass: [ 91, 1 ] as TwoThreeFreeClass,
         limit: 13 as Prime,
         ratio: [66339, 65536] as Ratio,
         monzo: [-16, 6, 0, 1, 0, 1] as Monzo,
@@ -491,7 +535,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 44 as Id<SagittalComma>,
         apotomeSlope: 2.676 as ApotomeSlope,
-        fiveRoughSopfr: 5 as Sopfr<5>,
+        twoThreeFreeSopfr: 5 as Sopfr<5>,
+        twoThreeFreeClass: [ 5, 1 ] as TwoThreeFreeClass,
         limit: 5 as Prime,
         ratio: [81, 80] as Ratio,
         monzo: [-4, 4, -1] as Monzo,
@@ -502,7 +547,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 45 as Id<SagittalComma>,
         apotomeSlope: -4.349 as ApotomeSlope,
-        fiveRoughSopfr: 22 as Sopfr<5>,
+        twoThreeFreeSopfr: 22 as Sopfr<5>,
+        twoThreeFreeClass: [ 875, 1 ] as TwoThreeFreeClass,
         limit: 7 as Prime,
         ratio: [875, 864] as Ratio,
         monzo: [-5, -3, 3, 1] as Monzo,
@@ -513,7 +559,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 46 as Id<SagittalComma>,
         apotomeSlope: -6.375 as ApotomeSlope,
-        fiveRoughSopfr: 23 as Sopfr<5>,
+        twoThreeFreeSopfr: 23 as Sopfr<5>,
+        twoThreeFreeClass: [ 25, 13 ] as TwoThreeFreeClass,
         limit: 13 as Prime,
         ratio: [3200, 3159] as Ratio,
         monzo: [7, -5, 2, 0, 0, -1] as Monzo,
@@ -524,7 +571,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 47 as Id<SagittalComma>,
         apotomeSlope: -2.412 as ApotomeSlope,
-        fiveRoughSopfr: 29 as Sopfr<5>,
+        twoThreeFreeSopfr: 29 as Sopfr<5>,
+        twoThreeFreeClass: [ 25, 19 ] as TwoThreeFreeClass,
         limit: 19 as Prime,
         ratio: [76, 75] as Ratio,
         monzo: [2, -1, -2, 0, 0, 0, 0, 1] as Monzo,
@@ -535,7 +583,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 48 as Id<SagittalComma>,
         apotomeSlope: 10.555 as ApotomeSlope,
-        fiveRoughSopfr: 0 as Sopfr<5>,
+        twoThreeFreeSopfr: 0 as Sopfr<5>,
+        twoThreeFreeClass: [ 1, 1 ] as TwoThreeFreeClass,
         limit: 3 as Prime,
         ratio: [531441, 524288] as Ratio,
         monzo: [-19, 12] as Monzo,
@@ -546,7 +595,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 49 as Id<SagittalComma>,
         apotomeSlope: 3.531 as ApotomeSlope,
-        fiveRoughSopfr: 27 as Sopfr<5>,
+        twoThreeFreeSopfr: 27 as Sopfr<5>,
+        twoThreeFreeClass: [ 4375, 1 ] as TwoThreeFreeClass,
         limit: 7 as Prime,
         ratio: [1063125, 1048576] as Ratio,
         monzo: [-20, 5, 4, 1] as Monzo,
@@ -557,7 +607,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 50 as Id<SagittalComma>,
         apotomeSlope: -6.481 as ApotomeSlope,
-        fiveRoughSopfr: 23 as Sopfr<5>,
+        twoThreeFreeSopfr: 23 as Sopfr<5>,
+        twoThreeFreeClass: [ 77, 5 ] as TwoThreeFreeClass,
         limit: 11 as Prime,
         ratio: [1232, 1215] as Ratio,
         monzo: [4, -5, -1, 1, 1] as Monzo,
@@ -568,7 +619,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 51 as Id<SagittalComma>,
         apotomeSlope: 1.505 as ApotomeSlope,
-        fiveRoughSopfr: 28 as Sopfr<5>,
+        twoThreeFreeSopfr: 28 as Sopfr<5>,
+        twoThreeFreeClass: [ 125, 13 ] as TwoThreeFreeClass,
         limit: 13 as Prime,
         ratio: [3375, 3328] as Ratio,
         monzo: [-8, 3, 3, 0, 0, -1] as Monzo,
@@ -579,7 +631,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 52 as Id<SagittalComma>,
         apotomeSlope: 5.468 as ApotomeSlope,
-        fiveRoughSopfr: 24 as Sopfr<5>,
+        twoThreeFreeSopfr: 24 as Sopfr<5>,
+        twoThreeFreeClass: [ 19, 5 ] as TwoThreeFreeClass,
         limit: 19 as Prime,
         ratio: [41553, 40960] as Ratio,
         monzo: [-13, 7, -1, 0, 0, 0, 0, 1] as Monzo,
@@ -590,7 +643,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 53 as Id<SagittalComma>,
         apotomeSlope: -9.532 as ApotomeSlope,
-        fiveRoughSopfr: 13 as Sopfr<5>,
+        twoThreeFreeSopfr: 13 as Sopfr<5>,
+        twoThreeFreeClass: [ 13, 1 ] as TwoThreeFreeClass,
         limit: 13 as Prime,
         ratio: [6656, 6561] as Ratio,
         monzo: [9, -8, 0, 0, 0, 1] as Monzo,
@@ -601,7 +655,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 54 as Id<SagittalComma>,
         apotomeSlope: -11.558 as ApotomeSlope,
-        fiveRoughSopfr: 12 as Sopfr<5>,
+        twoThreeFreeSopfr: 12 as Sopfr<5>,
+        twoThreeFreeClass: [ 35, 1 ] as TwoThreeFreeClass,
         limit: 7 as Prime,
         ratio: [2097152, 2066715] as Ratio,
         monzo: [21, -10, -1, -1] as Monzo,
@@ -612,7 +667,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 55 as Id<SagittalComma>,
         apotomeSlope: 1.399 as ApotomeSlope,
-        fiveRoughSopfr: 18 as Sopfr<5>,
+        twoThreeFreeSopfr: 18 as Sopfr<5>,
+        twoThreeFreeClass: [ 77, 1 ] as TwoThreeFreeClass,
         limit: 11 as Prime,
         ratio: [2079, 2048] as Ratio,
         monzo: [-11, 3, 0, 1, 1] as Monzo,
@@ -623,7 +679,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 56 as Id<SagittalComma>,
         apotomeSlope: -0.627 as ApotomeSlope,
-        fiveRoughSopfr: 29 as Sopfr<5>,
+        twoThreeFreeSopfr: 29 as Sopfr<5>,
+        twoThreeFreeClass: [ 65, 11 ] as TwoThreeFreeClass,
         limit: 13 as Prime,
         ratio: [66, 65] as Ratio,
         monzo: [1, 1, -1, 0, 1, -1] as Monzo,
@@ -634,7 +691,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 57 as Id<SagittalComma>,
         apotomeSlope: -1.653 as ApotomeSlope,
-        fiveRoughSopfr: 18 as Sopfr<5>,
+        twoThreeFreeSopfr: 18 as Sopfr<5>,
+        twoThreeFreeClass: [ 65, 1 ] as TwoThreeFreeClass,
         limit: 13 as Prime,
         ratio: [65, 64] as Ratio,
         monzo: [-6, 0, 1, 0, 0, 1] as Monzo,
@@ -645,7 +703,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 58 as Id<SagittalComma>,
         apotomeSlope: -3.679 as ApotomeSlope,
-        fiveRoughSopfr: 7 as Sopfr<5>,
+        twoThreeFreeSopfr: 7 as Sopfr<5>,
+        twoThreeFreeClass: [ 7, 1 ] as TwoThreeFreeClass,
         limit: 7 as Prime,
         ratio: [64, 63] as Ratio,
         monzo: [6, -2, 0, -1] as Monzo,
@@ -656,7 +715,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 59 as Id<SagittalComma>,
         apotomeSlope: -10.703 as ApotomeSlope,
-        fiveRoughSopfr: 20 as Sopfr<5>,
+        twoThreeFreeSopfr: 20 as Sopfr<5>,
+        twoThreeFreeClass: [ 625, 1 ] as TwoThreeFreeClass,
         limit: 5 as Prime,
         ratio: [20000, 19683] as Ratio,
         monzo: [5, -9, 4] as Monzo,
@@ -667,7 +727,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 60 as Id<SagittalComma>,
         apotomeSlope: 7.252 as ApotomeSlope,
-        fiveRoughSopfr: 24 as Sopfr<5>,
+        twoThreeFreeSopfr: 24 as Sopfr<5>,
+        twoThreeFreeClass: [ 13, 11 ] as TwoThreeFreeClass,
         limit: 13 as Prime,
         ratio: [216513, 212992] as Ratio,
         monzo: [-14, 9, 0, 0, 1, -1] as Monzo,
@@ -678,7 +739,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 61 as Id<SagittalComma>,
         apotomeSlope: 6.227 as ApotomeSlope,
-        fiveRoughSopfr: 23 as Sopfr<5>,
+        twoThreeFreeSopfr: 23 as Sopfr<5>,
+        twoThreeFreeClass: [ 325, 1 ] as TwoThreeFreeClass,
         limit: 13 as Prime,
         ratio: [2132325, 2097152] as Ratio,
         monzo: [-21, 8, 2, 0, 0, 1] as Monzo,
@@ -689,7 +751,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 62 as Id<SagittalComma>,
         apotomeSlope: 4.201 as ApotomeSlope,
-        fiveRoughSopfr: 12 as Sopfr<5>,
+        twoThreeFreeSopfr: 12 as Sopfr<5>,
+        twoThreeFreeClass: [ 7, 5 ] as TwoThreeFreeClass,
         limit: 7 as Prime,
         ratio: [3645, 3584] as Ratio,
         monzo: [-9, 6, 1, -1] as Monzo,
@@ -700,7 +763,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 63 as Id<SagittalComma>,
         apotomeSlope: -2.823 as ApotomeSlope,
-        fiveRoughSopfr: 25 as Sopfr<5>,
+        twoThreeFreeSopfr: 25 as Sopfr<5>,
+        twoThreeFreeClass: [ 3125, 1 ] as TwoThreeFreeClass,
         limit: 5 as Prime,
         ratio: [3125, 3072] as Ratio,
         monzo: [-10, -1, 5] as Monzo,
@@ -711,7 +775,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 64 as Id<SagittalComma>,
         apotomeSlope: -6.858 as ApotomeSlope,
-        fiveRoughSopfr: 33 as Sopfr<5>,
+        twoThreeFreeSopfr: 33 as Sopfr<5>,
+        twoThreeFreeClass: [ 85, 11 ] as TwoThreeFreeClass,
         limit: 17 as Prime,
         ratio: [2720, 2673] as Ratio,
         monzo: [5, -5, 1, 0, -1, 0, 1] as Monzo,
@@ -722,7 +787,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 65 as Id<SagittalComma>,
         apotomeSlope: -0.887 as ApotomeSlope,
-        fiveRoughSopfr: 26 as Sopfr<5>,
+        twoThreeFreeSopfr: 26 as Sopfr<5>,
+        twoThreeFreeClass: [ 19, 7 ] as TwoThreeFreeClass,
         limit: 19 as Prime,
         ratio: [57, 56] as Ratio,
         monzo: [-3, 1, 0, -1, 0, 0, 0, 1] as Monzo,
@@ -733,7 +799,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 66 as Id<SagittalComma>,
         apotomeSlope: -1.921 as ApotomeSlope,
-        fiveRoughSopfr: 23 as Sopfr<5>,
+        twoThreeFreeSopfr: 23 as Sopfr<5>,
+        twoThreeFreeClass: [ 55, 7 ] as TwoThreeFreeClass,
         limit: 11 as Prime,
         ratio: [56, 55] as Ratio,
         monzo: [3, 0, -1, 1, -1] as Monzo,
@@ -744,7 +811,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 67 as Id<SagittalComma>,
         apotomeSlope: -4.956 as ApotomeSlope,
-        fiveRoughSopfr: 16 as Sopfr<5>,
+        twoThreeFreeSopfr: 16 as Sopfr<5>,
+        twoThreeFreeClass: [ 55, 1 ] as TwoThreeFreeClass,
         limit: 11 as Prime,
         ratio: [55, 54] as Ratio,
         monzo: [-1, -3, 1, 0, 1] as Monzo,
@@ -755,7 +823,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 68 as Id<SagittalComma>,
         apotomeSlope: -6.982 as ApotomeSlope,
-        fiveRoughSopfr: 31 as Sopfr<5>,
+        twoThreeFreeSopfr: 31 as Sopfr<5>,
+        twoThreeFreeClass: [ 91, 11 ] as TwoThreeFreeClass,
         limit: 13 as Prime,
         ratio: [22528, 22113] as Ratio,
         monzo: [11, -5, 0, -1, 1, -1] as Monzo,
@@ -766,7 +835,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 69 as Id<SagittalComma>,
         apotomeSlope: -1.009 as ApotomeSlope,
-        fiveRoughSopfr: 38 as Sopfr<5>,
+        twoThreeFreeSopfr: 38 as Sopfr<5>,
+        twoThreeFreeClass: [ 125, 23 ] as TwoThreeFreeClass,
         limit: 23 as Prime,
         ratio: [375, 368] as Ratio,
         monzo: [-4, 1, 3, 0, 0, 0, 0, 0, -1] as Monzo,
@@ -777,7 +847,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 70 as Id<SagittalComma>,
         apotomeSlope: 5.959 as ApotomeSlope,
-        fiveRoughSopfr: 18 as Sopfr<5>,
+        twoThreeFreeSopfr: 18 as Sopfr<5>,
+        twoThreeFreeClass: [ 11, 7 ] as TwoThreeFreeClass,
         limit: 11 as Prime,
         ratio: [45927, 45056] as Ratio,
         monzo: [-12, 8, 0, 1, -1] as Monzo,
@@ -788,7 +859,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 71 as Id<SagittalComma>,
         apotomeSlope: -3.070 as ApotomeSlope,
-        fiveRoughSopfr: 30 as Sopfr<5>,
+        twoThreeFreeSopfr: 30 as Sopfr<5>,
+        twoThreeFreeClass: [ 17, 13 ] as TwoThreeFreeClass,
         limit: 17 as Prime,
         ratio: [52, 51] as Ratio,
         monzo: [2, -1, 0, 0, 0, 1, -1] as Monzo,
@@ -799,7 +871,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 72 as Id<SagittalComma>,
         apotomeSlope: -1.111 as ApotomeSlope,
-        fiveRoughSopfr: 27 as Sopfr<5>,
+        twoThreeFreeSopfr: 27 as Sopfr<5>,
+        twoThreeFreeClass: [ 25, 17 ] as TwoThreeFreeClass,
         limit: 17 as Prime,
         ratio: [51, 50] as Ratio,
         monzo: [-1, 1, -2, 0, 0, 0, 1] as Monzo,
@@ -810,7 +883,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 73 as Id<SagittalComma>,
         apotomeSlope: -0.136 as ApotomeSlope,
-        fiveRoughSopfr: 39 as Sopfr<5>,
+        twoThreeFreeSopfr: 39 as Sopfr<5>,
+        twoThreeFreeClass: [ 247, 7 ] as TwoThreeFreeClass,
         limit: 19 as Prime,
         ratio: [252, 247] as Ratio,
         monzo: [2, 2, 0, 1, 0, -1, 0, -1] as Monzo,
@@ -821,7 +895,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 74 as Id<SagittalComma>,
         apotomeSlope: -2.154 as ApotomeSlope,
-        fiveRoughSopfr: 24 as Sopfr<5>,
+        twoThreeFreeSopfr: 24 as Sopfr<5>,
+        twoThreeFreeClass: [ 49, 25 ] as TwoThreeFreeClass,
         limit: 7 as Prime,
         ratio: [50, 49] as Ratio,
         monzo: [1, 0, 2, -2] as Monzo,
@@ -832,7 +907,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 75 as Id<SagittalComma>,
         apotomeSlope: -7.171 as ApotomeSlope,
-        fiveRoughSopfr: 31 as Sopfr<5>,
+        twoThreeFreeSopfr: 31 as Sopfr<5>,
+        twoThreeFreeClass: [ 31, 1 ] as TwoThreeFreeClass,
         limit: 31 as Prime,
         ratio: [248, 243] as Ratio,
         monzo: [3, -5, 0, 0, 0, 0, 0, 0, 0, 0, 1] as Monzo,
@@ -843,7 +919,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 76 as Id<SagittalComma>,
         apotomeSlope: -3.198 as ApotomeSlope,
-        fiveRoughSopfr: 14 as Sopfr<5>,
+        twoThreeFreeSopfr: 14 as Sopfr<5>,
+        twoThreeFreeClass: [ 49, 1 ] as TwoThreeFreeClass,
         limit: 7 as Prime,
         ratio: [49, 48] as Ratio,
         monzo: [-4, -1, 0, 2] as Monzo,
@@ -854,7 +931,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 77 as Id<SagittalComma>,
         apotomeSlope: 6.769 as ApotomeSlope,
-        fiveRoughSopfr: 22 as Sopfr<5>,
+        twoThreeFreeSopfr: 22 as Sopfr<5>,
+        twoThreeFreeClass: [ 17, 5 ] as TwoThreeFreeClass,
         limit: 17 as Prime,
         ratio: [334611, 327680] as Ratio,
         monzo: [-16, 9, -1, 0, 0, 0, 1] as Monzo,
@@ -865,7 +943,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 79 as Id<SagittalComma>,
         apotomeSlope: 4.738 as ApotomeSlope,
-        fiveRoughSopfr: 34 as Sopfr<5>,
+        twoThreeFreeSopfr: 34 as Sopfr<5>,
+        twoThreeFreeClass: [ 23, 11 ] as TwoThreeFreeClass,
         limit: 23 as Prime,
         ratio: [24057, 23552] as Ratio,
         monzo: [-10, 7, 0, 0, 1, 0, 0, 0, -1] as Monzo,
@@ -876,7 +955,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 80 as Id<SagittalComma>,
         apotomeSlope: -8.275 as ApotomeSlope,
-        fiveRoughSopfr: 11 as Sopfr<5>,
+        twoThreeFreeSopfr: 11 as Sopfr<5>,
+        twoThreeFreeClass: [ 11, 1 ] as TwoThreeFreeClass,
         limit: 11 as Prime,
         ratio: [8192, 8019] as Ratio,
         monzo: [13, -6, 0, 0, -1] as Monzo,
@@ -887,7 +967,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 81 as Id<SagittalComma>,
         apotomeSlope: 4.682 as ApotomeSlope,
-        fiveRoughSopfr: 19 as Sopfr<5>,
+        twoThreeFreeSopfr: 19 as Sopfr<5>,
+        twoThreeFreeClass: [ 245, 1 ] as TwoThreeFreeClass,
         limit: 7 as Prime,
         ratio: [535815, 524288] as Ratio,
         monzo: [-19, 7, 1, 2] as Monzo,
@@ -898,7 +979,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 82 as Id<SagittalComma>,
         apotomeSlope: -4.343 as ApotomeSlope,
-        fiveRoughSopfr: 28 as Sopfr<5>,
+        twoThreeFreeSopfr: 28 as Sopfr<5>,
+        twoThreeFreeClass: [ 23, 5 ] as TwoThreeFreeClass,
         limit: 23 as Prime,
         ratio: [46, 45] as Ratio,
         monzo: [1, -2, -1, 0, 0, 0, 0, 0, 1] as Monzo,
@@ -909,7 +991,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 83 as Id<SagittalComma>,
         apotomeSlope: 2.656 as ApotomeSlope,
-        fiveRoughSopfr: 20 as Sopfr<5>,
+        twoThreeFreeSopfr: 20 as Sopfr<5>,
+        twoThreeFreeClass: [ 13, 7 ] as TwoThreeFreeClass,
         limit: 13 as Prime,
         ratio: [1701, 1664] as Ratio,
         monzo: [-7, 5, 0, 1, 0, -1] as Monzo,
@@ -920,7 +1003,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 84 as Id<SagittalComma>,
         apotomeSlope: -6.373 as ApotomeSlope,
-        fiveRoughSopfr: 28 as Sopfr<5>,
+        twoThreeFreeSopfr: 28 as Sopfr<5>,
+        twoThreeFreeClass: [ 17, 11 ] as TwoThreeFreeClass,
         limit: 17 as Prime,
         ratio: [1408, 1377] as Ratio,
         monzo: [7, -4, 0, 0, 1, 0, -1] as Monzo,
@@ -931,7 +1015,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 85 as Id<SagittalComma>,
         apotomeSlope: -0.396 as ApotomeSlope,
-        fiveRoughSopfr: 16 as Sopfr<5>,
+        twoThreeFreeSopfr: 16 as Sopfr<5>,
+        twoThreeFreeClass: [ 11, 5 ] as TwoThreeFreeClass,
         limit: 11 as Prime,
         ratio: [45, 44] as Ratio,
         monzo: [-2, 2, 1, 0, -1] as Monzo,
@@ -942,7 +1027,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 86 as Id<SagittalComma>,
         apotomeSlope: -2.422 as ApotomeSlope,
-        fiveRoughSopfr: 31 as Sopfr<5>,
+        twoThreeFreeSopfr: 31 as Sopfr<5>,
+        twoThreeFreeClass: [ 1001, 1 ] as TwoThreeFreeClass,
         limit: 13 as Prime,
         ratio: [1024, 1001] as Ratio,
         monzo: [10, 0, 0, -1, -1, -1] as Monzo,
@@ -953,7 +1039,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 87 as Id<SagittalComma>,
         apotomeSlope: 3.537 as ApotomeSlope,
-        fiveRoughSopfr: 23 as Sopfr<5>,
+        twoThreeFreeSopfr: 23 as Sopfr<5>,
+        twoThreeFreeClass: [ 23, 1 ] as TwoThreeFreeClass,
         limit: 23 as Prime,
         ratio: [16767, 16384] as Ratio,
         monzo: [-14, 6, 0, 0, 0, 0, 0, 0, 1] as Monzo,
@@ -964,7 +1051,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 88 as Id<SagittalComma>,
         apotomeSlope: -0.502 as ApotomeSlope,
-        fiveRoughSopfr: 30 as Sopfr<5>,
+        twoThreeFreeSopfr: 30 as Sopfr<5>,
+        twoThreeFreeClass: [ 91, 25 ] as TwoThreeFreeClass,
         limit: 13 as Prime,
         ratio: [819, 800] as Ratio,
         monzo: [-5, 2, -2, 1, 0, 1] as Monzo,
@@ -975,7 +1063,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 89 as Id<SagittalComma>,
         apotomeSlope: -2.528 as ApotomeSlope,
-        fiveRoughSopfr: 15 as Sopfr<5>,
+        twoThreeFreeSopfr: 15 as Sopfr<5>,
+        twoThreeFreeClass: [ 125, 1 ] as TwoThreeFreeClass,
         limit: 5 as Prime,
         ratio: [128, 125] as Ratio,
         monzo: [7, 0, -3] as Monzo,
@@ -986,7 +1075,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 90 as Id<SagittalComma>,
         apotomeSlope: -9.553 as ApotomeSlope,
-        fiveRoughSopfr: 12 as Sopfr<5>,
+        twoThreeFreeSopfr: 12 as Sopfr<5>,
+        twoThreeFreeClass: [ 35, 1 ] as TwoThreeFreeClass,
         limit: 7 as Prime,
         ratio: [2240, 2187] as Ratio,
         monzo: [6, -7, 1, 1] as Monzo,
@@ -997,7 +1087,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 91 as Id<SagittalComma>,
         apotomeSlope: 0.414 as ApotomeSlope,
-        fiveRoughSopfr: 24 as Sopfr<5>,
+        twoThreeFreeSopfr: 24 as Sopfr<5>,
+        twoThreeFreeClass: [ 17, 7 ] as TwoThreeFreeClass,
         limit: 17 as Prime,
         ratio: [459, 448] as Ratio,
         monzo: [-6, 3, 0, -1, 0, 0, 1] as Monzo,
@@ -1008,7 +1099,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 92 as Id<SagittalComma>,
         apotomeSlope: 7.378 as ApotomeSlope,
-        fiveRoughSopfr: 25 as Sopfr<5>,
+        twoThreeFreeSopfr: 25 as Sopfr<5>,
+        twoThreeFreeClass: [ 91, 5 ] as TwoThreeFreeClass,
         limit: 13 as Prime,
         ratio: [5373459, 5242880] as Ratio,
         monzo: [-20, 10, -1, 1, 0, 1] as Monzo,
@@ -1019,7 +1111,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 93 as Id<SagittalComma>,
         apotomeSlope: 5.352 as ApotomeSlope,
-        fiveRoughSopfr: 10 as Sopfr<5>,
+        twoThreeFreeSopfr: 10 as Sopfr<5>,
+        twoThreeFreeClass: [ 25, 1 ] as TwoThreeFreeClass,
         limit: 5 as Prime,
         ratio: [6561, 6400] as Ratio,
         monzo: [-8, 8, -2] as Monzo,
@@ -1030,7 +1123,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 94 as Id<SagittalComma>,
         apotomeSlope: -1.673 as ApotomeSlope,
-        fiveRoughSopfr: 17 as Sopfr<5>,
+        twoThreeFreeSopfr: 17 as Sopfr<5>,
+        twoThreeFreeClass: [ 175, 1 ] as TwoThreeFreeClass,
         limit: 7 as Prime,
         ratio: [525, 512] as Ratio,
         monzo: [-9, 1, 2, 1] as Monzo,
@@ -1041,7 +1135,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 95 as Id<SagittalComma>,
         apotomeSlope: -3.699 as ApotomeSlope,
-        fiveRoughSopfr: 18 as Sopfr<5>,
+        twoThreeFreeSopfr: 18 as Sopfr<5>,
+        twoThreeFreeClass: [ 13, 5 ] as TwoThreeFreeClass,
         limit: 13 as Prime,
         ratio: [40, 39] as Ratio,
         monzo: [3, -1, 1, 0, 0, -1] as Monzo,
@@ -1052,7 +1147,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 96 as Id<SagittalComma>,
         apotomeSlope: 3.265 as ApotomeSlope,
-        fiveRoughSopfr: 31 as Sopfr<5>,
+        twoThreeFreeSopfr: 31 as Sopfr<5>,
+        twoThreeFreeClass: [ 49, 17 ] as TwoThreeFreeClass,
         limit: 17 as Prime,
         ratio: [35721, 34816] as Ratio,
         monzo: [-11, 6, 0, 2, 0, 0, -1] as Monzo,
@@ -1063,7 +1159,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 97 as Id<SagittalComma>,
         apotomeSlope: -1.769 as ApotomeSlope,
-        fiveRoughSopfr: 32 as Sopfr<5>,
+        twoThreeFreeSopfr: 32 as Sopfr<5>,
+        twoThreeFreeClass: [ 19, 13 ] as TwoThreeFreeClass,
         limit: 19 as Prime,
         ratio: [39, 38] as Ratio,
         monzo: [-1, 1, 0, 0, 0, 1, 0, -1] as Monzo,
@@ -1074,7 +1171,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 98 as Id<SagittalComma>,
         apotomeSlope: -3.805 as ApotomeSlope,
-        fiveRoughSopfr: 28 as Sopfr<5>,
+        twoThreeFreeSopfr: 28 as Sopfr<5>,
+        twoThreeFreeClass: [ 77, 25 ] as TwoThreeFreeClass,
         limit: 11 as Prime,
         ratio: [77, 75] as Ratio,
         monzo: [0, -1, -2, 1, 1] as Monzo,
@@ -1085,7 +1183,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 99 as Id<SagittalComma>,
         apotomeSlope: 4.181 as ApotomeSlope,
-        fiveRoughSopfr: 23 as Sopfr<5>,
+        twoThreeFreeSopfr: 23 as Sopfr<5>,
+        twoThreeFreeClass: [ 25, 13 ] as TwoThreeFreeClass,
         limit: 13 as Prime,
         ratio: [54675, 53248] as Ratio,
         monzo: [-12, 7, 2, 0, 0, -1] as Monzo,
@@ -1096,7 +1195,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 100 as Id<SagittalComma>,
         apotomeSlope: -6.857 as ApotomeSlope,
-        fiveRoughSopfr: 18 as Sopfr<5>,
+        twoThreeFreeSopfr: 18 as Sopfr<5>,
+        twoThreeFreeClass: [ 13, 5 ] as TwoThreeFreeClass,
         limit: 13 as Prime,
         ratio: [416, 405] as Ratio,
         monzo: [5, -4, -1, 0, 0, 1] as Monzo,
@@ -1107,7 +1207,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 101 as Id<SagittalComma>,
         apotomeSlope: -8.883 as ApotomeSlope,
-        fiveRoughSopfr: 17 as Sopfr<5>,
+        twoThreeFreeSopfr: 17 as Sopfr<5>,
+        twoThreeFreeClass: [ 175, 1 ] as TwoThreeFreeClass,
         limit: 7 as Prime,
         ratio: [131072, 127575] as Ratio,
         monzo: [17, -6, -2, -1] as Monzo,
@@ -1118,7 +1219,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 102 as Id<SagittalComma>,
         apotomeSlope: -4.921 as ApotomeSlope,
-        fiveRoughSopfr: 37 as Sopfr<5>,
+        twoThreeFreeSopfr: 37 as Sopfr<5>,
+        twoThreeFreeClass: [ 37, 1 ] as TwoThreeFreeClass,
         limit: 37 as Prime,
         ratio: [37, 36] as Ratio,
         monzo: [-2, -2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1] as Monzo,
@@ -1129,7 +1231,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 103 as Id<SagittalComma>,
         apotomeSlope: 2.048 as ApotomeSlope,
-        fiveRoughSopfr: 34 as Sopfr<5>,
+        twoThreeFreeSopfr: 34 as Sopfr<5>,
+        twoThreeFreeClass: [ 325, 11 ] as TwoThreeFreeClass,
         limit: 13 as Prime,
         ratio: [18711, 18200] as Ratio,
         monzo: [-3, 5, -2, 0, 1, -1] as Monzo,
@@ -1140,7 +1243,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 104 as Id<SagittalComma>,
         apotomeSlope: 1.023 as ApotomeSlope,
-        fiveRoughSopfr: 13 as Sopfr<5>,
+        twoThreeFreeSopfr: 13 as Sopfr<5>,
+        twoThreeFreeClass: [ 13, 1 ] as TwoThreeFreeClass,
         limit: 13 as Prime,
         ratio: [1053, 1024] as Ratio,
         monzo: [-10, 4, 0, 0, 0, 1] as Monzo,
@@ -1151,7 +1255,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 105 as Id<SagittalComma>,
         apotomeSlope: -1.003 as ApotomeSlope,
-        fiveRoughSopfr: 12 as Sopfr<5>,
+        twoThreeFreeSopfr: 12 as Sopfr<5>,
+        twoThreeFreeClass: [ 35, 1 ] as TwoThreeFreeClass,
         limit: 7 as Prime,
         ratio: [36, 35] as Ratio,
         monzo: [2, 2, -1, -1] as Monzo,
@@ -1162,7 +1267,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 106 as Id<SagittalComma>,
         apotomeSlope: -8.027 as ApotomeSlope,
-        fiveRoughSopfr: 15 as Sopfr<5>,
+        twoThreeFreeSopfr: 15 as Sopfr<5>,
+        twoThreeFreeClass: [ 125, 1 ] as TwoThreeFreeClass,
         limit: 5 as Prime,
         ratio: [250, 243] as Ratio,
         monzo: [1, -5, 3] as Monzo,
@@ -1173,7 +1279,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 107 as Id<SagittalComma>,
         apotomeSlope: -5.072 as ApotomeSlope,
-        fiveRoughSopfr: 30 as Sopfr<5>,
+        twoThreeFreeSopfr: 30 as Sopfr<5>,
+        twoThreeFreeClass: [ 19, 11 ] as TwoThreeFreeClass,
         limit: 19 as Prime,
         ratio: [176, 171] as Ratio,
         monzo: [4, -2, 0, 0, 1, 0, 0, -1] as Monzo,
@@ -1184,7 +1291,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 108 as Id<SagittalComma>,
         apotomeSlope: 8.903 as ApotomeSlope,
-        fiveRoughSopfr: 18 as Sopfr<5>,
+        twoThreeFreeSopfr: 18 as Sopfr<5>,
+        twoThreeFreeClass: [ 65, 1 ] as TwoThreeFreeClass,
         limit: 13 as Prime,
         ratio: [34543665, 33554432] as Ratio,
         monzo: [-25, 12, 1, 0, 0, 1] as Monzo,
@@ -1195,7 +1303,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 109 as Id<SagittalComma>,
         apotomeSlope: 6.877 as ApotomeSlope,
-        fiveRoughSopfr: 7 as Sopfr<5>,
+        twoThreeFreeSopfr: 7 as Sopfr<5>,
+        twoThreeFreeClass: [ 7, 1 ] as TwoThreeFreeClass,
         limit: 7 as Prime,
         ratio: [59049, 57344] as Ratio,
         monzo: [-13, 10, 0, -1] as Monzo,
@@ -1206,7 +1315,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 110 as Id<SagittalComma>,
         apotomeSlope: -0.148 as ApotomeSlope,
-        fiveRoughSopfr: 20 as Sopfr<5>,
+        twoThreeFreeSopfr: 20 as Sopfr<5>,
+        twoThreeFreeClass: [ 625, 1 ] as TwoThreeFreeClass,
         limit: 5 as Prime,
         ratio: [16875, 16384] as Ratio,
         monzo: [-14, 3, 4] as Monzo,
@@ -1217,7 +1327,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 111 as Id<SagittalComma>,
         apotomeSlope: -10.160 as ApotomeSlope,
-        fiveRoughSopfr: 16 as Sopfr<5>,
+        twoThreeFreeSopfr: 16 as Sopfr<5>,
+        twoThreeFreeClass: [ 11, 5 ] as TwoThreeFreeClass,
         limit: 11 as Prime,
         ratio: [11264, 10935] as Ratio,
         monzo: [10, -7, -1, 0, 1] as Monzo,
@@ -1228,7 +1339,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 112 as Id<SagittalComma>,
         apotomeSlope: -4.182 as ApotomeSlope,
-        fiveRoughSopfr: 28 as Sopfr<5>,
+        twoThreeFreeSopfr: 28 as Sopfr<5>,
+        twoThreeFreeClass: [ 17, 11 ] as TwoThreeFreeClass,
         limit: 17 as Prime,
         ratio: [34, 33] as Ratio,
         monzo: [1, -1, 0, 0, -1, 0, 1] as Monzo,
@@ -1239,7 +1351,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 113 as Id<SagittalComma>,
         apotomeSlope: -6.213 as ApotomeSlope,
-        fiveRoughSopfr: 28 as Sopfr<5>,
+        twoThreeFreeSopfr: 28 as Sopfr<5>,
+        twoThreeFreeClass: [ 23, 5 ] as TwoThreeFreeClass,
         limit: 23 as Prime,
         ratio: [640, 621] as Ratio,
         monzo: [7, -3, 1, 0, 0, 0, 0, 0, -1] as Monzo,
@@ -1250,7 +1363,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 114 as Id<SagittalComma>,
         apotomeSlope: 0.755 as ApotomeSlope,
-        fiveRoughSopfr: 28 as Sopfr<5>,
+        twoThreeFreeSopfr: 28 as Sopfr<5>,
+        twoThreeFreeClass: [ 275, 7 ] as TwoThreeFreeClass,
         limit: 11 as Prime,
         ratio: [567, 550] as Ratio,
         monzo: [-1, 4, -2, 1, -1] as Monzo,
@@ -1261,7 +1375,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 115 as Id<SagittalComma>,
         apotomeSlope: -2.280 as ApotomeSlope,
-        fiveRoughSopfr: 11 as Sopfr<5>,
+        twoThreeFreeSopfr: 11 as Sopfr<5>,
+        twoThreeFreeClass: [ 11, 1 ] as TwoThreeFreeClass,
         limit: 11 as Prime,
         ratio: [33, 32] as Ratio,
         monzo: [-5, 1, 0, 0, 1] as Monzo,
@@ -1272,7 +1387,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 116 as Id<SagittalComma>,
         apotomeSlope: 3.697 as ApotomeSlope,
-        fiveRoughSopfr: 33 as Sopfr<5>,
+        twoThreeFreeSopfr: 33 as Sopfr<5>,
+        twoThreeFreeClass: [ 85, 11 ] as TwoThreeFreeClass,
         limit: 17 as Prime,
         ratio: [185895, 180224] as Ratio,
         monzo: [-14, 7, 1, 0, -1, 0, 1] as Monzo,
@@ -1283,7 +1399,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 117 as Id<SagittalComma>,
         apotomeSlope: -5.331 as ApotomeSlope,
-        fiveRoughSopfr: 25 as Sopfr<5>,
+        twoThreeFreeSopfr: 25 as Sopfr<5>,
+        twoThreeFreeClass: [ 65, 7 ] as TwoThreeFreeClass,
         limit: 13 as Prime,
         ratio: [65, 63] as Ratio,
         monzo: [0, -2, 1, -1, 0, 1] as Monzo,
@@ -1294,7 +1411,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 118 as Id<SagittalComma>,
         apotomeSlope: -7.357 as ApotomeSlope,
-        fiveRoughSopfr: 14 as Sopfr<5>,
+        twoThreeFreeSopfr: 14 as Sopfr<5>,
+        twoThreeFreeClass: [ 49, 1 ] as TwoThreeFreeClass,
         limit: 7 as Prime,
         ratio: [4096, 3969] as Ratio,
         monzo: [12, -4, 0, -2] as Monzo,
@@ -1305,7 +1423,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 119 as Id<SagittalComma>,
         apotomeSlope: -3.384 as ApotomeSlope,
-        fiveRoughSopfr: 31 as Sopfr<5>,
+        twoThreeFreeSopfr: 31 as Sopfr<5>,
+        twoThreeFreeClass: [ 31, 1 ] as TwoThreeFreeClass,
         limit: 31 as Prime,
         ratio: [32, 31] as Ratio,
         monzo: [5, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1] as Monzo,
@@ -1316,7 +1435,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 120 as Id<SagittalComma>,
         apotomeSlope: 5.599 as ApotomeSlope,
-        fiveRoughSopfr: 16 as Sopfr<5>,
+        twoThreeFreeSopfr: 16 as Sopfr<5>,
+        twoThreeFreeClass: [ 55, 1 ] as TwoThreeFreeClass,
         limit: 11 as Prime,
         ratio: [1082565, 1048576] as Ratio,
         monzo: [-20, 9, 1, 0, 1] as Monzo,
@@ -1327,7 +1447,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 121 as Id<SagittalComma>,
         apotomeSlope: 3.573 as ApotomeSlope,
-        fiveRoughSopfr: 31 as Sopfr<5>,
+        twoThreeFreeSopfr: 31 as Sopfr<5>,
+        twoThreeFreeClass: [ 91, 11 ] as TwoThreeFreeClass,
         limit: 13 as Prime,
         ratio: [24057, 23296] as Ratio,
         monzo: [-8, 7, 0, -1, 1, -1] as Monzo,
@@ -1338,7 +1459,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 122 as Id<SagittalComma>,
         apotomeSlope: -5.460 as ApotomeSlope,
-        fiveRoughSopfr: 29 as Sopfr<5>,
+        twoThreeFreeSopfr: 29 as Sopfr<5>,
+        twoThreeFreeClass: [ 595, 1 ] as TwoThreeFreeClass,
         limit: 17 as Prime,
         ratio: [595, 576] as Ratio,
         monzo: [-6, -2, 1, 1, 0, 0, 1] as Monzo,
@@ -1349,7 +1471,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 123 as Id<SagittalComma>,
         apotomeSlope: 0.522 as ApotomeSlope,
-        fiveRoughSopfr: 19 as Sopfr<5>,
+        twoThreeFreeSopfr: 19 as Sopfr<5>,
+        twoThreeFreeClass: [ 49, 5 ] as TwoThreeFreeClass,
         limit: 7 as Prime,
         ratio: [405, 392] as Ratio,
         monzo: [-3, 4, 1, -2] as Monzo,
@@ -1360,7 +1483,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 124 as Id<SagittalComma>,
         apotomeSlope: -0.522 as ApotomeSlope,
-        fiveRoughSopfr: 19 as Sopfr<5>,
+        twoThreeFreeSopfr: 19 as Sopfr<5>,
+        twoThreeFreeClass: [ 49, 5 ] as TwoThreeFreeClass,
         limit: 7 as Prime,
         ratio: [1323, 1280] as Ratio,
         monzo: [-8, 3, -1, 2] as Monzo,
@@ -1371,7 +1495,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 125 as Id<SagittalComma>,
         apotomeSlope: 5.460 as ApotomeSlope,
-        fiveRoughSopfr: 29 as Sopfr<5>,
+        twoThreeFreeSopfr: 29 as Sopfr<5>,
+        twoThreeFreeClass: [ 595, 1 ] as TwoThreeFreeClass,
         limit: 17 as Prime,
         ratio: [19683, 19040] as Ratio,
         monzo: [-5, 9, -1, -1, 0, 0, -1] as Monzo,
@@ -1382,7 +1507,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 126 as Id<SagittalComma>,
         apotomeSlope: -3.573 as ApotomeSlope,
-        fiveRoughSopfr: 31 as Sopfr<5>,
+        twoThreeFreeSopfr: 31 as Sopfr<5>,
+        twoThreeFreeClass: [ 91, 11 ] as TwoThreeFreeClass,
         limit: 13 as Prime,
         ratio: [91, 88] as Ratio,
         monzo: [-3, 0, 0, 1, -1, 1] as Monzo,
@@ -1393,7 +1519,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 127 as Id<SagittalComma>,
         apotomeSlope: -5.599 as ApotomeSlope,
-        fiveRoughSopfr: 16 as Sopfr<5>,
+        twoThreeFreeSopfr: 16 as Sopfr<5>,
+        twoThreeFreeClass: [ 55, 1 ] as TwoThreeFreeClass,
         limit: 11 as Prime,
         ratio: [512, 495] as Ratio,
         monzo: [9, -2, -1, 0, -1] as Monzo,
@@ -1404,7 +1531,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 128 as Id<SagittalComma>,
         apotomeSlope: 3.384 as ApotomeSlope,
-        fiveRoughSopfr: 31 as Sopfr<5>,
+        twoThreeFreeSopfr: 31 as Sopfr<5>,
+        twoThreeFreeClass: [ 31, 1 ] as TwoThreeFreeClass,
         limit: 31 as Prime,
         ratio: [67797, 65536] as Ratio,
         monzo: [-16, 7, 0, 0, 0, 0, 0, 0, 0, 0, 1] as Monzo,
@@ -1415,7 +1543,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 129 as Id<SagittalComma>,
         apotomeSlope: 7.357 as ApotomeSlope,
-        fiveRoughSopfr: 14 as Sopfr<5>,
+        twoThreeFreeSopfr: 14 as Sopfr<5>,
+        twoThreeFreeClass: [ 49, 1 ] as TwoThreeFreeClass,
         limit: 7 as Prime,
         ratio: [8680203, 8388608] as Ratio,
         monzo: [-23, 11, 0, 2] as Monzo,
@@ -1426,7 +1555,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 130 as Id<SagittalComma>,
         apotomeSlope: 5.331 as ApotomeSlope,
-        fiveRoughSopfr: 25 as Sopfr<5>,
+        twoThreeFreeSopfr: 25 as Sopfr<5>,
+        twoThreeFreeClass: [ 65, 7 ] as TwoThreeFreeClass,
         limit: 13 as Prime,
         ratio: [137781, 133120] as Ratio,
         monzo: [-11, 9, -1, 1, 0, -1] as Monzo,
@@ -1437,7 +1567,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 131 as Id<SagittalComma>,
         apotomeSlope: -3.697 as ApotomeSlope,
-        fiveRoughSopfr: 33 as Sopfr<5>,
+        twoThreeFreeSopfr: 33 as Sopfr<5>,
+        twoThreeFreeClass: [ 85, 11 ] as TwoThreeFreeClass,
         limit: 17 as Prime,
         ratio: [88, 85] as Ratio,
         monzo: [3, 0, -1, 0, 1, 0, -1] as Monzo,
@@ -1448,7 +1579,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 132 as Id<SagittalComma>,
         apotomeSlope: 2.280 as ApotomeSlope,
-        fiveRoughSopfr: 11 as Sopfr<5>,
+        twoThreeFreeSopfr: 11 as Sopfr<5>,
+        twoThreeFreeClass: [ 11, 1 ] as TwoThreeFreeClass,
         limit: 11 as Prime,
         ratio: [729, 704] as Ratio,
         monzo: [-6, 6, 0, 0, -1] as Monzo,
@@ -1459,7 +1591,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 133 as Id<SagittalComma>,
         apotomeSlope: -0.755 as ApotomeSlope,
-        fiveRoughSopfr: 28 as Sopfr<5>,
+        twoThreeFreeSopfr: 28 as Sopfr<5>,
+        twoThreeFreeClass: [ 275, 7 ] as TwoThreeFreeClass,
         limit: 11 as Prime,
         ratio: [7425, 7168] as Ratio,
         monzo: [-10, 3, 2, -1, 1] as Monzo,
@@ -1470,7 +1603,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 134 as Id<SagittalComma>,
         apotomeSlope: 6.213 as ApotomeSlope,
-        fiveRoughSopfr: 28 as Sopfr<5>,
+        twoThreeFreeSopfr: 28 as Sopfr<5>,
+        twoThreeFreeClass: [ 23, 5 ] as TwoThreeFreeClass,
         limit: 23 as Prime,
         ratio: [1358127, 1310720] as Ratio,
         monzo: [-18, 10, -1, 0, 0, 0, 0, 0, 1] as Monzo,
@@ -1481,7 +1615,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 135 as Id<SagittalComma>,
         apotomeSlope: 4.182 as ApotomeSlope,
-        fiveRoughSopfr: 28 as Sopfr<5>,
+        twoThreeFreeSopfr: 28 as Sopfr<5>,
+        twoThreeFreeClass: [ 17, 11 ] as TwoThreeFreeClass,
         limit: 17 as Prime,
         ratio: [72171, 69632] as Ratio,
         monzo: [-12, 8, 0, 0, 1, 0, -1] as Monzo,
@@ -1492,7 +1627,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 136 as Id<SagittalComma>,
         apotomeSlope: 10.160 as ApotomeSlope,
-        fiveRoughSopfr: 16 as Sopfr<5>,
+        twoThreeFreeSopfr: 16 as Sopfr<5>,
+        twoThreeFreeClass: [ 11, 5 ] as TwoThreeFreeClass,
         limit: 11 as Prime,
         ratio: [23914845, 23068672] as Ratio,
         monzo: [-21, 14, 1, 0, -1] as Monzo,
@@ -1503,7 +1639,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 137 as Id<SagittalComma>,
         apotomeSlope: 0.148 as ApotomeSlope,
-        fiveRoughSopfr: 20 as Sopfr<5>,
+        twoThreeFreeSopfr: 20 as Sopfr<5>,
+        twoThreeFreeClass: [ 625, 1 ] as TwoThreeFreeClass,
         limit: 5 as Prime,
         ratio: [648, 625] as Ratio,
         monzo: [3, 4, -4] as Monzo,
@@ -1514,7 +1651,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 138 as Id<SagittalComma>,
         apotomeSlope: -6.877 as ApotomeSlope,
-        fiveRoughSopfr: 7 as Sopfr<5>,
+        twoThreeFreeSopfr: 7 as Sopfr<5>,
+        twoThreeFreeClass: [ 7, 1 ] as TwoThreeFreeClass,
         limit: 7 as Prime,
         ratio: [28, 27] as Ratio,
         monzo: [2, -3, 0, 1] as Monzo,
@@ -1525,7 +1663,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 139 as Id<SagittalComma>,
         apotomeSlope: -8.903 as ApotomeSlope,
-        fiveRoughSopfr: 18 as Sopfr<5>,
+        twoThreeFreeSopfr: 18 as Sopfr<5>,
+        twoThreeFreeClass: [ 65, 1 ] as TwoThreeFreeClass,
         limit: 13 as Prime,
         ratio: [16384, 15795] as Ratio,
         monzo: [14, -5, -1, 0, 0, -1] as Monzo,
@@ -1536,7 +1675,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 140 as Id<SagittalComma>,
         apotomeSlope: 5.072 as ApotomeSlope,
-        fiveRoughSopfr: 30 as Sopfr<5>,
+        twoThreeFreeSopfr: 30 as Sopfr<5>,
+        twoThreeFreeClass: [ 19, 11 ] as TwoThreeFreeClass,
         limit: 19 as Prime,
         ratio: [373977, 360448] as Ratio,
         monzo: [-15, 9, 0, 0, -1, 0, 0, 1] as Monzo,
@@ -1547,7 +1687,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 141 as Id<SagittalComma>,
         apotomeSlope: 8.027 as ApotomeSlope,
-        fiveRoughSopfr: 15 as Sopfr<5>,
+        twoThreeFreeSopfr: 15 as Sopfr<5>,
+        twoThreeFreeClass: [ 125, 1 ] as TwoThreeFreeClass,
         limit: 5 as Prime,
         ratio: [531441, 512000] as Ratio,
         monzo: [-12, 12, -3] as Monzo,
@@ -1558,7 +1699,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 142 as Id<SagittalComma>,
         apotomeSlope: 1.003 as ApotomeSlope,
-        fiveRoughSopfr: 12 as Sopfr<5>,
+        twoThreeFreeSopfr: 12 as Sopfr<5>,
+        twoThreeFreeClass: [ 35, 1 ] as TwoThreeFreeClass,
         limit: 7 as Prime,
         ratio: [8505, 8192] as Ratio,
         monzo: [-13, 5, 1, 1] as Monzo,
@@ -1569,7 +1711,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 143 as Id<SagittalComma>,
         apotomeSlope: -1.023 as ApotomeSlope,
-        fiveRoughSopfr: 13 as Sopfr<5>,
+        twoThreeFreeSopfr: 13 as Sopfr<5>,
+        twoThreeFreeClass: [ 13, 1 ] as TwoThreeFreeClass,
         limit: 13 as Prime,
         ratio: [27, 26] as Ratio,
         monzo: [-1, 3, 0, 0, 0, -1] as Monzo,
@@ -1580,7 +1723,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 144 as Id<SagittalComma>,
         apotomeSlope: -2.048 as ApotomeSlope,
-        fiveRoughSopfr: 34 as Sopfr<5>,
+        twoThreeFreeSopfr: 34 as Sopfr<5>,
+        twoThreeFreeClass: [ 325, 11 ] as TwoThreeFreeClass,
         limit: 13 as Prime,
         ratio: [2925, 2816] as Ratio,
         monzo: [-8, 2, 2, 0, -1, 1] as Monzo,
@@ -1591,7 +1735,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 145 as Id<SagittalComma>,
         apotomeSlope: 4.921 as ApotomeSlope,
-        fiveRoughSopfr: 37 as Sopfr<5>,
+        twoThreeFreeSopfr: 37 as Sopfr<5>,
+        twoThreeFreeClass: [ 37, 1 ] as TwoThreeFreeClass,
         limit: 37 as Prime,
         ratio: [19683, 18944] as Ratio,
         monzo: [-9, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1] as Monzo,
@@ -1602,7 +1747,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 146 as Id<SagittalComma>,
         apotomeSlope: 8.883 as ApotomeSlope,
-        fiveRoughSopfr: 17 as Sopfr<5>,
+        twoThreeFreeSopfr: 17 as Sopfr<5>,
+        twoThreeFreeClass: [ 175, 1 ] as TwoThreeFreeClass,
         limit: 7 as Prime,
         ratio: [279006525, 268435456] as Ratio,
         monzo: [-28, 13, 2, 1] as Monzo,
@@ -1613,7 +1759,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 147 as Id<SagittalComma>,
         apotomeSlope: 6.857 as ApotomeSlope,
-        fiveRoughSopfr: 18 as Sopfr<5>,
+        twoThreeFreeSopfr: 18 as Sopfr<5>,
+        twoThreeFreeClass: [ 13, 5 ] as TwoThreeFreeClass,
         limit: 13 as Prime,
         ratio: [885735, 851968] as Ratio,
         monzo: [-16, 11, 1, 0, 0, -1] as Monzo,
@@ -1624,7 +1771,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 148 as Id<SagittalComma>,
         apotomeSlope: -4.181 as ApotomeSlope,
-        fiveRoughSopfr: 23 as Sopfr<5>,
+        twoThreeFreeSopfr: 23 as Sopfr<5>,
+        twoThreeFreeClass: [ 25, 13 ] as TwoThreeFreeClass,
         limit: 13 as Prime,
         ratio: [26, 25] as Ratio,
         monzo: [1, 0, -2, 0, 0, 1] as Monzo,
@@ -1635,7 +1783,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     {
         id: 149 as Id<SagittalComma>,
         apotomeSlope: 3.805 as ApotomeSlope,
-        fiveRoughSopfr: 28 as Sopfr<5>,
+        twoThreeFreeSopfr: 28 as Sopfr<5>,
+        twoThreeFreeClass: [ 77, 25 ] as TwoThreeFreeClass,
         limit: 11 as Prime,
         ratio: [164025, 157696] as Ratio,
         monzo: [-11, 8, 2, -1, -1] as Monzo,

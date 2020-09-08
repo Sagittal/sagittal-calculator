@@ -8,7 +8,7 @@ describe("computeCommasFromFiveSlicedMonzo", () => {
     const maxAbsoluteThreeExponent = 12 as Max<Abs<Integer & Exponent<Prime>>>
     const maxN2D3P9 = 40000 as Max<N2D3P9>
 
-    it("returns analyzed commas with the prime content from the five-rough monzo", () => {
+    it("returns analyzed commas with the prime content from the two-three-free monzo", () => {
         const actual = computeCommasFromFiveSlicedMonzo(fiveSlicedMonzo, {
             minCents,
             maxCents,
@@ -24,7 +24,7 @@ describe("computeCommasFromFiveSlicedMonzo", () => {
                 name: "2100875/11S",
                 limit: 11,
                 apotomeSlope: -8.464345074135046,
-                fiveRoughSopfr: 61,
+                twoThreeFreeSopfr: 61,
                 n2d3p9: 36777.470341,
             },
         ])
@@ -52,7 +52,7 @@ describe("computeCommasFromFiveSlicedMonzo", () => {
                     name: "2100875/11S",
                     limit: 11,
                     apotomeSlope: -8.464345074135046,
-                    fiveRoughSopfr: 61,
+                    twoThreeFreeSopfr: 61,
                     n2d3p9: 36777.470341,
                 },
             ]))

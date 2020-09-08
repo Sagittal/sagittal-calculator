@@ -1,12 +1,13 @@
 import { Cents, Monzo, Name, Prime, Ratio, Sopfr, THREE_PRIME_INDEX } from "../general"
-import { ApotomeSlope, N2D3P9 } from "./comma"
+import { ApotomeSlope, N2D3P9, TwoThreeFreeClass } from "./comma"
 import { AnalyzedRationalPitch } from "./types"
 
 const APOTOME: AnalyzedRationalPitch = {
     apotomeSlope: 0 as ApotomeSlope,
     cents: 113.68500605771192 as Cents,
     name: "apotome" as Name<AnalyzedRationalPitch>,
-    fiveRoughSopfr: 0 as Sopfr<5>,
+    twoThreeFreeSopfr: 0 as Sopfr<5>,
+    twoThreeFreeClass: [1, 1] as TwoThreeFreeClass,
     limit: 3 as Prime,
     monzo: [-11, 7] as Monzo,
     ratio: [2187, 2048] as Ratio,

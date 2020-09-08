@@ -1,5 +1,13 @@
 import { Cents, Id, Monzo, Multiplier, Name, Prime, Ratio, Sopfr } from "../../../../../../src/general"
-import { ApotomeSlope, Ina, N2D3P9, SagittalComma, SymbolLongAscii, TINA } from "../../../../../../src/sagittal"
+import {
+    ApotomeSlope,
+    Ina,
+    N2D3P9,
+    SagittalComma,
+    SymbolLongAscii,
+    TINA,
+    TwoThreeFreeClass,
+} from "../../../../../../src/sagittal"
 import { SymbolUnicode } from "../../../../../../src/sagittal/io"
 import { Bound, JiSymbol, Level, Mina } from "../../../../../../src/sagittal/notations/ji"
 import { MINA, ULTRINA } from "../../../../../../src/sagittal/notations/ji/intervals"
@@ -35,7 +43,8 @@ describe("extractBoundIdentifiers", () => {
                         primaryComma: {
                             id: 47 as Id<SagittalComma>,
                             apotomeSlope: -2.412 as ApotomeSlope,
-                            fiveRoughSopfr: 29 as Sopfr<5>,
+                            twoThreeFreeClass: [25, 19] as TwoThreeFreeClass,
+                            twoThreeFreeSopfr: 29 as Sopfr<5>,
                             limit: 19 as Prime,
                             ratio: [76, 75] as Ratio,
                             monzo: [2, -1, -2, 0, 0, 0, 0, 1] as Monzo,
@@ -57,7 +66,8 @@ describe("extractBoundIdentifiers", () => {
                         primaryComma: {
                             id: 48 as Id<SagittalComma>,
                             apotomeSlope: 10.555 as ApotomeSlope,
-                            fiveRoughSopfr: 0 as Sopfr<5>,
+                            twoThreeFreeClass: [1, 1] as TwoThreeFreeClass,
+                            twoThreeFreeSopfr: 0 as Sopfr<5>,
                             limit: 3 as Prime,
                             ratio: [531441, 524288] as Ratio,
                             monzo: [-19, 12] as Monzo,
@@ -81,7 +91,8 @@ describe("extractBoundIdentifiers", () => {
                         primaryComma: {
                             id: 47 as Id<SagittalComma>,
                             apotomeSlope: -2.412 as ApotomeSlope,
-                            fiveRoughSopfr: 29 as Sopfr<5>,
+                            twoThreeFreeClass: [25, 19] as TwoThreeFreeClass,
+                            twoThreeFreeSopfr: 29 as Sopfr<5>,
                             limit: 19 as Prime,
                             ratio: [76, 75] as Ratio,
                             monzo: [2, -1, -2, 0, 0, 0, 0, 1] as Monzo,
@@ -103,7 +114,8 @@ describe("extractBoundIdentifiers", () => {
                         primaryComma: {
                             id: 48 as Id<SagittalComma>,
                             apotomeSlope: 10.555 as ApotomeSlope,
-                            fiveRoughSopfr: 0 as Sopfr<5>,
+                            twoThreeFreeClass: [1, 1] as TwoThreeFreeClass,
+                            twoThreeFreeSopfr: 0 as Sopfr<5>,
                             limit: 3 as Prime,
                             ratio: [531441, 524288] as Ratio,
                             monzo: [-19, 12] as Monzo,
@@ -128,7 +140,8 @@ describe("extractBoundIdentifiers", () => {
                         primaryComma: {
                             id: 47 as Id<SagittalComma>,
                             apotomeSlope: -2.412 as ApotomeSlope,
-                            fiveRoughSopfr: 29 as Sopfr<5>,
+                            twoThreeFreeClass: [25, 19] as TwoThreeFreeClass,
+                            twoThreeFreeSopfr: 29 as Sopfr<5>,
                             limit: 19 as Prime,
                             ratio: [76, 75] as Ratio,
                             monzo: [2, -1, -2, 0, 0, 0, 0, 1] as Monzo,
@@ -150,7 +163,8 @@ describe("extractBoundIdentifiers", () => {
                         primaryComma: {
                             id: 48 as Id<SagittalComma>,
                             apotomeSlope: 10.555 as ApotomeSlope,
-                            fiveRoughSopfr: 0 as Sopfr<5>,
+                            twoThreeFreeClass: [1, 1] as TwoThreeFreeClass,
+                            twoThreeFreeSopfr: 0 as Sopfr<5>,
                             limit: 3 as Prime,
                             ratio: [531441, 524288] as Ratio,
                             monzo: [-19, 12] as Monzo,

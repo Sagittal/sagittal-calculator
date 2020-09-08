@@ -8,7 +8,7 @@ const NOTATING_COMMA_WITH_MAYBE_SAGITTAL_SYMBOLS_HEADER_ROW = [
     "monzo",
     "cents",
     "apotome slope",
-    // this table does not include limit, 5-rough sopfr, or N2D3P9,
+    // this table does not include limit, 2,3-free sopfr, or N2D3P9,
     // because they will always be the same for every entry in the table
     // and they are shared already, once each, in the table up above this one, for the rational pitch analysis
 ] as Row<AnalyzedRationalPitch, "Header">
@@ -17,7 +17,7 @@ const FIND_COMMAS_HEADER_ROW: Row<AnalyzedRationalPitch, "Header"> = concat(
     NOTATING_COMMA_WITH_MAYBE_SAGITTAL_SYMBOLS_HEADER_ROW,
     [
         "limit",
-        "5-rough sopfr",
+        "2,3-free sopfr",
         "2,3-free class N2D3P9",
     ] as Row<AnalyzedRationalPitch, "Header">,
 )

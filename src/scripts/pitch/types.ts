@@ -7,26 +7,26 @@ type CommasOptions = CommasFromFiveSlicedMonzoOptions & FiveSlicedMonzosToCheckO
 }>
 
 type FiveSlicedMonzosToCheckOptions = Partial<{
-    maxFiveRoughCopfr: Max<Copfr<5>>,
-    maxFiveRoughSopfr: Max<Sopfr<5>>,
+    maxTwoThreeFreeCopfr: Max<Copfr<5>>,
+    maxTwoThreeFreeSopfr: Max<Sopfr<5>>,
     maxPrimeLimit: Max<Max<Prime>>,
     maxN2D3P9: Max<N2D3P9>,
 }>
 
 type PrimeExponentRangeOptions = Partial<{
-    maxFiveRoughCopfr: Max<Copfr<5>>,
-    maxFiveRoughSopfr: Max<Sopfr<5>>,
+    maxTwoThreeFreeCopfr: Max<Copfr<5>>,
+    maxTwoThreeFreeSopfr: Max<Sopfr<5>>,
     primeExponentExtremaGivenMaxN2D3P9: Extrema<Integer & Exponent<Prime>>,
 }>
 
-type FiveRoughPrimesToCheckOptions = Partial<{
+type TwoThreeFreePrimesToCheckOptions = Partial<{
     maxPrimeLimit: Max<Max<Prime>>,
-    maxFiveRoughSopfr: Max<Sopfr<5>>,
+    maxTwoThreeFreeSopfr: Max<Sopfr<5>>,
     primeExponentExtremasGivenMaxN2D3P9: Array<Extrema<Integer & Exponent<Prime>>>,
 }>
 
 export {
-    FiveRoughPrimesToCheckOptions,
+    TwoThreeFreePrimesToCheckOptions,
     CommasOptions,
     FiveSlicedMonzosToCheckOptions,
     PrimeExponentRangeOptions,

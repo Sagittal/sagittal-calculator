@@ -18,7 +18,7 @@ import {
 import {
     AnalyzedRationalPitch,
     analyzeRationalPitch,
-    computeMonzoFromFiveRoughRatioAndSizeCategoryName,
+    computeMonzoFromTwoThreeFreeRatioAndSizeCategoryName,
     parseCommaName,
 } from "../../../sagittal"
 import { PITCH_SCRIPT_GROUP } from "../constants"
@@ -49,8 +49,8 @@ const rationalPitch = program.args[ 0 ] as Io
 let monzo
 if (rationalPitch) {
     if (rationalPitch.match(IDENTIFYING_COMMA_NAME_CHARS)) {
-        const { fiveRoughRatio, sizeCategoryName } = parseCommaName(rationalPitch as Name<AnalyzedRationalPitch>)
-        monzo = computeMonzoFromFiveRoughRatioAndSizeCategoryName({ fiveRoughRatio, sizeCategoryName })
+        const { twoThreeFreeClass, sizeCategoryName } = parseCommaName(rationalPitch as Name<AnalyzedRationalPitch>)
+        monzo = computeMonzoFromTwoThreeFreeRatioAndSizeCategoryName({ twoThreeFreeClass, sizeCategoryName })
     } else if (rationalPitch.includes("/")) {
         const ratio = parseRatio(rationalPitch as Formatted<Ratio>)
         monzo = computeMonzoFromRatio(ratio)
@@ -65,7 +65,7 @@ if (rationalPitch) {
 } else if (program.ratio) {
     monzo = computeMonzoFromRatio(program.ratio)
 } else if (program.commaName) {
-    monzo = computeMonzoFromFiveRoughRatioAndSizeCategoryName(program.commaName)
+    monzo = computeMonzoFromTwoThreeFreeRatioAndSizeCategoryName(program.commaName)
 }
 if (!monzo) {
     throw new Error("Unable to determine monzo for rational pitch.")

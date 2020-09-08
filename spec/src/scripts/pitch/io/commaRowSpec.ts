@@ -1,5 +1,5 @@
 import { Cents, Id, Monzo, Name, Prime, Ratio, Row, Sopfr } from "../../../../../src/general"
-import { AnalyzedRationalPitch, ApotomeSlope, JiSymbol } from "../../../../../src/sagittal"
+import { AnalyzedRationalPitch, ApotomeSlope, JiSymbol, TwoThreeFreeClass } from "../../../../../src/sagittal"
 import { N2D3P9 } from "../../../../../src/sagittal/comma/evaluation/n2d3p9"
 import { computeCommaRow } from "../../../../../src/scripts/pitch/io/commaRow"
 
@@ -14,7 +14,8 @@ describe("computeCommaRow", () => {
         name: "1/5C" as Name<AnalyzedRationalPitch>,
         limit: 14 as Prime,
         apotomeSlope: 8.2 as ApotomeSlope,
-        fiveRoughSopfr: 13 as Sopfr<5>,
+        twoThreeFreeSopfr: 13 as Sopfr<5>,
+        twoThreeFreeClass: [5, 1] as TwoThreeFreeClass,
         n2d3p9: 18.4567 as N2D3P9,
     }
 

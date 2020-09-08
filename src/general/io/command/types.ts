@@ -1,8 +1,8 @@
 // Keep this alphabetical so you can ensure no conflicts.
 
 enum CommandFlag {
-    FIVE_ROUGH_SOPFR = "+",
-    FIVE_ROUGH_COPFR = "#",
+    TWO_THREE_FREE_SOPFR = "+",
+    TWO_THREE_FREE_COPFR = "#",
     MAX_N2D3P9 = "2",
     ABSOLUTE_THREE = "3",
     APOTOME_SLOPE = "a",
@@ -14,7 +14,7 @@ enum CommandFlag {
     COMMA_NAME = "g",
     USE_LATE = "h",
     MAX_UNIT = "i",
-    KNOWN_POPULAR_RATIOS = "k",
+    KNOWN_POPULAR_TWO_THREE_FREE_CLASSES = "k",
     MIN_CENTS = "l",
     MONZO = "m",
     N2D3P9 = "n",

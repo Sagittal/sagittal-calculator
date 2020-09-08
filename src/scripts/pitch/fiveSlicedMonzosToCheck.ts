@@ -16,21 +16,21 @@ import {
     Sopfr,
 } from "../../general"
 import { computePrimeExponentExtremasGivenMaxN2D3P9 } from "../../sagittal"
-import { computeFiveRoughPrimesToCheck } from "./fiveRoughPrimesToCheck"
 import { computePrimeExponentRange } from "./primeExponentRange"
+import { computeTwoThreeFreePrimesToCheck } from "./twoThreeFreePrimesToCheck"
 import { FiveSlicedMonzosToCheckOptions } from "./types"
 
 const computeFiveSlicedMonzosToCheck = (
-    { maxPrimeLimit, maxFiveRoughSopfr, maxFiveRoughCopfr, maxN2D3P9 }: FiveSlicedMonzosToCheckOptions = {},
+    { maxPrimeLimit, maxTwoThreeFreeSopfr, maxTwoThreeFreeCopfr, maxN2D3P9 }: FiveSlicedMonzosToCheckOptions = {},
 ): Array<Monzo<Integer, 5>> => {
-    if (isUndefined(maxFiveRoughSopfr) && isUndefined(maxN2D3P9)) {
+    if (isUndefined(maxTwoThreeFreeSopfr) && isUndefined(maxN2D3P9)) {
         if (isUndefined(maxPrimeLimit)) {
-            if (isUndefined(maxFiveRoughCopfr)) {
+            if (isUndefined(maxTwoThreeFreeCopfr)) {
                 throw new Error("The primes must be limited somehow.")
             } else {
                 throw new Error("The size of the primes must be limited somehow.")
             }
-        } else if (isUndefined(maxFiveRoughCopfr)) {
+        } else if (isUndefined(maxTwoThreeFreeCopfr)) {
             throw new Error("The count of the primes must be limited somehow.")
         }
     }
@@ -38,16 +38,16 @@ const computeFiveSlicedMonzosToCheck = (
     const primeExponentExtremasGivenMaxN2D3P9: Maybe<Array<Extrema<Integer & Exponent<Prime>>>> =
         maxN2D3P9 && computePrimeExponentExtremasGivenMaxN2D3P9(maxN2D3P9, { mirrored: true })
 
-    const fiveRoughPrimesToCheck = computeFiveRoughPrimesToCheck({
+    const twoThreeFreePrimesToCheck = computeTwoThreeFreePrimesToCheck({
         maxPrimeLimit,
-        maxFiveRoughSopfr,
+        maxTwoThreeFreeSopfr,
         primeExponentExtremasGivenMaxN2D3P9,
     })
 
     let fiveSlicedMonzosToCheck: Array<Monzo<Integer, 5>> = [
         [] as unknown[] as Monzo<Integer, 5>,
     ]
-    fiveRoughPrimesToCheck.forEach((fiveRoughPrimeToCheck, index) => {
+    twoThreeFreePrimesToCheck.forEach((twoThreeFreePrimeToCheck, index) => {
         const extendedFiveSlicedMonzosToCheck: Array<Monzo<Integer, 5>> =
             computeExtensionBase(ExtensionBaseType.ARRAY) as Array<Monzo<Integer, 5>>
 
@@ -55,17 +55,19 @@ const computeFiveSlicedMonzosToCheck = (
             primeExponentExtremasGivenMaxN2D3P9 && primeExponentExtremasGivenMaxN2D3P9[ index + FIVE_PRIME_INDEX ]
 
         fiveSlicedMonzosToCheck.forEach(fiveSlicedMonzoToCheck => {
-            const fiveRoughSopfr = computeSopfr([0, 0, ...fiveSlicedMonzoToCheck] as Monzo)
-            const fiveRoughCopfr = computeCopfr([0, 0, ...fiveSlicedMonzoToCheck] as Monzo)
+            const twoThreeFreeSopfr = computeSopfr([0, 0, ...fiveSlicedMonzoToCheck] as Monzo)
+            const twoThreeFreeCopfr = computeCopfr([0, 0, ...fiveSlicedMonzoToCheck] as Monzo)
 
-            const adjustedMaxFiveRoughSopfr = maxFiveRoughSopfr && maxFiveRoughSopfr - fiveRoughSopfr as Max<Sopfr<5>>
-            const adjustedMaxFiveRoughCopfr = maxFiveRoughCopfr && maxFiveRoughCopfr - fiveRoughCopfr as Max<Copfr<5>>
+            const adjustedMaxTwoThreeFreeSopfr = maxTwoThreeFreeSopfr &&
+                maxTwoThreeFreeSopfr - twoThreeFreeSopfr as Max<Sopfr<5>>
+            const adjustedMaxTwoThreeFreeCopfr = maxTwoThreeFreeCopfr &&
+                maxTwoThreeFreeCopfr - twoThreeFreeCopfr as Max<Copfr<5>>
 
             const termRange: Array<Integer & Exponent<Prime>> = computePrimeExponentRange(
-                fiveRoughPrimeToCheck,
+                twoThreeFreePrimeToCheck,
                 {
-                    maxFiveRoughSopfr: adjustedMaxFiveRoughSopfr, // this is where the max five rough sopfr is enforced
-                    maxFiveRoughCopfr: adjustedMaxFiveRoughCopfr,
+                    maxTwoThreeFreeSopfr: adjustedMaxTwoThreeFreeSopfr,
+                    maxTwoThreeFreeCopfr: adjustedMaxTwoThreeFreeCopfr,
                     primeExponentExtremaGivenMaxN2D3P9,
                 },
             ) as Array<Integer & Exponent<Prime>>

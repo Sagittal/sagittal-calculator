@@ -19,7 +19,7 @@ import { secondaryParameterOverride } from "./secondaryParameter"
 // (maybe with (maybe adjusted) repetition)
 
 const computeSubmetricAntivotes = (
-    fiveRoughNumberMonzo: Monzo,
+    twoThreeFreeNumberMonzo: Monzo,
     submetric = {},
     fractionalPartType?: FractionalPartType,
 ): Antivotes => {
@@ -48,9 +48,9 @@ const computeSubmetricAntivotes = (
         throw new Error("Attempted to compute antivotes without an operation (sum, count, or max).")
     }
 
-    return fiveRoughNumberMonzo.reduce(
+    return twoThreeFreeNumberMonzo.reduce(
         (monzoAntivotes: Antivotes, primeExponent, index): Antivotes => {
-            if (max && index < fiveRoughNumberMonzo.length - 1) {
+            if (max && index < twoThreeFreeNumberMonzo.length - 1) {
                 return 0 as Antivotes
             }
 
@@ -98,7 +98,7 @@ const computeSubmetricAntivotes = (
             }
 
             if (isNaN(primeExponentAntivotes)) {
-                throw new Error(`You got NaN! in submetricAntivotes ${fiveRoughNumberMonzo} ${stringify(submetric, { multiline: true })}`)
+                throw new Error(`You got NaN! in submetricAntivotes ${twoThreeFreeNumberMonzo} ${stringify(submetric, { multiline: true })}`)
             }
 
             return monzoAntivotes + primeExponentAntivotes as Antivotes

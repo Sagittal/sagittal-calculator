@@ -15,7 +15,7 @@ describe("computeNotatingCommas", () => {
                 name: "11C",
                 limit: 11,
                 apotomeSlope: -12.835690889724944,
-                fiveRoughSopfr: 11,
+                twoThreeFreeSopfr: 11,
                 n2d3p9: 6.722222,
             },
             {
@@ -25,7 +25,7 @@ describe("computeNotatingCommas", () => {
                 name: "11M",
                 limit: 11,
                 apotomeSlope: -2.2802091985789374,
-                fiveRoughSopfr: 11,
+                twoThreeFreeSopfr: 11,
                 n2d3p9: 6.722222,
             },
             {
@@ -35,7 +35,7 @@ describe("computeNotatingCommas", () => {
                 name: "1/11S",
                 limit: 11,
                 apotomeSlope: -8.275272492567069,
-                fiveRoughSopfr: 11,
+                twoThreeFreeSopfr: 11,
                 n2d3p9: 6.722222,
             },
         ] as Array<AnalyzedRationalPitch & { symbolId?: Id<JiSymbol> }>
@@ -57,7 +57,7 @@ describe("computeNotatingCommas", () => {
                 name: "11M",
                 limit: 11,
                 apotomeSlope: -2.2802091985789374,
-                fiveRoughSopfr: 11,
+                twoThreeFreeSopfr: 11,
                 n2d3p9: 6.722222,
             },
             {
@@ -67,7 +67,7 @@ describe("computeNotatingCommas", () => {
                 name: "1/11S",
                 limit: 11,
                 apotomeSlope: -8.275272492567069,
-                fiveRoughSopfr: 11,
+                twoThreeFreeSopfr: 11,
                 n2d3p9: 6.722222,
             },
         ] as Array<AnalyzedRationalPitch & { symbolId?: Id<JiSymbol> }>

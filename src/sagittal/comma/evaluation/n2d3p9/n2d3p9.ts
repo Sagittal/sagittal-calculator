@@ -2,27 +2,28 @@ import {
     abs,
     ACCURACY_THRESHOLD,
     computeGpf,
-    computeIsSubMonzo, computeTrimmedArray,
+    computeIsSubMonzo, computeMonzoFromRatio,
+    deepEquals,
     Exponent,
-    formatMonzo,
-    Monzo,
+    formatMonzo, formatRatio,
     Prime,
     PRIMES,
     round,
 } from "../../../../general"
+import { TwoThreeFreeClass } from "../../types"
 import { N2D3P9 } from "./types"
 
-const computeN2D3P9 = (monzo: Monzo): N2D3P9 => {
-    if (computeTrimmedArray(monzo).length < 3) {
+const computeN2D3P9 = (twoThreeFreeClass: TwoThreeFreeClass): N2D3P9 => {
+    if (deepEquals(twoThreeFreeClass, [1, 1])) {
         return 1 as N2D3P9
     }
 
+    const monzo = computeMonzoFromRatio(twoThreeFreeClass)
     if (monzo[ 0 ] !== 0 || monzo[ 1 ] !== 0) {
-        throw new Error(`N2D3P9 must be given a 5-roughened monzo; received ${formatMonzo(monzo)}`)
+        throw new Error(`N2D3P9 must be given a 2,3-free class (5-rough, n ≥ d); received ${formatRatio(twoThreeFreeClass)}`)
     }
-
     if (computeIsSubMonzo(monzo)) {
-        throw new Error(`N2D3P9 must be given a super (n ≥ d) monzo; received ${formatMonzo(monzo)}`)
+        throw new Error(`N2D3P9 must be given a 2,3-free class (5-rough, n ≥ d); received ${formatRatio(twoThreeFreeClass)}`)
     }
 
     const n2d3p9 = monzo.reduce(

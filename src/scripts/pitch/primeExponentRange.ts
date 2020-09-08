@@ -22,12 +22,12 @@ const computePrimeExponentRange = (
     options: PrimeExponentRangeOptions = {},
 ): Range<Integer & Exponent<Prime>> => {
     const {
-        maxFiveRoughSopfr = Infinity as Sopfr<5>,
-        maxFiveRoughCopfr = Infinity as Copfr<5>,
+        maxTwoThreeFreeSopfr = Infinity as Sopfr<5>,
+        maxTwoThreeFreeCopfr = Infinity as Copfr<5>,
         primeExponentExtremaGivenMaxN2D3P9,
     } = options
 
-    if (maxFiveRoughSopfr === Infinity && maxFiveRoughCopfr === Infinity && !primeExponentExtremaGivenMaxN2D3P9) {
+    if (maxTwoThreeFreeSopfr === Infinity && maxTwoThreeFreeCopfr === Infinity && !primeExponentExtremaGivenMaxN2D3P9) {
         throw new Error("The range must be limited somehow.")
     }
 
@@ -35,14 +35,14 @@ const computePrimeExponentRange = (
     primeExponentExtremaGivenMaxN2D3P9 || [-Infinity, Infinity] as Extrema<Integer & Exponent<Prime>>
 
     const maxPrimeExponentGivenMaxSopfr: Max<Integer & Exponent<Prime>> =
-        integerDivide(maxFiveRoughSopfr, prime) as number as Max<Integer & Exponent<Prime>>
+        integerDivide(maxTwoThreeFreeSopfr, prime) as number as Max<Integer & Exponent<Prime>>
     const maxPrimeExponentGivenMaxCopfr: Max<Integer & Exponent<Prime>> =
-        maxFiveRoughCopfr as number as Max<Integer & Exponent<Prime>>
+        maxTwoThreeFreeCopfr as number as Max<Integer & Exponent<Prime>>
 
     const minPrimeExponentGivenMaxSopfr: Min<Integer & Exponent<Prime>> =
         -maxPrimeExponentGivenMaxSopfr as Min<Integer & Exponent<Prime>>
     const minPrimeExponentGivenMaxCopfr: Min<Integer & Exponent<Prime>> =
-        -maxFiveRoughCopfr as Min<Integer & Exponent<Prime>>
+        -maxTwoThreeFreeCopfr as Min<Integer & Exponent<Prime>>
 
     const maxPrimeExponent: Min<Max<Integer & Exponent<Prime>>> = min(
         maxPrimeExponentGivenMaxSopfr,

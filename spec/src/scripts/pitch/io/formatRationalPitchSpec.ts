@@ -13,7 +13,7 @@ describe("formatRationalPitch", () => {
         name: "6j" as Name<AnalyzedRationalPitch>,
         limit: 14 as Prime,
         apotomeSlope: 8.2 as ApotomeSlope,
-        fiveRoughSopfr: 13 as Sopfr<5>,
+        twoThreeFreeSopfr: 13 as Sopfr<5>,
         n2d3p9: 18.4567 as N2D3P9,
     } as AnalyzedRationalPitch
 
@@ -21,8 +21,8 @@ describe("formatRationalPitch", () => {
         const actual = formatRationalPitch(rationalPitch)
 
         const expected =
-            "        \t       \tratio     \tmonzo          \tcents  \tapotome slope\tlimit  \t5-rough sopfr\t2,3-free class N2D3P9".underline + NEWLINE +
-            "        \t       \t5/4       \t[   0  -1   1 ⟩\t 11.200\t  8.200      \t 14    \t 13          \t 18.457              " + NEWLINE as Io
+            "        \t       \tratio     \tmonzo          \tcents  \tapotome slope\tlimit  \t2,3-free sopfr\t2,3-free class N2D3P9".underline + NEWLINE +
+            "        \t       \t5/4       \t[   0  -1   1 ⟩\t 11.200\t  8.200      \t 14    \t 13           \t 18.457              " + NEWLINE as Io
         expect(actual).toEqual(expected)
     })
 })

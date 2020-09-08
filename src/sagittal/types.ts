@@ -1,5 +1,5 @@
 import { Monzo, Name, Pitch, Prime, Ratio, Sopfr } from "../general"
-import { ApotomeSlope, N2D3P9 } from "./comma"
+import { ApotomeSlope, N2D3P9, TwoThreeFreeClass } from "./comma"
 
 // TODO: should i just use "Ji" as the standardized signal of Rationality through the codebase?
 //  though that doesn't really work with the number vs. Integer distinction, which is really the same
@@ -25,11 +25,12 @@ import { ApotomeSlope, N2D3P9 } from "./comma"
 interface AnalyzedRationalPitch extends Pitch {
     apotomeSlope: ApotomeSlope,
     name: Name<AnalyzedRationalPitch>,
-    fiveRoughSopfr: Sopfr<5>,
+    twoThreeFreeSopfr: Sopfr<5>,
     limit: Prime,
     monzo: Monzo,
     ratio: Ratio,
     n2d3p9: N2D3P9,
+    twoThreeFreeClass: TwoThreeFreeClass,
 }
 
 export {

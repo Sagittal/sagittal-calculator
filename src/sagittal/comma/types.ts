@@ -1,4 +1,4 @@
-import { Abs, Cents, Exponent, Integer, Max, Min, Prime } from "../../general"
+import { Abs, Cents, Exponent, Integer, Max, Min, Prime, Ratio } from "../../general"
 import { ApotomeSlope, N2D3P9 } from "./evaluation"
 
 type CommasFromFiveSlicedMonzoOptions = Partial<{
@@ -20,8 +20,11 @@ type AnalyzeRationalPitchOptions = CommaNameOptions & Partial<{
     giveName: boolean
 }>
 
+type TwoThreeFreeClass = Ratio & { _TwoThreeFreeClassBrand: "TwoThreeFreeClass"}
+
 export {
     CommaNameOptions,
     CommasFromFiveSlicedMonzoOptions,
     AnalyzeRationalPitchOptions,
+    TwoThreeFreeClass,
 }

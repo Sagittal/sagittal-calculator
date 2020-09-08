@@ -20,7 +20,7 @@ import { computeRationalPitchHeaderRow } from "./headerRows"
 //  but perhaps it's a branded Ratio type?
 
 const formatRationalPitch = (rationalPitch: AnalyzedRationalPitch): Io => {
-    const { limit, fiveRoughSopfr, cents, monzo, ratio, apotomeSlope, n2d3p9 } = rationalPitch
+    const { limit, twoThreeFreeSopfr, cents, monzo, ratio, apotomeSlope, n2d3p9 } = rationalPitch
 
     const rationalPitchTable: Table<AnalyzedRationalPitch> = [
         computeRationalPitchHeaderRow(),
@@ -32,7 +32,7 @@ const formatRationalPitch = (rationalPitch: AnalyzedRationalPitch): Io => {
             formatNumber(cents),
             formatNumber(apotomeSlope),
             formatInteger(limit),
-            formatInteger(fiveRoughSopfr),
+            formatInteger(twoThreeFreeSopfr),
             formatNumber(n2d3p9),
         ] as Row<AnalyzedRationalPitch>,
     ]

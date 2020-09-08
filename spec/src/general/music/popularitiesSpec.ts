@@ -11,7 +11,7 @@ import { onlyRunInCi } from "../../../helpers/onlyRunInCi"
 
 describe("COMMA_POPULARITIES", () => {
     it("is the case that all the ratios capable of being parsed by monzo from ratio correctly when only top is 80 or less", () => {
-        const originalRatios = COMMA_POPULARITIES.map(popularity => popularity.fiveRoughRatio)
+        const originalRatios = COMMA_POPULARITIES.map(popularity => popularity.twoThreeFreeClass)
 
         const monzos = originalRatios.map(computeMonzoFromRatio)
         const ratios = monzos.map(computeRatioFromMonzo)
@@ -23,7 +23,7 @@ describe("COMMA_POPULARITIES", () => {
         onlyRunInCi()
 
         const unrankedPopularities: Popularity[] = COMMA_POPULARITIES.map(popularity => ({
-            fiveRoughRatio: popularity.fiveRoughRatio,
+            twoThreeFreeClass: popularity.twoThreeFreeClass,
             votes: popularity.votes,
         }))
 

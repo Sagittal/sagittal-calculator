@@ -52,8 +52,8 @@ const computeSagittalCommaName = (
     const superMonzo = computeSuperMonzo(monzo)
     const cents: Cents = computeCentsFromMonzo(superMonzo)
 
-    const fiveRoughMonzo = computeRoughNumberMonzo(superMonzo, FIVE_ROUGHNESS)
-    const ratio: Ratio = computeRatioFromMonzo(fiveRoughMonzo)
+    const twoThreeFreeMonzo = computeRoughNumberMonzo(superMonzo, FIVE_ROUGHNESS)
+    const ratio: Ratio = computeRatioFromMonzo(twoThreeFreeMonzo)
 
     const maybeDirectedRatio = directed ? ratio : computeUndirectedRatio(ratio)
     const maybeFlippedRatio = directed ? maybeDirectedRatio : [maybeDirectedRatio[ 1 ], maybeDirectedRatio[ 0 ]]

@@ -5,13 +5,13 @@ import { computeNotatingCommaWithMaybeSagittalSymbolRow } from "./notatingCommaR
 const computeCommaRow = (
     commaWithMaybeSagittalSymbol: AnalyzedRationalPitch & { symbolId?: Id<JiSymbol> },
 ): Row<AnalyzedRationalPitch & { symbolId?: Id<JiSymbol> }> => {
-    const { limit, fiveRoughSopfr, n2d3p9 } = commaWithMaybeSagittalSymbol
+    const { limit, twoThreeFreeSopfr, n2d3p9 } = commaWithMaybeSagittalSymbol
 
     return concat(
         computeNotatingCommaWithMaybeSagittalSymbolRow(commaWithMaybeSagittalSymbol),
         [
             formatInteger(limit),
-            formatInteger(fiveRoughSopfr),
+            formatInteger(twoThreeFreeSopfr),
             formatNumber(n2d3p9),
         ] as Row<AnalyzedRationalPitch & { symbolId?: Id<JiSymbol> }>,
     )

@@ -3,12 +3,14 @@ import { Formatted } from "./types"
 
 // TODO: note we have this an formatRationalPitch, which is confusing.
 //  I think the other one is more of a table at this point
-const formatRatio = (inputRatio: Ratio, { directed }: { directed: boolean } = { directed: true }): Formatted<Ratio> => {
+const formatRatio = <T extends Ratio>(
+    inputRatio: T, { directed }: { directed: boolean } = { directed: true },
+): Formatted<T> => {
     const [numerator, denominator] = directed ? inputRatio : computeUndirectedRatio(inputRatio)
 
     return directed ?
-        `${numerator}/${denominator}` as Formatted<Ratio> :
-        `${denominator}:${numerator}` as Formatted<Ratio>
+        `${numerator}/${denominator}` as Formatted<T> :
+        `${denominator}:${numerator}` as Formatted<T>
 }
 
 export {
