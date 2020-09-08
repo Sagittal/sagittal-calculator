@@ -9,10 +9,10 @@ const computeMaybePopular23FreeClassWithBestNotatingComma = (
 ): Maybe<Popular23FreeClassWithBestNotatingComma> => {
     if (computeIsSubMonzo(twoThreeFreeMonzo)) return
 
-    const twoThreeFreeClass = compute23FreeClass(twoThreeFreeMonzo)
-    const n2d3p9 = computeN2D3P9(twoThreeFreeClass)
+    const n2d3p9 = computeN2D3P9(twoThreeFreeMonzo)
 
     if (n2d3p9 <= maxN2D3P9) {
+        const twoThreeFreeClass = compute23FreeClass(twoThreeFreeMonzo)
         return computePopular23FreeClassWithBestNotatingComma({ twoThreeFreeClass, n2d3p9 })
     }
 
