@@ -4,9 +4,10 @@ import {
     computeGpf,
     computeIsSubMonzo,
     computeMonzoFromRatio,
-    deepEquals,
+    computeTrimmedArray,
     Exponent,
-    formatRatio,
+    formatMonzo,
+    Monzo,
     Prime,
     PRIMES,
     round,
@@ -14,17 +15,23 @@ import {
 import { TwoThreeFreeClass } from "../../types"
 import { N2D3P9 } from "./types"
 
-const computeN2D3P9 = (twoThreeFreeClass: TwoThreeFreeClass): N2D3P9 => {
-    if (deepEquals(twoThreeFreeClass, [1, 1])) {
+const computeN2D3P9 = (twoThreeFreeClassOrMonzo: TwoThreeFreeClass | Monzo): N2D3P9 => {
+    let monzo: Monzo
+    if (twoThreeFreeClassOrMonzo.length === 2) {
+        monzo = computeMonzoFromRatio(twoThreeFreeClassOrMonzo as TwoThreeFreeClass)
+    } else {
+        monzo = twoThreeFreeClassOrMonzo as Monzo
+    }
+
+    if (computeTrimmedArray(monzo).length < 3) {
         return 1 as N2D3P9
     }
 
-    const monzo = computeMonzoFromRatio(twoThreeFreeClass)
     if (monzo[ 0 ] !== 0 || monzo[ 1 ] !== 0) {
-        throw new Error(`N2D3P9 must be given a 2,3-free class (5-rough, n ≥ d); received ${formatRatio(twoThreeFreeClass)}`)
+        throw new Error(`N2D3P9 must be given a 2,3-free class (5-rough, n ≥ d); received monzo ${formatMonzo(monzo)}`)
     }
     if (computeIsSubMonzo(monzo)) {
-        throw new Error(`N2D3P9 must be given a 2,3-free class (5-rough, n ≥ d); received ${formatRatio(twoThreeFreeClass)}`)
+        throw new Error(`N2D3P9 must be given a 2,3-free class (5-rough, n ≥ d); received monzo ${formatMonzo(monzo)}`)
     }
 
     const n2d3p9 = monzo.reduce(

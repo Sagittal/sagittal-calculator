@@ -14,7 +14,7 @@ describe("COMMA_POPULARITIES", () => {
         const originalRatios = COMMA_POPULARITIES.map(popularity => popularity.twoThreeFreeClass)
 
         const monzos = originalRatios.map(computeMonzoFromRatio)
-        const ratios = monzos.map(computeRatioFromMonzo)
+        const ratios = monzos.map(monzo => computeRatioFromMonzo(monzo))
 
         expect(ratios).toEqual(originalRatios)
     })

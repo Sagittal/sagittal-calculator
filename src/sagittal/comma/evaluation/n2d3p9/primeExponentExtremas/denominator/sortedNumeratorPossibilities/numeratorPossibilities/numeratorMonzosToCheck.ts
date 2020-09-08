@@ -19,6 +19,8 @@ const computeNumeratorMonzosToCheckGivenMaxN2D3P9 = (maxN2D3P9: Max<N2D3P9>): Mo
             return [0 as Min<Integer & Exponent<Prime>>, maxNumeratorPrimeExponentGivenMaxN2D3P9]
         })
 
+    // console.log("numeratorPrimeExponentExtremaGivenMaxN2D3P9", numeratorPrimeExponentExtremaGivenMaxN2D3P9)
+
     // TODO: ok so the first step, to massively improve the speed, would be to memoize,
     //  for a given run (for a given max N2D3P9) the monzos from the prime exponent extremas for the numerators
     //  so you don't have to calculate them once for each friggin' denominator

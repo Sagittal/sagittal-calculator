@@ -9,11 +9,13 @@ import {
     formatNumber,
     formatRatio,
     Formatted,
+    Id,
     Io,
     ioSettings,
     isUndefined,
     Max,
     Maybe,
+    Monzo,
     Votes,
 } from "../../general"
 import {
@@ -22,6 +24,7 @@ import {
     APOTOME,
     computeNotatingCommas,
     formatSymbol,
+    JiSymbol,
     N2D3P9,
     TwoThreeFreeClass,
 } from "../../sagittal"
@@ -85,7 +88,8 @@ const computePopular23FreeClassWithBestNotatingComma = (
         popularityRank,
         votes,
         centsOfBestNotatingComma: formatNumber(commaWithMaybeSagittalSymbol.cents),
-        monzoOfBestNotatingComma: formatMonzo(commaWithMaybeSagittalSymbol.monzo),
+        // TODO: unclear why I need to type assert on this next line...
+        monzoOfBestNotatingComma: formatMonzo(commaWithMaybeSagittalSymbol.monzo) as Formatted<Monzo>,
         maybeSymbolForBestNotatingComma:
             commaWithMaybeSagittalSymbol.symbolId ?
                 formatSymbol(commaWithMaybeSagittalSymbol.symbolId, ioSettings) :

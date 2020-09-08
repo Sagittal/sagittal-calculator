@@ -45,7 +45,7 @@ describe("computePrimeExponentExtremasGivenMaxN2D3P9", () => {
     })
 
     it("works for 136, verifying the hardcoded table we first developed on the forum", () => {
-        // onlyRunInCi()
+        onlyRunInCi()
 
         const maxN2D3P9 = 136 as Max<N2D3P9>
 

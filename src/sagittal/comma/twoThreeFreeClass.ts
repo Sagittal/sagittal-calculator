@@ -4,8 +4,11 @@ import { TwoThreeFreeClass } from "./types"
 const compute23FreeClass = (monzo: Monzo): TwoThreeFreeClass => {
     const twoThreeFreeMonzo = computeRoughNumberMonzo(monzo, FIVE_ROUGHNESS)
     const numeratorGreaterThanDenominatorMonzo = computeSuperMonzo(twoThreeFreeMonzo)
+    const twoThreeFreeClass = computeRatioFromMonzo(numeratorGreaterThanDenominatorMonzo) as TwoThreeFreeClass
 
-    return computeRatioFromMonzo(numeratorGreaterThanDenominatorMonzo) as TwoThreeFreeClass
+    console.log("just converted", monzo, "to", twoThreeFreeClass)
+
+    return twoThreeFreeClass
 }
 
 export {

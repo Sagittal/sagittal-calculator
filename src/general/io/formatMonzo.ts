@@ -10,10 +10,10 @@ const spaceTerm = (term: Exponent<Prime>): Io => {
     return termText as Io
 }
 
-const formatMonzo = (monzo: Monzo, { punctuated = false } = {}): Formatted<Monzo> => {
+const formatMonzo = <T extends number>(monzo: Monzo<T>, { punctuated = false } = {}): Formatted<Monzo<T>> => {
     let contents
     if (punctuated) {
-        const fiveSlicedMonzo: Monzo<Integer, 5> = monzo.splice(2) as Monzo<Integer, 5>
+        const fiveSlicedMonzo: Monzo<T, 5> = monzo.splice(2) as Monzo<T, 5>
         const twoThreeMonzo = monzo
         contents = twoThreeMonzo.map(spaceTerm).join(" ") + ", "
 
@@ -33,7 +33,7 @@ const formatMonzo = (monzo: Monzo, { punctuated = false } = {}): Formatted<Monzo
         contents = monzo.map(spaceTerm).join(" ")
     }
 
-    return `[ ${contents} ⟩` as Formatted<Monzo>
+    return `[ ${contents} ⟩` as Formatted<Monzo<T>>
 }
 
 export {

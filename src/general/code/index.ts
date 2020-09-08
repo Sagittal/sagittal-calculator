@@ -1,7 +1,7 @@
 export { computeCardinality } from "./cardinality"
 export { deepClone, shallowClone } from "./clone"
 export { concat } from "./concat"
-export { ACCURACY_THRESHOLD, ZERO_ONE_INDEX_DIFF } from "./constants"
+export { ACCURACY_THRESHOLD, ZERO_ONE_INDEX_DIFF, MAX_JAVASCRIPT_INTEGER_VALUE } from "./constants"
 export { computeDeepDistinct } from "./deepDistinct"
 export { deepEquals } from "./deepEquals"
 export { dig } from "./dig"
