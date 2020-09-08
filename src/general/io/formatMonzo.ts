@@ -1,5 +1,4 @@
-import { Exponent, Monzo, Prime } from "../math"
-import { MonzoTypeParameters } from "../math/monzo/types"
+import { Exponent, Monzo, MonzoTypeParameters, Prime } from "../math"
 import { Formatted, Io } from "./types"
 
 const spaceTerm = (term: Exponent<Prime>): Io => {
@@ -11,7 +10,7 @@ const spaceTerm = (term: Exponent<Prime>): Io => {
     return termText as Io
 }
 
-const formatMonzo = <T extends MonzoTypeParameters>(
+const formatMonzo = <T extends MonzoTypeParameters = { noninteger: true }>(
     monzo: Monzo<T>,
     { punctuated = false } = {},
 ): Formatted<Monzo<T>> => {

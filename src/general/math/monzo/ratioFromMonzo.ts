@@ -2,7 +2,7 @@ import { PRIMES } from "../primes"
 import { Denominator, Numerator, Ratio } from "../types"
 import { Monzo, MonzoTypeParameters } from "./types"
 
-const computeRatioFromMonzo = <T extends MonzoTypeParameters>(
+const computeRatioFromMonzo = <T extends MonzoTypeParameters = { noninteger: true }>(
     monzo: Monzo<T>,
     { disableErrorBecauseExactValueNotRequired }: { disableErrorBecauseExactValueNotRequired?: boolean } = {},
 ): Ratio => {

@@ -17,6 +17,7 @@ export {
     invertMonzo,
     Monzo,
     sumMonzos,
+    MonzoTypeParameters,
 } from "./monzo"
 export { computePrimeCount } from "./primeCount"
 export { PRIMES } from "./primes"
