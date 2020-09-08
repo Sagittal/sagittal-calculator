@@ -18,6 +18,7 @@ describe("updateLevelAnalysis", () => {
                 ],
             }
             if (Level.MEDIUM in levelsBestHistoryRanks) {
+                // @ts-ignore
                 delete levelsBestHistoryRanks[ Level.MEDIUM ]
             }
             expect(levelsBestHistoryRanks[ Level.MEDIUM ]).toBeUndefined()
@@ -61,15 +62,19 @@ describe("updateLevelAnalysis", () => {
                 ],
             }
             if (Level.MEDIUM in levelsBestCumulativeHistoryRanks) {
+                // @ts-ignore
                 delete levelsBestCumulativeHistoryRanks[ Level.MEDIUM ]
             }
             if (Level.HIGH in levelsBestCumulativeHistoryRanks) {
+                // @ts-ignore
                 delete levelsBestCumulativeHistoryRanks[ Level.HIGH ]
             }
             if (Level.ULTRA in levelsBestCumulativeHistoryRanks) {
+                // @ts-ignore
                 delete levelsBestCumulativeHistoryRanks[ Level.ULTRA ]
             }
             if (Level.EXTREME in levelsBestCumulativeHistoryRanks) {
+                // @ts-ignore
                 delete levelsBestCumulativeHistoryRanks[ Level.EXTREME ]
             }
 
