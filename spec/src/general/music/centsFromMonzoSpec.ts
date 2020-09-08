@@ -13,7 +13,7 @@ describe("computeCentsFromMonzo", () => {
     })
 
     it("works for monzos with really big 2 exponents", () => {
-        const monzo = [158.5, -100] as Monzo<number>
+        const monzo = [158.5, -100] as Monzo<{ noninteger: true }>
 
         const actual = computeCentsFromMonzo(monzo)
 

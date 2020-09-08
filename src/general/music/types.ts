@@ -14,7 +14,7 @@ type CentsPosition = Partial<Pitch> & {
 interface Pitch {
     name: Name<Pitch>,
     cents: Cents,
-    monzo: Monzo<number>,
+    monzo: Monzo<{ noninteger: true }>,
     ratio: Ratio<number>,
 }
 

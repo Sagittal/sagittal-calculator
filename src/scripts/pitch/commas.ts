@@ -1,4 +1,4 @@
-import { Integer, Monzo, sort } from "../../general"
+import { Monzo, sort } from "../../general"
 import { AnalyzedRationalPitch, computeCommasFromFiveSlicedMonzo } from "../../sagittal"
 import { computeFiveSlicedMonzosToCheck } from "./fiveSlicedMonzosToCheck"
 import { CommasOptions } from "./types"
@@ -19,7 +19,7 @@ const computeCommas = (options: CommasOptions): AnalyzedRationalPitch[] => {
 
     let commas: AnalyzedRationalPitch[] = []
 
-    const fiveSlicedMonzosToCheck: Array<Monzo<Integer, 5>> = computeFiveSlicedMonzosToCheck({
+    const fiveSlicedMonzosToCheck: Array<Monzo<{ slice: 5 }>> = computeFiveSlicedMonzosToCheck({
         maxPrimeLimit,
         max23FreeSopfr,
         max23FreeCopfr,

@@ -11,7 +11,7 @@ import {
 import { CommasFromFiveSlicedMonzoOptions } from "./types"
 
 const computeCommasFromFiveSlicedMonzo = (
-    fiveSlicedMonzo: Monzo<Integer, 5>,
+    fiveSlicedMonzo: Monzo<{ slice: 5 }>,
     options?: CommasFromFiveSlicedMonzoOptions,
 ): AnalyzedRationalPitch[] => {
     const {
@@ -26,7 +26,7 @@ const computeCommasFromFiveSlicedMonzo = (
     const analyzedCommas: AnalyzedRationalPitch[] = []
 
     computePlusOrMinusRange(maxAbsoluteThreeExponent).forEach(three => {
-        const threeSlicedMonzo: Monzo<Integer, 3> = [three, ...fiveSlicedMonzo] as Monzo<Integer, 3>
+        const threeSlicedMonzo: Monzo<{ slice: 3 }> = [three, ...fiveSlicedMonzo] as Monzo<{ slice: 3 }>
         const monzo = computeMonzoInZone(threeSlicedMonzo, [minCents, maxCents])
 
         if (monzo) {

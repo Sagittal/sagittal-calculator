@@ -6,7 +6,8 @@ import {
     Copfr,
     Exponent,
     ExtensionBaseType,
-    Extrema, FIVE_PRIME_INDEX,
+    Extrema,
+    FIVE_PRIME_INDEX,
     Integer,
     isUndefined,
     Max,
@@ -22,7 +23,7 @@ import { FiveSlicedMonzosToCheckOptions } from "./types"
 
 const computeFiveSlicedMonzosToCheck = (
     { maxPrimeLimit, max23FreeSopfr, max23FreeCopfr, maxN2D3P9 }: FiveSlicedMonzosToCheckOptions = {},
-): Array<Monzo<Integer, 5>> => {
+): Array<Monzo<{ slice: 5 }>> => {
     if (isUndefined(max23FreeSopfr) && isUndefined(maxN2D3P9)) {
         if (isUndefined(maxPrimeLimit)) {
             if (isUndefined(max23FreeCopfr)) {
@@ -44,12 +45,12 @@ const computeFiveSlicedMonzosToCheck = (
         primeExponentExtremasGivenMaxN2D3P9,
     })
 
-    let fiveSlicedMonzosToCheck: Array<Monzo<Integer, 5>> = [
-        [] as unknown[] as Monzo<Integer, 5>,
+    let fiveSlicedMonzosToCheck: Array<Monzo<{ slice: 5 }>> = [
+        [] as unknown[] as Monzo<{ slice: 5 }>,
     ]
     twoThreeFreePrimesToCheck.forEach((twoThreeFreePrimeToCheck, index) => {
-        const extendedFiveSlicedMonzosToCheck: Array<Monzo<Integer, 5>> =
-            computeExtensionBase(ExtensionBaseType.ARRAY) as Array<Monzo<Integer, 5>>
+        const extendedFiveSlicedMonzosToCheck: Array<Monzo<{ slice: 5 }>> =
+            computeExtensionBase(ExtensionBaseType.ARRAY) as Array<Monzo<{ slice: 5 }>>
 
         const primeExponentExtremaGivenMaxN2D3P9: Maybe<Extrema<Integer & Exponent<Prime>>> =
             primeExponentExtremasGivenMaxN2D3P9 && primeExponentExtremasGivenMaxN2D3P9[ index + FIVE_PRIME_INDEX ]
@@ -73,7 +74,7 @@ const computeFiveSlicedMonzosToCheck = (
             ) as Array<Integer & Exponent<Prime>>
             termRange.forEach((potentialNextTerm: Integer & Exponent<Prime>) => {
                 extendedFiveSlicedMonzosToCheck.push(
-                    fiveSlicedMonzoToCheck.concat(potentialNextTerm) as Monzo<Integer, 5>,
+                    fiveSlicedMonzoToCheck.concat(potentialNextTerm) as Monzo<{ slice: 5 }>,
                 )
             })
         })

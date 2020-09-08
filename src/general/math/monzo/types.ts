@@ -1,9 +1,24 @@
 import { Ed, Step, Window } from "../../types"
 import { Exponent, Integer, Max, Prime } from "../types"
 
-type Monzo<T extends number = Integer, Slice = void, Limit = void> =
-    Array<T & Exponent<Prime>>
-    & (Slice extends number ? { _MonzoSlice: Slice } : {})
+enum Direction {
+    SUPER = "super",
+    SUB = "sub",
+}
+
+type MonzoTypeParameters = Partial<{
+    limit: number,
+    slice: number,
+    noninteger: boolean,
+    direction: Direction
+}>
+
+type Monzo<T extends MonzoTypeParameters = {}> =
+    Array<(T extends { noninteger: true } ? number : Integer) & Exponent<Prime>>
+    & (T extends { direction: Direction.SUB } ? { _MonzoDirection: Direction.SUB } : {})
+    & (T extends { direction: Direction.SUPER } ? { _MonzoDirection: Direction.SUPER } : {})
+    & (T extends { slice: number } ? { _MonzoSlice: Pick<T, "slice"> } : {})
+    & (T extends { limit: number } ? { _MonzoLimit: Pick<T, "limit"> } : {})
 
 type Val<T extends number = Integer, Slice = void, Limit = void> =
     Array<T & Exponent<Step>>
@@ -49,4 +64,6 @@ export {
     Monzo,
     Val,
     PatentValOptions,
+    MonzoTypeParameters,
+    Direction,
 }

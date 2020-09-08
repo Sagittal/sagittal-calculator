@@ -2,7 +2,7 @@ import { Abs, Cents, Exponent, Integer, Max, Min, Monzo, Prime } from "../../../
 import { ApotomeSlope, computeCommasFromFiveSlicedMonzo, N2D3P9 } from "../../../../src/sagittal"
 
 describe("computeCommasFromFiveSlicedMonzo", () => {
-    const fiveSlicedMonzo: Monzo<Integer, 5> = [3, 5, -1] as Monzo<Integer, 5>
+    const fiveSlicedMonzo: Monzo<{ slice: 5 }> = [3, 5, -1] as Monzo<{ slice: 5 }>
     const minCents = 40 as Min<Cents>
     const maxCents = 40.1 as Max<Cents>
     const maxAbsoluteThreeExponent = 12 as Max<Abs<Integer & Exponent<Prime>>>

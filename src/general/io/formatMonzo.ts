@@ -1,4 +1,5 @@
-import { Exponent, Integer, Monzo, Prime } from "../math"
+import { Exponent, Monzo, Prime } from "../math"
+import { MonzoTypeParameters } from "../math/monzo/types"
 import { Formatted, Io } from "./types"
 
 const spaceTerm = (term: Exponent<Prime>): Io => {
@@ -10,10 +11,14 @@ const spaceTerm = (term: Exponent<Prime>): Io => {
     return termText as Io
 }
 
-const formatMonzo = <T extends number>(monzo: Monzo<T>, { punctuated = false } = {}): Formatted<Monzo<T>> => {
+const formatMonzo = <T extends MonzoTypeParameters>(
+    monzo: Monzo<T>,
+    { punctuated = false } = {},
+): Formatted<Monzo<T>> => {
     let contents
     if (punctuated) {
-        const fiveSlicedMonzo: Monzo<T, 5> = monzo.splice(2) as Monzo<T, 5>
+        // Not using computeSlicedMonzo here because we want the trick of keeping the leftovers
+        const fiveSlicedMonzo: Monzo<T & { slice: 5 }> = monzo.splice(2) as Monzo<T & { slice: 5 }>
         const twoThreeMonzo = monzo
         contents = twoThreeMonzo.map(spaceTerm).join(" ") + ", "
 

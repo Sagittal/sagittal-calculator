@@ -2,7 +2,7 @@ import { Exponent, Integer, Monzo, Prime } from "../math"
 import { computeCentsFromMonzo } from "../music"
 import { Cents, Zone } from "./types"
 
-const computeMonzoInZone = (threeSlicedMonzo: Monzo<Integer, 3>, zone: Zone) => {
+const computeMonzoInZone = (threeSlicedMonzo: Monzo<{ slice: 3 }>, zone: Zone) => {
     const [minCents, maxCents] = zone
 
     const monzo: Monzo = [0, ...threeSlicedMonzo] as Monzo
