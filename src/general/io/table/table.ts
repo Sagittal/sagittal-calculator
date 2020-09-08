@@ -20,6 +20,8 @@ const formatTable = (table: Table, options?: Partial<FormatTableOptions>) => {
         throw new Error(`Table does not have rows with all the same lengths. Row lengths are ${rowLengths}.`)
     }
 
+    // TODO: consider a TSV format for tables per http://forum.sagittal.org/viewtopic.php?p=2409#p2409
+
     return ioSettings.forForum ? formatTableForForum(table, options) : formatTableForTerminal(table, options)
 }
 

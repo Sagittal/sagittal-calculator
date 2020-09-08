@@ -3,6 +3,10 @@ import { integerDivide } from "../typedOperations"
 import { Exponent, Integer, Prime } from "../types"
 import { Monzo } from "./types"
 
+// TODO: consider using Dave's tricky GCP-involved technique
+//  explained here: http://forum.sagittal.org/viewtopic.php?p=2404#p2404
+//  and here: http://forum.sagittal.org/viewtopic.php?p=2409#p2409
+
 const computeMonzoFromInteger = (integer: Integer): Monzo => {
     if (integer === 0) {
         throw new Error("The prime factorization of zero is not defined.")

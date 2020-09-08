@@ -151,3 +151,6 @@ export {
     Zone,
 } from "./music"
 export { Count, Ed, Extrema, Id, Index, Ms, Multiplier, Name, Step, Sum, Window } from "./types"
+
+// TODO: add instructions for cloning down etc. to Readme
+//  as well as cli instructions, if there's no good way for npm to just list the scripts maybe
