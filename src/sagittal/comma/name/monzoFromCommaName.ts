@@ -4,7 +4,7 @@ import { TwoThreeFreeClass } from "../types"
 import { computeSizeCategoryExtrema } from "./sizeCategoryExtrema"
 import { SizeCategoryName } from "./types"
 
-const computeMonzoFromTwoThreeFreeRatioAndSizeCategoryName = (
+const computeMonzoFrom23FreeRatioAndSizeCategoryName = (
     parsedCommaName: { twoThreeFreeClass: TwoThreeFreeClass, sizeCategoryName: SizeCategoryName },
 ): Monzo => {
     const { twoThreeFreeClass, sizeCategoryName } = parsedCommaName
@@ -22,5 +22,5 @@ const computeMonzoFromTwoThreeFreeRatioAndSizeCategoryName = (
 }
 
 export {
-    computeMonzoFromTwoThreeFreeRatioAndSizeCategoryName,
+    computeMonzoFrom23FreeRatioAndSizeCategoryName,
 }

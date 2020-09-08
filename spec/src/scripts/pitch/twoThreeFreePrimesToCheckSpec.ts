@@ -1,17 +1,17 @@
 import { Exponent, Extrema, Integer } from "../../../../src/general"
 import { Max, Prime, Sopfr } from "../../../../src/general/math"
-import { computeTwoThreeFreePrimesToCheck } from "../../../../src/scripts/pitch/twoThreeFreePrimesToCheck"
+import { compute23FreePrimesToCheck } from "../../../../src/scripts/pitch/twoThreeFreePrimesToCheck"
 
-describe("computeTwoThreeFreePrimesToCheck", () => {
+describe("compute23FreePrimesToCheck", () => {
     it("when none of max prime limit, max sopfr, nor max N2D3P9 are provided, errors", () => {
-        expect(() => computeTwoThreeFreePrimesToCheck({})).toThrowError("The maximum prime must be limited somehow.")
+        expect(() => compute23FreePrimesToCheck({})).toThrowError("The maximum prime must be limited somehow.")
     })
 
     describe("when only the prime limit is provided", () => {
         it("if it is not a prime (for whatever reason), the last prime less than it is the max prime", () => {
             const maxPrimeLimit = 20 as Max<Max<Prime>>
 
-            const actual = computeTwoThreeFreePrimesToCheck({ maxPrimeLimit })
+            const actual = compute23FreePrimesToCheck({ maxPrimeLimit })
 
             const expected = [5, 7, 11, 13, 17, 19] as Prime[]
             expect(actual).toEqual(expected)
@@ -20,7 +20,7 @@ describe("computeTwoThreeFreePrimesToCheck", () => {
         it("if it is a prime, that becomes the maximum prime to check", () => {
             const maxPrimeLimit = 19 as Max<Max<Prime>>
 
-            const actual = computeTwoThreeFreePrimesToCheck({ maxPrimeLimit })
+            const actual = compute23FreePrimesToCheck({ maxPrimeLimit })
 
             const expected = [5, 7, 11, 13, 17, 19] as Prime[]
             expect(actual).toEqual(expected)
@@ -29,18 +29,18 @@ describe("computeTwoThreeFreePrimesToCheck", () => {
 
     describe("when only sopfr is provided", () => {
         it("if it is not a prime, the last prime less than it is the max prime", () => {
-            const maxTwoThreeFreeSopfr = 20 as Max<Sopfr<5>>
+            const max23FreeSopfr = 20 as Max<Sopfr<5>>
 
-            const actual = computeTwoThreeFreePrimesToCheck({ maxTwoThreeFreeSopfr })
+            const actual = compute23FreePrimesToCheck({ max23FreeSopfr })
 
             const expected = [5, 7, 11, 13, 17, 19] as Prime[]
             expect(actual).toEqual(expected)
         })
 
         it("if it is a prime, then it is the max prime", () => {
-            const maxTwoThreeFreeSopfr = 19 as Max<Sopfr<5>>
+            const max23FreeSopfr = 19 as Max<Sopfr<5>>
 
-            const actual = computeTwoThreeFreePrimesToCheck({ maxTwoThreeFreeSopfr })
+            const actual = compute23FreePrimesToCheck({ max23FreeSopfr })
 
             const expected = [5, 7, 11, 13, 17, 19] as Prime[]
             expect(actual).toEqual(expected)
@@ -50,9 +50,9 @@ describe("computeTwoThreeFreePrimesToCheck", () => {
     describe("when both prime limit and sopfr are provided", () => {
         it("if the prime limit is less than the sopfr, prime limit should be the max prime", () => {
             const maxPrimeLimit = 13 as Max<Max<Prime>>
-            const maxTwoThreeFreeSopfr = 19 as Max<Sopfr<5>>
+            const max23FreeSopfr = 19 as Max<Sopfr<5>>
 
-            const actual = computeTwoThreeFreePrimesToCheck({ maxPrimeLimit, maxTwoThreeFreeSopfr })
+            const actual = compute23FreePrimesToCheck({ maxPrimeLimit, max23FreeSopfr })
 
             const expected = [5, 7, 11, 13] as Prime[]
             expect(actual).toEqual(expected)
@@ -60,9 +60,9 @@ describe("computeTwoThreeFreePrimesToCheck", () => {
 
         it("if the sopfr is less than the prime limit, sopfr should be the max prime", () => {
             const maxPrimeLimit = 23 as Max<Max<Prime>>
-            const maxTwoThreeFreeSopfr = 17 as Max<Sopfr<5>>
+            const max23FreeSopfr = 17 as Max<Sopfr<5>>
 
-            const actual = computeTwoThreeFreePrimesToCheck({ maxPrimeLimit, maxTwoThreeFreeSopfr })
+            const actual = compute23FreePrimesToCheck({ maxPrimeLimit, max23FreeSopfr })
 
             const expected = [5, 7, 11, 13, 17] as Prime[]
             expect(actual).toEqual(expected)
@@ -81,7 +81,7 @@ describe("computeTwoThreeFreePrimesToCheck", () => {
         ] as Array<Extrema<Integer & Exponent<Prime>>>
 
         it("when only N2D3P9 is provided, its last element is the max prime", () => {
-            const actual = computeTwoThreeFreePrimesToCheck({ primeExponentExtremasGivenMaxN2D3P9 })
+            const actual = compute23FreePrimesToCheck({ primeExponentExtremasGivenMaxN2D3P9 })
 
             const expected = [5, 7, 11, 13, 17] as Prime[]
             expect(actual).toEqual(expected)
@@ -89,11 +89,11 @@ describe("computeTwoThreeFreePrimesToCheck", () => {
 
         it("when N2D3P9 is provided, as well as other constraints, but it is less, it wins", () => {
             const maxPrimeLimit = 23 as Max<Max<Prime>>
-            const maxTwoThreeFreeSopfr = 19 as Max<Sopfr<5>>
+            const max23FreeSopfr = 19 as Max<Sopfr<5>>
 
-            const actual = computeTwoThreeFreePrimesToCheck({
+            const actual = compute23FreePrimesToCheck({
                 primeExponentExtremasGivenMaxN2D3P9,
-                maxTwoThreeFreeSopfr,
+                max23FreeSopfr,
                 maxPrimeLimit,
             })
 
@@ -103,11 +103,11 @@ describe("computeTwoThreeFreePrimesToCheck", () => {
 
         it("when N2D3P9 is provided, as well as other constraints, but it is more, the others win", () => {
             const maxPrimeLimit = 11 as Max<Max<Prime>>
-            const maxTwoThreeFreeSopfr = 17 as Max<Sopfr<5>>
+            const max23FreeSopfr = 17 as Max<Sopfr<5>>
 
-            const actual = computeTwoThreeFreePrimesToCheck({
+            const actual = compute23FreePrimesToCheck({
                 primeExponentExtremasGivenMaxN2D3P9,
-                maxTwoThreeFreeSopfr,
+                max23FreeSopfr,
                 maxPrimeLimit,
             })
 

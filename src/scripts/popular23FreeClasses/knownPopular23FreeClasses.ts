@@ -1,14 +1,14 @@
 import { Formatted, rank, Ranked, RankStrategy } from "../../general"
-import { computeN2D3P9, parseTwoThreeFreeClass, TwoThreeFreeClass } from "../../sagittal"
-import { computePopularTwoThreeFreeClass } from "./popularTwoThreeFreeClass"
+import { computeN2D3P9, parse23FreeClass, TwoThreeFreeClass } from "../../sagittal"
+import { computePopular23FreeClass } from "./popular23FreeClass"
 import { Popular23FreeClass } from "./types"
 
 // TODO: ideally the best notating commas script would also be able to use this
 
 // use this instead of popular 2,3-free classes
 // when you already have the list but you just need to gather the extra data on them
-const computeKnownPopularTwoThreeFreeClasses = (): Array<Ranked<Popular23FreeClass>> => {
-    const knownPopularTwoThreeFreeClasses = [
+const computeKnownPopular23FreeClasses = (): Array<Ranked<Popular23FreeClass>> => {
+    const knownPopular23FreeClasses = [
         "1/1",
         "5/1",
         "7/1",
@@ -313,15 +313,15 @@ const computeKnownPopularTwoThreeFreeClasses = (): Array<Ranked<Popular23FreeCla
         "235/1",
     ] as Array<Formatted<TwoThreeFreeClass>>
 
-    const popularTwoThreeFreeClasses = knownPopularTwoThreeFreeClasses
-        .map(parseTwoThreeFreeClass)
+    const popular23FreeClasses = knownPopular23FreeClasses
+        .map(parse23FreeClass)
         .map(twoThreeFreeClass => {
-            return computePopularTwoThreeFreeClass({ twoThreeFreeClass, n2d3p9: computeN2D3P9(twoThreeFreeClass) })
+            return computePopular23FreeClass({ twoThreeFreeClass, n2d3p9: computeN2D3P9(twoThreeFreeClass) })
         })
 
-    return rank(popularTwoThreeFreeClasses, { by: "n2d3p9", strategy: RankStrategy.FRACTIONAL })
+    return rank(popular23FreeClasses, { by: "n2d3p9", strategy: RankStrategy.FRACTIONAL })
 }
 
 export {
-    computeKnownPopularTwoThreeFreeClasses,
+    computeKnownPopular23FreeClasses,
 }

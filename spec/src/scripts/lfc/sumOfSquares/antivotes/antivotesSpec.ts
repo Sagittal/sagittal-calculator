@@ -8,8 +8,8 @@ import { Antivotes } from "../../../../../../src/scripts/lfc/sumOfSquares/types"
 
 describe("computeAntivotes", () => {
     it("when k = 1 (default), and two 2,3-free ratios have the same sopfr, but one has its primes all lopsided on one side, they still get ranked the same", () => {
-        const balancedTwoThreeFreeRatio = [11, 7] as TwoThreeFreeClass
-        const lopsidedTwoThreeFreeRatio = [77, 1] as TwoThreeFreeClass
+        const balanced23FreeRatio = [11, 7] as TwoThreeFreeClass
+        const lopsided23FreeRatio = [77, 1] as TwoThreeFreeClass
         const submetrics: Combination<Submetric> = [
             {
                 [ Parameter.SUM ]: true,
@@ -17,15 +17,15 @@ describe("computeAntivotes", () => {
             },
         ] as Combination<Submetric>
 
-        const balancedResult = computeAntivotes(balancedTwoThreeFreeRatio, submetrics)
-        const lopsidedResult = computeAntivotes(lopsidedTwoThreeFreeRatio, submetrics)
+        const balancedResult = computeAntivotes(balanced23FreeRatio, submetrics)
+        const lopsidedResult = computeAntivotes(lopsided23FreeRatio, submetrics)
 
         expect(balancedResult).toBeCloseToTyped(lopsidedResult, ANTIVOTES_PRECISION)
     })
 
     it("when k < 1, two 2,3-free ratios have the same sopfr, but one has its primes all lopsided on one side, it gets ranked worse", () => {
-        const balancedTwoThreeFreeRatio = [11, 7] as TwoThreeFreeClass
-        const lopsidedTwoThreeFreeRatio = [77, 1] as TwoThreeFreeClass
+        const balanced23FreeRatio = [11, 7] as TwoThreeFreeClass
+        const lopsided23FreeRatio = [77, 1] as TwoThreeFreeClass
         const submetrics: Combination<Submetric> = [
             {
                 [ Parameter.SUM ]: true,
@@ -33,8 +33,8 @@ describe("computeAntivotes", () => {
             },
         ] as Combination<Submetric>
 
-        const balancedResult = computeAntivotes(balancedTwoThreeFreeRatio, submetrics)
-        const lopsidedResult = computeAntivotes(lopsidedTwoThreeFreeRatio, submetrics)
+        const balancedResult = computeAntivotes(balanced23FreeRatio, submetrics)
+        const lopsidedResult = computeAntivotes(lopsided23FreeRatio, submetrics)
 
         expect(balancedResult).toBeLessThan(lopsidedResult)
     })

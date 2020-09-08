@@ -23,8 +23,8 @@
     "find-parameter-extrema": "node -r ts-node/register/transpile-only src/scripts/lfc/commands/findParameterExtrema.ts",
     "perfect-metrics": "node -r ts-node/register/transpile-only --max-old-space-size=131072 src/scripts/lfc/commands/perfectMetrics.ts",
     "guess-backfill-spread-dynamic-parameters": "node -r ts-node/register/transpile-only src/scripts/lfc/commands/correctGoofs/guessBackfillSpreadDynamicParameters.ts",
-    "popular-2-3-free-classes": "node -r ts-node/register/transpile-only --max-old-space-size=131072 src/scripts/popularTwoThreeFreeClasses/commands/popularTwoThreeFreeClasses.ts",
-    "popular-2-3-free-classes-with-best-notating-commas": "node -r ts-node/register/transpile-only --max-old-space-size=131072 src/scripts/popularTwoThreeFreeClasses/commands/popularTwoThreeFreeClassesWithBestNotatingCommas.ts",
+    "popular-2-3-free-classes": "node -r ts-node/register/transpile-only --max-old-space-size=131072 src/scripts/popular23FreeClasses/commands/popular23FreeClasses.ts",
+    "popular-2-3-free-classes-with-best-notating-commas": "node -r ts-node/register/transpile-only --max-old-space-size=131072 src/scripts/popular23FreeClasses/commands/popular23FreeClassesWithBestNotatingCommas.ts",
     "tina-commas": "node -r ts-node/register/transpile-only --max-old-space-size=131072 src/scripts/pitch/commands/tinaCommas.ts"
   },
   "devDependencies": {

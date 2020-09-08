@@ -19,8 +19,8 @@ describe("verifying primary commas", () => {
             const secondaryCommaZone = computeSecondaryCommaZone(symbol)
             const minCents = secondaryCommaZone[ 0 ]
             const maxCents = secondaryCommaZone[ 1 ]
-            const maxTwoThreeFreeSopfr = 61 as Max<Sopfr<5>>
-            const maxTwoThreeFreeCopfr = 555 as Max<Copfr<5>>
+            const max23FreeSopfr = 61 as Max<Sopfr<5>>
+            const max23FreeCopfr = 555 as Max<Copfr<5>>
             const maxAbsoluteApotomeSlope = 14 as Max<Abs<ApotomeSlope>>
             const maxPrimeLimit = 47 as Max<Max<Prime>>
             const maxAbsoluteThreeExponent = 15 as Max<Abs<Integer & Exponent<Prime>>>
@@ -30,8 +30,8 @@ describe("verifying primary commas", () => {
             const commas = computeCommas({
                 minCents,
                 maxCents,
-                maxTwoThreeFreeSopfr,
-                maxTwoThreeFreeCopfr,
+                max23FreeSopfr,
+                max23FreeCopfr,
                 maxAbsoluteApotomeSlope,
                 maxPrimeLimit,
                 maxAbsoluteThreeExponent,

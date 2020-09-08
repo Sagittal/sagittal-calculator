@@ -1,7 +1,7 @@
 import { computeRatioFromMonzo, computeRoughNumberMonzo, computeSuperMonzo, FIVE_ROUGHNESS, Monzo } from "../../general"
 import { TwoThreeFreeClass } from "./types"
 
-const computeTwoThreeFreeClass = (monzo: Monzo): TwoThreeFreeClass => {
+const compute23FreeClass = (monzo: Monzo): TwoThreeFreeClass => {
     const twoThreeFreeMonzo = computeRoughNumberMonzo(monzo, FIVE_ROUGHNESS)
     const numeratorGreaterThanDenominatorMonzo = computeSuperMonzo(twoThreeFreeMonzo)
 
@@ -9,5 +9,5 @@ const computeTwoThreeFreeClass = (monzo: Monzo): TwoThreeFreeClass => {
 }
 
 export {
-    computeTwoThreeFreeClass,
+    compute23FreeClass,
 }

@@ -4,9 +4,9 @@ import {
     DEFAULT_MAX_N2D3P9_FOR_POPULAR_TWO_THREE_FREE_CLASSES,
     POPULAR_TWO_THREE_FREE_CLASSES_SCRIPT_GROUP,
 } from "../constants"
-import { computePopularTwoThreeFreeClassesTable } from "../io"
-import { computeKnownPopularTwoThreeFreeClasses } from "../knownPopularTwoThreeFreeClasses"
-import { computePopularTwoThreeFreeClasses } from "../popularTwoThreeFreeClasses"
+import { computePopular23FreeClassesTable } from "../io"
+import { computeKnownPopular23FreeClasses } from "../knownPopular23FreeClasses"
+import { computePopular23FreeClasses } from "../popular23FreeClasses"
 
 // TODO: consider adding a layer which pre-calculates numerators up to 3501 per Dave's suggestion on the forum
 
@@ -17,14 +17,14 @@ program
 parseCommands(POPULAR_TWO_THREE_FREE_CLASSES_SCRIPT_GROUP)
 
 const maxN2D3P9 = program.maxN2d3p9 || DEFAULT_MAX_N2D3P9_FOR_POPULAR_TWO_THREE_FREE_CLASSES
-const knownPopularTwoThreeFreeClasses = program.knownPopularTwoThreeFreeClasses
+const knownPopular23FreeClasses = program.knownPopular23FreeClasses
 
-const popularTwoThreeFreeClasses = knownPopularTwoThreeFreeClasses ?
-    computeKnownPopularTwoThreeFreeClasses() :
-    computePopularTwoThreeFreeClasses(maxN2D3P9)
+const popular23FreeClasses = knownPopular23FreeClasses ?
+    computeKnownPopular23FreeClasses() :
+    computePopular23FreeClasses(maxN2D3P9)
 
 saveLog(
-    computePopularTwoThreeFreeClassesTable(popularTwoThreeFreeClasses, maxN2D3P9),
+    computePopular23FreeClassesTable(popular23FreeClasses, maxN2D3P9),
     LogTarget.ALL,
     POPULAR_TWO_THREE_FREE_CLASSES_SCRIPT_GROUP,
 )

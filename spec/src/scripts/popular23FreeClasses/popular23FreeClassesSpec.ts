@@ -1,21 +1,21 @@
 import { Max, Ranked } from "../../../../src/general"
 import { N2D3P9 } from "../../../../src/sagittal/comma/evaluation/n2d3p9"
-import { computePopularTwoThreeFreeClasses } from "../../../../src/scripts/popularTwoThreeFreeClasses/popularTwoThreeFreeClasses"
-import { Popular23FreeClass } from "../../../../src/scripts/popularTwoThreeFreeClasses/types"
+import { computePopular23FreeClasses } from "../../../../src/scripts/popular23FreeClasses/popular23FreeClasses"
+import { Popular23FreeClass } from "../../../../src/scripts/popular23FreeClasses/types"
 
-describe("computePopularTwoThreeFreeClasses", () => {
+describe("computePopular23FreeClasses", () => {
     it(
         `returns a ranked (and sorted) list of the most popular 2,3-free classes with N2D3P9 less than the requested max`,
         () => {
             const maxN2D3P9 = 5 as Max<N2D3P9>
 
-            const actual = computePopularTwoThreeFreeClasses(maxN2D3P9)
+            const actual = computePopular23FreeClasses(maxN2D3P9)
 
             const expected = [
                 {
                     n2d3p9: 1,
                     formattedN2D3P9: "  1.000",
-                    formattedTwoThreeFreeClass: "1/1",
+                    formatted23FreeClass: "1/1",
                     popularityRank: 1,
                     votes: 7624,
                     formattedExactlyNotatingJiSymbols: "     |  ",
@@ -25,7 +25,7 @@ describe("computePopularTwoThreeFreeClasses", () => {
                 {
                     n2d3p9: 1.388889,
                     formattedN2D3P9: "  1.389",
-                    formattedTwoThreeFreeClass: "5/1",
+                    formatted23FreeClass: "5/1",
                     popularityRank: 2,
                     votes: 5371,
                     formattedExactlyNotatingJiSymbols: "    '|       /|  ",
@@ -35,7 +35,7 @@ describe("computePopularTwoThreeFreeClasses", () => {
                 {
                     n2d3p9: 2.722222,
                     formattedN2D3P9: "  2.722",
-                    formattedTwoThreeFreeClass: "7/1",
+                    formatted23FreeClass: "7/1",
                     popularityRank: 3,
                     votes: 3016,
                     formattedExactlyNotatingJiSymbols: "     |)     '/|)     .(|\\ ",
@@ -45,7 +45,7 @@ describe("computePopularTwoThreeFreeClasses", () => {
                 {
                     n2d3p9: 3.472222,
                     formattedN2D3P9: "  3.472",
-                    formattedTwoThreeFreeClass: "25/1",
+                    formatted23FreeClass: "25/1",
                     popularityRank: 4,
                     votes: 1610,
                     formattedExactlyNotatingJiSymbols: "   ./|      //|  ",
@@ -55,7 +55,7 @@ describe("computePopularTwoThreeFreeClasses", () => {
                 {
                     n2d3p9: 4.537037,
                     formattedN2D3P9: "  4.537",
-                    formattedTwoThreeFreeClass: "7/5",
+                    formatted23FreeClass: "7/5",
                     popularityRank: 5,
                     votes: 1318,
                     formattedExactlyNotatingJiSymbols: "     |(      '|) ",

@@ -3,7 +3,7 @@ import { N2D3P9, TwoThreeFreeClass } from "../../sagittal"
 
 interface SharedPopular23FreeClassProperties {
     n2d3p9: N2D3P9,
-    formattedTwoThreeFreeClass: Formatted<TwoThreeFreeClass>,
+    formatted23FreeClass: Formatted<TwoThreeFreeClass>,
     formattedN2D3P9: Formatted<N2D3P9>,
     votes: Votes,
     popularityRank: Rank<Popularity> | Io,
@@ -14,7 +14,7 @@ interface Popular23FreeClass extends SharedPopular23FreeClassProperties {
     formattedExactlyNotatingJiSymbols: Io,
 }
 
-interface PopularTwoThreeFreeClassWithBestNotatingComma extends SharedPopular23FreeClassProperties {
+interface Popular23FreeClassWithBestNotatingComma extends SharedPopular23FreeClassProperties {
     centsOfBestNotatingComma: Formatted<Cents>,
     monzoOfBestNotatingComma: Formatted<Monzo>,
     maybeSymbolForBestNotatingComma: Io,
@@ -22,5 +22,5 @@ interface PopularTwoThreeFreeClassWithBestNotatingComma extends SharedPopular23F
 
 export {
     Popular23FreeClass,
-    PopularTwoThreeFreeClassWithBestNotatingComma,
+    Popular23FreeClassWithBestNotatingComma,
 }

@@ -17,20 +17,20 @@ import {
 } from "../../general"
 import { computePrimeExponentExtremasGivenMaxN2D3P9 } from "../../sagittal"
 import { computePrimeExponentRange } from "./primeExponentRange"
-import { computeTwoThreeFreePrimesToCheck } from "./twoThreeFreePrimesToCheck"
+import { compute23FreePrimesToCheck } from "./twoThreeFreePrimesToCheck"
 import { FiveSlicedMonzosToCheckOptions } from "./types"
 
 const computeFiveSlicedMonzosToCheck = (
-    { maxPrimeLimit, maxTwoThreeFreeSopfr, maxTwoThreeFreeCopfr, maxN2D3P9 }: FiveSlicedMonzosToCheckOptions = {},
+    { maxPrimeLimit, max23FreeSopfr, max23FreeCopfr, maxN2D3P9 }: FiveSlicedMonzosToCheckOptions = {},
 ): Array<Monzo<Integer, 5>> => {
-    if (isUndefined(maxTwoThreeFreeSopfr) && isUndefined(maxN2D3P9)) {
+    if (isUndefined(max23FreeSopfr) && isUndefined(maxN2D3P9)) {
         if (isUndefined(maxPrimeLimit)) {
-            if (isUndefined(maxTwoThreeFreeCopfr)) {
+            if (isUndefined(max23FreeCopfr)) {
                 throw new Error("The primes must be limited somehow.")
             } else {
                 throw new Error("The size of the primes must be limited somehow.")
             }
-        } else if (isUndefined(maxTwoThreeFreeCopfr)) {
+        } else if (isUndefined(max23FreeCopfr)) {
             throw new Error("The count of the primes must be limited somehow.")
         }
     }
@@ -38,9 +38,9 @@ const computeFiveSlicedMonzosToCheck = (
     const primeExponentExtremasGivenMaxN2D3P9: Maybe<Array<Extrema<Integer & Exponent<Prime>>>> =
         maxN2D3P9 && computePrimeExponentExtremasGivenMaxN2D3P9(maxN2D3P9, { mirrored: true })
 
-    const twoThreeFreePrimesToCheck = computeTwoThreeFreePrimesToCheck({
+    const twoThreeFreePrimesToCheck = compute23FreePrimesToCheck({
         maxPrimeLimit,
-        maxTwoThreeFreeSopfr,
+        max23FreeSopfr,
         primeExponentExtremasGivenMaxN2D3P9,
     })
 
@@ -58,16 +58,16 @@ const computeFiveSlicedMonzosToCheck = (
             const twoThreeFreeSopfr = computeSopfr([0, 0, ...fiveSlicedMonzoToCheck] as Monzo)
             const twoThreeFreeCopfr = computeCopfr([0, 0, ...fiveSlicedMonzoToCheck] as Monzo)
 
-            const adjustedMaxTwoThreeFreeSopfr = maxTwoThreeFreeSopfr &&
-                maxTwoThreeFreeSopfr - twoThreeFreeSopfr as Max<Sopfr<5>>
-            const adjustedMaxTwoThreeFreeCopfr = maxTwoThreeFreeCopfr &&
-                maxTwoThreeFreeCopfr - twoThreeFreeCopfr as Max<Copfr<5>>
+            const adjustedMax23FreeSopfr = max23FreeSopfr &&
+                max23FreeSopfr - twoThreeFreeSopfr as Max<Sopfr<5>>
+            const adjustedMaxTwoThreeFreeCopfr = max23FreeCopfr &&
+                max23FreeCopfr - twoThreeFreeCopfr as Max<Copfr<5>>
 
             const termRange: Array<Integer & Exponent<Prime>> = computePrimeExponentRange(
                 twoThreeFreePrimeToCheck,
                 {
-                    maxTwoThreeFreeSopfr: adjustedMaxTwoThreeFreeSopfr,
-                    maxTwoThreeFreeCopfr: adjustedMaxTwoThreeFreeCopfr,
+                    max23FreeSopfr: adjustedMax23FreeSopfr,
+                    max23FreeCopfr: adjustedMaxTwoThreeFreeCopfr,
                     primeExponentExtremaGivenMaxN2D3P9,
                 },
             ) as Array<Integer & Exponent<Prime>>

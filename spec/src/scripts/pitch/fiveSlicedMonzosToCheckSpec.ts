@@ -12,14 +12,14 @@ import { computeFiveSlicedMonzosToCheck } from "../../../../src/scripts/pitch/fi
 describe("computeFiveSlicedMonzosToCheck", () => {
     it("returns the list of 5-sliced monzos to check, given all four of the maxes", () => {
         const maxPrimeLimit = 7 as Max<Max<Prime>>
-        const maxTwoThreeFreeSopfr = 15 as Max<Sopfr<5>>
-        const maxTwoThreeFreeCopfr = 2 as Max<Copfr<5>>
+        const max23FreeSopfr = 15 as Max<Sopfr<5>>
+        const max23FreeCopfr = 2 as Max<Copfr<5>>
         const maxN2D3P9 = 5 as Max<N2D3P9>
 
         const actual = computeFiveSlicedMonzosToCheck({
             maxPrimeLimit,
-            maxTwoThreeFreeSopfr,
-            maxTwoThreeFreeCopfr,
+            max23FreeSopfr,
+            max23FreeCopfr,
             maxN2D3P9,
         })
 
@@ -42,13 +42,13 @@ describe("computeFiveSlicedMonzosToCheck", () => {
     describe("3 of 4", () => {
         it("returns the list of 5-sliced monzos to check, given a max prime limit, a max 2,3-free sopfr, and a max 2,3-free copfr", () => {
             const maxPrimeLimit = 7 as Max<Max<Prime>>
-            const maxTwoThreeFreeSopfr = 15 as Max<Sopfr<5>>
-            const maxTwoThreeFreeCopfr = 2 as Max<Copfr<5>>
+            const max23FreeSopfr = 15 as Max<Sopfr<5>>
+            const max23FreeCopfr = 2 as Max<Copfr<5>>
 
             const actual = computeFiveSlicedMonzosToCheck({
                 maxPrimeLimit,
-                maxTwoThreeFreeSopfr,
-                maxTwoThreeFreeCopfr,
+                max23FreeSopfr,
+                max23FreeCopfr,
             })
 
             const expected = jasmine.arrayWithExactContents([
@@ -72,12 +72,12 @@ describe("computeFiveSlicedMonzosToCheck", () => {
         it("returns the list of 5-sliced monzos to check, given a max prime limit, a max N2D3P9, and a max 2,3-free copfr", () => {
             const maxPrimeLimit = 7 as Max<Max<Prime>>
             const maxN2D3P9 = 5 as Max<N2D3P9>
-            const maxTwoThreeFreeCopfr = 2 as Max<Copfr<5>>
+            const max23FreeCopfr = 2 as Max<Copfr<5>>
 
             const actual = computeFiveSlicedMonzosToCheck({
                 maxPrimeLimit,
                 maxN2D3P9,
-                maxTwoThreeFreeCopfr,
+                max23FreeCopfr,
             })
 
             const expected = jasmine.arrayWithExactContents([
@@ -97,14 +97,14 @@ describe("computeFiveSlicedMonzosToCheck", () => {
         })
 
         it("returns the list of 5-sliced monzos to check, given a max 2,3-free sopfr, a max N2D3P9, and a max 2,3-free copfr", () => {
-            const maxTwoThreeFreeSopfr = 15 as Max<Sopfr<5>>
+            const max23FreeSopfr = 15 as Max<Sopfr<5>>
             const maxN2D3P9 = 5 as Max<N2D3P9>
-            const maxTwoThreeFreeCopfr = 2 as Max<Copfr<5>>
+            const max23FreeCopfr = 2 as Max<Copfr<5>>
 
             const actual = computeFiveSlicedMonzosToCheck({
-                maxTwoThreeFreeSopfr,
+                max23FreeSopfr,
                 maxN2D3P9,
-                maxTwoThreeFreeCopfr,
+                max23FreeCopfr,
             })
 
             const expected = jasmine.arrayWithExactContents([
@@ -125,12 +125,12 @@ describe("computeFiveSlicedMonzosToCheck", () => {
 
         it("returns the list of 5-sliced monzos to check, given a max prime limit, a max N2D3P9, and a max 2,3-free sopfr", () => {
             const maxPrimeLimit = 7 as Max<Max<Prime>>
-            const maxTwoThreeFreeSopfr = 15 as Max<Sopfr<5>>
+            const max23FreeSopfr = 15 as Max<Sopfr<5>>
             const maxN2D3P9 = 5 as Max<N2D3P9>
 
             const actual = computeFiveSlicedMonzosToCheck({
                 maxPrimeLimit,
-                maxTwoThreeFreeSopfr,
+                max23FreeSopfr,
                 maxN2D3P9,
             })
 
@@ -154,9 +154,9 @@ describe("computeFiveSlicedMonzosToCheck", () => {
     describe("2 of 4", () => {
         it("returns the list of 5-sliced monzos to check, given a max prime limit and a max 2,3-free sopfr", () => {
             const maxPrimeLimit = 7 as Max<Max<Prime>>
-            const maxTwoThreeFreeSopfr = 15 as Max<Sopfr<5>>
+            const max23FreeSopfr = 15 as Max<Sopfr<5>>
 
-            const actual = computeFiveSlicedMonzosToCheck({ maxPrimeLimit, maxTwoThreeFreeSopfr })
+            const actual = computeFiveSlicedMonzosToCheck({ maxPrimeLimit, max23FreeSopfr })
 
             const expected = jasmine.arrayWithExactContents([
                 [-3],
@@ -206,9 +206,9 @@ describe("computeFiveSlicedMonzosToCheck", () => {
 
         it("returns the list of 5-sliced monzos to check, given a max prime limit and a max 2,3-free copfr", () => {
             const maxPrimeLimit = 7 as Max<Max<Prime>>
-            const maxTwoThreeFreeCopfr = 3 as Max<Copfr<5>>
+            const max23FreeCopfr = 3 as Max<Copfr<5>>
 
-            const actual = computeFiveSlicedMonzosToCheck({ maxPrimeLimit, maxTwoThreeFreeCopfr })
+            const actual = computeFiveSlicedMonzosToCheck({ maxPrimeLimit, max23FreeCopfr })
 
             const expected = jasmine.arrayWithExactContents([
                 [-3],
@@ -241,10 +241,10 @@ describe("computeFiveSlicedMonzosToCheck", () => {
         })
 
         it("returns the list of 5-sliced monzos to check, given a max 2,3-free sopfr and a max 2,3-free copfr", () => {
-            const maxTwoThreeFreeSopfr = 20 as Max<Sopfr<5>>
-            const maxTwoThreeFreeCopfr = 3 as Max<Copfr<5>>
+            const max23FreeSopfr = 20 as Max<Sopfr<5>>
+            const max23FreeCopfr = 3 as Max<Copfr<5>>
 
-            const actual = computeFiveSlicedMonzosToCheck({ maxTwoThreeFreeSopfr, maxTwoThreeFreeCopfr })
+            const actual = computeFiveSlicedMonzosToCheck({ max23FreeSopfr, max23FreeCopfr })
 
             const expected = jasmine.arrayWithExactContents([
                 [-3],
@@ -300,9 +300,9 @@ describe("computeFiveSlicedMonzosToCheck", () => {
 
         it("returns the list of 5-sliced monzos to check, given a max N2D3P9 and a max 2,3-free copfr", () => {
             const maxN2D3P9 = 9 as Max<N2D3P9>
-            const maxTwoThreeFreeCopfr = 2 as Max<Copfr<5>>
+            const max23FreeCopfr = 2 as Max<Copfr<5>>
 
-            const actual = computeFiveSlicedMonzosToCheck({ maxN2D3P9, maxTwoThreeFreeCopfr })
+            const actual = computeFiveSlicedMonzosToCheck({ maxN2D3P9, max23FreeCopfr })
 
             const expected = jasmine.arrayWithExactContents([
                 [ -2 ],
@@ -332,9 +332,9 @@ describe("computeFiveSlicedMonzosToCheck", () => {
 
         it("returns the list of 5-sliced monzos to check, given a max N2D3P9 and a max 2,3-free sopfr", () => {
             const maxN2D3P9 = 6 as Max<N2D3P9>
-            const maxTwoThreeFreeSopfr = 12 as Max<Sopfr<5>>
+            const max23FreeSopfr = 12 as Max<Sopfr<5>>
 
-            const actual = computeFiveSlicedMonzosToCheck({ maxN2D3P9, maxTwoThreeFreeSopfr })
+            const actual = computeFiveSlicedMonzosToCheck({ maxN2D3P9, max23FreeSopfr })
 
             const expected = jasmine.arrayWithExactContents([
                 [ -2 ],
@@ -355,9 +355,9 @@ describe("computeFiveSlicedMonzosToCheck", () => {
 
     describe("1 of 4 possibilities", () => {
         it("returns the list of 5-sliced monzos to check, given only a max 2,3-free sopfr", () => {
-            const maxTwoThreeFreeSopfr = 15 as Max<Sopfr<5>>
+            const max23FreeSopfr = 15 as Max<Sopfr<5>>
 
-            const actual = computeFiveSlicedMonzosToCheck({ maxTwoThreeFreeSopfr })
+            const actual = computeFiveSlicedMonzosToCheck({ max23FreeSopfr })
 
             const expected = jasmine.arrayWithExactContents([
                 [-3],
@@ -417,9 +417,9 @@ describe("computeFiveSlicedMonzosToCheck", () => {
         })
 
         it("fails when given only a max 2,3-free copfr", () => {
-            const maxTwoThreeFreeCopfr = 3 as Max<Copfr<5>>
+            const max23FreeCopfr = 3 as Max<Copfr<5>>
 
-            expect(() => computeFiveSlicedMonzosToCheck({ maxTwoThreeFreeCopfr })).toThrowError("The size of the primes must be limited somehow.")
+            expect(() => computeFiveSlicedMonzosToCheck({ max23FreeCopfr })).toThrowError("The size of the primes must be limited somehow.")
         })
 
         it("fails when given none of the maxs", () => {

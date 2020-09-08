@@ -14,14 +14,14 @@ import {
     shallowClone,
     stringify,
 } from "../../general"
-import { computePrimeExponentExtremasGivenMaxN2D3P9, computeTwoThreeFreeClass, N2D3P9 } from "../../sagittal"
+import { compute23FreeClass, computePrimeExponentExtremasGivenMaxN2D3P9, N2D3P9 } from "../../sagittal"
 import { POPULAR_TWO_THREE_FREE_CLASSES_SCRIPT_GROUP } from "./constants"
-import { computeMaybePopularTwoThreeFreeClass } from "./maybePopularTwoThreeFreeClass"
-import { Popular23FreeClass } from "./types"
+import { computeMaybePopular23FreeClassWithBestNotatingComma } from "./maybePopular23FreeClassWithBestNotatingComma"
+import { Popular23FreeClassWithBestNotatingComma } from "./types"
 
-const computePopularTwoThreeFreeClasses = (
+const computePopular23FreeClassesWithBestNotatingCommas = (
     maxN2D3P9: Max<N2D3P9>,
-): Array<Ranked<Popular23FreeClass>> => {
+): Array<Ranked<Popular23FreeClassWithBestNotatingComma>> => {
     saveLog(
         "About to calculate prime exponent extremas given max N2D3P9" as Io,
         LogTarget.PROGRESS,
@@ -46,11 +46,11 @@ const computePopularTwoThreeFreeClasses = (
     const finalMonzo: Monzo = primeExponentExtremasGivenMaxN2D3P9.map(([_, maxPrimeExponent]) => maxPrimeExponent)
     let twoThreeFreeMonzo: Monzo = shallowClone(initialMonzo)
 
-    const popularTwoThreeFreeClasses = [] as Array<Popular23FreeClass>
+    const popular23FreeClassesWithBestNotatingCommas = [] as Array<Popular23FreeClassWithBestNotatingComma>
     while (true) {
         // do the work
-        const maybePopularTwoThreeFreeClass =
-            computeMaybePopularTwoThreeFreeClass(
+        const maybePopular23FreeClassWithBestNotatingComma =
+            computeMaybePopular23FreeClassWithBestNotatingComma(
                 twoThreeFreeMonzo,
                 maxN2D3P9
             )
@@ -65,13 +65,13 @@ const computePopularTwoThreeFreeClasses = (
             )
         }
 
-        if (!isUndefined(maybePopularTwoThreeFreeClass)) {
+        if (!isUndefined(maybePopular23FreeClassWithBestNotatingComma)) {
             saveLog(
-                stringify(maybePopularTwoThreeFreeClass) as Io,
+                stringify(maybePopular23FreeClassWithBestNotatingComma) as Io,
                 LogTarget.PROGRESS,
-                POPULAR_TWO_THREE_FREE_CLASSES_SCRIPT_GROUP
+                POPULAR_TWO_THREE_FREE_CLASSES_SCRIPT_GROUP,
             )
-            popularTwoThreeFreeClasses.push(maybePopularTwoThreeFreeClass)
+            popular23FreeClassesWithBestNotatingCommas.push(maybePopular23FreeClassWithBestNotatingComma)
         }
 
         // figure out which index is the first one which hasn't reached its max
@@ -103,9 +103,9 @@ const computePopularTwoThreeFreeClasses = (
         }
     }
 
-    return rank(popularTwoThreeFreeClasses, { by: "n2d3p9", strategy: RankStrategy.FRACTIONAL })
+    return rank(popular23FreeClassesWithBestNotatingCommas, { by: "n2d3p9", strategy: RankStrategy.FRACTIONAL })
 }
 
 export {
-    computePopularTwoThreeFreeClasses,
+    computePopular23FreeClassesWithBestNotatingCommas,
 }

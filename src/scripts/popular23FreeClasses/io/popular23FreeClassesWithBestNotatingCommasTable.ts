@@ -1,26 +1,26 @@
 import { addTexts, Count, count, formatTable, Io, Max, Ranked, Row, Table } from "../../../general"
 import { N2D3P9 } from "../../../sagittal"
-import { Popular23FreeClass, PopularTwoThreeFreeClassWithBestNotatingComma } from "../types"
+import { Popular23FreeClass, Popular23FreeClassWithBestNotatingComma } from "../types"
 import { computeBestNotatingCommaHeaderRows } from "./headerRows"
 
-const computePopularTwoThreeFreeClassesWithBestNotatingCommasTable = (
-    popularTwoThreeFreeClasses: Array<Ranked<PopularTwoThreeFreeClassWithBestNotatingComma>>,
+const computePopular23FreeClassesWithBestNotatingCommasTable = (
+    popular23FreeClasses: Array<Ranked<Popular23FreeClassWithBestNotatingComma>>,
     maxN2D3P9: Max<N2D3P9>,
 ): Io => {
     const table: Table<Popular23FreeClass> = computeBestNotatingCommaHeaderRows()
     const headerRowCount = count(table) as Count<Row<Popular23FreeClass, "Header">>
 
-    popularTwoThreeFreeClasses.forEach(popularTwoThreeFreeClass => {
+    popular23FreeClasses.forEach(popular23FreeClass => {
         const {
-            formattedTwoThreeFreeClass,
+            formatted23FreeClass,
             rank: estimatedRank,
             centsOfBestNotatingComma,
             monzoOfBestNotatingComma,
             maybeSymbolForBestNotatingComma,
-        } = popularTwoThreeFreeClass
+        } = popular23FreeClass
 
         table.push([
-            formattedTwoThreeFreeClass,
+            formatted23FreeClass,
             estimatedRank,
             centsOfBestNotatingComma,
             monzoOfBestNotatingComma,
@@ -28,11 +28,11 @@ const computePopularTwoThreeFreeClassesWithBestNotatingCommasTable = (
         ] as Row<Popular23FreeClass>)
     })
 
-    const popularTwoThreeFreeClassesTableTitle = `count of results with N2D3P9 <= ${maxN2D3P9}: ${popularTwoThreeFreeClasses.length}\n\n` as Io
+    const popular23FreeClassesTableTitle = `count of results with N2D3P9 <= ${maxN2D3P9}: ${popular23FreeClasses.length}\n\n` as Io
 
-    return addTexts(popularTwoThreeFreeClassesTableTitle, formatTable(table, { headerRowCount }))
+    return addTexts(popular23FreeClassesTableTitle, formatTable(table, { headerRowCount }))
 }
 
 export {
-    computePopularTwoThreeFreeClassesWithBestNotatingCommasTable,
+    computePopular23FreeClassesWithBestNotatingCommasTable,
 }

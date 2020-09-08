@@ -1,12 +1,12 @@
 import { computePrimeCount, isUndefined, min, PRIMES, ZERO_ONE_INDEX_DIFF } from "../../general"
 import { TwoThreeFreePrimesToCheckOptions } from "./types"
 
-const computeTwoThreeFreePrimesToCheck = (options: TwoThreeFreePrimesToCheckOptions) => {
-    const { maxPrimeLimit, maxTwoThreeFreeSopfr, primeExponentExtremasGivenMaxN2D3P9 } = options
+const compute23FreePrimesToCheck = (options: TwoThreeFreePrimesToCheckOptions) => {
+    const { maxPrimeLimit, max23FreeSopfr, primeExponentExtremasGivenMaxN2D3P9 } = options
 
     if (
         isUndefined(maxPrimeLimit) &&
-        isUndefined(maxTwoThreeFreeSopfr) &&
+        isUndefined(max23FreeSopfr) &&
         isUndefined(primeExponentExtremasGivenMaxN2D3P9)
     ) {
         throw new Error("The maximum prime must be limited somehow.")
@@ -14,14 +14,14 @@ const computeTwoThreeFreePrimesToCheck = (options: TwoThreeFreePrimesToCheckOpti
 
     const indexOfMaxPrimeByPrimeLimit =
         !isUndefined(maxPrimeLimit) ? computePrimeCount(maxPrimeLimit) - ZERO_ONE_INDEX_DIFF : Infinity
-    const indexOfMaxPrimeByTwoThreeFreeSopfr =
-        !isUndefined(maxTwoThreeFreeSopfr) ? computePrimeCount(maxTwoThreeFreeSopfr) - ZERO_ONE_INDEX_DIFF : Infinity
+    const indexOfMaxPrimeBy23FreeSopfr =
+        !isUndefined(max23FreeSopfr) ? computePrimeCount(max23FreeSopfr) - ZERO_ONE_INDEX_DIFF : Infinity
     const indexOfMaxPrimeByN2D3P9 =
         !isUndefined(primeExponentExtremasGivenMaxN2D3P9) ? primeExponentExtremasGivenMaxN2D3P9.length - 1 : Infinity
 
     const indexOfMaxPrime = min(
         indexOfMaxPrimeByPrimeLimit,
-        indexOfMaxPrimeByTwoThreeFreeSopfr,
+        indexOfMaxPrimeBy23FreeSopfr,
         indexOfMaxPrimeByN2D3P9,
     )
 
@@ -29,5 +29,5 @@ const computeTwoThreeFreePrimesToCheck = (options: TwoThreeFreePrimesToCheckOpti
 }
 
 export {
-    computeTwoThreeFreePrimesToCheck,
+    compute23FreePrimesToCheck,
 }

@@ -26,7 +26,7 @@ const computeNumeratorMonzosToCheckGivenMaxN2D3P9 = (maxN2D3P9: Max<N2D3P9>): Mo
     //  where there were breaks in these prime exponent extrema
     //  and just store that as a hardcoded thing (test it, certainly)
     //  - and another improvement you'd want to try to make is to see if you can abstract and adapt what you're doing
-    //  in popularTwoThreeFreeClasses to avoid precalculating all the monzos for the prime exponent extrema
+    //  in popular23FreeClasses to avoid precalculating all the monzos for the prime exponent extrema
     //  the ones which include both the denominator and the numerator
     //  so that you can use it here, since this computeMonzosFromPrimeExponentExtremas turns out to be
     //  so ill-advised. try to get rid of it.

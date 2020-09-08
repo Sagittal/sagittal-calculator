@@ -49,8 +49,8 @@ const isLate = (comma: AnalyzedRationalPitch) => {
 
 const commas = computeCommas({
     ...pitchScriptGroupSettings,
-    maxTwoThreeFreeCopfr: LIMITLESS_COPFR,
-    maxTwoThreeFreeSopfr: MAX_POSSIBLE_SOPFR_WITHOUT_CRASHING,
+    max23FreeCopfr: LIMITLESS_COPFR,
+    max23FreeSopfr: MAX_POSSIBLE_SOPFR_WITHOUT_CRASHING,
     maxPrimeLimit: MAX_POSSIBLE_PRIME_LIMIT_GIVEN_MAX_POSSIBLE_SOPFR,
     minCents: MIN_CENTS,
     maxCents: MAX_CENTS,

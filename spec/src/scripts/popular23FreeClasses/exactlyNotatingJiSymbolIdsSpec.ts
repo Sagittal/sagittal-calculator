@@ -1,6 +1,6 @@
 import { Id, Monzo } from "../../../../src/general"
 import { JiSymbol } from "../../../../src/sagittal/notations/ji"
-import { computeExactlyNotatingJiSymbolIds } from "../../../../src/scripts/popularTwoThreeFreeClasses/exactlyNotatingJiSymbolIds"
+import { computeExactlyNotatingJiSymbolIds } from "../../../../src/scripts/popular23FreeClasses/exactlyNotatingJiSymbolIds"
 
 describe("computeExactlyNotatingJiSymbols", () => {
     it(

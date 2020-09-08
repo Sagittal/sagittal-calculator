@@ -19,26 +19,26 @@ program
         parseInt,
     )
     .option(
-        `-${CommandFlag.TWO_THREE_FREE_SOPFR}, --max-2-3-free-sopfr <maxTwoThreeFreeSopfr>`,
+        `-${CommandFlag.TWO_THREE_FREE_SOPFR}, --max-2-3-free-sopfr <max23FreeSopfr>`,
         "max 2,3-free sopfr",
         parseInt,
     )
     .option(
-        `-${CommandFlag.TWO_THREE_FREE_COPFR}, --max-2-3-free-copfr <maxTwoThreeFreeCopfr>`,
+        `-${CommandFlag.TWO_THREE_FREE_COPFR}, --max-2-3-free-copfr <max23FreeCopfr>`,
         "max 2,3-free copfr",
         parseInt,
     )
 
 applySharedPitchCommandSetup()
 
-const maxTwoThreeFreeSopfr = program.maxTwoThreeFreeSopfr || DEFAULT_MAX_TWO_THREE_FREE_SOPFR
-const maxTwoThreeFreeCopfr = program.maxTwoThreeFreeCopfr || DEFAULT_MAX_TWO_THREE_FREE_COPFR
+const max23FreeSopfr = program.max23FreeSopfr || DEFAULT_MAX_TWO_THREE_FREE_SOPFR
+const max23FreeCopfr = program.max23FreeCopfr || DEFAULT_MAX_TWO_THREE_FREE_COPFR
 const maxPrimeLimit: Max<Max<Prime>> = program.maxPrimeLimit || DEFAULT_MAX_PRIME_LIMIT
 
 const commas = computeCommas({
     ...pitchScriptGroupSettings,
-    maxTwoThreeFreeCopfr,
-    maxTwoThreeFreeSopfr,
+    max23FreeCopfr,
+    max23FreeSopfr,
     maxPrimeLimit,
 })
 

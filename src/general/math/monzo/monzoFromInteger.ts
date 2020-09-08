@@ -36,7 +36,7 @@ const computeMonzoFromInteger = (integer: Integer): Monzo => {
         }
     }
 
-    if (remnant > 1) throw new Error(`This number contains primes which are too big; remainder is ${remnant}`)
+    if (remnant > 1) throw new Error(`This integer ${integer} contains primes which are too big; remainder is ${remnant}`)
 
     return monzo
 }

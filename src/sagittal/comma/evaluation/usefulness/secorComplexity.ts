@@ -24,8 +24,6 @@ const computeSecorComplexity = (monzo: Monzo) => {
 
     const l = 2 ** (abs(computeApotomeSlope(monzo)) - 8.5) * Math.log(g + 2)
 
-    console.log(g, j, k, l)
-
     return g + j + k + l
 }
 

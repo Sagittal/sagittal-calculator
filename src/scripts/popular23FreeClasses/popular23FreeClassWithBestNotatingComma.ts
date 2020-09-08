@@ -25,8 +25,8 @@ import {
     N2D3P9,
     TwoThreeFreeClass,
 } from "../../sagittal"
-import { popularTwoThreeFreeClassesScriptGroupSettings } from "./globals"
-import { PopularTwoThreeFreeClassWithBestNotatingComma } from "./types"
+import { popular23FreeClassesScriptGroupSettings } from "./globals"
+import { Popular23FreeClassWithBestNotatingComma } from "./types"
 
 // TODO: not yet tested
 const isLate = (notatingComma: AnalyzedRationalPitch, bestNotatingComma: AnalyzedRationalPitch) => {
@@ -41,12 +41,12 @@ const isLaas = (notatingComma: AnalyzedRationalPitch, bestNotatingComma: Analyze
     return abs(notatingComma.apotomeSlope) < abs(bestNotatingComma.apotomeSlope)
 }
 
-const computePopularTwoThreeFreeClassWithBestNotatingComma = (
+const computePopular23FreeClassWithBestNotatingComma = (
     { twoThreeFreeClass, n2d3p9 }: { twoThreeFreeClass: TwoThreeFreeClass, n2d3p9: N2D3P9 },
-): PopularTwoThreeFreeClassWithBestNotatingComma => {
+): Popular23FreeClassWithBestNotatingComma => {
     const formattedN2D3P9 = formatNumber(n2d3p9)
 
-    const formattedTwoThreeFreeClass: Formatted<TwoThreeFreeClass> = formatRatio(twoThreeFreeClass)
+    const formatted23FreeClass: Formatted<TwoThreeFreeClass> = formatRatio(twoThreeFreeClass)
     const popularity = COMMA_POPULARITIES.find(popularity => {
         return deepEquals(popularity.twoThreeFreeClass, twoThreeFreeClass)
     })
@@ -63,7 +63,7 @@ const computePopularTwoThreeFreeClassWithBestNotatingComma = (
         if (
             isUndefined(bestNotatingComma) ||
             (
-                popularTwoThreeFreeClassesScriptGroupSettings.useLate ?
+                popular23FreeClassesScriptGroupSettings.useLate ?
                     isLate(notatingComma, bestNotatingComma) :
                     isLaas(notatingComma, bestNotatingComma)
             )
@@ -81,7 +81,7 @@ const computePopularTwoThreeFreeClassWithBestNotatingComma = (
     return {
         n2d3p9,
         formattedN2D3P9,
-        formattedTwoThreeFreeClass,
+        formatted23FreeClass,
         popularityRank,
         votes,
         centsOfBestNotatingComma: formatNumber(commaWithMaybeSagittalSymbol.cents),
@@ -94,5 +94,5 @@ const computePopularTwoThreeFreeClassWithBestNotatingComma = (
 }
 
 export {
-    computePopularTwoThreeFreeClassWithBestNotatingComma,
+    computePopular23FreeClassWithBestNotatingComma,
 }

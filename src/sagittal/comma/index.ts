@@ -17,12 +17,12 @@ export {
 } from "./evaluation"
 export { CommaNameOptions, CommasFromFiveSlicedMonzoOptions, TwoThreeFreeClass } from "./types"
 export {
-    computeMonzoFromTwoThreeFreeRatioAndSizeCategoryName,
+    computeMonzoFrom23FreeRatioAndSizeCategoryName,
     computeSagittalCommaName,
     SIZE_CATEGORY_BOUNDS,
     parseCommaName,
 } from "./name"
-export { computeTwoThreeFreeClass } from "./twoThreeFreeClass"
-export { parseTwoThreeFreeClass } from "./parseTwoThreeFreeClass"
+export { compute23FreeClass } from "./twoThreeFreeClass"
+export { parse23FreeClass } from "./parse23FreeClass"
 
 // TODO: wait, is this entire folder actually not "comma" but more like 2,3-free class???

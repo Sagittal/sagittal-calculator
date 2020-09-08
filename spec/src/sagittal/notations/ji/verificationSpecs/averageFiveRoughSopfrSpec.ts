@@ -9,12 +9,12 @@ const AVERAGE_TWO_THREE_FREE_SOPFR: Average<Sopfr<5>> = 22.78523489932886 as Ave
 describe("average 2,3-free sopfr", () => {
     it("is about 23", () => {
         const total: number = JI_SYMBOLS.reduce(
-            (totalTwoThreeFreeSopfr, symbol) => {
+            (total23FreeSopfr, symbol) => {
                 const primaryComma = getSagittalComma(symbol.primaryCommaId)
                 const twoThreeFreeNumberMonzo: Monzo = computeRoughNumberMonzo(primaryComma.monzo, FIVE_ROUGHNESS)
                 const twoThreeFreeSopfr = computeSopfr(twoThreeFreeNumberMonzo)
 
-                return totalTwoThreeFreeSopfr + twoThreeFreeSopfr
+                return total23FreeSopfr + twoThreeFreeSopfr
             },
             0,
         )

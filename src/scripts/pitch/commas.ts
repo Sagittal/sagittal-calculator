@@ -7,8 +7,8 @@ const computeCommas = (options: CommasOptions): AnalyzedRationalPitch[] => {
     const {
         minCents,
         maxCents,
-        maxTwoThreeFreeSopfr,
-        maxTwoThreeFreeCopfr,
+        max23FreeSopfr,
+        max23FreeCopfr,
         maxAbsoluteApotomeSlope,
         maxPrimeLimit,
         maxAbsoluteThreeExponent,
@@ -21,8 +21,8 @@ const computeCommas = (options: CommasOptions): AnalyzedRationalPitch[] => {
 
     const fiveSlicedMonzosToCheck: Array<Monzo<Integer, 5>> = computeFiveSlicedMonzosToCheck({
         maxPrimeLimit,
-        maxTwoThreeFreeSopfr,
-        maxTwoThreeFreeCopfr,
+        max23FreeSopfr,
+        max23FreeCopfr,
     })
 
     fiveSlicedMonzosToCheck.forEach(fiveSlicedMonzoToCheck => {
