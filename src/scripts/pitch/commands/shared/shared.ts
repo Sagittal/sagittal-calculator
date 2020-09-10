@@ -17,12 +17,12 @@ const applySharedPitchCommandSetup = () => {
         )
         .option(
             `-${CommandFlag.APOTOME_SLOPE}, --max-absolute-apotome-slope <maxAbsoluteApotomeSlope>`,
-            "max absolute apotome slope",
+            "max absolute apotome slope (AAS)",
             parseFloat,
         )
         .option(
-            `-${CommandFlag.ABSOLUTE_THREE}, --max-absolute-three-exponent <maxAbsoluteThreeExponent>`,
-            "max absolute 3 exponent",
+            `-${CommandFlag.ABSOLUTE_THREE}, --max-absolute-3-exponent <maxAbsolute3Exponent>`,
+            "max absolute 3 exponent (ATE)",
             parseInt,
         )
         .option(
@@ -45,8 +45,8 @@ const applySharedPitchCommandSetup = () => {
     if (program.maxAbsoluteApotomeSlope) {
         pitchScriptGroupSettings.maxAbsoluteApotomeSlope = program.maxAbsoluteApotomeSlope
     }
-    if (program.maxAbsoluteThreeExponent) {
-        pitchScriptGroupSettings.maxAbsoluteThreeExponent = program.maxAbsoluteThreeExponent
+    if (program.maxAbsolute3Exponent) {
+        pitchScriptGroupSettings.maxAbsolute3Exponent = program.maxAbsolute3Exponent
     }
     if (program.maxN2d3p9) pitchScriptGroupSettings.maxN2D3P9 = program.maxN2d3p9
     if (program.sortBy) pitchScriptGroupSettings.sortKey = program.sortBy

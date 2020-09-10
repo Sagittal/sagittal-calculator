@@ -1,10 +1,10 @@
 export { computeNotatingCommas } from "./notatingCommas"
-export { computeCommasFromTwoThreeFreeMonzo } from "./commasFromFiveSlicedMonzo"
+export { computeCommasFrom23FreeMonzo } from "./commasFrom23FreeMonzo"
 export { analyzeComma } from "./analyzeComma"
 export { analyzeRationalPitch } from "./analyzeRationalPitch"
 export {
     DEFAULT_MAX_ABSOLUTE_APOTOME_SLOPE,
-    DEFAULT_MAX_ABSOLUTE_THREE_EXPONENT,
+    DEFAULT_MAX_ABSOLUTE_3_EXPONENT,
     DEFAULT_MAX_CENTS,
     DEFAULT_MAX_TWO_THREE_FREE_COPFR,
     DEFAULT_MAX_TWO_THREE_FREE_SOPFR,

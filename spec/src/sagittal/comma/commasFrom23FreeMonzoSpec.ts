@@ -1,18 +1,18 @@
 import { Abs, Cents, Exponent, Integer, Max, Min, Monzo, Prime } from "../../../../src/general"
-import { ApotomeSlope, computeCommasFromTwoThreeFreeMonzo, N2D3P9 } from "../../../../src/sagittal"
+import { ApotomeSlope, computeCommasFrom23FreeMonzo, N2D3P9 } from "../../../../src/sagittal"
 
-describe("computeCommasFromTwoThreeFreeMonzo", () => {
+describe("computeCommasFrom23FreeMonzo", () => {
     const twoThreeFreeMonzo: Monzo<{ rough: 5 }> = [0, 0, 3, 5, -1] as Monzo<{ rough: 5 }>
     const minCents = 40 as Min<Cents>
     const maxCents = 40.1 as Max<Cents>
-    const maxAbsoluteThreeExponent = 12 as Max<Abs<Integer & Exponent<Prime>>>
+    const maxAbsolute3Exponent = 12 as Max<Abs<Integer & Exponent<Prime>>>
     const maxN2D3P9 = 40000 as Max<N2D3P9>
 
     it("returns commas with the prime content from the two-three-free monzo", () => {
-        const actual = computeCommasFromTwoThreeFreeMonzo(twoThreeFreeMonzo, {
+        const actual = computeCommasFrom23FreeMonzo(twoThreeFreeMonzo, {
             minCents,
             maxCents,
-            maxAbsoluteThreeExponent,
+            maxAbsolute3Exponent,
             maxN2D3P9,
         })
 
@@ -25,10 +25,10 @@ describe("computeCommasFromTwoThreeFreeMonzo", () => {
             const highMaxAbsoluteApotomeSlope = 10 as Max<Abs<ApotomeSlope>>
             const lowMaxAbsoluteApotomeSlope = 8 as Max<Abs<ApotomeSlope>>
 
-            const resultWithHighMaxAbsoluteApotomeSlope = computeCommasFromTwoThreeFreeMonzo(twoThreeFreeMonzo, {
+            const resultWithHighMaxAbsoluteApotomeSlope = computeCommasFrom23FreeMonzo(twoThreeFreeMonzo, {
                 minCents,
                 maxCents,
-                maxAbsoluteThreeExponent,
+                maxAbsolute3Exponent,
                 maxAbsoluteApotomeSlope: highMaxAbsoluteApotomeSlope,
                 maxN2D3P9,
             })
@@ -36,10 +36,10 @@ describe("computeCommasFromTwoThreeFreeMonzo", () => {
             const expected = [{ monzo: [-8, -6, 3, 5, -1] as Monzo<{ comma: true }> }]
             expect(resultWithHighMaxAbsoluteApotomeSlope).toEqual(expected)
 
-            const resultWithLowMaxAbsoluteApotomeSlope = computeCommasFromTwoThreeFreeMonzo(twoThreeFreeMonzo, {
+            const resultWithLowMaxAbsoluteApotomeSlope = computeCommasFrom23FreeMonzo(twoThreeFreeMonzo, {
                 minCents,
                 maxCents,
-                maxAbsoluteThreeExponent,
+                maxAbsolute3Exponent,
                 maxAbsoluteApotomeSlope: lowMaxAbsoluteApotomeSlope,
             })
 

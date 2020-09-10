@@ -1,6 +1,6 @@
 import { computeRoughNumberMonzo, invertMonzo, Monzo } from "../../general"
 import { Comma } from "../types"
-import { computeCommasFromTwoThreeFreeMonzo } from "./commasFromFiveSlicedMonzo"
+import { computeCommasFrom23FreeMonzo } from "./commasFrom23FreeMonzo"
 import { CommasFrom23FreeMonzoOptions } from "./types"
 
 const computeNotatingCommas = (
@@ -10,8 +10,8 @@ const computeNotatingCommas = (
     const twoThreeFreeMonzo: Monzo<{ rough: 5 }> = computeRoughNumberMonzo(monzo, 5) as Monzo<{ rough: 5 }>
 
     return [
-        ...computeCommasFromTwoThreeFreeMonzo(twoThreeFreeMonzo, options),
-        ...computeCommasFromTwoThreeFreeMonzo(invertMonzo(twoThreeFreeMonzo), options),
+        ...computeCommasFrom23FreeMonzo(twoThreeFreeMonzo, options),
+        ...computeCommasFrom23FreeMonzo(invertMonzo(twoThreeFreeMonzo), options),
     ]
 }
 

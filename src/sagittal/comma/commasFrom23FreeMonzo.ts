@@ -12,8 +12,8 @@ import {
 import { AnalyzedComma, Comma } from "../types"
 import { analyzeComma } from "./analyzeComma"
 import {
+    DEFAULT_MAX_ABSOLUTE_3_EXPONENT,
     DEFAULT_MAX_ABSOLUTE_APOTOME_SLOPE,
-    DEFAULT_MAX_ABSOLUTE_THREE_EXPONENT,
     DEFAULT_MAX_CENTS,
     DEFAULT_MAX_N2D3P9,
     DEFAULT_MIN_CENTS,
@@ -22,21 +22,21 @@ import { CommasFrom23FreeMonzoOptions } from "./types"
 
 // TODO: rename file and similar files too
 
-const computeCommasFromTwoThreeFreeMonzo = (
+const computeCommasFrom23FreeMonzo = (
     twoThreeFreeMonzo: Monzo<{ rough: 5 }>,
     options?: CommasFrom23FreeMonzoOptions,
 ): Comma[] => {
     const {
         minCents = DEFAULT_MIN_CENTS,
         maxCents = DEFAULT_MAX_CENTS,
-        maxAbsoluteThreeExponent = DEFAULT_MAX_ABSOLUTE_THREE_EXPONENT,
+        maxAbsolute3Exponent = DEFAULT_MAX_ABSOLUTE_3_EXPONENT,
         maxAbsoluteApotomeSlope = DEFAULT_MAX_ABSOLUTE_APOTOME_SLOPE,
         maxN2D3P9 = DEFAULT_MAX_N2D3P9,
     } = options || {}
 
     const commas: Comma[] = []
 
-    computePlusOrMinusRange(maxAbsoluteThreeExponent).forEach(three => {
+    computePlusOrMinusRange(maxAbsolute3Exponent).forEach(three => {
         const twoFreeMonzo: Monzo<{ rough: 3 }> = shallowClone(twoThreeFreeMonzo) as Monzo as Monzo<{ rough: 3 }>
         twoFreeMonzo[ 1 ] = three
         if (isUndefined(twoFreeMonzo[ 0 ])) twoFreeMonzo[ 0 ] = 0 as Integer & Exponent<Prime> // TODO: horrible
@@ -64,5 +64,5 @@ const computeCommasFromTwoThreeFreeMonzo = (
 }
 
 export {
-    computeCommasFromTwoThreeFreeMonzo,
+    computeCommasFrom23FreeMonzo,
 }

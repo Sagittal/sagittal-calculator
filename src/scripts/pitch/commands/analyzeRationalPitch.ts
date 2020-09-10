@@ -1,5 +1,6 @@
 import { program } from "commander"
 import {
+    addTexts,
     ANY_MONZO_CHARS,
     CommandFlag,
     computeMonzoFromInteger,
@@ -9,13 +10,13 @@ import {
     Io,
     LogTarget,
     Monzo,
-    Name,
+    Name, NEWLINE,
     parseInteger,
     parseMonzo,
     parseRatio,
     Ratio,
     RationalPitch,
-    saveLog,
+    saveLog, stringify,
 } from "../../../general"
 import {
     analyzeRationalPitch,
@@ -25,7 +26,7 @@ import {
 } from "../../../sagittal"
 import { PITCH_SCRIPT_GROUP } from "../constants"
 import { pitchScriptGroupSettings } from "../globals"
-import { computeNotatingCommasTable, formatRationalPitch } from "../io"
+import { computeNotatingCommasTable, formatRationalPitch, formatSettings } from "../io"
 import { applySharedPitchCommandSetup } from "./shared"
 
 program
@@ -88,6 +89,8 @@ and
 
 npm run analyze-rational-pitch 209/208 -- --max-n2d3p9 500
 */
+
+saveLog(addTexts(formatSettings(), NEWLINE), LogTarget.ALL, PITCH_SCRIPT_GROUP)
 
 const rationalPitch: RationalPitch = { monzo }
 const analyzedRationalPitch = analyzeRationalPitch(rationalPitch)

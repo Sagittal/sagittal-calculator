@@ -3,3 +3,4 @@ export { NOTATING_COMMA_WITH_MAYBE_SAGITTAL_SYMBOLS_HEADER_ROW } from "./headerR
 export { computeNotatingCommaWithMaybeSagittalSymbolRow } from "./notatingCommaRow"
 export { computeNotatingCommasTable } from "./notatingCommasTable"
 export { formatRationalPitch } from "./rationalPitchTable"
+export { formatSettings, format23FreeClassSettings } from "./settings"

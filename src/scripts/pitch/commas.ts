@@ -1,6 +1,6 @@
 import { Monzo } from "../../general"
-import { Comma, computeCommasFromTwoThreeFreeMonzo } from "../../sagittal"
-import { compute23FreeMonzosToCheck } from "./fiveSlicedMonzosToCheck"
+import { Comma, computeCommasFrom23FreeMonzo } from "../../sagittal"
+import { compute23FreeMonzosToCheck } from "./twoThreeFreeMonzosToCheck"
 import { CommasOptions } from "./types"
 
 const computeCommas = (options: CommasOptions): Comma[] => {
@@ -11,7 +11,7 @@ const computeCommas = (options: CommasOptions): Comma[] => {
         max23FreeCopfr,
         maxAbsoluteApotomeSlope,
         maxPrimeLimit,
-        maxAbsoluteThreeExponent,
+        maxAbsolute3Exponent,
         maxN2D3P9,
     } = options
 
@@ -27,13 +27,13 @@ const computeCommas = (options: CommasOptions): Comma[] => {
 
     fiveSlicedMonzosToCheck.forEach(fiveSlicedMonzoToCheck => {
         commas = commas.concat(
-            computeCommasFromTwoThreeFreeMonzo(
+            computeCommasFrom23FreeMonzo(
                 fiveSlicedMonzoToCheck,
                 {
                     minCents,
                     maxCents,
                     maxAbsoluteApotomeSlope,
-                    maxAbsoluteThreeExponent,
+                    maxAbsolute3Exponent,
                     maxN2D3P9,
                 },
             ),

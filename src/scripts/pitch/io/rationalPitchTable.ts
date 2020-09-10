@@ -1,4 +1,5 @@
 import {
+    addTexts,
     BLANK,
     formatInteger,
     formatMonzo,
@@ -11,6 +12,7 @@ import {
 } from "../../../general"
 import { AnalyzedRationalPitch } from "../../../sagittal"
 import { computeRationalPitchHeaderRow } from "./headerRows"
+import { RATIONAL_PITCH_TITLE } from "./titles"
 
 // TODO: is this computeRationalPitchTable or formatRationalPitch? get these all straight
 //  I think you already have a to-do re: this problem
@@ -37,7 +39,7 @@ const formatRationalPitch = (rationalPitch: AnalyzedRationalPitch): Io => {
         ] as Row<AnalyzedRationalPitch>,
     ]
 
-    return formatTable(rationalPitchTable)
+    return addTexts(RATIONAL_PITCH_TITLE, formatTable(rationalPitchTable))
 }
 
 export {

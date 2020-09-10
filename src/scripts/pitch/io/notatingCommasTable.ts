@@ -9,9 +9,9 @@ import {
     JiSymbol,
 } from "../../../sagittal"
 import { pitchScriptGroupSettings } from "../globals"
-import { NOTATING_COMMAS_TABLE_TITLE } from "./constants"
 import { NOTATING_COMMA_WITH_MAYBE_SAGITTAL_SYMBOLS_HEADER_ROW } from "./headerRows"
 import { computeNotatingCommaWithMaybeSagittalSymbolRow } from "./notatingCommaRow"
+import { NOTATING_COMMAS_TABLE_TITLE } from "./titles"
 
 const computeNotatingCommasTable = (monzo: Monzo, commaNameOptions: CommaNameOptions = {}) => {
     const notatingCommas: Comma[] = computeNotatingCommas(monzo, pitchScriptGroupSettings)

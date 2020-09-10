@@ -1,6 +1,6 @@
 import { Copfr, Max, Prime, Sopfr } from "../../../../src/general"
 import { N2D3P9 } from "../../../../src/sagittal/comma/evaluation/n2d3p9"
-import { compute23FreeMonzosToCheck } from "../../../../src/scripts/pitch/fiveSlicedMonzosToCheck"
+import { compute23FreeMonzosToCheck } from "../../../../src/scripts/pitch/twoThreeFreeMonzosToCheck"
 
 // TODO: Might it be preferable to do the strategy where instead of populating the whole list of monzos to check
 //  you instead go with the technique the N2D3P9 is already taking with the prime exponent extremas?

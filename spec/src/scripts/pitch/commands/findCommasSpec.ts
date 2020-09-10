@@ -10,10 +10,10 @@ describe("find-commas", () => {
         npm run find-commas --              \
          --min-cents 30                     \
          --max-cents 30.5                   \
-         --max-absolute-three-exponent 2    \
-         --max-2-3-free-copfr 3           \
+         --max-absolute-3-exponent 2        \
+         --max-2-3-free-copfr 3             \
          --max-prime-limit 37               \
-         --max-2-3-free-sopfr 58          \
+         --max-2-3-free-sopfr 58            \
          --max-absolute-apotome-slope 3     \
          --no-color                         \
          --no-write                         \
@@ -22,6 +22,14 @@ describe("find-commas", () => {
         const actual = runCommandAndGetConsoleOutput(command)
 
         const expected = [
+            "cents range:                     \t30 - 30.5",
+            "max absolute 3 exponent (ATE):   \t2",
+            "max absolute apotome slope (AAS):\t3",
+            "max N2D3P9:                      \t307",
+            "max 2,3-free sopfr:              \t58",
+            "max 2,3-free copfr:              \t3",
+            "max prime limit:                 \t37",
+            "",
             "symbol  \tname  \tratio\tmonzo                                      \tcents  \tapotome slope\tlimit  \t2,3-free sopfr\t2,3-free class N2D3P9",
             "        \t29/19C\t58/57\t[   1  -1   0   0   0   0   0  -1   0   1 ⟩\t 30.109\t -2.854      \t 29    \t 48           \t295.907              ",
             "",
@@ -37,6 +45,14 @@ describe("find-commas", () => {
         const actual = runCommandAndGetConsoleOutput(command)
 
         const expected = [
+            "cents range:                     \t50 - 50.31",
+            "max absolute 3 exponent (ATE):   \t15",
+            "max absolute apotome slope (AAS):\t14",
+            "max N2D3P9:                      \t307",
+            "max 2,3-free sopfr:              \t61",
+            "max 2,3-free copfr:              \t555",
+            "max prime limit:                 \t47",
+            "",
             "symbol  \tname   \tratio            \tmonzo                              \tcents  \tapotome slope\tlimit  \t2,3-free sopfr\t2,3-free class N2D3P9",
             "        \t19/175M\t4864/4725        \t[   8  -3  -2  -1   0   0   0   1 ⟩\t 50.195\t -6.091      \t 19    \t 36           \t292.477              ",
             "        \t35/17M \t35/34            \t[  -1   0   1   1   0   0  -1 ⟩    \t 50.184\t -3.090      \t 17    \t 29           \t 93.657              ",
@@ -55,6 +71,14 @@ describe("find-commas", () => {
         const actual = runCommandAndGetConsoleOutput(command)
 
         const expected = [
+            "cents range:                     \t50 - 50.31",
+            "max absolute 3 exponent (ATE):   \t15",
+            "max absolute apotome slope (AAS):\t14",
+            "max N2D3P9:                      \t307",
+            "max 2,3-free sopfr:              \t61",
+            "max 2,3-free copfr:              \t555",
+            "max prime limit:                 \t47",
+            "",
             "symbol  \tname                 \tratio            \tmonzo                              \tcents  \tapotome slope\tlimit  \t2,3-free sopfr\t2,3-free class N2D3P9",
             "  ,'/|) \t5.13-Medium-Diesis   \t34543665/33554432\t[ -25  12   1   0   0   1 ⟩        \t 50.301\t  8.903      \t 13    \t 18           \t 23.472              ",
             "        \t17:5.7-Medium-Diesis \t35/34            \t[  -1   0   1   1   0   0  -1 ⟩    \t 50.184\t -3.090      \t 17    \t 29           \t 93.657              ",

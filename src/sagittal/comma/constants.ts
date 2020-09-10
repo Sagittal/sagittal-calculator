@@ -5,7 +5,7 @@ import { ApotomeSlope, N2D3P9 } from "./evaluation"
 // used for both find-commas and analyze-rational-pitch
 const DEFAULT_MIN_CENTS = 0 as Min<Cents>
 const DEFAULT_MAX_CENTS = APOTOME_CENTS / 2 as Max<Cents>
-const DEFAULT_MAX_ABSOLUTE_THREE_EXPONENT = 15 as Max<Abs<Integer & Exponent<Prime>>>
+const DEFAULT_MAX_ABSOLUTE_3_EXPONENT = 15 as Max<Abs<Integer & Exponent<Prime>>>
 const DEFAULT_MAX_ABSOLUTE_APOTOME_SLOPE = 14 as Max<Abs<ApotomeSlope>>
 const DEFAULT_MAX_N2D3P9 = 5000 as Max<N2D3P9>
 const DEFAULT_PITCH_SCRIPT_GROUP_MAX_N2D3P9 = 307 as Max<N2D3P9>
@@ -21,7 +21,7 @@ export {
     DEFAULT_MAX_CENTS,
     DEFAULT_MAX_ABSOLUTE_APOTOME_SLOPE,
     DEFAULT_PITCH_SCRIPT_GROUP_MAX_N2D3P9,
-    DEFAULT_MAX_ABSOLUTE_THREE_EXPONENT,
+    DEFAULT_MAX_ABSOLUTE_3_EXPONENT,
     DEFAULT_SORT_KEY,
     DEFAULT_MAX_TWO_THREE_FREE_COPFR,
     DEFAULT_MAX_TWO_THREE_FREE_SOPFR,

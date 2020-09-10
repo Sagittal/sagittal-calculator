@@ -23,7 +23,7 @@ describe("verifying primary commas", () => {
             const max23FreeCopfr = 555 as Max<Copfr<5>>
             const maxAbsoluteApotomeSlope = 14 as Max<Abs<ApotomeSlope>>
             const maxPrimeLimit = 47 as Max<Max<Prime>>
-            const maxAbsoluteThreeExponent = 15 as Max<Abs<Integer & Exponent<Prime>>>
+            const maxAbsolute3Exponent = 15 as Max<Abs<Integer & Exponent<Prime>>>
             const maxN2D3P9 = 666 as Max<N2D3P9>
             const sortKey = "twoThreeFreeSopfr" as ObjectKey
 
@@ -34,7 +34,7 @@ describe("verifying primary commas", () => {
                 max23FreeCopfr,
                 maxAbsoluteApotomeSlope,
                 maxPrimeLimit,
-                maxAbsoluteThreeExponent,
+                maxAbsolute3Exponent,
                 maxN2D3P9,
                 sortKey,
             })

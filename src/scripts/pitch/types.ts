@@ -5,12 +5,7 @@ type CommasOptions = CommasFrom23FreeMonzoOptions & FiveSlicedMonzosToCheckOptio
     sortKey: ObjectKey,
 }>
 
-type FiveSlicedMonzosToCheckOptions = Partial<{
-    max23FreeCopfr: Max<Copfr<5>>,
-    max23FreeSopfr: Max<Sopfr<5>>,
-    maxPrimeLimit: Max<Max<Prime>>,
-    maxN2D3P9: Max<N2D3P9>,
-}>
+type FiveSlicedMonzosToCheckOptions = Partial<TwoThreeFreeClassSettings & { maxN2D3P9: Max<N2D3P9> }>
 
 type PrimeExponentRangeOptions = Partial<{
     max23FreeCopfr: Max<Copfr<5>>,
@@ -24,9 +19,16 @@ type TwoThreeFreePrimesToCheckOptions = Partial<{
     primeExponentExtremasGivenMaxN2D3P9: Array<Extrema<Integer & Exponent<Prime>>>,
 }>
 
+interface TwoThreeFreeClassSettings {
+    max23FreeCopfr: Max<Copfr<5>>,
+    max23FreeSopfr: Max<Sopfr<5>>,
+    maxPrimeLimit: Max<Max<Prime>>,
+}
+
 export {
     TwoThreeFreePrimesToCheckOptions,
     CommasOptions,
     FiveSlicedMonzosToCheckOptions,
     PrimeExponentRangeOptions,
+    TwoThreeFreeClassSettings,
 }

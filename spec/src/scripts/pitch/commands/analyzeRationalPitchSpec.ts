@@ -7,7 +7,13 @@ import { runCommandAndGetConsoleOutput } from "../../../../helpers/src/scripts/r
 
 describe("analyze-rational-pitch", () => {
     const expected = [
-        // TODO: need to include a print-out of what the mins and maxes that were used were
+        "cents range:                     \t0 - 56.84250302885596",
+        "max absolute 3 exponent (ATE):   \t15",
+        "max absolute apotome slope (AAS):\t14",
+        "max N2D3P9:                      \t307",
+        "",
+        "   --- rational pitch ---",
+        "",
         "        \t       \tratio     \tmonzo                  \tcents  \tapotome slope\tlimit  \t2,3-free sopfr\t2,3-free class N2D3P9",
         "        \t       \t2200/2187 \t[   3  -7   2   0   1 ⟩\t 10.260\t -7.632      \t 11    \t 21           \t 42.014              ",
         "",
@@ -81,8 +87,22 @@ describe("analyze-rational-pitch", () => {
 
     it("can filter the notating commas", () => {
         onlyRunInCi()
+        
+        // Note: because the absolute apotome slope is filtered to 3,
+        // the comma itself does not appear in the list of notating commas
+        // otherwise it would, as the 275k, `)|(
+        const command = "npm run analyze-rational-pitch -- -m [3,-7,2,0,1] --max-cents 50 --max-absolute-apotome-slope 3" as Io
+
+        const actual = runCommandAndGetConsoleOutput(command)
 
         const expected = [
+            "cents range:                     \t0 - 50",
+            "max absolute 3 exponent (ATE):   \t15",
+            "max absolute apotome slope (AAS):\t3",
+            "max N2D3P9:                      \t307",
+            "",
+            "   --- rational pitch ---",
+            "",
             "        \t       \tratio     \tmonzo                  \tcents  \tapotome slope\tlimit  \t2,3-free sopfr\t2,3-free class N2D3P9",
             "        \t       \t2200/2187 \t[   3  -7   2   0   1 ⟩\t 10.260\t -7.632      \t 11    \t 21           \t 42.014              ",
             "",
@@ -92,14 +112,6 @@ describe("analyze-rational-pitch", () => {
             "        \t275S\t66825/65536\t[ -16   5   2   0   1 ⟩\t 33.720\t  2.924      ",
             "",
         ] as Io[]
-
-        // Note: because the absolute apotome slope is filtered to 3,
-        // the comma itself does not appear in the list of notating commas
-        // otherwise it would, as the 275k, `)|(
-        const command = "npm run analyze-rational-pitch -- -m [3,-7,2,0,1] --max-cents 50 --max-absolute-apotome-slope 3" as Io
-
-        const actual = runCommandAndGetConsoleOutput(command)
-
         expect(actual).toEqual(expected)
     })
 
@@ -111,6 +123,13 @@ describe("analyze-rational-pitch", () => {
         const actual = runCommandAndGetConsoleOutput(command)
 
         const expected = [
+            "cents range:                     \t0 - 56.84250302885596",
+            "max absolute 3 exponent (ATE):   \t15",
+            "max absolute apotome slope (AAS):\t14",
+            "max N2D3P9:                      \t307",
+            "",
+            "   --- rational pitch ---",
+            "",
             "        \t       \tratio     \tmonzo                  \tcents  \tapotome slope\tlimit  \t2,3-free sopfr\t2,3-free class N2D3P9",
             "        \t       \t275/1     \t[   0   0   2   0   1 ⟩\t9723.94\t-598.739     \t 11    \t 21           \t 42.014              ",
             "",

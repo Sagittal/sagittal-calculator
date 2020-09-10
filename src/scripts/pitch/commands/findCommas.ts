@@ -1,5 +1,5 @@
 import { program } from "commander"
-import { CommandFlag, LogTarget, Max, Prime, saveLog, sort } from "../../../general"
+import { addTexts, CommandFlag, LogTarget, Max, NEWLINE, Prime, saveLog, sort } from "../../../general"
 import {
     addMaybeJiSymbol,
     analyzeComma,
@@ -10,7 +10,7 @@ import {
 import { computeCommas } from "../commas"
 import { PITCH_SCRIPT_GROUP } from "../constants"
 import { pitchScriptGroupSettings } from "../globals"
-import { computeFindCommasTable } from "../io"
+import { computeFindCommasTable, format23FreeClassSettings, formatSettings } from "../io"
 import { applySharedPitchCommandSetup } from "./shared"
 
 program
@@ -36,12 +36,9 @@ const max23FreeSopfr = program.max23FreeSopfr || DEFAULT_MAX_TWO_THREE_FREE_SOPF
 const max23FreeCopfr = program.max23FreeCopfr || DEFAULT_MAX_TWO_THREE_FREE_COPFR
 const maxPrimeLimit: Max<Max<Prime>> = program.maxPrimeLimit || DEFAULT_MAX_PRIME_LIMIT
 
-const commas = computeCommas({
-    ...pitchScriptGroupSettings,
-    max23FreeCopfr,
-    max23FreeSopfr,
-    maxPrimeLimit,
-})
+const twoThreeFreeClassSettings = { max23FreeSopfr, max23FreeCopfr, maxPrimeLimit }
+
+const commas = computeCommas({ ...pitchScriptGroupSettings, ...twoThreeFreeClassSettings })
 
 const commasWithMaybeSymbols = commas.map(addMaybeJiSymbol)
 const analyzedCommas = commasWithMaybeSymbols.map(comma => {
@@ -51,5 +48,8 @@ const analyzedCommas = commasWithMaybeSymbols.map(comma => {
 if (pitchScriptGroupSettings.sortKey) {
     sort(analyzedCommas, { by: pitchScriptGroupSettings.sortKey })
 }
+
+saveLog(formatSettings(), LogTarget.ALL, PITCH_SCRIPT_GROUP)
+saveLog(addTexts(format23FreeClassSettings(twoThreeFreeClassSettings), NEWLINE), LogTarget.ALL, PITCH_SCRIPT_GROUP)
 
 saveLog(computeFindCommasTable(analyzedCommas), LogTarget.ALL, PITCH_SCRIPT_GROUP)
