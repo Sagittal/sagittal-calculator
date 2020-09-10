@@ -1,33 +1,22 @@
 import { Abs, Cents, Exponent, Integer, Max, Min, Monzo, Prime } from "../../../../src/general"
-import { ApotomeSlope, computeCommasFromFiveSlicedMonzo, N2D3P9 } from "../../../../src/sagittal"
+import { ApotomeSlope, computeCommasFromTwoThreeFreeMonzo, N2D3P9 } from "../../../../src/sagittal"
 
-describe("computeCommasFromFiveSlicedMonzo", () => {
-    const fiveSlicedMonzo: Monzo<{ slice: 5 }> = [3, 5, -1] as Monzo<{ slice: 5 }>
+describe("computeCommasFromTwoThreeFreeMonzo", () => {
+    const twoThreeFreeMonzo: Monzo<{ rough: 5 }> = [0, 0, 3, 5, -1] as Monzo<{ rough: 5 }>
     const minCents = 40 as Min<Cents>
     const maxCents = 40.1 as Max<Cents>
     const maxAbsoluteThreeExponent = 12 as Max<Abs<Integer & Exponent<Prime>>>
     const maxN2D3P9 = 40000 as Max<N2D3P9>
 
-    it("returns analyzed commas with the prime content from the two-three-free monzo", () => {
-        const actual = computeCommasFromFiveSlicedMonzo(fiveSlicedMonzo, {
+    it("returns commas with the prime content from the two-three-free monzo", () => {
+        const actual = computeCommasFromTwoThreeFreeMonzo(twoThreeFreeMonzo, {
             minCents,
             maxCents,
             maxAbsoluteThreeExponent,
             maxN2D3P9,
         })
 
-        const expected = jasmine.arrayWithExactContents([
-            {
-                cents: 40.02272638304789,
-                monzo: [-8, -6, 3, 5, -1],
-                ratio: [2100875, 2052864],
-                name: "2100875/11S",
-                limit: 11,
-                apotomeSlope: -8.464345074135046,
-                twoThreeFreeSopfr: 61,
-                n2d3p9: 36777.470341,
-            },
-        ])
+        const expected = [{ monzo: [-8, -6, 3, 5, -1] as Monzo<{ comma: true }> }]
         expect(actual).toEqual(expected)
     })
 
@@ -36,7 +25,7 @@ describe("computeCommasFromFiveSlicedMonzo", () => {
             const highMaxAbsoluteApotomeSlope = 10 as Max<Abs<ApotomeSlope>>
             const lowMaxAbsoluteApotomeSlope = 8 as Max<Abs<ApotomeSlope>>
 
-            const resultWithHighMaxAbsoluteApotomeSlope = computeCommasFromFiveSlicedMonzo(fiveSlicedMonzo, {
+            const resultWithHighMaxAbsoluteApotomeSlope = computeCommasFromTwoThreeFreeMonzo(twoThreeFreeMonzo, {
                 minCents,
                 maxCents,
                 maxAbsoluteThreeExponent,
@@ -44,20 +33,10 @@ describe("computeCommasFromFiveSlicedMonzo", () => {
                 maxN2D3P9,
             })
 
-            expect(resultWithHighMaxAbsoluteApotomeSlope).toEqual(jasmine.arrayWithExactContents([
-                {
-                    cents: 40.02272638304789,
-                    monzo: [-8, -6, 3, 5, -1],
-                    ratio: [2100875, 2052864],
-                    name: "2100875/11S",
-                    limit: 11,
-                    apotomeSlope: -8.464345074135046,
-                    twoThreeFreeSopfr: 61,
-                    n2d3p9: 36777.470341,
-                },
-            ]))
+            const expected = [{ monzo: [-8, -6, 3, 5, -1] as Monzo<{ comma: true }> }]
+            expect(resultWithHighMaxAbsoluteApotomeSlope).toEqual(expected)
 
-            const resultWithLowMaxAbsoluteApotomeSlope = computeCommasFromFiveSlicedMonzo(fiveSlicedMonzo, {
+            const resultWithLowMaxAbsoluteApotomeSlope = computeCommasFromTwoThreeFreeMonzo(twoThreeFreeMonzo, {
                 minCents,
                 maxCents,
                 maxAbsoluteThreeExponent,

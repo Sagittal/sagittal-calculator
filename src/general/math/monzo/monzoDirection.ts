@@ -1,8 +1,8 @@
 import { formatMonzo } from "../../io"
 import { computeRatioFromMonzo } from "./ratioFromMonzo"
-import { Monzo } from "./types"
+import { Direction, Monzo } from "./types"
 
-const computeIsSubMonzo = (monzo: Monzo): boolean => {
+const computeIsSubMonzo = (monzo: Monzo): monzo is Monzo<{ direction: Direction.SUB }> => {
     if (monzo.every(term => term >= 0)) return false
     if (monzo.every(term => term <= 0)) return true
 
@@ -16,14 +16,14 @@ const computeIsSubMonzo = (monzo: Monzo): boolean => {
         let numeratorError = false
         try {
             computeRatioFromMonzo(numeratorMonzo)
-        } catch(e) {
+        } catch (e) {
             numeratorError = true
         }
 
         let denominatorError = false
         try {
             computeRatioFromMonzo(denominatorMonzo)
-        } catch(e) {
+        } catch (e) {
             denominatorError = true
         }
 
@@ -41,6 +41,11 @@ const computeIsSubMonzo = (monzo: Monzo): boolean => {
     return value < 1
 }
 
+const computeIsSuperMonzo = (monzo: Monzo): monzo is Monzo<{ direction: Direction.SUPER }> => {
+    return !computeIsSubMonzo(monzo)
+}
+
 export {
     computeIsSubMonzo,
+    computeIsSuperMonzo,
 }

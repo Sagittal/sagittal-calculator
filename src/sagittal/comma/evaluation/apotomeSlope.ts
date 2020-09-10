@@ -6,7 +6,7 @@ const computeApotomeSlope = (monzo: Monzo): ApotomeSlope => {
     const ratio = computeRatioFromMonzo(monzo)
     const cents = computeCentsFromRatio(ratio)
 
-    const monzoThreeExponent = monzo[ 1 ]
+    const monzoThreeExponent = monzo[ 1 ] || 0
 
     return monzoThreeExponent - APOTOME_THREE_EXPONENT * cents / APOTOME_CENTS as ApotomeSlope
 }

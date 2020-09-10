@@ -1,5 +1,5 @@
 import { Zone } from "../../../../../../src/general"
-import { SagittalComma } from "../../../../../../src/sagittal/notations"
+import { SagittalComma } from "../../../../../../src/sagittal"
 import { getJiSymbol, Level } from "../../../../../../src/sagittal/notations/ji"
 import { computeCaptureZone } from "../../../../../../src/sagittal/notations/ji/captureZone"
 import { computeLevelJiSymbolIds } from "../../../../../../src/sagittal/notations/ji/levelsJiSymbolIds"

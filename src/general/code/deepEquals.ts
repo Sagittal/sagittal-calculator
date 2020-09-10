@@ -1,37 +1,47 @@
-const deepEqualsArray = <T>(firstValue: T[], secondValue: T[]): boolean =>
+import { Integer } from "../math"
+import { isCloseTo } from "./isCloseTo"
+import { isNumber, isUndefined } from "./typeGuards"
+
+const deepEqualsArray = <T>(firstValue: T[], secondValue: T[], precision?: Integer): boolean =>
     firstValue instanceof Array &&
     firstValue.length === secondValue.length &&
-    secondValue.every((el, index) => deepEquals(el, firstValue[ index ]))
+    secondValue.every((el, index) => deepEquals(el, firstValue[ index ], precision))
 
-const deepEqualsObject =
-    <T extends Record<string, unknown>>(firstValue: T, secondValue: T): boolean => {
-        let equal
+const deepEqualsObject = <T extends Record<string, unknown>>(
+    firstValue: T,
+    secondValue: T,
+    precision?: Integer,
+): boolean => {
+    let equal
 
-        if (firstValue instanceof Array) {
-            equal = false
-        } else if (typeof firstValue === "object") {
-            equal = Object.keys(firstValue).length === Object.keys(secondValue).length &&
-                Object.entries(secondValue)
-                    .every(([key, value]) =>
-                        deepEquals(value, firstValue[ key ]))
-        } else {
-            equal = false
-        }
-
-        return equal
+    if (firstValue instanceof Array) {
+        equal = false
+    } else if (typeof firstValue === "object") {
+        equal = Object.keys(firstValue).length === Object.keys(secondValue).length &&
+            Object.entries(secondValue)
+                .every(([key, value]) =>
+                    deepEquals(value, firstValue[ key ], precision))
+    } else {
+        equal = false
     }
 
-const deepEquals = <T>(firstValue: T, secondValue: T) => {
+    return equal
+}
+
+const deepEquals = <T>(firstValue: T, secondValue: T, precision?: Integer) => {
     let equal = false
 
     if (firstValue === secondValue) {
         equal = true
+    } else if (!isUndefined(precision) && isNumber(firstValue) && isNumber(secondValue)) {
+        equal = isCloseTo(firstValue, secondValue, precision)
     } else if (firstValue instanceof Array) {
-        equal = deepEqualsArray(secondValue as T & unknown[], firstValue as T & unknown[])
+        equal = deepEqualsArray(secondValue as T & unknown[], firstValue as T & unknown[], precision)
     } else if (typeof firstValue === "object") {
         equal = deepEqualsObject(
             secondValue as T & Record<string, unknown>,
             firstValue as T & { [ index: string ]: unknown },
+            precision,
         )
     }
 

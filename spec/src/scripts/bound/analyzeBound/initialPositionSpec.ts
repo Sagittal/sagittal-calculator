@@ -14,6 +14,6 @@ describe("computeInitialPosition", () => {
         const actual = computeInitialPosition(bound)
 
         const expected = (40.0043524607400 + 43.0125791934297) / 2 as Cents
-        expect(actual).toEqual(expected)
+        expect(actual).toBeCloseTo(expected)
     })
 })

@@ -1,25 +1,12 @@
-import { Cents, Monzo, Name, Prime, Ratio, Sopfr, THREE_PRIME_INDEX } from "../general"
-import { ApotomeSlope, N2D3P9, TwoThreeFreeClass } from "./comma"
-import { AnalyzedRationalPitch } from "./types"
+import { Cents } from "../general"
 
-const APOTOME: AnalyzedRationalPitch = {
-    apotomeSlope: 0 as ApotomeSlope,
-    cents: 113.68500605771192 as Cents,
-    name: "apotome" as Name<AnalyzedRationalPitch>,
-    twoThreeFreeSopfr: 0 as Sopfr<5>,
-    twoThreeFreeClass: [1, 1] as TwoThreeFreeClass,
-    limit: 3 as Prime,
-    monzo: [-11, 7] as Monzo,
-    ratio: [2187, 2048] as Ratio,
-    n2d3p9: 1 as N2D3P9,
-}
+// TODO: rework this post-refactor to hinge on the established centralized APOTOME again, wherever/however it exists
 
-const APOTOME_CENTS: Cents = APOTOME.cents                         // Math.log2(2187 / 2048) * 1200 = 113.68500605771192
+const APOTOME_CENTS: Cents = Math.log2(2187 / 2048) * 1200 as Cents // 113.68500605771192
 
-const APOTOME_THREE_EXPONENT = APOTOME.monzo[ THREE_PRIME_INDEX ]  // 7
+const APOTOME_THREE_EXPONENT = 7
 
 export {
     APOTOME_CENTS,
-    APOTOME,
     APOTOME_THREE_EXPONENT,
 }

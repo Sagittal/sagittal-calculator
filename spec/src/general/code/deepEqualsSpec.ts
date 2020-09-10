@@ -1,4 +1,4 @@
-import { deepEquals } from "../../../../src/general/code"
+import { ACCURACY_THRESHOLD, deepEquals } from "../../../../src/general/code"
 
 describe("deepEquals", () => {
     it("returns true if two arrays are equal", () => {
@@ -31,5 +31,20 @@ describe("deepEquals", () => {
 
     it("returns false in this other situation which for whatever reason it returned true in until I fixed it -- probably I should check my test coverage on the project I yanked this implementation of deep equals from!", () => {
         expect(deepEquals([1], [1, 2])).toBeFalsy()
+    })
+
+    it("can take a precision argument which allows for numerics inside the object to be approximate", () => {
+        expect(deepEquals({ a: 3.000000001 }, { a: 3 })).toBeFalsy()
+        expect(deepEquals({ a: 3.000000001 }, { a: 3 }, ACCURACY_THRESHOLD)).toBeTruthy()
+    })
+
+    it("can take a precision argument which allows for numerics inside the array of objects to be approximate", () => {
+        expect(deepEquals([{ a: 3.000000001 }, { b: 4 }], [{ a: 3 }, { b: 3.999999999 }])).toBeFalsy()
+        expect(
+            deepEquals(
+                [{ a: 3.000000001 }, { b: 4 }], [{ a: 3 }, { b: 3.999999999 }],
+                ACCURACY_THRESHOLD,
+            ),
+        ).toBeTruthy()
     })
 })

@@ -52,7 +52,7 @@ describe("computeLevelBoundedJiSymbolIdWithDistances", () => {
                 },
             ],
         }
-        expect(actual).toEqual(expected)
+        expect(actual).toBeCloseToObject(expected)
     })
 
     it("works for the final bound", () => {
@@ -107,7 +107,7 @@ describe("computeLevelBoundedJiSymbolIdWithDistances", () => {
                 undefined,
             ],
         }
-        expect(actual).toEqual(expected)
+        expect(actual).toBeCloseToObject(expected)
     })
 
     it("works for the first bound", () => {
@@ -138,6 +138,6 @@ describe("computeLevelBoundedJiSymbolIdWithDistances", () => {
                 },
             ],
         }
-        expect(actual).toEqual(expected)
+        expect(actual).toBeCloseToObject(expected)
     })
 })

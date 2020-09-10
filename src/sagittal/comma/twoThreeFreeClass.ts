@@ -1,12 +1,21 @@
-import { computeRatioFromMonzo, computeRoughNumberMonzo, computeSuperMonzo, FIVE_ROUGHNESS, Monzo } from "../../general"
-import { TwoThreeFreeClass } from "./types"
+import {
+    computeRoughNumberMonzo,
+    computeSuperMonzo,
+    computeTrimmedArray,
+    Direction,
+    Monzo,
+    MonzoTypeParameters,
+} from "../../general"
+import { TwoThreeFreeClass } from "../types"
 
-const compute23FreeClass = (monzo: Monzo): TwoThreeFreeClass => {
-    const twoThreeFreeMonzo = computeRoughNumberMonzo(monzo, FIVE_ROUGHNESS)
-    const numeratorGreaterThanDenominatorMonzo = computeSuperMonzo(twoThreeFreeMonzo)
-    const twoThreeFreeClass = computeRatioFromMonzo(numeratorGreaterThanDenominatorMonzo) as TwoThreeFreeClass
+const compute23FreeClass = <T extends MonzoTypeParameters = { irrational: true }>(
+    monzo: Monzo<T>,
+): TwoThreeFreeClass => {
+    const twoThreeFreeMonzo: Monzo<{ rough: 5 }> = computeRoughNumberMonzo(monzo, 5)
+    const numeratorGreaterThanDenominatorTwoThreeFreeMonzo: Monzo<{ rough: 5, direction: Direction.SUPER }> =
+        computeSuperMonzo(twoThreeFreeMonzo)
 
-    return twoThreeFreeClass
+    return { monzo: computeTrimmedArray(numeratorGreaterThanDenominatorTwoThreeFreeMonzo) } as TwoThreeFreeClass
 }
 
 export {

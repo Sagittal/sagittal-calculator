@@ -1,16 +1,17 @@
 import { Formatted, isUndefined, Maybe, Name, parseRatio, Ratio } from "../../../general"
-import { AnalyzedRationalPitch } from "../../types"
-import { TwoThreeFreeClass } from "../types"
+import { Comma, TwoThreeFreeClass } from "../../types"
 import { SIZE_CATEGORIES } from "./sizeCategories"
 import { SizeCategoryName } from "./types"
 
-const parseCommaName = (
-    commaName: Name<AnalyzedRationalPitch>,
-): { twoThreeFreeClass: TwoThreeFreeClass, sizeCategoryName: SizeCategoryName } => {
-    const ratioPartOfCommaName = commaName.replace(/[a-zA-Z+\-]/g, "") as Formatted<Ratio>
-    const sizeCategoryPartOfCommaName = commaName.replace(ratioPartOfCommaName, "").replace(/-/, "")
+// TODO: this would be a place where you could use parameterized Ratio with same params as Monzo
+//  - note that this is yet another thing apart from TwoThreeFreeClassAsRatio...
+//  - this ratio does not stipulate being super
+//  - which is maybe an argument for it not being directed after all...
+const parseCommaName = (commaName: Name<Comma>): { twoThreeFreeRatio: Ratio, sizeCategoryName: SizeCategoryName } => {
+    const twoThreeFreeClassPartOfCommaName = commaName.replace(/[a-zA-Z+\-]/g, "") as Formatted<TwoThreeFreeClass>
+    const sizeCategoryPartOfCommaName = commaName.replace(twoThreeFreeClassPartOfCommaName, "").replace(/-/, "")
 
-    const twoThreeFreeClass = parseRatio(ratioPartOfCommaName) as TwoThreeFreeClass
+    const twoThreeFreeRatio = parseRatio(twoThreeFreeClassPartOfCommaName as Formatted as Formatted<Ratio>)
 
     let maybeSizeCategoryName: Maybe<SizeCategoryName> = undefined
 
@@ -27,7 +28,7 @@ const parseCommaName = (
         throw new Error(`No size category found for comma name ${commaName}.`)
     }
 
-    return { twoThreeFreeClass, sizeCategoryName: maybeSizeCategoryName }
+    return { twoThreeFreeRatio, sizeCategoryName: maybeSizeCategoryName }
 }
 
 export {

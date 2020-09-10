@@ -1,6 +1,6 @@
 // tslint:disable max-line-length
 
-import { Cents, Io, Monzo, Name, NEWLINE, Prime, Ratio, Sopfr } from "../../../../../src/general"
+import { Cents, Io, Monzo, NEWLINE, Prime, Ratio, Sopfr } from "../../../../../src/general"
 import { AnalyzedRationalPitch, ApotomeSlope } from "../../../../../src/sagittal"
 import { N2D3P9 } from "../../../../../src/sagittal/comma/evaluation/n2d3p9"
 import { formatRationalPitch } from "../../../../../src/scripts/pitch/io"
@@ -10,7 +10,6 @@ describe("formatRationalPitch", () => {
         cents: 11.2 as Cents,
         monzo: [0, -1, 1] as Monzo,
         ratio: [5, 4] as Ratio,
-        name: "6j" as Name<AnalyzedRationalPitch>,
         limit: 14 as Prime,
         apotomeSlope: 8.2 as ApotomeSlope,
         twoThreeFreeSopfr: 13 as Sopfr<5>,

@@ -1,6 +1,9 @@
 import { program } from "commander"
 import { CommandFlag, LogTarget, parseCommands, saveLog } from "../../../general"
-import { DEFAULT_MAX_N2D3P9_FOR_POPULAR_TWO_THREE_FREE_CLASSES, POPULAR_TWO_THREE_FREE_CLASSES_SCRIPT_GROUP } from "../constants"
+import {
+    DEFAULT_MAX_N2D3P9_FOR_POPULAR_TWO_THREE_FREE_CLASSES,
+    POPULAR_TWO_THREE_FREE_CLASSES_SCRIPT_GROUP,
+} from "../constants"
 import { popular23FreeClassesScriptGroupSettings } from "../globals"
 import { computePopular23FreeClassesWithBestNotatingCommasTable } from "../io"
 import { computePopular23FreeClassesWithBestNotatingCommas } from "../popular23FreeClassesWithBestNotatingCommas"
@@ -23,7 +26,7 @@ const popular23FreeClassesWithBestNotatingCommas =
 saveLog(
     computePopular23FreeClassesWithBestNotatingCommasTable(
         popular23FreeClassesWithBestNotatingCommas,
-        maxN2D3P9
+        maxN2D3P9,
     ),
     LogTarget.ALL,
     POPULAR_TWO_THREE_FREE_CLASSES_SCRIPT_GROUP,

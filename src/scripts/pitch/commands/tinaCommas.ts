@@ -14,7 +14,7 @@ import {
     sort,
     stringify,
 } from "../../../general"
-import { AnalyzedRationalPitch, computeNotatingCommas, N2D3P9, TINA } from "../../../sagittal"
+import { analyzeComma, AnalyzedComma, Comma, computeNotatingCommas, N2D3P9, TINA } from "../../../sagittal"
 import { computeCommas } from "../commas"
 import { PITCH_SCRIPT_GROUP } from "../constants"
 import { pitchScriptGroupSettings } from "../globals"
@@ -30,10 +30,10 @@ const LIMITLESS_N2D3P9 = Infinity as Max<N2D3P9>
 const LIMITLESS_COPFR = 99999 as Max<Copfr<5>>
 const MAX_POSSIBLE_SOPFR_WITHOUT_CRASHING = 127 as Max<Sopfr<5>>
 const MAX_POSSIBLE_PRIME_LIMIT_GIVEN_MAX_POSSIBLE_SOPFR = MAX_POSSIBLE_SOPFR_WITHOUT_CRASHING as Max<Max<Prime>>
-const MIN_CENTS = (TINAS_TO_CHECK[0] - PLUS_MINUS_RANGE) * TINA as Min<Cents>
-const MAX_CENTS = (TINAS_TO_CHECK[TINAS_TO_CHECK.length - 1] + PLUS_MINUS_RANGE) * TINA as Max<Cents>
+const MIN_CENTS = (TINAS_TO_CHECK[ 0 ] - PLUS_MINUS_RANGE) * TINA as Min<Cents>
+const MAX_CENTS = (TINAS_TO_CHECK[ TINAS_TO_CHECK.length - 1 ] + PLUS_MINUS_RANGE) * TINA as Max<Cents>
 
-const isLate = (comma: AnalyzedRationalPitch) => {
+const isLate = (comma: Comma) => {
     const ate = abs(comma.monzo[ 1 ])
 
     const notatingCommas =
@@ -55,10 +55,12 @@ const commas = computeCommas({
     minCents: MIN_CENTS,
     maxCents: MAX_CENTS,
     maxN2D3P9: LIMITLESS_N2D3P9,
-    sortKey: "cents" as ObjectKey,
 })
 
-const tinaCommas: { [ index: number ]: AnalyzedRationalPitch[] } = {
+const analyzeCommas = commas.map(comma => analyzeComma(comma))
+sort(analyzeCommas, { by: "cents" })
+
+const tinasCommas: { [ index: number ]: AnalyzedComma[] } = {
     [ 0.5 ]: [],
     [ 1 ]: [],
     [ 1.5 ]: [],
@@ -81,30 +83,30 @@ const tinaCommas: { [ index: number ]: AnalyzedRationalPitch[] } = {
 }
 
 let currentTina = 0.5
-commas.forEach(comma => {
-    if (comma.cents > maxTinaSizes[ currentTina * 2 - 1 ]) {
+analyzeCommas.forEach(analyzedComma => {
+    if (analyzedComma.cents > maxTinaSizes[ currentTina * 2 - 1 ]) {
         currentTina = currentTina + 0.5
     }
-    tinaCommas[ currentTina ].push(comma)
+    tinasCommas[ currentTina ].push(analyzedComma)
 })
 
-Object.entries(tinaCommas).forEach(([tina, commas]) => {
-    sort(commas, { by: "n2d3p9" as ObjectKey })
+Object.entries(tinasCommas).forEach(([tina, tinaCommas]) => {
+    sort(tinaCommas, { by: "n2d3p9" as ObjectKey })
 
     saveLog(
-        `Processing tina ${tina} with ${commas.length} possible commas to check, sorted by increasing N2D3P9` as Io,
+        `Processing tina ${tina} with ${tinaCommas.length} possible commas to check, sorted by increasing N2D3P9` as Io,
         LogTarget.PROGRESS,
-        PITCH_SCRIPT_GROUP
+        PITCH_SCRIPT_GROUP,
     )
 
     let index = 0
     let lateComma = undefined
     while (true) {
-        const comma = commas[ index ]
+        const comma = tinaCommas[ index ]
         saveLog(
-            `Checking comma ${index}: ${comma.name}, N2D3P9 ${comma.n2d3p9}` as Io,
+            `Checking comma ${index}: ${comma.monzo}, N2D3P9 ${comma.n2d3p9}` as Io,
             LogTarget.PROGRESS,
-            PITCH_SCRIPT_GROUP
+            PITCH_SCRIPT_GROUP,
         )
         if (isLate(comma)) {
             lateComma = comma

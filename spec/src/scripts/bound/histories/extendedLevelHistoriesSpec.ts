@@ -87,6 +87,6 @@ describe("computeExtendedLevelHistories", () => {
                 },
             ],
         ]
-        expect(actual).toEqual(expected)
+        expect(actual).toBeCloseToObject(expected)
     })
 })

@@ -1,13 +1,15 @@
 import { invertMonzo } from "./invertMonzo"
-import { computeIsSubMonzo } from "./isSubMonzo"
-import { Monzo } from "./types"
+import { computeIsSubMonzo } from "./monzoDirection"
+import { Direction, Monzo, MonzoTypeParameters } from "./types"
 
-const computeSuperMonzo = (monzo: Monzo) => {
+const computeSuperMonzo = <T extends MonzoTypeParameters = { irrational: true }>(
+    monzo: Monzo<T>,
+): Monzo<T & { direction: Direction.SUPER }> => {
     if (computeIsSubMonzo(monzo)) {
         return invertMonzo(monzo)
     }
 
-    return monzo
+    return monzo as Monzo<T & { direction: Direction.SUPER }>
 }
 
 export {

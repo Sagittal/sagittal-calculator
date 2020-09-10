@@ -1,7 +1,8 @@
 import { program } from "commander"
 import {
     ANY_MONZO_CHARS,
-    CommandFlag, computeMonzoFromInteger,
+    CommandFlag,
+    computeMonzoFromInteger,
     computeMonzoFromRatio,
     Formatted,
     IDENTIFYING_COMMA_NAME_CHARS,
@@ -13,12 +14,13 @@ import {
     parseMonzo,
     parseRatio,
     Ratio,
+    RationalPitch,
     saveLog,
 } from "../../../general"
 import {
-    AnalyzedRationalPitch,
     analyzeRationalPitch,
-    computeMonzoFrom23FreeRatioAndSizeCategoryName,
+    Comma,
+    computeMonzoFrom23FreeClassAndSizeCategoryName,
     parseCommaName,
 } from "../../../sagittal"
 import { PITCH_SCRIPT_GROUP } from "../constants"
@@ -40,24 +42,24 @@ program
     .option(
         `-${CommandFlag.COMMA_NAME}, --comma-name <commaName>`,
         "comma name",
-        (commaNameText: string) => parseCommaName(commaNameText as Name<AnalyzedRationalPitch>)
+        (commaNameText: string) => parseCommaName(commaNameText as Name<Comma>),
     )
 
 applySharedPitchCommandSetup()
 
-const rationalPitch = program.args[ 0 ] as Io
-let monzo
-if (rationalPitch) {
-    if (rationalPitch.match(IDENTIFYING_COMMA_NAME_CHARS)) {
-        const { twoThreeFreeClass, sizeCategoryName } = parseCommaName(rationalPitch as Name<AnalyzedRationalPitch>)
-        monzo = computeMonzoFrom23FreeRatioAndSizeCategoryName({ twoThreeFreeClass, sizeCategoryName })
-    } else if (rationalPitch.includes("/")) {
-        const ratio = parseRatio(rationalPitch as Formatted<Ratio>)
+const rationalPitchText = program.args[ 0 ] as Io
+let monzo: Monzo
+if (rationalPitchText) {
+    if (rationalPitchText.match(IDENTIFYING_COMMA_NAME_CHARS)) {
+        const { twoThreeFreeRatio, sizeCategoryName } = parseCommaName(rationalPitchText as Name<Comma>)
+        monzo = computeMonzoFrom23FreeClassAndSizeCategoryName({ twoThreeFreeRatio, sizeCategoryName })
+    } else if (rationalPitchText.includes("/")) {
+        const ratio = parseRatio(rationalPitchText as Formatted<Ratio>)
         monzo = computeMonzoFromRatio(ratio)
-    } else if (rationalPitch.match(ANY_MONZO_CHARS)) {
-        monzo = parseMonzo(rationalPitch as Formatted<Monzo>)
+    } else if (rationalPitchText.match(ANY_MONZO_CHARS)) {
+        monzo = parseMonzo(rationalPitchText as Formatted<Monzo>)
     } else {
-        const integer = parseInteger(rationalPitch)
+        const integer = parseInteger(rationalPitchText)
         monzo = computeMonzoFromInteger(integer)
     }
 } else if (program.monzo) {
@@ -65,11 +67,11 @@ if (rationalPitch) {
 } else if (program.ratio) {
     monzo = computeMonzoFromRatio(program.ratio)
 } else if (program.commaName) {
-    monzo = computeMonzoFrom23FreeRatioAndSizeCategoryName(program.commaName)
-}
-if (!monzo) {
+    monzo = computeMonzoFrom23FreeClassAndSizeCategoryName(program.commaName)
+} else {
     throw new Error("Unable to determine monzo for rational pitch.")
 }
+
 
 // TODO:
 /*
@@ -87,11 +89,11 @@ and
 npm run analyze-rational-pitch 209/208 -- --max-n2d3p9 500
 */
 
-const analyzedRationalPitch = analyzeRationalPitch(
-    monzo,
-    { giveName: false, ...pitchScriptGroupSettings.commaNameOptions },
-)
+const rationalPitch: RationalPitch = { monzo }
+const analyzedRationalPitch = analyzeRationalPitch(rationalPitch)
 saveLog(formatRationalPitch(analyzedRationalPitch), LogTarget.ALL, PITCH_SCRIPT_GROUP)
 
-const notatingCommasFormattedTable = computeNotatingCommasTable(monzo)
+// TODO: is this not tested, that the comma name options are supposed
+//  to affect the notating commas, not the rational pitch?
+const notatingCommasFormattedTable = computeNotatingCommasTable(monzo, pitchScriptGroupSettings.commaNameOptions)
 saveLog(notatingCommasFormattedTable, LogTarget.ALL, PITCH_SCRIPT_GROUP)

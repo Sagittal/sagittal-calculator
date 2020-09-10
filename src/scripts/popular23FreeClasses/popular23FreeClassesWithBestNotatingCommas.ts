@@ -14,7 +14,7 @@ import {
     shallowClone,
     stringify,
 } from "../../general"
-import { compute23FreeClass, computePrimeExponentExtremasGivenMaxN2D3P9, N2D3P9 } from "../../sagittal"
+import { computePrimeExponentExtremasGivenMaxN2D3P9, N2D3P9 } from "../../sagittal"
 import { POPULAR_TWO_THREE_FREE_CLASSES_SCRIPT_GROUP } from "./constants"
 import { computeMaybePopular23FreeClassWithBestNotatingComma } from "./maybePopular23FreeClassWithBestNotatingComma"
 import { Popular23FreeClassWithBestNotatingComma } from "./types"
@@ -38,13 +38,13 @@ const computePopular23FreeClassesWithBestNotatingCommas = (
     saveLog(
         `total monzos to check: ${monzoCount}` as Io,
         LogTarget.PROGRESS,
-        POPULAR_TWO_THREE_FREE_CLASSES_SCRIPT_GROUP
+        POPULAR_TWO_THREE_FREE_CLASSES_SCRIPT_GROUP,
     )
     let monzosCheckedCount = 0
 
     const initialMonzo: Monzo = primeExponentExtremasGivenMaxN2D3P9.map(([minPrimeExponent, _]) => minPrimeExponent)
     const finalMonzo: Monzo = primeExponentExtremasGivenMaxN2D3P9.map(([_, maxPrimeExponent]) => maxPrimeExponent)
-    let twoThreeFreeMonzo: Monzo = shallowClone(initialMonzo)
+    let twoThreeFreeMonzo: Monzo<{ rough: 5 }> = shallowClone(initialMonzo) as Monzo<{ rough: 5 }>
 
     const popular23FreeClassesWithBestNotatingCommas = [] as Array<Popular23FreeClassWithBestNotatingComma>
     while (true) {
@@ -52,7 +52,7 @@ const computePopular23FreeClassesWithBestNotatingCommas = (
         const maybePopular23FreeClassWithBestNotatingComma =
             computeMaybePopular23FreeClassWithBestNotatingComma(
                 twoThreeFreeMonzo,
-                maxN2D3P9
+                maxN2D3P9,
             )
 
         // log progress

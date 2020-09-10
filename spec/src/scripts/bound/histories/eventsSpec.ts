@@ -22,17 +22,17 @@ describe("computeEvents", () => {
                 level = Level.ULTRA
                 boundedSymbolPositions = computeBoundedJiSymbolPositions(4.5 as Cents, level)
 
-                const actual = computeEvents(level, boundedSymbolPositions, eventType)
+                const actual: HistoricalEvent[] = computeEvents(level, boundedSymbolPositions, eventType)
 
-                const expected = jasmine.arrayWithExactContents([
+                const expected: HistoricalEvent[] = [
                     {
                         level: Level.ULTRA,
                         type: EventType.INA,
-                        name: "2.5°58",
-                        cents: 4.900215778349652,
+                        name: "2.5°58" as Name<HistoricalEvent>,
+                        cents: 4.900215778349652 as Cents,
                     },
-                ])
-                expect(actual).toEqual(expected)
+                ]
+                expect(actual).toBeCloseToObject(expected)
             })
 
             it(
@@ -41,16 +41,16 @@ describe("computeEvents", () => {
                     level = Level.ULTRA
                     boundedSymbolPositions = computeBoundedJiSymbolPositions(4.5 as Cents, level)
 
-                    const actual = computeEvents(level, boundedSymbolPositions, eventType)
+                    const actual: HistoricalEvent[] = computeEvents(level, boundedSymbolPositions, eventType)
 
-                    const expected = jasmine.arrayWithExactContents([
+                    const expected: HistoricalEvent[] = [
                         {
                             level: Level.ULTRA,
                             type: EventType.INA,
-                            name: "2.5°58",
-                            cents: 4.900215778349652,
+                            name: "2.5°58" as Name<HistoricalEvent>,
+                            cents: 4.900215778349652 as Cents,
                         },
-                    ])
+                    ]
                     expect(actual).toEqual(expected)
                 },
             )
@@ -105,7 +105,7 @@ describe("computeEvents", () => {
                         level: Level.MEDIUM,
                         type: EventType.MEAN,
                         name: "/| |)" as Name<Pitch>,
-                        cents: 24.38519069840745 as Cents,
+                        cents: 24.38519069840746 as Cents,
                     },
                 ]
                 expect(actual).toEqual(expected)
@@ -122,10 +122,15 @@ describe("computeEvents", () => {
                         level: Level.HIGH,
                         type: EventType.MEAN,
                         name: ")/| |)" as Name<Pitch>,
-                        cents: 26.07420006263995 as Cents,
+                        cents: 26.07420006263996 as Cents,
                     },
                 ]
                 expect(actual).toEqual(expected)
+                // TODO: so ideally you'd understand custom matchers well enough
+                //  that you could implement toBeCloseToObject
+                //  such that it could receive a jasmine.arrayContaining() and it would work
+                //  as opposed to needing to update these hardcoded extremely precise numbers every time something
+                //  subtly changes in how they're calculated
             })
 
             it("works at the Ultra level", () => {
@@ -139,7 +144,7 @@ describe("computeEvents", () => {
                         level: Level.ULTRA,
                         type: EventType.MEAN,
                         name: ".|) |)" as Name<Pitch>,
-                        cents: 26.287231406133 as Cents,
+                        cents: 26.287231406133017 as Cents,
                     },
                 ]
                 expect(actual).toEqual(expected)
@@ -156,7 +161,7 @@ describe("computeEvents", () => {
                         level: Level.EXTREME,
                         type: EventType.MEAN,
                         name: "`.|) ,,|)" as Name<Pitch>,
-                        cents: 26.220209513021253 as Cents,
+                        cents: 26.22020951302126 as Cents,
                     },
                 ]
                 expect(actual).toEqual(expected)
@@ -166,7 +171,7 @@ describe("computeEvents", () => {
                 `works even if there is a closer comma mean to the position but it is not between the bounded symbols`,
                 () => {
                     // mean between )|) and |\ is 31.2043820809972, 0.20 away
-                    // mean between |) and )|) is 28.95310116433255, 2.05 away
+                    // mean between |) and )|) is 28.95310116433256, 2.05 away
                     // however, )|) is at 30.98583910472900,
                     // so the 30.5 position is between it and |), not between it and |\
 
@@ -180,7 +185,7 @@ describe("computeEvents", () => {
                             level: Level.HIGH,
                             type: EventType.MEAN,
                             name: "|) )|)" as Name<Pitch>,
-                            cents: 28.95310116433255 as Cents,
+                            cents: 28.95310116433256 as Cents,
                         },
                     ]
                     expect(actual).toEqual(expected)
@@ -204,7 +209,7 @@ describe("computeEvents", () => {
                         level: Level.MEDIUM,
                         type: EventType.SIZE,
                         name: "C|S" as Name<Pitch>,
-                        cents: 33.38249264420710 as Cents,
+                        cents: 33.3824926442071 as Cents,
                     },
                 ]
                 expect(actual).toEqual(expected)

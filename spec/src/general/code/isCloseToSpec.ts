@@ -28,4 +28,13 @@ describe("isCloseTo", () => {
 
         expect(actual).toBeTruthy()
     })
+
+    it("works when both values are undefined", () => {
+        const valueOne = undefined
+        const valueTwo = undefined
+
+        const actual = isCloseTo(valueOne, valueTwo, 3 as Integer)
+
+        expect(actual).toBeTruthy()
+    })
 })

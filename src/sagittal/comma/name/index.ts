@@ -1,4 +1,4 @@
-export { computeMonzoFrom23FreeRatioAndSizeCategoryName } from "./monzoFromCommaName"
+export { computeMonzoFrom23FreeClassAndSizeCategoryName } from "./monzoFromCommaName"
 export { computeSagittalCommaName } from "./sagittalCommaName"
 export { parseCommaName } from "./parseCommaName"
 export { SIZE_CATEGORY_BOUNDS } from "./sizeCategoryBounds"

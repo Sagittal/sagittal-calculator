@@ -1,5 +1,5 @@
-import { Monzo, Name, Pitch, Prime, Ratio, Sopfr } from "../general"
-import { ApotomeSlope, N2D3P9, TwoThreeFreeClass } from "./comma"
+import { Cents, Direction, Id, Maybe, Monzo, Name, Prime, Ratio, RationalPitch, Sopfr } from "../general"
+import { ApotomeSlope, N2D3P9 } from "./comma"
 
 // TODO: should i just use "Ji" as the standardized signal of Rationality through the codebase?
 //  though that doesn't really work with the number vs. Integer distinction, which is really the same
@@ -41,17 +41,46 @@ maybe
 Still kinda working it out in my head. Monzos are not necessarily JI / rational (consider the monzos given [url=http://forum.sagittal.org/viewtopic.php?p=582#p582]here[/url] for the size category bounds, the square roots of Pythagorean intervals
 */
 
-interface AnalyzedRationalPitch extends Pitch {
+interface RationalPitchAnalysis {
     apotomeSlope: ApotomeSlope,
-    name: Name<AnalyzedRationalPitch>,
     twoThreeFreeSopfr: Sopfr<5>,
     limit: Prime,
-    monzo: Monzo,
     ratio: Ratio,
     n2d3p9: N2D3P9,
+    cents: Cents,
     twoThreeFreeClass: TwoThreeFreeClass,
 }
 
+interface Comma extends RationalPitch {
+    monzo: Monzo<{ comma: true }>,
+}
+
+interface AnalyzedRationalPitch extends RationalPitch, RationalPitchAnalysis {
+}
+
+interface AnalyzedComma extends Comma, RationalPitchAnalysis {
+    name: Name<Comma>,
+}
+
+type SagittalComma<T extends "Maybe" | void = void> = Comma & (
+    T extends "Maybe" ?
+        { id?: Id<SagittalComma> } :
+        { id: Id<SagittalComma> }
+    )
+
+interface TwoThreeFreeClass extends RationalPitch {
+    monzo: Monzo<{ rough: 5, direction: Direction.SUPER }>
+    _TwoThreeFreeClassBrand: "TwoThreeFreeClass"
+}
+
+// TODO: I'm not sure if all these types should all live right here next to each other in the end
+//  I pulled some of them up from lower directories within Sagittal
+//  but it was really helpful to be able to consider them all relative to each other right now
+
 export {
+    Comma,
     AnalyzedRationalPitch,
+    AnalyzedComma,
+    SagittalComma,
+    TwoThreeFreeClass,
 }

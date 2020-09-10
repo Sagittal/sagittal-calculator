@@ -1,5 +1,5 @@
 import { program } from "commander"
-import { CommandFlag, difference, Filename, formatTime, Io, LogTarget, Max, now, saveLog, Step } from "../../../general"
+import { CommandFlag, difference, Filename, formatTime, Io, LogTarget, now, saveLog } from "../../../general"
 import { Metric } from "../bestMetric"
 import { DEFAULT_MAX_UNIT_WHEN_PERFECTING, LFC_SCRIPT_GROUP } from "../constants"
 import { lfcScriptGroupSettings } from "../globals"

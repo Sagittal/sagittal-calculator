@@ -2,14 +2,24 @@ import { Integer } from "../math"
 import { Count } from "../types"
 import { deepClone } from "./clone"
 import { dig } from "./dig"
+import { isCloseTo } from "./isCloseTo"
 import { sort } from "./sort"
-import { Rank, RankOptions, RankStrategy } from "./types"
+import { isNumber, isUndefined } from "./typeGuards"
+import { Maybe, Rank, RankOptions, RankStrategy } from "./types"
+
+const isCloseOrEqual = (a: unknown, b: unknown, precision: Maybe<Integer>): boolean => {
+    if (isUndefined(precision) || !isNumber(a) || !isNumber(b)) {
+        return a === b
+    } else {
+        return isCloseTo(a, b, precision)
+    }
+}
 
 const rank = <T>(arrayOfObjects: T[], options: RankOptions = {}): Array<T & { rank: Rank<T> }> => {
-    const { by = "value", strategy = RankStrategy.COMPETITION, descending } = options
+    const { by = "value", strategy = RankStrategy.COMPETITION, descending, precision } = options
 
     const clonedArrayOfObjects = deepClone(arrayOfObjects)
-    sort(clonedArrayOfObjects, { by, descending })
+    sort(clonedArrayOfObjects, { by, descending, precision })
 
     let rank = 0 as Rank<T>
     let tiesCount = 0 as Count
@@ -24,7 +34,7 @@ const rank = <T>(arrayOfObjects: T[], options: RankOptions = {}): Array<T & { ra
 
                 tiesCount = 0 as Count
                 clonedArrayOfObjects.slice(index + 1).forEach((objectWithWorseOrTiedRank: T) => {
-                    if (dig(objectWithWorseOrTiedRank, by) === dig(object, by)) {
+                    if (isCloseOrEqual(dig(objectWithWorseOrTiedRank, by), dig(object, by), precision)) {
                         tiesCount = tiesCount + 1 as Count
                     }
                 })
@@ -44,7 +54,7 @@ const rank = <T>(arrayOfObjects: T[], options: RankOptions = {}): Array<T & { ra
         case RankStrategy.COMPETITION:
             return clonedArrayOfObjects.map((object: T): T & { rank: Rank<T, Integer> } => {
                 const rankingValue = dig(object, by)
-                if (rankingValue === previousValue) {
+                if (isCloseOrEqual(rankingValue, previousValue, precision)) {
                     tiesCount = tiesCount + 1 as Count
 
                     return { ...object, rank: rank as Rank<T, Integer> }
@@ -59,7 +69,7 @@ const rank = <T>(arrayOfObjects: T[], options: RankOptions = {}): Array<T & { ra
         case RankStrategy.DENSE:
             return clonedArrayOfObjects.map((object: T): T & { rank: Rank<T, Integer> } => {
                 const rankingValue = dig(object, by)
-                if (rankingValue === previousValue) {
+                if (isCloseOrEqual(rankingValue, previousValue, precision)) {
                     return { ...object, rank: rank as Rank<T, Integer> }
                 } else {
                     rank = rank + 1 as Rank<T>

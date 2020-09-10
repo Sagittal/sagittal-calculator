@@ -1,10 +1,11 @@
 export {
+    analyzeComma,
     analyzeRationalPitch,
     ApotomeSlope,
     CommaNameOptions,
-    CommasFromFiveSlicedMonzoOptions,
+    CommasFrom23FreeMonzoOptions,
     computeApotomeSlope,
-    computeCommasFromFiveSlicedMonzo,
+    computeCommasFromTwoThreeFreeMonzo,
     computeN2D3P9,
     computeNotatingCommas,
     computePrimeExponentExtremasGivenMaxN2D3P9,
@@ -18,15 +19,13 @@ export {
     DEFAULT_MIN_CENTS,
     DEFAULT_PITCH_SCRIPT_GROUP_MAX_N2D3P9,
     DEFAULT_SORT_KEY,
-    TwoThreeFreeClass,
     N2D3P9,
     parse23FreeClass,
-    computeMonzoFrom23FreeRatioAndSizeCategoryName,
+    computeMonzoFrom23FreeClassAndSizeCategoryName,
     parseCommaName,
     computeSagittalCommaName,
     SIZE_CATEGORY_BOUNDS,
 } from "./comma"
-export { APOTOME } from "./constants"
 export { formatSymbol, formatSymbolAscii, SymbolLongAscii, unicodeFromAscii } from "./io"
 export {
     addMaybeJiSymbol,
@@ -48,8 +47,8 @@ export {
     LEVELS_SYMBOL_IDS,
     MAX_SINGLE_SHAFT_CENTS,
     Mina,
-    SagittalComma,
     Tina,
     TINA,
 } from "./notations"
-export { AnalyzedRationalPitch } from "./types"
+export { APOTOME_CENTS } from "./constants"
+export { AnalyzedComma, AnalyzedRationalPitch, Comma, TwoThreeFreeClass, SagittalComma } from "./types"

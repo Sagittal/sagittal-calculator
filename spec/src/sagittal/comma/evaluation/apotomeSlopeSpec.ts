@@ -12,4 +12,13 @@ describe("computeApotomeSlope", () => {
         const expected = 7.87970229329454 as ApotomeSlope
         expect(actual).toBeCloseToTyped(expected, ACCURACY_THRESHOLD)
     })
+
+    it("works for monzos without three exponents", () => {
+        const monzo: Monzo = [] as Monzo
+
+        const actual = computeApotomeSlope(monzo)
+
+        const expected = 0 as ApotomeSlope
+        expect(actual).toBeCloseToTyped(expected, ACCURACY_THRESHOLD)
+    })
 })

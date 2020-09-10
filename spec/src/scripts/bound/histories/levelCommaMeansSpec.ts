@@ -4,7 +4,7 @@ import { computeLevelCommaMeans } from "../../../../../src/scripts/bound/histori
 
 describe("computeLevelCommaMeans", () => {
     it("can return the comma means for the Medium level, both the positions and the bounded commas' symbols", () => {
-        expect(computeLevelCommaMeans(Level.MEDIUM)).toEqual([
+        expect(computeLevelCommaMeans(Level.MEDIUM)).toBeCloseToObject([
             { name: "| |(" as Name<Pitch>, cents: 2.8789011016926 as Cents },
             { name: "|( )|(" as Name<Pitch>, cents: 7.72288142310195 as Cents },
             { name: ")|( ~|(" as Name<Pitch>, cents: 12.20918723508155 as Cents },
@@ -21,7 +21,7 @@ describe("computeLevelCommaMeans", () => {
     })
 
     it("can return the comma means for the High level, both the positions and the bounded commas' symbols", () => {
-        expect(computeLevelCommaMeans(Level.HIGH)).toEqual([
+        expect(computeLevelCommaMeans(Level.HIGH)).toBeCloseToObject([
             { name: "| )|" as Name<Pitch>, cents: 1.689009364232425 as Cents },
             { name: ")| |(" as Name<Pitch>, cents: 4.567910465925025 as Cents },
             { name: "|( ~|" as Name<Pitch>, cents: 7.243699380344975 as Cents },
@@ -57,7 +57,7 @@ describe("computeLevelCommaMeans", () => {
     })
 
     it("can return the comma means for the Ultra level, both the positions and the bounded commas' symbols", () => {
-        expect(computeLevelCommaMeans(Level.ULTRA)).toEqual([
+        expect(computeLevelCommaMeans(Level.ULTRA)).toBeCloseToObject([
             { name: "| .)|" as Name<Pitch>, cents: 0.7121489702654 as Cents },
             { name: ".)| '|" as Name<Pitch>, cents: 1.6890093642324802 as Cents },
             { name: "'| )|" as Name<Pitch>, cents: 2.6658697581995052 as Cents },
@@ -116,7 +116,7 @@ describe("computeLevelCommaMeans", () => {
     })
 
     it("can return the comma means for the Extreme level, both the positions and the bounded commas' symbols", () => {
-        expect(computeLevelCommaMeans(Level.EXTREME)).toEqual([
+        expect(computeLevelCommaMeans(Level.EXTREME)).toBeCloseToObject([
             { name: "| `|" as Name<Pitch>, cents: 0.21135808297741 as Cents },
             { name: "`| ``|" as Name<Pitch>, cents: 0.627620185028205 as Cents },
             { name: "``| .)|" as Name<Pitch>, cents: 1.128411072316195 as Cents },

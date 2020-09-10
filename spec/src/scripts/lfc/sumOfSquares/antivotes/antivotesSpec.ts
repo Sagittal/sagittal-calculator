@@ -1,5 +1,5 @@
 import { Combination, Monzo } from "../../../../../../src/general/math"
-import { TwoThreeFreeClass } from "../../../../../../src/sagittal/comma"
+import { TwoThreeFreeClassAsRatio } from "../../../../../../src/general/music"
 import { Parameter, ParameterValue, Submetric } from "../../../../../../src/scripts/lfc/sumOfSquares"
 import { computeAntivotes } from "../../../../../../src/scripts/lfc/sumOfSquares/antivotes"
 import { ANTIVOTES_PRECISION } from "../../../../../../src/scripts/lfc/sumOfSquares/antivotes/constants"
@@ -8,8 +8,8 @@ import { Antivotes } from "../../../../../../src/scripts/lfc/sumOfSquares/types"
 
 describe("computeAntivotes", () => {
     it("when k = 1 (default), and two 2,3-free ratios have the same sopfr, but one has its primes all lopsided on one side, they still get ranked the same", () => {
-        const balanced23FreeRatio = [11, 7] as TwoThreeFreeClass
-        const lopsided23FreeRatio = [77, 1] as TwoThreeFreeClass
+        const balanced23FreeClass = [11, 7] as TwoThreeFreeClassAsRatio
+        const lopsided23FreeClass = [77, 1] as TwoThreeFreeClassAsRatio
         const submetrics: Combination<Submetric> = [
             {
                 [ Parameter.SUM ]: true,
@@ -17,15 +17,15 @@ describe("computeAntivotes", () => {
             },
         ] as Combination<Submetric>
 
-        const balancedResult = computeAntivotes(balanced23FreeRatio, submetrics)
-        const lopsidedResult = computeAntivotes(lopsided23FreeRatio, submetrics)
+        const balancedResult = computeAntivotes(balanced23FreeClass, submetrics)
+        const lopsidedResult = computeAntivotes(lopsided23FreeClass, submetrics)
 
         expect(balancedResult).toBeCloseToTyped(lopsidedResult, ANTIVOTES_PRECISION)
     })
 
     it("when k < 1, two 2,3-free ratios have the same sopfr, but one has its primes all lopsided on one side, it gets ranked worse", () => {
-        const balanced23FreeRatio = [11, 7] as TwoThreeFreeClass
-        const lopsided23FreeRatio = [77, 1] as TwoThreeFreeClass
+        const balanced23FreeClass = [11, 7] as TwoThreeFreeClassAsRatio
+        const lopsided23FreeClass = [77, 1] as TwoThreeFreeClassAsRatio
         const submetrics: Combination<Submetric> = [
             {
                 [ Parameter.SUM ]: true,
@@ -33,14 +33,14 @@ describe("computeAntivotes", () => {
             },
         ] as Combination<Submetric>
 
-        const balancedResult = computeAntivotes(balanced23FreeRatio, submetrics)
-        const lopsidedResult = computeAntivotes(lopsided23FreeRatio, submetrics)
+        const balancedResult = computeAntivotes(balanced23FreeClass, submetrics)
+        const lopsidedResult = computeAntivotes(lopsided23FreeClass, submetrics)
 
         expect(balancedResult).toBeLessThan(lopsidedResult)
     })
 
     it("applies weights to each submetric", () => {
-        const twoThreeFreeClass = [77, 1] as TwoThreeFreeClass
+        const twoThreeFreeClassAsRatio = [77, 1] as TwoThreeFreeClassAsRatio
         const submetrics = [
             {
                 [ Parameter.SUM ]: true,
@@ -52,7 +52,7 @@ describe("computeAntivotes", () => {
             },
         ] as Combination<Submetric>
 
-        const actual = computeAntivotes(twoThreeFreeClass, submetrics)
+        const actual = computeAntivotes(twoThreeFreeClassAsRatio, submetrics)
 
         const expected =
             0.5 * computeSubmetricAntivotes([0, 0, 0, 1, 1] as Monzo, { [ Parameter.SUM ]: true }) as Antivotes +
@@ -72,9 +72,9 @@ describe("computeAntivotes", () => {
                 [ Parameter.Y ]: 0.14285714285714285 as ParameterValue,
             },
         ] as Combination<Submetric>
-        const twoThreeFreeClass = [5, 1] as TwoThreeFreeClass
+        const twoThreeFreeClassAsRatio = [5, 1] as TwoThreeFreeClassAsRatio
 
-        const actual = computeAntivotes(twoThreeFreeClass, submetrics)
+        const actual = computeAntivotes(twoThreeFreeClassAsRatio, submetrics)
 
         expect(actual).not.toBeNaN()
     })
@@ -87,9 +87,9 @@ describe("computeAntivotes", () => {
                 [ Parameter.W ]: -2 as ParameterValue,
             },
         ] as Combination<Submetric>
-        const twoThreeFreeClass = [5, 1] as TwoThreeFreeClass
+        const twoThreeFreeClassAsRatio = [5, 1] as TwoThreeFreeClassAsRatio
 
-        const actual = computeAntivotes(twoThreeFreeClass, submetrics)
+        const actual = computeAntivotes(twoThreeFreeClassAsRatio, submetrics)
 
         const expected = 0.321928095 as Antivotes
         expect(actual).toBe(expected)

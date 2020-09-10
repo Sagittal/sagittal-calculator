@@ -1,28 +1,22 @@
 import {
     abs,
-    ACCURACY_THRESHOLD,
     computeGpf,
     computeIsSubMonzo,
-    computeMonzoFromRatio,
     computeTrimmedArray,
+    Direction,
     Exponent,
     formatMonzo,
     Monzo,
+    MonzoTypeParameters,
     Prime,
     PRIMES,
-    round,
 } from "../../../../general"
-import { TwoThreeFreeClass } from "../../types"
 import { N2D3P9 } from "./types"
 
-const computeN2D3P9 = (twoThreeFreeClassOrMonzo: TwoThreeFreeClass | Monzo): N2D3P9 => {
-    let monzo: Monzo
-    if (twoThreeFreeClassOrMonzo.length === 2) {
-        monzo = computeMonzoFromRatio(twoThreeFreeClassOrMonzo as TwoThreeFreeClass)
-    } else {
-        monzo = twoThreeFreeClassOrMonzo as Monzo
-    }
-
+const computeN2D3P9 = <T extends MonzoTypeParameters &
+    { direction: Direction.SUPER, rough: 5 } = { direction: Direction.SUPER, rough: 5, irrational: true }>(
+    monzo: Monzo<T>,
+): N2D3P9 => {
     if (computeTrimmedArray(monzo).length < 3) {
         return 1 as N2D3P9
     }
@@ -44,7 +38,7 @@ const computeN2D3P9 = (twoThreeFreeClassOrMonzo: TwoThreeFreeClass | Monzo): N2D
         1 as N2D3P9,
     ) * computeGpf(monzo) * (1 / 9) as N2D3P9
 
-    return round(n2d3p9, ACCURACY_THRESHOLD)
+    return n2d3p9
 }
 
 export {

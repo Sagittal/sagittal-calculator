@@ -1,5 +1,5 @@
 import { Cents, Id, Maybe, Multiplier } from "../../../../general"
-import { Bound, Ina, JiSymbol, Level, Mina, SagittalComma, SymbolLongAscii } from "../../../../sagittal"
+import { AnalyzedComma, Bound, Ina, JiSymbol, Level, Mina, SagittalComma, SymbolLongAscii } from "../../../../sagittal"
 
 interface BoundedJiSymbol extends JiSymbol {
     distance: Cents,
@@ -27,7 +27,7 @@ interface BoundIdentifiers {
 }
 
 type JiSymbolWithPrimaryComma = Omit<JiSymbol, "primaryCommaId"> & {
-    primaryComma: SagittalComma
+    primaryComma: AnalyzedComma & { id: Id<SagittalComma> }
 }
 
 type BoundIdWithBoundedSymbolIdWithDistancesPairsByLevel =

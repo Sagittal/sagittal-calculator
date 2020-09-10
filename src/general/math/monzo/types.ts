@@ -6,23 +6,29 @@ enum Direction {
     SUB = "sub",
 }
 
+// TODO: note that many of these could apply to Ratio too
 type MonzoTypeParameters = Partial<{
     limit: number,
-    slice: number,
-    noninteger: boolean,
+    irrational: boolean,
     direction: Direction
+    comma: boolean,
+    rough: number,
 }>
 
 type Monzo<T extends MonzoTypeParameters = {}> =
-    Array<(T extends { noninteger: true } ? number : Integer) & Exponent<Prime>>
+    Array<(T extends { irrational: true } ? number : Integer) & Exponent<Prime>>
     & (T extends { direction: Direction.SUB } ? { _MonzoDirection: Direction.SUB } : {})
     & (T extends { direction: Direction.SUPER } ? { _MonzoDirection: Direction.SUPER } : {})
-    & (T extends { slice: number } ? { _MonzoSlice: Pick<T, "slice"> } : {})
+    // TODO: alright, if you just combined slice and rough that would be ideal
+    //  in the sense that it should always be sliced (no more [0,0]- prefixes
+    //  but call it "rough" (so that it could theoretically all these type params get used by Ratio as well)
+    //  i.e. don't make it about the code structure, make it about the underlying mathematical essence
+    //  okay this is basically accomplished but I'll leave it til later to 100% confirm
     & (T extends { limit: number } ? { _MonzoLimit: Pick<T, "limit"> } : {})
+    & (T extends { rough: number } ? { _MonzoRough: Pick<T, "rough"> } : {})
+    & (T extends { comma: true } ? { _MonzoComma: "MonzoComma" } : {})
 
-type Val<T extends number = Integer, Slice = void, Limit = void> =
-    Array<T & Exponent<Step>>
-    & (Slice extends number ? { _ValSlice: Slice } : {})
+type Val = Array<Exponent<Step>>
 
 /*
 ok so the val tells you

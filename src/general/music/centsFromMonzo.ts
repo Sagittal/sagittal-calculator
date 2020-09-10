@@ -1,10 +1,8 @@
-import { computeMonzoSlicedToPrime, computeRatioFromMonzo, Monzo, MonzoTypeParameters } from "../math"
+import { computeRatioFromMonzo, Monzo, MonzoTypeParameters } from "../math"
 import { computeCentsFromRatio } from "./centsFromRatio"
 
-const computeCentsFromMonzo = <T extends MonzoTypeParameters = { noninteger: true }>(monzo: Monzo<T>) => {
-    const twoSlicedMonzo: Monzo<T & { slice: 2 }> = computeMonzoSlicedToPrime(monzo, 2)
-
-    const ratio = computeRatioFromMonzo(twoSlicedMonzo, { disableErrorBecauseExactValueNotRequired: true })
+const computeCentsFromMonzo = <T extends MonzoTypeParameters = { irrational: true }>(monzo: Monzo<T>) => {
+    const ratio = computeRatioFromMonzo(monzo, { disableErrorBecauseExactValueNotRequired: true })
 
     return computeCentsFromRatio(ratio)
 }

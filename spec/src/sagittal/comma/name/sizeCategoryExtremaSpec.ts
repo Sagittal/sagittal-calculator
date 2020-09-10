@@ -5,7 +5,7 @@ import { SizeCategoryName } from "../../../../../src/sagittal/comma/name/types"
 describe("computeSizeCategoryExtrema", () => {
     it("gives the correct extrema for each size category", () => {
         expect(computeSizeCategoryExtrema(SizeCategoryName.UNISON))
-            .toEqual([0,0] as Extrema<Cents>)
+            .toEqual([0, 0] as Extrema<Cents>)
         expect(computeSizeCategoryExtrema(SizeCategoryName.SCHISMINA))
             .toEqual([0, 1.80752293276652] as Extrema<Cents>)
         expect(computeSizeCategoryExtrema(SizeCategoryName.SCHISMA))

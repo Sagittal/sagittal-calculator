@@ -4,7 +4,11 @@ const isNumber = (candidate: unknown): candidate is number =>
 const isUndefined = (candidate: unknown): candidate is undefined =>
     typeof candidate === "undefined"
 
+const isArray = (candidate: unknown): candidate is unknown[] =>
+    candidate instanceof Array
+
 export {
     isNumber,
     isUndefined,
+    isArray,
 }

@@ -1,30 +1,30 @@
 import { Cents, Id, Io, ioSettings, Monzo, Name, NEWLINE, Prime, Ratio, Sopfr } from "../../../../../src/general"
-import { AnalyzedRationalPitch, ApotomeSlope, JiSymbol, TwoThreeFreeClass } from "../../../../../src/sagittal"
+import { AnalyzedComma, ApotomeSlope, Comma, JiSymbol, TwoThreeFreeClass } from "../../../../../src/sagittal"
 import { N2D3P9 } from "../../../../../src/sagittal/comma/evaluation/n2d3p9"
 import { computeFindCommasTable } from "../../../../../src/scripts/pitch/io"
 
 describe("computeFindCommasTable", () => {
     // note: I'm pretty sure that this is not realistic comma data, since these commas are unrelated
-    const commas: Array<AnalyzedRationalPitch & { symbolId?: Id<JiSymbol> }> = [
+    const commas: Array<AnalyzedComma & { symbolId?: Id<JiSymbol> }> = [
         {
             symbolId: 115 as Id<JiSymbol>,
-            name: "11M" as Name<AnalyzedRationalPitch>,
+            name: "11M" as Name<Comma>,
             limit: 11 as Prime,
             twoThreeFreeSopfr: 11 as Sopfr<5>,
-            twoThreeFreeClass: [11, 1] as TwoThreeFreeClass,
+            twoThreeFreeClass: { monzo: [0, 0, 0, 0, 1] } as TwoThreeFreeClass,
             cents: 45.45 as Cents,
-            monzo: [0, 0, 1] as Monzo,
+            monzo: [0, 0, 1] as Monzo<{ comma: true }>,
             ratio: [33, 32] as Ratio,
             apotomeSlope: -4 as ApotomeSlope,
             n2d3p9: 6.722 as N2D3P9,
         },
         {
-            name: "25/49M" as Name<AnalyzedRationalPitch>,
+            name: "25/49M" as Name<Comma>,
             limit: 7 as Prime,
             twoThreeFreeSopfr: 24 as Sopfr<5>,
-            twoThreeFreeClass: [49, 25] as TwoThreeFreeClass,
+            twoThreeFreeClass: { monzo: [0, 0, -2, 2] } as TwoThreeFreeClass,
             cents: 33.4 as Cents,
-            monzo: [1, 0, 2, -2] as Monzo,
+            monzo: [1, 0, 2, -2] as Monzo<{ comma: true }>,
             ratio: [50, 49] as Ratio,
             apotomeSlope: -2.154 as ApotomeSlope,
             n2d3p9: 26.466 as N2D3P9,

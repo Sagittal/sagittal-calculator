@@ -22,9 +22,9 @@ describe("computeEqualDivision", () => {
     })
 
     it("disallows ever being less than 2", () => {
-      const window: Window<ParameterValue> = 0.001 as Window<ParameterValue>
+        const window: Window<ParameterValue> = 0.001 as Window<ParameterValue>
 
-      const actual = computeEqualDivision(window)
+        const actual = computeEqualDivision(window)
 
         const expected = 2 as Ed<ParameterValue>
         expect(actual).toBe(expected)

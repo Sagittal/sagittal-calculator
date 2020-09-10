@@ -1,4 +1,4 @@
-import { Cents, Id } from "../../../general"
+import { Cents, computeCentsFromMonzo, Id } from "../../../general"
 import { getJiSymbol, getSagittalComma, JiSymbol, Level, LEVELS_SYMBOL_IDS } from "../../../sagittal"
 import { computeNeighborPositions } from "./neighborPositions"
 import { BoundedSymbolPositions } from "./types"
@@ -10,7 +10,7 @@ const computeBoundedJiSymbolPositions = (position: Cents, level: Level): Bounded
         const jiSymbol = getJiSymbol(levelSymbolId)
         const primaryComma = getSagittalComma(jiSymbol.primaryCommaId)
 
-        return primaryComma.cents
+        return computeCentsFromMonzo(primaryComma.monzo)
     })
 
     return computeNeighborPositions(position, levelSymbolPositions)

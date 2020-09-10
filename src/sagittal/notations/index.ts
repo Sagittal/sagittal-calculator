@@ -21,4 +21,3 @@ export {
     Tina,
     TINA,
 } from "./ji"
-export { SagittalComma } from "./types"

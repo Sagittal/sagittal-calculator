@@ -1,15 +1,15 @@
 import { Formatted, Io, ioSettings, Rank } from "../../../../src/general"
 import { Popularity, Votes } from "../../../../src/general/music"
-import { TwoThreeFreeClass } from "../../../../src/sagittal/comma"
+import { TwoThreeFreeClass } from "../../../../src/sagittal"
 import { N2D3P9 } from "../../../../src/sagittal/comma/evaluation/n2d3p9"
 import { computePopular23FreeClass } from "../../../../src/scripts/popular23FreeClasses/popular23FreeClass"
 import { Popular23FreeClass } from "../../../../src/scripts/popular23FreeClasses/types"
 
 describe("computePopular23FreeClass", () => {
-    it("assembles helpful information about a 2,3-free class, given a valid 2,3-free monzo & its N2D3P9", () => {
-        const twoThreeFreeClass = [5, 1] as TwoThreeFreeClass
-        const n2d3p9 = 1.388889 as N2D3P9
+    const twoThreeFreeClass = { monzo: [0, 0, 1] } as TwoThreeFreeClass
+    const n2d3p9 = 1.388889 as N2D3P9
 
+    it("assembles helpful information about a 2,3-free class, given a valid 2,3-free monzo & its N2D3P9", () => {
         const actual = computePopular23FreeClass({ twoThreeFreeClass, n2d3p9 })
 
         const expected: Popular23FreeClass = {
@@ -25,9 +25,6 @@ describe("computePopular23FreeClass", () => {
     })
 
     it("formats the symbols for the forum if io settings are set that way", () => {
-        const twoThreeFreeClass = [5, 1] as TwoThreeFreeClass
-        const n2d3p9 = 1.388889 as N2D3P9
-
         ioSettings.forForum = true
         const actual = computePopular23FreeClass({ twoThreeFreeClass, n2d3p9 })
 

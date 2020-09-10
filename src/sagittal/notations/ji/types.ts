@@ -1,6 +1,7 @@
 import { Cents, Id } from "../../../general"
 import { SymbolLongAscii, SymbolUnicode } from "../../io"
-import { SagittalComma, SymbolSubset } from "../types"
+import { SagittalComma } from "../../types"
+import { SymbolSubset } from "../types"
 
 type Tina = Cents & { _InaBrand: "Tina" }
 type Mina = Cents & { _InaBrand: "Mina" }

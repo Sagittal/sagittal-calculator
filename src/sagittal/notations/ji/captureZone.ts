@@ -1,6 +1,6 @@
-import { Maybe, Zone } from "../../../general"
+import { computeCentsFromMonzo, Maybe, Zone } from "../../../general"
+import { SagittalComma } from "../../types"
 import { getSagittalComma } from "../getSagittalComma"
-import { SagittalComma } from "../types"
 import { formatLevel } from "./formatLevel"
 import { isWithinLevel } from "./isWithinLevel"
 import { LEVELS_BOUNDS } from "./levelsBounds"
@@ -16,7 +16,7 @@ const computeCaptureZone = (jiSymbol: JiSymbol, level: Level): Maybe<Zone> => {
     const primaryComma = getSagittalComma(jiSymbol.primaryCommaId)
 
     const indexOfBoundJustAboveSymbolAtThisLevel = levelBounds.findIndex(bound => {
-        return bound.cents > primaryComma.cents
+        return bound.cents > computeCentsFromMonzo(primaryComma.monzo)
     })
     const indexOfBoundJustBelowSymbolAtThisLevel = indexOfBoundJustAboveSymbolAtThisLevel - 1
 

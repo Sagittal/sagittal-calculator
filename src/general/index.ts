@@ -24,6 +24,7 @@ export {
     Ranked,
     RankStrategy,
     shallowClone,
+    isArray,
     shuffle,
     sort,
     ZERO_ONE_INDEX_DIFF,
@@ -90,7 +91,6 @@ export {
     computeMonzoFromInteger,
     computeMonzoFromRatio,
     computeMonzosFromPrimeExponentExtremas,
-    computeMonzoSlicedToPrime,
     computePrimeCount,
     computeRatioFromMonzo,
     computeRoughNumberMonzo,
@@ -102,6 +102,7 @@ export {
     count,
     Denominator,
     difference,
+    Direction,
     DistributionBin,
     dividesEvenly,
     Exponent,
@@ -119,7 +120,9 @@ export {
     min,
     Min,
     mod,
+    computeIsSuperMonzo,
     Monzo,
+    MonzoTypeParameters,
     multiply,
     negative,
     Numerator,
@@ -149,6 +152,8 @@ export {
     Popularity,
     Votes,
     Zone,
+    TwoThreeFreeClassAsRatio,
+    RationalPitch,
 } from "./music"
 export { Count, Ed, Extrema, Id, Index, Ms, Multiplier, Name, Step, Sum, Window } from "./types"
 

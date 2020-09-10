@@ -1,6 +1,6 @@
 import { Abs, Copfr, Integer, Max, ObjectKey, Prime, Sopfr } from "../../../../../../src/general"
 import { Exponent } from "../../../../../../src/general/math"
-import { ApotomeSlope, getSagittalComma } from "../../../../../../src/sagittal"
+import { analyzeComma, ApotomeSlope, getSagittalComma } from "../../../../../../src/sagittal"
 import { N2D3P9 } from "../../../../../../src/sagittal/comma/evaluation/n2d3p9"
 import { computeSagittalCommaName } from "../../../../../../src/sagittal/comma/name"
 import { JI_SYMBOLS } from "../../../../../../src/sagittal/notations/ji"
@@ -38,8 +38,9 @@ describe("verifying primary commas", () => {
                 maxN2D3P9,
                 sortKey,
             })
+            const analyzedCommas = commas.map(comma => analyzeComma(comma))
 
-            console.warn(computeFindCommasTable(commas))
+            console.warn(computeFindCommasTable(analyzedCommas))
         })
     })
 })

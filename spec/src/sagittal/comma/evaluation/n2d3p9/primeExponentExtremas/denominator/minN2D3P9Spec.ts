@@ -1,7 +1,8 @@
 import { Exponent, Integer, Max, Min, Prime } from "../../../../../../../../src/general"
 import { Denominator } from "../../../../../../../../src/general/math"
 import { N2D3P9 } from "../../../../../../../../src/sagittal"
-import * as d39 from "../../../../../../../../src/sagittal/comma/evaluation/n2d3p9/primeExponentExtremas/denominator/d39"
+import * as d39
+    from "../../../../../../../../src/sagittal/comma/evaluation/n2d3p9/primeExponentExtremas/denominator/d39"
 import { computeMinN2D3P9ForCandidateMaxDenominatorPrimeExponentGivenMaxN2D3P9 } from "../../../../../../../../src/sagittal/comma/evaluation/n2d3p9/primeExponentExtremas/denominator/minN2D3P9"
 import * as minN2P
     from "../../../../../../../../src/sagittal/comma/evaluation/n2d3p9/primeExponentExtremas/denominator/minN2P"

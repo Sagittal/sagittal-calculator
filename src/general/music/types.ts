@@ -1,4 +1,3 @@
-import { TwoThreeFreeClass } from "../../sagittal"
 import { Monzo, Ratio } from "../math"
 import { Extrema, Name } from "../types"
 
@@ -7,21 +6,25 @@ type Cents = number & { _CentsBrand: "Cents" }
 // TODO: if you had the code base work in Pitch first and cents only secondarily,
 //  then the monzo to and from cents stuff could live in math/ instead of music/
 //  and then this would be more just like some number, a pure multiplier or coefficient of waveform frequency
-type CentsPosition = Partial<Pitch> & {
+type CentsPosition = {
     cents: Cents,
+    monzo?: Monzo<{ irrational: true }>,
+    name?: Name<Pitch>,
 }
 
-interface Pitch {
-    name: Name<Pitch>,
-    cents: Cents,
-    monzo: Monzo<{ noninteger: true }>,
-    ratio: Ratio<number>,
+interface RationalPitch {
+    monzo: Monzo,
+    name?: Name<Pitch>,
 }
+
+type Pitch = RationalPitch | CentsPosition
 
 type Votes = number & { _VotesBrand: "Votes" }
 
+type TwoThreeFreeClassAsRatio = Ratio & { _TwoThreeFreeClassAsRatioBrand: "TwoThreeFreeClassAsRatio" }
+
 interface Popularity {
-    twoThreeFreeClass: TwoThreeFreeClass,
+    twoThreeFreeClassAsRatio: TwoThreeFreeClassAsRatio,
     votes: Votes,
 }
 
@@ -35,6 +38,8 @@ export {
     Votes,
     Popularity,
     Zone,
-    Pitch,
+    RationalPitch,
     Apotome,
+    Pitch,
+    TwoThreeFreeClassAsRatio,
 }

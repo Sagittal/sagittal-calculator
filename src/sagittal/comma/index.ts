@@ -1,5 +1,6 @@
 export { computeNotatingCommas } from "./notatingCommas"
-export { computeCommasFromFiveSlicedMonzo } from "./commasFromFiveSlicedMonzo"
+export { computeCommasFromTwoThreeFreeMonzo } from "./commasFromFiveSlicedMonzo"
+export { analyzeComma } from "./analyzeComma"
 export { analyzeRationalPitch } from "./analyzeRationalPitch"
 export {
     DEFAULT_MAX_ABSOLUTE_APOTOME_SLOPE,
@@ -15,9 +16,9 @@ export {
 export {
     ApotomeSlope, N2D3P9, computeN2D3P9, computeApotomeSlope, computePrimeExponentExtremasGivenMaxN2D3P9,
 } from "./evaluation"
-export { CommaNameOptions, CommasFromFiveSlicedMonzoOptions, TwoThreeFreeClass } from "./types"
+export { CommaNameOptions, CommasFrom23FreeMonzoOptions } from "./types"
 export {
-    computeMonzoFrom23FreeRatioAndSizeCategoryName,
+    computeMonzoFrom23FreeClassAndSizeCategoryName,
     computeSagittalCommaName,
     SIZE_CATEGORY_BOUNDS,
     parseCommaName,

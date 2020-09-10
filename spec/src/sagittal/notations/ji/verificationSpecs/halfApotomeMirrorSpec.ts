@@ -1,5 +1,5 @@
-import { getSagittalComma, JI_BOUNDS, JI_SYMBOLS } from "../../../../../../src/sagittal"
-import { APOTOME_CENTS } from "../../../../../../src/sagittal/constants"
+import { computeCentsFromMonzo } from "../../../../../../src/general/music"
+import { APOTOME_CENTS, getSagittalComma, JI_BOUNDS, JI_SYMBOLS } from "../../../../../../src/sagittal"
 
 describe("half-apotome mirror", () => {
     const halfApotomeCents = APOTOME_CENTS / 2
@@ -7,7 +7,7 @@ describe("half-apotome mirror", () => {
     it("is the case that the commas in the JI notation are symmetrical about the half-apotome mirror", () => {
         const sagittalJiCommas = JI_SYMBOLS.map(symbol => getSagittalComma(symbol.primaryCommaId))
         const firstCommaGreaterThanHalfApotomeMirrorIndex =
-            sagittalJiCommas.findIndex(jiComma => jiComma.cents > halfApotomeCents)
+            sagittalJiCommas.findIndex(jiComma => computeCentsFromMonzo(jiComma.monzo) > halfApotomeCents)
 
         let indexOffset = 0
         while (firstCommaGreaterThanHalfApotomeMirrorIndex + indexOffset < sagittalJiCommas.length) {
@@ -17,7 +17,10 @@ describe("half-apotome mirror", () => {
             const comma = sagittalJiCommas[ index ]
             const mirroredComma = sagittalJiCommas[ mirroredIndex ]
 
-            expect(comma.cents - halfApotomeCents).toBeCloseTo(halfApotomeCents - mirroredComma.cents)
+            const actual = computeCentsFromMonzo(comma.monzo) - halfApotomeCents
+            const expected = halfApotomeCents - computeCentsFromMonzo(mirroredComma.monzo)
+
+            expect(actual).toBeCloseTo(expected)
 
             indexOffset = indexOffset + 1
         }

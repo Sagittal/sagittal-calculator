@@ -3,28 +3,28 @@ import {
     BLANK,
     Cents,
     COMMA_POPULARITIES,
-    computeMonzoFromRatio,
+    computeCentsFromMonzo,
+    computeRatioFromMonzo,
     deepEquals,
     formatMonzo,
     formatNumber,
     formatRatio,
     Formatted,
-    Id,
     Io,
     ioSettings,
     isUndefined,
     Max,
     Maybe,
-    Monzo,
+    TwoThreeFreeClassAsRatio,
     Votes,
 } from "../../general"
 import {
     addMaybeJiSymbol,
-    AnalyzedRationalPitch,
-    APOTOME,
+    APOTOME_CENTS,
+    Comma,
+    computeApotomeSlope,
     computeNotatingCommas,
     formatSymbol,
-    JiSymbol,
     N2D3P9,
     TwoThreeFreeClass,
 } from "../../sagittal"
@@ -32,16 +32,16 @@ import { popular23FreeClassesScriptGroupSettings } from "./globals"
 import { Popular23FreeClassWithBestNotatingComma } from "./types"
 
 // TODO: not yet tested
-const isLate = (notatingComma: AnalyzedRationalPitch, bestNotatingComma: AnalyzedRationalPitch) => {
+const isLate = (notatingComma: Comma, bestNotatingComma: Comma) => {
     return abs(notatingComma.monzo[ 1 ]) < abs(bestNotatingComma.monzo[ 1 ]) ||
         (
             abs(notatingComma.monzo[ 1 ]) === abs(bestNotatingComma.monzo[ 1 ]) &&
-            notatingComma.cents < bestNotatingComma.cents
+            computeCentsFromMonzo(notatingComma.monzo) < computeCentsFromMonzo(bestNotatingComma.monzo)
         )
 }
 
-const isLaas = (notatingComma: AnalyzedRationalPitch, bestNotatingComma: AnalyzedRationalPitch) => {
-    return abs(notatingComma.apotomeSlope) < abs(bestNotatingComma.apotomeSlope)
+const isLaas = (notatingComma: Comma, bestNotatingComma: Comma) => {
+    return abs(computeApotomeSlope(notatingComma.monzo)) < abs(computeApotomeSlope(bestNotatingComma.monzo))
 }
 
 const computePopular23FreeClassWithBestNotatingComma = (
@@ -49,19 +49,24 @@ const computePopular23FreeClassWithBestNotatingComma = (
 ): Popular23FreeClassWithBestNotatingComma => {
     const formattedN2D3P9 = formatNumber(n2d3p9)
 
-    const formatted23FreeClass: Formatted<TwoThreeFreeClass> = formatRatio(twoThreeFreeClass)
+    const formatted23FreeClass: Formatted<TwoThreeFreeClass> =
+        // TODO: you'll want to extract this as an actual format23FreeClass funtion
+        formatRatio(computeRatioFromMonzo(twoThreeFreeClass.monzo)) as unknown as Formatted<TwoThreeFreeClass>
+
+    const twoThreeFreeClassAsRatio: TwoThreeFreeClassAsRatio =
+        computeRatioFromMonzo(twoThreeFreeClass.monzo) as TwoThreeFreeClassAsRatio
     const popularity = COMMA_POPULARITIES.find(popularity => {
-        return deepEquals(popularity.twoThreeFreeClass, twoThreeFreeClass)
+        return deepEquals(popularity.twoThreeFreeClassAsRatio, twoThreeFreeClassAsRatio)
     })
     const popularityRank = popularity?.rank || "-" as Io
     const votes = popularity?.votes || 0 as Votes
 
     const notatingCommas = computeNotatingCommas(
-        computeMonzoFromRatio(twoThreeFreeClass),
-        { maxCents: APOTOME.cents / 2 as Max<Cents> },
+        twoThreeFreeClass.monzo,
+        { maxCents: APOTOME_CENTS / 2 as Max<Cents> },
     )
 
-    let bestNotatingComma: Maybe<AnalyzedRationalPitch> = undefined
+    let bestNotatingComma: Maybe<Comma> = undefined
     for (const notatingComma of notatingCommas) {
         if (
             isUndefined(bestNotatingComma) ||
@@ -87,9 +92,8 @@ const computePopular23FreeClassWithBestNotatingComma = (
         formatted23FreeClass,
         popularityRank,
         votes,
-        centsOfBestNotatingComma: formatNumber(commaWithMaybeSagittalSymbol.cents),
-        // TODO: unclear why I need to type assert on this next line...
-        monzoOfBestNotatingComma: formatMonzo(commaWithMaybeSagittalSymbol.monzo) as Formatted<Monzo>,
+        centsOfBestNotatingComma: formatNumber(computeCentsFromMonzo(commaWithMaybeSagittalSymbol.monzo)),
+        monzoOfBestNotatingComma: formatMonzo(commaWithMaybeSagittalSymbol.monzo),
         maybeSymbolForBestNotatingComma:
             commaWithMaybeSagittalSymbol.symbolId ?
                 formatSymbol(commaWithMaybeSagittalSymbol.symbolId, ioSettings) :

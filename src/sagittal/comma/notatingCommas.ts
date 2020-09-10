@@ -1,17 +1,17 @@
-import { computeMonzoSlicedToPrime, Integer, invertMonzo, Monzo } from "../../general"
-import { AnalyzedRationalPitch } from "../types"
-import { computeCommasFromFiveSlicedMonzo } from "./commasFromFiveSlicedMonzo"
-import { CommasFromFiveSlicedMonzoOptions } from "./types"
+import { computeRoughNumberMonzo, invertMonzo, Monzo } from "../../general"
+import { Comma } from "../types"
+import { computeCommasFromTwoThreeFreeMonzo } from "./commasFromFiveSlicedMonzo"
+import { CommasFrom23FreeMonzoOptions } from "./types"
 
 const computeNotatingCommas = (
     monzo: Monzo,
-    options?: CommasFromFiveSlicedMonzoOptions,
-): Array<AnalyzedRationalPitch> => {
-    const fiveSlicedMonzo: Monzo<{ slice: 5 }> = computeMonzoSlicedToPrime(monzo, 5) as Monzo<{ slice: 5 }>
+    options?: CommasFrom23FreeMonzoOptions,
+): Array<Comma> => {
+    const twoThreeFreeMonzo: Monzo<{ rough: 5 }> = computeRoughNumberMonzo(monzo, 5) as Monzo<{ rough: 5 }>
 
     return [
-        ...computeCommasFromFiveSlicedMonzo(fiveSlicedMonzo, options),
-        ...computeCommasFromFiveSlicedMonzo(invertMonzo(fiveSlicedMonzo), options),
+        ...computeCommasFromTwoThreeFreeMonzo(twoThreeFreeMonzo, options),
+        ...computeCommasFromTwoThreeFreeMonzo(invertMonzo(twoThreeFreeMonzo), options),
     ]
 }
 

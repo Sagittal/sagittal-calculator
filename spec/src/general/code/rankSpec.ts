@@ -1,4 +1,4 @@
-import { deepClone, RankStrategy } from "../../../../src/general"
+import { ACCURACY_THRESHOLD, deepClone, RankStrategy } from "../../../../src/general"
 import { rank, Rank } from "../../../../src/general/code"
 
 describe("rank", () => {
@@ -87,5 +87,26 @@ describe("rank", () => {
             ]
             expect(actual).toEqual(expected)
         })
+    })
+
+    it("supports precision when comparing", () => {
+        const arrayOfObjects: Array<unknown> = [
+            { value: 1, otherValue: 1 },
+            { value: 4, otherValue: 3 },
+            { value: 2, otherValue: 2 },
+            { value: 3.999999999999, otherValue: 2 },
+            { value: 1, otherValue: 2 },
+        ]
+
+        const actual = rank(arrayOfObjects, { precision: ACCURACY_THRESHOLD })
+
+        const expected = [
+            { value: 1, otherValue: 1, rank: 1 as Rank<unknown> },
+            { value: 1, otherValue: 2, rank: 1 as Rank<unknown> },
+            { value: 2, otherValue: 2, rank: 3 as Rank<unknown> },
+            { value: 4, otherValue: 3, rank: 4 as Rank<unknown> },
+            { value: 3.999999999999, otherValue: 2, rank: 4 as Rank<unknown> },
+        ]
+        expect(actual).toEqual(expected)
     })
 })

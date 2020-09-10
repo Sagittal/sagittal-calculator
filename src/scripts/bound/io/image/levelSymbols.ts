@@ -1,4 +1,4 @@
-import { difference, Id, Io, Px, sum } from "../../../../general"
+import { computeCentsFromMonzo, difference, Id, Io, Px, sum } from "../../../../general"
 import { getJiSymbol, getSagittalComma, JiSymbol, Level, LEVELS_SYMBOL_IDS, SagittalComma } from "../../../../sagittal"
 import { formatMina } from "../terminal"
 import { LEVEL_CENTERS } from "./levelHeights"
@@ -23,7 +23,7 @@ const visualizeLevelSymbols = () => {
             const { primaryCommaId, ascii, unicode, mina } = levelSymbol
             const primaryComma: SagittalComma = getSagittalComma(primaryCommaId)
 
-            const positionX: Px = computeX(primaryComma.cents)
+            const positionX: Px = computeX(computeCentsFromMonzo(primaryComma.monzo))
 
             const adjustedUnicode = ascii === "/|~" ?
                 unicode + "         " :

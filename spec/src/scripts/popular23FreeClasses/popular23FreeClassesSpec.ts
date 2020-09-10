@@ -23,7 +23,7 @@ describe("computePopular23FreeClasses", () => {
                     rank: 1,
                 },
                 {
-                    n2d3p9: 1.388889,
+                    n2d3p9: 1.3888888888888888,
                     formattedN2D3P9: "  1.389",
                     formatted23FreeClass: "5/1",
                     popularityRank: 2,
@@ -33,7 +33,7 @@ describe("computePopular23FreeClasses", () => {
                     rank: 2,
                 },
                 {
-                    n2d3p9: 2.722222,
+                    n2d3p9: 2.722222222222222,
                     formattedN2D3P9: "  2.722",
                     formatted23FreeClass: "7/1",
                     popularityRank: 3,
@@ -43,7 +43,7 @@ describe("computePopular23FreeClasses", () => {
                     rank: 3,
                 },
                 {
-                    n2d3p9: 3.472222,
+                    n2d3p9: 3.472222222222222,
                     formattedN2D3P9: "  3.472",
                     formatted23FreeClass: "25/1",
                     popularityRank: 4,
@@ -53,7 +53,7 @@ describe("computePopular23FreeClasses", () => {
                     rank: 4,
                 },
                 {
-                    n2d3p9: 4.537037,
+                    n2d3p9: 4.537037037037037,
                     formattedN2D3P9: "  4.537",
                     formatted23FreeClass: "7/5",
                     popularityRank: 5,

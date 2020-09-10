@@ -1,9 +1,10 @@
 import {
     COMMA_POPULARITIES,
-    computeMonzoFromRatio,
+    computeRatioFromMonzo,
     deepEquals,
     formatNumber,
     formatRatio,
+    Formatted,
     Io,
     ioSettings,
     join,
@@ -19,14 +20,18 @@ const computePopular23FreeClass = (
 ): Popular23FreeClass => {
     const formattedN2D3P9 = formatNumber(n2d3p9)
 
-    const formatted23FreeClass = formatRatio(twoThreeFreeClass)
+    // TODO: so this is like the worst of both worlds... we have to convert the monzo to a ratio AND format it
+    //  so it becomes painfully clear how the formatted version is of the ratio even though it shouldn't have that name
+    const twoThreeFreeClassAsRatio = computeRatioFromMonzo(twoThreeFreeClass.monzo)
+    const formatted23FreeClass =
+        formatRatio(twoThreeFreeClassAsRatio) as Formatted as Formatted<TwoThreeFreeClass>
     const popularity = COMMA_POPULARITIES.find(popularity => {
-        return deepEquals(popularity.twoThreeFreeClass, twoThreeFreeClass)
+        return deepEquals(popularity.twoThreeFreeClassAsRatio, twoThreeFreeClassAsRatio)
     })
     const popularityRank = popularity?.rank || "-" as Io
     const votes = popularity?.votes || 0 as Votes
 
-    const exactlyNotatingJiSymbolIds = computeExactlyNotatingJiSymbolIds(computeMonzoFromRatio(twoThreeFreeClass))
+    const exactlyNotatingJiSymbolIds = computeExactlyNotatingJiSymbolIds(twoThreeFreeClass.monzo)
     const formattedExactlyNotatingJiSymbols = join(exactlyNotatingJiSymbolIds.map(symbolId => {
         return formatSymbol(symbolId, ioSettings)
     }), SPACE)

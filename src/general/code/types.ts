@@ -5,6 +5,7 @@ type ObjectKey = string & { _ObjectKeyBrand: "ObjectKey" }
 type SortOptions = Partial<{
     by: Path,
     descending: boolean,
+    precision: Integer,
 }>
 
 type Path = number | string | Array<number | string>

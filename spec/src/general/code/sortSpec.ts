@@ -1,4 +1,4 @@
-import { sort } from "../../../../src/general/code"
+import { ACCURACY_THRESHOLD, sort } from "../../../../src/general/code"
 
 describe("sort", () => {
     it("takes an array and sorts it numerically, in place", () => {
@@ -90,5 +90,14 @@ describe("sort", () => {
         sort(array)
 
         expect(array).toEqual(["apple", "banana", "cherimoya"])
+    })
+
+    it("accepts precision as an option", () => {
+        const array = [5, 2.0000000001, 7, 2, 4, 3]
+
+        sort(array, { precision: ACCURACY_THRESHOLD })
+
+        const expected = [2.0000000001, 2, 3, 4, 5, 7]
+        expect(array).toEqual(expected)
     })
 })

@@ -316,7 +316,7 @@ const computeKnownPopular23FreeClasses = (): Array<Ranked<Popular23FreeClass>> =
     const popular23FreeClasses = knownPopular23FreeClasses
         .map(parse23FreeClass)
         .map(twoThreeFreeClass => {
-            return computePopular23FreeClass({ twoThreeFreeClass, n2d3p9: computeN2D3P9(twoThreeFreeClass) })
+            return computePopular23FreeClass({ twoThreeFreeClass, n2d3p9: computeN2D3P9(twoThreeFreeClass.monzo) })
         })
 
     return rank(popular23FreeClasses, { by: "n2d3p9", strategy: RankStrategy.FRACTIONAL })

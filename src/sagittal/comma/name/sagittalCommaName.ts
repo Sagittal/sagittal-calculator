@@ -15,7 +15,7 @@ import {
     Ratio,
     SUPERSCRIPT_NUMS,
 } from "../../../general"
-import { AnalyzedRationalPitch } from "../../types"
+import { Comma } from "../../types"
 import { computeSizeCategory } from "./sizeCategory"
 
 const primeFactorizeCommaName = (numeratorOrDenominator: FractionalPart) => {
@@ -46,7 +46,7 @@ const primeFactorizeCommaName = (numeratorOrDenominator: FractionalPart) => {
 const computeSagittalCommaName = (
     monzo: Monzo,
     { directed = true, factored = false, abbreviated = true } = {},
-): Name<AnalyzedRationalPitch> => {
+): Name<Comma> => {
     const sub = computeIsSubMonzo(monzo)
 
     const superMonzo = computeSuperMonzo(monzo)
@@ -72,7 +72,7 @@ const computeSagittalCommaName = (
 
     const maybeDown = sub ? " down" : ""
 
-    return `${formattedRatio}${maybeHyphen}${sizeCategory}${maybeDown}` as Name<AnalyzedRationalPitch>
+    return `${formattedRatio}${maybeHyphen}${sizeCategory}${maybeDown}` as Name<Comma>
 }
 
 export {

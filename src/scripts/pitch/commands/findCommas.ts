@@ -1,7 +1,8 @@
 import { program } from "commander"
-import { CommandFlag, LogTarget, Max, Prime, saveLog } from "../../../general"
+import { CommandFlag, LogTarget, Max, Prime, saveLog, sort } from "../../../general"
 import {
     addMaybeJiSymbol,
+    analyzeComma,
     DEFAULT_MAX_PRIME_LIMIT,
     DEFAULT_MAX_TWO_THREE_FREE_COPFR,
     DEFAULT_MAX_TWO_THREE_FREE_SOPFR,
@@ -43,5 +44,12 @@ const commas = computeCommas({
 })
 
 const commasWithMaybeSymbols = commas.map(addMaybeJiSymbol)
+const analyzedCommas = commasWithMaybeSymbols.map(comma => {
+    // TODO: check that every time this happens it uses the comma Name options?
+    return analyzeComma(comma, pitchScriptGroupSettings.commaNameOptions)
+})
+if (pitchScriptGroupSettings.sortKey) {
+    sort(analyzedCommas, { by: pitchScriptGroupSettings.sortKey })
+}
 
-saveLog(computeFindCommasTable(commasWithMaybeSymbols), LogTarget.ALL, PITCH_SCRIPT_GROUP)
+saveLog(computeFindCommasTable(analyzedCommas), LogTarget.ALL, PITCH_SCRIPT_GROUP)

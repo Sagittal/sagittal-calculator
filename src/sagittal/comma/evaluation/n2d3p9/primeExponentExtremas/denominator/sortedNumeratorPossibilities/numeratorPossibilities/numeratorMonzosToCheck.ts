@@ -1,5 +1,6 @@
 import {
     computeMonzosFromPrimeExponentExtremas,
+    Direction,
     Exponent,
     Extrema,
     Integer,
@@ -11,7 +12,9 @@ import {
 import { N2D3P9 } from "../../../../types"
 import { computeMaxNumeratorPrimeExponentsGivenMaxN2D3P9 } from "./maxNumeratorPrimeExponents"
 
-const computeNumeratorMonzosToCheckGivenMaxN2D3P9 = (maxN2D3P9: Max<N2D3P9>): Monzo[] => {
+const computeNumeratorMonzosToCheckGivenMaxN2D3P9 = (
+    maxN2D3P9: Max<N2D3P9>,
+): Array<Monzo<{ direction: Direction.SUPER, rough: 5 }>> => {
     const maxNumeratorPrimeExponentsGivenMaxN2D3P9 = computeMaxNumeratorPrimeExponentsGivenMaxN2D3P9(maxN2D3P9)
 
     const numeratorPrimeExponentExtremaGivenMaxN2D3P9: Array<Extrema<Integer & Exponent<Prime>>> =
@@ -31,7 +34,9 @@ const computeNumeratorMonzosToCheckGivenMaxN2D3P9 = (maxN2D3P9: Max<N2D3P9>): Mo
     //  so that you can use it here, since this computeMonzosFromPrimeExponentExtremas turns out to be
     //  so ill-advised. try to get rid of it.
 
-    return computeMonzosFromPrimeExponentExtremas(numeratorPrimeExponentExtremaGivenMaxN2D3P9)
+    return computeMonzosFromPrimeExponentExtremas(
+        numeratorPrimeExponentExtremaGivenMaxN2D3P9,
+    ) as Array<Monzo<{ direction: Direction.SUPER, rough: 5 }>>
 }
 
 export {

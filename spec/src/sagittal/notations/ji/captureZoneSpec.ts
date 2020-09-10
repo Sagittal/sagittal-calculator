@@ -1,8 +1,9 @@
 import { Id, Zone } from "../../../../../src/general"
+import { SagittalComma } from "../../../../../src/sagittal"
 import { SymbolLongAscii, SymbolUnicode } from "../../../../../src/sagittal/io"
 import { JiSymbol, Level, Mina } from "../../../../../src/sagittal/notations/ji"
 import { computeCaptureZone } from "../../../../../src/sagittal/notations/ji/captureZone"
-import { SagittalComma, SymbolSubset } from "../../../../../src/sagittal/notations/types"
+import { SymbolSubset } from "../../../../../src/sagittal/notations/types"
 
 describe("computeCaptureZone", () => {
     it("given a JI symbol and a level, returns the capture zone for the symbol at that level (works for a symbol introduced before extreme, but extreme is requested)", () => {

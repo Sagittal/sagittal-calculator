@@ -141,7 +141,7 @@ describe("computeHistories", () => {
                     level: Level.INSANE,
                     type: EventType.MEAN,
                     name: ",)|( )|(",
-                    cents: 9.434865916310185,
+                    cents: 9.43486591631018,
                 },
             ],
             [
@@ -161,7 +161,7 @@ describe("computeHistories", () => {
                     level: Level.EXTREME,
                     type: EventType.MEAN,
                     name: ",)|( )|(",
-                    cents: 9.434865916310185,
+                    cents: 9.43486591631018,
                 },
                 {
                     level: Level.INSANE,
@@ -187,7 +187,7 @@ describe("computeHistories", () => {
                     level: Level.EXTREME,
                     type: EventType.MEAN,
                     name: ",)|( )|(",
-                    cents: 9.434865916310185,
+                    cents: 9.43486591631018,
                 },
                 {
                     level: Level.INSANE,
@@ -213,7 +213,7 @@ describe("computeHistories", () => {
                     level: Level.EXTREME,
                     type: EventType.MEAN,
                     name: ",)|( )|(",
-                    cents: 9.434865916310185,
+                    cents: 9.43486591631018,
                 },
                 {
                     level: Level.INSANE,
@@ -239,7 +239,7 @@ describe("computeHistories", () => {
                     level: Level.EXTREME,
                     type: EventType.MEAN,
                     name: ",)|( )|(",
-                    cents: 9.434865916310185,
+                    cents: 9.43486591631018,
                 },
                 {
                     level: Level.INSANE,
@@ -265,13 +265,13 @@ describe("computeHistories", () => {
                     level: Level.EXTREME,
                     type: EventType.MEAN,
                     name: ",)|( )|(",
-                    cents: 9.434865916310185,
+                    cents: 9.43486591631018,
                 },
                 {
                     level: Level.INSANE,
                     type: EventType.MEAN,
                     name: ",)|( )|(",
-                    cents: 9.434865916310185,
+                    cents: 9.43486591631018,
                 },
             ],
             [
@@ -285,7 +285,7 @@ describe("computeHistories", () => {
                     level: Level.ULTRA,
                     type: EventType.MEAN,
                     name: "~| )|(",
-                    cents: 9.208778600061725,
+                    cents: 9.208778600061722,
                 },
                 {
                     level: Level.EXTREME,
@@ -311,7 +311,7 @@ describe("computeHistories", () => {
                     level: Level.ULTRA,
                     type: EventType.MEAN,
                     name: "~| )|(",
-                    cents: 9.208778600061725,
+                    cents: 9.208778600061722,
                 },
                 {
                     level: Level.EXTREME,
@@ -337,7 +337,7 @@ describe("computeHistories", () => {
                     level: Level.ULTRA,
                     type: EventType.MEAN,
                     name: "~| )|(",
-                    cents: 9.208778600061725,
+                    cents: 9.208778600061722,
                 },
                 {
                     level: Level.EXTREME,
@@ -363,7 +363,7 @@ describe("computeHistories", () => {
                     level: Level.ULTRA,
                     type: EventType.MEAN,
                     name: "~| )|(",
-                    cents: 9.208778600061725,
+                    cents: 9.208778600061722,
                 },
                 {
                     level: Level.EXTREME,
@@ -389,7 +389,7 @@ describe("computeHistories", () => {
                     level: Level.ULTRA,
                     type: EventType.MEAN,
                     name: "~| )|(",
-                    cents: 9.208778600061725,
+                    cents: 9.208778600061722,
                 },
                 {
                     level: Level.EXTREME,
@@ -401,7 +401,7 @@ describe("computeHistories", () => {
                     level: Level.INSANE,
                     type: EventType.MEAN,
                     name: ",)|( )|(",
-                    cents: 9.434865916310185,
+                    cents: 9.43486591631018,
                 },
             ],
             [
@@ -415,13 +415,13 @@ describe("computeHistories", () => {
                     level: Level.ULTRA,
                     type: EventType.MEAN,
                     name: "~| )|(",
-                    cents: 9.208778600061725,
+                    cents: 9.208778600061722,
                 },
                 {
                     level: Level.EXTREME,
                     type: EventType.MEAN,
                     name: ",)|( )|(",
-                    cents: 9.434865916310185,
+                    cents: 9.43486591631018,
                 },
                 {
                     level: Level.INSANE,
@@ -441,13 +441,13 @@ describe("computeHistories", () => {
                     level: Level.ULTRA,
                     type: EventType.MEAN,
                     name: "~| )|(",
-                    cents: 9.208778600061725,
+                    cents: 9.208778600061722,
                 },
                 {
                     level: Level.EXTREME,
                     type: EventType.MEAN,
                     name: ",)|( )|(",
-                    cents: 9.434865916310185,
+                    cents: 9.43486591631018,
                 },
                 {
                     level: Level.INSANE,
@@ -467,13 +467,13 @@ describe("computeHistories", () => {
                     level: Level.ULTRA,
                     type: EventType.MEAN,
                     name: "~| )|(",
-                    cents: 9.208778600061725,
+                    cents: 9.208778600061722,
                 },
                 {
                     level: Level.EXTREME,
                     type: EventType.MEAN,
                     name: ",)|( )|(",
-                    cents: 9.434865916310185,
+                    cents: 9.43486591631018,
                 },
                 {
                     level: Level.INSANE,
@@ -493,13 +493,13 @@ describe("computeHistories", () => {
                     level: Level.ULTRA,
                     type: EventType.MEAN,
                     name: "~| )|(",
-                    cents: 9.208778600061725,
+                    cents: 9.208778600061722,
                 },
                 {
                     level: Level.EXTREME,
                     type: EventType.MEAN,
                     name: ",)|( )|(",
-                    cents: 9.434865916310185,
+                    cents: 9.43486591631018,
                 },
                 {
                     level: Level.INSANE,
@@ -519,19 +519,19 @@ describe("computeHistories", () => {
                     level: Level.ULTRA,
                     type: EventType.MEAN,
                     name: "~| )|(",
-                    cents: 9.208778600061725,
+                    cents: 9.208778600061722,
                 },
                 {
                     level: Level.EXTREME,
                     type: EventType.MEAN,
                     name: ",)|( )|(",
-                    cents: 9.434865916310185,
+                    cents: 9.43486591631018,
                 },
                 {
                     level: Level.INSANE,
                     type: EventType.MEAN,
                     name: ",)|( )|(",
-                    cents: 9.434865916310185,
+                    cents: 9.43486591631018,
                 },
             ],
             [
@@ -539,7 +539,7 @@ describe("computeHistories", () => {
                     level: Level.MEDIUM,
                     type: EventType.MEAN,
                     name: "|( )|(",
-                    cents: 7.72288142310195,
+                    cents: 7.722881423101948,
                 },
                 {
                     level: Level.ULTRA,
@@ -565,7 +565,7 @@ describe("computeHistories", () => {
                     level: Level.MEDIUM,
                     type: EventType.MEAN,
                     name: "|( )|(",
-                    cents: 7.72288142310195,
+                    cents: 7.722881423101948,
                 },
                 {
                     level: Level.ULTRA,
@@ -591,7 +591,7 @@ describe("computeHistories", () => {
                     level: Level.MEDIUM,
                     type: EventType.MEAN,
                     name: "|( )|(",
-                    cents: 7.72288142310195,
+                    cents: 7.722881423101948,
                 },
                 {
                     level: Level.ULTRA,
@@ -617,7 +617,7 @@ describe("computeHistories", () => {
                     level: Level.MEDIUM,
                     type: EventType.MEAN,
                     name: "|( )|(",
-                    cents: 7.72288142310195,
+                    cents: 7.722881423101948,
                 },
                 {
                     level: Level.ULTRA,
@@ -643,7 +643,7 @@ describe("computeHistories", () => {
                     level: Level.MEDIUM,
                     type: EventType.MEAN,
                     name: "|( )|(",
-                    cents: 7.72288142310195,
+                    cents: 7.722881423101948,
                 },
                 {
                     level: Level.ULTRA,
@@ -661,7 +661,7 @@ describe("computeHistories", () => {
                     level: Level.INSANE,
                     type: EventType.MEAN,
                     name: ",)|( )|(",
-                    cents: 9.434865916310185,
+                    cents: 9.43486591631018,
                 },
             ],
             [
@@ -669,7 +669,7 @@ describe("computeHistories", () => {
                     level: Level.MEDIUM,
                     type: EventType.MEAN,
                     name: "|( )|(",
-                    cents: 7.72288142310195,
+                    cents: 7.722881423101948,
                 },
                 {
                     level: Level.ULTRA,
@@ -681,7 +681,7 @@ describe("computeHistories", () => {
                     level: Level.EXTREME,
                     type: EventType.MEAN,
                     name: ",)|( )|(",
-                    cents: 9.434865916310185,
+                    cents: 9.43486591631018,
                 },
                 {
                     level: Level.INSANE,
@@ -695,7 +695,7 @@ describe("computeHistories", () => {
                     level: Level.MEDIUM,
                     type: EventType.MEAN,
                     name: "|( )|(",
-                    cents: 7.72288142310195,
+                    cents: 7.722881423101948,
                 },
                 {
                     level: Level.ULTRA,
@@ -707,7 +707,7 @@ describe("computeHistories", () => {
                     level: Level.EXTREME,
                     type: EventType.MEAN,
                     name: ",)|( )|(",
-                    cents: 9.434865916310185,
+                    cents: 9.43486591631018,
                 },
                 {
                     level: Level.INSANE,
@@ -721,7 +721,7 @@ describe("computeHistories", () => {
                     level: Level.MEDIUM,
                     type: EventType.MEAN,
                     name: "|( )|(",
-                    cents: 7.72288142310195,
+                    cents: 7.722881423101948,
                 },
                 {
                     level: Level.ULTRA,
@@ -733,7 +733,7 @@ describe("computeHistories", () => {
                     level: Level.EXTREME,
                     type: EventType.MEAN,
                     name: ",)|( )|(",
-                    cents: 9.434865916310185,
+                    cents: 9.43486591631018,
                 },
                 {
                     level: Level.INSANE,
@@ -747,7 +747,7 @@ describe("computeHistories", () => {
                     level: Level.MEDIUM,
                     type: EventType.MEAN,
                     name: "|( )|(",
-                    cents: 7.72288142310195,
+                    cents: 7.722881423101948,
                 },
                 {
                     level: Level.ULTRA,
@@ -759,7 +759,7 @@ describe("computeHistories", () => {
                     level: Level.EXTREME,
                     type: EventType.MEAN,
                     name: ",)|( )|(",
-                    cents: 9.434865916310185,
+                    cents: 9.43486591631018,
                 },
                 {
                     level: Level.INSANE,
@@ -773,7 +773,7 @@ describe("computeHistories", () => {
                     level: Level.MEDIUM,
                     type: EventType.MEAN,
                     name: "|( )|(",
-                    cents: 7.72288142310195,
+                    cents: 7.722881423101948,
                 },
                 {
                     level: Level.ULTRA,
@@ -785,13 +785,13 @@ describe("computeHistories", () => {
                     level: Level.EXTREME,
                     type: EventType.MEAN,
                     name: ",)|( )|(",
-                    cents: 9.434865916310185,
+                    cents: 9.43486591631018,
                 },
                 {
                     level: Level.INSANE,
                     type: EventType.MEAN,
                     name: ",)|( )|(",
-                    cents: 9.434865916310185,
+                    cents: 9.43486591631018,
                 },
             ],
             [
@@ -799,13 +799,13 @@ describe("computeHistories", () => {
                     level: Level.MEDIUM,
                     type: EventType.MEAN,
                     name: "|( )|(",
-                    cents: 7.72288142310195,
+                    cents: 7.722881423101948,
                 },
                 {
                     level: Level.ULTRA,
                     type: EventType.MEAN,
                     name: "~| )|(",
-                    cents: 9.208778600061725,
+                    cents: 9.208778600061722,
                 },
                 {
                     level: Level.EXTREME,
@@ -825,13 +825,13 @@ describe("computeHistories", () => {
                     level: Level.MEDIUM,
                     type: EventType.MEAN,
                     name: "|( )|(",
-                    cents: 7.72288142310195,
+                    cents: 7.722881423101948,
                 },
                 {
                     level: Level.ULTRA,
                     type: EventType.MEAN,
                     name: "~| )|(",
-                    cents: 9.208778600061725,
+                    cents: 9.208778600061722,
                 },
                 {
                     level: Level.EXTREME,
@@ -851,13 +851,13 @@ describe("computeHistories", () => {
                     level: Level.MEDIUM,
                     type: EventType.MEAN,
                     name: "|( )|(",
-                    cents: 7.72288142310195,
+                    cents: 7.722881423101948,
                 },
                 {
                     level: Level.ULTRA,
                     type: EventType.MEAN,
                     name: "~| )|(",
-                    cents: 9.208778600061725,
+                    cents: 9.208778600061722,
                 },
                 {
                     level: Level.EXTREME,
@@ -877,13 +877,13 @@ describe("computeHistories", () => {
                     level: Level.MEDIUM,
                     type: EventType.MEAN,
                     name: "|( )|(",
-                    cents: 7.72288142310195,
+                    cents: 7.722881423101948,
                 },
                 {
                     level: Level.ULTRA,
                     type: EventType.MEAN,
                     name: "~| )|(",
-                    cents: 9.208778600061725,
+                    cents: 9.208778600061722,
                 },
                 {
                     level: Level.EXTREME,
@@ -903,13 +903,13 @@ describe("computeHistories", () => {
                     level: Level.MEDIUM,
                     type: EventType.MEAN,
                     name: "|( )|(",
-                    cents: 7.72288142310195,
+                    cents: 7.722881423101948,
                 },
                 {
                     level: Level.ULTRA,
                     type: EventType.MEAN,
                     name: "~| )|(",
-                    cents: 9.208778600061725,
+                    cents: 9.208778600061722,
                 },
                 {
                     level: Level.EXTREME,
@@ -921,7 +921,7 @@ describe("computeHistories", () => {
                     level: Level.INSANE,
                     type: EventType.MEAN,
                     name: ",)|( )|(",
-                    cents: 9.434865916310185,
+                    cents: 9.43486591631018,
                 },
             ],
             [
@@ -929,19 +929,19 @@ describe("computeHistories", () => {
                     level: Level.MEDIUM,
                     type: EventType.MEAN,
                     name: "|( )|(",
-                    cents: 7.72288142310195,
+                    cents: 7.722881423101948,
                 },
                 {
                     level: Level.ULTRA,
                     type: EventType.MEAN,
                     name: "~| )|(",
-                    cents: 9.208778600061725,
+                    cents: 9.208778600061722,
                 },
                 {
                     level: Level.EXTREME,
                     type: EventType.MEAN,
                     name: ",)|( )|(",
-                    cents: 9.434865916310185,
+                    cents: 9.43486591631018,
                 },
                 {
                     level: Level.INSANE,
@@ -955,19 +955,19 @@ describe("computeHistories", () => {
                     level: Level.MEDIUM,
                     type: EventType.MEAN,
                     name: "|( )|(",
-                    cents: 7.72288142310195,
+                    cents: 7.722881423101948,
                 },
                 {
                     level: Level.ULTRA,
                     type: EventType.MEAN,
                     name: "~| )|(",
-                    cents: 9.208778600061725,
+                    cents: 9.208778600061722,
                 },
                 {
                     level: Level.EXTREME,
                     type: EventType.MEAN,
                     name: ",)|( )|(",
-                    cents: 9.434865916310185,
+                    cents: 9.43486591631018,
                 },
                 {
                     level: Level.INSANE,
@@ -981,19 +981,19 @@ describe("computeHistories", () => {
                     level: Level.MEDIUM,
                     type: EventType.MEAN,
                     name: "|( )|(",
-                    cents: 7.72288142310195,
+                    cents: 7.722881423101948,
                 },
                 {
                     level: Level.ULTRA,
                     type: EventType.MEAN,
                     name: "~| )|(",
-                    cents: 9.208778600061725,
+                    cents: 9.208778600061722,
                 },
                 {
                     level: Level.EXTREME,
                     type: EventType.MEAN,
                     name: ",)|( )|(",
-                    cents: 9.434865916310185,
+                    cents: 9.43486591631018,
                 },
                 {
                     level: Level.INSANE,
@@ -1007,19 +1007,19 @@ describe("computeHistories", () => {
                     level: Level.MEDIUM,
                     type: EventType.MEAN,
                     name: "|( )|(",
-                    cents: 7.72288142310195,
+                    cents: 7.722881423101948,
                 },
                 {
                     level: Level.ULTRA,
                     type: EventType.MEAN,
                     name: "~| )|(",
-                    cents: 9.208778600061725,
+                    cents: 9.208778600061722,
                 },
                 {
                     level: Level.EXTREME,
                     type: EventType.MEAN,
                     name: ",)|( )|(",
-                    cents: 9.434865916310185,
+                    cents: 9.43486591631018,
                 },
                 {
                     level: Level.INSANE,
@@ -1033,25 +1033,25 @@ describe("computeHistories", () => {
                     level: Level.MEDIUM,
                     type: EventType.MEAN,
                     name: "|( )|(",
-                    cents: 7.72288142310195,
+                    cents: 7.722881423101948,
                 },
                 {
                     level: Level.ULTRA,
                     type: EventType.MEAN,
                     name: "~| )|(",
-                    cents: 9.208778600061725,
+                    cents: 9.208778600061722,
                 },
                 {
                     level: Level.EXTREME,
                     type: EventType.MEAN,
                     name: ",)|( )|(",
-                    cents: 9.434865916310185,
+                    cents: 9.43486591631018,
                 },
                 {
                     level: Level.INSANE,
                     type: EventType.MEAN,
                     name: ",)|( )|(",
-                    cents: 9.434865916310185,
+                    cents: 9.43486591631018,
                 },
             ],
         ])

@@ -1,21 +1,21 @@
 import { Cents, Id, Monzo, Name, Prime, Ratio, Row, Sopfr } from "../../../../../src/general"
-import { AnalyzedRationalPitch, ApotomeSlope, JiSymbol, TwoThreeFreeClass } from "../../../../../src/sagittal"
+import { AnalyzedComma, ApotomeSlope, Comma, JiSymbol, TwoThreeFreeClass } from "../../../../../src/sagittal"
 import { N2D3P9 } from "../../../../../src/sagittal/comma/evaluation/n2d3p9"
 import { computeCommaRow } from "../../../../../src/scripts/pitch/io/commaRow"
 
 describe("computeCommaRow", () => {
     // Note: this comma is made up and internally inconsistent.
     // Only the name is important as it is used to find the symbol.
-    const comma: AnalyzedRationalPitch & { symbolId?: Id<JiSymbol> } = {
+    const comma: AnalyzedComma & { symbolId?: Id<JiSymbol> } = {
         symbolId: 44 as Id<JiSymbol>,
         cents: 11.2 as Cents,
-        monzo: [0, -1, 1] as Monzo,
+        monzo: [0, -1, 1] as Monzo<{ comma: true }>,
         ratio: [5, 4] as Ratio,
-        name: "1/5C" as Name<AnalyzedRationalPitch>,
+        name: "1/5C" as Name<Comma>,
         limit: 14 as Prime,
         apotomeSlope: 8.2 as ApotomeSlope,
         twoThreeFreeSopfr: 13 as Sopfr<5>,
-        twoThreeFreeClass: [5, 1] as TwoThreeFreeClass,
+        twoThreeFreeClass: { monzo: [1] } as TwoThreeFreeClass,
         n2d3p9: 18.4567 as N2D3P9,
     }
 
@@ -32,7 +32,7 @@ describe("computeCommaRow", () => {
             " 14    ",
             " 13    ",
             " 18.457",
-        ] as Row<AnalyzedRationalPitch>
+        ] as Row<AnalyzedComma>
         expect(actual).toEqual(expected)
     })
 })

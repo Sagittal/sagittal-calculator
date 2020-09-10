@@ -56,4 +56,6 @@ describe("computeIsSubMonzo", () => {
     // tslint:disable-next-line:max-line-length
     //     expect(() => computeIsSubMonzo(monzo)).toThrowError("Both the denominator and the numerator are huge for [   0   0  10 -14  10 -12  10 -10  10 -12 ⟩ so it is not possible to tell whether it is sub.")
     // })
+
+    // TODO: add test for isSuperMonzo
 })

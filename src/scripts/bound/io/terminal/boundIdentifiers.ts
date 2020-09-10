@@ -1,6 +1,6 @@
 import { isUndefined, Maybe } from "../../../../general"
 import { Bound, getJiSymbol, Level, SymbolLongAscii } from "../../../../sagittal"
-import { computeJiSymbolWithPrimaryComma } from "./jiSymbolWithPrimaryComma"
+import { getJiSymbolWithPrimaryComma } from "./jiSymbolWithPrimaryComma"
 import { LEVEL_BOUNDED_SYMBOLS } from "./levelBoundedJiSymbols"
 import {
     BoundedJiSymbol,
@@ -39,13 +39,13 @@ const extractBoundIdentifiers = (bound: Bound): BoundIdentifiers => {
 
                 let firstBoundedJiSymbolWithPrimaryComma
                 if (!isUndefined(first)) {
-                    const firstJiSymbolWithPrimaryComma = computeJiSymbolWithPrimaryComma(first.id)
+                    const firstJiSymbolWithPrimaryComma = getJiSymbolWithPrimaryComma(first.id)
                     firstBoundedJiSymbolWithPrimaryComma = { ...first, ...firstJiSymbolWithPrimaryComma }
                 }
 
                 let secondBoundedJiSymbolWithPrimaryComma
                 if (!isUndefined(second)) {
-                    const secondJiSymbolWithPrimaryComma = computeJiSymbolWithPrimaryComma(second.id)
+                    const secondJiSymbolWithPrimaryComma = getJiSymbolWithPrimaryComma(second.id)
                     secondBoundedJiSymbolWithPrimaryComma = { ...second, ...secondJiSymbolWithPrimaryComma }
                 }
 

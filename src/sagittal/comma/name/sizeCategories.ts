@@ -3,7 +3,7 @@ import { SizeCategory, SizeCategoryAbbreviation, SizeCategoryName } from "./type
 const SIZE_CATEGORIES: SizeCategory[] = Object.entries(SizeCategoryName).map(([key, sizeCategoryName]) => {
     return {
         name: sizeCategoryName,
-        abbreviation: (SizeCategoryAbbreviation as Record<string, SizeCategoryAbbreviation>)[key],
+        abbreviation: (SizeCategoryAbbreviation as Record<string, SizeCategoryAbbreviation>)[ key ],
     }
 })
 

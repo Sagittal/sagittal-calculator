@@ -1,6 +1,6 @@
 // tslint:disable max-line-length
 
-import { deepEquals, Integer, isCloseTo, isUndefined, stringify } from "../../src/general"
+import { ACCURACY_THRESHOLD, deepEquals, Integer, isCloseTo, isUndefined, stringify } from "../../src/general"
 import CustomEqualityTester = jasmine.CustomEqualityTester
 import CustomMatcher = jasmine.CustomMatcher
 import CustomMatcherFactories = jasmine.CustomMatcherFactories
@@ -41,12 +41,12 @@ const testIsCloseTo = <T extends number>(actual: T, expected: T, precision?: Int
         assert(
             !isClose,
             message ||
-            `Expected '${stringify(actual)}' not to be close to '${stringify(expected)}${precisionMessage(precision)}'.`,
+            `Expected ${stringify(actual)} not to be close to ${stringify(expected)}${precisionMessage(precision)}.`,
         )
     } else {
         assert(
             isClose,
-            message || `Expected '${stringify(actual)}' to be close to '${stringify(expected)}${precisionMessage(precision)}'.`,
+            message || `Expected ${stringify(actual)} to be close to ${stringify(expected)}${precisionMessage(precision)}.`,
         )
     }
 }
@@ -75,7 +75,7 @@ const eachExpectedElementDeepEqualsSomeActualElement = <T>(expectedElements: T[]
             actual.some(actualElement => {
                 return deepEquals(actualElement, expectedElement)
             }),
-            message || `This expected element was not found: '${stringify(expectedElement)}'.`,
+            message || `This expected element was not found: ${stringify(expectedElement)}.`,
         )
     })
 }
@@ -107,6 +107,15 @@ const customMatchers: CustomMatcherFactories = {
                 )
 
                 arraysAreCloseUpThroughExpected(expected, actual, precision, negate, message)
+            }),
+    }),
+    toBeCloseToObject: (util: MatchersUtil, customEqualityTesters: readonly CustomEqualityTester[]): CustomMatcher => ({
+        compare: <T extends number>(actual: T[], expected: T[], precision: Integer = ACCURACY_THRESHOLD, negate?: boolean, message?: string): CustomMatcherResult =>
+            doAssertions((): void => {
+                assert(
+                    deepEquals(actual, expected, precision),
+                    message || `Expected ${stringify(actual)} to deep equal ${stringify(expected)} with numeric values within precision ${precision}.`,
+                )
             }),
     }),
     toBeCloseSoFar: (util: MatchersUtil, customEqualityTesters: readonly CustomEqualityTester[]): CustomMatcher => ({
@@ -143,7 +152,7 @@ const customMatchers: CustomMatcherFactories = {
                                 return arraysHaveSameContents(actualElementElement, expectedElement[ index ])
                             })
                         }),
-                        message || `This expected element was not found: '${stringify(expectedElement)}'`,
+                        message || `This expected element was not found: ${stringify(expectedElement)}`,
                     )
                 })
             }),
