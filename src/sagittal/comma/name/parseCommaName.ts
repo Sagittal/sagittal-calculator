@@ -3,7 +3,7 @@ import { Comma, TwoThreeFreeClass } from "../../types"
 import { SIZE_CATEGORIES } from "./sizeCategories"
 import { SizeCategoryName } from "./types"
 
-// TODO: this would be a place where you could use parameterized Ratio with same params as Monzo
+// TODO: COMMA MONZO RATIO JI this would be a place where you could use parameterized Ratio with same params as Monzo
 //  - note that this is yet another thing apart from TwoThreeFreeClassAsRatio...
 //  - this ratio does not stipulate being super
 //  - which is maybe an argument for it not being directed after all...

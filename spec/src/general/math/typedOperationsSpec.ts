@@ -1,4 +1,3 @@
-import { ACCURACY_THRESHOLD } from "../../../../src/general/code"
 import { Base, Exponent, Integer, log, Power, round } from "../../../../src/general/math"
 
 describe("log", () => {
@@ -9,7 +8,7 @@ describe("log", () => {
         const actual = log(power, base)
 
         const expected = 2 as Exponent
-        expect(actual).toBeCloseToTyped(expected, ACCURACY_THRESHOLD)
+        expect(actual).toBeCloseToTyped(expected)
     })
 
     it("is accurate", () => {

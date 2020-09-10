@@ -9,7 +9,7 @@ describe("computeMonzoInZone", () => {
 
         const actual = computeMonzoInZone(threeSlicedMonzo, [minCents, maxCents])
 
-        const expected = [-8, -6, 3, 5, -1] as Monzo
+        const expected = [-8, -6, 3, 5, -1] as Monzo<{ comma: true }>
         expect(actual).toEqual(expected)
     })
 
@@ -40,7 +40,7 @@ describe("computeMonzoInZone", () => {
 
         const actual = computeMonzoInZone(threeSlicedMonzo, [minCents, maxCents])
 
-        const expected = [] as Monzo
+        const expected = [] as Monzo as Monzo<{ comma: true }>
         expect(actual).toEqual(expected)
     })
 })

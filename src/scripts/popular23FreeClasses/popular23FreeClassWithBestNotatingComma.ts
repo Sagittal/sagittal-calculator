@@ -31,7 +31,6 @@ import {
 import { popular23FreeClassesScriptGroupSettings } from "./globals"
 import { Popular23FreeClassWithBestNotatingComma } from "./types"
 
-// TODO: not yet tested
 const isLate = (notatingComma: Comma, bestNotatingComma: Comma) => {
     return abs(notatingComma.monzo[ 1 ]) < abs(bestNotatingComma.monzo[ 1 ]) ||
         (

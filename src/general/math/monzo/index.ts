@@ -8,4 +8,4 @@ export { computeMonzosFromPrimeExponentExtremas } from "./monzosFromPrimeExponen
 export { computeRatioFromMonzo } from "./ratioFromMonzo"
 export { sumMonzos } from "./sumMonzos"
 export { computeSuperMonzo } from "./superMonzo"
-export { Direction, Monzo, MonzoTypeParameters } from "./types"
+export { Direction, Monzo, NumericTypeParameters } from "./types"

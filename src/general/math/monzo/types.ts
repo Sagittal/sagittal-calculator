@@ -6,9 +6,11 @@ enum Direction {
     SUB = "sub",
 }
 
-// TODO: note that many of these could apply to Ratio too
+// TODO: COMMA MONZO RATIO JI note that many of these could apply to Ratio too
 //  argh... but does the fact that "comma" is included render this not math?
-type MonzoTypeParameters = Partial<{
+//  I think that probably just means that when you implement that Comma is the thing which gets passed aroudn the most
+//  containing either a Monzo or a Ratio, that the comma/not-comma brand will be on THAT thing, not the monzo
+type NumericTypeParameters = Partial<{
     limit: number,
     irrational: boolean,
     direction: Direction
@@ -16,7 +18,7 @@ type MonzoTypeParameters = Partial<{
     rough: number,
 }>
 
-type Monzo<T extends MonzoTypeParameters = {}> =
+type Monzo<T extends NumericTypeParameters = {}> =
     Array<(T extends { irrational: true } ? number : Integer) & Exponent<Prime>>
     & (T extends { direction: Direction.SUB } ? { _MonzoDirection: Direction.SUB } : {})
     & (T extends { direction: Direction.SUPER } ? { _MonzoDirection: Direction.SUPER } : {})
@@ -66,6 +68,6 @@ export {
     Monzo,
     Val,
     PatentValOptions,
-    MonzoTypeParameters,
+    NumericTypeParameters,
     Direction,
 }

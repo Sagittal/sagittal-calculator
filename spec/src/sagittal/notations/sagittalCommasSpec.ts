@@ -595,7 +595,7 @@ describe("SAGITTAL_COMMAS", () => {
                 ratio: [531441, 524288] as Ratio,
                 monzo: [-19, 12] as Monzo<{ comma: true }>,
                 cents: 23.460010384649 as Cents,
-                name: "1C" as Name<SagittalComma>,
+                name: "3C" as Name<SagittalComma>,
                 n2d3p9: 1 as N2D3P9,
             },
             {
@@ -1807,7 +1807,7 @@ describe("SAGITTAL_COMMAS", () => {
                 ratio: [2187, 2048] as Ratio,
                 monzo: [-11, 7] as Monzo<{ comma: true }>,
                 cents: 113.68500605771192 as Cents,
-                name: "1A" as Name<SagittalComma>,
+                name: "3A" as Name<SagittalComma>,
                 n2d3p9: 1 as N2D3P9,
             },
         ] as Array<AnalyzedComma & { id: Id<SagittalComma> }>

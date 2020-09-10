@@ -1,4 +1,4 @@
-import { Filename } from "../../general"
+import { Filename, Monzo } from "../../general"
 import {
     DEFAULT_MAX_ABSOLUTE_3_EXPONENT,
     DEFAULT_MAX_ABSOLUTE_APOTOME_SLOPE,
@@ -20,7 +20,10 @@ const INITIAL_PITCH_SCRIPT_GROUP_SETTINGS = {
     commaNameOptions: {},
 }
 
+const TWO_THREE_FREE_MONZO_BASE = [0, 0] as Monzo<{ rough: 5 }>
+
 export {
     PITCH_SCRIPT_GROUP,
     INITIAL_PITCH_SCRIPT_GROUP_SETTINGS,
+    TWO_THREE_FREE_MONZO_BASE,
 }

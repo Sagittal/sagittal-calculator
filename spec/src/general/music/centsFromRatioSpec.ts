@@ -1,5 +1,4 @@
 import { Cents, Ratio } from "../../../../src/general"
-import { ACCURACY_THRESHOLD } from "../../../../src/general/code"
 import { computeCentsFromRatio } from "../../../../src/general/music"
 
 describe("computeCentsFromRatio", () => {
@@ -9,6 +8,6 @@ describe("computeCentsFromRatio", () => {
         const actual = computeCentsFromRatio(ratio)
 
         const expected = 701.955001 as Cents
-        expect(actual).toBeCloseToTyped(expected, ACCURACY_THRESHOLD)
+        expect(actual).toBeCloseToTyped(expected)
     })
 })

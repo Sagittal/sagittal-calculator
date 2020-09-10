@@ -126,11 +126,6 @@ describe("computeEvents", () => {
                     },
                 ]
                 expect(actual).toEqual(expected)
-                // TODO: so ideally you'd understand custom matchers well enough
-                //  that you could implement toBeCloseToObject
-                //  such that it could receive a jasmine.arrayContaining() and it would work
-                //  as opposed to needing to update these hardcoded extremely precise numbers every time something
-                //  subtly changes in how they're calculated
             })
 
             it("works at the Ultra level", () => {

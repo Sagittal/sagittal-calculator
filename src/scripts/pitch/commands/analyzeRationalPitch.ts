@@ -90,3 +90,9 @@ saveLog(formatRationalPitch(analyzedRationalPitch), LogTarget.ALL, PITCH_SCRIPT_
 //  to affect the notating commas, not the rational pitch?
 const notatingCommasFormattedTable = computeNotatingCommasTable(monzo, pitchScriptGroupSettings.commaNameOptions)
 saveLog(notatingCommasFormattedTable, LogTarget.ALL, PITCH_SCRIPT_GROUP)
+
+// TODO: okay so I guess we still didn't actually get to it, but I'd like to see this:
+//  extricate the limit, 2,3-free sopfr, N2D3P9 from above and put it in a new chart at the bottom
+//  --- 2,3-free class ---
+//  and then it can have simpler column titles
+//  and I think it'll be clearer how that shares all the stuff with the above

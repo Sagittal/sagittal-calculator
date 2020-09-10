@@ -1,5 +1,4 @@
 import { Exponent, Integer, Max, Prime } from "../../../../../../../../src/general"
-import { ACCURACY_THRESHOLD } from "../../../../../../../../src/general/code"
 import { Denominator } from "../../../../../../../../src/general/math"
 import { computeD39ForCandidateMaxDenominatorPrimeExponent } from "../../../../../../../../src/sagittal/comma/evaluation/n2d3p9/primeExponentExtremas/denominator/d39"
 import { D39 } from "../../../../../../../../src/sagittal/comma/evaluation/n2d3p9/primeExponentExtremas/denominator/types"
@@ -15,6 +14,6 @@ describe("computeD39ForCandidateMaxDenominatorPrimeExponent", () => {
         })
 
         const expected = ((11 / 3) ** 5) * (1 / 9) as D39
-        expect(actual).toBeCloseToTyped(expected, ACCURACY_THRESHOLD)
+        expect(actual).toBeCloseToTyped(expected)
     })
 })

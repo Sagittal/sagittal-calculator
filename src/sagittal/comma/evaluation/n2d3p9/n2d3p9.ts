@@ -7,13 +7,13 @@ import {
     Exponent,
     formatMonzo,
     Monzo,
-    MonzoTypeParameters,
+    NumericTypeParameters,
     Prime,
     PRIMES,
 } from "../../../../general"
 import { N2D3P9 } from "./types"
 
-const computeN2D3P9 = <T extends MonzoTypeParameters &
+const computeN2D3P9 = <T extends NumericTypeParameters &
     { direction: Direction.SUPER, rough: 5 } = { direction: Direction.SUPER, rough: 5, irrational: true }>(
     monzo: Monzo<T>,
 ): N2D3P9 => {

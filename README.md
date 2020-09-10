@@ -3,6 +3,14 @@ an online calculator for the Sagittal notation system
 
 ## development
 
+You will need to install Node on your system, then clone down the repo and run `npm i`.
+
+To see a list of available scripts, run `npm run`.
+
+If you see a script you're interested in, learn its options with `npm run [script name] -- --help`.
+
+### Additional helpful setup
+
 Add to your `.git/hooks/pre-commit`:
 
 ```

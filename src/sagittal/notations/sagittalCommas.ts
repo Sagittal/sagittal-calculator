@@ -1,8 +1,12 @@
-import { Id } from "../../general"
+import { Id, Monzo } from "../../general"
 import { SagittalComma } from "../types"
 
+const UNISON: SagittalComma = { id: 0 as Id<SagittalComma>, monzo: [] as Monzo as Monzo<{ comma: true }> }
+const PYTHAGOREAN_COMMA: SagittalComma = { id: 48 as Id<SagittalComma>, monzo: [-19, 12] as Monzo<{ comma: true }> }
+const APOTOME: SagittalComma = { id: 1000 as Id<SagittalComma>, monzo: [-11, 7] as Monzo<{ comma: true }> }
+
 const SAGITTAL_COMMAS: SagittalComma[] = [
-    { id: 0 as Id<SagittalComma>, monzo: [] },
+    UNISON,
     { id: 1 as Id<SagittalComma>, monzo: [12, -2, -1, -1, 0, -1] },
     { id: 2 as Id<SagittalComma>, monzo: [5, -3, 1, -1, -1, 1] },
     { id: 3 as Id<SagittalComma>, monzo: [6, -5, -1, 0, 0, 0, 0, 1] },
@@ -50,7 +54,7 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     { id: 45 as Id<SagittalComma>, monzo: [-5, -3, 3, 1] },
     { id: 46 as Id<SagittalComma>, monzo: [7, -5, 2, 0, 0, -1] },
     { id: 47 as Id<SagittalComma>, monzo: [2, -1, -2, 0, 0, 0, 0, 1] },
-    { id: 48 as Id<SagittalComma>, monzo: [-19, 12] },
+    PYTHAGOREAN_COMMA,
     { id: 49 as Id<SagittalComma>, monzo: [-20, 5, 4, 1] },
     { id: 50 as Id<SagittalComma>, monzo: [4, -5, -1, 1, 1] },
     { id: 51 as Id<SagittalComma>, monzo: [-8, 3, 3, 0, 0, -1] },
@@ -151,9 +155,10 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     { id: 147 as Id<SagittalComma>, monzo: [-16, 11, 1, 0, 0, -1] },
     { id: 148 as Id<SagittalComma>, monzo: [1, 0, -2, 0, 0, 1] },
     { id: 149 as Id<SagittalComma>, monzo: [-11, 8, 2, -1, -1] },
-    { id: 1000 as Id<SagittalComma>, monzo: [-11, 7] },
+    APOTOME,
 ] as SagittalComma[]
 
 export {
     SAGITTAL_COMMAS,
+    APOTOME,
 }

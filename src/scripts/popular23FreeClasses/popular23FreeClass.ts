@@ -20,7 +20,8 @@ const computePopular23FreeClass = (
 ): Popular23FreeClass => {
     const formattedN2D3P9 = formatNumber(n2d3p9)
 
-    // TODO: so this is like the worst of both worlds... we have to convert the monzo to a ratio AND format it
+    // TODO: COMMA MONZO RATIO JI 
+    //  so this is like the worst of both worlds... we have to convert the monzo to a ratio AND format it
     //  so it becomes painfully clear how the formatted version is of the ratio even though it shouldn't have that name
     const twoThreeFreeClassAsRatio = computeRatioFromMonzo(twoThreeFreeClass.monzo)
     const formatted23FreeClass =

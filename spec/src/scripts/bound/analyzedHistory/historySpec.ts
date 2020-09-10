@@ -1,5 +1,4 @@
 import { Cents, Integer, Multiplier, Rank, sum } from "../../../../../src/general"
-import { ACCURACY_THRESHOLD } from "../../../../../src/general/code"
 import { multiply } from "../../../../../src/general/math"
 import { Bound, Ina, Level, Tina, TINA } from "../../../../../src/sagittal/notations/ji"
 import { computeInitialPosition } from "../../../../../src/scripts/bound/analyzeBound/initialPosition"
@@ -60,7 +59,7 @@ describe("computeAnalyzedHistory", () => {
             expect(actual.rank).toBe(2 as Rank<AnalyzedEvent, Integer>)
             expect(actual.totalDistance).toBe(0 as Cents)
             expect(actual.initialPositionTinaDistance)
-                .toBeCloseToTyped(3.681504379547852 as Multiplier<Tina>, ACCURACY_THRESHOLD)
+                .toBeCloseToTyped(3.681504379547852 as Multiplier<Tina>)
         },
     )
 
@@ -83,7 +82,7 @@ describe("computeAnalyzedHistory", () => {
                 const actual = computeAnalyzedHistory(history, bound, initialPosition)
 
                 expect(actual.possible).toBe(true)
-                expect(actual.tinaError).toBeCloseToTyped(0 as Multiplier<Tina>, ACCURACY_THRESHOLD)
+                expect(actual.tinaError).toBeCloseToTyped(0 as Multiplier<Tina>)
             },
         )
     })
@@ -110,7 +109,7 @@ describe("computeAnalyzedHistory", () => {
                 const actual = computeAnalyzedHistory(history, bound, initialPosition)
 
                 expect(actual.possible).toBe(false)
-                expect(actual.tinaError).toBeCloseToTyped(expectedTinaError, ACCURACY_THRESHOLD)
+                expect(actual.tinaError).toBeCloseToTyped(expectedTinaError)
             })
 
             it("works when the position is greater than the actual bound position by more than a tina", () => {
@@ -132,7 +131,7 @@ describe("computeAnalyzedHistory", () => {
                 const actual = computeAnalyzedHistory(history, bound, initialPosition)
 
                 expect(actual.possible).toBe(false)
-                expect(actual.tinaError).toBeCloseToTyped(expectedTinaError, ACCURACY_THRESHOLD)
+                expect(actual.tinaError).toBeCloseToTyped(expectedTinaError)
             })
 
             it("works when the position is below the actual bound position by less than a tina", () => {
@@ -154,7 +153,7 @@ describe("computeAnalyzedHistory", () => {
                 const actual = computeAnalyzedHistory(history, bound, initialPosition)
 
                 expect(actual.possible).toBe(false)
-                expect(actual.tinaError).toBeCloseToTyped(expectedTinaError, ACCURACY_THRESHOLD)
+                expect(actual.tinaError).toBeCloseToTyped(expectedTinaError)
             })
 
             it("works when the position is below the actual bound position by more than a tina", () => {
@@ -175,7 +174,7 @@ describe("computeAnalyzedHistory", () => {
                 const actual = computeAnalyzedHistory(history, bound, initialPosition)
 
                 expect(actual.possible).toBe(false)
-                expect(actual.tinaError).toBeCloseToTyped(expectedTinaError, ACCURACY_THRESHOLD)
+                expect(actual.tinaError).toBeCloseToTyped(expectedTinaError)
             })
         },
     )

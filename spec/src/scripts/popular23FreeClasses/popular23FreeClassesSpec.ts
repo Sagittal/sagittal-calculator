@@ -18,8 +18,8 @@ describe("computePopular23FreeClasses", () => {
                     formatted23FreeClass: "1/1",
                     popularityRank: 1,
                     votes: 7624,
-                    formattedExactlyNotatingJiSymbols: "     |  ",
-                    symbolSubsets: "0",
+                    formattedExactlyNotatingJiSymbols: "     |      '/|  ",
+                    symbolSubsets: "0, 3",
                     rank: 1,
                 },
                 {

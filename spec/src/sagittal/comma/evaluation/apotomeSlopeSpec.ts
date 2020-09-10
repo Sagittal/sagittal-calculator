@@ -1,5 +1,4 @@
 import { Monzo } from "../../../../../src/general"
-import { ACCURACY_THRESHOLD } from "../../../../../src/general/code"
 import { ApotomeSlope } from "../../../../../src/sagittal"
 import { computeApotomeSlope } from "../../../../../src/sagittal/comma/evaluation"
 
@@ -10,7 +9,7 @@ describe("computeApotomeSlope", () => {
         const actual = computeApotomeSlope(monzo)
 
         const expected = 7.87970229329454 as ApotomeSlope
-        expect(actual).toBeCloseToTyped(expected, ACCURACY_THRESHOLD)
+        expect(actual).toBeCloseToTyped(expected)
     })
 
     it("works for monzos without three exponents", () => {
@@ -19,6 +18,6 @@ describe("computeApotomeSlope", () => {
         const actual = computeApotomeSlope(monzo)
 
         const expected = 0 as ApotomeSlope
-        expect(actual).toBeCloseToTyped(expected, ACCURACY_THRESHOLD)
+        expect(actual).toBeCloseToTyped(expected)
     })
 })

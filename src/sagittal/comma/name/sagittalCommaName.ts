@@ -1,4 +1,5 @@
 import {
+    abs,
     Cents,
     computeCentsFromMonzo,
     computeIsSubMonzo,
@@ -7,7 +8,10 @@ import {
     computeRoughNumberMonzo,
     computeSuperMonzo,
     computeUndirectedRatio,
+    deepEquals,
+    Direction,
     FIVE_ROUGHNESS,
+    formatMonzo,
     FractionalPart,
     Monzo,
     Name,
@@ -16,6 +20,7 @@ import {
     SUPERSCRIPT_NUMS,
 } from "../../../general"
 import { Comma } from "../../types"
+import { MAX_SIZE_CATEGORY_BOUND } from "./constants"
 import { computeSizeCategory } from "./sizeCategory"
 
 const primeFactorizeCommaName = (numeratorOrDenominator: FractionalPart) => {
@@ -52,36 +57,38 @@ const computeSagittalCommaName = (
     const superMonzo = computeSuperMonzo(monzo)
     const cents: Cents = computeCentsFromMonzo(superMonzo)
 
+    if (cents > MAX_SIZE_CATEGORY_BOUND) {
+        throw new Error(`Comma ${formatMonzo(monzo)} is outside of comma-sized range and cannot be named.`)
+    }
+
     const twoThreeFreeMonzo = computeRoughNumberMonzo(superMonzo, FIVE_ROUGHNESS)
     const ratio: Ratio = computeRatioFromMonzo(twoThreeFreeMonzo)
 
-    const maybeDirectedRatio = directed ? ratio : computeUndirectedRatio(ratio)
-    const maybeFlippedRatio = directed ? maybeDirectedRatio : [maybeDirectedRatio[ 1 ], maybeDirectedRatio[ 0 ]]
-    const stringifiedRatio = factored ?
-        maybeFlippedRatio.map(primeFactorizeCommaName) :
-        maybeFlippedRatio.map(n => n.toString())
+    let formattedRatio
+    if (
+        deepEquals(twoThreeFreeMonzo, [] as Monzo as Monzo<{ rough: 5, direction: Direction.SUPER }>) &&
+        abs(monzo[ 1 ]) > 0
+    ) {
+        formattedRatio = "3"
+    } else {
+        const maybeDirectedRatio = directed ? ratio : computeUndirectedRatio(ratio)
+        const maybeFlippedRatio = directed ? maybeDirectedRatio : [maybeDirectedRatio[ 1 ], maybeDirectedRatio[ 0 ]]
+        const stringifiedRatio = factored ?
+            maybeFlippedRatio.map(primeFactorizeCommaName) :
+            maybeFlippedRatio.map(n => n.toString())
+        const separator = directed ? "/" : ":"
 
-    const separator = directed ? "/" : ":"
-    const formattedRatio = directed ?
-        stringifiedRatio[ 1 ] === "1" ? stringifiedRatio[ 0 ] : stringifiedRatio.join(separator) :
-        stringifiedRatio[ 0 ] === "1" ? stringifiedRatio[ 1 ] : stringifiedRatio.join(separator)
-
+        formattedRatio = directed ?
+            stringifiedRatio[ 1 ] === "1" ? stringifiedRatio[ 0 ] : stringifiedRatio.join(separator) :
+            stringifiedRatio[ 0 ] === "1" ? stringifiedRatio[ 1 ] : stringifiedRatio.join(separator)
+    }
+    
     const maybeHyphen = abbreviated ? "" : "-"
-
     const sizeCategory = computeSizeCategory(cents, { abbreviated })
-
     const maybeDown = sub ? " down" : ""
 
     return `${formattedRatio}${maybeHyphen}${sizeCategory}${maybeDown}` as Name<Comma>
 }
-
-// TODO: 
-/*
-Something unrelated that I just remembered to mention: 
-Can you please ensure your software names the Pythagorean comma as "3C", not "1C", 
-and any other 3-limit commas similarly. 
-I'm pretty sure we agreed that the only "comma" name that would use the lone number "1" would be the unison "1u".
- */
 
 export {
     computeSagittalCommaName,

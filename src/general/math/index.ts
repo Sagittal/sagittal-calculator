@@ -18,7 +18,7 @@ export {
     computeIsSuperMonzo,
     Monzo,
     sumMonzos,
-    MonzoTypeParameters,
+    NumericTypeParameters,
 } from "./monzo"
 export { computePrimeCount } from "./primeCount"
 export { PRIMES } from "./primes"

@@ -1,7 +1,7 @@
 import { Cents, Direction, Id, Maybe, Monzo, Name, Prime, Ratio, RationalPitch, Sopfr } from "../general"
 import { ApotomeSlope, N2D3P9 } from "./comma"
 
-// TODO: should i just use "Ji" as the standardized signal of Rationality through the codebase?
+// TODO: COMMA MONZO RATIO JI should i just use "Ji" as the standardized signal of Rationality through the codebase?
 //  though that doesn't really work with the number vs. Integer distinction, which is really the same
 //  - and if you could make Analyzed<> a parameterized thing like Formatted<>, of course it would be a bit different
 //  because Formatted<> converts it from whatever object it is to a branded string, just with aspect of that object

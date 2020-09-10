@@ -1,8 +1,6 @@
 import { computeUndirectedRatio, Ratio } from "../math"
 import { Formatted } from "./types"
 
-// TODO: note we have this an formatRationalPitch, which is confusing.
-//  I think the other one is more of a table at this point
 const formatRatio = <T extends Ratio>(
     inputRatio: T, { directed }: { directed: boolean } = { directed: true },
 ): Formatted<T> => {

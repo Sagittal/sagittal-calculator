@@ -4,7 +4,7 @@ import {
     computePlusOrMinusRange,
     Exponent,
     Integer,
-    isUndefined,
+    isUndefined, Maybe,
     Monzo,
     Prime,
     shallowClone,
@@ -20,7 +20,19 @@ import {
 } from "./constants"
 import { CommasFrom23FreeMonzoOptions } from "./types"
 
-// TODO: rename file and similar files too
+const computeTwoFreeMonzo = (
+    twoThreeFreeMonzo: Monzo<{rough: 5}>, 
+    threeExponent: Integer & Exponent<Prime>
+): Monzo<{rough: 3 }> => {
+    const twoFreeMonzo: Monzo<{ rough: 3 }> = shallowClone(twoThreeFreeMonzo) as Monzo as Monzo<{ rough: 3 }>
+    twoFreeMonzo[ 1 ] = threeExponent
+    
+    if (isUndefined(twoFreeMonzo[ 0 ])) {
+        twoFreeMonzo[ 0 ] = 0 as Integer & Exponent<Prime>
+    }
+    
+    return twoFreeMonzo
+}
 
 const computeCommasFrom23FreeMonzo = (
     twoThreeFreeMonzo: Monzo<{ rough: 5 }>,
@@ -36,23 +48,15 @@ const computeCommasFrom23FreeMonzo = (
 
     const commas: Comma[] = []
 
-    computePlusOrMinusRange(maxAbsolute3Exponent).forEach(three => {
-        const twoFreeMonzo: Monzo<{ rough: 3 }> = shallowClone(twoThreeFreeMonzo) as Monzo as Monzo<{ rough: 3 }>
-        twoFreeMonzo[ 1 ] = three
-        if (isUndefined(twoFreeMonzo[ 0 ])) twoFreeMonzo[ 0 ] = 0 as Integer & Exponent<Prime> // TODO: horrible
-
-        const monzo: Monzo<{ comma: true }> =
-            computeMonzoInZone(twoFreeMonzo, [minCents, maxCents]) as Monzo<{ comma: true }>
-        const comma = { monzo }
+    computePlusOrMinusRange(maxAbsolute3Exponent).forEach(threeExponent => {
+        const twoFreeMonzo = computeTwoFreeMonzo(twoThreeFreeMonzo, threeExponent)
+        const monzo: Maybe<Monzo<{ comma: true }>> = computeMonzoInZone(twoFreeMonzo, [minCents, maxCents])
 
         if (monzo) {
+            const comma = { monzo }
+            
             const analyzedComma: AnalyzedComma = analyzeComma(comma)
-
-            if (abs(analyzedComma.apotomeSlope) > maxAbsoluteApotomeSlope) {
-                return
-            }
-
-            if (analyzedComma.n2d3p9 > maxN2D3P9) {
+            if (abs(analyzedComma.apotomeSlope) > maxAbsoluteApotomeSlope || analyzedComma.n2d3p9 > maxN2D3P9) {
                 return
             }
 

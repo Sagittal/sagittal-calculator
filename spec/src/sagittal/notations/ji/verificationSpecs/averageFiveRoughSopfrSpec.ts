@@ -1,4 +1,3 @@
-import { ACCURACY_THRESHOLD } from "../../../../../../src/general/code"
 import { computeRoughNumberMonzo, computeSopfr, FIVE_ROUGHNESS, Monzo, Sopfr } from "../../../../../../src/general/math"
 import { Average } from "../../../../../../src/general/math/types"
 import { getSagittalComma } from "../../../../../../src/sagittal"
@@ -19,6 +18,6 @@ describe("average 2,3-free sopfr", () => {
             0,
         )
 
-        expect(total / JI_SYMBOLS.length).toBeCloseToTyped(AVERAGE_TWO_THREE_FREE_SOPFR, ACCURACY_THRESHOLD)
+        expect(total / JI_SYMBOLS.length).toBeCloseToTyped(AVERAGE_TWO_THREE_FREE_SOPFR)
     })
 })

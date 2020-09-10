@@ -24,11 +24,6 @@ describe("analyze-rational-pitch", () => {
         "        \t275S  \t66825/65536      \t[ -16   5   2   0   1 ⟩\t 33.720\t  2.924      ",
         "        \t1/275M\t16777216/16238475\t[  24 -10  -2   0  -1 ⟩\t 56.505\t-13.479      ",
         "",
-        // TODO: okay so I guess we still didn't actually get to it, but I'd like to see this:
-        //  extricate the limit, 2,3-free sopfr, N2D3P9 from above and put it in a new chart at the bottom
-        //  --- 2,3-free class ---
-        //  and then it can have simpler column titles
-        //  and I think it'll be clearer how that shares all the stuff with the above
     ] as Io[]
 
     it(

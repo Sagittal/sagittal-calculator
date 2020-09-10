@@ -1,4 +1,4 @@
-import { ACCURACY_THRESHOLD, Cents, Multiplier } from "../../../../../../src/general"
+import { Cents, Multiplier } from "../../../../../../src/general"
 import { Ina, Level } from "../../../../../../src/sagittal"
 import { HIGHINA } from "../../../../../../src/sagittal/notations/ji/intervals"
 import { computeEventInaDistance } from "../../../../../../src/scripts/bound/analyzedHistory/analyzeEvents/eventInaDistance"
@@ -13,6 +13,6 @@ describe("computeEventInaDistance", () => {
         const actual = computeEventInaDistance(event, index, history)
 
         const expected = 2 / HIGHINA as Multiplier<Ina>
-        expect(actual).toBeCloseToTyped(expected, ACCURACY_THRESHOLD)
+        expect(actual).toBeCloseToTyped(expected)
     })
 })

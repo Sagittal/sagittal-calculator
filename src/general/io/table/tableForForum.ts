@@ -8,11 +8,11 @@ import { FormatTableOptions, Row, Table, TableForForumStuffOptions } from "./typ
 
 // TODO: add [pre] between cellTag and hilite, to keep things monospaced
 //  the terminal output is always monospaced, so I figure this should be too
+//  and otherwise clean and test all this
 
 const computeTableForForumRowParts = <T = unknown>({ index, headerRowCount, colors }: TableForForumStuffOptions<T>) => {
     const cellTag: Io = index < headerRowCount ? "th" as Io : "td" as Io
 
-    // TODO: clean this up and test it
     const hiliteOpen: Io = colors ? colors[ index ] ? `[hilite=${colors[ index ]}]` as Io : BLANK as Io : BLANK
     const hiliteClose: Io = colors ? colors[ index ] ? "[/hilite]" as Io : BLANK : BLANK
 

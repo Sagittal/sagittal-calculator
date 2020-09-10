@@ -3,7 +3,7 @@ import { Exponent, Integer, Monzo, Prime } from "../math"
 import { computeCentsFromMonzo } from "../music"
 import { Cents, Zone } from "./types"
 
-const computeMonzoInZone = (twoFreeMonzo: Monzo<{ rough: 3 }>, zone: Zone): Maybe<Monzo> => {
+const computeMonzoInZone = (twoFreeMonzo: Monzo<{ rough: 3 }>, zone: Zone): Maybe<Monzo<{ comma: true }>> => {
     const [minCents, maxCents] = zone
 
     let cents: Cents = computeCentsFromMonzo(twoFreeMonzo)
@@ -21,7 +21,7 @@ const computeMonzoInZone = (twoFreeMonzo: Monzo<{ rough: 3 }>, zone: Zone): Mayb
     }
 
     return cents > minCents && cents < maxCents ?
-        twoFreeMonzo as Monzo :
+        twoFreeMonzo as Monzo as Monzo<{ comma: true }> :
         undefined
 }
 

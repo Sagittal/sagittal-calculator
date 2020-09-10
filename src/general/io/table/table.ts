@@ -21,13 +21,9 @@ const formatTable = <T = unknown>(table: Table<T>, options?: Partial<FormatTable
     }
 
     // TODO: consider a TSV format for tables per http://forum.sagittal.org/viewtopic.php?p=2409#p2409
-    /*
-    With the monzos, in TSV it would be best if all the closing angle-brackets ended up in the same rightward column, 
-    so we don't have columns with some numbers and some angle-brackets.
-
-    and include a BOM
-    https://csv.thephpleague.com/8.0/bom/
-     */
+    //  in TSV it would be best if all the closing angle-brackets ended up in the same rightward column, 
+    //  so we don't have columns with some numbers and some angle-brackets.
+    //  - and include a BOM (https://csv.thephpleague.com/8.0/bom/)
 
     return ioSettings.forForum ? formatTableForForum(table, options) : formatTableForTerminal(table, options)
 }

@@ -2,13 +2,6 @@ import { Copfr, Max, Prime, Sopfr } from "../../../../src/general"
 import { N2D3P9 } from "../../../../src/sagittal/comma/evaluation/n2d3p9"
 import { compute23FreeMonzosToCheck } from "../../../../src/scripts/pitch/twoThreeFreeMonzosToCheck"
 
-// TODO: Might it be preferable to do the strategy where instead of populating the whole list of monzos to check
-//  you instead go with the technique the N2D3P9 is already taking with the prime exponent extremas?
-//  that is maybe you should abstract/extract that bit in the popular 2,3-free script group
-//  which found a way to take some prime exponent extremas and check each of them
-//  and just have the artifact from here be one of those extremas?
-//  - might also save some energy, what with these all being mirrored
-
 describe("compute23FreeMonzosToCheck", () => {
     it("returns the list of 2,3-free monzos to check, given all four of the maxes", () => {
         const maxPrimeLimit = 7 as Max<Max<Prime>>

@@ -9,7 +9,7 @@ const computePatentVal = <T extends Window>(options: PatentValOptions<T>): Val =
 
     const stepSize: number = window ** (1 / ed)
 
-    const maxPrimeIndex = PRIMES.indexOf(primeLimit) // TODO: surely this exists already and should be extracted DRYed
+    const maxPrimeIndex = PRIMES.indexOf(primeLimit)
 
     let patentVal: Val = []
     for (let primeIndex = 0; primeIndex <= maxPrimeIndex; primeIndex = primeIndex + 1) {

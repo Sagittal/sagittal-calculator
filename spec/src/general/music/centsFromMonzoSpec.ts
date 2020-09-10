@@ -1,5 +1,4 @@
 import { computeCentsFromMonzo, Monzo } from "../../../../src/general"
-import { ACCURACY_THRESHOLD } from "../../../../src/general/code"
 import { Cents } from "../../../../src/general/music"
 
 describe("computeCentsFromMonzo", () => {
@@ -9,7 +8,7 @@ describe("computeCentsFromMonzo", () => {
         const actual = computeCentsFromMonzo(monzo)
 
         const expected = 17.576131157281500 as Cents
-        expect(actual).toBeCloseToTyped(expected, ACCURACY_THRESHOLD) // TODO: is this ACCURACY necesary? should default
+        expect(actual).toBeCloseToTyped(expected)
     })
 
     it("works for monzos with really big 2 exponents", () => {
@@ -18,7 +17,7 @@ describe("computeCentsFromMonzo", () => {
         const actual = computeCentsFromMonzo(monzo)
 
         const expected = 4.49991346125848 as Cents
-        expect(actual).toBeCloseToTyped(expected, ACCURACY_THRESHOLD)
+        expect(actual).toBeCloseToTyped(expected)
     })
 
     it("works for monzos that are greater than an octave", () => {

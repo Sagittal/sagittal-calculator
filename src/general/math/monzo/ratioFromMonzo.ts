@@ -1,8 +1,10 @@
+import { MAX_JAVASCRIPT_INTEGER_VALUE } from "../../code"
+import { formatMonzo } from "../../io"
 import { PRIMES } from "../primes"
 import { Denominator, Numerator, Ratio } from "../types"
-import { Monzo, MonzoTypeParameters } from "./types"
+import { Monzo, NumericTypeParameters } from "./types"
 
-const computeRatioFromMonzo = <T extends MonzoTypeParameters = { irrational: true }>(
+const computeRatioFromMonzo = <T extends NumericTypeParameters = { irrational: true }>(
     monzo: Monzo<T>,
     { disableErrorBecauseExactValueNotRequired }: { disableErrorBecauseExactValueNotRequired?: boolean } = {},
 ): Ratio => {
@@ -18,15 +20,12 @@ const computeRatioFromMonzo = <T extends MonzoTypeParameters = { irrational: tru
         }
     })
 
-    // TODO: clean up this double if... I just can't think straight right now
-    //  - also I need to temporarily turn this off since it's breaking things and I think we need to do the refactor
-    //  around minimal representations of pitches as just monzos soon
-    // if (!disableErrorBecauseExactValueNotRequired) {
-    //     if (numerator > MAX_JAVASCRIPT_INTEGER_VALUE || denominator > MAX_JAVASCRIPT_INTEGER_VALUE) {
-    // tslint:disable-next-line max-line-length
-    //         throw new Error(`Tried to convert a monzo to a ratio where a fractional part would exceed JavaScript's maximum safe integer value. ${formatMonzo(monzo)}`)
-    //     }
-    // }
+    if (
+        !disableErrorBecauseExactValueNotRequired &&
+        (numerator > MAX_JAVASCRIPT_INTEGER_VALUE || denominator > MAX_JAVASCRIPT_INTEGER_VALUE)
+    ) {
+        throw new Error(`Tried to convert a monzo to a ratio where a fractional part would exceed JavaScript's maximum safe integer value. ${formatMonzo(monzo)}`)
+    }
 
     return [numerator, denominator]
 }
