@@ -9,10 +9,10 @@ const computeJustifications = (justification: JustificationOption, columnRange: 
         columnRange.map(_ => justification) :
         columnRange.map(index => justification[ index ] || Justification.LEFT)
 
-const computeColumnWidths = (table: Table, columnRange: Range): Array<Count<Char>> =>
-    columnRange.map(columnIndex =>
-        table.reduce(
-            (columnWidth: Count<Char>, row: Row) => {
+const computeColumnWidths = <T = unknown>(table: Table<T>, columnRange: Range): Array<Count<Char>> =>
+    columnRange.map((columnIndex): Count<Char> => {
+        return table.reduce(
+            (columnWidth: Count<Char>, row: Row<{ of: T }>): Count<Char> => {
                 const columnCell = row[ columnIndex ]
                 const cellWidth = length(columnCell)
                 if (cellWidth > columnWidth) {
@@ -22,7 +22,8 @@ const computeColumnWidths = (table: Table, columnRange: Range): Array<Count<Char
                 return columnWidth
             },
             0 as Count<Char>,
-        ))
+        )
+    })
 
 
 const furtherJustifyCell = (justifiedCell: Io, columnJustification: Justification): Io =>

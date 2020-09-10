@@ -18,7 +18,7 @@ const maybeColor = (rowText: Io, rowIndex: number, colors: Maybe<Array<Maybe<Col
     return rowColor ? colorize(rowText, rowColor) : rowText
 }
 
-const formatTableForTerminal = (table: Table, options?: Partial<FormatTableOptions>): Io => {
+const formatTableForTerminal = <T = unknown>(table: Table, options?: Partial<FormatTableOptions<T>>): Io => {
     const {
         justification = DEFAULT_FORMAT_TABLE_OPTIONS.justification,
         colors = DEFAULT_FORMAT_TABLE_OPTIONS.colors,
@@ -30,7 +30,7 @@ const formatTableForTerminal = (table: Table, options?: Partial<FormatTableOptio
 
     const columnWidths = computeColumnWidths(table, columnRange)
 
-    const formattedRows = table.map((row: Row, rowIndex): Io => {
+    const formattedRows = table.map((row: Row<{ of: T }>, rowIndex): Io => {
         const finalCellIndex = row.length - 1
         const rowText = row.reduce(
             (justifiedRow: Io, cell, cellIndex): Io => {

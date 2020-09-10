@@ -1,5 +1,19 @@
-import { Cents, CentsPosition, computeCentsFromMonzo, Name, Pitch } from "../../../general"
-import { getJiSymbol, getSagittalComma, Level, LEVELS_SYMBOL_IDS } from "../../../sagittal"
+import { Cents, CentsPosition, computeCentsFromMonzo, Id, Name, Pitch } from "../../../general"
+import { getJiSymbol, getSagittalComma, JiSymbol, Level, LEVELS_SYMBOL_IDS, SymbolLongAscii } from "../../../sagittal"
+
+const getJiSymbolCents = (jiSymbolId: Id<JiSymbol>): Cents => {
+    const jiSymbol = getJiSymbol(jiSymbolId)
+    const primaryCommaId = jiSymbol.primaryCommaId
+    const primaryComma = getSagittalComma(primaryCommaId)
+    
+    return computeCentsFromMonzo(primaryComma.monzo)
+}
+
+const getJiSymbolAscii = (jiSymbolId: Id<JiSymbol>): SymbolLongAscii => {
+    const jiSymbol = getJiSymbol(jiSymbolId)
+    
+    return jiSymbol.ascii
+}
 
 const computeLevelCommaMeans = (level: Level): CentsPosition[] => {
     const levelSymbolIds = LEVELS_SYMBOL_IDS[ level ]
@@ -7,22 +21,13 @@ const computeLevelCommaMeans = (level: Level): CentsPosition[] => {
     const levelSymbolIdsExcludingTheLastSymbol = levelSymbolIds.slice(0, levelSymbolIds.length - 1)
 
     return levelSymbolIdsExcludingTheLastSymbol.map((jiSymbolId, index): CentsPosition => {
-        const jiSymbol = getJiSymbol(jiSymbolId)
-        const primaryCommaId = jiSymbol.primaryCommaId
-        const primaryComma = getSagittalComma(primaryCommaId)
-        const primaryCommaCents = computeCentsFromMonzo(primaryComma.monzo)
-
         const nextJiSymbolId = levelSymbolIds[ index + 1 ]
-        const nextJiSymbol = getJiSymbol(nextJiSymbolId)
-        const nextPrimaryCommaId = nextJiSymbol.primaryCommaId
-        const nextPrimaryComma = getSagittalComma(nextPrimaryCommaId)
-        const nextPrimaryCommaCents = computeCentsFromMonzo(nextPrimaryComma.monzo)
-        // TODO: at this point maybe need a helper method for the above repetition
 
-        const cents = (primaryCommaCents + nextPrimaryCommaCents) / 2 as Cents
-
+        const cents = (getJiSymbolCents(jiSymbolId) + getJiSymbolCents(nextJiSymbolId)) / 2 as Cents
+        const name = [getJiSymbolAscii(jiSymbolId), getJiSymbolAscii(nextJiSymbolId)].join(" ") as Name<Pitch>
+        
         return {
-            name: [jiSymbol.ascii, nextJiSymbol.ascii].join(" ") as Name<Pitch>,
+            name,
             cents,
         }
     })

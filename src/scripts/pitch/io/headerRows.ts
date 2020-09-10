@@ -11,22 +11,22 @@ const NOTATING_COMMA_WITH_MAYBE_SAGITTAL_SYMBOLS_HEADER_ROW = [
     // this table does not include limit, 2,3-free sopfr, or N2D3P9,
     // because they will always be the same for every entry in the table
     // and they are shared already, once each, in the table up above this one, for the rational pitch analysis
-] as Row<AnalyzedComma, "Header"> // TODO: this should take an object type parameter like Monzo now
+] as Row<{ of: AnalyzedComma, header: true }>
 
-const FIND_COMMAS_HEADER_ROW: Row<AnalyzedComma, "Header"> = concat(
+const FIND_COMMAS_HEADER_ROW: Row<{ of: AnalyzedComma, header: true }> = concat(
     NOTATING_COMMA_WITH_MAYBE_SAGITTAL_SYMBOLS_HEADER_ROW,
     [
         "limit",
         "2,3-free sopfr",
         "2,3-free class N2D3P9",
-    ] as Row<AnalyzedComma, "Header">,
+    ] as Row<{ of: AnalyzedComma, header: true }>,
 )
 
 const TWO_TABBED_COLUMN_WIDE_SPACE_INSTEAD_OF_SYMBOLS = "        " as Formatted<AnalyzedComma>
 const ONE_TABBED_COLUMN_WIDE_SPACE_INSTEAD_OF_NAME = "       " as Formatted<AnalyzedComma>
 const EXTRA_COLUMN_ASSUMING_SOME_LONG_RATIOS = "     " as Formatted<AnalyzedComma>
 
-const computeRationalPitchHeaderRow = (): Row<AnalyzedComma, "Header"> => {
+const computeRationalPitchHeaderRow = (): Row<{ of: AnalyzedComma, header: true }> => {
     const headerRow = shallowClone(FIND_COMMAS_HEADER_ROW)
     headerRow[ 0 ] = TWO_TABBED_COLUMN_WIDE_SPACE_INSTEAD_OF_SYMBOLS
     headerRow[ 1 ] = ONE_TABBED_COLUMN_WIDE_SPACE_INSTEAD_OF_NAME

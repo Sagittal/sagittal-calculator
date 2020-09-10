@@ -8,7 +8,7 @@ const computePopular23FreeClassesWithBestNotatingCommasTable = (
     maxN2D3P9: Max<N2D3P9>,
 ): Io => {
     const table: Table<Popular23FreeClass> = computeBestNotatingCommaHeaderRows()
-    const headerRowCount = count(table) as Count<Row<Popular23FreeClass, "Header">>
+    const headerRowCount = count(table) as Count<Row<{ of: Popular23FreeClass, header: true }>>
 
     popular23FreeClasses.forEach(popular23FreeClass => {
         const {
@@ -25,7 +25,7 @@ const computePopular23FreeClassesWithBestNotatingCommasTable = (
             centsOfBestNotatingComma,
             monzoOfBestNotatingComma,
             maybeSymbolForBestNotatingComma,
-        ] as Row<Popular23FreeClass>)
+        ] as Row<{ of: Popular23FreeClass, header: true }>)
     })
 
     const popular23FreeClassesTableTitle = `count of results with N2D3P9 <= ${maxN2D3P9}: ${popular23FreeClasses.length}\n\n` as Io

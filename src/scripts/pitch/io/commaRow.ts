@@ -4,7 +4,7 @@ import { computeNotatingCommaWithMaybeSagittalSymbolRow } from "./notatingCommaR
 
 const computeCommaRow = (
     commaWithMaybeSagittalSymbol: AnalyzedComma & { symbolId?: Id<JiSymbol> },
-): Row<AnalyzedComma & { symbolId?: Id<JiSymbol> }> => {
+): Row<{ of: AnalyzedComma & { symbolId?: Id<JiSymbol> }}> => {
     const { limit, twoThreeFreeSopfr, n2d3p9 } = commaWithMaybeSagittalSymbol
 
     return concat(
@@ -13,7 +13,7 @@ const computeCommaRow = (
             formatInteger(limit),
             formatInteger(twoThreeFreeSopfr),
             formatNumber(n2d3p9),
-        ] as Row<AnalyzedComma & { symbolId?: Id<JiSymbol> }>,
+        ] as Row<{ of: AnalyzedComma & { symbolId?: Id<JiSymbol> }}>,
     )
 }
 

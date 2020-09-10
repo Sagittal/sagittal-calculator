@@ -17,7 +17,7 @@ const getJiSymbolWithPrimaryComma = (jiSymbolId: Id<JiSymbol>): JiSymbolWithPrim
     const analyzedPrimaryComma: AnalyzedComma & { id: Id<SagittalComma> } =
         analyzeComma(primaryComma) as AnalyzedComma & { id: Id<SagittalComma> }
 
-    return { ...otherSymbolProperties, primaryComma: analyzedPrimaryComma } // TODO: rename key to analyzedPrimaryComma
+    return { ...otherSymbolProperties, analyzedPrimaryComma }
 }
 
 export {

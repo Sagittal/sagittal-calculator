@@ -3,12 +3,13 @@ import { ApotomeSlope, N2D3P9 } from "./comma"
 
 // TODO: should i just use "Ji" as the standardized signal of Rationality through the codebase?
 //  though that doesn't really work with the number vs. Integer distinction, which is really the same
-//  and I think having "Analyzed" things being thrown around is probably an anti-pattern
-//  try to analyze them at the very last minute. this is in line with that to-do about minimal representations of
-//  Sagittal data in the codebase, and the big JSON like full analyzed stuff that you have now should just be in tests
-//  and if you could make Analyzed<> a parameterized thing like Formatted<>, of course it would be a bit different
+//  - and if you could make Analyzed<> a parameterized thing like Formatted<>, of course it would be a bit different
 //  because Formatted<> converts it from whatever object it is to a branded string, just with aspect of that object
 //  whereas Analyzed would just extend the object
+//  - okay how about this... you've been struggling with Analyzed vs Analysis 
+//  so what if it was an Analysis<Thing>? that might help force you to think of it not as a Thing first but as an
+//  Analysis first. and then maybe Formatted<Thing> can only be made out of some kind of an Analysis? well no that 
+//  doens't work because you have all sorts of Formatted<number> and Formatted<Monzo>
 //  - I want to be sensitive to the issue of the type names reading in a consistent direction
 //  relative to the variable names, i.e. in the opposite order
 //  like how primeExponentExtremas: Array<Extrema<Integer & Exponent<Prime>>>
@@ -72,10 +73,6 @@ interface TwoThreeFreeClass extends RationalPitch {
     monzo: Monzo<{ rough: 5, direction: Direction.SUPER }>
     _TwoThreeFreeClassBrand: "TwoThreeFreeClass"
 }
-
-// TODO: I'm not sure if all these types should all live right here next to each other in the end
-//  I pulled some of them up from lower directories within Sagittal
-//  but it was really helpful to be able to consider them all relative to each other right now
 
 export {
     Comma,

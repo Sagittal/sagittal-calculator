@@ -7,6 +7,7 @@ enum Direction {
 }
 
 // TODO: note that many of these could apply to Ratio too
+//  argh... but does the fact that "comma" is included render this not math?
 type MonzoTypeParameters = Partial<{
     limit: number,
     irrational: boolean,
@@ -19,11 +20,6 @@ type Monzo<T extends MonzoTypeParameters = {}> =
     Array<(T extends { irrational: true } ? number : Integer) & Exponent<Prime>>
     & (T extends { direction: Direction.SUB } ? { _MonzoDirection: Direction.SUB } : {})
     & (T extends { direction: Direction.SUPER } ? { _MonzoDirection: Direction.SUPER } : {})
-    // TODO: alright, if you just combined slice and rough that would be ideal
-    //  in the sense that it should always be sliced (no more [0,0]- prefixes
-    //  but call it "rough" (so that it could theoretically all these type params get used by Ratio as well)
-    //  i.e. don't make it about the code structure, make it about the underlying mathematical essence
-    //  okay this is basically accomplished but I'll leave it til later to 100% confirm
     & (T extends { limit: number } ? { _MonzoLimit: Pick<T, "limit"> } : {})
     & (T extends { rough: number } ? { _MonzoRough: Pick<T, "rough"> } : {})
     & (T extends { comma: true } ? { _MonzoComma: "MonzoComma" } : {})

@@ -32,7 +32,7 @@ describe("computeCommaRow", () => {
             " 14    ",
             " 13    ",
             " 18.457",
-        ] as Row<AnalyzedComma>
+        ] as Row<{ of: AnalyzedComma }>
         expect(actual).toEqual(expected)
     })
 })

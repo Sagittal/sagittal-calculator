@@ -81,7 +81,7 @@ describe("computeBoundRow", () => {
             "  5.448",
             "  5.485",
             "  0.039",
-        ] as Row<AnalyzedBound>
+        ] as Row<{ of: AnalyzedBound }>
         expect(actual).toEqual(expected)
     })
 })

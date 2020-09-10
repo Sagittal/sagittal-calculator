@@ -27,7 +27,7 @@ const BOUNDS_ANALYSIS_COLUMN_TITLES = [
     "a.b.vs i.c.m. error (tinas)",
 ]
 
-const computeBoundsAnalysisHeaderRows = (): Array<Row<AnalyzedBound, "Header">> => {
+const computeBoundsAnalysisHeaderRows = (): Array<Row<{ of: AnalyzedBound, header: true }>> => {
     const boundsAnalysisColumnTitleColumns: Array<Column<AnalyzedBound>> = BOUNDS_ANALYSIS_COLUMN_TITLES
         .map(columnTitle => columnTitle.split(" ")) as Array<Column<AnalyzedBound>>
 

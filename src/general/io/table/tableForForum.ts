@@ -9,7 +9,7 @@ import { FormatTableOptions, Row, Table, TableForForumStuffOptions } from "./typ
 // TODO: add [pre] between cellTag and hilite, to keep things monospaced
 //  the terminal output is always monospaced, so I figure this should be too
 
-const computeTableForForumStuff = ({ index, headerRowCount, colors }: TableForForumStuffOptions) => {
+const computeTableForForumRowParts = <T = unknown>({ index, headerRowCount, colors }: TableForForumStuffOptions<T>) => {
     const cellTag: Io = index < headerRowCount ? "th" as Io : "td" as Io
 
     // TODO: clean this up and test it
@@ -27,7 +27,7 @@ const computeTableForForumStuff = ({ index, headerRowCount, colors }: TableForFo
     return { rowOpen, rowClose, separator }
 }
 
-const formatTableForForum = (table: Table, options?: Partial<FormatTableOptions>): Io => {
+const formatTableForForum = <T = unknown>(table: Table, options?: Partial<FormatTableOptions<T>>): Io => {
     const {
         justification = DEFAULT_FORMAT_TABLE_OPTIONS.justification,
         colors = DEFAULT_FORMAT_TABLE_OPTIONS.colors,
@@ -37,8 +37,8 @@ const formatTableForForum = (table: Table, options?: Partial<FormatTableOptions>
     const columnRange = computeColumnRange(table)
     const justifications = computeJustifications(justification, columnRange)
 
-    const formattedRows: Io[] = table.map((row: Row, index): Io => {
-        const { rowOpen, rowClose, separator } = computeTableForForumStuff({ index, headerRowCount, colors })
+    const formattedRows: Io[] = table.map((row: Row<{ of: T }>, index): Io => {
+        const { rowOpen, rowClose, separator } = computeTableForForumRowParts({ index, headerRowCount, colors })
 
         const finalCellIndex = row.length - 1
         const rowText = row.reduce(

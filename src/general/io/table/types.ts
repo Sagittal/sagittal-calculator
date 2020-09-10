@@ -1,6 +1,6 @@
 import { Maybe } from "../../code"
 import { Count } from "../../types"
-import { ColorMethod, Formatted } from "../types"
+import { ColorMethod, Formatted, Io } from "../types"
 
 enum Justification {
     LEFT = "left",
@@ -10,32 +10,37 @@ enum Justification {
 
 type JustificationOption = Justification | Array<Maybe<Justification>>
 
-type Row<T = void, Header extends "Header" | void = void> =
-    Array<Formatted<unknown>>
+type RowTypeParameters = Partial<{
+    of: unknown,
+    header: boolean,
+}>
+
+type Row<T extends RowTypeParameters = {}> =
+    Array<Formatted>
     & { _RowBrand: "Row" }
-    & (T extends void ? {} : { _RowOfBrand: T })
-    & (Header extends "Header" ? { _HeaderBrand: "Header" } : {})
+    & (T extends { of: unknown } ? {} : { _RowOfBrand: Pick<T, "of"> })
+    & (T extends { header: true } ? { _HeaderBrand: "Header" } : {})
 type Column<T = void> =
-    Array<Formatted<unknown>>
+    Array<Formatted>
     & { _ColumnBrand: "Column" }
     & (T extends void ? {} : { _ColumnOfBrand: T })
-type Table<T = void> = Array<Row<T>>
+type Table<T = void> = Array<Row<{ of: T }>>
 
 interface JustifiedCellOptions {
     columnJustification: Justification,
     columnWidth: number,
 }
 
-type FormatTableOptions = {
+type FormatTableOptions<T> = {
     justification: JustificationOption
     colors: Maybe<Array<Maybe<ColorMethod>>>,
-    headerRowCount: Count<Row<unknown, "Header">>,
+    headerRowCount: Count<Row<{ of: T, header: true }>>,
 }
 
-interface TableForForumStuffOptions {
+interface TableForForumStuffOptions<T> {
     index: number,
     colors: Maybe<Array<Maybe<ColorMethod>>>,
-    headerRowCount: Count<Row<unknown, "Header">>,
+    headerRowCount: Count<Row<{ of: T, header: true }>>,
 }
 
 export {

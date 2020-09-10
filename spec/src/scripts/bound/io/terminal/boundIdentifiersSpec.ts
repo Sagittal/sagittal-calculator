@@ -41,7 +41,7 @@ describe("extractBoundIdentifiers", () => {
                         unicode: "" as SymbolUnicode,
                         smallestJiSymbolSubset: SymbolSubset.HERCULEAN,
                         mina: 47 as Mina,
-                        primaryComma: {
+                        analyzedPrimaryComma: {
                             id: 47 as Id<SagittalComma>,
                             apotomeSlope: -2.411919815346935 as ApotomeSlope,
                             twoThreeFreeClass: { monzo: [0, 0, 2, 0, 0, 0, 0, -1] } as TwoThreeFreeClass,
@@ -64,7 +64,7 @@ describe("extractBoundIdentifiers", () => {
                         unicode: "" as SymbolUnicode,
                         smallestJiSymbolSubset: SymbolSubset.HERCULEAN,
                         mina: 48 as Mina,
-                        primaryComma: {
+                        analyzedPrimaryComma: {
                             id: 48 as Id<SagittalComma>,
                             apotomeSlope: 10.555481691145998 as ApotomeSlope,
                             twoThreeFreeClass: { monzo: [] as Monzo } as TwoThreeFreeClass,
@@ -89,7 +89,7 @@ describe("extractBoundIdentifiers", () => {
                         unicode: "" as SymbolUnicode,
                         smallestJiSymbolSubset: SymbolSubset.HERCULEAN,
                         mina: 47 as Mina,
-                        primaryComma: {
+                        analyzedPrimaryComma: {
                             id: 47 as Id<SagittalComma>,
                             apotomeSlope: -2.411919815346935 as ApotomeSlope,
                             twoThreeFreeClass: { monzo: [0, 0, 2, 0, 0, 0, 0, -1] } as TwoThreeFreeClass,
@@ -112,7 +112,7 @@ describe("extractBoundIdentifiers", () => {
                         unicode: "" as SymbolUnicode,
                         smallestJiSymbolSubset: SymbolSubset.HERCULEAN,
                         mina: 48 as Mina,
-                        primaryComma: {
+                        analyzedPrimaryComma: {
                             id: 48 as Id<SagittalComma>,
                             apotomeSlope: 10.555481691145998 as ApotomeSlope,
                             twoThreeFreeClass: { monzo: [] as Monzo } as TwoThreeFreeClass,
@@ -138,7 +138,7 @@ describe("extractBoundIdentifiers", () => {
                         mina: 47 as Mina,
                         smallestJiSymbolSubset: SymbolSubset.HERCULEAN,
                         id: 47 as Id<JiSymbol>,
-                        primaryComma: {
+                        analyzedPrimaryComma: {
                             id: 47 as Id<SagittalComma>,
                             apotomeSlope: -2.411919815346935 as ApotomeSlope,
                             twoThreeFreeClass: { monzo: [0, 0, 2, 0, 0, 0, 0, -1] } as TwoThreeFreeClass,
@@ -161,7 +161,7 @@ describe("extractBoundIdentifiers", () => {
                         mina: 48 as Mina,
                         smallestJiSymbolSubset: SymbolSubset.HERCULEAN,
                         id: 48 as Id<JiSymbol>,
-                        primaryComma: {
+                        analyzedPrimaryComma: {
                             id: 48 as Id<SagittalComma>,
                             apotomeSlope: 10.555481691145998 as ApotomeSlope,
                             twoThreeFreeClass: { monzo: [] as Monzo } as TwoThreeFreeClass,

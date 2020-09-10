@@ -82,7 +82,7 @@ describe("formatTableForTerminal", () => {
             ["25/49M", "7", "24", "33.4", "[0 0⟩", "50/49", "-59.333"],
         ] as Table<Io>
 
-        const actual = formatTableForTerminal(table, { headerRowCount: 2 as Count<Row<unknown, "Header">> })
+        const actual = formatTableForTerminal(table, { headerRowCount: 2 as Count<Row<{ header: true}>> })
 
         const expected =
             "comma \t     \t2,3-free\t     \t       \t     \tapotome" + NEWLINE +

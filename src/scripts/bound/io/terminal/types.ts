@@ -27,7 +27,7 @@ interface BoundIdentifiers {
 }
 
 type JiSymbolWithPrimaryComma = Omit<JiSymbol, "primaryCommaId"> & {
-    primaryComma: AnalyzedComma & { id: Id<SagittalComma> }
+    analyzedPrimaryComma: AnalyzedComma & { id: Id<SagittalComma> }
 }
 
 type BoundIdWithBoundedSymbolIdWithDistancesPairsByLevel =

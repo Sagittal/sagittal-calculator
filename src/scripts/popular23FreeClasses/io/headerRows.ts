@@ -19,7 +19,7 @@ const BEST_NOTATING_COMMA_COLUMN_TITLES = [
     "best notating comma symbol",
 ]
 
-const computePopular23FreeClassesHeaderRows = (): Array<Row<Popular23FreeClass, "Header">> => {
+const computePopular23FreeClassesHeaderRows = (): Array<Row<{ of: Popular23FreeClass, header: true }>> => {
     const popular23FreeClassesColumnTitleColumns = POPULAR_TWO_THREE_FREE_CLASSES_COLUMN_TITLES
         .map(columnTitle => columnTitle.split(" ")) as Array<Column<Popular23FreeClass>>
 
@@ -27,7 +27,7 @@ const computePopular23FreeClassesHeaderRows = (): Array<Row<Popular23FreeClass, 
 }
 
 // TODO: this is a pattern now found I think in three places so clean that up
-const computeBestNotatingCommaHeaderRows = (): Array<Row<Popular23FreeClass, "Header">> => {
+const computeBestNotatingCommaHeaderRows = (): Array<Row<{ of: Popular23FreeClass, header: true }>> => {
     const popular23FreeClassesColumnTitleColumns = BEST_NOTATING_COMMA_COLUMN_TITLES
         .map(columnTitle => columnTitle.split(" ")) as Array<Column<Popular23FreeClass>>
 

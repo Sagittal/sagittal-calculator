@@ -36,7 +36,7 @@ const formatRationalPitch = (rationalPitch: AnalyzedRationalPitch): Io => {
             formatInteger(limit),
             formatInteger(twoThreeFreeSopfr),
             formatNumber(n2d3p9),
-        ] as Row<AnalyzedRationalPitch>,
+        ] as Row<{ of: AnalyzedRationalPitch }>,
     ]
 
     return addTexts(RATIONAL_PITCH_TITLE, formatTable(rationalPitchTable))

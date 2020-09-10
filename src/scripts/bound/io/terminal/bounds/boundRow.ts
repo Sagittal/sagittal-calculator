@@ -7,8 +7,8 @@ import { extractLevelRanks } from "./levelRanks"
 import { formatMina } from "./mina"
 import { BoundRowOptions } from "./types"
 
-const computeBoundRow = (analyzedBound: AnalyzedBound, { bound }: BoundRowOptions): Row<AnalyzedBound> => {
-    let boundRow: Row<AnalyzedBound>
+const computeBoundRow = (analyzedBound: AnalyzedBound, { bound }: BoundRowOptions): Row<{ of: AnalyzedBound }> => {
+    let boundRow: Row<{ of: AnalyzedBound }>
     const boundIdentifiers = extractBoundIdentifiers(bound)
 
     const {
@@ -72,7 +72,7 @@ const computeBoundRow = (analyzedBound: AnalyzedBound, { bound }: BoundRowOption
         formatNumber(cents),
         formatNumber(initialPosition),
         formatNumber(initialPositionTinaDistance),
-    ] as Row<AnalyzedBound>
+    ] as Row<{ of: AnalyzedBound }>
 
     return boundRow
 }

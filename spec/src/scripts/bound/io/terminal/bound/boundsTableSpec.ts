@@ -34,7 +34,7 @@ describe("computeBoundsAnalysisTable", () => {
                     "green",
                     "cyan",
                 ] as ColorMethod[],
-                headerRowCount: 5 as Count<Row<unknown, "Header">>,
+                headerRowCount: 5 as Count<Row<{ header: true }>>,
             },
         )
     })

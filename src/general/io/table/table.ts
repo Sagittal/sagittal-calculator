@@ -12,7 +12,7 @@ import { FormatTableOptions, Table } from "./types"
 //  the point is: a robust alignment capability must process all entries in a column,
 //  variable entries, as a pass at the end
 
-const formatTable = (table: Table, options?: Partial<FormatTableOptions>) => {
+const formatTable = <T = unknown>(table: Table<T>, options?: Partial<FormatTableOptions<T>>) => {
     const rowLengths = table.map(row => row.length)
     const distinctRowLengths = computeDeepDistinct(rowLengths)
 
