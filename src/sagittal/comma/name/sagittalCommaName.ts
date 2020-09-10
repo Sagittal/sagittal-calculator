@@ -75,6 +75,14 @@ const computeSagittalCommaName = (
     return `${formattedRatio}${maybeHyphen}${sizeCategory}${maybeDown}` as Name<Comma>
 }
 
+// TODO: 
+/*
+Something unrelated that I just remembered to mention: 
+Can you please ensure your software names the Pythagorean comma as "3C", not "1C", 
+and any other 3-limit commas similarly. 
+I'm pretty sure we agreed that the only "comma" name that would use the lone number "1" would be the unison "1u".
+ */
+
 export {
     computeSagittalCommaName,
 }
