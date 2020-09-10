@@ -12,12 +12,12 @@ type CentsPosition = {
     name?: Name<Pitch>,
 }
 
-interface RationalPitch {
+interface JiPitch {
     monzo: Monzo,
     name?: Name<Pitch>,
 }
 
-type Pitch = RationalPitch | CentsPosition
+type Pitch = JiPitch | CentsPosition
 
 type Votes = number & { _VotesBrand: "Votes" }
 
@@ -38,7 +38,7 @@ export {
     Votes,
     Popularity,
     Zone,
-    RationalPitch,
+    JiPitch,
     Apotome,
     Pitch,
     TwoThreeFreeClassAsRatio,

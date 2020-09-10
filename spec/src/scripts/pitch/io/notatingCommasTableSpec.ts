@@ -6,7 +6,7 @@ describe("computeNotatingCommasTable", () => {
     it("can format the symbols for the terminal", () => {
         const monzo = [-3, -1, 2] as Monzo
 
-        const actual = computeNotatingCommasTable(monzo)
+        const actual = computeNotatingCommasTable({ monzo })
 
         const expected =
             "   --- notating commas ---" + NEWLINE +
@@ -21,7 +21,7 @@ describe("computeNotatingCommasTable", () => {
         const monzo = [-3, -1, 2] as Monzo
 
         ioSettings.forForum = true
-        const actual = computeNotatingCommasTable(monzo)
+        const actual = computeNotatingCommasTable({ monzo })
 
         const expected =
             "   --- notating commas ---" + NEWLINE +

@@ -1,8 +1,8 @@
 import { Integer } from "../types"
 import { computeRatioFromMonzo } from "./ratioFromMonzo"
-import { Monzo } from "./types"
+import { Direction, Monzo } from "./types"
 
-const computeIntegerFromMonzo = (monzo: Monzo): Integer => {
+const computeIntegerFromMonzo = <T extends { direction: Direction }>(monzo: Monzo<T>): Integer => {
     const ratio = computeRatioFromMonzo(monzo)
     const [numerator, denominator] = ratio
 

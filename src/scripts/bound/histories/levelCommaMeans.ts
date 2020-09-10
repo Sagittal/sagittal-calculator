@@ -1,4 +1,4 @@
-import { Cents, CentsPosition, computeCentsFromMonzo, Id, Name, Pitch } from "../../../general"
+import { Cents, CentsPosition, computeCentsFromJiPitch, Id, Name, Pitch } from "../../../general"
 import { getJiSymbol, getSagittalComma, JiSymbol, Level, LEVELS_SYMBOL_IDS, SymbolLongAscii } from "../../../sagittal"
 
 const getJiSymbolCents = (jiSymbolId: Id<JiSymbol>): Cents => {
@@ -6,7 +6,7 @@ const getJiSymbolCents = (jiSymbolId: Id<JiSymbol>): Cents => {
     const primaryCommaId = jiSymbol.primaryCommaId
     const primaryComma = getSagittalComma(primaryCommaId)
     
-    return computeCentsFromMonzo(primaryComma.monzo)
+    return computeCentsFromJiPitch(primaryComma)
 }
 
 const getJiSymbolAscii = (jiSymbolId: Id<JiSymbol>): SymbolLongAscii => {

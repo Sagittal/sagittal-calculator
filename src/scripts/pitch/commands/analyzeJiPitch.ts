@@ -8,25 +8,26 @@ import {
     Formatted,
     IDENTIFYING_COMMA_NAME_CHARS,
     Io,
+    JiPitch,
     LogTarget,
     Monzo,
-    Name, NEWLINE,
+    Name,
+    NEWLINE,
     parseInteger,
     parseMonzo,
     parseRatio,
     Ratio,
-    RationalPitch,
-    saveLog, stringify,
+    saveLog,
 } from "../../../general"
 import {
-    analyzeRationalPitch,
+    analyzeJiPitch,
     Comma,
     computeMonzoFrom23FreeClassAndSizeCategoryName,
     parseCommaName,
 } from "../../../sagittal"
 import { PITCH_SCRIPT_GROUP } from "../constants"
 import { pitchScriptGroupSettings } from "../globals"
-import { computeNotatingCommasTable, formatRationalPitch, formatSettings } from "../io"
+import { computeNotatingCommasTable, formatJiPitch, formatSettings } from "../io"
 import { applySharedPitchCommandSetup } from "./shared"
 
 program
@@ -48,19 +49,19 @@ program
 
 applySharedPitchCommandSetup()
 
-const rationalPitchText = program.args[ 0 ] as Io
+const jiPitchText = program.args[ 0 ] as Io
 let monzo: Monzo
-if (rationalPitchText) {
-    if (rationalPitchText.match(IDENTIFYING_COMMA_NAME_CHARS)) {
-        const { twoThreeFreeRatio, sizeCategoryName } = parseCommaName(rationalPitchText as Name<Comma>)
+if (jiPitchText) {
+    if (jiPitchText.match(IDENTIFYING_COMMA_NAME_CHARS)) {
+        const { twoThreeFreeRatio, sizeCategoryName } = parseCommaName(jiPitchText as Name<Comma>)
         monzo = computeMonzoFrom23FreeClassAndSizeCategoryName({ twoThreeFreeRatio, sizeCategoryName })
-    } else if (rationalPitchText.includes("/")) {
-        const ratio = parseRatio(rationalPitchText as Formatted<Ratio>)
+    } else if (jiPitchText.includes("/")) {
+        const ratio = parseRatio(jiPitchText as Formatted<Ratio>)
         monzo = computeMonzoFromRatio(ratio)
-    } else if (rationalPitchText.match(ANY_MONZO_CHARS)) {
-        monzo = parseMonzo(rationalPitchText as Formatted<Monzo>)
+    } else if (jiPitchText.match(ANY_MONZO_CHARS)) {
+        monzo = parseMonzo(jiPitchText as Formatted<Monzo>)
     } else {
-        const integer = parseInteger(rationalPitchText)
+        const integer = parseInteger(jiPitchText)
         monzo = computeMonzoFromInteger(integer)
     }
 } else if (program.monzo) {
@@ -70,25 +71,25 @@ if (rationalPitchText) {
 } else if (program.commaName) {
     monzo = computeMonzoFrom23FreeClassAndSizeCategoryName(program.commaName)
 } else {
-    throw new Error("Unable to determine monzo for rational pitch.")
+    throw new Error("Unable to determine monzo for JI pitch.")
 }
 
-// TODO: it should adjust the defaults if your own rational pitch is outside them
-//  so that it will always be the case that your rational pitch appears in its own notating commas list
+// TODO: it should adjust the defaults if your own JI pitch is outside them
+//  so that it will always be the case that your JI pitch appears in its own notating commas list
 //  the difference between
-//  npm run analyze-rational-pitch 209/208
+//  npm run analyze-ji-pitch 209/208
 //  and
-//  npm run analyze-rational-pitch 209/208 -- --max-n2d3p9 500
+//  npm run analyze-ji-pitch 209/208 -- --max-n2d3p9 500
 
 saveLog(addTexts(formatSettings(), NEWLINE), LogTarget.ALL, PITCH_SCRIPT_GROUP)
 
-const rationalPitch: RationalPitch = { monzo }
-const analyzedRationalPitch = analyzeRationalPitch(rationalPitch)
-saveLog(formatRationalPitch(analyzedRationalPitch), LogTarget.ALL, PITCH_SCRIPT_GROUP)
+const jiPitch: JiPitch = { monzo }
+const analyzedJiPitch = analyzeJiPitch(jiPitch)
+saveLog(formatJiPitch(analyzedJiPitch), LogTarget.ALL, PITCH_SCRIPT_GROUP)
 
 // TODO: is this not tested, that the comma name options are supposed
-//  to affect the notating commas, not the rational pitch?
-const notatingCommasFormattedTable = computeNotatingCommasTable(monzo, pitchScriptGroupSettings.commaNameOptions)
+//  to affect the notating commas, not the JI pitch?
+const notatingCommasFormattedTable = computeNotatingCommasTable(jiPitch, pitchScriptGroupSettings.commaNameOptions)
 saveLog(notatingCommasFormattedTable, LogTarget.ALL, PITCH_SCRIPT_GROUP)
 
 // TODO: okay so I guess we still didn't actually get to it, but I'd like to see this:

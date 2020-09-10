@@ -36,8 +36,7 @@ const MAX_CENTS = (TINAS_TO_CHECK[ TINAS_TO_CHECK.length - 1 ] + PLUS_MINUS_RANG
 const isLate = (comma: Comma) => {
     const ate = abs(comma.monzo[ 1 ])
 
-    const notatingCommas =
-        computeNotatingCommas(comma.monzo, { ...pitchScriptGroupSettings, maxN2D3P9: LIMITLESS_N2D3P9 })
+    const notatingCommas = computeNotatingCommas(comma, { ...pitchScriptGroupSettings, maxN2D3P9: LIMITLESS_N2D3P9 })
     const ates = notatingCommas.map(notatingComma => abs(notatingComma.monzo[ 1 ]))
 
     saveLog(`ATE ${ate} vs. other notating ATEs ${ates}` as Io, LogTarget.PROGRESS, PITCH_SCRIPT_GROUP)

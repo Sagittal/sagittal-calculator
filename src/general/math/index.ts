@@ -11,6 +11,7 @@ export {
     computeMonzoFromInteger,
     computeMonzoFromRatio,
     computeMonzosFromPrimeExponentExtremas,
+    computeRoughMonzo,
     computeRatioFromMonzo,
     computeSuperMonzo,
     Direction,
@@ -22,7 +23,6 @@ export {
 } from "./monzo"
 export { computePrimeCount } from "./primeCount"
 export { PRIMES } from "./primes"
-export { computeRoughNumberMonzo } from "./rough"
 export { computeSopfr } from "./sopfr"
 export { computeTriangularNumber } from "./triangularNumber"
 export {

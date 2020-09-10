@@ -3,12 +3,11 @@ import {
     BLANK,
     Cents,
     COMMA_POPULARITIES,
-    computeCentsFromMonzo,
+    computeCentsFromJiPitch,
     computeRatioFromMonzo,
     deepEquals,
     formatMonzo,
     formatNumber,
-    formatRatio,
     Formatted,
     Io,
     ioSettings,
@@ -24,6 +23,7 @@ import {
     Comma,
     computeApotomeSlope,
     computeNotatingCommas,
+    format23FreeClass,
     formatSymbol,
     N2D3P9,
     TwoThreeFreeClass,
@@ -35,12 +35,12 @@ const isLate = (notatingComma: Comma, bestNotatingComma: Comma) => {
     return abs(notatingComma.monzo[ 1 ]) < abs(bestNotatingComma.monzo[ 1 ]) ||
         (
             abs(notatingComma.monzo[ 1 ]) === abs(bestNotatingComma.monzo[ 1 ]) &&
-            computeCentsFromMonzo(notatingComma.monzo) < computeCentsFromMonzo(bestNotatingComma.monzo)
+            computeCentsFromJiPitch(notatingComma) < computeCentsFromJiPitch(bestNotatingComma)
         )
 }
 
 const isLaas = (notatingComma: Comma, bestNotatingComma: Comma) => {
-    return abs(computeApotomeSlope(notatingComma.monzo)) < abs(computeApotomeSlope(bestNotatingComma.monzo))
+    return abs(computeApotomeSlope(notatingComma)) < abs(computeApotomeSlope(bestNotatingComma))
 }
 
 const computePopular23FreeClassWithBestNotatingComma = (
@@ -48,9 +48,7 @@ const computePopular23FreeClassWithBestNotatingComma = (
 ): Popular23FreeClassWithBestNotatingComma => {
     const formattedN2D3P9 = formatNumber(n2d3p9)
 
-    const formatted23FreeClass: Formatted<TwoThreeFreeClass> =
-        // TODO: you'll want to extract this as an actual format23FreeClass funtion
-        formatRatio(computeRatioFromMonzo(twoThreeFreeClass.monzo)) as unknown as Formatted<TwoThreeFreeClass>
+    const formatted23FreeClass: Formatted<TwoThreeFreeClass> = format23FreeClass(twoThreeFreeClass)
 
     const twoThreeFreeClassAsRatio: TwoThreeFreeClassAsRatio =
         computeRatioFromMonzo(twoThreeFreeClass.monzo) as TwoThreeFreeClassAsRatio
@@ -60,10 +58,7 @@ const computePopular23FreeClassWithBestNotatingComma = (
     const popularityRank = popularity?.rank || "-" as Io
     const votes = popularity?.votes || 0 as Votes
 
-    const notatingCommas = computeNotatingCommas(
-        twoThreeFreeClass.monzo,
-        { maxCents: APOTOME_CENTS / 2 as Max<Cents> },
-    )
+    const notatingCommas = computeNotatingCommas(twoThreeFreeClass, { maxCents: APOTOME_CENTS / 2 as Max<Cents> })
 
     let bestNotatingComma: Maybe<Comma> = undefined
     for (const notatingComma of notatingCommas) {
@@ -91,7 +86,7 @@ const computePopular23FreeClassWithBestNotatingComma = (
         formatted23FreeClass,
         popularityRank,
         votes,
-        centsOfBestNotatingComma: formatNumber(computeCentsFromMonzo(commaWithMaybeSagittalSymbol.monzo)),
+        centsOfBestNotatingComma: formatNumber(computeCentsFromJiPitch(commaWithMaybeSagittalSymbol)),
         monzoOfBestNotatingComma: formatMonzo(commaWithMaybeSagittalSymbol.monzo),
         maybeSymbolForBestNotatingComma:
             commaWithMaybeSagittalSymbol.symbolId ?

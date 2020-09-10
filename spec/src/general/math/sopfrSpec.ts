@@ -4,7 +4,7 @@ describe("computeSopfr", () => {
     it("sums the absolute values of the prime factors (with repetition) in the monzo", () => {
         const monzo = [5, 6, 0, 0, 1, -1, 2] as Monzo
 
-        const actual = computeSopfr(monzo)
+        const actual = computeSopfr({ monzo })
 
         const expected = 2 + 2 + 2 + 2 + 2 + 3 + 3 + 3 + 3 + 3 + 3 + 11 + 13 + 17 + 17 as Sopfr
         expect(actual).toBe(expected)
@@ -13,7 +13,7 @@ describe("computeSopfr", () => {
     it("works for an empty monzo", () => {
         const monzo = [] as Monzo
 
-        const actual = computeSopfr(monzo)
+        const actual = computeSopfr({ monzo })
 
         const expected = 0 as Sopfr
         expect(actual).toBe(expected)

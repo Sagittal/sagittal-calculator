@@ -1,8 +1,8 @@
-import { computeTrimmedArray } from "../code"
-import { Exponent, Integer, Monzo, NumericTypeParameters, Prime, PRIMES } from "../math"
-import { Roughness } from "./types"
+import { computeTrimmedArray } from "../../code"
+import { Exponent, Integer, Monzo, NumericTypeParameters, Prime, PRIMES } from "../../math"
+import { Roughness } from "../types"
 
-const computeRoughNumberMonzo = <S extends 2 | 3 | 5 | 7 | 11 | 13 | 17 | 19 | 23 | 29 | 31 | 37 | 41 | 43 | 47,
+const computeRoughMonzo = <S extends 2 | 3 | 5 | 7 | 11 | 13 | 17 | 19 | 23 | 29 | 31 | 37 | 41 | 43 | 47,
     T extends Omit<NumericTypeParameters, "rough">>(
     monzo: Monzo<T>,
     roughness: S & Roughness,
@@ -16,5 +16,5 @@ const computeRoughNumberMonzo = <S extends 2 | 3 | 5 | 7 | 11 | 13 | 17 | 19 | 2
 }
 
 export {
-    computeRoughNumberMonzo,
+    computeRoughMonzo,
 }

@@ -1,5 +1,5 @@
-import { computeMonzoFromRatio, Direction, Formatted, Monzo, parseRatio, Ratio } from "../../general"
-import { TwoThreeFreeClass } from "../types"
+import { computeMonzoFromRatio, Direction, Formatted, Monzo, parseRatio, Ratio } from "../../../general"
+import { TwoThreeFreeClass } from "../../types"
 
 const parse23FreeClass = (formatted23FreeClass: Formatted<TwoThreeFreeClass>): TwoThreeFreeClass => {
     const parsed23FreeClass = parseRatio(formatted23FreeClass as Formatted as Formatted<Ratio>)

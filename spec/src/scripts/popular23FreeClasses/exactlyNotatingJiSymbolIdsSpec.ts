@@ -8,7 +8,7 @@ describe("computeExactlyNotatingJiSymbols", () => {
         () => {
             const monzo: Monzo = [0, -2, 0, 0, 1] as Monzo
 
-            const actual = computeExactlyNotatingJiSymbolIds(monzo)
+            const actual = computeExactlyNotatingJiSymbolIds({ monzo })
 
             const expected = [
                 80,     // 1/11S
@@ -22,7 +22,7 @@ describe("computeExactlyNotatingJiSymbols", () => {
     it("another example", () => {
         const monzo: Monzo = [0, 0, 1, 1] as Monzo
 
-        const actual = computeExactlyNotatingJiSymbolIds(monzo)
+        const actual = computeExactlyNotatingJiSymbolIds({ monzo })
 
         const expected = [
             54,     // 1/35C

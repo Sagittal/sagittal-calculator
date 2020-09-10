@@ -93,7 +93,7 @@ export {
     computeMonzosFromPrimeExponentExtremas,
     computePrimeCount,
     computeRatioFromMonzo,
-    computeRoughNumberMonzo,
+    computeRoughMonzo,
     computeSopfr,
     computeSuperMonzo,
     computeTriangularNumber,
@@ -145,7 +145,7 @@ export {
     CENTS_PER_OCTAVE,
     CentsPosition,
     COMMA_POPULARITIES,
-    computeCentsFromMonzo,
+    computeCentsFromJiPitch,
     computeCentsFromRatio,
     computeMonzoInZone,
     Pitch,
@@ -153,6 +153,6 @@ export {
     Votes,
     Zone,
     TwoThreeFreeClassAsRatio,
-    RationalPitch,
+    JiPitch,
 } from "./music"
 export { Count, Ed, Extrema, Id, Index, Ms, Multiplier, Name, Step, Sum, Window } from "./types"

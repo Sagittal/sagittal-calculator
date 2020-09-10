@@ -14,7 +14,7 @@
     "analyze-bounds": "node -r ts-node/register/transpile-only src/scripts/bound/commands/analyzeBounds.ts",
     "generate-levels-diagram": "node -r ts-node/register/transpile-only src/scripts/bound/commands/generateLevelsDiagram.ts",
     "find-commas": "node -r ts-node/register/transpile-only src/scripts/pitch/commands/findCommas.ts",
-    "analyze-rational-pitch": "node -r ts-node/register/transpile-only src/scripts/pitch/commands/analyzeRationalPitch.ts",
+    "analyze-ji-pitch": "node -r ts-node/register/transpile-only src/scripts/pitch/commands/analyzeJiPitch.ts",
     "best-metric-from-scope": "node -r ts-node/register/transpile-only --max-old-space-size=131072 src/scripts/lfc/commands/bestMetricFromScope.ts",
     "antivotes": "node -r ts-node/register/transpile-only src/scripts/lfc/commands/antivotes.ts",
     "sos": "node -r ts-node/register/transpile-only src/scripts/lfc/commands/sumOfSquares.ts",

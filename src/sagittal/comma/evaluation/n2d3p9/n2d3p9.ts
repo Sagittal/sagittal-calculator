@@ -6,16 +6,16 @@ import {
     Direction,
     Exponent,
     formatMonzo,
-    Monzo,
     NumericTypeParameters,
     Prime,
     PRIMES,
 } from "../../../../general"
+import { TwoThreeFreeClass } from "../../../types"
 import { N2D3P9 } from "./types"
 
 const computeN2D3P9 = <T extends NumericTypeParameters &
     { direction: Direction.SUPER, rough: 5 } = { direction: Direction.SUPER, rough: 5, irrational: true }>(
-    monzo: Monzo<T>,
+    { monzo }: TwoThreeFreeClass 
 ): N2D3P9 => {
     if (computeTrimmedArray(monzo).length < 3) {
         return 1 as N2D3P9
@@ -28,7 +28,7 @@ const computeN2D3P9 = <T extends NumericTypeParameters &
         throw new Error(`N2D3P9 must be given a 2,3-free class (5-rough, n ≥ d); received monzo ${formatMonzo(monzo)}`)
     }
 
-    const n2d3p9 = monzo.reduce(
+    return monzo.reduce(
         (n2d3p9: N2D3P9, primeExponent: Exponent<Prime>, index: number) => {
             const prime = PRIMES[ index ]
             const divisor = primeExponent < 0 ? 3 : 2
@@ -36,9 +36,7 @@ const computeN2D3P9 = <T extends NumericTypeParameters &
             return n2d3p9 * (prime / divisor) ** abs(primeExponent) as N2D3P9
         },
         1 as N2D3P9,
-    ) * computeGpf(monzo) * (1 / 9) as N2D3P9
-
-    return n2d3p9
+    ) * computeGpf({ monzo }) * (1 / 9) as N2D3P9
 }
 
 export {

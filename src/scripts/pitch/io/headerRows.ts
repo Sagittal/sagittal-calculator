@@ -2,7 +2,7 @@ import { addTexts, concat, Formatted, Row, shallowClone } from "../../../general
 import { AnalyzedComma } from "../../../sagittal"
 
 const NOTATING_COMMA_WITH_MAYBE_SAGITTAL_SYMBOLS_HEADER_ROW = [
-    "symbol  ", // Extra space to attempt to stay lined up with the rational pitch table
+    "symbol  ", // Extra space to attempt to stay lined up with the JI pitch table
     "name",
     "ratio",
     "monzo",
@@ -10,7 +10,7 @@ const NOTATING_COMMA_WITH_MAYBE_SAGITTAL_SYMBOLS_HEADER_ROW = [
     "apotome slope",
     // this table does not include limit, 2,3-free sopfr, or N2D3P9,
     // because they will always be the same for every entry in the table
-    // and they are shared already, once each, in the table up above this one, for the rational pitch analysis
+    // and they are shared already, once each, in the table up above this one, for the JI pitch analysis
 ] as Row<{ of: AnalyzedComma, header: true }>
 
 const FIND_COMMAS_HEADER_ROW: Row<{ of: AnalyzedComma, header: true }> = concat(
@@ -26,7 +26,7 @@ const TWO_TABBED_COLUMN_WIDE_SPACE_INSTEAD_OF_SYMBOLS = "        " as Formatted<
 const ONE_TABBED_COLUMN_WIDE_SPACE_INSTEAD_OF_NAME = "       " as Formatted<AnalyzedComma>
 const EXTRA_COLUMN_ASSUMING_SOME_LONG_RATIOS = "     " as Formatted<AnalyzedComma>
 
-const computeRationalPitchHeaderRow = (): Row<{ of: AnalyzedComma, header: true }> => {
+const computeJiPitchHeaderRow = (): Row<{ of: AnalyzedComma, header: true }> => {
     const headerRow = shallowClone(FIND_COMMAS_HEADER_ROW)
     headerRow[ 0 ] = TWO_TABBED_COLUMN_WIDE_SPACE_INSTEAD_OF_SYMBOLS
     headerRow[ 1 ] = ONE_TABBED_COLUMN_WIDE_SPACE_INSTEAD_OF_NAME
@@ -37,7 +37,7 @@ const computeRationalPitchHeaderRow = (): Row<{ of: AnalyzedComma, header: true 
 }
 
 export {
-    computeRationalPitchHeaderRow,
+    computeJiPitchHeaderRow,
     NOTATING_COMMA_WITH_MAYBE_SAGITTAL_SYMBOLS_HEADER_ROW,
     FIND_COMMAS_HEADER_ROW,
 }

@@ -1,7 +1,7 @@
 import { shallowClone } from "./clone"
 
-const computeTrimmedArray = <T extends Array<unknown>>(monzo: T): T => {
-    const trimmedArray = shallowClone(monzo)
+const computeTrimmedArray = <T extends Array<unknown>>(array: T): T => {
+    const trimmedArray = shallowClone(array)
 
     while (trimmedArray.length && !trimmedArray[ trimmedArray.length - 1 ]) {
         trimmedArray.pop()

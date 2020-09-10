@@ -11,7 +11,7 @@ describe("max absolute apotome slope per level", () => {
                     (levelMaxAbsoluteApotomeSlope, levelSymbolId) => {
                         const levelSymbol = getJiSymbol(levelSymbolId)
                         const primaryComma = getSagittalComma(levelSymbol.primaryCommaId)
-                        const apotomeSlope = abs(computeApotomeSlope(primaryComma.monzo))
+                        const apotomeSlope = abs(computeApotomeSlope(primaryComma))
 
                         return apotomeSlope > levelMaxAbsoluteApotomeSlope ? apotomeSlope : levelMaxAbsoluteApotomeSlope
                     },

@@ -1,8 +1,7 @@
-import { Cents, Direction, Id, Maybe, Monzo, Name, Prime, Ratio, RationalPitch, Sopfr } from "../general"
+import { Cents, Direction, Id, JiPitch, Maybe, Monzo, Name, Prime, Ratio, Sopfr } from "../general"
 import { ApotomeSlope, N2D3P9 } from "./comma"
 
-// TODO: COMMA MONZO RATIO JI should i just use "Ji" as the standardized signal of Rationality through the codebase?
-//  though that doesn't really work with the number vs. Integer distinction, which is really the same
+// TODO: COMMA MONZO RATIO JI
 //  - and if you could make Analyzed<> a parameterized thing like Formatted<>, of course it would be a bit different
 //  because Formatted<> converts it from whatever object it is to a branded string, just with aspect of that object
 //  whereas Analyzed would just extend the object
@@ -13,28 +12,29 @@ import { ApotomeSlope, N2D3P9 } from "./comma"
 //  - I want to be sensitive to the issue of the type names reading in a consistent direction
 //  relative to the variable names, i.e. in the opposite order
 //  like how primeExponentExtremas: Array<Extrema<Integer & Exponent<Prime>>>
-//  so you'd have an analyzedRationalPitch, which would be a Pitch<Ji<Analyzed>> by that pattern
+//  so you'd have an analyzedJiPitch, which would be a Pitch<Ji<Analyzed>> by that pattern
 //  but I'm sure you can see how that doesn't really make sense!
 //  which maybe just means that the variable name should be jiPitchAnalyzed: Analyzed<Pitch<Ji>>
-//  okay so would type Analyzed<T> = T & T<"Analyzed"> which would allow you to write it like the above...
+//  or per my above insight, would be jiPitchAnalysis = Analysis<Pitch<Ji>>
+//  okay so would type Analysis<T> = T & T<"Analyzed"> which would allow you to write it like the above...
 //  no wait, then "Analyzed" would conflict with the Ji part...
+//  (although now that you've mastered the art of a type parameter object, you could have { analyzed: true })
 //  - also consider how Rank<_, Integer> is how you make it an Integer... should that just be Integer & Rank?
 //  like should Ji<T> just mean Integer & T?
 //  yeah but you wouldn't want a Just Intoned Rank... so you should probably have it be Whole<>
 //  except Whole numbers are technically only positive... so wouldn't it just be Integer<>?
 //  why isn't Integer already parameterized? or is it?
+//  so i think this Integer/Whole parameterized thing is independent from the Ji pitch vs not Ji
+//  because that's going to be its own thing entirely, where JI must hhave at least one of monzo and ratio
+//  and non-JI must have at least one of value/cents and ED maybe
 // tslint:disable max-line-length
 /*
 Also parameteized types are great when realistically it could be a ton of different things
 But avoid it when it’s just either number or integer...
 
-I think we just need to represent everything as monzos all the time
-
 Like just have a JiMonzo and a Monzo
 
 and then a Comma is just a JiMonzo which is tagged to indicate it is small, and should be able to be named with the naming scheme
-
-Object of parameters for types so monzo parameters don’t order matter and can add “sub”
 
 Pitch<JI> = JI? Monzo : Value
 maybe
@@ -42,7 +42,7 @@ maybe
 Still kinda working it out in my head. Monzos are not necessarily JI / rational (consider the monzos given [url=http://forum.sagittal.org/viewtopic.php?p=582#p582]here[/url] for the size category bounds, the square roots of Pythagorean intervals
 */
 
-interface RationalPitchAnalysis {
+interface JiPitchAnalysis {
     apotomeSlope: ApotomeSlope,
     twoThreeFreeSopfr: Sopfr<5>,
     limit: Prime,
@@ -52,14 +52,14 @@ interface RationalPitchAnalysis {
     twoThreeFreeClass: TwoThreeFreeClass,
 }
 
-interface Comma extends RationalPitch {
+interface Comma extends JiPitch {
     monzo: Monzo<{ comma: true }>,
 }
 
-interface AnalyzedRationalPitch extends RationalPitch, RationalPitchAnalysis {
+interface AnalyzedJiPitch extends JiPitch, JiPitchAnalysis {
 }
 
-interface AnalyzedComma extends Comma, RationalPitchAnalysis {
+interface AnalyzedComma extends Comma, JiPitchAnalysis {
     name: Name<Comma>,
 }
 
@@ -69,14 +69,14 @@ type SagittalComma<T extends "Maybe" | void = void> = Comma & (
         { id: Id<SagittalComma> }
     )
 
-interface TwoThreeFreeClass extends RationalPitch {
+interface TwoThreeFreeClass extends JiPitch {
     monzo: Monzo<{ rough: 5, direction: Direction.SUPER }>
     _TwoThreeFreeClassBrand: "TwoThreeFreeClass"
 }
 
 export {
     Comma,
-    AnalyzedRationalPitch,
+    AnalyzedJiPitch,
     AnalyzedComma,
     SagittalComma,
     TwoThreeFreeClass,

@@ -34,7 +34,7 @@ type Abs<T extends number = number> = T & { _AbsBrand: "Abs" }
 type Average<T extends number = number> = T & { _AverageBrand: "Average" }
 type Approx<T extends number = number> = T & { _ApproxBrand: "Approx" }
 
-type Sopfr<Roughness = void> =
+type Sopfr<Roughness = void> = // TODO: this should be able to inherit roughness from the number it gets called with
     Sum<Prime>
     & { _SopfrBrand: "Sopfr" }
     & (Roughness extends number ? { _RoughnessBrand: Roughness } : {})

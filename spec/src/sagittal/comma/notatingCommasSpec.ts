@@ -5,7 +5,7 @@ describe("computeNotatingCommas", () => {
     it("given a monzo, returns a list of the commas that notate it", () => {
         const monzo = [0, 0, 0, 0, 1] as Monzo
 
-        const actual = computeNotatingCommas(monzo)
+        const actual = computeNotatingCommas({ monzo })
 
         const expected = [
             { monzo: [14, -11, 0, 0, 1] },
@@ -20,7 +20,7 @@ describe("computeNotatingCommas", () => {
         const maxAbsoluteApotomeSlope = 9 as Max<Abs<ApotomeSlope>>
         const maxCents = 55 as Max<Cents>
 
-        const actual = computeNotatingCommas(monzo, { maxAbsoluteApotomeSlope, maxCents })
+        const actual = computeNotatingCommas({ monzo }, { maxAbsoluteApotomeSlope, maxCents })
 
         const expected = [
             { monzo: [-5, 1, 0, 0, 1] },

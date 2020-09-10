@@ -5,7 +5,7 @@ describe("computeSecorComplexity", () => {
     it("works per example given on the forum", () => {
         const monzo = [-4, 4, -1] as Monzo
 
-        const actual = computeSecorComplexity(monzo)
+        const actual = computeSecorComplexity({ monzo })
 
         const expected = 6.120342429524193
         expect(actual).toBe(expected)

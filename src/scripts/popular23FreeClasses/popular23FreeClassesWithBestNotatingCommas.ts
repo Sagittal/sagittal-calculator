@@ -14,7 +14,7 @@ import {
     shallowClone,
     stringify,
 } from "../../general"
-import { computePrimeExponentExtremasGivenMaxN2D3P9, N2D3P9 } from "../../sagittal"
+import { computePrimeExponentExtremasGivenMaxN2D3P9, N2D3P9, TwoThreeFreeClass } from "../../sagittal"
 import { POPULAR_TWO_THREE_FREE_CLASSES_SCRIPT_GROUP } from "./constants"
 import { computeMaybePopular23FreeClassWithBestNotatingComma } from "./maybePopular23FreeClassWithBestNotatingComma"
 import { Popular23FreeClassWithBestNotatingComma } from "./types"
@@ -51,7 +51,7 @@ const computePopular23FreeClassesWithBestNotatingCommas = (
         // do the work
         const maybePopular23FreeClassWithBestNotatingComma =
             computeMaybePopular23FreeClassWithBestNotatingComma(
-                twoThreeFreeMonzo,
+                { monzo: twoThreeFreeMonzo } as TwoThreeFreeClass,
                 maxN2D3P9,
             )
 

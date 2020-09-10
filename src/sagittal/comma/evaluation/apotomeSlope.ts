@@ -1,8 +1,8 @@
-import { computeCentsFromRatio, computeRatioFromMonzo, Monzo } from "../../../general"
+import { computeCentsFromRatio, computeRatioFromMonzo, JiPitch } from "../../../general"
 import { APOTOME_CENTS, APOTOME_THREE_EXPONENT } from "../../constants"
 import { ApotomeSlope } from "./types"
 
-const computeApotomeSlope = (monzo: Monzo): ApotomeSlope => {
+const computeApotomeSlope = ({ monzo }: JiPitch): ApotomeSlope => {
     const ratio = computeRatioFromMonzo(monzo)
     const cents = computeCentsFromRatio(ratio)
 

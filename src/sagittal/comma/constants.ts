@@ -2,7 +2,7 @@ import { Abs, Cents, Copfr, Exponent, Integer, Max, Min, ObjectKey, Prime, Sopfr
 import { APOTOME_CENTS } from "../constants"
 import { ApotomeSlope, N2D3P9 } from "./evaluation"
 
-// used for both find-commas and analyze-rational-pitch
+// used for both find-commas and analyze-ji-pitch
 const DEFAULT_MIN_CENTS = 0 as Min<Cents>
 const DEFAULT_MAX_CENTS = APOTOME_CENTS / 2 as Max<Cents>
 const DEFAULT_MAX_ABSOLUTE_3_EXPONENT = 15 as Max<Abs<Integer & Exponent<Prime>>>

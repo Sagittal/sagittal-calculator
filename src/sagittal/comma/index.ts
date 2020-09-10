@@ -1,7 +1,7 @@
 export { computeNotatingCommas } from "./notatingCommas"
 export { computeCommasFrom23FreeMonzo } from "./commasFrom23FreeMonzo"
 export { analyzeComma } from "./analyzeComma"
-export { analyzeRationalPitch } from "./analyzeRationalPitch"
+export { analyzeJiPitch } from "./analyzeJiPitch"
 export {
     DEFAULT_MAX_ABSOLUTE_APOTOME_SLOPE,
     DEFAULT_MAX_ABSOLUTE_3_EXPONENT,
@@ -24,6 +24,4 @@ export {
     parseCommaName,
 } from "./name"
 export { compute23FreeClass } from "./twoThreeFreeClass"
-export { parse23FreeClass } from "./parse23FreeClass"
-
-// TODO: wait, is this entire folder actually not "comma" but more like 2,3-free class???
+export { format23FreeClass, parse23FreeClass } from "./io"

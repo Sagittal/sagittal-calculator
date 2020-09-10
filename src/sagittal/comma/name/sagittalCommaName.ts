@@ -1,11 +1,11 @@
 import {
     abs,
     Cents,
-    computeCentsFromMonzo,
+    computeCentsFromJiPitch,
     computeIsSubMonzo,
     computeMonzoFromInteger,
     computeRatioFromMonzo,
-    computeRoughNumberMonzo,
+    computeRoughMonzo,
     computeSuperMonzo,
     computeUndirectedRatio,
     deepEquals,
@@ -49,19 +49,20 @@ const primeFactorizeCommaName = (numeratorOrDenominator: FractionalPart) => {
 // "Secor-Keenan systematic name" or "Sagittal name"
 
 const computeSagittalCommaName = (
-    monzo: Monzo,
+    { monzo }: Comma,
     { directed = true, factored = false, abbreviated = true } = {},
 ): Name<Comma> => {
     const sub = computeIsSubMonzo(monzo)
 
     const superMonzo = computeSuperMonzo(monzo)
-    const cents: Cents = computeCentsFromMonzo(superMonzo)
+    // TODO: so perhaps monzoDirection should instead be jiPitchDirection  
+    const cents: Cents = computeCentsFromJiPitch({ monzo: superMonzo }) 
 
     if (cents > MAX_SIZE_CATEGORY_BOUND) {
         throw new Error(`Comma ${formatMonzo(monzo)} is outside of comma-sized range and cannot be named.`)
     }
 
-    const twoThreeFreeMonzo = computeRoughNumberMonzo(superMonzo, FIVE_ROUGHNESS)
+    const twoThreeFreeMonzo = computeRoughMonzo(superMonzo, FIVE_ROUGHNESS)
     const ratio: Ratio = computeRatioFromMonzo(twoThreeFreeMonzo)
 
     let formattedRatio

@@ -10,11 +10,11 @@ import {
     Row,
     Table,
 } from "../../../general"
-import { AnalyzedRationalPitch } from "../../../sagittal"
-import { computeRationalPitchHeaderRow } from "./headerRows"
-import { RATIONAL_PITCH_TITLE } from "./titles"
+import { AnalyzedJiPitch } from "../../../sagittal"
+import { computeJiPitchHeaderRow } from "./headerRows"
+import { JI_PITCH_TITLE } from "./titles"
 
-// TODO: is this computeRationalPitchTable or formatRationalPitch? get these all straight
+// TODO: is this computeJiPitchTable or formatJiPitch? get these all straight
 //  I think you already have a to-do re: this problem
 //  this one, as opposed to formatRatio, is more of a table at this point
 
@@ -22,11 +22,11 @@ import { RATIONAL_PITCH_TITLE } from "./titles"
 //  you should actually include the 2,3-free class on it!
 //  but perhaps it's a branded Ratio type?
 
-const formatRationalPitch = (rationalPitch: AnalyzedRationalPitch): Io => {
-    const { limit, twoThreeFreeSopfr, cents, monzo, ratio, apotomeSlope, n2d3p9 } = rationalPitch
+const formatJiPitch = (jiPitch: AnalyzedJiPitch): Io => {
+    const { limit, twoThreeFreeSopfr, cents, monzo, ratio, apotomeSlope, n2d3p9 } = jiPitch
 
-    const rationalPitchTable: Table<AnalyzedRationalPitch> = [
-        computeRationalPitchHeaderRow(),
+    const jiPitchTable: Table<AnalyzedJiPitch> = [
+        computeJiPitchHeaderRow(),
         [
             BLANK,
             BLANK,
@@ -37,12 +37,12 @@ const formatRationalPitch = (rationalPitch: AnalyzedRationalPitch): Io => {
             formatInteger(limit),
             formatInteger(twoThreeFreeSopfr),
             formatNumber(n2d3p9),
-        ] as Row<{ of: AnalyzedRationalPitch }>,
+        ] as Row<{ of: AnalyzedJiPitch }>,
     ]
 
-    return addTexts(RATIONAL_PITCH_TITLE, formatTable(rationalPitchTable))
+    return addTexts(JI_PITCH_TITLE, formatTable(jiPitchTable))
 }
 
 export {
-    formatRationalPitch,
+    formatJiPitch,
 }

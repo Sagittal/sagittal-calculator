@@ -1,4 +1,5 @@
 import { Max, Monzo } from "../../../../src/general/math"
+import { TwoThreeFreeClass } from "../../../../src/sagittal"
 import { N2D3P9 } from "../../../../src/sagittal/comma/evaluation/n2d3p9"
 import { computeMaybePopular23FreeClass } from "../../../../src/scripts/popular23FreeClasses/maybePopular23FreeClass"
 
@@ -7,7 +8,7 @@ describe("computeMaybePopular23FreeClass", () => {
         const twoThreeFreeMonzo = [0, 0, 1] as Monzo<{ rough: 5 }>
         const maxN2D3P9 = 5 as Max<N2D3P9>
 
-        const actual = computeMaybePopular23FreeClass(twoThreeFreeMonzo, maxN2D3P9)
+        const actual = computeMaybePopular23FreeClass({ monzo: twoThreeFreeMonzo } as TwoThreeFreeClass, maxN2D3P9)
 
         expect(actual).toBeDefined()
     })
@@ -16,7 +17,7 @@ describe("computeMaybePopular23FreeClass", () => {
         const twoThreeFreeMonzo = [0, 0, -1] as Monzo<{ rough: 5 }>
         const maxN2D3P9 = 5 as Max<N2D3P9>
 
-        const actual = computeMaybePopular23FreeClass(twoThreeFreeMonzo, maxN2D3P9)
+        const actual = computeMaybePopular23FreeClass({ monzo: twoThreeFreeMonzo } as TwoThreeFreeClass, maxN2D3P9)
 
         expect(actual).toBeUndefined()
     })
@@ -25,7 +26,7 @@ describe("computeMaybePopular23FreeClass", () => {
         const twoThreeFreeMonzo = [0, 0, 1] as Monzo<{ rough: 5 }>
         const maxN2D3P9 = 1 as Max<N2D3P9>
 
-        const actual = computeMaybePopular23FreeClass(twoThreeFreeMonzo, maxN2D3P9)
+        const actual = computeMaybePopular23FreeClass({ monzo: twoThreeFreeMonzo } as TwoThreeFreeClass, maxN2D3P9)
 
         expect(actual).toBeUndefined()
     })

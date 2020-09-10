@@ -32,7 +32,7 @@ const computePopular23FreeClass = (
     const popularityRank = popularity?.rank || "-" as Io
     const votes = popularity?.votes || 0 as Votes
 
-    const exactlyNotatingJiSymbolIds = computeExactlyNotatingJiSymbolIds(twoThreeFreeClass.monzo)
+    const exactlyNotatingJiSymbolIds = computeExactlyNotatingJiSymbolIds(twoThreeFreeClass)
     const formattedExactlyNotatingJiSymbols = join(exactlyNotatingJiSymbolIds.map(symbolId => {
         return formatSymbol(symbolId, ioSettings)
     }), SPACE)

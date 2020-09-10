@@ -1,20 +1,17 @@
-import { computeIsSuperMonzo, Max, Maybe, Monzo } from "../../general"
-import { compute23FreeClass, computeN2D3P9, N2D3P9 } from "../../sagittal"
+import { computeIsSuperMonzo, Max, Maybe } from "../../general"
+import { computeN2D3P9, N2D3P9, TwoThreeFreeClass } from "../../sagittal"
 import { computePopular23FreeClass } from "./popular23FreeClass"
 import { Popular23FreeClass } from "./types"
 
 const computeMaybePopular23FreeClass = (
-    twoThreeFreeMonzo: Monzo<{ rough: 5 }>,
+    twoThreeFreeClass: TwoThreeFreeClass,
     maxN2D3P9: Max<N2D3P9>,
 ): Maybe<Popular23FreeClass> => {
-    if (!computeIsSuperMonzo(twoThreeFreeMonzo)) {
-        return
-    }
+    if (!computeIsSuperMonzo(twoThreeFreeClass.monzo)) return
 
-    const n2d3p9 = computeN2D3P9(twoThreeFreeMonzo)
+    const n2d3p9 = computeN2D3P9(twoThreeFreeClass)
 
     if (n2d3p9 <= maxN2D3P9) {
-        const twoThreeFreeClass = compute23FreeClass(twoThreeFreeMonzo)
         return computePopular23FreeClass({ twoThreeFreeClass, n2d3p9 })
     }
 

@@ -12,7 +12,7 @@ describe("verifying primary commas", () => {
     xit("checks that every symbol's primary comma is its best-ranked comma in its secondary comma zone according to our metric (not N2D3P9, but a comma notational popularity rank metric which uses it)", () => {
         JI_SYMBOLS.forEach(symbol => {
             const primaryComma = getSagittalComma(symbol.primaryCommaId)
-            const commaName = computeSagittalCommaName(primaryComma.monzo)
+            const commaName = computeSagittalCommaName(primaryComma)
 
             console.warn(`\n\n${symbol.ascii} ${commaName}\n\n`)
 

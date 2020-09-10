@@ -1,6 +1,6 @@
 export {
     analyzeComma,
-    analyzeRationalPitch,
+    analyzeJiPitch,
     ApotomeSlope,
     CommaNameOptions,
     CommasFrom23FreeMonzoOptions,
@@ -19,6 +19,7 @@ export {
     DEFAULT_MIN_CENTS,
     DEFAULT_PITCH_SCRIPT_GROUP_MAX_N2D3P9,
     DEFAULT_SORT_KEY,
+    format23FreeClass,
     N2D3P9,
     parse23FreeClass,
     computeMonzoFrom23FreeClassAndSizeCategoryName,
@@ -51,4 +52,4 @@ export {
     TINA,
 } from "./notations"
 export { APOTOME_CENTS } from "./constants"
-export { AnalyzedComma, AnalyzedRationalPitch, Comma, TwoThreeFreeClass, SagittalComma } from "./types"
+export { AnalyzedComma, AnalyzedJiPitch, Comma, TwoThreeFreeClass, SagittalComma } from "./types"

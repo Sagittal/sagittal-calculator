@@ -1,4 +1,4 @@
-import { computeRoughNumberMonzo, computeSopfr, FIVE_ROUGHNESS, Monzo, Sopfr } from "../../../../../../src/general/math"
+import { computeRoughMonzo, computeSopfr, FIVE_ROUGHNESS, Monzo, Sopfr } from "../../../../../../src/general/math"
 import { Average } from "../../../../../../src/general/math/types"
 import { getSagittalComma } from "../../../../../../src/sagittal"
 import { JI_SYMBOLS } from "../../../../../../src/sagittal/notations/ji"
@@ -10,8 +10,8 @@ describe("average 2,3-free sopfr", () => {
         const total: number = JI_SYMBOLS.reduce(
             (total23FreeSopfr, symbol) => {
                 const primaryComma = getSagittalComma(symbol.primaryCommaId)
-                const twoThreeFreeNumberMonzo: Monzo = computeRoughNumberMonzo(primaryComma.monzo, FIVE_ROUGHNESS)
-                const twoThreeFreeSopfr = computeSopfr(twoThreeFreeNumberMonzo)
+                const twoThreeFreeNumberMonzo: Monzo = computeRoughMonzo(primaryComma.monzo, FIVE_ROUGHNESS)
+                const twoThreeFreeSopfr = computeSopfr({ monzo: twoThreeFreeNumberMonzo })
 
                 return total23FreeSopfr + twoThreeFreeSopfr
             },
