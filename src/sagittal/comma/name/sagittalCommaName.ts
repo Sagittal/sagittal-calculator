@@ -2,7 +2,7 @@ import {
     abs,
     Cents,
     computeCentsFromJiPitch,
-    computeIsSubMonzo,
+    computeIsSubMonzo, computeJiPitchMonzo,
     computeMonzoFromInteger,
     computeRatioFromMonzo,
     computeRoughMonzo,
@@ -49,12 +49,13 @@ const primeFactorizeCommaName = (numeratorOrDenominator: FractionalPart) => {
 // "Secor-Keenan systematic name" or "Sagittal name"
 
 const computeSagittalCommaName = (
-    { monzo }: Comma,
+    comma: Comma,
     { directed = true, factored = false, abbreviated = true } = {},
 ): Name<Comma> => {
-    const sub = computeIsSubMonzo(monzo)
+    const monzo = computeJiPitchMonzo(comma)
+    const isSubMonzo = computeIsSubMonzo(monzo)
 
-    const superMonzo = computeSuperMonzo(monzo)
+    const superMonzo: Monzo<{ direction: Direction.SUPER }> = computeSuperMonzo(monzo)
     // TODO: so perhaps monzoDirection should instead be jiPitchDirection  
     const cents: Cents = computeCentsFromJiPitch({ monzo: superMonzo }) 
 
@@ -86,7 +87,7 @@ const computeSagittalCommaName = (
     
     const maybeHyphen = abbreviated ? "" : "-"
     const sizeCategory = computeSizeCategory(cents, { abbreviated })
-    const maybeDown = sub ? " down" : ""
+    const maybeDown = isSubMonzo ? " down" : ""
 
     return `${formattedRatio}${maybeHyphen}${sizeCategory}${maybeDown}` as Name<Comma>
 }

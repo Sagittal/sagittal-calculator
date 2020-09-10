@@ -1,6 +1,7 @@
 import {
     abs,
-    Cents,
+    Cents, 
+    computeJiPitchMonzo,
     Copfr,
     Io,
     LogTarget,
@@ -34,10 +35,11 @@ const MIN_CENTS = (TINAS_TO_CHECK[ 0 ] - PLUS_MINUS_RANGE) * TINA as Min<Cents>
 const MAX_CENTS = (TINAS_TO_CHECK[ TINAS_TO_CHECK.length - 1 ] + PLUS_MINUS_RANGE) * TINA as Max<Cents>
 
 const isLate = (comma: Comma) => {
-    const ate = abs(comma.monzo[ 1 ])
+    const monzo = computeJiPitchMonzo(comma)
+    const ate = abs(monzo[ 1 ])
 
     const notatingCommas = computeNotatingCommas(comma, { ...pitchScriptGroupSettings, maxN2D3P9: LIMITLESS_N2D3P9 })
-    const ates = notatingCommas.map(notatingComma => abs(notatingComma.monzo[ 1 ]))
+    const ates = notatingCommas.map(notatingComma => abs(computeJiPitchMonzo(notatingComma)[ 1 ]))
 
     saveLog(`ATE ${ate} vs. other notating ATEs ${ates}` as Io, LogTarget.PROGRESS, PITCH_SCRIPT_GROUP)
 

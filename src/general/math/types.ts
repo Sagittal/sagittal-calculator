@@ -1,4 +1,5 @@
 import { Count, Sum } from "../types"
+import { NumericTypeParameters } from "./monzo"
 
 type Integer = number & { _IntegerBrand: "Integer" }
 type Prime<T = void> = Integer & { _PrimeBrand: "Prime" } & (T extends void ? {} : T & { _PrimeOfBrand: T })
@@ -6,8 +7,12 @@ type Roughness = Integer & { _RoughnessBrand: "Roughness" }
 
 type Numerator<T extends number = Integer> = T & { _NumeratorBrand: "Numerator" }
 type Denominator<T extends number = Integer> = T & { _DenominatorBrand: "Denominator" }
-type Ratio<T extends number = Integer> = [Numerator<T>, Denominator<T>]
-type UndirectedRatio<T extends number = Integer> = Ratio<T> & { _UndirectedRatioBrand: "UndirectedRatio" }
+type Ratio<T extends NumericTypeParameters = {}> = [
+    Numerator<(T extends { irrational: true } ? number : Integer)>, 
+    Denominator<(T extends { irrational: true } ? number : Integer)>
+]
+// TODO: perhaps "undirected" should be another in the enum for Direction?
+type UndirectedRatio<T extends NumericTypeParameters = {}> = Ratio<T> & { _UndirectedRatioBrand: "UndirectedRatio" }
 
 enum FractionalPartType {
     NUMERATOR = "numerator",

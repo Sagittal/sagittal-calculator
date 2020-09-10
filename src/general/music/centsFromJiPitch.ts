@@ -1,4 +1,4 @@
-import { computeRatioFromMonzo } from "../math"
+import { computeRatioFromMonzo, Monzo } from "../math"
 import { computeCentsFromRatio } from "./centsFromRatio"
 import { JiPitch } from "./types"
 
@@ -6,7 +6,8 @@ import { JiPitch } from "./types"
 //  but we're not ready for that until Ratio takes NumericTypeParameters
 
 const computeCentsFromJiPitch = (jiPitch: JiPitch) => {
-    const ratio = computeRatioFromMonzo(jiPitch.monzo, { disableErrorBecauseExactValueNotRequired: true })
+    const ratio = jiPitch.ratio ||
+        computeRatioFromMonzo(jiPitch.monzo as Monzo, { disableErrorBecauseExactValueNotRequired: true })
 
     return computeCentsFromRatio(ratio)
 }

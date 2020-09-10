@@ -3,15 +3,15 @@ import { Comma, TwoThreeFreeClass } from "../../types"
 import { SIZE_CATEGORIES } from "./sizeCategories"
 import { SizeCategoryName } from "./types"
 
-// TODO: COMMA MONZO RATIO JI this would be a place where you could use parameterized Ratio with same params as Monzo
-//  - note that this is yet another thing apart from TwoThreeFreeClassAsRatio...
-//  - this ratio does not stipulate being super
-//  - which is maybe an argument for it not being directed after all...
-const parseCommaName = (commaName: Name<Comma>): { twoThreeFreeRatio: Ratio, sizeCategoryName: SizeCategoryName } => {
+// TODO: this ratio does not stipulate being super, which is maybe an argument for it not being directed after all...
+const parseCommaName = (
+    commaName: Name<Comma>
+): { twoThreeFreeRatio: Ratio<{ rough: 5 }>, sizeCategoryName: SizeCategoryName } => {
     const twoThreeFreeClassPartOfCommaName = commaName.replace(/[a-zA-Z+\-]/g, "") as Formatted<TwoThreeFreeClass>
     const sizeCategoryPartOfCommaName = commaName.replace(twoThreeFreeClassPartOfCommaName, "").replace(/-/, "")
 
-    const twoThreeFreeRatio = parseRatio(twoThreeFreeClassPartOfCommaName as Formatted as Formatted<Ratio>)
+    const twoThreeFreeRatio = 
+        parseRatio(twoThreeFreeClassPartOfCommaName as Formatted as Formatted<Ratio<{ rough: 5 }>>)
 
     let maybeSizeCategoryName: Maybe<SizeCategoryName> = undefined
 

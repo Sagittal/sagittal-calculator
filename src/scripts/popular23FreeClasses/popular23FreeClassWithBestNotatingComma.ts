@@ -4,7 +4,7 @@ import {
     Cents,
     COMMA_POPULARITIES,
     computeCentsFromJiPitch,
-    computeRatioFromMonzo,
+    computeJiPitchMonzo,
     deepEquals,
     formatMonzo,
     formatNumber,
@@ -14,7 +14,6 @@ import {
     isUndefined,
     Max,
     Maybe,
-    TwoThreeFreeClassAsRatio,
     Votes,
 } from "../../general"
 import {
@@ -32,9 +31,12 @@ import { popular23FreeClassesScriptGroupSettings } from "./globals"
 import { Popular23FreeClassWithBestNotatingComma } from "./types"
 
 const isLate = (notatingComma: Comma, bestNotatingComma: Comma) => {
-    return abs(notatingComma.monzo[ 1 ]) < abs(bestNotatingComma.monzo[ 1 ]) ||
+    const notatingCommaMonzo = computeJiPitchMonzo(notatingComma)
+    const bestNotatingCommaMonzo = computeJiPitchMonzo(bestNotatingComma)
+    
+    return abs(notatingCommaMonzo[ 1 ]) < abs(bestNotatingCommaMonzo[ 1 ]) ||
         (
-            abs(notatingComma.monzo[ 1 ]) === abs(bestNotatingComma.monzo[ 1 ]) &&
+            abs(notatingCommaMonzo[ 1 ]) === abs(bestNotatingCommaMonzo[ 1 ]) &&
             computeCentsFromJiPitch(notatingComma) < computeCentsFromJiPitch(bestNotatingComma)
         )
 }
@@ -50,10 +52,8 @@ const computePopular23FreeClassWithBestNotatingComma = (
 
     const formatted23FreeClass: Formatted<TwoThreeFreeClass> = format23FreeClass(twoThreeFreeClass)
 
-    const twoThreeFreeClassAsRatio: TwoThreeFreeClassAsRatio =
-        computeRatioFromMonzo(twoThreeFreeClass.monzo) as TwoThreeFreeClassAsRatio
     const popularity = COMMA_POPULARITIES.find(popularity => {
-        return deepEquals(popularity.twoThreeFreeClassAsRatio, twoThreeFreeClassAsRatio)
+        return deepEquals(popularity.twoThreeFreeClass, twoThreeFreeClass)
     })
     const popularityRank = popularity?.rank || "-" as Io
     const votes = popularity?.votes || 0 as Votes
@@ -87,7 +87,7 @@ const computePopular23FreeClassWithBestNotatingComma = (
         popularityRank,
         votes,
         centsOfBestNotatingComma: formatNumber(computeCentsFromJiPitch(commaWithMaybeSagittalSymbol)),
-        monzoOfBestNotatingComma: formatMonzo(commaWithMaybeSagittalSymbol.monzo),
+        monzoOfBestNotatingComma: formatMonzo(computeJiPitchMonzo(commaWithMaybeSagittalSymbol)),
         maybeSymbolForBestNotatingComma:
             commaWithMaybeSagittalSymbol.symbolId ?
                 formatSymbol(commaWithMaybeSagittalSymbol.symbolId, ioSettings) :

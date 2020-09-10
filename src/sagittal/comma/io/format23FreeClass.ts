@@ -1,8 +1,10 @@
-import { computeRatioFromMonzo, formatRatio, Formatted } from "../../../general"
+import { computeJiPitchRatio, formatRatio, Formatted } from "../../../general"
 import { TwoThreeFreeClass } from "../../types"
 
 const format23FreeClass = (twoThreeFreeClass: TwoThreeFreeClass): Formatted<TwoThreeFreeClass> => {
-    return formatRatio(computeRatioFromMonzo(twoThreeFreeClass.monzo)) as Formatted as Formatted<TwoThreeFreeClass>
+    const ratio = computeJiPitchRatio(twoThreeFreeClass)
+
+    return formatRatio(ratio) as Formatted as Formatted<TwoThreeFreeClass>
 }
 
 export {

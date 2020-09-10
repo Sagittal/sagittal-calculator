@@ -1,18 +1,19 @@
-import { Combination, Io, LogTarget, round, saveLog, stringify, TwoThreeFreeClassAsRatio } from "../../../../general"
+import { Combination, Io, LogTarget, round, saveLog, stringify } from "../../../../general"
+import { TwoThreeFreeClass } from "../../../../sagittal"
 import { LFC_SCRIPT_GROUP } from "../../constants"
 import { Antivotes, Submetric } from "../types"
 import { ANTIVOTES_PRECISION } from "./constants"
 import { computeWeightedSubmetricAntivotes } from "./weightedSubmetricAntivotes"
 
 const computeAntivotes = (
-    twoThreeFreeClassAsRatio: TwoThreeFreeClassAsRatio,
+    twoThreeFreeClass: TwoThreeFreeClass,
     submetrics: Combination<Submetric>,
 ): Antivotes =>
     round(
         submetrics.reduce(
             (totalAntivotes: Antivotes, submetric: Submetric): Antivotes => {
                 const weightedSubmetricAntivotes: Antivotes =
-                    computeWeightedSubmetricAntivotes(twoThreeFreeClassAsRatio, submetric)
+                    computeWeightedSubmetricAntivotes(twoThreeFreeClass, submetric)
 
                 saveLog(
                     `${stringify(submetric)}: ${weightedSubmetricAntivotes}` as Io,

@@ -1,4 +1,5 @@
 import {
+    computeJiPitchMonzo,
     computeRoughMonzo,
     computeSuperMonzo,
     computeTrimmedArray,
@@ -9,9 +10,8 @@ import {
 } from "../../general"
 import { TwoThreeFreeClass } from "../types"
 
-// TODO: COMMA MONZO RATIO JI these types of things should all be called with jiPitches, not monzos
-//  and have JI pitches be either a monzo, ratio, or both, but not neither
-const compute23FreeClass = ({ monzo }: JiPitch): TwoThreeFreeClass => {
+const compute23FreeClass = (jiPitch: JiPitch): TwoThreeFreeClass => {
+    const monzo = computeJiPitchMonzo(jiPitch)
     const twoThreeFreeMonzo: Monzo<{ rough: 5 }> = computeRoughMonzo(monzo, FIVE_ROUGHNESS)
     const numeratorGreaterThanDenominatorTwoThreeFreeMonzo: Monzo<{ rough: 5, direction: Direction.SUPER }> =
         computeSuperMonzo(twoThreeFreeMonzo)

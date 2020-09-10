@@ -1,7 +1,7 @@
 import {
     abs,
     computeGpf,
-    computeIsSubMonzo,
+    computeIsSubMonzo, computeJiPitchMonzo,
     computeTrimmedArray,
     Direction,
     Exponent,
@@ -15,8 +15,10 @@ import { N2D3P9 } from "./types"
 
 const computeN2D3P9 = <T extends NumericTypeParameters &
     { direction: Direction.SUPER, rough: 5 } = { direction: Direction.SUPER, rough: 5, irrational: true }>(
-    { monzo }: TwoThreeFreeClass 
+    twoThreeFreeClass: TwoThreeFreeClass 
 ): N2D3P9 => {
+    const monzo = computeJiPitchMonzo(twoThreeFreeClass)
+    
     if (computeTrimmedArray(monzo).length < 3) {
         return 1 as N2D3P9
     }
@@ -36,7 +38,7 @@ const computeN2D3P9 = <T extends NumericTypeParameters &
             return n2d3p9 * (prime / divisor) ** abs(primeExponent) as N2D3P9
         },
         1 as N2D3P9,
-    ) * computeGpf({ monzo }) * (1 / 9) as N2D3P9
+    ) * computeGpf(monzo) * (1 / 9) as N2D3P9
 }
 
 export {

@@ -1,4 +1,5 @@
-import { Monzo, Ratio } from "../math"
+import { TwoThreeFreeClass } from "../../sagittal"
+import { Monzo, NumericTypeParameters, Ratio } from "../math"
 import { Extrema, Name } from "../types"
 
 type Cents = number & { _CentsBrand: "Cents" }
@@ -12,19 +13,25 @@ type CentsPosition = {
     name?: Name<Pitch>,
 }
 
-interface JiPitch {
-    monzo: Monzo,
+// TODO: hmmm... but "irrational" is one of the NumericTypeParameters...
+type JiPitchByMonzo<T extends NumericTypeParameters = {}> = {
     name?: Name<Pitch>,
+    monzo: Monzo<T>,
+    ratio?: Ratio<T>,
 }
+type JiPitchByRatio<T extends NumericTypeParameters = {}> = {
+    name?: Name<Pitch>,
+    ratio: Ratio<T>,
+    monzo?: Monzo<T>,
+}
+type JiPitch<T extends NumericTypeParameters = {}> = JiPitchByMonzo<T> | JiPitchByRatio<T>
 
 type Pitch = JiPitch | CentsPosition
 
 type Votes = number & { _VotesBrand: "Votes" }
 
-type TwoThreeFreeClassAsRatio = Ratio & { _TwoThreeFreeClassAsRatioBrand: "TwoThreeFreeClassAsRatio" }
-
 interface Popularity {
-    twoThreeFreeClassAsRatio: TwoThreeFreeClassAsRatio,
+    twoThreeFreeClass: TwoThreeFreeClass,
     votes: Votes,
 }
 
@@ -41,5 +48,4 @@ export {
     JiPitch,
     Apotome,
     Pitch,
-    TwoThreeFreeClassAsRatio,
 }

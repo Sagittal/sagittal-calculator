@@ -1,17 +1,22 @@
 import {
     COMMA_POPULARITIES,
-    computeRatioFromMonzo,
-    deepEquals,
+    equalJiPitches,
     formatNumber,
-    formatRatio,
-    Formatted,
     Io,
     ioSettings,
     join,
     SPACE,
+    stringify,
     Votes,
 } from "../../general"
-import { formatSymbol, getJiSymbol, JI_SYMBOL_SUBSETS, N2D3P9, TwoThreeFreeClass } from "../../sagittal"
+import {
+    format23FreeClass,
+    formatSymbol,
+    getJiSymbol,
+    JI_SYMBOL_SUBSETS,
+    N2D3P9,
+    TwoThreeFreeClass,
+} from "../../sagittal"
 import { computeExactlyNotatingJiSymbolIds } from "./exactlyNotatingJiSymbolIds"
 import { Popular23FreeClass } from "./types"
 
@@ -20,14 +25,11 @@ const computePopular23FreeClass = (
 ): Popular23FreeClass => {
     const formattedN2D3P9 = formatNumber(n2d3p9)
 
-    // TODO: COMMA MONZO RATIO JI 
-    //  so this is like the worst of both worlds... we have to convert the monzo to a ratio AND format it
-    //  so it becomes painfully clear how the formatted version is of the ratio even though it shouldn't have that name
-    const twoThreeFreeClassAsRatio = computeRatioFromMonzo(twoThreeFreeClass.monzo)
-    const formatted23FreeClass =
-        formatRatio(twoThreeFreeClassAsRatio) as Formatted as Formatted<TwoThreeFreeClass>
+    const formatted23FreeClass = format23FreeClass(twoThreeFreeClass)
     const popularity = COMMA_POPULARITIES.find(popularity => {
-        return deepEquals(popularity.twoThreeFreeClassAsRatio, twoThreeFreeClassAsRatio)
+        const result = equalJiPitches(popularity.twoThreeFreeClass, twoThreeFreeClass)
+        console.log('comparing', stringify(popularity.twoThreeFreeClass), stringify(twoThreeFreeClass), result)
+        return result
     })
     const popularityRank = popularity?.rank || "-" as Io
     const votes = popularity?.votes || 0 as Votes

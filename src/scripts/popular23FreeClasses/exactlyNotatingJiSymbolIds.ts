@@ -1,4 +1,5 @@
 import {
+    computeJiPitchMonzo,
     computeRoughMonzo,
     deepEquals,
     FIVE_ROUGHNESS,
@@ -10,8 +11,10 @@ import { getSagittalComma, JiSymbol, JI_SYMBOLS } from "../../sagittal"
 
 // Different than computeNotatingCommas because this one only concerns itself with commas that are in Sagittal
 const computeExactlyNotatingJiSymbolIds = (jiPitch: JiPitch): Array<Id<JiSymbol>> => {
+    const monzo = computeJiPitchMonzo(jiPitch)
+
     const notatingJiSymbols: Array<Id<JiSymbol>> = []
-    const twoThreeFreeMonzo = computeRoughMonzo(jiPitch.monzo, FIVE_ROUGHNESS)
+    const twoThreeFreeMonzo = computeRoughMonzo(monzo, FIVE_ROUGHNESS)
 
     JI_SYMBOLS.forEach(jiSymbol => {
         const primaryComma = getSagittalComma(jiSymbol.primaryCommaId)

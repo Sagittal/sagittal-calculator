@@ -46,33 +46,30 @@ interface JiPitchAnalysis {
     apotomeSlope: ApotomeSlope,
     twoThreeFreeSopfr: Sopfr<5>,
     limit: Prime,
+    monzo: Monzo,
     ratio: Ratio,
     n2d3p9: N2D3P9,
     cents: Cents,
     twoThreeFreeClass: TwoThreeFreeClass,
 }
 
-interface Comma extends JiPitch {
-    monzo: Monzo<{ comma: true }>,
-}
+type Comma = JiPitch<{ comma: true }>
 
-interface AnalyzedJiPitch extends JiPitch, JiPitchAnalysis {
-}
+type AnalyzedJiPitch = JiPitch & JiPitchAnalysis
 
-interface AnalyzedComma extends Comma, JiPitchAnalysis {
+type AnalyzedComma = Comma & JiPitchAnalysis & {
     name: Name<Comma>,
 }
 
-type SagittalComma<T extends "Maybe" | void = void> = Comma & (
+type SagittalComma<T extends "Maybe" | void = void> = Comma & { monzo: Monzo } & (
     T extends "Maybe" ?
         { id?: Id<SagittalComma> } :
         { id: Id<SagittalComma> }
     )
 
-interface TwoThreeFreeClass extends JiPitch {
-    monzo: Monzo<{ rough: 5, direction: Direction.SUPER }>
-    _TwoThreeFreeClassBrand: "TwoThreeFreeClass"
-}
+type TwoThreeFreeClass =
+    JiPitch<{ rough: 5, direction: Direction.SUPER }> &
+    { _TwoThreeFreeClassBrand: "TwoThreeFreeClass" }
 
 export {
     Comma,

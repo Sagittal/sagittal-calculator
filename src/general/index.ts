@@ -152,7 +152,9 @@ export {
     Popularity,
     Votes,
     Zone,
-    TwoThreeFreeClassAsRatio,
     JiPitch,
+    computeJiPitchRatio,
+    computeJiPitchMonzo,
+    equalJiPitches,
 } from "./music"
 export { Count, Ed, Extrema, Id, Index, Ms, Multiplier, Name, Step, Sum, Window } from "./types"

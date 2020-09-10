@@ -4,7 +4,7 @@ import { computeSizeCategoryExtrema } from "./sizeCategoryExtrema"
 import { SizeCategoryName } from "./types"
 
 const computeMonzoFrom23FreeClassAndSizeCategoryName = (
-    parsedCommaName: { twoThreeFreeRatio: Ratio, sizeCategoryName: SizeCategoryName },
+    parsedCommaName: { twoThreeFreeRatio: Ratio<{ rough: 5 }>, sizeCategoryName: SizeCategoryName },
 ): Monzo => {
     const { twoThreeFreeRatio, sizeCategoryName } = parsedCommaName
 
@@ -17,7 +17,7 @@ const computeMonzoFrom23FreeClassAndSizeCategoryName = (
         throw new Error(`For whatever reason the number of commas notating the monzo ${(twoThreeFreeMonzo)} in the range of that size category ${sizeCategoryName} was not 1. It was ${commas.length}.`)
     }
 
-    return commas[ 0 ].monzo
+    return commas[ 0 ].monzo!
 }
 
 export {

@@ -1,10 +1,11 @@
 import { computeTrimmedArray } from "../code"
-import { Integer, Max, Prime, PRIMES } from "../math"
-import { JiPitch } from "../music"
-import { computeMonzoFromIntegerOrJiPitch } from "./monzo"
+import { Integer, Max, NumericTypeParameters, Prime, PRIMES } from "../math"
+import { computeMonzoFromIntegerOrMonzo, Monzo } from "./monzo"
 
-const computeGpf = (integerOrJiPitch: Integer | JiPitch): Max<Prime> => {
-    const monzo = computeMonzoFromIntegerOrJiPitch(integerOrJiPitch)
+const computeGpf = <T extends NumericTypeParameters = { irrational: true }>(
+    integerOrMonzo: Integer | Monzo<T>,
+): Max<Prime> => {
+    const monzo = computeMonzoFromIntegerOrMonzo(integerOrMonzo)
     const trimmedMonzo = computeTrimmedArray(monzo)
 
     if (!trimmedMonzo.length) {

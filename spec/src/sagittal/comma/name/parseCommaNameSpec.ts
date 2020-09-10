@@ -4,7 +4,7 @@ import { parseCommaName } from "../../../../../src/sagittal/comma/name"
 import { SizeCategoryName } from "../../../../../src/sagittal/comma/name/types"
 
 describe("parseCommaName", () => {
-    const twoThreeFreeRatio = [1, 5] as Ratio
+    const twoThreeFreeRatio = [1, 5] as Ratio<{ rough: 5 }>
 
     it("works for any size category abbreviation", () => {
         expect(parseCommaName("1/5u" as Name<Comma>))

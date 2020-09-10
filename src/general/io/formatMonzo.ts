@@ -10,7 +10,7 @@ const spaceTerm = (term: Exponent<Prime>): Io => {
     return termText as Io
 }
 
-const formatMonzo = <T extends NumericTypeParameters = { irrational: true }>(
+const formatMonzo = <T extends NumericTypeParameters = {}>(
     monzo: Monzo<T>,
     { punctuated = false } = {},
 ): Formatted<Monzo<T>> => {

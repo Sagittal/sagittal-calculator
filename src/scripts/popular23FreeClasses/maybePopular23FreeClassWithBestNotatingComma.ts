@@ -1,4 +1,4 @@
-import { computeIsSuperMonzo, Max, Maybe } from "../../general"
+import { computeIsSuperMonzo, computeJiPitchMonzo, Max, Maybe } from "../../general"
 import { computeN2D3P9, N2D3P9, TwoThreeFreeClass } from "../../sagittal"
 import { computePopular23FreeClassWithBestNotatingComma } from "./popular23FreeClassWithBestNotatingComma"
 import { Popular23FreeClassWithBestNotatingComma } from "./types"
@@ -7,7 +7,7 @@ const computeMaybePopular23FreeClassWithBestNotatingComma = (
     twoThreeFreeClass: TwoThreeFreeClass,
     maxN2D3P9: Max<N2D3P9>,
 ): Maybe<Popular23FreeClassWithBestNotatingComma> => {
-    if (!computeIsSuperMonzo(twoThreeFreeClass.monzo)) return
+    if (!computeIsSuperMonzo(computeJiPitchMonzo(twoThreeFreeClass))) return
 
     const n2d3p9 = computeN2D3P9(twoThreeFreeClass)
 

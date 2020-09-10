@@ -1,13 +1,5 @@
-import {
-    Combination,
-    Filename,
-    formatRatio,
-    Io,
-    LogTarget,
-    saveLog,
-    stringify,
-    TwoThreeFreeClassAsRatio,
-} from "../../../general"
+import { Combination, Filename, Io, LogTarget, saveLog, stringify } from "../../../general"
+import { format23FreeClass, TwoThreeFreeClass } from "../../../sagittal"
 import { LFC_SCRIPT_GROUP } from "../constants"
 import { computeAntivotes, Submetric } from "../sumOfSquares"
 import { applySharedLfcCommandSetup, load } from "./shared"
@@ -16,12 +8,12 @@ applySharedLfcCommandSetup({ defaultLogTargets: [LogTarget.ANTIVOTES] })
 
 const submetrics = load("submetrics" as Filename) as Combination<Submetric>
 
-const twoThreeFreeClassAsRatio: TwoThreeFreeClassAsRatio = [11, 7] as TwoThreeFreeClassAsRatio
+const twoThreeFreeClass: TwoThreeFreeClass = { ratio: [11, 7] } as TwoThreeFreeClass
 
-const antivotes = computeAntivotes(twoThreeFreeClassAsRatio, submetrics)
+const antivotes = computeAntivotes(twoThreeFreeClass, submetrics)
 
 saveLog(
-    `${formatRatio(twoThreeFreeClassAsRatio)}\n${stringify(submetrics)}\n${antivotes}` as Io,
+    `${format23FreeClass(twoThreeFreeClass)}\n${stringify(submetrics)}\n${antivotes}` as Io,
     LogTarget.ANTIVOTES,
     LFC_SCRIPT_GROUP,
 )

@@ -11,7 +11,7 @@ describe("average 2,3-free sopfr", () => {
             (total23FreeSopfr, symbol) => {
                 const primaryComma = getSagittalComma(symbol.primaryCommaId)
                 const twoThreeFreeNumberMonzo: Monzo = computeRoughMonzo(primaryComma.monzo, FIVE_ROUGHNESS)
-                const twoThreeFreeSopfr = computeSopfr({ monzo: twoThreeFreeNumberMonzo })
+                const twoThreeFreeSopfr = computeSopfr(twoThreeFreeNumberMonzo)
 
                 return total23FreeSopfr + twoThreeFreeSopfr
             },

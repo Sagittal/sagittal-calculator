@@ -1,5 +1,5 @@
 import {
-    ACCURACY_THRESHOLD,
+    ACCURACY_THRESHOLD, computeIsSuperMonzo,
     Exponent,
     Integer,
     Io,
@@ -50,11 +50,12 @@ const computePopular23FreeClasses = (
     const popular23FreeClasses = [] as Array<Popular23FreeClass>
     while (true) {
         // do the work
-        const maybePopular23FreeClass =
+        const maybePopular23FreeClass = computeIsSuperMonzo(twoThreeFreeMonzo) ? 
             computeMaybePopular23FreeClass(
                 { monzo: twoThreeFreeMonzo } as TwoThreeFreeClass,
                 maxN2D3P9,
-            )
+            ) :
+            undefined
 
         // log progress
         monzosCheckedCount = monzosCheckedCount + 1

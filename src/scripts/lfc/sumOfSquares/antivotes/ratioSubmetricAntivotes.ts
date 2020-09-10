@@ -2,19 +2,16 @@ import {
     computeMonzoFromInteger,
     computeMonzoFromRatio,
     FractionalPartType,
-    isUndefined,
+    isUndefined, Ratio,
     stringify,
-    TwoThreeFreeClassAsRatio,
 } from "../../../../general"
+import { TwoThreeFreeClass } from "../../../../sagittal"
 import { Antivotes, ParameterValue, Submetric } from "../types"
 import { maybeNuminatorSwap } from "./numinator"
 import { computeSubmetricAntivotes } from "./submetricAntivotes"
 import { computeWeightedAntivotes } from "./weightedAntivotes"
 
-const computeRatioSubmetricAntivotes = (
-    twoThreeFreeClassAsRatio: TwoThreeFreeClassAsRatio,
-    submetric: Submetric = {},
-): Antivotes => {
+const computeRatioSubmetricAntivotes = (twoThreeFreeClass: TwoThreeFreeClass, submetric: Submetric = {}): Antivotes => {
     const {
         useNuminator = false,
         kAsCoefficient = 1 as ParameterValue,
@@ -36,12 +33,12 @@ const computeRatioSubmetricAntivotes = (
         isUndefined(kAsPowerExponent) &&
         isUndefined(kAsPowerBase)
     ) {
-        const twoThreeFreeNumberMonzo = computeMonzoFromRatio(twoThreeFreeClassAsRatio)
+        const twoThreeFreeNumberMonzo = computeMonzoFromRatio(twoThreeFreeClass.ratio as Ratio)
 
         return computeSubmetricAntivotes(twoThreeFreeNumberMonzo, submetric)
     }
 
-    const [numerator, denominator] = twoThreeFreeClassAsRatio
+    const [numerator, denominator] = twoThreeFreeClass.ratio
     let { numeratorAntivotes, denominatorAntivotes } = maybeNuminatorSwap({
         useNuminator,
         numeratorAntivotes: computeSubmetricAntivotes(
@@ -67,7 +64,7 @@ const computeRatioSubmetricAntivotes = (
     })
 
     if (isNaN(numeratorAntivotes) || isNaN(denominatorAntivotes)) {
-        throw new Error(`You got NaN! in ratioSubmetricAntivotes ${twoThreeFreeClassAsRatio} ${stringify(submetric, { multiline: true })} ${numeratorAntivotes} ${denominatorAntivotes}`)
+        throw new Error(`You got NaN! in ratioSubmetricAntivotes ${twoThreeFreeClass} ${stringify(submetric, { multiline: true })} ${numeratorAntivotes} ${denominatorAntivotes}`)
     }
 
     return numeratorAntivotes + denominatorAntivotes as Antivotes

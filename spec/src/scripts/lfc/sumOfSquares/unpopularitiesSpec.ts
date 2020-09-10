@@ -1,5 +1,6 @@
-import { Combination, Index, Popularity, Rank, Ranked, TwoThreeFreeClassAsRatio } from "../../../../../src/general"
+import { Combination, Index, Popularity, Rank, Ranked } from "../../../../../src/general"
 import { Votes } from "../../../../../src/general/music"
+import { TwoThreeFreeClass } from "../../../../../src/sagittal"
 import {
     computeUnpopularities,
     Parameter,
@@ -13,17 +14,17 @@ describe("computeUnpopularities", () => {
         const realPopularities: Array<Ranked<Popularity>> = [
             {
                 rank: 5 as Rank<Popularity>,
-                twoThreeFreeClassAsRatio: [7, 5] as TwoThreeFreeClassAsRatio,
+                twoThreeFreeClass: { ratio: [7, 5] } as TwoThreeFreeClass,
                 votes: 1318 as Votes,
             },
             {
                 rank: 8 as Rank<Popularity>,
-                twoThreeFreeClassAsRatio: [125, 1] as TwoThreeFreeClassAsRatio,
+                twoThreeFreeClass: { ratio: [125, 1] } as TwoThreeFreeClass,
                 votes: 492 as Votes,
             },
             {
                 rank: 39 as Rank<Popularity>,
-                twoThreeFreeClassAsRatio: [55, 49] as TwoThreeFreeClassAsRatio,
+                twoThreeFreeClass: { ratio: [55, 49] } as TwoThreeFreeClass,
                 votes: 51 as Votes,
             },
         ]
@@ -44,17 +45,17 @@ describe("computeUnpopularities", () => {
         const expected: Unpopularity[] = [
             {
                 antivotes: 2 as Antivotes,
-                twoThreeFreeClassAsRatio: [7, 5] as TwoThreeFreeClassAsRatio,
+                twoThreeFreeClass: { ratio: [7, 5] } as TwoThreeFreeClass,
                 index: 0 as Index<Unpopularity>,
             },
             {
                 antivotes: 1 as Antivotes,
-                twoThreeFreeClassAsRatio: [125, 1] as TwoThreeFreeClassAsRatio,
+                twoThreeFreeClass: { ratio: [125, 1] } as TwoThreeFreeClass,
                 index: 1 as Index<Unpopularity>,
             },
             {
                 antivotes: 3 as Antivotes,
-                twoThreeFreeClassAsRatio: [55, 49] as TwoThreeFreeClassAsRatio,
+                twoThreeFreeClass: { ratio: [55, 49] } as TwoThreeFreeClass,
                 index: 2 as Index<Unpopularity>,
             },
         ]

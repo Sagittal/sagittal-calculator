@@ -1,12 +1,11 @@
-import { abs, Exponent, Integer, NumericTypeParameters, Prime, PRIMES } from "../math"
-import { JiPitch } from "../music"
-import { computeMonzoFromIntegerOrJiPitch, Monzo } from "./monzo"
+import { abs, Exponent, Integer, Prime, PRIMES } from "../math"
+import { computeMonzoFromIntegerOrMonzo, Monzo } from "./monzo"
 import { Sopfr } from "./types"
 
 // Sum of prime factors
 
-const computeSopfr = (integerOrJiPitch: Integer | JiPitch): Sopfr => {
-    const monzo = computeMonzoFromIntegerOrJiPitch(integerOrJiPitch)
+const computeSopfr = (integerOrMonzo: Integer | Monzo): Sopfr => {
+    const monzo = computeMonzoFromIntegerOrMonzo(integerOrMonzo)
 
     return monzo.reduce(
         (sopfr: Sopfr, primeExponent: Exponent<Prime>, index: number): Sopfr => {

@@ -64,8 +64,8 @@ const compute23FreeMonzosToCheck = (
             primeExponentExtremasGivenMaxN2D3P9 && primeExponentExtremasGivenMaxN2D3P9[ index + FIVE_PRIME_INDEX ]
 
         twoThreeFreeMonzosToCheck.forEach(twoThreeFreeMonzoToCheck => {
-            const twoThreeFreeSopfr = computeSopfr({ monzo: twoThreeFreeMonzoToCheck })
-            const twoThreeFreeCopfr = computeCopfr({ monzo: twoThreeFreeMonzoToCheck })
+            const twoThreeFreeSopfr = computeSopfr(twoThreeFreeMonzoToCheck)
+            const twoThreeFreeCopfr = computeCopfr(twoThreeFreeMonzoToCheck)
 
             const adjustedMax23FreeSopfr = max23FreeSopfr &&
                 max23FreeSopfr - twoThreeFreeSopfr as Max<Sopfr<5>>
