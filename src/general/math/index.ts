@@ -63,6 +63,5 @@ export {
     Prime,
     Ratio,
     Sopfr,
-    UndirectedRatio,
 } from "./types"
 export { computeUndirectedRatio } from "./undirectedRatio"

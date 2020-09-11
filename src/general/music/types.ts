@@ -9,9 +9,11 @@ type TwoThreeFreeClass =
     JiPitch<{ rough: 5, direction: Direction.SUPER }> &
     { _TwoThreeFreeClassBrand: "TwoThreeFreeClass" }
     
-// TODO: if you had the code base work in Pitch first and cents only secondarily,
+// TODO: NO LONGER BASED ON CENTS
+//  if you had the code base work in Pitch first and cents only secondarily,
 //  then the monzo to and from cents stuff could live in math/ instead of music/
 //  and then this would be more just like some number, a pure multiplier or coefficient of waveform frequency
+//  just can't figure out what to call it. PitchValue maybe...? Scaler? 
 type CentsPosition<T extends NumericTypeParameters = { }> = {
     cents: Cents,
     name?: Name<Pitch>,

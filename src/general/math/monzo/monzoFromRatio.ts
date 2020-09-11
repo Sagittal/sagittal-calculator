@@ -12,7 +12,7 @@ const computeMonzoFromRatio = (ratio: Ratio): Monzo => {
         positiveFactors.push(0 as Integer & Exponent<Prime>)
     }
 
-    return sumMonzos(positiveFactors, negativeFactors) // TODO: sumMonzos should trim the monzo
+    return sumMonzos(positiveFactors, negativeFactors)
 }
 
 export {

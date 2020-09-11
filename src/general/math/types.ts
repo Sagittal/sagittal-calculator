@@ -39,8 +39,6 @@ type Ratio<T extends NumericTypeParameters = {}> = [
     Numerator<(T extends { irrational: true } ? number : Integer)>, 
     Denominator<(T extends { irrational: true } ? number : Integer)>
 ]
-// TODO: perhaps "undirected" should be another in the enum for Direction?
-type UndirectedRatio<T extends NumericTypeParameters = {}> = Ratio<T> & { _UndirectedRatioBrand: "UndirectedRatio" }
 
 enum FractionalPartType {
     NUMERATOR = "numerator",
@@ -90,7 +88,6 @@ export {
     Base,
     Power,
     Integer,
-    UndirectedRatio,
     Sopfr,
     Copfr,
     Prime,

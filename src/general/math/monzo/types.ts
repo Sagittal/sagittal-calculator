@@ -4,6 +4,7 @@ import { Exponent, Integer, Max, Prime } from "../types"
 enum Direction {
     SUPER = "super",
     SUB = "sub",
+    UNDIRECTED = "undirected",
 }
 
 type NumericTypeParameters = Partial<{
