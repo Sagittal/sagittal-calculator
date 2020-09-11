@@ -1,21 +1,24 @@
-import { Abs, Cents, Exponent, Integer, Max, Min, Prime } from "../../general"
+import { Cents, Comma, JiPitch, Monzo, Name, Prime, Ratio, Sopfr, TwoThreeFreeClass } from "../../general"
 import { ApotomeSlope, N2D3P9 } from "./evaluation"
 
-type CommasFrom23FreeMonzoOptions = Partial<{
-    minCents: Min<Cents>,
-    maxCents: Max<Cents>,
-    maxAbsolute3Exponent: Max<Abs<Integer & Exponent<Prime>>>,
-    maxAbsoluteApotomeSlope: Max<Abs<ApotomeSlope>>,
-    maxN2D3P9: Max<N2D3P9>,
-}>
+interface JiPitchAnalysis {
+    apotomeSlope: ApotomeSlope,
+    twoThreeFreeSopfr: Sopfr<5>,
+    limit: Prime,
+    monzo: Monzo,
+    ratio: Ratio,
+    n2d3p9: N2D3P9,
+    cents: Cents,
+    twoThreeFreeClass: TwoThreeFreeClass,
+}
 
-type CommaNameOptions = Partial<{
-    directed: boolean,
-    factored: boolean,
-    abbreviated: boolean
-}>
+type AnalyzedJiPitch = JiPitch & JiPitchAnalysis
+
+type AnalyzedComma = Comma & JiPitchAnalysis & {
+    name: Name<Comma>,
+}
 
 export {
-    CommaNameOptions,
-    CommasFrom23FreeMonzoOptions,
+    AnalyzedJiPitch,
+    AnalyzedComma,
 }

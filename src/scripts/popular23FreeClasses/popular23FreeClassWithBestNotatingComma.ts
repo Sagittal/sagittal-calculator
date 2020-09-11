@@ -2,10 +2,11 @@ import {
     abs,
     BLANK,
     Cents,
+    Comma,
     COMMA_POPULARITIES,
-    computeCentsFromJiPitch,
+    computeCentsFromPitch,
     computeJiPitchMonzo,
-    deepEquals,
+    deepEquals, format23FreeClass,
     formatMonzo,
     formatNumber,
     Formatted,
@@ -14,18 +15,16 @@ import {
     isUndefined,
     Max,
     Maybe,
+    TwoThreeFreeClass,
     Votes,
 } from "../../general"
 import {
     addMaybeJiSymbol,
     APOTOME_CENTS,
-    Comma,
     computeApotomeSlope,
     computeNotatingCommas,
-    format23FreeClass,
     formatSymbol,
     N2D3P9,
-    TwoThreeFreeClass,
 } from "../../sagittal"
 import { popular23FreeClassesScriptGroupSettings } from "./globals"
 import { Popular23FreeClassWithBestNotatingComma } from "./types"
@@ -37,7 +36,7 @@ const isLate = (notatingComma: Comma, bestNotatingComma: Comma) => {
     return abs(notatingCommaMonzo[ 1 ]) < abs(bestNotatingCommaMonzo[ 1 ]) ||
         (
             abs(notatingCommaMonzo[ 1 ]) === abs(bestNotatingCommaMonzo[ 1 ]) &&
-            computeCentsFromJiPitch(notatingComma) < computeCentsFromJiPitch(bestNotatingComma)
+            computeCentsFromPitch(notatingComma) < computeCentsFromPitch(bestNotatingComma)
         )
 }
 
@@ -86,7 +85,7 @@ const computePopular23FreeClassWithBestNotatingComma = (
         formatted23FreeClass,
         popularityRank,
         votes,
-        centsOfBestNotatingComma: formatNumber(computeCentsFromJiPitch(commaWithMaybeSagittalSymbol)),
+        centsOfBestNotatingComma: formatNumber(computeCentsFromPitch(commaWithMaybeSagittalSymbol)),
         monzoOfBestNotatingComma: formatMonzo(computeJiPitchMonzo(commaWithMaybeSagittalSymbol)),
         maybeSymbolForBestNotatingComma:
             commaWithMaybeSagittalSymbol.symbolId ?

@@ -1,21 +1,21 @@
 import {
     COMMA_POPULARITIES,
-    equalJiPitches,
+    equalJiPitches, 
+    format23FreeClass,
     formatNumber,
     Io,
     ioSettings,
     join,
     SPACE,
     stringify,
+    TwoThreeFreeClass,
     Votes,
 } from "../../general"
 import {
-    format23FreeClass,
     formatSymbol,
     getJiSymbol,
     JI_SYMBOL_SUBSETS,
     N2D3P9,
-    TwoThreeFreeClass,
 } from "../../sagittal"
 import { computeExactlyNotatingJiSymbolIds } from "./exactlyNotatingJiSymbolIds"
 import { Popular23FreeClass } from "./types"

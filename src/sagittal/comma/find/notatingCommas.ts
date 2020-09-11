@@ -1,5 +1,12 @@
-import { computeJiPitchMonzo, computeRoughMonzo, FIVE_ROUGHNESS, invertMonzo, JiPitch, Monzo } from "../../general"
-import { Comma } from "../types"
+import {
+    Comma,
+    computeJiPitchMonzo,
+    computeRoughMonzo,
+    FIVE_ROUGHNESS,
+    invertMonzo,
+    JiPitch,
+    Monzo,
+} from "../../../general"
 import { computeCommasFrom23FreeMonzo } from "./commasFrom23FreeMonzo"
 import { CommasFrom23FreeMonzoOptions } from "./types"
 

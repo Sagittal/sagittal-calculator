@@ -1,5 +1,5 @@
-import { Abs, Cents, Max, Monzo } from "../../../../src/general"
-import { ApotomeSlope, Comma, computeNotatingCommas } from "../../../../src/sagittal"
+import { Abs, Cents, Comma, Max, Monzo } from "../../../../../src/general"
+import { ApotomeSlope, computeNotatingCommas } from "../../../../../src/sagittal"
 
 describe("computeNotatingCommas", () => {
     it("given a monzo, returns a list of the commas that notate it", () => {

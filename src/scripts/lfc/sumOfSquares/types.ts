@@ -1,5 +1,4 @@
-import { Index } from "../../../general"
-import { TwoThreeFreeClass } from "../../../sagittal"
+import { Index, TwoThreeFreeClass } from "../../../general"
 
 type Antivotes = number & { _AntivotesBrand: "Antivotes" }
 

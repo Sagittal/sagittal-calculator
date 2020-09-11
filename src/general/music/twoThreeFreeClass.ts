@@ -1,14 +1,7 @@
-import {
-    computeJiPitchMonzo,
-    computeRoughMonzo,
-    computeSuperMonzo,
-    computeTrimmedArray,
-    Direction,
-    FIVE_ROUGHNESS,
-    JiPitch,
-    Monzo,
-} from "../../general"
-import { TwoThreeFreeClass } from "../types"
+import { computeTrimmedArray } from "../code"
+import { computeRoughMonzo, computeSuperMonzo, Direction, FIVE_ROUGHNESS, Monzo } from "../math"
+import { computeJiPitchMonzo } from "./jiPitchMonzoOrRatio"
+import { JiPitch, TwoThreeFreeClass } from "./types"
 
 const compute23FreeClass = (jiPitch: JiPitch): TwoThreeFreeClass => {
     const monzo = computeJiPitchMonzo(jiPitch)

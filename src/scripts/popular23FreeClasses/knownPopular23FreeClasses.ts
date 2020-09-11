@@ -1,5 +1,5 @@
-import { Formatted, rank, Ranked, RankStrategy } from "../../general"
-import { computeN2D3P9, parse23FreeClass, TwoThreeFreeClass } from "../../sagittal"
+import { Formatted, parse23FreeClass, rank, Ranked, RankStrategy, TwoThreeFreeClass } from "../../general"
+import { computeN2D3P9 } from "../../sagittal"
 import { computePopular23FreeClass } from "./popular23FreeClass"
 import { Popular23FreeClass } from "./types"
 

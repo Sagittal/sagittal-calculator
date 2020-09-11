@@ -1,5 +1,4 @@
-import { Name, Ratio } from "../../../../../src/general"
-import { Comma } from "../../../../../src/sagittal"
+import { Comma, Name, Ratio } from "../../../../../src/general"
 import { parseCommaName } from "../../../../../src/sagittal/comma/name"
 import { SizeCategoryName } from "../../../../../src/sagittal/comma/name/types"
 

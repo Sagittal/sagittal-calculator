@@ -1,6 +1,5 @@
-import { Combination, Index, Popularity, Rank, Ranked } from "../../../../../src/general"
+import { Combination, Index, Popularity, Rank, Ranked, TwoThreeFreeClass } from "../../../../../src/general"
 import { Votes } from "../../../../../src/general/music"
-import { TwoThreeFreeClass } from "../../../../../src/sagittal"
 import {
     computeUnpopularities,
     Parameter,

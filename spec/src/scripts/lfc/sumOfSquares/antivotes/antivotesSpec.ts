@@ -1,5 +1,5 @@
 import { Combination, Monzo } from "../../../../../../src/general/math"
-import { TwoThreeFreeClass } from "../../../../../../src/sagittal"
+import { TwoThreeFreeClass } from "../../../../../../src/general/music"
 import { Parameter, ParameterValue, Submetric } from "../../../../../../src/scripts/lfc/sumOfSquares"
 import { computeAntivotes } from "../../../../../../src/scripts/lfc/sumOfSquares/antivotes"
 import { ANTIVOTES_PRECISION } from "../../../../../../src/scripts/lfc/sumOfSquares/antivotes/constants"

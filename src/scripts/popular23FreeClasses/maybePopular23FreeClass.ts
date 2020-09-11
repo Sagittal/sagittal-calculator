@@ -1,5 +1,5 @@
-import { Max, Maybe } from "../../general"
-import { computeN2D3P9, N2D3P9, TwoThreeFreeClass } from "../../sagittal"
+import { Max, Maybe, TwoThreeFreeClass } from "../../general"
+import { computeN2D3P9, N2D3P9 } from "../../sagittal"
 import { computePopular23FreeClass } from "./popular23FreeClass"
 import { Popular23FreeClass } from "./types"
 

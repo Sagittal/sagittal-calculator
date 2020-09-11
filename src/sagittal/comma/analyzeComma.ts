@@ -1,7 +1,7 @@
-import { AnalyzedComma, Comma } from "../types"
+import { Comma } from "../../general"
 import { analyzeJiPitch } from "./analyzeJiPitch"
-import { computeSagittalCommaName } from "./name"
-import { CommaNameOptions } from "./types"
+import { CommaNameOptions, computeSagittalCommaName } from "./name"
+import { AnalyzedComma } from "./types"
 
 const analyzeComma = (comma: Comma, options: CommaNameOptions = {}): AnalyzedComma => {
     const { directed = true, factored = false, abbreviated = true } = options

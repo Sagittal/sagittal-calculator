@@ -57,9 +57,16 @@ enum SizeCategoryAbbreviation {
     DOUBLE_APOTOME = "A+A",
 }
 
+type CommaNameOptions = Partial<{
+    directed: boolean,
+    factored: boolean,
+    abbreviated: boolean
+}>
+
 export {
     SizeCategory,
     SizeCategoryOptions,
     SizeCategoryName,
     SizeCategoryAbbreviation,
+    CommaNameOptions,
 }

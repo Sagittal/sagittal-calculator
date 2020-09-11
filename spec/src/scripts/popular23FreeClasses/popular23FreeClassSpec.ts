@@ -1,6 +1,5 @@
-import { Formatted, Io, ioSettings, Rank } from "../../../../src/general"
+import { Formatted, Io, ioSettings, Rank, TwoThreeFreeClass } from "../../../../src/general"
 import { Popularity, Votes } from "../../../../src/general/music"
-import { TwoThreeFreeClass } from "../../../../src/sagittal"
 import { N2D3P9 } from "../../../../src/sagittal/comma/evaluation/n2d3p9"
 import { computePopular23FreeClass } from "../../../../src/scripts/popular23FreeClasses/popular23FreeClass"
 import { Popular23FreeClass } from "../../../../src/scripts/popular23FreeClasses/types"

@@ -1,5 +1,4 @@
-import { deepEquals, Id, isUndefined, Maybe } from "../../../general"
-import { Comma } from "../../types"
+import { Comma, deepEquals, Id, isUndefined, Maybe } from "../../../general"
 import { getSagittalComma } from "../getSagittalComma"
 import { JI_SYMBOLS } from "./jiSymbols"
 import { JiSymbol } from "./types"

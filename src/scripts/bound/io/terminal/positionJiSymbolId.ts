@@ -1,4 +1,4 @@
-import { Cents, computeCentsFromJiPitch, Id, isCloseTo, Maybe } from "../../../../general"
+import { Cents, computeCentsFromPitch, Id, isCloseTo, Maybe } from "../../../../general"
 import { getSagittalComma, JiSymbol, JI_SYMBOLS } from "../../../../sagittal"
 
 const computePositionJiSymbolId = (position: Maybe<Cents>): Maybe<Id<JiSymbol>> => {
@@ -9,7 +9,7 @@ const computePositionJiSymbolId = (position: Maybe<Cents>): Maybe<Id<JiSymbol>> 
     const jiSymbol = JI_SYMBOLS.find(jiSymbol => {
         const primaryComma = getSagittalComma(jiSymbol.primaryCommaId)
 
-        return isCloseTo(computeCentsFromJiPitch(primaryComma), position)
+        return isCloseTo(computeCentsFromPitch(primaryComma), position)
     })
 
     if (jiSymbol) {

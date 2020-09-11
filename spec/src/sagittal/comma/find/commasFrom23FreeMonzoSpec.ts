@@ -1,5 +1,5 @@
-import { Abs, Cents, Exponent, Integer, Max, Min, Monzo, Prime } from "../../../../src/general"
-import { ApotomeSlope, Comma, computeCommasFrom23FreeMonzo, N2D3P9 } from "../../../../src/sagittal"
+import { Abs, Cents, Comma, Exponent, Integer, Max, Min, Monzo, Prime } from "../../../../../src/general"
+import { ApotomeSlope, computeCommasFrom23FreeMonzo, N2D3P9 } from "../../../../../src/sagittal"
 
 describe("computeCommasFrom23FreeMonzo", () => {
     const twoThreeFreeMonzo: Monzo<{ rough: 5 }> = [0, 0, 3, 5, -1] as Monzo<{ rough: 5 }>

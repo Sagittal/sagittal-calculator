@@ -1,9 +1,8 @@
-import { addTexts, formatTable, Id, JiPitch, Monzo, Table } from "../../../general"
+import { addTexts, Comma, formatTable, Id, JiPitch, Table } from "../../../general"
 import {
     addMaybeJiSymbol,
     analyzeComma,
     AnalyzedComma,
-    Comma,
     CommaNameOptions,
     computeNotatingCommas,
     JiSymbol,

@@ -12,9 +12,10 @@ import {
     RankStrategy,
     saveLog,
     shallowClone,
-    stringify,
+    stringify, 
+    TwoThreeFreeClass,
 } from "../../general"
-import { computePrimeExponentExtremasGivenMaxN2D3P9, N2D3P9, TwoThreeFreeClass } from "../../sagittal"
+import { computePrimeExponentExtremasGivenMaxN2D3P9, N2D3P9 } from "../../sagittal"
 import { POPULAR_TWO_THREE_FREE_CLASSES_SCRIPT_GROUP } from "./constants"
 import { computeMaybePopular23FreeClassWithBestNotatingComma } from "./maybePopular23FreeClassWithBestNotatingComma"
 import { Popular23FreeClassWithBestNotatingComma } from "./types"

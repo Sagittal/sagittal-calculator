@@ -1,7 +1,7 @@
 import {
     abs,
-    Cents,
-    computeCentsFromJiPitch,
+    Cents, Comma,
+    computeCentsFromPitch,
     computeIsSubMonzo, computeJiPitchMonzo,
     computeMonzoFromInteger,
     computeRatioFromMonzo,
@@ -19,7 +19,6 @@ import {
     Ratio,
     SUPERSCRIPT_NUMS,
 } from "../../../general"
-import { Comma } from "../../types"
 import { MAX_SIZE_CATEGORY_BOUND } from "./constants"
 import { computeSizeCategory } from "./sizeCategory"
 
@@ -57,7 +56,7 @@ const computeSagittalCommaName = (
 
     const superMonzo: Monzo<{ direction: Direction.SUPER }> = computeSuperMonzo(monzo)
     // TODO: so perhaps monzoDirection should instead be jiPitchDirection  
-    const cents: Cents = computeCentsFromJiPitch({ monzo: superMonzo }) 
+    const cents: Cents = computeCentsFromPitch({ monzo: superMonzo }) 
 
     if (cents > MAX_SIZE_CATEGORY_BOUND) {
         throw new Error(`Comma ${formatMonzo(monzo)} is outside of comma-sized range and cannot be named.`)

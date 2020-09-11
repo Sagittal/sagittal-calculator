@@ -1,13 +1,23 @@
-import { Cents, Id, Monzo, Multiplier, Name, Prime, Ratio, Sopfr } from "../../../../../../src/general"
+import {
+    Cents, 
+    Comma,
+    Id,
+    Monzo,
+    Multiplier,
+    Name,
+    Prime,
+    Ratio,
+    Sopfr,
+    TwoThreeFreeClass,
+} from "../../../../../../src/general"
 import {
     AnalyzedComma,
-    ApotomeSlope, Comma,
+    ApotomeSlope,
     Ina,
     N2D3P9,
     SagittalComma,
     SymbolLongAscii,
     TINA,
-    TwoThreeFreeClass,
 } from "../../../../../../src/sagittal"
 import { SymbolUnicode } from "../../../../../../src/sagittal/io"
 import { Bound, JiSymbol, Level, Mina } from "../../../../../../src/sagittal/notations/ji"

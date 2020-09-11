@@ -1,5 +1,5 @@
 import { computeMonzoFromRatio, Monzo, Ratio } from "../../../general"
-import { computeNotatingCommas } from "../notatingCommas"
+import { computeNotatingCommas } from "../find"
 import { computeSizeCategoryExtrema } from "./sizeCategoryExtrema"
 import { SizeCategoryName } from "./types"
 

@@ -1,5 +1,5 @@
-import { Cents, Monzo, Prime, Ratio, Sopfr } from "../../../../src/general"
-import { AnalyzedJiPitch, ApotomeSlope, N2D3P9, TwoThreeFreeClass } from "../../../../src/sagittal"
+import { Cents, Monzo, Prime, Ratio, Sopfr, TwoThreeFreeClass } from "../../../../src/general"
+import { AnalyzedJiPitch, ApotomeSlope, N2D3P9 } from "../../../../src/sagittal"
 import { analyzeJiPitch } from "../../../../src/sagittal/comma"
 
 describe("analyzeJiPitch", () => {

@@ -1,7 +1,7 @@
 // tslint:disable max-line-length
 
-import { Cents, Io, Monzo, NEWLINE, Prime, Ratio, Sopfr } from "../../../../../src/general"
-import { AnalyzedJiPitch, ApotomeSlope, TwoThreeFreeClass } from "../../../../../src/sagittal"
+import { Cents, Io, Monzo, NEWLINE, Prime, Ratio, Sopfr, TwoThreeFreeClass } from "../../../../../src/general"
+import { AnalyzedJiPitch, ApotomeSlope } from "../../../../../src/sagittal"
 import { N2D3P9 } from "../../../../../src/sagittal/comma/evaluation/n2d3p9"
 import { formatJiPitch } from "../../../../../src/scripts/pitch/io"
 

@@ -1,5 +1,5 @@
 import { BASE_2, log, Monzo, Power } from "../../../../../../src/general/math"
-import { TwoThreeFreeClass } from "../../../../../../src/sagittal"
+import { TwoThreeFreeClass } from "../../../../../../src/general/music"
 import { ParameterValue } from "../../../../../../src/scripts/lfc/sumOfSquares"
 import { computeRatioSubmetricAntivotes } from "../../../../../../src/scripts/lfc/sumOfSquares/antivotes/ratioSubmetricAntivotes"
 import { computeSubmetricAntivotes } from "../../../../../../src/scripts/lfc/sumOfSquares/antivotes/submetricAntivotes"

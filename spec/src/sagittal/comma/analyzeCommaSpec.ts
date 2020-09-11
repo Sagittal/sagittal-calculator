@@ -1,5 +1,5 @@
-import { Cents, Monzo, Name, Prime, Ratio, Sopfr } from "../../../../src/general"
-import { AnalyzedComma, ApotomeSlope, Comma, N2D3P9, TwoThreeFreeClass } from "../../../../src/sagittal"
+import { Cents, Comma, Monzo, Name, Prime, Ratio, Sopfr, TwoThreeFreeClass } from "../../../../src/general"
+import { AnalyzedComma, ApotomeSlope, N2D3P9 } from "../../../../src/sagittal"
 import { analyzeComma } from "../../../../src/sagittal/comma"
 
 describe("analyzeComma", () => {

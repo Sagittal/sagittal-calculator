@@ -1,6 +1,6 @@
 import { Id } from "../../general"
-import { SagittalComma } from "../types"
 import { SAGITTAL_COMMAS } from "./sagittalCommas"
+import { SagittalComma } from "./types"
 
 const getSagittalComma = (sagittalCommaId: Id<SagittalComma>): SagittalComma => {
     const symbol = SAGITTAL_COMMAS.find(symbol => symbol.id === sagittalCommaId)

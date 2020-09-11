@@ -60,6 +60,8 @@ export {
     NEWLINE,
     parseCommands,
     parseMonzo,
+    format23FreeClass,
+    parse23FreeClass,
     parseRatio,
     Px,
     removeColor,
@@ -145,7 +147,7 @@ export {
     CENTS_PER_OCTAVE,
     CentsPosition,
     COMMA_POPULARITIES,
-    computeCentsFromJiPitch,
+    computeCentsFromPitch,
     computeCentsFromRatio,
     computeMonzoInZone,
     Pitch,
@@ -156,5 +158,8 @@ export {
     computeJiPitchRatio,
     computeJiPitchMonzo,
     equalJiPitches,
+    Comma,
+    TwoThreeFreeClass,
+    compute23FreeClass,
 } from "./music"
 export { Count, Ed, Extrema, Id, Index, Ms, Multiplier, Name, Step, Sum, Window } from "./types"

@@ -1,4 +1,4 @@
-import { Cents, computeCentsFromJiPitch, Id } from "../../../general"
+import { Cents, computeCentsFromPitch, Id } from "../../../general"
 import { getJiSymbol, getSagittalComma, JiSymbol, Level, LEVELS_SYMBOL_IDS } from "../../../sagittal"
 import { computeNeighborPositions } from "./neighborPositions"
 import { BoundedSymbolPositions } from "./types"
@@ -10,7 +10,7 @@ const computeBoundedJiSymbolPositions = (position: Cents, level: Level): Bounded
         const jiSymbol = getJiSymbol(levelSymbolId)
         const primaryComma = getSagittalComma(jiSymbol.primaryCommaId)
 
-        return computeCentsFromJiPitch(primaryComma)
+        return computeCentsFromPitch(primaryComma)
     })
 
     return computeNeighborPositions(position, levelSymbolPositions)

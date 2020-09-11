@@ -1,6 +1,6 @@
-import { Abs, Cents, Copfr, Exponent, Integer, Max, Min, ObjectKey, Prime, Sopfr } from "../../general"
-import { APOTOME_CENTS } from "../constants"
-import { ApotomeSlope, N2D3P9 } from "./evaluation"
+import { Abs, Cents, Copfr, Exponent, Integer, Max, Min, ObjectKey, Prime, Sopfr } from "../../../general"
+import { APOTOME_CENTS } from "../../constants"
+import { ApotomeSlope, N2D3P9 } from "../evaluation"
 
 // used for both find-commas and analyze-ji-pitch
 const DEFAULT_MIN_CENTS = 0 as Min<Cents>

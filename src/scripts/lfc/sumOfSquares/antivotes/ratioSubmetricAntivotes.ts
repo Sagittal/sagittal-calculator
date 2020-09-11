@@ -2,10 +2,11 @@ import {
     computeMonzoFromInteger,
     computeMonzoFromRatio,
     FractionalPartType,
-    isUndefined, Ratio,
+    isUndefined,
+    Ratio,
     stringify,
+    TwoThreeFreeClass,
 } from "../../../../general"
-import { TwoThreeFreeClass } from "../../../../sagittal"
 import { Antivotes, ParameterValue, Submetric } from "../types"
 import { maybeNuminatorSwap } from "./numinator"
 import { computeSubmetricAntivotes } from "./submetricAntivotes"

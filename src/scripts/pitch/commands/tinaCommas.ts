@@ -1,6 +1,7 @@
 import {
     abs,
     Cents, 
+    Comma,
     computeJiPitchMonzo,
     Copfr,
     Io,
@@ -15,7 +16,7 @@ import {
     sort,
     stringify,
 } from "../../../general"
-import { analyzeComma, AnalyzedComma, Comma, computeNotatingCommas, N2D3P9, TINA } from "../../../sagittal"
+import { analyzeComma, AnalyzedComma, computeNotatingCommas, N2D3P9, TINA } from "../../../sagittal"
 import { computeCommas } from "../commas"
 import { PITCH_SCRIPT_GROUP } from "../constants"
 import { pitchScriptGroupSettings } from "../globals"

@@ -1,6 +1,5 @@
-import { log } from "../../../../../../src/general"
+import { log, TwoThreeFreeClass } from "../../../../../../src/general"
 import { BASE_2, Power } from "../../../../../../src/general/math"
-import { TwoThreeFreeClass } from "../../../../../../src/sagittal"
 import { Parameter } from "../../../../../../src/scripts/lfc/sumOfSquares"
 import * as ratioSubmetricAntivotes
     from "../../../../../../src/scripts/lfc/sumOfSquares/antivotes/ratioSubmetricAntivotes"

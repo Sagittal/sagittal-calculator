@@ -1,5 +1,5 @@
-import { Id, Monzo } from "../../../../../src/general"
-import { Comma, JiSymbol } from "../../../../../src/sagittal"
+import { Comma, Id, Monzo } from "../../../../../src/general"
+import { JiSymbol } from "../../../../../src/sagittal"
 import { addMaybeJiSymbol } from "../../../../../src/sagittal/notations/ji"
 
 describe("addMaybeJiSymbol", () => {

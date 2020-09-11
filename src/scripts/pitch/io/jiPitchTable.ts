@@ -1,6 +1,6 @@
 import {
     addTexts,
-    BLANK, computeMonzoFromRatio,
+    BLANK,
     formatInteger,
     formatMonzo,
     formatNumber,

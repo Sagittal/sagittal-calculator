@@ -1,5 +1,5 @@
-import { Cents, Id, Monzo, Name, Prime, Ratio, Row, Sopfr } from "../../../../../src/general"
-import { AnalyzedComma, ApotomeSlope, Comma, JiSymbol, TwoThreeFreeClass } from "../../../../../src/sagittal"
+import { Cents, Comma, Id, Monzo, Name, Prime, Ratio, Row, Sopfr, TwoThreeFreeClass } from "../../../../../src/general"
+import { AnalyzedComma, ApotomeSlope, JiSymbol } from "../../../../../src/sagittal"
 import { N2D3P9 } from "../../../../../src/sagittal/comma/evaluation/n2d3p9"
 import { computeCommaRow } from "../../../../../src/scripts/pitch/io/commaRow"
 

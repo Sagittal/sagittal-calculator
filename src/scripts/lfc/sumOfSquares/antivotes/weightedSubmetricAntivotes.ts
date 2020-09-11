@@ -1,5 +1,4 @@
-import { stringify } from "../../../../general"
-import { TwoThreeFreeClass } from "../../../../sagittal"
+import { stringify, TwoThreeFreeClass } from "../../../../general"
 import { Antivotes, ParameterValue, Submetric } from "../types"
 import { computeRatioSubmetricAntivotes } from "./ratioSubmetricAntivotes"
 import { computeWeightedAntivotes } from "./weightedAntivotes"

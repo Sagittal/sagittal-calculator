@@ -1,5 +1,5 @@
 import { Direction, Max, Monzo } from "../../../../src/general/math"
-import { TwoThreeFreeClass } from "../../../../src/sagittal"
+import { TwoThreeFreeClass } from "../../../../src/general/music"
 import { N2D3P9 } from "../../../../src/sagittal/comma/evaluation/n2d3p9"
 import { computeMaybePopular23FreeClass } from "../../../../src/scripts/popular23FreeClasses/maybePopular23FreeClass"
 

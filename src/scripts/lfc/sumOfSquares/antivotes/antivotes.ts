@@ -1,5 +1,4 @@
-import { Combination, Io, LogTarget, round, saveLog, stringify } from "../../../../general"
-import { TwoThreeFreeClass } from "../../../../sagittal"
+import { Combination, Io, LogTarget, round, saveLog, stringify, TwoThreeFreeClass } from "../../../../general"
 import { LFC_SCRIPT_GROUP } from "../../constants"
 import { Antivotes, Submetric } from "../types"
 import { ANTIVOTES_PRECISION } from "./constants"

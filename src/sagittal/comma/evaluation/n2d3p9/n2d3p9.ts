@@ -1,16 +1,17 @@
 import {
     abs,
     computeGpf,
-    computeIsSubMonzo, computeJiPitchMonzo,
+    computeIsSubMonzo,
+    computeJiPitchMonzo,
     computeTrimmedArray,
     Direction,
     Exponent,
     formatMonzo,
     NumericTypeParameters,
     Prime,
-    PRIMES,
+    PRIMES, 
+    TwoThreeFreeClass,
 } from "../../../../general"
-import { TwoThreeFreeClass } from "../../../types"
 import { N2D3P9 } from "./types"
 
 const computeN2D3P9 = <T extends NumericTypeParameters &

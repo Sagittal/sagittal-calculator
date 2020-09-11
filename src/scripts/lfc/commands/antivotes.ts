@@ -1,5 +1,13 @@
-import { Combination, Filename, Io, LogTarget, saveLog, stringify } from "../../../general"
-import { format23FreeClass, TwoThreeFreeClass } from "../../../sagittal"
+import {
+    Combination,
+    Filename,
+    format23FreeClass,
+    Io,
+    LogTarget,
+    saveLog,
+    stringify,
+    TwoThreeFreeClass,
+} from "../../../general"
 import { LFC_SCRIPT_GROUP } from "../constants"
 import { computeAntivotes, Submetric } from "../sumOfSquares"
 import { applySharedLfcCommandSetup, load } from "./shared"

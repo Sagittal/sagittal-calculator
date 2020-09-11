@@ -1,6 +1,6 @@
-import { computeCentsFromJiPitch, Maybe, Zone } from "../../../general"
-import { SagittalComma } from "../../types"
+import { computeCentsFromPitch, Maybe, Zone } from "../../../general"
 import { getSagittalComma } from "../getSagittalComma"
+import { SagittalComma } from "../types"
 import { formatLevel } from "./formatLevel"
 import { isWithinLevel } from "./isWithinLevel"
 import { LEVELS_BOUNDS } from "./levelsBounds"
@@ -16,7 +16,7 @@ const computeCaptureZone = (jiSymbol: JiSymbol, level: Level): Maybe<Zone> => {
     const primaryComma = getSagittalComma(jiSymbol.primaryCommaId)
 
     const indexOfBoundJustAboveSymbolAtThisLevel = levelBounds.findIndex(bound => {
-        return bound.cents > computeCentsFromJiPitch(primaryComma)
+        return bound.cents > computeCentsFromPitch(primaryComma)
     })
     const indexOfBoundJustBelowSymbolAtThisLevel = indexOfBoundJustAboveSymbolAtThisLevel - 1
 

@@ -1,5 +1,5 @@
-import { computeIsSuperMonzo, computeJiPitchMonzo, Max, Maybe } from "../../general"
-import { computeN2D3P9, N2D3P9, TwoThreeFreeClass } from "../../sagittal"
+import { computeIsSuperMonzo, computeJiPitchMonzo, Max, Maybe, TwoThreeFreeClass } from "../../general"
+import { computeN2D3P9, N2D3P9 } from "../../sagittal"
 import { computePopular23FreeClassWithBestNotatingComma } from "./popular23FreeClassWithBestNotatingComma"
 import { Popular23FreeClassWithBestNotatingComma } from "./types"
 

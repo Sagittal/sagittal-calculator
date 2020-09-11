@@ -22,3 +22,4 @@ export {
     TINA,
 } from "./ji"
 export { APOTOME } from "./sagittalCommas"
+export { SagittalComma } from "./types"

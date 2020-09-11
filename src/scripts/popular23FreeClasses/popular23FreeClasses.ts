@@ -1,5 +1,6 @@
 import {
-    ACCURACY_THRESHOLD, computeIsSuperMonzo,
+    ACCURACY_THRESHOLD,
+    computeIsSuperMonzo,
     Exponent,
     Integer,
     Io,
@@ -14,8 +15,9 @@ import {
     saveLog,
     shallowClone,
     stringify,
+    TwoThreeFreeClass,
 } from "../../general"
-import { computePrimeExponentExtremasGivenMaxN2D3P9, N2D3P9, TwoThreeFreeClass } from "../../sagittal"
+import { computePrimeExponentExtremasGivenMaxN2D3P9, N2D3P9 } from "../../sagittal"
 import { POPULAR_TWO_THREE_FREE_CLASSES_SCRIPT_GROUP } from "./constants"
 import { computeMaybePopular23FreeClass } from "./maybePopular23FreeClass"
 import { Popular23FreeClass } from "./types"
@@ -50,7 +52,7 @@ const computePopular23FreeClasses = (
     const popular23FreeClasses = [] as Array<Popular23FreeClass>
     while (true) {
         // do the work
-        const maybePopular23FreeClass = computeIsSuperMonzo(twoThreeFreeMonzo) ? 
+        const maybePopular23FreeClass = computeIsSuperMonzo(twoThreeFreeMonzo) ?
             computeMaybePopular23FreeClass(
                 { monzo: twoThreeFreeMonzo } as TwoThreeFreeClass,
                 maxN2D3P9,

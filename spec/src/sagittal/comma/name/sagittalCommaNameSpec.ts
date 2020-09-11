@@ -1,5 +1,4 @@
-import { Monzo } from "../../../../../src/general"
-import { Comma } from "../../../../../src/sagittal"
+import { Comma, Monzo } from "../../../../../src/general"
 import { computeSagittalCommaName } from "../../../../../src/sagittal/comma/name"
 
 describe("computeSagittalCommaName", () => {

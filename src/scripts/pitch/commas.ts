@@ -1,5 +1,5 @@
-import { Monzo } from "../../general"
-import { Comma, computeCommasFrom23FreeMonzo } from "../../sagittal"
+import { Comma, Monzo } from "../../general"
+import { computeCommasFrom23FreeMonzo } from "../../sagittal"
 import { compute23FreeMonzosToCheck } from "./twoThreeFreeMonzosToCheck"
 import { CommasOptions } from "./types"
 

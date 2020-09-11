@@ -1,5 +1,5 @@
-import { Cents, Formatted, Io, Monzo, Popularity, Rank, Votes } from "../../general"
-import { N2D3P9, TwoThreeFreeClass } from "../../sagittal"
+import { Cents, Formatted, Io, Monzo, Popularity, Rank, TwoThreeFreeClass, Votes } from "../../general"
+import { N2D3P9 } from "../../sagittal"
 
 interface SharedPopular23FreeClassProperties {
     n2d3p9: N2D3P9,

@@ -1,16 +1,17 @@
 import {
-    abs,
+    abs, Comma,
     computeMonzoInZone,
     computePlusOrMinusRange,
     Exponent,
     Integer,
-    isUndefined, Maybe,
+    isUndefined,
+    Maybe,
     Monzo,
     Prime,
     shallowClone,
-} from "../../general"
-import { AnalyzedComma, Comma } from "../types"
-import { analyzeComma } from "./analyzeComma"
+} from "../../../general"
+import { analyzeComma } from "../analyzeComma"
+import { AnalyzedComma } from "../types"
 import {
     DEFAULT_MAX_ABSOLUTE_3_EXPONENT,
     DEFAULT_MAX_ABSOLUTE_APOTOME_SLOPE,

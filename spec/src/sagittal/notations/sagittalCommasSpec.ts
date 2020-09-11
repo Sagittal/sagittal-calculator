@@ -1,5 +1,5 @@
-import { Cents, Id, Monzo, Name, Prime, Ratio, Sopfr } from "../../../../src/general"
-import { analyzeComma, AnalyzedComma, Comma, SagittalComma, TwoThreeFreeClass } from "../../../../src/sagittal"
+import { Cents, Comma, Id, Monzo, Name, Prime, Ratio, Sopfr, TwoThreeFreeClass } from "../../../../src/general"
+import { analyzeComma, AnalyzedComma, SagittalComma } from "../../../../src/sagittal"
 import { ApotomeSlope, N2D3P9 } from "../../../../src/sagittal/comma"
 import { SAGITTAL_COMMAS } from "../../../../src/sagittal/notations/sagittalCommas"
 

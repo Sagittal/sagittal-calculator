@@ -2,6 +2,7 @@ import { program } from "commander"
 import {
     addTexts,
     ANY_MONZO_CHARS,
+    Comma,
     CommandFlag,
     computeMonzoFromInteger,
     computeMonzoFromRatio,
@@ -19,12 +20,7 @@ import {
     Ratio,
     saveLog,
 } from "../../../general"
-import {
-    analyzeJiPitch,
-    Comma,
-    computeMonzoFrom23FreeClassAndSizeCategoryName,
-    parseCommaName,
-} from "../../../sagittal"
+import { analyzeJiPitch, computeMonzoFrom23FreeClassAndSizeCategoryName, parseCommaName } from "../../../sagittal"
 import { PITCH_SCRIPT_GROUP } from "../constants"
 import { pitchScriptGroupSettings } from "../globals"
 import { computeNotatingCommasTable, formatJiPitch, formatSettings } from "../io"

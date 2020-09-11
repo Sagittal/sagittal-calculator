@@ -1,5 +1,6 @@
 import {
-    computeCentsFromJiPitch,
+    compute23FreeClass,
+    computeCentsFromPitch,
     computeGpf,
     computeJiPitchMonzo,
     computeJiPitchRatio,
@@ -7,16 +8,15 @@ import {
     JiPitch,
     Prime,
 } from "../../general"
-import { AnalyzedJiPitch } from "../types"
 import { computeApotomeSlope, computeN2D3P9, N2D3P9 } from "./evaluation"
-import { compute23FreeClass } from "./twoThreeFreeClass"
+import { AnalyzedJiPitch } from "./types"
 
 const analyzeJiPitch = (jiPitch: JiPitch): AnalyzedJiPitch => {
     const monzo = computeJiPitchMonzo(jiPitch)
     const ratio = computeJiPitchRatio(jiPitch)
 
     const apotomeSlope = computeApotomeSlope(jiPitch)
-    const cents = computeCentsFromJiPitch(jiPitch)
+    const cents = computeCentsFromPitch(jiPitch)
     const limit: Prime = computeGpf(computeJiPitchMonzo(jiPitch))
 
     const twoThreeFreeClass = compute23FreeClass(jiPitch)
