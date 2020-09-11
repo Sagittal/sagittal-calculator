@@ -3,7 +3,7 @@ import { Exponent, Integer, Monzo, Prime } from "../math"
 import { computeCentsFromJiPitch } from "../music"
 import { Cents, Zone } from "./types"
 
-const computeMonzoInZone = (twoFreeMonzo: Monzo<{ rough: 3 }>, zone: Zone): Maybe<Monzo<{ comma: true }>> => {
+const computeMonzoInZone = (twoFreeMonzo: Monzo<{ rough: 3 }>, zone: Zone): Maybe<Monzo> => {
     const [minCents, maxCents] = zone
 
     // TODO: COMMA MONZO RATIO JI 
@@ -24,7 +24,7 @@ const computeMonzoInZone = (twoFreeMonzo: Monzo<{ rough: 3 }>, zone: Zone): Mayb
     }
 
     return cents > minCents && cents < maxCents ?
-        twoFreeMonzo as Monzo as Monzo<{ comma: true }> :
+        twoFreeMonzo :
         undefined
 }
 

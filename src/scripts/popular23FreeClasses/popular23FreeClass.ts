@@ -28,7 +28,7 @@ const computePopular23FreeClass = (
     const formatted23FreeClass = format23FreeClass(twoThreeFreeClass)
     const popularity = COMMA_POPULARITIES.find(popularity => {
         const result = equalJiPitches(popularity.twoThreeFreeClass, twoThreeFreeClass)
-        console.log('comparing', stringify(popularity.twoThreeFreeClass), stringify(twoThreeFreeClass), result)
+        console.log("comparing", stringify(popularity.twoThreeFreeClass), stringify(twoThreeFreeClass), result)
         return result
     })
     const popularityRank = popularity?.rank || "-" as Io

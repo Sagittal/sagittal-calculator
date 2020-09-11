@@ -50,10 +50,10 @@ const computeCommasFrom23FreeMonzo = (
 
     computePlusOrMinusRange(maxAbsolute3Exponent).forEach(threeExponent => {
         const twoFreeMonzo = computeTwoFreeMonzo(twoThreeFreeMonzo, threeExponent)
-        const monzo: Maybe<Monzo<{ comma: true }>> = computeMonzoInZone(twoFreeMonzo, [minCents, maxCents])
+        const monzo: Maybe<Monzo> = computeMonzoInZone(twoFreeMonzo, [minCents, maxCents])
 
         if (monzo) {
-            const comma = { monzo }
+            const comma = { monzo } as Comma
             
             const analyzedComma: AnalyzedComma = analyzeComma(comma)
             if (abs(analyzedComma.apotomeSlope) > maxAbsoluteApotomeSlope || analyzedComma.n2d3p9 > maxN2D3P9) {

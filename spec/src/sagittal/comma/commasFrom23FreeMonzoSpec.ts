@@ -1,5 +1,5 @@
 import { Abs, Cents, Exponent, Integer, Max, Min, Monzo, Prime } from "../../../../src/general"
-import { ApotomeSlope, computeCommasFrom23FreeMonzo, N2D3P9 } from "../../../../src/sagittal"
+import { ApotomeSlope, Comma, computeCommasFrom23FreeMonzo, N2D3P9 } from "../../../../src/sagittal"
 
 describe("computeCommasFrom23FreeMonzo", () => {
     const twoThreeFreeMonzo: Monzo<{ rough: 5 }> = [0, 0, 3, 5, -1] as Monzo<{ rough: 5 }>
@@ -16,7 +16,7 @@ describe("computeCommasFrom23FreeMonzo", () => {
             maxN2D3P9,
         })
 
-        const expected = [{ monzo: [-8, -6, 3, 5, -1] as Monzo<{ comma: true }> }]
+        const expected = [{ monzo: [-8, -6, 3, 5, -1] as Monzo } as Comma]
         expect(actual).toEqual(expected)
     })
 
@@ -33,7 +33,7 @@ describe("computeCommasFrom23FreeMonzo", () => {
                 maxN2D3P9,
             })
 
-            const expected = [{ monzo: [-8, -6, 3, 5, -1] as Monzo<{ comma: true }> }]
+            const expected = [{ monzo: [-8, -6, 3, 5, -1] as Monzo } as Comma]
             expect(resultWithHighMaxAbsoluteApotomeSlope).toEqual(expected)
 
             const resultWithLowMaxAbsoluteApotomeSlope = computeCommasFrom23FreeMonzo(twoThreeFreeMonzo, {

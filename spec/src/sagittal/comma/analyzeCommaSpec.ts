@@ -4,7 +4,7 @@ import { analyzeComma } from "../../../../src/sagittal/comma"
 
 describe("analyzeComma", () => {
     it("returns a bundle of analyzed properties of a comma, given its monzo", () => {
-        const comma = { monzo: [-8, -6, 3, 5, -1] as Monzo<{ comma: true }> }
+        const comma = { monzo: [-8, -6, 3, 5, -1] as Monzo } as Comma
 
         const actual = analyzeComma(comma)
 

@@ -53,7 +53,7 @@ interface JiPitchAnalysis {
     twoThreeFreeClass: TwoThreeFreeClass,
 }
 
-type Comma = JiPitch<{ comma: true }>
+type Comma = JiPitch & { _CommaBrand: "Comma" }
 
 type AnalyzedJiPitch = JiPitch & JiPitchAnalysis
 

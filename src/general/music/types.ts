@@ -14,6 +14,7 @@ type CentsPosition = {
 }
 
 // TODO: hmmm... but "irrational" is one of the NumericTypeParameters...
+//  I don't really know how to force it not to extend irrational: true...
 type JiPitchByMonzo<T extends NumericTypeParameters = {}> = {
     name?: Name<Pitch>,
     monzo: Monzo<T>,
