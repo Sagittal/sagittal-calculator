@@ -1,22 +1,16 @@
 import {
     COMMA_POPULARITIES,
-    equalJiPitches, 
+    equalJiPitches,
     format23FreeClass,
     formatNumber,
     Io,
     ioSettings,
     join,
     SPACE,
-    stringify,
     TwoThreeFreeClass,
     Votes,
 } from "../../general"
-import {
-    formatSymbol,
-    getJiSymbol,
-    JI_SYMBOL_SUBSETS,
-    N2D3P9,
-} from "../../sagittal"
+import { formatSymbol, getJiSymbol, JI_SYMBOL_SUBSETS, N2D3P9 } from "../../sagittal"
 import { computeExactlyNotatingJiSymbolIds } from "./exactlyNotatingJiSymbolIds"
 import { Popular23FreeClass } from "./types"
 
@@ -27,9 +21,7 @@ const computePopular23FreeClass = (
 
     const formatted23FreeClass = format23FreeClass(twoThreeFreeClass)
     const popularity = COMMA_POPULARITIES.find(popularity => {
-        const result = equalJiPitches(popularity.twoThreeFreeClass, twoThreeFreeClass)
-        console.log("comparing", stringify(popularity.twoThreeFreeClass), stringify(twoThreeFreeClass), result)
-        return result
+        return equalJiPitches(popularity.twoThreeFreeClass, twoThreeFreeClass)
     })
     const popularityRank = popularity?.rank || "-" as Io
     const votes = popularity?.votes || 0 as Votes
