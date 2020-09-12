@@ -2,12 +2,14 @@ import { Comma, Formatted, isUndefined, Maybe, Name, parseRatio, Ratio, TwoThree
 import { SIZE_CATEGORIES } from "./sizeCategories"
 import { SizeCategoryName } from "./types"
 
-// TODO: this ratio does not stipulate being super, which is maybe an argument for it not being directed after all...
+// TODO: NAME FOR THE TYPE OF RATIO THAT IS 2,3-FREE BUT NOT NECESSARILY SUPER THAT IS IN COMMA NAMES
+//  this ratio does not stipulate being super, which is maybe an argument for it not being directed after all...
 //  i.e. that if the comma name parsed into its 2,3-free class, that might be nice. 
 //  do we know whether it's possible for in a size category to have both a e.g. 1/5 and a 5/1, though? if so, this 
 //  wouldn't work, or in other words, this could not get away with being a 2,3-free class, and so shouldn't try to be
 //  - note, however, that when you return the 2's and 3's to this to make it comma-sized, of the size of its name,
-//  it WILL be super! subtle, but important point.
+//  it WILL be super! subtle, but important point. you can observe this difference in ordering in
+//  commaName.ts and twoThreeFreeClass.ts
 //  - this directed 2,3-free ratio which is NOT a 2,3-free class but which is one half of comma names...
 //  does it need a name, as a thing? a (Directed)CommaNameRatio?
 const parseCommaName = (

@@ -21,6 +21,7 @@ import {
 } from "../../../general"
 import { computeIsCommaSized } from "./isCommaSized"
 import { computeSizeCategory } from "./sizeCategory"
+import { SizeCategoryAbbreviation, SizeCategoryName } from "./types"
 
 const primeFactorize = (numeratorOrDenominator: FractionalPart) => {
     if (numeratorOrDenominator === 1) return "1"
@@ -69,14 +70,12 @@ const computeCommaName = (
         // TODO: okay, I tried valiantly, but I could not figure out how to get this thing to both take a parameterized
         //  T for the NumericTypeParameters while also allowing that Comma brand to pass through... 
         computeSuperPitch(comma) as Comma<{ direction: Direction.SUPER }>
-    const sizeCategory = computeSizeCategory(computeCentsFromPitch(superComma), { abbreviated })
+    const sizeCategory: SizeCategoryAbbreviation | SizeCategoryName = computeSizeCategory(superComma, { abbreviated })
 
     let formattedTwoThreeFreeRatio
     if (computeIsSmoothJiPitch(comma, THREE_SMOOTHNESS) && !computeIsUnisonPitch(comma)) {
         formattedTwoThreeFreeRatio = "3"
     } else {
-        // TODO: holy insano balls ... okay so it clearly matters very much the ORDER you do these things in...
-        //  I'll bet if you compare how you construct a 2,3-free class you first roughen it and THEN super it.
         const twoThreeFreeRatio = computeRoughRatio(computeJiPitchRatio(superComma), FIVE_ROUGHNESS)
 
         if (directed) {

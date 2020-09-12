@@ -1,10 +1,15 @@
-import { Cents, isUndefined } from "../../../general"
+import { Comma, computeCentsFromPitch, isUndefined } from "../../../general"
 import { SIZE_CATEGORIES } from "./sizeCategories"
 import { SIZE_CATEGORY_BOUNDS } from "./sizeCategoryBounds"
-import { SizeCategoryOptions } from "./types"
+import { SizeCategoryAbbreviation, SizeCategoryName, SizeCategoryOptions } from "./types"
 
-// TODO: this should take a pitch, not cents
-const computeSizeCategory = (cents: Cents, { abbreviated = true }: SizeCategoryOptions = {}) => {
+const computeSizeCategory: {
+    (comma: Comma, { abbreviated }?: { abbreviated: true }): SizeCategoryAbbreviation,
+    (comma: Comma, { abbreviated }?: { abbreviated: false }): SizeCategoryName,
+    (comma: Comma, { abbreviated }?: { abbreviated: boolean }): SizeCategoryName | SizeCategoryAbbreviation,
+} = (comma: Comma, { abbreviated = true }: SizeCategoryOptions = {}): any => {
+    const cents = computeCentsFromPitch(comma)
+    
     let sizeCategory = SIZE_CATEGORIES[ 0 ]
 
     SIZE_CATEGORY_BOUNDS.forEach((sizeCategoryBound, index) => {
@@ -17,7 +22,9 @@ const computeSizeCategory = (cents: Cents, { abbreviated = true }: SizeCategoryO
         throw new Error(`${cents}¢ is beyond the maximum size category's bounds.`)
     }
 
-    return abbreviated ? sizeCategory.abbreviation : sizeCategory.name
+    return abbreviated ?
+        sizeCategory.abbreviation :
+        sizeCategory.name
 }
 
 export {
