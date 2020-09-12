@@ -18,10 +18,6 @@ import { JI_PITCH_TITLE } from "./titles"
 //  I think you already have a to-do re: this problem
 //  this one, as opposed to formatRatio, is more of a table at this point
 
-// TODO: I think now that we've clarified that this is the N2D3P9 of its 2,3-free class,
-//  you should actually include the 2,3-free class on it!
-//  but perhaps it's a branded Ratio type?
-
 const formatJiPitch = (jiPitch: AnalyzedJiPitch): Io => {
     const { limit, twoThreeFreeSopfr, cents, monzo, ratio, apotomeSlope, n2d3p9 } = jiPitch
 

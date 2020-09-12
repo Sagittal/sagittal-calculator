@@ -20,7 +20,7 @@ import {
 } from "../../../general"
 import { computeIsCommaSized } from "./isCommaSized"
 import { computeSizeCategory } from "./sizeCategory"
-import { SizeCategoryAbbreviation, SizeCategoryName } from "./types"
+import { CommaNameRatio, SizeCategoryAbbreviation, SizeCategoryName } from "./types"
 
 const primeFactorize = (numeratorOrDenominator: FractionalPart) => {
     if (numeratorOrDenominator === 1) return "1"
@@ -68,24 +68,25 @@ const computeCommaName = (
     const superComma: Comma<{ direction: Direction.SUPER }> = computeSuperPitch(comma)
     const sizeCategory: SizeCategoryAbbreviation | SizeCategoryName = computeSizeCategory(superComma, { abbreviated })
 
-    let formattedTwoThreeFreeRatio
+    let formattedCommaNameRatio
     if (computeIsSmoothJiPitch(comma, THREE_SMOOTHNESS) && !computeIsUnisonPitch(comma)) {
-        formattedTwoThreeFreeRatio = "3"
+        formattedCommaNameRatio = "3"
     } else {
-        const twoThreeFreeRatio = computeRoughRatio(computeJiPitchRatio(superComma), FIVE_ROUGHNESS)
+        const commaNameRatio: CommaNameRatio =
+            computeRoughRatio(computeJiPitchRatio(superComma), FIVE_ROUGHNESS) as CommaNameRatio
 
         if (directed) {
-            const stringifiedRatio = stringifyRatio(twoThreeFreeRatio, { factored })
+            const stringifiedRatio = stringifyRatio(commaNameRatio, { factored })
 
-            formattedTwoThreeFreeRatio = stringifiedRatio[ 1 ] === "1" ? stringifiedRatio[ 0 ] : stringifiedRatio.join("/")
+            formattedCommaNameRatio = stringifiedRatio[ 1 ] === "1" ? stringifiedRatio[ 0 ] : stringifiedRatio.join("/")
         } else {
-            const stringifiedRatio = stringifyRatio(computeSubRatio(twoThreeFreeRatio), { factored })
+            const stringifiedRatio = stringifyRatio(computeSubRatio(commaNameRatio), { factored })
 
-            formattedTwoThreeFreeRatio = stringifiedRatio[ 0 ] === "1" ? stringifiedRatio[ 1 ] : stringifiedRatio.join(":")
+            formattedCommaNameRatio = stringifiedRatio[ 0 ] === "1" ? stringifiedRatio[ 1 ] : stringifiedRatio.join(":")
         }
     }
 
-    return `${formattedTwoThreeFreeRatio}${maybeHyphen}${sizeCategory}${maybeDown}` as Name<Comma>
+    return `${formattedCommaNameRatio}${maybeHyphen}${sizeCategory}${maybeDown}` as Name<Comma>
 }
 
 export {

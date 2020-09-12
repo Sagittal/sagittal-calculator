@@ -47,8 +47,8 @@ const jiPitchText = program.args[ 0 ] as Io
 let monzo: Monzo
 if (jiPitchText) {
     if (jiPitchText.match(IDENTIFYING_COMMA_NAME_CHARS)) {
-        const { twoThreeFreeRatio, sizeCategoryName } = parseCommaName(jiPitchText as Name<Comma>)
-        monzo = computeMonzoFrom23FreeClassAndSizeCategoryName({ twoThreeFreeRatio, sizeCategoryName })
+        const { commaNameRatio, sizeCategoryName } = parseCommaName(jiPitchText as Name<Comma>)
+        monzo = computeMonzoFrom23FreeClassAndSizeCategoryName({ commaNameRatio: commaNameRatio, sizeCategoryName })
     } else if (jiPitchText.includes("/")) {
         const ratio = parseRatio(jiPitchText as Formatted<Ratio>)
         monzo = computeMonzoFromRatio(ratio)
@@ -89,3 +89,4 @@ saveLog(notatingCommasFormattedTable, LogTarget.ALL)
 //  --- 2,3-free class ---
 //  and then it can have simpler column titles
 //  and I think it'll be clearer how that shares all the stuff with the above
+//  and actually include the 2,3-free class itself on it!

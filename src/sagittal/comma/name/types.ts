@@ -1,3 +1,5 @@
+import { Ratio } from "../../../general"
+
 interface SizeCategoryOptions {
     abbreviated?: boolean,
 }
@@ -63,10 +65,22 @@ type CommaNameOptions = Partial<{
     abbreviated: boolean
 }>
 
+// Note: this ratio does not stipulate being super,
+// which is maybe an argument for us not going with directed comma names after all.
+// i.e. if a comma's 2,3-free class was just part of its name, that might be nice.
+// Do we know whether it's possible for in a size category to have both a e.g. 1/5 and a 5/1, though?
+// If so, this wouldn't work, or in other words, this could not get away with being a 2,3-free class,
+// and so shouldn't try to be the comma's 2,3-free class.
+// Note, however, that when you return the 2's and 3's to this to make it comma-sized, of the size of its name,
+// it WILL be super! This is a subtle but critical point.
+// You can observe this difference in ordering in commaName.ts and twoThreeFreeClass.ts
+type CommaNameRatio = Ratio<{rough: 5}> & { _CommaNameRatioBrand: "CommaNameRatio"}
+
 export {
     SizeCategory,
     SizeCategoryOptions,
     SizeCategoryName,
     SizeCategoryAbbreviation,
     CommaNameOptions,
+    CommaNameRatio,
 }
