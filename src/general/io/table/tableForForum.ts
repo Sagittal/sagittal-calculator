@@ -7,18 +7,14 @@ import { DEFAULT_FORMAT_TABLE_OPTIONS } from "./constants"
 import { computeJustifications, computeJustifiedCellForForum } from "./justification"
 import { FormatTableOptions, Row, Table, TableForForumStuffOptions } from "./types"
 
-// TODO: add [pre] between cellTag and hilite, to keep things monospaced
-//  the terminal output is always monospaced, so I figure this should be too
-//  and otherwise clean and test all this
-
 const computeTableForForumRowParts = <T = unknown>({ index, headerRowCount, colors }: TableForForumStuffOptions<T>) => {
     const cellTag: Io = index < headerRowCount ? "th" as Io : "td" as Io
 
     const hiliteOpen: Io = colors ? colors[ index ] ? `[hilite=${colors[ index ]}]` as Io : BLANK as Io : BLANK
     const hiliteClose: Io = colors ? colors[ index ] ? "[/hilite]" as Io : BLANK : BLANK
 
-    const cellOpen: Io = `[${cellTag}]${hiliteOpen}` as Io
-    const cellClose: Io = `${hiliteClose}[/${cellTag}]` as Io
+    const cellOpen: Io = `[${cellTag}][pre]${hiliteOpen}` as Io
+    const cellClose: Io = `${hiliteClose}[/pre][/${cellTag}]` as Io
 
     const rowOpen: Io = `[tr]${cellOpen}` as Io
     const rowClose: Io = `${cellClose}[/tr]` as Io

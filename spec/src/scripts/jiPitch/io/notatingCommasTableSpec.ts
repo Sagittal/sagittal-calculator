@@ -27,9 +27,9 @@ describe("computeNotatingCommasTable", () => {
             "   --- notating commas ---" + NEWLINE +
             "" + NEWLINE +
             "[table]" + NEWLINE +
-            "[tr][th]symbol  [/th][th]name[/th][th]ratio[/th][th]monzo[/th][th]cents[/th][th]apotome slope[/th][/tr]" + NEWLINE +
-            "[tr][td]:.::/|:[/td][td]1/25C[/td][td]2048/2025[/td][td][  11  -4  -2 ⟩[/td][td] 19.553[/td][td] -5.204[/td][/tr]" + NEWLINE +
-            "[tr][td]:/ /|:[/td][td]1/25S[/td][td]6561/6400[/td][td][  -8   8  -2 ⟩[/td][td] 43.013[/td][td]  5.352[/td][/tr]" + NEWLINE +
+            "[tr][th][pre]symbol  [/pre][/th][th][pre]name[/pre][/th][th][pre]ratio[/pre][/th][th][pre]monzo[/pre][/th][th][pre]cents[/pre][/th][th][pre]apotome slope[/pre][/th][/tr]" + NEWLINE +
+            "[tr][td][pre]:.::/|:[/pre][/td][td][pre]1/25C[/pre][/td][td][pre]2048/2025[/pre][/td][td][pre][  11  -4  -2 ⟩[/pre][/td][td][pre] 19.553[/pre][/td][td][pre] -5.204[/pre][/td][/tr]" + NEWLINE +
+            "[tr][td][pre]:/ /|:[/pre][/td][td][pre]1/25S[/pre][/td][td][pre]6561/6400[/pre][/td][td][pre][  -8   8  -2 ⟩[/pre][/td][td][pre] 43.013[/pre][/td][td][pre]  5.352[/pre][/td][/tr]" + NEWLINE +
             "[/table]" + NEWLINE as Io
         expect(actual).toBe(expected)
     })

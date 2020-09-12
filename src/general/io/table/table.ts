@@ -12,6 +12,8 @@ import { FormatTableOptions, Table } from "./types"
 //  and look no further than ratios which can be 57/56 or 1707519933/1677721600
 //  the point is: a robust alignment capability must process all entries in a column,
 //  variable entries, as a pass at the end
+//  - note that, while you did just add the [pre] monospaced tag for the forum tables
+//  that should stipulate that you use the same spacing methods for the forum tables now too...
 
 const formatTable = <T = unknown>(table: Table<T>, options?: Partial<FormatTableOptions<T>>) => {
     const rowLengths = table.map(row => row.length)
@@ -22,7 +24,7 @@ const formatTable = <T = unknown>(table: Table<T>, options?: Partial<FormatTable
     }
 
     // TODO: consider a TSV format for tables per http://forum.sagittal.org/viewtopic.php?p=2409#p2409
-    //  in TSV it would be best if all the closing angle-brackets ended up in the same rightward column, 
+    //  in TSV it would be best if all the closing angle-brackets ended up in the same rightward column,
     //  so we don't have columns with some numbers and some angle-brackets.
     //  - and include a BOM (https://csv.thephpleague.com/8.0/bom/)
 

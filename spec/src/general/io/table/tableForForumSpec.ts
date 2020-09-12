@@ -14,9 +14,9 @@ describe("formatTableForForum", () => {
 
         let expected =
             "[table]\n" +
-            "[tr][th]comma name[/th][th]limit[/th][th]2,3-free sopfr[/th][th]cents[/th][th]monzo[/th][th]ratio[/th][th]apotome slope[/th][th]N2D3P9[/th][/tr]\n" +
-            "[tr][td]11M[/td][td]11[/td][td]11[/td][td]45.45[/td][td][0 0 1⟩[/td][td]33/32[/td][td]-4[/td][td]6.722[/td][/tr]\n" +
-            "[tr][td]25/49M[/td][td]7[/td][td]24[/td][td]33.4[/td][td][0 0⟩[/td][td]50/49[/td][td]-59.333[/td][td]26.466[/td][/tr]\n" +
+            "[tr][th][pre]comma name[/pre][/th][th][pre]limit[/pre][/th][th][pre]2,3-free sopfr[/pre][/th][th][pre]cents[/pre][/th][th][pre]monzo[/pre][/th][th][pre]ratio[/pre][/th][th][pre]apotome slope[/pre][/th][th][pre]N2D3P9[/pre][/th][/tr]\n" +
+            "[tr][td][pre]11M[/pre][/td][td][pre]11[/pre][/td][td][pre]11[/pre][/td][td][pre]45.45[/pre][/td][td][pre][0 0 1⟩[/pre][/td][td][pre]33/32[/pre][/td][td][pre]-4[/pre][/td][td][pre]6.722[/pre][/td][/tr]\n" +
+            "[tr][td][pre]25/49M[/pre][/td][td][pre]7[/pre][/td][td][pre]24[/pre][/td][td][pre]33.4[/pre][/td][td][pre][0 0⟩[/pre][/td][td][pre]50/49[/pre][/td][td][pre]-59.333[/pre][/td][td][pre]26.466[/pre][/td][/tr]\n" +
             "[/table]\n" as Io
         expect(actual).toEqual(expected)
     })
@@ -33,10 +33,10 @@ describe("formatTableForForum", () => {
 
         let expected =
             "[table]\n" +
-            "[tr][th]comma[/th][th][/th][th]2,3-free[/th][th][/th][th][/th][th][/th][th]apotome[/th][th][/th][/tr]\n" +
-            "[tr][th]name[/th][th]limit[/th][th]sopfr[/th][th]cents[/th][th]monzo[/th][th]ratio[/th][th]slope[/th][th]N2D3P9[/th][/tr]\n" +     // Note the second header row!
-            "[tr][td]11M[/td][td]11[/td][td]11[/td][td]45.45[/td][td][0 0 1⟩[/td][td]33/32[/td][td]-4[/td][td]6.722[/td][/tr]\n" +
-            "[tr][td]25/49M[/td][td]7[/td][td]24[/td][td]33.4[/td][td][0 0⟩[/td][td]50/49[/td][td]-59.333[/td][td]26.466[/td][/tr]\n" +
+            "[tr][th][pre]comma[/pre][/th][th][pre][/pre][/th][th][pre]2,3-free[/pre][/th][th][pre][/pre][/th][th][pre][/pre][/th][th][pre][/pre][/th][th][pre]apotome[/pre][/th][th][pre][/pre][/th][/tr]\n" +
+            "[tr][th][pre]name[/pre][/th][th][pre]limit[/pre][/th][th][pre]sopfr[/pre][/th][th][pre]cents[/pre][/th][th][pre]monzo[/pre][/th][th][pre]ratio[/pre][/th][th][pre]slope[/pre][/th][th][pre]N2D3P9[/pre][/th][/tr]\n" +     // Note the second header row!
+            "[tr][td][pre]11M[/pre][/td][td][pre]11[/pre][/td][td][pre]11[/pre][/td][td][pre]45.45[/pre][/td][td][pre][0 0 1⟩[/pre][/td][td][pre]33/32[/pre][/td][td][pre]-4[/pre][/td][td][pre]6.722[/pre][/td][/tr]\n" +
+            "[tr][td][pre]25/49M[/pre][/td][td][pre]7[/pre][/td][td][pre]24[/pre][/td][td][pre]33.4[/pre][/td][td][pre][0 0⟩[/pre][/td][td][pre]50/49[/pre][/td][td][pre]-59.333[/pre][/td][td][pre]26.466[/pre][/td][/tr]\n" +
             "[/table]\n" as Io
         expect(actual).toEqual(expected)
     })
@@ -53,10 +53,10 @@ describe("formatTableForForum", () => {
 
         let expected =
             "[table]\n" +
-            "[tr][th][hilite=yellow]comma[/hilite][/th][th][hilite=yellow][/hilite][/th][th][hilite=yellow]2,3-free[/hilite][/th][th][hilite=yellow][/hilite][/th][th][hilite=yellow][/hilite][/th][th][hilite=yellow][/hilite][/th][th][hilite=yellow]apotome[/hilite][/th][th][hilite=yellow][/hilite][/th][/tr]\n" +
-            "[tr][td][hilite=red]name[/hilite][/td][td][hilite=red]limit[/hilite][/td][td][hilite=red]sopfr[/hilite][/td][td][hilite=red]cents[/hilite][/td][td][hilite=red]monzo[/hilite][/td][td][hilite=red]ratio[/hilite][/td][td][hilite=red]slope[/hilite][/td][td][hilite=red]N2D3P9[/hilite][/td][/tr]\n" +
-            "[tr][td][hilite=blue]11M[/hilite][/td][td][hilite=blue]11[/hilite][/td][td][hilite=blue]11[/hilite][/td][td][hilite=blue]45.45[/hilite][/td][td][hilite=blue][0 0 1⟩[/hilite][/td][td][hilite=blue]33/32[/hilite][/td][td][hilite=blue]-4[/hilite][/td][td][hilite=blue]6.722[/hilite][/td][/tr]\n" +
-            "[tr][td][hilite=cyan]25/49M[/hilite][/td][td][hilite=cyan]7[/hilite][/td][td][hilite=cyan]24[/hilite][/td][td][hilite=cyan]33.4[/hilite][/td][td][hilite=cyan][0 0⟩[/hilite][/td][td][hilite=cyan]50/49[/hilite][/td][td][hilite=cyan]-59.333[/hilite][/td][td][hilite=cyan]26.466[/hilite][/td][/tr]\n" +
+            "[tr][th][pre][hilite=yellow]comma[/hilite][/pre][/th][th][pre][hilite=yellow][/hilite][/pre][/th][th][pre][hilite=yellow]2,3-free[/hilite][/pre][/th][th][pre][hilite=yellow][/hilite][/pre][/th][th][pre][hilite=yellow][/hilite][/pre][/th][th][pre][hilite=yellow][/hilite][/pre][/th][th][pre][hilite=yellow]apotome[/hilite][/pre][/th][th][pre][hilite=yellow][/hilite][/pre][/th][/tr]\n" +
+            "[tr][td][pre][hilite=red]name[/hilite][/pre][/td][td][pre][hilite=red]limit[/hilite][/pre][/td][td][pre][hilite=red]sopfr[/hilite][/pre][/td][td][pre][hilite=red]cents[/hilite][/pre][/td][td][pre][hilite=red]monzo[/hilite][/pre][/td][td][pre][hilite=red]ratio[/hilite][/pre][/td][td][pre][hilite=red]slope[/hilite][/pre][/td][td][pre][hilite=red]N2D3P9[/hilite][/pre][/td][/tr]\n" +
+            "[tr][td][pre][hilite=blue]11M[/hilite][/pre][/td][td][pre][hilite=blue]11[/hilite][/pre][/td][td][pre][hilite=blue]11[/hilite][/pre][/td][td][pre][hilite=blue]45.45[/hilite][/pre][/td][td][pre][hilite=blue][0 0 1⟩[/hilite][/pre][/td][td][pre][hilite=blue]33/32[/hilite][/pre][/td][td][pre][hilite=blue]-4[/hilite][/pre][/td][td][pre][hilite=blue]6.722[/hilite][/pre][/td][/tr]\n" +
+            "[tr][td][pre][hilite=cyan]25/49M[/hilite][/pre][/td][td][pre][hilite=cyan]7[/hilite][/pre][/td][td][pre][hilite=cyan]24[/hilite][/pre][/td][td][pre][hilite=cyan]33.4[/hilite][/pre][/td][td][pre][hilite=cyan][0 0⟩[/hilite][/pre][/td][td][pre][hilite=cyan]50/49[/hilite][/pre][/td][td][pre][hilite=cyan]-59.333[/hilite][/pre][/td][td][pre][hilite=cyan]26.466[/hilite][/pre][/td][/tr]\n" +
             "[/table]\n" as Io
         expect(actual).toEqual(expected)
     })
@@ -73,10 +73,10 @@ describe("formatTableForForum", () => {
 
         let expected =
             "[table]\n" +
-            "[tr][th][right]comma[/right][/th][th][center][/center][/th][th]2,3-free[/th][th][/th][th][/th][th][/th][th]apotome[/th][th][/th][/tr]\n" +
-            "[tr][td][right]name[/right][/td][td][center]limit[/center][/td][td]sopfr[/td][td]cents[/td][td]monzo[/td][td]ratio[/td][td]slope[/td][td]N2D3P9[/td][/tr]\n" +
-            "[tr][td][right]11M[/right][/td][td][center]11[/center][/td][td]11[/td][td]45.45[/td][td][0 0 1⟩[/td][td]33/32[/td][td]-4[/td][td]6.722[/td][/tr]\n" +
-            "[tr][td][right]25/49M[/right][/td][td][center]7[/center][/td][td]24[/td][td]33.4[/td][td][0 0⟩[/td][td]50/49[/td][td]-59.333[/td][td]26.466[/td][/tr]\n" +
+            "[tr][th][pre][right]comma[/right][/pre][/th][th][pre][center][/center][/pre][/th][th][pre]2,3-free[/pre][/th][th][pre][/pre][/th][th][pre][/pre][/th][th][pre][/pre][/th][th][pre]apotome[/pre][/th][th][pre][/pre][/th][/tr]\n" +
+            "[tr][td][pre][right]name[/right][/pre][/td][td][pre][center]limit[/center][/pre][/td][td][pre]sopfr[/pre][/td][td][pre]cents[/pre][/td][td][pre]monzo[/pre][/td][td][pre]ratio[/pre][/td][td][pre]slope[/pre][/td][td][pre]N2D3P9[/pre][/td][/tr]\n" +
+            "[tr][td][pre][right]11M[/right][/pre][/td][td][pre][center]11[/center][/pre][/td][td][pre]11[/pre][/td][td][pre]45.45[/pre][/td][td][pre][0 0 1⟩[/pre][/td][td][pre]33/32[/pre][/td][td][pre]-4[/pre][/td][td][pre]6.722[/pre][/td][/tr]\n" +
+            "[tr][td][pre][right]25/49M[/right][/pre][/td][td][pre][center]7[/center][/pre][/td][td][pre]24[/pre][/td][td][pre]33.4[/pre][/td][td][pre][0 0⟩[/pre][/td][td][pre]50/49[/pre][/td][td][pre]-59.333[/pre][/td][td][pre]26.466[/pre][/td][/tr]\n" +
             "[/table]\n" as Io
         expect(actual).toEqual(expected)
     })

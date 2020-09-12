@@ -5,7 +5,7 @@ import { targetColors } from "./colors"
 import { LogTarget, SaveLogOptions } from "./types"
 import { write } from "./write"
 
-// TODO: the LogTargets should not have to do with the scripts, should be generic
+// TODO: GENERIC LOG TARGETS the LogTargets should not have to do with the scripts, should be generic
 //  And file name should be different
 //  Maybe it should just be the friggin filename
 //  and then also update filenames in results/ folders to match
