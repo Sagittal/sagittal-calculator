@@ -1,7 +1,7 @@
-import { Column, computeHeaderRowsFromColumnTitleColumns, Row } from "../../../../../general"
+import { Io, Row, splitColumnTitlesIntoRowsBySpaces } from "../../../../../general"
 import { AnalyzedBound } from "../../../analyzeBound"
 
-const BOUNDS_ANALYSIS_COLUMN_TITLES = [
+const BOUNDS_ANALYSIS_COLUMN_TITLES: Io[] = [
     "bound id",
     "lesser mina",
     "greater mina",
@@ -25,14 +25,10 @@ const BOUNDS_ANALYSIS_COLUMN_TITLES = [
     "actual bound pos (¢)",
     "initial comma mean pos (¢)",
     "a.b.vs i.c.m. error (tinas)",
-]
+] as Io[]
 
-const computeBoundsAnalysisHeaderRows = (): Array<Row<{ of: AnalyzedBound, header: true }>> => {
-    const boundsAnalysisColumnTitleColumns: Array<Column<AnalyzedBound>> = BOUNDS_ANALYSIS_COLUMN_TITLES
-        .map(columnTitle => columnTitle.split(" ")) as Array<Column<AnalyzedBound>>
-
-    return computeHeaderRowsFromColumnTitleColumns(boundsAnalysisColumnTitleColumns, { includeSpacerRow: true })
-}
+const computeBoundsAnalysisHeaderRows = (): Array<Row<{ of: AnalyzedBound, header: true }>> =>
+    splitColumnTitlesIntoRowsBySpaces(BOUNDS_ANALYSIS_COLUMN_TITLES)
 
 export {
     computeBoundsAnalysisHeaderRows,

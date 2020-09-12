@@ -43,7 +43,6 @@ export {
     ColorMethod,
     Column,
     CommandFlag,
-    computeHeaderRowsFromColumnTitleColumns,
     computePx,
     Filename,
     formatInteger,
@@ -76,6 +75,7 @@ export {
     SUPERSCRIPT_NUMS,
     TAB,
     Table,
+    splitColumnTitlesIntoRowsBySpaces,
 } from "./io"
 export {
     abs,

@@ -1,6 +1,6 @@
 import { Maybe } from "../../code"
 import { Count } from "../../types"
-import { ColorMethod, Formatted, Io } from "../types"
+import { ColorMethod, Formatted } from "../types"
 
 enum Justification {
     LEFT = "left",
@@ -10,20 +10,22 @@ enum Justification {
 
 type JustificationOption = Justification | Array<Maybe<Justification>>
 
-type RowTypeParameters = Partial<{
+type TableTypeParameters = Partial<{
     of: unknown,
     header: boolean,
 }>
 
-type Row<T extends RowTypeParameters = {}> =
+type Row<T extends TableTypeParameters = {}> =
     Array<Formatted>
     & { _RowBrand: "Row" }
     & (T extends { of: unknown } ? {} : { _RowOfBrand: Pick<T, "of"> })
     & (T extends { header: true } ? { _HeaderBrand: "Header" } : {})
-type Column<T = void> =
+type Column<T extends TableTypeParameters = { }> =
     Array<Formatted>
     & { _ColumnBrand: "Column" }
-    & (T extends void ? {} : { _ColumnOfBrand: T })
+    & (T extends { of: unknown } ? {} : { _ColumnOfBrand: Pick<T, "of"> })
+    & (T extends { header: true } ? { _HeaderBrand: "Header" } : {})
+
 type Table<T = void> = Array<Row<{ of: T }>>
 
 interface JustifiedCellOptions {

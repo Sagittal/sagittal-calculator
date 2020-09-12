@@ -1,7 +1,7 @@
 import { BLANK, Column, Formatted, max, Row } from "../../../general"
 
 const computeHeaderRowsFromColumnTitleColumns = <T>(
-    columnTitleColumns: Array<Column<T>>,
+    columnTitleColumns: Array<Column<{ of: T }>>,
     { includeSpacerRow = false }: { includeSpacerRow?: boolean } = {},
 ): Array<Row<{ of: T, header: true }>> => {
     const maxColumnTitleHeaderRowCount = max(...columnTitleColumns.map(columnTitleColumn => columnTitleColumn.length))
