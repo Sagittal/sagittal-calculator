@@ -22,8 +22,8 @@ const computePrimeExponentRange = (
     options: PrimeExponentRangeOptions = {},
 ): Range<Integer & Exponent<Prime>> => {
     const {
-        max23FreeSopfr = Infinity as Sopfr<5>,
-        max23FreeCopfr = Infinity as Copfr<5>,
+        max23FreeSopfr = Infinity as Sopfr<{ rough: 5 }>,
+        max23FreeCopfr = Infinity as Copfr<{ rough: 5 }>,
         primeExponentExtremaGivenMaxN2D3P9,
     } = options
 

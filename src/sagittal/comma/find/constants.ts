@@ -12,8 +12,8 @@ const DEFAULT_JI_PITCH_SCRIPT_GROUP_MAX_N2D3P9 = 307 as Max<N2D3P9>
 const DEFAULT_SORT_KEY = "n2d3p9" as ObjectKey
 
 // only used for find-commas
-const DEFAULT_MAX_TWO_THREE_FREE_SOPFR = 61 as Max<Sopfr<5>> // seems to be able to go as high as 127 without crashing
-const DEFAULT_MAX_TWO_THREE_FREE_COPFR = 555 as Max<Copfr<5>> // A silly number, unlikely to come close
+const DEFAULT_MAX_TWO_THREE_FREE_SOPFR = 61 as Max<Sopfr<{ rough: 5 }>> // can go as high as 127 without crashing
+const DEFAULT_MAX_TWO_THREE_FREE_COPFR = 555 as Max<Copfr<{ rough: 5 }>> // A silly number, unlikely to come close
 const DEFAULT_MAX_PRIME_LIMIT = 47 as Max<Max<Prime>> // can be set as high as sopfr; no sense going beyond it
 
 export {

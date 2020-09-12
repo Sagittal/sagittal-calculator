@@ -13,7 +13,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 0 as Id<SagittalComma>,
                 apotomeSlope: 0 as ApotomeSlope,
-                twoThreeFreeSopfr: 0 as Sopfr<5>,
+                twoThreeFreeSopfr: 0 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [] as Monzo } as TwoThreeFreeClass,
                 limit: 1 as Prime,
                 ratio: [1, 1] as Ratio,
@@ -25,7 +25,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 1 as Id<SagittalComma>,
                 apotomeSlope: -2.0260281743766777 as ApotomeSlope,
-                twoThreeFreeSopfr: 25 as Sopfr<5>,
+                twoThreeFreeSopfr: 25 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 1, 1, 0, 1] } as TwoThreeFreeClass,
                 limit: 13 as Prime,
                 ratio: [4096, 4095] as Ratio,
@@ -37,7 +37,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 2 as Id<SagittalComma>,
                 apotomeSlope: -3.0512615482973438 as ApotomeSlope,
-                twoThreeFreeSopfr: 36 as Sopfr<5>,
+                twoThreeFreeSopfr: 36 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, -1, 1, 1, -1] } as TwoThreeFreeClass,
                 limit: 13 as Prime,
                 ratio: [2080, 2079] as Ratio,
@@ -49,7 +49,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 3 as Id<SagittalComma>,
                 apotomeSlope: -5.08769921319839 as ApotomeSlope,
-                twoThreeFreeSopfr: 24 as Sopfr<5>,
+                twoThreeFreeSopfr: 24 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, -1, 0, 0, 0, 0, 1] } as TwoThreeFreeClass,
                 limit: 19 as Prime,
                 ratio: [1216, 1215] as Ratio,
@@ -61,7 +61,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 4 as Id<SagittalComma>,
                 apotomeSlope: 7.87970229329454 as ApotomeSlope,
-                twoThreeFreeSopfr: 5 as Sopfr<5>,
+                twoThreeFreeSopfr: 5 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 1] } as TwoThreeFreeClass,
                 limit: 5 as Prime,
                 ratio: [32805, 32768] as Ratio,
@@ -73,7 +73,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 5 as Id<SagittalComma>,
                 apotomeSlope: 5.853674118917862 as ApotomeSlope,
-                twoThreeFreeSopfr: 20 as Sopfr<5>,
+                twoThreeFreeSopfr: 20 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 0, 1, 0, 1] } as TwoThreeFreeClass,
                 limit: 13 as Prime,
                 ratio: [729, 728] as Ratio,
@@ -85,7 +85,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 6 as Id<SagittalComma>,
                 apotomeSlope: 9.816371210875515 as ApotomeSlope,
-                twoThreeFreeSopfr: 46 as Sopfr<5>,
+                twoThreeFreeSopfr: 46 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 4, 1, 0, 0, 0, -1] } as TwoThreeFreeClass,
                 limit: 19 as Prime,
                 ratio: [1121931, 1120000] as Ratio,
@@ -97,7 +97,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 7 as Id<SagittalComma>,
                 apotomeSlope: 2.792003080096156 as ApotomeSlope,
-                twoThreeFreeSopfr: 19 as Sopfr<5>,
+                twoThreeFreeSopfr: 19 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 0, 0, 0, 0, 0, 1] } as TwoThreeFreeClass,
                 limit: 19 as Prime,
                 ratio: [513, 512] as Ratio,
@@ -109,7 +109,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 8 as Id<SagittalComma>,
                 apotomeSlope: 1.7580058265373588 as ApotomeSlope,
-                twoThreeFreeSopfr: 30 as Sopfr<5>,
+                twoThreeFreeSopfr: 30 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 1, -2, 1] } as TwoThreeFreeClass,
                 limit: 11 as Prime,
                 ratio: [441, 440] as Ratio,
@@ -121,7 +121,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 9 as Id<SagittalComma>,
                 apotomeSlope: -1.2772391358039261 as ApotomeSlope,
-                twoThreeFreeSopfr: 23 as Sopfr<5>,
+                twoThreeFreeSopfr: 23 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 1, 1, 1] } as TwoThreeFreeClass,
                 limit: 11 as Prime,
                 ratio: [385, 384] as Ratio,
@@ -133,7 +133,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 10 as Id<SagittalComma>,
                 apotomeSlope: -3.3032673101806025 as ApotomeSlope,
-                twoThreeFreeSopfr: 24 as Sopfr<5>,
+                twoThreeFreeSopfr: 24 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 0, 0, -1, 1] } as TwoThreeFreeClass,
                 limit: 13 as Prime,
                 ratio: [352, 351] as Ratio,
@@ -145,7 +145,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 11 as Id<SagittalComma>,
                 apotomeSlope: 5.664569248266845 as ApotomeSlope,
-                twoThreeFreeSopfr: 42 as Sopfr<5>,
+                twoThreeFreeSopfr: 42 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 1] } as TwoThreeFreeClass,
                 limit: 31 as Prime,
                 ratio: [22599, 22528] as Ratio,
@@ -157,7 +157,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 12 as Id<SagittalComma>,
                 apotomeSlope: -6.354528858477924 as ApotomeSlope,
-                twoThreeFreeSopfr: 12 as Sopfr<5>,
+                twoThreeFreeSopfr: 12 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, -1, 1] } as TwoThreeFreeClass,
                 limit: 7 as Prime,
                 ratio: [5120, 5103] as Ratio,
@@ -169,7 +169,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 13 as Id<SagittalComma>,
                 apotomeSlope: -7.3989356025611 as ApotomeSlope,
-                twoThreeFreeSopfr: 26 as Sopfr<5>,
+                twoThreeFreeSopfr: 26 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, -1, 3] } as TwoThreeFreeClass,
                 limit: 7 as Prime,
                 ratio: [10976, 10935] as Ratio,
@@ -181,7 +181,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 14 as Id<SagittalComma>,
                 apotomeSlope: -1.4172153569795727 as ApotomeSlope,
-                twoThreeFreeSopfr: 22 as Sopfr<5>,
+                twoThreeFreeSopfr: 22 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 1, 0, 0, 0, 1] } as TwoThreeFreeClass,
                 limit: 17 as Prime,
                 ratio: [256, 255] as Ratio,
@@ -193,7 +193,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 15 as Id<SagittalComma>,
                 apotomeSlope: 8.549541565595955 as ApotomeSlope,
-                twoThreeFreeSopfr: 24 as Sopfr<5>,
+                twoThreeFreeSopfr: 24 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 2, 2] } as TwoThreeFreeClass,
                 limit: 7 as Prime,
                 ratio: [19683, 19600] as Ratio,
@@ -205,7 +205,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 16 as Id<SagittalComma>,
                 apotomeSlope: 1.5251734348165948 as ApotomeSlope,
-                twoThreeFreeSopfr: 17 as Sopfr<5>,
+                twoThreeFreeSopfr: 17 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 2, -1] } as TwoThreeFreeClass,
                 limit: 7 as Prime,
                 ratio: [225, 224] as Ratio,
@@ -217,7 +217,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 17 as Id<SagittalComma>,
                 apotomeSlope: 0.4807666907334335 as ApotomeSlope,
-                twoThreeFreeSopfr: 21 as Sopfr<5>,
+                twoThreeFreeSopfr: 21 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 0, 3] } as TwoThreeFreeClass,
                 limit: 7 as Prime,
                 ratio: [1029, 1024] as Ratio,
@@ -229,7 +229,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 18 as Id<SagittalComma>,
                 apotomeSlope: 6.462486936314958 as ApotomeSlope,
-                twoThreeFreeSopfr: 17 as Sopfr<5>,
+                twoThreeFreeSopfr: 17 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 0, 0, 0, 0, 1] } as TwoThreeFreeClass,
                 limit: 17 as Prime,
                 ratio: [2187, 2176] as Ratio,
@@ -241,7 +241,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 19 as Id<SagittalComma>,
                 apotomeSlope: 1.4346448968302474 as ApotomeSlope,
-                twoThreeFreeSopfr: 44 as Sopfr<5>,
+                twoThreeFreeSopfr: 44 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 0, 0, 4] } as TwoThreeFreeClass,
                 limit: 11 as Prime,
                 ratio: [131769, 131072] as Ratio,
@@ -253,7 +253,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 20 as Id<SagittalComma>,
                 apotomeSlope: -4.596523031940592 as ApotomeSlope,
-                twoThreeFreeSopfr: 18 as Sopfr<5>,
+                twoThreeFreeSopfr: 18 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 0, -1, 1] } as TwoThreeFreeClass,
                 limit: 11 as Prime,
                 ratio: [896, 891] as Ratio,
@@ -265,7 +265,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 21 as Id<SagittalComma>,
                 apotomeSlope: -7.631767994281849 as ApotomeSlope,
-                twoThreeFreeSopfr: 21 as Sopfr<5>,
+                twoThreeFreeSopfr: 21 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 2, 0, 1] } as TwoThreeFreeClass,
                 limit: 11 as Prime,
                 ratio: [2200, 2187] as Ratio,
@@ -277,7 +277,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 22 as Id<SagittalComma>,
                 apotomeSlope: 6.334440809651306 as ApotomeSlope,
-                twoThreeFreeSopfr: 27 as Sopfr<5>,
+                twoThreeFreeSopfr: 27 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 0, 2, 0, -1] } as TwoThreeFreeClass,
                 limit: 13 as Prime,
                 ratio: [107163, 106496] as Ratio,
@@ -289,7 +289,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 23 as Id<SagittalComma>,
                 apotomeSlope: -5.684689586176505 as ApotomeSlope,
-                twoThreeFreeSopfr: 31 as Sopfr<5>,
+                twoThreeFreeSopfr: 31 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 2, 3] } as TwoThreeFreeClass,
                 limit: 7 as Prime,
                 ratio: [2097152, 2083725] as Ratio,
@@ -301,7 +301,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 24 as Id<SagittalComma>,
                 apotomeSlope: 3.283179261353948 as ApotomeSlope,
-                twoThreeFreeSopfr: 23 as Sopfr<5>,
+                twoThreeFreeSopfr: 23 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 1, 1, -1] } as TwoThreeFreeClass,
                 limit: 11 as Prime,
                 ratio: [2835, 2816] as Ratio,
@@ -313,7 +313,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 25 as Id<SagittalComma>,
                 apotomeSlope: 1.2571510869772689 as ApotomeSlope,
-                twoThreeFreeSopfr: 24 as Sopfr<5>,
+                twoThreeFreeSopfr: 24 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 0, 0, 1, 1] } as TwoThreeFreeClass,
                 limit: 13 as Prime,
                 ratio: [144, 143] as Ratio,
@@ -325,7 +325,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 26 as Id<SagittalComma>,
                 apotomeSlope: -3.786707538463497 as ApotomeSlope,
-                twoThreeFreeSopfr: 22 as Sopfr<5>,
+                twoThreeFreeSopfr: 22 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, -1, 0, 0, 0, 1] } as TwoThreeFreeClass,
                 limit: 17 as Prime,
                 ratio: [136, 135] as Ratio,
@@ -337,7 +337,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 27 as Id<SagittalComma>,
                 apotomeSlope: -5.8169954737802305 as ApotomeSlope,
-                twoThreeFreeSopfr: 34 as Sopfr<5>,
+                twoThreeFreeSopfr: 34 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 0, 0, -1, 0, 0, 0, 1] } as TwoThreeFreeClass,
                 limit: 23 as Prime,
                 ratio: [5632, 5589] as Ratio,
@@ -349,7 +349,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 28 as Id<SagittalComma>,
                 apotomeSlope: 1.1506059630348515 as ApotomeSlope,
-                twoThreeFreeSopfr: 22 as Sopfr<5>,
+                twoThreeFreeSopfr: 22 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 3, -1] } as TwoThreeFreeClass,
                 limit: 7 as Prime,
                 ratio: [126, 125] as Ratio,
@@ -361,7 +361,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 29 as Id<SagittalComma>,
                 apotomeSlope: -5.8737621677444976 as ApotomeSlope,
-                twoThreeFreeSopfr: 19 as Sopfr<5>,
+                twoThreeFreeSopfr: 19 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 1, 2] } as TwoThreeFreeClass,
                 limit: 7 as Prime,
                 ratio: [245, 243] as Ratio,
@@ -373,7 +373,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 30 as Id<SagittalComma>,
                 apotomeSlope: 4.0929947548310315 as ApotomeSlope,
-                twoThreeFreeSopfr: 17 as Sopfr<5>,
+                twoThreeFreeSopfr: 17 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 0, 0, 0, 0, 1] } as TwoThreeFreeClass,
                 limit: 17 as Prime,
                 ratio: [4131, 4096] as Ratio,
@@ -385,7 +385,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 31 as Id<SagittalComma>,
                 apotomeSlope: -4.93590054760375 as ApotomeSlope,
-                twoThreeFreeSopfr: 31 as Sopfr<5>,
+                twoThreeFreeSopfr: 31 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 0, -1, 1, 1] } as TwoThreeFreeClass,
                 limit: 13 as Prime,
                 ratio: [572, 567] as Ratio,
@@ -397,7 +397,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 32 as Id<SagittalComma>,
                 apotomeSlope: 9.030308256329384 as ApotomeSlope,
-                twoThreeFreeSopfr: 17 as Sopfr<5>,
+                twoThreeFreeSopfr: 17 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 2, -1] } as TwoThreeFreeClass,
                 limit: 7 as Prime,
                 ratio: [413343, 409600] as Ratio,
@@ -409,7 +409,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 33 as Id<SagittalComma>,
                 apotomeSlope: 2.0059401255500386 as ApotomeSlope,
-                twoThreeFreeSopfr: 24 as Sopfr<5>,
+                twoThreeFreeSopfr: 24 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 2, 2] } as TwoThreeFreeClass,
                 limit: 7 as Prime,
                 ratio: [33075, 32768] as Ratio,
@@ -421,7 +421,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 34 as Id<SagittalComma>,
                 apotomeSlope: -7.018695415944691 as ApotomeSlope,
-                twoThreeFreeSopfr: 23 as Sopfr<5>,
+                twoThreeFreeSopfr: 23 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 0, 0, 0, 0, 0, 0, 1] } as TwoThreeFreeClass,
                 limit: 23 as Prime,
                 ratio: [736, 729] as Ratio,
@@ -433,7 +433,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 35 as Id<SagittalComma>,
                 apotomeSlope: -2.046116223203322 as ApotomeSlope,
-                twoThreeFreeSopfr: 26 as Sopfr<5>,
+                twoThreeFreeSopfr: 26 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 0, 0, 0, 2] } as TwoThreeFreeClass,
                 limit: 13 as Prime,
                 ratio: [512, 507] as Ratio,
@@ -445,7 +445,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 36 as Id<SagittalComma>,
                 apotomeSlope: 0.9177735713141166 as ApotomeSlope,
-                twoThreeFreeSopfr: 25 as Sopfr<5>,
+                twoThreeFreeSopfr: 25 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 0, 2, -1] } as TwoThreeFreeClass,
                 limit: 11 as Prime,
                 ratio: [99, 98] as Ratio,
@@ -457,7 +457,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 37 as Id<SagittalComma>,
                 apotomeSlope: 4.890912442879147 as ApotomeSlope,
-                twoThreeFreeSopfr: 42 as Sopfr<5>,
+                twoThreeFreeSopfr: 42 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 1] } as TwoThreeFreeClass,
                 limit: 31 as Prime,
                 ratio: [8019, 7936] as Ratio,
@@ -469,7 +469,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 38 as Id<SagittalComma>,
                 apotomeSlope: -10.141236396941448 as ApotomeSlope,
-                twoThreeFreeSopfr: 24 as Sopfr<5>,
+                twoThreeFreeSopfr: 24 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 0, -1, 0, 0, 1] } as TwoThreeFreeClass,
                 limit: 17 as Prime,
                 ratio: [139264, 137781] as Ratio,
@@ -481,7 +481,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 39 as Id<SagittalComma>,
                 apotomeSlope: -3.1778947210664006 as ApotomeSlope,
-                twoThreeFreeSopfr: 25 as Sopfr<5>,
+                twoThreeFreeSopfr: 25 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, -1, 1, 0, 1] } as TwoThreeFreeClass,
                 limit: 13 as Prime,
                 ratio: [91, 90] as Ratio,
@@ -493,7 +493,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 40 as Id<SagittalComma>,
                 apotomeSlope: -5.2039228954430845 as ApotomeSlope,
-                twoThreeFreeSopfr: 10 as Sopfr<5>,
+                twoThreeFreeSopfr: 10 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 2] } as TwoThreeFreeClass,
                 limit: 5 as Prime,
                 ratio: [2048, 2025] as Ratio,
@@ -505,7 +505,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 41 as Id<SagittalComma>,
                 apotomeSlope: 7.763478611049832 as ApotomeSlope,
-                twoThreeFreeSopfr: 19 as Sopfr<5>,
+                twoThreeFreeSopfr: 19 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 0, 0, 0, 0, 0, 1] } as TwoThreeFreeClass,
                 limit: 19 as Prime,
                 ratio: [19683, 19456] as Ratio,
@@ -517,7 +517,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 42 as Id<SagittalComma>,
                 apotomeSlope: -1.2565770766223527 as ApotomeSlope,
-                twoThreeFreeSopfr: 34 as Sopfr<5>,
+                twoThreeFreeSopfr: 34 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 0, 0, 1, 0, 0, 0, 1] } as TwoThreeFreeClass,
                 limit: 23 as Prime,
                 ratio: [256, 253] as Ratio,
@@ -529,7 +529,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 43 as Id<SagittalComma>,
                 apotomeSlope: 4.701807572228135 as ApotomeSlope,
-                twoThreeFreeSopfr: 20 as Sopfr<5>,
+                twoThreeFreeSopfr: 20 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 0, 1, 0, 1] } as TwoThreeFreeClass,
                 limit: 13 as Prime,
                 ratio: [66339, 65536] as Ratio,
@@ -541,7 +541,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 44 as Id<SagittalComma>,
                 apotomeSlope: 2.6757793978514623 as ApotomeSlope,
-                twoThreeFreeSopfr: 5 as Sopfr<5>,
+                twoThreeFreeSopfr: 5 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 1] } as TwoThreeFreeClass,
                 limit: 5 as Prime,
                 ratio: [81, 80] as Ratio,
@@ -553,7 +553,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 45 as Id<SagittalComma>,
                 apotomeSlope: -4.348588732927888 as ApotomeSlope,
-                twoThreeFreeSopfr: 22 as Sopfr<5>,
+                twoThreeFreeSopfr: 22 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 3, 1] } as TwoThreeFreeClass,
                 limit: 7 as Prime,
                 ratio: [875, 864] as Ratio,
@@ -565,7 +565,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 46 as Id<SagittalComma>,
                 apotomeSlope: -6.374616907304581 as ApotomeSlope,
-                twoThreeFreeSopfr: 23 as Sopfr<5>,
+                twoThreeFreeSopfr: 23 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 2, 0, 0, -1] } as TwoThreeFreeClass,
                 limit: 13 as Prime,
                 ratio: [3200, 3159] as Ratio,
@@ -577,7 +577,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 47 as Id<SagittalComma>,
                 apotomeSlope: -2.411919815346935 as ApotomeSlope,
-                twoThreeFreeSopfr: 29 as Sopfr<5>,
+                twoThreeFreeSopfr: 29 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 2, 0, 0, 0, 0, -1] } as TwoThreeFreeClass,
                 limit: 19 as Prime,
                 ratio: [76, 75] as Ratio,
@@ -589,7 +589,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 48 as Id<SagittalComma>,
                 apotomeSlope: 10.555481691145998 as ApotomeSlope,
-                twoThreeFreeSopfr: 0 as Sopfr<5>,
+                twoThreeFreeSopfr: 0 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [] as Monzo } as TwoThreeFreeClass,
                 limit: 3 as Prime,
                 ratio: [531441, 524288] as Ratio,
@@ -601,7 +601,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 49 as Id<SagittalComma>,
                 apotomeSlope: 3.5311135603666433 as ApotomeSlope,
-                twoThreeFreeSopfr: 27 as Sopfr<5>,
+                twoThreeFreeSopfr: 27 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 4, 1] } as TwoThreeFreeClass,
                 limit: 7 as Prime,
                 ratio: [1063125, 1048576] as Ratio,
@@ -613,7 +613,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 50 as Id<SagittalComma>,
                 apotomeSlope: -6.4811620312469955 as ApotomeSlope,
-                twoThreeFreeSopfr: 23 as Sopfr<5>,
+                twoThreeFreeSopfr: 23 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, -1, 1, 1] } as TwoThreeFreeClass,
                 limit: 11 as Prime,
                 ratio: [1232, 1215] as Ratio,
@@ -625,7 +625,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 51 as Id<SagittalComma>,
                 apotomeSlope: 1.5050853859899551 as ApotomeSlope,
-                twoThreeFreeSopfr: 28 as Sopfr<5>,
+                twoThreeFreeSopfr: 28 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 3, 0, 0, -1] } as TwoThreeFreeClass,
                 limit: 13 as Prime,
                 ratio: [3375, 3328] as Ratio,
@@ -637,7 +637,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 52 as Id<SagittalComma>,
                 apotomeSlope: 5.467782477947608 as ApotomeSlope,
-                twoThreeFreeSopfr: 24 as Sopfr<5>,
+                twoThreeFreeSopfr: 24 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, -1, 0, 0, 0, 0, 1] } as TwoThreeFreeClass,
                 limit: 19 as Prime,
                 ratio: [41553, 40960] as Ratio,
@@ -649,7 +649,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 53 as Id<SagittalComma>,
                 apotomeSlope: -9.532423579544341 as ApotomeSlope,
-                twoThreeFreeSopfr: 13 as Sopfr<5>,
+                twoThreeFreeSopfr: 13 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 0, 0, 0, 1] } as TwoThreeFreeClass,
                 limit: 13 as Prime,
                 ratio: [6656, 6561] as Ratio,
@@ -661,7 +661,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 54 as Id<SagittalComma>,
                 apotomeSlope: -11.558451753921005 as ApotomeSlope,
-                twoThreeFreeSopfr: 12 as Sopfr<5>,
+                twoThreeFreeSopfr: 12 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 1, 1] } as TwoThreeFreeClass,
                 limit: 7 as Prime,
                 ratio: [2097152, 2066715] as Ratio,
@@ -673,7 +673,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 55 as Id<SagittalComma>,
                 apotomeSlope: 1.3985402620475391 as ApotomeSlope,
-                twoThreeFreeSopfr: 18 as Sopfr<5>,
+                twoThreeFreeSopfr: 18 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 0, 1, 1] } as TwoThreeFreeClass,
                 limit: 11 as Prime,
                 ratio: [2079, 2048] as Ratio,
@@ -685,7 +685,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 56 as Id<SagittalComma>,
                 apotomeSlope: -0.6274879123291328 as ApotomeSlope,
-                twoThreeFreeSopfr: 29 as Sopfr<5>,
+                twoThreeFreeSopfr: 29 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 1, 0, -1, 1] } as TwoThreeFreeClass,
                 limit: 13 as Prime,
                 ratio: [66, 65] as Ratio,
@@ -697,7 +697,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 57 as Id<SagittalComma>,
                 apotomeSlope: -1.6527212862497995 as ApotomeSlope,
-                twoThreeFreeSopfr: 18 as Sopfr<5>,
+                twoThreeFreeSopfr: 18 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 1, 0, 0, 1] } as TwoThreeFreeClass,
                 limit: 13 as Prime,
                 ratio: [65, 64] as Ratio,
@@ -709,7 +709,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 58 as Id<SagittalComma>,
                 apotomeSlope: -3.678749460626471 as ApotomeSlope,
-                twoThreeFreeSopfr: 7 as Sopfr<5>,
+                twoThreeFreeSopfr: 7 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 0, 1] } as TwoThreeFreeClass,
                 limit: 7 as Prime,
                 ratio: [64, 63] as Ratio,
@@ -721,7 +721,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 59 as Id<SagittalComma>,
                 apotomeSlope: -10.703117591405828 as ApotomeSlope,
-                twoThreeFreeSopfr: 20 as Sopfr<5>,
+                twoThreeFreeSopfr: 20 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 4] } as TwoThreeFreeClass,
                 limit: 5 as Prime,
                 ratio: [20000, 19683] as Ratio,
@@ -733,7 +733,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 60 as Id<SagittalComma>,
                 apotomeSlope: 7.25221438096541 as ApotomeSlope,
-                twoThreeFreeSopfr: 24 as Sopfr<5>,
+                twoThreeFreeSopfr: 24 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 0, 0, -1, 1] } as TwoThreeFreeClass,
                 limit: 13 as Prime,
                 ratio: [216513, 212992] as Ratio,
@@ -745,7 +745,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 61 as Id<SagittalComma>,
                 apotomeSlope: 6.22698100704474 as ApotomeSlope,
-                twoThreeFreeSopfr: 23 as Sopfr<5>,
+                twoThreeFreeSopfr: 23 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 2, 0, 0, 1] } as TwoThreeFreeClass,
                 limit: 13 as Prime,
                 ratio: [2132325, 2097152] as Ratio,
@@ -757,7 +757,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 62 as Id<SagittalComma>,
                 apotomeSlope: 4.200952832668072 as ApotomeSlope,
-                twoThreeFreeSopfr: 12 as Sopfr<5>,
+                twoThreeFreeSopfr: 12 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, -1, 1] } as TwoThreeFreeClass,
                 limit: 7 as Prime,
                 ratio: [3645, 3584] as Ratio,
@@ -769,7 +769,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 63 as Id<SagittalComma>,
                 apotomeSlope: -2.8234152981112985 as ApotomeSlope,
-                twoThreeFreeSopfr: 25 as Sopfr<5>,
+                twoThreeFreeSopfr: 25 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 5] } as TwoThreeFreeClass,
                 limit: 5 as Prime,
                 ratio: [3125, 3072] as Ratio,
@@ -781,7 +781,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 64 as Id<SagittalComma>,
                 apotomeSlope: -6.858057135587489 as ApotomeSlope,
-                twoThreeFreeSopfr: 33 as Sopfr<5>,
+                twoThreeFreeSopfr: 33 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 1, 0, -1, 0, 1] } as TwoThreeFreeClass,
                 limit: 17 as Prime,
                 ratio: [2720, 2673] as Ratio,
@@ -793,7 +793,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 65 as Id<SagittalComma>,
                 apotomeSlope: -0.8867463805303144 as ApotomeSlope,
-                twoThreeFreeSopfr: 26 as Sopfr<5>,
+                twoThreeFreeSopfr: 26 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 0, -1, 0, 0, 0, 1] } as TwoThreeFreeClass,
                 limit: 19 as Prime,
                 ratio: [57, 56] as Ratio,
@@ -805,7 +805,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 66 as Id<SagittalComma>,
                 apotomeSlope: -1.9207436340891146 as ApotomeSlope,
-                twoThreeFreeSopfr: 23 as Sopfr<5>,
+                twoThreeFreeSopfr: 23 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 1, -1, 1] } as TwoThreeFreeClass,
                 limit: 11 as Prime,
                 ratio: [56, 55] as Ratio,
@@ -817,7 +817,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 67 as Id<SagittalComma>,
                 apotomeSlope: -4.955988596430404 as ApotomeSlope,
-                twoThreeFreeSopfr: 16 as Sopfr<5>,
+                twoThreeFreeSopfr: 16 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 1, 0, 1] } as TwoThreeFreeClass,
                 limit: 11 as Prime,
                 ratio: [55, 54] as Ratio,
@@ -829,7 +829,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 68 as Id<SagittalComma>,
                 apotomeSlope: -6.982016770807077 as ApotomeSlope,
-                twoThreeFreeSopfr: 31 as Sopfr<5>,
+                twoThreeFreeSopfr: 31 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 0, 1, -1, 1] } as TwoThreeFreeClass,
                 limit: 13 as Prime,
                 ratio: [22528, 22113] as Ratio,
@@ -841,7 +841,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 69 as Id<SagittalComma>,
                 apotomeSlope: -1.0086427776096758 as ApotomeSlope,
-                twoThreeFreeSopfr: 38 as Sopfr<5>,
+                twoThreeFreeSopfr: 38 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 3, 0, 0, 0, 0, 0, -1] } as TwoThreeFreeClass,
                 limit: 23 as Prime,
                 ratio: [375, 368] as Ratio,
@@ -853,7 +853,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 70 as Id<SagittalComma>,
                 apotomeSlope: 5.958958659205418 as ApotomeSlope,
-                twoThreeFreeSopfr: 18 as Sopfr<5>,
+                twoThreeFreeSopfr: 18 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 0, -1, 1] } as TwoThreeFreeClass,
                 limit: 11 as Prime,
                 ratio: [45927, 45056] as Ratio,
@@ -865,7 +865,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 71 as Id<SagittalComma>,
                 apotomeSlope: -3.0699366432293664 as ApotomeSlope,
-                twoThreeFreeSopfr: 30 as Sopfr<5>,
+                twoThreeFreeSopfr: 30 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 0, 0, 0, -1, 1] } as TwoThreeFreeClass,
                 limit: 17 as Prime,
                 ratio: [52, 51] as Ratio,
@@ -877,7 +877,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 72 as Id<SagittalComma>,
                 apotomeSlope: -1.1109281406120526 as ApotomeSlope,
-                twoThreeFreeSopfr: 27 as Sopfr<5>,
+                twoThreeFreeSopfr: 27 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 2, 0, 0, 0, -1] } as TwoThreeFreeClass,
                 limit: 17 as Prime,
                 ratio: [51, 50] as Ratio,
@@ -889,7 +889,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 73 as Id<SagittalComma>,
                 apotomeSlope: -0.13631173107134664 as ApotomeSlope,
-                twoThreeFreeSopfr: 39 as Sopfr<5>,
+                twoThreeFreeSopfr: 39 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 0, -1, 0, 1, 0, 1] } as TwoThreeFreeClass,
                 limit: 19 as Prime,
                 ratio: [252, 247] as Ratio,
@@ -901,7 +901,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 74 as Id<SagittalComma>,
                 apotomeSlope: -2.1535760258098744 as ApotomeSlope,
-                twoThreeFreeSopfr: 24 as Sopfr<5>,
+                twoThreeFreeSopfr: 24 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, -2, 2] } as TwoThreeFreeClass,
                 limit: 7 as Prime,
                 ratio: [50, 49] as Ratio,
@@ -913,7 +913,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 75 as Id<SagittalComma>,
                 apotomeSlope: -7.17112164145809 as ApotomeSlope,
-                twoThreeFreeSopfr: 31 as Sopfr<5>,
+                twoThreeFreeSopfr: 31 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1] } as TwoThreeFreeClass,
                 limit: 31 as Prime,
                 ratio: [248, 243] as Ratio,
@@ -925,7 +925,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 76 as Id<SagittalComma>,
                 apotomeSlope: -3.1979827698930365 as ApotomeSlope,
-                twoThreeFreeSopfr: 14 as Sopfr<5>,
+                twoThreeFreeSopfr: 14 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 0, 2] } as TwoThreeFreeClass,
                 limit: 7 as Prime,
                 ratio: [49, 48] as Ratio,
@@ -937,7 +937,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 77 as Id<SagittalComma>,
                 apotomeSlope: 6.768774152682494 as ApotomeSlope,
-                twoThreeFreeSopfr: 22 as Sopfr<5>,
+                twoThreeFreeSopfr: 22 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, -1, 0, 0, 0, 1] } as TwoThreeFreeClass,
                 limit: 17 as Prime,
                 ratio: [334611, 327680] as Ratio,
@@ -949,7 +949,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 79 as Id<SagittalComma>,
                 apotomeSlope: 4.7384862173657565 as ApotomeSlope,
-                twoThreeFreeSopfr: 34 as Sopfr<5>,
+                twoThreeFreeSopfr: 34 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 0, 0, -1, 0, 0, 0, 1] } as TwoThreeFreeClass,
                 limit: 23 as Prime,
                 ratio: [24057, 23552] as Ratio,
@@ -961,7 +961,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 80 as Id<SagittalComma>,
                 apotomeSlope: -8.275272492567069 as ApotomeSlope,
-                twoThreeFreeSopfr: 11 as Sopfr<5>,
+                twoThreeFreeSopfr: 11 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 0, 0, 1] } as TwoThreeFreeClass,
                 limit: 11 as Prime,
                 ratio: [8192, 8019] as Ratio,
@@ -973,7 +973,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 81 as Id<SagittalComma>,
                 apotomeSlope: 4.681719523401496 as ApotomeSlope,
-                twoThreeFreeSopfr: 19 as Sopfr<5>,
+                twoThreeFreeSopfr: 19 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 1, 2] } as TwoThreeFreeClass,
                 limit: 7 as Prime,
                 ratio: [535815, 524288] as Ratio,
@@ -985,7 +985,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 82 as Id<SagittalComma>,
                 apotomeSlope: -4.342916018093234 as ApotomeSlope,
-                twoThreeFreeSopfr: 28 as Sopfr<5>,
+                twoThreeFreeSopfr: 28 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, -1, 0, 0, 0, 0, 0, 1] } as TwoThreeFreeClass,
                 limit: 23 as Prime,
                 ratio: [46, 45] as Ratio,
@@ -997,7 +997,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 83 as Id<SagittalComma>,
                 apotomeSlope: 2.6556913490248237 as ApotomeSlope,
-                twoThreeFreeSopfr: 20 as Sopfr<5>,
+                twoThreeFreeSopfr: 20 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 0, -1, 0, 1] } as TwoThreeFreeClass,
                 limit: 13 as Prime,
                 ratio: [1701, 1664] as Ratio,
@@ -1009,7 +1009,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 84 as Id<SagittalComma>,
                 apotomeSlope: -6.373203953409966 as ApotomeSlope,
-                twoThreeFreeSopfr: 28 as Sopfr<5>,
+                twoThreeFreeSopfr: 28 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 0, 0, -1, 0, 1] } as TwoThreeFreeClass,
                 limit: 17 as Prime,
                 ratio: [1408, 1377] as Ratio,
@@ -1021,7 +1021,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 85 as Id<SagittalComma>,
                 apotomeSlope: -0.3955701992725187 as ApotomeSlope,
-                twoThreeFreeSopfr: 16 as Sopfr<5>,
+                twoThreeFreeSopfr: 16 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, -1, 0, 1] } as TwoThreeFreeClass,
                 limit: 11 as Prime,
                 ratio: [45, 44] as Ratio,
@@ -1033,7 +1033,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 86 as Id<SagittalComma>,
                 apotomeSlope: -2.4215983736491986 as ApotomeSlope,
-                twoThreeFreeSopfr: 31 as Sopfr<5>,
+                twoThreeFreeSopfr: 31 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 0, 1, 1, 1] } as TwoThreeFreeClass,
                 limit: 13 as Prime,
                 ratio: [1024, 1001] as Ratio,
@@ -1045,7 +1045,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 87 as Id<SagittalComma>,
                 apotomeSlope: 3.536786275201297 as ApotomeSlope,
-                twoThreeFreeSopfr: 23 as Sopfr<5>,
+                twoThreeFreeSopfr: 23 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 0, 0, 0, 0, 0, 0, 1] } as TwoThreeFreeClass,
                 limit: 23 as Prime,
                 ratio: [16767, 16384] as Ratio,
@@ -1057,7 +1057,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 88 as Id<SagittalComma>,
                 apotomeSlope: -0.5021153232149409 as ApotomeSlope,
-                twoThreeFreeSopfr: 30 as Sopfr<5>,
+                twoThreeFreeSopfr: 30 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, -2, 1, 0, 1] } as TwoThreeFreeClass,
                 limit: 13 as Prime,
                 ratio: [819, 800] as Ratio,
@@ -1069,7 +1069,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 89 as Id<SagittalComma>,
                 apotomeSlope: -2.528143497591627 as ApotomeSlope,
-                twoThreeFreeSopfr: 15 as Sopfr<5>,
+                twoThreeFreeSopfr: 15 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 3] } as TwoThreeFreeClass,
                 limit: 5 as Prime,
                 ratio: [128, 125] as Ratio,
@@ -1081,7 +1081,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 90 as Id<SagittalComma>,
                 apotomeSlope: -9.552511628370976 as ApotomeSlope,
-                twoThreeFreeSopfr: 12 as Sopfr<5>,
+                twoThreeFreeSopfr: 12 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 1, 1] } as TwoThreeFreeClass,
                 limit: 7 as Prime,
                 ratio: [2240, 2187] as Ratio,
@@ -1093,7 +1093,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 91 as Id<SagittalComma>,
                 apotomeSlope: 0.4142452942045578 as ApotomeSlope,
-                twoThreeFreeSopfr: 24 as Sopfr<5>,
+                twoThreeFreeSopfr: 24 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 0, -1, 0, 0, 1] } as TwoThreeFreeClass,
                 limit: 17 as Prime,
                 ratio: [459, 448] as Ratio,
@@ -1105,7 +1105,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 92 as Id<SagittalComma>,
                 apotomeSlope: 7.377586970079588 as ApotomeSlope,
-                twoThreeFreeSopfr: 25 as Sopfr<5>,
+                twoThreeFreeSopfr: 25 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, -1, 1, 0, 1] } as TwoThreeFreeClass,
                 limit: 13 as Prime,
                 ratio: [5373459, 5242880] as Ratio,
@@ -1117,7 +1117,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 93 as Id<SagittalComma>,
                 apotomeSlope: 5.351558795702916 as ApotomeSlope,
-                twoThreeFreeSopfr: 10 as Sopfr<5>,
+                twoThreeFreeSopfr: 10 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 2] } as TwoThreeFreeClass,
                 limit: 5 as Prime,
                 ratio: [6561, 6400] as Ratio,
@@ -1129,7 +1129,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 94 as Id<SagittalComma>,
                 apotomeSlope: -1.6728093350764381 as ApotomeSlope,
-                twoThreeFreeSopfr: 17 as Sopfr<5>,
+                twoThreeFreeSopfr: 17 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 2, 1] } as TwoThreeFreeClass,
                 limit: 7 as Prime,
                 ratio: [525, 512] as Ratio,
@@ -1141,7 +1141,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 95 as Id<SagittalComma>,
                 apotomeSlope: -3.698837509453107 as ApotomeSlope,
-                twoThreeFreeSopfr: 18 as Sopfr<5>,
+                twoThreeFreeSopfr: 18 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, -1, 0, 0, 1] } as TwoThreeFreeClass,
                 limit: 13 as Prime,
                 ratio: [40, 39] as Ratio,
@@ -1153,7 +1153,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 96 as Id<SagittalComma>,
                 apotomeSlope: 3.264504166421933 as ApotomeSlope,
-                twoThreeFreeSopfr: 31 as Sopfr<5>,
+                twoThreeFreeSopfr: 31 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 0, 2, 0, 0, -1] } as TwoThreeFreeClass,
                 limit: 17 as Prime,
                 ratio: [35721, 34816] as Ratio,
@@ -1165,7 +1165,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 97 as Id<SagittalComma>,
                 apotomeSlope: -1.7689449684945062 as ApotomeSlope,
-                twoThreeFreeSopfr: 32 as Sopfr<5>,
+                twoThreeFreeSopfr: 32 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 0, 0, 0, -1, 0, 1] } as TwoThreeFreeClass,
                 limit: 19 as Prime,
                 ratio: [39, 38] as Ratio,
@@ -1177,7 +1177,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 98 as Id<SagittalComma>,
                 apotomeSlope: -3.8053826333955385 as ApotomeSlope,
-                twoThreeFreeSopfr: 28 as Sopfr<5>,
+                twoThreeFreeSopfr: 28 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, -2, 1, 1] } as TwoThreeFreeClass,
                 limit: 11 as Prime,
                 ratio: [77, 75] as Ratio,
@@ -1189,7 +1189,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 99 as Id<SagittalComma>,
                 apotomeSlope: 4.180864783841431 as ApotomeSlope,
-                twoThreeFreeSopfr: 23 as Sopfr<5>,
+                twoThreeFreeSopfr: 23 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 2, 0, 0, -1] } as TwoThreeFreeClass,
                 limit: 13 as Prime,
                 ratio: [54675, 53248] as Ratio,
@@ -1201,7 +1201,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 100 as Id<SagittalComma>,
                 apotomeSlope: -6.856644181692889 as ApotomeSlope,
-                twoThreeFreeSopfr: 18 as Sopfr<5>,
+                twoThreeFreeSopfr: 18 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, -1, 0, 0, 1] } as TwoThreeFreeClass,
                 limit: 13 as Prime,
                 ratio: [416, 405] as Ratio,
@@ -1213,7 +1213,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 101 as Id<SagittalComma>,
                 apotomeSlope: -8.882672356069566 as ApotomeSlope,
-                twoThreeFreeSopfr: 17 as Sopfr<5>,
+                twoThreeFreeSopfr: 17 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 2, 1] } as TwoThreeFreeClass,
                 limit: 7 as Prime,
                 ratio: [131072, 127575] as Ratio,
@@ -1225,7 +1225,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 102 as Id<SagittalComma>,
                 apotomeSlope: -4.920686471171007 as ApotomeSlope,
-                twoThreeFreeSopfr: 37 as Sopfr<5>,
+                twoThreeFreeSopfr: 37 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1] } as TwoThreeFreeClass,
                 limit: 37 as Prime,
                 ratio: [37, 36] as Ratio,
@@ -1237,7 +1237,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 103 as Id<SagittalComma>,
                 apotomeSlope: 2.0482914855223155 as ApotomeSlope,
-                twoThreeFreeSopfr: 34 as Sopfr<5>,
+                twoThreeFreeSopfr: 34 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 2, 0, -1, 1] } as TwoThreeFreeClass,
                 limit: 13 as Prime,
                 ratio: [2673, 2600] as Ratio,
@@ -1249,7 +1249,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 104 as Id<SagittalComma>,
                 apotomeSlope: 1.0230581116016584 as ApotomeSlope,
-                twoThreeFreeSopfr: 13 as Sopfr<5>,
+                twoThreeFreeSopfr: 13 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 0, 0, 0, 1] } as TwoThreeFreeClass,
                 limit: 13 as Prime,
                 ratio: [1053, 1024] as Ratio,
@@ -1261,7 +1261,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 105 as Id<SagittalComma>,
                 apotomeSlope: -1.002970062775009 as ApotomeSlope,
-                twoThreeFreeSopfr: 12 as Sopfr<5>,
+                twoThreeFreeSopfr: 12 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 1, 1] } as TwoThreeFreeClass,
                 limit: 7 as Prime,
                 ratio: [36, 35] as Ratio,
@@ -1273,7 +1273,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 106 as Id<SagittalComma>,
                 apotomeSlope: -8.027338193554371 as ApotomeSlope,
-                twoThreeFreeSopfr: 15 as Sopfr<5>,
+                twoThreeFreeSopfr: 15 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 3] } as TwoThreeFreeClass,
                 limit: 5 as Prime,
                 ratio: [250, 243] as Ratio,
@@ -1285,7 +1285,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 107 as Id<SagittalComma>,
                 apotomeSlope: -5.072212278675089 as ApotomeSlope,
-                twoThreeFreeSopfr: 30 as Sopfr<5>,
+                twoThreeFreeSopfr: 30 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 0, 0, -1, 0, 0, 1] } as TwoThreeFreeClass,
                 limit: 19 as Prime,
                 ratio: [176, 171] as Ratio,
@@ -1297,7 +1297,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 108 as Id<SagittalComma>,
                 apotomeSlope: 8.902760404896197 as ApotomeSlope,
-                twoThreeFreeSopfr: 18 as Sopfr<5>,
+                twoThreeFreeSopfr: 18 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 1, 0, 0, 1] } as TwoThreeFreeClass,
                 limit: 13 as Prime,
                 ratio: [34543665, 33554432] as Ratio,
@@ -1309,7 +1309,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 109 as Id<SagittalComma>,
                 apotomeSlope: 6.876732230519511 as ApotomeSlope,
-                twoThreeFreeSopfr: 7 as Sopfr<5>,
+                twoThreeFreeSopfr: 7 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 0, 1] } as TwoThreeFreeClass,
                 limit: 7 as Prime,
                 ratio: [59049, 57344] as Ratio,
@@ -1321,7 +1321,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 110 as Id<SagittalComma>,
                 apotomeSlope: -0.14763590025983353 as ApotomeSlope,
-                twoThreeFreeSopfr: 20 as Sopfr<5>,
+                twoThreeFreeSopfr: 20 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 4] } as TwoThreeFreeClass,
                 limit: 5 as Prime,
                 ratio: [16875, 16384] as Ratio,
@@ -1333,7 +1333,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 111 as Id<SagittalComma>,
                 apotomeSlope: -10.159911491873473 as ApotomeSlope,
-                twoThreeFreeSopfr: 16 as Sopfr<5>,
+                twoThreeFreeSopfr: 16 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, -1, 0, 1] } as TwoThreeFreeClass,
                 limit: 11 as Prime,
                 ratio: [11264, 10935] as Ratio,
@@ -1345,7 +1345,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 112 as Id<SagittalComma>,
                 apotomeSlope: -4.182277737736026 as ApotomeSlope,
-                twoThreeFreeSopfr: 28 as Sopfr<5>,
+                twoThreeFreeSopfr: 28 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 0, 0, -1, 0, 1] } as TwoThreeFreeClass,
                 limit: 17 as Prime,
                 ratio: [34, 33] as Ratio,
@@ -1357,7 +1357,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 113 as Id<SagittalComma>,
                 apotomeSlope: -6.212565673052746 as ApotomeSlope,
-                twoThreeFreeSopfr: 28 as Sopfr<5>,
+                twoThreeFreeSopfr: 28 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, -1, 0, 0, 0, 0, 0, 1] } as TwoThreeFreeClass,
                 limit: 23 as Prime,
                 ratio: [640, 621] as Ratio,
@@ -1369,7 +1369,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 114 as Id<SagittalComma>,
                 apotomeSlope: 0.7550357637623235 as ApotomeSlope,
-                twoThreeFreeSopfr: 28 as Sopfr<5>,
+                twoThreeFreeSopfr: 28 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 2, -1, 1] } as TwoThreeFreeClass,
                 limit: 11 as Prime,
                 ratio: [567, 550] as Ratio,
@@ -1381,7 +1381,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 115 as Id<SagittalComma>,
                 apotomeSlope: -2.2802091985789374 as ApotomeSlope,
-                twoThreeFreeSopfr: 11 as Sopfr<5>,
+                twoThreeFreeSopfr: 11 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 0, 0, 1] } as TwoThreeFreeClass,
                 limit: 11 as Prime,
                 ratio: [33, 32] as Ratio,
@@ -1393,7 +1393,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 116 as Id<SagittalComma>,
                 apotomeSlope: 3.697424555558503 as ApotomeSlope,
-                twoThreeFreeSopfr: 33 as Sopfr<5>,
+                twoThreeFreeSopfr: 33 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 1, 0, -1, 0, 1] } as TwoThreeFreeClass,
                 limit: 17 as Prime,
                 ratio: [185895, 180224] as Ratio,
@@ -1405,7 +1405,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 117 as Id<SagittalComma>,
                 apotomeSlope: -5.331470746876288 as ApotomeSlope,
-                twoThreeFreeSopfr: 25 as Sopfr<5>,
+                twoThreeFreeSopfr: 25 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 1, -1, 0, 1] } as TwoThreeFreeClass,
                 limit: 13 as Prime,
                 ratio: [65, 63] as Ratio,
@@ -1417,7 +1417,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 118 as Id<SagittalComma>,
                 apotomeSlope: -7.357498921252964 as ApotomeSlope,
-                twoThreeFreeSopfr: 14 as Sopfr<5>,
+                twoThreeFreeSopfr: 14 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 0, 2] } as TwoThreeFreeClass,
                 limit: 7 as Prime,
                 ratio: [4096, 3969] as Ratio,
@@ -1429,7 +1429,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 119 as Id<SagittalComma>,
                 apotomeSlope: -3.384360049687907 as ApotomeSlope,
-                twoThreeFreeSopfr: 31 as Sopfr<5>,
+                twoThreeFreeSopfr: 31 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1] } as TwoThreeFreeClass,
                 limit: 31 as Prime,
                 ratio: [32, 31] as Ratio,
@@ -1441,7 +1441,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 120 as Id<SagittalComma>,
                 apotomeSlope: 5.599493094715601 as ApotomeSlope,
-                twoThreeFreeSopfr: 16 as Sopfr<5>,
+                twoThreeFreeSopfr: 16 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 1, 0, 1] } as TwoThreeFreeClass,
                 limit: 11 as Prime,
                 ratio: [1082565, 1048576] as Ratio,
@@ -1453,7 +1453,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 121 as Id<SagittalComma>,
                 apotomeSlope: 3.5734649203389197 as ApotomeSlope,
-                twoThreeFreeSopfr: 31 as Sopfr<5>,
+                twoThreeFreeSopfr: 31 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 0, 1, -1, 1] } as TwoThreeFreeClass,
                 limit: 13 as Prime,
                 ratio: [24057, 23296] as Ratio,
@@ -1465,7 +1465,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 122 as Id<SagittalComma>,
                 apotomeSlope: -5.459516873539952 as ApotomeSlope,
-                twoThreeFreeSopfr: 29 as Sopfr<5>,
+                twoThreeFreeSopfr: 29 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 1, 1, 0, 0, 1] } as TwoThreeFreeClass,
                 limit: 17 as Prime,
                 ratio: [595, 576] as Ratio,
@@ -1477,7 +1477,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 123 as Id<SagittalComma>,
                 apotomeSlope: 0.5222033720415848 as ApotomeSlope,
-                twoThreeFreeSopfr: 19 as Sopfr<5>,
+                twoThreeFreeSopfr: 19 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, -1, 2] } as TwoThreeFreeClass,
                 limit: 7 as Prime,
                 ratio: [405, 392] as Ratio,
@@ -1489,7 +1489,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 124 as Id<SagittalComma>,
                 apotomeSlope: -0.5222033720415946 as ApotomeSlope,
-                twoThreeFreeSopfr: 19 as Sopfr<5>,
+                twoThreeFreeSopfr: 19 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, -1, 2] } as TwoThreeFreeClass,
                 limit: 7 as Prime,
                 ratio: [1323, 1280] as Ratio,
@@ -1501,7 +1501,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 125 as Id<SagittalComma>,
                 apotomeSlope: 5.459516873539947 as ApotomeSlope,
-                twoThreeFreeSopfr: 29 as Sopfr<5>,
+                twoThreeFreeSopfr: 29 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 1, 1, 0, 0, 1] } as TwoThreeFreeClass,
                 limit: 17 as Prime,
                 ratio: [19683, 19040] as Ratio,
@@ -1513,7 +1513,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 126 as Id<SagittalComma>,
                 apotomeSlope: -3.573464920338933 as ApotomeSlope,
-                twoThreeFreeSopfr: 31 as Sopfr<5>,
+                twoThreeFreeSopfr: 31 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 0, 1, -1, 1] } as TwoThreeFreeClass,
                 limit: 13 as Prime,
                 ratio: [91, 88] as Ratio,
@@ -1525,7 +1525,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 127 as Id<SagittalComma>,
                 apotomeSlope: -5.599493094715603 as ApotomeSlope,
-                twoThreeFreeSopfr: 16 as Sopfr<5>,
+                twoThreeFreeSopfr: 16 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 1, 0, 1] } as TwoThreeFreeClass,
                 limit: 11 as Prime,
                 ratio: [512, 495] as Ratio,
@@ -1537,7 +1537,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 128 as Id<SagittalComma>,
                 apotomeSlope: 3.3843600496879094 as ApotomeSlope,
-                twoThreeFreeSopfr: 31 as Sopfr<5>,
+                twoThreeFreeSopfr: 31 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1] } as TwoThreeFreeClass,
                 limit: 31 as Prime,
                 ratio: [67797, 65536] as Ratio,
@@ -1549,7 +1549,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 129 as Id<SagittalComma>,
                 apotomeSlope: 7.3574989212529545 as ApotomeSlope,
-                twoThreeFreeSopfr: 14 as Sopfr<5>,
+                twoThreeFreeSopfr: 14 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 0, 2] } as TwoThreeFreeClass,
                 limit: 7 as Prime,
                 ratio: [8680203, 8388608] as Ratio,
@@ -1561,7 +1561,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 130 as Id<SagittalComma>,
                 apotomeSlope: 5.331470746876268 as ApotomeSlope,
-                twoThreeFreeSopfr: 25 as Sopfr<5>,
+                twoThreeFreeSopfr: 25 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 1, -1, 0, 1] } as TwoThreeFreeClass,
                 limit: 13 as Prime,
                 ratio: [137781, 133120] as Ratio,
@@ -1573,7 +1573,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 131 as Id<SagittalComma>,
                 apotomeSlope: -3.6974245555585212 as ApotomeSlope,
-                twoThreeFreeSopfr: 33 as Sopfr<5>,
+                twoThreeFreeSopfr: 33 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 1, 0, -1, 0, 1] } as TwoThreeFreeClass,
                 limit: 17 as Prime,
                 ratio: [88, 85] as Ratio,
@@ -1585,7 +1585,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 132 as Id<SagittalComma>,
                 apotomeSlope: 2.280209198578947 as ApotomeSlope,
-                twoThreeFreeSopfr: 11 as Sopfr<5>,
+                twoThreeFreeSopfr: 11 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 0, 0, 1] } as TwoThreeFreeClass,
                 limit: 11 as Prime,
                 ratio: [729, 704] as Ratio,
@@ -1597,7 +1597,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 133 as Id<SagittalComma>,
                 apotomeSlope: -0.7550357637623395 as ApotomeSlope,
-                twoThreeFreeSopfr: 28 as Sopfr<5>,
+                twoThreeFreeSopfr: 28 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 2, -1, 1] } as TwoThreeFreeClass,
                 limit: 11 as Prime,
                 ratio: [7425, 7168] as Ratio,
@@ -1609,7 +1609,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 134 as Id<SagittalComma>,
                 apotomeSlope: 6.212565673052746 as ApotomeSlope,
-                twoThreeFreeSopfr: 28 as Sopfr<5>,
+                twoThreeFreeSopfr: 28 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, -1, 0, 0, 0, 0, 0, 1] } as TwoThreeFreeClass,
                 limit: 23 as Prime,
                 ratio: [1358127, 1310720] as Ratio,
@@ -1621,7 +1621,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 135 as Id<SagittalComma>,
                 apotomeSlope: 4.182277737736036 as ApotomeSlope,
-                twoThreeFreeSopfr: 28 as Sopfr<5>,
+                twoThreeFreeSopfr: 28 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 0, 0, -1, 0, 1] } as TwoThreeFreeClass,
                 limit: 17 as Prime,
                 ratio: [72171, 69632] as Ratio,
@@ -1633,7 +1633,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 136 as Id<SagittalComma>,
                 apotomeSlope: 10.15991149187347 as ApotomeSlope,
-                twoThreeFreeSopfr: 16 as Sopfr<5>,
+                twoThreeFreeSopfr: 16 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, -1, 0, 1] } as TwoThreeFreeClass,
                 limit: 11 as Prime,
                 ratio: [23914845, 23068672] as Ratio,
@@ -1645,7 +1645,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 137 as Id<SagittalComma>,
                 apotomeSlope: 0.14763590025983886 as ApotomeSlope,
-                twoThreeFreeSopfr: 20 as Sopfr<5>,
+                twoThreeFreeSopfr: 20 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 4] } as TwoThreeFreeClass,
                 limit: 5 as Prime,
                 ratio: [648, 625] as Ratio,
@@ -1657,7 +1657,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 138 as Id<SagittalComma>,
                 apotomeSlope: -6.876732230519514 as ApotomeSlope,
-                twoThreeFreeSopfr: 7 as Sopfr<5>,
+                twoThreeFreeSopfr: 7 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 0, 1] } as TwoThreeFreeClass,
                 limit: 7 as Prime,
                 ratio: [28, 27] as Ratio,
@@ -1669,7 +1669,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 139 as Id<SagittalComma>,
                 apotomeSlope: -8.902760404896206 as ApotomeSlope,
-                twoThreeFreeSopfr: 18 as Sopfr<5>,
+                twoThreeFreeSopfr: 18 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 1, 0, 0, 1] } as TwoThreeFreeClass,
                 limit: 13 as Prime,
                 ratio: [16384, 15795] as Ratio,
@@ -1681,7 +1681,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 140 as Id<SagittalComma>,
                 apotomeSlope: 5.072212278675101 as ApotomeSlope,
-                twoThreeFreeSopfr: 30 as Sopfr<5>,
+                twoThreeFreeSopfr: 30 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 0, 0, -1, 0, 0, 1] } as TwoThreeFreeClass,
                 limit: 19 as Prime,
                 ratio: [373977, 360448] as Ratio,
@@ -1693,7 +1693,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 141 as Id<SagittalComma>,
                 apotomeSlope: 8.027338193554366 as ApotomeSlope,
-                twoThreeFreeSopfr: 15 as Sopfr<5>,
+                twoThreeFreeSopfr: 15 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 3] } as TwoThreeFreeClass,
                 limit: 5 as Prime,
                 ratio: [531441, 512000] as Ratio,
@@ -1705,7 +1705,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 142 as Id<SagittalComma>,
                 apotomeSlope: 1.0029700627750189 as ApotomeSlope,
-                twoThreeFreeSopfr: 12 as Sopfr<5>,
+                twoThreeFreeSopfr: 12 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 1, 1] } as TwoThreeFreeClass,
                 limit: 7 as Prime,
                 ratio: [8505, 8192] as Ratio,
@@ -1717,7 +1717,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 143 as Id<SagittalComma>,
                 apotomeSlope: -1.0230581116016682 as ApotomeSlope,
-                twoThreeFreeSopfr: 13 as Sopfr<5>,
+                twoThreeFreeSopfr: 13 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 0, 0, 0, 1] } as TwoThreeFreeClass,
                 limit: 13 as Prime,
                 ratio: [27, 26] as Ratio,
@@ -1729,7 +1729,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 144 as Id<SagittalComma>,
                 apotomeSlope: -2.0482914855223298 as ApotomeSlope,
-                twoThreeFreeSopfr: 34 as Sopfr<5>,
+                twoThreeFreeSopfr: 34 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 2, 0, -1, 1] } as TwoThreeFreeClass,
                 limit: 13 as Prime,
                 ratio: [2925, 2816] as Ratio,
@@ -1741,7 +1741,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 145 as Id<SagittalComma>,
                 apotomeSlope: 4.920686471171007 as ApotomeSlope,
-                twoThreeFreeSopfr: 37 as Sopfr<5>,
+                twoThreeFreeSopfr: 37 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1] } as TwoThreeFreeClass,
                 limit: 37 as Prime,
                 ratio: [19683, 18944] as Ratio,
@@ -1753,7 +1753,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 146 as Id<SagittalComma>,
                 apotomeSlope: 8.882672356069559 as ApotomeSlope,
-                twoThreeFreeSopfr: 17 as Sopfr<5>,
+                twoThreeFreeSopfr: 17 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 2, 1] } as TwoThreeFreeClass,
                 limit: 7 as Prime,
                 ratio: [279006525, 268435456] as Ratio,
@@ -1765,7 +1765,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 147 as Id<SagittalComma>,
                 apotomeSlope: 6.856644181692891 as ApotomeSlope,
-                twoThreeFreeSopfr: 18 as Sopfr<5>,
+                twoThreeFreeSopfr: 18 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, -1, 0, 0, 1] } as TwoThreeFreeClass,
                 limit: 13 as Prime,
                 ratio: [885735, 851968] as Ratio,
@@ -1777,7 +1777,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 148 as Id<SagittalComma>,
                 apotomeSlope: -4.180864783841428 as ApotomeSlope,
-                twoThreeFreeSopfr: 23 as Sopfr<5>,
+                twoThreeFreeSopfr: 23 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, 2, 0, 0, -1] } as TwoThreeFreeClass,
                 limit: 13 as Prime,
                 ratio: [26, 25] as Ratio,
@@ -1789,7 +1789,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 149 as Id<SagittalComma>,
                 apotomeSlope: 3.805382633395542 as ApotomeSlope,
-                twoThreeFreeSopfr: 28 as Sopfr<5>,
+                twoThreeFreeSopfr: 28 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [0, 0, -2, 1, 1] } as TwoThreeFreeClass,
                 limit: 11 as Prime,
                 ratio: [164025, 157696] as Ratio,
@@ -1801,7 +1801,7 @@ describe("SAGITTAL_COMMAS", () => {
             {
                 id: 1000 as Id<SagittalComma>,
                 apotomeSlope: 0 as ApotomeSlope,
-                twoThreeFreeSopfr: 0 as Sopfr<5>,
+                twoThreeFreeSopfr: 0 as Sopfr<{ rough: 5 }>,
                 twoThreeFreeClass: { monzo: [] as Monzo } as TwoThreeFreeClass,
                 limit: 3 as Prime,
                 ratio: [2187, 2048] as Ratio,

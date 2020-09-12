@@ -16,7 +16,7 @@ describe("analyzeComma", () => {
             limit: 11 as Prime,
             apotomeSlope: -8.464345074135046 as ApotomeSlope,
             twoThreeFreeClass: { monzo: [0, 0, 3, 5, -1] } as TwoThreeFreeClass,
-            twoThreeFreeSopfr: 61 as Sopfr<5>,
+            twoThreeFreeSopfr: 61 as Sopfr<{ rough: 5 }>,
             n2d3p9: 36777.470341435175 as N2D3P9,
         } as AnalyzedComma
         expect(actual).toEqual(expected)

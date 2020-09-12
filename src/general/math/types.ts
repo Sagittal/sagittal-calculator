@@ -4,9 +4,9 @@ import { Count, Sum } from "../types"
 //  - and if you could make Analyzed<> a parameterized thing like Formatted<>, of course it would be a bit different
 //  because Formatted<> converts it from whatever object it is to a branded string, just with aspect of that object
 //  whereas Analyzed would just extend the object
-//  - okay how about this... you've been struggling with Analyzed vs Analysis 
+//  - okay how about this... you've been struggling with Analyzed vs Analysis
 //  so what if it was an Analysis<Thing>? that might help force you to think of it not as a Thing first but as an
-//  Analysis first. and then maybe Formatted<Thing> can only be made out of some kind of an Analysis? well no that 
+//  Analysis first. and then maybe Formatted<Thing> can only be made out of some kind of an Analysis? well no that
 //  doens't work because you have all sorts of Formatted<number> and Formatted<Monzo>
 //  - I want to be sensitive to the issue of the type names reading in a consistent direction
 //  relative to the variable names, i.e. in the opposite order
@@ -55,14 +55,14 @@ type Abs<T extends number = number> = T & { _AbsBrand: "Abs" }
 type Average<T extends number = number> = T & { _AverageBrand: "Average" }
 type Approx<T extends number = number> = T & { _ApproxBrand: "Approx" }
 
-type Sopfr<Roughness = void> = // TODO: this should be able to inherit roughness from the number it gets called with
+type Sopfr<T extends { rough?: number } = {}> =
     Sum<Prime>
     & { _SopfrBrand: "Sopfr" }
-    & (Roughness extends number ? { _RoughnessBrand: Roughness } : {})
-type Copfr<Roughness = void> =
+    & (T extends { rough: number } ? { _RoughnessBrand: Pick<T, "rough"> } : {})
+type Copfr<T extends { rough?: number } = {}> =
     Count<Prime>
     & { _CopfrBrand: "Copfr" }
-    & (Roughness extends number ? { _RoughnessBrand: Roughness } : {})
+    & (T extends { rough: number } ? { _RoughnessBrand: Pick<T, "rough"> } : {})
 
 enum Direction {
     SUPER = "super",

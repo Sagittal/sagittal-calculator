@@ -69,9 +69,9 @@ const compute23FreeMonzosToCheck = (
             const twoThreeFreeCopfr = computeCopfr(twoThreeFreeMonzoToCheck)
 
             const adjustedMax23FreeSopfr = max23FreeSopfr &&
-                max23FreeSopfr - twoThreeFreeSopfr as Max<Sopfr<5>>
+                max23FreeSopfr - twoThreeFreeSopfr as Max<Sopfr<{ rough: 5 }>>
             const adjustedMaxTwoThreeFreeCopfr = max23FreeCopfr &&
-                max23FreeCopfr - twoThreeFreeCopfr as Max<Copfr<5>>
+                max23FreeCopfr - twoThreeFreeCopfr as Max<Copfr<{ rough: 5 }>>
 
             const termRange: Array<Integer & Exponent<Prime>> = computePrimeExponentRange(
                 twoThreeFreePrimeToCheck,

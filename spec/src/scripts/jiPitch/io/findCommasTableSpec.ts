@@ -23,7 +23,7 @@ describe("computeFindCommasTable", () => {
             symbolId: 115 as Id<JiSymbol>,
             name: "11M" as Name<Comma>,
             limit: 11 as Prime,
-            twoThreeFreeSopfr: 11 as Sopfr<5>,
+            twoThreeFreeSopfr: 11 as Sopfr<{ rough: 5 }>,
             twoThreeFreeClass: { monzo: [0, 0, 0, 0, 1] } as TwoThreeFreeClass,
             cents: 45.45 as Cents,
             monzo: [0, 0, 1] as Monzo,
@@ -34,7 +34,7 @@ describe("computeFindCommasTable", () => {
         {
             name: "25/49M" as Name<Comma>,
             limit: 7 as Prime,
-            twoThreeFreeSopfr: 24 as Sopfr<5>,
+            twoThreeFreeSopfr: 24 as Sopfr<{ rough: 5 }>,
             twoThreeFreeClass: { monzo: [0, 0, -2, 2] } as TwoThreeFreeClass,
             cents: 33.4 as Cents,
             monzo: [1, 0, 2, -2] as Monzo,

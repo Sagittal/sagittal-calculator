@@ -13,7 +13,7 @@ describe("formatJiPitch", () => {
         limit: 14 as Prime,
         apotomeSlope: 8.2 as ApotomeSlope,
         twoThreeFreeClass: { ratio: [5, 1] as Ratio } as TwoThreeFreeClass,
-        twoThreeFreeSopfr: 13 as Sopfr<5>,
+        twoThreeFreeSopfr: 13 as Sopfr<{ rough: 5 }>,
         n2d3p9: 18.4567 as N2D3P9,
     }
 

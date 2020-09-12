@@ -3,7 +3,7 @@ import { ApotomeSlope, N2D3P9 } from "./evaluation"
 
 interface JiPitchAnalysis {
     apotomeSlope: ApotomeSlope,
-    twoThreeFreeSopfr: Sopfr<5>,
+    twoThreeFreeSopfr: Sopfr<{ rough: 5 }>,
     limit: Prime,
     monzo: Monzo,
     ratio: Ratio,

@@ -14,7 +14,7 @@ describe("computeCommaRow", () => {
         name: "1/5C" as Name<Comma>,
         limit: 14 as Prime,
         apotomeSlope: 8.2 as ApotomeSlope,
-        twoThreeFreeSopfr: 13 as Sopfr<5>,
+        twoThreeFreeSopfr: 13 as Sopfr<{ rough: 5 }>,
         twoThreeFreeClass: { monzo: [1] } as TwoThreeFreeClass,
         n2d3p9: 18.4567 as N2D3P9,
     } as AnalyzedComma & { symbolId?: Id<JiSymbol> }

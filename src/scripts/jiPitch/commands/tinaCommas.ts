@@ -30,8 +30,8 @@ const PLUS_MINUS_RANGE = 0.25
 const maxTinaSizes: Cents[] = TINAS_TO_CHECK.map(tina => TINA * (tina + PLUS_MINUS_RANGE) as Cents)
 
 const LIMITLESS_N2D3P9 = Infinity as Max<N2D3P9>
-const LIMITLESS_COPFR = 99999 as Max<Copfr<5>>
-const MAX_POSSIBLE_SOPFR_WITHOUT_CRASHING = 127 as Max<Sopfr<5>>
+const LIMITLESS_COPFR = 99999 as Max<Copfr<{ rough: 5 }>>
+const MAX_POSSIBLE_SOPFR_WITHOUT_CRASHING = 127 as Max<Sopfr<{ rough: 5 }>>
 const MAX_POSSIBLE_PRIME_LIMIT_GIVEN_MAX_POSSIBLE_SOPFR = MAX_POSSIBLE_SOPFR_WITHOUT_CRASHING as Max<Max<Prime>>
 const MIN_CENTS = (TINAS_TO_CHECK[ 0 ] - PLUS_MINUS_RANGE) * TINA as Min<Cents>
 const MAX_CENTS = (TINAS_TO_CHECK[ TINAS_TO_CHECK.length - 1 ] + PLUS_MINUS_RANGE) * TINA as Max<Cents>

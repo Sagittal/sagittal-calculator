@@ -3,7 +3,7 @@ import { Cents, Comma } from "../../../../src/general/music"
 import { computeCommas } from "../../../../src/scripts/jiPitch/commas"
 
 describe("computeCommas", () => {
-    const max23FreeSopfr = 7 as Max<Sopfr<5>>
+    const max23FreeSopfr = 7 as Max<Sopfr<{ rough: 5 }>>
 
     it("throws an error if the min and max cents are on the wrong side of each other, or equal", () => {
         expect(() => computeCommas({
