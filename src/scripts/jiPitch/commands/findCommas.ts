@@ -41,7 +41,6 @@ const commas = computeCommas({ ...jiPitchScriptGroupSettings, ...twoThreeFreeCla
 
 const commasWithMaybeSymbols = commas.map(addMaybeJiSymbol)
 const analyzedCommas = commasWithMaybeSymbols.map(comma => {
-    // TODO: check that every time this happens it uses the comma Name options?
     return analyzeComma(comma, jiPitchScriptGroupSettings.commaNameOptions)
 })
 if (jiPitchScriptGroupSettings.sortKey) {

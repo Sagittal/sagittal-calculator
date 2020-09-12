@@ -134,4 +134,33 @@ describe("analyze-ji-pitch", () => {
         ] as Io[]
         expect(actual).toEqual(expected)
     })
+
+    it("can format the names of the commas in the notating commas table", () => {
+        onlyRunInCi()
+
+        const command = "npm run analyze-ji-pitch -- -m [3,-7,2,0,1] --undirected --factored --unabbreviated" as Io
+
+        const actual = runCommandAndGetConsoleOutput(command)
+
+        const expected = [
+            "cents range:                     \t0 - 56.84250302885596",
+            "max absolute 3 exponent (ATE):   \t15",
+            "max absolute apotome slope (AAS):\t14",
+            "max N2D3P9:                      \t307",
+            "",
+            "   --- JI pitch ---",
+            "",
+            "        \t       \tratio     \tmonzo                  \tcents  \tapotome slope\tlimit  \t2,3-free sopfr\t2,3-free class N2D3P9",
+            "        \t       \t2200/2187 \t[   3  -7   2   0   1 ⟩\t 10.260\t -7.632      \t 11    \t 21           \t 42.014              ",
+            "",
+            "   --- notating commas ---",
+            "",
+            "symbol  \tname               \tratio            \tmonzo                  \tcents  \tapotome slope",
+            "   `)|( \t5².11-kleisma      \t2200/2187        \t[   3  -7   2   0   1 ⟩\t 10.260\t -7.632      ",
+            "        \t5².11-Small-Diesis \t66825/65536      \t[ -16   5   2   0   1 ⟩\t 33.720\t  2.924      ",
+            "        \t5².11-Medium-Diesis\t16777216/16238475\t[  24 -10  -2   0  -1 ⟩\t 56.505\t-13.479      ",
+            "",
+        ] as Io[]
+        expect(actual).toEqual(expected)
+    })
 })

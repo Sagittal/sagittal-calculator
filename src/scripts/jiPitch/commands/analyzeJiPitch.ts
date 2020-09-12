@@ -21,7 +21,6 @@ import {
     saveLog,
 } from "../../../general"
 import { analyzeJiPitch, computeMonzoFrom23FreeClassAndSizeCategoryName, parseCommaName } from "../../../sagittal"
-import { jiPitchScriptGroupSettings } from "../globals"
 import { computeNotatingCommasTable, formatJiPitch, formatSettings } from "../io"
 import { applySharedPitchCommandSetup } from "./shared"
 
@@ -82,9 +81,7 @@ const jiPitch: JiPitch = { monzo }
 const analyzedJiPitch = analyzeJiPitch(jiPitch)
 saveLog(formatJiPitch(analyzedJiPitch), LogTarget.ALL)
 
-// TODO: is this not tested, that the comma name options are supposed
-//  to affect the notating commas, not the JI pitch?
-const notatingCommasFormattedTable = computeNotatingCommasTable(jiPitch, jiPitchScriptGroupSettings.commaNameOptions)
+const notatingCommasFormattedTable = computeNotatingCommasTable(jiPitch)
 saveLog(notatingCommasFormattedTable, LogTarget.ALL)
 
 // TODO: okay so I guess we still didn't actually get to it, but I'd like to see this:
