@@ -5,7 +5,7 @@ import {
     count,
     DistributionBin,
     doOnNextEventLoop,
-    Index,
+    Index, indexOfFinalElement,
     Io,
     LogTarget,
     merge,
@@ -49,7 +49,7 @@ const populateScopesForSubmetricChunkCombination = async (
         populateScope(scope)
     })
 
-    if (parameterChunkCombinationIndex === parameterChunkCombinations.length - 1) {
+    if (parameterChunkCombinationIndex === indexOfFinalElement(parameterChunkCombinations)) {
         return
     }
 

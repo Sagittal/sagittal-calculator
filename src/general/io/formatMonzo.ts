@@ -1,3 +1,4 @@
+import { indexOfFinalElement } from "../code"
 import { Exponent, Monzo, NumericTypeParameters, PotentiallyIrrationalMonzoParameter, Prime } from "../math"
 import { Formatted, Io } from "./types"
 
@@ -24,7 +25,7 @@ const formatMonzo = <T extends NumericTypeParameters = {}>(
         let index = 0
         while (index < twoThreeFreeMonzo.length) {
             contents = contents + spaceTerm(twoThreeFreeMonzo[ index ])
-            if (index < twoThreeFreeMonzo.length - 1) {
+            if (index < indexOfFinalElement(twoThreeFreeMonzo)) {
                 if (index % 3 === 2) {
                     contents = contents + ", "
                 } else {

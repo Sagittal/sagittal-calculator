@@ -1,7 +1,8 @@
 import { floor } from "../math"
+import { indexOfFinalElement } from "./finalElement"
 
 const shuffle = <T>(array: T[]) => {
-    for (let i = array.length - 1; i > 0; i--) {
+    for (let i = indexOfFinalElement(array); i > 0; i--) {
         const j = floor(Math.random() * i)
         const temp = array[ i ]
         array[ i ] = array[ j ]

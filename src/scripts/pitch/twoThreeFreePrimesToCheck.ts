@@ -1,4 +1,4 @@
-import { computePrimeCount, isUndefined, min, PRIMES, ZERO_ONE_INDEX_DIFF } from "../../general"
+import { computePrimeCount, indexOfFinalElement, isUndefined, min, PRIMES, ZERO_ONE_INDEX_DIFF } from "../../general"
 import { TwoThreeFreePrimesToCheckOptions } from "./types"
 
 const compute23FreePrimesToCheck = (options: TwoThreeFreePrimesToCheckOptions) => {
@@ -17,7 +17,9 @@ const compute23FreePrimesToCheck = (options: TwoThreeFreePrimesToCheckOptions) =
     const indexOfMaxPrimeBy23FreeSopfr =
         !isUndefined(max23FreeSopfr) ? computePrimeCount(max23FreeSopfr) - ZERO_ONE_INDEX_DIFF : Infinity
     const indexOfMaxPrimeByN2D3P9 =
-        !isUndefined(primeExponentExtremasGivenMaxN2D3P9) ? primeExponentExtremasGivenMaxN2D3P9.length - 1 : Infinity
+        !isUndefined(primeExponentExtremasGivenMaxN2D3P9) ? 
+            indexOfFinalElement(primeExponentExtremasGivenMaxN2D3P9) : 
+            Infinity
 
     const indexOfMaxPrime = min(
         indexOfMaxPrimeByPrimeLimit,

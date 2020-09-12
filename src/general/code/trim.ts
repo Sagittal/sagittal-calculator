@@ -1,9 +1,10 @@
 import { shallowClone } from "./clone"
+import { finalElement, indexOfFinalElement } from "./finalElement"
 
 const computeTrimmedArray = <T extends Array<unknown>>(array: T): T => {
     const trimmedArray = shallowClone(array)
 
-    while (trimmedArray.length && !trimmedArray[ trimmedArray.length - 1 ]) {
+    while (trimmedArray.length && !finalElement(trimmedArray)) {
         trimmedArray.pop()
     }
 

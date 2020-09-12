@@ -1,4 +1,4 @@
-import { computeTrimmedArray } from "../code"
+import { computeTrimmedArray, indexOfFinalElement } from "../code"
 import { Integer, Max, NumericTypeParameters, Prime, PRIMES } from "../math"
 import { computeMonzoFromIntegerOrMonzo, Monzo } from "./monzo"
 
@@ -12,7 +12,7 @@ const computeGpf = <T extends NumericTypeParameters = { irrational: true }>(
         return 1 as Max<Prime>
     }
 
-    return PRIMES[ trimmedMonzo.length - 1 ] as Max<Prime>
+    return PRIMES[ indexOfFinalElement(trimmedMonzo) ] as Max<Prime>
 }
 
 export {

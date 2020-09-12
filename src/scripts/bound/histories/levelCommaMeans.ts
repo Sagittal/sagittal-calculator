@@ -1,4 +1,4 @@
-import { Cents, CentsPosition, computeCentsFromPitch, Id, Name, Pitch } from "../../../general"
+import { Cents, CentsPosition, computeCentsFromPitch, Id, indexOfFinalElement, Name, Pitch } from "../../../general"
 import { getJiSymbol, getSagittalComma, JiSymbol, Level, LEVELS_SYMBOL_IDS, SymbolLongAscii } from "../../../sagittal"
 
 const getJiSymbolCents = (jiSymbolId: Id<JiSymbol>): Cents => {
@@ -18,7 +18,7 @@ const getJiSymbolAscii = (jiSymbolId: Id<JiSymbol>): SymbolLongAscii => {
 const computeLevelCommaMeans = (level: Level): CentsPosition[] => {
     const levelSymbolIds = LEVELS_SYMBOL_IDS[ level ]
 
-    const levelSymbolIdsExcludingTheLastSymbol = levelSymbolIds.slice(0, levelSymbolIds.length - 1)
+    const levelSymbolIdsExcludingTheLastSymbol = levelSymbolIds.slice(0, indexOfFinalElement(levelSymbolIds))
 
     return levelSymbolIdsExcludingTheLastSymbol.map((jiSymbolId, index): CentsPosition => {
         const nextJiSymbolId = levelSymbolIds[ index + 1 ]

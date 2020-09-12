@@ -64,8 +64,6 @@ type Copfr<Roughness = void> =
     & { _CopfrBrand: "Copfr" }
     & (Roughness extends number ? { _RoughnessBrand: Roughness } : {})
 
-// TODO: Direction needs to come up and out of the monzo module since it gets used for Ratios too now,
-//  and probably also the NumericTypeParameters
 enum Direction {
     SUPER = "super",
     SUB = "sub",

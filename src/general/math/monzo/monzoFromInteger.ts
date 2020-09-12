@@ -1,3 +1,4 @@
+import { indexOfFinalElement } from "../../code"
 import { PRIMES } from "../primes"
 import { integerDivide } from "../typedOperations"
 import { Direction, Exponent, Integer, Prime } from "../types"
@@ -43,7 +44,7 @@ const computeMonzoFromInteger = (integer: Integer): Monzo<{ direction: Direction
         }
     }
 
-    for (let index = 0; index <= PRIMES.length - 1; index += 1) {
+    for (let index = 0; index <= indexOfFinalElement(PRIMES); index += 1) {
         computePrimeFactorizationForPrimeAtIndexAndUpdateRemnant(index)
 
         if (remnant === 1) {

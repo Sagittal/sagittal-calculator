@@ -2,7 +2,7 @@ import {
     abs,
     Base,
     computePrimeCount,
-    FractionalPartType,
+    FractionalPartType, indexOfFinalElement,
     isUndefined,
     log,
     Monzo,
@@ -50,7 +50,7 @@ const computeSubmetricAntivotes = (
 
     return twoThreeFreeNumberMonzo.reduce(
         (monzoAntivotes: Antivotes, primeExponent, index): Antivotes => {
-            if (max && index < twoThreeFreeNumberMonzo.length - 1) {
+            if (max && index < indexOfFinalElement(twoThreeFreeNumberMonzo)) {
                 return 0 as Antivotes
             }
 

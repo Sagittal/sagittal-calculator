@@ -1,8 +1,9 @@
+import { MULTIPLICATIVE_IDENTITY, SMOOTH_ROUGH_OFFSET } from "./constants"
 import { computeRoughInteger } from "./roughness"
 import { Integer, Roughness, Smoothness } from "./types"
 
 const computeIsSmoothInteger = (integer: Integer, smoothness: Smoothness): boolean => {
-    return computeRoughInteger(integer, smoothness + 1 as Integer as Roughness) === 1
+    return computeRoughInteger(integer, smoothness + SMOOTH_ROUGH_OFFSET as Roughness) === MULTIPLICATIVE_IDENTITY
 }
 
 export {

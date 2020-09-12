@@ -1,3 +1,4 @@
+import { SMOOTH_ROUGH_OFFSET } from "../constants"
 import { PRIMES } from "../primes"
 import { count } from "../typedOperations"
 import { Integer, NumericTypeParameters, Smoothness } from "../types"
@@ -8,8 +9,7 @@ const computeIsSmoothMonzo = <S extends 2 | 3 | 5 | 7 | 11 | 13 | 17 | 19 | 23 |
     monzo: Monzo<T>,
     smoothness: S & Smoothness,
 ): monzo is Monzo<T & { smooth: S }> => {
-    // TODO: how does this relate to that other +1 in module called "smoothness"
-    let smoothnessIndex = PRIMES.findIndex(prime => prime as Integer >= smoothness) + 1 
+    let smoothnessIndex = PRIMES.findIndex(prime => prime as Integer >= smoothness) + SMOOTH_ROUGH_OFFSET 
 
     while (smoothnessIndex < count(monzo)) { // TODO: might be high time for an indexOfLastElement helper
         if (monzo[smoothnessIndex] !== 0) return false

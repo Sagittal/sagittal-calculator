@@ -1,3 +1,4 @@
+import { indexOfFinalElement } from "../../code"
 import { BLANK, NEWLINE } from "../constants"
 import { addTexts, join } from "../typedOperations"
 import { Io } from "../types"
@@ -40,14 +41,13 @@ const formatTableForForum = <T = unknown>(table: Table, options?: Partial<Format
     const formattedRows: Io[] = table.map((row: Row<{ of: T }>, index): Io => {
         const { rowOpen, rowClose, separator } = computeTableForForumRowParts({ index, headerRowCount, colors })
 
-        const finalCellIndex = row.length - 1
         const rowText = row.reduce(
             (justifiedRow: Io, cell, cellIndex): Io => {
                 const columnJustification = justifications[ cellIndex ]
 
                 const justifiedCell: Io = computeJustifiedCellForForum(cell, { columnJustification })
 
-                const maybeSeparator: Io = cellIndex === finalCellIndex ? BLANK : separator
+                const maybeSeparator: Io = cellIndex === indexOfFinalElement(row) ? BLANK : separator
 
                 return addTexts(justifiedRow, justifiedCell, maybeSeparator)
             },

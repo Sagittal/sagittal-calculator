@@ -1,4 +1,4 @@
-import { isUndefined, Maybe } from "../../code"
+import { indexOfFinalElement, isUndefined, Maybe } from "../../code"
 import { colorize } from "../colorize"
 import { BLANK, NEWLINE, TAB } from "../constants"
 import { addTexts, join } from "../typedOperations"
@@ -31,7 +31,6 @@ const formatTableForTerminal = <T = unknown>(table: Table, options?: Partial<For
     const columnWidths = computeColumnWidths(table, columnRange)
 
     const formattedRows = table.map((row: Row<{ of: T }>, rowIndex): Io => {
-        const finalCellIndex = row.length - 1
         const rowText = row.reduce(
             (justifiedRow: Io, cell, cellIndex): Io => {
                 const columnWidth = columnWidths[ cellIndex ]
@@ -40,7 +39,7 @@ const formatTableForTerminal = <T = unknown>(table: Table, options?: Partial<For
 
                 const justifiedCell = computeJustifiedCellForTerminal(cell, { columnWidth, columnJustification })
 
-                const maybeSeparator = cellIndex === finalCellIndex ? BLANK : TAB
+                const maybeSeparator = cellIndex === indexOfFinalElement(row) ? BLANK : TAB
 
                 return addTexts(justifiedRow, justifiedCell, maybeSeparator)
             },

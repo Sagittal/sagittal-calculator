@@ -28,6 +28,8 @@ export {
     shuffle,
     sort,
     ZERO_ONE_INDEX_DIFF,
+    indexOfFinalElement,
+    finalElement,
 } from "./code"
 export {
     addTexts,

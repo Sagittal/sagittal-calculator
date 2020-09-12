@@ -4,7 +4,8 @@ import { formatTableForForum } from "./tableForForum"
 import { formatTableForTerminal } from "./tableForTerminal"
 import { FormatTableOptions, Table } from "./types"
 
-// TODO: I'm afraid the fancy stuff we're doing currently to align monzo terms and decimal points in numbers
+// TODO: ACTUAL PAN-COLUMN ALIGNMENT SOLUTION
+//  I'm afraid the fancy stuff we're doing currently to align monzo terms and decimal points in numbers
 //  and symbol shafts of course (not even doing it on ratios or conname names yet, or most decimals)
 //  are fairly brittle. we know monzo breaks if you have a >2 digit negative (rare, but could happen)
 //  and we already know that N2D3P9 has a different count of decimals from other numbers
@@ -20,7 +21,7 @@ const formatTable = <T = unknown>(table: Table<T>, options?: Partial<FormatTable
         throw new Error(`Table does not have rows with all the same lengths. Row lengths are ${rowLengths}.`)
     }
 
-    // todo: consider a TSV format for tables per http://forum.sagittal.org/viewtopic.php?p=2409#p2409
+    // TODO: consider a TSV format for tables per http://forum.sagittal.org/viewtopic.php?p=2409#p2409
     //  in TSV it would be best if all the closing angle-brackets ended up in the same rightward column, 
     //  so we don't have columns with some numbers and some angle-brackets.
     //  - and include a BOM (https://csv.thephpleague.com/8.0/bom/)
