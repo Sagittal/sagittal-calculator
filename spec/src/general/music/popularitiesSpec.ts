@@ -14,6 +14,7 @@ describe("COMMA_POPULARITIES", () => {
     //  ... you should figure out why. probably something to do with the whole pitch-level stuff instead of monzo-
     //  (mostly monzo) and ratio level stuff.
     it("is the case that all the ratios capable of being parsed by monzo from ratio correctly when only top is 80 or less", () => {
+        onlyRunInCi()
         const originalRatios: Array<Ratio<{ rough: 5, direction: Direction.SUPER }>> = 
             COMMA_POPULARITIES.map(popularity => popularity.twoThreeFreeClass.ratio!)
 

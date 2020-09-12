@@ -4,12 +4,13 @@ import { SIZE_CATEGORY_BOUNDS } from "./sizeCategoryBounds"
 import { SizeCategoryAbbreviation, SizeCategoryName, SizeCategoryOptions } from "./types"
 
 const computeSizeCategory: {
-    (comma: Comma, { abbreviated }?: { abbreviated: true }): SizeCategoryAbbreviation,
-    (comma: Comma, { abbreviated }?: { abbreviated: false }): SizeCategoryName,
-    (comma: Comma, { abbreviated }?: { abbreviated: boolean }): SizeCategoryName | SizeCategoryAbbreviation,
+    (comma: Comma, { abbreviated }: { abbreviated: true }): SizeCategoryAbbreviation,
+    (comma: Comma, { abbreviated }: { abbreviated: false }): SizeCategoryName,
+    (comma: Comma, {}: {}): SizeCategoryName | SizeCategoryAbbreviation,
+    (comma: Comma): SizeCategoryName | SizeCategoryAbbreviation,
 } = (comma: Comma, { abbreviated = true }: SizeCategoryOptions = {}): any => {
     const cents = computeCentsFromPitch(comma)
-    
+
     let sizeCategory = SIZE_CATEGORIES[ 0 ]
 
     SIZE_CATEGORY_BOUNDS.forEach((sizeCategoryBound, index) => {
