@@ -64,7 +64,7 @@ describe("analyzeBound", () => {
             type: EventType.MEAN,
             name: ".)/| '/|" as Name<Pitch>,
             cents: 23.2 as Cents,
-            rank: 1 as Rank<AnalyzedEvent, Integer>,
+            rank: 1 as Integer & Rank<AnalyzedEvent>,
             distance: 0 as Cents,
             inaDistance: 0 as Multiplier<Ina>,
             exact: false,
@@ -74,7 +74,7 @@ describe("analyzeBound", () => {
             type: EventType.INA,
             name: "47.5°233" as Name<Pitch>,
             cents: 23.15 as Cents,
-            rank: 0 as Rank<AnalyzedEvent, Integer>,
+            rank: 0 as Integer & Rank<AnalyzedEvent>,
             distance: 0.05000000000000071 as Cents,
             inaDistance: 0.10247613475154385 as Multiplier<Ina>,
             exact: false,
@@ -84,7 +84,7 @@ describe("analyzeBound", () => {
             type: EventType.INA,
             name: "164.5°809" as Name<Pitch>,
             cents: 23.116419649559468 as Cents,
-            rank: 0 as Rank<AnalyzedEvent, Integer>,
+            rank: 0 as Integer & Rank<AnalyzedEvent>,
             distance: 0.03358035044053054 as Cents,
             inaDistance: 0.238962941978454 as Multiplier<Ina>,
             exact: true,
@@ -93,7 +93,7 @@ describe("analyzeBound", () => {
     const expectedBestPossibleHistory: AnalyzedHistory = {
         events: expectedBestHistoryEvents,
         cents: 23.116419649559468 as Cents as Cents,
-        rank: 1 as Rank<AnalyzedEvent, Integer>,
+        rank: 1 as Integer & Rank<AnalyzedEvent>,
         score: 131 as Score,
         possible: true,
         exact: false,
@@ -107,7 +107,7 @@ describe("analyzeBound", () => {
         const actual = analyzeBound(histories, bound)
 
         const expected = {
-            bestRank: 1 as Rank<AnalyzedEvent, Integer>,
+            bestRank: 1 as Integer & Rank<AnalyzedEvent>,
             initialPosition: 23.195298960947348 as Cents,
             initialPositionTinaDistance: -0.5613173198954056 as Multiplier<Tina>,
             possibleHistoryCount: 2 as Count<AnalyzedHistory>,
@@ -124,8 +124,8 @@ describe("analyzeBound", () => {
                         isPossibleHistoryMember: true,
                         isBestPossibleHistoryMember: true,
                         exact: false,
-                        rankOfBestRankedEventInAnyMemberHistory: 1 as Rank<AnalyzedEvent, Integer>,
-                        rankOfBestRankedMemberHistory: 1 as Rank<AnalyzedEvent, Integer>,
+                        rankOfBestRankedEventInAnyMemberHistory: 1 as Integer & Rank<AnalyzedEvent>,
+                        rankOfBestRankedMemberHistory: 1 as Integer & Rank<AnalyzedEvent>,
                         nextEvents: [
                             ".)/| '/|",
                             "47.5°233",
@@ -141,8 +141,8 @@ describe("analyzeBound", () => {
                         isPossibleHistoryMember: true,
                         isBestPossibleHistoryMember: false,
                         exact: false,
-                        rankOfBestRankedEventInAnyMemberHistory: 1 as Rank<AnalyzedEvent, Integer>,
-                        rankOfBestRankedMemberHistory: 1 as Rank<AnalyzedEvent, Integer>,
+                        rankOfBestRankedEventInAnyMemberHistory: 1 as Integer & Rank<AnalyzedEvent>,
+                        rankOfBestRankedMemberHistory: 1 as Integer & Rank<AnalyzedEvent>,
                         nextEvents: [
                             "164.5°809",
                         ] as Name<Pitch>[],
@@ -155,8 +155,8 @@ describe("analyzeBound", () => {
                         isPossibleHistoryMember: true,
                         isBestPossibleHistoryMember: true,
                         exact: false,
-                        rankOfBestRankedEventInAnyMemberHistory: 0 as Rank<AnalyzedEvent, Integer>,
-                        rankOfBestRankedMemberHistory: 1 as Rank<AnalyzedEvent, Integer>,
+                        rankOfBestRankedEventInAnyMemberHistory: 0 as Integer & Rank<AnalyzedEvent>,
+                        rankOfBestRankedMemberHistory: 1 as Integer & Rank<AnalyzedEvent>,
                         nextEvents: [
                             "164.5°809",
                         ] as Name<Pitch>[],
@@ -171,8 +171,8 @@ describe("analyzeBound", () => {
                         isPossibleHistoryMember: true,
                         isBestPossibleHistoryMember: true,
                         exact: true,
-                        rankOfBestRankedEventInAnyMemberHistory: 0 as Rank<AnalyzedEvent, Integer>,
-                        rankOfBestRankedMemberHistory: 1 as Rank<AnalyzedEvent, Integer>,
+                        rankOfBestRankedEventInAnyMemberHistory: 0 as Integer & Rank<AnalyzedEvent>,
+                        rankOfBestRankedMemberHistory: 1 as Integer & Rank<AnalyzedEvent>,
                         nextEvents: [] as Name<Pitch>[],
                     },
                 ],
@@ -186,7 +186,7 @@ describe("analyzeBound", () => {
 
         analyzeBound(histories, bound)
 
-        const expectedBestHistoryRank = 1 as Rank<AnalyzedEvent, Integer>
+        const expectedBestHistoryRank = 1 as Integer & Rank<AnalyzedEvent>
         expect(ranks.updateRankAnalysis).toHaveBeenCalledWith(expectedBestHistoryRank, bound.id)
     })
 

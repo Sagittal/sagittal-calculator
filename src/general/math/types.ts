@@ -1,6 +1,6 @@
 import { Count, Sum } from "../types"
 
-// TODO: Analyzed & Integer
+// TODO: Analyzed
 //  - and if you could make Analyzed<> a parameterized thing like Formatted<>, of course it would be a bit different
 //  because Formatted<> converts it from whatever object it is to a branded string, just with aspect of that object
 //  whereas Analyzed would just extend the object
@@ -18,20 +18,11 @@ import { Count, Sum } from "../types"
 //  okay so would type Analysis<T> = T & T<"Analyzed"> which would allow you to write it like the above...
 //  no wait, then "Analyzed" would conflict with the Ji part...
 //  (although now that you've mastered the art of a type parameter object, you could have { analyzed: true })
-//  - also consider how Rank<_, Integer> is how you make it an Integer... should that just be Integer & Rank?
-//  like should Ji<T> just mean Integer & T?
-//  yeah but you wouldn't want a Just Intoned Rank... so you should probably have it be Whole<>
-//  except Whole numbers are technically only positive... so wouldn't it just be Integer<>?
-//  why isn't Integer already parameterized? or is it?
-//  so i think this Integer/Whole parameterized thing is independent from the Ji pitch vs not Ji
-//  because that's going to be its own thing entirely, where JI must hhave at least one of monzo and ratio
-//  and non-JI must have at least one of value/cents and ED maybe
-//  - Also parameteized types are great when realistically it could be a ton of different things
-//  But avoid it when it’s just either number or integer...
-//  - Also note though that there's no reason a plain old number couldn't take NumericTypeParameters
-//  though of course Integer is key to enforcing the "irrational" bit, so its on a lower level
-//  maybe what I'm thinking about here is like, NumericTypeParameters would apply to PitchValue
-//  or maybe more just like whatever Numerator and Denominator are
+
+// TODO: plain number takes NumericTypeParameters
+// type Numeric<T extends NumericTypeParameters> = number & NumericTypeParameterEffects<T>
+// type Integer = Numeric<{ rational: true }>
+
 type Integer = number & { _IntegerBrand: "Integer" }
 type Prime<T = void> = Integer & { _PrimeBrand: "Prime" } & (T extends void ? {} : T & { _PrimeOfBrand: T })
 type Roughness = Integer & { _RoughnessBrand: "Roughness" }

@@ -12,8 +12,8 @@ const computeInitialConsolidatedEvent = (analyzedEvent: AnalyzedEvent): Consolid
     isPossibleHistoryMember: false,
     isBestPossibleHistoryMember: false,
     nextEvents: [],
-    rankOfBestRankedMemberHistory: Object.keys(RANKS).length - 1 as Rank<AnalyzedEvent, Integer>,
-    rankOfBestRankedEventInAnyMemberHistory: Object.keys(RANKS).length - 1 as Rank<AnalyzedEvent, Integer>,
+    rankOfBestRankedMemberHistory: Object.keys(RANKS).length - 1 as Integer & Rank<AnalyzedEvent>,
+    rankOfBestRankedEventInAnyMemberHistory: Object.keys(RANKS).length - 1 as Integer & Rank<AnalyzedEvent>,
 })
 
 export {

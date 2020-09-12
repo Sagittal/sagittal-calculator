@@ -6,7 +6,7 @@ interface AnalyzedEvent extends HistoricalEvent {
     distance: Cents,
     exact: boolean,
     inaDistance: Multiplier<Ina>,
-    rank: Rank<AnalyzedEvent, Integer>,
+    rank: Integer & Rank<AnalyzedEvent>,
 }
 
 export {

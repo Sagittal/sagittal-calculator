@@ -11,9 +11,9 @@ import { analyzedBoundFixture } from "../../../../../../helpers/src/scripts/boun
 describe("computeBoundsAnalysisTable", () => {
     it("colors the rows correctly, according to their best rank", () => {
         const boundsAnalysis: AnalyzedBound[] = [
-            { ...analyzedBoundFixture, bestRank: 0 as Rank<AnalyzedEvent, Integer> },
-            { ...analyzedBoundFixture, bestRank: 2 as Rank<AnalyzedEvent, Integer> },
-            { ...analyzedBoundFixture, bestRank: 1 as Rank<AnalyzedEvent, Integer> },
+            { ...analyzedBoundFixture, bestRank: 0 as Integer & Rank<AnalyzedEvent> },
+            { ...analyzedBoundFixture, bestRank: 2 as Integer & Rank<AnalyzedEvent> },
+            { ...analyzedBoundFixture, bestRank: 1 as Integer & Rank<AnalyzedEvent> },
         ]
 
         spyOn(table, "formatTable")

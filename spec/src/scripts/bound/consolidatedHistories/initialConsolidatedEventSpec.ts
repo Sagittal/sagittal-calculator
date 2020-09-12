@@ -11,7 +11,7 @@ describe("computeInitialConsolidatedEvent", () => {
         ...analyzedEventFixture,
         type: EventType.INA,
         name: "12.5°58" as Name<Pitch>,
-        rank: 4 as Rank<AnalyzedEvent, Integer>,
+        rank: 4 as Integer & Rank<AnalyzedEvent>,
         cents: 43.343455 as Cents,
     }
 
@@ -20,8 +20,8 @@ describe("computeInitialConsolidatedEvent", () => {
     })
 
     it("initializes the rank related fields to the worst rank (so that there's nowhere to go but up when updating them with data from the analyzed histories", () => {
-        expect(actual.rankOfBestRankedEventInAnyMemberHistory).toBe(2 as Rank<AnalyzedEvent, Integer>)
-        expect(actual.rankOfBestRankedMemberHistory).toBe(2 as Rank<AnalyzedEvent, Integer>)
+        expect(actual.rankOfBestRankedEventInAnyMemberHistory).toBe(2 as Integer & Rank<AnalyzedEvent>)
+        expect(actual.rankOfBestRankedMemberHistory).toBe(2 as Integer & Rank<AnalyzedEvent>)
     })
 
     it("strips off the rank that was created in the analyze step, replacing it with the rank measurements that are appropriate for the consolidated history", () => {

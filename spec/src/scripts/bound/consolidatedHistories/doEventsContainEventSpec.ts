@@ -11,14 +11,14 @@ describe("computeDoEventsContainEvent", () => {
                 ...analyzedEventFixture,
                 name: "someName" as Name<Pitch>,
                 level: "someLevel" as Level,
-                rank: 1 as Rank<AnalyzedEvent, Integer>,
+                rank: 1 as Integer & Rank<AnalyzedEvent>,
             },
         ]
         const targetEvent = {
             ...analyzedEventFixture,
             name: "someName" as Name<Pitch>,
             level: "someLevel" as Level,
-            rank: 2 as Rank<AnalyzedEvent, Integer>,
+            rank: 2 as Integer & Rank<AnalyzedEvent>,
         }
 
         const actual = computeDoEventsContainEvent(analyzedEvents, targetEvent)
@@ -32,12 +32,12 @@ describe("computeDoEventsContainEvent", () => {
                 ...analyzedEventFixture,
                 name: "someName" as Name<Pitch>,
                 level: "someLevel" as Level,
-                rank: 1 as Rank<AnalyzedEvent, Integer>,
+                rank: 1 as Integer & Rank<AnalyzedEvent>,
             },
         ]
         const targetEvent = {
             ...analyzedEventFixture,
-            name: "someName" as Name<Pitch>, level: "otherLevel" as Level, rank: 2 as Rank<AnalyzedEvent, Integer>,
+            name: "someName" as Name<Pitch>, level: "otherLevel" as Level, rank: 2 as Integer & Rank<AnalyzedEvent>,
         }
 
         const actual = computeDoEventsContainEvent(analyzedEvents, targetEvent)
@@ -51,14 +51,14 @@ describe("computeDoEventsContainEvent", () => {
                 ...analyzedEventFixture,
                 name: "someName" as Name<Pitch>,
                 level: "someLevel" as Level,
-                rank: 1 as Rank<AnalyzedEvent, Integer>,
+                rank: 1 as Integer & Rank<AnalyzedEvent>,
             },
         ]
         const targetEvent = {
             ...analyzedEventFixture,
             name: "otherName" as Name<Pitch>,
             level: "someLevel" as Level,
-            rank: 2 as Rank<AnalyzedEvent, Integer>,
+            rank: 2 as Integer & Rank<AnalyzedEvent>,
         }
 
         const actual = computeDoEventsContainEvent(analyzedEvents, targetEvent)
@@ -72,14 +72,14 @@ describe("computeDoEventsContainEvent", () => {
                 ...analyzedEventFixture,
                 name: "someName" as Name<Pitch>,
                 level: "someLevel" as Level,
-                rank: 1 as Rank<AnalyzedEvent, Integer>,
+                rank: 1 as Integer & Rank<AnalyzedEvent>,
             },
         ]
         const targetEvent = {
             ...analyzedEventFixture,
             name: "otherName" as Name<Pitch>,
             level: "otherLevel" as Level,
-            rank: 1 as Rank<AnalyzedEvent, Integer>,
+            rank: 1 as Integer & Rank<AnalyzedEvent>,
         }
 
         const actual = computeDoEventsContainEvent(analyzedEvents, targetEvent)

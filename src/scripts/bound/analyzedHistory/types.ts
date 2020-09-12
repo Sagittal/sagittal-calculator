@@ -12,7 +12,7 @@ interface AnalyzedHistory {
     initialPositionTinaDistance: Multiplier<Tina>,
     cents: Cents,
     possible: boolean,
-    rank: Rank<AnalyzedEvent, Integer>,
+    rank: Integer & Rank<AnalyzedEvent>,
     score: Score,
     tinaError: Multiplier<Tina>,
 }

@@ -8,7 +8,7 @@ interface AnalyzedBound {
     bestPossibleHistoryTotalDistance: Cents,
     bestPossibleHistoryTotalInaDistance: Sum<Multiplier<Ina>>,
     // TODO: I think we should make this Rank one-indexed. there's some forum post where Dave was against zero ranks.
-    bestRank: Rank<AnalyzedEvent, Integer>,
+    bestRank: Integer & Rank<AnalyzedEvent>,
     consolidatedHistories: ConsolidatedHistories,
     initialPosition: Cents,
     initialPositionTinaDistance: Multiplier<Tina>,

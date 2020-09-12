@@ -14,27 +14,27 @@ describe("computeRank", () => {
                 type: EventType.INA,
                 level: Level.HIGH,
                 cents: 10.0 as Cents,
-                rank: 1 as Rank<AnalyzedEvent, Integer>,
+                rank: 1 as Integer & Rank<AnalyzedEvent>,
             },
             {
                 ...analyzedEventFixture,
                 type: EventType.SIZE,
                 level: Level.ULTRA,
                 cents: 10.2 as Cents,
-                rank: 3 as Rank<AnalyzedEvent, Integer>,
+                rank: 3 as Integer & Rank<AnalyzedEvent>,
             },
             {
                 ...analyzedEventFixture,
                 type: EventType.MEAN,
                 level: Level.EXTREME,
                 cents: 10.1 as Cents,
-                rank: 2 as Rank<AnalyzedEvent, Integer>,
+                rank: 2 as Integer & Rank<AnalyzedEvent>,
             },
         ]
 
         const actual = computeRank(analyzedEvents)
 
-        const expected = 3 as Rank<AnalyzedEvent, Integer>
+        const expected = 3 as Integer & Rank<AnalyzedEvent>
         expect(actual).toBe(expected)
     })
 })

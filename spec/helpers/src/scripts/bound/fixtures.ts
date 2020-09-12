@@ -16,14 +16,14 @@ const analyzedEventFixture: AnalyzedEvent = {
     ...eventFixture,
     distance: 0 as Cents,
     inaDistance: 0 as Multiplier<Ina>,
-    rank: 0 as Rank<AnalyzedEvent, Integer>,
+    rank: 0 as Integer & Rank<AnalyzedEvent>,
     exact: false,
 }
 
 const analyzedHistoryFixture: AnalyzedHistory = {
     events: [],
     cents: 0 as Cents,
-    rank: 0 as Rank<AnalyzedEvent, Integer>,
+    rank: 0 as Integer & Rank<AnalyzedEvent>,
     score: 0 as Score,
     totalDistance: 0 as Cents,
     exact: false,
@@ -37,8 +37,8 @@ const consolidatedEventFixture: ConsolidatedEvent = {
     ...eventFixture,
     isPossibleHistoryMember: false,
     isBestPossibleHistoryMember: false,
-    rankOfBestRankedMemberHistory: 0 as Rank<AnalyzedEvent, Integer>,
-    rankOfBestRankedEventInAnyMemberHistory: 0 as Rank<AnalyzedEvent, Integer>,
+    rankOfBestRankedMemberHistory: 0 as Integer & Rank<AnalyzedEvent>,
+    rankOfBestRankedEventInAnyMemberHistory: 0 as Integer & Rank<AnalyzedEvent>,
     nextEvents: [] as Name<Pitch>[],
     exact: false,
 }
@@ -51,7 +51,7 @@ const boundFixture: Bound = {
 
 const analyzedBoundFixture: AnalyzedBound = {
     bestPossibleHistory: analyzedHistoryFixture,
-    bestRank: 0 as Rank<AnalyzedEvent, Integer>,
+    bestRank: 0 as Integer & Rank<AnalyzedEvent>,
     initialPosition: 0 as Cents,
     initialPositionTinaDistance: 0 as Multiplier<Tina>,
     bestPossibleHistoryTotalDistance: 0 as Cents,

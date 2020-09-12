@@ -5,7 +5,7 @@ import { rankBoundIndices, rankCounts, updateRankAnalysis } from "../../../../..
 import { AnalyzedEvent } from "../../../../../src/scripts/bound/analyzedHistory"
 
 describe("updateRankAnalysis", () => {
-    const bestRank: Rank<AnalyzedEvent, Integer> = 2 as Rank<AnalyzedEvent, Integer>
+    const bestRank: Integer & Rank<AnalyzedEvent> = 2 as Integer & Rank<AnalyzedEvent>
     const boundId: Id<Bound> = 88 as Id<Bound>
 
     let previousRankAnalysis: number

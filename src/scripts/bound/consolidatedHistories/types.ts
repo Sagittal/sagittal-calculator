@@ -8,8 +8,8 @@ interface ConsolidatedEvent extends HistoricalEvent {
     isBestPossibleHistoryMember: boolean,
     isPossibleHistoryMember: boolean,
     nextEvents: Name<Pitch>[],
-    rankOfBestRankedEventInAnyMemberHistory: Rank<AnalyzedEvent, Integer>,
-    rankOfBestRankedMemberHistory: Rank<AnalyzedEvent, Integer>,
+    rankOfBestRankedEventInAnyMemberHistory: Integer & Rank<AnalyzedEvent>,
+    rankOfBestRankedMemberHistory: Integer & Rank<AnalyzedEvent>,
 }
 
 type ConsolidatedHistories = Partial<Record<Level, ConsolidatedEvent[]>>

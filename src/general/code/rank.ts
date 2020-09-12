@@ -52,35 +52,35 @@ const rank = <T>(arrayOfObjects: T[], options: RankOptions = {}): Array<T & { ra
                 }
             })
         case RankStrategy.COMPETITION:
-            return clonedArrayOfObjects.map((object: T): T & { rank: Rank<T, Integer> } => {
+            return clonedArrayOfObjects.map((object: T): T & { rank: Integer & Rank<T> } => {
                 const rankingValue = dig(object, by)
                 if (isCloseOrEqual(rankingValue, previousValue, precision)) {
                     tiesCount = tiesCount + 1 as Count
 
-                    return { ...object, rank: rank as Rank<T, Integer> }
+                    return { ...object, rank: rank as Integer & Rank<T> }
                 } else {
-                    rank = rank + 1 + tiesCount as Rank<T, Integer>
+                    rank = rank + 1 + tiesCount as Integer & Rank<T>
                     tiesCount = 0 as Count
                     previousValue = rankingValue
 
-                    return { ...object, rank: rank as Rank<T, Integer> }
+                    return { ...object, rank: rank as Integer & Rank<T> }
                 }
             })
         case RankStrategy.DENSE:
-            return clonedArrayOfObjects.map((object: T): T & { rank: Rank<T, Integer> } => {
+            return clonedArrayOfObjects.map((object: T): T & { rank: Integer & Rank<T> } => {
                 const rankingValue = dig(object, by)
                 if (isCloseOrEqual(rankingValue, previousValue, precision)) {
-                    return { ...object, rank: rank as Rank<T, Integer> }
+                    return { ...object, rank: rank as Integer & Rank<T> }
                 } else {
                     rank = rank + 1 as Rank<T>
                     previousValue = rankingValue
 
-                    return { ...object, rank: rank as Rank<T, Integer> }
+                    return { ...object, rank: rank as Integer & Rank<T> }
                 }
             })
         case RankStrategy.ORDINAL:
-            return clonedArrayOfObjects.map((object: T, index: number): T & { rank: Rank<T, Integer> } => {
-                return { ...object, rank: index + 1 as Rank<T, Integer> }
+            return clonedArrayOfObjects.map((object: T, index: number): T & { rank: Integer & Rank<T> } => {
+                return { ...object, rank: index + 1 as Integer & Rank<T> }
             })
         default:
             throw new Error(`unknown rank strategy ${strategy}`)

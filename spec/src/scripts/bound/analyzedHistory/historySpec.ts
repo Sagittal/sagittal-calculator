@@ -38,7 +38,7 @@ describe("computeAnalyzedHistory", () => {
                     ...analyzedEventFixture,
                     cents,
                     type: EventType.INA,
-                    rank: 0 as Rank<AnalyzedEvent, Integer>,
+                    rank: 0 as Integer & Rank<AnalyzedEvent>,
                     exact: false,
                     distance: 0 as Cents,
                     inaDistance: 0 as Multiplier<Ina>,
@@ -48,7 +48,7 @@ describe("computeAnalyzedHistory", () => {
                     ...analyzedEventFixture,
                     cents,
                     type: EventType.SIZE,
-                    rank: 2 as Rank<AnalyzedEvent, Integer>,
+                    rank: 2 as Integer & Rank<AnalyzedEvent>,
                     exact: false,
                     distance: 0 as Cents,
                     inaDistance: 0 as Multiplier<Ina>,
@@ -56,7 +56,7 @@ describe("computeAnalyzedHistory", () => {
                 },
             ])
             expect(actual.cents).toBe(cents)
-            expect(actual.rank).toBe(2 as Rank<AnalyzedEvent, Integer>)
+            expect(actual.rank).toBe(2 as Integer & Rank<AnalyzedEvent>)
             expect(actual.totalDistance).toBe(0 as Cents)
             expect(actual.initialPositionTinaDistance)
                 .toBeCloseToTyped(3.681504379547852 as Multiplier<Tina>)

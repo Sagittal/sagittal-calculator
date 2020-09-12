@@ -14,7 +14,7 @@ describe("computeFormattedBound", () => {
         }
         const analyzedBound: AnalyzedBound = {
             ...analyzedBoundFixture,
-            bestRank: 2 as Rank<AnalyzedEvent, Integer>,
+            bestRank: 2 as Integer & Rank<AnalyzedEvent>,
         }
 
         const actual = formatBound(analyzedBound, { bound })

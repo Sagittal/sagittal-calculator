@@ -17,15 +17,12 @@ type Sum<T extends number | void = void> =
     & { _SumBrand: "Sum" }
     & (T extends void ? {} : T & { _SumOfBrand: T })
 
-type Step<EdCount extends number | void = void, T extends number = Integer> =
-    T
-    & { _StepBrand: "Step", _StepOfEdBrand: EdCount }
-type Ed<WindowSize extends number | void = void, T extends number = Integer> =
-    T
-    & { _EdBrand: "Ed", _WindowSizeBrand: WindowSize }
-type Window<WindowSize extends number | unknown = unknown, T extends number = Integer> =
-    T
-    & { _WindowBrand: "Window", _WindowSizeBrand: WindowSize }
+type Step<EdCount extends number | void = void> =
+    number & { _StepBrand: "Step", _StepOfEdBrand: EdCount }
+type Ed<WindowSize extends number | void = void> =
+    number & { _EdBrand: "Ed", _WindowSizeBrand: WindowSize }
+type Window<WindowSize extends number | unknown = unknown> =
+    number & { _WindowBrand: "Window", _WindowSizeBrand: WindowSize }
 
 type Name<T = void> = Io & { _NameBrand: "Name" } & (T extends void ? {} : { _NameOfBrand: T })
 
