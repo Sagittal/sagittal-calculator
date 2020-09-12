@@ -1,17 +1,29 @@
-import { computeTrimmedArray } from "../code"
-import { computeRoughMonzo, computeSuperMonzo, Direction, FIVE_ROUGHNESS, Monzo } from "../math"
-import { computeJiPitchMonzo } from "./jiPitchMonzoOrRatio"
+import { isUndefined } from "../code"
+import {
+    computeRoughMonzo,
+    computeRoughRatio,
+    computeSuperMonzo,
+    computeSuperRatio,
+    FIVE_ROUGHNESS,
+    Monzo,
+    Ratio,
+} from "../math"
 import { JiPitch, TwoThreeFreeClass } from "./types"
 
-const compute23FreeClass = (jiPitch: JiPitch): TwoThreeFreeClass => {
-    const monzo = computeJiPitchMonzo(jiPitch)
-    const twoThreeFreeMonzo: Monzo<{ rough: 5 }> = computeRoughMonzo(monzo, FIVE_ROUGHNESS)
-    const numeratorGreaterThanDenominatorTwoThreeFreeMonzo: Monzo<{ rough: 5, direction: Direction.SUPER }> =
-        computeSuperMonzo(twoThreeFreeMonzo)
+const compute23FreeClass = ({ monzo, ratio }: JiPitch): TwoThreeFreeClass => {
+    const twoThreeFreeClass = {} as TwoThreeFreeClass
 
-    // TODO: perhaps now that everything supports monzos and ratios you should opt for this being a ratio?
-    //  since we usually think of them that way
-    return { monzo: computeTrimmedArray(numeratorGreaterThanDenominatorTwoThreeFreeMonzo) } as TwoThreeFreeClass
+    if (!isUndefined(monzo)) {
+        const twoThreeFreeMonzo: Monzo<{ rough: 5 }> = computeRoughMonzo(monzo, FIVE_ROUGHNESS)
+        twoThreeFreeClass.monzo = computeSuperMonzo(twoThreeFreeMonzo)
+    }
+
+    if (!isUndefined(ratio)) {
+        const twoThreeFreeRatio: Ratio<{ rough: 5 }> = computeRoughRatio(ratio, FIVE_ROUGHNESS)
+        twoThreeFreeClass.ratio = computeSuperRatio(twoThreeFreeRatio)
+    }
+
+    return twoThreeFreeClass
 }
 
 export {

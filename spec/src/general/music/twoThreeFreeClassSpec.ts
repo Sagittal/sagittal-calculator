@@ -1,4 +1,5 @@
 import { Monzo } from "../../../../src/general/math/monzo"
+import { Ratio } from "../../../../src/general/math/ratio"
 import { compute23FreeClass, TwoThreeFreeClass } from "../../../../src/general/music"
 
 describe("compute23FreeClass", () => {
@@ -17,6 +18,15 @@ describe("compute23FreeClass", () => {
         const actual = compute23FreeClass({ monzo })
 
         const expected = { monzo: [] as Monzo } as TwoThreeFreeClass
+        expect(actual).toEqual(expected)
+    })
+
+    it("works for commas with ratios instead of monzos too", () => {
+        const ratio = [48, 25] as Ratio
+
+        const actual = compute23FreeClass({ ratio })
+
+        const expected = { ratio: [25, 1] } as TwoThreeFreeClass
         expect(actual).toEqual(expected)
     })
 })
