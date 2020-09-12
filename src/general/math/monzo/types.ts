@@ -1,25 +1,16 @@
 import { Ed, Step, Window } from "../../types"
-import { Exponent, Integer, Max, Prime } from "../types"
-
-enum Direction {
-    SUPER = "super",
-    SUB = "sub",
-    UNDIRECTED = "undirected",
-}
-
-type NumericTypeParameters = Partial<{
-    limit: number,
-    irrational: boolean,
-    direction: Direction
-    rough: number,
-}>
+import { Exponent, Integer, Max, NumericTypeParameterEffects, NumericTypeParameters, Prime } from "../types"
 
 type Monzo<T extends NumericTypeParameters = {}> =
     Array<(T extends { irrational: true } ? number : Integer) & Exponent<Prime>>
-    & (T extends { direction: Direction.SUB } ? { _MonzoDirection: Direction.SUB } : {})
-    & (T extends { direction: Direction.SUPER } ? { _MonzoDirection: Direction.SUPER } : {})
-    & (T extends { limit: number } ? { _MonzoLimit: Pick<T, "limit"> } : {})
-    & (T extends { rough: number } ? { _MonzoRough: Pick<T, "rough"> } : {})
+    & NumericTypeParameterEffects<T>
+
+// TODO: I feel like this is totally ass-backwards... like it should be "PotentiallyRational"
+//  or maybe the solution is to have a little function that creates Monzos for you to insulate something behind
+//  or maybe the solution is that Monzos do have to, by default, be irrational... (and same with Ratios)
+type PotentiallyIrrationalMonzoParameter<T extends NumericTypeParameters = {}> =
+    Array<number & Exponent<Prime>>
+    & NumericTypeParameterEffects<T>
 
 type Val = Array<Exponent<Step>>
 
@@ -63,6 +54,5 @@ export {
     Monzo,
     Val,
     PatentValOptions,
-    NumericTypeParameters,
-    Direction,
+    PotentiallyIrrationalMonzoParameter,
 }

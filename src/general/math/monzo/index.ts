@@ -1,12 +1,12 @@
 export { computeIntegerFromMonzo } from "./integerFromMonzo"
-export { invertMonzo } from "./invertMonzo"
-export { computeIsSubMonzo, computeIsSuperMonzo } from "./monzoDirection"
+export {
+    computeSuperMonzo, computeIsSubMonzo, computeIsSuperMonzo, invertMonzo, computeIsUnisonMonzo,
+} from "./monzoDirection"
 export { computeMonzoFromInteger } from "./monzoFromInteger"
 export { computeMonzoFromIntegerOrMonzo } from "./monzoFromIntegerOrMonzo"
 export { computeMonzoFromRatio } from "./monzoFromRatio"
 export { computeMonzosFromPrimeExponentExtremas } from "./monzosFromPrimeExponentExtrema"
-export { computeRatioFromMonzo } from "./ratioFromMonzo"
-export { computeRoughMonzo } from "./roughMonzo"
+export { computeIsRoughMonzo, computeRoughMonzo } from "./monzoRoughness"
+export { computeIsSmoothMonzo } from "./monzoSmoothness"
 export { sumMonzos } from "./sumMonzos"
-export { computeSuperMonzo } from "./superMonzo"
-export { Direction, Monzo, NumericTypeParameters } from "./types"
+export { Monzo, PotentiallyIrrationalMonzoParameter } from "./types"

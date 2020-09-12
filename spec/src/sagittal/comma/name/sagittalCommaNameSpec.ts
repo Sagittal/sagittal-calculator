@@ -55,13 +55,22 @@ describe("computeSagittalCommaName", () => {
         const expected = "3C"
         expect(actual).toBe(expected)
     })
+    
+    it("works for a comma which is sub", () => {
+        const comma = { monzo: [-4,	4,	-1]} as Comma
+        
+        const actual = computeSagittalCommaName(comma)
+        
+        const expected = "1/5C"
+        expect(actual).toBe(expected)
+    })
 
     it(
         "throws an error when there are only 2's in the prime factorization, since it must be outside of comma range",
         () => {
             const comma = { monzo: [1] } as Comma
 
-            expect(() => computeSagittalCommaName(comma)).toThrowError(`Comma [   1 ⟩ is outside of comma-sized range and cannot be named.`)
+            expect(() => computeSagittalCommaName(comma)).toThrowError(`Comma {"monzo":[1]} is outside of comma-sized range and cannot be named.`)
         },
     )
 

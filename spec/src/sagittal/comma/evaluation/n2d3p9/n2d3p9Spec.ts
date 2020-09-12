@@ -1,4 +1,5 @@
-import { Direction, Monzo } from "../../../../../../src/general/math/monzo"
+import { Direction } from "../../../../../../src/general/math"
+import { Monzo } from "../../../../../../src/general/math/monzo"
 import { TwoThreeFreeClass } from "../../../../../../src/general/music"
 import { computeN2D3P9, N2D3P9 } from "../../../../../../src/sagittal/comma/evaluation/n2d3p9"
 

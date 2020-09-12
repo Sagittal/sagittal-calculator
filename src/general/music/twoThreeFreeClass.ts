@@ -9,6 +9,8 @@ const compute23FreeClass = (jiPitch: JiPitch): TwoThreeFreeClass => {
     const numeratorGreaterThanDenominatorTwoThreeFreeMonzo: Monzo<{ rough: 5, direction: Direction.SUPER }> =
         computeSuperMonzo(twoThreeFreeMonzo)
 
+    // TODO: perhaps now that everything supports monzos and ratios you should opt for this being a ratio?
+    //  since we usually think of them that way
     return { monzo: computeTrimmedArray(numeratorGreaterThanDenominatorTwoThreeFreeMonzo) } as TwoThreeFreeClass
 }
 

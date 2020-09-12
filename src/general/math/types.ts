@@ -1,5 +1,4 @@
 import { Count, Sum } from "../types"
-import { NumericTypeParameters } from "./monzo"
 
 // TODO: Analyzed & Integer
 //  - and if you could make Analyzed<> a parameterized thing like Formatted<>, of course it would be a bit different
@@ -29,23 +28,14 @@ import { NumericTypeParameters } from "./monzo"
 //  and non-JI must have at least one of value/cents and ED maybe
 //  - Also parameteized types are great when realistically it could be a ton of different things
 //  But avoid it when it’s just either number or integer...
+//  - Also note though that there's no reason a plain old number couldn't take NumericTypeParameters
+//  though of course Integer is key to enforcing the "irrational" bit, so its on a lower level
+//  maybe what I'm thinking about here is like, NumericTypeParameters would apply to PitchValue
+//  or maybe more just like whatever Numerator and Denominator are
 type Integer = number & { _IntegerBrand: "Integer" }
 type Prime<T = void> = Integer & { _PrimeBrand: "Prime" } & (T extends void ? {} : T & { _PrimeOfBrand: T })
 type Roughness = Integer & { _RoughnessBrand: "Roughness" }
-
-type Numerator<T extends number = Integer> = T & { _NumeratorBrand: "Numerator" }
-type Denominator<T extends number = Integer> = T & { _DenominatorBrand: "Denominator" }
-type Ratio<T extends NumericTypeParameters = {}> = [
-    Numerator<(T extends { irrational: true } ? number : Integer)>, 
-    Denominator<(T extends { irrational: true } ? number : Integer)>
-]
-
-enum FractionalPartType {
-    NUMERATOR = "numerator",
-    DENOMINATOR = "denominator",
-}
-
-type FractionalPart = Numerator | Denominator
+type Smoothness = Integer & { _SmoothnessBrand: "Smoothness" }
 
 type Combination<T> = T[] & { _CombinationBrand: "Combination" }
 type Combinations<T> = Array<Combination<T>> & { _CombinationsBrand: "Combinations" }
@@ -74,16 +64,35 @@ type Copfr<Roughness = void> =
     & { _CopfrBrand: "Copfr" }
     & (Roughness extends number ? { _RoughnessBrand: Roughness } : {})
 
+// TODO: Direction needs to come up and out of the monzo module since it gets used for Ratios too now,
+//  and probably also the NumericTypeParameters
+enum Direction {
+    SUPER = "super",
+    SUB = "sub",
+    UNISON = "unison",
+}
+
+type NumericTypeParameters = Partial<{
+    limit: number,
+    irrational: boolean,
+    direction: Direction
+    rough: number,
+    smooth: number,
+}>
+
+type NumericTypeParameterEffects<T> =
+    (T extends { direction: Direction.SUB } ? { _Direction: Direction.SUB } : {})
+    & (T extends { direction: Direction.SUPER } ? { _Direction: Direction.SUPER } : {})
+    & (T extends { direction: Direction.UNISON } ? { _Direction: Direction.UNISON } : {})
+    & (T extends { limit: number } ? { _Limit: Pick<T, "limit"> } : {})
+    & (T extends { rough: number } ? { _Rough: Pick<T, "rough"> } : {})
+    & (T extends { smooth: number } ? { _Smooth: Pick<T, "smooth"> } : {})
+
 export {
-    Ratio,
-    Numerator,
-    Denominator,
     Combination,
     Combinations,
     Distribution,
     DistributionBin,
-    FractionalPartType,
-    FractionalPart,
     Exponent,
     Base,
     Power,
@@ -96,4 +105,8 @@ export {
     Min,
     Average,
     Abs,
+    NumericTypeParameters,
+    Direction,
+    NumericTypeParameterEffects,
+    Smoothness,
 }

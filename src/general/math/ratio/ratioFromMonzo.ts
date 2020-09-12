@@ -1,22 +1,23 @@
 import { MAX_JAVASCRIPT_INTEGER_VALUE } from "../../code"
 import { formatMonzo } from "../../io"
+import { PotentiallyIrrationalMonzoParameter } from "../monzo"
 import { PRIMES } from "../primes"
-import { Denominator, Numerator, Ratio } from "../types"
-import { Monzo, NumericTypeParameters } from "./types"
+import { NumericTypeParameters } from "../types"
+import { Denominator, Numerator, Ratio } from "./types"
 
-const computeRatioFromMonzo = <T extends NumericTypeParameters = {}>(
-    monzo: Monzo<T>,
+const computeRatioFromMonzo = <T extends NumericTypeParameters>(
+    monzo: PotentiallyIrrationalMonzoParameter<T>,
     { disableErrorBecauseExactValueNotRequired }: { disableErrorBecauseExactValueNotRequired?: boolean } = {},
-): Ratio => {
-    let numerator: Numerator = 1 as Numerator
-    let denominator: Denominator = 1 as Denominator
+): Ratio<T> => {
+    let numerator: Numerator<T> = 1 as Numerator<T>
+    let denominator: Denominator<T> = 1 as Denominator<T>
 
     monzo.forEach((primeExponent, index) => {
         if (primeExponent > 0) {
-            numerator = numerator * PRIMES[ index ] ** primeExponent as Numerator
+            numerator = numerator * PRIMES[ index ] ** primeExponent as Numerator<T>
         }
         if (primeExponent < 0) {
-            denominator = denominator * PRIMES[ index ] ** -primeExponent as Denominator
+            denominator = denominator * PRIMES[ index ] ** -primeExponent as Denominator<T>
         }
     })
 
@@ -27,7 +28,7 @@ const computeRatioFromMonzo = <T extends NumericTypeParameters = {}>(
         throw new Error(`Tried to convert a monzo to a ratio where a fractional part would exceed JavaScript's maximum safe integer value. ${formatMonzo(monzo)}`)
     }
 
-    return [numerator, denominator]
+    return [numerator, denominator] as Ratio<T>
 }
 
 export {

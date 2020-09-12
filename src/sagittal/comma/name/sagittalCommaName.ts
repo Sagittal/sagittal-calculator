@@ -1,28 +1,28 @@
 import {
-    abs,
-    Cents, Comma,
+    Comma,
     computeCentsFromPitch,
-    computeIsSubMonzo, computeJiPitchMonzo,
+    computeIsSmoothJiPitch,
+    computeIsSubPitch,
+    computeIsUnisonPitch,
+    computeJiPitchRatio,
     computeMonzoFromInteger,
-    computeRatioFromMonzo,
-    computeRoughMonzo,
-    computeSuperMonzo,
-    computeUndirectedRatio,
-    deepEquals,
+    computeRoughRatio,
+    computeSubRatio,
+    computeSuperPitch, 
     Direction,
     FIVE_ROUGHNESS,
-    formatMonzo,
     FractionalPart,
-    Monzo,
     Name,
     PRIMES,
     Ratio,
+    stringify,
     SUPERSCRIPT_NUMS,
+    THREE_SMOOTHNESS,
 } from "../../../general"
-import { MAX_SIZE_CATEGORY_BOUND } from "./constants"
+import { computeIsCommaSized } from "./isCommaSized"
 import { computeSizeCategory } from "./sizeCategory"
 
-const primeFactorizeCommaName = (numeratorOrDenominator: FractionalPart) => {
+const primeFactorize = (numeratorOrDenominator: FractionalPart) => {
     if (numeratorOrDenominator === 1) return "1"
 
     const monzo = computeMonzoFromInteger(numeratorOrDenominator)
@@ -45,52 +45,57 @@ const primeFactorizeCommaName = (numeratorOrDenominator: FractionalPart) => {
     return factorizedTerms.join(".")
 }
 
+const stringifyRatio = (ratio: Ratio, { factored }: { factored: boolean }) => {
+    return factored ?
+        ratio.map(primeFactorize) :
+        ratio.map((fractionalPart: FractionalPart) => fractionalPart.toString())
+}
+
 // "Secor-Keenan systematic name" or "Sagittal name"
 
 const computeSagittalCommaName = (
     comma: Comma,
     { directed = true, factored = false, abbreviated = true } = {},
 ): Name<Comma> => {
-    const monzo = computeJiPitchMonzo(comma)
-    const isSubMonzo = computeIsSubMonzo(monzo)
-
-    const superMonzo: Monzo<{ direction: Direction.SUPER }> = computeSuperMonzo(monzo)
-    // TODO: so perhaps monzoDirection should instead be jiPitchDirection  
-    const cents: Cents = computeCentsFromPitch({ monzo: superMonzo }) 
-
-    if (cents > MAX_SIZE_CATEGORY_BOUND) {
-        throw new Error(`Comma ${formatMonzo(monzo)} is outside of comma-sized range and cannot be named.`)
+    if (!computeIsCommaSized(comma)) {
+        throw new Error(`Comma ${stringify(comma)} is outside of comma-sized range and cannot be named.`)
     }
 
-    const twoThreeFreeMonzo = computeRoughMonzo(superMonzo, FIVE_ROUGHNESS)
-    const ratio: Ratio = computeRatioFromMonzo(twoThreeFreeMonzo)
-
-    let formattedRatio
-    if (
-        deepEquals(twoThreeFreeMonzo, [] as Monzo as Monzo<{ rough: 5, direction: Direction.SUPER }>) &&
-        abs(monzo[ 1 ]) > 0
-    ) {
-        formattedRatio = "3"
-    } else {
-        const maybeDirectedRatio = directed ? ratio : computeUndirectedRatio(ratio)
-        const maybeFlippedRatio = directed ? maybeDirectedRatio : [maybeDirectedRatio[ 1 ], maybeDirectedRatio[ 0 ]]
-        const stringifiedRatio = factored ?
-            maybeFlippedRatio.map(primeFactorizeCommaName) :
-            maybeFlippedRatio.map(n => n.toString())
-        const separator = directed ? "/" : ":"
-
-        formattedRatio = directed ?
-            stringifiedRatio[ 1 ] === "1" ? stringifiedRatio[ 0 ] : stringifiedRatio.join(separator) :
-            stringifiedRatio[ 0 ] === "1" ? stringifiedRatio[ 1 ] : stringifiedRatio.join(separator)
-    }
-    
     const maybeHyphen = abbreviated ? "" : "-"
-    const sizeCategory = computeSizeCategory(cents, { abbreviated })
-    const maybeDown = isSubMonzo ? " down" : ""
 
-    return `${formattedRatio}${maybeHyphen}${sizeCategory}${maybeDown}` as Name<Comma>
+    const maybeDown = computeIsSubPitch(comma) ? " down" : ""
+
+    const superComma: Comma<{ direction: Direction.SUPER }> = 
+        // TODO: okay, I tried valiantly, but I could not figure out how to get this thing to both take a parameterized
+        //  T for the NumericTypeParameters while also allowing that Comma brand to pass through... 
+        computeSuperPitch(comma) as Comma<{ direction: Direction.SUPER }>
+    const sizeCategory = computeSizeCategory(computeCentsFromPitch(superComma), { abbreviated })
+
+    let formattedTwoThreeFreeRatio
+    if (computeIsSmoothJiPitch(comma, THREE_SMOOTHNESS) && !computeIsUnisonPitch(comma)) {
+        formattedTwoThreeFreeRatio = "3"
+    } else {
+        // TODO: holy insano balls ... okay so it clearly matters very much the ORDER you do these things in...
+        //  I'll bet if you compare how you construct a 2,3-free class you first roughen it and THEN super it.
+        const twoThreeFreeRatio = computeRoughRatio(computeJiPitchRatio(superComma), FIVE_ROUGHNESS)
+
+        if (directed) {
+            const stringifiedRatio = stringifyRatio(twoThreeFreeRatio, { factored })
+
+            formattedTwoThreeFreeRatio = stringifiedRatio[ 1 ] === "1" ? stringifiedRatio[ 0 ] : stringifiedRatio.join("/")
+        } else {
+            const stringifiedRatio = stringifyRatio(computeSubRatio(twoThreeFreeRatio), { factored })
+
+            formattedTwoThreeFreeRatio = stringifiedRatio[ 0 ] === "1" ? stringifiedRatio[ 1 ] : stringifiedRatio.join(":")
+        }
+    }
+
+    return `${formattedTwoThreeFreeRatio}${maybeHyphen}${sizeCategory}${maybeDown}` as Name<Comma>
 }
 
 export {
     computeSagittalCommaName,
 }
+
+// TODO: I think you've got another to-do somewhere re: this directed 2,3-free ratio which is NOT a 2,3-free class
+//  but which is one half of comma names. does it need a name, as a thing? a (Directed)CommaNameRatio?

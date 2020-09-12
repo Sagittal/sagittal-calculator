@@ -1,6 +1,6 @@
 import {
     computeMonzoFromRatio,
-    computeRatioFromMonzo,
+    computeRatioFromMonzo, Direction,
     Popularity,
     rank,
     Ranked,
@@ -11,9 +11,10 @@ import { onlyRunInCi } from "../../../helpers/onlyRunInCi"
 
 describe("COMMA_POPULARITIES", () => {
     it("is the case that all the ratios capable of being parsed by monzo from ratio correctly when only top is 80 or less", () => {
-        const originalRatios: Ratio[] = COMMA_POPULARITIES.map(popularity => popularity.twoThreeFreeClass.ratio!)
+        const originalRatios: Array<Ratio<{ rough: 5, direction: Direction.SUPER }>> = 
+            COMMA_POPULARITIES.map(popularity => popularity.twoThreeFreeClass.ratio!)
 
-        const monzos = originalRatios.map(computeMonzoFromRatio)
+        const monzos = originalRatios.map(ratio => computeMonzoFromRatio(ratio))
         const ratios = monzos.map(monzo => computeRatioFromMonzo(monzo))
 
         expect(ratios).toEqual(originalRatios)

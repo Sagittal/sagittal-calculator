@@ -1,6 +1,6 @@
 import {
     ACCURACY_THRESHOLD,
-    computeIsSuperMonzo,
+    computeIsSubMonzo,
     Exponent,
     Integer,
     Io,
@@ -52,7 +52,7 @@ const computePopular23FreeClasses = (
     const popular23FreeClasses = [] as Array<Popular23FreeClass>
     while (true) {
         // do the work
-        const maybePopular23FreeClass = computeIsSuperMonzo(twoThreeFreeMonzo) ?
+        const maybePopular23FreeClass = !computeIsSubMonzo(twoThreeFreeMonzo) ?
             computeMaybePopular23FreeClass(
                 { monzo: twoThreeFreeMonzo } as TwoThreeFreeClass,
                 maxN2D3P9,

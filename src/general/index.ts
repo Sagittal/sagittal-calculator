@@ -88,7 +88,7 @@ export {
     computeDistributions,
     computeGpf,
     computeIntegerFromMonzo,
-    computeIsRough,
+    computeIsRoughInteger,
     computeIsSubMonzo,
     computeMonzoFromInteger,
     computeMonzoFromRatio,
@@ -99,7 +99,6 @@ export {
     computeSopfr,
     computeSuperMonzo,
     computeTriangularNumber,
-    computeUndirectedRatio,
     Copfr,
     count,
     Denominator,
@@ -109,6 +108,7 @@ export {
     dividesEvenly,
     Exponent,
     FIVE_PRIME_INDEX,
+    THREE_ROUGHNESS,
     FIVE_ROUGHNESS,
     floor,
     FractionalPart,
@@ -140,7 +140,11 @@ export {
     sqrt,
     sum,
     sumMonzos,
+    computeSuperRatio,
     THREE_PRIME_INDEX,
+    THREE_SMOOTHNESS,
+    computeRoughRatio,
+    computeSubRatio,
 } from "./math"
 export {
     Cents,
@@ -161,5 +165,10 @@ export {
     Comma,
     TwoThreeFreeClass,
     compute23FreeClass,
+    computeIsSubPitch,
+    computeSuperPitch,
+    computeIsRoughJiPitch,
+    computeIsSmoothJiPitch,
+    computeIsUnisonPitch,
 } from "./music"
 export { Count, Ed, Extrema, Id, Index, Ms, Multiplier, Name, Step, Sum, Window } from "./types"

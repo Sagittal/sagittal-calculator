@@ -7,3 +7,8 @@ export { computeJiPitchMonzo, computeJiPitchRatio } from "./jiPitchMonzoOrRatio"
 export { Cents, CentsPosition, Comma, Popularity, Votes, Zone, Pitch, JiPitch, TwoThreeFreeClass } from "./types"
 export { COMMA_POPULARITIES } from "./popularities"
 export { equalJiPitches } from "./equalJiPitches"
+export { computeIsSubPitch, computeIsUnisonPitch } from "./pitchDirection"
+export { computeSuperPitch } from "./superPitch"
+// TODO: because in music, not math, you should call these prime limit, isWithinPrimeLimit, isWithinPrimeMin
+export { computeIsRoughJiPitch } from "./roughJiPitch" 
+export { computeIsSmoothJiPitch } from "./smoothJiPitch"

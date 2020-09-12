@@ -1,10 +1,13 @@
 import { formatMonzo } from "../../io"
-import { computeRatioFromMonzo } from "./ratioFromMonzo"
-import { Direction, Monzo } from "./types"
+import { computeRatioFromMonzo } from "../ratio"
+import { Direction, Exponent, NumericTypeParameters, Prime } from "../types"
+import { Monzo, PotentiallyIrrationalMonzoParameter } from "./types"
 
-const computeIsSubMonzo = (monzo: Monzo): monzo is Monzo<{ direction: Direction.SUB }> => {
-    if (monzo.every(term => term >= 0)) return false
-    if (monzo.every(term => term <= 0)) return true
+const computeIsSubMonzo = <T extends NumericTypeParameters>(
+    monzo: PotentiallyIrrationalMonzoParameter<Omit<T, "direction">>,
+): monzo is Monzo<Omit<T, "direction"> & { direction: Direction.SUB }> => {
+    if (monzo.length && monzo.every(term => term >= 0)) return false
+    if (monzo.length && monzo.every(term => term <= 0)) return true
 
     let ratio
     try {
@@ -41,11 +44,46 @@ const computeIsSubMonzo = (monzo: Monzo): monzo is Monzo<{ direction: Direction.
     return value < 1
 }
 
-const computeIsSuperMonzo = (monzo: Monzo): monzo is Monzo<{ direction: Direction.SUPER }> => {
-    return !computeIsSubMonzo(monzo)
+const computeIsSuperMonzo = <T extends NumericTypeParameters>(
+    monzo: PotentiallyIrrationalMonzoParameter<Omit<T, "direction">>,
+): monzo is Monzo<Omit<T, "direction"> & { direction: Direction.SUPER }> => {
+    return !(computeIsUnisonMonzo(monzo) || computeIsSubMonzo(monzo))
 }
+
+const computeIsUnisonMonzo = <T extends NumericTypeParameters>(
+    monzo: PotentiallyIrrationalMonzoParameter<Omit<T, "direction">>,
+): monzo is Monzo<Omit<T, "direction"> & { direction: Direction.UNISON }> => {
+    return monzo.every(term => term === 0)
+}
+
+const computeSuperMonzo = <T extends NumericTypeParameters>(
+    monzo: PotentiallyIrrationalMonzoParameter<T>,
+): Monzo<Omit<T, "direction"> & { direction: Direction.SUPER }> => {
+    if (computeIsSubMonzo(monzo)) {
+        return invertMonzo(monzo)
+    }
+
+    return monzo as Monzo<T & { direction: Direction.SUPER }>
+}
+
+const invertMonzo: {
+    <T extends NumericTypeParameters & { direction: Direction.SUPER }>(
+        monzo: PotentiallyIrrationalMonzoParameter<T>
+    ): Monzo<T & { direction: Direction.SUB }>,
+    <T extends NumericTypeParameters & { direction: Direction.SUB }>(
+        monzo: PotentiallyIrrationalMonzoParameter<T>
+    ): Monzo<T & { direction: Direction.SUPER }>,
+    <T extends NumericTypeParameters>(
+        monzo: PotentiallyIrrationalMonzoParameter<T>
+    ): Monzo<T>,
+} = <T extends NumericTypeParameters>(monzo: Monzo<T>): Monzo<T> =>
+    monzo.map(primeExponent => primeExponent === 0 ? 0 : -primeExponent as Exponent<Prime>) as Monzo<T>
+
 
 export {
     computeIsSubMonzo,
     computeIsSuperMonzo,
+    computeIsUnisonMonzo,
+    computeSuperMonzo,
+    invertMonzo,
 }

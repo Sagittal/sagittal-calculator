@@ -3,7 +3,7 @@ import { Extrema, Name } from "../types"
 
 type Cents = number & { _CentsBrand: "Cents" }
 
-type Comma = JiPitch & { _CommaBrand: "Comma" }
+type Comma<T extends NumericTypeParameters = {}> = JiPitch<T> & { _CommaBrand: "Comma" }
 
 type TwoThreeFreeClass =
     JiPitch<{ rough: 5, direction: Direction.SUPER }> &
@@ -21,20 +21,20 @@ type CentsPosition<T extends NumericTypeParameters = { }> = {
     ratio?: Ratio<T & { irrational: true }>,
 }
 
-type JiPitchByMonzo<T extends NumericTypeParameters = {}> = {
+type JiPitchByMonzo<T extends NumericTypeParameters & { irrational: false } = { irrational: false }> = {
     cents?: Cents,
     name?: Name<Pitch>,
-    monzo: Monzo<T & { irrational: false }>,
-    ratio?: Ratio<T & { irrational: false }>,
+    monzo: Monzo<T>,
+    ratio?: Ratio<T>,
 }
-type JiPitchByRatio<T extends NumericTypeParameters = {}> = {
+type JiPitchByRatio<T extends NumericTypeParameters & { irrational: false } = { irrational: false }> = {
     cents?: Cents,
     name?: Name<Pitch>,
-    monzo?: Monzo<T & { irrational: false }>,
-    ratio: Ratio<T & { irrational: false }>,
+    monzo?: Monzo<T>,
+    ratio: Ratio<T>,
 }
 type JiPitch<T extends NumericTypeParameters = {}> = 
-    JiPitchByMonzo<T> | JiPitchByRatio<T>
+    JiPitchByMonzo<T & { irrational: false }> | JiPitchByRatio<T & { irrational: false }>
 
 type Pitch<T extends NumericTypeParameters = {}> = 
     JiPitch<T> | CentsPosition<T>

@@ -1,10 +1,10 @@
-import { computeUndirectedRatio, Ratio } from "../math"
+import { computeSuperRatio, Ratio } from "../math"
 import { Formatted } from "./types"
 
 const formatRatio = <T extends Ratio>(
     inputRatio: T, { directed }: { directed: boolean } = { directed: true },
 ): Formatted<T> => {
-    const [numerator, denominator] = directed ? inputRatio : computeUndirectedRatio(inputRatio)
+    const [numerator, denominator] = directed ? inputRatio : computeSuperRatio(inputRatio)
 
     return directed ?
         `${numerator}/${denominator}` as Formatted<T> :

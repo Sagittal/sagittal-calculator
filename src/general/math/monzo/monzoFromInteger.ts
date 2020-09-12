@@ -1,7 +1,7 @@
 import { PRIMES } from "../primes"
 import { integerDivide } from "../typedOperations"
-import { Exponent, Integer, Prime } from "../types"
-import { Direction, Monzo } from "./types"
+import { Direction, Exponent, Integer, Prime } from "../types"
+import { Monzo } from "./types"
 
 // TODO: consider using Dave's tricky GCP-involved technique
 //  explained here: http://forum.sagittal.org/viewtopic.php?p=2404#p2404

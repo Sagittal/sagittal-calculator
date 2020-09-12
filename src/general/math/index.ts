@@ -1,10 +1,29 @@
 export { computeCombinations } from "./combinations"
-export { BASE_2, FIVE_PRIME_INDEX, FIVE_ROUGHNESS, ONE, THREE_PRIME_INDEX } from "./constants"
+export {
+    BASE_2, FIVE_PRIME_INDEX, FIVE_ROUGHNESS, ONE, THREE_PRIME_INDEX, THREE_ROUGHNESS, THREE_SMOOTHNESS,
+} from "./constants"
 export { computeCopfr } from "./copfr"
 export { computeDistributions } from "./distributions"
 export { dividesEvenly } from "./dividesEvenly"
 export { computeGpf } from "./gpf"
-export { computeIsRough } from "./isRough"
+export {
+    computeIsSubRatio,
+    computeIsSuperRatio,
+    computeIsRoughRatio,
+    Denominator,
+    FractionalPart,
+    FractionalPartType,
+    Numerator,
+    Ratio,
+    computeRatioFromMonzo,
+    computeSuperRatio,
+    computeRoughRatio,
+    computeIsSmoothRatio,
+    computeIsUnisonRatio,
+    PotentiallyIrrationalRatioParameter,
+    computeSubRatio,
+} from "./ratio"
+export { computeIsRoughInteger } from "./roughness"
 export {
     computeIntegerFromMonzo,
     computeIsSubMonzo,
@@ -12,14 +31,15 @@ export {
     computeMonzoFromRatio,
     computeMonzosFromPrimeExponentExtremas,
     computeRoughMonzo,
-    computeRatioFromMonzo,
     computeSuperMonzo,
-    Direction,
     invertMonzo,
     computeIsSuperMonzo,
     Monzo,
     sumMonzos,
-    NumericTypeParameters,
+    PotentiallyIrrationalMonzoParameter,
+    computeIsRoughMonzo,
+    computeIsSmoothMonzo,
+    computeIsUnisonMonzo,
 } from "./monzo"
 export { computePrimeCount } from "./primeCount"
 export { PRIMES } from "./primes"
@@ -50,18 +70,16 @@ export {
     Combination,
     Combinations,
     Copfr,
-    Denominator,
     DistributionBin,
     Exponent,
-    FractionalPart,
-    FractionalPartType,
     Integer,
     Max,
     Min,
-    Numerator,
     Power,
     Prime,
-    Ratio,
+    Roughness,
+    Direction,
+    NumericTypeParameters,
     Sopfr,
+    Smoothness,
 } from "./types"
-export { computeUndirectedRatio } from "./undirectedRatio"

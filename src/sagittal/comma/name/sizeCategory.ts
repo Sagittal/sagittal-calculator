@@ -3,6 +3,7 @@ import { SIZE_CATEGORIES } from "./sizeCategories"
 import { SIZE_CATEGORY_BOUNDS } from "./sizeCategoryBounds"
 import { SizeCategoryOptions } from "./types"
 
+// TODO: this should take a pitch, not cents
 const computeSizeCategory = (cents: Cents, { abbreviated = true }: SizeCategoryOptions = {}) => {
     let sizeCategory = SIZE_CATEGORIES[ 0 ]
 
