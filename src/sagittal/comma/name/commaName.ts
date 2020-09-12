@@ -53,7 +53,7 @@ const stringifyRatio = (ratio: Ratio, { factored }: { factored: boolean }) => {
 
 // "Secor-Keenan systematic name" or "Sagittal name"
 
-const computeSagittalCommaName = (
+const computeCommaName = (
     comma: Comma,
     { directed = true, factored = false, abbreviated = true } = {},
 ): Name<Comma> => {
@@ -94,8 +94,7 @@ const computeSagittalCommaName = (
 }
 
 export {
-    computeSagittalCommaName,
+    computeCommaName,
 }
 
-// TODO: I think you've got another to-do somewhere re: this directed 2,3-free ratio which is NOT a 2,3-free class
-//  but which is one half of comma names. does it need a name, as a thing? a (Directed)CommaNameRatio?
+

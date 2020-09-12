@@ -2,7 +2,7 @@ import { Abs, Copfr, Integer, Max, ObjectKey, Prime, Sopfr } from "../../../../.
 import { Exponent } from "../../../../../../src/general/math"
 import { analyzeComma, ApotomeSlope, getSagittalComma } from "../../../../../../src/sagittal"
 import { N2D3P9 } from "../../../../../../src/sagittal/comma/evaluation/n2d3p9"
-import { computeSagittalCommaName } from "../../../../../../src/sagittal/comma/name"
+import { computeCommaName } from "../../../../../../src/sagittal/comma/name"
 import { JI_SYMBOLS } from "../../../../../../src/sagittal/notations/ji"
 import { computeSecondaryCommaZone } from "../../../../../../src/sagittal/notations/ji/secondaryCommaZone"
 import { computeCommas } from "../../../../../../src/scripts/pitch/commas"
@@ -12,7 +12,7 @@ describe("verifying primary commas", () => {
     xit("checks that every symbol's primary comma is its best-ranked comma in its secondary comma zone according to our metric (not N2D3P9, but a comma notational popularity rank metric which uses it)", () => {
         JI_SYMBOLS.forEach(symbol => {
             const primaryComma = getSagittalComma(symbol.primaryCommaId)
-            const commaName = computeSagittalCommaName(primaryComma)
+            const commaName = computeCommaName(primaryComma)
 
             console.warn(`\n\n${symbol.ascii} ${commaName}\n\n`)
 

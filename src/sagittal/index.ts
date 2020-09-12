@@ -23,7 +23,7 @@ export {
     N2D3P9,
     computeMonzoFrom23FreeClassAndSizeCategoryName,
     parseCommaName,
-    computeSagittalCommaName,
+    computeCommaName,
     SIZE_CATEGORY_BOUNDS,
 } from "./comma"
 export { formatSymbol, formatSymbolAscii, SymbolLongAscii, unicodeFromAscii } from "./io"

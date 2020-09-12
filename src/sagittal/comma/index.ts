@@ -20,7 +20,7 @@ export {
 export { AnalyzedComma, AnalyzedJiPitch } from "./types"
 export {
     computeMonzoFrom23FreeClassAndSizeCategoryName,
-    computeSagittalCommaName,
+    computeCommaName,
     SIZE_CATEGORY_BOUNDS,
     parseCommaName,
     CommaNameOptions,

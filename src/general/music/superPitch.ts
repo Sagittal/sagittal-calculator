@@ -25,7 +25,7 @@ const computeSuperPitch = <T extends NumericTypeParameters>(
         // TODO: if this modifies name, then it must be moved into sagittal/
         //  which I don't want to do if I don't have to
         //  but on the other hand, if it doesn't flip the name, then this can make the name into a lie...
-        // if (!isUndefined(name)) superPitch.name = computeSagittalCommaName(superPitch as Comma)
+        // if (!isUndefined(name)) superPitch.name = computeCommaName(superPitch as Comma)
     } else {
         superPitch = pitch
     }

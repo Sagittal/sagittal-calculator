@@ -6,6 +6,10 @@ import { SizeCategoryName } from "./types"
 //  i.e. that if the comma name parsed into its 2,3-free class, that might be nice. 
 //  do we know whether it's possible for in a size category to have both a e.g. 1/5 and a 5/1, though? if so, this 
 //  wouldn't work, or in other words, this could not get away with being a 2,3-free class, and so shouldn't try to be
+//  - note, however, that when you return the 2's and 3's to this to make it comma-sized, of the size of its name,
+//  it WILL be super! subtle, but important point.
+//  - this directed 2,3-free ratio which is NOT a 2,3-free class but which is one half of comma names...
+//  does it need a name, as a thing? a (Directed)CommaNameRatio?
 const parseCommaName = (
     commaName: Name<Comma>
 ): { twoThreeFreeRatio: Ratio<{ rough: 5 }>, sizeCategoryName: SizeCategoryName } => {
