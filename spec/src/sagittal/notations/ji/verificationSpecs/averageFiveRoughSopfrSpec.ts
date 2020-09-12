@@ -10,9 +10,8 @@ describe("average 2,3-free sopfr", () => {
         const total: number = JI_SYMBOLS.reduce(
             (total23FreeSopfr, symbol) => {
                 const primaryComma = getSagittalComma(symbol.primaryCommaId)
-                const twoThreeFreeNumberMonzo: Monzo<{ rough: 5 }> =
-                    computeRoughMonzo(primaryComma.monzo, FIVE_ROUGHNESS)
-                const twoThreeFreeSopfr: Sopfr<{ rough: 5 }> = computeSopfr(twoThreeFreeNumberMonzo)
+                const twoThreeFreeNumberMonzo = computeRoughMonzo(primaryComma.monzo, FIVE_ROUGHNESS)
+                const twoThreeFreeSopfr = computeSopfr(twoThreeFreeNumberMonzo)
 
                 return total23FreeSopfr + twoThreeFreeSopfr
             },

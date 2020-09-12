@@ -1,9 +1,10 @@
-import { dividesEvenly, Integer, integerDivide, mod, Prime, PRIMES, Roughness } from "../math"
 import { Index } from "../types"
+import { dividesEvenly } from "./dividesEvenly"
 import { computeRoughnessIndex } from "./primeCount"
+import { PRIMES } from "./primes"
+import { integerDivide } from "./typedOperations"
+import { Integer, Prime, Roughness } from "./types"
 
-// TODO: RATIONAL should be a type guard once you've made the type which just extends number but which is parameterized
-//  by the NumericTypeParameters, as would stuff in neighboring "smoothness" module
 const computeIsRoughInteger = (integer: Integer, roughness: Roughness): boolean => {
     let isRough = true
 

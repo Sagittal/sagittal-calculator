@@ -82,4 +82,5 @@ export {
     NumericTypeParameters,
     Sopfr,
     Smoothness,
+    RationalTypeParameters,
 } from "./types"

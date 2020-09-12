@@ -19,11 +19,9 @@ import { Count, Sum } from "../types"
 //  no wait, then "Analyzed" would conflict with the Ji part...
 //  (although now that you've mastered the art of a type parameter object, you could have { analyzed: true })
 
-// TODO: plain number takes NumericTypeParameters
-// type Numeric<T extends NumericTypeParameters> = number & NumericTypeParameterEffects<T>
-// type Integer = Numeric<{ rational: true }>
+type Numeric<T extends NumericTypeParameters> = number & NumericTypeParameterEffects<T>
+type Integer = Numeric<{ irrational: false }>
 
-type Integer = number & { _IntegerBrand: "Integer" }
 type Prime<T = void> = Integer & { _PrimeBrand: "Prime" } & (T extends void ? {} : T & { _PrimeOfBrand: T })
 type Roughness = Integer & { _RoughnessBrand: "Roughness" }
 type Smoothness = Integer & { _SmoothnessBrand: "Smoothness" }
@@ -46,14 +44,14 @@ type Abs<T extends number = number> = T & { _AbsBrand: "Abs" }
 type Average<T extends number = number> = T & { _AverageBrand: "Average" }
 type Approx<T extends number = number> = T & { _ApproxBrand: "Approx" }
 
-type Sopfr<T extends { rough?: number } = {}> =
+type Sopfr<T extends NumericTypeParameters & { irrational?: false } = { irrational: false }> =
     Sum<Prime>
     & { _SopfrBrand: "Sopfr" }
-    & (T extends { rough: number } ? { _RoughnessBrand: Pick<T, "rough"> } : {})
-type Copfr<T extends { rough?: number } = {}> =
+    & NumericTypeParameterEffects<T>
+type Copfr<T extends NumericTypeParameters & { irrational?: false } = { irrational: false }> =
     Count<Prime>
     & { _CopfrBrand: "Copfr" }
-    & (T extends { rough: number } ? { _RoughnessBrand: Pick<T, "rough"> } : {})
+    & NumericTypeParameterEffects<T>
 
 enum Direction {
     SUPER = "super",
@@ -62,18 +60,17 @@ enum Direction {
 }
 
 type NumericTypeParameters = Partial<{
-    limit: number,
     irrational: boolean,
     direction: Direction
     rough: number,
     smooth: number,
 }>
+type RationalTypeParameters = NumericTypeParameters & { irrational: false }
 
 type NumericTypeParameterEffects<T> =
     (T extends { direction: Direction.SUB } ? { _Direction: Direction.SUB } : {})
     & (T extends { direction: Direction.SUPER } ? { _Direction: Direction.SUPER } : {})
     & (T extends { direction: Direction.UNISON } ? { _Direction: Direction.UNISON } : {})
-    & (T extends { limit: number } ? { _Limit: Pick<T, "limit"> } : {})
     & (T extends { rough: number } ? { _Rough: Pick<T, "rough"> } : {})
     & (T extends { smooth: number } ? { _Smooth: Pick<T, "smooth"> } : {})
 
@@ -98,4 +95,6 @@ export {
     Direction,
     NumericTypeParameterEffects,
     Smoothness,
+    Numeric,
+    RationalTypeParameters,
 }

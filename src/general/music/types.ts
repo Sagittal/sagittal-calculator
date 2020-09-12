@@ -1,4 +1,4 @@
-import { Direction, Monzo, NumericTypeParameters, Ratio } from "../math"
+import { Direction, Monzo, NumericTypeParameters, Ratio, RationalTypeParameters } from "../math"
 import { Extrema, Name } from "../types"
 
 type Cents = number & { _CentsBrand: "Cents" }
@@ -21,13 +21,16 @@ type CentsPosition<T extends NumericTypeParameters = {}> = {
     ratio?: Ratio<T & { irrational: true }>,
 }
 
-type JiPitchByMonzo<T extends NumericTypeParameters & { irrational: false } = { irrational: false }> = {
+// TODO: So we've established that limit is the direct musical equivalent of smooth in math
+//  perhaps there is some way to fernangle it so that pitches could have free: [2,3] and then potentially you know
+//  like [3,5,7] such as is the case in the Yer tuning system, where it's a chunk in the middle, nonconsecutive
+type JiPitchByMonzo<T extends RationalTypeParameters = { irrational: false }> = {
     cents?: Cents,
     name?: Name<Pitch>,
     monzo: Monzo<T>,
     ratio?: Ratio<T>,
 }
-type JiPitchByRatio<T extends NumericTypeParameters & { irrational: false } = { irrational: false }> = {
+type JiPitchByRatio<T extends RationalTypeParameters = { irrational: false }> = {
     cents?: Cents,
     name?: Name<Pitch>,
     monzo?: Monzo<T>,

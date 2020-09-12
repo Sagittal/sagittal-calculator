@@ -1,6 +1,7 @@
-import { Integer, Prime, PRIMES, Roughness, Smoothness } from "../math"
 import { Count, Index } from "../types"
 import { SMOOTH_ROUGH_OFFSET } from "./constants"
+import { PRIMES } from "./primes"
+import { Integer, Prime, Roughness, Smoothness } from "./types"
 
 // Prime Counting Function (π)
 // https://mathworld.wolfram.com/PrimeCountingFunction.html

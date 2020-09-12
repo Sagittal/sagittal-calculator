@@ -5,9 +5,6 @@ type Monzo<T extends NumericTypeParameters = {}> =
     Array<(T extends { irrational: true } ? number : Integer) & Exponent<Prime>>
     & NumericTypeParameterEffects<T>
 
-// TODO: RATIONAL I feel like this is totally ass-backwards... like it should be "PotentiallyRational"
-//  or maybe the solution is to have a little function that creates Monzos for you to insulate something behind
-//  or maybe the solution is that Monzos do have to, by default, be irrational... (and same with Ratios)
 type PotentiallyIrrationalMonzoParameter<T extends NumericTypeParameters = {}> =
     Array<number & Exponent<Prime>>
     & NumericTypeParameterEffects<T>
@@ -40,8 +37,6 @@ Pitch in the sense of a multiple of frequency
 just like the 2 in the <> for Ed<2> is a Pitch
 
 but if you want to keep this in math/ then it would have to just be a ... "Value"? why not just number, then?
-
-
  */
 
 interface PatentValOptions<T extends Window> {

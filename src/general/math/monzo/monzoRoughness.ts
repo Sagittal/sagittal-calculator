@@ -1,11 +1,12 @@
 import { computeTrimmedArray } from "../../code"
-import { Exponent, Integer, Monzo, NumericTypeParameters, Prime, PRIMES } from "../../math"
+import { Exponent, Integer, Monzo, NumericTypeParameters, Prime } from "../../math"
 import { computeRoughnessIndex } from "../primeCount"
 import { Roughness } from "../types"
 
+// TODO: perhaps you could extract these primes somewhere and have an even longer list
 const computeRoughMonzo = <S extends 2 | 3 | 5 | 7 | 11 | 13 | 17 | 19 | 23 | 29 | 31 | 37 | 41 | 43 | 47,
-    T extends Omit<NumericTypeParameters, "rough">>(
-    monzo: Monzo<T>,
+    T extends NumericTypeParameters>(
+    monzo: Monzo<Omit<T, "rough">>,
     roughness: S & Roughness,
 ): Monzo<T & { rough: S }> => {
     const roughnessIndex = computeRoughnessIndex(roughness)
@@ -17,8 +18,8 @@ const computeRoughMonzo = <S extends 2 | 3 | 5 | 7 | 11 | 13 | 17 | 19 | 23 | 29
 }
 
 const computeIsRoughMonzo = <S extends 2 | 3 | 5 | 7 | 11 | 13 | 17 | 19 | 23 | 29 | 31 | 37 | 41 | 43 | 47,
-    T extends Omit<NumericTypeParameters, "rough">>(
-    monzo: Monzo<T>,
+    T extends NumericTypeParameters>(
+    monzo: Monzo<Omit<T, "rough">>,
     roughness: S & Roughness,
 ): monzo is Monzo<T & { rough: S }> => {
     const roughnessIndex = computeRoughnessIndex(roughness)
