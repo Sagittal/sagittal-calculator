@@ -1,5 +1,6 @@
 import { computeTrimmedArray } from "../../code"
 import { Exponent, Integer, Monzo, NumericTypeParameters, Prime, PRIMES } from "../../math"
+import { computeRoughnessIndex } from "../primeCount"
 import { Roughness } from "../types"
 
 const computeRoughMonzo = <S extends 2 | 3 | 5 | 7 | 11 | 13 | 17 | 19 | 23 | 29 | 31 | 37 | 41 | 43 | 47,
@@ -7,7 +8,7 @@ const computeRoughMonzo = <S extends 2 | 3 | 5 | 7 | 11 | 13 | 17 | 19 | 23 | 29
     monzo: Monzo<T>,
     roughness: S & Roughness,
 ): Monzo<T & { rough: S }> => {
-    const roughnessIndex = PRIMES.findIndex(prime => prime as Integer >= roughness)
+    const roughnessIndex = computeRoughnessIndex(roughness)
 
     return computeTrimmedArray(
         monzo.map((primeExponent: Integer & Exponent<Prime>, index): Integer & Exponent<Prime> =>
@@ -20,7 +21,7 @@ const computeIsRoughMonzo = <S extends 2 | 3 | 5 | 7 | 11 | 13 | 17 | 19 | 23 | 
     monzo: Monzo<T>,
     roughness: S & Roughness,
 ): monzo is Monzo<T & { rough: S }> => {
-    const roughnessIndex = PRIMES.findIndex(prime => prime as Integer >= roughness)
+    const roughnessIndex = computeRoughnessIndex(roughness)
 
     let index = 0
     while (index < roughnessIndex) {

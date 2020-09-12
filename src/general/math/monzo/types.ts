@@ -5,7 +5,7 @@ type Monzo<T extends NumericTypeParameters = {}> =
     Array<(T extends { irrational: true } ? number : Integer) & Exponent<Prime>>
     & NumericTypeParameterEffects<T>
 
-// TODO: I feel like this is totally ass-backwards... like it should be "PotentiallyRational"
+// TODO: RATIONAL I feel like this is totally ass-backwards... like it should be "PotentiallyRational"
 //  or maybe the solution is to have a little function that creates Monzos for you to insulate something behind
 //  or maybe the solution is that Monzos do have to, by default, be irrational... (and same with Ratios)
 type PotentiallyIrrationalMonzoParameter<T extends NumericTypeParameters = {}> =
