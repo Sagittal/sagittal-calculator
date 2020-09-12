@@ -11,9 +11,9 @@ import {
 } from "../math"
 import { Pitch } from "./types"
 
-const computeIsSuperPitch = <T extends NumericTypeParameters>(
-    pitch: Pitch<T>,
-): pitch is Pitch<T & { direction: Direction.SUPER }> => {
+const computeIsSuperPitch = <T extends NumericTypeParameters, U extends Pitch<T>>(
+    pitch: U,
+): pitch is Exclude<U, Pitch> & Pitch<T & { direction: Direction.SUPER }> => {
     const { monzo, ratio, cents } = pitch
 
     return (!isUndefined(ratio) && computeIsSuperRatio(ratio)) ||
@@ -21,9 +21,9 @@ const computeIsSuperPitch = <T extends NumericTypeParameters>(
         (!isUndefined(cents) && cents > 0)
 }
 
-const computeIsSubPitch = <T extends NumericTypeParameters>(
-    pitch: Pitch<T>,
-): pitch is Pitch<T & { direction: Direction.SUB }> => {
+const computeIsSubPitch = <T extends NumericTypeParameters, U extends Pitch<T>>(
+    pitch: U,
+): pitch is Exclude<U, Pitch> & Pitch<T & { direction: Direction.SUB }> => {
     const { monzo, ratio, cents } = pitch
 
     return (!isUndefined(ratio) && computeIsSubRatio(ratio)) ||
@@ -31,9 +31,9 @@ const computeIsSubPitch = <T extends NumericTypeParameters>(
         (!isUndefined(cents) && cents < 0)
 }
 
-const computeIsUnisonPitch = <T extends NumericTypeParameters>(
-    pitch: Pitch<T>,
-): pitch is Pitch<T & { direction: Direction.UNISON }> => {
+const computeIsUnisonPitch = <T extends NumericTypeParameters, U extends Pitch<T>>(
+    pitch: U,
+): pitch is Exclude<U, Pitch> & Pitch<T & { direction: Direction.UNISON }> => {
     const { monzo, ratio, cents } = pitch
 
     return (!isUndefined(ratio) && computeIsUnisonRatio(ratio)) ||

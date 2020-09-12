@@ -3,9 +3,9 @@ import { computeSuperMonzo, computeSuperRatio, Direction, negative, NumericTypeP
 import { computeIsSubPitch } from "./pitchDirection"
 import { Pitch } from "./types"
 
-const computeSuperPitch = <T extends NumericTypeParameters>(
-    pitch: Pitch<T>,
-): Pitch<Omit<T, "direction"> & { direction: Direction.SUPER }> => {
+const computeSuperPitch = <T extends NumericTypeParameters, U extends Pitch<T>>(
+    pitch: U,
+): Exclude<U, Pitch> & Pitch<Omit<T, "direction"> & { direction: Direction.SUPER }> => {
     const isSubPitch = computeIsSubPitch(pitch)
 
     let superPitch: Pitch = {} as Pitch
@@ -17,12 +17,15 @@ const computeSuperPitch = <T extends NumericTypeParameters>(
         // TODO: if this modifies name, then it must be moved into sagittal/
         //  which I don't want to do if I don't have to
         //  but on the other hand, if it doesn't flip the name, then this can make the name into a lie...
+        //  which makes me want to not allow name as a thing on a Pitch... but then you get into the e.g.
+        //  size category bounds which are named, along with the other types of snappable positions
+        //  but then those live between the scripts/bound and the sagittal/ modules...
         // if (!isUndefined(name)) superPitch.name = computeCommaName(superPitch as Comma)
     } else {
         superPitch = pitch
     }
 
-    return superPitch as Pitch<Omit<T, "direction"> & { direction: Direction.SUPER }>
+    return superPitch as Exclude<U, Pitch> & Pitch<Omit<T, "direction"> & { direction: Direction.SUPER }>
 }
 
 export {

@@ -11,7 +11,7 @@ const spaceTerm = (term: Exponent<Prime>): Io => {
     return termText as Io
 }
 
-const formatMonzo = <T extends NumericTypeParameters = {}>(
+const formatMonzo = <T extends NumericTypeParameters>(
     monzo: PotentiallyIrrationalMonzoParameter<T>,
     { punctuated = false } = {},
 ): Formatted<Monzo<T>> => {
