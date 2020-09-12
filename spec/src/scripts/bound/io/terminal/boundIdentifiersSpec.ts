@@ -1,5 +1,5 @@
 import {
-    Cents, 
+    Cents,
     Comma,
     Id,
     Monzo,

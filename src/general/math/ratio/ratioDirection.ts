@@ -26,7 +26,7 @@ const computeIsUnisonRatio = <T extends NumericTypeParameters>(
 }
 
 const computeSuperRatio = <T extends NumericTypeParameters>(
-    ratio: PotentiallyIrrationalRatioParameter<T>
+    ratio: PotentiallyIrrationalRatioParameter<T>,
 ): Ratio<Omit<T, "direction"> & { direction: Direction.SUPER }> => {
     return computeIsSuperRatio(ratio) ?
         ratio as Ratio<T & { direction: Direction.SUPER }> :
@@ -34,7 +34,7 @@ const computeSuperRatio = <T extends NumericTypeParameters>(
 }
 
 const computeSubRatio = <T extends NumericTypeParameters>(
-    ratio: PotentiallyIrrationalRatioParameter<T>
+    ratio: PotentiallyIrrationalRatioParameter<T>,
 ): Ratio<Omit<T, "direction"> & { direction: Direction.SUB }> => {
     return computeIsSubRatio(ratio) ?
         ratio as Ratio<T & { direction: Direction.SUB }> :
@@ -43,13 +43,13 @@ const computeSubRatio = <T extends NumericTypeParameters>(
 
 const invertRatio: {
     <T extends NumericTypeParameters & { direction: Direction.SUPER }>(
-        ratio: PotentiallyIrrationalRatioParameter<T>
+        ratio: PotentiallyIrrationalRatioParameter<T>,
     ): Ratio<T & { direction: Direction.SUB }>,
     <T extends NumericTypeParameters & { direction: Direction.SUB }>(
-        ratio: PotentiallyIrrationalRatioParameter<T>
+        ratio: PotentiallyIrrationalRatioParameter<T>,
     ): Ratio<T & { direction: Direction.SUPER }>,
     <T extends NumericTypeParameters>(
-        ratio: PotentiallyIrrationalRatioParameter<T>
+        ratio: PotentiallyIrrationalRatioParameter<T>,
     ): Ratio<T>,
 } = <T extends NumericTypeParameters>(ratio: Ratio<T>): Ratio<T> => {
     const [numerator, denominator] = ratio

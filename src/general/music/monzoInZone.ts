@@ -5,7 +5,7 @@ import { Cents, Zone } from "./types"
 
 const computeMonzoInZone = (twoFreeMonzo: Monzo<{ rough: 3 }>, zone: Zone): Maybe<Monzo> => {
     const [minCents, maxCents] = zone
-    
+
     let cents: Cents = computeCentsFromMonzo(twoFreeMonzo)
 
     if (!deepEquals(twoFreeMonzo, [] as Monzo)) {

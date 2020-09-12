@@ -1,13 +1,5 @@
 import { isUndefined } from "../code"
-import {
-    computeIsSubMonzo,
-    computeIsSubRatio,
-    computeSuperMonzo, 
-    computeSuperRatio,
-    Direction,
-    negative,
-    NumericTypeParameters,
-} from "../math"
+import { computeSuperMonzo, computeSuperRatio, Direction, negative, NumericTypeParameters } from "../math"
 import { computeIsSubPitch } from "./pitchDirection"
 import { Pitch } from "./types"
 
@@ -15,7 +7,7 @@ const computeSuperPitch = <T extends NumericTypeParameters>(
     pitch: Pitch<T>,
 ): Pitch<Omit<T, "direction"> & { direction: Direction.SUPER }> => {
     const isSubPitch = computeIsSubPitch(pitch)
-    
+
     let superPitch: Pitch = {} as Pitch
     if (isSubPitch) {
         const { monzo, ratio, cents } = pitch

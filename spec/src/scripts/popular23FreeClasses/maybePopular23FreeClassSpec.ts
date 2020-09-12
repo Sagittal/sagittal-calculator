@@ -14,7 +14,7 @@ describe("computeMaybePopular23FreeClass", () => {
     })
 
     it("returns undefined if the N2D3P9 is over the max", () => {
-        const twoThreeFreeMonzo = [0, 0, 1] as Monzo<{ rough: 5,  direction: Direction.SUPER }>
+        const twoThreeFreeMonzo = [0, 0, 1] as Monzo<{ rough: 5, direction: Direction.SUPER }>
         const maxN2D3P9 = 1 as Max<N2D3P9>
 
         const actual = computeMaybePopular23FreeClass({ monzo: twoThreeFreeMonzo } as TwoThreeFreeClass, maxN2D3P9)

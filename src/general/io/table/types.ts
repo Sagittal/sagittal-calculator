@@ -20,7 +20,7 @@ type Row<T extends TableTypeParameters = {}> =
     & { _RowBrand: "Row" }
     & (T extends { of: unknown } ? {} : { _RowOfBrand: Pick<T, "of"> })
     & (T extends { header: true } ? { _HeaderBrand: "Header" } : {})
-type Column<T extends TableTypeParameters = { }> =
+type Column<T extends TableTypeParameters = {}> =
     Array<Formatted>
     & { _ColumnBrand: "Column" }
     & (T extends { of: unknown } ? {} : { _ColumnOfBrand: Pick<T, "of"> })

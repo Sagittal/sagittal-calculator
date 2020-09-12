@@ -11,7 +11,7 @@ const computeRoughMonzo = <S extends 2 | 3 | 5 | 7 | 11 | 13 | 17 | 19 | 23 | 29
 
     return computeTrimmedArray(
         monzo.map((primeExponent: Integer & Exponent<Prime>, index): Integer & Exponent<Prime> =>
-        index < roughnessIndex ? 0 as Integer & Exponent<Prime> : primeExponent) as Monzo<T & { rough: S }>
+            index < roughnessIndex ? 0 as Integer & Exponent<Prime> : primeExponent) as Monzo<T & { rough: S }>,
     )
 }
 
@@ -24,7 +24,7 @@ const computeIsRoughMonzo = <S extends 2 | 3 | 5 | 7 | 11 | 13 | 17 | 19 | 23 | 
 
     let index = 0
     while (index < roughnessIndex) {
-        if (monzo[index] !== 0) return false
+        if (monzo[ index ] !== 0) return false
         index = index + 1
     }
 

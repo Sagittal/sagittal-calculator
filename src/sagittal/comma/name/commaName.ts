@@ -1,6 +1,5 @@
 import {
     Comma,
-    computeCentsFromPitch,
     computeIsSmoothJiPitch,
     computeIsSubPitch,
     computeIsUnisonPitch,
@@ -8,7 +7,7 @@ import {
     computeMonzoFromInteger,
     computeRoughRatio,
     computeSubRatio,
-    computeSuperPitch, 
+    computeSuperPitch,
     Direction,
     FIVE_ROUGHNESS,
     FractionalPart,
@@ -66,9 +65,9 @@ const computeCommaName = (
 
     const maybeDown = computeIsSubPitch(comma) ? " down" : ""
 
-    const superComma: Comma<{ direction: Direction.SUPER }> = 
+    const superComma: Comma<{ direction: Direction.SUPER }> =
         // TODO: okay, I tried valiantly, but I could not figure out how to get this thing to both take a parameterized
-        //  T for the NumericTypeParameters while also allowing that Comma brand to pass through... 
+        //  T for the NumericTypeParameters while also allowing that Comma brand to pass through...
         computeSuperPitch(comma) as Comma<{ direction: Direction.SUPER }>
     const sizeCategory: SizeCategoryAbbreviation | SizeCategoryName = computeSizeCategory(superComma, { abbreviated })
 

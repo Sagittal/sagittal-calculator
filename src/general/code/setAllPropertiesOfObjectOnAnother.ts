@@ -1,4 +1,5 @@
 import { deepClone } from "./clone"
+import { isUndefined } from "./typeGuards"
 
 const setAllPropertiesOfObjectOnAnother = ({ objectToChange, objectWithProperties }: {
     objectToChange: unknown,
@@ -6,7 +7,7 @@ const setAllPropertiesOfObjectOnAnother = ({ objectToChange, objectWithPropertie
 }): void => {
     Object.entries(objectWithProperties as Record<string, unknown>)
         .forEach(([key, value]: [string, unknown]): void => {
-            (objectToChange as Record<string, unknown>)[ key ] = deepClone(value)
+            (objectToChange as Record<string, unknown>)[ key ] = isUndefined(value) ? value : deepClone(value)
         })
 }
 

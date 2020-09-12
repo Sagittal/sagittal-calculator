@@ -24,6 +24,7 @@ interface IoSettings {
     forForum: boolean,
     logTargets: LogTargets,
     disableColors: boolean,
+    scriptGroup: Filename,
 }
 
 export {

@@ -32,7 +32,7 @@ const computeIsSubPitch = <T extends NumericTypeParameters>(
 }
 
 const computeIsUnisonPitch = <T extends NumericTypeParameters>(
-    pitch: Pitch<T>
+    pitch: Pitch<T>,
 ): pitch is Pitch<T & { direction: Direction.UNISON }> => {
     const { monzo, ratio, cents } = pitch
 

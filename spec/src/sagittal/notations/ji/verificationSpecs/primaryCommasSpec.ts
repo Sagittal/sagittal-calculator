@@ -5,8 +5,8 @@ import { N2D3P9 } from "../../../../../../src/sagittal/comma/evaluation/n2d3p9"
 import { computeCommaName } from "../../../../../../src/sagittal/comma/name"
 import { JI_SYMBOLS } from "../../../../../../src/sagittal/notations/ji"
 import { computeSecondaryCommaZone } from "../../../../../../src/sagittal/notations/ji/secondaryCommaZone"
-import { computeCommas } from "../../../../../../src/scripts/pitch/commas"
-import { computeFindCommasTable } from "../../../../../../src/scripts/pitch/io"
+import { computeCommas } from "../../../../../../src/scripts/jiPitch/commas"
+import { computeFindCommasTable } from "../../../../../../src/scripts/jiPitch/io"
 
 describe("verifying primary commas", () => {
     xit("checks that every symbol's primary comma is its best-ranked comma in its secondary comma zone according to our metric (not N2D3P9, but a comma notational popularity rank metric which uses it)", () => {

@@ -1,5 +1,6 @@
 import {
-    abs, Comma,
+    abs,
+    Comma,
     computeMonzoInZone,
     computePlusOrMinusRange,
     Exponent,
@@ -22,16 +23,16 @@ import {
 import { CommasFrom23FreeMonzoOptions } from "./types"
 
 const computeTwoFreeMonzo = (
-    twoThreeFreeMonzo: Monzo<{rough: 5}>, 
-    threeExponent: Integer & Exponent<Prime>
-): Monzo<{rough: 3 }> => {
+    twoThreeFreeMonzo: Monzo<{ rough: 5 }>,
+    threeExponent: Integer & Exponent<Prime>,
+): Monzo<{ rough: 3 }> => {
     const twoFreeMonzo: Monzo<{ rough: 3 }> = shallowClone(twoThreeFreeMonzo) as Monzo as Monzo<{ rough: 3 }>
     twoFreeMonzo[ 1 ] = threeExponent
-    
+
     if (isUndefined(twoFreeMonzo[ 0 ])) {
         twoFreeMonzo[ 0 ] = 0 as Integer & Exponent<Prime>
     }
-    
+
     return twoFreeMonzo
 }
 
@@ -55,7 +56,7 @@ const computeCommasFrom23FreeMonzo = (
 
         if (monzo) {
             const comma = { monzo } as Comma
-            
+
             const analyzedComma: AnalyzedComma = analyzeComma(comma)
             if (abs(analyzedComma.apotomeSlope) > maxAbsoluteApotomeSlope || analyzedComma.n2d3p9 > maxN2D3P9) {
                 return

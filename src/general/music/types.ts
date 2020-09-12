@@ -8,13 +8,13 @@ type Comma<T extends NumericTypeParameters = {}> = JiPitch<T> & { _CommaBrand: "
 type TwoThreeFreeClass =
     JiPitch<{ rough: 5, direction: Direction.SUPER }> &
     { _TwoThreeFreeClassBrand: "TwoThreeFreeClass" }
-    
+
 // TODO: NO LONGER BASED ON CENTS
 //  if you had the code base work in Pitch first and cents only secondarily,
 //  then the monzo to and from cents stuff could live in math/ instead of music/
 //  and then this would be more just like some number, a pure multiplier or coefficient of waveform frequency
-//  just can't figure out what to call it. PitchValue maybe...? Scaler? 
-type CentsPosition<T extends NumericTypeParameters = { }> = {
+//  just can't figure out what to call it. PitchValue maybe...? Scaler?
+type CentsPosition<T extends NumericTypeParameters = {}> = {
     cents: Cents,
     name?: Name<Pitch>,
     monzo?: Monzo<T & { irrational: true }>,
@@ -33,10 +33,10 @@ type JiPitchByRatio<T extends NumericTypeParameters & { irrational: false } = { 
     monzo?: Monzo<T>,
     ratio: Ratio<T>,
 }
-type JiPitch<T extends NumericTypeParameters = {}> = 
+type JiPitch<T extends NumericTypeParameters = {}> =
     JiPitchByMonzo<T & { irrational: false }> | JiPitchByRatio<T & { irrational: false }>
 
-type Pitch<T extends NumericTypeParameters = {}> = 
+type Pitch<T extends NumericTypeParameters = {}> =
     JiPitch<T> | CentsPosition<T>
 
 type Votes = number & { _VotesBrand: "Votes" }

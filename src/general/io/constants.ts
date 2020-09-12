@@ -1,6 +1,6 @@
 import { Integer } from "../math"
 import { LogTargets } from "./log"
-import { Char, Io } from "./types"
+import { Char, Io, IoSettings } from "./types"
 
 const IO_PRECISION = 3 as Integer
 
@@ -14,11 +14,13 @@ const SPACE = " " as Io
 const BLANK = "" as Io
 const TAB = "\t" as Io
 
-const INITIAL_IO_SETTINGS = {
+const INITIAL_IO_SETTINGS: IoSettings = {
     noWrite: false,
     forForum: false,
     logTargets: {} as LogTargets,
     disableColors: false,
+    // @ts-ignore
+    scriptGroup: undefined,
 }
 
 export {

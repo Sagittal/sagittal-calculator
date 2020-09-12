@@ -12,7 +12,7 @@ describe("computeIsSubPitch", () => {
 
             expect(actual).toBeTruthy()
         })
-        
+
         it("returns false if the monzo is unison", () => {
             const pitch = { monzo: [] as Monzo }
 
@@ -29,7 +29,7 @@ describe("computeIsSubPitch", () => {
             expect(actual).toBeFalsy()
         })
     })
-    
+
     describe("by ratio", () => {
         it("returns true if the ratio is sub", () => {
             const pitch = { ratio: [1, 3] as Ratio }
@@ -55,7 +55,7 @@ describe("computeIsSubPitch", () => {
             expect(actual).toBeFalsy()
         })
     })
-    
+
     describe("by cents", () => {
         it("returns true if the cents are negative", () => {
             const pitch = { cents: -7.1 as Cents }

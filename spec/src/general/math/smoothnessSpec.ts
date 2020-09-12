@@ -5,9 +5,9 @@ describe("computeIsSmoothInteger", () => {
     it("works, example when it is true (no prime factors > smoothness)", () => {
         const integer = 35 as Integer
         const smoothness = 7 as 7 & Smoothness
-        
+
         const actual = computeIsSmoothInteger(integer, smoothness)
-        
+
         expect(actual).toBeTruthy()
     })
 

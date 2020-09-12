@@ -21,4 +21,17 @@ describe("splitColumnTitlesIntoRowsBySpaces", () => {
         ] as Array<Row<{ header: true }>>
         expect(actual).toEqual(expected)
     })
+
+    it("can include a spacer row", () => {
+        const actual = splitColumnTitlesIntoRowsBySpaces(titles, { includeSpacerRow: true })
+
+        const expected = [
+            ["", "", "best", "best", "best"],
+            ["2,3-", "", "notating", "notating", "notating"],
+            ["free", "N2D3P9", "comma", "comma", "comma"],
+            ["class", "rank", "cents", "monzo", "symbol"],
+            ["", "", "", "", ""],
+        ] as Array<Row<{ header: true }>>
+        expect(actual).toEqual(expected)
+    })
 })

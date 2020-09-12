@@ -8,12 +8,12 @@ import CustomMatcherResult = jasmine.CustomMatcherResult
 import MatchersUtil = jasmine.MatchersUtil
 
 const precisionMessage = (precision: Integer): string =>
-        isUndefined(precision) ? "" : `, with precision ${precision}`
+    isUndefined(precision) ? "" : `, with precision ${precision}`
 
 const failWith = (message: string): CustomMatcherResult => ({
-        message,
-        pass: false,
-    })
+    message,
+    pass: false,
+})
 
 const doAssertions = (logicFunc: () => void): CustomMatcherResult => {
     try {

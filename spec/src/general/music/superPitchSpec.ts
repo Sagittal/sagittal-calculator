@@ -10,9 +10,9 @@ describe("computeSuperPitch", () => {
             ratio: [1098337086315, 1099511627776] as Ratio<{ direction: Direction.SUB }>,
             cents: -1.850 as Cents,
         }
-        
+
         const actual = computeSuperPitch(pitch)
-        
+
         const expected: Pitch<{ direction: Direction.SUPER }> = {
             monzo: [40, -22, -1, -1] as Monzo<{ direction: Direction.SUPER }>,
             ratio: [1099511627776, 1098337086315] as Ratio<{ direction: Direction.SUPER }>,

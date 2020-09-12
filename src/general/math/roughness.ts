@@ -31,14 +31,14 @@ const computeRoughInteger = <T extends Integer>(integer: T, roughness: Roughness
     let roughInteger = integer
     let primeIndex = 0
     while (primeIndex < roughnessIndex) {
-        const prime: Integer = PRIMES[primeIndex]
+        const prime: Integer = PRIMES[ primeIndex ]
         while (mod(roughInteger, prime) === 0) {
             roughInteger = integerDivide(roughInteger, prime) as T
         }
-        
+
         primeIndex = primeIndex + 1
     }
-    
+
     return roughInteger
 }
 

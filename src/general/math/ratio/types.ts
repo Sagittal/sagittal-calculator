@@ -10,7 +10,7 @@ type UndirectedRatio<T extends NumericTypeParameters & { direction: Direction.SU
     { direction: Direction.SUPER }> = Ratio<T> & { _UndirectedRatioBrand: "UndirectedRatio" }
 
 type PotentiallyIrrationalRatioParameter<T extends NumericTypeParameters> =
-    [number & { _NumeratorBrand: "Numerator" }, number & { _DenominatorBrand: "Denominator" }] 
+    [number & { _NumeratorBrand: "Numerator" }, number & { _DenominatorBrand: "Denominator" }]
     & NumericTypeParameterEffects<T>
 
 enum FractionalPartType {

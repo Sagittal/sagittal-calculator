@@ -1,10 +1,12 @@
 import {
     computeMonzoFromRatio,
-    computeRatioFromMonzo, Direction,
+    computeRatioFromMonzo,
+    Direction,
     Popularity,
     rank,
     Ranked,
-    RankStrategy, Ratio,
+    RankStrategy,
+    Ratio,
 } from "../../../../src/general"
 import { COMMA_POPULARITIES } from "../../../../src/general/music"
 import { onlyRunInCi } from "../../../helpers/onlyRunInCi"
@@ -15,7 +17,7 @@ describe("COMMA_POPULARITIES", () => {
     //  (mostly monzo) and ratio level stuff.
     it("is the case that all the ratios capable of being parsed by monzo from ratio correctly when only top is 80 or less", () => {
         onlyRunInCi()
-        const originalRatios: Array<Ratio<{ rough: 5, direction: Direction.SUPER }>> = 
+        const originalRatios: Array<Ratio<{ rough: 5, direction: Direction.SUPER }>> =
             COMMA_POPULARITIES.map(popularity => popularity.twoThreeFreeClass.ratio!)
 
         const monzos = originalRatios.map(ratio => computeMonzoFromRatio(ratio))

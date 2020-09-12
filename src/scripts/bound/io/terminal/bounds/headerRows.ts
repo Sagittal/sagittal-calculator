@@ -28,7 +28,7 @@ const BOUNDS_ANALYSIS_COLUMN_TITLES: Io[] = [
 ] as Io[]
 
 const computeBoundsAnalysisHeaderRows = (): Array<Row<{ of: AnalyzedBound, header: true }>> =>
-    splitColumnTitlesIntoRowsBySpaces(BOUNDS_ANALYSIS_COLUMN_TITLES)
+    splitColumnTitlesIntoRowsBySpaces(BOUNDS_ANALYSIS_COLUMN_TITLES, { includeSpacerRow: true })
 
 export {
     computeBoundsAnalysisHeaderRows,

@@ -29,7 +29,7 @@ describe("formatTableForForum", () => {
             ["25/49M", "7", "24", "33.4", "[0 0⟩", "50/49", "-59.333", "26.466"],
         ] as Table<Io>
 
-        const actual = formatTableForForum(table, { headerRowCount: 2 as Count<Row<{ of: string, header: true}>> })
+        const actual = formatTableForForum(table, { headerRowCount: 2 as Count<Row<{ of: string, header: true }>> })
 
         let expected =
             "[table]\n" +

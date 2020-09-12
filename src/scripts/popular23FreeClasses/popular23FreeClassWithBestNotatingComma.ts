@@ -6,7 +6,8 @@ import {
     COMMA_POPULARITIES,
     computeCentsFromPitch,
     computeJiPitchMonzo,
-    deepEquals, format23FreeClass,
+    deepEquals,
+    format23FreeClass,
     formatMonzo,
     formatNumber,
     Formatted,
@@ -32,7 +33,7 @@ import { Popular23FreeClassWithBestNotatingComma } from "./types"
 const isLate = (notatingComma: Comma, bestNotatingComma: Comma) => {
     const notatingCommaMonzo = computeJiPitchMonzo(notatingComma)
     const bestNotatingCommaMonzo = computeJiPitchMonzo(bestNotatingComma)
-    
+
     return abs(notatingCommaMonzo[ 1 ]) < abs(bestNotatingCommaMonzo[ 1 ]) ||
         (
             abs(notatingCommaMonzo[ 1 ]) === abs(bestNotatingCommaMonzo[ 1 ]) &&

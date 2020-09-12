@@ -1,6 +1,7 @@
 import {
     abs,
-    computeCopfr, computeJiPitchMonzo,
+    computeCopfr,
+    computeJiPitchMonzo,
     computeRatioFromMonzo,
     computeRoughMonzo,
     computeSopfr,

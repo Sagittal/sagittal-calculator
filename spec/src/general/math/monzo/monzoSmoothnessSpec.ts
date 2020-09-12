@@ -9,7 +9,7 @@ describe("computeIsSmoothMonzo", () => {
 
         expect(actual).toBeTruthy()
     })
-    
+
     it("works even if the monzo hasn't been trimmed for some reason", () => {
         const monzo = [0, 0, 1, 0, 0, 0] as Monzo
 

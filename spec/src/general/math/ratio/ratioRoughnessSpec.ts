@@ -4,9 +4,9 @@ import { computeIsRoughRatio, computeRoughRatio, Ratio } from "../../../../../sr
 describe("computeIsRoughRatio", () => {
     it("returns true if the ratio is to the requested roughness", () => {
         const ratio = [7, 5] as Ratio
-        
+
         const actual = computeIsRoughRatio(ratio, FIVE_ROUGHNESS)
-        
+
         expect(actual).toBeTruthy()
     })
 

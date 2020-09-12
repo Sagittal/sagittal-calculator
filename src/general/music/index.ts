@@ -10,5 +10,5 @@ export { equalJiPitches } from "./equalJiPitches"
 export { computeIsSubPitch, computeIsUnisonPitch } from "./pitchDirection"
 export { computeSuperPitch } from "./superPitch"
 // TODO: because in music, not math, you should call these prime limit, isWithinPrimeLimit, isWithinPrimeMin
-export { computeIsRoughJiPitch } from "./roughJiPitch" 
+export { computeIsRoughJiPitch } from "./roughJiPitch"
 export { computeIsSmoothJiPitch } from "./smoothJiPitch"

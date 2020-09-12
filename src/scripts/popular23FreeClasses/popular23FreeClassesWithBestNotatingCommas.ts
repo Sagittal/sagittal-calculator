@@ -12,35 +12,25 @@ import {
     RankStrategy,
     saveLog,
     shallowClone,
-    stringify, 
+    stringify,
     TwoThreeFreeClass,
 } from "../../general"
 import { computePrimeExponentExtremasGivenMaxN2D3P9, N2D3P9 } from "../../sagittal"
-import { POPULAR_TWO_THREE_FREE_CLASSES_SCRIPT_GROUP } from "./constants"
 import { computeMaybePopular23FreeClassWithBestNotatingComma } from "./maybePopular23FreeClassWithBestNotatingComma"
 import { Popular23FreeClassWithBestNotatingComma } from "./types"
 
 const computePopular23FreeClassesWithBestNotatingCommas = (
     maxN2D3P9: Max<N2D3P9>,
 ): Array<Ranked<Popular23FreeClassWithBestNotatingComma>> => {
-    saveLog(
-        "About to calculate prime exponent extremas given max N2D3P9" as Io,
-        LogTarget.PROGRESS,
-        POPULAR_TWO_THREE_FREE_CLASSES_SCRIPT_GROUP,
-    )
+    saveLog("About to calculate prime exponent extremas given max N2D3P9" as Io, LogTarget.PROGRESS)
     const primeExponentExtremasGivenMaxN2D3P9 = computePrimeExponentExtremasGivenMaxN2D3P9(maxN2D3P9)
     saveLog(
         `prime exponent extremas given max N2D3P9: ${stringify(primeExponentExtremasGivenMaxN2D3P9)}` as Io,
         LogTarget.PROGRESS,
-        POPULAR_TWO_THREE_FREE_CLASSES_SCRIPT_GROUP,
     )
 
     const monzoCount = primeExponentExtremasGivenMaxN2D3P9.reduce((total, [min, max]) => total * (max - min + 1), 1)
-    saveLog(
-        `total monzos to check: ${monzoCount}` as Io,
-        LogTarget.PROGRESS,
-        POPULAR_TWO_THREE_FREE_CLASSES_SCRIPT_GROUP,
-    )
+    saveLog(`total monzos to check: ${monzoCount}` as Io, LogTarget.PROGRESS)
     let monzosCheckedCount = 0
 
     const initialMonzo: Monzo = primeExponentExtremasGivenMaxN2D3P9.map(([minPrimeExponent, _]) => minPrimeExponent)
@@ -59,19 +49,11 @@ const computePopular23FreeClassesWithBestNotatingCommas = (
         // log progress
         monzosCheckedCount = monzosCheckedCount + 1
         if (monzosCheckedCount % 1000000 === 0) {
-            saveLog(
-                `done: ${monzosCheckedCount} (${100 * monzosCheckedCount / monzoCount}%)` as Io,
-                LogTarget.PROGRESS,
-                POPULAR_TWO_THREE_FREE_CLASSES_SCRIPT_GROUP,
-            )
+            saveLog(`done: ${monzosCheckedCount} (${100 * monzosCheckedCount / monzoCount}%)` as Io, LogTarget.PROGRESS)
         }
 
         if (!isUndefined(maybePopular23FreeClassWithBestNotatingComma)) {
-            saveLog(
-                stringify(maybePopular23FreeClassWithBestNotatingComma) as Io,
-                LogTarget.PROGRESS,
-                POPULAR_TWO_THREE_FREE_CLASSES_SCRIPT_GROUP,
-            )
+            saveLog(stringify(maybePopular23FreeClassWithBestNotatingComma) as Io, LogTarget.PROGRESS)
             popular23FreeClassesWithBestNotatingCommas.push(maybePopular23FreeClassWithBestNotatingComma)
         }
 

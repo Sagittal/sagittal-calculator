@@ -5,13 +5,13 @@ const getJiSymbolCents = (jiSymbolId: Id<JiSymbol>): Cents => {
     const jiSymbol = getJiSymbol(jiSymbolId)
     const primaryCommaId = jiSymbol.primaryCommaId
     const primaryComma = getSagittalComma(primaryCommaId)
-    
+
     return computeCentsFromPitch(primaryComma)
 }
 
 const getJiSymbolAscii = (jiSymbolId: Id<JiSymbol>): SymbolLongAscii => {
     const jiSymbol = getJiSymbol(jiSymbolId)
-    
+
     return jiSymbol.ascii
 }
 
@@ -25,7 +25,7 @@ const computeLevelCommaMeans = (level: Level): CentsPosition[] => {
 
         const cents = (getJiSymbolCents(jiSymbolId) + getJiSymbolCents(nextJiSymbolId)) / 2 as Cents
         const name = [getJiSymbolAscii(jiSymbolId), getJiSymbolAscii(nextJiSymbolId)].join(" ") as Name<Pitch>
-        
+
         return {
             name,
             cents,

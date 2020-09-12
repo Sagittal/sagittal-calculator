@@ -8,8 +8,8 @@ const computeIsRoughJiPitch = <S extends 2 | 3 | 5 | 7 | 11 | 13 | 17 | 19 | 23 
     roughness: S & Roughness,
 ): jiPitch is JiPitch<T & { rough: S }> => {
     const { monzo, ratio } = jiPitch
-    
-    return (!isUndefined(monzo) && computeIsRoughMonzo(monzo, roughness)) || 
+
+    return (!isUndefined(monzo) && computeIsRoughMonzo(monzo, roughness)) ||
         (!isUndefined(ratio) && computeIsRoughRatio(ratio, roughness))
 }
 

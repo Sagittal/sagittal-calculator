@@ -55,12 +55,12 @@ describe("computeCommaName", () => {
         const expected = "3C"
         expect(actual).toBe(expected)
     })
-    
+
     it("works for a comma which is sub", () => {
-        const comma = { monzo: [-4,	4,	-1]} as Comma
-        
+        const comma = { monzo: [-4, 4, -1] } as Comma
+
         const actual = computeCommaName(comma)
-        
+
         const expected = "1/5C"
         expect(actual).toBe(expected)
     })

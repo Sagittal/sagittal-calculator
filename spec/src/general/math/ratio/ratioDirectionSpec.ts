@@ -12,12 +12,12 @@ describe("computeIsSuperRatio", () => {
         const numerator = 55 as Numerator
         const denominator = 54 as Denominator
         const ratio = [numerator, denominator] as Ratio
-        
+
         const actual = computeIsSuperRatio(ratio)
-        
+
         expect(actual).toBeTruthy()
     })
-    
+
     it("returns false if n = d", () => {
         const numerator = 55 as Numerator
         const denominator = 55 as Denominator
@@ -27,7 +27,7 @@ describe("computeIsSuperRatio", () => {
 
         expect(actual).toBeFalsy()
     })
-    
+
     it("returns false if n < d", () => {
         const numerator = 55 as Numerator
         const denominator = 56 as Denominator

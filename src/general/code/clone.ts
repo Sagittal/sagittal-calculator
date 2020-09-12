@@ -1,5 +1,5 @@
 const deepClone = <T extends unknown>(object: T): T =>
-    JSON.parse(JSON.stringify(object))
+    object ? JSON.parse(JSON.stringify(object)) : object
 
 const shallowClone = <T extends Object | unknown[] | string>(object: T): T =>
     (object as unknown[]).length === undefined ?
