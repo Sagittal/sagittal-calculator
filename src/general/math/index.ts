@@ -83,4 +83,5 @@ export {
     Sopfr,
     Smoothness,
     RationalTypeParameters,
+    Primes,
 } from "./types"
