@@ -13,6 +13,7 @@ export {
     DEFAULT_MIN_CENTS,
     DEFAULT_JI_PITCH_SCRIPT_GROUP_MAX_N2D3P9,
     DEFAULT_SORT_KEY,
+    DEFAULT_MAX_N2D3P9,
 } from "./find"
 export {
     ApotomeSlope, N2D3P9, computeN2D3P9, computeApotomeSlope, computePrimeExponentExtremasGivenMaxN2D3P9,
@@ -24,4 +25,5 @@ export {
     SIZE_CATEGORY_BOUNDS,
     parseCommaName,
     CommaNameOptions,
+    MAX_SIZE_CATEGORY_BOUND,
 } from "./name"

@@ -4,7 +4,7 @@ import { ApotomeSlope, N2D3P9 } from "../evaluation"
 
 // used for both find-commas and analyze-ji-pitch
 const DEFAULT_MIN_CENTS = 0 as Min<Cents>
-const DEFAULT_MAX_CENTS = APOTOME_CENTS / 2 as Max<Cents>
+const DEFAULT_MAX_CENTS = APOTOME_CENTS / 2 as Max<Cents>                           // 56.8425030289¢
 const DEFAULT_MAX_ABSOLUTE_3_EXPONENT = 15 as Max<Abs<Integer & Exponent<Prime>>>
 const DEFAULT_MAX_ABSOLUTE_APOTOME_SLOPE = 14 as Max<Abs<ApotomeSlope>>
 const DEFAULT_MAX_N2D3P9 = 5000 as Max<N2D3P9>

@@ -25,6 +25,8 @@ export {
     parseCommaName,
     computeCommaName,
     SIZE_CATEGORY_BOUNDS,
+    MAX_SIZE_CATEGORY_BOUND,
+    DEFAULT_MAX_N2D3P9,
 } from "./comma"
 export { formatSymbol, formatSymbolAscii, SymbolLongAscii, unicodeFromAscii } from "./io"
 export {
