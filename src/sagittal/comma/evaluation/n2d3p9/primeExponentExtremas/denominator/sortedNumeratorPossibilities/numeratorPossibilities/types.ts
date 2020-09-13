@@ -1,10 +1,10 @@
-import { Numerator, Prime } from "../../../../../../../../general"
+import { Max, Numerator, Prime } from "../../../../../../../../general"
 
-interface NumeratorPossibilityGivenMaxN2D3P3 {
+interface NumeratorPossibilityForDenominatorGivenMaxN2D3P3 {
     numerator: Numerator,
-    gpf: Prime,
+    gpf: Max<Prime>,
 }
 
 export {
-    NumeratorPossibilityGivenMaxN2D3P3,
+    NumeratorPossibilityForDenominatorGivenMaxN2D3P3,
 }

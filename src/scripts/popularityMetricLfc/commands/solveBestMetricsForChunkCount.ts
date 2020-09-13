@@ -7,6 +7,7 @@ import { applySharedPopularityMetricLfcCommandSetup } from "./shared"
 // TODO: BRING BACK ASYNC probably I should review the commit where I temporarily ripped out all of the async stuff
 //  and make a commit where I make it possible to switch between them
 
+// TODO: this "time" options should be extracted to the general io settings, and also be by default in test turned off
 program.option(`-${CommandFlag.NO_TIME}, --no-time`, "no time")
 
 const defaultLogTargets = [

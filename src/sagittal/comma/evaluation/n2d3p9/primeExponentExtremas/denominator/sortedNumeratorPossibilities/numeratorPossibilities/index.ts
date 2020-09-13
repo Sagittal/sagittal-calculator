@@ -1,2 +1,2 @@
-export { computeNumeratorPossibilitiesGivenMaxN2D3P3 } from "./numeratorPossibilities"
-export { NumeratorPossibilityGivenMaxN2D3P3 } from "./types"
+export { computeNumeratorPossibilitiesForDenominatorGivenMaxN2D3P3 } from "./numeratorPossibilities"
+export { NumeratorPossibilityForDenominatorGivenMaxN2D3P3 } from "./types"

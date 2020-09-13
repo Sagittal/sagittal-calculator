@@ -7,9 +7,14 @@ const computeMaxNumeratorPrimeExponentGivenMaxN2D3P3 = (
 ): Max<Integer & Exponent<Prime<Numerator>>> => {
     const power = maxN2D3P9 * 9 * (1 / numeratorPrime) as Power<Prime<Numerator>>
 
-    return power > 0 ?
-        floor(log(power, numeratorPrime / 2 as Base<Prime<Numerator>>)) as Max<Integer & Exponent<Prime<Numerator>>> :
-        0 as Max<Integer & Exponent<Prime<Numerator>>>
+    if (power <= 0) {
+        return 0 as Max<Integer & Exponent<Prime<Numerator>>>
+    }
+
+    const base = numeratorPrime / 2 as Base<Prime<Numerator>>
+
+    return floor(log(power, base)) as Max<Integer & Exponent<Prime<Numerator>>>
+
 }
 
 export {

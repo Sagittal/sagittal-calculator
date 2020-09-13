@@ -5,3 +5,6 @@ export {
     SortedNumeratorPossibilityWithGreaterGpfThanDenominatorPrimeIncludingN2P,
     SortedNumeratorPossibilityWithLesserGpfThanDenominatorPrimeIncludingN2,
 } from "./types"
+export {
+    NumeratorPossibilityForDenominatorGivenMaxN2D3P3, computeNumeratorPossibilitiesForDenominatorGivenMaxN2D3P3,
+} from "./numeratorPossibilities"
