@@ -1,8 +1,8 @@
 import {
     Comma,
-    computeIsWithinPrimeLimit,
     computeIsSubPitch,
     computeIsUnisonPitch,
+    computeIsWithinPrimeLimit,
     computeJiPitchRatio,
     computeMonzoFromInteger,
     computeRoughRatio,

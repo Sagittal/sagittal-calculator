@@ -1,7 +1,8 @@
 import { Count, Sum } from "../types"
 
-type Numeric<T extends NumericTypeParameters> = number & NumericTypeParameterEffects<T>
-type Integer = Numeric<{ irrational: false }>
+type Numeric<T extends NumericTypeParameters> = MaybeInteger<T> & NumericTypeParameterEffectsBesidesIrrational<T>
+type Integer = number & { _IntegerBrand: "Integer" }
+type MaybeInteger<T> = T extends { irrational: true } ? number : Integer
 
 type Prime<T = void> = Integer & { _PrimeBrand: "Prime" } & (T extends void ? {} : T & { _PrimeOfBrand: T })
 type Roughness = Integer & { _RoughnessBrand: "Roughness" }
@@ -28,11 +29,11 @@ type Approx<T extends number = number> = T & { _ApproxBrand: "Approx" }
 type Sopfr<T extends NumericTypeParameters & { irrational?: false } = { irrational: false }> =
     Sum<Prime>
     & { _SopfrBrand: "Sopfr" }
-    & NumericTypeParameterEffects<T>
+    & NumericTypeParameterEffectsBesidesIrrational<T>
 type Copfr<T extends NumericTypeParameters & { irrational?: false } = { irrational: false }> =
     Count<Prime>
     & { _CopfrBrand: "Copfr" }
-    & NumericTypeParameterEffects<T>
+    & NumericTypeParameterEffectsBesidesIrrational<T>
 
 enum Direction {
     SUPER = "super",
@@ -50,7 +51,7 @@ type NumericTypeParameters = Partial<{
 }>
 type RationalTypeParameters = NumericTypeParameters & { irrational: false }
 
-type NumericTypeParameterEffects<T> =
+type NumericTypeParameterEffectsBesidesIrrational<T> =
     (T extends { direction: Direction.SUB } ? { _Direction: Direction.SUB } : {})
     & (T extends { direction: Direction.SUPER } ? { _Direction: Direction.SUPER } : {})
     & (T extends { direction: Direction.UNISON } ? { _Direction: Direction.UNISON } : {})
@@ -246,9 +247,10 @@ export {
     Abs,
     NumericTypeParameters,
     Direction,
-    NumericTypeParameterEffects,
+    NumericTypeParameterEffectsBesidesIrrational,
     Smoothness,
     Numeric,
     RationalTypeParameters,
     Primes,
+    MaybeInteger,
 }
