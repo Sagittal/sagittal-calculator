@@ -1,8 +1,8 @@
 import { Count } from "../../../../src/general"
 import { computeCardinality } from "../../../../src/general/code"
 
-describe("computeCardinality", () => {
-    it("returns the cardinality of an array", () => {
+describe("computeCardinality", (): void => {
+    it("returns the cardinality of an array", (): void => {
         const array = [
             [
                 [0.004, 0.004, 0.004],

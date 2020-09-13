@@ -3,8 +3,8 @@ import { computeHistoryPosition } from "../../../../../src/scripts/bound/analyze
 import { History } from "../../../../../src/scripts/bound/histories"
 import { eventFixture } from "../../../../helpers/src/scripts/bound/fixtures"
 
-describe("computeHistoryPosition", () => {
-    it("returns the position of the history's final event", () => {
+describe("computeHistoryPosition", (): void => {
+    it("returns the position of the history's final event", (): void => {
         const history: History = [
             { ...eventFixture, cents: 10.010 as Cents },
             { ...eventFixture, cents: 10.030 as Cents },

@@ -4,16 +4,16 @@ import { LEVEL_BOTTOMS, LEVEL_TOPS } from "./levelHeights"
 import { DASH_SIZE, SYMBOL_OFFSET } from "./sizes"
 import { computeX } from "./x"
 
-const visualizeLevelBounds = () => {
+const visualizeLevelBounds = (): Io[] => {
     const levelBoundElements: Io[] = [] as Io[]
 
     const levelsBoundsEntries = Object.entries(LEVELS_BOUNDS) as Array<[Level, Bound[]]>
-    levelsBoundsEntries.forEach(([level, levelsBounds]: [Level, Bound[]]) => {
+    levelsBoundsEntries.forEach(([level, levelsBounds]: [Level, Bound[]]): void => {
         if (level === Level.INSANE) {
             return
         }
 
-        levelsBounds.forEach((levelBound: Bound, index: number) => {
+        levelsBounds.forEach((levelBound: Bound, index: number): void => {
             const { cents } = levelBound
 
             const topY: Px = LEVEL_TOPS[ level ]

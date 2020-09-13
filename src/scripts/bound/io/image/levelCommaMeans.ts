@@ -10,7 +10,7 @@ const visualizeLevelCommaMeans = (): Io[] => {
     const levelCommaMeanElements: Io[] = [] as Io[]
 
     const levelCommaMeansEntries = Object.entries(LEVELS_COMMA_MEANS) as Array<[Level, CentsPosition[]]>
-    levelCommaMeansEntries.forEach(([level, levelCommaMeans]: [Level, CentsPosition[]]) => {
+    levelCommaMeansEntries.forEach(([level, levelCommaMeans]: [Level, CentsPosition[]]): void => {
         if (level === Level.INSANE) {
             return
         }
@@ -19,11 +19,11 @@ const visualizeLevelCommaMeans = (): Io[] => {
         const topY: Px = difference(centerY, HALF_TICK_SIZE)
         const bottomY: Px = difference(centerY, HALF_TICK_SIZE)
 
-        levelCommaMeans.forEach(levelCommaMean => {
+        levelCommaMeans.forEach((levelCommaMean: CentsPosition): void => {
             const { cents, name } = levelCommaMean
 
             const formattedName = name?.split(" ")
-                .map(ascii => unicodeFromAscii(ascii as SymbolLongAscii)).join("   ") || ""
+                .map((ascii: string): string => unicodeFromAscii(ascii as SymbolLongAscii)).join("   ") || ""
             const positionX: Px = computeX(cents)
 
             levelCommaMeanElements.push(`  <line stroke-dasharray="${DASH_SIZE}" stroke="${MEAN_COLOR}" x1="${positionX}" x2="${positionX}" y1="${topY}" y2="${bottomY}"/>\n` as Io)

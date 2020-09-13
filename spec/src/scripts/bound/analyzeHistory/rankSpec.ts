@@ -6,8 +6,8 @@ import { computeRank } from "../../../../../src/scripts/bound/analyzeHistory/ran
 import { EventType } from "../../../../../src/scripts/bound/histories"
 import { eventAnalysisFixture } from "../../../../helpers/src/scripts/bound/fixtures"
 
-describe("computeRank", () => {
-    it("returns the worst rank of any of the events in the history", () => {
+describe("computeRank", (): void => {
+    it("returns the worst rank of any of the events in the history", (): void => {
         const eventAnalyses: EventAnalysis[] = [
             {
                 ...eventAnalysisFixture,

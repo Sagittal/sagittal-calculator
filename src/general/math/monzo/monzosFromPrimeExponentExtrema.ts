@@ -8,13 +8,13 @@ const computeMonzosFromPrimeExponentExtremas = (
 ): Monzo[] => {
     let monzos = [computeExtensionBase(ExtensionBaseType.ARRAY)] as Monzo[]
 
-    primeExponentExtremas.forEach(primeExponentExtrema => {
+    primeExponentExtremas.forEach((primeExponentExtrema: Extrema<Integer & Exponent<Prime>>): void => {
         const extendedPossibleMonzos = [] as Monzo[]
         const [minPrimeExponent, maxPrimeExponent] = primeExponentExtrema
         const range = computeRange(minPrimeExponent, maxPrimeExponent + 1 as Integer & Exponent<Prime>)
 
-        range.forEach(primeExponent => {
-            monzos.forEach(numeratorMonzoToCheck => {
+        range.forEach((primeExponent: Integer & Exponent<Prime>): void => {
+            monzos.forEach((numeratorMonzoToCheck: Monzo): void => {
                 extendedPossibleMonzos.push([...numeratorMonzoToCheck, primeExponent])
             })
         })

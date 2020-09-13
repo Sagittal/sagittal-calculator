@@ -57,14 +57,14 @@ const compute23FreeMonzosToCheck = (
     let twoThreeFreeMonzosToCheck: Array<Monzo<{ rough: 5 }>> = [
         shallowClone(TWO_THREE_FREE_MONZO_BASE),
     ]
-    twoThreeFreePrimesToCheck.forEach((twoThreeFreePrimeToCheck, index) => {
+    twoThreeFreePrimesToCheck.forEach((twoThreeFreePrimeToCheck: Prime, index: number): void => {
         const extendedFiveSlicedMonzosToCheck: Array<Monzo<{ rough: 5 }>> =
             computeExtensionBase(ExtensionBaseType.ARRAY) as Array<Monzo<{ rough: 5 }>>
 
         const primeExponentExtremaGivenMaxN2D3P9: Maybe<Extrema<Integer & Exponent<Prime>>> =
             primeExponentExtremasGivenMaxN2D3P9 && primeExponentExtremasGivenMaxN2D3P9[ index + FIVE_PRIME_INDEX ]
 
-        twoThreeFreeMonzosToCheck.forEach(twoThreeFreeMonzoToCheck => {
+        twoThreeFreeMonzosToCheck.forEach((twoThreeFreeMonzoToCheck: Monzo): void => {
             const twoThreeFreeSopfr = computeSopfr(twoThreeFreeMonzoToCheck)
             const twoThreeFreeCopfr = computeCopfr(twoThreeFreeMonzoToCheck)
 
@@ -81,7 +81,7 @@ const compute23FreeMonzosToCheck = (
                     primeExponentExtremaGivenMaxN2D3P9,
                 },
             ) as Array<Integer & Exponent<Prime>>
-            termRange.forEach((potentialNextTerm: Integer & Exponent<Prime>) => {
+            termRange.forEach((potentialNextTerm: Integer & Exponent<Prime>): void => {
                 extendedFiveSlicedMonzosToCheck.push(
                     twoThreeFreeMonzoToCheck.concat(potentialNextTerm) as Monzo<{ rough: 5 }>,
                 )

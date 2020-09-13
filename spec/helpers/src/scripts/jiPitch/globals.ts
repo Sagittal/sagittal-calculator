@@ -2,7 +2,7 @@ import { setAllPropertiesOfObjectOnAnother } from "../../../../../src/general/co
 import { INITIAL_JI_PITCH_SCRIPT_GROUP_SETTINGS } from "../../../../../src/scripts/jiPitch/constants"
 import { jiPitchScriptGroupSettings } from "../../../../../src/scripts/jiPitch/globals"
 
-afterEach(() => {
+afterEach((): void => {
     setAllPropertiesOfObjectOnAnother({
         objectToChange: jiPitchScriptGroupSettings,
         objectWithProperties: INITIAL_JI_PITCH_SCRIPT_GROUP_SETTINGS,

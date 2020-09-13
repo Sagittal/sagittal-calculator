@@ -3,10 +3,10 @@ import { SubmetricScope } from "../../../../../src/scripts/popularityMetricLfc/b
 import { computeSpreadDynamicParameters } from "../../../../../src/scripts/popularityMetricLfc/bestMetric/spreadDynamicParameters"
 import { Parameter, ParameterValue } from "../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
 
-describe("computeSpreadDynamicParameters", () => {
+describe("computeSpreadDynamicParameters", (): void => {
     it(
         `given a scope returns a list of the dynamic parameters which are on the all-bins (first) submetric scope`,
-        () => {
+        (): void => {
             const scope = [
                 {
                     [ Parameter.K_AS_COEFFICIENT ]: {
@@ -35,7 +35,7 @@ describe("computeSpreadDynamicParameters", () => {
         },
     )
 
-    it("if there are no parameters on the all-bins (first) submetric scope, it returns undefined", () => {
+    it("if there are no parameters on the all-bins (first) submetric scope, it returns undefined", (): void => {
         const scope = [
             {},
             {
@@ -56,7 +56,7 @@ describe("computeSpreadDynamicParameters", () => {
 
     it(
         `ignores non-dynamic parameters (such as the boolean ones and the logarithm bases which are locked down to 2)`,
-        () => {
+        (): void => {
             const scope = [
                 {
                     [ Parameter.K_AS_COEFFICIENT ]: {

@@ -2,8 +2,8 @@ import { Cents, Monzo, Prime, Ratio, Sopfr, TwoThreeFreeClass } from "../../../.
 import { ApotomeSlope, JiPitchAnalysis, N2D3P9 } from "../../../../src/sagittal"
 import { analyzeJiPitch } from "../../../../src/sagittal/comma"
 
-describe("analyzeJiPitch", () => {
-    it("returns an analysis of a JI pitch, given its monzo", () => {
+describe("analyzeJiPitch", (): void => {
+    it("returns an analysis of a JI pitch, given its monzo", (): void => {
         const jiPitch = { monzo: [-7, -6, 3, 5, -1] as Monzo }
 
         const actual = analyzeJiPitch(jiPitch)

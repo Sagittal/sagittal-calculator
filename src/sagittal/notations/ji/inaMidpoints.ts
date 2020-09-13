@@ -8,7 +8,7 @@ import { Level } from "./types"
 const computeInaMidpoints = (level: Level): CentsPosition[] => {
     const eda = LEVEL_EDAS[ LEVELS.indexOf(level) ]
 
-    const inaMidpoints = [...Array(eda).keys()].map((degree): Maybe<CentsPosition> => {
+    const inaMidpoints = [...Array(eda).keys()].map((degree: number): Maybe<CentsPosition> => {
         const midpoint = degree + 0.5
         const cents = APOTOME_CENTS * midpoint / eda as Cents
 
@@ -21,7 +21,7 @@ const computeInaMidpoints = (level: Level): CentsPosition[] => {
         return { name, cents }
     })
 
-    return inaMidpoints.filter(inaMidpoint => !!inaMidpoint) as CentsPosition[]
+    return inaMidpoints.filter((inaMidpoint: Maybe<CentsPosition>): boolean => !!inaMidpoint) as CentsPosition[]
 }
 
 export {

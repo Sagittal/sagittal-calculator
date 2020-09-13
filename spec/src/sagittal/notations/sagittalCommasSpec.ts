@@ -3,11 +3,12 @@ import { analyzeComma, CommaAnalysis, SagittalComma } from "../../../../src/sagi
 import { ApotomeSlope, N2D3P9 } from "../../../../src/sagittal/comma"
 import { SAGITTAL_COMMAS } from "../../../../src/sagittal/notations/sagittalCommas"
 
-describe("SAGITTAL_COMMAS", () => {
-    it("has all the right commas", () => {
-        const actual = SAGITTAL_COMMAS.map(comma => {
-            return analyzeComma(comma)
-        })
+describe("SAGITTAL_COMMAS", (): void => {
+    it("has all the right commas", (): void => {
+        const actual = SAGITTAL_COMMAS
+            .map((sagittalComma: SagittalComma): CommaAnalysis & { id: Id<SagittalComma> } => {
+                return analyzeComma(sagittalComma) as CommaAnalysis & { id: Id<SagittalComma> }
+            })
 
         const expected = [
             {

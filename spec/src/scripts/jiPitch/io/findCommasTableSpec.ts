@@ -16,7 +16,7 @@ import { ApotomeSlope, CommaAnalysis, JiSymbol } from "../../../../../src/sagitt
 import { N2D3P9 } from "../../../../../src/sagittal/comma/evaluation/n2d3p9"
 import { computeFindCommasTable } from "../../../../../src/scripts/jiPitch/io"
 
-describe("computeFindCommasTable", () => {
+describe("computeFindCommasTable", (): void => {
     // note: I'm pretty sure that this is not realistic comma data, since these commas are unrelated
     const commas: Array<CommaAnalysis & { symbolId?: Id<JiSymbol> }> = [
         {
@@ -44,7 +44,7 @@ describe("computeFindCommasTable", () => {
         } as CommaAnalysis & { symbolId?: Id<JiSymbol> },
     ]
 
-    it("changes column widths so that each cell in a column has the same width", () => {
+    it("changes column widths so that each cell in a column has the same width", (): void => {
         const actual = computeFindCommasTable(commas)
 
         const expected =
@@ -55,7 +55,7 @@ describe("computeFindCommasTable", () => {
         expect(actual).toEqual(expected)
     })
 
-    it("can format tables for sharing on the Sagittal forum", () => {
+    it("can format tables for sharing on the Sagittal forum", (): void => {
         ioSettings.forForum = true
         const actual = computeFindCommasTable(commas)
 

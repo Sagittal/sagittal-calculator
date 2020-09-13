@@ -15,26 +15,28 @@ const combineSubmetricsPossibilitiesIntoSamples = (
         submetrics: [] as unknown[] as Combination<Submetric>,
         samplePoint: [] as unknown[] as SamplePoint,
     }]
-    submetricsPossibilities.forEach((submetricPossibilities: Combination<SubmetricPossibility>, submetricIndex) => {
-        const extendedSamples: Sample[] = computeExtensionBase(ExtensionBaseType.ARRAY) as Sample[]
+    submetricsPossibilities
+        .forEach((submetricPossibilities: Combination<SubmetricPossibility>, submetricIndex: number): void => {
+            const extendedSamples: Sample[] = computeExtensionBase(ExtensionBaseType.ARRAY) as Sample[]
 
-        samples.forEach(({ submetrics, samplePoint }) => {
-            submetricPossibilities.forEach((submetricPossibility: SubmetricPossibility) => {
-                const dynamicParameterValueIndices: Array<Index<ParameterValue>> = computeDynamicParameterValueIndices({
-                    dynamicParameters,
-                    submetric: submetricPossibility,
-                    submetricIndex: submetricIndex + 1 as Index<Submetric>,
-                })
+            samples.forEach(({ submetrics, samplePoint }: Sample): void => {
+                submetricPossibilities.forEach((submetricPossibility: SubmetricPossibility): void => {
+                    const dynamicParameterValueIndices: Array<Index<ParameterValue>> =
+                        computeDynamicParameterValueIndices({
+                            dynamicParameters,
+                            submetric: submetricPossibility,
+                            submetricIndex: submetricIndex + 1 as Index<Submetric>,
+                        })
 
-                extendedSamples.push({
-                    submetrics: [...submetrics, submetricPossibility] as Combination<Submetric>,
-                    samplePoint: [...samplePoint, ...dynamicParameterValueIndices] as SamplePoint,
+                    extendedSamples.push({
+                        submetrics: [...submetrics, submetricPossibility] as Combination<Submetric>,
+                        samplePoint: [...samplePoint, ...dynamicParameterValueIndices] as SamplePoint,
+                    })
                 })
             })
-        })
 
-        samples = extendedSamples
-    })
+            samples = extendedSamples
+        })
 
     return spreadAllBinSubmetricsPossibilitiesAcrossSamples({
         samples,

@@ -7,18 +7,18 @@ import {
 import { EventType, HistoricalEvent } from "../../../../../src/scripts/bound/histories"
 import { computeEvents } from "../../../../../src/scripts/bound/histories/events"
 
-describe("computeEvents", () => {
+describe("computeEvents", (): void => {
     let level: Level
     let boundedSymbolPositions: BoundedSymbolPositions
     let eventType: EventType
 
-    describe("returns an event for each snappable position between the bounded symbol positions for this event type and level", () => {
-        describe("for events of snapping to ina midpoint positions", () => {
-            beforeEach(() => {
+    describe("returns an event for each snappable position between the bounded symbol positions for this event type and level", (): void => {
+        describe("for events of snapping to ina midpoint positions", (): void => {
+            beforeEach((): void => {
                 eventType = EventType.INA
             })
 
-            it("works when only one ina midpoint is between the bounded symbols", () => {
+            it("works when only one ina midpoint is between the bounded symbols", (): void => {
                 level = Level.ULTRA
                 boundedSymbolPositions = computeBoundedJiSymbolPositions(4.5 as Cents, level)
 
@@ -37,7 +37,7 @@ describe("computeEvents", () => {
 
             it(
                 `works when only one ina midpoint is between the bounded symbols, even if it is not within a half-ina`,
-                () => {
+                (): void => {
                     level = Level.ULTRA
                     boundedSymbolPositions = computeBoundedJiSymbolPositions(4.5 as Cents, level)
 
@@ -55,7 +55,7 @@ describe("computeEvents", () => {
                 },
             )
 
-            it("works when multiple INA midpoints are between the bounded symbols", () => {
+            it("works when multiple INA midpoints are between the bounded symbols", (): void => {
                 level = Level.HIGH
                 boundedSymbolPositions = computeBoundedJiSymbolPositions(28.0 as Cents, level)
 
@@ -78,23 +78,26 @@ describe("computeEvents", () => {
                 expect(actual).toEqual(expected)
             })
 
-            it("returns an empty array if there are no INA midpoints between the position's bounded symbols", () => {
-                level = Level.ULTRA
-                boundedSymbolPositions = computeBoundedJiSymbolPositions(6.05 as Cents, level)
+            it(
+                "returns an empty array if there are no INA midpoints between the position's bounded symbols",
+                (): void => {
+                    level = Level.ULTRA
+                    boundedSymbolPositions = computeBoundedJiSymbolPositions(6.05 as Cents, level)
 
-                const actual = computeEvents(level, boundedSymbolPositions, eventType)
+                    const actual = computeEvents(level, boundedSymbolPositions, eventType)
 
-                const expected = [] as HistoricalEvent[]
-                expect(actual).toEqual(expected)
-            })
+                    const expected = [] as HistoricalEvent[]
+                    expect(actual).toEqual(expected)
+                },
+            )
         })
 
-        describe("for events of snapping to comma mean positions", () => {
-            beforeEach(() => {
+        describe("for events of snapping to comma mean positions", (): void => {
+            beforeEach((): void => {
                 eventType = EventType.MEAN
             })
 
-            it("works at the Medium level", () => {
+            it("works at the Medium level", (): void => {
                 level = Level.MEDIUM
                 boundedSymbolPositions = computeBoundedJiSymbolPositions(26.25 as Cents, level)
 
@@ -111,7 +114,7 @@ describe("computeEvents", () => {
                 expect(actual).toEqual(expected)
             })
 
-            it("works at the High level", () => {
+            it("works at the High level", (): void => {
                 level = Level.HIGH
                 boundedSymbolPositions = computeBoundedJiSymbolPositions(26.25 as Cents, level)
 
@@ -128,7 +131,7 @@ describe("computeEvents", () => {
                 expect(actual).toEqual(expected)
             })
 
-            it("works at the Ultra level", () => {
+            it("works at the Ultra level", (): void => {
                 level = Level.ULTRA
                 boundedSymbolPositions = computeBoundedJiSymbolPositions(26.25 as Cents, level)
 
@@ -145,7 +148,7 @@ describe("computeEvents", () => {
                 expect(actual).toEqual(expected)
             })
 
-            it("works at the Extreme level", () => {
+            it("works at the Extreme level", (): void => {
                 level = Level.EXTREME
                 boundedSymbolPositions = computeBoundedJiSymbolPositions(26.25 as Cents, level)
 
@@ -164,7 +167,7 @@ describe("computeEvents", () => {
 
             it(
                 `works even if there is a closer comma mean to the position but it is not between the bounded symbols`,
-                () => {
+                (): void => {
                     // mean between )|) and |\ is 31.2043820809972, 0.20 away
                     // mean between |) and )|) is 28.95310116433256, 2.05 away
                     // however, )|) is at 30.98583910472900,
@@ -188,12 +191,12 @@ describe("computeEvents", () => {
             )
         })
 
-        describe("for events of snapping to size category bound positions", () => {
-            beforeEach(() => {
+        describe("for events of snapping to size category bound positions", (): void => {
+            beforeEach((): void => {
                 eventType = EventType.SIZE
             })
 
-            it("returns one event for each size category bound between the position's bounded symbols", () => {
+            it("returns one event for each size category bound between the position's bounded symbols", (): void => {
                 level = Level.MEDIUM
                 boundedSymbolPositions = computeBoundedJiSymbolPositions(34.0 as Cents, level)
 
@@ -212,7 +215,7 @@ describe("computeEvents", () => {
 
             it(
                 `returns an empty array if there are no size category bounds between the position's bounded symbols`,
-                () => {
+                (): void => {
                     level = Level.ULTRA
                     boundedSymbolPositions = computeBoundedJiSymbolPositions(6.05 as Cents, level)
 

@@ -3,8 +3,8 @@ import { EventAnalysis } from "./analyzeEvents"
 
 const computeHistoryTotalDistance = (eventAnalyses: EventAnalysis[]): Sum<Cents> =>
     eventAnalyses.reduce(
-        (distance, eventAnalysis): Sum<Cents> =>
-            distance + eventAnalysis.distance as Sum<Cents>,
+        (totalDistance: Sum<Cents>, eventAnalysis: EventAnalysis): Sum<Cents> =>
+            totalDistance + eventAnalysis.distance as Sum<Cents>,
         0 as Sum<Cents>,
     )
 

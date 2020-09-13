@@ -1,8 +1,8 @@
 import { Cents, Comma } from "../../../../../src/general"
 import { computeSizeCategory } from "../../../../../src/sagittal/comma/name/sizeCategory"
 
-describe("computeSizeCategory", () => {
-    it("returns the correct size category per the amount of cents", () => {
+describe("computeSizeCategory", (): void => {
+    it("returns the correct size category per the amount of cents", (): void => {
         expect(computeSizeCategory({ cents: 0 as Cents } as Comma)).toBe("u")
         expect(computeSizeCategory({ cents: 1 as Cents } as Comma)).toBe("n")
         expect(computeSizeCategory({ cents: 2 as Cents } as Comma)).toBe("s")
@@ -27,7 +27,7 @@ describe("computeSizeCategory", () => {
         expect(computeSizeCategory({ cents: 227 as Cents } as Comma)).toBe("A+A")
     })
 
-    it("works when not abbreviated", () => {
+    it("works when not abbreviated", (): void => {
         expect(computeSizeCategory({ cents: 0 as Cents } as Comma, { abbreviated: false })).toBe("unison")
         expect(computeSizeCategory({ cents: 1 as Cents } as Comma, { abbreviated: false })).toBe("schismina")
         expect(computeSizeCategory({ cents: 2 as Cents } as Comma, { abbreviated: false })).toBe("schisma")
@@ -52,7 +52,9 @@ describe("computeSizeCategory", () => {
         expect(computeSizeCategory({ cents: 227 as Cents } as Comma, { abbreviated: false })).toBe("double-Apotome")
     })
 
-    it("throws an error if the size category of an pitch which is too big is requested", () => {
-        expect(() => computeSizeCategory({ cents: 230 as Cents } as Comma)).toThrowError("230¢ is beyond the maximum size category's bounds.")
+    it("throws an error if the size category of an pitch which is too big is requested", (): void => {
+        expect((): void => {
+            computeSizeCategory({ cents: 230 as Cents } as Comma)
+        }).toThrowError("230¢ is beyond the maximum size category's bounds.")
     })
 })

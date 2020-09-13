@@ -2,6 +2,6 @@ import { setAllPropertiesOfObjectOnAnother } from "../../../../../src/general/co
 import { ioSettings } from "../../../../../src/general/io"
 import { INITIAL_IO_SETTINGS } from "../../../../../src/general/io/constants"
 
-afterEach(() => {
+afterEach((): void => {
     setAllPropertiesOfObjectOnAnother({ objectToChange: ioSettings, objectWithProperties: INITIAL_IO_SETTINGS })
 })

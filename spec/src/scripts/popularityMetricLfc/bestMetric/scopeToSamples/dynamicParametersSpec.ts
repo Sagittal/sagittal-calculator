@@ -3,8 +3,8 @@ import { Scope } from "../../../../../../src/scripts/popularityMetricLfc/bestMet
 import { computeDynamicParameters } from "../../../../../../src/scripts/popularityMetricLfc/bestMetric/scopeToSamples"
 import { Parameter, ParameterValue, Submetric } from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
 
-describe("computeDynamicParameters", () => {
-    it("returns a flattened array of all the parameters that are dynamic -- flattened across all the submetrics, that is", () => {
+describe("computeDynamicParameters", (): void => {
+    it("returns a flattened array of all the parameters that are dynamic -- flattened across all the submetrics, that is", (): void => {
         const scope: Scope = [
             {
                 [ Parameter.Y ]: {

@@ -3,8 +3,8 @@ import { Monzo } from "../../../../../src/general/math/monzo"
 import { Cents } from "../../../../../src/general/music"
 import { computeMonzoInZone } from "../../../../../src/sagittal/comma/find/monzoInZone"
 
-describe("computeMonzoInZone", () => {
-    it("given a 2-free monzo, finds the right power of 2 for the monzo which is within the cents range", () => {
+describe("computeMonzoInZone", (): void => {
+    it("given a 2-free monzo, finds the right power of 2 for the monzo which is within the cents range", (): void => {
         const threeSlicedMonzo = [0, -6, 3, 5, -1] as Monzo<{ rough: 3 }>
         const minCents = 40.0 as Min<Cents>
         const maxCents = 40.1 as Max<Cents>
@@ -15,7 +15,7 @@ describe("computeMonzoInZone", () => {
         expect(actual).toEqual(expected)
     })
 
-    it("returns undefined if no monzo is within the cents range", () => {
+    it("returns undefined if no monzo is within the cents range", (): void => {
         const threeSlicedMonzo = [0, -6, 3, 5, -1] as Monzo<{ rough: 3 }>
         const minCents = 40.1 as Min<Cents>
         const maxCents = 40.2 as Max<Cents>
@@ -25,7 +25,7 @@ describe("computeMonzoInZone", () => {
         expect(actual).toBeUndefined()
     })
 
-    it("works for the empty two-free monzo", () => {
+    it("works for the empty two-free monzo", (): void => {
         const threeSlicedMonzo = [] as Monzo as Monzo<{ rough: 3 }>
         const minCents = 40.1 as Min<Cents>
         const maxCents = 40.2 as Max<Cents>
@@ -35,7 +35,7 @@ describe("computeMonzoInZone", () => {
         expect(actual).toBeUndefined()
     })
 
-    it("works for the empty two-free monzo when unison is within the search range", () => {
+    it("works for the empty two-free monzo when unison is within the search range", (): void => {
         const threeSlicedMonzo = [] as Monzo as Monzo<{ rough: 3 }>
         const minCents = -40.1 as Min<Cents>
         const maxCents = 40.2 as Max<Cents>

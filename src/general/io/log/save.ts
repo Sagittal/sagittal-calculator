@@ -10,7 +10,7 @@ import { write } from "./write"
 //  Maybe it should just be the friggin filename
 //  and then also update filenames in results/ folders to match
 
-const saveLog = (message: Io, target: LogTarget, options: SaveLogOptions = {}) => {
+const saveLog = (message: Io, target: LogTarget, options: SaveLogOptions = {}): void => {
     const { useTargetColor = true, fileExtensionProvided = false, writeOnly = false } = options
 
     if (ioSettings.logTargets[ LogTarget.NONE ]) {

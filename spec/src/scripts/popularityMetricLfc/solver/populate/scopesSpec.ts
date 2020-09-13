@@ -9,18 +9,18 @@ import {
     INITIAL_PARAMETER_SCOPES,
     SUBMETRIC_CHUNKS,
 } from "../../../../../../src/scripts/popularityMetricLfc/solver/populate/constants"
-import { Parameter } from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
+import { Parameter, Submetric } from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
 import { onlyRunInCi } from "../../../../../helpers/onlyRunInCi"
 
-describe("populateScopes", () => {
+describe("populateScopes", (): void => {
     let originalJasmineTimeoutInterval: number
-    beforeEach(() => {
+    beforeEach((): void => {
         originalJasmineTimeoutInterval = jasmine.DEFAULT_TIMEOUT_INTERVAL
 
         jasmine.DEFAULT_TIMEOUT_INTERVAL = 1000000
     })
 
-    afterEach(() => {
+    afterEach((): void => {
         jasmine.DEFAULT_TIMEOUT_INTERVAL = originalJasmineTimeoutInterval
     })
 
@@ -29,19 +29,22 @@ describe("populateScopes", () => {
          parameter chunks across bins corresponding to all possible combinations of submetric chunks - 
          works for 1, where each possibility is just a single submetric chunk, 
          plus an empty 'all bins' chunk because that's just how it works to be simple`,
-        async () => {
+        async (): Promise<void> => {
             solverStatus.chunkCount = 1 as Count<Chunk>
 
             await populateScopes()
 
             // count: 6
-            expect(scopesToSearch).toEqual(jasmine.arrayWithExactContents(SUBMETRIC_CHUNKS.map(chunk => [{}, chunk])))
-
+            expect(scopesToSearch).toEqual(
+                jasmine.arrayWithExactContents(SUBMETRIC_CHUNKS.map((chunk: Chunk<Submetric>): Scope => {
+                    return [{}, chunk] as Scope
+                })),
+            )
         },
     )
 
     // need to add the extra 7 bits (18 to 25) to each section below
-    it("given a chunk count, populates all possible combinations of those parameters - works for 2", async () => {
+    it("given a chunk count, populates all possible combinations of those parameters - works for 2", async (): Promise<void> => {
         onlyRunInCi()
 
         solverStatus.chunkCount = 2 as Count<Chunk>
@@ -2777,7 +2780,7 @@ describe("populateScopes", () => {
         expect(actual).toBeArrayWithDeepEqualContents(expected)
     })
 
-    it("given a chunk count, populates all possible combinations of those parameters - works for 3", async () => {
+    it("given a chunk count, populates all possible combinations of those parameters - works for 3", async (): Promise<void> => {
         onlyRunInCi()
 
         solverStatus.chunkCount = 3 as Count<Chunk>

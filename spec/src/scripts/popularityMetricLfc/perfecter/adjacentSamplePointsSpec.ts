@@ -1,8 +1,8 @@
 import { SamplePoint } from "../../../../../src/scripts/popularityMetricLfc/bestMetric/scopeToSamples"
 import { computeAdjacentSamplePoints } from "../../../../../src/scripts/popularityMetricLfc/perfecter/adjacentSamplePoints"
 
-describe("computeAdjacentSamplePoints", () => {
-    it("returns the list of sample points adjacent to a given sample point", () => {
+describe("computeAdjacentSamplePoints", (): void => {
+    it("returns the list of sample points adjacent to a given sample point", (): void => {
         const samplePoint = [1, 2, 3] as SamplePoint
 
         const actual = computeAdjacentSamplePoints(samplePoint)
@@ -18,7 +18,7 @@ describe("computeAdjacentSamplePoints", () => {
         expect(actual).toEqual(expected)
     })
 
-    it("blindly returns sample points that are off the edge, but that's okay because getSumOfSquaresAtSamplePointIfLocalMin can handle that, and it has no concept of the upper edge of any dimension so it might as well not deal with it", () => {
+    it("blindly returns sample points that are off the edge, but that's okay because getSumOfSquaresAtSamplePointIfLocalMin can handle that, and it has no concept of the upper edge of any dimension so it might as well not deal with it", (): void => {
         const samplePoint = [0, 0] as SamplePoint
 
         const actual = computeAdjacentSamplePoints(samplePoint)

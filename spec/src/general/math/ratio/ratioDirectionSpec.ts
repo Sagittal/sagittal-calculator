@@ -7,8 +7,8 @@ import {
     Ratio,
 } from "../../../../../src/general/math/ratio"
 
-describe("computeIsSuperRatio", () => {
-    it("returns true if n > d", () => {
+describe("computeIsSuperRatio", (): void => {
+    it("returns true if n > d", (): void => {
         const numerator = 55 as Numerator
         const denominator = 54 as Denominator
         const ratio = [numerator, denominator] as Ratio
@@ -18,7 +18,7 @@ describe("computeIsSuperRatio", () => {
         expect(actual).toBeTruthy()
     })
 
-    it("returns false if n = d", () => {
+    it("returns false if n = d", (): void => {
         const numerator = 55 as Numerator
         const denominator = 55 as Denominator
         const ratio = [numerator, denominator] as Ratio
@@ -28,7 +28,7 @@ describe("computeIsSuperRatio", () => {
         expect(actual).toBeFalsy()
     })
 
-    it("returns false if n < d", () => {
+    it("returns false if n < d", (): void => {
         const numerator = 55 as Numerator
         const denominator = 56 as Denominator
         const ratio = [numerator, denominator] as Ratio
@@ -39,8 +39,8 @@ describe("computeIsSuperRatio", () => {
     })
 })
 
-describe("computeIsSubRatio", () => {
-    it("returns false if n > d", () => {
+describe("computeIsSubRatio", (): void => {
+    it("returns false if n > d", (): void => {
         const numerator = 55 as Numerator
         const denominator = 54 as Denominator
         const ratio = [numerator, denominator] as Ratio
@@ -50,7 +50,7 @@ describe("computeIsSubRatio", () => {
         expect(actual).toBeFalsy()
     })
 
-    it("returns false if n = d", () => {
+    it("returns false if n = d", (): void => {
         const numerator = 55 as Numerator
         const denominator = 55 as Denominator
         const ratio = [numerator, denominator] as Ratio
@@ -60,7 +60,7 @@ describe("computeIsSubRatio", () => {
         expect(actual).toBeFalsy()
     })
 
-    it("returns true if n < d", () => {
+    it("returns true if n < d", (): void => {
         const numerator = 55 as Numerator
         const denominator = 56 as Denominator
         const ratio = [numerator, denominator] as Ratio
@@ -71,8 +71,8 @@ describe("computeIsSubRatio", () => {
     })
 })
 
-describe("computeIsUnisonRatio", () => {
-    it("returns false if n > d", () => {
+describe("computeIsUnisonRatio", (): void => {
+    it("returns false if n > d", (): void => {
         const numerator = 55 as Numerator
         const denominator = 54 as Denominator
         const ratio = [numerator, denominator] as Ratio
@@ -82,7 +82,7 @@ describe("computeIsUnisonRatio", () => {
         expect(actual).toBeFalsy()
     })
 
-    it("returns true if n = d", () => {
+    it("returns true if n = d", (): void => {
         const numerator = 55 as Numerator
         const denominator = 55 as Denominator
         const ratio = [numerator, denominator] as Ratio
@@ -92,7 +92,7 @@ describe("computeIsUnisonRatio", () => {
         expect(actual).toBeTruthy()
     })
 
-    it("returns false if n < d", () => {
+    it("returns false if n < d", (): void => {
         const numerator = 55 as Numerator
         const denominator = 56 as Denominator
         const ratio = [numerator, denominator] as Ratio
@@ -103,6 +103,6 @@ describe("computeIsUnisonRatio", () => {
     })
 })
 
-describe("computeSuperRatio", () => {
+describe("computeSuperRatio", (): void => {
     // TODO: test, along with invert and sub
 })

@@ -26,4 +26,5 @@ export {
     parseCommaName,
     CommaNameOptions,
     MAX_SIZE_CATEGORY_BOUND,
+    ParsedCommaName,
 } from "./name"

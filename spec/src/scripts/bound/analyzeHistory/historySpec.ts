@@ -6,7 +6,7 @@ import { analyzeHistory, EventAnalysis } from "../../../../../src/scripts/bound/
 import { EventType, History } from "../../../../../src/scripts/bound/histories"
 import { boundFixture, eventAnalysisFixture, eventFixture } from "../../../../helpers/src/scripts/bound/fixtures"
 
-describe("analyzeHistory", () => {
+describe("analyzeHistory", (): void => {
     const actualBoundCents = 12.43789 as Cents
     let history: History
     let cents: Cents
@@ -18,7 +18,7 @@ describe("analyzeHistory", () => {
         and computes the final position of the history, 
         and its distance from the initial position, 
         and its overall distance the bound moved across all the events`,
-        () => {
+        (): void => {
             cents = actualBoundCents + 0.5 as Cents
             history = [
                 { ...eventFixture, cents, type: EventType.INA, level: Level.EXTREME },
@@ -63,10 +63,10 @@ describe("analyzeHistory", () => {
         },
     )
 
-    describe("when the history's position matches the actual bound position", () => {
+    describe("when the history's position matches the actual bound position", (): void => {
         it(
             `returns the history's events with their rank, plus true for the possible property and a 0 tina error`,
-            () => {
+            (): void => {
                 cents = actualBoundCents
                 history = [
                     { ...eventFixture, cents, type: EventType.INA, level: Level.EXTREME },
@@ -90,8 +90,8 @@ describe("analyzeHistory", () => {
     describe(
         `when the history's position does not match the actual bound position, 
         returns the history plus false for the possible property and the error in tinas`,
-        () => {
-            it("works when the position is greater than the actual bound position by less than a tina", () => {
+        (): void => {
+            it("works when the position is greater than the actual bound position by less than a tina", (): void => {
                 const expectedTinaError = 2 / 5 as Multiplier<Tina>
                 cents = sum(actualBoundCents, multiply(TINA, expectedTinaError))
                 history = [{ ...eventFixture, type: EventType.INA, cents }, {
@@ -112,7 +112,7 @@ describe("analyzeHistory", () => {
                 expect(actual.tinaError).toBeCloseToTyped(expectedTinaError)
             })
 
-            it("works when the position is greater than the actual bound position by more than a tina", () => {
+            it("works when the position is greater than the actual bound position by more than a tina", (): void => {
                 const expectedTinaError = 5 / 2 as Multiplier<Tina>
                 cents = sum(actualBoundCents, multiply(TINA, expectedTinaError))
                 history = [{ ...eventFixture, type: EventType.INA, cents }, {
@@ -134,7 +134,7 @@ describe("analyzeHistory", () => {
                 expect(actual.tinaError).toBeCloseToTyped(expectedTinaError)
             })
 
-            it("works when the position is below the actual bound position by less than a tina", () => {
+            it("works when the position is below the actual bound position by less than a tina", (): void => {
                 const expectedTinaError = -2 / 5 as Multiplier<Tina>
                 cents = sum(actualBoundCents, multiply(TINA, expectedTinaError))
                 history = [{ ...eventFixture, type: EventType.INA, cents, level: Level.EXTREME }, {
@@ -156,7 +156,7 @@ describe("analyzeHistory", () => {
                 expect(actual.tinaError).toBeCloseToTyped(expectedTinaError)
             })
 
-            it("works when the position is below the actual bound position by more than a tina", () => {
+            it("works when the position is below the actual bound position by more than a tina", (): void => {
                 const expectedTinaError = -5 / 2 as Multiplier<Tina>
                 cents = sum(actualBoundCents, multiply(TINA, expectedTinaError))
                 history = [{ ...eventFixture, type: EventType.INA, cents }, {

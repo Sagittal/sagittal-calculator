@@ -3,8 +3,8 @@ import { DynamicParameterScope } from "../../../../../../src/scripts/popularityM
 import { computeParameterValues } from "../../../../../../src/scripts/popularityMetricLfc/bestMetric/scopeToSamples/parameterValues"
 import { ParameterValue } from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
 
-describe("computeParameterValues", () => {
-    it("given a parameter scope (a center, a window, and a ED), will return a block of points to sample", () => {
+describe("computeParameterValues", (): void => {
+    it("given a parameter scope (a center, a window, and a ED), will return a block of points to sample", (): void => {
         const parameterScope: DynamicParameterScope = {
             center: 1 as ParameterValue,
             window: 0.5 as Window<ParameterValue>,
@@ -26,7 +26,7 @@ describe("computeParameterValues", () => {
         expect(actual[ integerDivide(actual.length, 2) ] as number).toBe(parameterScope.center as number)
     })
 
-    it("works when the ED is even", () => {
+    it("works when the ED is even", (): void => {
         const parameterScope: DynamicParameterScope = {
             center: 5 as ParameterValue,
             window: 1 as Window<ParameterValue>,
@@ -54,7 +54,7 @@ describe("computeParameterValues", () => {
         ).toBe(parameterScope.center as number)
     })
 
-    it("works when the ED is one", () => {
+    it("works when the ED is one", (): void => {
         const parameterScope: DynamicParameterScope = {
             center: 5 as ParameterValue,
             ed: 1 as Ed<ParameterValue>,
@@ -70,7 +70,7 @@ describe("computeParameterValues", () => {
         expect(actual[ integerDivide(actual.length, 2) ] as number).toBe(parameterScope.center as number)
     })
 
-    it("works when the ED is zero", () => {
+    it("works when the ED is zero", (): void => {
         const parameterScope: DynamicParameterScope = {
             ed: 0 as Ed<ParameterValue>,
         }

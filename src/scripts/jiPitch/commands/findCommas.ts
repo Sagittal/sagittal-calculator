@@ -1,8 +1,9 @@
 import { program } from "commander"
-import { addTexts, CommandFlag, LogTarget, Max, NEWLINE, Prime, saveLog, sort } from "../../../general"
+import { addTexts, Comma, CommandFlag, LogTarget, Max, NEWLINE, Prime, saveLog, sort } from "../../../general"
 import {
     addMaybeJiSymbol,
     analyzeComma,
+    CommaAnalysis,
     DEFAULT_MAX_PRIME_LIMIT,
     DEFAULT_MAX_TWO_THREE_FREE_COPFR,
     DEFAULT_MAX_TWO_THREE_FREE_SOPFR,
@@ -40,7 +41,7 @@ const twoThreeFreeClassSettings = { max23FreeSopfr, max23FreeCopfr, maxPrimeLimi
 const commas = computeCommas({ ...jiPitchScriptGroupSettings, ...twoThreeFreeClassSettings })
 
 const commasWithMaybeSymbols = commas.map(addMaybeJiSymbol)
-const commaAnalyses = commasWithMaybeSymbols.map(comma => {
+const commaAnalyses = commasWithMaybeSymbols.map((comma: Comma): CommaAnalysis => {
     return analyzeComma(comma, jiPitchScriptGroupSettings.commaNameOptions)
 })
 if (jiPitchScriptGroupSettings.sortKey) {

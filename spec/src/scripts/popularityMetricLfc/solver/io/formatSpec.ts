@@ -4,8 +4,8 @@ import { bestMetrics } from "../../../../../../src/scripts/popularityMetricLfc/g
 import { formatBestMetrics } from "../../../../../../src/scripts/popularityMetricLfc/solver"
 import { Parameter, Submetric } from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
 
-describe("formatBestMetrics", () => {
-    it("sorts the best metrics by sum of squares, and formats them like how they look as enums", () => {
+describe("formatBestMetrics", (): void => {
+    it("sorts the best metrics by sum of squares, and formats them like how they look as enums", (): void => {
         bestMetrics.set(
             "{sum}" as MetricName,
             {

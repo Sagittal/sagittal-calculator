@@ -6,8 +6,8 @@ import {
 } from "../../../../../../../src/scripts/bound/analyzeBound"
 import { formatLevelAnalyses } from "../../../../../../../src/scripts/bound/io/terminal/level"
 
-describe("formatLevelAnalyses", () => {
-    beforeEach(() => {
+describe("formatLevelAnalyses", (): void => {
+    beforeEach((): void => {
         levelsBestHistoryRanks[ Level.MEDIUM ] = { 1: 18, 2: 23, 3: 1, 7: 13 }
         levelsBestHistoryRanks[ Level.HIGH ] = { 1: 18, 2: 23, 3: 1, 7: 13 }
         levelsBestHistoryRanks[ Level.ULTRA ] = { 1: 18, 2: 23, 3: 1, 7: 13 }
@@ -20,7 +20,7 @@ describe("formatLevelAnalyses", () => {
         levelsBestCumulativeHistoryRanks[ Level.INSANE ] = { 1: 16, 2: 23, 3: 1, 7: 13 }
     })
 
-    it("does not mutate LEVELS", () => {
+    it("does not mutate LEVELS", (): void => {
         const formerLevels = shallowClone(LEVELS)
 
         formatLevelAnalyses()
@@ -28,7 +28,7 @@ describe("formatLevelAnalyses", () => {
         expect(formerLevels).toEqual(LEVELS)
     })
 
-    it("prints the levels in order from highest to lowest", () => {
+    it("prints the levels in order from highest to lowest", (): void => {
         const actual = formatLevelAnalyses()
 
         expect(actual.indexOf("Insane")).toBeLessThan(actual.indexOf("Extreme"))

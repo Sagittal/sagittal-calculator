@@ -2,8 +2,8 @@ import { Count, Io, Row, Table } from "../../../../../src/general"
 import { formatTableForForum } from "../../../../../src/general/io/table/tableForForum"
 import { Justification } from "../../../../../src/general/io/table/types"
 
-describe("formatTableForForum", () => {
-    it("formats a table to be posted on the Sagittal forum", () => {
+describe("formatTableForForum", (): void => {
+    it("formats a table to be posted on the Sagittal forum", (): void => {
         const table = [
             ["comma name", "limit", "2,3-free sopfr", "cents", "monzo", "ratio", "apotome slope", "N2D3P9"],
             ["11M", "11", "11", "45.45", "[0 0 1⟩", "33/32", "-4", "6.722"],
@@ -21,7 +21,7 @@ describe("formatTableForForum", () => {
         expect(actual).toEqual(expected)
     })
 
-    it("supports a custom count of header rows", () => {
+    it("supports a custom count of header rows", (): void => {
         const table = [
             ["comma", "", "2,3-free", "", "", "", "apotome", ""],
             ["name", "limit", "sopfr", "cents", "monzo", "ratio", "slope", "N2D3P9"],
@@ -41,7 +41,7 @@ describe("formatTableForForum", () => {
         expect(actual).toEqual(expected)
     })
 
-    it("supports colors per row", () => {
+    it("supports colors per row", (): void => {
         const table = [
             ["comma", "", "2,3-free", "", "", "", "apotome", ""],
             ["name", "limit", "sopfr", "cents", "monzo", "ratio", "slope", "N2D3P9"],
@@ -61,7 +61,7 @@ describe("formatTableForForum", () => {
         expect(actual).toEqual(expected)
     })
 
-    it("supports justification", () => {
+    it("supports justification", (): void => {
         const table = [
             ["comma", "", "2,3-free", "", "", "", "apotome", ""],
             ["name", "limit", "sopfr", "cents", "monzo", "ratio", "slope", "N2D3P9"],

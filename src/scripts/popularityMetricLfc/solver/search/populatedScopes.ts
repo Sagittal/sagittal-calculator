@@ -3,7 +3,7 @@ import { nonRecursiveSearchScopeAndMaybeUpdateBestMetric, Scope } from "../../be
 import { scopesToSearch, solverStatus } from "../../globals"
 import { formatPercentage, formatSearchedAndPopulated } from "../io"
 
-const searchPopulatedScopes = async () => {
+const searchPopulatedScopes = async (): Promise<void> => {
     const scope = scopesToSearch.pop() as Scope
     if (!scope) {
         return

@@ -8,8 +8,8 @@ import { EventAnalysis } from "../../../../../../../src/scripts/bound/analyzeHis
 import { computeBoundsAnalysisTable } from "../../../../../../../src/scripts/bound/io/terminal/bounds"
 import { boundAnalysisFixture } from "../../../../../../helpers/src/scripts/bound/fixtures"
 
-describe("computeBoundsAnalysisTable", () => {
-    it("colors the rows correctly, according to their best rank", () => {
+describe("computeBoundsAnalysisTable", (): void => {
+    it("colors the rows correctly, according to their best rank", (): void => {
         const boundsAnalysis: BoundAnalysis[] = [
             { ...boundAnalysisFixture, bestRank: 0 as Integer & Rank<EventAnalysis> },
             { ...boundAnalysisFixture, bestRank: 2 as Integer & Rank<EventAnalysis> },

@@ -2,7 +2,7 @@ import * as fs from "fs"
 import * as path from "path"
 import { Filename } from "../types"
 
-const clearLogFiles = (scriptGroup: Filename) => {
+const clearLogFiles = (scriptGroup: Filename): void => {
     if (!fs.existsSync("dist")) return
 
     const directory = `dist/${scriptGroup}`

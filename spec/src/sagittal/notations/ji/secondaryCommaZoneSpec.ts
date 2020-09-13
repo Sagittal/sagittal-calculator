@@ -5,8 +5,8 @@ import { JiSymbol, Level, Mina } from "../../../../../src/sagittal/notations/ji"
 import { computeSecondaryCommaZone } from "../../../../../src/sagittal/notations/ji/secondaryCommaZone"
 import { SymbolSubset } from "../../../../../src/sagittal/notations/types"
 
-describe("secondaryCommaZone", () => {
-    it("returns the min and max cents of where secondary commas are represented by the given JI symbol, i.e. its capture zone at its introducing level", () => {
+describe("secondaryCommaZone", (): void => {
+    it("returns the min and max cents of where secondary commas are represented by the given JI symbol, i.e. its capture zone at its introducing level", (): void => {
         const symbol: JiSymbol = {
             id: 82 as Id<JiSymbol>,
             ascii: "/|~" as SymbolLongAscii,
@@ -27,7 +27,7 @@ describe("secondaryCommaZone", () => {
         expect(actual).toEqual(expected)
     })
 
-    it("another example, at the Extreme level", () => {
+    it("another example, at the Extreme level", (): void => {
         const symbol: JiSymbol = {
             id: 83 as Id<JiSymbol>,
             ascii: ",,(|(" as SymbolLongAscii,
@@ -48,7 +48,7 @@ describe("secondaryCommaZone", () => {
         expect(actual).toEqual(expected)
     })
 
-    it("another example, at the Medium level", () => {
+    it("another example, at the Medium level", (): void => {
         const symbol: JiSymbol = {
             id: 85 as Id<JiSymbol>,
             ascii: "(|(" as SymbolLongAscii,
@@ -69,7 +69,7 @@ describe("secondaryCommaZone", () => {
         expect(actual).toEqual(expected)
     })
 
-    it("works for the initial symbol", () => {
+    it("works for the initial symbol", (): void => {
         const symbol: JiSymbol = {
             id: 0 as Id<JiSymbol>,
             ascii: "|" as SymbolLongAscii,

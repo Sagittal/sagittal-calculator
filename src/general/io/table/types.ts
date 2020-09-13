@@ -16,12 +16,12 @@ type TableTypeParameters = Partial<{
 }>
 
 type Row<T extends TableTypeParameters = {}> =
-    Array<Formatted>
+    Array<Formatted<T["of"]>>
     & { _RowBrand: "Row" }
     & (T extends { of: unknown } ? {} : { _RowOfBrand: Pick<T, "of"> })
     & (T extends { header: true } ? { _HeaderBrand: "Header" } : {})
 type Column<T extends TableTypeParameters = {}> =
-    Array<Formatted>
+    Array<Formatted<T["of"]>>
     & { _ColumnBrand: "Column" }
     & (T extends { of: unknown } ? {} : { _ColumnOfBrand: Pick<T, "of"> })
     & (T extends { header: true } ? { _HeaderBrand: "Header" } : {})

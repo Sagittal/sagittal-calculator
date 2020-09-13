@@ -40,6 +40,13 @@
       true,
       "dev"
     ],
+    "typedef": [
+      true,
+      "call-signature",
+      "parameter",
+      "arrow-parameter",
+      "arrow-call-signature"
+    ],
     "no-import-paths-without-names": true,
     "no-inferrable-types": false,
     "no-misleading-array-reverse": false,

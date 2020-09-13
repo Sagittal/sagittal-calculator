@@ -49,4 +49,5 @@ export {
     BoundIdentifiers,
     BoundIdWithBoundedSymbolIdWithDistancesPairsByLevel,
     BoundedSymbolIdWithDistancesPair,
+    BoundedSymbolIdWithDistances,
 }

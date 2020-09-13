@@ -3,6 +3,7 @@ import {
     computeDistributions,
     Count,
     count,
+    Distribution,
     DistributionBin,
     doOnNextEventLoop,
     Index,
@@ -32,28 +33,37 @@ const populateScopesForSubmetricChunkCombination = async (
 
     saveLog(`populating scopes for submetric chunk combination ${submetricChunkCombinationIndex + 1}/${submetricChunkCombinationCount} with parameter chunk combination ${parameterChunkCombinationIndex + 1}/${parameterChunkCombinations.length} (${100 * parameterChunkCombinationIndex / parameterChunkCombinations.length}%) ${formatSearchedAndPopulated()}` as Io, LogTarget.POPULATE)
 
-    const parameterChunkCombination: Combination<Chunk> = parameterChunkCombinations[ parameterChunkCombinationIndex ]
+    const parameterChunkCombination: Combination<Chunk<Parameter>> =
+        parameterChunkCombinations[ parameterChunkCombinationIndex ]
 
-    const parameterChunkCombinationDistributions = computeDistributions(
+    const parameterChunkCombinationDistributions: Array<Distribution<Chunk<Parameter>>> = computeDistributions(
         parameterChunkCombination,
         count(submetricChunkCombination) as Count as Count<DistributionBin<Chunk<Parameter>>>,
     )
 
-    parameterChunkCombinationDistributions.forEach(parameterChunkCombinationDistribution => {
-        const scope: Scope = submetricChunkCombination.map((submetricChunkBin, index) => {
-            const parametersDistributedToThisBin = parameterChunkCombinationDistribution[ index ]
+    parameterChunkCombinationDistributions.forEach(
+        (parameterChunkCombinationDistribution: Distribution<Chunk<Parameter>>): void => {
+            const scope: Scope = submetricChunkCombination.map(
+                (submetricChunkBin: Chunk<Submetric>, index: number): SubmetricScope => {
+                    const parametersDistributedToThisBin: Combination<Chunk<Parameter>> =
+                        parameterChunkCombinationDistribution[ index ]
 
-            return merge(submetricChunkBin, ...parametersDistributedToThisBin) as SubmetricScope
-        }) as Scope
+                    return merge(
+                        submetricChunkBin as Chunk,
+                        ...parametersDistributedToThisBin as Combination<Chunk>,
+                    ) as SubmetricScope
+                },
+            ) as Scope
 
-        populateScope(scope)
-    })
+            populateScope(scope)
+        },
+    )
 
     if (parameterChunkCombinationIndex === indexOfFinalElement(parameterChunkCombinations)) {
         return
     }
 
-    return doOnNextEventLoop(async () => {
+    return doOnNextEventLoop(async (): Promise<void> => {
         await populateScopesForSubmetricChunkCombination(submetricChunkCombination, {
             parameterChunkCombinations,
             parameterChunkCombinationIndex: parameterChunkCombinationIndex + 1 as Index<Combination<Chunk<Parameter>>>,

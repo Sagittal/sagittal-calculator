@@ -145,6 +145,7 @@ export {
     computeSuperRatio,
     THREE_PRIME_INDEX,
     THREE_SMOOTHNESS,
+    Distribution,
     computeRoughRatio,
     computeSubRatio,
 } from "./math"
@@ -173,5 +174,6 @@ export {
     computeIsUnisonPitch,
     THREE_LIMIT,
     computeCentsFromMonzo,
+    Apotome,
 } from "./music"
 export { Count, Ed, Extrema, Id, Index, Ms, Multiplier, Name, Step, Sum, Window } from "./types"

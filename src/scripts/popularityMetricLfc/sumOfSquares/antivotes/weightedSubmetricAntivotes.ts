@@ -3,7 +3,10 @@ import { Antivotes, ParameterValue, Submetric } from "../types"
 import { computeRatioSubmetricAntivotes } from "./ratioSubmetricAntivotes"
 import { computeWeightedAntivotes } from "./weightedAntivotes"
 
-const computeWeightedSubmetricAntivotes = (twoThreeFreeClass: TwoThreeFreeClass, submetric = {}): Antivotes => {
+const computeWeightedSubmetricAntivotes = (
+    twoThreeFreeClass: TwoThreeFreeClass,
+    submetric: Submetric = {},
+): Antivotes => {
     const {
         weightAsCoefficient = 1 as ParameterValue,
         weightAsLogarithmBase,

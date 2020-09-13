@@ -6,13 +6,13 @@ import { computeDynamicParameterScopeForPerfecting } from "./dynamicParameterSco
 import { recursiveSearchScopeAndMaybeUpdateBestMetric } from "./recursiveBestMetric"
 import { PerfectMetricOptions } from "./types"
 
-const perfectMetric = async (metric: Metric, options: PerfectMetricOptions) => {
+const perfectMetric = async (metric: Metric, options: PerfectMetricOptions): Promise<void> => {
     const spreadDynamicParameters = metric.spreadDynamicParameters
     const spreadDynamicParameterValues: Partial<Record<Parameter, ParameterValue>> = {}
 
     const scope: Scope = metric.submetrics.map((submetric: Submetric): SubmetricScope => {
         return Object.entries(submetric).reduce(
-            (submetricScope: SubmetricScope, submetricEntry) => {
+            (submetricScope: SubmetricScope, submetricEntry: [string, unknown]): SubmetricScope => {
                 const [parameter, parameterValue] = submetricEntry as [Parameter, ParameterValue]
                 if (spreadDynamicParameters && spreadDynamicParameters.includes(parameter)) {
                     spreadDynamicParameterValues[ parameter ] = parameterValue
@@ -42,7 +42,7 @@ const perfectMetric = async (metric: Metric, options: PerfectMetricOptions) => {
 
     const allBinsSubmetricScope: SubmetricScope = {} as SubmetricScope
     if (spreadDynamicParameters) {
-        spreadDynamicParameters.forEach(spreadDynamicParameter => {
+        spreadDynamicParameters.forEach((spreadDynamicParameter: Parameter): void => {
             const spreadDynamicParameterValue = spreadDynamicParameterValues[ spreadDynamicParameter ] as ParameterValue
             allBinsSubmetricScope[ spreadDynamicParameter ] =
                 computeDynamicParameterScopeForPerfecting(spreadDynamicParameterValue)

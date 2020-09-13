@@ -1,9 +1,9 @@
-import { Monzo, Ratio } from "../../../../../src/general"
+import { Monzo } from "../../../../../src/general"
 import { computeMonzoFrom23FreeClassAndSizeCategoryName } from "../../../../../src/sagittal"
 import { CommaNameRatio, SizeCategoryName } from "../../../../../src/sagittal/comma/name/types"
 
-describe("computeMonzoFrom23FreeClassAndSizeCategoryName", () => {
-    it("gives you the monzo for the comma with the given name", () => {
+describe("computeMonzoFrom23FreeClassAndSizeCategoryName", (): void => {
+    it("gives you the monzo for the comma with the given name", (): void => {
         const commaNameRatio: CommaNameRatio = [1, 91] as CommaNameRatio
         const sizeCategoryName: SizeCategoryName = SizeCategoryName.SCHISMA
 

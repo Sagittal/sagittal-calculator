@@ -1,6 +1,6 @@
 import { program } from "commander"
 import { Filename, ioSettings, LogTarget, parseCommands, parseInteger, saveLog } from "../../../general"
-import { JI_BOUNDS } from "../../../sagittal"
+import { Bound, JI_BOUNDS } from "../../../sagittal"
 import { ScriptGroup } from "../../types"
 import { analyzeBound } from "../analyzeBound"
 import { computeHistories } from "../histories"
@@ -12,7 +12,7 @@ ioSettings.scriptGroup = ScriptGroup.BOUND as Filename
 
 const boundId = program.args[ 0 ]
 
-const bound = boundId && JI_BOUNDS.find(bound => bound.id === parseInteger(boundId))
+const bound = boundId && JI_BOUNDS.find((bound: Bound): boolean => bound.id === parseInteger(boundId))
 
 if (bound) {
     const histories = computeHistories(bound)

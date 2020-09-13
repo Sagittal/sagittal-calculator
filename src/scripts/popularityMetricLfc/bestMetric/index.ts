@@ -4,6 +4,7 @@ export {
     DynamicParameterScope,
     Metric,
     MetricName,
+    ParameterScope,
     ParameterScopes,
     Scope,
     SubmetricScope,

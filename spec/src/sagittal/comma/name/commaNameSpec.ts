@@ -1,8 +1,8 @@
 import { Comma, Monzo } from "../../../../../src/general"
 import { computeCommaName } from "../../../../../src/sagittal/comma/name"
 
-describe("computeCommaName", () => {
-    it("given a comma will return its Secor-Keenan systematic name", () => {
+describe("computeCommaName", (): void => {
+    it("given a comma will return its Secor-Keenan systematic name", (): void => {
         const comma = { monzo: [5, -7, -1, 3] } as Comma
 
         const actual = computeCommaName(comma)
@@ -11,7 +11,7 @@ describe("computeCommaName", () => {
         expect(actual).toBe(expected)
     })
 
-    it("can return the name in undirected form", () => {
+    it("can return the name in undirected form", (): void => {
         const comma = { monzo: [5, -7, -1, 3] } as Comma
 
         const actual = computeCommaName(comma, { directed: false })
@@ -20,7 +20,7 @@ describe("computeCommaName", () => {
         expect(actual).toBe(expected)
     })
 
-    it("can return the name in factored form", () => {
+    it("can return the name in factored form", (): void => {
         const comma = { monzo: [5, -7, -1, 3] } as Comma
 
         const actual = computeCommaName(comma, { factored: true })
@@ -29,7 +29,7 @@ describe("computeCommaName", () => {
         expect(actual).toBe(expected)
     })
 
-    it("can return the name in undirected and factored form", () => {
+    it("can return the name in undirected and factored form", (): void => {
         const comma = { monzo: [5, -7, -1, 3] } as Comma
 
         const actual = computeCommaName(comma, { directed: false, factored: true })
@@ -38,7 +38,7 @@ describe("computeCommaName", () => {
         expect(actual).toBe(expected)
     })
 
-    it("can return the name in unabbreviated form", () => {
+    it("can return the name in unabbreviated form", (): void => {
         const comma = { monzo: [5, -7, -1, 3] } as Comma
 
         const actual = computeCommaName(comma, { abbreviated: false })
@@ -47,7 +47,7 @@ describe("computeCommaName", () => {
         expect(actual).toBe(expected)
     })
 
-    it("works when there are only 2's and 3's in the prime factorization", () => {
+    it("works when there are only 2's and 3's in the prime factorization", (): void => {
         const comma = { monzo: [-19, 12] } as Comma
 
         const actual = computeCommaName(comma)
@@ -56,7 +56,7 @@ describe("computeCommaName", () => {
         expect(actual).toBe(expected)
     })
 
-    it("works for a comma which is sub", () => {
+    it("works for a comma which is sub", (): void => {
         const comma = { monzo: [-4, 4, -1] } as Comma
 
         const actual = computeCommaName(comma)
@@ -67,14 +67,16 @@ describe("computeCommaName", () => {
 
     it(
         "throws an error when there are only 2's in the prime factorization, since it must be outside of comma range",
-        () => {
+        (): void => {
             const comma = { monzo: [1] } as Comma
 
-            expect(() => computeCommaName(comma)).toThrowError(`Comma {"monzo":[1]} is outside of comma-sized range and cannot be named.`)
+            expect((): void => {
+                computeCommaName(comma)
+            }).toThrowError(`Comma {"monzo":[1]} is outside of comma-sized range and cannot be named.`)
         },
     )
 
-    it("works when the monzo is empty", () => {
+    it("works when the monzo is empty", (): void => {
         const comma = { monzo: [] as Monzo } as Comma
 
         const actual = computeCommaName(comma)
@@ -83,7 +85,7 @@ describe("computeCommaName", () => {
         expect(actual).toBe(expected)
     })
 
-    it("assigns the correct size category", () => {
+    it("assigns the correct size category", (): void => {
         expect(computeCommaName({ monzo: [12, -2, -1, -1, 0, -1] as Monzo } as Comma)).toBe("1/455n")
         expect(computeCommaName({ monzo: [-15, 8, 1] as Monzo } as Comma)).toBe("5s")
         expect(computeCommaName({ monzo: [-7, 7, 0, 0, 0, 0, -1] as Monzo } as Comma)).toBe("1/17k")
@@ -93,7 +95,7 @@ describe("computeCommaName", () => {
         expect(computeCommaName({ monzo: [-18, 10, -1, 0, 0, 0, 0, 0, 1] as Monzo } as Comma)).toBe("23/5L")
     })
 
-    it("says 'down' when the comma is negative", () => {
+    it("says 'down' when the comma is negative", (): void => {
         const comma = { monzo: [-40, 22, 1, 1] } as Comma
 
         const actual = computeCommaName(comma)
@@ -102,7 +104,7 @@ describe("computeCommaName", () => {
         expect(actual).toBe(expected)
     })
 
-    it("assumes (does not show) an 'over one'", () => {
+    it("assumes (does not show) an 'over one'", (): void => {
         const comma = { monzo: [-5, 1, 0, 0, 1] } as Comma
 
         const actual = computeCommaName(comma)
@@ -111,7 +113,7 @@ describe("computeCommaName", () => {
         expect(actual).toBe(expected)
     })
 
-    it("assumes (does not show) an 'over one', even when it is in undirected mode", () => {
+    it("assumes (does not show) an 'over one', even when it is in undirected mode", (): void => {
         const comma = { monzo: [-5, 1, 0, 0, 1] } as Comma
 
         const actual = computeCommaName(comma, { directed: false })
@@ -120,7 +122,7 @@ describe("computeCommaName", () => {
         expect(actual).toBe(expected)
     })
 
-    it("another example, not sure what was up, maybe some edge case", () => {
+    it("another example, not sure what was up, maybe some edge case", (): void => {
         const comma = { monzo: [-9, 13, -2, 0, -2] } as Comma
 
         const actual = computeCommaName(comma, { directed: false, abbreviated: false, factored: true })

@@ -11,7 +11,7 @@ const computeSubmetricDynamicParameters = (
     const submetricDynamicParameters: DynamicParameter[] = [] as DynamicParameter[]
 
     const submetricScopeEntries = Object.entries(submetricScope) as Array<[Parameter, DynamicParameterScope]>
-    submetricScopeEntries.forEach(([parameter, parameterScope]: [Parameter, DynamicParameterScope]) => {
+    submetricScopeEntries.forEach(([parameter, parameterScope]: [Parameter, DynamicParameterScope]): void => {
         const { ed, window } = parameterScope
         if (typeof parameterScope === "object" && ed && window && ed > 1) {
             const values = computeParameterValues(parameterScope)

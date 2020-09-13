@@ -17,7 +17,7 @@ const rankBoundIndices: Array<Id<Bound>>[] = [
     [], [], [],
 ]
 
-const updateRankAnalysis = (bestRank: Integer & Rank<EventAnalysis>, boundId: Id<Bound>) => {
+const updateRankAnalysis = (bestRank: Integer & Rank<EventAnalysis>, boundId: Id<Bound>): void => {
     rankCounts[ bestRank ] = rankCounts[ bestRank ] + 1 as Count<Rank<EventAnalysis>>
     rankBoundIndices[ bestRank ].push(boundId)
 }

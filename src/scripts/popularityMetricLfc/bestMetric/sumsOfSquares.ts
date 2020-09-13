@@ -12,7 +12,7 @@ const computeSumsOfSquaresAndMaybeUpdateBestMetric = async (
 
     const sumsOfSquares: SumsOfSquares = []
 
-    return new Promise(async resolve => {
+    return new Promise(async (resolve: (sumsOfSquares: SumsOfSquares) => void): Promise<void> => {
         try {
             checkSubmetricsForInvalidParameterCombinations(samples[ 0 ].submetrics)
         } catch (e) {
@@ -22,7 +22,7 @@ const computeSumsOfSquaresAndMaybeUpdateBestMetric = async (
             return
         }
 
-        const samplePromises: Promise<void>[] = samples.map((sample, index) => {
+        const samplePromises: Promise<void>[] = samples.map((sample: Sample, index: number): Promise<void> => {
             return computeSumOfSquaresAndMaybeUpdateBestMetric(sample, {
                 indentation,
                 sumsOfSquares,

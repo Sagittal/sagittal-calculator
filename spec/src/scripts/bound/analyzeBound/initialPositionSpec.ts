@@ -3,8 +3,8 @@ import { Bound, Level } from "../../../../../src/sagittal/notations/ji"
 import { computeInitialPosition } from "../../../../../src/scripts/bound/analyzeBound/initialPosition"
 import { boundFixture } from "../../../../helpers/src/scripts/bound/fixtures"
 
-describe("computeInitialPosition", () => {
-    it("returns the mean of the bounded commas at the introducing level", () => {
+describe("computeInitialPosition", (): void => {
+    it("returns the mean of the bounded commas at the introducing level", (): void => {
         const bound: Bound = {
             ...boundFixture,
             levels: [Level.HIGH, Level.EXTREME],

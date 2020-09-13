@@ -2,8 +2,8 @@ import { Rank, Ranked } from "../../../../../src/general"
 import { addRankToUnpopularities } from "../../../../../src/scripts/popularityMetricLfc/sumOfSquares/rank"
 import { Antivotes, Unpopularity } from "../../../../../src/scripts/popularityMetricLfc/sumOfSquares/types"
 
-describe("addRankToUnpopularities", () => {
-    it("adds rank to unpopularities", () => {
+describe("addRankToUnpopularities", (): void => {
+    it("adds rank to unpopularities", (): void => {
         const unpopularities: Unpopularity[] = [
             { index: 0, antivotes: 10 as Antivotes },
             { index: 1, antivotes: 5 as Antivotes },
@@ -20,7 +20,7 @@ describe("addRankToUnpopularities", () => {
         expect(actual).toEqual(expected)
     })
 
-    it("uses fractional ranks if some are tied", () => {
+    it("uses fractional ranks if some are tied", (): void => {
         const unpopularities = [
             { index: 0, antivotes: 10 as Antivotes },
             { index: 1, antivotes: 5 as Antivotes },
@@ -39,7 +39,7 @@ describe("addRankToUnpopularities", () => {
         expect(actual).toEqual(expected)
     })
 
-    it("another example of fractional ranks", () => {
+    it("another example of fractional ranks", (): void => {
         const unpopularities = [
             { index: 0, antivotes: 10 as Antivotes },
             { index: 1, antivotes: 5 as Antivotes },

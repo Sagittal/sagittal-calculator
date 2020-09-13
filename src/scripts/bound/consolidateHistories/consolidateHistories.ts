@@ -1,5 +1,5 @@
 import { Maybe } from "../../../general"
-import { HistoryAnalysis } from "../analyzeHistory"
+import { EventAnalysis, HistoryAnalysis } from "../analyzeHistory"
 import { ensureOneBestPossibleEventPerLevel } from "./ensureOneBestPossibleEventPerLevel"
 import { computeInitialEventConsolidation } from "./initialEventConsolidation"
 import { EventConsolidation, HistoryConsolidation } from "./types"
@@ -11,15 +11,15 @@ const consolidateHistories = (
 ): HistoryConsolidation => {
     const historyConsolidation: HistoryConsolidation = {}
 
-    historyAnalyses.forEach(historyAnalysis => {
-        historyAnalysis.events.forEach((eventAnalysis, index) => {
+    historyAnalyses.forEach((historyAnalysis: HistoryAnalysis): void => {
+        historyAnalysis.events.forEach((eventAnalysis: EventAnalysis, index: number): void => {
             historyConsolidation[ eventAnalysis.level ] = historyConsolidation[ eventAnalysis.level ] || []
             const eventConsolidations: Maybe<EventConsolidation[]> = historyConsolidation[ eventAnalysis.level ]
 
             const nextEventAnalysis = historyAnalysis.events[ index + 1 ]
 
             const matchingEventConsolidation: Maybe<EventConsolidation> = eventConsolidations && eventConsolidations
-                .find(existingEvent => existingEvent.name === eventAnalysis.name)
+                .find((existingEvent: EventConsolidation): boolean => existingEvent.name === eventAnalysis.name)
 
             const UpdateEventConsolidationOptions = {
                 nextEventAnalysis,

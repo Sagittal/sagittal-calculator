@@ -1,8 +1,8 @@
 import { Basis, Cents, Multiplier } from "../../../../../../src/general"
 import { computeReversedLevelIndex } from "../../../../../../src/scripts/bound/io/image/reversedLevelIndex"
 
-describe("computeReversedLevelIndex", () => {
-    it("returns 0 for the highest level, which is 4, and descends from there", () => {
+describe("computeReversedLevelIndex", (): void => {
+    it("returns 0 for the highest level, which is 4, and descends from there", (): void => {
         expect(computeReversedLevelIndex(4)).toBe(0 as Multiplier<Basis<Cents>>)
         expect(computeReversedLevelIndex(3)).toBe(1 as Multiplier<Basis<Cents>>)
         expect(computeReversedLevelIndex(2)).toBe(2 as Multiplier<Basis<Cents>>)

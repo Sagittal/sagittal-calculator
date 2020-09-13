@@ -3,7 +3,11 @@ import { Metric } from "../bestMetric"
 import { perfectMetric } from "./metric"
 import { MetricTag } from "./types"
 
-const perfectMetrics = async (bestMetricsValues: Metric[], index = 0, topLevelTotalToPerfect: number = 0) => {
+const perfectMetrics = async (
+    bestMetricsValues: Metric[],
+    index: number = 0,
+    topLevelTotalToPerfect: number = 0,
+): Promise<void> => {
     const totalToPerfect = topLevelTotalToPerfect || bestMetricsValues.length
     const metricToPerfect = bestMetricsValues[ index ]
     const metricTag = `${index + 1}/${totalToPerfect}` as MetricTag

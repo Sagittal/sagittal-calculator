@@ -9,8 +9,8 @@ import * as minN2P
 import { N2P } from "../../../../../../../../src/sagittal/comma/evaluation/n2d3p9/primeExponentExtremas/denominator/sortedNumeratorPossibilities"
 import { D39 } from "../../../../../../../../src/sagittal/comma/evaluation/n2d3p9/primeExponentExtremas/denominator/types"
 
-describe("computeMinN2D3P9ForCandidateMaxDenominatorPrimeExponentGivenMaxN2D3P9", () => {
-    it("given a denominator prime and its candidate max prime exponent, plus the sorted numerator possibilities, will gather the D39 and the min N2P then combine them", () => {
+describe("computeMinN2D3P9ForCandidateMaxDenominatorPrimeExponentGivenMaxN2D3P9", (): void => {
+    it("given a denominator prime and its candidate max prime exponent, plus the sorted numerator possibilities, will gather the D39 and the min N2P then combine them", (): void => {
         const sortedNumeratorPossibilitiesForDenominatorPrimeGivenMaxN2D3P9 = {
             sortedNumeratorPossibilitiesGivenMaxN2D3P9WithLesserGpfThanDenominatorPrimeSortedByN2: [],
             sortedNumeratorPossibilitiesGivenMaxN2D3P9WithGreaterGpfThanDenominatorPrimeSortedByN2P: [],

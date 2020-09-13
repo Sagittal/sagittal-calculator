@@ -7,8 +7,8 @@ import * as minN2D3P9
 import * as sortedNumeratorPossibilities
     from "../../../../../../../../src/sagittal/comma/evaluation/n2d3p9/primeExponentExtremas/denominator/sortedNumeratorPossibilities/sortedNumeratorPossibilities"
 
-describe("computeMaxDenominatorPrimeExponentGivenMaxN2D3P3", () => {
-    it("returns the max exponent for a denominator prime given a max N2D3P9", () => {
+describe("computeMaxDenominatorPrimeExponentGivenMaxN2D3P3", (): void => {
+    it("returns the max exponent for a denominator prime given a max N2D3P9", (): void => {
         const denominatorPrime = 5 as Prime<Denominator>
         const maxN2D3P9 = 27 as Max<N2D3P9> // N2D3P9(49/25) = 26.47
 
@@ -18,7 +18,7 @@ describe("computeMaxDenominatorPrimeExponentGivenMaxN2D3P3", () => {
         expect(actual).toBe(expected)
     })
 
-    it("gets the sorted numerator possibilities, then works its way up through each candidate max exponent for the denominator prime, seeing what the min N2D3P9 is for it, and returning the max exponent whose min N2D3P9 is less than the max N2D3P9", () => {
+    it("gets the sorted numerator possibilities, then works its way up through each candidate max exponent for the denominator prime, seeing what the min N2D3P9 is for it, and returning the max exponent whose min N2D3P9 is less than the max N2D3P9", (): void => {
         const denominatorPrime = 1033 as Prime<Denominator> // something crazy
         const maxN2D3P9 = 10 as Max<N2D3P9>
 

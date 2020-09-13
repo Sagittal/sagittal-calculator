@@ -7,8 +7,8 @@ import {
     Submetric,
 } from "../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
 
-describe("computeSumOfSquaresForSubmetrics", () => {
-    it("returns the sum-of-squares for a given submetric combination", () => {
+describe("computeSumOfSquaresForSubmetrics", (): void => {
+    it("returns the sum-of-squares for a given submetric combination", (): void => {
         const submetrics = [
             {
                 [ Parameter.SUM ]: true,

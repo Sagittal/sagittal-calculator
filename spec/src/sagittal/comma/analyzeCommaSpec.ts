@@ -2,8 +2,8 @@ import { Cents, Comma, Monzo, Name, Prime, Ratio, Sopfr, TwoThreeFreeClass } fro
 import { ApotomeSlope, CommaAnalysis, N2D3P9 } from "../../../../src/sagittal"
 import { analyzeComma } from "../../../../src/sagittal/comma"
 
-describe("analyzeComma", () => {
-    it("returns an analysis a comma, given its monzo", () => {
+describe("analyzeComma", (): void => {
+    it("returns an analysis a comma, given its monzo", (): void => {
         const comma = { monzo: [-8, -6, 3, 5, -1] as Monzo } as Comma
 
         const actual = analyzeComma(comma)

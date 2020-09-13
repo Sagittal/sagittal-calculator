@@ -3,8 +3,8 @@ import { popularityMetricLfcScriptGroupSettings } from "../../../../../src/scrip
 import { computeDynamicParameterScopeForPerfecting } from "../../../../../src/scripts/popularityMetricLfc/perfecter/dynamicParameterScope"
 import { ParameterValue } from "../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
 
-describe("computeDynamicParameterScopeForPerfecting", () => {
-    it("takes the given parameter value and makes a scope the size of the max unit for the best (not perfect) non-recursive run, and starts off doing a trinary (ED 3) subdivision of it so that it includes the middle point but then also some other points that might be better", () => {
+describe("computeDynamicParameterScopeForPerfecting", (): void => {
+    it("takes the given parameter value and makes a scope the size of the max unit for the best (not perfect) non-recursive run, and starts off doing a trinary (ED 3) subdivision of it so that it includes the middle point but then also some other points that might be better", (): void => {
         const parameterValue = 0.5 as ParameterValue
 
         const actual = computeDynamicParameterScopeForPerfecting(parameterValue)

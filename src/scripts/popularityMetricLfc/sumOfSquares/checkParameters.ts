@@ -1,7 +1,7 @@
 import { computeDeepDistinct, isUndefined, stringify } from "../../../general"
 import { Parameter, Submetric } from "./types"
 
-const checkSubmetricsForInvalidParameterCombinations = (submetrics: Submetric[]) => {
+const checkSubmetricsForInvalidParameterCombinations = (submetrics: Submetric[]): void => {
     if (submetrics.length === 1) {
         const submetric = submetrics[ 0 ]
         if (
@@ -18,7 +18,7 @@ const checkSubmetricsForInvalidParameterCombinations = (submetrics: Submetric[])
         throw new Error(`Submetrics ${stringify(submetrics)} contain duplicates and thus are useless.`)
     }
 
-    submetrics.forEach((submetric: Submetric) => {
+    submetrics.forEach((submetric: Submetric): void => {
         // non-one operation parameter count
         if (!submetric[ Parameter.SUM ] && !submetric[ Parameter.COUNT ] && !submetric[ Parameter.MAX ]) {
             throw new Error(`Submetric ${stringify(submetric)} has no provided operation parameter (sum, count, or max); exactly one of these is required.`)

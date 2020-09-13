@@ -1,5 +1,5 @@
 import { ioSettings } from "../../../../../src/general"
 
-beforeEach(() => {
+beforeEach((): void => {
     ioSettings.noWrite = true
 })

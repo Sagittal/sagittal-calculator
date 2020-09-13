@@ -1,8 +1,8 @@
 import { Level } from "../../../../../src/sagittal/notations/ji"
 import { isWithinLevel } from "../../../../../src/sagittal/notations/ji/isWithinLevel"
 
-describe("isWithinLevel", () => {
-    it("returns true if the level is below or at to the target level, and false otherwise", () => {
+describe("isWithinLevel", (): void => {
+    it("returns true if the level is below or at to the target level, and false otherwise", (): void => {
         expect(isWithinLevel(Level.MEDIUM, Level.INSANE)).toBe(true)
         expect(isWithinLevel(Level.HIGH, Level.INSANE)).toBe(true)
         expect(isWithinLevel(Level.ULTRA, Level.INSANE)).toBe(true)

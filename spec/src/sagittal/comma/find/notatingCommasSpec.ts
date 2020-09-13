@@ -1,8 +1,8 @@
 import { Abs, Cents, Comma, Max, Monzo } from "../../../../../src/general"
 import { ApotomeSlope, computeNotatingCommas } from "../../../../../src/sagittal"
 
-describe("computeNotatingCommas", () => {
-    it("given a monzo, returns a list of the commas that notate it", () => {
+describe("computeNotatingCommas", (): void => {
+    it("given a monzo, returns a list of the commas that notate it", (): void => {
         const monzo = [0, 0, 0, 0, 1] as Monzo
 
         const actual = computeNotatingCommas({ monzo })
@@ -15,7 +15,7 @@ describe("computeNotatingCommas", () => {
         expect(actual).toEqual(expected)
     })
 
-    it("can filter", () => {
+    it("can filter", (): void => {
         const monzo = [0, 0, 0, 0, 1] as Monzo
         const maxAbsoluteApotomeSlope = 9 as Max<Abs<ApotomeSlope>>
         const maxCents = 55 as Max<Cents>

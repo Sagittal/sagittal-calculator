@@ -2,12 +2,15 @@ import {
     abs,
     Base,
     computePrimeCount,
+    Exponent,
     FractionalPartType,
     indexOfFinalElement,
+    Integer,
     isUndefined,
     log,
     Monzo,
     Power,
+    Prime,
     PRIMES,
     stringify,
 } from "../../../../general"
@@ -21,7 +24,7 @@ import { secondaryParameterOverride } from "./secondaryParameter"
 
 const computeSubmetricAntivotes = (
     twoThreeFreeNumberMonzo: Monzo,
-    submetric = {},
+    submetric: Submetric = {},
     fractionalPartType?: FractionalPartType,
 ): Antivotes => {
     const {
@@ -50,7 +53,7 @@ const computeSubmetricAntivotes = (
     }
 
     return twoThreeFreeNumberMonzo.reduce(
-        (monzoAntivotes: Antivotes, primeExponent, index): Antivotes => {
+        (monzoAntivotes: Antivotes, primeExponent: Integer & Exponent<Prime>, index: number): Antivotes => {
             if (max && index < indexOfFinalElement(twoThreeFreeNumberMonzo)) {
                 return 0 as Antivotes
             }

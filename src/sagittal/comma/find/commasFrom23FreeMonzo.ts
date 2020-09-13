@@ -24,7 +24,7 @@ import { CommasFrom23FreeMonzoOptions } from "./types"
 
 const computeTwoFreeMonzo = (
     twoThreeFreeMonzo: Monzo<{ rough: 5 }>,
-    threeExponent: Integer & Exponent<Prime>,
+    threeExponent: 3 & Integer & Exponent<Prime>,
 ): Monzo<{ rough: 3 }> => {
     const twoFreeMonzo: Monzo<{ rough: 3 }> = shallowClone(twoThreeFreeMonzo) as Monzo as Monzo<{ rough: 3 }>
     twoFreeMonzo[ 1 ] = threeExponent
@@ -50,7 +50,7 @@ const computeCommasFrom23FreeMonzo = (
 
     const commas: Comma[] = []
 
-    computePlusOrMinusRange(maxAbsolute3Exponent).forEach(threeExponent => {
+    computePlusOrMinusRange(maxAbsolute3Exponent).forEach((threeExponent: 3 & Integer & Exponent<Prime>): void => {
         const twoFreeMonzo = computeTwoFreeMonzo(twoThreeFreeMonzo, threeExponent)
         const monzo: Maybe<Monzo> = computeMonzoInZone(twoFreeMonzo, [minCents, maxCents])
 

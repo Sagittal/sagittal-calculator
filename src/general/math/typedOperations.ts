@@ -5,7 +5,7 @@ import {
     MULTIPLICATIVE_IDENTITY,
     VALUE_BELOW_WHICH_ROUNDING_IMPLEMENTATION_BREAKS,
 } from "./constants"
-import { Base, Exponent, Integer, Max, Min, Power } from "./types"
+import { Avg, Base, Exponent, Integer, Max, Min, Power } from "./types"
 
 const parseInteger = (integerText: string): Integer => {
     return parseInt(integerText) as Integer
@@ -101,6 +101,9 @@ const pow = <T extends number>(base: Base<T>, exponent: Exponent<T>): Power<T> =
 const log = <T extends number>(power: Power<T>, base: Base<T>): Exponent<T> =>
     Math.log(power) / Math.log(base) as Exponent<T>
 
+const avg = <T extends number>(...numbers: T[]): Avg<T> =>
+    sum(...numbers) / count(numbers) as Avg<T>
+
 export {
     sum,
     difference,
@@ -122,4 +125,5 @@ export {
     integerDivide,
     parseInteger,
     count,
+    avg,
 }

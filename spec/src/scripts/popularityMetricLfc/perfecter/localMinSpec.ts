@@ -3,9 +3,9 @@ import { SamplePoint } from "../../../../../src/scripts/popularityMetricLfc/best
 import { setSumOfSquaresAtSamplePoint } from "../../../../../src/scripts/popularityMetricLfc/bestMetric/setSumOfSquaresAtSamplePoint"
 import { getSumOfSquaresAtSamplePointIfLocalMin } from "../../../../../src/scripts/popularityMetricLfc/perfecter/localMin"
 
-describe("getSumOfSquaresAtSamplePointIfLocalMin", () => {
+describe("getSumOfSquaresAtSamplePointIfLocalMin", (): void => {
     let sumsOfSquares: SumsOfSquares
-    beforeEach(() => {
+    beforeEach((): void => {
         sumsOfSquares = []
 
         for (let x = 0; x < 4; x++) {
@@ -44,7 +44,7 @@ describe("getSumOfSquaresAtSamplePointIfLocalMin", () => {
         // setSumOfSquaresAtSamplePoint(0.00666 as SumOfSquares, sumsOfSquares, [1, 1, 1, 2])
     })
 
-    it("returns the sum-of-squares if it is lesser at the sample point than at every adjacent one", () => {
+    it("returns the sum-of-squares if it is lesser at the sample point than at every adjacent one", (): void => {
         const samplePoint = [1, 0, 3, 2] as SamplePoint
 
         const actual = getSumOfSquaresAtSamplePointIfLocalMin(sumsOfSquares, samplePoint)
@@ -52,7 +52,7 @@ describe("getSumOfSquaresAtSamplePointIfLocalMin", () => {
         expect(actual).toEqual(0.00422 as SumOfSquares)
     })
 
-    it("another example of a local min", () => {
+    it("another example of a local min", (): void => {
         const samplePoint = [2, 2, 2, 2] as SamplePoint
 
         const actual = getSumOfSquaresAtSamplePointIfLocalMin(sumsOfSquares, samplePoint)
@@ -60,7 +60,7 @@ describe("getSumOfSquaresAtSamplePointIfLocalMin", () => {
         expect(actual).toEqual(0.00454 as SumOfSquares)
     })
 
-    it("returns undefined if the sum-of-squares is not less at the sample point than at every adjacent one", () => {
+    it("returns undefined if the SoS is not less at the sample point than at every adjacent one", (): void => {
         const samplePoint = [1, 1, 1, 1] as SamplePoint
 
         const actual = getSumOfSquaresAtSamplePointIfLocalMin(sumsOfSquares, samplePoint)
@@ -68,7 +68,7 @@ describe("getSumOfSquaresAtSamplePointIfLocalMin", () => {
         expect(actual).toBeUndefined()
     })
 
-    it("another example of not local min", () => {
+    it("another example of not local min", (): void => {
         const samplePoint = [0, 3, 3, 1] as SamplePoint
 
         const actual = getSumOfSquaresAtSamplePointIfLocalMin(sumsOfSquares, samplePoint)

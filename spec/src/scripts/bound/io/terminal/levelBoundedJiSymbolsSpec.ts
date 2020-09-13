@@ -3,8 +3,8 @@ import { Bound, Ina, JiSymbol, Level } from "../../../../../../src/sagittal/nota
 import { computeLevelBoundedJiSymbolIdWithDistances } from "../../../../../../src/scripts/bound/io/terminal/levelBoundedJiSymbols"
 import { BoundIdWithBoundedSymbolIdWithDistancesPairsByLevel } from "../../../../../../src/scripts/bound/io/terminal/types"
 
-describe("computeLevelBoundedJiSymbolIdWithDistances", () => {
-    it("returns, given a bound, for each of its levels, an array of the pair of symbols it bounds at that level, as well as their distances and ina-distances from the bound", () => {
+describe("computeLevelBoundedJiSymbolIdWithDistances", (): void => {
+    it("returns, given a bound, for each of its levels, an array of the pair of symbols it bounds at that level, as well as their distances and ina-distances from the bound", (): void => {
         const bound: Bound = {
             cents: 24.66219847111080 as Cents,
             levels: [Level.MEDIUM, Level.EXTREME, Level.INSANE],
@@ -55,7 +55,7 @@ describe("computeLevelBoundedJiSymbolIdWithDistances", () => {
         expect(actual).toBeCloseToObject(expected)
     })
 
-    it("works for the final bound", () => {
+    it("works for the final bound", (): void => {
         const bound: Bound = {
             cents: 68.57250822118040 as Cents,
             levels: [Level.MEDIUM, Level.HIGH, Level.ULTRA, Level.EXTREME, Level.INSANE],
@@ -110,7 +110,7 @@ describe("computeLevelBoundedJiSymbolIdWithDistances", () => {
         expect(actual).toBeCloseToObject(expected)
     })
 
-    it("works for the first bound", () => {
+    it("works for the first bound", (): void => {
         const bound: Bound = {
             cents: 0.210788021120605 as Cents,
             levels: [Level.EXTREME, Level.INSANE],

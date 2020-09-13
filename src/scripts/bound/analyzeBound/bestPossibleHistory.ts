@@ -3,9 +3,9 @@ import { HistoryAnalysis, Score } from "../analyzeHistory"
 const computeBestPossibleHistory = (historyAnalyses: HistoryAnalysis[]): HistoryAnalysis => {
     let bestPossibleHistory: HistoryAnalysis = { score: Infinity as Score } as HistoryAnalysis
 
-    if (historyAnalyses.some(historyAnalysis => !historyAnalysis.exact)) {
+    if (historyAnalyses.some((historyAnalysis: HistoryAnalysis): boolean => !historyAnalysis.exact)) {
         const exactHistories: HistoryAnalysis[] = []
-        historyAnalyses.forEach(historyAnalysis => {
+        historyAnalyses.forEach((historyAnalysis: HistoryAnalysis): void => {
             if (historyAnalysis.exact) {
                 exactHistories.push(historyAnalysis)
             }
@@ -15,7 +15,7 @@ const computeBestPossibleHistory = (historyAnalyses: HistoryAnalysis[]): History
         }
     }
 
-    historyAnalyses.forEach(historyAnalysis => {
+    historyAnalyses.forEach((historyAnalysis: HistoryAnalysis): void => {
         if (
             historyAnalysis.score < bestPossibleHistory.score ||
             (

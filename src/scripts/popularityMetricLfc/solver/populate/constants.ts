@@ -1,5 +1,5 @@
-import { Window } from "../../../../general"
-import { computeDynamicParameterScope, ParameterScopes } from "../../bestMetric"
+import { Maybe, Window } from "../../../../general"
+import { computeDynamicParameterScope, ParameterScope, ParameterScopes } from "../../bestMetric"
 import { Parameter, ParameterValue, Submetric } from "../../sumOfSquares"
 import { Chunk } from "../types"
 
@@ -177,20 +177,20 @@ const SUBMETRIC_CHUNKS: Array<Chunk<Submetric>> = [
 const SUBMETRIC_PARAMETERS = [Parameter.SUM, Parameter.COUNT, Parameter.MAX, Parameter.WITHOUT_REPETITION]
 
 const NO_USELESS_PARAMETER_CHUNKS: Array<Chunk<Parameter>> = Object.entries(NO_USELESS_INITIAL_PARAMETER_SCOPES)
-    .filter(([parameter]) => {
+    .filter(([parameter]: [string, Maybe<ParameterScope>]): boolean => {
         return !SUBMETRIC_PARAMETERS.includes(parameter as Parameter)
     })
-    .map(([parameter, initialParameterScope]) => {
+    .map(([parameter, initialParameterScope]: [string, Maybe<ParameterScope>]): Chunk<Parameter> => {
         return {
             [ parameter ]: initialParameterScope,
         } as Chunk<Parameter>
     })
 
 const PARAMETER_CHUNKS: Array<Chunk<Parameter>> = Object.entries(INITIAL_PARAMETER_SCOPES)
-    .filter(([parameter]) => {
+    .filter(([parameter]: [string, Maybe<ParameterScope>]): boolean => {
         return !SUBMETRIC_PARAMETERS.includes(parameter as Parameter)
     })
-    .map(([parameter, initialParameterScope]) => {
+    .map(([parameter, initialParameterScope]: [string, Maybe<ParameterScope>]): Chunk<Parameter> => {
         return {
             [ parameter ]: initialParameterScope,
         } as Chunk<Parameter>

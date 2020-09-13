@@ -13,14 +13,13 @@ const spaceTerm = (term: Exponent<Prime>): Io => {
 
 const formatMonzo = <T extends NumericTypeParameters>(
     monzo: PotentiallyIrrationalMonzoParameter<T>,
-    { punctuated = false } = {},
+    { punctuated = false }: { punctuated?: boolean } = {},
 ): Formatted<Monzo<T>> => {
     let contents
     if (punctuated) {
         // Not using computeSlicedMonzo here because we want the trick of keeping the leftovers
         const twoThreeFreeMonzo: Monzo<T & { rough: 5 }> = monzo.splice(2) as Monzo<T & { rough: 5 }>
-        const twoThreeMonzo = monzo
-        contents = twoThreeMonzo.map(spaceTerm).join(" ") + ", "
+        contents = monzo.map(spaceTerm).join(" ") + ", "
 
         let index = 0
         while (index < twoThreeFreeMonzo.length) {

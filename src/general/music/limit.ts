@@ -1,13 +1,16 @@
 import { isUndefined } from "../code"
 import {
-    computeIsRoughMonzo, computeIsRoughRatio,
+    computeIsRoughMonzo,
+    computeIsRoughRatio,
     computeIsSmoothMonzo,
     computeIsSmoothRatio,
     Integer,
-    Max, Min,
+    Max,
+    Min,
     NumericTypeParameters,
     Prime,
-    Primes, Roughness,
+    Primes,
+    Roughness,
     Smoothness,
 } from "../math"
 import { JiPitch } from "./types"

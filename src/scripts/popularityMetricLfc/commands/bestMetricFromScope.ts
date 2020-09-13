@@ -30,6 +30,6 @@ const scope = [
     },
 ] as Scope
 
-recursiveSearchScopeAndMaybeUpdateBestMetric(scope, { onlyWinners: false }).then(() => {
+recursiveSearchScopeAndMaybeUpdateBestMetric(scope, { onlyWinners: false }).then((): void => {
     saveLog(`\nbest metric: ${stringify(Object.fromEntries(bestMetrics))}` as Io, LogTarget.ALL)
 })

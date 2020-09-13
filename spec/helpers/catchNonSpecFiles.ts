@@ -20,4 +20,6 @@ const catchNonSpecFiles = (startPath: Filename): void => {
     }
 }
 
+// TODO: it'd also be cool if you had a script that ensured every file was paired with a test
+
 catchNonSpecFiles("spec/src" as Filename)

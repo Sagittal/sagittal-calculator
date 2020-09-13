@@ -4,7 +4,7 @@ import { JI_SYMBOLS } from "./jiSymbols"
 import { JiSymbol } from "./types"
 
 const addMaybeJiSymbol = (comma: Comma): Comma & { symbolId?: Id<JiSymbol> } => {
-    const maybeSymbol: Maybe<JiSymbol> = JI_SYMBOLS.find(jiSymbol => {
+    const maybeSymbol: Maybe<JiSymbol> = JI_SYMBOLS.find((jiSymbol: JiSymbol): boolean => {
         const primaryComma = getSagittalComma(jiSymbol.primaryCommaId)
 
         return deepEquals(comma.monzo, primaryComma.monzo)

@@ -12,7 +12,7 @@ const computeSubmetricPossibilities = (
 
     const submetricScopeEntries = Object.entries(submetricScope) as Array<[Parameter, DynamicParameterScope]>
 
-    submetricScopeEntries.forEach(([parameter, parameterScope]: [Parameter, DynamicParameterScope]) => {
+    submetricScopeEntries.forEach(([parameter, parameterScope]: [Parameter, DynamicParameterScope]): void => {
         const extendedSubmetricPossibilities: Combination<SubmetricPossibility> =
             [] as unknown[] as Combination<SubmetricPossibility>
 
@@ -26,8 +26,8 @@ const computeSubmetricPossibilities = (
             return
         }
 
-        submetricPossibilities.forEach(submetricPossibility => {
-            values.forEach(value => {
+        submetricPossibilities.forEach((submetricPossibility: SubmetricPossibility): void => {
+            values.forEach((value: ParameterValue): void => {
                 extendedSubmetricPossibilities.push({ ...submetricPossibility, [ parameter ]: value })
             })
         })

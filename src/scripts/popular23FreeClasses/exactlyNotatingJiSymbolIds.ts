@@ -16,7 +16,7 @@ const computeExactlyNotatingJiSymbolIds = (jiPitch: JiPitch): Array<Id<JiSymbol>
     const notatingJiSymbols: Array<Id<JiSymbol>> = []
     const twoThreeFreeMonzo = computeRoughMonzo(monzo, FIVE_ROUGHNESS)
 
-    JI_SYMBOLS.forEach(jiSymbol => {
+    JI_SYMBOLS.forEach((jiSymbol: JiSymbol): void => {
         const primaryComma = getSagittalComma(jiSymbol.primaryCommaId)
         const twoThreeFreePrimaryCommaMonzo = computeRoughMonzo(primaryComma.monzo, FIVE_ROUGHNESS)
 

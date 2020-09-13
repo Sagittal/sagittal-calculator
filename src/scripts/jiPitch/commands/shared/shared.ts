@@ -3,7 +3,7 @@ import { CommandFlag, Filename, ioSettings, parseCommands } from "../../../../ge
 import { ScriptGroup } from "../../../types"
 import { jiPitchScriptGroupSettings } from "../../globals"
 
-const applySharedPitchCommandSetup = () => {
+const applySharedPitchCommandSetup = (): void => {
     program
         .option(
             `-${CommandFlag.MIN_CENTS}, --min-cents <minCents>`,

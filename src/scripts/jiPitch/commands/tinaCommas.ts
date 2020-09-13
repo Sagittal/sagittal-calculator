@@ -4,6 +4,7 @@ import {
     Comma,
     computeJiPitchMonzo,
     Copfr,
+    Exponent,
     Io,
     LogTarget,
     Max,
@@ -16,7 +17,7 @@ import {
     sort,
     stringify,
 } from "../../../general"
-import { analyzeComma, CommaAnalysis, computeNotatingCommas, N2D3P9, TINA } from "../../../sagittal"
+import { analyzeComma, CommaAnalysis, computeNotatingCommas, N2D3P9, Tina, TINA } from "../../../sagittal"
 import { computeCommas } from "../commas"
 import { jiPitchScriptGroupSettings } from "../globals"
 import { applySharedPitchCommandSetup } from "./shared"
@@ -25,9 +26,9 @@ import { applySharedPitchCommandSetup } from "./shared"
 
 applySharedPitchCommandSetup()
 
-const TINAS_TO_CHECK = [0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5]
+const TINAS_TO_CHECK: Tina[] = [0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5] as Tina[]
 const PLUS_MINUS_RANGE = 0.25
-const maxTinaSizes: Cents[] = TINAS_TO_CHECK.map(tina => TINA * (tina + PLUS_MINUS_RANGE) as Cents)
+const maxTinaSizes: Cents[] = TINAS_TO_CHECK.map((tina: Tina): Cents => TINA * (tina + PLUS_MINUS_RANGE) as Cents)
 
 const LIMITLESS_N2D3P9 = Infinity as Max<N2D3P9>
 const LIMITLESS_COPFR = 99999 as Max<Copfr<{ rough: 5 }>>
@@ -36,18 +37,20 @@ const MAX_POSSIBLE_PRIME_LIMIT_GIVEN_MAX_POSSIBLE_SOPFR = MAX_POSSIBLE_SOPFR_WIT
 const MIN_CENTS = (TINAS_TO_CHECK[ 0 ] - PLUS_MINUS_RANGE) * TINA as Min<Cents>
 const MAX_CENTS = (TINAS_TO_CHECK[ TINAS_TO_CHECK.length - 1 ] + PLUS_MINUS_RANGE) * TINA as Max<Cents>
 
-const isLate = (comma: Comma) => {
+const isLate = (comma: Comma): boolean => {
     const monzo = computeJiPitchMonzo(comma)
     const ate = abs(monzo[ 1 ])
 
     const notatingCommas = computeNotatingCommas(comma, { ...jiPitchScriptGroupSettings, maxN2D3P9: LIMITLESS_N2D3P9 })
-    const ates = notatingCommas.map(notatingComma => abs(computeJiPitchMonzo(notatingComma)[ 1 ]))
+    const ates = notatingCommas.map((notatingComma: Comma): Exponent<Prime> => {
+        return abs(computeJiPitchMonzo(notatingComma)[ 1 ])
+    })
 
     saveLog(`ATE ${ate} vs. other notating ATEs ${ates}` as Io, LogTarget.PROGRESS)
 
     const minimumAte = min(...ates)
 
-    return ate === minimumAte
+    return ate === minimumAte as Exponent<Prime>
 }
 
 const commas = computeCommas({
@@ -60,10 +63,10 @@ const commas = computeCommas({
     maxN2D3P9: LIMITLESS_N2D3P9,
 })
 
-const analyzeCommas = commas.map(comma => analyzeComma(comma))
-sort(analyzeCommas, { by: "cents" })
+const commaAnalyses = commas.map((comma: Comma): CommaAnalysis => analyzeComma(comma))
+sort(commaAnalyses, { by: "cents" })
 
-const tinasCommas: { [ index: number ]: CommaAnalysis[] } = {
+const commaAnalysesByTina: { [ index: number ]: CommaAnalysis[] } = {
     [ 0.5 ]: [],
     [ 1 ]: [],
     [ 1.5 ]: [],
@@ -86,25 +89,26 @@ const tinasCommas: { [ index: number ]: CommaAnalysis[] } = {
 }
 
 let currentTina = 0.5
-analyzeCommas.forEach(commaAnalysis => {
+commaAnalyses.forEach((commaAnalysis: CommaAnalysis): void => {
     if (commaAnalysis.cents > maxTinaSizes[ currentTina * 2 - 1 ]) {
         currentTina = currentTina + 0.5
     }
-    tinasCommas[ currentTina ].push(commaAnalysis)
+    commaAnalysesByTina[ currentTina ].push(commaAnalysis)
 })
 
-Object.entries(tinasCommas).forEach(([tina, tinaCommas]) => {
-    sort(tinaCommas, { by: "n2d3p9" as ObjectKey })
+Object.entries(commaAnalysesByTina).forEach(([tina, tinaCommaAnalysis]: [string, CommaAnalysis[]]): void => {
+    sort(tinaCommaAnalysis, { by: "n2d3p9" as ObjectKey })
 
     saveLog(
-        `Processing tina ${tina} with ${tinaCommas.length} possible commas to check, sorted by increasing N2D3P9` as Io,
+        // tslint:disable-next-line:max-line-length
+        `Processing tina ${tina} with ${tinaCommaAnalysis.length} possible commas to check, sorted by increasing N2D3P9` as Io,
         LogTarget.PROGRESS,
     )
 
     let index = 0
     let lateComma = undefined
     while (true) {
-        const comma = tinaCommas[ index ]
+        const comma = tinaCommaAnalysis[ index ]
         saveLog(`Checking comma ${index}: ${comma.monzo}, N2D3P9 ${comma.n2d3p9}` as Io, LogTarget.PROGRESS)
         if (isLate(comma)) {
             lateComma = comma

@@ -18,6 +18,10 @@ enum Level {
     INSANE = "insane",          // corresponds closely with Magrathean symbol subset
 }
 
+// TODO: eventually have an enum Notations which has JI, EDO, PRIME_FACTOR, etc. and then this should be Symbol<>
+//  ... I wonder if that would prevent it from conflating Symbol with whatever other Symbol it tries to import sometimes
+//  - well, except that of course symbols get used in a number of notations, so when you have an Id, it is of a Symbol
+//  in general
 interface JiSymbol {
     ascii: SymbolLongAscii,
     elements: SymbolLongAscii[],

@@ -2,9 +2,9 @@ import { Maybe } from "../../code"
 import { ioSettings } from "../globals"
 import { LogTarget, LogTargets } from "./types"
 
-const setLogTargets = (logTargetsCommaSeparatedString: Maybe<string | boolean> = "") => {
+const setLogTargets = (logTargetsCommaSeparatedString: Maybe<string | boolean> = ""): void => {
     ioSettings.logTargets = Object.keys(LogTarget).reduce(
-        (logTargets, logTarget) => ({ ...logTargets, [ logTarget ]: false }),
+        (logTargets: LogTargets, logTarget: string): LogTargets => ({ ...logTargets, [ logTarget ]: false }),
         {} as LogTargets,
     )
 
@@ -15,7 +15,7 @@ const setLogTargets = (logTargetsCommaSeparatedString: Maybe<string | boolean> =
 
     const targets: LogTarget[] = (logTargetsCommaSeparatedString as string).split(",") as LogTarget[]
 
-    targets.forEach(target => {
+    targets.forEach((target: LogTarget): void => {
         ioSettings.logTargets[ target ] = true
     })
 }

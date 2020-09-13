@@ -72,7 +72,7 @@ const computeBoundRow = (boundAnalysis: BoundAnalysis, { bound }: BoundRowOption
         formatNumber(cents),
         formatNumber(initialPosition),
         formatNumber(initialPositionTinaDistance),
-    ] as Row<{ of: BoundAnalysis }>
+    ] as Row as Row<{ of: BoundAnalysis }>
 
     return boundRow
 }

@@ -2,8 +2,8 @@ import { Monzo } from "../../../../src/general/math/monzo"
 import { Ratio } from "../../../../src/general/math/ratio"
 import { compute23FreeClass, TwoThreeFreeClass } from "../../../../src/general/music"
 
-describe("compute23FreeClass", () => {
-    it("returns the 2,3-free, super (n ≥ d) version of the ratio, in the form of a branded comma", () => {
+describe("compute23FreeClass", (): void => {
+    it("returns the 2,3-free, super (n ≥ d) version of the ratio, in the form of a branded comma", (): void => {
         const monzo = [4, 1, -2] as Monzo    // 48/25
 
         const actual = compute23FreeClass({ monzo })
@@ -12,7 +12,7 @@ describe("compute23FreeClass", () => {
         expect(actual).toEqual(expected)
     })
 
-    it("trims the monzo if necessary", () => {
+    it("trims the monzo if necessary", (): void => {
         const monzo = [4, 1] as Monzo    // 48/1
 
         const actual = compute23FreeClass({ monzo })
@@ -21,7 +21,7 @@ describe("compute23FreeClass", () => {
         expect(actual).toEqual(expected)
     })
 
-    it("works for commas with ratios instead of monzos too", () => {
+    it("works for commas with ratios instead of monzos too", (): void => {
         const ratio = [48, 25] as Ratio
 
         const actual = compute23FreeClass({ ratio })

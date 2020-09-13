@@ -6,7 +6,7 @@ import { formatLevelAnalysis } from "./levelAnalysis"
 const formatLevelAnalyses = (): Io => {
     const formattedLevelAnalysis: Io[] = [] as Io[]
 
-    shallowClone(LEVELS).reverse().forEach(level => {
+    shallowClone(LEVELS).reverse().forEach((level: Level): void => {
         if (level === Level.INSANE) {
             return
         }

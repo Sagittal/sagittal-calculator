@@ -5,8 +5,8 @@ import { scopesToSearch, solverStatus } from "../../../../../../src/scripts/popu
 import { populateScope } from "../../../../../../src/scripts/popularityMetricLfc/solver/populate/scope"
 import { Parameter } from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
 
-describe("populateScope", () => {
-    it("adds the scope to the stack and increments the count of the total ever populated", () => {
+describe("populateScope", (): void => {
+    it("adds the scope to the stack and increments the count of the total ever populated", (): void => {
         const scope: Scope = [{ [ Parameter.SUM ]: true }] as Scope
 
         const alreadyPopulatedScope: Scope = [{ [ Parameter.COUNT ]: true }] as Scope
@@ -20,7 +20,7 @@ describe("populateScope", () => {
         expect(solverStatus.populatedScopeCount).toEqual(6 as Count<Scope>)
     })
 
-    it("works if its the first scope", () => {
+    it("works if its the first scope", (): void => {
         const scope: Scope = [] as unknown[] as Scope
 
         cleanArray(scopesToSearch)

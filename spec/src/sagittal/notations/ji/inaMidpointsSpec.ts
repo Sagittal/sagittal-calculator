@@ -1,8 +1,8 @@
 import { Cents, Name, Pitch } from "../../../../../src/general"
 import { computeInaMidpoints, Level } from "../../../../../src/sagittal/notations/ji"
 
-describe("computeInaMidpoints", () => {
-    it("works for the MEDIUM level, only including midpoints below the max position", () => {
+describe("computeInaMidpoints", (): void => {
+    it("works for the MEDIUM level, only including midpoints below the max position", (): void => {
         expect(computeInaMidpoints(Level.MEDIUM)).toEqual([
             { name: "0.5°21" as Name<Pitch>, cents: 2.7067858585169504 as Cents },
             { name: "1.5°21" as Name<Pitch>, cents: 8.120357575550852 as Cents },

@@ -4,7 +4,9 @@ export { computeCentsFromRatio } from "./centsFromRatio"
 export { computeCentsFromMonzo } from "./centsFromMonzo"
 export { CENTS_PER_OCTAVE, THREE_LIMIT } from "./constants"
 export { computeJiPitchMonzo, computeJiPitchRatio } from "./jiPitchMonzoOrRatio"
-export { Cents, CentsPosition, Comma, Popularity, Votes, Zone, Pitch, JiPitch, TwoThreeFreeClass } from "./types"
+export {
+    Cents, CentsPosition, Comma, Popularity, Votes, Zone, Pitch, JiPitch, TwoThreeFreeClass, Apotome,
+} from "./types"
 export { COMMA_POPULARITIES } from "./popularities"
 export { equalJiPitches } from "./equalJiPitches"
 export { computeIsSubPitch, computeIsUnisonPitch } from "./pitchDirection"

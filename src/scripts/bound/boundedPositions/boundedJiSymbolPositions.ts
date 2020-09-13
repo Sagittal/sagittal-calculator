@@ -6,7 +6,7 @@ import { BoundedSymbolPositions } from "./types"
 const computeBoundedJiSymbolPositions = (position: Cents, level: Level): BoundedSymbolPositions => {
     const levelSymbolIds: Array<Id<JiSymbol>> = LEVELS_SYMBOL_IDS[ level ]
 
-    const levelSymbolPositions: Cents[] = levelSymbolIds.map(levelSymbolId => {
+    const levelSymbolPositions: Cents[] = levelSymbolIds.map((levelSymbolId: Id<JiSymbol>): Cents => {
         const jiSymbol = getJiSymbol(levelSymbolId)
         const primaryComma = getSagittalComma(jiSymbol.primaryCommaId)
 

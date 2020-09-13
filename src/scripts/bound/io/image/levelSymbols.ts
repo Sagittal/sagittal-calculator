@@ -5,11 +5,11 @@ import { LEVEL_CENTERS } from "./levelHeights"
 import { DOT_SIZE, MINA_OFFSET, SYMBOL_OFFSET } from "./sizes"
 import { computeX } from "./x"
 
-const visualizeLevelSymbols = () => {
+const visualizeLevelSymbols = (): Io[] => {
     const levelSymbolElements: Io[] = [] as Io[]
 
     const levelsSymbolIdsEntries = Object.entries(LEVELS_SYMBOL_IDS) as Array<[Level, Array<Id<JiSymbol>>]>
-    levelsSymbolIdsEntries.forEach(([level, levelSymbolIds]: [Level, Array<Id<JiSymbol>>]) => {
+    levelsSymbolIdsEntries.forEach(([level, levelSymbolIds]: [Level, Array<Id<JiSymbol>>]): void => {
         if (level === Level.INSANE) {
             return
         }
@@ -18,7 +18,7 @@ const visualizeLevelSymbols = () => {
         const dotY: Px = difference(centerY, SYMBOL_OFFSET)
         const symbolY: Px = sum(centerY, SYMBOL_OFFSET)
 
-        levelSymbolIds.forEach(levelSymbolId => {
+        levelSymbolIds.forEach((levelSymbolId: Id<JiSymbol>): void => {
             const levelSymbol: JiSymbol = getJiSymbol(levelSymbolId)
             const { primaryCommaId, ascii, unicode, mina } = levelSymbol
             const primaryComma: SagittalComma = getSagittalComma(primaryCommaId)

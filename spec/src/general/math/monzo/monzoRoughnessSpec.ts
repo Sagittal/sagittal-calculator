@@ -1,8 +1,8 @@
 import { computeRoughMonzo, Monzo, Roughness } from "../../../../../src/general/math"
 import { computeIsRoughMonzo } from "../../../../../src/general/math/monzo"
 
-describe("computeRoughMonzo", () => {
-    it("roughens the monzo to the requested roughness", () => {
+describe("computeRoughMonzo", (): void => {
+    it("roughens the monzo to the requested roughness", (): void => {
         const monzo = [5, 6, 1, 0, 3] as Monzo
         const roughness = 5 as 5 & Roughness
 
@@ -12,7 +12,7 @@ describe("computeRoughMonzo", () => {
         expect(actual).toEqual(expected)
     })
 
-    it("trims the monzo if necessary", () => {
+    it("trims the monzo if necessary", (): void => {
         const monzo = [5, 6] as Monzo
         const roughness = 5 as 5 & Roughness
 
@@ -23,8 +23,8 @@ describe("computeRoughMonzo", () => {
     })
 })
 
-describe("computeIsRoughMonzo", () => {
-    it("returns true if the monzo is at the requested roughness", () => {
+describe("computeIsRoughMonzo", (): void => {
+    it("returns true if the monzo is at the requested roughness", (): void => {
         const monzo = [0, 0, 0, 4, 3] as Monzo
 
         const actual = computeIsRoughMonzo(monzo, 7 as 7 & Roughness)
@@ -32,7 +32,7 @@ describe("computeIsRoughMonzo", () => {
         expect(actual).toBeTruthy()
     })
 
-    it("returns false if the monzo is not at the requested roughness", () => {
+    it("returns false if the monzo is not at the requested roughness", (): void => {
         const monzo = [0, -5, 0, 4, 3] as Monzo
 
         const actual = computeIsRoughMonzo(monzo, 7 as 7 & Roughness)

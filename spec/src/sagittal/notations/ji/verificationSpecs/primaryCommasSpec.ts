@@ -1,6 +1,6 @@
-import { Abs, Copfr, Integer, Max, ObjectKey, Prime, Sopfr } from "../../../../../../src/general"
+import { Abs, Comma, Copfr, Integer, Max, ObjectKey, Prime, Sopfr } from "../../../../../../src/general"
 import { Exponent } from "../../../../../../src/general/math"
-import { analyzeComma, ApotomeSlope, getSagittalComma } from "../../../../../../src/sagittal"
+import { analyzeComma, ApotomeSlope, CommaAnalysis, getSagittalComma, JiSymbol } from "../../../../../../src/sagittal"
 import { N2D3P9 } from "../../../../../../src/sagittal/comma/evaluation/n2d3p9"
 import { computeCommaName } from "../../../../../../src/sagittal/comma/name"
 import { JI_SYMBOLS } from "../../../../../../src/sagittal/notations/ji"
@@ -8,9 +8,9 @@ import { computeSecondaryCommaZone } from "../../../../../../src/sagittal/notati
 import { computeCommas } from "../../../../../../src/scripts/jiPitch/commas"
 import { computeFindCommasTable } from "../../../../../../src/scripts/jiPitch/io"
 
-describe("verifying primary commas", () => {
-    xit("checks that every symbol's primary comma is its best-ranked comma in its secondary comma zone according to our metric (not N2D3P9, but a comma notational popularity rank metric which uses it)", () => {
-        JI_SYMBOLS.forEach(symbol => {
+describe("verifying primary commas", (): void => {
+    xit("checks that every symbol's primary comma is its best-ranked comma in its secondary comma zone according to our metric (not N2D3P9, but a comma notational popularity rank metric which uses it)", (): void => {
+        JI_SYMBOLS.forEach((symbol: JiSymbol): void => {
             const primaryComma = getSagittalComma(symbol.primaryCommaId)
             const commaName = computeCommaName(primaryComma)
 
@@ -23,7 +23,7 @@ describe("verifying primary commas", () => {
             const max23FreeCopfr = 555 as Max<Copfr<{ rough: 5 }>>
             const maxAbsoluteApotomeSlope = 14 as Max<Abs<ApotomeSlope>>
             const maxPrimeLimit = 47 as Max<Max<Prime>>
-            const maxAbsolute3Exponent = 15 as Max<Abs<Integer & Exponent<Prime>>>
+            const maxAbsolute3Exponent = 15 as Max<Abs<3 & Integer & Exponent<Prime>>>
             const maxN2D3P9 = 666 as Max<N2D3P9>
             const sortKey = "twoThreeFreeSopfr" as ObjectKey
 
@@ -38,7 +38,7 @@ describe("verifying primary commas", () => {
                 maxN2D3P9,
                 sortKey,
             })
-            const commaAnalyses = commas.map(comma => analyzeComma(comma))
+            const commaAnalyses = commas.map((comma: Comma): CommaAnalysis => analyzeComma(comma))
 
             console.warn(computeFindCommasTable(commaAnalyses))
         })

@@ -1,4 +1,4 @@
-import { Count, Io, LogTarget, round, saveLog } from "../../../general"
+import { count, Count, Io, LogTarget, round, saveLog, sum } from "../../../general"
 import { metricNames, solverStatus } from "../globals"
 import { computeMetricName } from "./metricName"
 import { computeDynamicParameters, computeSamples, Sample } from "./scopeToSamples"
@@ -22,7 +22,7 @@ const nonRecursiveSearchScopeAndMaybeUpdateBestMetric = async (
     const samples = computeSamples({ scope, dynamicParameters })
     const spreadDynamicParameters = computeSpreadDynamicParameters(scope)
 
-    solverStatus.sampleCount = solverStatus.sampleCount + samples.length as Count<Sample>
+    solverStatus.sampleCount = sum(solverStatus.sampleCount, count(samples))
     solverStatus.averageSamplesPerScope =
         round(solverStatus.sampleCount / solverStatus.populatedScopeCount) as Count<Sample>
 

@@ -1,17 +1,20 @@
 import { computeRange } from "../../../../src/general/code"
 import { Integer } from "../../../../src/general/math"
 
-describe("computeRange", () => {
-    it("when given a single integer, gives the set of integers from 0 to that number, excluding the number", () => {
-        const firstParameter = 3 as Integer
+describe("computeRange", (): void => {
+    it(
+        "when given a single integer, gives the set of integers from 0 to that number, excluding the number",
+        (): void => {
+            const firstParameter = 3 as Integer
 
-        const actual = computeRange(firstParameter)
+            const actual = computeRange(firstParameter)
 
-        const expected = [0, 1, 2] as Integer[]
-        expect(actual).toEqual(expected)
-    })
+            const expected = [0, 1, 2] as Integer[]
+            expect(actual).toEqual(expected)
+        },
+    )
 
-    it("when given two integers, gives the set of integers from the first number to the second number, excluding the greater number", () => {
+    it("when given two integers, gives the set of integers from the first number to the second number, excluding the greater number", (): void => {
         const firstParameter = -3 as Integer
         const secondParameter = 7 as Integer
 

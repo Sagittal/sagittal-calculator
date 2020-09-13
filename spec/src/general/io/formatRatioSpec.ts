@@ -1,8 +1,8 @@
 import { Ratio } from "../../../../src/general"
 import { formatRatio } from "../../../../src/general/io"
 
-describe("formatRatio", () => {
-    it("it shows it with a slash", () => {
+describe("formatRatio", (): void => {
+    it("it shows it with a slash", (): void => {
         const ratio = [77, 75] as Ratio
 
         const actual = formatRatio(ratio)
@@ -11,7 +11,7 @@ describe("formatRatio", () => {
         expect(actual).toBe(expected)
     })
 
-    it("it can show it undirected, with a colon", () => {
+    it("it can show it undirected, with a colon", (): void => {
         const ratio = [64, 65] as Ratio
 
         const actual = formatRatio(ratio, { directed: false })
@@ -20,7 +20,7 @@ describe("formatRatio", () => {
         expect(actual).toBe(expected)
     })
 
-    it("it can show it undirected, with a colon, and orients it properly", () => {
+    it("it can show it undirected, with a colon, and orients it properly", (): void => {
         const ratio = [77, 75] as Ratio
 
         const actual = formatRatio(ratio, { directed: false })

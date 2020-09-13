@@ -33,7 +33,7 @@ const rank = <T>(arrayOfObjects: T[], options: RankOptions = {}): Array<T & { ra
                 }
 
                 tiesCount = 0 as Count
-                clonedArrayOfObjects.slice(index + 1).forEach((objectWithWorseOrTiedRank: T) => {
+                clonedArrayOfObjects.slice(index + 1).forEach((objectWithWorseOrTiedRank: T): void => {
                     if (isCloseOrEqual(dig(objectWithWorseOrTiedRank, by), dig(object, by), precision)) {
                         tiesCount = tiesCount + 1 as Count
                     }

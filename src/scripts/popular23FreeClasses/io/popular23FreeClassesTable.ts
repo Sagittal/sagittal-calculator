@@ -10,7 +10,7 @@ const computePopular23FreeClassesTable = (
     const table: Table<Popular23FreeClass> = computePopular23FreeClassesHeaderRows()
     const headerRowCount = count(table) as Count<Row<{ of: Popular23FreeClass, header: true }>>
 
-    popular23FreeClasses.forEach(popular23FreeClass => {
+    popular23FreeClasses.forEach((popular23FreeClass: Ranked<Popular23FreeClass>): void => {
         const {
             formattedN2D3P9,
             formatted23FreeClass,

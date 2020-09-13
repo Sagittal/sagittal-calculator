@@ -3,10 +3,10 @@ import { SubmetricScope } from "../../../../../../src/scripts/popularityMetricLf
 import { computeSubmetricDynamicParameters } from "../../../../../../src/scripts/popularityMetricLfc/bestMetric/scopeToSamples/submetricDynamicParameters"
 import { Parameter, ParameterValue, Submetric } from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
 
-describe("computeSubmetricDynamicParameters", () => {
+describe("computeSubmetricDynamicParameters", (): void => {
     const submetricIndex = 5 as Index<Submetric>
 
-    it("given this submetric's scope (centers, windows, and counts for each parameter) to compute each of its parameters' sample points, returns an array of all the parameters which are dynamic (change, i.e. have a ED > 1)", () => {
+    it("given this submetric's scope (centers, windows, and counts for each parameter) to compute each of its parameters' sample points, returns an array of all the parameters which are dynamic (change, i.e. have a ED > 1)", (): void => {
         const submetricScope: SubmetricScope = {
             [ Parameter.A_AS_COEFFICIENT ]: {
                 center: 1 as ParameterValue,
@@ -34,7 +34,7 @@ describe("computeSubmetricDynamicParameters", () => {
         expect(actual).toEqual(expected)
     })
 
-    it("leaves a parameter out if it has a 0 ED", () => {
+    it("leaves a parameter out if it has a 0 ED", (): void => {
         const submetricScope = {
             [ Parameter.A_AS_COEFFICIENT ]: {
                 center: 1 as ParameterValue,
@@ -61,7 +61,7 @@ describe("computeSubmetricDynamicParameters", () => {
         expect(actual).toEqual(expected)
     })
 
-    it("works when provided a flat value", () => {
+    it("works when provided a flat value", (): void => {
         const submetricScope: SubmetricScope = {
             [ Parameter.A_AS_COEFFICIENT ]: {
                 center: 1 as ParameterValue,

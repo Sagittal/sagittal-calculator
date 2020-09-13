@@ -8,7 +8,7 @@ const computeSumOfSquares = (
     z: number,
 ): SumOfSquares =>
     realPopularities.reduce(
-        (sumOfSquares, popularity, index) => {
+        (sumOfSquares: SumOfSquares, popularity: Ranked<Popularity>, index: number): SumOfSquares => {
             const rankedUnpopularity: Ranked<Unpopularity> = rankedUnpopularities[ index ]
             const ourRank = rankedUnpopularity.rank
             const rank = popularity.rank

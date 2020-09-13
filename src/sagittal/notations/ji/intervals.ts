@@ -1,4 +1,4 @@
-import { Cents } from "../../../general"
+import { Apotome, Cents, Ed } from "../../../general"
 import { APOTOME_CENTS } from "../../constants"
 import { LEVEL_EDAS } from "./levelEdas"
 import { LEVELS } from "./levels"
@@ -11,7 +11,7 @@ const HIGHINA: Highina = 1 / 47 * APOTOME_CENTS as Highina    // 2.41882991613
 const MEDINA: Medina = 1 / 21 * APOTOME_CENTS as Medina       // 5.41357171705
 
 const INA_SIZES: Record<Level, Cents> = LEVEL_EDAS.reduce(
-    (levelEdaStepSizes, levelEda, index) =>
+    (levelEdaStepSizes: Record<Level, Cents>, levelEda: Ed<Apotome>, index: number): Record<Level, Cents> =>
         ({
             ...levelEdaStepSizes,
             [ LEVELS[ index ] ]: APOTOME_CENTS / levelEda,

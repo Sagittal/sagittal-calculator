@@ -1,5 +1,5 @@
 import { BLANK, Cents, formatNumber, Formatted, indexOfFinalElement, Multiplier } from "../../../../../general"
-import { Ina, LEVELS } from "../../../../../sagittal"
+import { Ina, Level, LEVELS } from "../../../../../sagittal"
 import { EventAnalysis, HistoryAnalysis } from "../../../analyzeHistory"
 
 const extractLevelDistances = (
@@ -7,8 +7,8 @@ const extractLevelDistances = (
 ): Array<Formatted<Multiplier<Ina> | Cents>> => {
     const events = historyAnalysis.events
 
-    return LEVELS.slice(0, indexOfFinalElement(LEVELS)).map(level => {
-        const previousEventIndex = events.findIndex(event => event.level === level)
+    return LEVELS.slice(0, indexOfFinalElement(LEVELS)).map((level: Level): Formatted<Multiplier<Ina> | Cents> => {
+        const previousEventIndex = events.findIndex((event: EventAnalysis): boolean => event.level === level)
         if (previousEventIndex === -1) {
             return BLANK as Formatted<Multiplier<Ina> | Cents>
         }

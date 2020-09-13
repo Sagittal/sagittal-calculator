@@ -1,8 +1,8 @@
 import { sort } from "../../../../general"
-import { Metric } from "../../bestMetric"
+import { Metric, MetricName } from "../../bestMetric"
 import { bestMetrics } from "../../globals"
 
-const computeSortedBestMetrics = (): Record<string, Metric> => {
+const computeSortedBestMetrics = (): Record<MetricName, Metric> => {
     const bestMetriesEntries = Array.from(bestMetrics.entries())
     const bestMetricsEntriesSortedBySumOfSquares = sort(
         bestMetriesEntries,
@@ -10,7 +10,10 @@ const computeSortedBestMetrics = (): Record<string, Metric> => {
     )
 
     return bestMetricsEntriesSortedBySumOfSquares.reduce(
-        (bestMetricsWithKeysSortedBySumOfSquares, [metricName, metric]) => {
+        (
+            bestMetricsWithKeysSortedBySumOfSquares: Record<MetricName, Metric>,
+            [metricName, metric]: [MetricName, Metric],
+        ): Record<MetricName, Metric> => {
             return {
                 ...bestMetricsWithKeysSortedBySumOfSquares,
                 [ metricName ]: metric,

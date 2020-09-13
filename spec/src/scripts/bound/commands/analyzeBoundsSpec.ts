@@ -3,8 +3,8 @@ import { Io } from "../../../../../src/general"
 import { onlyRunInCi } from "../../../../helpers/onlyRunInCi"
 import { runCommandAndGetConsoleOutput } from "../../../../helpers/src/scripts/runCommand"
 
-describe("analyze-bounds", () => {
-    it("returns the same output for both the terminal and the image as the snapshot", () => {
+describe("analyze-bounds", (): void => {
+    it("returns the same output for both the terminal and the image as the snapshot", (): void => {
         onlyRunInCi()
 
         const actual = runCommandAndGetConsoleOutput("npm run analyze-bounds" as Io)

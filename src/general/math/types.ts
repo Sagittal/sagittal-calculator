@@ -23,7 +23,7 @@ type Power<T extends number = number> = number & { _PowerBrand: "Power", _PowerO
 type Max<T extends number = number> = T & { _MaxBrand: "Max" }
 type Min<T extends number = number> = T & { _MinBrand: "Min" }
 type Abs<T extends number = number> = T & { _AbsBrand: "Abs" }
-type Average<T extends number = number> = T & { _AverageBrand: "Average" }
+type Avg<T extends number = number> = T & { _AverageBrand: "Avg" }
 type Approx<T extends number = number> = T & { _ApproxBrand: "Approx" }
 
 type Sopfr<T extends NumericTypeParameters & { irrational?: false } = { irrational: false }> =
@@ -243,7 +243,7 @@ export {
     Roughness,
     Max,
     Min,
-    Average,
+    Avg,
     Abs,
     NumericTypeParameters,
     Direction,

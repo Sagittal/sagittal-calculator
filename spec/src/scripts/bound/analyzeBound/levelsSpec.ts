@@ -8,9 +8,9 @@ import {
 import { EventAnalysis, HistoryAnalysis } from "../../../../../src/scripts/bound/analyzeHistory"
 import { eventAnalysisFixture, historyAnalysisFixture } from "../../../../helpers/src/scripts/bound/fixtures"
 
-describe("updateLevelAnalysis", () => {
-    describe("levelsBestHistoryRanks", () => {
-        it("initializes a rank at a level when it doesn't exist yet", () => {
+describe("updateLevelAnalysis", (): void => {
+    describe("levelsBestHistoryRanks", (): void => {
+        it("initializes a rank at a level when it doesn't exist yet", (): void => {
             const bestPossibleHistory = {
                 ...historyAnalysisFixture,
                 events: [
@@ -28,7 +28,7 @@ describe("updateLevelAnalysis", () => {
             expect((levelsBestHistoryRanks[ Level.MEDIUM ] as { [ index: number ]: number })[ 0 ]).toBe(1)
         })
 
-        it("increments ranks at levels when they exist", () => {
+        it("increments ranks at levels when they exist", (): void => {
             const bestPossibleHistory: HistoryAnalysis = {
                 ...historyAnalysisFixture,
                 events: [
@@ -50,8 +50,8 @@ describe("updateLevelAnalysis", () => {
         })
     })
 
-    describe("levelsBestCumulativeHistoryRanks", () => {
-        it("increments ranks at levels", () => {
+    describe("levelsBestCumulativeHistoryRanks", (): void => {
+        it("increments ranks at levels", (): void => {
             const bestPossibleHistory = {
                 ...historyAnalysisFixture,
                 events: [

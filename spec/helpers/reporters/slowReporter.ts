@@ -7,11 +7,11 @@ const specTimes: SpecTime[] = []
 let specStartedTime = 0 as Ms
 
 const slowReporter: jasmine.CustomReporter = {
-    specStarted() {
+    specStarted(): void {
         specStartedTime = now()
     },
 
-    specDone(actual: jasmine.CustomReporterResult) {
+    specDone(actual: jasmine.CustomReporterResult): void {
         const time = round(difference(now(), specStartedTime))
         const description = actual.fullName.length > MAX_TEST_DESCRIPTION_LENGTH ?
             actual.fullName.slice(0, MAX_TEST_DESCRIPTION_LENGTH) + "…" :
@@ -23,9 +23,9 @@ const slowReporter: jasmine.CustomReporter = {
         }
     },
 
-    jasmineDone() {
+    jasmineDone(): void {
         const slowestSpecs = sort(specTimes, { by: "time", descending: true })
-            .filter(specTime => specTime.time > WARN_THRESHOLD_MS)
+            .filter((specTime: SpecTime): boolean => specTime.time > WARN_THRESHOLD_MS)
             .slice(0, COUNT_SLOW_SPECS_TO_SUMMARIZE)
 
         const slowestSpecCount = count(slowestSpecs)

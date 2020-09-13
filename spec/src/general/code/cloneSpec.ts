@@ -1,7 +1,7 @@
 import { deepClone } from "../../../../src/general/code"
 
-describe("deepClone", () => {
-    it("returns a clone of the object which when changed will not change the source object", () => {
+describe("deepClone", (): void => {
+    it("returns a clone of the object which when changed will not change the source object", (): void => {
         const object = [
             { a: 1 },
         ]
@@ -12,7 +12,7 @@ describe("deepClone", () => {
         expect(object[ 0 ].a).toBe(1)
     })
 
-    it("works even on undefined", () => {
+    it("works even on undefined", (): void => {
         const object = undefined
 
         const actual = deepClone(object)

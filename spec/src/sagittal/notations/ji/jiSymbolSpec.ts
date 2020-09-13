@@ -4,8 +4,8 @@ import { SymbolUnicode } from "../../../../../src/sagittal/io"
 import { getJiSymbol, JiSymbol, Level, Mina } from "../../../../../src/sagittal/notations/ji"
 import { SymbolSubset } from "../../../../../src/sagittal/notations/types"
 
-describe("getJiSymbol", () => {
-    it("given a symbol's ID, returns the full symbol", () => {
+describe("getJiSymbol", (): void => {
+    it("given a symbol's ID, returns the full symbol", (): void => {
         const jiSymbolId = 55 as Id<JiSymbol>
 
         const actual = getJiSymbol(jiSymbolId)

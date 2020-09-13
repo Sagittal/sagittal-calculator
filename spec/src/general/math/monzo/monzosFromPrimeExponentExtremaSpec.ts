@@ -1,7 +1,7 @@
 import { computeMonzosFromPrimeExponentExtremas, Exponent, Extrema, Integer, Prime } from "../../../../../src/general"
 
-describe("computeMonzosFromPrimeExponentExtremas", () => {
-    it("returns the monzos that are possible given the corresponding prime exponent extremas", () => {
+describe("computeMonzosFromPrimeExponentExtremas", (): void => {
+    it("returns the monzos that are possible given the corresponding prime exponent extremas", (): void => {
         const primeExponentExtremas = [
             [-1, 1],
             [-2, -1],
@@ -34,7 +34,7 @@ describe("computeMonzosFromPrimeExponentExtremas", () => {
         expect(actual).toEqual(expected)
     })
 
-    it("trims monzos as necessary", () => {
+    it("trims monzos as necessary", (): void => {
         const primeExponentExtremas = [
             [1, 1],
             [-1, 1],

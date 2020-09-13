@@ -12,7 +12,7 @@ const computeSumOfSquaresAndMaybeUpdateBestMetric = (
 ): Promise<void> => {
     const { indentation, sumsOfSquares, index, onlyWinners, spreadDynamicParameters, metricName } = options
 
-    return doOnNextEventLoop(() => {
+    return doOnNextEventLoop((): void => {
         const { submetrics, samplePoint } = sample
 
         let sumOfSquares

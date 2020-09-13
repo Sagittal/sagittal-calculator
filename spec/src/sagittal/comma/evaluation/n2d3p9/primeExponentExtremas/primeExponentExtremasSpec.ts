@@ -3,8 +3,8 @@ import { N2D3P9 } from "../../../../../../../src/sagittal/comma/evaluation/n2d3p
 import { computePrimeExponentExtremasGivenMaxN2D3P9 } from "../../../../../../../src/sagittal/comma/evaluation/n2d3p9/primeExponentExtremas"
 import { onlyRunInCi } from "../../../../../../helpers/onlyRunInCi"
 
-describe("computePrimeExponentExtremasGivenMaxN2D3P9", () => {
-    it("works for 0", () => {
+describe("computePrimeExponentExtremasGivenMaxN2D3P9", (): void => {
+    it("works for 0", (): void => {
         const maxN2D3P9 = 0 as Max<N2D3P9>
 
         const actual = computePrimeExponentExtremasGivenMaxN2D3P9(maxN2D3P9)
@@ -16,7 +16,7 @@ describe("computePrimeExponentExtremasGivenMaxN2D3P9", () => {
         expect(actual).toEqual(expected)
     })
 
-    it("works for 1", () => {
+    it("works for 1", (): void => {
         const maxN2D3P9 = 1 as Max<N2D3P9>
 
         const actual = computePrimeExponentExtremasGivenMaxN2D3P9(maxN2D3P9)
@@ -28,7 +28,7 @@ describe("computePrimeExponentExtremasGivenMaxN2D3P9", () => {
         expect(actual).toEqual(expected)
     })
 
-    it("works for 10", () => {
+    it("works for 10", (): void => {
         const maxN2D3P9 = 10 as Max<N2D3P9>
 
         const actual = computePrimeExponentExtremasGivenMaxN2D3P9(maxN2D3P9)
@@ -44,7 +44,7 @@ describe("computePrimeExponentExtremasGivenMaxN2D3P9", () => {
         expect(actual).toEqual(expected)
     })
 
-    it("works for 136, verifying the hardcoded table we first developed on the forum", () => {
+    it("works for 136, verifying the hardcoded table we first developed on the forum", (): void => {
         onlyRunInCi()
 
         const maxN2D3P9 = 136 as Max<N2D3P9>

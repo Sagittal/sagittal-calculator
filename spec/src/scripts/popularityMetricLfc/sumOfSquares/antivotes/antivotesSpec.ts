@@ -6,8 +6,8 @@ import { ANTIVOTES_PRECISION } from "../../../../../../src/scripts/popularityMet
 import { computeSubmetricAntivotes } from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares/antivotes/submetricAntivotes"
 import { Antivotes } from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares/types"
 
-describe("computeAntivotes", () => {
-    it("when k = 1 (default), and two 2,3-free ratios have the same sopfr, but one has its primes all lopsided on one side, they still get ranked the same", () => {
+describe("computeAntivotes", (): void => {
+    it("when k = 1 (default), and two 2,3-free ratios have the same sopfr, but one has its primes all lopsided on one side, they still get ranked the same", (): void => {
         const balanced23FreeClass = { ratio: [11, 7] } as TwoThreeFreeClass
         const lopsided23FreeClass = { ratio: [77, 1] } as TwoThreeFreeClass
         const submetrics: Combination<Submetric> = [
@@ -23,7 +23,7 @@ describe("computeAntivotes", () => {
         expect(balancedResult).toBeCloseToTyped(lopsidedResult, ANTIVOTES_PRECISION)
     })
 
-    it("when k < 1, two 2,3-free ratios have the same sopfr, but one has its primes all lopsided on one side, it gets ranked worse", () => {
+    it("when k < 1, two 2,3-free ratios have the same sopfr, but one has its primes all lopsided on one side, it gets ranked worse", (): void => {
         const balanced23FreeClass = { ratio: [11, 7] } as TwoThreeFreeClass
         const lopsided23FreeClass = { ratio: [77, 1] } as TwoThreeFreeClass
         const submetrics: Combination<Submetric> = [
@@ -39,7 +39,7 @@ describe("computeAntivotes", () => {
         expect(balancedResult).toBeLessThan(lopsidedResult)
     })
 
-    it("applies weights to each submetric", () => {
+    it("applies weights to each submetric", (): void => {
         const twoThreeFreeClass = { ratio: [77, 1] } as TwoThreeFreeClass
         const submetrics = [
             {
@@ -60,7 +60,7 @@ describe("computeAntivotes", () => {
         expect(actual).toBeCloseToTyped(expected, ANTIVOTES_PRECISION)
     })
 
-    it("should not return NaN", () => {
+    it("should not return NaN", (): void => {
         const submetrics = [
             {
                 [ Parameter.SUM ]: true,
@@ -79,7 +79,7 @@ describe("computeAntivotes", () => {
         expect(actual).not.toBeNaN()
     })
 
-    it("antivotes precision should round results to billionths", () => {
+    it("antivotes precision should round results to billionths", (): void => {
         const submetrics = [
             {
                 [ Parameter.SUM ]: true,

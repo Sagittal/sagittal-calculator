@@ -2,8 +2,8 @@ import { Io } from "../../../../../src/general/io"
 import { onlyRunInCi } from "../../../../helpers/onlyRunInCi"
 import { runCommandAndGetConsoleOutput } from "../../../../helpers/src/scripts/runCommand"
 
-describe("find-commas", () => {
-    it("finds commas, given the finding options", () => {
+describe("find-commas", (): void => {
+    it("finds commas, given the finding options", (): void => {
         onlyRunInCi()
 
         const command = `                   \
@@ -37,7 +37,7 @@ describe("find-commas", () => {
         expect(actual).toEqual(expected)
     })
 
-    it("can sort the resulting list", () => {
+    it("can sort the resulting list", (): void => {
         onlyRunInCi()
 
         const command = "npm run find-commas -- --min-cents 50 --max-cents 50.31 --sort-by apotomeSlope" as Io
@@ -63,7 +63,7 @@ describe("find-commas", () => {
         expect(actual).toEqual(expected)
     })
 
-    it("can set the format of the comma names", () => {
+    it("can set the format of the comma names", (): void => {
         onlyRunInCi()
 
         const command = `npm run find-commas -- --min-cents 50 --max-cents 50.31 --undirected --factored --unabbreviated` as Io

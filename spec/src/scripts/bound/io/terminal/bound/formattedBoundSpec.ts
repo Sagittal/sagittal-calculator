@@ -5,8 +5,8 @@ import { EventAnalysis } from "../../../../../../../src/scripts/bound/analyzeHis
 import { formatBound } from "../../../../../../../src/scripts/bound/io"
 import { boundAnalysisFixture, boundFixture } from "../../../../../../helpers/src/scripts/bound/fixtures"
 
-describe("computeFormattedBound", () => {
-    it("returns a string which is a multi-line, properly indented rendition of the bound analysis, as well as identifying information for the bound", () => {
+describe("computeFormattedBound", (): void => {
+    it("returns a string which is a multi-line, properly indented rendition of the bound analysis, as well as identifying information for the bound", (): void => {
         const bound = {
             ...boundFixture,
             cents: 5.44763529181809 as Cents,

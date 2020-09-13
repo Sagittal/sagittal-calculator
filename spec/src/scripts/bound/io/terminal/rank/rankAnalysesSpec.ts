@@ -1,18 +1,22 @@
 // tslint:disable max-line-length
 
-import { Count, Rank } from "../../../../../../../src/general"
-import { JI_BOUNDS } from "../../../../../../../src/sagittal/notations/ji"
+import { Count, Id, Rank } from "../../../../../../../src/general"
+import { Bound, JI_BOUNDS } from "../../../../../../../src/sagittal/notations/ji"
 import { analyzeBound, rankBoundIndices, rankCounts } from "../../../../../../../src/scripts/bound/analyzeBound"
 import { EventAnalysis } from "../../../../../../../src/scripts/bound/analyzeHistory"
 import { computeHistories } from "../../../../../../../src/scripts/bound/histories"
 import { formatRankAnalyses } from "../../../../../../../src/scripts/bound/io/terminal/rank"
 
-describe("formatRankAnalyses", () => {
-    it("gives the correct answer", () => {
+describe("formatRankAnalyses", (): void => {
+    it("gives the correct answer", (): void => {
         // reset and then compute and analyze all the bounds as you would when running the main script in summary mode
-        rankCounts.forEach((_, index) => rankCounts[ index ] = 0 as Count<Rank<EventAnalysis>>)
-        rankBoundIndices.forEach((_, index) => rankBoundIndices[ index ] = [])
-        JI_BOUNDS.map(bound => {
+        rankCounts.forEach((_: Count<Rank<EventAnalysis>>, index: number): void => {
+            rankCounts[ index ] = 0 as Count<Rank<EventAnalysis>>
+        })
+        rankBoundIndices.forEach((_: Array<Id<Bound>>, index: number): void => {
+            rankBoundIndices[ index ] = []
+        })
+        JI_BOUNDS.map((bound: Bound): void => {
             const histories = computeHistories(bound)
             analyzeBound(histories, bound)
         })

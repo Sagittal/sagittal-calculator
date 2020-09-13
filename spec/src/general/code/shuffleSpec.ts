@@ -1,8 +1,8 @@
 import { deepClone } from "../../../../src/general"
 import { shuffle } from "../../../../src/general/code"
 
-describe("shuffle", () => {
-    it("randomly changes the order of the elemnets in the array", () => {
+describe("shuffle", (): void => {
+    it("randomly changes the order of the elemnets in the array", (): void => {
         const array = [...Array(50).keys()]
         const originalArray = deepClone(array)
 
@@ -10,7 +10,7 @@ describe("shuffle", () => {
 
         expect(array).not.toEqual(originalArray)
         expect(array.length).toBe(originalArray.length)
-        originalArray.forEach((originalElement: number) => {
+        originalArray.forEach((originalElement: number): void => {
             expect(array).toContain(originalElement)
         })
     })

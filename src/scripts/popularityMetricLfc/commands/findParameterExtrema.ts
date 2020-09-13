@@ -12,7 +12,7 @@ import {
     stringify,
 } from "../../../general"
 import { Metric } from "../bestMetric"
-import { Parameter, ParameterValue } from "../sumOfSquares"
+import { Parameter, ParameterValue, Submetric } from "../sumOfSquares"
 import { applySharedPopularityMetricLfcCommandSetup, load } from "./shared"
 
 applySharedPopularityMetricLfcCommandSetup({ defaultLogTargets: [LogTarget.ALL] })
@@ -21,7 +21,7 @@ const chunkCountResults = load("metrics" as Filename) as Record<string, Metric>
 
 const parameterExtrema = {} as Record<string, Extrema<ParameterValue, "Open">>
 
-Object.values(Parameter).forEach(parameter => {
+Object.values(Parameter).forEach((parameter: Parameter): void => {
     if (parameter.includes("Base")) {
         return
     }
@@ -29,9 +29,9 @@ Object.values(Parameter).forEach(parameter => {
     let parameterMin: Maybe<Min<ParameterValue>> = undefined
     let parameterMax: Maybe<Max<ParameterValue>> = undefined
 
-    Object.values(chunkCountResults).forEach(chunkCountResult => {
-        chunkCountResult.submetrics.forEach(submetric => {
-            Object.entries(submetric).forEach(([parameterName, parameterValue]) => {
+    Object.values(chunkCountResults).forEach((chunkCountResult: Metric): void => {
+        chunkCountResult.submetrics.forEach((submetric: Submetric): void => {
+            Object.entries(submetric).forEach(([parameterName, parameterValue]: [string, unknown]): void => {
                 if (parameterName === parameter && isNumber(parameterValue)) {
                     if (isUndefined(parameterMin) || parameterValue < parameterMin) {
                         parameterMin = parameterValue as Min<ParameterValue>

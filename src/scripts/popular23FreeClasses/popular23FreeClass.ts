@@ -3,14 +3,25 @@ import {
     equalJiPitches,
     format23FreeClass,
     formatNumber,
+    Formatted,
+    Id,
     Io,
     ioSettings,
     join,
+    Popularity,
     SPACE,
     TwoThreeFreeClass,
     Votes,
 } from "../../general"
-import { formatSymbol, getJiSymbol, JI_SYMBOL_SUBSETS, N2D3P9 } from "../../sagittal"
+import {
+    formatSymbol,
+    getJiSymbol,
+    JiSymbol,
+    JI_SYMBOL_SUBSETS,
+    N2D3P9,
+    SymbolLongAscii,
+    SymbolSmiley,
+} from "../../sagittal"
 import { computeExactlyNotatingJiSymbolIds } from "./exactlyNotatingJiSymbolIds"
 import { Popular23FreeClass } from "./types"
 
@@ -20,18 +31,20 @@ const computePopular23FreeClass = (
     const formattedN2D3P9 = formatNumber(n2d3p9)
 
     const formatted23FreeClass = format23FreeClass(twoThreeFreeClass)
-    const popularity = COMMA_POPULARITIES.find(popularity => {
+    const popularity = COMMA_POPULARITIES.find((popularity: Popularity): boolean => {
         return equalJiPitches(popularity.twoThreeFreeClass, twoThreeFreeClass)
     })
     const popularityRank = popularity?.rank || "-" as Io
     const votes = popularity?.votes || 0 as Votes
 
     const exactlyNotatingJiSymbolIds = computeExactlyNotatingJiSymbolIds(twoThreeFreeClass)
-    const formattedExactlyNotatingJiSymbols = join(exactlyNotatingJiSymbolIds.map(symbolId => {
-        return formatSymbol(symbolId, ioSettings)
-    }), SPACE)
+    const formattedExactlyNotatingJiSymbols = join(exactlyNotatingJiSymbolIds.map(
+        (symbolId: Id<JiSymbol>): SymbolSmiley | Formatted<SymbolLongAscii> => {
+            return formatSymbol(symbolId, ioSettings)
+        },
+    ), SPACE)
 
-    const symbolSubsets = exactlyNotatingJiSymbolIds.map(symbolId => {
+    const symbolSubsets = exactlyNotatingJiSymbolIds.map((symbolId: Id<JiSymbol>): number => {
         return JI_SYMBOL_SUBSETS.indexOf(getJiSymbol(symbolId).smallestJiSymbolSubset)
     }).join(", ") as Io
 

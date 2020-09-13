@@ -7,7 +7,7 @@ import { DynamicParameter } from "./types"
 const computeDynamicParameters = (scope: Scope): DynamicParameter[] => {
     let dynamicParameters: DynamicParameter[] = []
 
-    scope.forEach((submetricScope: SubmetricScope, submetricIndex: number) => {
+    scope.forEach((submetricScope: SubmetricScope, submetricIndex: number): void => {
         const submetricDynamicParameters: DynamicParameter[] =
             computeSubmetricDynamicParameters(submetricScope, submetricIndex as Index<Submetric>)
 

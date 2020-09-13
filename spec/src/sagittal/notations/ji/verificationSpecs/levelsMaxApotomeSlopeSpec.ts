@@ -3,19 +3,24 @@ import { getSagittalComma } from "../../../../../../src/sagittal"
 import { ApotomeSlope, computeApotomeSlope } from "../../../../../../src/sagittal/comma/evaluation"
 import { getJiSymbol, JiSymbol, Level, LEVELS_SYMBOL_IDS } from "../../../../../../src/sagittal/notations/ji"
 
-describe("max absolute apotome slope per level", () => {
-    it("increases a bit at each level", () => {
+describe("max absolute apotome slope per level", (): void => {
+    it("increases a bit at each level", (): void => {
         const actual = (Object.entries(LEVELS_SYMBOL_IDS) as Array<[Level, Array<Id<JiSymbol>>]>)
             .map(([level, levelSymbolIds]: [Level, Array<Id<JiSymbol>>]): Partial<Record<Level, ApotomeSlope>> => {
                 const levelMaxAbsoluteApotomeSlope: Max<Abs<ApotomeSlope>> = levelSymbolIds.reduce(
-                    (levelMaxAbsoluteApotomeSlope, levelSymbolId) => {
+                    (
+                        levelMaxAbsoluteApotomeSlope: Max<Abs<ApotomeSlope>>,
+                        levelSymbolId: Id<JiSymbol>,
+                    ): Max<Abs<ApotomeSlope>> => {
                         const levelSymbol = getJiSymbol(levelSymbolId)
                         const primaryComma = getSagittalComma(levelSymbol.primaryCommaId)
                         const apotomeSlope = abs(computeApotomeSlope(primaryComma))
 
-                        return apotomeSlope > levelMaxAbsoluteApotomeSlope ? apotomeSlope : levelMaxAbsoluteApotomeSlope
+                        return apotomeSlope > levelMaxAbsoluteApotomeSlope ?
+                            apotomeSlope as Max<Abs<ApotomeSlope>> :
+                            levelMaxAbsoluteApotomeSlope as Max<Abs<ApotomeSlope>>
                     },
-                    0,
+                    0 as Max<Abs<ApotomeSlope>>,
                 ) as Max<Abs<ApotomeSlope>>
 
                 return { [ level ]: levelMaxAbsoluteApotomeSlope }

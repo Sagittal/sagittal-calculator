@@ -4,8 +4,8 @@ import { scopesToSearch, solverStatus } from "../../../../../../src/scripts/popu
 import { Chunk, searchScopes } from "../../../../../../src/scripts/popularityMetricLfc/solver"
 import { Parameter, ParameterValue } from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
 
-describe("search scopes", () => {
-    it("searches all remaining scopes at the current chunk count and then, given scopes are finished populated by then, searching finishes too", async () => {
+describe("search scopes", (): void => {
+    it("searches all remaining scopes at the current chunk count and then, given scopes are finished populated by then, searching finishes too", async (): Promise<void> => {
         const scopeOne = [
             {
                 [ Parameter.SUM ]: true,
@@ -25,7 +25,7 @@ describe("search scopes", () => {
         scopesToSearch.push(scopeTwo)
         scopesToSearch.push(scopeThree)
 
-        setTimeout(() => {
+        setTimeout((): void => {
             solverStatus.finishedPopulating = true
         }, 0)
 

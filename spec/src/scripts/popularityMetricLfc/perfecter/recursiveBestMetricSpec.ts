@@ -6,8 +6,8 @@ import * as nextLocalMin from "../../../../../src/scripts/popularityMetricLfc/pe
 import { LocalMin, MetricTag } from "../../../../../src/scripts/popularityMetricLfc/perfecter/types"
 import { Parameter, ParameterValue, Submetric } from "../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
 
-describe("searchScopeAndMaybeUpdateBestMetric", () => {
-    it("searches each local min", async () => {
+describe("searchScopeAndMaybeUpdateBestMetric", (): void => {
+    it("searches each local min", async (): Promise<void> => {
         const scope = [
             {},
             {

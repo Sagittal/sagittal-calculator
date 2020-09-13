@@ -4,8 +4,8 @@ import { EventAnalysis } from "../../../../../src/scripts/bound/analyzeHistory"
 import { computeScore } from "../../../../../src/scripts/bound/analyzeHistory/score"
 import { eventAnalysisFixture } from "../../../../helpers/src/scripts/bound/fixtures"
 
-describe("computeScore", () => {
-    it("scores histories with worse ranks worse", () => {
+describe("computeScore", (): void => {
+    it("scores histories with worse ranks worse", (): void => {
         const expectedWorseScoreHistories: EventAnalysis[] = [
             { ...eventAnalysisFixture, level: Level.MEDIUM, rank: 2 as Integer & Rank<EventAnalysis> },
         ]
@@ -19,7 +19,7 @@ describe("computeScore", () => {
         expect(expectedWorseResult).toBeGreaterThan(expectedBetterResult)
     })
 
-    it("if two histories have the same total ranks but one incurs a worse rank at an earlier level, it gets a lesser score", () => {
+    it("if two histories have the same total ranks but one incurs a worse rank at an earlier level, it gets a lesser score", (): void => {
         const expectedWorseScoreHistories = [
             { ...eventAnalysisFixture, level: Level.MEDIUM, rank: 2 as Integer & Rank<EventAnalysis> },
             { ...eventAnalysisFixture, level: Level.HIGH, rank: 1 as Integer & Rank<EventAnalysis> },
@@ -35,7 +35,7 @@ describe("computeScore", () => {
         expect(expectedWorseResult).toBeGreaterThan(expectedBetterResult)
     })
 
-    it("a history with the lowest event rank must get the lesser score, even in the most case leaning as much as possible in favor of otherwise", () => {
+    it("a history with the lowest event rank must get the lesser score, even in the most case leaning as much as possible in favor of otherwise", (): void => {
         const expectedWorseScoreHistories = [
             { ...eventAnalysisFixture, level: Level.MEDIUM, rank: 0 as Integer & Rank<EventAnalysis> },
             { ...eventAnalysisFixture, level: Level.HIGH, rank: 0 as Integer & Rank<EventAnalysis> },

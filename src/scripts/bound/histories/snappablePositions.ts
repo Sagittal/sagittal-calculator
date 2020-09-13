@@ -8,7 +8,7 @@ const computeSnappablePositions = (
     computeLevelSnappablePositions: (level: Level) => CentsPosition[],
 ): Record<Level, CentsPosition[]> =>
     LEVELS.reduce(
-        (snappablePositions, level) =>
+        (snappablePositions: Record<Level, CentsPosition[]>, level: Level): Record<Level, CentsPosition[]> =>
             ({
                 ...snappablePositions,
                 [ level ]: computeLevelSnappablePositions(level),

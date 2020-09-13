@@ -1,7 +1,7 @@
 import { formatTime, Ms } from "../../../../src/general"
 
-describe("formatTime", () => {
-    it("formats ms to hours", () => {
+describe("formatTime", (): void => {
+    it("formats ms to hours", (): void => {
         const ms = 205207663.470801 as Ms
 
         const actual = formatTime(ms)
@@ -10,7 +10,7 @@ describe("formatTime", () => {
         expect(actual).toEqual(expected)
     })
 
-    it("works for small times", () => {
+    it("works for small times", (): void => {
         const ms = 13801.802699999884 as Ms
 
         const actual = formatTime(ms)

@@ -2,7 +2,7 @@ import { Count, Io, LogTarget, saveLog } from "../../../../general"
 import { Scope } from "../../bestMetric"
 import { scopesToSearch, solverStatus } from "../../globals"
 
-const populateScope = (scope: Scope) => {
+const populateScope = (scope: Scope): void => {
     scopesToSearch.push(scope)
 
     solverStatus.populatedScopeCount = solverStatus.populatedScopeCount + 1 as Count<Scope>

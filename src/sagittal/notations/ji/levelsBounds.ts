@@ -3,10 +3,10 @@ import { LEVELS } from "./levels"
 import { Bound, Level } from "./types"
 
 const LEVELS_BOUNDS: Record<Level, Bound[]> = LEVELS.reduce(
-    (levelBounds, level) =>
+    (levelBounds: Record<Level, Bound[]>, level: Level): Record<Level, Bound[]> =>
         ({
             ...levelBounds,
-            [ level ]: JI_BOUNDS.filter(bound => bound.levels.includes(level)),
+            [ level ]: JI_BOUNDS.filter((bound: Bound): boolean => bound.levels.includes(level)),
         }),
     {} as Record<Level, Bound[]>,
 )

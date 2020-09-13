@@ -9,9 +9,12 @@ import {
     computeSubRatio,
     computeSuperPitch,
     Direction,
+    Exponent,
     FIVE_ROUGHNESS,
     FractionalPart,
+    Integer,
     Name,
+    Prime,
     PRIMES,
     Ratio,
     stringify,
@@ -20,15 +23,15 @@ import {
 } from "../../../general"
 import { computeIsCommaSized } from "./isCommaSized"
 import { computeSizeCategory } from "./sizeCategory"
-import { CommaNameRatio, SizeCategoryAbbreviation, SizeCategoryName } from "./types"
+import { CommaNameOptions, CommaNameRatio, SizeCategoryAbbreviation, SizeCategoryName } from "./types"
 
-const primeFactorize = (numeratorOrDenominator: FractionalPart) => {
+const primeFactorize = (numeratorOrDenominator: FractionalPart): string => {
     if (numeratorOrDenominator === 1) return "1"
 
     const monzo = computeMonzoFromInteger(numeratorOrDenominator)
     const factorizedTerms: string[] = []
 
-    monzo.forEach((primeExponent, primeExponentIndex) => {
+    monzo.forEach((primeExponent: Integer & Exponent<Prime>, primeExponentIndex: number): void => {
         if (primeExponent === 0) {
             return
         }
@@ -45,17 +48,17 @@ const primeFactorize = (numeratorOrDenominator: FractionalPart) => {
     return factorizedTerms.join(".")
 }
 
-const stringifyRatio = (ratio: Ratio, { factored }: { factored: boolean }) => {
+const stringifyRatio = (ratio: Ratio, { factored }: { factored: boolean }): string[] => {
     return factored ?
         ratio.map(primeFactorize) :
-        ratio.map((fractionalPart: FractionalPart) => fractionalPart.toString())
+        ratio.map((fractionalPart: FractionalPart): string => fractionalPart.toString())
 }
 
 // "Secor-Keenan systematic name" or "Sagittal name"
 
 const computeCommaName = (
     comma: Comma,
-    { directed = true, factored = false, abbreviated = true } = {},
+    { directed = true, factored = false, abbreviated = true }: CommaNameOptions = {},
 ): Name<Comma> => {
     if (!computeIsCommaSized(comma)) {
         throw new Error(`Comma ${stringify(comma)} is outside of comma-sized range and cannot be named.`)

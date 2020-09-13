@@ -3,14 +3,14 @@ import { ColorMethod, Count, Io, NEWLINE, Row, Table } from "../../../../../src/
 import { formatTableForTerminal } from "../../../../../src/general/io/table/tableForTerminal"
 import { Justification } from "../../../../../src/general/io/table/types"
 
-describe("formatTableForTerminal", () => {
+describe("formatTableForTerminal", (): void => {
     const table = [
         ["comma name", "limit", "2,3-free sopfr", "cents", "monzo", "ratio", "apotome slope"],
         ["11M", "11", "11", "45.45", "[0 0 1⟩", "33/32", "-4"],
         ["25/49M", "7", "24", "33.4", "[0 0⟩", "50/49", "-59.333"],
     ] as Table<Io>
 
-    it("makes each column such that each of its cells has the same width", () => {
+    it("makes each column such that each of its cells has the same width", (): void => {
         const actual = formatTableForTerminal(table)
 
         const expected =
@@ -20,7 +20,7 @@ describe("formatTableForTerminal", () => {
         expect(actual).toEqual(expected)
     })
 
-    it("can justify all columns to the right", () => {
+    it("can justify all columns to the right", (): void => {
         const actual = formatTableForTerminal(table, { justification: Justification.RIGHT })
 
         const expected =
@@ -30,7 +30,7 @@ describe("formatTableForTerminal", () => {
         expect(actual).toEqual(expected)
     })
 
-    it("can center columns", () => {
+    it("can center columns", (): void => {
         const actual = formatTableForTerminal(table, { justification: Justification.CENTER })
 
         const expected =
@@ -40,7 +40,7 @@ describe("formatTableForTerminal", () => {
         expect(actual).toEqual(expected)
     })
 
-    it("can justify each column individually", () => {
+    it("can justify each column individually", (): void => {
         const justification = [
             Justification.RIGHT,
             Justification.LEFT,
@@ -58,7 +58,7 @@ describe("formatTableForTerminal", () => {
         expect(actual).toEqual(expected)
     })
 
-    it("can apply colors to the rows individually", () => {
+    it("can apply colors to the rows individually", (): void => {
         const colors: ColorMethod[] = [
             "cyan",
             "blue",
@@ -74,7 +74,7 @@ describe("formatTableForTerminal", () => {
         expect(actual).toEqual(expected)
     })
 
-    it("can move the boundary between the header rows and the data rows", () => {
+    it("can move the boundary between the header rows and the data rows", (): void => {
         const table = [
             ["comma", "", "2,3-free", "", "", "", "apotome"],
             ["name", "limit", "sopfr", "cents", "monzo", "ratio", "slope"],
@@ -82,7 +82,7 @@ describe("formatTableForTerminal", () => {
             ["25/49M", "7", "24", "33.4", "[0 0⟩", "50/49", "-59.333"],
         ] as Table<Io>
 
-        const actual = formatTableForTerminal(table, { headerRowCount: 2 as Count<Row<{ header: true }>> })
+        const actual = formatTableForTerminal(table, { headerRowCount: 2 as Count<Row<{ of: Io, header: true }>> })
 
         const expected =
             "comma \t     \t2,3-free\t     \t       \t     \tapotome" + NEWLINE +

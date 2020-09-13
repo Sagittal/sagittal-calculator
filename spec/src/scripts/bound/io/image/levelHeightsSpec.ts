@@ -2,8 +2,8 @@ import { Basis, Cents, Multiplier, Px } from "../../../../../../src/general"
 import { Level } from "../../../../../../src/sagittal/notations/ji"
 import { computeLevelHeights } from "../../../../../../src/scripts/bound/io/image/levelHeights"
 
-describe("computeLevelHeights", () => {
-    it("gives the correct height for the tops of each level", () => {
+describe("computeLevelHeights", (): void => {
+    it("gives the correct height for the tops of each level", (): void => {
         const actual = computeLevelHeights(0 as Multiplier<Basis<Cents>>)
 
         expect(actual[ Level.MEDIUM ]).toBeCloseToTyped(410 as Px)
@@ -13,7 +13,7 @@ describe("computeLevelHeights", () => {
         expect(actual[ Level.INSANE ]).toBeCloseToTyped(10 as Px)
     })
 
-    it("gives the correct height for the centers of each level", () => {
+    it("gives the correct height for the centers of each level", (): void => {
         const actual = computeLevelHeights(0.5 as Multiplier<Basis<Cents>>)
 
         expect(actual[ Level.MEDIUM ]).toBeCloseToTyped(460 as Px)
@@ -23,7 +23,7 @@ describe("computeLevelHeights", () => {
         expect(actual[ Level.INSANE ]).toBeCloseToTyped(60 as Px)
     })
 
-    it("gives the correct height for the bottoms of each level", () => {
+    it("gives the correct height for the bottoms of each level", (): void => {
         const actual = computeLevelHeights(1 as Multiplier<Basis<Cents>>)
 
         expect(actual[ Level.MEDIUM ]).toBeCloseToTyped(510 as Px)

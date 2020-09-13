@@ -4,7 +4,7 @@ import { DynamicParameterScope } from "../types"
 import { computeEqualDivision } from "./equalDivision"
 import { DynamicParameterScopeOptions } from "./types"
 
-const countDefinedOption = (option: unknown) => isUndefined(option) ? 0 : 1
+const countDefinedOption = (option: unknown): number => isUndefined(option) ? 0 : 1
 
 const computeDynamicParameterScope = (options: DynamicParameterScopeOptions): DynamicParameterScope => {
     const { max, min, center: centerOption, window: windowOption } = options
@@ -15,7 +15,7 @@ const computeDynamicParameterScope = (options: DynamicParameterScopeOptions): Dy
         countDefinedOption(windowOption)
 
     if (definedOptionCount !== 2) {
-        const providedOptions = Object.entries(options).map(([k, v]) => `${k} ${v}`).join(", ")
+        const providedOptions = Object.entries(options).map(([k, v]: [string, unknown]): string => `${k} ${v}`).join(", ")
         throw new Error(`Exactly 2 options should be provided from min, max, center, and window in order to compute a dynamic parameter scope; ${definedOptionCount} provided (${providedOptions})`)
     }
 

@@ -1,8 +1,8 @@
 import { isNumber, stringify } from "../../../general"
 import { Parameter, Submetric } from "./types"
 
-const checkSubmetricsForInvalidParameterValueCombinations = (submetrics: Submetric[]) => {
-    submetrics.forEach((submetric: Submetric) => {
+const checkSubmetricsForInvalidParameterValueCombinations = (submetrics: Submetric[]): void => {
+    submetrics.forEach((submetric: Submetric): void => {
         const {
             [ Parameter.A_AS_LOGARITHM_BASE ]: aAsLogarithmBase,
             [ Parameter.J_AS_LOGARITHM_BASE ]: jAsLogarithmBase,

@@ -3,7 +3,7 @@ import { Direction, Integer, Numeric, RationalTypeParameters } from "../types"
 import { Monzo } from "./types"
 
 const computeIntegerFromMonzo = <T extends RationalTypeParameters & { direction: Direction }>(
-    monzo: Monzo<T>
+    monzo: Monzo<T>,
 ): Numeric<T> => {
     const ratio = computeRatioFromMonzo(monzo)
     const [numerator, denominator] = ratio

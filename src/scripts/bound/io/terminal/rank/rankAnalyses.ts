@@ -1,11 +1,12 @@
-import { Io } from "../../../../../general"
+import { Count, Io, Rank } from "../../../../../general"
 import { rankCounts } from "../../../analyzeBound"
+import { EventAnalysis } from "../../../analyzeHistory"
 import { formatRankAnalysis } from "./rankAnalysis"
 
 const formatRankAnalyses = (): Io => {
     const formattedRankAnalyses: Io[] = [] as Io[]
 
-    rankCounts.forEach((rankCount, rankIndex) => {
+    rankCounts.forEach((rankCount: Count<Rank<EventAnalysis>>, rankIndex: number): void => {
         if (!rankCount || rankCount === 0) {
             return
         }

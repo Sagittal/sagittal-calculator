@@ -14,7 +14,7 @@ import {
     solverStatus,
 } from "../../../../../src/scripts/popularityMetricLfc/globals"
 
-afterEach(() => {
+afterEach((): void => {
     cleanArray(scopesToSearch)
     cleanArray(memoizedSubmetricChunkCombinations)
     cleanArray(memoizedParameterChunkCombinations)

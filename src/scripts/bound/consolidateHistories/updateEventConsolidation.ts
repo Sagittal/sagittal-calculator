@@ -4,7 +4,7 @@ import { EventConsolidation, UpdateEventConsolidationOptions } from "./types"
 const updateEventConsolidation = (
     eventConsolidation: EventConsolidation,
     { nextEventAnalysis, historyAnalysis, eventAnalysis, bestPossibleHistory }: UpdateEventConsolidationOptions,
-) => {
+): void => {
     if (nextEventAnalysis && !eventConsolidation.nextEvents.includes(nextEventAnalysis.name)) {
         eventConsolidation.nextEvents.push(nextEventAnalysis.name)
     }

@@ -2,8 +2,8 @@
 import { Io, ioSettings, Monzo, NEWLINE } from "../../../../../src/general"
 import { computeNotatingCommasTable } from "../../../../../src/scripts/jiPitch/io"
 
-describe("computeNotatingCommasTable", () => {
-    it("can format the symbols for the terminal", () => {
+describe("computeNotatingCommasTable", (): void => {
+    it("can format the symbols for the terminal", (): void => {
         const monzo = [-3, -1, 2] as Monzo
 
         const actual = computeNotatingCommasTable({ monzo })
@@ -17,7 +17,7 @@ describe("computeNotatingCommasTable", () => {
         expect(actual).toBe(expected)
     })
 
-    it("can format the symbols for the forum", () => {
+    it("can format the symbols for the forum", (): void => {
         const monzo = [-3, -1, 2] as Monzo
 
         ioSettings.forForum = true

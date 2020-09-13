@@ -3,8 +3,8 @@ import { Bound, Level } from "../../../../../src/sagittal/notations/ji"
 import { computeHistories, EventType } from "../../../../../src/scripts/bound/histories"
 import { boundFixture } from "../../../../helpers/src/scripts/bound/fixtures"
 
-describe("computeHistories", () => {
-    it("given a bound, returns an array of all of its possible histories", () => {
+describe("computeHistories", (): void => {
+    it("given a bound, returns an array of all of its possible histories", (): void => {
         const bound: Bound = {
             ...boundFixture,
             cents: 9.5 as Cents,
@@ -1058,7 +1058,7 @@ describe("computeHistories", () => {
         expect(actual).toEqual(expected)
     })
 
-    it("works for the final bound", () => {
+    it("works for the final bound", (): void => {
         const bound: Bound = {
             ...boundFixture,
             cents: 68.5725082211804 as Cents,

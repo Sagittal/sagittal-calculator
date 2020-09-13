@@ -5,7 +5,7 @@ import { computeSumsOfSquaresAndMaybeUpdateBestMetric } from "../../../../../src
 import { bestMetrics } from "../../../../../src/scripts/popularityMetricLfc/globals"
 import { Parameter, ParameterValue, Submetric } from "../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
 
-describe("computeSumsOfSquaresAndMaybeUpdateBestMetric", () => {
+describe("computeSumsOfSquaresAndMaybeUpdateBestMetric", (): void => {
     const metricName = "{aAsCoefficient,sum,w}" as MetricName
     const samples = [
         {
@@ -42,11 +42,11 @@ describe("computeSumsOfSquaresAndMaybeUpdateBestMetric", () => {
         },
     ]
 
-    beforeEach(() => {
+    beforeEach((): void => {
         bestMetrics.clear()
     })
 
-    it("finds the sums of squares for each sample", async () => {
+    it("finds the sums of squares for each sample", async (): Promise<void> => {
         const actual = await computeSumsOfSquaresAndMaybeUpdateBestMetric(samples, { metricName })
 
         const expected = [
@@ -62,7 +62,7 @@ describe("computeSumsOfSquaresAndMaybeUpdateBestMetric", () => {
         expect(actual).toEqual(expected)
     })
 
-    it("sets the best metric when it beats it", async () => {
+    it("sets the best metric when it beats it", async (): Promise<void> => {
         bestMetrics.set(
             metricName,
             {
@@ -90,7 +90,7 @@ describe("computeSumsOfSquaresAndMaybeUpdateBestMetric", () => {
         expect(bestMetrics.get(metricName)).toEqual(expected)
     })
 
-    it("does not set the best metric when it does not beat it", async () => {
+    it("does not set the best metric when it does not beat it", async (): Promise<void> => {
         bestMetrics.set(
             metricName,
             {

@@ -4,8 +4,8 @@ import { EventType, HistoricalEvent, History } from "../../../../../src/scripts/
 import { computeExtendedLevelHistories } from "../../../../../src/scripts/bound/histories/extendedLevelHistories"
 import { boundFixture } from "../../../../helpers/src/scripts/bound/fixtures"
 
-describe("computeExtendedLevelHistories", () => {
-    it("given the histories for a bound up to the current level, returns the histories extended for all possible events at this level", () => {
+describe("computeExtendedLevelHistories", (): void => {
+    it("given the histories for a bound up to the current level, returns the histories extended for all possible events at this level", (): void => {
         const firstHistoryPriorEvent: HistoricalEvent = {
             level: Level.MEDIUM,
             type: EventType.INA,

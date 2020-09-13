@@ -1,7 +1,7 @@
 import { computeIntegerFromMonzo, Integer, Monzo } from "../../../../../src/general/math"
 
-describe("computeIntegerFromMonzo", () => {
-    it("returns an integer if the monzo has all positive exponents", () => {
+describe("computeIntegerFromMonzo", (): void => {
+    it("returns an integer if the monzo has all positive exponents", (): void => {
         const monzo = [1, 4, 2, 3] as Monzo
 
         const actual = computeIntegerFromMonzo(monzo)

@@ -1,7 +1,7 @@
 import { ACCURACY_THRESHOLD, deepClone, RankStrategy } from "../../../../src/general"
 import { rank, Rank } from "../../../../src/general/code"
 
-describe("rank", () => {
+describe("rank", (): void => {
     const arrayOfObjects: Array<unknown> = [
         { value: 1, otherValue: 1 },
         { value: 4, otherValue: 3 },
@@ -10,7 +10,7 @@ describe("rank", () => {
         { value: 1, otherValue: 2 },
     ]
 
-    it("takes the existing array of objects, sorts and ranks it by the requested field, and adds a rank field; defaults to ranking by the value field and a competition strategy", () => {
+    it("takes the existing array of objects, sorts and ranks it by the requested field, and adds a rank field; defaults to ranking by the value field and a competition strategy", (): void => {
         const actual = rank(arrayOfObjects)
 
         const expected = [
@@ -23,7 +23,7 @@ describe("rank", () => {
         expect(actual).toEqual(expected)
     })
 
-    it("does not mutate the original array", () => {
+    it("does not mutate the original array", (): void => {
         const originalArrayOfObjects = deepClone(arrayOfObjects)
 
         rank(arrayOfObjects)
@@ -31,8 +31,8 @@ describe("rank", () => {
         expect(arrayOfObjects).toEqual(originalArrayOfObjects)
     })
 
-    describe("when the strategy is fractional", () => {
-        it("splits the ranks across ties", () => {
+    describe("when the strategy is fractional", (): void => {
+        it("splits the ranks across ties", (): void => {
             const actual = rank(arrayOfObjects, { by: "value", strategy: RankStrategy.FRACTIONAL })
 
             const expected = [
@@ -45,7 +45,7 @@ describe("rank", () => {
             expect(actual).toEqual(expected)
         })
 
-        it("another example", () => {
+        it("another example", (): void => {
             const actual = rank(arrayOfObjects, { by: "otherValue", strategy: RankStrategy.FRACTIONAL })
 
             const expected = [
@@ -59,8 +59,8 @@ describe("rank", () => {
         })
     })
 
-    describe("when the strategy is dense", () => {
-        it("it is like competition ranking, but does not skip ranks", () => {
+    describe("when the strategy is dense", (): void => {
+        it("it is like competition ranking, but does not skip ranks", (): void => {
             const actual = rank(arrayOfObjects, { strategy: RankStrategy.DENSE })
 
             const expected = [
@@ -74,8 +74,8 @@ describe("rank", () => {
         })
     })
 
-    describe("when the strategy is ordinal", () => {
-        it("ties do not receive the same rank; the rank must go up", () => {
+    describe("when the strategy is ordinal", (): void => {
+        it("ties do not receive the same rank; the rank must go up", (): void => {
             const actual = rank(arrayOfObjects, { strategy: RankStrategy.ORDINAL })
 
             const expected = [
@@ -89,7 +89,7 @@ describe("rank", () => {
         })
     })
 
-    it("supports precision when comparing", () => {
+    it("supports precision when comparing", (): void => {
         const arrayOfObjects: Array<unknown> = [
             { value: 1, otherValue: 1 },
             { value: 4, otherValue: 3 },

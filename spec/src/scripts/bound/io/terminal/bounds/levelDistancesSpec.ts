@@ -6,8 +6,8 @@ import { HistoryAnalysis } from "../../../../../../../src/scripts/bound/analyzeH
 import { extractLevelDistances } from "../../../../../../../src/scripts/bound/io/terminal/bounds/levelDistances"
 import { eventAnalysisFixture, historyAnalysisFixture } from "../../../../../../helpers/src/scripts/bound/fixtures"
 
-describe("extractLevelDistances", () => {
-    it("returns an array of the distances of each event (from the previous event)", () => {
+describe("extractLevelDistances", (): void => {
+    it("returns an array of the distances of each event (from the previous event)", (): void => {
         const historyAnalysis: HistoryAnalysis = {
             ...historyAnalysisFixture,
             events: [
@@ -30,7 +30,7 @@ describe("extractLevelDistances", () => {
         expect(actual).toEqual(expected)
     })
 
-    it("works when a level is skipped", () => {
+    it("works when a level is skipped", (): void => {
         const historyAnalysis = {
             ...historyAnalysisFixture,
             events: [
@@ -52,8 +52,8 @@ describe("extractLevelDistances", () => {
         expect(actual).toEqual(expected)
     })
 
-    describe("ina distances", () => {
-        it("returns an array of the ina-distances of each event (from the previous event)", () => {
+    describe("ina distances", (): void => {
+        it("returns an array of the ina-distances of each event (from the previous event)", (): void => {
             const historyAnalysis: HistoryAnalysis = {
                 ...historyAnalysisFixture,
                 events: [
@@ -76,7 +76,7 @@ describe("extractLevelDistances", () => {
             expect(actual).toEqual(expected)
         })
 
-        it("works when a level is skipped", () => {
+        it("works when a level is skipped", (): void => {
             const historyAnalysis: HistoryAnalysis = {
                 ...historyAnalysisFixture,
                 events: [

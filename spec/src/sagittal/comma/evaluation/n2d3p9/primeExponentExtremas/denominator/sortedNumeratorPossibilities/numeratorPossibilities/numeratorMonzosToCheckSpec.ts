@@ -2,8 +2,8 @@ import { Direction, Max, Monzo } from "../../../../../../../../../../src/general
 import { N2D3P9 } from "../../../../../../../../../../src/sagittal/comma/evaluation/n2d3p9"
 import { computeNumeratorMonzosToCheckGivenMaxN2D3P9 } from "../../../../../../../../../../src/sagittal/comma/evaluation/n2d3p9/primeExponentExtremas/denominator/sortedNumeratorPossibilities/numeratorPossibilities/numeratorMonzosToCheck"
 
-describe("computeNumeratorMonzosToCheckGivenMaxN2D3P9", () => {
-    it("returns the monzos for numerators worth checking", () => {
+describe("computeNumeratorMonzosToCheckGivenMaxN2D3P9", (): void => {
+    it("returns the monzos for numerators worth checking", (): void => {
         const maxN2D3P9 = 3 as Max<N2D3P9>
 
         const actual = computeNumeratorMonzosToCheckGivenMaxN2D3P9(maxN2D3P9)

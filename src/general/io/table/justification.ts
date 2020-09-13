@@ -6,11 +6,11 @@ import { Justification, JustificationOption, JustifiedCellOptions, Row, Table } 
 
 const computeJustifications = (justification: JustificationOption, columnRange: number[]): Justification[] =>
     typeof justification === "string" ?
-        columnRange.map(_ => justification) :
-        columnRange.map(index => justification[ index ] || Justification.LEFT)
+        columnRange.map((_: number): Justification => justification) :
+        columnRange.map((index: number): Justification => justification[ index ] || Justification.LEFT)
 
 const computeColumnWidths = <T = unknown>(table: Table<T>, columnRange: Range): Array<Count<Char>> =>
-    columnRange.map((columnIndex): Count<Char> => {
+    columnRange.map((columnIndex: number): Count<Char> => {
         return table.reduce(
             (columnWidth: Count<Char>, row: Row<{ of: T }>): Count<Char> => {
                 const columnCell = row[ columnIndex ]
@@ -38,7 +38,7 @@ const furtherJustifyCell = (justifiedCell: Io, columnJustification: Justificatio
 const computeJustifiedCellForTerminal = (
     cell: Io,
     { columnWidth, columnJustification }: JustifiedCellOptions,
-) => {
+): Io => {
     let justifiedCell = cell
     while (justifiedCell.length < columnWidth) {
         justifiedCell = furtherJustifyCell(justifiedCell, columnJustification)
@@ -50,7 +50,7 @@ const computeJustifiedCellForTerminal = (
 const computeJustifiedCellForForum = (
     cell: Io,
     { columnJustification }: { columnJustification: Justification },
-) => {
+): Io => {
     return columnJustification === Justification.LEFT ?
         cell :
         `[${columnJustification}]${cell}[/${columnJustification}]` as Io

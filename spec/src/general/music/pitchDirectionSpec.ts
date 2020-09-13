@@ -3,9 +3,9 @@ import { Monzo } from "../../../../src/general/math/monzo"
 import { Cents, computeIsSubPitch, computeIsUnisonPitch } from "../../../../src/general/music"
 import { computeIsSuperPitch } from "../../../../src/general/music/pitchDirection"
 
-describe("computeIsSubPitch", () => {
-    describe("by monzo", () => {
-        it("returns true if the monzo is sub", () => {
+describe("computeIsSubPitch", (): void => {
+    describe("by monzo", (): void => {
+        it("returns true if the monzo is sub", (): void => {
             const pitch = { monzo: [-1] as Monzo }
 
             const actual = computeIsSubPitch(pitch)
@@ -13,7 +13,7 @@ describe("computeIsSubPitch", () => {
             expect(actual).toBeTruthy()
         })
 
-        it("returns false if the monzo is unison", () => {
+        it("returns false if the monzo is unison", (): void => {
             const pitch = { monzo: [] as Monzo }
 
             const actual = computeIsSubPitch(pitch)
@@ -21,7 +21,7 @@ describe("computeIsSubPitch", () => {
             expect(actual).toBeFalsy()
         })
 
-        it("returns false if the monzo is super", () => {
+        it("returns false if the monzo is super", (): void => {
             const pitch = { monzo: [1] as Monzo }
 
             const actual = computeIsSubPitch(pitch)
@@ -30,8 +30,8 @@ describe("computeIsSubPitch", () => {
         })
     })
 
-    describe("by ratio", () => {
-        it("returns true if the ratio is sub", () => {
+    describe("by ratio", (): void => {
+        it("returns true if the ratio is sub", (): void => {
             const pitch = { ratio: [1, 3] as Ratio }
 
             const actual = computeIsSubPitch(pitch)
@@ -39,7 +39,7 @@ describe("computeIsSubPitch", () => {
             expect(actual).toBeTruthy()
         })
 
-        it("returns false if the ratio is unison", () => {
+        it("returns false if the ratio is unison", (): void => {
             const pitch = { ratio: [3, 3] as Ratio }
 
             const actual = computeIsSubPitch(pitch)
@@ -47,7 +47,7 @@ describe("computeIsSubPitch", () => {
             expect(actual).toBeFalsy()
         })
 
-        it("returns false if the ratio is super", () => {
+        it("returns false if the ratio is super", (): void => {
             const pitch = { ratio: [3, 1] as Ratio }
 
             const actual = computeIsSubPitch(pitch)
@@ -56,8 +56,8 @@ describe("computeIsSubPitch", () => {
         })
     })
 
-    describe("by cents", () => {
-        it("returns true if the cents are negative", () => {
+    describe("by cents", (): void => {
+        it("returns true if the cents are negative", (): void => {
             const pitch = { cents: -7.1 as Cents }
 
             const actual = computeIsSubPitch(pitch)
@@ -65,7 +65,7 @@ describe("computeIsSubPitch", () => {
             expect(actual).toBeTruthy()
         })
 
-        it("returns false if the cents are zero", () => {
+        it("returns false if the cents are zero", (): void => {
             const pitch = { cents: 0 as Cents }
 
             const actual = computeIsSubPitch(pitch)
@@ -73,7 +73,7 @@ describe("computeIsSubPitch", () => {
             expect(actual).toBeFalsy()
         })
 
-        it("returns false if the cents are positive", () => {
+        it("returns false if the cents are positive", (): void => {
             const pitch = { cents: 7.1 as Cents }
 
             const actual = computeIsSubPitch(pitch)
@@ -83,9 +83,9 @@ describe("computeIsSubPitch", () => {
     })
 })
 
-describe("computeIsSuperPitch", () => {
-    describe("by monzo", () => {
-        it("returns false if the monzo is sub", () => {
+describe("computeIsSuperPitch", (): void => {
+    describe("by monzo", (): void => {
+        it("returns false if the monzo is sub", (): void => {
             const pitch = { monzo: [-1] as Monzo }
 
             const actual = computeIsSuperPitch(pitch)
@@ -93,7 +93,7 @@ describe("computeIsSuperPitch", () => {
             expect(actual).toBeFalsy()
         })
 
-        it("returns false if the monzo is unison", () => {
+        it("returns false if the monzo is unison", (): void => {
             const pitch = { monzo: [] as Monzo }
 
             const actual = computeIsSuperPitch(pitch)
@@ -101,7 +101,7 @@ describe("computeIsSuperPitch", () => {
             expect(actual).toBeFalsy()
         })
 
-        it("returns true if the monzo is super", () => {
+        it("returns true if the monzo is super", (): void => {
             const pitch = { monzo: [1] as Monzo }
 
             const actual = computeIsSuperPitch(pitch)
@@ -110,8 +110,8 @@ describe("computeIsSuperPitch", () => {
         })
     })
 
-    describe("by ratio", () => {
-        it("returns false if the ratio is sub", () => {
+    describe("by ratio", (): void => {
+        it("returns false if the ratio is sub", (): void => {
             const pitch = { ratio: [1, 3] as Ratio }
 
             const actual = computeIsSuperPitch(pitch)
@@ -119,7 +119,7 @@ describe("computeIsSuperPitch", () => {
             expect(actual).toBeFalsy()
         })
 
-        it("returns false if the ratio is unison", () => {
+        it("returns false if the ratio is unison", (): void => {
             const pitch = { ratio: [3, 3] as Ratio }
 
             const actual = computeIsSuperPitch(pitch)
@@ -127,7 +127,7 @@ describe("computeIsSuperPitch", () => {
             expect(actual).toBeFalsy()
         })
 
-        it("returns true if the ratio is super", () => {
+        it("returns true if the ratio is super", (): void => {
             const pitch = { ratio: [3, 1] as Ratio }
 
             const actual = computeIsSuperPitch(pitch)
@@ -136,8 +136,8 @@ describe("computeIsSuperPitch", () => {
         })
     })
 
-    describe("by cents", () => {
-        it("returns false if the cents are negative", () => {
+    describe("by cents", (): void => {
+        it("returns false if the cents are negative", (): void => {
             const pitch = { cents: -7.1 as Cents }
 
             const actual = computeIsSuperPitch(pitch)
@@ -145,7 +145,7 @@ describe("computeIsSuperPitch", () => {
             expect(actual).toBeFalsy()
         })
 
-        it("returns false if the cents are zero", () => {
+        it("returns false if the cents are zero", (): void => {
             const pitch = { cents: 0 as Cents }
 
             const actual = computeIsSuperPitch(pitch)
@@ -153,7 +153,7 @@ describe("computeIsSuperPitch", () => {
             expect(actual).toBeFalsy()
         })
 
-        it("returns true if the cents are positive", () => {
+        it("returns true if the cents are positive", (): void => {
             const pitch = { cents: 7.1 as Cents }
 
             const actual = computeIsSuperPitch(pitch)
@@ -163,9 +163,9 @@ describe("computeIsSuperPitch", () => {
     })
 })
 
-describe("computeIsUnisonPitch", () => {
-    describe("by monzo", () => {
-        it("returns false if the monzo is sub", () => {
+describe("computeIsUnisonPitch", (): void => {
+    describe("by monzo", (): void => {
+        it("returns false if the monzo is sub", (): void => {
             const pitch = { monzo: [-1] as Monzo }
 
             const actual = computeIsUnisonPitch(pitch)
@@ -173,7 +173,7 @@ describe("computeIsUnisonPitch", () => {
             expect(actual).toBeFalsy()
         })
 
-        it("returns true if the monzo is unison", () => {
+        it("returns true if the monzo is unison", (): void => {
             const pitch = { monzo: [] as Monzo }
 
             const actual = computeIsUnisonPitch(pitch)
@@ -181,7 +181,7 @@ describe("computeIsUnisonPitch", () => {
             expect(actual).toBeTruthy()
         })
 
-        it("returns false if the monzo is super", () => {
+        it("returns false if the monzo is super", (): void => {
             const pitch = { monzo: [1] as Monzo }
 
             const actual = computeIsUnisonPitch(pitch)
@@ -190,8 +190,8 @@ describe("computeIsUnisonPitch", () => {
         })
     })
 
-    describe("by ratio", () => {
-        it("returns false if the ratio is sub", () => {
+    describe("by ratio", (): void => {
+        it("returns false if the ratio is sub", (): void => {
             const pitch = { ratio: [1, 3] as Ratio }
 
             const actual = computeIsUnisonPitch(pitch)
@@ -199,7 +199,7 @@ describe("computeIsUnisonPitch", () => {
             expect(actual).toBeFalsy()
         })
 
-        it("returns true if the ratio is unison", () => {
+        it("returns true if the ratio is unison", (): void => {
             const pitch = { ratio: [3, 3] as Ratio }
 
             const actual = computeIsUnisonPitch(pitch)
@@ -207,7 +207,7 @@ describe("computeIsUnisonPitch", () => {
             expect(actual).toBeTruthy()
         })
 
-        it("returns false if the ratio is super", () => {
+        it("returns false if the ratio is super", (): void => {
             const pitch = { ratio: [3, 1] as Ratio }
 
             const actual = computeIsUnisonPitch(pitch)
@@ -216,8 +216,8 @@ describe("computeIsUnisonPitch", () => {
         })
     })
 
-    describe("by cents", () => {
-        it("returns false if the cents are negative", () => {
+    describe("by cents", (): void => {
+        it("returns false if the cents are negative", (): void => {
             const pitch = { cents: -7.1 as Cents }
 
             const actual = computeIsUnisonPitch(pitch)
@@ -225,7 +225,7 @@ describe("computeIsUnisonPitch", () => {
             expect(actual).toBeFalsy()
         })
 
-        it("returns true if the cents are zero", () => {
+        it("returns true if the cents are zero", (): void => {
             const pitch = { cents: 0 as Cents }
 
             const actual = computeIsUnisonPitch(pitch)
@@ -233,7 +233,7 @@ describe("computeIsUnisonPitch", () => {
             expect(actual).toBeTruthy()
         })
 
-        it("returns false if the cents are positive", () => {
+        it("returns false if the cents are positive", (): void => {
             const pitch = { cents: 7.1 as Cents }
 
             const actual = computeIsUnisonPitch(pitch)

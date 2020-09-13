@@ -21,7 +21,7 @@ solverStatus.chunkCount = parseInteger(program.args[ 0 ]) as Count<Chunk>
 const time = !!program.time
 
 const startTime = now()
-populateAndSearchScopesAndPerfectMetrics().then(() => {
+populateAndSearchScopesAndPerfectMetrics().then((): void => {
     saveLog(`\n\nAND THE BEST METRICS WERE ${formatBestMetrics()}` as Io, LogTarget.FINAL_SOLVER_RESULTS)
 
     const endTime = now()

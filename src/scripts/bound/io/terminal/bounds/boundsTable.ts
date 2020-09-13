@@ -9,9 +9,10 @@ import { computeBoundsAnalysisHeaderRows } from "./headerRows"
 const computeBoundsAnalysisTable = (boundsAnalysis: BoundAnalysis[]): Io => {
     const table: Table<BoundAnalysis> = computeBoundsAnalysisHeaderRows()
     const colors: ColorMethod[] = ["white", "white", "white", "white", "white", "white"]
-    const headerRowCount: Count<Row<{ header: true }>> = 5 as Count<Row<{ header: true }>>
+    const headerRowCount: Count<Row<{ of: BoundAnalysis, header: true }>> =
+        5 as Count<Row<{ of: BoundAnalysis, header: true }>>
 
-    boundsAnalysis.forEach((boundAnalysis, index) => {
+    boundsAnalysis.forEach((boundAnalysis: BoundAnalysis, index: number): void => {
         const bound = JI_BOUNDS[ index ]
         table.push(computeBoundRow(boundAnalysis, { bound }))
         colors.push(BOUND_COLORS[ boundAnalysis.bestRank ])

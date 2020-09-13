@@ -5,7 +5,7 @@ import { LocalMin } from "./types"
 
 const computeLocalMinima = (samples: Sample[], sumsOfSquares: SumsOfSquares, localMin?: LocalMin): LocalMin[] => {
     const localMinima: LocalMin[] = []
-    samples.forEach(sample => {
+    samples.forEach((sample: Sample): void => {
         const { submetrics, samplePoint } = sample
         const sumOfSquares = getSumOfSquaresAtSamplePointIfLocalMin(sumsOfSquares, samplePoint)
         if (sumOfSquares && (!localMin || localMin.sumOfSquares - sumOfSquares > 0.000001)) {

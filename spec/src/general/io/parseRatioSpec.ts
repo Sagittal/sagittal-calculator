@@ -1,7 +1,7 @@
 import { Formatted, parseRatio, Ratio } from "../../../../src/general"
 
-describe("parseRatio", () => {
-    it("works for directed ratios", () => {
+describe("parseRatio", (): void => {
+    it("works for directed ratios", (): void => {
         const ratio = "5/4" as Formatted<Ratio>
 
         const actual = parseRatio(ratio)
@@ -10,7 +10,7 @@ describe("parseRatio", () => {
         expect(actual).toEqual(expected)
     })
 
-    it("works for directed ratios", () => {
+    it("works for directed ratios", (): void => {
         const ratio = "5:4" as Formatted<Ratio>
 
         const actual = parseRatio(ratio)
@@ -19,7 +19,7 @@ describe("parseRatio", () => {
         expect(actual).toEqual(expected)
     })
 
-    it("works for ratios which are implictly over 1", () => {
+    it("works for ratios which are implictly over 1", (): void => {
         const ratio = "275" as Formatted<Ratio>
 
         const actual = parseRatio(ratio)
@@ -28,7 +28,7 @@ describe("parseRatio", () => {
         expect(actual).toEqual(expected)
     })
 
-    it("works for factored ratios", () => {
+    it("works for factored ratios", (): void => {
         const ratio = "5².11" as Formatted<Ratio>
 
         const actual = parseRatio(ratio)

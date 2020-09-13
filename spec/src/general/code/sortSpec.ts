@@ -1,7 +1,7 @@
 import { ACCURACY_THRESHOLD, sort } from "../../../../src/general/code"
 
-describe("sort", () => {
-    it("takes an array and sorts it numerically, in place", () => {
+describe("sort", (): void => {
+    it("takes an array and sorts it numerically, in place", (): void => {
         const array = [5, 1, 7, 2, 4, 3]
 
         sort(array)
@@ -10,7 +10,7 @@ describe("sort", () => {
         expect(array).toEqual(expected)
     })
 
-    it("returns the sorted array", () => {
+    it("returns the sorted array", (): void => {
         const array = [5, 1, 7, 2, 4, 3]
 
         const actual = sort(array)
@@ -18,7 +18,7 @@ describe("sort", () => {
         expect(actual).toEqual(array)
     })
 
-    it("it isn't dumb and can actually sort things numerically", () => {
+    it("it isn't dumb and can actually sort things numerically", (): void => {
         const array = [2000, 300, 5, 10000, 40]
 
         const actual = sort(array)
@@ -27,7 +27,7 @@ describe("sort", () => {
         expect(actual).toEqual(expected)
     })
 
-    it("can sort by one element in an array", () => {
+    it("can sort by one element in an array", (): void => {
         const array = [[2000, 3], [300, 5], [5, 1], [10000, 4], [40, 2]]
 
         const actual = sort(array, { by: 1 })
@@ -36,7 +36,7 @@ describe("sort", () => {
         expect(actual).toEqual(expected)
     })
 
-    it("when provided a key to sort by, assumes the array is of objects with that key", () => {
+    it("when provided a key to sort by, assumes the array is of objects with that key", (): void => {
         const array = [{ a: 5, b: 9 }, { a: 1, b: 8 }, { a: 7, b: 7 }, { a: 2, b: 6 }, { a: 4, b: 5 }, { a: 3, b: 4 }]
 
         sort(array, { by: "a" })
@@ -52,7 +52,7 @@ describe("sort", () => {
         expect(array).toEqual(expected)
     })
 
-    it("can sort descending", () => {
+    it("can sort descending", (): void => {
         const array = [5, 1, 7, 2, 4, 3]
 
         sort(array, { descending: true })
@@ -61,7 +61,7 @@ describe("sort", () => {
         expect(array).toEqual(expected)
     })
 
-    it("can use a nested path as a sort key", () => {
+    it("can use a nested path as a sort key", (): void => {
         const array = [
             [{}, { a: 5 }],
             [{}, { a: 1 }],
@@ -84,7 +84,7 @@ describe("sort", () => {
         expect(array).toEqual(expected)
     })
 
-    it("works for arrays of strings", () => {
+    it("works for arrays of strings", (): void => {
         const array = ["cherimoya", "apple", "banana"]
 
         sort(array)
@@ -92,7 +92,7 @@ describe("sort", () => {
         expect(array).toEqual(["apple", "banana", "cherimoya"])
     })
 
-    it("accepts precision as an option", () => {
+    it("accepts precision as an option", (): void => {
         const array = [5, 2.0000000001, 7, 2, 4, 3]
 
         sort(array, { precision: ACCURACY_THRESHOLD })

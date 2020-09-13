@@ -13,8 +13,8 @@ import { N2D3P9 } from "../../types"
 const computeMaxNumeratorWithLessN2D3P9ThanMaxN2D3P9 = (
     numeratorMonzosToCheck: Array<Monzo<{ direction: Direction.SUPER, rough: 5 }>>,
     maxN2D3P9: Max<N2D3P9>,
-) => {
-    const filteredNumeratorMonzosToCheck = numeratorMonzosToCheck.filter(numeratorMonzoToCheck => {
+): Max<Numerator> => {
+    const filteredNumeratorMonzosToCheck = numeratorMonzosToCheck.filter((numeratorMonzoToCheck: Monzo): boolean => {
         return computeN2D3P9({ monzo: numeratorMonzoToCheck } as TwoThreeFreeClass) < maxN2D3P9
     })
 

@@ -1,8 +1,8 @@
 import { Id, isCloseTo } from "../../../../../src/general"
 import { Bound, JI_BOUNDS, TINA } from "../../../../../src/sagittal"
 
-describe("JI_BOUNDS", () => {
-    it("almost every bound in the JI notation is snapped to a half-tina", () => {
+describe("JI_BOUNDS", (): void => {
+    it("almost every bound in the JI notation is snapped to a half-tina", (): void => {
         let currentHalfTina = 0.5
 
         const exceptionalBoundIds: Array<Id<Bound>> = [
@@ -18,7 +18,7 @@ describe("JI_BOUNDS", () => {
             149,    // size category bound
         ] as Array<Id<Bound>>
 
-        JI_BOUNDS.forEach(jiBound => {
+        JI_BOUNDS.forEach((jiBound: Bound): void => {
             const boundCents = jiBound.cents
 
             while (true) {

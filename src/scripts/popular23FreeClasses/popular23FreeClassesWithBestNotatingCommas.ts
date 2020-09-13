@@ -1,5 +1,6 @@
 import {
     Exponent,
+    Extrema,
     Integer,
     Io,
     isUndefined,
@@ -29,12 +30,17 @@ const computePopular23FreeClassesWithBestNotatingCommas = (
         LogTarget.PROGRESS,
     )
 
-    const monzoCount = primeExponentExtremasGivenMaxN2D3P9.reduce((total, [min, max]) => total * (max - min + 1), 1)
+    const monzoCount = primeExponentExtremasGivenMaxN2D3P9.reduce(
+        (total: number, [min, max]: [number, number]): number => total * (max - min + 1),
+        1,
+    )
     saveLog(`total monzos to check: ${monzoCount}` as Io, LogTarget.PROGRESS)
     let monzosCheckedCount = 0
 
-    const initialMonzo: Monzo = primeExponentExtremasGivenMaxN2D3P9.map(([minPrimeExponent, _]) => minPrimeExponent)
-    const finalMonzo: Monzo = primeExponentExtremasGivenMaxN2D3P9.map(([_, maxPrimeExponent]) => maxPrimeExponent)
+    const initialMonzo: Monzo = primeExponentExtremasGivenMaxN2D3P9
+        .map(([minPrimeExponent, _]: Extrema<Integer & Exponent<Prime>>): Integer & Exponent<Prime> => minPrimeExponent)
+    const finalMonzo: Monzo = primeExponentExtremasGivenMaxN2D3P9
+        .map(([_, maxPrimeExponent]: Extrema<Integer & Exponent<Prime>>): Integer & Exponent<Prime> => maxPrimeExponent)
     let twoThreeFreeMonzo: Monzo<{ rough: 5 }> = shallowClone(initialMonzo) as Monzo<{ rough: 5 }>
 
     const popular23FreeClassesWithBestNotatingCommas = [] as Array<Popular23FreeClassWithBestNotatingComma>

@@ -1,7 +1,7 @@
 import { cleanObject } from "../../../../src/general/code/cleanObject"
 
-describe("cleanObject", () => {
-    it("removes all properties from an object", () => {
+describe("cleanObject", (): void => {
+    it("removes all properties from an object", (): void => {
         const object: Record<string, unknown> = {
             a: 2,
             b: 7,

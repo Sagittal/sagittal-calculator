@@ -5,7 +5,7 @@ import { Io } from "../../../../../src/general/io"
 import { onlyRunInCi } from "../../../../helpers/onlyRunInCi"
 import { runCommandAndGetConsoleOutput } from "../../../../helpers/src/scripts/runCommand"
 
-describe("analyze-ji-pitch", () => {
+describe("analyze-ji-pitch", (): void => {
     const expected = [
         "cents range:                     \t0 - 56.84250302885596",
         "max absolute 3 exponent (ATE):   \t15",
@@ -26,7 +26,7 @@ describe("analyze-ji-pitch", () => {
         "",
     ] as Io[]
 
-    it("analyzes a JI pitch, given it in monzo form (note that it includes inverses in the notating commas list)", () => {
+    it("analyzes a JI pitch, given it in monzo form (note that it includes inverses in the notating commas list)", (): void => {
         onlyRunInCi()
 
         const command = "npm run analyze-ji-pitch -- -m [3,-7,2,0,1]" as Io
@@ -36,7 +36,7 @@ describe("analyze-ji-pitch", () => {
         expect(actual).toEqual(expected)
     })
 
-    it("can appraise a JI pitch for you", () => {
+    it("can appraise a JI pitch for you", (): void => {
         onlyRunInCi()
 
         const command = "npm run analyze-ji-pitch -- -r 2200/2187" as Io
@@ -46,7 +46,7 @@ describe("analyze-ji-pitch", () => {
         expect(actual).toEqual(expected)
     })
 
-    it("can appraise a comma name for you", () => {
+    it("can appraise a comma name for you", (): void => {
         onlyRunInCi()
 
         const command = "npm run analyze-ji-pitch -- --comma-name 275k" as Io
@@ -56,7 +56,7 @@ describe("analyze-ji-pitch", () => {
         expect(actual).toEqual(expected)
     })
 
-    it("can appraise a comma name for you, in a completely different format", () => {
+    it("can appraise a comma name for you, in a completely different format", (): void => {
         onlyRunInCi()
 
         const command = "npm run analyze-ji-pitch -- --comma-name 5².11-kleisma" as Io
@@ -66,17 +66,17 @@ describe("analyze-ji-pitch", () => {
         expect(actual).toEqual(expected)
     })
 
-    it("throws an error if you provide neither monzo nor ratio nor name", () => {
+    it("throws an error if you provide neither monzo nor ratio nor name", (): void => {
         onlyRunInCi()
 
         const command = "npm run analyze-ji-pitch" as Io
 
-        expect(
-            () => cp.execSync(command, { stdio: [undefined, undefined, undefined] }),
-        ).toThrowError(/Unable to determine monzo for JI pitch/)
+        expect((): void => {
+            cp.execSync(command, { stdio: [undefined, undefined, undefined] })
+        }).toThrowError(/Unable to determine monzo for JI pitch/)
     })
 
-    it("can filter the notating commas", () => {
+    it("can filter the notating commas", (): void => {
         onlyRunInCi()
 
         // Note: because the absolute apotome slope is filtered to 3,
@@ -106,7 +106,7 @@ describe("analyze-ji-pitch", () => {
         expect(actual).toEqual(expected)
     })
 
-    it("can appraise a JI pitch which is just a simple integer", () => {
+    it("can appraise a JI pitch which is just a simple integer", (): void => {
         onlyRunInCi()
 
         const command = "npm run analyze-ji-pitch 275" as Io
@@ -135,7 +135,7 @@ describe("analyze-ji-pitch", () => {
         expect(actual).toEqual(expected)
     })
 
-    it("can format the names of the commas in the notating commas table", () => {
+    it("can format the names of the commas in the notating commas table", (): void => {
         onlyRunInCi()
 
         const command = "npm run analyze-ji-pitch -- -m [3,-7,2,0,1] --undirected --factored --unabbreviated" as Io

@@ -1,7 +1,7 @@
 import { computeSopfr, Integer, Monzo, Sopfr } from "../../../../src/general/math"
 
-describe("computeSopfr", () => {
-    it("sums the absolute values of the prime factors (with repetition) in the monzo", () => {
+describe("computeSopfr", (): void => {
+    it("sums the absolute values of the prime factors (with repetition) in the monzo", (): void => {
         const monzo = [5, 6, 0, 0, 1, -1, 2] as Monzo
 
         const actual = computeSopfr(monzo)
@@ -10,7 +10,7 @@ describe("computeSopfr", () => {
         expect(actual).toBe(expected)
     })
 
-    it("works for an empty monzo", () => {
+    it("works for an empty monzo", (): void => {
         const monzo = [] as Monzo
 
         const actual = computeSopfr(monzo)
@@ -19,7 +19,7 @@ describe("computeSopfr", () => {
         expect(actual).toBe(expected)
     })
 
-    it("works for a simple integer", () => {
+    it("works for a simple integer", (): void => {
         const integer = 341 as Integer
 
         const actual = computeSopfr(integer)

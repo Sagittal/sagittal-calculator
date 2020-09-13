@@ -4,7 +4,7 @@ import { EventAnalysis } from "./analyzeEvents"
 
 const computeHistoryTotalInaDistance = (eventAnalyses: EventAnalysis[]): Sum<Multiplier<Ina>> =>
     eventAnalyses.reduce(
-        (inaDistance: Sum<Multiplier>, eventAnalysis: EventAnalysis) =>
+        (inaDistance: Sum<Multiplier<Ina>>, eventAnalysis: EventAnalysis): Sum<Multiplier<Ina>> =>
             inaDistance + eventAnalysis.inaDistance as Sum<Multiplier<Ina>>,
         0 as Sum<Multiplier<Ina>>,
     )

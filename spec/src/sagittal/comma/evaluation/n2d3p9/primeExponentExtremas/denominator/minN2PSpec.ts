@@ -9,8 +9,8 @@ import {
 } from "../../../../../../../../src/sagittal/comma/evaluation/n2d3p9/primeExponentExtremas/denominator/sortedNumeratorPossibilities/types"
 
 
-describe("computeMinN2PForCandidateMaxDenominatorPrimeExponentGivenMaxN2D3P9", () => {
-    it("finds the min N2P out of the numerator possibilities where the gpf is greater than the denominator prime, and the min N2P out of the numerator possibilities where the gpf is lesser than the denominator prime, and then returns the min of those two", () => {
+describe("computeMinN2PForCandidateMaxDenominatorPrimeExponentGivenMaxN2D3P9", (): void => {
+    it("finds the min N2P out of the numerator possibilities where the gpf is greater than the denominator prime, and the min N2P out of the numerator possibilities where the gpf is lesser than the denominator prime, and then returns the min of those two", (): void => {
         // so the candidate max denominator power will be 7^2 = 49
         const denominatorPrime = 7 as Prime<Denominator>
         const candidateMaxDenominatorPrimeExponentGivenMaxN2D3P9 = 2 as Max<Integer & Exponent<Prime<Denominator>>>
@@ -74,7 +74,7 @@ describe("computeMinN2PForCandidateMaxDenominatorPrimeExponentGivenMaxN2D3P9", (
         expect(actual).toBe(expected)
     })
 
-    it("another example where the min N2P from the list with the numerator possibilities with gcp < denominator prime is the one which gets picked", () => {
+    it("another example where the min N2P from the list with the numerator possibilities with gcp < denominator prime is the one which gets picked", (): void => {
         // so the candidate max denominator power will be 7^2 = 49
         const denominatorPrime = 7 as Prime<Denominator>
         const candidateMaxDenominatorPrimeExponentGivenMaxN2D3P9 = 2 as Max<Integer & Exponent<Prime<Denominator>>>

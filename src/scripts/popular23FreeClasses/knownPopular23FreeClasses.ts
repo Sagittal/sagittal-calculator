@@ -1,4 +1,12 @@
-import { Formatted, parse23FreeClass, rank, Ranked, RankStrategy, TwoThreeFreeClass } from "../../general"
+import {
+    ACCURACY_THRESHOLD,
+    Formatted,
+    parse23FreeClass,
+    rank,
+    Ranked,
+    RankStrategy,
+    TwoThreeFreeClass,
+} from "../../general"
 import { computeN2D3P9 } from "../../sagittal"
 import { computePopular23FreeClass } from "./popular23FreeClass"
 import { Popular23FreeClass } from "./types"
@@ -316,11 +324,15 @@ const computeKnownPopular23FreeClasses = (): Array<Ranked<Popular23FreeClass>> =
 
     const popular23FreeClasses = knownPopular23FreeClasses
         .map(parse23FreeClass)
-        .map(twoThreeFreeClass => {
+        .map((twoThreeFreeClass: TwoThreeFreeClass): Popular23FreeClass => {
             return computePopular23FreeClass({ twoThreeFreeClass, n2d3p9: computeN2D3P9(twoThreeFreeClass) })
         })
 
-    return rank(popular23FreeClasses, { by: "n2d3p9", strategy: RankStrategy.FRACTIONAL })
+    return rank(popular23FreeClasses, {
+        by: "n2d3p9",
+        strategy: RankStrategy.FRACTIONAL,
+        precision: ACCURACY_THRESHOLD,
+    })
 }
 
 export {

@@ -2,7 +2,7 @@ import { Combination, Ed, Index, Io, Maybe, Sum, Window } from "../../../general
 import { Parameter, ParameterValue, Submetric } from "../sumOfSquares"
 import { DynamicParameter, Sample } from "./scopeToSamples"
 
-type MetricName = string & { _MetricNameBrand: "MetricName" }
+type MetricName = string & { _MetricNameBrand: "MetricName" }   // TODO: why is this not Name<Metric> ?
 
 interface Metric {
     spreadDynamicParameters?: Parameter[],
@@ -71,4 +71,5 @@ export {
     NonRecursiveSearchScopeAndMaybeUpdateBestMetricOptions,
     MetricName,
     ParameterScopes,
+    ParameterScope,
 }

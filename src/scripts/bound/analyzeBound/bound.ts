@@ -1,4 +1,4 @@
-import { Count, Multiplier } from "../../../general"
+import { count, Multiplier } from "../../../general"
 import { Bound, Tina, TINA } from "../../../sagittal"
 import { analyzeHistory, HistoryAnalysis } from "../analyzeHistory"
 import { consolidateHistories } from "../consolidateHistories"
@@ -11,10 +11,12 @@ import { BoundAnalysis } from "./types"
 
 const analyzeBound = (histories: History[], bound: Bound): BoundAnalysis => {
     const initialPosition = computeInitialPosition(bound)
-    const historyAnalyses = histories.map(history => analyzeHistory(history, bound, initialPosition))
+    const historyAnalyses = histories
+        .map((history: History): HistoryAnalysis => analyzeHistory(history, bound, initialPosition))
 
-    const possibleHistories = historyAnalyses.filter(historyAnalysis => historyAnalysis.possible)
-    const possibleHistoryCount = possibleHistories.length as Count<HistoryAnalysis>
+    const possibleHistories = historyAnalyses
+        .filter((historyAnalysis: HistoryAnalysis): boolean => historyAnalysis.possible)
+    const possibleHistoryCount = count(possibleHistories)
     const bestPossibleHistory = computeBestPossibleHistory(possibleHistories)
     const bestRank = bestPossibleHistory.rank
     const bestPossibleHistoryTotalDistance = bestPossibleHistory.totalDistance

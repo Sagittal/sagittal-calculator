@@ -15,7 +15,7 @@ import * as submetricChunkCombination
     from "../../../../../../src/scripts/popularityMetricLfc/solver/populate/submetricChunkCombination"
 import { Parameter, Submetric } from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
 
-describe("populateScopesPhase", () => {
+describe("populateScopesPhase", (): void => {
     const chunkCount = 5 as Count<Chunk>
     const chunkCountForSubmetrics = 3 as Count<Chunk<Submetric>>
     const expectedChunkCountForParameters = 2 as Count<Chunk<Parameter>>
@@ -47,32 +47,35 @@ describe("populateScopesPhase", () => {
         [submetricChunkCombinationOne, submetricChunkCombinationTwo] as unknown[] as Combinations<Chunk<Submetric>>
     const parameterChunkCombinations = [parameterChunkCombination] as unknown[] as Combinations<Chunk<Parameter>>
 
-    beforeEach(() => {
+    beforeEach((): void => {
         spyOn(combinations, "computeCombinations").and.returnValues(
             submetricChunkCombinations,
             parameterChunkCombinations,
         )
     })
 
-    it("calculates the correct combinations of parameters and submetrics and memoizes them", async () => {
-        delete memoizedSubmetricChunkCombinations[ chunkCountForSubmetrics ]
-        delete memoizedParameterChunkCombinations[ expectedChunkCountForParameters ]
+    it(
+        "calculates the correct combinations of parameters and submetrics and memoizes them",
+        async (): Promise<void> => {
+            delete memoizedSubmetricChunkCombinations[ chunkCountForSubmetrics ]
+            delete memoizedParameterChunkCombinations[ expectedChunkCountForParameters ]
 
-        await populateScopesPhase(chunkCount, chunkCountForSubmetrics)
+            await populateScopesPhase(chunkCount, chunkCountForSubmetrics)
 
-        expect(combinations.computeCombinations).toHaveBeenCalledWith(
-            SUBMETRIC_CHUNKS,
-            chunkCountForSubmetrics,
-            { withRepeatedElements: true },
-        )
-        expect(combinations.computeCombinations).toHaveBeenCalledWith(
-            PARAMETER_CHUNKS,
-            expectedChunkCountForParameters,
-            { withRepeatedElements: true },
-        )
-    })
+            expect(combinations.computeCombinations).toHaveBeenCalledWith(
+                SUBMETRIC_CHUNKS,
+                chunkCountForSubmetrics,
+                { withRepeatedElements: true },
+            )
+            expect(combinations.computeCombinations).toHaveBeenCalledWith(
+                PARAMETER_CHUNKS,
+                expectedChunkCountForParameters,
+                { withRepeatedElements: true },
+            )
+        },
+    )
 
-    it("uses the memoized chunk combinations when they are available", async () => {
+    it("uses the memoized chunk combinations when they are available", async (): Promise<void> => {
         memoizedSubmetricChunkCombinations[ chunkCountForSubmetrics ] = submetricChunkCombinations
         memoizedParameterChunkCombinations[ expectedChunkCountForParameters ] = parameterChunkCombinations
 
@@ -81,7 +84,7 @@ describe("populateScopesPhase", () => {
         expect(combinations.computeCombinations).not.toHaveBeenCalled()
     })
 
-    it("kicks off a chain of populations of scopes for each submetric chunk combination (it will recursively call itself for each next parameter chunk combination)", async () => {
+    it("kicks off a chain of populations of scopes for each submetric chunk combination (it will recursively call itself for each next parameter chunk combination)", async (): Promise<void> => {
         spyOn(submetricChunkCombination, "populateScopesForSubmetricChunkCombination")
 
         await populateScopesPhase(chunkCount, chunkCountForSubmetrics)
@@ -105,7 +108,7 @@ describe("populateScopesPhase", () => {
         )
     })
 
-    afterEach(() => {
+    afterEach((): void => {
         expect(
             memoizedSubmetricChunkCombinations[ chunkCountForSubmetrics ],
         ).toEqual(submetricChunkCombinations)

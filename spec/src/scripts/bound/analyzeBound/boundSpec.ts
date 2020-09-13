@@ -6,7 +6,7 @@ import * as ranks from "../../../../../src/scripts/bound/analyzeBound/ranks"
 import { EventAnalysis, HistoryAnalysis, Score } from "../../../../../src/scripts/bound/analyzeHistory"
 import { EventType, History } from "../../../../../src/scripts/bound/histories"
 
-describe("analyzeBound", () => {
+describe("analyzeBound", (): void => {
     const notBestHistory: History = [
         {
             level: Level.ULTRA,
@@ -103,7 +103,7 @@ describe("analyzeBound", () => {
         initialPositionTinaDistance: -0.5613173198970488 as Multiplier<Tina>,
     }
 
-    it("returns an analysis of the bound using its histories, including a consolidation of said histories, and its best possible history, and the difference between the bound and its initial position", () => {
+    it("returns an analysis of the bound using its histories, including a consolidation of said histories, and its best possible history, and the difference between the bound and its initial position", (): void => {
         const actual = analyzeBound(histories, bound)
 
         const expected = {
@@ -181,7 +181,7 @@ describe("analyzeBound", () => {
         expect(actual).toEqual(expected)
     })
 
-    it("updates the rank analysis", () => {
+    it("updates the rank analysis", (): void => {
         spyOn(ranks, "updateRankAnalysis")
 
         analyzeBound(histories, bound)
@@ -190,7 +190,7 @@ describe("analyzeBound", () => {
         expect(ranks.updateRankAnalysis).toHaveBeenCalledWith(expectedBestHistoryRank, bound.id)
     })
 
-    it("updates the level analysis", () => {
+    it("updates the level analysis", (): void => {
         spyOn(levels, "updateLevelAnalysis")
 
         analyzeBound(histories, bound)

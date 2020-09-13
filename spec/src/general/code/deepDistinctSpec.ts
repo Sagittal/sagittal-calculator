@@ -1,7 +1,7 @@
 import { computeDeepDistinct } from "../../../../src/general/code"
 
-describe("computeDeepDistinct", () => {
-    it("removes duplicate objects from the array", () => {
+describe("computeDeepDistinct", (): void => {
+    it("removes duplicate objects from the array", (): void => {
         const array = [{ a: 1 }, { a: 1 }, { a: 0 }, { a: 1 }, { a: 2 }, { a: 3 }, { a: 4 }, { a: 2 }]
 
         const actual = computeDeepDistinct(array)

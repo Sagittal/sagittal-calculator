@@ -26,14 +26,14 @@ import { SymbolSubset } from "../../../../../../src/sagittal/notations/types"
 import { extractBoundIdentifiers } from "../../../../../../src/scripts/bound/io/terminal/boundIdentifiers"
 import { BoundIdentifiers } from "../../../../../../src/scripts/bound/io/terminal/types"
 
-describe("extractBoundIdentifiers", () => {
+describe("extractBoundIdentifiers", (): void => {
     const bound = {
         cents: 23.1164196495597 as Cents,
         levels: [Level.ULTRA, Level.EXTREME, Level.INSANE],
         id: 47 as Id<Bound>,
     }
 
-    it("returns helpful identifying information about the bound", () => {
+    it("returns helpful identifying information about the bound", (): void => {
         const actual: BoundIdentifiers = extractBoundIdentifiers(bound)
 
         const expected: BoundIdentifiers = {

@@ -1,15 +1,15 @@
-import { parseInteger, Ratio } from "../math"
+import { Denominator, FractionalPart, parseInteger, Ratio } from "../math"
 import { BLANK, SUPERSCRIPT_NUMS } from "./constants"
 import { Char, Formatted } from "./types"
 
 const superscriptNums = ["⁰", "¹", "²", "³", "⁴", "⁵", "⁶", "⁷", "⁸", "⁹"].join()
 
 const parseRatio = <T extends Ratio>(ratioText: Formatted<T>): T => {
-    const ratio = ratioText.split(/[\/:]/).map(fractionalPartText => {
+    const ratio = ratioText.split(/[\/:]/).map((fractionalPartText: string): FractionalPart => {
         if (fractionalPartText.match(new RegExp(`[${superscriptNums}.]`))) {
             const factorPowers = fractionalPartText.split(".")
             return factorPowers.reduce(
-                (product, factorPower) => {
+                (product: FractionalPart, factorPower: string): FractionalPart => {
                     const exponentPartOfFactorPower: string = factorPower.replace(new RegExp(`[^${superscriptNums}]`, "g"), "")
                     const basePartOfFactorPower = factorPower.replace(exponentPartOfFactorPower, "")
 
@@ -18,17 +18,17 @@ const parseRatio = <T extends Ratio>(ratioText: Formatted<T>): T => {
                         1 :
                         SUPERSCRIPT_NUMS.indexOf(exponentPartOfFactorPower as Char)
 
-                    return product * base ** power
+                    return product * base ** power as FractionalPart
                 },
-                1,
+                1 as FractionalPart,
             )
         } else {
-            return parseInteger(fractionalPartText)
+            return parseInteger(fractionalPartText) as FractionalPart
         }
     })
 
     if (ratio.length === 1) {
-        ratio.push(1)
+        ratio.push(1 as Denominator)
     }
 
     if (ratioText.includes(":")) {

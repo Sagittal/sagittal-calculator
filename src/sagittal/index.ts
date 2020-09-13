@@ -27,8 +27,9 @@ export {
     SIZE_CATEGORY_BOUNDS,
     MAX_SIZE_CATEGORY_BOUND,
     DEFAULT_MAX_N2D3P9,
+    ParsedCommaName,
 } from "./comma"
-export { formatSymbol, formatSymbolAscii, SymbolLongAscii, unicodeFromAscii } from "./io"
+export { formatSymbol, formatSymbolAscii, SymbolLongAscii, unicodeFromAscii, SymbolSmiley } from "./io"
 export {
     addMaybeJiSymbol,
     Bound,

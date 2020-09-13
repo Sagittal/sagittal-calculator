@@ -8,8 +8,8 @@ import {
 } from "../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
 import { Antivotes, Unpopularity } from "../../../../../src/scripts/popularityMetricLfc/sumOfSquares/types"
 
-describe("computeUnpopularities", () => {
-    it("given a list of real popularities and submetric combinations, returns our estimated unpopularities, which have antivotes instead of votes", () => {
+describe("computeUnpopularities", (): void => {
+    it("given a list of real popularities and submetric combinations, returns our estimated unpopularities, which have antivotes instead of votes", (): void => {
         const realPopularities: Array<Ranked<Popularity>> = [
             {
                 rank: 5 as Rank<Popularity>,

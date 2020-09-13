@@ -1,10 +1,10 @@
 import { Cents, Index } from "../../../../../src/general"
 import { computeNeighborPositionIndices } from "../../../../../src/scripts/bound/boundedPositions/neighborPositionIndices"
 
-describe("computeNeighborPositionIndices", () => {
+describe("computeNeighborPositionIndices", (): void => {
     it(
         `returns the indices of the positions in the list of sorted targets which are on either side of the position`,
-        () => {
+        (): void => {
             const position: Cents = 0.433 as Cents
             const sortedTargetPositions: Cents[] = [
                 0.00,

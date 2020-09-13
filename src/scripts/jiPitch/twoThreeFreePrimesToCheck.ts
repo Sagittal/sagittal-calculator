@@ -1,7 +1,15 @@
-import { computePrimeCount, indexOfFinalElement, isUndefined, min, PRIMES, ZERO_ONE_INDEX_DIFF } from "../../general"
+import {
+    computePrimeCount,
+    indexOfFinalElement,
+    isUndefined,
+    min,
+    Prime,
+    PRIMES,
+    ZERO_ONE_INDEX_DIFF,
+} from "../../general"
 import { TwoThreeFreePrimesToCheckOptions } from "./types"
 
-const compute23FreePrimesToCheck = (options: TwoThreeFreePrimesToCheckOptions) => {
+const compute23FreePrimesToCheck = (options: TwoThreeFreePrimesToCheckOptions): Prime[] => {
     const { maxPrimeLimit, max23FreeSopfr, primeExponentExtremasGivenMaxN2D3P9 } = options
 
     if (

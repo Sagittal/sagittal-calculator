@@ -2,8 +2,8 @@ import { Cents, Extrema } from "../../../../../src/general"
 import { computeSizeCategoryExtrema } from "../../../../../src/sagittal/comma/name/sizeCategoryExtrema"
 import { SizeCategoryName } from "../../../../../src/sagittal/comma/name/types"
 
-describe("computeSizeCategoryExtrema", () => {
-    it("gives the correct extrema for each size category", () => {
+describe("computeSizeCategoryExtrema", (): void => {
+    it("gives the correct extrema for each size category", (): void => {
         expect(computeSizeCategoryExtrema(SizeCategoryName.UNISON))
             .toEqual([0, 0] as Extrema<Cents>)
         expect(computeSizeCategoryExtrema(SizeCategoryName.SCHISMINA))

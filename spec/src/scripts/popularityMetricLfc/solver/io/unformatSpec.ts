@@ -1,8 +1,8 @@
 import { Io } from "../../../../../../src/general"
 import { unformatParameters } from "../../../../../../src/scripts/popularityMetricLfc/solver"
 
-describe("unformatParameters", () => {
-    it("converts parameter enum form back into JSON form", () => {
+describe("unformatParameters", (): void => {
+    it("converts parameter enum form back into JSON form", (): void => {
         const text = `[
     {
 \t[ Parameter.SUM ]: true,

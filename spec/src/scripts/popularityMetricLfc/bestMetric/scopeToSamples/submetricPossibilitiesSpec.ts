@@ -3,8 +3,8 @@ import { SubmetricScope } from "../../../../../../src/scripts/popularityMetricLf
 import { computeSubmetricPossibilities } from "../../../../../../src/scripts/popularityMetricLfc/bestMetric/scopeToSamples/submetricPossibilities"
 import { Parameter, ParameterValue } from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
 
-describe("computeSubmetricPossibilities", () => {
-    it("given this submetric's scope (centers, windows, and counts for each of its parameters) to compute each of its parameters' sample points, returns an array of all the possible combinations of those parameter sample points", () => {
+describe("computeSubmetricPossibilities", (): void => {
+    it("given this submetric's scope (centers, windows, and counts for each of its parameters) to compute each of its parameters' sample points, returns an array of all the possible combinations of those parameter sample points", (): void => {
         const submetricScope = {
             [ Parameter.A_AS_COEFFICIENT ]: {
                 center: 1 as ParameterValue,
@@ -40,7 +40,7 @@ describe("computeSubmetricPossibilities", () => {
         expect(actual).toEqual(expected)
     })
 
-    it("leaves a parameter out if it has a 0 ED", () => {
+    it("leaves a parameter out if it has a 0 ED", (): void => {
         const submetricScope = {
             [ Parameter.A_AS_COEFFICIENT ]: {
                 center: 1 as ParameterValue,
@@ -66,7 +66,7 @@ describe("computeSubmetricPossibilities", () => {
         expect(actual).toEqual(expected)
     })
 
-    it("works when provided a flat value", () => {
+    it("works when provided a flat value", (): void => {
         const submetricScopes = {
             [ Parameter.A_AS_COEFFICIENT ]: {
                 center: 1 as ParameterValue,

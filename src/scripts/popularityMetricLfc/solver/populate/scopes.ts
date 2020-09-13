@@ -6,7 +6,7 @@ import { Chunk } from "../types"
 import { computeInitialChunkCountForSubmetrics } from "./initialChunkCountForSubmetrics"
 import { populateScopesPhase } from "./phase"
 
-const populateScopes = async () => {
+const populateScopes = async (): Promise<void> => {
     const chunkCount = solverStatus.chunkCount
     let chunkCountForSubmetrics: Count<Chunk<Submetric>> = computeInitialChunkCountForSubmetrics(chunkCount)
 

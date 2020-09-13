@@ -1,4 +1,4 @@
-import { dig, Maybe } from "../../../general"
+import { dig, isUndefined, Maybe } from "../../../general"
 import { SamplePoint, SumOfSquares, SumsOfSquares } from "../bestMetric"
 import { computeAdjacentSamplePoints } from "./adjacentSamplePoints"
 
@@ -9,10 +9,15 @@ const getSumOfSquaresAtSamplePointIfLocalMin = (
     const adjacentSamplePoints = computeAdjacentSamplePoints(samplePoint)
     const sumOfSquares = dig(sumsOfSquares, samplePoint) as Maybe<SumOfSquares>
 
-    const isLocalMin = adjacentSamplePoints.every(adjacentSamplePoint => {
+    const isLocalMin = adjacentSamplePoints.every((adjacentSamplePoint: SamplePoint): boolean => {
         const adjacentSumOfSquares = dig(sumsOfSquares, adjacentSamplePoint) as Maybe<SumOfSquares>
 
-        return !adjacentSumOfSquares || sumOfSquares && adjacentSumOfSquares > sumOfSquares
+        return isUndefined(adjacentSumOfSquares) ||
+            (
+                !isUndefined(sumOfSquares) ?
+                    adjacentSumOfSquares > sumOfSquares :
+                    false
+            )
     })
 
     if (isLocalMin) {

@@ -5,8 +5,8 @@ import { consolidateHistories } from "../../../../../src/scripts/bound/consolida
 import { EventType } from "../../../../../src/scripts/bound/histories"
 import { eventAnalysisFixture, historyAnalysisFixture } from "../../../../helpers/src/scripts/bound/fixtures"
 
-describe("consolidateHistories", () => {
-    it("consolidates histories to collapse redundancies per level and show which events can lead into which events in the next level, and which ones are members of histories that are possible, and what the best rank is in any event that becomes part of this consolidation, and what the best rank of any history this event is a member of is, and membership in the best possible history", () => {
+describe("consolidateHistories", (): void => {
+    it("consolidates histories to collapse redundancies per level and show which events can lead into which events in the next level, and which ones are members of histories that are possible, and what the best rank is in any event that becomes part of this consolidation, and what the best rank of any history this event is a member of is, and membership in the best possible history", (): void => {
         const eventOneGoesToEventThreeAndFour: EventAnalysis = {
             ...eventAnalysisFixture,
             level: Level.ULTRA,

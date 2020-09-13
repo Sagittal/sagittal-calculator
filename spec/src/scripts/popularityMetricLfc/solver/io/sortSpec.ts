@@ -4,8 +4,8 @@ import { bestMetrics } from "../../../../../../src/scripts/popularityMetricLfc/g
 import { computeSortedBestMetrics } from "../../../../../../src/scripts/popularityMetricLfc/solver"
 import { Parameter, Submetric } from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
 
-describe("computeSortedBestMetrics", () => {
-    it("sorts the best metrics by sum of squares", () => {
+describe("computeSortedBestMetrics", (): void => {
+    it("sorts the best metrics by sum of squares", (): void => {
         bestMetrics.set(
             "{sum}" as MetricName,
             {

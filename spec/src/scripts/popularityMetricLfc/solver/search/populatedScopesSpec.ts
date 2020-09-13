@@ -6,29 +6,29 @@ import { scopesToSearch, solverStatus } from "../../../../../../src/scripts/popu
 import { searchPopulatedScopes } from "../../../../../../src/scripts/popularityMetricLfc/solver/search/populatedScopes"
 import { Parameter } from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
 
-describe("searchPopulatedScopes", () => {
+describe("searchPopulatedScopes", (): void => {
     const scope = [{ [ Parameter.MAX ]: true }] as Scope
     const otherScope = [{ [ Parameter.A_AS_COEFFICIENT ]: 2 }] as Scope
 
-    beforeEach(() => {
+    beforeEach((): void => {
         solverStatus.searchedScopeCount = 155 as Count<Scope>
         scopesToSearch.push(otherScope)
         scopesToSearch.push(scope)
     })
 
-    it("increments the count of scopes which have been searched", async () => {
+    it("increments the count of scopes which have been searched", async (): Promise<void> => {
         await searchPopulatedScopes()
 
         expect(solverStatus.searchedScopeCount).toBe(156 as Count<Scope>)
     })
 
-    it("removes the searched scope from the stack", async () => {
+    it("removes the searched scope from the stack", async (): Promise<void> => {
         await searchPopulatedScopes()
 
         expect(scopesToSearch).toEqual([otherScope])
     })
 
-    it("does those things even if there is an error while searching the scope", async () => {
+    it("does those things even if there is an error while searching the scope", async (): Promise<void> => {
         spyOn(nonRecursiveBestMetric, "nonRecursiveSearchScopeAndMaybeUpdateBestMetric").and.throwError("something")
 
         await searchPopulatedScopes()
@@ -37,7 +37,7 @@ describe("searchPopulatedScopes", () => {
         expect(solverStatus.searchedScopeCount).toBe(156 as Count<Scope>)
     })
 
-    it("searches the scope it pops off the stack", async () => {
+    it("searches the scope it pops off the stack", async (): Promise<void> => {
         spyOn(nonRecursiveBestMetric, "nonRecursiveSearchScopeAndMaybeUpdateBestMetric").and.callThrough()
 
         await searchPopulatedScopes()

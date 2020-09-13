@@ -8,14 +8,14 @@ import {
 } from "../../../../../../src/scripts/popularityMetricLfc/bestMetric/scopeToSamples/types"
 import { Parameter, ParameterValue, Submetric } from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
 
-describe("combineSubmetricsPossibilitiesIntoSamples", () => {
+describe("combineSubmetricsPossibilitiesIntoSamples", (): void => {
     it(
         `takes the list of possible values for each submetric individually, 
         and returns a list of every possible combination of them,
          along with its corresponding sample point, 
         which is then all together called a Sample; 
         it also takes the zeroth submetric scope (the all bins one) and spreads it across every submetric`,
-        () => {
+        (): void => {
             // submetric zero has two possibilities
             const submetricZeroPossibilityOne = {
                 [ Parameter.K_AS_COEFFICIENT ]: 0.33 as ParameterValue,

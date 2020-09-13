@@ -1,20 +1,25 @@
 import { formatMonzo } from "../../io"
 import { computeRatioFromMonzo } from "../ratio"
+import { negative } from "../typedOperations"
 import { Direction, Exponent, NumericTypeParameters, Prime } from "../types"
 import { Monzo, PotentiallyIrrationalMonzoParameter } from "./types"
 
 const computeIsSubMonzo = <T extends NumericTypeParameters>(
     monzo: PotentiallyIrrationalMonzoParameter<Omit<T, "direction">>,
 ): monzo is Monzo<Omit<T, "direction"> & { direction: Direction.SUB }> => {
-    if (monzo.length && monzo.every(term => term >= 0)) return false
-    if (monzo.length && monzo.every(term => term <= 0)) return true
+    if (monzo.length && monzo.every((term: Exponent<Prime>): boolean => term >= 0)) return false
+    if (monzo.length && monzo.every((term: Exponent<Prime>): boolean => term <= 0)) return true
 
     let ratio
     try {
         ratio = computeRatioFromMonzo(monzo)
     } catch (e) {
-        const numeratorMonzo = monzo.map(term => term > 0 ? term : 0) as Monzo
-        const denominatorMonzo = monzo.map(term => term < 0 ? -term : 0) as Monzo
+        const numeratorMonzo = monzo.map((term: Exponent<Prime>): Exponent<Prime> => {
+            return term > 0 ? term : 0 as Exponent<Prime>
+        }) as Monzo
+        const denominatorMonzo = monzo.map((term: Exponent<Prime>): Exponent<Prime> => {
+            return term < 0 ? negative(term) : 0 as Exponent<Prime>
+        }) as Monzo
 
         let numeratorError = false
         try {
@@ -53,7 +58,7 @@ const computeIsSuperMonzo = <T extends NumericTypeParameters>(
 const computeIsUnisonMonzo = <T extends NumericTypeParameters>(
     monzo: PotentiallyIrrationalMonzoParameter<Omit<T, "direction">>,
 ): monzo is Monzo<Omit<T, "direction"> & { direction: Direction.UNISON }> => {
-    return monzo.every(term => term === 0)
+    return monzo.every((term: Exponent<Prime>): boolean => term === 0)
 }
 
 const computeSuperMonzo = <T extends NumericTypeParameters>(
@@ -77,7 +82,11 @@ const invertMonzo: {
         monzo: PotentiallyIrrationalMonzoParameter<T>,
     ): Monzo<T>,
 } = <T extends NumericTypeParameters>(monzo: Monzo<T>): Monzo<T> =>
-    monzo.map(primeExponent => primeExponent === 0 ? 0 : -primeExponent as Exponent<Prime>) as Monzo<T>
+    monzo.map((primeExponent: Exponent<Prime>): Exponent<Prime> => {
+        return primeExponent === 0 ?
+            0 as Exponent<Prime> :
+            -primeExponent as Exponent<Prime>
+    }) as Monzo<T>
 
 
 export {

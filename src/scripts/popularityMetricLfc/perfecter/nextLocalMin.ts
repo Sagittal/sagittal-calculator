@@ -21,7 +21,7 @@ const searchNextLocalMin = (nextLocalMin: LocalMin, options: SearchLocalMinOptio
     const nextMetricTag = metricTag + `.${index + 1}/${(nextLocalMinima.length)}` as MetricTag
     saveLog(`  ${indentation}id ${nextMetricTag} - depth ${nextDepth}` as Io, LogTarget.PERFECT)
 
-    return doOnNextEventLoop(async () => {
+    return doOnNextEventLoop(async (): Promise<void> => {
         try {
             await recursiveSearchScopeAndMaybeUpdateBestMetric(nextScope, {
                 depth: nextDepth,

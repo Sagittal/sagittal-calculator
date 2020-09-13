@@ -5,8 +5,8 @@ import { computeRatioSubmetricAntivotes } from "../../../../../../src/scripts/po
 import { computeSubmetricAntivotes } from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares/antivotes/submetricAntivotes"
 import { Antivotes } from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares/types"
 
-describe("computeRatioSubmetricAntivotes", () => {
-    it("splits the ratio into numerator and denominator, computes their submetric antivotes separately, then adjusts the denominator by k", () => {
+describe("computeRatioSubmetricAntivotes", (): void => {
+    it("splits the ratio into numerator and denominator, computes their submetric antivotes separately, then adjusts the denominator by k", (): void => {
         const kAsCoefficient = 0.46 as ParameterValue
         const twoThreeFreeClass = { ratio: [11, 7] } as TwoThreeFreeClass
         const submetric = { kAsCoefficient, sum: true }
@@ -19,7 +19,7 @@ describe("computeRatioSubmetricAntivotes", () => {
         )
     })
 
-    it("another example", () => {
+    it("another example", (): void => {
         const kAsCoefficient = 0.46 as ParameterValue
         const twoThreeFreeClass = { ratio: [25, 11] } as TwoThreeFreeClass // 10:11
         const submetric = { kAsCoefficient, sum: true }
@@ -32,7 +32,7 @@ describe("computeRatioSubmetricAntivotes", () => {
         )
     })
 
-    it("defaults k and j to 1", () => {
+    it("defaults k and j to 1", (): void => {
         const twoThreeFreeClass = { ratio: [5, 7] } as TwoThreeFreeClass
         const submetric = { sum: true }
 
@@ -43,7 +43,7 @@ describe("computeRatioSubmetricAntivotes", () => {
         )
     })
 
-    it("supports deciding the numinator and diminuator by which is the greater of the two", () => {
+    it("supports deciding the numinator and diminuator by which is the greater of the two", (): void => {
         const kAsCoefficient = 0.46 as ParameterValue
         const twoThreeFreeClass = { ratio: [25, 11] } as TwoThreeFreeClass // 10:11
         const useNuminator = true
@@ -57,7 +57,7 @@ describe("computeRatioSubmetricAntivotes", () => {
         )
     })
 
-    it("works when k = 0 (and j = 1) therefore it only looks at the numerator", () => {
+    it("works when k = 0 (and j = 1) therefore it only looks at the numerator", (): void => {
         const kAsCoefficient = 0 as ParameterValue
         const twoThreeFreeClass = { ratio: [5, 7] } as TwoThreeFreeClass
         const submetric = { kAsCoefficient, sum: true }
@@ -69,7 +69,7 @@ describe("computeRatioSubmetricAntivotes", () => {
         )
     })
 
-    it("works when j = 0 (and k = 1) therefore it only looks at the denominator", () => {
+    it("works when j = 0 (and k = 1) therefore it only looks at the denominator", (): void => {
         const jAsCoefficient = 0 as ParameterValue
         const twoThreeFreeClass = { ratio: [5, 7] } as TwoThreeFreeClass
         const submetric = { jAsCoefficient, sum: true }
@@ -81,7 +81,7 @@ describe("computeRatioSubmetricAntivotes", () => {
         )
     })
 
-    it("works when k is a logarithm base", () => {
+    it("works when k is a logarithm base", (): void => {
         const kAsLogarithmBase = 2 as ParameterValue
         const twoThreeFreeClass = { ratio: [5, 7] } as TwoThreeFreeClass
         const submetric = { kAsLogarithmBase, sum: true }
@@ -94,7 +94,7 @@ describe("computeRatioSubmetricAntivotes", () => {
         )
     })
 
-    it("works when k is a power exponent", () => {
+    it("works when k is a power exponent", (): void => {
         const kAsPowerExponent = 2 as ParameterValue
         const twoThreeFreeClass = { ratio: [5, 7] } as TwoThreeFreeClass
         const submetric = { kAsPowerExponent, sum: true }
@@ -107,7 +107,7 @@ describe("computeRatioSubmetricAntivotes", () => {
         )
     })
 
-    it("works when k is a power base", () => {
+    it("works when k is a power base", (): void => {
         const kAsPowerBase = 2 as ParameterValue
         const twoThreeFreeClass = { ratio: [5, 7] } as TwoThreeFreeClass
         const submetric = { kAsPowerBase, sum: true }
@@ -120,7 +120,7 @@ describe("computeRatioSubmetricAntivotes", () => {
         )
     })
 
-    it("works when j is a logarithm base", () => {
+    it("works when j is a logarithm base", (): void => {
         const jAsLogarithmBase = 2 as ParameterValue
         const twoThreeFreeClass = { ratio: [5, 7] } as TwoThreeFreeClass
         const submetric = { jAsLogarithmBase, sum: true }
@@ -133,7 +133,7 @@ describe("computeRatioSubmetricAntivotes", () => {
         )
     })
 
-    it("works when j is a power exponent", () => {
+    it("works when j is a power exponent", (): void => {
         const jAsPowerExponent = 2 as ParameterValue
         const twoThreeFreeClass = { ratio: [5, 7] } as TwoThreeFreeClass
         const submetric = { jAsPowerExponent, sum: true }
@@ -146,7 +146,7 @@ describe("computeRatioSubmetricAntivotes", () => {
         )
     })
 
-    it("works when j is a power base", () => {
+    it("works when j is a power base", (): void => {
         const jAsPowerBase = 2 as ParameterValue
         const twoThreeFreeClass = { ratio: [5, 7] } as TwoThreeFreeClass
         const submetric = { jAsPowerBase, sum: true }

@@ -1,3 +1,3 @@
-describe("computeN2", () => {
+describe("computeN2", (): void => {
     // TODO: test - everything
 })

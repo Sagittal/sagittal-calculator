@@ -2,8 +2,8 @@ import { Direction, Max, Monzo, Numerator } from "../../../../../../../../src/ge
 import { N2D3P9 } from "../../../../../../../../src/sagittal/comma/evaluation/n2d3p9"
 import { computeMaxNumeratorWithLessN2D3P9ThanMaxN2D3P9 } from "../../../../../../../../src/sagittal/comma/evaluation/n2d3p9/primeExponentExtremas/denominator/maxNumeratorWithLessN2D3P9"
 
-describe("computeMaxNumeratorWithLessN2D3P9ThanMaxN2D3P9", () => {
-    it("chooses the max numerator with less N2D3P9 than the max N2D3P9", () => {
+describe("computeMaxNumeratorWithLessN2D3P9ThanMaxN2D3P9", (): void => {
+    it("chooses the max numerator with less N2D3P9 than the max N2D3P9", (): void => {
         const numeratorMonzosToCheck = [
             [],             // N2D3P9(1)  = 1
             [0, 0, 1],      // N2D3P9(5)  = 1.39

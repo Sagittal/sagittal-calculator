@@ -4,7 +4,7 @@ import { formatSearchedAndPopulated } from "../io"
 import { ONE_SECOND_TO_GIVE_POPULATION_A_CHANCE_TO_CATCH_UP } from "./constants"
 import { searchPopulatedScopes } from "./populatedScopes"
 
-const searchScopes = async () => {
+const searchScopes = async (): Promise<void> => {
     while (scopesToSearch.length > 0) {
         await doOnNextEventLoop(searchPopulatedScopes)
     }

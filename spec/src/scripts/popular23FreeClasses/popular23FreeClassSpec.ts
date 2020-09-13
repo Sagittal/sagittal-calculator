@@ -4,11 +4,11 @@ import { N2D3P9 } from "../../../../src/sagittal/comma/evaluation/n2d3p9"
 import { computePopular23FreeClass } from "../../../../src/scripts/popular23FreeClasses/popular23FreeClass"
 import { Popular23FreeClass } from "../../../../src/scripts/popular23FreeClasses/types"
 
-describe("computePopular23FreeClass", () => {
+describe("computePopular23FreeClass", (): void => {
     const twoThreeFreeClass = { monzo: [0, 0, 1] } as TwoThreeFreeClass
     const n2d3p9 = 1.388889 as N2D3P9
 
-    it("assembles helpful information about a 2,3-free class, given a valid 2,3-free monzo & its N2D3P9", () => {
+    it("assembles helpful information about a 2,3-free class, given a valid 2,3-free monzo & its N2D3P9", (): void => {
         const actual = computePopular23FreeClass({ twoThreeFreeClass, n2d3p9 })
 
         const expected: Popular23FreeClass = {
@@ -23,7 +23,7 @@ describe("computePopular23FreeClass", () => {
         expect(actual).toEqual(expected)
     })
 
-    it("formats the symbols for the forum if io settings are set that way", () => {
+    it("formats the symbols for the forum if io settings are set that way", (): void => {
         ioSettings.forForum = true
         const actual = computePopular23FreeClass({ twoThreeFreeClass, n2d3p9 })
 

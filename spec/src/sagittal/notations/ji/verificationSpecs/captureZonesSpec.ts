@@ -1,15 +1,15 @@
-import { Zone } from "../../../../../../src/general"
-import { SagittalComma } from "../../../../../../src/sagittal"
+import { Id, Maybe, Zone } from "../../../../../../src/general"
+import { JiSymbol, SagittalComma } from "../../../../../../src/sagittal"
 import { getJiSymbol, Level } from "../../../../../../src/sagittal/notations/ji"
 import { computeCaptureZone } from "../../../../../../src/sagittal/notations/ji/captureZone"
 import { computeLevelJiSymbolIds } from "../../../../../../src/sagittal/notations/ji/levelsJiSymbolIds"
 
-describe("capture zones", () => {
-    it("Medium level capture zones check out", () => {
-        const extremeLevelJiSymbolIds = computeLevelJiSymbolIds(Level.MEDIUM)
+describe("capture zones", (): void => {
+    it("Medium level capture zones check out", (): void => {
+        const mediumLevelJiSymbolIds = computeLevelJiSymbolIds(Level.MEDIUM)
 
-        const actual = extremeLevelJiSymbolIds.map(extremeLevelJiSymbolId => {
-            const jiSymbol = getJiSymbol(extremeLevelJiSymbolId)
+        const actual = mediumLevelJiSymbolIds.map((mediumLevelJiSymbolId: Id<JiSymbol>): Maybe<Zone> => {
+            const jiSymbol = getJiSymbol(mediumLevelJiSymbolId)
 
             return computeCaptureZone(jiSymbol, Level.MEDIUM)
         })
@@ -32,11 +32,11 @@ describe("capture zones", () => {
         expect(actual).toEqual(expected)
     })
 
-    it("High level capture zones check out", () => {
-        const extremeLevelJiSymbolIds = computeLevelJiSymbolIds(Level.HIGH)
+    it("High level capture zones check out", (): void => {
+        const highLevelJiSymbolIds = computeLevelJiSymbolIds(Level.HIGH)
 
-        const actual = extremeLevelJiSymbolIds.map(extremeLevelJiSymbolId => {
-            const jiSymbol = getJiSymbol(extremeLevelJiSymbolId)
+        const actual = highLevelJiSymbolIds.map((highLevelJiSymbolId: Id<JiSymbol>): Maybe<Zone> => {
+            const jiSymbol = getJiSymbol(highLevelJiSymbolId)
 
             return computeCaptureZone(jiSymbol, Level.HIGH)
         })
@@ -78,11 +78,11 @@ describe("capture zones", () => {
         expect(actual).toEqual(expected)
     })
 
-    it("Ultra level capture zones check out", () => {
-        const extremeLevelJiSymbolIds = computeLevelJiSymbolIds(Level.ULTRA)
+    it("Ultra level capture zones check out", (): void => {
+        const ultraLevelJiSymbolIds = computeLevelJiSymbolIds(Level.ULTRA)
 
-        const actual = extremeLevelJiSymbolIds.map(extremeLevelJiSymbolId => {
-            const jiSymbol = getJiSymbol(extremeLevelJiSymbolId)
+        const actual = ultraLevelJiSymbolIds.map((ultraLevelJiSymbolId: Id<JiSymbol>): Maybe<Zone> => {
+            const jiSymbol = getJiSymbol(ultraLevelJiSymbolId)
 
             return computeCaptureZone(jiSymbol, Level.ULTRA)
         })
@@ -147,10 +147,10 @@ describe("capture zones", () => {
         expect(actual).toEqual(expected)
     })
 
-    it("Extreme level capture zones check out", () => {
+    it("Extreme level capture zones check out", (): void => {
         const extremeLevelJiSymbolIds = computeLevelJiSymbolIds(Level.EXTREME)
 
-        const actual = extremeLevelJiSymbolIds.map(extremeLevelJiSymbolId => {
+        const actual = extremeLevelJiSymbolIds.map((extremeLevelJiSymbolId: Id<JiSymbol>): Maybe<Zone> => {
             const jiSymbol = getJiSymbol(extremeLevelJiSymbolId)
 
             return computeCaptureZone(jiSymbol, Level.EXTREME)

@@ -13,7 +13,7 @@ const computeCommaRow = (
             formatInteger(limit),
             formatInteger(twoThreeFreeSopfr),
             formatNumber(n2d3p9),
-        ] as Row<{ of: CommaAnalysis & { symbolId?: Id<JiSymbol> } }>,
+        ] as Row as Row<{ of: CommaAnalysis & { symbolId?: Id<JiSymbol> } }>,
     )
 }
 

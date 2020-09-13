@@ -4,8 +4,8 @@ import { Io } from "../../../../../src/general/io"
 import { onlyRunInCi } from "../../../../helpers/onlyRunInCi"
 import { runCommandAndGetConsoleOutput } from "../../../../helpers/src/scripts/runCommand"
 
-describe("popular-2-3-free-classes", () => {
-    it("gives you the list of the most popular 2,3-free classes, according to N2D3P9", () => {
+describe("popular-2-3-free-classes", (): void => {
+    it("gives you the list of the most popular 2,3-free classes, according to N2D3P9", (): void => {
         onlyRunInCi()
 
         const command = "npm run popular-2-3-free-classes -- --max-n2d3p9 136 --for-forum" as Io
@@ -158,7 +158,7 @@ describe("popular-2-3-free-classes", () => {
         expect(actual).toEqual(expected)
     })
 
-    it("works for a different max N2D3P9", () => {
+    it("works for a different max N2D3P9", (): void => {
         onlyRunInCi()
 
         const command = "npm run popular-2-3-free-classes -- --max-n2d3p9 10 --for-forum" as Io

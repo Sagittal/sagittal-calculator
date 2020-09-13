@@ -2,8 +2,8 @@ import { Count } from "../../../../src/general"
 import { computeDistributions, DistributionBin } from "../../../../src/general/math"
 import { Distribution } from "../../../../src/general/math/types"
 
-describe("computeDistributions", () => {
-    it("given an array and a count of bins, will return all the possible ways of distributing the elements across the bins", () => {
+describe("computeDistributions", (): void => {
+    it("given an array and a count of bins, will return all the possible ways of distributing the elements across the bins", (): void => {
         const array: string[] = ["a", "b", "c", "d"]
         const binCount = 3 as Count<DistributionBin<string>>
 
@@ -449,7 +449,7 @@ describe("computeDistributions", () => {
         expect(actual).toBeSameDistributionsAs(expected)
     })
 
-    it("works for 1 element across two bins", () => {
+    it("works for 1 element across two bins", (): void => {
         const array = ["a"]
         const binCount = 2 as Count<DistributionBin<string>>
 

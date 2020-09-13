@@ -3,10 +3,10 @@ import { N2D3P9 } from "../../../../src/sagittal/comma/evaluation/n2d3p9"
 import { computePopular23FreeClasses } from "../../../../src/scripts/popular23FreeClasses/popular23FreeClasses"
 import { Popular23FreeClass } from "../../../../src/scripts/popular23FreeClasses/types"
 
-describe("computePopular23FreeClasses", () => {
+describe("computePopular23FreeClasses", (): void => {
     it(
         `returns a ranked (and sorted) list of the most popular 2,3-free classes with N2D3P9 less than the requested max`,
-        () => {
+        (): void => {
             const maxN2D3P9 = 5 as Max<N2D3P9>
 
             const actual = computePopular23FreeClasses(maxN2D3P9)

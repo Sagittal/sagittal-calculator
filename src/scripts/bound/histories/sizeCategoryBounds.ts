@@ -5,7 +5,7 @@ const computeSizeCategoryBoundsWithinMaximumPosition = (): CentsPosition[] =>
     SIZE_CATEGORY_BOUNDS.slice(
         0,
         SIZE_CATEGORY_BOUNDS.findIndex(
-            (sizeCategoryBound: CentsPosition) => sizeCategoryBound.cents === MAX_SINGLE_SHAFT_CENTS) + 1,
+            (sizeCategoryBound: CentsPosition): boolean => sizeCategoryBound.cents === MAX_SINGLE_SHAFT_CENTS) + 1,
     )
 
 export {

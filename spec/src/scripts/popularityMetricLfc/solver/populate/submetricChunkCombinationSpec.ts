@@ -6,13 +6,13 @@ import { INITIAL_PARAMETER_SCOPES } from "../../../../../../src/scripts/populari
 import { populateScopesForSubmetricChunkCombination } from "../../../../../../src/scripts/popularityMetricLfc/solver/populate/submetricChunkCombination"
 import { Parameter, Submetric } from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
 
-describe("populateScopesForSubmetricChunkCombination", () => {
+describe("populateScopesForSubmetricChunkCombination", (): void => {
     it(
         `for the given submetric chunk combination, proceeds through each of the parameter chunk combinations,
          for each one computing all possible distributions across the submetric bins of this submetric chunk combination,
           and for each distribution populating a scope which is the merger of it with the submetrics, 
           also handling how the first submetric bin actually reformats the parameters which should be distributed to every submetric`,
-        async () => {
+        async (): Promise<void> => {
             const submetricChunkCombination: Combination<Chunk<Submetric>> = [
                 // (the "all submetrics" bin, call it "AB")
                 {},

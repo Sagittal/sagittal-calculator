@@ -1,4 +1,4 @@
-const cleanArray = <T>(array: T[]) => {
+const cleanArray = <T>(array: T[]): void => {
     array.length = 0
 }
 

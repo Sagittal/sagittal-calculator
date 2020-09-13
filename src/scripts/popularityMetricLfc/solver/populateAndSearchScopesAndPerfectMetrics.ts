@@ -15,8 +15,8 @@ import { formatSearchedAndPopulated } from "./io"
 import { populateScopes } from "./populate"
 import { searchScopes } from "./search"
 
-const populateAndSearchScopesAndPerfectMetrics = async () => {
-    populateScopes().then(() => {
+const populateAndSearchScopesAndPerfectMetrics = async (): Promise<void> => {
+    populateScopes().then((): void => {
         solverStatus.finishedPopulating = true
     })
 

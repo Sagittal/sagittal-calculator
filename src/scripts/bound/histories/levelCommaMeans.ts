@@ -20,7 +20,7 @@ const computeLevelCommaMeans = (level: Level): CentsPosition[] => {
 
     const levelSymbolIdsExcludingTheLastSymbol = levelSymbolIds.slice(0, indexOfFinalElement(levelSymbolIds))
 
-    return levelSymbolIdsExcludingTheLastSymbol.map((jiSymbolId, index): CentsPosition => {
+    return levelSymbolIdsExcludingTheLastSymbol.map((jiSymbolId: Id<JiSymbol>, index: number): CentsPosition => {
         const nextJiSymbolId = levelSymbolIds[ index + 1 ]
 
         const cents = (getJiSymbolCents(jiSymbolId) + getJiSymbolCents(nextJiSymbolId)) / 2 as Cents

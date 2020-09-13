@@ -12,7 +12,7 @@ const formatLevelAnalysis = (
 
     const levelsBestHistoryRanksEntries = Object.entries(levelsBestHistoryRanks) as unknown[] as Array<[number, number]>
 
-    levelsBestHistoryRanksEntries.forEach(([rankIndex, bestHistoryRankCount]) => {
+    levelsBestHistoryRanksEntries.forEach(([rankIndex, bestHistoryRankCount]: [number, number]): void => {
         let formattedBestHistoryRankCount = bestHistoryRankCount.toString()
         while (formattedBestHistoryRankCount.length < 3) {
             formattedBestHistoryRankCount = " " + formattedBestHistoryRankCount

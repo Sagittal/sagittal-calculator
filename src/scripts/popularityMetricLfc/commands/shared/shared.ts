@@ -5,7 +5,7 @@ import { popularityMetricLfcScriptGroupSettings } from "../../globals"
 
 const applySharedPopularityMetricLfcCommandSetup = (
     { defaultLogTargets }: { defaultLogTargets?: LogTarget[] } = {},
-) => {
+): void => {
     program
         .option(`-${CommandFlag.NO_USELESS}, --no-useless`, "eliminate probably useless parameters or parameter value scopes")
         .option(`-${CommandFlag.Z}, --z <z>`, "z", parseFloat)

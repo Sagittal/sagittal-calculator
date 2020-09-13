@@ -2,7 +2,7 @@ import { MAX_JAVASCRIPT_INTEGER_VALUE } from "../../code"
 import { formatMonzo } from "../../io"
 import { PotentiallyIrrationalMonzoParameter } from "../monzo"
 import { PRIMES } from "../primes"
-import { NumericTypeParameters } from "../types"
+import { Exponent, NumericTypeParameters, Prime } from "../types"
 import { Denominator, Numerator, Ratio } from "./types"
 
 const computeRatioFromMonzo = <T extends NumericTypeParameters>(
@@ -12,7 +12,7 @@ const computeRatioFromMonzo = <T extends NumericTypeParameters>(
     let numerator: Numerator<T> = 1 as Numerator<T>
     let denominator: Denominator<T> = 1 as Denominator<T>
 
-    monzo.forEach((primeExponent, index) => {
+    monzo.forEach((primeExponent: Exponent<Prime>, index: number): void => {
         if (primeExponent > 0) {
             numerator = numerator * PRIMES[ index ] ** primeExponent as Numerator<T>
         }

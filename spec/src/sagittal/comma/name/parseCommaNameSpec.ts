@@ -1,11 +1,11 @@
-import { Comma, Name, Ratio } from "../../../../../src/general"
+import { Comma, Name } from "../../../../../src/general"
 import { parseCommaName } from "../../../../../src/sagittal/comma/name"
 import { CommaNameRatio, SizeCategoryName } from "../../../../../src/sagittal/comma/name/types"
 
-describe("parseCommaName", () => {
+describe("parseCommaName", (): void => {
     const commaNameRatio = [1, 5] as CommaNameRatio
 
-    it("works for any size category abbreviation", () => {
+    it("works for any size category abbreviation", (): void => {
         expect(parseCommaName("1/5u" as Name<Comma>))
             .toEqual({ commaNameRatio, sizeCategoryName: SizeCategoryName.UNISON })
         expect(parseCommaName("1/5n" as Name<Comma>))
@@ -52,7 +52,7 @@ describe("parseCommaName", () => {
             .toEqual({ commaNameRatio, sizeCategoryName: SizeCategoryName.DOUBLE_APOTOME })
     })
 
-    it("works for any size category name", () => {
+    it("works for any size category name", (): void => {
         expect(parseCommaName("1/5-unison" as Name<Comma>))
             .toEqual({ commaNameRatio, sizeCategoryName: SizeCategoryName.UNISON })
         expect(parseCommaName("1/5-schismina" as Name<Comma>))

@@ -3,8 +3,8 @@ import { SubmetricScope } from "../../../../../src/scripts/popularityMetricLfc/b
 import { computeMetricName } from "../../../../../src/scripts/popularityMetricLfc/bestMetric/metricName"
 import { Parameter } from "../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
 
-describe("computeMetricName", () => {
-    it("makes a string out of the parameters (ignoring values) in each submetric", () => {
+describe("computeMetricName", (): void => {
+    it("makes a string out of the parameters (ignoring values) in each submetric", (): void => {
         const submetricScopes = [
             {
                 [ Parameter.A_AS_LOGARITHM_BASE ]: { center: 2.1, window: 3, ed: 30 },
@@ -21,7 +21,7 @@ describe("computeMetricName", () => {
         expect(actual).toBe(`{aAsLogarithmBase,sum},{max,withoutRepetition}`)
     })
 
-    it("sorts the parameters within each name (so that metrics which are the same get coalesced)", () => {
+    it("sorts the parameters within each name (so that metrics which are the same get coalesced)", (): void => {
         const submetricScopes = [
             {
                 [ Parameter.SUM ]: true,
@@ -39,7 +39,7 @@ describe("computeMetricName", () => {
         expect(actual).toBe(`{aAsLogarithmBase,sum},{aAsPowerExponent,max,withoutRepetition}`)
     })
 
-    it("sorts by submetricScopes too", () => {
+    it("sorts by submetricScopes too", (): void => {
         const submetricScopes = [
             {
                 [ Parameter.WITHOUT_REPETITION ]: true,

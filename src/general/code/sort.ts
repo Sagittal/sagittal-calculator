@@ -4,7 +4,7 @@ import { isCloseTo } from "./isCloseTo"
 import { isNumber, isUndefined } from "./typeGuards"
 import { Maybe, Sortable, SortOptions } from "./types"
 
-const isNotClose = (a: number | string, b: number | string, precision: Maybe<Integer>) => {
+const isNotClose = (a: number | string, b: number | string, precision: Maybe<Integer>): boolean => {
     return isUndefined(precision) ?
         true :
         isNumber(a) && isNumber(b) ?
@@ -15,7 +15,7 @@ const isNotClose = (a: number | string, b: number | string, precision: Maybe<Int
 const sort = <T>(array: T[], { by, descending, precision }: SortOptions = {}): T[] => {
     if (by) {
         (array as unknown[] as Sortable[])
-            .sort((element: Sortable, nextElement: Sortable) => {
+            .sort((element: Sortable, nextElement: Sortable): number => {
                 const nextSorter = dig(nextElement, by) as number | string
                 const sorter = dig(element, by) as number | string
                 const notClose = isNotClose(sorter, nextSorter, precision)
@@ -28,7 +28,7 @@ const sort = <T>(array: T[], { by, descending, precision }: SortOptions = {}): T
             })
     } else {
         (array as unknown[] as Array<number | string>)
-            .sort((element: number | string, nextElement: number | string) => {
+            .sort((element: number | string, nextElement: number | string): number => {
                 const notClose = isNotClose(element, nextElement, precision)
 
                 return descending ?

@@ -11,7 +11,7 @@ import {
 } from "../../../../general"
 import { Metric } from "../../bestMetric"
 import { popularityMetricLfcScriptGroupSettings } from "../../globals"
-import { computeUnpopularities } from "../../sumOfSquares"
+import { computeUnpopularities, Unpopularity } from "../../sumOfSquares"
 import { applySharedPopularityMetricLfcCommandSetup, load } from "../shared"
 
 applySharedPopularityMetricLfcCommandSetup()
@@ -22,9 +22,12 @@ const realPopularities: Array<Ranked<Popularity>> =
     COMMA_POPULARITIES.slice(0, popularityMetricLfcScriptGroupSettings.onlyTop)
 
 const noRottens = Object.entries(potentiallyRottens).reduce(
-    (noRottens: Record<string, Metric>, [potentiallyRottenName, potentiallyRottenMetric]: [string, Metric]) => {
+    (
+        noRottens: Record<string, Metric>,
+        [potentiallyRottenName, potentiallyRottenMetric]: [string, Metric],
+    ): Record<string, Metric> => {
         const unpopularities = computeUnpopularities(realPopularities, potentiallyRottenMetric.submetrics)
-        if (unpopularities.some(unpopularity => !isNumber(unpopularity.antivotes))) {
+        if (unpopularities.some((unpopularity: Unpopularity): boolean => !isNumber(unpopularity.antivotes))) {
             return noRottens
         }
 

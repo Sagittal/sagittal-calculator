@@ -26,7 +26,7 @@ popularityMetricLfcScriptGroupSettings.maxUnit = DEFAULT_MAX_UNIT_WHEN_PERFECTIN
 const bestMetricsToBePerfected = load("metrics" as Filename) as Record<string, Metric>
 
 const startTime = now()
-perfectMetrics(Object.values(bestMetricsToBePerfected)).then(() => {
+perfectMetrics(Object.values(bestMetricsToBePerfected)).then((): void => {
     saveLog(`\n\nTHE PERFECTED METRICS ARE ${formatBestMetrics()}` as Io, LogTarget.FINAL_PERFECTER_RESULTS)
 
     const endTime = now()

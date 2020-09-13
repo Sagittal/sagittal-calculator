@@ -20,7 +20,12 @@ import {
     Ratio,
     saveLog,
 } from "../../../general"
-import { analyzeJiPitch, computeMonzoFrom23FreeClassAndSizeCategoryName, parseCommaName } from "../../../sagittal"
+import {
+    analyzeJiPitch,
+    computeMonzoFrom23FreeClassAndSizeCategoryName,
+    parseCommaName,
+    ParsedCommaName,
+} from "../../../sagittal"
 import { computeNotatingCommasTable, formatJiPitch, formatSettings } from "../io"
 import { applySharedPitchCommandSetup } from "./shared"
 
@@ -28,17 +33,17 @@ program
     .option(
         `-${CommandFlag.MONZO}, --monzo <monzo>`,
         "monzo",
-        (monzoText: string) => parseMonzo(monzoText as Formatted<Monzo>),
+        (monzoText: string): Monzo => parseMonzo(monzoText as Formatted<Monzo>),
     )
     .option(
         `-${CommandFlag.RATIO}, --ratio <ratio>`,
         "ratio",
-        (ratioText: string) => parseRatio(ratioText as Formatted<Ratio>),
+        (ratioText: string): Ratio => parseRatio(ratioText as Formatted<Ratio>),
     )
     .option(
         `-${CommandFlag.COMMA_NAME}, --comma-name <commaName>`,
         "comma name",
-        (commaNameText: string) => parseCommaName(commaNameText as Name<Comma>),
+        (commaNameText: string): ParsedCommaName => parseCommaName(commaNameText as Name<Comma>),
     )
 
 applySharedPitchCommandSetup()
@@ -48,7 +53,7 @@ let monzo: Monzo
 if (jiPitchText) {
     if (jiPitchText.match(IDENTIFYING_COMMA_NAME_CHARS)) {
         const { commaNameRatio, sizeCategoryName } = parseCommaName(jiPitchText as Name<Comma>)
-        monzo = computeMonzoFrom23FreeClassAndSizeCategoryName({ commaNameRatio: commaNameRatio, sizeCategoryName })
+        monzo = computeMonzoFrom23FreeClassAndSizeCategoryName({ commaNameRatio, sizeCategoryName })
     } else if (jiPitchText.includes("/")) {
         const ratio = parseRatio(jiPitchText as Formatted<Ratio>)
         monzo = computeMonzoFromRatio(ratio)

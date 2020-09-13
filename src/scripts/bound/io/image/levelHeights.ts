@@ -5,7 +5,7 @@ import { LEVEL_HEIGHT, MARGIN, Y_SCALE } from "./sizes"
 
 const computeLevelHeights = (withinLevelHeight: Multiplier<Basis<Cents>>): Record<Level, Px> =>
     LEVELS.reduce(
-        (levelTops, level, levelIndex) => {
+        (levelTops: Record<Level, Px>, level: Level, levelIndex: number): Record<Level, Px> => {
             const levelHeight: Multiplier<Basis<Cents>> = sum(computeReversedLevelIndex(levelIndex), withinLevelHeight)
 
             return {

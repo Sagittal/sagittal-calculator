@@ -6,22 +6,22 @@ import * as populate from "../../../../../src/scripts/popularityMetricLfc/solver
 import * as search from "../../../../../src/scripts/popularityMetricLfc/solver/search/scopes"
 import { onlyRunInCi } from "../../../../helpers/onlyRunInCi"
 
-describe("populateAndSearchScopesAndPerfectMetrics", () => {
+describe("populateAndSearchScopesAndPerfectMetrics", (): void => {
     let originalJasmineTimeoutInterval: number
-    beforeEach(() => {
+    beforeEach((): void => {
         originalJasmineTimeoutInterval = jasmine.DEFAULT_TIMEOUT_INTERVAL
 
         jasmine.DEFAULT_TIMEOUT_INTERVAL = 10000
     })
 
-    afterEach(() => {
+    afterEach((): void => {
         jasmine.DEFAULT_TIMEOUT_INTERVAL = originalJasmineTimeoutInterval
     })
 
-    it("populates scopes", async () => {
-        spyOn(populate, "populateScopes").and.callFake(async () => {
+    it("populates scopes", async (): Promise<void> => {
+        spyOn(populate, "populateScopes").and.callFake(async (): Promise<void> => {
         })
-        spyOn(search, "searchScopes").and.callFake(async () => {
+        spyOn(search, "searchScopes").and.callFake(async (): Promise<void> => {
         })
 
         await populateAndSearchScopesAndPerfectMetrics()
@@ -29,10 +29,10 @@ describe("populateAndSearchScopesAndPerfectMetrics", () => {
         expect(populate.populateScopes).toHaveBeenCalled()
     })
 
-    it("searches scopes", async () => {
-        spyOn(populate, "populateScopes").and.callFake(async () => {
+    it("searches scopes", async (): Promise<void> => {
+        spyOn(populate, "populateScopes").and.callFake(async (): Promise<void> => {
         })
-        spyOn(search, "searchScopes").and.callFake(async () => {
+        spyOn(search, "searchScopes").and.callFake(async (): Promise<void> => {
         })
 
         await populateAndSearchScopesAndPerfectMetrics()
@@ -40,7 +40,7 @@ describe("populateAndSearchScopesAndPerfectMetrics", () => {
         expect(search.searchScopes).toHaveBeenCalled()
     })
 
-    it("completes searching scopes before resolving", async () => {
+    it("completes searching scopes before resolving", async (): Promise<void> => {
         onlyRunInCi()
 
         solverStatus.chunkCount = 1 as Count<Chunk>

@@ -49,13 +49,13 @@ const testIsCloseTo = <T extends number>(actual: T, expected: T, precision: Inte
     }
 }
 
-const arraysHaveSameContents = <T>(arrayOne: T[], arrayTwo: T[]) => {
+const arraysHaveSameContents = <T>(arrayOne: T[], arrayTwo: T[]): boolean => {
     if (arrayOne.length !== arrayTwo.length) {
         return false
     }
 
-    return arrayOne.every(elementOne =>
-        arrayTwo.some(elementTwo =>
+    return arrayOne.every((elementOne: T): boolean =>
+        arrayTwo.some((elementTwo: T): boolean =>
             deepEquals(elementOne, elementTwo)))
 }
 
@@ -67,10 +67,10 @@ const arraysAreCloseUpThroughExpected = <T extends number>(expected: T[], actual
     })
 }
 
-const eachExpectedElementDeepEqualsSomeActualElement = <T>(expectedElements: T[], actual: T[], message?: string) => {
-    expectedElements.forEach(expectedElement => {
+const eachExpectedElementDeepEqualsSomeActualElement = <T>(expectedElements: T[], actual: T[], message?: string): void => {
+    expectedElements.forEach((expectedElement: T): void => {
         assert(
-            actual.some(actualElement => {
+            actual.some((actualElement: T): boolean => {
                 return deepEquals(actualElement, expectedElement)
             }),
             message || `This expected element was not found: ${stringify(expectedElement)}.`,
@@ -78,10 +78,10 @@ const eachExpectedElementDeepEqualsSomeActualElement = <T>(expectedElements: T[]
     })
 }
 
-const eachExpectedElementHasSameContentsAsSomeActualElement = <T>(expectedElements: T[][], actual: T[][], message?: string) => {
-    expectedElements.forEach(expectedElement => {
+const eachExpectedElementHasSameContentsAsSomeActualElement = <T>(expectedElements: T[][], actual: T[][], message?: string): void => {
+    expectedElements.forEach((expectedElement: T[]): void => {
         assert(
-            actual.some(actualElement => {
+            actual.some((actualElement: T[]): boolean => {
                 return arraysHaveSameContents(actualElement, expectedElement)
             }),
             message || `This expected element was not found: ${stringify(expectedElement)}`,
@@ -148,10 +148,10 @@ const customMatchers: CustomMatcherFactories = {
         compare: <T>(actual: T[][][], expected: T[][][], message?: string): CustomMatcherResult =>
             doAssertions((): void => {
                 assert(actual.length === expected.length, `Arrays did not have the same length, so there is no way they could have the same members.`)
-                expected.forEach((expectedElement: T[][]) => {
+                expected.forEach((expectedElement: T[][]): void => {
                     assert(
-                        actual.some(actualElement => {
-                            return actualElement.every((actualElementElement: T[], index) => {
+                        actual.some((actualElement: T[][]): boolean => {
+                            return actualElement.every((actualElementElement: T[], index: number): boolean => {
                                 return arraysHaveSameContents(actualElementElement, expectedElement[ index ])
                             })
                         }),

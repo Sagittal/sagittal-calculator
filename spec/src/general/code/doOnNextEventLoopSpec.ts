@@ -1,14 +1,14 @@
 import { Ms } from "../../../../src/general"
 import { doOnNextEventLoop } from "../../../../src/general/code"
 
-describe("doOnNextEventLoop", () => {
-    it("resolves on the next event loop", async done => {
+describe("doOnNextEventLoop", (): void => {
+    it("resolves on the next event loop", async (done: DoneFn): Promise<void> => {
         let work = 0
-        const fn = () => {
+        const fn = (): void => {
             work = 1
         }
 
-        doOnNextEventLoop(fn).then(() => {
+        doOnNextEventLoop(fn).then((): void => {
             expect(work).toBe(1)
             done()
         })
@@ -16,18 +16,18 @@ describe("doOnNextEventLoop", () => {
         expect(work).toBe(0)
     })
 
-    it("works when the function passed in is itself async", async done => {
+    it("works when the function passed in is itself async", async (done: DoneFn): Promise<void> => {
         let work = 0
-        const fn = () => {
-            return new Promise(resolve => {
-                setTimeout(() => {
+        const fn = (): Promise<void> => {
+            return new Promise((resolve: () => void): void => {
+                setTimeout((): void => {
                     work = 1
                     resolve()
                 }, 0)
             })
         }
 
-        doOnNextEventLoop(fn).then(() => {
+        doOnNextEventLoop(fn).then((): void => {
             expect(work).toBe(1)
             done()
         })
@@ -35,21 +35,21 @@ describe("doOnNextEventLoop", () => {
         expect(work).toBe(0)
     })
 
-    it("supports having a longer timeout", async done => {
+    it("supports having a longer timeout", async (done: DoneFn): Promise<void> => {
         let work = 0
-        const fn = () => {
+        const fn = (): void => {
             work = 1
         }
 
-        doOnNextEventLoop(fn, 30 as Ms).then(() => {
+        doOnNextEventLoop(fn, 30 as Ms).then((): void => {
             expect(work).toBe(1)
         })
 
-        setTimeout(() => {
+        setTimeout((): void => {
             expect(work).toBe(0)
         }, 20 as Ms)
 
-        setTimeout(() => {
+        setTimeout((): void => {
             expect(work).toBe(1)
             done()
         }, 40 as Ms)

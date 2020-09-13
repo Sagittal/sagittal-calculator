@@ -4,8 +4,8 @@ import { analyzeEvents } from "../../../../../../src/scripts/bound/analyzeHistor
 import { EventType, History } from "../../../../../../src/scripts/bound/histories"
 import { eventAnalysisFixture, eventFixture } from "../../../../../helpers/src/scripts/bound/fixtures"
 
-describe("analyzeEvents", () => {
-    it("adds some analysis properties to each event: rank, distance, and exact", () => {
+describe("analyzeEvents", (): void => {
+    it("adds some analysis properties to each event: rank, distance, and exact", (): void => {
         const history: History = [
             {
                 ...eventFixture,

@@ -1,13 +1,23 @@
 import { computeCentsFromPitch } from "../../../../../../src/general/music"
-import { APOTOME_CENTS, getSagittalComma, JI_BOUNDS, JI_SYMBOLS } from "../../../../../../src/sagittal"
+import {
+    APOTOME_CENTS,
+    Bound,
+    getSagittalComma,
+    JiSymbol,
+    JI_BOUNDS,
+    JI_SYMBOLS,
+    SagittalComma,
+} from "../../../../../../src/sagittal"
 
-describe("half-apotome mirror", () => {
+describe("half-apotome mirror", (): void => {
     const halfApotomeCents = APOTOME_CENTS / 2
 
-    it("is the case that the commas in the JI notation are symmetrical about the half-apotome mirror", () => {
-        const sagittalJiCommas = JI_SYMBOLS.map(symbol => getSagittalComma(symbol.primaryCommaId))
-        const firstCommaGreaterThanHalfApotomeMirrorIndex =
-            sagittalJiCommas.findIndex(jiComma => computeCentsFromPitch(jiComma) > halfApotomeCents)
+    it("is the case that the commas in the JI notation are symmetrical about the half-apotome mirror", (): void => {
+        const sagittalJiCommas = JI_SYMBOLS
+            .map((jiSymbol: JiSymbol): SagittalComma => getSagittalComma(jiSymbol.primaryCommaId))
+        const firstCommaGreaterThanHalfApotomeMirrorIndex = sagittalJiCommas.findIndex(
+            (sagittalComma: SagittalComma): boolean => computeCentsFromPitch(sagittalComma) > halfApotomeCents,
+        )
 
         let indexOffset = 0
         while (firstCommaGreaterThanHalfApotomeMirrorIndex + indexOffset < sagittalJiCommas.length) {
@@ -26,9 +36,9 @@ describe("half-apotome mirror", () => {
         }
     })
 
-    it("is the case that the bounds in the JI notation are symmetrical about the half-apotome mirror", () => {
+    it("is the case that the bounds in the JI notation are symmetrical about the half-apotome mirror", (): void => {
         const boundAtHalfApotomeMirrorIndex =
-            JI_BOUNDS.findIndex(jiBound => jiBound.cents > halfApotomeCents)
+            JI_BOUNDS.findIndex((jiBound: Bound): boolean => jiBound.cents > halfApotomeCents)
 
         let indexOffset = 1
         while (boundAtHalfApotomeMirrorIndex + indexOffset < JI_BOUNDS.length) {

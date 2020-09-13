@@ -39,7 +39,7 @@ const computeCommas = (options: CommasOptions): Comma[] => {
         max23FreeCopfr,
     })
 
-    fiveSlicedMonzosToCheck.forEach(fiveSlicedMonzoToCheck => {
+    fiveSlicedMonzosToCheck.forEach((fiveSlicedMonzoToCheck: Monzo<{ rough: 5 }>): void => {
         commas = commas.concat(
             computeCommasFrom23FreeMonzo(
                 fiveSlicedMonzoToCheck,

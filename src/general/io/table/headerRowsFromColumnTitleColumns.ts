@@ -1,26 +1,31 @@
-import { BLANK, Column, Formatted, max, Row } from "../../../general"
+import { BLANK, Column, count, Count, Formatted, max, Row } from "../../../general"
 
 const computeHeaderRowsFromColumnTitleColumns = <T>(
-    columnTitleColumns: Array<Column<{ of: T }>>,
+    columnTitleColumns: Array<Column<{ of: T, header: true }>>,
     { includeSpacerRow = false }: { includeSpacerRow?: boolean } = {},
 ): Array<Row<{ of: T, header: true }>> => {
-    const maxColumnTitleHeaderRowCount = max(...columnTitleColumns.map(columnTitleColumn => columnTitleColumn.length))
+    const maxColumnTitleHeaderRowCount = max(
+        ...columnTitleColumns.map((columnTitleColumn: Column<{ of: T, header: true }>): Count<Formatted<T>> => {
+            return count(columnTitleColumn)
+        }),
+    )
 
     const rows: Array<Row<{ of: T, header: true }>> = [...Array(maxColumnTitleHeaderRowCount).keys()]
-        .map(_ => [] as unknown[] as Row<{ of: T, header: true }>)
+        .map((_: number): Row<{ of: T, header: true }> => [] as unknown[] as Row<{ of: T, header: true }>)
 
-    columnTitleColumns.forEach(columnTitleColumn => {
+    columnTitleColumns.forEach((columnTitleColumn: Column<{ of: T, header: true }>): void => {
         while (columnTitleColumn.length < maxColumnTitleHeaderRowCount) {
-            columnTitleColumn.unshift(BLANK as Formatted<unknown>)
+            columnTitleColumn.unshift(BLANK as Formatted<T>)
         }
 
-        columnTitleColumn.forEach((columnTitleCell: Formatted<unknown>, index: number) => {
+        columnTitleColumn.forEach((columnTitleCell: Formatted<T>, index: number): void => {
             rows[ index ].push(columnTitleCell)
         })
     })
 
     if (includeSpacerRow) {
-        rows.push([...Array(columnTitleColumns.length).keys()].map(_ => "") as Row<{ of: T, header: true }>)
+        rows.push([...Array(columnTitleColumns.length).keys()]
+            .map((_: number): string => "") as Row<{ of: T, header: true }>)
     }
 
     return rows

@@ -6,8 +6,8 @@ import {
 } from "../../../../../../src/scripts/popularityMetricLfc/bestMetric/scopeToSamples"
 import { Parameter, ParameterValue } from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
 
-describe("computeSamples", () => {
-    it("given some submetric scopes, will return all combinations of submetrics to check", () => {
+describe("computeSamples", (): void => {
+    it("given some submetric scopes, will return all combinations of submetrics to check", (): void => {
         const scope = [
             {},
             {
@@ -209,7 +209,7 @@ describe("computeSamples", () => {
         expect(actual).toEqual(expected)
     })
 
-    it("supports providing more than one submetric with the same submetric type", () => {
+    it("supports providing more than one submetric with the same submetric type", (): void => {
         const scope = [
             {},
             {

@@ -2,8 +2,8 @@ import { Integer, Rank } from "../../../../../src/general"
 import { EventAnalysis } from "../../../../../src/scripts/bound/analyzeHistory"
 import { computeBinaryScoreRepresentationIndex } from "../../../../../src/scripts/bound/analyzeHistory/binaryScoreRepresentationCardinality"
 
-describe("computeBinaryScoreRepresentationIndex", () => {
-    it("gives the correct index for the power-of-two-based score", () => {
+describe("computeBinaryScoreRepresentationIndex", (): void => {
+    it("gives the correct index for the power-of-two-based score", (): void => {
         expect(computeBinaryScoreRepresentationIndex(0 as Integer & Rank<EventAnalysis>, 4)).toBe(0)
         expect(computeBinaryScoreRepresentationIndex(0 as Integer & Rank<EventAnalysis>, 3)).toBe(1)
         expect(computeBinaryScoreRepresentationIndex(0 as Integer & Rank<EventAnalysis>, 2)).toBe(2)

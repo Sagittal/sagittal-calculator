@@ -3,8 +3,8 @@ import { DynamicParameter } from "../../../../../../src/scripts/popularityMetric
 import { computeDynamicParameterValueIndices } from "../../../../../../src/scripts/popularityMetricLfc/bestMetric/scopeToSamples/dynamicParameterValueIndices"
 import { Parameter, ParameterValue, Submetric } from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
 
-describe("computeDynamicParameterValueIndices", () => {
-    it("given the dynamic parameters and a submetric, returns an array of, in order, for each of the dynamic parameters, its index in the parameter points", () => {
+describe("computeDynamicParameterValueIndices", (): void => {
+    it("given the dynamic parameters and a submetric, returns an array of, in order, for each of the dynamic parameters, its index in the parameter points", (): void => {
         const dynamicParameters: DynamicParameter[] = [
             // don't pick me at all, since I'm submetric index 0 --
             // I should have already been handled by a previous call to computeDynamicParameterValueIndices

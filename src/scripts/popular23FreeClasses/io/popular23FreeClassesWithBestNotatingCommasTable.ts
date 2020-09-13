@@ -10,7 +10,7 @@ const computePopular23FreeClassesWithBestNotatingCommasTable = (
     const table: Table<Popular23FreeClass> = computeBestNotatingCommaHeaderRows()
     const headerRowCount = count(table) as Count<Row<{ of: Popular23FreeClass, header: true }>>
 
-    popular23FreeClasses.forEach(popular23FreeClass => {
+    popular23FreeClasses.forEach((popular23FreeClass: Ranked<Popular23FreeClassWithBestNotatingComma>): void => {
         const {
             formatted23FreeClass,
             rank: estimatedRank,

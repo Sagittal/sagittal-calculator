@@ -1,4 +1,4 @@
-import { isUndefined, Maybe } from "../../../../general"
+import { Id, isUndefined, Maybe } from "../../../../general"
 import { Bound, getJiSymbol, Level, SymbolLongAscii } from "../../../../sagittal"
 import { getJiSymbolWithPrimaryComma } from "./jiSymbolWithPrimaryComma"
 import { LEVEL_BOUNDED_SYMBOLS } from "./levelBoundedJiSymbols"
@@ -7,13 +7,18 @@ import {
     BoundedJiSymbolsWithPrimaryCommas,
     BoundedSymbolIdWithDistancesPair,
     BoundIdentifiers,
+    BoundIdWithBoundedSymbolIdWithDistancesPairsByLevel,
 } from "./types"
 
 const extractBoundIdentifiers = (bound: Bound): BoundIdentifiers => {
     const { cents, id } = bound
 
-    const boundIdWithBoundedSymbolIdWithDistancesPairsByLevel =
-        LEVEL_BOUNDED_SYMBOLS.find(symbol => symbol.id === id)
+    const boundIdWithBoundedSymbolIdWithDistancesPairsByLevel = LEVEL_BOUNDED_SYMBOLS.find(
+        (
+            boundIdWithBoundedSymbolIdWithDistancesPairsByLevel: BoundIdWithBoundedSymbolIdWithDistancesPairsByLevel,
+        ): boolean => {
+            return boundIdWithBoundedSymbolIdWithDistancesPairsByLevel.id === id
+        })
     if (!boundIdWithBoundedSymbolIdWithDistancesPairsByLevel) {
         throw new Error(`Could not find bounded symbols for bound with ID ${id}`)
     }
@@ -32,7 +37,11 @@ const extractBoundIdentifiers = (bound: Bound): BoundIdentifiers => {
 
     const boundedSymbols: BoundedJiSymbolsWithPrimaryCommas =
         Object.entries(boundIdWithBoundedSymbolIdWithDistancesPairsByLevel).reduce(
-            (boundedSymbols, [level, boundIdWithBoundedSymbolIdWithDistancesPair]) => {
+            (
+                boundedSymbols: BoundedJiSymbolsWithPrimaryCommas,
+                [level, boundIdWithBoundedSymbolIdWithDistancesPair]:
+                    [string, Maybe<BoundedSymbolIdWithDistancesPair> | Id<Bound>],
+            ): BoundedJiSymbolsWithPrimaryCommas => {
                 if (level === "id") return boundedSymbols
 
                 const [first, second] = boundIdWithBoundedSymbolIdWithDistancesPair

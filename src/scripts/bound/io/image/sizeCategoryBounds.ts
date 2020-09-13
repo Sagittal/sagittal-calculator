@@ -1,4 +1,4 @@
-import { Io, Px } from "../../../../general"
+import { CentsPosition, Io, Px } from "../../../../general"
 import { Level } from "../../../../sagittal"
 import { LEVELS_SIZE_CATEGORY_BOUNDS } from "../../histories"
 import { SIZE_COLOR } from "./colors"
@@ -6,12 +6,12 @@ import { LEVEL_BOTTOMS, LEVEL_TOPS } from "./levelHeights"
 import { DASH_SIZE } from "./sizes"
 import { computeX } from "./x"
 
-const visualizeSizeCategoryBounds = () => {
+const visualizeSizeCategoryBounds = (): Io[] => {
     const sizeCategoryBounds = LEVELS_SIZE_CATEGORY_BOUNDS[ Level.MEDIUM ] // Same at every level
 
     const sizeCategoryBoundElements: Io[] = []
 
-    sizeCategoryBounds.forEach(sizeCategoryBound => {
+    sizeCategoryBounds.forEach((sizeCategoryBound: CentsPosition): void => {
         const { name, cents } = sizeCategoryBound
 
         const topEdgeY: Px = LEVEL_TOPS[ Level.INSANE ]

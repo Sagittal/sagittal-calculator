@@ -2,8 +2,8 @@ import { Cents, Multiplier } from "../../../../../../src/general"
 import { Ina, Level } from "../../../../../../src/sagittal"
 import { computeInaDistance } from "../../../../../../src/scripts/bound/analyzeHistory"
 
-describe("inaDistance", () => {
-    it("returns the distance as a proportion of the size of the ina at that level", () => {
+describe("inaDistance", (): void => {
+    it("returns the distance as a proportion of the size of the ina at that level", (): void => {
         const distance: Cents = 0.1 as Cents
 
         expect(computeInaDistance(distance, Level.MEDIUM)).toBeCloseToTyped(0.0184720929595055 as Multiplier<Ina>)

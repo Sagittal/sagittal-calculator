@@ -7,7 +7,7 @@ import * as recursiveBestMetric from "../../../../../src/scripts/popularityMetri
 import { LocalMin, MetricTag } from "../../../../../src/scripts/popularityMetricLfc/perfecter/types"
 import { Parameter, ParameterValue, Submetric } from "../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
 
-describe("searchNextLocalMin", () => {
+describe("searchNextLocalMin", (): void => {
     const nextLocalMin: LocalMin = {
         sumOfSquares: 0.006454 as SumOfSquares,
         samplePoint: [2, 0, 1] as unknown[] as SamplePoint,
@@ -46,7 +46,7 @@ describe("searchNextLocalMin", () => {
     const onlyWinners = true
     const metricName = "" as MetricName
 
-    beforeEach(() => {
+    beforeEach((): void => {
         spyOn(recursiveBestMetric, "recursiveSearchScopeAndMaybeUpdateBestMetric")
     })
 
@@ -54,7 +54,7 @@ describe("searchNextLocalMin", () => {
 
     // TODO: test - the error catching
 
-    it("it searches the next local min recursively and maybe updates the best metric", async () => {
+    it("it searches the next local min recursively and maybe updates the best metric", async (): Promise<void> => {
         await searchNextLocalMin(nextLocalMin, {
             dynamicParameters,
             scope,

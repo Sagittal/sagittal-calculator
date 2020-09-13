@@ -1,7 +1,7 @@
 import { Io, Row } from "../../../../../src/general/io"
 import { splitColumnTitlesIntoRowsBySpaces } from "../../../../../src/general/io/table"
 
-describe("splitColumnTitlesIntoRowsBySpaces", () => {
+describe("splitColumnTitlesIntoRowsBySpaces", (): void => {
     const titles: Io[] = [
         "2,3- free class",
         "N2D3P9 rank",
@@ -10,7 +10,7 @@ describe("splitColumnTitlesIntoRowsBySpaces", () => {
         "best notating comma symbol",
     ] as Io[]
 
-    it("splits the column titles into rows by spaces", () => {
+    it("splits the column titles into rows by spaces", (): void => {
         const actual = splitColumnTitlesIntoRowsBySpaces(titles)
 
         const expected = [
@@ -22,7 +22,7 @@ describe("splitColumnTitlesIntoRowsBySpaces", () => {
         expect(actual).toEqual(expected)
     })
 
-    it("can include a spacer row", () => {
+    it("can include a spacer row", (): void => {
         const actual = splitColumnTitlesIntoRowsBySpaces(titles, { includeSpacerRow: true })
 
         const expected = [

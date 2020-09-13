@@ -1,3 +1,3 @@
-describe("perfectMetrics", () => {
+describe("perfectMetrics", (): void => {
     // TODO: test - everything
 })

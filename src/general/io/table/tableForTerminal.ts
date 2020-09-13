@@ -2,7 +2,7 @@ import { indexOfFinalElement, isUndefined, Maybe } from "../../code"
 import { colorize } from "../colorize"
 import { BLANK, NEWLINE, TAB } from "../constants"
 import { addTexts, join } from "../typedOperations"
-import { ColorMethod, Io } from "../types"
+import { ColorMethod, Formatted, Io } from "../types"
 import { computeColumnRange } from "./columnRange"
 import { DEFAULT_FORMAT_TABLE_OPTIONS } from "./constants"
 import { computeColumnWidths, computeJustifications, computeJustifiedCellForTerminal } from "./justification"
@@ -18,7 +18,7 @@ const maybeColor = (rowText: Io, rowIndex: number, colors: Maybe<Array<Maybe<Col
     return rowColor ? colorize(rowText, rowColor) : rowText
 }
 
-const formatTableForTerminal = <T = unknown>(table: Table, options?: Partial<FormatTableOptions<T>>): Io => {
+const formatTableForTerminal = <T = unknown>(table: Table<T>, options?: Partial<FormatTableOptions<T>>): Io => {
     const {
         justification = DEFAULT_FORMAT_TABLE_OPTIONS.justification,
         colors = DEFAULT_FORMAT_TABLE_OPTIONS.colors,
@@ -30,9 +30,9 @@ const formatTableForTerminal = <T = unknown>(table: Table, options?: Partial<For
 
     const columnWidths = computeColumnWidths(table, columnRange)
 
-    const formattedRows = table.map((row: Row<{ of: T }>, rowIndex): Io => {
+    const formattedRows = table.map((row: Row<{ of: T }>, rowIndex: number): Io => {
         const rowText = row.reduce(
-            (justifiedRow: Io, cell, cellIndex): Io => {
+            (justifiedRow: Io, cell: Formatted<T>, cellIndex: number): Io => {
                 const columnWidth = columnWidths[ cellIndex ]
 
                 const columnJustification = justifications[ cellIndex ]

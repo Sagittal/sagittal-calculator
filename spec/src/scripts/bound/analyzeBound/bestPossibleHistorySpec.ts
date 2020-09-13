@@ -3,8 +3,8 @@ import { computeBestPossibleHistory } from "../../../../../src/scripts/bound/ana
 import { HistoryAnalysis, Score } from "../../../../../src/scripts/bound/analyzeHistory"
 import { historyAnalysisFixture } from "../../../../helpers/src/scripts/bound/fixtures"
 
-describe("computeBestPossibleHistory", () => {
-    it("returns the history with the best score (the not possible ones are all already filtered out)", () => {
+describe("computeBestPossibleHistory", (): void => {
+    it("returns the history with the best score (the not possible ones are all already filtered out)", (): void => {
         const historyAnalyses: HistoryAnalysis[] = [
             {
                 ...historyAnalysisFixture,
@@ -33,7 +33,7 @@ describe("computeBestPossibleHistory", () => {
         expect(actual).toEqual(expected)
     })
 
-    it("returns the best exact history even if its score is not the best", () => {
+    it("returns the best exact history even if its score is not the best", (): void => {
         const historyAnalyses = [
             {
                 ...historyAnalysisFixture,
@@ -65,7 +65,7 @@ describe("computeBestPossibleHistory", () => {
         expect(actual).toEqual(expected)
     })
 
-    it("tie-breaks by distance", () => {
+    it("tie-breaks by distance", (): void => {
         const historyAnalyses: HistoryAnalysis[] = [
             {
                 ...historyAnalysisFixture,

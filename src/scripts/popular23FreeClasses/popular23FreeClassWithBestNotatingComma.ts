@@ -16,6 +16,7 @@ import {
     isUndefined,
     Max,
     Maybe,
+    Popularity,
     TwoThreeFreeClass,
     Votes,
 } from "../../general"
@@ -30,7 +31,7 @@ import {
 import { popular23FreeClassesScriptGroupSettings } from "./globals"
 import { Popular23FreeClassWithBestNotatingComma } from "./types"
 
-const isLate = (notatingComma: Comma, bestNotatingComma: Comma) => {
+const isLate = (notatingComma: Comma, bestNotatingComma: Comma): boolean => {
     const notatingCommaMonzo = computeJiPitchMonzo(notatingComma)
     const bestNotatingCommaMonzo = computeJiPitchMonzo(bestNotatingComma)
 
@@ -41,7 +42,7 @@ const isLate = (notatingComma: Comma, bestNotatingComma: Comma) => {
         )
 }
 
-const isLaas = (notatingComma: Comma, bestNotatingComma: Comma) => {
+const isLaas = (notatingComma: Comma, bestNotatingComma: Comma): boolean => {
     return abs(computeApotomeSlope(notatingComma)) < abs(computeApotomeSlope(bestNotatingComma))
 }
 
@@ -52,7 +53,7 @@ const computePopular23FreeClassWithBestNotatingComma = (
 
     const formatted23FreeClass: Formatted<TwoThreeFreeClass> = format23FreeClass(twoThreeFreeClass)
 
-    const popularity = COMMA_POPULARITIES.find(popularity => {
+    const popularity = COMMA_POPULARITIES.find((popularity: Popularity): boolean => {
         return deepEquals(popularity.twoThreeFreeClass, twoThreeFreeClass)
     })
     const popularityRank = popularity?.rank || "-" as Io

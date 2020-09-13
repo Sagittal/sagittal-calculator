@@ -27,7 +27,7 @@ const computeMonzoFromInteger = (integer: Integer): Monzo<{ direction: Direction
     const monzo: Monzo = [] as unknown[] as Monzo
     let remnant = integer
 
-    const computePrimeFactorizationForPrimeAtIndexAndUpdateRemnant = (index: number) => {
+    const computePrimeFactorizationForPrimeAtIndexAndUpdateRemnant = (index: number): void => {
         const divisor = PRIMES[ index ]
         let remainder = remnant % divisor
 

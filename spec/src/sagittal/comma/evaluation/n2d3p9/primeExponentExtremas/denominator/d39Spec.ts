@@ -3,8 +3,8 @@ import { Denominator } from "../../../../../../../../src/general/math"
 import { computeD39ForCandidateMaxDenominatorPrimeExponent } from "../../../../../../../../src/sagittal/comma/evaluation/n2d3p9/primeExponentExtremas/denominator/d39"
 import { D39 } from "../../../../../../../../src/sagittal/comma/evaluation/n2d3p9/primeExponentExtremas/denominator/types"
 
-describe("computeD39ForCandidateMaxDenominatorPrimeExponent", () => {
-    it("returns the D39 part of the N2D3P9 calculation", () => {
+describe("computeD39ForCandidateMaxDenominatorPrimeExponent", (): void => {
+    it("returns the D39 part of the N2D3P9 calculation", (): void => {
         const denominatorPrime = 11 as Prime<Denominator>
         const candidateMaxDenominatorPrimeExponentGivenMaxN2D3P9 = 5 as Max<Integer & Exponent<Prime<Denominator>>>
 

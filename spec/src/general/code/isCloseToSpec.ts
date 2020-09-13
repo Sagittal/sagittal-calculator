@@ -1,8 +1,8 @@
 import { isCloseTo } from "../../../../src/general/code"
 import { Integer } from "../../../../src/general/math"
 
-describe("isCloseTo", () => {
-    it("returns true if the two values are very close", () => {
+describe("isCloseTo", (): void => {
+    it("returns true if the two values are very close", (): void => {
         const valueOne = 5.68598945
         const valueTwo = 5.68598948
 
@@ -11,7 +11,7 @@ describe("isCloseTo", () => {
         expect(actual).toBeTruthy()
     })
 
-    it("returns false if the two values are not very close", () => {
+    it("returns false if the two values are not very close", (): void => {
         const valueOne = 5.68598945
         const valueTwo = 5.68598845
 
@@ -20,7 +20,7 @@ describe("isCloseTo", () => {
         expect(actual).toBeFalsy()
     })
 
-    it("accepts an accuracy threshold argument", () => {
+    it("accepts an accuracy threshold argument", (): void => {
         const valueOne = 5.6862
         const valueTwo = 5.6858
 
@@ -29,7 +29,7 @@ describe("isCloseTo", () => {
         expect(actual).toBeTruthy()
     })
 
-    it("works when both values are undefined", () => {
+    it("works when both values are undefined", (): void => {
         const valueOne = undefined
         const valueTwo = undefined
 

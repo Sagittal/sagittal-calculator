@@ -13,7 +13,7 @@ const computeEvents = (
 
     const snappablePositions = EVENT_TYPE_SNAPPABLE_POSITIONS[ type ][ level ]
 
-    snappablePositions.forEach((snappablePosition: CentsPosition) => {
+    snappablePositions.forEach((snappablePosition: CentsPosition): void => {
         if (
             (!lesserBoundedSymbolPosition || snappablePosition.cents > lesserBoundedSymbolPosition) &&
             (!greaterBoundedSymbolPosition || snappablePosition.cents < greaterBoundedSymbolPosition)

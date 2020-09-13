@@ -10,12 +10,12 @@ const visualizeInaMidpoints = (): Io[] => {
     const inaMidpointElements: Io[] = [] as Io[]
 
     const inaMidpointEntries = Object.entries(INA_MIDPOINTS) as Array<[Level, CentsPosition[]]>
-    inaMidpointEntries.forEach(([level, inaMidpoints]: [Level, CentsPosition[]]) => {
+    inaMidpointEntries.forEach(([level, inaMidpoints]: [Level, CentsPosition[]]): void => {
         const centerY: Px = LEVEL_CENTERS[ level ]
         const topY: Px = difference(centerY, HALF_TICK_SIZE)
         const bottomY: Px = sum(centerY, HALF_TICK_SIZE)
 
-        inaMidpoints.forEach((inaMidpoint: CentsPosition) => {
+        inaMidpoints.forEach((inaMidpoint: CentsPosition): void => {
             const { name, cents } = inaMidpoint
 
             const x: Px = computeX(cents)

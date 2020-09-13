@@ -17,7 +17,7 @@ const computeParameterValues = (parameterScope: DynamicParameterScope): Paramete
 
     const offset = center - window / 2
 
-    return keys.map((key): ParameterValue => {
+    return keys.map((key: number): ParameterValue => {
         const adjustedKey = key * window / (ed - 1)
 
         return offset + adjustedKey as ParameterValue

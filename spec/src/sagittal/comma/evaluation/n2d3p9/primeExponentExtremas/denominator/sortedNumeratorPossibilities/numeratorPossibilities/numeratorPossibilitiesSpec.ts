@@ -1,3 +1,3 @@
-describe("computeNumeratorPossibilitiesGivenMaxN2D3P3", () => {
+describe("computeNumeratorPossibilitiesGivenMaxN2D3P3", (): void => {
     // TODO: test - everything
 })

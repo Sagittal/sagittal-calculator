@@ -84,4 +84,5 @@ export {
     Smoothness,
     RationalTypeParameters,
     Primes,
+    Distribution,
 } from "./types"

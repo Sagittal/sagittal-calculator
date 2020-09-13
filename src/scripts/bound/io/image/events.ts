@@ -18,8 +18,8 @@ const visualizeEvents = (events: EventAnalysis[]): Io[] => {
         `  <circle stroke="${initialStroke}" r="${DOT_SIZE}" cx="${initialX}" cy="${initialY}" />\n` as Io,
     )
 
-    events.forEach((event, index) => {
-        const { level, cents } = event
+    events.forEach((eventAnalysis: EventAnalysis, index: number): void => {
+        const { level, cents } = eventAnalysis
         if (level === Level.INSANE) {
             return
         }

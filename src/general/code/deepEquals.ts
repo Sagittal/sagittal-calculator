@@ -5,7 +5,7 @@ import { isNumber, isUndefined } from "./typeGuards"
 const deepEqualsArray = <T>(firstValue: T[], secondValue: T[], precision?: Integer): boolean =>
     firstValue instanceof Array &&
     firstValue.length === secondValue.length &&
-    secondValue.every((el, index) => deepEquals(el, firstValue[ index ], precision))
+    secondValue.every((el: T, index: number): boolean => deepEquals(el, firstValue[ index ], precision))
 
 const deepEqualsObject = <T extends Record<string, unknown>>(
     firstValue: T,
@@ -19,7 +19,7 @@ const deepEqualsObject = <T extends Record<string, unknown>>(
     } else if (typeof firstValue === "object") {
         equal = Object.keys(firstValue).length === Object.keys(secondValue).length &&
             Object.entries(secondValue)
-                .every(([key, value]) =>
+                .every(([key, value]: [string, unknown]): boolean =>
                     deepEquals(value, firstValue[ key ], precision))
     } else {
         equal = false
@@ -28,7 +28,7 @@ const deepEqualsObject = <T extends Record<string, unknown>>(
     return equal
 }
 
-const deepEquals = <T>(firstValue: T, secondValue: T, precision?: Integer) => {
+const deepEquals = <T>(firstValue: T, secondValue: T, precision?: Integer): boolean => {
     let equal = false
 
     if (firstValue === secondValue) {

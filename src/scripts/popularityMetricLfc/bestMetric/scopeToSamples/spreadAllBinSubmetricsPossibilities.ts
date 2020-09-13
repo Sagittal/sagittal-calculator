@@ -10,7 +10,7 @@ import {
 
 const spreadAllBinSubmetricsPossibilitiesAcrossSamples = (
     options: SpreadAllBinSubmetricsPossibilitiesAcrossSamplesOptions,
-) => {
+): Sample[] => {
     const {
         dynamicParameters,
         samples,
@@ -19,8 +19,8 @@ const spreadAllBinSubmetricsPossibilitiesAcrossSamples = (
 
     const allBinMergedSamples: Sample[] = []
 
-    samples.forEach(({ submetrics, samplePoint }) => {
-        allBinSubmetricPossibilities.forEach((allBinSubmetricPossibility: SubmetricPossibility) => {
+    samples.forEach(({ submetrics, samplePoint }: Sample): void => {
+        allBinSubmetricPossibilities.forEach((allBinSubmetricPossibility: SubmetricPossibility): void => {
             const dynamicParameterValueIndices: Array<Index<ParameterValue>> = computeDynamicParameterValueIndices({
                 dynamicParameters,
                 submetric: allBinSubmetricPossibility,
@@ -28,7 +28,7 @@ const spreadAllBinSubmetricsPossibilitiesAcrossSamples = (
             })
 
             allBinMergedSamples.push({
-                submetrics: submetrics.map(submetric => ({
+                submetrics: submetrics.map((submetric: Submetric): Submetric => ({
                     ...submetric,
                     ...allBinSubmetricPossibility,
                 }) as Submetric) as Combination<Submetric>,

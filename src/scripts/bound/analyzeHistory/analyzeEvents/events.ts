@@ -6,7 +6,7 @@ import { computeEventInaDistance } from "./eventInaDistance"
 import { EventAnalysis } from "./types"
 
 const analyzeEvents = (history: History, actualBoundCents: Cents): EventAnalysis[] =>
-    history.map((event: HistoricalEvent, index): EventAnalysis => {
+    history.map((event: HistoricalEvent, index: number): EventAnalysis => {
         const { cents, type } = event
         const exact = isCloseTo(cents, actualBoundCents)
         const rank = RANKS[ type ]

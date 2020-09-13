@@ -2,8 +2,8 @@ import { Io } from "../../../../../src/general"
 import { onlyRunInCi } from "../../../../helpers/onlyRunInCi"
 import { runCommandAndGetConsoleOutput } from "../../../../helpers/src/scripts/runCommand"
 
-describe("best-metric-from-scope", () => {
-    it("recursively finds the absolute perfect metric within the given scope", () => {
+describe("best-metric-from-scope", (): void => {
+    it("recursively finds the absolute perfect metric within the given scope", (): void => {
         onlyRunInCi()
 
         const command = "npm run best-metric-from-scope" as Io

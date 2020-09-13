@@ -1,13 +1,15 @@
 import { indexOfFinalElement } from "../../code"
 import { BLANK, NEWLINE } from "../constants"
 import { addTexts, join } from "../typedOperations"
-import { Io } from "../types"
+import { Formatted, Io } from "../types"
 import { computeColumnRange } from "./columnRange"
 import { DEFAULT_FORMAT_TABLE_OPTIONS } from "./constants"
 import { computeJustifications, computeJustifiedCellForForum } from "./justification"
 import { FormatTableOptions, Row, Table, TableForForumStuffOptions } from "./types"
 
-const computeTableForForumRowParts = <T = unknown>({ index, headerRowCount, colors }: TableForForumStuffOptions<T>) => {
+const computeTableForForumRowParts = <T = unknown>(
+    { index, headerRowCount, colors }: TableForForumStuffOptions<T>,
+): { rowOpen: Io, rowClose: Io, separator: Io } => {
     const cellTag: Io = index < headerRowCount ? "th" as Io : "td" as Io
 
     const hiliteOpen: Io = colors ? colors[ index ] ? `[hilite=${colors[ index ]}]` as Io : BLANK as Io : BLANK
@@ -24,7 +26,7 @@ const computeTableForForumRowParts = <T = unknown>({ index, headerRowCount, colo
     return { rowOpen, rowClose, separator }
 }
 
-const formatTableForForum = <T = unknown>(table: Table, options?: Partial<FormatTableOptions<T>>): Io => {
+const formatTableForForum = <T = unknown>(table: Table<T>, options?: Partial<FormatTableOptions<T>>): Io => {
     const {
         justification = DEFAULT_FORMAT_TABLE_OPTIONS.justification,
         colors = DEFAULT_FORMAT_TABLE_OPTIONS.colors,
@@ -34,11 +36,11 @@ const formatTableForForum = <T = unknown>(table: Table, options?: Partial<Format
     const columnRange = computeColumnRange(table)
     const justifications = computeJustifications(justification, columnRange)
 
-    const formattedRows: Io[] = table.map((row: Row<{ of: T }>, index): Io => {
+    const formattedRows: Io[] = table.map((row: Row<{ of: T }>, index: number): Io => {
         const { rowOpen, rowClose, separator } = computeTableForForumRowParts({ index, headerRowCount, colors })
 
         const rowText = row.reduce(
-            (justifiedRow: Io, cell, cellIndex): Io => {
+            (justifiedRow: Io, cell: Formatted<T>, cellIndex: number): Io => {
                 const columnJustification = justifications[ cellIndex ]
 
                 const justifiedCell: Io = computeJustifiedCellForForum(cell, { columnJustification })

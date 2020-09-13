@@ -6,7 +6,7 @@ const secondaryParameterOverride = (
     denominatorSpecificParameter: Maybe<ParameterValue>,
     primeExponent: Exponent<Prime>,
     fractionalPart?: FractionalPartType,
-) =>
+): ParameterValue =>
     !isUndefined(denominatorSpecificParameter) &&
     fractionalPart !== FractionalPartType.NUMERATOR &&
     (fractionalPart === FractionalPartType.DENOMINATOR || primeExponent < 0) ?

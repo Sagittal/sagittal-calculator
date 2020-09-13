@@ -2,8 +2,8 @@ import { Io } from "../../../../../src/general"
 import { onlyRunInCi } from "../../../../helpers/onlyRunInCi"
 import { runCommandAndGetConsoleOutput } from "../../../../helpers/src/scripts/runCommand"
 
-describe("sos (sum of squares)", () => {
-    it("gives you the sum-of-squares given the submetric combination in the file, and also logs the full list of unpopularities", () => {
+describe("sos (sum of squares)", (): void => {
+    it("gives you the sum-of-squares given the submetric combination in the file, and also logs the full list of unpopularities", (): void => {
         onlyRunInCi()
 
         const command = "npm run sos" as Io

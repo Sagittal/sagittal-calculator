@@ -1,8 +1,11 @@
 import { computeDeepDistinct } from "../../code"
+import { count } from "../../math"
+import { Count } from "../../types"
 import { ioSettings } from "../globals"
+import { Formatted, Io } from "../types"
 import { formatTableForForum } from "./tableForForum"
 import { formatTableForTerminal } from "./tableForTerminal"
-import { FormatTableOptions, Table } from "./types"
+import { FormatTableOptions, Row, Table } from "./types"
 
 // TODO: ACTUAL PAN-COLUMN ALIGNMENT SOLUTION
 //  I'm afraid the fancy stuff we're doing currently to align monzo terms and decimal points in numbers
@@ -15,8 +18,8 @@ import { FormatTableOptions, Table } from "./types"
 //  - note that, while you did just add the [pre] monospaced tag for the forum tables
 //  that should stipulate that you use the same spacing methods for the forum tables now too...
 
-const formatTable = <T = unknown>(table: Table<T>, options?: Partial<FormatTableOptions<T>>) => {
-    const rowLengths = table.map(row => row.length)
+const formatTable = <T = unknown>(table: Table<T>, options?: Partial<FormatTableOptions<T>>): Io => {
+    const rowLengths = table.map((row: Row<{ of: T }>): Count<Formatted<T>> => count(row))
     const distinctRowLengths = computeDeepDistinct(rowLengths)
 
     if (distinctRowLengths.length > 1) {
@@ -27,6 +30,7 @@ const formatTable = <T = unknown>(table: Table<T>, options?: Partial<FormatTable
     //  in TSV it would be best if all the closing angle-brackets ended up in the same rightward column,
     //  so we don't have columns with some numbers and some angle-brackets.
     //  - and include a BOM (https://csv.thephpleague.com/8.0/bom/)
+    //  - and it should use symbol unicode!
 
     return ioSettings.forForum ? formatTableForForum(table, options) : formatTableForTerminal(table, options)
 }

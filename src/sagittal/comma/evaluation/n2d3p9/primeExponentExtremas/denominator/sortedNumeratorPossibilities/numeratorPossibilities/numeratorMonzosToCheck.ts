@@ -7,6 +7,7 @@ import {
     Max,
     Min,
     Monzo,
+    Numerator,
     Prime,
 } from "../../../../../../../../general"
 import { N2D3P9 } from "../../../../types"
@@ -18,11 +19,13 @@ const computeNumeratorMonzosToCheckGivenMaxN2D3P9 = (
     const maxNumeratorPrimeExponentsGivenMaxN2D3P9 = computeMaxNumeratorPrimeExponentsGivenMaxN2D3P9(maxN2D3P9)
 
     const numeratorPrimeExponentExtremaGivenMaxN2D3P9: Array<Extrema<Integer & Exponent<Prime>>> =
-        maxNumeratorPrimeExponentsGivenMaxN2D3P9.map(maxNumeratorPrimeExponentGivenMaxN2D3P9 => {
+        maxNumeratorPrimeExponentsGivenMaxN2D3P9.map((
+            maxNumeratorPrimeExponentGivenMaxN2D3P9: Max<Integer & Exponent<Prime<Numerator>>>,
+        ): Extrema<Integer & Exponent<Prime>> => {
             return [0 as Min<Integer & Exponent<Prime>>, maxNumeratorPrimeExponentGivenMaxN2D3P9]
         })
 
-    // TODO: SPEED UP MAX N2D3P9 FILTERING 
+    // TODO: SPEED UP MAX N2D3P9 FILTERING
     //  ok so the first step, to massively improve the speed, would be to memoize,
     //  for a given run (for a given max N2D3P9) the monzos from the prime exponent extremas for the numerators
     //  so you don't have to calculate them once for each friggin' denominator

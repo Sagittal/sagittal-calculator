@@ -1,7 +1,7 @@
 import { computeExtensionBase, ExtensionBaseType } from "../../../../src/general/code"
 
-describe("computeExtensionBase", () => {
-    it("returns an empty array when array is asked for", () => {
+describe("computeExtensionBase", (): void => {
+    it("returns an empty array when array is asked for", (): void => {
         const extensionBaseType = ExtensionBaseType.ARRAY
 
         const actual = computeExtensionBase(extensionBaseType)
@@ -10,7 +10,7 @@ describe("computeExtensionBase", () => {
         expect(actual).toEqual(expected)
     })
 
-    it("returns an empty object when object is asked for", () => {
+    it("returns an empty object when object is asked for", (): void => {
         const extensionBaseType = ExtensionBaseType.OBJECT
 
         const actual = computeExtensionBase(extensionBaseType)
@@ -19,7 +19,7 @@ describe("computeExtensionBase", () => {
         expect(actual).toEqual(expected)
     })
 
-    it("does not return the same array each time", () => {
+    it("does not return the same array each time", (): void => {
         const extensionBaseType = ExtensionBaseType.ARRAY
 
         const previousActual: unknown[] = computeExtensionBase(extensionBaseType) as unknown[]
@@ -31,7 +31,7 @@ describe("computeExtensionBase", () => {
         expect(actual).toEqual(expected)
     })
 
-    it("returns an empty object when object is asked for", () => {
+    it("returns an empty object when object is asked for", (): void => {
         const extensionBaseType = ExtensionBaseType.OBJECT
 
         const previousActual: { key: number } = computeExtensionBase(extensionBaseType) as { key: number }

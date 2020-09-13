@@ -30,7 +30,10 @@ import {
 } from "./constants"
 import { populateScopesForSubmetricChunkCombination } from "./submetricChunkCombination"
 
-const populateScopesPhase = async (chunkCount: Count<Chunk>, chunkCountForSubmetrics: Count<Chunk<Submetric>>) => {
+const populateScopesPhase = async (
+    chunkCount: Count<Chunk>,
+    chunkCountForSubmetrics: Count<Chunk<Submetric>>,
+): Promise<void> => {
     const chunkCountForParameters: Count<Chunk<Parameter>> =
         difference(chunkCount, chunkCountForSubmetrics) as Count<Chunk<Parameter>>
 
@@ -52,7 +55,7 @@ const populateScopesPhase = async (chunkCount: Count<Chunk>, chunkCountForSubmet
         memoizedSubmetricChunkCombinations[ chunkCountForSubmetrics ] = submetricChunkCombinations
         saveLog(`submetric combinations (with repetitions) computed: ${submetricChunkCombinations.length}; formula is ((${chunkCountForSubmetrics}+${submetricChunks.length}-1)!)/((${chunkCountForSubmetrics}!)((${submetricChunks.length}-1)!)) where ${submetricChunks.length} is the total of possible existing chunks and ${chunkCountForSubmetrics} is the count we are choosing at a time` as Io, LogTarget.POPULATE)
     }
-    submetricChunkCombinations.forEach(submetricChunkCombination => {
+    submetricChunkCombinations.forEach((submetricChunkCombination: Combination<Chunk<Submetric>>): void => {
         submetricChunkCombination.unshift(ALL_BINS_SUBMETRIC_SCOPE)
     })
 
@@ -80,7 +83,7 @@ const populateScopesPhase = async (chunkCount: Count<Chunk>, chunkCountForSubmet
         await populateScopesForSubmetricChunkCombination(submetricChunkCombination, {
             parameterChunkCombinations,
             submetricChunkCombinationIndex: submetricChunkCombinationIndex as Index<Combination<Chunk<Submetric>>>,
-            submetricChunkCombinationCount: submetricChunkCombinations.length as Count<Combination<Chunk<Submetric>>>,
+            submetricChunkCombinationCount: count(submetricChunkCombinations),
         })
     }
 

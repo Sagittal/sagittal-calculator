@@ -8,7 +8,9 @@ const computeSpreadDynamicParameters = (scope: Scope): Maybe<Parameter[]> => {
 
     const spreadParameters: Parameter[] = Object.keys(allBinsSubmetricScope) as Parameter[]
 
-    const spreadDynamicParameters = spreadParameters.filter(spreadParameter => PARAMETER_DYNAMISMS[ spreadParameter ])
+    const spreadDynamicParameters = spreadParameters.filter((spreadParameter: Parameter): boolean => {
+        return PARAMETER_DYNAMISMS[ spreadParameter ]
+    })
 
     return spreadDynamicParameters.length ? spreadDynamicParameters as Parameter[] : undefined
 }

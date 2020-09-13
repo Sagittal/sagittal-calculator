@@ -6,7 +6,7 @@ const computePositionJiSymbolId = (position: Maybe<Cents>): Maybe<Id<JiSymbol>> 
         return undefined
     }
 
-    const jiSymbol = JI_SYMBOLS.find(jiSymbol => {
+    const jiSymbol = JI_SYMBOLS.find((jiSymbol: JiSymbol): boolean => {
         const primaryComma = getSagittalComma(jiSymbol.primaryCommaId)
 
         return isCloseTo(computeCentsFromPitch(primaryComma), position)

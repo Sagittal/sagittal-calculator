@@ -3,7 +3,7 @@ import { ApotomeSlope, CommaAnalysis, JiSymbol } from "../../../../../src/sagitt
 import { N2D3P9 } from "../../../../../src/sagittal/comma/evaluation/n2d3p9"
 import { computeCommaRow } from "../../../../../src/scripts/jiPitch/io/commaRow"
 
-describe("computeCommaRow", () => {
+describe("computeCommaRow", (): void => {
     // Note: this comma is made up and internally inconsistent.
     // Only the name is important as it is used to find the symbol.
     const comma: CommaAnalysis & { symbolId?: Id<JiSymbol> } = {
@@ -19,7 +19,7 @@ describe("computeCommaRow", () => {
         n2d3p9: 18.4567 as N2D3P9,
     } as CommaAnalysis & { symbolId?: Id<JiSymbol> }
 
-    it("takes the properties of the comma and puts them in order in a row", () => {
+    it("takes the properties of the comma and puts them in order in a row", (): void => {
         const actual = computeCommaRow(comma)
 
         const expected = [
