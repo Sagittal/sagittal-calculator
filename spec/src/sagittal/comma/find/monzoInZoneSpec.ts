@@ -1,5 +1,7 @@
-import { computeMonzoInZone, Max, Min, Monzo } from "../../../../src/general"
-import { Cents } from "../../../../src/general/music"
+import { Max, Min } from "../../../../../src/general/math"
+import { Monzo } from "../../../../../src/general/math/monzo"
+import { Cents } from "../../../../../src/general/music"
+import { computeMonzoInZone } from "../../../../../src/sagittal/comma/find/monzoInZone"
 
 describe("computeMonzoInZone", () => {
     it("given a 2-free monzo, finds the right power of 2 for the monzo which is within the cents range", () => {

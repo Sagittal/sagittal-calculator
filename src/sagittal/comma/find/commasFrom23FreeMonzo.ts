@@ -1,7 +1,6 @@
 import {
     abs,
     Comma,
-    computeMonzoInZone,
     computePlusOrMinusRange,
     Exponent,
     Integer,
@@ -20,6 +19,7 @@ import {
     DEFAULT_MAX_N2D3P9,
     DEFAULT_MIN_CENTS,
 } from "./constants"
+import { computeMonzoInZone } from "./monzoInZone"
 import { CommasFrom23FreeMonzoOptions } from "./types"
 
 const computeTwoFreeMonzo = (

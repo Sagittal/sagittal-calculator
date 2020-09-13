@@ -155,7 +155,6 @@ export {
     COMMA_POPULARITIES,
     computeCentsFromPitch,
     computeCentsFromRatio,
-    computeMonzoInZone,
     Pitch,
     Popularity,
     Votes,
@@ -169,8 +168,10 @@ export {
     compute23FreeClass,
     computeIsSubPitch,
     computeSuperPitch,
-    computeIsRoughJiPitch,
-    computeIsSmoothJiPitch,
+    computeIsWithinPrimeMin,
+    computeIsWithinPrimeLimit,
     computeIsUnisonPitch,
+    THREE_LIMIT,
+    computeCentsFromMonzo,
 } from "./music"
 export { Count, Ed, Extrema, Id, Index, Ms, Multiplier, Name, Step, Sum, Window } from "./types"

@@ -40,6 +40,8 @@ enum Direction {
     UNISON = "unison",
 }
 
+// TODO: consider renaming irrational to noninteger, because "irrational" has the baggage of seeming similar to Ratio
+//  whereas this property is very closely akin to the Integer type, fundamentally
 type NumericTypeParameters = Partial<{
     irrational: boolean,
     direction: Direction

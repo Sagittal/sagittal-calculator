@@ -1,7 +1,14 @@
-import { deepEquals, Maybe } from "../code"
-import { Exponent, Integer, Monzo, Prime } from "../math"
-import { computeCentsFromMonzo } from "./centsFromMonzo"
-import { Cents, Zone } from "./types"
+import {
+    Cents,
+    computeCentsFromMonzo,
+    deepEquals,
+    Exponent,
+    Integer,
+    Maybe,
+    Monzo,
+    Prime,
+    Zone,
+} from "../../../general"
 
 const computeMonzoInZone = (twoFreeMonzo: Monzo<{ rough: 3 }>, zone: Zone): Maybe<Monzo> => {
     const [minCents, maxCents] = zone
