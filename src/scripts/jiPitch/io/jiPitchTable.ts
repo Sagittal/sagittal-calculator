@@ -10,7 +10,7 @@ import {
     Row,
     Table,
 } from "../../../general"
-import { AnalyzedJiPitch } from "../../../sagittal"
+import { JiPitchAnalysis } from "../../../sagittal"
 import { computeJiPitchHeaderRow } from "./headerRows"
 import { JI_PITCH_TITLE } from "./titles"
 
@@ -18,10 +18,10 @@ import { JI_PITCH_TITLE } from "./titles"
 //  I think you already have a to-do re: this problem
 //  this one, as opposed to formatRatio, is more of a table at this point
 
-const formatJiPitch = (jiPitch: AnalyzedJiPitch): Io => {
+const formatJiPitch = (jiPitch: JiPitchAnalysis): Io => {
     const { limit, twoThreeFreeSopfr, cents, monzo, ratio, apotomeSlope, n2d3p9 } = jiPitch
 
-    const jiPitchTable: Table<AnalyzedJiPitch> = [
+    const jiPitchTable: Table<JiPitchAnalysis> = [
         computeJiPitchHeaderRow(),
         [
             BLANK,
@@ -33,7 +33,7 @@ const formatJiPitch = (jiPitch: AnalyzedJiPitch): Io => {
             formatInteger(limit),
             formatInteger(twoThreeFreeSopfr),
             formatNumber(n2d3p9),
-        ] as Row<{ of: AnalyzedJiPitch }>,
+        ] as Row<{ of: JiPitchAnalysis }>,
     ]
 
     return addTexts(JI_PITCH_TITLE, formatTable(jiPitchTable))

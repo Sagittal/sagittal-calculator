@@ -9,9 +9,9 @@ import {
     Prime,
 } from "../../general"
 import { computeApotomeSlope, computeN2D3P9, N2D3P9 } from "./evaluation"
-import { AnalyzedJiPitch } from "./types"
+import { JiPitchAnalysis } from "./types"
 
-const analyzeJiPitch = (jiPitch: JiPitch): AnalyzedJiPitch => {
+const analyzeJiPitch = (jiPitch: JiPitch): JiPitchAnalysis => {
     const monzo = computeJiPitchMonzo(jiPitch)
     const ratio = computeJiPitchRatio(jiPitch)
 
@@ -33,7 +33,7 @@ const analyzeJiPitch = (jiPitch: JiPitch): AnalyzedJiPitch => {
         twoThreeFreeClass,
         twoThreeFreeSopfr,
         n2d3p9,
-    } as AnalyzedJiPitch
+    } as JiPitchAnalysis
 }
 
 export {

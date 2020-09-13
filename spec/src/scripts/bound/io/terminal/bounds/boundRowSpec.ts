@@ -1,13 +1,13 @@
 import { Cents, Id, Integer, Multiplier, Rank, Row, Sum } from "../../../../../../../src/general"
 import { Bound, Ina, Level, Tina } from "../../../../../../../src/sagittal"
-import { AnalyzedBound } from "../../../../../../../src/scripts/bound/analyzeBound"
-import { AnalyzedEvent } from "../../../../../../../src/scripts/bound/analyzedHistory"
+import { BoundAnalysis } from "../../../../../../../src/scripts/bound/analyzeBound"
+import { EventAnalysis } from "../../../../../../../src/scripts/bound/analyzeHistory"
 import { computeBoundRow } from "../../../../../../../src/scripts/bound/io/terminal/bounds/boundRow"
 import {
-    analyzedBoundFixture,
-    analyzedEventFixture,
-    analyzedHistoryFixture,
+    boundAnalysisFixture,
     boundFixture,
+    eventAnalysisFixture,
+    historyAnalysisFixture,
 } from "../../../../../../helpers/src/scripts/bound/fixtures"
 
 describe("computeBoundRow", () => {
@@ -17,42 +17,42 @@ describe("computeBoundRow", () => {
             cents: 5.44763529181809 as Cents,
             id: 10 as Id<Bound>,
         }
-        const analyzedBound: AnalyzedBound = {
-            ...analyzedBoundFixture,
+        const boundAnalysis: BoundAnalysis = {
+            ...boundAnalysisFixture,
             bestPossibleHistory: {
-                ...analyzedHistoryFixture,
+                ...historyAnalysisFixture,
                 events: [
                     {
-                        ...analyzedEventFixture,
+                        ...eventAnalysisFixture,
                         level: Level.ULTRA,
-                        rank: 0 as Integer & Rank<AnalyzedEvent>,
+                        rank: 0 as Integer & Rank<EventAnalysis>,
                         distance: 0.000 as Cents,
                         inaDistance: 0.000 as Multiplier<Ina>,
                     },
                     {
-                        ...analyzedEventFixture,
+                        ...eventAnalysisFixture,
                         level: Level.EXTREME,
-                        rank: 0 as Integer & Rank<AnalyzedEvent>,
+                        rank: 0 as Integer & Rank<EventAnalysis>,
                         distance: 0.333 as Cents,
                         inaDistance: 0.682 as Multiplier<Ina>,
                     },
                     {
-                        ...analyzedEventFixture,
+                        ...eventAnalysisFixture,
                         level: Level.INSANE,
-                        rank: 1 as Integer & Rank<AnalyzedEvent>,
+                        rank: 1 as Integer & Rank<EventAnalysis>,
                         distance: 0.022 as Cents,
                         inaDistance: 0.157 as Multiplier<Ina>,
                     },
                 ],
             },
-            bestRank: 1 as Integer & Rank<AnalyzedEvent>,
+            bestRank: 1 as Integer & Rank<EventAnalysis>,
             initialPosition: 5.48533 as Cents,
             initialPositionTinaDistance: 0.0393 as Multiplier<Tina>,
             bestPossibleHistoryTotalDistance: 0.355 as Cents,
             bestPossibleHistoryTotalInaDistance: 0.839 as Sum<Multiplier<Ina>>,
         }
 
-        const actual = computeBoundRow(analyzedBound, { bound })
+        const actual = computeBoundRow(boundAnalysis, { bound })
 
         const expected = [
             " 10    ",
@@ -81,7 +81,7 @@ describe("computeBoundRow", () => {
             "  5.448",
             "  5.485",
             "  0.039",
-        ] as Row<{ of: AnalyzedBound }>
+        ] as Row<{ of: BoundAnalysis }>
         expect(actual).toEqual(expected)
     })
 })

@@ -78,8 +78,8 @@ if (jiPitchText) {
 saveLog(addTexts(formatSettings(), NEWLINE), LogTarget.ALL)
 
 const jiPitch: JiPitch = { monzo }
-const analyzedJiPitch = analyzeJiPitch(jiPitch)
-saveLog(formatJiPitch(analyzedJiPitch), LogTarget.ALL)
+const jiPitchAnalysis = analyzeJiPitch(jiPitch)
+saveLog(formatJiPitch(jiPitchAnalysis), LogTarget.ALL)
 
 const notatingCommasFormattedTable = computeNotatingCommasTable(jiPitch)
 saveLog(notatingCommasFormattedTable, LogTarget.ALL)

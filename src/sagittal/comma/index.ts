@@ -18,7 +18,7 @@ export {
 export {
     ApotomeSlope, N2D3P9, computeN2D3P9, computeApotomeSlope, computePrimeExponentExtremasGivenMaxN2D3P9,
 } from "./evaluation"
-export { AnalyzedComma, AnalyzedJiPitch } from "./types"
+export { CommaAnalysis, JiPitchAnalysis } from "./types"
 export {
     computeMonzoFrom23FreeClassAndSizeCategoryName,
     computeCommaName,

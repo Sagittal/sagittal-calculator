@@ -40,14 +40,14 @@ const twoThreeFreeClassSettings = { max23FreeSopfr, max23FreeCopfr, maxPrimeLimi
 const commas = computeCommas({ ...jiPitchScriptGroupSettings, ...twoThreeFreeClassSettings })
 
 const commasWithMaybeSymbols = commas.map(addMaybeJiSymbol)
-const analyzedCommas = commasWithMaybeSymbols.map(comma => {
+const commaAnalyses = commasWithMaybeSymbols.map(comma => {
     return analyzeComma(comma, jiPitchScriptGroupSettings.commaNameOptions)
 })
 if (jiPitchScriptGroupSettings.sortKey) {
-    sort(analyzedCommas, { by: jiPitchScriptGroupSettings.sortKey })
+    sort(commaAnalyses, { by: jiPitchScriptGroupSettings.sortKey })
 }
 
 saveLog(formatSettings(), LogTarget.ALL)
 saveLog(addTexts(format23FreeClassSettings(twoThreeFreeClassSettings), NEWLINE), LogTarget.ALL)
 
-saveLog(computeFindCommasTable(analyzedCommas), LogTarget.ALL)
+saveLog(computeFindCommasTable(commaAnalyses), LogTarget.ALL)

@@ -1,9 +1,9 @@
 import { Cents, Comma, Monzo, Name, Prime, Ratio, Sopfr, TwoThreeFreeClass } from "../../../../src/general"
-import { AnalyzedComma, ApotomeSlope, N2D3P9 } from "../../../../src/sagittal"
+import { ApotomeSlope, CommaAnalysis, N2D3P9 } from "../../../../src/sagittal"
 import { analyzeComma } from "../../../../src/sagittal/comma"
 
 describe("analyzeComma", () => {
-    it("returns a bundle of analyzed properties of a comma, given its monzo", () => {
+    it("returns an analysis a comma, given its monzo", () => {
         const comma = { monzo: [-8, -6, 3, 5, -1] as Monzo } as Comma
 
         const actual = analyzeComma(comma)
@@ -18,7 +18,7 @@ describe("analyzeComma", () => {
             twoThreeFreeClass: { monzo: [0, 0, 3, 5, -1] } as TwoThreeFreeClass,
             twoThreeFreeSopfr: 61 as Sopfr<{ rough: 5 }>,
             n2d3p9: 36777.470341435175 as N2D3P9,
-        } as AnalyzedComma
+        } as CommaAnalysis
         expect(actual).toEqual(expected)
     })
 })

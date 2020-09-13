@@ -1,12 +1,12 @@
 // tslint:disable max-line-length
 
 import { Cents, Io, Monzo, NEWLINE, Prime, Ratio, Sopfr, TwoThreeFreeClass } from "../../../../../src/general"
-import { AnalyzedJiPitch, ApotomeSlope } from "../../../../../src/sagittal"
+import { ApotomeSlope, JiPitchAnalysis } from "../../../../../src/sagittal"
 import { N2D3P9 } from "../../../../../src/sagittal/comma/evaluation/n2d3p9"
 import { formatJiPitch } from "../../../../../src/scripts/jiPitch/io"
 
 describe("formatJiPitch", () => {
-    const jiPitch: AnalyzedJiPitch = {
+    const jiPitch: JiPitchAnalysis = {
         cents: 11.2 as Cents,
         monzo: [0, -1, 1] as Monzo,
         ratio: [5, 4] as Ratio,

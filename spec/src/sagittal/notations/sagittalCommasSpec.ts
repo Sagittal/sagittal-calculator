@@ -1,5 +1,5 @@
 import { Cents, Comma, Id, Monzo, Name, Prime, Ratio, Sopfr, TwoThreeFreeClass } from "../../../../src/general"
-import { analyzeComma, AnalyzedComma, SagittalComma } from "../../../../src/sagittal"
+import { analyzeComma, CommaAnalysis, SagittalComma } from "../../../../src/sagittal"
 import { ApotomeSlope, N2D3P9 } from "../../../../src/sagittal/comma"
 import { SAGITTAL_COMMAS } from "../../../../src/sagittal/notations/sagittalCommas"
 
@@ -1810,7 +1810,7 @@ describe("SAGITTAL_COMMAS", () => {
                 name: "3A" as Name<Comma>,
                 n2d3p9: 1 as N2D3P9,
             },
-        ] as Array<AnalyzedComma & { id: Id<SagittalComma> }>
+        ] as Array<CommaAnalysis & { id: Id<SagittalComma> }>
         expect(actual).toBeCloseToObject(expected)
     })
 })

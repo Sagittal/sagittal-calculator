@@ -1,8 +1,8 @@
 import { Cents, Count, Id, Integer, Multiplier, Name, Pitch, Rank, Sum } from "../../../../../src/general"
 import { Bound, Ina, Level, Tina } from "../../../../../src/sagittal/notations/ji"
-import { AnalyzedBound } from "../../../../../src/scripts/bound/analyzeBound"
-import { AnalyzedEvent, AnalyzedHistory, Score } from "../../../../../src/scripts/bound/analyzedHistory"
-import { ConsolidatedEvent } from "../../../../../src/scripts/bound/consolidatedHistories/types"
+import { BoundAnalysis } from "../../../../../src/scripts/bound/analyzeBound"
+import { EventAnalysis, HistoryAnalysis, Score } from "../../../../../src/scripts/bound/analyzeHistory"
+import { EventConsolidation } from "../../../../../src/scripts/bound/consolidateHistories/types"
 import { EventType, HistoricalEvent } from "../../../../../src/scripts/bound/histories"
 
 const eventFixture: HistoricalEvent = {
@@ -12,18 +12,18 @@ const eventFixture: HistoricalEvent = {
     name: "" as Name<Pitch>,
 }
 
-const analyzedEventFixture: AnalyzedEvent = {
+const eventAnalysisFixture: EventAnalysis = {
     ...eventFixture,
     distance: 0 as Cents,
     inaDistance: 0 as Multiplier<Ina>,
-    rank: 0 as Integer & Rank<AnalyzedEvent>,
+    rank: 0 as Integer & Rank<EventAnalysis>,
     exact: false,
 }
 
-const analyzedHistoryFixture: AnalyzedHistory = {
+const historyAnalysisFixture: HistoryAnalysis = {
     events: [],
     cents: 0 as Cents,
-    rank: 0 as Integer & Rank<AnalyzedEvent>,
+    rank: 0 as Integer & Rank<EventAnalysis>,
     score: 0 as Score,
     totalDistance: 0 as Cents,
     exact: false,
@@ -33,12 +33,12 @@ const analyzedHistoryFixture: AnalyzedHistory = {
     initialPositionTinaDistance: 0 as Multiplier<Tina>,
 }
 
-const consolidatedEventFixture: ConsolidatedEvent = {
+const eventConsolidationFixture: EventConsolidation = {
     ...eventFixture,
     isPossibleHistoryMember: false,
     isBestPossibleHistoryMember: false,
-    rankOfBestRankedMemberHistory: 0 as Integer & Rank<AnalyzedEvent>,
-    rankOfBestRankedEventInAnyMemberHistory: 0 as Integer & Rank<AnalyzedEvent>,
+    rankOfBestRankedMemberHistory: 0 as Integer & Rank<EventAnalysis>,
+    rankOfBestRankedEventInAnyMemberHistory: 0 as Integer & Rank<EventAnalysis>,
     nextEvents: [] as Name<Pitch>[],
     exact: false,
 }
@@ -49,22 +49,22 @@ const boundFixture: Bound = {
     cents: 0 as Cents,
 }
 
-const analyzedBoundFixture: AnalyzedBound = {
-    bestPossibleHistory: analyzedHistoryFixture,
-    bestRank: 0 as Integer & Rank<AnalyzedEvent>,
+const boundAnalysisFixture: BoundAnalysis = {
+    bestPossibleHistory: historyAnalysisFixture,
+    bestRank: 0 as Integer & Rank<EventAnalysis>,
     initialPosition: 0 as Cents,
     initialPositionTinaDistance: 0 as Multiplier<Tina>,
     bestPossibleHistoryTotalDistance: 0 as Cents,
     bestPossibleHistoryTotalInaDistance: 0 as Sum<Multiplier<Ina>>,
-    consolidatedHistories: {},
-    possibleHistoryCount: 0 as Count<AnalyzedHistory>,
+    historyConsolidation: {},
+    possibleHistoryCount: 0 as Count<HistoryAnalysis>,
 }
 
 export {
     eventFixture,
-    analyzedEventFixture,
-    analyzedHistoryFixture,
-    consolidatedEventFixture,
+    eventAnalysisFixture,
+    historyAnalysisFixture,
+    eventConsolidationFixture,
     boundFixture,
-    analyzedBoundFixture,
+    boundAnalysisFixture,
 }

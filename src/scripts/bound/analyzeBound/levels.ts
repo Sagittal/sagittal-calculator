@@ -1,13 +1,13 @@
 import { Maybe } from "../../../general"
 import { Level } from "../../../sagittal"
-import { AnalyzedHistory } from "../analyzedHistory"
+import { HistoryAnalysis } from "../analyzeHistory"
 
 const levelsBestHistoryRanks: Record<Level, { [ index: number ]: Maybe<number> }> =
     {} as Record<Level, { [ index: number ]: Maybe<number> }>
 const levelsBestCumulativeHistoryRanks: Record<Level, { [ index: number ]: number }> =
     {} as Record<Level, { [ index: number ]: number }>
 
-const updateLevelAnalysis = (bestPossibleHistory: AnalyzedHistory) => {
+const updateLevelAnalysis = (bestPossibleHistory: HistoryAnalysis) => {
     let cumulativeRank = 0
     bestPossibleHistory.events.forEach(event => {
         const { level, rank } = event

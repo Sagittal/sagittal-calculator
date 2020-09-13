@@ -1,23 +1,23 @@
 import { Cents, Id, Integer, Rank } from "../../../../../../../src/general"
 import { Bound } from "../../../../../../../src/sagittal/notations/ji"
-import { AnalyzedBound } from "../../../../../../../src/scripts/bound/analyzeBound"
-import { AnalyzedEvent } from "../../../../../../../src/scripts/bound/analyzedHistory"
+import { BoundAnalysis } from "../../../../../../../src/scripts/bound/analyzeBound"
+import { EventAnalysis } from "../../../../../../../src/scripts/bound/analyzeHistory"
 import { formatBound } from "../../../../../../../src/scripts/bound/io"
-import { analyzedBoundFixture, boundFixture } from "../../../../../../helpers/src/scripts/bound/fixtures"
+import { boundAnalysisFixture, boundFixture } from "../../../../../../helpers/src/scripts/bound/fixtures"
 
 describe("computeFormattedBound", () => {
-    it("returns a string which is a multi-line, properly indented rendition of the analyzed bound, as well as identifying information for the bound", () => {
+    it("returns a string which is a multi-line, properly indented rendition of the bound analysis, as well as identifying information for the bound", () => {
         const bound = {
             ...boundFixture,
             cents: 5.44763529181809 as Cents,
             id: 10 as Id<Bound>,
         }
-        const analyzedBound: AnalyzedBound = {
-            ...analyzedBoundFixture,
-            bestRank: 2 as Integer & Rank<AnalyzedEvent>,
+        const boundAnalysis: BoundAnalysis = {
+            ...boundAnalysisFixture,
+            bestRank: 2 as Integer & Rank<EventAnalysis>,
         }
 
-        const actual = formatBound(analyzedBound, { bound })
+        const actual = formatBound(boundAnalysis, { bound })
 
         const expected = [
             `{`,
@@ -40,7 +40,7 @@ describe("computeFormattedBound", () => {
             `                    ",,|",`,
             `                    "|("`,
             `                ],`,
-            `                "analyzedPrimaryComma": {`,
+            `                "primaryCommaAnalysis": {`,
             `                    "id": 10,`,
             `                    "monzo": [`,
             `                        5,`,
@@ -85,7 +85,7 @@ describe("computeFormattedBound", () => {
             `                    ",|",`,
             `                    "|("`,
             `                ],`,
-            `                "analyzedPrimaryComma": {`,
+            `                "primaryCommaAnalysis": {`,
             `                    "id": 11,`,
             `                    "monzo": [`,
             `                        -11,`,
@@ -142,7 +142,7 @@ describe("computeFormattedBound", () => {
             `                    ",,|",`,
             `                    "|("`,
             `                ],`,
-            `                "analyzedPrimaryComma": {`,
+            `                "primaryCommaAnalysis": {`,
             `                    "id": 10,`,
             `                    "monzo": [`,
             `                        5,`,
@@ -187,7 +187,7 @@ describe("computeFormattedBound", () => {
             `                    ",|",`,
             `                    "|("`,
             `                ],`,
-            `                "analyzedPrimaryComma": {`,
+            `                "primaryCommaAnalysis": {`,
             `                    "id": 11,`,
             `                    "monzo": [`,
             `                        -11,`,
@@ -252,7 +252,7 @@ describe("computeFormattedBound", () => {
             `    "initialPositionTinaDistance": 0,`,
             `    "bestPossibleHistoryTotalDistance": 0,`,
             `    "bestPossibleHistoryTotalInaDistance": 0,`,
-            `    "consolidatedHistories": {},`,
+            `    "historyConsolidation": {},`,
             `    "possibleHistoryCount": 0`,
             `}`,
         ].join("\n")

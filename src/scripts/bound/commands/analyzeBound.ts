@@ -16,9 +16,9 @@ const bound = boundId && JI_BOUNDS.find(bound => bound.id === parseInteger(bound
 
 if (bound) {
     const histories = computeHistories(bound)
-    const analyzedBound = analyzeBound(histories, bound)
+    const boundAnalysis = analyzeBound(histories, bound)
 
-    const message = formatBound(analyzedBound, { bound })
+    const message = formatBound(boundAnalysis, { bound })
     saveLog(message, LogTarget.BOUND)
 } else {
     throw new Error(`Could not find bound with ID ${boundId}`)

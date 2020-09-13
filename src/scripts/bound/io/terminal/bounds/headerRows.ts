@@ -1,5 +1,5 @@
 import { Io, Row, splitColumnTitlesIntoRowsBySpaces } from "../../../../../general"
-import { AnalyzedBound } from "../../../analyzeBound"
+import { BoundAnalysis } from "../../../analyzeBound"
 
 const BOUNDS_ANALYSIS_COLUMN_TITLES: Io[] = [
     "bound id",
@@ -27,7 +27,7 @@ const BOUNDS_ANALYSIS_COLUMN_TITLES: Io[] = [
     "a.b.vs i.c.m. error (tinas)",
 ] as Io[]
 
-const computeBoundsAnalysisHeaderRows = (): Array<Row<{ of: AnalyzedBound, header: true }>> =>
+const computeBoundsAnalysisHeaderRows = (): Array<Row<{ of: BoundAnalysis, header: true }>> =>
     splitColumnTitlesIntoRowsBySpaces(BOUNDS_ANALYSIS_COLUMN_TITLES, { includeSpacerRow: true })
 
 export {

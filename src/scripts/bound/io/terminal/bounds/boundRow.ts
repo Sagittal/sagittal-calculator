@@ -1,14 +1,14 @@
 import { formatInteger, formatNumber, Row } from "../../../../../general"
 import { formatSymbolAscii } from "../../../../../sagittal"
-import { AnalyzedBound } from "../../../analyzeBound"
+import { BoundAnalysis } from "../../../analyzeBound"
 import { extractBoundIdentifiers } from "../boundIdentifiers"
 import { extractLevelDistances } from "./levelDistances"
 import { extractLevelRanks } from "./levelRanks"
 import { formatMina } from "./mina"
 import { BoundRowOptions } from "./types"
 
-const computeBoundRow = (analyzedBound: AnalyzedBound, { bound }: BoundRowOptions): Row<{ of: AnalyzedBound }> => {
-    let boundRow: Row<{ of: AnalyzedBound }>
+const computeBoundRow = (boundAnalysis: BoundAnalysis, { bound }: BoundRowOptions): Row<{ of: BoundAnalysis }> => {
+    let boundRow: Row<{ of: BoundAnalysis }>
     const boundIdentifiers = extractBoundIdentifiers(bound)
 
     const {
@@ -25,7 +25,7 @@ const computeBoundRow = (analyzedBound: AnalyzedBound, { bound }: BoundRowOption
         initialPositionTinaDistance,
         bestPossibleHistoryTotalDistance,
         bestPossibleHistoryTotalInaDistance,
-    } = analyzedBound
+    } = boundAnalysis
 
     const [
         mediumLevelRank,
@@ -72,7 +72,7 @@ const computeBoundRow = (analyzedBound: AnalyzedBound, { bound }: BoundRowOption
         formatNumber(cents),
         formatNumber(initialPosition),
         formatNumber(initialPositionTinaDistance),
-    ] as Row<{ of: AnalyzedBound }>
+    ] as Row<{ of: BoundAnalysis }>
 
     return boundRow
 }

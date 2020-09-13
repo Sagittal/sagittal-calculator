@@ -1,13 +1,13 @@
-import { AnalyzedHistory, Score } from "../analyzedHistory"
+import { HistoryAnalysis, Score } from "../analyzeHistory"
 
-const computeBestPossibleHistory = (analyzedHistories: AnalyzedHistory[]): AnalyzedHistory => {
-    let bestPossibleHistory: AnalyzedHistory = { score: Infinity as Score } as AnalyzedHistory
+const computeBestPossibleHistory = (historyAnalyses: HistoryAnalysis[]): HistoryAnalysis => {
+    let bestPossibleHistory: HistoryAnalysis = { score: Infinity as Score } as HistoryAnalysis
 
-    if (analyzedHistories.some(analyzedHistory => !analyzedHistory.exact)) {
-        const exactHistories: AnalyzedHistory[] = []
-        analyzedHistories.forEach(analyzedHistory => {
-            if (analyzedHistory.exact) {
-                exactHistories.push(analyzedHistory)
+    if (historyAnalyses.some(historyAnalysis => !historyAnalysis.exact)) {
+        const exactHistories: HistoryAnalysis[] = []
+        historyAnalyses.forEach(historyAnalysis => {
+            if (historyAnalysis.exact) {
+                exactHistories.push(historyAnalysis)
             }
         })
         if (exactHistories.length) {
@@ -15,15 +15,15 @@ const computeBestPossibleHistory = (analyzedHistories: AnalyzedHistory[]): Analy
         }
     }
 
-    analyzedHistories.forEach(analyzedHistory => {
+    historyAnalyses.forEach(historyAnalysis => {
         if (
-            analyzedHistory.score < bestPossibleHistory.score ||
+            historyAnalysis.score < bestPossibleHistory.score ||
             (
-                analyzedHistory.score === bestPossibleHistory.score &&
-                analyzedHistory.totalDistance < bestPossibleHistory.totalDistance
+                historyAnalysis.score === bestPossibleHistory.score &&
+                historyAnalysis.totalDistance < bestPossibleHistory.totalDistance
             )
         ) {
-            bestPossibleHistory = analyzedHistory
+            bestPossibleHistory = historyAnalysis
         }
     })
 

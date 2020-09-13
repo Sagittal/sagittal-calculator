@@ -1,14 +1,14 @@
 import { formatInteger, Formatted, Rank } from "../../../../../general"
 import { LEVELS } from "../../../../../sagittal"
-import { AnalyzedEvent, AnalyzedHistory } from "../../../analyzedHistory"
+import { EventAnalysis, HistoryAnalysis } from "../../../analyzeHistory"
 
-const extractLevelRanks = (analyzedHistory: AnalyzedHistory): Array<Formatted<Rank<AnalyzedEvent>>> =>
+const extractLevelRanks = (historyAnalysis: HistoryAnalysis): Array<Formatted<Rank<EventAnalysis>>> =>
     LEVELS.map(level => {
-        const levelEvent = analyzedHistory.events.find((event: AnalyzedEvent) => event.level === level)
+        const levelEvent = historyAnalysis.events.find((event: EventAnalysis) => event.level === level)
 
         return levelEvent ?
-            formatInteger(levelEvent.rank) as Formatted<Rank<AnalyzedEvent>> :
-            " " as Formatted<Rank<AnalyzedEvent>>
+            formatInteger(levelEvent.rank) as Formatted<Rank<EventAnalysis>> :
+            " " as Formatted<Rank<EventAnalysis>>
     })
 
 export {

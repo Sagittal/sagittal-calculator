@@ -1,8 +1,8 @@
 import { JI_BOUNDS } from "../../sagittal"
-import { analyzeBound, AnalyzedBound } from "./analyzeBound"
+import { analyzeBound, BoundAnalysis } from "./analyzeBound"
 import { computeHistories } from "./histories"
 
-const analyzeBounds = (): AnalyzedBound[] => {
+const analyzeBounds = (): BoundAnalysis[] => {
     return JI_BOUNDS.map(bound => {
         const histories = computeHistories(bound)
 

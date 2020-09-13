@@ -1,7 +1,7 @@
 import { Cents, Comma, JiPitch, Monzo, Name, Prime, Ratio, Sopfr, TwoThreeFreeClass } from "../../general"
 import { ApotomeSlope, N2D3P9 } from "./evaluation"
 
-interface JiPitchAnalysis {
+interface JiPitchAnalysisProperties {
     apotomeSlope: ApotomeSlope,
     twoThreeFreeSopfr: Sopfr<{ rough: 5 }>,
     limit: Prime,
@@ -12,13 +12,13 @@ interface JiPitchAnalysis {
     twoThreeFreeClass: TwoThreeFreeClass,
 }
 
-type AnalyzedJiPitch = JiPitch & JiPitchAnalysis
+type JiPitchAnalysis = JiPitch & JiPitchAnalysisProperties
 
-type AnalyzedComma = Comma & JiPitchAnalysis & {
+type CommaAnalysis = Comma & JiPitchAnalysisProperties & {
     name: Name<Comma>,
 }
 
 export {
-    AnalyzedJiPitch,
-    AnalyzedComma,
+    JiPitchAnalysis,
+    CommaAnalysis,
 }

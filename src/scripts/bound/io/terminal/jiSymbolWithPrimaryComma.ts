@@ -1,7 +1,7 @@
 import { Id } from "../../../../general"
 import {
     analyzeComma,
-    AnalyzedComma,
+    CommaAnalysis,
     getJiSymbol,
     getSagittalComma,
     JiSymbol,
@@ -14,10 +14,10 @@ const getJiSymbolWithPrimaryComma = (jiSymbolId: Id<JiSymbol>): JiSymbolWithPrim
     const { primaryCommaId, ...otherSymbolProperties } = jiSymbol
 
     const primaryComma: SagittalComma = getSagittalComma(primaryCommaId)
-    const analyzedPrimaryComma: AnalyzedComma & { id: Id<SagittalComma> } =
-        analyzeComma(primaryComma) as AnalyzedComma & { id: Id<SagittalComma> }
+    const primaryCommaAnalysis: CommaAnalysis & { id: Id<SagittalComma> } =
+        analyzeComma(primaryComma) as CommaAnalysis & { id: Id<SagittalComma> }
 
-    return { ...otherSymbolProperties, analyzedPrimaryComma }
+    return { ...otherSymbolProperties, primaryCommaAnalysis }
 }
 
 export {

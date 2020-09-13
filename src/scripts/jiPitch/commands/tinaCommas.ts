@@ -16,7 +16,7 @@ import {
     sort,
     stringify,
 } from "../../../general"
-import { analyzeComma, AnalyzedComma, computeNotatingCommas, N2D3P9, TINA } from "../../../sagittal"
+import { analyzeComma, CommaAnalysis, computeNotatingCommas, N2D3P9, TINA } from "../../../sagittal"
 import { computeCommas } from "../commas"
 import { jiPitchScriptGroupSettings } from "../globals"
 import { applySharedPitchCommandSetup } from "./shared"
@@ -63,7 +63,7 @@ const commas = computeCommas({
 const analyzeCommas = commas.map(comma => analyzeComma(comma))
 sort(analyzeCommas, { by: "cents" })
 
-const tinasCommas: { [ index: number ]: AnalyzedComma[] } = {
+const tinasCommas: { [ index: number ]: CommaAnalysis[] } = {
     [ 0.5 ]: [],
     [ 1 ]: [],
     [ 1.5 ]: [],
@@ -86,11 +86,11 @@ const tinasCommas: { [ index: number ]: AnalyzedComma[] } = {
 }
 
 let currentTina = 0.5
-analyzeCommas.forEach(analyzedComma => {
-    if (analyzedComma.cents > maxTinaSizes[ currentTina * 2 - 1 ]) {
+analyzeCommas.forEach(commaAnalysis => {
+    if (commaAnalysis.cents > maxTinaSizes[ currentTina * 2 - 1 ]) {
         currentTina = currentTina + 0.5
     }
-    tinasCommas[ currentTina ].push(analyzedComma)
+    tinasCommas[ currentTina ].push(commaAnalysis)
 })
 
 Object.entries(tinasCommas).forEach(([tina, tinaCommas]) => {

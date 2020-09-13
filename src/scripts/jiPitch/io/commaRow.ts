@@ -1,10 +1,10 @@
 import { concat, formatInteger, formatNumber, Id, Row } from "../../../general"
-import { AnalyzedComma, JiSymbol } from "../../../sagittal"
+import { CommaAnalysis, JiSymbol } from "../../../sagittal"
 import { computeNotatingCommaWithMaybeSagittalSymbolRow } from "./notatingCommaRow"
 
 const computeCommaRow = (
-    commaWithMaybeSagittalSymbol: AnalyzedComma & { symbolId?: Id<JiSymbol> },
-): Row<{ of: AnalyzedComma & { symbolId?: Id<JiSymbol> } }> => {
+    commaWithMaybeSagittalSymbol: CommaAnalysis & { symbolId?: Id<JiSymbol> },
+): Row<{ of: CommaAnalysis & { symbolId?: Id<JiSymbol> } }> => {
     const { limit, twoThreeFreeSopfr, n2d3p9 } = commaWithMaybeSagittalSymbol
 
     return concat(
@@ -13,7 +13,7 @@ const computeCommaRow = (
             formatInteger(limit),
             formatInteger(twoThreeFreeSopfr),
             formatNumber(n2d3p9),
-        ] as Row<{ of: AnalyzedComma & { symbolId?: Id<JiSymbol> } }>,
+        ] as Row<{ of: CommaAnalysis & { symbolId?: Id<JiSymbol> } }>,
     )
 }
 

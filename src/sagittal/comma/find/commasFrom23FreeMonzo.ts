@@ -12,7 +12,7 @@ import {
     shallowClone,
 } from "../../../general"
 import { analyzeComma } from "../analyzeComma"
-import { AnalyzedComma } from "../types"
+import { CommaAnalysis } from "../types"
 import {
     DEFAULT_MAX_ABSOLUTE_3_EXPONENT,
     DEFAULT_MAX_ABSOLUTE_APOTOME_SLOPE,
@@ -57,8 +57,8 @@ const computeCommasFrom23FreeMonzo = (
         if (monzo) {
             const comma = { monzo } as Comma
 
-            const analyzedComma: AnalyzedComma = analyzeComma(comma)
-            if (abs(analyzedComma.apotomeSlope) > maxAbsoluteApotomeSlope || analyzedComma.n2d3p9 > maxN2D3P9) {
+            const commaAnalysis: CommaAnalysis = analyzeComma(comma)
+            if (abs(commaAnalysis.apotomeSlope) > maxAbsoluteApotomeSlope || commaAnalysis.n2d3p9 > maxN2D3P9) {
                 return
             }
 

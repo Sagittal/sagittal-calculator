@@ -1,9 +1,9 @@
 import { BLANK, formatMonzo, formatNumber, formatRatio, Id, ioSettings, Row } from "../../../general"
-import { AnalyzedComma, formatSymbol, JiSymbol } from "../../../sagittal"
+import { CommaAnalysis, formatSymbol, JiSymbol } from "../../../sagittal"
 
 const computeNotatingCommaWithMaybeSagittalSymbolRow = (
-    notatingCommaWithMaybeSagittalSymbol: AnalyzedComma & { symbolId?: Id<JiSymbol> },
-): Row<{ of: AnalyzedComma & { symbolId?: Id<JiSymbol> } }> => {
+    notatingCommaWithMaybeSagittalSymbol: CommaAnalysis & { symbolId?: Id<JiSymbol> },
+): Row<{ of: CommaAnalysis & { symbolId?: Id<JiSymbol> } }> => {
     const { name, monzo, cents, ratio, symbolId, apotomeSlope } = notatingCommaWithMaybeSagittalSymbol
 
     const formattedSymbol = symbolId ? formatSymbol(symbolId, ioSettings) : BLANK
@@ -15,7 +15,7 @@ const computeNotatingCommaWithMaybeSagittalSymbolRow = (
         formatMonzo(monzo),
         formatNumber(cents),
         formatNumber(apotomeSlope),
-    ] as Row<{ of: AnalyzedComma & { symbolId?: Id<JiSymbol> } }>
+    ] as Row<{ of: CommaAnalysis & { symbolId?: Id<JiSymbol> } }>
 }
 
 export {

@@ -1,20 +1,20 @@
 import { Count, Multiplier } from "../../../general"
 import { Bound, Tina, TINA } from "../../../sagittal"
-import { AnalyzedHistory, computeAnalyzedHistory } from "../analyzedHistory"
-import { computeConsolidatedHistories } from "../consolidatedHistories"
+import { analyzeHistory, HistoryAnalysis } from "../analyzeHistory"
+import { consolidateHistories } from "../consolidateHistories"
 import { History } from "../histories"
 import { computeBestPossibleHistory } from "./bestPossibleHistory"
 import { computeInitialPosition } from "./initialPosition"
 import { updateLevelAnalysis } from "./levels"
 import { updateRankAnalysis } from "./ranks"
-import { AnalyzedBound } from "./types"
+import { BoundAnalysis } from "./types"
 
-const analyzeBound = (histories: History[], bound: Bound): AnalyzedBound => {
+const analyzeBound = (histories: History[], bound: Bound): BoundAnalysis => {
     const initialPosition = computeInitialPosition(bound)
-    const analyzedHistories = histories.map(history => computeAnalyzedHistory(history, bound, initialPosition))
+    const historyAnalyses = histories.map(history => analyzeHistory(history, bound, initialPosition))
 
-    const possibleHistories = analyzedHistories.filter(analyzedHistory => analyzedHistory.possible)
-    const possibleHistoryCount = possibleHistories.length as Count<AnalyzedHistory>
+    const possibleHistories = historyAnalyses.filter(historyAnalysis => historyAnalysis.possible)
+    const possibleHistoryCount = possibleHistories.length as Count<HistoryAnalysis>
     const bestPossibleHistory = computeBestPossibleHistory(possibleHistories)
     const bestRank = bestPossibleHistory.rank
     const bestPossibleHistoryTotalDistance = bestPossibleHistory.totalDistance
@@ -25,7 +25,7 @@ const analyzeBound = (histories: History[], bound: Bound): AnalyzedBound => {
     updateRankAnalysis(bestRank, bound.id)
     updateLevelAnalysis(bestPossibleHistory)
 
-    const consolidatedHistories = computeConsolidatedHistories(analyzedHistories, bestPossibleHistory)
+    const historyConsolidation = consolidateHistories(historyAnalyses, bestPossibleHistory)
 
     return {
         initialPosition,
@@ -35,7 +35,7 @@ const analyzeBound = (histories: History[], bound: Bound): AnalyzedBound => {
         bestPossibleHistoryTotalDistance,
         bestPossibleHistoryTotalInaDistance,
         initialPositionTinaDistance,
-        consolidatedHistories,
+        historyConsolidation: historyConsolidation,
     }
 }
 

@@ -1,6 +1,6 @@
 import * as fs from "fs"
 import { Io, ioSettings } from "../../../../general"
-import { AnalyzedBound } from "../../analyzeBound"
+import { BoundAnalysis } from "../../analyzeBound"
 import { visualizeCents } from "./cents"
 import { visualizeEvents } from "./events"
 import { addFont } from "./font"
@@ -12,7 +12,7 @@ import { visualizeLevelSymbols } from "./levelSymbols"
 import { addParentSvg } from "./parentSvg"
 import { visualizeSizeCategoryBounds } from "./sizeCategoryBounds"
 
-const computeBoundsImage = (boundsAnalysis: AnalyzedBound[]): Io => {
+const computeBoundsImage = (boundsAnalysis: BoundAnalysis[]): Io => {
     if (!ioSettings.noWrite) {
         fs.copyFileSync(
             "assets/fonts/BravuraSagittalUpdate_v10.otf",
@@ -29,8 +29,8 @@ const computeBoundsImage = (boundsAnalysis: AnalyzedBound[]): Io => {
     elements = elements.concat(visualizeLevels())
     elements = elements.concat(visualizeLevelBounds())
 
-    boundsAnalysis.forEach(analyzedBound => {
-        elements = elements.concat(visualizeEvents(analyzedBound.bestPossibleHistory.events))
+    boundsAnalysis.forEach(boundAnalysis => {
+        elements = elements.concat(visualizeEvents(boundAnalysis.bestPossibleHistory.events))
     })
 
     elements = elements.concat(visualizeSizeCategoryBounds())

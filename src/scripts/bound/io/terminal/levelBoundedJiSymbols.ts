@@ -1,6 +1,6 @@
 import { abs, Cents, computeCentsFromPitch, difference, Maybe } from "../../../../general"
 import { Bound, getJiSymbol, getSagittalComma, JiSymbol, JI_BOUNDS } from "../../../../sagittal"
-import { computeInaDistance } from "../../analyzedHistory"
+import { computeInaDistance } from "../../analyzeHistory"
 import { computeBoundedJiSymbolPositions } from "../../boundedPositions"
 import { computePositionJiSymbolId } from "./positionJiSymbolId"
 import { BoundIdWithBoundedSymbolIdWithDistancesPairsByLevel } from "./types"

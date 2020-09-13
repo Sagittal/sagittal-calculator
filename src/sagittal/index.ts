@@ -1,7 +1,7 @@
 export {
     analyzeComma,
-    AnalyzedJiPitch,
-    AnalyzedComma,
+    JiPitchAnalysis,
+    CommaAnalysis,
     analyzeJiPitch,
     ApotomeSlope,
     CommaNameOptions,

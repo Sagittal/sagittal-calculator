@@ -1,15 +1,15 @@
 import { difference, HexColor, Io, Multiplier, Px } from "../../../../general"
 import { Level } from "../../../../sagittal"
-import { AnalyzedEvent } from "../../analyzedHistory"
+import { EventAnalysis } from "../../analyzeHistory"
 import { RANK_FILLS } from "./colors"
 import { LEVEL_BOTTOMS, LEVEL_CENTERS } from "./levelHeights"
 import { DOT_SIZE } from "./sizes"
 import { computeX } from "./x"
 
-const visualizeEvents = (events: AnalyzedEvent[]): Io[] => {
+const visualizeEvents = (events: EventAnalysis[]): Io[] => {
     const eventElements: Io[] = []
 
-    const initialEvent: AnalyzedEvent = events[ 0 ]
+    const initialEvent: EventAnalysis = events[ 0 ]
     const { cents: initialPosition, rank: initialRank, level: initialLevel } = initialEvent
     const initialX: Px = computeX(initialPosition)
     const initialY: Px = LEVEL_CENTERS[ initialLevel ]

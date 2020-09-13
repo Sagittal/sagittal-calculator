@@ -3,17 +3,17 @@ import { Rank } from "../../../../../../../src/general/code"
 import { ColorMethod, Row } from "../../../../../../../src/general/io"
 import * as table from "../../../../../../../src/general/io/table/table"
 import { Integer } from "../../../../../../../src/general/math"
-import { AnalyzedBound } from "../../../../../../../src/scripts/bound/analyzeBound"
-import { AnalyzedEvent } from "../../../../../../../src/scripts/bound/analyzedHistory/analyzeEvents"
+import { BoundAnalysis } from "../../../../../../../src/scripts/bound/analyzeBound"
+import { EventAnalysis } from "../../../../../../../src/scripts/bound/analyzeHistory/analyzeEvents"
 import { computeBoundsAnalysisTable } from "../../../../../../../src/scripts/bound/io/terminal/bounds"
-import { analyzedBoundFixture } from "../../../../../../helpers/src/scripts/bound/fixtures"
+import { boundAnalysisFixture } from "../../../../../../helpers/src/scripts/bound/fixtures"
 
 describe("computeBoundsAnalysisTable", () => {
     it("colors the rows correctly, according to their best rank", () => {
-        const boundsAnalysis: AnalyzedBound[] = [
-            { ...analyzedBoundFixture, bestRank: 0 as Integer & Rank<AnalyzedEvent> },
-            { ...analyzedBoundFixture, bestRank: 2 as Integer & Rank<AnalyzedEvent> },
-            { ...analyzedBoundFixture, bestRank: 1 as Integer & Rank<AnalyzedEvent> },
+        const boundsAnalysis: BoundAnalysis[] = [
+            { ...boundAnalysisFixture, bestRank: 0 as Integer & Rank<EventAnalysis> },
+            { ...boundAnalysisFixture, bestRank: 2 as Integer & Rank<EventAnalysis> },
+            { ...boundAnalysisFixture, bestRank: 1 as Integer & Rank<EventAnalysis> },
         ]
 
         spyOn(table, "formatTable")

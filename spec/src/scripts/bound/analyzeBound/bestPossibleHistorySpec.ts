@@ -1,32 +1,32 @@
 import { Cents } from "../../../../../src/general/music"
 import { computeBestPossibleHistory } from "../../../../../src/scripts/bound/analyzeBound/bestPossibleHistory"
-import { AnalyzedHistory, Score } from "../../../../../src/scripts/bound/analyzedHistory"
-import { analyzedHistoryFixture } from "../../../../helpers/src/scripts/bound/fixtures"
+import { HistoryAnalysis, Score } from "../../../../../src/scripts/bound/analyzeHistory"
+import { historyAnalysisFixture } from "../../../../helpers/src/scripts/bound/fixtures"
 
 describe("computeBestPossibleHistory", () => {
     it("returns the history with the best score (the not possible ones are all already filtered out)", () => {
-        const analyzedHistories: AnalyzedHistory[] = [
+        const historyAnalyses: HistoryAnalysis[] = [
             {
-                ...analyzedHistoryFixture,
+                ...historyAnalysisFixture,
                 score: 3436643 as Score,
                 cents: 12.909 as Cents,
             },
             {
-                ...analyzedHistoryFixture,
+                ...historyAnalysisFixture,
                 score: 245444 as Score,
                 cents: 13.235 as Cents,
             },
             {
-                ...analyzedHistoryFixture,
+                ...historyAnalysisFixture,
                 score: 2422436 as Score,
                 cents: 13.47489 as Cents,
             },
         ]
 
-        const actual = computeBestPossibleHistory(analyzedHistories)
+        const actual = computeBestPossibleHistory(historyAnalyses)
 
         const expected = {
-            ...analyzedHistoryFixture,
+            ...historyAnalysisFixture,
             score: 245444 as Score,
             cents: 13.235 as Cents,
         }
@@ -34,30 +34,30 @@ describe("computeBestPossibleHistory", () => {
     })
 
     it("returns the best exact history even if its score is not the best", () => {
-        const analyzedHistories = [
+        const historyAnalyses = [
             {
-                ...analyzedHistoryFixture,
+                ...historyAnalysisFixture,
                 score: 3436643 as Score,
                 cents: 12.909 as Cents,
                 exact: true,
             },
             {
-                ...analyzedHistoryFixture,
+                ...historyAnalysisFixture,
                 score: 45575474 as Score,
                 cents: 12.909 as Cents,
                 exact: true,
             },
             {
-                ...analyzedHistoryFixture,
+                ...historyAnalysisFixture,
                 score: 245444 as Score,
                 cents: 13.235 as Cents,
             },
         ]
 
-        const actual = computeBestPossibleHistory(analyzedHistories)
+        const actual = computeBestPossibleHistory(historyAnalyses)
 
         const expected = {
-            ...analyzedHistoryFixture,
+            ...historyAnalysisFixture,
             score: 3436643 as Score,
             cents: 12.909 as Cents,
             exact: true,
@@ -66,16 +66,16 @@ describe("computeBestPossibleHistory", () => {
     })
 
     it("tie-breaks by distance", () => {
-        const analyzedHistories: AnalyzedHistory[] = [
+        const historyAnalyses: HistoryAnalysis[] = [
             {
-                ...analyzedHistoryFixture,
+                ...historyAnalysisFixture,
                 score: 3436643 as Score,
                 totalDistance: 0.2 as Cents,
                 cents: 12.909 as Cents,
                 exact: true,
             },
             {
-                ...analyzedHistoryFixture,
+                ...historyAnalysisFixture,
                 score: 3436643 as Score,
                 totalDistance: 0.1 as Cents,
                 cents: 12.909 as Cents,
@@ -83,10 +83,10 @@ describe("computeBestPossibleHistory", () => {
             },
         ]
 
-        const actual = computeBestPossibleHistory(analyzedHistories)
+        const actual = computeBestPossibleHistory(historyAnalyses)
 
-        const expected: AnalyzedHistory = {
-            ...analyzedHistoryFixture,
+        const expected: HistoryAnalysis = {
+            ...historyAnalysisFixture,
             score: 3436643 as Score,
             totalDistance: 0.1 as Cents,
             cents: 12.909 as Cents,

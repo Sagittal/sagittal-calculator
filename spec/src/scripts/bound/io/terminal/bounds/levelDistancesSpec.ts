@@ -2,24 +2,24 @@ import { Multiplier } from "../../../../../../../src/general"
 import { Formatted } from "../../../../../../../src/general/io"
 import { Cents } from "../../../../../../../src/general/music"
 import { Ina, Level } from "../../../../../../../src/sagittal/notations/ji"
-import { AnalyzedHistory } from "../../../../../../../src/scripts/bound/analyzedHistory"
+import { HistoryAnalysis } from "../../../../../../../src/scripts/bound/analyzeHistory"
 import { extractLevelDistances } from "../../../../../../../src/scripts/bound/io/terminal/bounds/levelDistances"
-import { analyzedEventFixture, analyzedHistoryFixture } from "../../../../../../helpers/src/scripts/bound/fixtures"
+import { eventAnalysisFixture, historyAnalysisFixture } from "../../../../../../helpers/src/scripts/bound/fixtures"
 
 describe("extractLevelDistances", () => {
     it("returns an array of the distances of each event (from the previous event)", () => {
-        const analyzedHistory: AnalyzedHistory = {
-            ...analyzedHistoryFixture,
+        const historyAnalysis: HistoryAnalysis = {
+            ...historyAnalysisFixture,
             events: [
-                { ...analyzedEventFixture, level: Level.MEDIUM, distance: 0.00000 as Cents },
-                { ...analyzedEventFixture, level: Level.HIGH, distance: 4.44444444 as Cents },
-                { ...analyzedEventFixture, level: Level.ULTRA, distance: 3.33333333 as Cents },
-                { ...analyzedEventFixture, level: Level.EXTREME, distance: 2.222222 as Cents },
-                { ...analyzedEventFixture, level: Level.INSANE, distance: 1.111111 as Cents },
+                { ...eventAnalysisFixture, level: Level.MEDIUM, distance: 0.00000 as Cents },
+                { ...eventAnalysisFixture, level: Level.HIGH, distance: 4.44444444 as Cents },
+                { ...eventAnalysisFixture, level: Level.ULTRA, distance: 3.33333333 as Cents },
+                { ...eventAnalysisFixture, level: Level.EXTREME, distance: 2.222222 as Cents },
+                { ...eventAnalysisFixture, level: Level.INSANE, distance: 1.111111 as Cents },
             ],
         }
 
-        const actual = extractLevelDistances(analyzedHistory)
+        const actual = extractLevelDistances(historyAnalysis)
 
         const expected = [
             "  4.444",
@@ -31,17 +31,17 @@ describe("extractLevelDistances", () => {
     })
 
     it("works when a level is skipped", () => {
-        const analyzedHistory = {
-            ...analyzedHistoryFixture,
+        const historyAnalysis = {
+            ...historyAnalysisFixture,
             events: [
-                { ...analyzedEventFixture, level: Level.MEDIUM, distance: 0.00000 as Cents },
-                { ...analyzedEventFixture, level: Level.HIGH, distance: 4.44444444 as Cents },
-                { ...analyzedEventFixture, level: Level.EXTREME, distance: 2.222222 as Cents },
-                { ...analyzedEventFixture, level: Level.INSANE, distance: 1.111111 as Cents },
+                { ...eventAnalysisFixture, level: Level.MEDIUM, distance: 0.00000 as Cents },
+                { ...eventAnalysisFixture, level: Level.HIGH, distance: 4.44444444 as Cents },
+                { ...eventAnalysisFixture, level: Level.EXTREME, distance: 2.222222 as Cents },
+                { ...eventAnalysisFixture, level: Level.INSANE, distance: 1.111111 as Cents },
             ],
         }
 
-        const actual = extractLevelDistances(analyzedHistory)
+        const actual = extractLevelDistances(historyAnalysis)
 
         const expected = [
             "  4.444",
@@ -54,18 +54,18 @@ describe("extractLevelDistances", () => {
 
     describe("ina distances", () => {
         it("returns an array of the ina-distances of each event (from the previous event)", () => {
-            const analyzedHistory: AnalyzedHistory = {
-                ...analyzedHistoryFixture,
+            const historyAnalysis: HistoryAnalysis = {
+                ...historyAnalysisFixture,
                 events: [
-                    { ...analyzedEventFixture, level: Level.MEDIUM, inaDistance: 0.00000 as Multiplier<Ina> },
-                    { ...analyzedEventFixture, level: Level.HIGH, inaDistance: 4.44444444 as Multiplier<Ina> },
-                    { ...analyzedEventFixture, level: Level.ULTRA, inaDistance: 3.33333333 as Multiplier<Ina> },
-                    { ...analyzedEventFixture, level: Level.EXTREME, inaDistance: 2.222222 as Multiplier<Ina> },
-                    { ...analyzedEventFixture, level: Level.INSANE, inaDistance: 1.111111 as Multiplier<Ina> },
+                    { ...eventAnalysisFixture, level: Level.MEDIUM, inaDistance: 0.00000 as Multiplier<Ina> },
+                    { ...eventAnalysisFixture, level: Level.HIGH, inaDistance: 4.44444444 as Multiplier<Ina> },
+                    { ...eventAnalysisFixture, level: Level.ULTRA, inaDistance: 3.33333333 as Multiplier<Ina> },
+                    { ...eventAnalysisFixture, level: Level.EXTREME, inaDistance: 2.222222 as Multiplier<Ina> },
+                    { ...eventAnalysisFixture, level: Level.INSANE, inaDistance: 1.111111 as Multiplier<Ina> },
                 ],
             }
 
-            const actual = extractLevelDistances(analyzedHistory, { ina: true })
+            const actual = extractLevelDistances(historyAnalysis, { ina: true })
 
             const expected = [
                 "  4.444",
@@ -77,17 +77,17 @@ describe("extractLevelDistances", () => {
         })
 
         it("works when a level is skipped", () => {
-            const analyzedHistory: AnalyzedHistory = {
-                ...analyzedHistoryFixture,
+            const historyAnalysis: HistoryAnalysis = {
+                ...historyAnalysisFixture,
                 events: [
-                    { ...analyzedEventFixture, level: Level.MEDIUM, inaDistance: 0.00000 as Multiplier<Ina> },
-                    { ...analyzedEventFixture, level: Level.HIGH, inaDistance: 4.44444444 as Multiplier<Ina> },
-                    { ...analyzedEventFixture, level: Level.EXTREME, inaDistance: 2.222222 as Multiplier<Ina> },
-                    { ...analyzedEventFixture, level: Level.INSANE, inaDistance: 1.111111 as Multiplier<Ina> },
+                    { ...eventAnalysisFixture, level: Level.MEDIUM, inaDistance: 0.00000 as Multiplier<Ina> },
+                    { ...eventAnalysisFixture, level: Level.HIGH, inaDistance: 4.44444444 as Multiplier<Ina> },
+                    { ...eventAnalysisFixture, level: Level.EXTREME, inaDistance: 2.222222 as Multiplier<Ina> },
+                    { ...eventAnalysisFixture, level: Level.INSANE, inaDistance: 1.111111 as Multiplier<Ina> },
                 ],
             }
 
-            const actual = extractLevelDistances(analyzedHistory, { ina: true })
+            const actual = extractLevelDistances(historyAnalysis, { ina: true })
 
             const expected = [
                 "  4.444",

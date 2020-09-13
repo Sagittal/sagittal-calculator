@@ -1,17 +1,17 @@
 import { addTexts, Formatted, NEWLINE, stringify } from "../../../../../general"
-import { AnalyzedBound } from "../../../analyzeBound"
+import { BoundAnalysis } from "../../../analyzeBound"
 import { extractBoundIdentifiers } from "../boundIdentifiers"
 import { FormatBoundOptions } from "./types"
 
-const formatBound = (analyzedBound: AnalyzedBound, { bound }: FormatBoundOptions): Formatted<AnalyzedBound> => {
+const formatBound = (boundAnalysis: BoundAnalysis, { bound }: FormatBoundOptions): Formatted<BoundAnalysis> => {
     const boundIdentifiers = extractBoundIdentifiers(bound)
 
     const formattedBoundIdentifiers = stringify(boundIdentifiers, { multiline: true })
         .replace(/\\\\/g, "\\")
-    const formattedAnalyzedBound = stringify(analyzedBound, { multiline: true })
+    const formattedBoundAnalysis = stringify(boundAnalysis, { multiline: true })
         .replace(/\\\\/g, "\\")
 
-    return addTexts(formattedBoundIdentifiers, NEWLINE, formattedAnalyzedBound) as Formatted<AnalyzedBound>
+    return addTexts(formattedBoundIdentifiers, NEWLINE, formattedBoundAnalysis) as Formatted<BoundAnalysis>
 }
 
 export {

@@ -38,9 +38,9 @@ describe("verifying primary commas", () => {
                 maxN2D3P9,
                 sortKey,
             })
-            const analyzedCommas = commas.map(comma => analyzeComma(comma))
+            const commaAnalyses = commas.map(comma => analyzeComma(comma))
 
-            console.warn(computeFindCommasTable(analyzedCommas))
+            console.warn(computeFindCommasTable(commaAnalyses))
         })
     })
 })

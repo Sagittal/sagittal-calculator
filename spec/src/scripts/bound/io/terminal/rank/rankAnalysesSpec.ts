@@ -3,14 +3,14 @@
 import { Count, Rank } from "../../../../../../../src/general"
 import { JI_BOUNDS } from "../../../../../../../src/sagittal/notations/ji"
 import { analyzeBound, rankBoundIndices, rankCounts } from "../../../../../../../src/scripts/bound/analyzeBound"
-import { AnalyzedEvent } from "../../../../../../../src/scripts/bound/analyzedHistory"
+import { EventAnalysis } from "../../../../../../../src/scripts/bound/analyzeHistory"
 import { computeHistories } from "../../../../../../../src/scripts/bound/histories"
 import { formatRankAnalyses } from "../../../../../../../src/scripts/bound/io/terminal/rank"
 
 describe("formatRankAnalyses", () => {
     it("gives the correct answer", () => {
         // reset and then compute and analyze all the bounds as you would when running the main script in summary mode
-        rankCounts.forEach((_, index) => rankCounts[ index ] = 0 as Count<Rank<AnalyzedEvent>>)
+        rankCounts.forEach((_, index) => rankCounts[ index ] = 0 as Count<Rank<EventAnalysis>>)
         rankBoundIndices.forEach((_, index) => rankBoundIndices[ index ] = [])
         JI_BOUNDS.map(bound => {
             const histories = computeHistories(bound)

@@ -1,24 +1,5 @@
 import { Count, Sum } from "../types"
 
-// TODO: Analyzed
-//  - and if you could make Analyzed<> a parameterized thing like Formatted<>, of course it would be a bit different
-//  because Formatted<> converts it from whatever object it is to a branded string, just with aspect of that object
-//  whereas Analyzed would just extend the object
-//  - okay how about this... you've been struggling with Analyzed vs Analysis
-//  so what if it was an Analysis<Thing>? that might help force you to think of it not as a Thing first but as an
-//  Analysis first. and then maybe Formatted<Thing> can only be made out of some kind of an Analysis? well no that
-//  doens't work because you have all sorts of Formatted<number> and Formatted<Monzo>
-//  - I want to be sensitive to the issue of the type names reading in a consistent direction
-//  relative to the variable names, i.e. in the opposite order
-//  like how primeExponentExtremas: Array<Extrema<Integer & Exponent<Prime>>>
-//  so you'd have an analyzedJiPitch, which would be a Pitch<Ji<Analyzed>> by that pattern
-//  but I'm sure you can see how that doesn't really make sense!
-//  which maybe just means that the variable name should be jiPitchAnalyzed: Analyzed<Pitch<Ji>>
-//  or per my above insight, would be jiPitchAnalysis = Analysis<Pitch<Ji>>
-//  okay so would type Analysis<T> = T & T<"Analyzed"> which would allow you to write it like the above...
-//  no wait, then "Analyzed" would conflict with the Ji part...
-//  (although now that you've mastered the art of a type parameter object, you could have { analyzed: true })
-
 type Numeric<T extends NumericTypeParameters> = number & NumericTypeParameterEffects<T>
 type Integer = Numeric<{ irrational: false }>
 

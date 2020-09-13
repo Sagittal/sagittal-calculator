@@ -21,7 +21,7 @@ describe("computeMetricName", () => {
         expect(actual).toBe(`{aAsLogarithmBase,sum},{max,withoutRepetition}`)
     })
 
-    it("sorts the parameters within each name (so that metrics which are the same get consolidated)", () => {
+    it("sorts the parameters within each name (so that metrics which are the same get coalesced)", () => {
         const submetricScopes = [
             {
                 [ Parameter.SUM ]: true,
