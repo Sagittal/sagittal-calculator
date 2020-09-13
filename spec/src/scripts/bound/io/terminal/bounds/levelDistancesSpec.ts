@@ -31,9 +31,9 @@ describe("extractLevelDistances", (): void => {
     })
 
     it("works when a level is skipped", (): void => {
-        const historyAnalysis = {
+        const historyAnalysis: HistoryAnalysis = {
             ...historyAnalysisFixture,
-            events: [
+            eventAnalyses: [
                 { ...eventAnalysisFixture, level: Level.MEDIUM, distance: 0.00000 as Cents },
                 { ...eventAnalysisFixture, level: Level.HIGH, distance: 4.44444444 as Cents },
                 { ...eventAnalysisFixture, level: Level.EXTREME, distance: 2.222222 as Cents },

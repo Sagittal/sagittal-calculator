@@ -11,9 +11,9 @@ import { eventAnalysisFixture, historyAnalysisFixture } from "../../../../helper
 describe("updateLevelAnalysis", (): void => {
     describe("levelsBestHistoryRanks", (): void => {
         it("initializes a rank at a level when it doesn't exist yet", (): void => {
-            const bestPossibleHistory = {
+            const bestPossibleHistory: HistoryAnalysis = {
                 ...historyAnalysisFixture,
-                events: [
+                eventAnalyses: [
                     { ...eventAnalysisFixture, level: Level.MEDIUM, rank: 0 as Integer & Rank<EventAnalysis> },
                 ],
             }
@@ -52,9 +52,9 @@ describe("updateLevelAnalysis", (): void => {
 
     describe("levelsBestCumulativeHistoryRanks", (): void => {
         it("increments ranks at levels", (): void => {
-            const bestPossibleHistory = {
+            const bestPossibleHistory: HistoryAnalysis = {
                 ...historyAnalysisFixture,
-                events: [
+                eventAnalyses: [
                     { ...eventAnalysisFixture, level: Level.MEDIUM, rank: 0 as Integer & Rank<EventAnalysis> },
                     { ...eventAnalysisFixture, level: Level.HIGH, rank: 2 as Integer & Rank<EventAnalysis> },
                     { ...eventAnalysisFixture, level: Level.ULTRA, rank: 1 as Integer & Rank<EventAnalysis> },

@@ -236,7 +236,7 @@ describe("computeFormattedBound", (): void => {
             `}`,
             `{`,
             `    "bestPossibleHistory": {`,
-            `        "events": [],`,
+            `        "eventAnalyses": [],`,
             `        "cents": 0,`,
             `        "rank": 0,`,
             `        "score": 0,`,
