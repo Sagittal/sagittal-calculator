@@ -9,7 +9,7 @@ const computeSortedNumeratorPossibilitiesForDenominatorPrimeGivenMaxN2D3P9 = (
     denominatorPrime: Prime<Denominator>,
     maxN2D3P9: Max<N2D3P9>,
 ): SortedNumeratorPossibilitiesForDenominatorPrimeGivenMaxN2D3P9 => {
-    const numeratorPossibilitiesGivenMaxN2D3P3 = computeNumeratorPossibilitiesGivenMaxN2D3P3(maxN2D3P9)
+    const numeratorPossibilitiesGivenMaxN2D3P3 = computeNumeratorPossibilitiesGivenMaxN2D3P3(maxN2D3P9) // here memoize
 
     const sortedNumeratorPossibilitiesGivenMaxN2D3P9WithLesserGpfThanDenominatorPrimeSortedByN2 =
         computeSortedNumeratorPossibilitiesGivenMaxN2D3P9WithLesserGpfThanDenominatorPrimeSortedByN2({

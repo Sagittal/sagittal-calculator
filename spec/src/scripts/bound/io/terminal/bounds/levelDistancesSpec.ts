@@ -10,7 +10,7 @@ describe("extractLevelDistances", (): void => {
     it("returns an array of the distances of each event (from the previous event)", (): void => {
         const historyAnalysis: HistoryAnalysis = {
             ...historyAnalysisFixture,
-            events: [
+            eventAnalyses: [
                 { ...eventAnalysisFixture, level: Level.MEDIUM, distance: 0.00000 as Cents },
                 { ...eventAnalysisFixture, level: Level.HIGH, distance: 4.44444444 as Cents },
                 { ...eventAnalysisFixture, level: Level.ULTRA, distance: 3.33333333 as Cents },
@@ -56,7 +56,7 @@ describe("extractLevelDistances", (): void => {
         it("returns an array of the ina-distances of each event (from the previous event)", (): void => {
             const historyAnalysis: HistoryAnalysis = {
                 ...historyAnalysisFixture,
-                events: [
+                eventAnalyses: [
                     { ...eventAnalysisFixture, level: Level.MEDIUM, inaDistance: 0.00000 as Multiplier<Ina> },
                     { ...eventAnalysisFixture, level: Level.HIGH, inaDistance: 4.44444444 as Multiplier<Ina> },
                     { ...eventAnalysisFixture, level: Level.ULTRA, inaDistance: 3.33333333 as Multiplier<Ina> },
@@ -79,7 +79,7 @@ describe("extractLevelDistances", (): void => {
         it("works when a level is skipped", (): void => {
             const historyAnalysis: HistoryAnalysis = {
                 ...historyAnalysisFixture,
-                events: [
+                eventAnalyses: [
                     { ...eventAnalysisFixture, level: Level.MEDIUM, inaDistance: 0.00000 as Multiplier<Ina> },
                     { ...eventAnalysisFixture, level: Level.HIGH, inaDistance: 4.44444444 as Multiplier<Ina> },
                     { ...eventAnalysisFixture, level: Level.EXTREME, inaDistance: 2.222222 as Multiplier<Ina> },

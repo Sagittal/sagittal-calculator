@@ -55,7 +55,7 @@ describe("consolidateHistories", (): void => {
 
         const bestPossibleHistory: HistoryAnalysis = {
             ...historyAnalysisFixture,
-            events: [
+            eventAnalyses: [
                 eventTwoGoesToEventThree,
                 eventThreeButWithBetterRank,
             ],
@@ -67,7 +67,7 @@ describe("consolidateHistories", (): void => {
         const historyAnalyses: HistoryAnalysis[] = [
             {
                 ...historyAnalysisFixture,
-                events: [
+                eventAnalyses: [
                     eventOneGoesToEventThreeAndFour,
                     eventThree,
                 ],
@@ -79,7 +79,7 @@ describe("consolidateHistories", (): void => {
             bestPossibleHistory,
             {
                 ...historyAnalysisFixture,
-                events: [
+                eventAnalyses: [
                     eventOneGoesToEventThreeAndFour,
                     eventFour,
                 ],
@@ -90,7 +90,7 @@ describe("consolidateHistories", (): void => {
             },
             {
                 ...historyAnalysisFixture,
-                events: [
+                eventAnalyses: [
                     eventTwoGoesToEventThree,
                 ],
                 rank: 8 as Integer & Rank<EventAnalysis>,

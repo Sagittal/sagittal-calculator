@@ -6,7 +6,7 @@ type Score = number & { _ScoreBrand: "Score" }
 
 interface HistoryAnalysis {
     totalDistance: Cents,
-    events: EventAnalysis[],    // TODO: rename to eventAnalyses
+    eventAnalyses: EventAnalysis[],
     exact: boolean,
     totalInaDistance: Sum<Multiplier<Ina>>,
     initialPositionTinaDistance: Multiplier<Tina>,

@@ -4,7 +4,7 @@ import { EventAnalysis, HistoryAnalysis } from "../../../analyzeHistory"
 
 const extractLevelRanks = (historyAnalysis: HistoryAnalysis): Array<Formatted<Rank<EventAnalysis>>> =>
     LEVELS.map((level: Level): Formatted<Rank<EventAnalysis>> => {
-        const levelEvent = historyAnalysis.events.find((event: EventAnalysis): boolean => event.level === level)
+        const levelEvent = historyAnalysis.eventAnalyses.find((event: EventAnalysis): boolean => event.level === level)
 
         return levelEvent ?
             formatInteger(levelEvent.rank) as Formatted<Rank<EventAnalysis>> :

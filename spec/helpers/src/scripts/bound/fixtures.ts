@@ -21,7 +21,7 @@ const eventAnalysisFixture: EventAnalysis = {
 }
 
 const historyAnalysisFixture: HistoryAnalysis = {
-    events: [],
+    eventAnalyses: [],
     cents: 0 as Cents,
     rank: 0 as Integer & Rank<EventAnalysis>,
     score: 0 as Score,

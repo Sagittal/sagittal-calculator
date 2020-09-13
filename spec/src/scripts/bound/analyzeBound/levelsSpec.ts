@@ -31,7 +31,7 @@ describe("updateLevelAnalysis", (): void => {
         it("increments ranks at levels when they exist", (): void => {
             const bestPossibleHistory: HistoryAnalysis = {
                 ...historyAnalysisFixture,
-                events: [
+                eventAnalyses: [
                     { ...eventAnalysisFixture, level: Level.MEDIUM, rank: 0 as Integer & Rank<EventAnalysis> },
                     { ...eventAnalysisFixture, level: Level.HIGH, rank: 1 as Integer & Rank<EventAnalysis> },
                 ],

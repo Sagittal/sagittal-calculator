@@ -12,11 +12,11 @@ const consolidateHistories = (
     const historyConsolidation: HistoryConsolidation = {}
 
     historyAnalyses.forEach((historyAnalysis: HistoryAnalysis): void => {
-        historyAnalysis.events.forEach((eventAnalysis: EventAnalysis, index: number): void => {
+        historyAnalysis.eventAnalyses.forEach((eventAnalysis: EventAnalysis, index: number): void => {
             historyConsolidation[ eventAnalysis.level ] = historyConsolidation[ eventAnalysis.level ] || []
             const eventConsolidations: Maybe<EventConsolidation[]> = historyConsolidation[ eventAnalysis.level ]
 
-            const nextEventAnalysis = historyAnalysis.events[ index + 1 ]
+            const nextEventAnalysis = historyAnalysis.eventAnalyses[ index + 1 ]
 
             const matchingEventConsolidation: Maybe<EventConsolidation> = eventConsolidations && eventConsolidations
                 .find((existingEvent: EventConsolidation): boolean => existingEvent.name === eventAnalysis.name)

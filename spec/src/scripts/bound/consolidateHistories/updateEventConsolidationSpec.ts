@@ -19,7 +19,7 @@ describe("updateEventConsolidation", (): void => {
         historyAnalysis = { ...historyAnalysisFixture }
         eventAnalysis = { ...eventAnalysisFixture }
         nextEventAnalysis = undefined
-        bestPossibleHistory = { ...historyAnalysisFixture, events: [] }
+        bestPossibleHistory = { ...historyAnalysisFixture, eventAnalyses: [] }
     })
 
     describe("next events", (): void => {
@@ -146,7 +146,7 @@ describe("updateEventConsolidation", (): void => {
             }
             bestPossibleHistory = {
                 ...historyAnalysisFixture,
-                events: [{ ...eventAnalysisFixture, name: "eventName" as Name<Pitch>, level: Level.ULTRA }],
+                eventAnalyses: [{ ...eventAnalysisFixture, name: "eventName" as Name<Pitch>, level: Level.ULTRA }],
             }
 
             updateEventConsolidation(eventConsolidation, {
@@ -167,7 +167,7 @@ describe("updateEventConsolidation", (): void => {
             }
             bestPossibleHistory = {
                 ...historyAnalysisFixture,
-                events: [{ ...eventAnalysisFixture, name: "eventName" as Name<Pitch>, level: Level.EXTREME }],
+                eventAnalyses: [{ ...eventAnalysisFixture, name: "eventName" as Name<Pitch>, level: Level.EXTREME }],
             }
 
             updateEventConsolidation(eventConsolidation, {
@@ -189,7 +189,7 @@ describe("updateEventConsolidation", (): void => {
             }
             bestPossibleHistory = {
                 ...historyAnalysisFixture,
-                events: [{ ...eventAnalysisFixture, name: "eventName" as Name<Pitch>, level: Level.ULTRA }],
+                eventAnalyses: [{ ...eventAnalysisFixture, name: "eventName" as Name<Pitch>, level: Level.ULTRA }],
             }
 
             updateEventConsolidation(eventConsolidation, {
@@ -211,7 +211,7 @@ describe("updateEventConsolidation", (): void => {
             }
             bestPossibleHistory = {
                 ...historyAnalysisFixture,
-                events: [{ ...eventAnalysisFixture, name: "eventName" as Name<Pitch>, level: Level.EXTREME }],
+                eventAnalyses: [{ ...eventAnalysisFixture, name: "eventName" as Name<Pitch>, level: Level.EXTREME }],
             }
 
             updateEventConsolidation(eventConsolidation, {

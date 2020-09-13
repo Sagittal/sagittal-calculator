@@ -12,7 +12,7 @@ const updateEventConsolidation = (
     if (historyAnalysis.possible) {
         eventConsolidation.isPossibleHistoryMember = true
     }
-    if (computeDoEventsContainEvent(bestPossibleHistory.events, eventConsolidation)) {
+    if (computeDoEventsContainEvent(bestPossibleHistory.eventAnalyses, eventConsolidation)) {
         eventConsolidation.isBestPossibleHistoryMember = true
     }
     if (historyAnalysis.rank < eventConsolidation.rankOfBestRankedMemberHistory) {

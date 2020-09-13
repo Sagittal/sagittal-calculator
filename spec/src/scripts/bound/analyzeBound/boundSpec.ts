@@ -58,7 +58,7 @@ describe("analyzeBound", (): void => {
         levels: [Level.ULTRA, Level.EXTREME, Level.INSANE],
         id: 47 as Id<Bound>,
     }
-    const expectedBestHistoryEvents: EventAnalysis[] = [
+    const expectedBestHistoryEventAnalyses: EventAnalysis[] = [
         {
             level: Level.ULTRA,
             type: EventType.MEAN,
@@ -91,7 +91,7 @@ describe("analyzeBound", (): void => {
         },
     ]
     const expectedBestPossibleHistory: HistoryAnalysis = {
-        events: expectedBestHistoryEvents,
+        eventAnalyses: expectedBestHistoryEventAnalyses,
         cents: 23.116419649559468 as Cents as Cents,
         rank: 1 as Integer & Rank<EventAnalysis>,
         score: 131 as Score,

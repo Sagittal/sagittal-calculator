@@ -32,7 +32,7 @@ const analyzeHistory = (history: History, bound: Bound, initialPosition: Cents):
     const initialPositionTinaDistance = initialPositionDistance / TINA as Multiplier<Tina>
 
     return {
-        events: eventAnalyses,
+        eventAnalyses,
         cents: position,
         rank,
         score,

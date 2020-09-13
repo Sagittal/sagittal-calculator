@@ -21,7 +21,7 @@ describe("computeBoundRow", (): void => {
             ...boundAnalysisFixture,
             bestPossibleHistory: {
                 ...historyAnalysisFixture,
-                events: [
+                eventAnalyses: [
                     {
                         ...eventAnalysisFixture,
                         level: Level.ULTRA,

@@ -33,7 +33,7 @@ describe("analyzeHistory", (): void => {
 
             const actual = analyzeHistory(history, bound, initialPosition)
 
-            expect(actual.events).toEqual([
+            expect(actual.eventAnalyses).toEqual([
                 {
                     ...eventAnalysisFixture,
                     cents,

@@ -9,7 +9,7 @@ const levelsBestCumulativeHistoryRanks: Record<Level, { [ index: number ]: numbe
 
 const updateLevelAnalysis = (bestPossibleHistory: HistoryAnalysis): void => {
     let cumulativeRank = 0
-    bestPossibleHistory.events.forEach((eventAnalysis: EventAnalysis): void => {
+    bestPossibleHistory.eventAnalyses.forEach((eventAnalysis: EventAnalysis): void => {
         const { level, rank } = eventAnalysis
 
         if (rank > cumulativeRank) {

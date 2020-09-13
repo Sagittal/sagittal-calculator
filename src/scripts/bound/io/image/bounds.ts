@@ -30,7 +30,7 @@ const computeBoundsImage = (boundsAnalysis: BoundAnalysis[]): Io => {
     elements = elements.concat(visualizeLevelBounds())
 
     boundsAnalysis.forEach((boundAnalysis: BoundAnalysis): void => {
-        elements = elements.concat(visualizeEvents(boundAnalysis.bestPossibleHistory.events))
+        elements = elements.concat(visualizeEvents(boundAnalysis.bestPossibleHistory.eventAnalyses))
     })
 
     elements = elements.concat(visualizeSizeCategoryBounds())
