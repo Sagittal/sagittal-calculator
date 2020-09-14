@@ -4,8 +4,8 @@ import { ApotomeSlope, N2D3P9 } from "../evaluation"
 type CommasFrom23FreeMonzoOptions = Partial<{
     minCents: Min<Cents>,
     maxCents: Max<Cents>,
-    maxAbsolute3Exponent: Max<Abs<3 & Integer & Exponent<Prime>>>,
-    maxAbsoluteApotomeSlope: Max<Abs<ApotomeSlope>>,
+    maxAbs3Exponent: Max<Abs<3 & Integer & Exponent<Prime>>>,
+    maxAbsApotomeSlope: Max<Abs<ApotomeSlope>>,
     maxN2D3P9: Max<N2D3P9>,
 }>
 

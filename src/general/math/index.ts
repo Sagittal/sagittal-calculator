@@ -1,6 +1,13 @@
 export { computeCombinations } from "./combinations"
 export {
-    BASE_2, FIVE_PRIME_INDEX, FIVE_ROUGHNESS, ONE, THREE_PRIME_INDEX, THREE_ROUGHNESS, THREE_SMOOTHNESS,
+    BASE_2,
+    FIVE_PRIME_INDEX,
+    FIVE_ROUGHNESS,
+    ONE,
+    THREE_PRIME_INDEX,
+    THREE_ROUGHNESS,
+    THREE_SMOOTHNESS,
+    TWO_PRIME_INDEX,
 } from "./constants"
 export { computeCopfr } from "./copfr"
 export { computeDistributions } from "./distributions"

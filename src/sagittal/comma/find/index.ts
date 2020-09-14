@@ -2,8 +2,8 @@ export { computeNotatingCommas } from "./notatingCommas"
 export { computeCommasFrom23FreeMonzo } from "./commasFrom23FreeMonzo"
 export { CommasFrom23FreeMonzoOptions } from "./types"
 export {
-    DEFAULT_MAX_ABSOLUTE_APOTOME_SLOPE,
-    DEFAULT_MAX_ABSOLUTE_3_EXPONENT,
+    DEFAULT_MAX_ABS_APOTOME_SLOPE,
+    DEFAULT_MAX_ABS_3_EXPONENT,
     DEFAULT_MAX_CENTS,
     DEFAULT_MAX_TWO_THREE_FREE_COPFR,
     DEFAULT_MAX_TWO_THREE_FREE_SOPFR,

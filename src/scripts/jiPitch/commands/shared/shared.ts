@@ -16,13 +16,13 @@ const applySharedPitchCommandSetup = (): void => {
             parseFloat,
         )
         .option(
-            `-${CommandFlag.APOTOME_SLOPE}, --max-absolute-apotome-slope <maxAbsoluteApotomeSlope>`,
-            "max absolute apotome slope (AAS)",
+            `-${CommandFlag.APOTOME_SLOPE}, --max-abs-apotome-slope <maxAbsApotomeSlope>`,
+            "max abs apotome slope (AAS)",
             parseFloat,
         )
         .option(
-            `-${CommandFlag.ABSOLUTE_THREE}, --max-absolute-3-exponent <maxAbsolute3Exponent>`,
-            "max absolute 3 exponent (ATE)",
+            `-${CommandFlag.ABS_3}, --max-abs-3-exponent <maxAbs3Exponent>`,
+            "max abs 3 exponent (ATE)",
             parseInt,
         )
         .option(
@@ -42,12 +42,8 @@ const applySharedPitchCommandSetup = (): void => {
 
     if (program.minCents) jiPitchScriptGroupSettings.minCents = program.minCents
     if (program.maxCents) jiPitchScriptGroupSettings.maxCents = program.maxCents
-    if (program.maxAbsoluteApotomeSlope) {
-        jiPitchScriptGroupSettings.maxAbsoluteApotomeSlope = program.maxAbsoluteApotomeSlope
-    }
-    if (program.maxAbsolute3Exponent) {
-        jiPitchScriptGroupSettings.maxAbsolute3Exponent = program.maxAbsolute3Exponent
-    }
+    if (program.maxAbsApotomeSlope) jiPitchScriptGroupSettings.maxAbsApotomeSlope = program.maxAbsApotomeSlope
+    if (program.maxAbs3Exponent) jiPitchScriptGroupSettings.maxAbs3Exponent = program.maxAbs3Exponent
     if (program.maxN2d3p9) jiPitchScriptGroupSettings.maxN2D3P9 = program.maxN2d3p9
     if (program.sortBy) jiPitchScriptGroupSettings.sortKey = program.sortBy
 

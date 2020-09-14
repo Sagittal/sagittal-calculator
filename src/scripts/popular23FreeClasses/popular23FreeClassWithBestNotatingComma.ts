@@ -16,7 +16,7 @@ import {
     isUndefined,
     Max,
     Maybe,
-    Popularity,
+    Popularity, THREE_PRIME_INDEX,
     TwoThreeFreeClass,
     Votes,
 } from "../../general"
@@ -35,9 +35,9 @@ const isLate = (notatingComma: Comma, bestNotatingComma: Comma): boolean => {
     const notatingCommaMonzo = computeJiPitchMonzo(notatingComma)
     const bestNotatingCommaMonzo = computeJiPitchMonzo(bestNotatingComma)
 
-    return abs(notatingCommaMonzo[ 1 ]) < abs(bestNotatingCommaMonzo[ 1 ]) ||
+    return abs(notatingCommaMonzo[ THREE_PRIME_INDEX ]) < abs(bestNotatingCommaMonzo[ THREE_PRIME_INDEX ]) ||
         (
-            abs(notatingCommaMonzo[ 1 ]) === abs(bestNotatingCommaMonzo[ 1 ]) &&
+            abs(notatingCommaMonzo[ THREE_PRIME_INDEX ]) === abs(bestNotatingCommaMonzo[ THREE_PRIME_INDEX ]) &&
             computeCentsFromPitch(notatingComma) < computeCentsFromPitch(bestNotatingComma)
         )
 }

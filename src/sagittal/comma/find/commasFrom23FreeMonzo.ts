@@ -9,12 +9,14 @@ import {
     Monzo,
     Prime,
     shallowClone,
+    THREE_PRIME_INDEX,
+    TWO_PRIME_INDEX,
 } from "../../../general"
 import { analyzeComma } from "../analyzeComma"
 import { CommaAnalysis } from "../types"
 import {
-    DEFAULT_MAX_ABSOLUTE_3_EXPONENT,
-    DEFAULT_MAX_ABSOLUTE_APOTOME_SLOPE,
+    DEFAULT_MAX_ABS_3_EXPONENT,
+    DEFAULT_MAX_ABS_APOTOME_SLOPE,
     DEFAULT_MAX_CENTS,
     DEFAULT_MAX_N2D3P9,
     DEFAULT_MIN_CENTS,
@@ -27,10 +29,10 @@ const computeTwoFreeMonzo = (
     threeExponent: 3 & Integer & Exponent<Prime>,
 ): Monzo<{ rough: 3 }> => {
     const twoFreeMonzo: Monzo<{ rough: 3 }> = shallowClone(twoThreeFreeMonzo) as Monzo as Monzo<{ rough: 3 }>
-    twoFreeMonzo[ 1 ] = threeExponent
+    twoFreeMonzo[ THREE_PRIME_INDEX ] = threeExponent
 
-    if (isUndefined(twoFreeMonzo[ 0 ])) {
-        twoFreeMonzo[ 0 ] = 0 as Integer & Exponent<Prime>
+    if (isUndefined(twoFreeMonzo[ TWO_PRIME_INDEX ])) {
+        twoFreeMonzo[ TWO_PRIME_INDEX ] = 0 as Integer & Exponent<Prime>
     }
 
     return twoFreeMonzo
@@ -43,14 +45,14 @@ const computeCommasFrom23FreeMonzo = (
     const {
         minCents = DEFAULT_MIN_CENTS,
         maxCents = DEFAULT_MAX_CENTS,
-        maxAbsolute3Exponent = DEFAULT_MAX_ABSOLUTE_3_EXPONENT,
-        maxAbsoluteApotomeSlope = DEFAULT_MAX_ABSOLUTE_APOTOME_SLOPE,
+        maxAbs3Exponent = DEFAULT_MAX_ABS_3_EXPONENT,
+        maxAbsApotomeSlope = DEFAULT_MAX_ABS_APOTOME_SLOPE,
         maxN2D3P9 = DEFAULT_MAX_N2D3P9,
     } = options || {}
 
     const commas: Comma[] = []
 
-    computePlusOrMinusRange(maxAbsolute3Exponent).forEach((threeExponent: 3 & Integer & Exponent<Prime>): void => {
+    computePlusOrMinusRange(maxAbs3Exponent).forEach((threeExponent: 3 & Integer & Exponent<Prime>): void => {
         const twoFreeMonzo = computeTwoFreeMonzo(twoThreeFreeMonzo, threeExponent)
         const monzo: Maybe<Monzo> = computeMonzoInZone(twoFreeMonzo, [minCents, maxCents])
 
@@ -58,7 +60,7 @@ const computeCommasFrom23FreeMonzo = (
             const comma = { monzo } as Comma
 
             const commaAnalysis: CommaAnalysis = analyzeComma(comma)
-            if (abs(commaAnalysis.apotomeSlope) > maxAbsoluteApotomeSlope || commaAnalysis.n2d3p9 > maxN2D3P9) {
+            if (abs(commaAnalysis.apotomeSlope) > maxAbsApotomeSlope || commaAnalysis.n2d3p9 > maxN2D3P9) {
                 return
             }
 

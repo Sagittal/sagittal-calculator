@@ -7,7 +7,7 @@ import {
     computeMonzoFromInteger,
     computeMonzoFromRatio,
     Formatted,
-    IDENTIFYING_COMMA_NAME_CHARS,
+    IDENTIFYING_COMMA_NAME_CHARS, Integer,
     Io,
     JiPitch,
     LogTarget,
@@ -26,6 +26,7 @@ import {
     parseCommaName,
     ParsedCommaName,
 } from "../../../sagittal"
+import { accommodateJiPitchInSettings } from "../accommodateJiPitchInSettings"
 import { computeNotatingCommasTable, formatJiPitch, formatSettings } from "../io"
 import { applySharedPitchCommandSetup } from "./shared"
 
@@ -44,6 +45,15 @@ program
         `-${CommandFlag.COMMA_NAME}, --comma-name <commaName>`,
         "comma name",
         (commaNameText: string): ParsedCommaName => parseCommaName(commaNameText as Name<Comma>),
+    )
+    .option(
+        `-${CommandFlag.INTEGER}, --integer <integer>`,
+        "comma name",
+        (integerText: string): Integer => parseInteger(integerText),
+    )
+    .option(
+        `-${CommandFlag.SUPPRESS_AUTOMATIC_ADJUSTING_OF_NOTATING_COMMA_FILTERS}, --suppress-automatic-adjusting-of-notating-comma-filters`,
+        "suppress automatic adjusting of notating comma filters"
     )
 
 applySharedPitchCommandSetup()
@@ -69,22 +79,18 @@ if (jiPitchText) {
     monzo = computeMonzoFromRatio(program.ratio)
 } else if (program.commaName) {
     monzo = computeMonzoFrom23FreeClassAndSizeCategoryName(program.commaName)
+} else if (program.integer) {
+    monzo = computeMonzoFromInteger(program.integer)
 } else {
     throw new Error("Unable to determine monzo for JI pitch.")
 }
 
-// TODO: it should adjust the defaults if your own JI pitch is outside them
-//  so that it will always be the case that your JI pitch appears in its own notating commas list
-//  the difference between
-//  npm run analyze-ji-pitch 209/208
-//  and
-//  npm run analyze-ji-pitch 209/208 -- --max-n2d3p9 500
-
-saveLog(addTexts(formatSettings(), NEWLINE), LogTarget.ALL)
-
 const jiPitch: JiPitch = { monzo }
 const jiPitchAnalysis = analyzeJiPitch(jiPitch)
 saveLog(formatJiPitch(jiPitchAnalysis), LogTarget.ALL)
+
+accommodateJiPitchInSettings(jiPitchAnalysis, { suppress: program.suppressAutomaticAdjustingOfNotatingCommaFilters })
+saveLog(addTexts(NEWLINE, formatSettings(), NEWLINE), LogTarget.ALL)
 
 const notatingCommasFormattedTable = computeNotatingCommasTable(jiPitch)
 saveLog(notatingCommasFormattedTable, LogTarget.ALL)

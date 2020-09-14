@@ -148,6 +148,7 @@ export {
     Distribution,
     computeRoughRatio,
     computeSubRatio,
+    TWO_PRIME_INDEX,
 } from "./math"
 export {
     Cents,

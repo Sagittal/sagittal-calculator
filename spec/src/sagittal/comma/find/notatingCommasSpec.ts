@@ -17,10 +17,10 @@ describe("computeNotatingCommas", (): void => {
 
     it("can filter", (): void => {
         const monzo = [0, 0, 0, 0, 1] as Monzo
-        const maxAbsoluteApotomeSlope = 9 as Max<Abs<ApotomeSlope>>
+        const maxAbsApotomeSlope = 9 as Max<Abs<ApotomeSlope>>
         const maxCents = 55 as Max<Cents>
 
-        const actual = computeNotatingCommas({ monzo }, { maxAbsoluteApotomeSlope, maxCents })
+        const actual = computeNotatingCommas({ monzo }, { maxAbsApotomeSlope, maxCents })
 
         const expected = [
             { monzo: [-5, 1, 0, 0, 1] },

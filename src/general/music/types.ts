@@ -40,6 +40,18 @@ type JiPitchByRatio<T extends RationalTypeParameters = { irrational: false }> = 
 type JiPitch<T extends NumericTypeParameters = {}> =
     JiPitchByMonzo<T & { irrational: false }> | JiPitchByRatio<T & { irrational: false }>
 
+// TODO: starting to think about non-JI pitches
+//  what about logarithmic pitch vs acoustic pitch
+//  that could help answer the question about what to name that "pitchvalue" thing
+//  e.g. how in Erv's writings about golden horograms
+//  he names the pitches with values between 0 and 1, like 0.618...
+//  that is logarithmic pitch and would require a second piece of information, the 2, to understand what the base was
+//  but actually if you combine those two things, you're still good
+//  and continued fractions
+//  like monzos, it may be a good idea to support those
+//  so the continued fraction can be the exponent in this power
+//  but it could also just be another option
+
 type Pitch<T extends NumericTypeParameters = {}> =
     JiPitch<T> | CentsPosition<T>
 

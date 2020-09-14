@@ -25,7 +25,7 @@ describe("computeSubmetricAntivotes", (): void => {
             submetric[ Parameter.SUM ] = true
         })
 
-        it("sums the absolute values of the prime factors in the 2,3-free monzo", (): void => {
+        it("sums the abs values of the prime factors in the 2,3-free monzo", (): void => {
             const actual = computeSubmetricAntivotes(twoThreeFreeNumberMonzo, submetric)
 
             const expected =
@@ -206,7 +206,7 @@ describe("computeSubmetricAntivotes", (): void => {
     })
 
     it(
-        `when the submetric type is soapf, sums the absolute values of the unique prime factors in the 2,3-free monzo`,
+        `when the submetric type is soapf, sums the abs values of the unique prime factors in the 2,3-free monzo`,
         (): void => {
             submetric[ Parameter.SUM ] = true
             submetric[ Parameter.WITHOUT_REPETITION ] = true
@@ -221,7 +221,7 @@ describe("computeSubmetricAntivotes", (): void => {
         },
     )
 
-    it("when the submetric type is soapifar, sums the absolute values of the prime factors in the 2,3-free monzo, mapped to the prime count function", (): void => {
+    it("when the submetric type is soapifar, sums the abs values of the prime factors in the 2,3-free monzo, mapped to the prime count function", (): void => {
         submetric[ Parameter.SUM ] = true
         submetric[ Parameter.USE_PRIME_INDEX ] = true
 
@@ -234,7 +234,7 @@ describe("computeSubmetricAntivotes", (): void => {
         expect(actual).toBe(expected)
     })
 
-    it("when the submetric type is soapif, sums the absolute values of the unique prime factors in the 2,3-free monzo, mapped to the prime count function", (): void => {
+    it("when the submetric type is soapif, sums the abs values of the unique prime factors in the 2,3-free monzo, mapped to the prime count function", (): void => {
         submetric[ Parameter.SUM ] = true
         submetric[ Parameter.USE_PRIME_INDEX ] = true
         submetric[ Parameter.WITHOUT_REPETITION ] = true

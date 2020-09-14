@@ -15,7 +15,7 @@ import {
     saveLog,
     Sopfr,
     sort,
-    stringify,
+    stringify, THREE_PRIME_INDEX,
 } from "../../../general"
 import { analyzeComma, CommaAnalysis, computeNotatingCommas, N2D3P9, Tina, TINA } from "../../../sagittal"
 import { computeCommas } from "../commas"
@@ -39,7 +39,8 @@ const MAX_CENTS = (TINAS_TO_CHECK[ TINAS_TO_CHECK.length - 1 ] + PLUS_MINUS_RANG
 
 const isLate = (comma: Comma): boolean => {
     const monzo = computeJiPitchMonzo(comma)
-    const ate = abs(monzo[ 1 ])
+    // TODO: do I want to be consistent about ATE vs absolute3Exponent
+    const ate = abs(monzo[ THREE_PRIME_INDEX ])
 
     const notatingCommas = computeNotatingCommas(comma, { ...jiPitchScriptGroupSettings, maxN2D3P9: LIMITLESS_N2D3P9 })
     const ates = notatingCommas.map((notatingComma: Comma): Exponent<Prime> => {

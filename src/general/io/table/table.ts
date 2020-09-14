@@ -29,6 +29,7 @@ const formatTable = <T = unknown>(table: Table<T>, options?: Partial<FormatTable
     // TODO: TSV format for tables per http://forum.sagittal.org/viewtopic.php?p=2409#p2409
     //  in TSV it would be best if all the closing angle-brackets ended up in the same rightward column,
     //  so we don't have columns with some numbers and some angle-brackets.
+    //  - and perhaps name the sub-columns for monzo by the prime 2, 3, 5, 7... maybe should just do that in general
     //  - and include a BOM (https://csv.thephpleague.com/8.0/bom/)
     //  - and it should use symbol unicode!
 

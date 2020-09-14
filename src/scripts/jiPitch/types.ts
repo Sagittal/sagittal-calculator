@@ -1,5 +1,5 @@
-import { Copfr, Exponent, Extrema, Integer, Max, ObjectKey, Prime, Sopfr } from "../../general"
-import { CommasFrom23FreeMonzoOptions, N2D3P9 } from "../../sagittal"
+import { Abs, Cents, Copfr, Exponent, Extrema, Integer, Max, Min, ObjectKey, Prime, Sopfr } from "../../general"
+import { ApotomeSlope, CommaNameOptions, CommasFrom23FreeMonzoOptions, N2D3P9 } from "../../sagittal"
 
 type CommasOptions = CommasFrom23FreeMonzoOptions & FiveSlicedMonzosToCheckOptions & Partial<{
     sortKey: ObjectKey,
@@ -25,10 +25,21 @@ interface TwoThreeFreeClassSettings {
     maxPrimeLimit: Max<Max<Prime>>,
 }
 
+interface JiPitchScriptGroupSettings {
+    minCents: Min<Cents>,
+    maxCents: Max<Cents>,
+    maxAbs3Exponent: Max<Abs<3 & Integer & Exponent<Prime>>>,
+    maxAbsApotomeSlope: Max<Abs<ApotomeSlope>>,
+    maxN2D3P9: Max<N2D3P9>,
+    sortKey: ObjectKey,
+    commaNameOptions: CommaNameOptions,
+}
+
 export {
     TwoThreeFreePrimesToCheckOptions,
     CommasOptions,
     FiveSlicedMonzosToCheckOptions,
     PrimeExponentRangeOptions,
     TwoThreeFreeClassSettings,
+    JiPitchScriptGroupSettings,
 }
