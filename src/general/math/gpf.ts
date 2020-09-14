@@ -1,9 +1,9 @@
 import { computeTrimmedArray, indexOfFinalElement } from "../code"
 import { computeMonzoFromIntegerOrMonzo, Monzo } from "./monzo"
 import { PRIMES } from "./primes"
-import { Max, Numeric, Prime, RationalTypeParameters } from "./types"
+import { IntegerTypeParameters, Max, Numeric, Prime } from "./types"
 
-const computeGpf = <T extends RationalTypeParameters>(
+const computeGpf = <T extends IntegerTypeParameters>(
     integerOrMonzo: Numeric<T> | Monzo<T>,
 ): Max<Prime> => {
     const monzo = computeMonzoFromIntegerOrMonzo(integerOrMonzo)

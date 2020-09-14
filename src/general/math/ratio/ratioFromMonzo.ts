@@ -1,12 +1,12 @@
 import { MAX_JAVASCRIPT_INTEGER_VALUE } from "../../code"
 import { formatMonzo } from "../../io"
-import { PotentiallyIrrationalMonzoParameter } from "../monzo"
+import { PotentiallyNonintegerMonzoParameter } from "../monzo"
 import { PRIMES } from "../primes"
 import { Exponent, NumericTypeParameters, Prime } from "../types"
 import { Denominator, Numerator, Ratio } from "./types"
 
 const computeRatioFromMonzo = <T extends NumericTypeParameters>(
-    monzo: PotentiallyIrrationalMonzoParameter<T>,
+    monzo: PotentiallyNonintegerMonzoParameter<T>,
     { disableErrorBecauseExactValueNotRequired }: { disableErrorBecauseExactValueNotRequired?: boolean } = {},
 ): Ratio<T> => {
     let numerator: Numerator<T> = 1 as Numerator<T>

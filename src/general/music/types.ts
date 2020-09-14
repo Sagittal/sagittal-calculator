@@ -12,8 +12,8 @@ type Cents = number & { _CentsBrand: "Cents" }
 type CentsPosition<T extends NumericTypeParameters = {}> = {
     cents: Cents,
     name?: Name<Pitch>,
-    monzo?: Monzo<T & { irrational: true }>,
-    ratio?: Ratio<T & { irrational: true }>,
+    monzo?: Monzo<T & { noninteger: true }>,
+    ratio?: Ratio<T & { noninteger: true }>,
 }
 
 // TODO: starting to think about non-JI pitches

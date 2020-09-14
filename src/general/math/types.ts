@@ -1,8 +1,8 @@
 import { Count, Sum } from "../types"
 
-type Numeric<T extends NumericTypeParameters> = MaybeInteger<T> & NumericTypeParameterEffectsBesidesIrrational<T>
+type Numeric<T extends NumericTypeParameters> = MaybeInteger<T> & NumericTypeParameterEffectsBesidesInteger<T>
 type Integer = number & { _IntegerBrand: "Integer" }
-type MaybeInteger<T> = T extends { irrational: true } ? number : Integer
+type MaybeInteger<T> = T extends { noninteger: true } ? number : Integer
 
 type Prime<T = void> = Integer & { _PrimeBrand: "Prime" } & (T extends void ? {} : T & { _PrimeOfBrand: T })
 type Roughness = Integer & { _RoughnessBrand: "Roughness" }
@@ -26,14 +26,14 @@ type Abs<T extends number = number> = T & { _AbsBrand: "Abs" }
 type Avg<T extends number = number> = T & { _AverageBrand: "Avg" }
 type Approx<T extends number = number> = T & { _ApproxBrand: "Approx" }
 
-type Sopfr<T extends NumericTypeParameters & { irrational?: false } = { irrational: false }> =
+type Sopfr<T extends NumericTypeParameters & { noninteger?: false } = { noninteger: false }> =
     Sum<Prime>
     & { _SopfrBrand: "Sopfr" }
-    & NumericTypeParameterEffectsBesidesIrrational<T>
-type Copfr<T extends NumericTypeParameters & { irrational?: false } = { irrational: false }> =
+    & NumericTypeParameterEffectsBesidesInteger<T>
+type Copfr<T extends NumericTypeParameters & { noninteger?: false } = { noninteger: false }> =
     Count<Prime>
     & { _CopfrBrand: "Copfr" }
-    & NumericTypeParameterEffectsBesidesIrrational<T>
+    & NumericTypeParameterEffectsBesidesInteger<T>
 
 enum Direction {
     SUPER = "super",
@@ -41,17 +41,15 @@ enum Direction {
     UNISON = "unison",
 }
 
-// TODO: consider renaming irrational to noninteger, because "irrational" has the baggage of seeming similar to Ratio
-//  whereas this property is very closely akin to the Integer type, fundamentally
 type NumericTypeParameters = Partial<{
-    irrational: boolean,
+    noninteger: boolean,
     direction: Direction
     rough: number,
     smooth: number,
 }>
-type RationalTypeParameters = NumericTypeParameters & { irrational: false }
+type IntegerTypeParameters = NumericTypeParameters & { noninteger: false }
 
-type NumericTypeParameterEffectsBesidesIrrational<T> =
+type NumericTypeParameterEffectsBesidesInteger<T> =
     (T extends { direction: Direction.SUB } ? { _Direction: Direction.SUB } : {})
     & (T extends { direction: Direction.SUPER } ? { _Direction: Direction.SUPER } : {})
     & (T extends { direction: Direction.UNISON } ? { _Direction: Direction.UNISON } : {})
@@ -247,10 +245,10 @@ export {
     Abs,
     NumericTypeParameters,
     Direction,
-    NumericTypeParameterEffectsBesidesIrrational,
+    NumericTypeParameterEffectsBesidesInteger,
     Smoothness,
     Numeric,
-    RationalTypeParameters,
+    IntegerTypeParameters,
     Primes,
     MaybeInteger,
 }
