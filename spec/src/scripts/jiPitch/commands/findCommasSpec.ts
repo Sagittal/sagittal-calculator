@@ -6,17 +6,17 @@ describe("find-commas", (): void => {
     it("finds commas, given the finding options", (): void => {
         onlyRunInCi()
 
-        const command = `              \
-        npm run find-commas --         \
-         --min-cents 30                \
-         --max-cents 30.5              \
-         --max-abs-3-exponent 2        \
-         --max-2-3-free-copfr 3        \
-         --max-prime-limit 37          \
-         --max-2-3-free-sopfr 58       \
-         --max-abs-apotome-slope 3     \
-         --no-color                    \
-         --no-write                    \
+        const command = `           \
+        npm run find-commas --      \
+         --min-cents 30             \
+         --max-cents 30.5           \
+         --max-ate 2                \
+         --max-2-3-free-copfr 3     \
+         --max-prime-limit 37       \
+         --max-2-3-free-sopfr 58    \
+         --max-aas 3                \
+         --no-color                 \
+         --no-write                 \
         ` as Io
 
         const actual = runCommandAndGetConsoleOutput(command)

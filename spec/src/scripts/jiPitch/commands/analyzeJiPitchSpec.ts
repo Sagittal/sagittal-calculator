@@ -84,7 +84,7 @@ describe("analyze-ji-pitch", (): void => {
         // and the flag to suppress automatic adjustment is on
         // the comma itself will not appear in the list of notating commas
         // otherwise it would, as the 275k, `)|(
-        const command = "npm run analyze-ji-pitch [3,-7,2,0,1] -- --max-cents 50 --max-abs-apotome-slope 3 --suppress-automatic-adjusting-of-notating-comma-filters" as Io
+        const command = "npm run analyze-ji-pitch [3,-7,2,0,1] -- --max-cents 50 --max-aas 3 --suppress-automatic-adjusting-of-notating-comma-filters" as Io
 
         const actual = runCommandAndGetConsoleOutput(command)
 
@@ -112,7 +112,7 @@ describe("analyze-ji-pitch", (): void => {
     it("can appraise a JI pitch which is just a simple integer", (): void => {
         onlyRunInCi()
 
-        const command = "npm run analyze-ji-pitch -- -i 275 --max-abs-apotome-slope 600" as Io
+        const command = "npm run analyze-ji-pitch -- -i 275 --max-aas 600" as Io
 
         const actual = runCommandAndGetConsoleOutput(command)
 
