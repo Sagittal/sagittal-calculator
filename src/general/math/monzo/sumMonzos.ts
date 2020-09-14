@@ -1,5 +1,5 @@
 import { computeRange, computeTrimmedArray } from "../../code"
-import { add, count, Exponent, max, PotentiallyIrrationalMonzoParameter, Prime, sum } from "../../math"
+import { add, count, Exponent, max, PotentiallyIrrationalMonzoParameter, Prime } from "../../math"
 import { Monzo } from "./types"
 
 const sumMonzos = (...monzos: Array<PotentiallyIrrationalMonzoParameter>): Monzo => {

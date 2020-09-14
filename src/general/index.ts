@@ -30,6 +30,8 @@ export {
     ZERO_ONE_INDEX_DIFF,
     indexOfFinalElement,
     finalElement,
+    increment,
+    decrement,
 } from "./code"
 export {
     addTexts,

@@ -1,4 +1,4 @@
-import { computeTrimmedArray } from "../../code"
+import { computeTrimmedArray, increment } from "../../code"
 import { Exponent, Integer, Monzo, Prime, Primes, RationalTypeParameters } from "../../math"
 import { computeRoughnessIndex } from "../primeCount"
 import { Roughness } from "../types"
@@ -28,7 +28,7 @@ const computeIsRoughMonzo = <S extends Primes, T extends RationalTypeParameters>
     let index = 0
     while (index < roughnessIndex) {
         if (monzo[ index ] !== 0) return false
-        index = index + 1
+        index = increment(index)
     }
 
     return true

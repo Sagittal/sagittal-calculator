@@ -1,4 +1,4 @@
-import { Denominator, Exponent, Integer, Max, Prime } from "../../../../../../general"
+import { decrement, Denominator, Exponent, increment, Integer, Max, Prime } from "../../../../../../general"
 import { N2D3P9 } from "../../types"
 import { computeMinN2D3P9ForCandidateMaxDenominatorPrimeExponentGivenMaxN2D3P9 } from "./minN2D3P9"
 import {
@@ -41,11 +41,11 @@ const computeMaxDenominatorPrimeExponentGivenMaxN2D3P3 = (
 
         if (minN2D3P9ForCandidateMaxDenominatorPrimeExponentGivenMaxN2D3P9 > maxN2D3P9) {
             candidateMaxDenominatorPrimeExponentGivenMaxN2D3P9 =
-                candidateMaxDenominatorPrimeExponentGivenMaxN2D3P9 - 1 as Max<Integer & Exponent<Prime<Denominator>>>
+                decrement(candidateMaxDenominatorPrimeExponentGivenMaxN2D3P9)
             break
         } else {
             candidateMaxDenominatorPrimeExponentGivenMaxN2D3P9 =
-                candidateMaxDenominatorPrimeExponentGivenMaxN2D3P9 + 1 as Max<Integer & Exponent<Prime<Denominator>>>
+                increment(candidateMaxDenominatorPrimeExponentGivenMaxN2D3P9)
         }
     }
 

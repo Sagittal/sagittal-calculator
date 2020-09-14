@@ -2,7 +2,7 @@ import {
     ACCURACY_THRESHOLD,
     computeIsSubMonzo,
     Exponent,
-    Extrema,
+    Extrema, increment,
     Integer,
     Io,
     isUndefined,
@@ -56,7 +56,7 @@ const computePopular23FreeClasses = (
             undefined
 
         // log progress
-        monzosCheckedCount = monzosCheckedCount + 1
+        monzosCheckedCount = increment(monzosCheckedCount)
         if (monzosCheckedCount % 1000000 === 0) {
             saveLog(`done: ${monzosCheckedCount} (${100 * monzosCheckedCount / monzoCount}%)` as Io, LogTarget.PROGRESS)
         }
@@ -73,7 +73,7 @@ const computePopular23FreeClasses = (
             indexToTick < twoThreeFreeMonzo.length &&
             twoThreeFreeMonzo[ indexToTick ] === finalMonzo[ indexToTick ]
             ) {
-            indexToTick = indexToTick + 1
+            indexToTick = increment(indexToTick)
         }
 
         // ok so now we're at the first term which isn't at its max
@@ -84,14 +84,14 @@ const computePopular23FreeClasses = (
         }
 
         // otherwise increment the term at this not-yet-maxed index toward its max
-        twoThreeFreeMonzo[ indexToTick ] = twoThreeFreeMonzo[ indexToTick ] + 1 as Integer & Exponent<Prime>
+        twoThreeFreeMonzo[ indexToTick ] = increment(twoThreeFreeMonzo[ indexToTick ])
 
         // and reset the term at every other index before this one to its min,
         // so we can repeat everything we've done so far but for this index being one higher than it was previously
         let i = 0
         while (i < indexToTick) {
             twoThreeFreeMonzo[ i ] = initialMonzo[ i ]
-            i = i + 1
+            i = increment(i)
         }
     }
 

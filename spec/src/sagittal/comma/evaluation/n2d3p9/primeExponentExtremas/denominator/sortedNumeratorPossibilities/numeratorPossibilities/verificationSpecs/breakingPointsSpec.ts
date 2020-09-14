@@ -1,3 +1,5 @@
+import { Index } from "../../../../../../../../../../../src/general"
+import { increment } from "../../../../../../../../../../../src/general/code/crement"
 import { Exponent, Integer, Max, Numerator, Prime, PRIMES } from "../../../../../../../../../../../src/general/math"
 import { N2D3P9 } from "../../../../../../../../../../../src/sagittal/comma/evaluation/n2d3p9"
 
@@ -80,7 +82,7 @@ describe("breaking points of max N2D3P9 per numerator prime", (): void => {
         const MAX_REASONABLE_MAX_N2D3P9 = 5000 as Max<Max<N2D3P9>>
 
         const breakingPoints = [[],[]] as Array<Array<Max<N2D3P9>>>
-        let primeIndex = 2
+        let primeIndex: Index<Prime> = 2 as Index<Prime>
 
         while (true) {
             breakingPoints.push([] as Array<Max<N2D3P9>>)
@@ -95,8 +97,7 @@ describe("breaking points of max N2D3P9 per numerator prime", (): void => {
                 }
                 breakingPoints[primeIndex].push(maxN2D3P9)
 
-                // TODO: probably high time for an increment helper
-                maxNumeratorPrimeExponent = maxNumeratorPrimeExponent + 1 as Max<Integer & Exponent<Prime<Numerator>>>
+                maxNumeratorPrimeExponent = increment(maxNumeratorPrimeExponent)
             }
 
             if (breakingPoints[primeIndex].length === 1) {
@@ -104,7 +105,7 @@ describe("breaking points of max N2D3P9 per numerator prime", (): void => {
                 break
             }
 
-            primeIndex = primeIndex + 1
+            primeIndex = increment(primeIndex)
         }
 
         expect(breakingPoints).toBeCloseToObject(expected)

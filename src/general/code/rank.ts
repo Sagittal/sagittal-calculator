@@ -1,6 +1,7 @@
 import { Integer } from "../math"
 import { Count } from "../types"
 import { deepClone } from "./clone"
+import { increment } from "./crement"
 import { dig } from "./dig"
 import { isCloseTo } from "./isCloseTo"
 import { sort } from "./sort"
@@ -55,7 +56,7 @@ const rank = <T>(arrayOfObjects: T[], options: RankOptions = {}): Array<T & { ra
             return clonedArrayOfObjects.map((object: T): T & { rank: Integer & Rank<T> } => {
                 const rankingValue = dig(object, by)
                 if (isCloseOrEqual(rankingValue, previousValue, precision)) {
-                    tiesCount = tiesCount + 1 as Count
+                    tiesCount = increment(tiesCount)
 
                     return { ...object, rank: rank as Integer & Rank<T> }
                 } else {
@@ -72,7 +73,7 @@ const rank = <T>(arrayOfObjects: T[], options: RankOptions = {}): Array<T & { ra
                 if (isCloseOrEqual(rankingValue, previousValue, precision)) {
                     return { ...object, rank: rank as Integer & Rank<T> }
                 } else {
-                    rank = rank + 1 as Rank<T>
+                    rank = increment(rank)
                     previousValue = rankingValue
 
                     return { ...object, rank: rank as Integer & Rank<T> }

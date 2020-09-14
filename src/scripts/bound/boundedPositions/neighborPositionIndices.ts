@@ -1,4 +1,4 @@
-import { Cents, Index, subtract } from "../../../general"
+import { Cents, increment, Index, subtract } from "../../../general"
 
 const computeNeighborPositionIndices = (
     position: Cents,
@@ -7,7 +7,7 @@ const computeNeighborPositionIndices = (
     let index = 0 as Index<Cents>
     let target = sortedTargetPositions[ index ]
     while (target < position) {
-        index = index + 1 as Index<Cents>
+        index = increment(index)
         target = sortedTargetPositions[ index ]
     }
 

@@ -1,3 +1,4 @@
+import { increment } from "../../../../../../src/general/code"
 import { computeCentsFromPitch } from "../../../../../../src/general/music"
 import {
     APOTOME_CENTS,
@@ -32,7 +33,7 @@ describe("half-apotome mirror", (): void => {
 
             expect(actual).toBeCloseTo(expected)
 
-            indexOffset = indexOffset + 1
+            indexOffset = increment(indexOffset)
         }
     })
 
@@ -50,7 +51,7 @@ describe("half-apotome mirror", (): void => {
 
             expect(bound.cents - halfApotomeCents).toBeCloseTo(halfApotomeCents - mirroredBound.cents)
 
-            indexOffset = indexOffset + 1
+            indexOffset = increment(indexOffset)
         }
     })
 })

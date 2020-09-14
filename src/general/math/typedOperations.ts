@@ -15,33 +15,17 @@ const count = <T>(array: T[]): Count<T> => {
     return array.length as Count<T>
 }
 
-const sum = <T extends number>(...addends: T[]): Sum<T> => {
-    if (computeIsEmpty(addends)) {
-        return ADDITIVE_IDENTITY as Sum<T>
-    }
+const sum = <T extends number>(...addends: T[]): Sum<T> =>
+    addends.reduce(
+        (total: Sum<T>, addend: T): Sum<T> => total + addend as Sum<T>,
+        ADDITIVE_IDENTITY as Sum<T>,
+    )
 
-    const previousValue: T = addends.pop() as T
-
-    const nextSum: Sum<T> = computeIsEmpty(addends) ?
-        ADDITIVE_IDENTITY as Sum<T> :
-        sum(...addends)
-
-    return nextSum + previousValue as Sum<T>
-}
-
-const product = <T extends number>(...factors: T[]): Product<T> => {
-    if (computeIsEmpty(factors)) {
-        return MULTIPLICATIVE_IDENTITY as Product<T>
-    }
-
-    const previousValue: T = factors.pop() as T
-
-    const nextProduct: Product<T> = computeIsEmpty(factors) ?
-        MULTIPLICATIVE_IDENTITY as Product<T> :
-        product(...factors)
-
-    return nextProduct * previousValue as Product<T>
-}
+const product = <T extends number>(...factors: T[]): Product<T> =>
+    factors.reduce(
+        (total: Product<T>, factor: T): Product<T> => total * factor as Product<T>,
+        MULTIPLICATIVE_IDENTITY as Product<T>,
+    )
 
 const add = <T extends number>(augend: T, addend: T | Addend<T>): T =>
     augend + addend as T                    // sum

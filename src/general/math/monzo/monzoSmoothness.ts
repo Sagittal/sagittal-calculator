@@ -1,3 +1,4 @@
+import { increment } from "../../code"
 import { Index } from "../../types"
 import { computeSmoothnessIndex } from "../primeCount"
 import { count } from "../typedOperations"
@@ -12,7 +13,7 @@ const computeIsSmoothMonzo = <S extends Primes, T extends NumericTypeParameters>
 
     while (smoothnessIndex < count(monzo)) {
         if (monzo[ smoothnessIndex ] !== 0) return false
-        smoothnessIndex = smoothnessIndex + 1 as Index<Prime>
+        smoothnessIndex = increment(smoothnessIndex)
     }
 
     return true

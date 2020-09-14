@@ -1,4 +1,4 @@
-import { Count, Id, Integer, Rank } from "../../../general"
+import { Count, Id, increment, Integer, Rank } from "../../../general"
 import { Bound } from "../../../sagittal"
 import { EventAnalysis } from "../analyzeHistory"
 import { EventType } from "../histories"
@@ -18,7 +18,7 @@ const rankBoundIndices: Array<Id<Bound>>[] = [
 ]
 
 const updateRankAnalysis = (bestRank: Integer & Rank<EventAnalysis>, boundId: Id<Bound>): void => {
-    rankCounts[ bestRank ] = rankCounts[ bestRank ] + 1 as Count<Rank<EventAnalysis>>
+    rankCounts[ bestRank ] = increment(rankCounts[ bestRank ])
     rankBoundIndices[ bestRank ].push(boundId)
 }
 

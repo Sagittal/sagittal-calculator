@@ -1,3 +1,4 @@
+import { increment } from "../code"
 import { Index } from "../types"
 import { dividesEvenly } from "./dividesEvenly"
 import { computeRoughnessIndex } from "./primeCount"
@@ -20,7 +21,7 @@ const computeIsRoughInteger = (integer: Integer, roughness: Roughness): boolean 
             break
         }
 
-        index = index + 1 as Index<Prime>
+        index = increment(index)
     }
 
     return isRough
@@ -37,7 +38,7 @@ const computeRoughInteger = <T extends Integer>(integer: T, roughness: Roughness
             roughInteger = integerDivide(roughInteger, prime) as T
         }
 
-        primeIndex = primeIndex + 1
+        primeIndex = increment(primeIndex)
     }
 
     return roughInteger

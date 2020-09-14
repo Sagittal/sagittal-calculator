@@ -2,7 +2,7 @@ import {
     deepEquals,
     Exponent,
     Extrema,
-    FIVE_PRIME_INDEX,
+    FIVE_PRIME_INDEX, increment,
     Index,
     Integer,
     Max,
@@ -40,7 +40,7 @@ const computePrimeExponentExtremasGivenMaxN2D3P9 = (
             break
         } else {
             primeExponentExtremasGivenMaxN2D3P9.push(primeExponentExtremaGivenMaxN2D3P9)
-            index = index + 1 as Index<Prime>
+            index = increment(index)
         }
     }
 

@@ -1,4 +1,4 @@
-import { Maybe } from "../../../general"
+import { increment, Maybe } from "../../../general"
 import { Level } from "../../../sagittal"
 import { EventAnalysis, HistoryAnalysis } from "../analyzeHistory"
 
@@ -22,7 +22,7 @@ const updateLevelAnalysis = (bestPossibleHistory: HistoryAnalysis): void => {
         if (!levelsBestHistoryRanks[ level ][ rank ]) {
             levelsBestHistoryRanks[ level ][ rank ] = 0
         }
-        levelsBestHistoryRanks[ level ][ rank ] = (levelsBestHistoryRanks[ level ][ rank ] as number) + 1
+        levelsBestHistoryRanks[ level ][ rank ] = increment(levelsBestHistoryRanks[ level ][ rank ] as number)
 
         if (!levelsBestCumulativeHistoryRanks[ level ]) {
             levelsBestCumulativeHistoryRanks[ level ] = []
@@ -31,7 +31,7 @@ const updateLevelAnalysis = (bestPossibleHistory: HistoryAnalysis): void => {
             levelsBestCumulativeHistoryRanks[ level ][ cumulativeRank ] = 0
         }
         levelsBestCumulativeHistoryRanks[ level ][ cumulativeRank ] =
-            levelsBestCumulativeHistoryRanks[ level ][ cumulativeRank ] + 1
+            increment(levelsBestCumulativeHistoryRanks[ level ][ cumulativeRank ])
     })
 }
 

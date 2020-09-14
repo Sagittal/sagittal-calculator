@@ -1,6 +1,6 @@
 import {
     Exponent,
-    FIVE_PRIME_INDEX,
+    FIVE_PRIME_INDEX, increment,
     Index,
     Integer,
     Max,
@@ -29,7 +29,7 @@ const computeMaxNumeratorPrimeExponentsGivenMaxN2D3P9 = (
             break
         }
         maxNumeratorPrimeExponentsGivenMaxN2D3P9.push(maxNumeratorPrimeExponentGivenMaxN2D3P3)
-        numeratorPrimeIndex = numeratorPrimeIndex + 1 as Index<Prime<Numerator>>
+        numeratorPrimeIndex = increment(numeratorPrimeIndex)
     }
 
     return maxNumeratorPrimeExponentsGivenMaxN2D3P9

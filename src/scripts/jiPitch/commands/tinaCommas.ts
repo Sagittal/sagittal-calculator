@@ -4,7 +4,7 @@ import {
     Comma,
     computeJiPitchMonzo,
     Copfr,
-    Exponent,
+    Exponent, increment,
     Io,
     LogTarget,
     Max,
@@ -114,7 +114,7 @@ Object.entries(commaAnalysesByTina).forEach(([tina, tinaCommaAnalysis]: [string,
             lateComma = comma
             break
         }
-        index = index + 1
+        index = increment(index)
     }
 
     saveLog(`\n\nTINA ${tina}: ${stringify(lateComma)}\n\n\n` as Io, LogTarget.ALL)

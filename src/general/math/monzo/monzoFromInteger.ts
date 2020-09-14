@@ -1,4 +1,4 @@
-import { indexOfFinalElement } from "../../code"
+import { increment, indexOfFinalElement } from "../../code"
 import { PRIMES } from "../primes"
 import { integerDivide } from "../typedOperations"
 import { Direction, Exponent, Integer, Prime } from "../types"
@@ -38,7 +38,7 @@ const computeMonzoFromInteger = (integer: Integer): Monzo<{ direction: Direction
 
             while (remainder === 0) {
                 remnant = integerDivide(remnant, divisor)
-                monzo[ index ] = monzo[ index ] + 1 as Integer & Exponent<Prime>
+                monzo[ index ] = increment(monzo[ index ])
                 remainder = remnant % divisor
             }
         }

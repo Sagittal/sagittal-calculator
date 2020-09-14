@@ -5,7 +5,7 @@ import {
     count,
     Distribution,
     DistributionBin,
-    doOnNextEventLoop,
+    doOnNextEventLoop, increment,
     Index,
     indexOfFinalElement,
     Io,
@@ -66,7 +66,8 @@ const populateScopesForSubmetricChunkCombination = async (
     return doOnNextEventLoop(async (): Promise<void> => {
         await populateScopesForSubmetricChunkCombination(submetricChunkCombination, {
             parameterChunkCombinations,
-            parameterChunkCombinationIndex: parameterChunkCombinationIndex + 1 as Index<Combination<Chunk<Parameter>>>,
+            parameterChunkCombinationIndex:
+                increment(parameterChunkCombinationIndex as Index<Combination<Chunk<Parameter>>>),
             submetricChunkCombinationIndex,
             submetricChunkCombinationCount,
         })
