@@ -49,12 +49,12 @@ const readTwoThreeFreeClassOptions = (): void => {
             parseInt,
         )
         .option(
-            `-${CommandFlag.TWO_THREE_FREE_SOPFR}, --max-2-3-free-sopfr <max23FreeSopfr>`,
+            `-${CommandFlag.MAX_2_3_FREE_SOPFR}, --max-2-3-free-sopfr <max23FreeSopfr>`,
             "max 2,3-free sopfr",
             parseInt,
         )
         .option(
-            `-${CommandFlag.TWO_THREE_FREE_COPFR}, --max-2-3-free-copfr <max23FreeCopfr>`,
+            `-${CommandFlag.MAX_2_3_FREE_COPFR}, --max-2-3-free-copfr <max23FreeCopfr>`,
             "max 2,3-free copfr",
             parseInt,
         )

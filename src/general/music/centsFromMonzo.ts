@@ -1,4 +1,10 @@
-import { computeRatioFromMonzo, Exponent, Monzo, Prime } from "../math"
+import {
+    computeRatioFromMonzo,
+    Exponent,
+    NumericTypeParameters,
+    PotentiallyIrrationalMonzoParameter,
+    Prime,
+} from "../math"
 import { computeCentsFromRatio } from "./centsFromRatio"
 import { Cents } from "./types"
 
@@ -1005,7 +1011,9 @@ const PRIME_FACTOR_CENTS: Cents[] = [
     15541.32305400161,
 ] as Cents[]
 
-const computeCentsFromMonzo = (monzo: Monzo): Cents => {
+const computeCentsFromMonzo = <T extends NumericTypeParameters>(
+    monzo: PotentiallyIrrationalMonzoParameter<T>,
+): Cents => {
     if (monzo.length > PRIME_FACTOR_CENTS.length) {
         const ratio = computeRatioFromMonzo(monzo)
 

@@ -1,4 +1,4 @@
-import { formatMonzo } from "../../io"
+import { computeCentsFromMonzo } from "../../music"
 import { computeRatioFromMonzo } from "../ratio"
 import { negative } from "../typedOperations"
 import { Direction, Exponent, NumericTypeParameters, Prime } from "../types"
@@ -40,7 +40,13 @@ const computeIsSubMonzo = <T extends NumericTypeParameters>(
         } else if (denominatorError && !numeratorError) {
             return true
         } else {
-            throw new Error(`Both the denominator and the numerator are huge for ${formatMonzo(monzo)} so it is not possible to tell whether it is sub.`)
+            try {
+                const cents = computeCentsFromMonzo(monzo)
+
+                return cents < 0
+            } catch (e) {
+                throw new Error("Both the denominator, numerator, and prime limit are huge for this monzo so it is not possible to tell whether it is sub.")
+            }
         }
     }
 
