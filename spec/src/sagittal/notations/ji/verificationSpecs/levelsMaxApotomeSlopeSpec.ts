@@ -3,27 +3,27 @@ import { getSagittalComma } from "../../../../../../src/sagittal"
 import { ApotomeSlope, computeApotomeSlope } from "../../../../../../src/sagittal/comma/evaluation"
 import { getJiSymbol, JiSymbol, Level, LEVELS_SYMBOL_IDS } from "../../../../../../src/sagittal/notations/ji"
 
-describe("max abs apotome slope per level", (): void => {
+describe("max AAS per level", (): void => {
     it("increases a bit at each level", (): void => {
         const actual = (Object.entries(LEVELS_SYMBOL_IDS) as Array<[Level, Array<Id<JiSymbol>>]>)
             .map(([level, levelSymbolIds]: [Level, Array<Id<JiSymbol>>]): Partial<Record<Level, ApotomeSlope>> => {
-                const levelMaxAbsApotomeSlope: Max<Abs<ApotomeSlope>> = levelSymbolIds.reduce(
+                const levelMaxAas: Max<Abs<ApotomeSlope>> = levelSymbolIds.reduce(
                     (
-                        levelMaxAbsApotomeSlope: Max<Abs<ApotomeSlope>>,
+                        levelMaxAas: Max<Abs<ApotomeSlope>>,
                         levelSymbolId: Id<JiSymbol>,
                     ): Max<Abs<ApotomeSlope>> => {
                         const levelSymbol = getJiSymbol(levelSymbolId)
                         const primaryComma = getSagittalComma(levelSymbol.primaryCommaId)
                         const apotomeSlope = abs(computeApotomeSlope(primaryComma))
 
-                        return apotomeSlope > levelMaxAbsApotomeSlope ?
+                        return apotomeSlope > levelMaxAas ?
                             apotomeSlope as Max<Abs<ApotomeSlope>> :
-                            levelMaxAbsApotomeSlope as Max<Abs<ApotomeSlope>>
+                            levelMaxAas as Max<Abs<ApotomeSlope>>
                     },
                     0 as Max<Abs<ApotomeSlope>>,
                 ) as Max<Abs<ApotomeSlope>>
 
-                return { [ level ]: levelMaxAbsApotomeSlope }
+                return { [ level ]: levelMaxAas }
             })
 
         const expected: Array<Partial<Record<Level, Max<ApotomeSlope>>>> = [

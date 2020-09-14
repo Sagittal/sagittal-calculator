@@ -28,8 +28,8 @@ interface TwoThreeFreeClassSettings {
 interface JiPitchScriptGroupSettings {
     minCents: Min<Cents>,
     maxCents: Max<Cents>,
-    maxAbs3Exponent: Max<Abs<3 & Integer & Exponent<Prime>>>,
-    maxAbsApotomeSlope: Max<Abs<ApotomeSlope>>,
+    maxAte: Max<Abs<3 & Integer & Exponent<Prime>>>,
+    maxAas: Max<Abs<ApotomeSlope>>,
     maxN2D3P9: Max<N2D3P9>,
     sortKey: ObjectKey,
     commaNameOptions: CommaNameOptions,

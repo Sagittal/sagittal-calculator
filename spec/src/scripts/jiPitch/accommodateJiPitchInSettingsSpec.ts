@@ -1,8 +1,8 @@
 import { Abs, Exponent, Integer, Max, Monzo, Prime } from "../../../../src/general/math"
 import {
     DEFAULT_JI_PITCH_SCRIPT_GROUP_MAX_N2D3P9,
-    DEFAULT_MAX_ABS_3_EXPONENT,
-    DEFAULT_MAX_ABS_APOTOME_SLOPE,
+    DEFAULT_MAX_AAS,
+    DEFAULT_MAX_ATE,
 } from "../../../../src/sagittal"
 import { ApotomeSlope, JiPitchAnalysis, N2D3P9 } from "../../../../src/sagittal/comma"
 import { accommodateJiPitchInSettings } from "../../../../src/scripts/jiPitch/accommodateJiPitchInSettings"
@@ -12,8 +12,8 @@ import { jiPitchAnalysisFixture } from "../../../helpers/src/scripts/jiPitch/fix
 describe("accommodateJiPitchInSettings", (): void => {
     const n2d3p9 = 400 as N2D3P9
     const apotomeSlope = 40 as ApotomeSlope
-    const abs3Exponent = 40 as Abs<3 & Integer & Exponent<Prime>>
-    const monzo = [0, abs3Exponent] as Monzo
+    const ate = 40 as Abs<3 & Integer & Exponent<Prime>>
+    const monzo = [0, ate] as Monzo
 
     it("adjusts the max N2D3P9 if the JI pitch has greater than the current settings", (): void => {
         const jiPitchAnalysis: JiPitchAnalysis = {
@@ -26,7 +26,7 @@ describe("accommodateJiPitchInSettings", (): void => {
         expect(jiPitchScriptGroupSettings.maxN2D3P9).toBe(n2d3p9 as Max<N2D3P9>)
     })
 
-    it("adjusts the max abs apotome slope if the JI pitch has greater than the current settings", (): void => {
+    it("adjusts the max AAS if the JI pitch has greater than the current settings", (): void => {
         const jiPitchAnalysis: JiPitchAnalysis = {
             ...jiPitchAnalysisFixture,
             apotomeSlope,
@@ -34,10 +34,10 @@ describe("accommodateJiPitchInSettings", (): void => {
 
         accommodateJiPitchInSettings(jiPitchAnalysis)
 
-        expect(jiPitchScriptGroupSettings.maxAbsApotomeSlope).toBe(apotomeSlope as Max<Abs<ApotomeSlope>>)
+        expect(jiPitchScriptGroupSettings.maxAas).toBe(apotomeSlope as Max<Abs<ApotomeSlope>>)
     })
 
-    it("adjusts the max abs 3 exponent if the JI pitch has greater than the current settings", (): void => {
+    it("adjusts the max ATE if the JI pitch has greater than the current settings", (): void => {
         const jiPitchAnalysis: JiPitchAnalysis = {
             ...jiPitchAnalysisFixture,
             monzo,
@@ -45,12 +45,12 @@ describe("accommodateJiPitchInSettings", (): void => {
 
         accommodateJiPitchInSettings(jiPitchAnalysis)
 
-        expect(jiPitchScriptGroupSettings.maxAbs3Exponent).toBe(abs3Exponent as Max<Abs<3 & Integer & Exponent<Prime>>>)
+        expect(jiPitchScriptGroupSettings.maxAte).toBe(ate as Max<Abs<3 & Integer & Exponent<Prime>>>)
     })
 
     // Note: I decided to eliminate this stuff once confronted with the question of what to set the min/max cents to
     // if it is outside the max nameable range. It got me thinking that it probably doesn't make sense in the same way
-    // as it does for the abs 3 exponent, abs apotome slope, and N2D3P9 to adjust the settings
+    // as it does for the ATE, AAS, and N2D3P9 to adjust the settings
     // it("adjusts the max cents if the JI pitch has greater than the current settings", (): void => {
     //     const jiPitchAnalysis: JiPitchAnalysis = {
     //         ...jiPitchAnalysisFixture,
@@ -97,8 +97,8 @@ describe("accommodateJiPitchInSettings", (): void => {
         accommodateJiPitchInSettings(jiPitchAnalysis, { suppress })
 
         expect(jiPitchScriptGroupSettings.maxN2D3P9).toBe(DEFAULT_JI_PITCH_SCRIPT_GROUP_MAX_N2D3P9)
-        expect(jiPitchScriptGroupSettings.maxAbsApotomeSlope).toBe(DEFAULT_MAX_ABS_APOTOME_SLOPE)
-        expect(jiPitchScriptGroupSettings.maxAbs3Exponent).toBe(DEFAULT_MAX_ABS_3_EXPONENT)
+        expect(jiPitchScriptGroupSettings.maxAas).toBe(DEFAULT_MAX_AAS)
+        expect(jiPitchScriptGroupSettings.maxAte).toBe(DEFAULT_MAX_ATE)
         // expect(jiPitchScriptGroupSettings.maxCents).toBe(DEFAULT_MAX_CENTS)
         // expect(jiPitchScriptGroupSettings.minCents).toBe(DEFAULT_MIN_CENTS)
     })

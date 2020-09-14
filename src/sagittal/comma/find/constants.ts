@@ -5,8 +5,8 @@ import { ApotomeSlope, N2D3P9 } from "../evaluation"
 // used for both find-commas and analyze-ji-pitch
 const DEFAULT_MIN_CENTS = 0 as Min<Cents>
 const DEFAULT_MAX_CENTS = APOTOME_CENTS / 2 as Max<Cents>                           // 56.8425030289¢
-const DEFAULT_MAX_ABS_3_EXPONENT = 15 as Max<Abs<3 & Integer & Exponent<Prime>>>
-const DEFAULT_MAX_ABS_APOTOME_SLOPE = 14 as Max<Abs<ApotomeSlope>>
+const DEFAULT_MAX_ATE = 15 as Max<Abs<3 & Integer & Exponent<Prime>>>
+const DEFAULT_MAX_AAS = 14 as Max<Abs<ApotomeSlope>>
 const DEFAULT_MAX_N2D3P9 = 5000 as Max<N2D3P9>
 const DEFAULT_JI_PITCH_SCRIPT_GROUP_MAX_N2D3P9 = 307 as Max<N2D3P9>
 const DEFAULT_SORT_KEY = "n2d3p9" as ObjectKey
@@ -19,9 +19,9 @@ const DEFAULT_MAX_PRIME_LIMIT = 47 as Max<Max<Prime>> // can be set as high as s
 export {
     DEFAULT_MIN_CENTS,
     DEFAULT_MAX_CENTS,
-    DEFAULT_MAX_ABS_APOTOME_SLOPE,
+    DEFAULT_MAX_AAS,
     DEFAULT_JI_PITCH_SCRIPT_GROUP_MAX_N2D3P9,
-    DEFAULT_MAX_ABS_3_EXPONENT,
+    DEFAULT_MAX_ATE,
     DEFAULT_SORT_KEY,
     DEFAULT_MAX_TWO_THREE_FREE_COPFR,
     DEFAULT_MAX_TWO_THREE_FREE_SOPFR,

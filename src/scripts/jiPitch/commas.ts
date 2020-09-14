@@ -1,8 +1,8 @@
 import { abs, Comma, formatNumber, Monzo } from "../../general"
 import {
     computeCommasFrom23FreeMonzo,
-    DEFAULT_MAX_ABS_3_EXPONENT,
-    DEFAULT_MAX_ABS_APOTOME_SLOPE,
+    DEFAULT_MAX_AAS,
+    DEFAULT_MAX_ATE,
     DEFAULT_MAX_CENTS,
     DEFAULT_MAX_N2D3P9,
     DEFAULT_MIN_CENTS,
@@ -17,9 +17,9 @@ const computeCommas = (options: CommasOptions): Comma[] => {
         maxCents = DEFAULT_MAX_CENTS,
         max23FreeSopfr,
         max23FreeCopfr,
-        maxAbs3Exponent = DEFAULT_MAX_ABS_3_EXPONENT,
+        maxAte = DEFAULT_MAX_ATE,
         maxPrimeLimit,
-        maxAbsApotomeSlope = DEFAULT_MAX_ABS_APOTOME_SLOPE,
+        maxAas = DEFAULT_MAX_AAS,
         maxN2D3P9 = DEFAULT_MAX_N2D3P9,
     } = options
 
@@ -46,8 +46,8 @@ const computeCommas = (options: CommasOptions): Comma[] => {
                 {
                     minCents,
                     maxCents,
-                    maxAbsApotomeSlope,
-                    maxAbs3Exponent,
+                    maxAas,
+                    maxAte,
                     maxN2D3P9,
                 },
             ),

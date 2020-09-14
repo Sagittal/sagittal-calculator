@@ -22,13 +22,13 @@ describe("find-commas", (): void => {
         const actual = runCommandAndGetConsoleOutput(command)
 
         const expected = [
-            "cents range:                \t 30.000 -  30.500",
-            "max abs 3 exponent (ATE):   \t  2    ",
-            "max abs apotome slope (AAS):\t  3.000",
-            "max N2D3P9:                 \t307.000",
-            "max 2,3-free sopfr:         \t 58    ",
-            "max 2,3-free copfr:         \t  3    ",
-            "max prime limit:            \t 37    ",
+            "cents range:       \t 30.000 -  30.500",
+            "max ATE:           \t  2    ",
+            "max AAS:           \t  3.000",
+            "max N2D3P9:        \t307.000",
+            "max 2,3-free sopfr:\t 58    ",
+            "max 2,3-free copfr:\t  3    ",
+            "max prime limit:   \t 37    ",
             "",
             "symbol  \tname  \tratio\tmonzo                                      \tcents  \tapotome slope\tlimit  \t2,3-free sopfr\t2,3-free class N2D3P9",
             "        \t29/19C\t58/57\t[   1  -1   0   0   0   0   0  -1   0   1 ⟩\t 30.109\t -2.854      \t 29    \t 48           \t295.907              ",
@@ -45,13 +45,13 @@ describe("find-commas", (): void => {
         const actual = runCommandAndGetConsoleOutput(command)
 
         const expected = [
-            "cents range:                \t 50.000 -  50.310",
-            "max abs 3 exponent (ATE):   \t 15    ",
-            "max abs apotome slope (AAS):\t 14.000",
-            "max N2D3P9:                 \t307.000",
-            "max 2,3-free sopfr:         \t 61    ",
-            "max 2,3-free copfr:         \t555    ",
-            "max prime limit:            \t 47    ",
+            "cents range:       \t 50.000 -  50.310",
+            "max ATE:           \t 15    ",
+            "max AAS:           \t 14.000",
+            "max N2D3P9:        \t307.000",
+            "max 2,3-free sopfr:\t 61    ",
+            "max 2,3-free copfr:\t555    ",
+            "max prime limit:   \t 47    ",
             "",
             "symbol  \tname   \tratio            \tmonzo                              \tcents  \tapotome slope\tlimit  \t2,3-free sopfr\t2,3-free class N2D3P9",
             "        \t19/175M\t4864/4725        \t[   8  -3  -2  -1   0   0   0   1 ⟩\t 50.195\t -6.091      \t 19    \t 36           \t292.477              ",
@@ -71,13 +71,13 @@ describe("find-commas", (): void => {
         const actual = runCommandAndGetConsoleOutput(command)
 
         const expected = [
-            "cents range:                \t 50.000 -  50.310",
-            "max abs 3 exponent (ATE):   \t 15    ",
-            "max abs apotome slope (AAS):\t 14.000",
-            "max N2D3P9:                 \t307.000",
-            "max 2,3-free sopfr:         \t 61    ",
-            "max 2,3-free copfr:         \t555    ",
-            "max prime limit:            \t 47    ",
+            "cents range:       \t 50.000 -  50.310",
+            "max ATE:           \t 15    ",
+            "max AAS:           \t 14.000",
+            "max N2D3P9:        \t307.000",
+            "max 2,3-free sopfr:\t 61    ",
+            "max 2,3-free copfr:\t555    ",
+            "max prime limit:   \t 47    ",
             "",
             "symbol  \tname                 \tratio            \tmonzo                              \tcents  \tapotome slope\tlimit  \t2,3-free sopfr\t2,3-free class N2D3P9",
             "  ,'/|) \t5.13-Medium-Diesis   \t34543665/33554432\t[ -25  12   1   0   0   1 ⟩        \t 50.301\t  8.903      \t 13    \t 18           \t 23.472              ",

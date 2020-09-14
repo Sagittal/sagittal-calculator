@@ -35,16 +35,16 @@ const accommodateJiPitchInSettings = (
     //     jiPitchScriptGroupSettings.minCents = cents as Min<Cents>
     // }
 
-    const absApotomeSlope = abs(jiPitchAnalysis.apotomeSlope)
-    if (absApotomeSlope > jiPitchScriptGroupSettings.maxAbsApotomeSlope) {
-        saveLog(`Adjusting max apotome slope for notating commas from ${formatNumber(jiPitchScriptGroupSettings.maxAbsApotomeSlope)} to ${formatNumber(absApotomeSlope)} to accommodate the given pitch.` as Io, LogTarget.ALL)
-        jiPitchScriptGroupSettings.maxAbsApotomeSlope = absApotomeSlope as Max<Abs<ApotomeSlope>>
+    const aas = abs(jiPitchAnalysis.apotomeSlope)
+    if (aas > jiPitchScriptGroupSettings.maxAas) {
+        saveLog(`Adjusting max AAS for notating commas from ${formatNumber(jiPitchScriptGroupSettings.maxAas)} to ${formatNumber(aas)} to accommodate the given pitch.` as Io, LogTarget.ALL)
+        jiPitchScriptGroupSettings.maxAas = aas as Max<Abs<ApotomeSlope>>
     }
 
-    const abs3Exponent = abs(jiPitchAnalysis.monzo[ THREE_PRIME_INDEX ])
-    if (abs3Exponent > jiPitchScriptGroupSettings.maxAbs3Exponent) {
-        saveLog(`Adjusting max abs 3 exponent for notating commas from ${formatInteger(jiPitchScriptGroupSettings.maxAbs3Exponent)} to ${formatInteger(abs3Exponent)} to accommodate the given pitch.` as Io, LogTarget.ALL)
-        jiPitchScriptGroupSettings.maxAbs3Exponent = abs3Exponent as Max<Abs<3 & Integer & Exponent<Prime>>>
+    const ate = abs(jiPitchAnalysis.monzo[ THREE_PRIME_INDEX ])
+    if (ate > jiPitchScriptGroupSettings.maxAte) {
+        saveLog(`Adjusting max ATE for notating commas from ${formatInteger(jiPitchScriptGroupSettings.maxAte)} to ${formatInteger(ate)} to accommodate the given pitch.` as Io, LogTarget.ALL)
+        jiPitchScriptGroupSettings.maxAte = ate as Max<Abs<3 & Integer & Exponent<Prime>>>
     }
 
     const n2d3p9 = jiPitchAnalysis.n2d3p9

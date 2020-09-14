@@ -1,8 +1,8 @@
 import { Monzo } from "../../general"
 import {
     DEFAULT_JI_PITCH_SCRIPT_GROUP_MAX_N2D3P9,
-    DEFAULT_MAX_ABS_3_EXPONENT,
-    DEFAULT_MAX_ABS_APOTOME_SLOPE,
+    DEFAULT_MAX_AAS,
+    DEFAULT_MAX_ATE,
     DEFAULT_MAX_CENTS,
     DEFAULT_MIN_CENTS,
     DEFAULT_SORT_KEY,
@@ -12,8 +12,8 @@ import { JiPitchScriptGroupSettings } from "./types"
 const INITIAL_JI_PITCH_SCRIPT_GROUP_SETTINGS: JiPitchScriptGroupSettings = {
     minCents: DEFAULT_MIN_CENTS,
     maxCents: DEFAULT_MAX_CENTS,
-    maxAbs3Exponent: DEFAULT_MAX_ABS_3_EXPONENT,
-    maxAbsApotomeSlope: DEFAULT_MAX_ABS_APOTOME_SLOPE,
+    maxAte: DEFAULT_MAX_ATE,
+    maxAas: DEFAULT_MAX_AAS,
     maxN2D3P9: DEFAULT_JI_PITCH_SCRIPT_GROUP_MAX_N2D3P9,
     sortKey: DEFAULT_SORT_KEY,
     commaNameOptions: {},

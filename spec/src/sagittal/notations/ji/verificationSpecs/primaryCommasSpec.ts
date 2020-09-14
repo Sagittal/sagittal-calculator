@@ -21,9 +21,9 @@ describe("verifying primary commas", (): void => {
             const maxCents = secondaryCommaZone[ 1 ]
             const max23FreeSopfr = 61 as Max<Sopfr<{ rough: 5 }>>
             const max23FreeCopfr = 555 as Max<Copfr<{ rough: 5 }>>
-            const maxAbsApotomeSlope = 14 as Max<Abs<ApotomeSlope>>
+            const maxAas = 14 as Max<Abs<ApotomeSlope>>
             const maxPrimeLimit = 47 as Max<Max<Prime>>
-            const maxAbs3Exponent = 15 as Max<Abs<3 & Integer & Exponent<Prime>>>
+            const maxAte = 15 as Max<Abs<3 & Integer & Exponent<Prime>>>
             const maxN2D3P9 = 666 as Max<N2D3P9>
             const sortKey = "twoThreeFreeSopfr" as ObjectKey
 
@@ -32,9 +32,9 @@ describe("verifying primary commas", (): void => {
                 maxCents,
                 max23FreeSopfr,
                 max23FreeCopfr,
-                maxAbsApotomeSlope,
+                maxAas,
                 maxPrimeLimit,
-                maxAbs3Exponent,
+                maxAte,
                 maxN2D3P9,
                 sortKey,
             })
