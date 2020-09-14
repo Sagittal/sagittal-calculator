@@ -16,7 +16,6 @@ const computeMonzoInZone = (twoFreeMonzo: Monzo<{ rough: 3 }>, zone: Zone): Mayb
     let cents: Cents = computeCentsFromMonzo(twoFreeMonzo)
 
     if (!deepEquals(twoFreeMonzo, [] as Monzo)) {
-        // TODO: this might be better served by a reduce() function per the forum discussions
         while (cents > maxCents) {
             twoFreeMonzo[ 0 ] = twoFreeMonzo[ 0 ] - 1 as Integer & Exponent<Prime>
             cents = computeCentsFromMonzo(twoFreeMonzo)

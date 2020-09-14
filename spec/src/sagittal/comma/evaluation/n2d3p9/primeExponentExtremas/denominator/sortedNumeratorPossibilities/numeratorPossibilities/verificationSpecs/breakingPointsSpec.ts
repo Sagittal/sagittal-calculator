@@ -1,5 +1,5 @@
-import { Exponent, Integer, Max, Numerator, Prime, PRIMES } from "../../../../../../../../../../src/general/math"
-import { N2D3P9 } from "../../../../../../../../../../src/sagittal/comma/evaluation/n2d3p9"
+import { Exponent, Integer, Max, Numerator, Prime, PRIMES } from "../../../../../../../../../../../src/general/math"
+import { N2D3P9 } from "../../../../../../../../../../../src/sagittal/comma/evaluation/n2d3p9"
 
 describe("breaking points of max N2D3P9 per numerator prime", (): void => {
     const expected: Array<Array<Max<N2D3P9>>> = [

@@ -22,15 +22,20 @@ enum Level {
 //  ... I wonder if that would prevent it from conflating Symbol with whatever other Symbol it tries to import sometimes
 //  - well, except that of course symbols get used in a number of notations, so when you have an Id, it is of a Symbol
 //  in general
+//  ok well there's a need for a single-shaft up-version ... perhaps that's a SymbolClass?
+//  and then another type would be more like a Symbol, and that would include all the down versions, and the multishafts
+//  and something should include "apotome complement" on it
 interface JiSymbol {
     ascii: SymbolLongAscii,
-    elements: SymbolLongAscii[],
-    id: Id<JiSymbol>,
-    introducingLevel: Level,
-    smallestJiSymbolSubset: SymbolSubset,
-    mina: Mina,
-    primaryCommaId: Id<SagittalComma>,
+    elements: SymbolLongAscii[],    // should this be an array of references to other objects instead of hardcoded?
     unicode: SymbolUnicode,
+    id: Id<JiSymbol>,
+    primaryCommaId: Id<SagittalComma>,
+    smallestJiSymbolSubset: SymbolSubset,   // why is this "ji" symbol subset? nothing "ji" about the symbol subsets...
+
+    // JI only
+    introducingLevel: Level,
+    mina: Mina,
 }
 
 interface Bound {
