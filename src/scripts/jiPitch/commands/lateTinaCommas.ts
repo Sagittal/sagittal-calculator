@@ -1,7 +1,7 @@
 import { Io, isUndefined, LogTarget, Max, Prime, saveLog, Sopfr, stringify } from "../../../general"
 import { CommaAnalysis } from "../../../sagittal"
 import { computeCommas } from "../commas"
-import { LIMITLESS_N2D3P9, TINA_COMMAS_MAX_CENTS, TINA_COMMAS_MIN_CENTS } from "../constants"
+import { LIMITLESS_2_3_FREE_COPFR, LIMITLESS_N2D3P9, TINA_COMMAS_MAX_CENTS, TINA_COMMAS_MIN_CENTS } from "../constants"
 import { jiPitchScriptGroupSettings } from "../globals"
 import { parse23FreeClassSettings, readTwoThreeFreeClassOptions } from "../io"
 import { computeLateComma } from "../late"
@@ -21,6 +21,7 @@ const MAX_POSSIBLE_PRIME_LIMIT_GIVEN_MAX_POSSIBLE_SOPFR =
 
 const DEFAULT_OVERRIDES: Partial<TwoThreeFreeClassSettings> = {
     max23FreeSopfr: MAX_POSSIBLE_2_3_FREE_SOPFR_WITHOUT_CRASHING,
+    max23FreeCopfr: LIMITLESS_2_3_FREE_COPFR,
     maxPrimeLimit: MAX_POSSIBLE_PRIME_LIMIT_GIVEN_MAX_POSSIBLE_SOPFR,
 }
 const twoThreeFreeClassSettings = parse23FreeClassSettings(DEFAULT_OVERRIDES)

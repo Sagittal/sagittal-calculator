@@ -1,4 +1,4 @@
-import { Cents, Max, Min, Monzo } from "../../general"
+import { Cents, Copfr, Max, Min, Monzo } from "../../general"
 import {
     DEFAULT_JI_PITCH_SCRIPT_GROUP_MAX_N2D3P9,
     DEFAULT_MAX_AAS,
@@ -25,6 +25,7 @@ const INITIAL_JI_PITCH_SCRIPT_GROUP_SETTINGS: JiPitchScriptGroupSettings = {
 const TWO_THREE_FREE_MONZO_BASE = [0, 0] as Monzo<{ rough: 5 }>
 
 const LIMITLESS_N2D3P9 = Infinity as Max<N2D3P9>
+const LIMITLESS_2_3_FREE_COPFR = Infinity as Max<Copfr<{ rough: 5 }>>
 
 const TINAS_TO_CHECK: Tina[] = [0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5] as Tina[]
 const TINA_COMMAS_PLUS_MINUS_RANGE = 0.25
@@ -41,6 +42,7 @@ export {
     INITIAL_JI_PITCH_SCRIPT_GROUP_SETTINGS,
     TWO_THREE_FREE_MONZO_BASE,
     LIMITLESS_N2D3P9,
+    LIMITLESS_2_3_FREE_COPFR,
     TINAS_TO_CHECK,
     TINA_COMMAS_MIN_CENTS,
     TINA_COMMAS_MAX_CENTS,

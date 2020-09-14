@@ -207,14 +207,6 @@ describe("computeIsSuperMonzo", (): void => {
         expect(computeIsSuperMonzo([0, 0, 6, 4, 2, 2, 0, -1, 1, 2] as Monzo)).toBeTruthy()
         expect(computeIsSuperMonzo([0, 0, -6, -4, -2, -2, 0, 1, -1, -2] as Monzo)).toBeFalsy()
     })
-
-    it("throws an error if a monzo is really huge for both the numerator and denominator", (): void => {
-        const monzo = [0, 0, 10, -14, 10, -12, 10, -10, 10, -12] as Monzo
-
-        expect((): void => {
-            computeIsSuperMonzo(monzo)
-        }).toThrowError("Both the denominator and the numerator are huge for [   0   0  10 -14  10 -12  10 -10  10 -12 ⟩ so it is not possible to tell whether it is sub.")
-    })
 })
 
 describe("computeIsUnisonMonzo", (): void => {
