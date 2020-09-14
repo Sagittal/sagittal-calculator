@@ -4,4 +4,6 @@ export { computeNotatingCommaWithMaybeSagittalSymbolRow } from "./notatingCommaR
 export { computeNotatingCommasTable } from "./notatingCommasTable"
 export { formatJiPitch } from "./jiPitchTable"
 export { parseJiPitch } from "./parseJiPitch"
+export { parse23FreeClassSettings } from "./parse23FreeClassSettings"
 export { formatSettings, format23FreeClassSettings } from "./settings"
+export { readJiPitchOptions, readTwoThreeFreeClassOptions } from "./options"

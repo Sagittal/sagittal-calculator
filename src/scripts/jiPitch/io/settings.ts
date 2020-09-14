@@ -2,6 +2,11 @@ import { formatInteger, formatNumber, Io } from "../../../general"
 import { jiPitchScriptGroupSettings } from "../globals"
 import { TwoThreeFreeClassSettings } from "../types"
 
+// TODO: FIND COMMA ANALYZE JI PITCH NOTATING COMMAS 2,3 FREE CLEAN UP
+//  okay, but these aren't "ji pitch" settings
+//  and N2D3P9 is a property which is shared among all 2,3-free classes, so doesn't it really belong down there...?
+//  except that you do definitely want to be able to filter notating commas by it...
+//  but wouldn't you theoretically want to be able to filter the notating commas by 2,3-free sopfr and copfr and limit?
 const formatSettings = (): Io => {
     const {
         minCents,

@@ -9,7 +9,8 @@ const computeCommaRow = (
 
     return concat(
         computeNotatingCommaWithMaybeSagittalSymbolRow(commaWithMaybeSagittalSymbol),
-        // TODO: I would like this to work out to be a hybridization of the 2,3-free-class and notating-commas tables
+        // TODO: FIND COMMA ANALYZE JI PITCH NOTATING COMMAS 2,3 FREE CLEAN UP
+        //  I would like this to work out to be a hybridization of the 2,3-free-class and notating-commas tables
         [
             formatInteger(limit),
             formatInteger(twoThreeFreeSopfr),
