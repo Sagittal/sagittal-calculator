@@ -1,7 +1,9 @@
+import { Io } from "../../../../../../src/general/io"
 import { Combination } from "../../../../../../src/general/math"
 import { MetricName, SumOfSquares } from "../../../../../../src/scripts/popularityMetricLfc/bestMetric"
 import { bestMetrics } from "../../../../../../src/scripts/popularityMetricLfc/globals"
 import { formatBestMetrics } from "../../../../../../src/scripts/popularityMetricLfc/solver"
+import { formatPercentage } from "../../../../../../src/scripts/popularityMetricLfc/solver/io"
 import { Parameter, Submetric } from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
 
 describe("formatBestMetrics", (): void => {
@@ -79,4 +81,14 @@ describe("formatBestMetrics", (): void => {
     })
 })
 
-// TODO: test - write for other formatting methods
+describe("formatPercentage", (): void => {
+    it("includes both the two values and their percentage", (): void => {
+        const a = 1
+        const b = 20
+
+        const actual = formatPercentage(a, b)
+
+        const expected = "1/20 (5.00%)" as Io
+        expect(actual).toBe(expected)
+    })
+})
