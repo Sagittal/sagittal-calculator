@@ -1,4 +1,4 @@
-import { abs, Cents, computeCentsFromPitch, difference, Id, Maybe } from "../../../../general"
+import { abs, Cents, computeCentsFromPitch, Id, Maybe, subtract } from "../../../../general"
 import { Bound, getJiSymbol, getSagittalComma, JiSymbol, JI_BOUNDS, Level } from "../../../../sagittal"
 import { computeInaDistance } from "../../analyzeHistory"
 import { computeBoundedJiSymbolPositions } from "../../boundedPositions"
@@ -27,7 +27,7 @@ const computeLevelBoundedJiSymbolIdWithDistances = (
                     if (jiSymbol) {
                         const primaryComma = getSagittalComma(jiSymbol.primaryCommaId)
                         const primaryCommaCents = computeCentsFromPitch(primaryComma)
-                        const distance: Cents = abs(difference(cents, primaryCommaCents))
+                        const distance: Cents = abs(subtract(cents, primaryCommaCents))
 
                         return {
                             id: jiSymbol.id,

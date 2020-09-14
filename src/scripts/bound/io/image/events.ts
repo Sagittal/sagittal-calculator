@@ -1,4 +1,4 @@
-import { difference, HexColor, Io, Multiplier, Px } from "../../../../general"
+import { HexColor, Io, Multiplier, Px, subtract } from "../../../../general"
 import { Level } from "../../../../sagittal"
 import { EventAnalysis } from "../../analyzeHistory"
 import { RANK_FILLS } from "./colors"
@@ -48,8 +48,8 @@ const visualizeEvents = (events: EventAnalysis[]): Io[] => {
 
         const textX: Px = (positionX + nextPositionX) / 2 as Px
         const textY: Px = (positionY + nextPositionY) / 2 as Px
-        const rise: Px = difference(nextPositionY, positionY)
-        const run: Px = difference(nextPositionX, positionX)
+        const rise: Px = subtract(nextPositionY, positionY)
+        const run: Px = subtract(nextPositionX, positionX)
         const slope: Multiplier<Px> = rise / run as Multiplier<Px>
         const angle = Math.atan(slope) * (180 / Math.PI)
         eventElements.push(`  <text stroke="white" stroke-width="0.45em" transform="rotate(${angle} ${textX} ${textY})" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="${textX}" y="${textY}">${formattedDistance} (${formattedInaDistance})</text>\n` as Io)

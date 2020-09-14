@@ -1,4 +1,5 @@
 import {
+    add,
     computeRange,
     Copfr,
     Exponent,
@@ -13,7 +14,6 @@ import {
     Prime,
     Range,
     Sopfr,
-    sum,
 } from "../../general"
 import { PrimeExponentRangeOptions } from "./types"
 
@@ -56,7 +56,7 @@ const computePrimeExponentRange = (
         minPrimeExponentGivenMaxCopfr,
     )
 
-    return computeRange(minPrimeExponent, sum(maxPrimeExponent, ONE)) as Range<Integer & Exponent<Prime>>
+    return computeRange(minPrimeExponent, add(maxPrimeExponent, ONE)) as Range<Integer & Exponent<Prime>>
 }
 
 export {

@@ -1,4 +1,4 @@
-import { Basis, Cents, computePx, Multiplier, multiply, Px, sum } from "../../../../general"
+import { add, Basis, Cents, computePx, Multiplier, multiply, Px } from "../../../../general"
 import { Level, LEVELS } from "../../../../sagittal"
 import { computeReversedLevelIndex } from "./reversedLevelIndex"
 import { LEVEL_HEIGHT, MARGIN, Y_SCALE } from "./sizes"
@@ -6,11 +6,11 @@ import { LEVEL_HEIGHT, MARGIN, Y_SCALE } from "./sizes"
 const computeLevelHeights = (withinLevelHeight: Multiplier<Basis<Cents>>): Record<Level, Px> =>
     LEVELS.reduce(
         (levelTops: Record<Level, Px>, level: Level, levelIndex: number): Record<Level, Px> => {
-            const levelHeight: Multiplier<Basis<Cents>> = sum(computeReversedLevelIndex(levelIndex), withinLevelHeight)
+            const levelHeight: Multiplier<Basis<Cents>> = add(computeReversedLevelIndex(levelIndex), withinLevelHeight)
 
             return {
                 ...levelTops,
-                [ level ]: computePx(sum(MARGIN, multiply(LEVEL_HEIGHT, levelHeight)), Y_SCALE),
+                [ level ]: computePx(add(MARGIN, multiply(LEVEL_HEIGHT, levelHeight)), Y_SCALE),
             }
         },
         {} as Record<Level, Px>,

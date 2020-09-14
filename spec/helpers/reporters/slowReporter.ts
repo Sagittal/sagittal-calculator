@@ -1,4 +1,4 @@
-import { count, difference, Ms, round, sort } from "../../../src/general"
+import { count, Ms, round, sort, subtract } from "../../../src/general"
 import { now } from "../../../src/general/code"
 import { COUNT_SLOW_SPECS_TO_SUMMARIZE, MAX_TEST_DESCRIPTION_LENGTH, WARN_THRESHOLD_MS } from "./constants"
 import { SpecTime } from "./types"
@@ -12,7 +12,7 @@ const slowReporter: jasmine.CustomReporter = {
     },
 
     specDone(actual: jasmine.CustomReporterResult): void {
-        const time = round(difference(now(), specStartedTime))
+        const time = round(subtract(now(), specStartedTime))
         const description = actual.fullName.length > MAX_TEST_DESCRIPTION_LENGTH ?
             actual.fullName.slice(0, MAX_TEST_DESCRIPTION_LENGTH) + "…" :
             actual.fullName

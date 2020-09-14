@@ -1,4 +1,4 @@
-import { CentsPosition, difference, Io, Px } from "../../../../general"
+import { CentsPosition, Io, Px, subtract } from "../../../../general"
 import { Level, SymbolLongAscii, unicodeFromAscii } from "../../../../sagittal"
 import { LEVELS_COMMA_MEANS } from "../../histories"
 import { MEAN_COLOR } from "./colors"
@@ -16,8 +16,8 @@ const visualizeLevelCommaMeans = (): Io[] => {
         }
 
         const centerY: Px = LEVEL_CENTERS[ level ]
-        const topY: Px = difference(centerY, HALF_TICK_SIZE)
-        const bottomY: Px = difference(centerY, HALF_TICK_SIZE)
+        const topY: Px = subtract(centerY, HALF_TICK_SIZE)
+        const bottomY: Px = subtract(centerY, HALF_TICK_SIZE)
 
         levelCommaMeans.forEach((levelCommaMean: CentsPosition): void => {
             const { cents, name } = levelCommaMean

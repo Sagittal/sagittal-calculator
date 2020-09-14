@@ -8,14 +8,30 @@ type Id<T = void> = Integer & { _IdBrand: "Id" } & (T extends void ? {} : { _IdO
 type Count<T = void> = Integer & { _CountBrand: "Count" } & (T extends void ? {} : { _CountOfBrand: T })
 
 // Numeric types where parameter is also numeric
+type Addend<T extends number | void = void> =
+    number
+    & { _AddendBrand: "Addend" }
+    & (T extends void ? {} : T & { _AddendOfBrand: T })
+type Subtrahend<T extends number | void = void> =
+    number
+    & { _SubtrahendBrand: "Subtrahend" }
+    & (T extends void ? {} : T & { _SubtrahendOfBrand: T })
 type Multiplier<T extends number | void = void> =
     number
     & { _MultiplierBrand: "Multiplier" }
     & (T extends void ? {} : T & { _MultiplierOfBrand: T })
+type Divisor<T extends number | void = void> =
+    number
+    & { _DivisorBrand: "Divisor" }
+    & (T extends void ? {} : T & { _DivisorOfBrand: T })
 type Sum<T extends number | void = void> =
     number
     & { _SumBrand: "Sum" }
     & (T extends void ? {} : T & { _SumOfBrand: T })
+type Product<T extends number | void = void> =
+    number
+    & { _ProductBrand: "Product" }
+    & (T extends void ? {} : T & { _ProductOfBrand: T })
 
 type Step<EdCount extends number | void = void> =
     number & { _StepBrand: "Step", _StepOfEdBrand: EdCount }
@@ -45,4 +61,8 @@ export {
     Name,
     Extrema,
     Ms,
+    Divisor,
+    Product,
+    Addend,
+    Subtrahend,
 }

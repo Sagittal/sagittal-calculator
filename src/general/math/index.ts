@@ -56,7 +56,7 @@ export {
     abs,
     ceil,
     count,
-    difference,
+    subtract,
     floor,
     integerDivide,
     log,
@@ -69,6 +69,7 @@ export {
     pow,
     round,
     sqrt,
+    add,
     sum,
 } from "./typedOperations"
 export {

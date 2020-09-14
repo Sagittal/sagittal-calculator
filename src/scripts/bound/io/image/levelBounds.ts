@@ -1,4 +1,4 @@
-import { difference, Io, Px } from "../../../../general"
+import { Io, Px, subtract } from "../../../../general"
 import { Bound, Level, LEVELS_BOUNDS } from "../../../../sagittal"
 import { LEVEL_BOTTOMS, LEVEL_TOPS } from "./levelHeights"
 import { DASH_SIZE, SYMBOL_OFFSET } from "./sizes"
@@ -20,7 +20,7 @@ const visualizeLevelBounds = (): Io[] => {
             const bottomY: Px = LEVEL_BOTTOMS[ level ]
             const positionX: Px = computeX(cents)
 
-            const textY: Px = difference(topY, SYMBOL_OFFSET)
+            const textY: Px = subtract(topY, SYMBOL_OFFSET)
 
             levelBoundElements.push(`  <line stroke-dasharray="${DASH_SIZE}" stroke="black" x1="${positionX}" x2="${positionX}" y1="${topY}" y2="${bottomY}" />\n` as Io)
 

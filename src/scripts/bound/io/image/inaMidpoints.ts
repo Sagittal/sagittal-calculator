@@ -1,4 +1,4 @@
-import { CentsPosition, difference, Io, Px, sum } from "../../../../general"
+import { add, CentsPosition, Io, Px, subtract, sum } from "../../../../general"
 import { Level } from "../../../../sagittal"
 import { INA_MIDPOINTS } from "../../histories"
 import { INA_COLOR } from "./colors"
@@ -12,8 +12,8 @@ const visualizeInaMidpoints = (): Io[] => {
     const inaMidpointEntries = Object.entries(INA_MIDPOINTS) as Array<[Level, CentsPosition[]]>
     inaMidpointEntries.forEach(([level, inaMidpoints]: [Level, CentsPosition[]]): void => {
         const centerY: Px = LEVEL_CENTERS[ level ]
-        const topY: Px = difference(centerY, HALF_TICK_SIZE)
-        const bottomY: Px = sum(centerY, HALF_TICK_SIZE)
+        const topY: Px = subtract(centerY, HALF_TICK_SIZE)
+        const bottomY: Px = add(centerY, HALF_TICK_SIZE)
 
         inaMidpoints.forEach((inaMidpoint: CentsPosition): void => {
             const { name, cents } = inaMidpoint

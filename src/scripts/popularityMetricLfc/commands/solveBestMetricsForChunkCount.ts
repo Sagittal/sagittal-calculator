@@ -1,5 +1,5 @@
 import { program } from "commander"
-import { CommandFlag, Count, difference, formatTime, Io, LogTarget, now, parseInteger, saveLog } from "../../../general"
+import { CommandFlag, Count, formatTime, Io, LogTarget, now, parseInteger, saveLog, subtract } from "../../../general"
 import { popularityMetricLfcScriptGroupSettings, solverStatus } from "../globals"
 import { Chunk, formatBestMetrics, populateAndSearchScopesAndPerfectMetrics } from "../solver"
 import { applySharedPopularityMetricLfcCommandSetup } from "./shared"
@@ -28,7 +28,7 @@ populateAndSearchScopesAndPerfectMetrics().then((): void => {
     const endTime = now()
     if (time) {
         saveLog(
-            `\n\nFINDING BEST METRICS TOOK ${formatTime(difference(endTime, startTime))}` as Io,
+            `\n\nFINDING BEST METRICS TOOK ${formatTime(subtract(endTime, startTime))}` as Io,
             LogTarget.FINAL_SOLVER_RESULTS,
         )
     }

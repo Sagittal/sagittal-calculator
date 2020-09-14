@@ -104,7 +104,7 @@ export {
     Copfr,
     count,
     Denominator,
-    difference,
+    subtract,
     Direction,
     DistributionBin,
     dividesEvenly,
@@ -149,6 +149,7 @@ export {
     computeRoughRatio,
     computeSubRatio,
     TWO_PRIME_INDEX,
+    add,
 } from "./math"
 export {
     Cents,

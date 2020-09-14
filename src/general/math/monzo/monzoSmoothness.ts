@@ -1,7 +1,6 @@
 import { Index } from "../../types"
-import { ONE } from "../constants"
 import { computeSmoothnessIndex } from "../primeCount"
-import { count, sum } from "../typedOperations"
+import { count } from "../typedOperations"
 import { NumericTypeParameters, Prime, Primes, Smoothness } from "../types"
 import { Monzo } from "./types"
 
@@ -13,7 +12,7 @@ const computeIsSmoothMonzo = <S extends Primes, T extends NumericTypeParameters>
 
     while (smoothnessIndex < count(monzo)) {
         if (monzo[ smoothnessIndex ] !== 0) return false
-        smoothnessIndex = sum(smoothnessIndex, ONE) as Index<Prime>
+        smoothnessIndex = smoothnessIndex + 1 as Index<Prime>
     }
 
     return true

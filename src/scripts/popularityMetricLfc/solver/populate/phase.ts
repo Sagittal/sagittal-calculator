@@ -5,12 +5,12 @@ import {
     computeDistributions,
     count,
     Count,
-    difference,
     DistributionBin,
     Index,
     Io,
     LogTarget,
     saveLog,
+    subtract,
 } from "../../../../general"
 import {
     memoizedParameterChunkCombinations,
@@ -35,7 +35,7 @@ const populateScopesPhase = async (
     chunkCountForSubmetrics: Count<Chunk<Submetric>>,
 ): Promise<void> => {
     const chunkCountForParameters: Count<Chunk<Parameter>> =
-        difference(chunkCount, chunkCountForSubmetrics) as Count<Chunk<Parameter>>
+        subtract(chunkCount, chunkCountForSubmetrics) as Count<Chunk<Parameter>>
 
     saveLog(
         `computing scopes: phase ${1 + chunkCount - chunkCountForSubmetrics}/${chunkCount}` as Io,

@@ -1,5 +1,5 @@
 import { program } from "commander"
-import { CommandFlag, difference, Filename, formatTime, Io, LogTarget, now, saveLog } from "../../../general"
+import { CommandFlag, Filename, formatTime, Io, LogTarget, now, saveLog, subtract } from "../../../general"
 import { Metric } from "../bestMetric"
 import { DEFAULT_MAX_UNIT_WHEN_PERFECTING } from "../constants"
 import { popularityMetricLfcScriptGroupSettings } from "../globals"
@@ -32,7 +32,7 @@ perfectMetrics(Object.values(bestMetricsToBePerfected)).then((): void => {
     const endTime = now()
     if (time) {
         saveLog(
-            `\n\nPERFECTING METRICS TOOK ${formatTime(difference(endTime, startTime))}` as Io,
+            `\n\nPERFECTING METRICS TOOK ${formatTime(subtract(endTime, startTime))}` as Io,
             LogTarget.FINAL_PERFECTER_RESULTS,
         )
     }

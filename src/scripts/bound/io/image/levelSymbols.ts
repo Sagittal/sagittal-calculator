@@ -1,4 +1,4 @@
-import { computeCentsFromPitch, difference, Id, Io, Px, sum } from "../../../../general"
+import { add, computeCentsFromPitch, Id, Io, Px, subtract } from "../../../../general"
 import { getJiSymbol, getSagittalComma, JiSymbol, Level, LEVELS_SYMBOL_IDS, SagittalComma } from "../../../../sagittal"
 import { formatMina } from "../terminal"
 import { LEVEL_CENTERS } from "./levelHeights"
@@ -15,8 +15,8 @@ const visualizeLevelSymbols = (): Io[] => {
         }
 
         const centerY: Px = LEVEL_CENTERS[ level ]
-        const dotY: Px = difference(centerY, SYMBOL_OFFSET)
-        const symbolY: Px = sum(centerY, SYMBOL_OFFSET)
+        const dotY: Px = subtract(centerY, SYMBOL_OFFSET)
+        const symbolY: Px = add(centerY, SYMBOL_OFFSET)
 
         levelSymbolIds.forEach((levelSymbolId: Id<JiSymbol>): void => {
             const levelSymbol: JiSymbol = getJiSymbol(levelSymbolId)
@@ -36,7 +36,7 @@ const visualizeLevelSymbols = (): Io[] => {
             levelSymbolElements.push(`  <text fill="black" text-anchor="middle" x="${positionX}" y="${symbolY}" font-size="40px" font-family="Bravura">${adjustedUnicode}</text>\n` as Io)
 
             if (level === Level.EXTREME) {
-                const minaY: Px = difference(symbolY, MINA_OFFSET)
+                const minaY: Px = subtract(symbolY, MINA_OFFSET)
                 levelSymbolElements.push(`  <text text-anchor="middle" x="${positionX}" y="${minaY}" font-size="10px" font-family="Bravura">${formatMina(mina)}</text>\n` as Io)
             }
         })

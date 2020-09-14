@@ -1,5 +1,5 @@
 import { computeIsEmpty, isUndefined } from "../code"
-import { Count, Multiplier } from "../types"
+import { Addend, Count, Divisor, Multiplier, Product, Subtrahend, Sum } from "../types"
 import {
     ADDITIVE_IDENTITY,
     MULTIPLICATIVE_IDENTITY,
@@ -15,39 +15,46 @@ const count = <T>(array: T[]): Count<T> => {
     return array.length as Count<T>
 }
 
-const sum = <T extends number>(...numbers: T[]): T => {
-    if (computeIsEmpty(numbers)) {
-        return ADDITIVE_IDENTITY as T
+const sum = <T extends number>(...addends: T[]): Sum<T> => {
+    if (computeIsEmpty(addends)) {
+        return ADDITIVE_IDENTITY as Sum<T>
     }
 
-    const previousValue: T = numbers.pop() as T
+    const previousValue: T = addends.pop() as T
 
-    const nextSum: T = computeIsEmpty(numbers) ?
-        ADDITIVE_IDENTITY as T :
-        sum(...numbers)
+    const nextSum: Sum<T> = computeIsEmpty(addends) ?
+        ADDITIVE_IDENTITY as Sum<T> :
+        sum(...addends)
 
-    return nextSum + previousValue as T
+    return nextSum + previousValue as Sum<T>
 }
 
-const difference = <T extends number>(minuend: T, subtrahend: T): T =>
-    minuend - subtrahend as T
-
-const product = <T extends number>(...numbers: T[]): T => {
-    if (computeIsEmpty(numbers)) {
-        return MULTIPLICATIVE_IDENTITY as T
+const product = <T extends number>(...factors: T[]): Product<T> => {
+    if (computeIsEmpty(factors)) {
+        return MULTIPLICATIVE_IDENTITY as Product<T>
     }
 
-    const previousValue: T = numbers.pop() as T
+    const previousValue: T = factors.pop() as T
 
-    const nextProduct: T = computeIsEmpty(numbers) ?
-        MULTIPLICATIVE_IDENTITY as T :
-        product(...numbers)
+    const nextProduct: Product<T> = computeIsEmpty(factors) ?
+        MULTIPLICATIVE_IDENTITY as Product<T> :
+        product(...factors)
 
-    return nextProduct * previousValue as T
+    return nextProduct * previousValue as Product<T>
 }
 
-const multiply = <T extends number>(number: T, multiplier: Multiplier<T>): T => {
-    return number * multiplier as T
+const add = <T extends number>(augend: T, addend: T | Addend<T>): T =>
+    augend + addend as T                    // sum
+
+const subtract = <T extends number>(minuend: T, subtrahend: T | Subtrahend<T>): T =>
+    minuend - subtrahend as T               // difference
+
+const multiply = <T extends number>(multiplicand: T, multiplier: Multiplier<T>): T => {
+    return multiplicand * multiplier as T   // product
+}
+
+const divide = <T extends number>(dividend: T, divisor: Divisor<T>): T => {
+    return dividend / divisor as T          // quotient
 }
 
 const integerDivide = <T extends number>(dividend: T, divisor: T): T & Integer =>
@@ -106,9 +113,12 @@ const avg = <T extends number>(...numbers: T[]): Avg<T> =>
 
 export {
     sum,
-    difference,
     product,
+    add,
+    subtract,
     multiply,
+    divide,
+    integerDivide,
     mod,
     reciprocal,
     negative,
@@ -122,7 +132,6 @@ export {
     min,
     pow,
     log,
-    integerDivide,
     parseInteger,
     count,
     avg,
