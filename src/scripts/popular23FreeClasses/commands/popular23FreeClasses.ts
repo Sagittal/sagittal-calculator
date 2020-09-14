@@ -1,8 +1,8 @@
 import { program } from "commander"
-import { CommandFlag, Filename, ioSettings, LogTarget, parseCommands, saveLog } from "../../../general"
+import { CommandFlag, Filename, Io, ioSettings, LogTarget, parseCommands, saveLog } from "../../../general"
 import { ScriptGroup } from "../../types"
 import { DEFAULT_MAX_N2D3P9_FOR_POPULAR_TWO_THREE_FREE_CLASSES } from "../constants"
-import { computePopular23FreeClassesTable } from "../io"
+import { computePopular23FreeClassesOutput } from "../io"
 import { computeKnownPopular23FreeClasses } from "../knownPopular23FreeClasses"
 import { computePopular23FreeClasses } from "../popular23FreeClasses"
 
@@ -23,4 +23,5 @@ const popular23FreeClasses = knownPopular23FreeClasses ?
     computeKnownPopular23FreeClasses() :
     computePopular23FreeClasses(maxN2D3P9)
 
-saveLog(computePopular23FreeClassesTable(popular23FreeClasses, maxN2D3P9), LogTarget.ALL)
+const popular23FreeClassesOutput: Io = computePopular23FreeClassesOutput(popular23FreeClasses, maxN2D3P9)
+saveLog(popular23FreeClassesOutput, LogTarget.ALL)

@@ -6,7 +6,7 @@ const targetColors: Record<LogTarget, ColorMethod> = {
     [ LogTarget.ANTIVOTES ]: "white",
     [ LogTarget.BOUND ]: "white",
     [ LogTarget.BOUNDS_IMAGE ]: "white",
-    [ LogTarget.BOUNDS_TERMINAL ]: "white",
+    [ LogTarget.BOUNDS_TABLE ]: "white",
     [ LogTarget.ANTIVOTES ]: "white",
     [ LogTarget.UNPOPULARITIES ]: "white",
     [ LogTarget.SEARCH ]: "yellow",

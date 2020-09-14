@@ -3,7 +3,7 @@ import { N2D3P9 } from "../../../sagittal"
 import { Popular23FreeClass } from "../types"
 import { computePopular23FreeClassesHeaderRows } from "./headerRows"
 
-const computePopular23FreeClassesTable = (
+const computePopular23FreeClassesOutput = (
     popular23FreeClasses: Array<Ranked<Popular23FreeClass>>,
     maxN2D3P9: Max<N2D3P9>,
 ): Io => {
@@ -38,5 +38,5 @@ const computePopular23FreeClassesTable = (
 }
 
 export {
-    computePopular23FreeClassesTable,
+    computePopular23FreeClassesOutput,
 }

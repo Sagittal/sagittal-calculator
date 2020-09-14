@@ -5,7 +5,7 @@ import { NOTATING_COMMA_WITH_MAYBE_SAGITTAL_SYMBOLS_HEADER_ROW } from "./headerR
 import { computeNotatingCommaWithMaybeSagittalSymbolRow } from "./notatingCommaRow"
 import { NOTATING_COMMAS_TABLE_TITLE } from "./titles"
 
-const computeNotatingCommasTable = (jiPitch: JiPitch): Io => {
+const computeNotatingCommasOutput = (jiPitch: JiPitch): Io => {
     const notatingCommas: Comma[] = computeNotatingCommas(jiPitch, jiPitchScriptGroupSettings)
     const notatingCommasWithMaybeSagittalSymbols = notatingCommas.map(addMaybeJiSymbol)
     const notatingCommasWithMaybeSagittalSymbolsAnalyses =
@@ -20,5 +20,5 @@ const computeNotatingCommasTable = (jiPitch: JiPitch): Io => {
 }
 
 export {
-    computeNotatingCommasTable,
+    computeNotatingCommasOutput,
 }

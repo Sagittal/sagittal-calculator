@@ -1,9 +1,9 @@
 import { program } from "commander"
-import { CommandFlag, Filename, ioSettings, LogTarget, parseCommands, saveLog } from "../../../general"
+import { CommandFlag, Filename, Io, ioSettings, LogTarget, parseCommands, saveLog } from "../../../general"
 import { ScriptGroup } from "../../types"
 import { DEFAULT_MAX_N2D3P9_FOR_POPULAR_TWO_THREE_FREE_CLASSES } from "../constants"
 import { popular23FreeClassesScriptGroupSettings } from "../globals"
-import { computePopular23FreeClassesWithBestNotatingCommasTable } from "../io"
+import { computePopular23FreeClassesWithBestNotatingCommasOutput } from "../io"
 import { computePopular23FreeClassesWithBestNotatingCommas } from "../popular23FreeClassesWithBestNotatingCommas"
 
 program
@@ -23,10 +23,8 @@ const popular23FreeClassesWithBestNotatingCommas =
 // TODO: obviously there's a horrendous amount of duplication being introduced in this commit
 //  between the "with best notating commas" or not versions of everything
 
-saveLog(
-    computePopular23FreeClassesWithBestNotatingCommasTable(
-        popular23FreeClassesWithBestNotatingCommas,
-        maxN2D3P9,
-    ),
-    LogTarget.ALL,
+const popular23FreeClassesWithBestNotatingCommasOutput: Io = computePopular23FreeClassesWithBestNotatingCommasOutput(
+    popular23FreeClassesWithBestNotatingCommas,
+    maxN2D3P9,
 )
+saveLog(popular23FreeClassesWithBestNotatingCommasOutput, LogTarget.ALL)

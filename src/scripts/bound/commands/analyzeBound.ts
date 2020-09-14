@@ -1,5 +1,5 @@
 import { program } from "commander"
-import { Filename, ioSettings, LogTarget, parseCommands, parseInteger, saveLog } from "../../../general"
+import { Filename, Io, ioSettings, LogTarget, parseCommands, parseInteger, saveLog } from "../../../general"
 import { Bound, JI_BOUNDS } from "../../../sagittal"
 import { ScriptGroup } from "../../types"
 import { analyzeBound } from "../analyzeBound"
@@ -18,8 +18,8 @@ if (bound) {
     const histories = computeHistories(bound)
     const boundAnalysis = analyzeBound(histories, bound)
 
-    const message = formatBound(boundAnalysis, { bound })
-    saveLog(message, LogTarget.BOUND)
+    const boundOutput: Io = formatBound(boundAnalysis, { bound })
+    saveLog(boundOutput, LogTarget.BOUND)
 } else {
     throw new Error(`Could not find bound with ID ${boundId}`)
 }

@@ -27,7 +27,7 @@ if (jiPitchScriptGroupSettings.sortKey) {
     sort(commaAnalyses, { by: jiPitchScriptGroupSettings.sortKey })
 }
 
-saveLog(formatSettings(), LogTarget.ALL)
+saveLog(addTexts(NEWLINE, formatSettings()), LogTarget.ALL)
 saveLog(addTexts(format23FreeClassSettings(twoThreeFreeClassSettings), NEWLINE), LogTarget.ALL)
 
 saveLog(computeFindCommasTable(commaAnalyses), LogTarget.ALL)

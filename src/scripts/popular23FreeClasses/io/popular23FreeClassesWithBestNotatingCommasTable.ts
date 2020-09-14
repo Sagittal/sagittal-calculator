@@ -3,7 +3,7 @@ import { N2D3P9 } from "../../../sagittal"
 import { Popular23FreeClass, Popular23FreeClassWithBestNotatingComma } from "../types"
 import { computeBestNotatingCommaHeaderRows } from "./headerRows"
 
-const computePopular23FreeClassesWithBestNotatingCommasTable = (
+const computePopular23FreeClassesWithBestNotatingCommasOutput = (
     popular23FreeClasses: Array<Ranked<Popular23FreeClassWithBestNotatingComma>>,
     maxN2D3P9: Max<N2D3P9>,
 ): Io => {
@@ -34,5 +34,5 @@ const computePopular23FreeClassesWithBestNotatingCommasTable = (
 }
 
 export {
-    computePopular23FreeClassesWithBestNotatingCommasTable,
+    computePopular23FreeClassesWithBestNotatingCommasOutput,
 }

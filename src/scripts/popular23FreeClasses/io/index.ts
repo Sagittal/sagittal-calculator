@@ -1,4 +1,4 @@
-export { computePopular23FreeClassesTable } from "./popular23FreeClassesTable"
+export { computePopular23FreeClassesOutput } from "./popular23FreeClassesOutput"
 export {
-    computePopular23FreeClassesWithBestNotatingCommasTable,
+    computePopular23FreeClassesWithBestNotatingCommasOutput,
 } from "./popular23FreeClassesWithBestNotatingCommasTable"

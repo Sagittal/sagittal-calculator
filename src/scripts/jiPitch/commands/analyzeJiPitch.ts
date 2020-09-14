@@ -1,24 +1,31 @@
 import { program } from "commander"
-import { addTexts, LogTarget, NEWLINE, saveLog } from "../../../general"
-import { analyzeJiPitch } from "../../../sagittal"
+import { addTexts, Io, JiPitch, LogTarget, NEWLINE, saveLog } from "../../../general"
+import { analyzeJiPitch, JiPitchAnalysis } from "../../../sagittal"
 import { accommodateJiPitchInSettings } from "../accommodateJiPitchInSettings"
-import { computeNotatingCommasTable, formatJiPitch, formatSettings, parseJiPitch, readJiPitchOptions } from "../io"
+import {
+    computeJiPitchOutput,
+    computeNotatingCommasOutput,
+    formatSettings,
+    parseJiPitch,
+    readJiPitchOptions,
+} from "../io"
 import { applySharedPitchCommandSetup } from "./shared"
 
 readJiPitchOptions()
 
 applySharedPitchCommandSetup()
 
-const jiPitch = parseJiPitch()
-
-const jiPitchAnalysis = analyzeJiPitch(jiPitch)
-saveLog(formatJiPitch(jiPitchAnalysis), LogTarget.ALL)
+const jiPitch: JiPitch = parseJiPitch()
+const jiPitchAnalysis: JiPitchAnalysis = analyzeJiPitch(jiPitch)
+const jiPitchOutput: Io = computeJiPitchOutput(jiPitchAnalysis)
+saveLog(jiPitchOutput, LogTarget.ALL)
 
 accommodateJiPitchInSettings(jiPitchAnalysis, { suppress: program.suppressAutomaticAdjustingOfNotatingCommaFilters })
-saveLog(addTexts(NEWLINE, formatSettings(), NEWLINE), LogTarget.ALL)
+const settingsOutput: Io = addTexts(NEWLINE, formatSettings(), NEWLINE)
+saveLog(settingsOutput, LogTarget.ALL)
 
-const notatingCommasFormattedTable = computeNotatingCommasTable(jiPitch)
-saveLog(notatingCommasFormattedTable, LogTarget.ALL)
+const notatingCommasOutput: Io = computeNotatingCommasOutput(jiPitch)
+saveLog(notatingCommasOutput, LogTarget.ALL)
 
 // TODO: FIND COMMA ANALYZE JI PITCH NOTATING COMMAS 2,3 FREE CLEAN UP
 //  okay so I guess we still didn't actually get to it, but I'd like to see this:

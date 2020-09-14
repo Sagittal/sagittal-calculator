@@ -2,7 +2,7 @@ enum LogTarget {
     ALL = "all",
     ANTIVOTES = "antivotes",
     BOUND = "bound",
-    BOUNDS_TERMINAL = "boundsTerminal",
+    BOUNDS_TABLE = "boundsTerminal",
     BOUNDS_IMAGE = "boundsImage.svg",
     UNPOPULARITIES = "unpopularities",
     SEARCH = "search",

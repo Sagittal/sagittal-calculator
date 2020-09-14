@@ -3,9 +3,9 @@
 import { Cents, Io, Monzo, NEWLINE, Prime, Ratio, Sopfr, TwoThreeFreeClass } from "../../../../../src/general"
 import { ApotomeSlope, JiPitchAnalysis } from "../../../../../src/sagittal"
 import { N2D3P9 } from "../../../../../src/sagittal/comma/evaluation/n2d3p9"
-import { formatJiPitch } from "../../../../../src/scripts/jiPitch/io"
+import { computeJiPitchOutput } from "../../../../../src/scripts/jiPitch/io"
 
-describe("formatJiPitch", (): void => {
+describe("computeJiPitchOutput", (): void => {
     const jiPitch: JiPitchAnalysis = {
         cents: 11.2 as Cents,
         monzo: [0, -1, 1] as Monzo,
@@ -18,7 +18,7 @@ describe("formatJiPitch", (): void => {
     }
 
     it("formats it in a multi-line output with titles for each line", (): void => {
-        const actual = formatJiPitch(jiPitch)
+        const actual = computeJiPitchOutput(jiPitch)
 
         const expected =
             "   --- JI pitch ---" + NEWLINE +

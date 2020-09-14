@@ -1,12 +1,12 @@
 // tslint:disable max-line-length
 import { Io, ioSettings, Monzo, NEWLINE } from "../../../../../src/general"
-import { computeNotatingCommasTable } from "../../../../../src/scripts/jiPitch/io"
+import { computeNotatingCommasOutput } from "../../../../../src/scripts/jiPitch/io"
 
-describe("computeNotatingCommasTable", (): void => {
+describe("computeNotatingCommasOutput", (): void => {
     it("can format the symbols for the terminal", (): void => {
         const monzo = [-3, -1, 2] as Monzo
 
-        const actual = computeNotatingCommasTable({ monzo })
+        const actual = computeNotatingCommasOutput({ monzo })
 
         const expected =
             "   --- notating commas ---" + NEWLINE +
@@ -21,7 +21,7 @@ describe("computeNotatingCommasTable", (): void => {
         const monzo = [-3, -1, 2] as Monzo
 
         ioSettings.forForum = true
-        const actual = computeNotatingCommasTable({ monzo })
+        const actual = computeNotatingCommasOutput({ monzo })
 
         const expected =
             "   --- notating commas ---" + NEWLINE +

@@ -1,19 +1,19 @@
-import { Filename, ioSettings, LogTarget, parseCommands, saveLog } from "../../../general"
+import { Filename, Io, ioSettings, LogTarget, parseCommands, saveLog } from "../../../general"
 import { ScriptGroup } from "../../types"
 import { analyzeBounds } from "../bounds"
 import { computeBoundsImage, computeBoundsTables } from "../io"
 
-parseCommands(ScriptGroup.BOUND as Filename, [LogTarget.BOUNDS_TERMINAL, LogTarget.BOUNDS_IMAGE])
+parseCommands(ScriptGroup.BOUND as Filename, [LogTarget.BOUNDS_TABLE, LogTarget.BOUNDS_IMAGE])
 
 ioSettings.scriptGroup = ScriptGroup.BOUND as Filename
 
 const boundsAnalysis = analyzeBounds()
 
-const terminalOutput = computeBoundsTables(boundsAnalysis)
+const tableOutput: Io = computeBoundsTables(boundsAnalysis)
 
-const imageOutput = computeBoundsImage(boundsAnalysis)
+const imageOutput: Io = computeBoundsImage(boundsAnalysis)
 
-saveLog(terminalOutput, LogTarget.BOUNDS_TERMINAL, { useTargetColor: false })
+saveLog(tableOutput, LogTarget.BOUNDS_TABLE, { useTargetColor: false })
 saveLog(imageOutput, LogTarget.BOUNDS_IMAGE, {
     useTargetColor: false,
     fileExtensionProvided: true,
