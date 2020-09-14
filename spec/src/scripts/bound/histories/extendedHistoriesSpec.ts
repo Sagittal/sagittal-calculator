@@ -28,14 +28,14 @@ describe("computeExtendedHistories", (): void => {
             levels: [Level.ULTRA, Level.EXTREME],
         })
 
-        const expected = jasmine.arrayWithExactContents([
+        const expected = [
             [
                 passedInHistoryEvent,
                 {
                     level: Level.ULTRA,
                     type: EventType.INA,
-                    name: "23.5°58",
-                    cents: 46.062028316486725,
+                    name: "23.5°58" as Name<Pitch>,
+                    cents: 46.062028 as Cents,
                 },
             ],
             [
@@ -43,8 +43,8 @@ describe("computeExtendedHistories", (): void => {
                 {
                     level: Level.ULTRA,
                     type: EventType.MEAN,
-                    name: "'//| )//|",
-                    cents: 45.681795472660895,
+                    name: "'//| )//|" as Name<Pitch>,
+                    cents: 45.681795 as Cents,
                 },
             ],
             [
@@ -52,11 +52,11 @@ describe("computeExtendedHistories", (): void => {
                 {
                     level: Level.ULTRA,
                     type: EventType.SIZE,
-                    name: "S|M",
-                    cents: 45.1124978365313,
+                    name: "S|M" as Name<Pitch>,
+                    cents: 45.112498 as Cents,
                 },
             ],
-        ])
-        expect(actual).toEqual(expected)
+        ]
+        expect(actual).toBeArrayWithDeepCloseContents(expected)
     })
 })

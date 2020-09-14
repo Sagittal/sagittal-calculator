@@ -67,6 +67,17 @@ const arraysAreCloseUpThroughExpected = <T extends number>(expected: T[], actual
     })
 }
 
+const eachExpectedElementIsCloseToSomeActualElement = <T>(expectedElements: T[], actual: T[], precision: Integer, message?: string): void => {
+    expectedElements.forEach((expectedElement: T): void => {
+        assert(
+            actual.some((actualElement: T): boolean => {
+                return deepEquals(actualElement, expectedElement, precision)
+            }),
+            message || `This expected element did not find an element close to it: ${stringify(expectedElement)}.`,
+        )
+    })
+}
+
 const eachExpectedElementDeepEqualsSomeActualElement = <T>(expectedElements: T[], actual: T[], message?: string): void => {
     expectedElements.forEach((expectedElement: T): void => {
         assert(
@@ -107,11 +118,13 @@ const customMatchers: CustomMatcherFactories = {
                 arraysAreCloseUpThroughExpected(expected, actual, precision, negate, message)
             }),
     }),
-    // TODO: so ideally you'd understand custom matchers well enough
-    //  that you could implement toBeCloseToObject
-    //  such that it could receive a jasmine.arrayContaining() and it would work
-    //  as opposed to needing to update these hardcoded extremely precise numbers every time something
-    //  subtly changes in how they're calculated
+    toBeArrayWithDeepCloseContents: (util: MatchersUtil, customEqualityTesters: readonly CustomEqualityTester[]): CustomMatcher => ({
+        compare: <T>(actual: T[], expected: T[], precision: Integer = ACCURACY_THRESHOLD, message?: string): CustomMatcherResult =>
+            doAssertions((): void => {
+                assert(actual.length === expected.length, `Arrays did not have the same length, so there is no way they could have the same members (closely).`)
+                eachExpectedElementIsCloseToSomeActualElement(expected, actual, precision, message)
+            }),
+    }),
     toBeCloseToObject: (util: MatchersUtil, customEqualityTesters: readonly CustomEqualityTester[]): CustomMatcher => ({
         compare: <T extends number>(actual: T[], expected: T[], precision: Integer = ACCURACY_THRESHOLD, negate?: boolean, message?: string): CustomMatcherResult =>
             doAssertions((): void => {

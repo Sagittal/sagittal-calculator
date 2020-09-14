@@ -10,8 +10,8 @@ describe("computeN2D3P9", (): void => {
 
         const actual = computeN2D3P9({ monzo } as TwoThreeFreeClass)
 
-        const expected = 16.805555555555554 as N2D3P9
-        expect(actual).toBe(expected)
+        const expected = 16.805556 as N2D3P9
+        expect(actual).toBeCloseToTyped(expected)
     })
 
     it("yet another example", (): void => {
@@ -20,8 +20,8 @@ describe("computeN2D3P9", (): void => {
 
         const actual = computeN2D3P9({ monzo } as TwoThreeFreeClass)
 
-        const expected = 59.54861111111111 as N2D3P9
-        expect(actual).toBe(expected)
+        const expected = 59.548611 as N2D3P9
+        expect(actual).toBeCloseToTyped(expected)
     })
 
     it("yet another 'nother example", (): void => {
@@ -30,8 +30,8 @@ describe("computeN2D3P9", (): void => {
 
         const actual = computeN2D3P9({ monzo } as TwoThreeFreeClass)
 
-        const expected = 107.75925925925924 as N2D3P9
-        expect(actual).toBe(expected)
+        const expected = 107.759259 as N2D3P9
+        expect(actual).toBeCloseToTyped(expected)
     })
 
     it("errors if given a malformed 2,3-free class, which is not actually 2,3-free", (): void => {
@@ -61,7 +61,7 @@ describe("computeN2D3P9", (): void => {
         const actual = computeN2D3P9({ monzo } as TwoThreeFreeClass)
 
         const expected = 1 as N2D3P9
-        expect(actual).toBe(expected)
+        expect(actual).toBeCloseToTyped(expected)
     })
 
     it("in case it receives a non-trimmed monzo, doesn't break", (): void => {
@@ -71,6 +71,6 @@ describe("computeN2D3P9", (): void => {
         const actual = computeN2D3P9({ monzo } as TwoThreeFreeClass)
 
         const expected = 1 as N2D3P9
-        expect(actual).toBe(expected)
+        expect(actual).toBeCloseToTyped(expected)
     })
 })

@@ -8,7 +8,7 @@ describe("computeApotomeSlope", (): void => {
 
         const actual = computeApotomeSlope({ monzo })
 
-        const expected = 7.87970229329454 as ApotomeSlope
+        const expected = 7.879702 as ApotomeSlope
         expect(actual).toBeCloseToTyped(expected)
     })
 

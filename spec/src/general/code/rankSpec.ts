@@ -94,7 +94,7 @@ describe("rank", (): void => {
             { value: 1, otherValue: 1 },
             { value: 4, otherValue: 3 },
             { value: 2, otherValue: 2 },
-            { value: 3.999999999999, otherValue: 2 },
+            { value: 3.9999999, otherValue: 2 },
             { value: 1, otherValue: 2 },
         ]
 
@@ -105,7 +105,7 @@ describe("rank", (): void => {
             { value: 1, otherValue: 2, rank: 1 as Rank<unknown> },
             { value: 2, otherValue: 2, rank: 3 as Rank<unknown> },
             { value: 4, otherValue: 3, rank: 4 as Rank<unknown> },
-            { value: 3.999999999999, otherValue: 2, rank: 4 as Rank<unknown> },
+            { value: 3.9999999, otherValue: 2, rank: 4 as Rank<unknown> },
         ]
         expect(actual).toEqual(expected)
     })

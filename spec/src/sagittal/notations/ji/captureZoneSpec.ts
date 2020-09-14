@@ -21,10 +21,10 @@ describe("computeCaptureZone", (): void => {
         const actual = computeCaptureZone(symbol, Level.EXTREME)
 
         const expected = [
-            7.51810608663491,
-            8.08020747628986,
+            7.518106,
+            8.080207,
         ] as Zone<SagittalComma>
-        expect(actual).toEqual(expected)
+        expect(actual).toBeCloseToArray(expected)
     })
 
     it("works for a symbol where a lower level than extreme is requested", (): void => {
@@ -42,10 +42,10 @@ describe("computeCaptureZone", (): void => {
         const actual = computeCaptureZone(symbol, Level.HIGH)
 
         const expected = [
-            9.063884908186020,
-            11.031239771978300,
+            9.063885,
+            11.031239,
         ] as Zone<SagittalComma>
-        expect(actual).toEqual(expected)
+        expect(actual).toBeCloseToArray(expected)
     })
 
     it("throws an error if a level is requested for a symbol which does not exist at that level", (): void => {

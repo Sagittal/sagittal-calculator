@@ -19,7 +19,7 @@ describe("perfectMetric", (): void => {
         "takes a best metric and then converts it back into a scope in order to perfect it recursively",
         async (): Promise<void> => {
             const metric = {
-                sumOfSquares: 0.009939068479730896 as SumOfSquares,
+                sumOfSquares: 0.009939 as SumOfSquares,
                 name: "" as MetricName,
                 submetrics: [
                     {
@@ -54,7 +54,7 @@ describe("perfectMetric", (): void => {
 
     it("when the metric had some spread parameters, it recreates them that way", async (): Promise<void> => {
         const metric = {
-            sumOfSquares: 0.009939068479730896 as SumOfSquares,
+            sumOfSquares: 0.009939 as SumOfSquares,
             name: "" as MetricName,
             submetrics: [
                 {

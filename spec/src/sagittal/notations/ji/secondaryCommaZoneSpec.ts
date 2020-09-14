@@ -21,10 +21,10 @@ describe("secondaryCommaZone", (): void => {
         const actual = computeSecondaryCommaZone(symbol)
 
         const expected = [
-            37.30947973834710,
-            38.06194034977850,
+            37.309479,
+            38.061940,
         ] as Zone<SagittalComma>
-        expect(actual).toEqual(expected)
+        expect(actual).toBeCloseToArray(expected)
     })
 
     it("another example, at the Extreme level", (): void => {
@@ -42,10 +42,10 @@ describe("secondaryCommaZone", (): void => {
         const actual = computeSecondaryCommaZone(symbol)
 
         const expected = [
-            38.06194034977850,
-            38.29315717024330,
+            38.061940,
+            38.293157,
         ] as Zone<SagittalComma>
-        expect(actual).toEqual(expected)
+        expect(actual).toBeCloseToArray(expected)
     })
 
     it("another example, at the Medium level", (): void => {
@@ -63,10 +63,10 @@ describe("secondaryCommaZone", (): void => {
         const actual = computeSecondaryCommaZone(symbol)
 
         const expected = [
-            35.11809146436650,
-            40.26051203403560,
+            35.118091,
+            40.260512,
         ] as Zone<SagittalComma>
-        expect(actual).toEqual(expected)
+        expect(actual).toBeCloseToArray(expected)
     })
 
     it("works for the initial symbol", (): void => {
@@ -84,9 +84,9 @@ describe("secondaryCommaZone", (): void => {
         const actual = computeSecondaryCommaZone(symbol)
 
         const expected = [
-            0,
-            2.74024427456787,
+            0.000000,
+            2.740244,
         ] as Zone<SagittalComma>
-        expect(actual).toEqual(expected)
+        expect(actual).toBeCloseToArray(expected)
     })
 })

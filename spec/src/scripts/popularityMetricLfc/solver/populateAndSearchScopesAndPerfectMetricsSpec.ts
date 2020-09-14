@@ -46,8 +46,8 @@ describe("populateAndSearchScopesAndPerfectMetrics", (): void => {
         solverStatus.chunkCount = 1 as Count<Chunk>
         await populateAndSearchScopesAndPerfectMetrics()
 
-        expect(bestMetrics.get("{},{sum}" as MetricName)).toEqual({
-            sumOfSquares: 0.014206086754420309,
+        expect(bestMetrics.get("{},{sum}" as MetricName)).toBeCloseToObject({
+            sumOfSquares: 0.014206,
             name: "{},{sum}",
             submetrics: [{ sum: true }],
         } as Metric)

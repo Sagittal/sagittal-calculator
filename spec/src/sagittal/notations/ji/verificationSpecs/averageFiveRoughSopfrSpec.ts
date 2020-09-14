@@ -4,7 +4,7 @@ import { Avg } from "../../../../../../src/general/math/types"
 import { getSagittalComma, JiSymbol } from "../../../../../../src/sagittal"
 import { JI_SYMBOLS } from "../../../../../../src/sagittal/notations/ji"
 
-const AVERAGE_TWO_THREE_FREE_SOPFR: Avg<Sopfr<{ rough: 5 }>> = 22.78523489932886 as Avg<Sopfr<{ rough: 5 }>>
+const AVERAGE_TWO_THREE_FREE_SOPFR: Avg<Sopfr<{ rough: 5 }>> = 22.785235 as Avg<Sopfr<{ rough: 5 }>>
 
 describe("average 2,3-free sopfr", (): void => {
     it("is about 23", (): void => {

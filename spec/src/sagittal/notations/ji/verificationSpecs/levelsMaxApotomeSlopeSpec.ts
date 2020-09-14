@@ -27,12 +27,12 @@ describe("max abs apotome slope per level", (): void => {
             })
 
         const expected: Array<Partial<Record<Level, Max<ApotomeSlope>>>> = [
-            { [ Level.MEDIUM ]: 6.354528858477924 as Max<ApotomeSlope> },
-            { [ Level.HIGH ]: 7.763478611049832 as Max<ApotomeSlope> },
-            { [ Level.ULTRA ]: 11.558451753921005 as Max<ApotomeSlope> },
-            { [ Level.EXTREME ]: 11.558451753921005 as Max<ApotomeSlope> },
-            { [ Level.INSANE ]: 11.558451753921005 as Max<ApotomeSlope> },
+            { [ Level.MEDIUM ]: 6.354529 as Max<ApotomeSlope> },
+            { [ Level.HIGH ]: 7.763479 as Max<ApotomeSlope> },
+            { [ Level.ULTRA ]: 11.558452 as Max<ApotomeSlope> },
+            { [ Level.EXTREME ]: 11.558452 as Max<ApotomeSlope> },
+            { [ Level.INSANE ]: 11.558452 as Max<ApotomeSlope> },
         ]
-        expect(actual).toEqual(expected)
+        expect(actual).toBeCloseToObject(expected)
     })
 })

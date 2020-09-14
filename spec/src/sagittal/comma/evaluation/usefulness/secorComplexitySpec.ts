@@ -7,7 +7,7 @@ describe("computeSecorComplexity", (): void => {
 
         const actual = computeSecorComplexity({ monzo })
 
-        const expected = 6.120342429524193
-        expect(actual).toBe(expected)
+        const expected = 6.120342
+        expect(actual).toBeCloseToTyped(expected)
     })
 })

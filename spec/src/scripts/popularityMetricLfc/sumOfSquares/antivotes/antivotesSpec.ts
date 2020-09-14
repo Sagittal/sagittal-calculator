@@ -69,7 +69,7 @@ describe("computeAntivotes", (): void => {
                 [ Parameter.A_AS_LOGARITHM_BASE ]: 2 as ParameterValue,
                 [ Parameter.W ]: -6 as ParameterValue,
                 [ Parameter.X ]: -2 as ParameterValue,
-                [ Parameter.Y ]: 0.14285714285714285 as ParameterValue,
+                [ Parameter.Y ]: 0.142857 as ParameterValue,
             },
         ] as Combination<Submetric>
         const twoThreeFreeClass = { ratio: [5, 1] } as TwoThreeFreeClass
@@ -91,7 +91,7 @@ describe("computeAntivotes", (): void => {
 
         const actual = computeAntivotes(twoThreeFreeClass, submetrics)
 
-        const expected = 0.321928095 as Antivotes
-        expect(actual).toBe(expected)
+        const expected = 0.321928 as Antivotes
+        expect(actual).toBeCloseToTyped(expected)
     })
 })

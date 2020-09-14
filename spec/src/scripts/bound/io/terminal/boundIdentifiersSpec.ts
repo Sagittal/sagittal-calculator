@@ -28,7 +28,7 @@ import { BoundIdentifiers } from "../../../../../../src/scripts/bound/io/termina
 
 describe("extractBoundIdentifiers", (): void => {
     const bound = {
-        cents: 23.1164196495597 as Cents,
+        cents: 23.116419 as Cents,
         levels: [Level.ULTRA, Level.EXTREME, Level.INSANE],
         id: 47 as Id<Bound>,
     }
@@ -39,7 +39,7 @@ describe("extractBoundIdentifiers", (): void => {
         const expected: BoundIdentifiers = {
             extremeLevelLesserBoundedSymbol: ".)/|" as SymbolLongAscii,
             extremeLevelGreaterBoundedSymbol: "'/|" as SymbolLongAscii,
-            cents: 23.1164196495597 as Cents as Cents,
+            cents: 23.116419 as Cents as Cents,
             boundedSymbols: {
                 id: 47 as Id<Bound>,
                 [ Level.ULTRA ]: [
@@ -59,7 +59,7 @@ describe("extractBoundIdentifiers", (): void => {
                             limit: 19 as Prime,
                             ratio: [76, 75] as Ratio,
                             monzo: [2, -1, -2, 0, 0, 0, 0, 1] as Monzo,
-                            cents: 22.9305875372457 as Cents,
+                            cents: 22.930587 as Cents,
                             name: "19/25C" as Name<Comma>,
                             n2d3p9: 83.564815 as N2D3P9,
                         } as CommaAnalysis & { id: Id<SagittalComma> },
@@ -82,7 +82,7 @@ describe("extractBoundIdentifiers", (): void => {
                             limit: 3 as Prime,
                             ratio: [531441, 524288] as Ratio,
                             monzo: [-19, 12] as Monzo,
-                            cents: 23.460010384649 as Cents,
+                            cents: 23.460010 as Cents,
                             name: "3C" as Name<Comma>,
                             n2d3p9: 1 as N2D3P9,
                         } as CommaAnalysis & { id: Id<SagittalComma> },
@@ -107,7 +107,7 @@ describe("extractBoundIdentifiers", (): void => {
                             limit: 19 as Prime,
                             ratio: [76, 75] as Ratio,
                             monzo: [2, -1, -2, 0, 0, 0, 0, 1] as Monzo,
-                            cents: 22.9305875372457 as Cents,
+                            cents: 22.930587 as Cents,
                             name: "19/25C" as Name<Comma>,
                             n2d3p9: 83.564815 as N2D3P9,
                         } as CommaAnalysis & { id: Id<SagittalComma> },
@@ -130,7 +130,7 @@ describe("extractBoundIdentifiers", (): void => {
                             limit: 3 as Prime,
                             ratio: [531441, 524288] as Ratio,
                             monzo: [-19, 12] as Monzo,
-                            cents: 23.460010384649 as Cents,
+                            cents: 23.460010 as Cents,
                             name: "3C" as Name<Comma>,
                             n2d3p9: 1 as N2D3P9,
                         } as CommaAnalysis & { id: Id<SagittalComma> },
@@ -156,7 +156,7 @@ describe("extractBoundIdentifiers", (): void => {
                             limit: 19 as Prime,
                             ratio: [76, 75] as Ratio,
                             monzo: [2, -1, -2, 0, 0, 0, 0, 1] as Monzo,
-                            cents: 22.9305875372457 as Cents,
+                            cents: 22.930587 as Cents,
                             name: "19/25C" as Name<Comma>,
                             n2d3p9: 83.564815 as N2D3P9,
                         } as CommaAnalysis & { id: Id<SagittalComma> },
@@ -179,7 +179,7 @@ describe("extractBoundIdentifiers", (): void => {
                             limit: 3 as Prime,
                             ratio: [531441, 524288] as Ratio,
                             monzo: [-19, 12] as Monzo,
-                            cents: 23.460010384649 as Cents,
+                            cents: 23.460010 as Cents,
                             name: "3C" as Name<Comma>,
                             n2d3p9: 1 as N2D3P9,
                         } as CommaAnalysis & { id: Id<SagittalComma> },

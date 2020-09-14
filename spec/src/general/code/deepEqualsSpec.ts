@@ -34,8 +34,8 @@ describe("deepEquals", (): void => {
     })
 
     it("can take a precision argument which allows for numerics inside the object to be approximate", (): void => {
-        expect(deepEquals({ a: 3.000000001 }, { a: 3 })).toBeFalsy()
-        expect(deepEquals({ a: 3.000000001 }, { a: 3 }, ACCURACY_THRESHOLD)).toBeTruthy()
+        expect(deepEquals({ a: 3.0000001 }, { a: 3 })).toBeFalsy()
+        expect(deepEquals({ a: 3.0000001 }, { a: 3 }, ACCURACY_THRESHOLD)).toBeTruthy()
     })
 
     it(

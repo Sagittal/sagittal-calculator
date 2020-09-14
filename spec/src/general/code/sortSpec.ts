@@ -93,11 +93,11 @@ describe("sort", (): void => {
     })
 
     it("accepts precision as an option", (): void => {
-        const array = [5, 2.0000000001, 7, 2, 4, 3]
+        const array = [5, 2.0000001, 7, 2, 4, 3]
 
         sort(array, { precision: ACCURACY_THRESHOLD })
 
-        const expected = [2.0000000001, 2, 3, 4, 5, 7]
+        const expected = [2.0000001, 2, 3, 4, 5, 7]
         expect(array).toEqual(expected)
     })
 })

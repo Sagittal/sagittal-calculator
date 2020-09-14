@@ -15,11 +15,11 @@ describe("formatMina", (): void => {
     })
 
     it("returns a number with three decimal positions for split minas", (): void => {
-        expect(formatMina(51.459235987293823 as Mina)).toBe(" 51.459")
+        expect(formatMina(51.459236 as Mina)).toBe(" 51.459")
     })
 
     it("when it includes decimal places, always includes three", (): void => {
-        expect(formatMina(78.390035457238243 as Mina)).toBe(" 78.390")
+        expect(formatMina(78.390035 as Mina)).toBe(" 78.390")
     })
 
     it("returns a blank string for the last bound (when one of the minas is undefined)", (): void => {

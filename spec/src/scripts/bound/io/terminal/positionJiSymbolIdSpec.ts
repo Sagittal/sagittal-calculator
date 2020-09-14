@@ -4,7 +4,7 @@ import { computePositionJiSymbolId } from "../../../../../../src/scripts/bound/i
 
 describe("computePositionJiSymbolId", (): void => {
     it("given a position, returns the symbol at that position", (): void => {
-        const position: Cents = 3.37801872846485 as Cents
+        const position: Cents = 3.378019 as Cents
 
         const actual = computePositionJiSymbolId(position)
 

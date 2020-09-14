@@ -12,7 +12,7 @@ describe("consolidateHistories", (): void => {
             level: Level.ULTRA,
             type: EventType.MEAN,
             name: "'/| )/|" as Name<Pitch>,
-            cents: 24.2 as Cents,
+            cents: 24.200000 as Cents,
             rank: 2 as Integer & Rank<EventAnalysis>,
             exact: false,
         }
@@ -21,7 +21,7 @@ describe("consolidateHistories", (): void => {
             level: Level.ULTRA,
             type: EventType.INA,
             name: "12.5°58" as Name<Pitch>,
-            cents: 24.33333 as Cents,
+            cents: 24.333333 as Cents,
             rank: 1 as Integer & Rank<EventAnalysis>,
             exact: false,
         }
@@ -30,7 +30,7 @@ describe("consolidateHistories", (): void => {
             level: Level.EXTREME,
             type: EventType.MEAN,
             name: ",)/|_)/|" as Name<Pitch>,
-            cents: 24.58139537326805 as Cents,
+            cents: 24.581395 as Cents,
             rank: 2 as Integer & Rank<EventAnalysis>,
             exact: false,
         }
@@ -39,7 +39,7 @@ describe("consolidateHistories", (): void => {
             level: Level.EXTREME,
             type: EventType.INA,
             name: "50.5°233" as Name<Pitch>,
-            cents: 24.151964806252103 as Cents,
+            cents: 24.151964 as Cents,
             rank: 1 as Integer & Rank<EventAnalysis>,
             exact: false,
         }
@@ -48,7 +48,7 @@ describe("consolidateHistories", (): void => {
             level: Level.EXTREME,
             type: EventType.MEAN,
             name: ",)/|_)/|" as Name<Pitch>,
-            cents: 24.58139537326805 as Cents,
+            cents: 24.581395 as Cents,
             rank: 1 as Integer & Rank<EventAnalysis>,
             exact: false,
         }
@@ -62,7 +62,7 @@ describe("consolidateHistories", (): void => {
             rank: 1 as Integer & Rank<EventAnalysis>,
             possible: true,
             tinaError: 0 as Multiplier<Tina>,
-            cents: 24.58139537326805 as Cents,
+            cents: 24.581395 as Cents,
         }
         const historyAnalyses: HistoryAnalysis[] = [
             {
@@ -74,7 +74,7 @@ describe("consolidateHistories", (): void => {
                 rank: 2 as Integer & Rank<EventAnalysis>,
                 possible: true,
                 tinaError: 0 as Multiplier<Tina>,
-                cents: 24.58139537326805 as Cents,
+                cents: 24.581395 as Cents,
             },
             bestPossibleHistory,
             {
@@ -86,7 +86,7 @@ describe("consolidateHistories", (): void => {
                 rank: 2 as Integer & Rank<EventAnalysis>,
                 possible: false,
                 tinaError: 3.05589400712 as Multiplier<Tina>,
-                cents: 24.151964806252103 as Cents,
+                cents: 24.151964 as Cents,
             },
             {
                 ...historyAnalysisFixture,
@@ -96,7 +96,7 @@ describe("consolidateHistories", (): void => {
                 rank: 8 as Integer & Rank<EventAnalysis>,
                 possible: false,
                 tinaError: 2.26723955922 as Multiplier<Tina>,
-                cents: 24.9 as Cents,
+                cents: 24.900000 as Cents,
             },
         ]
 
@@ -108,8 +108,7 @@ describe("consolidateHistories", (): void => {
                     type: eventOneGoesToEventThreeAndFour.type,
                     level: eventOneGoesToEventThreeAndFour.level,
                     name: eventOneGoesToEventThreeAndFour.name,
-                    cents: eventOneGoesToEventThreeAndFour.cents,
-                    isPossibleHistoryMember: true,
+                    cents: eventOneGoesToEventThreeAndFour.cents,                    isPossibleHistoryMember: true,
                     isBestPossibleHistoryMember: false,
                     exact: false,
                     rankOfBestRankedEventInAnyMemberHistory: 2 as Integer & Rank<EventAnalysis>,
@@ -123,8 +122,7 @@ describe("consolidateHistories", (): void => {
                     type: eventTwoGoesToEventThree.type,
                     level: eventTwoGoesToEventThree.level,
                     name: eventTwoGoesToEventThree.name,
-                    cents: eventTwoGoesToEventThree.cents,
-                    isPossibleHistoryMember: true,
+                    cents: eventTwoGoesToEventThree.cents,                    isPossibleHistoryMember: true,
                     isBestPossibleHistoryMember: true,
                     exact: false,
                     rankOfBestRankedEventInAnyMemberHistory: 1 as Integer & Rank<EventAnalysis>,
@@ -140,8 +138,7 @@ describe("consolidateHistories", (): void => {
                     type: eventThree.type,
                     level: eventThree.level,
                     name: eventThree.name,
-                    cents: eventThree.cents,
-                    isPossibleHistoryMember: true,
+                    cents: eventThree.cents,                    isPossibleHistoryMember: true,
                     isBestPossibleHistoryMember: true,
                     exact: false,
                     rankOfBestRankedEventInAnyMemberHistory: 1 as Integer & Rank<EventAnalysis>,
@@ -152,8 +149,7 @@ describe("consolidateHistories", (): void => {
                     type: eventFour.type,
                     level: eventFour.level,
                     name: eventFour.name,
-                    cents: eventFour.cents,
-                    isPossibleHistoryMember: false,
+                    cents: eventFour.cents,                    isPossibleHistoryMember: false,
                     isBestPossibleHistoryMember: false,
                     exact: false,
                     rankOfBestRankedEventInAnyMemberHistory: 1 as Integer & Rank<EventAnalysis>,

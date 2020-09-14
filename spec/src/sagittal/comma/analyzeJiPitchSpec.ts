@@ -9,15 +9,15 @@ describe("analyzeJiPitch", (): void => {
         const actual = analyzeJiPitch(jiPitch)
 
         const expected = {
-            cents: 1240.02272638304789 as Cents,
+            cents: 1240.022726 as Cents,
             monzo: [-7, -6, 3, 5, -1] as Monzo,
             ratio: [2100875, 1026432] as Ratio,
             limit: 11 as Prime,
-            apotomeSlope: -82.35271691215704 as ApotomeSlope,
+            apotomeSlope: -82.352717 as ApotomeSlope,
             twoThreeFreeClass: { monzo: [0, 0, 3, 5, -1] } as TwoThreeFreeClass,
             twoThreeFreeSopfr: 61 as Sopfr<{ rough: 5 }>,
-            n2d3p9: 36777.470341435175 as N2D3P9,
+            n2d3p9: 36777.470341 as N2D3P9,
         } as JiPitchAnalysis
-        expect(actual).toEqual(expected)
+        expect(actual).toBeCloseToObject(expected)
     })
 })

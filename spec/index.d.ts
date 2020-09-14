@@ -5,6 +5,8 @@ declare namespace jasmine {
 
         toBeCloseToArray(expected: T, precision?: number, negate?: boolean, message?: string): CustomMatcherResult
 
+        toBeArrayWithDeepCloseContents(expected: T, precision?: number, message?: string): CustomMatcherResult
+
         toBeCloseToObject(expected: T, precision?: number, negate?: boolean, message?: string): CustomMatcherResult
 
         toBeCloseSoFar(expected: T, precision?: number, negate?: boolean, message?: string): CustomMatcherResult

@@ -60,12 +60,12 @@ describe("computeNextScope", (): void => {
             {
                 [ Parameter.J_AS_COEFFICIENT ]: {
                     center: 0.1 as ParameterValue,
-                    window: 0.06666666666666667 as Window<ParameterValue>,
+                    window: 0.066667 as Window<ParameterValue>,
                     ed: 2 as Ed<ParameterValue>,
                 },
                 [ Parameter.W ]: {
                     center: 0 as ParameterValue,
-                    window: 0.3333333333333333 as Window<ParameterValue>,
+                    window: 0.333333 as Window<ParameterValue>,
                     ed: 4 as Ed<ParameterValue>,
                 },
                 [ Parameter.A_AS_COEFFICIENT ]: 2 as ParameterValue,
@@ -73,12 +73,12 @@ describe("computeNextScope", (): void => {
             {
                 [ Parameter.Y ]: {
                     center: 2.06 as ParameterValue,
-                    window: 0.013333333333333332 as Window<ParameterValue>,
+                    window: 0.013333 as Window<ParameterValue>,
                     ed: 2 as Ed<ParameterValue>,
                 },
                 [ Parameter.COUNT ]: true,
             },
         ] as Scope
-        expect(actual).toEqual(expected)
+        expect(actual).toBeCloseToObject(expected)
     })
 })

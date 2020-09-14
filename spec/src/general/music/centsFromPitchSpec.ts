@@ -7,16 +7,16 @@ describe("computeCentsFromPitch", (): void => {
 
         const actual = computeCentsFromPitch(pitch)
 
-        const expected = 17.576131157281500 as Cents
+        const expected = 17.576131 as Cents
         expect(actual).toBeCloseToTyped(expected)
     })
 
     it("works for pitches with monzos with really big 2 exponents", (): void => {
-        const pitch = { cents: 4.49991346125848 as Cents, monzo: [158.5, -100] as Monzo<{ irrational: true }> }
+        const pitch = { cents: 4.499913 as Cents, monzo: [158.5, -100] as Monzo<{ irrational: true }> }
 
         const actual = computeCentsFromPitch(pitch)
 
-        const expected = 4.49991346125848 as Cents
+        const expected = 4.499913 as Cents
         expect(actual).toBeCloseToTyped(expected)
     })
 

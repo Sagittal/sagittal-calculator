@@ -27,7 +27,7 @@ describe("computeSumOfSquaresForSubmetrics", (): void => {
 
         const actual = computeSumOfSquaresForSubmetrics(submetrics)
 
-        const expected = 0.004260809896143936 as SumOfSquares
-        expect(actual).toBe(expected)
+        const expected = 0.004261 as SumOfSquares
+        expect(actual).toBeCloseToTyped(expected)
     })
 })

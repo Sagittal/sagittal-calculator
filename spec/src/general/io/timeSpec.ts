@@ -11,7 +11,7 @@ describe("formatTime", (): void => {
     })
 
     it("works for small times", (): void => {
-        const ms = 13801.802699999884 as Ms
+        const ms = 13801.802698 as Ms
 
         const actual = formatTime(ms)
 

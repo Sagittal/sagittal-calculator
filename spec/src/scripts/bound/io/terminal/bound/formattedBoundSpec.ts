@@ -9,7 +9,7 @@ describe("computeFormattedBound", (): void => {
     it("returns a string which is a multi-line, properly indented rendition of the bound analysis, as well as identifying information for the bound", (): void => {
         const bound = {
             ...boundFixture,
-            cents: 5.44763529181809 as Cents,
+            cents: 5.447635 as Cents,
             id: 10 as Id<Bound>,
         }
         const boundAnalysis: BoundAnalysis = {
@@ -23,7 +23,7 @@ describe("computeFormattedBound", (): void => {
             `{`,
             `    "extremeLevelLesserBoundedSymbol": ",,|(",`,
             `    "extremeLevelGreaterBoundedSymbol": ",|(",`,
-            `    "cents": 5.44763529181809,`,
+            `    "cents": 5.447635,`,
             `    "boundedSymbols": {`,
             `        "id": 10,`,
             `        "extreme": [`,

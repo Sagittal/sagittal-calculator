@@ -9,7 +9,7 @@ enum EventType {
 
 interface HistoricalEvent {
     level: Level,
-    name: Name<Pitch>
+    name: Name<Pitch>,
     cents: Cents,
     type: EventType,
 }

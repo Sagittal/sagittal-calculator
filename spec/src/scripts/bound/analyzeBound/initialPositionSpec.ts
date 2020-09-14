@@ -8,12 +8,12 @@ describe("computeInitialPosition", (): void => {
         const bound: Bound = {
             ...boundFixture,
             levels: [Level.HIGH, Level.EXTREME],
-            cents: 42 as Cents, // between ~|\ (40.0043524607400) and //| (43.0125791934297) at the High level
+            cents: 42 as Cents, // between ~|\ (40.004352) and //| (43.012579) at the High level
         }
 
         const actual = computeInitialPosition(bound)
 
-        const expected = (40.0043524607400 + 43.0125791934297) / 2 as Cents
+        const expected = (40.004352 + 43.012579) / 2 as Cents
         expect(actual).toBeCloseTo(expected)
     })
 })

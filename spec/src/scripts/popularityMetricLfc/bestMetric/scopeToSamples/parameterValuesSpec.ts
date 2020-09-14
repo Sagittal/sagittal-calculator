@@ -37,11 +37,11 @@ describe("computeParameterValues", (): void => {
 
         const expected = [
             4.5,
-            4.833333333333333333,
-            5.166666666666666666,
+            4.833333,
+            5.166666,
             5.5,
         ] as ParameterValue[]
-        expect(actual).toEqual(expected)
+        expect(actual).toBeCloseToArray(expected)
         expect(actual.length).toBe(parameterScope.ed as number)
         expect(actual[ actual.length - 1 ] - actual[ 0 ]).toBe(parameterScope.window as number)
         expect(
@@ -51,7 +51,7 @@ describe("computeParameterValues", (): void => {
             )
             /
             2,
-        ).toBe(parameterScope.center as number)
+        ).toBeCloseToTyped(parameterScope.center as number)
     })
 
     it("works when the ED is one", (): void => {

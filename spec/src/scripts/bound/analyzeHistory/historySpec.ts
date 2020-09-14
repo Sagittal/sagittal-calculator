@@ -59,7 +59,7 @@ describe("analyzeHistory", (): void => {
             expect(actual.rank).toBe(2 as Integer & Rank<EventAnalysis>)
             expect(actual.totalDistance).toBe(0 as Cents)
             expect(actual.initialPositionTinaDistance)
-                .toBeCloseToTyped(3.681504379547852 as Multiplier<Tina>)
+                .toBeCloseToTyped(3.681504 as Multiplier<Tina>)
         },
     )
 

@@ -17,7 +17,7 @@ describe("log", (): void => {
 
         const actual = log(power, base)
 
-        const expected = 2.32192809489 as Exponent
+        const expected = 2.321928 as Exponent
         expect(actual).toBeCloseToTyped(expected)
     })
 })
