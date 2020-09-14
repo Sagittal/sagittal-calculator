@@ -5,9 +5,9 @@ import {
     Comma,
     CommandFlag,
     computeMonzoFromInteger,
-    computeMonzoFromRatio,
     Formatted,
-    IDENTIFYING_COMMA_NAME_CHARS, Integer,
+    IDENTIFYING_COMMA_NAME_CHARS,
+    Integer,
     Io,
     JiPitch,
     LogTarget,
@@ -58,34 +58,33 @@ program
 
 applySharedPitchCommandSetup()
 
+// TODO: extract this to io/
 const jiPitchText = program.args[ 0 ] as Io
-let monzo: Monzo
+let jiPitch: JiPitch
 if (jiPitchText) {
     if (jiPitchText.match(IDENTIFYING_COMMA_NAME_CHARS)) {
         const { commaNameRatio, sizeCategoryName } = parseCommaName(jiPitchText as Name<Comma>)
-        monzo = computeMonzoFrom23FreeClassAndSizeCategoryName({ commaNameRatio, sizeCategoryName })
+        jiPitch = { monzo: computeMonzoFrom23FreeClassAndSizeCategoryName({ commaNameRatio, sizeCategoryName }) }
     } else if (jiPitchText.includes("/")) {
-        const ratio = parseRatio(jiPitchText as Formatted<Ratio>)
-        monzo = computeMonzoFromRatio(ratio)
+        jiPitch = { ratio: parseRatio(jiPitchText as Formatted<Ratio>) }
     } else if (jiPitchText.match(ANY_MONZO_CHARS)) {
-        monzo = parseMonzo(jiPitchText as Formatted<Monzo>)
+        jiPitch = { monzo: parseMonzo(jiPitchText as Formatted<Monzo>) }
     } else {
         const integer = parseInteger(jiPitchText)
-        monzo = computeMonzoFromInteger(integer)
+        jiPitch = { monzo: computeMonzoFromInteger(integer) }
     }
 } else if (program.monzo) {
-    monzo = program.monzo
+    jiPitch = { monzo: program.monzo }
 } else if (program.ratio) {
-    monzo = computeMonzoFromRatio(program.ratio)
+    jiPitch = { ratio: program.ratio }
 } else if (program.commaName) {
-    monzo = computeMonzoFrom23FreeClassAndSizeCategoryName(program.commaName)
+    jiPitch = { monzo: computeMonzoFrom23FreeClassAndSizeCategoryName(program.commaName) }
 } else if (program.integer) {
-    monzo = computeMonzoFromInteger(program.integer)
+    jiPitch = { monzo: computeMonzoFromInteger(program.integer) }
 } else {
     throw new Error("Unable to determine monzo for JI pitch.")
 }
 
-const jiPitch: JiPitch = { monzo }
 const jiPitchAnalysis = analyzeJiPitch(jiPitch)
 saveLog(formatJiPitch(jiPitchAnalysis), LogTarget.ALL)
 
