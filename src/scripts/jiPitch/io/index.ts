@@ -3,4 +3,5 @@ export { NOTATING_COMMA_WITH_MAYBE_SAGITTAL_SYMBOLS_HEADER_ROW } from "./headerR
 export { computeNotatingCommaWithMaybeSagittalSymbolRow } from "./notatingCommaRow"
 export { computeNotatingCommasTable } from "./notatingCommasTable"
 export { formatJiPitch } from "./jiPitchTable"
+export { parseJiPitch } from "./parseJiPitch"
 export { formatSettings, format23FreeClassSettings } from "./settings"

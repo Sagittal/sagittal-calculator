@@ -1,15 +1,10 @@
 import { program } from "commander"
 import {
     addTexts,
-    ANY_MONZO_CHARS,
     Comma,
     CommandFlag,
-    computeMonzoFromInteger,
     Formatted,
-    IDENTIFYING_COMMA_NAME_CHARS,
     Integer,
-    Io,
-    JiPitch,
     LogTarget,
     Monzo,
     Name,
@@ -20,14 +15,9 @@ import {
     Ratio,
     saveLog,
 } from "../../../general"
-import {
-    analyzeJiPitch,
-    computeMonzoFrom23FreeClassAndSizeCategoryName,
-    parseCommaName,
-    ParsedCommaName,
-} from "../../../sagittal"
+import { analyzeJiPitch, parseCommaName, ParsedCommaName } from "../../../sagittal"
 import { accommodateJiPitchInSettings } from "../accommodateJiPitchInSettings"
-import { computeNotatingCommasTable, formatJiPitch, formatSettings } from "../io"
+import { computeNotatingCommasTable, formatJiPitch, formatSettings, parseJiPitch } from "../io"
 import { applySharedPitchCommandSetup } from "./shared"
 
 program
@@ -53,37 +43,12 @@ program
     )
     .option(
         `-${CommandFlag.SUPPRESS_AUTOMATIC_ADJUSTING_OF_NOTATING_COMMA_FILTERS}, --suppress-automatic-adjusting-of-notating-comma-filters`,
-        "suppress automatic adjusting of notating comma filters"
+        "suppress automatic adjusting of notating comma filters",
     )
 
 applySharedPitchCommandSetup()
 
-// TODO: extract this to io/
-const jiPitchText = program.args[ 0 ] as Io
-let jiPitch: JiPitch
-if (jiPitchText) {
-    if (jiPitchText.match(IDENTIFYING_COMMA_NAME_CHARS)) {
-        const { commaNameRatio, sizeCategoryName } = parseCommaName(jiPitchText as Name<Comma>)
-        jiPitch = { monzo: computeMonzoFrom23FreeClassAndSizeCategoryName({ commaNameRatio, sizeCategoryName }) }
-    } else if (jiPitchText.includes("/")) {
-        jiPitch = { ratio: parseRatio(jiPitchText as Formatted<Ratio>) }
-    } else if (jiPitchText.match(ANY_MONZO_CHARS)) {
-        jiPitch = { monzo: parseMonzo(jiPitchText as Formatted<Monzo>) }
-    } else {
-        const integer = parseInteger(jiPitchText)
-        jiPitch = { monzo: computeMonzoFromInteger(integer) }
-    }
-} else if (program.monzo) {
-    jiPitch = { monzo: program.monzo }
-} else if (program.ratio) {
-    jiPitch = { ratio: program.ratio }
-} else if (program.commaName) {
-    jiPitch = { monzo: computeMonzoFrom23FreeClassAndSizeCategoryName(program.commaName) }
-} else if (program.integer) {
-    jiPitch = { monzo: computeMonzoFromInteger(program.integer) }
-} else {
-    throw new Error("Unable to determine monzo for JI pitch.")
-}
+const jiPitch = parseJiPitch()
 
 const jiPitchAnalysis = analyzeJiPitch(jiPitch)
 saveLog(formatJiPitch(jiPitchAnalysis), LogTarget.ALL)
