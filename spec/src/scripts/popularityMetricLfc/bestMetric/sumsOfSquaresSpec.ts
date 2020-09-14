@@ -1,12 +1,12 @@
-import { Combination } from "../../../../../src/general"
-import { MetricName, SumOfSquares, SumsOfSquares } from "../../../../../src/scripts/popularityMetricLfc/bestMetric"
+import { Combination, Name } from "../../../../../src/general"
+import { Metric, SumOfSquares, SumsOfSquares } from "../../../../../src/scripts/popularityMetricLfc/bestMetric"
 import { SamplePoint } from "../../../../../src/scripts/popularityMetricLfc/bestMetric/scopeToSamples"
 import { computeSumsOfSquaresAndMaybeUpdateBestMetric } from "../../../../../src/scripts/popularityMetricLfc/bestMetric/sumsOfSquares"
 import { bestMetrics } from "../../../../../src/scripts/popularityMetricLfc/globals"
 import { Parameter, ParameterValue, Submetric } from "../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
 
 describe("computeSumsOfSquaresAndMaybeUpdateBestMetric", (): void => {
-    const metricName = "{aAsCoefficient,sum,w}" as MetricName
+    const metricName = "{aAsCoefficient,sum,w}" as Name<Metric>
     const samples = [
         {
             samplePoint: [0, 0] as SamplePoint,
@@ -67,7 +67,7 @@ describe("computeSumsOfSquaresAndMaybeUpdateBestMetric", (): void => {
             metricName,
             {
                 sumOfSquares: 0.014000 as SumOfSquares,
-                name: "" as MetricName,
+                name: "" as Name<Metric>,
                 submetrics: [{
                     [ Parameter.SUM ]: true,
                     [ Parameter.A_AS_COEFFICIENT ]: 2 as ParameterValue,
@@ -80,7 +80,7 @@ describe("computeSumsOfSquaresAndMaybeUpdateBestMetric", (): void => {
 
         const expected = {
             sumOfSquares: 0.013983 as SumOfSquares,
-            name: "{aAsCoefficient,sum,w}" as MetricName,
+            name: "{aAsCoefficient,sum,w}" as Name<Metric>,
             submetrics: [{
                 [ Parameter.SUM ]: true,
                 [ Parameter.A_AS_COEFFICIENT ]: 2 as ParameterValue,
@@ -95,7 +95,7 @@ describe("computeSumsOfSquaresAndMaybeUpdateBestMetric", (): void => {
             metricName,
             {
                 sumOfSquares: 0.012000 as SumOfSquares,
-                name: "" as MetricName,
+                name: "" as Name<Metric>,
                 submetrics: [{
                     [ Parameter.SUM ]: true,
                     [ Parameter.A_AS_COEFFICIENT ]: 2 as ParameterValue,
@@ -108,7 +108,7 @@ describe("computeSumsOfSquaresAndMaybeUpdateBestMetric", (): void => {
 
         const expected = {
             sumOfSquares: 0.012000 as SumOfSquares,
-            name: "" as MetricName,
+            name: "" as Name<Metric>,
             submetrics: [{
                 [ Parameter.SUM ]: true,
                 [ Parameter.A_AS_COEFFICIENT ]: 2 as ParameterValue,

@@ -11,7 +11,7 @@ import { computeN2D3P9 } from "../../sagittal"
 import { computePopular23FreeClass } from "./popular23FreeClass"
 import { Popular23FreeClass } from "./types"
 
-// TODO: ideally the best notating commas script would also be able to use this
+// TODO: ideally the best notating commas script would also be able to use this, too, not just the w/o best notating c.
 //  - it would probably work to read it in from a file, like we do for input in the popularities LFC script group
 
 // use this instead of popular 2,3-free classes

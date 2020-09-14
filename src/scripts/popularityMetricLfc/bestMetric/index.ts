@@ -3,7 +3,6 @@ export { computeDynamicParameterScope, DynamicParameter, Sample, SamplePoint } f
 export {
     DynamicParameterScope,
     Metric,
-    MetricName,
     ParameterScope,
     ParameterScopes,
     Scope,

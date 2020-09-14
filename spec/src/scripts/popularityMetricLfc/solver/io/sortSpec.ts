@@ -1,5 +1,5 @@
-import { Combination, stringify } from "../../../../../../src/general"
-import { MetricName, SumOfSquares } from "../../../../../../src/scripts/popularityMetricLfc/bestMetric"
+import { Combination, Name, stringify } from "../../../../../../src/general"
+import { Metric, SumOfSquares } from "../../../../../../src/scripts/popularityMetricLfc/bestMetric"
 import { bestMetrics } from "../../../../../../src/scripts/popularityMetricLfc/globals"
 import { computeSortedBestMetrics } from "../../../../../../src/scripts/popularityMetricLfc/solver"
 import { Parameter, Submetric } from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
@@ -7,10 +7,10 @@ import { Parameter, Submetric } from "../../../../../../src/scripts/popularityMe
 describe("computeSortedBestMetrics", (): void => {
     it("sorts the best metrics by sum of squares", (): void => {
         bestMetrics.set(
-            "{sum}" as MetricName,
+            "{sum}" as Name<Metric>,
             {
                 sumOfSquares: 0.013 as SumOfSquares,
-                name: "" as MetricName,
+                name: "" as Name<Metric>,
                 submetrics: [
                     {
                         [ Parameter.SUM ]: true,
@@ -19,10 +19,10 @@ describe("computeSortedBestMetrics", (): void => {
             },
         )
         bestMetrics.set(
-            "{count}" as MetricName,
+            "{count}" as Name<Metric>,
             {
                 sumOfSquares: 0.012 as SumOfSquares,
-                name: "" as MetricName,
+                name: "" as Name<Metric>,
                 submetrics: [
                     {
                         [ Parameter.COUNT ]: true,
@@ -31,10 +31,10 @@ describe("computeSortedBestMetrics", (): void => {
             },
         )
         bestMetrics.set(
-            "{max}" as MetricName,
+            "{max}" as Name<Metric>,
             {
                 sumOfSquares: 0.014 as SumOfSquares,
-                name: "" as MetricName,
+                name: "" as Name<Metric>,
                 submetrics: [
                     {
                         [ Parameter.MAX ]: true,

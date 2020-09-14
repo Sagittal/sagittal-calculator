@@ -1,6 +1,7 @@
+import { Name } from "../../../../../../src/general"
 import { Io } from "../../../../../../src/general/io"
 import { Combination } from "../../../../../../src/general/math"
-import { MetricName, SumOfSquares } from "../../../../../../src/scripts/popularityMetricLfc/bestMetric"
+import { Metric, SumOfSquares } from "../../../../../../src/scripts/popularityMetricLfc/bestMetric"
 import { bestMetrics } from "../../../../../../src/scripts/popularityMetricLfc/globals"
 import { formatBestMetrics } from "../../../../../../src/scripts/popularityMetricLfc/solver"
 import { formatPercentage } from "../../../../../../src/scripts/popularityMetricLfc/solver/io"
@@ -9,10 +10,10 @@ import { Parameter, Submetric } from "../../../../../../src/scripts/popularityMe
 describe("formatBestMetrics", (): void => {
     it("sorts the best metrics by sum of squares, and formats them like how they look as enums", (): void => {
         bestMetrics.set(
-            "{sum}" as MetricName,
+            "{sum}" as Name<Metric>,
             {
                 sumOfSquares: 0.013 as SumOfSquares,
-                name: "" as MetricName,
+                name: "" as Name<Metric>,
                 submetrics: [
                     {
                         [ Parameter.SUM ]: true,
@@ -21,10 +22,10 @@ describe("formatBestMetrics", (): void => {
             },
         )
         bestMetrics.set(
-            "{count}" as MetricName,
+            "{count}" as Name<Metric>,
             {
                 sumOfSquares: 0.012 as SumOfSquares,
-                name: "" as MetricName,
+                name: "" as Name<Metric>,
                 submetrics: [
                     {
                         [ Parameter.COUNT ]: true,
@@ -33,10 +34,10 @@ describe("formatBestMetrics", (): void => {
             },
         )
         bestMetrics.set(
-            "{max}" as MetricName,
+            "{max}" as Name<Metric>,
             {
                 sumOfSquares: 0.014 as SumOfSquares,
-                name: "" as MetricName,
+                name: "" as Name<Metric>,
                 submetrics: [
                     {
                         [ Parameter.MAX ]: true,

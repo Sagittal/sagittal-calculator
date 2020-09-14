@@ -1,6 +1,6 @@
-import { BLANK, Index, Integer, Step } from "../../../../../src/general"
+import { BLANK, Index, Integer, Name, Step } from "../../../../../src/general"
 import { Combination } from "../../../../../src/general/math"
-import { MetricName, Scope, SumOfSquares } from "../../../../../src/scripts/popularityMetricLfc/bestMetric"
+import { Metric, Scope, SumOfSquares } from "../../../../../src/scripts/popularityMetricLfc/bestMetric"
 import { DynamicParameter, SamplePoint } from "../../../../../src/scripts/popularityMetricLfc/bestMetric/scopeToSamples"
 import { searchNextLocalMin } from "../../../../../src/scripts/popularityMetricLfc/perfecter/nextLocalMin"
 import * as recursiveBestMetric from "../../../../../src/scripts/popularityMetricLfc/perfecter/recursiveBestMetric"
@@ -44,7 +44,7 @@ describe("searchNextLocalMin", (): void => {
     const depth = 5 as Integer
     const nextLocalMinima = [{}, {}, {}, {}, {}, {}, {}, {}, {}] as LocalMin[]
     const onlyWinners = true
-    const metricName = "" as MetricName
+    const metricName = "" as Name<Metric>
 
     beforeEach((): void => {
         spyOn(recursiveBestMetric, "recursiveSearchScopeAndMaybeUpdateBestMetric")

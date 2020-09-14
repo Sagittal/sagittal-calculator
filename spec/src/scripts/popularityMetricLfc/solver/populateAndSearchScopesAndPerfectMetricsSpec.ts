@@ -1,5 +1,5 @@
-import { Count } from "../../../../../src/general"
-import { Metric, MetricName } from "../../../../../src/scripts/popularityMetricLfc/bestMetric"
+import { Count, Name } from "../../../../../src/general"
+import { Metric } from "../../../../../src/scripts/popularityMetricLfc/bestMetric"
 import { bestMetrics, solverStatus } from "../../../../../src/scripts/popularityMetricLfc/globals"
 import { Chunk, populateAndSearchScopesAndPerfectMetrics } from "../../../../../src/scripts/popularityMetricLfc/solver"
 import * as populate from "../../../../../src/scripts/popularityMetricLfc/solver/populate/scopes"
@@ -46,7 +46,7 @@ describe("populateAndSearchScopesAndPerfectMetrics", (): void => {
         solverStatus.chunkCount = 1 as Count<Chunk>
         await populateAndSearchScopesAndPerfectMetrics()
 
-        expect(bestMetrics.get("{},{sum}" as MetricName)).toBeCloseToObject({
+        expect(bestMetrics.get("{},{sum}" as Name<Metric>)).toBeCloseToObject({
             sumOfSquares: 0.014206,
             name: "{},{sum}",
             submetrics: [{ sum: true }],

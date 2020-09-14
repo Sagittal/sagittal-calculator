@@ -21,7 +21,7 @@ const popular23FreeClassesWithBestNotatingCommas =
     computePopular23FreeClassesWithBestNotatingCommas(maxN2D3P9)
 
 // TODO: obviously there's a horrendous amount of duplication being introduced in this commit
-//  you'll eventually want to deal with that
+//  between the "with best notating commas" or not versions of everything
 
 saveLog(
     computePopular23FreeClassesWithBestNotatingCommasTable(

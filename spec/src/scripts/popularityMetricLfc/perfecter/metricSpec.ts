@@ -1,7 +1,7 @@
-import { Ed, Window } from "../../../../../src/general"
+import { Ed, Name, Window } from "../../../../../src/general"
 import { Combination } from "../../../../../src/general/math"
 import {
-    MetricName,
+    Metric,
     Scope,
     SubmetricScope,
     SumOfSquares,
@@ -20,7 +20,7 @@ describe("perfectMetric", (): void => {
         async (): Promise<void> => {
             const metric = {
                 sumOfSquares: 0.009939 as SumOfSquares,
-                name: "" as MetricName,
+                name: "" as Name<Metric>,
                 submetrics: [
                     {
                         [ Parameter.SUM ]: true,
@@ -55,7 +55,7 @@ describe("perfectMetric", (): void => {
     it("when the metric had some spread parameters, it recreates them that way", async (): Promise<void> => {
         const metric = {
             sumOfSquares: 0.009939 as SumOfSquares,
-            name: "" as MetricName,
+            name: "" as Name<Metric>,
             submetrics: [
                 {
                     [ Parameter.COUNT ]: true,

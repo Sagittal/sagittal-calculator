@@ -1,12 +1,10 @@
-import { Combination, Ed, Index, Io, Maybe, Sum, Window } from "../../../general"
+import { Combination, Ed, Index, Io, Maybe, Name, Sum, Window } from "../../../general"
 import { Parameter, ParameterValue, Submetric } from "../sumOfSquares"
 import { DynamicParameter, Sample } from "./scopeToSamples"
 
-type MetricName = string & { _MetricNameBrand: "MetricName" }   // TODO: why is this not Name<Metric> ?
-
 interface Metric {
     spreadDynamicParameters?: Parameter[],
-    name: MetricName,
+    name: Name<Metric>,
     submetrics: Combination<Submetric>,
     sumOfSquares?: SumOfSquares,
 }
@@ -40,7 +38,7 @@ type NonRecursiveSearchScopeAndMaybeUpdateBestMetricOptions = Partial<{
 
 interface SumOrSumsOfSquaresOptions extends NonRecursiveSearchScopeAndMaybeUpdateBestMetricOptions {
     spreadDynamicParameters?: Parameter[],
-    metricName: MetricName,
+    metricName: Name<Metric>,
 }
 
 type SumsOfSquaresAndMaybeUpdateBestMetricOptions = Partial<SumOrSumsOfSquaresOptions>
@@ -54,7 +52,7 @@ interface SearchScopeResults {
     dynamicParameters: DynamicParameter[],
     sumsOfSquares: SumsOfSquares,
     samples: Sample[],
-    metricName: MetricName,
+    metricName: Name<Metric>,
 }
 
 export {
@@ -69,7 +67,6 @@ export {
     SumOrSumsOfSquaresOptions,
     SearchScopeResults,
     NonRecursiveSearchScopeAndMaybeUpdateBestMetricOptions,
-    MetricName,
     ParameterScopes,
     ParameterScope,
 }

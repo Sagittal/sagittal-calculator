@@ -1,5 +1,5 @@
-import { Combination, Ed, Index, Integer, Io, Step, Window } from "../../../../../src/general"
-import { MetricName, Scope, SumOfSquares } from "../../../../../src/scripts/popularityMetricLfc/bestMetric"
+import { Combination, Ed, Index, Integer, Io, Name, Step, Window } from "../../../../../src/general"
+import { Metric, Scope, SumOfSquares } from "../../../../../src/scripts/popularityMetricLfc/bestMetric"
 import { SamplePoint } from "../../../../../src/scripts/popularityMetricLfc/bestMetric/scopeToSamples"
 import { recursiveSearchScopeAndMaybeUpdateBestMetric } from "../../../../../src/scripts/popularityMetricLfc/perfecter"
 import * as nextLocalMin from "../../../../../src/scripts/popularityMetricLfc/perfecter/nextLocalMin"
@@ -36,7 +36,7 @@ describe("searchScopeAndMaybeUpdateBestMetric", (): void => {
             submetrics: [] as unknown[] as Combination<Submetric>,
         }
         const onlyWinners = true
-        const metricName = "{},{aAsCoefficient,count,w},{aAsCoefficient,sum}" as MetricName
+        const metricName = "{},{aAsCoefficient,count,w},{aAsCoefficient,sum}" as Name<Metric>
 
         spyOn(nextLocalMin, "searchNextLocalMin").and.callThrough()
 
