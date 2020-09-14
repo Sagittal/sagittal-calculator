@@ -1,5 +1,5 @@
-import { isUndefined } from "../code"
-import { computeRoughMonzo, computeRoughRatio, computeSuperMonzo, computeSuperRatio, FIVE_ROUGHNESS } from "../math"
+import { isUndefined } from "../../code"
+import { computeRoughMonzo, computeRoughRatio, computeSuperMonzo, computeSuperRatio, FIVE_ROUGHNESS } from "../../math"
 import { JiPitch, TwoThreeFreeClass } from "./types"
 
 const compute23FreeClass = ({ monzo, ratio }: JiPitch): TwoThreeFreeClass => {

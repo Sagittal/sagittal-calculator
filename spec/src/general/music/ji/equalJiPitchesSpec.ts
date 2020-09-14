@@ -1,6 +1,6 @@
-import { Ratio } from "../../../../src/general/math"
-import { Monzo } from "../../../../src/general/math/monzo"
-import { equalJiPitches, JiPitch } from "../../../../src/general/music"
+import { Ratio } from "../../../../../src/general/math"
+import { Monzo } from "../../../../../src/general/math/monzo"
+import { equalJiPitches, JiPitch } from "../../../../../src/general/music"
 
 describe("equalJiPitches", (): void => {
     it("returns true if the monzos match", (): void => {

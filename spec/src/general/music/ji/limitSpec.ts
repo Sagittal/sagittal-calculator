@@ -1,7 +1,7 @@
-import { Min, Prime, Ratio } from "../../../../src/general/math"
-import { Monzo } from "../../../../src/general/math/monzo"
-import { computeIsWithinPrimeLimit, computeIsWithinPrimeMin, THREE_LIMIT } from "../../../../src/general/music"
-import { FIVE_LIMIT, SEVEN_LIMIT } from "../../../../src/general/music/constants"
+import { Min, Prime, Ratio } from "../../../../../src/general/math"
+import { Monzo } from "../../../../../src/general/math/monzo"
+import { computeIsWithinPrimeLimit, computeIsWithinPrimeMin, THREE_LIMIT } from "../../../../../src/general/music"
+import { FIVE_LIMIT, SEVEN_LIMIT } from "../../../../../src/general/music/ji/constants"
 
 describe("computeIsWithinPrimeLimit", (): void => {
     describe("by monzo", (): void => {

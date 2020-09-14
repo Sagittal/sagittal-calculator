@@ -1,6 +1,6 @@
-import { Monzo } from "../../../../src/general/math/monzo"
-import { Ratio } from "../../../../src/general/math/ratio"
-import { compute23FreeClass, TwoThreeFreeClass } from "../../../../src/general/music"
+import { Monzo } from "../../../../../src/general/math/monzo"
+import { Ratio } from "../../../../../src/general/math/ratio"
+import { compute23FreeClass, TwoThreeFreeClass } from "../../../../../src/general/music"
 
 describe("compute23FreeClass", (): void => {
     it("returns the 2,3-free, super (n ≥ d) version of the ratio, in the form of a branded comma", (): void => {

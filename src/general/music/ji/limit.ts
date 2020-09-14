@@ -1,4 +1,4 @@
-import { isUndefined } from "../code"
+import { isUndefined } from "../../code"
 import {
     computeIsRoughMonzo,
     computeIsRoughRatio,
@@ -12,7 +12,7 @@ import {
     Primes,
     Roughness,
     Smoothness,
-} from "../math"
+} from "../../math"
 import { JiPitch } from "./types"
 
 const computeIsWithinPrimeLimit = <S extends Primes, T extends NumericTypeParameters>(

@@ -101,3 +101,4 @@ saveLog(notatingCommasFormattedTable, LogTarget.ALL)
 //  and then it can have simpler column titles
 //  and I think it'll be clearer how that shares all the stuff with the above
 //  and actually include the 2,3-free class itself on it!
+//  - and along with this, you should try to pull analyzeJiPitch out of sagittal/comma and into music/ji

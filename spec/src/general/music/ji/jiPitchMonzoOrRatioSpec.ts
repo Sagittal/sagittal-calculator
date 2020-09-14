@@ -1,5 +1,5 @@
-import { Monzo } from "../../../../src/general/math"
-import { computeJiPitchMonzo, JiPitch } from "../../../../src/general/music"
+import { Monzo } from "../../../../../src/general/math"
+import { computeJiPitchMonzo, JiPitch } from "../../../../../src/general/music"
 
 describe("computeJiPitchMonzo", (): void => {
     it("trims the monzo, as a courtesy", (): void => {

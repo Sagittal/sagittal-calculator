@@ -1,14 +1,22 @@
 export { computeCentsFromPitch } from "./centsFromPitch"
-export { compute23FreeClass } from "./twoThreeFreeClass"
+export {
+    compute23FreeClass,
+    THREE_LIMIT,
+    Comma,
+    Popularity,
+    Votes,
+    JiPitch,
+    TwoThreeFreeClass,
+    Apotome,
+    computeJiPitchMonzo,
+    computeJiPitchRatio,
+    COMMA_POPULARITIES,
+    equalJiPitches,
+    computeIsWithinPrimeLimit,
+    computeIsWithinPrimeMin,
+} from "./ji"
 export { computeCentsFromRatio } from "./centsFromRatio"
 export { computeCentsFromMonzo } from "./centsFromMonzo"
-export { CENTS_PER_OCTAVE, THREE_LIMIT } from "./constants"
-export { computeJiPitchMonzo, computeJiPitchRatio } from "./jiPitchMonzoOrRatio"
-export {
-    Cents, CentsPosition, Comma, Popularity, Votes, Zone, Pitch, JiPitch, TwoThreeFreeClass, Apotome,
-} from "./types"
-export { COMMA_POPULARITIES } from "./popularities"
-export { equalJiPitches } from "./equalJiPitches"
-export { computeIsSubPitch, computeIsUnisonPitch } from "./pitchDirection"
-export { computeSuperPitch } from "./superPitch"
-export { computeIsWithinPrimeLimit, computeIsWithinPrimeMin } from "./limit"
+export { CENTS_PER_OCTAVE } from "./constants"
+export { Cents, CentsPosition, Zone, Pitch } from "./types"
+export { computeIsSubPitch, computeIsUnisonPitch, computeSuperPitch } from "./pitchDirection"

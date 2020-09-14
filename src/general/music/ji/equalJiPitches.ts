@@ -1,4 +1,4 @@
-import { deepEquals } from "../code"
+import { deepEquals } from "../../code"
 import { computeJiPitchMonzo } from "./jiPitchMonzoOrRatio"
 import { JiPitch } from "./types"
 

@@ -1,4 +1,4 @@
-import { Ranked } from "../code"
+import { Ranked } from "../../code"
 import { Popularity } from "./types"
 
 // Per Scala statistics

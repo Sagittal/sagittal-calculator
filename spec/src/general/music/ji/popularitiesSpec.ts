@@ -8,9 +8,9 @@ import {
     Ranked,
     RankStrategy,
     Ratio,
-} from "../../../../src/general"
-import { COMMA_POPULARITIES } from "../../../../src/general/music"
-import { onlyRunInCi } from "../../../helpers/onlyRunInCi"
+} from "../../../../../src/general"
+import { COMMA_POPULARITIES } from "../../../../../src/general/music"
+import { onlyRunInCi } from "../../../../helpers/onlyRunInCi"
 
 describe("COMMA_POPULARITIES", (): void => {
     // TODO: something recently caused this test to start going at least 3 times slower, since it's now a slow test
