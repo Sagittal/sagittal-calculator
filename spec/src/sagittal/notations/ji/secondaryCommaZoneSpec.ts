@@ -1,24 +1,21 @@
 import { Id, Zone } from "../../../../../src/general"
-import { SagittalComma, SymbolLongAscii } from "../../../../../src/sagittal"
-import { SymbolUnicode } from "../../../../../src/sagittal/io"
-import { JiSymbol, Level, Mina } from "../../../../../src/sagittal/notations/ji"
+import { JiNotationSymbolClass, SagittalComma, SymbolClass } from "../../../../../src/sagittal"
+import { JiNotationLevel, Mina } from "../../../../../src/sagittal/notations/ji"
 import { computeSecondaryCommaZone } from "../../../../../src/sagittal/notations/ji/secondaryCommaZone"
 import { SymbolSubset } from "../../../../../src/sagittal/notations/types"
 
 describe("secondaryCommaZone", (): void => {
-    it("returns the min and max cents of where secondary commas are represented by the given JI symbol, i.e. its capture zone at its introducing level", (): void => {
-        const symbol: JiSymbol = {
-            id: 82 as Id<JiSymbol>,
-            ascii: "/|~" as SymbolLongAscii,
-            unicode: "" as SymbolUnicode,
-            introducingLevel: Level.HIGH,
-            smallestJiSymbolSubset: SymbolSubset.PROMETHEAN,
+    it("returns the min and max cents of where secondary commas are represented by the given JI Notation symbol class, i.e. its capture zone at its introducing JI notation level", (): void => {
+        const jiNotationSymbolClass: JiNotationSymbolClass = {
+            id: 82 as Id<SymbolClass>,
+            introducingJiNotationLevel: JiNotationLevel.HIGH,
+            smallestSymbolSubset: SymbolSubset.PROMETHEAN,
             mina: 78 as Mina,
             primaryCommaId: 82 as Id<SagittalComma>,
             elements: [],
         }
 
-        const actual = computeSecondaryCommaZone(symbol)
+        const actual = computeSecondaryCommaZone(jiNotationSymbolClass)
 
         const expected = [
             37.309479,
@@ -27,19 +24,17 @@ describe("secondaryCommaZone", (): void => {
         expect(actual).toBeCloseToArray(expected)
     })
 
-    it("another example, at the Extreme level", (): void => {
-        const symbol: JiSymbol = {
-            id: 83 as Id<JiSymbol>,
-            ascii: ",,(|(" as SymbolLongAscii,
-            unicode: "" as SymbolUnicode,
-            introducingLevel: Level.EXTREME,
-            smallestJiSymbolSubset: SymbolSubset.OLYMPIAN,
+    it("another example, at the Extreme JI notation level", (): void => {
+        const jiNotationSymbolClass: JiNotationSymbolClass = {
+            id: 83 as Id<SymbolClass>,
+            introducingJiNotationLevel: JiNotationLevel.EXTREME,
+            smallestSymbolSubset: SymbolSubset.OLYMPIAN,
             mina: 78.39014554523920 as Mina,
             primaryCommaId: 83 as Id<SagittalComma>,
             elements: [],
         }
 
-        const actual = computeSecondaryCommaZone(symbol)
+        const actual = computeSecondaryCommaZone(jiNotationSymbolClass)
 
         const expected = [
             38.061940,
@@ -48,19 +43,17 @@ describe("secondaryCommaZone", (): void => {
         expect(actual).toBeCloseToArray(expected)
     })
 
-    it("another example, at the Medium level", (): void => {
-        const symbol: JiSymbol = {
-            id: 85 as Id<JiSymbol>,
-            ascii: "(|(" as SymbolLongAscii,
-            unicode: "" as SymbolUnicode,
-            introducingLevel: Level.MEDIUM,
-            smallestJiSymbolSubset: SymbolSubset.ATHENIAN,
+    it("another example, at the Medium JI notation level", (): void => {
+        const jiNotationSymbolClass: JiNotationSymbolClass = {
+            id: 85 as Id<SymbolClass>,
+            introducingJiNotationLevel: JiNotationLevel.MEDIUM,
+            smallestSymbolSubset: SymbolSubset.ATHENIAN,
             mina: 80 as Mina,
             primaryCommaId: 85 as Id<SagittalComma>,
             elements: [],
         }
 
-        const actual = computeSecondaryCommaZone(symbol)
+        const actual = computeSecondaryCommaZone(jiNotationSymbolClass)
 
         const expected = [
             35.118091,
@@ -70,18 +63,16 @@ describe("secondaryCommaZone", (): void => {
     })
 
     it("works for the initial symbol", (): void => {
-        const symbol: JiSymbol = {
-            id: 0 as Id<JiSymbol>,
-            ascii: "|" as SymbolLongAscii,
-            unicode: "" as SymbolUnicode,
-            introducingLevel: Level.MEDIUM,
+        const jiNotationSymbolClass: JiNotationSymbolClass = {
+            id: 0 as Id<SymbolClass>,
+            introducingJiNotationLevel: JiNotationLevel.MEDIUM,
             mina: 0 as Mina,
-            smallestJiSymbolSubset: SymbolSubset.SPARTAN,
+            smallestSymbolSubset: SymbolSubset.SPARTAN,
             primaryCommaId: 0 as Id<SagittalComma>,
             elements: [],
         }
 
-        const actual = computeSecondaryCommaZone(symbol)
+        const actual = computeSecondaryCommaZone(jiNotationSymbolClass)
 
         const expected = [
             0.000000,

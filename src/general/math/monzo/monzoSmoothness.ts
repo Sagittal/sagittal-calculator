@@ -1,8 +1,7 @@
 import { increment } from "../../code"
-import { Index } from "../../types"
 import { computeSmoothnessIndex } from "../primeCount"
 import { count } from "../typedOperations"
-import { NumericTypeParameters, Prime, Primes, Smoothness } from "../types"
+import { NumericTypeParameters, Primes, Smoothness } from "../types"
 import { Monzo } from "./types"
 
 const computeIsSmoothMonzo = <S extends Primes, T extends NumericTypeParameters>(

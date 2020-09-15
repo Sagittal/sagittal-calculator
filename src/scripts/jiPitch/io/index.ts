@@ -1,6 +1,6 @@
 export { computeFindCommasTable } from "./findCommasTable"
 export { NOTATING_COMMA_WITH_MAYBE_SAGITTAL_SYMBOLS_HEADER_ROW } from "./headerRows"
-export { computeNotatingCommaWithMaybeSagittalSymbolRow } from "./notatingCommaRow"
+export { computeNotatingCommaWithMaybeSagittalSymbolClassRow } from "./notatingCommaRow"
 export { computeNotatingCommasOutput } from "./notatingCommasOutput"
 export { computeJiPitchOutput } from "./jiPitchOutput"
 export { parseJiPitch } from "./parseJiPitch"

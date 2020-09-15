@@ -1,36 +1,39 @@
-import { Level } from "../../../../../src/sagittal/notations/ji"
-import { isWithinLevel } from "../../../../../src/sagittal/notations/ji/isWithinLevel"
+import { JiNotationLevel } from "../../../../../src/sagittal/notations/ji"
+import { isWithinJiNotationLevel } from "../../../../../src/sagittal/notations/ji/isWithinLevel"
 
-describe("isWithinLevel", (): void => {
-    it("returns true if the level is below or at to the target level, and false otherwise", (): void => {
-        expect(isWithinLevel(Level.MEDIUM, Level.INSANE)).toBe(true)
-        expect(isWithinLevel(Level.HIGH, Level.INSANE)).toBe(true)
-        expect(isWithinLevel(Level.ULTRA, Level.INSANE)).toBe(true)
-        expect(isWithinLevel(Level.EXTREME, Level.INSANE)).toBe(true)
-        expect(isWithinLevel(Level.INSANE, Level.INSANE)).toBe(true)
+describe("isWithinJiNotationLevel", (): void => {
+    it(
+        "returns true if the JI notation level is below or at to the target JI notation level, and false otherwise",
+        (): void => {
+            expect(isWithinJiNotationLevel(JiNotationLevel.MEDIUM, JiNotationLevel.INSANE)).toBe(true)
+            expect(isWithinJiNotationLevel(JiNotationLevel.HIGH, JiNotationLevel.INSANE)).toBe(true)
+            expect(isWithinJiNotationLevel(JiNotationLevel.ULTRA, JiNotationLevel.INSANE)).toBe(true)
+            expect(isWithinJiNotationLevel(JiNotationLevel.EXTREME, JiNotationLevel.INSANE)).toBe(true)
+            expect(isWithinJiNotationLevel(JiNotationLevel.INSANE, JiNotationLevel.INSANE)).toBe(true)
 
-        expect(isWithinLevel(Level.MEDIUM, Level.EXTREME)).toBe(true)
-        expect(isWithinLevel(Level.HIGH, Level.EXTREME)).toBe(true)
-        expect(isWithinLevel(Level.ULTRA, Level.EXTREME)).toBe(true)
-        expect(isWithinLevel(Level.EXTREME, Level.EXTREME)).toBe(true)
-        expect(isWithinLevel(Level.INSANE, Level.EXTREME)).toBe(false)
+            expect(isWithinJiNotationLevel(JiNotationLevel.MEDIUM, JiNotationLevel.EXTREME)).toBe(true)
+            expect(isWithinJiNotationLevel(JiNotationLevel.HIGH, JiNotationLevel.EXTREME)).toBe(true)
+            expect(isWithinJiNotationLevel(JiNotationLevel.ULTRA, JiNotationLevel.EXTREME)).toBe(true)
+            expect(isWithinJiNotationLevel(JiNotationLevel.EXTREME, JiNotationLevel.EXTREME)).toBe(true)
+            expect(isWithinJiNotationLevel(JiNotationLevel.INSANE, JiNotationLevel.EXTREME)).toBe(false)
 
-        expect(isWithinLevel(Level.MEDIUM, Level.ULTRA)).toBe(true)
-        expect(isWithinLevel(Level.HIGH, Level.ULTRA)).toBe(true)
-        expect(isWithinLevel(Level.ULTRA, Level.ULTRA)).toBe(true)
-        expect(isWithinLevel(Level.EXTREME, Level.ULTRA)).toBe(false)
-        expect(isWithinLevel(Level.INSANE, Level.ULTRA)).toBe(false)
+            expect(isWithinJiNotationLevel(JiNotationLevel.MEDIUM, JiNotationLevel.ULTRA)).toBe(true)
+            expect(isWithinJiNotationLevel(JiNotationLevel.HIGH, JiNotationLevel.ULTRA)).toBe(true)
+            expect(isWithinJiNotationLevel(JiNotationLevel.ULTRA, JiNotationLevel.ULTRA)).toBe(true)
+            expect(isWithinJiNotationLevel(JiNotationLevel.EXTREME, JiNotationLevel.ULTRA)).toBe(false)
+            expect(isWithinJiNotationLevel(JiNotationLevel.INSANE, JiNotationLevel.ULTRA)).toBe(false)
 
-        expect(isWithinLevel(Level.MEDIUM, Level.HIGH)).toBe(true)
-        expect(isWithinLevel(Level.HIGH, Level.HIGH)).toBe(true)
-        expect(isWithinLevel(Level.ULTRA, Level.HIGH)).toBe(false)
-        expect(isWithinLevel(Level.EXTREME, Level.HIGH)).toBe(false)
-        expect(isWithinLevel(Level.INSANE, Level.HIGH)).toBe(false)
+            expect(isWithinJiNotationLevel(JiNotationLevel.MEDIUM, JiNotationLevel.HIGH)).toBe(true)
+            expect(isWithinJiNotationLevel(JiNotationLevel.HIGH, JiNotationLevel.HIGH)).toBe(true)
+            expect(isWithinJiNotationLevel(JiNotationLevel.ULTRA, JiNotationLevel.HIGH)).toBe(false)
+            expect(isWithinJiNotationLevel(JiNotationLevel.EXTREME, JiNotationLevel.HIGH)).toBe(false)
+            expect(isWithinJiNotationLevel(JiNotationLevel.INSANE, JiNotationLevel.HIGH)).toBe(false)
 
-        expect(isWithinLevel(Level.MEDIUM, Level.MEDIUM)).toBe(true)
-        expect(isWithinLevel(Level.HIGH, Level.MEDIUM)).toBe(false)
-        expect(isWithinLevel(Level.ULTRA, Level.MEDIUM)).toBe(false)
-        expect(isWithinLevel(Level.EXTREME, Level.MEDIUM)).toBe(false)
-        expect(isWithinLevel(Level.INSANE, Level.MEDIUM)).toBe(false)
-    })
+            expect(isWithinJiNotationLevel(JiNotationLevel.MEDIUM, JiNotationLevel.MEDIUM)).toBe(true)
+            expect(isWithinJiNotationLevel(JiNotationLevel.HIGH, JiNotationLevel.MEDIUM)).toBe(false)
+            expect(isWithinJiNotationLevel(JiNotationLevel.ULTRA, JiNotationLevel.MEDIUM)).toBe(false)
+            expect(isWithinJiNotationLevel(JiNotationLevel.EXTREME, JiNotationLevel.MEDIUM)).toBe(false)
+            expect(isWithinJiNotationLevel(JiNotationLevel.INSANE, JiNotationLevel.MEDIUM)).toBe(false)
+        },
+    )
 })

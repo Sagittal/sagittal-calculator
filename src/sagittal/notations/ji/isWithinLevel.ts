@@ -1,9 +1,9 @@
-import { LEVELS } from "./levels"
-import { Level } from "./types"
+import { JI_NOTATION_LEVELS } from "./levels"
+import { JiNotationLevel } from "./types"
 
-const isWithinLevel = (level: Level, targetLevel: Level): boolean =>
-    LEVELS.indexOf(level) <= LEVELS.indexOf(targetLevel)
+const isWithinJiNotationLevel = (jiNotationLevel: JiNotationLevel, targetJiNotationLevel: JiNotationLevel): boolean =>
+    JI_NOTATION_LEVELS.indexOf(jiNotationLevel) <= JI_NOTATION_LEVELS.indexOf(targetJiNotationLevel)
 
 export {
-    isWithinLevel,
+    isWithinJiNotationLevel,
 }

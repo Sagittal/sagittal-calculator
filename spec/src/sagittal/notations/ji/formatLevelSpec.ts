@@ -1,9 +1,9 @@
-import { Level } from "../../../../../src/sagittal"
-import { formatLevel } from "../../../../../src/sagittal/notations/ji"
+import { JiNotationLevel } from "../../../../../src/sagittal"
+import { formatJiNotationLevel } from "../../../../../src/sagittal/notations/ji"
 
-describe("formatLevel", (): void => {
-    it("makes levels nice for people to read", (): void => {
-        expect(formatLevel(Level.ULTRA)).toBe("Ultra")
-        expect(formatLevel(Level.EXTREME)).toBe("Extreme")
+describe("formatJiNotationLevel", (): void => {
+    it("makes JI levels nice for people to read", (): void => {
+        expect(formatJiNotationLevel(JiNotationLevel.ULTRA)).toBe("Ultra")
+        expect(formatJiNotationLevel(JiNotationLevel.EXTREME)).toBe("Extreme")
     })
 })

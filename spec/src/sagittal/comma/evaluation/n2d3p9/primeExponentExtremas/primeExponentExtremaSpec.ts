@@ -12,7 +12,7 @@ describe("computePrimeExponentExtremaGivenMaxN2D3P3", (): void => {
         { numerator: 17 as Numerator, gpf: 17 as Max<Prime> },
         { numerator: 19 as Numerator, gpf: 19 as Max<Prime> },
         { numerator: 23 as Numerator, gpf: 23 as Max<Prime> },
-        { numerator: 25 as Numerator, gpf: 5 as Max<Prime> }
+        { numerator: 25 as Numerator, gpf: 5 as Max<Prime> },
     ]
 
     it("returns the max exponent for the denominator as the min exponent and the max exponent of the numerator as the max exponent", (): void => {
@@ -22,7 +22,7 @@ describe("computePrimeExponentExtremaGivenMaxN2D3P3", (): void => {
         const actual = computePrimeExponentExtremaGivenMaxN2D3P3(
             prime,
             maxN2D3P9,
-            numeratorPossibilitiesForDenominatorGivenMaxN2D3P9
+            numeratorPossibilitiesForDenominatorGivenMaxN2D3P9,
         )
 
         const expected = [-1, 2] as Extrema<Integer & Exponent<Prime>>

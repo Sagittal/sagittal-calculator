@@ -1,10 +1,10 @@
 import { Zone } from "../../../../../../src/general/music"
-import { JI_SYMBOLS, SagittalComma } from "../../../../../../src/sagittal"
+import { JI_NOTATION_SYMBOL_CLASSES, SagittalComma } from "../../../../../../src/sagittal"
 import { computeSecondaryCommaZone } from "../../../../../../src/sagittal/notations/ji/secondaryCommaZone"
 
 describe("secondary comma zones", (): void => {
     it("they check out", (): void => {
-        const actual = JI_SYMBOLS.map(computeSecondaryCommaZone)
+        const actual = JI_NOTATION_SYMBOL_CLASSES.map(computeSecondaryCommaZone)
 
         const expected = [
             [0.000000, 2.740244],

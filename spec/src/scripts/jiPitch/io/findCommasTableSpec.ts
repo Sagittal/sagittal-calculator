@@ -12,15 +12,15 @@ import {
     Sopfr,
     TwoThreeFreeClass,
 } from "../../../../../src/general"
-import { ApotomeSlope, CommaAnalysis, JiSymbol } from "../../../../../src/sagittal"
+import { ApotomeSlope, CommaAnalysis, SymbolClass } from "../../../../../src/sagittal"
 import { N2D3P9 } from "../../../../../src/sagittal/comma/evaluation/n2d3p9"
 import { computeFindCommasTable } from "../../../../../src/scripts/jiPitch/io"
 
 describe("computeFindCommasTable", (): void => {
     // note: I'm pretty sure that this is not realistic comma data, since these commas are unrelated
-    const commas: Array<CommaAnalysis & { symbolId?: Id<JiSymbol> }> = [
+    const commas: Array<CommaAnalysis & { symbolClassId?: Id<SymbolClass> }> = [
         {
-            symbolId: 115 as Id<JiSymbol>,
+            symbolClassId: 115 as Id<SymbolClass>,
             name: "11M" as Name<Comma>,
             limit: 11 as Prime,
             twoThreeFreeSopfr: 11 as Sopfr<{ rough: 5 }>,
@@ -30,7 +30,7 @@ describe("computeFindCommasTable", (): void => {
             ratio: [33, 32] as Ratio,
             apotomeSlope: -4 as ApotomeSlope,
             n2d3p9: 6.722 as N2D3P9,
-        } as CommaAnalysis & { symbolId?: Id<JiSymbol> },
+        } as CommaAnalysis & { symbolClassId?: Id<SymbolClass> },
         {
             name: "25/49M" as Name<Comma>,
             limit: 7 as Prime,
@@ -41,7 +41,7 @@ describe("computeFindCommasTable", (): void => {
             ratio: [50, 49] as Ratio,
             apotomeSlope: -2.154 as ApotomeSlope,
             n2d3p9: 26.466 as N2D3P9,
-        } as CommaAnalysis & { symbolId?: Id<JiSymbol> },
+        } as CommaAnalysis & { symbolClassId?: Id<SymbolClass> },
     ]
 
     it("changes column widths so that each cell in a column has the same width", (): void => {

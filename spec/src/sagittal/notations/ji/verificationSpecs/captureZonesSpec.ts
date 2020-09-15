@@ -1,17 +1,17 @@
 import { Id, Maybe, Zone } from "../../../../../../src/general"
-import { JiSymbol, SagittalComma } from "../../../../../../src/sagittal"
-import { getJiSymbol, Level } from "../../../../../../src/sagittal/notations/ji"
+import { SagittalComma, SymbolClass } from "../../../../../../src/sagittal"
+import { getJiNotationSymbolClass, JiNotationLevel } from "../../../../../../src/sagittal/notations/ji"
 import { computeCaptureZone } from "../../../../../../src/sagittal/notations/ji/captureZone"
-import { computeLevelJiSymbolIds } from "../../../../../../src/sagittal/notations/ji/levelsJiSymbolIds"
+import { computeJiNotationLevelSymbolClassIds } from "../../../../../../src/sagittal/notations/ji/levelSymbolClassIds"
 
 describe("capture zones", (): void => {
-    it("Medium level capture zones check out", (): void => {
-        const mediumLevelJiSymbolIds = computeLevelJiSymbolIds(Level.MEDIUM)
+    it("Medium JI notation level capture zones check out", (): void => {
+        const mediumLevelSymbolClassIds = computeJiNotationLevelSymbolClassIds(JiNotationLevel.MEDIUM)
 
-        const actual = mediumLevelJiSymbolIds.map((mediumLevelJiSymbolId: Id<JiSymbol>): Maybe<Zone> => {
-            const jiSymbol = getJiSymbol(mediumLevelJiSymbolId)
+        const actual = mediumLevelSymbolClassIds.map((mediumLevelSymbolClassId: Id<SymbolClass>): Maybe<Zone> => {
+            const jiNotationSymbolClass = getJiNotationSymbolClass(mediumLevelSymbolClassId)
 
-            return computeCaptureZone(jiSymbol, Level.MEDIUM)
+            return computeCaptureZone(jiNotationSymbolClass, JiNotationLevel.MEDIUM)
         })
 
         const expected = [
@@ -32,13 +32,13 @@ describe("capture zones", (): void => {
         expect(actual).toBeCloseToObject(expected)
     })
 
-    it("High level capture zones check out", (): void => {
-        const highLevelJiSymbolIds = computeLevelJiSymbolIds(Level.HIGH)
+    it("High JI notation level capture zones check out", (): void => {
+        const highLevelSymbolClassIds = computeJiNotationLevelSymbolClassIds(JiNotationLevel.HIGH)
 
-        const actual = highLevelJiSymbolIds.map((highLevelJiSymbolId: Id<JiSymbol>): Maybe<Zone> => {
-            const jiSymbol = getJiSymbol(highLevelJiSymbolId)
+        const actual = highLevelSymbolClassIds.map((highLevelSymbolClassId: Id<SymbolClass>): Maybe<Zone> => {
+            const jiNotationSymbolClass = getJiNotationSymbolClass(highLevelSymbolClassId)
 
-            return computeCaptureZone(jiSymbol, Level.HIGH)
+            return computeCaptureZone(jiNotationSymbolClass, JiNotationLevel.HIGH)
         })
 
         const expected = [
@@ -78,13 +78,13 @@ describe("capture zones", (): void => {
         expect(actual).toBeCloseToObject(expected)
     })
 
-    it("Ultra level capture zones check out", (): void => {
-        const ultraLevelJiSymbolIds = computeLevelJiSymbolIds(Level.ULTRA)
+    it("Ultra JI notation level capture zones check out", (): void => {
+        const ultraLevelSymbolClassIds = computeJiNotationLevelSymbolClassIds(JiNotationLevel.ULTRA)
 
-        const actual = ultraLevelJiSymbolIds.map((ultraLevelJiSymbolId: Id<JiSymbol>): Maybe<Zone> => {
-            const jiSymbol = getJiSymbol(ultraLevelJiSymbolId)
+        const actual = ultraLevelSymbolClassIds.map((ultraLevelSymbolClassId: Id<SymbolClass>): Maybe<Zone> => {
+            const jiNotationSymbolClass = getJiNotationSymbolClass(ultraLevelSymbolClassId)
 
-            return computeCaptureZone(jiSymbol, Level.ULTRA)
+            return computeCaptureZone(jiNotationSymbolClass, JiNotationLevel.ULTRA)
         })
 
         const expected = [
@@ -147,13 +147,13 @@ describe("capture zones", (): void => {
         expect(actual).toBeCloseToObject(expected)
     })
 
-    it("Extreme level capture zones check out", (): void => {
-        const extremeLevelJiSymbolIds = computeLevelJiSymbolIds(Level.EXTREME)
+    it("Extreme JI notation level capture zones check out", (): void => {
+        const extremeLevelSymbolClassIds = computeJiNotationLevelSymbolClassIds(JiNotationLevel.EXTREME)
 
-        const actual = extremeLevelJiSymbolIds.map((extremeLevelJiSymbolId: Id<JiSymbol>): Maybe<Zone> => {
-            const jiSymbol = getJiSymbol(extremeLevelJiSymbolId)
+        const actual = extremeLevelSymbolClassIds.map((extremeLevelSymbolClassId: Id<SymbolClass>): Maybe<Zone> => {
+            const jiNotationSymbolClass = getJiNotationSymbolClass(extremeLevelSymbolClassId)
 
-            return computeCaptureZone(jiSymbol, Level.EXTREME)
+            return computeCaptureZone(jiNotationSymbolClass, JiNotationLevel.EXTREME)
         })
 
         const expected = [

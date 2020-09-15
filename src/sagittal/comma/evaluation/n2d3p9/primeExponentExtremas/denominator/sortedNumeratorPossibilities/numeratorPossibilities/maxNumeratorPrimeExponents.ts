@@ -1,7 +1,7 @@
 import {
     Exponent,
-    FIVE_PRIME_INDEX, increment,
-    Index,
+    FIVE_PRIME_INDEX,
+    increment,
     Integer,
     Max,
     Numerator,

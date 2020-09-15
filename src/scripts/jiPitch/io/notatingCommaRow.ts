@@ -1,23 +1,23 @@
 import { BLANK, formatMonzo, formatNumber, formatRatio, Id, ioSettings, Row } from "../../../general"
-import { CommaAnalysis, formatSymbol, JiSymbol } from "../../../sagittal"
+import { CommaAnalysis, formatSymbolClass, SymbolClass } from "../../../sagittal"
 
-const computeNotatingCommaWithMaybeSagittalSymbolRow = (
-    notatingCommaWithMaybeSagittalSymbol: CommaAnalysis & { symbolId?: Id<JiSymbol> },
-): Row<{ of: CommaAnalysis & { symbolId?: Id<JiSymbol> } }> => {
-    const { name, monzo, cents, ratio, symbolId, apotomeSlope } = notatingCommaWithMaybeSagittalSymbol
+const computeNotatingCommaWithMaybeSagittalSymbolClassRow = (
+    notatingCommaWithMaybeSagittalSymbolClassId: CommaAnalysis & { symbolClassId?: Id<SymbolClass> },
+): Row<{ of: CommaAnalysis & { symbolClassId?: Id<SymbolClass> } }> => {
+    const { name, monzo, cents, ratio, symbolClassId, apotomeSlope } = notatingCommaWithMaybeSagittalSymbolClassId
 
-    const formattedSymbol = symbolId ? formatSymbol(symbolId, ioSettings) : BLANK
+    const formattedSymbolClass = symbolClassId ? formatSymbolClass(symbolClassId, ioSettings) : BLANK
 
     return [
-        formattedSymbol,
+        formattedSymbolClass,
         name,
         formatRatio(ratio),
         formatMonzo(monzo),
         formatNumber(cents),
         formatNumber(apotomeSlope),
-    ] as Row<{ of: CommaAnalysis & { symbolId?: Id<JiSymbol> } }>
+    ] as Row<{ of: CommaAnalysis & { symbolClassId?: Id<SymbolClass> } }>
 }
 
 export {
-    computeNotatingCommaWithMaybeSagittalSymbolRow,
+    computeNotatingCommaWithMaybeSagittalSymbolClassRow,
 }

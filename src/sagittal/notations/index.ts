@@ -1,25 +1,29 @@
 export { getSagittalComma } from "./getSagittalComma"
 export { MAX_SINGLE_SHAFT_CENTS } from "./intervals"
 export {
-    addMaybeJiSymbol,
-    Bound,
+    addMaybeJiNotationSymbolClassId,
+    JiNotationBound,
     computeInaMidpoints,
-    formatLevel,
-    getJiSymbol,
+    formatJiNotationLevel,
+    getJiNotationSymbolClass,
     Ina,
     INA_SIZES,
-    JiSymbol,
-    JI_BOUNDS,
-    JI_SYMBOLS,
-    JI_SYMBOL_SUBSETS,
-    Level,
-    LEVELS,
-    LEVELS_BOUNDS,
-    LEVELS_SYMBOL_IDS,
-    LEVEL_EDAS,
+    JiNotationSymbolClass,
+    JI_NOTATION_BOUNDS,
+    JI_NOTATION_SYMBOL_CLASSES,
+    SYMBOL_SUBSETS_USED_IN_JI_NOTATION_SORTED_BY_ASCENDING_SYMBOL_COUNT,
+    JiNotationLevel,
+    JI_NOTATION_LEVELS,
+    JI_NOTATION_LEVELS_BOUNDS,
+    JI_NOTATION_LEVELS_SYMBOL_CLASS_IDS,
+    JI_NOTATION_LEVEL_EDAS,
     Mina,
     Tina,
     TINA,
 } from "./ji"
 export { APOTOME } from "./sagittalCommas"
-export { SagittalComma } from "./types"
+export { SagittalComma, SymbolClass, RevoSymbol } from "./types"
+export { SYMBOL_CLASSES } from "./symbolClasses"
+export { REVO_SYMBOLS } from "./symbols"
+export { getSymbolClass } from "./symbolClass"
+export { getRepresentativeSymbol } from "./representativeSymbol"

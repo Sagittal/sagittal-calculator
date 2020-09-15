@@ -2,7 +2,8 @@
 // they are concentric, containing lower sets
 // and some like Trojan even cut across others
 
-import { Comma, Id, Monzo } from "../../general"
+import { Apotome, Comma, Count, Direction, Id, Monzo } from "../../general"
+import { SymbolLongAscii, SymbolUnicode } from "../io"
 
 enum SymbolSubset {
     SPARTAN = "spartan",
@@ -20,7 +21,27 @@ type SagittalComma<T extends "Maybe" | void = void> = Comma & { monzo: Monzo } &
         { id: Id<SagittalComma> }
     )
 
+interface SymbolClass {
+    elements: SymbolLongAscii[],    // should this be an array of references to other objects instead of hardcoded?
+    id: Id<SymbolClass>,
+    primaryCommaId: Id<SagittalComma>,
+    smallestSymbolSubset: SymbolSubset,     // TODO: perhaps this should be stored outside of here, other way around
+    // TODO: should anything contain an "apotome complement" on it? or just a helper method to get it
+    //  (along with a fun test to prove that they have the same apotome slope)
+}
+
+interface RevoSymbol {
+    id: Id<RevoSymbol>,
+    ascii: SymbolLongAscii,
+    unicode: SymbolUnicode,
+    symbolClassId: Id<SymbolClass>,
+    direction: Direction,
+    apotomeCount: Count<Apotome>,   // so if apotome count is 1 but direction is sub, then it's a down symb + a sharp
+}
+
 export {
     SymbolSubset,
     SagittalComma,
+    SymbolClass,
+    RevoSymbol,
 }

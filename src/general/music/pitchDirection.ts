@@ -5,8 +5,11 @@ import {
     computeIsSuperMonzo,
     computeIsSuperRatio,
     computeIsUnisonMonzo,
-    computeIsUnisonRatio, computeSuperMonzo, computeSuperRatio,
-    Direction, negative,
+    computeIsUnisonRatio,
+    computeSuperMonzo,
+    computeSuperRatio,
+    Direction,
+    negative,
     NumericTypeParameters,
 } from "../math"
 import { Pitch } from "./types"
@@ -57,7 +60,7 @@ const computeSuperPitch = <T extends NumericTypeParameters, U extends Pitch<T>>(
         //  but on the other hand, if it doesn't flip the name, then this can make the name into a lie...
         //  which makes me want to not allow name as a thing on a Pitch... but then you get into the e.g.
         //  size category bounds which are named, along with the other types of snappable positions
-        //  but then those live between the scripts/bound and the sagittal/ modules...
+        //  but then those live between the scripts/jiNotationBound and the sagittal/ modules...
         //  perhaps in this case it should just throw an error?
         // if (!isUndefined(name)) superPitch.name = computeCommaName(superPitch as Comma)
     } else {

@@ -1,15 +1,15 @@
 import { Formatted } from "../../../general"
-import { Level } from "./types"
+import { JiNotationLevel } from "./types"
 
 // not moving into an io folder for JI dir until there's at least one other thing
 
-const formatLevel = (level: Level): Formatted<Level> => {
-    const almostFormattedLevel = level.replace(/(\_\w)/g, (match: string): string => ` ${match[ 1 ].toUpperCase()}`)
+const formatJiNotationLevel = (jiNotationLevel: JiNotationLevel): Formatted<JiNotationLevel> => {
+    const almostFormattedJiNotationLevel = jiNotationLevel.replace(/(\_\w)/g, (match: string): string => ` ${match[ 1 ].toUpperCase()}`)
 
-    return almostFormattedLevel.charAt(0)
-        .toUpperCase() + almostFormattedLevel.slice(1) as Formatted<Level>
+    return almostFormattedJiNotationLevel.charAt(0)
+        .toUpperCase() + almostFormattedJiNotationLevel.slice(1) as Formatted<JiNotationLevel>
 }
 
 export {
-    formatLevel,
+    formatJiNotationLevel,
 }

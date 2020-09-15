@@ -1,7 +1,13 @@
-import { Level } from "./types"
+import { JiNotationLevel } from "./types"
 
-const LEVELS: Level[] = [Level.MEDIUM, Level.HIGH, Level.ULTRA, Level.EXTREME, Level.INSANE]
+const JI_NOTATION_LEVELS: JiNotationLevel[] = [
+    JiNotationLevel.MEDIUM,
+    JiNotationLevel.HIGH,
+    JiNotationLevel.ULTRA,
+    JiNotationLevel.EXTREME,
+    JiNotationLevel.INSANE
+]
 
 export {
-    LEVELS,
+    JI_NOTATION_LEVELS,
 }

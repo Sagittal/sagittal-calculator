@@ -29,29 +29,37 @@ export {
     DEFAULT_MAX_N2D3P9,
     ParsedCommaName,
 } from "./comma"
-export { formatSymbol, formatSymbolAscii, SymbolLongAscii, unicodeFromAscii, SymbolSmiley } from "./io"
 export {
-    addMaybeJiSymbol,
-    Bound,
+    formatSymbolClass, formatSymbolAscii, SymbolLongAscii, unicodeFromAscii, SymbolSmiley, SymbolUnicode,
+} from "./io"
+export {
+    addMaybeJiNotationSymbolClassId,
+    JiNotationBound,
     computeInaMidpoints,
-    formatLevel,
-    getJiSymbol,
+    formatJiNotationLevel,
+    getJiNotationSymbolClass,
     getSagittalComma,
     Ina,
     INA_SIZES,
-    JI_BOUNDS,
-    JI_SYMBOL_SUBSETS,
-    JI_SYMBOLS,
-    JiSymbol,
-    Level,
-    LEVEL_EDAS,
-    LEVELS,
-    LEVELS_BOUNDS,
-    LEVELS_SYMBOL_IDS,
+    JI_NOTATION_BOUNDS,
+    SYMBOL_SUBSETS_USED_IN_JI_NOTATION_SORTED_BY_ASCENDING_SYMBOL_COUNT,
+    JI_NOTATION_SYMBOL_CLASSES,
+    JiNotationSymbolClass,
+    JiNotationLevel,
+    JI_NOTATION_LEVEL_EDAS,
+    JI_NOTATION_LEVELS,
+    JI_NOTATION_LEVELS_BOUNDS,
+    JI_NOTATION_LEVELS_SYMBOL_CLASS_IDS,
     MAX_SINGLE_SHAFT_CENTS,
     Mina,
     Tina,
     TINA,
     SagittalComma,
+    SymbolClass,
+    getRepresentativeSymbol,
 } from "./notations"
 export { APOTOME_CENTS } from "./constants"
+
+// TODO: I think it is time to turn on noImplicitAny
+
+// TODO: I think it is time to turn on noMagicNumbers

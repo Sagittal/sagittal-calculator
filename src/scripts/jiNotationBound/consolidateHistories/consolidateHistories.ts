@@ -1,0 +1,54 @@
+import { Maybe } from "../../../general"
+import { EventAnalysis, HistoryAnalysis } from "../history"
+import { ensureOneBestPossibleEventPerJiNotationLevel } from "./ensureOneBestPossibleEventPerLevel"
+import { computeInitialEventConsolidation } from "./initialEventConsolidation"
+import { EventConsolidation, HistoryConsolidation } from "./types"
+import { updateEventConsolidation } from "./updateEventConsolidation"
+
+const consolidateHistories = (
+    historyAnalyses: HistoryAnalysis[],
+    bestPossibleHistory: HistoryAnalysis,
+): HistoryConsolidation => {
+    const historyConsolidation: HistoryConsolidation = {}
+
+    historyAnalyses.forEach((historyAnalysis: HistoryAnalysis): void => {
+        historyAnalysis.eventAnalyses.forEach((eventAnalysis: EventAnalysis, index: number): void => {
+            historyConsolidation[ eventAnalysis.jiNotationLevel ] =
+                historyConsolidation[ eventAnalysis.jiNotationLevel ] || []
+            const eventConsolidations: Maybe<EventConsolidation[]> =
+                historyConsolidation[ eventAnalysis.jiNotationLevel ]
+
+            const nextEventAnalysis = historyAnalysis.eventAnalyses[ index + 1 ]
+
+            const matchingEventConsolidation: Maybe<EventConsolidation> = eventConsolidations && eventConsolidations
+                .find((existingEventConsolidation: EventConsolidation): boolean => {
+                    return existingEventConsolidation.name === eventAnalysis.name
+                })
+
+            const UpdateEventConsolidationOptions = {
+                nextEventAnalysis,
+                historyAnalysis,
+                eventAnalysis,
+                bestPossibleHistory,
+            }
+
+            if (matchingEventConsolidation) {
+                updateEventConsolidation(matchingEventConsolidation, UpdateEventConsolidationOptions)
+            } else {
+                const newEventConsolidation: EventConsolidation = computeInitialEventConsolidation(eventAnalysis)
+
+                updateEventConsolidation(newEventConsolidation, UpdateEventConsolidationOptions)
+
+                eventConsolidations && eventConsolidations.push(newEventConsolidation)
+            }
+        })
+    })
+
+    ensureOneBestPossibleEventPerJiNotationLevel(historyConsolidation)
+
+    return historyConsolidation
+}
+
+export {
+    consolidateHistories,
+}

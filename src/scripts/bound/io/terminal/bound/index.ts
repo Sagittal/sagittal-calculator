@@ -1,1 +1,0 @@
-export { formatBound } from "./formattedBound"

@@ -1,11 +1,11 @@
 import { Cents, Name, Pitch } from "../../../../../src/general"
-import { computeInaMidpoints, Level } from "../../../../../src/sagittal/notations/ji"
+import { computeInaMidpoints, JiNotationLevel } from "../../../../../src/sagittal/notations/ji"
 
 describe("computeInaMidpoints", (): void => {
-    it("works for the MEDIUM level, only including midpoints below the max position", (): void => {
-        const level = Level.MEDIUM
+    it("works for the Medium JI notation level, only including midpoints below the max position", (): void => {
+        const jiNotationLevel = JiNotationLevel.MEDIUM
 
-        const actual = computeInaMidpoints(level)
+        const actual = computeInaMidpoints(jiNotationLevel)
 
         const expected = [
             { name: "0.5°21" as Name<Pitch>, cents: 2.706785 as Cents },

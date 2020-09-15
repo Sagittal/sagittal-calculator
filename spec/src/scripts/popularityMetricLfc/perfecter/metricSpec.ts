@@ -1,11 +1,6 @@
 import { Ed, Name, Window } from "../../../../../src/general"
 import { Combination } from "../../../../../src/general/math"
-import {
-    Metric,
-    Scope,
-    SubmetricScope,
-    SumOfSquares,
-} from "../../../../../src/scripts/popularityMetricLfc/bestMetric"
+import { Metric, Scope, SubmetricScope, SumOfSquares } from "../../../../../src/scripts/popularityMetricLfc/bestMetric"
 import { recursiveSearchScopeAndMaybeUpdateBestMetric } from "../../../../../src/scripts/popularityMetricLfc/perfecter"
 import { perfectMetric } from "../../../../../src/scripts/popularityMetricLfc/perfecter/metric"
 import * as recursiveBestMetric from "../../../../../src/scripts/popularityMetricLfc/perfecter/recursiveBestMetric"

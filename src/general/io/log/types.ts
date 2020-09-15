@@ -1,9 +1,9 @@
 enum LogTarget {
     ALL = "all",
     ANTIVOTES = "antivotes",
-    BOUND = "bound",
-    BOUNDS_TABLE = "boundsTerminal",
-    BOUNDS_IMAGE = "boundsImage.svg",
+    JI_NOTATION_BOUND = "jiNotationBound",
+    JI_NOTATION_BOUNDS_TABLE = "jiNotationBoundsTable",
+    JI_NOTATION_BOUNDS_IMAGE = "jiNotationBoundsImage.svg",
     UNPOPULARITIES = "unpopularities",
     SEARCH = "search",
     POPULATE = "populate",

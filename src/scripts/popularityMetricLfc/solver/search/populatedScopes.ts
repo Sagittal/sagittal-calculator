@@ -1,4 +1,4 @@
-import { Count, increment, Io, LogTarget, saveLog } from "../../../../general"
+import { increment, Io, LogTarget, saveLog } from "../../../../general"
 import { nonRecursiveSearchScopeAndMaybeUpdateBestMetric, Scope } from "../../bestMetric"
 import { scopesToSearch, solverStatus } from "../../globals"
 import { formatPercentage, formatSearchedAndPopulated } from "../io"

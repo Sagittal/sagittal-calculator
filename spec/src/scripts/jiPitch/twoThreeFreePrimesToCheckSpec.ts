@@ -10,7 +10,7 @@ describe("compute23FreePrimesToCheck", (): void => {
     })
 
     describe("when only the prime limit is provided", (): void => {
-        it("if it is not a prime (for whatever reason), the last prime less than it is the max prime", (): void => {
+        it("if it is not a prime (for whatever reason), the final prime less than it is the max prime", (): void => {
             const maxPrimeLimit = 20 as Max<Max<Prime>>
 
             const actual = compute23FreePrimesToCheck({ maxPrimeLimit })
@@ -30,7 +30,7 @@ describe("compute23FreePrimesToCheck", (): void => {
     })
 
     describe("when only sopfr is provided", (): void => {
-        it("if it is not a prime, the last prime less than it is the max prime", (): void => {
+        it("if it is not a prime, the final prime less than it is the max prime", (): void => {
             const max23FreeSopfr = 20 as Max<Sopfr<{ rough: 5 }>>
 
             const actual = compute23FreePrimesToCheck({ max23FreeSopfr })
@@ -82,7 +82,7 @@ describe("compute23FreePrimesToCheck", (): void => {
             [0, 1],     // 17
         ] as Array<Extrema<Integer & Exponent<Prime>>>
 
-        it("when only N2D3P9 is provided, its last element is the max prime", (): void => {
+        it("when only N2D3P9 is provided, its final element is the max prime", (): void => {
             const actual = compute23FreePrimesToCheck({ primeExponentExtremasGivenMaxN2D3P9 })
 
             const expected = [5, 7, 11, 13, 17] as Prime[]

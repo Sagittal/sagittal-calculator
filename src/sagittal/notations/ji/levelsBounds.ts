@@ -1,16 +1,21 @@
-import { JI_BOUNDS } from "./jiBounds"
-import { LEVELS } from "./levels"
-import { Bound, Level } from "./types"
+import { JI_NOTATION_BOUNDS } from "./bounds"
+import { JI_NOTATION_LEVELS } from "./levels"
+import { JiNotationBound, JiNotationLevel } from "./types"
 
-const LEVELS_BOUNDS: Record<Level, Bound[]> = LEVELS.reduce(
-    (levelBounds: Record<Level, Bound[]>, level: Level): Record<Level, Bound[]> =>
+const JI_NOTATION_LEVELS_BOUNDS: Record<JiNotationLevel, JiNotationBound[]> = JI_NOTATION_LEVELS.reduce(
+    (
+        jiNotationLevelBounds: Record<JiNotationLevel, JiNotationBound[]>,
+        jiNotationLevel: JiNotationLevel
+    ): Record<JiNotationLevel, JiNotationBound[]> =>
         ({
-            ...levelBounds,
-            [ level ]: JI_BOUNDS.filter((bound: Bound): boolean => bound.levels.includes(level)),
+            ...jiNotationLevelBounds,
+            [ jiNotationLevel ]: JI_NOTATION_BOUNDS.filter((jiNotationBound: JiNotationBound): boolean => {
+                return jiNotationBound.jiNotationLevels.includes(jiNotationLevel)
+            }),
         }),
-    {} as Record<Level, Bound[]>,
+    {} as Record<JiNotationLevel, JiNotationBound[]>,
 )
 
 export {
-    LEVELS_BOUNDS,
+    JI_NOTATION_LEVELS_BOUNDS,
 }

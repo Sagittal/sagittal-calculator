@@ -3,10 +3,8 @@ import {
     computeIsSuperMonzo,
     computeSuperMonzo,
     Direction,
-    Exponent, Integer,
     invertMonzo,
     Monzo,
-    Prime,
 } from "../../../../../src/general/math"
 import { computeIsUnisonMonzo } from "../../../../../src/general/math/monzo"
 
@@ -188,7 +186,7 @@ describe("computeIsSubMonzo", (): void => {
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-            1
+            1,
         ] as Monzo
 
         expect((): void => {

@@ -1,4 +1,4 @@
-import { computeIsEmpty, isUndefined } from "../code"
+import { isUndefined } from "../code"
 import { Addend, Count, Divisor, Multiplier, Product, Subtrahend, Sum } from "../types"
 import {
     ADDITIVE_IDENTITY,

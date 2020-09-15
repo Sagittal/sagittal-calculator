@@ -1,12 +1,12 @@
 import { Cents, CentsPosition, Maybe, Name, Pitch } from "../../../general"
 import { APOTOME_CENTS } from "../../constants"
 import { MAX_SINGLE_SHAFT_CENTS } from "../intervals"
-import { LEVEL_EDAS } from "./levelEdas"
-import { LEVELS } from "./levels"
-import { Level } from "./types"
+import { JI_NOTATION_LEVEL_EDAS } from "./levelEdas"
+import { JI_NOTATION_LEVELS } from "./levels"
+import { JiNotationLevel } from "./types"
 
-const computeInaMidpoints = (level: Level): CentsPosition[] => {
-    const eda = LEVEL_EDAS[ LEVELS.indexOf(level) ]
+const computeInaMidpoints = (jiNotationLevel: JiNotationLevel): CentsPosition[] => {
+    const eda = JI_NOTATION_LEVEL_EDAS[ JI_NOTATION_LEVELS.indexOf(jiNotationLevel) ]
 
     const inaMidpoints = [...Array(eda).keys()].map((degree: number): Maybe<CentsPosition> => {
         const midpoint = degree + 0.5

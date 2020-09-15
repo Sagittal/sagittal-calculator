@@ -1,9 +1,5 @@
 import { Abs, Exponent, Integer, Max, Monzo, Prime } from "../../../../src/general/math"
-import {
-    DEFAULT_JI_PITCH_SCRIPT_GROUP_MAX_N2D3P9,
-    DEFAULT_MAX_AAS,
-    DEFAULT_MAX_ATE,
-} from "../../../../src/sagittal"
+import { DEFAULT_JI_PITCH_SCRIPT_GROUP_MAX_N2D3P9, DEFAULT_MAX_AAS, DEFAULT_MAX_ATE } from "../../../../src/sagittal"
 import { ApotomeSlope, JiPitchAnalysis, N2D3P9 } from "../../../../src/sagittal/comma"
 import { accommodateJiPitchInSettings } from "../../../../src/scripts/jiPitch/accommodateJiPitchInSettings"
 import { jiPitchScriptGroupSettings } from "../../../../src/scripts/jiPitch/globals"

@@ -1,15 +1,16 @@
 import { Maybe } from "../../general"
-import { JiSymbol, JI_SYMBOLS } from "../notations"
+import { RevoSymbol, REVO_SYMBOLS } from "../notations"
 import { SymbolLongAscii, SymbolUnicode } from "./types"
 
 const unicodeFromAscii = (ascii: SymbolLongAscii): SymbolUnicode => {
-    const symbol: Maybe<JiSymbol> = JI_SYMBOLS.find((symbol: JiSymbol): boolean => symbol.ascii === ascii)
+    const revoSymbol: Maybe<RevoSymbol> = REVO_SYMBOLS
+        .find((revoSymbol: RevoSymbol): boolean => revoSymbol.ascii === ascii)
 
-    if (!symbol) {
+    if (!revoSymbol) {
         throw new Error(`No symbol found with ascii ${ascii}`)
     }
 
-    return symbol.unicode
+    return revoSymbol.unicode
 }
 
 export {

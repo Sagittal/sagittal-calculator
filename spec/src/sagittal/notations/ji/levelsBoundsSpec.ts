@@ -1,11 +1,15 @@
-import { Level, LEVELS_BOUNDS } from "../../../../../src/sagittal/notations/ji"
-import { computeLevelJiSymbolIds } from "../../../../../src/sagittal/notations/ji/levelsJiSymbolIds"
+import { JiNotationLevel, JI_NOTATION_LEVELS_BOUNDS } from "../../../../../src/sagittal/notations/ji"
+import { computeJiNotationLevelSymbolClassIds } from "../../../../../src/sagittal/notations/ji/levelSymbolClassIds"
 
-describe("LEVELS_BOUNDS", (): void => {
-    it("has the same number of bounds per level as the symbol ids", (): void => {
-        expect(LEVELS_BOUNDS[ Level.MEDIUM ].length).toBe(computeLevelJiSymbolIds(Level.MEDIUM).length)
-        expect(LEVELS_BOUNDS[ Level.HIGH ].length).toBe(computeLevelJiSymbolIds(Level.HIGH).length)
-        expect(LEVELS_BOUNDS[ Level.ULTRA ].length).toBe(computeLevelJiSymbolIds(Level.ULTRA).length)
-        expect(LEVELS_BOUNDS[ Level.EXTREME ].length).toBe(computeLevelJiSymbolIds(Level.EXTREME).length)
+describe("JI_NOTATION_LEVELS_BOUNDS", (): void => {
+    it("has the same number of bounds per JI notation level as the symbol class ids", (): void => {
+        expect(JI_NOTATION_LEVELS_BOUNDS[ JiNotationLevel.MEDIUM ].length)
+            .toBe(computeJiNotationLevelSymbolClassIds(JiNotationLevel.MEDIUM).length)
+        expect(JI_NOTATION_LEVELS_BOUNDS[ JiNotationLevel.HIGH ].length)
+            .toBe(computeJiNotationLevelSymbolClassIds(JiNotationLevel.HIGH).length)
+        expect(JI_NOTATION_LEVELS_BOUNDS[ JiNotationLevel.ULTRA ].length)
+            .toBe(computeJiNotationLevelSymbolClassIds(JiNotationLevel.ULTRA).length)
+        expect(JI_NOTATION_LEVELS_BOUNDS[ JiNotationLevel.EXTREME ].length)
+            .toBe(computeJiNotationLevelSymbolClassIds(JiNotationLevel.EXTREME).length)
     })
 })
