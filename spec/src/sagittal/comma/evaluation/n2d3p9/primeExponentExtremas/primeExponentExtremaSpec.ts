@@ -1,8 +1,8 @@
 import { Exponent, Extrema, Integer, Max, Numerator, Prime } from "../../../../../../../src/general"
 import { N2D3P9 } from "../../../../../../../src/sagittal"
-import { computePrimeExponentExtremaGivenMaxN2D3P3 } from "../../../../../../../src/sagittal/comma/evaluation/n2d3p9/primeExponentExtremas/primeExponentExtrema"
+import { computePrimeExponentExtremaGivenMaxN2D3P9 } from "../../../../../../../src/sagittal/comma/evaluation/n2d3p9/primeExponentExtremas/primeExponentExtrema"
 
-describe("computePrimeExponentExtremaGivenMaxN2D3P3", (): void => {
+describe("computePrimeExponentExtremaGivenMaxN2D3P9", (): void => {
     const prime = 5 as Prime
     const maxN2D3P9 = 5 as Max<N2D3P9>
     const numeratorPossibilitiesForDenominatorGivenMaxN2D3P9 = [
@@ -19,7 +19,7 @@ describe("computePrimeExponentExtremaGivenMaxN2D3P3", (): void => {
         const prime = 5 as Prime
         const maxN2D3P9 = 5 as Max<N2D3P9>
 
-        const actual = computePrimeExponentExtremaGivenMaxN2D3P3(
+        const actual = computePrimeExponentExtremaGivenMaxN2D3P9(
             prime,
             maxN2D3P9,
             numeratorPossibilitiesForDenominatorGivenMaxN2D3P9,
@@ -32,7 +32,7 @@ describe("computePrimeExponentExtremaGivenMaxN2D3P3", (): void => {
     it("when mirrored is true, returns the denominator as the negative of the numerator", (): void => {
 
 
-        const actual = computePrimeExponentExtremaGivenMaxN2D3P3(
+        const actual = computePrimeExponentExtremaGivenMaxN2D3P9(
             prime,
             maxN2D3P9,
             numeratorPossibilitiesForDenominatorGivenMaxN2D3P9,

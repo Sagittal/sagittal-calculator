@@ -2,15 +2,15 @@ import { Exponent, Integer, Max, Min, Numerator, Prime } from "../../../../../..
 import { Denominator } from "../../../../../../../../src/general/math"
 import { N2D3P9 } from "../../../../../../../../src/sagittal/comma/evaluation/n2d3p9"
 import {
-    computeMaxDenominatorPrimeExponentGivenMaxN2D3P3,
-    NumeratorPossibilityForDenominatorGivenMaxN2D3P3,
+    computeMaxDenominatorPrimeExponentGivenMaxN2D3P9,
+    NumeratorPossibilityForDenominatorGivenMaxN2D3P9,
 } from "../../../../../../../../src/sagittal/comma/evaluation/n2d3p9/primeExponentExtremas/denominator"
 import * as minN2D3P9
     from "../../../../../../../../src/sagittal/comma/evaluation/n2d3p9/primeExponentExtremas/denominator/minN2D3P9"
 import * as sortedNumeratorPossibilities
     from "../../../../../../../../src/sagittal/comma/evaluation/n2d3p9/primeExponentExtremas/denominator/sortedNumeratorPossibilities/sortedNumeratorPossibilities"
 
-describe("computeMaxDenominatorPrimeExponentGivenMaxN2D3P3", (): void => {
+describe("computeMaxDenominatorPrimeExponentGivenMaxN2D3P9", (): void => {
     it("returns the max exponent for a denominator prime given a max N2D3P9", (): void => {
         const denominatorPrime = 5 as Prime<Denominator>
         const maxN2D3P9 = 27 as Max<N2D3P9> // N2D3P9(49/25) = 26.47
@@ -31,9 +31,9 @@ describe("computeMaxDenominatorPrimeExponentGivenMaxN2D3P3", (): void => {
             { numerator: 47 as Numerator, gpf: 47 as Max<Prime> },
             { numerator: 49 as Numerator, gpf: 7 as Max<Prime> },
             // it actually goes on...
-        ] as NumeratorPossibilityForDenominatorGivenMaxN2D3P3[]
+        ] as NumeratorPossibilityForDenominatorGivenMaxN2D3P9[]
 
-        const actual = computeMaxDenominatorPrimeExponentGivenMaxN2D3P3(
+        const actual = computeMaxDenominatorPrimeExponentGivenMaxN2D3P9(
             denominatorPrime,
             maxN2D3P9,
             numeratorPossibilitiesForDenominatorGivenMaxN2D3P9,
@@ -73,7 +73,7 @@ describe("computeMaxDenominatorPrimeExponentGivenMaxN2D3P3", (): void => {
             10.3 as Min<N2D3P9>,
         )
 
-        const actual = computeMaxDenominatorPrimeExponentGivenMaxN2D3P3(
+        const actual = computeMaxDenominatorPrimeExponentGivenMaxN2D3P9(
             denominatorPrime,
             maxN2D3P9,
             numeratorPossibilitiesForDenominatorGivenMaxN2D3P9,

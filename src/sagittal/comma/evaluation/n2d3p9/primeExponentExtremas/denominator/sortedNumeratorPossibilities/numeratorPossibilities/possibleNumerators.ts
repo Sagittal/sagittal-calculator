@@ -1,9 +1,9 @@
 import { computeIsRoughInteger, FIVE_ROUGHNESS, Max, Numerator } from "../../../../../../../../general"
 import { N2D3P9 } from "../../../../types"
-import { computeMaxNumeratorGivenMaxN2D3P3 } from "./maxNumerator"
+import { computeMaxNumeratorGivenMaxN2D3P9 } from "./maxNumerator"
 
-const computePossibleNumeratorsGivenMaxN2D3P3 = (maxN2D3P9: Max<N2D3P9>): Numerator[] => {
-    const maxNumerator = computeMaxNumeratorGivenMaxN2D3P3(maxN2D3P9)
+const computePossibleNumeratorsGivenMaxN2D3P9 = (maxN2D3P9: Max<N2D3P9>): Numerator[] => {
+    const maxNumerator = computeMaxNumeratorGivenMaxN2D3P9(maxN2D3P9)
 
     const possibleNumerators = []
     let possibleNumerator = 7 as Numerator
@@ -19,5 +19,5 @@ const computePossibleNumeratorsGivenMaxN2D3P3 = (maxN2D3P9: Max<N2D3P9>): Numera
 }
 
 export {
-    computePossibleNumeratorsGivenMaxN2D3P3,
+    computePossibleNumeratorsGivenMaxN2D3P9,
 }

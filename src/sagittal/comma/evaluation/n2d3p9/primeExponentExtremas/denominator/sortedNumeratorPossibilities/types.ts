@@ -1,12 +1,12 @@
 import { Denominator, Prime } from "../../../../../../../general"
-import { NumeratorPossibilityForDenominatorGivenMaxN2D3P3 } from "./numeratorPossibilities"
+import { NumeratorPossibilityForDenominatorGivenMaxN2D3P9 } from "./numeratorPossibilities"
 
 type N2 = number & { _N2Brand: "N2" }
 type N2P = number & { _N2PBrand: "N2P" }
 
-type NumeratorPossibilityWithLesserGpfThanDenominatorPrime = NumeratorPossibilityForDenominatorGivenMaxN2D3P3 &
+type NumeratorPossibilityWithLesserGpfThanDenominatorPrime = NumeratorPossibilityForDenominatorGivenMaxN2D3P9 &
     { _WithLesserGpfThanDenominatorPrimeBrand: "WithLesserGpfThanDenominatorPrime" }
-type NumeratorPossibilityWithGreaterGpfThanDenominatorPrime = NumeratorPossibilityForDenominatorGivenMaxN2D3P3 &
+type NumeratorPossibilityWithGreaterGpfThanDenominatorPrime = NumeratorPossibilityForDenominatorGivenMaxN2D3P9 &
     { _WithGreaterGpfThanDenominatorPrimeBrand: "WithGreaterGpfThanDenominatorPrime" }
 
 interface SortedNumeratorPossibilityWithLesserGpfThanDenominatorPrimeIncludingN2
@@ -28,7 +28,7 @@ interface SortedNumeratorPossibilitiesForDenominatorPrimeGivenMaxN2D3P9 {
 
 interface SortedNumeratorPossibilitiesOptions {
     denominatorPrime: Prime<Denominator>,
-    numeratorPossibilitiesForDenominatorGivenMaxN2D3P3: NumeratorPossibilityForDenominatorGivenMaxN2D3P3[],
+    numeratorPossibilitiesForDenominatorGivenMaxN2D3P9: NumeratorPossibilityForDenominatorGivenMaxN2D3P9[],
 }
 
 export {

@@ -1,12 +1,12 @@
 import { Max, Numerator, Prime } from "../../../../../../../../../../src/general/math"
 import { N2D3P9 } from "../../../../../../../../../../src/sagittal/comma/evaluation/n2d3p9"
-import { computeNumeratorPossibilitiesForDenominatorGivenMaxN2D3P3 } from "../../../../../../../../../../src/sagittal/comma/evaluation/n2d3p9/primeExponentExtremas/denominator/sortedNumeratorPossibilities/numeratorPossibilities"
+import { computeNumeratorPossibilitiesForDenominatorGivenMaxN2D3P9 } from "../../../../../../../../../../src/sagittal/comma/evaluation/n2d3p9/primeExponentExtremas/denominator/sortedNumeratorPossibilities/numeratorPossibilities"
 
-describe("computeNumeratorPossibilitiesForDenominatorGivenMaxN2D3P3", (): void => {
+describe("computeNumeratorPossibilitiesForDenominatorGivenMaxN2D3P9", (): void => {
     it("returns the possibilities for the numerator (which will be used to calculate the possibilties for the denominator; hence starting at 7) given the max N2D3P9, along with their GPF", (): void => {
         const maxN2D3P9 = 6 as Max<N2D3P9>
 
-        const actual = computeNumeratorPossibilitiesForDenominatorGivenMaxN2D3P3(maxN2D3P9)
+        const actual = computeNumeratorPossibilitiesForDenominatorGivenMaxN2D3P9(maxN2D3P9)
 
         const expected = [
             { numerator: 7 as Numerator, gpf: 7 as Max<Prime> },

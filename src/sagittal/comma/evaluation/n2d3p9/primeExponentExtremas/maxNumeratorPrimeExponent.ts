@@ -1,7 +1,7 @@
 import { Base, Exponent, floor, Integer, log, Max, Numerator, Power, Prime } from "../../../../../general"
 import { N2D3P9 } from "../types"
 
-const computeMaxNumeratorPrimeExponentGivenMaxN2D3P3 = (
+const computeMaxNumeratorPrimeExponentGivenMaxN2D3P9 = (
     numeratorPrime: Prime<Numerator>,
     maxN2D3P9: Max<N2D3P9>,
 ): Max<Integer & Exponent<Prime<Numerator>>> => {
@@ -18,5 +18,5 @@ const computeMaxNumeratorPrimeExponentGivenMaxN2D3P3 = (
 }
 
 export {
-    computeMaxNumeratorPrimeExponentGivenMaxN2D3P3,
+    computeMaxNumeratorPrimeExponentGivenMaxN2D3P9,
 }
