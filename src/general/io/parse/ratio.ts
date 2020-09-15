@@ -1,6 +1,7 @@
-import { Denominator, FractionalPart, parseInteger, Ratio } from "../math"
-import { BLANK, SUPERSCRIPT_NUMS } from "./constants"
-import { Char, Formatted } from "./types"
+import { Denominator, FractionalPart, parseInteger, Ratio } from "../../math"
+import { BLANK, SUPERSCRIPT_NUMS } from "../constants"
+import { Formatted } from "../format"
+import { Char } from "../types"
 
 const superscriptNums = ["⁰", "¹", "²", "³", "⁴", "⁵", "⁶", "⁷", "⁸", "⁹"].join()
 

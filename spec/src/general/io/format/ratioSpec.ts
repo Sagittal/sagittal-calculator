@@ -1,5 +1,5 @@
-import { Ratio } from "../../../../src/general"
-import { formatRatio } from "../../../../src/general/io"
+import { Ratio } from "../../../../../src/general"
+import { formatRatio } from "../../../../../src/general/io"
 
 describe("formatRatio", (): void => {
     it("it shows it with a slash", (): void => {

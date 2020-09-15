@@ -1,4 +1,4 @@
-import { computeSuperRatio, Ratio } from "../math"
+import { computeSuperRatio, Ratio } from "../../math"
 import { Formatted } from "./types"
 
 const formatRatio = <T extends Ratio>(

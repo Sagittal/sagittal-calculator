@@ -1,4 +1,4 @@
-import { Formatted, parseRatio, Ratio } from "../../../../src/general"
+import { Formatted, parseRatio, Ratio } from "../../../../../src/general"
 
 describe("parseRatio", (): void => {
     it("works for directed ratios", (): void => {

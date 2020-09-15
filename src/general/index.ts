@@ -78,6 +78,7 @@ export {
     TAB,
     Table,
     splitColumnTitlesIntoRowsBySpaces,
+    time,
 } from "./io"
 export {
     abs,

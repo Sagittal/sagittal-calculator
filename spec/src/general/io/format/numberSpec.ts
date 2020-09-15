@@ -1,4 +1,4 @@
-import { formatNumber } from "../../../../src/general/io"
+import { formatNumber } from "../../../../../src/general/io"
 
 describe("formatNumber", (): void => {
     it("always shows 3 decimal places", (): void => {

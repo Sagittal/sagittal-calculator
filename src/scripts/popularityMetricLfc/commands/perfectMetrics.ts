@@ -1,13 +1,10 @@
-import { program } from "commander"
-import { CommandFlag, Filename, formatTime, Io, LogTarget, now, saveLog, subtract } from "../../../general"
+import { Filename, Io, ioSettings, LogTarget, saveLog, time } from "../../../general"
 import { Metric } from "../bestMetric"
 import { DEFAULT_MAX_UNIT_WHEN_PERFECTING } from "../constants"
 import { popularityMetricLfcScriptGroupSettings } from "../globals"
 import { perfectMetrics } from "../perfecter"
 import { formatBestMetrics } from "../solver"
 import { applySharedPopularityMetricLfcCommandSetup, load } from "./shared"
-
-program.option(`-${CommandFlag.NO_TIME}, --no-time`, "no time")
 
 const defaultLogTargets = [
     LogTarget.PERFECT,
@@ -19,20 +16,16 @@ const defaultLogTargets = [
 ]
 applySharedPopularityMetricLfcCommandSetup({ defaultLogTargets })
 
-const time = !!program.time
-
 popularityMetricLfcScriptGroupSettings.maxUnit = DEFAULT_MAX_UNIT_WHEN_PERFECTING
 
 const bestMetricsToBePerfected = load("metrics" as Filename) as Record<string, Metric>
 
-const startTime = now()
 perfectMetrics(Object.values(bestMetricsToBePerfected)).then((): void => {
     saveLog(`\n\nTHE PERFECTED METRICS ARE ${formatBestMetrics()}` as Io, LogTarget.FINAL_PERFECTER_RESULTS)
 
-    const endTime = now()
-    if (time) {
+    if (ioSettings.time) {
         saveLog(
-            `\n\nPERFECTING METRICS TOOK ${formatTime(subtract(endTime, startTime))}` as Io,
+            `\n\nPERFECTING METRICS TOOK ${time()}` as Io,
             LogTarget.FINAL_PERFECTER_RESULTS,
         )
     }

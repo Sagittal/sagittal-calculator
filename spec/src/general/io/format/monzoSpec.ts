@@ -1,5 +1,5 @@
-import { Monzo } from "../../../../src/general"
-import { formatMonzo } from "../../../../src/general/io"
+import { Monzo } from "../../../../../src/general"
+import { formatMonzo } from "../../../../../src/general/io"
 
 describe("formatMonzo", (): void => {
     it("formats it correctly, with enough space that 2-digit negative exponents will line up", (): void => {

@@ -1,6 +1,7 @@
-import { indexOfFinalElement } from "../code"
-import { Exponent, Monzo, NumericTypeParameters, PotentiallyNonintegerMonzoParameter, Prime } from "../math"
-import { Formatted, Io } from "./types"
+import { indexOfFinalElement } from "../../code"
+import { Exponent, Monzo, NumericTypeParameters, PotentiallyNonintegerMonzoParameter, Prime } from "../../math"
+import { Io } from "../types"
+import { Formatted } from "./types"
 
 const spaceTerm = (term: Exponent<Prime>): Io => {
     let termText = term.toString()

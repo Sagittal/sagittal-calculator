@@ -1,4 +1,4 @@
-import { Integer } from "../math"
+import { Integer } from "../../math"
 import { alignFormattedNumber } from "./alignFormattedNumber"
 import { Formatted } from "./types"
 

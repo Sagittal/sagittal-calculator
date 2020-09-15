@@ -15,8 +15,6 @@ describe("find-commas", (): void => {
          --max-prime-limit 37       \
          --max-2-3-free-sopfr 58    \
          --max-aas 3                \
-         --no-color                 \
-         --no-write                 \
         ` as Io
 
         const actual = runCommandAndGetConsoleOutput(command)

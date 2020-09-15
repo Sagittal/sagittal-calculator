@@ -1,5 +1,5 @@
-import { computeJiPitchRatio, TwoThreeFreeClass } from "../music"
-import { formatRatio } from "./formatRatio"
+import { computeJiPitchRatio, TwoThreeFreeClass } from "../../music"
+import { formatRatio } from "./ratio"
 import { Formatted } from "./types"
 
 const format23FreeClass = (twoThreeFreeClass: TwoThreeFreeClass): Formatted<TwoThreeFreeClass> => {

@@ -1,4 +1,4 @@
-export { alignFormattedNumber } from "./alignFormattedNumber"
+export { ioSettings } from "./globals"
 export { colorize } from "./colorize"
 export { CommandFlag, parseCommands } from "./command"
 export {
@@ -11,20 +11,22 @@ export {
     SUPERSCRIPT_NUMS,
     TAB,
 } from "./constants"
-export { formatInteger } from "./formatInteger"
-export { formatMonzo } from "./formatMonzo"
-export { formatNumber } from "./formatNumber"
-export { format23FreeClass } from "./format23FreeClass"
-export { formatRatio } from "./formatRatio"
-export { ioSettings } from "./globals"
 export { clearLogFiles, LogTarget, saveLog, setLogTargets } from "./log"
-export { parse23FreeClass } from "./parse23FreeClass"
-export { parseMonzo } from "./parseMonzo"
-export { parseRatio } from "./parseRatio"
+export { parse23FreeClass, parseMonzo, parseRatio } from "./parse"
 export { removeColor } from "./removeColor"
 export { stringify } from "./stringify"
 export { Column, formatTable, Row, Table, splitColumnTitlesIntoRowsBySpaces } from "./table"
-export { formatTime } from "./time"
 export { addTexts, join } from "./typedOperations"
-export { ColorMethod, Filename, Formatted, HexColor, Io } from "./types"
+export { ColorMethod, Filename, HexColor, Io } from "./types"
 export { Basis, computePx, Px, Scale } from "./visualize"
+export {
+    alignFormattedNumber,
+    formatInteger,
+    formatMonzo,
+    formatNumber,
+    format23FreeClass,
+    formatRatio,
+    formatTime,
+    Formatted,
+} from "./format"
+export { time } from "./time"

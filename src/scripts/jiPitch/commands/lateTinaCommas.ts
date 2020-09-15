@@ -1,4 +1,4 @@
-import { Io, isUndefined, LogTarget, Max, Prime, saveLog, Sopfr, stringify } from "../../../general"
+import { Io, ioSettings, isUndefined, LogTarget, Max, Prime, saveLog, Sopfr, stringify, time } from "../../../general"
 import { CommaAnalysis } from "../../../sagittal"
 import { computeCommas } from "../commas"
 import { LIMITLESS_2_3_FREE_COPFR, LIMITLESS_N2D3P9, TINA_COMMAS_MAX_CENTS, TINA_COMMAS_MIN_CENTS } from "../constants"
@@ -55,3 +55,5 @@ commaAnalysesSortedByTinaEntries.forEach(([tina, tinaCommaAnalyses]: [string, Co
         }
     }
 })
+
+if (ioSettings.time) saveLog(`\ntook ${time()}` as Io, LogTarget.ALL)

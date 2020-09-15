@@ -1,6 +1,6 @@
-import { round } from "../math"
+import { round } from "../../math"
+import { IO_PRECISION } from "../constants"
 import { alignFormattedNumber } from "./alignFormattedNumber"
-import { IO_PRECISION } from "./constants"
 import { Formatted } from "./types"
 
 const formatNumber = <T extends number>(number: T): Formatted<T> =>

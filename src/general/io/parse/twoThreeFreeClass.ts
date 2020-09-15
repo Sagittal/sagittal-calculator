@@ -1,7 +1,7 @@
-import { computeMonzoFromRatio, Direction, Monzo, Ratio } from "../math"
-import { TwoThreeFreeClass } from "../music"
-import { parseRatio } from "./parseRatio"
-import { Formatted } from "./types"
+import { computeMonzoFromRatio, Direction, Monzo, Ratio } from "../../math"
+import { TwoThreeFreeClass } from "../../music"
+import { Formatted } from "../format"
+import { parseRatio } from "./ratio"
 
 const parse23FreeClass = (formatted23FreeClass: Formatted<TwoThreeFreeClass>): TwoThreeFreeClass => {
     const parsed23FreeClass = parseRatio(formatted23FreeClass as Formatted as Formatted<Ratio>)

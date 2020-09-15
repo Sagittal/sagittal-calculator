@@ -5,7 +5,7 @@ import { runCommandAndGetConsoleOutput } from "../../../../helpers/src/scripts/r
 describe("solve-best-metrics-for-chunk-count", (): void => {
     it("finds the best metric for the given chunk count", (): void => {
         onlyRunInCi()
-        const command = "npm run solve-best-metrics-for-chunk-count 1 -- --no-color --no-time --no-write" as Io
+        const command = "npm run solve-best-metrics-for-chunk-count 1" as Io
 
         const actual = runCommandAndGetConsoleOutput(command)
 

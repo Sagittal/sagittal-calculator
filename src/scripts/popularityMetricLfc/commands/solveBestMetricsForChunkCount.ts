@@ -1,14 +1,11 @@
 import { program } from "commander"
-import { CommandFlag, Count, formatTime, Io, LogTarget, now, parseInteger, saveLog, subtract } from "../../../general"
+import { Count, Io, ioSettings, LogTarget, parseInteger, saveLog, time } from "../../../general"
 import { popularityMetricLfcScriptGroupSettings, solverStatus } from "../globals"
 import { Chunk, formatBestMetrics, populateAndSearchScopesAndPerfectMetrics } from "../solver"
 import { applySharedPopularityMetricLfcCommandSetup } from "./shared"
 
 // TODO: BRING BACK ASYNC probably I should review the commit where I temporarily ripped out all of the async stuff
 //  and make a commit where I make it possible to switch between them
-
-// TODO: this "time" options should be extracted to the general io settings, and also be by default in test turned off
-program.option(`-${CommandFlag.NO_TIME}, --no-time`, "no time")
 
 const defaultLogTargets = [
     LogTarget.SEARCH,
@@ -19,16 +16,12 @@ applySharedPopularityMetricLfcCommandSetup({ defaultLogTargets })
 
 solverStatus.chunkCount = parseInteger(program.args[ 0 ]) as Count<Chunk>
 
-const time = !!program.time
-
-const startTime = now()
 populateAndSearchScopesAndPerfectMetrics().then((): void => {
     saveLog(`\n\nAND THE BEST METRICS WERE ${formatBestMetrics()}` as Io, LogTarget.FINAL_SOLVER_RESULTS)
 
-    const endTime = now()
-    if (time) {
+    if (ioSettings.time) {
         saveLog(
-            `\n\nFINDING BEST METRICS TOOK ${formatTime(subtract(endTime, startTime))}` as Io,
+            `\n\nFINDING BEST METRICS TOOK ${time()}` as Io,
             LogTarget.FINAL_SOLVER_RESULTS,
         )
     }

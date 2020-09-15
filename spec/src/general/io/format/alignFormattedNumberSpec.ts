@@ -1,4 +1,4 @@
-import { alignFormattedNumber, Formatted } from "../../../../src/general/io"
+import { alignFormattedNumber, Formatted } from "../../../../../src/general/io"
 
 describe("alignFormattedNumber", (): void => {
     it("shifts over numbers so that the decimal places align", (): void => {

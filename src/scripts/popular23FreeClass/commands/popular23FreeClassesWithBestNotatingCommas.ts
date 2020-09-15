@@ -1,5 +1,5 @@
 import { program } from "commander"
-import { CommandFlag, Filename, Io, ioSettings, LogTarget, parseCommands, saveLog } from "../../../general"
+import { CommandFlag, Filename, Io, ioSettings, LogTarget, parseCommands, saveLog, time } from "../../../general"
 import { ScriptGroup } from "../../types"
 import { DEFAULT_MAX_N2D3P9_FOR_POPULAR_TWO_THREE_FREE_CLASSES } from "../constants"
 import { popular23FreeClassesScriptGroupSettings } from "../globals"
@@ -29,3 +29,5 @@ const popular23FreeClassesWithBestNotatingCommasOutput: Io = computePopular23Fre
     maxN2D3P9,
 )
 saveLog(popular23FreeClassesWithBestNotatingCommasOutput, LogTarget.ALL)
+
+if (ioSettings.time) saveLog(`\ntook ${time()}` as Io, LogTarget.ALL)

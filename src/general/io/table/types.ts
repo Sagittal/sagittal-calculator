@@ -1,6 +1,7 @@
 import { Maybe } from "../../code"
 import { Count } from "../../types"
-import { ColorMethod, Formatted } from "../types"
+import { Formatted } from "../format"
+import { ColorMethod } from "../types"
 
 enum Justification {
     LEFT = "left",
