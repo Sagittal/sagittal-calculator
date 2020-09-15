@@ -59,7 +59,3 @@ export {
     getRepresentativeSymbol,
 } from "./notations"
 export { APOTOME_CENTS } from "./constants"
-
-// TODO: I think it is time to turn on noImplicitAny
-
-// TODO: I think it is time to turn on noMagicNumbers

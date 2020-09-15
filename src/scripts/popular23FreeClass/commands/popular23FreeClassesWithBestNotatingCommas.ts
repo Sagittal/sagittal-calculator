@@ -22,6 +22,7 @@ const popular23FreeClassesWithBestNotatingCommas =
 
 // TODO: obviously there's a horrendous amount of duplication being introduced in this commit
 //  between the "with best notating commas" or not versions of everything
+//  and you should increase the unit test coverage when you get to that
 
 const popular23FreeClassesWithBestNotatingCommasOutput: Io = computePopular23FreeClassesWithBestNotatingCommasOutput(
     popular23FreeClassesWithBestNotatingCommas,

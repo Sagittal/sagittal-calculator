@@ -22,12 +22,19 @@ type SagittalComma<T extends "Maybe" | void = void> = Comma & { monzo: Monzo } &
     )
 
 interface SymbolClass {
-    elements: SymbolLongAscii[],    // should this be an array of references to other objects instead of hardcoded?
+    // TODO: should this be an array of references to other objects instead of hardcoded?
+    //  probably, yes. but you should review how Dave thinks of symbols and elements before you do so
+    //  because all I can remember right now is that your intuitions were a bit off
+    elements: SymbolLongAscii[],
     id: Id<SymbolClass>,
     primaryCommaId: Id<SagittalComma>,
-    smallestSymbolSubset: SymbolSubset,     // TODO: perhaps this should be stored outside of here, other way around
+    // TODO: perhaps this should be stored outside of here, other way around
+    //  but how exactly would that work
+    smallestSymbolSubset: SymbolSubset,
     // TODO: should anything contain an "apotome complement" on it? or just a helper method to get it
     //  (along with a fun test to prove that they have the same apotome slope)
+    //  perhaps it should just be hardcoded as id reference
+    //  and you should have a test to prove their primary commas sum to an apotome
 }
 
 interface RevoSymbol {
@@ -36,7 +43,8 @@ interface RevoSymbol {
     unicode: SymbolUnicode,
     symbolClassId: Id<SymbolClass>,
     direction: Direction,
-    apotomeCount: Count<Apotome>,   // so if apotome count is 1 but direction is sub, then it's a down symb + a sharp
+    // so if apotome count is 1 but direction is sub, then it's a down symb + a sharp
+    apotomeCount: Count<Apotome>,
 }
 
 export {
