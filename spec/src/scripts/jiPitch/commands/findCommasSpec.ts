@@ -22,6 +22,7 @@ describe("find-commas", (): void => {
         const actual = runCommandAndGetConsoleOutput(command)
 
         const expected = [
+            "",
             "cents range:       \t 30.000 -  30.500",
             "max ATE:           \t  2    ",
             "max AAS:           \t  3.000",
@@ -45,6 +46,7 @@ describe("find-commas", (): void => {
         const actual = runCommandAndGetConsoleOutput(command)
 
         const expected = [
+            "",
             "cents range:       \t 50.000 -  50.310",
             "max ATE:           \t 15    ",
             "max AAS:           \t 14.000",
@@ -71,6 +73,7 @@ describe("find-commas", (): void => {
         const actual = runCommandAndGetConsoleOutput(command)
 
         const expected = [
+            "",
             "cents range:       \t 50.000 -  50.310",
             "max ATE:           \t 15    ",
             "max AAS:           \t 14.000",
