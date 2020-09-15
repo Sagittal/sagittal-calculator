@@ -30,7 +30,7 @@ import {
     N2D3P9,
 } from "../../sagittal"
 import { popular23FreeClassesScriptGroupSettings } from "./globals"
-import { Popular23FreeClassWithBestNotatingComma } from "./types"
+import { Popular23FreeClassAnalysisWithBestNotatingComma } from "./types"
 
 const isLate = (notatingComma: Comma, bestNotatingComma: Comma): boolean => {
     const notatingCommaMonzo = computeJiPitchMonzo(notatingComma)
@@ -47,9 +47,9 @@ const isLaas = (notatingComma: Comma, bestNotatingComma: Comma): boolean => {
     return abs(computeApotomeSlope(notatingComma)) < abs(computeApotomeSlope(bestNotatingComma))
 }
 
-const computePopular23FreeClassWithBestNotatingComma = (
+const analyzePopular23FreeClassWithBestNotatingComma = (
     { twoThreeFreeClass, n2d3p9 }: { twoThreeFreeClass: TwoThreeFreeClass, n2d3p9: N2D3P9 },
-): Popular23FreeClassWithBestNotatingComma => {
+): Popular23FreeClassAnalysisWithBestNotatingComma => {
     const formattedN2D3P9 = formatNumber(n2d3p9)
 
     const formatted23FreeClass: Formatted<TwoThreeFreeClass> = format23FreeClass(twoThreeFreeClass)
@@ -98,5 +98,5 @@ const computePopular23FreeClassWithBestNotatingComma = (
 }
 
 export {
-    computePopular23FreeClassWithBestNotatingComma,
+    analyzePopular23FreeClassWithBestNotatingComma,
 }

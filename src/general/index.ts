@@ -79,6 +79,7 @@ export {
     Table,
     splitColumnTitlesIntoRowsBySpaces,
     time,
+    readLines,
 } from "./io"
 export {
     abs,

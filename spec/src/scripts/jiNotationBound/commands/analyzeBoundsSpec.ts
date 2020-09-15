@@ -1,5 +1,5 @@
-import * as fs from "fs"
-import { Io } from "../../../../../src/general"
+import { Filename, Io } from "../../../../../src/general"
+import { readLines } from "../../../../../src/general/io"
 import { onlyRunInCi } from "../../../../helpers/onlyRunInCi"
 import { runCommandAndGetConsoleOutput } from "../../../../helpers/src/scripts/runCommand"
 
@@ -9,10 +9,7 @@ describe("analyze-ji-notation-bounds", (): void => {
 
         const actual = runCommandAndGetConsoleOutput("npm run analyze-ji-notation-bounds" as Io)
 
-        const expected = fs.readFileSync(
-            "src/scripts/jiNotationBound/results/boundsTerminalAndImage.txt",
-            { encoding: "utf8" },
-        ).split("\n") as Io[]
+        const expected = readLines("src/scripts/jiNotationBound/results/boundsTerminalAndImage.txt" as Filename)
         expected.pop()
         expect(actual).toEqual(expected)
     })

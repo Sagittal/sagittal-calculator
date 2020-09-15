@@ -23,11 +23,11 @@ import {
     SYMBOL_SUBSETS_USED_IN_JI_NOTATION_SORTED_BY_ASCENDING_SYMBOL_COUNT,
 } from "../../sagittal"
 import { computeExactlyNotatingJiNotationSymbolClassIds } from "./exactlyNotatingJiNotationSymbolClassIds"
-import { Popular23FreeClass } from "./types"
+import { Popular23FreeClassAnalysis } from "./types"
 
-const computePopular23FreeClass = (
+const analyzePopular23FreeClass = (
     { twoThreeFreeClass, n2d3p9 }: { twoThreeFreeClass: TwoThreeFreeClass, n2d3p9: N2D3P9 },
-): Popular23FreeClass => {
+): Popular23FreeClassAnalysis => {
     const formattedN2D3P9 = formatNumber(n2d3p9)
 
     const formatted23FreeClass = format23FreeClass(twoThreeFreeClass)
@@ -61,5 +61,5 @@ const computePopular23FreeClass = (
 }
 
 export {
-    computePopular23FreeClass,
+    analyzePopular23FreeClass,
 }

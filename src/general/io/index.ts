@@ -30,3 +30,4 @@ export {
     Formatted,
 } from "./format"
 export { time } from "./time"
+export { readLines } from "./lines"

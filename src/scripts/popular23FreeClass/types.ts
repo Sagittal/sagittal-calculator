@@ -1,7 +1,7 @@
 import { Cents, Formatted, Io, Monzo, Popularity, Rank, TwoThreeFreeClass, Votes } from "../../general"
 import { N2D3P9 } from "../../sagittal"
 
-interface SharedPopular23FreeClassProperties {
+interface SharedPopular23FreeClassAnalysisProperties {
     n2d3p9: N2D3P9,
     formatted23FreeClass: Formatted<TwoThreeFreeClass>,
     formattedN2D3P9: Formatted<N2D3P9>,
@@ -9,18 +9,18 @@ interface SharedPopular23FreeClassProperties {
     popularityRank: Rank<Popularity> | Io,
 }
 
-interface Popular23FreeClass extends SharedPopular23FreeClassProperties {
+interface Popular23FreeClassAnalysis extends SharedPopular23FreeClassAnalysisProperties {
     symbolSubsets: Io,
     formattedExactlyNotatingJiNotationSymbolClasses: Io,
 }
 
-interface Popular23FreeClassWithBestNotatingComma extends SharedPopular23FreeClassProperties {
+interface Popular23FreeClassAnalysisWithBestNotatingComma extends SharedPopular23FreeClassAnalysisProperties {
     centsOfBestNotatingComma: Formatted<Cents>,
     monzoOfBestNotatingComma: Formatted<Monzo>,
     maybeSymbolForBestNotatingComma: Io,
 }
 
 export {
-    Popular23FreeClass,
-    Popular23FreeClassWithBestNotatingComma,
+    Popular23FreeClassAnalysis,
+    Popular23FreeClassAnalysisWithBestNotatingComma,
 }

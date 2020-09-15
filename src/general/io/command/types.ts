@@ -14,7 +14,7 @@ enum CommandFlag {
     // "h" reserved for help
     INTEGER = "i",
     MAX_UNIT = "j",
-    KNOWN_POPULAR_TWO_THREE_FREE_CLASSES = "k",
+    USE_KNOWN_POPULAR_TWO_THREE_FREE_CLASSES = "k",
     MIN_CENTS = "l",
     MONZO = "m",
     MAX_N2D3P9 = "n",

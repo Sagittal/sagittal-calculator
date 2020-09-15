@@ -1,6 +1,6 @@
 // tslint:disable max-line-length
 
-import { Io } from "../../../../../src/general/io"
+import { Filename, Io, readLines } from "../../../../../src/general/io"
 import { onlyRunInCi } from "../../../../helpers/onlyRunInCi"
 import { runCommandAndGetConsoleOutput } from "../../../../helpers/src/scripts/runCommand"
 
@@ -186,6 +186,17 @@ describe("popular-2-3-free-classes", (): void => {
             "[/table]",
             "",
         ] as Io[]
+        expect(actual).toEqual(expected)
+    })
+
+    it("can use a list of already known popular 2,3-free classes, rather than recalculate them all", (): void => {
+        onlyRunInCi()
+
+        const command = "npm run popular-2-3-free-classes -- --use-known" as Io
+
+        const actual = runCommandAndGetConsoleOutput(command)
+
+        const expected = readLines("src/scripts/popular23FreeClass/results/popular23FreeClasses.txt" as Filename)
         expect(actual).toEqual(expected)
     })
 })

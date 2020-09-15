@@ -1,5 +1,5 @@
 import { Io, Row, splitColumnTitlesIntoRowsBySpaces } from "../../../general"
-import { Popular23FreeClass } from "../types"
+import { Popular23FreeClassAnalysis } from "../types"
 
 const POPULAR_TWO_THREE_FREE_CLASSES_COLUMN_TITLES: Io[] = [
     "2,3- free class",
@@ -19,10 +19,10 @@ const BEST_NOTATING_COMMA_COLUMN_TITLES: Io[] = [
     "best notating comma symbol",
 ] as Io[]
 
-const computePopular23FreeClassesHeaderRows = (): Array<Row<{ of: Popular23FreeClass, header: true }>> =>
+const computePopular23FreeClassesHeaderRows = (): Array<Row<{ of: Popular23FreeClassAnalysis, header: true }>> =>
     splitColumnTitlesIntoRowsBySpaces(POPULAR_TWO_THREE_FREE_CLASSES_COLUMN_TITLES)
 
-const computeBestNotatingCommaHeaderRows = (): Array<Row<{ of: Popular23FreeClass, header: true }>> =>
+const computeBestNotatingCommaHeaderRows = (): Array<Row<{ of: Popular23FreeClassAnalysis, header: true }>> =>
     splitColumnTitlesIntoRowsBySpaces(BEST_NOTATING_COMMA_COLUMN_TITLES)
 
 export {

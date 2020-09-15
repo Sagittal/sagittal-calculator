@@ -5,6 +5,7 @@ const DEFAULT_MAX_N2D3P9_FOR_POPULAR_TWO_THREE_FREE_CLASSES = 136 as Max<N2D3P9>
 
 const INITIAL_POPULAR_TWO_THREE_FREE_CLASSES_SCRIPT_GROUP_SETTINGS = {
     useLate: false,
+    useKnown: false,
 }
 
 export {

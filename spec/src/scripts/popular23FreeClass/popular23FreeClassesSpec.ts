@@ -1,7 +1,7 @@
 import { Max, Ranked } from "../../../../src/general"
 import { N2D3P9 } from "../../../../src/sagittal/comma/evaluation/n2d3p9"
 import { computePopular23FreeClasses } from "../../../../src/scripts/popular23FreeClass/popular23FreeClasses"
-import { Popular23FreeClass } from "../../../../src/scripts/popular23FreeClass/types"
+import { Popular23FreeClassAnalysis } from "../../../../src/scripts/popular23FreeClass/types"
 
 describe("computePopular23FreeClasses", (): void => {
     it(
@@ -62,7 +62,7 @@ describe("computePopular23FreeClasses", (): void => {
                     symbolSubsets: "0, 3",
                     rank: 5,
                 },
-            ] as Array<Ranked<Popular23FreeClass>>
+            ] as Array<Ranked<Popular23FreeClassAnalysis>>
             expect(actual).toBeCloseToObject(expected)
         },
     )
