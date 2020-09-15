@@ -35,32 +35,28 @@ const readJiPitchOptions = (): void => {
             "comma name",
             (integerText: string): Integer => parseInteger(integerText),
         )
-        .option(
-            `-${CommandFlag.SUPPRESS_AUTOMATIC_ADJUSTING_OF_NOTATING_COMMA_FILTERS}, --suppress-automatic-adjusting-of-notating-comma-filters`,
-            "suppress automatic adjusting of notating comma filters",
-        )
 }
 
-const readTwoThreeFreeClassOptions = (): void => {
+const readFindCommasOptions = (): void => {
     program
-        .option(
-            `-${CommandFlag.PRIME_LIMIT}, --max-prime-limit <maxPrimeLimit>`,
-            "max prime limit",
-            parseInt,
-        )
+        .option(`-${CommandFlag.MIN_CENTS}, --min-cents <minCents>`, "min cents", parseFloat)
+        .option(`-${CommandFlag.MAX_CENTS}, --max-cents <maxCents>`, "max cents", parseFloat)
+        .option(`-${CommandFlag.MAX_AAS}, --max-aas <maxAas>`, "max AAS", parseFloat)
+        .option(`-${CommandFlag.MAX_ATE}, --max-ate <maxAte>`, "max ATE", parseInt)
+        .option(`-${CommandFlag.PRIME_LIMIT}, --max-prime-limit <maxPrimeLimit>`, "max prime limit", parseInt)
         .option(
             `-${CommandFlag.MAX_2_3_FREE_SOPFR}, --max-2-3-free-sopfr <max23FreeSopfr>`,
             "max 2,3-free sopfr",
-            parseInt,
-        )
+            parseInt)
         .option(
             `-${CommandFlag.MAX_2_3_FREE_COPFR}, --max-2-3-free-copfr <max23FreeCopfr>`,
             "max 2,3-free copfr",
-            parseInt,
+            parseInt
         )
+        .option(`-${CommandFlag.MAX_N2D3P9}, --max-n2d3p9 <maxN2d3p9>`, "max n2d3p9", parseFloat)
 }
 
 export {
     readJiPitchOptions,
-    readTwoThreeFreeClassOptions,
+    readFindCommasOptions,
 }

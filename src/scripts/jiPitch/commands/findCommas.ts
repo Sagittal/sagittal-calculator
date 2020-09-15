@@ -4,20 +4,19 @@ import { computeCommas } from "../commas"
 import { jiPitchScriptGroupSettings } from "../globals"
 import {
     computeFindCommasTable,
-    format23FreeClassSettings,
-    formatSettings,
-    parse23FreeClassSettings,
-    readTwoThreeFreeClassOptions,
+    formatFindCommasOptions,
+    parseFindCommasOptions,
+    readFindCommasOptions,
 } from "../io"
 import { applySharedPitchCommandSetup } from "./shared"
 
-readTwoThreeFreeClassOptions()
+readFindCommasOptions()
 
 applySharedPitchCommandSetup()
 
-const twoThreeFreeClassSettings = parse23FreeClassSettings()
+const findCommasOptions = parseFindCommasOptions()
 
-const commas = computeCommas({ ...jiPitchScriptGroupSettings, ...twoThreeFreeClassSettings })
+const commas = computeCommas({ ...jiPitchScriptGroupSettings, ...findCommasOptions })
 
 const commasWithMaybeSagittalSymbolClassIds = commas.map(addMaybeJiNotationSymbolClassId)
 const commaAnalyses = commasWithMaybeSagittalSymbolClassIds.map((comma: Comma): CommaAnalysis => {
@@ -27,7 +26,6 @@ if (jiPitchScriptGroupSettings.sortKey) {
     sort(commaAnalyses, { by: jiPitchScriptGroupSettings.sortKey })
 }
 
-saveLog(addTexts(NEWLINE, formatSettings()), LogTarget.ALL)
-saveLog(addTexts(format23FreeClassSettings(twoThreeFreeClassSettings), NEWLINE), LogTarget.ALL)
+saveLog(formatFindCommasOptions(findCommasOptions), LogTarget.ALL)
 
 saveLog(computeFindCommasTable(commaAnalyses), LogTarget.ALL)

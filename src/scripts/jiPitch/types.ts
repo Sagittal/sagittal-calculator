@@ -5,7 +5,7 @@ type CommasOptions = CommasFrom23FreeMonzoOptions & FiveSlicedMonzosToCheckOptio
     sortKey: ObjectKey,
 }>
 
-type FiveSlicedMonzosToCheckOptions = Partial<TwoThreeFreeClassSettings & { maxN2D3P9: Max<N2D3P9> }>
+type FiveSlicedMonzosToCheckOptions = Partial<FindCommasOptions & { maxN2D3P9: Max<N2D3P9> }>
 
 type PrimeExponentRangeOptions = Partial<{
     max23FreeCopfr: Max<Copfr<{ rough: 5 }>>,
@@ -19,18 +19,18 @@ type TwoThreeFreePrimesToCheckOptions = Partial<{
     primeExponentExtremasGivenMaxN2D3P9: Array<Extrema<Integer & Exponent<Prime>>>,
 }>
 
-interface TwoThreeFreeClassSettings {
+interface FindCommasOptions {
+    maxN2D3P9: Max<N2D3P9>,
     max23FreeCopfr: Max<Copfr<{ rough: 5 }>>,
     max23FreeSopfr: Max<Sopfr<{ rough: 5 }>>,
     maxPrimeLimit: Max<Max<Prime>>,
-}
-
-interface JiPitchScriptGroupSettings {
     minCents: Min<Cents>,
     maxCents: Max<Cents>,
     maxAte: Max<Abs<3 & Integer & Exponent<Prime>>>,
     maxAas: Max<Abs<ApotomeSlope>>,
-    maxN2D3P9: Max<N2D3P9>,
+}
+
+interface JiPitchScriptGroupSettings {
     sortKey: ObjectKey,
     commaNameOptions: CommaNameOptions,
 }
@@ -40,6 +40,6 @@ export {
     CommasOptions,
     FiveSlicedMonzosToCheckOptions,
     PrimeExponentRangeOptions,
-    TwoThreeFreeClassSettings,
+    FindCommasOptions,
     JiPitchScriptGroupSettings,
 }

@@ -1,11 +1,11 @@
 import { CentsPosition } from "../../../general"
-import { MAX_SINGLE_SHAFT_CENTS, SIZE_CATEGORY_BOUNDS } from "../../../sagittal"
+import { MAX_SYMBOL_CLASS_CENTS, SIZE_CATEGORY_BOUNDS } from "../../../sagittal"
 
 const computeSizeCategoryBoundsWithinMaximumPosition = (): CentsPosition[] =>
     SIZE_CATEGORY_BOUNDS.slice(
         0,
         SIZE_CATEGORY_BOUNDS.findIndex(
-            (sizeCategoryBound: CentsPosition): boolean => sizeCategoryBound.cents === MAX_SINGLE_SHAFT_CENTS) + 1,
+            (sizeCategoryBound: CentsPosition): boolean => sizeCategoryBound.cents === MAX_SYMBOL_CLASS_CENTS) + 1,
     )
 
 export {

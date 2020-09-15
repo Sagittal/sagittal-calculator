@@ -1,5 +1,5 @@
 import { Cents } from "../../../general"
-import { JiNotationBound, MAX_SINGLE_SHAFT_CENTS } from "../../../sagittal"
+import { JiNotationBound, MAX_SYMBOL_CLASS_CENTS } from "../../../sagittal"
 import { computeBoundedSymbolClassPositions } from "../boundedPositions"
 
 const computeInitialPosition = (jiNotationBound: JiNotationBound): Cents => {
@@ -10,7 +10,7 @@ const computeInitialPosition = (jiNotationBound: JiNotationBound): Cents => {
 
     return greaterBoundedCommaPosition ?
         (lesserBoundedCommaPosition + greaterBoundedCommaPosition) / 2 as Cents :
-        MAX_SINGLE_SHAFT_CENTS
+        MAX_SYMBOL_CLASS_CENTS
 }
 
 export {

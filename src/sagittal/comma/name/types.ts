@@ -65,7 +65,7 @@ type CommaNameOptions = Partial<{
     abbreviated: boolean
 }>
 
-// Note: this ratio does not stipulate being super,
+// This ratio does not stipulate being super,
 // which is maybe an argument for us not going with directed comma names after all.
 // i.e. if a comma's 2,3-free class was just part of its name, that might be nice.
 // Do we know whether it's possible for in a size category to have both a e.g. 1/5 and a 5/1, though?

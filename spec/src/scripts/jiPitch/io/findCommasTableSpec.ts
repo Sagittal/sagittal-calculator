@@ -17,7 +17,7 @@ import { N2D3P9 } from "../../../../../src/sagittal/comma/evaluation/n2d3p9"
 import { computeFindCommasTable } from "../../../../../src/scripts/jiPitch/io"
 
 describe("computeFindCommasTable", (): void => {
-    // note: I'm pretty sure that this is not realistic comma data, since these commas are unrelated
+    // I'm pretty sure that this is not realistic comma data, since these commas are unrelated.
     const commas: Array<CommaAnalysis & { symbolClassId?: Id<SymbolClass> }> = [
         {
             symbolClassId: 115 as Id<SymbolClass>,

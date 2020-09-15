@@ -20,7 +20,7 @@ enum CommandFlag {
     MAX_N2D3P9 = "n",
     ONLY_TOP = "o",
     PRIME_LIMIT = "p",
-    SUPPRESS_AUTOMATIC_ADJUSTING_OF_NOTATING_COMMA_FILTERS = "q",
+    // "q" is still available
     RATIO = "r",
     SORT_BY = "s",
     LOG_TARGETS = "t",

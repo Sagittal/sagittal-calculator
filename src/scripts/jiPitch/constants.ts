@@ -1,23 +1,14 @@
-import { Cents, Copfr, Max, Min, Monzo } from "../../general"
+import { Cents, Copfr, Max, Min, Monzo, ObjectKey } from "../../general"
 import {
-    DEFAULT_JI_PITCH_SCRIPT_GROUP_MAX_N2D3P9,
-    DEFAULT_MAX_AAS,
-    DEFAULT_MAX_ATE,
-    DEFAULT_MAX_CENTS,
-    DEFAULT_MIN_CENTS,
-    DEFAULT_SORT_KEY,
     N2D3P9,
     TINA,
     Tina,
 } from "../../sagittal"
 import { JiPitchScriptGroupSettings } from "./types"
 
+const DEFAULT_SORT_KEY = "n2d3p9" as ObjectKey
+
 const INITIAL_JI_PITCH_SCRIPT_GROUP_SETTINGS: JiPitchScriptGroupSettings = {
-    minCents: DEFAULT_MIN_CENTS,
-    maxCents: DEFAULT_MAX_CENTS,
-    maxAte: DEFAULT_MAX_ATE,
-    maxAas: DEFAULT_MAX_AAS,
-    maxN2D3P9: DEFAULT_JI_PITCH_SCRIPT_GROUP_MAX_N2D3P9,
     sortKey: DEFAULT_SORT_KEY,
     commaNameOptions: {},
 }

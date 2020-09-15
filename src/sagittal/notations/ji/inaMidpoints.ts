@@ -1,6 +1,6 @@
 import { Cents, CentsPosition, Maybe, Name, Pitch } from "../../../general"
 import { APOTOME_CENTS } from "../../constants"
-import { MAX_SINGLE_SHAFT_CENTS } from "../intervals"
+import { MAX_SYMBOL_CLASS_CENTS } from "../intervals"
 import { JI_NOTATION_LEVEL_EDAS } from "./levelEdas"
 import { JI_NOTATION_LEVELS } from "./levels"
 import { JiNotationLevel } from "./types"
@@ -12,7 +12,7 @@ const computeInaMidpoints = (jiNotationLevel: JiNotationLevel): CentsPosition[] 
         const midpoint = degree + 0.5
         const cents = APOTOME_CENTS * midpoint / eda as Cents
 
-        if (cents > MAX_SINGLE_SHAFT_CENTS) {
+        if (cents > MAX_SYMBOL_CLASS_CENTS) {
             return undefined
         }
 

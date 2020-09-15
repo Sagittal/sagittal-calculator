@@ -1,5 +1,5 @@
 import { Cents, CentsPosition, max } from "../../../../../src/general"
-import { MAX_SINGLE_SHAFT_CENTS } from "../../../../../src/sagittal"
+import { MAX_SYMBOL_CLASS_CENTS } from "../../../../../src/sagittal"
 import { computeSizeCategoryBoundsWithinMaximumPosition } from "../../../../../src/scripts/jiNotationBound/histories/sizeCategoryBounds"
 
 describe("computeSizeCategoryBoundsWithinMaximumPosition", (): void => {
@@ -7,6 +7,6 @@ describe("computeSizeCategoryBoundsWithinMaximumPosition", (): void => {
         const actual = computeSizeCategoryBoundsWithinMaximumPosition()
 
         expect(max(...actual.map((sizeCategoryBound: CentsPosition): Cents => sizeCategoryBound.cents)))
-            .toEqual(MAX_SINGLE_SHAFT_CENTS)
+            .toEqual(MAX_SYMBOL_CLASS_CENTS)
     })
 })

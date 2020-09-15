@@ -12,12 +12,6 @@ describe("analyze-ji-pitch", (): void => {
         "        \t       \tratio     \tmonzo                  \tcents  \tapotome slope\tlimit  \t2,3-free sopfr\t2,3-free class N2D3P9",
         "        \t       \t2200/2187 \t[   3  -7   2   0   1 ⟩\t 10.260\t -7.632      \t 11    \t 21           \t 42.014              ",
         "",
-        "",
-        "cents range:       \t  0.000 -  56.843",
-        "max ATE:           \t 15    ",
-        "max AAS:           \t 14.000",
-        "max N2D3P9:        \t307.000",
-        "",
         "   --- notating commas ---",
         "",
         "symbol  \tname  \tratio            \tmonzo                  \tcents  \tapotome slope",
@@ -77,42 +71,10 @@ describe("analyze-ji-pitch", (): void => {
         }).toThrowError(/Unable to determine monzo for JI pitch/)
     })
 
-    it("can filter the notating commas", (): void => {
-        onlyRunInCi()
-
-        // Note: because the AAS is filtered to 3,
-        // and the flag to suppress automatic adjustment is on
-        // the comma itself will not appear in the list of notating commas
-        // otherwise it would, as the 275k, `)|(
-        const command = "npm run analyze-ji-pitch [3,-7,2,0,1] -- --max-cents 50 --max-aas 3 --suppress-automatic-adjusting-of-notating-comma-filters" as Io
-
-        const actual = runCommandAndGetConsoleOutput(command)
-
-        const expected = [
-            "   --- JI pitch ---",
-            "",
-            "        \t       \tratio     \tmonzo                  \tcents  \tapotome slope\tlimit  \t2,3-free sopfr\t2,3-free class N2D3P9",
-            "        \t       \t2200/2187 \t[   3  -7   2   0   1 ⟩\t 10.260\t -7.632      \t 11    \t 21           \t 42.014              ",
-            "",
-            "",
-            "cents range:       \t  0.000 -  50.000",
-            "max ATE:           \t 15    ",
-            "max AAS:           \t  3.000",
-            "max N2D3P9:        \t307.000",
-            "",
-            "   --- notating commas ---",
-            "",
-            "symbol  \tname\tratio      \tmonzo                  \tcents  \tapotome slope",
-            "        \t275S\t66825/65536\t[ -16   5   2   0   1 ⟩\t 33.720\t  2.924      ",
-            "",
-        ] as Io[]
-        expect(actual).toEqual(expected)
-    })
-
     it("can appraise a JI pitch which is just a simple integer", (): void => {
         onlyRunInCi()
 
-        const command = "npm run analyze-ji-pitch -- -i 275 --max-aas 600" as Io
+        const command = "npm run analyze-ji-pitch -- -i 275" as Io
 
         const actual = runCommandAndGetConsoleOutput(command)
 
@@ -121,12 +83,6 @@ describe("analyze-ji-pitch", (): void => {
             "",
             "        \t       \tratio     \tmonzo                  \tcents  \tapotome slope\tlimit  \t2,3-free sopfr\t2,3-free class N2D3P9",
             "        \t       \t275/1     \t[   0   0   2   0   1 ⟩\t9723.94\t-598.739     \t 11    \t 21           \t 42.014              ",
-            "",
-            "",
-            "cents range:       \t  0.000 -  56.843",
-            "max ATE:           \t 15    ",
-            "max AAS:           \t600.000",
-            "max N2D3P9:        \t307.000",
             "",
             "   --- notating commas ---",
             "",
@@ -152,12 +108,6 @@ describe("analyze-ji-pitch", (): void => {
             "        \t       \tratio     \tmonzo                  \tcents  \tapotome slope\tlimit  \t2,3-free sopfr\t2,3-free class N2D3P9",
             "        \t       \t2200/2187 \t[   3  -7   2   0   1 ⟩\t 10.260\t -7.632      \t 11    \t 21           \t 42.014              ",
             "",
-            "",
-            "cents range:       \t  0.000 -  56.843",
-            "max ATE:           \t 15    ",
-            "max AAS:           \t 14.000",
-            "max N2D3P9:        \t307.000",
-            "",
             "   --- notating commas ---",
             "",
             "symbol  \tname               \tratio            \tmonzo                  \tcents  \tapotome slope",
@@ -181,14 +131,6 @@ describe("analyze-ji-pitch", (): void => {
             "",
             "        \t       \tratio                    \tmonzo                              \tcents  \tapotome slope\tlimit  \t2,3-free sopfr\t2,3-free class N2D3P9",
             "        \t       \t242912646603/223338299392\t[ -34  19   0   0   1  -1   0   1 ⟩\t145.448\t 10.044      \t 19    \t 43           \t477.991              ",
-            "",
-            "Adjusting max ATE for notating commas from  15     to  19     to accommodate the given pitch.",
-            "Adjusting max N2D3P9 for notating commas from 307.000 to 477.991 to accommodate the given pitch.",
-            "",
-            "cents range:       \t  0.000 -  56.843",
-            "max ATE:           \t 19    ",
-            "max AAS:           \t 14.000",
-            "max N2D3P9:        \t477.991",
             "",
             "   --- notating commas ---",
             "",
