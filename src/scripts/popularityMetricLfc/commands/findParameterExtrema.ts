@@ -19,7 +19,7 @@ applySharedPopularityMetricLfcCommandSetup({ defaultLogTargets: [LogTarget.ALL] 
 
 const chunkCountResults = load("metrics" as Filename) as Record<string, Metric>
 
-const parameterExtrema = {} as Record<string, Extrema<ParameterValue, "Open">>
+const parameterExtrema = {} as Record<string, Extrema<ParameterValue>>
 
 Object.values(Parameter).forEach((parameter: Parameter): void => {
     if (parameter.includes("Base")) {
@@ -44,7 +44,7 @@ Object.values(Parameter).forEach((parameter: Parameter): void => {
         })
     })
 
-    if (!isUndefined(parameterMin) || !isUndefined(parameterMax)) {
+    if (!isUndefined(parameterMin) && !isUndefined(parameterMax)) {
         parameterExtrema[ parameter ] = [parameterMin, parameterMax]
     }
 })

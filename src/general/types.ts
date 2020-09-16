@@ -42,11 +42,7 @@ type Window<WindowSize extends number | unknown = unknown> =
 
 type Name<T = void> = Io & { _NameBrand: "Name" } & (T extends void ? {} : { _NameOfBrand: T })
 
-// TODO: should probably take { of:, open: }
-type Extrema<T extends number = number, Open extends "Open" | void = void> = [
-    Open extends "Open" ? Maybe<Min<T>> : Min<T>,
-    Open extends "Open" ? Maybe<Max<T>> : Max<T>,
-]
+type Extrema<T extends number = number> = [Min<T>, Max<T>]
 
 type Ms = number & { _MsBrand: "Ms" }
 
