@@ -1,4 +1,4 @@
-import { Combination, computeExtensionBase, ExtensionBaseType } from "../../../../general"
+import { Combination, computeExtensionBase, computeIsEmpty, ExtensionBaseType } from "../../../../general"
 import { Parameter, ParameterValue } from "../../sumOfSquares"
 import { DynamicParameterScope, SubmetricScope } from "../types"
 import { computeParameterValues } from "./parameterValues"
@@ -22,7 +22,7 @@ const computeSubmetricPossibilities = (
         } else {
             values = computeParameterValues(parameterScope)
         }
-        if (values.length === 0) {
+        if (computeIsEmpty(values)) {
             return
         }
 

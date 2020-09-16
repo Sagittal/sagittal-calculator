@@ -14,7 +14,7 @@ describe("popular-2-3-free-classes", (): void => {
 
         // this is shared here: http://forum.sagittal.org/viewtopic.php?p=2246#p2246
         const expected = [
-            "count of results with N2D3P9 <= 136: 131",
+            "count of results with N2D3P9 ≤ 136: 131",
             "",
             "[table]",
             "[tr][th][pre][/pre][/th][th][pre][/pre][/th][th][pre]exactly[/pre][/th][th][pre]introducing[/pre][/th][th][pre][/pre][/th][th][pre][/pre][/th][th][pre][/pre][/th][/tr]",

@@ -36,7 +36,7 @@ const computePopular23FreeClassesWithBestExactlyNotatingCommasOutput = (
         return popular23FreeClassesOutput
     } else {
         const popular23FreeClassesTableTitle =
-            `count of results with N2D3P9 <= ${maxN2D3P9}: ${popular23FreeClasses.length}\n\n` as Io
+            `count of results with N2D3P9 ≤ ${maxN2D3P9}: ${popular23FreeClasses.length}\n\n` as Io
 
         return addTexts(popular23FreeClassesTableTitle, popular23FreeClassesOutput)
     }

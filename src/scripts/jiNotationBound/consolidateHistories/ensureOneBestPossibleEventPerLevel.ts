@@ -1,3 +1,4 @@
+import { computeIsEmpty } from "../../../general"
 import { formatJiNotationLevel, JiNotationLevel } from "../../../sagittal"
 import { EventConsolidation, HistoryConsolidation } from "./types"
 
@@ -15,7 +16,7 @@ const ensureOneBestPossibleEventPerJiNotationLevel = (historyConsolidation: Hist
             if (bestPossibleHistoryEvents.length > 1) {
                 throw new Error(`History had at the ${formatJiNotationLevel(jiNotationLevel)} JI notation level more than one event marked as member of the best possible history.`)
             }
-            if (bestPossibleHistoryEvents.length === 0) {
+            if (computeIsEmpty(bestPossibleHistoryEvents)) {
                 throw new Error(`History had at the ${formatJiNotationLevel(jiNotationLevel)} JI notation level no event marked as member of the best possible history.`)
             }
         },

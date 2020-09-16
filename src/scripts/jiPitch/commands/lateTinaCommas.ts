@@ -1,4 +1,16 @@
-import { Io, ioSettings, isUndefined, LogTarget, Max, Prime, saveLog, Sopfr, stringify, time } from "../../../general"
+import {
+    computeIsEmpty,
+    Io,
+    ioSettings,
+    isUndefined,
+    LogTarget,
+    Max,
+    Prime,
+    saveLog,
+    Sopfr,
+    stringify,
+    time,
+} from "../../../general"
 import { CommaAnalysis } from "../../../sagittal"
 import { computeCommas } from "../commas"
 import { LIMITLESS_2_3_FREE_COPFR, LIMITLESS_N2D3P9, TINA_COMMAS_MAX_CENTS, TINA_COMMAS_MIN_CENTS } from "../constants"
@@ -37,7 +49,7 @@ const commas = computeCommas({
 const commaAnalysesSortedByTinaEntries = computeCommaAnalysesSortedByTinaEntries(commas)
 
 commaAnalysesSortedByTinaEntries.forEach(([tina, tinaCommaAnalyses]: [string, CommaAnalysis[]]): void => {
-    if (!tinaCommaAnalyses.length) {
+    if (computeIsEmpty(tinaCommaAnalyses)) {
         saveLog(`NO COMMAS given current constraints for tina ${tina}.` as Io, LogTarget.ALL)
     } else {
         saveLog(

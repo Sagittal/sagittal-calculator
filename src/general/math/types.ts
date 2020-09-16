@@ -51,7 +51,7 @@ type NumericTypeParameters = Partial<{
     smooth: number,
 }>
 type RationalTypeParameters = NumericTypeParameters & { irrational: false }
-type IntegerTypeParameters = NumericTypeParameters & { integer: true }
+type IntegerTypeParameters = NumericTypeParameters & { integer: true, irrational: false }
 
 type NumericTypeParameterEffects<T> =
     (T extends { direction: Direction.SUB } ? { _DirectionBrand: Direction.SUB } : {})
@@ -61,6 +61,8 @@ type NumericTypeParameterEffects<T> =
     & (T extends { smooth: number } ? { _SmoothBrand: Pick<T, "smooth"> } : {})
     & (T extends { irrational: true } ? { _IrrationalBrand: "Irrational" } : {})
     & MaybeIntegerBrand<T>
+
+type CommonFunction = (firstInteger: Integer, secondInteger: Integer) => Integer
 
 type Primes =
     2
@@ -258,4 +260,5 @@ export {
     IntegerTypeParameters,
     Primes,
     MaybeIntegerBrand,
+    CommonFunction,
 }

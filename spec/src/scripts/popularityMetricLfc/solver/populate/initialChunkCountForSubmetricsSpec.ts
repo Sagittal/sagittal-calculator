@@ -6,7 +6,7 @@ import { Submetric } from "../../../../../../src/scripts/popularityMetricLfc/sum
 
 describe("computeInitialChunkCountForSubmetrics", (): void => {
     describe("when all chunks are being used, including probably useless ones", (): void => {
-        it("when <= the total count of possible submetric chunks (6), returns the passed-in chunk count", (): void => {
+        it("when ≤ the total count of possible submetric chunks (6), returns the passed-in chunk count", (): void => {
             const chunkCount = 3 as Count<Chunk>
 
             const actual = computeInitialChunkCountForSubmetrics(chunkCount)
@@ -32,7 +32,7 @@ describe("computeInitialChunkCountForSubmetrics", (): void => {
             popularityMetricLfcScriptGroupSettings.noUseless = true
         })
 
-        it("when <= the total count of possible submetric chunks (4), returns the passed-in chunk count", (): void => {
+        it("when ≤ the total count of possible submetric chunks (4), returns the passed-in chunk count", (): void => {
             const chunkCount = 3 as Count<Chunk>
 
             const actual = computeInitialChunkCountForSubmetrics(chunkCount)

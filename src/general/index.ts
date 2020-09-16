@@ -32,6 +32,7 @@ export {
     finalElement,
     increment,
     decrement,
+    computeIsEmpty,
 } from "./code"
 export {
     addTexts,
