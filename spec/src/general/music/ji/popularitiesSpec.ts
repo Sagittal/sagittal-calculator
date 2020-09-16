@@ -19,9 +19,16 @@ describe("COMMA_POPULARITIES", (): void => {
                 return popularity.twoThreeFreeClass.ratio!
             })
 
-        const monzos = originalRatios
-            .map((ratio: Ratio<{ rough: 5, direction: Direction.SUPER }>): Monzo => computeMonzoFromRatio(ratio))
-        const ratios = monzos.map((monzo: Monzo): Ratio => computeRatioFromMonzo(monzo))
+        const monzos: Array<Monzo<{ rough: 5, direction: Direction.SUPER }>> = originalRatios.map((
+            ratio: Ratio<{ rough: 5, direction: Direction.SUPER }>,
+        ): Monzo<{ rough: 5, direction: Direction.SUPER }> => {
+            return computeMonzoFromRatio(ratio)
+        })
+        const ratios: Array<Ratio<{ rough: 5, direction: Direction.SUPER }>> = monzos.map((
+            monzo: Monzo<{ rough: 5, direction: Direction.SUPER }>,
+        ): Ratio<{ rough: 5, direction: Direction.SUPER }> => {
+            return computeRatioFromMonzo(monzo)
+        })
 
         expect(ratios).toEqual(originalRatios)
     })
