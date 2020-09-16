@@ -24,14 +24,14 @@ import {
 } from "../../general"
 import { computeN2D3P9, computePrimeExponentExtremasGivenMaxN2D3P9, N2D3P9 } from "../../sagittal"
 import { popular23FreeClassesScriptGroupSettings } from "./globals"
-import { computeMaybePopular23FreeClassAnalysisWithBestNotatingComma } from "./maybePopular23FreeClassWithBestNotatingComma"
-import { analyzePopular23FreeClassWithBestNotatingComma } from "./popular23FreeClassWithBestNotatingComma"
-import { Popular23FreeClassAnalysisWithBestNotatingComma } from "./types"
+import { computeMaybePopular23FreeClassAnalysisWithBestExactlyNotatingComma } from "./maybePopular23FreeClassWithBestExactlyNotatingComma"
+import { analyzePopular23FreeClassWithBestExactlyNotatingComma } from "./popular23FreeClassWithBestExactlyNotatingComma"
+import { Popular23FreeClassAnalysisWithBestExactlyNotatingComma } from "./types"
 
-const computePopular23FreeClassesWithBestNotatingCommas = (
+const computePopular23FreeClassesWithBestExactlyNotatingCommas = (
     maxN2D3P9: Max<N2D3P9>,
-): Array<Ranked<Popular23FreeClassAnalysisWithBestNotatingComma>> => {
-    let popular23FreeClassesWithBestNotatingCommas
+): Array<Ranked<Popular23FreeClassAnalysisWithBestExactlyNotatingComma>> => {
+    let popular23FreeClassesWithBestExactlyNotatingCommas
     if (popular23FreeClassesScriptGroupSettings.useKnown) {
         const knownPopular23FreeClasses =
             readLines("src/scripts/popular23FreeClass/input/knownPopular23FreeClasses.txt" as Filename)
@@ -39,9 +39,9 @@ const computePopular23FreeClassesWithBestNotatingCommas = (
                     return parse23FreeClass(knownPopular23FreeClassText as Formatted<TwoThreeFreeClass>)
                 })
 
-        popular23FreeClassesWithBestNotatingCommas = knownPopular23FreeClasses
-            .map((twoThreeFreeClass: TwoThreeFreeClass): Popular23FreeClassAnalysisWithBestNotatingComma => {
-                return analyzePopular23FreeClassWithBestNotatingComma({
+        popular23FreeClassesWithBestExactlyNotatingCommas = knownPopular23FreeClasses
+            .map((twoThreeFreeClass: TwoThreeFreeClass): Popular23FreeClassAnalysisWithBestExactlyNotatingComma => {
+                return analyzePopular23FreeClassWithBestExactlyNotatingComma({
                     twoThreeFreeClass,
                     n2d3p9: computeN2D3P9(twoThreeFreeClass),
                 })
@@ -70,11 +70,12 @@ const computePopular23FreeClassesWithBestNotatingCommas = (
         )
         let twoThreeFreeMonzo: Monzo<{ rough: 5 }> = shallowClone(initialMonzo) as Monzo<{ rough: 5 }>
 
-        popular23FreeClassesWithBestNotatingCommas = [] as Array<Popular23FreeClassAnalysisWithBestNotatingComma>
+        popular23FreeClassesWithBestExactlyNotatingCommas =
+            [] as Array<Popular23FreeClassAnalysisWithBestExactlyNotatingComma>
         while (true) {
             // do the work
-            const maybePopular23FreeClassWithBestNotatingComma = !computeIsSubMonzo(twoThreeFreeMonzo) ?
-                computeMaybePopular23FreeClassAnalysisWithBestNotatingComma(
+            const maybePopular23FreeClassWithBestExactlyNotatingComma = !computeIsSubMonzo(twoThreeFreeMonzo) ?
+                computeMaybePopular23FreeClassAnalysisWithBestExactlyNotatingComma(
                     { monzo: twoThreeFreeMonzo } as TwoThreeFreeClass,
                     maxN2D3P9,
                 ) :
@@ -89,9 +90,10 @@ const computePopular23FreeClassesWithBestNotatingCommas = (
                 )
             }
 
-            if (!isUndefined(maybePopular23FreeClassWithBestNotatingComma)) {
-                saveLog(stringify(maybePopular23FreeClassWithBestNotatingComma) as Io, LogTarget.PROGRESS)
-                popular23FreeClassesWithBestNotatingCommas.push(maybePopular23FreeClassWithBestNotatingComma)
+            if (!isUndefined(maybePopular23FreeClassWithBestExactlyNotatingComma)) {
+                saveLog(stringify(maybePopular23FreeClassWithBestExactlyNotatingComma) as Io, LogTarget.PROGRESS)
+                popular23FreeClassesWithBestExactlyNotatingCommas
+                    .push(maybePopular23FreeClassWithBestExactlyNotatingComma)
             }
 
             // figure out which index is the first one which hasn't reached its max
@@ -124,12 +126,12 @@ const computePopular23FreeClassesWithBestNotatingCommas = (
         }
     }
 
-    return rank(popular23FreeClassesWithBestNotatingCommas, {
+    return rank(popular23FreeClassesWithBestExactlyNotatingCommas, {
         by: "n2d3p9",
         strategy: RankStrategy.FRACTIONAL,
     })
 }
 
 export {
-    computePopular23FreeClassesWithBestNotatingCommas,
+    computePopular23FreeClassesWithBestExactlyNotatingCommas,
 }

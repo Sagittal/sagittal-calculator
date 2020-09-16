@@ -13,7 +13,7 @@ import {
     saveLog,
     THREE_PRIME_INDEX,
 } from "../../general"
-import { CommaAnalysis, computeNotatingCommas } from "../../sagittal"
+import { CommaAnalysis, computeExactlyNotatingCommas } from "../../sagittal"
 import { LIMITLESS_N2D3P9 } from "./constants"
 import { jiPitchScriptGroupSettings } from "./globals"
 
@@ -21,12 +21,13 @@ const computeIsCommaLate = (comma: Comma): boolean => {
     const monzo = computeJiPitchMonzo(comma)
     const ate = abs(monzo[ THREE_PRIME_INDEX ])
 
-    const notatingCommas = computeNotatingCommas(comma, { ...jiPitchScriptGroupSettings, maxN2D3P9: LIMITLESS_N2D3P9 })
-    const ates = notatingCommas.map((notatingComma: Comma): Exponent<Prime> => {
-        return abs(computeJiPitchMonzo(notatingComma)[ 1 ])
+    const exactlyNotatingCommas =
+        computeExactlyNotatingCommas(comma, { ...jiPitchScriptGroupSettings, maxN2D3P9: LIMITLESS_N2D3P9 })
+    const ates = exactlyNotatingCommas.map((exactlyNotatingComma: Comma): Exponent<Prime> => {
+        return abs(computeJiPitchMonzo(exactlyNotatingComma)[ 1 ])
     })
 
-    saveLog(`ATE ${ate} vs. other notating ATEs ${ates}` as Io, LogTarget.PROGRESS)
+    saveLog(`ATE ${ate} vs. other exactly notating comma ATEs ${ates}` as Io, LogTarget.PROGRESS)
 
     const minimumAte = min(...ates)
 

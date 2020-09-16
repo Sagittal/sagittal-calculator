@@ -11,7 +11,7 @@ const POPULAR_TWO_THREE_FREE_CLASSES_COLUMN_TITLES: Io[] = [
     "Scala archive occurrences",
 ] as Io[]
 
-const BEST_NOTATING_COMMA_COLUMN_TITLES: Io[] = [
+const BEST_EXACTLY_NOTATING_COMMA_COLUMN_TITLES: Io[] = [
     "2,3- free class",
     "N2D3P9 rank",
     "best notating comma cents",
@@ -22,10 +22,10 @@ const BEST_NOTATING_COMMA_COLUMN_TITLES: Io[] = [
 const computePopular23FreeClassesHeaderRows = (): Array<Row<{ of: Popular23FreeClassAnalysis, header: true }>> =>
     splitColumnTitlesIntoRowsBySpaces(POPULAR_TWO_THREE_FREE_CLASSES_COLUMN_TITLES)
 
-const computeBestNotatingCommaHeaderRows = (): Array<Row<{ of: Popular23FreeClassAnalysis, header: true }>> =>
-    splitColumnTitlesIntoRowsBySpaces(BEST_NOTATING_COMMA_COLUMN_TITLES)
+const computeBestExactlyNotatingCommaHeaderRows = (): Array<Row<{ of: Popular23FreeClassAnalysis, header: true }>> =>
+    splitColumnTitlesIntoRowsBySpaces(BEST_EXACTLY_NOTATING_COMMA_COLUMN_TITLES)
 
 export {
     computePopular23FreeClassesHeaderRows,
-    computeBestNotatingCommaHeaderRows,
+    computeBestExactlyNotatingCommaHeaderRows,
 }

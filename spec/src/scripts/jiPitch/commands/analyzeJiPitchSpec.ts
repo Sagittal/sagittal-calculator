@@ -12,7 +12,7 @@ describe("analyze-ji-pitch", (): void => {
         "        \t       \tratio     \tmonzo                  \tcents  \tapotome slope\tlimit  \t2,3-free sopfr\t2,3-free class N2D3P9",
         "        \t       \t2200/2187 \t[   3  -7   2   0   1 ⟩\t 10.260\t -7.632      \t 11    \t 21           \t 42.014              ",
         "",
-        "   --- notating commas ---",
+        "   --- exactly notating commas ---",
         "",
         "symbol  \tname  \tratio            \tmonzo                  \tcents  \tapotome slope",
         "   `)|( \t275k  \t2200/2187        \t[   3  -7   2   0   1 ⟩\t 10.260\t -7.632      ",
@@ -21,7 +21,7 @@ describe("analyze-ji-pitch", (): void => {
         "",
     ] as Io[]
 
-    it("analyzes a JI pitch, given it in monzo form (note that it includes inverses in the notating commas list)", (): void => {
+    it("analyzes a JI pitch, given it in monzo form (note that it includes inverses in the exactly notating commas list)", (): void => {
         onlyRunInCi()
 
         const command = "npm run analyze-ji-pitch -- -m [3,-7,2,0,1]" as Io
@@ -84,7 +84,7 @@ describe("analyze-ji-pitch", (): void => {
             "        \t       \tratio     \tmonzo                  \tcents  \tapotome slope\tlimit  \t2,3-free sopfr\t2,3-free class N2D3P9",
             "        \t       \t275/1     \t[   0   0   2   0   1 ⟩\t9723.94\t-598.739     \t 11    \t 21           \t 42.014              ",
             "",
-            "   --- notating commas ---",
+            "   --- exactly notating commas ---",
             "",
             "symbol  \tname  \tratio            \tmonzo                  \tcents  \tapotome slope",
             "   `)|( \t275k  \t2200/2187        \t[   3  -7   2   0   1 ⟩\t 10.260\t -7.632      ",
@@ -95,7 +95,7 @@ describe("analyze-ji-pitch", (): void => {
         expect(actual).toEqual(expected)
     })
 
-    it("can format the names of the commas in the notating commas table", (): void => {
+    it("can format the names of the commas in the exactly notating commas table", (): void => {
         onlyRunInCi()
 
         const command = "npm run analyze-ji-pitch [3,-7,2,0,1] -- --undirected --factored --unabbreviated" as Io
@@ -108,7 +108,7 @@ describe("analyze-ji-pitch", (): void => {
             "        \t       \tratio     \tmonzo                  \tcents  \tapotome slope\tlimit  \t2,3-free sopfr\t2,3-free class N2D3P9",
             "        \t       \t2200/2187 \t[   3  -7   2   0   1 ⟩\t 10.260\t -7.632      \t 11    \t 21           \t 42.014              ",
             "",
-            "   --- notating commas ---",
+            "   --- exactly notating commas ---",
             "",
             "symbol  \tname               \tratio            \tmonzo                  \tcents  \tapotome slope",
             "   `)|( \t5².11-kleisma      \t2200/2187        \t[   3  -7   2   0   1 ⟩\t 10.260\t -7.632      ",
@@ -119,7 +119,7 @@ describe("analyze-ji-pitch", (): void => {
         expect(actual).toEqual(expected)
     })
 
-    it("automatically adjusts the filters to include the JI pitch itself in the list of notating commas", (): void => {
+    it("automatically adjusts the filters to include the JI pitch itself in the list of exactly notating commas", (): void => {
         onlyRunInCi()
 
         const command = "npm run analyze-ji-pitch \"[  -34   19   0   0   1  -1   0   1 ⟩\"" as Io
@@ -132,7 +132,7 @@ describe("analyze-ji-pitch", (): void => {
             "        \t       \tratio                    \tmonzo                              \tcents  \tapotome slope\tlimit  \t2,3-free sopfr\t2,3-free class N2D3P9",
             "        \t       \t242912646603/223338299392\t[ -34  19   0   0   1  -1   0   1 ⟩\t145.448\t 10.044      \t 19    \t 43           \t477.991              ",
             "",
-            "   --- notating commas ---",
+            "   --- exactly notating commas ---",
             "",
             "symbol  \tname   \tratio              \tmonzo                              \tcents  \tapotome slope",
             "        \t209/13k\t209/208            \t[  -4   0   0   0   1  -1   0   1 ⟩\t  8.303\t -0.511      ",

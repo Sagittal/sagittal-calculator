@@ -1,7 +1,7 @@
 import { addTexts, concat, Formatted, Row, shallowClone } from "../../../general"
 import { CommaAnalysis } from "../../../sagittal"
 
-const NOTATING_COMMA_WITH_MAYBE_SAGITTAL_SYMBOLS_HEADER_ROW = [
+const EXACTLY_NOTATING_COMMA_WITH_MAYBE_SAGITTAL_SYMBOLS_HEADER_ROW = [
     "symbol  ", // Extra space to attempt to stay lined up with the JI pitch table
     "name",
     "ratio",
@@ -14,7 +14,7 @@ const NOTATING_COMMA_WITH_MAYBE_SAGITTAL_SYMBOLS_HEADER_ROW = [
 ] as Row<{ of: CommaAnalysis, header: true }>
 
 const FIND_COMMAS_HEADER_ROW: Row<{ of: CommaAnalysis, header: true }> = concat(
-    NOTATING_COMMA_WITH_MAYBE_SAGITTAL_SYMBOLS_HEADER_ROW,
+    EXACTLY_NOTATING_COMMA_WITH_MAYBE_SAGITTAL_SYMBOLS_HEADER_ROW,
     [
         "limit",
         "2,3-free sopfr",
@@ -38,6 +38,6 @@ const computeJiPitchHeaderRow = (): Row<{ of: CommaAnalysis, header: true }> => 
 
 export {
     computeJiPitchHeaderRow,
-    NOTATING_COMMA_WITH_MAYBE_SAGITTAL_SYMBOLS_HEADER_ROW,
+    EXACTLY_NOTATING_COMMA_WITH_MAYBE_SAGITTAL_SYMBOLS_HEADER_ROW,
     FIND_COMMAS_HEADER_ROW,
 }

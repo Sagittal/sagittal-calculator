@@ -10,7 +10,7 @@ import {
 import { computeCommasFrom23FreeMonzo } from "./commasFrom23FreeMonzo"
 import { CommasFrom23FreeMonzoOptions } from "./types"
 
-const computeNotatingCommas = (jiPitch: JiPitch, options?: CommasFrom23FreeMonzoOptions): Array<Comma> => {
+const computeExactlyNotatingCommas = (jiPitch: JiPitch, options?: CommasFrom23FreeMonzoOptions): Array<Comma> => {
     const monzo = computeJiPitchMonzo(jiPitch)
     const twoThreeFreeMonzo: Monzo<{ rough: 5 }> = computeRoughMonzo(monzo, FIVE_ROUGHNESS) as Monzo<{ rough: 5 }>
 
@@ -21,5 +21,5 @@ const computeNotatingCommas = (jiPitch: JiPitch, options?: CommasFrom23FreeMonzo
 }
 
 export {
-    computeNotatingCommas,
+    computeExactlyNotatingCommas,
 }

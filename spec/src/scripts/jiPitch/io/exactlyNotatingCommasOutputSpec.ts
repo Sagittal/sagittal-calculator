@@ -1,15 +1,15 @@
 // tslint:disable max-line-length
 import { Io, ioSettings, Monzo, NEWLINE } from "../../../../../src/general"
-import { computeNotatingCommasOutput } from "../../../../../src/scripts/jiPitch/io"
+import { computeExactlyNotatingCommasOutput } from "../../../../../src/scripts/jiPitch/io"
 
-describe("computeNotatingCommasOutput", (): void => {
+describe("computeExactlyNotatingCommasOutput", (): void => {
     it("can format the symbols for the terminal", (): void => {
         const monzo = [-3, -1, 2] as Monzo
 
-        const actual = computeNotatingCommasOutput({ monzo })
+        const actual = computeExactlyNotatingCommasOutput({ monzo })
 
         const expected =
-            "   --- notating commas ---" + NEWLINE +
+            "   --- exactly notating commas ---" + NEWLINE +
             "" + NEWLINE +
             "symbol  \tname \tratio    \tmonzo          \tcents  \tapotome slope".underline + NEWLINE +
             "   ./|  \t1/25C\t2048/2025\t[  11  -4  -2 ⟩\t 19.553\t -5.204      " + NEWLINE +
@@ -21,10 +21,10 @@ describe("computeNotatingCommasOutput", (): void => {
         const monzo = [-3, -1, 2] as Monzo
 
         ioSettings.forForum = true
-        const actual = computeNotatingCommasOutput({ monzo })
+        const actual = computeExactlyNotatingCommasOutput({ monzo })
 
         const expected =
-            "   --- notating commas ---" + NEWLINE +
+            "   --- exactly notating commas ---" + NEWLINE +
             "" + NEWLINE +
             "[table]" + NEWLINE +
             "[tr][th][pre]symbol  [/pre][/th][th][pre]name[/pre][/th][th][pre]ratio[/pre][/th][th][pre]monzo[/pre][/th][th][pre]cents[/pre][/th][th][pre]apotome slope[/pre][/th][/tr]" + NEWLINE +

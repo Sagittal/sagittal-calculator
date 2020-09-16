@@ -17,8 +17,6 @@ const formatFindCommasOptions = (
     ].join("\n") as Io
 }
 
-// TODO: all "notating" tables etc. should be clear that they are "exactlyNotating"
-
 export {
     formatFindCommasOptions,
 }

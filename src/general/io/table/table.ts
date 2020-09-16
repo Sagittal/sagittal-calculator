@@ -27,7 +27,7 @@ const formatTable = <T = unknown>(table: Table<T>, options?: Partial<FormatTable
         throw new Error(`Table does not have rows with all the same lengths. Row lengths are ${rowLengths}.`)
     }
 
-    // TODO: TSV format for tables per http://forum.sagittal.org/viewtopic.php?p=2409#p2409
+    // TODO: TSV FORMAT FOR TABLES per http://forum.sagittal.org/viewtopic.php?p=2409#p2409
     //  in TSV it would be best if all the closing angle-brackets ended up in the same rightward column,
     //  so we don't have columns with some numbers and some angle-brackets.
     //  - and perhaps name the sub-columns for monzo by the prime 2, 3, 5, 7... maybe should just do that in general

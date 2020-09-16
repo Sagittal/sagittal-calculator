@@ -4,7 +4,8 @@ import { integerDivide } from "../typedOperations"
 import { Direction, Exponent, Integer, Prime } from "../types"
 import { Monzo } from "./types"
 
-// TODO: consider using Dave's tricky GCP-involved technique
+// TODO: POSSIBLY MORE PERFORMANT PRIME FACTORIZATION ALGORITHM
+//  consider using Dave's tricky GCP-involved technique
 //  explained here: http://forum.sagittal.org/viewtopic.php?p=2404#p2404
 //  and here: http://forum.sagittal.org/viewtopic.php?p=2409#p2409
 /*

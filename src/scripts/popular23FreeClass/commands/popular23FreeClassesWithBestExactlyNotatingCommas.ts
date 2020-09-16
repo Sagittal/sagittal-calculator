@@ -3,8 +3,8 @@ import { CommandFlag, Filename, Io, ioSettings, LogTarget, parseCommands, saveLo
 import { ScriptGroup } from "../../types"
 import { DEFAULT_MAX_N2D3P9_FOR_POPULAR_TWO_THREE_FREE_CLASSES } from "../constants"
 import { popular23FreeClassesScriptGroupSettings } from "../globals"
-import { computePopular23FreeClassesWithBestNotatingCommasOutput } from "../io"
-import { computePopular23FreeClassesWithBestNotatingCommas } from "../popular23FreeClassesWithBestNotatingCommas"
+import { computePopular23FreeClassesWithBestExactlyNotatingCommasOutput } from "../io"
+import { computePopular23FreeClassesWithBestExactlyNotatingCommas } from "../popular23FreeClassesWithBestExactlyNotatingCommas"
 
 program
     .option(`-${CommandFlag.MAX_N2D3P9}, --max-n2d3p9 [maxN2D3P9]`, "max N2D3P9", parseFloat)
@@ -17,17 +17,18 @@ popular23FreeClassesScriptGroupSettings.useLate = program.useLate
 
 ioSettings.scriptGroup = ScriptGroup.POPULAR_2_3_FREE_CLASSES as Filename
 
-const popular23FreeClassesWithBestNotatingCommas =
-    computePopular23FreeClassesWithBestNotatingCommas(maxN2D3P9)
+const popular23FreeClassesWithBestExactlyNotatingCommas =
+    computePopular23FreeClassesWithBestExactlyNotatingCommas(maxN2D3P9)
 
 // TODO: obviously there's a horrendous amount of duplication being introduced in this commit
 //  between the "with best notating commas" or not versions of everything
 //  and you should increase the unit test coverage when you get to that
 
-const popular23FreeClassesWithBestNotatingCommasOutput: Io = computePopular23FreeClassesWithBestNotatingCommasOutput(
-    popular23FreeClassesWithBestNotatingCommas,
-    maxN2D3P9,
-)
-saveLog(popular23FreeClassesWithBestNotatingCommasOutput, LogTarget.ALL)
+const popular23FreeClassesWithBestExactlyNotatingCommasOutput: Io =
+    computePopular23FreeClassesWithBestExactlyNotatingCommasOutput(
+        popular23FreeClassesWithBestExactlyNotatingCommas,
+        maxN2D3P9,
+    )
+saveLog(popular23FreeClassesWithBestExactlyNotatingCommasOutput, LogTarget.ALL)
 
 if (ioSettings.time) saveLog(`\ntook ${time()}` as Io, LogTarget.ALL)

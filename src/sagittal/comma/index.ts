@@ -2,7 +2,7 @@ export { analyzeComma } from "./analyzeComma"
 export { analyzeJiPitch } from "./analyzeJiPitch"
 export {
     CommasFrom23FreeMonzoOptions,
-    computeNotatingCommas,
+    computeExactlyNotatingCommas,
     computeCommasFrom23FreeMonzo,
     DEFAULT_MAX_AAS,
     DEFAULT_MAX_ATE,

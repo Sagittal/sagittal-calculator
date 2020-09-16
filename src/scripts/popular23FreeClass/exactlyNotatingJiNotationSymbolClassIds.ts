@@ -9,7 +9,7 @@ import {
 } from "../../general"
 import { getSagittalComma, JiNotationSymbolClass, JI_NOTATION_SYMBOL_CLASSES, SymbolClass } from "../../sagittal"
 
-// Different than computeNotatingCommas because this one only concerns itself with commas that are in Sagittal
+// Different than computeExactlyNotatingCommas because this one only concerns itself with commas that are in Sagittal
 const computeExactlyNotatingJiNotationSymbolClassIds = (jiPitch: JiPitch): Array<Id<SymbolClass>> => {
     const monzo = computeJiPitchMonzo(jiPitch)
 

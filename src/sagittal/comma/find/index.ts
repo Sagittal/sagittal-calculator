@@ -1,4 +1,4 @@
-export { computeNotatingCommas } from "./notatingCommas"
+export { computeExactlyNotatingCommas } from "./exactlyNotatingCommas"
 export { computeCommasFrom23FreeMonzo } from "./commasFrom23FreeMonzo"
 export { CommasFrom23FreeMonzoOptions } from "./types"
 export {

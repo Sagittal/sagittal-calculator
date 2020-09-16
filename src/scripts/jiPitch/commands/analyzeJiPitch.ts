@@ -2,8 +2,8 @@ import { Io, JiPitch, LogTarget, saveLog } from "../../../general"
 import { analyzeJiPitch, JiPitchAnalysis } from "../../../sagittal"
 import { accommodateFindCommasOptionsToJiPitch } from "../accommodateFindCommasOptionsToJiPitch"
 import {
+    computeExactlyNotatingCommasOutput,
     computeJiPitchOutput,
-    computeNotatingCommasOutput,
     parseFindCommasOptions,
     parseJiPitch,
     readJiPitchOptions,
@@ -26,8 +26,8 @@ saveLog(jiPitchOutput, LogTarget.ALL)
 const findCommasOptions = parseFindCommasOptions()
 const accommodatedFindCommasOptions = accommodateFindCommasOptionsToJiPitch(jiPitchAnalysis, findCommasOptions)
 
-const notatingCommasOutput: Io = computeNotatingCommasOutput(jiPitch, accommodatedFindCommasOptions)
-saveLog(notatingCommasOutput, LogTarget.ALL)
+const exactlyNotatingCommasOutput: Io = computeExactlyNotatingCommasOutput(jiPitch, accommodatedFindCommasOptions)
+saveLog(exactlyNotatingCommasOutput, LogTarget.ALL)
 
 // TODO: FIND COMMA ANALYZE JI PITCH NOTATING COMMAS 2,3 FREE CLEAN UP
 //  okay so I guess we still didn't actually get to it, but I'd like to see this:
