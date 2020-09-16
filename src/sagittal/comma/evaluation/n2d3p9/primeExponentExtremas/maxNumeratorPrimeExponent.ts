@@ -11,7 +11,7 @@ const computeMaxNumeratorPrimeExponentGivenMaxN2D3P9 = (
         return 0 as Max<Integer & Exponent<Prime<Numerator>>>
     }
 
-    const base = numeratorPrime / 2 as Base<Prime<Numerator>>
+    const base = numeratorPrime / 2
 
     return floor(log(power, base)) as Max<Integer & Exponent<Prime<Numerator>>>
 

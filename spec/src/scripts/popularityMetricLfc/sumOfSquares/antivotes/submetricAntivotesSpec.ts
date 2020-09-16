@@ -68,9 +68,9 @@ describe("computeSubmetricAntivotes", (): void => {
             const actual = computeSubmetricAntivotes(twoThreeFreeNumberMonzo, submetric)
 
             expect(actual).toBe(
-                1 * log(11 as Power, aAsLogarithmBase as number as Base) +
-                1 * log(13 as Power, aAsLogarithmBase as number as Base) +
-                2 * log(17 as Power, aAsLogarithmBase as number as Base) as Antivotes,
+                1 * log(11, aAsLogarithmBase as number as Base) +
+                1 * log(13, aAsLogarithmBase as number as Base) +
+                2 * log(17, aAsLogarithmBase as number as Base) as Antivotes,
             )
         })
 

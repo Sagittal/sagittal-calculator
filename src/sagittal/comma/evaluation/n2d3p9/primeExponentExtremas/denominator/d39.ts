@@ -1,4 +1,4 @@
-import { Base, pow } from "../../../../../../general"
+import { pow } from "../../../../../../general"
 import { D39, D39ForCandidateMaxDenominatorPrimeExponentOptions } from "./types"
 
 const computeD39ForCandidateMaxDenominatorPrimeExponent = (
@@ -6,7 +6,7 @@ const computeD39ForCandidateMaxDenominatorPrimeExponent = (
 ): D39 => {
     const { denominatorPrime, candidateMaxDenominatorPrimeExponentGivenMaxN2D3P9 } = options
 
-    return pow(denominatorPrime / 3 as Base, candidateMaxDenominatorPrimeExponentGivenMaxN2D3P9) / 9 as D39
+    return pow(denominatorPrime / 3, candidateMaxDenominatorPrimeExponentGivenMaxN2D3P9) / 9 as D39
 }
 
 export {

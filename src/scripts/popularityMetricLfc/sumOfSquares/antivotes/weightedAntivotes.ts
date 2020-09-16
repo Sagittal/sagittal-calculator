@@ -13,7 +13,7 @@ const computeWeightedAntivotes = (antivotes: Antivotes, options: WeightedAntivot
 
     if (!isUndefined(logarithmBase)) {
         weightedAntivotes = log(
-            weightedAntivotes as number as Power,
+            weightedAntivotes,
             logarithmBase as number as Base,
         ) as number as Antivotes
     }

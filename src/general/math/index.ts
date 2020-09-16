@@ -27,7 +27,7 @@ export {
     computeRoughRatio,
     computeIsSmoothRatio,
     computeIsUnisonRatio,
-    PotentiallyNonintegerRatioParameter,
+    PotentiallyIrrationalRatioParameter,
     computeSubRatio,
 } from "./ratio"
 export { computeIsRoughInteger } from "./roughness"
@@ -43,7 +43,7 @@ export {
     computeIsSuperMonzo,
     Monzo,
     sumMonzos,
-    PotentiallyNonintegerMonzoParameter,
+    PotentiallyIrrationalMonzoParameter,
     computeIsRoughMonzo,
     computeIsSmoothMonzo,
     computeIsUnisonMonzo,
@@ -90,7 +90,7 @@ export {
     NumericTypeParameters,
     Sopfr,
     Smoothness,
-    IntegerTypeParameters,
+    RationalTypeParameters,
     Primes,
     Distribution,
 } from "./types"

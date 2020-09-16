@@ -9,4 +9,4 @@ export { computeMonzosFromPrimeExponentExtremas } from "./monzosFromPrimeExponen
 export { computeIsRoughMonzo, computeRoughMonzo } from "./monzoRoughness"
 export { computeIsSmoothMonzo } from "./monzoSmoothness"
 export { sumMonzos } from "./sumMonzos"
-export { Monzo, PotentiallyNonintegerMonzoParameter } from "./types"
+export { Monzo, PotentiallyIrrationalMonzoParameter } from "./types"

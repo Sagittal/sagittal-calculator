@@ -20,7 +20,7 @@ const computeMinN2PForCandidateMaxDenominatorPrimeExponentGivenMaxN2D3P9 = (
     } = sortedNumeratorPossibilitiesForDenominatorPrimeGivenMaxN2D3P9
 
     const candidateMaxDenominatorPower = pow(
-        denominatorPrime as number as Base<Prime<Denominator>>,
+        denominatorPrime,
         candidateMaxDenominatorPrimeExponentGivenMaxN2D3P9,
     )
 

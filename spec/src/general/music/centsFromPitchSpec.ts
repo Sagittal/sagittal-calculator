@@ -12,7 +12,7 @@ describe("computeCentsFromPitch", (): void => {
     })
 
     it("works for pitches with monzos with really big 2 exponents", (): void => {
-        const pitch = { cents: 4.499913 as Cents, monzo: [158.5, -100] as Monzo<{ noninteger: true }> }
+        const pitch = { cents: 4.499913 as Cents, monzo: [158.5, -100] as Monzo<{ irrational: true }> }
 
         const actual = computeCentsFromPitch(pitch)
 

@@ -7,7 +7,7 @@ export {
     FractionalPartType,
     Numerator,
     Ratio,
-    PotentiallyNonintegerRatioParameter,
+    PotentiallyIrrationalRatioParameter,
 } from "./types"
 export { computeSuperRatio } from "./ratioDirection"
 export { computeRatioFromMonzo } from "./ratioFromMonzo"

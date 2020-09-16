@@ -71,7 +71,7 @@ const computeSubmetricAntivotes = (
             adjustedPrime = adjustedPrime + secondaryParameterOverride(x, u, primeExponent, fractionalPartType)
             if (!isUndefined(aAsLogarithmBase)) {
                 adjustedPrime = adjustedPrime >= 1 ?
-                    log(adjustedPrime as Power, aAsLogarithmBase as number as Base) :
+                    log(adjustedPrime, aAsLogarithmBase as number as Base) :
                     1
             }
             if (!isUndefined(aAsPowerExponent)) {
