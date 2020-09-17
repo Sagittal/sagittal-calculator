@@ -3,7 +3,7 @@ import { ApotomeSlope, CommaAnalysis, SymbolClass } from "../../../../../src/sag
 import { N2D3P9 } from "../../../../../src/sagittal/comma/evaluation/n2d3p9"
 import { computeCommaRow } from "../../../../../src/scripts/jiPitch/io/commaRow"
 
-describe("computeCommaRow", (): void => {
+xdescribe("computeCommaRow", (): void => {
     // This comma is made up and internally inconsistent.
     // Only the name is important as it is used to find the symbol.
     const comma: CommaAnalysis & { symbolClassId?: Id<SymbolClass> } = {

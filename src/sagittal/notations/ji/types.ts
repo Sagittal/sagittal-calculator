@@ -18,9 +18,6 @@ enum JiNotationLevel {
 }
 
 interface JiNotationSymbolClassMetadata {
-    // TODO: perhaps this should be stored outside of here, other way around
-    //  i.e. maybe the JI notation is just a list of Sagittal ids
-    introducingJiNotationLevel: JiNotationLevel,
     mina: Mina,
 }
 

@@ -19,6 +19,7 @@ export {
     JI_NOTATION_LEVEL_EDAS,
     Mina,
     Tina,
+    computeIntroducingJiNotationLevel,
     TINA,
 } from "./ji"
 export { APOTOME } from "./sagittalCommas"

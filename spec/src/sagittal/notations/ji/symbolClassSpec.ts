@@ -11,7 +11,6 @@ describe("getJiNotationSymbolClass", (): void => {
 
         const expected: JiNotationSymbolClass = {
             id: 55 as Id<SymbolClass>,
-            introducingJiNotationLevel: JiNotationLevel.EXTREME,
             smallestSymbolSubset: SymbolSubset.OLYMPIAN,
             mina: 53 as Mina,
             primaryCommaId: 55 as Id<SagittalComma>,

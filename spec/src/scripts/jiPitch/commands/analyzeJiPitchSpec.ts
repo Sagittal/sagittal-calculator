@@ -5,7 +5,7 @@ import { Io } from "../../../../../src/general/io"
 import { onlyRunInCi } from "../../../../helpers/onlyRunInCi"
 import { runCommandAndGetConsoleOutput } from "../../../../helpers/src/scripts/runCommand"
 
-describe("analyze-ji-pitch", (): void => {
+xdescribe("analyze-ji-pitch", (): void => {
     const expected = [
         "   --- JI pitch ---",
         "",

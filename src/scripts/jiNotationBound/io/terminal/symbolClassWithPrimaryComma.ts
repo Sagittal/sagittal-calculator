@@ -2,6 +2,7 @@ import { Id } from "../../../../general"
 import {
     analyzeComma,
     CommaAnalysis,
+    computeIntroducingJiNotationLevel,
     getJiNotationSymbolClass,
     getRepresentativeSymbol,
     getSagittalComma,
@@ -10,6 +11,7 @@ import {
 } from "../../../../sagittal"
 import { JiNotationSymbolClassWithPrimaryCommaAndExtras } from "./types"
 
+// TODO: is this now an symbolClassAnalysis?
 const getJiNotationSymbolClassWithPrimaryComma = (
     symbolClassId: Id<SymbolClass>
 ): JiNotationSymbolClassWithPrimaryCommaAndExtras => {
@@ -22,7 +24,10 @@ const getJiNotationSymbolClassWithPrimaryComma = (
 
     const { ascii, unicode } = getRepresentativeSymbol(symbolClassId)
 
-    return { ...otherSymbolProperties, ascii, unicode, primaryCommaAnalysis }
+    // TODO: should this be more of a "get"?
+    const introducingJiNotationLevel = computeIntroducingJiNotationLevel(symbolClassId)
+
+    return { ...otherSymbolProperties, ascii, unicode, introducingJiNotationLevel, primaryCommaAnalysis }
 }
 
 export {

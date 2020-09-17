@@ -41,6 +41,7 @@ type JiNotationSymbolClassWithPrimaryCommaAndExtras = Omit<JiNotationSymbolClass
     primaryCommaAnalysis: CommaAnalysis & { id: Id<SagittalComma> }
     ascii: SymbolLongAscii,
     unicode: SymbolUnicode,
+    introducingJiNotationLevel: JiNotationLevel,
 }
 
 type JiNotationBoundIdWithBoundedSymbolClassIdsWithDistancesPairsByJiNotationLevel =

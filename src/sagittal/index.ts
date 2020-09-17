@@ -56,5 +56,6 @@ export {
     SagittalComma,
     SymbolClass,
     getRepresentativeSymbol,
+    computeIntroducingJiNotationLevel,
 } from "./notations"
 export { APOTOME_CENTS } from "./constants"

@@ -2,7 +2,7 @@ import { Io } from "../../../../../src/general/io"
 import { onlyRunInCi } from "../../../../helpers/onlyRunInCi"
 import { runCommandAndGetConsoleOutput } from "../../../../helpers/src/scripts/runCommand"
 
-describe("late-tina-commas", (): void => {
+xdescribe("late-tina-commas", (): void => {
     it("finds LATE commas for tinas", (): void => {
         onlyRunInCi()
 
