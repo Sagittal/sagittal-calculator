@@ -1,14 +1,12 @@
 import { Cents, Id, Maybe, Multiplier } from "../../../../general"
 import {
-    CommaAnalysis,
     Ina,
     JiNotationBound,
     JiNotationLevel,
     Mina,
-    SagittalComma,
     SymbolClass,
+    SymbolClassAnalysis,
     SymbolLongAscii,
-    SymbolUnicode,
 } from "../../../../sagittal"
 
 // shared
@@ -20,19 +18,13 @@ interface BoundedProperties {
 
 // only used temporarily within a method
 
-interface BoundedSymbolClass extends SymbolClass, BoundedProperties {}
+interface BoundedSymbolClass extends SymbolClass, BoundedProperties {
+}
 
 // building up to JiNotationBoundIdentifiers
 
-type SymbolClassAnalysis = Omit<SymbolClass, "primaryCommaId"> & {
-    primaryCommaAnalysis: CommaAnalysis & { id: Id<SagittalComma> }
-    ascii: SymbolLongAscii,
-    unicode: SymbolUnicode,
-    introducingJiNotationLevel: JiNotationLevel,
-    mina: Mina,
+interface BoundedSymbolClassAnalysis extends SymbolClassAnalysis, BoundedProperties {
 }
-
-interface BoundedSymbolClassAnalysis extends SymbolClassAnalysis, BoundedProperties {}
 
 type BoundedSymbolClassAnalysisPair =
     [Maybe<BoundedSymbolClassAnalysis>, Maybe<BoundedSymbolClassAnalysis>]

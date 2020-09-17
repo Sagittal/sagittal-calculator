@@ -1,8 +1,7 @@
 import { Cents, CentsPosition, computeCentsFromPitch, Id, indexOfFinalElement, Name, Pitch } from "../../../general"
 import {
+    getPrimaryComma,
     getRepresentativeSymbol,
-    getSagittalComma,
-    getSymbolClass,
     JiNotationLevel,
     JI_NOTATION_LEVELS_SYMBOL_CLASS_IDS,
     SymbolClass,
@@ -10,9 +9,7 @@ import {
 } from "../../../sagittal"
 
 const getJiNotationSymbolCents = (symbolClassId: Id<SymbolClass>): Cents => {
-    const symbolClass = getSymbolClass(symbolClassId)
-    const primaryCommaId = symbolClass.primaryCommaId
-    const primaryComma = getSagittalComma(primaryCommaId)
+    const primaryComma = getPrimaryComma(symbolClassId)
 
     return computeCentsFromPitch(primaryComma)
 }

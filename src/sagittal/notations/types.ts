@@ -3,7 +3,9 @@
 // and some like Trojan even cut across others
 
 import { Apotome, Comma, Count, Direction, Id, Monzo } from "../../general"
+import { CommaAnalysis } from "../comma"
 import { SymbolLongAscii, SymbolUnicode } from "../io"
+import { JiNotationLevel, Mina } from "./ji"
 
 enum SymbolSubset {
     SPARTAN = "spartan",
@@ -37,6 +39,14 @@ interface SymbolClass {
     //  and you should have a test to prove their primary commas sum to an apotome
 }
 
+type SymbolClassAnalysis = Omit<SymbolClass, "primaryCommaId"> & {
+    primaryCommaAnalysis: CommaAnalysis & { id: Id<SagittalComma> }
+    ascii: SymbolLongAscii,
+    unicode: SymbolUnicode,
+    introducingJiNotationLevel: JiNotationLevel,
+    mina: Mina,
+}
+
 interface RevoSymbol {
     id: Id<RevoSymbol>,
     ascii: SymbolLongAscii,
@@ -52,4 +62,5 @@ export {
     SagittalComma,
     SymbolClass,
     RevoSymbol,
+    SymbolClassAnalysis,
 }

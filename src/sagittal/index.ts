@@ -57,5 +57,8 @@ export {
     getSymbolClass,
     getMina,
     JI_NOTATION,
+    SymbolClassAnalysis,
+    analyzeSymbolClass,
+    getPrimaryComma,
 } from "./notations"
 export { APOTOME_CENTS } from "./constants"

@@ -22,8 +22,10 @@ export {
     JI_NOTATION,
 } from "./ji"
 export { APOTOME } from "./sagittalCommas"
-export { SagittalComma, SymbolClass, RevoSymbol } from "./types"
+export { SagittalComma, SymbolClass, RevoSymbol, SymbolClassAnalysis } from "./types"
 export { SYMBOL_CLASSES } from "./symbolClasses"
 export { REVO_SYMBOLS } from "./symbols"
+export { analyzeSymbolClass } from "./symbolClassAnalysis"
 export { getSymbolClass } from "./symbolClass"
+export { getPrimaryComma } from "./primaryComma"
 export { getRepresentativeSymbol } from "./representativeSymbol"

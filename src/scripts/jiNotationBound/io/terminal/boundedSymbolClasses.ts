@@ -1,6 +1,5 @@
 import { Id, isUndefined, Maybe } from "../../../../general"
-import { JiNotationBound } from "../../../../sagittal"
-import { analyzeSymbolClass } from "./analyzeSymbolClass"
+import { analyzeSymbolClass, JiNotationBound } from "../../../../sagittal"
 import {
     BoundedSymbolClassAnalyses,
     BoundedSymbolClassIdWithDistancesPair,

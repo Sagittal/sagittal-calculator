@@ -1,5 +1,5 @@
 import { Cents, computeCentsFromPitch, Id, isCloseTo, isUndefined, Maybe } from "../../../../general"
-import { getSagittalComma, getSymbolClass, JI_NOTATION, SymbolClass } from "../../../../sagittal"
+import { getPrimaryComma, JI_NOTATION, SymbolClass } from "../../../../sagittal"
 
 const computePositionSymbolClassId = (position: Maybe<Cents>): Maybe<Id<SymbolClass>> => {
     if (!position) {
@@ -7,9 +7,7 @@ const computePositionSymbolClassId = (position: Maybe<Cents>): Maybe<Id<SymbolCl
     }
 
     const symbolClassId = JI_NOTATION.find((symbolClassId: Id<SymbolClass>): boolean => {
-        // TODO: there should be a getPrimaryComma helper for this, which happens a lot
-        const symbolClass = getSymbolClass(symbolClassId)
-        const primaryComma = getSagittalComma(symbolClass.primaryCommaId)
+        const primaryComma = getPrimaryComma(symbolClassId)
 
         return isCloseTo(computeCentsFromPitch(primaryComma), position)
     })

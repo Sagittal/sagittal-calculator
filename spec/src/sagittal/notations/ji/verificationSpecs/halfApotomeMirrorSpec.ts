@@ -1,38 +1,30 @@
-import { Id } from "../../../../../../src/general"
 import { increment } from "../../../../../../src/general/code"
 import { computeCentsFromPitch } from "../../../../../../src/general/music"
 import {
     APOTOME_CENTS,
-    getSagittalComma,
-    getSymbolClass,
+    getPrimaryComma,
     JiNotationBound,
     JI_NOTATION,
     JI_NOTATION_BOUNDS,
     SagittalComma,
-    SymbolClass,
 } from "../../../../../../src/sagittal"
 
 describe("half-apotome mirror", (): void => {
     const halfApotomeCents = APOTOME_CENTS / 2
 
     it("is the case that the commas in the JI notation are symmetrical about the half-apotome mirror", (): void => {
-        const jiNotationSymbolClasses = JI_NOTATION
-            .map((symbolClassId: Id<SymbolClass>): SagittalComma => {
-                const symbolClass = getSymbolClass(symbolClassId)
-
-                return getSagittalComma(symbolClass.primaryCommaId)
-            })
-        const firstCommaGreaterThanHalfApotomeMirrorIndex = jiNotationSymbolClasses.findIndex(
+        const jiNotationPrimaryCommas = JI_NOTATION.map(getPrimaryComma)
+        const firstCommaGreaterThanHalfApotomeMirrorIndex = jiNotationPrimaryCommas.findIndex(
             (sagittalComma: SagittalComma): boolean => computeCentsFromPitch(sagittalComma) > halfApotomeCents,
         )
 
         let indexOffset = 0
-        while (firstCommaGreaterThanHalfApotomeMirrorIndex + indexOffset < jiNotationSymbolClasses.length) {
+        while (firstCommaGreaterThanHalfApotomeMirrorIndex + indexOffset < jiNotationPrimaryCommas.length) {
             const index = firstCommaGreaterThanHalfApotomeMirrorIndex + indexOffset
             const mirroredIndex = firstCommaGreaterThanHalfApotomeMirrorIndex - 1 - indexOffset
 
-            const comma = jiNotationSymbolClasses[ index ]
-            const mirroredComma = jiNotationSymbolClasses[ mirroredIndex ]
+            const comma = jiNotationPrimaryCommas[ index ]
+            const mirroredComma = jiNotationPrimaryCommas[ mirroredIndex ]
 
             const actual = computeCentsFromPitch(comma) - halfApotomeCents
             const expected = halfApotomeCents - computeCentsFromPitch(mirroredComma)

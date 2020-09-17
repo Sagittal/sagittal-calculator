@@ -1,6 +1,7 @@
 import { computeCentsFromPitch, Id, ioSettings, Maybe, Zone } from "../../../general"
 import { formatSymbolClass } from "../../io"
 import { getSagittalComma } from "../getSagittalComma"
+import { getPrimaryComma } from "../primaryComma"
 import { getSymbolClass } from "../symbolClass"
 import { SagittalComma, SymbolClass } from "../types"
 import { formatJiNotationLevel } from "./formatLevel"
@@ -23,8 +24,7 @@ const computeCaptureZone = (
         })} is not present at the ${formatJiNotationLevel(jiNotationLevel)} JI notation level; it is not introduced until the ${formatJiNotationLevel(introducingJiNotationLevel)} JI notation level.`)
     }
 
-    const symbolClass = getSymbolClass(symbolClassId)
-    const primaryComma = getSagittalComma(symbolClass.primaryCommaId)
+    const primaryComma = getPrimaryComma(symbolClassId)
 
     const indexOfBoundJustAboveSymbolAtThisLevel = jiNotationLevelBounds
         .findIndex((jiNotationBound: JiNotationBound): boolean => {

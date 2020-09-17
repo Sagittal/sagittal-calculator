@@ -1,14 +1,5 @@
 import { add, computeCentsFromPitch, Id, Io, Px, subtract } from "../../../../general"
-import {
-    getMina,
-    getRepresentativeSymbol,
-    getSagittalComma,
-    getSymbolClass,
-    JiNotationLevel,
-    JI_NOTATION_LEVELS_SYMBOL_CLASS_IDS,
-    SagittalComma,
-    SymbolClass,
-} from "../../../../sagittal"
+import { analyzeSymbolClass, JiNotationLevel, JI_NOTATION_LEVELS_SYMBOL_CLASS_IDS, SymbolClass } from "../../../../sagittal"
 import { formatMina } from "../terminal"
 import { JI_NOTATION_LEVEL_CENTERS } from "./levelHeights"
 import { DOT_SIZE, MINA_OFFSET, SYMBOL_OFFSET } from "./sizes"
@@ -31,15 +22,9 @@ const visualizeJiNotationLevelSymbolClasses = (): Io[] => {
         const symbolY: Px = add(centerY, SYMBOL_OFFSET)
 
         jiNotationLevelSymbolClassIds.forEach((jiNotationLevelSymbolClassId: Id<SymbolClass>): void => {
-            // TODO: this is one of the places to use the getPrimaryComma helper (marking specifically since this one
-            //  doesn't look quite the same as the others)
-            const jiNotationLevelSymbolClass: SymbolClass = getSymbolClass(jiNotationLevelSymbolClassId)
-            const { primaryCommaId } = jiNotationLevelSymbolClass
-            const mina = getMina(jiNotationLevelSymbolClassId)
-            const { ascii, unicode } = getRepresentativeSymbol(jiNotationLevelSymbolClassId)
-            const primaryComma: SagittalComma = getSagittalComma(primaryCommaId)
+            const { mina, primaryCommaAnalysis, ascii, unicode } = analyzeSymbolClass(jiNotationLevelSymbolClassId)
 
-            const positionX: Px = computeX(computeCentsFromPitch(primaryComma))
+            const positionX: Px = computeX(computeCentsFromPitch(primaryCommaAnalysis))
 
             const adjustedUnicode = ascii === "/|~" ?
                 unicode + "         " :

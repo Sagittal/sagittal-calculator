@@ -4,7 +4,7 @@ import {
     analyzeComma,
     ApotomeSlope,
     CommaAnalysis,
-    formatSymbolClass,
+    formatSymbolClass, getPrimaryComma,
     getSagittalComma, getSymbolClass,
     JI_NOTATION,
     SymbolClass,
@@ -18,11 +18,10 @@ import { computeFindCommasTable } from "../../../../../../src/scripts/jiPitch/io
 describe("verifying primary commas", (): void => {
     xit("checks that every symbol's primary comma is its best-ranked comma in its secondary comma zone according to our metric (not N2D3P9, but a comma notational popularity rank metric which uses it)", (): void => {
         JI_NOTATION.forEach((symbolClassId: Id<SymbolClass>): void => {
-            const symbolClass = getSymbolClass(symbolClassId)
-            const primaryComma = getSagittalComma(symbolClass.primaryCommaId)
+            const primaryComma = getPrimaryComma(symbolClassId)
             const commaName = computeCommaName(primaryComma)
 
-            console.warn(`\n\n${formatSymbolClass(symbolClass.id, ioSettings)} ${commaName}\n\n`)
+            console.warn(`\n\n${formatSymbolClass(symbolClassId, ioSettings)} ${commaName}\n\n`)
 
             const secondaryCommaZone = computeSecondaryCommaZone(symbolClassId)
             const minCents = secondaryCommaZone[ 0 ]

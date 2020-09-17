@@ -1,6 +1,6 @@
 import { abs, Cents, computeCentsFromPitch, Id, Maybe, subtract } from "../../../../general"
 import {
-    getSagittalComma,
+    getPrimaryComma,
     getSymbolClass,
     JiNotationBound,
     JiNotationLevel,
@@ -37,7 +37,7 @@ const computeJiNotationLevelBoundedSymbolClassIdsWithDistances = (
                 .map(
                     (symbolClass: Maybe<SymbolClass>): Maybe<BoundedSymbolClassIdWithDistances> => {
                         if (symbolClass) {
-                            const primaryComma = getSagittalComma(symbolClass.primaryCommaId)
+                            const primaryComma = getPrimaryComma(symbolClass.id)
                             const primaryCommaCents = computeCentsFromPitch(primaryComma)
                             const distance: Cents = abs(subtract(cents, primaryCommaCents))
 

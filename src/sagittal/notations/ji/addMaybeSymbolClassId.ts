@@ -1,14 +1,12 @@
 import { Comma, deepEquals, Id, isUndefined, Maybe } from "../../../general"
-import { getSagittalComma } from "../getSagittalComma"
-import { getSymbolClass } from "../symbolClass"
+import { getPrimaryComma } from "../primaryComma"
 import { SymbolClass } from "../types"
 import { JI_NOTATION } from "./levelSymbolClassIds"
 
 const addMaybeSymbolClassId = (comma: Comma): Comma & { symbolClassId?: Id<SymbolClass> } => {
     const maybeSymbolClassId: Maybe<Id<SymbolClass>> =
         JI_NOTATION.find((symbolClassId: Id<SymbolClass>): boolean => {
-            const symbolClass = getSymbolClass(symbolClassId)
-            const primaryComma = getSagittalComma(symbolClass.primaryCommaId)
+            const primaryComma = getPrimaryComma(symbolClassId)
 
             return deepEquals(comma.monzo, primaryComma.monzo)
         })
