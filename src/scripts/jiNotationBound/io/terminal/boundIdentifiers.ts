@@ -7,7 +7,7 @@ import {
     JiNotationLevel,
     SymbolLongAscii,
 } from "../../../../sagittal"
-import { analyzeBoundedSymbolClasses } from "./analyzeBoundedSymbolClasses"
+import { computeBoundedSymbolClassAnalyses } from "./boundedSymbolClassAnalyses"
 import { JI_NOTATION_LEVEL_BOUNDED_SYMBOL_CLASSES } from "./levelBoundedSymbolClasses"
 import {
     BoundedSymbolClass,
@@ -33,7 +33,7 @@ const extractJiNotationBoundIdentifiers = (jiNotationBound: JiNotationBound): Ji
     }
 
     const boundedSymbolClassAnalyses: BoundedSymbolClassAnalyses =
-        analyzeBoundedSymbolClasses(jiNotationBoundIdWithBoundedSymbolClassIdWithDistancesPairsByJiNotationLevel)
+        computeBoundedSymbolClassAnalyses(jiNotationBoundIdWithBoundedSymbolClassIdWithDistancesPairsByJiNotationLevel)
 
     const [
         extremeLevelLesserBoundedSymbolClassIdWithDistance,

@@ -6,8 +6,7 @@ import {
     JiNotationBoundIdWithBoundedSymbolClassIdsWithDistancesPairsByJiNotationLevel,
 } from "./types"
 
-// TODO: another "analyze" module which probably shouldn't live in an "io" module
-const analyzeBoundedSymbolClasses = (
+const computeBoundedSymbolClassAnalyses = (
     jiNotationBoundIdWithBoundedSymbolClassIdWithDistancesPairsByJiNotationLevel:
         JiNotationBoundIdWithBoundedSymbolClassIdsWithDistancesPairsByJiNotationLevel,
 ): BoundedSymbolClassAnalyses => {
@@ -48,5 +47,5 @@ const analyzeBoundedSymbolClasses = (
 }
 
 export {
-    analyzeBoundedSymbolClasses,
+    computeBoundedSymbolClassAnalyses,
 }
