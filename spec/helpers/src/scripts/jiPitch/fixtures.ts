@@ -10,7 +10,7 @@ const jiPitchAnalysisFixture: JiPitchAnalysis = {
     ratio: [1, 1] as Ratio,
     apotomeSlope: 0 as ApotomeSlope,
     twoThreeFreeSopfr: 0 as Sopfr<{ rough: 5 }>,
-    limit: 1 as Max<Prime>,
+    primeLimit: 1 as Max<Prime>,
     n2d3p9: 1 as N2D3P9,
     twoThreeFreeClass: { ratio: [1, 1] as Ratio } as TwoThreeFreeClass,
 }

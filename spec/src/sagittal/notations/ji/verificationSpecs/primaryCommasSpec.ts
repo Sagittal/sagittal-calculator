@@ -4,8 +4,8 @@ import {
     analyzeComma,
     ApotomeSlope,
     CommaAnalysis,
-    formatSymbolClass, getPrimaryComma,
-    getSagittalComma, getSymbolClass,
+    formatSymbolClass,
+    getPrimaryComma,
     JI_NOTATION,
     SymbolClass,
 } from "../../../../../../src/sagittal"
@@ -13,9 +13,10 @@ import { N2D3P9 } from "../../../../../../src/sagittal/comma/evaluation/n2d3p9"
 import { computeCommaName } from "../../../../../../src/sagittal/comma/name"
 import { computeSecondaryCommaZone } from "../../../../../../src/sagittal/notations/ji/secondaryCommaZone"
 import { computeCommas } from "../../../../../../src/scripts/jiPitch/commas"
-import { computeFindCommasTable } from "../../../../../../src/scripts/jiPitch/io"
+import { computeFindCommasOutput } from "../../../../../../src/scripts/jiPitch/io"
 
 describe("verifying primary commas", (): void => {
+    // tslint:disable-next-line ban
     xit("checks that every symbol's primary comma is its best-ranked comma in its secondary comma zone according to our metric (not N2D3P9, but a comma notational popularity rank metric which uses it)", (): void => {
         JI_NOTATION.forEach((symbolClassId: Id<SymbolClass>): void => {
             const primaryComma = getPrimaryComma(symbolClassId)
@@ -47,7 +48,7 @@ describe("verifying primary commas", (): void => {
             })
             const commaAnalyses = commas.map((comma: Comma): CommaAnalysis => analyzeComma(comma))
 
-            console.warn(computeFindCommasTable(commaAnalyses))
+            console.warn(computeFindCommasOutput(commaAnalyses))
         })
     })
 })

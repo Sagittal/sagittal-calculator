@@ -1,10 +1,5 @@
 import { Id, Maybe, Zone } from "../../../../../../src/general"
-import {
-    getSymbolClass,
-    JI_NOTATION_LEVELS_SYMBOL_CLASS_IDS,
-    SagittalComma,
-    SymbolClass,
-} from "../../../../../../src/sagittal"
+import { JI_NOTATION_LEVELS_SYMBOL_CLASS_IDS, SagittalComma, SymbolClass } from "../../../../../../src/sagittal"
 import { JiNotationLevel } from "../../../../../../src/sagittal/notations/ji"
 import { computeCaptureZone } from "../../../../../../src/sagittal/notations/ji/captureZone"
 

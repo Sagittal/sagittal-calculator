@@ -2,7 +2,7 @@
 // they are concentric, containing lower sets
 // and some like Trojan even cut across others
 
-import { Apotome, Comma, Count, Direction, Id, Monzo } from "../../general"
+import { Apotome, Comma, Count, Direction, Id, Monzo, Name } from "../../general"
 import { CommaAnalysis } from "../comma"
 import { SymbolLongAscii, SymbolUnicode } from "../io"
 import { JiNotationLevel, Mina } from "./ji"
@@ -45,7 +45,7 @@ type SymbolClassAnalysis = Omit<SymbolClass, "primaryCommaId"> & {
     ascii: SymbolLongAscii,
     unicode: SymbolUnicode,
     introducingJiNotationLevel: JiNotationLevel,
-    mina: Mina,
+    minaName: Name<Mina>,
 }
 
 interface RevoSymbol {

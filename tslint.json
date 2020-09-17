@@ -10,7 +10,9 @@
     "ban": [
       true,
       "fit",
-      "fdescribe"
+      "fdescribe",
+      "xit",
+      "xdescribe"
     ],
     "ban-ts-ignore": false,
     "ban-types": false,

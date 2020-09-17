@@ -1,3 +1,3 @@
 export { formatJiNotationBound } from "./bound"
-export { formatMina } from "./bounds"
+export { formatMinaName } from "./bounds"
 export { computeJiNotationBoundsTables } from "./tables"

@@ -179,7 +179,7 @@ export {
     computeIsWithinPrimeMin,
     computeIsWithinPrimeLimit,
     computeIsUnisonPitch,
-    THREE_LIMIT,
+    THREE_PRIME_LIMIT,
     Apotome,
     computeCentsFromNumber,
 } from "./music"

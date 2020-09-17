@@ -6,17 +6,17 @@ describe("addMaybeSymbolClassId", (): void => {
     it(
         `adds the ASCII for a Sagittal JI Notation symbol class if there is one whose primary comma has this name`,
         (): void => {
-        const comma: Comma = {
-            monzo: [-5, 1, 0, 0, 1] as Monzo,
-        } as Comma
+            const comma: Comma = {
+                monzo: [-5, 1, 0, 0, 1] as Monzo,
+            } as Comma
 
-        const actual = addMaybeSymbolClassId(comma)
+            const actual = addMaybeSymbolClassId(comma)
 
-        expect(actual).toEqual({
-            symbolClassId: 115 as Id<SymbolClass>,
-            monzo: [-5, 1, 0, 0, 1] as Monzo,
-        } as Comma & { symbolClassId: Id<SymbolClass> })
-    }
+            expect(actual).toEqual({
+                symbolClassId: 115 as Id<SymbolClass>,
+                monzo: [-5, 1, 0, 0, 1] as Monzo,
+            } as Comma & { symbolClassId: Id<SymbolClass> })
+        },
     )
 
     it(

@@ -13,7 +13,7 @@ import {
 } from "../../../general"
 import { CommaAnalysis } from "../../../sagittal"
 import { computeCommas } from "../commas"
-import { LIMITLESS_2_3_FREE_COPFR, LIMITLESS_N2D3P9, TINA_COMMAS_MAX_CENTS, TINA_COMMAS_MIN_CENTS } from "../constants"
+import { INFINITE_2_3_FREE_COPFR, INFINITE_N2D3P9, TINA_COMMAS_MAX_CENTS, TINA_COMMAS_MIN_CENTS } from "../constants"
 import { jiPitchScriptGroupSettings } from "../globals"
 import { parseFindCommasOptions, readFindCommasOptions } from "../io"
 import { computeLateComma } from "../late"
@@ -33,7 +33,7 @@ const MAX_POSSIBLE_PRIME_LIMIT_GIVEN_MAX_POSSIBLE_SOPFR =
 
 const DEFAULT_OVERRIDES: Partial<FindCommasOptions> = {
     max23FreeSopfr: MAX_POSSIBLE_2_3_FREE_SOPFR_WITHOUT_CRASHING,
-    max23FreeCopfr: LIMITLESS_2_3_FREE_COPFR,
+    max23FreeCopfr: INFINITE_2_3_FREE_COPFR,
     maxPrimeLimit: MAX_POSSIBLE_PRIME_LIMIT_GIVEN_MAX_POSSIBLE_SOPFR,
 }
 const twoThreeFreeClassSettings = parseFindCommasOptions(DEFAULT_OVERRIDES)
@@ -43,7 +43,7 @@ const commas = computeCommas({
     ...twoThreeFreeClassSettings,
     minCents: TINA_COMMAS_MIN_CENTS,
     maxCents: TINA_COMMAS_MAX_CENTS,
-    maxN2D3P9: LIMITLESS_N2D3P9,
+    maxN2D3P9: INFINITE_N2D3P9,
 })
 
 const commaAnalysesSortedByTinaEntries = computeCommaAnalysesSortedByTinaEntries(commas)

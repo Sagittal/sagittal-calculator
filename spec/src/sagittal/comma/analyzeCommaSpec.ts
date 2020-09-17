@@ -13,7 +13,7 @@ describe("analyzeComma", (): void => {
             monzo: [-8, -6, 3, 5, -1] as Monzo,
             ratio: [2100875, 2052864] as Ratio,
             name: "2100875/11S" as Name<Comma>,
-            limit: 11 as Prime,
+            primeLimit: 11 as Prime,
             apotomeSlope: -8.464345 as ApotomeSlope,
             twoThreeFreeClass: { monzo: [0, 0, 3, 5, -1] } as TwoThreeFreeClass,
             twoThreeFreeSopfr: 61 as Sopfr<{ rough: 5 }>,

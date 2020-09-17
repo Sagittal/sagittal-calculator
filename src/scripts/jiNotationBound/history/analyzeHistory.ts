@@ -13,7 +13,7 @@ import { HistoryAnalysis } from "./types"
 const analyzeHistory = (
     history: History,
     jiNotationBound: JiNotationBound,
-    initialPosition: Cents
+    initialPosition: Cents,
 ): HistoryAnalysis => {
     const position = computeHistoryPosition(history)
 

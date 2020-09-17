@@ -12,7 +12,7 @@ describe("analyzeJiPitch", (): void => {
             cents: 1240.022726 as Cents,
             monzo: [-7, -6, 3, 5, -1] as Monzo,
             ratio: [2100875, 1026432] as Ratio,
-            limit: 11 as Prime,
+            primeLimit: 11 as Prime,
             apotomeSlope: -82.352717 as ApotomeSlope,
             twoThreeFreeClass: { monzo: [0, 0, 3, 5, -1] } as TwoThreeFreeClass,
             twoThreeFreeSopfr: 61 as Sopfr<{ rough: 5 }>,

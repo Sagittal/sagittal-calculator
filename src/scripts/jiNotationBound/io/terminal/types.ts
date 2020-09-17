@@ -1,4 +1,4 @@
-import { Cents, Id, Maybe, Multiplier } from "../../../../general"
+import { Cents, Id, Maybe, Multiplier, Name } from "../../../../general"
 import {
     Ina,
     JiNotationBound,
@@ -36,8 +36,8 @@ interface JiNotationBoundIdentifiers {
     boundedSymbolClassAnalyses: BoundedSymbolClassAnalyses,
     extremeLevelGreaterBoundedSymbolClass: SymbolLongAscii,
     extremeLevelLesserBoundedSymbolClass: SymbolLongAscii,
-    greaterBoundedMina?: Mina,
-    lesserBoundedMina?: Mina,
+    greaterBoundedMinaName?: Name<Mina>,
+    lesserBoundedMinaName?: Name<Mina>,
     cents: Cents,
 }
 

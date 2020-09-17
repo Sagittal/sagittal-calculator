@@ -26,7 +26,7 @@ const visualizeJiNotationLevelBounds = (): Io[] => {
 
                 jiNotationLevelBoundElements.push(`  <line stroke-dasharray="${DASH_SIZE}" stroke="black" x1="${positionX}" x2="${positionX}" y1="${topY}" y2="${bottomY}" />\n` as Io)
 
-                if (jiNotationLevel === JiNotationLevel.EXTREME) { // JI notation bound ID, not mina label
+                if (jiNotationLevel === JiNotationLevel.EXTREME) { // JI notation bound ID, not mina name
                     jiNotationLevelBoundElements.push(`  <text stroke="white" stroke-width="0.45em" text-anchor="middle" xml:space="preserve" x="${positionX}" y="${textY}" font-size="12px" font-family="Helvetica">${index}</text>\n` as Io)
                     jiNotationLevelBoundElements.push(`  <text fill="black" text-anchor="middle" xml:space="preserve" x="${positionX}" y="${textY}" font-size="12px" font-family="Helvetica">${index}</text>\n` as Io)
                 }

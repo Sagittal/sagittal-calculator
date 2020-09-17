@@ -5,7 +5,7 @@ const JI_NOTATION_LEVELS: JiNotationLevel[] = [
     JiNotationLevel.HIGH,
     JiNotationLevel.ULTRA,
     JiNotationLevel.EXTREME,
-    JiNotationLevel.INSANE
+    JiNotationLevel.INSANE,
 ]
 
 export {

@@ -14,7 +14,7 @@ const INA_SIZES: Record<JiNotationLevel, Cents> = JI_NOTATION_LEVEL_EDAS.reduce(
     (
         jiNotationLevelEdaStepSizes: Record<JiNotationLevel, Cents>,
         jiNotationLevelEda: Ed<Apotome>,
-        index: number
+        index: number,
     ): Record<JiNotationLevel, Cents> =>
         ({
             ...jiNotationLevelEdaStepSizes,

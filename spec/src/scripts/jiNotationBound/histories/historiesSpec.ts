@@ -3,7 +3,7 @@ import { JiNotationBound, JiNotationLevel } from "../../../../../src/sagittal/no
 import { computeHistories, EventType } from "../../../../../src/scripts/jiNotationBound/histories"
 import { jiNotationBoundFixture } from "../../../../helpers/src/scripts/jiNotationBound/fixtures"
 
-xdescribe("computeHistories", (): void => {
+describe("computeHistories", (): void => {
     it("given a JI notation bound, returns an array of all of its possible histories", (): void => {
         const jiNotationBound: JiNotationBound = {
             ...jiNotationBoundFixture,

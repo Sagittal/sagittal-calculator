@@ -3,10 +3,10 @@ import { Max, Prime, Sopfr } from "../../../../src/general/math"
 import { compute23FreePrimesToCheck } from "../../../../src/scripts/jiPitch/twoThreeFreePrimesToCheck"
 
 describe("compute23FreePrimesToCheck", (): void => {
-    it("when none of max prime limit, max sopfr, nor max N2D3P9 are provided, errors", (): void => {
+    it("when none of max prime limit, max SoPFR, nor max N2D3P9 are provided, errors", (): void => {
         expect((): void => {
             compute23FreePrimesToCheck({})
-        }).toThrowError("The maximum prime must be limited somehow.")
+        }).toThrowError("The maximum prime must be constrained somehow.")
     })
 
     describe("when only the prime limit is provided", (): void => {
@@ -29,7 +29,7 @@ describe("compute23FreePrimesToCheck", (): void => {
         })
     })
 
-    describe("when only sopfr is provided", (): void => {
+    describe("when only SoPFR is provided", (): void => {
         it("if it is not a prime, the final prime less than it is the max prime", (): void => {
             const max23FreeSopfr = 20 as Max<Sopfr<{ rough: 5 }>>
 
@@ -49,8 +49,8 @@ describe("compute23FreePrimesToCheck", (): void => {
         })
     })
 
-    describe("when both prime limit and sopfr are provided", (): void => {
-        it("if the prime limit is less than the sopfr, prime limit should be the max prime", (): void => {
+    describe("when both prime limit and SoPFR are provided", (): void => {
+        it("if the prime limit is less than the SoPFR, prime limit should be the max prime", (): void => {
             const maxPrimeLimit = 13 as Max<Max<Prime>>
             const max23FreeSopfr = 19 as Max<Sopfr<{ rough: 5 }>>
 
@@ -60,7 +60,7 @@ describe("compute23FreePrimesToCheck", (): void => {
             expect(actual).toEqual(expected)
         })
 
-        it("if the sopfr is less than the prime limit, sopfr should be the max prime", (): void => {
+        it("if the SoPFR is less than the prime limit, SoPFR should be the max prime", (): void => {
             const maxPrimeLimit = 23 as Max<Max<Prime>>
             const max23FreeSopfr = 17 as Max<Sopfr<{ rough: 5 }>>
 

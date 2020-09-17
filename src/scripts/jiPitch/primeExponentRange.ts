@@ -28,7 +28,7 @@ const computePrimeExponentRange = (
     } = options
 
     if (max23FreeSopfr === Infinity && max23FreeCopfr === Infinity && !primeExponentExtremaGivenMaxN2D3P9) {
-        throw new Error("The range must be limited somehow.")
+        throw new Error("The range must be constrained somehow.")
     }
 
     const [minPrimeExponentGivenMaxN2D3P9, maxPrimeExponentGivenMaxN2D3P9]: Extrema<Integer & Exponent<Prime>> =

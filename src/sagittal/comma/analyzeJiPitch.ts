@@ -17,7 +17,7 @@ const analyzeJiPitch = (jiPitch: JiPitch): JiPitchAnalysis => {
 
     const apotomeSlope = computeApotomeSlope(jiPitch)
     const cents = computeCentsFromPitch(jiPitch)
-    const limit: Prime = computeGpf(computeJiPitchMonzo(jiPitch))
+    const primeLimit: Prime = computeGpf(computeJiPitchMonzo(jiPitch))
 
     const twoThreeFreeClass = compute23FreeClass(jiPitch)
     const twoThreeFreeSopfr = computeSopfr(computeJiPitchMonzo(twoThreeFreeClass))
@@ -28,7 +28,7 @@ const analyzeJiPitch = (jiPitch: JiPitch): JiPitchAnalysis => {
         monzo,
         ratio,
         cents,
-        limit,
+        primeLimit,
         apotomeSlope,
         twoThreeFreeClass,
         twoThreeFreeSopfr,

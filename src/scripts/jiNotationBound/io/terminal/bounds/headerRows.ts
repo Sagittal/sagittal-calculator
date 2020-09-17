@@ -3,10 +3,10 @@ import { JiNotationBoundAnalysis } from "../../../bound"
 
 const BOUND_ANALYSES_COLUMN_TITLES: Io[] = [
     "bound ID",
-    "lesser mina",
-    "greater mina",
-    "lesser extreme level symbol",
-    "greater extreme level symbol",
+    "lesser mina name",
+    "greater mina name",
+    "lesser extreme symbol class",
+    "greater extreme symbol class",
     "medium level rank",
     "high level rank",
     "ultra level rank",

@@ -1,6 +1,7 @@
 import {
     computeIntegerFromMonzo,
-    Direction, Integer,
+    Direction,
+    Integer,
     Max,
     Monzo,
     Numerator,

@@ -1,7 +1,8 @@
-       	       	exactly                            	introducing	      	       	           
-2,3-   	       	notating                           	symbol     	      	Scala  	Scala      
-free   	       	JI                                 	subset     	N2D3P9	archive	archive    
-class  	N2D3P9 	symbols                            	indices    	rank  	rank   	occurrences
+       	       	exactly                            	           	      	       	           
+       	       	notating                           	introducing	      	       	           
+2,3-   	       	JI                                 	symbol     	      	Scala  	Scala      
+free   	       	symbol                             	subset     	N2D3P9	archive	archive    
+class  	N2D3P9 	classes                            	indices    	rank  	rank   	occurrences
 1/1    	  1.000	     |      '/|                    	0, 3       	1.5	1	7624
 1/1    	  1.000	     |      '/|                    	0, 3       	1.5	1	7624
 5/1    	  1.389	    '|       /|                    	3, 0       	3	2	5371

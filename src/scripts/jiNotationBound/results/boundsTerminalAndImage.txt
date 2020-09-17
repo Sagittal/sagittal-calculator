@@ -3,9 +3,9 @@
 
        	       	       	        	        	       	       	       	       	       	       	       	       	       	       	       	       	       	       	       	       	initial	       
        	       	       	lesser  	greater 	       	       	       	       	       	       	       	       	       	       	       	       	       	       	       	actual 	comma  	a.b.vs 
-       	       	       	extreme 	extreme 	medium 	high   	ultra  	extreme	       	medium 	high   	ultra  	extreme	overall	medium 	high   	ultra  	extreme	overall	bound  	mean   	i.c.m. 
-bound  	lesser 	greater	level   	level   	level  	level  	level  	level  	overall	dstance	dstance	dstance	dstance	dstance	ina-dst	ina-dst	ina-dst	ina-dst	ina-dst	pos    	pos    	error  
-ID     	mina   	mina   	symbol  	symbol  	rank   	rank   	rank   	rank   	rank   	moved  	moved  	moved  	moved  	moved  	moved  	moved  	moved  	moved  	moved  	(¢)    	(¢)    	(tinas)
+       	lesser 	greater	extreme 	extreme 	medium 	high   	ultra  	extreme	       	medium 	high   	ultra  	extreme	overall	medium 	high   	ultra  	extreme	overall	bound  	mean   	i.c.m. 
+bound  	mina   	mina   	symbol  	symbol  	level  	level  	level  	level  	overall	dstance	dstance	dstance	dstance	dstance	ina-dst	ina-dst	ina-dst	ina-dst	ina-dst	pos    	pos    	error  
+ID     	name   	name   	class   	class   	rank   	rank   	rank   	rank   	rank   	moved  	moved  	moved  	moved  	moved  	moved  	moved  	moved  	moved  	moved  	(¢)    	(¢)    	(tinas)
        	       	       	        	        	       	       	       	       	       	       	       	       	       	       	       	       	       	       	       	       	       	       
   0    	       	  1    	        	    `|  	       	       	       	  0    	  0    	       	       	       	  0.033	  0.033	       	       	       	  0.236	  0.236	  0.211	  0.211	 -0.004
   1    	  1    	  2    	    `|  	   ``|  	       	       	       	  0    	  0    	       	       	       	  0.041	  0.041	       	       	       	  0.292	  0.292	  0.773	  0.628	  1.034

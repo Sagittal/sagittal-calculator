@@ -11,17 +11,17 @@ describe("JI_NOTATION_LEVELS_SYMBOL_CLASS_IDS", (): void => {
     })
 
     it("keeps the symbol class IDs in each level sorted", (): void => {
-        expect(JI_NOTATION_LEVELS_SYMBOL_CLASS_IDS[ JiNotationLevel.MEDIUM]).toEqual(
-            sort(shallowClone(JI_NOTATION_LEVELS_SYMBOL_CLASS_IDS[ JiNotationLevel.MEDIUM ]))
+        expect(JI_NOTATION_LEVELS_SYMBOL_CLASS_IDS[ JiNotationLevel.MEDIUM ]).toEqual(
+            sort(shallowClone(JI_NOTATION_LEVELS_SYMBOL_CLASS_IDS[ JiNotationLevel.MEDIUM ])),
         )
-        expect(JI_NOTATION_LEVELS_SYMBOL_CLASS_IDS[ JiNotationLevel.HIGH]).toEqual(
-            sort(shallowClone(JI_NOTATION_LEVELS_SYMBOL_CLASS_IDS[ JiNotationLevel.HIGH ]))
+        expect(JI_NOTATION_LEVELS_SYMBOL_CLASS_IDS[ JiNotationLevel.HIGH ]).toEqual(
+            sort(shallowClone(JI_NOTATION_LEVELS_SYMBOL_CLASS_IDS[ JiNotationLevel.HIGH ])),
         )
-        expect(JI_NOTATION_LEVELS_SYMBOL_CLASS_IDS[ JiNotationLevel.ULTRA]).toEqual(
-            sort(shallowClone(JI_NOTATION_LEVELS_SYMBOL_CLASS_IDS[ JiNotationLevel.ULTRA ]))
+        expect(JI_NOTATION_LEVELS_SYMBOL_CLASS_IDS[ JiNotationLevel.ULTRA ]).toEqual(
+            sort(shallowClone(JI_NOTATION_LEVELS_SYMBOL_CLASS_IDS[ JiNotationLevel.ULTRA ])),
         )
-        expect(JI_NOTATION_LEVELS_SYMBOL_CLASS_IDS[ JiNotationLevel.EXTREME]).toEqual(
-            sort(shallowClone(JI_NOTATION_LEVELS_SYMBOL_CLASS_IDS[ JiNotationLevel.EXTREME ]))
+        expect(JI_NOTATION_LEVELS_SYMBOL_CLASS_IDS[ JiNotationLevel.EXTREME ]).toEqual(
+            sort(shallowClone(JI_NOTATION_LEVELS_SYMBOL_CLASS_IDS[ JiNotationLevel.EXTREME ])),
         )
     })
 })

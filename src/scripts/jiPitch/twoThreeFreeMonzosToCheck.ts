@@ -36,12 +36,12 @@ const compute23FreeMonzosToCheck = (
     if (isUndefined(max23FreeSopfr) && isUndefined(maxN2D3P9)) {
         if (isUndefined(maxPrimeLimit)) {
             if (isUndefined(max23FreeCopfr)) {
-                throw new Error("The primes must be limited somehow.")
+                throw new Error("The primes must be constrained somehow.")
             } else {
-                throw new Error("The size of the primes must be limited somehow.")
+                throw new Error("The size of the primes must be constrained somehow.")
             }
         } else if (isUndefined(max23FreeCopfr)) {
-            throw new Error("The count of the primes must be limited somehow.")
+            throw new Error("The count of the primes must be constrained somehow.")
         }
     }
 

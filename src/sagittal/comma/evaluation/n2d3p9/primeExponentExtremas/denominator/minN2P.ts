@@ -1,4 +1,4 @@
-import { Base, Denominator, Min, min, pow, Prime } from "../../../../../../general"
+import { Min, min, pow } from "../../../../../../general"
 import {
     N2P,
     SortedNumeratorPossibilityWithGreaterGpfThanDenominatorPrimeIncludingN2P,

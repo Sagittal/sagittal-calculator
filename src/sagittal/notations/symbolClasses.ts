@@ -472,6 +472,8 @@ const SYMBOL_CLASSES: SymbolClass[] = [
         primaryCommaId: 77 as Id<SagittalComma>,
         elements: ["`|", "~|", "|)"] as SymbolLongAscii[],
     },
+    // Missing ID 78 as an artifact from the removal of the forum topic re: a consistent 37-prime-limit
+    // http://forum.sagittal.org/viewtopic.php?f=4&t=448
     {
         id: 79 as Id<SymbolClass>,
         smallestSymbolSubset: SymbolSubset.OLYMPIAN,

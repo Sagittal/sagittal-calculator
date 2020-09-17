@@ -19,7 +19,7 @@ import {
     Ratio,
     stringify,
     SUPERSCRIPT_NUMS,
-    THREE_LIMIT,
+    THREE_PRIME_LIMIT,
 } from "../../../general"
 import { computeIsCommaSized } from "./isCommaSized"
 import { computeSizeCategory } from "./sizeCategory"
@@ -72,7 +72,7 @@ const computeCommaName = (
     const sizeCategory: SizeCategoryAbbreviation | SizeCategoryName = computeSizeCategory(superComma, { abbreviated })
 
     let formattedCommaNameRatio
-    if (computeIsWithinPrimeLimit(comma, THREE_LIMIT) && !computeIsUnisonPitch(comma)) {
+    if (computeIsWithinPrimeLimit(comma, THREE_PRIME_LIMIT) && !computeIsUnisonPitch(comma)) {
         formattedCommaNameRatio = "3"
     } else {
         const commaNameRatio: CommaNameRatio =

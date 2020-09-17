@@ -6,7 +6,7 @@ import { JiNotationLevel } from "./types"
 
 const getIntroducingJiNotationLevel = (symbolClassId: Id<SymbolClass>): JiNotationLevel => {
     for (const jiNotationLevel of JI_NOTATION_LEVELS) {
-        if (JI_NOTATION_LEVELS_SYMBOL_CLASS_IDS[jiNotationLevel].includes(symbolClassId)) {
+        if (JI_NOTATION_LEVELS_SYMBOL_CLASS_IDS[ jiNotationLevel ].includes(symbolClassId)) {
             return jiNotationLevel
         }
     }

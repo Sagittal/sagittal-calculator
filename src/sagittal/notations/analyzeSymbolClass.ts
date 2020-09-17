@@ -1,7 +1,7 @@
 import { Id } from "../../general"
 import { analyzeComma, CommaAnalysis } from "../comma"
 import { getSagittalComma } from "./getSagittalComma"
-import { getIntroducingJiNotationLevel, getMina } from "./ji"
+import { getIntroducingJiNotationLevel, getMinaName } from "./ji"
 import { getRepresentativeSymbol } from "./representativeSymbol"
 import { getSymbolClass } from "./symbolClass"
 import { SagittalComma, SymbolClass, SymbolClassAnalysis } from "./types"
@@ -19,10 +19,10 @@ const analyzeSymbolClass = (
     const { ascii, unicode } = getRepresentativeSymbol(symbolClassId)
 
     const introducingJiNotationLevel = getIntroducingJiNotationLevel(symbolClassId)
-    
-    const mina = getMina(symbolClassId)
 
-    return { ...otherSymbolClassProperties, mina, ascii, unicode, introducingJiNotationLevel, primaryCommaAnalysis }
+    const minaName = getMinaName(symbolClassId)
+
+    return { ...otherSymbolClassProperties, minaName, ascii, unicode, introducingJiNotationLevel, primaryCommaAnalysis }
 }
 
 export {

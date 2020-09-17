@@ -1,4 +1,4 @@
-import { Base, log, Monzo, Power } from "../../../../../../src/general/math"
+import { Base, log, Monzo } from "../../../../../../src/general/math"
 import { Parameter, ParameterValue, Submetric } from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
 import { computeSubmetricAntivotes } from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares/antivotes/submetricAntivotes"
 import { Antivotes } from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares/types"
@@ -273,7 +273,7 @@ describe("computeSubmetricAntivotes", (): void => {
         expect(actual).toBe(expected)
     })
 
-    it("when the submetric type is gpf, takes the max prime factor in the 2,3-free monzo", (): void => {
+    it("when the submetric type is GPF, takes the max prime factor in the 2,3-free monzo", (): void => {
         submetric[ Parameter.MAX ] = true
         submetric[ Parameter.WITHOUT_REPETITION ] = true
 
@@ -286,7 +286,7 @@ describe("computeSubmetricAntivotes", (): void => {
         expect(actual).toBe(expected)
     })
 
-    it("when the submetric type is gpif, takes the max prime factor index in the 2,3-free monzo", (): void => {
+    it("when the submetric type is GPIF, takes the max prime factor index in the 2,3-free monzo", (): void => {
         submetric[ Parameter.MAX ] = true
         submetric[ Parameter.WITHOUT_REPETITION ] = true
         submetric[ Parameter.USE_PRIME_INDEX ] = true

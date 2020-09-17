@@ -31,7 +31,7 @@ describe("computeSortedNumeratorPossibilitiesForDenominatorPrimeGivenMaxN2D3P9",
 
         const expected = {
             sortedNumeratorPossibilitiesGivenMaxN2D3P9WithLesserGpfThanDenominatorPrimeSortedByN2: [
-                { numerator: 25 as Numerator, gpf: 5 as Max<Prime>, n2: 6.25 as N2 }
+                { numerator: 25 as Numerator, gpf: 5 as Max<Prime>, n2: 6.25 as N2 },
             ] as SortedNumeratorPossibilityWithLesserGpfThanDenominatorPrimeIncludingN2[],
             sortedNumeratorPossibilitiesGivenMaxN2D3P9WithGreaterGpfThanDenominatorPrimeSortedByN2P: [
                 { numerator: 13 as Numerator, gpf: 13 as Max<Prime>, n2p: 84.5 as N2P },

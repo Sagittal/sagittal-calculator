@@ -9,6 +9,7 @@ const IDENTIFYING_COMMA_NAME_CHARS = /[unskCSMLA]/
 
 const SUPERSCRIPT_NUMS: Char[] = ["⁰", "¹", "²", "³", "⁴", "⁵", "⁶", "⁷", "⁸", "⁹"] as Char[]
 
+// TODO: perhaps for cleanliness I should replace \n with NEWLINE and \t with TAB throughout the code base
 const NEWLINE = "\n" as Io
 const SPACE = " " as Io
 const BLANK = "" as Io

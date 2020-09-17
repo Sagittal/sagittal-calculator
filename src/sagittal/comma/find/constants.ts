@@ -9,7 +9,7 @@ const DEFAULT_MAX_AAS = 14 as Max<Abs<ApotomeSlope>>
 const DEFAULT_MAX_N2D3P9 = 307 as Max<N2D3P9>
 const DEFAULT_MAX_TWO_THREE_FREE_SOPFR = 61 as Max<Sopfr<{ rough: 5 }>> // can go as high as 127 without crashing
 const DEFAULT_MAX_TWO_THREE_FREE_COPFR = 555 as Max<Copfr<{ rough: 5 }>> // A silly number, unlikely to come close
-const DEFAULT_MAX_PRIME_LIMIT = 47 as Max<Max<Prime>> // can be set as high as sopfr; no sense going beyond it
+const DEFAULT_MAX_PRIME_LIMIT = 47 as Max<Max<Prime>> // can be set as high as SoPFR; no sense going beyond it
 
 const DEFAULT_FIND_COMMAS_OPTIONS = {
     max23FreeSopfr: DEFAULT_MAX_TWO_THREE_FREE_SOPFR,

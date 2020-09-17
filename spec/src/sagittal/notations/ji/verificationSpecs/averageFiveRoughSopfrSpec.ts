@@ -6,7 +6,7 @@ import { getPrimaryComma, JI_NOTATION, SymbolClass } from "../../../../../../src
 
 const AVERAGE_TWO_THREE_FREE_SOPFR: Avg<Sopfr<{ rough: 5 }>> = 22.785235 as Avg<Sopfr<{ rough: 5 }>>
 
-describe("average 2,3-free sopfr", (): void => {
+describe("average 2,3-free SoPFR", (): void => {
     it("is about 23", (): void => {
         const twoThreeFreeSopfrs: Array<Sopfr<{ rough: 5 }>> =
             JI_NOTATION.map((symbolClassId: Id<SymbolClass>): Sopfr<{ rough: 5 }> => {

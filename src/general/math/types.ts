@@ -1,9 +1,8 @@
 import { Count, Sum } from "../types"
 
 type Numeric<T extends NumericTypeParameters> = number & NumericTypeParameterEffects<T>
-type Integer<
-    T extends NumericTypeParameters & { irrational: false, integer: true } = { irrational: false, integer: true }
-> = Numeric<T>
+// tslint:disable-next-line max-line-length
+type Integer<T extends NumericTypeParameters & { irrational: false, integer: true } = { irrational: false, integer: true }> = Numeric<T>
 type MaybeIntegerBrand<T> = T extends { integer: true } ? { _IntegerBrand: "Integer" } : {}
 
 type Prime<T = void> = Integer & { _PrimeBrand: "Prime" } & (T extends void ? {} : T & { _PrimeOfBrand: T })

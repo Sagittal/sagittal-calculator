@@ -1,6 +1,6 @@
 import { Maybe } from "../../../../general"
 import {
-    getMina,
+    getMinaName,
     getRepresentativeSymbol,
     getSymbolClass,
     JiNotationBound,
@@ -50,8 +50,8 @@ const extractJiNotationBoundIdentifiers = (jiNotationBound: JiNotationBound): Ji
     const formattedExtremeLevelLesserBoundedSymbolClass = extremeLevelLesserBoundedSymbolClass ?
         getRepresentativeSymbol(extremeLevelLesserBoundedSymbolClass.id).ascii :
         "" as SymbolLongAscii
-    const lesserBoundedMina = extremeLevelLesserBoundedSymbolClass &&
-        getMina(extremeLevelLesserBoundedSymbolClass.id)
+    const lesserBoundedMinaName = extremeLevelLesserBoundedSymbolClass &&
+        getMinaName(extremeLevelLesserBoundedSymbolClass.id)
 
     const extremeLevelGreaterBoundedSymbolClass: Maybe<BoundedSymbolClass> =
         extremeLevelGreaterBoundedSymbolClassIdWithDistance && {
@@ -61,16 +61,16 @@ const extractJiNotationBoundIdentifiers = (jiNotationBound: JiNotationBound): Ji
     const formattedExtremeLevelGreaterBoundedSymbolClass = extremeLevelGreaterBoundedSymbolClass ?
         getRepresentativeSymbol(extremeLevelGreaterBoundedSymbolClass.id).ascii :
         "" as SymbolLongAscii
-    const greaterBoundedMina = extremeLevelGreaterBoundedSymbolClass &&
-        getMina(extremeLevelGreaterBoundedSymbolClass.id)
+    const greaterBoundedMinaName = extremeLevelGreaterBoundedSymbolClass &&
+        getMinaName(extremeLevelGreaterBoundedSymbolClass.id)
 
     return {
         extremeLevelLesserBoundedSymbolClass: formattedExtremeLevelLesserBoundedSymbolClass,
         extremeLevelGreaterBoundedSymbolClass: formattedExtremeLevelGreaterBoundedSymbolClass,
         cents,
         boundedSymbolClassAnalyses,
-        lesserBoundedMina,
-        greaterBoundedMina,
+        lesserBoundedMinaName,
+        greaterBoundedMinaName,
     }
 }
 

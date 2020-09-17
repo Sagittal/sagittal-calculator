@@ -3,7 +3,10 @@ import { JiNotationBound } from "../../../../../../../src/sagittal/notations/ji"
 import { JiNotationBoundAnalysis } from "../../../../../../../src/scripts/jiNotationBound/bound"
 import { EventAnalysis } from "../../../../../../../src/scripts/jiNotationBound/history"
 import { formatJiNotationBound } from "../../../../../../../src/scripts/jiNotationBound/io"
-import { jiNotationBoundAnalysisFixture, jiNotationBoundFixture } from "../../../../../../helpers/src/scripts/jiNotationBound/fixtures"
+import {
+    jiNotationBoundAnalysisFixture,
+    jiNotationBoundFixture,
+} from "../../../../../../helpers/src/scripts/jiNotationBound/fixtures"
 
 describe("formatJiNotationBound", (): void => {
     it("returns a string which is a multi-line, properly indented rendition of the JI notation bound analysis, as well as identifying information for the JI notation bound", (): void => {
@@ -36,7 +39,7 @@ describe("formatJiNotationBound", (): void => {
             `                    ",,|",`,
             `                    "|("`,
             `                ],`,
-            `                "mina": 10,`,
+            `                "minaName": "10",`,
             `                "ascii": ",,|(",`,
             `                "unicode": "",`,
             `                "introducingJiNotationLevel": "extreme",`,
@@ -55,7 +58,7 @@ describe("formatJiNotationBound", (): void => {
             `                        351`,
             `                    ],`,
             `                    "cents": 4.925277999283972,`,
-            `                    "limit": 13,`,
+            `                    "primeLimit": 13,`,
             `                    "apotomeSlope": -3.3032673101806025,`,
             `                    "twoThreeFreeClass": {`,
             `                        "monzo": [`,
@@ -81,7 +84,7 @@ describe("formatJiNotationBound", (): void => {
             `                    ",|",`,
             `                    "|("`,
             `                ],`,
-            `                "mina": 11,`,
+            `                "minaName": "11",`,
             `                "ascii": ",|(",`,
             `                "unicode": "",`,
             `                "introducingJiNotationLevel": "extreme",`,
@@ -105,7 +108,7 @@ describe("formatJiNotationBound", (): void => {
             `                        22528`,
             `                    ],`,
             `                    "cents": 5.447635291818084,`,
-            `                    "limit": 31,`,
+            `                    "primeLimit": 31,`,
             `                    "apotomeSlope": 5.664569248266845,`,
             `                    "twoThreeFreeClass": {`,
             `                        "monzo": [`,
@@ -138,7 +141,7 @@ describe("formatJiNotationBound", (): void => {
             `                    ",,|",`,
             `                    "|("`,
             `                ],`,
-            `                "mina": 10,`,
+            `                "minaName": "10",`,
             `                "ascii": ",,|(",`,
             `                "unicode": "",`,
             `                "introducingJiNotationLevel": "extreme",`,
@@ -157,7 +160,7 @@ describe("formatJiNotationBound", (): void => {
             `                        351`,
             `                    ],`,
             `                    "cents": 4.925277999283972,`,
-            `                    "limit": 13,`,
+            `                    "primeLimit": 13,`,
             `                    "apotomeSlope": -3.3032673101806025,`,
             `                    "twoThreeFreeClass": {`,
             `                        "monzo": [`,
@@ -183,7 +186,7 @@ describe("formatJiNotationBound", (): void => {
             `                    ",|",`,
             `                    "|("`,
             `                ],`,
-            `                "mina": 11,`,
+            `                "minaName": "11",`,
             `                "ascii": ",|(",`,
             `                "unicode": "",`,
             `                "introducingJiNotationLevel": "extreme",`,
@@ -207,7 +210,7 @@ describe("formatJiNotationBound", (): void => {
             `                        22528`,
             `                    ],`,
             `                    "cents": 5.447635291818084,`,
-            `                    "limit": 31,`,
+            `                    "primeLimit": 31,`,
             `                    "apotomeSlope": 5.664569248266845,`,
             `                    "twoThreeFreeClass": {`,
             `                        "monzo": [`,
@@ -231,8 +234,8 @@ describe("formatJiNotationBound", (): void => {
             `            }`,
             `        ]`,
             `    },`,
-            `    "lesserBoundedMina": 10,`,
-            `    "greaterBoundedMina": 11`,
+            `    "lesserBoundedMinaName": "10",`,
+            `    "greaterBoundedMinaName": "11"`,
             `}`,
             `{`,
             `    "bestPossibleHistory": {`,
@@ -256,6 +259,9 @@ describe("formatJiNotationBound", (): void => {
             `    "possibleHistoryCount": 0`,
             `}`,
         ].join("\n")
+
+        // console.log("actual", actual)
+        // console.log("expected", expected)
 
         expect(actual).toEqual(expected)
     })

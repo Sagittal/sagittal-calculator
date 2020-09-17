@@ -14,13 +14,13 @@ interface Popular23FreeClassAnalysis extends SharedPopular23FreeClassAnalysisPro
     formattedExactlyNotatingSymbolClasses: Io,
 }
 
-interface Popular23FreeClassAnalysisWithBestExactlyNotatingComma extends SharedPopular23FreeClassAnalysisProperties {
-    centsOfBestExactlyNotatingComma: Formatted<Cents>,
-    monzoOfBestExactlyNotatingComma: Formatted<Monzo>,
-    maybeSymbolForBestExactlyNotatingComma: Io,
+interface Popular23FreeClassAnalysisWithBestNotatingComma extends SharedPopular23FreeClassAnalysisProperties {
+    centsOfBestNotatingComma: Formatted<Cents>,
+    monzoOfBestNotatingComma: Formatted<Monzo>,
+    maybeSymbolForBestNotatingComma: Io,
 }
 
 export {
     Popular23FreeClassAnalysis,
-    Popular23FreeClassAnalysisWithBestExactlyNotatingComma,
+    Popular23FreeClassAnalysisWithBestNotatingComma,
 }

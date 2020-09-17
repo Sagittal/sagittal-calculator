@@ -2,7 +2,11 @@
 
 import { Count, Id, Rank } from "../../../../../../../src/general"
 import { JiNotationBound, JI_NOTATION_BOUNDS } from "../../../../../../../src/sagittal/notations/ji"
-import { analyzeJiNotationBound, rankBoundIndices, rankCounts } from "../../../../../../../src/scripts/jiNotationBound/bound"
+import {
+    analyzeJiNotationBound,
+    rankBoundIndices,
+    rankCounts,
+} from "../../../../../../../src/scripts/jiNotationBound/bound"
 import { computeHistories } from "../../../../../../../src/scripts/jiNotationBound/histories"
 import { EventAnalysis } from "../../../../../../../src/scripts/jiNotationBound/history"
 import { formatRankAnalyses } from "../../../../../../../src/scripts/jiNotationBound/io/terminal/rank"

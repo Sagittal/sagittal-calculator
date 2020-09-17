@@ -1,43 +1,53 @@
-import { addTexts, concat, Formatted, Row, shallowClone } from "../../../general"
-import { CommaAnalysis } from "../../../sagittal"
+import { Id, Io, Row, splitColumnTitlesIntoRowsBySpaces, TwoThreeFreeClass } from "../../../general"
+import { CommaAnalysis, JiPitchAnalysis, SymbolClass } from "../../../sagittal"
 
-const EXACTLY_NOTATING_COMMA_WITH_MAYBE_SAGITTAL_SYMBOLS_HEADER_ROW = [
-    "symbol  ", // Extra space to attempt to stay lined up with the JI pitch table
-    "name",
+const JI_PITCH_COLUMN_TITLES = [
     "ratio",
     "monzo",
     "cents",
     "apotome slope",
-    // this table does not include limit, 2,3-free sopfr, or N2D3P9,
-    // because they will always be the same for every entry in the table
-    // and they are shared already, once each, in the table up above this one, for the JI pitch analysis
-] as Row<{ of: CommaAnalysis, header: true }>
+] as Io[]
 
-const FIND_COMMAS_HEADER_ROW: Row<{ of: CommaAnalysis, header: true }> = concat(
-    EXACTLY_NOTATING_COMMA_WITH_MAYBE_SAGITTAL_SYMBOLS_HEADER_ROW,
-    [
-        "limit",
-        "2,3-free sopfr",
-        "2,3-free class N2D3P9",
-    ] as Row<{ of: CommaAnalysis, header: true }>,
-)
+const TWO_THREE_FREE_CLASS_COLUMN_TITLES = [
+    "prime limit",
+    "name",
+    "SoPFR",
+    "N2D3P9",
+] as Io[]
 
-const TWO_TABBED_COLUMN_WIDE_SPACE_INSTEAD_OF_SYMBOLS = "        " as Formatted<CommaAnalysis>
-const ONE_TABBED_COLUMN_WIDE_SPACE_INSTEAD_OF_NAME = "       " as Formatted<CommaAnalysis>
-const EXTRA_COLUMN_ASSUMING_SOME_LONG_RATIOS = "     " as Formatted<CommaAnalysis>
+const NOTATING_COMMAS_WITH_MAYBE_SAGITTAL_SYMBOL_CLASSES_COLUMN_TITLES = [
+    "symbol class",
+    "comma name",
+    ...JI_PITCH_COLUMN_TITLES,
+] as Io[]
 
-const computeJiPitchHeaderRow = (): Row<{ of: CommaAnalysis, header: true }> => {
-    const headerRow = shallowClone(FIND_COMMAS_HEADER_ROW)
-    headerRow[ 0 ] = TWO_TABBED_COLUMN_WIDE_SPACE_INSTEAD_OF_SYMBOLS
-    headerRow[ 1 ] = ONE_TABBED_COLUMN_WIDE_SPACE_INSTEAD_OF_NAME
+const FIND_COMMAS_COLUMN_TITLES = [
+    ...NOTATING_COMMAS_WITH_MAYBE_SAGITTAL_SYMBOL_CLASSES_COLUMN_TITLES,
+    // Same as TWO_THREE_FREE_CLASS_COLUMN_TITLES, 
+    // but here we can't assume the "2,3-free class" part b/c there's no 2,3-free class title just above
+    "prime limit",
+    "2,3-free class name",
+    "2,3-free class SoPFR",
+    "2,3-free class N2D3P9",
+] as Io[]
 
-    headerRow[ 2 ] = addTexts(headerRow[ 2 ], EXTRA_COLUMN_ASSUMING_SOME_LONG_RATIOS)
+const computeJiPitchHeaderRows = (): Array<Row<{ of: JiPitchAnalysis, header: true }>> =>
+    splitColumnTitlesIntoRowsBySpaces(JI_PITCH_COLUMN_TITLES)
 
-    return headerRow
-}
+const compute23FreeClassHeaderRows = (): Array<Row<{ of: TwoThreeFreeClass, header: true }>> =>
+    splitColumnTitlesIntoRowsBySpaces(TWO_THREE_FREE_CLASS_COLUMN_TITLES)
+
+const computeNotatingCommasWithMaybeSagittalSymbolClassesHeaderRows =
+    (): Array<Row<{ of: CommaAnalysis & { symbolClassId?: Id<SymbolClass> }, header: true }>> =>
+        splitColumnTitlesIntoRowsBySpaces(NOTATING_COMMAS_WITH_MAYBE_SAGITTAL_SYMBOL_CLASSES_COLUMN_TITLES)
+
+const computeFindCommasHeaderRows =
+    (): Array<Row<{ of: CommaAnalysis & { symbolClassId?: Id<SymbolClass> }, header: true }>> =>
+        splitColumnTitlesIntoRowsBySpaces(FIND_COMMAS_COLUMN_TITLES)
 
 export {
-    computeJiPitchHeaderRow,
-    EXACTLY_NOTATING_COMMA_WITH_MAYBE_SAGITTAL_SYMBOLS_HEADER_ROW,
-    FIND_COMMAS_HEADER_ROW,
+    computeJiPitchHeaderRows,
+    compute23FreeClassHeaderRows,
+    computeNotatingCommasWithMaybeSagittalSymbolClassesHeaderRows,
+    computeFindCommasHeaderRows,
 }

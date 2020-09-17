@@ -5,7 +5,7 @@ import { JiNotationBound, JiNotationLevel } from "./types"
 const JI_NOTATION_LEVELS_BOUNDS: Record<JiNotationLevel, JiNotationBound[]> = JI_NOTATION_LEVELS.reduce(
     (
         jiNotationLevelBounds: Record<JiNotationLevel, JiNotationBound[]>,
-        jiNotationLevel: JiNotationLevel
+        jiNotationLevel: JiNotationLevel,
     ): Record<JiNotationLevel, JiNotationBound[]> =>
         ({
             ...jiNotationLevelBounds,

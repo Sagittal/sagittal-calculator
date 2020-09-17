@@ -1,6 +1,11 @@
 import { add, computeCentsFromPitch, Id, Io, Px, subtract } from "../../../../general"
-import { analyzeSymbolClass, JiNotationLevel, JI_NOTATION_LEVELS_SYMBOL_CLASS_IDS, SymbolClass } from "../../../../sagittal"
-import { formatMina } from "../terminal"
+import {
+    analyzeSymbolClass,
+    JiNotationLevel,
+    JI_NOTATION_LEVELS_SYMBOL_CLASS_IDS,
+    SymbolClass,
+} from "../../../../sagittal"
+import { formatMinaName } from "../terminal"
 import { JI_NOTATION_LEVEL_CENTERS } from "./levelHeights"
 import { DOT_SIZE, MINA_OFFSET, SYMBOL_OFFSET } from "./sizes"
 import { computeX } from "./x"
@@ -22,7 +27,7 @@ const visualizeJiNotationLevelSymbolClasses = (): Io[] => {
         const symbolY: Px = add(centerY, SYMBOL_OFFSET)
 
         jiNotationLevelSymbolClassIds.forEach((jiNotationLevelSymbolClassId: Id<SymbolClass>): void => {
-            const { mina, primaryCommaAnalysis, ascii, unicode } = analyzeSymbolClass(jiNotationLevelSymbolClassId)
+            const { minaName, primaryCommaAnalysis, ascii, unicode } = analyzeSymbolClass(jiNotationLevelSymbolClassId)
 
             const positionX: Px = computeX(computeCentsFromPitch(primaryCommaAnalysis))
 
@@ -38,7 +43,7 @@ const visualizeJiNotationLevelSymbolClasses = (): Io[] => {
 
             if (jiNotationLevel === JiNotationLevel.EXTREME) {
                 const minaY: Px = subtract(symbolY, MINA_OFFSET)
-                jiNotationLevelSymbolElements.push(`  <text text-anchor="middle" x="${positionX}" y="${minaY}" font-size="10px" font-family="Bravura">${formatMina(mina)}</text>\n` as Io)
+                jiNotationLevelSymbolElements.push(`  <text text-anchor="middle" x="${positionX}" y="${minaY}" font-size="10px" font-family="Bravura">${formatMinaName(minaName)}</text>\n` as Io)
             }
         })
     })

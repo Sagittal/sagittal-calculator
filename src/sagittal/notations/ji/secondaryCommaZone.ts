@@ -6,7 +6,7 @@ import { getIntroducingJiNotationLevel } from "./introducingJiNotationLevel"
 const computeSecondaryCommaZone = (symbolClassId: Id<SymbolClass>): Zone<SagittalComma> => {
     return computeCaptureZone(
         symbolClassId,
-        getIntroducingJiNotationLevel(symbolClassId)
+        getIntroducingJiNotationLevel(symbolClassId),
     ) as Zone<SagittalComma>
 }
 

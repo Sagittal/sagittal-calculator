@@ -6,7 +6,7 @@ import { computeJiNotationBoundsImage, computeJiNotationBoundsTables } from "../
 
 parseCommands(
     ScriptGroup.JI_NOTATION_BOUND as Filename,
-    [LogTarget.JI_NOTATION_BOUNDS_TABLE, LogTarget.JI_NOTATION_BOUNDS_IMAGE]
+    [LogTarget.JI_NOTATION_BOUNDS_TABLE, LogTarget.JI_NOTATION_BOUNDS_IMAGE],
 )
 
 ioSettings.scriptGroup = ScriptGroup.JI_NOTATION_BOUND as Filename

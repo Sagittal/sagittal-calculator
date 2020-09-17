@@ -1,5 +1,5 @@
 import { computeMonzoFromRatio, Monzo } from "../../../general"
-import { computeExactlyNotatingCommas } from "../find"
+import { computeNotatingCommas } from "../find"
 import { computeSizeCategoryExtrema } from "./sizeCategoryExtrema"
 import { CommaNameRatio, SizeCategoryName } from "./types"
 
@@ -11,7 +11,7 @@ const computeMonzoFrom23FreeClassAndSizeCategoryName = (
     const [minCents, maxCents] = computeSizeCategoryExtrema(sizeCategoryName)
 
     const twoThreeFreeMonzo = computeMonzoFromRatio(commaNameRatio)
-    const commas = computeExactlyNotatingCommas({ monzo: twoThreeFreeMonzo }, { minCents, maxCents })
+    const commas = computeNotatingCommas({ monzo: twoThreeFreeMonzo }, { minCents, maxCents })
 
     if (commas.length !== 1) {
         throw new Error(`For whatever reason the number of commas exactly notating the monzo ${(twoThreeFreeMonzo)} in the range of that size category ${sizeCategoryName} was not 1. It was ${commas.length}.`)

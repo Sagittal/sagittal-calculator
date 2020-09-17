@@ -4,7 +4,7 @@ import { JiNotationBoundAnalysis } from "../../../bound"
 import { extractJiNotationBoundIdentifiers } from "../boundIdentifiers"
 import { extractJiNotationLevelDistances } from "./levelDistances"
 import { extractJiNotationLevelRanks } from "./levelRanks"
-import { formatMina } from "./mina"
+import { formatMinaName } from "./minaName"
 import { JiNotationBoundRowOptions } from "./types"
 
 const computeJiNotationBoundRow = (
@@ -18,8 +18,8 @@ const computeJiNotationBoundRow = (
         extremeLevelLesserBoundedSymbolClass,
         extremeLevelGreaterBoundedSymbolClass,
         cents,
-        lesserBoundedMina,
-        greaterBoundedMina,
+        lesserBoundedMinaName,
+        greaterBoundedMinaName,
     } = jiNotationBoundIdentifiers
     const {
         bestRank,
@@ -53,8 +53,8 @@ const computeJiNotationBoundRow = (
 
     jiNotationBoundRow = [
         formatInteger(jiNotationBound.id),
-        formatMina(lesserBoundedMina),
-        formatMina(greaterBoundedMina),
+        formatMinaName(lesserBoundedMinaName),
+        formatMinaName(greaterBoundedMinaName),
         formatSymbolAscii(extremeLevelLesserBoundedSymbolClass),
         formatSymbolAscii(extremeLevelGreaterBoundedSymbolClass),
         mediumLevelRank,

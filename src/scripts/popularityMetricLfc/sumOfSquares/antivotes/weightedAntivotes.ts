@@ -1,4 +1,4 @@
-import { Base, isUndefined, log, Power } from "../../../../general"
+import { Base, isUndefined, log } from "../../../../general"
 import { Antivotes, ParameterValue, WeightedAntivotesOptions } from "../types"
 
 const computeWeightedAntivotes = (antivotes: Antivotes, options: WeightedAntivotesOptions): Antivotes => {

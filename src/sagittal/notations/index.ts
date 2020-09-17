@@ -18,7 +18,7 @@ export {
     Tina,
     getIntroducingJiNotationLevel,
     TINA,
-    getMina,
+    getMinaName,
     JI_NOTATION,
 } from "./ji"
 export { APOTOME } from "./sagittalCommas"

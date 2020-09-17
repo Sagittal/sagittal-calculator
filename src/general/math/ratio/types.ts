@@ -1,20 +1,16 @@
 import { Direction, Numeric, NumericTypeParameterEffects, NumericTypeParameters } from "../types"
 
 type Numerator<T extends NumericTypeParameters = {}> =
-    Numeric<
-        (T extends { irrational: true } ? {} : { integer: true }) &
+    Numeric<(T extends { irrational: true } ? {} : { integer: true }) &
         (T extends { rough: number } ? { rough: T["rough"] } : {}) &
         (T extends { smooth: number } ? { smooth: T["smooth"] } : {}) &
-        (T extends { integer: true } ? { integer: true } : {})
-    >
+        (T extends { integer: true } ? { integer: true } : {})>
     & { _NumeratorBrand: "Numerator" }
 type Denominator<T extends NumericTypeParameters = {}> =
-    Numeric<
-        (T extends { irrational: true } ? {} : { integer: true }) &
+    Numeric<(T extends { irrational: true } ? {} : { integer: true }) &
         (T extends { rough: number } ? { rough: T["rough"] } : {}) &
         (T extends { smooth: number } ? { smooth: T["smooth"] } : {}) &
-        (T extends { integer: true } ? { integer: true } : {})
-    >
+        (T extends { integer: true } ? { integer: true } : {})>
     & { _DenominatorBrand: "Denominator" }
 type Ratio<T extends NumericTypeParameters = {}> =
     [Numerator<T>, Denominator<T>] & NumericTypeParameterEffects<T>

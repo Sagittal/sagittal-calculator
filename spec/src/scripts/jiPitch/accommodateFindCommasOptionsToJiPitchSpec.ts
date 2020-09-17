@@ -42,37 +42,4 @@ describe("accommodateFindCommasOptionsToJiPitch", (): void => {
 
         expect(actual.maxAte).toBe(ate as Max<Abs<3 & Integer & Exponent<Prime>>>)
     })
-
-    // it("adjusts the max cents if the JI pitch has greater than the current settings", (): void => {
-    //     const jiPitchAnalysis: JiPitchAnalysis = {
-    //         ...jiPitchAnalysisFixture,
-    //         cents: APOTOME_CENTS,
-    //     }
-    //
-    //     const actual = accommodateFindCommasOptionsToJiPitch(jiPitchAnalysis, DEFAULT_FIND_COMMAS_OPTIONS)
-    //
-    //     expect(actual.maxCents).toBe(APOTOME_CENTS as Max<Cents>)
-    // })
-    //
-    // it("adjusts the min cents if the JI pitch has less than the current settings", (): void => {
-    //     const jiPitchAnalysis: JiPitchAnalysis = {
-    //         ...jiPitchAnalysisFixture,
-    //         cents: negative(APOTOME_CENTS),
-    //     }
-    //
-    //     const actual = accommodateFindCommasOptionsToJiPitch(jiPitchAnalysis, DEFAULT_FIND_COMMAS_OPTIONS)
-    //
-    //     expect(actual.minCents).toBe(negative(APOTOME_CENTS) as Min<Cents>)
-    // })
-    //
-    // it("does not adjust the max or min cents at all if it is outside the max nameable range", (): void => {
-    //     const jiPitchAnalysis: JiPitchAnalysis = {
-    //         ...jiPitchAnalysisFixture,
-    //         cents: APOTOME_CENTS * -3 as Cents,
-    //     }
-    //
-    //     const actual = accommodateFindCommasOptionsToJiPitch(jiPitchAnalysis, DEFAULT_FIND_COMMAS_OPTIONS)
-    //
-    //     expect(actual.minCents).toBe(0 as Min<Cents>)
-    // })
 })

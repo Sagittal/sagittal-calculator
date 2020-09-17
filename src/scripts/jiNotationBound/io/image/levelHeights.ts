@@ -8,7 +8,7 @@ const computeJiNotationLevelHeights = (withinLevelHeight: Multiplier<Basis<Cents
         (
             jiNotationLevelTops: Record<JiNotationLevel, Px>,
             jiNotationLevel: JiNotationLevel,
-            jiNotationLevelIndex: number
+            jiNotationLevelIndex: number,
         ): Record<JiNotationLevel, Px> => {
             const jiNotationLevelHeight: Multiplier<Basis<Cents>> =
                 add(computeReversedJiNotationLevelIndex(jiNotationLevelIndex), withinLevelHeight)

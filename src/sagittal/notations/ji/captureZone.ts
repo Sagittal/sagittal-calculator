@@ -1,8 +1,6 @@
 import { computeCentsFromPitch, Id, ioSettings, Maybe, Zone } from "../../../general"
 import { formatSymbolClass } from "../../io"
-import { getSagittalComma } from "../getSagittalComma"
 import { getPrimaryComma } from "../primaryComma"
-import { getSymbolClass } from "../symbolClass"
 import { SagittalComma, SymbolClass } from "../types"
 import { formatJiNotationLevel } from "./formatLevel"
 import { getIntroducingJiNotationLevel } from "./introducingJiNotationLevel"
@@ -12,7 +10,7 @@ import { JiNotationBound, JiNotationLevel } from "./types"
 
 const computeCaptureZone = (
     symbolClassId: Id<SymbolClass>,
-    jiNotationLevel: JiNotationLevel
+    jiNotationLevel: JiNotationLevel = JiNotationLevel.EXTREME,
 ): Maybe<Zone> => {
     const jiNotationLevelBounds = JI_NOTATION_LEVELS_BOUNDS[ jiNotationLevel ]
 

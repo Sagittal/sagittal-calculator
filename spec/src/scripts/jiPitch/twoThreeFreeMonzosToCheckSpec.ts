@@ -33,7 +33,7 @@ describe("compute23FreeMonzosToCheck", (): void => {
     })
 
     describe("3 of 4", (): void => {
-        it("returns the list of 2,3-free monzos to check, given a max prime limit, a max 2,3-free sopfr, and a max 2,3-free copfr", (): void => {
+        it("returns the list of 2,3-free monzos to check, given a max prime limit, a max 2,3-free SoPFR, and a max 2,3-free CoPFR", (): void => {
             const maxPrimeLimit = 7 as Max<Max<Prime>>
             const max23FreeSopfr = 15 as Max<Sopfr<{ rough: 5 }>>
             const max23FreeCopfr = 2 as Max<Copfr<{ rough: 5 }>>
@@ -62,7 +62,7 @@ describe("compute23FreeMonzosToCheck", (): void => {
             expect(actual).toEqual(expected)
         })
 
-        it("returns the list of 2,3-free monzos to check, given a max prime limit, a max N2D3P9, and a max 2,3-free copfr", (): void => {
+        it("returns the list of 2,3-free monzos to check, given a max prime limit, a max N2D3P9, and a max 2,3-free CoPFR", (): void => {
             const maxPrimeLimit = 7 as Max<Max<Prime>>
             const maxN2D3P9 = 5 as Max<N2D3P9>
             const max23FreeCopfr = 2 as Max<Copfr<{ rough: 5 }>>
@@ -89,7 +89,7 @@ describe("compute23FreeMonzosToCheck", (): void => {
             expect(actual).toEqual(expected)
         })
 
-        it("returns the list of 2,3-free monzos to check, given a max 2,3-free sopfr, a max N2D3P9, and a max 2,3-free copfr", (): void => {
+        it("returns the list of 2,3-free monzos to check, given a max 2,3-free SoPFR, a max N2D3P9, and a max 2,3-free CoPFR", (): void => {
             const max23FreeSopfr = 15 as Max<Sopfr<{ rough: 5 }>>
             const maxN2D3P9 = 5 as Max<N2D3P9>
             const max23FreeCopfr = 2 as Max<Copfr<{ rough: 5 }>>
@@ -116,7 +116,7 @@ describe("compute23FreeMonzosToCheck", (): void => {
             expect(actual).toEqual(expected)
         })
 
-        it("returns the list of 2,3-free monzos to check, given a max prime limit, a max N2D3P9, and a max 2,3-free sopfr", (): void => {
+        it("returns the list of 2,3-free monzos to check, given a max prime limit, a max N2D3P9, and a max 2,3-free SoPFR", (): void => {
             const maxPrimeLimit = 7 as Max<Max<Prime>>
             const max23FreeSopfr = 15 as Max<Sopfr<{ rough: 5 }>>
             const maxN2D3P9 = 5 as Max<N2D3P9>
@@ -146,7 +146,7 @@ describe("compute23FreeMonzosToCheck", (): void => {
 
     describe("2 of 4", (): void => {
         it(
-            "returns the list of 2,3-free monzos to check, given a max prime limit and a max 2,3-free sopfr",
+            "returns the list of 2,3-free monzos to check, given a max prime limit and a max 2,3-free SoPFR",
             (): void => {
                 const maxPrimeLimit = 7 as Max<Max<Prime>>
                 const max23FreeSopfr = 15 as Max<Sopfr<{ rough: 5 }>>
@@ -201,7 +201,7 @@ describe("compute23FreeMonzosToCheck", (): void => {
         })
 
         it(
-            "returns the list of 2,3-free monzos to check, given a max prime limit and a max 2,3-free copfr",
+            "returns the list of 2,3-free monzos to check, given a max prime limit and a max 2,3-free CoPFR",
             (): void => {
                 const maxPrimeLimit = 7 as Max<Max<Prime>>
                 const max23FreeCopfr = 3 as Max<Copfr<{ rough: 5 }>>
@@ -240,7 +240,7 @@ describe("compute23FreeMonzosToCheck", (): void => {
         )
 
         it(
-            "returns the list of 2,3-free monzos to check, given a max 2,3-free sopfr and a max 2,3-free copfr",
+            "returns the list of 2,3-free monzos to check, given a max 2,3-free SoPFR and a max 2,3-free CoPFR",
             (): void => {
                 const max23FreeSopfr = 20 as Max<Sopfr<{ rough: 5 }>>
                 const max23FreeCopfr = 3 as Max<Copfr<{ rough: 5 }>>
@@ -300,7 +300,7 @@ describe("compute23FreeMonzosToCheck", (): void => {
             },
         )
 
-        it("returns the list of 2,3-free monzos to check, given a max N2D3P9 and a max 2,3-free copfr", (): void => {
+        it("returns the list of 2,3-free monzos to check, given a max N2D3P9 and a max 2,3-free CoPFR", (): void => {
             const maxN2D3P9 = 9 as Max<N2D3P9>
             const max23FreeCopfr = 2 as Max<Copfr<{ rough: 5 }>>
 
@@ -333,7 +333,7 @@ describe("compute23FreeMonzosToCheck", (): void => {
             expect(actual).toEqual(expected)
         })
 
-        it("returns the list of 2,3-free monzos to check, given a max N2D3P9 and a max 2,3-free sopfr", (): void => {
+        it("returns the list of 2,3-free monzos to check, given a max N2D3P9 and a max 2,3-free SoPFR", (): void => {
             const maxN2D3P9 = 6 as Max<N2D3P9>
             const max23FreeSopfr = 12 as Max<Sopfr<{ rough: 5 }>>
 
@@ -357,7 +357,7 @@ describe("compute23FreeMonzosToCheck", (): void => {
     })
 
     describe("1 of 4 possibilities", (): void => {
-        it("returns the list of 2,3-free monzos to check, given only a max 2,3-free sopfr", (): void => {
+        it("returns the list of 2,3-free monzos to check, given only a max 2,3-free SoPFR", (): void => {
             const max23FreeSopfr = 15 as Max<Sopfr<{ rough: 5 }>>
 
             const actual = compute23FreeMonzosToCheck({ max23FreeSopfr })
@@ -418,21 +418,21 @@ describe("compute23FreeMonzosToCheck", (): void => {
 
             expect((): void => {
                 compute23FreeMonzosToCheck({ maxPrimeLimit })
-            }).toThrowError("The count of the primes must be limited somehow.")
+            }).toThrowError("The count of the primes must be constrained somehow.")
         })
 
-        it("fails when given only a max 2,3-free copfr", (): void => {
+        it("fails when given only a max 2,3-free CoPFR", (): void => {
             const max23FreeCopfr = 3 as Max<Copfr<{ rough: 5 }>>
 
             expect((): void => {
                 compute23FreeMonzosToCheck({ max23FreeCopfr })
-            }).toThrowError("The size of the primes must be limited somehow.")
+            }).toThrowError("The size of the primes must be constrained somehow.")
         })
 
         it("fails when given none of the maxs", (): void => {
             expect((): void => {
                 compute23FreeMonzosToCheck()
-            }).toThrowError("The primes must be limited somehow.")
+            }).toThrowError("The primes must be constrained somehow.")
         })
     })
 })

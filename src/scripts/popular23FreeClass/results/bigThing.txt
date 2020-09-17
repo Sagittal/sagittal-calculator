@@ -1,10 +1,10 @@
 so this is technically from the find-commas script, but it's this:
 npm run find-commas -- --max-n2d3p9 1259 --max-2-3-free-sopfr 127 --max-2-3-free-copfr 9999 --max-prime-limit 127 --max-cents 56.8425030289
 so the idea was to just try to get basically the top N2D3P9 2,3-free classes up to 1259 (previously went as high as 307)
-only limitation being that SoPF>3 of 127...
+only constraint being that SoPF>3 of 127...
 and this just doing a ton of duplication w/r/t each 2,3-free class, including every comma-sized thing, rather than just the LATE or LAAS comma for each 2,3-free class
 
-symbol  	name     	2,3-free class                	monzo                                                                                                                          	cents  	apotome slope	limit  	2,3-free sopfr	N2D3P9
+symbol  	name     	2,3-free class                	monzo                                                                                                                          	cents  	apotome slope	limit  	2,3-free SoPFR	N2D3P9
    '/|  	3C       	531441/524288              	[ -19  12 ⟩                                                                                                                    	 23.460	 10.555      	  3    	  0          	  1.000
     /|  	1/5C     	81/80                      	[  -4   4  -1 ⟩                                                                                                                	 21.506	  2.676      	  5    	  5          	  1.389
     '|  	5s       	32805/32768                	[ -15   8   1 ⟩                                                                                                                	  1.954	  7.880      	  5    	  5          	  1.389

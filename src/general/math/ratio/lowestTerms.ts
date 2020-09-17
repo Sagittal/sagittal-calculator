@@ -5,7 +5,7 @@ import { NumericTypeParameters } from "../types"
 import { Denominator, FractionalPart, Numerator, PotentiallyIrrationalRatioParameter, Ratio } from "./types"
 
 const computeLowestTermsRatio = <T extends NumericTypeParameters>(
-    [ numerator, denominator ]: PotentiallyIrrationalRatioParameter<T>,
+    [numerator, denominator]: PotentiallyIrrationalRatioParameter<T>,
 ): Ratio<T> => {
     const greatestCommonDivisor = computeGreatestCommonDivisor(
         numerator as FractionalPart,

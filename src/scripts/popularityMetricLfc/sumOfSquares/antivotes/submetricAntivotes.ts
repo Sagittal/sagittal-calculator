@@ -9,7 +9,6 @@ import {
     isUndefined,
     log,
     Monzo,
-    Power,
     Prime,
     PRIMES,
     stringify,

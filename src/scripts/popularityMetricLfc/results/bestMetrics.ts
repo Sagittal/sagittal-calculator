@@ -4,7 +4,7 @@ import { Parameter, Submetric } from "../sumOfSquares"
 
 // ALL VALUES Z -1, ONLY TOP 80
 
-// Metric to beat: SoPF>3, or sopfr
+// Metric to beat: SoPF>3, or 2,3-free SoPFR
 const sopfgtt = {
     sumOfSquares: 0.014206086754420309 as SumOfSquares,
     name: "{sum}",

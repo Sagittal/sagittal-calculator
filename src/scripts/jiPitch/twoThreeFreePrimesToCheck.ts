@@ -17,7 +17,7 @@ const compute23FreePrimesToCheck = (options: TwoThreeFreePrimesToCheckOptions): 
         isUndefined(max23FreeSopfr) &&
         isUndefined(primeExponentExtremasGivenMaxN2D3P9)
     ) {
-        throw new Error("The maximum prime must be limited somehow.")
+        throw new Error("The maximum prime must be constrained somehow.")
     }
 
     const indexOfMaxPrimeByPrimeLimit =

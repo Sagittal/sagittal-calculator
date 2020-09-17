@@ -1,7 +1,7 @@
 import { computeMonzoFromIntegerOrMonzo, Monzo } from "./monzo"
 import { PRIMES } from "./primes"
 import { abs } from "./typedOperations"
-import { Exponent, Integer, Numeric, Prime, RationalTypeParameters, Sopfr } from "./types"
+import { Exponent, Integer, Prime, RationalTypeParameters, Sopfr } from "./types"
 
 // Sum of prime factors
 

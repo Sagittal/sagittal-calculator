@@ -22,7 +22,7 @@ import {
     SymbolSmiley,
     SYMBOL_SUBSETS_USED_IN_JI_NOTATION_SORTED_BY_ASCENDING_SYMBOL_COUNT,
 } from "../../sagittal"
-import { computeExactlyNotatingSymbolClassIds } from "./exactlyNotatingSymbolClassIds"
+import { computeExactlyNotatingSymbolClassIds } from "./notatingSymbolClassIds"
 import { Popular23FreeClassAnalysis } from "./types"
 
 const analyzePopular23FreeClass = (

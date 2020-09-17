@@ -8,14 +8,6 @@ const accommodateFindCommasOptionsToJiPitch = (
 ): FindCommasOptions => {
     const accommodatedFindCommasOptions: FindCommasOptions = shallowClone(findCommasOptions)
 
-    // const cents = jiPitchAnalysis.cents
-    // if (cents > findCommasOptions.maxCents && cents < MAX_SIZE_CATEGORY_BOUND) {
-    //     accommodatedFindCommasOptions.maxCents = cents as Max<Cents>
-    // }
-    // if (cents < findCommasOptions.minCents && cents > negative(MAX_SIZE_CATEGORY_BOUND)) {
-    //     accommodatedFindCommasOptions.minCents = cents as Min<Cents>
-    // }
-
     const aas = abs(jiPitchAnalysis.apotomeSlope)
     if (aas > findCommasOptions.maxAas) {
         accommodatedFindCommasOptions.maxAas = aas as Max<Abs<ApotomeSlope>>
