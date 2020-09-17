@@ -1,40 +1,40 @@
 import { Id, isUndefined, Maybe } from "../../../../general"
 import { JiNotationBound } from "../../../../sagittal"
-import { getJiNotationSymbolClassWithPrimaryComma } from "./symbolClassWithPrimaryComma"
+import { analyzeJiNotationSymbolClass } from "./analyzeSymbolClass"
 import {
-    BoundedSymbolClassesWithPrimaryCommas,
+    BoundedSymbolClassAnalyses,
     BoundedSymbolClassIdWithDistancesPair,
     JiNotationBoundIdWithBoundedSymbolClassIdsWithDistancesPairsByJiNotationLevel,
 } from "./types"
 
-const computeBoundedSymbolClasses = (
+const analyzeBoundedSymbolClasses = (
     jiNotationBoundIdWithBoundedSymbolClassIdWithDistancesPairsByJiNotationLevel:
         JiNotationBoundIdWithBoundedSymbolClassIdsWithDistancesPairsByJiNotationLevel,
-): BoundedSymbolClassesWithPrimaryCommas => {
+): BoundedSymbolClassAnalyses => {
     return Object.entries(jiNotationBoundIdWithBoundedSymbolClassIdWithDistancesPairsByJiNotationLevel).reduce(
         (
-            boundedSymbolClasses: BoundedSymbolClassesWithPrimaryCommas,
+            boundedSymbolClassAnalyses: BoundedSymbolClassAnalyses,
             [jiNotationLevel, jiNotationBoundIdWithBoundedSymbolClassIdWithDistancesPair]:
                 [string, Maybe<BoundedSymbolClassIdWithDistancesPair> | Id<JiNotationBound>],
-        ): BoundedSymbolClassesWithPrimaryCommas => {
-            if (jiNotationLevel === "id") return boundedSymbolClasses
+        ): BoundedSymbolClassAnalyses => {
+            if (jiNotationLevel === "id") return boundedSymbolClassAnalyses
 
             const [first, second] = jiNotationBoundIdWithBoundedSymbolClassIdWithDistancesPair
 
             let firstBoundedSymbolWithPrimaryComma
             if (!isUndefined(first)) {
-                const firstJiNotationSymbolWithPrimaryComma = getJiNotationSymbolClassWithPrimaryComma(first.id)
+                const firstJiNotationSymbolWithPrimaryComma = analyzeJiNotationSymbolClass(first.id)
                 firstBoundedSymbolWithPrimaryComma = { ...first, ...firstJiNotationSymbolWithPrimaryComma }
             }
 
             let secondBoundedSymbolWithPrimaryComma
             if (!isUndefined(second)) {
-                const secondJiNotationSymbolWithPrimaryComma = getJiNotationSymbolClassWithPrimaryComma(second.id)
+                const secondJiNotationSymbolWithPrimaryComma = analyzeJiNotationSymbolClass(second.id)
                 secondBoundedSymbolWithPrimaryComma = { ...second, ...secondJiNotationSymbolWithPrimaryComma }
             }
 
             return {
-                ...boundedSymbolClasses,
+                ...boundedSymbolClassAnalyses,
                 [ jiNotationLevel ]: [
                     firstBoundedSymbolWithPrimaryComma,
                     secondBoundedSymbolWithPrimaryComma,
@@ -48,5 +48,5 @@ const computeBoundedSymbolClasses = (
 }
 
 export {
-    computeBoundedSymbolClasses,
+    analyzeBoundedSymbolClasses,
 }

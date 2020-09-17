@@ -41,7 +41,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
             extremeLevelLesserBoundedSymbolClass: ".)/|" as SymbolLongAscii,
             extremeLevelGreaterBoundedSymbolClass: "'/|" as SymbolLongAscii,
             cents: 23.116419 as Cents as Cents,
-            boundedSymbolClasses: {
+            boundedSymbolClassAnalyses: {
                 id: 47 as Id<JiNotationBound>,
                 [ JiNotationLevel.ULTRA ]: [
                     {

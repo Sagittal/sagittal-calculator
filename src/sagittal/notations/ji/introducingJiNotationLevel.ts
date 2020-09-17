@@ -3,7 +3,7 @@ import { SymbolClass } from "../types"
 import { JI_NOTATION_LEVELS_SYMBOL_CLASS_IDS } from "./levelSymbolClassIds"
 import { JiNotationLevel } from "./types"
 
-const computeIntroducingJiNotationLevel = (jiNotationSymbolClassId: Id<SymbolClass>): JiNotationLevel =>
+const getIntroducingJiNotationLevel = (jiNotationSymbolClassId: Id<SymbolClass>): JiNotationLevel =>
     JI_NOTATION_LEVELS_SYMBOL_CLASS_IDS[ JiNotationLevel.MEDIUM ].includes(jiNotationSymbolClassId) ?
         JiNotationLevel.MEDIUM :
         JI_NOTATION_LEVELS_SYMBOL_CLASS_IDS[ JiNotationLevel.HIGH ].includes(jiNotationSymbolClassId) ?
@@ -16,5 +16,5 @@ const computeIntroducingJiNotationLevel = (jiNotationSymbolClassId: Id<SymbolCla
 
 
 export {
-    computeIntroducingJiNotationLevel,
+    getIntroducingJiNotationLevel,
 }

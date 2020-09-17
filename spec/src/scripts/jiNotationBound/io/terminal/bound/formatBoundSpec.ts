@@ -24,7 +24,7 @@ describe("formatJiNotationBound", (): void => {
             `    "extremeLevelLesserBoundedSymbolClass": ",,|(",`,
             `    "extremeLevelGreaterBoundedSymbolClass": ",|(",`,
             `    "cents": 5.447635,`,
-            `    "boundedSymbolClasses": {`,
+            `    "boundedSymbolClassAnalyses": {`,
             `        "id": 10,`,
             `        "extreme": [`,
             `            {`,

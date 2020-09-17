@@ -12,24 +12,36 @@ import {
     SymbolUnicode,
 } from "../../../../sagittal"
 
-interface BoundedSymbolClass extends JiNotationSymbolClass {
+// shared
+
+interface BoundedProperties {
     distance: Cents,
-    inaDistance: Multiplier,
+    inaDistance: Multiplier<Ina>,
 }
 
-interface BoundedSymbolClassWithPrimaryComma extends JiNotationSymbolClassWithPrimaryCommaAndExtras {
-    distance: Cents,
-    inaDistance: Multiplier,
+// only used temporarily within a method
+
+interface BoundedSymbolClass extends JiNotationSymbolClass, BoundedProperties {}
+
+// building up to JiNotationBoundIdentifiers
+
+type JiNotationSymbolClassAnalysis = Omit<JiNotationSymbolClass, "primaryCommaId"> & {
+    primaryCommaAnalysis: CommaAnalysis & { id: Id<SagittalComma> }
+    ascii: SymbolLongAscii,
+    unicode: SymbolUnicode,
+    introducingJiNotationLevel: JiNotationLevel,
 }
 
-type BoundedSymbolClassWithPrimaryCommaPair =
-    [Maybe<BoundedSymbolClassWithPrimaryComma>, Maybe<BoundedSymbolClassWithPrimaryComma>]
+interface BoundedSymbolClassAnalysis extends JiNotationSymbolClassAnalysis, BoundedProperties {}
 
-type BoundedSymbolClassesWithPrimaryCommas = { id: Id<JiNotationBound> }
-    & Partial<Record<JiNotationLevel, BoundedSymbolClassWithPrimaryCommaPair>>
+type BoundedSymbolClassAnalysisPair =
+    [Maybe<BoundedSymbolClassAnalysis>, Maybe<BoundedSymbolClassAnalysis>]
+
+type BoundedSymbolClassAnalyses = { id: Id<JiNotationBound> }
+    & Partial<Record<JiNotationLevel, BoundedSymbolClassAnalysisPair>>
 
 interface JiNotationBoundIdentifiers {
-    boundedSymbolClasses: BoundedSymbolClassesWithPrimaryCommas,
+    boundedSymbolClassAnalyses: BoundedSymbolClassAnalyses,
     extremeLevelGreaterBoundedSymbolClass: SymbolLongAscii,
     extremeLevelLesserBoundedSymbolClass: SymbolLongAscii,
     greaterBoundedMina?: Mina,
@@ -37,21 +49,10 @@ interface JiNotationBoundIdentifiers {
     cents: Cents,
 }
 
-type JiNotationSymbolClassWithPrimaryCommaAndExtras = Omit<JiNotationSymbolClass, "primaryCommaId"> & {
-    primaryCommaAnalysis: CommaAnalysis & { id: Id<SagittalComma> }
-    ascii: SymbolLongAscii,
-    unicode: SymbolUnicode,
-    introducingJiNotationLevel: JiNotationLevel,
-}
+// building up to JiNotationBoundIdWithBoundedSymbolClassIdsWithDistancesPairsByJiNotationLevel
 
-type JiNotationBoundIdWithBoundedSymbolClassIdsWithDistancesPairsByJiNotationLevel =
-    { id: Id<JiNotationBound> }
-    & Partial<Record<JiNotationLevel, BoundedSymbolClassIdWithDistancesPair>>
-
-interface BoundedSymbolClassIdWithDistances {
+interface BoundedSymbolClassIdWithDistances extends BoundedProperties {
     id: Id<SymbolClass>,
-    distance: Cents,
-    inaDistance: Multiplier<Ina>,
 }
 
 type BoundedSymbolClassIdWithDistancesPair = [
@@ -59,10 +60,14 @@ type BoundedSymbolClassIdWithDistancesPair = [
     Maybe<BoundedSymbolClassIdWithDistances>,
 ]
 
+type JiNotationBoundIdWithBoundedSymbolClassIdsWithDistancesPairsByJiNotationLevel =
+    { id: Id<JiNotationBound> }
+    & Partial<Record<JiNotationLevel, BoundedSymbolClassIdWithDistancesPair>>
+
 export {
     BoundedSymbolClass,
-    JiNotationSymbolClassWithPrimaryCommaAndExtras,
-    BoundedSymbolClassesWithPrimaryCommas,
+    JiNotationSymbolClassAnalysis,
+    BoundedSymbolClassAnalyses,
     JiNotationBoundIdentifiers,
     JiNotationBoundIdWithBoundedSymbolClassIdsWithDistancesPairsByJiNotationLevel,
     BoundedSymbolClassIdWithDistancesPair,

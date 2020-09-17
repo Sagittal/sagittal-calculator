@@ -6,11 +6,11 @@ import {
     JiNotationLevel,
     SymbolLongAscii,
 } from "../../../../sagittal"
-import { computeBoundedSymbolClasses } from "./boundedSymbolClasses"
+import { analyzeBoundedSymbolClasses } from "./boundedSymbolClasses"
 import { JI_NOTATION_LEVEL_BOUNDED_SYMBOL_CLASSES } from "./levelBoundedSymbolClasses"
 import {
     BoundedSymbolClass,
-    BoundedSymbolClassesWithPrimaryCommas,
+    BoundedSymbolClassAnalyses,
     BoundedSymbolClassIdWithDistancesPair,
     JiNotationBoundIdentifiers,
     JiNotationBoundIdWithBoundedSymbolClassIdsWithDistancesPairsByJiNotationLevel,
@@ -31,8 +31,8 @@ const extractJiNotationBoundIdentifiers = (jiNotationBound: JiNotationBound): Ji
         throw new Error(`Could not find bounded symbols for bound with ID ${id}`)
     }
 
-    const boundedSymbolClasses: BoundedSymbolClassesWithPrimaryCommas =
-        computeBoundedSymbolClasses(jiNotationBoundIdWithBoundedSymbolClassIdWithDistancesPairsByJiNotationLevel)
+    const boundedSymbolClassAnalyses: BoundedSymbolClassAnalyses =
+        analyzeBoundedSymbolClasses(jiNotationBoundIdWithBoundedSymbolClassIdWithDistancesPairsByJiNotationLevel)
 
     const [
         extremeLevelLesserBoundedSymbolClassIdWithDistance,
@@ -65,7 +65,7 @@ const extractJiNotationBoundIdentifiers = (jiNotationBound: JiNotationBound): Ji
         extremeLevelLesserBoundedSymbolClass: formattedExtremeLevelLesserBoundedSymbolClass,
         extremeLevelGreaterBoundedSymbolClass: formattedExtremeLevelGreaterBoundedSymbolClass,
         cents,
-        boundedSymbolClasses,
+        boundedSymbolClassAnalyses,
         lesserBoundedMina,
         greaterBoundedMina,
     }

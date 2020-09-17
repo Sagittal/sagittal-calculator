@@ -1,7 +1,7 @@
 import {
+    JiNotationLevel,
     JI_NOTATION_LEVELS_BOUNDS,
     JI_NOTATION_LEVELS_SYMBOL_CLASS_IDS,
-    JiNotationLevel,
 } from "../../../../../src/sagittal/notations/ji"
 
 describe("JI_NOTATION_LEVELS_BOUNDS", (): void => {

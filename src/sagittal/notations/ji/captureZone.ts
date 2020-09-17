@@ -3,7 +3,7 @@ import { formatSymbolClass } from "../../io"
 import { getSagittalComma } from "../getSagittalComma"
 import { SagittalComma } from "../types"
 import { formatJiNotationLevel } from "./formatLevel"
-import { computeIntroducingJiNotationLevel } from "./introducingJiNotationLevel"
+import { getIntroducingJiNotationLevel } from "./introducingJiNotationLevel"
 import { isWithinJiNotationLevel } from "./isWithinLevel"
 import { JI_NOTATION_LEVELS_BOUNDS } from "./levelsBounds"
 import { JiNotationBound, JiNotationLevel, JiNotationSymbolClass } from "./types"
@@ -14,7 +14,7 @@ const computeCaptureZone = (
 ): Maybe<Zone> => {
     const jiNotationLevelBounds = JI_NOTATION_LEVELS_BOUNDS[ jiNotationLevel ]
 
-    const introducingJiNotationLevel = computeIntroducingJiNotationLevel(jiNotationSymbolClass.id)
+    const introducingJiNotationLevel = getIntroducingJiNotationLevel(jiNotationSymbolClass.id)
     if (!isWithinJiNotationLevel(introducingJiNotationLevel, jiNotationLevel)) {
         throw new Error(`JI Notation symbol class ${formatSymbolClass(jiNotationSymbolClass.id, {
             ...ioSettings,
