@@ -1,6 +1,6 @@
 import { Abs, Exponent, Integer, Max, Monzo, Prime } from "../../../../src/general/math"
 import { ApotomeSlope, JiPitchAnalysis, N2D3P9 } from "../../../../src/sagittal/comma"
-import { DEFAULT_FIND_COMMAS_OPTIONS } from "../../../../src/sagittal/comma/find/constants"
+import { DEFAULT_FIND_COMMAS_OPTIONS } from "../../../../src/sagittal/comma/find"
 import { accommodateFindCommasOptionsToJiPitch } from "../../../../src/scripts/jiPitch/accommodateFindCommasOptionsToJiPitch"
 import { jiPitchAnalysisFixture } from "../../../helpers/src/scripts/jiPitch/fixtures"
 

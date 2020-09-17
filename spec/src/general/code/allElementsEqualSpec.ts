@@ -1,4 +1,4 @@
-import { allElementsEqual } from "../../../../src/general/code/allElementsEqual"
+import { allElementsEqual } from "../../../../src/general/code"
 
 describe("all elements equal", (): void => {
     it("should return whether or not every element in the array is the same", (): void => {

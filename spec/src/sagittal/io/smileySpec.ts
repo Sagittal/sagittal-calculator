@@ -1,6 +1,6 @@
 import { SymbolLongAscii } from "../../../../src/sagittal"
+import { SymbolSmiley } from "../../../../src/sagittal/io"
 import { computeSmileyFromAscii } from "../../../../src/sagittal/io/smiley"
-import { SymbolSmiley } from "../../../../src/sagittal/io/types"
 
 describe("computeSmileyFromAscii", (): void => {
     it("converts ascii to smiley code", (): void => {

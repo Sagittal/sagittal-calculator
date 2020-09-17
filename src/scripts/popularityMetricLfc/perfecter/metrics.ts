@@ -12,9 +12,9 @@ const perfectMetrics = async (
     const metricToPerfect = bestMetricsValues[ index ]
     const metricTag = `${index + 1}/${totalToPerfect}` as MetricTag
 
-    saveLog(`\n\nabout to perfect id ${metricTag} ${stringify(metricToPerfect)}` as Io, LogTarget.PERFECT)
+    saveLog(`\n\nabout to perfect ${metricTag} ${stringify(metricToPerfect)}` as Io, LogTarget.PERFECT)
     await perfectMetric(metricToPerfect, { metricTag })
-    saveLog(`perfected id ${metricTag}` as Io, LogTarget.PERFECT)
+    saveLog(`perfected ${metricTag}` as Io, LogTarget.PERFECT)
 
     if (index === totalToPerfect - 1) {
         return

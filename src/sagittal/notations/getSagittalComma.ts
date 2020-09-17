@@ -7,7 +7,7 @@ const getSagittalComma = (sagittalCommaId: Id<SagittalComma>): SagittalComma => 
         .find((sagittalComma: SagittalComma): boolean => sagittalComma.id === sagittalCommaId)
 
     if (!sagittalComma) {
-        throw new Error(`Sagittal comma with id ${sagittalCommaId} not found`)
+        throw new Error(`Sagittal comma with ID ${sagittalCommaId} not found`)
     }
 
     return sagittalComma

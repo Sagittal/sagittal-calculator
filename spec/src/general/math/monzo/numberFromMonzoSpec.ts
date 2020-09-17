@@ -1,5 +1,4 @@
-import { Monzo } from "../../../../../src/general/math/monzo"
-import { computeNumberFromMonzo } from "../../../../../src/general/math/monzo/numberFromMonzo"
+import { computeNumberFromMonzo, Monzo } from "../../../../../src/general/math/monzo"
 
 describe("computeNumberFromMonzo", (): void => {
     it("returns the numeric value of the given monzo", (): void => {

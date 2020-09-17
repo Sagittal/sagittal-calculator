@@ -1,5 +1,4 @@
-import { Ratio } from "../../../../../src/general/math/ratio"
-import { computeNumberFromRatio } from "../../../../../src/general/math/ratio/numberFromRatio"
+import { computeNumberFromRatio, Ratio } from "../../../../../src/general/math/ratio"
 
 describe("computeNumberFromRatio", (): void => {
     it("returns the numeric value of the ratio", (): void => {

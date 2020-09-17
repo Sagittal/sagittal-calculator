@@ -256,10 +256,7 @@ describe("formatJiNotationBound", (): void => {
             `    "possibleHistoryCount": 0`,
             `}`,
         ].join("\n")
-        
-        console.log("actual", actual)
-        console.log("expected", expected)
 
-        // expect(actual).toEqual(expected)
+        expect(actual).toEqual(expected)
     })
 })

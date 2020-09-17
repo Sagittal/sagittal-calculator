@@ -19,7 +19,7 @@ const searchNextLocalMin = (nextLocalMin: LocalMin, options: SearchLocalMinOptio
     const nextDepth = depth + 1 as Integer
     const nextScope: Scope = computeNextScope(nextLocalMin.samplePoint, dynamicParameters, scope)
     const nextMetricTag = metricTag + `.${index + 1}/${(nextLocalMinima.length)}` as MetricTag
-    saveLog(`  ${indentation}id ${nextMetricTag} - depth ${nextDepth}` as Io, LogTarget.PERFECT)
+    saveLog(`  ${indentation}${nextMetricTag} - depth ${nextDepth}` as Io, LogTarget.PERFECT)
 
     return doOnNextEventLoop(async (): Promise<void> => {
         try {

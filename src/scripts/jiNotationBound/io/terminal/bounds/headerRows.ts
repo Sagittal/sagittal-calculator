@@ -2,7 +2,7 @@ import { Io, Row, splitColumnTitlesIntoRowsBySpaces } from "../../../../../gener
 import { JiNotationBoundAnalysis } from "../../../bound"
 
 const BOUND_ANALYSES_COLUMN_TITLES: Io[] = [
-    "bound id",
+    "bound ID",
     "lesser mina",
     "greater mina",
     "lesser extreme level symbol",

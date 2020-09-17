@@ -1,5 +1,5 @@
 import { Index } from "../../../../../../../../../../../src/general"
-import { increment } from "../../../../../../../../../../../src/general/code/crement"
+import { increment } from "../../../../../../../../../../../src/general/code"
 import { Exponent, Integer, Max, Numerator, Prime, PRIMES } from "../../../../../../../../../../../src/general/math"
 import { N2D3P9 } from "../../../../../../../../../../../src/sagittal/comma/evaluation/n2d3p9"
 

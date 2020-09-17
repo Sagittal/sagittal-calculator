@@ -22,7 +22,7 @@ const recursiveSearchScopeAndMaybeUpdateBestMetric = async (
         await nonRecursiveSearchScopeAndMaybeUpdateBestMetric(scope, { onlyWinners })
 
     const nextLocalMinima = computeLocalMinima(samples, sumsOfSquares, localMin)
-    saveLog(`${indentation}id ${metricTag} - ${nextLocalMinima.length} lcl min / ${samples.length} samples (${round(100 * nextLocalMinima.length / samples.length)}%)` as Io, LogTarget.PERFECT)
+    saveLog(`${indentation}${metricTag} - ${nextLocalMinima.length} lcl min / ${samples.length} samples (${round(100 * nextLocalMinima.length / samples.length)}%)` as Io, LogTarget.PERFECT)
 
     const nextLocalMinimaPromises: Promise<void>[] =
         nextLocalMinima.map((nextLocalMin: LocalMin, index: number): Promise<void> => {

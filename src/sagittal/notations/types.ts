@@ -33,12 +33,10 @@ interface SymbolClass {
     // TODO: perhaps this should be stored outside of here, other way around
     //  but how exactly would that work (perhaps the same way as the ji notation levels work, concat'ing and sorting
     //  along with a method also similar which checks inclusion in them in order
-    //  which reminds me ... that as long as you created some module with an array of the levels sorted, you should use
-    //  it in the implementation rather than re-hard-coding that sequence of five levels
     smallestSymbolSubset: SymbolSubset,
     // TODO: should anything contain an "apotome complement" on it? or just a helper method to get it
     //  (along with a fun test to prove that they have the same apotome slope)
-    //  perhaps it should just be hardcoded as id reference
+    //  perhaps it should just be hardcoded as ID reference
     //  and you should have a test to prove their primary commas sum to an apotome
 }
 
