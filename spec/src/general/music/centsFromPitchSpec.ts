@@ -1,4 +1,4 @@
-import { computeCentsFromPitch, Monzo } from "../../../../src/general"
+import { computeCentsFromPitch, Monzo, Ratio } from "../../../../src/general"
 import { Cents } from "../../../../src/general/music"
 
 describe("computeCentsFromPitch", (): void => {
@@ -26,6 +26,24 @@ describe("computeCentsFromPitch", (): void => {
         const actual = computeCentsFromPitch(pitch)
 
         const expected = 1901.955 as Cents
+        expect(actual).toBeCloseToTyped(expected)
+    })
+
+    it("another example, negative", (): void => {
+        const pitch = { monzo: [2, 1, 0, 0, 0, -1] as Monzo } // 12/13
+
+        const actual = computeCentsFromPitch(pitch)
+
+        const expected = -138.572661 as Cents
+        expect(actual).toBeCloseToTyped(expected)
+    })
+
+    it("gives the cents value of a ratio", (): void => {
+        const pitch = { ratio: [3, 2] as Ratio }
+
+        const actual = computeCentsFromPitch(pitch)
+
+        const expected = 701.955001 as Cents
         expect(actual).toBeCloseToTyped(expected)
     })
 })

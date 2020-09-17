@@ -1,7 +1,6 @@
-import { computeCentsFromMonzo } from "../../music"
-import { computeRatioFromMonzo } from "../ratio"
-import { negative } from "../typedOperations"
+import { MULTIPLICATIVE_IDENTITY } from "../constants"
 import { Direction, Exponent, NumericTypeParameters, Prime } from "../types"
+import { computeNumberFromMonzo } from "./numberFromMonzo"
 import { Monzo, PotentiallyIrrationalMonzoParameter } from "./types"
 
 const computeIsSubMonzo = <T extends NumericTypeParameters>(
@@ -10,49 +9,7 @@ const computeIsSubMonzo = <T extends NumericTypeParameters>(
     if (monzo.length && monzo.every((term: Exponent<Prime>): boolean => term >= 0)) return false
     if (monzo.length && monzo.every((term: Exponent<Prime>): boolean => term <= 0)) return true
 
-    let ratio
-    try {
-        ratio = computeRatioFromMonzo(monzo)
-    } catch (e) {
-        const numeratorMonzo = monzo.map((term: Exponent<Prime>): Exponent<Prime> => {
-            return term > 0 ? term : 0 as Exponent<Prime>
-        }) as Monzo
-        const denominatorMonzo = monzo.map((term: Exponent<Prime>): Exponent<Prime> => {
-            return term < 0 ? negative(term) : 0 as Exponent<Prime>
-        }) as Monzo
-
-        let numeratorError = false
-        try {
-            computeRatioFromMonzo(numeratorMonzo)
-        } catch (e) {
-            numeratorError = true
-        }
-
-        let denominatorError = false
-        try {
-            computeRatioFromMonzo(denominatorMonzo)
-        } catch (e) {
-            denominatorError = true
-        }
-
-        if (numeratorError && !denominatorError) {
-            return false
-        } else if (denominatorError && !numeratorError) {
-            return true
-        } else {
-            try {
-                const cents = computeCentsFromMonzo(monzo)
-
-                return cents < 0
-            } catch (e) {
-                throw new Error("Both the denominator, numerator, and prime limit are huge for this monzo so it is not possible to tell whether it is sub.")
-            }
-        }
-    }
-
-    const value = ratio[ 0 ] / ratio[ 1 ]
-
-    return value < 1
+    return computeNumberFromMonzo(monzo) < MULTIPLICATIVE_IDENTITY
 }
 
 const computeIsSuperMonzo = <T extends NumericTypeParameters>(

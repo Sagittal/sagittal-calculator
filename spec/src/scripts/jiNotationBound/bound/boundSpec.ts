@@ -100,7 +100,7 @@ describe("analyzeJiNotationBound", (): void => {
         totalDistance: 0.08358035044053125 as Cents,
         totalInaDistance: 0.34143907672999785 as Sum<Multiplier<Ina>>,
         tinaError: 0 as Multiplier<Tina>,
-        initialPositionTinaDistance: -0.5613173198970488 as Multiplier<Tina>,
+        initialPositionTinaDistance: -0.5613173198957342 as Multiplier<Tina>,
     }
 
     it("returns an analysis of the JI notation bound using its histories, including a consolidation of said histories, and its best possible history, and the difference between the bound and its initial position", (): void => {
@@ -178,7 +178,7 @@ describe("analyzeJiNotationBound", (): void => {
                 ],
             },
         }
-        expect(actual).toEqual(expected)
+        expect(actual).toBeCloseToObject(expected)
     })
 
     it("updates the rank analysis", (): void => {

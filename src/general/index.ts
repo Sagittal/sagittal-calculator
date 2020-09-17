@@ -155,6 +155,7 @@ export {
     computeSubRatio,
     TWO_PRIME_INDEX,
     add,
+    computeNumberFromMonzo,
 } from "./math"
 export {
     Cents,
@@ -162,7 +163,6 @@ export {
     CentsPosition,
     COMMA_POPULARITIES,
     computeCentsFromPitch,
-    computeCentsFromRatio,
     Pitch,
     Popularity,
     Votes,
@@ -180,7 +180,7 @@ export {
     computeIsWithinPrimeLimit,
     computeIsUnisonPitch,
     THREE_LIMIT,
-    computeCentsFromMonzo,
     Apotome,
+    computeCentsFromNumber,
 } from "./music"
 export { Count, Ed, Extrema, Id, Index, Ms, Multiplier, Name, Step, Sum, Window } from "./types"

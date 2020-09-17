@@ -29,6 +29,7 @@ export {
     computeIsUnisonRatio,
     PotentiallyIrrationalRatioParameter,
     computeSubRatio,
+    computeNumberFromRatio,
 } from "./ratio"
 export { computeIsRoughInteger } from "./roughness"
 export {
@@ -47,6 +48,7 @@ export {
     computeIsRoughMonzo,
     computeIsSmoothMonzo,
     computeIsUnisonMonzo,
+    computeNumberFromMonzo,
 } from "./monzo"
 export { computePrimeCount } from "./primeCount"
 export { PRIMES } from "./primes"

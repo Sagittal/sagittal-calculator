@@ -11,3 +11,4 @@ export {
 } from "./types"
 export { computeSuperRatio } from "./ratioDirection"
 export { computeRatioFromMonzo } from "./ratioFromMonzo"
+export { computeNumberFromRatio } from "./numberFromRatio"
