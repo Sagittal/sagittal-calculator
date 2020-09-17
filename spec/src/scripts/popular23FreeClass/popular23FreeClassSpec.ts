@@ -17,7 +17,7 @@ describe("analyzePopular23FreeClass", (): void => {
             formatted23FreeClass: "5/1" as Formatted<TwoThreeFreeClass>,
             popularityRank: 2 as Rank<Popularity>,
             votes: 5371 as Votes,
-            formattedExactlyNotatingJiNotationSymbolClasses: "    '|       /|  " as Io,
+            formattedExactlyNotatingSymbolClasses: "    '|       /|  " as Io,
             symbolSubsets: "3, 0" as Io,
         }
         expect(actual).toEqual(expected)
@@ -33,7 +33,7 @@ describe("analyzePopular23FreeClass", (): void => {
             formatted23FreeClass: "5/1" as Formatted<TwoThreeFreeClass>,
             popularityRank: 2 as Rank<Popularity>,
             votes: 5371 as Votes,
-            formattedExactlyNotatingJiNotationSymbolClasses: ":'::|: :/|:" as Io,
+            formattedExactlyNotatingSymbolClasses: ":'::|: :/|:" as Io,
             symbolSubsets: "3, 0" as Io,
         }
         expect(actual).toEqual(expected)

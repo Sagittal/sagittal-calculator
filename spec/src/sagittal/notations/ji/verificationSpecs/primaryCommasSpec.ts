@@ -1,13 +1,13 @@
-import { Abs, Comma, Copfr, Integer, ioSettings, Max, ObjectKey, Prime, Sopfr } from "../../../../../../src/general"
+import { Abs, Comma, Copfr, Id, Integer, ioSettings, Max, ObjectKey, Prime, Sopfr } from "../../../../../../src/general"
 import { Exponent } from "../../../../../../src/general/math"
 import {
     analyzeComma,
     ApotomeSlope,
     CommaAnalysis,
     formatSymbolClass,
-    getSagittalComma,
-    JiNotationSymbolClass,
-    JI_NOTATION_SYMBOL_CLASSES,
+    getSagittalComma, getSymbolClass,
+    JI_NOTATION,
+    SymbolClass,
 } from "../../../../../../src/sagittal"
 import { N2D3P9 } from "../../../../../../src/sagittal/comma/evaluation/n2d3p9"
 import { computeCommaName } from "../../../../../../src/sagittal/comma/name"
@@ -17,13 +17,14 @@ import { computeFindCommasTable } from "../../../../../../src/scripts/jiPitch/io
 
 describe("verifying primary commas", (): void => {
     xit("checks that every symbol's primary comma is its best-ranked comma in its secondary comma zone according to our metric (not N2D3P9, but a comma notational popularity rank metric which uses it)", (): void => {
-        JI_NOTATION_SYMBOL_CLASSES.forEach((jiNotationSymbolClass: JiNotationSymbolClass): void => {
-            const primaryComma = getSagittalComma(jiNotationSymbolClass.primaryCommaId)
+        JI_NOTATION.forEach((symbolClassId: Id<SymbolClass>): void => {
+            const symbolClass = getSymbolClass(symbolClassId)
+            const primaryComma = getSagittalComma(symbolClass.primaryCommaId)
             const commaName = computeCommaName(primaryComma)
 
-            console.warn(`\n\n${formatSymbolClass(jiNotationSymbolClass.id, ioSettings)} ${commaName}\n\n`)
+            console.warn(`\n\n${formatSymbolClass(symbolClass.id, ioSettings)} ${commaName}\n\n`)
 
-            const secondaryCommaZone = computeSecondaryCommaZone(jiNotationSymbolClass)
+            const secondaryCommaZone = computeSecondaryCommaZone(symbolClassId)
             const minCents = secondaryCommaZone[ 0 ]
             const maxCents = secondaryCommaZone[ 1 ]
             const max23FreeSopfr = 61 as Max<Sopfr<{ rough: 5 }>>

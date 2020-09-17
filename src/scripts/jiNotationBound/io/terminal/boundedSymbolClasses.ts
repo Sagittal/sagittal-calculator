@@ -1,6 +1,6 @@
 import { Id, isUndefined, Maybe } from "../../../../general"
 import { JiNotationBound } from "../../../../sagittal"
-import { analyzeJiNotationSymbolClass } from "./analyzeSymbolClass"
+import { analyzeSymbolClass } from "./analyzeSymbolClass"
 import {
     BoundedSymbolClassAnalyses,
     BoundedSymbolClassIdWithDistancesPair,
@@ -23,13 +23,13 @@ const analyzeBoundedSymbolClasses = (
 
             let firstBoundedSymbolWithPrimaryComma
             if (!isUndefined(first)) {
-                const firstJiNotationSymbolWithPrimaryComma = analyzeJiNotationSymbolClass(first.id)
+                const firstJiNotationSymbolWithPrimaryComma = analyzeSymbolClass(first.id)
                 firstBoundedSymbolWithPrimaryComma = { ...first, ...firstJiNotationSymbolWithPrimaryComma }
             }
 
             let secondBoundedSymbolWithPrimaryComma
             if (!isUndefined(second)) {
-                const secondJiNotationSymbolWithPrimaryComma = analyzeJiNotationSymbolClass(second.id)
+                const secondJiNotationSymbolWithPrimaryComma = analyzeSymbolClass(second.id)
                 secondBoundedSymbolWithPrimaryComma = { ...second, ...secondJiNotationSymbolWithPrimaryComma }
             }
 

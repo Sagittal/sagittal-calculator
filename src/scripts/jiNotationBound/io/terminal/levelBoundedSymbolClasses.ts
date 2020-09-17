@@ -1,16 +1,15 @@
 import { abs, Cents, computeCentsFromPitch, Id, Maybe, subtract } from "../../../../general"
 import {
-    getJiNotationSymbolClass,
     getSagittalComma,
+    getSymbolClass,
     JiNotationBound,
     JiNotationLevel,
-    JiNotationSymbolClass,
     JI_NOTATION_BOUNDS,
     SymbolClass,
 } from "../../../../sagittal"
 import { computeBoundedSymbolClassPositions } from "../../boundedPositions"
 import { computeInaDistance } from "../../history"
-import { computePositionJiNotationSymbolClassId } from "./positionSymbolClassId"
+import { computePositionSymbolClassId } from "./positionSymbolClassId"
 import {
     BoundedSymbolClassIdWithDistances,
     BoundedSymbolClassIdWithDistancesPair,
@@ -28,22 +27,22 @@ const computeJiNotationLevelBoundedSymbolClassIdsWithDistances = (
                 JiNotationBoundIdWithBoundedSymbolClassIdsWithDistancesPairsByJiNotationLevel,
             jiNotationLevel: JiNotationLevel,
         ): JiNotationBoundIdWithBoundedSymbolClassIdsWithDistancesPairsByJiNotationLevel => {
-            const jiNotationLevelBoundedSymbolClasses: Array<Maybe<JiNotationSymbolClass>> =
+            const jiNotationLevelBoundedSymbolClasses: Array<Maybe<SymbolClass>> =
                 computeBoundedSymbolClassPositions(cents, jiNotationLevel)
-                    .map(computePositionJiNotationSymbolClassId)
-                    .map((symbolClassId: Maybe<Id<SymbolClass>>): Maybe<JiNotationSymbolClass> => {
-                        return symbolClassId && getJiNotationSymbolClass(symbolClassId)
+                    .map(computePositionSymbolClassId)
+                    .map((symbolClassId: Maybe<Id<SymbolClass>>): Maybe<SymbolClass> => {
+                        return symbolClassId && getSymbolClass(symbolClassId)
                     })
             const jiNotationLevelBoundedSymbolClassesWithDistance = jiNotationLevelBoundedSymbolClasses
                 .map(
-                    (jiNotationSymbolClass: Maybe<JiNotationSymbolClass>): Maybe<BoundedSymbolClassIdWithDistances> => {
-                        if (jiNotationSymbolClass) {
-                            const primaryComma = getSagittalComma(jiNotationSymbolClass.primaryCommaId)
+                    (symbolClass: Maybe<SymbolClass>): Maybe<BoundedSymbolClassIdWithDistances> => {
+                        if (symbolClass) {
+                            const primaryComma = getSagittalComma(symbolClass.primaryCommaId)
                             const primaryCommaCents = computeCentsFromPitch(primaryComma)
                             const distance: Cents = abs(subtract(cents, primaryCommaCents))
 
                             return {
-                                id: jiNotationSymbolClass.id,
+                                id: symbolClass.id,
                                 distance,
                                 inaDistance: computeInaDistance(distance, jiNotationLevel),
                             }

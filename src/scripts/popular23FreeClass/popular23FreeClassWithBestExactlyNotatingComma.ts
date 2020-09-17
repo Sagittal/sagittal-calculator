@@ -22,7 +22,7 @@ import {
     Votes,
 } from "../../general"
 import {
-    addMaybeJiNotationSymbolClassId,
+    addMaybeSymbolClassId,
     APOTOME_CENTS,
     computeApotomeSlope,
     computeExactlyNotatingCommas,
@@ -86,7 +86,7 @@ const analyzePopular23FreeClassWithBestExactlyNotatingComma = (
         throw new Error("did not find a best exactly notating comma for this 2,3-free class")
     }
 
-    const commaWithMaybeSagittalSymbolClassId = addMaybeJiNotationSymbolClassId(bestExactlyNotatingComma)
+    const commaWithMaybeSagittalSymbolClassId = addMaybeSymbolClassId(bestExactlyNotatingComma)
 
     return {
         n2d3p9,

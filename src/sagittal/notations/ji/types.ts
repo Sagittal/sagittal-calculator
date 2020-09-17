@@ -1,5 +1,4 @@
 import { Cents, Id } from "../../../general"
-import { SymbolClass } from "../types"
 
 type Tina = Cents & { _InaBrand: "Tina" }
 type Mina = Cents & { _InaBrand: "Mina" }
@@ -17,13 +16,6 @@ enum JiNotationLevel {
     INSANE = "insane",          // corresponds closely with Magrathean symbol subset
 }
 
-interface JiNotationSymbolClassMetadata {
-    mina: Mina,
-}
-
-interface JiNotationSymbolClass extends SymbolClass, JiNotationSymbolClassMetadata {
-}
-
 interface JiNotationBound {
     id: Id<JiNotationBound>,
     jiNotationLevels: JiNotationLevel[],
@@ -31,7 +23,6 @@ interface JiNotationBound {
 }
 
 export {
-    JiNotationSymbolClass,
     Tina,
     Mina,
     Ultrina,
@@ -40,5 +31,4 @@ export {
     JiNotationLevel,
     JiNotationBound,
     Ina,
-    JiNotationSymbolClassMetadata,
 }

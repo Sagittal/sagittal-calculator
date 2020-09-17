@@ -29,7 +29,7 @@ interface SymbolClass {
     id: Id<SymbolClass>,
     primaryCommaId: Id<SagittalComma>,
     // TODO: perhaps this should be stored outside of here, other way around
-    //  but how exactly would that work
+    //  but how exactly would that work (perhaps the same way as the ji notation levels work, concat'ing and sorting
     smallestSymbolSubset: SymbolSubset,
     // TODO: should anything contain an "apotome complement" on it? or just a helper method to get it
     //  (along with a fun test to prove that they have the same apotome slope)
@@ -43,7 +43,7 @@ interface RevoSymbol {
     unicode: SymbolUnicode,
     symbolClassId: Id<SymbolClass>,
     direction: Direction,
-    // so if apotome count is 1 but direction is sub, then it's a down symb + a sharp
+    // so if apotome count is 1 but direction is sub, then it's a down symbol + a sharp
     apotomeCount: Count<Apotome>,
 }
 

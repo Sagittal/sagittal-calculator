@@ -1,7 +1,8 @@
 import { Maybe } from "../../../../general"
 import {
-    getJiNotationSymbolClass,
+    getMina,
     getRepresentativeSymbol,
+    getSymbolClass,
     JiNotationBound,
     JiNotationLevel,
     SymbolLongAscii,
@@ -44,22 +45,24 @@ const extractJiNotationBoundIdentifiers = (jiNotationBound: JiNotationBound): Ji
     const extremeLevelLesserBoundedSymbolClass: Maybe<BoundedSymbolClass> =
         extremeLevelLesserBoundedSymbolClassIdWithDistance && {
             ...extremeLevelLesserBoundedSymbolClassIdWithDistance,
-            ...getJiNotationSymbolClass(extremeLevelLesserBoundedSymbolClassIdWithDistance.id),
+            ...getSymbolClass(extremeLevelLesserBoundedSymbolClassIdWithDistance.id),
         } as BoundedSymbolClass
     const formattedExtremeLevelLesserBoundedSymbolClass = extremeLevelLesserBoundedSymbolClass ?
         getRepresentativeSymbol(extremeLevelLesserBoundedSymbolClass.id).ascii :
         "" as SymbolLongAscii
-    const lesserBoundedMina = extremeLevelLesserBoundedSymbolClass && extremeLevelLesserBoundedSymbolClass.mina
+    const lesserBoundedMina = extremeLevelLesserBoundedSymbolClass &&
+        getMina(extremeLevelLesserBoundedSymbolClass.id)
 
     const extremeLevelGreaterBoundedSymbolClass: Maybe<BoundedSymbolClass> =
         extremeLevelGreaterBoundedSymbolClassIdWithDistance && {
             ...extremeLevelGreaterBoundedSymbolClassIdWithDistance,
-            ...getJiNotationSymbolClass(extremeLevelGreaterBoundedSymbolClassIdWithDistance.id),
+            ...getSymbolClass(extremeLevelGreaterBoundedSymbolClassIdWithDistance.id),
         } as BoundedSymbolClass
     const formattedExtremeLevelGreaterBoundedSymbolClass = extremeLevelGreaterBoundedSymbolClass ?
         getRepresentativeSymbol(extremeLevelGreaterBoundedSymbolClass.id).ascii :
         "" as SymbolLongAscii
-    const greaterBoundedMina = extremeLevelGreaterBoundedSymbolClass && extremeLevelGreaterBoundedSymbolClass.mina
+    const greaterBoundedMina = extremeLevelGreaterBoundedSymbolClass &&
+        getMina(extremeLevelGreaterBoundedSymbolClass.id)
 
     return {
         extremeLevelLesserBoundedSymbolClass: formattedExtremeLevelLesserBoundedSymbolClass,

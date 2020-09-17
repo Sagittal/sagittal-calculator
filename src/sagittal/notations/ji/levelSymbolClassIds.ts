@@ -1,4 +1,4 @@
-import { Id, sort } from "../../../general"
+import { finalElement, Id, sort } from "../../../general"
 import { SymbolClass } from "../types"
 import { JiNotationLevel } from "./types"
 
@@ -38,6 +38,9 @@ const JI_NOTATION_LEVELS_SYMBOL_CLASS_IDS: Record<JiNotationLevel, Array<Id<Symb
     [ JiNotationLevel.INSANE ]: INSANE_LEVEL_SYMBOL_CLASS_IDS,
 }
 
+const JI_NOTATION = finalElement(Object.values(JI_NOTATION_LEVELS_SYMBOL_CLASS_IDS))
+
 export {
     JI_NOTATION_LEVELS_SYMBOL_CLASS_IDS,
+    JI_NOTATION
 }

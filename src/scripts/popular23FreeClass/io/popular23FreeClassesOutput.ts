@@ -18,14 +18,14 @@ const computePopular23FreeClassesOutput = (
             rank: estimatedRank,
             popularityRank: actualRank,
             symbolSubsets,
-            formattedExactlyNotatingJiNotationSymbolClasses,
+            formattedExactlyNotatingSymbolClasses,
             votes,
         } = popular23FreeClass
 
         table.push([
             formatted23FreeClass,
             formattedN2D3P9,
-            formattedExactlyNotatingJiNotationSymbolClasses,
+            formattedExactlyNotatingSymbolClasses,
             symbolSubsets,
             estimatedRank,
             actualRank,

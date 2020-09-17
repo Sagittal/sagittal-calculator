@@ -32,18 +32,15 @@ export {
     formatSymbolClass, formatSymbolAscii, SymbolLongAscii, unicodeFromAscii, SymbolSmiley, SymbolUnicode,
 } from "./io"
 export {
-    addMaybeJiNotationSymbolClassId,
+    addMaybeSymbolClassId,
     JiNotationBound,
     computeInaMidpoints,
     formatJiNotationLevel,
-    getJiNotationSymbolClass,
     getSagittalComma,
     Ina,
     INA_SIZES,
     JI_NOTATION_BOUNDS,
     SYMBOL_SUBSETS_USED_IN_JI_NOTATION_SORTED_BY_ASCENDING_SYMBOL_COUNT,
-    JI_NOTATION_SYMBOL_CLASSES,
-    JiNotationSymbolClass,
     JiNotationLevel,
     JI_NOTATION_LEVEL_EDAS,
     JI_NOTATION_LEVELS,
@@ -57,5 +54,8 @@ export {
     SymbolClass,
     getRepresentativeSymbol,
     getIntroducingJiNotationLevel,
+    getSymbolClass,
+    getMina,
+    JI_NOTATION,
 } from "./notations"
 export { APOTOME_CENTS } from "./constants"

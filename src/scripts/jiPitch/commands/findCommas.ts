@@ -1,5 +1,5 @@
 import { addTexts, Comma, LogTarget, NEWLINE, saveLog, sort } from "../../../general"
-import { addMaybeJiNotationSymbolClassId, analyzeComma, CommaAnalysis } from "../../../sagittal"
+import { addMaybeSymbolClassId, analyzeComma, CommaAnalysis } from "../../../sagittal"
 import { computeCommas } from "../commas"
 import { jiPitchScriptGroupSettings } from "../globals"
 import {
@@ -18,7 +18,7 @@ const findCommasOptions = parseFindCommasOptions()
 
 const commas = computeCommas({ ...jiPitchScriptGroupSettings, ...findCommasOptions })
 
-const commasWithMaybeSagittalSymbolClassIds = commas.map(addMaybeJiNotationSymbolClassId)
+const commasWithMaybeSagittalSymbolClassIds = commas.map(addMaybeSymbolClassId)
 const commaAnalyses = commasWithMaybeSagittalSymbolClassIds.map((comma: Comma): CommaAnalysis => {
     return analyzeComma(comma, jiPitchScriptGroupSettings.commaNameOptions)
 })

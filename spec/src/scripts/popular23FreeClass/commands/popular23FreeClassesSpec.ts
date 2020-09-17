@@ -166,7 +166,7 @@ describe("popular-2-3-free-classes", (): void => {
         const actual = runCommandAndGetConsoleOutput(command)
 
         const expected = [
-            "count of results with N2D3P9 <= 10: 10",
+            "count of results with N2D3P9 ≤ 10: 10",
             "",
             "[table]",
             "[tr][th][pre][/pre][/th][th][pre][/pre][/th][th][pre]exactly[/pre][/th][th][pre]introducing[/pre][/th][th][pre][/pre][/th][th][pre][/pre][/th][th][pre][/pre][/th][/tr]",

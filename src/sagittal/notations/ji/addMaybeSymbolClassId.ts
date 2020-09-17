@@ -1,24 +1,25 @@
 import { Comma, deepEquals, Id, isUndefined, Maybe } from "../../../general"
 import { getSagittalComma } from "../getSagittalComma"
+import { getSymbolClass } from "../symbolClass"
 import { SymbolClass } from "../types"
-import { JI_NOTATION_SYMBOL_CLASSES } from "./symbolClasses"
-import { JiNotationSymbolClass } from "./types"
+import { JI_NOTATION } from "./levelSymbolClassIds"
 
-const addMaybeJiNotationSymbolClassId = (comma: Comma): Comma & { symbolClassId?: Id<SymbolClass> } => {
-    const maybeJiNotationSymbolClass: Maybe<JiNotationSymbolClass> = JI_NOTATION_SYMBOL_CLASSES
-        .find((jiNotationSymbolClass: JiNotationSymbolClass): boolean => {
-            const primaryComma = getSagittalComma(jiNotationSymbolClass.primaryCommaId)
+const addMaybeSymbolClassId = (comma: Comma): Comma & { symbolClassId?: Id<SymbolClass> } => {
+    const maybeSymbolClassId: Maybe<Id<SymbolClass>> =
+        JI_NOTATION.find((symbolClassId: Id<SymbolClass>): boolean => {
+            const symbolClass = getSymbolClass(symbolClassId)
+            const primaryComma = getSagittalComma(symbolClass.primaryCommaId)
 
             return deepEquals(comma.monzo, primaryComma.monzo)
         })
 
-    if (isUndefined(maybeJiNotationSymbolClass)) {
+    if (isUndefined(maybeSymbolClassId)) {
         return comma
     } else {
-        return { ...comma, symbolClassId: maybeJiNotationSymbolClass.id }
+        return { ...comma, symbolClassId: maybeSymbolClassId }
     }
 }
 
 export {
-    addMaybeJiNotationSymbolClassId,
+    addMaybeSymbolClassId,
 }

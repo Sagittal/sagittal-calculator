@@ -11,7 +11,7 @@ interface SharedPopular23FreeClassAnalysisProperties {
 
 interface Popular23FreeClassAnalysis extends SharedPopular23FreeClassAnalysisProperties {
     symbolSubsets: Io,
-    formattedExactlyNotatingJiNotationSymbolClasses: Io,
+    formattedExactlyNotatingSymbolClasses: Io,
 }
 
 interface Popular23FreeClassAnalysisWithBestExactlyNotatingComma extends SharedPopular23FreeClassAnalysisProperties {

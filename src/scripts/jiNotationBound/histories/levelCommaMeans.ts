@@ -1,6 +1,6 @@
 import { Cents, CentsPosition, computeCentsFromPitch, Id, indexOfFinalElement, Name, Pitch } from "../../../general"
 import {
-    getJiNotationSymbolClass,
+    getSymbolClass,
     getRepresentativeSymbol,
     getSagittalComma,
     JiNotationLevel,
@@ -10,8 +10,8 @@ import {
 } from "../../../sagittal"
 
 const getJiNotationSymbolCents = (symbolClassId: Id<SymbolClass>): Cents => {
-    const jiNotationSymbolClass = getJiNotationSymbolClass(symbolClassId)
-    const primaryCommaId = jiNotationSymbolClass.primaryCommaId
+    const symbolClass = getSymbolClass(symbolClassId)
+    const primaryCommaId = symbolClass.primaryCommaId
     const primaryComma = getSagittalComma(primaryCommaId)
 
     return computeCentsFromPitch(primaryComma)
@@ -31,14 +31,14 @@ const computeJiNotationLevelCommaMeans = (jiNotationLevel: JiNotationLevel): Cen
 
     return jiNotationLevelSymbolClassIdsExcludingTheFinalSymbolClass
         .map((symbolClassId: Id<SymbolClass>, index: number): CentsPosition => {
-            const nextJiNotationSymbolClassId = jiNotationLevelSymbolClassIds[ index + 1 ]
+            const nextSymbolClassId = jiNotationLevelSymbolClassIds[ index + 1 ]
 
             const cents = (
-                getJiNotationSymbolCents(symbolClassId) + getJiNotationSymbolCents(nextJiNotationSymbolClassId)
+                getJiNotationSymbolCents(symbolClassId) + getJiNotationSymbolCents(nextSymbolClassId)
             ) / 2 as Cents
             const name = [
                 getJiNotationSymbolAscii(symbolClassId),
-                getJiNotationSymbolAscii(nextJiNotationSymbolClassId),
+                getJiNotationSymbolAscii(nextSymbolClassId),
             ].join(" ") as Name<Pitch>
 
             return {

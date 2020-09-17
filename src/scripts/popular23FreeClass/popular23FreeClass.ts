@@ -15,14 +15,14 @@ import {
 } from "../../general"
 import {
     formatSymbolClass,
-    getJiNotationSymbolClass,
+    getSymbolClass,
     N2D3P9,
     SymbolClass,
     SymbolLongAscii,
     SymbolSmiley,
     SYMBOL_SUBSETS_USED_IN_JI_NOTATION_SORTED_BY_ASCENDING_SYMBOL_COUNT,
 } from "../../sagittal"
-import { computeExactlyNotatingJiNotationSymbolClassIds } from "./exactlyNotatingJiNotationSymbolClassIds"
+import { computeExactlyNotatingSymbolClassIds } from "./exactlyNotatingSymbolClassIds"
 import { Popular23FreeClassAnalysis } from "./types"
 
 const analyzePopular23FreeClass = (
@@ -37,16 +37,16 @@ const analyzePopular23FreeClass = (
     const popularityRank = popularity?.rank || "-" as Io
     const votes = popularity?.votes || 0 as Votes
 
-    const exactlyNotatingJiNotationSymbolClassIds = computeExactlyNotatingJiNotationSymbolClassIds(twoThreeFreeClass)
-    const formattedExactlyNotatingJiNotationSymbolClasses = join(exactlyNotatingJiNotationSymbolClassIds.map(
+    const exactlyNotatingSymbolClassIds = computeExactlyNotatingSymbolClassIds(twoThreeFreeClass)
+    const formattedExactlyNotatingSymbolClasses = join(exactlyNotatingSymbolClassIds.map(
         (symbolClassId: Id<SymbolClass>): SymbolSmiley | Formatted<SymbolLongAscii> => {
             return formatSymbolClass(symbolClassId, ioSettings)
         },
     ), SPACE)
 
-    const symbolSubsets = exactlyNotatingJiNotationSymbolClassIds.map((symbolClassId: Id<SymbolClass>): number => {
+    const symbolSubsets = exactlyNotatingSymbolClassIds.map((symbolClassId: Id<SymbolClass>): number => {
         return SYMBOL_SUBSETS_USED_IN_JI_NOTATION_SORTED_BY_ASCENDING_SYMBOL_COUNT
-            .indexOf(getJiNotationSymbolClass(symbolClassId).smallestSymbolSubset)
+            .indexOf(getSymbolClass(symbolClassId).smallestSymbolSubset)
     }).join(", ") as Io
 
     return {
@@ -55,7 +55,7 @@ const analyzePopular23FreeClass = (
         formatted23FreeClass,
         popularityRank,
         votes,
-        formattedExactlyNotatingJiNotationSymbolClasses,
+        formattedExactlyNotatingSymbolClasses,
         symbolSubsets,
     }
 }

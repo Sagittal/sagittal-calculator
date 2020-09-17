@@ -1,22 +1,26 @@
+import { Id } from "../../../../../../src/general"
 import { increment } from "../../../../../../src/general/code"
 import { computeCentsFromPitch } from "../../../../../../src/general/music"
 import {
     APOTOME_CENTS,
     getSagittalComma,
+    getSymbolClass,
     JiNotationBound,
-    JiNotationSymbolClass,
+    JI_NOTATION,
     JI_NOTATION_BOUNDS,
-    JI_NOTATION_SYMBOL_CLASSES,
     SagittalComma,
+    SymbolClass,
 } from "../../../../../../src/sagittal"
 
 describe("half-apotome mirror", (): void => {
     const halfApotomeCents = APOTOME_CENTS / 2
 
     it("is the case that the commas in the JI notation are symmetrical about the half-apotome mirror", (): void => {
-        const jiNotationSymbolClasses = JI_NOTATION_SYMBOL_CLASSES
-            .map((jiNotationSymbolClass: JiNotationSymbolClass): SagittalComma => {
-                return getSagittalComma(jiNotationSymbolClass.primaryCommaId)
+        const jiNotationSymbolClasses = JI_NOTATION
+            .map((symbolClassId: Id<SymbolClass>): SagittalComma => {
+                const symbolClass = getSymbolClass(symbolClassId)
+
+                return getSagittalComma(symbolClass.primaryCommaId)
             })
         const firstCommaGreaterThanHalfApotomeMirrorIndex = jiNotationSymbolClasses.findIndex(
             (sagittalComma: SagittalComma): boolean => computeCentsFromPitch(sagittalComma) > halfApotomeCents,

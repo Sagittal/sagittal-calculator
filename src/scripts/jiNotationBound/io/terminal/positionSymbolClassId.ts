@@ -1,25 +1,26 @@
-import { Cents, computeCentsFromPitch, Id, isCloseTo, Maybe } from "../../../../general"
-import { getSagittalComma, JiNotationSymbolClass, JI_NOTATION_SYMBOL_CLASSES, SymbolClass } from "../../../../sagittal"
+import { Cents, computeCentsFromPitch, Id, isCloseTo, isUndefined, Maybe } from "../../../../general"
+import { getSagittalComma, getSymbolClass, JI_NOTATION, SymbolClass } from "../../../../sagittal"
 
-const computePositionJiNotationSymbolClassId = (position: Maybe<Cents>): Maybe<Id<SymbolClass>> => {
+const computePositionSymbolClassId = (position: Maybe<Cents>): Maybe<Id<SymbolClass>> => {
     if (!position) {
         return undefined
     }
 
-    const jiNotationSymbolClass = JI_NOTATION_SYMBOL_CLASSES
-        .find((jiNotationSymbolClass: JiNotationSymbolClass): boolean => {
-            const primaryComma = getSagittalComma(jiNotationSymbolClass.primaryCommaId)
+    const symbolClassId = JI_NOTATION.find((symbolClassId: Id<SymbolClass>): boolean => {
+        // TODO: there should be a getPrimaryComma helper for this, which happens a lot
+        const symbolClass = getSymbolClass(symbolClassId)
+        const primaryComma = getSagittalComma(symbolClass.primaryCommaId)
 
-            return isCloseTo(computeCentsFromPitch(primaryComma), position)
-        })
+        return isCloseTo(computeCentsFromPitch(primaryComma), position)
+    })
 
-    if (jiNotationSymbolClass) {
-        return jiNotationSymbolClass.id
+    if (!isUndefined(symbolClassId)) {
+        return symbolClassId
     } else {
         return undefined
     }
 }
 
 export {
-    computePositionJiNotationSymbolClassId,
+    computePositionSymbolClassId,
 }

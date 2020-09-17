@@ -4,7 +4,6 @@ import {
     Ina,
     JiNotationBound,
     JiNotationLevel,
-    JiNotationSymbolClass,
     Mina,
     SagittalComma,
     SymbolClass,
@@ -21,18 +20,19 @@ interface BoundedProperties {
 
 // only used temporarily within a method
 
-interface BoundedSymbolClass extends JiNotationSymbolClass, BoundedProperties {}
+interface BoundedSymbolClass extends SymbolClass, BoundedProperties {}
 
 // building up to JiNotationBoundIdentifiers
 
-type JiNotationSymbolClassAnalysis = Omit<JiNotationSymbolClass, "primaryCommaId"> & {
+type SymbolClassAnalysis = Omit<SymbolClass, "primaryCommaId"> & {
     primaryCommaAnalysis: CommaAnalysis & { id: Id<SagittalComma> }
     ascii: SymbolLongAscii,
     unicode: SymbolUnicode,
     introducingJiNotationLevel: JiNotationLevel,
+    mina: Mina,
 }
 
-interface BoundedSymbolClassAnalysis extends JiNotationSymbolClassAnalysis, BoundedProperties {}
+interface BoundedSymbolClassAnalysis extends SymbolClassAnalysis, BoundedProperties {}
 
 type BoundedSymbolClassAnalysisPair =
     [Maybe<BoundedSymbolClassAnalysis>, Maybe<BoundedSymbolClassAnalysis>]
@@ -66,7 +66,7 @@ type JiNotationBoundIdWithBoundedSymbolClassIdsWithDistancesPairsByJiNotationLev
 
 export {
     BoundedSymbolClass,
-    JiNotationSymbolClassAnalysis,
+    SymbolClassAnalysis,
     BoundedSymbolClassAnalyses,
     JiNotationBoundIdentifiers,
     JiNotationBoundIdWithBoundedSymbolClassIdsWithDistancesPairsByJiNotationLevel,

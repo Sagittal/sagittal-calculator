@@ -3,20 +3,21 @@ import {
     analyzeComma,
     CommaAnalysis,
     getIntroducingJiNotationLevel,
-    getJiNotationSymbolClass,
+    getMina,
     getRepresentativeSymbol,
     getSagittalComma,
+    getSymbolClass,
     SagittalComma,
     SymbolClass,
 } from "../../../../sagittal"
-import { JiNotationSymbolClassAnalysis } from "./types"
+import { SymbolClassAnalysis } from "./types"
 
-// TODO: is this now an symbolClassAnalysis?
-const analyzeJiNotationSymbolClass = (
-    symbolClassId: Id<SymbolClass>
-): JiNotationSymbolClassAnalysis => {
-    const jiNotationSymbolClass = getJiNotationSymbolClass(symbolClassId)
-    const { primaryCommaId, ...otherSymbolProperties } = jiNotationSymbolClass
+// TODO: is this now an symbolClassAnalysis? ANSWER: so it is, but then does it really belong in an "io" directory?
+const analyzeSymbolClass = (
+    symbolClassId: Id<SymbolClass>,
+): SymbolClassAnalysis => {
+    const symbolClass = getSymbolClass(symbolClassId)
+    const { primaryCommaId, ...otherSymbolProperties } = symbolClass
 
     const primaryComma: SagittalComma = getSagittalComma(primaryCommaId)
     const primaryCommaAnalysis: CommaAnalysis & { id: Id<SagittalComma> } =
@@ -25,10 +26,11 @@ const analyzeJiNotationSymbolClass = (
     const { ascii, unicode } = getRepresentativeSymbol(symbolClassId)
 
     const introducingJiNotationLevel = getIntroducingJiNotationLevel(symbolClassId)
+    const mina = getMina(symbolClassId)
 
-    return { ...otherSymbolProperties, ascii, unicode, introducingJiNotationLevel, primaryCommaAnalysis }
+    return { ...otherSymbolProperties, mina, ascii, unicode, introducingJiNotationLevel, primaryCommaAnalysis }
 }
 
 export {
-    analyzeJiNotationSymbolClass,
+    analyzeSymbolClass,
 }

@@ -7,30 +7,31 @@ import {
     invertMonzo,
     JiPitch,
 } from "../../general"
-import { getSagittalComma, JiNotationSymbolClass, JI_NOTATION_SYMBOL_CLASSES, SymbolClass } from "../../sagittal"
+import { getSagittalComma, getSymbolClass, JI_NOTATION, SymbolClass } from "../../sagittal"
 
 // Different than computeExactlyNotatingCommas because this one only concerns itself with commas that are in Sagittal
-const computeExactlyNotatingJiNotationSymbolClassIds = (jiPitch: JiPitch): Array<Id<SymbolClass>> => {
+const computeExactlyNotatingSymbolClassIds = (jiPitch: JiPitch): Array<Id<SymbolClass>> => {
     const monzo = computeJiPitchMonzo(jiPitch)
 
-    const exactlyNotatingJiNotationSymbolClassIds: Array<Id<SymbolClass>> = []
+    const exactlyNotatingSymbolClassIds: Array<Id<SymbolClass>> = []
     const twoThreeFreeMonzo = computeRoughMonzo(monzo, FIVE_ROUGHNESS)
 
-    JI_NOTATION_SYMBOL_CLASSES.forEach((jiNotationSymbolClass: JiNotationSymbolClass): void => {
-        const primaryComma = getSagittalComma(jiNotationSymbolClass.primaryCommaId)
+    JI_NOTATION.forEach((symbolClassId: Id<SymbolClass>): void => {
+        const symbolClass = getSymbolClass(symbolClassId)
+        const primaryComma = getSagittalComma(symbolClass.primaryCommaId)
         const twoThreeFreePrimaryCommaMonzo = computeRoughMonzo(primaryComma.monzo, FIVE_ROUGHNESS)
 
         if (
             deepEquals(twoThreeFreeMonzo, twoThreeFreePrimaryCommaMonzo) ||
             deepEquals(twoThreeFreeMonzo, invertMonzo(twoThreeFreePrimaryCommaMonzo))
         ) {
-            exactlyNotatingJiNotationSymbolClassIds.push(jiNotationSymbolClass.id)
+            exactlyNotatingSymbolClassIds.push(symbolClass.id)
         }
     })
 
-    return exactlyNotatingJiNotationSymbolClassIds
+    return exactlyNotatingSymbolClassIds
 }
 
 export {
-    computeExactlyNotatingJiNotationSymbolClassIds,
+    computeExactlyNotatingSymbolClassIds,
 }

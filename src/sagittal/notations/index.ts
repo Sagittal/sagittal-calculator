@@ -1,16 +1,13 @@
 export { getSagittalComma } from "./getSagittalComma"
 export { MAX_SYMBOL_CLASS_CENTS } from "./intervals"
 export {
-    addMaybeJiNotationSymbolClassId,
+    addMaybeSymbolClassId,
     JiNotationBound,
     computeInaMidpoints,
     formatJiNotationLevel,
-    getJiNotationSymbolClass,
     Ina,
     INA_SIZES,
-    JiNotationSymbolClass,
     JI_NOTATION_BOUNDS,
-    JI_NOTATION_SYMBOL_CLASSES,
     SYMBOL_SUBSETS_USED_IN_JI_NOTATION_SORTED_BY_ASCENDING_SYMBOL_COUNT,
     JiNotationLevel,
     JI_NOTATION_LEVELS,
@@ -21,6 +18,8 @@ export {
     Tina,
     getIntroducingJiNotationLevel,
     TINA,
+    getMina,
+    JI_NOTATION,
 } from "./ji"
 export { APOTOME } from "./sagittalCommas"
 export { SagittalComma, SymbolClass, RevoSymbol } from "./types"

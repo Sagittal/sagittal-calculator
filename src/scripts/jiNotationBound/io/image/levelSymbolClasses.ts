@@ -1,10 +1,10 @@
 import { add, computeCentsFromPitch, Id, Io, Px, subtract } from "../../../../general"
 import {
-    getJiNotationSymbolClass,
+    getMina,
     getRepresentativeSymbol,
     getSagittalComma,
+    getSymbolClass,
     JiNotationLevel,
-    JiNotationSymbolClass,
     JI_NOTATION_LEVELS_SYMBOL_CLASS_IDS,
     SagittalComma,
     SymbolClass,
@@ -31,9 +31,11 @@ const visualizeJiNotationLevelSymbolClasses = (): Io[] => {
         const symbolY: Px = add(centerY, SYMBOL_OFFSET)
 
         jiNotationLevelSymbolClassIds.forEach((jiNotationLevelSymbolClassId: Id<SymbolClass>): void => {
-            const jiNotationLevelSymbolClass: JiNotationSymbolClass =
-                getJiNotationSymbolClass(jiNotationLevelSymbolClassId)
-            const { primaryCommaId, mina } = jiNotationLevelSymbolClass
+            // TODO: this is one of the places to use the getPrimaryComma helper (marking specifically since this one
+            //  doesn't look quite the same as the others)
+            const jiNotationLevelSymbolClass: SymbolClass = getSymbolClass(jiNotationLevelSymbolClassId)
+            const { primaryCommaId } = jiNotationLevelSymbolClass
+            const mina = getMina(jiNotationLevelSymbolClassId)
             const { ascii, unicode } = getRepresentativeSymbol(jiNotationLevelSymbolClassId)
             const primaryComma: SagittalComma = getSagittalComma(primaryCommaId)
 

@@ -1,21 +1,13 @@
 import { Id, Zone } from "../../../../../src/general"
-import { JiNotationSymbolClass, SagittalComma, SymbolClass } from "../../../../../src/sagittal"
-import { SymbolLongAscii } from "../../../../../src/sagittal/io"
-import { JiNotationLevel, Mina } from "../../../../../src/sagittal/notations/ji"
+import { SagittalComma, SymbolClass } from "../../../../../src/sagittal"
+import { JiNotationLevel } from "../../../../../src/sagittal/notations/ji"
 import { computeCaptureZone } from "../../../../../src/sagittal/notations/ji/captureZone"
-import { SymbolSubset } from "../../../../../src/sagittal/notations/types"
 
 describe("computeCaptureZone", (): void => {
     it("given a JI Notation symbol class and a JI notation level, returns the capture zone for the JI Notation symbol class at that JI notation level (works for a JI Notation symbol class introduced before Extreme, but Extreme is requested)", (): void => {
-        const jiNotationSymbolClass: JiNotationSymbolClass = {
-            id: 16 as Id<SymbolClass>,
-            smallestSymbolSubset: SymbolSubset.HERCULEAN,
-            mina: 16 as Mina,
-            primaryCommaId: 16 as Id<SagittalComma>,
-            elements: ["'|", "|("] as SymbolLongAscii[],
-        }
+        const symbolClass: Id<SymbolClass> = 16 as Id<SymbolClass>
 
-        const actual = computeCaptureZone(jiNotationSymbolClass, JiNotationLevel.EXTREME)
+        const actual = computeCaptureZone(symbolClass, JiNotationLevel.EXTREME)
 
         const expected = [
             7.518106,
@@ -25,15 +17,9 @@ describe("computeCaptureZone", (): void => {
     })
 
     it("works for a JI Notation symbol class where a lower JI notation level than Extreme is requested", (): void => {
-        const jiNotationSymbolClass: JiNotationSymbolClass = {
-            id: 20 as Id<SymbolClass>,
-            smallestSymbolSubset: SymbolSubset.ATHENIAN,
-            mina: 20 as Mina,
-            primaryCommaId: 20 as Id<SagittalComma>,
-            elements: [")|", "|("] as SymbolLongAscii[],
-        }
+        const symbolClass: Id<SymbolClass> = 20 as Id<SymbolClass>
 
-        const actual = computeCaptureZone(jiNotationSymbolClass, JiNotationLevel.HIGH)
+        const actual = computeCaptureZone(symbolClass, JiNotationLevel.HIGH)
 
         const expected = [
             9.063885,
@@ -45,16 +31,10 @@ describe("computeCaptureZone", (): void => {
     it(
         "throws an error if a JI notation level is requested for a JI Notation symbol class which does not exist at that JI notation level",
         (): void => {
-            const jiNotationSymbolClass: JiNotationSymbolClass = {
-                id: 21 as Id<SymbolClass>,
-                smallestSymbolSubset: SymbolSubset.OLYMPIAN,
-                mina: 21 as Mina,
-                primaryCommaId: 21 as Id<SagittalComma>,
-                elements: ["`|", ")|", "|("] as SymbolLongAscii[],
-            }
+            const symbolClass: Id<SymbolClass> = 21 as Id<SymbolClass>
 
             expect((): void => {
-                computeCaptureZone(jiNotationSymbolClass, JiNotationLevel.ULTRA)
+                computeCaptureZone(symbolClass, JiNotationLevel.ULTRA)
             }).toThrowError("JI Notation symbol class `)|( is not present at the Ultra JI notation level; it is not introduced until the Extreme JI notation level.")
         },
     )

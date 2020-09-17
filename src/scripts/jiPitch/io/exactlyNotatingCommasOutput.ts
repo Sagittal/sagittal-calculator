@@ -1,6 +1,6 @@
 import { addTexts, Comma, formatTable, Id, Io, JiPitch, Table } from "../../../general"
 import {
-    addMaybeJiNotationSymbolClassId,
+    addMaybeSymbolClassId,
     analyzeComma,
     CommaAnalysis,
     computeExactlyNotatingCommas,
@@ -19,7 +19,7 @@ const computeExactlyNotatingCommasOutput = (
     const exactlyNotatingCommas: Comma[] =
         computeExactlyNotatingCommas(jiPitch, { ...jiPitchScriptGroupSettings, ...findCommasOptions })
     const exactlyNotatingCommasWithMaybeSagittalSymbolClassIds =
-        exactlyNotatingCommas.map(addMaybeJiNotationSymbolClassId)
+        exactlyNotatingCommas.map(addMaybeSymbolClassId)
     const exactlyNotatingCommasWithMaybeSagittalSymbolClassIdsAnalyses =
         exactlyNotatingCommasWithMaybeSagittalSymbolClassIds.map((comma: Comma): CommaAnalysis => {
             return analyzeComma(comma, jiPitchScriptGroupSettings.commaNameOptions)
