@@ -24,9 +24,9 @@ import {
     TwoThreeFreeClass,
 } from "../../general"
 import { computeN2D3P9, computePrimeExponentExtremasGivenMaxN2D3P9, N2D3P9 } from "../../sagittal"
+import { analyzePopular23FreeClass } from "./analyzePopular23FreeClass"
 import { popular23FreeClassesScriptGroupSettings } from "./globals"
 import { computeMaybePopular23FreeClassAnalysis } from "./maybePopular23FreeClass"
-import { analyzePopular23FreeClass } from "./popular23FreeClass"
 import { Popular23FreeClassAnalysis } from "./types"
 
 const computePopular23FreeClasses = (

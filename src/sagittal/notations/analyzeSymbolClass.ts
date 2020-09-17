@@ -6,7 +6,6 @@ import { getRepresentativeSymbol } from "./representativeSymbol"
 import { getSymbolClass } from "./symbolClass"
 import { SagittalComma, SymbolClass, SymbolClassAnalysis } from "./types"
 
-// TODO: it'd be good if you renamed files that do "analyze" to end with "analysis"
 const analyzeSymbolClass = (
     symbolClassId: Id<SymbolClass>,
 ): SymbolClassAnalysis => {

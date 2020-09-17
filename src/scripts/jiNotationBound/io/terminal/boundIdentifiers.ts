@@ -7,7 +7,7 @@ import {
     JiNotationLevel,
     SymbolLongAscii,
 } from "../../../../sagittal"
-import { analyzeBoundedSymbolClasses } from "./boundedSymbolClasses"
+import { analyzeBoundedSymbolClasses } from "./analyzeBoundedSymbolClasses"
 import { JI_NOTATION_LEVEL_BOUNDED_SYMBOL_CLASSES } from "./levelBoundedSymbolClasses"
 import {
     BoundedSymbolClass,

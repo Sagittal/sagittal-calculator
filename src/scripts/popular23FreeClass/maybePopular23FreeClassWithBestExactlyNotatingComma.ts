@@ -1,6 +1,6 @@
 import { computeIsSuperMonzo, computeJiPitchMonzo, Max, Maybe, TwoThreeFreeClass } from "../../general"
 import { computeN2D3P9, N2D3P9 } from "../../sagittal"
-import { analyzePopular23FreeClassWithBestExactlyNotatingComma } from "./popular23FreeClassWithBestExactlyNotatingComma"
+import { analyzePopular23FreeClassWithBestExactlyNotatingComma } from "./analyzePopular23FreeClassWithBestExactlyNotatingComma"
 import { Popular23FreeClassAnalysisWithBestExactlyNotatingComma } from "./types"
 
 const computeMaybePopular23FreeClassAnalysisWithBestExactlyNotatingComma = (

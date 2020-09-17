@@ -23,9 +23,9 @@ import {
     TwoThreeFreeClass,
 } from "../../general"
 import { computeN2D3P9, computePrimeExponentExtremasGivenMaxN2D3P9, N2D3P9 } from "../../sagittal"
+import { analyzePopular23FreeClassWithBestExactlyNotatingComma } from "./analyzePopular23FreeClassWithBestExactlyNotatingComma"
 import { popular23FreeClassesScriptGroupSettings } from "./globals"
 import { computeMaybePopular23FreeClassAnalysisWithBestExactlyNotatingComma } from "./maybePopular23FreeClassWithBestExactlyNotatingComma"
-import { analyzePopular23FreeClassWithBestExactlyNotatingComma } from "./popular23FreeClassWithBestExactlyNotatingComma"
 import { Popular23FreeClassAnalysisWithBestExactlyNotatingComma } from "./types"
 
 const computePopular23FreeClassesWithBestExactlyNotatingCommas = (

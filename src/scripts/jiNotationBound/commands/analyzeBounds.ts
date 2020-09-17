@@ -1,7 +1,7 @@
 import { Filename, Io, ioSettings, LogTarget, parseCommands, saveLog } from "../../../general"
 import { ScriptGroup } from "../../types"
+import { analyzeJiNotationBounds } from "../analyzeBounds"
 import { JiNotationBoundAnalysis } from "../bound"
-import { analyzeJiNotationBounds } from "../bounds"
 import { computeJiNotationBoundsImage, computeJiNotationBoundsTables } from "../io"
 
 parseCommands(
