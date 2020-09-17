@@ -1,15 +1,21 @@
 import { Ed, Step, Window } from "../../types"
 import {
-    Exponent, Integer,
+    Exponent,
     Max,
-    MaybeIntegerBrand,
+    Numeric,
     NumericTypeParameterEffects,
     NumericTypeParameters,
     Prime,
 } from "../types"
 
 type Monzo<T extends NumericTypeParameters = {}> =
-    Array<(T extends { irrational: true } ? number : Integer) & Exponent<Prime>>
+    Array<
+        Numeric<
+            (T extends { irrational: true } ? {} : { integer: true }) &
+            (T extends { integer: true } ? { integer: true } : {})
+        >
+        & Exponent<Prime>
+    >
     & NumericTypeParameterEffects<T>
 
 type PotentiallyIrrationalMonzoParameter<T extends NumericTypeParameters = {}> =

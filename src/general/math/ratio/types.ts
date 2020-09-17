@@ -1,17 +1,20 @@
-import { Direction, Integer, Numeric, NumericTypeParameterEffects, NumericTypeParameters } from "../types"
+import { Direction, Numeric, NumericTypeParameterEffects, NumericTypeParameters } from "../types"
 
 type Numerator<T extends NumericTypeParameters = {}> =
-    // TODO: okay this will probably suffice for now, but you'll want to extract it to "CoolThing" one level up
-    //  and share it with what monzo puts on its terms
-    //  but more interestingly you should consider for each other NumericTypeParameter
-    //  what other things if true of the Ratio will also be true of the FractionalParts
-    //  rough? yes, smooth? yes, integer? yes, irrational? not necessarily, direction? no
-    //  and is it the same set of answers for Monzo?
-    //  rough? no, smooth? no, integer? yes, irrational? not necessarily, direction? not necessarily
-    (T extends { irrational: true } ? number : Integer)
+    Numeric<
+        (T extends { irrational: true } ? {} : { integer: true }) &
+        (T extends { rough: number } ? { rough: T["rough"] } : {}) &
+        (T extends { smooth: number } ? { smooth: T["smooth"] } : {}) &
+        (T extends { integer: true } ? { integer: true } : {})
+    >
     & { _NumeratorBrand: "Numerator" }
 type Denominator<T extends NumericTypeParameters = {}> =
-    (T extends { irrational: true } ? number : Integer)
+    Numeric<
+        (T extends { irrational: true } ? {} : { integer: true }) &
+        (T extends { rough: number } ? { rough: T["rough"] } : {}) &
+        (T extends { smooth: number } ? { smooth: T["smooth"] } : {}) &
+        (T extends { integer: true } ? { integer: true } : {})
+    >
     & { _DenominatorBrand: "Denominator" }
 type Ratio<T extends NumericTypeParameters = {}> =
     [Numerator<T>, Denominator<T>] & NumericTypeParameterEffects<T>

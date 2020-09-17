@@ -1,7 +1,7 @@
 import { Cents, computeCentsFromPitch, Id } from "../../../general"
 import {
-    getSymbolClass,
     getSagittalComma,
+    getSymbolClass,
     JiNotationLevel,
     JI_NOTATION_LEVELS_SYMBOL_CLASS_IDS,
     SymbolClass,

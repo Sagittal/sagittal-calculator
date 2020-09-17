@@ -1,8 +1,8 @@
 import { Cents, CentsPosition, computeCentsFromPitch, Id, indexOfFinalElement, Name, Pitch } from "../../../general"
 import {
-    getSymbolClass,
     getRepresentativeSymbol,
     getSagittalComma,
+    getSymbolClass,
     JiNotationLevel,
     JI_NOTATION_LEVELS_SYMBOL_CLASS_IDS,
     SymbolClass,
