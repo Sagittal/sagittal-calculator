@@ -1,4 +1,4 @@
-import { Name, sort } from "../../../../general"
+import { KeyPath, Name, sort } from "../../../../general"
 import { Metric } from "../../bestMetric"
 import { bestMetrics } from "../../globals"
 
@@ -6,7 +6,7 @@ const computeSortedBestMetrics = (): Record<Name<Metric>, Metric> => {
     const bestMetriesEntries = Array.from(bestMetrics.entries())
     const bestMetricsEntriesSortedBySumOfSquares = sort(
         bestMetriesEntries,
-        { descending: true, by: [1, "sumOfSquares"] },
+        { descending: true, by: [1, "sumOfSquares"] as KeyPath },
     )
 
     return bestMetricsEntriesSortedBySumOfSquares.reduce(

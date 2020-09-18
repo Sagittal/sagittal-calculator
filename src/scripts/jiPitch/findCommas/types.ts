@@ -1,8 +1,8 @@
-import { Abs, Cents, Copfr, Exponent, Extrema, Integer, Max, Min, ObjectKey, Prime, Sopfr } from "../../../general"
+import { Abs, Cents, Copfr, Exponent, Extrema, Integer, KeyPath, Max, Min, Prime, Sopfr } from "../../../general"
 import { ApotomeSlope, CommasFrom23FreeMonzoOptions, N2D3P9 } from "../../../sagittal"
 
 type CommasOptions = CommasFrom23FreeMonzoOptions & TwoThreeFreeMonzosToCheckOptions & Partial<{
-    sortKey: ObjectKey,
+    sortKey: KeyPath,
 }>
 
 type TwoThreeFreeMonzosToCheckOptions = Partial<FindCommasSettings & { maxN2D3P9: Max<N2D3P9> }>

@@ -1,4 +1,4 @@
-import { sort } from "../../../../../../../general"
+import { KeyPath, sort } from "../../../../../../../general"
 import { computeN2 } from "./n2"
 import { NumeratorPossibilityForDenominatorGivenMaxN2D3P9 } from "./numeratorPossibilities"
 import {
@@ -26,7 +26,7 @@ const computeSortedNumeratorPossibilitiesGivenMaxN2D3P9WithLesserGpfThanDenomina
             return { ...numeratorPossibility, n2: computeN2(numeratorPossibility.numerator) }
         })
 
-    return sort(numeratorPossibilitiesWithLesserGpfIncludingN2, { by: "n2" })
+    return sort(numeratorPossibilitiesWithLesserGpfIncludingN2, { by: "n2" as KeyPath })
 }
 
 export {

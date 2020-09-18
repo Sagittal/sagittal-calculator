@@ -1,8 +1,8 @@
-import { ObjectKey } from "../../general"
+import { KeyPath } from "../../general"
 import { JiPitchScriptGroupSettings } from "./types"
 
 const INITIAL_JI_PITCH_SCRIPT_GROUP_SETTINGS: JiPitchScriptGroupSettings = {
-    sortKey: "n2d3p9" as ObjectKey,
+    sortKey: ["twoThreeFreeClassAnalysis", "n2d3p9"] as KeyPath,
     commaNameOptions: {},
 }
 

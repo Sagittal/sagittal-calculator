@@ -9,6 +9,7 @@ import {
     Integer,
     Io,
     isUndefined,
+    KeyPath,
     LogTarget,
     Max,
     Monzo,
@@ -32,7 +33,7 @@ import { Popular23FreeClassAnalysis } from "./types"
 const computePopular23FreeClasses = (
     maxN2D3P9: Max<N2D3P9>,
 ): Array<Ranked<Popular23FreeClassAnalysis>> => {
-    let popular23FreeClasses
+    let popular23FreeClassAnalyses
     if (popular23FreeClassesScriptGroupSettings.useKnown) {
         const knownPopular23FreeClasses =
             readLines("src/scripts/popular23FreeClass/input/knownPopular23FreeClasses.txt" as Filename)
@@ -40,7 +41,7 @@ const computePopular23FreeClasses = (
                     return parse23FreeClass(knownPopular23FreeClassText as Formatted<TwoThreeFreeClass>)
                 })
 
-        popular23FreeClasses = knownPopular23FreeClasses
+        popular23FreeClassAnalyses = knownPopular23FreeClasses
             .map((twoThreeFreeClass: TwoThreeFreeClass): Popular23FreeClassAnalysis => {
                 return analyzePopular23FreeClass({
                     twoThreeFreeClass,
@@ -71,7 +72,7 @@ const computePopular23FreeClasses = (
         )
         let twoThreeFreeMonzo: Monzo<{ rough: 5 }> = shallowClone(initialMonzo) as Monzo<{ rough: 5 }>
 
-        popular23FreeClasses = [] as Array<Popular23FreeClassAnalysis>
+        popular23FreeClassAnalyses = [] as Array<Popular23FreeClassAnalysis>
         while (true) {
             // do the work
             const maybePopular23FreeClass = !computeIsSubMonzo(twoThreeFreeMonzo) ?
@@ -92,7 +93,7 @@ const computePopular23FreeClasses = (
 
             if (!isUndefined(maybePopular23FreeClass)) {
                 saveLog(stringify(maybePopular23FreeClass) as Io, LogTarget.PROGRESS)
-                popular23FreeClasses.push(maybePopular23FreeClass)
+                popular23FreeClassAnalyses.push(maybePopular23FreeClass)
             }
 
             // figure out which index is the first one which hasn't reached its max
@@ -125,8 +126,8 @@ const computePopular23FreeClasses = (
         }
     }
 
-    return rank(popular23FreeClasses, {
-        by: "n2d3p9",
+    return rank(popular23FreeClassAnalyses, {
+        by: "n2d3p9" as KeyPath,
         strategy: RankStrategy.FRACTIONAL,
         precision: ACCURACY_THRESHOLD,
     })

@@ -17,7 +17,7 @@ export {
     Maybe,
     merge,
     now,
-    ObjectKey,
+    KeyPath,
     Range,
     rank,
     Rank,
@@ -33,6 +33,8 @@ export {
     increment,
     decrement,
     computeIsEmpty,
+    setAt,
+    Obj,
 } from "./code"
 export {
     sumTexts,

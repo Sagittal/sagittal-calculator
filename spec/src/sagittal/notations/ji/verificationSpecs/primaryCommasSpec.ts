@@ -1,4 +1,4 @@
-import { Abs, Comma, Copfr, Id, Integer, ioSettings, Max, ObjectKey, Prime, Sopfr } from "../../../../../../src/general"
+import { Abs, Comma, Copfr, Id, Integer, ioSettings, KeyPath, Max, Prime, Sopfr } from "../../../../../../src/general"
 import { Exponent } from "../../../../../../src/general/math"
 import {
     analyzeComma,
@@ -33,7 +33,7 @@ describe("verifying primary commas", (): void => {
             const maxPrimeLimit = 47 as Max<Max<Prime>>
             const maxAte = 15 as Max<Abs<3 & Integer & Exponent<Prime>>>
             const maxN2D3P9 = 666 as Max<N2D3P9>
-            const sortKey = "twoThreeFreeSopfr" as ObjectKey
+            const sortKey = "twoThreeFreeSopfr" as KeyPath
 
             const commas = computeCommas({
                 minCents,

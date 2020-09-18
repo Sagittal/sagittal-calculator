@@ -1,14 +1,14 @@
 import { Integer } from "../math"
 
-type ObjectKey = string & { _ObjectKeyBrand: "ObjectKey" }
-
 type SortOptions = Partial<{
-    by: Path,
+    by: KeyPath,
     descending: boolean,
     precision: Integer,
 }>
 
-type Path = number | string | Array<number | string>
+type KeyPath = (number | string | Array<number | string>) & { _KeyPathBrand: "KeyPath" }
+
+type Obj = (Array<unknown> | Record<any, unknown>) & { [index: string]: unknown } & { [index: number]: unknown }
 
 type Sortable = { [ index: string ]: number }
 
@@ -40,12 +40,12 @@ export {
     SortOptions,
     Rank,
     Sortable,
-    Path,
     Ranked,
     RankOptions,
     RankStrategy,
     ExtensionBaseType,
     Range,
     Maybe,
-    ObjectKey,
+    KeyPath,
+    Obj,
 }

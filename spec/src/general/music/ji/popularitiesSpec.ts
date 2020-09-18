@@ -2,6 +2,7 @@ import {
     computeMonzoFromRatio,
     computeRatioFromMonzo,
     Direction,
+    KeyPath,
     Monzo,
     Popularity,
     rank,
@@ -43,7 +44,7 @@ describe("COMMA_POPULARITIES", (): void => {
             }))
 
         const rerankedPopularities: Array<Ranked<Popularity>> = rank(unrankedPopularities, {
-            by: "votes",
+            by: "votes" as KeyPath,
             strategy: RankStrategy.FRACTIONAL,
             descending: true,
         })

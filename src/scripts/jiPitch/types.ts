@@ -1,8 +1,8 @@
-import { ObjectKey } from "../../general"
+import { KeyPath } from "../../general"
 import { CommaNameOptions } from "../../sagittal"
 
 interface JiPitchScriptGroupSettings {
-    sortKey: ObjectKey,
+    sortKey: KeyPath,
     commaNameOptions: CommaNameOptions,
 }
 

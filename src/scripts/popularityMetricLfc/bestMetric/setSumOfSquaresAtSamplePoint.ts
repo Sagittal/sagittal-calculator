@@ -1,5 +1,4 @@
-import { finalElement, Index, indexOfFinalElement } from "../../../general"
-import { ParameterValue } from "../sumOfSquares"
+import { setAt } from "../../../general"
 import { SamplePoint } from "./scopeToSamples"
 import { SumOfSquares, SumsOfSquares } from "./types"
 
@@ -8,14 +7,12 @@ const setSumOfSquaresAtSamplePoint = (
     sumsOfSquares: SumsOfSquares,
     samplePoint: SamplePoint,
 ): void => {
-    let cursor = sumsOfSquares
-    samplePoint.slice(0, indexOfFinalElement(samplePoint))
-        .forEach((dynamicParameterValueIndex: Index<ParameterValue>): void => {
-            cursor[ dynamicParameterValueIndex ] = cursor[ dynamicParameterValueIndex ] || []
-            cursor = cursor[ dynamicParameterValueIndex ] as SumsOfSquares
-        })
-
-    cursor[ finalElement(samplePoint) ] = sumOfSquares
+    setAt(
+        sumsOfSquares as Record<number, SumsOfSquares | SumOfSquares>,
+        samplePoint,
+        sumOfSquares,
+        { parents: true },
+    )
 }
 
 export {

@@ -1,4 +1,4 @@
-import { ACCURACY_THRESHOLD, deepClone, RankStrategy } from "../../../../src/general"
+import { ACCURACY_THRESHOLD, deepClone, KeyPath, RankStrategy } from "../../../../src/general"
 import { rank, Rank } from "../../../../src/general/code"
 
 describe("rank", (): void => {
@@ -33,7 +33,7 @@ describe("rank", (): void => {
 
     describe("when the strategy is fractional", (): void => {
         it("splits the ranks across ties", (): void => {
-            const actual = rank(arrayOfObjects, { by: "value", strategy: RankStrategy.FRACTIONAL })
+            const actual = rank(arrayOfObjects, { by: "value" as KeyPath, strategy: RankStrategy.FRACTIONAL })
 
             const expected = [
                 { value: 1, otherValue: 1, rank: 1.5 as Rank<unknown> },
@@ -46,7 +46,7 @@ describe("rank", (): void => {
         })
 
         it("another example", (): void => {
-            const actual = rank(arrayOfObjects, { by: "otherValue", strategy: RankStrategy.FRACTIONAL })
+            const actual = rank(arrayOfObjects, { by: "otherValue" as KeyPath, strategy: RankStrategy.FRACTIONAL })
 
             const expected = [
                 { value: 1, otherValue: 1, rank: 1 as Rank<unknown> },

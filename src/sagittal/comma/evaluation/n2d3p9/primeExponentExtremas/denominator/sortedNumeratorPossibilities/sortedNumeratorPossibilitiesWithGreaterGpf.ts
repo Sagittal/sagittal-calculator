@@ -1,4 +1,4 @@
-import { dividesEvenly, sort } from "../../../../../../../general"
+import { dividesEvenly, KeyPath, sort } from "../../../../../../../general"
 import { computeN2P } from "./n2p"
 import { NumeratorPossibilityForDenominatorGivenMaxN2D3P9 } from "./numeratorPossibilities"
 import {
@@ -24,7 +24,7 @@ const computeSortedNumeratorPossibilitiesGivenMaxN2D3P9WithGreaterGpfThanDenomin
             return { ...numeratorPossibility, n2p: computeN2P(numeratorPossibility.numerator) }
         })
 
-    return sort(numeratorPossibilitiesWithGreaterGpfIncludingN2P, { by: "n2p" })
+    return sort(numeratorPossibilitiesWithGreaterGpfIncludingN2P, { by: "n2p" as KeyPath })
 }
 
 export {

@@ -1,16 +1,19 @@
-import { isUndefined } from "./typeGuards"
-import { Path } from "./types"
+import { isNumber, isString, isUndefined } from "./typeGuards"
+import { KeyPath, Obj } from "./types"
 
-const dig = (object: unknown, path: Path): unknown => {
-    let cursor = object
+const dig = (object: Obj, keyPath: KeyPath, { parents = false }: { parents?: boolean } = {}): unknown => {
+    let cursor: Obj | unknown = object
 
-    if (typeof path === "string" || typeof path === "number") {
-        return (cursor as { [ index: string ]: unknown })[ path ]
+    if (isNumber(keyPath) || isString(keyPath)) {
+        return (cursor as Obj)[ keyPath ]
     }
 
-    for (const key of path) {
-        if (!isUndefined((cursor as { [ index: string ]: unknown })[ key ])) {
-            cursor = (cursor as { [ index: string ]: unknown })[ key ] as { [ index: string ]: unknown }
+    for (const key of keyPath) {
+        if (!isUndefined((cursor as Obj)[ key ])) {
+            cursor = (cursor as Obj)[ key ]
+        } else if (parents) {
+            (cursor as Obj)[ key ] = {}
+            cursor = (cursor as Obj)[ key ]
         } else {
             return undefined
         }
