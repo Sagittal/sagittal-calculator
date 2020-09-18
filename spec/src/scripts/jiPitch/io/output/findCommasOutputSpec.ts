@@ -15,7 +15,7 @@ import {
     Sopfr,
 } from "../../../../../../src/general"
 import { ApotomeSlope, CommaAnalysis, SymbolClass } from "../../../../../../src/sagittal"
-import { N2D3P9 } from "../../../../../../src/sagittal/comma/evaluation/n2d3p9"
+import { N2D3P9 } from "../../../../../../src/sagittal/ji/twoThreeFreeClass/n2d3p9"
 import { computeFindCommasOutput } from "../../../../../../src/scripts/jiPitch/io"
 
 describe("computeFindCommasOutput", (): void => {

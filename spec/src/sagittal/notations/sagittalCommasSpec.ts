@@ -1,6 +1,6 @@
 import { Cents, Comma, Direction, Id, Monzo, Name, Prime, Ratio, Sopfr } from "../../../../src/general"
 import { analyzeComma, CommaAnalysis, SagittalComma } from "../../../../src/sagittal"
-import { ApotomeSlope, N2D3P9 } from "../../../../src/sagittal/comma"
+import { ApotomeSlope, N2D3P9 } from "../../../../src/sagittal/ji"
 import { SAGITTAL_COMMAS } from "../../../../src/sagittal/notations/sagittalCommas"
 
 describe("SAGITTAL_COMMAS", (): void => {

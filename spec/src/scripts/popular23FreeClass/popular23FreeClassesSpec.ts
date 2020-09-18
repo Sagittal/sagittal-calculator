@@ -1,5 +1,5 @@
 import { Max, Ranked } from "../../../../src/general"
-import { N2D3P9 } from "../../../../src/sagittal/comma/evaluation/n2d3p9"
+import { N2D3P9 } from "../../../../src/sagittal/ji/twoThreeFreeClass/n2d3p9"
 import { computePopular23FreeClasses } from "../../../../src/scripts/popular23FreeClass/popular23FreeClasses"
 import { Popular23FreeClassAnalysis } from "../../../../src/scripts/popular23FreeClass/types"
 

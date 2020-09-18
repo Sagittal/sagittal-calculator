@@ -3,7 +3,7 @@ import { Direction, Prime, Sopfr } from "../../../../../../src/general/math"
 import { Monzo } from "../../../../../../src/general/math/monzo"
 import { Ratio } from "../../../../../../src/general/math/ratio"
 import { Cents } from "../../../../../../src/general/music"
-import { ApotomeSlope, JiPitchAnalysis, N2D3P9 } from "../../../../../../src/sagittal/comma"
+import { ApotomeSlope, JiPitchAnalysis, N2D3P9 } from "../../../../../../src/sagittal/ji"
 import { computeJiPitchRow } from "../../../../../../src/scripts/jiPitch/io/row"
 
 describe("computeJiPitchRow", (): void => {

@@ -1,6 +1,6 @@
 import { Cents, Direction, Io, Monzo, NEWLINE, Prime, Ratio, Sopfr } from "../../../../../../src/general"
 import { ApotomeSlope, JiPitchAnalysis } from "../../../../../../src/sagittal"
-import { N2D3P9 } from "../../../../../../src/sagittal/comma/evaluation/n2d3p9"
+import { N2D3P9 } from "../../../../../../src/sagittal/ji/twoThreeFreeClass/n2d3p9"
 import { computeJiPitchOutput } from "../../../../../../src/scripts/jiPitch/io"
 
 describe("computeJiPitchOutput", (): void => {

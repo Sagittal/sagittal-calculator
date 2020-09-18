@@ -1,5 +1,5 @@
 import { Direction, Io, NEWLINE, Prime, Ratio, Sopfr } from "../../../../../../src/general"
-import { N2D3P9 } from "../../../../../../src/sagittal/comma/evaluation/n2d3p9"
+import { N2D3P9 } from "../../../../../../src/sagittal/ji/twoThreeFreeClass/n2d3p9"
 import { compute23FreeClassOutput } from "../../../../../../src/scripts/jiPitch/io"
 
 describe("compute23FreeClassOutput", (): void => {

@@ -14,7 +14,7 @@ import {
     Ratio,
     Sopfr,
 } from "../../../../../../src/general"
-import { ApotomeSlope, CommaAnalysis, N2D3P9 } from "../../../../../../src/sagittal/comma"
+import { ApotomeSlope, CommaAnalysis, N2D3P9 } from "../../../../../../src/sagittal/ji"
 import { SymbolClass } from "../../../../../../src/sagittal/notations"
 import { computeNotatingCommasOutput } from "../../../../../../src/scripts/jiPitch/io"
 

@@ -1,5 +1,5 @@
 import { Copfr, Max, Prime, Sopfr } from "../../../../../src/general"
-import { N2D3P9 } from "../../../../../src/sagittal/comma/evaluation/n2d3p9"
+import { N2D3P9 } from "../../../../../src/sagittal/ji/twoThreeFreeClass/n2d3p9"
 import { compute23FreeMonzosToCheck } from "../../../../../src/scripts/jiPitch/findCommas/twoThreeFreeMonzosToCheck"
 
 describe("compute23FreeMonzosToCheck", (): void => {

@@ -9,8 +9,8 @@ import {
     JI_NOTATION,
     SymbolClass,
 } from "../../../../../../src/sagittal"
-import { N2D3P9 } from "../../../../../../src/sagittal/comma/evaluation/n2d3p9"
-import { computeCommaName } from "../../../../../../src/sagittal/comma/name"
+import { computeCommaName } from "../../../../../../src/sagittal/ji/comma/name"
+import { N2D3P9 } from "../../../../../../src/sagittal/ji/twoThreeFreeClass/n2d3p9"
 import { computeSecondaryCommaZone } from "../../../../../../src/sagittal/notations/ji/secondaryCommaZone"
 import { computeCommas } from "../../../../../../src/scripts/jiPitch/findCommas"
 import { computeFindCommasOutput } from "../../../../../../src/scripts/jiPitch/io"

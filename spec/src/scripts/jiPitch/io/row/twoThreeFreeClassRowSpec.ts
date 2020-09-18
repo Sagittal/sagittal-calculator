@@ -2,7 +2,7 @@ import { Row } from "../../../../../../src/general/io/table"
 import { Direction, Prime, Sopfr } from "../../../../../../src/general/math"
 import { Ratio } from "../../../../../../src/general/math/ratio"
 import { TwoThreeFreeClass } from "../../../../../../src/general/music"
-import { N2D3P9, TwoThreeFreeClassAnalysis } from "../../../../../../src/sagittal/comma"
+import { N2D3P9, TwoThreeFreeClassAnalysis } from "../../../../../../src/sagittal/ji"
 import { compute23FreeClassRow } from "../../../../../../src/scripts/jiPitch/io/row"
 
 describe("compute23FreeClassRow", (): void => {

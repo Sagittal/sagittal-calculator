@@ -1,5 +1,5 @@
 import { Id } from "../../general"
-import { analyzeComma, CommaAnalysis } from "../comma"
+import { analyzeComma, CommaAnalysis } from "../ji"
 import { getSagittalComma } from "./getSagittalComma"
 import { getIntroducingJiNotationLevel, getMinaName } from "./ji"
 import { getRepresentativeSymbol } from "./representativeSymbol"

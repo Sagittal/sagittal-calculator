@@ -1,7 +1,7 @@
 import { Direction, Max, Name, Pitch } from "../../../../../src/general"
 import { Monzo, Prime, Ratio, Sopfr } from "../../../../../src/general/math"
 import { Cents } from "../../../../../src/general/music"
-import { ApotomeSlope, JiPitchAnalysis, N2D3P9, TwoThreeFreeClassAnalysis } from "../../../../../src/sagittal/comma"
+import { ApotomeSlope, JiPitchAnalysis, N2D3P9, TwoThreeFreeClassAnalysis } from "../../../../../src/sagittal/ji"
 
 const twoThreeFreeClassAnalysisFixture: TwoThreeFreeClassAnalysis = {
     twoThreeFreePrimeLimit: 1 as Max<Prime>,

@@ -3,8 +3,8 @@
 // and some like Trojan even cut across others
 
 import { Apotome, Comma, Count, Direction, Id, Monzo, Name } from "../../general"
-import { CommaAnalysis } from "../comma"
 import { SymbolLongAscii, SymbolUnicode } from "../io"
+import { CommaAnalysis } from "../ji"
 import { JiNotationLevel, Mina } from "./ji"
 
 enum SymbolSubset {

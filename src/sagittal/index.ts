@@ -27,7 +27,7 @@ export {
     DEFAULT_MAX_N2D3P9,
     ParsedCommaName,
     TwoThreeFreeClassAnalysis,
-} from "./comma"
+} from "./ji"
 export {
     formatSymbolClass, formatSymbolAscii, SymbolLongAscii, unicodeFromAscii, SymbolSmiley, SymbolUnicode,
 } from "./io"
