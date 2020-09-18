@@ -1,5 +1,5 @@
 import "colors"
-import { ColorMethod, Count, Io, NEWLINE, Row, Table } from "../../../../../src/general"
+import { ColorMethod, Count, formatTable, Io, NEWLINE, Row, Table } from "../../../../../src/general"
 import { formatTableForTerminal } from "../../../../../src/general/io/table/tableForTerminal"
 import { Justification } from "../../../../../src/general/io/table/types"
 
@@ -89,6 +89,24 @@ describe("formatTableForTerminal", (): void => {
             "name  \tlimit\tSoPFR   \tcents\tmonzo  \tratio\tslope  ".underline + NEWLINE +
             "11M   \t11   \t11      \t45.45\t[0 0 1⟩\t33/32\t-4     " + NEWLINE +
             "25/49M\t7    \t24      \t33.4 \t[0 0⟩  \t50/49\t-59.333" + NEWLINE as Io
+        expect(actual).toEqual(expected)
+    })
+
+    it("supports undefined cells, rendering them as blank", (): void => {
+        const table = [
+            ["id", "name", "num", "thing"],
+            ["1", "jim", "45", "barb"],
+            ["2", "bob", undefined, "spot"],
+            ["2", "bo", "9999", "jet"],
+        ] as Table
+
+        const actual = formatTableForTerminal(table)
+
+        const expected =
+            "id\tname\tnum \tthing".underline + NEWLINE +
+            "1 \tjim \t45  \tbarb " + NEWLINE +
+            "2 \tbob \t    \tspot " + NEWLINE +
+            "2 \tbo  \t9999\tjet  " + NEWLINE
         expect(actual).toEqual(expected)
     })
 })

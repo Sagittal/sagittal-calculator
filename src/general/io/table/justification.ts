@@ -1,5 +1,6 @@
-import { Range } from "../../code"
+import { isUndefined, Maybe, Range } from "../../code"
 import { Count } from "../../types"
+import { BLANK } from "../constants"
 import { length } from "../typedOperations"
 import { Char, Io } from "../types"
 import { Justification, JustificationOption, JustifiedCellOptions, Row, Table } from "./types"
@@ -14,7 +15,7 @@ const computeColumnWidths = <T = unknown>(table: Table<T>, columnRange: Range): 
         return table.reduce(
             (columnWidth: Count<Char>, row: Row<{ of: T }>): Count<Char> => {
                 const columnCell = row[ columnIndex ]
-                const cellWidth = length(columnCell)
+                const cellWidth = isUndefined(columnCell) ? 0 as Count<Char> : length(columnCell)
                 if (cellWidth > columnWidth) {
                     columnWidth = cellWidth
                 }
@@ -26,20 +27,22 @@ const computeColumnWidths = <T = unknown>(table: Table<T>, columnRange: Range): 
     })
 
 
-const furtherJustifyCell = (justifiedCell: Io, columnJustification: Justification): Io =>
-    columnJustification === Justification.LEFT ?
+const furtherJustifyCell = (justifiedCell: Io, columnJustification: Justification): Io => {
+    return columnJustification === Justification.LEFT ?
         justifiedCell + " " as Io :
         columnJustification === Justification.RIGHT ?
             " " + justifiedCell as Io :
             justifiedCell.length % 2 === 0 ?
                 " " + justifiedCell as Io :
                 justifiedCell + " " as Io
+}
 
 const computeJustifiedCellForTerminal = (
-    cell: Io,
+    cell: Maybe<Io>,
     { columnWidth, columnJustification }: JustifiedCellOptions,
 ): Io => {
-    let justifiedCell = cell
+    let justifiedCell = isUndefined(cell) ? BLANK : cell
+
     while (justifiedCell.length < columnWidth) {
         justifiedCell = furtherJustifyCell(justifiedCell, columnJustification)
     }
@@ -48,12 +51,14 @@ const computeJustifiedCellForTerminal = (
 }
 
 const computeJustifiedCellForForum = (
-    cell: Io,
+    cell: Maybe<Io>,
     { columnJustification }: { columnJustification: Justification },
 ): Io => {
-    return columnJustification === Justification.LEFT ?
-        cell :
-        `[${columnJustification}]${cell}[/${columnJustification}]` as Io
+    return isUndefined(cell) ?
+        BLANK :
+        columnJustification === Justification.LEFT ?
+            cell :
+            `[${columnJustification}]${cell}[/${columnJustification}]` as Io
 }
 
 export {

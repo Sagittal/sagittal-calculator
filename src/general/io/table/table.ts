@@ -1,4 +1,4 @@
-import { computeDeepDistinct } from "../../code"
+import { computeDeepDistinct, Maybe } from "../../code"
 import { count } from "../../math"
 import { Count } from "../../types"
 import { Formatted } from "../format"
@@ -20,7 +20,7 @@ import { FormatTableOptions, Row, Table } from "./types"
 //  that should stipulate that you use the same spacing methods for the forum tables now too...
 
 const formatTable = <T = unknown>(table: Table<T>, options?: Partial<FormatTableOptions<T>>): Io => {
-    const rowLengths = table.map((row: Row<{ of: T }>): Count<Formatted<T>> => {
+    const rowLengths = table.map((row: Row<{ of: T }>): Count<Maybe<Formatted<T>>> => {
         return count(row)
     })
     const distinctRowLengths = computeDeepDistinct(rowLengths)

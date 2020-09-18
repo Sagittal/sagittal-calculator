@@ -19,10 +19,6 @@ const maybeColor = (rowText: Io, rowIndex: number, colors: Maybe<Array<Maybe<Col
     return rowColor ? colorize(rowText, rowColor) : rowText
 }
 
-// TODO: okay, pretty sure that if you pass some undefineds into here, you get a miserable afternoon where
-//  jasmine won't give you a stacktrace but it keeps saying can't read length of undefined
-//  which is probably inside one of the helper functions here
-
 const formatTableForTerminal = <T = unknown>(table: Table<T>, options?: Partial<FormatTableOptions<T>>): Io => {
     const {
         justification = DEFAULT_FORMAT_TABLE_OPTIONS.justification,
@@ -37,7 +33,7 @@ const formatTableForTerminal = <T = unknown>(table: Table<T>, options?: Partial<
 
     const formattedRows = table.map((row: Row<{ of: T }>, rowIndex: number): Io => {
         const rowText = row.reduce(
-            (justifiedRow: Io, cell: Formatted<T>, cellIndex: number): Io => {
+            (justifiedRow: Io, cell: Maybe<Formatted<T>>, cellIndex: number): Io => {
                 const columnWidth = columnWidths[ cellIndex ]
 
                 const columnJustification = justifications[ cellIndex ]

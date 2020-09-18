@@ -1,11 +1,11 @@
-import { BLANK, Column, count, Count, Formatted, max, Row } from "../../../general"
+import { BLANK, Column, count, Count, Formatted, max, Maybe, Row } from "../../../general"
 
 const computeHeaderRowsFromColumnTitleColumns = <T>(
     columnTitleColumns: Array<Column<{ of: T, header: true }>>,
     { includeSpacerRow = false }: { includeSpacerRow?: boolean } = {},
 ): Array<Row<{ of: T, header: true }>> => {
     const maxColumnTitleHeaderRowCount = max(
-        ...columnTitleColumns.map((columnTitleColumn: Column<{ of: T, header: true }>): Count<Formatted<T>> => {
+        ...columnTitleColumns.map((columnTitleColumn: Column<{ of: T, header: true }>): Count<Maybe<Formatted<T>>> => {
             return count(columnTitleColumn)
         }),
     )
@@ -18,7 +18,7 @@ const computeHeaderRowsFromColumnTitleColumns = <T>(
             columnTitleColumn.unshift(BLANK as Formatted<T>)
         }
 
-        columnTitleColumn.forEach((columnTitleCell: Formatted<T>, index: number): void => {
+        columnTitleColumn.forEach((columnTitleCell: Maybe<Formatted<T>>, index: number): void => {
             rows[ index ].push(columnTitleCell)
         })
     })

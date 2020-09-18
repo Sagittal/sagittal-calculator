@@ -1,4 +1,4 @@
-import { indexOfFinalElement } from "../../code"
+import { indexOfFinalElement, Maybe } from "../../code"
 import { BLANK, NEWLINE } from "../constants"
 import { Formatted } from "../format"
 import { join, sumTexts } from "../typedOperations"
@@ -41,7 +41,7 @@ const formatTableForForum = <T = unknown>(table: Table<T>, options?: Partial<For
         const { rowOpen, rowClose, separator } = computeTableForForumRowParts({ index, headerRowCount, colors })
 
         const rowText = row.reduce(
-            (justifiedRow: Io, cell: Formatted<T>, cellIndex: number): Io => {
+            (justifiedRow: Io, cell: Maybe<Formatted<T>>, cellIndex: number): Io => {
                 const columnJustification = justifications[ cellIndex ]
 
                 const justifiedCell: Io = computeJustifiedCellForForum(cell, { columnJustification })
