@@ -1,7 +1,9 @@
-import { Integer, Name, Pitch, Rank } from "../../../../../src/general"
+import { Name, Pitch } from "../../../../../src/general"
 import { JiNotationLevel } from "../../../../../src/sagittal/notations/ji"
 import { computeDoEventsContainEvent } from "../../../../../src/scripts/jiNotationBound/consolidateHistories/doEventsContainEvent"
+import { EventType } from "../../../../../src/scripts/jiNotationBound/histories"
 import { EventAnalysis } from "../../../../../src/scripts/jiNotationBound/history"
+import { RANKS } from "../../../../../src/scripts/jiNotationBound/ranks"
 import { eventAnalysisFixture } from "../../../../helpers/src/scripts/jiNotationBound/fixtures"
 
 describe("computeDoEventsContainEvent", (): void => {
@@ -13,14 +15,14 @@ describe("computeDoEventsContainEvent", (): void => {
                     ...eventAnalysisFixture,
                     name: "someName" as Name<Pitch>,
                     jiNotationLevel: "someLevel" as JiNotationLevel,
-                    rank: 1 as Integer & Rank<EventAnalysis>,
+                    rank: RANKS[ EventType.COMMA_MEAN ],
                 },
             ]
             const targetEvent = {
                 ...eventAnalysisFixture,
                 name: "someName" as Name<Pitch>,
                 jiNotationLevel: "someLevel" as JiNotationLevel,
-                rank: 2 as Integer & Rank<EventAnalysis>,
+                rank: RANKS[ EventType.SIZE_CATEGORY_BOUND ],
             }
 
             const actual = computeDoEventsContainEvent(eventAnalyses, targetEvent)
@@ -37,14 +39,14 @@ describe("computeDoEventsContainEvent", (): void => {
                     ...eventAnalysisFixture,
                     name: "someName" as Name<Pitch>,
                     jiNotationLevel: "someLevel" as JiNotationLevel,
-                    rank: 1 as Integer & Rank<EventAnalysis>,
+                    rank: RANKS[ EventType.COMMA_MEAN ],
                 },
             ]
             const targetEvent = {
                 ...eventAnalysisFixture,
                 name: "someName" as Name<Pitch>,
                 jiNotationLevel: "otherLevel" as JiNotationLevel,
-                rank: 2 as Integer & Rank<EventAnalysis>,
+                rank: RANKS[ EventType.SIZE_CATEGORY_BOUND ],
             }
 
             const actual = computeDoEventsContainEvent(eventAnalyses, targetEvent)
@@ -61,14 +63,14 @@ describe("computeDoEventsContainEvent", (): void => {
                     ...eventAnalysisFixture,
                     name: "someName" as Name<Pitch>,
                     jiNotationLevel: "someLevel" as JiNotationLevel,
-                    rank: 1 as Integer & Rank<EventAnalysis>,
+                    rank: RANKS[ EventType.COMMA_MEAN ],
                 },
             ]
             const targetEvent = {
                 ...eventAnalysisFixture,
                 name: "otherName" as Name<Pitch>,
                 jiNotationLevel: "someLevel" as JiNotationLevel,
-                rank: 2 as Integer & Rank<EventAnalysis>,
+                rank: RANKS[ EventType.SIZE_CATEGORY_BOUND ],
             }
 
             const actual = computeDoEventsContainEvent(eventAnalyses, targetEvent)
@@ -85,14 +87,14 @@ describe("computeDoEventsContainEvent", (): void => {
                     ...eventAnalysisFixture,
                     name: "someName" as Name<Pitch>,
                     jiNotationLevel: "someLevel" as JiNotationLevel,
-                    rank: 1 as Integer & Rank<EventAnalysis>,
+                    rank: RANKS[ EventType.COMMA_MEAN ],
                 },
             ]
             const targetEvent = {
                 ...eventAnalysisFixture,
                 name: "otherName" as Name<Pitch>,
                 jiNotationLevel: "otherLevel" as JiNotationLevel,
-                rank: 1 as Integer & Rank<EventAnalysis>,
+                rank: RANKS[ EventType.COMMA_MEAN ],
             }
 
             const actual = computeDoEventsContainEvent(eventAnalyses, targetEvent)

@@ -1,4 +1,4 @@
-import { Exponent, Integer, Max, Prime } from "../../../../../../../../src/general"
+import { Exponent, Max, Prime } from "../../../../../../../../src/general"
 import { Denominator } from "../../../../../../../../src/general/math"
 import { computeD39ForCandidateMaxDenominatorPrimeExponent } from "../../../../../../../../src/sagittal/comma/evaluation/n2d3p9/primeExponentExtremas/denominator/d39"
 import { D39 } from "../../../../../../../../src/sagittal/comma/evaluation/n2d3p9/primeExponentExtremas/denominator/types"

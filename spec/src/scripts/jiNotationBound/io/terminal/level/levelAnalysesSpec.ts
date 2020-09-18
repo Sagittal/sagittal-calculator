@@ -1,45 +1,66 @@
 import { Count, Integer, Rank } from "../../../../../../../src/general"
-import { Maybe, shallowClone } from "../../../../../../../src/general/code"
+import { shallowClone } from "../../../../../../../src/general/code"
 import { JiNotationLevel, JI_NOTATION_LEVELS } from "../../../../../../../src/sagittal/notations/ji"
 import {
     jiNotationLevelsBestCumulativeHistoryRanks,
     jiNotationLevelsBestHistoryRanks,
-} from "../../../../../../../src/scripts/jiNotationBound/bound"
-import { EventAnalysis } from "../../../../../../../src/scripts/jiNotationBound/history/events"
+} from "../../../../../../../src/scripts/jiNotationBound/globals"
+import { EventType } from "../../../../../../../src/scripts/jiNotationBound/histories"
 import { formatJiNotationLevelAnalyses } from "../../../../../../../src/scripts/jiNotationBound/io/terminal/level"
+import { RANKS } from "../../../../../../../src/scripts/jiNotationBound/ranks"
 
 describe("formatJiNotationLevelAnalyses", (): void => {
     beforeEach((): void => {
         jiNotationLevelsBestHistoryRanks[ JiNotationLevel.MEDIUM ] = {
-            0: 18, 1: 23, 2: 1
-        } as Record<number, number> as Record<number, Maybe<Count<Integer & Rank<EventAnalysis>>>>
+            [ RANKS[ EventType.INA_MIDPOINT ] ]: 18 as Count<Integer & Rank<EventType>>,
+            [ RANKS[ EventType.COMMA_MEAN ] ]: 23 as Count<Integer & Rank<EventType>>,
+            [ RANKS[ EventType.SIZE_CATEGORY_BOUND ] ]: 1 as Count<Integer & Rank<EventType>>,
+        }
         jiNotationLevelsBestHistoryRanks[ JiNotationLevel.HIGH ] = {
-            0: 18, 1: 23, 2: 1
-        } as Record<number, number> as Record<number, Maybe<Count<Integer & Rank<EventAnalysis>>>>
+            [ RANKS[ EventType.INA_MIDPOINT ] ]: 18 as Count<Integer & Rank<EventType>>,
+            [ RANKS[ EventType.COMMA_MEAN ] ]: 23 as Count<Integer & Rank<EventType>>,
+            [ RANKS[ EventType.SIZE_CATEGORY_BOUND ] ]: 1 as Count<Integer & Rank<EventType>>,
+        }
         jiNotationLevelsBestHistoryRanks[ JiNotationLevel.ULTRA ] = {
-            0: 18, 1: 23, 2: 1
-        } as Record<number, number> as Record<number, Maybe<Count<Integer & Rank<EventAnalysis>>>>
+            [ RANKS[ EventType.INA_MIDPOINT ] ]: 18 as Count<Integer & Rank<EventType>>,
+            [ RANKS[ EventType.COMMA_MEAN ] ]: 23 as Count<Integer & Rank<EventType>>,
+            [ RANKS[ EventType.SIZE_CATEGORY_BOUND ] ]: 1 as Count<Integer & Rank<EventType>>,
+        }
         jiNotationLevelsBestHistoryRanks[ JiNotationLevel.EXTREME ] = {
-            0: 18, 1: 23, 2: 1
-        } as Record<number, number> as Record<number, Maybe<Count<Integer & Rank<EventAnalysis>>>>
+            [ RANKS[ EventType.INA_MIDPOINT ] ]: 18 as Count<Integer & Rank<EventType>>,
+            [ RANKS[ EventType.COMMA_MEAN ] ]: 23 as Count<Integer & Rank<EventType>>,
+            [ RANKS[ EventType.SIZE_CATEGORY_BOUND ] ]: 1 as Count<Integer & Rank<EventType>>,
+        }
         jiNotationLevelsBestHistoryRanks[ JiNotationLevel.INSANE ] = {
-            0: 18, 1: 23, 2: 1
-        } as Record<number, number> as Record<number, Maybe<Count<Integer & Rank<EventAnalysis>>>>
+            [ RANKS[ EventType.INA_MIDPOINT ] ]: 18 as Count<Integer & Rank<EventType>>,
+            [ RANKS[ EventType.COMMA_MEAN ] ]: 23 as Count<Integer & Rank<EventType>>,
+            [ RANKS[ EventType.SIZE_CATEGORY_BOUND ] ]: 1 as Count<Integer & Rank<EventType>>,
+        }
         jiNotationLevelsBestCumulativeHistoryRanks[ JiNotationLevel.MEDIUM ] = {
-            0: 16, 1: 23, 2: 1
-        } as Record<number, number> as Record<number, Count<Integer & Rank<EventAnalysis>>>
+            [ RANKS[ EventType.INA_MIDPOINT ] ]: 16 as Count<Integer & Rank<EventType>>,
+            [ RANKS[ EventType.COMMA_MEAN ] ]: 23 as Count<Integer & Rank<EventType>>,
+            [ RANKS[ EventType.SIZE_CATEGORY_BOUND ] ]: 1 as Count<Integer & Rank<EventType>>,
+        }
         jiNotationLevelsBestCumulativeHistoryRanks[ JiNotationLevel.HIGH ] = {
-            0: 16, 1: 23, 2: 1
-        } as Record<number, number> as Record<number, Count<Integer & Rank<EventAnalysis>>>
+            [ RANKS[ EventType.INA_MIDPOINT ] ]: 16 as Count<Integer & Rank<EventType>>,
+            [ RANKS[ EventType.COMMA_MEAN ] ]: 23 as Count<Integer & Rank<EventType>>,
+            [ RANKS[ EventType.SIZE_CATEGORY_BOUND ] ]: 1 as Count<Integer & Rank<EventType>>,
+        }
         jiNotationLevelsBestCumulativeHistoryRanks[ JiNotationLevel.ULTRA ] = {
-            0: 16, 1: 23, 2: 1
-        } as Record<number, number> as Record<number, Count<Integer & Rank<EventAnalysis>>>
+            [ RANKS[ EventType.INA_MIDPOINT ] ]: 16 as Count<Integer & Rank<EventType>>,
+            [ RANKS[ EventType.COMMA_MEAN ] ]: 23 as Count<Integer & Rank<EventType>>,
+            [ RANKS[ EventType.SIZE_CATEGORY_BOUND ] ]: 1 as Count<Integer & Rank<EventType>>,
+        }
         jiNotationLevelsBestCumulativeHistoryRanks[ JiNotationLevel.EXTREME ] = {
-            0: 16, 1: 23, 2: 1
-        } as Record<number, number> as Record<number, Count<Integer & Rank<EventAnalysis>>>
+            [ RANKS[ EventType.INA_MIDPOINT ] ]: 16 as Count<Integer & Rank<EventType>>,
+            [ RANKS[ EventType.COMMA_MEAN ] ]: 23 as Count<Integer & Rank<EventType>>,
+            [ RANKS[ EventType.SIZE_CATEGORY_BOUND ] ]: 1 as Count<Integer & Rank<EventType>>,
+        }
         jiNotationLevelsBestCumulativeHistoryRanks[ JiNotationLevel.INSANE ] = {
-            0: 16, 1: 23, 2: 1
-        } as Record<number, number> as Record<number, Count<Integer & Rank<EventAnalysis>>>
+            [ RANKS[ EventType.INA_MIDPOINT ] ]: 16 as Count<Integer & Rank<EventType>>,
+            [ RANKS[ EventType.COMMA_MEAN ] ]: 23 as Count<Integer & Rank<EventType>>,
+            [ RANKS[ EventType.SIZE_CATEGORY_BOUND ] ]: 1 as Count<Integer & Rank<EventType>>,
+        }
     })
 
     it("does not mutate JI_NOTATION_LEVELS", (): void => {

@@ -1,4 +1,4 @@
-import { Filename, Io, ioSettings, LogTarget, saveLog, time } from "../../../general"
+import { Filename, Io, ioSettings, LogTarget, Name, saveLog, time } from "../../../general"
 import { Metric } from "../bestMetric"
 import { DEFAULT_MAX_UNIT_WHEN_PERFECTING } from "../constants"
 import { popularityMetricLfcScriptGroupSettings } from "../globals"
@@ -18,7 +18,7 @@ applySharedPopularityMetricLfcCommandSetup({ defaultLogTargets })
 
 popularityMetricLfcScriptGroupSettings.maxUnit = DEFAULT_MAX_UNIT_WHEN_PERFECTING
 
-const bestMetricsToBePerfected = load("metrics" as Filename) as Record<string, Metric>
+const bestMetricsToBePerfected = load("metrics" as Filename) as Record<Name<Metric>, Metric>
 
 perfectMetrics(Object.values(bestMetricsToBePerfected)).then((): void => {
     saveLog(`\n\nTHE PERFECTED METRICS ARE ${formatBestMetrics()}` as Io, LogTarget.FINAL_PERFECTER_RESULTS)

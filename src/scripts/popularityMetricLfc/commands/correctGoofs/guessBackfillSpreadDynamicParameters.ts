@@ -1,4 +1,4 @@
-import { Filename, Io, LogTarget, Maybe, saveLog, stringify } from "../../../../general"
+import { Filename, Io, LogTarget, Maybe, Name, saveLog, stringify } from "../../../../general"
 import { Metric } from "../../bestMetric"
 import { PARAMETER_DYNAMISMS } from "../../perfecter"
 import { Parameter, ParameterValue, Submetric } from "../../sumOfSquares"
@@ -6,12 +6,15 @@ import { applySharedPopularityMetricLfcCommandSetup, load } from "../shared"
 
 applySharedPopularityMetricLfcCommandSetup()
 
-const metricsMissingSpreadDynamicParameters = load("metrics" as Filename) as Record<string, Metric>
+const metricsMissingSpreadDynamicParameters = load("metrics" as Filename) as Record<Name<Metric>, Metric>
 
-const guessedBackfilledSpreadDynamicParametersMetrics = Object.entries(metricsMissingSpreadDynamicParameters).reduce(
+const metricsMissingSpreadDynamicParametersEntries =
+    Object.entries(metricsMissingSpreadDynamicParameters) as Array<[Name<Metric>, Metric]>
+const guessedBackfilledSpreadDynamicParametersMetrics = metricsMissingSpreadDynamicParametersEntries.reduce(
     (
-        guessedBackfilledSpreadDynamicParametersMetrics: Record<string, Metric>, metricEntry: [string, Metric],
-    ): Record<string, Metric> => {
+        guessedBackfilledSpreadDynamicParametersMetrics:
+            Record<Name<Metric>, Metric>, metricEntry: [Name<Metric>, Metric],
+    ): Record<Name<Metric>, Metric> => {
         const [metricName, metric] = metricEntry
         const parameterValues: Partial<Record<Parameter, ParameterValue>> = {}
 
@@ -40,7 +43,7 @@ const guessedBackfilledSpreadDynamicParametersMetrics = Object.entries(metricsMi
             [ metricName ]: spreadDynamicParameters ? { ...metric, spreadDynamicParameters } : metric,
         }
     },
-    {} as Record<string, Metric>,
+    {} as Record<Name<Metric>, Metric>,
 )
 
 saveLog(stringify(guessedBackfilledSpreadDynamicParametersMetrics, { multiline: true }) as Io, LogTarget.ALL)

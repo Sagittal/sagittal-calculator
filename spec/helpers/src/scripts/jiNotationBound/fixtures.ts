@@ -4,6 +4,7 @@ import { JiNotationBoundAnalysis } from "../../../../../src/scripts/jiNotationBo
 import { EventConsolidation } from "../../../../../src/scripts/jiNotationBound/consolidateHistories/types"
 import { EventType, HistoricalEvent } from "../../../../../src/scripts/jiNotationBound/histories"
 import { EventAnalysis, HistoryAnalysis, Score } from "../../../../../src/scripts/jiNotationBound/history"
+import { RANKS } from "../../../../../src/scripts/jiNotationBound/ranks"
 
 const eventFixture: HistoricalEvent = {
     cents: 0 as Cents,
@@ -16,14 +17,14 @@ const eventAnalysisFixture: EventAnalysis = {
     ...eventFixture,
     distance: 0 as Cents,
     inaDistance: 0 as Multiplier<Ina>,
-    rank: 0 as Integer & Rank<EventAnalysis>,
+    rank: 0 as Integer & Rank<EventType>,
     exact: false,
 }
 
 const historyAnalysisFixture: HistoryAnalysis = {
     eventAnalyses: [],
     cents: 0 as Cents,
-    rank: 0 as Integer & Rank<EventAnalysis>,
+    rank: 0 as Integer & Rank<EventType>,
     score: 0 as Score,
     totalDistance: 0 as Cents,
     exact: false,
@@ -37,8 +38,8 @@ const eventConsolidationFixture: EventConsolidation = {
     ...eventFixture,
     isPossibleHistoryMember: false,
     isBestPossibleHistoryMember: false,
-    rankOfBestRankedMemberHistory: 0 as Integer & Rank<EventAnalysis>,
-    rankOfBestRankedEventInAnyMemberHistory: 0 as Integer & Rank<EventAnalysis>,
+    rankOfBestRankedMemberHistory: 0 as Integer & Rank<EventType>,
+    rankOfBestRankedEventInAnyMemberHistory: 0 as Integer & Rank<EventType>,
     nextEvents: [] as Name<Pitch>[],
     exact: false,
 }
@@ -51,7 +52,7 @@ const jiNotationBoundFixture: JiNotationBound = {
 
 const jiNotationBoundAnalysisFixture: JiNotationBoundAnalysis = {
     bestPossibleHistory: historyAnalysisFixture,
-    bestRank: 0 as Integer & Rank<EventAnalysis>,
+    bestRank: RANKS[ EventType.INA_MIDPOINT ],
     initialPosition: 0 as Cents,
     initialPositionTinaDistance: 0 as Multiplier<Tina>,
     bestPossibleHistoryTotalDistance: 0 as Cents,

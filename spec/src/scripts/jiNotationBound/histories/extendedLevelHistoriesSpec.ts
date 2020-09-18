@@ -8,13 +8,13 @@ describe("computeExtendedJiNotationLevelHistories", (): void => {
     it("given the histories for a bound up to the current JI notation level, returns the histories extended for all possible events at this JI notation level", (): void => {
         const firstHistoryPriorEvent: HistoricalEvent = {
             jiNotationLevel: JiNotationLevel.MEDIUM,
-            type: EventType.INA,
+            type: EventType.INA_MIDPOINT,
             name: "1.5°21" as Name<Pitch>,
             cents: 8.120357 as Cents,
         }
         const secondHistoryPriorEvent: HistoricalEvent = {
             jiNotationLevel: JiNotationLevel.MEDIUM,
-            type: EventType.MEAN,
+            type: EventType.COMMA_MEAN,
             name: "|( )|(" as Name<Pitch>,
             cents: 7.722881 as Cents,
         }
@@ -36,7 +36,7 @@ describe("computeExtendedJiNotationLevelHistories", (): void => {
                 firstHistoryPriorEvent,
                 {
                     jiNotationLevel: JiNotationLevel.HIGH,
-                    type: EventType.INA,
+                    type: EventType.INA_MIDPOINT,
                     name: "2.5°47" as Name<Pitch>,
                     cents: 6.047074 as Cents,
                 },
@@ -45,7 +45,7 @@ describe("computeExtendedJiNotationLevelHistories", (): void => {
                 firstHistoryPriorEvent,
                 {
                     jiNotationLevel: JiNotationLevel.HIGH,
-                    type: EventType.INA,
+                    type: EventType.INA_MIDPOINT,
                     name: "3.5°47" as Name<Pitch>,
                     cents: 8.465904 as Cents,
                 },
@@ -54,7 +54,7 @@ describe("computeExtendedJiNotationLevelHistories", (): void => {
                 firstHistoryPriorEvent,
                 {
                     jiNotationLevel: JiNotationLevel.HIGH,
-                    type: EventType.MEAN,
+                    type: EventType.COMMA_MEAN,
                     name: "|( ~|" as Name<Pitch>,
                     cents: 7.243699 as Cents,
                 },
@@ -63,7 +63,7 @@ describe("computeExtendedJiNotationLevelHistories", (): void => {
                 secondHistoryPriorEvent,
                 {
                     jiNotationLevel: JiNotationLevel.HIGH,
-                    type: EventType.INA,
+                    type: EventType.INA_MIDPOINT,
                     name: "2.5°47" as Name<Pitch>,
                     cents: 6.047074 as Cents,
                 },
@@ -72,7 +72,7 @@ describe("computeExtendedJiNotationLevelHistories", (): void => {
                 secondHistoryPriorEvent,
                 {
                     jiNotationLevel: JiNotationLevel.HIGH,
-                    type: EventType.INA,
+                    type: EventType.INA_MIDPOINT,
                     name: "3.5°47" as Name<Pitch>,
                     cents: 8.465904 as Cents,
                 },
@@ -81,7 +81,7 @@ describe("computeExtendedJiNotationLevelHistories", (): void => {
                 secondHistoryPriorEvent,
                 {
                     jiNotationLevel: JiNotationLevel.HIGH,
-                    type: EventType.MEAN,
+                    type: EventType.COMMA_MEAN,
                     name: "|( ~|" as Name<Pitch>,
                     cents: 7.243699 as Cents,
                 },

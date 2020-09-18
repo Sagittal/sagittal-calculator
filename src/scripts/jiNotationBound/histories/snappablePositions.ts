@@ -27,9 +27,9 @@ const JI_NOTATION_LEVELS_SIZE_CATEGORY_BOUNDS: Record<JiNotationLevel, CentsPosi
     computeSnappablePositions(computeSizeCategoryBoundsWithinMaximumPosition)
 
 const EVENT_TYPE_SNAPPABLE_POSITIONS: Record<EventType, Record<JiNotationLevel, CentsPosition[]>> = {
-    [ EventType.INA ]: INA_MIDPOINTS,
-    [ EventType.SIZE ]: JI_NOTATION_LEVELS_SIZE_CATEGORY_BOUNDS,
-    [ EventType.MEAN ]: JI_NOTATION_LEVELS_COMMA_MEANS,
+    [ EventType.INA_MIDPOINT ]: INA_MIDPOINTS,
+    [ EventType.SIZE_CATEGORY_BOUND ]: JI_NOTATION_LEVELS_SIZE_CATEGORY_BOUNDS,
+    [ EventType.COMMA_MEAN ]: JI_NOTATION_LEVELS_COMMA_MEANS,
 }
 
 export {

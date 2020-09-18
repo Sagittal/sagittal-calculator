@@ -8,7 +8,9 @@ type SortOptions = Partial<{
 
 type KeyPath = (number | string | Array<number | string>) & { _KeyPathBrand: "KeyPath" }
 
-type Obj = (Array<unknown> | Record<any, unknown>) & { [index: string]: unknown } & { [index: number]: unknown }
+type Obj = (Array<unknown> | Record<any, unknown>) & { [ index: string ]: unknown } & { [ index: number ]: unknown }
+
+type RecordKey<T> = T | (T extends number ? number : T extends string ? string : {})
 
 type Sortable = { [ index: string ]: number }
 
@@ -48,4 +50,5 @@ export {
     Maybe,
     KeyPath,
     Obj,
+    RecordKey,
 }

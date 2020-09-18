@@ -1,30 +1,21 @@
-import { Count, formatTable, Integer, Io, Maybe, Rank } from "../../../../../general"
+import { formatTable, Io } from "../../../../../general"
 import { JiNotationLevel } from "../../../../../sagittal"
-import { EventAnalysis } from "../../../history"
 import { computeJiNotationLevelAnalysisHeaderRow } from "./levelAnalysisHeaderRow"
-import { computeLevelAnalysisRowColors } from "./levelAnalysisRowColors"
-import { computeLevelAnalysisRows } from "./levelAnalysisRows"
+import { computeJiNotationLevelAnalysisRowColors } from "./levelAnalysisRowColors"
+import { computeJiNotationLevelAnalysisRows } from "./levelAnalysisRows"
 
-const formatJiNotationLevelAnalysis = (
-    jiNotationLevel: JiNotationLevel,
-    jiNotationLevelsBestHistoryRanks: Record<number, Maybe<Count<Integer & Rank<EventAnalysis>>>>,
-    jiNotationLevelsBestCumulativeHistoryRanks: Record<number, Count<Integer & Rank<EventAnalysis>>>,
-): Io => {
+const formatJiNotationLevelAnalysis = (jiNotationLevel: JiNotationLevel): Io => {
     const jiNotationLevelAnalysisHeaderRow = computeJiNotationLevelAnalysisHeaderRow(jiNotationLevel)
+    const jiNotationLevelAnalysisRows = computeJiNotationLevelAnalysisRows(jiNotationLevel)
+    const jiNotationLevelAnalysisRowColors = computeJiNotationLevelAnalysisRowColors(jiNotationLevel)
+    jiNotationLevelAnalysisRowColors.unshift(undefined)
 
-    const levelAnalysisRows = computeLevelAnalysisRows(
-        jiNotationLevelsBestHistoryRanks,
-        jiNotationLevelsBestCumulativeHistoryRanks,
-    )
-    const levelAnalysisRowColors = computeLevelAnalysisRowColors(jiNotationLevelsBestHistoryRanks)
-    levelAnalysisRowColors.unshift(undefined)
-    
-    const levelAnalysisTable = [
+    const jiNotaitonLevelAnalysisTable = [
         jiNotationLevelAnalysisHeaderRow,
-        ...levelAnalysisRows,
+        ...jiNotationLevelAnalysisRows,
     ]
-    
-    return formatTable(levelAnalysisTable, { colors: levelAnalysisRowColors })
+
+    return formatTable(jiNotaitonLevelAnalysisTable, { colors: jiNotationLevelAnalysisRowColors })
 }
 
 export {

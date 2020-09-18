@@ -37,7 +37,6 @@ const computeIsWithinPrimeMin = <S extends Primes, T extends NumericTypeParamete
         (!isUndefined(ratio) && computeIsRoughRatio(ratio, primeMin as S & Integer as S & Roughness))
 }
 
-// todo: test
 const computePrimeLimit = <S extends Primes, T extends NumericTypeParameters>(
     { monzo, ratio }: JiPitch<T>,
 ): Max<Prime> => {

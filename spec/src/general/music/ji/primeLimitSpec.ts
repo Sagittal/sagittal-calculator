@@ -78,3 +78,5 @@ describe("computeIsWithinPrimeMin", (): void => {
         })
     })
 })
+
+// TODO: test computePrimeLimit

@@ -8,6 +8,7 @@ import {
     Max,
     Maybe,
     Min,
+    Name,
     saveLog,
     stringify,
 } from "../../../general"
@@ -17,7 +18,7 @@ import { applySharedPopularityMetricLfcCommandSetup, load } from "./shared"
 
 applySharedPopularityMetricLfcCommandSetup({ defaultLogTargets: [LogTarget.ALL] })
 
-const chunkCountResults = load("metrics" as Filename) as Record<string, Metric>
+const chunkCountResults = load("metrics" as Filename) as Record<Name<Metric>, Metric>
 
 const parameterExtrema = {} as Record<string, Extrema<ParameterValue>>
 
@@ -29,7 +30,8 @@ Object.values(Parameter).forEach((parameter: Parameter): void => {
     let parameterMin: Maybe<Min<ParameterValue>> = undefined
     let parameterMax: Maybe<Max<ParameterValue>> = undefined
 
-    Object.values(chunkCountResults).forEach((chunkCountResult: Metric): void => {
+    const chunkCountResultsValues = Object.values(chunkCountResults) as Metric[]
+    chunkCountResultsValues.forEach((chunkCountResult: Metric): void => {
         chunkCountResult.submetrics.forEach((submetric: Submetric): void => {
             Object.entries(submetric).forEach(([parameterName, parameterValue]: [string, unknown]): void => {
                 if (parameterName === parameter && isNumber(parameterValue)) {

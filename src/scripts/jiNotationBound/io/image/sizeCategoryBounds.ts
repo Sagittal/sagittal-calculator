@@ -1,8 +1,8 @@
 import { CentsPosition, Io, Px } from "../../../../general"
 import { JiNotationLevel } from "../../../../sagittal"
 import { JI_NOTATION_LEVELS_SIZE_CATEGORY_BOUNDS } from "../../histories"
-import { SIZE_COLOR } from "./colors"
 import { JI_NOTATION_LEVEL_BOTTOMS, JI_NOTATION_LEVEL_TOPS } from "./levelHeights"
+import { SIZE_CATEGORY_BOUND_HEX_COLOR } from "./rankColors"
 import { DASH_SIZE } from "./sizes"
 import { computeX } from "./x"
 
@@ -21,9 +21,9 @@ const visualizeSizeCategoryBounds = (): Io[] => {
 
         const positionX = computeX(cents)
 
-        sizeCategoryBoundElements.push(`  <line stroke-dasharray="${DASH_SIZE}" stroke="${SIZE_COLOR}" x1="${positionX}" x2="${positionX}" y1="${topEdgeY}" y2="${bottomEdgeY}" />\n` as Io)
+        sizeCategoryBoundElements.push(`  <line stroke-dasharray="${DASH_SIZE}" stroke="${SIZE_CATEGORY_BOUND_HEX_COLOR}" x1="${positionX}" x2="${positionX}" y1="${topEdgeY}" y2="${bottomEdgeY}" />\n` as Io)
         sizeCategoryBoundElements.push(`  <text stroke="white" stroke-width="0.45em" text-anchor="middle" xml:space="preserve" x="${positionX}" y="${centerY}" font-size="10px" font-family="Helvetica">${name}</text>` as Io)
-        sizeCategoryBoundElements.push(`  <text fill="${SIZE_COLOR}" text-anchor="middle" xml:space="preserve" x="${positionX}" y="${centerY}" font-size="10px" font-family="Helvetica">${name}</text>` as Io)
+        sizeCategoryBoundElements.push(`  <text fill="${SIZE_CATEGORY_BOUND_HEX_COLOR}" text-anchor="middle" xml:space="preserve" x="${positionX}" y="${centerY}" font-size="10px" font-family="Helvetica">${name}</text>` as Io)
     })
 
     return sizeCategoryBoundElements

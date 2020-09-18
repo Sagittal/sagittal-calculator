@@ -1,11 +1,13 @@
-import { Count, Integer, Maybe, Rank } from "../../../../../src/general"
+import { Count, Integer, Rank } from "../../../../../src/general"
 import { JiNotationLevel } from "../../../../../src/sagittal/notations/ji"
+import { updateJiNotationLevelAnalysis } from "../../../../../src/scripts/jiNotationBound/bound/levels"
 import {
     jiNotationLevelsBestCumulativeHistoryRanks,
     jiNotationLevelsBestHistoryRanks,
-    updateJiNotationLevelAnalysis,
-} from "../../../../../src/scripts/jiNotationBound/bound/levels"
-import { EventAnalysis, HistoryAnalysis } from "../../../../../src/scripts/jiNotationBound/history"
+} from "../../../../../src/scripts/jiNotationBound/globals"
+import { EventType } from "../../../../../src/scripts/jiNotationBound/histories"
+import { HistoryAnalysis } from "../../../../../src/scripts/jiNotationBound/history"
+import { RANKS } from "../../../../../src/scripts/jiNotationBound/ranks"
 import { eventAnalysisFixture, historyAnalysisFixture } from "../../../../helpers/src/scripts/jiNotationBound/fixtures"
 
 describe("updateJiNotationLevelAnalysis", (): void => {
@@ -17,7 +19,7 @@ describe("updateJiNotationLevelAnalysis", (): void => {
                     {
                         ...eventAnalysisFixture,
                         jiNotationLevel: JiNotationLevel.MEDIUM,
-                        rank: 0 as Integer & Rank<EventAnalysis>,
+                        rank: RANKS[ EventType.INA_MIDPOINT ],
                     },
                 ],
             }
@@ -29,11 +31,8 @@ describe("updateJiNotationLevelAnalysis", (): void => {
 
             updateJiNotationLevelAnalysis(bestPossibleHistory)
 
-            expect((jiNotationLevelsBestHistoryRanks[
-                JiNotationLevel.MEDIUM
-                ] as Record<number, Maybe<Count<Integer & Rank<EventAnalysis>>>>
-            )[ 0 ])
-                .toBe(1 as Count<Integer & Rank<EventAnalysis>>)
+            expect(jiNotationLevelsBestHistoryRanks[ JiNotationLevel.MEDIUM ][ RANKS[ EventType.INA_MIDPOINT ] ])
+                .toBe(1 as Count<Integer & Rank<EventType>>)
         })
 
         it("increments ranks at JI levels when they exist", (): void => {
@@ -43,32 +42,30 @@ describe("updateJiNotationLevelAnalysis", (): void => {
                     {
                         ...eventAnalysisFixture,
                         jiNotationLevel: JiNotationLevel.MEDIUM,
-                        rank: 0 as Integer & Rank<EventAnalysis>,
+                        rank: RANKS[ EventType.INA_MIDPOINT ],
                     },
                     {
                         ...eventAnalysisFixture,
                         jiNotationLevel: JiNotationLevel.HIGH,
-                        rank: 1 as Integer & Rank<EventAnalysis>,
+                        rank: RANKS[ EventType.COMMA_MEAN ],
                     },
                 ],
             }
-            let formerMediumIna = 3 as Count<Integer & Rank<EventAnalysis>>
-            let formerHighMean = 4 as Count<Integer & Rank<EventAnalysis>>
-            jiNotationLevelsBestHistoryRanks[ JiNotationLevel.MEDIUM ] = [formerMediumIna]
-            jiNotationLevelsBestHistoryRanks[ JiNotationLevel.HIGH ] = [undefined, formerHighMean]
+            let formerMediumIna = 3 as Count<Integer & Rank<EventType>>
+            let formerHighMean = 4 as Count<Integer & Rank<EventType>>
+            jiNotationLevelsBestHistoryRanks[ JiNotationLevel.MEDIUM ] = {
+                [ RANKS[ EventType.INA_MIDPOINT ] ]: formerMediumIna,
+            }
+            jiNotationLevelsBestHistoryRanks[ JiNotationLevel.HIGH ] = {
+                [ RANKS[ EventType.COMMA_MEAN ] ]: formerHighMean,
+            }
 
             updateJiNotationLevelAnalysis(bestPossibleHistory)
 
-            expect((jiNotationLevelsBestHistoryRanks[
-                    JiNotationLevel.MEDIUM
-                    ] as Record<number, Maybe<Count<Integer & Rank<EventAnalysis>>>>
-            )[ 0 ])
-                .toBe(formerMediumIna + 1 as Count<Integer & Rank<EventAnalysis>>)
-            expect((jiNotationLevelsBestHistoryRanks[
-                JiNotationLevel.HIGH
-                ] as Record<number, Maybe<Count<Integer & Rank<EventAnalysis>>>>
-            )[ 1 ])
-                .toBe(formerHighMean + 1 as Count<Integer & Rank<EventAnalysis>>)
+            expect(jiNotationLevelsBestHistoryRanks[ JiNotationLevel.MEDIUM ][ RANKS[ EventType.INA_MIDPOINT ] ])
+                .toBe(formerMediumIna + 1 as Count<Integer & Rank<EventType>>)
+            expect(jiNotationLevelsBestHistoryRanks[ JiNotationLevel.HIGH ][ RANKS[ EventType.COMMA_MEAN ] ])
+                .toBe(formerHighMean + 1 as Count<Integer & Rank<EventType>>)
         })
     })
 
@@ -80,22 +77,22 @@ describe("updateJiNotationLevelAnalysis", (): void => {
                     {
                         ...eventAnalysisFixture,
                         jiNotationLevel: JiNotationLevel.MEDIUM,
-                        rank: 0 as Integer & Rank<EventAnalysis>,
+                        rank: RANKS[ EventType.INA_MIDPOINT ],
                     },
                     {
                         ...eventAnalysisFixture,
                         jiNotationLevel: JiNotationLevel.HIGH,
-                        rank: 2 as Integer & Rank<EventAnalysis>,
+                        rank: RANKS[ EventType.COMMA_MEAN ],
                     },
                     {
                         ...eventAnalysisFixture,
                         jiNotationLevel: JiNotationLevel.ULTRA,
-                        rank: 1 as Integer & Rank<EventAnalysis>,
+                        rank: RANKS[ EventType.INA_MIDPOINT ],
                     },
                     {
                         ...eventAnalysisFixture,
                         jiNotationLevel: JiNotationLevel.EXTREME,
-                        rank: 3 as Integer & Rank<EventAnalysis>,
+                        rank: RANKS[ EventType.SIZE_CATEGORY_BOUND ],
                     },
                 ],
             }
@@ -118,22 +115,23 @@ describe("updateJiNotationLevelAnalysis", (): void => {
 
             updateJiNotationLevelAnalysis(bestPossibleHistory)
 
-            expect((jiNotationLevelsBestCumulativeHistoryRanks[
-                JiNotationLevel.MEDIUM
-                ] as Record<number, Maybe<Count<Integer & Rank<EventAnalysis>>>>
-            )[ 0 ]).toBe(1 as Count<Integer & Rank<EventAnalysis>>)
-            expect((jiNotationLevelsBestCumulativeHistoryRanks[
-                JiNotationLevel.HIGH
-                ] as Record<number, Maybe<Count<Integer & Rank<EventAnalysis>>>>
-            )[ 2 ]).toBe(1 as Count<Integer & Rank<EventAnalysis>>)
-            expect((jiNotationLevelsBestCumulativeHistoryRanks[
-                JiNotationLevel.ULTRA
-                ] as Record<number, Maybe<Count<Integer & Rank<EventAnalysis>>>>
-            )[ 2 ]).toBe(1 as Count<Integer & Rank<EventAnalysis>>)
-            expect((jiNotationLevelsBestCumulativeHistoryRanks[
-                JiNotationLevel.EXTREME
-                ] as Record<number, Maybe<Count<Integer & Rank<EventAnalysis>>>>
-            )[ 3 ]).toBe(1 as Count<Integer & Rank<EventAnalysis>>)
+            expect(
+                jiNotationLevelsBestCumulativeHistoryRanks[ JiNotationLevel.MEDIUM ][ RANKS[ EventType.INA_MIDPOINT ] ],
+            )
+                .toBe(1 as Count<Integer & Rank<EventType>>)
+            expect(
+                jiNotationLevelsBestCumulativeHistoryRanks[ JiNotationLevel.HIGH ][ RANKS[ EventType.COMMA_MEAN ] ],
+            )
+                .toBe(1 as Count<Integer & Rank<EventType>>)
+            expect(
+                jiNotationLevelsBestCumulativeHistoryRanks[ JiNotationLevel.ULTRA ][ RANKS[ EventType.COMMA_MEAN ] ],
+            )
+                .toBe(1 as Count<Integer & Rank<EventType>>)
+            expect(
+                // tslint:disable-next-line max-line-length
+                jiNotationLevelsBestCumulativeHistoryRanks[ JiNotationLevel.EXTREME ][ RANKS[ EventType.SIZE_CATEGORY_BOUND ] ],
+            )
+                .toBe(1 as Count<Integer & Rank<EventType>>)
         })
     })
 })

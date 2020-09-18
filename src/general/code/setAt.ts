@@ -5,7 +5,7 @@ import { KeyPath, Obj } from "./types"
 
 const setAt = (object: Obj, keyPath: KeyPath, value: unknown, options: { parents?: [] | {} } = {}): void => {
     let cursor: Obj
-    let finalKey: string| number
+    let finalKey: string | number
     if (isArray(keyPath)) {
         cursor = dig(object, keyPath.slice(0, indexOfFinalElement(keyPath)) as KeyPath, options) as Obj
         finalKey = finalElement(keyPath)

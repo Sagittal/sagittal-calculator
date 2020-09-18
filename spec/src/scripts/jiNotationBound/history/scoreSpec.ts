@@ -1,7 +1,8 @@
-import { Integer, Rank } from "../../../../../src/general"
 import { JiNotationLevel } from "../../../../../src/sagittal/notations/ji"
+import { EventType } from "../../../../../src/scripts/jiNotationBound/histories"
 import { EventAnalysis } from "../../../../../src/scripts/jiNotationBound/history"
 import { computeScore } from "../../../../../src/scripts/jiNotationBound/history/score"
+import { RANKS } from "../../../../../src/scripts/jiNotationBound/ranks"
 import { eventAnalysisFixture } from "../../../../helpers/src/scripts/jiNotationBound/fixtures"
 
 describe("computeScore", (): void => {
@@ -10,14 +11,14 @@ describe("computeScore", (): void => {
             {
                 ...eventAnalysisFixture,
                 jiNotationLevel: JiNotationLevel.MEDIUM,
-                rank: 2 as Integer & Rank<EventAnalysis>,
+                rank: RANKS[ EventType.SIZE_CATEGORY_BOUND ],
             },
         ]
         const expectedBetterScoreHistories: EventAnalysis[] = [
             {
                 ...eventAnalysisFixture,
                 jiNotationLevel: JiNotationLevel.MEDIUM,
-                rank: 1 as Integer & Rank<EventAnalysis>,
+                rank: RANKS[ EventType.COMMA_MEAN ],
             },
         ]
 
@@ -32,24 +33,24 @@ describe("computeScore", (): void => {
             {
                 ...eventAnalysisFixture,
                 jiNotationLevel: JiNotationLevel.MEDIUM,
-                rank: 2 as Integer & Rank<EventAnalysis>,
+                rank: RANKS[ EventType.SIZE_CATEGORY_BOUND ],
             },
             {
                 ...eventAnalysisFixture,
                 jiNotationLevel: JiNotationLevel.HIGH,
-                rank: 1 as Integer & Rank<EventAnalysis>,
+                rank: RANKS[ EventType.COMMA_MEAN ],
             },
         ]
         const expectedBetterScoreHistories = [
             {
                 ...eventAnalysisFixture,
                 jiNotationLevel: JiNotationLevel.MEDIUM,
-                rank: 1 as Integer & Rank<EventAnalysis>,
+                rank: RANKS[ EventType.COMMA_MEAN ],
             },
             {
                 ...eventAnalysisFixture,
                 jiNotationLevel: JiNotationLevel.HIGH,
-                rank: 2 as Integer & Rank<EventAnalysis>,
+                rank: RANKS[ EventType.SIZE_CATEGORY_BOUND ],
             },
         ]
 
@@ -64,54 +65,54 @@ describe("computeScore", (): void => {
             {
                 ...eventAnalysisFixture,
                 jiNotationLevel: JiNotationLevel.MEDIUM,
-                rank: 0 as Integer & Rank<EventAnalysis>,
+                rank: RANKS[ EventType.INA_MIDPOINT ],
             },
             {
                 ...eventAnalysisFixture,
                 jiNotationLevel: JiNotationLevel.HIGH,
-                rank: 0 as Integer & Rank<EventAnalysis>,
+                rank: RANKS[ EventType.INA_MIDPOINT ],
             },
             {
                 ...eventAnalysisFixture,
                 jiNotationLevel: JiNotationLevel.ULTRA,
-                rank: 0 as Integer & Rank<EventAnalysis>,
+                rank: RANKS[ EventType.INA_MIDPOINT ],
             },
             {
                 ...eventAnalysisFixture,
                 jiNotationLevel: JiNotationLevel.EXTREME,
-                rank: 0 as Integer & Rank<EventAnalysis>,
+                rank: RANKS[ EventType.INA_MIDPOINT ],
             },
             {
                 ...eventAnalysisFixture,
                 jiNotationLevel: JiNotationLevel.INSANE,
-                rank: 2 as Integer & Rank<EventAnalysis>,
+                rank: RANKS[ EventType.SIZE_CATEGORY_BOUND ],
             },
         ]
         const expectedBetterScoreHistories = [
             {
                 ...eventAnalysisFixture,
                 jiNotationLevel: JiNotationLevel.MEDIUM,
-                rank: 1 as Integer & Rank<EventAnalysis>,
+                rank: RANKS[ EventType.COMMA_MEAN ],
             },
             {
                 ...eventAnalysisFixture,
                 jiNotationLevel: JiNotationLevel.HIGH,
-                rank: 1 as Integer & Rank<EventAnalysis>,
+                rank: RANKS[ EventType.COMMA_MEAN ],
             },
             {
                 ...eventAnalysisFixture,
                 jiNotationLevel: JiNotationLevel.ULTRA,
-                rank: 1 as Integer & Rank<EventAnalysis>,
+                rank: RANKS[ EventType.COMMA_MEAN ],
             },
             {
                 ...eventAnalysisFixture,
                 jiNotationLevel: JiNotationLevel.EXTREME,
-                rank: 1 as Integer & Rank<EventAnalysis>,
+                rank: RANKS[ EventType.COMMA_MEAN ],
             },
             {
                 ...eventAnalysisFixture,
                 jiNotationLevel: JiNotationLevel.INSANE,
-                rank: 1 as Integer & Rank<EventAnalysis>,
+                rank: RANKS[ EventType.COMMA_MEAN ],
             },
         ]
 

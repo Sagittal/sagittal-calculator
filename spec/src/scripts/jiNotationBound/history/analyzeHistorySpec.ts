@@ -1,9 +1,10 @@
-import { add, Cents, Integer, Multiplier, Rank } from "../../../../../src/general"
+import { add, Cents, Multiplier } from "../../../../../src/general"
 import { multiply } from "../../../../../src/general/math"
 import { Ina, JiNotationBound, JiNotationLevel, Tina, TINA } from "../../../../../src/sagittal/notations/ji"
 import { computeInitialPosition } from "../../../../../src/scripts/jiNotationBound/bound/initialPosition"
 import { EventType, History } from "../../../../../src/scripts/jiNotationBound/histories"
-import { analyzeHistory, EventAnalysis } from "../../../../../src/scripts/jiNotationBound/history"
+import { analyzeHistory } from "../../../../../src/scripts/jiNotationBound/history"
+import { RANKS } from "../../../../../src/scripts/jiNotationBound/ranks"
 import {
     eventAnalysisFixture,
     eventFixture,
@@ -25,8 +26,13 @@ describe("analyzeHistory", (): void => {
         (): void => {
             cents = actualJiNotationBoundCents + 0.5 as Cents
             history = [
-                { ...eventFixture, cents, type: EventType.INA, jiNotationLevel: JiNotationLevel.EXTREME },
-                { ...eventFixture, cents, type: EventType.SIZE, jiNotationLevel: JiNotationLevel.INSANE },
+                { ...eventFixture, cents, type: EventType.INA_MIDPOINT, jiNotationLevel: JiNotationLevel.EXTREME },
+                {
+                    ...eventFixture,
+                    cents,
+                    type: EventType.SIZE_CATEGORY_BOUND,
+                    jiNotationLevel: JiNotationLevel.INSANE,
+                },
             ]
             jiNotationBound = {
                 ...jiNotationBoundFixture,
@@ -41,8 +47,8 @@ describe("analyzeHistory", (): void => {
                 {
                     ...eventAnalysisFixture,
                     cents,
-                    type: EventType.INA,
-                    rank: 0 as Integer & Rank<EventAnalysis>,
+                    type: EventType.INA_MIDPOINT,
+                    rank: RANKS[ EventType.INA_MIDPOINT ],
                     exact: false,
                     distance: 0 as Cents,
                     inaDistance: 0 as Multiplier<Ina>,
@@ -51,8 +57,8 @@ describe("analyzeHistory", (): void => {
                 {
                     ...eventAnalysisFixture,
                     cents,
-                    type: EventType.SIZE,
-                    rank: 2 as Integer & Rank<EventAnalysis>,
+                    type: EventType.SIZE_CATEGORY_BOUND,
+                    rank: RANKS[ EventType.SIZE_CATEGORY_BOUND ],
                     exact: false,
                     distance: 0 as Cents,
                     inaDistance: 0 as Multiplier<Ina>,
@@ -60,7 +66,7 @@ describe("analyzeHistory", (): void => {
                 },
             ])
             expect(actual.cents).toBe(cents)
-            expect(actual.rank).toBe(2 as Integer & Rank<EventAnalysis>)
+            expect(actual.rank).toBe(RANKS[ EventType.SIZE_CATEGORY_BOUND ])
             expect(actual.totalDistance).toBe(0 as Cents)
             expect(actual.initialPositionTinaDistance)
                 .toBeCloseToTyped(3.681504 as Multiplier<Tina>)
@@ -73,8 +79,13 @@ describe("analyzeHistory", (): void => {
             (): void => {
                 cents = actualJiNotationBoundCents
                 history = [
-                    { ...eventFixture, cents, type: EventType.INA, jiNotationLevel: JiNotationLevel.EXTREME },
-                    { ...eventFixture, cents, type: EventType.SIZE, jiNotationLevel: JiNotationLevel.INSANE },
+                    { ...eventFixture, cents, type: EventType.INA_MIDPOINT, jiNotationLevel: JiNotationLevel.EXTREME },
+                    {
+                        ...eventFixture,
+                        cents,
+                        type: EventType.SIZE_CATEGORY_BOUND,
+                        jiNotationLevel: JiNotationLevel.INSANE,
+                    },
                 ]
                 jiNotationBound = {
                     ...jiNotationBoundFixture,
@@ -100,10 +111,10 @@ describe("analyzeHistory", (): void => {
                 (): void => {
                     const expectedTinaError = 2 / 5 as Multiplier<Tina>
                     cents = add(actualJiNotationBoundCents, multiply(TINA, expectedTinaError))
-                    history = [{ ...eventFixture, type: EventType.INA, cents }, {
+                    history = [{ ...eventFixture, type: EventType.INA_MIDPOINT, cents }, {
                         ...eventFixture,
                         cents,
-                        type: EventType.MEAN,
+                        type: EventType.COMMA_MEAN,
                     }]
                     jiNotationBound = {
                         ...jiNotationBoundFixture,
@@ -124,10 +135,10 @@ describe("analyzeHistory", (): void => {
                 (): void => {
                     const expectedTinaError = 5 / 2 as Multiplier<Tina>
                     cents = add(actualJiNotationBoundCents, multiply(TINA, expectedTinaError))
-                    history = [{ ...eventFixture, type: EventType.INA, cents }, {
+                    history = [{ ...eventFixture, type: EventType.INA_MIDPOINT, cents }, {
                         ...eventFixture,
                         cents,
-                        type: EventType.INA,
+                        type: EventType.INA_MIDPOINT,
                         jiNotationLevel: JiNotationLevel.EXTREME,
                     }]
                     jiNotationBound = {
@@ -151,13 +162,13 @@ describe("analyzeHistory", (): void => {
                     cents = add(actualJiNotationBoundCents, multiply(TINA, expectedTinaError))
                     history = [{
                         ...eventFixture,
-                        type: EventType.INA,
+                        type: EventType.INA_MIDPOINT,
                         cents,
                         jiNotationLevel: JiNotationLevel.EXTREME,
                     }, {
                         ...eventFixture,
                         cents,
-                        type: EventType.SIZE,
+                        type: EventType.SIZE_CATEGORY_BOUND,
                         jiNotationLevel: JiNotationLevel.INSANE,
                     }]
                     jiNotationBound = {
@@ -179,10 +190,10 @@ describe("analyzeHistory", (): void => {
                 (): void => {
                     const expectedTinaError = -5 / 2 as Multiplier<Tina>
                     cents = add(actualJiNotationBoundCents, multiply(TINA, expectedTinaError))
-                    history = [{ ...eventFixture, type: EventType.INA, cents }, {
+                    history = [{ ...eventFixture, type: EventType.INA_MIDPOINT, cents }, {
                         ...eventFixture,
                         cents,
-                        type: EventType.MEAN,
+                        type: EventType.COMMA_MEAN,
                     }]
                     jiNotationBound = {
                         ...jiNotationBoundFixture,

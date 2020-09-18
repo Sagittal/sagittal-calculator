@@ -8,17 +8,17 @@ const TWO_THREE_FREE_CLASS_TITLE = "   --- 2,3-free class ---\n\n" as Io
 const NOTATING_COMMAS_TITLE = "   --- notating commas ---\n\n" as Io
 
 const computeFindCommasTitle = (findCommasSettings: FindCommasSettings): Io => {
-    const { 
-        max23FreeSopfr, 
-        max23FreeCopfr, 
-        maxPrimeLimit, 
-        maxN2D3P9, 
+    const {
+        max23FreeSopfr,
+        max23FreeCopfr,
+        maxPrimeLimit,
+        maxN2D3P9,
         minCents,
         maxCents,
         maxAte,
         maxAas,
     } = findCommasSettings
-    
+
     return [
         "",
         `cents range:       \t${formatNumber(minCents)} - ${formatNumber(maxCents)}`,

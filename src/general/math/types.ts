@@ -5,7 +5,7 @@ type Numeric<T extends NumericTypeParameters> = number & NumericTypeParameterEff
 type Integer<T extends NumericTypeParameters & { irrational: false, integer: true } = { irrational: false, integer: true }> = Numeric<T>
 type MaybeIntegerBrand<T> = T extends { integer: true } ? { _IntegerBrand: "Integer" } : {}
 
-type Prime<T extends IntegerTypeParameters = { integer: true, irrational: false }> = 
+type Prime<T extends IntegerTypeParameters = { integer: true, irrational: false }> =
     Numeric<T> & { _PrimeBrand: "Prime" }
 type Roughness = Integer & { _RoughnessBrand: "Roughness" }
 type Smoothness = Integer & { _SmoothnessBrand: "Smoothness" }

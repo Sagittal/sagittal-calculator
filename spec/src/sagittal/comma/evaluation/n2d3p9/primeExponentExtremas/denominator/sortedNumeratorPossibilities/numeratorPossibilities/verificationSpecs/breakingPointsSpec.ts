@@ -1,6 +1,6 @@
 import { Index } from "../../../../../../../../../../../src/general"
 import { increment } from "../../../../../../../../../../../src/general/code"
-import { Exponent, Integer, Max, Numerator, Prime, PRIMES } from "../../../../../../../../../../../src/general/math"
+import { Exponent, Max, Numerator, Prime, PRIMES } from "../../../../../../../../../../../src/general/math"
 import { N2D3P9 } from "../../../../../../../../../../../src/sagittal/comma/evaluation/n2d3p9"
 
 describe("breaking points of max N2D3P9 per numerator prime", (): void => {
@@ -90,7 +90,7 @@ describe("breaking points of max N2D3P9 per numerator prime", (): void => {
 
             let maxNumeratorPrimeExponent = 0 as Max<Numerator & Exponent<Prime>>
             while (true) {
-                const maxN2D3P9 = 
+                const maxN2D3P9 =
                     computeMaxN2D3P9GivenMaxNumeratorPrimeExponent(numeratorPrime, maxNumeratorPrimeExponent)
 
                 if (maxN2D3P9 > MAX_REASONABLE_MAX_N2D3P9) {

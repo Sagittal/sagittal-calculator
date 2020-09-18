@@ -13,7 +13,6 @@ import {
     Prime,
     Ratio,
     Sopfr,
-    TwoThreeFreeClass,
 } from "../../../../../../src/general"
 import { ApotomeSlope, CommaAnalysis, SymbolClass } from "../../../../../../src/sagittal"
 import { N2D3P9 } from "../../../../../../src/sagittal/comma/evaluation/n2d3p9"

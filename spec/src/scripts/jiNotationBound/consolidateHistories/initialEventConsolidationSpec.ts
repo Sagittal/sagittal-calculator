@@ -1,17 +1,18 @@
-import { Cents, Integer, Name, Pitch, Rank } from "../../../../../src/general"
+import { Cents, Name, Pitch } from "../../../../../src/general"
 import { computeInitialEventConsolidation } from "../../../../../src/scripts/jiNotationBound/consolidateHistories/initialEventConsolidation"
 import { EventConsolidation } from "../../../../../src/scripts/jiNotationBound/consolidateHistories/types"
 import { EventType, HistoricalEvent } from "../../../../../src/scripts/jiNotationBound/histories"
 import { EventAnalysis } from "../../../../../src/scripts/jiNotationBound/history"
+import { RANKS } from "../../../../../src/scripts/jiNotationBound/ranks"
 import { eventAnalysisFixture } from "../../../../helpers/src/scripts/jiNotationBound/fixtures"
 
 describe("computeInitialEventConsolidation", (): void => {
     let actual: EventConsolidation
     const eventAnalysis: EventAnalysis = {
         ...eventAnalysisFixture,
-        type: EventType.INA,
+        type: EventType.INA_MIDPOINT,
         name: "12.5°58" as Name<Pitch>,
-        rank: 4 as Integer & Rank<EventAnalysis>,
+        rank: RANKS[ EventType.COMMA_MEAN ],
         cents: 43.343455 as Cents,
     }
 
@@ -20,8 +21,8 @@ describe("computeInitialEventConsolidation", (): void => {
     })
 
     it("initializes the rank related fields to the worst rank (so that there's nowhere to go but up when updating them with data from the history analyses", (): void => {
-        expect(actual.rankOfBestRankedEventInAnyMemberHistory).toBe(2 as Integer & Rank<EventAnalysis>)
-        expect(actual.rankOfBestRankedMemberHistory).toBe(2 as Integer & Rank<EventAnalysis>)
+        expect(actual.rankOfBestRankedEventInAnyMemberHistory).toBe(RANKS[ EventType.SIZE_CATEGORY_BOUND ])
+        expect(actual.rankOfBestRankedMemberHistory).toBe(RANKS[ EventType.SIZE_CATEGORY_BOUND ])
     })
 
     it("strips off the rank that was created in the analyze step, replacing it with the rank measurements that are appropriate for the history consolidation", (): void => {

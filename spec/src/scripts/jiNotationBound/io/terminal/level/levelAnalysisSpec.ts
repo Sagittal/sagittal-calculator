@@ -1,25 +1,30 @@
 import { Count, NEWLINE } from "../../../../../../../src/general"
-import { Maybe, Rank } from "../../../../../../../src/general/code"
+import { Rank } from "../../../../../../../src/general/code"
 import { Integer } from "../../../../../../../src/general/math"
 import { JiNotationLevel } from "../../../../../../../src/sagittal/notations/ji"
-import { EventAnalysis } from "../../../../../../../src/scripts/jiNotationBound/history/events"
+import {
+    jiNotationLevelsBestCumulativeHistoryRanks,
+    jiNotationLevelsBestHistoryRanks,
+} from "../../../../../../../src/scripts/jiNotationBound/globals"
+import { EventType } from "../../../../../../../src/scripts/jiNotationBound/histories"
 import { formatJiNotationLevelAnalysis } from "../../../../../../../src/scripts/jiNotationBound/io/terminal/level/levelAnalysis"
+import { RANKS } from "../../../../../../../src/scripts/jiNotationBound/ranks"
 
 describe("formatJiNotationLevelAnalysis", (): void => {
-    it("gives an explanation per JI notation level of what JI notation bounds have what ranks there -- both purely within the level, and though all levels up to that point", (): void => {
+    it("gives an explanation per JI notation level of what JI notation bounds have what ranks there — both purely within the level, and though all levels up to that point", (): void => {
         const jiNotationLevel = JiNotationLevel.ULTRA
-        const jiNotationLevelBestHistoryRanks = [
-            18, 23, 13
-        ] as Record<number, number> as Record<number, Maybe<Count<Integer & Rank<EventAnalysis>>>>
-        const jiNotationLevelBestCumulativeHistoryRanks = [
-            18, 17, 15
-        ] as Record<number, number> as Record<number, Count<Integer & Rank<EventAnalysis>>>
+        jiNotationLevelsBestHistoryRanks[ jiNotationLevel ] = {
+            [ RANKS[ EventType.INA_MIDPOINT ] ]: 18 as Count<Integer & Rank<EventType>>,
+            [ RANKS[ EventType.COMMA_MEAN ] ]: 23 as Count<Integer & Rank<EventType>>,
+            [ RANKS[ EventType.SIZE_CATEGORY_BOUND ] ]: 13 as Count<Integer & Rank<EventType>>,
+        }
+        jiNotationLevelsBestCumulativeHistoryRanks[ jiNotationLevel ] = {
+            [ RANKS[ EventType.INA_MIDPOINT ] ]: 18 as Count<Integer & Rank<EventType>>,
+            [ RANKS[ EventType.COMMA_MEAN ] ]: 17 as Count<Integer & Rank<EventType>>,
+            [ RANKS[ EventType.SIZE_CATEGORY_BOUND ] ]: 15 as Count<Integer & Rank<EventType>>,
+        }
 
-        const actual = formatJiNotationLevelAnalysis(
-            jiNotationLevel,
-            jiNotationLevelBestHistoryRanks,
-            jiNotationLevelBestCumulativeHistoryRanks,
-        )
+        const actual = formatJiNotationLevelAnalysis(jiNotationLevel)
 
         const expected = [
             "Ultra              \there   \tcumulative".underline,

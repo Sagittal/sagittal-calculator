@@ -1,12 +1,12 @@
-import { Comma, KeyPath, sort } from "../../../general"
-import { analyzeComma, CommaAnalysis } from "../../../sagittal"
+import { Comma, KeyPath, RecordKey, sort } from "../../../general"
+import { analyzeComma, CommaAnalysis, Tina } from "../../../sagittal"
 import { MAX_TINA_SIZES } from "./constants"
 
 const computeCommaAnalysesSortedByTinaEntries = (commas: Comma[]): Array<[string, CommaAnalysis[]]> => {
     const commaAnalyses = commas.map((comma: Comma): CommaAnalysis => analyzeComma(comma))
     sort(commaAnalyses, { by: "cents" as KeyPath })
 
-    const commaAnalysesByTina: Record<number, CommaAnalysis[]> = {
+    const commaAnalysesByTina: Record<RecordKey<Tina>, CommaAnalysis[]> = {
         [ 0.5 ]: [],
         [ 1 ]: [],
         [ 1.5 ]: [],

@@ -1,4 +1,4 @@
-import { Exponent, Integer, Max, Min, Prime } from "../../../../../../../../src/general"
+import { Exponent, Max, Min, Prime } from "../../../../../../../../src/general"
 import { Denominator } from "../../../../../../../../src/general/math"
 import { N2D3P9 } from "../../../../../../../../src/sagittal"
 import * as d39

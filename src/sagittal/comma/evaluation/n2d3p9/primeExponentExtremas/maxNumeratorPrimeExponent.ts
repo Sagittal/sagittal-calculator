@@ -1,4 +1,4 @@
-import { Exponent, floor, Integer, log, Max, Numerator, Power, Prime } from "../../../../../general"
+import { Exponent, floor, log, Max, Numerator, Power, Prime } from "../../../../../general"
 import { N2D3P9 } from "../types"
 
 const computeMaxNumeratorPrimeExponentGivenMaxN2D3P9 = (

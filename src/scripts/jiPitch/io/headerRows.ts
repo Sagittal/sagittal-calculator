@@ -1,13 +1,4 @@
-import {
-    Id,
-    Io,
-    join,
-    Row,
-    SPACE,
-    splitColumnTitlesIntoRowsBySpaces,
-    sumTexts,
-    TwoThreeFreeClass,
-} from "../../../general"
+import { Id, Io, Row, splitColumnTitlesIntoRowsBySpaces, TwoThreeFreeClass } from "../../../general"
 import { CommaAnalysis, JiPitchAnalysis, SymbolClass } from "../../../sagittal"
 
 const JI_PITCH_COLUMN_TITLES = [

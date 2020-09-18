@@ -1,6 +1,6 @@
 import { Integer, Name, Pitch, Rank } from "../../../general"
 import { JiNotationLevel } from "../../../sagittal"
-import { HistoricalEvent } from "../histories"
+import { EventType, HistoricalEvent } from "../histories"
 import { EventAnalysis, HistoryAnalysis } from "../history"
 
 interface EventConsolidation extends HistoricalEvent {
@@ -8,8 +8,8 @@ interface EventConsolidation extends HistoricalEvent {
     isBestPossibleHistoryMember: boolean,
     isPossibleHistoryMember: boolean,
     nextEvents: Name<Pitch>[],
-    rankOfBestRankedEventInAnyMemberHistory: Integer & Rank<EventAnalysis>,
-    rankOfBestRankedMemberHistory: Integer & Rank<EventAnalysis>,
+    rankOfBestRankedEventInAnyMemberHistory: Integer & Rank<EventType>,
+    rankOfBestRankedMemberHistory: Integer & Rank<EventType>,
 }
 
 type HistoryConsolidation = Partial<Record<JiNotationLevel, EventConsolidation[]>>

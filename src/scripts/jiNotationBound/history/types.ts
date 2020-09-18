@@ -1,5 +1,6 @@
 import { Cents, Integer, Multiplier, Rank, Sum } from "../../../general"
 import { Ina, Tina } from "../../../sagittal"
+import { EventType } from "../histories"
 import { EventAnalysis } from "./events"
 
 type Score = number & { _ScoreBrand: "Score" }
@@ -12,7 +13,7 @@ interface HistoryAnalysis {
     initialPositionTinaDistance: Multiplier<Tina>,
     cents: Cents,
     possible: boolean,
-    rank: Integer & Rank<EventAnalysis>,
+    rank: Integer & Rank<EventType>,
     score: Score,
     tinaError: Multiplier<Tina>,
 }

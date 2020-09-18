@@ -5,7 +5,7 @@ import { computeJiPitchRow } from "../row"
 import { JI_PITCH_TITLE } from "../titles"
 
 const computeJiPitchOutput = (
-    jiPitchAnalysis: JiPitchAnalysis
+    jiPitchAnalysis: JiPitchAnalysis,
 ): Io => {
     const jiPitchHeaderRows = computeJiPitchHeaderRows()
     const headerRowCount = count(jiPitchHeaderRows)
@@ -17,7 +17,7 @@ const computeJiPitchOutput = (
 
     return sumTexts(
         JI_PITCH_TITLE,
-        formatTable(jiPitchTable, { headerRowCount })
+        formatTable(jiPitchTable, { headerRowCount }),
     )
 }
 

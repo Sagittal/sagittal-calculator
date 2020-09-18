@@ -9,7 +9,7 @@ describe("computeExtendedHistories", (): void => {
 
     let passedInHistoryEvent: HistoricalEvent = {
         jiNotationLevel: JiNotationLevel.HIGH,
-        type: EventType.INA,
+        type: EventType.INA_MIDPOINT,
         name: "16.5°47" as Name<Pitch>,
         cents: 45.45 as Cents,
     }
@@ -33,7 +33,7 @@ describe("computeExtendedHistories", (): void => {
                 passedInHistoryEvent,
                 {
                     jiNotationLevel: JiNotationLevel.ULTRA,
-                    type: EventType.INA,
+                    type: EventType.INA_MIDPOINT,
                     name: "23.5°58" as Name<Pitch>,
                     cents: 46.062028 as Cents,
                 },
@@ -42,7 +42,7 @@ describe("computeExtendedHistories", (): void => {
                 passedInHistoryEvent,
                 {
                     jiNotationLevel: JiNotationLevel.ULTRA,
-                    type: EventType.MEAN,
+                    type: EventType.COMMA_MEAN,
                     name: "'//| )//|" as Name<Pitch>,
                     cents: 45.681795 as Cents,
                 },
@@ -51,7 +51,7 @@ describe("computeExtendedHistories", (): void => {
                 passedInHistoryEvent,
                 {
                     jiNotationLevel: JiNotationLevel.ULTRA,
-                    type: EventType.SIZE,
+                    type: EventType.SIZE_CATEGORY_BOUND,
                     name: "S|M" as Name<Pitch>,
                     cents: 45.112498 as Cents,
                 },

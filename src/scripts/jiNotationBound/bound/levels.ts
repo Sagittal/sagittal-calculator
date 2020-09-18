@@ -1,13 +1,7 @@
-import { Count, increment, Integer, Maybe, Rank } from "../../../general"
-import { JiNotationLevel } from "../../../sagittal"
+import { Count, increment, Integer, Rank } from "../../../general"
+import { jiNotationLevelsBestCumulativeHistoryRanks, jiNotationLevelsBestHistoryRanks } from "../globals"
+import { EventType } from "../histories"
 import { EventAnalysis, HistoryAnalysis } from "../history"
-
-const jiNotationLevelsBestHistoryRanks:
-    Record<JiNotationLevel, Record<number, Maybe<Count<Integer & Rank<EventAnalysis>>>>> =
-    {} as Record<JiNotationLevel, Record<number, Maybe<Count<Integer & Rank<EventAnalysis>>>>>
-const jiNotationLevelsBestCumulativeHistoryRanks:
-    Record<JiNotationLevel, Record<number, Count<Integer & Rank<EventAnalysis>>>> =
-    {} as Record<JiNotationLevel, Record<number, Count<Integer & Rank<EventAnalysis>>>>
 
 const updateJiNotationLevelAnalysis = (bestPossibleHistory: HistoryAnalysis): void => {
     let cumulativeRank = 0
@@ -19,22 +13,22 @@ const updateJiNotationLevelAnalysis = (bestPossibleHistory: HistoryAnalysis): vo
         }
 
         if (!jiNotationLevelsBestHistoryRanks[ jiNotationLevel ]) {
-            jiNotationLevelsBestHistoryRanks[ jiNotationLevel ] = []
+            jiNotationLevelsBestHistoryRanks[ jiNotationLevel ] = {}
         }
         if (!jiNotationLevelsBestHistoryRanks[ jiNotationLevel ][ rank ]) {
             jiNotationLevelsBestHistoryRanks[ jiNotationLevel ][ rank ] =
-                0 as Count<Integer & Rank<EventAnalysis>>
+                0 as Count<Integer & Rank<EventType>>
         }
         jiNotationLevelsBestHistoryRanks[ jiNotationLevel ][ rank ] = increment(
-            jiNotationLevelsBestHistoryRanks[ jiNotationLevel ][ rank ] as Count<Integer & Rank<EventAnalysis>>
+            jiNotationLevelsBestHistoryRanks[ jiNotationLevel ][ rank ] as Count<Integer & Rank<EventType>>,
         )
 
         if (!jiNotationLevelsBestCumulativeHistoryRanks[ jiNotationLevel ]) {
-            jiNotationLevelsBestCumulativeHistoryRanks[ jiNotationLevel ] = []
+            jiNotationLevelsBestCumulativeHistoryRanks[ jiNotationLevel ] = {}
         }
         if (!jiNotationLevelsBestCumulativeHistoryRanks[ jiNotationLevel ][ cumulativeRank ]) {
             jiNotationLevelsBestCumulativeHistoryRanks[ jiNotationLevel ][ cumulativeRank ] =
-                0 as Count<Integer & Rank<EventAnalysis>>
+                0 as Count<Integer & Rank<EventType>>
         }
         jiNotationLevelsBestCumulativeHistoryRanks[ jiNotationLevel ][ cumulativeRank ] =
             increment(jiNotationLevelsBestCumulativeHistoryRanks[ jiNotationLevel ][ cumulativeRank ])
@@ -42,7 +36,5 @@ const updateJiNotationLevelAnalysis = (bestPossibleHistory: HistoryAnalysis): vo
 }
 
 export {
-    jiNotationLevelsBestHistoryRanks,
-    jiNotationLevelsBestCumulativeHistoryRanks,
     updateJiNotationLevelAnalysis,
 }

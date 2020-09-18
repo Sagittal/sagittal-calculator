@@ -1,4 +1,4 @@
-import { Exponent, Integer, Max, Numerator, Prime } from "../../../../../../../src/general"
+import { Exponent, Max, Numerator, Prime } from "../../../../../../../src/general"
 import { N2D3P9 } from "../../../../../../../src/sagittal/comma/evaluation/n2d3p9"
 import { computeMaxNumeratorPrimeExponentGivenMaxN2D3P9 } from "../../../../../../../src/sagittal/comma/evaluation/n2d3p9/primeExponentExtremas/maxNumeratorPrimeExponent"
 

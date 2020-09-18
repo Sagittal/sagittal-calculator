@@ -2,7 +2,6 @@ import {
     Exponent,
     FIVE_PRIME_INDEX,
     increment,
-    Integer,
     Max,
     Numerator,
     Prime,

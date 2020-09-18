@@ -1,6 +1,6 @@
-import { BASE_2, Exponent, pow } from "../../../general"
+import { BASE_2, decrement, Exponent, pow } from "../../../general"
 import { JI_NOTATION_LEVELS } from "../../../sagittal"
-import { RANKS } from "../bound"
+import { RANKS } from "../ranks"
 import { computeBinaryScoreRepresentationIndex } from "./binaryScoreRepresentationCardinality"
 import { EventAnalysis } from "./events"
 import { Score } from "./types"
@@ -13,7 +13,7 @@ const computeScore = (eventAnalyses: EventAnalysis[]): Score => {
 
     eventAnalyses.forEach((eventAnalysis: EventAnalysis): void => {
         const binaryScoreRepresentationIndex = computeBinaryScoreRepresentationIndex(
-            eventAnalysis.rank,
+            decrement(eventAnalysis.rank),
             JI_NOTATION_LEVELS.indexOf(eventAnalysis.jiNotationLevel),
         )
 

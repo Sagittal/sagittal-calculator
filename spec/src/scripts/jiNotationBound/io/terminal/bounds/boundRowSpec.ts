@@ -1,8 +1,9 @@
-import { Cents, Id, Integer, Multiplier, Rank, Row, Sum } from "../../../../../../../src/general"
+import { Cents, Id, Multiplier, Row, Sum } from "../../../../../../../src/general"
 import { Ina, JiNotationBound, JiNotationLevel, Tina } from "../../../../../../../src/sagittal"
 import { JiNotationBoundAnalysis } from "../../../../../../../src/scripts/jiNotationBound/bound"
-import { EventAnalysis } from "../../../../../../../src/scripts/jiNotationBound/history"
+import { EventType } from "../../../../../../../src/scripts/jiNotationBound/histories"
 import { computeJiNotationBoundRow } from "../../../../../../../src/scripts/jiNotationBound/io/terminal/bounds/boundRow"
+import { RANKS } from "../../../../../../../src/scripts/jiNotationBound/ranks"
 import {
     eventAnalysisFixture,
     historyAnalysisFixture,
@@ -25,27 +26,27 @@ describe("computeJiNotationBoundRow", (): void => {
                     {
                         ...eventAnalysisFixture,
                         jiNotationLevel: JiNotationLevel.ULTRA,
-                        rank: 0 as Integer & Rank<EventAnalysis>,
+                        rank: RANKS[ EventType.INA_MIDPOINT ],
                         distance: 0.000 as Cents,
                         inaDistance: 0.000 as Multiplier<Ina>,
                     },
                     {
                         ...eventAnalysisFixture,
                         jiNotationLevel: JiNotationLevel.EXTREME,
-                        rank: 0 as Integer & Rank<EventAnalysis>,
+                        rank: RANKS[ EventType.INA_MIDPOINT ],
                         distance: 0.333 as Cents,
                         inaDistance: 0.682 as Multiplier<Ina>,
                     },
                     {
                         ...eventAnalysisFixture,
                         jiNotationLevel: JiNotationLevel.INSANE,
-                        rank: 1 as Integer & Rank<EventAnalysis>,
+                        rank: RANKS[ EventType.COMMA_MEAN ],
                         distance: 0.022 as Cents,
                         inaDistance: 0.157 as Multiplier<Ina>,
                     },
                 ],
             },
-            bestRank: 1 as Integer & Rank<EventAnalysis>,
+            bestRank: RANKS[ EventType.COMMA_MEAN ],
             initialPosition: 5.48533 as Cents,
             initialPositionTinaDistance: 0.0393 as Multiplier<Tina>,
             bestPossibleHistoryTotalDistance: 0.355 as Cents,
@@ -65,9 +66,9 @@ describe("computeJiNotationBoundRow", (): void => {
             "|( ",
             " ",
             " ",
-            "  0    ",
-            "  0    ",
             "  1    ",
+            "  1    ",
+            "  2    ",
             "",
             "",
             "  0.333",

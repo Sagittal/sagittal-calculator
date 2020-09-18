@@ -2,9 +2,9 @@ import { Cents, Name, Pitch } from "../../../general"
 import { JiNotationLevel } from "../../../sagittal"
 
 enum EventType {
-    INA = "ina",
-    MEAN = "mean",
-    SIZE = "size",
+    INA_MIDPOINT = "inaMidpoint",
+    COMMA_MEAN = "commaMean",
+    SIZE_CATEGORY_BOUND = "sizeCategoryBound",
 }
 
 interface HistoricalEvent {

@@ -1,5 +1,5 @@
 import "colors"
-import { ColorMethod, Count, formatTable, Io, NEWLINE, Row, Table } from "../../../../../src/general"
+import { ColorMethod, Count, Io, NEWLINE, Row, Table } from "../../../../../src/general"
 import { formatTableForTerminal } from "../../../../../src/general/io/table/tableForTerminal"
 import { Justification } from "../../../../../src/general/io/table/types"
 

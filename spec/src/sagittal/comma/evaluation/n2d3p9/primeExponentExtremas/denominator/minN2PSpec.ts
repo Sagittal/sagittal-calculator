@@ -1,4 +1,4 @@
-import { Integer, Max, Min, Prime } from "../../../../../../../../src/general"
+import { Max, Min, Prime } from "../../../../../../../../src/general"
 import { Denominator, Exponent, Numerator } from "../../../../../../../../src/general/math"
 import { computeMinN2PForCandidateMaxDenominatorPrimeExponentGivenMaxN2D3P9 } from "../../../../../../../../src/sagittal/comma/evaluation/n2d3p9/primeExponentExtremas/denominator/minN2P"
 import {

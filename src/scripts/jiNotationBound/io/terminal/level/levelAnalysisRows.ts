@@ -1,29 +1,32 @@
-import { Count, formatInteger, Integer, Maybe, Rank, Row } from "../../../../../general"
+import { Count, formatInteger, Integer, Rank, RecordKey, Row } from "../../../../../general"
 import { JiNotationLevel } from "../../../../../sagittal"
-import { EventAnalysis } from "../../../history"
-import { FORMATTED_RANK_NAMES } from "../rankNames"
+import { jiNotationLevelsBestCumulativeHistoryRanks, jiNotationLevelsBestHistoryRanks } from "../../../globals"
+import { EventType } from "../../../histories"
+import { FORMATTED_RANKS } from "../rankNames"
 
-const computeLevelAnalysisRows = (
-    jiNotationLevelsBestHistoryRanks: Record<number, Maybe<Count<Integer & Rank<EventAnalysis>>>>,
-    jiNotationLevelsBestCumulativeHistoryRanks: Record<number, Count<Integer & Rank<EventAnalysis>>>,
-): Array<Row<{ of: JiNotationLevel }>> => {
+const computeJiNotationLevelAnalysisRows = (jiNotationLevel: JiNotationLevel): Array<Row<{ of: JiNotationLevel }>> => {
     const rows = [] as Array<Row<{ of: JiNotationLevel }>>
 
-    const jiNotationLevelsBestHistoryRanksEntries =
-        Object.entries(jiNotationLevelsBestHistoryRanks) as unknown[] as Array<[number, Integer & Rank<EventAnalysis>]>
+    const jiNotationLevelsBestHistoryRanksEntries = Object.entries(
+        jiNotationLevelsBestHistoryRanks[ jiNotationLevel ],
+    ) as unknown[] as Array<[RecordKey<Integer & Rank<EventType>>, Count<Integer & Rank<EventType>>]>
 
     jiNotationLevelsBestHistoryRanksEntries
-        .forEach(([rankIndex, bestHistoryRankCount]: [number, Integer & Rank<EventAnalysis>]): void => {
-            let formattedBestHistoryRankCount = formatInteger(bestHistoryRankCount)
+        .forEach((
+            [rank, bestHistoryRankCount]:
+                [RecordKey<Integer & Rank<EventType>>, Count<Integer & Rank<EventType>>],
+        ): void => {
+            let formattedBestHistoryRankCount =
+                formatInteger(bestHistoryRankCount as Count<Integer & Rank<EventType>>)
 
-            const bestCumulativeHistoryRankCount = jiNotationLevelsBestCumulativeHistoryRanks[ rankIndex ]
+            const bestCumulativeHistoryRankCount = jiNotationLevelsBestCumulativeHistoryRanks[ jiNotationLevel ][ rank ]
             let formattedBestCumulativeHistoryRankCount = formatInteger(bestCumulativeHistoryRankCount)
 
             const jiNotationLevelRankRow = [
-                FORMATTED_RANK_NAMES[ rankIndex ],
+                FORMATTED_RANKS[ rank ],
                 formattedBestHistoryRankCount,
                 formattedBestCumulativeHistoryRankCount,
-            ] as Row<{ of: JiNotationLevel }>
+            ] as Row as Row<{ of: JiNotationLevel }>
 
             rows.push(jiNotationLevelRankRow)
         })
@@ -32,5 +35,5 @@ const computeLevelAnalysisRows = (
 }
 
 export {
-    computeLevelAnalysisRows,
+    computeJiNotationLevelAnalysisRows,
 }

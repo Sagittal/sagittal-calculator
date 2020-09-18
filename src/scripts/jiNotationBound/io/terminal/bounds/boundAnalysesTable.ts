@@ -1,7 +1,7 @@
 import { ColorMethod, Count, formatTable, Io, Row, sumTexts, Table } from "../../../../../general"
 import { JI_NOTATION_BOUNDS } from "../../../../../sagittal"
 import { JiNotationBoundAnalysis } from "../../../bound"
-import { JI_NOTATION_BOUND_COLORS } from "../boundColors"
+import { RANK_COLOR_METHODS } from "../rankColors"
 import { JI_NOTATION_BOUND_ANALYSES_TABLE_TITLE } from "../titles"
 import { computeJiNotationBoundRow } from "./boundRow"
 import { computeJiNotationBoundAnalysesHeaderRows } from "./headerRows"
@@ -15,7 +15,7 @@ const computeJiNotationBoundAnalysesTable = (jiNotationBoundAnalyses: JiNotation
     jiNotationBoundAnalyses.forEach((jiNotationBoundAnalysis: JiNotationBoundAnalysis, index: number): void => {
         const jiNotationBound = JI_NOTATION_BOUNDS[ index ]
         table.push(computeJiNotationBoundRow(jiNotationBoundAnalysis, { jiNotationBound }))
-        colors.push(JI_NOTATION_BOUND_COLORS[ jiNotationBoundAnalysis.bestRank ])
+        colors.push(RANK_COLOR_METHODS[ jiNotationBoundAnalysis.bestRank ])
     })
 
     return sumTexts(JI_NOTATION_BOUND_ANALYSES_TABLE_TITLE, formatTable(table, { colors, headerRowCount }))

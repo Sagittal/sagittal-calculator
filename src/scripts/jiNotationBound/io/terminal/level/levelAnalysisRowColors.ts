@@ -1,17 +1,16 @@
-import { ColorMethod, Count, Integer, Maybe, Rank } from "../../../../../general"
-import { EventAnalysis } from "../../../history"
-import { JI_NOTATION_BOUND_COLORS } from "../boundColors"
+import { ColorMethod, Maybe } from "../../../../../general"
+import { JiNotationLevel } from "../../../../../sagittal"
+import { jiNotationLevelsBestHistoryRanks } from "../../../globals"
+import { RANK_COLOR_METHODS } from "../rankColors"
 
-const computeLevelAnalysisRowColors = (
-    jiNotationLevelsBestHistoryRanks: Record<number, Maybe<Count<Integer & Rank<EventAnalysis>>>>,
-): Array<Maybe<ColorMethod>> => {
+const computeJiNotationLevelAnalysisRowColors = (jiNotationLevel: JiNotationLevel): Array<Maybe<ColorMethod>> => {
     const colors = [] as ColorMethod[]
 
     const jiNotationLevelsBestHistoryRanksValues =
-        Object.keys(jiNotationLevelsBestHistoryRanks) as unknown[] as number[]
+        Object.keys(jiNotationLevelsBestHistoryRanks[ jiNotationLevel ]) as unknown[] as number[]
 
     jiNotationLevelsBestHistoryRanksValues.forEach((rankIndex: number): void => {
-        const color = JI_NOTATION_BOUND_COLORS[ rankIndex ]
+        const color = RANK_COLOR_METHODS[ rankIndex ]
         colors.push(color)
     })
 
@@ -19,5 +18,5 @@ const computeLevelAnalysisRowColors = (
 }
 
 export {
-    computeLevelAnalysisRowColors,
+    computeJiNotationLevelAnalysisRowColors,
 }

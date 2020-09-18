@@ -1,8 +1,9 @@
-import { Cents, Id, Integer, Rank } from "../../../../../../../src/general"
+import { Cents, Id } from "../../../../../../../src/general"
 import { JiNotationBound } from "../../../../../../../src/sagittal/notations/ji"
 import { JiNotationBoundAnalysis } from "../../../../../../../src/scripts/jiNotationBound/bound"
-import { EventAnalysis } from "../../../../../../../src/scripts/jiNotationBound/history"
+import { EventType } from "../../../../../../../src/scripts/jiNotationBound/histories"
 import { formatJiNotationBound } from "../../../../../../../src/scripts/jiNotationBound/io"
+import { RANKS } from "../../../../../../../src/scripts/jiNotationBound/ranks"
 import {
     jiNotationBoundAnalysisFixture,
     jiNotationBoundFixture,
@@ -17,7 +18,7 @@ describe("formatJiNotationBound", (): void => {
         }
         const jiNotationBoundAnalysis: JiNotationBoundAnalysis = {
             ...jiNotationBoundAnalysisFixture,
-            bestRank: 2 as Integer & Rank<EventAnalysis>,
+            bestRank: RANKS[ EventType.SIZE_CATEGORY_BOUND ],
         }
 
         const actual = formatJiNotationBound(jiNotationBoundAnalysis, { jiNotationBound })
@@ -250,7 +251,7 @@ describe("formatJiNotationBound", (): void => {
             `        "tinaError": 0,`,
             `        "initialPositionTinaDistance": 0`,
             `    },`,
-            `    "bestRank": 2,`,
+            `    "bestRank": 3,`,
             `    "initialPosition": 0,`,
             `    "initialPositionTinaDistance": 0,`,
             `    "bestPossibleHistoryTotalDistance": 0,`,

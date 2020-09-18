@@ -21,7 +21,7 @@ import { TwoThreeFreeClassAnalysis } from "./types"
 const analyze23FreeClass = (twoThreeFreeClass: TwoThreeFreeClass): TwoThreeFreeClassAnalysis => {
     const primeLimit: Prime = computePrimeLimit(twoThreeFreeClass)
 
-    const twoThreeFreeSopfr: Sopfr<{ rough: 5 }> = 
+    const twoThreeFreeSopfr: Sopfr<{ rough: 5 }> =
         computeSopfr(computeJiPitchMonzo(twoThreeFreeClass)) as Sopfr<{ rough: 5 }>
     const n2d3p9: N2D3P9 = computeN2D3P9(twoThreeFreeClass)
 

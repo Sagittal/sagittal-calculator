@@ -1,6 +1,6 @@
 // tslint:disable max-line-length
 
-import { Integer, Max, Numerator, Prime } from "../../../../../../../../../../src/general"
+import { Max, Numerator, Prime } from "../../../../../../../../../../src/general"
 import { Exponent } from "../../../../../../../../../../src/general/math"
 import { N2D3P9 } from "../../../../../../../../../../src/sagittal/comma/evaluation/n2d3p9"
 import { computeMaxNumeratorPrimeExponentsGivenMaxN2D3P9 } from "../../../../../../../../../../src/sagittal/comma/evaluation/n2d3p9/primeExponentExtremas/denominator/sortedNumeratorPossibilities/numeratorPossibilities/maxNumeratorPrimeExponents"

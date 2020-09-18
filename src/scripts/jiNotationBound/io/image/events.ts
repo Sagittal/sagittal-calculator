@@ -1,8 +1,8 @@
 import { HexColor, Io, Multiplier, Px, subtract } from "../../../../general"
 import { JiNotationLevel } from "../../../../sagittal"
 import { EventAnalysis } from "../../history"
-import { RANK_FILLS } from "./colors"
 import { JI_NOTATION_LEVEL_BOTTOMS, JI_NOTATION_LEVEL_CENTERS } from "./levelHeights"
+import { RANK_HEX_COLORS } from "./rankColors"
 import { DOT_SIZE } from "./sizes"
 import { computeX } from "./x"
 
@@ -13,7 +13,7 @@ const visualizeEvents = (events: EventAnalysis[]): Io[] => {
     const { cents: initialPosition, rank: initialRank, jiNotationLevel: initialLevel } = initialEventAnalysis
     const initialX: Px = computeX(initialPosition)
     const initialY: Px = JI_NOTATION_LEVEL_CENTERS[ initialLevel ]
-    const initialStroke: HexColor = RANK_FILLS[ initialRank ]
+    const initialStroke: HexColor = RANK_HEX_COLORS[ initialRank ]
     eventElements.push(
         `  <circle stroke="${initialStroke}" r="${DOT_SIZE}" cx="${initialX}" cy="${initialY}" />\n` as Io,
     )
@@ -32,7 +32,7 @@ const visualizeEvents = (events: EventAnalysis[]): Io[] => {
             inaDistance: nextInaDistance,
         } = events[ index + 1 ] || {}
 
-        const stroke: HexColor = RANK_FILLS[ nextRank ]
+        const stroke: HexColor = RANK_HEX_COLORS[ nextRank ]
 
         const positionX: Px = computeX(cents)
         const positionY: Px = jiNotationLevel ?

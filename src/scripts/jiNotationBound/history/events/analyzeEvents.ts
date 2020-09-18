@@ -1,6 +1,6 @@
 import { Cents, isCloseTo } from "../../../../general"
-import { RANKS } from "../../bound"
 import { HistoricalEvent, History } from "../../histories"
+import { RANKS } from "../../ranks"
 import { computeEventDistance } from "./eventDistance"
 import { computeEventInaDistance } from "./eventInaDistance"
 import { EventAnalysis } from "./types"

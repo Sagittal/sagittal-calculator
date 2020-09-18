@@ -2,7 +2,7 @@ import { format23FreeClass, formatInteger, formatNumber, JiPitch, Row, TwoThreeF
 import { TwoThreeFreeClassAnalysis } from "../../../../sagittal"
 
 const compute23FreeClassRow = (
-    twoThreeFreeClassAnalysis: TwoThreeFreeClassAnalysis
+    twoThreeFreeClassAnalysis: TwoThreeFreeClassAnalysis,
 ): Row<{ of: TwoThreeFreeClass }> => {
     const { twoThreeFreePrimeLimit, twoThreeFreeSopfr, n2d3p9 } = twoThreeFreeClassAnalysis
 

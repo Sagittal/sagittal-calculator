@@ -15,9 +15,9 @@ const computeExtendedHistories = (
         computeBoundedSymbolClassPositions(jiNotationBound.cents, jiNotationLevel)
 
     const newEvents = [
-        ...computeEvents(jiNotationLevel, boundedSymbolClassPositions, EventType.INA),
-        ...computeEvents(jiNotationLevel, boundedSymbolClassPositions, EventType.MEAN),
-        ...computeEvents(jiNotationLevel, boundedSymbolClassPositions, EventType.SIZE),
+        ...computeEvents(jiNotationLevel, boundedSymbolClassPositions, EventType.INA_MIDPOINT),
+        ...computeEvents(jiNotationLevel, boundedSymbolClassPositions, EventType.COMMA_MEAN),
+        ...computeEvents(jiNotationLevel, boundedSymbolClassPositions, EventType.SIZE_CATEGORY_BOUND),
     ]
 
     newEvents.forEach((event: HistoricalEvent): void => {

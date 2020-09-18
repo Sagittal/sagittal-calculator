@@ -1,8 +1,10 @@
-import { Integer, Name, Pitch, Rank } from "../../../../../src/general"
+import { Name, Pitch } from "../../../../../src/general"
 import { JiNotationLevel } from "../../../../../src/sagittal/notations/ji"
 import { EventConsolidation } from "../../../../../src/scripts/jiNotationBound/consolidateHistories/types"
 import { updateEventConsolidation } from "../../../../../src/scripts/jiNotationBound/consolidateHistories/updateEventConsolidation"
+import { EventType } from "../../../../../src/scripts/jiNotationBound/histories"
 import { EventAnalysis, HistoryAnalysis } from "../../../../../src/scripts/jiNotationBound/history"
+import { RANKS } from "../../../../../src/scripts/jiNotationBound/ranks"
 import {
     eventAnalysisFixture,
     eventConsolidationFixture,
@@ -247,9 +249,9 @@ describe("updateEventConsolidation", (): void => {
             it("when the history analysis's rank is less than the rank of the best ranked history this event consolidation has so far been updated with an event from, it updates its rank of best ranked member history", (): void => {
                 const eventConsolidation: EventConsolidation = {
                     ...eventConsolidationFixture,
-                    rankOfBestRankedMemberHistory: 3 as Integer & Rank<EventAnalysis>,
+                    rankOfBestRankedMemberHistory: RANKS[ EventType.SIZE_CATEGORY_BOUND ],
                 }
-                historyAnalysis = { ...historyAnalysisFixture, rank: 2 as Integer & Rank<EventAnalysis> }
+                historyAnalysis = { ...historyAnalysisFixture, rank: RANKS[ EventType.COMMA_MEAN ] }
 
                 updateEventConsolidation(eventConsolidation, {
                     historyAnalysis,
@@ -258,15 +260,15 @@ describe("updateEventConsolidation", (): void => {
                     bestPossibleHistory,
                 })
 
-                expect(eventConsolidation.rankOfBestRankedMemberHistory).toBe(2 as Integer & Rank<EventAnalysis>)
+                expect(eventConsolidation.rankOfBestRankedMemberHistory).toBe(RANKS[ EventType.COMMA_MEAN ])
             })
 
             it("when the history analysis's rank is not less than the rank of the best ranked history this event consolidation has so far been updated with an event from, it keeps its rank of best ranked member history the same", (): void => {
                 const eventConsolidation: EventConsolidation = {
                     ...eventConsolidationFixture,
-                    rankOfBestRankedMemberHistory: 1 as Integer & Rank<EventAnalysis>,
+                    rankOfBestRankedMemberHistory: RANKS[ EventType.COMMA_MEAN ],
                 }
-                historyAnalysis = { ...historyAnalysisFixture, rank: 2 as Integer & Rank<EventAnalysis> }
+                historyAnalysis = { ...historyAnalysisFixture, rank: RANKS[ EventType.SIZE_CATEGORY_BOUND ] }
 
                 updateEventConsolidation(eventConsolidation, {
                     historyAnalysis,
@@ -275,7 +277,7 @@ describe("updateEventConsolidation", (): void => {
                     bestPossibleHistory,
                 })
 
-                expect(eventConsolidation.rankOfBestRankedMemberHistory).toBe(1 as Integer & Rank<EventAnalysis>)
+                expect(eventConsolidation.rankOfBestRankedMemberHistory).toBe(RANKS[ EventType.COMMA_MEAN ])
             })
         },
     )
@@ -284,9 +286,9 @@ describe("updateEventConsolidation", (): void => {
         it("when the event analysis's rank is less than the rank of the best ranked event this event consolidation has so far been updated with, it updates its rank of best ranked event", (): void => {
             const eventConsolidation: EventConsolidation = {
                 ...eventConsolidationFixture,
-                rankOfBestRankedEventInAnyMemberHistory: 3 as Integer & Rank<EventAnalysis>,
+                rankOfBestRankedEventInAnyMemberHistory: RANKS[ EventType.SIZE_CATEGORY_BOUND ],
             }
-            eventAnalysis = { ...eventAnalysisFixture, rank: 2 as Integer & Rank<EventAnalysis> }
+            eventAnalysis = { ...eventAnalysisFixture, rank: RANKS[ EventType.COMMA_MEAN ] }
 
             updateEventConsolidation(eventConsolidation, {
                 historyAnalysis,
@@ -295,15 +297,15 @@ describe("updateEventConsolidation", (): void => {
                 bestPossibleHistory,
             })
 
-            expect(eventConsolidation.rankOfBestRankedEventInAnyMemberHistory).toBe(2 as Integer & Rank<EventAnalysis>)
+            expect(eventConsolidation.rankOfBestRankedEventInAnyMemberHistory).toBe(RANKS[ EventType.COMMA_MEAN ])
         })
 
         it("when the event analysis's rank is not less than the rank of the best ranked event this event consolidation has so far been updated with, it keeps its rank of best ranked event the same", (): void => {
             const eventConsolidation: EventConsolidation = {
                 ...eventConsolidationFixture,
-                rankOfBestRankedEventInAnyMemberHistory: 1 as Integer & Rank<EventAnalysis>,
+                rankOfBestRankedEventInAnyMemberHistory: RANKS[ EventType.INA_MIDPOINT ],
             }
-            eventAnalysis = { ...eventAnalysisFixture, rank: 2 as Integer & Rank<EventAnalysis> }
+            eventAnalysis = { ...eventAnalysisFixture, rank: RANKS[ EventType.COMMA_MEAN ] }
 
             updateEventConsolidation(eventConsolidation, {
                 historyAnalysis,
@@ -312,7 +314,7 @@ describe("updateEventConsolidation", (): void => {
                 bestPossibleHistory,
             })
 
-            expect(eventConsolidation.rankOfBestRankedEventInAnyMemberHistory).toBe(1 as Integer & Rank<EventAnalysis>)
+            expect(eventConsolidation.rankOfBestRankedEventInAnyMemberHistory).toBe(RANKS[ EventType.INA_MIDPOINT ])
         })
     })
 })

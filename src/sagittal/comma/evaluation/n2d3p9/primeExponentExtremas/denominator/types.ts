@@ -1,4 +1,4 @@
-import { Denominator, Exponent, Integer, Max, Prime } from "../../../../../../general"
+import { Denominator, Exponent, Max, Prime } from "../../../../../../general"
 import { SortedNumeratorPossibilitiesForDenominatorPrimeGivenMaxN2D3P9 } from "./sortedNumeratorPossibilities"
 
 interface D39ForCandidateMaxDenominatorPrimeExponentOptions {

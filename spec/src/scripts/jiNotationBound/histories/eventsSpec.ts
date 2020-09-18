@@ -15,7 +15,7 @@ describe("computeEvents", (): void => {
     describe("returns an event for each snappable position between the bounded symbol class positions for this event type and JI notation level", (): void => {
         describe("for events of snapping to ina midpoint positions", (): void => {
             beforeEach((): void => {
-                eventType = EventType.INA
+                eventType = EventType.INA_MIDPOINT
             })
 
             it("works when only one ina midpoint is between the bounded symbols", (): void => {
@@ -27,7 +27,7 @@ describe("computeEvents", (): void => {
                 const expected: HistoricalEvent[] = [
                     {
                         jiNotationLevel: JiNotationLevel.ULTRA,
-                        type: EventType.INA,
+                        type: EventType.INA_MIDPOINT,
                         name: "2.5°58" as Name<HistoricalEvent>,
                         cents: 4.900215 as Cents,
                     },
@@ -47,7 +47,7 @@ describe("computeEvents", (): void => {
                     const expected: HistoricalEvent[] = [
                         {
                             jiNotationLevel: JiNotationLevel.ULTRA,
-                            type: EventType.INA,
+                            type: EventType.INA_MIDPOINT,
                             name: "2.5°58" as Name<HistoricalEvent>,
                             cents: 4.900215 as Cents,
                         },
@@ -56,7 +56,7 @@ describe("computeEvents", (): void => {
                 },
             )
 
-            it("works when multiple INA midpoints are between the bounded symbols", (): void => {
+            it("works when multiple INA_MIDPOINT midpoints are between the bounded symbols", (): void => {
                 jiNotationLevel = JiNotationLevel.HIGH
                 boundedSymbolClassPositions = computeBoundedSymbolClassPositions(28.0 as Cents, jiNotationLevel)
 
@@ -65,13 +65,13 @@ describe("computeEvents", (): void => {
                 const expected = [
                     {
                         jiNotationLevel: JiNotationLevel.HIGH,
-                        type: EventType.INA,
+                        type: EventType.INA_MIDPOINT,
                         name: "11.5°47" as Name<HistoricalEvent>,
                         cents: 27.816544 as Cents,
                     },
                     {
                         jiNotationLevel: JiNotationLevel.HIGH,
-                        type: EventType.INA,
+                        type: EventType.INA_MIDPOINT,
                         name: "12.5°47" as Name<HistoricalEvent>,
                         cents: 30.235373 as Cents,
                     },
@@ -80,7 +80,7 @@ describe("computeEvents", (): void => {
             })
 
             it(
-                "returns an empty array if there are no INA midpoints between the position's bounded symbols",
+                "returns an empty array if there are no INA_MIDPOINT midpoints between the position's bounded symbols",
                 (): void => {
                     jiNotationLevel = JiNotationLevel.ULTRA
                     boundedSymbolClassPositions = computeBoundedSymbolClassPositions(6.05 as Cents, jiNotationLevel)
@@ -95,7 +95,7 @@ describe("computeEvents", (): void => {
 
         describe("for events of snapping to comma mean positions", (): void => {
             beforeEach((): void => {
-                eventType = EventType.MEAN
+                eventType = EventType.COMMA_MEAN
             })
 
             it("works at the Medium JI notation level", (): void => {
@@ -107,7 +107,7 @@ describe("computeEvents", (): void => {
                 const expected = [
                     {
                         jiNotationLevel: JiNotationLevel.MEDIUM,
-                        type: EventType.MEAN,
+                        type: EventType.COMMA_MEAN,
                         name: "/| |)" as Name<Pitch>,
                         cents: 24.385190 as Cents,
                     },
@@ -124,7 +124,7 @@ describe("computeEvents", (): void => {
                 const expected = [
                     {
                         jiNotationLevel: JiNotationLevel.HIGH,
-                        type: EventType.MEAN,
+                        type: EventType.COMMA_MEAN,
                         name: ")/| |)" as Name<Pitch>,
                         cents: 26.074200 as Cents,
                     },
@@ -141,7 +141,7 @@ describe("computeEvents", (): void => {
                 const expected = [
                     {
                         jiNotationLevel: JiNotationLevel.ULTRA,
-                        type: EventType.MEAN,
+                        type: EventType.COMMA_MEAN,
                         name: ".|) |)" as Name<Pitch>,
                         cents: 26.287231 as Cents,
                     },
@@ -158,7 +158,7 @@ describe("computeEvents", (): void => {
                 const expected = [
                     {
                         jiNotationLevel: JiNotationLevel.EXTREME,
-                        type: EventType.MEAN,
+                        type: EventType.COMMA_MEAN,
                         name: "`.|) ,,|)" as Name<Pitch>,
                         cents: 26.220209 as Cents,
                     },
@@ -182,7 +182,7 @@ describe("computeEvents", (): void => {
                     const expected = [
                         {
                             jiNotationLevel: JiNotationLevel.HIGH,
-                            type: EventType.MEAN,
+                            type: EventType.COMMA_MEAN,
                             name: "|) )|)" as Name<Pitch>,
                             cents: 28.953101 as Cents,
                         },
@@ -194,7 +194,7 @@ describe("computeEvents", (): void => {
 
         describe("for events of snapping to size category bound positions", (): void => {
             beforeEach((): void => {
-                eventType = EventType.SIZE
+                eventType = EventType.SIZE_CATEGORY_BOUND
             })
 
             it("returns one event for each size category bound between the position's bounded symbols", (): void => {
@@ -206,7 +206,7 @@ describe("computeEvents", (): void => {
                 const expected = [
                     {
                         jiNotationLevel: JiNotationLevel.MEDIUM,
-                        type: EventType.SIZE,
+                        type: EventType.SIZE_CATEGORY_BOUND,
                         name: "C|S" as Name<Pitch>,
                         cents: 33.382492 as Cents,
                     },

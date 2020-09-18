@@ -1,25 +1,12 @@
 // tslint:disable max-line-length
 
-import { Count, Id, Rank } from "../../../../../../../src/general"
 import { JiNotationBound, JI_NOTATION_BOUNDS } from "../../../../../../../src/sagittal/notations/ji"
-import {
-    analyzeJiNotationBound,
-    rankBoundIndices,
-    rankCounts,
-} from "../../../../../../../src/scripts/jiNotationBound/bound"
+import { analyzeJiNotationBound } from "../../../../../../../src/scripts/jiNotationBound/bound"
 import { computeHistories } from "../../../../../../../src/scripts/jiNotationBound/histories"
-import { EventAnalysis } from "../../../../../../../src/scripts/jiNotationBound/history"
 import { formatRankAnalyses } from "../../../../../../../src/scripts/jiNotationBound/io/terminal/rank"
 
 describe("formatRankAnalyses", (): void => {
     it("gives the correct answer", (): void => {
-        // reset and then compute and analyze all the JI notation bounds as you would when running the main script in summary mode
-        rankCounts.forEach((_: Count<Rank<EventAnalysis>>, index: number): void => {
-            rankCounts[ index ] = 0 as Count<Rank<EventAnalysis>>
-        })
-        rankBoundIndices.forEach((_: Array<Id<JiNotationBound>>, index: number): void => {
-            rankBoundIndices[ index ] = []
-        })
         JI_NOTATION_BOUNDS.map((jiNotationBound: JiNotationBound): void => {
             const histories = computeHistories(jiNotationBound)
             analyzeJiNotationBound(histories, jiNotationBound)

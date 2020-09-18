@@ -1,8 +1,9 @@
-import { Cents, Integer, Multiplier, Name, Pitch, Rank } from "../../../../../src/general"
+import { Cents, Multiplier, Name, Pitch } from "../../../../../src/general"
 import { JiNotationLevel, Tina } from "../../../../../src/sagittal/notations/ji"
 import { consolidateHistories } from "../../../../../src/scripts/jiNotationBound/consolidateHistories"
 import { EventType } from "../../../../../src/scripts/jiNotationBound/histories"
 import { EventAnalysis, HistoryAnalysis } from "../../../../../src/scripts/jiNotationBound/history"
+import { RANKS } from "../../../../../src/scripts/jiNotationBound/ranks"
 import { eventAnalysisFixture, historyAnalysisFixture } from "../../../../helpers/src/scripts/jiNotationBound/fixtures"
 
 describe("consolidateHistories", (): void => {
@@ -10,46 +11,46 @@ describe("consolidateHistories", (): void => {
         const eventOneGoesToEventThreeAndFour: EventAnalysis = {
             ...eventAnalysisFixture,
             jiNotationLevel: JiNotationLevel.ULTRA,
-            type: EventType.MEAN,
+            type: EventType.COMMA_MEAN,
             name: "'/| )/|" as Name<Pitch>,
             cents: 24.200000 as Cents,
-            rank: 2 as Integer & Rank<EventAnalysis>,
+            rank: RANKS[ EventType.SIZE_CATEGORY_BOUND ],
             exact: false,
         }
         const eventTwoGoesToEventThree: EventAnalysis = {
             ...eventAnalysisFixture,
             jiNotationLevel: JiNotationLevel.ULTRA,
-            type: EventType.INA,
+            type: EventType.INA_MIDPOINT,
             name: "12.5°58" as Name<Pitch>,
             cents: 24.333333 as Cents,
-            rank: 1 as Integer & Rank<EventAnalysis>,
+            rank: RANKS[ EventType.COMMA_MEAN ],
             exact: false,
         }
         const eventThree: EventAnalysis = {
             ...eventAnalysisFixture,
             jiNotationLevel: JiNotationLevel.EXTREME,
-            type: EventType.MEAN,
+            type: EventType.COMMA_MEAN,
             name: ",)/|_)/|" as Name<Pitch>,
             cents: 24.581395 as Cents,
-            rank: 2 as Integer & Rank<EventAnalysis>,
+            rank: RANKS[ EventType.SIZE_CATEGORY_BOUND ],
             exact: false,
         }
         const eventFour: EventAnalysis = {
             ...eventAnalysisFixture,
             jiNotationLevel: JiNotationLevel.EXTREME,
-            type: EventType.INA,
+            type: EventType.INA_MIDPOINT,
             name: "50.5°233" as Name<Pitch>,
             cents: 24.151964 as Cents,
-            rank: 1 as Integer & Rank<EventAnalysis>,
+            rank: RANKS[ EventType.COMMA_MEAN ],
             exact: false,
         }
         const eventThreeButWithBetterRank: EventAnalysis = {
             ...eventAnalysisFixture,
             jiNotationLevel: JiNotationLevel.EXTREME,
-            type: EventType.MEAN,
+            type: EventType.COMMA_MEAN,
             name: ",)/|_)/|" as Name<Pitch>,
             cents: 24.581395 as Cents,
-            rank: 1 as Integer & Rank<EventAnalysis>,
+            rank: RANKS[ EventType.COMMA_MEAN ],
             exact: false,
         }
 
@@ -59,7 +60,7 @@ describe("consolidateHistories", (): void => {
                 eventTwoGoesToEventThree,
                 eventThreeButWithBetterRank,
             ],
-            rank: 1 as Integer & Rank<EventAnalysis>,
+            rank: RANKS[ EventType.COMMA_MEAN ],
             possible: true,
             tinaError: 0 as Multiplier<Tina>,
             cents: 24.581395 as Cents,
@@ -71,7 +72,7 @@ describe("consolidateHistories", (): void => {
                     eventOneGoesToEventThreeAndFour,
                     eventThree,
                 ],
-                rank: 2 as Integer & Rank<EventAnalysis>,
+                rank: RANKS[ EventType.SIZE_CATEGORY_BOUND ],
                 possible: true,
                 tinaError: 0 as Multiplier<Tina>,
                 cents: 24.581395 as Cents,
@@ -83,7 +84,7 @@ describe("consolidateHistories", (): void => {
                     eventOneGoesToEventThreeAndFour,
                     eventFour,
                 ],
-                rank: 2 as Integer & Rank<EventAnalysis>,
+                rank: RANKS[ EventType.SIZE_CATEGORY_BOUND ],
                 possible: false,
                 tinaError: 3.05589400712 as Multiplier<Tina>,
                 cents: 24.151964 as Cents,
@@ -93,7 +94,7 @@ describe("consolidateHistories", (): void => {
                 eventAnalyses: [
                     eventTwoGoesToEventThree,
                 ],
-                rank: 8 as Integer & Rank<EventAnalysis>,
+                rank: RANKS[ EventType.SIZE_CATEGORY_BOUND ],
                 possible: false,
                 tinaError: 2.26723955922 as Multiplier<Tina>,
                 cents: 24.900000 as Cents,
@@ -112,8 +113,8 @@ describe("consolidateHistories", (): void => {
                     isPossibleHistoryMember: true,
                     isBestPossibleHistoryMember: false,
                     exact: false,
-                    rankOfBestRankedEventInAnyMemberHistory: 2 as Integer & Rank<EventAnalysis>,
-                    rankOfBestRankedMemberHistory: 2 as Integer & Rank<EventAnalysis>,
+                    rankOfBestRankedEventInAnyMemberHistory: RANKS[ EventType.SIZE_CATEGORY_BOUND ],
+                    rankOfBestRankedMemberHistory: RANKS[ EventType.SIZE_CATEGORY_BOUND ],
                     nextEvents: [
                         eventThree.name,
                         eventFour.name,
@@ -127,8 +128,8 @@ describe("consolidateHistories", (): void => {
                     isPossibleHistoryMember: true,
                     isBestPossibleHistoryMember: true,
                     exact: false,
-                    rankOfBestRankedEventInAnyMemberHistory: 1 as Integer & Rank<EventAnalysis>,
-                    rankOfBestRankedMemberHistory: 1 as Integer & Rank<EventAnalysis>,
+                    rankOfBestRankedEventInAnyMemberHistory: RANKS[ EventType.COMMA_MEAN ],
+                    rankOfBestRankedMemberHistory: RANKS[ EventType.COMMA_MEAN ],
                     nextEvents: [
                         eventThree.name,
                         // eventImpossible.name,
@@ -144,8 +145,8 @@ describe("consolidateHistories", (): void => {
                     isPossibleHistoryMember: true,
                     isBestPossibleHistoryMember: true,
                     exact: false,
-                    rankOfBestRankedEventInAnyMemberHistory: 1 as Integer & Rank<EventAnalysis>,
-                    rankOfBestRankedMemberHistory: 1 as Integer & Rank<EventAnalysis>,
+                    rankOfBestRankedEventInAnyMemberHistory: RANKS[ EventType.COMMA_MEAN ],
+                    rankOfBestRankedMemberHistory: RANKS[ EventType.COMMA_MEAN ],
                     nextEvents: [] as Name<Pitch>[],
                 },
                 {
@@ -156,8 +157,8 @@ describe("consolidateHistories", (): void => {
                     isPossibleHistoryMember: false,
                     isBestPossibleHistoryMember: false,
                     exact: false,
-                    rankOfBestRankedEventInAnyMemberHistory: 1 as Integer & Rank<EventAnalysis>,
-                    rankOfBestRankedMemberHistory: 2 as Integer & Rank<EventAnalysis>,
+                    rankOfBestRankedEventInAnyMemberHistory: RANKS[ EventType.COMMA_MEAN ],
+                    rankOfBestRankedMemberHistory: RANKS[ EventType.SIZE_CATEGORY_BOUND ],
                     nextEvents: [] as Name<Pitch>[],
                 },
             ],
