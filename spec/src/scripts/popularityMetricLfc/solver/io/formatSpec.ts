@@ -1,4 +1,4 @@
-import { Name } from "../../../../../../src/general"
+import { Name, NEWLINE } from "../../../../../../src/general"
 import { Io } from "../../../../../../src/general/io"
 import { Combination } from "../../../../../../src/general/math"
 import { Metric, SumOfSquares } from "../../../../../../src/scripts/popularityMetricLfc/bestMetric"
@@ -49,34 +49,34 @@ describe("formatBestMetrics", (): void => {
         const actual = formatBestMetrics()
 
         const expected =
-            `{\n` +
-            `    "{max}": {\n` +
-            `        sumOfSquares: 0.014,\n` +
-            `        name: "",\n` +
-            `        submetrics: [\n` +
-            `            {\n` +
-            `                [ Parameter.MAX ]: true\n` +
-            `            }\n` +
-            `        ]\n` +
-            `    },\n` +
-            `    "{sum}": {\n` +
-            `        sumOfSquares: 0.013,\n` +
-            `        name: "",\n` +
-            `        submetrics: [\n` +
-            `            {\n` +
-            `                [ Parameter.SUM ]: true\n` +
-            `            }\n` +
-            `        ]\n` +
-            `    },\n` +
-            `    "{count}": {\n` +
-            `        sumOfSquares: 0.012,\n` +
-            `        name: "",\n` +
-            `        submetrics: [\n` +
-            `            {\n` +
-            `                [ Parameter.COUNT ]: true\n` +
-            `            }\n` +
-            `        ]\n` +
-            `    }\n` +
+            `{` + NEWLINE +
+            `    "{max}": {` + NEWLINE +
+            `        sumOfSquares: 0.014,` + NEWLINE +
+            `        name: "",` + NEWLINE +
+            `        submetrics: [` + NEWLINE +
+            `            {` + NEWLINE +
+            `                [ Parameter.MAX ]: true` + NEWLINE +
+            `            }` + NEWLINE +
+            `        ]` + NEWLINE +
+            `    },` + NEWLINE +
+            `    "{sum}": {` + NEWLINE +
+            `        sumOfSquares: 0.013,` + NEWLINE +
+            `        name: "",` + NEWLINE +
+            `        submetrics: [` + NEWLINE +
+            `            {` + NEWLINE +
+            `                [ Parameter.SUM ]: true` + NEWLINE +
+            `            }` + NEWLINE +
+            `        ]` + NEWLINE +
+            `    },` + NEWLINE +
+            `    "{count}": {` + NEWLINE +
+            `        sumOfSquares: 0.012,` + NEWLINE +
+            `        name: "",` + NEWLINE +
+            `        submetrics: [` + NEWLINE +
+            `            {` + NEWLINE +
+            `                [ Parameter.COUNT ]: true` + NEWLINE +
+            `            }` + NEWLINE +
+            `        ]` + NEWLINE +
+            `    }` + NEWLINE +
             `}`
         expect(actual).toEqual(expected)
     })

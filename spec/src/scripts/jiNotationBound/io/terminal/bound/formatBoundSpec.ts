@@ -1,4 +1,4 @@
-import { Cents, Id } from "../../../../../../../src/general"
+import { Cents, Id, NEWLINE } from "../../../../../../../src/general"
 import { JiNotationBound } from "../../../../../../../src/sagittal/notations/ji"
 import { JiNotationBoundAnalysis } from "../../../../../../../src/scripts/jiNotationBound/bound"
 import { EventType } from "../../../../../../../src/scripts/jiNotationBound/histories"
@@ -259,8 +259,8 @@ describe("formatJiNotationBound", (): void => {
             `    "historyConsolidation": {},`,
             `    "possibleHistoryCount": 0`,
             `}`,
-        ].join("\n")
+        ]
 
-        expect(actual).toEqual(expected)
+        expect(actual.split(NEWLINE)).toEqual(expected)
     })
 })
