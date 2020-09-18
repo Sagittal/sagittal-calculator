@@ -16,7 +16,7 @@ export { parse23FreeClass, parseMonzo, parseRatio } from "./parse"
 export { removeColor } from "./removeColor"
 export { stringify } from "./stringify"
 export { Column, formatTable, Row, Table, splitColumnTitlesIntoRowsBySpaces } from "./table"
-export { addTexts, join } from "./typedOperations"
+export { sumTexts, join } from "./typedOperations"
 export { ColorMethod, Filename, HexColor, Io } from "./types"
 export { Basis, computePx, Px, Scale } from "./visualize"
 export {

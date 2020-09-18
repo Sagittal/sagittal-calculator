@@ -2,7 +2,7 @@ import { indexOfFinalElement, isUndefined, Maybe } from "../../code"
 import { colorize } from "../colorize"
 import { BLANK, NEWLINE, TAB } from "../constants"
 import { Formatted } from "../format"
-import { addTexts, join } from "../typedOperations"
+import { join, sumTexts } from "../typedOperations"
 import { ColorMethod, Io } from "../types"
 import { computeColumnRange } from "./columnRange"
 import { DEFAULT_FORMAT_TABLE_OPTIONS } from "./constants"
@@ -18,6 +18,10 @@ const maybeColor = (rowText: Io, rowIndex: number, colors: Maybe<Array<Maybe<Col
 
     return rowColor ? colorize(rowText, rowColor) : rowText
 }
+
+// TODO: okay, pretty sure that if you pass some undefineds into here, you get a miserable afternoon where
+//  jasmine won't give you a stacktrace but it keeps saying can't read length of undefined
+//  which is probably inside one of the helper functions here
 
 const formatTableForTerminal = <T = unknown>(table: Table<T>, options?: Partial<FormatTableOptions<T>>): Io => {
     const {
@@ -42,7 +46,7 @@ const formatTableForTerminal = <T = unknown>(table: Table<T>, options?: Partial<
 
                 const maybeSeparator = cellIndex === indexOfFinalElement(row) ? BLANK : TAB
 
-                return addTexts(justifiedRow, justifiedCell, maybeSeparator)
+                return sumTexts(justifiedRow, justifiedCell, maybeSeparator)
             },
             BLANK,
         )
@@ -57,7 +61,7 @@ const formatTableForTerminal = <T = unknown>(table: Table<T>, options?: Partial<
 
     const formattedTable: Io = join(formattedRows, NEWLINE)
 
-    return addTexts(formattedTable, NEWLINE)
+    return sumTexts(formattedTable, NEWLINE)
 }
 
 export {

@@ -1,7 +1,7 @@
 import { indexOfFinalElement } from "../../code"
 import { BLANK, NEWLINE } from "../constants"
 import { Formatted } from "../format"
-import { addTexts, join } from "../typedOperations"
+import { join, sumTexts } from "../typedOperations"
 import { Io } from "../types"
 import { computeColumnRange } from "./columnRange"
 import { DEFAULT_FORMAT_TABLE_OPTIONS } from "./constants"
@@ -48,12 +48,12 @@ const formatTableForForum = <T = unknown>(table: Table<T>, options?: Partial<For
 
                 const maybeSeparator: Io = cellIndex === indexOfFinalElement(row) ? BLANK : separator
 
-                return addTexts(justifiedRow, justifiedCell, maybeSeparator)
+                return sumTexts(justifiedRow, justifiedCell, maybeSeparator)
             },
             BLANK,
         )
 
-        return addTexts(rowOpen, rowText, rowClose)
+        return sumTexts(rowOpen, rowText, rowClose)
     })
 
     formattedRows.unshift("[table]" as Io)
@@ -61,7 +61,7 @@ const formatTableForForum = <T = unknown>(table: Table<T>, options?: Partial<For
 
     const formattedTable: Io = join(formattedRows, NEWLINE)
 
-    return addTexts(formattedTable, NEWLINE)
+    return sumTexts(formattedTable, NEWLINE)
 }
 
 export {

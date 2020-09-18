@@ -1,4 +1,4 @@
-import { addTexts, Formatted, NEWLINE, stringify } from "../../../../../general"
+import { Formatted, NEWLINE, stringify, sumTexts } from "../../../../../general"
 import { JiNotationBoundAnalysis } from "../../../bound"
 import { extractJiNotationBoundIdentifiers } from "../boundIdentifiers"
 import { FormatJiNotationBoundOptions } from "./types"
@@ -14,7 +14,7 @@ const formatJiNotationBound = (
     const formattedJiNotationBoundAnalysis = stringify(jiNotationBoundAnalysis, { multiline: true })
         .replace(/\\\\/g, "\\")
 
-    return addTexts(
+    return sumTexts(
         formattedJiNotationBoundIdentifiers,
         NEWLINE,
         formattedJiNotationBoundAnalysis,

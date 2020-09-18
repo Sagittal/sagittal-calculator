@@ -1,6 +1,7 @@
-import { Count, Io, Rank } from "../../../../../general"
+import { Count, Io, join, NEWLINE, Rank, sumTexts } from "../../../../../general"
 import { rankCounts } from "../../../bound"
 import { EventAnalysis } from "../../../history"
+import { RANK_ANALYSES_TITLE } from "../titles"
 import { formatRankAnalysis } from "./rankAnalysis"
 
 const formatRankAnalyses = (): Io => {
@@ -14,7 +15,7 @@ const formatRankAnalyses = (): Io => {
         formattedRankAnalyses.push(formatRankAnalysis(rankCount, rankIndex))
     })
 
-    return "\n\n\n   ---   Rank Analyses   ---   \n\n\n" + formattedRankAnalyses.join("\n\n") as Io
+    return sumTexts(RANK_ANALYSES_TITLE, join(formattedRankAnalyses, sumTexts(NEWLINE, NEWLINE)))
 }
 
 export {

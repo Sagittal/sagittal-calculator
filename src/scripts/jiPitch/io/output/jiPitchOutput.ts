@@ -1,4 +1,4 @@
-import { addTexts, count, formatTable, Io, Table } from "../../../../general"
+import { count, formatTable, Io, sumTexts, Table } from "../../../../general"
 import { JiPitchAnalysis } from "../../../../sagittal"
 import { computeJiPitchHeaderRows } from "../headerRows"
 import { computeJiPitchRow } from "../row"
@@ -15,8 +15,8 @@ const computeJiPitchOutput = (
         computeJiPitchRow(jiPitchAnalysis),
     ]
 
-    return addTexts(
-        JI_PITCH_TITLE, 
+    return sumTexts(
+        JI_PITCH_TITLE,
         formatTable(jiPitchTable, { headerRowCount })
     )
 }

@@ -1,6 +1,6 @@
 const FORMATTED_RANK_NAMES = [
-    "ina midpoint       ",
-    "comma mean         ",
+    "ina midpoint",
+    "comma mean",
     "size category bound",
 ]
 

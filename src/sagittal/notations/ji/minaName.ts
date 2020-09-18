@@ -155,7 +155,7 @@ const EXTREME_NOTATION_MINAS: Record<Id<SymbolClass>, Name<Mina>> = {
 }
 
 const getMinaName = (symbolClassId: Id<SymbolClass>): Name<Mina> =>
-    (EXTREME_NOTATION_MINAS as { [ index: number ]: Name<Mina> })[ symbolClassId ]
+    (EXTREME_NOTATION_MINAS as Record<number, Name<Mina>>)[ symbolClassId ]
 
 export {
     getMinaName,

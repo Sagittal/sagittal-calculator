@@ -260,9 +260,6 @@ describe("formatJiNotationBound", (): void => {
             `}`,
         ].join("\n")
 
-        // console.log("actual", actual)
-        // console.log("expected", expected)
-
         expect(actual).toEqual(expected)
     })
 })

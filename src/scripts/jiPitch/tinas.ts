@@ -6,7 +6,7 @@ const computeCommaAnalysesSortedByTinaEntries = (commas: Comma[]): Array<[string
     const commaAnalyses = commas.map((comma: Comma): CommaAnalysis => analyzeComma(comma))
     sort(commaAnalyses, { by: "cents" })
 
-    const commaAnalysesByTina: { [ index: number ]: CommaAnalysis[] } = {
+    const commaAnalysesByTina: Record<number, CommaAnalysis[]> = {
         [ 0.5 ]: [],
         [ 1 ]: [],
         [ 1.5 ]: [],

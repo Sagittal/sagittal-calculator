@@ -20,7 +20,9 @@ import { FormatTableOptions, Row, Table } from "./types"
 //  that should stipulate that you use the same spacing methods for the forum tables now too...
 
 const formatTable = <T = unknown>(table: Table<T>, options?: Partial<FormatTableOptions<T>>): Io => {
-    const rowLengths = table.map((row: Row<{ of: T }>): Count<Formatted<T>> => count(row))
+    const rowLengths = table.map((row: Row<{ of: T }>): Count<Formatted<T>> => {
+        return count(row)
+    })
     const distinctRowLengths = computeDeepDistinct(rowLengths)
 
     if (distinctRowLengths.length > 1) {

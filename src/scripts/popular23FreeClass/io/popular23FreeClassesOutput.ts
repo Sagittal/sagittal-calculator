@@ -1,4 +1,4 @@
-import { addTexts, Count, count, formatTable, Io, Max, Ranked, Row, Table } from "../../../general"
+import { Count, count, formatTable, Io, Max, Ranked, Row, sumTexts, Table } from "../../../general"
 import { N2D3P9 } from "../../../sagittal"
 import { popular23FreeClassesScriptGroupSettings } from "../globals"
 import { Popular23FreeClassAnalysis } from "../types"
@@ -41,7 +41,7 @@ const computePopular23FreeClassesOutput = (
         const popular23FreeClassesTableTitle =
             `count of results with N2D3P9 ≤ ${maxN2D3P9}: ${popular23FreeClasses.length}\n\n` as Io
 
-        return addTexts(popular23FreeClassesTableTitle, popular23FreeClassesOutput)
+        return sumTexts(popular23FreeClassesTableTitle, popular23FreeClassesOutput)
     }
 }
 

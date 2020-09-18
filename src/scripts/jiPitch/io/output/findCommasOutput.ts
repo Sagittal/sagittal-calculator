@@ -1,4 +1,4 @@
-import { addTexts, count, formatTable, Id, Io, Table } from "../../../../general"
+import { count, formatTable, Id, Io, sumTexts, Table } from "../../../../general"
 import { CommaAnalysis, DEFAULT_FIND_COMMAS_OPTIONS, SymbolClass } from "../../../../sagittal"
 import { FindCommasOptions } from "../../types"
 import { computeFindCommasHeaderRows } from "../headerRows"
@@ -17,8 +17,8 @@ const computeFindCommasOutput = (
         ...commas.map(computeFindCommasRow),
     ]
 
-    return addTexts(
-        computeFindCommasTitle(findCommasOptions), 
+    return sumTexts(
+        computeFindCommasTitle(findCommasOptions),
         formatTable(findCommasTable, { headerRowCount })
     )
 }

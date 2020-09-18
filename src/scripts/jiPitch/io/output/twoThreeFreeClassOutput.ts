@@ -1,4 +1,4 @@
-import { addTexts, count, formatTable, Io, Table, TwoThreeFreeClass } from "../../../../general"
+import { count, formatTable, Io, sumTexts, Table, TwoThreeFreeClass } from "../../../../general"
 import { JiPitchAnalysis } from "../../../../sagittal"
 import { compute23FreeClassHeaderRows } from "../headerRows"
 import { compute23FreeClassRow } from "../row"
@@ -15,8 +15,8 @@ const compute23FreeClassOutput = (
         compute23FreeClassRow(jiPitchAnalysis),
     ]
 
-    return addTexts(
-        TWO_THREE_FREE_CLASS_TITLE, 
+    return sumTexts(
+        TWO_THREE_FREE_CLASS_TITLE,
         formatTable(twoThreeFreeClassTable, { headerRowCount })
     )
 }

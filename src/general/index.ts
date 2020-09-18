@@ -35,7 +35,7 @@ export {
     computeIsEmpty,
 } from "./code"
 export {
-    addTexts,
+    sumTexts,
     alignFormattedNumber,
     IDENTIFYING_COMMA_NAME_CHARS,
     ANY_MONZO_CHARS,

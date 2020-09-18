@@ -1,4 +1,4 @@
-import { addTexts, count, formatTable, Id, Io } from "../../../../general"
+import { count, formatTable, Id, Io, sumTexts } from "../../../../general"
 import { CommaAnalysis, SymbolClass } from "../../../../sagittal"
 import { computeNotatingCommasWithMaybeSagittalSymbolClassesHeaderRows } from "../headerRows"
 import { computeNotatingCommasRow } from "../row"
@@ -15,7 +15,7 @@ const computeNotatingCommasOutput = (
         ...notatingCommaAnalysesWithMaybeSagittalSymbolClassIds.map(computeNotatingCommasRow),
     ]
 
-    return addTexts(
+    return sumTexts(
         NOTATING_COMMAS_TITLE,
         formatTable(maybeNotatingCommasWithMaybeSagittalSymbolClassesTable, { headerRowCount }),
     )

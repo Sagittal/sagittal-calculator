@@ -2,7 +2,7 @@ import { computeIsEmpty } from "../code"
 import { Count } from "../types"
 import { Char } from "./types"
 
-const addTexts = <T extends string>(...strings: T[]): T => {
+const sumTexts = <T extends string>(...strings: T[]): T => {
     if (computeIsEmpty(strings)) {
         return "" as T
     }
@@ -11,7 +11,7 @@ const addTexts = <T extends string>(...strings: T[]): T => {
 
     const nextSum: T = computeIsEmpty(strings) ?
         "" as T :
-        addTexts(...strings)
+        sumTexts(...strings)
 
     return nextSum + previousValue as T
 }
@@ -25,7 +25,7 @@ const join = <T extends string>(array: T[], separator?: T): T => {
 }
 
 export {
-    addTexts,
+    sumTexts,
     length,
     join,
 }

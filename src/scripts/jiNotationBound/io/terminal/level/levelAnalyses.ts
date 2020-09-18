@@ -1,6 +1,8 @@
-import { Io, Maybe, shallowClone } from "../../../../../general"
+import { Count, Integer, Io, join, Maybe, NEWLINE, Rank, shallowClone, sumTexts } from "../../../../../general"
 import { JiNotationLevel, JI_NOTATION_LEVELS } from "../../../../../sagittal"
 import { jiNotationLevelsBestCumulativeHistoryRanks, jiNotationLevelsBestHistoryRanks } from "../../../bound"
+import { EventAnalysis } from "../../../history"
+import { LEVEL_ANALYSES_TITLE } from "../titles"
 import { formatJiNotationLevelAnalysis } from "./levelAnalysis"
 
 const formatJiNotationLevelAnalyses = (): Io => {
@@ -11,11 +13,11 @@ const formatJiNotationLevelAnalyses = (): Io => {
             return
         }
 
-        const jiNotationLevelBestHistoryRanks: { [ index: number ]: Maybe<number> } =
+        const jiNotationLevelBestHistoryRanks: Record<number, Maybe<Count<Integer & Rank<EventAnalysis>>>> =
             jiNotationLevelsBestHistoryRanks[ jiNotationLevel ]
-        const jiNotationLevelBestCumulativeHistoryRanks: { [ index: number ]: number } =
+        const jiNotationLevelBestCumulativeHistoryRanks: Record<number, Count<Integer & Rank<EventAnalysis>>> =
             jiNotationLevelsBestCumulativeHistoryRanks[ jiNotationLevel ]
-
+        
         formattedJiNotationLevelAnalysis.push(
             formatJiNotationLevelAnalysis(
                 jiNotationLevel,
@@ -24,9 +26,8 @@ const formatJiNotationLevelAnalyses = (): Io => {
             ),
         )
     })
-
-    return "\n\n   ---   JI Notation Level Analyses   ---   \n\n\n" + formattedJiNotationLevelAnalysis
-        .join("\n\n") as Io
+    
+    return sumTexts(LEVEL_ANALYSES_TITLE, join(formattedJiNotationLevelAnalysis, NEWLINE))
 }
 
 export {

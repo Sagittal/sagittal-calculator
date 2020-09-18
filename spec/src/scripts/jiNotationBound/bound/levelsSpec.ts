@@ -1,4 +1,4 @@
-import { Integer, Rank } from "../../../../../src/general"
+import { Count, Integer, Maybe, Rank } from "../../../../../src/general"
 import { JiNotationLevel } from "../../../../../src/sagittal/notations/ji"
 import {
     jiNotationLevelsBestCumulativeHistoryRanks,
@@ -29,8 +29,11 @@ describe("updateJiNotationLevelAnalysis", (): void => {
 
             updateJiNotationLevelAnalysis(bestPossibleHistory)
 
-            expect((jiNotationLevelsBestHistoryRanks[ JiNotationLevel.MEDIUM ] as { [ index: number ]: number })[ 0 ])
-                .toBe(1)
+            expect((jiNotationLevelsBestHistoryRanks[
+                JiNotationLevel.MEDIUM
+                ] as Record<number, Maybe<Count<Integer & Rank<EventAnalysis>>>>
+            )[ 0 ])
+                .toBe(1 as Count<Integer & Rank<EventAnalysis>>)
         })
 
         it("increments ranks at JI levels when they exist", (): void => {
@@ -49,17 +52,23 @@ describe("updateJiNotationLevelAnalysis", (): void => {
                     },
                 ],
             }
-            let formerMediumIna = 3
-            let formerHighMean = 4
+            let formerMediumIna = 3 as Count<Integer & Rank<EventAnalysis>>
+            let formerHighMean = 4 as Count<Integer & Rank<EventAnalysis>>
             jiNotationLevelsBestHistoryRanks[ JiNotationLevel.MEDIUM ] = [formerMediumIna]
             jiNotationLevelsBestHistoryRanks[ JiNotationLevel.HIGH ] = [undefined, formerHighMean]
 
             updateJiNotationLevelAnalysis(bestPossibleHistory)
 
-            expect((jiNotationLevelsBestHistoryRanks[ JiNotationLevel.MEDIUM ] as { [ index: number ]: number })[ 0 ])
-                .toBe(formerMediumIna + 1)
-            expect((jiNotationLevelsBestHistoryRanks[ JiNotationLevel.HIGH ] as { [ index: number ]: number })[ 1 ])
-                .toBe(formerHighMean + 1)
+            expect((jiNotationLevelsBestHistoryRanks[
+                    JiNotationLevel.MEDIUM
+                    ] as Record<number, Maybe<Count<Integer & Rank<EventAnalysis>>>>
+            )[ 0 ])
+                .toBe(formerMediumIna + 1 as Count<Integer & Rank<EventAnalysis>>)
+            expect((jiNotationLevelsBestHistoryRanks[
+                JiNotationLevel.HIGH
+                ] as Record<number, Maybe<Count<Integer & Rank<EventAnalysis>>>>
+            )[ 1 ])
+                .toBe(formerHighMean + 1 as Count<Integer & Rank<EventAnalysis>>)
         })
     })
 
@@ -110,13 +119,25 @@ describe("updateJiNotationLevelAnalysis", (): void => {
             updateJiNotationLevelAnalysis(bestPossibleHistory)
 
             // tslint:disable-next-line max-line-length
-            expect((jiNotationLevelsBestCumulativeHistoryRanks[ JiNotationLevel.MEDIUM ] as { [ index: number ]: number })[ 0 ]).toBe(1)
+            expect((jiNotationLevelsBestCumulativeHistoryRanks[
+                JiNotationLevel.MEDIUM
+                ] as Record<number, Maybe<Count<Integer & Rank<EventAnalysis>>>>
+            )[ 0 ]).toBe(1 as Count<Integer & Rank<EventAnalysis>>)
             // tslint:disable-next-line max-line-length
-            expect((jiNotationLevelsBestCumulativeHistoryRanks[ JiNotationLevel.HIGH ] as { [ index: number ]: number })[ 2 ]).toBe(1)
+            expect((jiNotationLevelsBestCumulativeHistoryRanks[
+                JiNotationLevel.HIGH
+                ] as Record<number, Maybe<Count<Integer & Rank<EventAnalysis>>>>
+            )[ 2 ]).toBe(1 as Count<Integer & Rank<EventAnalysis>>)
             // tslint:disable-next-line max-line-length
-            expect((jiNotationLevelsBestCumulativeHistoryRanks[ JiNotationLevel.ULTRA ] as { [ index: number ]: number })[ 2 ]).toBe(1)
+            expect((jiNotationLevelsBestCumulativeHistoryRanks[
+                JiNotationLevel.ULTRA
+                ] as Record<number, Maybe<Count<Integer & Rank<EventAnalysis>>>>
+            )[ 2 ]).toBe(1 as Count<Integer & Rank<EventAnalysis>>)
             // tslint:disable-next-line max-line-length
-            expect((jiNotationLevelsBestCumulativeHistoryRanks[ JiNotationLevel.EXTREME ] as { [ index: number ]: number })[ 3 ]).toBe(1)
+            expect((jiNotationLevelsBestCumulativeHistoryRanks[
+                JiNotationLevel.EXTREME
+                ] as Record<number, Maybe<Count<Integer & Rank<EventAnalysis>>>>
+            )[ 3 ]).toBe(1 as Count<Integer & Rank<EventAnalysis>>)
         })
     })
 })

@@ -1,23 +1,45 @@
-import { shallowClone } from "../../../../../../../src/general/code"
+import { Count, Integer, Rank } from "../../../../../../../src/general"
+import { Maybe, shallowClone } from "../../../../../../../src/general/code"
 import { JiNotationLevel, JI_NOTATION_LEVELS } from "../../../../../../../src/sagittal/notations/ji"
 import {
     jiNotationLevelsBestCumulativeHistoryRanks,
     jiNotationLevelsBestHistoryRanks,
 } from "../../../../../../../src/scripts/jiNotationBound/bound"
+import { EventAnalysis } from "../../../../../../../src/scripts/jiNotationBound/history/events"
 import { formatJiNotationLevelAnalyses } from "../../../../../../../src/scripts/jiNotationBound/io/terminal/level"
 
 describe("formatJiNotationLevelAnalyses", (): void => {
     beforeEach((): void => {
-        jiNotationLevelsBestHistoryRanks[ JiNotationLevel.MEDIUM ] = { 1: 18, 2: 23, 3: 1, 7: 13 }
-        jiNotationLevelsBestHistoryRanks[ JiNotationLevel.HIGH ] = { 1: 18, 2: 23, 3: 1, 7: 13 }
-        jiNotationLevelsBestHistoryRanks[ JiNotationLevel.ULTRA ] = { 1: 18, 2: 23, 3: 1, 7: 13 }
-        jiNotationLevelsBestHistoryRanks[ JiNotationLevel.EXTREME ] = { 1: 18, 2: 23, 3: 1, 7: 13 }
-        jiNotationLevelsBestHistoryRanks[ JiNotationLevel.INSANE ] = { 1: 18, 2: 23, 3: 1, 7: 13 }
-        jiNotationLevelsBestCumulativeHistoryRanks[ JiNotationLevel.MEDIUM ] = { 1: 16, 2: 23, 3: 1, 7: 13 }
-        jiNotationLevelsBestCumulativeHistoryRanks[ JiNotationLevel.HIGH ] = { 1: 16, 2: 23, 3: 1, 7: 13 }
-        jiNotationLevelsBestCumulativeHistoryRanks[ JiNotationLevel.ULTRA ] = { 1: 16, 2: 23, 3: 1, 7: 13 }
-        jiNotationLevelsBestCumulativeHistoryRanks[ JiNotationLevel.EXTREME ] = { 1: 16, 2: 23, 3: 1, 7: 13 }
-        jiNotationLevelsBestCumulativeHistoryRanks[ JiNotationLevel.INSANE ] = { 1: 16, 2: 23, 3: 1, 7: 13 }
+        jiNotationLevelsBestHistoryRanks[ JiNotationLevel.MEDIUM ] = {
+            0: 18, 1: 23, 2: 1
+        } as Record<number, number> as Record<number, Maybe<Count<Integer & Rank<EventAnalysis>>>>
+        jiNotationLevelsBestHistoryRanks[ JiNotationLevel.HIGH ] = {
+            0: 18, 1: 23, 2: 1
+        } as Record<number, number> as Record<number, Maybe<Count<Integer & Rank<EventAnalysis>>>>
+        jiNotationLevelsBestHistoryRanks[ JiNotationLevel.ULTRA ] = {
+            0: 18, 1: 23, 2: 1
+        } as Record<number, number> as Record<number, Maybe<Count<Integer & Rank<EventAnalysis>>>>
+        jiNotationLevelsBestHistoryRanks[ JiNotationLevel.EXTREME ] = {
+            0: 18, 1: 23, 2: 1
+        } as Record<number, number> as Record<number, Maybe<Count<Integer & Rank<EventAnalysis>>>>
+        jiNotationLevelsBestHistoryRanks[ JiNotationLevel.INSANE ] = {
+            0: 18, 1: 23, 2: 1
+        } as Record<number, number> as Record<number, Maybe<Count<Integer & Rank<EventAnalysis>>>>
+        jiNotationLevelsBestCumulativeHistoryRanks[ JiNotationLevel.MEDIUM ] = {
+            0: 16, 1: 23, 2: 1
+        } as Record<number, number> as Record<number, Count<Integer & Rank<EventAnalysis>>>
+        jiNotationLevelsBestCumulativeHistoryRanks[ JiNotationLevel.HIGH ] = {
+            0: 16, 1: 23, 2: 1
+        } as Record<number, number> as Record<number, Count<Integer & Rank<EventAnalysis>>>
+        jiNotationLevelsBestCumulativeHistoryRanks[ JiNotationLevel.ULTRA ] = {
+            0: 16, 1: 23, 2: 1
+        } as Record<number, number> as Record<number, Count<Integer & Rank<EventAnalysis>>>
+        jiNotationLevelsBestCumulativeHistoryRanks[ JiNotationLevel.EXTREME ] = {
+            0: 16, 1: 23, 2: 1
+        } as Record<number, number> as Record<number, Count<Integer & Rank<EventAnalysis>>>
+        jiNotationLevelsBestCumulativeHistoryRanks[ JiNotationLevel.INSANE ] = {
+            0: 16, 1: 23, 2: 1
+        } as Record<number, number> as Record<number, Count<Integer & Rank<EventAnalysis>>>
     })
 
     it("does not mutate JI_NOTATION_LEVELS", (): void => {
