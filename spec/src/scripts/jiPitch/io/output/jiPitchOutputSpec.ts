@@ -2,6 +2,7 @@ import { Cents, Direction, Io, Monzo, NEWLINE, Prime, Ratio, Sopfr } from "../..
 import { ApotomeSlope, JiPitchAnalysis } from "../../../../../../src/sagittal"
 import { N2D3P9 } from "../../../../../../src/sagittal/ji/twoThreeFreeClass/n2d3p9"
 import { computeJiPitchOutput } from "../../../../../../src/scripts/jiPitch/io"
+import { twoThreeFreeClassAnalysisFixture } from "../../../../../helpers/src/scripts/jiPitch/fixtures"
 
 describe("computeJiPitchOutput", (): void => {
     const jiPitchAnalysis: JiPitchAnalysis = {
@@ -9,12 +10,13 @@ describe("computeJiPitchOutput", (): void => {
         monzo: [0, -1, 1] as Monzo,
         ratio: [5, 4] as Ratio,
         apotomeSlope: 8.2 as ApotomeSlope,
-        twoThreeFreeClassAnalysis: {
-            twoThreeFreePrimeLimit: 14 as Prime,
-            ratio: [5, 1] as Ratio<{ rough: 5, direction: Direction.SUPER }>,
-            twoThreeFreeSopfr: 13 as Sopfr<{ rough: 5 }>,
-            n2d3p9: 18.4567 as N2D3P9,
-        },
+        twoThreeFreeClassAnalysis: twoThreeFreeClassAnalysisFixture,
+        // twoThreeFreeClassAnalysis: {
+        //     twoThreeFreePrimeLimit: 14 as Prime,
+        //     ratio: [5, 1] as Ratio<{ rough: 5, direction: Direction.SUPER }>,
+        //     twoThreeFreeSopfr: 13 as Sopfr<{ rough: 5 }>,
+        //     n2d3p9: 18.4567 as N2D3P9,
+        // },
     }
 
     it("formats it in a multi-line output with titles for each line", (): void => {

@@ -1,6 +1,6 @@
 import {
     Cents,
-    Comma,
+    Comma, Copfr,
     Direction,
     Id,
     Monzo,
@@ -55,6 +55,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                             id: 47 as Id<SagittalComma>,
                             apotomeSlope: -2.411919815346935 as ApotomeSlope,
                             twoThreeFreeClassAnalysis: {
+                                twoThreeFreeCopfr: 3 as Copfr<{ rough: 5 }>,
                                 twoThreeFreeSopfr: 29 as Sopfr<{ rough: 5 }>,
                                 monzo: [0, 0, 2, 0, 0, 0, 0, -1] as Monzo<{ rough: 5, direction: Direction.SUPER }>,
                                 twoThreeFreePrimeLimit: 19 as Prime,
@@ -81,6 +82,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                             id: 48 as Id<SagittalComma>,
                             apotomeSlope: 10.555481691145998 as ApotomeSlope,
                             twoThreeFreeClassAnalysis: {
+                                twoThreeFreeCopfr: 0 as Copfr<{ rough: 5 }>,
                                 twoThreeFreeSopfr: 0 as Sopfr<{ rough: 5 }>,
                                 monzo: [] as Monzo as Monzo<{ rough: 5, direction: Direction.SUPER }>,
                                 twoThreeFreePrimeLimit: 1 as Prime,
@@ -108,6 +110,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                             id: 47 as Id<SagittalComma>,
                             apotomeSlope: -2.411919815346935 as ApotomeSlope,
                             twoThreeFreeClassAnalysis: {
+                                twoThreeFreeCopfr: 3 as Copfr<{ rough: 5 }>,
                                 twoThreeFreeSopfr: 29 as Sopfr<{ rough: 5 }>,
                                 monzo: [0, 0, 2, 0, 0, 0, 0, -1] as Monzo<{ rough: 5, direction: Direction.SUPER }>,
                                 twoThreeFreePrimeLimit: 19 as Prime,
@@ -133,6 +136,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                             id: 48 as Id<SagittalComma>,
                             apotomeSlope: 10.555481691145998 as ApotomeSlope,
                             twoThreeFreeClassAnalysis: {
+                                twoThreeFreeCopfr: 0 as Copfr<{ rough: 5 }>,
                                 twoThreeFreeSopfr: 0 as Sopfr<{ rough: 5 }>,
                                 monzo: [] as Monzo as Monzo<{ rough: 5, direction: Direction.SUPER }>,
                                 twoThreeFreePrimeLimit: 1 as Prime,
@@ -161,6 +165,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                             id: 47 as Id<SagittalComma>,
                             apotomeSlope: -2.411919815346935 as ApotomeSlope,
                             twoThreeFreeClassAnalysis: {
+                                twoThreeFreeCopfr: 3 as Copfr<{ rough: 5 }>,
                                 twoThreeFreeSopfr: 29 as Sopfr<{ rough: 5 }>,
                                 monzo: [0, 0, 2, 0, 0, 0, 0, -1] as Monzo<{ rough: 5, direction: Direction.SUPER }>,
                                 twoThreeFreePrimeLimit: 19 as Prime,
@@ -186,6 +191,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                             id: 48 as Id<SagittalComma>,
                             apotomeSlope: 10.555481691145998 as ApotomeSlope,
                             twoThreeFreeClassAnalysis: {
+                                twoThreeFreeCopfr: 0 as Copfr<{ rough: 5 }>,
                                 twoThreeFreeSopfr: 0 as Sopfr<{ rough: 5 }>,
                                 monzo: [] as Monzo as Monzo<{ rough: 5, direction: Direction.SUPER }>,
                                 twoThreeFreePrimeLimit: 1 as Prime,

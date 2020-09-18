@@ -1,4 +1,16 @@
-import { Cents, Comma, Direction, Id, Monzo, Name, Prime, Ratio, Row, Sopfr } from "../../../../../../src/general"
+import {
+    Cents,
+    Comma,
+    Copfr,
+    Direction,
+    Id,
+    Monzo,
+    Name,
+    Prime,
+    Ratio,
+    Row,
+    Sopfr,
+} from "../../../../../../src/general"
 import { ApotomeSlope, CommaAnalysis, SymbolClass } from "../../../../../../src/sagittal"
 import { N2D3P9 } from "../../../../../../src/sagittal/ji/twoThreeFreeClass/n2d3p9"
 import { computeNotatingCommasRow } from "../../../../../../src/scripts/jiPitch/io/row"
@@ -15,6 +27,7 @@ describe("computeNotatingCommasRow", (): void => {
         apotomeSlope: 8.2 as ApotomeSlope,
         twoThreeFreeClassAnalysis: {
             twoThreeFreePrimeLimit: 14 as Prime,
+            twoThreeFreeCopfr: 1 as Copfr<{ rough: 5 }>,
             twoThreeFreeSopfr: 13 as Sopfr<{ rough: 5 }>,
             monzo: [0, 0, 1] as Monzo<{ rough: 5, direction: Direction.SUPER }>,
             n2d3p9: 18.4567 as N2D3P9,

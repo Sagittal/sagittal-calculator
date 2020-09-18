@@ -11,6 +11,7 @@ const JI_PITCH_COLUMN_TITLES = [
 const TWO_THREE_FREE_CLASS_COLUMN_TITLES = [
     "prime limit",
     "name",
+    "CoPFR",
     "SoPFR",
     "N2D3P9",
 ] as Io[]
@@ -23,10 +24,11 @@ const NOTATING_COMMAS_WITH_MAYBE_SAGITTAL_SYMBOL_CLASSES_COLUMN_TITLES = [
 
 const FIND_COMMAS_COLUMN_TITLES = [
     ...NOTATING_COMMAS_WITH_MAYBE_SAGITTAL_SYMBOL_CLASSES_COLUMN_TITLES,
-    // Pretty much the same as TWO_THREE_FREE_CLASS_COLUMN_TITLES, 
+    // Pretty much the same as TWO_THREE_FREE_CLASS_COLUMN_TITLES,
     // but here we can't assume the "2,3-free class" part b/c there's no 2,3-free class title just above
     "2,3-free prime limit",
     "2,3-free class name",
+    "2,3-free class CoPFR",
     "2,3-free class SoPFR",
     "2,3-free class N2D3P9",
 ] as Io[]
