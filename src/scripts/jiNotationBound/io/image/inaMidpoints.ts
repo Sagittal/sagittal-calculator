@@ -1,6 +1,6 @@
-import { add, CentsPosition, Io, Px, subtract } from "../../../../general"
+import { add, Io, Px, subtract } from "../../../../general"
 import { JiNotationLevel } from "../../../../sagittal"
-import { INA_MIDPOINTS } from "../../histories"
+import { InaMidpoint, INA_MIDPOINTS } from "../../histories"
 import { JI_NOTATION_LEVEL_CENTERS } from "./levelHeights"
 import { INA_MIDPOINT_HEX_COLOR } from "./rankColors"
 import { DASH_SIZE, HALF_TICK_SIZE } from "./sizes"
@@ -9,13 +9,13 @@ import { computeX } from "./x"
 const visualizeInaMidpoints = (): Io[] => {
     const inaMidpointElements: Io[] = [] as Io[]
 
-    const inaMidpointEntries = Object.entries(INA_MIDPOINTS) as Array<[JiNotationLevel, CentsPosition[]]>
-    inaMidpointEntries.forEach(([jiNotationLevel, inaMidpoints]: [JiNotationLevel, CentsPosition[]]): void => {
+    const inaMidpointEntries = Object.entries(INA_MIDPOINTS) as Array<[JiNotationLevel, InaMidpoint[]]>
+    inaMidpointEntries.forEach(([jiNotationLevel, inaMidpoints]: [JiNotationLevel, InaMidpoint[]]): void => {
         const centerY: Px = JI_NOTATION_LEVEL_CENTERS[ jiNotationLevel ]
         const topY: Px = subtract(centerY, HALF_TICK_SIZE)
         const bottomY: Px = add(centerY, HALF_TICK_SIZE)
 
-        inaMidpoints.forEach((inaMidpoint: CentsPosition): void => {
+        inaMidpoints.forEach((inaMidpoint: InaMidpoint): void => {
             const { name, cents } = inaMidpoint
 
             const x: Px = computeX(cents)

@@ -1,6 +1,5 @@
 export { addMaybeSymbolClassId } from "./addMaybeSymbolClassId"
 export { formatJiNotationLevel } from "./formatLevel"
-export { computeInaMidpoints } from "./inaMidpoints"
 export { INA_SIZES, TINA } from "./intervals"
 export { JI_NOTATION_BOUNDS } from "./bounds"
 export { getMinaName } from "./minaName"

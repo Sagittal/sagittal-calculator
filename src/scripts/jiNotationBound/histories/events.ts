@@ -2,7 +2,7 @@ import { CentsPosition, Name, Pitch } from "../../../general"
 import { JiNotationLevel } from "../../../sagittal"
 import { BoundedSymbolClassPositions } from "../boundedPositions"
 import { EVENT_TYPE_SNAPPABLE_POSITIONS } from "./snappablePositions"
-import { EventType, HistoricalEvent } from "./types"
+import { EventType, HistoricalEvent, SnappablePosition } from "./types"
 
 const computeEvents = (
     jiNotationLevel: JiNotationLevel,
@@ -13,7 +13,7 @@ const computeEvents = (
 
     const snappablePositions = EVENT_TYPE_SNAPPABLE_POSITIONS[ type ][ jiNotationLevel ]
 
-    snappablePositions.forEach((snappablePosition: CentsPosition): void => {
+    snappablePositions.forEach((snappablePosition: SnappablePosition): void => {
         if (
             (!lesserBoundedSymbolPosition || snappablePosition.cents > lesserBoundedSymbolPosition) &&
             (!greaterBoundedSymbolPosition || snappablePosition.cents < greaterBoundedSymbolPosition)

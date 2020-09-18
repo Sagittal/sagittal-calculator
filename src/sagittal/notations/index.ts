@@ -3,7 +3,6 @@ export { MAX_SYMBOL_CLASS_CENTS } from "./intervals"
 export {
     addMaybeSymbolClassId,
     JiNotationBound,
-    computeInaMidpoints,
     formatJiNotationLevel,
     Ina,
     INA_SIZES,

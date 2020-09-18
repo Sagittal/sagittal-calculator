@@ -1,6 +1,6 @@
-import { CentsPosition, Io, Px, subtract } from "../../../../general"
+import { Io, Px, subtract } from "../../../../general"
 import { JiNotationLevel, SymbolLongAscii, unicodeFromAscii } from "../../../../sagittal"
-import { JI_NOTATION_LEVELS_COMMA_MEANS } from "../../histories"
+import { CommaMean, JI_NOTATION_LEVELS_COMMA_MEANS } from "../../histories"
 import { JI_NOTATION_LEVEL_CENTERS } from "./levelHeights"
 import { COMMA_MEAN_HEX_COLOR } from "./rankColors"
 import { DASH_SIZE, HALF_TICK_SIZE } from "./sizes"
@@ -10,9 +10,9 @@ const visualizeJiNotationLevelCommaMeans = (): Io[] => {
     const jiNotationLevelCommaMeanElements: Io[] = [] as Io[]
 
     const jiNotationLevelCommaMeansEntries =
-        Object.entries(JI_NOTATION_LEVELS_COMMA_MEANS) as Array<[JiNotationLevel, CentsPosition[]]>
+        Object.entries(JI_NOTATION_LEVELS_COMMA_MEANS) as Array<[JiNotationLevel, CommaMean[]]>
     jiNotationLevelCommaMeansEntries.forEach((
-        [jiNotationLevel, jiNotationLevelCommaMeans]: [JiNotationLevel, CentsPosition[]],
+        [jiNotationLevel, jiNotationLevelCommaMeans]: [JiNotationLevel, CommaMean[]],
     ): void => {
         if (jiNotationLevel === JiNotationLevel.INSANE) {
             return
@@ -22,7 +22,7 @@ const visualizeJiNotationLevelCommaMeans = (): Io[] => {
         const topY: Px = subtract(centerY, HALF_TICK_SIZE)
         const bottomY: Px = subtract(centerY, HALF_TICK_SIZE)
 
-        jiNotationLevelCommaMeans.forEach((jiNotationLevelCommaMean: CentsPosition): void => {
+        jiNotationLevelCommaMeans.forEach((jiNotationLevelCommaMean: CommaMean): void => {
             const { cents, name } = jiNotationLevelCommaMean
 
             const formattedName = name?.split(" ")

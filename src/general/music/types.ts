@@ -12,7 +12,6 @@ type Cents = number & { _CentsBrand: "Cents" }
 //  meaning that JiPitch would really be more like a RationalNumber, while this would be an IrrationalNumber
 type CentsPosition<T extends NumericTypeParameters = {}> = {
     cents: Cents,
-    name?: Name<Pitch>,
     monzo?: Monzo<T & { irrational: true }>,
     ratio?: Ratio<T & { irrational: true }>,
 }

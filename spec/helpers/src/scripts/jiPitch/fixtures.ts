@@ -13,7 +13,6 @@ const twoThreeFreeClassAnalysisFixture: TwoThreeFreeClassAnalysis = {
 
 const jiPitchAnalysisFixture: JiPitchAnalysis = {
     cents: 0 as Cents,
-    name: "" as Name<Pitch>,
     monzo: [] as Monzo,
     ratio: [1, 1] as Ratio,
     apotomeSlope: 0 as ApotomeSlope,

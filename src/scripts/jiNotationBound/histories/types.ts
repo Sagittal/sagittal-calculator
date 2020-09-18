@@ -1,5 +1,5 @@
-import { Cents, Name, Pitch } from "../../../general"
-import { JiNotationLevel } from "../../../sagittal"
+import { Cents, CentsPosition, Name, Pitch } from "../../../general"
+import { JiNotationLevel, SizeCategoryBound } from "../../../sagittal"
 
 enum EventType {
     INA_MIDPOINT = "inaMidpoint",
@@ -16,8 +16,21 @@ interface HistoricalEvent {
 
 type History = HistoricalEvent[]
 
+interface CommaMean extends CentsPosition {
+    name: Name<CommaMean>,
+}
+
+interface InaMidpoint extends CentsPosition {
+    name: Name<InaMidpoint>,
+}
+
+type SnappablePosition = InaMidpoint | CommaMean | SizeCategoryBound
+
 export {
     EventType,
     HistoricalEvent,
     History,
+    CommaMean,
+    InaMidpoint,
+    SnappablePosition,
 }

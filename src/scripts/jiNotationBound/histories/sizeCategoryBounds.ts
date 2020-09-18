@@ -1,7 +1,7 @@
 import { CentsPosition } from "../../../general"
-import { MAX_SYMBOL_CLASS_CENTS, SIZE_CATEGORY_BOUNDS } from "../../../sagittal"
+import { MAX_SYMBOL_CLASS_CENTS, SizeCategoryBound, SIZE_CATEGORY_BOUNDS } from "../../../sagittal"
 
-const computeSizeCategoryBoundsWithinMaximumPosition = (): CentsPosition[] =>
+const computeSizeCategoryBoundsWithinMaximumPosition = (): SizeCategoryBound[] =>
     SIZE_CATEGORY_BOUNDS.slice(
         0,
         SIZE_CATEGORY_BOUNDS.findIndex(

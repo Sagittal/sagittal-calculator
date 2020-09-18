@@ -51,13 +51,10 @@ const computeSuperPitch = <T extends NumericTypeParameters, U extends Pitch<T>>(
 
     let superPitch: Pitch = {} as Pitch
     if (isSubPitch) {
-        const { monzo, ratio, cents, name } = pitch
+        const { monzo, ratio, cents } = pitch
         if (!isUndefined(ratio)) superPitch.ratio = computeSuperRatio(ratio)
         if (!isUndefined(monzo)) superPitch.monzo = computeSuperMonzo(monzo)
         if (!isUndefined(cents)) superPitch.cents = negative(cents)
-        if (!isUndefined(name)) {
-            throw new Error(`Pitch was named ${name} but was sub and taken the super of. Name should change.`)
-        }
     } else {
         superPitch = pitch
     }

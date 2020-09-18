@@ -1,6 +1,5 @@
 import { Direction, Monzo, NumericTypeParameters, Ratio, RationalTypeParameters } from "../../math"
-import { Name } from "../../types"
-import { Cents, Pitch } from "../types"
+import { Cents } from "../types"
 
 type Comma<T extends NumericTypeParameters = {}> =
     JiPitch<T>
@@ -16,13 +15,11 @@ type TwoThreeFreeClass =
 //  and ji: true could map to irrational: false
 type JiPitchByMonzo<T extends RationalTypeParameters = { irrational: false }> = {
     cents?: Cents,
-    name?: Name<Pitch>,
     monzo: Monzo<T>,
     ratio?: Ratio<T>,
 }
 type JiPitchByRatio<T extends RationalTypeParameters = { irrational: false }> = {
     cents?: Cents,
-    name?: Name<Pitch>,
     monzo?: Monzo<T>,
     ratio: Ratio<T>,
 }

@@ -27,6 +27,7 @@ export {
     DEFAULT_MAX_N2D3P9,
     ParsedCommaName,
     TwoThreeFreeClassAnalysis,
+    SizeCategoryBound,
 } from "./ji"
 export {
     formatSymbolClass, formatSymbolAscii, SymbolLongAscii, unicodeFromAscii, SymbolSmiley, SymbolUnicode,
@@ -34,7 +35,6 @@ export {
 export {
     addMaybeSymbolClassId,
     JiNotationBound,
-    computeInaMidpoints,
     formatJiNotationLevel,
     getSagittalComma,
     Ina,

@@ -1,4 +1,4 @@
-import { Ratio } from "../../../../general"
+import { CentsPosition, Name, Ratio } from "../../../../general"
 
 interface SizeCategoryOptions {
     abbreviated?: boolean,
@@ -7,6 +7,10 @@ interface SizeCategoryOptions {
 interface SizeCategory {
     name: SizeCategoryName,
     abbreviation: SizeCategoryAbbreviation,
+}
+
+interface SizeCategoryBound extends CentsPosition {
+    name: Name<SizeCategoryBound>,
 }
 
 enum SizeCategoryName {
@@ -89,4 +93,5 @@ export {
     CommaNameOptions,
     CommaNameRatio,
     ParsedCommaName,
+    SizeCategoryBound,
 }
