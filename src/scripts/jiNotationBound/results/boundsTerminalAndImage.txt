@@ -166,18 +166,15 @@ ina midpoint       	139    	122
 comma mean         	  8    	 25       
 size category bound	  2    	  2       
 
-
 Ultra              	here   	cumulative
 ina midpoint       	 33    	 29       
 comma mean         	 20    	 24       
 size category bound	  2    	  2       
 
-
 High               	here   	cumulative
 ina midpoint       	 25    	 25       
 comma mean         	  5    	  5       
 size category bound	  2    	  2       
-
 
 Medium             	here   	cumulative
 ina midpoint       	 11    	 11       

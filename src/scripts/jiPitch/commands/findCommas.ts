@@ -1,20 +1,17 @@
 import { Comma, Io, LogTarget, saveLog, sort } from "../../../general"
 import { addMaybeSymbolClassId, analyzeComma, CommaAnalysis } from "../../../sagittal"
-import { computeCommas } from "../commas"
+import { computeCommas, parseFindCommasSettings } from "../findCommas"
 import { jiPitchScriptGroupSettings } from "../globals"
-import { computeFindCommasOutput, parseFindCommasOptions, readFindCommasOptions } from "../io"
+import { computeFindCommasOutput, readFindCommasOptions } from "../io"
 import { applySharedPitchCommandSetup } from "./shared"
 
 readFindCommasOptions()
 
 applySharedPitchCommandSetup()
 
-const findCommasOptions = parseFindCommasOptions()
+const findCommasSettings = parseFindCommasSettings()
 
-// TODO: get straight on difference between settings & options
-//  like, do some/many options BECOME settings once saved or parsed?
-//  is there really any good reason for these options not to be saved on the jiPitchScriptGroupSettings global object?
-const commas = computeCommas({ ...jiPitchScriptGroupSettings, ...findCommasOptions })
+const commas = computeCommas({ ...jiPitchScriptGroupSettings, ...findCommasSettings })
 const commasWithMaybeSagittalSymbolClassIds = commas.map(addMaybeSymbolClassId)
 // TODO: I can't find it right now, but the other to-do where I say I should just include the maybe sagittal symbol
 //  class ID in the analysis -- so then this would get refactored a bit
@@ -29,5 +26,5 @@ const commaAnalyses = commasWithMaybeSagittalSymbolClassIds.map((comma: Comma): 
 if (jiPitchScriptGroupSettings.sortKey) {
     sort(commaAnalyses, { by: jiPitchScriptGroupSettings.sortKey })
 }
-const findCommasOutput: Io = computeFindCommasOutput(commaAnalyses, findCommasOptions)
+const findCommasOutput: Io = computeFindCommasOutput(commaAnalyses, findCommasSettings)
 saveLog(findCommasOutput, LogTarget.ALL)

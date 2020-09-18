@@ -1,5 +1,5 @@
-import { Comma, ObjectKey, sort } from "../../general"
-import { analyzeComma, CommaAnalysis } from "../../sagittal"
+import { Comma, ObjectKey, sort } from "../../../general"
+import { analyzeComma, CommaAnalysis } from "../../../sagittal"
 import { MAX_TINA_SIZES } from "./constants"
 
 const computeCommaAnalysesSortedByTinaEntries = (commas: Comma[]): Array<[string, CommaAnalysis[]]> => {

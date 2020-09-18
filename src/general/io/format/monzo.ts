@@ -18,7 +18,6 @@ const formatMonzo = <T extends NumericTypeParameters>(
 ): Formatted<Monzo<T>> => {
     let contents
     if (punctuated) {
-        // Not using computeSlicedMonzo here because we want the trick of keeping the leftovers
         const twoThreeFreeMonzo: Monzo<T & { rough: 5 }> = monzo.splice(2) as Monzo<T & { rough: 5 }>
         contents = monzo.map(spaceTerm).join(" ") + ", "
 

@@ -1,6 +1,6 @@
-import { Max, Min, Monzo, Sopfr } from "../../../../src/general/math"
-import { Cents, Comma } from "../../../../src/general/music"
-import { computeCommas } from "../../../../src/scripts/jiPitch/commas"
+import { Max, Min, Monzo, Sopfr } from "../../../../../src/general/math"
+import { Cents, Comma } from "../../../../../src/general/music"
+import { computeCommas } from "../../../../../src/scripts/jiPitch/findCommas"
 
 describe("computeCommas", (): void => {
     const max23FreeSopfr = 7 as Max<Sopfr<{ rough: 5 }>>

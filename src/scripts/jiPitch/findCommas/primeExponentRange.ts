@@ -14,7 +14,7 @@ import {
     Prime,
     Range,
     Sopfr,
-} from "../../general"
+} from "../../../general"
 import { PrimeExponentRangeOptions } from "./types"
 
 const computePrimeExponentRange = (

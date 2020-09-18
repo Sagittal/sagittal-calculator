@@ -474,6 +474,8 @@ const SYMBOL_CLASSES: SymbolClass[] = [
     },
     // Missing ID 78 as an artifact from the removal of the forum topic re: a consistent 37-prime-limit
     // http://forum.sagittal.org/viewtopic.php?f=4&t=448
+    // TODO: I'd really like to go through and update the spreadsheet calculator, Everything Sagittal,
+    //  and this code base to close this missing gap, this missing "key" / symbol class ID of 78
     {
         id: 79 as Id<SymbolClass>,
         smallestSymbolSubset: SymbolSubset.OLYMPIAN,

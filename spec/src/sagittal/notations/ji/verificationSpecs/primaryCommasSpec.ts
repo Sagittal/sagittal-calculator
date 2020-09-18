@@ -12,7 +12,7 @@ import {
 import { N2D3P9 } from "../../../../../../src/sagittal/comma/evaluation/n2d3p9"
 import { computeCommaName } from "../../../../../../src/sagittal/comma/name"
 import { computeSecondaryCommaZone } from "../../../../../../src/sagittal/notations/ji/secondaryCommaZone"
-import { computeCommas } from "../../../../../../src/scripts/jiPitch/commas"
+import { computeCommas } from "../../../../../../src/scripts/jiPitch/findCommas"
 import { computeFindCommasOutput } from "../../../../../../src/scripts/jiPitch/io"
 
 describe("verifying primary commas", (): void => {

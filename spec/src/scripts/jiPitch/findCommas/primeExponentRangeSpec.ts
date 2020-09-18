@@ -1,5 +1,5 @@
-import { Copfr, Exponent, Extrema, Integer, Max, Prime, Sopfr } from "../../../../src/general"
-import { computePrimeExponentRange } from "../../../../src/scripts/jiPitch/primeExponentRange"
+import { Copfr, Exponent, Extrema, Integer, Max, Prime, Sopfr } from "../../../../../src/general"
+import { computePrimeExponentRange } from "../../../../../src/scripts/jiPitch/findCommas/primeExponentRange"
 
 describe("computePrimeExponentRange", (): void => {
     it("gives the valid range of the prime exponent given a max 2,3-free SoPFR and a max 2,3-free CoPFR where the 2,3-free CoPFR is the constraining factor", (): void => {

@@ -12,7 +12,6 @@ export {
     DEFAULT_MAX_PRIME_LIMIT,
     DEFAULT_MIN_CENTS,
     DEFAULT_MAX_N2D3P9,
-    DEFAULT_FIND_COMMAS_OPTIONS,
 } from "./find"
 export {
     ApotomeSlope, N2D3P9, computeN2D3P9, computeApotomeSlope, computePrimeExponentExtremasGivenMaxN2D3P9,

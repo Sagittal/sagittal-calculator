@@ -16,12 +16,12 @@ import {
     Prime,
     shallowClone,
     Sopfr,
-} from "../../general"
-import { computePrimeExponentExtremasGivenMaxN2D3P9 } from "../../sagittal"
+} from "../../../general"
+import { computePrimeExponentExtremasGivenMaxN2D3P9 } from "../../../sagittal"
 import { TWO_THREE_FREE_MONZO_BASE } from "./constants"
 import { computePrimeExponentRange } from "./primeExponentRange"
 import { compute23FreePrimesToCheck } from "./twoThreeFreePrimesToCheck"
-import { FiveSlicedMonzosToCheckOptions } from "./types"
+import { TwoThreeFreeMonzosToCheckOptions } from "./types"
 
 // TODO: Might it be preferable to do the strategy where instead of populating the whole list of monzos to check
 //  you instead go with the technique the N2D3P9 is already taking with the prime exponent extremas?
@@ -31,7 +31,7 @@ import { FiveSlicedMonzosToCheckOptions } from "./types"
 //  - might also save some energy, what with these all being mirrored
 
 const compute23FreeMonzosToCheck = (
-    { maxPrimeLimit, max23FreeSopfr, max23FreeCopfr, maxN2D3P9 }: FiveSlicedMonzosToCheckOptions = {},
+    { maxPrimeLimit, max23FreeSopfr, max23FreeCopfr, maxN2D3P9 }: TwoThreeFreeMonzosToCheckOptions = {},
 ): Array<Monzo<{ rough: 5 }>> => {
     if (isUndefined(max23FreeSopfr) && isUndefined(maxN2D3P9)) {
         if (isUndefined(maxPrimeLimit)) {
@@ -58,7 +58,7 @@ const compute23FreeMonzosToCheck = (
         shallowClone(TWO_THREE_FREE_MONZO_BASE),
     ]
     twoThreeFreePrimesToCheck.forEach((twoThreeFreePrimeToCheck: Prime, index: number): void => {
-        const extendedFiveSlicedMonzosToCheck: Array<Monzo<{ rough: 5 }>> =
+        const extended23FreeMonzosToCheck: Array<Monzo<{ rough: 5 }>> =
             computeExtensionBase(ExtensionBaseType.ARRAY) as Array<Monzo<{ rough: 5 }>>
 
         const primeExponentExtremaGivenMaxN2D3P9: Maybe<Extrema<Integer & Exponent<Prime>>> =
@@ -82,13 +82,13 @@ const compute23FreeMonzosToCheck = (
                 },
             ) as Array<Integer & Exponent<Prime>>
             termRange.forEach((potentialNextTerm: Integer & Exponent<Prime>): void => {
-                extendedFiveSlicedMonzosToCheck.push(
+                extended23FreeMonzosToCheck.push(
                     twoThreeFreeMonzoToCheck.concat(potentialNextTerm) as Monzo<{ rough: 5 }>,
                 )
             })
         })
 
-        twoThreeFreeMonzosToCheck = extendedFiveSlicedMonzosToCheck
+        twoThreeFreeMonzosToCheck = extended23FreeMonzosToCheck
     })
 
     return twoThreeFreeMonzosToCheck.map(computeTrimmedArray)

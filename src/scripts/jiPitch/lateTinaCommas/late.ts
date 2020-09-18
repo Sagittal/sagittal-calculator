@@ -12,10 +12,10 @@ import {
     Prime,
     saveLog,
     THREE_PRIME_INDEX,
-} from "../../general"
-import { CommaAnalysis, computeNotatingCommas } from "../../sagittal"
+} from "../../../general"
+import { CommaAnalysis, computeNotatingCommas } from "../../../sagittal"
+import { jiPitchScriptGroupSettings } from "../globals"
 import { INFINITE_N2D3P9 } from "./constants"
-import { jiPitchScriptGroupSettings } from "./globals"
 
 const computeIsCommaLate = (comma: Comma): boolean => {
     const monzo = computeJiPitchMonzo(comma)

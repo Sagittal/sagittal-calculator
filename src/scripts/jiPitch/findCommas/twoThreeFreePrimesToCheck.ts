@@ -6,7 +6,7 @@ import {
     Prime,
     PRIMES,
     ZERO_ONE_INDEX_DIFF,
-} from "../../general"
+} from "../../../general"
 import { TwoThreeFreePrimesToCheckOptions } from "./types"
 
 const compute23FreePrimesToCheck = (options: TwoThreeFreePrimesToCheckOptions): Prime[] => {

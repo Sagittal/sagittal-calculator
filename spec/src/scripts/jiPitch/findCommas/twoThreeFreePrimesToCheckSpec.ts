@@ -1,6 +1,6 @@
-import { Exponent, Extrema, Integer } from "../../../../src/general"
-import { Max, Prime, Sopfr } from "../../../../src/general/math"
-import { compute23FreePrimesToCheck } from "../../../../src/scripts/jiPitch/twoThreeFreePrimesToCheck"
+import { Exponent, Extrema, Integer } from "../../../../../src/general"
+import { Max, Prime, Sopfr } from "../../../../../src/general/math"
+import { compute23FreePrimesToCheck } from "../../../../../src/scripts/jiPitch/findCommas/twoThreeFreePrimesToCheck"
 
 describe("compute23FreePrimesToCheck", (): void => {
     it("when none of max prime limit, max SoPFR, nor max N2D3P9 are provided, errors", (): void => {

@@ -1,4 +1,4 @@
-import { abs, Comma, formatNumber, Monzo } from "../../general"
+import { abs, Comma, formatNumber, Monzo } from "../../../general"
 import {
     computeCommasFrom23FreeMonzo,
     DEFAULT_MAX_AAS,
@@ -7,7 +7,7 @@ import {
     DEFAULT_MAX_N2D3P9,
     DEFAULT_MIN_CENTS,
     MAX_SIZE_CATEGORY_BOUND,
-} from "../../sagittal"
+} from "../../../sagittal"
 import { compute23FreeMonzosToCheck } from "./twoThreeFreeMonzosToCheck"
 import { CommasOptions } from "./types"
 
@@ -33,16 +33,16 @@ const computeCommas = (options: CommasOptions): Comma[] => {
 
     let commas: Comma[] = []
 
-    const fiveSlicedMonzosToCheck: Array<Monzo<{ rough: 5 }>> = compute23FreeMonzosToCheck({
+    const twoThreeFreeMonzosToCheck: Array<Monzo<{ rough: 5 }>> = compute23FreeMonzosToCheck({
         maxPrimeLimit,
         max23FreeSopfr,
         max23FreeCopfr,
     })
 
-    fiveSlicedMonzosToCheck.forEach((fiveSlicedMonzoToCheck: Monzo<{ rough: 5 }>): void => {
+    twoThreeFreeMonzosToCheck.forEach((twoThreeFreeMonzoToCheck: Monzo<{ rough: 5 }>): void => {
         commas = commas.concat(
             computeCommasFrom23FreeMonzo(
-                fiveSlicedMonzoToCheck,
+                twoThreeFreeMonzoToCheck,
                 {
                     minCents,
                     maxCents,

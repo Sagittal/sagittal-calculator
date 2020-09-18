@@ -12,13 +12,17 @@ import {
     time,
 } from "../../../general"
 import { CommaAnalysis } from "../../../sagittal"
-import { computeCommas } from "../commas"
-import { INFINITE_2_3_FREE_COPFR, INFINITE_N2D3P9, TINA_COMMAS_MAX_CENTS, TINA_COMMAS_MIN_CENTS } from "../constants"
+import { computeCommas, FindCommasSettings, parseFindCommasSettings } from "../findCommas"
 import { jiPitchScriptGroupSettings } from "../globals"
-import { parseFindCommasOptions, readFindCommasOptions } from "../io"
-import { computeLateComma } from "../late"
-import { computeCommaAnalysesSortedByTinaEntries } from "../tinas"
-import { FindCommasOptions } from "../types"
+import { readFindCommasOptions } from "../io"
+import {
+    computeCommaAnalysesSortedByTinaEntries,
+    computeLateComma,
+    INFINITE_2_3_FREE_COPFR,
+    INFINITE_N2D3P9,
+    TINA_COMMAS_MAX_CENTS,
+    TINA_COMMAS_MIN_CENTS,
+} from "../lateTinaCommas"
 import { applySharedPitchCommandSetup } from "./shared"
 
 // Per http://forum.sagittal.org/viewtopic.php?p=2395#p2395
@@ -31,16 +35,16 @@ const MAX_POSSIBLE_2_3_FREE_SOPFR_WITHOUT_CRASHING = 127 as Max<Sopfr<{ rough: 5
 const MAX_POSSIBLE_PRIME_LIMIT_GIVEN_MAX_POSSIBLE_SOPFR =
     MAX_POSSIBLE_2_3_FREE_SOPFR_WITHOUT_CRASHING as Max<Max<Prime>>
 
-const DEFAULT_OVERRIDES: Partial<FindCommasOptions> = {
+const DEFAULT_OVERRIDES: Partial<FindCommasSettings> = {
     max23FreeSopfr: MAX_POSSIBLE_2_3_FREE_SOPFR_WITHOUT_CRASHING,
     max23FreeCopfr: INFINITE_2_3_FREE_COPFR,
     maxPrimeLimit: MAX_POSSIBLE_PRIME_LIMIT_GIVEN_MAX_POSSIBLE_SOPFR,
 }
-const twoThreeFreeClassSettings = parseFindCommasOptions(DEFAULT_OVERRIDES)
+const findCommasSettings = parseFindCommasSettings(DEFAULT_OVERRIDES)
 
 const commas = computeCommas({
     ...jiPitchScriptGroupSettings,
-    ...twoThreeFreeClassSettings,
+    ...findCommasSettings,
     minCents: TINA_COMMAS_MIN_CENTS,
     maxCents: TINA_COMMAS_MAX_CENTS,
     maxN2D3P9: INFINITE_N2D3P9,

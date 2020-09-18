@@ -27,8 +27,6 @@ describe("getMinaName", (): void => {
             const minaRange = computeRange(MAX_MINA)
 
             minaRange.forEach((mina: Mina): void => {
-                // TODO: I'd really like to go through and update the spreadsheet calculator, Everything Sagittal,
-                //  and this code base to close this missing gap, this missing "key" / symbol class ID of 78
                 if (symbolClassId === 78) {
                     symbolClassId = increment(symbolClassId)
                 }

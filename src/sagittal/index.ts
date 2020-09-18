@@ -19,7 +19,6 @@ export {
     DEFAULT_MAX_PRIME_LIMIT,
     DEFAULT_MIN_CENTS,
     N2D3P9,
-    DEFAULT_FIND_COMMAS_OPTIONS,
     computeMonzoFrom23FreeClassAndSizeCategoryName,
     parseCommaName,
     computeCommaName,

@@ -1,13 +1,13 @@
 import { count, formatTable, Id, Io, sumTexts, Table } from "../../../../general"
-import { CommaAnalysis, DEFAULT_FIND_COMMAS_OPTIONS, SymbolClass } from "../../../../sagittal"
-import { FindCommasOptions } from "../../types"
+import { CommaAnalysis, SymbolClass } from "../../../../sagittal"
+import { DEFAULT_FIND_COMMAS_SETTINGS, FindCommasSettings } from "../../findCommas"
 import { computeFindCommasHeaderRows } from "../headerRows"
 import { computeFindCommasRow } from "../row"
 import { computeFindCommasTitle } from "../titles"
 
 const computeFindCommasOutput = (
     commas: Array<CommaAnalysis & { symbolClassId?: Id<SymbolClass> }>,
-    findCommasOptions: FindCommasOptions = DEFAULT_FIND_COMMAS_OPTIONS,
+    findCommasSettings: FindCommasSettings = DEFAULT_FIND_COMMAS_SETTINGS,
 ): Io => {
     const findCommasHeaderRows = computeFindCommasHeaderRows()
     const headerRowCount = count(findCommasHeaderRows)
@@ -18,8 +18,8 @@ const computeFindCommasOutput = (
     ]
 
     return sumTexts(
-        computeFindCommasTitle(findCommasOptions),
-        formatTable(findCommasTable, { headerRowCount })
+        computeFindCommasTitle(findCommasSettings),
+        formatTable(findCommasTable, { headerRowCount }),
     )
 }
 
