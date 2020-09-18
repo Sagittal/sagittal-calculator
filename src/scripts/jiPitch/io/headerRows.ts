@@ -1,4 +1,13 @@
-import { Id, Io, Row, splitColumnTitlesIntoRowsBySpaces, TwoThreeFreeClass } from "../../../general"
+import {
+    Id,
+    Io,
+    join,
+    Row,
+    SPACE,
+    splitColumnTitlesIntoRowsBySpaces,
+    sumTexts,
+    TwoThreeFreeClass,
+} from "../../../general"
 import { CommaAnalysis, JiPitchAnalysis, SymbolClass } from "../../../sagittal"
 
 const JI_PITCH_COLUMN_TITLES = [
@@ -23,9 +32,9 @@ const NOTATING_COMMAS_WITH_MAYBE_SAGITTAL_SYMBOL_CLASSES_COLUMN_TITLES = [
 
 const FIND_COMMAS_COLUMN_TITLES = [
     ...NOTATING_COMMAS_WITH_MAYBE_SAGITTAL_SYMBOL_CLASSES_COLUMN_TITLES,
-    // Same as TWO_THREE_FREE_CLASS_COLUMN_TITLES, 
+    // Pretty much the same as TWO_THREE_FREE_CLASS_COLUMN_TITLES, 
     // but here we can't assume the "2,3-free class" part b/c there's no 2,3-free class title just above
-    "prime limit",
+    "2,3-free prime limit",
     "2,3-free class name",
     "2,3-free class SoPFR",
     "2,3-free class N2D3P9",

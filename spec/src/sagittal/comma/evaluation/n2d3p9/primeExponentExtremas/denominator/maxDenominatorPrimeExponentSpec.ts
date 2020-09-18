@@ -12,7 +12,7 @@ import * as sortedNumeratorPossibilities
 
 describe("computeMaxDenominatorPrimeExponentGivenMaxN2D3P9", (): void => {
     it("returns the max exponent for a denominator prime given a max N2D3P9", (): void => {
-        const denominatorPrime = 5 as Prime<Denominator>
+        const denominatorPrime = 5 as Denominator & Prime
         const maxN2D3P9 = 27 as Max<N2D3P9> // N2D3P9(49/25) = 26.47
         const numeratorPossibilitiesForDenominatorGivenMaxN2D3P9 = [
             { numerator: 7 as Numerator, gpf: 7 as Max<Prime> },
@@ -39,12 +39,12 @@ describe("computeMaxDenominatorPrimeExponentGivenMaxN2D3P9", (): void => {
             numeratorPossibilitiesForDenominatorGivenMaxN2D3P9,
         )
 
-        const expected = 2 as Max<Integer & Exponent<Prime<Denominator>>>
+        const expected = 2 as Max<Denominator & Exponent<Prime>>
         expect(actual).toBe(expected)
     })
 
     it("gets the sorted numerator possibilities, then works its way up through each candidate max exponent for the denominator prime, seeing what the min N2D3P9 is for it, and returning the max exponent whose min N2D3P9 is less than the max N2D3P9", (): void => {
-        const denominatorPrime = 1033 as Prime<Denominator> // something crazy
+        const denominatorPrime = 1033 as Denominator & Prime // something crazy
         const maxN2D3P9 = 10 as Max<N2D3P9>
         const numeratorPossibilitiesForDenominatorGivenMaxN2D3P9 = [
             { numerator: 7 as Numerator, gpf: 7 as Max<Prime> },
@@ -88,14 +88,14 @@ describe("computeMaxDenominatorPrimeExponentGivenMaxN2D3P9", (): void => {
         expect(minN2D3P9.computeMinN2D3P9ForCandidateMaxDenominatorPrimeExponentGivenMaxN2D3P9).toHaveBeenCalledWith({
             sortedNumeratorPossibilitiesForDenominatorPrimeGivenMaxN2D3P9,
             denominatorPrime,
-            candidateMaxDenominatorPrimeExponentGivenMaxN2D3P9: 1 as Max<Integer & Exponent<Prime<Denominator>>>,
+            candidateMaxDenominatorPrimeExponentGivenMaxN2D3P9: 1 as Max<Denominator & Exponent<Prime>>,
         })
         expect(minN2D3P9.computeMinN2D3P9ForCandidateMaxDenominatorPrimeExponentGivenMaxN2D3P9).toHaveBeenCalledWith({
             sortedNumeratorPossibilitiesForDenominatorPrimeGivenMaxN2D3P9,
             denominatorPrime,
-            candidateMaxDenominatorPrimeExponentGivenMaxN2D3P9: 2 as Max<Integer & Exponent<Prime<Denominator>>>,
+            candidateMaxDenominatorPrimeExponentGivenMaxN2D3P9: 2 as Max<Denominator & Exponent<Prime>>,
         })
-        const expected = 2 as Max<Integer & Exponent<Prime<Denominator>>>
+        const expected = 2 as Max<Denominator & Exponent<Prime>>
         expect(actual).toBe(expected)
     })
 })

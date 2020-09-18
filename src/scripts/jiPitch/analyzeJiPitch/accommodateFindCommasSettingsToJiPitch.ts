@@ -18,7 +18,7 @@ const accommodateFindCommasSettingsToJiPitch = (
         accommodatedFindCommasOptions.maxAte = ate as Max<Abs<3 & Integer & Exponent<Prime>>>
     }
 
-    const n2d3p9 = jiPitchAnalysis.n2d3p9
+    const n2d3p9 = jiPitchAnalysis.twoThreeFreeClassAnalysis.n2d3p9
     if (n2d3p9 > findCommasSettings.maxN2D3P9) {
         accommodatedFindCommasOptions.maxN2D3P9 = n2d3p9 as Max<N2D3P9>
     }

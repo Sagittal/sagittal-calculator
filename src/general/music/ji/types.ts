@@ -2,11 +2,13 @@ import { Direction, Monzo, NumericTypeParameters, Ratio, RationalTypeParameters 
 import { Name } from "../../types"
 import { Cents, Pitch } from "../types"
 
-type Comma<T extends NumericTypeParameters = {}> = JiPitch<T> & { _CommaBrand: "Comma" }
+type Comma<T extends NumericTypeParameters = {}> =
+    JiPitch<T>
+    & { _CommaBrand: "Comma" }
 
 type TwoThreeFreeClass =
-    JiPitch<{ rough: 5, direction: Direction.SUPER }> &
-    { _TwoThreeFreeClassBrand: "TwoThreeFreeClass" }
+    JiPitch<{ rough: 5, direction: Direction.SUPER }>
+    & { _TwoThreeFreeClassBrand: "TwoThreeFreeClass" }
 
 // TODO: So we've established that prime limit is the direct musical equivalent of smooth in math
 //  perhaps there is some way to fernangle it so that pitches could have free: [2,3] and then potentially you know

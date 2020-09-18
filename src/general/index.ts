@@ -182,5 +182,6 @@ export {
     THREE_PRIME_LIMIT,
     Apotome,
     computeCentsFromNumber,
+    computePrimeLimit,
 } from "./music"
 export { Count, Ed, Extrema, Id, Index, Ms, Multiplier, Name, Step, Sum, Window } from "./types"

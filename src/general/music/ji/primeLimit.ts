@@ -1,10 +1,12 @@
 import { isUndefined } from "../../code"
 import {
+    computeGpf,
     computeIsRoughMonzo,
     computeIsRoughRatio,
     computeIsSmoothMonzo,
     computeIsSmoothRatio,
     Integer,
+    max,
     Max,
     Min,
     NumericTypeParameters,
@@ -35,7 +37,21 @@ const computeIsWithinPrimeMin = <S extends Primes, T extends NumericTypeParamete
         (!isUndefined(ratio) && computeIsRoughRatio(ratio, primeMin as S & Integer as S & Roughness))
 }
 
+// todo: test
+const computePrimeLimit = <S extends Primes, T extends NumericTypeParameters>(
+    { monzo, ratio }: JiPitch<T>,
+): Max<Prime> => {
+    if (!isUndefined(monzo)) {
+        return computeGpf(monzo) as Max<Prime>
+    }
+
+    const [numerator, denominator] = ratio
+
+    return max(computeGpf(numerator), computeGpf(denominator)) as Max<Prime>
+}
+
 export {
     computeIsWithinPrimeLimit,
     computeIsWithinPrimeMin,
+    computePrimeLimit,
 }

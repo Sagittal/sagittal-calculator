@@ -3,15 +3,16 @@
 import {
     Cents,
     Comma,
+    Direction,
     Id,
     Io,
     ioSettings,
     Monzo,
     Name,
     NEWLINE,
-    Prime, Ratio,
+    Prime,
+    Ratio,
     Sopfr,
-    TwoThreeFreeClass,
 } from "../../../../../../src/general"
 import { ApotomeSlope, CommaAnalysis, N2D3P9 } from "../../../../../../src/sagittal/comma"
 import { SymbolClass } from "../../../../../../src/sagittal/notations"
@@ -22,31 +23,35 @@ describe("computeNotatingCommasOutput", (): void => {
         {
             symbolClassId: 115 as Id<SymbolClass>,
             name: "11M" as Name<Comma>,
-            primeLimit: 11 as Prime,
-            twoThreeFreeSopfr: 11 as Sopfr<{ rough: 5 }>,
-            twoThreeFreeClass: { monzo: [0, 0, 0, 0, 1] } as TwoThreeFreeClass,
             cents: 45.45 as Cents,
             monzo: [0, 0, 1] as Monzo,
             ratio: [33, 32] as Ratio,
             apotomeSlope: -4 as ApotomeSlope,
-            n2d3p9: 6.722 as N2D3P9,
-        } as CommaAnalysis & { symbolClassId?: Id<SymbolClass> },
+            twoThreeFreeClassAnalysis: {
+                twoThreeFreePrimeLimit: 11 as Prime,
+                twoThreeFreeSopfr: 11 as Sopfr<{ rough: 5 }>,
+                monzo: [0, 0, 0, 0, 1] as Monzo<{ rough: 5, direction: Direction.SUPER }>,
+                n2d3p9: 6.722 as N2D3P9,
+            },
+        },
         {
             name: "25/49M" as Name<Comma>,
-            primeLimit: 7 as Prime,
-            twoThreeFreeSopfr: 24 as Sopfr<{ rough: 5 }>,
-            twoThreeFreeClass: { monzo: [0, 0, -2, 2] } as TwoThreeFreeClass,
             cents: 33.4 as Cents,
             monzo: [1, 0, 2, -2] as Monzo,
             ratio: [50, 49] as Ratio,
             apotomeSlope: -2.154 as ApotomeSlope,
-            n2d3p9: 26.466 as N2D3P9,
-        } as CommaAnalysis & { symbolClassId?: Id<SymbolClass> },
+            twoThreeFreeClassAnalysis: {
+                twoThreeFreePrimeLimit: 7 as Prime,
+                twoThreeFreeSopfr: 24 as Sopfr<{ rough: 5 }>,
+                monzo: [0, 0, -2, 2] as Monzo<{ rough: 5, direction: Direction.SUPER }>,
+                n2d3p9: 26.466 as N2D3P9,
+            },
+        },
     ]
-    
+
     it("can format the symbols for the terminal", (): void => {
         const actual = computeNotatingCommasOutput(notatingCommaAnalysesWithMaybeSagittalSymbolClassId)
-        
+
         const expected =
             "   --- notating commas ---" + NEWLINE +
             "" + NEWLINE +

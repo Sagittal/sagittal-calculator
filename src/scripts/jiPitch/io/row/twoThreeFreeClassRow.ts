@@ -1,13 +1,14 @@
-import { format23FreeClass, formatInteger, formatNumber, Row, TwoThreeFreeClass } from "../../../../general"
-import { JiPitchAnalysis } from "../../../../sagittal"
+import { format23FreeClass, formatInteger, formatNumber, JiPitch, Row, TwoThreeFreeClass } from "../../../../general"
+import { TwoThreeFreeClassAnalysis } from "../../../../sagittal"
 
-const compute23FreeClassRow = (jiPitchAnalysis: JiPitchAnalysis): Row<{ of: TwoThreeFreeClass }> => {
-    const { primeLimit, twoThreeFreeClass, twoThreeFreeSopfr, n2d3p9 } = jiPitchAnalysis
+const compute23FreeClassRow = (
+    twoThreeFreeClassAnalysis: TwoThreeFreeClassAnalysis
+): Row<{ of: TwoThreeFreeClass }> => {
+    const { twoThreeFreePrimeLimit, twoThreeFreeSopfr, n2d3p9 } = twoThreeFreeClassAnalysis
 
-    // TODO: shouldn't we just include the 2,3-free CoPFR too?
     return [
-        formatInteger(primeLimit),
-        format23FreeClass(twoThreeFreeClass),
+        formatInteger(twoThreeFreePrimeLimit),
+        format23FreeClass(twoThreeFreeClassAnalysis as JiPitch as TwoThreeFreeClass),
         formatInteger(twoThreeFreeSopfr),
         formatNumber(n2d3p9),
     ] as Row<{ of: TwoThreeFreeClass }>

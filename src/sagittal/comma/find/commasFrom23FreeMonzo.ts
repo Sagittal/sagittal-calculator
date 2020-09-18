@@ -60,7 +60,10 @@ const computeCommasFrom23FreeMonzo = (
             const comma = { monzo } as Comma
 
             const commaAnalysis: CommaAnalysis = analyzeComma(comma)
-            if (abs(commaAnalysis.apotomeSlope) > maxAas || commaAnalysis.n2d3p9 > maxN2D3P9) {
+            if (
+                abs(commaAnalysis.apotomeSlope) > maxAas || 
+                commaAnalysis.twoThreeFreeClassAnalysis.n2d3p9 > maxN2D3P9
+            ) {
                 return
             }
 

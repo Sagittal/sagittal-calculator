@@ -18,7 +18,7 @@ const jiPitchAnalysis: JiPitchAnalysis = analyzeJiPitch(jiPitch)
 const jiPitchOutput: Io = computeJiPitchOutput(jiPitchAnalysis)
 saveLog(jiPitchOutput, LogTarget.ALL)
 
-const twoThreeFreeClassOutput: Io = compute23FreeClassOutput(jiPitchAnalysis)
+const twoThreeFreeClassOutput: Io = compute23FreeClassOutput(jiPitchAnalysis.twoThreeFreeClassAnalysis)
 saveLog(twoThreeFreeClassOutput, LogTarget.ALL)
 
 // TODO: this is definitely moving along the right track, but I'm sure you can continue to improve this

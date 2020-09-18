@@ -1,7 +1,14 @@
-import { Max, Name, Pitch } from "../../../../../src/general"
+import { Direction, Max, Name, Pitch } from "../../../../../src/general"
 import { Monzo, Prime, Ratio, Sopfr } from "../../../../../src/general/math"
-import { Cents, TwoThreeFreeClass } from "../../../../../src/general/music"
-import { ApotomeSlope, JiPitchAnalysis, N2D3P9 } from "../../../../../src/sagittal/comma"
+import { Cents } from "../../../../../src/general/music"
+import { ApotomeSlope, JiPitchAnalysis, N2D3P9, TwoThreeFreeClassAnalysis } from "../../../../../src/sagittal/comma"
+
+const twoThreeFreeClassAnalysisFixture: TwoThreeFreeClassAnalysis = {
+    twoThreeFreePrimeLimit: 1 as Max<Prime>,
+    twoThreeFreeSopfr: 0 as Sopfr<{ rough: 5 }>,
+    n2d3p9: 1 as N2D3P9,
+    ratio: [1, 1] as Ratio<{ rough: 5, direction: Direction.SUPER }>,
+}
 
 const jiPitchAnalysisFixture: JiPitchAnalysis = {
     cents: 0 as Cents,
@@ -9,12 +16,10 @@ const jiPitchAnalysisFixture: JiPitchAnalysis = {
     monzo: [] as Monzo,
     ratio: [1, 1] as Ratio,
     apotomeSlope: 0 as ApotomeSlope,
-    twoThreeFreeSopfr: 0 as Sopfr<{ rough: 5 }>,
-    primeLimit: 1 as Max<Prime>,
-    n2d3p9: 1 as N2D3P9,
-    twoThreeFreeClass: { ratio: [1, 1] as Ratio } as TwoThreeFreeClass,
+    twoThreeFreeClassAnalysis: twoThreeFreeClassAnalysisFixture,
 }
 
 export {
     jiPitchAnalysisFixture,
+    twoThreeFreeClassAnalysisFixture,
 }

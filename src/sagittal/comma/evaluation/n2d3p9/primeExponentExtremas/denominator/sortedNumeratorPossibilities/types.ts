@@ -27,7 +27,7 @@ interface SortedNumeratorPossibilitiesForDenominatorPrimeGivenMaxN2D3P9 {
 }
 
 interface SortedNumeratorPossibilitiesOptions {
-    denominatorPrime: Prime<Denominator>,
+    denominatorPrime: Denominator & Prime,
     numeratorPossibilitiesForDenominatorGivenMaxN2D3P9: NumeratorPossibilityForDenominatorGivenMaxN2D3P9[],
 }
 

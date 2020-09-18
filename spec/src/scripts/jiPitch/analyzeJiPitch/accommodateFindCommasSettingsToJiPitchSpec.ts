@@ -2,7 +2,10 @@ import { Abs, Exponent, Integer, Max, Monzo, Prime } from "../../../../../src/ge
 import { ApotomeSlope, JiPitchAnalysis, N2D3P9 } from "../../../../../src/sagittal/comma"
 import { accommodateFindCommasSettingsToJiPitch } from "../../../../../src/scripts/jiPitch/analyzeJiPitch"
 import { DEFAULT_FIND_COMMAS_SETTINGS } from "../../../../../src/scripts/jiPitch/findCommas"
-import { jiPitchAnalysisFixture } from "../../../../helpers/src/scripts/jiPitch/fixtures"
+import {
+    jiPitchAnalysisFixture,
+    twoThreeFreeClassAnalysisFixture,
+} from "../../../../helpers/src/scripts/jiPitch/fixtures"
 
 describe("accommodateFindCommasSettingsToJiPitch", (): void => {
     const n2d3p9 = DEFAULT_FIND_COMMAS_SETTINGS.maxN2D3P9 + 100 as N2D3P9
@@ -13,7 +16,10 @@ describe("accommodateFindCommasSettingsToJiPitch", (): void => {
     it("adjusts the max N2D3P9 if the JI pitch has greater than the current settings", (): void => {
         const jiPitchAnalysis: JiPitchAnalysis = {
             ...jiPitchAnalysisFixture,
-            n2d3p9,
+            twoThreeFreeClassAnalysis: {
+                ...twoThreeFreeClassAnalysisFixture,
+                n2d3p9,
+            },
         }
 
         const actual = accommodateFindCommasSettingsToJiPitch(jiPitchAnalysis, DEFAULT_FIND_COMMAS_SETTINGS)

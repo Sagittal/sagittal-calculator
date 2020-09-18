@@ -12,7 +12,7 @@ import { N2 } from "../../../../../../../../../src/sagittal/comma/evaluation/n2d
 
 describe("computeSortedNumeratorPossibilitiesForDenominatorPrimeGivenMaxN2D3P9", (): void => {
     it("returns the sorted numerator possibilities for the denominator prime given the max N2D3P9, in two lists: one with lesser GPF than the denominator prime, one with greater; both sorted by their respective values (N2 in the case of those with lesser GPF — because you can't know what the P which is short for GPF will be until you pick the denominator prime — and N2P in the case of those with greater GPF because you do know it already)", (): void => {
-        const denominatorPrime = 11 as Prime<Denominator>
+        const denominatorPrime = 11 as Denominator & Prime
         const maxN2D3P9 = 10 as Max<N2D3P9>
         const numeratorPossibilitiesForDenominatorGivenMaxN2D3P9 = [
             { numerator: 13 as Numerator, gpf: 13 as Max<Prime> },

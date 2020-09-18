@@ -12,14 +12,14 @@ const computePrimeExponentExtremaGivenMaxN2D3P9 = (
     numeratorPossibilitiesForDenominatorGivenMaxN2D3P9: NumeratorPossibilityForDenominatorGivenMaxN2D3P9[],
     { mirrored }: { mirrored?: boolean } = {},
 ): Extrema<Integer & Exponent<Prime>> => {
-    const maxNumeratorPrimeExponentGivenMaxN2D3P9: Max<Integer & Exponent<Prime<Numerator>>> =
-        computeMaxNumeratorPrimeExponentGivenMaxN2D3P9(prime as Prime<Numerator>, maxN2D3P9)
-    const maxDenominatorPrimeExponentGivenMaxN2D3P9: Max<Integer & Exponent<Prime<Denominator>>> =
+    const maxNumeratorPrimeExponentGivenMaxN2D3P9: Max<Numerator & Exponent<Prime>> =
+        computeMaxNumeratorPrimeExponentGivenMaxN2D3P9(prime as Numerator & Prime, maxN2D3P9)
+    const maxDenominatorPrimeExponentGivenMaxN2D3P9: Max<Denominator & Exponent<Prime>> =
         mirrored ?
             maxNumeratorPrimeExponentGivenMaxN2D3P9 as
-                Max<Integer & Exponent<Prime>> as Max<Integer & Exponent<Prime<Denominator>>> :
+                Max<Integer & Exponent<Prime>> as Max<Denominator & Exponent<Prime>> :
             computeMaxDenominatorPrimeExponentGivenMaxN2D3P9(
-                prime as Prime<Denominator>,
+                prime as Denominator & Prime,
                 maxN2D3P9,
                 numeratorPossibilitiesForDenominatorGivenMaxN2D3P9,
             )

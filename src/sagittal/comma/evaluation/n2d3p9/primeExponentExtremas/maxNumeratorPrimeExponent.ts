@@ -2,18 +2,18 @@ import { Exponent, floor, Integer, log, Max, Numerator, Power, Prime } from "../
 import { N2D3P9 } from "../types"
 
 const computeMaxNumeratorPrimeExponentGivenMaxN2D3P9 = (
-    numeratorPrime: Prime<Numerator>,
+    numeratorPrime: Numerator & Prime,
     maxN2D3P9: Max<N2D3P9>,
-): Max<Integer & Exponent<Prime<Numerator>>> => {
-    const power = maxN2D3P9 * 9 * (1 / numeratorPrime) as Power<Prime<Numerator>>
+): Max<Numerator & Exponent<Prime>> => {
+    const power = maxN2D3P9 * 9 * (1 / numeratorPrime) as Power<Numerator & Prime>
 
     if (power <= 0) {
-        return 0 as Max<Integer & Exponent<Prime<Numerator>>>
+        return 0 as Max<Numerator & Exponent<Prime>>
     }
 
     const base = numeratorPrime / 2
 
-    return floor(log(power, base)) as Max<Integer & Exponent<Prime<Numerator>>>
+    return floor(log(power, base)) as Max<Numerator & Exponent<Prime>>
 
 }
 

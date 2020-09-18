@@ -17,12 +17,13 @@ import { CommaAnalysis, computeNotatingCommas } from "../../../sagittal"
 import { jiPitchScriptGroupSettings } from "../globals"
 import { INFINITE_N2D3P9 } from "./constants"
 
-const computeIsCommaLate = (comma: Comma): boolean => {
-    const monzo = computeJiPitchMonzo(comma)
+const computeIsCommaLate = (commaAnalysis: CommaAnalysis): boolean => {
+    // TODO: shouldn't there be a helper in sagittal/comma for computeAte and computeAas?
+    const monzo = computeJiPitchMonzo(commaAnalysis)
     const ate = abs(monzo[ THREE_PRIME_INDEX ])
 
     const notatingCommas =
-        computeNotatingCommas(comma, { ...jiPitchScriptGroupSettings, maxN2D3P9: INFINITE_N2D3P9 })
+        computeNotatingCommas(commaAnalysis, { ...jiPitchScriptGroupSettings, maxN2D3P9: INFINITE_N2D3P9 })
     const ates = notatingCommas.map((notatingComma: Comma): Exponent<Prime> => {
         return abs(computeJiPitchMonzo(notatingComma)[ 1 ])
     })
@@ -38,11 +39,14 @@ const computeLateComma = (tinaCommaAnalyses: CommaAnalysis[]): Maybe<CommaAnalys
     let index = 0
     let lateComma = undefined
     while (index < count(tinaCommaAnalyses)) {
-        const comma = tinaCommaAnalyses[ index ]
+        const tinaCommaAnalysis = tinaCommaAnalyses[ index ]
 
-        saveLog(`Checking comma ${index}: ${comma.monzo}, N2D3P9 ${comma.n2d3p9}` as Io, LogTarget.PROGRESS)
-        if (computeIsCommaLate(comma)) {
-            lateComma = comma
+        saveLog(
+            `Checking comma ${index}: ${tinaCommaAnalysis.monzo}, N2D3P9 ${tinaCommaAnalysis.twoThreeFreeClassAnalysis.n2d3p9}` as Io,
+            LogTarget.PROGRESS
+        )
+        if (computeIsCommaLate(tinaCommaAnalysis)) {
+            lateComma = tinaCommaAnalysis
             break
         }
         index = increment(index)

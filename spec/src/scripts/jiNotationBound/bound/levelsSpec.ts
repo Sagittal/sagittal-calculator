@@ -118,22 +118,18 @@ describe("updateJiNotationLevelAnalysis", (): void => {
 
             updateJiNotationLevelAnalysis(bestPossibleHistory)
 
-            // tslint:disable-next-line max-line-length
             expect((jiNotationLevelsBestCumulativeHistoryRanks[
                 JiNotationLevel.MEDIUM
                 ] as Record<number, Maybe<Count<Integer & Rank<EventAnalysis>>>>
             )[ 0 ]).toBe(1 as Count<Integer & Rank<EventAnalysis>>)
-            // tslint:disable-next-line max-line-length
             expect((jiNotationLevelsBestCumulativeHistoryRanks[
                 JiNotationLevel.HIGH
                 ] as Record<number, Maybe<Count<Integer & Rank<EventAnalysis>>>>
             )[ 2 ]).toBe(1 as Count<Integer & Rank<EventAnalysis>>)
-            // tslint:disable-next-line max-line-length
             expect((jiNotationLevelsBestCumulativeHistoryRanks[
                 JiNotationLevel.ULTRA
                 ] as Record<number, Maybe<Count<Integer & Rank<EventAnalysis>>>>
             )[ 2 ]).toBe(1 as Count<Integer & Rank<EventAnalysis>>)
-            // tslint:disable-next-line max-line-length
             expect((jiNotationLevelsBestCumulativeHistoryRanks[
                 JiNotationLevel.EXTREME
                 ] as Record<number, Maybe<Count<Integer & Rank<EventAnalysis>>>>

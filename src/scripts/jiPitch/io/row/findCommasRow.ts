@@ -10,7 +10,7 @@ const computeFindCommasRow = (
     return concat(
         computeNotatingCommasRow(commaAnalysisWithMaybeSagittalSymbolClassId),
         compute23FreeClassRow(
-            commaAnalysisWithMaybeSagittalSymbolClassId,
+            commaAnalysisWithMaybeSagittalSymbolClassId.twoThreeFreeClassAnalysis,
         ) as Row as Row<{ of: CommaAnalysis & { symbolClassId?: Id<SymbolClass> } }>,
     ) as Row<{ of: CommaAnalysis & { symbolClassId?: Id<SymbolClass> } }>
 }

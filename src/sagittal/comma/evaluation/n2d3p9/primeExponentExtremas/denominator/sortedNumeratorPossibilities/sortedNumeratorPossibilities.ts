@@ -6,7 +6,7 @@ import { computeSortedNumeratorPossibilitiesGivenMaxN2D3P9WithLesserGpfThanDenom
 import { SortedNumeratorPossibilitiesForDenominatorPrimeGivenMaxN2D3P9 } from "./types"
 
 const computeSortedNumeratorPossibilitiesForDenominatorPrimeGivenMaxN2D3P9 = (
-    denominatorPrime: Prime<Denominator>,
+    denominatorPrime: Denominator & Prime,
     maxN2D3P9: Max<N2D3P9>,
     numeratorPossibilitiesForDenominatorGivenMaxN2D3P9: NumeratorPossibilityForDenominatorGivenMaxN2D3P9[],
 ): SortedNumeratorPossibilitiesForDenominatorPrimeGivenMaxN2D3P9 => {

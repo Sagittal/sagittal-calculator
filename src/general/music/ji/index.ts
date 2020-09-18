@@ -4,4 +4,4 @@ export { Comma, Popularity, Votes, JiPitch, TwoThreeFreeClass, Apotome } from ".
 export { computeJiPitchMonzo, computeJiPitchRatio } from "./jiPitchMonzoOrRatio"
 export { COMMA_POPULARITIES } from "./popularities"
 export { equalJiPitches } from "./equalJiPitches"
-export { computeIsWithinPrimeLimit, computeIsWithinPrimeMin } from "./primeLimit"
+export { computeIsWithinPrimeLimit, computeIsWithinPrimeMin, computePrimeLimit } from "./primeLimit"

@@ -71,8 +71,8 @@ describe("breaking points of max N2D3P9 per numerator prime", (): void => {
 
     it("okay, here is where we are going to figure this out", (): void => {
         const computeMaxN2D3P9GivenMaxNumeratorPrimeExponent = (
-            prime: Prime<Numerator>,
-            maxNumeratorPrimeExponent: Max<Integer & Exponent<Prime<Numerator>>>,
+            prime: Prime,
+            maxNumeratorPrimeExponent: Max<Numerator & Exponent<Prime>>,
         ): Max<N2D3P9> => {
             return maxNumeratorPrimeExponent === 0 ?
                 1 as Max<N2D3P9> :
@@ -86,11 +86,12 @@ describe("breaking points of max N2D3P9 per numerator prime", (): void => {
 
         while (true) {
             breakingPoints.push([] as Array<Max<N2D3P9>>)
-            const prime = PRIMES[ primeIndex ] as Prime<Numerator>
+            const numeratorPrime = PRIMES[ primeIndex ] as Numerator & Prime
 
-            let maxNumeratorPrimeExponent = 0 as Max<Integer & Exponent<Prime<Numerator>>>
+            let maxNumeratorPrimeExponent = 0 as Max<Numerator & Exponent<Prime>>
             while (true) {
-                const maxN2D3P9 = computeMaxN2D3P9GivenMaxNumeratorPrimeExponent(prime, maxNumeratorPrimeExponent)
+                const maxN2D3P9 = 
+                    computeMaxN2D3P9GivenMaxNumeratorPrimeExponent(numeratorPrime, maxNumeratorPrimeExponent)
 
                 if (maxN2D3P9 > MAX_REASONABLE_MAX_N2D3P9) {
                     break

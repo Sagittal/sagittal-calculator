@@ -12,7 +12,7 @@ describe("computeMaxNumeratorPrimeExponentsGivenMaxN2D3P9", (): void => {
         const actual = computeMaxNumeratorPrimeExponentsGivenMaxN2D3P9(maxN2D3P9)
 
         //                      2  3  5  7 11 13 17 19 23 ...
-        const expected = [0, 0, 6, 4, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1] as Array<Max<Integer & Exponent<Prime<Numerator>>>>
+        const expected = [0, 0, 6, 4, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1] as Array<Max<Numerator & Exponent<Prime>>>
         expect(actual).toEqual(expected)
     })
 
@@ -22,7 +22,7 @@ describe("computeMaxNumeratorPrimeExponentsGivenMaxN2D3P9", (): void => {
         const actual = computeMaxNumeratorPrimeExponentsGivenMaxN2D3P9(maxN2D3P9)
 
         //                      2  3  5  7 11 13
-        const expected = [0, 0, 3, 2, 1, 1] as Array<Max<Integer & Exponent<Prime<Numerator>>>>
+        const expected = [0, 0, 3, 2, 1, 1] as Array<Max<Numerator & Exponent<Prime>>>
         expect(actual).toEqual(expected)
     })
 
@@ -31,7 +31,7 @@ describe("computeMaxNumeratorPrimeExponentsGivenMaxN2D3P9", (): void => {
 
         const actual = computeMaxNumeratorPrimeExponentsGivenMaxN2D3P9(maxN2D3P9)
 
-        const expected = [0, 0] as Array<Max<Integer & Exponent<Prime<Numerator>>>>
+        const expected = [0, 0] as Array<Max<Numerator & Exponent<Prime>>>
         expect(actual).toEqual(expected)
     })
 })

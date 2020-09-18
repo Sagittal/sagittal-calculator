@@ -20,7 +20,7 @@ const computeNumeratorMonzosToCheckGivenMaxN2D3P9 = (
 
     const numeratorPrimeExponentExtremaGivenMaxN2D3P9: Array<Extrema<Integer & Exponent<Prime>>> =
         maxNumeratorPrimeExponentsGivenMaxN2D3P9.map((
-            maxNumeratorPrimeExponentGivenMaxN2D3P9: Max<Integer & Exponent<Prime<Numerator>>>,
+            maxNumeratorPrimeExponentGivenMaxN2D3P9: Max<Numerator & Exponent<Prime>>,
         ): Extrema<Integer & Exponent<Prime>> => {
             return [0 as Min<Integer & Exponent<Prime>>, maxNumeratorPrimeExponentGivenMaxN2D3P9]
         })

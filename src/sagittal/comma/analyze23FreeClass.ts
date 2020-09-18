@@ -1,11 +1,5 @@
-// TODO: it might actually be better if analyzeJiPitch only found the twoThreeFreeClass
-//  and then there was a separate twoThreeFreeClassAnalysis
-//  which was the thing which had prime limit, sopfr, n2d3p9
-//  although you'd better stay consistent with how analyzeSymbolClass works, 
-//  where it automatically gets the analysis of the primaryComma
-//  I'm not sure which way is better yet
-//  but in any case this should take a TwoThreeFreeClass as its argument instead
-//  - and another semi-unrelated thought -- perhaps all the stuff that's in sagittal/comma right now actually belongs in
+// TODO: and another semi-unrelated thought -- 
+//  perhaps all the stuff that's in sagittal/comma right now actually belongs in
 //  sagittal/notations/ji ?
 //  or maybe it's just that one "analyzeJiPitch" module that's throwing me off
 //  I mean I guess what caused me to start thinking about this is that if we have an analyze23FreeClass module
@@ -19,3 +13,26 @@
 //  and move each of the respective analyze methods into them
 //  and then n2d3p9 should move under twoThreeFreeClass/, and usefulness under comma/, and apotomeSlope under jiPitch/
 //  and find and name both go under comma/
+
+import { computeJiPitchMonzo, computePrimeLimit, computeSopfr, Prime, Sopfr, TwoThreeFreeClass } from "../../general"
+import { computeN2D3P9, N2D3P9 } from "./evaluation"
+import { TwoThreeFreeClassAnalysis } from "./types"
+
+const analyze23FreeClass = (twoThreeFreeClass: TwoThreeFreeClass): TwoThreeFreeClassAnalysis => {
+    const primeLimit: Prime = computePrimeLimit(twoThreeFreeClass)
+
+    const twoThreeFreeSopfr: Sopfr<{ rough: 5 }> = 
+        computeSopfr(computeJiPitchMonzo(twoThreeFreeClass)) as Sopfr<{ rough: 5 }>
+    const n2d3p9: N2D3P9 = computeN2D3P9(twoThreeFreeClass)
+
+    return {
+        ...twoThreeFreeClass,
+        twoThreeFreePrimeLimit: primeLimit,
+        twoThreeFreeSopfr,
+        n2d3p9,
+    }
+}
+
+export {
+    analyze23FreeClass,
+}
