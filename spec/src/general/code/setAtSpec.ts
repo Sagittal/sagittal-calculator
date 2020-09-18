@@ -1,5 +1,4 @@
-import { KeyPath, setAt } from "../../../../src/general/code"
-import { Obj } from "../../../../src/general/code/types"
+import { KeyPath, Obj, setAt } from "../../../../src/general/code"
 
 describe("setAt", (): void => {
     it("sets the value on the object at the specified key path", (): void => {
@@ -16,10 +15,21 @@ describe("setAt", (): void => {
         const object = {} as Obj
         const keyPath = ["polygons", 2, "squares", "magicSquare"] as KeyPath
         const value = true
-        const options = { parents: true }
+        const options = { parents: {} }
 
         setAt(object, keyPath, value, options)
 
         expect(object).toEqual({ polygons: { 2: { squares: { magicSquare: true } } } })
+    })
+
+    it("can create the path if necessary, with the 'parents' options", (): void => {
+        const object = [] as unknown[] as Obj
+        const keyPath = [3, 2, 0] as KeyPath
+        const value = true
+        const options = { parents: [] }
+
+        setAt(object, keyPath, value, options)
+
+        expect(object).toEqual([undefined, undefined, undefined, [undefined, undefined, [true]]] as Obj)
     })
 })

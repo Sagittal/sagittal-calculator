@@ -3,7 +3,7 @@ import { finalElement, indexOfFinalElement } from "./finalElement"
 import { isArray } from "./typeGuards"
 import { KeyPath, Obj } from "./types"
 
-const setAt = (object: Obj, keyPath: KeyPath, value: unknown, options: { parents?: boolean } = {}): void => {
+const setAt = (object: Obj, keyPath: KeyPath, value: unknown, options: { parents?: [] | {} } = {}): void => {
     let cursor: Obj
     let finalKey: string| number
     if (isArray(keyPath)) {

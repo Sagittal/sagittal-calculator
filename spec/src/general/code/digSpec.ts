@@ -1,5 +1,4 @@
-import { dig, KeyPath } from "../../../../src/general/code"
-import { Obj } from "../../../../src/general/code/types"
+import { dig, KeyPath, Obj } from "../../../../src/general/code"
 
 describe("dig", (): void => {
     it("returns the value within the object following the path", (): void => {

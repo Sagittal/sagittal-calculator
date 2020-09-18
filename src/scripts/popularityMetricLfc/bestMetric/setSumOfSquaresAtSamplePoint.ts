@@ -11,7 +11,7 @@ const setSumOfSquaresAtSamplePoint = (
         sumsOfSquares as Record<number, SumsOfSquares | SumOfSquares>,
         samplePoint,
         sumOfSquares,
-        { parents: true },
+        { parents: [] },
     )
 }
 

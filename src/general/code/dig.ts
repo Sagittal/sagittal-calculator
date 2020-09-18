@@ -1,7 +1,8 @@
+import { shallowClone } from "./clone"
 import { isNumber, isString, isUndefined } from "./typeGuards"
 import { KeyPath, Obj } from "./types"
 
-const dig = (object: Obj, keyPath: KeyPath, { parents = false }: { parents?: boolean } = {}): unknown => {
+const dig = (object: Obj, keyPath: KeyPath, { parents = undefined }: { parents?: [] | {} } = {}): unknown => {
     let cursor: Obj | unknown = object
 
     if (isNumber(keyPath) || isString(keyPath)) {
@@ -12,7 +13,7 @@ const dig = (object: Obj, keyPath: KeyPath, { parents = false }: { parents?: boo
         if (!isUndefined((cursor as Obj)[ key ])) {
             cursor = (cursor as Obj)[ key ]
         } else if (parents) {
-            (cursor as Obj)[ key ] = {}
+            (cursor as Obj)[ key ] = shallowClone(parents)
             cursor = (cursor as Obj)[ key ]
         } else {
             return undefined
