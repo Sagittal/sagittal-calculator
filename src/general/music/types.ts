@@ -9,6 +9,7 @@ type Cents = number & { _CentsBrand: "Cents" }
 //  then the monzo to and from cents stuff could live in math/ instead of music/
 //  and then this would be more just like some number, a pure multiplier or coefficient of waveform frequency
 //  just can't figure out what to call it. PitchValue maybe...? Scaler?
+//  meaning that JiPitch would really be more like a RationalNumber, while this would be an IrrationalNumber
 type CentsPosition<T extends NumericTypeParameters = {}> = {
     cents: Cents,
     name?: Name<Pitch>,
