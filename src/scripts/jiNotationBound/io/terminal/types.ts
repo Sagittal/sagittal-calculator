@@ -1,4 +1,4 @@
-import { Cents, Id, Maybe, Multiplier, Name } from "../../../../general"
+import { Abs, Cents, Id, Maybe, Multiplier, Name } from "../../../../general"
 import {
     Ina,
     JiNotationBound,
@@ -12,7 +12,7 @@ import {
 // shared
 
 interface BoundedProperties {
-    distance: Cents,
+    distance: Abs<Cents>,
     inaDistance: Multiplier<Ina>,
 }
 

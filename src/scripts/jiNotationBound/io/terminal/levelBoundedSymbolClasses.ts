@@ -1,4 +1,4 @@
-import { abs, Cents, computeCentsFromPitch, Id, Maybe, subtract } from "../../../../general"
+import { Abs, abs, Cents, computeCentsFromPitch, Id, Maybe, subtract } from "../../../../general"
 import {
     getPrimaryComma,
     getSymbolClass,
@@ -39,7 +39,7 @@ const computeJiNotationLevelBoundedSymbolClassIdsWithDistances = (
                         if (symbolClass) {
                             const primaryComma = getPrimaryComma(symbolClass.id)
                             const primaryCommaCents = computeCentsFromPitch(primaryComma)
-                            const distance: Cents = abs(subtract(cents, primaryCommaCents))
+                            const distance: Abs<Cents> = abs(subtract(cents, primaryCommaCents))
 
                             return {
                                 id: symbolClass.id,

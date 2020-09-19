@@ -1,5 +1,5 @@
-import { Abs, abs, Exponent, Integer, Max, Prime, shallowClone, THREE_PRIME_INDEX } from "../../../general"
-import { ApotomeSlope, JiPitchAnalysis, N2D3P9 } from "../../../sagittal"
+import { Abs, Exponent, Integer, Max, Prime, shallowClone } from "../../../general"
+import { ApotomeSlope, computeAas, computeAte, JiPitchAnalysis, N2D3P9 } from "../../../sagittal"
 import { FindCommasSettings } from "../findCommas"
 
 const accommodateFindCommasSettingsToJiPitch = (
@@ -8,12 +8,12 @@ const accommodateFindCommasSettingsToJiPitch = (
 ): FindCommasSettings => {
     const accommodatedFindCommasOptions: FindCommasSettings = shallowClone(findCommasSettings)
 
-    const aas = abs(jiPitchAnalysis.apotomeSlope)
+    const aas = computeAas(jiPitchAnalysis)
     if (aas > findCommasSettings.maxAas) {
         accommodatedFindCommasOptions.maxAas = aas as Max<Abs<ApotomeSlope>>
     }
 
-    const ate = abs(jiPitchAnalysis.monzo[ THREE_PRIME_INDEX ])
+    const ate = computeAte(jiPitchAnalysis)
     if (ate > findCommasSettings.maxAte) {
         accommodatedFindCommasOptions.maxAte = ate as Max<Abs<3 & Integer & Exponent<Prime>>>
     }

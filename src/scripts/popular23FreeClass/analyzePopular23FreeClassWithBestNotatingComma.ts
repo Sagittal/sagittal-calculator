@@ -1,5 +1,4 @@
 import {
-    abs,
     BLANK,
     Cents,
     Comma,
@@ -17,14 +16,14 @@ import {
     Max,
     Maybe,
     Popularity,
-    THREE_PRIME_INDEX,
     TwoThreeFreeClass,
     Votes,
 } from "../../general"
 import {
     addMaybeSymbolClassId,
     APOTOME_CENTS,
-    computeApotomeSlope,
+    computeAas,
+    computeAte,
     computeNotatingCommas,
     formatSymbolClass,
     N2D3P9,
@@ -33,23 +32,19 @@ import { popular23FreeClassesScriptGroupSettings } from "./globals"
 import { Popular23FreeClassAnalysisWithBestNotatingComma } from "./types"
 
 const isLate = (notatingComma: Comma, bestNotatingComma: Comma): boolean => {
-    const notatingCommaMonzo = computeJiPitchMonzo(notatingComma)
-    const bestNotatingCommaMonzo = computeJiPitchMonzo(bestNotatingComma)
+    const ate = computeAte(notatingComma)
+    const late = computeAte(bestNotatingComma)
 
-    return abs(
-        notatingCommaMonzo[ THREE_PRIME_INDEX ]) <
-        abs(bestNotatingCommaMonzo[ THREE_PRIME_INDEX ],
-        ) ||
-        (
-            abs(notatingCommaMonzo[ THREE_PRIME_INDEX ]) ===
-            abs(bestNotatingCommaMonzo[ THREE_PRIME_INDEX ]) &&
-            computeCentsFromPitch(notatingComma) <
-            computeCentsFromPitch(bestNotatingComma)
-        )
+    return ate < late ||
+        (ate === late && computeCentsFromPitch(notatingComma) < computeCentsFromPitch(bestNotatingComma))
 }
 
 const isLaas = (notatingComma: Comma, bestNotatingComma: Comma): boolean => {
-    return abs(computeApotomeSlope(notatingComma)) < abs(computeApotomeSlope(bestNotatingComma))
+    const aas = computeAas(notatingComma)
+    const laas = computeAas(bestNotatingComma)
+
+    return aas < laas ||
+        (aas === laas && computeCentsFromPitch(notatingComma) < computeCentsFromPitch(bestNotatingComma))
 }
 
 const analyzePopular23FreeClassWithBestNotatingComma = (

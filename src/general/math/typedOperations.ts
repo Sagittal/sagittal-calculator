@@ -5,7 +5,7 @@ import {
     MULTIPLICATIVE_IDENTITY,
     VALUE_BELOW_WHICH_ROUNDING_IMPLEMENTATION_BREAKS,
 } from "./constants"
-import { Avg, Base, Exponent, Integer, Max, Min, Power } from "./types"
+import { Abs, Avg, Base, Exponent, Integer, Max, Min, Power } from "./types"
 
 const parseInteger = (integerText: string): Integer => {
     return parseInt(integerText) as Integer
@@ -71,8 +71,8 @@ const floor = <T extends number>(number: T): T & Integer =>
 const ceil = <T extends number>(number: T): T & Integer =>
     Math.ceil(number) as T & Integer
 
-const abs = <T extends number>(number: T): T =>
-    Math.abs(number) as T
+const abs = <T extends number>(number: T): Abs<T> =>
+    Math.abs(number) as Abs<T>
 
 const sqrt = <T extends number>(number: T): Omit<T, "_IntegerBrand"> =>
     Math.sqrt(number) as unknown as Omit<T, "_IntegerBrand">

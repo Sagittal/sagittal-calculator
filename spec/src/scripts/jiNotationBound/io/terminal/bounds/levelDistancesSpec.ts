@@ -1,4 +1,4 @@
-import { Multiplier } from "../../../../../../../src/general"
+import { Abs, Multiplier } from "../../../../../../../src/general"
 import { Formatted } from "../../../../../../../src/general/io"
 import { Cents } from "../../../../../../../src/general/music"
 import { Ina, JiNotationLevel } from "../../../../../../../src/sagittal/notations/ji"
@@ -14,11 +14,11 @@ describe("extractJiNotationLevelDistances", (): void => {
         const historyAnalysis: HistoryAnalysis = {
             ...historyAnalysisFixture,
             eventAnalyses: [
-                { ...eventAnalysisFixture, jiNotationLevel: JiNotationLevel.MEDIUM, distance: 0.000000 as Cents },
-                { ...eventAnalysisFixture, jiNotationLevel: JiNotationLevel.HIGH, distance: 4.444444 as Cents },
-                { ...eventAnalysisFixture, jiNotationLevel: JiNotationLevel.ULTRA, distance: 3.333333 as Cents },
-                { ...eventAnalysisFixture, jiNotationLevel: JiNotationLevel.EXTREME, distance: 2.222222 as Cents },
-                { ...eventAnalysisFixture, jiNotationLevel: JiNotationLevel.INSANE, distance: 1.111111 as Cents },
+                { ...eventAnalysisFixture, jiNotationLevel: JiNotationLevel.MEDIUM, distance: 0.000000 as Abs<Cents> },
+                { ...eventAnalysisFixture, jiNotationLevel: JiNotationLevel.HIGH, distance: 4.444444 as Abs<Cents> },
+                { ...eventAnalysisFixture, jiNotationLevel: JiNotationLevel.ULTRA, distance: 3.333333 as Abs<Cents> },
+                { ...eventAnalysisFixture, jiNotationLevel: JiNotationLevel.EXTREME, distance: 2.222222 as Abs<Cents> },
+                { ...eventAnalysisFixture, jiNotationLevel: JiNotationLevel.INSANE, distance: 1.111111 as Abs<Cents> },
             ],
         }
 
@@ -37,10 +37,10 @@ describe("extractJiNotationLevelDistances", (): void => {
         const historyAnalysis: HistoryAnalysis = {
             ...historyAnalysisFixture,
             eventAnalyses: [
-                { ...eventAnalysisFixture, jiNotationLevel: JiNotationLevel.MEDIUM, distance: 0.000000 as Cents },
-                { ...eventAnalysisFixture, jiNotationLevel: JiNotationLevel.HIGH, distance: 4.444444 as Cents },
-                { ...eventAnalysisFixture, jiNotationLevel: JiNotationLevel.EXTREME, distance: 2.222222 as Cents },
-                { ...eventAnalysisFixture, jiNotationLevel: JiNotationLevel.INSANE, distance: 1.111111 as Cents },
+                { ...eventAnalysisFixture, jiNotationLevel: JiNotationLevel.MEDIUM, distance: 0.000000 as Abs<Cents> },
+                { ...eventAnalysisFixture, jiNotationLevel: JiNotationLevel.HIGH, distance: 4.444444 as Abs<Cents> },
+                { ...eventAnalysisFixture, jiNotationLevel: JiNotationLevel.EXTREME, distance: 2.222222 as Abs<Cents> },
+                { ...eventAnalysisFixture, jiNotationLevel: JiNotationLevel.INSANE, distance: 1.111111 as Abs<Cents> },
             ],
         }
 

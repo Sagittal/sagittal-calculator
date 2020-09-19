@@ -1,4 +1,4 @@
-import { Cents, Id, Multiplier, Row, Sum } from "../../../../../../../src/general"
+import { Abs, Cents, Id, Multiplier, Row, Sum } from "../../../../../../../src/general"
 import { Ina, JiNotationBound, JiNotationLevel, Tina } from "../../../../../../../src/sagittal"
 import { JiNotationBoundAnalysis } from "../../../../../../../src/scripts/jiNotationBound/bound"
 import { EventType } from "../../../../../../../src/scripts/jiNotationBound/histories"
@@ -27,21 +27,21 @@ describe("computeJiNotationBoundRow", (): void => {
                         ...eventAnalysisFixture,
                         jiNotationLevel: JiNotationLevel.ULTRA,
                         rank: RANKS[ EventType.INA_MIDPOINT ],
-                        distance: 0.000 as Cents,
+                        distance: 0.000 as Abs<Cents>,
                         inaDistance: 0.000 as Multiplier<Ina>,
                     },
                     {
                         ...eventAnalysisFixture,
                         jiNotationLevel: JiNotationLevel.EXTREME,
                         rank: RANKS[ EventType.INA_MIDPOINT ],
-                        distance: 0.333 as Cents,
+                        distance: 0.333 as Abs<Cents>,
                         inaDistance: 0.682 as Multiplier<Ina>,
                     },
                     {
                         ...eventAnalysisFixture,
                         jiNotationLevel: JiNotationLevel.INSANE,
                         rank: RANKS[ EventType.COMMA_MEAN ],
-                        distance: 0.022 as Cents,
+                        distance: 0.022 as Abs<Cents>,
                         inaDistance: 0.157 as Multiplier<Ina>,
                     },
                 ],

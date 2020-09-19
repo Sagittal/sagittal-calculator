@@ -1,3 +1,5 @@
+import { Sum } from "../../../../../src/general"
+import { Abs } from "../../../../../src/general/math"
 import { Cents } from "../../../../../src/general/music"
 import { computeBestPossibleHistory } from "../../../../../src/scripts/jiNotationBound/bound/bestPossibleHistory"
 import { HistoryAnalysis, Score } from "../../../../../src/scripts/jiNotationBound/history"
@@ -70,14 +72,14 @@ describe("computeBestPossibleHistory", (): void => {
             {
                 ...historyAnalysisFixture,
                 score: 3436643 as Score,
-                totalDistance: 0.2 as Cents,
+                totalDistance: 0.2 as Sum<Abs<Cents>>,
                 cents: 12.909 as Cents,
                 exact: true,
             },
             {
                 ...historyAnalysisFixture,
                 score: 3436643 as Score,
-                totalDistance: 0.1 as Cents,
+                totalDistance: 0.1 as Sum<Abs<Cents>>,
                 cents: 12.909 as Cents,
                 exact: true,
             },
@@ -88,7 +90,7 @@ describe("computeBestPossibleHistory", (): void => {
         const expected: HistoryAnalysis = {
             ...historyAnalysisFixture,
             score: 3436643 as Score,
-            totalDistance: 0.1 as Cents,
+            totalDistance: 0.1 as Sum<Abs<Cents>>,
             cents: 12.909 as Cents,
             exact: true,
         }

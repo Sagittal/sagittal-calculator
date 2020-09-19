@@ -1,3 +1,4 @@
+import { Abs } from "../../../../../../src/general/math"
 import { Cents } from "../../../../../../src/general/music"
 import { HistoricalEvent } from "../../../../../../src/scripts/jiNotationBound/histories"
 import { computeEventDistance } from "../../../../../../src/scripts/jiNotationBound/history/events/eventDistance"
@@ -11,7 +12,7 @@ describe("computeEventDistance", (): void => {
 
         const actual = computeEventDistance(event, index, history)
 
-        const expected = 2 as Cents
+        const expected = 2 as Abs<Cents>
         expect(actual).toBe(expected)
     })
 })

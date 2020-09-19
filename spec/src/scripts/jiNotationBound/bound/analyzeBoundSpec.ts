@@ -1,4 +1,4 @@
-import { Cents, Count, Id, Multiplier, Name, Pitch, Sum } from "../../../../../src/general"
+import { Abs, Cents, Count, Id, Multiplier, Name, Pitch, Sum } from "../../../../../src/general"
 import { Ina, JiNotationBound, JiNotationLevel, Tina } from "../../../../../src/sagittal/notations/ji"
 import { analyzeJiNotationBound } from "../../../../../src/scripts/jiNotationBound/bound"
 import * as jiNotationLevels from "../../../../../src/scripts/jiNotationBound/bound/levels"
@@ -66,7 +66,7 @@ describe("analyzeJiNotationBound", (): void => {
             name: ".)/| '/|" as Name<Pitch>,
             cents: 23.2 as Cents,
             rank: RANKS[ EventType.COMMA_MEAN ],
-            distance: 0 as Cents,
+            distance: 0 as Abs<Cents>,
             inaDistance: 0 as Multiplier<Ina>,
             exact: false,
         },
@@ -76,7 +76,7 @@ describe("analyzeJiNotationBound", (): void => {
             name: "47.5°233" as Name<Pitch>,
             cents: 23.15 as Cents,
             rank: RANKS[ EventType.INA_MIDPOINT ],
-            distance: 0.05000000000000071 as Cents,
+            distance: 0.05000000000000071 as Abs<Cents>,
             inaDistance: 0.10247613475154385 as Multiplier<Ina>,
             exact: false,
         },
@@ -86,7 +86,7 @@ describe("analyzeJiNotationBound", (): void => {
             name: "164.5°809" as Name<Pitch>,
             cents: 23.116419649559468 as Cents,
             rank: RANKS[ EventType.INA_MIDPOINT ],
-            distance: 0.03358035044053054 as Cents,
+            distance: 0.03358035044053054 as Abs<Cents>,
             inaDistance: 0.238962941978454 as Multiplier<Ina>,
             exact: true,
         },
@@ -98,7 +98,7 @@ describe("analyzeJiNotationBound", (): void => {
         score: 131 as Score,
         possible: true,
         exact: false,
-        totalDistance: 0.08358035044053125 as Cents,
+        totalDistance: 0.08358035044053125 as Sum<Abs<Cents>>,
         totalInaDistance: 0.34143907672999785 as Sum<Multiplier<Ina>>,
         tinaError: 0 as Multiplier<Tina>,
         initialPositionTinaDistance: -0.5613173198957342 as Multiplier<Tina>,

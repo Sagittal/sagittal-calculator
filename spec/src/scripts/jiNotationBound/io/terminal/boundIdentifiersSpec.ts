@@ -1,4 +1,5 @@
 import {
+    Abs,
     Cents,
     Comma, Copfr,
     Direction,
@@ -45,7 +46,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                 [ JiNotationLevel.ULTRA ]: [
                     {
                         introducingJiNotationLevel: JiNotationLevel.ULTRA,
-                        distance: 23.1164196495597 - 22.9305875372457 as Cents,
+                        distance: 23.1164196495597 - 22.9305875372457 as Abs<Cents>,
                         inaDistance: (23.1164196495597 - 22.9305875372457) / ULTRINA as Multiplier<Ina>,
                         ascii: ".)/|" as SymbolLongAscii,
                         unicode: "" as SymbolUnicode,
@@ -72,7 +73,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                     },
                     {
                         introducingJiNotationLevel: JiNotationLevel.ULTRA,
-                        distance: 23.46001038464900 - 23.1164196495597 as Cents,
+                        distance: 23.46001038464900 - 23.1164196495597 as Abs<Cents>,
                         inaDistance: (23.46001038464900 - 23.1164196495597) / ULTRINA as Multiplier<Ina>,
                         ascii: "'/|" as SymbolLongAscii,
                         unicode: "" as SymbolUnicode,
@@ -100,7 +101,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                 [ JiNotationLevel.EXTREME ]: [
                     {
                         introducingJiNotationLevel: JiNotationLevel.ULTRA,
-                        distance: 23.1164196495597 - 22.9305875372457 as Cents,
+                        distance: 23.1164196495597 - 22.9305875372457 as Abs<Cents>,
                         inaDistance: (23.1164196495597 - 22.9305875372457) / MINA as Multiplier<Ina>,
                         ascii: ".)/|" as SymbolLongAscii,
                         unicode: "" as SymbolUnicode,
@@ -126,7 +127,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                     },
                     {
                         introducingJiNotationLevel: JiNotationLevel.ULTRA,
-                        distance: 23.46001038464900 - 23.1164196495597 as Cents,
+                        distance: 23.46001038464900 - 23.1164196495597 as Abs<Cents>,
                         inaDistance: (23.46001038464900 - 23.1164196495597) / MINA as Multiplier<Ina>,
                         ascii: "'/|" as SymbolLongAscii,
                         unicode: "" as SymbolUnicode,
@@ -154,7 +155,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                 [ JiNotationLevel.INSANE ]: [
                     {
                         introducingJiNotationLevel: JiNotationLevel.ULTRA,
-                        distance: 23.1164196495597 - 22.9305875372457 as Cents,
+                        distance: 23.1164196495597 - 22.9305875372457 as Abs<Cents>,
                         inaDistance: (23.1164196495597 - 22.9305875372457) / TINA as Multiplier<Ina>,
                         ascii: ".)/|" as SymbolLongAscii,
                         unicode: "" as SymbolUnicode,
@@ -180,7 +181,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                     },
                     {
                         introducingJiNotationLevel: JiNotationLevel.ULTRA,
-                        distance: 23.46001038464900 - 23.1164196495597 as Cents,
+                        distance: 23.46001038464900 - 23.1164196495597 as Abs<Cents>,
                         inaDistance: (23.46001038464900 - 23.1164196495597) / TINA as Multiplier<Ina>,
                         ascii: "'/|" as SymbolLongAscii,
                         unicode: "" as SymbolUnicode,

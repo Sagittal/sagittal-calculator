@@ -28,6 +28,8 @@ export {
     ParsedCommaName,
     TwoThreeFreeClassAnalysis,
     SizeCategoryBound,
+    computeAte,
+    computeAas,
 } from "./ji"
 export {
     formatSymbolClass, formatSymbolAscii, SymbolLongAscii, unicodeFromAscii, SymbolSmiley, SymbolUnicode,

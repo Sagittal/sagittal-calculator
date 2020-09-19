@@ -1,4 +1,4 @@
-import { Cents, Count, Id, Integer, Multiplier, Name, Pitch, Rank, Sum } from "../../../../../src/general"
+import { Abs, Cents, Count, Id, Integer, Multiplier, Name, Pitch, Rank, Sum } from "../../../../../src/general"
 import { Ina, JiNotationBound, JiNotationLevel, Tina } from "../../../../../src/sagittal/notations/ji"
 import { JiNotationBoundAnalysis } from "../../../../../src/scripts/jiNotationBound/bound"
 import { EventConsolidation } from "../../../../../src/scripts/jiNotationBound/consolidateHistories/types"
@@ -15,7 +15,7 @@ const eventFixture: HistoricalEvent = {
 
 const eventAnalysisFixture: EventAnalysis = {
     ...eventFixture,
-    distance: 0 as Cents,
+    distance: 0 as Abs<Cents>,
     inaDistance: 0 as Multiplier<Ina>,
     rank: 0 as Integer & Rank<EventType>,
     exact: false,
@@ -26,7 +26,7 @@ const historyAnalysisFixture: HistoryAnalysis = {
     cents: 0 as Cents,
     rank: 0 as Integer & Rank<EventType>,
     score: 0 as Score,
-    totalDistance: 0 as Cents,
+    totalDistance: 0 as Sum<Abs<Cents>>,
     exact: false,
     totalInaDistance: 0 as Sum<Multiplier<Ina>>,
     possible: false,

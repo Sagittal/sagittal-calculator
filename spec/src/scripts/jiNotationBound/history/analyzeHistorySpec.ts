@@ -1,4 +1,4 @@
-import { add, Cents, Multiplier } from "../../../../../src/general"
+import { Abs, add, Cents, Multiplier, Sum } from "../../../../../src/general"
 import { multiply } from "../../../../../src/general/math"
 import { Ina, JiNotationBound, JiNotationLevel, Tina, TINA } from "../../../../../src/sagittal/notations/ji"
 import { computeInitialPosition } from "../../../../../src/scripts/jiNotationBound/bound/initialPosition"
@@ -50,7 +50,7 @@ describe("analyzeHistory", (): void => {
                     type: EventType.INA_MIDPOINT,
                     rank: RANKS[ EventType.INA_MIDPOINT ],
                     exact: false,
-                    distance: 0 as Cents,
+                    distance: 0 as Abs<Cents>,
                     inaDistance: 0 as Multiplier<Ina>,
                     jiNotationLevel: JiNotationLevel.EXTREME,
                 },
@@ -60,14 +60,14 @@ describe("analyzeHistory", (): void => {
                     type: EventType.SIZE_CATEGORY_BOUND,
                     rank: RANKS[ EventType.SIZE_CATEGORY_BOUND ],
                     exact: false,
-                    distance: 0 as Cents,
+                    distance: 0 as Abs<Cents>,
                     inaDistance: 0 as Multiplier<Ina>,
                     jiNotationLevel: JiNotationLevel.INSANE,
                 },
             ])
             expect(actual.cents).toBe(cents)
             expect(actual.rank).toBe(RANKS[ EventType.SIZE_CATEGORY_BOUND ])
-            expect(actual.totalDistance).toBe(0 as Cents)
+            expect(actual.totalDistance).toBe(0 as Sum<Abs<Cents>>)
             expect(actual.initialPositionTinaDistance)
                 .toBeCloseToTyped(3.681504 as Multiplier<Tina>)
         },
