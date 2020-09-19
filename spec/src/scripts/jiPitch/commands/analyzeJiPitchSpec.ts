@@ -82,7 +82,7 @@ describe("analyze-ji-pitch", (): void => {
     it("can sort the notating commas", (): void => {
         onlyRunInCi()
 
-        const command = "npm run analyze-ji-pitch -- --sort-by apotomeSlope" as Io
+        const command = "npm run analyze-ji-pitch [3,-7,2,0,1] -- --sort-by apotomeSlope" as Io
 
         const actual = runCommandAndGetConsoleOutput(command)
 
