@@ -1,12 +1,17 @@
-import { deepEquals } from "../../code"
+import { deepEquals, isUndefined } from "../../code"
 import { computeJiPitchMonzo } from "./jiPitchMonzoOrRatio"
 import { JiPitch } from "./types"
 
 const equalJiPitches = (jiPitchA: JiPitch, jiPitchB: JiPitch): boolean => {
-    const monzoA = computeJiPitchMonzo(jiPitchA)
-    const monzoB = computeJiPitchMonzo(jiPitchB)
+    if (!isUndefined(jiPitchA.ratio) && !isUndefined(jiPitchB.ratio)) {
+        return deepEquals(jiPitchA.ratio, jiPitchB.ratio)
+    }
 
-    return deepEquals(monzoA, monzoB)
+    if (!isUndefined(jiPitchA.monzo) && !isUndefined(jiPitchB.monzo)) {
+        return deepEquals(jiPitchA.monzo, jiPitchB.monzo)
+    }
+
+    return deepEquals(computeJiPitchMonzo(jiPitchA), computeJiPitchMonzo(jiPitchB))
 }
 
 export {

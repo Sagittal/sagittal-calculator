@@ -8,7 +8,8 @@ import { JiNotationBound, JiNotationLevel } from "./types"
 // because some of these JI notation bounds bound symbols which are unrelated from one JI notation level to the next,
 // so maybe can be different
 
-// TODO: should theese include their types? per the bounds analysis?
+// TODO: should these include their types? per the bounds analysis?
+//  if they do, there should probably be some test, in the bounds analysis script group, that it matches
 
 const JI_NOTATION_BOUNDS: JiNotationBound[] = [
     {
