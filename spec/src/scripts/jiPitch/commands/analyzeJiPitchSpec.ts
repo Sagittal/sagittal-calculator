@@ -79,6 +79,38 @@ describe("analyze-ji-pitch", (): void => {
         }).toThrowError(/Unable to determine monzo for JI pitch/)
     })
 
+    it("can sort the notating commas", (): void => {
+        onlyRunInCi()
+
+        const command = "npm run analyze-ji-pitch -- --sort-by apotomeSlope" as Io
+
+        const actual = runCommandAndGetConsoleOutput(command)
+
+        const expected = [
+            "   --- JI pitch ---",
+            "",
+            "         \t                       \t       \tapotome",
+            "ratio    \tmonzo                  \tcents  \tslope  ",
+            "2200/2187\t[   3  -7   2   0   1 ⟩\t 10.260\t -7.632",
+            "",
+            "   --- 2,3-free class ---",
+            "",
+            "prime  \t     \t       \t       \t       ",
+            "limit  \tname \tCoPFR  \tSoPFR  \tN2D3P9 ",
+            " 11    \t275/1\t  3    \t 21    \t 42.014",
+            "",
+            "   --- notating commas ---",
+            "",
+            "symbol  \tcomma \t                 \t                       \t       \tapotome",
+            "class   \tname  \tratio            \tmonzo                  \tcents  \tslope  ",
+            "        \t1/275M\t16777216/16238475\t[  24 -10  -2   0  -1 ⟩\t 56.505\t-13.479",
+            "   `)|( \t275k  \t2200/2187        \t[   3  -7   2   0   1 ⟩\t 10.260\t -7.632",
+            "        \t275S  \t66825/65536      \t[ -16   5   2   0   1 ⟩\t 33.720\t  2.924",
+            "",
+        ] as Io[]
+        expect(actual).toEqual(expected)
+    })
+
     it("can appraise a JI pitch which is just a simple integer", (): void => {
         onlyRunInCi()
 

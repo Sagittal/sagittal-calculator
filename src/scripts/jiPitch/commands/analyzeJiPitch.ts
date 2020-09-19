@@ -6,12 +6,7 @@ import {
     JiPitchAnalysis,
     SymbolClass,
 } from "../../../sagittal"
-import {
-    accommodateFindCommasSettingsToJiPitch,
-    computeNotatingCommaAnalyses,
-    parseJiPitch,
-} from "../analyzeJiPitch"
-import { parseFindCommasSettings } from "../findCommas"
+import { computeNotatingCommaAnalyses, parseJiPitch, parseNotatingCommasSettings } from "../analyzeJiPitch"
 import { compute23FreeClassOutput, computeJiPitchOutput, computeNotatingCommasOutput, readJiPitchOptions } from "../io"
 import { applySharedPitchCommandSetup } from "./shared"
 
@@ -27,18 +22,8 @@ saveLog(jiPitchOutput, LogTarget.ALL)
 const twoThreeFreeClassOutput: Io = compute23FreeClassOutput(jiPitchAnalysis.twoThreeFreeClassAnalysis)
 saveLog(twoThreeFreeClassOutput, LogTarget.ALL)
 
-// TODO: this is definitely moving along the right track, but I'm sure you can continue to improve this
-//  I would not like to see parsing of find commas options here at the top-level of the analyze-ji-pitch script
-//  perhaps you can just embed that inside of accommodateFindCommasSettingsToJiPitch method
-//  (and when you look into this, also glance at what the other two commands are doing)
-
-const findCommasSettings = parseFindCommasSettings()
-const accommodatedFindCommasOptions = accommodateFindCommasSettingsToJiPitch(jiPitchAnalysis, findCommasSettings)
-const notatingCommaAnalyses: CommaAnalysis[] =
-    computeNotatingCommaAnalyses(
-        jiPitch,
-        accommodatedFindCommasOptions,
-    )
+const notatingCommasSettings = parseNotatingCommasSettings(jiPitchAnalysis)
+const notatingCommaAnalyses: CommaAnalysis[] = computeNotatingCommaAnalyses(jiPitch, notatingCommasSettings)
 const maybeSymbolClassIds: Array<Maybe<Id<SymbolClass>>> = notatingCommaAnalyses.map(computeMaybeSymbolClassId)
 const notatingCommasOutput: Io = computeNotatingCommasOutput(notatingCommaAnalyses, maybeSymbolClassIds)
 saveLog(notatingCommasOutput, LogTarget.ALL)

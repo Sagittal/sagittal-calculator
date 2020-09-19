@@ -1,7 +1,6 @@
-import { Comma, Id, Io, LogTarget, Maybe, saveLog, sort } from "../../../general"
-import { analyzeComma, CommaAnalysis, computeMaybeSymbolClassId, SymbolClass } from "../../../sagittal"
-import { computeCommas, parseFindCommasSettings } from "../findCommas"
-import { jiPitchScriptGroupSettings } from "../globals"
+import { Id, Io, LogTarget, Maybe, saveLog } from "../../../general"
+import { CommaAnalysis, computeMaybeSymbolClassId, SymbolClass } from "../../../sagittal"
+import { computeCommaAnalyses, parseFindCommasSettings } from "../findCommas"
 import { computeFindCommasOutput, readFindCommasOptions } from "../io"
 import { applySharedPitchCommandSetup } from "./shared"
 
@@ -10,14 +9,7 @@ readFindCommasOptions()
 applySharedPitchCommandSetup()
 
 const findCommasSettings = parseFindCommasSettings()
-
-const commas = computeCommas({ ...jiPitchScriptGroupSettings, ...findCommasSettings })
-const commaAnalyses = commas.map((comma: Comma): CommaAnalysis => {
-    return analyzeComma(comma, jiPitchScriptGroupSettings.commaNameOptions)
-})
-if (jiPitchScriptGroupSettings.sortKey) {
-    sort(commaAnalyses, { by: jiPitchScriptGroupSettings.sortKey })
-}
-const maybeSagittalSymbolClassIds: Array<Maybe<Id<SymbolClass>>> = commaAnalyses.map(computeMaybeSymbolClassId)
-const findCommasOutput: Io = computeFindCommasOutput(commaAnalyses, maybeSagittalSymbolClassIds, findCommasSettings)
+const commaAnalyses: CommaAnalysis[] = computeCommaAnalyses(findCommasSettings)
+const maybeSymbolClassIds: Array<Maybe<Id<SymbolClass>>> = commaAnalyses.map(computeMaybeSymbolClassId)
+const findCommasOutput: Io = computeFindCommasOutput(commaAnalyses, maybeSymbolClassIds, findCommasSettings)
 saveLog(findCommasOutput, LogTarget.ALL)

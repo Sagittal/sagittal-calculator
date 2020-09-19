@@ -1,3 +1,2 @@
-export { computeNotatingCommaAnalyses } from "./notatingCommas"
-export { accommodateFindCommasSettingsToJiPitch } from "./accommodateFindCommasSettingsToJiPitch"
-export { parseJiPitch } from "./parse"
+export { computeNotatingCommaAnalyses } from "./notatingCommaAnalyses"
+export { parseJiPitch, parseNotatingCommasSettings } from "./parse"

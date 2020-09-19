@@ -7,7 +7,7 @@ import { computeFindCommasTitle } from "../titles"
 
 const computeFindCommasOutput = (
     commaAnalyses: Array<CommaAnalysis>,
-    maybeSagittalSymbolClassIds: Array<Maybe<Id<SymbolClass>>>,
+    maybeSymbolClassIds: Array<Maybe<Id<SymbolClass>>>,
     findCommasSettings: FindCommasSettings = DEFAULT_FIND_COMMAS_SETTINGS,
 ): Io => {
     const findCommasHeaderRows = computeFindCommasHeaderRows()
@@ -16,7 +16,7 @@ const computeFindCommasOutput = (
     const findCommasTable: Table<CommaAnalysis> = [
         ...findCommasHeaderRows,
         ...commaAnalyses.map((commaAnalysis: CommaAnalysis, index: number): Row<{ of: CommaAnalysis }> => {
-            return computeFindCommasRow(commaAnalysis, maybeSagittalSymbolClassIds[index])
+            return computeFindCommasRow(commaAnalysis, maybeSymbolClassIds[index])
         }),
     ]
 
