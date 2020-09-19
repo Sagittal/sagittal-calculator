@@ -60,5 +60,6 @@ export {
     SymbolClassAnalysis,
     analyzeSymbolClass,
     getPrimaryComma,
+    getSmallestSymbolSubset,
 } from "./notations"
 export { APOTOME_CENTS } from "./constants"

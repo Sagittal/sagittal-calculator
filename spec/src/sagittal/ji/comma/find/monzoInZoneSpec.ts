@@ -4,7 +4,7 @@ import { Cents } from "../../../../../../src/general/music"
 import { computeMonzoInZone } from "../../../../../../src/sagittal/ji/comma/find/monzoInZone"
 
 describe("computeMonzoInZone", (): void => {
-    it("given a 2-free monzo, finds the right power of 2 for the monzo which is within the cents range", (): void => {
+    it("given a 2-free monzo, finds the correct power of 2 for the monzo which is within the cents range", (): void => {
         const twoFreeMonzo = [0, -6, 3, 5, -1] as Monzo<{ rough: 3 }>
         const minCents = 40.0 as Min<Cents>
         const maxCents = 40.1 as Max<Cents>

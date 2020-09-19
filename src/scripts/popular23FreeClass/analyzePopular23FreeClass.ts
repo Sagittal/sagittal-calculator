@@ -15,7 +15,7 @@ import {
 } from "../../general"
 import {
     formatSymbolClass,
-    getSymbolClass,
+    getSmallestSymbolSubset,
     N2D3P9,
     SymbolClass,
     SymbolLongAscii,
@@ -46,7 +46,7 @@ const analyzePopular23FreeClass = (
 
     const symbolSubsets = exactlyNotatingSymbolClassIds.map((symbolClassId: Id<SymbolClass>): number => {
         return SYMBOL_SUBSETS_USED_IN_JI_NOTATION_SORTED_BY_ASCENDING_SYMBOL_COUNT
-            .indexOf(getSymbolClass(symbolClassId).smallestSymbolSubset)
+            .indexOf(getSmallestSymbolSubset(symbolClassId))
     }).join(", ") as Io
 
     return {

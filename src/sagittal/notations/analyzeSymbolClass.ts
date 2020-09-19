@@ -3,6 +3,7 @@ import { analyzeComma, CommaAnalysis } from "../ji"
 import { getSagittalComma } from "./getSagittalComma"
 import { getIntroducingJiNotationLevel, getMinaName } from "./ji"
 import { getRepresentativeSymbol } from "./representativeSymbol"
+import { getSmallestSymbolSubset } from "./smallestSymbolSubset"
 import { getSymbolClass } from "./symbolClass"
 import { SagittalComma, SymbolClass, SymbolClassAnalysis } from "./types"
 
@@ -22,7 +23,17 @@ const analyzeSymbolClass = (
 
     const minaName = getMinaName(symbolClassId)
 
-    return { ...otherSymbolClassProperties, minaName, ascii, unicode, introducingJiNotationLevel, primaryCommaAnalysis }
+    const smallestSymbolSubset = getSmallestSymbolSubset(symbolClassId)
+
+    return {
+        ...otherSymbolClassProperties,
+        smallestSymbolSubset,
+        minaName,
+        ascii,
+        unicode,
+        introducingJiNotationLevel,
+        primaryCommaAnalysis,
+    }
 }
 
 export {

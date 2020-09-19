@@ -30,7 +30,7 @@ describe("computeSmileyFromAscii", (): void => {
         expect(actual).toBe(expected)
     })
 
-    it("does the right thing with double ticks", (): void => {
+    it("does the correct thing with double ticks", (): void => {
         const ascii = "``|)" as SymbolLongAscii
 
         const actual = computeSmileyFromAscii(ascii)
@@ -39,7 +39,7 @@ describe("computeSmileyFromAscii", (): void => {
         expect(actual).toBe(expected)
     })
 
-    it("does the right thing with double down ticks", (): void => {
+    it("does the correct thing with double down ticks", (): void => {
         const ascii = ",,|)" as SymbolLongAscii
 
         const actual = computeSmileyFromAscii(ascii)

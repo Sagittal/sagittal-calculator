@@ -4,7 +4,7 @@ import { ApotomeSlope, N2D3P9 } from "../../../../src/sagittal/ji"
 import { SAGITTAL_COMMAS } from "../../../../src/sagittal/notations/sagittalCommas"
 
 describe("SAGITTAL_COMMAS", (): void => {
-    it("has all the right commas", (): void => {
+    it("has all the correct commas", (): void => {
         const actual = SAGITTAL_COMMAS
             .map((sagittalComma: SagittalComma): CommaAnalysis & { id: Id<SagittalComma> } => {
                 return analyzeComma(sagittalComma) as CommaAnalysis & { id: Id<SagittalComma> }
