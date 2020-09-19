@@ -1,4 +1,4 @@
-import { count, formatTable, Id, Io, sumTexts, Table } from "../../../../general"
+import { count, formatTable, Id, Io, Maybe, Row, sumTexts, Table } from "../../../../general"
 import { CommaAnalysis, SymbolClass } from "../../../../sagittal"
 import { DEFAULT_FIND_COMMAS_SETTINGS, FindCommasSettings } from "../../findCommas"
 import { computeFindCommasHeaderRows } from "../headerRows"
@@ -6,15 +6,18 @@ import { computeFindCommasRow } from "../row"
 import { computeFindCommasTitle } from "../titles"
 
 const computeFindCommasOutput = (
-    commas: Array<CommaAnalysis & { symbolClassId?: Id<SymbolClass> }>,
+    commaAnalyses: Array<CommaAnalysis>,
+    maybeSagittalSymbolClassIds: Array<Maybe<Id<SymbolClass>>>,
     findCommasSettings: FindCommasSettings = DEFAULT_FIND_COMMAS_SETTINGS,
 ): Io => {
     const findCommasHeaderRows = computeFindCommasHeaderRows()
     const headerRowCount = count(findCommasHeaderRows)
 
-    const findCommasTable: Table<CommaAnalysis & { symbolClassId?: Id<SymbolClass> }> = [
+    const findCommasTable: Table<CommaAnalysis> = [
         ...findCommasHeaderRows,
-        ...commas.map(computeFindCommasRow),
+        ...commaAnalyses.map((commaAnalysis: CommaAnalysis, index: number): Row<{ of: CommaAnalysis }> => {
+            return computeFindCommasRow(commaAnalysis, maybeSagittalSymbolClassIds[index])
+        }),
     ]
 
     return sumTexts(

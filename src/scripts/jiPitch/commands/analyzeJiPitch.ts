@@ -1,8 +1,14 @@
-import { Io, JiPitch, LogTarget, saveLog } from "../../../general"
-import { analyzeJiPitch, JiPitchAnalysis } from "../../../sagittal"
+import { Id, Io, JiPitch, LogTarget, Maybe, saveLog } from "../../../general"
+import {
+    analyzeJiPitch,
+    CommaAnalysis,
+    computeMaybeSymbolClassId,
+    JiPitchAnalysis,
+    SymbolClass,
+} from "../../../sagittal"
 import {
     accommodateFindCommasSettingsToJiPitch,
-    computeMaybeNotatingCommasWithMaybeSagittalSymbolClassesTable,
+    computeNotatingCommaAnalyses,
     parseJiPitch,
 } from "../analyzeJiPitch"
 import { parseFindCommasSettings } from "../findCommas"
@@ -28,10 +34,11 @@ saveLog(twoThreeFreeClassOutput, LogTarget.ALL)
 
 const findCommasSettings = parseFindCommasSettings()
 const accommodatedFindCommasOptions = accommodateFindCommasSettingsToJiPitch(jiPitchAnalysis, findCommasSettings)
-const notatingCommaAnalysesWithMaybeSagittalSymbolClasses =
-    computeMaybeNotatingCommasWithMaybeSagittalSymbolClassesTable(
+const notatingCommaAnalyses: CommaAnalysis[] =
+    computeNotatingCommaAnalyses(
         jiPitch,
         accommodatedFindCommasOptions,
     )
-const notatingCommasOutput: Io = computeNotatingCommasOutput(notatingCommaAnalysesWithMaybeSagittalSymbolClasses)
+const maybeSymbolClassIds: Array<Maybe<Id<SymbolClass>>> = notatingCommaAnalyses.map(computeMaybeSymbolClassId)
+const notatingCommasOutput: Io = computeNotatingCommasOutput(notatingCommaAnalyses, maybeSymbolClassIds)
 saveLog(notatingCommasOutput, LogTarget.ALL)

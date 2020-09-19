@@ -1,41 +1,20 @@
 // tslint:disable max-line-length
 
-import {
-    Cents,
-    Comma, Copfr,
-    Direction,
-    Id,
-    Io,
-    ioSettings,
-    Monzo,
-    Name,
-    NEWLINE,
-    Prime,
-    Ratio,
-    Sopfr,
-} from "../../../../../../src/general"
-import { ApotomeSlope, CommaAnalysis, N2D3P9 } from "../../../../../../src/sagittal/ji"
+import { Cents, Comma, Id, Io, ioSettings, Monzo, Name, NEWLINE, Ratio } from "../../../../../../src/general"
+import { ApotomeSlope, CommaAnalysis } from "../../../../../../src/sagittal/ji"
 import { SymbolClass } from "../../../../../../src/sagittal/notations"
 import { computeNotatingCommasOutput } from "../../../../../../src/scripts/jiPitch/io"
 import { twoThreeFreeClassAnalysisFixture } from "../../../../../helpers/src/scripts/jiPitch/fixtures"
 
 describe("computeNotatingCommasOutput", (): void => {
-    const notatingCommaAnalysesWithMaybeSagittalSymbolClassId: Array<CommaAnalysis & { symbolClassId?: Id<SymbolClass> }> = [
+    const notatingCommaAnalyses: Array<CommaAnalysis> = [
         {
-            symbolClassId: 115 as Id<SymbolClass>,
             name: "11M" as Name<Comma>,
             cents: 45.45 as Cents,
             monzo: [0, 0, 1] as Monzo,
             ratio: [33, 32] as Ratio,
             apotomeSlope: -4 as ApotomeSlope,
             twoThreeFreeClassAnalysis: twoThreeFreeClassAnalysisFixture,
-        //{
-                // twoThreeFreePrimeLimit: 11 as Prime,
-                // twoThreeFreeCopfr: 1 as Copfr<{ rough: 5 }>,
-                // twoThreeFreeSopfr: 11 as Sopfr<{ rough: 5 }>,
-                // monzo: [0, 0, 0, 0, 1] as Monzo<{ rough: 5, direction: Direction.SUPER }>,
-                // n2d3p9: 6.722 as N2D3P9,
-          //  },
         },
         {
             name: "25/49M" as Name<Comma>,
@@ -44,18 +23,12 @@ describe("computeNotatingCommasOutput", (): void => {
             ratio: [50, 49] as Ratio,
             apotomeSlope: -2.154 as ApotomeSlope,
             twoThreeFreeClassAnalysis: twoThreeFreeClassAnalysisFixture,
-            // twoThreeFreeClassAnalysis: {
-            //     twoThreeFreePrimeLimit: 7 as Prime,
-            //     twoThreeFreeCopfr: 4 as Copfr<{ rough: 5 }>,
-            //     twoThreeFreeSopfr: 24 as Sopfr<{ rough: 5 }>,
-            //     monzo: [0, 0, -2, 2] as Monzo<{ rough: 5, direction: Direction.SUPER }>,
-            //     n2d3p9: 26.466 as N2D3P9,
-            // },
         },
     ]
+    const maybeSymbolClassIds = [115 as Id<SymbolClass>, undefined]
 
     it("can format the symbols for the terminal", (): void => {
-        const actual = computeNotatingCommasOutput(notatingCommaAnalysesWithMaybeSagittalSymbolClassId)
+        const actual = computeNotatingCommasOutput(notatingCommaAnalyses, maybeSymbolClassIds)
 
         const expected =
             "   --- notating commas ---" + NEWLINE +
@@ -69,7 +42,7 @@ describe("computeNotatingCommasOutput", (): void => {
 
     it("can format the symbols for the forum", (): void => {
         ioSettings.forForum = true
-        const actual = computeNotatingCommasOutput(notatingCommaAnalysesWithMaybeSagittalSymbolClassId)
+        const actual = computeNotatingCommasOutput(notatingCommaAnalyses, maybeSymbolClassIds)
 
         const expected =
             "   --- notating commas ---" + NEWLINE +

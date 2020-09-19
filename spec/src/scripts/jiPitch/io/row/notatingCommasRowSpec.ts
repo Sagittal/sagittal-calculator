@@ -18,8 +18,7 @@ import { computeNotatingCommasRow } from "../../../../../../src/scripts/jiPitch/
 describe("computeNotatingCommasRow", (): void => {
     // This comma is made up and internally inconsistent.
     // Only the name is important as it is used to find the symbol.
-    const commaAnalysisWithMaybeSagittalSymbolClassId: CommaAnalysis & { symbolClassId?: Id<SymbolClass> } = {
-        symbolClassId: 44 as Id<SymbolClass>,
+    const commaAnalysis: CommaAnalysis = {
         name: "1/5C" as Name<Comma>,
         cents: 11.2 as Cents,
         monzo: [0, -1, 1] as Monzo,
@@ -33,9 +32,10 @@ describe("computeNotatingCommasRow", (): void => {
             n2d3p9: 18.4567 as N2D3P9,
         },
     }
+    const symbolClassId = 44 as Id<SymbolClass>
 
     it("takes the properties of the comma and puts them in order in a row", (): void => {
-        const actual = computeNotatingCommasRow(commaAnalysisWithMaybeSagittalSymbolClassId)
+        const actual = computeNotatingCommasRow(commaAnalysis, symbolClassId)
 
         const expected = [
             "    /|  ",         // symbol class

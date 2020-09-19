@@ -1,23 +1,27 @@
-import { count, formatTable, Id, Io, sumTexts } from "../../../../general"
+import { count, formatTable, Id, Io, Maybe, Row, sumTexts } from "../../../../general"
 import { CommaAnalysis, SymbolClass } from "../../../../sagittal"
-import { computeNotatingCommasWithMaybeSagittalSymbolClassesHeaderRows } from "../headerRows"
+import { computeNotatingCommasHeaderRows } from "../headerRows"
 import { computeNotatingCommasRow } from "../row"
 import { NOTATING_COMMAS_TITLE } from "../titles"
 
 const computeNotatingCommasOutput = (
-    notatingCommaAnalysesWithMaybeSagittalSymbolClassIds: Array<CommaAnalysis & { symbolClassId?: Id<SymbolClass> }>,
+    notatingCommaAnalyses: Array<CommaAnalysis>,
+    maybeSymbolClassIds: Array<Maybe<Id<SymbolClass>>>,
 ): Io => {
-    const headerRows = computeNotatingCommasWithMaybeSagittalSymbolClassesHeaderRows()
+    const headerRows = computeNotatingCommasHeaderRows()
     const headerRowCount = count(headerRows)
 
-    const maybeNotatingCommasWithMaybeSagittalSymbolClassesTable = [
+    const maybeNotatingCommasTable = [
         ...headerRows,
-        ...notatingCommaAnalysesWithMaybeSagittalSymbolClassIds.map(computeNotatingCommasRow),
+        ...notatingCommaAnalyses
+            .map((notatingCommaAnalysis: CommaAnalysis, index: number): Row<{ of: CommaAnalysis }> => {
+                return computeNotatingCommasRow(notatingCommaAnalysis, maybeSymbolClassIds[ index ])
+            }),
     ]
 
     return sumTexts(
         NOTATING_COMMAS_TITLE,
-        formatTable(maybeNotatingCommasWithMaybeSagittalSymbolClassesTable, { headerRowCount }),
+        formatTable(maybeNotatingCommasTable, { headerRowCount }),
     )
 }
 

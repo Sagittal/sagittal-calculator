@@ -12,8 +12,9 @@ import {
 import { computeCommaName } from "../../../../../../src/sagittal/ji/comma/name"
 import { N2D3P9 } from "../../../../../../src/sagittal/ji/twoThreeFreeClass/n2d3p9"
 import { computeSecondaryCommaZone } from "../../../../../../src/sagittal/notations/ji/secondaryCommaZone"
+// TODO: whoa, the fact that this pulls from scripts, well, it's an indication that this is the thing which is going
+//  to become what I've said I'll do for Dave here: http://forum.sagittal.org/viewtopic.php?p=2432#p2432
 import { computeCommas } from "../../../../../../src/scripts/jiPitch/findCommas"
-import { computeFindCommasOutput } from "../../../../../../src/scripts/jiPitch/io"
 
 describe("verifying primary commas", (): void => {
     // tslint:disable-next-line ban
@@ -48,7 +49,7 @@ describe("verifying primary commas", (): void => {
             })
             const commaAnalyses = commas.map((comma: Comma): CommaAnalysis => analyzeComma(comma))
 
-            console.warn(computeFindCommasOutput(commaAnalyses))
+            console.warn(commaAnalyses)
         })
     })
 })

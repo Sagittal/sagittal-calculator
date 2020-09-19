@@ -1,18 +1,19 @@
-import { concat, Id, Row } from "../../../../general"
+import { concat, Id, Maybe, Row } from "../../../../general"
 import { CommaAnalysis, SymbolClass } from "../../../../sagittal"
 import { computeNotatingCommasRow } from "./notatingCommasRow"
 import { compute23FreeClassRow } from "./twoThreeFreeClassRow"
 
 const computeFindCommasRow = (
-    commaAnalysisWithMaybeSagittalSymbolClassId: CommaAnalysis & { symbolClassId?: Id<SymbolClass> },
-): Row<{ of: CommaAnalysis & { symbolClassId?: Id<SymbolClass> } }> => {
+    commaAnalysis: CommaAnalysis,
+    maybeSymbolClassId: Maybe<Id<SymbolClass>>
+): Row<{ of: CommaAnalysis }> => {
 
     return concat(
-        computeNotatingCommasRow(commaAnalysisWithMaybeSagittalSymbolClassId),
+        computeNotatingCommasRow(commaAnalysis, maybeSymbolClassId),
         compute23FreeClassRow(
-            commaAnalysisWithMaybeSagittalSymbolClassId.twoThreeFreeClassAnalysis,
-        ) as Row as Row<{ of: CommaAnalysis & { symbolClassId?: Id<SymbolClass> } }>,
-    ) as Row<{ of: CommaAnalysis & { symbolClassId?: Id<SymbolClass> } }>
+            commaAnalysis.twoThreeFreeClassAnalysis,
+        ) as Row as Row<{ of: CommaAnalysis }>,
+    ) as Row<{ of: CommaAnalysis }>
 }
 
 export {

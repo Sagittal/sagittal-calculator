@@ -1,28 +1,20 @@
-import { Comma, Id, JiPitch } from "../../../general"
-import {
-    addMaybeSymbolClassId,
-    analyzeComma,
-    CommaAnalysis,
-    computeNotatingCommas,
-    SymbolClass,
-} from "../../../sagittal"
+import { Comma, JiPitch } from "../../../general"
+import { analyzeComma, CommaAnalysis, computeNotatingCommas } from "../../../sagittal"
 import { FindCommasSettings } from "../findCommas"
 import { jiPitchScriptGroupSettings } from "../globals"
 
-const computeMaybeNotatingCommasWithMaybeSagittalSymbolClassesTable = (
+const computeNotatingCommaAnalyses = (
     jiPitch: JiPitch,
     findCommasSettings: Partial<FindCommasSettings> = {},
-): Array<CommaAnalysis & { symbolClassId?: Id<SymbolClass> }> => {
+): Array<CommaAnalysis> => {
     const notatingCommas: Comma[] =
         computeNotatingCommas(jiPitch, { ...jiPitchScriptGroupSettings, ...findCommasSettings })
-    const notatingCommasWithMaybeSagittalSymbolClassIds =
-        notatingCommas.map(addMaybeSymbolClassId)
 
-    return notatingCommasWithMaybeSagittalSymbolClassIds.map((comma: Comma): CommaAnalysis => {
+    return notatingCommas.map((comma: Comma): CommaAnalysis => {
         return analyzeComma(comma, jiPitchScriptGroupSettings.commaNameOptions)
     })
 }
 
 export {
-    computeMaybeNotatingCommasWithMaybeSagittalSymbolClassesTable,
+    computeNotatingCommaAnalyses,
 }

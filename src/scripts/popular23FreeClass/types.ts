@@ -15,9 +15,9 @@ interface Popular23FreeClassAnalysis extends SharedPopular23FreeClassAnalysisPro
 }
 
 interface Popular23FreeClassAnalysisWithBestNotatingComma extends SharedPopular23FreeClassAnalysisProperties {
-    centsOfBestNotatingComma: Formatted<Cents>,
-    monzoOfBestNotatingComma: Formatted<Monzo>,
-    maybeSymbolForBestNotatingComma: Io,
+    bestNotatingCommaCents: Formatted<Cents>,
+    bestNotatingCommaMonzo: Formatted<Monzo>,
+    bestNotatingCommaMaybeSymbolClass: Io,
 }
 
 export {

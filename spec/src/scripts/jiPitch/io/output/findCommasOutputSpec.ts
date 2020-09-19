@@ -20,9 +20,8 @@ import { computeFindCommasOutput } from "../../../../../../src/scripts/jiPitch/i
 
 describe("computeFindCommasOutput", (): void => {
     // I'm pretty sure that this is not realistic comma data, since these commas are unrelated.
-    const commaAnalysesWithMaybeSagittalSymbolClassId: Array<CommaAnalysis & { symbolClassId?: Id<SymbolClass> }> = [
+    const commaAnalyses: Array<CommaAnalysis> = [
         {
-            symbolClassId: 115 as Id<SymbolClass>,
             name: "11M" as Name<Comma>,
             cents: 45.45 as Cents,
             monzo: [0, 0, 1] as Monzo,
@@ -51,9 +50,10 @@ describe("computeFindCommasOutput", (): void => {
             },
         },
     ]
+    const maybeSymbolClassIds = [115 as Id<SymbolClass>, undefined]
 
     it("changes column widths so that each cell in a column has the same width", (): void => {
-        const actual = computeFindCommasOutput(commaAnalysesWithMaybeSagittalSymbolClassId)
+        const actual = computeFindCommasOutput(commaAnalyses, maybeSymbolClassIds)
 
         const expected =
             "" + NEWLINE +
@@ -75,7 +75,7 @@ describe("computeFindCommasOutput", (): void => {
 
     it("can format tables for sharing on the Sagittal forum", (): void => {
         ioSettings.forForum = true
-        const actual = computeFindCommasOutput(commaAnalysesWithMaybeSagittalSymbolClassId)
+        const actual = computeFindCommasOutput(commaAnalyses, maybeSymbolClassIds)
 
         const expected =
             "" + NEWLINE +

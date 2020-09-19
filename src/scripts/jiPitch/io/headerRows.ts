@@ -39,17 +39,17 @@ const computeJiPitchHeaderRows = (): Array<Row<{ of: JiPitchAnalysis, header: tr
 const compute23FreeClassHeaderRows = (): Array<Row<{ of: TwoThreeFreeClass, header: true }>> =>
     splitColumnTitlesIntoRowsBySpaces(TWO_THREE_FREE_CLASS_COLUMN_TITLES)
 
-const computeNotatingCommasWithMaybeSagittalSymbolClassesHeaderRows =
-    (): Array<Row<{ of: CommaAnalysis & { symbolClassId?: Id<SymbolClass> }, header: true }>> =>
+const computeNotatingCommasHeaderRows =
+    (): Array<Row<{ of: CommaAnalysis, header: true }>> =>
         splitColumnTitlesIntoRowsBySpaces(NOTATING_COMMAS_WITH_MAYBE_SAGITTAL_SYMBOL_CLASSES_COLUMN_TITLES)
 
 const computeFindCommasHeaderRows =
-    (): Array<Row<{ of: CommaAnalysis & { symbolClassId?: Id<SymbolClass> }, header: true }>> =>
+    (): Array<Row<{ of: CommaAnalysis, header: true }>> =>
         splitColumnTitlesIntoRowsBySpaces(FIND_COMMAS_COLUMN_TITLES)
 
 export {
     computeJiPitchHeaderRows,
     compute23FreeClassHeaderRows,
-    computeNotatingCommasWithMaybeSagittalSymbolClassesHeaderRows,
+    computeNotatingCommasHeaderRows,
     computeFindCommasHeaderRows,
 }

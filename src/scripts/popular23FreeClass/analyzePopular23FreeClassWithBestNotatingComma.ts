@@ -20,10 +20,10 @@ import {
     Votes,
 } from "../../general"
 import {
-    addMaybeSymbolClassId,
     APOTOME_CENTS,
     computeAas,
     computeAte,
+    computeMaybeSymbolClassId,
     computeNotatingCommas,
     formatSymbolClass,
     N2D3P9,
@@ -81,7 +81,7 @@ const analyzePopular23FreeClassWithBestNotatingComma = (
         throw new Error("did not find a best notating comma for this 2,3-free class")
     }
 
-    const commaAnalysisWithMaybeSagittalSymbolClassId = addMaybeSymbolClassId(bestNotatingComma)
+    const maybeSymbolClassId = computeMaybeSymbolClassId(bestNotatingComma)
 
     return {
         n2d3p9,
@@ -89,11 +89,11 @@ const analyzePopular23FreeClassWithBestNotatingComma = (
         formatted23FreeClass,
         popularityRank,
         votes,
-        centsOfBestNotatingComma: formatNumber(computeCentsFromPitch(commaAnalysisWithMaybeSagittalSymbolClassId)),
-        monzoOfBestNotatingComma: formatMonzo(computeJiPitchMonzo(commaAnalysisWithMaybeSagittalSymbolClassId)),
-        maybeSymbolForBestNotatingComma:
-            commaAnalysisWithMaybeSagittalSymbolClassId.symbolClassId ?
-                formatSymbolClass(commaAnalysisWithMaybeSagittalSymbolClassId.symbolClassId, ioSettings) :
+        bestNotatingCommaCents: formatNumber(computeCentsFromPitch(bestNotatingComma)),
+        bestNotatingCommaMonzo: formatMonzo(computeJiPitchMonzo(bestNotatingComma)),
+        bestNotatingCommaMaybeSymbolClass:
+            maybeSymbolClassId ?
+                formatSymbolClass(maybeSymbolClassId, ioSettings) :
                 BLANK,
     }
 }

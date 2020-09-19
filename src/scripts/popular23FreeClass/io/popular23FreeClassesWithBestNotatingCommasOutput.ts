@@ -16,17 +16,17 @@ const computePopular23FreeClassesWithBestNotatingCommasOutput = (
             const {
                 formatted23FreeClass,
                 rank: estimatedRank,
-                centsOfBestNotatingComma,
-                monzoOfBestNotatingComma,
-                maybeSymbolForBestNotatingComma,
+                bestNotatingCommaCents,
+                bestNotatingCommaMonzo,
+                bestNotatingCommaMaybeSymbolClass,
             } = popular23FreeClass
 
             table.push([
                 formatted23FreeClass,
                 estimatedRank,
-                centsOfBestNotatingComma,
-                monzoOfBestNotatingComma,
-                maybeSymbolForBestNotatingComma,
+                bestNotatingCommaCents,
+                bestNotatingCommaMonzo,
+                bestNotatingCommaMaybeSymbolClass,
             ] as Row<{ of: Popular23FreeClassAnalysis, header: true }>)
         })
 

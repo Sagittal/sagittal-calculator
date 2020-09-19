@@ -35,7 +35,7 @@ export {
     formatSymbolClass, formatSymbolAscii, SymbolLongAscii, unicodeFromAscii, SymbolSmiley, SymbolUnicode,
 } from "./io"
 export {
-    addMaybeSymbolClassId,
+    computeMaybeSymbolClassId,
     JiNotationBound,
     formatJiNotationLevel,
     getSagittalComma,
