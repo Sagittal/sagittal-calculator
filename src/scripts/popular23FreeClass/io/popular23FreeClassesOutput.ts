@@ -17,7 +17,7 @@ const computePopular23FreeClassesOutput = (
             formatted23FreeClass,
             rank: estimatedRank,
             popularityRank: actualRank,
-            symbolSubsets,
+            smallestJiNotationSymbolSubsetIndices,
             formattedExactlyNotatingSymbolClasses,
             votes,
         } = popular23FreeClass
@@ -26,7 +26,7 @@ const computePopular23FreeClassesOutput = (
             formatted23FreeClass,
             formattedN2D3P9,
             formattedExactlyNotatingSymbolClasses,
-            symbolSubsets,
+            smallestJiNotationSymbolSubsetIndices,
             estimatedRank,
             actualRank,
             votes,

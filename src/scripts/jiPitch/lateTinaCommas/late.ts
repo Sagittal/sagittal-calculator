@@ -28,7 +28,7 @@ const computeIsCommaLate = (commaAnalysis: CommaAnalysis): boolean => {
         return abs(computeJiPitchMonzo(notatingComma)[ 1 ])
     })
 
-    saveLog(`ATE ${ate} vs. other exactly notating comma ATEs ${ates}` as Io, LogTarget.PROGRESS)
+    saveLog(`ATE ${ate} vs. other notating comma ATEs ${ates}` as Io, LogTarget.PROGRESS)
 
     const minimumAte = min(...ates)
 

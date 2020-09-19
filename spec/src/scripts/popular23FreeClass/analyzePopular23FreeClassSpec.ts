@@ -18,7 +18,7 @@ describe("analyzePopular23FreeClass", (): void => {
             popularityRank: 2 as Rank<Popularity>,
             votes: 5371 as Votes,
             formattedExactlyNotatingSymbolClasses: "    '|       /|  " as Io,
-            symbolSubsets: "3, 0" as Io,
+            smallestJiNotationSymbolSubsetIndices: "3, 0" as Io,
         }
         expect(actual).toEqual(expected)
     })
@@ -34,7 +34,7 @@ describe("analyzePopular23FreeClass", (): void => {
             popularityRank: 2 as Rank<Popularity>,
             votes: 5371 as Votes,
             formattedExactlyNotatingSymbolClasses: ":'::|: :/|:" as Io,
-            symbolSubsets: "3, 0" as Io,
+            smallestJiNotationSymbolSubsetIndices: "3, 0" as Io,
         }
         expect(actual).toEqual(expected)
     })

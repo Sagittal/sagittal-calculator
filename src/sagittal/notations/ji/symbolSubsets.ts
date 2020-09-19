@@ -3,7 +3,7 @@ import { SymbolSubset } from "../types"
 // sorted by increasing size (count of symbols)
 // because each next one includes the previous
 
-const SYMBOL_SUBSETS_USED_IN_JI_NOTATION_SORTED_BY_ASCENDING_SYMBOL_COUNT: SymbolSubset[] = [
+const JI_NOTATION_SYMBOL_SUBSETS: SymbolSubset[] = [
     SymbolSubset.SPARTAN,
     SymbolSubset.ATHENIAN,
     SymbolSubset.PROMETHEAN,
@@ -13,5 +13,5 @@ const SYMBOL_SUBSETS_USED_IN_JI_NOTATION_SORTED_BY_ASCENDING_SYMBOL_COUNT: Symbo
 ]
 
 export {
-    SYMBOL_SUBSETS_USED_IN_JI_NOTATION_SORTED_BY_ASCENDING_SYMBOL_COUNT,
+    JI_NOTATION_SYMBOL_SUBSETS,
 }

@@ -36,6 +36,7 @@ export {
     setAt,
     Obj,
     RecordKey,
+    NOT_FOUND,
 } from "./code"
 export {
     sumTexts,

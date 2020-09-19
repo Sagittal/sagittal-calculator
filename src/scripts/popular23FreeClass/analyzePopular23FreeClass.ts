@@ -8,6 +8,7 @@ import {
     Io,
     ioSettings,
     join,
+    NOT_FOUND,
     Popularity,
     SPACE,
     TwoThreeFreeClass,
@@ -16,11 +17,12 @@ import {
 import {
     formatSymbolClass,
     getSmallestSymbolSubset,
+    JI_NOTATION_SYMBOL_SUBSETS,
     N2D3P9,
     SymbolClass,
     SymbolLongAscii,
     SymbolSmiley,
-    SYMBOL_SUBSETS_USED_IN_JI_NOTATION_SORTED_BY_ASCENDING_SYMBOL_COUNT,
+    SymbolSubset,
 } from "../../sagittal"
 import { computeExactlyNotatingSymbolClassIds } from "./notatingSymbolClassIds"
 import { Popular23FreeClassAnalysis } from "./types"
@@ -44,10 +46,18 @@ const analyzePopular23FreeClass = (
         },
     ), SPACE)
 
-    const symbolSubsets = exactlyNotatingSymbolClassIds.map((symbolClassId: Id<SymbolClass>): number => {
-        return SYMBOL_SUBSETS_USED_IN_JI_NOTATION_SORTED_BY_ASCENDING_SYMBOL_COUNT
-            .indexOf(getSmallestSymbolSubset(symbolClassId))
-    }).join(", ") as Io
+    const smallestJiNotationSymbolSubsetIndices = exactlyNotatingSymbolClassIds
+        .map((symbolClassId: Id<SymbolClass>): number => {
+            let symbolSubsetIndex = JI_NOTATION_SYMBOL_SUBSETS.indexOf(getSmallestSymbolSubset(symbolClassId))
+
+            // the smallest symbol subset method will include Trojan, but for these purposes
+            // we only care about the smallest subset in the JI notation hierarchy
+            symbolSubsetIndex = symbolSubsetIndex === NOT_FOUND ?
+                JI_NOTATION_SYMBOL_SUBSETS.indexOf(SymbolSubset.PROMETHEAN) :
+                symbolSubsetIndex
+
+            return symbolSubsetIndex
+        }).join(", ") as Io
 
     return {
         n2d3p9,
@@ -56,7 +66,7 @@ const analyzePopular23FreeClass = (
         popularityRank,
         votes,
         formattedExactlyNotatingSymbolClasses,
-        symbolSubsets,
+        smallestJiNotationSymbolSubsetIndices,
     }
 }
 

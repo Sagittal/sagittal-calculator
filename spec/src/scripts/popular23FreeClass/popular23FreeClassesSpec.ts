@@ -19,7 +19,7 @@ describe("computePopular23FreeClasses", (): void => {
                     popularityRank: 1,
                     votes: 7624,
                     formattedExactlyNotatingSymbolClasses: "     |      '/|  ",
-                    symbolSubsets: "0, 3",
+                    smallestJiNotationSymbolSubsetIndices: "0, 3",
                     rank: 1,
                 },
                 {
@@ -29,7 +29,7 @@ describe("computePopular23FreeClasses", (): void => {
                     popularityRank: 2,
                     votes: 5371,
                     formattedExactlyNotatingSymbolClasses: "    '|       /|  ",
-                    symbolSubsets: "3, 0",
+                    smallestJiNotationSymbolSubsetIndices: "3, 0",
                     rank: 2,
                 },
                 {
@@ -39,7 +39,7 @@ describe("computePopular23FreeClasses", (): void => {
                     popularityRank: 3,
                     votes: 3016,
                     formattedExactlyNotatingSymbolClasses: "     |)     '/|)     .(|\\ ",
-                    symbolSubsets: "0, 3, 3",
+                    smallestJiNotationSymbolSubsetIndices: "0, 3, 3",
                     rank: 3,
                 },
                 {
@@ -49,7 +49,7 @@ describe("computePopular23FreeClasses", (): void => {
                     popularityRank: 4,
                     votes: 1610,
                     formattedExactlyNotatingSymbolClasses: "   ./|      //|  ",
-                    symbolSubsets: "3, 0",
+                    smallestJiNotationSymbolSubsetIndices: "3, 0",
                     rank: 4,
                 },
                 {
@@ -59,7 +59,7 @@ describe("computePopular23FreeClasses", (): void => {
                     popularityRank: 5,
                     votes: 1318,
                     formattedExactlyNotatingSymbolClasses: "     |(      '|) ",
-                    symbolSubsets: "0, 3",
+                    smallestJiNotationSymbolSubsetIndices: "0, 3",
                     rank: 5,
                 },
             ] as Array<Ranked<Popular23FreeClassAnalysis>>

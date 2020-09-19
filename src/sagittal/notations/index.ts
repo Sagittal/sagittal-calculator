@@ -7,7 +7,7 @@ export {
     Ina,
     INA_SIZES,
     JI_NOTATION_BOUNDS,
-    SYMBOL_SUBSETS_USED_IN_JI_NOTATION_SORTED_BY_ASCENDING_SYMBOL_COUNT,
+    JI_NOTATION_SYMBOL_SUBSETS,
     JiNotationLevel,
     JI_NOTATION_LEVELS,
     JI_NOTATION_LEVELS_BOUNDS,
@@ -21,7 +21,7 @@ export {
     JI_NOTATION,
 } from "./ji"
 export { APOTOME } from "./sagittalCommas"
-export { SagittalComma, SymbolClass, RevoSymbol, SymbolClassAnalysis } from "./types"
+export { SagittalComma, SymbolClass, RevoSymbol, SymbolClassAnalysis, SymbolSubset } from "./types"
 export { SYMBOL_CLASSES } from "./symbolClasses"
 export { REVO_SYMBOLS } from "./symbols"
 export { analyzeSymbolClass } from "./analyzeSymbolClass"

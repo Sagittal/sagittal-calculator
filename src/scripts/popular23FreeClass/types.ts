@@ -10,7 +10,7 @@ interface SharedPopular23FreeClassAnalysisProperties {
 }
 
 interface Popular23FreeClassAnalysis extends SharedPopular23FreeClassAnalysisProperties {
-    symbolSubsets: Io,
+    smallestJiNotationSymbolSubsetIndices: Io,
     formattedExactlyNotatingSymbolClasses: Io,
 }
 

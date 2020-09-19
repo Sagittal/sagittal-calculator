@@ -40,7 +40,7 @@ export {
     Ina,
     INA_SIZES,
     JI_NOTATION_BOUNDS,
-    SYMBOL_SUBSETS_USED_IN_JI_NOTATION_SORTED_BY_ASCENDING_SYMBOL_COUNT,
+    JI_NOTATION_SYMBOL_SUBSETS,
     JiNotationLevel,
     JI_NOTATION_LEVEL_EDAS,
     JI_NOTATION_LEVELS,
@@ -61,5 +61,6 @@ export {
     analyzeSymbolClass,
     getPrimaryComma,
     getSmallestSymbolSubset,
+    SymbolSubset,
 } from "./notations"
 export { APOTOME_CENTS } from "./constants"

@@ -83,7 +83,7 @@ const analyzePopular23FreeClassWithBestNotatingComma = (
     }
 
     if (isUndefined(bestNotatingComma)) {
-        throw new Error("did not find a best exactly notating comma for this 2,3-free class")
+        throw new Error("did not find a best notating comma for this 2,3-free class")
     }
 
     const commaAnalysisWithMaybeSagittalSymbolClassId = addMaybeSymbolClassId(bestNotatingComma)
