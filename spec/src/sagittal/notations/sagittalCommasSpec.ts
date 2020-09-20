@@ -1,13 +1,14 @@
 import { Cents, Comma, Copfr, Direction, Id, Monzo, Name, Prime, Ratio, Sopfr } from "../../../../src/general"
-import { analyzeComma, CommaAnalysis, SagittalComma } from "../../../../src/sagittal"
+import { analyzeComma, SagittalComma } from "../../../../src/sagittal"
 import { ApotomeSlope, N2D3P9 } from "../../../../src/sagittal/ji"
 import { SAGITTAL_COMMAS } from "../../../../src/sagittal/notations/sagittalCommas"
+import { SagittalCommaAnalysis } from "../../../../src/sagittal/notations/types"
 
 describe("SAGITTAL_COMMAS", (): void => {
     it("has all the correct commas", (): void => {
         const actual = SAGITTAL_COMMAS
-            .map((sagittalComma: SagittalComma): CommaAnalysis & { id: Id<SagittalComma> } => {
-                return analyzeComma(sagittalComma) as CommaAnalysis & { id: Id<SagittalComma> }
+            .map((sagittalComma: SagittalComma): SagittalCommaAnalysis => {
+                return analyzeComma(sagittalComma) as SagittalCommaAnalysis
             })
 
         const expected = [
@@ -2262,7 +2263,7 @@ describe("SAGITTAL_COMMAS", (): void => {
                 cents: 113.685006 as Cents,
                 name: "3A" as Name<Comma>,
             },
-        ]
+        ] as Array<SagittalCommaAnalysis>
         expect(actual).toBeCloseToObject(expected)
     })
 })

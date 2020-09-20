@@ -1,6 +1,5 @@
 import { Id } from "../../../../src/general"
-import { getSmallestSymbolSubset } from "../../../../src/sagittal/notations"
-import { SymbolClass, SymbolSubset } from "../../../../src/sagittal/notations/types"
+import { getSmallestSymbolSubset, SymbolClass, SymbolSubset } from "../../../../src/sagittal/notations"
 
 describe("getSmallestSymbolSubset", (): void => {
     it("returns the lowest JI notation level which includes the given symbol class id", (): void => {

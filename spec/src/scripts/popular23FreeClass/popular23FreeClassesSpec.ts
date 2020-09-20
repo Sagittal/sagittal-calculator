@@ -1,4 +1,4 @@
-import { Cents, Direction, Id, Index, Max, Monzo, Popularity, Rank, Votes } from "../../../../src/general"
+import { Cents, Direction, Id, Index, Max, Monzo, Popularity, Rank, Ranked, Votes } from "../../../../src/general"
 import { N2D3P9 } from "../../../../src/sagittal/ji/twoThreeFreeClass/n2d3p9"
 import { SymbolClass, SymbolSubset } from "../../../../src/sagittal/notations"
 import { popular23FreeClassesScriptGroupSettings } from "../../../../src/scripts/popular23FreeClass/globals"
@@ -64,7 +64,7 @@ describe("computePopular23FreeClasses", (): void => {
                         [0, 3] as Array<Index<SymbolSubset>>,
                     rank: 5 as Rank<Popular23FreeClass>,
                 },
-            ]
+            ] as Array<Ranked<Popular23FreeClass>>
             expect(actual).toBeCloseToObject(expected)
         },
     )
@@ -128,7 +128,7 @@ describe("computePopular23FreeClasses", (): void => {
                     bestNotatingCommaMaybeSymbolClassId: 62 as Id<SymbolClass>,
                     rank: 5 as Rank<Popular23FreeClass>,
                 },
-            ]
+            ] as Array<Ranked<Popular23FreeClass>>
             expect(actual).toBeCloseToObject(expected)
         },
     )

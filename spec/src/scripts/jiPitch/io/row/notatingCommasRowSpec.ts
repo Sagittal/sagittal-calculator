@@ -11,7 +11,7 @@ import {
     Row,
     Sopfr,
 } from "../../../../../../src/general"
-import { ApotomeSlope, CommaAnalysis, SymbolClass } from "../../../../../../src/sagittal"
+import { ApotomeSlope, CommaAnalysis, SymbolClass, TwoThreeFreeClassAnalysis } from "../../../../../../src/sagittal"
 import { N2D3P9 } from "../../../../../../src/sagittal/ji/twoThreeFreeClass/n2d3p9"
 import { computeNotatingCommasRow } from "../../../../../../src/scripts/jiPitch/io/row"
 
@@ -30,8 +30,8 @@ describe("computeNotatingCommasRow", (): void => {
             twoThreeFreeSopfr: 13 as Sopfr<{ rough: 5 }>,
             monzo: [0, 0, 1] as Monzo<{ rough: 5, direction: Direction.SUPER }>,
             n2d3p9: 18.4567 as N2D3P9,
-        },
-    }
+        } as TwoThreeFreeClassAnalysis,
+    } as CommaAnalysis
     const symbolClassId = 44 as Id<SymbolClass>
 
     it("takes the properties of the comma and puts them in order in a row", (): void => {

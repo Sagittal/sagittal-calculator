@@ -1,4 +1,5 @@
 import { Copfr, Direction, Io, NEWLINE, Prime, Ratio, Sopfr } from "../../../../../../src/general"
+import { TwoThreeFreeClassAnalysis } from "../../../../../../src/sagittal/ji/twoThreeFreeClass"
 import { N2D3P9 } from "../../../../../../src/sagittal/ji/twoThreeFreeClass/n2d3p9"
 import { compute23FreeClassOutput } from "../../../../../../src/scripts/jiPitch/io"
 
@@ -9,7 +10,7 @@ describe("compute23FreeClassOutput", (): void => {
         twoThreeFreeCopfr: 2 as Copfr<{ rough: 5 }>,
         twoThreeFreeSopfr: 13 as Sopfr<{ rough: 5 }>,
         n2d3p9: 18.4567 as N2D3P9,
-    }
+    } as TwoThreeFreeClassAnalysis
 
     it("formats it in a multi-line output with titles for each line", (): void => {
         const actual = compute23FreeClassOutput(twoThreeFreeClassAnalysis)

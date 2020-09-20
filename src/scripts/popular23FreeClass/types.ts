@@ -1,7 +1,7 @@
 import { Cents, Id, Index, Io, Maybe, Monzo, Popularity, Rank, TwoThreeFreeClass, Votes } from "../../general"
 import { N2D3P9, SymbolClass, SymbolSubset } from "../../sagittal"
 
-type SharedPopular23FreeClassProperties = Omit<TwoThreeFreeClass, "_TwoThreeFreeClassBrand"> & {
+type SharedPopular23FreeClassProperties = TwoThreeFreeClass & {
     n2d3p9: N2D3P9,
     votes: Votes,
     popularityRank?: Rank<Popularity>,

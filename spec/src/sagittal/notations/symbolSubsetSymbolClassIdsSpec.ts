@@ -1,8 +1,7 @@
 import { Id } from "../../../../src/general"
 import { SymbolLongAscii } from "../../../../src/sagittal/io"
-import { getRepresentativeSymbol } from "../../../../src/sagittal/notations"
+import { getRepresentativeSymbol, SymbolClass, SymbolSubset } from "../../../../src/sagittal/notations"
 import { SYMBOL_SUBSET_SYMBOL_CLASS_IDS } from "../../../../src/sagittal/notations/symbolSubsetSymbolClassIds"
-import { SymbolClass, SymbolSubset } from "../../../../src/sagittal/notations/types"
 
 describe("SYMBOL_SUBSET_SYMBOL_CLASS_IDS", (): void => {
     const subject = (symbolSubset: SymbolSubset): SymbolLongAscii[] => {

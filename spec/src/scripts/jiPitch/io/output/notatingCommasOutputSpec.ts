@@ -24,7 +24,7 @@ describe("computeNotatingCommasOutput", (): void => {
             apotomeSlope: -2.154 as ApotomeSlope,
             twoThreeFreeClassAnalysis: twoThreeFreeClassAnalysisFixture,
         },
-    ]
+    ] as CommaAnalysis[]
     const maybeSymbolClassIds = [115 as Id<SymbolClass>, undefined]
 
     it("can format the symbols for the terminal", (): void => {

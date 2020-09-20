@@ -9,7 +9,7 @@ const analyzeComma = (comma: Comma, options: CommaNameOptions = {}): CommaAnalys
 
     const jiPitchAnalysis = analyzeJiPitch(comma)
 
-    return { ...jiPitchAnalysis, name }
+    return { ...comma, ...jiPitchAnalysis, name }
 }
 
 export {

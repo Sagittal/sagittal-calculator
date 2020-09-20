@@ -1,4 +1,4 @@
-import { Apotome, Comma, Count, Direction, Id, Monzo, Name } from "../../general"
+import { Apotome, Comma, Count, Direction, Id, Monzo, Name, NumericTypeParameters } from "../../general"
 import { SymbolLongAscii, SymbolUnicode } from "../io"
 import { CommaAnalysis } from "../ji"
 import { JiNotationLevel, Mina } from "./ji"
@@ -13,11 +13,9 @@ enum SymbolSubset {
     TROJAN = "trojan",
 }
 
-type SagittalComma<T extends "Maybe" | void = void> = Comma & { monzo: Monzo } & (
-    T extends "Maybe" ?
-        { id?: Id<SagittalComma> } :
-        { id: Id<SagittalComma> }
-    )
+type SagittalComma<T extends NumericTypeParameters = {}> = Comma<T> & { id: Id<SagittalComma> }
+
+type SagittalCommaAnalysis<T extends NumericTypeParameters = {}> = CommaAnalysis<T> & { id: Id<SagittalComma> }
 
 interface SymbolClass {
     // TODO: should this be an array of references to other objects instead of hardcoded?
@@ -30,7 +28,7 @@ interface SymbolClass {
 }
 
 type SymbolClassAnalysis = Omit<SymbolClass, "primaryCommaId"> & {
-    primaryCommaAnalysis: CommaAnalysis & { id: Id<SagittalComma> }
+    primaryCommaAnalysis: SagittalCommaAnalysis,
     ascii: SymbolLongAscii,
     unicode: SymbolUnicode,
     introducingJiNotationLevel: JiNotationLevel,
@@ -59,4 +57,5 @@ export {
     SymbolClass,
     RevoSymbol,
     SymbolClassAnalysis,
+    SagittalCommaAnalysis,
 }

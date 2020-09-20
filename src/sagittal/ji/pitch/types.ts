@@ -1,15 +1,15 @@
-import { Cents, JiPitch, Monzo, Ratio } from "../../../general"
+import { Cents, JiPitch, Monzo, NumericTypeParameters, Ratio } from "../../../general"
 import { TwoThreeFreeClassAnalysis } from "../twoThreeFreeClass"
 
-interface JiPitchAnalysisProperties {
+interface JiPitchAnalysisProperties<T extends NumericTypeParameters = {}> {
     apotomeSlope: ApotomeSlope,
-    monzo: Monzo,
-    ratio: Ratio,
+    monzo: Monzo<T>,
+    ratio: Ratio<T>,
     cents: Cents,
-    twoThreeFreeClassAnalysis: TwoThreeFreeClassAnalysis,
+    twoThreeFreeClassAnalysis: TwoThreeFreeClassAnalysis<T>,
 }
 
-type JiPitchAnalysis = JiPitch & JiPitchAnalysisProperties
+type JiPitchAnalysis<T extends NumericTypeParameters = {}> = JiPitch<T> & JiPitchAnalysisProperties<T>
 
 type ApotomeSlope = number & { _ApotomeSlopeBrand: "ApotomeSlope" }
 

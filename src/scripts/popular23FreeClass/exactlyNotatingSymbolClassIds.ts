@@ -18,7 +18,8 @@ const computeExactlyNotatingSymbolClassIds = (jiPitch: JiPitch): Array<Id<Symbol
 
     JI_NOTATION.forEach((symbolClassId: Id<SymbolClass>): void => {
         const primaryComma = getPrimaryComma(symbolClassId)
-        const twoThreeFreePrimaryCommaMonzo = computeRoughMonzo(primaryComma.monzo, FIVE_ROUGHNESS)
+        const primaryCommaMonzo = computeJiPitchMonzo(primaryComma)
+        const twoThreeFreePrimaryCommaMonzo = computeRoughMonzo(primaryCommaMonzo, FIVE_ROUGHNESS)
 
         if (
             equalMonzos(twoThreeFreeMonzo, twoThreeFreePrimaryCommaMonzo) ||

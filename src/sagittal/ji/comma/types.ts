@@ -1,8 +1,8 @@
-import { Comma, Name } from "../../../general"
+import { Comma, Name, NumericTypeParameters } from "../../../general"
 import { JiPitchAnalysisProperties } from "../pitch"
 
-type CommaAnalysis = Omit<Comma, "_CommaBrand"> & JiPitchAnalysisProperties & {
-    name: Name<Comma>,
+type CommaAnalysis<T extends NumericTypeParameters = {}> = Comma<T> & JiPitchAnalysisProperties<T> & {
+    name: Name<Comma<T>>,
 }
 
 export {

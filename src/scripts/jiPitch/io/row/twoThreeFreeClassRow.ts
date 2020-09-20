@@ -8,7 +8,7 @@ const compute23FreeClassRow = (
 
     return [
         formatInteger(twoThreeFreePrimeLimit),
-        format23FreeClass(twoThreeFreeClassAnalysis as JiPitch as TwoThreeFreeClass),
+        format23FreeClass(twoThreeFreeClassAnalysis),
         formatInteger(twoThreeFreeCopfr),
         formatInteger(twoThreeFreeSopfr),
         formatNumber(n2d3p9),

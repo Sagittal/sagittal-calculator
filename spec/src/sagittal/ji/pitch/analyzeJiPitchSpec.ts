@@ -1,5 +1,5 @@
 import { Cents, Copfr, Direction, Monzo, Prime, Ratio, Sopfr } from "../../../../../src/general"
-import { ApotomeSlope, N2D3P9 } from "../../../../../src/sagittal"
+import { ApotomeSlope, N2D3P9, TwoThreeFreeClassAnalysis } from "../../../../../src/sagittal"
 import { analyzeJiPitch } from "../../../../../src/sagittal/ji"
 
 describe("analyzeJiPitch", (): void => {
@@ -19,7 +19,7 @@ describe("analyzeJiPitch", (): void => {
                 twoThreeFreeCopfr: 9 as Copfr<{ rough: 5 }>,
                 twoThreeFreeSopfr: 61 as Sopfr<{ rough: 5 }>,
                 n2d3p9: 36777.470341 as N2D3P9,
-            },
+            } as TwoThreeFreeClassAnalysis,
         }
         expect(actual).toBeCloseToObject(expected)
     })

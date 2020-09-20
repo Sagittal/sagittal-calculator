@@ -1,5 +1,5 @@
 import { Cents, Comma, Copfr, Direction, Monzo, Name, Prime, Ratio, Sopfr } from "../../../../../src/general"
-import { ApotomeSlope, N2D3P9 } from "../../../../../src/sagittal"
+import { ApotomeSlope, CommaAnalysis, N2D3P9, TwoThreeFreeClassAnalysis } from "../../../../../src/sagittal"
 import { analyzeComma } from "../../../../../src/sagittal/ji"
 
 describe("analyzeComma", (): void => {
@@ -20,8 +20,8 @@ describe("analyzeComma", (): void => {
                 twoThreeFreeCopfr: 9 as Copfr<{ rough: 5 }>,
                 twoThreeFreeSopfr: 61 as Sopfr<{ rough: 5 }>,
                 n2d3p9: 36777.470341 as N2D3P9,
-            },
-        }
+            } as TwoThreeFreeClassAnalysis,
+        } as CommaAnalysis
         expect(actual).toBeCloseToObject(expected)
     })
 })

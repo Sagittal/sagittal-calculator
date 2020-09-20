@@ -5,8 +5,8 @@ type Comma<T extends NumericTypeParameters = {}> =
     JiPitch<T>
     & { _CommaBrand: "Comma" }
 
-type TwoThreeFreeClass =
-    JiPitch<{ rough: 5, direction: Direction.SUPER }>
+type TwoThreeFreeClass<T extends NumericTypeParameters = {}> =
+    JiPitch<Omit<T, "rough" | "direction"> & { rough: 5, direction: Direction.SUPER }>
     & { _TwoThreeFreeClassBrand: "TwoThreeFreeClass" }
 
 type JiPitchByMonzo<T extends RationalTypeParameters = { irrational: false }> = {

@@ -1,6 +1,8 @@
 import { Io } from "./io"
 import { Integer, Max, Min } from "./math"
 
+// TODO: I think we should go the way of Musical Patterns utilities and have brands be booleans instead of strings
+
 // Numeric types where parameter is not numeric
 type Index<T = void> = Integer & { _IndexBrand: "Index" } & (T extends void ? {} : { _IndexOfBrand: T })
 type Id<T = void> = Integer & { _IdBrand: "Id" } & (T extends void ? {} : { _IdOfBrand: T })

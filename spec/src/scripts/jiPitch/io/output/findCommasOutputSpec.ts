@@ -2,7 +2,8 @@
 
 import {
     Cents,
-    Comma, Copfr,
+    Comma,
+    Copfr,
     Direction,
     Id,
     Io,
@@ -14,7 +15,7 @@ import {
     Ratio,
     Sopfr,
 } from "../../../../../../src/general"
-import { ApotomeSlope, CommaAnalysis, SymbolClass } from "../../../../../../src/sagittal"
+import { ApotomeSlope, CommaAnalysis, SymbolClass, TwoThreeFreeClassAnalysis } from "../../../../../../src/sagittal"
 import { N2D3P9 } from "../../../../../../src/sagittal/ji/twoThreeFreeClass/n2d3p9"
 import { computeFindCommasOutput } from "../../../../../../src/scripts/jiPitch/io"
 
@@ -33,7 +34,7 @@ describe("computeFindCommasOutput", (): void => {
                 twoThreeFreeSopfr: 11 as Sopfr<{ rough: 5 }>,
                 monzo: [0, 0, 0, 0, 1] as Monzo<{ rough: 5, direction: Direction.SUPER }>,
                 n2d3p9: 6.722 as N2D3P9,
-            },
+            } as TwoThreeFreeClassAnalysis,
         },
         {
             name: "25/49M" as Name<Comma>,
@@ -47,9 +48,9 @@ describe("computeFindCommasOutput", (): void => {
                 twoThreeFreeSopfr: 24 as Sopfr<{ rough: 5 }>,
                 monzo: [0, 0, -2, 2] as Monzo<{ rough: 5, direction: Direction.SUPER }>,
                 n2d3p9: 26.466 as N2D3P9,
-            },
+            } as TwoThreeFreeClassAnalysis,
         },
-    ]
+    ] as CommaAnalysis[]
     const maybeSymbolClassIds = [115 as Id<SymbolClass>, undefined]
 
     it("changes column widths so that each cell in a column has the same width", (): void => {

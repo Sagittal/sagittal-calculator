@@ -14,8 +14,8 @@ describe("computePopular23FreeClass", (): void => {
         const actual = computePopular23FreeClass({ twoThreeFreeClass, n2d3p9 })
 
         const expected: Popular23FreeClass = {
+            ...twoThreeFreeClass,
             n2d3p9,
-            monzo: [0, 0, 1] as Monzo<{ rough: 5, direction: Direction.SUPER }>,
             popularityRank: 2 as Rank<Popularity>,
             votes: 5371 as Votes,
             exactlyNotatingSymbolClassIds: [4, 44] as Array<Id<SymbolClass>>,
@@ -29,8 +29,8 @@ describe("computePopular23FreeClass", (): void => {
         const actual = computePopular23FreeClass({ twoThreeFreeClass, n2d3p9 })
 
         const expected: Popular23FreeClass = {
+            ...twoThreeFreeClass,
             n2d3p9,
-            monzo: [0, 0, 1] as Monzo<{ rough: 5, direction: Direction.SUPER }>,
             popularityRank: 2 as Rank<Popularity>,
             votes: 5371 as Votes,
             bestNotatingCommaCents: 21.506290 as Cents,

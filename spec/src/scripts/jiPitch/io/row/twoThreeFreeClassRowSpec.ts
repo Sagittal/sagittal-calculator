@@ -13,7 +13,7 @@ describe("compute23FreeClassRow", (): void => {
             twoThreeFreeCopfr: 3 as Copfr<{ rough: 5 }>,
             n2d3p9: 18.4567 as N2D3P9,
             twoThreeFreePrimeLimit: 14 as Prime,
-        }
+        } as TwoThreeFreeClassAnalysis
 
         const actual = compute23FreeClassRow(twoThreeFreeClassAnalysis)
 

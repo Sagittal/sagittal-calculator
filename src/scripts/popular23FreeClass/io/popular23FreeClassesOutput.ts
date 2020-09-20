@@ -51,15 +51,7 @@ const computePopular23FreeClassesOutput = (
             } = popular23FreeClass as Ranked<Popular23FreeClassWithBestNotatingComma>
 
             table.push([
-                // TODO: I dunno, I can't tell... is being forced to do this worse than in test being forced to assert
-                //  that they actually are TwoThreeFreeClass? maybe in test i should be forced to do it, because by that
-                //  point in real life they would have the brand? in which case I should remove the other Omit< brands
-                //  and maybe in test to preserve forcing myself to type assert all the properties, instead of asserting
-                //  then on the whole object or array thereof, I should just actually add the brand
-                //  which also gets me thinking again about whether the brands should be on enums per module
-                //  I'm just a bit concerned about circular dependencies, so you'll want to try that out as a separate
-                //  commit
-                format23FreeClass(popular23FreeClass as JiPitch as TwoThreeFreeClass),
+                format23FreeClass(popular23FreeClass),
                 estimatedRank,
                 formatNumber(bestNotatingCommaCents),
                 formatMonzo(bestNotatingCommaMonzo),
@@ -78,7 +70,7 @@ const computePopular23FreeClassesOutput = (
             } = popular23FreeClass as Ranked<Popular23FreeClassWithExactlyNotatingSymbolClasses>
 
             table.push([
-                format23FreeClass(popular23FreeClass as JiPitch as TwoThreeFreeClass),
+                format23FreeClass(popular23FreeClass),
                 formatNumber(n2d3p9),
                 exactlyNotatingSymbolClassIds.map(
                     (exactlyNotatingSymbolClassId: Id<SymbolClass>): Formatted<SymbolSmiley | SymbolLongAscii> => {

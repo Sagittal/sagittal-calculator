@@ -3,7 +3,7 @@ import { Copfr, Direction, Prime, Sopfr } from "../../../../../../src/general/ma
 import { Monzo } from "../../../../../../src/general/math/monzo"
 import { Ratio } from "../../../../../../src/general/math/ratio"
 import { Cents } from "../../../../../../src/general/music"
-import { ApotomeSlope, JiPitchAnalysis, N2D3P9 } from "../../../../../../src/sagittal/ji"
+import { ApotomeSlope, JiPitchAnalysis, N2D3P9, TwoThreeFreeClassAnalysis } from "../../../../../../src/sagittal/ji"
 import { computeJiPitchRow } from "../../../../../../src/scripts/jiPitch/io/row"
 
 describe("computeJiPitchRow", (): void => {
@@ -19,7 +19,7 @@ describe("computeJiPitchRow", (): void => {
                 twoThreeFreeCopfr: 1 as Copfr<{ rough: 5 }>,
                 twoThreeFreeSopfr: 13 as Sopfr<{ rough: 5 }>,
                 n2d3p9: 18.4567 as N2D3P9,
-            },
+            } as TwoThreeFreeClassAnalysis,
         }
 
         const actual = computeJiPitchRow(jiPitchAnalysis)
