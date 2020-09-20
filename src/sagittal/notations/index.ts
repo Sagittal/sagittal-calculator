@@ -19,6 +19,7 @@ export {
     TINA,
     getMinaName,
     JI_NOTATION,
+    computeSecondaryCommaZone,
 } from "./ji"
 export { APOTOME } from "./sagittalCommas"
 export { SagittalComma, SymbolClass, RevoSymbol, SymbolClassAnalysis, SymbolSubset } from "./types"

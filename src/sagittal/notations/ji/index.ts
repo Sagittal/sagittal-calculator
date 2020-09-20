@@ -1,5 +1,6 @@
 export { computeMaybeSymbolClassId } from "./maybeSymbolClassId"
 export { formatJiNotationLevel } from "./formatLevel"
+export { computeSecondaryCommaZone } from "./secondaryCommaZone"
 export { INA_SIZES, TINA } from "./intervals"
 export { JI_NOTATION_BOUNDS } from "./bounds"
 export { getMinaName } from "./minaName"
