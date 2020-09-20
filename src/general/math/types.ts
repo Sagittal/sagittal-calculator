@@ -3,38 +3,38 @@ import { Count, Sum } from "../types"
 type Numeric<T extends NumericTypeParameters> = number & NumericTypeParameterEffects<T>
 // tslint:disable-next-line max-line-length
 type Integer<T extends NumericTypeParameters & { irrational: false, integer: true } = { irrational: false, integer: true }> = Numeric<T>
-type MaybeIntegerBrand<T> = T extends { integer: true } ? { _IntegerBrand: "Integer" } : {}
+type MaybeIntegerBrand<T> = T extends { integer: true } ? { _IntegerBrand: boolean } : {}
 
 type Prime<T extends IntegerTypeParameters = { integer: true, irrational: false }> =
     Numeric<T> & { _PrimeBrand: "Prime" }
-type Roughness = Integer & { _RoughnessBrand: "Roughness" }
-type Smoothness = Integer & { _SmoothnessBrand: "Smoothness" }
+type Roughness = Integer & { _RoughnessBrand: boolean }
+type Smoothness = Integer & { _SmoothnessBrand: boolean }
 
-type Combination<T> = T[] & { _CombinationBrand: "Combination" }
-type Combinations<T> = Array<Combination<T>> & { _CombinationsBrand: "Combinations" }
+type Combination<T> = T[] & { _CombinationBrand: boolean }
+type Combinations<T> = Array<Combination<T>> & { _CombinationsBrand: boolean }
 
-type DistributionBin<T> = Combination<T> & { _DistributionBinBrand: "DistributionBin" }
-type Distribution<T> = Array<DistributionBin<T>> & { _DistributionBrand: "Distribution" }
+type DistributionBin<T> = Combination<T> & { _DistributionBinBrand: boolean }
+type Distribution<T> = Array<DistributionBin<T>> & { _DistributionBrand: boolean }
 
 // Numeric types where parameter is also numeric
-type Exponent<T extends number = number> = number & { _ExponentBrand: "Exponent", _ExponentOfBrand: T }
-type Base<T extends number = number> = number & { _BaseBrand: "Base", _BaseOfBrand: T }
-type Power<T extends number = number> = number & { _PowerBrand: "Power", _PowerOfBrand: T }
+type Exponent<T extends number = number> = number & { _ExponentBrand: boolean, _ExponentOfBrand: T }
+type Base<T extends number = number> = number & { _BaseBrand: boolean, _BaseOfBrand: T }
+type Power<T extends number = number> = number & { _PowerBrand: boolean, _PowerOfBrand: T }
 
 // Qualities of numerics
-type Max<T extends number = number> = T & { _MaxBrand: "Max" }
-type Min<T extends number = number> = T & { _MinBrand: "Min" }
-type Abs<T extends number = number> = T & { _AbsBrand: "Abs" }
-type Avg<T extends number = number> = T & { _AverageBrand: "Avg" }
-type Approx<T extends number = number> = T & { _ApproxBrand: "Approx" }
+type Max<T extends number = number> = T & { _MaxBrand: boolean }
+type Min<T extends number = number> = T & { _MinBrand: boolean }
+type Abs<T extends number = number> = T & { _AbsBrand: boolean }
+type Avg<T extends number = number> = T & { _AverageBrand: boolean }
+type Approx<T extends number = number> = T & { _ApproxBrand: boolean }
 
 type Sopfr<T extends NumericTypeParameters = {}> =
     Sum<Prime>
-    & { _SopfrBrand: "Sopfr" }
+    & { _SopfrBrand: boolean }
     & NumericTypeParameterEffects<T>
 type Copfr<T extends NumericTypeParameters = {}> =
     Count<Prime>
-    & { _CopfrBrand: "Copfr" }
+    & { _CopfrBrand: boolean }
     & NumericTypeParameterEffects<T>
 
 enum Direction {
@@ -59,7 +59,7 @@ type NumericTypeParameterEffects<T> =
     & (T extends { direction: Direction.UNISON } ? { _DirectionBrand: Direction.UNISON } : {})
     & (T extends { rough: number } ? { _RoughBrand: Pick<T, "rough"> } : {})
     & (T extends { smooth: number } ? { _SmoothBrand: Pick<T, "smooth"> } : {})
-    & (T extends { irrational: true } ? { _IrrationalBrand: "Irrational" } : {})
+    & (T extends { irrational: true } ? { _IrrationalBrand: boolean } : {})
     & MaybeIntegerBrand<T>
 
 type CommonFunction = (firstInteger: Integer, secondInteger: Integer) => Integer

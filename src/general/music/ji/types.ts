@@ -3,11 +3,11 @@ import { Cents } from "../types"
 
 type Comma<T extends NumericTypeParameters = {}> =
     JiPitch<T>
-    & { _CommaBrand: "Comma" }
+    & { _CommaBrand: boolean }
 
 type TwoThreeFreeClass<T extends NumericTypeParameters = {}> =
     JiPitch<Omit<T, "rough" | "direction"> & { rough: 5, direction: Direction.SUPER }>
-    & { _TwoThreeFreeClassBrand: "TwoThreeFreeClass" }
+    & { _TwoThreeFreeClassBrand: boolean }
 
 type JiPitchByMonzo<T extends RationalTypeParameters = { irrational: false }> = {
     cents?: Cents,
@@ -23,14 +23,14 @@ type JiPitchByRatio<T extends RationalTypeParameters = { irrational: false }> = 
 type JiPitch<T extends NumericTypeParameters = {}> =
     JiPitchByMonzo<T & { irrational: false }> | JiPitchByRatio<T & { irrational: false }>
 
-type Votes = Integer & { _VotesBrand: "Votes" }
+type Votes = Integer & { _VotesBrand: boolean }
 
 interface Popularity {
     twoThreeFreeClass: TwoThreeFreeClass,
     votes: Votes,
 }
 
-type Apotome = Cents & { _ApotomeBrand: "Apotome" }
+type Apotome = Cents & { _ApotomeBrand: boolean }
 
 export {
     Votes,

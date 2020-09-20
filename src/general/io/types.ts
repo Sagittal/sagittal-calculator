@@ -2,12 +2,12 @@ import { Maybe } from "../code"
 import { Ms } from "../types"
 import { LogTargets } from "./log"
 
-type HexColor = string & { _HexColorBrand: "HexColor" }
-type Filename = string & { _FileBrand: "File" }
+type HexColor = string & { _HexColorBrand: boolean }
+type Filename = string & { _FileBrand: boolean }
 
-type Char = string & { _CharBrand: "Char" }
+type Char = string & { _CharBrand: boolean }
 
-type Io = string & { _IOBrand: "IO" }
+type Io = string & { _IOBrand: boolean }
 
 type ColorMethod =
     "white" |

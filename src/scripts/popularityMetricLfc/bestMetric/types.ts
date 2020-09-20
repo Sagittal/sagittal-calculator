@@ -13,7 +13,7 @@ type ParameterScope = ParameterValue | boolean | DynamicParameterScope
 
 type ParameterScopes = Partial<Record<Parameter, ParameterScope>>
 
-type SubmetricScope = ParameterScopes & { _SubmetricScopeBrand: "SubmetricScope" }
+type SubmetricScope = ParameterScopes & { _SubmetricScopeBrand: boolean }
 
 type Scope = Combination<SubmetricScope>
 
@@ -25,7 +25,7 @@ type DynamicParameterScope = Partial<{
 
 type SquaredWeightedRankDifferences =
     number
-    & { _SquaredWeightedRankDifferencesBrand: "SquaredWeightedRankDifferences" }
+    & { _SquaredWeightedRankDifferencesBrand: boolean }
 
 type SumOfSquares = Sum<SquaredWeightedRankDifferences>
 

@@ -1,8 +1,8 @@
 import { Io } from "../../general"
 
-type SymbolLongAscii = Io & { _SymbolLongAsciiBrand: "SymbolLongAscii" }
-type SymbolUnicode = Io & { _SymbolUnicodeBrand: "SymbolUnicode" }
-type SymbolSmiley = Io & { _SymbolSmileyBrand: "SymbolSmiley" }
+type SymbolLongAscii = Io & { _SymbolLongAsciiBrand: boolean }
+type SymbolUnicode = Io & { _SymbolUnicodeBrand: boolean }
+type SymbolSmiley = Io & { _SymbolSmileyBrand: boolean }
 
 export {
     SymbolLongAscii,

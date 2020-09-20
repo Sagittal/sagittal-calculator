@@ -6,7 +6,7 @@ type SortOptions = Partial<{
     precision: Integer,
 }>
 
-type KeyPath = (number | string | Array<number | string>) & { _KeyPathBrand: "KeyPath" }
+type KeyPath = (number | string | Array<number | string>) & { _KeyPathBrand: boolean }
 
 type Obj = (Array<unknown> | Record<any, unknown>) & { [ index: string ]: unknown } & { [ index: number ]: unknown }
 
@@ -14,7 +14,7 @@ type RecordKey<T> = T | (T extends number ? number : T extends string ? string :
 
 type Sortable = { [ index: string ]: number }
 
-type Rank<T = void> = number & { _RankBrand: "Rank" } & (T extends void ? {} : { _RankOfBrand: T })
+type Rank<T = void> = number & { _RankBrand: boolean } & (T extends void ? {} : { _RankOfBrand: T })
 
 type Ranked<T> = T & { rank: Rank<T> }
 
@@ -34,7 +34,7 @@ enum ExtensionBaseType {
     OBJECT = "object",
 }
 
-type Range<T = number> = Array<T> & { _RangeBrand: "Range" }
+type Range<T = number> = Array<T> & { _RangeBrand: boolean }
 
 type Maybe<T> = T | undefined
 

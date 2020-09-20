@@ -18,14 +18,14 @@ type TableTypeParameters = Partial<{
 
 type Row<T extends TableTypeParameters = {}> =
     Array<Maybe<Formatted<T["of"]>>>
-    & { _RowBrand: "Row" }
+    & { _RowBrand: boolean }
     & (T extends { of: unknown } ? {} : { _RowOfBrand: Pick<T, "of"> })
-    & (T extends { header: true } ? { _HeaderBrand: "Header" } : {})
+    & (T extends { header: true } ? { _HeaderBrand: boolean } : {})
 type Column<T extends TableTypeParameters = {}> =
     Array<Maybe<Formatted<T["of"]>>>
-    & { _ColumnBrand: "Column" }
+    & { _ColumnBrand: boolean }
     & (T extends { of: unknown } ? {} : { _ColumnOfBrand: Pick<T, "of"> })
-    & (T extends { header: true } ? { _HeaderBrand: "Header" } : {})
+    & (T extends { header: true } ? { _HeaderBrand: boolean } : {})
 
 type Table<T = void> = Array<Row<{ of: T }>>
 

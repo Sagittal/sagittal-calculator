@@ -3,7 +3,7 @@ import { Ina, Tina } from "../../../sagittal"
 import { EventType } from "../histories"
 import { EventAnalysis } from "./events"
 
-type Score = number & { _ScoreBrand: "Score" }
+type Score = number & { _ScoreBrand: boolean }
 
 interface HistoryAnalysis {
     totalDistance: Sum<Abs<Cents>>,

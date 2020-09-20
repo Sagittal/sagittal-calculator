@@ -2,7 +2,7 @@ import { Monzo, NumericTypeParameters, Ratio } from "../math"
 import { Extrema } from "../types"
 import { JiPitch } from "./ji"
 
-type Cents = number & { _CentsBrand: "Cents" }
+type Cents = number & { _CentsBrand: boolean }
 
 // TODO: NO LONGER BASED ON CENTS; JI PITCH VS RATIONAL NUMBER SEAM, ETC.
 //  if you had the code base work in Pitch first and cents only secondarily,

@@ -1,6 +1,6 @@
 import { Index, TwoThreeFreeClass } from "../../../general"
 
-type Antivotes = number & { _AntivotesBrand: "Antivotes" }
+type Antivotes = number & { _AntivotesBrand: boolean }
 
 interface Unpopularity {
     antivotes: Antivotes,
@@ -102,7 +102,7 @@ type Submetric = Partial<{
     [ Parameter.MAX ]: boolean,
 }>
 
-type ParameterValue = number & { _ParameterValueBrand: "ParameterValue" }
+type ParameterValue = number & { _ParameterValueBrand: boolean }
 
 type WeightedAntivotesOptions = Partial<{
     logarithmBase: ParameterValue,

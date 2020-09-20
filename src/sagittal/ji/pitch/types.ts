@@ -11,7 +11,7 @@ interface JiPitchAnalysisProperties<T extends NumericTypeParameters = {}> {
 
 type JiPitchAnalysis<T extends NumericTypeParameters = {}> = JiPitch<T> & JiPitchAnalysisProperties<T>
 
-type ApotomeSlope = number & { _ApotomeSlopeBrand: "ApotomeSlope" }
+type ApotomeSlope = number & { _ApotomeSlopeBrand: boolean }
 
 export {
     ApotomeSlope,

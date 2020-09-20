@@ -14,7 +14,7 @@ interface DynamicParameter {
     values: ParameterValue[],
 }
 
-type SubmetricPossibility = Submetric & { _SubmetricPossibilityBrand: "SubmetricPossibility" }
+type SubmetricPossibility = Submetric & { _SubmetricPossibilityBrand: boolean }
 
 type SamplePoint = KeyPath & Array<Index<ParameterValue>>
 
