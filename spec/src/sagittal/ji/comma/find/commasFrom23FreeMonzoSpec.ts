@@ -46,4 +46,20 @@ describe("computeCommasFrom23FreeMonzo", (): void => {
             expect(resultWithLowMaxAas).toEqual(jasmine.arrayWithExactContents([]))
         })
     })
+
+    it("trims the monzo if necessary", (): void => {
+        const twoThreeFreeMonzo: Monzo<{ rough: 5 }> = [0, 0, 0] as Monzo<{ rough: 5 }>
+        const minCents = 0 as Min<Cents>
+        const maxCents = 0 as Max<Cents>
+
+        const actual = computeCommasFrom23FreeMonzo(twoThreeFreeMonzo, {
+            minCents,
+            maxCents,
+            maxAte,
+            maxN2D3P9,
+        })
+
+        const expected = [{ monzo: [] as Monzo } as Comma]
+        expect(actual).toEqual(expected)
+    })
 })

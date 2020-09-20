@@ -39,12 +39,12 @@ const testIsCloseTo = <T extends number>(actual: T, expected: T, precision: Inte
         assert(
             !isClose,
             message ||
-            `Expected ${stringify(actual)} not to be close to ${stringify(expected)}${precisionMessage(precision)}.`,
+            `Expected ${stringify(actual, { multiline: true })} not to be close to ${stringify(expected, { multiline: true })}${precisionMessage(precision)}.`,
         )
     } else {
         assert(
             isClose,
-            message || `Expected ${stringify(actual)} to be close to ${stringify(expected)}${precisionMessage(precision)}.`,
+            message || `Expected ${stringify(actual, { multiline: true })} to be close to ${stringify(expected, { multiline: true })}${precisionMessage(precision)}.`,
         )
     }
 }
@@ -73,7 +73,7 @@ const eachExpectedElementIsCloseToSomeActualElement = <T>(expectedElements: T[],
             actual.some((actualElement: T): boolean => {
                 return deepEquals(actualElement, expectedElement, precision)
             }),
-            message || `This expected element did not find an element close to it: ${stringify(expectedElement)}.`,
+            message || `This expected element did not find an element close to it: ${stringify(expectedElement, { multiline: true })}.`,
         )
     })
 }
@@ -84,7 +84,7 @@ const eachExpectedElementDeepEqualsSomeActualElement = <T>(expectedElements: T[]
             actual.some((actualElement: T): boolean => {
                 return deepEquals(actualElement, expectedElement)
             }),
-            message || `This expected element was not found: ${stringify(expectedElement)}.`,
+            message || `This expected element was not found: ${stringify(expectedElement, { multiline: true })}.`,
         )
     })
 }
@@ -95,7 +95,7 @@ const eachExpectedElementHasSameContentsAsSomeActualElement = <T>(expectedElemen
             actual.some((actualElement: T[]): boolean => {
                 return arraysHaveSameContents(actualElement, expectedElement)
             }),
-            message || `This expected element was not found: ${stringify(expectedElement)}`,
+            message || `This expected element was not found: ${stringify(expectedElement, { multiline: true })}`,
         )
     })
 }
@@ -130,7 +130,7 @@ const customMatchers: CustomMatcherFactories = {
             doAssertions((): void => {
                 assert(
                     deepEquals(actual, expected, precision),
-                    message || `Expected ${stringify(actual)} to deep equal ${stringify(expected)} with numeric values within precision ${precision}.`,
+                    message || `Expected ${stringify(actual, { multiline: true })} to deep equal ${stringify(expected, { multiline: true })} with numeric values within precision ${precision}.`,
                 )
             }),
     }),
@@ -168,7 +168,7 @@ const customMatchers: CustomMatcherFactories = {
                                 return arraysHaveSameContents(actualElementElement, expectedElement[ index ])
                             })
                         }),
-                        message || `This expected element was not found: ${stringify(expectedElement)}`,
+                        message || `This expected element was not found: ${stringify(expectedElement, { multiline: true })}`,
                     )
                 })
             }),

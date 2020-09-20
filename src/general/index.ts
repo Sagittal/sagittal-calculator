@@ -160,6 +160,7 @@ export {
     TWO_PRIME_INDEX,
     add,
     computeNumberFromMonzo,
+    equalMonzos,
 } from "./math"
 export {
     Cents,

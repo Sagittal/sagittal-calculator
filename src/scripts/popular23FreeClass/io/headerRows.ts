@@ -1,7 +1,7 @@
 import { Io, Row, splitColumnTitlesIntoRowsBySpaces } from "../../../general"
-import { Popular23FreeClassAnalysis } from "../types"
+import { Popular23FreeClassWithBestNotatingComma, Popular23FreeClassWithExactlyNotatingSymbolClasses } from "../types"
 
-const POPULAR_TWO_THREE_FREE_CLASSES_COLUMN_TITLES: Io[] = [
+const POPULAR_2_3_FREE_CLASS_WITH_EXACTLY_NOTATING_SYMBOL_CLASSES_COLUMN_TITLES: Io[] = [
     "2,3- free class",
     "N2D3P9",
     "exactly notating JI symbol classes",
@@ -11,7 +11,7 @@ const POPULAR_TWO_THREE_FREE_CLASSES_COLUMN_TITLES: Io[] = [
     "Scala archive occurrences",
 ] as Io[]
 
-const BEST_NOTATING_COMMA_COLUMN_TITLES: Io[] = [
+const POPULAR_2_3_FREE_CLASS_WITH_BEST_NOTATING_COMMA_COLUMN_TITLES: Io[] = [
     "2,3- free class",
     "N2D3P9 rank",
     "best notating comma cents",
@@ -19,13 +19,15 @@ const BEST_NOTATING_COMMA_COLUMN_TITLES: Io[] = [
     "best notating comma symbol class",
 ] as Io[]
 
-const computePopular23FreeClassesHeaderRows = (): Array<Row<{ of: Popular23FreeClassAnalysis, header: true }>> =>
-    splitColumnTitlesIntoRowsBySpaces(POPULAR_TWO_THREE_FREE_CLASSES_COLUMN_TITLES)
+const computePopular23FreeClassWithExactlyNotatingSymbolClassesHeaderRows =
+    (): Array<Row<{ of: Popular23FreeClassWithExactlyNotatingSymbolClasses, header: true }>> =>
+        splitColumnTitlesIntoRowsBySpaces(POPULAR_2_3_FREE_CLASS_WITH_EXACTLY_NOTATING_SYMBOL_CLASSES_COLUMN_TITLES)
 
-const computeBestNotatingCommaHeaderRows = (): Array<Row<{ of: Popular23FreeClassAnalysis, header: true }>> =>
-    splitColumnTitlesIntoRowsBySpaces(BEST_NOTATING_COMMA_COLUMN_TITLES)
+const computePopular23FreeClassWithBestNotatingCommaHeaderRows =
+    (): Array<Row<{ of: Popular23FreeClassWithBestNotatingComma, header: true }>> =>
+        splitColumnTitlesIntoRowsBySpaces(POPULAR_2_3_FREE_CLASS_WITH_BEST_NOTATING_COMMA_COLUMN_TITLES)
 
 export {
-    computePopular23FreeClassesHeaderRows,
-    computeBestNotatingCommaHeaderRows,
+    computePopular23FreeClassWithExactlyNotatingSymbolClassesHeaderRows,
+    computePopular23FreeClassWithBestNotatingCommaHeaderRows,
 }

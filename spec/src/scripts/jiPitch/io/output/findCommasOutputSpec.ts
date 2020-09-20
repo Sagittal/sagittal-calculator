@@ -20,7 +20,7 @@ import { computeFindCommasOutput } from "../../../../../../src/scripts/jiPitch/i
 
 describe("computeFindCommasOutput", (): void => {
     // I'm pretty sure that this is not realistic comma data, since these commas are unrelated.
-    const commaAnalyses: Array<CommaAnalysis> = [
+    const commaAnalyses: CommaAnalysis[] = [
         {
             name: "11M" as Name<Comma>,
             cents: 45.45 as Cents,

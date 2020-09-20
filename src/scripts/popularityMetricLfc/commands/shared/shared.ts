@@ -6,6 +6,8 @@ import { popularityMetricLfcScriptGroupSettings } from "../../globals"
 const applySharedPopularityMetricLfcCommandSetup = (
     { defaultLogTargets }: { defaultLogTargets?: LogTarget[] } = {},
 ): void => {
+    ioSettings.scriptGroup = ScriptGroup.POPULARITY_METRIC_LFC as Filename
+
     program
         .option(`-${CommandFlag.NO_USELESS}, --no-useless`, "eliminate probably useless parameters or parameter value scopes")
         .option(`-${CommandFlag.Z}, --z <z>`, "z", parseFloat)
@@ -18,8 +20,6 @@ const applySharedPopularityMetricLfcCommandSetup = (
     if (program.onlyTop) popularityMetricLfcScriptGroupSettings.onlyTop = program.onlyTop
     if (program.maxUnit) popularityMetricLfcScriptGroupSettings.maxUnit = program.maxUnit
     if (!program.useless) popularityMetricLfcScriptGroupSettings.noUseless = true
-
-    ioSettings.scriptGroup = ScriptGroup.POPULARITY_METRIC_LFC as Filename
 }
 
 export {

@@ -1,6 +1,6 @@
 import {
     ACCURACY_THRESHOLD,
-    computeIsSubMonzo,
+    computeIsSubMonzo, computeTrimmedArray,
     Exponent,
     Extrema,
     Filename,
@@ -25,14 +25,12 @@ import {
     TwoThreeFreeClass,
 } from "../../general"
 import { computeN2D3P9, computePrimeExponentExtremasGivenMaxN2D3P9, N2D3P9 } from "../../sagittal"
-import { analyzePopular23FreeClass } from "./analyzePopular23FreeClass"
 import { popular23FreeClassesScriptGroupSettings } from "./globals"
-import { computeMaybePopular23FreeClassAnalysis } from "./maybePopular23FreeClass"
-import { Popular23FreeClassAnalysis } from "./types"
+import { computeMaybePopular23FreeClass } from "./maybePopular23FreeClass"
+import { computePopular23FreeClass } from "./popular23FreeClass"
+import { Popular23FreeClass } from "./types"
 
-const computePopular23FreeClasses = (
-    maxN2D3P9: Max<N2D3P9>,
-): Array<Ranked<Popular23FreeClassAnalysis>> => {
+const computePopular23FreeClasses = (maxN2D3P9: Max<N2D3P9>): Array<Ranked<Popular23FreeClass>> => {
     let popular23FreeClassAnalyses
     if (popular23FreeClassesScriptGroupSettings.useKnown) {
         const knownPopular23FreeClasses =
@@ -42,8 +40,8 @@ const computePopular23FreeClasses = (
                 })
 
         popular23FreeClassAnalyses = knownPopular23FreeClasses
-            .map((twoThreeFreeClass: TwoThreeFreeClass): Popular23FreeClassAnalysis => {
-                return analyzePopular23FreeClass({
+            .map((twoThreeFreeClass: TwoThreeFreeClass): Popular23FreeClass => {
+                return computePopular23FreeClass({
                     twoThreeFreeClass,
                     n2d3p9: computeN2D3P9(twoThreeFreeClass),
                 })
@@ -72,12 +70,13 @@ const computePopular23FreeClasses = (
         )
         let twoThreeFreeMonzo: Monzo<{ rough: 5 }> = shallowClone(initialMonzo) as Monzo<{ rough: 5 }>
 
-        popular23FreeClassAnalyses = [] as Array<Popular23FreeClassAnalysis>
+        popular23FreeClassAnalyses = [] as Array<Popular23FreeClass>
         while (true) {
-            // do the work
-            const maybePopular23FreeClass = !computeIsSubMonzo(twoThreeFreeMonzo) ?
-                computeMaybePopular23FreeClassAnalysis(
-                    { monzo: twoThreeFreeMonzo } as TwoThreeFreeClass,
+            // do the work (trimming has the extra benefit of shallow cloning, disconnecting from this ticking process)
+            const twoThreeFreeMonzoForWork = computeTrimmedArray(twoThreeFreeMonzo)
+            const maybePopular23FreeClass = !computeIsSubMonzo(twoThreeFreeMonzoForWork) ?
+                computeMaybePopular23FreeClass(
+                    { monzo: twoThreeFreeMonzoForWork } as TwoThreeFreeClass,
                     maxN2D3P9,
                 ) :
                 undefined

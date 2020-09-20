@@ -49,6 +49,7 @@ export {
     computeIsSmoothMonzo,
     computeIsUnisonMonzo,
     computeNumberFromMonzo,
+    equalMonzos,
 } from "./monzo"
 export { computePrimeCount } from "./primeCount"
 export { PRIMES } from "./primes"

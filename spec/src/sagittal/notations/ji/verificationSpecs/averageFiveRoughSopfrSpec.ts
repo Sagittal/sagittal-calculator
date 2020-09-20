@@ -4,7 +4,7 @@ import { avg } from "../../../../../../src/general/math/typedOperations"
 import { Avg } from "../../../../../../src/general/math/types"
 import { getPrimaryComma, JI_NOTATION, SymbolClass } from "../../../../../../src/sagittal"
 
-const AVERAGE_TWO_THREE_FREE_SOPFR: Avg<Sopfr<{ rough: 5 }>> = 22.785235 as Avg<Sopfr<{ rough: 5 }>>
+const AVERAGE_2_3_FREE_SOPFR: Avg<Sopfr<{ rough: 5 }>> = 22.785235 as Avg<Sopfr<{ rough: 5 }>>
 
 describe("average 2,3-free SoPFR", (): void => {
     it("is about 23", (): void => {
@@ -16,6 +16,6 @@ describe("average 2,3-free SoPFR", (): void => {
                 return computeSopfr(twoThreeFreeNumberMonzo)
             })
 
-        expect(avg(...twoThreeFreeSopfrs)).toBeCloseToTyped(AVERAGE_TWO_THREE_FREE_SOPFR)
+        expect(avg(...twoThreeFreeSopfrs)).toBeCloseToTyped(AVERAGE_2_3_FREE_SOPFR)
     })
 })

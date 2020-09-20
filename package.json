@@ -24,7 +24,6 @@
     "perfect-metrics": "node -r ts-node/register/transpile-only --max-old-space-size=131072 src/scripts/popularityMetricLfc/commands/perfectMetrics.ts",
     "guess-backfill-spread-dynamic-parameters": "node -r ts-node/register/transpile-only src/scripts/popularityMetricLfc/commands/correctGoofs/guessBackfillSpreadDynamicParameters.ts",
     "popular-2-3-free-classes": "node -r ts-node/register/transpile-only --max-old-space-size=131072 src/scripts/popular23FreeClass/commands/popular23FreeClasses.ts",
-    "popular-2-3-free-classes-with-best-exactly-notating-commas": "node -r ts-node/register/transpile-only --max-old-space-size=131072 src/scripts/popular23FreeClass/commands/popular23FreeClassesWithBestNotatingCommas.ts",
     "late-tina-commas": "node -r ts-node/register/transpile-only --max-old-space-size=131072 src/scripts/jiPitch/commands/lateTinaCommas.ts"
   },
   "devDependencies": {

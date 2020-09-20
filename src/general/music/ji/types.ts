@@ -1,4 +1,4 @@
-import { Direction, Monzo, NumericTypeParameters, Ratio, RationalTypeParameters } from "../../math"
+import { Direction, Integer, Monzo, NumericTypeParameters, Ratio, RationalTypeParameters } from "../../math"
 import { Cents } from "../types"
 
 type Comma<T extends NumericTypeParameters = {}> =
@@ -23,7 +23,7 @@ type JiPitchByRatio<T extends RationalTypeParameters = { irrational: false }> = 
 type JiPitch<T extends NumericTypeParameters = {}> =
     JiPitchByMonzo<T & { irrational: false }> | JiPitchByRatio<T & { irrational: false }>
 
-type Votes = number & { _VotesBrand: "Votes" }
+type Votes = Integer & { _VotesBrand: "Votes" }
 
 interface Popularity {
     twoThreeFreeClass: TwoThreeFreeClass,

@@ -6,10 +6,10 @@ import { Io } from "../types"
 import { computeColumnRange } from "./columnRange"
 import { DEFAULT_FORMAT_TABLE_OPTIONS } from "./constants"
 import { computeJustifications, computeJustifiedCellForForum } from "./justification"
-import { FormatTableOptions, Row, Table, TableForForumStuffOptions } from "./types"
+import { FormatTableOptions, Row, Table, TableForForumRowPartsOptions } from "./types"
 
 const computeTableForForumRowParts = <T = unknown>(
-    { index, headerRowCount, colors }: TableForForumStuffOptions<T>,
+    { index, headerRowCount, colors }: TableForForumRowPartsOptions<T>,
 ): { rowOpen: Io, rowClose: Io, separator: Io } => {
     const cellTag: Io = index < headerRowCount ? "th" as Io : "td" as Io
 

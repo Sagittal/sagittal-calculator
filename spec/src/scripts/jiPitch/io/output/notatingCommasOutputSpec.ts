@@ -7,7 +7,7 @@ import { computeNotatingCommasOutput } from "../../../../../../src/scripts/jiPit
 import { twoThreeFreeClassAnalysisFixture } from "../../../../../helpers/src/scripts/jiPitch/fixtures"
 
 describe("computeNotatingCommasOutput", (): void => {
-    const notatingCommaAnalyses: Array<CommaAnalysis> = [
+    const notatingCommaAnalyses: CommaAnalysis[] = [
         {
             name: "11M" as Name<Comma>,
             cents: 45.45 as Cents,

@@ -1,6 +1,6 @@
 import { Id, Monzo } from "../../../../src/general"
 import { SymbolClass } from "../../../../src/sagittal/notations"
-import { computeExactlyNotatingSymbolClassIds } from "../../../../src/scripts/popular23FreeClass/notatingSymbolClassIds"
+import { computeExactlyNotatingSymbolClassIds } from "../../../../src/scripts/popular23FreeClass/exactlyNotatingSymbolClassIds"
 
 describe("computeExactlyNotatingSymbolClassIds", (): void => {
     it(

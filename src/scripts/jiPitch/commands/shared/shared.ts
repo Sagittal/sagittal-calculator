@@ -4,6 +4,8 @@ import { ScriptGroup } from "../../../types"
 import { jiPitchScriptGroupSettings } from "../../globals"
 
 const applySharedPitchCommandSetup = (): void => {
+    ioSettings.scriptGroup = ScriptGroup.JI_PITCH as Filename
+
     program
         .option(`-${CommandFlag.SORT_BY}, --sort-by <sortBy>`, "sort by")
         .option(`-${CommandFlag.UNDIRECTED_COMMA_NAME}, --undirected`, "undirected comma name")
@@ -21,8 +23,6 @@ const applySharedPitchCommandSetup = (): void => {
         factored: !!program.factored,
         abbreviated: !program.unabbreviated,
     }
-
-    ioSettings.scriptGroup = ScriptGroup.JI_PITCH as Filename
 }
 
 export {

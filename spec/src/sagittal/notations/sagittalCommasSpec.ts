@@ -623,7 +623,7 @@ describe("SAGITTAL_COMMAS", (): void => {
                 },
                 ratio: [2048, 2025] as Ratio,
                 monzo: [11, -4, -2] as Monzo,
-                cents: 19.552568 as Cents,
+                cents: 19.552569 as Cents,
                 name: "1/25C" as Name<Comma>,
             },
             {
@@ -893,7 +893,7 @@ describe("SAGITTAL_COMMAS", (): void => {
                 },
                 ratio: [64, 63] as Ratio,
                 monzo: [6, -2, 0, -1] as Monzo,
-                cents: 27.264091 as Cents,
+                cents: 27.264092 as Cents,
                 name: "1/7C" as Name<Comma>,
             },
             {
@@ -953,7 +953,7 @@ describe("SAGITTAL_COMMAS", (): void => {
                 },
                 ratio: [3645, 3584] as Ratio,
                 monzo: [-9, 6, 1, -1] as Monzo,
-                cents: 29.217812 as Cents,
+                cents: 29.217813 as Cents,
                 name: "5/7C" as Name<Comma>,
             },
             {
@@ -1181,6 +1181,7 @@ describe("SAGITTAL_COMMAS", (): void => {
                 cents: 36.236703 as Cents,
                 name: "17/5S" as Name<Comma>,
             },
+            // TODO: there's the gap in the commas! see symbolClasses.ts for the full to-do about fixing it
             {
                 id: 79 as Id<SagittalComma>,
                 apotomeSlope: 4.738486 as ApotomeSlope,

@@ -1,26 +1,34 @@
-import { Cents, Formatted, Io, Monzo, Popularity, Rank, TwoThreeFreeClass, Votes } from "../../general"
-import { N2D3P9 } from "../../sagittal"
+import { Cents, Id, Index, Io, Maybe, Monzo, Popularity, Rank, TwoThreeFreeClass, Votes } from "../../general"
+import { N2D3P9, SymbolClass, SymbolSubset } from "../../sagittal"
 
-interface SharedPopular23FreeClassAnalysisProperties {
+type SharedPopular23FreeClassProperties = Omit<TwoThreeFreeClass, "_TwoThreeFreeClassBrand"> & {
     n2d3p9: N2D3P9,
-    formatted23FreeClass: Formatted<TwoThreeFreeClass>,
-    formattedN2D3P9: Formatted<N2D3P9>,
     votes: Votes,
-    popularityRank: Rank<Popularity> | Io,
+    popularityRank?: Rank<Popularity>,
 }
 
-interface Popular23FreeClassAnalysis extends SharedPopular23FreeClassAnalysisProperties {
-    smallestJiNotationSymbolSubsetIndices: Io,
-    formattedExactlyNotatingSymbolClasses: Io,
+type Popular23FreeClassWithExactlyNotatingSymbolClasses = SharedPopular23FreeClassProperties & {
+    exactlyNotatingSymbolClassSmallestJiNotationSymbolSubsetIndices: Array<Index<SymbolSubset>>,
+    exactlyNotatingSymbolClassIds: Array<Id<SymbolClass>>,
 }
 
-interface Popular23FreeClassAnalysisWithBestNotatingComma extends SharedPopular23FreeClassAnalysisProperties {
-    bestNotatingCommaCents: Formatted<Cents>,
-    bestNotatingCommaMonzo: Formatted<Monzo>,
-    bestNotatingCommaMaybeSymbolClass: Io,
+type Popular23FreeClassWithBestNotatingComma = SharedPopular23FreeClassProperties & {
+    bestNotatingCommaCents: Cents,
+    bestNotatingCommaMonzo: Monzo,
+    bestNotatingCommaMaybeSymbolClassId: Maybe<Id<SymbolClass>>,
+}
+
+type Popular23FreeClass = Popular23FreeClassWithExactlyNotatingSymbolClasses | Popular23FreeClassWithBestNotatingComma
+
+interface Popular23FreeClassesScriptGroupSettings {
+    useLate: boolean,
+    useKnown: boolean,
+    useBestNotatingCommas: boolean,
 }
 
 export {
-    Popular23FreeClassAnalysis,
-    Popular23FreeClassAnalysisWithBestNotatingComma,
+    Popular23FreeClass,
+    Popular23FreeClassWithExactlyNotatingSymbolClasses,
+    Popular23FreeClassWithBestNotatingComma,
+    Popular23FreeClassesScriptGroupSettings,
 }

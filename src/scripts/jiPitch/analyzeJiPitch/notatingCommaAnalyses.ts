@@ -6,7 +6,7 @@ import { jiPitchScriptGroupSettings } from "../globals"
 const computeNotatingCommaAnalyses = (
     jiPitch: JiPitch,
     notatingCommasSettings: Partial<FindCommasSettings> = {},
-): Array<CommaAnalysis> => {
+): CommaAnalysis[] => {
     const notatingCommas: Comma[] =
         computeNotatingCommas(jiPitch, { ...jiPitchScriptGroupSettings, ...notatingCommasSettings })
 

@@ -1,7 +1,7 @@
 import {
     computeJiPitchMonzo,
     computeRoughMonzo,
-    deepEquals,
+    equalMonzos,
     FIVE_ROUGHNESS,
     Id,
     invertMonzo,
@@ -21,8 +21,8 @@ const computeExactlyNotatingSymbolClassIds = (jiPitch: JiPitch): Array<Id<Symbol
         const twoThreeFreePrimaryCommaMonzo = computeRoughMonzo(primaryComma.monzo, FIVE_ROUGHNESS)
 
         if (
-            deepEquals(twoThreeFreeMonzo, twoThreeFreePrimaryCommaMonzo) ||
-            deepEquals(twoThreeFreeMonzo, invertMonzo(twoThreeFreePrimaryCommaMonzo))
+            equalMonzos(twoThreeFreeMonzo, twoThreeFreePrimaryCommaMonzo) ||
+            equalMonzos(twoThreeFreeMonzo, invertMonzo(twoThreeFreePrimaryCommaMonzo))
         ) {
             exactlyNotatingSymbolClassIds.push(symbolClassId)
         }

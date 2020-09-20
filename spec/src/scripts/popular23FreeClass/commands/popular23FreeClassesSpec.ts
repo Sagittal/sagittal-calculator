@@ -203,4 +203,36 @@ describe("popular-2-3-free-classes", (): void => {
         const expected = readLines("src/scripts/popular23FreeClass/results/popular23FreeClasses.txt" as Filename)
         expect(actual).toEqual(expected)
     })
+
+    it("can associate the popular 2,3-free classes with their best notating commas (instead of all of their exactly notating symbol classes)", (): void => {
+        onlyRunInCi()
+
+        const command = "npm run popular-2-3-free-classes -- --use-best-notating-commas --max-n2d3p9 10 --for-forum" as Io
+
+        const actual = runCommandAndGetConsoleOutput(command)
+
+        const expected = [
+            "count of results with N2D3P9 ≤ 10: 10",
+            "",
+            "[table]",
+            "[tr][th][pre][/pre][/th][th][pre][/pre][/th][th][pre][/pre][/th][th][pre][/pre][/th][th][pre]best[/pre][/th][/tr]",
+            "[tr][th][pre][/pre][/th][th][pre][/pre][/th][th][pre]best[/pre][/th][th][pre]best[/pre][/th][th][pre]notating[/pre][/th][/tr]",
+            "[tr][th][pre]2,3-[/pre][/th][th][pre][/pre][/th][th][pre]notating[/pre][/th][th][pre]notating[/pre][/th][th][pre]comma[/pre][/th][/tr]",
+            "[tr][th][pre]free[/pre][/th][th][pre]N2D3P9[/pre][/th][th][pre]comma[/pre][/th][th][pre]comma[/pre][/th][th][pre]symbol[/pre][/th][/tr]",
+            "[tr][th][pre]class[/pre][/th][th][pre]rank[/pre][/th][th][pre]cents[/pre][/th][th][pre]monzo[/pre][/th][th][pre]class[/pre][/th][/tr]",
+            "[tr][td][pre]1/1[/pre][/td][td][pre]1[/pre][/td][td][pre]  0.000[/pre][/td][td][pre][  ⟩[/pre][/td][td][pre]:|:[/pre][/td][/tr]",
+            "[tr][td][pre]5/1[/pre][/td][td][pre]2[/pre][/td][td][pre] 21.506[/pre][/td][td][pre][  -4   4  -1 ⟩[/pre][/td][td][pre]:/|:[/pre][/td][/tr]",
+            "[tr][td][pre]7/1[/pre][/td][td][pre]3[/pre][/td][td][pre] 27.264[/pre][/td][td][pre][   6  -2   0  -1 ⟩[/pre][/td][td][pre]:|):[/pre][/td][/tr]",
+            "[tr][td][pre]25/1[/pre][/td][td][pre]4[/pre][/td][td][pre] 19.553[/pre][/td][td][pre][  11  -4  -2 ⟩[/pre][/td][td][pre]:.::/|:[/pre][/td][/tr]",
+            "[tr][td][pre]7/5[/pre][/td][td][pre]5[/pre][/td][td][pre] 29.218[/pre][/td][td][pre][  -9   6   1  -1 ⟩[/pre][/td][td][pre]:'::|):[/pre][/td][/tr]",
+            "[tr][td][pre]11/1[/pre][/td][td][pre]6[/pre][/td][td][pre] 53.273[/pre][/td][td][pre][  -5   1   0   0   1 ⟩[/pre][/td][td][pre]:/|\\:[/pre][/td][/tr]",
+            "[tr][td][pre]35/1[/pre][/td][td][pre]7[/pre][/td][td][pre] 48.770[/pre][/td][td][pre][   2   2  -1  -1 ⟩[/pre][/td][td][pre]:/|):[/pre][/td][/tr]",
+            "[tr][td][pre]125/1[/pre][/td][td][pre]8[/pre][/td][td][pre] 41.059[/pre][/td][td][pre][   7   0  -3 ⟩[/pre][/td][td][pre]:.::/ /|:[/pre][/td][/tr]",
+            "[tr][td][pre]13/1[/pre][/td][td][pre]9[/pre][/td][td][pre] 48.348[/pre][/td][td][pre][ -10   4   0   0   0   1 ⟩[/pre][/td][td][pre]:,::/|):[/pre][/td][/tr]",
+            "[tr][td][pre]49/1[/pre][/td][td][pre]10[/pre][/td][td][pre] 35.697[/pre][/td][td][pre][  -4  -1   0   2 ⟩[/pre][/td][td][pre]:~|):[/pre][/td][/tr]",
+            "[/table]",
+            "",
+        ] as Io[]
+        expect(actual).toEqual(expected)
+    })
 })

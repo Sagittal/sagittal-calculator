@@ -1,7 +1,8 @@
-import { INITIAL_POPULAR_TWO_THREE_FREE_CLASSES_SCRIPT_GROUP_SETTINGS } from "./constants"
+import { INITIAL_POPULAR_2_3_FREE_CLASSES_SCRIPT_GROUP_SETTINGS } from "./constants"
+import { Popular23FreeClassesScriptGroupSettings } from "./types"
 
-const popular23FreeClassesScriptGroupSettings =
-    JSON.parse(JSON.stringify(INITIAL_POPULAR_TWO_THREE_FREE_CLASSES_SCRIPT_GROUP_SETTINGS))
+const popular23FreeClassesScriptGroupSettings: Popular23FreeClassesScriptGroupSettings =
+    JSON.parse(JSON.stringify(INITIAL_POPULAR_2_3_FREE_CLASSES_SCRIPT_GROUP_SETTINGS))
 
 export {
     popular23FreeClassesScriptGroupSettings,

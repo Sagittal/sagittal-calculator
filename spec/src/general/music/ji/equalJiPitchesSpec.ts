@@ -56,4 +56,13 @@ describe("equalJiPitches", (): void => {
 
         expect(actual).toBeFalsy()
     })
+
+    it("works when monzos haven't been trimmed", (): void => {
+        const jiPitchA: JiPitch = { monzo: [0, 0] as Monzo }
+        const jiPitchB: JiPitch = { monzo: [0] as Monzo }
+
+        const actual = equalJiPitches(jiPitchA, jiPitchB)
+
+        expect(actual).toBeTruthy()
+    })
 })

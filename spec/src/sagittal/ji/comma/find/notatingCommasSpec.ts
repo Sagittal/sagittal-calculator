@@ -28,4 +28,16 @@ describe("computeNotatingCommas", (): void => {
         ] as Comma[]
         expect(actual).toEqual(expected)
     })
+
+    it("when given a unison monzo, does not return duplicates", (): void => {
+        const monzo = [] as Monzo
+
+        const actual = computeNotatingCommas({ monzo })
+
+        const expected = [
+            { monzo: [] },
+            { monzo: [-19, 12] },
+        ] as Comma[]
+        expect(actual).toEqual(expected)
+    })
 })

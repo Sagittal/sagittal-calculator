@@ -8,12 +8,12 @@ import { SymbolLongAscii, SymbolSmiley } from "./types"
 const formatSymbolClass = (
     symbolClassId: Id<SymbolClass>,
     { forForum, forTable = true }: { forForum?: boolean, forTable?: boolean },
-): SymbolSmiley | Formatted<SymbolLongAscii> => {
+): Formatted<SymbolSmiley |SymbolLongAscii> => {
     const representativeSymbol: RevoSymbol = getRepresentativeSymbol(symbolClassId)
     const ascii = representativeSymbol.ascii
 
     return forForum ?
-        computeSmileyFromAscii(ascii) :
+        computeSmileyFromAscii(ascii) as string as Formatted<SymbolSmiley> :
         forTable ? formatSymbolAscii(ascii) : ascii as string as Formatted<SymbolLongAscii>
 }
 

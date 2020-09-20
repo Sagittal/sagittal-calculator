@@ -26,7 +26,7 @@ describe("computeMonzoInZone", (): void => {
     })
 
     it("works for the empty two-free monzo", (): void => {
-        const twoFreeMonzo = [] as Monzo as Monzo<{ rough: 3 }>
+        const twoFreeMonzo = [0, 0] as Monzo as Monzo<{ rough: 3 }>
         const minCents = 40.1 as Min<Cents>
         const maxCents = 40.2 as Max<Cents>
 
@@ -35,8 +35,8 @@ describe("computeMonzoInZone", (): void => {
         expect(actual).toBeUndefined()
     })
 
-    it("works for the empty two-free monzo when unison is within the search range", (): void => {
-        const twoFreeMonzo = [] as Monzo as Monzo<{ rough: 3 }>
+    it("works for the empty two-free monzo when unison is within the search range (it comes in untrimmed, but leaves trimmed)", (): void => {
+        const twoFreeMonzo = [0, 0] as Monzo as Monzo<{ rough: 3 }>
         const minCents = -40.1 as Min<Cents>
         const maxCents = 40.2 as Max<Cents>
 
@@ -44,5 +44,27 @@ describe("computeMonzoInZone", (): void => {
 
         const expected = [] as Monzo as Monzo
         expect(actual).toEqual(expected)
+    })
+
+    it("works for the empty two-free monzo when unison is on the cusp of the search range", (): void => {
+        const twoFreeMonzo = [0, 0] as Monzo as Monzo<{ rough: 3 }>
+        const minCents = 0 as Min<Cents>
+        const maxCents = 40.2 as Max<Cents>
+
+        const actual = computeMonzoInZone(twoFreeMonzo, [minCents, maxCents])
+
+        const expected = [] as Monzo as Monzo
+        expect(actual).toEqual(expected)
+    })
+
+    it("does not mutate the original monzo", (): void => {
+        const twoFreeMonzo = [0, -6, 3, 5, -1] as Monzo<{ rough: 3 }>
+        const minCents = 40.0 as Min<Cents>
+        const maxCents = 40.1 as Max<Cents>
+
+        computeMonzoInZone(twoFreeMonzo, [minCents, maxCents])
+
+        const expected = [0, -6, 3, 5, -1] as Monzo
+        expect(twoFreeMonzo).toEqual(expected)
     })
 })

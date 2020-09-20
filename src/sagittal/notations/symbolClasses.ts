@@ -398,6 +398,7 @@ const SYMBOL_CLASSES: SymbolClass[] = [
     // http://forum.sagittal.org/viewtopic.php?f=4&t=448
     // TODO: I'd really like to go through and update the spreadsheet calculator, Everything Sagittal,
     //  and this code base to close this missing gap, this missing "key" / symbol class ID of 78
+    //  and don't forget to update the gap in the comma IDs too
     {
         id: 79 as Id<SymbolClass>,
         primaryCommaId: 79 as Id<SagittalComma>,

@@ -40,7 +40,7 @@ type FormatTableOptions<T> = {
     headerRowCount: Count<Row<{ of: T, header: true }>>,
 }
 
-interface TableForForumStuffOptions<T> {
+interface TableForForumRowPartsOptions<T> {
     index: number,
     colors: Maybe<Array<Maybe<ColorMethod>>>,
     headerRowCount: Count<Row<{ of: T, header: true }>>,
@@ -54,5 +54,5 @@ export {
     Row,
     Column,
     Table,
-    TableForForumStuffOptions,
+    TableForForumRowPartsOptions,
 }

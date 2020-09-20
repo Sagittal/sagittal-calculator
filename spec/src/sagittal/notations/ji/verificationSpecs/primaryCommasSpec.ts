@@ -14,6 +14,7 @@ import { N2D3P9 } from "../../../../../../src/sagittal/ji/twoThreeFreeClass/n2d3
 import { computeSecondaryCommaZone } from "../../../../../../src/sagittal/notations/ji/secondaryCommaZone"
 // TODO: whoa, the fact that this pulls from scripts, well, it's an indication that this is the thing which is going
 //  to become what I've said I'll do for Dave here: http://forum.sagittal.org/viewtopic.php?p=2432#p2432
+//  http://forum.sagittal.org/viewtopic.php?p=2419#p2419
 import { computeCommas } from "../../../../../../src/scripts/jiPitch/findCommas"
 
 describe("verifying primary commas", (): void => {

@@ -1,9 +1,9 @@
 import { Id, sort } from "../../general"
 import { SymbolClass, SymbolSubset } from "./types"
 
-// todo: it would be nice to have a test that just expects the right symbol ascii for each level
-//  so that when we, say, hypothetically of course, only hypothetically, re-id these, we don't mess this up
-
+// TODO: | is not a symbol. it should be the natural symbol |//|, and in the compatibles set
+//  according to this: http://forum.sagittal.org/viewtopic.php?p=2377#p2377
+//  maybe ask Dave if he wants that to be index 0, and maybe also include Trojan
 const SPARTAN_SYMBOL_CLASS_IDS: Array<Id<SymbolClass>> = [
     0, 12, 44, 58, 93, 105, 115, 132, 142,
 ] as Array<Id<SymbolClass>>

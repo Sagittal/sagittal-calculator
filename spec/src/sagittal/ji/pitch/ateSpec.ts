@@ -4,7 +4,7 @@ import { JiPitch } from "../../../../../src/general/music/ji"
 import { computeAte } from "../../../../../src/sagittal/ji/pitch"
 
 describe("computeAte", (): void => {
-    it("returns the ATE (absolute 3 exponent) of the JI pitch", (): void => {
+    it("returns the ATE (abs 3-exponent) of the JI pitch", (): void => {
         const jiPitch = { monzo: [-1, -3, 1, 0, 1] as Monzo } as JiPitch
 
         const actual = computeAte(jiPitch)

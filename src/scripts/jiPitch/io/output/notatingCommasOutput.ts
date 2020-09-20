@@ -5,7 +5,7 @@ import { computeNotatingCommasRow } from "../row"
 import { NOTATING_COMMAS_TITLE } from "../titles"
 
 const computeNotatingCommasOutput = (
-    notatingCommaAnalyses: Array<CommaAnalysis>,
+    notatingCommaAnalyses: CommaAnalysis[],
     maybeSymbolClassIds: Array<Maybe<Id<SymbolClass>>>,
 ): Io => {
     const headerRows = computeNotatingCommasHeaderRows()

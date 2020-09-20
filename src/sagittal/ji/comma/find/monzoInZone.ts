@@ -2,12 +2,13 @@ import {
     Cents,
     computeCentsFromNumber,
     computeNumberFromMonzo,
-    deepEquals,
+    computeTrimmedArray,
+    equalMonzos,
     Exponent,
     Integer,
     Maybe,
     Monzo,
-    Prime,
+    Prime, shallowClone,
     TWO_PRIME_INDEX,
     Zone,
 } from "../../../../general"
@@ -15,21 +16,23 @@ import {
 const computeMonzoInZone = (twoFreeMonzo: Monzo<{ rough: 3 }>, zone: Zone): Maybe<Monzo> => {
     const [minCents, maxCents] = zone
 
-    let cents: Cents = computeCentsFromNumber(computeNumberFromMonzo(twoFreeMonzo))
+    const monzoInZone = shallowClone(twoFreeMonzo)
 
-    if (!deepEquals(twoFreeMonzo, [] as Monzo)) {
+    let cents: Cents = computeCentsFromNumber(computeNumberFromMonzo(monzoInZone))
+
+    if (!equalMonzos(monzoInZone, [] as Monzo)) {
         while (cents > maxCents) {
-            twoFreeMonzo[ TWO_PRIME_INDEX ] = twoFreeMonzo[ TWO_PRIME_INDEX ] - 1 as Integer & Exponent<Prime>
-            cents = computeCentsFromNumber(computeNumberFromMonzo(twoFreeMonzo))
+            monzoInZone[ TWO_PRIME_INDEX ] = monzoInZone[ TWO_PRIME_INDEX ] - 1 as Integer & Exponent<Prime>
+            cents = computeCentsFromNumber(computeNumberFromMonzo(monzoInZone))
         }
         while (cents < minCents) {
-            twoFreeMonzo[ TWO_PRIME_INDEX ] = twoFreeMonzo[ TWO_PRIME_INDEX ] + 1 as Integer & Exponent<Prime>
-            cents = computeCentsFromNumber(computeNumberFromMonzo(twoFreeMonzo))
+            monzoInZone[ TWO_PRIME_INDEX ] = monzoInZone[ TWO_PRIME_INDEX ] + 1 as Integer & Exponent<Prime>
+            cents = computeCentsFromNumber(computeNumberFromMonzo(monzoInZone))
         }
     }
 
-    return cents > minCents && cents < maxCents ?
-        twoFreeMonzo :
+    return cents >= minCents && cents <= maxCents ?
+        computeTrimmedArray(monzoInZone) :
         undefined
 }
 
