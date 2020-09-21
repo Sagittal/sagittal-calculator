@@ -2,7 +2,7 @@ import { Direction, NumericTypeParameters } from "../types"
 import { Denominator, FractionalPart, Numerator, PotentiallyIrrationalRatioParameter, Ratio } from "./types"
 
 const computeIsSuperRatio = <T extends NumericTypeParameters>(
-    ratio: PotentiallyIrrationalRatioParameter,
+    ratio: PotentiallyIrrationalRatioParameter<Omit<T, "direction">>,
 ): ratio is Ratio<T & { direction: Direction.SUPER }> => {
     const [numerator, denominator] = ratio
 
@@ -10,16 +10,16 @@ const computeIsSuperRatio = <T extends NumericTypeParameters>(
 }
 
 const computeIsSubRatio = <T extends NumericTypeParameters>(
-    ratio: PotentiallyIrrationalRatioParameter<T>,
-): ratio is Ratio<T & { direction: Direction.SUB }> => {
+    ratio: PotentiallyIrrationalRatioParameter<Omit<T, "direction">>,
+): ratio is Ratio<Omit<T, "direction"> & { direction: Direction.SUB }> => {
     const [numerator, denominator] = ratio
 
     return numerator < denominator
 }
 
 const computeIsUnisonRatio = <T extends NumericTypeParameters>(
-    ratio: PotentiallyIrrationalRatioParameter<T>,
-): ratio is Ratio<T & { direction: Direction.UNISON }> => {
+    ratio: PotentiallyIrrationalRatioParameter<Omit<T, "direction">>,
+): ratio is Ratio<Omit<T, "direction"> & { direction: Direction.UNISON }> => {
     const [numerator, denominator] = ratio
 
     return numerator as FractionalPart === denominator as FractionalPart
@@ -27,7 +27,7 @@ const computeIsUnisonRatio = <T extends NumericTypeParameters>(
 
 const computeSuperRatio = <T extends NumericTypeParameters>(
     ratio: PotentiallyIrrationalRatioParameter<T>,
-): Ratio<T & { direction: Direction.SUPER }> => {
+): Ratio<Omit<T, "direction"> & { direction: Direction.SUPER }> => {
     return computeIsSuperRatio(ratio) ?
         ratio as Ratio<T & { direction: Direction.SUPER }> :
         invertRatio(ratio)
@@ -35,7 +35,7 @@ const computeSuperRatio = <T extends NumericTypeParameters>(
 
 const computeSubRatio = <T extends NumericTypeParameters>(
     ratio: PotentiallyIrrationalRatioParameter<T>,
-): Ratio<T & { direction: Direction.SUB }> => {
+): Ratio<Omit<T, "direction"> & { direction: Direction.SUB }> => {
     return computeIsSubRatio(ratio) ?
         ratio as Ratio<T & { direction: Direction.SUB }> :
         invertRatio(ratio)
