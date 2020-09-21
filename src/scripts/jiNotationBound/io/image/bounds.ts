@@ -1,5 +1,5 @@
 import * as fs from "fs"
-import { Io, ioSettings } from "../../../../general"
+import { BLANK, Io, ioSettings, join } from "../../../../general"
 import { JiNotationBoundAnalysis } from "../../bound"
 import { visualizeCents } from "./cents"
 import { visualizeBoundEventAnalyses } from "./events"
@@ -43,7 +43,7 @@ const computeJiNotationBoundsImage = (jiNotationBoundAnalyses: JiNotationBoundAn
 
     elements = elements.concat("</svg>\n" as Io)
 
-    return elements.join("") as Io
+    return join(elements, BLANK) as Io
 }
 
 export {

@@ -10,13 +10,14 @@ export {
     SPACE,
     SUPERSCRIPT_NUMS,
     TAB,
+    COMMA,
 } from "./constants"
 export { clearLogFiles, LogTarget, saveLog, setLogTargets } from "./log"
 export { parse23FreeClass, parseMonzo, parseRatio } from "./parse"
 export { removeColor } from "./removeColor"
 export { stringify } from "./stringify"
 export { Column, formatTable, Row, Table, splitColumnTitlesIntoRowsBySpaces } from "./table"
-export { sumTexts, join } from "./typedOperations"
+export { sumTexts, join, split } from "./typedOperations"
 export { ColorMethod, Filename, HexColor, Io } from "./types"
 export { Basis, computePx, Px, Scale } from "./visualize"
 export {
@@ -31,5 +32,3 @@ export {
 } from "./format"
 export { time } from "./time"
 export { readLines } from "./lines"
-
-// TODO: might be nice to have typed split and join

@@ -13,6 +13,7 @@ const NEWLINE = "\n" as Io
 const SPACE = " " as Io
 const BLANK = "" as Io
 const TAB = "\t" as Io
+const COMMA = "," as Io
 
 const INITIAL_IO_SETTINGS: IoSettings = {
     noWrite: false,
@@ -31,6 +32,7 @@ export {
     SPACE,
     BLANK,
     TAB,
+    COMMA,
     IDENTIFYING_COMMA_NAME_CHARS,
     INITIAL_IO_SETTINGS,
 }

@@ -79,12 +79,14 @@ export {
     setLogTargets,
     SPACE,
     stringify,
+    COMMA,
     SUPERSCRIPT_NUMS,
     TAB,
     Table,
     splitColumnTitlesIntoRowsBySpaces,
     time,
     readLines,
+    split,
 } from "./io"
 export {
     abs,
