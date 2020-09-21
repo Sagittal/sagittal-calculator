@@ -1352,9 +1352,8 @@ describe("SAGITTAL_COMMAS", (): void => {
                 cents: 36.236703 as Cents,
                 name: "17/5S" as Name<Comma>,
             },
-            // TODO: there's the gap in the commas! see symbolClasses.ts for the full to-do about fixing it
             {
-                id: 79 as Id<SagittalComma>,
+                id: 78 as Id<SagittalComma>,
                 apotomeSlope: 4.738486 as ApotomeSlope,
                 aas: 4.738486 as Abs<ApotomeSlope>,
                 ate: 7 as Abs<Integer & Exponent<3 & Prime>>,
@@ -1371,7 +1370,7 @@ describe("SAGITTAL_COMMAS", (): void => {
                 name: "11/23S" as Name<Comma>,
             },
             {
-                id: 80 as Id<SagittalComma>,
+                id: 79 as Id<SagittalComma>,
                 apotomeSlope: -8.275272 as ApotomeSlope,
                 aas: 8.275272 as Abs<ApotomeSlope>,
                 ate: 6 as Abs<Integer & Exponent<3 & Prime>>,
@@ -1388,7 +1387,7 @@ describe("SAGITTAL_COMMAS", (): void => {
                 name: "1/11S" as Name<Comma>,
             },
             {
-                id: 81 as Id<SagittalComma>,
+                id: 80 as Id<SagittalComma>,
                 apotomeSlope: 4.681719 as ApotomeSlope,
                 aas: 4.681719 as Abs<ApotomeSlope>,
                 ate: 7 as Abs<Integer & Exponent<3 & Prime>>,
@@ -1405,7 +1404,7 @@ describe("SAGITTAL_COMMAS", (): void => {
                 name: "245S" as Name<Comma>,
             },
             {
-                id: 82 as Id<SagittalComma>,
+                id: 81 as Id<SagittalComma>,
                 apotomeSlope: -4.342916 as ApotomeSlope,
                 aas: 4.342916 as Abs<ApotomeSlope>,
                 ate: 2 as Abs<Integer & Exponent<3 & Prime>>,
@@ -1422,7 +1421,7 @@ describe("SAGITTAL_COMMAS", (): void => {
                 name: "23/5S" as Name<Comma>,
             },
             {
-                id: 83 as Id<SagittalComma>,
+                id: 82 as Id<SagittalComma>,
                 apotomeSlope: 2.655691 as ApotomeSlope,
                 aas: 2.655691 as Abs<ApotomeSlope>,
                 ate: 5 as Abs<Integer & Exponent<3 & Prime>>,
@@ -1439,7 +1438,7 @@ describe("SAGITTAL_COMMAS", (): void => {
                 name: "7/13S" as Name<Comma>,
             },
             {
-                id: 84 as Id<SagittalComma>,
+                id: 83 as Id<SagittalComma>,
                 apotomeSlope: -6.373203 as ApotomeSlope,
                 aas: 6.373203 as Abs<ApotomeSlope>,
                 ate: 4 as Abs<Integer & Exponent<3 & Prime>>,
@@ -1456,7 +1455,7 @@ describe("SAGITTAL_COMMAS", (): void => {
                 name: "11/17S" as Name<Comma>,
             },
             {
-                id: 85 as Id<SagittalComma>,
+                id: 84 as Id<SagittalComma>,
                 apotomeSlope: -0.395570 as ApotomeSlope,
                 aas: 0.395570 as Abs<ApotomeSlope>,
                 ate: 2 as Abs<Integer & Exponent<3 & Prime>>,
@@ -1473,7 +1472,7 @@ describe("SAGITTAL_COMMAS", (): void => {
                 name: "5/11S" as Name<Comma>,
             },
             {
-                id: 86 as Id<SagittalComma>,
+                id: 85 as Id<SagittalComma>,
                 apotomeSlope: -2.421598 as ApotomeSlope,
                 aas: 2.421598 as Abs<ApotomeSlope>,
                 ate: 0 as Abs<Integer & Exponent<3 & Prime>>,
@@ -1490,7 +1489,7 @@ describe("SAGITTAL_COMMAS", (): void => {
                 name: "1/1001S" as Name<Comma>,
             },
             {
-                id: 87 as Id<SagittalComma>,
+                id: 86 as Id<SagittalComma>,
                 apotomeSlope: 3.536786 as ApotomeSlope,
                 aas: 3.536786 as Abs<ApotomeSlope>,
                 ate: 6 as Abs<Integer & Exponent<3 & Prime>>,
@@ -1507,7 +1506,7 @@ describe("SAGITTAL_COMMAS", (): void => {
                 name: "23S" as Name<Comma>,
             },
             {
-                id: 88 as Id<SagittalComma>,
+                id: 87 as Id<SagittalComma>,
                 apotomeSlope: -0.502115 as ApotomeSlope,
                 aas: 0.502115 as Abs<ApotomeSlope>,
                 ate: 2 as Abs<Integer & Exponent<3 & Prime>>,
@@ -1524,7 +1523,7 @@ describe("SAGITTAL_COMMAS", (): void => {
                 name: "91/25S" as Name<Comma>,
             },
             {
-                id: 89 as Id<SagittalComma>,
+                id: 88 as Id<SagittalComma>,
                 apotomeSlope: -2.528143 as ApotomeSlope,
                 aas: 2.528143 as Abs<ApotomeSlope>,
                 ate: 0 as Abs<Integer & Exponent<3 & Prime>>,
@@ -1541,7 +1540,7 @@ describe("SAGITTAL_COMMAS", (): void => {
                 name: "1/125S" as Name<Comma>,
             },
             {
-                id: 90 as Id<SagittalComma>,
+                id: 89 as Id<SagittalComma>,
                 apotomeSlope: -9.552511 as ApotomeSlope,
                 aas: 9.552511 as Abs<ApotomeSlope>,
                 ate: 7 as Abs<Integer & Exponent<3 & Prime>>,
@@ -1558,7 +1557,7 @@ describe("SAGITTAL_COMMAS", (): void => {
                 name: "35S" as Name<Comma>,
             },
             {
-                id: 91 as Id<SagittalComma>,
+                id: 90 as Id<SagittalComma>,
                 apotomeSlope: 0.414245 as ApotomeSlope,
                 aas: 0.414245 as Abs<ApotomeSlope>,
                 ate: 3 as Abs<Integer & Exponent<3 & Prime>>,
@@ -1575,7 +1574,7 @@ describe("SAGITTAL_COMMAS", (): void => {
                 name: "17/7S" as Name<Comma>,
             },
             {
-                id: 92 as Id<SagittalComma>,
+                id: 91 as Id<SagittalComma>,
                 apotomeSlope: 7.377586 as ApotomeSlope,
                 aas: 7.377586 as Abs<ApotomeSlope>,
                 ate: 10 as Abs<Integer & Exponent<3 & Prime>>,
@@ -1592,7 +1591,7 @@ describe("SAGITTAL_COMMAS", (): void => {
                 name: "91/5S" as Name<Comma>,
             },
             {
-                id: 93 as Id<SagittalComma>,
+                id: 92 as Id<SagittalComma>,
                 apotomeSlope: 5.351558 as ApotomeSlope,
                 aas: 5.351558 as Abs<ApotomeSlope>,
                 ate: 8 as Abs<Integer & Exponent<3 & Prime>>,
@@ -1609,7 +1608,7 @@ describe("SAGITTAL_COMMAS", (): void => {
                 name: "1/25S" as Name<Comma>,
             },
             {
-                id: 94 as Id<SagittalComma>,
+                id: 93 as Id<SagittalComma>,
                 apotomeSlope: -1.672809 as ApotomeSlope,
                 aas: 1.672809 as Abs<ApotomeSlope>,
                 ate: 1 as Abs<Integer & Exponent<3 & Prime>>,
@@ -1626,7 +1625,7 @@ describe("SAGITTAL_COMMAS", (): void => {
                 name: "175S" as Name<Comma>,
             },
             {
-                id: 95 as Id<SagittalComma>,
+                id: 94 as Id<SagittalComma>,
                 apotomeSlope: -3.698837 as ApotomeSlope,
                 aas: 3.698837 as Abs<ApotomeSlope>,
                 ate: 1 as Abs<Integer & Exponent<3 & Prime>>,
@@ -1643,7 +1642,7 @@ describe("SAGITTAL_COMMAS", (): void => {
                 name: "5/13S" as Name<Comma>,
             },
             {
-                id: 96 as Id<SagittalComma>,
+                id: 95 as Id<SagittalComma>,
                 apotomeSlope: 3.264504 as ApotomeSlope,
                 aas: 3.264504 as Abs<ApotomeSlope>,
                 ate: 6 as Abs<Integer & Exponent<3 & Prime>>,
@@ -1660,7 +1659,7 @@ describe("SAGITTAL_COMMAS", (): void => {
                 name: "49/17S" as Name<Comma>,
             },
             {
-                id: 97 as Id<SagittalComma>,
+                id: 96 as Id<SagittalComma>,
                 apotomeSlope: -1.768944 as ApotomeSlope,
                 aas: 1.768944 as Abs<ApotomeSlope>,
                 ate: 1 as Abs<Integer & Exponent<3 & Prime>>,
@@ -1677,7 +1676,7 @@ describe("SAGITTAL_COMMAS", (): void => {
                 name: "13/19S" as Name<Comma>,
             },
             {
-                id: 98 as Id<SagittalComma>,
+                id: 97 as Id<SagittalComma>,
                 apotomeSlope: -3.805382 as ApotomeSlope,
                 aas: 3.805382 as Abs<ApotomeSlope>,
                 ate: 1 as Abs<Integer & Exponent<3 & Prime>>,
@@ -1694,7 +1693,7 @@ describe("SAGITTAL_COMMAS", (): void => {
                 name: "77/25M" as Name<Comma>,
             },
             {
-                id: 99 as Id<SagittalComma>,
+                id: 98 as Id<SagittalComma>,
                 apotomeSlope: 4.180864 as ApotomeSlope,
                 aas: 4.180864 as Abs<ApotomeSlope>,
                 ate: 7 as Abs<Integer & Exponent<3 & Prime>>,
@@ -1711,7 +1710,7 @@ describe("SAGITTAL_COMMAS", (): void => {
                 name: "25/13M" as Name<Comma>,
             },
             {
-                id: 100 as Id<SagittalComma>,
+                id: 99 as Id<SagittalComma>,
                 apotomeSlope: -6.856644 as ApotomeSlope,
                 aas: 6.856644 as Abs<ApotomeSlope>,
                 ate: 4 as Abs<Integer & Exponent<3 & Prime>>,
@@ -1728,7 +1727,7 @@ describe("SAGITTAL_COMMAS", (): void => {
                 name: "13/5M" as Name<Comma>,
             },
             {
-                id: 101 as Id<SagittalComma>,
+                id: 100 as Id<SagittalComma>,
                 apotomeSlope: -8.882672 as ApotomeSlope,
                 aas: 8.882672 as Abs<ApotomeSlope>,
                 ate: 6 as Abs<Integer & Exponent<3 & Prime>>,
@@ -1745,7 +1744,7 @@ describe("SAGITTAL_COMMAS", (): void => {
                 name: "1/175M" as Name<Comma>,
             },
             {
-                id: 102 as Id<SagittalComma>,
+                id: 101 as Id<SagittalComma>,
                 apotomeSlope: -4.920686 as ApotomeSlope,
                 aas: 4.920686 as Abs<ApotomeSlope>,
                 ate: 2 as Abs<Integer & Exponent<3 & Prime>>,
@@ -1762,7 +1761,7 @@ describe("SAGITTAL_COMMAS", (): void => {
                 name: "37M" as Name<Comma>,
             },
             {
-                id: 103 as Id<SagittalComma>,
+                id: 102 as Id<SagittalComma>,
                 apotomeSlope: 2.048291 as ApotomeSlope,
                 aas: 2.048291 as Abs<ApotomeSlope>,
                 ate: 5 as Abs<Integer & Exponent<3 & Prime>>,
@@ -1779,7 +1778,7 @@ describe("SAGITTAL_COMMAS", (): void => {
                 name: "11/325M" as Name<Comma>,
             },
             {
-                id: 104 as Id<SagittalComma>,
+                id: 103 as Id<SagittalComma>,
                 apotomeSlope: 1.023058 as ApotomeSlope,
                 aas: 1.023058 as Abs<ApotomeSlope>,
                 ate: 4 as Abs<Integer & Exponent<3 & Prime>>,
@@ -1796,7 +1795,7 @@ describe("SAGITTAL_COMMAS", (): void => {
                 name: "13M" as Name<Comma>,
             },
             {
-                id: 105 as Id<SagittalComma>,
+                id: 104 as Id<SagittalComma>,
                 apotomeSlope: -1.002970 as ApotomeSlope,
                 aas: 1.002970 as Abs<ApotomeSlope>,
                 ate: 2 as Abs<Integer & Exponent<3 & Prime>>,
@@ -1813,7 +1812,7 @@ describe("SAGITTAL_COMMAS", (): void => {
                 name: "1/35M" as Name<Comma>,
             },
             {
-                id: 106 as Id<SagittalComma>,
+                id: 105 as Id<SagittalComma>,
                 apotomeSlope: -8.027338 as ApotomeSlope,
                 aas: 8.027338 as Abs<ApotomeSlope>,
                 ate: 5 as Abs<Integer & Exponent<3 & Prime>>,
@@ -1830,7 +1829,7 @@ describe("SAGITTAL_COMMAS", (): void => {
                 name: "125M" as Name<Comma>,
             },
             {
-                id: 107 as Id<SagittalComma>,
+                id: 106 as Id<SagittalComma>,
                 apotomeSlope: -5.072212 as ApotomeSlope,
                 aas: 5.072212 as Abs<ApotomeSlope>,
                 ate: 2 as Abs<Integer & Exponent<3 & Prime>>,
@@ -1847,7 +1846,7 @@ describe("SAGITTAL_COMMAS", (): void => {
                 name: "11/19M" as Name<Comma>,
             },
             {
-                id: 108 as Id<SagittalComma>,
+                id: 107 as Id<SagittalComma>,
                 apotomeSlope: 8.902760 as ApotomeSlope,
                 aas: 8.902760 as Abs<ApotomeSlope>,
                 ate: 12 as Abs<Integer & Exponent<3 & Prime>>,
@@ -1864,7 +1863,7 @@ describe("SAGITTAL_COMMAS", (): void => {
                 name: "65M" as Name<Comma>,
             },
             {
-                id: 109 as Id<SagittalComma>,
+                id: 108 as Id<SagittalComma>,
                 apotomeSlope: 6.876732 as ApotomeSlope,
                 aas: 6.876732 as Abs<ApotomeSlope>,
                 ate: 10 as Abs<Integer & Exponent<3 & Prime>>,
@@ -1881,7 +1880,7 @@ describe("SAGITTAL_COMMAS", (): void => {
                 name: "1/7M" as Name<Comma>,
             },
             {
-                id: 110 as Id<SagittalComma>,
+                id: 109 as Id<SagittalComma>,
                 apotomeSlope: -0.147635 as ApotomeSlope,
                 aas: 0.147635 as Abs<ApotomeSlope>,
                 ate: 3 as Abs<Integer & Exponent<3 & Prime>>,
@@ -1898,7 +1897,7 @@ describe("SAGITTAL_COMMAS", (): void => {
                 name: "625M" as Name<Comma>,
             },
             {
-                id: 111 as Id<SagittalComma>,
+                id: 110 as Id<SagittalComma>,
                 apotomeSlope: -10.159911 as ApotomeSlope,
                 aas: 10.159911 as Abs<ApotomeSlope>,
                 ate: 7 as Abs<Integer & Exponent<3 & Prime>>,
@@ -1915,7 +1914,7 @@ describe("SAGITTAL_COMMAS", (): void => {
                 name: "11/5M" as Name<Comma>,
             },
             {
-                id: 112 as Id<SagittalComma>,
+                id: 111 as Id<SagittalComma>,
                 apotomeSlope: -4.182277 as ApotomeSlope,
                 aas: 4.182277 as Abs<ApotomeSlope>,
                 ate: 1 as Abs<Integer & Exponent<3 & Prime>>,
@@ -1932,7 +1931,7 @@ describe("SAGITTAL_COMMAS", (): void => {
                 name: "17/11M" as Name<Comma>,
             },
             {
-                id: 113 as Id<SagittalComma>,
+                id: 112 as Id<SagittalComma>,
                 apotomeSlope: -6.212565 as ApotomeSlope,
                 aas: 6.212565 as Abs<ApotomeSlope>,
                 ate: 3 as Abs<Integer & Exponent<3 & Prime>>,
@@ -1949,7 +1948,7 @@ describe("SAGITTAL_COMMAS", (): void => {
                 name: "5/23M" as Name<Comma>,
             },
             {
-                id: 114 as Id<SagittalComma>,
+                id: 113 as Id<SagittalComma>,
                 apotomeSlope: 0.755035 as ApotomeSlope,
                 aas: 0.755035 as Abs<ApotomeSlope>,
                 ate: 4 as Abs<Integer & Exponent<3 & Prime>>,
@@ -1966,7 +1965,7 @@ describe("SAGITTAL_COMMAS", (): void => {
                 name: "7/275M" as Name<Comma>,
             },
             {
-                id: 115 as Id<SagittalComma>,
+                id: 114 as Id<SagittalComma>,
                 apotomeSlope: -2.280209 as ApotomeSlope,
                 aas: 2.280209 as Abs<ApotomeSlope>,
                 ate: 1 as Abs<Integer & Exponent<3 & Prime>>,
@@ -1983,7 +1982,7 @@ describe("SAGITTAL_COMMAS", (): void => {
                 name: "11M" as Name<Comma>,
             },
             {
-                id: 116 as Id<SagittalComma>,
+                id: 115 as Id<SagittalComma>,
                 apotomeSlope: 3.697424 as ApotomeSlope,
                 aas: 3.697424 as Abs<ApotomeSlope>,
                 ate: 7 as Abs<Integer & Exponent<3 & Prime>>,
@@ -2000,7 +1999,7 @@ describe("SAGITTAL_COMMAS", (): void => {
                 name: "85/11M" as Name<Comma>,
             },
             {
-                id: 117 as Id<SagittalComma>,
+                id: 116 as Id<SagittalComma>,
                 apotomeSlope: -5.331470 as ApotomeSlope,
                 aas: 5.331470 as Abs<ApotomeSlope>,
                 ate: 2 as Abs<Integer & Exponent<3 & Prime>>,
@@ -2017,7 +2016,7 @@ describe("SAGITTAL_COMMAS", (): void => {
                 name: "65/7M" as Name<Comma>,
             },
             {
-                id: 118 as Id<SagittalComma>,
+                id: 117 as Id<SagittalComma>,
                 apotomeSlope: -7.357498 as ApotomeSlope,
                 aas: 7.357498 as Abs<ApotomeSlope>,
                 ate: 4 as Abs<Integer & Exponent<3 & Prime>>,
@@ -2034,7 +2033,7 @@ describe("SAGITTAL_COMMAS", (): void => {
                 name: "1/49M" as Name<Comma>,
             },
             {
-                id: 119 as Id<SagittalComma>,
+                id: 118 as Id<SagittalComma>,
                 apotomeSlope: -3.384360 as ApotomeSlope,
                 aas: 3.384360 as Abs<ApotomeSlope>,
                 ate: 0 as Abs<Integer & Exponent<3 & Prime>>,
@@ -2051,7 +2050,7 @@ describe("SAGITTAL_COMMAS", (): void => {
                 name: "1/31M" as Name<Comma>,
             },
             {
-                id: 120 as Id<SagittalComma>,
+                id: 119 as Id<SagittalComma>,
                 apotomeSlope: 5.599493 as ApotomeSlope,
                 aas: 5.599493 as Abs<ApotomeSlope>,
                 ate: 9 as Abs<Integer & Exponent<3 & Prime>>,
@@ -2068,7 +2067,7 @@ describe("SAGITTAL_COMMAS", (): void => {
                 name: "55M" as Name<Comma>,
             },
             {
-                id: 121 as Id<SagittalComma>,
+                id: 120 as Id<SagittalComma>,
                 apotomeSlope: 3.573464 as ApotomeSlope,
                 aas: 3.573464 as Abs<ApotomeSlope>,
                 ate: 7 as Abs<Integer & Exponent<3 & Prime>>,
@@ -2085,7 +2084,7 @@ describe("SAGITTAL_COMMAS", (): void => {
                 name: "11/91M" as Name<Comma>,
             },
             {
-                id: 122 as Id<SagittalComma>,
+                id: 121 as Id<SagittalComma>,
                 apotomeSlope: -5.459516 as ApotomeSlope,
                 aas: 5.459516 as Abs<ApotomeSlope>,
                 ate: 2 as Abs<Integer & Exponent<3 & Prime>>,
@@ -2102,7 +2101,7 @@ describe("SAGITTAL_COMMAS", (): void => {
                 name: "595M" as Name<Comma>,
             },
             {
-                id: 123 as Id<SagittalComma>,
+                id: 122 as Id<SagittalComma>,
                 apotomeSlope: 0.522203 as ApotomeSlope,
                 aas: 0.522203 as Abs<ApotomeSlope>,
                 ate: 4 as Abs<Integer & Exponent<3 & Prime>>,
@@ -2119,7 +2118,7 @@ describe("SAGITTAL_COMMAS", (): void => {
                 name: "5/49M" as Name<Comma>,
             },
             {
-                id: 124 as Id<SagittalComma>,
+                id: 123 as Id<SagittalComma>,
                 apotomeSlope: -0.522203 as ApotomeSlope,
                 aas: 0.522203 as Abs<ApotomeSlope>,
                 ate: 3 as Abs<Integer & Exponent<3 & Prime>>,
@@ -2136,7 +2135,7 @@ describe("SAGITTAL_COMMAS", (): void => {
                 name: "49/5L" as Name<Comma>,
             },
             {
-                id: 125 as Id<SagittalComma>,
+                id: 124 as Id<SagittalComma>,
                 apotomeSlope: 5.459516 as ApotomeSlope,
                 aas: 5.459516 as Abs<ApotomeSlope>,
                 ate: 9 as Abs<Integer & Exponent<3 & Prime>>,
@@ -2153,7 +2152,7 @@ describe("SAGITTAL_COMMAS", (): void => {
                 name: "1/595L" as Name<Comma>,
             },
             {
-                id: 126 as Id<SagittalComma>,
+                id: 125 as Id<SagittalComma>,
                 apotomeSlope: -3.573464 as ApotomeSlope,
                 aas: 3.573464 as Abs<ApotomeSlope>,
                 ate: 0 as Abs<Integer & Exponent<3 & Prime>>,
@@ -2170,7 +2169,7 @@ describe("SAGITTAL_COMMAS", (): void => {
                 name: "91/11L" as Name<Comma>,
             },
             {
-                id: 127 as Id<SagittalComma>,
+                id: 126 as Id<SagittalComma>,
                 apotomeSlope: -5.599493 as ApotomeSlope,
                 aas: 5.599493 as Abs<ApotomeSlope>,
                 ate: 2 as Abs<Integer & Exponent<3 & Prime>>,
@@ -2187,7 +2186,7 @@ describe("SAGITTAL_COMMAS", (): void => {
                 name: "1/55L" as Name<Comma>,
             },
             {
-                id: 128 as Id<SagittalComma>,
+                id: 127 as Id<SagittalComma>,
                 apotomeSlope: 3.384360 as ApotomeSlope,
                 aas: 3.384360 as Abs<ApotomeSlope>,
                 ate: 7 as Abs<Integer & Exponent<3 & Prime>>,
@@ -2204,7 +2203,7 @@ describe("SAGITTAL_COMMAS", (): void => {
                 name: "31L" as Name<Comma>,
             },
             {
-                id: 129 as Id<SagittalComma>,
+                id: 128 as Id<SagittalComma>,
                 apotomeSlope: 7.357498 as ApotomeSlope,
                 aas: 7.357498 as Abs<ApotomeSlope>,
                 ate: 11 as Abs<Integer & Exponent<3 & Prime>>,
@@ -2221,7 +2220,7 @@ describe("SAGITTAL_COMMAS", (): void => {
                 name: "49L" as Name<Comma>,
             },
             {
-                id: 130 as Id<SagittalComma>,
+                id: 129 as Id<SagittalComma>,
                 apotomeSlope: 5.331470 as ApotomeSlope,
                 aas: 5.331470 as Abs<ApotomeSlope>,
                 ate: 9 as Abs<Integer & Exponent<3 & Prime>>,
@@ -2238,7 +2237,7 @@ describe("SAGITTAL_COMMAS", (): void => {
                 name: "7/65L" as Name<Comma>,
             },
             {
-                id: 131 as Id<SagittalComma>,
+                id: 130 as Id<SagittalComma>,
                 apotomeSlope: -3.697424 as ApotomeSlope,
                 aas: 3.697424 as Abs<ApotomeSlope>,
                 ate: 0 as Abs<Integer & Exponent<3 & Prime>>,
@@ -2255,7 +2254,7 @@ describe("SAGITTAL_COMMAS", (): void => {
                 name: "11/85L" as Name<Comma>,
             },
             {
-                id: 132 as Id<SagittalComma>,
+                id: 131 as Id<SagittalComma>,
                 apotomeSlope: 2.280209 as ApotomeSlope,
                 aas: 2.280209 as Abs<ApotomeSlope>,
                 ate: 6 as Abs<Integer & Exponent<3 & Prime>>,
@@ -2272,7 +2271,7 @@ describe("SAGITTAL_COMMAS", (): void => {
                 name: "1/11L" as Name<Comma>,
             },
             {
-                id: 133 as Id<SagittalComma>,
+                id: 132 as Id<SagittalComma>,
                 apotomeSlope: -0.755035 as ApotomeSlope,
                 aas: 0.755035 as Abs<ApotomeSlope>,
                 ate: 3 as Abs<Integer & Exponent<3 & Prime>>,
@@ -2289,7 +2288,7 @@ describe("SAGITTAL_COMMAS", (): void => {
                 name: "275/7L" as Name<Comma>,
             },
             {
-                id: 134 as Id<SagittalComma>,
+                id: 133 as Id<SagittalComma>,
                 apotomeSlope: 6.212565 as ApotomeSlope,
                 aas: 6.212565 as Abs<ApotomeSlope>,
                 ate: 10 as Abs<Integer & Exponent<3 & Prime>>,
@@ -2306,7 +2305,7 @@ describe("SAGITTAL_COMMAS", (): void => {
                 name: "23/5L" as Name<Comma>,
             },
             {
-                id: 135 as Id<SagittalComma>,
+                id: 134 as Id<SagittalComma>,
                 apotomeSlope: 4.182277 as ApotomeSlope,
                 aas: 4.182277 as Abs<ApotomeSlope>,
                 ate: 8 as Abs<Integer & Exponent<3 & Prime>>,
@@ -2323,7 +2322,7 @@ describe("SAGITTAL_COMMAS", (): void => {
                 name: "11/17L" as Name<Comma>,
             },
             {
-                id: 136 as Id<SagittalComma>,
+                id: 135 as Id<SagittalComma>,
                 apotomeSlope: 10.159911 as ApotomeSlope,
                 aas: 10.159911 as Abs<ApotomeSlope>,
                 ate: 14 as Abs<Integer & Exponent<3 & Prime>>,
@@ -2340,7 +2339,7 @@ describe("SAGITTAL_COMMAS", (): void => {
                 name: "5/11L" as Name<Comma>,
             },
             {
-                id: 137 as Id<SagittalComma>,
+                id: 136 as Id<SagittalComma>,
                 apotomeSlope: 0.147635 as ApotomeSlope,
                 aas: 0.147635 as Abs<ApotomeSlope>,
                 ate: 4 as Abs<Integer & Exponent<3 & Prime>>,
@@ -2357,7 +2356,7 @@ describe("SAGITTAL_COMMAS", (): void => {
                 name: "1/625L" as Name<Comma>,
             },
             {
-                id: 138 as Id<SagittalComma>,
+                id: 137 as Id<SagittalComma>,
                 apotomeSlope: -6.876732 as ApotomeSlope,
                 aas: 6.876732 as Abs<ApotomeSlope>,
                 ate: 3 as Abs<Integer & Exponent<3 & Prime>>,
@@ -2374,7 +2373,7 @@ describe("SAGITTAL_COMMAS", (): void => {
                 name: "7L" as Name<Comma>,
             },
             {
-                id: 139 as Id<SagittalComma>,
+                id: 138 as Id<SagittalComma>,
                 apotomeSlope: -8.902760 as ApotomeSlope,
                 aas: 8.902760 as Abs<ApotomeSlope>,
                 ate: 5 as Abs<Integer & Exponent<3 & Prime>>,
@@ -2391,7 +2390,7 @@ describe("SAGITTAL_COMMAS", (): void => {
                 name: "1/65L" as Name<Comma>,
             },
             {
-                id: 140 as Id<SagittalComma>,
+                id: 139 as Id<SagittalComma>,
                 apotomeSlope: 5.072212 as ApotomeSlope,
                 aas: 5.072212 as Abs<ApotomeSlope>,
                 ate: 9 as Abs<Integer & Exponent<3 & Prime>>,
@@ -2408,7 +2407,7 @@ describe("SAGITTAL_COMMAS", (): void => {
                 name: "19/11L" as Name<Comma>,
             },
             {
-                id: 141 as Id<SagittalComma>,
+                id: 140 as Id<SagittalComma>,
                 apotomeSlope: 8.027338 as ApotomeSlope,
                 aas: 8.027338 as Abs<ApotomeSlope>,
                 ate: 12 as Abs<Integer & Exponent<3 & Prime>>,
@@ -2425,7 +2424,7 @@ describe("SAGITTAL_COMMAS", (): void => {
                 name: "1/125L" as Name<Comma>,
             },
             {
-                id: 142 as Id<SagittalComma>,
+                id: 141 as Id<SagittalComma>,
                 apotomeSlope: 1.002970 as ApotomeSlope,
                 aas: 1.002970 as Abs<ApotomeSlope>,
                 ate: 5 as Abs<Integer & Exponent<3 & Prime>>,
@@ -2442,7 +2441,7 @@ describe("SAGITTAL_COMMAS", (): void => {
                 name: "35L" as Name<Comma>,
             },
             {
-                id: 143 as Id<SagittalComma>,
+                id: 142 as Id<SagittalComma>,
                 apotomeSlope: -1.023058 as ApotomeSlope,
                 aas: 1.023058 as Abs<ApotomeSlope>,
                 ate: 3 as Abs<Integer & Exponent<3 & Prime>>,
@@ -2459,7 +2458,7 @@ describe("SAGITTAL_COMMAS", (): void => {
                 name: "1/13L" as Name<Comma>,
             },
             {
-                id: 144 as Id<SagittalComma>,
+                id: 143 as Id<SagittalComma>,
                 apotomeSlope: -2.048291 as ApotomeSlope,
                 aas: 2.048291 as Abs<ApotomeSlope>,
                 ate: 2 as Abs<Integer & Exponent<3 & Prime>>,
@@ -2476,7 +2475,7 @@ describe("SAGITTAL_COMMAS", (): void => {
                 name: "325/11L" as Name<Comma>,
             },
             {
-                id: 145 as Id<SagittalComma>,
+                id: 144 as Id<SagittalComma>,
                 apotomeSlope: 4.920686 as ApotomeSlope,
                 aas: 4.920686 as Abs<ApotomeSlope>,
                 ate: 9 as Abs<Integer & Exponent<3 & Prime>>,
@@ -2493,7 +2492,7 @@ describe("SAGITTAL_COMMAS", (): void => {
                 name: "1/37L" as Name<Comma>,
             },
             {
-                id: 146 as Id<SagittalComma>,
+                id: 145 as Id<SagittalComma>,
                 apotomeSlope: 8.882672 as ApotomeSlope,
                 aas: 8.882672 as Abs<ApotomeSlope>,
                 ate: 13 as Abs<Integer & Exponent<3 & Prime>>,
@@ -2510,7 +2509,7 @@ describe("SAGITTAL_COMMAS", (): void => {
                 name: "175L" as Name<Comma>,
             },
             {
-                id: 147 as Id<SagittalComma>,
+                id: 146 as Id<SagittalComma>,
                 apotomeSlope: 6.856644 as ApotomeSlope,
                 aas: 6.856644 as Abs<ApotomeSlope>,
                 ate: 11 as Abs<Integer & Exponent<3 & Prime>>,
@@ -2527,7 +2526,7 @@ describe("SAGITTAL_COMMAS", (): void => {
                 name: "5/13L" as Name<Comma>,
             },
             {
-                id: 148 as Id<SagittalComma>,
+                id: 147 as Id<SagittalComma>,
                 apotomeSlope: -4.180864 as ApotomeSlope,
                 aas: 4.180864 as Abs<ApotomeSlope>,
                 ate: 0 as Abs<Integer & Exponent<3 & Prime>>,
@@ -2544,7 +2543,7 @@ describe("SAGITTAL_COMMAS", (): void => {
                 name: "13/25L" as Name<Comma>,
             },
             {
-                id: 149 as Id<SagittalComma>,
+                id: 148 as Id<SagittalComma>,
                 apotomeSlope: 3.805382 as ApotomeSlope,
                 aas: 3.805382 as Abs<ApotomeSlope>,
                 ate: 8 as Abs<Integer & Exponent<3 & Prime>>,

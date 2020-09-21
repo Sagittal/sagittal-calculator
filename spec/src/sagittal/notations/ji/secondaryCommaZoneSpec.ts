@@ -1,10 +1,10 @@
 import { Id, Zone } from "../../../../../src/general"
 import { SagittalComma, SymbolClass } from "../../../../../src/sagittal"
-import { computeSecondaryCommaZone } from "../../../../../src/sagittal/notations/ji/secondaryCommaZone"
+import { computeSecondaryCommaZone } from "../../../../../src/sagittal/notations/ji"
 
 describe("secondaryCommaZone", (): void => {
     it("returns the min and max cents of where secondary commas are represented by the given JI Notation symbol class, i.e. its capture zone at its introducing JI notation level", (): void => {
-        const symbolClassId: Id<SymbolClass> = 82 as Id<SymbolClass>
+        const symbolClassId: Id<SymbolClass> = 81 as Id<SymbolClass>
 
         const actual = computeSecondaryCommaZone(symbolClassId)
 
@@ -16,7 +16,7 @@ describe("secondaryCommaZone", (): void => {
     })
 
     it("another example, at the Extreme JI notation level", (): void => {
-        const symbolClassId: Id<SymbolClass> = 83 as Id<SymbolClass>
+        const symbolClassId: Id<SymbolClass> = 82 as Id<SymbolClass>
 
         const actual = computeSecondaryCommaZone(symbolClassId)
 
@@ -28,7 +28,7 @@ describe("secondaryCommaZone", (): void => {
     })
 
     it("another example, at the Medium JI notation level", (): void => {
-        const symbolClassId: Id<SymbolClass> = 85 as Id<SymbolClass>
+        const symbolClassId: Id<SymbolClass> = 84 as Id<SymbolClass>
 
         const actual = computeSecondaryCommaZone(symbolClassId)
 

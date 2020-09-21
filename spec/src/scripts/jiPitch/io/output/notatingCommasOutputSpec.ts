@@ -41,7 +41,7 @@ describe("computeNotatingCommasOutput", (): void => {
             twoThreeFreeClassAnalysis: twoThreeFreeClassAnalysisFixture,
         },
     ] as CommaAnalysis[]
-    const maybeSymbolClassIds = [115 as Id<SymbolClass>, undefined]
+    const maybeSymbolClassIds = [114 as Id<SymbolClass>, undefined]
 
     it("can format the symbols for the terminal", (): void => {
         const actual = computeNotatingCommasOutput(notatingCommaAnalyses, maybeSymbolClassIds)

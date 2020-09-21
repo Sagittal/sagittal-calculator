@@ -10,7 +10,7 @@ describe("computeMaybeSymbolClassId", (): void => {
 
         const actual = computeMaybeSymbolClassId(comma)
 
-        const expected = 115 as Id<SymbolClass>
+        const expected = 114 as Id<SymbolClass>
         expect(actual).toEqual(expected)
     })
 

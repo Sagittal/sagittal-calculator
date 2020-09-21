@@ -2,7 +2,7 @@ import { Id, Io, ioSettings } from "../../../../src/general"
 import { formatSymbolClass, SymbolClass } from "../../../../src/sagittal"
 
 describe("formatSymbolClass", (): void => {
-    const symbolClassId: Id<SymbolClass> = 117 as Id<SymbolClass>
+    const symbolClassId: Id<SymbolClass> = 116 as Id<SymbolClass>
 
     it("returns the symbol class as its representative symbol's long ASCII form by default (or configured for display on a terminal)", (): void => {
         const actual = formatSymbolClass(symbolClassId, ioSettings)

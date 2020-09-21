@@ -77,7 +77,7 @@ describe("computeJiNotationLevelBoundedSymbolClassIdsWithDistances", (): void =>
             id: 54 as Id<JiNotationBound>,
             [ JiNotationLevel.MEDIUM ]: [
                 {
-                    id: 142 as Id<SymbolClass>,
+                    id: 141 as Id<SymbolClass>,
                     distance: 3.657883 as Abs<Cents>,
                     inaDistance: 0.675687 as Multiplier<Ina>,
                 },
@@ -85,7 +85,7 @@ describe("computeJiNotationLevelBoundedSymbolClassIdsWithDistances", (): void =>
             ],
             [ JiNotationLevel.HIGH ]: [
                 {
-                    id: 147 as Id<SymbolClass>,
+                    id: 146 as Id<SymbolClass>,
                     distance: 1.281446 as Abs<Cents>,
                     inaDistance: 0.529779 as Multiplier<Ina>,
                 },
@@ -93,7 +93,7 @@ describe("computeJiNotationLevelBoundedSymbolClassIdsWithDistances", (): void =>
             ],
             [ JiNotationLevel.ULTRA ]: [
                 {
-                    id: 147 as Id<SymbolClass>,
+                    id: 146 as Id<SymbolClass>,
                     distance: 1.281446 as Abs<Cents>,
                     inaDistance: 0.653770 as Multiplier<Ina>,
                 },
@@ -101,7 +101,7 @@ describe("computeJiNotationLevelBoundedSymbolClassIdsWithDistances", (): void =>
             ],
             [ JiNotationLevel.EXTREME ]: [
                 {
-                    id: 149 as Id<SymbolClass>,
+                    id: 148 as Id<SymbolClass>,
                     distance: 0.448922 as Abs<Cents>,
                     inaDistance: 0.920076 as Multiplier<Ina>,
                 },
@@ -109,7 +109,7 @@ describe("computeJiNotationLevelBoundedSymbolClassIdsWithDistances", (): void =>
             ],
             [ JiNotationLevel.INSANE ]: [
                 {
-                    id: 149 as Id<SymbolClass>,
+                    id: 148 as Id<SymbolClass>,
                     distance: 0.448922 as Abs<Cents>,
                     inaDistance: 3.194600 as Multiplier<Ina>,
                 },

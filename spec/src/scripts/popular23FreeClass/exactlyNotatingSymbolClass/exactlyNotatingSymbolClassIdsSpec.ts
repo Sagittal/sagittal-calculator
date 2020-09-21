@@ -11,9 +11,9 @@ describe("computeExactlyNotatingSymbolClassIds", (): void => {
             const actual = computeExactlyNotatingSymbolClassIds({ monzo })
 
             const expected = [
-                80,     // 1/11S
-                115,    // 11M
-                132,    // 1/11L
+                79,     // 1/11S
+                114,    // 11M
+                131,    // 1/11L
             ] as Array<Id<SymbolClass>>
             expect(actual).toEqual(expected)
         },
@@ -26,9 +26,9 @@ describe("computeExactlyNotatingSymbolClassIds", (): void => {
 
         const expected = [
             54,     // 1/35C
-            90,     // 35S
-            105,    // 1/35M
-            142,    // 35L
+            89,     // 35S
+            104,    // 1/35M
+            141,    // 35L
         ] as Array<Id<SymbolClass>>
         expect(actual).toEqual(expected)
     })

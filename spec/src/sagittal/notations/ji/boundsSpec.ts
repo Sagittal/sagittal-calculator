@@ -9,13 +9,13 @@ describe("JI_NOTATION_BOUNDS", (): void => {
             49,     // comma mean
             52,     // comma mean
             74,     // comma mean
-            82,     // comma mean
-            97,     // size category bound
-            110,    // comma mean
-            119,    // comma mean
-            127,    // comma mean
-            136,    // comma mean
-            149,    // size category bound
+            81,     // comma mean
+            96,     // size category bound
+            109,    // comma mean
+            118,    // comma mean
+            126,    // comma mean
+            135,    // comma mean
+            148,    // size category bound
         ] as Array<Id<JiNotationBound>>
 
         JI_NOTATION_BOUNDS.forEach((jiNotationBound: JiNotationBound): void => {

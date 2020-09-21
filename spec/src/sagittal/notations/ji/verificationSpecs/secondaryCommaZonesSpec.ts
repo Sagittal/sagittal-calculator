@@ -1,6 +1,6 @@
 import { Zone } from "../../../../../../src/general/music"
 import { JI_NOTATION, SagittalComma } from "../../../../../../src/sagittal"
-import { computeSecondaryCommaZone } from "../../../../../../src/sagittal/notations/ji/secondaryCommaZone"
+import { computeSecondaryCommaZone } from "../../../../../../src/sagittal/notations/ji"
 
 describe("secondary comma zones", (): void => {
     it("they check out", (): void => {

@@ -58,7 +58,7 @@ describe("computeFindCommasOutput", (): void => {
             } as TwoThreeFreeClassAnalysis,
         },
     ] as CommaAnalysis[]
-    const maybeSymbolClassIds = [115 as Id<SymbolClass>, undefined]
+    const maybeSymbolClassIds = [114 as Id<SymbolClass>, undefined]
 
     it("changes column widths so that each cell in a column has the same width", (): void => {
         const actual = computeFindCommasOutput(commaAnalyses, maybeSymbolClassIds)

@@ -27,10 +27,6 @@ describe("getMinaName", (): void => {
             const minaRange = computeRange(MAX_MINA)
 
             minaRange.forEach((mina: Mina): void => {
-                if (symbolClassId === 78) {
-                    symbolClassId = increment(symbolClassId)
-                }
-
                 expect(getMinaName(symbolClassId)).toBe(mina.toString())
                 symbolClassId = increment(symbolClassId)
 

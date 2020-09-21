@@ -39,7 +39,7 @@ describe("computePopular23FreeClasses", (): void => {
                     monzo: [0, 0, 0, 1] as Monzo<{ rough: 5, direction: Direction.SUPER }>,
                     popularityRank: 3 as Rank<Popularity>,
                     votes: 3016 as Votes,
-                    exactlyNotatingSymbolClassIds: [58, 109, 138] as Array<Id<SymbolClass>>,
+                    exactlyNotatingSymbolClassIds: [58, 108, 137] as Array<Id<SymbolClass>>,
                     exactlyNotatingSymbolClassSmallestJiNotationSymbolSubsetIndices:
                         [0, 3, 3] as Array<Index<SymbolSubset>>,
                     rank: 3 as Rank<Popular23FreeClass>,
@@ -49,7 +49,7 @@ describe("computePopular23FreeClasses", (): void => {
                     monzo: [0, 0, 2] as Monzo<{ rough: 5, direction: Direction.SUPER }>,
                     popularityRank: 4 as Rank<Popularity>,
                     votes: 1610 as Votes,
-                    exactlyNotatingSymbolClassIds: [40, 93] as Array<Id<SymbolClass>>,
+                    exactlyNotatingSymbolClassIds: [40, 92] as Array<Id<SymbolClass>>,
                     exactlyNotatingSymbolClassSmallestJiNotationSymbolSubsetIndices:
                         [3, 0] as Array<Index<SymbolSubset>>,
                     rank: 4 as Rank<Popular23FreeClass>,
