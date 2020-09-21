@@ -6,6 +6,8 @@ const JI_PITCH_COLUMN_TITLES = [
     "monzo",
     "cents",
     "apotome slope",
+    "AAS",
+    "ATE",
 ] as Io[]
 
 const TWO_THREE_FREE_CLASS_COLUMN_TITLES = [

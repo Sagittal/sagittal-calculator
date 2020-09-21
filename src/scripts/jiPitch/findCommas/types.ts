@@ -26,7 +26,7 @@ interface FindCommasSettings {
     maxPrimeLimit: Max<Max<Prime>>,
     minCents: Min<Cents>,
     maxCents: Max<Cents>,
-    maxAte: Max<Abs<3 & Integer & Exponent<Prime>>>,
+    maxAte: Max<Abs<Integer & Exponent<3 & Prime>>>,
     maxAas: Max<Abs<ApotomeSlope>>,
 }
 

@@ -23,7 +23,7 @@ const computeSecorComplexity = (jiPitch: JiPitch): number => {
     const i = computeCopfr(denominator)
     const j = abs(h - i)
 
-    const k = 2 ** (abs(monzo[ THREE_PRIME_INDEX ]) - 8.5) * Math.log(g + 2)
+    const k = 2 ** (abs(monzo[ THREE_PRIME_INDEX ] || 0) - 8.5) * Math.log(g + 2)
 
     const l = 2 ** (abs(computeApotomeSlope(jiPitch)) - 8.5) * Math.log(g + 2)
 

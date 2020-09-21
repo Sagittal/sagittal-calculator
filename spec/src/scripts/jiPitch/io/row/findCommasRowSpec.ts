@@ -1,9 +1,12 @@
 import {
+    Abs,
     Cents,
     Comma,
     Copfr,
     Direction,
+    Exponent,
     Id,
+    Integer,
     Monzo,
     Name,
     Prime,
@@ -24,6 +27,8 @@ describe("computeFindCommasRow", (): void => {
         ratio: [5, 4] as Ratio,
         name: "1/5C" as Name<Comma>,
         apotomeSlope: 8.2 as ApotomeSlope,
+        aas: 8.2 as Abs<ApotomeSlope>,
+        ate: 1 as Abs<Integer & Exponent<3 & Prime>>,
         twoThreeFreeClassAnalysis: {
             twoThreeFreePrimeLimit: 14 as Prime,
             twoThreeFreeCopfr: 1 as Copfr<{ rough: 5 }>,
@@ -44,6 +49,8 @@ describe("computeFindCommasRow", (): void => {
             "[   0  -1   1 ⟩",  // monzo
             " 11.200",          // cents
             "  8.200",          // apotome slope
+            "  8.200",          // apotome slope
+            "  1    ",          // apotome slope
             " 14    ",          // prime limit
             "5/1",              // 2,3-free class
             "  1    ",          // 2,3-free CoPFR

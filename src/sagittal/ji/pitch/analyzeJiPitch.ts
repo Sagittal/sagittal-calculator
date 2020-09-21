@@ -6,7 +6,9 @@ import {
     JiPitch,
 } from "../../../general"
 import { analyze23FreeClass } from "../twoThreeFreeClass"
+import { computeAas } from "./aas"
 import { computeApotomeSlope } from "./apotomeSlope"
+import { computeAte } from "./ate"
 import { JiPitchAnalysis } from "./types"
 
 const analyzeJiPitch = (jiPitch: JiPitch): JiPitchAnalysis => {
@@ -19,6 +21,9 @@ const analyzeJiPitch = (jiPitch: JiPitch): JiPitchAnalysis => {
     const twoThreeFreeClass = compute23FreeClass(jiPitch)
     const twoThreeFreeClassAnalysis = analyze23FreeClass(twoThreeFreeClass)
 
+    const aas = computeAas(jiPitch)
+    const ate = computeAte(jiPitch)
+
     return {
         ...jiPitch,
         monzo,
@@ -26,6 +31,8 @@ const analyzeJiPitch = (jiPitch: JiPitch): JiPitchAnalysis => {
         cents,
         twoThreeFreeClassAnalysis,
         apotomeSlope,
+        aas,
+        ate,
     }
 }
 

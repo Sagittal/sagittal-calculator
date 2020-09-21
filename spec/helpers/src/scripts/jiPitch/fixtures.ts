@@ -1,4 +1,4 @@
-import { Copfr, Direction, JiPitch, Max } from "../../../../../src/general"
+import { Abs, Copfr, Direction, Exponent, Integer, JiPitch, Max } from "../../../../../src/general"
 import { Monzo, Prime, Ratio, Sopfr } from "../../../../../src/general/math"
 import { Cents } from "../../../../../src/general/music"
 import { ApotomeSlope, JiPitchAnalysis, N2D3P9, TwoThreeFreeClassAnalysis } from "../../../../../src/sagittal/ji"
@@ -16,6 +16,8 @@ const jiPitchAnalysisFixture: JiPitchAnalysis = {
     monzo: [] as Monzo,
     ratio: [1, 1] as Ratio,
     apotomeSlope: 0 as ApotomeSlope,
+    aas: 0 as Abs<ApotomeSlope>,
+    ate: 0 as Abs<Integer & Exponent<3 & Prime>>,
     twoThreeFreeClassAnalysis: twoThreeFreeClassAnalysisFixture,
 }
 

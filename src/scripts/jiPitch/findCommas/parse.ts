@@ -29,7 +29,7 @@ const parseFindCommasSettings = (
     const maxAas: Max<Abs<ApotomeSlope>> = program.maxAas ||
         defaultOverrides.maxAas ||
         DEFAULT_FIND_COMMAS_SETTINGS.maxAas
-    const maxAte: Max<Abs<3 & Integer & Exponent<Prime>>> = program.maxAte ||
+    const maxAte: Max<Abs<Integer & Exponent<3 & Prime>>> = program.maxAte ||
         defaultOverrides.maxAte ||
         DEFAULT_FIND_COMMAS_SETTINGS.maxAte
 

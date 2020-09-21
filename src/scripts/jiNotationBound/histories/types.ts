@@ -8,8 +8,6 @@ interface BoundEvent {
     boundType: BoundType,
 }
 
-// TODO: just ... don't have this name? or just go head and make it an object which
-//  contains boundEvents, so that BoundHistoryAnalysis can actually extend it?
 type BoundHistory = BoundEvent[]
 
 interface CommaMean extends CentsPosition {

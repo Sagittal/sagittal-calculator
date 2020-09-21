@@ -10,7 +10,7 @@ import {
 
 describe("parseNotatingCommasSettings", (): void => {
     const n2d3p9 = DEFAULT_FIND_COMMAS_SETTINGS.maxN2D3P9 + 100 as N2D3P9
-    const ate = DEFAULT_FIND_COMMAS_SETTINGS.maxAte + 10 as Abs<3 & Integer & Exponent<Prime>>
+    const ate = DEFAULT_FIND_COMMAS_SETTINGS.maxAte + 10 as Abs<Integer & Exponent<3 & Prime>>
     const monzo = [0, ate] as Monzo
     const cents = 47548.9 as Cents
     const apotomeSlope = -2902.759003 as ApotomeSlope
@@ -39,6 +39,6 @@ describe("parseNotatingCommasSettings", (): void => {
     it("adjusts the max ATE if the JI pitch has greater than the current settings", (): void => {
         const actual = parseNotatingCommasSettings(jiPitchAnalysis)
 
-        expect(actual.maxAte).toBe(ate as Max<Abs<3 & Integer & Exponent<Prime>>>)
+        expect(actual.maxAte).toBe(ate as Max<Abs<Integer & Exponent<3 & Prime>>>)
     })
 })

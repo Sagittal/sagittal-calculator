@@ -3,8 +3,8 @@ import {
     Cents,
     Comma,
     Copfr,
-    Direction,
-    Id,
+    Direction, Exponent,
+    Id, Integer,
     Monzo,
     Multiplier,
     Name,
@@ -60,6 +60,8 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                         primaryCommaAnalysis: {
                             id: 47 as Id<SagittalComma>,
                             apotomeSlope: -2.411919815346935 as ApotomeSlope,
+                            aas: 2.411919815346935 as Abs<ApotomeSlope>,
+                            ate: 1 as Abs<Integer & Exponent<3 & Prime>>,
                             twoThreeFreeClassAnalysis: {
                                 twoThreeFreeCopfr: 3 as Copfr<{ rough: 5 }>,
                                 twoThreeFreeSopfr: 29 as Sopfr<{ rough: 5 }>,
@@ -87,6 +89,8 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                         primaryCommaAnalysis: {
                             id: 48 as Id<SagittalComma>,
                             apotomeSlope: 10.555481691145998 as ApotomeSlope,
+                            aas: 10.555481691145998 as Abs<ApotomeSlope>,
+                            ate: 12 as Abs<Integer & Exponent<3 & Prime>>,
                             twoThreeFreeClassAnalysis: {
                                 twoThreeFreeCopfr: 0 as Copfr<{ rough: 5 }>,
                                 twoThreeFreeSopfr: 0 as Sopfr<{ rough: 5 }>,
@@ -115,6 +119,8 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                         primaryCommaAnalysis: {
                             id: 47 as Id<SagittalComma>,
                             apotomeSlope: -2.411919815346935 as ApotomeSlope,
+                            aas: 2.411919815346935 as Abs<ApotomeSlope>,
+                            ate: 1 as Abs<Integer & Exponent<3 & Prime>>,
                             twoThreeFreeClassAnalysis: {
                                 twoThreeFreeCopfr: 3 as Copfr<{ rough: 5 }>,
                                 twoThreeFreeSopfr: 29 as Sopfr<{ rough: 5 }>,
@@ -141,6 +147,8 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                         primaryCommaAnalysis: {
                             id: 48 as Id<SagittalComma>,
                             apotomeSlope: 10.555481691145998 as ApotomeSlope,
+                            aas: 10.555481691145998 as Abs<ApotomeSlope>,
+                            ate: 12 as Abs<Integer & Exponent<3 & Prime>>,
                             twoThreeFreeClassAnalysis: {
                                 twoThreeFreeCopfr: 0 as Copfr<{ rough: 5 }>,
                                 twoThreeFreeSopfr: 0 as Sopfr<{ rough: 5 }>,
@@ -170,6 +178,8 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                         primaryCommaAnalysis: {
                             id: 47 as Id<SagittalComma>,
                             apotomeSlope: -2.411919815346935 as ApotomeSlope,
+                            aas: 2.411919815346935 as Abs<ApotomeSlope>,
+                            ate: 1 as Abs<Integer & Exponent<3 & Prime>>,
                             twoThreeFreeClassAnalysis: {
                                 twoThreeFreeCopfr: 3 as Copfr<{ rough: 5 }>,
                                 twoThreeFreeSopfr: 29 as Sopfr<{ rough: 5 }>,
@@ -196,6 +206,8 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                         primaryCommaAnalysis: {
                             id: 48 as Id<SagittalComma>,
                             apotomeSlope: 10.555481691145998 as ApotomeSlope,
+                            aas: 10.555481691145998 as Abs<ApotomeSlope>,
+                            ate: 12 as Abs<Integer & Exponent<3 & Prime>>,
                             twoThreeFreeClassAnalysis: {
                                 twoThreeFreeCopfr: 0 as Copfr<{ rough: 5 }>,
                                 twoThreeFreeSopfr: 0 as Sopfr<{ rough: 5 }>,

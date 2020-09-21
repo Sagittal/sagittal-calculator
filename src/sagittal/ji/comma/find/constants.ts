@@ -5,7 +5,7 @@ import { N2D3P9 } from "../../twoThreeFreeClass"
 
 const DEFAULT_MIN_CENTS = 0 as Min<Cents>
 const DEFAULT_MAX_CENTS = APOTOME_CENTS / 2 as Max<Cents>                           // 56.8425030289¢
-const DEFAULT_MAX_ATE = 15 as Max<Abs<3 & Integer & Exponent<Prime>>>
+const DEFAULT_MAX_ATE = 15 as Max<Abs<Integer & Exponent<3 & Prime>>>
 const DEFAULT_MAX_AAS = 14 as Max<Abs<ApotomeSlope>>
 const DEFAULT_MAX_N2D3P9 = 307 as Max<N2D3P9>
 const DEFAULT_MAX_2_3_FREE_SOPFR = 61 as Max<Sopfr<{ rough: 5 }>> // can go as high as 127 without crashing

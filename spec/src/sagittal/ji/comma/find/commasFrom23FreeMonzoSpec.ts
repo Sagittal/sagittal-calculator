@@ -5,7 +5,7 @@ describe("computeCommasFrom23FreeMonzo", (): void => {
     const twoThreeFreeMonzo: Monzo<{ rough: 5 }> = [0, 0, 3, 5, -1] as Monzo<{ rough: 5 }>
     const minCents = 40 as Min<Cents>
     const maxCents = 40.1 as Max<Cents>
-    const maxAte = 12 as Max<Abs<3 & Integer & Exponent<Prime>>>
+    const maxAte = 12 as Max<Abs<Integer & Exponent<3 & Prime>>>
     const maxN2D3P9 = 40000 as Max<N2D3P9>
 
     it("returns commas with the prime content from the two-three-free monzo", (): void => {

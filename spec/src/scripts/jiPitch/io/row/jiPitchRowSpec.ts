@@ -1,5 +1,5 @@
 import { Row } from "../../../../../../src/general/io/table"
-import { Copfr, Direction, Prime, Sopfr } from "../../../../../../src/general/math"
+import { Abs, Copfr, Direction, Exponent, Integer, Prime, Sopfr } from "../../../../../../src/general/math"
 import { Monzo } from "../../../../../../src/general/math/monzo"
 import { Ratio } from "../../../../../../src/general/math/ratio"
 import { Cents } from "../../../../../../src/general/music"
@@ -13,6 +13,8 @@ describe("computeJiPitchRow", (): void => {
             monzo: [0, -1, 1] as Monzo,
             ratio: [5, 4] as Ratio,
             apotomeSlope: 8.2 as ApotomeSlope,
+            aas: 8.2 as Abs<ApotomeSlope>,
+            ate: 1 as Abs<Integer & Exponent<3 & Prime>>,
             twoThreeFreeClassAnalysis: {
                 twoThreeFreePrimeLimit: 14 as Prime,
                 ratio: [5, 1] as Ratio<{ rough: 5, direction: Direction.SUPER }>,
@@ -29,6 +31,8 @@ describe("computeJiPitchRow", (): void => {
             "[   0  -1   1 ⟩",  // monzo
             " 11.200",          // cents
             "  8.200",          // apotome slope
+            "  8.200",          // AAS
+            "  1    ",          // ATE
         ] as Row<{ of: JiPitchAnalysis, header: true }>
         expect(actual).toEqual(expected)
     })

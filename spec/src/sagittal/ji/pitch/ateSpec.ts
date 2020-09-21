@@ -9,7 +9,16 @@ describe("computeAte", (): void => {
 
         const actual = computeAte(jiPitch)
 
-        const expected = 3 as Abs<3 & Integer & Exponent<Prime>>
+        const expected = 3 as Abs<Integer & Exponent<3 & Prime>>
+        expect(actual).toBe(expected)
+    })
+
+    it("works for monzos without 3-exponents", (): void => {
+        const jiPitch = { monzo: [] as Monzo } as JiPitch
+
+        const actual = computeAte(jiPitch)
+
+        const expected = 0 as Abs<Integer & Exponent<3 & Prime>>
         expect(actual).toBe(expected)
     })
 })

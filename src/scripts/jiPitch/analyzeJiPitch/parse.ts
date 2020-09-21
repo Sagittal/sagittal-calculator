@@ -73,7 +73,7 @@ const parseNotatingCommasSettings = (
 
     const ate = computeAte(jiPitchAnalysis)
     if (ate > findCommasSettings.maxAte) {
-        findCommasSettings.maxAte = ate as Max<Abs<3 & Integer & Exponent<Prime>>>
+        findCommasSettings.maxAte = ate as Max<Abs<Integer & Exponent<3 & Prime>>>
     }
 
     const n2d3p9 = jiPitchAnalysis.twoThreeFreeClassAnalysis.n2d3p9

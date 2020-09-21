@@ -14,8 +14,6 @@ const applySharedPitchCommandSetup = (): void => {
 
     parseCommands(ScriptGroup.JI_PITCH as Filename)
 
-    // TODO: support sorting by ATE an AAS (currently only supports it by apotome slope)
-    //  which probably means you should just go ahead and include ATE and AAS in comma analysis...
     if (program.sortBy) jiPitchScriptGroupSettings.sortKey = program.sortBy
 
     jiPitchScriptGroupSettings.commaNameOptions = {
