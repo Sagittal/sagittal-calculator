@@ -16,7 +16,9 @@ import {
 } from "../../../../../../src/general"
 import { ApotomeSlope, CommaAnalysis, SymbolClass, TwoThreeFreeClassAnalysis } from "../../../../../../src/sagittal"
 import { N2D3P9 } from "../../../../../../src/sagittal/ji/twoThreeFreeClass/n2d3p9"
+import { jiPitchScriptGroupSettings } from "../../../../../../src/scripts/jiPitch/globals"
 import { computeNotatingCommasRow } from "../../../../../../src/scripts/jiPitch/io/row"
+import { NotatingCommasField } from "../../../../../../src/scripts/jiPitch/types"
 
 describe("computeNotatingCommasRow", (): void => {
     // This comma is made up and internally inconsistent.
@@ -48,6 +50,22 @@ describe("computeNotatingCommasRow", (): void => {
             "5/4",              // ratio
             "[   0  -1   1 ⟩",  // monzo
             " 11.200",          // cents
+            "  8.200",          // apotome slope
+            "  8.200",          // AAS
+            "  1    ",          // ATE
+        ] as Row<{ of: CommaAnalysis }>
+        expect(actual).toEqual(expected)
+    })
+
+    it("can filter the excluded fields", (): void => {
+        jiPitchScriptGroupSettings.excludedFields = [ NotatingCommasField.CENTS, NotatingCommasField.MONZO ]
+
+        const actual = computeNotatingCommasRow(commaAnalysis, symbolClassId)
+
+        const expected = [
+            "    /|  ",         // symbol class
+            "1/5C",             // comma name
+            "5/4",              // ratio
             "  8.200",          // apotome slope
             "  8.200",          // AAS
             "  1    ",          // ATE

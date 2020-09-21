@@ -16,7 +16,9 @@ import {
 } from "../../../../../../src/general"
 import { ApotomeSlope, CommaAnalysis, SymbolClass, TwoThreeFreeClassAnalysis } from "../../../../../../src/sagittal"
 import { N2D3P9 } from "../../../../../../src/sagittal/ji/twoThreeFreeClass/n2d3p9"
+import { jiPitchScriptGroupSettings } from "../../../../../../src/scripts/jiPitch/globals"
 import { computeFindCommasRow } from "../../../../../../src/scripts/jiPitch/io/row"
+import { FindCommasField } from "../../../../../../src/scripts/jiPitch/types"
 
 describe("computeFindCommasRow", (): void => {
     // This comma is made up and internally inconsistent.
@@ -49,8 +51,28 @@ describe("computeFindCommasRow", (): void => {
             "[   0  -1   1 ⟩",  // monzo
             " 11.200",          // cents
             "  8.200",          // apotome slope
+            "  8.200",          // AAS
+            "  1    ",          // ATE
+            " 14    ",          // prime limit
+            "5/1",              // 2,3-free class
+            "  1    ",          // 2,3-free CoPFR
+            " 13    ",          // 2,3-free SoPFR
+            " 18.457",          // N2D3P9
+        ] as Row<{ of: CommaAnalysis }>
+        expect(actual).toEqual(expected)
+    })
+    
+    it("can filter excluded fields", (): void => {
+        jiPitchScriptGroupSettings.excludedFields = [ FindCommasField.AAS, FindCommasField.ATE ]
+        const actual = computeFindCommasRow(commaAnalysis, symbolClassId)
+
+        const expected = [
+            "    /|  ",         // symbol class
+            "1/5C",             // comma name
+            "5/4",              // ratio
+            "[   0  -1   1 ⟩",  // monzo
+            " 11.200",          // cents
             "  8.200",          // apotome slope
-            "  1    ",          // apotome slope
             " 14    ",          // prime limit
             "5/1",              // 2,3-free class
             "  1    ",          // 2,3-free CoPFR

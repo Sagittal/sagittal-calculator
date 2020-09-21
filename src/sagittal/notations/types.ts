@@ -35,11 +35,6 @@ type SymbolClassAnalysis = Omit<SymbolClass, "primaryCommaId"> & {
     introducingJiNotationLevel: JiNotationLevel,
     minaName: Name<Mina>,
     smallestSymbolSubset: SymbolSubset,
-    // TODO: this could contain an "apotome complement" on it, with a helper method to get it
-    //  i.e. the symbol class ID of your apotome complement
-    //  wait a second... no. an apotome complement is a property not of a symbol class, but of a SYMBOL
-    //  (along with a fun test to prove that complements have the same slope)
-    //  and you should have a test to prove their primary commas sum to an apotome
 }
 
 interface RevoSymbol {

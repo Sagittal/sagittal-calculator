@@ -31,3 +31,5 @@ export {
 } from "./format"
 export { time } from "./time"
 export { readLines } from "./lines"
+
+// TODO: might be nice to have typed split and join

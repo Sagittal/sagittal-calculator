@@ -1,11 +1,19 @@
 import { KeyPath } from "../../general"
-import { JiPitchScriptGroupSettings } from "./types"
+import { FindCommasField, JiPitchScriptGroupSettings } from "./types"
 
 const INITIAL_JI_PITCH_SCRIPT_GROUP_SETTINGS: JiPitchScriptGroupSettings = {
     sortKey: ["twoThreeFreeClassAnalysis", "n2d3p9"] as KeyPath,
     commaNameOptions: {},
+    excludedFields: [],
 }
+
+// We must use this enum rather than the union type because it's technically a "type" not an "enum" 
+// and only enums have that special duality as actual JS objects
+// However, the FindCommasField enum actually encompasses all the same fields
+// in other words, the union type isn't strictly necessary; it's mostly expressing the conceptual truth
+const JI_PITCH_SCRIPT_GROUP_FIELDS = Object.values(FindCommasField)
 
 export {
     INITIAL_JI_PITCH_SCRIPT_GROUP_SETTINGS,
+    JI_PITCH_SCRIPT_GROUP_FIELDS,
 }

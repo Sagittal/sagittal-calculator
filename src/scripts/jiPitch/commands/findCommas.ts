@@ -8,8 +8,6 @@ readFindCommasOptions()
 
 applySharedPitchCommandSetup()
 
-// TODO: now that we include ATE and AAS so you can sort by them if you want, I'm going to need to add an option
-//  for filtering them out from the results
 const findCommasSettings = parseFindCommasSettings()
 const commaAnalyses: CommaAnalysis[] = computeCommaAnalyses(findCommasSettings)
 const maybeSymbolClassIds: Array<Maybe<Id<SymbolClass>>> = commaAnalyses.map(computeMaybeSymbolClassId)

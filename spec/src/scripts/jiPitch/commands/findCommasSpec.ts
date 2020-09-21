@@ -95,4 +95,40 @@ describe("find-commas", (): void => {
         ] as Io[]
         expect(actual).toEqual(expected)
     })
+
+    it("can exclude fields from the results", (): void => {
+        onlyRunInCi()
+
+        const command = `           \
+        npm run find-commas --      \
+         --min-cents 30             \
+         --max-cents 30.5           \
+         --max-ate 2                \
+         --max-2-3-free-copfr 3     \
+         --max-prime-limit 37       \
+         --max-2-3-free-sopfr 58    \
+         --max-aas 3                \
+         --excluded-fields aas,ate  \
+        ` as Io
+
+        const actual = runCommandAndGetConsoleOutput(command)
+
+        const expected = [
+            "",
+            "cents range:       \t 30.000 -  30.500",
+            "max ATE:           \t  2    ",
+            "max AAS:           \t  3.000",
+            "max N2D3P9:        \t307.000",
+            "max 2,3-free sopfr:\t 58    ",
+            "max 2,3-free copfr:\t  3    ",
+            "max prime limit:   \t 37    ",
+            "",
+            "      \t      \t     \t                                           \t       \t       \t2,3-free\t2,3-free\t2,3-free\t2,3-free\t2,3-free",
+            "symbol\tcomma \t     \t                                           \t       \tapotome\tprime   \tclass   \tclass   \tclass   \tclass   ",
+            "class \tname  \tratio\tmonzo                                      \tcents  \tslope  \tlimit   \tname    \tCoPFR   \tSoPFR   \tN2D3P9  ",
+            "      \t29/19C\t58/57\t[   1  -1   0   0   0   0   0  -1   0   1 ⟩\t 30.109\t -2.854\t 29     \t29/19   \t  2     \t 48     \t295.907 ",
+            "",
+        ] as Io[]
+        expect(actual).toEqual(expected)
+    })
 })
