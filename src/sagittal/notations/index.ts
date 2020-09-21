@@ -22,10 +22,10 @@ export {
     BoundType,
 } from "./ji"
 export { APOTOME } from "./sagittalCommas"
-export { SagittalComma, SymbolClass, RevoSymbol, SymbolClassAnalysis, SymbolSubset } from "./types"
+export { SagittalComma, SymbolClass, Symbol, SymbolClassAnalysis, SymbolSubset } from "./types"
 export { SYMBOL_CLASSES } from "./symbolClasses"
 export { SYMBOL_SUBSETS } from "./symbolSubsets"
-export { REVO_SYMBOLS } from "./symbols"
+export { SYMBOLS } from "./symbols"
 export { analyzeSymbolClass } from "./analyzeSymbolClass"
 export { getSymbolClass } from "./symbolClass"
 export { getPrimaryComma } from "./primaryComma"

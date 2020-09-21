@@ -1,12 +1,12 @@
 import { Direction, Id, isUndefined } from "../../general"
-import { REVO_SYMBOLS } from "./symbols"
-import { RevoSymbol, SymbolClass } from "./types"
+import { SYMBOLS } from "./symbols"
+import { Symbol, SymbolClass } from "./types"
 
-const getRepresentativeSymbol = (symbolClassId: Id<SymbolClass>): RevoSymbol => {
-    const maybeSymbol = REVO_SYMBOLS.find((revoSymbol: RevoSymbol): boolean => {
-        const { apotomeCount, direction } = revoSymbol
+const getRepresentativeSymbol = (symbolClassId: Id<SymbolClass>): Symbol => {
+    const maybeSymbol = SYMBOLS.find((symbol: Symbol): boolean => {
+        const { apotomeCount, commaDirection } = symbol
 
-        return revoSymbol.symbolClassId === symbolClassId && apotomeCount === 0 && direction === Direction.SUPER
+        return symbol.symbolClassId === symbolClassId && apotomeCount === 0 && commaDirection !== Direction.SUB
     })
 
     if (isUndefined(maybeSymbol)) {

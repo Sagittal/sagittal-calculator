@@ -22,7 +22,7 @@ interface SymbolClass {
     // TODO: should this be an array of references to other objects instead of hardcoded?
     //  probably, yes. but you should review how Dave thinks of symbols and elements before you do so
     //  because all I can remember right now is that your intuitions were a bit off
-    //  note though that they are symbol CLASS elements, because they're irrespective of direction
+    //  note though that they are symbol CLASS elements, because they're irrespective of comma direction
     elements: SymbolLongAscii[],
     id: Id<SymbolClass>,
     primaryCommaId: Id<SagittalComma>,
@@ -37,13 +37,14 @@ type SymbolClassAnalysis = Omit<SymbolClass, "primaryCommaId"> & {
     smallestSymbolSubset: SymbolSubset,
 }
 
-interface RevoSymbol {
-    id: Id<RevoSymbol>,
-    ascii: SymbolLongAscii,
-    unicode: SymbolUnicode,
+interface Symbol {
+    id: Id<Symbol>,
+    revoAscii: SymbolLongAscii,
+    evoAscii: SymbolLongAscii,
+    revoUnicode: SymbolUnicode, // todo: perhaps these should be parameterized, Evo or Revo, and that enum is Flavor?
+    evoUnicode: SymbolUnicode,
     symbolClassId: Id<SymbolClass>,
-    direction: Direction,
-    // so if apotome count is 1 but direction is sub, then it's a down symbol + a sharp
+    commaDirection: Direction,
     apotomeCount: Count<Apotome>,
 }
 
@@ -51,7 +52,7 @@ export {
     SymbolSubset,
     SagittalComma,
     SymbolClass,
-    RevoSymbol,
+    Symbol,
     SymbolClassAnalysis,
     SagittalCommaAnalysis,
 }

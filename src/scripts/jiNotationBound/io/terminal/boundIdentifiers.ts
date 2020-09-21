@@ -48,7 +48,7 @@ const extractJiNotationBoundIdentifiers = (jiNotationBound: JiNotationBound): Ji
             ...getSymbolClass(extremeLevelLesserBoundedSymbolClassIdWithDistance.id),
         } as BoundedSymbolClass
     const formattedExtremeLevelLesserBoundedSymbolClass = extremeLevelLesserBoundedSymbolClass ?
-        getRepresentativeSymbol(extremeLevelLesserBoundedSymbolClass.id).ascii :
+        getRepresentativeSymbol(extremeLevelLesserBoundedSymbolClass.id).revoAscii :
         "" as SymbolLongAscii
     const lesserBoundedMinaName = extremeLevelLesserBoundedSymbolClass &&
         getMinaName(extremeLevelLesserBoundedSymbolClass.id)
@@ -59,7 +59,7 @@ const extractJiNotationBoundIdentifiers = (jiNotationBound: JiNotationBound): Ji
             ...getSymbolClass(extremeLevelGreaterBoundedSymbolClassIdWithDistance.id),
         } as BoundedSymbolClass
     const formattedExtremeLevelGreaterBoundedSymbolClass = extremeLevelGreaterBoundedSymbolClass ?
-        getRepresentativeSymbol(extremeLevelGreaterBoundedSymbolClass.id).ascii :
+        getRepresentativeSymbol(extremeLevelGreaterBoundedSymbolClass.id).revoAscii :
         "" as SymbolLongAscii
     const greaterBoundedMinaName = extremeLevelGreaterBoundedSymbolClass &&
         getMinaName(extremeLevelGreaterBoundedSymbolClass.id)

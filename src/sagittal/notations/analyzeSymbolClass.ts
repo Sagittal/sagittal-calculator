@@ -17,7 +17,7 @@ const analyzeSymbolClass = (
     const primaryCommaAnalysis: SagittalCommaAnalysis =
         analyzeComma(primaryComma) as SagittalCommaAnalysis
 
-    const { ascii, unicode } = getRepresentativeSymbol(symbolClassId)
+    const { revoAscii, revoUnicode } = getRepresentativeSymbol(symbolClassId)
 
     const introducingJiNotationLevel = getIntroducingJiNotationLevel(symbolClassId)
 
@@ -29,8 +29,8 @@ const analyzeSymbolClass = (
         ...otherSymbolClassProperties,
         smallestSymbolSubset,
         minaName,
-        ascii,
-        unicode,
+        ascii: revoAscii,
+        unicode: revoUnicode,
         introducingJiNotationLevel,
         primaryCommaAnalysis,
     }

@@ -18,7 +18,7 @@ const getJiNotationSymbolCents = (symbolClassId: Id<SymbolClass>): Cents => {
 const getJiNotationSymbolAscii = (symbolClassId: Id<SymbolClass>): SymbolLongAscii => {
     const representativeSymbol = getRepresentativeSymbol(symbolClassId)
 
-    return representativeSymbol.ascii
+    return representativeSymbol.revoAscii
 }
 
 const computeJiNotationLevelCommaMeans = (jiNotationLevel: JiNotationLevel): CommaMean[] => {

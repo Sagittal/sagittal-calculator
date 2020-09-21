@@ -7,7 +7,7 @@ describe("SYMBOL_SUBSET_SYMBOL_CLASS_IDS", (): void => {
     const subject = (symbolSubset: SymbolSubset): SymbolLongAscii[] => {
         return SYMBOL_SUBSET_SYMBOL_CLASS_IDS[ symbolSubset ]
             .map((symbolClassId: Id<SymbolClass>): SymbolLongAscii => {
-                return getRepresentativeSymbol(symbolClassId).ascii
+                return getRepresentativeSymbol(symbolClassId).revoAscii
             })
     }
     

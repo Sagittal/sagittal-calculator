@@ -1,16 +1,15 @@
 import { Maybe } from "../../general"
-import { RevoSymbol, REVO_SYMBOLS } from "../notations"
+import { Symbol, SYMBOLS } from "../notations"
 import { SymbolLongAscii, SymbolUnicode } from "./types"
 
 const unicodeFromAscii = (ascii: SymbolLongAscii): SymbolUnicode => {
-    const revoSymbol: Maybe<RevoSymbol> = REVO_SYMBOLS
-        .find((revoSymbol: RevoSymbol): boolean => revoSymbol.ascii === ascii)
+    const symbol: Maybe<Symbol> = SYMBOLS.find((symbol: Symbol): boolean => symbol.revoAscii === ascii)
 
-    if (!revoSymbol) {
+    if (!symbol) {
         throw new Error(`No symbol found with ascii ${ascii}`)
     }
 
-    return revoSymbol.unicode
+    return symbol.revoUnicode
 }
 
 export {

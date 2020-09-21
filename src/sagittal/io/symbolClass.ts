@@ -1,5 +1,5 @@
 import { Formatted, Id } from "../../general"
-import { getRepresentativeSymbol, RevoSymbol, SymbolClass } from "../notations"
+import { getRepresentativeSymbol, Symbol, SymbolClass } from "../notations"
 import { computeSmileyFromAscii } from "./smiley"
 import { formatSymbolAscii } from "./symbolAscii"
 import { SymbolLongAscii, SymbolSmiley } from "./types"
@@ -9,8 +9,8 @@ const formatSymbolClass = (
     symbolClassId: Id<SymbolClass>,
     { forForum, forTable = true }: { forForum?: boolean, forTable?: boolean },
 ): Formatted<SymbolSmiley | SymbolLongAscii> => {
-    const representativeSymbol: RevoSymbol = getRepresentativeSymbol(symbolClassId)
-    const ascii = representativeSymbol.ascii
+    const representativeSymbol: Symbol = getRepresentativeSymbol(symbolClassId)
+    const ascii = representativeSymbol.revoAscii
 
     return forForum ?
         computeSmileyFromAscii(ascii) as string as Formatted<SymbolSmiley> :
