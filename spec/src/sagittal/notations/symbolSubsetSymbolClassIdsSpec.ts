@@ -10,6 +10,18 @@ describe("SYMBOL_SUBSET_SYMBOL_CLASS_IDS", (): void => {
                 return getRepresentativeSymbol(symbolClassId).ascii
             })
     }
+    
+    it("has the correct symbol classes in Sagittal-compatibles", (): void => {
+        const symbolSubset = SymbolSubset.SAGITTAL_COMPATIBLE
+
+        const actual: SymbolLongAscii[] = subject(symbolSubset)
+
+        const expected = [
+            "|//|"
+        ] as SymbolLongAscii[]
+        expect(actual.length).toEqual(1)
+        expect(actual).toEqual(expected)
+    })
 
     it("has the correct symbol classes in Spartan", (): void => {
         const symbolSubset = SymbolSubset.SPARTAN
@@ -17,9 +29,9 @@ describe("SYMBOL_SUBSET_SYMBOL_CLASS_IDS", (): void => {
         const actual: SymbolLongAscii[] = subject(symbolSubset)
 
         const expected = [
-            "|", "|(", "/|", "|)", "//|", "/|)", "/|\\", "(|)", "(|\\",
+            "|(", "/|", "|)", "//|", "/|)", "/|\\", "(|)", "(|\\",
         ] as SymbolLongAscii[]
-        expect(actual.length).toEqual(9)
+        expect(actual.length).toEqual(8)
         expect(actual).toEqual(expected)
     })
 
@@ -29,9 +41,9 @@ describe("SYMBOL_SUBSET_SYMBOL_CLASS_IDS", (): void => {
         const actual: SymbolLongAscii[] = subject(symbolSubset)
 
         const expected = [
-            "|", "|(", ")|(", "~|(", "/|", "|)", "|\\", "(|", "(|(", "//|", "/|)", "/|\\", "(|)", "(|\\",
+            "|(", ")|(", "~|(", "/|", "|)", "|\\", "(|", "(|(", "//|", "/|)", "/|\\", "(|)", "(|\\",
         ] as SymbolLongAscii[]
-        expect(actual.length).toEqual(14)
+        expect(actual.length).toEqual(13)
         expect(actual).toEqual(expected)
     })
 
@@ -41,9 +53,9 @@ describe("SYMBOL_SUBSET_SYMBOL_CLASS_IDS", (): void => {
         const actual: SymbolLongAscii[] = subject(symbolSubset)
 
         const expected = [
-            "|", "~|(", ")/|", "/|", "(|", "|~", "|)", "|\\", "/|~", "/|)", "/|\\", "(|\\",
+            "~|(", ")/|", "/|", "(|", "|~", "|)", "|\\", "/|~", "/|)", "/|\\", "(|\\",
         ] as SymbolLongAscii[]
-        expect(actual.length).toEqual(12)
+        expect(actual.length).toEqual(11)
         expect(actual).toEqual(expected)
     })
 
@@ -53,11 +65,11 @@ describe("SYMBOL_SUBSET_SYMBOL_CLASS_IDS", (): void => {
         const actual: SymbolLongAscii[] = subject(symbolSubset)
 
         const expected = [
-            "|", ")|", "|(", "~|", ")|(", ")~|", "~|(", "|~", "~~|", ")|~", "/|", ")/|", "|)", ")|)", "|\\", "(|",
+            ")|", "|(", "~|", ")|(", ")~|", "~|(", "|~", "~~|", ")|~", "/|", ")/|", "|)", ")|)", "|\\", "(|",
             "~|)", "/|~", "(|(", "~|\\", "//|", ")//|", "/|)", "(|~", "/|\\", "(/|", ")/|\\", "|\\)", "(|)", "|\\\\",
             "(|\\", ")|\\\\",
         ] as SymbolLongAscii[]
-        expect(actual.length).toEqual(32)
+        expect(actual.length).toEqual(31)
         expect(actual).toEqual(expected)
     })
 
@@ -67,12 +79,12 @@ describe("SYMBOL_SUBSET_SYMBOL_CLASS_IDS", (): void => {
         const actual: SymbolLongAscii[] = subject(symbolSubset)
 
         const expected = [
-            "|", ".)|", "'|", ")|", "|(", ".~|", "'|(", "~|", ")|(", "')|(", ")~|", ".~|(", "~|(", "|~", "~~|", "./|",
+            ".)|", "'|", ")|", "|(", ".~|", "'|(", "~|", ")|(", "')|(", ")~|", ".~|(", "~|(", "|~", "~~|", "./|",
             ")|~", "/|", ".)/|", "'/|", ")/|", ".|)", "|)", "'|)", ")|)", ".(|", "|\\", "(|", "'(|", "~|)", ".(|(",
             "'~|)", "/|~", "(|(", "~|\\", ".//|", "//|", "'//|", ")//|", "/|)", "(|~", "'/|)", "./|\\", "/|\\", "(/|",
             "'/|\\", ")/|\\", ".(|)", "|\\)", "(|)", "'(|)", ".(|\\", "|\\\\", "(|\\", ")|\\\\",
         ] as SymbolLongAscii[]
-        expect(actual.length).toEqual(55)
+        expect(actual.length).toEqual(54)
         expect(actual).toEqual(expected)
     })
 
@@ -82,7 +94,7 @@ describe("SYMBOL_SUBSET_SYMBOL_CLASS_IDS", (): void => {
         const actual: SymbolLongAscii[] = subject(symbolSubset)
 
         const expected = [
-            "|", "`|", "``|", ".)|", "'|", "`'|", ",)|", ")|", "`)|", "``)|", ",,|(", ",|(", "|(", "`|(", ".~|", ",'|(",
+            "`|", "``|", ".)|", "'|", "`'|", ",)|", ")|", "`)|", "``)|", ",,|(", ",|(", "|(", "`|(", ".~|", ",'|(",
             "'|(", ",~|", "~|", ",)|(", ")|(", "`)|(", "``)|(", ",')|(", "')|(", ")~|", ".~|(", "`.~|(", ",,~|(",
             ",~|(", "~|(", "`~|(", ",,|~", ",|~", "|~", "`|~", "~~|", "`~~|", "``~~|", ",./|", "./|", ")|~", ",,/|",
             ",/|", "/|", "`/|", "``/|", ".)/|", "'/|", "`'/|", ",,)/|", ",)/|", ")/|", ",.|)", ".|)", "`.|)", ",,|)",
@@ -95,6 +107,7 @@ describe("SYMBOL_SUBSET_SYMBOL_CLASS_IDS", (): void => {
             "``(|)", ",'(|)", "'(|)", ",.(|\\", ".(|\\", "`.(|\\", "|\\\\", ",(|\\", "(|\\", "`(|\\", "``(|\\",
             ",,)|\\\\", ",)|\\\\", ")|\\\\", "`)|\\\\", "``)|\\\\",
         ] as SymbolLongAscii[]
+        expect(actual.length).toEqual(148)
         expect(actual).toEqual(expected)
     })
 })

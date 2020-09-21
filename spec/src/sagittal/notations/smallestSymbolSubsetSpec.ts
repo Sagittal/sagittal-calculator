@@ -2,7 +2,8 @@ import { Id } from "../../../../src/general"
 import { getSmallestSymbolSubset, SymbolClass, SymbolSubset } from "../../../../src/sagittal/notations"
 
 describe("getSmallestSymbolSubset", (): void => {
-    it("returns the lowest JI notation level which includes the given symbol class id", (): void => {
+    it("returns the smallest symbol subset which includes the given symbol class id", (): void => {
+        expect(getSmallestSymbolSubset(0 as Id<SymbolClass>)).toBe(SymbolSubset.SAGITTAL_COMPATIBLE)
         expect(getSmallestSymbolSubset(12 as Id<SymbolClass>)).toBe(SymbolSubset.SPARTAN)
         expect(getSmallestSymbolSubset(30 as Id<SymbolClass>)).toBe(SymbolSubset.ATHENIAN)
         expect(getSmallestSymbolSubset(52 as Id<SymbolClass>)).toBe(SymbolSubset.TROJAN)

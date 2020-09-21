@@ -4,6 +4,7 @@ import { CommaAnalysis } from "../ji"
 import { JiNotationLevel, Mina } from "./ji"
 
 enum SymbolSubset {
+    SAGITTAL_COMPATIBLE = "sagittalCompatible",
     SPARTAN = "spartan",
     ATHENIAN = "athenian",
     PROMETHEAN = "promethean",

@@ -1,11 +1,12 @@
 import { Id, sort } from "../../general"
 import { SymbolClass, SymbolSubset } from "./types"
 
-// TODO: | is not a symbol. it should be the natural symbol |//|, and in the compatibles set
-//  according to this: http://forum.sagittal.org/viewtopic.php?p=2377#p2377
-//  maybe ask Dave if he wants that to be index 0, and maybe also include Trojan
+const SAGITTAL_COMPATIBLE_SYMBOL_CLASS_IDS: Array<Id<SymbolClass>> = [
+    0,
+] as Array<Id<SymbolClass>>
+
 const SPARTAN_SYMBOL_CLASS_IDS: Array<Id<SymbolClass>> = [
-    0, 12, 44, 58, 92, 104, 114, 131, 141,
+    12, 44, 58, 92, 104, 114, 131, 141,
 ] as Array<Id<SymbolClass>>
 
 const ATHENIAN_SYMBOL_CLASS_IDS: Array<Id<SymbolClass>> = sort([
@@ -38,10 +39,11 @@ const MAGRATHEAN_SYMBOL_CLASS_IDS: Array<Id<SymbolClass>> = sort([
 // On an independent trajectory, as it does not contain Spartan or Athenian, though it is contained by Promethean
 // http://forum.sagittal.org/viewtopic.php?p=885&sid=832fe7e77de7aae89234e3dbb67f8fb9#p885
 const TROJAN_SYMBOL_CLASS_IDS: Array<Id<SymbolClass>> = [
-    0, 30, 52, 44, 70, 34, 58, 67, 81, 104, 114, 141,
+    30, 52, 44, 70, 34, 58, 67, 81, 104, 114, 141,
 ] as Array<Id<SymbolClass>>
 
 const SYMBOL_SUBSET_SYMBOL_CLASS_IDS: Record<SymbolSubset, Array<Id<SymbolClass>>> = {
+    [ SymbolSubset.SAGITTAL_COMPATIBLE ]: SAGITTAL_COMPATIBLE_SYMBOL_CLASS_IDS,
     [ SymbolSubset.SPARTAN ]: SPARTAN_SYMBOL_CLASS_IDS,
     [ SymbolSubset.ATHENIAN ]: ATHENIAN_SYMBOL_CLASS_IDS,
     [ SymbolSubset.TROJAN ]: TROJAN_SYMBOL_CLASS_IDS,
@@ -52,6 +54,7 @@ const SYMBOL_SUBSET_SYMBOL_CLASS_IDS: Record<SymbolSubset, Array<Id<SymbolClass>
 }
 
 export {
+    SAGITTAL_COMPATIBLE_SYMBOL_CLASS_IDS,
     SPARTAN_SYMBOL_CLASS_IDS,
     ATHENIAN_SYMBOL_CLASS_IDS,
     TROJAN_SYMBOL_CLASS_IDS,

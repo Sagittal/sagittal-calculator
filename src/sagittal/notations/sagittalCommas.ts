@@ -155,7 +155,6 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     { id: 146 as Id<SagittalComma>, monzo: [-16, 11, 1, 0, 0, -1] },
     { id: 147 as Id<SagittalComma>, monzo: [1, 0, -2, 0, 0, 1] },
     { id: 148 as Id<SagittalComma>, monzo: [-11, 8, 2, -1, -1] },
-    APOTOME,
 ] as SagittalComma[]
 
 export {

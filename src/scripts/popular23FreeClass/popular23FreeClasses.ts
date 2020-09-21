@@ -73,7 +73,7 @@ const computePopular23FreeClasses = (maxN2D3P9: Max<N2D3P9>): Array<Ranked<Popul
 
         popular23FreeClassAnalyses = [] as Array<Popular23FreeClass>
         while (true) {
-            // do the work (trimming has the extra benefit of shallow cloning, disconnecting from this ticking process)
+            // do the work (trimming has the extra win of shallow cloning, disconnecting from this ticking process)
             const twoThreeFreeMonzoForWork = computeTrimmedArray(twoThreeFreeMonzo)
             const maybePopular23FreeClass = !computeIsSubMonzo(twoThreeFreeMonzoForWork) ?
                 computeMaybePopular23FreeClass(

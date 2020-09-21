@@ -2559,23 +2559,23 @@ describe("SAGITTAL_COMMAS", (): void => {
                 cents: 68.123585 as Cents,
                 name: "25/77L" as Name<Comma>,
             },
-            {
-                id: 1000 as Id<SagittalComma>,
-                apotomeSlope: 0 as ApotomeSlope,
-                aas: 0 as Abs<ApotomeSlope>,
-                ate: 7 as Abs<Integer & Exponent<3 & Prime>>,
-                twoThreeFreeClassAnalysis: {
-                    twoThreeFreeCopfr: 0 as Copfr<{ rough: 5 }>,
-                    twoThreeFreeSopfr: 0 as Sopfr<{ rough: 5 }>,
-                    monzo: [] as Monzo as Monzo<{ rough: 5, direction: Direction.SUPER }>,
-                    twoThreeFreePrimeLimit: 1 as Prime,
-                    n2d3p9: 1 as N2D3P9,
-                },
-                ratio: [2187, 2048] as Ratio,
-                monzo: [-11, 7] as Monzo,
-                cents: 113.685006 as Cents,
-                name: "3A" as Name<Comma>,
-            },
+            // {
+            //     id: 1000 as Id<SagittalComma>,
+            //     apotomeSlope: 0 as ApotomeSlope,
+            //     aas: 0 as Abs<ApotomeSlope>,
+            //     ate: 7 as Abs<Integer & Exponent<3 & Prime>>,
+            //     twoThreeFreeClassAnalysis: {
+            //         twoThreeFreeCopfr: 0 as Copfr<{ rough: 5 }>,
+            //         twoThreeFreeSopfr: 0 as Sopfr<{ rough: 5 }>,
+            //         monzo: [] as Monzo as Monzo<{ rough: 5, direction: Direction.SUPER }>,
+            //         twoThreeFreePrimeLimit: 1 as Prime,
+            //         n2d3p9: 1 as N2D3P9,
+            //     },
+            //     ratio: [2187, 2048] as Ratio,
+            //     monzo: [-11, 7] as Monzo,
+            //     cents: 113.685006 as Cents,
+            //     name: "3A" as Name<Comma>,
+            // },
         ] as Array<SagittalCommaAnalysis>
         expect(actual).toBeCloseToObject(expected)
     })

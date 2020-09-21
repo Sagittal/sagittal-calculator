@@ -6,8 +6,8 @@ const REVO_SYMBOLS: RevoSymbol[] = [
     {
         id: 0 as Id<RevoSymbol>,
         symbolClassId: 0 as Id<SymbolClass>,
-        ascii: "|" as SymbolLongAscii,
-        unicode: "" as SymbolUnicode,
+        ascii: "|//|" as SymbolLongAscii,
+        unicode: "♮" as SymbolUnicode,
         direction: Direction.SUPER,
         apotomeCount: 0 as Count<Apotome>,
     },
