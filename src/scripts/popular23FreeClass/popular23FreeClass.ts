@@ -1,30 +1,7 @@
-import {
-    Cents,
-    COMMA_POPULARITIES,
-    computeCentsFromPitch,
-    computeJiPitchMonzo,
-    equalJiPitches,
-    Id,
-    Index,
-    isUndefined,
-    Max,
-    NOT_FOUND,
-    Popularity,
-    TwoThreeFreeClass,
-    Votes,
-} from "../../general"
-import {
-    APOTOME_CENTS,
-    computeMaybeSymbolClassId,
-    computeNotatingCommas,
-    getSmallestSymbolSubset,
-    JI_NOTATION_SYMBOL_SUBSETS,
-    N2D3P9,
-    SymbolClass,
-    SymbolSubset,
-} from "../../sagittal"
-import { computeBestNotatingComma } from "./bestNotatingComma"
-import { computeExactlyNotatingSymbolClassIds } from "./exactlyNotatingSymbolClassIds"
+import { COMMA_POPULARITIES, equalJiPitches, isUndefined, Popularity, TwoThreeFreeClass, Votes } from "../../general"
+import { N2D3P9 } from "../../sagittal"
+import { computeBestNotatingCommaProperties } from "./bestNotatingComma"
+import { computeExactlyNotatingSymbolClassProperties } from "./exactlyNotatingSymbolClass"
 import { popular23FreeClassesScriptGroupSettings } from "./globals"
 import { Popular23FreeClass } from "./types"
 
@@ -39,36 +16,10 @@ const computePopular23FreeClass = (
 
     let bestNotatingCommaOrExactlyNotatingSymbolClassProperties
     if (popular23FreeClassesScriptGroupSettings.useBestNotatingCommas) {
-        const notatingCommas =
-            computeNotatingCommas(twoThreeFreeClass, { maxCents: APOTOME_CENTS / 2 as Max<Cents> })
-        const bestNotatingComma = computeBestNotatingComma(notatingCommas)
-        const maybeSymbolClassId = computeMaybeSymbolClassId(bestNotatingComma)
-
-        bestNotatingCommaOrExactlyNotatingSymbolClassProperties = {
-            bestNotatingCommaCents: computeCentsFromPitch(bestNotatingComma),
-            bestNotatingCommaMonzo: computeJiPitchMonzo(bestNotatingComma),
-            bestNotatingCommaMaybeSymbolClassId: maybeSymbolClassId,
-        }
+        bestNotatingCommaOrExactlyNotatingSymbolClassProperties = computeBestNotatingCommaProperties(twoThreeFreeClass)
     } else {
-        const exactlyNotatingSymbolClassIds = computeExactlyNotatingSymbolClassIds(twoThreeFreeClass)
-
-        const smallestJiNotationSymbolSubsetIndices = exactlyNotatingSymbolClassIds
-            .map((symbolClassId: Id<SymbolClass>): Index<SymbolSubset> => {
-                let symbolSubsetIndex = JI_NOTATION_SYMBOL_SUBSETS.indexOf(getSmallestSymbolSubset(symbolClassId))
-
-                // the smallest symbol subset method will include Trojan, but for these purposes
-                // we only care about the smallest subset in the JI notation hierarchy
-                symbolSubsetIndex = symbolSubsetIndex === NOT_FOUND ?
-                    JI_NOTATION_SYMBOL_SUBSETS.indexOf(SymbolSubset.PROMETHEAN) :
-                    symbolSubsetIndex
-
-                return symbolSubsetIndex as Index<SymbolSubset>
-            })
-
-        bestNotatingCommaOrExactlyNotatingSymbolClassProperties = {
-            exactlyNotatingSymbolClassIds,
-            exactlyNotatingSymbolClassSmallestJiNotationSymbolSubsetIndices: smallestJiNotationSymbolSubsetIndices,
-        }
+        bestNotatingCommaOrExactlyNotatingSymbolClassProperties =
+            computeExactlyNotatingSymbolClassProperties(twoThreeFreeClass)
     }
 
     return {

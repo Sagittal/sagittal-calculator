@@ -1,87 +1,41 @@
+import { Count, count, formatTable, Io, Max, Ranked, Row, sumTexts, Table } from "../../../general"
+import { N2D3P9 } from "../../../sagittal"
 import {
-    BLANK,
-    Count,
-    count,
-    format23FreeClass,
-    formatMonzo,
-    formatNumber,
-    formatTable,
-    Formatted,
-    Id,
-    Io,
-    ioSettings,
-    isUndefined,
-    Max,
-    Ranked,
-    Row,
-    SPACE,
-    sumTexts,
-    Table,
-} from "../../../general"
-import { formatSymbolClass, N2D3P9, SymbolClass, SymbolLongAscii, SymbolSmiley } from "../../../sagittal"
-import { popular23FreeClassesScriptGroupSettings } from "../globals"
-import {
-    Popular23FreeClass,
-    Popular23FreeClassWithBestNotatingComma,
-    Popular23FreeClassWithExactlyNotatingSymbolClasses,
-} from "../types"
-import {
+    BestNotatingCommaProperties,
     computePopular23FreeClassWithBestNotatingCommaHeaderRows,
+    computePopular23FreeClassWithBestNotatingCommaRow,
+} from "../bestNotatingComma"
+import {
     computePopular23FreeClassWithExactlyNotatingSymbolClassesHeaderRows,
-} from "./headerRows"
+    computePopular23FreeClassWithExactlyNotatingSymbolClassRow,
+    ExactlyNotatingSymbolClassProperties,
+} from "../exactlyNotatingSymbolClass"
+import { popular23FreeClassesScriptGroupSettings } from "../globals"
+import { Popular23FreeClass } from "../types"
 
 const computePopular23FreeClassesOutput = (
     popular23FreeClasses: Array<Ranked<Popular23FreeClass>>,
     maxN2D3P9: Max<N2D3P9>,
 ): Io => {
-    const table: Table<Popular23FreeClass> = popular23FreeClassesScriptGroupSettings.useBestNotatingCommas ?
+    const headerRows: Table<Popular23FreeClass> = popular23FreeClassesScriptGroupSettings.useBestNotatingCommas ?
         computePopular23FreeClassWithBestNotatingCommaHeaderRows() :
         computePopular23FreeClassWithExactlyNotatingSymbolClassesHeaderRows()
-    const headerRowCount = count(table) as Count<Row<{ of: Popular23FreeClass, header: true }>>
+    const headerRowCount = count(headerRows) as Count<Row<{ of: Popular23FreeClass, header: true }>>
 
-    popular23FreeClasses.forEach((popular23FreeClass: Ranked<Popular23FreeClass>): void => {
-        if (popular23FreeClassesScriptGroupSettings.useBestNotatingCommas) {
-            const {
-                rank: estimatedRank,
-                bestNotatingCommaCents,
-                bestNotatingCommaMonzo,
-                bestNotatingCommaMaybeSymbolClassId,
-            } = popular23FreeClass as Ranked<Popular23FreeClassWithBestNotatingComma>
+    const rows = popular23FreeClasses
+        .map((popular23FreeClass: Ranked<Popular23FreeClass>): Row<{ of: Popular23FreeClass }> => {
+            if (popular23FreeClassesScriptGroupSettings.useBestNotatingCommas) {
+                return computePopular23FreeClassWithBestNotatingCommaRow(
+                    popular23FreeClass as Ranked<Popular23FreeClass & BestNotatingCommaProperties>,
+                )
+            } else {
+                return computePopular23FreeClassWithExactlyNotatingSymbolClassRow(
+                    popular23FreeClass as Ranked<Popular23FreeClass & ExactlyNotatingSymbolClassProperties>,
+                )
+            }
+        })
 
-            table.push([
-                format23FreeClass(popular23FreeClass),
-                estimatedRank,
-                formatNumber(bestNotatingCommaCents),
-                formatMonzo(bestNotatingCommaMonzo),
-                isUndefined(bestNotatingCommaMaybeSymbolClassId) ?
-                    BLANK :
-                    formatSymbolClass(bestNotatingCommaMaybeSymbolClassId, ioSettings),
-            ] as Row<{ of: Popular23FreeClassWithExactlyNotatingSymbolClasses, header: true }>)
-        } else {
-            const {
-                n2d3p9,
-                rank: estimatedRank,
-                popularityRank: actualRank,
-                exactlyNotatingSymbolClassSmallestJiNotationSymbolSubsetIndices,
-                exactlyNotatingSymbolClassIds,
-                votes,
-            } = popular23FreeClass as Ranked<Popular23FreeClassWithExactlyNotatingSymbolClasses>
-
-            table.push([
-                format23FreeClass(popular23FreeClass),
-                formatNumber(n2d3p9),
-                exactlyNotatingSymbolClassIds.map(
-                    (exactlyNotatingSymbolClassId: Id<SymbolClass>): Formatted<SymbolSmiley | SymbolLongAscii> => {
-                        return formatSymbolClass(exactlyNotatingSymbolClassId, ioSettings)
-                    },
-                ).join(SPACE),
-                exactlyNotatingSymbolClassSmallestJiNotationSymbolSubsetIndices.join(", "),
-                estimatedRank,
-                isUndefined(actualRank) ? "-" : actualRank,
-                votes,
-            ] as Row<{ of: Popular23FreeClass, header: true }>)
-        }
-    })
+    const table = [...headerRows, ...rows]
 
     const popular23FreeClassesOutput: Io = formatTable(table, { headerRowCount })
 

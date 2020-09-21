@@ -1,6 +1,6 @@
-import { Id, Monzo } from "../../../../src/general"
-import { SymbolClass } from "../../../../src/sagittal/notations"
-import { computeExactlyNotatingSymbolClassIds } from "../../../../src/scripts/popular23FreeClass/exactlyNotatingSymbolClassIds"
+import { Id, Monzo } from "../../../../../src/general"
+import { SymbolClass } from "../../../../../src/sagittal/notations"
+import { computeExactlyNotatingSymbolClassIds } from "../../../../../src/scripts/popular23FreeClass/exactlyNotatingSymbolClass/exactlyNotatingSymbolClassIds"
 
 describe("computeExactlyNotatingSymbolClassIds", (): void => {
     it(

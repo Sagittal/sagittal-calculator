@@ -1,5 +1,7 @@
-import { Cents, Id, Index, Maybe, Monzo, Popularity, Rank, TwoThreeFreeClass, Votes } from "../../general"
-import { N2D3P9, SymbolClass, SymbolSubset } from "../../sagittal"
+import { Popularity, Rank, TwoThreeFreeClass, Votes } from "../../general"
+import { N2D3P9 } from "../../sagittal"
+import { BestNotatingCommaProperties } from "./bestNotatingComma"
+import { ExactlyNotatingSymbolClassProperties } from "./exactlyNotatingSymbolClass"
 
 type SharedPopular23FreeClassProperties = TwoThreeFreeClass & {
     n2d3p9: N2D3P9,
@@ -7,18 +9,8 @@ type SharedPopular23FreeClassProperties = TwoThreeFreeClass & {
     popularityRank?: Rank<Popularity>,
 }
 
-type Popular23FreeClassWithExactlyNotatingSymbolClasses = SharedPopular23FreeClassProperties & {
-    exactlyNotatingSymbolClassSmallestJiNotationSymbolSubsetIndices: Array<Index<SymbolSubset>>,
-    exactlyNotatingSymbolClassIds: Array<Id<SymbolClass>>,
-}
-
-type Popular23FreeClassWithBestNotatingComma = SharedPopular23FreeClassProperties & {
-    bestNotatingCommaCents: Cents,
-    bestNotatingCommaMonzo: Monzo,
-    bestNotatingCommaMaybeSymbolClassId: Maybe<Id<SymbolClass>>,
-}
-
-type Popular23FreeClass = Popular23FreeClassWithExactlyNotatingSymbolClasses | Popular23FreeClassWithBestNotatingComma
+type Popular23FreeClass = SharedPopular23FreeClassProperties
+    & (ExactlyNotatingSymbolClassProperties | BestNotatingCommaProperties)
 
 interface Popular23FreeClassesScriptGroupSettings {
     useLate: boolean,
@@ -28,7 +20,5 @@ interface Popular23FreeClassesScriptGroupSettings {
 
 export {
     Popular23FreeClass,
-    Popular23FreeClassWithExactlyNotatingSymbolClasses,
-    Popular23FreeClassWithBestNotatingComma,
     Popular23FreeClassesScriptGroupSettings,
 }
