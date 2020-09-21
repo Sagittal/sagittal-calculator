@@ -40,12 +40,17 @@ type SymbolClassAnalysis = Omit<SymbolClass, "primaryCommaId"> & {
 interface Symbol {
     id: Id<Symbol>,
     revoAscii: SymbolLongAscii,
-    evoAscii: SymbolLongAscii,
-    revoUnicode: SymbolUnicode, // todo: perhaps these should be parameterized, Evo or Revo, and that enum is Flavor?
-    evoUnicode: SymbolUnicode,
+    evoAscii: SymbolLongAscii<Flavor.EVO>,
+    revoUnicode: SymbolUnicode,
+    evoUnicode: SymbolUnicode<Flavor.EVO>,
     symbolClassId: Id<SymbolClass>,
     commaDirection: Direction,
     apotomeCount: Count<Apotome>,
+}
+
+enum Flavor {
+    EVO = "evo",
+    REVO = "revo",
 }
 
 export {
@@ -55,4 +60,5 @@ export {
     Symbol,
     SymbolClassAnalysis,
     SagittalCommaAnalysis,
+    Flavor,
 }

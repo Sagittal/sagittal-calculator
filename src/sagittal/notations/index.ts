@@ -22,7 +22,7 @@ export {
     BoundType,
 } from "./ji"
 export { APOTOME } from "./sagittalCommas"
-export { SagittalComma, SymbolClass, Symbol, SymbolClassAnalysis, SymbolSubset } from "./types"
+export { SagittalComma, SymbolClass, Symbol, SymbolClassAnalysis, SymbolSubset, Flavor } from "./types"
 export { SYMBOL_CLASSES } from "./symbolClasses"
 export { SYMBOL_SUBSETS } from "./symbolSubsets"
 export { SYMBOLS } from "./symbols"

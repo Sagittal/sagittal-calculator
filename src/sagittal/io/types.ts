@@ -1,8 +1,9 @@
 import { Io } from "../../general"
+import { Flavor } from "../notations"
 
-type SymbolLongAscii = Io & { _SymbolLongAsciiBrand: boolean }
-type SymbolUnicode = Io & { _SymbolUnicodeBrand: boolean }
-type SymbolSmiley = Io & { _SymbolSmileyBrand: boolean }
+type SymbolLongAscii<T extends Flavor = Flavor.REVO> = Io & { _SymbolLongAsciiBrand: boolean, _FlavorBrand: T }
+type SymbolUnicode<T extends Flavor = Flavor.REVO> = Io & { _SymbolUnicodeBrand: boolean, _FlavorBrand: T }
+type SymbolSmiley<T extends Flavor = Flavor.REVO> = Io & { _SymbolSmileyBrand: boolean, _FlavorBrand: T }
 
 export {
     SymbolLongAscii,
