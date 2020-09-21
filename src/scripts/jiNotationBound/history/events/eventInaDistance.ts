@@ -1,15 +1,19 @@
 import { Multiplier } from "../../../../general"
 import { Ina } from "../../../../sagittal"
-import { HistoricalEvent, History } from "../../histories"
-import { computeEventDistance } from "./eventDistance"
+import { BoundEvent, BoundHistory } from "../../histories"
+import { computeBoundEventDistance } from "./eventDistance"
 import { computeInaDistance } from "./inaDistance"
 
-const computeEventInaDistance = (event: HistoricalEvent, index: number, history: History): Multiplier<Ina> =>
+const computeBoundEventInaDistance = (
+    boundEvent: BoundEvent,
+    index: number,
+    boundHistory: BoundHistory,
+): Multiplier<Ina> =>
     computeInaDistance(
-        computeEventDistance(event, index, history),
-        event.jiNotationLevel,
+        computeBoundEventDistance(boundEvent, index, boundHistory),
+        boundEvent.jiNotationLevel,
     )
 
 export {
-    computeEventInaDistance,
+    computeBoundEventInaDistance,
 }

@@ -6,7 +6,7 @@ import { JI_NOTATION_BOUND_ANALYSES_TABLE_TITLE } from "../titles"
 import { computeJiNotationBoundRow } from "./boundRow"
 import { computeJiNotationBoundAnalysesHeaderRows } from "./headerRows"
 
-const computeJiNotationBoundAnalysesTable = (jiNotationBoundAnalyses: JiNotationBoundAnalysis[]): Io => {
+const computeJiNotationBoundAnalysesOutput = (jiNotationBoundAnalyses: JiNotationBoundAnalysis[]): Io => {
     const table: Table<JiNotationBoundAnalysis> = computeJiNotationBoundAnalysesHeaderRows()
     const colors: ColorMethod[] = ["white", "white", "white", "white", "white", "white"]
     const headerRowCount: Count<Row<{ of: JiNotationBoundAnalysis, header: true }>> =
@@ -22,5 +22,5 @@ const computeJiNotationBoundAnalysesTable = (jiNotationBoundAnalyses: JiNotation
 }
 
 export {
-    computeJiNotationBoundAnalysesTable,
+    computeJiNotationBoundAnalysesOutput,
 }

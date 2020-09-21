@@ -1,14 +1,14 @@
 import { computeExtensionBase, ExtensionBaseType } from "../../../general"
 import { JiNotationBound, JiNotationLevel } from "../../../sagittal"
-import { computeExtendedJiNotationLevelHistories } from "./extendedLevelHistories"
-import { History } from "./types"
+import { computeExtendedJiNotationLevelBoundHistories } from "./extendedLevelHistories"
+import { BoundHistory } from "./types"
 
-const computeHistories = (jiNotationBound: JiNotationBound): History[] => {
+const computeHistories = (jiNotationBound: JiNotationBound): BoundHistory[] => {
     const { jiNotationLevels } = jiNotationBound
 
-    let histories: History[] = [computeExtensionBase(ExtensionBaseType.ARRAY)] as History[]
+    let histories: BoundHistory[] = [computeExtensionBase(ExtensionBaseType.ARRAY)] as BoundHistory[]
     jiNotationLevels.forEach((jiNotationLevel: JiNotationLevel): void => {
-        histories = computeExtendedJiNotationLevelHistories(histories, jiNotationLevel, jiNotationBound)
+        histories = computeExtendedJiNotationLevelBoundHistories(histories, jiNotationLevel, jiNotationBound)
     })
 
     return histories

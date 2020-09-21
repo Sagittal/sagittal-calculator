@@ -1,4 +1,4 @@
-import { Cents, CentsPosition, Maybe, Name, Pitch } from "../../../general"
+import { Cents, CentsPosition, Maybe, Name } from "../../../general"
 import {
     APOTOME_CENTS,
     JiNotationLevel,

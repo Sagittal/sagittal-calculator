@@ -1,5 +1,5 @@
-import { Id, Io, Row, splitColumnTitlesIntoRowsBySpaces, TwoThreeFreeClass } from "../../../general"
-import { CommaAnalysis, JiPitchAnalysis, SymbolClass } from "../../../sagittal"
+import { Io, Row, splitColumnTitlesIntoRowsBySpaces, TwoThreeFreeClass } from "../../../general"
+import { CommaAnalysis, JiPitchAnalysis } from "../../../sagittal"
 
 const JI_PITCH_COLUMN_TITLES = [
     "ratio",

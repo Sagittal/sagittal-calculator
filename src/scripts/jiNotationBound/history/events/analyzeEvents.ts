@@ -1,20 +1,20 @@
 import { Cents, isCloseTo } from "../../../../general"
-import { HistoricalEvent, History } from "../../histories"
+import { BoundEvent, BoundHistory } from "../../histories"
 import { RANKS } from "../../ranks"
-import { computeEventDistance } from "./eventDistance"
-import { computeEventInaDistance } from "./eventInaDistance"
-import { EventAnalysis } from "./types"
+import { computeBoundEventDistance } from "./eventDistance"
+import { computeBoundEventInaDistance } from "./eventInaDistance"
+import { BoundEventAnalysis } from "./types"
 
-const analyzeEvents = (history: History, actualJiNotationBoundCents: Cents): EventAnalysis[] =>
-    history.map((event: HistoricalEvent, index: number): EventAnalysis => {
-        const { cents, type } = event
+const analyzeBoundEvents = (boundHistory: BoundHistory, actualJiNotationBoundCents: Cents): BoundEventAnalysis[] =>
+    boundHistory.map((boundEvent: BoundEvent, index: number): BoundEventAnalysis => {
+        const { cents, boundType } = boundEvent
         const exact = isCloseTo(cents, actualJiNotationBoundCents)
-        const rank = RANKS[ type ]
-        const distance = computeEventDistance(event, index, history)
-        const inaDistance = computeEventInaDistance(event, index, history)
+        const rank = RANKS[ boundType ]
+        const distance = computeBoundEventDistance(boundEvent, index, boundHistory)
+        const inaDistance = computeBoundEventInaDistance(boundEvent, index, boundHistory)
 
         return {
-            ...event,
+            ...boundEvent,
             rank,
             exact,
             distance,
@@ -23,5 +23,5 @@ const analyzeEvents = (history: History, actualJiNotationBoundCents: Cents): Eve
     })
 
 export {
-    analyzeEvents,
+    analyzeBoundEvents,
 }

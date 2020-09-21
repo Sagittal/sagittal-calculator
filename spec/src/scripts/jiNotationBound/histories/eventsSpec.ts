@@ -1,34 +1,34 @@
-import { Cents, Name, Pitch } from "../../../../../src/general"
-import { JiNotationLevel } from "../../../../../src/sagittal/notations/ji"
+import { Cents, Name } from "../../../../../src/general"
+import { BoundType, JiNotationLevel } from "../../../../../src/sagittal/notations/ji"
 import {
     BoundedSymbolClassPositions,
     computeBoundedSymbolClassPositions,
 } from "../../../../../src/scripts/jiNotationBound/boundedPositions"
-import { EventType, HistoricalEvent } from "../../../../../src/scripts/jiNotationBound/histories"
-import { computeEvents } from "../../../../../src/scripts/jiNotationBound/histories/events"
+import { BoundEvent, BoundPosition } from "../../../../../src/scripts/jiNotationBound/histories"
+import { computeBoundEvents } from "../../../../../src/scripts/jiNotationBound/histories/events"
 
-describe("computeEvents", (): void => {
+describe("computeBoundEvents", (): void => {
     let jiNotationLevel: JiNotationLevel
     let boundedSymbolClassPositions: BoundedSymbolClassPositions
-    let eventType: EventType
+    let boundType: BoundType
 
-    describe("returns an event for each snappable position between the bounded symbol class positions for this event type and JI notation level", (): void => {
+    describe("returns an event for each bound position between the bounded symbol class positions for this bound type and JI notation level", (): void => {
         describe("for events of snapping to ina midpoint positions", (): void => {
             beforeEach((): void => {
-                eventType = EventType.INA_MIDPOINT
+                boundType = BoundType.INA_MIDPOINT
             })
 
             it("works when only one ina midpoint is between the bounded symbols", (): void => {
                 jiNotationLevel = JiNotationLevel.ULTRA
                 boundedSymbolClassPositions = computeBoundedSymbolClassPositions(4.5 as Cents, jiNotationLevel)
 
-                const actual: HistoricalEvent[] = computeEvents(jiNotationLevel, boundedSymbolClassPositions, eventType)
+                const actual: BoundEvent[] = computeBoundEvents(jiNotationLevel, boundedSymbolClassPositions, boundType)
 
-                const expected: HistoricalEvent[] = [
+                const expected: BoundEvent[] = [
                     {
                         jiNotationLevel: JiNotationLevel.ULTRA,
-                        type: EventType.INA_MIDPOINT,
-                        name: "2.5°58" as Name<HistoricalEvent>,
+                        boundType: BoundType.INA_MIDPOINT,
+                        name: "2.5°58" as Name<BoundEvent>,
                         cents: 4.900215 as Cents,
                     },
                 ]
@@ -41,14 +41,14 @@ describe("computeEvents", (): void => {
                     jiNotationLevel = JiNotationLevel.ULTRA
                     boundedSymbolClassPositions = computeBoundedSymbolClassPositions(4.5 as Cents, jiNotationLevel)
 
-                    const actual: HistoricalEvent[] =
-                        computeEvents(jiNotationLevel, boundedSymbolClassPositions, eventType)
+                    const actual: BoundEvent[] =
+                        computeBoundEvents(jiNotationLevel, boundedSymbolClassPositions, boundType)
 
-                    const expected: HistoricalEvent[] = [
+                    const expected: BoundEvent[] = [
                         {
                             jiNotationLevel: JiNotationLevel.ULTRA,
-                            type: EventType.INA_MIDPOINT,
-                            name: "2.5°58" as Name<HistoricalEvent>,
+                            boundType: BoundType.INA_MIDPOINT,
+                            name: "2.5°58" as Name<BoundEvent>,
                             cents: 4.900215 as Cents,
                         },
                     ]
@@ -60,19 +60,19 @@ describe("computeEvents", (): void => {
                 jiNotationLevel = JiNotationLevel.HIGH
                 boundedSymbolClassPositions = computeBoundedSymbolClassPositions(28.0 as Cents, jiNotationLevel)
 
-                const actual = computeEvents(jiNotationLevel, boundedSymbolClassPositions, eventType)
+                const actual = computeBoundEvents(jiNotationLevel, boundedSymbolClassPositions, boundType)
 
                 const expected = [
                     {
                         jiNotationLevel: JiNotationLevel.HIGH,
-                        type: EventType.INA_MIDPOINT,
-                        name: "11.5°47" as Name<HistoricalEvent>,
+                        boundType: BoundType.INA_MIDPOINT,
+                        name: "11.5°47" as Name<BoundEvent>,
                         cents: 27.816544 as Cents,
                     },
                     {
                         jiNotationLevel: JiNotationLevel.HIGH,
-                        type: EventType.INA_MIDPOINT,
-                        name: "12.5°47" as Name<HistoricalEvent>,
+                        boundType: BoundType.INA_MIDPOINT,
+                        name: "12.5°47" as Name<BoundEvent>,
                         cents: 30.235373 as Cents,
                     },
                 ]
@@ -85,9 +85,9 @@ describe("computeEvents", (): void => {
                     jiNotationLevel = JiNotationLevel.ULTRA
                     boundedSymbolClassPositions = computeBoundedSymbolClassPositions(6.05 as Cents, jiNotationLevel)
 
-                    const actual = computeEvents(jiNotationLevel, boundedSymbolClassPositions, eventType)
+                    const actual = computeBoundEvents(jiNotationLevel, boundedSymbolClassPositions, boundType)
 
-                    const expected = [] as HistoricalEvent[]
+                    const expected = [] as BoundEvent[]
                     expect(actual).toEqual(expected)
                 },
             )
@@ -95,20 +95,20 @@ describe("computeEvents", (): void => {
 
         describe("for events of snapping to comma mean positions", (): void => {
             beforeEach((): void => {
-                eventType = EventType.COMMA_MEAN
+                boundType = BoundType.COMMA_MEAN
             })
 
             it("works at the Medium JI notation level", (): void => {
                 jiNotationLevel = JiNotationLevel.MEDIUM
                 boundedSymbolClassPositions = computeBoundedSymbolClassPositions(26.25 as Cents, jiNotationLevel)
 
-                const actual = computeEvents(jiNotationLevel, boundedSymbolClassPositions, eventType)
+                const actual = computeBoundEvents(jiNotationLevel, boundedSymbolClassPositions, boundType)
 
                 const expected = [
                     {
                         jiNotationLevel: JiNotationLevel.MEDIUM,
-                        type: EventType.COMMA_MEAN,
-                        name: "/| |)" as Name<Pitch>,
+                        boundType: BoundType.COMMA_MEAN,
+                        name: "/| |)" as Name<BoundPosition>,
                         cents: 24.385190 as Cents,
                     },
                 ]
@@ -119,13 +119,13 @@ describe("computeEvents", (): void => {
                 jiNotationLevel = JiNotationLevel.HIGH
                 boundedSymbolClassPositions = computeBoundedSymbolClassPositions(26.25 as Cents, jiNotationLevel)
 
-                const actual = computeEvents(jiNotationLevel, boundedSymbolClassPositions, eventType)
+                const actual = computeBoundEvents(jiNotationLevel, boundedSymbolClassPositions, boundType)
 
                 const expected = [
                     {
                         jiNotationLevel: JiNotationLevel.HIGH,
-                        type: EventType.COMMA_MEAN,
-                        name: ")/| |)" as Name<Pitch>,
+                        boundType: BoundType.COMMA_MEAN,
+                        name: ")/| |)" as Name<BoundPosition>,
                         cents: 26.074200 as Cents,
                     },
                 ]
@@ -136,13 +136,13 @@ describe("computeEvents", (): void => {
                 jiNotationLevel = JiNotationLevel.ULTRA
                 boundedSymbolClassPositions = computeBoundedSymbolClassPositions(26.25 as Cents, jiNotationLevel)
 
-                const actual = computeEvents(jiNotationLevel, boundedSymbolClassPositions, eventType)
+                const actual = computeBoundEvents(jiNotationLevel, boundedSymbolClassPositions, boundType)
 
                 const expected = [
                     {
                         jiNotationLevel: JiNotationLevel.ULTRA,
-                        type: EventType.COMMA_MEAN,
-                        name: ".|) |)" as Name<Pitch>,
+                        boundType: BoundType.COMMA_MEAN,
+                        name: ".|) |)" as Name<BoundPosition>,
                         cents: 26.287231 as Cents,
                     },
                 ]
@@ -153,13 +153,13 @@ describe("computeEvents", (): void => {
                 jiNotationLevel = JiNotationLevel.EXTREME
                 boundedSymbolClassPositions = computeBoundedSymbolClassPositions(26.25 as Cents, jiNotationLevel)
 
-                const actual = computeEvents(jiNotationLevel, boundedSymbolClassPositions, eventType)
+                const actual = computeBoundEvents(jiNotationLevel, boundedSymbolClassPositions, boundType)
 
                 const expected = [
                     {
                         jiNotationLevel: JiNotationLevel.EXTREME,
-                        type: EventType.COMMA_MEAN,
-                        name: "`.|) ,,|)" as Name<Pitch>,
+                        boundType: BoundType.COMMA_MEAN,
+                        name: "`.|) ,,|)" as Name<BoundPosition>,
                         cents: 26.220209 as Cents,
                     },
                 ]
@@ -177,13 +177,13 @@ describe("computeEvents", (): void => {
                     jiNotationLevel = JiNotationLevel.HIGH
                     boundedSymbolClassPositions = computeBoundedSymbolClassPositions(30.5 as Cents, jiNotationLevel)
 
-                    const actual = computeEvents(jiNotationLevel, boundedSymbolClassPositions, eventType)
+                    const actual = computeBoundEvents(jiNotationLevel, boundedSymbolClassPositions, boundType)
 
                     const expected = [
                         {
                             jiNotationLevel: JiNotationLevel.HIGH,
-                            type: EventType.COMMA_MEAN,
-                            name: "|) )|)" as Name<Pitch>,
+                            boundType: BoundType.COMMA_MEAN,
+                            name: "|) )|)" as Name<BoundPosition>,
                             cents: 28.953101 as Cents,
                         },
                     ]
@@ -194,20 +194,20 @@ describe("computeEvents", (): void => {
 
         describe("for events of snapping to size category bound positions", (): void => {
             beforeEach((): void => {
-                eventType = EventType.SIZE_CATEGORY_BOUND
+                boundType = BoundType.SIZE_CATEGORY_BOUND
             })
 
             it("returns one event for each size category bound between the position's bounded symbols", (): void => {
                 jiNotationLevel = JiNotationLevel.MEDIUM
                 boundedSymbolClassPositions = computeBoundedSymbolClassPositions(34.0 as Cents, jiNotationLevel)
 
-                const actual = computeEvents(jiNotationLevel, boundedSymbolClassPositions, eventType)
+                const actual = computeBoundEvents(jiNotationLevel, boundedSymbolClassPositions, boundType)
 
                 const expected = [
                     {
                         jiNotationLevel: JiNotationLevel.MEDIUM,
-                        type: EventType.SIZE_CATEGORY_BOUND,
-                        name: "C|S" as Name<Pitch>,
+                        boundType: BoundType.SIZE_CATEGORY_BOUND,
+                        name: "C|S" as Name<BoundPosition>,
                         cents: 33.382492 as Cents,
                     },
                 ]
@@ -220,9 +220,9 @@ describe("computeEvents", (): void => {
                     jiNotationLevel = JiNotationLevel.ULTRA
                     boundedSymbolClassPositions = computeBoundedSymbolClassPositions(6.05 as Cents, jiNotationLevel)
 
-                    const actual = computeEvents(jiNotationLevel, boundedSymbolClassPositions, eventType)
+                    const actual = computeBoundEvents(jiNotationLevel, boundedSymbolClassPositions, boundType)
 
-                    const expected = [] as HistoricalEvent[]
+                    const expected = [] as BoundEvent[]
                     expect(actual).toEqual(expected)
                 },
             )

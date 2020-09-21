@@ -1,13 +1,13 @@
 import { Abs, abs, Cents, subtract } from "../../../../general"
-import { HistoricalEvent, History } from "../../histories"
+import { BoundEvent, BoundHistory } from "../../histories"
 
-const computeEventDistance = (event: HistoricalEvent, index: number, history: History): Abs<Cents> =>
+const computeBoundEventDistance = (boundEvent: BoundEvent, index: number, boundHistory: BoundHistory): Abs<Cents> =>
     abs(
         index === 0 ?
             0 as Cents :
-            subtract(history[ index - 1 ].cents, event.cents)
+            subtract(boundHistory[ index - 1 ].cents, boundEvent.cents),
     )
 
 export {
-    computeEventDistance,
+    computeBoundEventDistance,
 }

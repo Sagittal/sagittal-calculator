@@ -1,6 +1,7 @@
 import {
     ACCURACY_THRESHOLD,
-    computeIsSubMonzo, computeTrimmedArray,
+    computeIsSubMonzo,
+    computeTrimmedArray,
     Exponent,
     Extrema,
     Filename,

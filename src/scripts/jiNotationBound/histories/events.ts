@@ -1,35 +1,35 @@
-import { CentsPosition, Name, Pitch } from "../../../general"
-import { JiNotationLevel } from "../../../sagittal"
+import { Name } from "../../../general"
+import { BoundType, JiNotationLevel } from "../../../sagittal"
 import { BoundedSymbolClassPositions } from "../boundedPositions"
-import { EVENT_TYPE_SNAPPABLE_POSITIONS } from "./snappablePositions"
-import { EventType, HistoricalEvent, SnappablePosition } from "./types"
+import { BOUND_POSITIONS_BY_BOUND_TYPE } from "./boundPositions"
+import { BoundEvent, BoundPosition } from "./types"
 
-const computeEvents = (
+const computeBoundEvents = (
     jiNotationLevel: JiNotationLevel,
     [lesserBoundedSymbolPosition, greaterBoundedSymbolPosition]: BoundedSymbolClassPositions,
-    type: EventType,
-): HistoricalEvent[] => {
-    const events: HistoricalEvent[] = []
+    boundType: BoundType,
+): BoundEvent[] => {
+    const boundEvent: BoundEvent[] = []
 
-    const snappablePositions = EVENT_TYPE_SNAPPABLE_POSITIONS[ type ][ jiNotationLevel ]
+    const boundPositions = BOUND_POSITIONS_BY_BOUND_TYPE[ boundType ][ jiNotationLevel ]
 
-    snappablePositions.forEach((snappablePosition: SnappablePosition): void => {
+    boundPositions.forEach((boundPosition: BoundPosition): void => {
         if (
-            (!lesserBoundedSymbolPosition || snappablePosition.cents > lesserBoundedSymbolPosition) &&
-            (!greaterBoundedSymbolPosition || snappablePosition.cents < greaterBoundedSymbolPosition)
+            (!lesserBoundedSymbolPosition || boundPosition.cents > lesserBoundedSymbolPosition) &&
+            (!greaterBoundedSymbolPosition || boundPosition.cents < greaterBoundedSymbolPosition)
         ) {
-            events.push({
+            boundEvent.push({
                 jiNotationLevel,
-                type,
-                name: snappablePosition.name || "" as Name<Pitch>,
-                cents: snappablePosition.cents,
+                boundType: boundType,
+                name: boundPosition.name || "" as Name<BoundPosition>,
+                cents: boundPosition.cents,
             })
         }
     })
 
-    return events
+    return boundEvent
 }
 
 export {
-    computeEvents,
+    computeBoundEvents,
 }

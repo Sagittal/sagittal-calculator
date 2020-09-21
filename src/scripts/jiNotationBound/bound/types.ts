@@ -1,18 +1,17 @@
 import { Cents, Count, Integer, Multiplier, Rank, Sum } from "../../../general"
-import { Ina, Tina } from "../../../sagittal"
-import { HistoryConsolidation } from "../consolidateHistories"
-import { EventType } from "../histories"
-import { HistoryAnalysis } from "../history"
+import { BoundType, Ina, Tina } from "../../../sagittal"
+import { BoundHistoryConsolidation } from "../consolidateHistories"
+import { BoundHistoryAnalysis } from "../history"
 
 interface JiNotationBoundAnalysis {
-    bestPossibleHistory: HistoryAnalysis,
-    bestPossibleHistoryTotalDistance: Cents,
-    bestPossibleHistoryTotalInaDistance: Sum<Multiplier<Ina>>,
-    bestRank: Integer & Rank<EventType>,
-    historyConsolidation: HistoryConsolidation,
+    bestRank: Integer & Rank<BoundType>,
     initialPosition: Cents,
     initialPositionTinaDistance: Multiplier<Tina>,
-    possibleHistoryCount: Count<HistoryAnalysis>,
+    possibleBoundHistoryCount: Count<BoundHistoryAnalysis>,
+    bestPossibleBoundHistoryAnalysis: BoundHistoryAnalysis,
+    bestPossibleBoundHistoryTotalDistance: Cents,
+    bestPossibleBoundHistoryTotalInaDistance: Sum<Multiplier<Ina>>,
+    boundHistoryConsolidation: BoundHistoryConsolidation,
 }
 
 export {

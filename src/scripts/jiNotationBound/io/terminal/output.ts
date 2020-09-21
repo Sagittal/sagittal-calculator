@@ -1,11 +1,11 @@
 import { concat, Io } from "../../../../general"
 import { JiNotationBoundAnalysis } from "../../bound"
-import { computeJiNotationBoundAnalysesTable } from "./bounds"
+import { computeJiNotationBoundAnalysesOutput } from "./bounds"
 import { formatJiNotationLevelAnalyses } from "./level"
 import { formatRankAnalyses } from "./rank"
 
-const computeJiNotationBoundsTables = (jiNotationBoundAnalyses: JiNotationBoundAnalysis[]): Io => {
-    let output: Io = computeJiNotationBoundAnalysesTable(jiNotationBoundAnalyses)
+const computeJiNotationBoundsOutput = (jiNotationBoundAnalyses: JiNotationBoundAnalysis[]): Io => {
+    let output: Io = computeJiNotationBoundAnalysesOutput(jiNotationBoundAnalyses)
     output = concat(output, formatJiNotationLevelAnalyses())
     output = concat(output, formatRankAnalyses())
 
@@ -13,5 +13,5 @@ const computeJiNotationBoundsTables = (jiNotationBoundAnalyses: JiNotationBoundA
 }
 
 export {
-    computeJiNotationBoundsTables,
+    computeJiNotationBoundsOutput,
 }

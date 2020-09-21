@@ -1,4 +1,4 @@
-import { Apotome, Comma, Count, Direction, Id, Monzo, Name, NumericTypeParameters } from "../../general"
+import { Apotome, Comma, Count, Direction, Id, Name, NumericTypeParameters } from "../../general"
 import { SymbolLongAscii, SymbolUnicode } from "../io"
 import { CommaAnalysis } from "../ji"
 import { JiNotationLevel, Mina } from "./ji"

@@ -1,43 +1,47 @@
 import { count, Multiplier } from "../../../general"
 import { JiNotationBound, Tina, TINA } from "../../../sagittal"
-import { consolidateHistories } from "../consolidateHistories"
-import { History } from "../histories"
-import { analyzeHistory, HistoryAnalysis } from "../history"
-import { computeBestPossibleHistory } from "./bestPossibleHistory"
+import { consolidateBoundHistories } from "../consolidateHistories"
+import { BoundHistory } from "../histories"
+import { analyzeHistory, BoundHistoryAnalysis } from "../history"
+import { computeBestPossibleBoundHistoryAnalysis } from "./bestPossibleHistory"
 import { computeInitialPosition } from "./initialPosition"
 import { updateJiNotationLevelAnalysis } from "./levels"
 import { updateRankAnalysis } from "./ranks"
 import { JiNotationBoundAnalysis } from "./types"
 
-const analyzeJiNotationBound = (histories: History[], jiNotationBound: JiNotationBound): JiNotationBoundAnalysis => {
+const analyzeJiNotationBound = (
+    boundHistories: BoundHistory[],
+    jiNotationBound: JiNotationBound,
+): JiNotationBoundAnalysis => {
     const initialPosition = computeInitialPosition(jiNotationBound)
-    const historyAnalyses = histories
-        .map((history: History): HistoryAnalysis => analyzeHistory(history, jiNotationBound, initialPosition))
+    const boundHistoryAnalyses = boundHistories.map((boundHistory: BoundHistory): BoundHistoryAnalysis => {
+        return analyzeHistory(boundHistory, jiNotationBound, initialPosition)
+    })
 
-    const possibleHistories = historyAnalyses
-        .filter((historyAnalysis: HistoryAnalysis): boolean => historyAnalysis.possible)
-    const possibleHistoryCount = count(possibleHistories)
-    const bestPossibleHistory = computeBestPossibleHistory(possibleHistories)
-    const bestRank = bestPossibleHistory.rank
-    const bestPossibleHistoryTotalDistance = bestPossibleHistory.totalDistance
-    const bestPossibleHistoryTotalInaDistance = bestPossibleHistory.totalInaDistance
+    const possibleBoundHistories = boundHistoryAnalyses
+        .filter((boundHistoryAnalysis: BoundHistoryAnalysis): boolean => boundHistoryAnalysis.possible)
+    const possibleBoundHistoryCount = count(possibleBoundHistories)
+    const bestPossibleBoundHistoryAnalysis = computeBestPossibleBoundHistoryAnalysis(possibleBoundHistories)
+    const bestRank = bestPossibleBoundHistoryAnalysis.rank
+    const bestPossibleBoundHistoryTotalDistance = bestPossibleBoundHistoryAnalysis.totalDistance
+    const bestPossibleBoundHistoryTotalInaDistance = bestPossibleBoundHistoryAnalysis.totalInaDistance
 
     const initialPositionTinaDistance = (jiNotationBound.cents - initialPosition) / TINA as Multiplier<Tina>
 
     updateRankAnalysis(bestRank, jiNotationBound.id)
-    updateJiNotationLevelAnalysis(bestPossibleHistory)
+    updateJiNotationLevelAnalysis(bestPossibleBoundHistoryAnalysis)
 
-    const historyConsolidation = consolidateHistories(historyAnalyses, bestPossibleHistory)
+    const boundHistoryConsolidation = consolidateBoundHistories(boundHistoryAnalyses, bestPossibleBoundHistoryAnalysis)
 
     return {
         initialPosition,
-        possibleHistoryCount,
-        bestPossibleHistory,
+        possibleBoundHistoryCount,
+        bestPossibleBoundHistoryAnalysis,
         bestRank,
-        bestPossibleHistoryTotalDistance,
-        bestPossibleHistoryTotalInaDistance,
+        bestPossibleBoundHistoryTotalDistance,
+        bestPossibleBoundHistoryTotalInaDistance,
         initialPositionTinaDistance,
-        historyConsolidation: historyConsolidation,
+        boundHistoryConsolidation,
     }
 }
 

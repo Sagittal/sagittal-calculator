@@ -1,28 +1,28 @@
 import { Cents, isCloseTo, Multiplier } from "../../../general"
 import { JiNotationBound, Tina, TINA } from "../../../sagittal"
-import { History } from "../histories"
-import { analyzeEvents } from "./events"
+import { BoundHistory } from "../histories"
+import { analyzeBoundEvents } from "./events"
 import { computeExact } from "./exact"
-import { computeHistoryPosition } from "./historyPosition"
-import { computeHistoryTotalDistance } from "./historyTotalDistance"
-import { computeHistoryTotalInaDistance } from "./historyTotalInaDistance"
+import { computeBoundHistoryPosition } from "./historyPosition"
+import { computeBoundHistoryTotalDistance } from "./historyTotalDistance"
+import { computeBoundHistoryTotalInaDistance } from "./historyTotalInaDistance"
 import { computeRank } from "./rank"
 import { computeScore } from "./score"
-import { HistoryAnalysis } from "./types"
+import { BoundHistoryAnalysis } from "./types"
 
 const analyzeHistory = (
-    history: History,
+    boundHistory: BoundHistory,
     jiNotationBound: JiNotationBound,
     initialPosition: Cents,
-): HistoryAnalysis => {
-    const position = computeHistoryPosition(history)
+): BoundHistoryAnalysis => {
+    const position = computeBoundHistoryPosition(boundHistory)
 
-    const eventAnalyses = analyzeEvents(history, jiNotationBound.cents)
-    const rank = computeRank(eventAnalyses)
-    const score = computeScore(eventAnalyses)
-    const exact = computeExact(eventAnalyses)
-    const totalDistance = computeHistoryTotalDistance(eventAnalyses)
-    const totalInaDistance = computeHistoryTotalInaDistance(eventAnalyses)
+    const boundEventAnalyses = analyzeBoundEvents(boundHistory, jiNotationBound.cents)
+    const rank = computeRank(boundEventAnalyses)
+    const score = computeScore(boundEventAnalyses)
+    const exact = computeExact(boundEventAnalyses)
+    const totalDistance = computeBoundHistoryTotalDistance(boundEventAnalyses)
+    const totalInaDistance = computeBoundHistoryTotalInaDistance(boundEventAnalyses)
 
     const positionError = position - jiNotationBound.cents
     const possible = isCloseTo(positionError, 0)
@@ -36,7 +36,7 @@ const analyzeHistory = (
     const initialPositionTinaDistance = initialPositionDistance / TINA as Multiplier<Tina>
 
     return {
-        eventAnalyses,
+        boundEventAnalyses: boundEventAnalyses,
         cents: position,
         rank,
         score,

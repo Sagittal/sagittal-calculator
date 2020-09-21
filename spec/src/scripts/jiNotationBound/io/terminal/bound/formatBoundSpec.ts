@@ -1,7 +1,6 @@
 import { Cents, Id, NEWLINE } from "../../../../../../../src/general"
-import { JiNotationBound } from "../../../../../../../src/sagittal/notations/ji"
+import { BoundType, JiNotationBound } from "../../../../../../../src/sagittal/notations/ji"
 import { JiNotationBoundAnalysis } from "../../../../../../../src/scripts/jiNotationBound/bound"
-import { EventType } from "../../../../../../../src/scripts/jiNotationBound/histories"
 import { formatJiNotationBound } from "../../../../../../../src/scripts/jiNotationBound/io"
 import { RANKS } from "../../../../../../../src/scripts/jiNotationBound/ranks"
 import {
@@ -11,14 +10,14 @@ import {
 
 describe("formatJiNotationBound", (): void => {
     it("returns a string which is a multi-line, properly indented rendition of the JI notation bound analysis, as well as identifying information for the JI notation bound", (): void => {
-        const jiNotationBound = {
+        const jiNotationBound: JiNotationBound = {
             ...jiNotationBoundFixture,
             cents: 5.447635 as Cents,
             id: 10 as Id<JiNotationBound>,
         }
         const jiNotationBoundAnalysis: JiNotationBoundAnalysis = {
             ...jiNotationBoundAnalysisFixture,
-            bestRank: RANKS[ EventType.SIZE_CATEGORY_BOUND ],
+            bestRank: RANKS[ BoundType.SIZE_CATEGORY_BOUND ],
         }
 
         const actual = formatJiNotationBound(jiNotationBoundAnalysis, { jiNotationBound })
@@ -243,8 +242,8 @@ describe("formatJiNotationBound", (): void => {
             `    "greaterBoundedMinaName": "11"`,
             `}`,
             `{`,
-            `    "bestPossibleHistory": {`,
-            `        "eventAnalyses": [],`,
+            `    "bestPossibleBoundHistoryAnalysis": {`,
+            `        "boundEventAnalyses": [],`,
             `        "cents": 0,`,
             `        "rank": 0,`,
             `        "score": 0,`,
@@ -258,10 +257,10 @@ describe("formatJiNotationBound", (): void => {
             `    "bestRank": 3,`,
             `    "initialPosition": 0,`,
             `    "initialPositionTinaDistance": 0,`,
-            `    "bestPossibleHistoryTotalDistance": 0,`,
-            `    "bestPossibleHistoryTotalInaDistance": 0,`,
-            `    "historyConsolidation": {},`,
-            `    "possibleHistoryCount": 0`,
+            `    "bestPossibleBoundHistoryTotalDistance": 0,`,
+            `    "bestPossibleBoundHistoryTotalInaDistance": 0,`,
+            `    "boundHistoryConsolidation": {},`,
+            `    "possibleBoundHistoryCount": 0`,
             `}`,
         ]
 

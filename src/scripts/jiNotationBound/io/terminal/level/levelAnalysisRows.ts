@@ -1,7 +1,6 @@
 import { Count, formatInteger, Integer, Rank, RecordKey, Row } from "../../../../../general"
-import { JiNotationLevel } from "../../../../../sagittal"
+import { BoundType, JiNotationLevel } from "../../../../../sagittal"
 import { jiNotationLevelsBestCumulativeHistoryRanks, jiNotationLevelsBestHistoryRanks } from "../../../globals"
-import { EventType } from "../../../histories"
 import { FORMATTED_RANKS } from "../rankNames"
 
 const computeJiNotationLevelAnalysisRows = (jiNotationLevel: JiNotationLevel): Array<Row<{ of: JiNotationLevel }>> => {
@@ -9,15 +8,15 @@ const computeJiNotationLevelAnalysisRows = (jiNotationLevel: JiNotationLevel): A
 
     const jiNotationLevelsBestHistoryRanksEntries = Object.entries(
         jiNotationLevelsBestHistoryRanks[ jiNotationLevel ],
-    ) as unknown[] as Array<[RecordKey<Integer & Rank<EventType>>, Count<Integer & Rank<EventType>>]>
+    ) as unknown[] as Array<[RecordKey<Integer & Rank<BoundType>>, Count<Integer & Rank<BoundType>>]>
 
     jiNotationLevelsBestHistoryRanksEntries
         .forEach((
             [rank, bestHistoryRankCount]:
-                [RecordKey<Integer & Rank<EventType>>, Count<Integer & Rank<EventType>>],
+                [RecordKey<Integer & Rank<BoundType>>, Count<Integer & Rank<BoundType>>],
         ): void => {
             let formattedBestHistoryRankCount =
-                formatInteger(bestHistoryRankCount as Count<Integer & Rank<EventType>>)
+                formatInteger(bestHistoryRankCount as Count<Integer & Rank<BoundType>>)
 
             const bestCumulativeHistoryRankCount = jiNotationLevelsBestCumulativeHistoryRanks[ jiNotationLevel ][ rank ]
             let formattedBestCumulativeHistoryRankCount = formatInteger(bestCumulativeHistoryRankCount)

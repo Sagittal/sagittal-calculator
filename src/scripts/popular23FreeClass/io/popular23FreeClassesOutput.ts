@@ -11,14 +11,12 @@ import {
     Io,
     ioSettings,
     isUndefined,
-    JiPitch,
     Max,
     Ranked,
     Row,
     SPACE,
     sumTexts,
     Table,
-    TwoThreeFreeClass,
 } from "../../../general"
 import { formatSymbolClass, N2D3P9, SymbolClass, SymbolLongAscii, SymbolSmiley } from "../../../sagittal"
 import { popular23FreeClassesScriptGroupSettings } from "../globals"

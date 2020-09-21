@@ -1,4 +1,4 @@
-import { Cents, Direction, Id, Index, Monzo, Rank, TwoThreeFreeClass } from "../../../../src/general"
+import { Cents, Id, Index, Monzo, Rank, TwoThreeFreeClass } from "../../../../src/general"
 import { Popularity, Votes } from "../../../../src/general/music"
 import { N2D3P9 } from "../../../../src/sagittal/ji/twoThreeFreeClass/n2d3p9"
 import { SymbolClass, SymbolSubset } from "../../../../src/sagittal/notations"

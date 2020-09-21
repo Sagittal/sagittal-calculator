@@ -1,12 +1,13 @@
 import { Abs, Cents, sum, Sum } from "../../../general"
-import { EventAnalysis } from "./events"
+import { BoundEventAnalysis } from "./events"
 
-const computeHistoryTotalDistance = (eventAnalyses: EventAnalysis[]): Sum<Abs<Cents>> => {
-    const distances = eventAnalyses.map((eventAnalysis: EventAnalysis): Abs<Cents> => eventAnalysis.distance)
+const computeBoundHistoryTotalDistance = (boundEventAnalyses: BoundEventAnalysis[]): Sum<Abs<Cents>> => {
+    const distances = boundEventAnalyses
+        .map((boundEventAnalysis: BoundEventAnalysis): Abs<Cents> => boundEventAnalysis.distance)
 
     return sum(...distances)
 }
 
 export {
-    computeHistoryTotalDistance,
+    computeBoundHistoryTotalDistance,
 }

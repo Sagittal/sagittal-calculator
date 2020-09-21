@@ -1,13 +1,14 @@
-import { HistoricalEvent } from "../histories"
+import { BoundEvent } from "../histories"
 
-const computeDoEventsContainEvent = <T extends HistoricalEvent, U extends HistoricalEvent>(
-    events: T[],
-    targetEvent: U,
+const computeIsBoundEventContained = <T extends BoundEvent, U extends BoundEvent>(
+    boundEvents: T[],
+    targetBoundEvent: U,
 ): boolean =>
-    !!events.find((event: T): boolean => {
-        return event.name === targetEvent.name && event.jiNotationLevel === targetEvent.jiNotationLevel
+    !!boundEvents.find((boundEvent: T): boolean => {
+        return boundEvent.name === targetBoundEvent.name &&
+            boundEvent.jiNotationLevel === targetBoundEvent.jiNotationLevel
     })
 
 export {
-    computeDoEventsContainEvent,
+    computeIsBoundEventContained,
 }

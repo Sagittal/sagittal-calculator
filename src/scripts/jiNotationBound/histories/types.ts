@@ -1,20 +1,16 @@
-import { Cents, CentsPosition, Name, Pitch } from "../../../general"
-import { JiNotationLevel, SizeCategoryBound } from "../../../sagittal"
+import { Cents, CentsPosition, Name } from "../../../general"
+import { BoundType, JiNotationLevel, SizeCategoryBound } from "../../../sagittal"
 
-enum EventType {
-    INA_MIDPOINT = "inaMidpoint",
-    COMMA_MEAN = "commaMean",
-    SIZE_CATEGORY_BOUND = "sizeCategoryBound",
-}
-
-interface HistoricalEvent {
+interface BoundEvent {
     jiNotationLevel: JiNotationLevel,
-    name: Name<Pitch>,
+    name: Name<BoundPosition>,
     cents: Cents,
-    type: EventType,
+    boundType: BoundType,
 }
 
-type History = HistoricalEvent[]
+// TODO: just ... don't have this name? or just go head and make it an object which
+//  contains boundEvents, so that BoundHistoryAnalysis can actually extend it?
+type BoundHistory = BoundEvent[]
 
 interface CommaMean extends CentsPosition {
     name: Name<CommaMean>,
@@ -24,13 +20,12 @@ interface InaMidpoint extends CentsPosition {
     name: Name<InaMidpoint>,
 }
 
-type SnappablePosition = InaMidpoint | CommaMean | SizeCategoryBound
+type BoundPosition = InaMidpoint | CommaMean | SizeCategoryBound
 
 export {
-    EventType,
-    HistoricalEvent,
-    History,
+    BoundEvent,
+    BoundHistory,
     CommaMean,
     InaMidpoint,
-    SnappablePosition,
+    BoundPosition,
 }

@@ -1,20 +1,23 @@
 import { Abs, Sum } from "../../../../../src/general"
 import { Cents } from "../../../../../src/general/music"
-import { EventAnalysis } from "../../../../../src/scripts/jiNotationBound/history"
-import { computeHistoryTotalDistance } from "../../../../../src/scripts/jiNotationBound/history/historyTotalDistance"
-import { eventAnalysisFixture } from "../../../../helpers/src/scripts/jiNotationBound/fixtures"
+import { BoundEventAnalysis } from "../../../../../src/scripts/jiNotationBound/history"
+import { computeBoundHistoryTotalDistance } from "../../../../../src/scripts/jiNotationBound/history/historyTotalDistance"
+import { boundEventAnalysisFixture } from "../../../../helpers/src/scripts/jiNotationBound/fixtures"
 
-describe("computeHistoryTotalDistance", (): void => {
-    it("sums up the distances of all the events in the history (they are already all positive)", (): void => {
-        const eventAnalyses: EventAnalysis[] = [
-            { ...eventAnalysisFixture, distance: 4 as Abs<Cents> },
-            { ...eventAnalysisFixture, distance: 5 as Abs<Cents> },
-            { ...eventAnalysisFixture, distance: 6 as Abs<Cents> },
-        ]
+describe("computeBoundHistoryTotalDistance", (): void => {
+    it(
+        "sums up the distances of all the bound events in the bound history (they are already all positive)",
+        (): void => {
+            const boundEventAnalyses: BoundEventAnalysis[] = [
+                { ...boundEventAnalysisFixture, distance: 4 as Abs<Cents> },
+                { ...boundEventAnalysisFixture, distance: 5 as Abs<Cents> },
+                { ...boundEventAnalysisFixture, distance: 6 as Abs<Cents> },
+            ]
 
-        const actual = computeHistoryTotalDistance(eventAnalyses)
+            const actual = computeBoundHistoryTotalDistance(boundEventAnalyses)
 
-        const expected = 15 as Sum<Abs<Cents>>
-        expect(actual).toBe(expected)
-    })
+            const expected = 15 as Sum<Abs<Cents>>
+            expect(actual).toBe(expected)
+        },
+    )
 })

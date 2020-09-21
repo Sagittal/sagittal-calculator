@@ -2,7 +2,7 @@ import { Filename, Io, ioSettings, LogTarget, parseCommands, saveLog } from "../
 import { ScriptGroup } from "../../types"
 import { analyzeJiNotationBounds } from "../analyzeBounds"
 import { JiNotationBoundAnalysis } from "../bound"
-import { computeJiNotationBoundsImage, computeJiNotationBoundsTables } from "../io"
+import { computeJiNotationBoundsImage, computeJiNotationBoundsOutput } from "../io"
 
 parseCommands(
     ScriptGroup.JI_NOTATION_BOUND as Filename,
@@ -13,7 +13,7 @@ ioSettings.scriptGroup = ScriptGroup.JI_NOTATION_BOUND as Filename
 
 const jiNotationBoundAnalyses: JiNotationBoundAnalysis[] = analyzeJiNotationBounds()
 
-const tableOutput: Io = computeJiNotationBoundsTables(jiNotationBoundAnalyses)
+const tableOutput: Io = computeJiNotationBoundsOutput(jiNotationBoundAnalyses)
 
 const imageOutput: Io = computeJiNotationBoundsImage(jiNotationBoundAnalyses)
 

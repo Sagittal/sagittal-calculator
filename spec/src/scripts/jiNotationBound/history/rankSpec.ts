@@ -1,40 +1,39 @@
 import { Cents } from "../../../../../src/general/music"
-import { JiNotationLevel } from "../../../../../src/sagittal/notations/ji"
-import { EventType } from "../../../../../src/scripts/jiNotationBound/histories"
-import { EventAnalysis } from "../../../../../src/scripts/jiNotationBound/history"
+import { BoundType, JiNotationLevel } from "../../../../../src/sagittal/notations/ji"
+import { BoundEventAnalysis } from "../../../../../src/scripts/jiNotationBound/history"
 import { computeRank } from "../../../../../src/scripts/jiNotationBound/history/rank"
 import { RANKS } from "../../../../../src/scripts/jiNotationBound/ranks"
-import { eventAnalysisFixture } from "../../../../helpers/src/scripts/jiNotationBound/fixtures"
+import { boundEventAnalysisFixture } from "../../../../helpers/src/scripts/jiNotationBound/fixtures"
 
 describe("computeRank", (): void => {
-    it("returns the worst rank of any of the events in the history", (): void => {
-        const eventAnalyses: EventAnalysis[] = [
+    it("returns the worst rank of any of the bound events in the bound history", (): void => {
+        const boundEventAnalyses: BoundEventAnalysis[] = [
             {
-                ...eventAnalysisFixture,
-                type: EventType.INA_MIDPOINT,
+                ...boundEventAnalysisFixture,
+                boundType: BoundType.INA_MIDPOINT,
                 jiNotationLevel: JiNotationLevel.HIGH,
                 cents: 10.0 as Cents,
-                rank: RANKS[ EventType.INA_MIDPOINT ],
+                rank: RANKS[ BoundType.INA_MIDPOINT ],
             },
             {
-                ...eventAnalysisFixture,
-                type: EventType.SIZE_CATEGORY_BOUND,
+                ...boundEventAnalysisFixture,
+                boundType: BoundType.SIZE_CATEGORY_BOUND,
                 jiNotationLevel: JiNotationLevel.ULTRA,
                 cents: 10.2 as Cents,
-                rank: RANKS[ EventType.SIZE_CATEGORY_BOUND ],
+                rank: RANKS[ BoundType.SIZE_CATEGORY_BOUND ],
             },
             {
-                ...eventAnalysisFixture,
-                type: EventType.COMMA_MEAN,
+                ...boundEventAnalysisFixture,
+                boundType: BoundType.COMMA_MEAN,
                 jiNotationLevel: JiNotationLevel.EXTREME,
                 cents: 10.1 as Cents,
-                rank: RANKS[ EventType.COMMA_MEAN ],
+                rank: RANKS[ BoundType.COMMA_MEAN ],
             },
         ]
 
-        const actual = computeRank(eventAnalyses)
+        const actual = computeRank(boundEventAnalyses)
 
-        const expected = RANKS[ EventType.SIZE_CATEGORY_BOUND ]
+        const expected = RANKS[ BoundType.SIZE_CATEGORY_BOUND ]
         expect(actual).toBe(expected)
     })
 })

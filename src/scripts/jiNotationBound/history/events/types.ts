@@ -1,14 +1,14 @@
 import { Abs, Cents, Integer, Multiplier, Rank } from "../../../../general"
-import { Ina } from "../../../../sagittal"
-import { EventType, HistoricalEvent } from "../../histories"
+import { BoundType, Ina } from "../../../../sagittal"
+import { BoundEvent } from "../../histories"
 
-interface EventAnalysis extends HistoricalEvent {
+interface BoundEventAnalysis extends BoundEvent {
     distance: Abs<Cents>,
     exact: boolean,
     inaDistance: Multiplier<Ina>,
-    rank: Integer & Rank<EventType>,
+    rank: Integer & Rank<BoundType>,
 }
 
 export {
-    EventAnalysis,
+    BoundEventAnalysis,
 }

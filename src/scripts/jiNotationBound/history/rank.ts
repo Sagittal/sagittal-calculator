@@ -1,13 +1,13 @@
 import { Integer, Rank } from "../../../general"
-import { EventType } from "../histories"
+import { BoundType } from "../../../sagittal"
 import { RANKS } from "../ranks"
-import { EventAnalysis } from "./events"
+import { BoundEventAnalysis } from "./events"
 
-const computeRank = (eventAnalyses: EventAnalysis[]): Integer & Rank<EventType> =>
-    eventAnalyses.reduce(
-        (rank: Integer & Rank<EventType>, eventAnalysis: EventAnalysis): Integer & Rank<EventType> =>
-            rank > eventAnalysis.rank ? rank : eventAnalysis.rank,
-        RANKS[ EventType.INA_MIDPOINT ],
+const computeRank = (boundEventAnalyses: BoundEventAnalysis[]): Integer & Rank<BoundType> =>
+    boundEventAnalyses.reduce(
+        (rank: Integer & Rank<BoundType>, boundEventAnalysis: BoundEventAnalysis): Integer & Rank<BoundType> =>
+            rank > boundEventAnalysis.rank ? rank : boundEventAnalysis.rank,
+        RANKS[ BoundType.INA_MIDPOINT ],
     )
 
 export {

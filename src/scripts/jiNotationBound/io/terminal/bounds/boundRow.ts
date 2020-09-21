@@ -23,11 +23,11 @@ const computeJiNotationBoundRow = (
     } = jiNotationBoundIdentifiers
     const {
         bestRank,
-        bestPossibleHistory,
+        bestPossibleBoundHistoryAnalysis,
         initialPosition,
         initialPositionTinaDistance,
-        bestPossibleHistoryTotalDistance,
-        bestPossibleHistoryTotalInaDistance,
+        bestPossibleBoundHistoryTotalDistance,
+        bestPossibleBoundHistoryTotalInaDistance,
     } = jiNotationBoundAnalysis
 
     const [
@@ -35,21 +35,21 @@ const computeJiNotationBoundRow = (
         highLevelRank,
         veryHighLevelRank,
         extremeLevelRank,
-    ] = extractJiNotationLevelRanks(bestPossibleHistory)
+    ] = extractJiNotationLevelRanks(bestPossibleBoundHistoryAnalysis)
 
     const [
-        bestPossibleHistoryMediumDistance,
-        bestPossibleHistoryHighDistance,
-        bestPossibleHistoryUltraDistance,
-        bestPossibleHistoryExtremeDistance,
-    ] = extractJiNotationLevelDistances(bestPossibleHistory)
+        bestPossibleBoundHistoryMediumDistance,
+        bestPossibleBoundHistoryHighDistance,
+        bestPossibleBoundHistoryUltraDistance,
+        bestPossibleBoundHistoryExtremeDistance,
+    ] = extractJiNotationLevelDistances(bestPossibleBoundHistoryAnalysis)
 
     const [
-        bestPossibleHistoryMediumInaDistance,
-        bestPossibleHistoryHighInaDistance,
-        bestPossibleHistoryUltraInaDistance,
-        bestPossibleHistoryExtremeInaDistance,
-    ] = extractJiNotationLevelDistances(bestPossibleHistory, { ina: true })
+        bestPossibleBoundHistoryMediumInaDistance,
+        bestPossibleBoundHistoryHighInaDistance,
+        bestPossibleBoundHistoryUltraInaDistance,
+        bestPossibleBoundHistoryExtremeInaDistance,
+    ] = extractJiNotationLevelDistances(bestPossibleBoundHistoryAnalysis, { ina: true })
 
     jiNotationBoundRow = [
         formatInteger(jiNotationBound.id),
@@ -62,16 +62,16 @@ const computeJiNotationBoundRow = (
         veryHighLevelRank,
         extremeLevelRank,
         formatInteger(bestRank),
-        bestPossibleHistoryMediumDistance,
-        bestPossibleHistoryHighDistance,
-        bestPossibleHistoryUltraDistance,
-        bestPossibleHistoryExtremeDistance,
-        formatNumber(bestPossibleHistoryTotalDistance),
-        bestPossibleHistoryMediumInaDistance,
-        bestPossibleHistoryHighInaDistance,
-        bestPossibleHistoryUltraInaDistance,
-        bestPossibleHistoryExtremeInaDistance,
-        formatNumber(bestPossibleHistoryTotalInaDistance),
+        bestPossibleBoundHistoryMediumDistance,
+        bestPossibleBoundHistoryHighDistance,
+        bestPossibleBoundHistoryUltraDistance,
+        bestPossibleBoundHistoryExtremeDistance,
+        formatNumber(bestPossibleBoundHistoryTotalDistance),
+        bestPossibleBoundHistoryMediumInaDistance,
+        bestPossibleBoundHistoryHighInaDistance,
+        bestPossibleBoundHistoryUltraInaDistance,
+        bestPossibleBoundHistoryExtremeInaDistance,
+        formatNumber(bestPossibleBoundHistoryTotalInaDistance),
         formatNumber(cents),
         formatNumber(initialPosition),
         formatNumber(initialPositionTinaDistance),

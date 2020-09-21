@@ -1,5 +1,5 @@
 import { Abs, Cents, Id, Multiplier } from "../../../../../../src/general"
-import { SymbolClass } from "../../../../../../src/sagittal/notations"
+import { BoundType, SymbolClass } from "../../../../../../src/sagittal/notations"
 import { Ina, JiNotationBound, JiNotationLevel } from "../../../../../../src/sagittal/notations/ji"
 import { computeJiNotationLevelBoundedSymbolClassIdsWithDistances } from "../../../../../../src/scripts/jiNotationBound/io/terminal/levelBoundedSymbolClasses"
 import { JiNotationBoundIdWithBoundedSymbolClassIdsWithDistancesPairsByJiNotationLevel } from "../../../../../../src/scripts/jiNotationBound/io/terminal/types"
@@ -10,6 +10,7 @@ describe("computeJiNotationLevelBoundedSymbolClassIdsWithDistances", (): void =>
             cents: 24.66219847111080 as Cents,
             jiNotationLevels: [JiNotationLevel.MEDIUM, JiNotationLevel.EXTREME, JiNotationLevel.INSANE],
             id: 54 as Id<JiNotationBound>,
+            boundType: BoundType.INA_MIDPOINT,
         }
 
         const actual = computeJiNotationLevelBoundedSymbolClassIdsWithDistances(jiNotationBound)
@@ -67,6 +68,7 @@ describe("computeJiNotationLevelBoundedSymbolClassIdsWithDistances", (): void =>
                 JiNotationLevel.INSANE,
             ],
             id: 54 as Id<JiNotationBound>,
+            boundType: BoundType.SIZE_CATEGORY_BOUND,
         }
 
         const actual = computeJiNotationLevelBoundedSymbolClassIdsWithDistances(jiNotationBound)
@@ -122,6 +124,7 @@ describe("computeJiNotationLevelBoundedSymbolClassIdsWithDistances", (): void =>
             cents: 0.210788021120605 as Cents,
             jiNotationLevels: [JiNotationLevel.EXTREME, JiNotationLevel.INSANE],
             id: 55 as Id<JiNotationBound>,
+            boundType: BoundType.INA_MIDPOINT,
         }
 
         const actual = computeJiNotationLevelBoundedSymbolClassIdsWithDistances(jiNotationBound)

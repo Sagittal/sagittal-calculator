@@ -1,28 +1,28 @@
-import { Cents, Name, Pitch } from "../../../../../src/general"
-import { JiNotationLevel } from "../../../../../src/sagittal/notations/ji"
-import { EventType, HistoricalEvent, History } from "../../../../../src/scripts/jiNotationBound/histories"
+import { Cents, Name } from "../../../../../src/general"
+import { BoundType, JiNotationLevel } from "../../../../../src/sagittal/notations/ji"
+import { BoundEvent, BoundHistory, BoundPosition } from "../../../../../src/scripts/jiNotationBound/histories"
 import { computeExtendedHistories } from "../../../../../src/scripts/jiNotationBound/histories/extendedHistories"
 import { jiNotationBoundFixture } from "../../../../helpers/src/scripts/jiNotationBound/fixtures"
 
 describe("computeExtendedHistories", (): void => {
-    let history: History
+    let boundHistory: BoundHistory
 
-    let passedInHistoryEvent: HistoricalEvent = {
+    let passedInBoundEvent: BoundEvent = {
         jiNotationLevel: JiNotationLevel.HIGH,
-        type: EventType.INA_MIDPOINT,
-        name: "16.5°47" as Name<Pitch>,
+        boundType: BoundType.INA_MIDPOINT,
+        name: "16.5°47" as Name<BoundPosition>,
         cents: 45.45 as Cents,
     }
     beforeEach((): void => {
-        history = [
-            passedInHistoryEvent,
+        boundHistory = [
+            passedInBoundEvent,
         ]
     })
 
-    it("returns an array with potentially many elements: for each snappable position of any event type, a new history which is like the passed-in history extended with a new event of snapping to that position, and its rank updated if necessary", (): void => {
+    it("returns an array with potentially many elements: for each bound position of any bound type, a new bound history which is like the passed-in history extended with a new event of snapping to that position, and its rank updated if necessary", (): void => {
         const actualJiNotationBoundCents = 45.4 as Cents
 
-        const actual = computeExtendedHistories(history, JiNotationLevel.ULTRA, {
+        const actual = computeExtendedHistories(boundHistory, JiNotationLevel.ULTRA, {
             ...jiNotationBoundFixture,
             cents: actualJiNotationBoundCents,
             jiNotationLevels: [JiNotationLevel.ULTRA, JiNotationLevel.EXTREME],
@@ -30,29 +30,29 @@ describe("computeExtendedHistories", (): void => {
 
         const expected = [
             [
-                passedInHistoryEvent,
+                passedInBoundEvent,
                 {
                     jiNotationLevel: JiNotationLevel.ULTRA,
-                    type: EventType.INA_MIDPOINT,
-                    name: "23.5°58" as Name<Pitch>,
+                    boundType: BoundType.INA_MIDPOINT,
+                    name: "23.5°58" as Name<BoundPosition>,
                     cents: 46.062028 as Cents,
                 },
             ],
             [
-                passedInHistoryEvent,
+                passedInBoundEvent,
                 {
                     jiNotationLevel: JiNotationLevel.ULTRA,
-                    type: EventType.COMMA_MEAN,
-                    name: "'//| )//|" as Name<Pitch>,
+                    boundType: BoundType.COMMA_MEAN,
+                    name: "'//| )//|" as Name<BoundPosition>,
                     cents: 45.681795 as Cents,
                 },
             ],
             [
-                passedInHistoryEvent,
+                passedInBoundEvent,
                 {
                     jiNotationLevel: JiNotationLevel.ULTRA,
-                    type: EventType.SIZE_CATEGORY_BOUND,
-                    name: "S|M" as Name<Pitch>,
+                    boundType: BoundType.SIZE_CATEGORY_BOUND,
+                    name: "S|M" as Name<BoundPosition>,
                     cents: 45.112498 as Cents,
                 },
             ],

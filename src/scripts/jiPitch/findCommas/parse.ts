@@ -19,6 +19,7 @@ const parseFindCommasSettings = (
     const maxN2D3P9: Max<N2D3P9> = program.maxN2d3p9 ||
         defaultOverrides.maxN2D3P9 ||
         DEFAULT_FIND_COMMAS_SETTINGS.maxN2D3P9
+    // TODO: perhaps minCents and maxCents should be settable by monzo, ratio, etc. too?
     const minCents: Min<Cents> = program.minCents ||
         defaultOverrides.minCents ||
         DEFAULT_FIND_COMMAS_SETTINGS.minCents

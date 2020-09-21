@@ -1,4 +1,4 @@
-import { Cents, Name, Pitch } from "../../../../../src/general"
+import { Cents, Name } from "../../../../../src/general"
 import { JiNotationLevel } from "../../../../../src/sagittal/notations/ji"
 import { CommaMean } from "../../../../../src/scripts/jiNotationBound/histories"
 import { computeJiNotationLevelCommaMeans } from "../../../../../src/scripts/jiNotationBound/histories/levelCommaMeans"

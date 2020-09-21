@@ -8,7 +8,8 @@ import {
     Integer,
     Maybe,
     Monzo,
-    Prime, shallowClone,
+    Prime,
+    shallowClone,
     TWO_PRIME_INDEX,
     Zone,
 } from "../../../../general"

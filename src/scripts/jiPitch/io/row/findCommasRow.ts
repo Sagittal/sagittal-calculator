@@ -5,7 +5,7 @@ import { compute23FreeClassRow } from "./twoThreeFreeClassRow"
 
 const computeFindCommasRow = (
     commaAnalysis: CommaAnalysis,
-    maybeSymbolClassId: Maybe<Id<SymbolClass>>
+    maybeSymbolClassId: Maybe<Id<SymbolClass>>,
 ): Row<{ of: CommaAnalysis }> => {
 
     return concat(

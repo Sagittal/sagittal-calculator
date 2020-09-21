@@ -1,35 +1,39 @@
-import { HistoryAnalysis, Score } from "../history"
+import { BoundHistoryAnalysis, Score } from "../history"
 
-const computeBestPossibleHistory = (historyAnalyses: HistoryAnalysis[]): HistoryAnalysis => {
-    let bestPossibleHistory: HistoryAnalysis = { score: Infinity as Score } as HistoryAnalysis
+const computeBestPossibleBoundHistoryAnalysis = (
+    boundHistoryAnalyses: BoundHistoryAnalysis[],
+): BoundHistoryAnalysis => {
+    let bestPossibleBoundHistoryAnalysis: BoundHistoryAnalysis = { score: Infinity as Score } as BoundHistoryAnalysis
 
-    if (historyAnalyses.some((historyAnalysis: HistoryAnalysis): boolean => !historyAnalysis.exact)) {
-        const exactHistories: HistoryAnalysis[] = []
-        historyAnalyses.forEach((historyAnalysis: HistoryAnalysis): void => {
-            if (historyAnalysis.exact) {
-                exactHistories.push(historyAnalysis)
+    const atLeastOneExactBoundHistory = boundHistoryAnalyses
+        .some((boundHistoryAnalysis: BoundHistoryAnalysis): boolean => !boundHistoryAnalysis.exact)
+    if (atLeastOneExactBoundHistory) {
+        const exactBoundHistoryAnalyses: BoundHistoryAnalysis[] = []
+        boundHistoryAnalyses.forEach((boundHistoryAnalysis: BoundHistoryAnalysis): void => {
+            if (boundHistoryAnalysis.exact) {
+                exactBoundHistoryAnalyses.push(boundHistoryAnalysis)
             }
         })
-        if (exactHistories.length) {
-            return computeBestPossibleHistory(exactHistories)
+        if (exactBoundHistoryAnalyses.length) {
+            return computeBestPossibleBoundHistoryAnalysis(exactBoundHistoryAnalyses)
         }
     }
 
-    historyAnalyses.forEach((historyAnalysis: HistoryAnalysis): void => {
+    boundHistoryAnalyses.forEach((boundHistoryAnalysis: BoundHistoryAnalysis): void => {
         if (
-            historyAnalysis.score < bestPossibleHistory.score ||
+            boundHistoryAnalysis.score < bestPossibleBoundHistoryAnalysis.score ||
             (
-                historyAnalysis.score === bestPossibleHistory.score &&
-                historyAnalysis.totalDistance < bestPossibleHistory.totalDistance
+                boundHistoryAnalysis.score === bestPossibleBoundHistoryAnalysis.score &&
+                boundHistoryAnalysis.totalDistance < bestPossibleBoundHistoryAnalysis.totalDistance
             )
         ) {
-            bestPossibleHistory = historyAnalysis
+            bestPossibleBoundHistoryAnalysis = boundHistoryAnalysis
         }
     })
 
-    return bestPossibleHistory
+    return bestPossibleBoundHistoryAnalysis
 }
 
 export {
-    computeBestPossibleHistory,
+    computeBestPossibleBoundHistoryAnalysis,
 }

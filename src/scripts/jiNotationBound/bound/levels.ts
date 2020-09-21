@@ -1,12 +1,12 @@
 import { Count, increment, Integer, Rank } from "../../../general"
+import { BoundType } from "../../../sagittal"
 import { jiNotationLevelsBestCumulativeHistoryRanks, jiNotationLevelsBestHistoryRanks } from "../globals"
-import { EventType } from "../histories"
-import { EventAnalysis, HistoryAnalysis } from "../history"
+import { BoundEventAnalysis, BoundHistoryAnalysis } from "../history"
 
-const updateJiNotationLevelAnalysis = (bestPossibleHistory: HistoryAnalysis): void => {
+const updateJiNotationLevelAnalysis = (bestPossibleBoundHistoryAnalysis: BoundHistoryAnalysis): void => {
     let cumulativeRank = 0
-    bestPossibleHistory.eventAnalyses.forEach((eventAnalysis: EventAnalysis): void => {
-        const { jiNotationLevel, rank } = eventAnalysis
+    bestPossibleBoundHistoryAnalysis.boundEventAnalyses.forEach((boundEventAnalysis: BoundEventAnalysis): void => {
+        const { jiNotationLevel, rank } = boundEventAnalysis
 
         if (rank > cumulativeRank) {
             cumulativeRank = rank
@@ -17,10 +17,10 @@ const updateJiNotationLevelAnalysis = (bestPossibleHistory: HistoryAnalysis): vo
         }
         if (!jiNotationLevelsBestHistoryRanks[ jiNotationLevel ][ rank ]) {
             jiNotationLevelsBestHistoryRanks[ jiNotationLevel ][ rank ] =
-                0 as Count<Integer & Rank<EventType>>
+                0 as Count<Integer & Rank<BoundType>>
         }
         jiNotationLevelsBestHistoryRanks[ jiNotationLevel ][ rank ] = increment(
-            jiNotationLevelsBestHistoryRanks[ jiNotationLevel ][ rank ] as Count<Integer & Rank<EventType>>,
+            jiNotationLevelsBestHistoryRanks[ jiNotationLevel ][ rank ] as Count<Integer & Rank<BoundType>>,
         )
 
         if (!jiNotationLevelsBestCumulativeHistoryRanks[ jiNotationLevel ]) {
@@ -28,7 +28,7 @@ const updateJiNotationLevelAnalysis = (bestPossibleHistory: HistoryAnalysis): vo
         }
         if (!jiNotationLevelsBestCumulativeHistoryRanks[ jiNotationLevel ][ cumulativeRank ]) {
             jiNotationLevelsBestCumulativeHistoryRanks[ jiNotationLevel ][ cumulativeRank ] =
-                0 as Count<Integer & Rank<EventType>>
+                0 as Count<Integer & Rank<BoundType>>
         }
         jiNotationLevelsBestCumulativeHistoryRanks[ jiNotationLevel ][ cumulativeRank ] =
             increment(jiNotationLevelsBestCumulativeHistoryRanks[ jiNotationLevel ][ cumulativeRank ])

@@ -1,28 +1,28 @@
-import { Integer, Name, Pitch, Rank } from "../../../general"
-import { JiNotationLevel } from "../../../sagittal"
-import { EventType, HistoricalEvent } from "../histories"
-import { EventAnalysis, HistoryAnalysis } from "../history"
+import { Integer, Name, Rank } from "../../../general"
+import { BoundType, JiNotationLevel } from "../../../sagittal"
+import { BoundEvent, BoundPosition } from "../histories"
+import { BoundEventAnalysis, BoundHistoryAnalysis } from "../history"
 
-interface EventConsolidation extends HistoricalEvent {
+interface BoundEventConsolidation extends BoundEvent {
     exact: boolean,
-    isBestPossibleHistoryMember: boolean,
-    isPossibleHistoryMember: boolean,
-    nextEvents: Name<Pitch>[],
-    rankOfBestRankedEventInAnyMemberHistory: Integer & Rank<EventType>,
-    rankOfBestRankedMemberHistory: Integer & Rank<EventType>,
+    isBestPossibleBoundHistoryMember: boolean,
+    isPossibleBoundHistoryMember: boolean,
+    nextBoundEvents: Name<BoundPosition>[],
+    rankOfBestRankedEventInAnyMemberHistory: Integer & Rank<BoundType>,
+    rankOfBestRankedMemberHistory: Integer & Rank<BoundType>,
 }
 
-type HistoryConsolidation = Partial<Record<JiNotationLevel, EventConsolidation[]>>
+type BoundHistoryConsolidation = Partial<Record<JiNotationLevel, BoundEventConsolidation[]>>
 
 interface UpdateEventConsolidationOptions {
-    eventAnalysis: EventAnalysis
-    historyAnalysis: HistoryAnalysis,
-    bestPossibleHistory: HistoryAnalysis,
-    nextEventAnalysis?: EventAnalysis,
+    boundEventAnalysis: BoundEventAnalysis
+    boundHistoryAnalysis: BoundHistoryAnalysis,
+    bestPossibleBoundHistoryAnalysis: BoundHistoryAnalysis,
+    nextBoundEventAnalysis?: BoundEventAnalysis,
 }
 
 export {
-    EventConsolidation,
-    HistoryConsolidation,
+    BoundEventConsolidation,
+    BoundHistoryConsolidation,
     UpdateEventConsolidationOptions,
 }

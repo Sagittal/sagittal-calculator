@@ -1,11 +1,11 @@
 import { Formatted, Integer, Rank, RecordKey } from "../../../../general"
-import { EventType } from "../../histories"
+import { BoundType } from "../../../../sagittal"
 import { RANKS } from "../../ranks"
 
-const FORMATTED_RANKS: Record<RecordKey<Integer & Rank<EventType>>, Formatted<Integer & Rank<EventType>>> = {
-    [ RANKS[ EventType.INA_MIDPOINT ] ]: "ina midpoint" as Formatted<Integer & Rank<EventType>>,
-    [ RANKS[ EventType.COMMA_MEAN ] ]: "comma mean" as Formatted<Integer & Rank<EventType>>,
-    [ RANKS[ EventType.SIZE_CATEGORY_BOUND ] ]: "size category bound" as Formatted<Integer & Rank<EventType>>,
+const FORMATTED_RANKS: Record<RecordKey<Integer & Rank<BoundType>>, Formatted<Integer & Rank<BoundType>>> = {
+    [ RANKS[ BoundType.INA_MIDPOINT ] ]: "ina midpoint" as Formatted<Integer & Rank<BoundType>>,
+    [ RANKS[ BoundType.COMMA_MEAN ] ]: "comma mean" as Formatted<Integer & Rank<BoundType>>,
+    [ RANKS[ BoundType.SIZE_CATEGORY_BOUND ] ]: "size category bound" as Formatted<Integer & Rank<BoundType>>,
 }
 
 export {

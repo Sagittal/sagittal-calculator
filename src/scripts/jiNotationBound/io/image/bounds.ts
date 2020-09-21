@@ -2,7 +2,7 @@ import * as fs from "fs"
 import { Io, ioSettings } from "../../../../general"
 import { JiNotationBoundAnalysis } from "../../bound"
 import { visualizeCents } from "./cents"
-import { visualizeEvents } from "./events"
+import { visualizeBoundEventAnalyses } from "./events"
 import { addFont } from "./font"
 import { visualizeInaMidpoints } from "./inaMidpoints"
 import { visualizeJiNotationLevelBounds } from "./levelBounds"
@@ -30,7 +30,9 @@ const computeJiNotationBoundsImage = (jiNotationBoundAnalyses: JiNotationBoundAn
     elements = elements.concat(visualizeJiNotationLevelBounds())
 
     jiNotationBoundAnalyses.forEach((jiNotationBoundAnalysis: JiNotationBoundAnalysis): void => {
-        elements = elements.concat(visualizeEvents(jiNotationBoundAnalysis.bestPossibleHistory.eventAnalyses))
+        elements = elements.concat(
+            visualizeBoundEventAnalyses(jiNotationBoundAnalysis.bestPossibleBoundHistoryAnalysis.boundEventAnalyses),
+        )
     })
 
     elements = elements.concat(visualizeSizeCategoryBounds())

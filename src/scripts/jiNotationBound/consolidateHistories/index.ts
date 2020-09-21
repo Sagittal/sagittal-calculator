@@ -1,2 +1,2 @@
-export { consolidateHistories } from "./consolidateHistories"
-export { HistoryConsolidation } from "./types"
+export { consolidateBoundHistories } from "./consolidateHistories"
+export { BoundHistoryConsolidation } from "./types"

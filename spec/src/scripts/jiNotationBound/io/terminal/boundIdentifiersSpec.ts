@@ -14,6 +14,7 @@ import {
 } from "../../../../../../src/general"
 import {
     ApotomeSlope,
+    BoundType,
     Ina,
     N2D3P9,
     SagittalComma,
@@ -35,6 +36,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
         cents: 23.116419 as Cents,
         jiNotationLevels: [JiNotationLevel.ULTRA, JiNotationLevel.EXTREME, JiNotationLevel.INSANE],
         id: 47 as Id<JiNotationBound>,
+        boundType: BoundType.INA_MIDPOINT,
     }
 
     it("returns helpful identifying information about the bound", (): void => {

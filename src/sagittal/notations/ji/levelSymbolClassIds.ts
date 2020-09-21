@@ -3,7 +3,7 @@ import { SymbolClass } from "../types"
 import { JiNotationLevel } from "./types"
 
 const MEDIUM_LEVEL_SYMBOL_CLASS_IDS = [
-    0, 12, 20, 30, 44, 58, 70, 85, 93, 105, 115, 132, 142
+    0, 12, 20, 30, 44, 58, 70, 85, 93, 105, 115, 132, 142,
 ] as Array<Id<SymbolClass>>
 
 const HIGH_LEVEL_SYMBOL_CLASS_IDS = sort([

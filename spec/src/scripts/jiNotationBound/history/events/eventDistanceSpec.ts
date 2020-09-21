@@ -1,18 +1,21 @@
 import { Abs } from "../../../../../../src/general/math"
 import { Cents } from "../../../../../../src/general/music"
-import { HistoricalEvent } from "../../../../../../src/scripts/jiNotationBound/histories"
-import { computeEventDistance } from "../../../../../../src/scripts/jiNotationBound/history/events/eventDistance"
-import { eventFixture } from "../../../../../helpers/src/scripts/jiNotationBound/fixtures"
+import { BoundEvent } from "../../../../../../src/scripts/jiNotationBound/histories"
+import { computeBoundEventDistance } from "../../../../../../src/scripts/jiNotationBound/history/events/eventDistance"
+import { boundEventFixture } from "../../../../../helpers/src/scripts/jiNotationBound/fixtures"
 
-describe("computeEventDistance", (): void => {
-    it("returns the difference in position between the event and the previous event in the history", (): void => {
-        const event: HistoricalEvent = { ...eventFixture, cents: 5 as Cents }
-        const history = [{ ...eventFixture, cents: 3 as Cents }, event]
-        const index = 1
+describe("computeBoundEventDistance", (): void => {
+    it(
+        "returns the difference in position between the bound event and the previous bound event in the bound history",
+        (): void => {
+            const boundEvent: BoundEvent = { ...boundEventFixture, cents: 5 as Cents }
+            const boundHistory = [{ ...boundEventFixture, cents: 3 as Cents }, boundEvent]
+            const index = 1
 
-        const actual = computeEventDistance(event, index, history)
+            const actual = computeBoundEventDistance(boundEvent, index, boundHistory)
 
-        const expected = 2 as Abs<Cents>
-        expect(actual).toBe(expected)
-    })
+            const expected = 2 as Abs<Cents>
+            expect(actual).toBe(expected)
+        },
+    )
 })

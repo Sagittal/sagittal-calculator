@@ -1,6 +1,6 @@
 import { Count, Integer, Io, join, NEWLINE, Rank, sumTexts } from "../../../../../general"
+import { BoundType } from "../../../../../sagittal"
 import { rankCounts } from "../../../globals"
-import { EventType } from "../../../histories"
 import { RANK_ANALYSES_TITLE } from "../titles"
 import { formatRankAnalysis } from "./rankAnalysis"
 
@@ -9,10 +9,10 @@ const formatRankAnalyses = (): Io => {
 
     const rankCountsEntries = Object.entries(
         rankCounts,
-    ) as unknown[] as Array<[Integer & Rank<EventType>, Count<Integer & Rank<EventType>>]>
+    ) as unknown[] as Array<[Integer & Rank<BoundType>, Count<Integer & Rank<BoundType>>]>
 
     rankCountsEntries.forEach((
-        [rank, rankCount]: [Integer & Rank<EventType>, Count<Integer & Rank<EventType>>],
+        [rank, rankCount]: [Integer & Rank<BoundType>, Count<Integer & Rank<BoundType>>],
     ): void => {
         if (!rankCount || rankCount === 0) {
             return

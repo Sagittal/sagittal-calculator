@@ -1,30 +1,30 @@
-import { Abs, Cents, Count, Id, Integer, Multiplier, Name, Pitch, Rank, Sum } from "../../../../../src/general"
-import { Ina, JiNotationBound, JiNotationLevel, Tina } from "../../../../../src/sagittal/notations/ji"
+import { Abs, Cents, Count, Id, Integer, Multiplier, Name, Rank, Sum } from "../../../../../src/general"
+import { BoundType, Ina, JiNotationBound, JiNotationLevel, Tina } from "../../../../../src/sagittal/notations/ji"
 import { JiNotationBoundAnalysis } from "../../../../../src/scripts/jiNotationBound/bound"
-import { EventConsolidation } from "../../../../../src/scripts/jiNotationBound/consolidateHistories/types"
-import { EventType, HistoricalEvent } from "../../../../../src/scripts/jiNotationBound/histories"
-import { EventAnalysis, HistoryAnalysis, Score } from "../../../../../src/scripts/jiNotationBound/history"
+import { BoundEventConsolidation } from "../../../../../src/scripts/jiNotationBound/consolidateHistories/types"
+import { BoundEvent, BoundPosition } from "../../../../../src/scripts/jiNotationBound/histories"
+import { BoundEventAnalysis, BoundHistoryAnalysis, Score } from "../../../../../src/scripts/jiNotationBound/history"
 import { RANKS } from "../../../../../src/scripts/jiNotationBound/ranks"
 
-const eventFixture: HistoricalEvent = {
+const boundEventFixture: BoundEvent = {
     cents: 0 as Cents,
-    type: "" as EventType,
+    boundType: "" as BoundType,
     jiNotationLevel: "" as JiNotationLevel,
-    name: "" as Name<Pitch>,
+    name: "" as Name<BoundPosition>,
 }
 
-const eventAnalysisFixture: EventAnalysis = {
-    ...eventFixture,
+const boundEventAnalysisFixture: BoundEventAnalysis = {
+    ...boundEventFixture,
     distance: 0 as Abs<Cents>,
     inaDistance: 0 as Multiplier<Ina>,
-    rank: 0 as Integer & Rank<EventType>,
+    rank: 0 as Integer & Rank<BoundType>,
     exact: false,
 }
 
-const historyAnalysisFixture: HistoryAnalysis = {
-    eventAnalyses: [],
+const boundHistoryAnalysisFixture: BoundHistoryAnalysis = {
+    boundEventAnalyses: [],
     cents: 0 as Cents,
-    rank: 0 as Integer & Rank<EventType>,
+    rank: 0 as Integer & Rank<BoundType>,
     score: 0 as Score,
     totalDistance: 0 as Sum<Abs<Cents>>,
     exact: false,
@@ -34,13 +34,13 @@ const historyAnalysisFixture: HistoryAnalysis = {
     initialPositionTinaDistance: 0 as Multiplier<Tina>,
 }
 
-const eventConsolidationFixture: EventConsolidation = {
-    ...eventFixture,
-    isPossibleHistoryMember: false,
-    isBestPossibleHistoryMember: false,
-    rankOfBestRankedMemberHistory: 0 as Integer & Rank<EventType>,
-    rankOfBestRankedEventInAnyMemberHistory: 0 as Integer & Rank<EventType>,
-    nextEvents: [] as Name<Pitch>[],
+const boundEventConsolidationFixture: BoundEventConsolidation = {
+    ...boundEventFixture,
+    isPossibleBoundHistoryMember: false,
+    isBestPossibleBoundHistoryMember: false,
+    rankOfBestRankedMemberHistory: 0 as Integer & Rank<BoundType>,
+    rankOfBestRankedEventInAnyMemberHistory: 0 as Integer & Rank<BoundType>,
+    nextBoundEvents: [] as Name<BoundPosition>[],
     exact: false,
 }
 
@@ -48,24 +48,25 @@ const jiNotationBoundFixture: JiNotationBound = {
     id: 0 as Id<JiNotationBound>,
     jiNotationLevels: [],
     cents: 0 as Cents,
+    boundType: BoundType.INA_MIDPOINT,
 }
 
 const jiNotationBoundAnalysisFixture: JiNotationBoundAnalysis = {
-    bestPossibleHistory: historyAnalysisFixture,
-    bestRank: RANKS[ EventType.INA_MIDPOINT ],
+    bestPossibleBoundHistoryAnalysis: boundHistoryAnalysisFixture,
+    bestRank: RANKS[ BoundType.INA_MIDPOINT ],
     initialPosition: 0 as Cents,
     initialPositionTinaDistance: 0 as Multiplier<Tina>,
-    bestPossibleHistoryTotalDistance: 0 as Cents,
-    bestPossibleHistoryTotalInaDistance: 0 as Sum<Multiplier<Ina>>,
-    historyConsolidation: {},
-    possibleHistoryCount: 0 as Count<HistoryAnalysis>,
+    bestPossibleBoundHistoryTotalDistance: 0 as Cents,
+    bestPossibleBoundHistoryTotalInaDistance: 0 as Sum<Multiplier<Ina>>,
+    boundHistoryConsolidation: {},
+    possibleBoundHistoryCount: 0 as Count<BoundHistoryAnalysis>,
 }
 
 export {
-    eventFixture,
-    eventAnalysisFixture,
-    historyAnalysisFixture,
-    eventConsolidationFixture,
+    boundEventFixture,
+    boundEventAnalysisFixture,
+    boundHistoryAnalysisFixture,
+    boundEventConsolidationFixture,
     jiNotationBoundFixture,
     jiNotationBoundAnalysisFixture,
 }

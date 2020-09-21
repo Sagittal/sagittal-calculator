@@ -1,20 +1,20 @@
 import { Integer, Rank } from "../../../general"
-import { EventType } from "../histories"
-import { EventAnalysis } from "../history"
+import { BoundType } from "../../../sagittal"
+import { BoundEventAnalysis } from "../history"
 import { RANKS } from "../ranks"
-import { EventConsolidation } from "./types"
+import { BoundEventConsolidation } from "./types"
 
-const computeInitialEventConsolidation = (eventAnalysis: EventAnalysis): EventConsolidation => ({
-    jiNotationLevel: eventAnalysis.jiNotationLevel,
-    type: eventAnalysis.type,
-    name: eventAnalysis.name,
-    cents: eventAnalysis.cents,
-    exact: eventAnalysis.exact,
-    isPossibleHistoryMember: false,
-    isBestPossibleHistoryMember: false,
-    nextEvents: [],
-    rankOfBestRankedMemberHistory: Object.keys(RANKS).length as Integer & Rank<EventType>,
-    rankOfBestRankedEventInAnyMemberHistory: Object.keys(RANKS).length as Integer & Rank<EventType>,
+const computeInitialEventConsolidation = (boundEventAnalysis: BoundEventAnalysis): BoundEventConsolidation => ({
+    jiNotationLevel: boundEventAnalysis.jiNotationLevel,
+    boundType: boundEventAnalysis.boundType,
+    name: boundEventAnalysis.name,
+    cents: boundEventAnalysis.cents,
+    exact: boundEventAnalysis.exact,
+    isPossibleBoundHistoryMember: false,
+    isBestPossibleBoundHistoryMember: false,
+    nextBoundEvents: [],
+    rankOfBestRankedMemberHistory: Object.keys(RANKS).length as Integer & Rank<BoundType>,
+    rankOfBestRankedEventInAnyMemberHistory: Object.keys(RANKS).length as Integer & Rank<BoundType>,
 })
 
 export {

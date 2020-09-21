@@ -1,31 +1,31 @@
 import { computeExtensionBase, ExtensionBaseType } from "../../../general"
-import { JiNotationBound, JiNotationLevel } from "../../../sagittal"
+import { BoundType, JiNotationBound, JiNotationLevel } from "../../../sagittal"
 import { BoundedSymbolClassPositions, computeBoundedSymbolClassPositions } from "../boundedPositions"
-import { computeEvents } from "./events"
-import { EventType, HistoricalEvent, History } from "./types"
+import { computeBoundEvents } from "./events"
+import { BoundEvent, BoundHistory } from "./types"
 
 const computeExtendedHistories = (
-    history: History,
+    boundHistory: BoundHistory,
     jiNotationLevel: JiNotationLevel,
     jiNotationBound: JiNotationBound,
-): History[] => {
-    const extendedHistories: History[] = computeExtensionBase(ExtensionBaseType.ARRAY) as History[]
+): BoundHistory[] => {
+    const extendedBoundHistories: BoundHistory[] = computeExtensionBase(ExtensionBaseType.ARRAY) as BoundHistory[]
 
     const boundedSymbolClassPositions: BoundedSymbolClassPositions =
         computeBoundedSymbolClassPositions(jiNotationBound.cents, jiNotationLevel)
 
-    const newEvents = [
-        ...computeEvents(jiNotationLevel, boundedSymbolClassPositions, EventType.INA_MIDPOINT),
-        ...computeEvents(jiNotationLevel, boundedSymbolClassPositions, EventType.COMMA_MEAN),
-        ...computeEvents(jiNotationLevel, boundedSymbolClassPositions, EventType.SIZE_CATEGORY_BOUND),
+    const newBoundEvents = [
+        ...computeBoundEvents(jiNotationLevel, boundedSymbolClassPositions, BoundType.INA_MIDPOINT),
+        ...computeBoundEvents(jiNotationLevel, boundedSymbolClassPositions, BoundType.COMMA_MEAN),
+        ...computeBoundEvents(jiNotationLevel, boundedSymbolClassPositions, BoundType.SIZE_CATEGORY_BOUND),
     ]
 
-    newEvents.forEach((event: HistoricalEvent): void => {
-        const extendedHistory: History = history.concat(event)
-        extendedHistories.push(extendedHistory)
+    newBoundEvents.forEach((boundEvent: BoundEvent): void => {
+        const extendedBoundHistory: BoundHistory = boundHistory.concat(boundEvent)
+        extendedBoundHistories.push(extendedBoundHistory)
     })
 
-    return extendedHistories
+    return extendedBoundHistories
 }
 
 export {

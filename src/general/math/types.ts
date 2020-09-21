@@ -43,6 +43,13 @@ enum Direction {
     UNISON = "unison",
 }
 
+// TODO: new numeric type parameter "lowestTerms"
+//  And have an "equalRatios" method which takes lowest terms as necessary
+//  (analogous to how "equalMonzos" trims monzos as necessary)
+//  And make sure equalJiPitches uses equalRatios
+//  And then make sure that the numeric type parameter defaults to true (assume rational numbers are in lowest terms)
+//  And when you input them for JI pitch script group
+//  It should assume *NOT* lowest terms
 type NumericTypeParameters = Partial<{
     integer: boolean,
     irrational: boolean,

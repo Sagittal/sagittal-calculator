@@ -1,3 +1,3 @@
-export { analyzeEvents } from "./analyzeEvents"
+export { analyzeBoundEvents } from "./analyzeEvents"
 export { computeInaDistance } from "./inaDistance"
-export { EventAnalysis } from "./types"
+export { BoundEventAnalysis } from "./types"

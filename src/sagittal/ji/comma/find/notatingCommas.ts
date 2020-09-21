@@ -1,7 +1,8 @@
 import {
     Comma,
     computeJiPitchMonzo,
-    computeRoughMonzo, equalMonzos,
+    computeRoughMonzo,
+    equalMonzos,
     FIVE_ROUGHNESS,
     invertMonzo,
     JiPitch,

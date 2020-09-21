@@ -1,5 +1,11 @@
 import { Cents, Id } from "../../../general"
 
+enum BoundType {
+    INA_MIDPOINT = "inaMidpoint",
+    COMMA_MEAN = "commaMean",
+    SIZE_CATEGORY_BOUND = "sizeCategoryBound",
+}
+
 type Tina = Cents & { _InaBrand: "Tina" }
 type Mina = Cents & { _InaBrand: "Mina" }
 type Ultrina = Cents & { _InaBrand: "Ultrina" }
@@ -20,6 +26,7 @@ interface JiNotationBound {
     id: Id<JiNotationBound>,
     jiNotationLevels: JiNotationLevel[],
     cents: Cents,
+    boundType: BoundType,
 }
 
 export {
@@ -31,4 +38,5 @@ export {
     JiNotationLevel,
     JiNotationBound,
     Ina,
+    BoundType,
 }

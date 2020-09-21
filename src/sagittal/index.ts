@@ -65,5 +65,6 @@ export {
     getSmallestSymbolSubset,
     SymbolSubset,
     computeSecondaryCommaZone,
+    BoundType,
 } from "./notations"
 export { APOTOME_CENTS } from "./constants"

@@ -1,65 +1,64 @@
 import { Count, Integer, Rank } from "../../../../../../../src/general"
 import { shallowClone } from "../../../../../../../src/general/code"
-import { JiNotationLevel, JI_NOTATION_LEVELS } from "../../../../../../../src/sagittal/notations/ji"
+import { BoundType, JiNotationLevel, JI_NOTATION_LEVELS } from "../../../../../../../src/sagittal/notations/ji"
 import {
     jiNotationLevelsBestCumulativeHistoryRanks,
     jiNotationLevelsBestHistoryRanks,
 } from "../../../../../../../src/scripts/jiNotationBound/globals"
-import { EventType } from "../../../../../../../src/scripts/jiNotationBound/histories"
 import { formatJiNotationLevelAnalyses } from "../../../../../../../src/scripts/jiNotationBound/io/terminal/level"
 import { RANKS } from "../../../../../../../src/scripts/jiNotationBound/ranks"
 
 describe("formatJiNotationLevelAnalyses", (): void => {
     beforeEach((): void => {
         jiNotationLevelsBestHistoryRanks[ JiNotationLevel.MEDIUM ] = {
-            [ RANKS[ EventType.INA_MIDPOINT ] ]: 18 as Count<Integer & Rank<EventType>>,
-            [ RANKS[ EventType.COMMA_MEAN ] ]: 23 as Count<Integer & Rank<EventType>>,
-            [ RANKS[ EventType.SIZE_CATEGORY_BOUND ] ]: 1 as Count<Integer & Rank<EventType>>,
+            [ RANKS[ BoundType.INA_MIDPOINT ] ]: 18 as Count<Integer & Rank<BoundType>>,
+            [ RANKS[ BoundType.COMMA_MEAN ] ]: 23 as Count<Integer & Rank<BoundType>>,
+            [ RANKS[ BoundType.SIZE_CATEGORY_BOUND ] ]: 1 as Count<Integer & Rank<BoundType>>,
         }
         jiNotationLevelsBestHistoryRanks[ JiNotationLevel.HIGH ] = {
-            [ RANKS[ EventType.INA_MIDPOINT ] ]: 18 as Count<Integer & Rank<EventType>>,
-            [ RANKS[ EventType.COMMA_MEAN ] ]: 23 as Count<Integer & Rank<EventType>>,
-            [ RANKS[ EventType.SIZE_CATEGORY_BOUND ] ]: 1 as Count<Integer & Rank<EventType>>,
+            [ RANKS[ BoundType.INA_MIDPOINT ] ]: 18 as Count<Integer & Rank<BoundType>>,
+            [ RANKS[ BoundType.COMMA_MEAN ] ]: 23 as Count<Integer & Rank<BoundType>>,
+            [ RANKS[ BoundType.SIZE_CATEGORY_BOUND ] ]: 1 as Count<Integer & Rank<BoundType>>,
         }
         jiNotationLevelsBestHistoryRanks[ JiNotationLevel.ULTRA ] = {
-            [ RANKS[ EventType.INA_MIDPOINT ] ]: 18 as Count<Integer & Rank<EventType>>,
-            [ RANKS[ EventType.COMMA_MEAN ] ]: 23 as Count<Integer & Rank<EventType>>,
-            [ RANKS[ EventType.SIZE_CATEGORY_BOUND ] ]: 1 as Count<Integer & Rank<EventType>>,
+            [ RANKS[ BoundType.INA_MIDPOINT ] ]: 18 as Count<Integer & Rank<BoundType>>,
+            [ RANKS[ BoundType.COMMA_MEAN ] ]: 23 as Count<Integer & Rank<BoundType>>,
+            [ RANKS[ BoundType.SIZE_CATEGORY_BOUND ] ]: 1 as Count<Integer & Rank<BoundType>>,
         }
         jiNotationLevelsBestHistoryRanks[ JiNotationLevel.EXTREME ] = {
-            [ RANKS[ EventType.INA_MIDPOINT ] ]: 18 as Count<Integer & Rank<EventType>>,
-            [ RANKS[ EventType.COMMA_MEAN ] ]: 23 as Count<Integer & Rank<EventType>>,
-            [ RANKS[ EventType.SIZE_CATEGORY_BOUND ] ]: 1 as Count<Integer & Rank<EventType>>,
+            [ RANKS[ BoundType.INA_MIDPOINT ] ]: 18 as Count<Integer & Rank<BoundType>>,
+            [ RANKS[ BoundType.COMMA_MEAN ] ]: 23 as Count<Integer & Rank<BoundType>>,
+            [ RANKS[ BoundType.SIZE_CATEGORY_BOUND ] ]: 1 as Count<Integer & Rank<BoundType>>,
         }
         jiNotationLevelsBestHistoryRanks[ JiNotationLevel.INSANE ] = {
-            [ RANKS[ EventType.INA_MIDPOINT ] ]: 18 as Count<Integer & Rank<EventType>>,
-            [ RANKS[ EventType.COMMA_MEAN ] ]: 23 as Count<Integer & Rank<EventType>>,
-            [ RANKS[ EventType.SIZE_CATEGORY_BOUND ] ]: 1 as Count<Integer & Rank<EventType>>,
+            [ RANKS[ BoundType.INA_MIDPOINT ] ]: 18 as Count<Integer & Rank<BoundType>>,
+            [ RANKS[ BoundType.COMMA_MEAN ] ]: 23 as Count<Integer & Rank<BoundType>>,
+            [ RANKS[ BoundType.SIZE_CATEGORY_BOUND ] ]: 1 as Count<Integer & Rank<BoundType>>,
         }
         jiNotationLevelsBestCumulativeHistoryRanks[ JiNotationLevel.MEDIUM ] = {
-            [ RANKS[ EventType.INA_MIDPOINT ] ]: 16 as Count<Integer & Rank<EventType>>,
-            [ RANKS[ EventType.COMMA_MEAN ] ]: 23 as Count<Integer & Rank<EventType>>,
-            [ RANKS[ EventType.SIZE_CATEGORY_BOUND ] ]: 1 as Count<Integer & Rank<EventType>>,
+            [ RANKS[ BoundType.INA_MIDPOINT ] ]: 16 as Count<Integer & Rank<BoundType>>,
+            [ RANKS[ BoundType.COMMA_MEAN ] ]: 23 as Count<Integer & Rank<BoundType>>,
+            [ RANKS[ BoundType.SIZE_CATEGORY_BOUND ] ]: 1 as Count<Integer & Rank<BoundType>>,
         }
         jiNotationLevelsBestCumulativeHistoryRanks[ JiNotationLevel.HIGH ] = {
-            [ RANKS[ EventType.INA_MIDPOINT ] ]: 16 as Count<Integer & Rank<EventType>>,
-            [ RANKS[ EventType.COMMA_MEAN ] ]: 23 as Count<Integer & Rank<EventType>>,
-            [ RANKS[ EventType.SIZE_CATEGORY_BOUND ] ]: 1 as Count<Integer & Rank<EventType>>,
+            [ RANKS[ BoundType.INA_MIDPOINT ] ]: 16 as Count<Integer & Rank<BoundType>>,
+            [ RANKS[ BoundType.COMMA_MEAN ] ]: 23 as Count<Integer & Rank<BoundType>>,
+            [ RANKS[ BoundType.SIZE_CATEGORY_BOUND ] ]: 1 as Count<Integer & Rank<BoundType>>,
         }
         jiNotationLevelsBestCumulativeHistoryRanks[ JiNotationLevel.ULTRA ] = {
-            [ RANKS[ EventType.INA_MIDPOINT ] ]: 16 as Count<Integer & Rank<EventType>>,
-            [ RANKS[ EventType.COMMA_MEAN ] ]: 23 as Count<Integer & Rank<EventType>>,
-            [ RANKS[ EventType.SIZE_CATEGORY_BOUND ] ]: 1 as Count<Integer & Rank<EventType>>,
+            [ RANKS[ BoundType.INA_MIDPOINT ] ]: 16 as Count<Integer & Rank<BoundType>>,
+            [ RANKS[ BoundType.COMMA_MEAN ] ]: 23 as Count<Integer & Rank<BoundType>>,
+            [ RANKS[ BoundType.SIZE_CATEGORY_BOUND ] ]: 1 as Count<Integer & Rank<BoundType>>,
         }
         jiNotationLevelsBestCumulativeHistoryRanks[ JiNotationLevel.EXTREME ] = {
-            [ RANKS[ EventType.INA_MIDPOINT ] ]: 16 as Count<Integer & Rank<EventType>>,
-            [ RANKS[ EventType.COMMA_MEAN ] ]: 23 as Count<Integer & Rank<EventType>>,
-            [ RANKS[ EventType.SIZE_CATEGORY_BOUND ] ]: 1 as Count<Integer & Rank<EventType>>,
+            [ RANKS[ BoundType.INA_MIDPOINT ] ]: 16 as Count<Integer & Rank<BoundType>>,
+            [ RANKS[ BoundType.COMMA_MEAN ] ]: 23 as Count<Integer & Rank<BoundType>>,
+            [ RANKS[ BoundType.SIZE_CATEGORY_BOUND ] ]: 1 as Count<Integer & Rank<BoundType>>,
         }
         jiNotationLevelsBestCumulativeHistoryRanks[ JiNotationLevel.INSANE ] = {
-            [ RANKS[ EventType.INA_MIDPOINT ] ]: 16 as Count<Integer & Rank<EventType>>,
-            [ RANKS[ EventType.COMMA_MEAN ] ]: 23 as Count<Integer & Rank<EventType>>,
-            [ RANKS[ EventType.SIZE_CATEGORY_BOUND ] ]: 1 as Count<Integer & Rank<EventType>>,
+            [ RANKS[ BoundType.INA_MIDPOINT ] ]: 16 as Count<Integer & Rank<BoundType>>,
+            [ RANKS[ BoundType.COMMA_MEAN ] ]: 23 as Count<Integer & Rank<BoundType>>,
+            [ RANKS[ BoundType.SIZE_CATEGORY_BOUND ] ]: 1 as Count<Integer & Rank<BoundType>>,
         }
     })
 

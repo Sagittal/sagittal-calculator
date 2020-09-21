@@ -16,7 +16,7 @@ const computeFindCommasOutput = (
     const findCommasTable: Table<CommaAnalysis> = [
         ...findCommasHeaderRows,
         ...commaAnalyses.map((commaAnalysis: CommaAnalysis, index: number): Row<{ of: CommaAnalysis }> => {
-            return computeFindCommasRow(commaAnalysis, maybeSymbolClassIds[index])
+            return computeFindCommasRow(commaAnalysis, maybeSymbolClassIds[ index ])
         }),
     ]
 

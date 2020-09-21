@@ -1,4 +1,4 @@
-import { Cents, CentsPosition, computeCentsFromPitch, Id, indexOfFinalElement, Name, Pitch } from "../../../general"
+import { Cents, computeCentsFromPitch, Id, indexOfFinalElement, Name } from "../../../general"
 import {
     getPrimaryComma,
     getRepresentativeSymbol,

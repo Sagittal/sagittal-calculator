@@ -1,23 +1,23 @@
 import { Count } from "../../../../../../../src/general"
 import { ColorMethod, Row } from "../../../../../../../src/general/io"
 import * as table from "../../../../../../../src/general/io/table/table"
+import { BoundType } from "../../../../../../../src/sagittal/notations/ji"
 import { JiNotationBoundAnalysis } from "../../../../../../../src/scripts/jiNotationBound/bound"
-import { EventType } from "../../../../../../../src/scripts/jiNotationBound/histories"
-import { computeJiNotationBoundAnalysesTable } from "../../../../../../../src/scripts/jiNotationBound/io/terminal/bounds"
+import { computeJiNotationBoundAnalysesOutput } from "../../../../../../../src/scripts/jiNotationBound/io/terminal/bounds"
 import { RANKS } from "../../../../../../../src/scripts/jiNotationBound/ranks"
 import { jiNotationBoundAnalysisFixture } from "../../../../../../helpers/src/scripts/jiNotationBound/fixtures"
 
-describe("computeJiNotationBoundAnalysesTable", (): void => {
+describe("computeJiNotationBoundAnalysesOutput", (): void => {
     it("colors the rows correctly, according to their best rank", (): void => {
         const jiNotationBoundAnalyses: JiNotationBoundAnalysis[] = [
-            { ...jiNotationBoundAnalysisFixture, bestRank: RANKS[ EventType.INA_MIDPOINT ] },
-            { ...jiNotationBoundAnalysisFixture, bestRank: RANKS[ EventType.SIZE_CATEGORY_BOUND ] },
-            { ...jiNotationBoundAnalysisFixture, bestRank: RANKS[ EventType.COMMA_MEAN ] },
+            { ...jiNotationBoundAnalysisFixture, bestRank: RANKS[ BoundType.INA_MIDPOINT ] },
+            { ...jiNotationBoundAnalysisFixture, bestRank: RANKS[ BoundType.SIZE_CATEGORY_BOUND ] },
+            { ...jiNotationBoundAnalysisFixture, bestRank: RANKS[ BoundType.COMMA_MEAN ] },
         ]
 
         spyOn(table, "formatTable")
 
-        computeJiNotationBoundAnalysesTable(jiNotationBoundAnalyses)
+        computeJiNotationBoundAnalysesOutput(jiNotationBoundAnalyses)
 
         expect(table.formatTable).toHaveBeenCalledWith(
             jasmine.anything(),

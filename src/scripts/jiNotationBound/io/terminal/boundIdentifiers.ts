@@ -39,7 +39,7 @@ const extractJiNotationBoundIdentifiers = (jiNotationBound: JiNotationBound): Ji
         extremeLevelLesserBoundedSymbolClassIdWithDistance,
         extremeLevelGreaterBoundedSymbolClassIdWithDistance,
     ]: BoundedSymbolClassIdWithDistancesPair =
-        // tslint:disable-next-line:max-line-length
+        // tslint:disable-next-line max-line-length
         jiNotationBoundIdWithBoundedSymbolClassIdWithDistancesPairsByJiNotationLevel[ JiNotationLevel.EXTREME ] as BoundedSymbolClassIdWithDistancesPair
 
     const extremeLevelLesserBoundedSymbolClass: Maybe<BoundedSymbolClass> =

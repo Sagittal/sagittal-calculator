@@ -1,4 +1,4 @@
-import { format23FreeClass, formatInteger, formatNumber, JiPitch, Row, TwoThreeFreeClass } from "../../../../general"
+import { format23FreeClass, formatInteger, formatNumber, Row, TwoThreeFreeClass } from "../../../../general"
 import { TwoThreeFreeClassAnalysis } from "../../../../sagittal"
 
 const compute23FreeClassRow = (
