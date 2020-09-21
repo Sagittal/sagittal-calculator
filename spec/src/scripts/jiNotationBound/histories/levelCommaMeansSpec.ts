@@ -8,7 +8,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
         "can return the comma means for the Medium JI notation level, both the positions and the bounded commas' symbols",
         (): void => {
             expect(computeJiNotationLevelCommaMeans(JiNotationLevel.MEDIUM)).toBeCloseToObject([
-                { name: "| |(" as Name<CommaMean>, cents: 2.878901 as Cents },
+                { name: "|//| |(" as Name<CommaMean>, cents: 2.878901 as Cents },
                 { name: "|( )|(" as Name<CommaMean>, cents: 7.722881 as Cents },
                 { name: ")|( ~|(" as Name<CommaMean>, cents: 12.209187 as Cents },
                 { name: "~|( /|" as Name<CommaMean>, cents: 18.118351 as Cents },
@@ -28,7 +28,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
         "can return the comma means for the High JI notation level, both the positions and the bounded commas' symbols",
         (): void => {
             expect(computeJiNotationLevelCommaMeans(JiNotationLevel.HIGH)).toBeCloseToObject([
-                { name: "| )|" as Name<CommaMean>, cents: 1.689009 as Cents },
+                { name: "|//| )|" as Name<CommaMean>, cents: 1.689009 as Cents },
                 { name: ")| |(" as Name<CommaMean>, cents: 4.567910 as Cents },
                 { name: "|( ~|" as Name<CommaMean>, cents: 7.243699 as Cents },
                 { name: "~| )|(" as Name<CommaMean>, cents: 9.208778 as Cents },
@@ -68,7 +68,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
         "can return the comma means for the Ultra JI notation level, both the positions and the bounded commas' symbols",
         (): void => {
             expect(computeJiNotationLevelCommaMeans(JiNotationLevel.ULTRA)).toBeCloseToObject([
-                { name: "| .)|" as Name<CommaMean>, cents: 0.712148 as Cents },
+                { name: "|//| .)|" as Name<CommaMean>, cents: 0.712148 as Cents },
                 { name: ".)| '|" as Name<CommaMean>, cents: 1.689009 as Cents },
                 { name: "'| )|" as Name<CommaMean>, cents: 2.665869 as Cents },
                 { name: ")| |(" as Name<CommaMean>, cents: 4.567910 as Cents },
@@ -130,7 +130,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
         "can return the comma means for the Extreme JI notation level, both the positions and the bounded commas' symbols",
         (): void => {
             expect(computeJiNotationLevelCommaMeans(JiNotationLevel.EXTREME)).toBeCloseToObject([
-                { name: "| `|" as Name<CommaMean>, cents: 0.211358 as Cents },
+                { name: "|//| `|" as Name<CommaMean>, cents: 0.211358 as Cents },
                 { name: "`| ``|" as Name<CommaMean>, cents: 0.627620 as Cents },
                 { name: "``| .)|" as Name<CommaMean>, cents: 1.128411 as Cents },
                 { name: ".)| '|" as Name<CommaMean>, cents: 1.689009 as Cents },
