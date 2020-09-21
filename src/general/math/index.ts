@@ -30,6 +30,7 @@ export {
     PotentiallyIrrationalRatioParameter,
     computeSubRatio,
     computeNumberFromRatio,
+    equalRatios,
 } from "./ratio"
 export { computeIsRoughInteger } from "./roughness"
 export {

@@ -4,8 +4,8 @@ import { computeNumberFromMonzo } from "./numberFromMonzo"
 import { Monzo, PotentiallyIrrationalMonzoParameter } from "./types"
 
 const computeIsSubMonzo = <T extends NumericTypeParameters>(
-    monzo: PotentiallyIrrationalMonzoParameter<Omit<T, "direction">>,
-): monzo is Monzo<Omit<T, "direction"> & { direction: Direction.SUB }> => {
+    monzo: PotentiallyIrrationalMonzoParameter<T>,
+): monzo is Monzo<T & { direction: Direction.SUB }> => {
     if (monzo.length && monzo.every((term: Exponent<Prime>): boolean => term >= 0)) return false
     if (monzo.length && monzo.every((term: Exponent<Prime>): boolean => term <= 0)) return true
 
@@ -13,20 +13,20 @@ const computeIsSubMonzo = <T extends NumericTypeParameters>(
 }
 
 const computeIsSuperMonzo = <T extends NumericTypeParameters>(
-    monzo: PotentiallyIrrationalMonzoParameter<Omit<T, "direction">>,
-): monzo is Monzo<Omit<T, "direction"> & { direction: Direction.SUPER }> => {
+    monzo: PotentiallyIrrationalMonzoParameter<T>,
+): monzo is Monzo<T & { direction: Direction.SUPER }> => {
     return !(computeIsUnisonMonzo(monzo) || computeIsSubMonzo(monzo))
 }
 
 const computeIsUnisonMonzo = <T extends NumericTypeParameters>(
-    monzo: PotentiallyIrrationalMonzoParameter<Omit<T, "direction">>,
-): monzo is Monzo<Omit<T, "direction"> & { direction: Direction.UNISON }> => {
+    monzo: PotentiallyIrrationalMonzoParameter<T>,
+): monzo is Monzo<T & { direction: Direction.UNISON }> => {
     return monzo.every((term: Exponent<Prime>): boolean => term === 0)
 }
 
 const computeSuperMonzo = <T extends NumericTypeParameters>(
     monzo: PotentiallyIrrationalMonzoParameter<T>,
-): Monzo<Omit<T, "direction"> & { direction: Direction.SUPER }> => {
+): Monzo<T & { direction: Direction.SUPER }> => {
     if (computeIsSubMonzo(monzo)) {
         return invertMonzo(monzo)
     }

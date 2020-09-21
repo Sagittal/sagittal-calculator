@@ -3,8 +3,8 @@ import { NumericTypeParameters } from "../types"
 import { PotentiallyIrrationalRatioParameter, Ratio } from "./types"
 
 const computeRatioIsInteger = <T extends NumericTypeParameters>(
-    ratio: PotentiallyIrrationalRatioParameter<Omit<T, "integer">>,
-): ratio is Ratio<Omit<T, "integer"> & { integer: true }> => {
+    ratio: PotentiallyIrrationalRatioParameter<T>,
+): ratio is Ratio<T & { integer: true }> => {
     const [numerator, denominator] = ratio
 
     return dividesEvenly(numerator, denominator)

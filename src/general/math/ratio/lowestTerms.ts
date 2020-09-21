@@ -2,14 +2,14 @@ import { Divisor } from "../../types"
 import { computeGreatestCommonDivisor } from "../common"
 import { divide } from "../typedOperations"
 import { NumericTypeParameters } from "../types"
-import { Denominator, FractionalPart, Numerator, PotentiallyIrrationalRatioParameter, Ratio } from "./types"
+import { Denominator, FractionalPart, Numerator, Ratio } from "./types"
 
 const computeLowestTermsRatio = <T extends NumericTypeParameters>(
-    [numerator, denominator]: PotentiallyIrrationalRatioParameter<T>,
-): Ratio<T> => {
+    [numerator, denominator]: Ratio<T>,
+): Ratio<T & { unreduced: false }> => {
     const greatestCommonDivisor = computeGreatestCommonDivisor(
-        numerator as FractionalPart,
-        denominator as FractionalPart,
+        numerator as FractionalPart<T>,
+        denominator as FractionalPart<T>,
     )
 
     return [

@@ -15,14 +15,16 @@ import { onlyRunInCi } from "../../../../helpers/onlyRunInCi"
 
 describe("COMMA_POPULARITIES", (): void => {
     it("is the case that all the ratios capable of being parsed by monzo from ratio correctly when only top is 80 or less", (): void => {
-        const originalRatios: Array<Ratio<{ rough: 5, direction: Direction.SUPER }>> =
-            COMMA_POPULARITIES.map((popularity: Popularity): Ratio<{ rough: 5, direction: Direction.SUPER }> => {
+        const originalRatios: Array<Ratio<{ irrational: false, rough: 5, direction: Direction.SUPER }>> =
+            COMMA_POPULARITIES.map((
+                popularity: Popularity,
+            ): Ratio<{ irrational: false, rough: 5, direction: Direction.SUPER }> => {
                 return popularity.twoThreeFreeClass.ratio!
             })
 
-        const monzos: Array<Monzo<{ rough: 5, direction: Direction.SUPER }>> = originalRatios.map((
-            ratio: Ratio<{ rough: 5, direction: Direction.SUPER }>,
-        ): Monzo<{ rough: 5, direction: Direction.SUPER }> => {
+        const monzos: Array<Monzo<{ irrational: false, rough: 5, direction: Direction.SUPER }>> = originalRatios.map((
+            ratio: Ratio<{ irrational: false, rough: 5, direction: Direction.SUPER }>,
+        ): Monzo<{ irrational: false, rough: 5, direction: Direction.SUPER }> => {
             return computeMonzoFromRatio(ratio)
         })
         const ratios: Array<Ratio<{ rough: 5, direction: Direction.SUPER }>> = monzos.map((

@@ -1,4 +1,4 @@
-import { CentsPosition, Name, Ratio } from "../../../../general"
+import { CentsPosition, Name, NumericTypeParameters, Ratio } from "../../../../general"
 
 interface SizeCategoryOptions {
     abbreviated?: boolean,
@@ -78,7 +78,7 @@ type CommaNameOptions = Partial<{
 // Note, however, that when you return the 2's and 3's to this to make it comma-sized, of the size of its name,
 // it WILL be super! This is a subtle but critical point.
 // You can observe this difference in ordering in commaName.ts and twoThreeFreeClass.ts
-type CommaNameRatio = Ratio<{ rough: 5 }> & { _CommaNameRatioBrand: boolean }
+type CommaNameRatio<T extends NumericTypeParameters = {}> = Ratio<T & { rough: 5 }> & { _CommaNameRatioBrand: boolean }
 
 interface ParsedCommaName {
     commaNameRatio: CommaNameRatio,

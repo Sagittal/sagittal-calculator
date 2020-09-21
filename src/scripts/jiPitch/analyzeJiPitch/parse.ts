@@ -39,7 +39,7 @@ const parseJiPitch = (): JiPitch => {
             const { commaNameRatio, sizeCategoryName } = parseCommaName(jiPitchText as Name<Comma>)
             jiPitch = { monzo: computeMonzoFrom23FreeClassAndSizeCategoryName({ commaNameRatio, sizeCategoryName }) }
         } else if (jiPitchText.includes("/")) {
-            jiPitch = { ratio: parseRatio(jiPitchText as Formatted<Ratio>) }
+            jiPitch = { ratio: parseRatio(jiPitchText as Formatted<Ratio<{ unreduced: true }>>) }
         } else if (jiPitchText.match(ANY_MONZO_CHARS)) {
             jiPitch = { monzo: parseMonzo(jiPitchText as Formatted<Monzo>) }
         } else {

@@ -23,7 +23,7 @@ const readJiPitchOptions = (): void => {
         .option(
             `-${CommandFlag.RATIO}, --ratio <ratio>`,
             "ratio",
-            (ratioText: string): Ratio => parseRatio(ratioText as Formatted<Ratio>),
+            (ratioText: string): Ratio => parseRatio(ratioText as Formatted<Ratio<{ unreduced: true }>>),
         )
         .option(
             `-${CommandFlag.COMMA_NAME}, --comma-name <commaName>`,

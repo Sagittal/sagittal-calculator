@@ -1,11 +1,11 @@
-import { Denominator, FractionalPart, parseInteger, Ratio } from "../../math"
+import { Denominator, FractionalPart, NumericTypeParameters, parseInteger, Ratio } from "../../math"
 import { BLANK, SUPERSCRIPT_NUMS } from "../constants"
 import { Formatted } from "../format"
 import { Char } from "../types"
 
 const superscriptNums = ["⁰", "¹", "²", "³", "⁴", "⁵", "⁶", "⁷", "⁸", "⁹"].join()
 
-const parseRatio = <T extends Ratio>(ratioText: Formatted<T>): T => {
+const parseRatio = <T extends Ratio<{ unreduced: true }>>(ratioText: Formatted<T>): T => {
     const ratio = ratioText.split(/[\/:]/).map((fractionalPartText: string): FractionalPart => {
         if (fractionalPartText.match(new RegExp(`[${superscriptNums}.]`))) {
             const factorPowers = fractionalPartText.split(".")

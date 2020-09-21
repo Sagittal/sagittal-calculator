@@ -18,7 +18,7 @@ type Ratio<T extends NumericTypeParameters = {}> =
 type UndirectedRatio<T extends NumericTypeParameters & { direction: Direction.SUPER } =
     { direction: Direction.SUPER }> = Ratio<T> & { _UndirectedRatioBrand: boolean }
 
-type PotentiallyIrrationalRatioParameter<T extends NumericTypeParameters> =
+type PotentiallyIrrationalRatioParameter<T extends NumericTypeParameters = {}> =
     [number & { _NumeratorBrand: boolean }, number & { _DenominatorBrand: boolean }]
     & NumericTypeParameterEffects<T>
 
@@ -27,7 +27,7 @@ enum FractionalPartType {
     DENOMINATOR = "denominator",
 }
 
-type FractionalPart = Numerator | Denominator
+type FractionalPart<T extends NumericTypeParameters = {}> = Numerator<T> | Denominator<T>
 
 export {
     Ratio,

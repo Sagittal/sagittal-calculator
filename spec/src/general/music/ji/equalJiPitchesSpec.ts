@@ -65,4 +65,13 @@ describe("equalJiPitches", (): void => {
 
         expect(actual).toBeTruthy()
     })
+    
+    it("works when ratios haven't been reduced", (): void => {
+        const jiPitchA: JiPitch = { ratio: [10, 14] as Ratio }
+        const jiPitchB: JiPitch = { ratio: [5, 7] as Ratio }
+
+        const actual = equalJiPitches(jiPitchA, jiPitchB)
+
+        expect(actual).toBeTruthy()
+    })
 })
