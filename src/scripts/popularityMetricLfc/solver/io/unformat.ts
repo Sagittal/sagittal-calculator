@@ -2,6 +2,9 @@ import { Io } from "../../../../general"
 
 const unformatParameters = (text: Io): Io => {
     return text
+        .replace(/sumOfSquares/g, "\"sumOfSquares\"")
+        .replace(/submetrics/g, "\"submetrics\"")
+        .replace(/name/g, "\"name\"")
         .replace(/\[ Parameter\.WEIGHT_AS_COEFFICIENT \]/g, "\"weightAsCoefficient\"")
         .replace(/\[ Parameter\.WEIGHT_AS_LOGARITHM_BASE \]/g, "\"weightAsLogarithmBase\"")
         .replace(/\[ Parameter\.WEIGHT_AS_POWER_EXPONENT \]/g, "\"weightAsPowerExponent\"")

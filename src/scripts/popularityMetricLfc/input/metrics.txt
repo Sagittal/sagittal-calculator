@@ -1,10 +1,226 @@
 {
-    "{sum}": {
-        "sumOfSquares": 0.014206086754420309,
-        "submetrics": [
+    "{},{sum,useNuminator}": {
+        sumOfSquares: 0.014206086754420309,
+        submetrics: [
             {
-                "sum": true,
-            },
+                [ Parameter.SUM ]: true,
+                [ Parameter.USE_NUMINATOR ]: true
+            }
         ],
+        name: "{},{sum,useNuminator}"
     },
+    "{sum},{useNuminator}": {
+        sumOfSquares: 0.014206086754420309,
+        submetrics: [
+            {
+                [ Parameter.SUM ]: true,
+                [ Parameter.USE_NUMINATOR ]: true
+            }
+        ],
+        name: "{sum},{useNuminator}"
+    },
+    "{},{aAsCoefficient,sum}": {
+        sumOfSquares: 0.014206086754420309,
+        submetrics: [
+            {
+                [ Parameter.SUM ]: true,
+                [ Parameter.A_AS_COEFFICIENT ]: 0.1111111111111111
+            }
+        ],
+        name: "{},{aAsCoefficient,sum}"
+    },
+    "{aAsCoefficient},{sum}": {
+        sumOfSquares: 0.014206086754420309,
+        submetrics: [
+            {
+                [ Parameter.SUM ]: true,
+                [ Parameter.A_AS_COEFFICIENT ]: 0.1111111111111111
+            }
+        ],
+        name: "{aAsCoefficient},{sum}"
+    },
+    "{},{jAsCoefficient,sum}": {
+        sumOfSquares: 0.014206086754420309,
+        submetrics: [
+            {
+                [ Parameter.SUM ]: true,
+                [ Parameter.J_AS_COEFFICIENT ]: 1
+            }
+        ],
+        name: "{},{jAsCoefficient,sum}"
+    },
+    "{jAsCoefficient},{sum}": {
+        sumOfSquares: 0.014206086754420309,
+        submetrics: [
+            {
+                [ Parameter.SUM ]: true,
+                [ Parameter.J_AS_COEFFICIENT ]: 1
+            }
+        ],
+        name: "{jAsCoefficient},{sum}"
+    },
+    "{},{aAsPowerExponent,sum}": {
+        sumOfSquares: 0.014072906420666415,
+        submetrics: [
+            {
+                [ Parameter.SUM ]: true,
+                [ Parameter.A_AS_POWER_EXPONENT ]: 1.1694915254237293
+            }
+        ],
+        name: "{},{aAsPowerExponent,sum}"
+    },
+    "{aAsPowerExponent},{sum}": {
+        sumOfSquares: 0.014072906420666415,
+        submetrics: [
+            {
+                [ Parameter.SUM ]: true,
+                [ Parameter.A_AS_POWER_EXPONENT ]: 1.1694915254237293
+            }
+        ],
+        name: "{aAsPowerExponent},{sum}"
+    },
+    "{},{sum,x}": {
+        sumOfSquares: 0.013983040590027893,
+        submetrics: [
+            {
+                [ Parameter.SUM ]: true,
+                [ Parameter.X ]: 0.5593220338983049
+            }
+        ],
+        name: "{},{sum,x}"
+    },
+    "{sum},{x}": {
+        sumOfSquares: 0.013983040590027893,
+        submetrics: [
+            {
+                [ Parameter.SUM ]: true,
+                [ Parameter.X ]: 0.5593220338983049
+            }
+        ],
+        name: "{sum},{x}"
+    },
+    "{},{sum,w}": {
+        sumOfSquares: 0.013983040590027893,
+        submetrics: [
+            {
+                [ Parameter.SUM ]: true,
+                [ Parameter.W ]: 0.5593220338983049
+            }
+        ],
+        name: "{},{sum,w}"
+    },
+    "{sum},{w}": {
+        sumOfSquares: 0.013983040590027893,
+        submetrics: [
+            {
+                [ Parameter.SUM ]: true,
+                [ Parameter.W ]: 0.5593220338983049
+            }
+        ],
+        name: "{sum},{w}"
+    },
+    "{},{aAsLogarithmBase,aAsPowerExponent,sum}": {
+        sumOfSquares: 0.013162605298940203,
+        submetrics: [
+            {
+                [ Parameter.SUM ]: true,
+                [ Parameter.A_AS_LOGARITHM_BASE ]: 2,
+                [ Parameter.A_AS_POWER_EXPONENT ]: 2.389830508474576
+            }
+        ],
+        name: "{},{aAsLogarithmBase,aAsPowerExponent,sum}"
+    },
+    "{aAsLogarithmBase,sum},{aAsPowerExponent}": {
+        sumOfSquares: 0.013162605298940203,
+        submetrics: [
+            {
+                [ Parameter.SUM ]: true,
+                [ Parameter.A_AS_LOGARITHM_BASE ]: 2,
+                [ Parameter.A_AS_POWER_EXPONENT ]: 2.389830508474576
+            }
+        ],
+        name: "{aAsLogarithmBase,sum},{aAsPowerExponent}"
+    },
+    "{},{aAsLogarithmBase,sum,w}": {
+        sumOfSquares: 0.012386244365525018,
+        submetrics: [
+            {
+                [ Parameter.SUM ]: true,
+                [ Parameter.A_AS_LOGARITHM_BASE ]: 2,
+                [ Parameter.W ]: -1.6779661016949152
+            }
+        ],
+        name: "{},{aAsLogarithmBase,sum,w}"
+    },
+    "{aAsLogarithmBase,sum},{w}": {
+        sumOfSquares: 0.012386244365525018,
+        submetrics: [
+            {
+                [ Parameter.SUM ]: true,
+                [ Parameter.A_AS_LOGARITHM_BASE ]: 2,
+                [ Parameter.W ]: -1.6779661016949152
+            }
+        ],
+        name: "{aAsLogarithmBase,sum},{w}"
+    },
+    "{},{kAsPowerExponent,sum}": {
+        sumOfSquares: 0.011932731662545224,
+        submetrics: [
+            {
+                [ Parameter.SUM ]: true,
+                [ Parameter.K_AS_POWER_EXPONENT ]: 0.9661016949152543
+            }
+        ],
+        name: "{},{kAsPowerExponent,sum}"
+    },
+    "{kAsPowerExponent},{sum}": {
+        sumOfSquares: 0.011932731662545224,
+        submetrics: [
+            {
+                [ Parameter.SUM ]: true,
+                [ Parameter.K_AS_POWER_EXPONENT ]: 0.9661016949152543
+            }
+        ],
+        name: "{kAsPowerExponent},{sum}"
+    },
+    "{},{jAsPowerExponent,sum}": {
+        sumOfSquares: 0.011723803802867177,
+        submetrics: [
+            {
+                [ Parameter.SUM ]: true,
+                [ Parameter.J_AS_POWER_EXPONENT ]: 1.0677966101694913
+            }
+        ],
+        name: "{},{jAsPowerExponent,sum}"
+    },
+    "{jAsPowerExponent},{sum}": {
+        sumOfSquares: 0.011723803802867177,
+        submetrics: [
+            {
+                [ Parameter.SUM ]: true,
+                [ Parameter.J_AS_POWER_EXPONENT ]: 1.0677966101694913
+            }
+        ],
+        name: "{jAsPowerExponent},{sum}"
+    },
+    "{},{kAsCoefficient,sum}": {
+        sumOfSquares: 0.009498003227551665,
+        submetrics: [
+            {
+                [ Parameter.SUM ]: true,
+                [ Parameter.K_AS_COEFFICIENT ]: 0.7777777777777778
+            }
+        ],
+        name: "{},{kAsCoefficient,sum}"
+    },
+    "{kAsCoefficient},{sum}": {
+        sumOfSquares: 0.009498003227551665,
+        submetrics: [
+            {
+                [ Parameter.SUM ]: true,
+                [ Parameter.K_AS_COEFFICIENT ]: 0.7777777777777778
+            }
+        ],
+        name: "{kAsCoefficient},{sum}"
+    }
 }
