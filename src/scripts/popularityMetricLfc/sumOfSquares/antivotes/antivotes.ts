@@ -13,7 +13,7 @@ const computeAntivotes = (
                 const weightedSubmetricAntivotes: Antivotes =
                     computeWeightedSubmetricAntivotes(twoThreeFreeClass, submetric)
 
-                saveLog(`${stringify(submetric)}: ${weightedSubmetricAntivotes}` as Io, LogTarget.ANTIVOTES)
+                saveLog(`${stringify(submetric)}: ${weightedSubmetricAntivotes}` as Io, LogTarget.DETAILS)
 
                 return totalAntivotes + weightedSubmetricAntivotes as Antivotes
             },

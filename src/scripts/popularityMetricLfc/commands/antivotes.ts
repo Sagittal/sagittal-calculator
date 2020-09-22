@@ -11,7 +11,7 @@ import {
 import { computeAntivotes, Submetric } from "../sumOfSquares"
 import { applySharedPopularityMetricLfcCommandSetup, load } from "./shared"
 
-applySharedPopularityMetricLfcCommandSetup({ defaultLogTargets: [LogTarget.ANTIVOTES] })
+applySharedPopularityMetricLfcCommandSetup({ defaultLogTargets: [LogTarget.DETAILS] })
 
 const submetrics = load("submetrics" as Filename) as Combination<Submetric>
 
@@ -19,4 +19,4 @@ const twoThreeFreeClass: TwoThreeFreeClass = { ratio: [11, 7] } as TwoThreeFreeC
 
 const antivotes = computeAntivotes(twoThreeFreeClass, submetrics)
 
-saveLog(`${format23FreeClass(twoThreeFreeClass)}\n${stringify(submetrics)}\n${antivotes}` as Io, LogTarget.ANTIVOTES)
+saveLog(`${format23FreeClass(twoThreeFreeClass)}\n${stringify(submetrics)}\n${antivotes}` as Io, LogTarget.FINAL)

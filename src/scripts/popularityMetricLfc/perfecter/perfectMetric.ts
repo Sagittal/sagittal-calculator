@@ -30,7 +30,7 @@ const computeSearchNextLocalMinArguments = (
     const indentation = computeIndentation(depth)
 
     const nextLocalMinima = computeLocalMinima(samples, sumsOfSquares, localMin)
-    saveLog(`${indentation}${metricTag} - ${nextLocalMinima.length} lcl min / ${samples.length} samples (${round(100 * nextLocalMinima.length / samples.length)}%)` as Io, LogTarget.PERFECT)
+    saveLog(`${indentation}${metricTag} - ${nextLocalMinima.length} lcl min / ${samples.length} samples (${round(100 * nextLocalMinima.length / samples.length)}%)` as Io, LogTarget.PROGRESS)
 
     const searchNextLocalMinOptions = {
         dynamicParameters,

@@ -15,7 +15,7 @@ const populateScopes = async (): Promise<void> => {
         chunkCountForSubmetrics = chunkCountForSubmetrics - 1 as Count<Chunk<Submetric>>
     }
 
-    saveLog(`\n\nFINISHED POPULATING ${formatSearchedAndPopulated()}` as Io, LogTarget.POPULATE)
+    saveLog(`\n\nFINISHED POPULATING ${formatSearchedAndPopulated()}` as Io, LogTarget.SETUP)
 }
 
 const populateScopesSync = (): void => {
@@ -27,7 +27,7 @@ const populateScopesSync = (): void => {
         chunkCountForSubmetrics = chunkCountForSubmetrics - 1 as Count<Chunk<Submetric>>
     }
 
-    saveLog(`\n\nFINISHED POPULATING ${formatSearchedAndPopulated()}` as Io, LogTarget.POPULATE)
+    saveLog(`\n\nFINISHED POPULATING ${formatSearchedAndPopulated()}` as Io, LogTarget.SETUP)
 }
 
 export {

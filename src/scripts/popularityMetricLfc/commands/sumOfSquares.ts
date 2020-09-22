@@ -2,10 +2,10 @@ import { Combination, Filename, Io, LogTarget, saveLog, stringify } from "../../
 import { computeSumOfSquaresForSubmetrics, Submetric } from "../sumOfSquares"
 import { applySharedPopularityMetricLfcCommandSetup, load } from "./shared"
 
-applySharedPopularityMetricLfcCommandSetup({ defaultLogTargets: [LogTarget.UNPOPULARITIES] })
+applySharedPopularityMetricLfcCommandSetup({ defaultLogTargets: [LogTarget.DETAILS] })
 
 const submetrics = load("submetrics" as Filename) as Combination<Submetric>
 
 const sumOfSquares = computeSumOfSquaresForSubmetrics(submetrics)
 
-saveLog(`${sumOfSquares}\n${stringify(submetrics)}` as Io, LogTarget.ALL)
+saveLog(`${sumOfSquares}\n${stringify(submetrics)}` as Io, LogTarget.FINAL)

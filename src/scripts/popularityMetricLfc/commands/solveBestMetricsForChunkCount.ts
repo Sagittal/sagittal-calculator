@@ -10,29 +10,29 @@ import {
 import { applySharedPopularityMetricLfcCommandSetup } from "./shared"
 
 const defaultLogTargets = [
-    LogTarget.SEARCH,
-    LogTarget.POPULATE,
-    LogTarget.FINAL_SOLVER_RESULTS,
+    LogTarget.SETUP,
+    LogTarget.PROGRESS,
+    LogTarget.FINAL,
 ]
 applySharedPopularityMetricLfcCommandSetup({ defaultLogTargets })
 
 solverStatus.chunkCount = parseInteger(program.args[ 0 ]) as Count<Chunk>
 
 const finalOutput = (): void => {
-    saveLog(`\n\nAND THE BEST METRICS WERE ${formatBestMetrics()}` as Io, LogTarget.FINAL_SOLVER_RESULTS)
+    saveLog(`\n\nAND THE BEST METRICS WERE ${formatBestMetrics()}` as Io, LogTarget.FINAL)
 
     if (ioSettings.time) {
         saveLog(
             `\n\nFINDING BEST METRICS TOOK ${time()}` as Io,
-            LogTarget.FINAL_SOLVER_RESULTS,
+            LogTarget.FINAL,
         )
     }
-    saveLog(`MAX UNIT ${popularityMetricLfcScriptGroupSettings.maxUnit}` as Io, LogTarget.FINAL_SOLVER_RESULTS)
-    saveLog(`AVERAGE SAMPLES/SCOPE ${solverStatus.averageSamplesPerScope}` as Io, LogTarget.FINAL_SOLVER_RESULTS)
+    saveLog(`MAX UNIT ${popularityMetricLfcScriptGroupSettings.maxUnit}` as Io, LogTarget.FINAL)
+    saveLog(`AVERAGE SAMPLES/SCOPE ${solverStatus.averageSamplesPerScope}` as Io, LogTarget.FINAL)
     const originalOrNoUseless = popularityMetricLfcScriptGroupSettings.noUseless ? "NO USELESS" : "ORIGINAL"
-    saveLog(`PARAMETER SCOPES @ ${originalOrNoUseless} SETTINGS` as Io, LogTarget.FINAL_SOLVER_RESULTS)
-    saveLog(`Z ${popularityMetricLfcScriptGroupSettings.z}` as Io, LogTarget.FINAL_SOLVER_RESULTS)
-    saveLog(`ONLY TOP ${popularityMetricLfcScriptGroupSettings.onlyTop}` as Io, LogTarget.FINAL_SOLVER_RESULTS)
+    saveLog(`PARAMETER SCOPES @ ${originalOrNoUseless} SETTINGS` as Io, LogTarget.FINAL)
+    saveLog(`Z ${popularityMetricLfcScriptGroupSettings.z}` as Io, LogTarget.FINAL)
+    saveLog(`ONLY TOP ${popularityMetricLfcScriptGroupSettings.onlyTop}` as Io, LogTarget.FINAL)
 }
 
 if (popularityMetricLfcScriptGroupSettings.sync) {

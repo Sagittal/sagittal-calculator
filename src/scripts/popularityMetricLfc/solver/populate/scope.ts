@@ -8,7 +8,7 @@ const populateScope = (scope: Scope): void => {
     solverStatus.populatedScopeCount = increment(solverStatus.populatedScopeCount)
 
     if (solverStatus.populatedScopeCount % 1000 === 0) {
-        saveLog(`${solverStatus.populatedScopeCount} scopes have been populated so far` as Io, LogTarget.POPULATE)
+        saveLog(`${solverStatus.populatedScopeCount} scopes have been populated so far` as Io, LogTarget.SETUP)
     }
 }
 

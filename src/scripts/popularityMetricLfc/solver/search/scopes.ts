@@ -10,7 +10,7 @@ const searchScopes = async (): Promise<void> => {
     }
 
     if (!solverStatus.finishedPopulating) {
-        saveLog(`searching got ahead of populating; waiting 1 second for more scopes to be populated ${formatSearchedAndPopulated()}` as Io, LogTarget.SEARCH)
+        saveLog(`searching got ahead of populating; waiting 1 second for more scopes to be populated ${formatSearchedAndPopulated()}` as Io, LogTarget.PROGRESS)
 
         return doOnNextEventLoop(searchScopes, ONE_SECOND_TO_GIVE_POPULATION_A_CHANCE_TO_CATCH_UP)
     }

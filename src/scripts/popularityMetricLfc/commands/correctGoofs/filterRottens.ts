@@ -41,4 +41,4 @@ const noRottens = potentiallyRottenEntries.reduce(
     {} as Record<Name<Metric>, Metric>,
 )
 
-saveLog(stringify(noRottens, { multiline: true }) as Io, LogTarget.ALL)
+saveLog(stringify(noRottens, { multiline: true }) as Io, LogTarget.FINAL)

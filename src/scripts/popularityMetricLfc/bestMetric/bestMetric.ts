@@ -21,7 +21,7 @@ const setupForNonRecursiveSearch = (
     const metricName = computeMetricName(scope)
     if (metricNames.includes(metricName)) {
         const errorMessage = `Already searched equivalent initial scope for ${metricName}`
-        saveLog(errorMessage as Io, LogTarget.ERRORS)
+        saveLog(errorMessage as Io, LogTarget.ERROR)
         throw new Error(errorMessage)
     }
     metricNames.push(metricName)
@@ -34,10 +34,10 @@ const setupForNonRecursiveSearch = (
     solverStatus.averageSamplesPerScope =
         round(solverStatus.sampleCount / solverStatus.populatedScopeCount) as Count<Sample>
 
-    saveLog(`about to search initial scope for metric ${metricName}` as Io, LogTarget.SEARCH)
+    saveLog(`about to search initial scope for metric ${metricName}` as Io, LogTarget.PROGRESS)
     saveLog(
         `which has ${samples.length} samples; average sample count is ${solverStatus.averageSamplesPerScope}` as Io,
-        LogTarget.SEARCH,
+        LogTarget.PROGRESS,
     )
 
     return { dynamicParameters, samples, spreadDynamicParameters, metricName }

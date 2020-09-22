@@ -6,7 +6,7 @@ import { computeJiNotationBoundsImage, computeJiNotationBoundsOutput } from "../
 
 parseCommands(
     ScriptGroup.JI_NOTATION_BOUND as Filename,
-    [LogTarget.JI_NOTATION_BOUNDS_TABLE, LogTarget.JI_NOTATION_BOUNDS_IMAGE],
+    [LogTarget.FINAL, LogTarget.FINAL],
 )
 
 ioSettings.scriptGroup = ScriptGroup.JI_NOTATION_BOUND as Filename
@@ -17,9 +17,12 @@ const tableOutput: Io = computeJiNotationBoundsOutput(jiNotationBoundAnalyses)
 
 const imageOutput: Io = computeJiNotationBoundsImage(jiNotationBoundAnalyses)
 
-saveLog(tableOutput, LogTarget.JI_NOTATION_BOUNDS_TABLE, { useTargetColor: false })
-saveLog(imageOutput, LogTarget.JI_NOTATION_BOUNDS_IMAGE, {
+saveLog(tableOutput, LogTarget.FINAL, {
     useTargetColor: false,
-    fileExtensionProvided: true,
+    filenameOverride: "jiNotationBoundsTable.txt" as Filename,
+})
+saveLog(imageOutput, LogTarget.FINAL, {
+    useTargetColor: false,
+    filenameOverride: "jiNotationBoundsImage.svg" as Filename,
     writeOnly: !process.env.TEST_MODE,
 })

@@ -62,7 +62,7 @@ const perfectMetric = async (metric: Metric, options: PerfectMetricOptions): Pro
     try {
         await recursiveSearchScopeAndMaybeUpdateBestMetric(scope, options)
     } catch (error) {
-        saveLog(`error when perfecting scope ${stringify(scope)}: ${error}` as Io, LogTarget.ERRORS)
+        saveLog(`error when perfecting scope ${stringify(scope)}: ${error}` as Io, LogTarget.ERROR)
     }
 }
 
@@ -72,7 +72,7 @@ const perfectMetricSync = (metric: Metric, options: PerfectMetricOptions): void 
     try {
         recursiveSearchScopeAndMaybeUpdateBestMetricSync(scope, options)
     } catch (error) {
-        saveLog(`error when perfecting scope ${stringify(scope)}: ${error}` as Io, LogTarget.ERRORS)
+        saveLog(`error when perfecting scope ${stringify(scope)}: ${error}` as Io, LogTarget.ERROR)
     }
 }
 

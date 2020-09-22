@@ -18,6 +18,8 @@ const setLogTargets = (logTargetsCommaSeparatedString: Maybe<string | boolean> =
     targets.forEach((target: LogTarget): void => {
         ioSettings.logTargets[ target ] = true
     })
+
+    ioSettings.logTargets[ LogTarget.FINAL ] = true
 }
 
 export {

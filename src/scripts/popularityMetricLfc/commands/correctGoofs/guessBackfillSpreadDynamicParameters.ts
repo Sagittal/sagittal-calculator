@@ -46,4 +46,4 @@ const guessedBackfilledSpreadDynamicParametersMetrics = metricsMissingSpreadDyna
     {} as Record<Name<Metric>, Metric>,
 )
 
-saveLog(stringify(guessedBackfilledSpreadDynamicParametersMetrics, { multiline: true }) as Io, LogTarget.ALL)
+saveLog(stringify(guessedBackfilledSpreadDynamicParametersMetrics, { multiline: true }) as Io, LogTarget.FINAL)

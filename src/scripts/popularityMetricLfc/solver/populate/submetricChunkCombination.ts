@@ -32,7 +32,7 @@ const computeNextPopulateScopesForSubmetricChunkCombinationOptions = (
         submetricChunkCombinationCount,
     } = options
 
-    saveLog(`populating scopes for submetric chunk combination ${submetricChunkCombinationIndex + 1}/${submetricChunkCombinationCount} with parameter chunk combination ${parameterChunkCombinationIndex + 1}/${parameterChunkCombinations.length} (${100 * parameterChunkCombinationIndex / parameterChunkCombinations.length}%) ${formatSearchedAndPopulated()}` as Io, LogTarget.POPULATE)
+    saveLog(`populating scopes for submetric chunk combination ${submetricChunkCombinationIndex + 1}/${submetricChunkCombinationCount} with parameter chunk combination ${parameterChunkCombinationIndex + 1}/${parameterChunkCombinations.length} (${100 * parameterChunkCombinationIndex / parameterChunkCombinations.length}%) ${formatSearchedAndPopulated()}` as Io, LogTarget.SETUP)
 
     const parameterChunkCombination: Combination<Chunk<Parameter>> =
         parameterChunkCombinations[ parameterChunkCombinationIndex ]

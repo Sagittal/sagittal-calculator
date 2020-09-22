@@ -51,4 +51,4 @@ Object.values(Parameter).forEach((parameter: Parameter): void => {
     }
 })
 
-saveLog(stringify(parameterExtrema, { multiline: true }) as Io, LogTarget.ALL)
+saveLog(stringify(parameterExtrema, { multiline: true }) as Io, LogTarget.FINAL)

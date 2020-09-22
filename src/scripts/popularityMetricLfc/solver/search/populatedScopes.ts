@@ -16,12 +16,12 @@ const searchPopulatedScopes = async (): Promise<void> => {
     try {
         await nonRecursiveSearchScopeAndMaybeUpdateBestMetric(scope)
     } catch (e) {
-        saveLog(`error when searching scope: ${e.message}` as Io, LogTarget.ERRORS)
+        saveLog(`error when searching scope: ${e.message}` as Io, LogTarget.ERROR)
     }
 
     solverStatus.searchedScopeCount = increment(solverStatus.searchedScopeCount)
 
-    saveLog(`searched out of populated: ${formatPercentage(solverStatus.searchedScopeCount, solverStatus.populatedScopeCount)} ${formatSearchedAndPopulated()}` as Io, LogTarget.SEARCH)
+    saveLog(`searched out of populated: ${formatPercentage(solverStatus.searchedScopeCount, solverStatus.populatedScopeCount)} ${formatSearchedAndPopulated()}` as Io, LogTarget.PROGRESS)
 }
 
 const searchPopulatedScopesSync = (): void => {
@@ -33,12 +33,12 @@ const searchPopulatedScopesSync = (): void => {
     try {
         nonRecursiveSearchScopeAndMaybeUpdateBestMetricSync(scope)
     } catch (e) {
-        saveLog(`error when searching scope: ${e.message}` as Io, LogTarget.ERRORS)
+        saveLog(`error when searching scope: ${e.message}` as Io, LogTarget.ERROR)
     }
 
     solverStatus.searchedScopeCount = increment(solverStatus.searchedScopeCount)
 
-    saveLog(`searched out of populated: ${formatPercentage(solverStatus.searchedScopeCount, solverStatus.populatedScopeCount)} ${formatSearchedAndPopulated()}` as Io, LogTarget.SEARCH)
+    saveLog(`searched out of populated: ${formatPercentage(solverStatus.searchedScopeCount, solverStatus.populatedScopeCount)} ${formatSearchedAndPopulated()}` as Io, LogTarget.PROGRESS)
 }
 
 export {

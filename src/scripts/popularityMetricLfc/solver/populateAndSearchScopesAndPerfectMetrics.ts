@@ -22,7 +22,7 @@ const populateAndSearchScopesAndPerfectMetrics = async (): Promise<void> => {
 
     await searchScopes()
 
-    saveLog(`\n\nFINAL STATUS ${formatSearchedAndPopulated()}` as Io, LogTarget.FINAL_SOLVER_RESULTS)
+    saveLog(`\n\nFINAL STATUS ${formatSearchedAndPopulated()}` as Io, LogTarget.FINAL)
 }
 
 const populateAndSearchScopesAndPerfectMetricsSync = (): void => {
@@ -32,7 +32,7 @@ const populateAndSearchScopesAndPerfectMetricsSync = (): void => {
 
     searchScopesSync()
 
-    saveLog(`\n\nFINAL STATUS ${formatSearchedAndPopulated()}` as Io, LogTarget.FINAL_SOLVER_RESULTS)
+    saveLog(`\n\nFINAL STATUS ${formatSearchedAndPopulated()}` as Io, LogTarget.FINAL)
 }
 
 export {

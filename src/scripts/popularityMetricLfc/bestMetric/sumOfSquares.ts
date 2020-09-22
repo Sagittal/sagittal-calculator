@@ -17,7 +17,7 @@ const computeSumOfSquaresAndMaybeUpdateBestMetricSync = (
     try {
         sumOfSquares = computeSumOfSquaresForSubmetrics(submetrics)
     } catch (e) {
-        saveLog(`error when computing sum of squares: ${e.message}` as Io, LogTarget.ERRORS)
+        saveLog(`error when computing sum of squares: ${e.message}` as Io, LogTarget.ERROR)
     }
     setSumOfSquaresAtSamplePoint(sumOfSquares, sumsOfSquares, samplePoint)
 
@@ -33,7 +33,7 @@ const computeSumOfSquaresAndMaybeUpdateBestMetricSync = (
 
         saveLog(
             `${indentation}new best metric: ${stringify(bestMetric)}` as Io,
-            LogTarget.NEW_BEST_METRIC,
+            LogTarget.RESULT,
         )
     }
 }

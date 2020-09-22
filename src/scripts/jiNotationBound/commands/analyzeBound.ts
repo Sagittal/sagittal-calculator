@@ -6,7 +6,7 @@ import { analyzeJiNotationBound } from "../bound"
 import { computeHistories } from "../histories"
 import { formatJiNotationBound } from "../io"
 
-parseCommands(ScriptGroup.JI_NOTATION_BOUND as Filename, [LogTarget.JI_NOTATION_BOUND])
+parseCommands(ScriptGroup.JI_NOTATION_BOUND as Filename, [LogTarget.FINAL])
 
 ioSettings.scriptGroup = ScriptGroup.JI_NOTATION_BOUND as Filename
 
@@ -21,7 +21,7 @@ if (jiNotationBound) {
     const jiNotationBoundAnalysis = analyzeJiNotationBound(histories, jiNotationBound)
 
     const jiNotationBoundOutput: Io = formatJiNotationBound(jiNotationBoundAnalysis, { jiNotationBound })
-    saveLog(jiNotationBoundOutput, LogTarget.JI_NOTATION_BOUND)
+    saveLog(jiNotationBoundOutput, LogTarget.FINAL)
 } else {
     throw new Error(`Could not find JI notation bound with ID ${jiNotationBoundId}`)
 }

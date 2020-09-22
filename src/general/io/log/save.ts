@@ -5,13 +5,8 @@ import { targetColors } from "./colors"
 import { LogTarget, SaveLogOptions } from "./types"
 import { write } from "./write"
 
-// TODO: GENERIC LOG TARGETS the LogTargets should not have to do with the scripts, should be generic
-//  And file name should be different
-//  Maybe it should just be the friggin filename
-//  and then also update filenames in results/ folders to match
-
 const saveLog = (message: Io, target: LogTarget, options: SaveLogOptions = {}): void => {
-    const { useTargetColor = true, fileExtensionProvided = false, writeOnly = false } = options
+    const { useTargetColor = true, filenameOverride, writeOnly = false } = options
 
     if (ioSettings.logTargets[ LogTarget.NONE ]) {
         return
@@ -19,7 +14,7 @@ const saveLog = (message: Io, target: LogTarget, options: SaveLogOptions = {}): 
 
     if (ioSettings.logTargets[ LogTarget.ALL ] || ioSettings.logTargets[ target ] || target === LogTarget.ALL) {
         if (!ioSettings.noWrite) {
-            write(message, target, ioSettings.scriptGroup, fileExtensionProvided)
+            write(message, target, ioSettings.scriptGroup, filenameOverride)
         }
 
         if (!writeOnly) {

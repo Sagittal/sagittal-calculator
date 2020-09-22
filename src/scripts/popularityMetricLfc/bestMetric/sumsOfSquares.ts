@@ -22,7 +22,7 @@ const computeNextOptions = (
     try {
         checkSubmetricsForInvalidParameterCombinations(samples[ 0 ].submetrics)
     } catch (e) {
-        saveLog(`Not searching scope due to invalid parameter combinations: ${e.message}` as Io, LogTarget.ERRORS)
+        saveLog(`Not searching scope due to invalid parameter combinations: ${e.message}` as Io, LogTarget.ERROR)
         return
     }
 

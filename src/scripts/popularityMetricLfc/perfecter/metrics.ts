@@ -14,7 +14,7 @@ const setupForPerfectMetrics = (
 
     const { name, ...otherMetricToPerfectProperties } = metricToPerfect
 
-    saveLog(`\n\nabout to perfect ${metricTag} ${stringify(otherMetricToPerfectProperties)}` as Io, LogTarget.PERFECT)
+    saveLog(`\n\nabout to perfect ${metricTag} ${stringify(otherMetricToPerfectProperties)}` as Io, LogTarget.PROGRESS)
 
     return {
         metricToPerfect,
@@ -28,10 +28,10 @@ const perfectMetrics = async (
     index: number = 0,
     topLevelTotalToPerfect: Count<Metric> = 0 as Count<Metric>,
 ): Promise<void> => {
-    const { metricToPerfect, totalToPerfect, metricTag } = 
+    const { metricToPerfect, totalToPerfect, metricTag } =
         setupForPerfectMetrics(bestMetricsValues, index, topLevelTotalToPerfect)
     await perfectMetric(metricToPerfect, { metricTag })
-    saveLog(`perfected ${metricTag}` as Io, LogTarget.PERFECT)
+    saveLog(`perfected ${metricTag}` as Io, LogTarget.PROGRESS)
 
     if (index === totalToPerfect - 1) {
         return
@@ -48,7 +48,7 @@ const perfectMetricsSync = (
     const { metricToPerfect, totalToPerfect, metricTag } =
         setupForPerfectMetrics(bestMetricsValues, index, topLevelTotalToPerfect)
     perfectMetricSync(metricToPerfect, { metricTag })
-    saveLog(`perfected ${metricTag}` as Io, LogTarget.PERFECT)
+    saveLog(`perfected ${metricTag}` as Io, LogTarget.PROGRESS)
 
     if (index === totalToPerfect - 1) {
         return

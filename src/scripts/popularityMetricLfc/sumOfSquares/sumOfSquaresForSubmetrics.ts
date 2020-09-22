@@ -30,16 +30,16 @@ const computeSumOfSquaresForSubmetrics = (submetrics: Combination<Submetric>): S
     }
     const rankedUnpopularities = addRankToUnpopularities(unpopularities)
 
-    if (ioSettings.logTargets[ LogTarget.ALL ] || ioSettings.logTargets[ LogTarget.UNPOPULARITIES ]) {
+    if (ioSettings.logTargets[ LogTarget.ALL ] || ioSettings.logTargets[ LogTarget.DETAILS ]) {
         rankedUnpopularities.forEach((rankedUnpopularity: Ranked<Unpopularity>): void => {
-            saveLog(stringify(rankedUnpopularity) as Io, LogTarget.UNPOPULARITIES)
+            saveLog(stringify(rankedUnpopularity) as Io, LogTarget.DETAILS)
         })
     }
 
     const sumOfSquares =
         computeSumOfSquares(rankedUnpopularities, realPopularities, popularityMetricLfcScriptGroupSettings.z)
 
-    saveLog(`sum-of-squares ${sumOfSquares}` as Io, LogTarget.SUM_OF_SQUARES)
+    saveLog(`sum-of-squares ${sumOfSquares}` as Io, LogTarget.DETAILS)
 
     return sumOfSquares
 }
