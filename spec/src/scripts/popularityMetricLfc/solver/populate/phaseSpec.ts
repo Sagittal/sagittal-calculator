@@ -94,6 +94,7 @@ describe("populateScopesPhase", (): void => {
             submetricChunkCombinationOne,
             {
                 parameterChunkCombinations,
+                parameterChunkCombinationIndex: 0 as Index<Combination<Chunk<Parameter>>>,
                 submetricChunkCombinationIndex: 0 as Index<Combination<Chunk<Submetric>>>,
                 submetricChunkCombinationCount: 2 as Count<Combination<Chunk<Submetric>>>,
             },
@@ -102,6 +103,7 @@ describe("populateScopesPhase", (): void => {
             submetricChunkCombinationTwo,
             {
                 parameterChunkCombinations,
+                parameterChunkCombinationIndex: 0 as Index<Combination<Chunk<Parameter>>>,
                 submetricChunkCombinationIndex: 1 as Index<Combination<Chunk<Submetric>>>,
                 submetricChunkCombinationCount: 2 as Count<Combination<Chunk<Submetric>>>,
             },

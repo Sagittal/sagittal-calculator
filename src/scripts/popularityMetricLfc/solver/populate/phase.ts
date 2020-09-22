@@ -98,6 +98,7 @@ const populateScopesPhase = async (
     for (const [submetricChunkCombinationIndex, submetricChunkCombination] of submetricChunkCombinations.entries()) {
         await populateScopesForSubmetricChunkCombination(submetricChunkCombination, {
             parameterChunkCombinations,
+            parameterChunkCombinationIndex: 0 as Index<Combination<Chunk<Parameter>>>,
             submetricChunkCombinationIndex: submetricChunkCombinationIndex as Index<Combination<Chunk<Submetric>>>,
             submetricChunkCombinationCount: count(submetricChunkCombinations),
         })
@@ -116,6 +117,7 @@ const populateScopesPhaseSync = (
     for (const [submetricChunkCombinationIndex, submetricChunkCombination] of submetricChunkCombinations.entries()) {
         populateScopesForSubmetricChunkCombinationSync(submetricChunkCombination, {
             parameterChunkCombinations,
+            parameterChunkCombinationIndex: 0 as Index<Combination<Chunk<Parameter>>>,
             submetricChunkCombinationIndex: submetricChunkCombinationIndex as Index<Combination<Chunk<Submetric>>>,
             submetricChunkCombinationCount: count(submetricChunkCombinations),
         })

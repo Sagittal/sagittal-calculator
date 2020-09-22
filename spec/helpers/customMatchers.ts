@@ -121,7 +121,7 @@ const customMatchers: CustomMatcherFactories = {
     toBeArrayWithDeepCloseContents: (util: MatchersUtil, customEqualityTesters: readonly CustomEqualityTester[]): CustomMatcher => ({
         compare: <T>(actual: T[], expected: T[], precision: Integer = ACCURACY_THRESHOLD, message?: string): CustomMatcherResult =>
             doAssertions((): void => {
-                assert(actual.length === expected.length, `Arrays did not have the same length, so there is no way they could have the same members (closely).`)
+                assert(actual.length === expected.length, `Arrays did not have the same length (expected: ${expected.length}; actual: ${actual.length}), so there is no way they could have the same members (closely).`)
                 eachExpectedElementIsCloseToSomeActualElement(expected, actual, precision, message)
             }),
     }),
@@ -144,7 +144,7 @@ const customMatchers: CustomMatcherFactories = {
     toBeArrayWithDeepEqualContents: (util: MatchersUtil, customEqualityTesters: readonly CustomEqualityTester[]): CustomMatcher => ({
         compare: <T>(actual: T[], expected: T[], message?: string): CustomMatcherResult =>
             doAssertions((): void => {
-                assert(actual.length === expected.length, `Arrays did not have the same length, so there is no way they could have the same members.`)
+                assert(actual.length === expected.length, `Arrays did not have the same length (expected: ${expected.length}; actual: ${actual.length}), so there is no way they could have the same members.`)
                 eachExpectedElementDeepEqualsSomeActualElement(expected, actual, message)
             }),
     }),
@@ -152,7 +152,7 @@ const customMatchers: CustomMatcherFactories = {
     toBeSameCombinationsAs: (util: MatchersUtil, customEqualityTesters: readonly CustomEqualityTester[]): CustomMatcher => ({
         compare: <T>(actual: T[][], expected: T[][], message?: string): CustomMatcherResult =>
             doAssertions((): void => {
-                assert(actual.length === expected.length, `Arrays did not have the same length, so there is no way they could have the same members.`)
+                assert(actual.length === expected.length, `Arrays did not have the same length (expected: ${expected.length}; actual: ${actual.length}), so there is no way they could have the same members.`)
                 eachExpectedElementHasSameContentsAsSomeActualElement(expected, actual, message)
             }),
     }),
@@ -160,7 +160,7 @@ const customMatchers: CustomMatcherFactories = {
     toBeSameDistributionsAs: (util: MatchersUtil, customEqualityTesters: readonly CustomEqualityTester[]): CustomMatcher => ({
         compare: <T>(actual: T[][][], expected: T[][][], message?: string): CustomMatcherResult =>
             doAssertions((): void => {
-                assert(actual.length === expected.length, `Arrays did not have the same length, so there is no way they could have the same members.`)
+                assert(actual.length === expected.length, `Arrays did not have the same length (expected: ${expected.length}; actual: ${actual.length}), so there is no way they could have the same members.`)
                 expected.forEach((expectedElement: T[][]): void => {
                     assert(
                         actual.some((actualElement: T[][]): boolean => {

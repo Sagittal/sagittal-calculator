@@ -27,7 +27,7 @@ const computeNextPopulateScopesForSubmetricChunkCombinationOptions = (
 ): PopulateScopesForSubmetricChunkCombinationOptions => {
     const {
         parameterChunkCombinations,
-        parameterChunkCombinationIndex = 0,
+        parameterChunkCombinationIndex,
         submetricChunkCombinationIndex,
         submetricChunkCombinationCount,
     } = options
@@ -76,7 +76,7 @@ const populateScopesForSubmetricChunkCombination = async (
     const nextOptions =
         computeNextPopulateScopesForSubmetricChunkCombinationOptions(submetricChunkCombination, options)
 
-    if (nextOptions.parameterChunkCombinationIndex || 0 > indexOfFinalElement(nextOptions.parameterChunkCombinations)) {
+    if (nextOptions.parameterChunkCombinationIndex > indexOfFinalElement(nextOptions.parameterChunkCombinations)) {
         return
     }
 
@@ -92,7 +92,7 @@ const populateScopesForSubmetricChunkCombinationSync = (
     const nextOptions =
         computeNextPopulateScopesForSubmetricChunkCombinationOptions(submetricChunkCombination, options)
 
-    if (nextOptions.parameterChunkCombinationIndex || 0 > indexOfFinalElement(nextOptions.parameterChunkCombinations)) {
+    if (nextOptions.parameterChunkCombinationIndex > indexOfFinalElement(nextOptions.parameterChunkCombinations)) {
         return
     }
 
