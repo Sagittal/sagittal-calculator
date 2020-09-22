@@ -24,11 +24,11 @@ const computeCommas = (options: CommasOptions): Comma[] => {
     } = options
 
     if (minCents >= maxCents) {
-        throw new Error(`Min cents is not less than max cents; range was ${formatNumber(minCents)} - ${formatNumber(maxCents)}.`)
+        throw new Error(`Min cents is not less than max cents; range was ${formatNumber(minCents, { align: false })} - ${formatNumber(maxCents, { align: false })}.`)
     }
 
     if (abs(minCents) > MAX_SIZE_CATEGORY_BOUND || abs(maxCents) > MAX_SIZE_CATEGORY_BOUND) {
-        throw new Error(`Cents range must be within comma size category bounds (±227.370¢); range was ${formatNumber(minCents)} - ${formatNumber(maxCents)}.`)
+        throw new Error(`Cents range must be within comma size category bounds (±227.370¢); range was ${formatNumber(minCents, { align: false })} - ${formatNumber(maxCents, { align: false })}.`)
     }
 
     let commas: Comma[] = []

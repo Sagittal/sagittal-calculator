@@ -25,13 +25,13 @@ const computePopular23FreeClassWithBestNotatingCommaRow = (
 
     return [
         format23FreeClass(rankedPopular23FreeClassWithBestNotatingComma),
-        estimatedRank,
+        estimatedRank, // here I thnk
         formatNumber(bestNotatingCommaCents),
         formatMonzo(bestNotatingCommaMonzo),
         isUndefined(bestNotatingCommaMaybeSymbolClassId) ?
             BLANK :
             formatSymbolClass(bestNotatingCommaMaybeSymbolClassId, ioSettings),
-    ] as Row<{ of: Popular23FreeClass & ExactlyNotatingSymbolClassProperties, header: true }>
+    ] as string[] as Row<{ of: Popular23FreeClass & ExactlyNotatingSymbolClassProperties, header: true }>
 }
 
 export {

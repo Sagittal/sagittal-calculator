@@ -5,8 +5,11 @@ type SymbolLongAscii<T extends Flavor = Flavor.REVO> = Io & { _SymbolLongAsciiBr
 type SymbolUnicode<T extends Flavor = Flavor.REVO> = Io & { _SymbolUnicodeBrand: boolean, _FlavorBrand: T }
 type SymbolSmiley<T extends Flavor = Flavor.REVO> = Io & { _SymbolSmileyBrand: boolean, _FlavorBrand: T }
 
+type SymbolGlyph = SymbolUnicode | SymbolLongAscii | SymbolSmiley
+
 export {
     SymbolLongAscii,
     SymbolUnicode,
     SymbolSmiley,
+    SymbolGlyph,
 }

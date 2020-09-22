@@ -16,10 +16,7 @@ const computeCaptureZone = (
 
     const introducingJiNotationLevel = getIntroducingJiNotationLevel(symbolClassId)
     if (!isWithinJiNotationLevel(introducingJiNotationLevel, jiNotationLevel)) {
-        throw new Error(`JI Notation symbol class ${formatSymbolClass(symbolClassId, {
-            ...ioSettings,
-            forTable: false,
-        })} is not present at the ${formatJiNotationLevel(jiNotationLevel)} JI notation level; it is not introduced until the ${formatJiNotationLevel(introducingJiNotationLevel)} JI notation level.`)
+        throw new Error(`JI Notation symbol class ${formatSymbolClass(symbolClassId, { ...ioSettings, align: false })} is not present at the ${formatJiNotationLevel(jiNotationLevel)} JI notation level; it is not introduced until the ${formatJiNotationLevel(introducingJiNotationLevel)} JI notation level.`)
     }
 
     const primaryComma = getPrimaryComma(symbolClassId)

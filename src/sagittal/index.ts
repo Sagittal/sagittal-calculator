@@ -32,7 +32,7 @@ export {
     computeAas,
 } from "./ji"
 export {
-    formatSymbolClass, formatSymbolAscii, SymbolLongAscii, unicodeFromAscii, SymbolSmiley, SymbolUnicode,
+    formatSymbolClass, formatSymbolAscii, SymbolLongAscii, unicodeFromAscii, SymbolSmiley, SymbolUnicode, SymbolGlyph,
 } from "./io"
 export {
     computeMaybeSymbolClassId,

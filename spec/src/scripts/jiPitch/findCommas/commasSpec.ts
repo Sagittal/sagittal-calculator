@@ -12,14 +12,14 @@ describe("computeCommas", (): void => {
                 minCents: 50 as Min<Cents>,
                 maxCents: 10 as Max<Cents>,
             })
-        }).toThrowError("Min cents is not less than max cents; range was  50.000 -  10.000.")
+        }).toThrowError("Min cents is not less than max cents; range was 50.000 - 10.000.")
         expect((): void => {
             computeCommas({
                 max23FreeSopfr,
                 minCents: 50 as Min<Cents>,
                 maxCents: 50 as Max<Cents>,
             })
-        }).toThrowError("Min cents is not less than max cents; range was  50.000 -  50.000.")
+        }).toThrowError("Min cents is not less than max cents; range was 50.000 - 50.000.")
     })
 
     it(
@@ -30,7 +30,7 @@ describe("computeCommas", (): void => {
                     max23FreeSopfr,
                     minCents: -300 as Min<Cents>,
                 })
-            }).toThrowError("Cents range must be within comma size category bounds (±227.370¢); range was -300.000 -  56.843.")
+            }).toThrowError("Cents range must be within comma size category bounds (±227.370¢); range was -300.000 - 56.843.")
             expect((): void => {
                 computeCommas({
                     max23FreeSopfr,
@@ -50,7 +50,7 @@ describe("computeCommas", (): void => {
                     max23FreeSopfr,
                     maxCents: 300 as Max<Cents>,
                 })
-            }).toThrowError("Cents range must be within comma size category bounds (±227.370¢); range was   0.000 - 300.000.")
+            }).toThrowError("Cents range must be within comma size category bounds (±227.370¢); range was 0.000 - 300.000.")
         },
     )
 

@@ -8,4 +8,8 @@ describe("formatNumber", (): void => {
     it("includes a trailing zero", (): void => {
         expect(formatNumber(12.340)).toBe(" 12.340")
     })
+
+    it("supports not aligning", (): void => {
+        expect(formatNumber(12.340, { align: false })).toBe("12.340")
+    })
 })
