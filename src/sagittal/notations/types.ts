@@ -23,6 +23,9 @@ interface SymbolClass {
     //  probably, yes. but you should review how Dave thinks of symbols and elements before you do so
     //  because all I can remember right now is that your intuitions were a bit off
     //  note though that they are symbol CLASS elements, because they're irrespective of comma direction
+    //  - whatever you find, then make it so that in symbols.ts what's there now becomes a test expectation
+    //  and the implementation code is as calculated as possible (-2, -1, 0, +1, +2 apotomes, and SUPER/SUB)
+    //  as well as how their unicode and ascii, evo/revo, is calculated from elements
     elements: SymbolLongAscii[],
     id: Id<SymbolClass>,
     primaryCommaId: Id<SagittalComma>,

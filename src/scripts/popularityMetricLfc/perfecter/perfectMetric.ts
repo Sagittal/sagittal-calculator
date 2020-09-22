@@ -24,7 +24,7 @@ const computeSearchNextLocalMinArguments = (
         depth = 0 as Integer,
         metricTag = "" as MetricTag,
         localMin,
-        onlyWinners = true,
+        onlyBetterThanSopfgtt = true,
     }: RecursiveSearchScopeAndMaybeUpdateBestMetricOptions = options
 
     const indentation = computeIndentation(depth)
@@ -40,7 +40,7 @@ const computeSearchNextLocalMinArguments = (
         index: 0, // will be overridden shortly
         depth,
         nextLocalMinima,
-        onlyWinners,
+        onlyBetterThanSopfgtt,
         metricName,
     }
 
@@ -51,8 +51,10 @@ const recursiveSearchScopeAndMaybeUpdateBestMetric = async (
     scope: Scope,
     options: RecursiveSearchScopeAndMaybeUpdateBestMetricOptions = {},
 ): Promise<void> => {
-    const searchScopeResults =
-        await nonRecursiveSearchScopeAndMaybeUpdateBestMetric(scope, { onlyWinners: options.onlyWinners })
+    const searchScopeResults = await nonRecursiveSearchScopeAndMaybeUpdateBestMetric(
+        scope,
+        { onlyBetterThanSopfgtt: options.onlyBetterThanSopfgtt },
+    )
 
     const { nextLocalMinima, searchNextLocalMinOptions } =
         computeSearchNextLocalMinArguments(scope, options, searchScopeResults)
@@ -68,8 +70,10 @@ const recursiveSearchScopeAndMaybeUpdateBestMetricSync = (
     scope: Scope,
     options: RecursiveSearchScopeAndMaybeUpdateBestMetricOptions = {},
 ): void => {
-    const searchScopeResults =
-        nonRecursiveSearchScopeAndMaybeUpdateBestMetricSync(scope, { onlyWinners: options.onlyWinners })
+    const searchScopeResults = nonRecursiveSearchScopeAndMaybeUpdateBestMetricSync(
+        scope,
+        { onlyBetterThanSopfgtt: options.onlyBetterThanSopfgtt },
+    )
 
     const { nextLocalMinima, searchNextLocalMinOptions } =
         computeSearchNextLocalMinArguments(scope, options, searchScopeResults)

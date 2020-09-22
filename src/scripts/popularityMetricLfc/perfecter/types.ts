@@ -11,7 +11,7 @@ type RecursiveSearchScopeAndMaybeUpdateBestMetricOptions = Partial<{
     depth: Integer,
     localMin: LocalMin,
     metricTag: MetricTag,
-    onlyWinners: boolean,
+    onlyBetterThanSopfgtt: boolean,
 }>
 
 interface SearchLocalMinOptions extends SumOrSumsOfSquaresOptions {

@@ -35,7 +35,7 @@ describe("searchScopeAndMaybeUpdateBestMetric", (): void => {
             samplePoint: [77, 54] as SamplePoint,
             submetrics: [] as unknown[] as Combination<Submetric>,
         }
-        const onlyWinners = true
+        const onlyBetterThanSopfgtt = true
         const metricName = "{},{aAsCoefficient,count,w},{aAsCoefficient,sum}" as Name<Metric>
 
         spyOn(nextLocalMin, "searchNextLocalMin").and.callThrough()
@@ -44,7 +44,7 @@ describe("searchScopeAndMaybeUpdateBestMetric", (): void => {
             depth,
             metricTag,
             localMin,
-            onlyWinners,
+            onlyBetterThanSopfgtt,
         })
 
         const expectedNextLocalMinima = [
@@ -101,7 +101,7 @@ describe("searchScopeAndMaybeUpdateBestMetric", (): void => {
             indentation: expectedIndentation,
             depth,
             nextLocalMinima: expectedNextLocalMinima,
-            onlyWinners,
+            onlyBetterThanSopfgtt,
             metricName,
         }
 

@@ -27,7 +27,7 @@ const computeRecursiveSearchScopeAndMaybeUpdateBestMetricArguments = (
         indentation,
         depth,
         nextLocalMinima,
-        onlyWinners,
+        onlyBetterThanSopfgtt,
     } = options
 
     const nextDepth = depth + 1 as Integer
@@ -38,7 +38,7 @@ const computeRecursiveSearchScopeAndMaybeUpdateBestMetricArguments = (
         depth: nextDepth,
         metricTag: nextMetricTag,
         localMin: nextLocalMin,
-        onlyWinners,
+        onlyBetterThanSopfgtt,
     }
 
     return { nextScope, recursiveSearchScopeAndMaybeUpdateBestMetricOptions }

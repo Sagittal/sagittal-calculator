@@ -45,7 +45,7 @@ describe("searchNextLocalMin", (): void => {
     const indentation = BLANK
     const depth = 5 as Integer
     const nextLocalMinima = [{}, {}, {}, {}, {}, {}, {}, {}, {}] as LocalMin[]
-    const onlyWinners = true
+    const onlyBetterThanSopfgtt = true
     const metricName = "{aAsCoefficient,kAsCoefficient,w}" as Name<Metric>
 
     it("schedules the next call a distance of time into the future proportional to the index of the local mins being searched", async (): Promise<void> => {
@@ -59,7 +59,7 @@ describe("searchNextLocalMin", (): void => {
             indentation,
             depth,
             nextLocalMinima,
-            onlyWinners,
+            onlyBetterThanSopfgtt,
             metricName,
         })
 
@@ -83,7 +83,7 @@ describe("searchNextLocalMin", (): void => {
                     indentation,
                     depth,
                     nextLocalMinima,
-                    onlyWinners,
+                    onlyBetterThanSopfgtt,
                     metricName,
                 })
             } catch(e) {
@@ -104,7 +104,7 @@ describe("searchNextLocalMin", (): void => {
             indentation,
             depth,
             nextLocalMinima,
-            onlyWinners,
+            onlyBetterThanSopfgtt,
             metricName,
         })
 
@@ -120,7 +120,7 @@ describe("searchNextLocalMin", (): void => {
                 depth: 6 as Integer,
                 metricTag: ".8/9" as MetricTag,
                 localMin: nextLocalMin,
-                onlyWinners,
+                onlyBetterThanSopfgtt,
             },
         )
     })

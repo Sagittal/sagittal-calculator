@@ -31,10 +31,10 @@ const scope = [
 ] as Scope
 
 if (popularityMetricLfcScriptGroupSettings.sync) {
-    recursiveSearchScopeAndMaybeUpdateBestMetricSync(scope, { onlyWinners: false })
+    recursiveSearchScopeAndMaybeUpdateBestMetricSync(scope, { onlyBetterThanSopfgtt: false })
     saveLog(`\nbest metric: ${stringify(Object.fromEntries(bestMetrics))}` as Io, LogTarget.ALL)
 } else {
-    recursiveSearchScopeAndMaybeUpdateBestMetric(scope, { onlyWinners: false }).then((): void => {
+    recursiveSearchScopeAndMaybeUpdateBestMetric(scope, { onlyBetterThanSopfgtt: false }).then((): void => {
         saveLog(`\nbest metric: ${stringify(Object.fromEntries(bestMetrics))}` as Io, LogTarget.ALL)
     })
 }

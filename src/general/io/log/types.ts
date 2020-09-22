@@ -17,6 +17,18 @@ enum LogTarget {
     PROGRESS = "progress",
 }
 
+enum GenericLogTarget {
+    ALL = "all",            // white    ALL
+    ERRORS = "errors",      // red      ERRORS
+    NONE = "none",          // white    NONE
+    // tslint:disable-next-line max-line-length
+    FINAL = "final",        // green    FINAL_SOLVER_RESULTS, FINAL_PERFECTER_RESULTS, JI_NOTATION_BOUNDS_TABLE, JI_NOTATION_BOUNDS_IMAGE, JI_NOTATION_BOUND
+    PROGRESS = "progress",  // yellow   PROGRESS, SEARCH
+    DETAILS = "details",    // white    SUM_OF_SQUARES, UNPOPULARITIES, ANTIVOTES
+    SETUP = "setup",        // cyan     POPULATE
+    RESULT = "result",      // green    NEW_BEST_METRIC
+}
+
 type SaveLogOptions = Partial<{
     useTargetColor: boolean,
     fileExtensionProvided: boolean,

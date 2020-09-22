@@ -17,7 +17,7 @@ const computeNextOptions = (
     options: SumsOfSquaresAndMaybeUpdateBestMetricOptions = {},
     sumsOfSquares: SumsOfSquares,
 ): Maybe<SumOfSquaresAndMaybeUpdateBestMetricOptions> => {
-    const { indentation = BLANK, onlyWinners = true, metricName = "" as Name<Metric> } = options
+    const { indentation = BLANK, onlyBetterThanSopfgtt = true, metricName = "" as Name<Metric> } = options
 
     try {
         checkSubmetricsForInvalidParameterCombinations(samples[ 0 ].submetrics)
@@ -28,7 +28,7 @@ const computeNextOptions = (
 
     return {
         indentation,
-        onlyWinners,
+        onlyBetterThanSopfgtt,
         metricName,
         sumsOfSquares,
         index: 0 as Index<Sample>, // will be overridden shortly

@@ -33,7 +33,7 @@ type SumsOfSquares = Array<Maybe<SumsOfSquares | SumOfSquares>>
 
 type NonRecursiveSearchScopeAndMaybeUpdateBestMetricOptions = Partial<{
     indentation: Io,
-    onlyWinners: boolean,
+    onlyBetterThanSopfgtt: boolean,
 }>
 
 interface SumOrSumsOfSquaresOptions extends NonRecursiveSearchScopeAndMaybeUpdateBestMetricOptions {
@@ -55,6 +55,12 @@ interface SearchScopeResults {
     metricName: Name<Metric>,
 }
 
+type ShouldUpdateBestMetricOptions = Partial<{
+    bestMetric: Metric,
+    sumOfSquares: SumOfSquares,
+    onlyBetterThanSopfgtt: boolean,
+}>
+
 export {
     SumsOfSquares,
     SumsOfSquaresAndMaybeUpdateBestMetricOptions,
@@ -69,4 +75,5 @@ export {
     NonRecursiveSearchScopeAndMaybeUpdateBestMetricOptions,
     ParameterScopes,
     ParameterScope,
+    ShouldUpdateBestMetricOptions,
 }

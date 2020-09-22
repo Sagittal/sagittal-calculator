@@ -1,18 +1,17 @@
-import { doOnNextEventLoop, Io, isUndefined, LogTarget, Ms, saveLog, stringify } from "../../../general"
+import { doOnNextEventLoop, Io, LogTarget, Ms, saveLog, stringify } from "../../../general"
 import { bestMetrics } from "../globals"
 import { computeSumOfSquaresForSubmetrics } from "../sumOfSquares"
-import { SUM_OF_SQUARES_TO_BEAT } from "./constants"
 import { Sample } from "./scopeToSamples"
 import { setSumOfSquaresAtSamplePoint } from "./setSumOfSquaresAtSamplePoint"
-import { Metric, SumOfSquares, SumOfSquaresAndMaybeUpdateBestMetricOptions } from "./types"
+import { shouldUpdateBestMetric } from "./shouldUpdate"
+import { Metric, SumOfSquaresAndMaybeUpdateBestMetricOptions } from "./types"
 
 const computeSumOfSquaresAndMaybeUpdateBestMetricSync = (
     sample: Sample,
     options: SumOfSquaresAndMaybeUpdateBestMetricOptions,
 ): void => {
-    const { indentation, sumsOfSquares, onlyWinners, spreadDynamicParameters, metricName } = options
-
     const { submetrics, samplePoint } = sample
+    const { indentation, sumsOfSquares, onlyBetterThanSopfgtt, spreadDynamicParameters, metricName } = options
 
     let sumOfSquares
     try {
@@ -20,20 +19,11 @@ const computeSumOfSquaresAndMaybeUpdateBestMetricSync = (
     } catch (e) {
         saveLog(`error when computing sum of squares: ${e.message}` as Io, LogTarget.ERRORS)
     }
-
     setSumOfSquaresAtSamplePoint(sumOfSquares, sumsOfSquares, samplePoint)
 
+    const bestMetric = bestMetrics.get(metricName)
     if (
-        !isUndefined(sumOfSquares) &&
-        (
-            !onlyWinners ||
-            sumOfSquares <= SUM_OF_SQUARES_TO_BEAT
-        ) &&
-        (
-            isUndefined(bestMetrics.get(metricName)) ||
-            isUndefined((bestMetrics.get(metricName) as Metric).sumOfSquares) ||
-            sumOfSquares < ((bestMetrics.get(metricName) as Metric).sumOfSquares as SumOfSquares)
-        )
+        shouldUpdateBestMetric({ sumOfSquares, bestMetric, onlyBetterThanSopfgtt })
     ) {
         const metric: Metric = spreadDynamicParameters ?
             { sumOfSquares, submetrics, name: metricName, spreadDynamicParameters } :
@@ -42,7 +32,7 @@ const computeSumOfSquaresAndMaybeUpdateBestMetricSync = (
         bestMetrics.set(metricName, metric)
 
         saveLog(
-            `${indentation}new best metric: ${stringify(bestMetrics.get(metricName))}` as Io,
+            `${indentation}new best metric: ${stringify(bestMetric)}` as Io,
             LogTarget.NEW_BEST_METRIC,
         )
     }

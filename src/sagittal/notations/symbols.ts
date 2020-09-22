@@ -2,8 +2,6 @@ import { Apotome, Count, Direction, Id } from "../../general"
 import { SymbolLongAscii, SymbolUnicode } from "../io"
 import { Flavor, Symbol, SymbolClass } from "./types"
 
-// TODO: hm, again, shouldn't this be more or less the test expectations, while the actual implementation code
-//  is able to calculate this?
 const SYMBOLS: Symbol[] = [
     {
         id: 0 as Id<Symbol>,
