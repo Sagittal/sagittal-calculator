@@ -1,6 +1,6 @@
 // tslint:disable max-line-length
 
-import { Count } from "../../../../../../src/general"
+import { Count, Ms } from "../../../../../../src/general"
 import { Scope } from "../../../../../../src/scripts/popularityMetricLfc/bestMetric"
 import { scopesToSearch, solverStatus } from "../../../../../../src/scripts/popularityMetricLfc/globals"
 import { Chunk } from "../../../../../../src/scripts/popularityMetricLfc/solver"
@@ -10,19 +10,11 @@ import {
     SUBMETRIC_CHUNKS,
 } from "../../../../../../src/scripts/popularityMetricLfc/solver/populate/constants"
 import { Parameter, Submetric } from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
+import { adjustAsyncTimeoutForSpec } from "../../../../../helpers/adjustAsyncTimeoutForSpec"
 import { onlyRunInCi } from "../../../../../helpers/onlyRunInCi"
 
 describe("populateScopes", (): void => {
-    let originalJasmineTimeoutInterval: number
-    beforeEach((): void => {
-        originalJasmineTimeoutInterval = jasmine.DEFAULT_TIMEOUT_INTERVAL
-
-        jasmine.DEFAULT_TIMEOUT_INTERVAL = 1000000
-    })
-
-    afterEach((): void => {
-        jasmine.DEFAULT_TIMEOUT_INTERVAL = originalJasmineTimeoutInterval
-    })
+    adjustAsyncTimeoutForSpec(1000000 as Ms)
 
     it(
         `given a chunk count, populates all possible distributions of all possible combinations of

@@ -1,22 +1,14 @@
-import { Count, Name } from "../../../../../src/general"
+import { Count, Ms, Name } from "../../../../../src/general"
 import { Metric } from "../../../../../src/scripts/popularityMetricLfc/bestMetric"
 import { bestMetrics, solverStatus } from "../../../../../src/scripts/popularityMetricLfc/globals"
 import { Chunk, populateAndSearchScopesAndPerfectMetrics } from "../../../../../src/scripts/popularityMetricLfc/solver"
 import * as populate from "../../../../../src/scripts/popularityMetricLfc/solver/populate/scopes"
 import * as search from "../../../../../src/scripts/popularityMetricLfc/solver/search/scopes"
+import { adjustAsyncTimeoutForSpec } from "../../../../helpers/adjustAsyncTimeoutForSpec"
 import { onlyRunInCi } from "../../../../helpers/onlyRunInCi"
 
 describe("populateAndSearchScopesAndPerfectMetrics", (): void => {
-    let originalJasmineTimeoutInterval: number
-    beforeEach((): void => {
-        originalJasmineTimeoutInterval = jasmine.DEFAULT_TIMEOUT_INTERVAL
-
-        jasmine.DEFAULT_TIMEOUT_INTERVAL = 10000
-    })
-
-    afterEach((): void => {
-        jasmine.DEFAULT_TIMEOUT_INTERVAL = originalJasmineTimeoutInterval
-    })
+    adjustAsyncTimeoutForSpec(10000 as Ms)
 
     it("populates scopes", async (): Promise<void> => {
         spyOn(populate, "populateScopes").and.callFake(async (): Promise<void> => {

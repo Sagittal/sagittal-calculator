@@ -1,7 +1,9 @@
-import { BLANK, Index, Integer, Name, Step } from "../../../../../src/general"
+import { BLANK, Index, Integer, Ms, Name, Step } from "../../../../../src/general"
+import * as doOnNextEventLoop from "../../../../../src/general/code/doOnNextEventLoop"
 import { Combination } from "../../../../../src/general/math"
 import { Metric, Scope, SumOfSquares } from "../../../../../src/scripts/popularityMetricLfc/bestMetric"
 import { DynamicParameter, SamplePoint } from "../../../../../src/scripts/popularityMetricLfc/bestMetric/scopeToSamples"
+import { metricNames } from "../../../../../src/scripts/popularityMetricLfc/globals"
 import { searchNextLocalMin } from "../../../../../src/scripts/popularityMetricLfc/perfecter/nextLocalMin"
 import * as recursiveBestMetric from "../../../../../src/scripts/popularityMetricLfc/perfecter/recursiveBestMetric"
 import { LocalMin, MetricTag } from "../../../../../src/scripts/popularityMetricLfc/perfecter/types"
@@ -44,17 +46,56 @@ describe("searchNextLocalMin", (): void => {
     const depth = 5 as Integer
     const nextLocalMinima = [{}, {}, {}, {}, {}, {}, {}, {}, {}] as LocalMin[]
     const onlyWinners = true
-    const metricName = "" as Name<Metric>
+    const metricName = "{aAsCoefficient,kAsCoefficient,w}" as Name<Metric>
 
-    beforeEach((): void => {
-        spyOn(recursiveBestMetric, "recursiveSearchScopeAndMaybeUpdateBestMetric")
+    it("schedules the next call a distance of time into the future proportional to the index of the local mins being searched", async (): Promise<void> => {
+        spyOn(doOnNextEventLoop, "doOnNextEventLoop")
+
+        await searchNextLocalMin(nextLocalMin, {
+            dynamicParameters,
+            scope,
+            metricTag,
+            index,
+            indentation,
+            depth,
+            nextLocalMinima,
+            onlyWinners,
+            metricName,
+        })
+
+        expect(doOnNextEventLoop.doOnNextEventLoop).toHaveBeenCalledWith(
+            jasmine.anything(),
+            index as Ms,
+        )
     })
 
-    // TODO: test - the scheduling (by index)
+    it("does not crash if there are errors while searching", async (): Promise<void> => {
+        // setting up for an error because this metric name has already been searched
+        metricNames.push(metricName)
 
-    // TODO: test - the error catching
+        await expectAsync(new Promise(async (resolve: () => void, reject: () => void): Promise<void> => {
+            try {
+                await searchNextLocalMin(nextLocalMin, {
+                    dynamicParameters,
+                    scope,
+                    metricTag,
+                    index,
+                    indentation,
+                    depth,
+                    nextLocalMinima,
+                    onlyWinners,
+                    metricName,
+                })
+            } catch(e) {
+                reject()
+            }
+            resolve()
+        })).not.toBeRejected()
+    })
 
     it("it searches the next local min recursively and maybe updates the best metric", async (): Promise<void> => {
+        spyOn(recursiveBestMetric, "recursiveSearchScopeAndMaybeUpdateBestMetric")
+
         await searchNextLocalMin(nextLocalMin, {
             dynamicParameters,
             scope,

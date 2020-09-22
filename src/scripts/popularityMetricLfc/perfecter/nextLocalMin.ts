@@ -4,7 +4,7 @@ import { computeNextScope } from "./nextScope"
 import { recursiveSearchScopeAndMaybeUpdateBestMetric } from "./recursiveBestMetric"
 import { LocalMin, MetricTag, SearchLocalMinOptions } from "./types"
 
-const searchNextLocalMin = (nextLocalMin: LocalMin, options: SearchLocalMinOptions): Promise<void> => {
+const searchNextLocalMin = async (nextLocalMin: LocalMin, options: SearchLocalMinOptions): Promise<void> => {
     const {
         dynamicParameters,
         scope,
