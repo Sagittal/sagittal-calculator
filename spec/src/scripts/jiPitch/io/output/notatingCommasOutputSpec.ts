@@ -3,15 +3,18 @@
 import {
     Abs,
     Cents,
-    Comma, Exponent,
+    Comma,
+    Exponent,
     Id,
     Integer,
     Io,
     ioSettings,
     Monzo,
     Name,
-    NEWLINE, Prime,
+    NEWLINE,
+    Prime,
     Ratio,
+    TableFormat,
 } from "../../../../../../src/general"
 import { ApotomeSlope, CommaAnalysis } from "../../../../../../src/sagittal/ji"
 import { SymbolClass } from "../../../../../../src/sagittal/notations"
@@ -57,7 +60,7 @@ describe("computeNotatingCommasOutput", (): void => {
     })
 
     it("can format the symbols for the forum", (): void => {
-        ioSettings.forForum = true
+        ioSettings.tableFormat = TableFormat.FORUM
         const actual = computeNotatingCommasOutput(notatingCommaAnalyses, maybeSymbolClassIds)
 
         const expected =

@@ -1,6 +1,7 @@
 import { Maybe } from "../code"
 import { Ms } from "../types"
 import { LogTargets } from "./log"
+import { TableFormat } from "./table"
 
 type HexColor = string & { _HexColorBrand: boolean }
 type Filename = string & { _FileBrand: boolean }
@@ -22,7 +23,7 @@ type ColorMethod =
 
 interface IoSettings {
     noWrite: boolean,
-    forForum: boolean,
+    tableFormat: TableFormat,
     logTargets: LogTargets,
     disableColors: boolean,
     scriptGroup: Filename,

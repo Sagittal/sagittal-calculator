@@ -8,7 +8,7 @@ describe("popular-2-3-free-classes", (): void => {
     it("gives you the list of the most popular 3,3-free classes, according to N2D3P9", (): void => {
         onlyRunInCi()
 
-        const command = "npm run popular-2-3-free-classes -- --max-n2d3p9 136 --for-forum" as Io
+        const command = "npm run popular-2-3-free-classes -- --max-n2d3p9 136 --table-format forum" as Io
 
         const actual = runCommandAndGetConsoleOutput(command)
 
@@ -163,7 +163,7 @@ describe("popular-2-3-free-classes", (): void => {
     it("works for a different max N2D3P9", (): void => {
         onlyRunInCi()
 
-        const command = "npm run popular-2-3-free-classes -- --max-n2d3p9 10 --for-forum" as Io
+        const command = "npm run popular-2-3-free-classes -- --max-n2d3p9 10 --table-format forum" as Io
 
         const actual = runCommandAndGetConsoleOutput(command)
 
@@ -207,7 +207,7 @@ describe("popular-2-3-free-classes", (): void => {
     it("can associate the popular 2,3-free classes with their best notating commas (instead of all of their exactly notating symbol classes)", (): void => {
         onlyRunInCi()
 
-        const command = "npm run popular-2-3-free-classes -- --use-best-notating-commas --max-n2d3p9 10 --for-forum" as Io
+        const command = "npm run popular-2-3-free-classes -- --use-best-notating-commas --max-n2d3p9 10 --table-format forum" as Io
 
         const actual = runCommandAndGetConsoleOutput(command)
 

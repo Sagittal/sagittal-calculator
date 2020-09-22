@@ -1,5 +1,6 @@
 import { Integer } from "../math"
 import { LogTargets } from "./log"
+import { TableFormat } from "./table"
 import { Char, Io, IoSettings } from "./types"
 
 const IO_PRECISION = 3 as Integer
@@ -17,7 +18,7 @@ const COMMA = "," as Io
 
 const INITIAL_IO_SETTINGS: IoSettings = {
     noWrite: false,
-    forForum: false,
+    tableFormat: TableFormat.TERMINAL,
     logTargets: {} as LogTargets,
     disableColors: false,
     // @ts-ignore

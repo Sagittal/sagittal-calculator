@@ -6,7 +6,7 @@ enum CommandFlag {
     EXCLUDED_FIELDS = "1",
     MAX_ATE = "3",
     MAX_AAS = "a",
-    FOR_FORUM = "b",
+    TABLE_FORMAT = "b",
     NO_COLOR = "c",
     UNDIRECTED_COMMA_NAME = "d",
     NO_USELESS = "e",

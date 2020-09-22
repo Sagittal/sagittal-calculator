@@ -1,4 +1,4 @@
-import { Id, Io, ioSettings } from "../../../../src/general"
+import { Id, Io, ioSettings, TableFormat } from "../../../../src/general"
 import { formatSymbolClass, SymbolClass } from "../../../../src/sagittal"
 
 describe("formatSymbolClass", (): void => {
@@ -14,9 +14,19 @@ describe("formatSymbolClass", (): void => {
     it(
         "returns the symbol class as its representative symbols' smiley form if configured for pasting to the forum",
         (): void => {
-            const actual = formatSymbolClass(symbolClassId, { forForum: true })
+            const actual = formatSymbolClass(symbolClassId, { tableFormat: TableFormat.FORUM })
 
             const expected = ":,::(/|:" as Io
+            expect(actual).toBe(expected)
+        },
+    )
+
+    it(
+        "returns the symbol class as its representative symbols' unicode if configured for importing into a spreadsheet program on a computer which might have Bravura installed",
+        (): void => {
+            const actual = formatSymbolClass(symbolClassId, { tableFormat: TableFormat.SPREADSHEET })
+
+            const expected = "" as Io
             expect(actual).toBe(expected)
         },
     )

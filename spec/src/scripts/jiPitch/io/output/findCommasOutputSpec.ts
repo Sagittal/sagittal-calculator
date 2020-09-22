@@ -17,6 +17,7 @@ import {
     Prime,
     Ratio,
     Sopfr,
+    TableFormat,
 } from "../../../../../../src/general"
 import { ApotomeSlope, CommaAnalysis, SymbolClass, TwoThreeFreeClassAnalysis } from "../../../../../../src/sagittal"
 import { N2D3P9 } from "../../../../../../src/sagittal/ji/twoThreeFreeClass/n2d3p9"
@@ -82,7 +83,7 @@ describe("computeFindCommasOutput", (): void => {
     })
 
     it("can format tables for sharing on the Sagittal forum", (): void => {
-        ioSettings.forForum = true
+        ioSettings.tableFormat = TableFormat.FORUM
         const actual = computeFindCommasOutput(commaAnalyses, maybeSymbolClassIds)
 
         const expected =

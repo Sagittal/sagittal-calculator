@@ -1,6 +1,6 @@
 import "colors"
 import { program } from "commander"
-import { now } from "../../code"
+import { isUndefined, now } from "../../code"
 import { COMMA } from "../constants"
 import { ioSettings } from "../globals"
 import { clearLogFiles, LogTarget, setLogTargets } from "../log"
@@ -12,7 +12,7 @@ const parseCommands = (scriptGroup: Filename, defaultLogTargets?: LogTarget[]): 
         .option(`-${CommandFlag.LOG_TARGETS}, --log-targets [logTargets]`, "log targets")
         .option(`-${CommandFlag.NO_COLOR}, --no-color`, "no color")
         .option(`-${CommandFlag.NO_WRITE}, --no-write`, "no write")
-        .option(`-${CommandFlag.FOR_FORUM}, --for-forum`, "no write")
+        .option(`-${CommandFlag.TABLE_FORMAT}, --table-format <tableFormat>`, "table format")
         .option(`-${CommandFlag.NO_TIME}, --no-time`, "no time")
 
     program.parse(process.argv)
@@ -22,7 +22,7 @@ const parseCommands = (scriptGroup: Filename, defaultLogTargets?: LogTarget[]): 
         clearLogFiles(scriptGroup)
     }
 
-    ioSettings.forForum = program.forForum
+    if (!isUndefined(program.tableFormat)) ioSettings.tableFormat = program.tableFormat
 
     setLogTargets(program.logTargets || defaultLogTargets && defaultLogTargets.join(COMMA))
 

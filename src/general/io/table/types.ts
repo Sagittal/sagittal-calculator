@@ -46,6 +46,12 @@ interface TableForForumRowPartsOptions<T> {
     headerRowCount: Count<Row<{ of: T, header: true }>>,
 }
 
+enum TableFormat {
+    FORUM = "forum",
+    TERMINAL = "terminal",
+    SPREADSHEET = "spreadsheet",
+}
+
 export {
     Justification,
     JustificationOption,
@@ -55,4 +61,5 @@ export {
     Column,
     Table,
     TableForForumRowPartsOptions,
+    TableFormat,
 }

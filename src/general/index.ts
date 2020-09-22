@@ -87,6 +87,7 @@ export {
     time,
     readLines,
     split,
+    TableFormat,
 } from "./io"
 export {
     abs,
