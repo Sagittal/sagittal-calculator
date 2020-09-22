@@ -4,7 +4,7 @@ import { Submetric } from "../../sumOfSquares"
 import { formatSearchedAndPopulated } from "../io"
 import { Chunk } from "../types"
 import { computeInitialChunkCountForSubmetrics } from "./initialChunkCountForSubmetrics"
-import { populateScopesPhase } from "./phase"
+import { populateScopesPhase, populateScopesPhaseSync } from "./phase"
 
 const populateScopes = async (): Promise<void> => {
     const chunkCount = solverStatus.chunkCount
@@ -18,6 +18,19 @@ const populateScopes = async (): Promise<void> => {
     saveLog(`\n\nFINISHED POPULATING ${formatSearchedAndPopulated()}` as Io, LogTarget.POPULATE)
 }
 
+const populateScopesSync = (): void => {
+    const chunkCount = solverStatus.chunkCount
+    let chunkCountForSubmetrics: Count<Chunk<Submetric>> = computeInitialChunkCountForSubmetrics(chunkCount)
+
+    while (chunkCountForSubmetrics > 0) {
+        populateScopesPhaseSync(chunkCount, chunkCountForSubmetrics)
+        chunkCountForSubmetrics = chunkCountForSubmetrics - 1 as Count<Chunk<Submetric>>
+    }
+
+    saveLog(`\n\nFINISHED POPULATING ${formatSearchedAndPopulated()}` as Io, LogTarget.POPULATE)
+}
+
 export {
     populateScopes,
+    populateScopesSync,
 }

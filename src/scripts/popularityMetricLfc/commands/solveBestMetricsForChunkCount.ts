@@ -1,11 +1,13 @@
 import { program } from "commander"
 import { Count, Io, ioSettings, LogTarget, parseInteger, saveLog, time } from "../../../general"
 import { popularityMetricLfcScriptGroupSettings, solverStatus } from "../globals"
-import { Chunk, formatBestMetrics, populateAndSearchScopesAndPerfectMetrics } from "../solver"
+import {
+    Chunk,
+    formatBestMetrics,
+    populateAndSearchScopesAndPerfectMetrics,
+    populateAndSearchScopesAndPerfectMetricsSync,
+} from "../solver"
 import { applySharedPopularityMetricLfcCommandSetup } from "./shared"
-
-// TODO: BRING BACK ASYNC probably I should review the commit where I temporarily ripped out all of the async stuff
-//  and make a commit where I make it possible to switch between them
 
 const defaultLogTargets = [
     LogTarget.SEARCH,
@@ -16,7 +18,7 @@ applySharedPopularityMetricLfcCommandSetup({ defaultLogTargets })
 
 solverStatus.chunkCount = parseInteger(program.args[ 0 ]) as Count<Chunk>
 
-populateAndSearchScopesAndPerfectMetrics().then((): void => {
+const finalOutput = (): void => {
     saveLog(`\n\nAND THE BEST METRICS WERE ${formatBestMetrics()}` as Io, LogTarget.FINAL_SOLVER_RESULTS)
 
     if (ioSettings.time) {
@@ -31,4 +33,13 @@ populateAndSearchScopesAndPerfectMetrics().then((): void => {
     saveLog(`PARAMETER SCOPES @ ${originalOrNoUseless} SETTINGS` as Io, LogTarget.FINAL_SOLVER_RESULTS)
     saveLog(`Z ${popularityMetricLfcScriptGroupSettings.z}` as Io, LogTarget.FINAL_SOLVER_RESULTS)
     saveLog(`ONLY TOP ${popularityMetricLfcScriptGroupSettings.onlyTop}` as Io, LogTarget.FINAL_SOLVER_RESULTS)
-})
+}
+
+if (popularityMetricLfcScriptGroupSettings.sync) {
+    populateAndSearchScopesAndPerfectMetricsSync()
+    finalOutput()
+} else {
+    populateAndSearchScopesAndPerfectMetrics().then((): void => {
+        finalOutput()
+    })
+}

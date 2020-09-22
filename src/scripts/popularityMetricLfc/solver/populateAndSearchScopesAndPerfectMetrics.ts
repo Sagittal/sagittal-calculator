@@ -12,8 +12,8 @@
 import { Io, LogTarget, saveLog } from "../../../general"
 import { solverStatus } from "../globals"
 import { formatSearchedAndPopulated } from "./io"
-import { populateScopes } from "./populate"
-import { searchScopes } from "./search"
+import { populateScopes, populateScopesSync } from "./populate"
+import { searchScopes, searchScopesSync } from "./search"
 
 const populateAndSearchScopesAndPerfectMetrics = async (): Promise<void> => {
     populateScopes().then((): void => {
@@ -25,6 +25,17 @@ const populateAndSearchScopesAndPerfectMetrics = async (): Promise<void> => {
     saveLog(`\n\nFINAL STATUS ${formatSearchedAndPopulated()}` as Io, LogTarget.FINAL_SOLVER_RESULTS)
 }
 
+const populateAndSearchScopesAndPerfectMetricsSync = (): void => {
+    populateScopesSync()
+
+    solverStatus.finishedPopulating = true
+
+    searchScopesSync()
+
+    saveLog(`\n\nFINAL STATUS ${formatSearchedAndPopulated()}` as Io, LogTarget.FINAL_SOLVER_RESULTS)
+}
+
 export {
     populateAndSearchScopesAndPerfectMetrics,
+    populateAndSearchScopesAndPerfectMetricsSync,
 }

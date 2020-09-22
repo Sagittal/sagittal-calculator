@@ -21,10 +21,10 @@ import { Chunk } from "../types"
 import { populateScope } from "./scope"
 import { PopulateScopesForSubmetricChunkCombinationOptions } from "./types"
 
-const populateScopesForSubmetricChunkCombination = async (
+const computeNextPopulateScopesForSubmetricChunkCombinationOptions = (
     submetricChunkCombination: Combination<Chunk<Submetric>>,
     options: PopulateScopesForSubmetricChunkCombinationOptions,
-): Promise<void> => {
+): PopulateScopesForSubmetricChunkCombinationOptions => {
     const {
         parameterChunkCombinations,
         parameterChunkCombinationIndex = 0,
@@ -60,21 +60,46 @@ const populateScopesForSubmetricChunkCombination = async (
         },
     )
 
-    if (parameterChunkCombinationIndex === indexOfFinalElement(parameterChunkCombinations)) {
+    return {
+        parameterChunkCombinations,
+        parameterChunkCombinationIndex:
+            increment(parameterChunkCombinationIndex as Index<Combination<Chunk<Parameter>>>),
+        submetricChunkCombinationIndex,
+        submetricChunkCombinationCount,
+    }
+}
+
+const populateScopesForSubmetricChunkCombination = async (
+    submetricChunkCombination: Combination<Chunk<Submetric>>,
+    options: PopulateScopesForSubmetricChunkCombinationOptions,
+): Promise<void> => {
+    const nextOptions =
+        computeNextPopulateScopesForSubmetricChunkCombinationOptions(submetricChunkCombination, options)
+
+    if (nextOptions.parameterChunkCombinationIndex || 0 > indexOfFinalElement(nextOptions.parameterChunkCombinations)) {
         return
     }
 
     return doOnNextEventLoop(async (): Promise<void> => {
-        await populateScopesForSubmetricChunkCombination(submetricChunkCombination, {
-            parameterChunkCombinations,
-            parameterChunkCombinationIndex:
-                increment(parameterChunkCombinationIndex as Index<Combination<Chunk<Parameter>>>),
-            submetricChunkCombinationIndex,
-            submetricChunkCombinationCount,
-        })
+        await populateScopesForSubmetricChunkCombination(submetricChunkCombination, nextOptions)
     })
+}
+
+const populateScopesForSubmetricChunkCombinationSync = (
+    submetricChunkCombination: Combination<Chunk<Submetric>>,
+    options: PopulateScopesForSubmetricChunkCombinationOptions,
+): void => {
+    const nextOptions =
+        computeNextPopulateScopesForSubmetricChunkCombinationOptions(submetricChunkCombination, options)
+
+    if (nextOptions.parameterChunkCombinationIndex || 0 > indexOfFinalElement(nextOptions.parameterChunkCombinations)) {
+        return
+    }
+
+    populateScopesForSubmetricChunkCombinationSync(submetricChunkCombination, nextOptions)
 }
 
 export {
     populateScopesForSubmetricChunkCombination,
+    populateScopesForSubmetricChunkCombinationSync,
 }

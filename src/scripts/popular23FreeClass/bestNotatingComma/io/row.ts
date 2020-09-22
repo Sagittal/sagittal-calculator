@@ -25,13 +25,14 @@ const computePopular23FreeClassWithBestNotatingCommaRow = (
 
     return [
         format23FreeClass(rankedPopular23FreeClassWithBestNotatingComma),
-        estimatedRank, // here I thnk
+        // TODO: I'd like a better solution for ensuring these have to be formatted before asserting as Row
+        estimatedRank, 
         formatNumber(bestNotatingCommaCents),
         formatMonzo(bestNotatingCommaMonzo),
         isUndefined(bestNotatingCommaMaybeSymbolClassId) ?
             BLANK :
             formatSymbolClass(bestNotatingCommaMaybeSymbolClassId, ioSettings),
-    ] as string[] as Row<{ of: Popular23FreeClass & ExactlyNotatingSymbolClassProperties, header: true }>
+    ] as Row<{ of: Popular23FreeClass & ExactlyNotatingSymbolClassProperties, header: true }>
 }
 
 export {

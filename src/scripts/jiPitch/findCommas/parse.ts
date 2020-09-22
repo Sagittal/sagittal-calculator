@@ -20,6 +20,8 @@ const parseFindCommasSettings = (
         defaultOverrides.maxN2D3P9 ||
         DEFAULT_FIND_COMMAS_SETTINGS.maxN2D3P9
     // TODO: perhaps minCents and maxCents should be settable by monzo, ratio, etc. too?
+    //  in which case...you should also support calling analyze-ji-pitch by a cents value and having it return something
+    //  perhaps it's like, it's actually running a find-commas with an extremely small range
     const minCents: Min<Cents> = program.minCents ||
         defaultOverrides.minCents ||
         DEFAULT_FIND_COMMAS_SETTINGS.minCents

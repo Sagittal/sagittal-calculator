@@ -4,6 +4,7 @@ enum CommandFlag {
     MAX_2_3_FREE_SOPFR = "+",
     MAX_2_3_FREE_COPFR = "#",
     EXCLUDED_FIELDS = "1",
+    SYNC = "2",
     MAX_ATE = "3",
     MAX_AAS = "a",
     TABLE_FORMAT = "b",

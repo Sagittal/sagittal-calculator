@@ -1,1 +1,1 @@
-export { searchScopes } from "./scopes"
+export { searchScopes, searchScopesSync } from "./scopes"

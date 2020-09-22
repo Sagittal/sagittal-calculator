@@ -3,7 +3,7 @@ import { Combination } from "../../../../../src/general/math"
 import { Metric, Scope, SubmetricScope, SumOfSquares } from "../../../../../src/scripts/popularityMetricLfc/bestMetric"
 import { recursiveSearchScopeAndMaybeUpdateBestMetric } from "../../../../../src/scripts/popularityMetricLfc/perfecter"
 import { perfectMetric } from "../../../../../src/scripts/popularityMetricLfc/perfecter/metric"
-import * as recursiveBestMetric from "../../../../../src/scripts/popularityMetricLfc/perfecter/recursiveBestMetric"
+import * as recursiveBestMetric from "../../../../../src/scripts/popularityMetricLfc/perfecter/perfectMetric"
 import { MetricTag } from "../../../../../src/scripts/popularityMetricLfc/perfecter/types"
 import { Parameter, ParameterValue, Submetric } from "../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
 

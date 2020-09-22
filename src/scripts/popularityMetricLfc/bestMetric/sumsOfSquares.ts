@@ -1,34 +1,56 @@
-import { BLANK, Index, Io, LogTarget, Name, saveLog } from "../../../general"
+import { BLANK, Index, Io, isUndefined, LogTarget, Maybe, Name, saveLog } from "../../../general"
 import { checkSubmetricsForInvalidParameterCombinations } from "../sumOfSquares"
 import { Sample } from "./scopeToSamples"
-import { computeSumOfSquaresAndMaybeUpdateBestMetric } from "./sumOfSquares"
-import { Metric, SumsOfSquares, SumsOfSquaresAndMaybeUpdateBestMetricOptions } from "./types"
+import {
+    computeSumOfSquaresAndMaybeUpdateBestMetric,
+    computeSumOfSquaresAndMaybeUpdateBestMetricSync,
+} from "./sumOfSquares"
+import {
+    Metric,
+    SumOfSquaresAndMaybeUpdateBestMetricOptions,
+    SumsOfSquares,
+    SumsOfSquaresAndMaybeUpdateBestMetricOptions,
+} from "./types"
+
+const computeNextOptions = (
+    samples: Sample[],
+    options: SumsOfSquaresAndMaybeUpdateBestMetricOptions = {},
+    sumsOfSquares: SumsOfSquares,
+): Maybe<SumOfSquaresAndMaybeUpdateBestMetricOptions> => {
+    const { indentation = BLANK, onlyWinners = true, metricName = "" as Name<Metric> } = options
+
+    try {
+        checkSubmetricsForInvalidParameterCombinations(samples[ 0 ].submetrics)
+    } catch (e) {
+        saveLog(`Not searching scope due to invalid parameter combinations: ${e.message}` as Io, LogTarget.ERRORS)
+        return
+    }
+
+    return {
+        indentation,
+        onlyWinners,
+        metricName,
+        sumsOfSquares,
+        index: 0 as Index<Sample>, // will be overridden shortly
+    }
+}
 
 const computeSumsOfSquaresAndMaybeUpdateBestMetric = async (
     samples: Sample[],
     options: SumsOfSquaresAndMaybeUpdateBestMetricOptions = {},
 ): Promise<SumsOfSquares> => {
-    const { indentation = BLANK, onlyWinners = true, metricName = "" as Name<Metric> } = options
-
     const sumsOfSquares: SumsOfSquares = []
 
+    const nextOptions = computeNextOptions(samples, options, sumsOfSquares)
+    if (isUndefined(nextOptions)) {
+        return sumsOfSquares
+    }
+
     return new Promise(async (resolve: (sumsOfSquares: SumsOfSquares) => void): Promise<void> => {
-        try {
-            checkSubmetricsForInvalidParameterCombinations(samples[ 0 ].submetrics)
-        } catch (e) {
-            resolve(sumsOfSquares)
-            saveLog(`Not searching scope due to invalid parameter combinations: ${e.message}` as Io, LogTarget.ERRORS)
-
-            return
-        }
-
         const samplePromises: Promise<void>[] = samples.map((sample: Sample, index: number): Promise<void> => {
             return computeSumOfSquaresAndMaybeUpdateBestMetric(sample, {
-                indentation,
-                sumsOfSquares,
+                ...nextOptions,
                 index: index as Index<Sample>,
-                onlyWinners,
-                metricName,
             })
         })
 
@@ -37,6 +59,28 @@ const computeSumsOfSquaresAndMaybeUpdateBestMetric = async (
     })
 }
 
+const computeSumsOfSquaresAndMaybeUpdateBestMetricSync = (
+    samples: Sample[],
+    options: SumsOfSquaresAndMaybeUpdateBestMetricOptions = {},
+): SumsOfSquares => {
+    const sumsOfSquares: SumsOfSquares = []
+
+    const nextOptions = computeNextOptions(samples, options, sumsOfSquares)
+    if (isUndefined(nextOptions)) {
+        return sumsOfSquares
+    }
+
+    samples.forEach((sample: Sample, index: number): void => {
+        computeSumOfSquaresAndMaybeUpdateBestMetricSync(sample, {
+            ...nextOptions,
+            index: index as Index<Sample>,
+        })
+    })
+
+    return sumsOfSquares
+}
+
 export {
     computeSumsOfSquaresAndMaybeUpdateBestMetric,
+    computeSumsOfSquaresAndMaybeUpdateBestMetricSync,
 }

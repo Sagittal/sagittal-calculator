@@ -1,7 +1,7 @@
 import { Io, LogTarget, saveLog, stringify, Window } from "../../../general"
 import { computeDynamicParameterScope, Scope } from "../bestMetric"
-import { bestMetrics } from "../globals"
-import { recursiveSearchScopeAndMaybeUpdateBestMetric } from "../perfecter"
+import { bestMetrics, popularityMetricLfcScriptGroupSettings } from "../globals"
+import { recursiveSearchScopeAndMaybeUpdateBestMetric, recursiveSearchScopeAndMaybeUpdateBestMetricSync } from "../perfecter"
 import { Parameter, ParameterValue } from "../sumOfSquares"
 import { applySharedPopularityMetricLfcCommandSetup } from "./shared"
 
@@ -30,6 +30,11 @@ const scope = [
     },
 ] as Scope
 
-recursiveSearchScopeAndMaybeUpdateBestMetric(scope, { onlyWinners: false }).then((): void => {
+if (popularityMetricLfcScriptGroupSettings.sync) {
+    recursiveSearchScopeAndMaybeUpdateBestMetricSync(scope, { onlyWinners: false })
     saveLog(`\nbest metric: ${stringify(Object.fromEntries(bestMetrics))}` as Io, LogTarget.ALL)
-})
+} else {
+    recursiveSearchScopeAndMaybeUpdateBestMetric(scope, { onlyWinners: false }).then((): void => {
+        saveLog(`\nbest metric: ${stringify(Object.fromEntries(bestMetrics))}` as Io, LogTarget.ALL)
+    })
+}

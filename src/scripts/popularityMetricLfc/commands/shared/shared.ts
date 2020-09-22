@@ -13,6 +13,7 @@ const applySharedPopularityMetricLfcCommandSetup = (
         .option(`-${CommandFlag.Z}, --z <z>`, "z", parseFloat)
         .option(`-${CommandFlag.ONLY_TOP}, --only-top <onlyTop>`, "only top", parseInt)
         .option(`-${CommandFlag.MAX_UNIT}, --max-unit <maxUnit>`, "max unit", parseFloat)
+        .option(`-${CommandFlag.SYNC}, --sync`, "sync")
 
     parseCommands(ScriptGroup.POPULARITY_METRIC_LFC as Filename, defaultLogTargets)
 
@@ -20,6 +21,7 @@ const applySharedPopularityMetricLfcCommandSetup = (
     if (program.onlyTop) popularityMetricLfcScriptGroupSettings.onlyTop = program.onlyTop
     if (program.maxUnit) popularityMetricLfcScriptGroupSettings.maxUnit = program.maxUnit
     if (!program.useless) popularityMetricLfcScriptGroupSettings.noUseless = true
+    if (program.sync) popularityMetricLfcScriptGroupSettings.sync = true
 }
 
 export {

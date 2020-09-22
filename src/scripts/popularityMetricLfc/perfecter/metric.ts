@@ -3,10 +3,13 @@ import { Metric, Scope, SubmetricScope } from "../bestMetric"
 import { Parameter, ParameterValue, Submetric } from "../sumOfSquares"
 import { PARAMETER_DYNAMISMS } from "./constants"
 import { computeDynamicParameterScopeForPerfecting } from "./dynamicParameterScope"
-import { recursiveSearchScopeAndMaybeUpdateBestMetric } from "./recursiveBestMetric"
+import {
+    recursiveSearchScopeAndMaybeUpdateBestMetric,
+    recursiveSearchScopeAndMaybeUpdateBestMetricSync,
+} from "./perfectMetric"
 import { PerfectMetricOptions } from "./types"
 
-const perfectMetric = async (metric: Metric, options: PerfectMetricOptions): Promise<void> => {
+const computeScopeFromMetric = (metric: Metric): Scope => {
     const spreadDynamicParameters = metric.spreadDynamicParameters
     const spreadDynamicParameterValues: Partial<Record<Parameter, ParameterValue>> = {}
 
@@ -50,6 +53,12 @@ const perfectMetric = async (metric: Metric, options: PerfectMetricOptions): Pro
     }
     scope.unshift(allBinsSubmetricScope)
 
+    return scope
+}
+
+const perfectMetric = async (metric: Metric, options: PerfectMetricOptions): Promise<void> => {
+    const scope = computeScopeFromMetric(metric)
+
     try {
         await recursiveSearchScopeAndMaybeUpdateBestMetric(scope, options)
     } catch (error) {
@@ -57,6 +66,17 @@ const perfectMetric = async (metric: Metric, options: PerfectMetricOptions): Pro
     }
 }
 
+const perfectMetricSync = (metric: Metric, options: PerfectMetricOptions): void => {
+    const scope = computeScopeFromMetric(metric)
+
+    try {
+        recursiveSearchScopeAndMaybeUpdateBestMetricSync(scope, options)
+    } catch (error) {
+        saveLog(`error when perfecting scope ${stringify(scope)}: ${error}` as Io, LogTarget.ERRORS)
+    }
+}
+
 export {
     perfectMetric,
+    perfectMetricSync,
 }

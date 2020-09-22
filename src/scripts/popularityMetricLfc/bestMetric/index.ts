@@ -1,4 +1,6 @@
-export { nonRecursiveSearchScopeAndMaybeUpdateBestMetric } from "./nonRecursiveBestMetric"
+export {
+    nonRecursiveSearchScopeAndMaybeUpdateBestMetric, nonRecursiveSearchScopeAndMaybeUpdateBestMetricSync,
+} from "./bestMetric"
 export { computeDynamicParameterScope, DynamicParameter, Sample, SamplePoint } from "./scopeToSamples"
 export {
     DynamicParameterScope,
@@ -10,4 +12,5 @@ export {
     SumOfSquares,
     SumOrSumsOfSquaresOptions,
     SumsOfSquares,
+    SearchScopeResults,
 } from "./types"

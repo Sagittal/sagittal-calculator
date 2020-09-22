@@ -28,12 +28,18 @@ import {
     PARAMETER_CHUNKS,
     SUBMETRIC_CHUNKS,
 } from "./constants"
-import { populateScopesForSubmetricChunkCombination } from "./submetricChunkCombination"
+import {
+    populateScopesForSubmetricChunkCombination,
+    populateScopesForSubmetricChunkCombinationSync,
+} from "./submetricChunkCombination"
 
-const populateScopesPhase = async (
+const computeChunkCombinations = (
     chunkCount: Count<Chunk>,
     chunkCountForSubmetrics: Count<Chunk<Submetric>>,
-): Promise<void> => {
+): {
+    submetricChunkCombinations: Combinations<Chunk<Submetric>>,
+    parameterChunkCombinations: Combinations<Chunk<Parameter>>
+} => {
     const chunkCountForParameters: Count<Chunk<Parameter>> =
         subtract(chunkCount, chunkCountForSubmetrics) as Count<Chunk<Parameter>>
 
@@ -79,6 +85,16 @@ const populateScopesPhase = async (
     )
     saveLog(`we find ${exampleDistributions.length} distributions of ${parameterChunkCombinations[ 0 ].length} parameter chunks across ${submetricChunkCombinations[ 0 ].length} bins (assignments to each of a combination of submetrics, plus an extra bin for parameters which will get applied to every submetric), which is how many more scopes should be contributed per each of the ${parameterChunkCombinations.length} parameter chunk combinations in this phase, and that times the ${submetricChunkCombinations.length} submetric chunk combinations in this phase, so expect ${exampleDistributions.length} * ${parameterChunkCombinations.length} * ${submetricChunkCombinations.length} = ${exampleDistributions.length * parameterChunkCombinations.length * submetricChunkCombinations.length} new scopes from this phase, so we should end with a total of ${(solverStatus.populatedScopeCount) + exampleDistributions.length * parameterChunkCombinations.length * submetricChunkCombinations.length}` as Io, LogTarget.POPULATE)
 
+    return { submetricChunkCombinations, parameterChunkCombinations }
+}
+
+const populateScopesPhase = async (
+    chunkCount: Count<Chunk>,
+    chunkCountForSubmetrics: Count<Chunk<Submetric>>,
+): Promise<void> => {
+    const { submetricChunkCombinations, parameterChunkCombinations } =
+        computeChunkCombinations(chunkCount, chunkCountForSubmetrics)
+
     for (const [submetricChunkCombinationIndex, submetricChunkCombination] of submetricChunkCombinations.entries()) {
         await populateScopesForSubmetricChunkCombination(submetricChunkCombination, {
             parameterChunkCombinations,
@@ -90,6 +106,25 @@ const populateScopesPhase = async (
     saveLog(`finished phase ${1 + chunkCount - chunkCountForSubmetrics}/${chunkCount} of scope population ${formatSearchedAndPopulated()}` as Io, LogTarget.POPULATE)
 }
 
+const populateScopesPhaseSync = (
+    chunkCount: Count<Chunk>,
+    chunkCountForSubmetrics: Count<Chunk<Submetric>>,
+): void => {
+    const { submetricChunkCombinations, parameterChunkCombinations } =
+        computeChunkCombinations(chunkCount, chunkCountForSubmetrics)
+
+    for (const [submetricChunkCombinationIndex, submetricChunkCombination] of submetricChunkCombinations.entries()) {
+        populateScopesForSubmetricChunkCombinationSync(submetricChunkCombination, {
+            parameterChunkCombinations,
+            submetricChunkCombinationIndex: submetricChunkCombinationIndex as Index<Combination<Chunk<Submetric>>>,
+            submetricChunkCombinationCount: count(submetricChunkCombinations),
+        })
+    }
+
+    saveLog(`finished phase ${1 + chunkCount - chunkCountForSubmetrics}/${chunkCount} of scope population ${formatSearchedAndPopulated()}` as Io, LogTarget.POPULATE)
+}
+
 export {
     populateScopesPhase,
+    populateScopesPhaseSync,
 }

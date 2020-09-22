@@ -2,7 +2,7 @@ import { doOnNextEventLoop, Io, LogTarget, saveLog } from "../../../../general"
 import { scopesToSearch, solverStatus } from "../../globals"
 import { formatSearchedAndPopulated } from "../io"
 import { ONE_SECOND_TO_GIVE_POPULATION_A_CHANCE_TO_CATCH_UP } from "./constants"
-import { searchPopulatedScopes } from "./populatedScopes"
+import { searchPopulatedScopes, searchPopulatedScopesSync } from "./populatedScopes"
 
 const searchScopes = async (): Promise<void> => {
     while (scopesToSearch.length > 0) {
@@ -16,6 +16,13 @@ const searchScopes = async (): Promise<void> => {
     }
 }
 
+const searchScopesSync = (): void => {
+    while (scopesToSearch.length > 0) {
+        searchPopulatedScopesSync()
+    }
+}
+
 export {
     searchScopes,
+    searchScopesSync,
 }

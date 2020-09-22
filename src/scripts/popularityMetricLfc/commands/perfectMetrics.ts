@@ -2,7 +2,7 @@ import { Filename, Io, ioSettings, LogTarget, Name, saveLog, time } from "../../
 import { Metric } from "../bestMetric"
 import { DEFAULT_MAX_UNIT_WHEN_PERFECTING } from "../constants"
 import { popularityMetricLfcScriptGroupSettings } from "../globals"
-import { perfectMetrics } from "../perfecter"
+import { perfectMetrics, perfectMetricsSync } from "../perfecter"
 import { formatBestMetrics } from "../solver"
 import { applySharedPopularityMetricLfcCommandSetup, load } from "./shared"
 
@@ -20,7 +20,7 @@ popularityMetricLfcScriptGroupSettings.maxUnit = DEFAULT_MAX_UNIT_WHEN_PERFECTIN
 
 const bestMetricsToBePerfected = load("metrics" as Filename) as Record<Name<Metric>, Metric>
 
-perfectMetrics(Object.values(bestMetricsToBePerfected)).then((): void => {
+const finalOutput = (): void => {
     saveLog(`\n\nTHE PERFECTED METRICS ARE ${formatBestMetrics()}` as Io, LogTarget.FINAL_PERFECTER_RESULTS)
 
     if (ioSettings.time) {
@@ -32,4 +32,13 @@ perfectMetrics(Object.values(bestMetricsToBePerfected)).then((): void => {
     saveLog(`MAX UNIT ${popularityMetricLfcScriptGroupSettings.maxUnit}` as Io, LogTarget.FINAL_PERFECTER_RESULTS)
     saveLog(`Z ${popularityMetricLfcScriptGroupSettings.z}` as Io, LogTarget.FINAL_PERFECTER_RESULTS)
     saveLog(`ONLY TOP ${popularityMetricLfcScriptGroupSettings.onlyTop}` as Io, LogTarget.FINAL_PERFECTER_RESULTS)
-})
+}
+
+if (popularityMetricLfcScriptGroupSettings.sync) {
+    perfectMetricsSync(Object.values(bestMetricsToBePerfected))
+    finalOutput()
+} else {
+    perfectMetrics(Object.values(bestMetricsToBePerfected)).then((): void => {
+        finalOutput()
+    })
+}
