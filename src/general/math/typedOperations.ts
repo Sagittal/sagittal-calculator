@@ -5,11 +5,8 @@ import {
     MULTIPLICATIVE_IDENTITY,
     VALUE_BELOW_WHICH_ROUNDING_IMPLEMENTATION_BREAKS,
 } from "./constants"
-import { Abs, Avg, Base, Exponent, Integer, Max, Min, Power } from "./types"
-
-const parseInteger = (integerText: string): Integer => {
-    return parseInt(integerText) as Integer
-}
+import { Integer } from "./rational"
+import { Abs, Avg, Base, Exponent, Max, Min, Power } from "./types"
 
 const count = <T>(array: T[]): Count<T> => {
     return array.length as Count<T>
@@ -41,9 +38,6 @@ const divide = <T extends number>(dividend: T, divisor: Divisor<T>): T => {
     return dividend / divisor as T          // quotient
 }
 
-const integerDivide = <T extends number>(dividend: T, divisor: T): T & Integer =>
-    floor(dividend / divisor) as T & Integer
-
 const mod = <T extends number>(dividend: T, divisor: T): Omit<T, "_IntegerBrand"> =>
     dividend % divisor as unknown as Omit<T, "_IntegerBrand">
 
@@ -64,12 +58,6 @@ const round = <T extends number>(number: T, precision?: Integer): T => {
 
     return +(Math.round(`${String(number)}e+${String(precision)}` as unknown as number) + "e-" + String(precision)) as T
 }
-
-const floor = <T extends number>(number: T): T & Integer =>
-    Math.floor(number) as T & Integer
-
-const ceil = <T extends number>(number: T): T & Integer =>
-    Math.ceil(number) as T & Integer
 
 const abs = <T extends number>(number: T): Abs<T> =>
     Math.abs(number) as Abs<T>
@@ -102,13 +90,10 @@ export {
     subtract,
     multiply,
     divide,
-    integerDivide,
     mod,
     reciprocal,
     negative,
     round,
-    floor,
-    ceil,
     abs,
     sqrt,
     cubeRoot,
@@ -116,7 +101,6 @@ export {
     min,
     pow,
     log,
-    parseInteger,
     count,
     avg,
 }

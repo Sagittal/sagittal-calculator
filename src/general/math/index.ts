@@ -1,6 +1,6 @@
 export { computeCombinations } from "./combinations"
+export { BASE_2 } from "./constants"
 export {
-    BASE_2,
     FIVE_PRIME_INDEX,
     FIVE_ROUGHNESS,
     ONE,
@@ -8,12 +8,8 @@ export {
     THREE_ROUGHNESS,
     THREE_SMOOTHNESS,
     TWO_PRIME_INDEX,
-} from "./constants"
-export { computeCopfr } from "./copfr"
-export { computeDistributions } from "./distributions"
-export { dividesEvenly } from "./dividesEvenly"
-export { computeGpf } from "./gpf"
-export {
+    computeCopfr,
+    computeGpf,
     computeIsSubRatio,
     computeIsSuperRatio,
     computeIsRoughRatio,
@@ -31,9 +27,7 @@ export {
     computeSubRatio,
     computeNumberFromRatio,
     equalRatios,
-} from "./ratio"
-export { computeIsRoughInteger } from "./roughness"
-export {
+    computeIsRoughInteger,
     computeIntegerFromMonzo,
     computeIsSubMonzo,
     computeMonzoFromInteger,
@@ -51,25 +45,35 @@ export {
     computeIsUnisonMonzo,
     computeNumberFromMonzo,
     equalMonzos,
-} from "./monzo"
-export { computePrimeCount } from "./primeCount"
-export { PRIMES } from "./primes"
-export { computeSopfr } from "./sopfr"
+    computePrimeCount,
+    PRIMES,
+    computeSopfr,
+    ceil,
+    floor,
+    integerDivide,
+    parseInteger,
+    Copfr,
+    Integer,
+    Prime,
+    Roughness,
+    Sopfr,
+    Smoothness,
+    RationalTypeParameters,
+    Primes,
+} from "./rational"
+export { computeDistributions } from "./distributions"
+export { dividesEvenly } from "./dividesEvenly"
 export { computeTriangularNumber } from "./triangularNumber"
 export {
     abs,
-    ceil,
     count,
     subtract,
-    floor,
-    integerDivide,
     log,
     max,
     min,
     mod,
     multiply,
     negative,
-    parseInteger,
     pow,
     round,
     sqrt,
@@ -81,20 +85,12 @@ export {
     Base,
     Combination,
     Combinations,
-    Copfr,
     DistributionBin,
     Exponent,
-    Integer,
     Max,
     Min,
     Power,
-    Prime,
-    Roughness,
     Direction,
     NumericTypeParameters,
-    Sopfr,
-    Smoothness,
-    RationalTypeParameters,
-    Primes,
     Distribution,
 } from "./types"

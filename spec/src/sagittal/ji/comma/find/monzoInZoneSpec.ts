@@ -1,5 +1,5 @@
 import { Max, Min } from "../../../../../../src/general/math"
-import { Monzo } from "../../../../../../src/general/math/monzo"
+import { Monzo } from "../../../../../../src/general/math/rational/monzo"
 import { Cents } from "../../../../../../src/general/music"
 import { computeMonzoInZone } from "../../../../../../src/sagittal/ji/comma/find/monzoInZone"
 

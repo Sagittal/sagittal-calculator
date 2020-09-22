@@ -1,5 +1,5 @@
 import { Id } from "../../../../../src/general"
-import { Monzo } from "../../../../../src/general/math/monzo"
+import { Monzo } from "../../../../../src/general/math/rational"
 import { Cents, TwoThreeFreeClass } from "../../../../../src/general/music"
 import { SymbolClass } from "../../../../../src/sagittal/notations"
 import {

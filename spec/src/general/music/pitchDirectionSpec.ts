@@ -1,6 +1,6 @@
 import { computeSuperPitch } from "../../../../src/general"
 import { Direction, Ratio } from "../../../../src/general/math"
-import { Monzo } from "../../../../src/general/math/monzo"
+import { Monzo } from "../../../../src/general/math/rational/monzo"
 import { Cents, computeIsSubPitch, computeIsUnisonPitch, Pitch } from "../../../../src/general/music"
 import { computeIsSuperPitch } from "../../../../src/general/music/pitchDirection"
 

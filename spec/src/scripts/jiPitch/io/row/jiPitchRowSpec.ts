@@ -1,7 +1,7 @@
 import { Row } from "../../../../../../src/general/io/table"
 import { Abs, Exponent, Integer, Prime } from "../../../../../../src/general/math"
-import { Monzo } from "../../../../../../src/general/math/monzo"
-import { Ratio } from "../../../../../../src/general/math/ratio"
+import { Monzo } from "../../../../../../src/general/math/rational/monzo"
+import { Ratio } from "../../../../../../src/general/math/rational/ratio"
 import { Cents } from "../../../../../../src/general/music"
 import { ApotomeSlope, JiPitchAnalysis } from "../../../../../../src/sagittal/ji"
 import { jiPitchScriptGroupSettings } from "../../../../../../src/scripts/jiPitch/globals"
@@ -19,7 +19,7 @@ describe("computeJiPitchRow", (): void => {
         ate: 1 as Abs<Integer & Exponent<3 & Prime>>,
         twoThreeFreeClassAnalysis: twoThreeFreeClassAnalysisFixture,
     }
-    
+
     it("returns a row of information about the JI pitch", (): void => {
         const actual = computeJiPitchRow(jiPitchAnalysis)
 

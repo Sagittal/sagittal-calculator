@@ -1,7 +1,8 @@
 import { deepClone, shallowClone } from "../code"
 import { Count } from "../types"
+import { Integer } from "./rational"
 import { count } from "./typedOperations"
-import { Combination, Combinations, Integer } from "./types"
+import { Combination, Combinations } from "./types"
 
 const computeCombinations = <T>(
     array: T[],

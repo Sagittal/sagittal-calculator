@@ -1,5 +1,5 @@
 import { Abs, Exponent, Integer, Prime } from "../../../../../src/general/math"
-import { Monzo } from "../../../../../src/general/math/monzo"
+import { Monzo } from "../../../../../src/general/math/rational/monzo"
 import { JiPitch } from "../../../../../src/general/music/ji"
 import { computeAte } from "../../../../../src/sagittal/ji/pitch"
 

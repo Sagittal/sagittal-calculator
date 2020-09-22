@@ -1,5 +1,5 @@
 import { Max, Numerator, Prime } from "../../../../../../../../../src/general/math"
-import { Denominator } from "../../../../../../../../../src/general/math/ratio"
+import { Denominator } from "../../../../../../../../../src/general/math/rational/ratio"
 import {
     N2P,
     SortedNumeratorPossibilityWithGreaterGpfThanDenominatorPrimeIncludingN2P,

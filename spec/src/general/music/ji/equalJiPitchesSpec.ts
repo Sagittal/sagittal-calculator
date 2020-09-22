@@ -1,5 +1,5 @@
 import { Ratio } from "../../../../../src/general/math"
-import { Monzo } from "../../../../../src/general/math/monzo"
+import { Monzo } from "../../../../../src/general/math/rational/monzo"
 import { equalJiPitches, JiPitch } from "../../../../../src/general/music"
 
 describe("equalJiPitches", (): void => {
@@ -65,7 +65,7 @@ describe("equalJiPitches", (): void => {
 
         expect(actual).toBeTruthy()
     })
-    
+
     it("works when ratios haven't been reduced", (): void => {
         const jiPitchA: JiPitch = { ratio: [10, 14] as Ratio }
         const jiPitchB: JiPitch = { ratio: [5, 7] as Ratio }

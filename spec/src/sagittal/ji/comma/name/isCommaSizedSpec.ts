@@ -1,4 +1,4 @@
-import { Ratio } from "../../../../../../src/general/math/ratio"
+import { Ratio } from "../../../../../../src/general/math/rational/ratio"
 import { computeIsCommaSized } from "../../../../../../src/sagittal/ji/comma/name/isCommaSized"
 
 describe("computeIsCommaSized", (): void => {
