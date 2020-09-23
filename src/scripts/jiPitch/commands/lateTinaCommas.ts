@@ -31,6 +31,8 @@ readFindCommasOptions()
 
 applySharedPitchCommandSetup()
 
+ioSettings.logTargets[ LogTarget.ERROR ] = true
+
 const MAX_POSSIBLE_2_3_FREE_SOPFR_WITHOUT_CRASHING = 127 as Max<Sopfr<{ rough: 5 }>>
 const MAX_POSSIBLE_PRIME_LIMIT_GIVEN_MAX_POSSIBLE_SOPFR =
     MAX_POSSIBLE_2_3_FREE_SOPFR_WITHOUT_CRASHING as Max<Max<Prime>>

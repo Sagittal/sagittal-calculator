@@ -14,6 +14,8 @@ import { visualizeSizeCategoryBounds } from "./sizeCategoryBounds"
 
 const computeJiNotationBoundsImage = (jiNotationBoundAnalyses: JiNotationBoundAnalysis[]): Io => {
     if (!ioSettings.noWrite) {
+        fs.existsSync("dist") || fs.mkdirSync("dist")
+        fs.existsSync(`dist/jiNotationBound`) || fs.mkdirSync(`dist/jiNotationBound`)
         fs.copyFileSync(
             "assets/fonts/BravuraSagittalUpdate_v10.otf",
             "dist/jiNotationBound/BravuraSagittalUpdate_v10.otf",
