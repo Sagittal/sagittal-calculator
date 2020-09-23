@@ -1,4 +1,4 @@
-import { add, count, Count, Io, LogTarget, Maybe, Name, round, saveLog } from "../../../general"
+import { add, Avg, count, Count, Io, LogTarget, Maybe, Name, round, saveLog } from "../../../general"
 import { metricNames, solverStatus } from "../globals"
 import { Parameter } from "../sumOfSquares"
 import { computeMetricName } from "./metricName"
@@ -32,7 +32,7 @@ const setupForNonRecursiveSearch = (
 
     solverStatus.sampleCount = add(solverStatus.sampleCount, count(samples))
     solverStatus.averageSamplesPerScope =
-        round(solverStatus.sampleCount / solverStatus.populatedScopeCount) as Count<Sample>
+        round(solverStatus.sampleCount / solverStatus.populatedScopeCount) as Avg<Count<Sample>>
 
     saveLog(`about to search initial scope for metric ${metricName}` as Io, LogTarget.PROGRESS)
     saveLog(
@@ -42,6 +42,7 @@ const setupForNonRecursiveSearch = (
 
     return { dynamicParameters, samples, spreadDynamicParameters, metricName }
 }
+
 const nonRecursiveSearchScopeAndMaybeUpdateBestMetric = async (
     scope: Scope,
     options: NonRecursiveSearchScopeAndMaybeUpdateBestMetricOptions = {},

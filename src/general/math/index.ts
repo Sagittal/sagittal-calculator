@@ -104,6 +104,7 @@ export {
     Distribution,
     Irrational,
     Numeric,
+    Avg,
 } from "./types"
 export {
     computeIsSubNumber,

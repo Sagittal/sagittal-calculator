@@ -164,6 +164,7 @@ export {
     add,
     computeNumberFromMonzo,
     equalMonzos,
+    Avg,
 } from "./math"
 export {
     Cents,

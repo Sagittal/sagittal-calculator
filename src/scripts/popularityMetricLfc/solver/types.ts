@@ -1,4 +1,4 @@
-import { Count } from "../../../general"
+import { Avg, Count } from "../../../general"
 import { Sample, Scope, SubmetricScope } from "../bestMetric"
 import { Parameter, Submetric } from "../sumOfSquares"
 
@@ -9,7 +9,7 @@ interface SolverStatus {
     finishedPopulating: boolean,
     populatedScopeCount: Count<Scope>,
     searchedScopeCount: Count<Scope>,
-    averageSamplesPerScope: Count<Sample>,
+    averageSamplesPerScope: Avg<Count<Sample>>,
     sampleCount: Count<Sample>,
 }
 

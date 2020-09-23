@@ -42,10 +42,6 @@ describe("computeSumsOfSquaresAndMaybeUpdateBestMetric", (): void => {
         },
     ]
 
-    beforeEach((): void => {
-        bestMetrics.clear()
-    })
-
     it("finds the sums of squares for each sample", async (): Promise<void> => {
         const actual = await computeSumsOfSquaresAndMaybeUpdateBestMetric(samples, { metricName })
 

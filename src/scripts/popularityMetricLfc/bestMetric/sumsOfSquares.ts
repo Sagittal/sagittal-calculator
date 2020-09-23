@@ -17,7 +17,12 @@ const computeNextOptions = (
     options: SumsOfSquaresAndMaybeUpdateBestMetricOptions = {},
     sumsOfSquares: SumsOfSquares,
 ): Maybe<SumOfSquaresAndMaybeUpdateBestMetricOptions> => {
-    const { indentation = BLANK, onlyBetterThanSopfgtt = true, metricName = "" as Name<Metric> } = options
+    const {
+        indentation = BLANK,
+        onlyBetterThanSopfgtt = true,
+        metricName = "" as Name<Metric>,
+        spreadDynamicParameters
+    } = options
 
     try {
         checkSubmetricsForInvalidParameterCombinations(samples[ 0 ].submetrics)
@@ -27,6 +32,7 @@ const computeNextOptions = (
     }
 
     return {
+        spreadDynamicParameters,
         indentation,
         onlyBetterThanSopfgtt,
         metricName,

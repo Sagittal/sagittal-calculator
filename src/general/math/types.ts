@@ -57,6 +57,7 @@ type NumericTypeParameterEffects<T> =
 //  like monzos, it may be a good idea to support those
 //  so the continued fraction can be the exponent in this power
 //  but it could also just be another option
+//  - also think about how for dynamic parameters, unit: is a Step... but difference between a position and an interval
 /*
 Base assume 2
 Power - would be a ratio... but like 3/19 for degrees of 19...
