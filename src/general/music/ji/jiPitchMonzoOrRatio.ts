@@ -1,16 +1,14 @@
-import { computeTrimmedArray } from "../../code"
-import { computeMonzoFromRatio, computeRatioFromMonzo, Monzo, Ratio, RationalTypeParameters } from "../../math"
+import { computeMonzoFromRational, computeRatioFromRational, Monzo, Ratio, RationalTypeParameters } from "../../math"
 import { JiPitch } from "./types"
 
-const computeJiPitchMonzo = <T extends RationalTypeParameters>(jiPitch: JiPitch<T>): Monzo<T> => {
-    return computeTrimmedArray(jiPitch.monzo || computeMonzoFromRatio(jiPitch.ratio!))
-}
+const computeMonzoFromJiPitch = <T extends RationalTypeParameters>(jiPitch: JiPitch<T>): Monzo<T> =>
+    computeMonzoFromRational(jiPitch)
 
-const computeJiPitchRatio = <T extends RationalTypeParameters>(jiPitch: JiPitch<T>): Ratio<T> => {
-    return jiPitch.ratio || computeRatioFromMonzo(jiPitch.monzo!)
-}
+
+const computeRatioFromJiPitch = <T extends RationalTypeParameters>(jiPitch: JiPitch<T>): Ratio<T> =>
+    computeRatioFromRational(jiPitch)
 
 export {
-    computeJiPitchMonzo,
-    computeJiPitchRatio,
+    computeMonzoFromJiPitch,
+    computeRatioFromJiPitch,
 }

@@ -1,13 +1,10 @@
 import { isUndefined } from "../code"
 import {
-    computeIsSubMonzo,
-    computeIsSubRatio,
-    computeIsSuperMonzo,
-    computeIsSuperRatio,
-    computeIsUnisonMonzo,
-    computeIsUnisonRatio,
-    computeSuperMonzo,
-    computeSuperRatio,
+    ADDITIVE_IDENTITY,
+    computeIsSubNumber,
+    computeIsSuperNumber,
+    computeIsUnisonNumber,
+    computeSuperNumber,
     Direction,
     negative,
     NumericTypeParameters,
@@ -17,31 +14,31 @@ import { Pitch } from "./types"
 const computeIsSuperPitch = <T extends NumericTypeParameters, U extends Pitch<T>>(
     pitch: U,
 ): pitch is Exclude<U, Pitch> & Pitch<T & { direction: Direction.SUPER }> => {
-    const { monzo, ratio, cents } = pitch
+    const { cents } = pitch
 
-    return (!isUndefined(ratio) && computeIsSuperRatio(ratio)) ||
-        (!isUndefined(monzo) && computeIsSuperMonzo(monzo)) ||
-        (!isUndefined(cents) && cents > 0)
+    if (!isUndefined(cents) && cents > ADDITIVE_IDENTITY) return true
+
+    return computeIsSuperNumber(pitch)
 }
 
 const computeIsSubPitch = <T extends NumericTypeParameters, U extends Pitch<T>>(
     pitch: U,
 ): pitch is Exclude<U, Pitch> & Pitch<T & { direction: Direction.SUB }> => {
-    const { monzo, ratio, cents } = pitch
+    const { cents } = pitch
 
-    return (!isUndefined(ratio) && computeIsSubRatio(ratio)) ||
-        (!isUndefined(monzo) && computeIsSubMonzo(monzo)) ||
-        (!isUndefined(cents) && cents < 0)
+    if (!isUndefined(cents) && cents < ADDITIVE_IDENTITY) return true
+
+    return computeIsSubNumber(pitch)
 }
 
 const computeIsUnisonPitch = <T extends NumericTypeParameters, U extends Pitch<T>>(
     pitch: U,
 ): pitch is Exclude<U, Pitch> & Pitch<T & { direction: Direction.UNISON }> => {
-    const { monzo, ratio, cents } = pitch
+    const { cents } = pitch
 
-    return (!isUndefined(ratio) && computeIsUnisonRatio(ratio)) ||
-        (!isUndefined(monzo) && computeIsUnisonMonzo(monzo)) ||
-        (!isUndefined(cents) && cents === 0)
+    if (!isUndefined(cents) && cents === ADDITIVE_IDENTITY) return true
+
+    return computeIsUnisonNumber(pitch)
 }
 
 const computeSuperPitch = <T extends NumericTypeParameters, U extends Pitch<T>>(
@@ -49,11 +46,10 @@ const computeSuperPitch = <T extends NumericTypeParameters, U extends Pitch<T>>(
 ): Exclude<U, Pitch> & Pitch<Omit<T, "direction"> & { direction: Direction.SUPER }> => {
     const isSubPitch = computeIsSubPitch(pitch)
 
-    let superPitch: Pitch = {} as Pitch
+    let superPitch: Pitch
     if (isSubPitch) {
-        const { monzo, ratio, cents } = pitch
-        if (!isUndefined(ratio)) superPitch.ratio = computeSuperRatio(ratio)
-        if (!isUndefined(monzo)) superPitch.monzo = computeSuperMonzo(monzo)
+        superPitch = computeSuperNumber(pitch)
+        const { cents } = pitch
         if (!isUndefined(cents)) superPitch.cents = negative(cents)
     } else {
         superPitch = pitch

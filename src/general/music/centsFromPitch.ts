@@ -1,6 +1,7 @@
 import { isUndefined } from "../code"
-import { computeNumberFromMonzo, computeNumberFromRatio } from "../math"
+import { computeNumberFromRational } from "../math"
 import { computeCentsFromNumber } from "./centsFromNumber"
+import { JiPitch } from "./ji"
 import { Cents, Pitch } from "./types"
 
 const computeCentsFromPitch = (pitch: Pitch): Cents => {
@@ -8,12 +9,7 @@ const computeCentsFromPitch = (pitch: Pitch): Cents => {
         return pitch.cents
     }
 
-    let number
-    if (!isUndefined(pitch.ratio)) {
-        number = computeNumberFromRatio(pitch.ratio)
-    } else if (!isUndefined(pitch.monzo)) {
-        number = computeNumberFromMonzo(pitch.monzo)
-    }
+    const number = computeNumberFromRational(pitch as JiPitch)
 
     return computeCentsFromNumber(number as number)
 }

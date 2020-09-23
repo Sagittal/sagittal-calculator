@@ -1,5 +1,7 @@
 import { Count, Sum } from "../../types"
 import { Numeric, NumericTypeParameterEffects, NumericTypeParameters } from "../types"
+import { RationalNumberByMonzo } from "./monzo"
+import { RationalNumberByRatio } from "./ratio"
 
 // tslint:disable-next-line max-line-length
 type Integer<T extends NumericTypeParameters & { irrational: false, integer: true } = { irrational: false, integer: true }> = Numeric<T>
@@ -35,6 +37,9 @@ type Primes =
     | 797 | 809 | 811 | 821 | 823 | 827 | 829 | 839 | 853 | 857 | 859 | 863 | 877 | 881 | 883 | 887 | 907 | 911 | 919
     | 929 | 937 | 941 | 947 | 953 | 967 | 971 | 977 | 983 | 991 | 997
 
+type Rational<T extends RationalTypeParameters = { irrational: false }> =
+    RationalNumberByMonzo<T> | RationalNumberByRatio<T>
+
 export {
     Integer,
     Sopfr,
@@ -47,4 +52,5 @@ export {
     CommonFunction,
     RationalTypeParameters,
     IntegerTypeParameters,
+    Rational,
 }

@@ -1,4 +1,11 @@
-import { Direction, Integer, Monzo, NumericTypeParameters, Ratio, RationalTypeParameters } from "../../math"
+import {
+    Direction,
+    Integer,
+    NumericTypeParameters,
+    RationalNumberByMonzo,
+    RationalNumberByRatio,
+    RationalTypeParameters,
+} from "../../math"
 import { Cents } from "../types"
 
 type Comma<T extends NumericTypeParameters = {}> =
@@ -9,17 +16,12 @@ type TwoThreeFreeClass<T extends NumericTypeParameters = {}> =
     JiPitch<Omit<T, "rough" | "direction"> & { rough: 5, direction: Direction.SUPER }>
     & { _TwoThreeFreeClassBrand: boolean }
 
-type JiPitchByMonzo<T extends RationalTypeParameters = { irrational: false }> = {
+type JiPitchByMonzo<T extends RationalTypeParameters = { irrational: false }> = RationalNumberByMonzo<T> & {
     cents?: Cents,
-    monzo: Monzo<T>,
-    ratio?: Ratio<T>,
 }
-type JiPitchByRatio<T extends RationalTypeParameters = { irrational: false }> = {
+type JiPitchByRatio<T extends RationalTypeParameters = { irrational: false }> = RationalNumberByRatio<T> & {
     cents?: Cents,
-    monzo?: Monzo<T>,
-    ratio: Ratio<T>,
 }
-
 type JiPitch<T extends NumericTypeParameters = {}> =
     JiPitchByMonzo<T & { irrational: false }> | JiPitchByRatio<T & { irrational: false }>
 

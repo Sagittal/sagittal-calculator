@@ -1,7 +1,7 @@
 export { compute23FreeClass } from "./twoThreeFreeClass"
 export { THREE_PRIME_LIMIT } from "./constants"
 export { Comma, Popularity, Votes, JiPitch, TwoThreeFreeClass, Apotome } from "./types"
-export { computeJiPitchMonzo, computeJiPitchRatio } from "./jiPitchMonzoOrRatio"
+export { computeMonzoFromJiPitch, computeRatioFromJiPitch } from "./jiPitchMonzoOrRatio"
 export { COMMA_POPULARITIES } from "./popularities"
 export { equalJiPitches } from "./equalJiPitches"
 export { computeIsWithinPrimeLimit, computeIsWithinPrimeMin, computePrimeLimit } from "./primeLimit"

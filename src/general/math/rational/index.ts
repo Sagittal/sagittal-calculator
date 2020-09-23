@@ -28,6 +28,9 @@ export {
     computeSubRatio,
     computeNumberFromRatio,
     equalRatios,
+    RationalNumberByRatio,
+    computeRatioFromRational,
+    invertRatio,
 } from "./ratio"
 export { computeIsRoughInteger } from "./roughness"
 export {
@@ -48,10 +51,14 @@ export {
     computeIsUnisonMonzo,
     computeNumberFromMonzo,
     equalMonzos,
+    RationalNumberByMonzo,
+    computeMonzoFromRational,
 } from "./monzo"
 export { computePrimeCount } from "./primeCount"
+export { computeNumberFromRational } from "./numberFromRational"
 export { PRIMES } from "./primes"
 export { computeSopfr } from "./sopfr"
+export { equalRationals } from "./equalRationals"
 export {
     ceil,
     floor,
@@ -67,4 +74,7 @@ export {
     Smoothness,
     RationalTypeParameters,
     Primes,
+    Rational,
 } from "./types"
+export { computeIsSmoothRational, computeRationalSmoothness } from "./smoothness"
+export { computeIsRoughRational } from "./roughness"

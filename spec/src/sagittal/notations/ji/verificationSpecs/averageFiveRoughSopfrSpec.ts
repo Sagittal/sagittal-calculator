@@ -1,4 +1,4 @@
-import { computeJiPitchMonzo, Id } from "../../../../../../src/general"
+import { computeMonzoFromJiPitch, Id } from "../../../../../../src/general"
 import { computeRoughMonzo, computeSopfr, FIVE_ROUGHNESS, Sopfr } from "../../../../../../src/general/math"
 import { avg } from "../../../../../../src/general/math/typedOperations"
 import { Avg } from "../../../../../../src/general/math/types"
@@ -11,7 +11,7 @@ describe("average 2,3-free SoPFR", (): void => {
         const twoThreeFreeSopfrs: Array<Sopfr<{ rough: 5 }>> =
             JI_NOTATION.map((symbolClassId: Id<SymbolClass>): Sopfr<{ rough: 5 }> => {
                 const primaryComma = getPrimaryComma(symbolClassId)
-                const primaryCommaMonzo = computeJiPitchMonzo(primaryComma)
+                const primaryCommaMonzo = computeMonzoFromJiPitch(primaryComma)
                 const twoThreeFreeNumberMonzo = computeRoughMonzo(primaryCommaMonzo, FIVE_ROUGHNESS)
 
                 return computeSopfr(twoThreeFreeNumberMonzo)

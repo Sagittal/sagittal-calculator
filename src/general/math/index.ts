@@ -1,5 +1,5 @@
 export { computeCombinations } from "./combinations"
-export { BASE_2 } from "./constants"
+export { BASE_2, ADDITIVE_IDENTITY } from "./constants"
 export {
     FIVE_PRIME_INDEX,
     FIVE_ROUGHNESS,
@@ -60,6 +60,15 @@ export {
     Smoothness,
     RationalTypeParameters,
     Primes,
+    RationalNumberByMonzo,
+    RationalNumberByRatio,
+    computeNumberFromRational,
+    equalRationals,
+    computeMonzoFromRational,
+    computeRatioFromRational,
+    computeIsSmoothRational,
+    computeIsRoughRational,
+    computeRationalSmoothness,
 } from "./rational"
 export { computeDistributions } from "./distributions"
 export { dividesEvenly } from "./dividesEvenly"
@@ -93,4 +102,12 @@ export {
     Direction,
     NumericTypeParameters,
     Distribution,
+    Irrational,
+    Numeric,
 } from "./types"
+export {
+    computeIsSubNumber,
+    computeIsSuperNumber,
+    computeIsUnisonNumber,
+    computeSuperNumber,
+} from "./direction"

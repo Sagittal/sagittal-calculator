@@ -1,11 +1,11 @@
 import { Monzo } from "../../../../../src/general/math"
-import { computeJiPitchMonzo, JiPitch } from "../../../../../src/general/music"
+import { computeMonzoFromJiPitch, JiPitch } from "../../../../../src/general/music"
 
-describe("computeJiPitchMonzo", (): void => {
+describe("computeMonzoFromJiPitch", (): void => {
     it("trims the monzo, as a courtesy", (): void => {
         const jiPitch: JiPitch = { monzo: [0, 0, 0, 0] as Monzo }
 
-        const actual = computeJiPitchMonzo(jiPitch)
+        const actual = computeMonzoFromJiPitch(jiPitch)
 
         expect(actual).toEqual([])
     })

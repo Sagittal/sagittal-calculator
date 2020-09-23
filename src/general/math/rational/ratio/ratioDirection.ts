@@ -57,7 +57,7 @@ const invertRatio: {
     return [
         denominator as number as Numerator<T>,
         numerator as number as Denominator<T>,
-    ] as Ratio<T & { direction: Direction.SUPER }>
+    ] as Ratio<T>
 }
 
 export {
@@ -66,4 +66,5 @@ export {
     computeIsSuperRatio,
     computeIsSubRatio,
     computeIsUnisonRatio,
+    invertRatio,
 }

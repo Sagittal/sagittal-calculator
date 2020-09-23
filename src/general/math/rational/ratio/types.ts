@@ -1,4 +1,6 @@
 import { Direction, Numeric, NumericTypeParameterEffects, NumericTypeParameters } from "../../types"
+import { Monzo } from "../monzo"
+import { RationalTypeParameters } from "../types"
 
 type Numerator<T extends NumericTypeParameters = {}> =
     Numeric<(T extends { irrational: true } ? {} : { integer: true }) &
@@ -29,6 +31,12 @@ enum FractionalPartType {
 
 type FractionalPart<T extends NumericTypeParameters = {}> = Numerator<T> | Denominator<T>
 
+type RationalNumberByRatio<T extends RationalTypeParameters = { irrational: false }> = {
+    number?: Numeric<T>,
+    monzo?: Monzo<T>,
+    ratio: Ratio<T>,
+}
+
 export {
     Ratio,
     Numerator,
@@ -37,4 +45,5 @@ export {
     FractionalPart,
     UndirectedRatio,
     PotentiallyIrrationalRatioParameter,
+    RationalNumberByRatio,
 }

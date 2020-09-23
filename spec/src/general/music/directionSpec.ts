@@ -2,7 +2,7 @@ import { computeSuperPitch } from "../../../../src/general"
 import { Direction, Ratio } from "../../../../src/general/math"
 import { Monzo } from "../../../../src/general/math/rational/monzo"
 import { Cents, computeIsSubPitch, computeIsUnisonPitch, Pitch } from "../../../../src/general/music"
-import { computeIsSuperPitch } from "../../../../src/general/music/pitchDirection"
+import { computeIsSuperPitch } from "../../../../src/general/music/direction"
 
 describe("computeIsSubPitch", (): void => {
     describe("by monzo", (): void => {
@@ -66,7 +66,7 @@ describe("computeIsSubPitch", (): void => {
             expect(actual).toBeTruthy()
         })
 
-        it("returns false if the cents are zero", (): void => {
+        it("returns false if the cents are unison", (): void => {
             const pitch = { cents: 0 as Cents }
 
             const actual = computeIsSubPitch(pitch)
@@ -146,7 +146,7 @@ describe("computeIsSuperPitch", (): void => {
             expect(actual).toBeFalsy()
         })
 
-        it("returns false if the cents are zero", (): void => {
+        it("returns false if the cents are unison", (): void => {
             const pitch = { cents: 0 as Cents }
 
             const actual = computeIsSuperPitch(pitch)
@@ -226,7 +226,7 @@ describe("computeIsUnisonPitch", (): void => {
             expect(actual).toBeFalsy()
         })
 
-        it("returns true if the cents are zero", (): void => {
+        it("returns true if the cents are unison", (): void => {
             const pitch = { cents: 0 as Cents }
 
             const actual = computeIsUnisonPitch(pitch)

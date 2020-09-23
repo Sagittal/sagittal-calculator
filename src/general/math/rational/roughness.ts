@@ -1,10 +1,12 @@
-import { increment } from "../../code"
+import { increment, isUndefined } from "../../code"
 import { Index } from "../../types"
 import { dividesEvenly } from "../dividesEvenly"
+import { computeIsRoughMonzo } from "./monzo"
 import { computeRoughnessIndex } from "./primeCount"
 import { PRIMES } from "./primes"
+import { computeIsRoughRatio } from "./ratio"
 import { integerDivide } from "./typedOperations"
-import { Integer, Prime, Roughness } from "./types"
+import { Integer, Prime, Primes, Rational, RationalTypeParameters, Roughness } from "./types"
 
 const computeIsRoughInteger = (integer: Integer, roughness: Roughness): boolean => {
     let isRough = true
@@ -44,7 +46,18 @@ const computeRoughInteger = <T extends Integer>(integer: T, roughness: Roughness
     return roughInteger
 }
 
+const computeIsRoughRational = <S extends Primes, T extends RationalTypeParameters>(
+    rational: Rational<T>,
+    roughness: S & Roughness,
+): rational is Rational<T & { rough: S }> => {
+    const { monzo, ratio } = rational
+
+    return (!isUndefined(monzo) && computeIsRoughMonzo(monzo, roughness as S & Integer as S & Roughness)) ||
+        (!isUndefined(ratio) && computeIsRoughRatio(ratio, roughness as S & Integer as S & Roughness))
+}
+
 export {
     computeIsRoughInteger,
     computeRoughInteger,
+    computeIsRoughRational,
 }

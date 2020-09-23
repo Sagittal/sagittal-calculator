@@ -3,8 +3,8 @@ import {
     computeIsSubPitch,
     computeIsUnisonPitch,
     computeIsWithinPrimeLimit,
-    computeJiPitchRatio,
     computeMonzoFromInteger,
+    computeRatioFromJiPitch,
     computeRoughRatio,
     computeSubRatio,
     computeSuperPitch,
@@ -76,7 +76,7 @@ const computeCommaName = (
         formattedCommaNameRatio = "3"
     } else {
         const commaNameRatio: CommaNameRatio =
-            computeRoughRatio(computeJiPitchRatio(superComma), FIVE_ROUGHNESS) as CommaNameRatio
+            computeRoughRatio(computeRatioFromJiPitch(superComma), FIVE_ROUGHNESS) as CommaNameRatio
 
         if (directed) {
             const stringifiedRatio = stringifyRatio(commaNameRatio, { factored })
