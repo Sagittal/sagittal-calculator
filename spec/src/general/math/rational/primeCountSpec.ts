@@ -1,4 +1,4 @@
-import { Count } from "../../../../../src/general"
+import { Count, finalElement, log, PRIMES, round } from "../../../../../src/general"
 import { computePrimeCount, Prime } from "../../../../../src/general/math"
 
 describe("computePrimeCount", (): void => {
@@ -17,5 +17,20 @@ describe("computePrimeCount", (): void => {
         expect(computePrimeCount(60)).toBe(17 as Count<Prime>)
     })
 
-    // TODO: ~ 1/ln(n) test
+    it("the prime count can be approximated by ~1/ln(n)", (): void => {
+        const number = 8368818
+
+        const actual = computePrimeCount(number)
+
+        const expected = number / log(number)
+        expect(round(actual / expected)).toBe(1)
+    })
+
+    it("throws an error if requested for a number greater than the greatest prime", (): void => {
+        const number = finalElement(PRIMES) + 1
+
+        expect((): void => {
+            computePrimeCount(number)
+        }).toThrowError("Cannot compute exact prime count for numbers greater than 8368819, the largest prime currently recognized.")
+    })
 })

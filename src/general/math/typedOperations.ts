@@ -77,7 +77,7 @@ const min = <T extends number>(...numbers: T[]): Min<T> =>
 const pow = <T extends number>(base: Base<T> | T, exponent: Exponent<T> | T): Power<T> =>
     Math.pow(base, exponent) as Power<T>
 
-const log = <T extends number>(power: Power<T> | T, base: Base<T> | T): Exponent<T> =>
+const log = <T extends number>(power: Power<T> | T, base: Base<T> | T = Math.E as Base<T>): Exponent<T> =>
     Math.log(power) / Math.log(base) as Exponent<T>
 
 const avg = <T extends number>(...numbers: T[]): Avg<T> =>
