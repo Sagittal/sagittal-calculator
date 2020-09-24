@@ -1,14 +1,20 @@
-import { Denominator, FractionalPart, parseInteger, Ratio } from "../../math"
+import { Denominator, FractionalPart, NumTypeParameters, Ratio } from "../../math"
 import { BLANK, SUPERSCRIPT_NUMS } from "../constants"
-import { Formatted } from "../format"
-import { Char } from "../types"
+import { split } from "../typedOperations"
+import { Char, Io } from "../types"
+import { parseInteger } from "./integer"
 
-const superscriptNums = ["⁰", "¹", "²", "³", "⁴", "⁵", "⁶", "⁷", "⁸", "⁹"].join()
+const superscriptNums = SUPERSCRIPT_NUMS.join()
 
-const parseRatio = <T extends Ratio<{ potentiallyUnreduced: true }>>(ratioText: Formatted<T>): T => {
-    const ratio = ratioText.split(/[\/:]/).map((fractionalPartText: string): FractionalPart => {
-        if (fractionalPartText.match(new RegExp(`[${superscriptNums}.]`))) {
-            const factorPowers = fractionalPartText.split(".")
+const parseRatio = <T extends NumTypeParameters>(
+    ratioIo: Io,
+    // TODO: IRRATIONAL RATIOS
+    //  I was thinking this would be an important place to ensure it returns RatioNotDefaultingToRational
+    //  but that breaks a ton of stuff... and for no good reason, since I don't think we even really support that yet.
+): Ratio<Omit<T, "_PotentiallyUnreducedBrand"> & { potentiallyUnreduced: true }> => {
+    const ratio = split(ratioIo, /[\/:]/).map((fractionalPartIo: Io): FractionalPart => {
+        if (fractionalPartIo.match(new RegExp(`[${superscriptNums}.]`))) {
+            const factorPowers = fractionalPartIo.split(".")
             return factorPowers.reduce(
                 (product: FractionalPart, factorPower: string): FractionalPart => {
                     const exponentPartOfFactorPower: string = factorPower.replace(new RegExp(`[^${superscriptNums}]`, "g"), "")
@@ -24,7 +30,7 @@ const parseRatio = <T extends Ratio<{ potentiallyUnreduced: true }>>(ratioText: 
                 1 as FractionalPart,
             )
         } else {
-            return parseInteger(fractionalPartText) as FractionalPart
+            return parseInteger(fractionalPartIo) as FractionalPart
         }
     })
 
@@ -32,11 +38,11 @@ const parseRatio = <T extends Ratio<{ potentiallyUnreduced: true }>>(ratioText: 
         ratio.push(1 as Denominator)
     }
 
-    if (ratioText.includes(":")) {
+    if (ratioIo.includes(":")) {
         ratio.reverse()
     }
 
-    return ratio as T
+    return ratio as Ratio<T & { potentiallyUnreduced: true }>
 }
 
 export {

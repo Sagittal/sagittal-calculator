@@ -1,3 +1,4 @@
+import { Io } from "../../../../src/general/io"
 import { Decimal } from "../../../../src/general/math"
 import { Monzo } from "../../../../src/general/math/rational/monzo"
 import { Ratio } from "../../../../src/general/math/rational/ratio"
@@ -6,7 +7,7 @@ import { parsePitch } from "../../../../src/sagittal/io"
 
 describe("parsePitch", (): void => {
     it("works when given as a monzo", (): void => {
-        const pitchText = "[0, 1, -2, 1⟩"
+        const pitchText = "[0, 1, -2, 1⟩" as Io
 
         const actual = parsePitch(pitchText)
 
@@ -15,7 +16,7 @@ describe("parsePitch", (): void => {
     })
 
     it("works when given as a ratio", (): void => {
-        const pitchText = "7/2"
+        const pitchText = "7/2" as Io
 
         const actual = parsePitch(pitchText)
 
@@ -24,7 +25,7 @@ describe("parsePitch", (): void => {
     })
 
     it("works when given as a comma name", (): void => {
-        const pitchText = "3A"
+        const pitchText = "3A" as Io
 
         const actual = parsePitch(pitchText)
 
@@ -33,7 +34,7 @@ describe("parsePitch", (): void => {
     })
 
     it("works when given as cents", (): void => {
-        const pitchText = "33.4c"
+        const pitchText = "33.4c" as Io
 
         const actual = parsePitch(pitchText)
 
@@ -42,7 +43,7 @@ describe("parsePitch", (): void => {
     })
 
     it("works when given as a decimal", (): void => {
-        const pitchText = "3.4"
+        const pitchText = "3.4" as Io
 
         const actual = parsePitch(pitchText)
 

@@ -67,8 +67,8 @@ type NumTypeParameterEffects<T> =
     & (T extends { direction: Direction.UNISON } ? { _DirectionBrand: Direction.UNISON } : {})
     & (T extends { rough: number } ? { _RoughBrand: Pick<T, "rough"> } : {})
     & (T extends { smooth: number } ? { _SmoothBrand: Pick<T, "smooth"> } : {})
-    & (T extends { potentiallyIrrational: true } ? { _IrrationalBrand: boolean } : {})
-    & (T extends { potentiallyUnreduced: true } ? { _UnreducedBrand: boolean } : {})
+    & (T extends { potentiallyIrrational: true } ? { _PotentiallyIrrationalBrand: boolean } : {})
+    & (T extends { potentiallyUnreduced: true } ? { _PotentiallyUnreducedBrand: boolean } : {})
     & MaybeIntegerBrand<T>
 
 // TODO: IMPLEMENT EDO PITCHES ON POTENTIALLY IRRATIONAL NUMS

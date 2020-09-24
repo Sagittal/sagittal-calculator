@@ -1,7 +1,7 @@
 import { Io } from "../../../../general"
 
-const unformatParameters = (text: Io): Io => {
-    return text
+const unformatParameters = (io: Io): Io => {
+    return io
         .replace(/sumOfSquares/g, "\"sumOfSquares\"")
         .replace(/submetrics/g, "\"submetrics\"")
         .replace(/name/g, "\"name\"")

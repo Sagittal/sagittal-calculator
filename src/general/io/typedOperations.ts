@@ -14,7 +14,7 @@ const join = <T extends string>(array: T[], separator?: string): T => {
     return array.join(separator) as T
 }
 
-const split = <T extends string>(string: T, separator: string): T[] => {
+const split = <T extends string>(string: T, separator: string | RegExp): T[] => {
     return string.split(separator) as T[]
 }
 

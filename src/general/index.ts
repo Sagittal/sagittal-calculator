@@ -93,6 +93,7 @@ export {
     ANY_CENTS_CHARS,
     ANY_RATIO_CHARS,
     formatCents,
+    parseInteger,
 } from "./io"
 export {
     abs,
@@ -148,7 +149,6 @@ export {
     negative,
     Numerator,
     ONE,
-    parseInteger,
     pow,
     Power,
     Prime,
@@ -170,6 +170,9 @@ export {
     computeDecimalFromMonzo,
     equalMonzos,
     Avg,
+    computeLowestTermsRatio,
+    MonzoNotDefaultingToRational,
+    RatioNotDefaultingToRational,
 } from "./math"
 export {
     Cents,

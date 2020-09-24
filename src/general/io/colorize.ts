@@ -1,11 +1,11 @@
 import { ioSettings } from "./globals"
 import { ColorMethod, Io } from "./types"
 
-const colorize = (text: Io, color: ColorMethod): Io => {
-    if (ioSettings.disableColors) return text
+const colorize = (io: Io, color: ColorMethod): Io => {
+    if (ioSettings.disableColors) return io
 
     // @ts-ignore
-    return text[ color ] as Io
+    return io[ color ] as Io
 }
 
 export {

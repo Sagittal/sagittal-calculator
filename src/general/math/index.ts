@@ -51,7 +51,6 @@ export {
     ceil,
     floor,
     integerDivide,
-    parseInteger,
     Copfr,
     Integer,
     Prime,
@@ -70,6 +69,7 @@ export {
     computeIsRoughRationalNum,
     computeRationalNumSmoothness,
     computeRatioFromRationalDecimal,
+    computeLowestTermsRatio,
 } from "./rational"
 export { computeDistributions } from "./distributions"
 export { dividesEvenly } from "./dividesEvenly"

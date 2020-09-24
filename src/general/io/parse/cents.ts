@@ -1,8 +1,8 @@
 import { Cents } from "../../music"
-import { Formatted } from "../format"
+import { Io } from "../types"
 
-const parseCents = (centsText: Formatted<Cents>): Cents => {
-    const preparsedCentsText = centsText.replace("c", "").replace("¢", "")
+const parseCents = (centsIo: Io): Cents => {
+    const preparsedCentsText = centsIo.replace("c", "").replace("¢", "")
 
     return parseFloat(preparsedCentsText) as Cents
 }

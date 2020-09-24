@@ -1,11 +1,11 @@
 import { Monzo } from "../../math"
-import { Formatted } from "../format"
+import { Io } from "../types"
 
-// TODO: okay seriously is this stuff [blank]text? or formatted?
-//  I like the idea of it not having to be formatted b/c it's not OUTPUT.
-//  it's from the user; it could be a total mses..
-const parseMonzo = (monzoText: Formatted<Monzo>): Monzo => {
-    const preparsedMonzoText = monzoText
+// TODO: this could be given as an irrational Monzo. you even test cover it as such. but this Monzo
+//  type defaults to rational, so it's a lie and could get you in trouble. but it's not an easy problem to fix
+//  having this return a MonzoNotDefaultingToRational
+const parseMonzo = (monzoIo: Io): Monzo => {
+    const preparsedMonzoIo = monzoIo
         .replace("⟩", "]")
         .replace(">", "]")
         .replace("|", "[")
@@ -14,7 +14,7 @@ const parseMonzo = (monzoText: Formatted<Monzo>): Monzo => {
         .replace(/,\s*/g, ",")
         .replace(/\s+/g, ",")
 
-    return JSON.parse(preparsedMonzoText)
+    return JSON.parse(preparsedMonzoIo)
 }
 
 export {

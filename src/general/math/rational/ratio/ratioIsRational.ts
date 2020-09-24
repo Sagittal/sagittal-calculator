@@ -2,7 +2,8 @@ import { NumTypeParameters } from "../../types"
 import { isInteger } from "../isInteger"
 import { Ratio, RatioNotDefaultingToRational } from "./types"
 
-// TODO: this method is kind of a lie. any ratio is rational by our current implementation,
+// TODO: IRRATIONAL RATIOS
+//  this method is kind of a lie. any ratio is rational by our current implementation,
 //  which limits numerators and denominators to primitive numbers, not sqrts and such.
 //  e.g. this would say false for 5.5/3.5, even though that's just 11/7.
 //  so maybe we mean something slightly different by it. what we mean by it is that both numerator

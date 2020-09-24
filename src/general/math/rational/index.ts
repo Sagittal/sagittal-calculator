@@ -32,6 +32,7 @@ export {
     computeRatioFromRationalNum,
     invertRatio,
     computeRatioFromRationalDecimal,
+    computeLowestTermsRatio,
 } from "./ratio"
 export { computeIsRoughInteger } from "./roughness"
 export {
@@ -59,12 +60,7 @@ export { computePrimeCount } from "./primeCount"
 export { computeDecimalFromRationalNum } from "./decimalFromRationalNum"
 export { PRIMES } from "./primes"
 export { computeSopfr } from "./sopfr"
-export {
-    ceil,
-    floor,
-    integerDivide,
-    parseInteger,
-} from "./typedOperations"
+export { ceil, floor, integerDivide } from "./typedOperations"
 export {
     Copfr,
     Integer,

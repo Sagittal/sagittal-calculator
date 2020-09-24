@@ -38,12 +38,12 @@ const formatTableForTerminal = <T = unknown>(table: Table<T>, options?: Partial<
             BLANK,
         )
 
-        const maybeColoredRowText: Io = maybeColorize(rowText, rowIndex, colors)
+        const maybeColoredRowIo: Io = maybeColorize(rowText, rowIndex, colors)
         if (rowIndex === headerRowCount - 1) {
-            return colorize(maybeColoredRowText, "underline" as ColorMethod)
+            return colorize(maybeColoredRowIo, "underline" as ColorMethod)
         }
 
-        return maybeColoredRowText
+        return maybeColoredRowIo
     })
 
     const formattedTable: Io = join(formattedRows, NEWLINE)

@@ -1,5 +1,14 @@
 import { program } from "commander"
-import { Comma, CommandFlag, Formatted, Monzo, Name, parseMonzo, parseRatio, Pitch, Ratio } from "../../../general"
+import {
+    CommandFlag,
+    Io,
+    Monzo,
+    MonzoNotDefaultingToRational,
+    parseMonzo,
+    parseRatio,
+    Pitch,
+    RatioNotDefaultingToRational,
+} from "../../../general"
 import { computeMonzoFrom23FreeClassAndSizeCategoryName, parseCommaName, parsePitch } from "../../../sagittal"
 
 const readJiPitchOptions = (): void => {
@@ -7,18 +16,18 @@ const readJiPitchOptions = (): void => {
         .option(
             `-${CommandFlag.MONZO}, --monzo <monzo>`,
             "monzo",
-            (monzoText: string): Monzo => parseMonzo(monzoText as Formatted<Monzo>),
+            (monzoIo: string): MonzoNotDefaultingToRational => parseMonzo(monzoIo as Io),
         )
         .option(
             `-${CommandFlag.RATIO}, --ratio <ratio>`,
             "ratio",
-            (ratioText: string): Ratio => parseRatio(ratioText as Formatted<Ratio<{ potentiallyUnreduced: true }>>),
+            (ratioIo: string): RatioNotDefaultingToRational => parseRatio(ratioIo as Io),
         )
         .option(
             `-${CommandFlag.COMMA_NAME}, --comma-name <commaName>`,
             "comma name",
-            (commaNameText: string): Monzo => {
-                return computeMonzoFrom23FreeClassAndSizeCategoryName(parseCommaName(commaNameText as Name<Comma>))
+            (commaNameIo: string): Monzo => {
+                return computeMonzoFrom23FreeClassAndSizeCategoryName(parseCommaName(commaNameIo as Io))
             },
         )
         .option(
@@ -33,11 +42,11 @@ const readFindCommasOptions = (): void => {
         .option(
             `-${CommandFlag.LOWER_BOUND}, --lower-bound <lowerBound>`,
             "lower bound",
-            (pitchText: string): Pitch => parsePitch(pitchText))
+            (pitchIo: string): Pitch => parsePitch(pitchIo as Io))
         .option(
             `-${CommandFlag.UPPER_BOUND}, --upper-bound <upperBound>`,
             "upper bound",
-            (pitchText: string): Pitch => parsePitch(pitchText),
+            (pitchIo: string): Pitch => parsePitch(pitchIo as Io),
         )
         .option(`-${CommandFlag.MAX_AAS}, --max-aas <maxAas>`, "max AAS", parseFloat)
         .option(`-${CommandFlag.MAX_ATE}, --max-ate <maxAte>`, "max ATE", parseInt)

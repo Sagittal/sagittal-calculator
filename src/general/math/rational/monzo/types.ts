@@ -4,6 +4,10 @@ import { Ratio } from "../ratio"
 import { Prime, RationalNumTypeParameters } from "../types"
 
 type Monzo<T extends NumTypeParameters = {}> =
+    // TODO: DECIMALS AS SPECIAL INSIDE NUMS
+    //  there's another to-do somewhere about this
+    //  I don't like the idea that I'm using Decimals as the terms of monzos here
+    //  but it speaks to how Decimal is currently doing duty as what Integer is represented as too...
     Array<Decimal<(T extends { potentiallyIrrational: true } ? {} : { integer: true }) &
             (T extends { integer: true } ? { integer: true } : {})>
         & Exponent<Prime>>

@@ -16,7 +16,7 @@ const applySharedPitchCommandSetup = (): void => {
         .option(
             `-${CommandFlag.EXCLUDED_FIELDS}, --excluded-fields <excludedFields>`,
             "exclude fields",
-            (excludeFieldsText: string): JiPitchScriptGroupField[] => parseExcludedFields(excludeFieldsText as Io),
+            (excludeFieldsIo: string): JiPitchScriptGroupField[] => parseExcludedFields(excludeFieldsIo as Io),
         )
 
     parseCommands(ScriptGroup.JI_PITCH as Filename)

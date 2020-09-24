@@ -14,6 +14,7 @@ export {
     RationalNumByRatio,
 } from "./types"
 export { computeSuperRatio } from "./ratioDirection"
+export { computeLowestTermsRatio } from "./lowestTerms"
 export { computeRatioFromRationalDecimal } from "./ratioFromRationalDecimal"
 export { computeRatioFromRationalNum } from "./ratioFromRationalNum"
 export { computeRatioFromMonzo } from "./ratioFromMonzo"

@@ -36,8 +36,8 @@ const computePopular23FreeClasses = (maxN2D3P9: Max<N2D3P9>): Array<Ranked<Popul
     if (popular23FreeClassesScriptGroupSettings.useKnown) {
         const knownPopular23FreeClasses =
             readLines("src/scripts/popular23FreeClass/input/knownPopular23FreeClasses.txt" as Filename)
-                .map((knownPopular23FreeClassText: Io): TwoThreeFreeClass => {
-                    return parse23FreeClass(knownPopular23FreeClassText as Formatted<TwoThreeFreeClass>)
+                .map((knownPopular23FreeClassIo: Io): TwoThreeFreeClass => {
+                    return parse23FreeClass(knownPopular23FreeClassIo)
                 })
 
         popular23FreeClassAnalyses = knownPopular23FreeClasses
