@@ -4,7 +4,8 @@ import { Formatted } from "../format"
 import { parseRatio } from "./ratio"
 
 const parse23FreeClass = (formatted23FreeClass: Formatted<TwoThreeFreeClass>): TwoThreeFreeClass => {
-    const parsed23FreeClass = parseRatio(formatted23FreeClass as Formatted as Formatted<Ratio<{ unreduced: true }>>)
+    const parsed23FreeClass =
+        parseRatio(formatted23FreeClass as Formatted as Formatted<Ratio<{ potentiallyUnreduced: true }>>)
 
     return {
         monzo: computeMonzoFromRatio(parsed23FreeClass) as Monzo<{ rough: 5, direction: Direction.SUPER }>,

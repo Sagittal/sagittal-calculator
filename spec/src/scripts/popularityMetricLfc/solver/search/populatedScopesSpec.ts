@@ -1,7 +1,6 @@
 import { Count } from "../../../../../../src/general"
 import { Scope } from "../../../../../../src/scripts/popularityMetricLfc/bestMetric"
-import * as nonRecursiveBestMetric
-    from "../../../../../../src/scripts/popularityMetricLfc/bestMetric/bestMetric"
+import * as nonRecursiveBestMetric from "../../../../../../src/scripts/popularityMetricLfc/bestMetric/bestMetric"
 import { scopesToSearch, solverStatus } from "../../../../../../src/scripts/popularityMetricLfc/globals"
 import { searchPopulatedScopes } from "../../../../../../src/scripts/popularityMetricLfc/solver/search/populatedScopes"
 import { Parameter } from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"

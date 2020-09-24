@@ -10,11 +10,11 @@ interface BoundEvent {
 
 type BoundHistory = BoundEvent[]
 
-interface CommaMean extends CentsPosition {
+type CommaMean = CentsPosition & {
     name: Name<CommaMean>,
 }
 
-interface InaMidpoint extends CentsPosition {
+type InaMidpoint = CentsPosition & {
     name: Name<InaMidpoint>,
 }
 

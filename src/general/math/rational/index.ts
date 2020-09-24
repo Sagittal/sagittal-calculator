@@ -24,13 +24,14 @@ export {
     computeRoughRatio,
     computeIsSmoothRatio,
     computeIsUnisonRatio,
-    PotentiallyIrrationalRatioParameter,
+    RatioNotDefaultingToRational,
     computeSubRatio,
-    computeNumberFromRatio,
+    computeDecimalFromRatio,
     equalRatios,
-    RationalNumberByRatio,
-    computeRatioFromRational,
+    RationalNumByRatio,
+    computeRatioFromRationalNum,
     invertRatio,
+    computeRatioFromRationalDecimal,
 } from "./ratio"
 export { computeIsRoughInteger } from "./roughness"
 export {
@@ -45,20 +46,19 @@ export {
     computeIsSuperMonzo,
     Monzo,
     sumMonzos,
-    PotentiallyIrrationalMonzoParameter,
+    MonzoNotDefaultingToRational,
     computeIsRoughMonzo,
     computeIsSmoothMonzo,
     computeIsUnisonMonzo,
-    computeNumberFromMonzo,
+    computeDecimalFromMonzo,
     equalMonzos,
-    RationalNumberByMonzo,
-    computeMonzoFromRational,
+    RationalNumByMonzo,
+    computeMonzoFromRationalNum,
 } from "./monzo"
 export { computePrimeCount } from "./primeCount"
-export { computeNumberFromRational } from "./numberFromRational"
+export { computeDecimalFromRationalNum } from "./decimalFromRationalNum"
 export { PRIMES } from "./primes"
 export { computeSopfr } from "./sopfr"
-export { equalRationals } from "./equalRationals"
 export {
     ceil,
     floor,
@@ -72,9 +72,10 @@ export {
     Roughness,
     Sopfr,
     Smoothness,
-    RationalTypeParameters,
+    RationalNumTypeParameters,
     Primes,
-    Rational,
+    RationalNum,
+    RationalNumByDecimal,
 } from "./types"
-export { computeIsSmoothRational, computeRationalSmoothness } from "./smoothness"
-export { computeIsRoughRational } from "./roughness"
+export { computeIsSmoothRational, computeRationalNumSmoothness } from "./smoothness"
+export { computeIsRoughRationalNum } from "./roughness"

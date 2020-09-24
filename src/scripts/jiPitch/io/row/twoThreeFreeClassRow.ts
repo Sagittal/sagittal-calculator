@@ -1,4 +1,4 @@
-import { format23FreeClass, formatInteger, formatNumber, Formatted, Row, TwoThreeFreeClass } from "../../../../general"
+import { format23FreeClass, formatDecimal, formatInteger, Formatted, Row, TwoThreeFreeClass } from "../../../../general"
 import { TwoThreeFreeClassAnalysis } from "../../../../sagittal"
 import { jiPitchScriptGroupSettings } from "../../globals"
 import { TwoThreeFreeClassField } from "../../types"
@@ -22,9 +22,9 @@ const compute23FreeClassRow = (
         rows.push(formatInteger(twoThreeFreeSopfr) as Formatted as Formatted<TwoThreeFreeClassAnalysis>)
     }
     if (!jiPitchScriptGroupSettings.excludedFields.includes(TwoThreeFreeClassField.N2D3P9)) {
-        rows.push(formatNumber(n2d3p9) as Formatted as Formatted<TwoThreeFreeClassAnalysis>)
+        rows.push(formatDecimal(n2d3p9) as Formatted as Formatted<TwoThreeFreeClassAnalysis>)
     }
-    
+
     return rows
 }
 

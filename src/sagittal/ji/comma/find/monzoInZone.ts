@@ -1,13 +1,14 @@
 import {
-    Cents,
-    computeCentsFromNumber,
-    computeNumberFromMonzo,
     computeTrimmedArray,
     equalMonzos,
     Exponent,
     Integer,
     Maybe,
     Monzo,
+    pitchIsHigher,
+    pitchIsHigherOrEqual,
+    pitchIsLower,
+    pitchIsLowerOrEqual,
     Prime,
     shallowClone,
     TWO_PRIME_INDEX,
@@ -15,24 +16,24 @@ import {
 } from "../../../../general"
 
 const computeMonzoInZone = (twoFreeMonzo: Monzo<{ rough: 3 }>, zone: Zone): Maybe<Monzo> => {
-    const [minCents, maxCents] = zone
+    const [lowerBound, upperBound] = zone
 
     const monzoInZone = shallowClone(twoFreeMonzo)
 
-    let cents: Cents = computeCentsFromNumber(computeNumberFromMonzo(monzoInZone))
-
     if (!equalMonzos(monzoInZone, [] as Monzo)) {
-        while (cents > maxCents) {
+        // TODO: this isn't ideal how we're making fake pitches to use the available helpers
+        while (pitchIsHigher({ monzo: monzoInZone }, upperBound)) {
             monzoInZone[ TWO_PRIME_INDEX ] = monzoInZone[ TWO_PRIME_INDEX ] - 1 as Integer & Exponent<Prime>
-            cents = computeCentsFromNumber(computeNumberFromMonzo(monzoInZone))
         }
-        while (cents < minCents) {
+        while (pitchIsLower({ monzo: monzoInZone }, lowerBound)) {
             monzoInZone[ TWO_PRIME_INDEX ] = monzoInZone[ TWO_PRIME_INDEX ] + 1 as Integer & Exponent<Prime>
-            cents = computeCentsFromNumber(computeNumberFromMonzo(monzoInZone))
         }
     }
 
-    return cents >= minCents && cents <= maxCents ?
+    return (
+        pitchIsHigherOrEqual({ monzo: monzoInZone }, lowerBound) &&
+        pitchIsLowerOrEqual({ monzo: monzoInZone }, upperBound)
+    ) ?
         computeTrimmedArray(monzoInZone) :
         undefined
 }

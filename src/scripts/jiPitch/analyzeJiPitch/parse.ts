@@ -1,33 +1,6 @@
 import { program } from "commander"
-import {
-    Abs,
-    ANY_MONZO_CHARS,
-    Comma,
-    computeMonzoFromInteger,
-    Exponent,
-    Formatted,
-    IDENTIFYING_COMMA_NAME_CHARS,
-    Integer,
-    Io,
-    JiPitch,
-    Max,
-    Monzo,
-    Name,
-    parseInteger,
-    parseMonzo,
-    parseRatio,
-    Prime,
-    Ratio,
-} from "../../../general"
-import {
-    ApotomeSlope,
-    computeAas,
-    computeAte,
-    computeMonzoFrom23FreeClassAndSizeCategoryName,
-    JiPitchAnalysis,
-    N2D3P9,
-    parseCommaName,
-} from "../../../sagittal"
+import { Abs, Exponent, Integer, Io, isUndefined, JiPitch, Max, Prime } from "../../../general"
+import { ApotomeSlope, computeAas, computeAte, JiPitchAnalysis, N2D3P9, parsePitch } from "../../../sagittal"
 import { FindCommasSettings, parseFindCommasSettings } from "../findCommas"
 
 const parseJiPitch = (): JiPitch => {
@@ -35,27 +8,29 @@ const parseJiPitch = (): JiPitch => {
 
     let jiPitch: JiPitch
     if (jiPitchText) {
-        if (jiPitchText.match(IDENTIFYING_COMMA_NAME_CHARS)) {
-            const { commaNameRatio, sizeCategoryName } = parseCommaName(jiPitchText as Name<Comma>)
-            jiPitch = { monzo: computeMonzoFrom23FreeClassAndSizeCategoryName({ commaNameRatio, sizeCategoryName }) }
-        } else if (jiPitchText.includes("/")) {
-            jiPitch = { ratio: parseRatio(jiPitchText as Formatted<Ratio<{ unreduced: true }>>) }
-        } else if (jiPitchText.match(ANY_MONZO_CHARS)) {
-            jiPitch = { monzo: parseMonzo(jiPitchText as Formatted<Monzo>) }
+        const pitch = parsePitch(jiPitchText)
+
+        // todo: DECIMAL & CENTS
+        //  it is possible here that parsePitch can return a pitch which has only cents.
+        //  without one of monzo, ratio, or decimal, which won't work for jiPitch.
+        //  but that wouldn't be the case if we fix the problem.
+        if (!isUndefined(pitch.monzo) || !isUndefined(pitch.ratio) || !isUndefined(pitch.decimal)) {
+            jiPitch = pitch as JiPitch
         } else {
-            const integer = parseInteger(jiPitchText)
-            jiPitch = { monzo: computeMonzoFromInteger(integer) }
+            throw new Error("Pitch was given in cents. This is not yet supported for parsing JI pitches.")
         }
+
+        // When provided via specific flags, they are pre-parsed (in readOptions.ts).
     } else if (program.monzo) {
         jiPitch = { monzo: program.monzo }
     } else if (program.ratio) {
         jiPitch = { ratio: program.ratio }
     } else if (program.commaName) {
-        jiPitch = { monzo: computeMonzoFrom23FreeClassAndSizeCategoryName(program.commaName) }
-    } else if (program.integer) {
-        jiPitch = { monzo: computeMonzoFromInteger(program.integer) }
+        jiPitch = { monzo: program.commaName }
+    } else if (program.decimal) {
+        jiPitch = { decimal: program.decimal }
     } else {
-        throw new Error("Unable to determine monzo for JI pitch.")
+        throw new Error("Unable to parse JI pitch.")
     }
 
     return jiPitch

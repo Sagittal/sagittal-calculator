@@ -1,7 +1,8 @@
-import { computeCentsFromPitch, Id, ioSettings, Maybe, Zone } from "../../../general"
+import { computeCentsFromPitch, Id, ioSettings, Max, Maybe, Min, Pitch, Zone } from "../../../general"
 import { formatSymbolClass } from "../../io"
 import { getPrimaryComma } from "../primaryComma"
 import { SagittalComma, SymbolClass } from "../types"
+import { ABSOLUTE_LOWEST_BOUND } from "./constants"
 import { formatJiNotationLevel } from "./formatLevel"
 import { getIntroducingJiNotationLevel } from "./introducingJiNotationLevel"
 import { isWithinJiNotationLevel } from "./isWithinLevel"
@@ -16,7 +17,10 @@ const computeCaptureZone = (
 
     const introducingJiNotationLevel = getIntroducingJiNotationLevel(symbolClassId)
     if (!isWithinJiNotationLevel(introducingJiNotationLevel, jiNotationLevel)) {
-        throw new Error(`JI Notation symbol class ${formatSymbolClass(symbolClassId, { ...ioSettings, align: false })} is not present at the ${formatJiNotationLevel(jiNotationLevel)} JI notation level; it is not introduced until the ${formatJiNotationLevel(introducingJiNotationLevel)} JI notation level.`)
+        throw new Error(`JI Notation symbol class ${formatSymbolClass(symbolClassId, {
+            ...ioSettings,
+            align: false,
+        })} is not present at the ${formatJiNotationLevel(jiNotationLevel)} JI notation level; it is not introduced until the ${formatJiNotationLevel(introducingJiNotationLevel)} JI notation level.`)
     }
 
     const primaryComma = getPrimaryComma(symbolClassId)
@@ -27,10 +31,13 @@ const computeCaptureZone = (
         })
     const indexOfJiNotationBoundJustBelowSymbolClassAtThisLevel = indexOfBoundJustAboveSymbolAtThisLevel - 1
 
-    const minCents = jiNotationLevelBounds[ indexOfJiNotationBoundJustBelowSymbolClassAtThisLevel ]?.cents || 0
-    const maxCents = jiNotationLevelBounds[ indexOfBoundJustAboveSymbolAtThisLevel ].cents
+    const lowerBound =
+        jiNotationLevelBounds[ indexOfJiNotationBoundJustBelowSymbolClassAtThisLevel ] as Pitch as Min<Pitch>
+        || ABSOLUTE_LOWEST_BOUND
+    const upperBound =
+        jiNotationLevelBounds[ indexOfBoundJustAboveSymbolAtThisLevel ] as Pitch as Max<Pitch>
 
-    return [minCents, maxCents] as Zone<SagittalComma>
+    return [lowerBound, upperBound] as Zone<SagittalComma>
 }
 
 export {

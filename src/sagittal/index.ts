@@ -13,11 +13,11 @@ export {
     computePrimeExponentExtremasGivenMaxN2D3P9,
     DEFAULT_MAX_AAS,
     DEFAULT_MAX_ATE,
-    DEFAULT_MAX_CENTS,
+    DEFAULT_UPPER_BOUND,
     DEFAULT_MAX_2_3_FREE_COPFR,
     DEFAULT_MAX_2_3_FREE_SOPFR,
     DEFAULT_MAX_PRIME_LIMIT,
-    DEFAULT_MIN_CENTS,
+    DEFAULT_LOWER_BOUND,
     N2D3P9,
     computeMonzoFrom23FreeClassAndSizeCategoryName,
     parseCommaName,
@@ -32,7 +32,14 @@ export {
     computeAas,
 } from "./ji"
 export {
-    formatSymbolClass, formatSymbolAscii, SymbolLongAscii, unicodeFromAscii, SymbolSmiley, SymbolUnicode, SymbolGlyph,
+    formatSymbolClass,
+    formatSymbolAscii,
+    SymbolLongAscii,
+    unicodeFromAscii,
+    SymbolSmiley,
+    SymbolUnicode,
+    SymbolGlyph,
+    parsePitch,
 } from "./io"
 export {
     computeMaybeSymbolClassId,
@@ -67,4 +74,4 @@ export {
     computeSecondaryCommaZone,
     BoundType,
 } from "./notations"
-export { APOTOME_CENTS } from "./constants"
+export { APOTOME, APOTOME_CENTS, HALF_APOTOME } from "./constants"

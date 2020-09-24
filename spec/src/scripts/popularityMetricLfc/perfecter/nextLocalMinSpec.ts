@@ -86,7 +86,7 @@ describe("searchNextLocalMin", (): void => {
                     onlyBetterThanSopfgtt,
                     metricName,
                 })
-            } catch(e) {
+            } catch (e) {
                 reject()
             }
             resolve()

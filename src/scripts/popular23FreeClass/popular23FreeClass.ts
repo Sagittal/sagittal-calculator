@@ -1,4 +1,4 @@
-import { COMMA_POPULARITIES, equalJiPitches, isUndefined, Popularity, TwoThreeFreeClass, Votes } from "../../general"
+import { COMMA_POPULARITIES, equalPitches, isUndefined, Popularity, TwoThreeFreeClass, Votes } from "../../general"
 import { N2D3P9 } from "../../sagittal"
 import { computeBestNotatingCommaProperties } from "./bestNotatingComma"
 import { computeExactlyNotatingSymbolClassProperties } from "./exactlyNotatingSymbolClass"
@@ -9,7 +9,7 @@ const computePopular23FreeClass = (
     { twoThreeFreeClass, n2d3p9 }: { twoThreeFreeClass: TwoThreeFreeClass, n2d3p9: N2D3P9 },
 ): Popular23FreeClass => {
     const popularity = COMMA_POPULARITIES.find((popularity: Popularity): boolean => {
-        return equalJiPitches(popularity.twoThreeFreeClass, twoThreeFreeClass)
+        return equalPitches(popularity.twoThreeFreeClass, twoThreeFreeClass)
     })
     const popularityRank = !isUndefined(popularity) ? popularity.rank : undefined
     const votes = popularity?.votes || 0 as Votes

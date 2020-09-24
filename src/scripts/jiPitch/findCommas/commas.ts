@@ -1,11 +1,11 @@
-import { abs, Comma, formatNumber, Monzo } from "../../../general"
+import { Comma, computeSuperPitch, equalPitches, formatPitch, Monzo, pitchIsHigher } from "../../../general"
 import {
     computeCommasFrom23FreeMonzo,
+    DEFAULT_LOWER_BOUND,
     DEFAULT_MAX_AAS,
     DEFAULT_MAX_ATE,
-    DEFAULT_MAX_CENTS,
     DEFAULT_MAX_N2D3P9,
-    DEFAULT_MIN_CENTS,
+    DEFAULT_UPPER_BOUND,
     MAX_SIZE_CATEGORY_BOUND,
 } from "../../../sagittal"
 import { compute23FreeMonzosToCheck } from "./twoThreeFreeMonzosToCheck"
@@ -13,8 +13,8 @@ import { CommasOptions } from "./types"
 
 const computeCommas = (options: CommasOptions): Comma[] => {
     const {
-        minCents = DEFAULT_MIN_CENTS,
-        maxCents = DEFAULT_MAX_CENTS,
+        lowerBound = DEFAULT_LOWER_BOUND,
+        upperBound = DEFAULT_UPPER_BOUND,
         max23FreeSopfr,
         max23FreeCopfr,
         maxAte = DEFAULT_MAX_ATE,
@@ -23,12 +23,15 @@ const computeCommas = (options: CommasOptions): Comma[] => {
         maxN2D3P9 = DEFAULT_MAX_N2D3P9,
     } = options
 
-    if (minCents >= maxCents) {
-        throw new Error(`Min cents is not less than max cents; range was ${formatNumber(minCents, { align: false })} - ${formatNumber(maxCents, { align: false })}.`)
+    if (pitchIsHigher(lowerBound, upperBound) || equalPitches(lowerBound, upperBound)) {
+        throw new Error(`Lower bound is not less than upper bound; range was ${formatPitch(lowerBound, { align: false })} - ${formatPitch(upperBound, { align: false })}.`)
     }
 
-    if (abs(minCents) > MAX_SIZE_CATEGORY_BOUND || abs(maxCents) > MAX_SIZE_CATEGORY_BOUND) {
-        throw new Error(`Cents range must be within comma size category bounds (±227.370¢); range was ${formatNumber(minCents, { align: false })} - ${formatNumber(maxCents, { align: false })}.`)
+    if (
+        pitchIsHigher(computeSuperPitch(upperBound), MAX_SIZE_CATEGORY_BOUND) ||
+        pitchIsHigher(computeSuperPitch(lowerBound), MAX_SIZE_CATEGORY_BOUND)
+    ) {
+        throw new Error(`Search range must be within comma size category bounds (±227.370¢); range was ${formatPitch(lowerBound, { align: false })} - ${formatPitch(upperBound, { align: false })}.`)
     }
 
     let commas: Comma[] = []
@@ -44,8 +47,8 @@ const computeCommas = (options: CommasOptions): Comma[] => {
             computeCommasFrom23FreeMonzo(
                 twoThreeFreeMonzoToCheck,
                 {
-                    minCents,
-                    maxCents,
+                    lowerBound,
+                    upperBound,
                     maxAas,
                     maxAte,
                     maxN2D3P9,

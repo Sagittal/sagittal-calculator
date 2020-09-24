@@ -2,7 +2,7 @@ import { computeSuperPitch } from "../../../../src/general"
 import { Direction, Ratio } from "../../../../src/general/math"
 import { Monzo } from "../../../../src/general/math/rational/monzo"
 import { Cents, computeIsSubPitch, computeIsUnisonPitch, Pitch } from "../../../../src/general/music"
-import { computeIsSuperPitch } from "../../../../src/general/music/direction"
+import { computeIsSuperPitch } from "../../../../src/general/music/pitchDirection"
 
 describe("computeIsSubPitch", (): void => {
     describe("by monzo", (): void => {
@@ -299,5 +299,15 @@ describe("computeSuperPitch", (): void => {
             cents: 1.850 as Cents,
         }
         expect(actual).toEqual(expected)
+    })
+
+    it("does not mutate the original pitch", (): void => {
+        const pitch: Pitch<{ direction: Direction.SUB }> = {
+            cents: -1.850 as Cents,
+        }
+
+        computeSuperPitch(pitch)
+
+        expect(pitch.cents).toEqual(-1.850 as Cents)
     })
 })

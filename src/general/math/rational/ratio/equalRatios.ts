@@ -1,18 +1,18 @@
 import { deepEquals, isCloseTo } from "../../../code"
+import { computeDecimalFromRatio } from "./decimalFromRatio"
 import { computeLowestTermsRatio } from "./lowestTerms"
-import { computeNumberFromRatio } from "./numberFromRatio"
 import { computeRatioIsRational } from "./ratioIsRational"
-import { PotentiallyIrrationalRatioParameter } from "./types"
+import { RatioNotDefaultingToRational } from "./types"
 
 const equalRatios = (
-    ratioA: PotentiallyIrrationalRatioParameter,
-    ratioB: PotentiallyIrrationalRatioParameter,
+    ratioA: RatioNotDefaultingToRational,
+    ratioB: RatioNotDefaultingToRational,
 ): boolean => {
     if (computeRatioIsRational(ratioA) && computeRatioIsRational(ratioB)) {
         return deepEquals(computeLowestTermsRatio(ratioA), computeLowestTermsRatio(ratioB))
     }
 
-    return isCloseTo(computeNumberFromRatio(ratioA), computeNumberFromRatio(ratioB))
+    return isCloseTo(computeDecimalFromRatio(ratioA), computeDecimalFromRatio(ratioB))
 }
 
 export {

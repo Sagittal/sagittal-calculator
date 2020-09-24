@@ -1,7 +1,8 @@
-import { Abs, Exponent, Integer, Max, Monzo, Prime } from "../../../../../src/general/math"
+import { program } from "commander"
+import { Abs, Decimal, Exponent, Integer, Max, Monzo, Prime, Ratio } from "../../../../../src/general/math"
 import { Cents } from "../../../../../src/general/music"
 import { ApotomeSlope, JiPitchAnalysis, N2D3P9 } from "../../../../../src/sagittal/ji"
-import { parseNotatingCommasSettings } from "../../../../../src/scripts/jiPitch/analyzeJiPitch"
+import { parseJiPitch, parseNotatingCommasSettings } from "../../../../../src/scripts/jiPitch/analyzeJiPitch"
 import { DEFAULT_FIND_COMMAS_SETTINGS } from "../../../../../src/scripts/jiPitch/findCommas"
 import {
     jiPitchAnalysisFixture,
@@ -40,5 +41,99 @@ describe("parseNotatingCommasSettings", (): void => {
         const actual = parseNotatingCommasSettings(jiPitchAnalysis)
 
         expect(actual.maxAte).toBe(ate as Max<Abs<Integer & Exponent<3 & Prime>>>)
+    })
+})
+
+describe("parseJiPitch", (): void => {
+    beforeEach((): void => {
+        program.args = []
+        program.monzo = undefined
+        program.ratio = undefined
+        program.commaName = undefined
+        program.decimal = undefined
+    })
+
+    describe("when the JI pitch is provided as an argument directly (not as a specific flag)", (): void => {
+        it("works for a monzo", (): void => {
+            program.args = ["[0, 1, -2, 1⟩"]
+
+            const actual = parseJiPitch()
+
+            const expected = { monzo: [0, 1, -2, 1] as Monzo }
+            expect(actual).toEqual(expected)
+        })
+
+        it("works for a ratio", (): void => {
+            program.args = ["7/2"]
+
+            const actual = parseJiPitch()
+
+            const expected = { ratio: [7, 2] as Ratio }
+            expect(actual).toEqual(expected)
+        })
+
+        it("works for a comma name", (): void => {
+            program.args = ["3A"]
+
+            const actual = parseJiPitch()
+
+            const expected = { monzo: [-11, 7] as Monzo }
+            expect(actual).toEqual(expected)
+        })
+
+        it("works for an decimal", (): void => {
+            program.args = ["3.4"]
+
+            const actual = parseJiPitch()
+
+            const expected = { decimal: 3.4 as Decimal }
+            expect(actual).toEqual(expected)
+        })
+
+        it("if given as cents, will error for now", (): void => {
+            program.args = ["3.4c"]
+
+            expect((): void => {
+                parseJiPitch()
+            }).toThrowError("Pitch was given in cents. This is not yet supported for parsing JI pitches.")
+        })
+    })
+
+    describe("when the JI pitch is provided by a specific flag", (): void => {
+        it("works for a monzo (which will have been pre-parsed)", (): void => {
+            program.monzo = [0, 1, -2, 1]
+
+            const actual = parseJiPitch()
+
+            const expected = { monzo: [0, 1, -2, 1] as Monzo }
+            expect(actual).toEqual(expected)
+        })
+
+        it("works for a ratio (which will have been pre-parsed)", (): void => {
+            program.ratio = [7, 2]
+
+            const actual = parseJiPitch()
+
+            const expected = { ratio: [7, 2] as Ratio }
+            expect(actual).toEqual(expected)
+        })
+
+        it("works for a comma name (which will have been pre-parsed into a monzo)", (): void => {
+            program.commaName = [-11, 7]
+
+            const actual = parseJiPitch()
+
+            const expected = { monzo: [-11, 7] as Monzo }
+            expect(actual).toEqual(expected)
+        })
+
+        it("works for an decimal (which will have been pre-parsed)", (): void => {
+            program.decimal = 3.4
+
+            const actual = parseJiPitch()
+
+            const expected = { decimal: 3.4 as Decimal }
+            expect(actual).toEqual(expected)
+        })
     })
 })

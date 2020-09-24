@@ -10,7 +10,7 @@ const computeNotatingCommasRow = (
 ): Row<{ of: CommaAnalysis }> => {
 
     const rows = []
-    
+
     if (!jiPitchScriptGroupSettings.excludedFields.includes(NotatingCommasField.SYMBOL_CLASS)) {
         const formattedSymbolClass = maybeSymbolClassId ? formatSymbolClass(maybeSymbolClassId, ioSettings) : BLANK
         rows.push(formattedSymbolClass)
@@ -19,7 +19,7 @@ const computeNotatingCommasRow = (
         const { name } = commaAnalysis
         rows.push(name)
     }
-    
+
     return [
         ...rows,
         ...computeJiPitchRow(commaAnalysis),

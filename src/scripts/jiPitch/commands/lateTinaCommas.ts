@@ -20,8 +20,8 @@ import {
     computeLateComma,
     INFINITE_2_3_FREE_COPFR,
     INFINITE_N2D3P9,
-    TINA_COMMAS_MAX_CENTS,
-    TINA_COMMAS_MIN_CENTS,
+    TINA_COMMAS_LOWER_BOUND,
+    TINA_COMMAS_UPPER_BOUND,
 } from "../lateTinaCommas"
 import { applySharedPitchCommandSetup } from "./shared"
 
@@ -47,8 +47,8 @@ const findCommasSettings = parseFindCommasSettings(DEFAULT_OVERRIDES)
 const commas = computeCommas({
     ...jiPitchScriptGroupSettings,
     ...findCommasSettings,
-    minCents: TINA_COMMAS_MIN_CENTS,
-    maxCents: TINA_COMMAS_MAX_CENTS,
+    lowerBound: TINA_COMMAS_LOWER_BOUND,
+    upperBound: TINA_COMMAS_UPPER_BOUND,
     maxN2D3P9: INFINITE_N2D3P9,
 })
 

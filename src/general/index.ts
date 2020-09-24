@@ -40,7 +40,7 @@ export {
 } from "./code"
 export {
     sumTexts,
-    alignFormattedNumber,
+    alignFormattedDecimal,
     IDENTIFYING_COMMA_NAME_CHARS,
     ANY_MONZO_CHARS,
     Basis,
@@ -54,7 +54,7 @@ export {
     Filename,
     formatInteger,
     formatMonzo,
-    formatNumber,
+    formatDecimal,
     formatRatio,
     formatTable,
     Formatted,
@@ -88,6 +88,11 @@ export {
     readLines,
     split,
     TableFormat,
+    formatPitch,
+    parseCents,
+    ANY_CENTS_CHARS,
+    ANY_RATIO_CHARS,
+    formatCents,
 } from "./io"
 export {
     abs,
@@ -138,7 +143,7 @@ export {
     mod,
     computeIsSuperMonzo,
     Monzo,
-    NumericTypeParameters,
+    NumTypeParameters,
     multiply,
     negative,
     Numerator,
@@ -162,7 +167,7 @@ export {
     computeSubRatio,
     TWO_PRIME_INDEX,
     add,
-    computeNumberFromMonzo,
+    computeDecimalFromMonzo,
     equalMonzos,
     Avg,
 } from "./math"
@@ -179,7 +184,6 @@ export {
     JiPitch,
     computeRatioFromJiPitch,
     computeMonzoFromJiPitch,
-    equalJiPitches,
     Comma,
     TwoThreeFreeClass,
     compute23FreeClass,
@@ -190,7 +194,12 @@ export {
     computeIsUnisonPitch,
     THREE_PRIME_LIMIT,
     Apotome,
-    computeCentsFromNumber,
+    computeCentsFromDecimal,
     computePrimeLimit,
+    equalPitches,
+    pitchIsHigher,
+    pitchIsLower,
+    pitchIsHigherOrEqual,
+    pitchIsLowerOrEqual,
 } from "./music"
 export { Count, Ed, Extrema, Id, Index, Ms, Multiplier, Name, Step, Sum, Window } from "./types"

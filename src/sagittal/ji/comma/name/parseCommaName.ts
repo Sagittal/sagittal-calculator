@@ -6,8 +6,9 @@ const parseCommaName = (commaName: Name<Comma>): ParsedCommaName => {
     const twoThreeFreeClassPartOfCommaName = commaName.replace(/[a-zA-Z+\-]/g, "") as Formatted<TwoThreeFreeClass>
     const sizeCategoryPartOfCommaName = commaName.replace(twoThreeFreeClassPartOfCommaName, "").replace(/-/, "")
 
-    const commaNameRatio: CommaNameRatio = 
-        parseRatio(twoThreeFreeClassPartOfCommaName as Formatted as Formatted<CommaNameRatio<{ unreduced: true }>>)
+    const commaNameRatio: CommaNameRatio = parseRatio(
+        twoThreeFreeClassPartOfCommaName as Formatted as Formatted<CommaNameRatio<{ potentiallyUnreduced: true }>>,
+    )
 
     let sizeCategoryName: Maybe<SizeCategoryName> = undefined
 

@@ -23,13 +23,6 @@ import { computePrimeExponentRange } from "./primeExponentRange"
 import { compute23FreePrimesToCheck } from "./twoThreeFreePrimesToCheck"
 import { TwoThreeFreeMonzosToCheckOptions } from "./types"
 
-// TODO: Might it be preferable to do the strategy where instead of populating the whole list of monzos to check
-//  you instead go with the technique the N2D3P9 is already taking with the prime exponent extremas?
-//  that is maybe you should abstract/extract that bit in the popular 2,3-free script group
-//  which found a way to take some prime exponent extremas and check each of them
-//  and just have the artifact from here be one of those extremas?
-//  - might also save some energy, what with these all being mirrored
-
 const compute23FreeMonzosToCheck = (
     { maxPrimeLimit, max23FreeSopfr, max23FreeCopfr, maxN2D3P9 }: TwoThreeFreeMonzosToCheckOptions = {},
 ): Array<Monzo<{ rough: 5 }>> => {

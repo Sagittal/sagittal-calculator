@@ -1,17 +1,17 @@
 import { Ed, Step, Window } from "../../../types"
-import { Exponent, Max, Numeric, NumericTypeParameterEffects, NumericTypeParameters } from "../../types"
+import { Decimal, Exponent, Max, NumTypeParameterEffects, NumTypeParameters } from "../../types"
 import { Ratio } from "../ratio"
-import { Prime, RationalTypeParameters } from "../types"
+import { Prime, RationalNumTypeParameters } from "../types"
 
-type Monzo<T extends NumericTypeParameters = {}> =
-    Array<Numeric<(T extends { irrational: true } ? {} : { integer: true }) &
+type Monzo<T extends NumTypeParameters = {}> =
+    Array<Decimal<(T extends { potentiallyIrrational: true } ? {} : { integer: true }) &
             (T extends { integer: true } ? { integer: true } : {})>
         & Exponent<Prime>>
-    & NumericTypeParameterEffects<T>
+    & NumTypeParameterEffects<T>
 
-type PotentiallyIrrationalMonzoParameter<T extends NumericTypeParameters = {}> =
+type MonzoNotDefaultingToRational<T extends NumTypeParameters = {}> =
     Array<number & Exponent<Prime>>
-    & NumericTypeParameterEffects<T>
+    & NumTypeParameterEffects<T>
 
 type Val = Array<Exponent<Step>>
 
@@ -49,8 +49,8 @@ interface PatentValOptions<T extends Window> {
     primeLimit: Max<Max<Prime>>
 }
 
-type RationalNumberByMonzo<T extends RationalTypeParameters = { irrational: false }> = {
-    number?: Numeric<T>,
+type RationalNumByMonzo<T extends RationalNumTypeParameters = { potentiallyIrrational: false }> = {
+    decimal?: Decimal<T>,
     monzo: Monzo<T>,
     ratio?: Ratio<T>,
 }
@@ -59,6 +59,6 @@ export {
     Monzo,
     Val,
     PatentValOptions,
-    PotentiallyIrrationalMonzoParameter,
-    RationalNumberByMonzo,
+    MonzoNotDefaultingToRational,
+    RationalNumByMonzo,
 }

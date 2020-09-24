@@ -44,7 +44,7 @@ const formatSearchedAndPopulated = (): Io =>
     `| populated ${solverStatus.populatedScopeCount} | searched ${solverStatus.searchedScopeCount} | in the queue ${scopesToSearch.length}` as Io
 
 const formatPercentage = (a: number, b: number): Io =>
-    `${a}/${b} (${(100 * a / b).toPrecision(3)}%)` as Io
+    `${a}/${b} (${(100 * a / b).toFixed(1)}%)` as Io
 
 export {
     formatBestMetrics,

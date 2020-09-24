@@ -1,5 +1,5 @@
-import { Id, Zone } from "../../../../../src/general"
-import { SagittalComma, SymbolClass } from "../../../../../src/sagittal"
+import { Cents, Id } from "../../../../../src/general"
+import { SymbolClass } from "../../../../../src/sagittal"
 import { computeSecondaryCommaZone } from "../../../../../src/sagittal/notations/ji"
 
 describe("secondaryCommaZone", (): void => {
@@ -8,11 +8,8 @@ describe("secondaryCommaZone", (): void => {
 
         const actual = computeSecondaryCommaZone(symbolClassId)
 
-        const expected = [
-            37.309479,
-            38.061940,
-        ] as Zone<SagittalComma>
-        expect(actual).toBeCloseToArray(expected)
+        expect(actual[ 0 ].cents).toBeCloseToTyped(37.309479 as Cents)
+        expect(actual[ 1 ].cents).toBeCloseToTyped(38.061940 as Cents)
     })
 
     it("another example, at the Extreme JI notation level", (): void => {
@@ -20,11 +17,8 @@ describe("secondaryCommaZone", (): void => {
 
         const actual = computeSecondaryCommaZone(symbolClassId)
 
-        const expected = [
-            38.061940,
-            38.293157,
-        ] as Zone<SagittalComma>
-        expect(actual).toBeCloseToArray(expected)
+        expect(actual[ 0 ].cents).toBeCloseToTyped(38.061940 as Cents)
+        expect(actual[ 1 ].cents).toBeCloseToTyped(38.293157 as Cents)
     })
 
     it("another example, at the Medium JI notation level", (): void => {
@@ -32,11 +26,8 @@ describe("secondaryCommaZone", (): void => {
 
         const actual = computeSecondaryCommaZone(symbolClassId)
 
-        const expected = [
-            35.118091,
-            40.260512,
-        ] as Zone<SagittalComma>
-        expect(actual).toBeCloseToArray(expected)
+        expect(actual[ 0 ].cents).toBeCloseToTyped(35.118091 as Cents)
+        expect(actual[ 1 ].cents).toBeCloseToTyped(40.260512 as Cents)
     })
 
     it("works for the initial symbol", (): void => {
@@ -44,10 +35,7 @@ describe("secondaryCommaZone", (): void => {
 
         const actual = computeSecondaryCommaZone(symbolClassId)
 
-        const expected = [
-            0.000000,
-            2.740244,
-        ] as Zone<SagittalComma>
-        expect(actual).toBeCloseToArray(expected)
+        expect(actual[ 0 ].cents).toBeCloseToTyped(0.000000 as Cents)
+        expect(actual[ 1 ].cents).toBeCloseToTyped(2.740244 as Cents)
     })
 })

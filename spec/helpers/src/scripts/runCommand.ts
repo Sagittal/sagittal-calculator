@@ -1,6 +1,6 @@
 import * as cp from "child_process"
 import { count, Io, NEWLINE } from "../../../../src/general"
-import { split } from "../../../../src/general/io/typedOperations"
+import { split } from "../../../../src/general/io"
 import { NPM_SCRIPT_HEADER_LINES_COUNT, SKIP_THE_FINAL_EMPTY_LINE } from "./constants"
 
 const runCommandAndGetConsoleOutput = (command: Io): Io[] => {

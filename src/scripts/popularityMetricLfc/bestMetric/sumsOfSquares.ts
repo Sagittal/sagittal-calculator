@@ -21,7 +21,7 @@ const computeNextOptions = (
         indentation = BLANK,
         onlyBetterThanSopfgtt = true,
         metricName = "" as Name<Metric>,
-        spreadDynamicParameters
+        spreadDynamicParameters,
     } = options
 
     try {

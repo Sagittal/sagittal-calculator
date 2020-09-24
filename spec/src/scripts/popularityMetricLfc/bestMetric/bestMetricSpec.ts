@@ -47,14 +47,14 @@ describe("nonRecursiveSearchScopeAndMaybeUpdateBestMetric", (): void => {
                     [ Parameter.K_AS_COEFFICIENT ]: 2,
                 }] as Combination<Submetric>,
                 sumOfSquares: 0.12122990586015835 as SumOfSquares,
-                spreadDynamicParameters: [ Parameter.K_AS_COEFFICIENT ],
+                spreadDynamicParameters: [Parameter.K_AS_COEFFICIENT],
             })
     })
 
     it("adds the metric name to the list of metric names searched", async (): Promise<void> => {
         await nonRecursiveSearchScopeAndMaybeUpdateBestMetric(scope)
 
-        expect(metricNames).toEqual([ metricName ])
+        expect(metricNames).toEqual([metricName])
     })
 
     it("throws an error if this metric name has already been searched", async (): Promise<void> => {
@@ -63,7 +63,7 @@ describe("nonRecursiveSearchScopeAndMaybeUpdateBestMetric", (): void => {
         await expectAsync(new Promise(async (resolve: () => void, reject: (e: Error) => void): Promise<void> => {
             try {
                 await nonRecursiveSearchScopeAndMaybeUpdateBestMetric(scope)
-            } catch(e) {
+            } catch (e) {
                 reject(e)
             }
             resolve()

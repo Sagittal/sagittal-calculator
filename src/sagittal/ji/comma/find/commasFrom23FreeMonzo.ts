@@ -15,11 +15,11 @@ import {
 import { analyzeComma } from "../analyzeComma"
 import { CommaAnalysis } from "../types"
 import {
+    DEFAULT_LOWER_BOUND,
     DEFAULT_MAX_AAS,
     DEFAULT_MAX_ATE,
-    DEFAULT_MAX_CENTS,
     DEFAULT_MAX_N2D3P9,
-    DEFAULT_MIN_CENTS,
+    DEFAULT_UPPER_BOUND,
 } from "./constants"
 import { computeMonzoInZone } from "./monzoInZone"
 import { CommasFrom23FreeMonzoOptions } from "./types"
@@ -43,8 +43,8 @@ const computeCommasFrom23FreeMonzo = (
     options?: CommasFrom23FreeMonzoOptions,
 ): Comma[] => {
     const {
-        minCents = DEFAULT_MIN_CENTS,
-        maxCents = DEFAULT_MAX_CENTS,
+        lowerBound = DEFAULT_LOWER_BOUND,
+        upperBound = DEFAULT_UPPER_BOUND,
         maxAte = DEFAULT_MAX_ATE,
         maxAas = DEFAULT_MAX_AAS,
         maxN2D3P9 = DEFAULT_MAX_N2D3P9,
@@ -54,7 +54,7 @@ const computeCommasFrom23FreeMonzo = (
 
     computePlusOrMinusRange(maxAte).forEach((threeExponent: Integer & Exponent<3 & Prime>): void => {
         const twoFreeMonzo = computeTwoFreeMonzo(twoThreeFreeMonzo, threeExponent)
-        const monzo: Maybe<Monzo> = computeMonzoInZone(twoFreeMonzo, [minCents, maxCents])
+        const monzo: Maybe<Monzo> = computeMonzoInZone(twoFreeMonzo, [lowerBound, upperBound])
 
         if (monzo) {
             const comma = { monzo } as Comma

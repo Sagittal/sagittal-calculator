@@ -1,4 +1,13 @@
-import { abs, Abs, computeMonzoFromJiPitch, Exponent, Integer, JiPitch, Prime, THREE_PRIME_INDEX } from "../../../general"
+import {
+    abs,
+    Abs,
+    computeMonzoFromJiPitch,
+    Exponent,
+    Integer,
+    JiPitch,
+    Prime,
+    THREE_PRIME_INDEX,
+} from "../../../general"
 
 const computeAte = (jiPitch: JiPitch): Abs<Integer & Exponent<3 & Prime>> => {
     const monzo = computeMonzoFromJiPitch(jiPitch)

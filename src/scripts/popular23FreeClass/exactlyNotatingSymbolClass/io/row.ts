@@ -1,6 +1,6 @@
 import {
     format23FreeClass,
-    formatNumber,
+    formatDecimal,
     Formatted,
     Id,
     ioSettings,
@@ -27,7 +27,7 @@ const computePopular23FreeClassWithExactlyNotatingSymbolClassRow = (
 
     return [
         format23FreeClass(popular23FreeClass),
-        formatNumber(n2d3p9),
+        formatDecimal(n2d3p9),
         exactlyNotatingSymbolClassIds.map((exactlyNotatingSymbolClassId: Id<SymbolClass>): Formatted<SymbolGlyph> => {
             return formatSymbolClass(exactlyNotatingSymbolClassId, ioSettings)
         }).join(SPACE),

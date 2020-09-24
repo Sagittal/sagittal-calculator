@@ -1,5 +1,5 @@
 export { computeCentsFromPitch } from "./centsFromPitch"
-export { computeCentsFromNumber } from "./centsFromNumber"
+export { computeCentsFromDecimal } from "./centsFromDecimal"
 export {
     compute23FreeClass,
     THREE_PRIME_LIMIT,
@@ -12,11 +12,11 @@ export {
     computeMonzoFromJiPitch,
     computeRatioFromJiPitch,
     COMMA_POPULARITIES,
-    equalJiPitches,
     computeIsWithinPrimeLimit,
     computeIsWithinPrimeMin,
     computePrimeLimit,
 } from "./ji"
 export { CENTS_PER_OCTAVE } from "./constants"
+export { equalPitches, pitchIsHigher, pitchIsLower, pitchIsHigherOrEqual, pitchIsLowerOrEqual } from "./pitchComparison"
 export { Cents, CentsPosition, Zone, Pitch } from "./types"
-export { computeIsSubPitch, computeIsUnisonPitch, computeSuperPitch } from "./direction"
+export { computeIsSubPitch, computeIsUnisonPitch, computeSuperPitch } from "./pitchDirection"

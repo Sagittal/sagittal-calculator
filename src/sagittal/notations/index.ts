@@ -21,7 +21,6 @@ export {
     computeSecondaryCommaZone,
     BoundType,
 } from "./ji"
-export { APOTOME } from "./sagittalCommas"
 export { SagittalComma, SymbolClass, Symbol, SymbolClassAnalysis, SymbolSubset, Flavor } from "./types"
 export { SYMBOL_CLASSES } from "./symbolClasses"
 export { SYMBOL_SUBSETS } from "./symbolSubsets"

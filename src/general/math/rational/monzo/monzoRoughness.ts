@@ -1,10 +1,10 @@
 import { computeTrimmedArray, increment } from "../../../code"
 import { Exponent } from "../../types"
 import { computeRoughnessIndex } from "../primeCount"
-import { Integer, Prime, Primes, RationalTypeParameters, Roughness } from "../types"
+import { Integer, Prime, Primes, RationalNumTypeParameters, Roughness } from "../types"
 import { Monzo } from "./types"
 
-const computeRoughMonzo = <S extends Primes, T extends RationalTypeParameters>(
+const computeRoughMonzo = <S extends Primes, T extends RationalNumTypeParameters>(
     monzo: Monzo<T>,    // this used to be Monzo<Omit<T, "rough">> but it wasn't smart enough to preserve Integer-ness
     roughness: S & Roughness,
 ): Monzo<T & { rough: S }> => {
@@ -20,7 +20,7 @@ const computeRoughMonzo = <S extends Primes, T extends RationalTypeParameters>(
     ) as Monzo<T & { rough: S }>
 }
 
-const computeIsRoughMonzo = <S extends Primes, T extends RationalTypeParameters>(
+const computeIsRoughMonzo = <S extends Primes, T extends RationalNumTypeParameters>(
     monzo: Monzo<T>,
     roughness: S & Roughness,
 ): monzo is Monzo<T & { rough: S }> => {

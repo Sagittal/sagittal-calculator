@@ -59,4 +59,20 @@ describe("parseMonzo", (): void => {
 
         expect(actual).toEqual(expected)
     })
+
+    it("can handle tab spacing", (): void => {
+        const monzo = "[3\t4\t-5]" as Formatted<Monzo>
+
+        const actual = parseMonzo(monzo)
+
+        expect(actual).toEqual(expected)
+    })
+
+    it("can handle irrational monzos", (): void => {
+        const monzo = "[-9.5\t6]" as Formatted<Monzo>
+
+        const actual = parseMonzo(monzo)
+
+        expect(actual).toEqual([-9.5, 6] as Monzo)
+    })
 })

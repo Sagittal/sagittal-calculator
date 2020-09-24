@@ -1,4 +1,4 @@
-import { formatInteger, formatNumber, Row } from "../../../../../general"
+import { formatDecimal, formatInteger, Row } from "../../../../../general"
 import { formatSymbolAscii } from "../../../../../sagittal"
 import { JiNotationBoundAnalysis } from "../../../bound"
 import { extractJiNotationBoundIdentifiers } from "../boundIdentifiers"
@@ -66,15 +66,15 @@ const computeJiNotationBoundRow = (
         bestPossibleBoundHistoryHighDistance,
         bestPossibleBoundHistoryUltraDistance,
         bestPossibleBoundHistoryExtremeDistance,
-        formatNumber(bestPossibleBoundHistoryTotalDistance),
+        formatDecimal(bestPossibleBoundHistoryTotalDistance),
         bestPossibleBoundHistoryMediumInaDistance,
         bestPossibleBoundHistoryHighInaDistance,
         bestPossibleBoundHistoryUltraInaDistance,
         bestPossibleBoundHistoryExtremeInaDistance,
-        formatNumber(bestPossibleBoundHistoryTotalInaDistance),
-        formatNumber(cents),
-        formatNumber(initialPosition),
-        formatNumber(initialPositionTinaDistance),
+        formatDecimal(bestPossibleBoundHistoryTotalInaDistance), // these are cents but b/c the header
+        formatDecimal(cents),                                    // specifically states they are cents
+        formatDecimal(initialPosition),                          // and this is a really dense table
+        formatDecimal(initialPositionTinaDistance),              // we're saving space and no ¢ symbols
     ] as Row as Row<{ of: JiNotationBoundAnalysis }>
 
     return jiNotationBoundRow

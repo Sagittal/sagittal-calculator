@@ -4,29 +4,40 @@ import { max } from "../typedOperations"
 import { SMOOTH_ROUGH_OFFSET } from "./constants"
 import { computeGpf } from "./gpf"
 import { computeIsSmoothMonzo } from "./monzo"
-import { computeIsSmoothRatio } from "./ratio"
+import { computeIsSmoothRatio, computeRatioFromRationalDecimal } from "./ratio"
 import { computeRoughInteger } from "./roughness"
-import { Integer, Primes, Rational, RationalTypeParameters, Roughness, Smoothness } from "./types"
+import { Integer, Primes, RationalNum, RationalNumTypeParameters, Roughness, Smoothness } from "./types"
 
 const computeIsSmoothInteger = (integer: Integer, smoothness: Smoothness): boolean => {
     return computeRoughInteger(integer, smoothness + SMOOTH_ROUGH_OFFSET as Roughness) === MULTIPLICATIVE_IDENTITY
 }
 
-const computeIsSmoothRational = <S extends Primes, T extends RationalTypeParameters>(
-    rational: Rational<T>,
+const computeIsSmoothRational = <S extends Primes, T extends RationalNumTypeParameters>(
+    rationalNum: RationalNum<T>,
     smoothness: S & Smoothness,
-): rational is Rational<T & { smooth: S }> => {
-    const { monzo, ratio } = rational
+): rationalNum is RationalNum<T & { smooth: S }> => {
+    let { monzo, ratio, decimal } = rationalNum
+
+    if (isUndefined(monzo) && isUndefined(ratio) && !isUndefined(decimal)) {
+        return computeIsSmoothRatio(
+            computeRatioFromRationalDecimal(decimal),
+            smoothness as S & Integer as S & Smoothness,
+        )
+    }
 
     return (!isUndefined(monzo) && computeIsSmoothMonzo(monzo, smoothness as S & Integer as S & Smoothness)) ||
         (!isUndefined(ratio) && computeIsSmoothRatio(ratio, smoothness as S & Integer as S & Smoothness))
 }
 
-const computeRationalSmoothness = <S extends Primes, T extends RationalTypeParameters>(
-    { monzo, ratio }: Rational<T>,
+const computeRationalNumSmoothness = <S extends Primes, T extends RationalNumTypeParameters>(
+    { monzo, ratio, decimal }: RationalNum<T>,
 ): Smoothness => {
     if (!isUndefined(monzo)) {
         return computeGpf(monzo) as Smoothness
+    }
+
+    if (isUndefined(ratio) && !isUndefined(decimal)) {
+        ratio = computeRatioFromRationalDecimal(decimal)
     }
 
     const [numerator, denominator] = ratio
@@ -37,5 +48,5 @@ const computeRationalSmoothness = <S extends Primes, T extends RationalTypeParam
 export {
     computeIsSmoothInteger,
     computeIsSmoothRational,
-    computeRationalSmoothness,
+    computeRationalNumSmoothness,
 }

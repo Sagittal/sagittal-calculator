@@ -1,4 +1,4 @@
-import { Abs, Cents, Comma, Max, Monzo } from "../../../../../../src/general"
+import { Abs, Cents, Comma, Max, Monzo, Pitch } from "../../../../../../src/general"
 import { ApotomeSlope, computeNotatingCommas } from "../../../../../../src/sagittal"
 
 describe("computeNotatingCommas", (): void => {
@@ -18,9 +18,9 @@ describe("computeNotatingCommas", (): void => {
     it("can filter", (): void => {
         const monzo = [0, 0, 0, 0, 1] as Monzo
         const maxAas = 9 as Max<Abs<ApotomeSlope>>
-        const maxCents = 55 as Max<Cents>
+        const upperBound = { cents: 55 as Cents } as Max<Pitch>
 
-        const actual = computeNotatingCommas({ monzo }, { maxAas, maxCents })
+        const actual = computeNotatingCommas({ monzo }, { maxAas, upperBound })
 
         const expected = [
             { monzo: [-5, 1, 0, 0, 1] },

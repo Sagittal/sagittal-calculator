@@ -130,7 +130,7 @@ const customMatchers: CustomMatcherFactories = {
             doAssertions((): void => {
                 assert(
                     deepEquals(actual, expected, precision),
-                    message || `Expected ${stringify(actual, { multiline: true })} to deep equal ${stringify(expected, { multiline: true })} with numeric values within precision ${precision}.`,
+                    message || `Expected ${stringify(actual, { multiline: true })} to deep equal ${stringify(expected, { multiline: true })} with numbers within precision ${precision}.`,
                 )
             }),
     }),

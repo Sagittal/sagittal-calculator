@@ -1,4 +1,4 @@
-import { formatInteger, formatNumber, Io, NEWLINE } from "../../../general"
+import { formatDecimal, formatInteger, formatPitch, Io, NEWLINE } from "../../../general"
 import { FindCommasSettings } from "../findCommas"
 
 const JI_PITCH_TITLE = "   --- JI pitch ---\n\n" as Io
@@ -13,18 +13,19 @@ const computeFindCommasTitle = (findCommasSettings: FindCommasSettings): Io => {
         max23FreeCopfr,
         maxPrimeLimit,
         maxN2D3P9,
-        minCents,
-        maxCents,
+        lowerBound,
+        upperBound,
         maxAte,
         maxAas,
     } = findCommasSettings
 
     return [
         "",
-        `cents range:       \t${formatNumber(minCents)} - ${formatNumber(maxCents)}`,
+        `lower bound:       \t${formatPitch(lowerBound)}`,
+        `upper bound:       \t${formatPitch(upperBound)}`,
         `max ATE:           \t${formatInteger(maxAte)}`,
-        `max AAS:           \t${formatNumber(maxAas)}`,
-        `max N2D3P9:        \t${formatNumber(maxN2D3P9)}`,
+        `max AAS:           \t${formatDecimal(maxAas)}`,
+        `max N2D3P9:        \t${formatDecimal(maxN2D3P9)}`,
         `max 2,3-free sopfr:\t${formatInteger(max23FreeSopfr)}`,
         `max 2,3-free copfr:\t${formatInteger(max23FreeCopfr)}`,
         `max prime limit:   \t${formatInteger(maxPrimeLimit)}`,

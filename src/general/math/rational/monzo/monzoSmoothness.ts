@@ -1,11 +1,11 @@
 import { increment } from "../../../code"
 import { count } from "../../typedOperations"
-import { NumericTypeParameters } from "../../types"
+import { NumTypeParameters } from "../../types"
 import { computeSmoothnessIndex } from "../primeCount"
 import { Primes, Smoothness } from "../types"
 import { Monzo } from "./types"
 
-const computeIsSmoothMonzo = <S extends Primes, T extends NumericTypeParameters>(
+const computeIsSmoothMonzo = <S extends Primes, T extends NumTypeParameters>(
     monzo: Monzo<Omit<T, "smooth">>,
     smoothness: S & Smoothness,
 ): monzo is Monzo<T & { smooth: S }> => {

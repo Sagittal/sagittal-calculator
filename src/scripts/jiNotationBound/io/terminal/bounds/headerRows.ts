@@ -24,7 +24,7 @@ const BOUND_ANALYSES_COLUMN_TITLES: Io[] = [
     "overall ina-dst moved",
     "actual bound pos (¢)",
     "initial comma mean pos (¢)",
-    "a.b.vs i.c.m. error (tinas)",
+    "a.b.vs i.c.m. error (tinas)",  // actual bound vs. initial comma mean
 ] as Io[]
 
 const computeJiNotationBoundAnalysesHeaderRows = (): Array<Row<{ of: JiNotationBoundAnalysis, header: true }>> =>

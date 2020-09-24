@@ -9,6 +9,13 @@ import {
     SagittalComma,
 } from "../../../../../../src/sagittal"
 
+// The idea of symbol *class* is great. But I'm wondering if maybe there's room for improvement.
+//  I'm thinking in particular of how choices of comma above the half-apotome mirror are not independent.
+//  (see: http://forum.sagittal.org/viewtopic.php?p=2317#p2317)
+//  but I'm also not sure we want to shift the whole basis back to commas...
+//  yes perhaps the half-apotome mirror test should suffice here.
+//  What I *had* been thinking was that only the commas up to the half apotome mirror would define class-dom.
+
 describe("half-apotome mirror", (): void => {
     const halfApotomeCents = APOTOME_CENTS / 2
 

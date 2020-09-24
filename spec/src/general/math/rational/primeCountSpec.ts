@@ -16,4 +16,6 @@ describe("computePrimeCount", (): void => {
         expect(computePrimeCount(11)).toBe(5 as Count<Prime>)
         expect(computePrimeCount(60)).toBe(17 as Count<Prime>)
     })
+
+    // TODO: ~ 1/ln(n) test
 })

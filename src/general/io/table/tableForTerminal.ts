@@ -1,4 +1,4 @@
-import { indexOfFinalElement, isUndefined, Maybe } from "../../code"
+import { indexOfFinalElement, Maybe } from "../../code"
 import { colorize } from "../colorize"
 import { BLANK, NEWLINE, TAB } from "../constants"
 import { Formatted } from "../format"

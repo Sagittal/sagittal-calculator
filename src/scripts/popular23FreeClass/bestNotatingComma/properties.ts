@@ -1,11 +1,11 @@
-import { Cents, computeCentsFromPitch, computeMonzoFromJiPitch, Max, TwoThreeFreeClass } from "../../../general"
-import { APOTOME_CENTS, computeMaybeSymbolClassId, computeNotatingCommas } from "../../../sagittal"
+import { computeCentsFromPitch, computeMonzoFromJiPitch, Max, Pitch, TwoThreeFreeClass } from "../../../general"
+import { computeMaybeSymbolClassId, computeNotatingCommas, HALF_APOTOME } from "../../../sagittal"
 import { computeBestNotatingComma } from "./bestNotatingComma"
 import { BestNotatingCommaProperties } from "./types"
 
 const computeBestNotatingCommaProperties = (twoThreeFreeClass: TwoThreeFreeClass): BestNotatingCommaProperties => {
     const notatingCommas =
-        computeNotatingCommas(twoThreeFreeClass, { maxCents: APOTOME_CENTS / 2 as Max<Cents> })
+        computeNotatingCommas(twoThreeFreeClass, { upperBound: HALF_APOTOME as Max<Pitch> })
     const bestNotatingComma = computeBestNotatingComma(notatingCommas)
     const maybeSymbolClassId = computeMaybeSymbolClassId(bestNotatingComma)
 

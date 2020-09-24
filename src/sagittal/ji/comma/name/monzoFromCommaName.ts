@@ -8,10 +8,10 @@ const computeMonzoFrom23FreeClassAndSizeCategoryName = (
 ): Monzo => {
     const { commaNameRatio, sizeCategoryName } = parsedCommaName
 
-    const [minCents, maxCents] = computeSizeCategoryExtrema(sizeCategoryName)
+    const [lowerBound, upperBound] = computeSizeCategoryExtrema(sizeCategoryName)
 
     const twoThreeFreeMonzo = computeMonzoFromRatio(commaNameRatio)
-    const commas = computeNotatingCommas({ monzo: twoThreeFreeMonzo }, { minCents, maxCents })
+    const commas = computeNotatingCommas({ monzo: twoThreeFreeMonzo }, { lowerBound, upperBound })
 
     if (commas.length !== 1) {
         throw new Error(`For whatever reason the number of commas exactly notating the monzo ${(twoThreeFreeMonzo)} in the range of that size category ${sizeCategoryName} was not 1. It was ${commas.length}.`)

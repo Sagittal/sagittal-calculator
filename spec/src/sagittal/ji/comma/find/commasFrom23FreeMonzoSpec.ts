@@ -1,17 +1,17 @@
-import { Abs, Cents, Comma, Exponent, Integer, Max, Min, Monzo, Prime } from "../../../../../../src/general"
+import { Abs, Cents, Comma, Exponent, Integer, Max, Min, Monzo, Pitch, Prime } from "../../../../../../src/general"
 import { ApotomeSlope, computeCommasFrom23FreeMonzo, N2D3P9 } from "../../../../../../src/sagittal"
 
 describe("computeCommasFrom23FreeMonzo", (): void => {
     const twoThreeFreeMonzo: Monzo<{ rough: 5 }> = [0, 0, 3, 5, -1] as Monzo<{ rough: 5 }>
-    const minCents = 40 as Min<Cents>
-    const maxCents = 40.1 as Max<Cents>
+    const lowerBound = { cents: 40 as Cents } as Min<Pitch>
+    const upperBound = { cents: 40.1 as Cents } as Max<Pitch>
     const maxAte = 12 as Max<Abs<Integer & Exponent<3 & Prime>>>
     const maxN2D3P9 = 40000 as Max<N2D3P9>
 
     it("returns commas with the prime content from the two-three-free monzo", (): void => {
         const actual = computeCommasFrom23FreeMonzo(twoThreeFreeMonzo, {
-            minCents,
-            maxCents,
+            lowerBound,
+            upperBound,
             maxAte,
             maxN2D3P9,
         })
@@ -26,8 +26,8 @@ describe("computeCommasFrom23FreeMonzo", (): void => {
             const lowMaxAas = 8 as Max<Abs<ApotomeSlope>>
 
             const resultWithHighMaxAas = computeCommasFrom23FreeMonzo(twoThreeFreeMonzo, {
-                minCents,
-                maxCents,
+                lowerBound,
+                upperBound,
                 maxAte,
                 maxAas: highMaxAas,
                 maxN2D3P9,
@@ -37,8 +37,8 @@ describe("computeCommasFrom23FreeMonzo", (): void => {
             expect(resultWithHighMaxAas).toEqual(expected)
 
             const resultWithLowMaxAas = computeCommasFrom23FreeMonzo(twoThreeFreeMonzo, {
-                minCents,
-                maxCents,
+                lowerBound,
+                upperBound,
                 maxAte,
                 maxAas: lowMaxAas,
             })
@@ -49,12 +49,12 @@ describe("computeCommasFrom23FreeMonzo", (): void => {
 
     it("trims the monzo if necessary", (): void => {
         const twoThreeFreeMonzo: Monzo<{ rough: 5 }> = [0, 0, 0] as Monzo<{ rough: 5 }>
-        const minCents = 0 as Min<Cents>
-        const maxCents = 0 as Max<Cents>
+        const lowerBound = { cents: 0 as Cents } as Min<Pitch>
+        const upperBound = { cents: 0 as Cents } as Max<Pitch>
 
         const actual = computeCommasFrom23FreeMonzo(twoThreeFreeMonzo, {
-            minCents,
-            maxCents,
+            lowerBound,
+            upperBound,
             maxAte,
             maxN2D3P9,
         })

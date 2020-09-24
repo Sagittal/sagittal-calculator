@@ -10,10 +10,11 @@ export {
     FractionalPartType,
     Numerator,
     Ratio,
-    PotentiallyIrrationalRatioParameter,
-    RationalNumberByRatio,
+    RatioNotDefaultingToRational,
+    RationalNumByRatio,
 } from "./types"
 export { computeSuperRatio } from "./ratioDirection"
-export { computeRatioFromRational } from "./ratioFromRational"
+export { computeRatioFromRationalDecimal } from "./ratioFromRationalDecimal"
+export { computeRatioFromRationalNum } from "./ratioFromRationalNum"
 export { computeRatioFromMonzo } from "./ratioFromMonzo"
-export { computeNumberFromRatio } from "./numberFromRatio"
+export { computeDecimalFromRatio } from "./decimalFromRatio"

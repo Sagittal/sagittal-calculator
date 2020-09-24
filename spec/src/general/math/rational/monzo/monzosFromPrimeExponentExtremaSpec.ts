@@ -1,4 +1,10 @@
-import { computeMonzosFromPrimeExponentExtremas, Exponent, Extrema, Integer, Prime } from "../../../../../../src/general"
+import {
+    computeMonzosFromPrimeExponentExtremas,
+    Exponent,
+    Extrema,
+    Integer,
+    Prime,
+} from "../../../../../../src/general"
 
 describe("computeMonzosFromPrimeExponentExtremas", (): void => {
     it("returns the monzos that are possible given the corresponding prime exponent extremas", (): void => {

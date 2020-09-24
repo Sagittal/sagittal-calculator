@@ -1,7 +1,7 @@
-import { Abs, Cents, Exponent, Integer, JiPitch, Monzo, NumericTypeParameters, Prime, Ratio } from "../../../general"
+import { Abs, Cents, Exponent, Integer, JiPitch, Monzo, NumTypeParameters, Prime, Ratio } from "../../../general"
 import { TwoThreeFreeClassAnalysis } from "../twoThreeFreeClass"
 
-interface JiPitchAnalysisProperties<T extends NumericTypeParameters = {}> {
+interface JiPitchAnalysisProperties<T extends NumTypeParameters = {}> {
     apotomeSlope: ApotomeSlope,
     ate: Abs<Integer & Exponent<3 & Prime>>,
     aas: Abs<ApotomeSlope>,
@@ -11,7 +11,7 @@ interface JiPitchAnalysisProperties<T extends NumericTypeParameters = {}> {
     twoThreeFreeClassAnalysis: TwoThreeFreeClassAnalysis<T>,
 }
 
-type JiPitchAnalysis<T extends NumericTypeParameters = {}> = JiPitch<T> & JiPitchAnalysisProperties<T>
+type JiPitchAnalysis<T extends NumTypeParameters = {}> = JiPitch<T> & JiPitchAnalysisProperties<T>
 
 type ApotomeSlope = number & { _ApotomeSlopeBrand: boolean }
 

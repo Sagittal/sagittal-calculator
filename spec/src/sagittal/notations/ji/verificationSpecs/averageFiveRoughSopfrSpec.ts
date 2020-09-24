@@ -1,7 +1,6 @@
 import { computeMonzoFromJiPitch, Id } from "../../../../../../src/general"
-import { computeRoughMonzo, computeSopfr, FIVE_ROUGHNESS, Sopfr } from "../../../../../../src/general/math"
+import { Avg, computeRoughMonzo, computeSopfr, FIVE_ROUGHNESS, Sopfr } from "../../../../../../src/general/math"
 import { avg } from "../../../../../../src/general/math/typedOperations"
-import { Avg } from "../../../../../../src/general/math/types"
 import { getPrimaryComma, JI_NOTATION, SymbolClass } from "../../../../../../src/sagittal"
 
 const AVERAGE_2_3_FREE_SOPFR: Avg<Sopfr<{ rough: 5 }>> = 22.785235 as Avg<Sopfr<{ rough: 5 }>>

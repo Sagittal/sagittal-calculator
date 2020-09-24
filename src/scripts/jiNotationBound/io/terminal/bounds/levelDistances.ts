@@ -1,4 +1,4 @@
-import { BLANK, Cents, formatNumber, Formatted, indexOfFinalElement, Multiplier } from "../../../../../general"
+import { BLANK, Cents, formatDecimal, Formatted, indexOfFinalElement, Multiplier } from "../../../../../general"
 import { Ina, JiNotationLevel, JI_NOTATION_LEVELS } from "../../../../../sagittal"
 import { BoundEventAnalysis, BoundHistoryAnalysis } from "../../../history"
 
@@ -19,7 +19,7 @@ const extractJiNotationLevelDistances = (
             }
             const jiNotationLevelEventAnalysis: BoundEventAnalysis = boundEventAnalyses[ previousEventIndex + 1 ]
 
-            return formatNumber(
+            return formatDecimal(
                 ina ? jiNotationLevelEventAnalysis.inaDistance : jiNotationLevelEventAnalysis.distance,
             ) as Formatted<Multiplier<Ina> | Cents>
         })

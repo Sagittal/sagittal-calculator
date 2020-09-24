@@ -1,12 +1,17 @@
-import { computeMonzoFromRational, computeRatioFromRational, Monzo, Ratio, RationalTypeParameters } from "../../math"
+import {
+    computeMonzoFromRationalNum,
+    computeRatioFromRationalNum,
+    Monzo,
+    Ratio,
+    RationalNumTypeParameters,
+} from "../../math"
 import { JiPitch } from "./types"
 
-const computeMonzoFromJiPitch = <T extends RationalTypeParameters>(jiPitch: JiPitch<T>): Monzo<T> =>
-    computeMonzoFromRational(jiPitch)
+const computeMonzoFromJiPitch = <T extends RationalNumTypeParameters>(jiPitch: JiPitch<T>): Monzo<T> =>
+    computeMonzoFromRationalNum(jiPitch)
 
-
-const computeRatioFromJiPitch = <T extends RationalTypeParameters>(jiPitch: JiPitch<T>): Ratio<T> =>
-    computeRatioFromRational(jiPitch)
+const computeRatioFromJiPitch = <T extends RationalNumTypeParameters>(jiPitch: JiPitch<T>): Ratio<T> =>
+    computeRatioFromRationalNum(jiPitch)
 
 export {
     computeMonzoFromJiPitch,

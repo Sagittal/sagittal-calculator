@@ -1,5 +1,5 @@
 import { Max, Min, Monzo, Sopfr } from "../../../../../src/general/math"
-import { Cents, Comma } from "../../../../../src/general/music"
+import { Cents, Comma, Pitch } from "../../../../../src/general/music"
 import { computeCommas } from "../../../../../src/scripts/jiPitch/findCommas"
 
 describe("computeCommas", (): void => {
@@ -9,17 +9,17 @@ describe("computeCommas", (): void => {
         expect((): void => {
             computeCommas({
                 max23FreeSopfr,
-                minCents: 50 as Min<Cents>,
-                maxCents: 10 as Max<Cents>,
+                lowerBound: { cents: 50 as Cents } as Min<Pitch>,
+                upperBound: { cents: 10 as Cents } as Max<Pitch>,
             })
-        }).toThrowError("Min cents is not less than max cents; range was 50.000 - 10.000.")
+        }).toThrowError("Lower bound is not less than upper bound; range was 50.000¢ - 10.000¢.")
         expect((): void => {
             computeCommas({
                 max23FreeSopfr,
-                minCents: 50 as Min<Cents>,
-                maxCents: 50 as Max<Cents>,
+                lowerBound: { cents: 50 as Cents } as Min<Pitch>,
+                upperBound: { cents: 50 as Cents } as Max<Pitch>,
             })
-        }).toThrowError("Min cents is not less than max cents; range was 50.000 - 50.000.")
+        }).toThrowError("Lower bound is not less than upper bound; range was 50.000¢ - 50.000¢.")
     })
 
     it(
@@ -28,37 +28,37 @@ describe("computeCommas", (): void => {
             expect((): void => {
                 computeCommas({
                     max23FreeSopfr,
-                    minCents: -300 as Min<Cents>,
+                    lowerBound: { cents: -300 as Cents } as Min<Pitch>,
                 })
-            }).toThrowError("Cents range must be within comma size category bounds (±227.370¢); range was -300.000 - 56.843.")
+            }).toThrowError("Search range must be within comma size category bounds (±227.370¢); range was -300.000¢ - 56.843¢.")
             expect((): void => {
                 computeCommas({
                     max23FreeSopfr,
-                    minCents: -400 as Min<Cents>,
-                    maxCents: -300 as Max<Cents>,
+                    lowerBound: { cents: -400 as Cents } as Min<Pitch>,
+                    upperBound: { cents: -300 as Cents } as Max<Pitch>,
                 })
-            }).toThrowError("Cents range must be within comma size category bounds (±227.370¢); range was -400.000 - -300.000.")
+            }).toThrowError("Search range must be within comma size category bounds (±227.370¢); range was -400.000¢ - -300.000¢.")
             expect((): void => {
                 computeCommas({
                     max23FreeSopfr,
-                    minCents: 300 as Min<Cents>,
-                    maxCents: 400 as Max<Cents>,
+                    lowerBound: { cents: 300 as Cents } as Min<Pitch>,
+                    upperBound: { cents: 400 as Cents } as Max<Pitch>,
                 })
-            }).toThrowError("Cents range must be within comma size category bounds (±227.370¢); range was 300.000 - 400.000.")
+            }).toThrowError("Search range must be within comma size category bounds (±227.370¢); range was 300.000¢ - 400.000¢.")
             expect((): void => {
                 computeCommas({
                     max23FreeSopfr,
-                    maxCents: 300 as Max<Cents>,
+                    upperBound: { cents: 300 as Cents } as Max<Pitch>,
                 })
-            }).toThrowError("Cents range must be within comma size category bounds (±227.370¢); range was 0.000 - 300.000.")
+            }).toThrowError("Search range must be within comma size category bounds (±227.370¢); range was 0.000¢ - 300.000¢.")
         },
     )
 
     it("returns commas if the min and max cents are within the abs value of the max size category bound", (): void => {
-        const minCents = 15 as Min<Cents>
-        const maxCents = 30 as Max<Cents>
+        const lowerBound = { cents: 15 as Cents } as Min<Pitch>
+        const upperBound = { cents: 30 as Cents } as Max<Pitch>
 
-        const actual = computeCommas({ minCents, maxCents, max23FreeSopfr })
+        const actual = computeCommas({ lowerBound, upperBound, max23FreeSopfr })
 
         const expected: Comma[] = [
             { monzo: [-4, 4, -1] as Monzo },

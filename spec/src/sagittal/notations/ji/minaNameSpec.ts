@@ -1,4 +1,12 @@
-import { ACCURACY_THRESHOLD, Count, decrement, Id, increment, Name } from "../../../../../src/general"
+import {
+    ACCURACY_THRESHOLD,
+    computeCentsFromPitch,
+    Count,
+    decrement,
+    Id,
+    increment,
+    Name,
+} from "../../../../../src/general"
 import { computeRange } from "../../../../../src/general/code"
 import { Max } from "../../../../../src/general/math"
 import { SymbolClass } from "../../../../../src/sagittal/notations"
@@ -12,7 +20,11 @@ describe("getMinaName", (): void => {
 
     const computeSplitMinaName = (symbolClassId: Id<SymbolClass>): Name<Mina> => {
         const [lowerBound, upperBound] = computeCaptureZone(symbolClassId)
-        const centsSpan = upperBound - lowerBound
+        // TODO: an "interval" helper, which should return cents if pitches have cents, monzos if monzos, etc.
+        //  as is familiar from creating 2,3-free classes from other pitches
+        //  and it should return a branded pitch, an Interval, to enforce that it's not a position, but an interval
+        //  and perhaps think about how it might play nice with a Zone
+        const centsSpan = computeCentsFromPitch(upperBound) - computeCentsFromPitch(lowerBound)
 
         const baseMina = parseInt(getMinaName(symbolClassId))
         const mina = baseMina + centsSpan / MINA

@@ -1,9 +1,9 @@
-import { NumericTypeParameters } from "../../types"
+import { NumTypeParameters } from "../../types"
 import { computeIsSmoothInteger } from "../smoothness"
 import { Primes, Smoothness } from "../types"
 import { Ratio } from "./types"
 
-const computeIsSmoothRatio = <S extends Primes, T extends NumericTypeParameters>(
+const computeIsSmoothRatio = <S extends Primes, T extends NumTypeParameters>(
     ratio: Ratio<T>,
     smoothness: S & Smoothness,
 ): ratio is Ratio<T & { smooth: S }> => {

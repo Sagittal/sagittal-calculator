@@ -7,6 +7,8 @@ const IO_PRECISION = 3 as Integer
 
 const ANY_MONZO_CHARS = /[\[|>\]⟩]/
 const IDENTIFYING_COMMA_NAME_CHARS = /[unskCSMLA]/
+const ANY_CENTS_CHARS = /[c¢]/
+const ANY_RATIO_CHARS = /[\/:]/
 
 const SUPERSCRIPT_NUMS: Char[] = ["⁰", "¹", "²", "³", "⁴", "⁵", "⁶", "⁷", "⁸", "⁹"] as Char[]
 
@@ -35,5 +37,7 @@ export {
     TAB,
     COMMA,
     IDENTIFYING_COMMA_NAME_CHARS,
+    ANY_CENTS_CHARS,
+    ANY_RATIO_CHARS,
     INITIAL_IO_SETTINGS,
 }

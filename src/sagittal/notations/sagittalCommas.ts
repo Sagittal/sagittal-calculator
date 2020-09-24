@@ -3,7 +3,6 @@ import { SagittalComma } from "./types"
 
 const UNISON: SagittalComma = { id: 0 as Id<SagittalComma>, monzo: [] as Monzo } as SagittalComma
 const PYTHAGOREAN_COMMA: SagittalComma = { id: 48 as Id<SagittalComma>, monzo: [-19, 12] as Monzo } as SagittalComma
-const APOTOME: SagittalComma = { id: 1000 as Id<SagittalComma>, monzo: [-11, 7] as Monzo } as SagittalComma
 
 const SAGITTAL_COMMAS: SagittalComma[] = [
     UNISON,
@@ -159,5 +158,4 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
 
 export {
     SAGITTAL_COMMAS,
-    APOTOME,
 }

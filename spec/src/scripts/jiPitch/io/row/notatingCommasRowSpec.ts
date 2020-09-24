@@ -49,7 +49,7 @@ describe("computeNotatingCommasRow", (): void => {
             "1/5C",             // comma name
             "5/4",              // ratio
             "[   0  -1   1 ⟩",  // monzo
-            " 11.200",          // cents
+            "        11.200¢",  // cents
             "  8.200",          // apotome slope
             "  8.200",          // AAS
             "  1    ",          // ATE
@@ -58,7 +58,7 @@ describe("computeNotatingCommasRow", (): void => {
     })
 
     it("can filter the excluded fields", (): void => {
-        jiPitchScriptGroupSettings.excludedFields = [ NotatingCommasField.CENTS, NotatingCommasField.MONZO ]
+        jiPitchScriptGroupSettings.excludedFields = [NotatingCommasField.CENTS, NotatingCommasField.MONZO]
 
         const actual = computeNotatingCommasRow(commaAnalysis, symbolClassId)
 

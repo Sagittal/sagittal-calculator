@@ -2,6 +2,10 @@ import { Id } from "../../general"
 import { SymbolLongAscii } from "../io"
 import { SagittalComma, SymbolClass } from "./types"
 
+// TODO: Constantize each of the symbol classes so they can have names, you don’t have to know their IDs
+//  as well as symbols, bounds maybe... anything that we have good names for
+//  haven't really communicated this "symbol class" idea to Dave yet. he might like it, or he might not
+
 const SYMBOL_CLASSES: SymbolClass[] = [
     {
         id: 0 as Id<SymbolClass>,

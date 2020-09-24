@@ -66,7 +66,8 @@ describe("computeFindCommasOutput", (): void => {
 
         const expected =
             "" + NEWLINE +
-            "cents range:       \t  0.000 -  56.843" + NEWLINE +
+            "lower bound:       \t         0.000¢" + NEWLINE +
+            "upper bound:       \t        56.843¢" + NEWLINE +
             "max ATE:           \t 15    " + NEWLINE +
             "max AAS:           \t 14.000" + NEWLINE +
             "max N2D3P9:        \t307.000" + NEWLINE +
@@ -74,11 +75,11 @@ describe("computeFindCommasOutput", (): void => {
             "max 2,3-free copfr:\t555    " + NEWLINE +
             "max prime limit:   \t 47    " + NEWLINE +
             "" + NEWLINE +
-            "        \t      \t     \t                   \t       \t       \t       \t       \t2,3-free\t2,3-free\t2,3-free\t2,3-free\t2,3-free" + NEWLINE +
-            "symbol  \tcomma \t     \t                   \t       \tapotome\t       \t       \tprime   \tclass   \tclass   \tclass   \tclass   " + NEWLINE +
-            "class   \tname  \tratio\tmonzo              \tcents  \tslope  \tAAS    \tATE    \tlimit   \tname    \tCoPFR   \tSoPFR   \tN2D3P9  ".underline + NEWLINE +
-            "    /|\\ \t11M   \t33/32\t[   0   0   1 ⟩    \t 45.450\t -4.000\t  4.000\t  0    \t 11     \t11/1    \t  1     \t 11     \t  6.722 " + NEWLINE +
-            "        \t25/49M\t50/49\t[   1   0   2  -2 ⟩\t 33.400\t -2.154\t  2.154\t  0    \t  7     \t49/25   \t  4     \t 24     \t 26.466 " + NEWLINE as Io
+            "        \t      \t     \t                   \t               \t       \t       \t       \t2,3-free\t2,3-free\t2,3-free\t2,3-free\t2,3-free" + NEWLINE +
+            "symbol  \tcomma \t     \t                   \t               \tapotome\t       \t       \tprime   \tclass   \tclass   \tclass   \tclass   " + NEWLINE +
+            "class   \tname  \tratio\tmonzo              \tcents          \tslope  \tAAS    \tATE    \tlimit   \tname    \tCoPFR   \tSoPFR   \tN2D3P9  ".underline + NEWLINE +
+            "    /|\\ \t11M   \t33/32\t[   0   0   1 ⟩    \t        45.450¢\t -4.000\t  4.000\t  0    \t 11     \t11/1    \t  1     \t 11     \t  6.722 " + NEWLINE +
+            "        \t25/49M\t50/49\t[   1   0   2  -2 ⟩\t        33.400¢\t -2.154\t  2.154\t  0    \t  7     \t49/25   \t  4     \t 24     \t 26.466 " + NEWLINE as Io
         expect(actual).toEqual(expected)
     })
 
@@ -88,7 +89,8 @@ describe("computeFindCommasOutput", (): void => {
 
         const expected =
             "" + NEWLINE +
-            "cents range:       \t  0.000 -  56.843" + NEWLINE +
+            "lower bound:       \t         0.000¢" + NEWLINE +
+            "upper bound:       \t        56.843¢" + NEWLINE +
             "max ATE:           \t 15    " + NEWLINE +
             "max AAS:           \t 14.000" + NEWLINE +
             "max N2D3P9:        \t307.000" + NEWLINE +
@@ -100,8 +102,8 @@ describe("computeFindCommasOutput", (): void => {
             "[tr][th][pre][/pre][/th][th][pre][/pre][/th][th][pre][/pre][/th][th][pre][/pre][/th][th][pre][/pre][/th][th][pre][/pre][/th][th][pre][/pre][/th][th][pre][/pre][/th][th][pre]2,3-free[/pre][/th][th][pre]2,3-free[/pre][/th][th][pre]2,3-free[/pre][/th][th][pre]2,3-free[/pre][/th][th][pre]2,3-free[/pre][/th][/tr]" + NEWLINE +
             "[tr][th][pre]symbol[/pre][/th][th][pre]comma[/pre][/th][th][pre][/pre][/th][th][pre][/pre][/th][th][pre][/pre][/th][th][pre]apotome[/pre][/th][th][pre][/pre][/th][th][pre][/pre][/th][th][pre]prime[/pre][/th][th][pre]class[/pre][/th][th][pre]class[/pre][/th][th][pre]class[/pre][/th][th][pre]class[/pre][/th][/tr]" + NEWLINE +
             "[tr][th][pre]class[/pre][/th][th][pre]name[/pre][/th][th][pre]ratio[/pre][/th][th][pre]monzo[/pre][/th][th][pre]cents[/pre][/th][th][pre]slope[/pre][/th][th][pre]AAS[/pre][/th][th][pre]ATE[/pre][/th][th][pre]limit[/pre][/th][th][pre]name[/pre][/th][th][pre]CoPFR[/pre][/th][th][pre]SoPFR[/pre][/th][th][pre]N2D3P9[/pre][/th][/tr]" + NEWLINE +
-            "[tr][td][pre]:/|\\:[/pre][/td][td][pre]11M[/pre][/td][td][pre]33/32[/pre][/td][td][pre][   0   0   1 ⟩[/pre][/td][td][pre] 45.450[/pre][/td][td][pre] -4.000[/pre][/td][td][pre]  4.000[/pre][/td][td][pre]  0    [/pre][/td][td][pre] 11    [/pre][/td][td][pre]11/1[/pre][/td][td][pre]  1    [/pre][/td][td][pre] 11    [/pre][/td][td][pre]  6.722[/pre][/td][/tr]" + NEWLINE +
-            "[tr][td][pre][/pre][/td][td][pre]25/49M[/pre][/td][td][pre]50/49[/pre][/td][td][pre][   1   0   2  -2 ⟩[/pre][/td][td][pre] 33.400[/pre][/td][td][pre] -2.154[/pre][/td][td][pre]  2.154[/pre][/td][td][pre]  0    [/pre][/td][td][pre]  7    [/pre][/td][td][pre]49/25[/pre][/td][td][pre]  4    [/pre][/td][td][pre] 24    [/pre][/td][td][pre] 26.466[/pre][/td][/tr]" + NEWLINE +
+            "[tr][td][pre]:/|\\:[/pre][/td][td][pre]11M[/pre][/td][td][pre]33/32[/pre][/td][td][pre][   0   0   1 ⟩[/pre][/td][td][pre]        45.450¢[/pre][/td][td][pre] -4.000[/pre][/td][td][pre]  4.000[/pre][/td][td][pre]  0    [/pre][/td][td][pre] 11    [/pre][/td][td][pre]11/1[/pre][/td][td][pre]  1    [/pre][/td][td][pre] 11    [/pre][/td][td][pre]  6.722[/pre][/td][/tr]" + NEWLINE +
+            "[tr][td][pre][/pre][/td][td][pre]25/49M[/pre][/td][td][pre]50/49[/pre][/td][td][pre][   1   0   2  -2 ⟩[/pre][/td][td][pre]        33.400¢[/pre][/td][td][pre] -2.154[/pre][/td][td][pre]  2.154[/pre][/td][td][pre]  0    [/pre][/td][td][pre]  7    [/pre][/td][td][pre]49/25[/pre][/td][td][pre]  4    [/pre][/td][td][pre] 24    [/pre][/td][td][pre] 26.466[/pre][/td][/tr]" + NEWLINE +
             "[/table]" + NEWLINE as Io
         expect(actual).toEqual(expected)
     })

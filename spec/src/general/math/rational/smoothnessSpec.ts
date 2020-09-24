@@ -1,11 +1,13 @@
 import {
     computeIsSmoothRational,
-    computeRationalSmoothness,
+    computeRationalNumSmoothness,
+    Decimal,
     Integer,
     Monzo,
     Ratio,
     Smoothness,
 } from "../../../../../src/general/math"
+import { RationalNum } from "../../../../../src/general/math/rational"
 import { computeIsSmoothInteger } from "../../../../../src/general/math/rational/smoothness"
 
 describe("computeIsSmoothInteger", (): void => {
@@ -30,56 +32,83 @@ describe("computeIsSmoothInteger", (): void => {
 
 describe("computeIsSmoothRational", (): void => {
     describe("by monzo", (): void => {
-        it("returns true if the rational is smooth to the given smoothness", (): void => {
-            const rational = { monzo: [0, 0, 1] as Monzo }
+        it("returns true if the rational num is smooth to the given smoothness", (): void => {
+            const rationalNum = { monzo: [0, 0, 1] as Monzo }
 
-            const actual = computeIsSmoothRational(rational, 5 as 5 & Smoothness)
+            const actual = computeIsSmoothRational(rationalNum, 5 as 5 & Smoothness)
 
             expect(actual).toBeTruthy()
         })
 
-        it("returns false if the rational is not smooth to the given smoothness", (): void => {
-            const rational = { monzo: [0, 0, 1] as Monzo }
+        it("returns false if the rational num is not smooth to the given smoothness", (): void => {
+            const rationalNum = { monzo: [0, 0, 1] as Monzo }
 
-            const actual = computeIsSmoothRational(rational, 3 as 3 & Smoothness)
+            const actual = computeIsSmoothRational(rationalNum, 3 as 3 & Smoothness)
 
             expect(actual).toBeFalsy()
         })
     })
 
     describe("by ratio", (): void => {
-        it("returns true if the rational is smooth to the given smoothness", (): void => {
-            const rational = { ratio: [7, 5] as Ratio }
+        it("returns true if the rational num is smooth to the given smoothness", (): void => {
+            const rationalNum = { ratio: [7, 5] as Ratio }
 
-            const actual = computeIsSmoothRational(rational, 7 as 7 & Smoothness)
+            const actual = computeIsSmoothRational(rationalNum, 7 as 7 & Smoothness)
 
             expect(actual).toBeTruthy()
         })
 
-        it("returns false if the rational is not smooth to the given smoothness", (): void => {
-            const rational = { ratio: [7, 5] as Ratio }
+        it("returns false if the rational num is not smooth to the given smoothness", (): void => {
+            const rationalNum = { ratio: [7, 5] as Ratio }
 
-            const actual = computeIsSmoothRational(rational, 3 as 3 & Smoothness)
+            const actual = computeIsSmoothRational(rationalNum, 3 as 3 & Smoothness)
+
+            expect(actual).toBeFalsy()
+        })
+    })
+
+    describe("by decimal", (): void => {
+        it("returns true if the rational num is smooth to the given smoothness", (): void => {
+            const rationalNum = { decimal: 1.4 as Decimal }
+
+            const actual = computeIsSmoothRational(rationalNum, 7 as 7 & Smoothness)
+
+            expect(actual).toBeTruthy()
+        })
+
+        it("returns false if the rational num is not smooth to the given smoothness", (): void => {
+            const rationalNum = { decimal: 1.4 as Decimal }
+
+            const actual = computeIsSmoothRational(rationalNum, 3 as 3 & Smoothness)
 
             expect(actual).toBeFalsy()
         })
     })
 })
 
-describe("computeRationalSmoothness", (): void => {
-    it("works for rationals with monzos", (): void => {
-        const rational = { monzo: [0, 4, 1, -3, 0, 1] as Monzo }
+describe("computeRationalNumSmoothness", (): void => {
+    it("works for rational nums with monzos", (): void => {
+        const rationalNum = { monzo: [0, 4, 1, -3, 0, 1] as Monzo }
 
-        const actual = computeRationalSmoothness(rational)
+        const actual = computeRationalNumSmoothness(rationalNum)
 
         const expected = 13 as Smoothness
         expect(actual).toBe(expected)
     })
 
-    it("works for rationals with ratios", (): void => {
-        const rational = { ratio: [7, 5] as Ratio }
+    it("works for rational nums with ratios", (): void => {
+        const rationalNum = { ratio: [7, 5] as Ratio }
 
-        const actual = computeRationalSmoothness(rational)
+        const actual = computeRationalNumSmoothness(rationalNum)
+
+        const expected = 7 as Smoothness
+        expect(actual).toBe(expected)
+    })
+
+    it("works for rational nums with decimals", (): void => {
+        const rationalNum: RationalNum = { decimal: 1.4 as Decimal }
+
+        const actual = computeRationalNumSmoothness(rationalNum)
 
         const expected = 7 as Smoothness
         expect(actual).toBe(expected)

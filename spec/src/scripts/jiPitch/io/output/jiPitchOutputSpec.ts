@@ -20,9 +20,9 @@ describe("computeJiPitchOutput", (): void => {
         const expected =
             "   --- JI pitch ---" + NEWLINE +
             "" + NEWLINE +
-            "     \t               \t       \tapotome\t       \t       " + NEWLINE +
-            "ratio\tmonzo          \tcents  \tslope  \tAAS    \tATE    ".underline + NEWLINE +
-            "5/4  \t[   0  -1   1 ⟩\t 11.200\t  8.200\t  8.200\t  1    " + NEWLINE as Io
+            "     \t               \t               \tapotome\t       \t       " + NEWLINE +
+            "ratio\tmonzo          \tcents          \tslope  \tAAS    \tATE    ".underline + NEWLINE +
+            "5/4  \t[   0  -1   1 ⟩\t        11.200¢\t  8.200\t  8.200\t  1    " + NEWLINE as Io
         expect(actual).toEqual(expected)
     })
 })

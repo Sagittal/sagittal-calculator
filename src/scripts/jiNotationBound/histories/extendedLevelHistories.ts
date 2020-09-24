@@ -8,7 +8,7 @@ const computeExtendedJiNotationLevelBoundHistories = (
     jiNotationLevel: JiNotationLevel,
     jiNotationBound: JiNotationBound,
 ): BoundHistory[] => {
-    let extendedJiNotationLevelBoundHistories: BoundHistory[] = 
+    let extendedJiNotationLevelBoundHistories: BoundHistory[] =
         computeExtensionBase(ExtensionBaseType.ARRAY) as BoundHistory[]
 
     boundHistories.forEach((boundHistory: BoundHistory): void => {

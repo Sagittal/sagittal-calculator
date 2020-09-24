@@ -41,7 +41,7 @@ type Window<WindowSize extends number | unknown = unknown> =
 
 type Name<T = void> = Io & { _NameBrand: boolean } & (T extends void ? {} : { _NameOfBrand: T })
 
-type Extrema<T extends number = number> = [Min<T>, Max<T>]
+type Extrema<T extends unknown = number> = [Min<T>, Max<T>]
 
 type Ms = number & { _MsBrand: boolean }
 

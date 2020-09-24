@@ -1,5 +1,5 @@
 import { computeIsRoughInteger, FIVE_ROUGHNESS, Monzo, Ratio } from "../../../../../src/general"
-import { computeIsRoughRational, Integer, Roughness } from "../../../../../src/general/math"
+import { computeIsRoughRationalNum, Integer, Roughness } from "../../../../../src/general/math"
 import { computeRoughInteger } from "../../../../../src/general/math/rational/roughness"
 
 describe("isRoughInteger", (): void => {
@@ -61,40 +61,44 @@ describe("computeRoughInteger", (): void => {
     })
 })
 
-describe("computeIsRoughRational", (): void => {
+describe("computeIsRoughRationalNum", (): void => {
     describe("by monzo", (): void => {
-        it("returns true if the rational is rough to the given roughness", (): void => {
-            const rational = { monzo: [0, 0, 1] as Monzo }
+        it("returns true if the rational num is rough to the given roughness", (): void => {
+            const rationalNum = { monzo: [0, 0, 1] as Monzo }
 
-            const actual = computeIsRoughRational(rational, FIVE_ROUGHNESS)
+            const actual = computeIsRoughRationalNum(rationalNum, FIVE_ROUGHNESS)
 
             expect(actual).toBeTruthy()
         })
 
-        it("returns false if the rational is rough to the given roughness", (): void => {
-            const rational = { monzo: [0, 0, 1] as Monzo }
+        it("returns false if the rational num is rough to the given roughness", (): void => {
+            const rationalNum = { monzo: [0, 0, 1] as Monzo }
 
-            const actual = computeIsRoughRational(rational, 7 as 7 & Roughness)
+            const actual = computeIsRoughRationalNum(rationalNum, 7 as 7 & Roughness)
 
             expect(actual).toBeFalsy()
         })
     })
 
     describe("by ratio", (): void => {
-        it("returns true if the rational is rough to the given roughness", (): void => {
-            const rational = { ratio: [7, 5] as Ratio }
+        it("returns true if the rational num is rough to the given roughness", (): void => {
+            const rationalNum = { ratio: [7, 5] as Ratio }
 
-            const actual = computeIsRoughRational(rational, FIVE_ROUGHNESS)
+            const actual = computeIsRoughRationalNum(rationalNum, FIVE_ROUGHNESS)
 
             expect(actual).toBeTruthy()
         })
 
-        it("returns false if the rational is rough to the given roughness", (): void => {
-            const rational = { ratio: [5, 4] as Ratio }
+        it("returns false if the rational num is rough to the given roughness", (): void => {
+            const rationalNum = { ratio: [5, 4] as Ratio }
 
-            const actual = computeIsRoughRational(rational, 7 as 7 & Roughness)
+            const actual = computeIsRoughRationalNum(rationalNum, 7 as 7 & Roughness)
 
             expect(actual).toBeFalsy()
         })
+    })
+
+    describe("by decimal", (): void => {
+        // todo test
     })
 })

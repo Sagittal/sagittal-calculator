@@ -1,58 +1,58 @@
-import { isUndefined } from "../code"
+import { deepClone, isUndefined } from "../code"
 import {
     ADDITIVE_IDENTITY,
-    computeIsSubNumber,
-    computeIsSuperNumber,
-    computeIsUnisonNumber,
-    computeSuperNumber,
+    computeIsSubNum,
+    computeIsSuperNum,
+    computeIsUnisonNum,
+    computeSuperNum,
     Direction,
     negative,
-    NumericTypeParameters,
+    NumTypeParameters,
 } from "../math"
 import { Pitch } from "./types"
 
-const computeIsSuperPitch = <T extends NumericTypeParameters, U extends Pitch<T>>(
+const computeIsSuperPitch = <T extends NumTypeParameters, U extends Pitch<T>>(
     pitch: U,
 ): pitch is Exclude<U, Pitch> & Pitch<T & { direction: Direction.SUPER }> => {
     const { cents } = pitch
 
     if (!isUndefined(cents) && cents > ADDITIVE_IDENTITY) return true
 
-    return computeIsSuperNumber(pitch)
+    return computeIsSuperNum(pitch)
 }
 
-const computeIsSubPitch = <T extends NumericTypeParameters, U extends Pitch<T>>(
+const computeIsSubPitch = <T extends NumTypeParameters, U extends Pitch<T>>(
     pitch: U,
 ): pitch is Exclude<U, Pitch> & Pitch<T & { direction: Direction.SUB }> => {
     const { cents } = pitch
 
     if (!isUndefined(cents) && cents < ADDITIVE_IDENTITY) return true
 
-    return computeIsSubNumber(pitch)
+    return computeIsSubNum(pitch)
 }
 
-const computeIsUnisonPitch = <T extends NumericTypeParameters, U extends Pitch<T>>(
+const computeIsUnisonPitch = <T extends NumTypeParameters, U extends Pitch<T>>(
     pitch: U,
 ): pitch is Exclude<U, Pitch> & Pitch<T & { direction: Direction.UNISON }> => {
     const { cents } = pitch
 
     if (!isUndefined(cents) && cents === ADDITIVE_IDENTITY) return true
 
-    return computeIsUnisonNumber(pitch)
+    return computeIsUnisonNum(pitch)
 }
 
-const computeSuperPitch = <T extends NumericTypeParameters, U extends Pitch<T>>(
+const computeSuperPitch = <T extends NumTypeParameters, U extends Pitch<T>>(
     pitch: U,
 ): Exclude<U, Pitch> & Pitch<Omit<T, "direction"> & { direction: Direction.SUPER }> => {
     const isSubPitch = computeIsSubPitch(pitch)
 
     let superPitch: Pitch
     if (isSubPitch) {
-        superPitch = computeSuperNumber(pitch)
+        superPitch = computeSuperNum(pitch)
         const { cents } = pitch
         if (!isUndefined(cents)) superPitch.cents = negative(cents)
     } else {
-        superPitch = pitch
+        superPitch = deepClone(pitch)
     }
 
     return superPitch as Exclude<U, Pitch> & Pitch<Omit<T, "direction"> & { direction: Direction.SUPER }>

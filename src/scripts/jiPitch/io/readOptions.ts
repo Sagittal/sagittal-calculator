@@ -1,17 +1,6 @@
 import { program } from "commander"
-import {
-    Comma,
-    CommandFlag,
-    Formatted,
-    Integer,
-    Monzo,
-    Name,
-    parseInteger,
-    parseMonzo,
-    parseRatio,
-    Ratio,
-} from "../../../general"
-import { parseCommaName, ParsedCommaName } from "../../../sagittal"
+import { Comma, CommandFlag, Formatted, Monzo, Name, parseMonzo, parseRatio, Pitch, Ratio } from "../../../general"
+import { computeMonzoFrom23FreeClassAndSizeCategoryName, parseCommaName, parsePitch } from "../../../sagittal"
 
 const readJiPitchOptions = (): void => {
     program
@@ -23,24 +12,33 @@ const readJiPitchOptions = (): void => {
         .option(
             `-${CommandFlag.RATIO}, --ratio <ratio>`,
             "ratio",
-            (ratioText: string): Ratio => parseRatio(ratioText as Formatted<Ratio<{ unreduced: true }>>),
+            (ratioText: string): Ratio => parseRatio(ratioText as Formatted<Ratio<{ potentiallyUnreduced: true }>>),
         )
         .option(
             `-${CommandFlag.COMMA_NAME}, --comma-name <commaName>`,
             "comma name",
-            (commaNameText: string): ParsedCommaName => parseCommaName(commaNameText as Name<Comma>),
+            (commaNameText: string): Monzo => {
+                return computeMonzoFrom23FreeClassAndSizeCategoryName(parseCommaName(commaNameText as Name<Comma>))
+            },
         )
         .option(
-            `-${CommandFlag.INTEGER}, --integer <integer>`,
-            "comma name",
-            (integerText: string): Integer => parseInteger(integerText),
+            `-${CommandFlag.DECIMAL}, --decimal <decimal>`,
+            "decimal",
+            parseFloat,
         )
 }
 
 const readFindCommasOptions = (): void => {
     program
-        .option(`-${CommandFlag.MIN_CENTS}, --min-cents <minCents>`, "min cents", parseFloat)
-        .option(`-${CommandFlag.MAX_CENTS}, --max-cents <maxCents>`, "max cents", parseFloat)
+        .option(
+            `-${CommandFlag.LOWER_BOUND}, --lower-bound <lowerBound>`,
+            "lower bound",
+            (pitchText: string): Pitch => parsePitch(pitchText))
+        .option(
+            `-${CommandFlag.UPPER_BOUND}, --upper-bound <upperBound>`,
+            "upper bound",
+            (pitchText: string): Pitch => parsePitch(pitchText),
+        )
         .option(`-${CommandFlag.MAX_AAS}, --max-aas <maxAas>`, "max AAS", parseFloat)
         .option(`-${CommandFlag.MAX_ATE}, --max-ate <maxAte>`, "max ATE", parseInt)
         .option(`-${CommandFlag.PRIME_LIMIT}, --max-prime-limit <maxPrimeLimit>`, "max prime limit", parseInt)

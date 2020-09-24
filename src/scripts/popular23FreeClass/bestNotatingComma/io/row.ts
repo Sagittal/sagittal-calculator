@@ -1,8 +1,8 @@
 import {
     BLANK,
     format23FreeClass,
+    formatDecimal,
     formatMonzo,
-    formatNumber,
     ioSettings,
     isUndefined,
     Ranked,
@@ -26,7 +26,7 @@ const computePopular23FreeClassWithBestNotatingCommaRow = (
     return [
         format23FreeClass(rankedPopular23FreeClassWithBestNotatingComma),
         estimatedRank,
-        formatNumber(bestNotatingCommaCents),
+        formatDecimal(bestNotatingCommaCents),
         formatMonzo(bestNotatingCommaMonzo),
         isUndefined(bestNotatingCommaMaybeSymbolClassId) ?
             BLANK :

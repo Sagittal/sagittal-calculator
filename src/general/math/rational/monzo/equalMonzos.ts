@@ -1,9 +1,9 @@
 import { computeTrimmedArray, deepEquals } from "../../../code"
-import { PotentiallyIrrationalMonzoParameter } from "./types"
+import { MonzoNotDefaultingToRational } from "./types"
 
 const equalMonzos = (
-    monzoA: PotentiallyIrrationalMonzoParameter,
-    monzoB: PotentiallyIrrationalMonzoParameter,
+    monzoA: MonzoNotDefaultingToRational,
+    monzoB: MonzoNotDefaultingToRational,
 ): boolean => {
     return deepEquals(computeTrimmedArray(monzoA), computeTrimmedArray(monzoB))
 }

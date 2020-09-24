@@ -31,6 +31,13 @@ const computeNumeratorMonzosToCheckGivenMaxN2D3P9 = (
     //  the ones which include both the denominator and the numerator
     //  so that you can use it here, since this computeMonzosFromPrimeExponentExtremas turns out to be
     //  so ill-advised. try to get rid of it.
+    //  - and I'm pretty sure this is the same thing we want to try to do in compute23FreeMonzosToCheck!!
+    //  i.e. Might it be preferable to do the strategy where instead of populating the whole list of monzos to check
+    //  you instead go with the technique the N2D3P9 is already taking with the prime exponent extremas?
+    //  that is maybe you should abstract/extract that bit in the popular 2,3-free script group
+    //  which found a way to take some prime exponent extremas and check each of them
+    //  and just have the artifact from here be one of those extremas?
+    //  - might also save some energy, what with these all being mirrored
 
     return computeMonzosFromPrimeExponentExtremas(
         numeratorPrimeExponentExtremaGivenMaxN2D3P9,

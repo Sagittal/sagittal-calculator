@@ -1,5 +1,5 @@
-import { Id, Zone } from "../../../../../src/general"
-import { SagittalComma, SymbolClass } from "../../../../../src/sagittal"
+import { Cents, Id } from "../../../../../src/general"
+import { SymbolClass } from "../../../../../src/sagittal"
 import { JiNotationLevel } from "../../../../../src/sagittal/notations/ji"
 import { computeCaptureZone } from "../../../../../src/sagittal/notations/ji/captureZone"
 
@@ -9,11 +9,8 @@ describe("computeCaptureZone", (): void => {
 
         const actual = computeCaptureZone(symbolClass, JiNotationLevel.EXTREME)
 
-        const expected = [
-            7.518106,
-            8.080207,
-        ] as Zone<SagittalComma>
-        expect(actual).toBeCloseToArray(expected)
+        expect(actual![ 0 ].cents).toBeCloseToTyped(7.518106 as Cents)
+        expect(actual![ 1 ].cents).toBeCloseToTyped(8.080207 as Cents)
     })
 
     it("works for a JI Notation symbol class where a lower JI notation level than Extreme is requested", (): void => {
@@ -21,11 +18,8 @@ describe("computeCaptureZone", (): void => {
 
         const actual = computeCaptureZone(symbolClass, JiNotationLevel.HIGH)
 
-        const expected = [
-            9.063885,
-            11.031239,
-        ] as Zone<SagittalComma>
-        expect(actual).toBeCloseToArray(expected)
+        expect(actual![ 0 ].cents).toBeCloseToTyped(9.063885 as Cents)
+        expect(actual![ 1 ].cents).toBeCloseToTyped(11.031239 as Cents)
     })
 
     it(

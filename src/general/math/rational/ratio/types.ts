@@ -1,38 +1,38 @@
-import { Direction, Numeric, NumericTypeParameterEffects, NumericTypeParameters } from "../../types"
+import { Decimal, Direction, NumTypeParameterEffects, NumTypeParameters } from "../../types"
 import { Monzo } from "../monzo"
-import { RationalTypeParameters } from "../types"
+import { RationalNumTypeParameters } from "../types"
 
-type Numerator<T extends NumericTypeParameters = {}> =
-    Numeric<(T extends { irrational: true } ? {} : { integer: true }) &
+type Numerator<T extends NumTypeParameters = {}> =
+    Decimal<(T extends { potentiallyIrrational: true } ? {} : { integer: true }) &
         (T extends { rough: number } ? { rough: T["rough"] } : {}) &
         (T extends { smooth: number } ? { smooth: T["smooth"] } : {}) &
         (T extends { integer: true } ? { integer: true } : {})>
     & { _NumeratorBrand: boolean }
-type Denominator<T extends NumericTypeParameters = {}> =
-    Numeric<(T extends { irrational: true } ? {} : { integer: true }) &
+type Denominator<T extends NumTypeParameters = {}> =
+    Decimal<(T extends { potentiallyIrrational: true } ? {} : { integer: true }) &
         (T extends { rough: number } ? { rough: T["rough"] } : {}) &
         (T extends { smooth: number } ? { smooth: T["smooth"] } : {}) &
         (T extends { integer: true } ? { integer: true } : {})>
     & { _DenominatorBrand: boolean }
-type Ratio<T extends NumericTypeParameters = {}> =
-    [Numerator<T>, Denominator<T>] & NumericTypeParameterEffects<T>
+type Ratio<T extends NumTypeParameters = {}> =
+    [Numerator<T>, Denominator<T>] & NumTypeParameterEffects<T>
 
-type UndirectedRatio<T extends NumericTypeParameters & { direction: Direction.SUPER } =
+type UndirectedRatio<T extends NumTypeParameters & { direction: Direction.SUPER } =
     { direction: Direction.SUPER }> = Ratio<T> & { _UndirectedRatioBrand: boolean }
 
-type PotentiallyIrrationalRatioParameter<T extends NumericTypeParameters = {}> =
+type RatioNotDefaultingToRational<T extends NumTypeParameters = {}> =
     [number & { _NumeratorBrand: boolean }, number & { _DenominatorBrand: boolean }]
-    & NumericTypeParameterEffects<T>
+    & NumTypeParameterEffects<T>
 
 enum FractionalPartType {
     NUMERATOR = "numerator",
     DENOMINATOR = "denominator",
 }
 
-type FractionalPart<T extends NumericTypeParameters = {}> = Numerator<T> | Denominator<T>
+type FractionalPart<T extends NumTypeParameters = {}> = Numerator<T> | Denominator<T>
 
-type RationalNumberByRatio<T extends RationalTypeParameters = { irrational: false }> = {
-    number?: Numeric<T>,
+type RationalNumByRatio<T extends RationalNumTypeParameters = { potentiallyIrrational: false }> = {
+    decimal?: Decimal<T>,
     monzo?: Monzo<T>,
     ratio: Ratio<T>,
 }
@@ -44,6 +44,6 @@ export {
     FractionalPartType,
     FractionalPart,
     UndirectedRatio,
-    PotentiallyIrrationalRatioParameter,
-    RationalNumberByRatio,
+    RatioNotDefaultingToRational,
+    RationalNumByRatio,
 }

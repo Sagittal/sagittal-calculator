@@ -1,6 +1,6 @@
 import { isUndefined } from "../code"
-import { computeNumberFromRational } from "../math"
-import { computeCentsFromNumber } from "./centsFromNumber"
+import { computeDecimalFromRationalNum } from "../math"
+import { computeCentsFromDecimal } from "./centsFromDecimal"
 import { JiPitch } from "./ji"
 import { Cents, Pitch } from "./types"
 
@@ -9,9 +9,9 @@ const computeCentsFromPitch = (pitch: Pitch): Cents => {
         return pitch.cents
     }
 
-    const number = computeNumberFromRational(pitch as JiPitch)
+    const decimal = computeDecimalFromRationalNum(pitch as JiPitch)
 
-    return computeCentsFromNumber(number as number)
+    return computeCentsFromDecimal(decimal)
 }
 
 export {

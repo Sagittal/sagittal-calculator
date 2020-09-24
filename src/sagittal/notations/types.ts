@@ -1,4 +1,4 @@
-import { Apotome, Comma, Count, Direction, Id, Name, NumericTypeParameters } from "../../general"
+import { Apotome, Comma, Count, Direction, Id, Name, NumTypeParameters } from "../../general"
 import { SymbolLongAscii, SymbolUnicode } from "../io"
 import { CommaAnalysis } from "../ji"
 import { JiNotationLevel, Mina } from "./ji"
@@ -14,12 +14,13 @@ enum SymbolSubset {
     TROJAN = "trojan",
 }
 
-type SagittalComma<T extends NumericTypeParameters = {}> = Comma<T> & { id: Id<SagittalComma> }
+type SagittalComma<T extends NumTypeParameters = {}> = Comma<T> & { id: Id<SagittalComma> }
 
-type SagittalCommaAnalysis<T extends NumericTypeParameters = {}> = CommaAnalysis<T> & { id: Id<SagittalComma> }
+type SagittalCommaAnalysis<T extends NumTypeParameters = {}> = CommaAnalysis<T> & { id: Id<SagittalComma> }
 
 interface SymbolClass {
-    // TODO: should this be an array of references to other objects instead of hardcoded?
+    // TODO: REALIZE ERD DIAGRAM FOR ELEMENTS AND SYMBOLS
+    //  should this be an array of references to other objects instead of hardcoded?
     //  probably, yes. but you should review how Dave thinks of symbols and elements before you do so
     //  because all I can remember right now is that your intuitions were a bit off
     //  note though that they are symbol CLASS elements, because they're irrespective of comma direction

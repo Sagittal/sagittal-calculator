@@ -1,40 +1,40 @@
-import { Direction, NumericTypeParameters } from "../../types"
-import { Denominator, FractionalPart, Numerator, PotentiallyIrrationalRatioParameter, Ratio } from "./types"
+import { Direction, NumTypeParameters } from "../../types"
+import { Denominator, FractionalPart, Numerator, Ratio, RatioNotDefaultingToRational } from "./types"
 
-const computeIsSuperRatio = <T extends NumericTypeParameters>(
-    ratio: PotentiallyIrrationalRatioParameter<Omit<T, "direction">>,
+const computeIsSuperRatio = <T extends NumTypeParameters>(
+    ratio: RatioNotDefaultingToRational<Omit<T, "direction">>,
 ): ratio is Ratio<T & { direction: Direction.SUPER }> => {
     const [numerator, denominator] = ratio
 
     return numerator > denominator
 }
 
-const computeIsSubRatio = <T extends NumericTypeParameters>(
-    ratio: PotentiallyIrrationalRatioParameter<Omit<T, "direction">>,
+const computeIsSubRatio = <T extends NumTypeParameters>(
+    ratio: RatioNotDefaultingToRational<Omit<T, "direction">>,
 ): ratio is Ratio<Omit<T, "direction"> & { direction: Direction.SUB }> => {
     const [numerator, denominator] = ratio
 
     return numerator < denominator
 }
 
-const computeIsUnisonRatio = <T extends NumericTypeParameters>(
-    ratio: PotentiallyIrrationalRatioParameter<Omit<T, "direction">>,
+const computeIsUnisonRatio = <T extends NumTypeParameters>(
+    ratio: RatioNotDefaultingToRational<Omit<T, "direction">>,
 ): ratio is Ratio<Omit<T, "direction"> & { direction: Direction.UNISON }> => {
     const [numerator, denominator] = ratio
 
     return numerator as FractionalPart === denominator as FractionalPart
 }
 
-const computeSuperRatio = <T extends NumericTypeParameters>(
-    ratio: PotentiallyIrrationalRatioParameter<T>,
+const computeSuperRatio = <T extends NumTypeParameters>(
+    ratio: RatioNotDefaultingToRational<T>,
 ): Ratio<Omit<T, "direction"> & { direction: Direction.SUPER }> => {
     return computeIsSuperRatio(ratio) ?
         ratio as Ratio<T & { direction: Direction.SUPER }> :
         invertRatio(ratio)
 }
 
-const computeSubRatio = <T extends NumericTypeParameters>(
-    ratio: PotentiallyIrrationalRatioParameter<T>,
+const computeSubRatio = <T extends NumTypeParameters>(
+    ratio: RatioNotDefaultingToRational<T>,
 ): Ratio<Omit<T, "direction"> & { direction: Direction.SUB }> => {
     return computeIsSubRatio(ratio) ?
         ratio as Ratio<T & { direction: Direction.SUB }> :
@@ -42,16 +42,16 @@ const computeSubRatio = <T extends NumericTypeParameters>(
 }
 
 const invertRatio: {
-    <T extends NumericTypeParameters & { direction: Direction.SUPER }>(
-        ratio: PotentiallyIrrationalRatioParameter<T>,
+    <T extends NumTypeParameters & { direction: Direction.SUPER }>(
+        ratio: RatioNotDefaultingToRational<T>,
     ): Ratio<T & { direction: Direction.SUB }>,
-    <T extends NumericTypeParameters & { direction: Direction.SUB }>(
-        ratio: PotentiallyIrrationalRatioParameter<T>,
+    <T extends NumTypeParameters & { direction: Direction.SUB }>(
+        ratio: RatioNotDefaultingToRational<T>,
     ): Ratio<T & { direction: Direction.SUPER }>,
-    <T extends NumericTypeParameters>(
-        ratio: PotentiallyIrrationalRatioParameter<T>,
+    <T extends NumTypeParameters>(
+        ratio: RatioNotDefaultingToRational<T>,
     ): Ratio<T>,
-} = <T extends NumericTypeParameters>(ratio: Ratio<T>): Ratio<T> => {
+} = <T extends NumTypeParameters>(ratio: Ratio<T>): Ratio<T> => {
     const [numerator, denominator] = ratio
 
     return [

@@ -1,7 +1,10 @@
 import { Io, LogTarget, saveLog, stringify, Window } from "../../../general"
 import { computeDynamicParameterScope, Scope } from "../bestMetric"
 import { bestMetrics, popularityMetricLfcScriptGroupSettings } from "../globals"
-import { recursiveSearchScopeAndMaybeUpdateBestMetric, recursiveSearchScopeAndMaybeUpdateBestMetricSync } from "../perfecter"
+import {
+    recursiveSearchScopeAndMaybeUpdateBestMetric,
+    recursiveSearchScopeAndMaybeUpdateBestMetricSync,
+} from "../perfecter"
 import { Parameter, ParameterValue } from "../sumOfSquares"
 import { applySharedPopularityMetricLfcCommandSetup } from "./shared"
 

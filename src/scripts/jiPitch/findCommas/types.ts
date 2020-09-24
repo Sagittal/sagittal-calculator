@@ -1,5 +1,5 @@
-import { Abs, Cents, Copfr, Exponent, Extrema, Integer, KeyPath, Max, Min, Prime, Sopfr } from "../../../general"
-import { ApotomeSlope, CommasFrom23FreeMonzoOptions, N2D3P9 } from "../../../sagittal"
+import { Copfr, Exponent, Extrema, Integer, KeyPath, Max, Prime, Sopfr } from "../../../general"
+import { CommasFrom23FreeMonzoOptions, N2D3P9 } from "../../../sagittal"
 
 type CommasOptions = CommasFrom23FreeMonzoOptions & TwoThreeFreeMonzosToCheckOptions & Partial<{
     sortKey: KeyPath,
@@ -19,15 +19,10 @@ type TwoThreeFreePrimesToCheckOptions = Partial<{
     primeExponentExtremasGivenMaxN2D3P9: Array<Extrema<Integer & Exponent<Prime>>>,
 }>
 
-interface FindCommasSettings {
-    maxN2D3P9: Max<N2D3P9>,
+interface FindCommasSettings extends Required<CommasFrom23FreeMonzoOptions> {
+    maxPrimeLimit: Max<Max<Prime>>,
     max23FreeCopfr: Max<Copfr<{ rough: 5 }>>,
     max23FreeSopfr: Max<Sopfr<{ rough: 5 }>>,
-    maxPrimeLimit: Max<Max<Prime>>,
-    minCents: Min<Cents>,
-    maxCents: Max<Cents>,
-    maxAte: Max<Abs<Integer & Exponent<3 & Prime>>>,
-    maxAas: Max<Abs<ApotomeSlope>>,
 }
 
 export {

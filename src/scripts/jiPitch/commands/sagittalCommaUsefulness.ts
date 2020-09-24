@@ -28,10 +28,10 @@ JI_NOTATION.forEach((symbolClassId: Id<SymbolClass>): void => {
     saveLog(`\n\n${formatSymbolClass(symbolClassId, ioSettings)} ${commaName}\n\n` as Io, LogTarget.ALL)
 
     const secondaryCommaZone = computeSecondaryCommaZone(symbolClassId)
-    const minCents = secondaryCommaZone[ 0 ]
-    const maxCents = secondaryCommaZone[ 1 ]
+    const lowerBound = secondaryCommaZone[ 0 ]
+    const upperBound = secondaryCommaZone[ 1 ]
 
-    const commas = computeCommas({ ...jiPitchScriptGroupSettings, ...findCommasSettings, minCents, maxCents })
+    const commas = computeCommas({ ...jiPitchScriptGroupSettings, ...findCommasSettings, lowerBound, upperBound })
 
     const commaAnalyses = commas.map((comma: Comma): CommaAnalysis => analyzeComma(comma))
 

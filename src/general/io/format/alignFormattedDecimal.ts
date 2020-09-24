@@ -1,6 +1,6 @@
 import { Formatted } from "./types"
 
-const alignFormattedNumber = <T extends number>(formattedNumber: Formatted<T>): Formatted<T> => {
+const alignFormattedDecimal = <T extends number>(formattedNumber: Formatted<T>): Formatted<T> => {
     while (formattedNumber.length < 7) {
         formattedNumber = " " + formattedNumber as Formatted<T>
     }
@@ -9,5 +9,5 @@ const alignFormattedNumber = <T extends number>(formattedNumber: Formatted<T>): 
 }
 
 export {
-    alignFormattedNumber,
+    alignFormattedDecimal,
 }

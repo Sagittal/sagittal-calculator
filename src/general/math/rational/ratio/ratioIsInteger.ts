@@ -1,9 +1,9 @@
 import { dividesEvenly } from "../../dividesEvenly"
-import { NumericTypeParameters } from "../../types"
-import { PotentiallyIrrationalRatioParameter, Ratio } from "./types"
+import { NumTypeParameters } from "../../types"
+import { Ratio, RatioNotDefaultingToRational } from "./types"
 
-const computeRatioIsInteger = <T extends NumericTypeParameters>(
-    ratio: PotentiallyIrrationalRatioParameter<T>,
+const computeRatioIsInteger = <T extends NumTypeParameters>(
+    ratio: RatioNotDefaultingToRational<T>,
 ): ratio is Ratio<T & { integer: true }> => {
     const [numerator, denominator] = ratio
 

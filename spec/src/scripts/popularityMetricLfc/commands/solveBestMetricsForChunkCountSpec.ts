@@ -35,7 +35,7 @@ describe("solve-best-metrics-for-chunk-count", (): void => {
         `searched out of populated: 5/6 (83.3%) | populated 6 | searched 5 | in the queue 1`,
         `about to search initial scope for metric {},{sum}`,
         `which has 1 samples; average sample count is 1`,
-        `searched out of populated: 6/6 (100%) | populated 6 | searched 6 | in the queue 0`,
+        `searched out of populated: 6/6 (100.0%) | populated 6 | searched 6 | in the queue 0`,
         ``,
         ``,
         `FINAL STATUS | populated 6 | searched 6 | in the queue 0`,

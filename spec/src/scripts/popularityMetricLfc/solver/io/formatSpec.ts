@@ -83,13 +83,23 @@ describe("formatBestMetrics", (): void => {
 })
 
 describe("formatPercentage", (): void => {
-    it("includes both the two values and their percentage", (): void => {
+    it("includes both the two values and their percentage, to one decimal point", (): void => {
         const a = 1
         const b = 20
 
         const actual = formatPercentage(a, b)
 
-        const expected = "1/20 (5.00%)" as Io
+        const expected = "1/20 (5.0%)" as Io
+        expect(actual).toBe(expected)
+    })
+
+    it("works for percentages above 10", (): void => {
+        const a = 3
+        const b = 20
+
+        const actual = formatPercentage(a, b)
+
+        const expected = "3/20 (15.0%)" as Io
         expect(actual).toBe(expected)
     })
 })
