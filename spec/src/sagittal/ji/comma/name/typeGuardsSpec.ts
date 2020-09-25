@@ -1,5 +1,5 @@
 import { Ratio } from "../../../../../../src/general/math/rational/ratio"
-import { computeIsCommaSized } from "../../../../../../src/sagittal/ji/comma/name/isCommaSized"
+import { computeIsCommaSized } from "../../../../../../src/sagittal/ji/comma/name/typeGuards"
 
 describe("computeIsCommaSized", (): void => {
     it("returns true if the pitch is smaller than the max size category bound (a double apotome)", (): void => {

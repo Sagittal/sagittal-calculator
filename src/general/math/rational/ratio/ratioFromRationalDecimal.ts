@@ -1,7 +1,7 @@
 import { Multiplier } from "../../../types"
 import { multiply } from "../../typedOperations"
 import { Decimal } from "../../types"
-import { isInteger } from "../isInteger"
+import { isInteger } from "../typeGuards"
 import { RationalNumTypeParameters } from "../types"
 import { computeLowestTermsRatio } from "./lowestTerms"
 import { Denominator, Numerator, Ratio } from "./types"

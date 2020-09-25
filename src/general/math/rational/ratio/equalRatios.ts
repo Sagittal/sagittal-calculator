@@ -1,7 +1,7 @@
 import { deepEquals, isCloseTo } from "../../../code"
 import { computeDecimalFromRatio } from "./decimalFromRatio"
 import { computeLowestTermsRatio } from "./lowestTerms"
-import { computeRatioIsRational } from "./ratioIsRational"
+import { computeRatioIsRational } from "./typeGuards"
 import { RatioNotDefaultingToRational } from "./types"
 
 const equalRatios = (

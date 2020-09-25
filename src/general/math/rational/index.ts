@@ -59,7 +59,7 @@ export {
 export { computePrimeCount } from "./primeCount"
 export { computeDecimalFromRationalNum } from "./decimalFromRationalNum"
 export { PRIMES } from "./primes"
-export { isInteger } from "./isInteger"
+export { isInteger } from "./typeGuards"
 export { computeSopfr } from "./sopfr"
 export { ceil, floor, integerDivide } from "./typedOperations"
 export {
