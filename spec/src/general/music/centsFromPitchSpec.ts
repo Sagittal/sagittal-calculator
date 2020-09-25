@@ -12,11 +12,11 @@ describe("computeCentsFromPitch", (): void => {
     })
 
     it("works for pitches with monzos with really big 2 exponents", (): void => {
-        const pitch: Pitch = { monzo: [158.5, -100] as Monzo<{ potentiallyIrrational: true }> }
+        const pitch: Pitch = { monzo: [317, -200] as Monzo }
 
         const actual = computeCentsFromPitch(pitch)
 
-        const expected = 4.499913 as Cents
+        const expected = 8.999826 as Cents
         expect(actual).toBeCloseToTyped(expected)
     })
 

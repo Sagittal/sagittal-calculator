@@ -20,7 +20,7 @@ Cents should really only be part of analyses
 In which case pitches should not really be any different than nums....
 (except later I decided it was a good idea to allow non-JI pitches to be specified as cents)
  */
-type Decimal<T extends NumTypeParameters = { potentiallyIrrational: true }> = number & NumTypeParameterEffects<T>
+type Decimal<T extends NumTypeParameters = { potentiallyIrrational?: true }> = number & NumTypeParameterEffects<T>
 type DecimalNotDefaultingToPotentiallyIrrational<T extends NumTypeParameters = {}> = number & NumTypeParameterEffects<T>
 
 type Combination<T> = T[] & { _CombinationBrand: boolean }
@@ -100,28 +100,11 @@ call it a Degree
 the existing Window isn’t a base, it gets divided up additively, not multiplicatively
  */
 
-type PotentiallyIrrationalNumByDecimal<T> = {
+type PotentiallyIrrationalNum<T extends NumTypeParameters> ={
     decimal: Decimal<T>,
     monzo?: MonzoNotDefaultingToRational<T>,
     ratio?: RatioNotDefaultingToRational<T>,
 }
-type PotentiallyIrrationalNumByMonzo<T> = {
-    decimal?: Decimal<T>,
-    monzo: MonzoNotDefaultingToRational<T>,
-    ratio?: RatioNotDefaultingToRational<T>,
-}
-type PotentiallyIrrationalNumByRatio<T> = {
-    decimal?: Decimal<T>,
-    monzo?: MonzoNotDefaultingToRational<T>,
-    ratio: RatioNotDefaultingToRational<T>,
-}
-// TODO: whoa... what if we forced irrational nums to have a decimal representation?
-//  aka set it to only PotentiallyIrrationalNumByDecimal? well that seems to come with its own bucket of problems
-//  let's save that to later
-type PotentiallyIrrationalNum<T extends NumTypeParameters = {}> =
-    PotentiallyIrrationalNumByDecimal<T & { potentiallyIrrational: true }> |
-    PotentiallyIrrationalNumByMonzo<T & { potentiallyIrrational: true }> |
-    PotentiallyIrrationalNumByRatio<T & { potentiallyIrrational: true }>
 
 type Num<T extends NumTypeParameters = {}> =
     RationalNum<T & { potentiallyIrrational: false }> | PotentiallyIrrationalNum<T>
