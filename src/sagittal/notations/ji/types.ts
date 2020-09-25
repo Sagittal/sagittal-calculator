@@ -1,4 +1,4 @@
-import { Cents, Id } from "../../../general"
+import { Cents, CentsPosition, Id } from "../../../general"
 
 enum BoundType {
     INA_MIDPOINT = "inaMidpoint",
@@ -22,7 +22,10 @@ enum JiNotationLevel {
     INSANE = "insane",          // corresponds closely with Magrathean symbol subset
 }
 
-interface JiNotationBound {
+// TODO: maybe remove this recently added "Cents" field...
+//  wait.. what's the difference between this and a BoundPosition?
+//  should this not just extend that?
+type JiNotationBound = CentsPosition & {
     id: Id<JiNotationBound>,
     jiNotationLevels: JiNotationLevel[],
     cents: Cents,

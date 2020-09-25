@@ -173,6 +173,7 @@ export {
     computeLowestTermsRatio,
     MonzoNotDefaultingToRational,
     RatioNotDefaultingToRational,
+    Decimal,
 } from "./math"
 export {
     Cents,
@@ -204,5 +205,6 @@ export {
     pitchIsLower,
     pitchIsHigherOrEqual,
     pitchIsLowerOrEqual,
+    computeDecimalFromCents,
 } from "./music"
 export { Count, Ed, Extrema, Id, Index, Ms, Multiplier, Name, Step, Sum, Window } from "./types"

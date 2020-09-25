@@ -1,4 +1,4 @@
-import { Abs, Cents, Id, Multiplier } from "../../../../../../src/general"
+import { Abs, Cents, Decimal, Id, Multiplier } from "../../../../../../src/general"
 import { BoundType, SymbolClass } from "../../../../../../src/sagittal/notations"
 import { Ina, JiNotationBound, JiNotationLevel } from "../../../../../../src/sagittal/notations/ji"
 import { computeJiNotationLevelBoundedSymbolClassIdsWithDistances } from "../../../../../../src/scripts/jiNotationBound/io/terminal/levelBoundedSymbolClasses"
@@ -7,6 +7,7 @@ import { JiNotationBoundIdWithBoundedSymbolClassIdsWithDistancesPairsByJiNotatio
 describe("computeJiNotationLevelBoundedSymbolClassIdsWithDistances", (): void => {
     it("returns, given a JI notation bound, for each of its JI levels, an array of the pair of symbols it bounds at that JI notation level, as well as their distances and ina-distances from the bound", (): void => {
         const jiNotationBound: JiNotationBound = {
+            decimal: 1.01434739432 as Decimal,
             cents: 24.66219847111080 as Cents,
             jiNotationLevels: [JiNotationLevel.MEDIUM, JiNotationLevel.EXTREME, JiNotationLevel.INSANE],
             id: 54 as Id<JiNotationBound>,
@@ -59,6 +60,7 @@ describe("computeJiNotationLevelBoundedSymbolClassIdsWithDistances", (): void =>
 
     it("works for the final JI notation bound", (): void => {
         const jiNotationBound: JiNotationBound = {
+            decimal: 1.04040393192 as Decimal,
             cents: 68.572508 as Cents,
             jiNotationLevels: [
                 JiNotationLevel.MEDIUM,
@@ -121,6 +123,7 @@ describe("computeJiNotationLevelBoundedSymbolClassIdsWithDistances", (): void =>
 
     it("works for the first JI notation bound", (): void => {
         const jiNotationBound: JiNotationBound = {
+            decimal: 1.00012176335 as Decimal,
             cents: 0.210788021120605 as Cents,
             jiNotationLevels: [JiNotationLevel.EXTREME, JiNotationLevel.INSANE],
             id: 55 as Id<JiNotationBound>,

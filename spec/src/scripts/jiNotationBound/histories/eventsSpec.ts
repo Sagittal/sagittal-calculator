@@ -28,7 +28,7 @@ describe("computeBoundEvents", (): void => {
                     {
                         jiNotationLevel: JiNotationLevel.ULTRA,
                         boundType: BoundType.INA_MIDPOINT,
-                        name: "2.5°58" as Name<BoundEvent>,
+                        name: "2.5°58" as Name<BoundPosition>,
                         cents: 4.900215 as Cents,
                     },
                 ]
@@ -48,7 +48,7 @@ describe("computeBoundEvents", (): void => {
                         {
                             jiNotationLevel: JiNotationLevel.ULTRA,
                             boundType: BoundType.INA_MIDPOINT,
-                            name: "2.5°58" as Name<BoundEvent>,
+                            name: "2.5°58" as Name<BoundPosition>,
                             cents: 4.900215 as Cents,
                         },
                     ]
@@ -66,13 +66,13 @@ describe("computeBoundEvents", (): void => {
                     {
                         jiNotationLevel: JiNotationLevel.HIGH,
                         boundType: BoundType.INA_MIDPOINT,
-                        name: "11.5°47" as Name<BoundEvent>,
+                        name: "11.5°47" as Name<BoundPosition>,
                         cents: 27.816544 as Cents,
                     },
                     {
                         jiNotationLevel: JiNotationLevel.HIGH,
                         boundType: BoundType.INA_MIDPOINT,
-                        name: "12.5°47" as Name<BoundEvent>,
+                        name: "12.5°47" as Name<BoundPosition>,
                         cents: 30.235373 as Cents,
                     },
                 ]

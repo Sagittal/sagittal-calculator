@@ -10,11 +10,15 @@ interface BoundEvent {
 
 type BoundHistory = BoundEvent[]
 
+// TODO: ULTIMATELY MOVE FROM CENTS TO DECIMALS
+//  fix both CommaMean and InaMidpoint below, per SizeCategoryBound too
 type CommaMean = CentsPosition & {
+    cents: Cents,
     name: Name<CommaMean>,
 }
 
 type InaMidpoint = CentsPosition & {
+    cents: Cents,
     name: Name<InaMidpoint>,
 }
 

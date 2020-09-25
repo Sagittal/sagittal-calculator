@@ -1,7 +1,7 @@
-import { CentsPosition, Comma, computeCentsFromPitch, isUndefined } from "../../../../general"
+import { Comma, computeCentsFromPitch, isUndefined } from "../../../../general"
 import { SIZE_CATEGORIES } from "./sizeCategories"
 import { SIZE_CATEGORY_BOUNDS } from "./sizeCategoryBounds"
-import { SizeCategoryAbbreviation, SizeCategoryName, SizeCategoryOptions } from "./types"
+import { SizeCategoryAbbreviation, SizeCategoryBound, SizeCategoryName, SizeCategoryOptions } from "./types"
 
 const computeSizeCategory: {
     (comma: Comma, { abbreviated }: { abbreviated: true }): SizeCategoryAbbreviation,
@@ -13,7 +13,7 @@ const computeSizeCategory: {
 
     let sizeCategory = SIZE_CATEGORIES[ 0 ]
 
-    SIZE_CATEGORY_BOUNDS.forEach((sizeCategoryBound: CentsPosition, index: number): void => {
+    SIZE_CATEGORY_BOUNDS.forEach((sizeCategoryBound: SizeCategoryBound, index: number): void => {
         if (cents > sizeCategoryBound.cents) {
             sizeCategory = SIZE_CATEGORIES[ index + 1 ]
         }

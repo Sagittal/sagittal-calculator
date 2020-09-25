@@ -111,10 +111,10 @@ describe("analyze-ji-pitch", (): void => {
         expect(actual).toEqual(expected)
     })
 
-    it("can appraise a JI pitch given as a decimal", (): void => {
+    it("can appraise a JI pitch given as an integer", (): void => {
         onlyRunInCi()
 
-        const command = "npm run analyze-ji-pitch -- -d 275" as Io // this doesn't show off how things like 1.4 work too
+        const command = "npm run analyze-ji-pitch -- -i 275" as Io
 
         const actual = runCommandAndGetConsoleOutput(command)
 

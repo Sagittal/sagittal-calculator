@@ -61,7 +61,7 @@ export {
     Primes,
     RationalNumByMonzo,
     RationalNumByRatio,
-    RationalNumByDecimal,
+    RationalNumByInteger,
     computeDecimalFromRationalNum,
     computeMonzoFromRationalNum,
     computeRatioFromRationalNum,
@@ -70,11 +70,13 @@ export {
     computeRationalNumSmoothness,
     computeRatioFromRationalDecimal,
     computeLowestTermsRatio,
+    isInteger,
 } from "./rational"
 export { computeDistributions } from "./distributions"
 export { dividesEvenly } from "./dividesEvenly"
 export { computeTriangularNumber } from "./triangularNumber"
 export { equalNums } from "./numComparison"
+export { computeIsNum } from "./isNum"
 export { computeDecimalFromNum } from "./decimalFromNum"
 export {
     abs,

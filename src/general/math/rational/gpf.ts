@@ -4,7 +4,7 @@ import { computeMonzoFromIntegerOrMonzo, Monzo } from "./monzo"
 import { PRIMES } from "./primes"
 import { Integer, Prime, RationalNumTypeParameters, Smoothness } from "./types"
 
-// todo shouldn't this just take nums now?
+// TODO: shouldn't this just take nums now?
 //  this along with other things that used to take integerOrMonzo
 //  well you will need to consider... i guess you just also provide a computeGpfFromDecimal
 //  and hope you don't have to expose it

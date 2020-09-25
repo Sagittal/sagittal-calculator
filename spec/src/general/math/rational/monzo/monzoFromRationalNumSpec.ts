@@ -1,4 +1,4 @@
-import { Decimal } from "../../../../../../src/general/math"
+import { Integer } from "../../../../../../src/general/math"
 import { computeMonzoFromRationalNum, Monzo } from "../../../../../../src/general/math/rational/monzo"
 import { Ratio } from "../../../../../../src/general/math/rational/ratio"
 
@@ -20,12 +20,12 @@ describe("computeMonzoFromRationalNum", (): void => {
         expect(actual).toEqual(expected)
     })
 
-    it("computes the monzo from the decimal, if present", (): void => {
-        const rationalNum = { decimal: 1.5 as Decimal }
+    it("computes the monzo from the (integer) decimal, if present", (): void => {
+        const rationalNum = { decimal: 5 as Integer }
 
         const actual = computeMonzoFromRationalNum(rationalNum)
 
-        const expected = [-1, 1] as Monzo
+        const expected = [0, 0, 1] as Monzo
         expect(actual).toEqual(expected)
     })
 })

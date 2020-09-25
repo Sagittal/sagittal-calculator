@@ -1,11 +1,10 @@
-import { CentsPosition } from "../../../general"
 import { BoundType, JiNotationLevel, JI_NOTATION_LEVELS, SizeCategoryBound } from "../../../sagittal"
 import { computeInaMidpoints } from "./inaMidpoints"
 import { computeJiNotationLevelCommaMeans } from "./levelCommaMeans"
 import { computeSizeCategoryBoundsWithinMaximumPosition } from "./sizeCategoryBounds"
 import { BoundPosition, CommaMean, InaMidpoint } from "./types"
 
-const computeBoundPositions = <T extends CentsPosition>(
+const computeBoundPositions = <T extends BoundPosition>(
     computeLevelSnappablePositions: (jiNotationLevel: JiNotationLevel) => T[],
 ): Record<JiNotationLevel, T[]> =>
     JI_NOTATION_LEVELS.reduce(

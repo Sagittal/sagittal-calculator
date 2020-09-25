@@ -1,4 +1,4 @@
-import { computeSuperPitch } from "../../../../src/general"
+import { computeSuperPitch, Decimal } from "../../../../src/general"
 import { Direction, Ratio } from "../../../../src/general/math"
 import { Monzo } from "../../../../src/general/math/rational/monzo"
 import { Cents, computeIsSubPitch, computeIsUnisonPitch, Pitch } from "../../../../src/general/music"
@@ -76,6 +76,32 @@ describe("computeIsSubPitch", (): void => {
 
         it("returns false if the cents are positive", (): void => {
             const pitch = { cents: 7.1 as Cents }
+
+            const actual = computeIsSubPitch(pitch)
+
+            expect(actual).toBeFalsy()
+        })
+    })
+
+    describe("by decimal", (): void => {
+        it("returns true if the decimal is sub", (): void => {
+            const pitch = { decimal: 0.9 as Decimal }
+
+            const actual = computeIsSubPitch(pitch)
+
+            expect(actual).toBeTruthy()
+        })
+
+        it("returns false if the decimal is unison", (): void => {
+            const pitch = { decimal: 1 as Decimal }
+
+            const actual = computeIsSubPitch(pitch)
+
+            expect(actual).toBeFalsy()
+        })
+
+        it("returns false if the decimal is super", (): void => {
+            const pitch = { decimal: 1.1 as Decimal }
 
             const actual = computeIsSubPitch(pitch)
 
@@ -162,6 +188,32 @@ describe("computeIsSuperPitch", (): void => {
             expect(actual).toBeTruthy()
         })
     })
+
+    describe("by decimal", (): void => {
+        it("returns true if the decimal is super", (): void => {
+            const pitch = { decimal: 1.1 as Decimal }
+
+            const actual = computeIsSuperPitch(pitch)
+
+            expect(actual).toBeTruthy()
+        })
+
+        it("returns false if the decimal is unison", (): void => {
+            const pitch = { decimal: 1 as Decimal }
+
+            const actual = computeIsSuperPitch(pitch)
+
+            expect(actual).toBeFalsy()
+        })
+
+        it("returns false if the decimal is sub", (): void => {
+            const pitch = { decimal: 0.9 as Decimal }
+
+            const actual = computeIsSuperPitch(pitch)
+
+            expect(actual).toBeFalsy()
+        })
+    })
 })
 
 describe("computeIsUnisonPitch", (): void => {
@@ -242,14 +294,41 @@ describe("computeIsUnisonPitch", (): void => {
             expect(actual).toBeFalsy()
         })
     })
+
+    describe("by decimal", (): void => {
+        it("returns false if the decimal is super", (): void => {
+            const pitch = { decimal: 1.1 as Decimal }
+
+            const actual = computeIsUnisonPitch(pitch)
+
+            expect(actual).toBeFalsy()
+        })
+
+        it("returns true if the decimal is unison", (): void => {
+            const pitch = { decimal: 1 as Decimal }
+
+            const actual = computeIsUnisonPitch(pitch)
+
+            expect(actual).toBeTruthy()
+        })
+
+        it("returns false if the decimal is sub", (): void => {
+            const pitch = { decimal: 0.9 as Decimal }
+
+            const actual = computeIsUnisonPitch(pitch)
+
+            expect(actual).toBeFalsy()
+        })
+    })
 })
 
 describe("computeSuperPitch", (): void => {
-    it("flips the monzo, ratio, cents", (): void => {
+    it("flips the monzo, ratio, cents, and decimal", (): void => {
         const pitch: Pitch<{ direction: Direction.SUB }> = {
             monzo: [-40, 22, 1, 1] as Monzo<{ direction: Direction.SUB }>,
             ratio: [1098337086315, 1099511627776] as Ratio<{ direction: Direction.SUB }>,
             cents: -1.850 as Cents,
+            decimal: 0.99893176076 as Decimal<{ direction: Direction.SUB }>,
         }
 
         const actual = computeSuperPitch(pitch)
@@ -258,8 +337,9 @@ describe("computeSuperPitch", (): void => {
             monzo: [40, -22, -1, -1] as Monzo<{ direction: Direction.SUPER }>,
             ratio: [1099511627776, 1098337086315] as Ratio<{ direction: Direction.SUPER }>,
             cents: 1.850 as Cents,
+            decimal: 1.00106938159 as Decimal<{ direction: Direction.SUPER }>,
         }
-        expect(actual).toEqual(expected)
+        expect(actual).toBeCloseToObject(expected)
     })
 
     it("works when only monzo is provided", (): void => {
@@ -299,6 +379,19 @@ describe("computeSuperPitch", (): void => {
             cents: 1.850 as Cents,
         }
         expect(actual).toEqual(expected)
+    })
+
+    it("works when only decimal is provided", (): void => {
+        const pitch: Pitch = {
+            decimal: 0.99893176076 as Decimal,
+        }
+
+        const actual = computeSuperPitch(pitch)
+
+        const expected: Pitch = {
+            decimal: 1.00106938159 as Decimal,
+        }
+        expect(actual).toBeCloseToObject(expected)
     })
 
     it("does not mutate the original pitch", (): void => {

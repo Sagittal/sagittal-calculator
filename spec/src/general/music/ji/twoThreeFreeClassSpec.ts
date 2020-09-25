@@ -1,4 +1,4 @@
-import { Decimal } from "../../../../../src/general/math"
+import { Decimal, Integer } from "../../../../../src/general/math"
 import { Monzo } from "../../../../../src/general/math/rational/monzo"
 import { Ratio } from "../../../../../src/general/math/rational/ratio"
 import { compute23FreeClass, TwoThreeFreeClass } from "../../../../../src/general/music"
@@ -31,8 +31,8 @@ describe("compute23FreeClass", (): void => {
         expect(actual).toEqual(expected)
     })
 
-    it("works for pitches with decimals too", (): void => {
-        const jiPitch = { decimal: 8.5 as Decimal }
+    it("works for pitches with (integer) decimals too", (): void => {
+        const jiPitch = { decimal: 34 as Integer }
 
         const actual = compute23FreeClass(jiPitch)
 

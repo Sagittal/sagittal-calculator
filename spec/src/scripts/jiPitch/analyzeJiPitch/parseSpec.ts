@@ -1,5 +1,5 @@
 import { program } from "commander"
-import { Abs, Decimal, Exponent, Integer, Max, Monzo, Prime, Ratio } from "../../../../../src/general/math"
+import { Abs, Exponent, Integer, Max, Monzo, Prime, Ratio } from "../../../../../src/general/math"
 import { Cents } from "../../../../../src/general/music"
 import { ApotomeSlope, JiPitchAnalysis, N2D3P9 } from "../../../../../src/sagittal/ji"
 import { parseJiPitch, parseNotatingCommasSettings } from "../../../../../src/scripts/jiPitch/analyzeJiPitch"
@@ -50,7 +50,7 @@ describe("parseJiPitch", (): void => {
         program.monzo = undefined
         program.ratio = undefined
         program.commaName = undefined
-        program.decimal = undefined
+        program.integer = undefined
     })
 
     describe("when the JI pitch is provided as an argument directly (not as a specific flag)", (): void => {
@@ -81,12 +81,12 @@ describe("parseJiPitch", (): void => {
             expect(actual).toEqual(expected)
         })
 
-        it("works for an decimal", (): void => {
-            program.args = ["3.4"]
+        it("works for an integer", (): void => {
+            program.args = ["3"]
 
             const actual = parseJiPitch()
 
-            const expected = { decimal: 3.4 as Decimal }
+            const expected = { decimal: 3 as Integer }
             expect(actual).toEqual(expected)
         })
 
@@ -127,12 +127,12 @@ describe("parseJiPitch", (): void => {
             expect(actual).toEqual(expected)
         })
 
-        it("works for an decimal (which will have been pre-parsed)", (): void => {
-            program.decimal = 3.4
+        it("works for an (integer) decimal (which will have been pre-parsed into an integer)", (): void => {
+            program.integer = 3
 
             const actual = parseJiPitch()
 
-            const expected = { decimal: 3.4 as Decimal }
+            const expected = { decimal: 3 as Integer }
             expect(actual).toEqual(expected)
         })
     })

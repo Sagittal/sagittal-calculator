@@ -29,7 +29,7 @@ const computeSuperMonzo = <T extends NumTypeParameters>(
     monzo: MonzoNotDefaultingToRational<T>,
 ): Monzo<T & { direction: Direction.SUPER }> => {
     if (computeIsSubMonzo(monzo)) {
-        return invertMonzo(monzo)
+        return invertMonzo(monzo) as Monzo<T & { direction: Direction.SUPER }>
     }
 
     return monzo as Monzo<T & { direction: Direction.SUPER }>

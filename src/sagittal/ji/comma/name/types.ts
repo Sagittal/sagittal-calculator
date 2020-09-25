@@ -1,4 +1,4 @@
-import { CentsPosition, Name, NumTypeParameters, Ratio } from "../../../../general"
+import { Cents, CentsPosition, Name, NumTypeParameters, Ratio } from "../../../../general"
 
 interface SizeCategoryOptions {
     abbreviated?: boolean,
@@ -10,6 +10,11 @@ interface SizeCategory {
 }
 
 type SizeCategoryBound = CentsPosition & {
+    cents: Cents,
+    // TODO: ULTIMATELY MOVE FROM CENTS TO DECIMALS
+    //  installed this, as well as on the other BoundPositions, to spare me the pain of having to convert
+    //  everything in the bounds analysis script group from being hardcoded as Cents to being hardcoded as Decimals
+    //  you'll probably still want to do that
     name: Name<SizeCategoryBound>,
 }
 

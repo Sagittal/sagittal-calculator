@@ -52,17 +52,6 @@ describe("equalPitches", (): void => {
         })
     })
 
-    // todo: DECIMAL & CENTS
-    //  should these handle decimals too? I think there's some deeper thinking we have to do about the
-    //  relationship between PotentiallyIrrationalNum type and CentsPosition
-    //  because I don't want to suddenly force people to define the decimal representations of every pitch which
-    //  doesn't have a monzo... but a decimal should be an ALTERNATIVE to cents.
-    //  so you'll have to reconcile this with the other to-do you have started on PotentiallyIrrationalNum in types.ts
-    //  for now I can have pitchIsHigher and equalPitches cover the difference by just checking a's cents against
-    //  all 4 possibilities, and then b's cents against all 4 possibilities. but then after i enforce that you have to
-    //  have EITHER cents or decimal, then... all that really means is you don't have to check decimal inside the num
-    //  check. so you may as well just do it again, becuase it's too complex to explain turning that off in some sitchs.
-
     describe("when both have cents", (): void => {
         it("returns true when the pitches are equal", (): void => {
             const pitchA = { cents: 43 as Cents }

@@ -1,4 +1,4 @@
-import { Cents, CentsPosition, Maybe, Name } from "../../../general"
+import { Cents, computeDecimalFromCents, Maybe, Name } from "../../../general"
 import {
     APOTOME_CENTS,
     JiNotationLevel,
@@ -14,6 +14,7 @@ const computeInaMidpoints = (jiNotationLevel: JiNotationLevel): InaMidpoint[] =>
     const inaMidpoints = [...Array(eda).keys()].map((degree: number): Maybe<InaMidpoint> => {
         const midpoint = degree + 0.5
         const cents = APOTOME_CENTS * midpoint / eda as Cents
+        const decimal = computeDecimalFromCents(cents)
 
         if (cents > MAX_SYMBOL_CLASS_CENTS) {
             return undefined
@@ -21,10 +22,10 @@ const computeInaMidpoints = (jiNotationLevel: JiNotationLevel): InaMidpoint[] =>
 
         const name: Name<InaMidpoint> = `${midpoint}°${eda}` as Name<InaMidpoint>
 
-        return { name, cents }
+        return { name, cents, decimal }
     })
 
-    return inaMidpoints.filter((inaMidpoint: Maybe<CentsPosition>): boolean => !!inaMidpoint) as InaMidpoint[]
+    return inaMidpoints.filter((inaMidpoint: Maybe<InaMidpoint>): boolean => !!inaMidpoint) as InaMidpoint[]
 }
 
 export {

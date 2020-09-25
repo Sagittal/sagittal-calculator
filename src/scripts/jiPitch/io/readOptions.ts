@@ -1,9 +1,11 @@
 import { program } from "commander"
 import {
     CommandFlag,
+    Integer,
     Io,
     Monzo,
     MonzoNotDefaultingToRational,
+    parseInteger,
     parseMonzo,
     parseRatio,
     Pitch,
@@ -31,9 +33,9 @@ const readJiPitchOptions = (): void => {
             },
         )
         .option(
-            `-${CommandFlag.DECIMAL}, --decimal <decimal>`,
-            "decimal",
-            parseFloat,
+            `-${CommandFlag.INTEGER}, --integer <integer>`,
+            "integer",
+            (integerText: string): Integer => parseInteger(integerText),
         )
 }
 

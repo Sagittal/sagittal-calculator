@@ -59,6 +59,7 @@ export {
 export { computePrimeCount } from "./primeCount"
 export { computeDecimalFromRationalNum } from "./decimalFromRationalNum"
 export { PRIMES } from "./primes"
+export { isInteger } from "./isInteger"
 export { computeSopfr } from "./sopfr"
 export { ceil, floor, integerDivide } from "./typedOperations"
 export {
@@ -71,7 +72,7 @@ export {
     RationalNumTypeParameters,
     Primes,
     RationalNum,
-    RationalNumByDecimal,
+    RationalNumByInteger,
 } from "./types"
 export { computeIsSmoothRational, computeRationalNumSmoothness } from "./smoothness"
 export { computeIsRoughRationalNum } from "./roughness"

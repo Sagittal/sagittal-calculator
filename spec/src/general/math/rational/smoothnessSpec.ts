@@ -67,9 +67,9 @@ describe("computeIsSmoothRational", (): void => {
         })
     })
 
-    describe("by decimal", (): void => {
+    describe("by (integer) decimal", (): void => {
         it("returns true if the rational num is smooth to the given smoothness", (): void => {
-            const rationalNum = { decimal: 1.4 as Decimal }
+            const rationalNum = { decimal: 14 as Integer }
 
             const actual = computeIsSmoothRational(rationalNum, 7 as 7 & Smoothness)
 
@@ -77,7 +77,7 @@ describe("computeIsSmoothRational", (): void => {
         })
 
         it("returns false if the rational num is not smooth to the given smoothness", (): void => {
-            const rationalNum = { decimal: 1.4 as Decimal }
+            const rationalNum = { decimal: 14 as Integer }
 
             const actual = computeIsSmoothRational(rationalNum, 3 as 3 & Smoothness)
 
@@ -105,8 +105,8 @@ describe("computeRationalNumSmoothness", (): void => {
         expect(actual).toBe(expected)
     })
 
-    it("works for rational nums with decimals", (): void => {
-        const rationalNum: RationalNum = { decimal: 1.4 as Decimal }
+    it("works for rational nums with (integer) decimals", (): void => {
+        const rationalNum: RationalNum = { decimal: 14 as Integer }
 
         const actual = computeRationalNumSmoothness(rationalNum)
 

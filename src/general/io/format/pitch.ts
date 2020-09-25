@@ -1,8 +1,7 @@
 import { isUndefined } from "../../code"
-import { Pitch } from "../../music"
+import { computeCentsFromDecimal, Pitch } from "../../music"
 import { stringify } from "../stringify"
 import { formatCents } from "./cents"
-import { formatDecimal } from "./decimal"
 import { formatMonzo } from "./monzo"
 import { formatRatio } from "./ratio"
 import { Formatted } from "./types"
@@ -16,7 +15,7 @@ const formatPitch = (pitch: Pitch, options: { align?: boolean } = {}): Formatted
     } else if (!isUndefined(cents)) {
         return formatCents(cents, options) as Formatted as Formatted<Pitch>
     } else if (!isUndefined(decimal)) {
-        return formatDecimal(decimal, options) as Formatted as Formatted<Pitch>
+        return formatCents(computeCentsFromDecimal(decimal), options) as Formatted as Formatted<Pitch>
     }
 
     throw new Error(`Tried to format pitch ${stringify(pitch)} but it had no numeric members.`)

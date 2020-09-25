@@ -41,6 +41,8 @@ const computeSubRatio = <T extends NumTypeParameters>(
         invertRatio(ratio)
 }
 
+// TODO: you need to figure out how to get this and invertMonzo to strip the "integer" property
+//  just as the reciprocal command does for primitive numbers
 const invertRatio: {
     <T extends NumTypeParameters & { direction: Direction.SUPER }>(
         ratio: RatioNotDefaultingToRational<T>,

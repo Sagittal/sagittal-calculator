@@ -1,4 +1,9 @@
-import { MaybeIntegerBrand, Monzo, Ratio, RationalNum } from "./rational"
+import {
+    MaybeIntegerBrand,
+    MonzoNotDefaultingToRational,
+    RationalNum,
+    RatioNotDefaultingToRational,
+} from "./rational"
 
 // TODO: Dec instead instead of Decimal? hmm... maybe not.
 //  because we're not abbreviating Number to Num only bc we can but because we kind of have to.
@@ -14,13 +19,11 @@ Bc integer, rational, and irrational are orthogonal to these
 
 And perhaps these three subtypes should never be found outside a Num
 
-And perhaps if you just manhandled it and had non-JI pitch be the intersection of four different types
-and not even extend the num type it would work
-
 And perhaps since both num and rational num do this triple intersection they should share some type they “extend”
 
 Cents should really only be part of analyses
 In which case pitches should not really be any different than nums....
+(except later I decided it was a good idea to allow non-JI pitches to be specified as cents)
  */
 type Decimal<T extends NumTypeParameters = { potentiallyIrrational: true }> = number & NumTypeParameterEffects<T>
 type DecimalNotDefaultingToPotentiallyIrrational<T extends NumTypeParameters = {}> = number & NumTypeParameterEffects<T>
@@ -102,44 +105,28 @@ call it a Degree
 the existing Window isn’t a base, it gets divided up additively, not multiplicatively
  */
 
-// todo: DECIMAL & CENTS
-//  really the PotentiallyIrrationalNum definition needs to be reworked in the manner of RationalNum
-//  where it's an intersection type which ultimately forces at least one of the properties to be present even though
-//  they are each optional
-//  however if you go down this path (as commented out just below)
-//  it forces your hand to make everything in the app which is hardcoded as cents only right now
-//  to be hardcoded as number instead. which is really how it *should* be, so that non-ji pitches
-//  can truly extend PotentiallyIrrationalNum without trying to achieve the whole thing i put in another to-do about
-//  only one or the other of cents and decimal being required...
-//  and which was another recent-ish to-do which I somehow/somewhy got rid of, perhaps because it seemed too hard
-//  but I really think it's the right thing to do
-// type PotentiallyIrrationalNumByDecimal<T> = {
-//     decimal: Decimal<T>,
-//     monzo?: Monzo<T>,
-//     ratio?: Ratio<T>,
-// }
-// type PotentiallyIrrationalNumByMonzo<T> = {
-//     decimal?: Decimal<T>,
-//     monzo: Monzo<T>,
-//     ratio?: Ratio<T>,
-// }
-// type PotentiallyIrrationalNumByRatio<T> = {
-//     decimal?: Decimal<T>,
-//     monzo?: Monzo<T>,
-//     ratio: Ratio<T>,
-// }
-// type PotentiallyIrrationalNum<T extends NumTypeParameters = {}> =
-//     PotentiallyIrrationalNumByDecimal<T & { potentiallyIrrational: true }> |
-//     PotentiallyIrrationalNumByMonzo<T & { potentiallyIrrational: true }> |
-//     PotentiallyIrrationalNumByRatio<T & { potentiallyIrrational: true }>
-
-type PotentiallyIrrationalNum<T extends NumTypeParameters = {}> = {
-    decimal?: Decimal<T & { potentiallyIrrational: true }>,
-    monzo?: Monzo<T & { potentiallyIrrational: true }>,
-    ratio?: Ratio<T & { potentiallyIrrational: true }>,
+type PotentiallyIrrationalNumByDecimal<T> = {
+    decimal: Decimal<T>,
+    monzo?: MonzoNotDefaultingToRational<T>,
+    ratio?: RatioNotDefaultingToRational<T>,
 }
+type PotentiallyIrrationalNumByMonzo<T> = {
+    decimal?: Decimal<T>,
+    monzo: MonzoNotDefaultingToRational<T>,
+    ratio?: RatioNotDefaultingToRational<T>,
+}
+type PotentiallyIrrationalNumByRatio<T> = {
+    decimal?: Decimal<T>,
+    monzo?: MonzoNotDefaultingToRational<T>,
+    ratio: RatioNotDefaultingToRational<T>,
+}
+type PotentiallyIrrationalNum<T extends NumTypeParameters = {}> =
+    PotentiallyIrrationalNumByDecimal<T & { potentiallyIrrational: true }> |
+    PotentiallyIrrationalNumByMonzo<T & { potentiallyIrrational: true }> |
+    PotentiallyIrrationalNumByRatio<T & { potentiallyIrrational: true }>
+
 type Num<T extends NumTypeParameters = {}> =
-    RationalNum<T & { potentiallyIrrational: false }> | PotentiallyIrrationalNum<T>
+    RationalNum<T> | PotentiallyIrrationalNum<T>
 
 export {
     Combination,

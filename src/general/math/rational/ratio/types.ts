@@ -1,6 +1,10 @@
-import { Decimal, Direction, NumTypeParameterEffects, NumTypeParameters } from "../../types"
+import {
+    Decimal,
+    DecimalNotDefaultingToPotentiallyIrrational,
+    NumTypeParameterEffects,
+    NumTypeParameters,
+} from "../../types"
 import { Monzo } from "../monzo"
-import { RationalNumTypeParameters } from "../types"
 
 type Numerator<T extends NumTypeParameters = {}> =
     Decimal<(T extends { potentiallyIrrational: true } ? {} : { integer: true }) &
@@ -17,9 +21,6 @@ type Denominator<T extends NumTypeParameters = {}> =
 type Ratio<T extends NumTypeParameters = {}> =
     [Numerator<T>, Denominator<T>] & NumTypeParameterEffects<T>
 
-type UndirectedRatio<T extends NumTypeParameters & { direction: Direction.SUPER } =
-    { direction: Direction.SUPER }> = Ratio<T> & { _UndirectedRatioBrand: boolean }
-
 type RatioNotDefaultingToRational<T extends NumTypeParameters = {}> =
     [number & { _NumeratorBrand: boolean }, number & { _DenominatorBrand: boolean }]
     & NumTypeParameterEffects<T>
@@ -31,10 +32,10 @@ enum FractionalPartType {
 
 type FractionalPart<T extends NumTypeParameters = {}> = Numerator<T> | Denominator<T>
 
-type RationalNumByRatio<T extends RationalNumTypeParameters = { potentiallyIrrational: false }> = {
-    decimal?: Decimal<T>,
-    monzo?: Monzo<T>,
-    ratio: Ratio<T>,
+type RationalNumByRatio<T extends NumTypeParameters = {}> = {
+    decimal?: DecimalNotDefaultingToPotentiallyIrrational<T>,
+    monzo?: Monzo<T & { potentiallyIrrational: false }>,
+    ratio: Ratio<T & { potentiallyIrrational: false }>,
 }
 
 export {
@@ -43,7 +44,6 @@ export {
     Denominator,
     FractionalPartType,
     FractionalPart,
-    UndirectedRatio,
     RatioNotDefaultingToRational,
     RationalNumByRatio,
 }

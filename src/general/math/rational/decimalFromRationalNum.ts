@@ -7,15 +7,18 @@ import { RationalNum, RationalNumTypeParameters } from "./types"
 const computeDecimalFromRationalNum = <T extends RationalNumTypeParameters = { potentiallyIrrational: false }>(
     { decimal, ratio, monzo }: RationalNum,
 ): Decimal<T> => {
+    let decimalOutput
     if (isUndefined(decimal)) {
         if (!isUndefined(ratio)) {
-            decimal = computeDecimalFromRatio(ratio)
+            decimalOutput = computeDecimalFromRatio(ratio)
         } else if (!isUndefined(monzo)) {
-            decimal = computeDecimalFromMonzo(monzo)
+            decimalOutput = computeDecimalFromMonzo(monzo)
         }
+    } else {
+        decimalOutput = decimal
     }
 
-    return decimal as Decimal<T>
+    return decimalOutput as Decimal<T>
 }
 
 export {

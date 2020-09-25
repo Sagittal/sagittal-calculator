@@ -10,10 +10,6 @@ const parseJiPitch = (): JiPitch => {
     if (jiPitchText) {
         const pitch = parsePitch(jiPitchText)
 
-        // todo: DECIMAL & CENTS
-        //  it is possible here that parsePitch can return a pitch which has only cents.
-        //  without one of monzo, ratio, or decimal, which won't work for jiPitch.
-        //  but that wouldn't be the case if we fix the problem.
         if (!isUndefined(pitch.monzo) || !isUndefined(pitch.ratio) || !isUndefined(pitch.decimal)) {
             jiPitch = pitch as JiPitch
         } else {
@@ -27,8 +23,8 @@ const parseJiPitch = (): JiPitch => {
         jiPitch = { ratio: program.ratio }
     } else if (program.commaName) {
         jiPitch = { monzo: program.commaName }
-    } else if (program.decimal) {
-        jiPitch = { decimal: program.decimal }
+    } else if (program.integer) {
+        jiPitch = { decimal: program.integer }
     } else {
         throw new Error("Unable to parse JI pitch.")
     }

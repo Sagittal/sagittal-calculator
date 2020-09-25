@@ -2,7 +2,7 @@ import {
     Direction,
     Integer,
     NumTypeParameters,
-    RationalNumByDecimal,
+    RationalNumByInteger,
     RationalNumByMonzo,
     RationalNumByRatio,
     RationalNumTypeParameters,
@@ -29,12 +29,12 @@ type JiPitchByMonzo<T extends RationalNumTypeParameters = { potentiallyIrrationa
     RationalNumByMonzo<T> & { cents?: Cents }
 type JiPitchByRatio<T extends RationalNumTypeParameters = { potentiallyIrrational: false }> =
     RationalNumByRatio<T> & { cents?: Cents }
-type JiPitchByDecimal<T extends RationalNumTypeParameters = { potentiallyIrrational: false }> =
-    RationalNumByDecimal<T> & { cents?: Cents }
+type JiPitchByInteger<T extends RationalNumTypeParameters = { potentiallyIrrational: false }> =
+    RationalNumByInteger<T> & { cents?: Cents }
 type JiPitch<T extends NumTypeParameters = {}> =
     JiPitchByMonzo<T & { potentiallyIrrational: false }> |
     JiPitchByRatio<T & { potentiallyIrrational: false }> |
-    JiPitchByDecimal<T & { potentiallyIrrational: false }>
+    JiPitchByInteger<T & { potentiallyIrrational: false }>
 
 type Votes = Integer & { _VotesBrand: boolean }
 

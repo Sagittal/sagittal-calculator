@@ -7,6 +7,7 @@ import {
     computeSuperMonzo,
     computeSuperRatio,
     FIVE_ROUGHNESS,
+    isInteger,
 } from "../../math"
 import { JiPitch, TwoThreeFreeClass } from "./types"
 
@@ -27,7 +28,14 @@ const compute23FreeClass = ({ monzo, ratio, decimal }: JiPitch): TwoThreeFreeCla
         const ratio = computeRatioFromRationalDecimal(decimal)
         const twoThreeFreeRatio = computeRoughRatio(ratio, FIVE_ROUGHNESS)
         const super23FreeRatio = computeSuperRatio(twoThreeFreeRatio)
-        twoThreeFreeClass.decimal = computeDecimalFromRatio(super23FreeRatio)
+        const super23FreeDecimal = computeDecimalFromRatio(super23FreeRatio)
+
+        if (!isInteger(super23FreeDecimal)) {
+            // TODO: I have a feeling this error / checking process will turn up elsewhere and should maybe not
+            //  primarily live here. if only because I want the error to mention JI pitches, not 2,3-free classes.
+            throw new Error("Cannot safely represent JI as a decimal which is not an integer.")
+        }
+        twoThreeFreeClass.decimal = super23FreeDecimal
     }
 
     return twoThreeFreeClass

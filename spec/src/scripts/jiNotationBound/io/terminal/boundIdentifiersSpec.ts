@@ -3,6 +3,7 @@ import {
     Cents,
     Comma,
     Copfr,
+    Decimal,
     Direction,
     Exponent,
     Id,
@@ -35,6 +36,7 @@ import { JiNotationBoundIdentifiers } from "../../../../../../src/scripts/jiNota
 
 describe("extractJiNotationBoundIdentifiers", (): void => {
     const jiNotationBound: JiNotationBound = {
+        decimal: 1.01344211084 as Decimal,
         cents: 23.116419 as Cents,
         jiNotationLevels: [JiNotationLevel.ULTRA, JiNotationLevel.EXTREME, JiNotationLevel.INSANE],
         id: 47 as Id<JiNotationBound>,

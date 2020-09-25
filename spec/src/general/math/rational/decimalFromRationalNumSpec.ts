@@ -1,14 +1,13 @@
-import { Decimal } from "../../../../../src/general/math"
+import { Decimal, Integer } from "../../../../../src/general/math"
 import { computeDecimalFromRationalNum, Monzo, Ratio, RationalNum } from "../../../../../src/general/math/rational"
 
 describe("computeDecimalFromRationalNum", (): void => {
-    const expected = 1.25 as Decimal
-
-    it("works for rational nums with decimals", (): void => {
-        const rationalNum: RationalNum = { decimal: 1.25 as Decimal }
+    it("works for rational nums with (integer) decimals", (): void => {
+        const rationalNum: RationalNum = { decimal: 1 as Integer }
 
         const actual = computeDecimalFromRationalNum(rationalNum)
 
+        const expected = 1 as Integer
         expect(actual).toBe(expected)
     })
 
@@ -17,6 +16,7 @@ describe("computeDecimalFromRationalNum", (): void => {
 
         const actual = computeDecimalFromRationalNum(rationalNum)
 
+        const expected = 1.25 as Decimal
         expect(actual).toBe(expected)
     })
 
@@ -25,6 +25,7 @@ describe("computeDecimalFromRationalNum", (): void => {
 
         const actual = computeDecimalFromRationalNum(rationalNum)
 
+        const expected = 1.25 as Decimal
         expect(actual).toBe(expected)
     })
 })
