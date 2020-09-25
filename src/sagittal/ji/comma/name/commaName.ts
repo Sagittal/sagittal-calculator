@@ -21,8 +21,8 @@ import {
     SUPERSCRIPT_NUMS,
     THREE_PRIME_LIMIT,
 } from "../../../../general"
-import { computeIsCommaSized } from "./typeGuards"
 import { computeSizeCategory } from "./sizeCategory"
+import { computeIsCommaSized } from "./typeGuards"
 import { CommaNameOptions, CommaNameRatio, SizeCategoryAbbreviation, SizeCategoryName } from "./types"
 
 const primeFactorize = (numeratorOrDenominator: FractionalPart): string => {
