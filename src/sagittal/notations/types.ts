@@ -1,4 +1,4 @@
-import { Apotome, Comma, Count, Direction, Id, Name, NumTypeParameters } from "../../general"
+import { Apotome, Comma, Count, Direction, Id, Name, RationalNumTypeParameters } from "../../general"
 import { SymbolLongAscii, SymbolUnicode } from "../io"
 import { CommaAnalysis } from "../ji"
 import { JiNotationLevel, Mina } from "./ji"
@@ -14,9 +14,13 @@ enum SymbolSubset {
     TROJAN = "trojan",
 }
 
-type SagittalComma<T extends NumTypeParameters = {}> = Comma<T> & { id: Id<SagittalComma> }
+type SagittalComma<T extends RationalNumTypeParameters = { potentiallyIrrational: false }> =
+    Comma<T>
+    & { id: Id<SagittalComma> }
 
-type SagittalCommaAnalysis<T extends NumTypeParameters = {}> = CommaAnalysis<T> & { id: Id<SagittalComma> }
+type SagittalCommaAnalysis<T extends RationalNumTypeParameters = { potentiallyIrrational: false }> =
+    CommaAnalysis<T>
+    & { id: Id<SagittalComma> }
 
 interface SymbolClass {
     // TODO: REALIZE ERD DIAGRAM FOR ELEMENTS AND SYMBOLS

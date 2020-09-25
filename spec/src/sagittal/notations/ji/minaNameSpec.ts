@@ -1,12 +1,4 @@
-import {
-    ACCURACY_THRESHOLD,
-    computeCentsFromPitch,
-    Count,
-    decrement,
-    Id,
-    increment,
-    Name,
-} from "../../../../../src/general"
+import { computeCentsFromPitch, Count, decrement, Id, increment, Name } from "../../../../../src/general"
 import { computeRange } from "../../../../../src/general/code"
 import { Max } from "../../../../../src/general/math"
 import { SymbolClass } from "../../../../../src/sagittal/notations"
@@ -29,7 +21,7 @@ describe("getMinaName", (): void => {
         const baseMina = parseInt(getMinaName(symbolClassId))
         const mina = baseMina + centsSpan / MINA
 
-        return mina.toFixed(ACCURACY_THRESHOLD) as Name<Mina>
+        return mina.toFixed(6) as Name<Mina>
     }
 
     it(
@@ -40,10 +32,12 @@ describe("getMinaName", (): void => {
 
             minaRange.forEach((mina: Mina): void => {
                 expect(getMinaName(symbolClassId)).toBe(mina.toString())
+                // console.log(getMinaName(symbolClassId), mina.toString())
                 symbolClassId = increment(symbolClassId)
 
                 if (SPLIT_MINAS.includes(mina)) {
                     expect(getMinaName(symbolClassId)).toBe(computeSplitMinaName(decrement(symbolClassId)))
+                    // console.log(getMinaName(symbolClassId), computeSplitMinaName(decrement(symbolClassId)))
                     symbolClassId = increment(symbolClassId)
                 }
             })

@@ -60,7 +60,7 @@ describe("formatPitch", (): void => {
     })
 
     it("if the monzo and cents are present, returns the monzo formatted", (): void => {
-        const pitch = { monzo: [0, -1, 1]  as Monzo, cents: 884.358712999 as Cents }
+        const pitch = { monzo: [0, -1, 1] as Monzo, cents: 884.358712999 as Cents }
 
         const actual = formatPitch(pitch)
 
@@ -70,15 +70,6 @@ describe("formatPitch", (): void => {
 
     it("if the decimal and cents are present, returns the cents formatted", (): void => {
         const pitch = { decimal: 1.666667 as Decimal, cents: 884.358712999 as Cents }
-
-        const actual = formatPitch(pitch)
-
-        const expected = "       884.359¢" as Formatted<Pitch>
-        expect(actual).toBe(expected)
-    })
-
-    it("if only the cents are present, returns it formatted", (): void => {
-        const pitch = { cents: 884.358712999 as Cents }
 
         const actual = formatPitch(pitch)
 
@@ -96,7 +87,7 @@ describe("formatPitch", (): void => {
     })
 
     it("can return the pitch unaligned (such as for in error messages, rather than in tables)", (): void => {
-        const pitch = { cents: 884.358713 as Cents }
+        const pitch = { decimal: 1.666667 as Decimal }
 
         const actual = formatPitch(pitch, { align: false })
 

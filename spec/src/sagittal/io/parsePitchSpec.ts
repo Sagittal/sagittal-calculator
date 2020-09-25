@@ -2,7 +2,6 @@ import { Io } from "../../../../src/general/io"
 import { Decimal } from "../../../../src/general/math"
 import { Monzo } from "../../../../src/general/math/rational/monzo"
 import { Ratio } from "../../../../src/general/math/rational/ratio"
-import { Cents } from "../../../../src/general/music"
 import { parsePitch } from "../../../../src/sagittal/io"
 
 describe("parsePitch", (): void => {
@@ -33,13 +32,13 @@ describe("parsePitch", (): void => {
         expect(actual).toEqual(expected)
     })
 
-    it("works when given as cents", (): void => {
+    it("works when given as cents, saving it as decimal", (): void => {
         const pitchText = "33.4c" as Io
 
         const actual = parsePitch(pitchText)
 
-        const expected = { cents: 33.4 as Cents }
-        expect(actual).toEqual(expected)
+        const expected = { decimal: 1.019480 as Decimal }
+        expect(actual).toBeCloseToObject(expected)
     })
 
     it("works when given as a decimal", (): void => {

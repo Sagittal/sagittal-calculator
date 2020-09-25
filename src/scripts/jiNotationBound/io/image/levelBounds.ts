@@ -1,4 +1,4 @@
-import { Io, Px, subtract } from "../../../../general"
+import { computeCentsFromPitch, Io, Px, subtract } from "../../../../general"
 import { JiNotationBound, JiNotationLevel, JI_NOTATION_LEVELS_BOUNDS } from "../../../../sagittal"
 import { JI_NOTATION_LEVEL_BOTTOMS, JI_NOTATION_LEVEL_TOPS } from "./levelHeights"
 import { DASH_SIZE, SYMBOL_OFFSET } from "./sizes"
@@ -16,7 +16,7 @@ const visualizeJiNotationLevelBounds = (): Io[] => {
             }
 
             jiNotationLevelBounds.forEach((jiNotationLevelBound: JiNotationBound, index: number): void => {
-                const { cents } = jiNotationLevelBound
+                const cents = computeCentsFromPitch(jiNotationLevelBound)
 
                 const topY: Px = JI_NOTATION_LEVEL_TOPS[ jiNotationLevel ]
                 const bottomY: Px = JI_NOTATION_LEVEL_BOTTOMS[ jiNotationLevel ]

@@ -1,4 +1,4 @@
-import { count, Multiplier } from "../../../general"
+import { computeCentsFromPitch, count, Multiplier } from "../../../general"
 import { JiNotationBound, Tina, TINA } from "../../../sagittal"
 import { consolidateBoundHistories } from "../consolidateHistories"
 import { BoundHistory } from "../histories"
@@ -26,7 +26,8 @@ const analyzeJiNotationBound = (
     const bestPossibleBoundHistoryTotalDistance = bestPossibleBoundHistoryAnalysis.totalDistance
     const bestPossibleBoundHistoryTotalInaDistance = bestPossibleBoundHistoryAnalysis.totalInaDistance
 
-    const initialPositionTinaDistance = (jiNotationBound.cents - initialPosition) / TINA as Multiplier<Tina>
+    const initialPositionTinaDistance =
+        (computeCentsFromPitch(jiNotationBound) - initialPosition) / TINA as Multiplier<Tina>
 
     updateRankAnalysis(bestRank, jiNotationBound.id)
     updateJiNotationLevelAnalysis(bestPossibleBoundHistoryAnalysis)

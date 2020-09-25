@@ -34,6 +34,8 @@ const computeRoughInteger = <T extends Integer>(integer: T, roughness: Roughness
 
     let roughInteger = integer
     let primeIndex = 0
+    // TODO: maybe i need to have a helper for while loops which enables me to at a flip turn something on
+    //  to have them report their condition if the suite is hanging so i can figure out which one is the offender
     while (primeIndex < roughnessIndex) {
         const prime: Integer = PRIMES[ primeIndex ]
         while (dividesEvenly(roughInteger, prime)) {

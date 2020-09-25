@@ -37,6 +37,8 @@ export {
     Obj,
     RecordKey,
     NOT_FOUND,
+    Precision,
+    MAX_JAVASCRIPT_PRECISION,
 } from "./code"
 export {
     sumTexts,
@@ -174,11 +176,16 @@ export {
     MonzoNotDefaultingToRational,
     RatioNotDefaultingToRational,
     Decimal,
+    DecimalNotDefaultingToPotentiallyIrrational,
+    isInteger,
+    RationalNumTypeParameters,
+    computeDecimalFromNum,
+    Num,
 } from "./math"
 export {
     Cents,
     CENTS_PER_OCTAVE,
-    CentsPosition,
+    PotentiallyNonJiPitch,
     COMMA_POPULARITIES,
     computeCentsFromPitch,
     Pitch,

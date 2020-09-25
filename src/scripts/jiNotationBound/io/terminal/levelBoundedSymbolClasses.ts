@@ -19,7 +19,8 @@ import {
 const computeJiNotationLevelBoundedSymbolClassIdsWithDistances = (
     jiNotationBound: JiNotationBound,
 ): JiNotationBoundIdWithBoundedSymbolClassIdsWithDistancesPairsByJiNotationLevel => {
-    const { cents, jiNotationLevels, id } = jiNotationBound
+    const { jiNotationLevels, id } = jiNotationBound
+    const cents = computeCentsFromPitch(jiNotationBound)
 
     return jiNotationLevels.reduce(
         (

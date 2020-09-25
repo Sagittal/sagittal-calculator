@@ -1,4 +1,4 @@
-import { ACCURACY_THRESHOLD, isCloseTo, isUndefined } from "../code"
+import { ACCURACY_THRESHOLD, isCloseTo, isUndefined, Precision } from "../code"
 import { formatNum } from "../io"
 import {
     computeDecimalFromMonzo,
@@ -6,13 +6,12 @@ import {
     computeRatioFromMonzo,
     equalMonzos,
     equalRatios,
-    Integer,
 } from "./rational"
 import { Num } from "./types"
 
 // TODO: add <, >, >=, <=
 
-const equalNums = (numA: Num, numB: Num, precision: Integer = ACCURACY_THRESHOLD): boolean => {
+const equalNums = (numA: Num, numB: Num, precision: Precision = ACCURACY_THRESHOLD): boolean => {
     if (!isUndefined(numA.decimal)) {
         if (!isUndefined(numB.decimal)) {
             return isCloseTo(numA.decimal, numB.decimal, precision)

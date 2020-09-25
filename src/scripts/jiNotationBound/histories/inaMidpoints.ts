@@ -1,10 +1,10 @@
-import { Cents, computeDecimalFromCents, Maybe, Name } from "../../../general"
+import { Cents, computeCentsFromPitch, computeDecimalFromCents, Maybe, Name, pitchIsHigher } from "../../../general"
 import {
-    APOTOME_CENTS,
+    APOTOME,
     JiNotationLevel,
     JI_NOTATION_LEVELS,
     JI_NOTATION_LEVEL_EDAS,
-    MAX_SYMBOL_CLASS_CENTS,
+    MAX_SYMBOL_CLASS_POSITION,
 } from "../../../sagittal"
 import { InaMidpoint } from "./types"
 
@@ -13,16 +13,18 @@ const computeInaMidpoints = (jiNotationLevel: JiNotationLevel): InaMidpoint[] =>
 
     const inaMidpoints = [...Array(eda).keys()].map((degree: number): Maybe<InaMidpoint> => {
         const midpoint = degree + 0.5
-        const cents = APOTOME_CENTS * midpoint / eda as Cents
+        // TODO: perhaps this would be a nice place to start improving... er, well, actually this is just
+        //  another place where we could use that helper for a fraction of a rational pitch!
+        const cents = computeCentsFromPitch(APOTOME) * midpoint / eda as Cents
         const decimal = computeDecimalFromCents(cents)
 
-        if (cents > MAX_SYMBOL_CLASS_CENTS) {
+        if (pitchIsHigher({ decimal }, MAX_SYMBOL_CLASS_POSITION)) {
             return undefined
         }
 
         const name: Name<InaMidpoint> = `${midpoint}°${eda}` as Name<InaMidpoint>
 
-        return { name, cents, decimal }
+        return { name, decimal }
     })
 
     return inaMidpoints.filter((inaMidpoint: Maybe<InaMidpoint>): boolean => !!inaMidpoint) as InaMidpoint[]

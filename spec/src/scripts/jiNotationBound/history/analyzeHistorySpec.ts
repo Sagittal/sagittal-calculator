@@ -1,4 +1,4 @@
-import { Abs, add, Cents, Multiplier, Sum } from "../../../../../src/general"
+import { Abs, add, Cents, computeCentsFromDecimal, Decimal, Multiplier, Sum } from "../../../../../src/general"
 import { multiply } from "../../../../../src/general/math"
 import { BoundType, Ina, JiNotationBound, JiNotationLevel, Tina, TINA } from "../../../../../src/sagittal/notations/ji"
 import { computeInitialPosition } from "../../../../../src/scripts/jiNotationBound/bound/initialPosition"
@@ -12,7 +12,7 @@ import {
 } from "../../../../helpers/src/scripts/jiNotationBound/fixtures"
 
 describe("analyzeHistory", (): void => {
-    const actualJiNotationBoundCents = 12.43789 as Cents
+    const actualJiNotationBoundDecimal = 1.00721027676 as Decimal   // 12.43789¢
     let boundHistory: BoundHistory
     let cents: Cents
     let jiNotationBound: JiNotationBound
@@ -24,7 +24,7 @@ describe("analyzeHistory", (): void => {
         and its distance from the initial position, 
         and its overall distance the JI notation bound moved across all the bound events`,
         (): void => {
-            cents = actualJiNotationBoundCents + 0.5 as Cents
+            cents = computeCentsFromDecimal(actualJiNotationBoundDecimal) + 0.5 as Cents
             boundHistory = [
                 {
                     ...boundEventFixture,
@@ -41,7 +41,7 @@ describe("analyzeHistory", (): void => {
             ]
             jiNotationBound = {
                 ...jiNotationBoundFixture,
-                cents: actualJiNotationBoundCents,
+                decimal: actualJiNotationBoundDecimal,
                 jiNotationLevels: [JiNotationLevel.EXTREME, JiNotationLevel.INSANE],
             }
             initialPosition = computeInitialPosition(jiNotationBound)
@@ -83,7 +83,7 @@ describe("analyzeHistory", (): void => {
             // tslint:disable-next-line max-line-length
             `returns the bound history's events with their rank, plus true for the possible property and a 0 tina error`,
             (): void => {
-                cents = actualJiNotationBoundCents
+                cents = computeCentsFromDecimal(actualJiNotationBoundDecimal)
                 boundHistory = [
                     {
                         ...boundEventFixture,
@@ -100,7 +100,7 @@ describe("analyzeHistory", (): void => {
                 ]
                 jiNotationBound = {
                     ...jiNotationBoundFixture,
-                    cents: actualJiNotationBoundCents,
+                    decimal: actualJiNotationBoundDecimal,
                     jiNotationLevels: [JiNotationLevel.EXTREME, JiNotationLevel.INSANE],
                 }
                 initialPosition = computeInitialPosition(jiNotationBound)
@@ -121,7 +121,10 @@ describe("analyzeHistory", (): void => {
                 "works when the position is greater than the actual JI notation bound position by less than a tina",
                 (): void => {
                     const expectedTinaError = 2 / 5 as Multiplier<Tina>
-                    cents = add(actualJiNotationBoundCents, multiply(TINA, expectedTinaError))
+                    cents = add(
+                        computeCentsFromDecimal(actualJiNotationBoundDecimal),
+                        multiply(TINA, expectedTinaError),
+                    )
                     boundHistory = [{ ...boundEventFixture, boundType: BoundType.INA_MIDPOINT, cents }, {
                         ...boundEventFixture,
                         cents,
@@ -129,7 +132,7 @@ describe("analyzeHistory", (): void => {
                     }]
                     jiNotationBound = {
                         ...jiNotationBoundFixture,
-                        cents: actualJiNotationBoundCents,
+                        decimal: actualJiNotationBoundDecimal,
                         jiNotationLevels: [JiNotationLevel.EXTREME, JiNotationLevel.INSANE],
                     }
                     initialPosition = computeInitialPosition(jiNotationBound)
@@ -145,7 +148,10 @@ describe("analyzeHistory", (): void => {
                 "works when the position is greater than the actual JI notation bound position by more than a tina",
                 (): void => {
                     const expectedTinaError = 5 / 2 as Multiplier<Tina>
-                    cents = add(actualJiNotationBoundCents, multiply(TINA, expectedTinaError))
+                    cents = add(
+                        computeCentsFromDecimal(actualJiNotationBoundDecimal),
+                        multiply(TINA, expectedTinaError),
+                    )
                     boundHistory = [{ ...boundEventFixture, boundType: BoundType.INA_MIDPOINT, cents }, {
                         ...boundEventFixture,
                         cents,
@@ -154,7 +160,7 @@ describe("analyzeHistory", (): void => {
                     }]
                     jiNotationBound = {
                         ...jiNotationBoundFixture,
-                        cents: actualJiNotationBoundCents,
+                        decimal: actualJiNotationBoundDecimal,
                         jiNotationLevels: [JiNotationLevel.EXTREME, JiNotationLevel.INSANE],
                     }
                     initialPosition = computeInitialPosition(jiNotationBound)
@@ -170,7 +176,10 @@ describe("analyzeHistory", (): void => {
                 "works when the position is below the actual JI notation bound position by less than a tina",
                 (): void => {
                     const expectedTinaError = -2 / 5 as Multiplier<Tina>
-                    cents = add(actualJiNotationBoundCents, multiply(TINA, expectedTinaError))
+                    cents = add(
+                        computeCentsFromDecimal(actualJiNotationBoundDecimal),
+                        multiply(TINA, expectedTinaError),
+                    )
                     boundHistory = [{
                         ...boundEventFixture,
                         boundType: BoundType.INA_MIDPOINT,
@@ -184,7 +193,7 @@ describe("analyzeHistory", (): void => {
                     }]
                     jiNotationBound = {
                         ...jiNotationBoundFixture,
-                        cents: actualJiNotationBoundCents,
+                        decimal: actualJiNotationBoundDecimal,
                         jiNotationLevels: [JiNotationLevel.EXTREME, JiNotationLevel.INSANE],
                     }
                     initialPosition = computeInitialPosition(jiNotationBound)
@@ -200,7 +209,10 @@ describe("analyzeHistory", (): void => {
                 "works when the position is below the actual JI notation bound position by more than a tina",
                 (): void => {
                     const expectedTinaError = -5 / 2 as Multiplier<Tina>
-                    cents = add(actualJiNotationBoundCents, multiply(TINA, expectedTinaError))
+                    cents = add(
+                        computeCentsFromDecimal(actualJiNotationBoundDecimal),
+                        multiply(TINA, expectedTinaError),
+                    )
                     boundHistory = [{ ...boundEventFixture, boundType: BoundType.INA_MIDPOINT, cents }, {
                         ...boundEventFixture,
                         cents,
@@ -208,7 +220,7 @@ describe("analyzeHistory", (): void => {
                     }]
                     jiNotationBound = {
                         ...jiNotationBoundFixture,
-                        cents: actualJiNotationBoundCents,
+                        decimal: actualJiNotationBoundDecimal,
                         jiNotationLevels: [JiNotationLevel.EXTREME, JiNotationLevel.INSANE],
                     }
                     initialPosition = computeInitialPosition(jiNotationBound)

@@ -1,6 +1,6 @@
-import { Integer } from "../../../../general"
+import { Precision } from "../../../../general"
 
-const ANTIVOTES_PRECISION = 9 as Integer
+const ANTIVOTES_PRECISION = 9 as Precision
 
 export {
     ANTIVOTES_PRECISION,

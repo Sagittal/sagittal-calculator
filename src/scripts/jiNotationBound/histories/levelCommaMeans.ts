@@ -43,7 +43,6 @@ const computeJiNotationLevelCommaMeans = (jiNotationLevel: JiNotationLevel): Com
             return {
                 decimal,
                 name,
-                cents,
             }
         })
 }

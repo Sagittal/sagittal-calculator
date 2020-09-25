@@ -1,4 +1,4 @@
-import { Abs, Cents, Count, Id, Integer, Multiplier, Name, Rank, Sum } from "../../../../../src/general"
+import { Abs, Cents, Count, Decimal, Id, Integer, Multiplier, Name, Rank, Sum } from "../../../../../src/general"
 import { BoundType, Ina, JiNotationBound, JiNotationLevel, Tina } from "../../../../../src/sagittal/notations/ji"
 import { JiNotationBoundAnalysis } from "../../../../../src/scripts/jiNotationBound/bound"
 import { BoundEventConsolidation } from "../../../../../src/scripts/jiNotationBound/consolidateHistories/types"
@@ -47,7 +47,7 @@ const boundEventConsolidationFixture: BoundEventConsolidation = {
 const jiNotationBoundFixture: JiNotationBound = {
     id: 0 as Id<JiNotationBound>,
     jiNotationLevels: [],
-    cents: 0 as Cents,
+    decimal: 1 as Decimal,
     boundType: BoundType.INA_MIDPOINT,
 }
 

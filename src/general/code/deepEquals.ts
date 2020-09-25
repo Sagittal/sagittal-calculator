@@ -1,8 +1,8 @@
-import { Integer } from "../math"
 import { isCloseTo } from "./isCloseTo"
 import { isNumber, isUndefined } from "./typeGuards"
+import { Precision } from "./types"
 
-const deepEqualsArray = <T>(firstValue: T[], secondValue: T[], precision?: Integer): boolean =>
+const deepEqualsArray = <T>(firstValue: T[], secondValue: T[], precision?: Precision): boolean =>
     firstValue instanceof Array &&
     firstValue.length === secondValue.length &&
     secondValue.every((el: T, index: number): boolean => deepEquals(el, firstValue[ index ], precision))
@@ -10,7 +10,7 @@ const deepEqualsArray = <T>(firstValue: T[], secondValue: T[], precision?: Integ
 const deepEqualsObject = <T extends Record<string, unknown>>(
     firstValue: T,
     secondValue: T,
-    precision?: Integer,
+    precision?: Precision,
 ): boolean => {
     let equal
 
@@ -28,7 +28,7 @@ const deepEqualsObject = <T extends Record<string, unknown>>(
     return equal
 }
 
-const deepEquals = <T>(firstValue: T, secondValue: T, precision?: Integer): boolean => {
+const deepEquals = <T>(firstValue: T, secondValue: T, precision?: Precision): boolean => {
     let equal = false
 
     if (firstValue === secondValue) {

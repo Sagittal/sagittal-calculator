@@ -55,7 +55,7 @@ export {
     JI_NOTATION_LEVELS,
     JI_NOTATION_LEVELS_BOUNDS,
     JI_NOTATION_LEVELS_SYMBOL_CLASS_IDS,
-    MAX_SYMBOL_CLASS_CENTS,
+    MAX_SYMBOL_CLASS_POSITION,
     Mina,
     Tina,
     TINA,
@@ -74,4 +74,4 @@ export {
     computeSecondaryCommaZone,
     BoundType,
 } from "./notations"
-export { APOTOME, APOTOME_CENTS, HALF_APOTOME } from "./constants"
+export { APOTOME, HALF_APOTOME } from "./constants"

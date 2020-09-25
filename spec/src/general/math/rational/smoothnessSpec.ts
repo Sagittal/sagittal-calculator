@@ -1,7 +1,6 @@
 import {
     computeIsSmoothRational,
     computeRationalNumSmoothness,
-    Decimal,
     Integer,
     Monzo,
     Ratio,

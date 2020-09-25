@@ -19,5 +19,5 @@ export {
 export { CENTS_PER_OCTAVE } from "./constants"
 export { computeDecimalFromCents } from "./decimalFromCents"
 export { equalPitches, pitchIsHigher, pitchIsLower, pitchIsHigherOrEqual, pitchIsLowerOrEqual } from "./pitchComparison"
-export { Cents, CentsPosition, Zone, Pitch } from "./types"
+export { Cents, PotentiallyNonJiPitch, Zone, Pitch } from "./types"
 export { computeIsSubPitch, computeIsUnisonPitch, computeSuperPitch } from "./pitchDirection"

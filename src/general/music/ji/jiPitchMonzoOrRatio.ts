@@ -7,6 +7,7 @@ import {
 } from "../../math"
 import { JiPitch } from "./types"
 
+// TODO: for all these pitch methods that become aliases for nums, should we just have one file that contains them all?
 const computeMonzoFromJiPitch = <T extends RationalNumTypeParameters>(jiPitch: JiPitch<T>): Monzo<T> =>
     computeMonzoFromRationalNum(jiPitch)
 

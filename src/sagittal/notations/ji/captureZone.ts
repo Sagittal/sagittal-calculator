@@ -1,4 +1,4 @@
-import { computeCentsFromPitch, Id, ioSettings, Max, Maybe, Min, Pitch, Zone } from "../../../general"
+import { Id, ioSettings, Max, MAX_JAVASCRIPT_PRECISION, Maybe, Min, Pitch, pitchIsHigher, Zone } from "../../../general"
 import { formatSymbolClass } from "../../io"
 import { getPrimaryComma } from "../primaryComma"
 import { SagittalComma, SymbolClass } from "../types"
@@ -27,13 +27,15 @@ const computeCaptureZone = (
 
     const indexOfBoundJustAboveSymbolAtThisLevel = jiNotationLevelBounds
         .findIndex((jiNotationBound: JiNotationBound): boolean => {
-            return jiNotationBound.cents > computeCentsFromPitch(primaryComma)
+            // TODO: okay what's the real deal...
+            //  do I actually want it to always be max precision, but then in *test* be tolerant?
+            return pitchIsHigher(jiNotationBound, primaryComma, MAX_JAVASCRIPT_PRECISION)
         })
     const indexOfJiNotationBoundJustBelowSymbolClassAtThisLevel = indexOfBoundJustAboveSymbolAtThisLevel - 1
 
     const lowerBound =
         jiNotationLevelBounds[ indexOfJiNotationBoundJustBelowSymbolClassAtThisLevel ] as Pitch as Min<Pitch>
-        || ABSOLUTE_LOWEST_BOUND
+        || ABSOLUTE_LOWEST_BOUND // TODO: can probably improve this somehow
     const upperBound =
         jiNotationLevelBounds[ indexOfBoundJustAboveSymbolAtThisLevel ] as Pitch as Max<Pitch>
 

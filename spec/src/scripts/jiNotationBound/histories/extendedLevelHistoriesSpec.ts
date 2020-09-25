@@ -1,4 +1,4 @@
-import { Cents, Name } from "../../../../../src/general"
+import { Cents, Decimal, Name } from "../../../../../src/general"
 import { BoundType, JiNotationBound, JiNotationLevel } from "../../../../../src/sagittal/notations/ji"
 import { BoundEvent, BoundHistory, BoundPosition } from "../../../../../src/scripts/jiNotationBound/histories"
 import { computeExtendedJiNotationLevelBoundHistories } from "../../../../../src/scripts/jiNotationBound/histories/extendedLevelHistories"
@@ -25,7 +25,7 @@ describe("computeExtendedJiNotationLevelBoundHistories", (): void => {
         const jiNotationLevel = JiNotationLevel.HIGH
         const jiNotationBound: JiNotationBound = {
             ...jiNotationBoundFixture,
-            cents: 8.100000 as Cents,
+            decimal: 1.00468970588 as Decimal, // 8.100000¢
             jiNotationLevels: [JiNotationLevel.MEDIUM, JiNotationLevel.HIGH, JiNotationLevel.ULTRA],
         }
 

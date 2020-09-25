@@ -1,6 +1,5 @@
 import { program } from "commander"
-import { Abs, Exponent, Integer, Max, Monzo, Prime, Ratio } from "../../../../../src/general/math"
-import { Cents } from "../../../../../src/general/music"
+import { Abs, Decimal, Exponent, Integer, Max, Monzo, Prime, Ratio } from "../../../../../src/general/math"
 import { ApotomeSlope, JiPitchAnalysis, N2D3P9 } from "../../../../../src/sagittal/ji"
 import { parseJiPitch, parseNotatingCommasSettings } from "../../../../../src/scripts/jiPitch/analyzeJiPitch"
 import { DEFAULT_FIND_COMMAS_SETTINGS } from "../../../../../src/scripts/jiPitch/findCommas"
@@ -13,7 +12,7 @@ describe("parseNotatingCommasSettings", (): void => {
     const n2d3p9 = DEFAULT_FIND_COMMAS_SETTINGS.maxN2D3P9 + 100 as N2D3P9
     const ate = DEFAULT_FIND_COMMAS_SETTINGS.maxAte + 10 as Abs<Integer & Exponent<3 & Prime>>
     const monzo = [0, ate] as Monzo
-    const cents = 47548.9 as Cents
+    const decimal = 847300834270 as Decimal             // 47548.9¢
     const apotomeSlope = -2902.759003 as ApotomeSlope
     const jiPitchAnalysis: JiPitchAnalysis = {
         ...jiPitchAnalysisFixture,
@@ -22,7 +21,7 @@ describe("parseNotatingCommasSettings", (): void => {
             n2d3p9,
         },
         monzo,
-        cents,
+        decimal,
     }
 
     it("adjusts the max N2D3P9 if the JI pitch has greater than the current settings", (): void => {
@@ -95,7 +94,7 @@ describe("parseJiPitch", (): void => {
 
             expect((): void => {
                 parseJiPitch()
-            }).toThrowError("Pitch was given in cents. This is not yet supported for parsing JI pitches.")
+            }).toThrowError("JI pitches must be given as monzos, ratios, or integers.")
         })
     })
 

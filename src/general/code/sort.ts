@@ -1,15 +1,13 @@
-import { Integer } from "../math"
+import { ACCURACY_THRESHOLD } from "./constants"
 import { dig } from "./dig"
 import { isCloseTo } from "./isCloseTo"
-import { isNumber, isUndefined } from "./typeGuards"
-import { Maybe, Sortable, SortOptions } from "./types"
+import { isNumber } from "./typeGuards"
+import { Precision, Sortable, SortOptions } from "./types"
 
-const isNotClose = (a: number | string, b: number | string, precision: Maybe<Integer>): boolean => {
-    return isUndefined(precision) ?
-        true :
-        isNumber(a) && isNumber(b) ?
-            !isCloseTo(a, b)
-            : true
+const isNotClose = (a: number | string, b: number | string, precision: Precision = ACCURACY_THRESHOLD): boolean => {
+    return isNumber(a) && isNumber(b) ?
+        !isCloseTo(a, b, precision)
+        : true
 }
 
 const sort = <T>(array: T[], { by, descending, precision }: SortOptions = {}): T[] => {

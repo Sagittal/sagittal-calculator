@@ -1,4 +1,4 @@
-import { Io, Px, subtract } from "../../../../general"
+import { computeCentsFromPitch, Io, Px, subtract } from "../../../../general"
 import { JiNotationLevel, SymbolLongAscii, unicodeFromAscii } from "../../../../sagittal"
 import { CommaMean, JI_NOTATION_LEVELS_COMMA_MEANS } from "../../histories"
 import { JI_NOTATION_LEVEL_CENTERS } from "./levelHeights"
@@ -23,7 +23,8 @@ const visualizeJiNotationLevelCommaMeans = (): Io[] => {
         const bottomY: Px = subtract(centerY, HALF_TICK_SIZE)
 
         jiNotationLevelCommaMeans.forEach((jiNotationLevelCommaMean: CommaMean): void => {
-            const { cents, name } = jiNotationLevelCommaMean
+            const { name } = jiNotationLevelCommaMean
+            const cents = computeCentsFromPitch(jiNotationLevelCommaMean)
 
             const formattedName = name?.split(" ")
                 .map((ascii: string): string => unicodeFromAscii(ascii as SymbolLongAscii)).join("   ") || ""

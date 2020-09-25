@@ -1,20 +1,32 @@
-import { abs, Integer, round } from "../math"
+import { abs, negative, round } from "../math"
 import { ACCURACY_THRESHOLD } from "./constants"
 import { isUndefined } from "./typeGuards"
-import { Maybe } from "./types"
+import { Maybe, Precision } from "./types"
 
 const isCloseTo = (
-    valueOne: Maybe<number>,
-    valueTwo: Maybe<number>,
-    accuracyThreshold: Integer = ACCURACY_THRESHOLD,
+    actual: Maybe<number>,
+    expected: Maybe<number>,
+    precision: Precision = ACCURACY_THRESHOLD,
 ): boolean => {
-    if (isUndefined(valueOne) || isUndefined(valueTwo)) {
-        return isUndefined(valueOne) && isUndefined(valueTwo)
+    if (actual === Infinity && expected === Infinity) {
+        return true
     }
 
-    const difference = valueOne - valueTwo
+    if (isUndefined(actual) && isUndefined(expected)) {
+        return true
+    }
+    if (isUndefined(actual)) {
+        return false
+    }
+    if (isUndefined(expected)) {
+        return false
+    }
 
-    return abs(round(difference, accuracyThreshold)) === 0
+    const pow: number = 10 ** (precision + 1)
+    const delta = abs(actual - expected)
+    const maxDelta: number = 10 ** negative(precision) / 2
+
+    return round(delta * pow) / pow <= maxDelta
 }
 
 export {

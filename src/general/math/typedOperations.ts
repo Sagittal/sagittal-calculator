@@ -1,4 +1,4 @@
-import { isUndefined } from "../code"
+import { isUndefined, Precision } from "../code"
 import { Addend, Count, Divisor, Multiplier, Product, Subtrahend, Sum } from "../types"
 import {
     ADDITIVE_IDENTITY,
@@ -30,7 +30,7 @@ const add = <T extends number>(augend: T, addend: T | Addend<T>): T =>
 const subtract = <T extends number>(minuend: T, subtrahend: T | Subtrahend<T>): T =>
     minuend - subtrahend as T               // difference
 
-const multiply = <T extends number>(multiplicand: T, multiplier: Multiplier<T>): T => {
+const multiply = <T extends number>(multiplicand: T, multiplier: T | Multiplier<T>): T => {
     return multiplicand * multiplier as T   // product
 }
 
@@ -47,7 +47,7 @@ const reciprocal = <T extends number>(number: T): Omit<T, "_IntegerBrand"> =>
 const negative = <T extends number>(number: T): T =>
     number === 0 ? 0 as T : -number as T
 
-const round = <T extends number>(number: T, precision?: Integer): T => {
+const round = <T extends number>(number: T, precision?: Precision): T => {
     if (isUndefined(precision)) {
         return Math.round(number) as T & Integer
     }

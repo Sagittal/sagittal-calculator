@@ -71,6 +71,7 @@ export {
     computeRatioFromRationalDecimal,
     computeLowestTermsRatio,
     isInteger,
+    RationalNum,
 } from "./rational"
 export { computeDistributions } from "./distributions"
 export { dividesEvenly } from "./dividesEvenly"

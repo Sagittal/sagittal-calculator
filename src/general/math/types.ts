@@ -1,9 +1,4 @@
-import {
-    MaybeIntegerBrand,
-    MonzoNotDefaultingToRational,
-    RationalNum,
-    RatioNotDefaultingToRational,
-} from "./rational"
+import { MaybeIntegerBrand, MonzoNotDefaultingToRational, RationalNum, RatioNotDefaultingToRational } from "./rational"
 
 // TODO: Dec instead instead of Decimal? hmm... maybe not.
 //  because we're not abbreviating Number to Num only bc we can but because we kind of have to.
@@ -120,13 +115,16 @@ type PotentiallyIrrationalNumByRatio<T> = {
     monzo?: MonzoNotDefaultingToRational<T>,
     ratio: RatioNotDefaultingToRational<T>,
 }
+// TODO: whoa... what if we forced irrational nums to have a decimal representation?
+//  aka set it to only PotentiallyIrrationalNumByDecimal? well that seems to come with its own bucket of problems
+//  let's save that to later
 type PotentiallyIrrationalNum<T extends NumTypeParameters = {}> =
     PotentiallyIrrationalNumByDecimal<T & { potentiallyIrrational: true }> |
     PotentiallyIrrationalNumByMonzo<T & { potentiallyIrrational: true }> |
     PotentiallyIrrationalNumByRatio<T & { potentiallyIrrational: true }>
 
 type Num<T extends NumTypeParameters = {}> =
-    RationalNum<T> | PotentiallyIrrationalNum<T>
+    RationalNum<T & { potentiallyIrrational: false }> | PotentiallyIrrationalNum<T>
 
 export {
     Combination,

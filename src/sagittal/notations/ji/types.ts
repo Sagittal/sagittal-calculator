@@ -1,4 +1,4 @@
-import { Cents, CentsPosition, Id } from "../../../general"
+import { Cents, Id, PotentiallyNonJiPitch } from "../../../general"
 
 enum BoundType {
     INA_MIDPOINT = "inaMidpoint",
@@ -22,13 +22,12 @@ enum JiNotationLevel {
     INSANE = "insane",          // corresponds closely with Magrathean symbol subset
 }
 
-// TODO: maybe remove this recently added "Cents" field...
-//  wait.. what's the difference between this and a BoundPosition?
-//  should this not just extend that?
-type JiNotationBound = CentsPosition & {
+// TODO: wait.. what's the difference between this and a BoundPosition?
+//  should this not just extend that? okay, if you do that, you'll force each one to have a name too.
+//  which I think is cool. but you don't have to worry about that yet.
+type JiNotationBound = PotentiallyNonJiPitch & {
     id: Id<JiNotationBound>,
     jiNotationLevels: JiNotationLevel[],
-    cents: Cents,
     boundType: BoundType,
 }
 

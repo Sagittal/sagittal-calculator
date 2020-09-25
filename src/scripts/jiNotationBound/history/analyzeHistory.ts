@@ -1,4 +1,4 @@
-import { Cents, isCloseTo, Multiplier } from "../../../general"
+import { Cents, computeCentsFromPitch, isCloseTo, Multiplier } from "../../../general"
 import { JiNotationBound, Tina, TINA } from "../../../sagittal"
 import { BoundHistory } from "../histories"
 import { analyzeBoundEvents } from "./events"
@@ -17,14 +17,16 @@ const analyzeHistory = (
 ): BoundHistoryAnalysis => {
     const position = computeBoundHistoryPosition(boundHistory)
 
-    const boundEventAnalyses = analyzeBoundEvents(boundHistory, jiNotationBound.cents)
+    const cents = computeCentsFromPitch(jiNotationBound)
+
+    const boundEventAnalyses = analyzeBoundEvents(boundHistory, cents)
     const rank = computeRank(boundEventAnalyses)
     const score = computeScore(boundEventAnalyses)
     const exact = computeExact(boundEventAnalyses)
     const totalDistance = computeBoundHistoryTotalDistance(boundEventAnalyses)
     const totalInaDistance = computeBoundHistoryTotalInaDistance(boundEventAnalyses)
 
-    const positionError = position - jiNotationBound.cents
+    const positionError = position - cents
     const possible = isCloseTo(positionError, 0)
 
     let tinaError = positionError / TINA as Multiplier<Tina>

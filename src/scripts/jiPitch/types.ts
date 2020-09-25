@@ -7,7 +7,8 @@ interface JiPitchScriptGroupSettings {
     excludedFields: JiPitchScriptGroupField[],
 }
 
-// TODO: should use these for sorting too... but not sorting the rows, sorting the Columns
+// TODO: CUSTOM COLUMN SORTING
+//  should use these for sorting too... but not sorting the rows, sorting the Columns
 //  and you need a map from JiPitchField to KeyPath, so that you can even sort and exclude by 2,3-free class name
 //  (I don't think you actually can at the moment)
 //  and perhaps sortBy should be sortCommasBy,

@@ -1,4 +1,4 @@
-import { Maybe } from "../../../../general"
+import { computeCentsFromPitch, Maybe } from "../../../../general"
 import {
     getMinaName,
     getRepresentativeSymbol,
@@ -18,7 +18,8 @@ import {
 } from "./types"
 
 const extractJiNotationBoundIdentifiers = (jiNotationBound: JiNotationBound): JiNotationBoundIdentifiers => {
-    const { cents, id } = jiNotationBound
+    const { id } = jiNotationBound
+    const cents = computeCentsFromPitch(jiNotationBound)
 
     const jiNotationBoundIdWithBoundedSymbolClassIdWithDistancesPairsByJiNotationLevel =
         JI_NOTATION_LEVEL_BOUNDED_SYMBOL_CLASSES.find(

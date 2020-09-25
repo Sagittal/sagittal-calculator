@@ -1,9 +1,9 @@
-import { computeCentsFromPitch, Monzo, Ratio } from "../../../../src/general"
+import { computeCentsFromPitch, Monzo, Pitch, Ratio } from "../../../../src/general"
 import { Cents } from "../../../../src/general/music"
 
 describe("computeCentsFromPitch", (): void => {
     it("returns the cents of a pitch with a monzo", (): void => {
-        const pitch = { monzo: [-1, 2, 0, -2, 1] as Monzo }
+        const pitch: Pitch = { monzo: [-1, 2, 0, -2, 1] as Monzo }
 
         const actual = computeCentsFromPitch(pitch)
 
@@ -12,7 +12,7 @@ describe("computeCentsFromPitch", (): void => {
     })
 
     it("works for pitches with monzos with really big 2 exponents", (): void => {
-        const pitch = { cents: 4.499913 as Cents, monzo: [158.5, -100] as Monzo<{ potentiallyIrrational: true }> }
+        const pitch: Pitch = { monzo: [158.5, -100] as Monzo<{ potentiallyIrrational: true }> }
 
         const actual = computeCentsFromPitch(pitch)
 
@@ -21,7 +21,7 @@ describe("computeCentsFromPitch", (): void => {
     })
 
     it("works for pitches with monzos that are greater than an octave", (): void => {
-        const pitch = { monzo: [0, 1] as Monzo }
+        const pitch: Pitch = { monzo: [0, 1] as Monzo }
 
         const actual = computeCentsFromPitch(pitch)
 
@@ -30,7 +30,7 @@ describe("computeCentsFromPitch", (): void => {
     })
 
     it("another example, negative", (): void => {
-        const pitch = { monzo: [2, 1, 0, 0, 0, -1] as Monzo } // 12/13
+        const pitch: Pitch = { monzo: [2, 1, 0, 0, 0, -1] as Monzo } // 12/13
 
         const actual = computeCentsFromPitch(pitch)
 
@@ -39,7 +39,7 @@ describe("computeCentsFromPitch", (): void => {
     })
 
     it("gives the cents value of a ratio", (): void => {
-        const pitch = { ratio: [3, 2] as Ratio }
+        const pitch: Pitch = { ratio: [3, 2] as Ratio }
 
         const actual = computeCentsFromPitch(pitch)
 

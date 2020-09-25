@@ -7,8 +7,7 @@ import { JiNotationBoundIdWithBoundedSymbolClassIdsWithDistancesPairsByJiNotatio
 describe("computeJiNotationLevelBoundedSymbolClassIdsWithDistances", (): void => {
     it("returns, given a JI notation bound, for each of its JI levels, an array of the pair of symbols it bounds at that JI notation level, as well as their distances and ina-distances from the bound", (): void => {
         const jiNotationBound: JiNotationBound = {
-            decimal: 1.01434739432 as Decimal,
-            cents: 24.66219847111080 as Cents,
+            decimal: 1.01434739432 as Decimal,  // 24.66219847111080¢
             jiNotationLevels: [JiNotationLevel.MEDIUM, JiNotationLevel.EXTREME, JiNotationLevel.INSANE],
             id: 54 as Id<JiNotationBound>,
             boundType: BoundType.INA_MIDPOINT,
@@ -60,8 +59,7 @@ describe("computeJiNotationLevelBoundedSymbolClassIdsWithDistances", (): void =>
 
     it("works for the final JI notation bound", (): void => {
         const jiNotationBound: JiNotationBound = {
-            decimal: 1.04040393192 as Decimal,
-            cents: 68.572508 as Cents,
+            decimal: 1.04040393192 as Decimal,  // 68.572508¢
             jiNotationLevels: [
                 JiNotationLevel.MEDIUM,
                 JiNotationLevel.HIGH,
@@ -123,8 +121,7 @@ describe("computeJiNotationLevelBoundedSymbolClassIdsWithDistances", (): void =>
 
     it("works for the first JI notation bound", (): void => {
         const jiNotationBound: JiNotationBound = {
-            decimal: 1.00012176335 as Decimal,
-            cents: 0.210788021120605 as Cents,
+            decimal: 1.00012176335 as Decimal,  // 0.210788021120605¢
             jiNotationLevels: [JiNotationLevel.EXTREME, JiNotationLevel.INSANE],
             id: 55 as Id<JiNotationBound>,
             boundType: BoundType.INA_MIDPOINT,

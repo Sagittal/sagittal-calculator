@@ -1,9 +1,11 @@
 import {
     compute23FreeClass,
     computeCentsFromPitch,
+    computeDecimalFromNum,
     computeMonzoFromJiPitch,
     computeRatioFromJiPitch,
     JiPitch,
+    Num,
 } from "../../../general"
 import { analyze23FreeClass } from "../twoThreeFreeClass"
 import { computeAas } from "./aas"
@@ -14,6 +16,10 @@ import { JiPitchAnalysis } from "./types"
 const analyzeJiPitch = (jiPitch: JiPitch): JiPitchAnalysis => {
     const monzo = computeMonzoFromJiPitch(jiPitch)
     const ratio = computeRatioFromJiPitch(jiPitch)
+    // TODO: this is weird that we dont have the thing for pitch,
+    //  and also why do those have to be "ji pitch" just above
+    //  but hopefully it will be resolved after doing a lot of clean up now that Pitches are basically the same as Nums
+    const decimal = computeDecimalFromNum(jiPitch as Num)
 
     const apotomeSlope = computeApotomeSlope(jiPitch)
     const cents = computeCentsFromPitch(jiPitch)
@@ -29,6 +35,7 @@ const analyzeJiPitch = (jiPitch: JiPitch): JiPitchAnalysis => {
         monzo,
         ratio,
         cents,
+        decimal,
         twoThreeFreeClassAnalysis,
         apotomeSlope,
         aas,

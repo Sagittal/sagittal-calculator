@@ -1,4 +1,4 @@
-import { Abs, Cents, Count, Id, Multiplier, Name, Sum } from "../../../../../src/general"
+import { Abs, Cents, Count, Decimal, Id, Multiplier, Name, Sum } from "../../../../../src/general"
 import { BoundType, Ina, JiNotationBound, JiNotationLevel, Tina } from "../../../../../src/sagittal/notations/ji"
 import { analyzeJiNotationBound } from "../../../../../src/scripts/jiNotationBound/bound"
 import * as jiNotationLevels from "../../../../../src/scripts/jiNotationBound/bound/levels"
@@ -55,7 +55,7 @@ describe("analyzeJiNotationBound", (): void => {
         bestHistory,
     ]
     const jiNotationBound: JiNotationBound = {
-        cents: 23.1164196495597 as Cents,
+        decimal: 1.01344211122 as Decimal, // 23.1164196495597¢
         jiNotationLevels: [JiNotationLevel.ULTRA, JiNotationLevel.EXTREME, JiNotationLevel.INSANE],
         id: 47 as Id<JiNotationBound>,
         boundType: BoundType.INA_MIDPOINT,
@@ -88,7 +88,7 @@ describe("analyzeJiNotationBound", (): void => {
             cents: 23.116419649559468 as Cents,
             rank: RANKS[ BoundType.INA_MIDPOINT ],
             distance: 0.03358035044053054 as Abs<Cents>,
-            inaDistance: 0.238962941978454 as Multiplier<Ina>,
+            inaDistance: 0.23896294197845397 as Multiplier<Ina>,
             exact: true,
         },
     ]

@@ -1,7 +1,9 @@
 export { computeCardinality } from "./cardinality"
 export { deepClone, shallowClone } from "./clone"
 export { concat } from "./concat"
-export { ACCURACY_THRESHOLD, ZERO_ONE_INDEX_DIFF, MAX_JAVASCRIPT_INTEGER_VALUE, NOT_FOUND } from "./constants"
+export {
+    ACCURACY_THRESHOLD, ZERO_ONE_INDEX_DIFF, MAX_JAVASCRIPT_INTEGER_VALUE, NOT_FOUND, MAX_JAVASCRIPT_PRECISION,
+} from "./constants"
 export { computeDeepDistinct } from "./deepDistinct"
 export { deepEquals } from "./deepEquals"
 export { dig } from "./dig"
@@ -22,4 +24,6 @@ export { increment, decrement } from "./crement"
 export { now } from "./typedOperations"
 export { setAt } from "./setAt"
 export { isNumber, isUndefined, isArray } from "./typeGuards"
-export { ExtensionBaseType, Maybe, KeyPath, Range, Rank, Ranked, RankStrategy, Obj, RecordKey } from "./types"
+export {
+    ExtensionBaseType, Maybe, KeyPath, Range, Rank, Ranked, RankStrategy, Obj, RecordKey, Precision,
+} from "./types"

@@ -1,4 +1,4 @@
-import { Io, Px } from "../../../../general"
+import { computeCentsFromPitch, Io, Px } from "../../../../general"
 import { JiNotationLevel, SizeCategoryBound } from "../../../../sagittal"
 import { JI_NOTATION_LEVELS_SIZE_CATEGORY_BOUNDS } from "../../histories"
 import { JI_NOTATION_LEVEL_BOTTOMS, JI_NOTATION_LEVEL_TOPS } from "./levelHeights"
@@ -13,7 +13,8 @@ const visualizeSizeCategoryBounds = (): Io[] => {
     const sizeCategoryBoundElements: Io[] = []
 
     sizeCategoryBounds.forEach((sizeCategoryBound: SizeCategoryBound): void => {
-        const { name, cents } = sizeCategoryBound
+        const { name } = sizeCategoryBound
+        const cents = computeCentsFromPitch(sizeCategoryBound)
 
         const topEdgeY: Px = JI_NOTATION_LEVEL_TOPS[ JiNotationLevel.INSANE ]
         const bottomEdgeY: Px = JI_NOTATION_LEVEL_BOTTOMS[ JiNotationLevel.MEDIUM ]

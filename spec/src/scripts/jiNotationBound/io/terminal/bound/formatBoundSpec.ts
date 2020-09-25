@@ -1,4 +1,4 @@
-import { Cents, Id, NEWLINE } from "../../../../../../../src/general"
+import { Decimal, Id, NEWLINE } from "../../../../../../../src/general"
 import { BoundType, JiNotationBound } from "../../../../../../../src/sagittal/notations/ji"
 import { JiNotationBoundAnalysis } from "../../../../../../../src/scripts/jiNotationBound/bound"
 import { formatJiNotationBound } from "../../../../../../../src/scripts/jiNotationBound/io"
@@ -12,7 +12,7 @@ describe("formatJiNotationBound", (): void => {
     it("returns a string which is a multi-line, properly indented rendition of the JI notation bound analysis, as well as identifying information for the JI notation bound", (): void => {
         const jiNotationBound: JiNotationBound = {
             ...jiNotationBoundFixture,
-            cents: 5.447635 as Cents,
+            decimal: 1.00315163335 as Decimal,
             id: 10 as Id<JiNotationBound>,
         }
         const jiNotationBoundAnalysis: JiNotationBoundAnalysis = {
@@ -26,14 +26,14 @@ describe("formatJiNotationBound", (): void => {
             `{`,
             `    "extremeLevelLesserBoundedSymbolClass": ",,|(",`,
             `    "extremeLevelGreaterBoundedSymbolClass": ",|(",`,
-            `    "cents": 5.447635,`,
+            `    "cents": 5.447634993726027,`,
             `    "boundedSymbolClassAnalyses": {`,
             `        "id": 10,`,
             `        "extreme": [`,
             `            {`,
             `                "id": 10,`,
-            `                "distance": 0.20389718131741752,`,
-            `                "inaDistance": 0.417891900562867,`,
+            `                "distance": 0.20389718131749213,`,
+            `                "inaDistance": 0.4178919005630199,`,
             `                "elements": [`,
             `                    ",,|",`,
             `                    "|("`,
@@ -58,6 +58,7 @@ describe("formatJiNotationBound", (): void => {
             `                        351`,
             `                    ],`,
             `                    "cents": 4.925277999283972,`,
+            `                    "decimal": 1.002849002849003,`,
             `                    "twoThreeFreeClassAnalysis": {`,
             `                        "monzo": [`,
             `                            0,`,
@@ -80,8 +81,8 @@ describe("formatJiNotationBound", (): void => {
             `            },`,
             `            {`,
             `                "id": 11,`,
-            `                "distance": 0.3184601112166945,`,
-            `                "inaDistance": 0.6526912254006633,`,
+            `                "distance": 0.3184601112166199,`,
+            `                "inaDistance": 0.6526912254005103,`,
             `                "elements": [`,
             `                    ",|",`,
             `                    "|("`,
@@ -111,6 +112,7 @@ describe("formatJiNotationBound", (): void => {
             `                        22528`,
             `                    ],`,
             `                    "cents": 5.447635291818084,`,
+            `                    "decimal": 1.0031516335227273,`,
             `                    "twoThreeFreeClassAnalysis": {`,
             `                        "monzo": [`,
             `                            0,`,
@@ -140,8 +142,8 @@ describe("formatJiNotationBound", (): void => {
             `        "insane": [`,
             `            {`,
             `                "id": 10,`,
-            `                "distance": 0.20389718131741752,`,
-            `                "inaDistance": 1.4509637234135597,`,
+            `                "distance": 0.20389718131749213,`,
+            `                "inaDistance": 1.4509637234140904,`,
             `                "elements": [`,
             `                    ",,|",`,
             `                    "|("`,
@@ -166,6 +168,7 @@ describe("formatJiNotationBound", (): void => {
             `                        351`,
             `                    ],`,
             `                    "cents": 4.925277999283972,`,
+            `                    "decimal": 1.002849002849003,`,
             `                    "twoThreeFreeClassAnalysis": {`,
             `                        "monzo": [`,
             `                            0,`,
@@ -188,8 +191,8 @@ describe("formatJiNotationBound", (): void => {
             `            },`,
             `            {`,
             `                "id": 11,`,
-            `                "distance": 0.3184601112166945,`,
-            `                "inaDistance": 2.2662111645885687,`,
+            `                "distance": 0.3184601112166199,`,
+            `                "inaDistance": 2.2662111645880376,`,
             `                "elements": [`,
             `                    ",|",`,
             `                    "|("`,
@@ -219,6 +222,7 @@ describe("formatJiNotationBound", (): void => {
             `                        22528`,
             `                    ],`,
             `                    "cents": 5.447635291818084,`,
+            `                    "decimal": 1.0031516335227273,`,
             `                    "twoThreeFreeClassAnalysis": {`,
             `                        "monzo": [`,
             `                            0,`,

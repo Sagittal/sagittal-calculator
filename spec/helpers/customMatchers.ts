@@ -1,13 +1,14 @@
 // tslint:disable max-line-length
 
-import { ACCURACY_THRESHOLD, deepEquals, Integer, isCloseTo, isUndefined, stringify } from "../../src/general"
+import { ACCURACY_THRESHOLD, deepEquals, isCloseTo, isUndefined, stringify } from "../../src/general"
+import { Precision } from "../../src/general/code/types"
 import CustomEqualityTester = jasmine.CustomEqualityTester
 import CustomMatcher = jasmine.CustomMatcher
 import CustomMatcherFactories = jasmine.CustomMatcherFactories
 import CustomMatcherResult = jasmine.CustomMatcherResult
 import MatchersUtil = jasmine.MatchersUtil
 
-const precisionMessage = (precision: Integer): string =>
+const precisionMessage = (precision: Precision): string =>
     isUndefined(precision) ? "" : `, with precision ${precision}`
 
 const failWith = (message: string): CustomMatcherResult => ({
@@ -32,7 +33,7 @@ const assert = (condition: boolean, message: string): void => {
     throw message
 }
 
-const testIsCloseTo = <T extends number>(actual: T, expected: T, precision: Integer, negate?: boolean, message?: string): void => {
+const testIsCloseTo = <T extends number>(actual: T, expected: T, precision: Precision, negate?: boolean, message?: string): void => {
     const isClose: boolean = isCloseTo(actual, expected, precision)
 
     if (negate) {
@@ -59,7 +60,7 @@ const arraysHaveSameContents = <T>(arrayOne: T[], arrayTwo: T[]): boolean => {
             deepEquals(elementOne, elementTwo)))
 }
 
-const arraysAreCloseUpThroughExpected = <T extends number>(expected: T[], actual: T[], precision: Integer, negate?: boolean, message?: string): void => {
+const arraysAreCloseUpThroughExpected = <T extends number>(expected: T[], actual: T[], precision: Precision, negate?: boolean, message?: string): void => {
     expected.forEach((expectedElement: T, index: number): void => {
         const actualElement: T = actual[ index ]
 
@@ -67,7 +68,7 @@ const arraysAreCloseUpThroughExpected = <T extends number>(expected: T[], actual
     })
 }
 
-const eachExpectedElementIsCloseToSomeActualElement = <T>(expectedElements: T[], actual: T[], precision: Integer, message?: string): void => {
+const eachExpectedElementIsCloseToSomeActualElement = <T>(expectedElements: T[], actual: T[], precision: Precision, message?: string): void => {
     expectedElements.forEach((expectedElement: T): void => {
         assert(
             actual.some((actualElement: T): boolean => {
@@ -102,13 +103,13 @@ const eachExpectedElementHasSameContentsAsSomeActualElement = <T>(expectedElemen
 
 const customMatchers: CustomMatcherFactories = {
     toBeCloseToTyped: (util: MatchersUtil, customEqualityTesters: readonly CustomEqualityTester[]): CustomMatcher => ({
-        compare: <T extends number>(actual: T, expected: T, precision: Integer = ACCURACY_THRESHOLD, negate?: boolean, message?: string): CustomMatcherResult =>
+        compare: <T extends number>(actual: T, expected: T, precision: Precision = ACCURACY_THRESHOLD, negate?: boolean, message?: string): CustomMatcherResult =>
             doAssertions((): void => {
                 testIsCloseTo(actual, expected, precision, negate, message)
             }),
     }),
     toBeCloseToArray: (util: MatchersUtil, customEqualityTesters: readonly CustomEqualityTester[]): CustomMatcher => ({
-        compare: <T extends number>(actual: T[], expected: T[], precision: Integer = ACCURACY_THRESHOLD, negate?: boolean, message?: string): CustomMatcherResult =>
+        compare: <T extends number>(actual: T[], expected: T[], precision: Precision = ACCURACY_THRESHOLD, negate?: boolean, message?: string): CustomMatcherResult =>
             doAssertions((): void => {
                 assert(
                     actual.length === expected.length,
@@ -119,23 +120,23 @@ const customMatchers: CustomMatcherFactories = {
             }),
     }),
     toBeArrayWithDeepCloseContents: (util: MatchersUtil, customEqualityTesters: readonly CustomEqualityTester[]): CustomMatcher => ({
-        compare: <T>(actual: T[], expected: T[], precision: Integer = ACCURACY_THRESHOLD, message?: string): CustomMatcherResult =>
+        compare: <T>(actual: T[], expected: T[], precision: Precision = ACCURACY_THRESHOLD, message?: string): CustomMatcherResult =>
             doAssertions((): void => {
                 assert(actual.length === expected.length, `Arrays did not have the same length (expected: ${expected.length}; actual: ${actual.length}), so there is no way they could have the same members (closely).`)
                 eachExpectedElementIsCloseToSomeActualElement(expected, actual, precision, message)
             }),
     }),
     toBeCloseToObject: (util: MatchersUtil, customEqualityTesters: readonly CustomEqualityTester[]): CustomMatcher => ({
-        compare: <T extends number>(actual: T[], expected: T[], precision: Integer = ACCURACY_THRESHOLD, negate?: boolean, message?: string): CustomMatcherResult =>
+        compare: <T extends number>(actual: T[], expected: T[], precision: Precision = ACCURACY_THRESHOLD, negate?: boolean, message?: string): CustomMatcherResult =>
             doAssertions((): void => {
                 assert(
                     deepEquals(actual, expected, precision),
-                    message || `Expected ${stringify(actual, { multiline: true })} to deep equal ${stringify(expected, { multiline: true })} with numbers within precision ${precision}.`,
+                    message || `Expected ${stringify(actual, { multiline: true })} to deep equal ${stringify(expected, { multiline: true })} with numbers within decimal precision ${precision}.`,
                 )
             }),
     }),
     toBeCloseSoFar: (util: MatchersUtil, customEqualityTesters: readonly CustomEqualityTester[]): CustomMatcher => ({
-        compare: <T extends number>(actual: T[], expected: T[], precision: Integer = ACCURACY_THRESHOLD, negate?: boolean, message?: string): CustomMatcherResult =>
+        compare: <T extends number>(actual: T[], expected: T[], precision: Precision = ACCURACY_THRESHOLD, negate?: boolean, message?: string): CustomMatcherResult =>
             doAssertions((): void => {
                 arraysAreCloseUpThroughExpected(expected, actual, precision, negate, message)
             }),

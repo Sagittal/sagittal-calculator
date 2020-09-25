@@ -57,8 +57,8 @@ const SAGITTAL_COMMAS: SagittalComma[] = [
     { id: 49 as Id<SagittalComma>, monzo: [-20, 5, 4, 1] },
     { id: 50 as Id<SagittalComma>, monzo: [4, -5, -1, 1, 1] },
     { id: 51 as Id<SagittalComma>, monzo: [-8, 3, 3, 0, 0, -1] },
-    { id: 52 as Id<SagittalComma>, monzo: [-13, 7, -1, 0, 0, 0, 0, 1] },
-    { id: 53 as Id<SagittalComma>, monzo: [9, -8, 0, 0, 0, 1] },
+    { id: 52 as Id<SagittalComma>, monzo: [-13, 7, -1, 0, 0, 0, 0, 1] },    // 1.01447753906
+    { id: 53 as Id<SagittalComma>, monzo: [9, -8, 0, 0, 0, 1] },            // 1.01447950008
     { id: 54 as Id<SagittalComma>, monzo: [21, -10, -1, -1] },
     { id: 55 as Id<SagittalComma>, monzo: [-11, 3, 0, 1, 1] },
     { id: 56 as Id<SagittalComma>, monzo: [1, 1, -1, 0, 1, -1] },

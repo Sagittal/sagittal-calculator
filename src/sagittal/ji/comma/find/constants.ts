@@ -1,11 +1,10 @@
-import { Abs, Cents, Copfr, Exponent, Integer, Max, Min, Pitch, Prime, Sopfr } from "../../../../general"
-import { APOTOME_CENTS } from "../../../constants"
+import { Abs, Copfr, Decimal, Exponent, Integer, Max, Min, Pitch, Prime, Sopfr, sqrt } from "../../../../general"
+import { APOTOME_DECIMAL } from "../../../constants"
 import { ApotomeSlope } from "../../pitch"
 import { N2D3P9 } from "../../twoThreeFreeClass"
 
-const DEFAULT_LOWER_BOUND = { cents: 0 as Cents } as Min<Pitch>
-// TODO: this would be better if expressed with the monzo, etc.
-const DEFAULT_UPPER_BOUND = { cents: APOTOME_CENTS / 2 as Cents } as Max<Pitch>                 // 56.8425030289¢
+const DEFAULT_LOWER_BOUND = { decimal: 1 as Decimal } as Min<Pitch>             //  0.0000000000¢
+const DEFAULT_UPPER_BOUND = { decimal: sqrt(APOTOME_DECIMAL) } as Max<Pitch>    // 56.8425030289¢
 const DEFAULT_MAX_ATE = 15 as Max<Abs<Integer & Exponent<3 & Prime>>>
 const DEFAULT_MAX_AAS = 14 as Max<Abs<ApotomeSlope>>
 const DEFAULT_MAX_N2D3P9 = 307 as Max<N2D3P9>

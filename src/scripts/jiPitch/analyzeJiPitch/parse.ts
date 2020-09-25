@@ -1,5 +1,5 @@
 import { program } from "commander"
-import { Abs, Exponent, Integer, Io, isUndefined, JiPitch, Max, Prime } from "../../../general"
+import { Abs, Exponent, Integer, Io, isInteger, isUndefined, JiPitch, Max, Prime } from "../../../general"
 import { ApotomeSlope, computeAas, computeAte, JiPitchAnalysis, N2D3P9, parsePitch } from "../../../sagittal"
 import { FindCommasSettings, parseFindCommasSettings } from "../findCommas"
 
@@ -10,10 +10,10 @@ const parseJiPitch = (): JiPitch => {
     if (jiPitchText) {
         const pitch = parsePitch(jiPitchText)
 
-        if (!isUndefined(pitch.monzo) || !isUndefined(pitch.ratio) || !isUndefined(pitch.decimal)) {
+        if (!isUndefined(pitch.monzo) || !isUndefined(pitch.ratio) || isInteger(pitch.decimal!)) {
             jiPitch = pitch as JiPitch
         } else {
-            throw new Error("Pitch was given in cents. This is not yet supported for parsing JI pitches.")
+            throw new Error("JI pitches must be given as monzos, ratios, or integers.")
         }
 
         // When provided via specific flags, they are pre-parsed (in readOptions.ts).

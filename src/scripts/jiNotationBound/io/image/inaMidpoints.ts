@@ -1,4 +1,4 @@
-import { add, Io, Px, subtract } from "../../../../general"
+import { add, computeCentsFromPitch, Io, Px, subtract } from "../../../../general"
 import { JiNotationLevel } from "../../../../sagittal"
 import { InaMidpoint, INA_MIDPOINTS } from "../../histories"
 import { JI_NOTATION_LEVEL_CENTERS } from "./levelHeights"
@@ -16,7 +16,8 @@ const visualizeInaMidpoints = (): Io[] => {
         const bottomY: Px = add(centerY, HALF_TICK_SIZE)
 
         inaMidpoints.forEach((inaMidpoint: InaMidpoint): void => {
-            const { name, cents } = inaMidpoint
+            const { name } = inaMidpoint
+            const cents = computeCentsFromPitch(inaMidpoint)
 
             const x: Px = computeX(cents)
 

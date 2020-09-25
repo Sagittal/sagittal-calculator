@@ -1,4 +1,4 @@
-import { Cents, Name } from "../../../../../src/general"
+import { Cents, Decimal, Name } from "../../../../../src/general"
 import { BoundType, JiNotationLevel } from "../../../../../src/sagittal/notations/ji"
 import { BoundEvent, BoundHistory, BoundPosition } from "../../../../../src/scripts/jiNotationBound/histories"
 import { computeExtendedHistories } from "../../../../../src/scripts/jiNotationBound/histories/extendedHistories"
@@ -20,15 +20,15 @@ describe("computeExtendedHistories", (): void => {
     })
 
     it("returns an array with potentially many elements: for each bound position of any bound type, a new bound history which is like the passed-in history extended with a new event of snapping to that position, and its rank updated if necessary", (): void => {
-        const actualJiNotationBoundCents = 45.4 as Cents
+        const actualJiNotationBoundDecimal = 1.02657094474 as Decimal   // 45.4¢
 
         const actual = computeExtendedHistories(boundHistory, JiNotationLevel.ULTRA, {
             ...jiNotationBoundFixture,
-            cents: actualJiNotationBoundCents,
+            decimal: actualJiNotationBoundDecimal,
             jiNotationLevels: [JiNotationLevel.ULTRA, JiNotationLevel.EXTREME],
         })
 
-        const expected = [
+        const expected: BoundHistory[] = [
             [
                 passedInBoundEvent,
                 {

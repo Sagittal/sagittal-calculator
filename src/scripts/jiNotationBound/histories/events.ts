@@ -1,4 +1,4 @@
-import { Name } from "../../../general"
+import { computeCentsFromPitch, Name } from "../../../general"
 import { BoundType, JiNotationLevel } from "../../../sagittal"
 import { BoundedSymbolClassPositions } from "../boundedPositions"
 import { BOUND_POSITIONS_BY_BOUND_TYPE } from "./boundPositions"
@@ -14,15 +14,16 @@ const computeBoundEvents = (
     const boundPositions = BOUND_POSITIONS_BY_BOUND_TYPE[ boundType ][ jiNotationLevel ]
 
     boundPositions.forEach((boundPosition: BoundPosition): void => {
+        const cents = computeCentsFromPitch(boundPosition)
         if (
-            (!lesserBoundedSymbolPosition || boundPosition.cents > lesserBoundedSymbolPosition) &&
-            (!greaterBoundedSymbolPosition || boundPosition.cents < greaterBoundedSymbolPosition)
+            (!lesserBoundedSymbolPosition || cents > lesserBoundedSymbolPosition) &&
+            (!greaterBoundedSymbolPosition || cents < greaterBoundedSymbolPosition)
         ) {
             boundEvent.push({
                 jiNotationLevel,
                 boundType: boundType,
                 name: boundPosition.name || "" as Name<BoundPosition>,
-                cents: boundPosition.cents,
+                cents: cents,
             })
         }
     })

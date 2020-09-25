@@ -5,7 +5,7 @@ import { computeMonzoFromRatio } from "./monzoFromRatio"
 import { Monzo } from "./types"
 
 const computeMonzoFromRationalDecimal = <T extends RationalNumTypeParameters>(
-    rationalDecimal: Decimal<{ potentiallyIrrational: false }>,
+    rationalDecimal: Decimal<T & { potentiallyIrrational: false }>,
 ): Monzo<T> => {
     const ratio = computeRatioFromRationalDecimal(rationalDecimal)
 

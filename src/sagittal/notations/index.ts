@@ -1,5 +1,5 @@
 export { getSagittalComma } from "./getSagittalComma"
-export { MAX_SYMBOL_CLASS_CENTS } from "./intervals"
+export { MAX_SYMBOL_CLASS_POSITION } from "./intervals"
 export {
     computeMaybeSymbolClassId,
     JiNotationBound,

@@ -130,4 +130,13 @@ describe("computeCommaName", (): void => {
         const expected = "5².11²-Medium-Diesis"
         expect(actual).toBe(expected)
     })
+
+    it("this one is apparently a close call; when fiddling with default precision, it came out to 385s", (): void => {
+        const comma = { monzo: [-7, -1, 1, 1, 1] } as Comma
+
+        const actual = computeCommaName(comma)
+
+        const expected = "385k"
+        expect(actual).toBe(expected)
+    })
 })

@@ -3,7 +3,7 @@ import { Integer } from "../math"
 type SortOptions = Partial<{
     by: KeyPath,
     descending: boolean,
-    precision: Integer,
+    precision: Precision,
 }>
 
 type KeyPath = (number | string | Array<number | string>) & { _KeyPathBrand: boolean }
@@ -38,6 +38,8 @@ type Range<T = number> = Array<T> & { _RangeBrand: boolean }
 
 type Maybe<T> = T | undefined
 
+type Precision = Integer & { _PrecisionBrand: boolean }
+
 export {
     SortOptions,
     Rank,
@@ -51,4 +53,5 @@ export {
     KeyPath,
     Obj,
     RecordKey,
+    Precision,
 }

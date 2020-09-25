@@ -1,6 +1,7 @@
-import { Integer } from "../math"
+import { Precision } from "./types"
 
-const ACCURACY_THRESHOLD = 6 as Integer
+const ACCURACY_THRESHOLD = 5 as Precision
+const MAX_JAVASCRIPT_PRECISION = 15 as Precision
 
 const ARRAY_EXTENSION_BASE: unknown[] = []
 const OBJECT_EXTENSION_BASE: Object = {}
@@ -17,5 +18,6 @@ export {
     ACCURACY_THRESHOLD,
     ZERO_ONE_INDEX_DIFF,
     MAX_JAVASCRIPT_INTEGER_VALUE,
+    MAX_JAVASCRIPT_PRECISION,
     NOT_FOUND,
 }

@@ -1,4 +1,5 @@
-import { Base, Exponent, Integer, log, Power, round } from "../../../../src/general/math"
+import { Precision } from "../../../../src/general/code"
+import { Base, Exponent, log, Power, round } from "../../../../src/general/math"
 
 describe("log", (): void => {
     it("returns the logarithm with the specified base of the power", (): void => {
@@ -26,9 +27,9 @@ describe("round", (): void => {
     const num: number = 29.59845456
 
     it("rounds to the precision specified", (): void => {
-        expect(round(num, 1 as Integer)).toBe(29.6)
-        expect(round(num, 5 as Integer)).toBe(29.59845)
-        expect(round(num, 6 as Integer)).toBe(29.598455)
+        expect(round(num, 1 as Precision)).toBe(29.6)
+        expect(round(num, 5 as Precision)).toBe(29.59845)
+        expect(round(num, 6 as Precision)).toBe(29.598455)
     })
 
     it("defaults to precision 0", (): void => {

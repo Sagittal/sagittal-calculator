@@ -55,8 +55,8 @@ const EXTREME_NOTATION_MINAS: Record<RecordKey<Id<SymbolClass>>, Name<Mina>> = {
     [ 49 ]: "49" as Name<Mina>,
     [ 50 ]: "49.567569" as Name<Mina>,
     [ 51 ]: "50" as Name<Mina>,
-    [ 52 ]: "51" as Name<Mina>,
-    [ 53 ]: "51.458649" as Name<Mina>,
+    [ 52 ]: "51" as Name<Mina>,         // these two are SUPER CLOSE to each other
+    [ 53 ]: "51.458649" as Name<Mina>,  // these two are SUPER CLOSE to each other
     [ 54 ]: "52" as Name<Mina>,
     [ 55 ]: "53" as Name<Mina>,
     [ 56 ]: "54" as Name<Mina>,

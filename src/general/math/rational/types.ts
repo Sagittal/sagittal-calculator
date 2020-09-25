@@ -3,7 +3,7 @@ import { Decimal, NumTypeParameterEffects, NumTypeParameters } from "../types"
 import { Monzo, RationalNumByMonzo } from "./monzo"
 import { Ratio, RationalNumByRatio } from "./ratio"
 
-type Integer<T extends NumTypeParameters = {}> = Decimal<T &  { potentiallyIrrational: false, integer: true }>
+type Integer<T extends NumTypeParameters = {}> = Decimal<T & { potentiallyIrrational: false, integer: true }>
 
 type MaybeIntegerBrand<T> = T extends { integer: true } ? { _IntegerBrand: boolean } : {}
 
@@ -37,11 +37,11 @@ type Primes =
     | 797 | 809 | 811 | 821 | 823 | 827 | 829 | 839 | 853 | 857 | 859 | 863 | 877 | 881 | 883 | 887 | 907 | 911 | 919
     | 929 | 937 | 941 | 947 | 953 | 967 | 971 | 977 | 983 | 991 | 997
 
-type RationalNum<T extends NumTypeParameters = {}> =
+type RationalNum<T extends RationalNumTypeParameters = { potentiallyIrrational: false }> =
     RationalNumByInteger<T> | RationalNumByMonzo<T> | RationalNumByRatio<T>
 
-type RationalNumByInteger<T extends NumTypeParameters = {}> = {
-    decimal: Decimal<Omit<T, "integer"> & { integer: true }>,
+type RationalNumByInteger<T extends RationalNumTypeParameters = { potentiallyIrrational: false }> = {
+    decimal: Decimal<T & { potentiallyIrrational: false, integer: true }>,
     monzo?: Monzo<T & { potentiallyIrrational: false }>,
     ratio?: Ratio<T & { potentiallyIrrational: false }>,
 }

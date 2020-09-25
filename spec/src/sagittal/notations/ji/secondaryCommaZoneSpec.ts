@@ -1,4 +1,4 @@
-import { Cents, Id } from "../../../../../src/general"
+import { Cents, computeCentsFromPitch, Id } from "../../../../../src/general"
 import { SymbolClass } from "../../../../../src/sagittal"
 import { computeSecondaryCommaZone } from "../../../../../src/sagittal/notations/ji"
 
@@ -8,8 +8,8 @@ describe("secondaryCommaZone", (): void => {
 
         const actual = computeSecondaryCommaZone(symbolClassId)
 
-        expect(actual[ 0 ].cents).toBeCloseToTyped(37.309479 as Cents)
-        expect(actual[ 1 ].cents).toBeCloseToTyped(38.061940 as Cents)
+        expect(computeCentsFromPitch(actual[ 0 ])).toBeCloseToTyped(37.309479 as Cents)
+        expect(computeCentsFromPitch(actual[ 1 ])).toBeCloseToTyped(38.061940 as Cents)
     })
 
     it("another example, at the Extreme JI notation level", (): void => {
@@ -17,8 +17,8 @@ describe("secondaryCommaZone", (): void => {
 
         const actual = computeSecondaryCommaZone(symbolClassId)
 
-        expect(actual[ 0 ].cents).toBeCloseToTyped(38.061940 as Cents)
-        expect(actual[ 1 ].cents).toBeCloseToTyped(38.293157 as Cents)
+        expect(computeCentsFromPitch(actual[ 0 ])).toBeCloseToTyped(38.061940 as Cents)
+        expect(computeCentsFromPitch(actual[ 1 ])).toBeCloseToTyped(38.293157 as Cents)
     })
 
     it("another example, at the Medium JI notation level", (): void => {
@@ -26,8 +26,8 @@ describe("secondaryCommaZone", (): void => {
 
         const actual = computeSecondaryCommaZone(symbolClassId)
 
-        expect(actual[ 0 ].cents).toBeCloseToTyped(35.118091 as Cents)
-        expect(actual[ 1 ].cents).toBeCloseToTyped(40.260512 as Cents)
+        expect(computeCentsFromPitch(actual[ 0 ])).toBeCloseToTyped(35.118091 as Cents)
+        expect(computeCentsFromPitch(actual[ 1 ])).toBeCloseToTyped(40.260512 as Cents)
     })
 
     it("works for the initial symbol", (): void => {
@@ -35,7 +35,7 @@ describe("secondaryCommaZone", (): void => {
 
         const actual = computeSecondaryCommaZone(symbolClassId)
 
-        expect(actual[ 0 ].cents).toBeCloseToTyped(0.000000 as Cents)
-        expect(actual[ 1 ].cents).toBeCloseToTyped(2.740244 as Cents)
+        expect(computeCentsFromPitch(actual[ 0 ])).toBeCloseToTyped(0.000000 as Cents)
+        expect(computeCentsFromPitch(actual[ 1 ])).toBeCloseToTyped(2.740244 as Cents)
     })
 })

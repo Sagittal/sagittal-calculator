@@ -5,7 +5,6 @@ import {
     Exponent,
     Extrema,
     Filename,
-    Formatted,
     increment,
     Integer,
     Io,
