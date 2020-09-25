@@ -51,26 +51,30 @@ const computeIsUnisonNum = <T extends NumTypeParameters, U extends Num<T>>(
 
 const computeSuperNum = <T extends NumTypeParameters, U extends Num<T>>(
     num: U,
-): Exclude<U, Num> & Num<Omit<T, "_DirectionBrand" | "_IntegerBrand"> & { direction: Direction.SUPER }> => {
+): Exclude<U, Num> & Num<Omit<T, "direction"> & { direction: Direction.SUPER, integer: false }> => {
     const isSubNum = computeIsSubNum(num)
 
-    let superNum: Exclude<U, Num> & Num<Omit<T, "_DirectionBrand" | "_IntegerBrand"> & { direction: Direction.SUPER }> =
-        {} as Exclude<U, Num> & Num<Omit<T, "_DirectionBrand" | "_IntegerBrand"> & { direction: Direction.SUPER }>
+    let superNum: Exclude<U, Num> & Num<T & { direction: Direction.SUPER, integer: false }> =
+        {} as Exclude<U, Num> & Num<T & { direction: Direction.SUPER, integer: false }>
     if (isSubNum) {
         const { monzo, ratio, decimal } = num
         if (!isUndefined(ratio)) {
-            superNum.ratio = invertRatio(ratio) as Ratio<Omit<T, "_DirectionBrand" | "_IntegerBrand">>
+            superNum.ratio =
+                invertRatio(ratio as Ratio<T>) as Ratio<T & { direction: Direction.SUPER, integer: false }>
         }
         if (!isUndefined(monzo)) {
-            superNum.monzo = invertMonzo(monzo) as Monzo<Omit<T, "_DirectionBrand" | "_IntegerBrand">>
+            superNum.monzo =
+                invertMonzo(monzo as Monzo<T>) as Monzo<T & { direction: Direction.SUPER, integer: false }>
         }
         if (!isUndefined(decimal)) {
+            // TODO: invertDecimal helper for this type assertion, to remove integer: true
+            //  since we can't expect reciprocal, for primitive numbers, to do that
             superNum.decimal =
-                reciprocal(decimal as Decimal<T>) as Decimal<Omit<T, "_DirectionBrand" | "_IntegerBrand">>
+                reciprocal(decimal as Decimal<T>) as Decimal<T & { direction: Direction.SUPER, integer: false }>
         }
     } else {
         superNum = deepClone(
-            num as Exclude<U, Num> & Num<Omit<T, "_DirectionBrand" | "_IntegerBrand"> & { direction: Direction.SUPER }>,
+            num as Exclude<U, Num> & Num<T & { direction: Direction.SUPER, integer: false }>,
         )
     }
 

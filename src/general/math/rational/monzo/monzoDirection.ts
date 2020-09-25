@@ -27,30 +27,30 @@ const computeIsUnisonMonzo = <T extends NumTypeParameters>(
 
 const computeSuperMonzo = <T extends NumTypeParameters>(
     monzo: MonzoNotDefaultingToRational<T>,
-): Monzo<T & { direction: Direction.SUPER }> => {
+): Monzo<T & { direction: Direction.SUPER, integer: false }> => {
     if (computeIsSubMonzo(monzo)) {
-        return invertMonzo(monzo) as Monzo<T & { direction: Direction.SUPER }>
+        return invertMonzo(monzo) as Monzo<T & { direction: Direction.SUPER, integer: false }>
     }
 
-    return monzo as Monzo<T & { direction: Direction.SUPER }>
+    return monzo as Monzo<T & { direction: Direction.SUPER, integer: false }>
 }
 
 const invertMonzo: {
     <T extends NumTypeParameters & { direction: Direction.SUPER }>(
         monzo: MonzoNotDefaultingToRational<T>,
-    ): Monzo<T & { direction: Direction.SUB }>,
+    ): Monzo<T & { direction: Direction.SUB, integer: false }>,
     <T extends NumTypeParameters & { direction: Direction.SUB }>(
         monzo: MonzoNotDefaultingToRational<T>,
-    ): Monzo<T & { direction: Direction.SUPER }>,
+    ): Monzo<T & { direction: Direction.SUPER, integer: false }>,
     <T extends NumTypeParameters>(
         monzo: MonzoNotDefaultingToRational<T>,
-    ): Monzo<T>,
-} = <T extends NumTypeParameters>(monzo: Monzo<T>): Monzo<T> =>
+    ): Monzo<T & { integer: false }>,
+} = <T extends NumTypeParameters>(monzo: MonzoNotDefaultingToRational<T>): Monzo<T & { integer: false }> =>
     monzo.map((primeExponent: Exponent<Prime>): Exponent<Prime> => {
         return primeExponent === 0 ?
             0 as Exponent<Prime> :
             -primeExponent as Exponent<Prime>
-    }) as Monzo<T>
+    }) as Monzo<T & { integer: false }>
 
 
 export {
