@@ -3,23 +3,11 @@ import { MaybeIntegerBrand, MonzoNotDefaultingToRational, RationalNum, RatioNotD
 // TODO: Dec instead instead of Decimal? hmm... maybe not.
 //  because we're not abbreviating Number to Num only bc we can but because we kind of have to.
 //  and Decimal is a sibling to Monzo and Ratio, and should get its own folder neighboring them.
-/*
-IntNum and IntDecimal?
 
-math/num/monzo
-math/num/ratio
-math/num/decimal
+// TODO: reorganize to math/num/monzo, math/num/ratio, math/num/decimal
+//  b/c integer, rational, and irrational are orthogonal to these
 
-Bc integer, rational, and irrational are orthogonal to these
-
-And perhaps these three subtypes should never be found outside a Num
-
-And perhaps since both num and rational num do this triple intersection they should share some type they “extend”
-
-Cents should really only be part of analyses
-In which case pitches should not really be any different than nums....
-(except later I decided it was a good idea to allow non-JI pitches to be specified as cents)
- */
+// TODO: hunt down and eliminate places Decimal is being used outside of Num; in general only should live inside one
 
 // This is the one place where we default the NumTypeParameters to something other than {}
 // but things seem to massively blow up otherwise.

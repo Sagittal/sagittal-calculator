@@ -61,7 +61,7 @@ export {
     Primes,
     RationalNumByMonzo,
     RationalNumByRatio,
-    RationalNumByInteger,
+    IntegerNum,
     computeDecimalFromRationalNum,
     computeMonzoFromRationalNum,
     computeRatioFromRationalNum,

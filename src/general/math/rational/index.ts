@@ -72,7 +72,7 @@ export {
     RationalNumTypeParameters,
     Primes,
     RationalNum,
-    RationalNumByInteger,
+    IntegerNum,
 } from "./types"
 export { computeIsSmoothRational, computeRationalNumSmoothness } from "./smoothness"
 export { computeIsRoughRationalNum } from "./roughness"
