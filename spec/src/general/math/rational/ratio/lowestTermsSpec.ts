@@ -1,5 +1,4 @@
-import { Ratio } from "../../../../../../src/general/math/rational/ratio"
-import { computeLowestTermsRatio } from "../../../../../../src/general/math/rational/ratio/lowestTerms"
+import { computeLowestTermsRatio, Ratio } from "../../../../../../src/general/math/rational/ratio"
 
 describe("computeLowestTermsRatio", (): void => {
     it("returns the ratio in lowest terms", (): void => {

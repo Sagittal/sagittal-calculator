@@ -2,7 +2,7 @@ import {
     abs,
     computeGpf,
     computeIsSubMonzo,
-    computeMonzoFromJiPitch,
+    computeMonzoFromRationalNum,
     computeTrimmedArray,
     Direction,
     Exponent,
@@ -20,7 +20,7 @@ const computeN2D3P9 = <T extends NumTypeParameters &
     { direction: Direction.SUPER, rough: 5 } = { direction: Direction.SUPER, rough: 5, potentiallyIrrational: true }>(
     twoThreeFreeClass: TwoThreeFreeClass,
 ): N2D3P9 => {
-    const monzo = computeMonzoFromJiPitch(twoThreeFreeClass)
+    const monzo = computeMonzoFromRationalNum(twoThreeFreeClass)
 
     if (computeTrimmedArray(monzo).length < 3) {
         return 1 as N2D3P9

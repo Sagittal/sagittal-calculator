@@ -1,7 +1,7 @@
 import {
     abs,
     computeCopfr,
-    computeMonzoFromJiPitch,
+    computeMonzoFromRationalNum,
     computeRatioFromMonzo,
     computeRoughMonzo,
     computeSopfr,
@@ -14,7 +14,7 @@ import { computeApotomeSlope } from "../../pitch"
 // As reverse-engineered here: http://forum.sagittal.org/viewtopic.php?p=1659#p1659
 
 const computeSecorComplexity = (jiPitch: JiPitch): number => {
-    const monzo = computeMonzoFromJiPitch(jiPitch)
+    const monzo = computeMonzoFromRationalNum(jiPitch)
     const twoThreeFreeMonzo = computeRoughMonzo(monzo, FIVE_ROUGHNESS)
     const g = computeSopfr(twoThreeFreeMonzo)
 

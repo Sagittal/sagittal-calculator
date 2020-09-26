@@ -1,4 +1,4 @@
-import { Cents, computeCentsFromPitch, computeDecimalFromCents, Maybe, Name, pitchIsHigher } from "../../../general"
+import { Cents, computeCentsFromPitch, computeDecimalFromCents, Maybe, Name, numIsHigher } from "../../../general"
 import {
     APOTOME,
     JiNotationLevel,
@@ -18,7 +18,7 @@ const computeInaMidpoints = (jiNotationLevel: JiNotationLevel): InaMidpoint[] =>
         const cents = computeCentsFromPitch(APOTOME) * midpoint / eda as Cents
         const decimal = computeDecimalFromCents(cents)
 
-        if (pitchIsHigher({ decimal }, MAX_SYMBOL_CLASS_POSITION)) {
+        if (numIsHigher({ decimal }, MAX_SYMBOL_CLASS_POSITION)) {
             return undefined
         }
 

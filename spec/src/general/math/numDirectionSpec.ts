@@ -5,10 +5,10 @@ import {
     computeSuperNum,
     Decimal,
     Direction,
+    Num,
 } from "../../../../src/general/math"
 import { Monzo } from "../../../../src/general/math/rational/monzo"
 import { Ratio } from "../../../../src/general/math/rational/ratio"
-import { Num } from "../../../../src/general/math/types"
 
 describe("computeIsSubNum", (): void => {
     describe("by monzo", (): void => {

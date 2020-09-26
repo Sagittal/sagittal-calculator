@@ -1,9 +1,10 @@
-import { computeRatioFromJiPitch, TwoThreeFreeClass } from "../../music"
+import { computeRatioFromRationalNum } from "../../math"
+import { TwoThreeFreeClass } from "../../music"
 import { formatRatio } from "./ratio"
 import { Formatted } from "./types"
 
 const format23FreeClass = (twoThreeFreeClass: TwoThreeFreeClass): Formatted<TwoThreeFreeClass> => {
-    const ratio = computeRatioFromJiPitch(twoThreeFreeClass)
+    const ratio = computeRatioFromRationalNum(twoThreeFreeClass)
 
     return formatRatio(ratio) as Formatted as Formatted<TwoThreeFreeClass>
 }

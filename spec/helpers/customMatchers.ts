@@ -1,7 +1,7 @@
 // tslint:disable max-line-length
 
 import { ACCURACY_THRESHOLD, deepEquals, isCloseTo, isUndefined, stringify } from "../../src/general"
-import { Precision } from "../../src/general/code/types"
+import { Precision } from "../../src/general/code"
 import CustomEqualityTester = jasmine.CustomEqualityTester
 import CustomMatcher = jasmine.CustomMatcher
 import CustomMatcherFactories = jasmine.CustomMatcherFactories

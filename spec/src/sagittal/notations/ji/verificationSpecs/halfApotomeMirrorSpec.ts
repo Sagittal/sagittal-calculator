@@ -1,6 +1,5 @@
-import { equalPitches } from "../../../../../../src/general"
 import { increment } from "../../../../../../src/general/code"
-import { computeCentsFromPitch, pitchIsHigher } from "../../../../../../src/general/music"
+import { computeDecimalFromNum, equalNums, numIsHigher } from "../../../../../../src/general/math"
 import {
     getPrimaryComma,
     HALF_APOTOME,
@@ -21,7 +20,7 @@ describe("half-apotome mirror", (): void => {
     it("is the case that the commas in the JI notation are symmetrical about the half-apotome mirror", (): void => {
         const jiNotationPrimaryCommas = JI_NOTATION.map(getPrimaryComma)
         const firstCommaGreaterThanHalfApotomeMirrorIndex = jiNotationPrimaryCommas.findIndex(
-            (sagittalComma: SagittalComma): boolean => pitchIsHigher(sagittalComma, HALF_APOTOME),
+            (sagittalComma: SagittalComma): boolean => numIsHigher(sagittalComma, HALF_APOTOME),
         )
 
         let indexOffset = 0
@@ -34,8 +33,8 @@ describe("half-apotome mirror", (): void => {
 
             // TODO: another place to use the pitch helper, the interval
             //  and in apotome slope, you could use it too, I think for the apotome fraction bit
-            const actual = computeCentsFromPitch(comma) - computeCentsFromPitch(HALF_APOTOME)
-            const expected = computeCentsFromPitch(HALF_APOTOME) - computeCentsFromPitch(mirroredComma)
+            const actual = computeDecimalFromNum(comma) - computeDecimalFromNum(HALF_APOTOME)
+            const expected = computeDecimalFromNum(HALF_APOTOME) - computeDecimalFromNum(mirroredComma)
             expect(actual).toBeCloseTo(expected)
 
             indexOffset = increment(indexOffset)
@@ -45,7 +44,7 @@ describe("half-apotome mirror", (): void => {
     it("is the case that the bounds in the JI notation are symmetrical about the half-apotome mirror", (): void => {
         const jiNotationBoundAtHalfApotomeMirrorIndex =
             JI_NOTATION_BOUNDS.findIndex((jiNotationBound: JiNotationBound): boolean => {
-                return equalPitches(jiNotationBound, HALF_APOTOME)
+                return equalNums(jiNotationBound, HALF_APOTOME)
             })
 
         let indexOffset = 1
@@ -56,8 +55,8 @@ describe("half-apotome mirror", (): void => {
             const jiNotationBound = JI_NOTATION_BOUNDS[ index ]
             const mirroredBound = JI_NOTATION_BOUNDS[ mirroredIndex ]
 
-            const actual = computeCentsFromPitch(jiNotationBound) - computeCentsFromPitch(HALF_APOTOME)
-            const expected = computeCentsFromPitch(HALF_APOTOME) - computeCentsFromPitch(mirroredBound)
+            const actual = computeDecimalFromNum(jiNotationBound) - computeDecimalFromNum(HALF_APOTOME)
+            const expected = computeDecimalFromNum(HALF_APOTOME) - computeDecimalFromNum(mirroredBound)
             expect(actual).toBeCloseTo(expected)
 
             indexOffset = increment(indexOffset)

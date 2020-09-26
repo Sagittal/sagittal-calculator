@@ -13,6 +13,9 @@ import {
 } from "../../math"
 import { JiPitch } from "./types"
 
+// I'm thinking that we don't keep any of the pass-through methods from Pitch to Num
+// except for prime limit because we speak about it differently (vs mathematical roughness or smoothness).
+
 const computeIsWithinPrimeLimit = <S extends Primes, T extends RationalNumTypeParameters>(
     jiPitch: JiPitch<T>,
     primeLimit: S & Max<Prime>,

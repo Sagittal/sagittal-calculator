@@ -1,5 +1,5 @@
-import { computeCentsFromPitch, Monzo, Pitch, Ratio } from "../../../../src/general"
-import { Cents } from "../../../../src/general/music"
+import { Monzo, Pitch, Ratio } from "../../../../src/general"
+import { Cents, computeCentsFromPitch } from "../../../../src/general/music"
 
 describe("computeCentsFromPitch", (): void => {
     it("returns the cents of a pitch with a monzo", (): void => {

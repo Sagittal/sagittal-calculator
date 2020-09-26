@@ -1,4 +1,4 @@
-import { Id, ioSettings, Max, MAX_JAVASCRIPT_PRECISION, Maybe, Min, Pitch, pitchIsHigher, Zone } from "../../../general"
+import { Id, ioSettings, Max, MAX_JAVASCRIPT_PRECISION, Maybe, Min, numIsHigher, Pitch, Zone } from "../../../general"
 import { formatSymbolClass } from "../../io"
 import { getPrimaryComma } from "../primaryComma"
 import { SagittalComma, SymbolClass } from "../types"
@@ -29,7 +29,7 @@ const computeCaptureZone = (
         .findIndex((jiNotationBound: JiNotationBound): boolean => {
             // TODO: okay what's the real deal...
             //  do I actually want it to always be max precision, but then in *test* be tolerant?
-            return pitchIsHigher(jiNotationBound, primaryComma, MAX_JAVASCRIPT_PRECISION)
+            return numIsHigher(jiNotationBound, primaryComma, MAX_JAVASCRIPT_PRECISION)
         })
     const indexOfJiNotationBoundJustBelowSymbolClassAtThisLevel = indexOfBoundJustAboveSymbolAtThisLevel - 1
 

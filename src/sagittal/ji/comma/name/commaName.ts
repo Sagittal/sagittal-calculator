@@ -1,13 +1,13 @@
 import {
     Comma,
-    computeIsSubPitch,
-    computeIsUnisonPitch,
+    computeIsSubNum,
+    computeIsUnisonNum,
     computeIsWithinPrimeLimit,
     computeMonzoFromInteger,
-    computeRatioFromJiPitch,
+    computeRatioFromRationalNum,
     computeRoughRatio,
     computeSubRatio,
-    computeSuperPitch,
+    computeSuperNum,
     Direction,
     Exponent,
     FIVE_ROUGHNESS,
@@ -66,17 +66,17 @@ const computeCommaName = (
 
     const maybeHyphen = abbreviated ? "" : "-"
 
-    const maybeDown = computeIsSubPitch(comma) ? " down" : ""
+    const maybeDown = computeIsSubNum(comma) ? " down" : ""
 
-    const superComma: Comma<{ direction: Direction.SUPER }> = computeSuperPitch(comma)
+    const superComma: Comma<{ direction: Direction.SUPER }> = computeSuperNum(comma)
     const sizeCategory: SizeCategoryAbbreviation | SizeCategoryName = computeSizeCategory(superComma, { abbreviated })
 
     let formattedCommaNameRatio
-    if (computeIsWithinPrimeLimit(comma, THREE_PRIME_LIMIT) && !computeIsUnisonPitch(comma)) {
+    if (computeIsWithinPrimeLimit(comma, THREE_PRIME_LIMIT) && !computeIsUnisonNum(comma)) {
         formattedCommaNameRatio = "3"
     } else {
         const commaNameRatio: CommaNameRatio =
-            computeRoughRatio(computeRatioFromJiPitch(superComma), FIVE_ROUGHNESS) as CommaNameRatio
+            computeRoughRatio(computeRatioFromRationalNum(superComma), FIVE_ROUGHNESS) as CommaNameRatio
 
         if (directed) {
             const stringifiedRatio = stringifyRatio(commaNameRatio, { factored })

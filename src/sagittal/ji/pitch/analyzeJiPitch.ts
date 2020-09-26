@@ -2,8 +2,8 @@ import {
     compute23FreeClass,
     computeCentsFromPitch,
     computeDecimalFromNum,
-    computeMonzoFromJiPitch,
-    computeRatioFromJiPitch,
+    computeMonzoFromRationalNum,
+    computeRatioFromRationalNum,
     JiPitch,
     Num,
 } from "../../../general"
@@ -14,8 +14,8 @@ import { computeAte } from "./ate"
 import { JiPitchAnalysis } from "./types"
 
 const analyzeJiPitch = (jiPitch: JiPitch): JiPitchAnalysis => {
-    const monzo = computeMonzoFromJiPitch(jiPitch)
-    const ratio = computeRatioFromJiPitch(jiPitch)
+    const monzo = computeMonzoFromRationalNum(jiPitch)
+    const ratio = computeRatioFromRationalNum(jiPitch)
     // TODO: this is weird that we dont have the thing for pitch,
     //  and also why do those have to be "ji pitch" just above
     //  but hopefully it will be resolved after doing a lot of clean up now that Pitches are basically the same as Nums

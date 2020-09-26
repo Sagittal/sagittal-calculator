@@ -9,3 +9,6 @@ export { formatTime } from "./time"
 export { formatPitch } from "./pitch"
 export { formatNum } from "./num"
 export { formatCents } from "./cents"
+
+// TODO: you may want to check to see if in fact you're now calling format w/ align false *more* than w/ true
+//  in which case you should invert the default

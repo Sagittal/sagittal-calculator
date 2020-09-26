@@ -76,7 +76,7 @@ export {
 export { computeDistributions } from "./distributions"
 export { dividesEvenly } from "./dividesEvenly"
 export { computeTriangularNumber } from "./triangularNumber"
-export { equalNums } from "./numComparison"
+export { equalNums, numIsHigher, numIsLower, numIsLowerOrEqual, numIsHigherOrEqual } from "./numComparison"
 export { computeDecimalFromNum } from "./decimalFromNum"
 export {
     abs,

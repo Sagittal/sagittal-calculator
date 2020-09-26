@@ -1,5 +1,6 @@
 import { ACCURACY_THRESHOLD, isCloseTo, isUndefined, Precision } from "../code"
 import { formatNum } from "../io"
+import { computeDecimalFromNum } from "./decimalFromNum"
 import {
     computeDecimalFromMonzo,
     computeDecimalFromRatio,
@@ -8,8 +9,6 @@ import {
     equalRatios,
 } from "./rational"
 import { Num } from "./types"
-
-// TODO: add <, >, >=, <=
 
 const equalNums = (numA: Num, numB: Num, precision: Precision = ACCURACY_THRESHOLD): boolean => {
     if (!isUndefined(numA.decimal)) {
@@ -48,6 +47,22 @@ const equalNums = (numA: Num, numB: Num, precision: Precision = ACCURACY_THRESHO
     throw new Error(`Tried to check equality of nums ${formatNum(numA, { align: false })} and ${formatNum(numB, { align: false })} but the former lacked any numeric representations.`)
 }
 
+const numIsHigher = (num: Num, otherNum: Num, precision: Precision = ACCURACY_THRESHOLD): boolean =>
+    !equalNums(num, otherNum, precision) && computeDecimalFromNum(num) > computeDecimalFromNum(otherNum)
+
+const numIsLower = (num: Num, otherNum: Num, precision: Precision = ACCURACY_THRESHOLD): boolean =>
+    !equalNums(num, otherNum, precision) && computeDecimalFromNum(num) < computeDecimalFromNum(otherNum)
+
+const numIsHigherOrEqual = (num: Num, otherNum: Num, precision: Precision = ACCURACY_THRESHOLD): boolean =>
+    equalNums(num, otherNum, precision) || numIsHigher(num, otherNum, precision)
+
+const numIsLowerOrEqual = (num: Num, otherNum: Num, precision: Precision = ACCURACY_THRESHOLD): boolean =>
+    equalNums(num, otherNum, precision) || numIsLower(num, otherNum, precision)
+
 export {
     equalNums,
+    numIsHigher,
+    numIsLower,
+    numIsHigherOrEqual,
+    numIsLowerOrEqual,
 }

@@ -6,10 +6,10 @@ import {
     MAX_JAVASCRIPT_PRECISION,
     Maybe,
     Monzo,
-    pitchIsHigher,
-    pitchIsHigherOrEqual,
-    pitchIsLower,
-    pitchIsLowerOrEqual,
+    numIsHigher,
+    numIsHigherOrEqual,
+    numIsLower,
+    numIsLowerOrEqual,
     Prime,
     shallowClone,
     TWO_PRIME_INDEX,
@@ -23,17 +23,17 @@ const computeMonzoInZone = (twoFreeMonzo: Monzo<{ rough: 3 }>, zone: Zone): Mayb
 
     if (!equalMonzos(monzoInZone, [] as Monzo)) {
         // TODO: this isn't ideal how we're making fake pitches to use the available helpers
-        while (pitchIsHigher({ monzo: monzoInZone }, upperBound, MAX_JAVASCRIPT_PRECISION)) {
+        while (numIsHigher({ monzo: monzoInZone }, upperBound, MAX_JAVASCRIPT_PRECISION)) {
             monzoInZone[ TWO_PRIME_INDEX ] = monzoInZone[ TWO_PRIME_INDEX ] - 1 as Integer & Exponent<Prime>
         }
-        while (pitchIsLower({ monzo: monzoInZone }, lowerBound, MAX_JAVASCRIPT_PRECISION)) {
+        while (numIsLower({ monzo: monzoInZone }, lowerBound, MAX_JAVASCRIPT_PRECISION)) {
             monzoInZone[ TWO_PRIME_INDEX ] = monzoInZone[ TWO_PRIME_INDEX ] + 1 as Integer & Exponent<Prime>
         }
     }
 
     return (
-        pitchIsHigherOrEqual({ monzo: monzoInZone }, lowerBound, MAX_JAVASCRIPT_PRECISION) &&
-        pitchIsLowerOrEqual({ monzo: monzoInZone }, upperBound, MAX_JAVASCRIPT_PRECISION)
+        numIsHigherOrEqual({ monzo: monzoInZone }, lowerBound, MAX_JAVASCRIPT_PRECISION) &&
+        numIsLowerOrEqual({ monzo: monzoInZone }, upperBound, MAX_JAVASCRIPT_PRECISION)
     ) ?
         computeTrimmedArray(monzoInZone) :
         undefined
