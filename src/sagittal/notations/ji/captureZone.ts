@@ -1,7 +1,7 @@
 import { Id, ioSettings, Max, MAX_JAVASCRIPT_PRECISION, Maybe, Min, Num, numIsHigher, Zone } from "../../../general"
 import { formatSymbolClass } from "../../io"
 import { getPrimaryComma } from "../primaryComma"
-import { SagittalComma, SymbolClass } from "../types"
+import { PrimaryComma, SymbolClass } from "../types"
 import { ABSOLUTE_LOWEST_BOUND } from "./constants"
 import { formatJiNotationLevel } from "./formatLevel"
 import { getIntroducingJiNotationLevel } from "./introducingJiNotationLevel"
@@ -39,7 +39,7 @@ const computeCaptureZone = (
     const upperBound =
         jiNotationLevelBounds[ indexOfBoundJustAboveSymbolAtThisLevel ] as Num as Max<Num>
 
-    return [lowerBound, upperBound] as Zone<SagittalComma>
+    return [lowerBound, upperBound] as Zone<PrimaryComma>
 }
 
 export {

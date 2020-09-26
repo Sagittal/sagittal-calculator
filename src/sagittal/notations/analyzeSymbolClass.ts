@@ -1,11 +1,11 @@
 import { Id } from "../../general"
 import { analyzeComma } from "../ji"
-import { getSagittalComma } from "./getSagittalComma"
 import { getIntroducingJiNotationLevel, getMinaName } from "./ji"
+import { getPrimaryComma } from "./primaryComma"
 import { getRepresentativeSymbol } from "./representativeSymbol"
 import { getSmallestSymbolSubset } from "./smallestSymbolSubset"
 import { getSymbolClass } from "./symbolClass"
-import { SagittalComma, SagittalCommaAnalysis, SymbolClass, SymbolClassAnalysis } from "./types"
+import { PrimaryComma, PrimaryCommaAnalysis, SymbolClass, SymbolClassAnalysis } from "./types"
 
 const analyzeSymbolClass = (
     symbolClassId: Id<SymbolClass>,
@@ -13,9 +13,8 @@ const analyzeSymbolClass = (
     const symbolClass = getSymbolClass(symbolClassId)
     const { primaryCommaId, ...otherSymbolClassProperties } = symbolClass
 
-    const primaryComma: SagittalComma = getSagittalComma(primaryCommaId)
-    const primaryCommaAnalysis: SagittalCommaAnalysis =
-        analyzeComma(primaryComma) as SagittalCommaAnalysis
+    const primaryComma: PrimaryComma = getPrimaryComma(symbolClassId)
+    const primaryCommaAnalysis: PrimaryCommaAnalysis = analyzeComma(primaryComma) as PrimaryCommaAnalysis
 
     const { revoAscii, revoUnicode } = getRepresentativeSymbol(symbolClassId)
 

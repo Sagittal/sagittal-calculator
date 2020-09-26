@@ -1,4 +1,3 @@
-export { getSagittalComma } from "./getSagittalComma"
 export { MAX_SYMBOL_CLASS_POSITION } from "./intervals"
 export {
     computeMaybeSymbolClassId,
@@ -21,7 +20,7 @@ export {
     computeSecondaryCommaZone,
     BoundType,
 } from "./ji"
-export { SagittalComma, SymbolClass, Symbol, SymbolClassAnalysis, SymbolSubset, Flavor } from "./types"
+export { PrimaryComma, SymbolClass, Symbol, SymbolClassAnalysis, SymbolSubset, Flavor } from "./types"
 export { SYMBOL_CLASSES } from "./symbolClasses"
 export { SYMBOL_SUBSETS } from "./symbolSubsets"
 export { SYMBOLS } from "./symbols"

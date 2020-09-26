@@ -1,7 +1,7 @@
 // tslint:disable max-line-length
 
 import { Id, Maybe, Zone } from "../../../../../../src/general"
-import { JI_NOTATION_LEVELS_SYMBOL_CLASS_IDS, SagittalComma, SymbolClass } from "../../../../../../src/sagittal"
+import { JI_NOTATION_LEVELS_SYMBOL_CLASS_IDS, PrimaryComma, SymbolClass } from "../../../../../../src/sagittal"
 import { JiNotationLevel } from "../../../../../../src/sagittal/notations/ji"
 import { computeCaptureZone } from "../../../../../../src/sagittal/notations/ji/captureZone"
 
@@ -26,7 +26,7 @@ describe("capture zones", (): void => {
             [{ decimal: 1.0300275676521753 }, { decimal: 1.0333784852366537 }], // [{ cents: 51.219540 }, { cents: 56.842503 }],
             [{ decimal: 1.0333784852366537 }, { decimal: 1.0367403041299996 }], // [{ cents: 56.842503 }, { cents: 62.465465 }],
             [{ decimal: 1.0367403041299996 }, { decimal: 1.0404039320488956 }], // [{ cents: 62.465465 }, { cents: 68.572508 }],
-        ] as Array<Zone<SagittalComma>>
+        ] as Array<Zone<PrimaryComma>>
         expected.forEach((zone: Zone, index: number): void => {
             expect(actual[ index ]![ 0 ].decimal).toBeCloseToTyped(zone[ 0 ].decimal)
             expect(actual[ index ]![ 1 ].decimal).toBeCloseToTyped(zone[ 1 ].decimal)
@@ -72,7 +72,7 @@ describe("capture zones", (): void => {
             [{ decimal: 1.0363184586132830 }, { decimal: 1.0377494621721703 }], // [{ cents: 61.760890 }, { cents: 64.149821 }],
             [{ decimal: 1.0377494621721703 }, { decimal: 1.0389294192844114 }], // [{ cents: 64.149821 }, { cents: 66.117175 }],
             [{ decimal: 1.0389294192844114 }, { decimal: 1.0404039320488956 }], // [{ cents: 66.117175 }, { cents: 68.572508 }],
-        ] as Array<Zone<SagittalComma>>
+        ] as Array<Zone<PrimaryComma>>
         expected.forEach((zone: Zone, index: number): void => {
             expect(actual[ index ]![ 0 ].decimal).toBeCloseToTyped(zone[ 0 ].decimal)
             expect(actual[ index ]![ 1 ].decimal).toBeCloseToTyped(zone[ 1 ].decimal)
@@ -141,7 +141,7 @@ describe("capture zones", (): void => {
             [{ decimal: 1.0374967886248718 }, { decimal: 1.0377494621721703 }], // [{ cents: 63.728245 }, { cents: 64.149821 }],
             [{ decimal: 1.0377494621721703 }, { decimal: 1.0389294192844114 }], // [{ cents: 64.149821 }, { cents: 66.117175 }],
             [{ decimal: 1.0389294192844114 }, { decimal: 1.0404039320488956 }], // [{ cents: 66.117175 }, { cents: 68.572508 }],
-        ] as Array<Zone<SagittalComma>>
+        ] as Array<Zone<PrimaryComma>>
         expected.forEach((zone: Zone, index: number): void => {
             expect(actual[ index ]![ 0 ].decimal).toBeCloseToTyped(zone[ 0 ].decimal)
             expect(actual[ index ]![ 1 ].decimal).toBeCloseToTyped(zone[ 1 ].decimal)
@@ -304,7 +304,7 @@ describe("capture zones", (): void => {
             [{ decimal: 1.0395199008647810 }, { decimal: 1.0397730671239145 }], // [{ cents: 67.100853 }, { cents: 67.522429 }],
             [{ decimal: 1.0397730671239145 }, { decimal: 1.0401107180487927 }], // [{ cents: 67.522429 }, { cents: 68.084530 }],
             [{ decimal: 1.0401107180487927 }, { decimal: 1.0404039320488956 }], // [{ cents: 68.084530 }, { cents: 68.572508 }],
-        ] as Array<Zone<SagittalComma>>
+        ] as Array<Zone<PrimaryComma>>
         expected.forEach((zone: Zone, index: number): void => {
             expect(actual[ index ]![ 0 ].decimal).toBeCloseToTyped(zone[ 0 ].decimal)
             expect(actual[ index ]![ 1 ].decimal).toBeCloseToTyped(zone[ 1 ].decimal)

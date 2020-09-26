@@ -6,7 +6,7 @@ import {
     JiNotationBound,
     JI_NOTATION,
     JI_NOTATION_BOUNDS,
-    SagittalComma,
+    PrimaryComma,
 } from "../../../../../../src/sagittal"
 
 // The idea of symbol *class* is great. But I'm wondering if maybe there's room for improvement.
@@ -20,7 +20,7 @@ describe("half-apotome mirror", (): void => {
     it("is the case that the commas in the JI notation are symmetrical about the half-apotome mirror", (): void => {
         const jiNotationPrimaryCommas = JI_NOTATION.map(getPrimaryComma)
         const firstCommaGreaterThanHalfApotomeMirrorIndex = jiNotationPrimaryCommas.findIndex(
-            (sagittalComma: SagittalComma): boolean => numIsHigher(sagittalComma, HALF_APOTOME),
+            (primaryComma: PrimaryComma): boolean => numIsHigher(primaryComma, HALF_APOTOME),
         )
 
         let indexOffset = 0

@@ -21,7 +21,7 @@ import {
     BoundType,
     Ina,
     N2D3P9,
-    SagittalComma,
+    PrimaryComma,
     SymbolClass,
     SymbolLongAscii,
     TINA,
@@ -31,7 +31,7 @@ import { SymbolUnicode } from "../../../../../../src/sagittal/io"
 import { SymbolSubset } from "../../../../../../src/sagittal/notations"
 import { JiNotationBound, JiNotationLevel, Mina } from "../../../../../../src/sagittal/notations/ji"
 import { MINA, ULTRINA } from "../../../../../../src/sagittal/notations/ji/intervals"
-import { SagittalCommaAnalysis } from "../../../../../../src/sagittal/notations/types"
+import { PrimaryCommaAnalysis } from "../../../../../../src/sagittal/notations/types"
 import { extractJiNotationBoundIdentifiers } from "../../../../../../src/scripts/jiNotationBound/io/terminal/boundIdentifiers"
 import { JiNotationBoundIdentifiers } from "../../../../../../src/scripts/jiNotationBound/io/terminal/types"
 
@@ -62,7 +62,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                         smallestSymbolSubset: SymbolSubset.HERCULEAN,
                         minaName: "47" as Name<Mina>,
                         primaryCommaAnalysis: {
-                            id: 47 as Id<SagittalComma>,
+                            id: 47 as Id<PrimaryComma>,
                             apotomeSlope: -2.411919815346935 as ApotomeSlope,
                             aas: 2.411919815346935 as Abs<ApotomeSlope>,
                             ate: 1 as Abs<Integer & Exponent<3 & Prime>>,
@@ -78,7 +78,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                             decimal: 1.01333333302 as DecimalNotDefaultingToPotentiallyIrrational,
                             cents: 22.930587 as Cents,
                             name: "19/25C" as Name<Comma>,
-                        } as SagittalCommaAnalysis,
+                        } as PrimaryCommaAnalysis,
                         // not the best example b/c ID and mina name are the same up to this point
                         id: 47 as Id<SymbolClass>,
                         elements: [".|", ")|", "/|"] as SymbolLongAscii[],
@@ -92,7 +92,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                         smallestSymbolSubset: SymbolSubset.HERCULEAN,
                         minaName: "48" as Name<Mina>,
                         primaryCommaAnalysis: {
-                            id: 48 as Id<SagittalComma>,
+                            id: 48 as Id<PrimaryComma>,
                             apotomeSlope: 10.555481691145998 as ApotomeSlope,
                             aas: 10.555481691145998 as Abs<ApotomeSlope>,
                             ate: 12 as Abs<Integer & Exponent<3 & Prime>>,
@@ -108,7 +108,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                             decimal: 1.01364326455 as DecimalNotDefaultingToPotentiallyIrrational,
                             cents: 23.460010 as Cents,
                             name: "3C" as Name<Comma>,
-                        } as SagittalCommaAnalysis,
+                        } as PrimaryCommaAnalysis,
                         id: 48 as Id<SymbolClass>,
                         elements: ["'|", "/|"] as SymbolLongAscii[],
                     },
@@ -123,7 +123,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                         smallestSymbolSubset: SymbolSubset.HERCULEAN,
                         minaName: "47" as Name<Mina>,
                         primaryCommaAnalysis: {
-                            id: 47 as Id<SagittalComma>,
+                            id: 47 as Id<PrimaryComma>,
                             apotomeSlope: -2.411919815346935 as ApotomeSlope,
                             aas: 2.411919815346935 as Abs<ApotomeSlope>,
                             ate: 1 as Abs<Integer & Exponent<3 & Prime>>,
@@ -139,7 +139,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                             decimal: 1.01333333302 as DecimalNotDefaultingToPotentiallyIrrational,
                             cents: 22.930587 as Cents,
                             name: "19/25C" as Name<Comma>,
-                        } as SagittalCommaAnalysis,
+                        } as PrimaryCommaAnalysis,
                         id: 47 as Id<SymbolClass>,
                         elements: [".|", ")|", "/|"] as SymbolLongAscii[],
                     },
@@ -152,7 +152,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                         smallestSymbolSubset: SymbolSubset.HERCULEAN,
                         minaName: "48" as Name<Mina>,
                         primaryCommaAnalysis: {
-                            id: 48 as Id<SagittalComma>,
+                            id: 48 as Id<PrimaryComma>,
                             apotomeSlope: 10.555481691145998 as ApotomeSlope,
                             aas: 10.555481691145998 as Abs<ApotomeSlope>,
                             ate: 12 as Abs<Integer & Exponent<3 & Prime>>,
@@ -168,7 +168,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                             decimal: 1.01364326455 as DecimalNotDefaultingToPotentiallyIrrational,
                             cents: 23.460010 as Cents,
                             name: "3C" as Name<Comma>,
-                        } as SagittalCommaAnalysis,
+                        } as PrimaryCommaAnalysis,
                         id: 48 as Id<SymbolClass>,
                         elements: ["'|", "/|"] as SymbolLongAscii[],
                     },
@@ -184,7 +184,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                         smallestSymbolSubset: SymbolSubset.HERCULEAN,
                         id: 47 as Id<SymbolClass>,
                         primaryCommaAnalysis: {
-                            id: 47 as Id<SagittalComma>,
+                            id: 47 as Id<PrimaryComma>,
                             apotomeSlope: -2.411919815346935 as ApotomeSlope,
                             aas: 2.411919815346935 as Abs<ApotomeSlope>,
                             ate: 1 as Abs<Integer & Exponent<3 & Prime>>,
@@ -200,7 +200,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                             decimal: 1.01333333302 as DecimalNotDefaultingToPotentiallyIrrational,
                             cents: 22.930587 as Cents,
                             name: "19/25C" as Name<Comma>,
-                        } as SagittalCommaAnalysis,
+                        } as PrimaryCommaAnalysis,
                         elements: [".|", ")|", "/|"] as SymbolLongAscii[],
                     },
                     {
@@ -213,7 +213,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                         smallestSymbolSubset: SymbolSubset.HERCULEAN,
                         id: 48 as Id<SymbolClass>,
                         primaryCommaAnalysis: {
-                            id: 48 as Id<SagittalComma>,
+                            id: 48 as Id<PrimaryComma>,
                             apotomeSlope: 10.555481691145998 as ApotomeSlope,
                             aas: 10.555481691145998 as Abs<ApotomeSlope>,
                             ate: 12 as Abs<Integer & Exponent<3 & Prime>>,
@@ -229,7 +229,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                             decimal: 1.01364326455 as DecimalNotDefaultingToPotentiallyIrrational,
                             cents: 23.460010 as Cents,
                             name: "3C" as Name<Comma>,
-                        } as SagittalCommaAnalysis,
+                        } as PrimaryCommaAnalysis,
                         elements: ["'|", "/|"] as SymbolLongAscii[],
                     },
                 ],

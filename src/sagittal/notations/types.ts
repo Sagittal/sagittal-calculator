@@ -14,13 +14,13 @@ enum SymbolSubset {
     TROJAN = "trojan",
 }
 
-type SagittalComma<T extends NumTypeParameters = {}> =
+type PrimaryComma<T extends NumTypeParameters = {}> =
     Comma<T>
-    & { id: Id<SagittalComma> }
+    & { id: Id<PrimaryComma> }
 
-type SagittalCommaAnalysis<T extends NumTypeParameters = {}> =
+type PrimaryCommaAnalysis<T extends NumTypeParameters = {}> =
     CommaAnalysis<T>
-    & { id: Id<SagittalComma> }
+    & { id: Id<PrimaryComma> }
 
 interface SymbolClass {
     // TODO: REALIZE ERD DIAGRAM FOR ELEMENTS AND SYMBOLS
@@ -33,11 +33,11 @@ interface SymbolClass {
     //  as well as how their unicode and ascii, evo/revo, is calculated from elements
     elements: SymbolLongAscii[],
     id: Id<SymbolClass>,
-    primaryCommaId: Id<SagittalComma>,
+    primaryCommaId: Id<PrimaryComma>,
 }
 
 type SymbolClassAnalysis = Omit<SymbolClass, "primaryCommaId"> & {
-    primaryCommaAnalysis: SagittalCommaAnalysis,
+    primaryCommaAnalysis: PrimaryCommaAnalysis,
     ascii: SymbolLongAscii,
     unicode: SymbolUnicode,
     introducingJiNotationLevel: JiNotationLevel,
@@ -63,10 +63,10 @@ enum Flavor {
 
 export {
     SymbolSubset,
-    SagittalComma,
+    PrimaryComma,
     SymbolClass,
     Symbol,
     SymbolClassAnalysis,
-    SagittalCommaAnalysis,
+    PrimaryCommaAnalysis,
     Flavor,
 }

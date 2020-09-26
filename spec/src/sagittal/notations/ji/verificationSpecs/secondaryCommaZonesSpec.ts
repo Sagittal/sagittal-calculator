@@ -1,7 +1,7 @@
 // tslint:disable max-line-length
 
 import { Zone } from "../../../../../../src/general/music"
-import { JI_NOTATION, SagittalComma } from "../../../../../../src/sagittal"
+import { JI_NOTATION, PrimaryComma } from "../../../../../../src/sagittal"
 import { computeSecondaryCommaZone } from "../../../../../../src/sagittal/notations/ji"
 
 describe("secondary comma zones", (): void => {
@@ -158,7 +158,7 @@ describe("secondary comma zones", (): void => {
             [{ decimal: 1.0389294192844114 }, { decimal: 1.0404039320488956 }], // [{ cents: 66.117175 }, { cents: 68.572508 }],
             [{ decimal: 1.0397730671239145 }, { decimal: 1.0401107180487927 }], // [{ cents: 67.522429 }, { cents: 68.084530 }],
             [{ decimal: 1.0401107180487927 }, { decimal: 1.0404039320488956 }], // [{ cents: 68.084530 }, { cents: 68.572508 }],
-        ] as Array<Zone<SagittalComma>>
+        ] as Array<Zone<PrimaryComma>>
         expected.forEach((zone: Zone, index: number): void => {
             expect(actual[ index ][ 0 ].decimal).toBeCloseToTyped(zone[ 0 ].decimal)
             expect(actual[ index ][ 1 ].decimal).toBeCloseToTyped(zone[ 1 ].decimal)
