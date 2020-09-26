@@ -96,6 +96,7 @@ export {
     ANY_RATIO_CHARS,
     formatCents,
     parseInteger,
+    parseDecimal,
 } from "./io"
 export {
     abs,

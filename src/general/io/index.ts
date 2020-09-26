@@ -15,7 +15,7 @@ export {
     ANY_RATIO_CHARS,
 } from "./constants"
 export { clearLogFiles, LogTarget, saveLog, setLogTargets } from "./log"
-export { parse23FreeClass, parseMonzo, parseRatio, parseCents, parseInteger } from "./parse"
+export { parse23FreeClass, parseMonzo, parseRatio, parseCents, parseInteger, parseDecimal } from "./parse"
 export { removeColor } from "./removeColor"
 export { stringify } from "./stringify"
 export { Column, formatTable, Row, Table, splitColumnTitlesIntoRowsBySpaces, TableFormat } from "./table"

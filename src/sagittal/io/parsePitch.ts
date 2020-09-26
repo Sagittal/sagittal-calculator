@@ -3,11 +3,11 @@ import {
     ANY_MONZO_CHARS,
     ANY_RATIO_CHARS,
     computeDecimalFromCents,
-    Decimal,
     IDENTIFYING_COMMA_NAME_CHARS,
     Io,
     Num,
     parseCents,
+    parseDecimal,
     parseMonzo,
     parseRatio,
 } from "../../general"
@@ -29,7 +29,7 @@ const parsePitch = (pitchIo: Io): Num => {
     } else if (pitchIo.match(ANY_CENTS_CHARS)) {
         pitch = { decimal: computeDecimalFromCents(parseCents(pitchIo)) }
     } else {
-        pitch = { decimal: parseFloat(pitchIo) as Decimal } // TODO: need a helper for parseDecimal to do this
+        pitch = { decimal: parseDecimal(pitchIo) }
     }
 
     return pitch

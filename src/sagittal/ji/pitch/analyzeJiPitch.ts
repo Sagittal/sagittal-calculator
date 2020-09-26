@@ -4,8 +4,8 @@ import {
     computeDecimalFromNum,
     computeMonzoFromRationalNum,
     computeRatioFromRationalNum,
-    RationalNum,
     Num,
+    RationalNum,
 } from "../../../general"
 import { analyze23FreeClass } from "../twoThreeFreeClass"
 import { computeAas } from "./aas"
