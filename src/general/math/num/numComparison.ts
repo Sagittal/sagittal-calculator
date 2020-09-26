@@ -1,11 +1,11 @@
-import { ACCURACY_THRESHOLD, isCloseTo, isUndefined, Precision } from "../../code"
+import { isCloseTo, isUndefined, MAX_JAVASCRIPT_PRECISION, Precision } from "../../code"
 import { formatNum } from "../../io"
 import { computeDecimalFromMonzo, computeDecimalFromNum, computeDecimalFromRatio } from "./decimal"
 import { equalMonzos } from "./monzo"
 import { computeRatioFromMonzo, equalRatios } from "./ratio"
 import { Num } from "./types"
 
-const equalNums = (numA: Num, numB: Num, precision: Precision = ACCURACY_THRESHOLD): boolean => {
+const equalNums = (numA: Num, numB: Num, precision: Precision = MAX_JAVASCRIPT_PRECISION): boolean => {
     if (!isUndefined(numA.decimal)) {
         if (!isUndefined(numB.decimal)) {
             return isCloseTo(numA.decimal, numB.decimal, precision)
@@ -42,16 +42,16 @@ const equalNums = (numA: Num, numB: Num, precision: Precision = ACCURACY_THRESHO
     throw new Error(`Tried to check equality of nums ${formatNum(numA, { align: false })} and ${formatNum(numB, { align: false })} but the former lacked any numeric representations.`)
 }
 
-const numIsHigher = (num: Num, otherNum: Num, precision: Precision = ACCURACY_THRESHOLD): boolean =>
+const numIsHigher = (num: Num, otherNum: Num, precision: Precision = MAX_JAVASCRIPT_PRECISION): boolean =>
     !equalNums(num, otherNum, precision) && computeDecimalFromNum(num) > computeDecimalFromNum(otherNum)
 
-const numIsLower = (num: Num, otherNum: Num, precision: Precision = ACCURACY_THRESHOLD): boolean =>
+const numIsLower = (num: Num, otherNum: Num, precision: Precision = MAX_JAVASCRIPT_PRECISION): boolean =>
     !equalNums(num, otherNum, precision) && computeDecimalFromNum(num) < computeDecimalFromNum(otherNum)
 
-const numIsHigherOrEqual = (num: Num, otherNum: Num, precision: Precision = ACCURACY_THRESHOLD): boolean =>
+const numIsHigherOrEqual = (num: Num, otherNum: Num, precision: Precision = MAX_JAVASCRIPT_PRECISION): boolean =>
     equalNums(num, otherNum, precision) || numIsHigher(num, otherNum, precision)
 
-const numIsLowerOrEqual = (num: Num, otherNum: Num, precision: Precision = ACCURACY_THRESHOLD): boolean =>
+const numIsLowerOrEqual = (num: Num, otherNum: Num, precision: Precision = MAX_JAVASCRIPT_PRECISION): boolean =>
     equalNums(num, otherNum, precision) || numIsLower(num, otherNum, precision)
 
 export {
