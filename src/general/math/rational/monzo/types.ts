@@ -60,8 +60,8 @@ interface PatentValOptions<T extends Window> {
     primeLimit: Max<Max<Prime>>
 }
 
-type RationalNumByMonzo<T extends RationalNumTypeParameters = { potentiallyIrrational: false }> = {
-    decimal?: DecimalNotDefaultingToPotentiallyIrrational<T>,
+type RationalNumByMonzo<T extends NumTypeParameters = {}> = {
+    decimal?: DecimalNotDefaultingToPotentiallyIrrational<T & { potentiallyIrrational: false }>,
     monzo: Monzo<T & { potentiallyIrrational: false }>,
     ratio?: Ratio<T & { potentiallyIrrational: false }>,
 }

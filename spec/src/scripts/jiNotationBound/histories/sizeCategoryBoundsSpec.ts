@@ -8,7 +8,7 @@ describe("computeSizeCategoryBoundsWithinMaximumPosition", (): void => {
 
         expect(max(...actual.map((sizeCategoryBound: SizeCategoryBound): Decimal => sizeCategoryBound.decimal!)))
             .toEqual(MAX_SYMBOL_CLASS_POSITION.decimal as Max<Decimal>)
-        // TODO: it would be cool if you could take the cents of a pitch which was Max<Pitch> and it would come out as
+        // TODO: it would be cool if you could take the cents of a pitch which was Max<Num> and it would come out as
         //  Max<Cents>, but I won't hold my breath
     })
 })

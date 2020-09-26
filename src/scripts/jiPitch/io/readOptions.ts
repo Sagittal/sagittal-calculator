@@ -5,10 +5,10 @@ import {
     Io,
     Monzo,
     MonzoNotDefaultingToRational,
+    Num,
     parseInteger,
     parseMonzo,
     parseRatio,
-    Pitch,
     RatioNotDefaultingToRational,
 } from "../../../general"
 import { computeMonzoFrom23FreeClassAndSizeCategoryName, parseCommaName, parsePitch } from "../../../sagittal"
@@ -44,11 +44,11 @@ const readFindCommasOptions = (): void => {
         .option(
             `-${CommandFlag.LOWER_BOUND}, --lower-bound <lowerBound>`,
             "lower bound",
-            (pitchIo: string): Pitch => parsePitch(pitchIo as Io))
+            (pitchIo: string): Num => parsePitch(pitchIo as Io))
         .option(
             `-${CommandFlag.UPPER_BOUND}, --upper-bound <upperBound>`,
             "upper bound",
-            (pitchIo: string): Pitch => parsePitch(pitchIo as Io),
+            (pitchIo: string): Num => parsePitch(pitchIo as Io),
         )
         .option(`-${CommandFlag.MAX_AAS}, --max-aas <maxAas>`, "max AAS", parseFloat)
         .option(`-${CommandFlag.MAX_ATE}, --max-ate <maxAte>`, "max ATE", parseInt)

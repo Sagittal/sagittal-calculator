@@ -1,4 +1,4 @@
-import { Cents, Name, PotentiallyNonJiPitch } from "../../../general"
+import { Cents, Name, PotentiallyIrrationalNum } from "../../../general"
 import { BoundType, JiNotationLevel, SizeCategoryBound } from "../../../sagittal"
 
 interface BoundEvent {
@@ -14,11 +14,11 @@ interface BoundEvent {
 
 type BoundHistory = BoundEvent[]
 
-type CommaMean = PotentiallyNonJiPitch & {
+type CommaMean = PotentiallyIrrationalNum & {
     name: Name<CommaMean>,
 }
 
-type InaMidpoint = PotentiallyNonJiPitch & {
+type InaMidpoint = PotentiallyIrrationalNum & {
     name: Name<InaMidpoint>,
 }
 

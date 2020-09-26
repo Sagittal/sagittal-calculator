@@ -1,4 +1,4 @@
-import { Id, ioSettings, Max, MAX_JAVASCRIPT_PRECISION, Maybe, Min, numIsHigher, Pitch, Zone } from "../../../general"
+import { Id, ioSettings, Max, MAX_JAVASCRIPT_PRECISION, Maybe, Min, Num, numIsHigher, Zone } from "../../../general"
 import { formatSymbolClass } from "../../io"
 import { getPrimaryComma } from "../primaryComma"
 import { SagittalComma, SymbolClass } from "../types"
@@ -34,10 +34,10 @@ const computeCaptureZone = (
     const indexOfJiNotationBoundJustBelowSymbolClassAtThisLevel = indexOfBoundJustAboveSymbolAtThisLevel - 1
 
     const lowerBound =
-        jiNotationLevelBounds[ indexOfJiNotationBoundJustBelowSymbolClassAtThisLevel ] as Pitch as Min<Pitch>
+        jiNotationLevelBounds[ indexOfJiNotationBoundJustBelowSymbolClassAtThisLevel ] as Num as Min<Num>
         || ABSOLUTE_LOWEST_BOUND // TODO: can probably improve this somehow
     const upperBound =
-        jiNotationLevelBounds[ indexOfBoundJustAboveSymbolAtThisLevel ] as Pitch as Max<Pitch>
+        jiNotationLevelBounds[ indexOfBoundJustAboveSymbolAtThisLevel ] as Num as Max<Num>
 
     return [lowerBound, upperBound] as Zone<SagittalComma>
 }

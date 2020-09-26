@@ -8,10 +8,11 @@ import {
     computeSuperRatio,
     FIVE_ROUGHNESS,
     isInteger,
+    RationalNum,
 } from "../../math"
-import { JiPitch, TwoThreeFreeClass } from "./types"
+import { TwoThreeFreeClass } from "./types"
 
-const compute23FreeClass = ({ monzo, ratio, decimal }: JiPitch): TwoThreeFreeClass => {
+const compute23FreeClass = ({ monzo, ratio, decimal }: RationalNum): TwoThreeFreeClass => {
     const twoThreeFreeClass = {} as TwoThreeFreeClass
 
     if (!isUndefined(monzo)) {

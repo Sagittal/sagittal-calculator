@@ -1,8 +1,8 @@
 import { formatPitch, Formatted } from "../../../../../src/general/io/format"
-import { Decimal, Integer } from "../../../../../src/general/math"
+import { Decimal, Integer, Num } from "../../../../../src/general/math"
 import { Monzo } from "../../../../../src/general/math/rational/monzo"
 import { Ratio } from "../../../../../src/general/math/rational/ratio"
-import { Cents, Pitch } from "../../../../../src/general/music"
+import { Cents } from "../../../../../src/general/music"
 
 describe("formatPitch", (): void => {
     it("if only the ratio is present, returns it formatted", (): void => {
@@ -10,7 +10,7 @@ describe("formatPitch", (): void => {
 
         const actual = formatPitch(pitch)
 
-        const expected = "5/3" as Formatted<Pitch>
+        const expected = "5/3" as Formatted<Num>
         expect(actual).toBe(expected)
     })
 
@@ -19,7 +19,7 @@ describe("formatPitch", (): void => {
 
         const actual = formatPitch(pitch)
 
-        const expected = "5/3" as Formatted<Pitch>
+        const expected = "5/3" as Formatted<Num>
         expect(actual).toBe(expected)
     })
 
@@ -28,7 +28,7 @@ describe("formatPitch", (): void => {
 
         const actual = formatPitch(pitch)
 
-        const expected = "5/1" as Formatted<Pitch>
+        const expected = "5/1" as Formatted<Num>
         expect(actual).toBe(expected)
     })
 
@@ -37,7 +37,7 @@ describe("formatPitch", (): void => {
 
         const actual = formatPitch(pitch)
 
-        const expected = "5/3" as Formatted<Pitch>
+        const expected = "5/3" as Formatted<Num>
         expect(actual).toBe(expected)
     })
 
@@ -46,7 +46,7 @@ describe("formatPitch", (): void => {
 
         const actual = formatPitch(pitch)
 
-        const expected = "[   0  -1   1 ⟩" as Formatted<Pitch>
+        const expected = "[   0  -1   1 ⟩" as Formatted<Num>
         expect(actual).toBe(expected)
     })
 
@@ -55,7 +55,7 @@ describe("formatPitch", (): void => {
 
         const actual = formatPitch(pitch)
 
-        const expected = "[   0   0   1 ⟩" as Formatted<Pitch>
+        const expected = "[   0   0   1 ⟩" as Formatted<Num>
         expect(actual).toBe(expected)
     })
 
@@ -64,7 +64,7 @@ describe("formatPitch", (): void => {
 
         const actual = formatPitch(pitch)
 
-        const expected = "[   0  -1   1 ⟩" as Formatted<Pitch>
+        const expected = "[   0  -1   1 ⟩" as Formatted<Num>
         expect(actual).toBe(expected)
     })
 
@@ -73,7 +73,7 @@ describe("formatPitch", (): void => {
 
         const actual = formatPitch(pitch)
 
-        const expected = "       884.359¢" as Formatted<Pitch>
+        const expected = "       884.359¢" as Formatted<Num>
         expect(actual).toBe(expected)
     })
 
@@ -82,7 +82,7 @@ describe("formatPitch", (): void => {
 
         const actual = formatPitch(pitch)
 
-        const expected = "       884.359¢" as Formatted<Pitch>
+        const expected = "       884.359¢" as Formatted<Num>
         expect(actual).toBe(expected)
     })
 
@@ -91,7 +91,7 @@ describe("formatPitch", (): void => {
 
         const actual = formatPitch(pitch, { align: false })
 
-        const expected = "884.359¢" as Formatted<Pitch>
+        const expected = "884.359¢" as Formatted<Num>
         expect(actual).toBe(expected)
     })
 })

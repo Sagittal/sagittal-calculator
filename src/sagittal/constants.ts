@@ -1,4 +1,4 @@
-import { Comma, DecimalNotDefaultingToPotentiallyIrrational, Monzo, Pitch, Ratio, THREE_PRIME_INDEX } from "../general"
+import { Comma, DecimalNotDefaultingToPotentiallyIrrational, Monzo, Num, Ratio, THREE_PRIME_INDEX } from "../general"
 
 const APOTOME: Comma = {
     monzo: [-11, 7] as Monzo,
@@ -6,7 +6,7 @@ const APOTOME: Comma = {
     decimal: 2187 / 2048 as DecimalNotDefaultingToPotentiallyIrrational,    // 113.68500605771192¢
 } as Comma
 
-const HALF_APOTOME: Pitch = {
+const HALF_APOTOME: Num = {
     monzo: [-5.5, 3.5] as Monzo,
     // TODO: HALF-PITCH HELPER
     //  could be cool to have a half-pitch helper or maybe just general multiply or divide

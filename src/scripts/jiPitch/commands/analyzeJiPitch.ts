@@ -1,4 +1,4 @@
-import { Id, Io, JiPitch, LogTarget, Maybe, saveLog } from "../../../general"
+import { Id, Io, LogTarget, Maybe, RationalNum, saveLog } from "../../../general"
 import {
     analyzeJiPitch,
     CommaAnalysis,
@@ -14,7 +14,7 @@ readJiPitchOptions()
 
 applySharedPitchCommandSetup()
 
-const jiPitch: JiPitch = parseJiPitch()
+const jiPitch: RationalNum = parseJiPitch()
 const jiPitchAnalysis: JiPitchAnalysis = analyzeJiPitch(jiPitch)
 const jiPitchOutput: Io = computeJiPitchOutput(jiPitchAnalysis)
 saveLog(jiPitchOutput, LogTarget.FINAL)

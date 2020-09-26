@@ -1,9 +1,9 @@
-import { equalNums, Id, JiPitch, MAX_JAVASCRIPT_PRECISION, Maybe } from "../../../general"
+import { equalNums, Id, MAX_JAVASCRIPT_PRECISION, Maybe, RationalNum } from "../../../general"
 import { getPrimaryComma } from "../primaryComma"
 import { SymbolClass } from "../types"
 import { JI_NOTATION } from "./levelSymbolClassIds"
 
-const computeMaybeSymbolClassId = (jiPitch: JiPitch): Maybe<Id<SymbolClass>> =>
+const computeMaybeSymbolClassId = (jiPitch: RationalNum): Maybe<Id<SymbolClass>> =>
     JI_NOTATION.find((symbolClassId: Id<SymbolClass>): boolean => {
         const primaryComma = getPrimaryComma(symbolClassId)
 

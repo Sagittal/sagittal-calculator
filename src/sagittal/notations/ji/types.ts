@@ -1,4 +1,4 @@
-import { Cents, Id, PotentiallyNonJiPitch } from "../../../general"
+import { Cents, Id, PotentiallyIrrationalNum } from "../../../general"
 
 enum BoundType {
     INA_MIDPOINT = "inaMidpoint",
@@ -25,7 +25,7 @@ enum JiNotationLevel {
 // TODO: wait.. what's the difference between this and a BoundPosition?
 //  should this not just extend that? okay, if you do that, you'll force each one to have a name too.
 //  which I think is cool. but you don't have to worry about that yet.
-type JiNotationBound = PotentiallyNonJiPitch & {
+type JiNotationBound = PotentiallyIrrationalNum & {
     id: Id<JiNotationBound>,
     jiNotationLevels: JiNotationLevel[],
     boundType: BoundType,

@@ -16,7 +16,7 @@ const formatNum = (num: Num, options: { align?: boolean } = {}): Formatted<Num> 
         return formatDecimal(decimal, options) as Formatted as Formatted<Num>
     }
 
-    throw new Error(`Tried to format pitch ${stringify(num)} but it had no numeric members.`)
+    throw new Error(`Tried to format num ${stringify(num)} but it had no numeric members.`)
 }
 
 export {

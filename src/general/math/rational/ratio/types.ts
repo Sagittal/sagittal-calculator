@@ -33,8 +33,8 @@ enum FractionalPartType {
 
 type FractionalPart<T extends NumTypeParameters = {}> = Numerator<T> | Denominator<T>
 
-type RationalNumByRatio<T extends RationalNumTypeParameters = { potentiallyIrrational: false }> = {
-    decimal?: DecimalNotDefaultingToPotentiallyIrrational<T>,
+type RationalNumByRatio<T extends NumTypeParameters = {}> = {
+    decimal?: DecimalNotDefaultingToPotentiallyIrrational<T & { potentiallyIrrational: false }>,
     monzo?: Monzo<T & { potentiallyIrrational: false }>,
     ratio: Ratio<T & { potentiallyIrrational: false }>,
 }

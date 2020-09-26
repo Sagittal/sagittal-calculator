@@ -6,15 +6,15 @@ import {
     Decimal,
     IDENTIFYING_COMMA_NAME_CHARS,
     Io,
+    Num,
     parseCents,
     parseMonzo,
     parseRatio,
-    Pitch,
 } from "../../general"
 import { computeMonzoFrom23FreeClassAndSizeCategoryName, parseCommaName } from "../ji"
 
-const parsePitch = (pitchIo: Io): Pitch => {
-    let pitch: Pitch
+const parsePitch = (pitchIo: Io): Num => {
+    let pitch: Num
     if (pitchIo.match(IDENTIFYING_COMMA_NAME_CHARS)) {
         const { commaNameRatio, sizeCategoryName } = parseCommaName(pitchIo)
         // TODO: this, by comma name, is the only reason this has to live in here.

@@ -1,4 +1,10 @@
-import { MaybeIntegerBrand, MonzoNotDefaultingToRational, RationalNum, RatioNotDefaultingToRational } from "./rational"
+import {
+    MaybeIntegerBrand,
+    Monzo,
+    MonzoNotDefaultingToRational, Ratio,
+    RationalNum,
+    RatioNotDefaultingToRational,
+} from "./rational"
 
 // TODO: Dec instead instead of Decimal? hmm... maybe not.
 //  because we're not abbreviating Number to Num only bc we can but because we kind of have to.
@@ -20,6 +26,9 @@ Cents should really only be part of analyses
 In which case pitches should not really be any different than nums....
 (except later I decided it was a good idea to allow non-JI pitches to be specified as cents)
  */
+
+// This is the one place where we default the NumTypeParameters to something other than {}
+// but things seem to massively blow up otherwise.
 type Decimal<T extends NumTypeParameters = { potentiallyIrrational?: true }> = number & NumTypeParameterEffects<T>
 type DecimalNotDefaultingToPotentiallyIrrational<T extends NumTypeParameters = {}> = number & NumTypeParameterEffects<T>
 
@@ -100,14 +109,13 @@ call it a Degree
 the existing Window isn’t a base, it gets divided up additively, not multiplicatively
  */
 
-type PotentiallyIrrationalNum<T extends NumTypeParameters> ={
+type PotentiallyIrrationalNum<T extends NumTypeParameters = {}> ={
     decimal: Decimal<T>,
     monzo?: MonzoNotDefaultingToRational<T>,
     ratio?: RatioNotDefaultingToRational<T>,
 }
 
-type Num<T extends NumTypeParameters = {}> =
-    RationalNum<T & { potentiallyIrrational: false }> | PotentiallyIrrationalNum<T>
+type Num<T extends NumTypeParameters = {}> = RationalNum<T> | PotentiallyIrrationalNum<T>
 
 export {
     Combination,

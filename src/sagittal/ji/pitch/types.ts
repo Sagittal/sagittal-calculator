@@ -3,10 +3,10 @@ import {
     Cents,
     Exponent,
     Integer,
-    JiPitch,
     Monzo,
     Prime,
     Ratio,
+    RationalNum,
     RationalNumTypeParameters,
 } from "../../../general"
 import { TwoThreeFreeClassAnalysis } from "../twoThreeFreeClass"
@@ -26,7 +26,7 @@ interface JiPitchAnalysisProperties<T extends RationalNumTypeParameters = { pote
 }
 
 type JiPitchAnalysis<T extends RationalNumTypeParameters = { potentiallyIrrational: false }> =
-    JiPitch<T>
+    RationalNum<T>
     & JiPitchAnalysisProperties<T>
 
 type ApotomeSlope = number & { _ApotomeSlopeBrand: boolean }

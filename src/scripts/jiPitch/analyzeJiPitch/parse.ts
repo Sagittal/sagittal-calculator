@@ -1,17 +1,17 @@
 import { program } from "commander"
-import { Abs, Exponent, Integer, Io, isInteger, isUndefined, JiPitch, Max, Prime } from "../../../general"
+import { Abs, Exponent, Integer, Io, isInteger, isUndefined, Max, Prime, RationalNum } from "../../../general"
 import { ApotomeSlope, computeAas, computeAte, JiPitchAnalysis, N2D3P9, parsePitch } from "../../../sagittal"
 import { FindCommasSettings, parseFindCommasSettings } from "../findCommas"
 
-const parseJiPitch = (): JiPitch => {
+const parseJiPitch = (): RationalNum => {
     const jiPitchText = program.args[ 0 ] as Io
 
-    let jiPitch: JiPitch
+    let jiPitch: RationalNum
     if (jiPitchText) {
         const pitch = parsePitch(jiPitchText)
 
         if (!isUndefined(pitch.monzo) || !isUndefined(pitch.ratio) || isInteger(pitch.decimal!)) {
-            jiPitch = pitch as JiPitch
+            jiPitch = pitch as RationalNum
         } else {
             throw new Error("JI pitches must be given as monzos, ratios, or integers.")
         }

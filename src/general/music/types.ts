@@ -1,6 +1,5 @@
-import { NumTypeParameters, PotentiallyIrrationalNum } from "../math"
+import { Num } from "../math"
 import { Extrema } from "../types"
-import { JiPitch } from "./ji"
 
 type Cents = number & { _CentsBrand: boolean }
 
@@ -9,15 +8,11 @@ type Cents = number & { _CentsBrand: boolean }
 //  perhaps there is some way to fernangle it so that pitches could have free: [2,3] and then potentially you know
 //  like [3,5,7] such as is the case in the Yer tuning system, where it's a chunk in the middle, nonconsecutive
 //  and ji: true could map to potentiallyIrrational: false
-type PotentiallyNonJiPitch<T extends NumTypeParameters = {}> = PotentiallyIrrationalNum<T>
+//  to do that though you'd have to bring back the type Pitch as an alias type essentially
 
-type Pitch<T extends NumTypeParameters = {}> = JiPitch<T> | PotentiallyNonJiPitch<T>
-
-type Zone<T = void> = Extrema<Pitch> & (T extends void ? {} : { _ZoneOfBrand: T })
+type Zone<T = void> = Extrema<Num> & (T extends void ? {} : { _ZoneOfBrand: T })
 
 export {
-    PotentiallyNonJiPitch,
     Cents,
     Zone,
-    Pitch,
 }

@@ -5,12 +5,12 @@ import {
     FIVE_ROUGHNESS,
     Id,
     invertMonzo,
-    JiPitch,
+    RationalNum,
 } from "../../../general"
 import { getPrimaryComma, JI_NOTATION, SymbolClass } from "../../../sagittal"
 
 // Different than computeNotatingCommas because this one only concerns itself with commas that are in Sagittal
-const computeExactlyNotatingSymbolClassIds = (jiPitch: JiPitch): Array<Id<SymbolClass>> => {
+const computeExactlyNotatingSymbolClassIds = (jiPitch: RationalNum): Array<Id<SymbolClass>> => {
     const monzo = computeMonzoFromRationalNum(jiPitch)
 
     const exactlyNotatingSymbolClassIds: Array<Id<SymbolClass>> = []

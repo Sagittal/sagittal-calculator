@@ -1,5 +1,5 @@
-import { Decimal, Max, Min, Monzo, Sopfr } from "../../../../../src/general/math"
-import { Comma, Pitch } from "../../../../../src/general/music"
+import { Decimal, Max, Min, Monzo, Num, Sopfr } from "../../../../../src/general/math"
+import { Comma } from "../../../../../src/general/music"
 import { computeCommas } from "../../../../../src/scripts/jiPitch/findCommas"
 
 describe("computeCommas", (): void => {
@@ -9,15 +9,15 @@ describe("computeCommas", (): void => {
         expect((): void => {
             computeCommas({
                 max23FreeSopfr,
-                lowerBound: { decimal: 1.02930223664 as Decimal } as Min<Pitch>,
-                upperBound: { decimal: 1.00579294107 as Decimal } as Max<Pitch>,
+                lowerBound: { decimal: 1.02930223664 as Decimal } as Min<Num>,
+                upperBound: { decimal: 1.00579294107 as Decimal } as Max<Num>,
             })
         }).toThrowError("Lower bound is not less than upper bound; range was 50.000¢ - 10.000¢.")
         expect((): void => {
             computeCommas({
                 max23FreeSopfr,
-                lowerBound: { decimal: 1.02930223664 as Decimal } as Min<Pitch>,
-                upperBound: { decimal: 1.02930223664 as Decimal } as Max<Pitch>,
+                lowerBound: { decimal: 1.02930223664 as Decimal } as Min<Num>,
+                upperBound: { decimal: 1.02930223664 as Decimal } as Max<Num>,
             })
         }).toThrowError("Lower bound is not less than upper bound; range was 50.000¢ - 50.000¢.")
     })
@@ -28,35 +28,35 @@ describe("computeCommas", (): void => {
             expect((): void => {
                 computeCommas({
                     max23FreeSopfr,
-                    lowerBound: { decimal: 0.84089641525 as Decimal } as Min<Pitch>,
+                    lowerBound: { decimal: 0.84089641525 as Decimal } as Min<Num>,
                 })
             }).toThrowError("Search range must be within comma size category bounds (±227.370¢); range was -300.000¢ - 56.843¢.")
             expect((): void => {
                 computeCommas({
                     max23FreeSopfr,
-                    lowerBound: { decimal: 0.79370052598 as Decimal } as Min<Pitch>,
-                    upperBound: { decimal: 0.84089641525 as Decimal } as Max<Pitch>,
+                    lowerBound: { decimal: 0.79370052598 as Decimal } as Min<Num>,
+                    upperBound: { decimal: 0.84089641525 as Decimal } as Max<Num>,
                 })
             }).toThrowError("Search range must be within comma size category bounds (±227.370¢); range was -400.000¢ - -300.000¢.")
             expect((): void => {
                 computeCommas({
                     max23FreeSopfr,
-                    lowerBound: { decimal: 1.189207115 as Decimal } as Min<Pitch>,
-                    upperBound: { decimal: 1.25992104989 as Decimal } as Max<Pitch>,
+                    lowerBound: { decimal: 1.189207115 as Decimal } as Min<Num>,
+                    upperBound: { decimal: 1.25992104989 as Decimal } as Max<Num>,
                 })
             }).toThrowError("Search range must be within comma size category bounds (±227.370¢); range was 300.000¢ - 400.000¢.")
             expect((): void => {
                 computeCommas({
                     max23FreeSopfr,
-                    upperBound: { decimal: 1.189207115 as Decimal } as Max<Pitch>,
+                    upperBound: { decimal: 1.189207115 as Decimal } as Max<Num>,
                 })
             }).toThrowError("Search range must be within comma size category bounds (±227.370¢); range was 0.000¢ - 300.000¢.")
         },
     )
 
     it("returns commas if the bounds are within the abs value of the max size category bound", (): void => {
-        const lowerBound = { decimal: 1.00870198379 as Decimal } as Min<Pitch>
-        const upperBound = { decimal: 1.0174796921 as Decimal } as Max<Pitch>
+        const lowerBound = { decimal: 1.00870198379 as Decimal } as Min<Num>
+        const upperBound = { decimal: 1.0174796921 as Decimal } as Max<Num>
 
         const actual = computeCommas({ lowerBound, upperBound, max23FreeSopfr })
 

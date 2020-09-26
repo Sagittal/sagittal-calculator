@@ -1,5 +1,5 @@
 import { program } from "commander"
-import { Abs, Exponent, Integer, Max, Min, Pitch, Prime } from "../../../general"
+import { Abs, Exponent, Integer, Max, Min, Num, Prime } from "../../../general"
 import { ApotomeSlope, N2D3P9 } from "../../../sagittal"
 import { DEFAULT_FIND_COMMAS_SETTINGS } from "./constants"
 import { FindCommasSettings } from "./types"
@@ -19,10 +19,10 @@ const parseFindCommasSettings = (
     const maxN2D3P9: Max<N2D3P9> = program.maxN2d3p9 ||
         defaultOverrides.maxN2D3P9 ||
         DEFAULT_FIND_COMMAS_SETTINGS.maxN2D3P9
-    const lowerBound: Min<Pitch> = program.lowerBound ||
+    const lowerBound: Min<Num> = program.lowerBound ||
         defaultOverrides.lowerBound ||
         DEFAULT_FIND_COMMAS_SETTINGS.lowerBound
-    const upperBound: Max<Pitch> = program.upperBound ||
+    const upperBound: Max<Num> = program.upperBound ||
         defaultOverrides.upperBound ||
         DEFAULT_FIND_COMMAS_SETTINGS.upperBound
     const maxAas: Max<Abs<ApotomeSlope>> = program.maxAas ||

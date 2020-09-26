@@ -6,7 +6,6 @@ export {
     Comma,
     Popularity,
     Votes,
-    JiPitch,
     TwoThreeFreeClass,
     Apotome,
     COMMA_POPULARITIES,
@@ -16,4 +15,4 @@ export {
 } from "./ji"
 export { CENTS_PER_OCTAVE } from "./constants"
 export { computeDecimalFromCents } from "./decimalFromCents"
-export { Cents, PotentiallyNonJiPitch, Zone, Pitch } from "./types"
+export { Cents, Zone } from "./types"

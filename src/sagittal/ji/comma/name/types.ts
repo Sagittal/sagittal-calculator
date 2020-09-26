@@ -1,4 +1,4 @@
-import { Name, NumTypeParameters, PotentiallyNonJiPitch, Ratio } from "../../../../general"
+import { Name, NumTypeParameters, PotentiallyIrrationalNum, Ratio } from "../../../../general"
 
 interface SizeCategoryOptions {
     abbreviated?: boolean,
@@ -9,7 +9,7 @@ interface SizeCategory {
     abbreviation: SizeCategoryAbbreviation,
 }
 
-type SizeCategoryBound<T extends NumTypeParameters = {}> = PotentiallyNonJiPitch<T> & {
+type SizeCategoryBound<T extends NumTypeParameters = {}> = PotentiallyIrrationalNum<T> & {
     name: Name<SizeCategoryBound>,
 }
 

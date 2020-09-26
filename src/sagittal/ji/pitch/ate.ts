@@ -4,12 +4,12 @@ import {
     computeMonzoFromRationalNum,
     Exponent,
     Integer,
-    JiPitch,
     Prime,
+    RationalNum,
     THREE_PRIME_INDEX,
 } from "../../../general"
 
-const computeAte = (jiPitch: JiPitch): Abs<Integer & Exponent<3 & Prime>> => {
+const computeAte = (jiPitch: RationalNum): Abs<Integer & Exponent<3 & Prime>> => {
     const monzo = computeMonzoFromRationalNum(jiPitch)
 
     return abs(monzo[ THREE_PRIME_INDEX ] || 0) as Abs<Integer & Exponent<3 & Prime>>

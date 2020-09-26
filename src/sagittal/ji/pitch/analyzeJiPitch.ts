@@ -4,7 +4,7 @@ import {
     computeDecimalFromNum,
     computeMonzoFromRationalNum,
     computeRatioFromRationalNum,
-    JiPitch,
+    RationalNum,
     Num,
 } from "../../../general"
 import { analyze23FreeClass } from "../twoThreeFreeClass"
@@ -13,7 +13,7 @@ import { computeApotomeSlope } from "./apotomeSlope"
 import { computeAte } from "./ate"
 import { JiPitchAnalysis } from "./types"
 
-const analyzeJiPitch = (jiPitch: JiPitch): JiPitchAnalysis => {
+const analyzeJiPitch = (jiPitch: RationalNum): JiPitchAnalysis => {
     const monzo = computeMonzoFromRationalNum(jiPitch)
     const ratio = computeRatioFromRationalNum(jiPitch)
     // TODO: this is weird that we dont have the thing for pitch,
