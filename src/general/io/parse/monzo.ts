@@ -1,10 +1,7 @@
-import { Monzo } from "../../math"
+import { MonzoNotDefaultingToRational } from "../../math"
 import { Io } from "../types"
 
-// TODO: this could be given as an irrational Monzo. you even test cover it as such. but this Monzo
-//  type defaults to rational, so it's a lie and could get you in trouble. but it's not an easy problem to fix
-//  having this return a MonzoNotDefaultingToRational
-const parseMonzo = (monzoIo: Io): Monzo => {
+const parseMonzo = (monzoIo: Io): MonzoNotDefaultingToRational => {
     const preparsedMonzoIo = monzoIo
         .replace("⟩", "]")
         .replace(">", "]")

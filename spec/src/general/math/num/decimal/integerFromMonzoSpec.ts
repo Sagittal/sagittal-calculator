@@ -2,7 +2,7 @@ import { computeIntegerFromMonzo, Integer, Monzo } from "../../../../../../src/g
 
 describe("computeIntegerFromMonzo", (): void => {
     it("returns an integer if the monzo has all positive exponents", (): void => {
-        const monzo = [1, 4, 2, 3] as Monzo<{ integer: true }>
+        const monzo = [1, 4, 2, 3] as Monzo<{ potentiallyIrrational: false, integer: true }>
 
         const actual = computeIntegerFromMonzo(monzo)
 
@@ -11,7 +11,8 @@ describe("computeIntegerFromMonzo", (): void => {
     })
 
     it("throws an error if the monzo has any negative elements", (): void => {
-        const monzo = [-1, 4, 2, 3] as Monzo<{ integer: true }> // <--- the type is supposed to protect, but who knows!
+        // the type parameters is supposed to protect, but who knows!
+        const monzo = [-1, 4, 2, 3] as Monzo<{ potentiallyIrrational: false, integer: true }>
 
         expect((): void => {
             computeIntegerFromMonzo(monzo)

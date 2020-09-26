@@ -15,7 +15,7 @@ import { computeMaxNumeratorPrimeExponentsGivenMaxN2D3P9 } from "./maxNumeratorP
 
 const computeNumeratorMonzosToCheckGivenMaxN2D3P9 = (
     maxN2D3P9: Max<N2D3P9>,
-): Array<Monzo<{ integer: true, direction: Direction.SUPER, rough: 5 }>> => {
+): Array<Monzo<{ potentiallyIrrational: false, integer: true, direction: Direction.SUPER, rough: 5 }>> => {
     const maxNumeratorPrimeExponentsGivenMaxN2D3P9 = computeMaxNumeratorPrimeExponentsGivenMaxN2D3P9(maxN2D3P9)
 
     const numeratorPrimeExponentExtremaGivenMaxN2D3P9: Array<Extrema<Integer & Exponent<Prime>>> =
@@ -41,7 +41,7 @@ const computeNumeratorMonzosToCheckGivenMaxN2D3P9 = (
 
     return computeMonzosFromPrimeExponentExtremas(
         numeratorPrimeExponentExtremaGivenMaxN2D3P9,
-    ) as Array<Monzo<{ integer: true, direction: Direction.SUPER, rough: 5 }>>
+    ) as Array<Monzo<{ potentiallyIrrational: false, integer: true, direction: Direction.SUPER, rough: 5 }>>
 }
 
 export {

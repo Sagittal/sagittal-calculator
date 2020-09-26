@@ -57,6 +57,8 @@ export {
     numIsLower,
     numIsLowerOrEqual,
     numIsHigherOrEqual,
+    computeRatioIsRational,
+    computeNumIsRational,
 } from "./num"
 export { computeDistributions } from "./distributions"
 export { dividesEvenly } from "./dividesEvenly"
@@ -114,7 +116,7 @@ export {
     Sopfr,
     Smoothness,
     Primes,
-    IntegerNum,
+    RationalNumByDecimal,
     computeIsSmoothRational,
     computeIsRoughRationalNum,
     computeRationalNumSmoothness,

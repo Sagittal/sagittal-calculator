@@ -88,14 +88,6 @@ describe("parseJiPitch", (): void => {
             const expected = { decimal: 3 as Integer }
             expect(actual).toEqual(expected)
         })
-
-        it("if given as cents, will error for now", (): void => {
-            program.args = ["3.4c"]
-
-            expect((): void => {
-                parseJiPitch()
-            }).toThrowError("JI pitches must be given as monzos, ratios, or integers.")
-        })
     })
 
     describe("when the JI pitch is provided by a specific flag", (): void => {

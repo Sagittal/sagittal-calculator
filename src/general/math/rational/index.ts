@@ -26,7 +26,7 @@ export {
     Smoothness,
     Primes,
     RationalNum,
-    IntegerNum,
+    RationalNumByDecimal,
 } from "./types"
 export { computeIsSmoothRational, computeRationalNumSmoothness, computeIsSmoothInteger } from "./smoothness"
 export { computeIsRoughRationalNum } from "./roughness"

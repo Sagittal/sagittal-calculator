@@ -1,4 +1,4 @@
-import { Denominator, FractionalPart, NumTypeParameters, Ratio } from "../../math"
+import { Denominator, FractionalPart, NumTypeParameters, Ratio, RatioNotDefaultingToRational } from "../../math"
 import { BLANK, SUPERSCRIPT_NUMS } from "../constants"
 import { split } from "../typedOperations"
 import { Char, Io } from "../types"
@@ -11,7 +11,7 @@ const parseRatio = <T extends NumTypeParameters>(
     // TODO: IRRATIONAL RATIOS
     //  I was thinking this would be an important place to ensure it returns RatioNotDefaultingToRational
     //  but that breaks a ton of stuff... and for no good reason, since I don't think we even really support that yet.
-): Ratio<T & { potentiallyUnreduced: true }> => {
+): RatioNotDefaultingToRational<T & { potentiallyUnreduced: true }> => {
     const ratio = split(ratioIo, /[\/:]/).map((fractionalPartIo: Io): FractionalPart => {
         if (fractionalPartIo.match(new RegExp(`[${superscriptNums}.]`))) {
             const factorPowers = fractionalPartIo.split(".")

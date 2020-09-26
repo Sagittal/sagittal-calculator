@@ -3,7 +3,7 @@ import { computeIntegerFromRatio } from "../../../../../../src/general/math/num/
 
 describe("computeIntegerFromRatio", (): void => {
     it("returns the numerator, if the denominator is 1", (): void => {
-        const ratio = [99, 1] as Ratio<{ integer: true }>
+        const ratio = [99, 1] as Ratio<{ potentiallyIrrational: false, integer: true }>
 
         const actual = computeIntegerFromRatio(ratio)
 
@@ -12,7 +12,7 @@ describe("computeIntegerFromRatio", (): void => {
     })
 
     it("works if the denominator divides evenly into the numerator", (): void => {
-        const ratio = [99, 3] as Ratio<{ integer: true }>
+        const ratio = [99, 3] as Ratio<{ potentiallyIrrational: false, integer: true }>
 
         const actual = computeIntegerFromRatio(ratio)
 
@@ -21,7 +21,7 @@ describe("computeIntegerFromRatio", (): void => {
     })
 
     it("throws an error if the denominator does not divide evenly into the numerator", (): void => {
-        const ratio = [99, 2] as Ratio<{ integer: true }>
+        const ratio = [99, 2] as Ratio<{ potentiallyIrrational: false, integer: true }>
 
         expect((): void => {
             computeIntegerFromRatio(ratio)

@@ -28,6 +28,7 @@ export {
     invertRatio,
     computeRatioFromRationalDecimal,
     computeLowestTermsRatio,
+    computeRatioIsRational,
 } from "./ratio"
 export {
     computeIsSubMonzo,
@@ -51,6 +52,7 @@ export {
 } from "./monzo"
 export { computeIsSubNum, computeIsSuperNum, computeIsUnisonNum, computeSuperNum } from "./numDirection"
 export { equalNums, numIsHigher, numIsLower, numIsLowerOrEqual, numIsHigherOrEqual } from "./numComparison"
+export { computeNumIsRational } from "./typeGuards"
 export {
     Direction,
     NumTypeParameters,

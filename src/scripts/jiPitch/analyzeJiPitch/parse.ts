@@ -1,5 +1,18 @@
 import { program } from "commander"
-import { Abs, Exponent, Integer, Io, isInteger, isUndefined, Max, Prime, RationalNum } from "../../../general"
+import {
+    Abs,
+    computeNumIsRational,
+    Exponent,
+    formatPitch,
+    Integer,
+    Io,
+    isUndefined,
+    LogTarget,
+    Max,
+    Prime,
+    RationalNum,
+    saveLog,
+} from "../../../general"
 import { ApotomeSlope, computeAas, computeAte, JiPitchAnalysis, N2D3P9, parsePitch } from "../../../sagittal"
 import { FindCommasSettings, parseFindCommasSettings } from "../findCommas"
 
@@ -10,10 +23,14 @@ const parseJiPitch = (): RationalNum => {
     if (jiPitchText) {
         const pitch = parsePitch(jiPitchText)
 
-        if (!isUndefined(pitch.monzo) || !isUndefined(pitch.ratio) || isInteger(pitch.decimal!)) {
-            jiPitch = pitch as RationalNum
+        if (computeNumIsRational(pitch)) {
+            jiPitch = pitch
+
+            if (!isUndefined(pitch.monzo) || !isUndefined(pitch.ratio)) {
+                saveLog(`Warning: JI pitch ${formatPitch(pitch, { align: false })} provided as decimal or cents, and may not be exactly what you intended.` as Io, LogTarget.ERROR)
+            }
         } else {
-            throw new Error("JI pitches must be given as monzos, ratios, or integers.")
+            throw new Error(`JI pitches must be rational. This pitch was ${formatPitch(pitch, { align: false })}`)
         }
 
         // When provided via specific flags, they are pre-parsed (in readOptions.ts).

@@ -25,7 +25,7 @@ const computeRatioIsRational = <T extends NumTypeParameters>(
 
 const computeRatioIsInteger = <T extends NumTypeParameters>(
     candidateIntegerRatio: RatioNotDefaultingToRational<T>,
-): candidateIntegerRatio is Ratio<T & { integer: true }> => {
+): candidateIntegerRatio is Ratio<T & { potentiallyIrrational: false, integer: true }> => {
     const [numerator, denominator] = candidateIntegerRatio
 
     return dividesEvenly(numerator, denominator)

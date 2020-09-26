@@ -194,6 +194,7 @@ export {
     computeMonzoFromRationalNum,
     PotentiallyIrrationalNum,
     RationalNum,
+    computeNumIsRational,
 } from "./math"
 export {
     Cents,
