@@ -1,11 +1,12 @@
 import { isUndefined } from "../../../code"
-import { RationalNum, RationalNumTypeParameters } from "../../rational"
+import { RationalNum } from "../../rational"
+import { NumTypeParameters } from "../types"
 import { computeDecimalFromMonzo } from "./decimalFromMonzo"
 import { computeDecimalFromRatio } from "./decimalFromRatio"
 import { Decimal } from "./types"
 
-const computeDecimalFromRationalNum = <T extends RationalNumTypeParameters = { potentiallyIrrational: false }>(
-    { decimal, ratio, monzo }: RationalNum,
+const computeDecimalFromRationalNum = <T extends NumTypeParameters>(
+    { decimal, ratio, monzo }: RationalNum<T>,
 ): Decimal<T> => {
     let decimalOutput
     if (isUndefined(decimal)) {

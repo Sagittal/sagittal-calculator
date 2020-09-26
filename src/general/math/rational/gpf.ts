@@ -1,8 +1,8 @@
 import { computeIsEmpty, computeTrimmedArray, indexOfFinalElement } from "../../code"
-import { computeMonzoFromIntegerOrMonzo, Monzo } from "../num"
+import { computeMonzoFromIntegerOrMonzo, Monzo, NumTypeParameters } from "../num"
 import { Max } from "../types"
 import { PRIMES } from "./primes"
-import { Integer, Prime, RationalNumTypeParameters, Smoothness } from "./types"
+import { Integer, Prime, Smoothness } from "./types"
 
 // TODO: shouldn't this just take nums now?
 //  this along with other things that used to take integerOrMonzo
@@ -11,8 +11,8 @@ import { Integer, Prime, RationalNumTypeParameters, Smoothness } from "./types"
 //  same deal with others
 //  well, is that not just what primeLimit is already doing? so maybe actually revert this back to a simple
 //  primitive number only method
-const computeGpf = <T extends RationalNumTypeParameters>(
-    integerOrMonzo: Integer | Monzo<T>,
+const computeGpf = <T extends NumTypeParameters>(
+    integerOrMonzo: Integer<T> | Monzo<T>,
 ): Max<Prime> | Smoothness => {
     const monzo = computeMonzoFromIntegerOrMonzo(integerOrMonzo)
     const trimmedMonzo = computeTrimmedArray(monzo)

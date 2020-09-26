@@ -1,8 +1,9 @@
 import { formatRatio } from "../../../io"
-import { Integer, IntegerTypeParameters } from "../../rational"
+import { Integer } from "../../rational"
 import { computeLowestTermsRatio, Ratio } from "../ratio"
+import { NumTypeParameters } from "../types"
 
-const computeIntegerFromRatio = <T extends IntegerTypeParameters>(ratio: Ratio<T>): Integer<T> => {
+const computeIntegerFromRatio = <T extends NumTypeParameters>(ratio: Ratio<T>): Integer<T> => {
     const [numerator, denominator] = computeLowestTermsRatio(ratio)
 
     if (denominator !== 1) {

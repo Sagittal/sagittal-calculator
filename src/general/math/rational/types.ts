@@ -13,11 +13,8 @@ type Integer<T extends NumTypeParameters = {}> = Decimal<T & { potentiallyIrrati
 
 type MaybeIntegerBrand<T> = T extends { integer: true } ? { _IntegerBrand: boolean } : {}
 
-type RationalNumTypeParameters = NumTypeParameters & { potentiallyIrrational: false }
-type IntegerTypeParameters = NumTypeParameters & { integer: true, potentiallyIrrational: false }
-
-type Prime<T extends IntegerTypeParameters = { integer: true, potentiallyIrrational: false }> =
-    Decimal<T> & { _PrimeBrand: "Prime" }
+type Prime<T extends NumTypeParameters = {}> =
+    Decimal<T & { integer: true, potentiallyIrrational: false }> & { _PrimeBrand: "Prime" }
 type Roughness = Integer & { _RoughnessBrand: boolean }
 type Smoothness = Integer & { _SmoothnessBrand: boolean }
 
@@ -64,8 +61,6 @@ export {
     Primes,
     MaybeIntegerBrand,
     CommonFunction,
-    RationalNumTypeParameters,
-    IntegerTypeParameters,
     RationalNum,
     IntegerNum,
 }

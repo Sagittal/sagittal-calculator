@@ -1,13 +1,12 @@
 import { formatMonzo } from "../../../io"
-import { Integer, IntegerTypeParameters } from "../../rational"
+import { Integer } from "../../rational"
 import { Monzo } from "../monzo"
 import { computeRatioFromMonzo } from "../ratio"
-import { Direction } from "../types"
-import { Decimal } from "./types"
+import { Direction, NumTypeParameters } from "../types"
 
-const computeIntegerFromMonzo = <T extends IntegerTypeParameters & { direction: Direction }>(
+const computeIntegerFromMonzo = <T extends NumTypeParameters & { direction: Direction }>(
     monzo: Monzo<T>,
-): Decimal<T> => {
+): Integer<T> => {
     const ratio = computeRatioFromMonzo(monzo)
     const [numerator, denominator] = ratio
 
@@ -15,7 +14,7 @@ const computeIntegerFromMonzo = <T extends IntegerTypeParameters & { direction: 
         throw new Error(`Tried to compute integer from non-integer monzo ${formatMonzo(monzo)}.`)
     }
 
-    return numerator as Integer as Decimal<T>
+    return numerator as Integer as Integer<T>
 }
 
 export {

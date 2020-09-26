@@ -24,11 +24,9 @@ export {
     Roughness,
     Sopfr,
     Smoothness,
-    RationalNumTypeParameters,
     Primes,
     RationalNum,
     IntegerNum,
-    IntegerTypeParameters,
 } from "./types"
 export { computeIsSmoothRational, computeRationalNumSmoothness, computeIsSmoothInteger } from "./smoothness"
 export { computeIsRoughRationalNum } from "./roughness"

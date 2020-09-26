@@ -1,11 +1,12 @@
 import { Multiplier } from "../../../types"
-import { isInteger, RationalNumTypeParameters } from "../../rational"
+import { isInteger } from "../../rational"
 import { multiply } from "../../typedOperations"
 import { Decimal } from "../decimal"
+import { NumTypeParameters } from "../types"
 import { computeLowestTermsRatio } from "./lowestTerms"
 import { Denominator, Numerator, Ratio } from "./types"
 
-const computeRatioFromRationalDecimal = <T extends RationalNumTypeParameters>(
+const computeRatioFromRationalDecimal = <T extends NumTypeParameters>(
     rationalDecimal: Decimal<T & { potentiallyIrrational: false }>,
 ): Ratio<T> => {
     let denominator: Denominator = 1 as Denominator

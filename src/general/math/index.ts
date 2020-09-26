@@ -114,7 +114,6 @@ export {
     Roughness,
     Sopfr,
     Smoothness,
-    RationalNumTypeParameters,
     Primes,
     IntegerNum,
     computeIsSmoothRational,

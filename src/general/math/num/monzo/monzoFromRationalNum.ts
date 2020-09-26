@@ -1,11 +1,12 @@
 import { computeTrimmedArray, isUndefined } from "../../../code"
 import { formatNum } from "../../../io"
-import { RationalNum, RationalNumTypeParameters } from "../../rational"
+import { RationalNum } from "../../rational"
+import { NumTypeParameters } from "../types"
 import { computeMonzoFromRatio } from "./monzoFromRatio"
 import { computeMonzoFromRationalDecimal } from "./monzoFromRationalDecimal"
 import { Monzo } from "./types"
 
-const computeMonzoFromRationalNum = <T extends RationalNumTypeParameters>(
+const computeMonzoFromRationalNum = <T extends NumTypeParameters>(
     rationalNum: RationalNum<T>,
 ): Monzo<T> => {
     const { monzo, ratio, decimal } = rationalNum

@@ -1,24 +1,36 @@
 import { Decimal, DecimalNotDefaultingToPotentiallyIrrational } from "../decimal"
 import { Monzo } from "../monzo"
-import { NumTypeParameterEffects, NumTypeParameters } from "../types"
+import {
+    NumTypeParameterEffects,
+    NumTypeParameters,
+    NumTypeParameterTranslationForMonzosAndRatiosToTheirFractionalPartsAndTermsAboutDefaultRationality,
+} from "../types"
+
+// tslint:disable-next-line max-line-length
+type NumTypeParameterTranslationsForRatiosToTheirFractionalPartsExceptDefaultRationality<T extends NumTypeParameters = {}> =
+    (T extends { rough: number } ? { rough: T["rough"] } : {})
+    & (T extends { smooth: number } ? { smooth: T["smooth"] } : {})
+    & (T extends { integer: true } ? { potentiallyIrrational: false, integer: true } : {})
 
 type Numerator<T extends NumTypeParameters = {}> =
-    Decimal<(T extends { potentiallyIrrational: true } ? {} : { integer: true }) &
-        (T extends { rough: number } ? { rough: T["rough"] } : {}) &
-        (T extends { smooth: number } ? { smooth: T["smooth"] } : {}) &
-        (T extends { integer: true } ? { integer: true } : {})>
+    Decimal<NumTypeParameterTranslationForMonzosAndRatiosToTheirFractionalPartsAndTermsAboutDefaultRationality<T>
+        & NumTypeParameterTranslationsForRatiosToTheirFractionalPartsExceptDefaultRationality<T>>
     & { _NumeratorBrand: boolean }
 type Denominator<T extends NumTypeParameters = {}> =
-    Decimal<(T extends { potentiallyIrrational: true } ? {} : { integer: true }) &
-        (T extends { rough: number } ? { rough: T["rough"] } : {}) &
-        (T extends { smooth: number } ? { smooth: T["smooth"] } : {}) &
-        (T extends { integer: true } ? { integer: true } : {})>
+    Decimal<NumTypeParameterTranslationForMonzosAndRatiosToTheirFractionalPartsAndTermsAboutDefaultRationality<T>
+        & NumTypeParameterTranslationsForRatiosToTheirFractionalPartsExceptDefaultRationality<T>>
     & { _DenominatorBrand: boolean }
 type Ratio<T extends NumTypeParameters = {}> =
     [Numerator<T>, Denominator<T>] & NumTypeParameterEffects<T>
 
+type NumeratorNotDefaultingToRational<T extends NumTypeParameters = {}> =
+    Decimal<NumTypeParameterTranslationsForRatiosToTheirFractionalPartsExceptDefaultRationality<T>>
+    & { _NumeratorBrand: boolean }
+type DenominatorNotDefaultingToRational<T extends NumTypeParameters = {}> =
+    Decimal<NumTypeParameterTranslationsForRatiosToTheirFractionalPartsExceptDefaultRationality<T>>
+    & { _DenominatorBrand: boolean }
 type RatioNotDefaultingToRational<T extends NumTypeParameters = {}> =
-    [number & { _NumeratorBrand: boolean }, number & { _DenominatorBrand: boolean }]
+    [NumeratorNotDefaultingToRational<T>, DenominatorNotDefaultingToRational<T>]
     & NumTypeParameterEffects<T>
 
 enum FractionalPartType {
@@ -27,6 +39,9 @@ enum FractionalPartType {
 }
 
 type FractionalPart<T extends NumTypeParameters = {}> = Numerator<T> | Denominator<T>
+type FractionalPartNotDefaultingToRational<T extends NumTypeParameters = {}> =
+    NumeratorNotDefaultingToRational<T> |
+    DenominatorNotDefaultingToRational<T>
 
 type RationalNumByRatio<T extends NumTypeParameters = {}> = {
     decimal?: DecimalNotDefaultingToPotentiallyIrrational<T & { potentiallyIrrational: false }>,
@@ -42,4 +57,5 @@ export {
     FractionalPart,
     RatioNotDefaultingToRational,
     RationalNumByRatio,
+    FractionalPartNotDefaultingToRational,
 }

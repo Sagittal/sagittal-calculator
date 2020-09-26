@@ -1,7 +1,7 @@
-import { Copfr, Prime, RationalNumTypeParameters, Sopfr, TwoThreeFreeClass } from "../../../general"
+import { Copfr, NumTypeParameters, Prime, Sopfr, TwoThreeFreeClass } from "../../../general"
 import { N2D3P9 } from "./n2d3p9"
 
-type TwoThreeFreeClassAnalysis<T extends RationalNumTypeParameters = { potentiallyIrrational: false }> =
+type TwoThreeFreeClassAnalysis<T extends NumTypeParameters = {}> =
     TwoThreeFreeClass<T> & {
     twoThreeFreePrimeLimit: Prime,
     n2d3p9: N2D3P9,

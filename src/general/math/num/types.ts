@@ -27,6 +27,9 @@ type NumTypeParameterEffects<T> =
     & (T extends { potentiallyUnreduced: true } ? { _PotentiallyUnreducedBrand: boolean } : {})
     & MaybeIntegerBrand<T>
 
+type NumTypeParameterTranslationForMonzosAndRatiosToTheirFractionalPartsAndTermsAboutDefaultRationality<T> =
+    (T extends { potentiallyIrrational: true } ? {} : { potentiallyIrrational: false, integer: true })
+
 // TODO: IMPLEMENT EDO PITCHES ON POTENTIALLY IRRATIONAL NUMS
 //  starting to think about non-JI pitches
 //  what about logarithmic pitch vs acoustic pitch
@@ -42,6 +45,8 @@ type NumTypeParameterEffects<T> =
 //  but it could also just be another option
 //  - also think about how for dynamic parameters, unit: is a Step... but difference between a position and an interval
 //  - could also represent numbers as continued fractions [3;1,1,1...]
+//  - And ina midpoints should be eds, so it may be time to do this now, even before adding EDOS...
+//  and along with that, Comma mean should be irrational Monzo (both of the above, i.e. as opposed to Decimal)
 /*
 Base assume 2
 Power - would be a ratio... but like 3/19 for degrees of 19...
@@ -72,4 +77,5 @@ export {
     NumTypeParameterEffects,
     PotentiallyIrrationalNum,
     Num,
+    NumTypeParameterTranslationForMonzosAndRatiosToTheirFractionalPartsAndTermsAboutDefaultRationality,
 }

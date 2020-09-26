@@ -1,12 +1,12 @@
-import { computeMonzoFromIntegerOrMonzo, Monzo } from "../num"
+import { computeMonzoFromIntegerOrMonzo, Monzo, NumTypeParameters } from "../num"
 import { abs } from "../typedOperations"
 import { Exponent } from "../types"
 import { PRIMES } from "./primes"
-import { Integer, Prime, RationalNumTypeParameters, Sopfr } from "./types"
+import { Integer, Prime, Sopfr } from "./types"
 
 // Sum of prime factors
 
-const computeSopfr = <T extends RationalNumTypeParameters>(integerOrMonzo: Integer | Monzo<T>): Sopfr<T> => {
+const computeSopfr = <T extends NumTypeParameters>(integerOrMonzo: Integer<T> | Monzo<T>): Sopfr<T> => {
     const monzo = computeMonzoFromIntegerOrMonzo(integerOrMonzo)
 
     return monzo.reduce(

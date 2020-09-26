@@ -1,13 +1,8 @@
-import {
-    computeIsRoughInteger,
-    computeRoughInteger,
-    Primes,
-    RationalNumTypeParameters,
-    Roughness,
-} from "../../rational"
+import { computeIsRoughInteger, computeRoughInteger, Primes, Roughness } from "../../rational"
+import { NumTypeParameters } from "../types"
 import { Ratio } from "./types"
 
-const computeRoughRatio = <S extends Primes, T extends RationalNumTypeParameters>(
+const computeRoughRatio = <S extends Primes, T extends NumTypeParameters>(
     ratio: Ratio<T>,
     roughness: S & Roughness,
 ): Ratio<T & { rough: S }> => {
@@ -19,7 +14,7 @@ const computeRoughRatio = <S extends Primes, T extends RationalNumTypeParameters
     ] as Ratio<T & { rough: S }>
 }
 
-const computeIsRoughRatio = <S extends Primes, T extends RationalNumTypeParameters>(
+const computeIsRoughRatio = <S extends Primes, T extends NumTypeParameters>(
     ratio: Ratio<T>,
     roughness: S & Roughness,
 ): ratio is Ratio<T & { rough: S }> => {

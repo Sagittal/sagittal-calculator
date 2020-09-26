@@ -1,13 +1,13 @@
-import { Integer, Prime, RationalNumTypeParameters } from "../../rational"
+import { Integer, Prime } from "../../rational"
 import { Exponent } from "../../types"
 import { Ratio } from "../ratio"
-import { Direction } from "../types"
+import { Direction, NumTypeParameters } from "../types"
 import { invertMonzo } from "./monzoDirection"
 import { computeMonzoFromInteger } from "./monzoFromInteger"
 import { sumMonzos } from "./sumMonzos"
 import { Monzo } from "./types"
 
-const computeMonzoFromRatio = <T extends RationalNumTypeParameters>(ratio: Ratio<T>): Monzo<T> => {
+const computeMonzoFromRatio = <T extends NumTypeParameters>(ratio: Ratio<T>): Monzo<T> => {
     const positiveFactors: Monzo<{ direction: Direction.SUPER }> = computeMonzoFromInteger(ratio[ 0 ])
     const negativeFactors: Monzo<{ direction: Direction.SUB }> = invertMonzo(computeMonzoFromInteger(ratio[ 1 ]))
 

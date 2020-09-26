@@ -1,14 +1,15 @@
-import { computeMonzoFromRatio, Direction, Monzo } from "../../math"
+import { computeLowestTermsRatio, computeMonzoFromRatio, Direction, Monzo, NumTypeParameters } from "../../math"
 import { TwoThreeFreeClass } from "../../music"
 import { Io } from "../types"
 import { parseRatio } from "./ratio"
 
-const parse23FreeClass = (twoThreeFreeClassIo: Io): TwoThreeFreeClass => {
-    const parsed23FreeClass = parseRatio(twoThreeFreeClassIo)
+const parse23FreeClass = <T extends NumTypeParameters>(twoThreeFreeClassIo: Io): TwoThreeFreeClass<T> => {
+    const twoThreeFreeRatio = parseRatio(twoThreeFreeClassIo)
+    const reducedTwoThreeFreeRatio = computeLowestTermsRatio(twoThreeFreeRatio)
 
     return {
-        monzo: computeMonzoFromRatio(parsed23FreeClass) as Monzo<{ rough: 5, direction: Direction.SUPER }>,
-    } as TwoThreeFreeClass
+        monzo: computeMonzoFromRatio(reducedTwoThreeFreeRatio) as Monzo<T & { rough: 5, direction: Direction.SUPER }>,
+    } as TwoThreeFreeClass<T>
 }
 
 export {

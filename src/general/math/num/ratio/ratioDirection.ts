@@ -1,5 +1,11 @@
 import { Direction, NumTypeParameters } from "../types"
-import { Denominator, FractionalPart, Numerator, Ratio, RatioNotDefaultingToRational } from "./types"
+import {
+    Denominator,
+    FractionalPartNotDefaultingToRational,
+    Numerator,
+    Ratio,
+    RatioNotDefaultingToRational,
+} from "./types"
 
 const computeIsSuperRatio = <T extends NumTypeParameters>(
     ratio: RatioNotDefaultingToRational<Omit<T, "direction">>,
@@ -22,7 +28,7 @@ const computeIsUnisonRatio = <T extends NumTypeParameters>(
 ): ratio is Ratio<Omit<T, "direction"> & { direction: Direction.UNISON }> => {
     const [numerator, denominator] = ratio
 
-    return numerator as FractionalPart === denominator as FractionalPart
+    return numerator as FractionalPartNotDefaultingToRational === denominator as FractionalPartNotDefaultingToRational
 }
 
 const computeSuperRatio = <T extends NumTypeParameters>(

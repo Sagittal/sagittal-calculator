@@ -4,6 +4,7 @@ import { SagittalComma } from "./types"
 const UNISON: SagittalComma = { id: 0 as Id<SagittalComma>, monzo: [] as Monzo } as SagittalComma
 const PYTHAGOREAN_COMMA: SagittalComma = { id: 48 as Id<SagittalComma>, monzo: [-19, 12] as Monzo } as SagittalComma
 
+// TODO: primaryCommas.ts instead of sagittalCommas.ts
 const SAGITTAL_COMMAS: SagittalComma[] = [
     UNISON,
     { id: 1 as Id<SagittalComma>, monzo: [12, -2, -1, -1, 0, -1] },

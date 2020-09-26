@@ -179,7 +179,6 @@ export {
     Decimal,
     DecimalNotDefaultingToPotentiallyIrrational,
     isInteger,
-    RationalNumTypeParameters,
     computeDecimalFromNum,
     Num,
     equalNums,

@@ -1,25 +1,25 @@
 import { Ed, Step, Window } from "../../../types"
 import { Prime } from "../../rational"
-import {
-    Exponent,
-    Max,
-} from "../../types"
+import { Exponent, Max } from "../../types"
 import { Decimal, DecimalNotDefaultingToPotentiallyIrrational } from "../decimal"
 import { Ratio } from "../ratio"
-import { NumTypeParameterEffects, NumTypeParameters } from "../types"
+import {
+    NumTypeParameterEffects,
+    NumTypeParameters,
+    NumTypeParameterTranslationForMonzosAndRatiosToTheirFractionalPartsAndTermsAboutDefaultRationality,
+} from "../types"
+
+type NumTypeParameterTranslationsForMonzosToTheirTermsExceptDefaultRationality<T extends NumTypeParameters = {}> =
+    (T extends { integer: true } ? { potentiallyIrrational: false, integer: true } : {})
 
 type Monzo<T extends NumTypeParameters = {}> =
-// TODO: DECIMALS AS SPECIAL INSIDE NUMS
-//  there's another to-do somewhere about this
-//  I don't like the idea that I'm using Decimals as the terms of monzos here
-//  but it speaks to how Decimal is currently doing duty as what Integer is represented as too...
-    Array<Decimal<(T extends { potentiallyIrrational: true } ? {} : { integer: true }) &
-            (T extends { integer: true } ? { integer: true } : {})>
+    Array<Decimal<NumTypeParameterTranslationForMonzosAndRatiosToTheirFractionalPartsAndTermsAboutDefaultRationality<T>
+        & NumTypeParameterTranslationsForMonzosToTheirTermsExceptDefaultRationality<T>>
         & Exponent<Prime>>
     & NumTypeParameterEffects<T>
 
 type MonzoNotDefaultingToRational<T extends NumTypeParameters = {}> =
-    Array<number & Exponent<Prime>>
+    Array<Decimal<NumTypeParameterTranslationsForMonzosToTheirTermsExceptDefaultRationality<T>> & Exponent<Prime>>
     & NumTypeParameterEffects<T>
 
 type Val = Array<Exponent<Step>>
