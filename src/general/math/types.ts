@@ -1,10 +1,4 @@
-import {
-    MaybeIntegerBrand,
-    Monzo,
-    MonzoNotDefaultingToRational, Ratio,
-    RationalNum,
-    RatioNotDefaultingToRational,
-} from "./rational"
+import { MaybeIntegerBrand, MonzoNotDefaultingToRational, RationalNum, RatioNotDefaultingToRational } from "./rational"
 
 // TODO: Dec instead instead of Decimal? hmm... maybe not.
 //  because we're not abbreviating Number to Num only bc we can but because we kind of have to.
@@ -109,7 +103,7 @@ call it a Degree
 the existing Window isn’t a base, it gets divided up additively, not multiplicatively
  */
 
-type PotentiallyIrrationalNum<T extends NumTypeParameters = {}> ={
+type PotentiallyIrrationalNum<T extends NumTypeParameters = {}> = {
     decimal: Decimal<T>,
     monzo?: MonzoNotDefaultingToRational<T>,
     ratio?: RatioNotDefaultingToRational<T>,

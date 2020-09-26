@@ -8,7 +8,7 @@ import {
     NumTypeParameters,
 } from "../../types"
 import { Ratio } from "../ratio"
-import { Prime, RationalNumTypeParameters } from "../types"
+import { Prime } from "../types"
 
 type Monzo<T extends NumTypeParameters = {}> =
 // TODO: DECIMALS AS SPECIAL INSIDE NUMS

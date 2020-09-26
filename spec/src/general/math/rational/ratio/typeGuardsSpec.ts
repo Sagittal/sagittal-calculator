@@ -1,5 +1,8 @@
 import { Ratio } from "../../../../../../src/general/math/rational/ratio"
-import { computeRatioIsInteger, computeRatioIsRational } from "../../../../../../src/general/math/rational/ratio/typeGuards"
+import {
+    computeRatioIsInteger,
+    computeRatioIsRational,
+} from "../../../../../../src/general/math/rational/ratio/typeGuards"
 
 describe("computeRatioIsInteger", (): void => {
     it("returns true if the denominator divides evenly into the numerator", (): void => {

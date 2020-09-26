@@ -5,7 +5,6 @@ import {
     NumTypeParameters,
 } from "../../types"
 import { Monzo } from "../monzo"
-import { RationalNumTypeParameters } from "../types"
 
 type Numerator<T extends NumTypeParameters = {}> =
     Decimal<(T extends { potentiallyIrrational: true } ? {} : { integer: true }) &
