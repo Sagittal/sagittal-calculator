@@ -2,7 +2,6 @@ export {
     Decimal,
     DecimalNotDefaultingToPotentiallyIrrational,
     computeDecimalFromNum,
-    computeDecimalFromRationalNum,
     computeDecimalFromRatio,
     computeIntegerFromMonzo,
     computeDecimalFromMonzo,

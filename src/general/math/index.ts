@@ -41,7 +41,6 @@ export {
     computeRatioFromRationalNum,
     computeRatioFromRationalDecimal,
     computeLowestTermsRatio,
-    computeDecimalFromRationalNum,
     computeIsSubNum,
     computeIsSuperNum,
     computeIsUnisonNum,
