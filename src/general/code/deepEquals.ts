@@ -1,5 +1,5 @@
 import { isCloseTo } from "./isCloseTo"
-import { isNumber, isUndefined } from "./typeGuards"
+import { isNumber, isObject, isUndefined } from "./typeGuards"
 import { Precision } from "./types"
 
 const deepEqualsArray = <T>(firstValue: T[], secondValue: T[], precision?: Precision): boolean =>
@@ -16,7 +16,7 @@ const deepEqualsObject = <T extends Record<string, unknown>>(
 
     if (firstValue instanceof Array) {
         equal = false
-    } else if (typeof firstValue === "object") {
+    } else if (isObject(firstValue)) {
         equal = Object.keys(firstValue).length === Object.keys(secondValue).length &&
             Object.entries(secondValue)
                 .every(([key, value]: [string, unknown]): boolean =>
@@ -37,7 +37,7 @@ const deepEquals = <T>(firstValue: T, secondValue: T, precision?: Precision): bo
         equal = isCloseTo(firstValue, secondValue, precision)
     } else if (firstValue instanceof Array) {
         equal = deepEqualsArray(secondValue as T & unknown[], firstValue as T & unknown[], precision)
-    } else if (typeof firstValue === "object") {
+    } else if (isObject(firstValue)) {
         equal = deepEqualsObject(
             secondValue as T & Record<string, unknown>,
             firstValue as T & { [ index: string ]: unknown },

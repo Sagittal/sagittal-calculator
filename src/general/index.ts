@@ -39,6 +39,7 @@ export {
     NOT_FOUND,
     Precision,
     MAX_JAVASCRIPT_PRECISION,
+    isObject,
 } from "./code"
 export {
     sumTexts,

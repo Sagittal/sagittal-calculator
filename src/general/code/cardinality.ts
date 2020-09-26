@@ -1,11 +1,12 @@
 import { count } from "../math"
 import { Count } from "../types"
+import { isObject } from "./typeGuards"
 
 const computeCardinality = (array: unknown[]): Array<Count> => {
     const cardinality = []
 
     let cursor = array
-    while (typeof cursor === "object") {
+    while (isObject(cursor)) {
         cardinality.push(count(cursor))
         cursor = cursor[ 0 ] as unknown[]
     }

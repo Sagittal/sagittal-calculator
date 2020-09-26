@@ -30,6 +30,9 @@ type DecimalNotDefaultingToPotentiallyIrrational<T extends NumTypeParameters = {
 //  I just tried to switch a bunch of utility functions to "neutral" Ratios and Monzos
 //  but then their output was unable to be recognized as being (default) rational Monzo when a (default) rational one
 //  had been passed in...
+//  ---- so anyway maybe you'd end up with IrrationalMonzo, Monzo, RationalMonzo, IntegerMonzo
+//  IrrationalRatio, Ratio, RationalRatio, IntegerRatio
+//  IrrationalDecimal, Decimal, RationalDecimal, IntegerDecimal
 
 // TODO: Irrational could be Irr for short... but then what about Rational...
 //  And potentially could be maybe

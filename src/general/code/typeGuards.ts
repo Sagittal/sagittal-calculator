@@ -1,18 +1,22 @@
-const isNumber = (candidate: unknown): candidate is number =>
-    typeof candidate === "number" && !isNaN(candidate)
+const isNumber = (candidateNumber: unknown): candidateNumber is number =>
+    typeof candidateNumber === "number" && !isNaN(candidateNumber)
 
-const isString = (candidate: unknown): candidate is string =>
-    typeof candidate === "string"
+const isString = (candidateString: unknown): candidateString is string =>
+    typeof candidateString === "string"
 
-const isUndefined = (candidate: unknown): candidate is undefined =>
-    typeof candidate === "undefined"
+const isUndefined = (candidateUndefined: unknown): candidateUndefined is undefined =>
+    typeof candidateUndefined === "undefined"
 
-const isArray = (candidate: unknown): candidate is unknown[] =>
-    candidate instanceof Array
+const isObject = (candidateObject: unknown): candidateObject is Object =>
+    typeof candidateObject === "object"
+
+const isArray = (candidateArray: unknown): candidateArray is unknown[] =>
+    candidateArray instanceof Array
 
 export {
     isNumber,
     isString,
     isUndefined,
     isArray,
+    isObject,
 }

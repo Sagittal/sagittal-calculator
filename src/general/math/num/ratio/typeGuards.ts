@@ -16,17 +16,17 @@ import { Ratio, RatioNotDefaultingToRational } from "./types"
 //  and that would also allow us to clean up that comment in some test somewhere about parsing ratios
 //  where it conflicted with parsing factorized comma names e.g. 5².11
 const computeRatioIsRational = <T extends NumTypeParameters>(
-    ratio: RatioNotDefaultingToRational<T>,
-): ratio is Ratio<T & { potentiallyIrrational: false }> => {
-    const [numerator, denominator] = ratio
+    candidateRationalRatio: RatioNotDefaultingToRational<T>,
+): candidateRationalRatio is Ratio<T & { potentiallyIrrational: false }> => {
+    const [numerator, denominator] = candidateRationalRatio
 
     return isInteger(numerator) && isInteger(denominator)
 }
 
 const computeRatioIsInteger = <T extends NumTypeParameters>(
-    ratio: RatioNotDefaultingToRational<T>,
-): ratio is Ratio<T & { integer: true }> => {
-    const [numerator, denominator] = ratio
+    candidateIntegerRatio: RatioNotDefaultingToRational<T>,
+): candidateIntegerRatio is Ratio<T & { integer: true }> => {
+    const [numerator, denominator] = candidateIntegerRatio
 
     return dividesEvenly(numerator, denominator)
 }

@@ -1,4 +1,4 @@
-import { Combination, computeExtensionBase, computeIsEmpty, ExtensionBaseType } from "../../../../general"
+import { Combination, computeExtensionBase, computeIsEmpty, ExtensionBaseType, isObject } from "../../../../general"
 import { Parameter, ParameterValue } from "../../sumOfSquares"
 import { DynamicParameterScope, SubmetricScope } from "../types"
 import { computeParameterValues } from "./parameterValues"
@@ -17,7 +17,7 @@ const computeSubmetricPossibilities = (
             [] as unknown[] as Combination<SubmetricPossibility>
 
         let values: ParameterValue[]
-        if (typeof parameterScope !== "object") {   // TODO: need a typeGuard for object in general/code
+        if (!isObject(parameterScope)) {
             values = [parameterScope]
         } else {
             values = computeParameterValues(parameterScope)
