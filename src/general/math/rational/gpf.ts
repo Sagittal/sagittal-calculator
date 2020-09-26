@@ -1,6 +1,6 @@
 import { computeIsEmpty, computeTrimmedArray, indexOfFinalElement } from "../../code"
+import { computeMonzoFromIntegerOrMonzo, Monzo } from "../num"
 import { Max } from "../types"
-import { computeMonzoFromIntegerOrMonzo, Monzo } from "./monzo"
 import { PRIMES } from "./primes"
 import { Integer, Prime, RationalNumTypeParameters, Smoothness } from "./types"
 
@@ -9,6 +9,8 @@ import { Integer, Prime, RationalNumTypeParameters, Smoothness } from "./types"
 //  well you will need to consider... i guess you just also provide a computeGpfFromDecimal
 //  and hope you don't have to expose it
 //  same deal with others
+//  well, is that not just what primeLimit is already doing? so maybe actually revert this back to a simple
+//  primitive number only method
 const computeGpf = <T extends RationalNumTypeParameters>(
     integerOrMonzo: Integer | Monzo<T>,
 ): Max<Prime> | Smoothness => {

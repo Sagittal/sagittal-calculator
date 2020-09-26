@@ -3,11 +3,10 @@ import {
     computeRationalNumSmoothness,
     Integer,
     Monzo,
-    Ratio,
+    Ratio, RationalNum,
     Smoothness,
 } from "../../../../../src/general/math"
-import { RationalNum } from "../../../../../src/general/math/rational"
-import { computeIsSmoothInteger } from "../../../../../src/general/math/rational/smoothness"
+import { computeIsSmoothInteger } from "../../../../../src/general/math/rational"
 
 describe("computeIsSmoothInteger", (): void => {
     it("works, example when it is true (no prime factors > smoothness)", (): void => {

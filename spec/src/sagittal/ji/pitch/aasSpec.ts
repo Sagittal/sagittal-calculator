@@ -1,5 +1,5 @@
 import { Abs } from "../../../../../src/general/math"
-import { Monzo } from "../../../../../src/general/math/rational/monzo"
+import { Monzo } from "../../../../../src/general/math/num/monzo"
 import { ApotomeSlope, computeAas } from "../../../../../src/sagittal/ji/pitch"
 
 describe("computeAas", (): void => {

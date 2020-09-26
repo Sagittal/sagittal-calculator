@@ -1,5 +1,5 @@
 import { Max, Min, Prime, Ratio } from "../../../../../src/general/math"
-import { Monzo } from "../../../../../src/general/math/rational/monzo"
+import { Monzo } from "../../../../../src/general/math/num/monzo"
 import {
     computeIsWithinPrimeLimit,
     computeIsWithinPrimeMin,

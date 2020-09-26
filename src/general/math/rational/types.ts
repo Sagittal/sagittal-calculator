@@ -1,7 +1,13 @@
 import { Count, Sum } from "../../types"
-import { Decimal, NumTypeParameterEffects, NumTypeParameters } from "../types"
-import { Monzo, RationalNumByMonzo } from "./monzo"
-import { Ratio, RationalNumByRatio } from "./ratio"
+import {
+    Decimal,
+    Monzo,
+    NumTypeParameterEffects,
+    NumTypeParameters,
+    Ratio,
+    RationalNumByMonzo,
+    RationalNumByRatio,
+} from "../num"
 
 type Integer<T extends NumTypeParameters = {}> = Decimal<T & { potentiallyIrrational: false, integer: true }>
 

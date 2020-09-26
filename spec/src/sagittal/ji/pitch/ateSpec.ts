@@ -1,5 +1,5 @@
 import { Abs, Exponent, Integer, Prime, RationalNum } from "../../../../../src/general/math"
-import { Monzo } from "../../../../../src/general/math/rational/monzo"
+import { Monzo } from "../../../../../src/general/math/num/monzo"
 import { computeAte } from "../../../../../src/sagittal/ji/pitch"
 
 describe("computeAte", (): void => {

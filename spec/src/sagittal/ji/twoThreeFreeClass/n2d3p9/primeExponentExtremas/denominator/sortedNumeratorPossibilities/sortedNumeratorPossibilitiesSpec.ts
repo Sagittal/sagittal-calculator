@@ -1,5 +1,5 @@
 import { Max, Numerator, Prime } from "../../../../../../../../../src/general/math"
-import { Denominator } from "../../../../../../../../../src/general/math/rational/ratio"
+import { Denominator } from "../../../../../../../../../src/general/math/num/ratio"
 import { N2D3P9 } from "../../../../../../../../../src/sagittal/ji/twoThreeFreeClass/n2d3p9"
 import {
     computeSortedNumeratorPossibilitiesForDenominatorPrimeGivenMaxN2D3P9,

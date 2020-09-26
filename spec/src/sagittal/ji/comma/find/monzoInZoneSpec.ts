@@ -1,5 +1,5 @@
 import { Decimal, Max, Min, Num } from "../../../../../../src/general/math"
-import { Monzo } from "../../../../../../src/general/math/rational/monzo"
+import { Monzo } from "../../../../../../src/general/math/num/monzo"
 import { computeMonzoInZone } from "../../../../../../src/sagittal/ji/comma/find/monzoInZone"
 
 describe("computeMonzoInZone", (): void => {

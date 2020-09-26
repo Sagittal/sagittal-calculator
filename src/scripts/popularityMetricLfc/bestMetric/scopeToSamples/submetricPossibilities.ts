@@ -17,7 +17,7 @@ const computeSubmetricPossibilities = (
             [] as unknown[] as Combination<SubmetricPossibility>
 
         let values: ParameterValue[]
-        if (typeof parameterScope !== "object") {
+        if (typeof parameterScope !== "object") {   // TODO: need a typeGuard for object in general/code
             values = [parameterScope]
         } else {
             values = computeParameterValues(parameterScope)

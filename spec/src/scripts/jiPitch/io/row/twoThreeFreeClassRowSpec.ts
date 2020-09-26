@@ -1,6 +1,6 @@
 import { Row } from "../../../../../../src/general/io/table"
 import { Copfr, Direction, Prime, Sopfr } from "../../../../../../src/general/math"
-import { Ratio } from "../../../../../../src/general/math/rational/ratio"
+import { Ratio } from "../../../../../../src/general/math/num/ratio"
 import { TwoThreeFreeClass } from "../../../../../../src/general/music"
 import { N2D3P9, TwoThreeFreeClassAnalysis } from "../../../../../../src/sagittal/ji"
 import { jiPitchScriptGroupSettings } from "../../../../../../src/scripts/jiPitch/globals"

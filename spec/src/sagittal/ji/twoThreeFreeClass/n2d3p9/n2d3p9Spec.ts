@@ -1,5 +1,5 @@
 import { Direction } from "../../../../../../src/general/math"
-import { Monzo } from "../../../../../../src/general/math/rational/monzo"
+import { Monzo } from "../../../../../../src/general/math/num/monzo"
 import { TwoThreeFreeClass } from "../../../../../../src/general/music"
 import { computeN2D3P9, N2D3P9 } from "../../../../../../src/sagittal/ji/twoThreeFreeClass/n2d3p9"
 

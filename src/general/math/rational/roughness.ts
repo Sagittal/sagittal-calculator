@@ -1,10 +1,9 @@
 import { increment, isUndefined } from "../../code"
 import { Index } from "../../types"
 import { dividesEvenly } from "../dividesEvenly"
-import { computeIsRoughMonzo } from "./monzo"
+import { computeIsRoughMonzo, computeIsRoughRatio, computeRatioFromRationalDecimal } from "../num"
 import { computeRoughnessIndex } from "./primeCount"
 import { PRIMES } from "./primes"
-import { computeIsRoughRatio, computeRatioFromRationalDecimal } from "./ratio"
 import { integerDivide } from "./typedOperations"
 import { Integer, Prime, Primes, RationalNum, RationalNumTypeParameters, Roughness } from "./types"
 
@@ -48,6 +47,7 @@ const computeRoughInteger = <T extends Integer>(integer: T, roughness: Roughness
     return roughInteger
 }
 
+// TODO: perhaps these roughness and smoothnesses should be broken up into num/decimal and num/
 const computeIsRoughRationalNum = <S extends Primes, T extends RationalNumTypeParameters>(
     rationalNum: RationalNum<T>,
     roughness: S & Roughness,

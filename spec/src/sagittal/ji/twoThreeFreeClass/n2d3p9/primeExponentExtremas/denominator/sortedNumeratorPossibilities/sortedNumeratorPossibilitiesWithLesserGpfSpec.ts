@@ -1,5 +1,5 @@
 import { Max, Numerator, Prime } from "../../../../../../../../../src/general/math"
-import { Denominator } from "../../../../../../../../../src/general/math/rational/ratio"
+import { Denominator } from "../../../../../../../../../src/general/math/num/ratio"
 import { SortedNumeratorPossibilityWithLesserGpfThanDenominatorPrimeIncludingN2 } from "../../../../../../../../../src/sagittal/ji/twoThreeFreeClass/n2d3p9/primeExponentExtremas/denominator/sortedNumeratorPossibilities"
 import { computeSortedNumeratorPossibilitiesGivenMaxN2D3P9WithLesserGpfThanDenominatorPrimeSortedByN2 } from "../../../../../../../../../src/sagittal/ji/twoThreeFreeClass/n2d3p9/primeExponentExtremas/denominator/sortedNumeratorPossibilities/sortedNumeratorPossibilitiesWithLesserGpf"
 import { N2 } from "../../../../../../../../../src/sagittal/ji/twoThreeFreeClass/n2d3p9/primeExponentExtremas/denominator/sortedNumeratorPossibilities/types"

@@ -1,8 +1,6 @@
 import { Integer } from "../../../../../src/general/math"
-import {
-    computeGreatestCommonDivisor,
-    computeLeastCommonMultiple,
-} from "../../../../../src/general/math/rational/common"
+import { computeGreatestCommonDivisor } from "../../../../../src/general/math/rational"
+import { computeLeastCommonMultiple } from "../../../../../src/general/math/rational/common"
 import { Divisor } from "../../../../../src/general/types"
 
 describe("common", (): void => {

@@ -1,10 +1,9 @@
 import { isUndefined } from "../../code"
 import { MULTIPLICATIVE_IDENTITY } from "../constants"
+import { computeIsSmoothMonzo, computeIsSmoothRatio, computeRatioFromRationalDecimal } from "../num"
 import { max } from "../typedOperations"
 import { SMOOTH_ROUGH_OFFSET } from "./constants"
 import { computeGpf } from "./gpf"
-import { computeIsSmoothMonzo } from "./monzo"
-import { computeIsSmoothRatio, computeRatioFromRationalDecimal } from "./ratio"
 import { computeRoughInteger } from "./roughness"
 import { Integer, Primes, RationalNum, RationalNumTypeParameters, Roughness, Smoothness } from "./types"
 

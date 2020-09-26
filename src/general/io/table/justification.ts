@@ -1,4 +1,4 @@
-import { isUndefined, Maybe, Range } from "../../code"
+import { isString, isUndefined, Maybe, Range } from "../../code"
 import { Count } from "../../types"
 import { BLANK } from "../constants"
 import { length } from "../typedOperations"
@@ -6,7 +6,7 @@ import { Char, Io } from "../types"
 import { Justification, JustificationOption, JustifiedCellOptions, Row, Table } from "./types"
 
 const computeJustifications = (justification: JustificationOption, columnRange: number[]): Justification[] =>
-    typeof justification === "string" ?
+    isString(justification) ?
         columnRange.map((_: number): Justification => justification) :
         columnRange.map((index: number): Justification => justification[ index ] || Justification.LEFT)
 

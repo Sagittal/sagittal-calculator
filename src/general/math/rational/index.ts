@@ -10,57 +10,12 @@ export {
 } from "./constants"
 export { computeCopfr } from "./copfr"
 export { computeGpf } from "./gpf"
-export {
-    computeIsSubRatio,
-    computeIsSuperRatio,
-    computeIsRoughRatio,
-    Denominator,
-    FractionalPart,
-    FractionalPartType,
-    Numerator,
-    Ratio,
-    computeRatioFromMonzo,
-    computeSuperRatio,
-    computeRoughRatio,
-    computeIsSmoothRatio,
-    computeIsUnisonRatio,
-    RatioNotDefaultingToRational,
-    computeSubRatio,
-    computeDecimalFromRatio,
-    equalRatios,
-    RationalNumByRatio,
-    computeRatioFromRationalNum,
-    invertRatio,
-    computeRatioFromRationalDecimal,
-    computeLowestTermsRatio,
-} from "./ratio"
-export { computeIsRoughInteger } from "./roughness"
-export {
-    computeIntegerFromMonzo,
-    computeIsSubMonzo,
-    computeMonzoFromInteger,
-    computeMonzoFromRatio,
-    computeMonzosFromPrimeExponentExtremas,
-    computeRoughMonzo,
-    computeSuperMonzo,
-    invertMonzo,
-    computeIsSuperMonzo,
-    Monzo,
-    sumMonzos,
-    MonzoNotDefaultingToRational,
-    computeIsRoughMonzo,
-    computeIsSmoothMonzo,
-    computeIsUnisonMonzo,
-    computeDecimalFromMonzo,
-    equalMonzos,
-    RationalNumByMonzo,
-    computeMonzoFromRationalNum,
-} from "./monzo"
-export { computePrimeCount } from "./primeCount"
-export { computeDecimalFromRationalNum } from "./decimalFromRationalNum"
+export { computeIsRoughInteger, computeRoughInteger } from "./roughness"
+export { computePrimeCount, computeRoughnessIndex, computeSmoothnessIndex } from "./primeCount"
 export { PRIMES } from "./primes"
 export { isInteger } from "./typeGuards"
 export { computeSopfr } from "./sopfr"
+export { computeGreatestCommonDivisor } from "./common"
 export { ceil, floor, integerDivide } from "./typedOperations"
 export {
     Copfr,
@@ -73,6 +28,7 @@ export {
     Primes,
     RationalNum,
     IntegerNum,
+    IntegerTypeParameters,
 } from "./types"
-export { computeIsSmoothRational, computeRationalNumSmoothness } from "./smoothness"
+export { computeIsSmoothRational, computeRationalNumSmoothness, computeIsSmoothInteger } from "./smoothness"
 export { computeIsRoughRationalNum } from "./roughness"

@@ -1,6 +1,6 @@
+import { computeMonzoFromIntegerOrMonzo, Monzo } from "../num"
 import { abs } from "../typedOperations"
 import { Exponent } from "../types"
-import { computeMonzoFromIntegerOrMonzo, Monzo } from "./monzo"
 import { Copfr, Integer, Prime, RationalNumTypeParameters } from "./types"
 
 // Count Of Prime Factors with Repetition (big omega)

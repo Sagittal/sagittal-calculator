@@ -1,6 +1,6 @@
 import { computeIsRoughInteger, FIVE_ROUGHNESS, Monzo, Ratio } from "../../../../../src/general"
 import { computeIsRoughRationalNum, Integer, Roughness } from "../../../../../src/general/math"
-import { computeRoughInteger } from "../../../../../src/general/math/rational/roughness"
+import { computeRoughInteger } from "../../../../../src/general/math/rational"
 
 describe("isRoughInteger", (): void => {
     it("works for integers", (): void => {

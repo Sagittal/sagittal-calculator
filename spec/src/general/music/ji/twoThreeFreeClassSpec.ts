@@ -1,6 +1,6 @@
 import { Decimal, Integer } from "../../../../../src/general/math"
-import { Monzo } from "../../../../../src/general/math/rational/monzo"
-import { Ratio } from "../../../../../src/general/math/rational/ratio"
+import { Monzo } from "../../../../../src/general/math/num/monzo"
+import { Ratio } from "../../../../../src/general/math/num/ratio"
 import { compute23FreeClass, TwoThreeFreeClass } from "../../../../../src/general/music"
 
 describe("compute23FreeClass", (): void => {
