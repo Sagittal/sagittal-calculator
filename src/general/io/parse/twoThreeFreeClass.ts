@@ -1,9 +1,10 @@
 import {
-    computeIsSuperRatio,
+    computeIsSubRatio,
     computeLowestTermsRatio,
     computeMonzoFromRatio,
     computeRatioIsRational,
     NumTypeParameters,
+    Ratio,
 } from "../../math"
 import { TwoThreeFreeClass } from "../../music"
 import { Io } from "../types"
@@ -16,14 +17,14 @@ const parse23FreeClass = <T extends NumTypeParameters>(twoThreeFreeClassIo: Io):
         throw new Error(`2,3-free classes must be rational. Attempted to parse ratio to ${twoThreeFreeRatio}`)
     }
     // TODO: completely different ordering in "ratio is rational" and "is super ratio"; standardize
-    if (!computeIsSuperRatio(twoThreeFreeRatio)) {
-        throw new Error(`2,3-free classes must be super. Attempted to parse ratio to ${twoThreeFreeRatio}`)
+    if (computeIsSubRatio(twoThreeFreeRatio)) {
+        throw new Error(`2,3-free classes cannot be sub. Attempted to parse ratio to ${twoThreeFreeRatio}`)
     }
 
     const reducedTwoThreeFreeRatio = computeLowestTermsRatio(twoThreeFreeRatio)
 
     return {
-        monzo: computeMonzoFromRatio(reducedTwoThreeFreeRatio),
+        monzo: computeMonzoFromRatio(reducedTwoThreeFreeRatio as Ratio<T>),
     } as TwoThreeFreeClass<T>
 }
 

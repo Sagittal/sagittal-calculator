@@ -4,8 +4,7 @@ import { computeBestNotatingComma } from "./bestNotatingComma"
 import { BestNotatingCommaProperties } from "./types"
 
 const computeBestNotatingCommaProperties = (twoThreeFreeClass: TwoThreeFreeClass): BestNotatingCommaProperties => {
-    const notatingCommas =
-        computeNotatingCommas(twoThreeFreeClass, { upperBound: HALF_APOTOME as Max<Num> })
+    const notatingCommas = computeNotatingCommas(twoThreeFreeClass, { upperBound: HALF_APOTOME as Max<Num> })
     const bestNotatingComma = computeBestNotatingComma(notatingCommas)
     const maybeSymbolClassId = computeMaybeSymbolClassId(bestNotatingComma)
 

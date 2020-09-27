@@ -14,6 +14,8 @@ type Comma<T extends NumTypeParameters = {}> =
 //  - also, double check its name "2,3-free class" against our forum thread about equivalence and such
 //  we discussed its name in excruciating detail
 type TwoThreeFreeClass<T extends NumTypeParameters = {}> =
+    // TODO: argh... okay, technically this could be SUPER or UNISON... but it seems potentially quite painful to make
+    //  that so... may need to rethink a lot of the work around direction... like how even would a SUPER_OR_UNISON work?
     RationalNum<T & { rough: 5, direction: Direction.SUPER }>
     & { _TwoThreeFreeClassBrand: boolean }
 
