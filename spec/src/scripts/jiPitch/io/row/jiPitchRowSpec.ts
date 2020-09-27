@@ -7,10 +7,14 @@ import { ApotomeSlope, JiPitchAnalysis } from "../../../../../../src/sagittal/ji
 import { jiPitchScriptGroupSettings } from "../../../../../../src/scripts/jiPitch/globals"
 import { computeJiPitchRow } from "../../../../../../src/scripts/jiPitch/io/row"
 import { JiPitchField } from "../../../../../../src/scripts/jiPitch/types"
-import { twoThreeFreeClassAnalysisFixture } from "../../../../../helpers/src/scripts/jiPitch/fixtures"
+import {
+    jiPitchAnalysisFixture,
+    twoThreeFreeClassAnalysisFixture,
+} from "../../../../../helpers/src/scripts/jiPitch/fixtures"
 
 describe("computeJiPitchRow", (): void => {
     const jiPitchAnalysis: JiPitchAnalysis = {
+        ...jiPitchAnalysisFixture,
         cents: 11.2 as Cents,
         monzo: [0, -1, 1] as Monzo,
         ratio: [5, 4] as Ratio,

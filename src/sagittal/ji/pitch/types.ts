@@ -1,9 +1,11 @@
 import {
     Abs,
-    Cents,
+    Cents, 
+    DecimalNotDefaultingToPotentiallyIrrational,
     Exponent,
     Integer,
-    Monzo, NumTypeParameters,
+    Monzo,
+    NumTypeParameters,
     Prime,
     Ratio,
     RationalNum,
@@ -16,9 +18,7 @@ interface JiPitchAnalysisProperties<T extends NumTypeParameters = {}> {
     aas: Abs<ApotomeSlope>,
     monzo: Monzo<T>,
     ratio: Ratio<T>,
-    // TODO: I don't want to force including decimal here  now,
-    //  But just as the other representations (monzo, ratio) become required in analysis,
-    //  Decimal should as well
+    decimal: DecimalNotDefaultingToPotentiallyIrrational<T>,
     cents: Cents,
     twoThreeFreeClassAnalysis: TwoThreeFreeClassAnalysis<T>,
 }

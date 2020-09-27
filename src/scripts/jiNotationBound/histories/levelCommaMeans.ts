@@ -3,8 +3,8 @@ import {
     CommaMean,
     getPrimaryComma,
     getRepresentativeSymbol,
-    JI_NOTATION_LEVELS_SYMBOL_CLASS_IDS,
     JiNotationLevel,
+    JI_NOTATION_LEVELS_SYMBOL_CLASS_IDS,
     SymbolClass,
     SymbolLongAscii,
 } from "../../../sagittal"

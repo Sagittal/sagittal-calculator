@@ -123,5 +123,3 @@ export {
     isRationalNum,
     computeLowestTermsRatio,
 } from "./rational"
-
-// TODO: should probably also create an integer/ dir in here and again redo the num/monzo num/ratio num/decimal structur

@@ -1,4 +1,13 @@
-import { Abs, Copfr, Direction, Exponent, Integer, Max, RationalNum } from "../../../../../src/general"
+import {
+    Abs,
+    Copfr,
+    DecimalNotDefaultingToPotentiallyIrrational,
+    Direction,
+    Exponent,
+    Integer,
+    Max,
+    RationalNum,
+} from "../../../../../src/general"
 import { Monzo, Prime, Ratio, Sopfr } from "../../../../../src/general/math"
 import { Cents } from "../../../../../src/general/music"
 import { ApotomeSlope, JiPitchAnalysis, N2D3P9, TwoThreeFreeClassAnalysis } from "../../../../../src/sagittal/ji"
@@ -13,6 +22,7 @@ const twoThreeFreeClassAnalysisFixture: TwoThreeFreeClassAnalysis = {
 
 const jiPitchAnalysisFixture: JiPitchAnalysis = {
     cents: 0 as Cents,
+    decimal: 1 as DecimalNotDefaultingToPotentiallyIrrational,
     monzo: [] as Monzo,
     ratio: [1, 1] as Ratio,
     apotomeSlope: 0 as ApotomeSlope,

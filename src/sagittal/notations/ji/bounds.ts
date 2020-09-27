@@ -1,15 +1,8 @@
-// tslint:disable max-line-length   
-// TODO: should the jiNotationLevels live outside of these, much in the same way as I extracted symbol subsets
-//  And notation levels for the symbols? probably, yes.
+// tslint:disable max-line-length
 
 import { Decimal, Id, Name } from "../../../general"
 import { SizeCategoryBound } from "../../ji"
 import { BoundType, CommaMean, InaMidpoint, JiNotationBound, JiNotationLevel } from "./types"
-
-// The bounds analysis I have proposed here: http://forum.sagittal.org/viewtopic.php?p=1808#p1808
-// Might stipulate a reorganizing of these, where each JI notation level is a separate list
-// Because some of these JI notation bounds bound symbols which are unrelated from one JI notation level to the next,
-// So maybe can be different
 
 const JI_NOTATION_BOUNDS: JiNotationBound[] = [
     {
@@ -834,7 +827,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
     {
         id: 117 as Id<JiNotationBound>,
         decimal: 1.0322048325604865 as Decimal, // 54.875148165064200¢
-        name: "390.5°809" as Name<InaMidpoint>,     // TODO: should this actually be a TinaMidpoint?
+        name: "390.5°809" as Name<InaMidpoint>,
         boundType: BoundType.INA_MIDPOINT,
         jiNotationLevels: [JiNotationLevel.EXTREME, JiNotationLevel.INSANE],
     },

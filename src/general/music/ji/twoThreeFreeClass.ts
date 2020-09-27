@@ -35,9 +35,7 @@ const compute23FreeClass = <T extends NumTypeParameters>(
         const super23FreeDecimal = computeDecimalFromRatio(super23FreeRatio)
 
         if (!isInteger(super23FreeDecimal)) {
-            // TODO: I have a feeling this error / checking process will turn up elsewhere and should maybe not
-            //  Primarily live here. if only because I want the error to mention JI pitches, not 2,3-free classes.
-            throw new Error("Cannot safely represent JI as a decimal which is not an integer.")
+            throw new Error("Cannot safely represent a 2,3-free class (or JI in general) as a decimal which is not an integer.")
         }
         twoThreeFreeClass.decimal = super23FreeDecimal
     }
