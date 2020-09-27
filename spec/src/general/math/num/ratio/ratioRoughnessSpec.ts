@@ -1,11 +1,11 @@
 import { FIVE_ROUGHNESS, Roughness } from "../../../../../../src/general/math"
-import { computeIsRoughRatio, computeRoughRatio, Ratio } from "../../../../../../src/general/math/num/ratio"
+import { computeRoughRatio, isRoughRatio, Ratio } from "../../../../../../src/general/math/num/ratio"
 
-describe("computeIsRoughRatio", (): void => {
+describe("isRoughRatio", (): void => {
     it("returns true if the ratio is to the requested roughness", (): void => {
         const ratio = [7, 5] as Ratio
 
-        const actual = computeIsRoughRatio(ratio, FIVE_ROUGHNESS)
+        const actual = isRoughRatio(ratio, FIVE_ROUGHNESS)
 
         expect(actual).toBeTruthy()
     })
@@ -13,7 +13,7 @@ describe("computeIsRoughRatio", (): void => {
     it("returns false if the ratio is not to the requested roughness", (): void => {
         const ratio = [7, 5] as Ratio
 
-        const actual = computeIsRoughRatio(ratio, 11 as 11 & Roughness)
+        const actual = isRoughRatio(ratio, 11 as 11 & Roughness)
 
         expect(actual).toBeFalsy()
     })

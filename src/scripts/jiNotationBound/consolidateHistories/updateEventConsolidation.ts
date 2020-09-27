@@ -1,4 +1,4 @@
-import { computeIsBoundEventContained } from "./doEventsContainEvent"
+import { isBoundEventContained } from "./doEventsContainEvent"
 import { BoundEventConsolidation, UpdateEventConsolidationOptions } from "./types"
 
 const updateEventConsolidation = (
@@ -19,7 +19,7 @@ const updateEventConsolidation = (
     if (boundHistoryAnalysis.possible) {
         boundEventConsolidation.isPossibleBoundHistoryMember = true
     }
-    if (computeIsBoundEventContained(bestPossibleBoundHistoryAnalysis.boundEventAnalyses, boundEventConsolidation)) {
+    if (isBoundEventContained(bestPossibleBoundHistoryAnalysis.boundEventAnalyses, boundEventConsolidation)) {
         boundEventConsolidation.isBestPossibleBoundHistoryMember = true
     }
     if (boundHistoryAnalysis.rank < boundEventConsolidation.rankOfBestRankedMemberHistory) {

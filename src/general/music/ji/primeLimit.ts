@@ -1,8 +1,8 @@
 import {
-    computeIsRoughRationalNum,
-    computeIsSmoothRational,
     computeRationalNumSmoothness,
     Integer,
+    isRoughRationalNum,
+    isSmoothRational,
     Max,
     Min,
     NumTypeParameters,
@@ -16,18 +16,18 @@ import {
 // I'm thinking that we don't keep any of the pass-through methods from Pitch to Num
 // except for prime limit because we speak about it differently (vs mathematical roughness or smoothness).
 
-const computeIsWithinPrimeLimit = <S extends Primes, T extends NumTypeParameters>(
+const isWithinPrimeLimit = <S extends Primes, T extends NumTypeParameters>(
     jiPitch: RationalNum<T>,
     primeLimit: S & Max<Prime>,
 ): jiPitch is RationalNum<T & { smooth: S }> => {
-    return computeIsSmoothRational(jiPitch, primeLimit as S as S & Smoothness)
+    return isSmoothRational(jiPitch, primeLimit as S as S & Smoothness)
 }
 
-const computeIsWithinPrimeMin = <S extends Primes, T extends NumTypeParameters>(
+const isWithinPrimeMin = <S extends Primes, T extends NumTypeParameters>(
     jiPitch: RationalNum<T>,
     primeMin: S & Min<Prime>,
 ): jiPitch is RationalNum<T & { rough: S }> => {
-    return computeIsRoughRationalNum(jiPitch, primeMin as S as S & Roughness)
+    return isRoughRationalNum(jiPitch, primeMin as S as S & Roughness)
 }
 
 const computePrimeLimit = <S extends Primes, T extends NumTypeParameters>(
@@ -37,7 +37,7 @@ const computePrimeLimit = <S extends Primes, T extends NumTypeParameters>(
 }
 
 export {
-    computeIsWithinPrimeLimit,
-    computeIsWithinPrimeMin,
+    isWithinPrimeLimit,
+    isWithinPrimeMin,
     computePrimeLimit,
 }

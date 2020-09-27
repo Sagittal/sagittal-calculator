@@ -15,7 +15,7 @@ import { Ratio, RatioNotDefaultingToRational } from "./types"
 //  it would be kind of nice if ratios were FORCED to be two integers. otherwise why use them...
 //  and that would also allow us to clean up that comment in some test somewhere about parsing ratios
 //  where it conflicted with parsing factorized comma names e.g. 5².11
-const computeRatioIsRational = <T extends NumTypeParameters>(
+const isRationalRatio = <T extends NumTypeParameters>(
     candidateRationalRatio: RatioNotDefaultingToRational<T>,
 ): candidateRationalRatio is Ratio<T & { potentiallyIrrational: false }> => {
     const [numerator, denominator] = candidateRationalRatio
@@ -23,7 +23,7 @@ const computeRatioIsRational = <T extends NumTypeParameters>(
     return isInteger(numerator) && isInteger(denominator)
 }
 
-const computeRatioIsInteger = <T extends NumTypeParameters>(
+const isIntegerRatio = <T extends NumTypeParameters>(
     candidateIntegerRatio: RatioNotDefaultingToRational<T>,
 ): candidateIntegerRatio is Ratio<T & { potentiallyIrrational: false, integer: true }> => {
     const [numerator, denominator] = candidateIntegerRatio
@@ -32,6 +32,6 @@ const computeRatioIsInteger = <T extends NumTypeParameters>(
 }
 
 export {
-    computeRatioIsRational,
-    computeRatioIsInteger,
+    isRationalRatio,
+    isIntegerRatio,
 }

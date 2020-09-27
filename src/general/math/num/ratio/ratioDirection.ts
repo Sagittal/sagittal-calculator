@@ -7,7 +7,7 @@ import {
     RatioNotDefaultingToRational,
 } from "./types"
 
-const computeIsSuperRatio = <T extends NumTypeParameters>(
+const isSuperRatio = <T extends NumTypeParameters>(
     ratio: RatioNotDefaultingToRational<Omit<T, "direction">>,
 ): ratio is Ratio<T & { direction: Direction.SUPER }> => {
     const [numerator, denominator] = ratio
@@ -15,7 +15,7 @@ const computeIsSuperRatio = <T extends NumTypeParameters>(
     return numerator > denominator
 }
 
-const computeIsSubRatio = <T extends NumTypeParameters>(
+const isSubRatio = <T extends NumTypeParameters>(
     ratio: RatioNotDefaultingToRational<Omit<T, "direction">>,
 ): ratio is Ratio<Omit<T, "direction"> & { direction: Direction.SUB }> => {
     const [numerator, denominator] = ratio
@@ -23,7 +23,7 @@ const computeIsSubRatio = <T extends NumTypeParameters>(
     return numerator < denominator
 }
 
-const computeIsUnisonRatio = <T extends NumTypeParameters>(
+const isUnisonRatio = <T extends NumTypeParameters>(
     ratio: RatioNotDefaultingToRational<Omit<T, "direction">>,
 ): ratio is Ratio<Omit<T, "direction"> & { direction: Direction.UNISON }> => {
     const [numerator, denominator] = ratio
@@ -34,7 +34,7 @@ const computeIsUnisonRatio = <T extends NumTypeParameters>(
 const computeSuperRatio = <T extends NumTypeParameters>(
     ratio: RatioNotDefaultingToRational<T>,
 ): Ratio<Omit<T, "direction"> & { direction: Direction.SUPER, integer: false }> => {
-    return computeIsSuperRatio(ratio) ?
+    return isSuperRatio(ratio) ?
         ratio as Ratio<T & { direction: Direction.SUPER, integer: false }> :
         invertRatio(ratio)
 }
@@ -42,7 +42,7 @@ const computeSuperRatio = <T extends NumTypeParameters>(
 const computeSubRatio = <T extends NumTypeParameters>(
     ratio: RatioNotDefaultingToRational<T>,
 ): Ratio<Omit<T, "direction"> & { direction: Direction.SUB, integer: false }> => {
-    return computeIsSubRatio(ratio) ?
+    return isSubRatio(ratio) ?
         ratio as Ratio<T & { direction: Direction.SUB, integer: false }> :
         invertRatio(ratio)
 }
@@ -69,8 +69,8 @@ const invertRatio: {
 export {
     computeSuperRatio,
     computeSubRatio,
-    computeIsSuperRatio,
-    computeIsSubRatio,
-    computeIsUnisonRatio,
+    isSuperRatio,
+    isSubRatio,
+    isUnisonRatio,
     invertRatio,
 }

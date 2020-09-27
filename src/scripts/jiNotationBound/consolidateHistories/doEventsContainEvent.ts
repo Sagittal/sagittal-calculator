@@ -1,6 +1,6 @@
 import { BoundEvent } from "../histories"
 
-const computeIsBoundEventContained = <T extends BoundEvent, U extends BoundEvent>(
+const isBoundEventContained = <T extends BoundEvent, U extends BoundEvent>(
     boundEvents: T[],
     targetBoundEvent: U,
 ): boolean =>
@@ -10,5 +10,5 @@ const computeIsBoundEventContained = <T extends BoundEvent, U extends BoundEvent
     })
 
 export {
-    computeIsBoundEventContained,
+    isBoundEventContained,
 }

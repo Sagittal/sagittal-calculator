@@ -7,9 +7,9 @@ export {
     computeDecimalFromMonzo,
 } from "./decimal"
 export {
-    computeIsSubRatio,
-    computeIsSuperRatio,
-    computeIsRoughRatio,
+    isSubRatio,
+    isSuperRatio,
+    isRoughRatio,
     Denominator,
     FractionalPart,
     FractionalPartType,
@@ -18,8 +18,8 @@ export {
     computeRatioFromMonzo,
     computeSuperRatio,
     computeRoughRatio,
-    computeIsSmoothRatio,
-    computeIsUnisonRatio,
+    isSmoothRatio,
+    isUnisonRatio,
     RatioNotDefaultingToRational,
     computeSubRatio,
     equalRatios,
@@ -28,31 +28,31 @@ export {
     invertRatio,
     computeRatioFromRationalDecimal,
     computeLowestTermsRatio,
-    computeRatioIsRational,
+    isRationalRatio,
 } from "./ratio"
 export {
-    computeIsSubMonzo,
+    isSubMonzo,
     computeMonzoFromInteger,
     computeMonzoFromRatio,
     computeMonzosFromPrimeExponentExtremas,
     computeRoughMonzo,
     computeSuperMonzo,
     invertMonzo,
-    computeIsSuperMonzo,
+    isSuperMonzo,
     Monzo,
     sumMonzos,
     MonzoNotDefaultingToRational,
-    computeIsRoughMonzo,
-    computeIsSmoothMonzo,
-    computeIsUnisonMonzo,
+    isRoughMonzo,
+    isSmoothMonzo,
+    isUnisonMonzo,
     equalMonzos,
     RationalNumByMonzo,
     computeMonzoFromRationalNum,
     computeMonzoFromIntegerOrMonzo,
 } from "./monzo"
-export { computeIsSubNum, computeIsSuperNum, computeIsUnisonNum, computeSuperNum } from "./numDirection"
+export { isSubNum, isSuperNum, isUnisonNum, computeSuperNum } from "./numDirection"
 export { equalNums, numIsHigher, numIsLower, numIsLowerOrEqual, numIsHigherOrEqual } from "./numComparison"
-export { computeNumIsRational } from "./typeGuards"
+export { isRationalNum } from "./typeGuards"
 export {
     Direction,
     NumTypeParameters,

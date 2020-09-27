@@ -1,18 +1,18 @@
 import {
-    computeIsSubNum,
-    computeIsSuperNum,
-    computeIsUnisonNum, computeSuperNum,
-    Decimal, Direction, Num,
+    computeSuperNum,
+    Decimal,
+    Direction, isSubNum,
+    isSuperNum, isUnisonNum, Num,
     Ratio,
 } from "../../../../../src/general/math/num"
 import { Monzo } from "../../../../../src/general/math/num/monzo"
 
-describe("computeIsSubNum", (): void => {
+describe("isSubNum", (): void => {
     describe("by monzo", (): void => {
         it("returns true if the monzo is sub", (): void => {
             const num = { monzo: [-1] as Monzo }
 
-            const actual = computeIsSubNum(num)
+            const actual = isSubNum(num)
 
             expect(actual).toBeTruthy()
         })
@@ -20,7 +20,7 @@ describe("computeIsSubNum", (): void => {
         it("returns false if the monzo is unison", (): void => {
             const num = { monzo: [] as Monzo }
 
-            const actual = computeIsSubNum(num)
+            const actual = isSubNum(num)
 
             expect(actual).toBeFalsy()
         })
@@ -28,7 +28,7 @@ describe("computeIsSubNum", (): void => {
         it("returns false if the monzo is super", (): void => {
             const num = { monzo: [1] as Monzo }
 
-            const actual = computeIsSubNum(num)
+            const actual = isSubNum(num)
 
             expect(actual).toBeFalsy()
         })
@@ -38,7 +38,7 @@ describe("computeIsSubNum", (): void => {
         it("returns true if the ratio is sub", (): void => {
             const num = { ratio: [1, 3] as Ratio }
 
-            const actual = computeIsSubNum(num)
+            const actual = isSubNum(num)
 
             expect(actual).toBeTruthy()
         })
@@ -46,7 +46,7 @@ describe("computeIsSubNum", (): void => {
         it("returns false if the ratio is unison", (): void => {
             const num = { ratio: [3, 3] as Ratio }
 
-            const actual = computeIsSubNum(num)
+            const actual = isSubNum(num)
 
             expect(actual).toBeFalsy()
         })
@@ -54,7 +54,7 @@ describe("computeIsSubNum", (): void => {
         it("returns false if the ratio is super", (): void => {
             const num = { ratio: [3, 1] as Ratio }
 
-            const actual = computeIsSubNum(num)
+            const actual = isSubNum(num)
 
             expect(actual).toBeFalsy()
         })
@@ -64,7 +64,7 @@ describe("computeIsSubNum", (): void => {
         it("returns true if the num is sub", (): void => {
             const num = { decimal: 0.17 as Decimal }
 
-            const actual = computeIsSubNum(num)
+            const actual = isSubNum(num)
 
             expect(actual).toBeTruthy()
         })
@@ -72,7 +72,7 @@ describe("computeIsSubNum", (): void => {
         it("returns false if the num is unison", (): void => {
             const num = { decimal: 1 as Decimal }
 
-            const actual = computeIsSubNum(num)
+            const actual = isSubNum(num)
 
             expect(actual).toBeFalsy()
         })
@@ -80,19 +80,19 @@ describe("computeIsSubNum", (): void => {
         it("returns false if the num is super", (): void => {
             const num = { decimal: 7.1 as Decimal }
 
-            const actual = computeIsSubNum(num)
+            const actual = isSubNum(num)
 
             expect(actual).toBeFalsy()
         })
     })
 })
 
-describe("computeIsSuperNum", (): void => {
+describe("isSuperNum", (): void => {
     describe("by monzo", (): void => {
         it("returns false if the monzo is sub", (): void => {
             const num = { monzo: [-1] as Monzo }
 
-            const actual = computeIsSuperNum(num)
+            const actual = isSuperNum(num)
 
             expect(actual).toBeFalsy()
         })
@@ -100,7 +100,7 @@ describe("computeIsSuperNum", (): void => {
         it("returns false if the monzo is unison", (): void => {
             const num = { monzo: [] as Monzo }
 
-            const actual = computeIsSuperNum(num)
+            const actual = isSuperNum(num)
 
             expect(actual).toBeFalsy()
         })
@@ -108,7 +108,7 @@ describe("computeIsSuperNum", (): void => {
         it("returns true if the monzo is super", (): void => {
             const num = { monzo: [1] as Monzo }
 
-            const actual = computeIsSuperNum(num)
+            const actual = isSuperNum(num)
 
             expect(actual).toBeTruthy()
         })
@@ -118,7 +118,7 @@ describe("computeIsSuperNum", (): void => {
         it("returns false if the ratio is sub", (): void => {
             const num = { ratio: [1, 3] as Ratio }
 
-            const actual = computeIsSuperNum(num)
+            const actual = isSuperNum(num)
 
             expect(actual).toBeFalsy()
         })
@@ -126,7 +126,7 @@ describe("computeIsSuperNum", (): void => {
         it("returns false if the ratio is unison", (): void => {
             const num = { ratio: [3, 3] as Ratio }
 
-            const actual = computeIsSuperNum(num)
+            const actual = isSuperNum(num)
 
             expect(actual).toBeFalsy()
         })
@@ -134,7 +134,7 @@ describe("computeIsSuperNum", (): void => {
         it("returns true if the ratio is super", (): void => {
             const num = { ratio: [3, 1] as Ratio }
 
-            const actual = computeIsSuperNum(num)
+            const actual = isSuperNum(num)
 
             expect(actual).toBeTruthy()
         })
@@ -144,7 +144,7 @@ describe("computeIsSuperNum", (): void => {
         it("returns false if the num is sub", (): void => {
             const num = { decimal: 0.17 as Decimal }
 
-            const actual = computeIsSuperNum(num)
+            const actual = isSuperNum(num)
 
             expect(actual).toBeFalsy()
         })
@@ -152,7 +152,7 @@ describe("computeIsSuperNum", (): void => {
         it("returns false if the num is unison", (): void => {
             const num = { decimal: 1 as Decimal }
 
-            const actual = computeIsSuperNum(num)
+            const actual = isSuperNum(num)
 
             expect(actual).toBeFalsy()
         })
@@ -160,19 +160,19 @@ describe("computeIsSuperNum", (): void => {
         it("returns true if the num is super", (): void => {
             const num = { decimal: 7.1 as Decimal }
 
-            const actual = computeIsSuperNum(num)
+            const actual = isSuperNum(num)
 
             expect(actual).toBeTruthy()
         })
     })
 })
 
-describe("computeIsUnisonNumber", (): void => {
+describe("isUnisonNumber", (): void => {
     describe("by monzo", (): void => {
         it("returns false if the monzo is sub", (): void => {
             const num = { monzo: [-1] as Monzo }
 
-            const actual = computeIsUnisonNum(num)
+            const actual = isUnisonNum(num)
 
             expect(actual).toBeFalsy()
         })
@@ -180,7 +180,7 @@ describe("computeIsUnisonNumber", (): void => {
         it("returns true if the monzo is unison", (): void => {
             const num = { monzo: [] as Monzo }
 
-            const actual = computeIsUnisonNum(num)
+            const actual = isUnisonNum(num)
 
             expect(actual).toBeTruthy()
         })
@@ -188,7 +188,7 @@ describe("computeIsUnisonNumber", (): void => {
         it("returns false if the monzo is super", (): void => {
             const num = { monzo: [1] as Monzo }
 
-            const actual = computeIsUnisonNum(num)
+            const actual = isUnisonNum(num)
 
             expect(actual).toBeFalsy()
         })
@@ -198,7 +198,7 @@ describe("computeIsUnisonNumber", (): void => {
         it("returns false if the ratio is sub", (): void => {
             const num = { ratio: [1, 3] as Ratio }
 
-            const actual = computeIsUnisonNum(num)
+            const actual = isUnisonNum(num)
 
             expect(actual).toBeFalsy()
         })
@@ -206,7 +206,7 @@ describe("computeIsUnisonNumber", (): void => {
         it("returns true if the ratio is unison", (): void => {
             const num = { ratio: [3, 3] as Ratio }
 
-            const actual = computeIsUnisonNum(num)
+            const actual = isUnisonNum(num)
 
             expect(actual).toBeTruthy()
         })
@@ -214,7 +214,7 @@ describe("computeIsUnisonNumber", (): void => {
         it("returns false if the ratio is super", (): void => {
             const num = { ratio: [3, 1] as Ratio }
 
-            const actual = computeIsUnisonNum(num)
+            const actual = isUnisonNum(num)
 
             expect(actual).toBeFalsy()
         })
@@ -224,7 +224,7 @@ describe("computeIsUnisonNumber", (): void => {
         it("returns false if the num is sub", (): void => {
             const num = { decimal: 0.17 as Decimal }
 
-            const actual = computeIsUnisonNum(num)
+            const actual = isUnisonNum(num)
 
             expect(actual).toBeFalsy()
         })
@@ -232,7 +232,7 @@ describe("computeIsUnisonNumber", (): void => {
         it("returns true if the num is unison", (): void => {
             const num = { decimal: 1 as Decimal }
 
-            const actual = computeIsUnisonNum(num)
+            const actual = isUnisonNum(num)
 
             expect(actual).toBeTruthy()
         })
@@ -240,7 +240,7 @@ describe("computeIsUnisonNumber", (): void => {
         it("returns false if the num is super", (): void => {
             const num = { decimal: 7.1 as Decimal }
 
-            const actual = computeIsUnisonNum(num)
+            const actual = isUnisonNum(num)
 
             expect(actual).toBeFalsy()
         })

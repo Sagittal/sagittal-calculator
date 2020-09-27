@@ -1,4 +1,4 @@
-import { computeIsEmpty, computeTrimmedArray, indexOfFinalElement } from "../../code"
+import { computeTrimmedArray, indexOfFinalElement, isEmpty } from "../../code"
 import { computeMonzoFromIntegerOrMonzo, Monzo, NumTypeParameters } from "../num"
 import { Max } from "../types"
 import { PRIMES } from "./primes"
@@ -24,7 +24,7 @@ const computeGpf = <T extends NumTypeParameters>(
     const monzo = computeMonzoFromIntegerOrMonzo(integerOrMonzo)
     const trimmedMonzo = computeTrimmedArray(monzo)
 
-    if (computeIsEmpty(trimmedMonzo)) {
+    if (isEmpty(trimmedMonzo)) {
         return 1 as Max<Prime> | Smoothness
     }
 

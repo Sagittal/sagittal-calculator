@@ -4,7 +4,7 @@ import { count } from "../../typedOperations"
 import { NumTypeParameters } from "../types"
 import { Monzo } from "./types"
 
-const computeIsSmoothMonzo = <S extends Primes, T extends NumTypeParameters>(
+const isSmoothMonzo = <S extends Primes, T extends NumTypeParameters>(
     monzo: Monzo<Omit<T, "smooth">>,
     smoothness: S & Smoothness,
 ): monzo is Monzo<T & { smooth: S }> => {
@@ -19,5 +19,5 @@ const computeIsSmoothMonzo = <S extends Primes, T extends NumTypeParameters>(
 }
 
 export {
-    computeIsSmoothMonzo,
+    isSmoothMonzo,
 }

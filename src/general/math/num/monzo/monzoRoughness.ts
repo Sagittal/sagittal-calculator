@@ -20,7 +20,7 @@ const computeRoughMonzo = <S extends Primes, T extends NumTypeParameters>(
     ) as Monzo<T & { rough: S }>
 }
 
-const computeIsRoughMonzo = <S extends Primes, T extends NumTypeParameters>(
+const isRoughMonzo = <S extends Primes, T extends NumTypeParameters>(
     monzo: Monzo<T>,
     roughness: S & Roughness,
 ): monzo is Monzo<T & { rough: S }> => {
@@ -37,5 +37,5 @@ const computeIsRoughMonzo = <S extends Primes, T extends NumTypeParameters>(
 
 export {
     computeRoughMonzo,
-    computeIsRoughMonzo,
+    isRoughMonzo,
 }

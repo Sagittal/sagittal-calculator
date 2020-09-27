@@ -1,7 +1,7 @@
 import {
-    computeIsEmpty,
     Io,
     ioSettings,
+    isEmpty,
     isUndefined,
     LogTarget,
     Max,
@@ -55,7 +55,7 @@ const commas = computeCommas({
 const commaAnalysesSortedByTinaEntries = computeCommaAnalysesSortedByTinaEntries(commas)
 
 commaAnalysesSortedByTinaEntries.forEach(([tina, tinaCommaAnalyses]: [string, CommaAnalysis[]]): void => {
-    if (computeIsEmpty(tinaCommaAnalyses)) {
+    if (isEmpty(tinaCommaAnalyses)) {
         saveLog(`NO COMMAS given current constraints for tina ${tina}.` as Io, LogTarget.ERROR)
     } else {
         saveLog(

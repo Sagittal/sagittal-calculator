@@ -9,8 +9,8 @@ export {
     TwoThreeFreeClass,
     Apotome,
     COMMA_POPULARITIES,
-    computeIsWithinPrimeLimit,
-    computeIsWithinPrimeMin,
+    isWithinPrimeLimit,
+    isWithinPrimeMin,
     computePrimeLimit,
 } from "./ji"
 export { CENTS_PER_OCTAVE } from "./constants"

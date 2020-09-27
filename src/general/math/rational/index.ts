@@ -10,7 +10,7 @@ export {
 } from "./constants"
 export { computeCopfr } from "./copfr"
 export { computeGpf } from "./gpf"
-export { computeIsRoughInteger, computeRoughInteger } from "./roughness"
+export { isRoughInteger, computeRoughInteger } from "./roughness"
 export { computePrimeCount, computeRoughnessIndex, computeSmoothnessIndex } from "./primeCount"
 export { PRIMES } from "./primes"
 export { isInteger } from "./typeGuards"
@@ -28,5 +28,5 @@ export {
     RationalNum,
     RationalNumByDecimal,
 } from "./types"
-export { computeIsSmoothRational, computeRationalNumSmoothness, computeIsSmoothInteger } from "./smoothness"
-export { computeIsRoughRationalNum } from "./roughness"
+export { isSmoothRational, computeRationalNumSmoothness, isSmoothInteger } from "./smoothness"
+export { isRoughRationalNum } from "./roughness"

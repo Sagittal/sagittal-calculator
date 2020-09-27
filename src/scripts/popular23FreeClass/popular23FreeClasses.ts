@@ -1,6 +1,5 @@
 import {
     ACCURACY_THRESHOLD,
-    computeIsSubMonzo,
     computeTrimmedArray,
     Exponent,
     Extrema,
@@ -8,6 +7,7 @@ import {
     increment,
     Integer,
     Io,
+    isSubMonzo,
     isUndefined,
     KeyPath,
     LogTarget,
@@ -74,7 +74,7 @@ const computePopular23FreeClasses = (maxN2D3P9: Max<N2D3P9>): Array<Ranked<Popul
         while (true) {
             // do the work (trimming has the extra win of shallow cloning, disconnecting from this ticking process)
             const twoThreeFreeMonzoForWork = computeTrimmedArray(twoThreeFreeMonzo)
-            const maybePopular23FreeClass = !computeIsSubMonzo(twoThreeFreeMonzoForWork) ?
+            const maybePopular23FreeClass = !isSubMonzo(twoThreeFreeMonzoForWork) ?
                 computeMaybePopular23FreeClass(
                     { monzo: twoThreeFreeMonzoForWork } as TwoThreeFreeClass,
                     maxN2D3P9,

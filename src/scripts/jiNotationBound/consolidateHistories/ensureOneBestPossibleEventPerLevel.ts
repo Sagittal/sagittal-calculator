@@ -1,4 +1,4 @@
-import { computeIsEmpty } from "../../../general"
+import { isEmpty } from "../../../general"
 import { formatJiNotationLevel, JiNotationLevel } from "../../../sagittal"
 import { BoundEventConsolidation, BoundHistoryConsolidation } from "./types"
 
@@ -16,7 +16,7 @@ const ensureOneBestPossibleEventPerJiNotationLevel = (boundHistoryConsolidation:
             if (bestPossibleBoundHistoryBoundEvents.length > 1) {
                 throw new Error(`Bound history had at the ${formatJiNotationLevel(jiNotationLevel)} JI notation level more than one event marked as member of the best possible bound history.`)
             }
-            if (computeIsEmpty(bestPossibleBoundHistoryBoundEvents)) {
+            if (isEmpty(bestPossibleBoundHistoryBoundEvents)) {
                 throw new Error(`Bound history had at the ${formatJiNotationLevel(jiNotationLevel)} JI notation level no event marked as member of the best possible bound history.`)
             }
         },

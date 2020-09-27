@@ -1,7 +1,7 @@
 import { Comma, isUndefined, Maybe } from "../../../general"
 import { popular23FreeClassesScriptGroupSettings } from "../globals"
-import { computeIsLaas } from "./isLaas"
-import { computeIsLate } from "./isLate"
+import { isLaas } from "./isLaas"
+import { isLate } from "./isLate"
 
 const computeBestNotatingComma = (notatingCommas: Comma[]): Comma => {
     let bestNotatingComma: Maybe<Comma> = undefined
@@ -10,8 +10,8 @@ const computeBestNotatingComma = (notatingCommas: Comma[]): Comma => {
             isUndefined(bestNotatingComma) ||
             (
                 popular23FreeClassesScriptGroupSettings.useLate ?
-                    computeIsLate(notatingComma, bestNotatingComma) :
-                    computeIsLaas(notatingComma, bestNotatingComma)
+                    isLate(notatingComma, bestNotatingComma) :
+                    isLaas(notatingComma, bestNotatingComma)
             )
         ) {
             bestNotatingComma = notatingComma

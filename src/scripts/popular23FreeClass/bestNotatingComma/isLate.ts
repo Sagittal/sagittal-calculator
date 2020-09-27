@@ -1,7 +1,7 @@
 import { Comma, computeCentsFromPitch } from "../../../general"
 import { computeAte } from "../../../sagittal"
 
-const computeIsLate = (notatingComma: Comma, bestNotatingComma: Comma): boolean => {
+const isLate = (notatingComma: Comma, bestNotatingComma: Comma): boolean => {
     const ate = computeAte(notatingComma)
     const late = computeAte(bestNotatingComma)
 
@@ -10,5 +10,5 @@ const computeIsLate = (notatingComma: Comma, bestNotatingComma: Comma): boolean 
 }
 
 export {
-    computeIsLate,
+    isLate,
 }

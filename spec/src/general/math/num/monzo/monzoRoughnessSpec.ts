@@ -1,5 +1,5 @@
 import { computeRoughMonzo, Monzo, Roughness } from "../../../../../../src/general/math"
-import { computeIsRoughMonzo } from "../../../../../../src/general/math/num/monzo"
+import { isRoughMonzo } from "../../../../../../src/general/math/num/monzo"
 
 describe("computeRoughMonzo", (): void => {
     it("roughens the monzo to the requested roughness", (): void => {
@@ -23,11 +23,11 @@ describe("computeRoughMonzo", (): void => {
     })
 })
 
-describe("computeIsRoughMonzo", (): void => {
+describe("isRoughMonzo", (): void => {
     it("returns true if the monzo is at the requested roughness", (): void => {
         const monzo = [0, 0, 0, 4, 3] as Monzo
 
-        const actual = computeIsRoughMonzo(monzo, 7 as 7 & Roughness)
+        const actual = isRoughMonzo(monzo, 7 as 7 & Roughness)
 
         expect(actual).toBeTruthy()
     })
@@ -35,7 +35,7 @@ describe("computeIsRoughMonzo", (): void => {
     it("returns false if the monzo is not at the requested roughness", (): void => {
         const monzo = [0, -5, 0, 4, 3] as Monzo
 
-        const actual = computeIsRoughMonzo(monzo, 7 as 7 & Roughness)
+        const actual = isRoughMonzo(monzo, 7 as 7 & Roughness)
 
         expect(actual).toBeFalsy()
     })

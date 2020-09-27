@@ -1,8 +1,8 @@
 export {
-    computeIsSubRatio, computeIsSuperRatio, computeIsUnisonRatio, computeSubRatio, invertRatio,
+    isSubRatio, isSuperRatio, isUnisonRatio, computeSubRatio, invertRatio,
 } from "./ratioDirection"
-export { computeIsRoughRatio, computeRoughRatio } from "./ratioRoughness"
-export { computeIsSmoothRatio } from "./ratioSmoothness"
+export { isRoughRatio, computeRoughRatio } from "./ratioRoughness"
+export { isSmoothRatio } from "./ratioSmoothness"
 export { equalRatios } from "./equalRatios"
 export {
     Denominator,
@@ -18,4 +18,4 @@ export { computeLowestTermsRatio } from "./lowestTerms"
 export { computeRatioFromRationalDecimal } from "./ratioFromRationalDecimal"
 export { computeRatioFromRationalNum } from "./ratioFromRationalNum"
 export { computeRatioFromMonzo } from "./ratioFromMonzo"
-export { computeRatioIsRational } from "./typeGuards"
+export { isRationalRatio } from "./typeGuards"

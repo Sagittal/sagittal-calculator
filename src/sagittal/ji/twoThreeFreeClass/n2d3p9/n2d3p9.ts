@@ -1,12 +1,12 @@
 import {
     abs,
     computeGpf,
-    computeIsSubMonzo,
     computeMonzoFromRationalNum,
     computeTrimmedArray,
     Direction,
     Exponent,
     formatMonzo,
+    isSubMonzo,
     NumTypeParameters,
     Prime,
     PRIMES,
@@ -29,7 +29,7 @@ const computeN2D3P9 = <T extends NumTypeParameters &
     if (monzo[ TWO_PRIME_INDEX ] !== 0 || monzo[ THREE_PRIME_INDEX ] !== 0) {
         throw new Error(`N2D3P9 must be given a 2,3-free class (5-rough, n ≥ d); received monzo ${formatMonzo(monzo)}`)
     }
-    if (computeIsSubMonzo(monzo)) {
+    if (isSubMonzo(monzo)) {
         throw new Error(`N2D3P9 must be given a 2,3-free class (5-rough, n ≥ d); received monzo ${formatMonzo(monzo)}`)
     }
 

@@ -1,11 +1,11 @@
 import { program } from "commander"
 import {
     Abs,
-    computeNumIsRational,
     Exponent,
     formatPitch,
     Integer,
     Io,
+    isRationalNum,
     isUndefined,
     LogTarget,
     Max,
@@ -23,7 +23,7 @@ const parseJiPitch = (): RationalNum => {
     if (jiPitchText) {
         const pitch = parsePitch(jiPitchText)
 
-        if (computeNumIsRational(pitch)) {
+        if (isRationalNum(pitch)) {
             jiPitch = pitch
 
             if (!isUndefined(pitch.monzo) || !isUndefined(pitch.ratio)) {
