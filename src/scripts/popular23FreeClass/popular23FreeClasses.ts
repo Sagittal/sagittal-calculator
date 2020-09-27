@@ -72,7 +72,7 @@ const computePopular23FreeClasses = (maxN2D3P9: Max<N2D3P9>): Array<Ranked<Popul
 
         popular23FreeClassAnalyses = [] as Array<Popular23FreeClass>
         while (true) {
-            // do the work (trimming has the extra win of shallow cloning, disconnecting from this ticking process)
+            // Do the work (trimming has the extra win of shallow cloning, disconnecting from this ticking process)
             const twoThreeFreeMonzoForWork = computeTrimmedArray(twoThreeFreeMonzo)
             const maybePopular23FreeClass = !isSubMonzo(twoThreeFreeMonzoForWork) ?
                 computeMaybePopular23FreeClass(
@@ -81,7 +81,7 @@ const computePopular23FreeClasses = (maxN2D3P9: Max<N2D3P9>): Array<Ranked<Popul
                 ) :
                 undefined
 
-            // log progress
+            // Log progress
             monzosCheckedCount = increment(monzosCheckedCount)
             if (monzosCheckedCount % 1000000 === 0) {
                 saveLog(
@@ -95,9 +95,9 @@ const computePopular23FreeClasses = (maxN2D3P9: Max<N2D3P9>): Array<Ranked<Popul
                 popular23FreeClassAnalyses.push(maybePopular23FreeClass)
             }
 
-            // figure out which index is the first one which hasn't reached its max
+            // Figure out which index is the first one which hasn't reached its max
             let indexToTick = 0
-            // we have reached the max for this term for now (and haven't exceeded the end of the monzo)
+            // We have reached the max for this term for now (and haven't exceeded the end of the monzo)
             while (
                 indexToTick < twoThreeFreeMonzo.length &&
                 twoThreeFreeMonzo[ indexToTick ] === finalMonzo[ indexToTick ]
@@ -105,18 +105,18 @@ const computePopular23FreeClasses = (maxN2D3P9: Max<N2D3P9>): Array<Ranked<Popul
                 indexToTick = increment(indexToTick)
             }
 
-            // ok so now we're at the first term which isn't at its max
+            // Ok so now we're at the first term which isn't at its max
 
-            // quit now if apparently ALL the terms are at their maxes
+            // Quit now if apparently ALL the terms are at their maxes
             if (indexToTick === twoThreeFreeMonzo.length) {
                 break
             }
 
-            // otherwise increment the term at this not-yet-maxed index toward its max
+            // Otherwise increment the term at this not-yet-maxed index toward its max
             twoThreeFreeMonzo[ indexToTick ] = increment(twoThreeFreeMonzo[ indexToTick ])
 
-            // and reset the term at every other index before this one to its min,
-            // so we can repeat everything we've done so far but for this index being one higher than it was previously
+            // And reset the term at every other index before this one to its min,
+            // So we can repeat everything we've done so far but for this index being one higher than it was previously
             let i = 0
             while (i < indexToTick) {
                 twoThreeFreeMonzo[ i ] = initialMonzo[ i ]

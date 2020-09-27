@@ -6,16 +6,16 @@ describe("JI_NOTATION_BOUNDS", (): void => {
         let currentHalfTina = 0.5
 
         const exceptionalJiNotationBoundIds: Array<Id<JiNotationBound>> = [
-            49,     // comma mean
-            52,     // comma mean
-            74,     // comma mean
-            81,     // comma mean
-            96,     // size category bound
-            109,    // comma mean
-            118,    // comma mean
-            126,    // comma mean
-            135,    // comma mean
-            148,    // size category bound
+            49,     // Comma mean
+            52,     // Comma mean
+            74,     // Comma mean
+            81,     // Comma mean
+            96,     // Size category bound
+            109,    // Comma mean
+            118,    // Comma mean
+            126,    // Comma mean
+            135,    // Comma mean
+            148,    // Size category bound
         ] as Array<Id<JiNotationBound>>
 
         JI_NOTATION_BOUNDS.forEach((jiNotationBound: JiNotationBound): void => {

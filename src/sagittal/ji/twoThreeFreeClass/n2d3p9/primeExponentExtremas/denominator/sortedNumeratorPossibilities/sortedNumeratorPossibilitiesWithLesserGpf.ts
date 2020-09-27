@@ -13,10 +13,10 @@ const computeSortedNumeratorPossibilitiesGivenMaxN2D3P9WithLesserGpfThanDenomina
     const numeratorPossibilitiesWithLesserGpf: NumeratorPossibilityWithLesserGpfThanDenominatorPrime[] =
         numeratorPossibilitiesForDenominatorGivenMaxN2D3P9
             .filter((numeratorPossibility: NumeratorPossibilityForDenominatorGivenMaxN2D3P9): boolean => {
-                // unlike when computing numerator possibilities with greater GPF than the denominator prime
-                // there is no need to filter by if it divides evenly
-                // because when the GPF of the numerator is less than the denominator prime,
-                // the numerator could not possibly be divisible by it
+                // Unlike when computing numerator possibilities with greater GPF than the denominator prime
+                // There is no need to filter by if it divides evenly
+                // Because when the GPF of the numerator is less than the denominator prime,
+                // The numerator could not possibly be divisible by it
                 return numeratorPossibility.gpf < denominatorPrime
             }) as NumeratorPossibilityWithLesserGpfThanDenominatorPrime[]
     const numeratorPossibilitiesWithLesserGpfIncludingN2 = numeratorPossibilitiesWithLesserGpf

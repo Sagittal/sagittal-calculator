@@ -141,7 +141,7 @@ const customMatchers: CustomMatcherFactories = {
                 arraysAreCloseUpThroughExpected(expected, actual, precision, negate, message)
             }),
     }),
-    // depth 1: any order, thenceforth: enforced order (deep equal)
+    // Depth 1: any order, thenceforth: enforced order (deep equal)
     toBeArrayWithDeepEqualContents: (util: MatchersUtil, customEqualityTesters: readonly CustomEqualityTester[]): CustomMatcher => ({
         compare: <T>(actual: T[], expected: T[], message?: string): CustomMatcherResult =>
             doAssertions((): void => {
@@ -149,7 +149,7 @@ const customMatchers: CustomMatcherFactories = {
                 eachExpectedElementDeepEqualsSomeActualElement(expected, actual, message)
             }),
     }),
-    // depth 1: any order, depth 2: any order, thenceforth: enforced order (deep equal)
+    // Depth 1: any order, depth 2: any order, thenceforth: enforced order (deep equal)
     toBeSameCombinationsAs: (util: MatchersUtil, customEqualityTesters: readonly CustomEqualityTester[]): CustomMatcher => ({
         compare: <T>(actual: T[][], expected: T[][], message?: string): CustomMatcherResult =>
             doAssertions((): void => {
@@ -157,7 +157,7 @@ const customMatchers: CustomMatcherFactories = {
                 eachExpectedElementHasSameContentsAsSomeActualElement(expected, actual, message)
             }),
     }),
-    // depth 1: any order, depth 2: enforced order, depth 3: any order, thenceforth: enforced order (deep equal)
+    // Depth 1: any order, depth 2: enforced order, depth 3: any order, thenceforth: enforced order (deep equal)
     toBeSameDistributionsAs: (util: MatchersUtil, customEqualityTesters: readonly CustomEqualityTester[]): CustomMatcher => ({
         compare: <T>(actual: T[][][], expected: T[][][], message?: string): CustomMatcherResult =>
             doAssertions((): void => {
@@ -174,14 +174,14 @@ const customMatchers: CustomMatcherFactories = {
                 })
             }),
     }),
-    // same as toBeArrayWithDeepEqualContents, but without the length match
+    // Same as toBeArrayWithDeepEqualContents, but without the length match
     toBeArrayIncludingDeepEqual: (util: MatchersUtil, customEqualityTesters: readonly CustomEqualityTester[]): CustomMatcher => ({
         compare: <T>(actual: T[], expected: T[], message?: string): CustomMatcherResult =>
             doAssertions((): void => {
                 eachExpectedElementDeepEqualsSomeActualElement(expected, actual, message)
             }),
     }),
-    // same as toBeSameCombinationsAs, but without the length match
+    // Same as toBeSameCombinationsAs, but without the length match
     toBeArrayIncludingCombinations: (util: MatchersUtil, customEqualityTesters: readonly CustomEqualityTester[]): CustomMatcher => ({
         compare: <T>(actual: T[][], expected: T[][], message?: string): CustomMatcherResult =>
             doAssertions((): void => {

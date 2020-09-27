@@ -26,7 +26,7 @@ describe("populateScopes", (): void => {
 
             await populateScopes()
 
-            // count: 6
+            // Count: 6
             expect(scopesToSearch).toEqual(
                 jasmine.arrayWithExactContents(SUBMETRIC_CHUNKS.map((chunk: Chunk<Submetric>): Scope => {
                     return [{}, chunk] as Scope
@@ -35,7 +35,7 @@ describe("populateScopes", (): void => {
         },
     )
 
-    // need to add the extra 7 bits (18 to 25) to each section below
+    // Need to add the extra 7 bits (18 to 25) to each section below
     it("given a chunk count, populates all possible combinations of those parameters - works for 2", async (): Promise<void> => {
         onlyRunInCi()
 
@@ -43,16 +43,16 @@ describe("populateScopes", (): void => {
 
         await populateScopes()
 
-        // with repetitions is not useful when the chunk count for submetrics is more than 1 more than
-        // the chunk count for parameters (because then you're inevitably going to end up with two submetric scopes
-        // that are identical) (and wait no, it's even more complicated than that,
-        // because if you had 3 submetric chunks you could have 2 of them repeat and the 3rd was different,
-        // so just 1 parameter would be enough to differentiate the 2 same submetrics),
-        // but due to the complications that would arise from memoizing those separately
+        // With repetitions is not useful when the chunk count for submetrics is more than 1 more than
+        // The chunk count for parameters (because then you're inevitably going to end up with two submetric scopes
+        // That are identical) (and wait no, it's even more complicated than that,
+        // Because if you had 3 submetric chunks you could have 2 of them repeat and the 3rd was different,
+        // So just 1 parameter would be enough to differentiate the 2 same submetrics),
+        // But due to the complications that would arise from memoizing those separately
         // I am just not going to deal with it
 
         const expected = [
-            // submetrics: 2, parameters: 0
+            // Submetrics: 2, parameters: 0
 
             // 6
             [
@@ -283,7 +283,7 @@ describe("populateScopes", (): void => {
                 },
             ],
 
-            // submetrics 1, parameters 1: distributed parameters to the submetric directly
+            // Submetrics 1, parameters 1: distributed parameters to the submetric directly
 
             // SOAPFAR (25)
             [
@@ -1447,7 +1447,7 @@ describe("populateScopes", (): void => {
                 },
             ],
 
-            // submetrics 1, parameters 1: distributed parameters to the 'all bins' submetric bin
+            // Submetrics 1, parameters 1: distributed parameters to the 'all bins' submetric bin
 
             // SOAPFAR (25)
             [
@@ -2707,7 +2707,7 @@ describe("populateScopes", (): void => {
                 },
             ],
             [
-                { // yes I see that this one is a problem... it'll just throw an error and it gets caught by that spot that is designed to catch such errors and move on
+                { // Yes I see that this one is a problem... it'll just throw an error and it gets caught by that spot that is designed to catch such errors and move on
                     [ Parameter.A_AS_POWER_EXPONENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_POWER_EXPONENT ],
                 },
                 {
@@ -2782,9 +2782,9 @@ describe("populateScopes", (): void => {
         const actual: Scope[] = scopesToSearch
 
         expect(actual.length).toEqual( // 56 + 1575 + 7800 = 9431
-            56 + // all combinations of 3 submetrics = 6 choose 3 w/re = ((3+6-1)!)/((3!)((6-1)!)) = 56, but that times all combinations of 0 parameters = 25 choose 0 w/re = ((0+25-1)!)/((0!)((25-1)!)) =   1, so 56 *  1 =   56, but then that times 1 bc for each one you can distribute the parameters across the submetrics 4^0 ways, so   56  * 1 =   56
-            1575 +         // all combinations of 2 submetrics = 6 choose 2 w/re = ((2+6-1)!)/((2!)((6-1)!)) = 21, but that times all combinations of 1 parameters = 25 choose 1 w/re = ((1+25-1)!)/((1!)((25-1)!)) =  25, so 21 * 25 =  525, but then that times 2 bc for each one you can distribute the parameters across the submetrics 3^1 ways, so  525 * 3 = 1575
-            7800,         // all combinations of 1 submetric  = 6 choose 1 w/re = ((1+6-1)!)/((1!)((6-1)!)) =  6, but that times all combinations of 2 parameters = 25 choose 2 w/re = ((2+25-1)!)/((2!)((25-1)!)) = 325, so 6 * 325 = 1950, but then that times 1 bc for each one you can distribute the parameters across the submetrics 2^2 ways, so 1950 * 4 = 7800
+            56 + // All combinations of 3 submetrics = 6 choose 3 w/re = ((3+6-1)!)/((3!)((6-1)!)) = 56, but that times all combinations of 0 parameters = 25 choose 0 w/re = ((0+25-1)!)/((0!)((25-1)!)) =   1, so 56 *  1 =   56, but then that times 1 bc for each one you can distribute the parameters across the submetrics 4^0 ways, so   56  * 1 =   56
+            1575 +         // All combinations of 2 submetrics = 6 choose 2 w/re = ((2+6-1)!)/((2!)((6-1)!)) = 21, but that times all combinations of 1 parameters = 25 choose 1 w/re = ((1+25-1)!)/((1!)((25-1)!)) =  25, so 21 * 25 =  525, but then that times 2 bc for each one you can distribute the parameters across the submetrics 3^1 ways, so  525 * 3 = 1575
+            7800,         // All combinations of 1 submetric  = 6 choose 1 w/re = ((1+6-1)!)/((1!)((6-1)!)) =  6, but that times all combinations of 2 parameters = 25 choose 2 w/re = ((2+25-1)!)/((2!)((25-1)!)) = 325, so 6 * 325 = 1950, but then that times 1 bc for each one you can distribute the parameters across the submetrics 2^2 ways, so 1950 * 4 = 7800
         )
         const exampleExpectedElements: Scope[] = [
             [

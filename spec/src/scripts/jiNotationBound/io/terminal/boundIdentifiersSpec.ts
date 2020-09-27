@@ -79,7 +79,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                             cents: 22.930587 as Cents,
                             name: "19/25C" as Name<Comma>,
                         } as PrimaryCommaAnalysis,
-                        // not the best example b/c ID and mina name are the same up to this point
+                        // Not the best example b/c ID and mina name are the same up to this point
                         id: 47 as Id<SymbolClass>,
                         elements: [".|", ")|", "/|"] as SymbolLongAscii[],
                     },

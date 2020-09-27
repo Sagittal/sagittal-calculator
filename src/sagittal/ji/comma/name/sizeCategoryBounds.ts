@@ -59,57 +59,57 @@ const SIZE_CATEGORY_BOUNDS: SizeCategoryBound[] = [
     },
     {
         name: "A|s+A" as Name<SizeCategoryBound>,
-        decimal: 1.0689866040832545 as Decimal,                             // apotome + 1.8075229327¢ = 115.49252899047
+        decimal: 1.0689866040832545 as Decimal,                             // Apotome + 1.8075229327¢ = 115.49252899047
         monzo: [-53, 33.5] as Monzo<{ potentiallyIrrational: true }>,
     },
     {
         name: "s+A|k+A" as Name<SizeCategoryBound>,
-        decimal: 1.0706503702176042 as Decimal,                             // apotome + 4.4999134612584¢ = 118.18491951
+        decimal: 1.0706503702176042 as Decimal,                             // Apotome + 4.4999134612584¢ = 118.18491951
         monzo: [147.5, -93] as Monzo<{ potentiallyIrrational: true }>,
     },
     {
         name: "k+A|C+A" as Name<SizeCategoryBound>,
-        decimal: 1.0751310393349456 as Decimal,                             // apotome + 11.7300051923244¢ = 125.4150112
+        decimal: 1.0751310393349456 as Decimal,                             // Apotome + 11.7300051923244¢ = 125.4150112
         monzo: [-20.5, 13] as Monzo<{ potentiallyIrrational: true }>,
     },
     {
         name: "C+A|S+A" as Name<SizeCategoryBound>,
-        decimal: 1.0886621079036347 as Decimal,                             // apotome + 33.382492644207¢ = 147.06749870
+        decimal: 1.0886621079036347 as Decimal,                             // Apotome + 33.382492644207¢ = 147.06749870
         monzo: [2.5, -1.5] as Monzo<{ potentiallyIrrational: true }>,
     },
     {
         name: "S+A|M+A" as Name<SizeCategoryBound>,
-        decimal: 1.09606340166468 as Decimal,                               // apotome + 45.112497836531¢ = 158.79750389
+        decimal: 1.09606340166468 as Decimal,                               // Apotome + 45.112497836531¢ = 158.79750389
         monzo: [-7, 4.5] as Monzo<{ potentiallyIrrational: true }>,
     },
     {
         name: "M+A|L+A" as Name<SizeCategoryBound>,
-        decimal: 1.103515013287383 as Decimal,                              // apotome + 56.842503028856¢ = 170.52750908
+        decimal: 1.103515013287383 as Decimal,                              // Apotome + 56.842503028856¢ = 170.52750908
         monzo: [-16.5, 10.5] as Monzo<{ potentiallyIrrational: true }>,
     },
     {
         name: "L+A|SS+A" as Name<SizeCategoryBound>,
-        decimal: 1.1110172848588549 as Decimal,                             // apotome + 68.572508221180¢ = 182.25751427
+        decimal: 1.1110172848588549 as Decimal,                             // Apotome + 68.572508221180¢ = 182.25751427
         monzo: [-26, 16.5] as Monzo<{ potentiallyIrrational: true }>,
     },
     {
         name: "SS+A|MS+A" as Name<SizeCategoryBound>,
-        decimal: 1.1185705607918934 as Decimal,                             // apotome + 80.302513413505¢ = 193.98751947
+        decimal: 1.1185705607918934 as Decimal,                             // Apotome + 80.302513413505¢ = 193.98751947
         monzo: [-35.5, 22.5] as Monzo<{ potentiallyIrrational: true }>,
     },
     {
         name: "MS+A|LS+A" as Name<SizeCategoryBound>,
-        decimal: 1.1326483377355803 as Decimal,                             // apotome + 101.95500086539¢ = 215.64000692
+        decimal: 1.1326483377355803 as Decimal,                             // Apotome + 101.95500086539¢ = 215.64000692
         monzo: [-12.5, 8] as Monzo<{ potentiallyIrrational: true }>,
     },
     {
         name: "LS+A|A+A" as Name<SizeCategoryBound>,
-        decimal: 1.139158694691943 as Decimal,                              // apotome + 111.87748312495¢ = 225.56248918
+        decimal: 1.139158694691943 as Decimal,                              // Apotome + 111.87748312495¢ = 225.56248918
         monzo: [20, -12.5] as Monzo<{ potentiallyIrrational: true }>,
     },
     {
         name: "A+A|" as Name<SizeCategoryBound>,
-        decimal: 1.1403486728668213 as Decimal,                             // apotome + apotome = 227.37001211¢
+        decimal: 1.1403486728668213 as Decimal,                             // Apotome + apotome = 227.37001211¢
         monzo: [-22, 14] as Monzo<{ potentiallyIrrational: true }>,
     },
 ]

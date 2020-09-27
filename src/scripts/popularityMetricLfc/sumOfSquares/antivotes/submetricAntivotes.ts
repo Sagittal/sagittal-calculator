@@ -17,7 +17,7 @@ import { Antivotes, ParameterValue, Submetric } from "../types"
 import { secondaryParameterOverride } from "./secondaryParameter"
 
 // (sum or count)
-// of (maybe adjusted) prime factors
+// Of (maybe adjusted) prime factors
 // (or prime factor indices via prime count function π)
 // (maybe with (maybe adjusted) repetition)
 
@@ -37,8 +37,6 @@ const computeSubmetricAntivotes = (
         u,
         y = 1 as ParameterValue,
         v,
-        // s = 0 as ParameterValue,
-        // t = 0 as ParameterValue,
         usePrimeIndex = false,
         sum = false,
         count = false,
@@ -88,11 +86,9 @@ const computeSubmetricAntivotes = (
                 adjustedPrimeExponent = 0
             } else {
                 adjustedPrimeExponent = withoutRepetition ? 1 : abs(primeExponent)
-                // adjustedPrimeExponent = adjustedPrimeExponent + t
                 adjustedPrimeExponent = adjustedPrimeExponent >= 0 ?
                     adjustedPrimeExponent ** secondaryParameterOverride(y, v, primeExponent, fractionalPartType) :
                     0
-                // adjustedPrimeExponent = adjustedPrimeExponent + s
             }
 
             let primeExponentAntivotes = adjustedPrime * adjustedPrimeExponent

@@ -1,4 +1,3 @@
-// todo: perhaps these roughness and smoothnesses should be broken up into num/decimal and num/ (move test now)
 import { isUndefined } from "../../../code"
 import { NumTypeParameters } from "../../num"
 import { Integer, Primes, Roughness } from "../types"

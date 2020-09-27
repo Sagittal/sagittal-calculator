@@ -30,7 +30,7 @@ describe("computeMaxDenominatorPrimeExponentGivenMaxN2D3P9", (): void => {
             { numerator: 43 as Numerator, gpf: 43 as Max<Prime> },
             { numerator: 47 as Numerator, gpf: 47 as Max<Prime> },
             { numerator: 49 as Numerator, gpf: 7 as Max<Prime> },
-            // it actually goes on...
+            // It actually goes on...
         ] as NumeratorPossibilityForDenominatorGivenMaxN2D3P9[]
 
         const actual = computeMaxDenominatorPrimeExponentGivenMaxN2D3P9(
@@ -44,7 +44,7 @@ describe("computeMaxDenominatorPrimeExponentGivenMaxN2D3P9", (): void => {
     })
 
     it("gets the sorted numerator possibilities, then works its way up through each candidate max exponent for the denominator prime, seeing what the min N2D3P9 is for it, and returning the max exponent whose min N2D3P9 is less than the max N2D3P9", (): void => {
-        const denominatorPrime = 1033 as Denominator & Prime // something crazy
+        const denominatorPrime = 1033 as Denominator & Prime // Something crazy
         const maxN2D3P9 = 10 as Max<N2D3P9>
         const numeratorPossibilitiesForDenominatorGivenMaxN2D3P9 = [
             { numerator: 7 as Numerator, gpf: 7 as Max<Prime> },
@@ -63,13 +63,13 @@ describe("computeMaxDenominatorPrimeExponentGivenMaxN2D3P9", (): void => {
         spyOn(sortedNumeratorPossibilities, "computeSortedNumeratorPossibilitiesForDenominatorPrimeGivenMaxN2D3P9")
             .and.returnValue(sortedNumeratorPossibilitiesForDenominatorPrimeGivenMaxN2D3P9)
         spyOn(minN2D3P9, "computeMinN2D3P9ForCandidateMaxDenominatorPrimeExponentGivenMaxN2D3P9").and.returnValues(
-            // for candidate max exponent for denominator prime = 1
+            // For candidate max exponent for denominator prime = 1
             9.5 as Min<N2D3P9>,
-            // for candidate max exponent for denominator prime = 2,
-            // and this is the one which is the biggest without going over,
-            // so that's why 2 is the final expectation in this test
+            // For candidate max exponent for denominator prime = 2,
+            // And this is the one which is the biggest without going over,
+            // So that's why 2 is the final expectation in this test
             9.7 as Min<N2D3P9>,
-            // for candidate max exponent for denominator prime = 3
+            // For candidate max exponent for denominator prime = 3
             10.3 as Min<N2D3P9>,
         )
 

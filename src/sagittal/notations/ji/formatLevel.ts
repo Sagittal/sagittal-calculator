@@ -1,7 +1,7 @@
 import { Formatted } from "../../../general"
 import { JiNotationLevel } from "./types"
 
-// not moving into an io folder for JI dir until there's at least one other thing
+// Not moving into an io folder for JI dir until there's at least one other thing
 
 const formatJiNotationLevel = (jiNotationLevel: JiNotationLevel): Formatted<JiNotationLevel> => {
     const almostFormattedJiNotationLevel = jiNotationLevel.replace(/(\_\w)/g, (match: string): string => ` ${match[ 1 ].toUpperCase()}`)

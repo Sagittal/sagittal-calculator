@@ -6,9 +6,9 @@ import { Parameter, ParameterValue, Submetric } from "../../../../../../src/scri
 describe("computeDynamicParameterValueIndices", (): void => {
     it("given the dynamic parameters and a submetric, returns an array of, in order, for each of the dynamic parameters, its index in the parameter points", (): void => {
         const dynamicParameters: DynamicParameter[] = [
-            // don't pick me at all, since I'm submetric index 0 --
+            // Don't pick me at all, since I'm submetric index 0 --
             // I should have already been handled by a previous call to computeDynamicParameterValueIndices
-            // i.e. already be in the array which this call's returned array will be spread onto the end of
+            // I.e. already be in the array which this call's returned array will be spread onto the end of
             {
                 submetricIndex: 0 as Index<Submetric>,
                 parameter: Parameter.Y,
@@ -16,7 +16,7 @@ describe("computeDynamicParameterValueIndices", (): void => {
                 unit: 0 as Step<ParameterValue>,
             },
 
-            // pick from me for the first index of the returned array
+            // Pick from me for the first index of the returned array
             {
                 submetricIndex: 1 as Index<Submetric>,
                 parameter: Parameter.Y,
@@ -24,7 +24,7 @@ describe("computeDynamicParameterValueIndices", (): void => {
                 unit: 0 as Step<ParameterValue>,
             },
 
-            // pick from me for the second index of the returned array
+            // Pick from me for the second index of the returned array
             {
                 submetricIndex: 1 as Index<Submetric>,
                 parameter: Parameter.A_AS_COEFFICIENT,

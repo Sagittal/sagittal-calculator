@@ -9,10 +9,10 @@ const APOTOME: Comma = {
 const HALF_APOTOME: Num = {
     monzo: [-5.5, 3.5] as Monzo,
     // TODO: HALF-PITCH HELPER
-    //  could be cool to have a half-pitch helper or maybe just general multiply or divide
-    //  which would adjust monzo, ratio, cents, number, etc. accordingly
-    //  it might spare me the pain of thinking I could just divide decimals by 2 instead of taking the sqrt...
-    //  so find all they places where you are doing that and update them
+    //  Could be cool to have a half-pitch helper or maybe just general multiply or divide
+    //  Which would adjust monzo, ratio, cents, number, etc. accordingly
+    //  It might spare me the pain of thinking I could just divide decimals by 2 instead of taking the sqrt...
+    //  So find all they places where you are doing that and update them
 }
 
 const APOTOME_DECIMAL: DecimalNotDefaultingToPotentiallyIrrational = APOTOME.decimal!

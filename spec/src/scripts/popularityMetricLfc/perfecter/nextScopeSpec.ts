@@ -34,9 +34,9 @@ describe("computeNextScope", (): void => {
                     window: 0.05 as Window<ParameterValue>,
                     ed: 5 as Ed<ParameterValue>,
                 },
-                // haha... it just doesn't care what your previous ED was.
-                // well, that's why I had the top-level script point to the same constant that this module uses,
-                // to generally prevent that.
+                // Haha... it just doesn't care what your previous ED was.
+                // Well, that's why I had the top-level script point to the same constant that this module uses,
+                // To generally prevent that.
                 [ Parameter.W ]: {
                     center: 0 as ParameterValue,
                     window: 0.25 as Window<ParameterValue>,

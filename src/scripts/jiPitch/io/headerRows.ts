@@ -30,7 +30,7 @@ const NOTATING_COMMAS_WITH_MAYBE_SAGITTAL_SYMBOL_CLASSES_COLUMN_TITLES: Record<N
 const FIND_COMMAS_COLUMN_TITLES: Record<FindCommasField, Io> = {
     ...NOTATING_COMMAS_WITH_MAYBE_SAGITTAL_SYMBOL_CLASSES_COLUMN_TITLES,
     // Pretty much the same as TWO_THREE_FREE_CLASS_COLUMN_TITLES,
-    // but here we can't assume the "2,3-free class" part b/c there's no 2,3-free class title just above
+    // But here we can't assume the "2,3-free class" part b/c there's no 2,3-free class title just above
     [ FindCommasField.TWO_THREE_FREE_PRIME_LIMIT ]: "2,3-free prime limit" as Io,
     [ FindCommasField.TWO_THREE_FREE_CLASS_NAME ]: "2,3-free class name" as Io,
     [ FindCommasField.TWO_THREE_FREE_COPFR ]: "2,3-free class CoPFR" as Io,

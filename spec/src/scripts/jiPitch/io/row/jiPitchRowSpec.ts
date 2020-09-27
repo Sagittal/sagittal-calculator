@@ -24,10 +24,10 @@ describe("computeJiPitchRow", (): void => {
         const actual = computeJiPitchRow(jiPitchAnalysis)
 
         const expected = [
-            "5/4",              // ratio
-            "[   0  -1   1 ⟩",  // monzo
-            "        11.200¢",  // cents
-            "  8.200",          // apotome slope
+            "5/4",              // Ratio
+            "[   0  -1   1 ⟩",  // Monzo
+            "        11.200¢",  // Cents
+            "  8.200",          // Apotome slope
             "  8.200",          // AAS
             "  1    ",          // ATE
         ] as Row<{ of: JiPitchAnalysis, header: true }>
@@ -39,8 +39,8 @@ describe("computeJiPitchRow", (): void => {
         const actual = computeJiPitchRow(jiPitchAnalysis)
 
         const expected = [
-            "[   0  -1   1 ⟩",  // monzo
-            "        11.200¢",  // cents
+            "[   0  -1   1 ⟩",  // Monzo
+            "        11.200¢",  // Cents
             "  8.200",          // AAS
             "  1    ",          // ATE
         ] as Row<{ of: JiPitchAnalysis, header: true }>

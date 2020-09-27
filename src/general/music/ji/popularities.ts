@@ -2,7 +2,7 @@ import { Ranked } from "../../code"
 import { Popularity } from "./types"
 
 // Per Scala statistics
-// http://www.huygens-fokker.org/microtonality/scales.html
+// See: http://www.huygens-fokker.org/microtonality/scales.html
 
 const COMMA_POPULARITIES: Array<Ranked<Popularity>> = [
     { rank: 1, twoThreeFreeClass: { ratio: [1, 1] }, votes: 7624 },

@@ -6,9 +6,9 @@ import { integerDivide } from "../../typedOperations"
 import { Integer, Prime } from "../../types"
 
 // TODO: POSSIBLY MORE PERFORMANT PRIME FACTORIZATION ALGORITHM
-//  consider using Dave's tricky GCP-involved technique
-//  explained here: http://forum.sagittal.org/viewtopic.php?p=2404#p2404
-//  and here: http://forum.sagittal.org/viewtopic.php?p=2409#p2409
+//  Consider using Dave's tricky GCP-involved technique
+//  Explained here: http://forum.sagittal.org/viewtopic.php?p=2404#p2404
+//  And here: http://forum.sagittal.org/viewtopic.php?p=2409#p2409
 /*
 I can't guarantee it will be faster, but to have a chance of that you'd need to precompute:
 

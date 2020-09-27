@@ -33,11 +33,11 @@ describe("computePopular23FreeClassWithExactlyNotatingSymbolClassRow", (): void 
         const expected = [
             "7/5",                  // 2,3-free class
             "  2.000",              // N2D3P9
-            "    )|(     ./|  ",    // exactly notating symbol classes
-            "1, 3",                 // exactly notating symbol class smallest symbol subset indices
-            "4",                    // estimated rank
-            "3",                    // actual rank
-            "7",                    // votes
+            "    )|(     ./|  ",    // Exactly notating symbol classes
+            "1, 3",                 // Exactly notating symbol class smallest symbol subset indices
+            "4",                    // Estimated rank
+            "3",                    // Actual rank
+            "7",                    // Votes
         ] as Row<{ of: Popular23FreeClass & ExactlyNotatingSymbolClassProperties, header: true }>
         expect(actual).toEqual(expected)
     })

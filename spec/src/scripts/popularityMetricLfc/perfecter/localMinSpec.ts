@@ -40,8 +40,8 @@ describe("getSumOfSquaresAtSamplePointIfLocalMin", (): void => {
         setSumOfSquaresAtSamplePoint(0.00666 as SumOfSquares, sumsOfSquares, [1, 1, 0, 1] as SamplePoint)
         setSumOfSquaresAtSamplePoint(0.00666 as SumOfSquares, sumsOfSquares, [1, 1, 2, 1] as SamplePoint)
         setSumOfSquaresAtSamplePoint(0.00666 as SumOfSquares, sumsOfSquares, [1, 1, 1, 0] as SamplePoint)
-        // this example is NOT QUITE a local min!
-        // setSumOfSquaresAtSamplePoint(0.00666 as SumOfSquares, sumsOfSquares, [1, 1, 1, 2])
+        // This example is NOT QUITE a local min!
+        // SetSumOfSquaresAtSamplePoint(0.00666 as SumOfSquares, sumsOfSquares, [1, 1, 1, 2])
     })
 
     it("returns the sum-of-squares if it is lesser at the sample point than at every adjacent one", (): void => {

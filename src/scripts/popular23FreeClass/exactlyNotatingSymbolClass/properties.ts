@@ -12,8 +12,8 @@ const computeExactlyNotatingSymbolClassProperties = (
         .map((symbolClassId: Id<SymbolClass>): Index<SymbolSubset> => {
             // This used to not include Trojan, and the tables that have been shared on the forum reflect that.
             // However I eventually decided the complexity wasn't justified in excluding it, once I got the code
-            // more organized such that excluding it was work, and I was too embarrassed to pester Dave about why
-            // he wanted symbol subset indices rather than precision level indices.
+            // More organized such that excluding it was work, and I was too embarrassed to pester Dave about why
+            // He wanted symbol subset indices rather than precision level indices.
             return SYMBOL_SUBSETS.indexOf(getSmallestSymbolSubset(symbolClassId)) as Index<SymbolSubset>
         })
 

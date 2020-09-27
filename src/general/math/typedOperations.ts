@@ -25,17 +25,17 @@ const product = <T extends number>(...factors: T[]): Product<T> =>
     )
 
 const add = <T extends number>(augend: T, addend: T | Addend<T>): T =>
-    augend + addend as T                    // sum
+    augend + addend as T                    // Sum
 
 const subtract = <T extends number>(minuend: T, subtrahend: T | Subtrahend<T>): T =>
-    minuend - subtrahend as T               // difference
+    minuend - subtrahend as T               // Difference
 
 const multiply = <T extends number>(multiplicand: T, multiplier: T | Multiplier<T>): T => {
-    return multiplicand * multiplier as T   // product
+    return multiplicand * multiplier as T   // Product
 }
 
 const divide = <T extends number>(dividend: T, divisor: Divisor<T>): T => {
-    return dividend / divisor as T          // quotient
+    return dividend / divisor as T          // Quotient
 }
 
 const mod = <T extends number>(dividend: T, divisor: T): Omit<T, "_IntegerBrand"> =>

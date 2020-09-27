@@ -17,7 +17,7 @@ type Avg<T extends number = number> = T & { _AverageBrand: boolean }
 type Approx<T extends number = number> = T & { _ApproxBrand: boolean }
 
 // Experimenting with not necessarily applying to numbers,
-// though it seems like plenty others of these might be flexible in that way too
+// Though it seems like plenty others of these might be flexible in that way too
 type Max<T extends unknown = number> = T & { _MaxBrand: boolean }
 type Min<T extends unknown = number> = T & { _MinBrand: boolean }
 

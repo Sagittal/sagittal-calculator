@@ -135,7 +135,6 @@ describe("consolidateBoundHistories", (): void => {
                     rankOfBestRankedMemberHistory: RANKS[ BoundType.COMMA_MEAN ],
                     nextBoundEvents: [
                         boundEventAnalysisThree.name,
-                        // boundEventImpossible.name,
                     ] as Name<BoundPosition>[],
                 },
             ],

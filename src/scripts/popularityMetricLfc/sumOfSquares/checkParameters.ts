@@ -19,7 +19,7 @@ const checkSubmetricsForInvalidParameterCombinations = (submetrics: Submetric[])
     }
 
     submetrics.forEach((submetric: Submetric): void => {
-        // non-one operation parameter count
+        // Non-one operation parameter count
         if (!submetric[ Parameter.SUM ] && !submetric[ Parameter.COUNT ] && !submetric[ Parameter.MAX ]) {
             throw new Error(`Submetric ${stringify(submetric)} has no provided operation parameter (sum, count, or max); exactly one of these is required.`)
         }
@@ -33,7 +33,7 @@ const checkSubmetricsForInvalidParameterCombinations = (submetrics: Submetric[])
             throw new Error(`Submetric ${stringify(submetric)} has more than one provided operation parameter (sum, count, or max); exactly one of these is required.`)
         }
 
-        // canceling-out bases
+        // Canceling-out bases
         if (
             !isUndefined(submetric[ Parameter.A_AS_LOGARITHM_BASE ]) &&
             !isUndefined(submetric[ Parameter.A_AS_POWER_BASE ])
@@ -59,7 +59,7 @@ const checkSubmetricsForInvalidParameterCombinations = (submetrics: Submetric[])
             throw new Error(`Submetric ${stringify(submetric)} cannot specify weight to be both a logarithm base and a power base.`)
         }
 
-        // j and k both as coefficients
+        // As coefficients, j and k
         if (
             !isUndefined(submetric[ Parameter.J_AS_COEFFICIENT ]) &&
             !isUndefined(submetric[ Parameter.K_AS_COEFFICIENT ])
@@ -67,7 +67,7 @@ const checkSubmetricsForInvalidParameterCombinations = (submetrics: Submetric[])
             throw new Error(`Submetric ${stringify(submetric)} cannot specify both j and k of the same type (coefficient).`)
         }
 
-        // denominator-only parameters without the non-denominator-only equivalents
+        // Denominator-only parameters without the non-denominator-only equivalents
         if (!isUndefined(submetric[ Parameter.B ]) && isUndefined(submetric[ Parameter.W ])) {
             throw new Error(`Submetric ${stringify(submetric)} cannot specify b without w.`)
         }

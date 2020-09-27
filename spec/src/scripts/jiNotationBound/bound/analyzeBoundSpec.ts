@@ -26,7 +26,7 @@ describe("analyzeJiNotationBound", (): void => {
             boundType: BoundType.INA_MIDPOINT,
             name: "164.5°809" as Name<BoundPosition>,
             cents: 23.116419649559468 as Cents,
-            // this one gets rank 4
+            // This one gets rank 4
         },
     ]
     const bestHistory: BoundHistory = [
@@ -47,7 +47,7 @@ describe("analyzeJiNotationBound", (): void => {
             boundType: BoundType.INA_MIDPOINT,
             name: "164.5°809" as Name<BoundPosition>,
             cents: 23.116419649559468 as Cents,
-            // this one gets rank 1
+            // This one gets rank 1
         },
     ]
     const histories: BoundHistory[] = [

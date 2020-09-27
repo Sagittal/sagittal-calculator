@@ -16,7 +16,10 @@
     ],
     "ban-ts-ignore": false,
     "ban-types": false,
-    "comment-format": false,
+    "comment-format": [
+      true,
+      "check-uppercase"
+    ],
     "completed-docs": false,
     "cyclomatic-complexity": [
       false,

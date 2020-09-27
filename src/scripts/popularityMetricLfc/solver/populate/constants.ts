@@ -21,7 +21,7 @@ const NO_USELESS_INITIAL_PARAMETER_SCOPES: ParameterScopes = {
         center: 1.125 as ParameterValue,
         window: 1.25 as Window<ParameterValue>,
     }),
-    // per forum discussion, lock it down http://forum.sagittal.org/viewtopic.php?p=2113#p2113
+    // Per forum discussion, lock it down http://forum.sagittal.org/viewtopic.php?p=2113#p2113
     [ Parameter.A_AS_LOGARITHM_BASE ]: 2 as ParameterValue,
     [ Parameter.A_AS_POWER_EXPONENT ]: computeDynamicParameterScope({
         center: 1.25 as ParameterValue,

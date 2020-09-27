@@ -7,13 +7,13 @@ describe("computeSubmetricAntivotes", (): void => {
     let submetric: Submetric
 
     const twoThreeFreeNumberMonzo: Monzo = [
-        0,                  // prime 2,  prime index 1 (from the prime count function)
-        0,                  // prime 3,  prime index 2 (from the prime count function)
-        0,                  // prime 5,  prime index 3 (from the prime count function)
-        0,                  // prime 7,  prime index 4 (from the prime count function)
-        1,                  // prime 11, prime index 5 (from the prime count function)
-        -1,                 // prime 13, prime index 6 (from the prime count function)
-        2,                  // prime 17, prime index 7 (from the prime count function)
+        0,                  // Prime 2,  prime index 1 (from the prime count function)
+        0,                  // Prime 3,  prime index 2 (from the prime count function)
+        0,                  // Prime 5,  prime index 3 (from the prime count function)
+        0,                  // Prime 7,  prime index 4 (from the prime count function)
+        1,                  // Prime 11, prime index 5 (from the prime count function)
+        -1,                 // Prime 13, prime index 6 (from the prime count function)
+        2,                  // Prime 17, prime index 7 (from the prime count function)
     ] as Monzo
 
     beforeEach((): void => {

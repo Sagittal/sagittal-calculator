@@ -28,10 +28,10 @@ describe("computePopular23FreeClassWithBestNotatingCommaRow", (): void => {
 
         const expected = [
             "7/5",              // 2,3-free class
-            "4",                // estimated rank
-            "         5.000¢",  // best notating comma cents
-            "[   1 ⟩",          // best notating comma monzo
-            "   ,)|  ",         // best notating comma maybe symbol class
+            "4",                // Estimated rank
+            "         5.000¢",  // Best notating comma cents
+            "[   1 ⟩",          // Best notating comma monzo
+            "   ,)|  ",         // Best notating comma maybe symbol class
         ] as Row<{ of: Popular23FreeClass & BestNotatingCommaProperties, header: true }>
         expect(actual).toEqual(expected)
     })

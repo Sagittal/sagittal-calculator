@@ -26,15 +26,15 @@ const computeScopeFromMetric = (metric: Metric): Scope => {
                 return {
                     ...submetricScope,
                     [ parameter ]: PARAMETER_DYNAMISMS[ parameter ] ?
-                        // okay so it looks like we can either
-                        //  make this parameter dynamism something we check for the spread parameters too
-                        //  or we could just not identify them as spread parameters in the first place
-                        //  and leave it up to right here to handle it
+                        // Okay so it looks like we can either
+                        //  Make this parameter dynamism something we check for the spread parameters too
+                        //  Or we could just not identify them as spread parameters in the first place
+                        //  And leave it up to right here to handle it
                         //  I mean they are literally spread, even if they can't change,
-                        //  which might be good to acknowledge if we ever change the bases not to be locked down
-                        //  although then there's the problem of my guess backfiller misidentifying them
-                        //  maybe if you just change it to spreadDynamicParameters the problem is solved?
-                        //  and we've gone with the latter.
+                        //  Which might be good to acknowledge if we ever change the bases not to be locked down
+                        //  Although then there's the problem of my guess backfiller misidentifying them
+                        //  Maybe if you just change it to spreadDynamicParameters the problem is solved?
+                        //  And we've gone with the latter.
                         computeDynamicParameterScopeForPerfecting(parameterValue) :
                         parameterValue,
                 }

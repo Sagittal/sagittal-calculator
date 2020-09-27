@@ -71,10 +71,10 @@ const computeJiNotationBoundRow = (
         bestPossibleBoundHistoryHighInaDistance,
         bestPossibleBoundHistoryUltraInaDistance,
         bestPossibleBoundHistoryExtremeInaDistance,
-        formatDecimal(bestPossibleBoundHistoryTotalInaDistance, { align: true }), // these are cents but b/c the header
-        formatDecimal(cents, { align: true }),                                    // specifically states they are cents
-        formatDecimal(initialPosition, { align: true }),                          // and this is a really dense table
-        formatDecimal(initialPositionTinaDistance, { align: true }),              // we're saving space and no ¢ symbols
+        formatDecimal(bestPossibleBoundHistoryTotalInaDistance, { align: true }), // These are cents but b/c the header
+        formatDecimal(cents, { align: true }),                                    // Specifically states they are cents
+        formatDecimal(initialPosition, { align: true }),                          // And this is a really dense table
+        formatDecimal(initialPositionTinaDistance, { align: true }),              // We're saving space and no ¢ symbols
     ] as Row as Row<{ of: JiNotationBoundAnalysis }>
 
     return jiNotationBoundRow

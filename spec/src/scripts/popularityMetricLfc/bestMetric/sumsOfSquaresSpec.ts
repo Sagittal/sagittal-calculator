@@ -52,7 +52,7 @@ describe("computeSumsOfSquaresAndMaybeUpdateBestMetric", (): void => {
             ],
             [
                 0.031710 as SumOfSquares,
-                0.013983 as SumOfSquares, // best!
+                0.013983 as SumOfSquares, // Best!
             ],
         ] as SumsOfSquares
         expect(actual).toBeArrayWithDeepCloseContents(expected)
@@ -122,7 +122,7 @@ describe("computeSumsOfSquaresAndMaybeUpdateBestMetric", (): void => {
                     samplePoint: [0, 0] as SamplePoint,
                     submetrics: [{
                         [ Parameter.SUM ]: true,
-                        // invalid because it doesn't make sense to use weight on a metric with only a single submetric
+                        // Invalid because it doesn't make sense to use weight on a metric with only a single submetric
                         [ Parameter.WEIGHT_AS_COEFFICIENT ]: 1 as ParameterValue,
                         [ Parameter.W ]: 0.5 as ParameterValue,
                     }] as Combination<Submetric>,

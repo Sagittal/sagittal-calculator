@@ -26,9 +26,9 @@ describe("isCloseTo", (): void => {
         const actual = isCloseTo(valueOne, valueTwo)
 
         expect(actual).toBeTruthy()
-        // you need to move precision up to 6 for this to be false.
-        // we thought it was at 6, but my implementation of isCloseTo was off by 1.
-        // it was actually 5 all along. I'd like to get us up to 6, but that causes dozens of tests to fail, because
+        // You need to move precision up to 6 for this to be false.
+        // We thought it was at 6, but my implementation of isCloseTo was off by 1.
+        // It was actually 5 all along. I'd like to get us up to 6, but that causes dozens of tests to fail, because
         // I'd been building upon a faulty tolerance of accuracy this whole time.
     })
 

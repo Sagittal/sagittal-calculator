@@ -1,6 +1,6 @@
 import { Antivotes } from "../types"
 
-// or "numenator" and "demonator" ?
+// Or "numenator" and "demonator" ?
 const maybeNuminatorSwap = (
     options: { useNuminator: boolean, numeratorAntivotes: Antivotes, denominatorAntivotes: Antivotes },
 ): { numeratorAntivotes: Antivotes, denominatorAntivotes: Antivotes } => {

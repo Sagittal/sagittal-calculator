@@ -37,7 +37,7 @@ const computeNextOptions = (
         onlyBetterThanSopfgtt,
         metricName,
         sumsOfSquares,
-        index: 0 as Index<Sample>, // will be overridden shortly
+        index: 0 as Index<Sample>, // Will be overridden shortly
     }
 }
 

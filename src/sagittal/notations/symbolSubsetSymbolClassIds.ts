@@ -37,7 +37,7 @@ const MAGRATHEAN_SYMBOL_CLASS_IDS: Array<Id<SymbolClass>> = sort([
 ]) as Array<Id<SymbolClass>>
 
 // On an independent trajectory, as it does not contain Spartan or Athenian, though it is contained by Promethean
-// http://forum.sagittal.org/viewtopic.php?p=885&sid=832fe7e77de7aae89234e3dbb67f8fb9#p885
+// See: http://forum.sagittal.org/viewtopic.php?p=885&sid=832fe7e77de7aae89234e3dbb67f8fb9#p885
 const TROJAN_SYMBOL_CLASS_IDS: Array<Id<SymbolClass>> = [
     30, 52, 44, 70, 34, 58, 67, 81, 104, 114, 141,
 ] as Array<Id<SymbolClass>>

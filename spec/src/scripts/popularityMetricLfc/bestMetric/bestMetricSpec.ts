@@ -208,7 +208,7 @@ describe("nonRecursiveSearchScopeAndMaybeUpdateBestMetric", (): void => {
                     0.14072297644163048,
                 ],
                 [
-                    0.12122990586015835,    // best one, which is why the [1, 0] sample point gets save as best metric
+                    0.12122990586015835,    // Best one, which is why the [1, 0] sample point gets save as best metric
                     0.12368707369426807,
                     0.1264482370332641,
                     0.12702698037159801,

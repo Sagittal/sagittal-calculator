@@ -11,7 +11,7 @@ describe("computeIntegerFromMonzo", (): void => {
     })
 
     it("throws an error if the monzo has any negative elements", (): void => {
-        // the type parameters is supposed to protect, but who knows!
+        // The type parameters is supposed to protect, but who knows!
         const monzo = [-1, 4, 2, 3] as Monzo<{ potentiallyIrrational: false, integer: true }>
 
         expect((): void => {

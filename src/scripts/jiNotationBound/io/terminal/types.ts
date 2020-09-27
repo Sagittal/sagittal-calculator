@@ -9,19 +9,19 @@ import {
     SymbolLongAscii,
 } from "../../../../sagittal"
 
-// shared
+// Shared
 
 interface BoundedProperties {
     distance: Abs<Cents>,
     inaDistance: Multiplier<Ina>,
 }
 
-// only used temporarily within a method
+// Only used temporarily within a method
 
 interface BoundedSymbolClass extends SymbolClass, BoundedProperties {
 }
 
-// building up to JiNotationBoundIdentifiers
+// Building up to JiNotationBoundIdentifiers
 
 interface BoundedSymbolClassAnalysis extends SymbolClassAnalysis, BoundedProperties {
 }
@@ -41,7 +41,7 @@ interface JiNotationBoundIdentifiers {
     cents: Cents,
 }
 
-// building up to JiNotationBoundIdWithBoundedSymbolClassIdsWithDistancesPairsByJiNotationLevel
+// Building up to JiNotationBoundIdWithBoundedSymbolClassIdsWithDistancesPairsByJiNotationLevel
 
 interface BoundedSymbolClassIdWithDistances extends BoundedProperties {
     id: Id<SymbolClass>,

@@ -30,22 +30,22 @@ type NumTypeParameterTranslationForMonzosAndRatiosToTheirFractionalPartsAndTerms
     (T extends { potentiallyIrrational: true } ? {} : { potentiallyIrrational: false, integer: true })
 
 // TODO: IMPLEMENT EDO PITCHES ON POTENTIALLY IRRATIONAL NUMS
-//  starting to think about non-JI pitches
-//  what about logarithmic pitch vs acoustic pitch
-//  that could help answer the question about what to name that "pitchvalue" thing
-//  e.g. how in Erv's writings about golden horograms
-//  he names the pitches with values between 0 and 1, like 0.618...
-//  that is logarithmic pitch and would require a second piece of information,
-//  the 2, to understand what the base was
-//  but actually if you combine those two things, you're still good
-//  and continued fractions
-//  like monzos, it may be a good idea to support those
-//  so the continued fraction can be the exponent in this power
-//  but it could also just be another option
+//  Starting to think about non-JI pitches
+//  What about logarithmic pitch vs acoustic pitch
+//  That could help answer the question about what to name that "pitchvalue" thing
+//  E.g. how in Erv's writings about golden horograms
+//  He names the pitches with values between 0 and 1, like 0.618...
+//  That is logarithmic pitch and would require a second piece of information,
+//  The 2, to understand what the base was
+//  But actually if you combine those two things, you're still good
+//  And continued fractions
+//  Like monzos, it may be a good idea to support those
+//  So the continued fraction can be the exponent in this power
+//  But it could also just be another option
 //  - also think about how for dynamic parameters, unit: is a Step... but difference between a position and an interval
 //  - could also represent numbers as continued fractions [3;1,1,1...]
 //  - And ina midpoints should be eds, so it may be time to do this now, even before adding EDOS...
-//  and along with that, Comma mean should be irrational Monzo (both of the above, i.e. as opposed to Decimal)
+//  And along with that, Comma mean should be irrational Monzo (both of the above, i.e. as opposed to Decimal)
 /*
 Base assume 2
 Power - would be a ratio... but like 3/19 for degrees of 19...
@@ -63,10 +63,10 @@ the existing Window isn’t a base, it gets divided up additively, not multiplic
  */
 
 // TODO: I've been vacillating a bit on whether to force the presence of decimal or not
-//  but I was actually forced to go back to this more complex situation when I made parsing monzos and ratios
-//  not guarantee they come back rational, which is true
+//  But I was actually forced to go back to this more complex situation when I made parsing monzos and ratios
+//  Not guarantee they come back rational, which is true
 //  And In the comma means etc lists you can describe them
-//  as only one of monzo ratio or decimal and put the others in test
+//  As only one of monzo ratio or decimal and put the others in test
 type PotentiallyIrrationalNum<T extends NumTypeParameters = {}> =
     PotentiallyIrrationalNumByDecimal<T>
     | PotentiallyIrrationalNumByMonzo<T>

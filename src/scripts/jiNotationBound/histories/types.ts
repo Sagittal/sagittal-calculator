@@ -5,9 +5,9 @@ interface BoundEvent {
     jiNotationLevel: JiNotationLevel,
     name: Name<BoundPosition>,
     // TODO: BOUNDS ANALYSIS DOES NOT BASE EVERYTHING ON CENTS INTERNALLY
-    //  right, so you'll eventually want to wean yourself off this too
-    //  eventually certainly you'll want to convert this script over to internally working in decimals,
-    //  rather than cents. but for now we're just trying to make this refactor work.
+    //  Right, so you'll eventually want to wean yourself off this too
+    //  Eventually certainly you'll want to convert this script over to internally working in decimals,
+    //  Rather than cents. but for now we're just trying to make this refactor work.
     cents: Cents,
     boundType: BoundType,
 }

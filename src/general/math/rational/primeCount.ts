@@ -5,7 +5,7 @@ import { PRIMES } from "./primes"
 import { Integer, Prime, Roughness, Smoothness } from "./types"
 
 // Prime Counting Function (π)
-// https://mathworld.wolfram.com/PrimeCountingFunction.html
+// See: https://mathworld.wolfram.com/PrimeCountingFunction.html
 
 const computePrimeCount = (number: number): Count<Prime> => {
     const count = PRIMES.findIndex((prime: Prime): boolean => prime > number)

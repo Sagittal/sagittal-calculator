@@ -169,10 +169,10 @@ describe("computeBoundEvents", (): void => {
             it(
                 `works even if there is a closer comma mean to the position but it is not between the bounded symbols`,
                 (): void => {
-                    // mean between )|) and |\ is 31.204382, 0.20 away
-                    // mean between |) and )|) is 28.953101, 2.05 away
-                    // however, )|) is at 30.985839,
-                    // so the 30.5 position is between it and |), not between it and |\
+                    // Mean between )|) and |\ is 31.204382, 0.20 away
+                    // Mean between |) and )|) is 28.953101, 2.05 away
+                    // However, )|) is at 30.985839,
+                    // So the 30.5 position is between it and |), not between it and |\
 
                     jiNotationLevel = JiNotationLevel.HIGH
                     boundedSymbolClassPositions = computeBoundedSymbolClassPositions(30.5 as Cents, jiNotationLevel)

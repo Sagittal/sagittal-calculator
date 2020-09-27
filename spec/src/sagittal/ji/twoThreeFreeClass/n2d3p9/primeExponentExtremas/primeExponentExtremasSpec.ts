@@ -51,7 +51,7 @@ describe("computePrimeExponentExtremasGivenMaxN2D3P9", (): void => {
 
         const actual = computePrimeExponentExtremasGivenMaxN2D3P9(maxN2D3P9)
 
-        // http://forum.sagittal.org/viewtopic.php?p=2243#p2243
+        // See: http://forum.sagittal.org/viewtopic.php?p=2243#p2243
         const expected = [
             [0, 0],   // 2
             [0, 0],   // 3

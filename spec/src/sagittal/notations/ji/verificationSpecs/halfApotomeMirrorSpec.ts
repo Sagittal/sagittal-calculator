@@ -12,8 +12,8 @@ import {
 // The idea of symbol *class* is great. But I'm wondering if maybe there's room for improvement.
 //  I'm thinking in particular of how choices of comma above the half-apotome mirror are not independent.
 //  (see: http://forum.sagittal.org/viewtopic.php?p=2317#p2317)
-//  but I'm also not sure we want to shift the whole basis back to commas...
-//  yes perhaps the half-apotome mirror test should suffice here.
+//  But I'm also not sure we want to shift the whole basis back to commas...
+//  Yes perhaps the half-apotome mirror test should suffice here.
 //  What I *had* been thinking was that only the commas up to the half apotome mirror would define class-dom.
 
 describe("half-apotome mirror", (): void => {
@@ -32,8 +32,8 @@ describe("half-apotome mirror", (): void => {
             const mirroredComma = jiNotationPrimaryCommas[ mirroredIndex ]
 
             // TODO: FRACTIONAL PITCH HELPER
-            //  another place to use the pitch helper, the interval
-            //  and in apotome slope, you could use it too, I think for the apotome fraction bit
+            //  Another place to use the pitch helper, the interval
+            //  And in apotome slope, you could use it too, I think for the apotome fraction bit
             const actual = computeDecimalFromNum(comma) - computeDecimalFromNum(HALF_APOTOME)
             const expected = computeDecimalFromNum(HALF_APOTOME) - computeDecimalFromNum(mirroredComma)
             expect(actual).toBeCloseTo(expected)

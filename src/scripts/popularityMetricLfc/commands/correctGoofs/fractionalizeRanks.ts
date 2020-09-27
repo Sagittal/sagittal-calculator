@@ -12,8 +12,8 @@ import {
 } from "../../../../general"
 
 const fractionalizeRanks = (): void => {
-    // this script is only kept for historical reasons
-    // when it was needed to replace the existing rank which wasn't fractional
+    // This script is only kept for historical reasons
+    // When it was needed to replace the existing rank which wasn't fractional
     const rankedPopularities: Array<Ranked<Popularity>> = rank(COMMA_POPULARITIES, {
         by: "votes" as KeyPath,
         strategy: RankStrategy.FRACTIONAL,

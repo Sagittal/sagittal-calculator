@@ -5,7 +5,7 @@ import { computeRoughnessIndex } from "../../primeCount"
 import { Integer, Prime, Primes, Roughness } from "../../types"
 
 const computeRoughMonzo = <S extends Primes, T extends NumTypeParameters>(
-    monzo: Monzo<T>,    // this used to be Monzo<Omit<T, "rough">> but it wasn't smart enough to preserve Integer-ness
+    monzo: Monzo<T>,    // This used to be Monzo<Omit<T, "rough">> but it wasn't smart enough to preserve Integer-ness
     roughness: S & Roughness,
 ): Monzo<T & { rough: S }> => {
     const roughnessIndex = computeRoughnessIndex(roughness)

@@ -20,7 +20,7 @@ describe("compute23FreeClassRow", (): void => {
         const actual = compute23FreeClassRow(twoThreeFreeClassAnalysis)
 
         const expected = [
-            " 14    ",          // prime limit
+            " 14    ",          // Prime limit
             "5/1",              // 2,3-free class
             "  3    ",          // 2,3-free CoPFR
             " 13    ",          // 2,3-free SoPFR

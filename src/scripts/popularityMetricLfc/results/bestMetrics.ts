@@ -19,7 +19,7 @@ const sopfgtt = {
 
 // Dave's log-α's (best SoS is 0.00613) some still with prime limit (s)
 // Mon Jun 29, 2020 7:07 pm
-// http://forum.sagittal.org/viewtopic.php?p=1944#p1944
+// See: http://forum.sagittal.org/viewtopic.php?p=1944#p1944
 const withPrimeLimit = {
     sumOfSquares: 0.006127818362694095,
     name: "{aAsLogarithmBase,kAsCoefficient,sum,useNuminator,w,y},{max,useNuminator,weightAsCoefficient,withoutRepetition}",
@@ -45,7 +45,7 @@ const withPrimeLimit = {
 
 // Douglas's 8-chunk lowest-ever 0.00426 SoS
 // Mon Jun 29, 2020 7:36 pm
-// http://forum.sagittal.org/viewtopic.php?p=1946#p1946
+// See: http://forum.sagittal.org/viewtopic.php?p=1946#p1946
 const lowestEver = {
     sumOfSquares: 0.004260809896143936,
     name: "{aAsLogarithmBase,kAsCoefficient,sum,useNuminator,w,y},{count,useNuminator,weightAsCoefficient}",
@@ -70,7 +70,7 @@ const lowestEver = {
 
 // Douglas's response to Dave's ask for k vs. c wrt my lowest ever
 // Mon Jun 29, 2020 10:44 pm
-// http://forum.sagittal.org/viewtopic.php?p=1951#p1951
+// See: http://forum.sagittal.org/viewtopic.php?p=1951#p1951
 // 0.00473
 const likeLowestEverButWithZeroK = {
     sumOfSquares: 0.004732527573659666,
@@ -111,7 +111,7 @@ const likeLowestEverButWithZeroC = {
 
 // Dave's "2-chunk" 0.00651 mcopfr claimed 0.00651 but I find 0.00721
 // Wed Jul 01, 2020 12:46 am
-// http://forum.sagittal.org/viewtopic.php?p=1962#p1962
+// See: http://forum.sagittal.org/viewtopic.php?p=1962#p1962
 const notTwoChunkByCurrentDefinitionMcopfr = {
     sumOfSquares: 0.007205996505476978,
     name: "{aAsLogarithmBase,kAsCoefficient,sum,useNuminator,w,y},{count,jAsCoefficient,modifiedCount,useNuminator}",
@@ -137,7 +137,7 @@ const notTwoChunkByCurrentDefinitionMcopfr = {
 
 // Dave's "3-chunk" mcopfr claimed 0.00614 but I find 0.00740
 // Wed Jul 01, 2020 2:46 am
-// http://forum.sagittal.org/viewtopic.php?p=1964#p1964
+// See: http://forum.sagittal.org/viewtopic.php?p=1964#p1964
 const notThreeChunkByCurrentDefinitionMcopfr = {
     sumOfSquares: 0.0073967019283224696,
     name: "{aAsLogarithmBase,kAsCoefficient,sum,useNuminator,w,y},{count,jAsCoefficient,modifiedCount,useNuminator,y}",
@@ -164,7 +164,7 @@ const notThreeChunkByCurrentDefinitionMcopfr = {
 
 // Dave's "4-chunk" mcopfr claimed 0.00660 but I find 0.00838
 // Wed Jul 01, 2020 7:07 pm
-// http://forum.sagittal.org/viewtopic.php?p=1965#p1965
+// See: http://forum.sagittal.org/viewtopic.php?p=1965#p1965
 /*
 requires this hack to be added to `submetricAntivotes.js` to handle the "h" parameter
             if (index !== 2 && modifiedCount === true) {
@@ -197,7 +197,7 @@ const notFourChunkByCurrentDefinitionMcopfr = {
 
 // Douglas's 1-submetrics
 // Thu Jul 02, 2020 9:21 pm
-// http://forum.sagittal.org/viewtopic.php?p=1978#p1978
+// See: http://forum.sagittal.org/viewtopic.php?p=1978#p1978
 // 1-submetric 7-chunk 0.00565 -- original xwyks
 const oneSubmetricSevenChunk = {
     sumOfSquares: 0.005646141896541448,
@@ -234,7 +234,7 @@ const oneSubmetricSixChunk = {
 
 // Dave's similar to my lowest ever w/ exact a = 2 base 0.00445
 // Fri Jul 03, 2020 12:24 am
-// http://forum.sagittal.org/viewtopic.php?p=1983#p1983
+// See: http://forum.sagittal.org/viewtopic.php?p=1983#p1983
 const almostLowestEverButWithExactA = {
     sumOfSquares: 0.004455901926266847,
     name: "{aAsLogarithmBase,kAsCoefficient,sum,useNuminator,w,y},{count,useNuminator,weightAsCoefficient}",
@@ -259,7 +259,7 @@ const almostLowestEverButWithExactA = {
 
 // Dave's less fragile min 0.00559
 // Fri Jul 03, 2020 5:28 am
-// http://forum.sagittal.org/viewtopic.php?p=1984#p1984
+// See: http://forum.sagittal.org/viewtopic.php?p=1984#p1984
 const lessFragileMin = {
     sumOfSquares: 0.005591116232258028,
     name: "{aAsLogarithmBase,kAsCoefficient,sum,useNuminator,w,y},{count,useNuminator,weightAsCoefficient}",
@@ -284,7 +284,7 @@ const lessFragileMin = {
 
 // Dave's sanity check claimed 0.008325554
 // Sat Jul 04, 2020 3:17 am
-// http://forum.sagittal.org/viewtopic.php?p=1995#p1995
+// See: http://forum.sagittal.org/viewtopic.php?p=1995#p1995
 const sanityCheck = {
     sumOfSquares: 0.00832555386875032,
     name: "{aAsLogarithmBase,kAsCoefficient,sum,useNuminator,w,y}",
@@ -304,7 +304,7 @@ const sanityCheck = {
 
 // Douglas's first run of the recursive automatic solver turned this up quick, 0.00406 (now known as cwyks)
 // Sun Jul 05, 2020 10:29 pm
-// http://forum.sagittal.org/viewtopic.php?p=2004#p2004
+// See: http://forum.sagittal.org/viewtopic.php?p=2004#p2004
 const cwyks = {
     sumOfSquares: 0.004059521951422367,
     name: "{aAsLogarithmBase,kAsCoefficient,sum,useNuminator,w,y},{count,useNuminator,weightAsCoefficient}",
@@ -329,7 +329,7 @@ const cwyks = {
 
 // Douglas's first attempt at lowest 2- and 3-chunk
 // Thu Jul 09, 2020 9:21 am
-// http://forum.sagittal.org/viewtopic.php?p=2036#p2036
+// See: http://forum.sagittal.org/viewtopic.php?p=2036#p2036
 const k = {
     sumOfSquares: 0.0094912434848982,
     name: "{kAsCoefficient,sum}",
@@ -358,7 +358,7 @@ const firstAttemptAtLowestThreeChunk = {
 
 // Dave's maybe-min 0.007085843
 // Thu Jul 09, 2020 7:37 pm
-// http://forum.sagittal.org/viewtopic.php?p=2038#p2038
+// See: http://forum.sagittal.org/viewtopic.php?p=2038#p2038
 const maybeMin = {
     sumOfSquares: 0.007085843283776648,
     name: "{aAsLogarithmBase,b,sum,w,y}",
@@ -377,7 +377,7 @@ const maybeMin = {
 
 // Dave's b and u: SoS 0.00659
 // Fri Jul 10, 2020 2:57 am
-// http://forum.sagittal.org/viewtopic.php?p=2039#p2039
+// See: http://forum.sagittal.org/viewtopic.php?p=2039#p2039
 const bAndU = {
     sumOfSquares: 0.006594234470005811,
     name: "{aAsLogarithmBase,b,sum,u,w,x,y}",
@@ -396,7 +396,7 @@ const bAndU = {
 
 // Dave's improved maybe min 0.006282743
 // Sat Jul 11, 2020 1:30 am
-// http://forum.sagittal.org/viewtopic.php?p=2044#p2044
+// See: http://forum.sagittal.org/viewtopic.php?p=2044#p2044
 const improvedMaybeMin = {
     sumOfSquares: 0.0062827430776347054,
     name: "{aAsLogarithmBase,b,sum,w,y}",
@@ -415,7 +415,7 @@ const improvedMaybeMin = {
 
 // Dave's improved 4-param 6-chunk 0.006700181
 // Sat Jul 11, 2020 9:04 pm
-// http://forum.sagittal.org/viewtopic.php?p=2052#p2052
+// See: http://forum.sagittal.org/viewtopic.php?p=2052#p2052
 const improvedFourParamSixChunk = {
     sumOfSquares: 0.006700180663569215,
     name: "{aAsLogarithmBase,jAsCoefficient,kAsCoefficient,sum},{kAsCoefficient,sum,y}",
@@ -438,7 +438,7 @@ const improvedFourParamSixChunk = {
 
 // Dave's improved 4-param 5-chunk 0.006926345
 // Sat Jul 11, 2020 9:04 pm
-// http://forum.sagittal.org/viewtopic.php?p=2052#p2052
+// See: http://forum.sagittal.org/viewtopic.php?p=2052#p2052
 const improvedFourParamFiveChunk = {
     sumOfSquares: 0.006926345329260278,
     name: "{aAsLogarithmBase,jAsCoefficient,kAsCoefficient,sum},{sum,y}",
@@ -460,7 +460,7 @@ const improvedFourParamFiveChunk = {
 
 // Douglas's second attempt at lowest 2-chunk
 // Sun Jul 12, 2020 11:27 pm
-// http://forum.sagittal.org/viewtopic.php?p=2064#p2064
+// See: http://forum.sagittal.org/viewtopic.php?p=2064#p2064
 const j = {
     sumOfSquares: 0.00910097075832883,
     name: "{jAsPowerExponent,sum}",
@@ -485,7 +485,7 @@ const secondAttemptAtLowestThreeChunk = {
 
 // Dave's hyg 0.006372713
 // Mon Jul 13, 2020 2:04 am
-// http://forum.sagittal.org/viewtopic.php?p=2065#p2065
+// See: http://forum.sagittal.org/viewtopic.php?p=2065#p2065
 const hyg = {
     sumOfSquares: 0.006372712986254571,
     name: "{aAsLogarithmBase,jAsCoefficient,kAsCoefficient,sum},{sum,y}",
@@ -507,7 +507,7 @@ const hyg = {
 
 // Dave's double-improved maybe min, now called wyb 0.006057649, and also wyk
 // Mon Jul 13, 2020 6:38 pm
-// http://forum.sagittal.org/viewtopic.php?p=2071#p2071
+// See: http://forum.sagittal.org/viewtopic.php?p=2071#p2071
 const wyb = {
     sumOfSquares: 0.006057649171028775,
     name: "{aAsLogarithmBase,b,sum,w,y}",
@@ -539,7 +539,7 @@ const wyk = {
 
 // Dave's cwyk
 // Mon Jul 13, 2020 11:57 pm
-// http://forum.sagittal.org/viewtopic.php?p=2072#p2072
+// See: http://forum.sagittal.org/viewtopic.php?p=2072#p2072
 const cwyk = {
     sumOfSquares: 0.007300195297088744,
     name: "{aAsLogarithmBase,kAsCoefficient,sum,y},{count,weightAsCoefficient}",
@@ -562,7 +562,7 @@ const cwyk = {
 
 // Dave's wyks 0.006406639
 // Tue Jul 14, 2020 2:47 am
-// http://forum.sagittal.org/viewtopic.php?p=2073#p2073
+// See: http://forum.sagittal.org/viewtopic.php?p=2073#p2073
 const wyks = {
     sumOfSquares: 0.006406638879234451,
     name: "{aAsLogarithmBase,kAsCoefficient,sum,useNuminator,w,y}",
@@ -582,7 +582,7 @@ const wyks = {
 
 // Dave's xwyks 0.00553892
 // Tue Jul 14, 2020 4:36 am
-// http://forum.sagittal.org/viewtopic.php?p=2074#p2074
+// See: http://forum.sagittal.org/viewtopic.php?p=2074#p2074
 const xwyks = {
     sumOfSquares: 0.0055389201901046405,
     name: "{aAsLogarithmBase,kAsCoefficient,sum,useNuminator,w,x,y}",
@@ -603,7 +603,7 @@ const xwyks = {
 
 // Dave's wb: SoS 0.007345361
 // Tue Jul 28, 2020 12:36 am
-// http://forum.sagittal.org/viewtopic.php?p=2098#p2098
+// See: http://forum.sagittal.org/viewtopic.php?p=2098#p2098
 const wb = {
     sumOfSquares: 0.007345361244736918,
     name: "{aAsLogarithmBase,b,sum,w}",
@@ -621,7 +621,7 @@ const wb = {
 
 // Douglas's Solver - 3-chunk 0.007099822
 // Fri Jul 31, 2020 9:01 am
-// http://forum.sagittal.org/viewtopic.php?p=2113#p2113
+// See: http://forum.sagittal.org/viewtopic.php?p=2113#p2113
 const laj = {
     sumOfSquares: 0.007099822284635193,
     name: "{aAsLogarithmBase,jAsCoefficient,sum},{max,withoutRepetition}",
@@ -642,7 +642,7 @@ const laj = {
 
 // Dave's kl 0.006970591
 // Fri Jul 31, 2020 4:56 pm
-// http://forum.sagittal.org/viewtopic.php?p=2117#p2117
+// See: http://forum.sagittal.org/viewtopic.php?p=2117#p2117
 const kl = {
     sumOfSquares: 0.006970590852577876,
     name: "{aAsLogarithmBase,kAsCoefficient,sum},{max,weightAsCoefficient,withoutRepetition}",
@@ -664,7 +664,7 @@ const kl = {
 
 // Dave's c
 // Sat Aug 08, 2020 2:04 am
-// http://forum.sagittal.org/viewtopic.php?p=2163#p2163
+// See: http://forum.sagittal.org/viewtopic.php?p=2163#p2163
 const c = {
     sumOfSquares: 0.009004460361166835,
     name: "{b,sum,w}",
@@ -681,7 +681,7 @@ const c = {
 
 // Douglas's solver 3-chunk and 4-chunk bests
 // Sun Aug 09, 2020 4:54 pm
-// http://forum.sagittal.org/viewtopic.php?p=2170#p2170
+// See: http://forum.sagittal.org/viewtopic.php?p=2170#p2170
 const ak = {
     sumOfSquares: 0.007593746935708874,
     name: "{aAsLogarithmBase,aAsPowerExponent,kAsCoefficient,sum}",
@@ -756,7 +756,7 @@ const aux = {
 
 // Douglas's solver 5-chunk best (immediately improved by Dave: http://forum.sagittal.org/viewtopic.php?p=2193#p2193)
 // Tue Aug 11, 2020 9:25 am
-// http://forum.sagittal.org/viewtopic.php?p=2191#p2191
+// See: http://forum.sagittal.org/viewtopic.php?p=2191#p2191
 const wbl1 = {
     sumOfSquares: 0.003886596371931313,
     name: "{aAsLogarithmBase,b,sum,w},{aAsLogarithmBase,max,withoutRepetition}",
@@ -779,7 +779,7 @@ const wbl1 = {
 
 // We found it?
 // Tue Aug 11, 2020 6:19 pm
-// http://forum.sagittal.org/viewtopic.php?p=2194#p2194
+// See: http://forum.sagittal.org/viewtopic.php?p=2194#p2194
 const wybl1 = {
     sumOfSquares: 0.0032401250853104067,
     name: "{aAsLogarithmBase,b,sum,w,y},{aAsLogarithmBase,max,withoutRepetition}",
@@ -803,7 +803,7 @@ const wybl1 = {
 
 // Dave's "true" wbl and wybl
 // Tue Aug 11, 2020 11:13 pm
-// http://forum.sagittal.org/viewtopic.php?p=2199#p2199
+// See: http://forum.sagittal.org/viewtopic.php?p=2199#p2199
 const wbl = {
     sumOfSquares: 0.0030322385583128613,
     name: "{aAsLogarithmBase,b,sum,w},{aAsLogarithmBase,max,weightAsCoefficient,withoutRepetition}",
@@ -846,7 +846,7 @@ const wybl = {
 
 // Doug's waybll
 // Wed Aug 12, 2020 9:32 am
-// http://forum.sagittal.org/viewtopic.php?p=2203#p2203
+// See: http://forum.sagittal.org/viewtopic.php?p=2203#p2203
 const waybl = {
     sumOfSquares: 0.0024616646376350447,
     name: "{aAsLogarithmBase,aAsPowerExponent,b,sum,w,y},{aAsLogarithmBase,max,weightAsCoefficient,withoutRepetition}",
@@ -871,7 +871,7 @@ const waybl = {
 
 // Douglas's wb-cores
 // Wed Aug 12, 2020 5:52 pm
-// http://forum.sagittal.org/viewtopic.php?p=2205#p2205
+// See: http://forum.sagittal.org/viewtopic.php?p=2205#p2205
 const wabl1 = {
     sumOfSquares: 0.0029769976555856672,
     name: "{aAsLogarithmBase,aAsPowerExponent,b,sum,w},{aAsLogarithmBase,max,withoutRepetition}",
@@ -914,7 +914,7 @@ const wabl = {
 
 // Dave's rounded WBL-1 (aka N2D3P9, our final metric)
 // Thu Aug 13, 2020 4:42 am
-// http://forum.sagittal.org/viewtopic.php?p=2211#p2211
+// See: http://forum.sagittal.org/viewtopic.php?p=2211#p2211
 const wBL1 = {
     sumOfSquares: 0.00420582488763467,
     name: "{aAsLogarithmBase,b,sum,w},{aAsLogarithmBase,max,withoutRepetition}",

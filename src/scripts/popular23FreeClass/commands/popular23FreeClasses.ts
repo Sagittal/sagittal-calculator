@@ -20,8 +20,8 @@ import { computePopular23FreeClasses } from "../popular23FreeClasses"
 ioSettings.scriptGroup = ScriptGroup.POPULAR_2_3_FREE_CLASSES as Filename
 
 // TODO: PRE-CALCULATION OF NUMERATORS UP TO 3501 per Dave's suggestion on the forum:
-//  http://forum.sagittal.org/viewtopic.php?p=2294#p2294
-//  http://forum.sagittal.org/viewtopic.php?p=2304#p2304
+//  See: http://forum.sagittal.org/viewtopic.php?p=2294#p2294
+//  And: http://forum.sagittal.org/viewtopic.php?p=2304#p2304
 
 program
     .option(`-${CommandFlag.MAX_N2D3P9}, --max-n2d3p9 [maxN2D3P9]`, "max N2D3P9", parseFloat)

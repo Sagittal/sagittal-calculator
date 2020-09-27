@@ -3,7 +3,7 @@ import { getRepresentativeSymbol, Symbol, SymbolClass } from "../notations"
 import { formatSymbol } from "./symbol"
 import { SymbolGlyph } from "./types"
 
-// these options are required by design, to force you to pass it the ioSettings global
+// These options are required by design, to force you to pass it the ioSettings global
 const formatSymbolClass = (
     symbolClassId: Id<SymbolClass>,
     options: { tableFormat?: TableFormat, align?: boolean },

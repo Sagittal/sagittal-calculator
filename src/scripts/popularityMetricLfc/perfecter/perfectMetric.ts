@@ -37,7 +37,7 @@ const computeSearchNextLocalMinArguments = (
         scope,
         metricTag,
         indentation,
-        index: 0, // will be overridden shortly
+        index: 0, // Will be overridden shortly
         depth,
         nextLocalMinima,
         onlyBetterThanSopfgtt,

@@ -4,9 +4,9 @@ import { Decimal, Id } from "../../../general"
 import { BoundType, JiNotationBound, JiNotationLevel } from "./types"
 
 // The bounds analysis I have proposed here: http://forum.sagittal.org/viewtopic.php?p=1808#p1808
-// might stipulate a reorganizing of these, where each JI notation level is a separate list
-// because some of these JI notation bounds bound symbols which are unrelated from one JI notation level to the next,
-// so maybe can be different
+// Might stipulate a reorganizing of these, where each JI notation level is a separate list
+// Because some of these JI notation bounds bound symbols which are unrelated from one JI notation level to the next,
+// So maybe can be different
 
 const JI_NOTATION_BOUNDS: JiNotationBound[] = [
     {

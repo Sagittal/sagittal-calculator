@@ -7,7 +7,7 @@ import { CombineSubmetricsPossibilitiesIntoSamplesOptions, Sample, SamplePoint, 
 const combineSubmetricsPossibilitiesIntoSamples = (
     { submetricsPossibilities, dynamicParameters }: CombineSubmetricsPossibilitiesIntoSamplesOptions,
 ): Sample[] => {
-    // important to remove the first one before doing the next step
+    // Important to remove the first one before doing the next step
     const allBinSubmetricPossibilities: SubmetricPossibility[] =
         submetricsPossibilities.shift() as Combination<SubmetricPossibility>
 

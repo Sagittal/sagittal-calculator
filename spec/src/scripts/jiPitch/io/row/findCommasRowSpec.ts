@@ -45,15 +45,15 @@ describe("computeFindCommasRow", (): void => {
         const actual = computeFindCommasRow(commaAnalysis, symbolClassId)
 
         const expected = [
-            "    /|  ",         // symbol class
-            "1/5C",             // comma name
-            "5/4",              // ratio
-            "[   0  -1   1 ⟩",  // monzo
-            "        11.200¢",  // cents
-            "  8.200",          // apotome slope
+            "    /|  ",         // Symbol class
+            "1/5C",             // Comma name
+            "5/4",              // Ratio
+            "[   0  -1   1 ⟩",  // Monzo
+            "        11.200¢",  // Cents
+            "  8.200",          // Apotome slope
             "  8.200",          // AAS
             "  1    ",          // ATE
-            " 14    ",          // prime limit
+            " 14    ",          // Prime limit
             "5/1",              // 2,3-free class
             "  1    ",          // 2,3-free CoPFR
             " 13    ",          // 2,3-free SoPFR
@@ -67,13 +67,13 @@ describe("computeFindCommasRow", (): void => {
         const actual = computeFindCommasRow(commaAnalysis, symbolClassId)
 
         const expected = [
-            "    /|  ",         // symbol class
-            "1/5C",             // comma name
-            "5/4",              // ratio
-            "[   0  -1   1 ⟩",  // monzo
-            "        11.200¢",  // cents
-            "  8.200",          // apotome slope
-            " 14    ",          // prime limit
+            "    /|  ",         // Symbol class
+            "1/5C",             // Comma name
+            "5/4",              // Ratio
+            "[   0  -1   1 ⟩",  // Monzo
+            "        11.200¢",  // Cents
+            "  8.200",          // Apotome slope
+            " 14    ",          // Prime limit
             "5/1",              // 2,3-free class
             "  1    ",          // 2,3-free CoPFR
             " 13    ",          // 2,3-free SoPFR

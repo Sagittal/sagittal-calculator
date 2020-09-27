@@ -70,7 +70,7 @@ describe("searchNextLocalMin", (): void => {
     })
 
     it("does not crash if there are errors while searching", async (): Promise<void> => {
-        // setting up for an error because this metric name has already been searched
+        // Setting up for an error because this metric name has already been searched
         metricNames.push(metricName)
 
         await expectAsync(new Promise(async (resolve: () => void, reject: () => void): Promise<void> => {

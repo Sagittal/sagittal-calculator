@@ -29,11 +29,11 @@ describe("populateScopesForSubmetricChunkCombination", (): void => {
             const parameterChunkCombinations: Combinations<Chunk<Parameter>> = [
                 // 1
                 [
-                    // i
+                    // I
                     {
                         [ Parameter.A_AS_COEFFICIENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_COEFFICIENT ],
                     },
-                    // ii
+                    // II
                     {
                         [ Parameter.K_AS_COEFFICIENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_COEFFICIENT ],
                         [ Parameter.K_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.K_AS_LOGARITHM_BASE ],
@@ -41,11 +41,11 @@ describe("populateScopesForSubmetricChunkCombination", (): void => {
                 ],
                 // 2
                 [
-                    // i
+                    // I
                     {
                         [ Parameter.MODIFIED_COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.MODIFIED_COUNT ],
                     },
-                    // ii
+                    // II
                     {
                         [ Parameter.J_AS_COEFFICIENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.J_AS_COEFFICIENT ],
                     },

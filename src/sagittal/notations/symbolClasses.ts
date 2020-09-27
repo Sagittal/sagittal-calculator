@@ -3,9 +3,9 @@ import { SymbolLongAscii } from "../io"
 import { PrimaryComma, SymbolClass } from "./types"
 
 // TODO: CONSTANTIZE EACH SYMBOL CLASS
-//  so they can have names, you don’t have to know their IDs
-//  as well as symbols, bounds maybe... anything that we have good names for
-//  haven't really communicated this "symbol class" idea to Dave yet. he might like it, or he might not
+//  So they can have names, you don’t have to know their IDs
+//  As well as symbols, bounds maybe... anything that we have good names for
+//  Haven't really communicated this "symbol class" idea to Dave yet. he might like it, or he might not
 
 const SYMBOL_CLASSES: SymbolClass[] = [
     {

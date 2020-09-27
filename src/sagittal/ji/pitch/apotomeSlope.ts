@@ -2,7 +2,7 @@ import { computeCentsFromPitch, computeMonzoFromRationalNum, RationalNum, THREE_
 import { APOTOME, APOTOME_3_EXPONENT } from "../../constants"
 import { ApotomeSlope } from "./types"
 
-// apotome_slope = exponent_of_3 - 7 × untempered_size_in_cents/113.685
+// Apotome slope = exponent_of_3 - 7 × untempered_size_in_cents/113.685
 
 const computeApotomeSlope = (jiPitch: RationalNum): ApotomeSlope => {
     const monzo = computeMonzoFromRationalNum(jiPitch)

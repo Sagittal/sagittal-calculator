@@ -14,9 +14,9 @@ const computeInaMidpoints = (jiNotationLevel: JiNotationLevel): InaMidpoint[] =>
     const inaMidpoints = [...Array(eda).keys()].map((degree: number): Maybe<InaMidpoint> => {
         const midpoint = degree + 0.5
         // TODO: IMPLEMENT EDO PITCHES ON POTENTIALLY IRRATIONAL NUMS
-        //  perhaps this would be a nice place to start improving... er, well, actually this is just
-        //  another place where we could use that helper for a fraction of a rational pitch!
-        //  or actually, rather, ina midpoints should be encoded with the new ED property of Nums
+        //  Perhaps this would be a nice place to start improving... er, well, actually this is just
+        //  Another place where we could use that helper for a fraction of a rational pitch!
+        //  Or actually, rather, ina midpoints should be encoded with the new ED property of Nums
         const cents = computeCentsFromPitch(APOTOME) * midpoint / eda as Cents
         const number = computeNumberFromCents(cents)
 
