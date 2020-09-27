@@ -1,8 +1,7 @@
-import { Id, ioSettings, Max, Maybe, Min, Num, numIsHigher, Zone } from "../../../general"
+import { Id, ioSettings, Max, Maybe, Min, Num, numIsHigher, UNISON, Zone } from "../../../general"
 import { formatSymbolClass } from "../../io"
 import { getPrimaryComma } from "../primaryComma"
 import { PrimaryComma, SymbolClass } from "../types"
-import { ABSOLUTE_LOWEST_BOUND } from "./constants"
 import { formatJiNotationLevel } from "./formatLevel"
 import { getIntroducingJiNotationLevel } from "./introducingJiNotationLevel"
 import { isWithinJiNotationLevel } from "./isWithinLevel"
@@ -33,7 +32,7 @@ const computeCaptureZone = (
 
     const lowerBound =
         jiNotationLevelBounds[ indexOfJiNotationBoundJustBelowSymbolClassAtThisLevel ] as Num as Min<Num>
-        || ABSOLUTE_LOWEST_BOUND // TODO: can probably improve this somehow
+        || UNISON
     const upperBound =
         jiNotationLevelBounds[ indexOfBoundJustAboveSymbolAtThisLevel ] as Num as Max<Num>
 

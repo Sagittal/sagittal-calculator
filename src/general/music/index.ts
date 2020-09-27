@@ -13,6 +13,6 @@ export {
     isWithinPrimeMin,
     computePrimeLimit,
 } from "./ji"
-export { CENTS_PER_OCTAVE } from "./constants"
+export { CENTS_PER_OCTAVE, UNISON } from "./constants"
 export { computeNumberFromCents } from "./numberFromCents"
 export { Cents, Zone } from "./types"
