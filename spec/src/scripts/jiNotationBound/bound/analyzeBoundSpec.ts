@@ -55,7 +55,7 @@ describe("analyzeJiNotationBound", (): void => {
         bestHistory,
     ]
     const jiNotationBound: JiNotationBound = {
-        decimal: 1.01344211122 as Decimal, // 23.1164196495597¢
+        decimal: 1.01344211122 as Decimal, // 23.116420¢
         jiNotationLevels: [JiNotationLevel.ULTRA, JiNotationLevel.EXTREME, JiNotationLevel.INSANE],
         id: 47 as Id<JiNotationBound>,
         boundType: BoundType.INA_MIDPOINT,

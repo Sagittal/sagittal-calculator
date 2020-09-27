@@ -26,7 +26,7 @@ describe("analyzeComma", (): void => {
             cents: 40.022726 as Cents,
             monzo: [-8, -6, 3, 5, -1] as Monzo,
             ratio: [2100875, 2052864] as Ratio,
-            decimal: 1.02338732619 as DecimalNotDefaultingToPotentiallyIrrational,
+            decimal: 1.023387 as DecimalNotDefaultingToPotentiallyIrrational,
             name: "2100875/11S" as Name<Comma>,
             apotomeSlope: -8.464345 as ApotomeSlope,
             aas: 8.464345 as Abs<ApotomeSlope>,

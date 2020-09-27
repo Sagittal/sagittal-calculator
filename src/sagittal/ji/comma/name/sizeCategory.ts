@@ -18,7 +18,6 @@ const computeSizeCategory: {
     })
 
     if (isUndefined(sizeCategory)) {
-        // TODO: should have a formatComma here
         throw new Error(`${formatPitch(comma, { align: false })} is beyond the maximum size category's bounds.`)
     }
 

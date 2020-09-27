@@ -18,7 +18,7 @@ describe("computeNotatingCommas", (): void => {
     it("can filter", (): void => {
         const monzo = [0, 0, 0, 0, 1] as Monzo
         const maxAas = 9 as Max<Abs<ApotomeSlope>>
-        const upperBound = { decimal: 1.03227927502 as Decimal } as Max<Num>
+        const upperBound = { decimal: 1.032279 as Decimal } as Max<Num>
 
         const actual = computeNotatingCommas({ monzo }, { maxAas, upperBound })
 

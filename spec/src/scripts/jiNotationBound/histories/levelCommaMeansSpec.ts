@@ -199,9 +199,6 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
             expect(computeJiNotationLevelCommaMeans(JiNotationLevel.ULTRA)).toBeCloseToObject([
                 {
                     name: "|//| .)|" as Name<CommaMean>,
-                    // TODO: abbreviate these like you did for the cents here
-                    //  well, in particular, you want all the same in test to be only 6-decimals, while in implemntation
-                    //  it's gotta be to max preciison (15 in javascript)
                     decimal: 1.0004114379931337 as Decimal, // 0.712148¢
                 },
                 {

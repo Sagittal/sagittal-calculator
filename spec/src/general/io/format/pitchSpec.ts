@@ -33,7 +33,7 @@ describe("formatPitch", (): void => {
     })
 
     it("if the ratio and cents are present, returns the ratio formatted", (): void => {
-        const pitch = { ratio: [5, 3] as Ratio, cents: 884.358712999 as Cents }
+        const pitch = { ratio: [5, 3] as Ratio, cents: 884.358713 as Cents }
 
         const actual = formatPitch(pitch)
 
@@ -60,7 +60,7 @@ describe("formatPitch", (): void => {
     })
 
     it("if the monzo and cents are present, returns the monzo formatted", (): void => {
-        const pitch = { monzo: [0, -1, 1] as Monzo, cents: 884.358712999 as Cents }
+        const pitch = { monzo: [0, -1, 1] as Monzo, cents: 884.358713 as Cents }
 
         const actual = formatPitch(pitch)
 
@@ -69,7 +69,7 @@ describe("formatPitch", (): void => {
     })
 
     it("if the decimal and cents are present, returns the cents formatted", (): void => {
-        const pitch = { decimal: 1.666667 as Decimal, cents: 884.358712999 as Cents }
+        const pitch = { decimal: 1.666667 as Decimal, cents: 884.358713 as Cents }
 
         const actual = formatPitch(pitch)
 
