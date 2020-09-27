@@ -1,5 +1,5 @@
 import { computeTrimmedArray, isUndefined } from "../../../../code"
-import { formatNum } from "../../../../io/format"
+import { formatNum } from "../../../../io"
 import { Monzo, NumTypeParameters } from "../../../num"
 import { RationalNum } from "../types"
 import { computeMonzoFromRatio } from "./monzoFromRatio"

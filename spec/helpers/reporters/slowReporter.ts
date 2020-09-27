@@ -1,4 +1,4 @@
-import { count, KeyPath, Ms, round, sort, subtract } from "../../../src/general"
+import { count, Io, KeyPath, LogTarget, Ms, round, saveLog, sort, subtract } from "../../../src/general"
 import { now } from "../../../src/general/code"
 import { COUNT_SLOW_SPECS_TO_SUMMARIZE, MAX_TEST_DESCRIPTION_LENGTH, WARN_THRESHOLD_MS } from "./constants"
 import { SpecTime } from "./types"
@@ -19,7 +19,7 @@ const slowReporter: jasmine.CustomReporter = {
         specTimes.push({ description: description, time: time })
 
         if (time >= WARN_THRESHOLD_MS) {
-            console.warn(`      took ${time}ms`.yellow)
+            saveLog(`      took ${time}ms` as Io, LogTarget.SPEC)
         }
     },
 
@@ -30,7 +30,7 @@ const slowReporter: jasmine.CustomReporter = {
 
         const slowestSpecCount = count(slowestSpecs)
         if (slowestSpecCount) {
-            console.warn(`${slowestSpecCount} slowest specs:`)
+            saveLog(`${slowestSpecCount} slowest specs:` as Io, LogTarget.SPEC)
             console.table(slowestSpecs)
         }
     },

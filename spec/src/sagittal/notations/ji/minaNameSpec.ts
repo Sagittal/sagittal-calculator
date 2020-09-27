@@ -33,12 +33,10 @@ describe("getMinaName", (): void => {
 
             minaRange.forEach((mina: Mina): void => {
                 expect(getMinaName(symbolClassId)).toBe(mina.toString())
-                // console.log(getMinaName(symbolClassId), mina.toString())
                 symbolClassId = increment(symbolClassId)
 
                 if (SPLIT_MINAS.includes(mina)) {
                     expect(getMinaName(symbolClassId)).toBe(computeSplitMinaName(decrement(symbolClassId)))
-                    // console.log(getMinaName(symbolClassId), computeSplitMinaName(decrement(symbolClassId)))
                     symbolClassId = increment(symbolClassId)
                 }
             })

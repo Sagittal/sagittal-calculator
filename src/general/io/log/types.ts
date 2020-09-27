@@ -3,6 +3,7 @@ import { Filename } from "../types"
 enum LogTarget {
     ALL = "all",
     ERROR = "error",
+    SPEC = "spec",
     NONE = "none",
     FINAL = "final",
     PROGRESS = "progress",
