@@ -10,7 +10,7 @@ const parseCommaName = (commaNameIo: Io): ParsedCommaName => {
         .replace(/-/, "") as Io
 
     const commaNameRatio: CommaNameRatio = computeLowestTermsRatio(
-        parseRatio(twoThreeFreePartOfCommaName) as Ratio<{ potentiallyUnreduced: true, rough: 5 }>,
+        parseRatio(twoThreeFreePartOfCommaName) as Ratio<{ rough: 5 }>,
     ) as Ratio<{ rough: 5 }> as CommaNameRatio
 
     let sizeCategoryName: Maybe<SizeCategoryName> = undefined

@@ -21,7 +21,11 @@ type Denominator<T extends NumTypeParameters = {}> =
         & NumTypeParameterTranslationsForRatiosToTheirFractionalPartsExceptDefaultRationality<T>>
     & { _DenominatorBrand: boolean }
 type Ratio<T extends NumTypeParameters = {}> =
-    [Numerator<T>, Denominator<T>] & NumTypeParameterEffects<T>
+    [
+        Numerator<T & { potentiallyIrrational: false }>,
+        Denominator<T & { potentiallyIrrational: false }>
+    ]
+    & NumTypeParameterEffects<T & { potentiallyIrrational: false }>
 
 type NumeratorNotDefaultingToRational<T extends NumTypeParameters = {}> =
     Decimal<NumTypeParameterTranslationsForRatiosToTheirFractionalPartsExceptDefaultRationality<T>>

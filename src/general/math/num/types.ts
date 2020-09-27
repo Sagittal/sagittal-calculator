@@ -14,7 +14,6 @@ type NumTypeParameters = Partial<{
     direction: Direction
     rough: number,
     smooth: number,
-    potentiallyUnreduced: boolean,
 }>
 
 type NumTypeParameterEffects<T> =
@@ -24,7 +23,6 @@ type NumTypeParameterEffects<T> =
     & (T extends { rough: number } ? { _RoughBrand: Pick<T, "rough"> } : {})
     & (T extends { smooth: number } ? { _SmoothBrand: Pick<T, "smooth"> } : {})
     & (T extends { potentiallyIrrational: true } ? { _PotentiallyIrrationalBrand: boolean } : {})
-    & (T extends { potentiallyUnreduced: true } ? { _PotentiallyUnreducedBrand: boolean } : {})
     & MaybeIntegerBrand<T>
 
 type NumTypeParameterTranslationForMonzosAndRatiosToTheirFractionalPartsAndTermsAboutDefaultRationality<T> =

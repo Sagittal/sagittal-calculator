@@ -11,7 +11,7 @@ const parseRatio = <T extends NumTypeParameters>(
     // TODO: IRRATIONAL RATIOS
     //  I was thinking this would be an important place to ensure it returns RatioNotDefaultingToRational
     //  but that breaks a ton of stuff... and for no good reason, since I don't think we even really support that yet.
-): RatioNotDefaultingToRational<T & { potentiallyUnreduced: true }> => {
+): RatioNotDefaultingToRational<T> => {
     const ratio = split(ratioIo, /[\/:]/).map((fractionalPartIo: Io): FractionalPart => {
         if (fractionalPartIo.match(new RegExp(`[${superscriptNums}.]`))) {
             const factorPowers = fractionalPartIo.split(".")
@@ -42,7 +42,7 @@ const parseRatio = <T extends NumTypeParameters>(
         ratio.reverse()
     }
 
-    return ratio as Ratio<T & { potentiallyUnreduced: true }>
+    return ratio as Ratio<T>
 }
 
 export {

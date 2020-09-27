@@ -14,9 +14,10 @@ type NumTypeParameterTranslationsForMonzosToTheirTermsExceptDefaultRationality<T
 
 type Monzo<T extends NumTypeParameters = {}> =
     Array<Decimal<NumTypeParameterTranslationForMonzosAndRatiosToTheirFractionalPartsAndTermsAboutDefaultRationality<T>
-        & NumTypeParameterTranslationsForMonzosToTheirTermsExceptDefaultRationality<T>>
+            // tslint:disable-next-line max-line-length
+        & NumTypeParameterTranslationsForMonzosToTheirTermsExceptDefaultRationality<T & { potentiallyIrrational: false }>>
         & Exponent<Prime>>
-    & NumTypeParameterEffects<T>
+    & NumTypeParameterEffects<T & { potentiallyIrrational: false }>
 
 type MonzoNotDefaultingToRational<T extends NumTypeParameters = {}> =
     Array<Decimal<NumTypeParameterTranslationsForMonzosToTheirTermsExceptDefaultRationality<T>> & Exponent<Prime>>

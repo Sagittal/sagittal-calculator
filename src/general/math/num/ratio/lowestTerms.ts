@@ -6,7 +6,7 @@ import { Denominator, FractionalPart, Numerator, Ratio } from "./types"
 
 const computeLowestTermsRatio = <T extends NumTypeParameters>(
     [numerator, denominator]: Ratio<T>,
-): Ratio<T & { potentiallyUnreduced: false }> => {
+): Ratio<T> => {
     const greatestCommonDivisor = computeGreatestCommonDivisor(
         numerator as FractionalPart<T>,
         denominator as FractionalPart<T>,

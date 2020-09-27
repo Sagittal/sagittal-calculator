@@ -1,4 +1,4 @@
-import { Decimal, Integer } from "../../../../../src/general/math"
+import { Decimal, DecimalNotDefaultingToPotentiallyIrrational } from "../../../../../src/general/math"
 import { Monzo } from "../../../../../src/general/math/num/monzo"
 import { Ratio } from "../../../../../src/general/math/num/ratio"
 import { compute23FreeClass, TwoThreeFreeClass } from "../../../../../src/general/music"
@@ -32,7 +32,7 @@ describe("compute23FreeClass", (): void => {
     })
 
     it("works for pitches with (integer) decimals too", (): void => {
-        const jiPitch = { decimal: 34 as Integer }
+        const jiPitch = { decimal: 34 as DecimalNotDefaultingToPotentiallyIrrational }
 
         const actual = compute23FreeClass(jiPitch)
 

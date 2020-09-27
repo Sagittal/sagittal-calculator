@@ -37,20 +37,18 @@ const computeIsUnisonNum = <T extends NumTypeParameters, U extends Num<T>>(
 const computeSuperNum = <T extends NumTypeParameters, U extends Num<T>>(
     num: U,
 ): Exclude<U, Num> & Num<Omit<T, "direction"> & { direction: Direction.SUPER, integer: false }> => {
-    const isSubNum = computeIsSubNum(num)
+    let superNum = {} as Exclude<U, Num> & Num<T & { direction: Direction.SUPER, integer: false }>
 
-    let superNum: Exclude<U, Num> & Num<T & { direction: Direction.SUPER, integer: false }> =
-        {} as Exclude<U, Num> & Num<T & { direction: Direction.SUPER, integer: false }>
-    if (isSubNum) {
+    if (computeIsSubNum(num)) {
         const { monzo, ratio, decimal } = num
         if (!isUndefined(ratio)) {
-            superNum.ratio = invertRatio(ratio) as Ratio<T & { direction: Direction.SUPER, integer: false }>
+            superNum.ratio = invertRatio(ratio)
         }
         if (!isUndefined(monzo)) {
-            superNum.monzo = invertMonzo(monzo as Monzo<T>) as Monzo<T & { direction: Direction.SUPER, integer: false }>
+            superNum.monzo = invertMonzo(monzo)
         }
         if (!isUndefined(decimal)) {
-            superNum.decimal = invertDecimal(decimal) as Decimal<T & { direction: Direction.SUPER, integer: false }>
+            superNum.decimal = invertDecimal(decimal)
         }
     } else {
         superNum = deepClone(

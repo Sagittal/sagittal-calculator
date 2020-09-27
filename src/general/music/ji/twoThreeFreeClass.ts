@@ -8,11 +8,14 @@ import {
     computeSuperRatio,
     FIVE_ROUGHNESS,
     isInteger,
+    NumTypeParameters,
     RationalNum,
 } from "../../math"
 import { TwoThreeFreeClass } from "./types"
 
-const compute23FreeClass = ({ monzo, ratio, decimal }: RationalNum): TwoThreeFreeClass => {
+const compute23FreeClass = <T extends NumTypeParameters>(
+    { monzo, ratio, decimal }: RationalNum<T>,
+): TwoThreeFreeClass<T> => {
     const twoThreeFreeClass = {} as TwoThreeFreeClass
 
     if (!isUndefined(monzo)) {
@@ -39,7 +42,7 @@ const compute23FreeClass = ({ monzo, ratio, decimal }: RationalNum): TwoThreeFre
         twoThreeFreeClass.decimal = super23FreeDecimal
     }
 
-    return twoThreeFreeClass
+    return twoThreeFreeClass as TwoThreeFreeClass<T>
 }
 
 export {

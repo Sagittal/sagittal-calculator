@@ -14,7 +14,7 @@ type Comma<T extends NumTypeParameters = {}> =
 //  - also, double check its name "2,3-free class" against our forum thread about equivalence and such
 //  we discussed its name in excruciating detail
 type TwoThreeFreeClass<T extends NumTypeParameters = {}> =
-    RationalNum<Omit<T, "rough" | "direction"> & { rough: 5, direction: Direction.SUPER, potentiallyIrrational: false }>
+    RationalNum<T & { rough: 5, direction: Direction.SUPER }>
     & { _TwoThreeFreeClassBrand: boolean }
 
 type Votes = Integer & { _VotesBrand: boolean }
