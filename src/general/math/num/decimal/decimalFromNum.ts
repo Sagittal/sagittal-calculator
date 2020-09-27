@@ -3,13 +3,11 @@ import { formatNum } from "../../../io"
 import { Num, NumTypeParameters } from "../types"
 import { computeDecimalFromMonzo } from "./decimalFromMonzo"
 import { computeDecimalFromRatio } from "./decimalFromRatio"
-import { DecimalNotDefaultingToPotentiallyIrrational } from "./types"
+import { Decimal } from "./types"
 
-const computeDecimalFromNum = <T extends NumTypeParameters>(
-    num: Num<T>,
-): DecimalNotDefaultingToPotentiallyIrrational<T> => {
+const computeDecimalFromNum = <T extends NumTypeParameters>(num: Num<T>): Decimal<T> => {
     if (!isUndefined(num.decimal)) {
-        return num.decimal as DecimalNotDefaultingToPotentiallyIrrational<T>
+        return num.decimal
     } else if (!isUndefined(num.ratio)) {
         return computeDecimalFromRatio(num.ratio)
     } else if (!isUndefined(num.monzo)) {

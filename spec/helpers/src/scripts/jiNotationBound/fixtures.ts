@@ -1,4 +1,15 @@
-import { Abs, Cents, Count, Decimal, Id, Integer, Multiplier, Name, Rank, Sum } from "../../../../../src/general"
+import {
+    Abs,
+    Cents,
+    Count,
+    Decimal,
+    Id,
+    Integer,
+    Multiplier,
+    Name,
+    Rank,
+    Sum,
+} from "../../../../../src/general"
 import {
     Bound,
     BoundType,

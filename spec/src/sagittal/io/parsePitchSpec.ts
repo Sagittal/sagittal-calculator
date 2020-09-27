@@ -1,7 +1,5 @@
 import { Io } from "../../../../src/general/io"
-import { Decimal } from "../../../../src/general/math"
-import { Monzo } from "../../../../src/general/math/num/monzo"
-import { Ratio } from "../../../../src/general/math/num/ratio"
+import { Decimal, RationalMonzo, RationalRatio } from "../../../../src/general/math"
 import { parsePitch } from "../../../../src/sagittal/io"
 
 describe("parsePitch", (): void => {
@@ -10,7 +8,7 @@ describe("parsePitch", (): void => {
 
         const actual = parsePitch(pitchText)
 
-        const expected = { monzo: [0, 1, -2, 1] as Monzo }
+        const expected = { monzo: [0, 1, -2, 1] as RationalMonzo }
         expect(actual).toEqual(expected)
     })
 
@@ -19,7 +17,7 @@ describe("parsePitch", (): void => {
 
         const actual = parsePitch(pitchText)
 
-        const expected = { ratio: [7, 2] as Ratio }
+        const expected = { ratio: [7, 2] as RationalRatio }
         expect(actual).toEqual(expected)
     })
 
@@ -28,7 +26,7 @@ describe("parsePitch", (): void => {
 
         const actual = parsePitch(pitchText)
 
-        const expected = { monzo: [-11, 7] as Monzo }
+        const expected = { monzo: [-11, 7] as RationalMonzo }
         expect(actual).toEqual(expected)
     })
 

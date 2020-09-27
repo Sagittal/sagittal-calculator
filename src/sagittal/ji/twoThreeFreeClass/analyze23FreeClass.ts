@@ -1,7 +1,7 @@
 import {
     computeCopfr,
-    computeMonzoFromRationalNum,
     computePrimeLimit,
+    computeRationalMonzoFromRationalNum,
     computeSopfr,
     Copfr,
     Prime,
@@ -14,7 +14,7 @@ import { TwoThreeFreeClassAnalysis } from "./types"
 const analyze23FreeClass = (twoThreeFreeClass: TwoThreeFreeClass): TwoThreeFreeClassAnalysis => {
     const primeLimit: Prime = computePrimeLimit(twoThreeFreeClass)
 
-    const twoThreeFreeClassMonzo = computeMonzoFromRationalNum(twoThreeFreeClass)
+    const twoThreeFreeClassMonzo = computeRationalMonzoFromRationalNum(twoThreeFreeClass)
     const twoThreeFreeSopfr: Sopfr<{ rough: 5 }> = computeSopfr(twoThreeFreeClassMonzo) as Sopfr<{ rough: 5 }>
     const twoThreeFreeCopfr: Copfr<{ rough: 5 }> = computeCopfr(twoThreeFreeClassMonzo) as Copfr<{ rough: 5 }>
     const n2d3p9: N2D3P9 = computeN2D3P9(twoThreeFreeClass)

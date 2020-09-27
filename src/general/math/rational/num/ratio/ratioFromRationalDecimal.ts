@@ -1,24 +1,26 @@
 import { Multiplier } from "../../../../types"
-import { Decimal, Denominator, Numerator, NumTypeParameters, Ratio } from "../../../num"
+import { NumTypeParameters } from "../../../num"
 import { multiply } from "../../../typedOperations"
 import { isInteger } from "../../typeGuards"
-import { computeLowestTermsRatio } from "./lowestTerms"
+import { RationalDecimal } from "../decimal"
+import { computeLowestTermsRationalRatio } from "./lowestTerms"
+import { RationalDenominator, RationalNumerator, RationalRatio } from "./types"
 
-const computeRatioFromRationalDecimal = <T extends NumTypeParameters>(
-    rationalDecimal: Decimal<T & { potentiallyIrrational: false }>,
-): Ratio<T> => {
-    let denominator: Denominator = 1 as Denominator
+const computeRationalRatioFromRationalDecimal = <T extends NumTypeParameters>(
+    rationalDecimal: RationalDecimal<T>,
+): RationalRatio<T> => {
+    let denominator: RationalDenominator = 1 as RationalDenominator
     let numerator = rationalDecimal as number
     while (!isInteger(numerator)) {
-        denominator = multiply(denominator, 10 as Multiplier<Denominator>)
+        denominator = multiply(denominator, 10 as Multiplier<RationalDenominator>)
         numerator = numerator * 10
     }
 
-    const ratio = [numerator as Numerator, denominator] as Ratio<T>
+    const ratio = [numerator as RationalNumerator, denominator] as RationalRatio<T>
 
-    return computeLowestTermsRatio(ratio)
+    return computeLowestTermsRationalRatio(ratio)
 }
 
 export {
-    computeRatioFromRationalDecimal,
+    computeRationalRatioFromRationalDecimal,
 }

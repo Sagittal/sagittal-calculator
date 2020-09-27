@@ -1,29 +1,30 @@
-import { NumTypeParameters, Ratio } from "../../../num"
+import { NumTypeParameters } from "../../../num"
 import { computeRoughInteger, isRoughInteger } from "../../roughness"
 import { Primes, Roughness } from "../../types"
+import { RationalRatio } from "./types"
 
-const computeRoughRatio = <S extends Primes, T extends NumTypeParameters>(
-    ratio: Ratio<T>,
+const computeRoughRationalRatio = <S extends Primes, T extends NumTypeParameters>(
+    rationalRatio: RationalRatio<T>,
     roughness: S & Roughness,
-): Ratio<T & { rough: S }> => {
-    const [numerator, denominator] = ratio
+): RationalRatio<T & { rough: S }> => {
+    const [numerator, denominator] = rationalRatio
 
     return [
         computeRoughInteger(numerator, roughness),
         computeRoughInteger(denominator, roughness),
-    ] as Ratio<T & { rough: S }>
+    ] as RationalRatio<T & { rough: S }>
 }
 
-const isRoughRatio = <S extends Primes, T extends NumTypeParameters>(
-    ratio: Ratio<T>,
+const isRoughRationalRatio = <S extends Primes, T extends NumTypeParameters>(
+    candidateRoughRationalRatio: RationalRatio<T>,
     roughness: S & Roughness,
-): ratio is Ratio<T & { rough: S }> => {
-    const [numerator, denominator] = ratio
+): candidateRoughRationalRatio is RationalRatio<T & { rough: S }> => {
+    const [numerator, denominator] = candidateRoughRationalRatio
 
     return isRoughInteger(numerator, roughness) && isRoughInteger(denominator, roughness)
 }
 
 export {
-    computeRoughRatio,
-    isRoughRatio,
+    computeRoughRationalRatio,
+    isRoughRationalRatio,
 }

@@ -1,6 +1,7 @@
-import { Id, ioSettings, Max, Maybe, Min, Num, numIsHigher, UNISON, Zone } from "../../../general"
+import { Id, ioSettings, Max, Maybe, Min, Num, numIsHigher, Zone } from "../../../general"
 import { formatSymbolClass } from "../../io"
 import { getPrimaryComma } from "../primaryComma"
+import { UNISON } from "../primaryCommas"
 import { PrimaryComma, SymbolClass } from "../types"
 import { formatJiNotationLevel } from "./formatLevel"
 import { getIntroducingJiNotationLevel } from "./introducingJiNotationLevel"

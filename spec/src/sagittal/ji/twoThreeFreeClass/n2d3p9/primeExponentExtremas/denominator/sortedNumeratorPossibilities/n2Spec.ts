@@ -1,4 +1,4 @@
-import { Numerator } from "../../../../../../../../../src/general/math/num/ratio"
+import { RationalNumerator } from "../../../../../../../../../src/general/math/rational/num/ratio"
 import { computeN2 } from "../../../../../../../../../src/sagittal/ji/twoThreeFreeClass/n2d3p9/primeExponentExtremas/denominator/sortedNumeratorPossibilities/n2"
 import { N2 } from "../../../../../../../../../src/sagittal/ji/twoThreeFreeClass/n2d3p9/primeExponentExtremas/denominator/sortedNumeratorPossibilities/types"
 
@@ -6,7 +6,7 @@ describe("computeN2", (): void => {
     it(
         "returns the N2 part of the N2D3P9 formula, or in other words the part that the numerator contributes",
         (): void => {
-            const numerator = 35 as Numerator
+            const numerator = 35 as RationalNumerator
 
             const actual = computeN2(numerator)
 

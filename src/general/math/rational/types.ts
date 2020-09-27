@@ -1,12 +1,12 @@
 import { Count, Sum } from "../../types"
-import { Decimal, NumTypeParameterEffects, NumTypeParameters } from "../num"
+import { NumTypeParameterEffects, NumTypeParameters } from "../num"
+import { RationalDecimal } from "./num"
 
-type Integer<T extends NumTypeParameters = {}> = Decimal<T & { potentiallyIrrational: false, integer: true }>
+type Integer<T extends NumTypeParameters = {}> = RationalDecimal<T & { integer: true }>
 
 type MaybeIntegerBrand<T> = T extends { integer: true } ? { _IntegerBrand: boolean } : {}
 
-type Prime<T extends NumTypeParameters = {}> =
-    Decimal<T & { potentiallyIrrational: false, integer: true }> & { _PrimeBrand: "Prime" }
+type Prime<T extends NumTypeParameters = {}> = Integer<T> & { _PrimeBrand: "Prime" }
 type Roughness = Integer & { _RoughnessBrand: boolean }
 type Smoothness = Integer & { _SmoothnessBrand: boolean }
 

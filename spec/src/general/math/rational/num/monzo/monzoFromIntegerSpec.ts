@@ -1,12 +1,12 @@
-import { computeMonzoFromInteger, Integer, Monzo } from "../../../../../../../src/general/math"
+import { computeIntegerMonzoFromInteger, Integer, RationalMonzo } from "../../../../../../../src/general/math"
 
-describe("computeMonzoFromInteger", (): void => {
+describe("computeIntegerMonzoFromInteger", (): void => {
     it("prime factorizes the integer into a monzo", (): void => {
         const integer = 44 as Integer
 
-        const actual = computeMonzoFromInteger(integer)
+        const actual = computeIntegerMonzoFromInteger(integer)
 
-        const expected = [2, 0, 0, 0, 1] as Monzo
+        const expected = [2, 0, 0, 0, 1] as RationalMonzo
         expect(actual).toEqual(expected)
     })
 
@@ -14,7 +14,7 @@ describe("computeMonzoFromInteger", (): void => {
         const integer = 756065159 as Integer
 
         expect((): void => {
-            computeMonzoFromInteger(integer)
+            computeIntegerMonzoFromInteger(integer)
         }).toThrowError("This integer 756065159 contains primes which are too big; remainder is 756065159")
     })
 })

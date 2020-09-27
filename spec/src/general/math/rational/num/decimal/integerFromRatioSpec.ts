@@ -1,30 +1,30 @@
-import { Integer, Ratio } from "../../../../../../../src/general/math"
-import { computeIntegerFromRatio } from "../../../../../../../src/general/math/rational/num/decimal/integerFromRatio"
+import { Integer, RationalRatio } from "../../../../../../../src/general/math"
+import { computeIntegerFromIntegerRatio } from "../../../../../../../src/general/math/rational/num/decimal/integerFromRatio"
 
-describe("computeIntegerFromRatio", (): void => {
+describe("computeIntegerFromIntegerRatio", (): void => {
     it("returns the numerator, if the denominator is 1", (): void => {
-        const ratio = [99, 1] as Ratio<{ potentiallyIrrational: false, integer: true }>
+        const rationalRatio = [99, 1] as RationalRatio<{ irrational: false, integer: true }>
 
-        const actual = computeIntegerFromRatio(ratio)
+        const actual = computeIntegerFromIntegerRatio(rationalRatio)
 
         const expected: Integer = 99 as Integer
         expect(actual).toBe(expected)
     })
 
     it("works if the denominator divides evenly into the numerator", (): void => {
-        const ratio = [99, 3] as Ratio<{ potentiallyIrrational: false, integer: true }>
+        const rationalRatio = [99, 3] as RationalRatio<{ irrational: false, integer: true }>
 
-        const actual = computeIntegerFromRatio(ratio)
+        const actual = computeIntegerFromIntegerRatio(rationalRatio)
 
         const expected: Integer = 33 as Integer
         expect(actual).toBe(expected)
     })
 
     it("throws an error if the denominator does not divide evenly into the numerator", (): void => {
-        const ratio = [99, 2] as Ratio<{ potentiallyIrrational: false, integer: true }>
+        const rationalRatio = [99, 2] as RationalRatio<{ irrational: false, integer: true }>
 
         expect((): void => {
-            computeIntegerFromRatio(ratio)
+            computeIntegerFromIntegerRatio(rationalRatio)
         }).toThrowError(`Tried to compute integer from non-integer ratio 99/2.`)
     })
 })

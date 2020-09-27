@@ -12,8 +12,8 @@ import {
     isUndefined,
     Max,
     Maybe,
-    Monzo,
     Prime,
+    RationalMonzo,
     shallowClone,
     Sopfr,
 } from "../../../general"
@@ -25,7 +25,7 @@ import { TwoThreeFreeMonzosToCheckOptions } from "./types"
 
 const compute23FreeMonzosToCheck = (
     { maxPrimeLimit, max23FreeSopfr, max23FreeCopfr, maxN2D3P9 }: TwoThreeFreeMonzosToCheckOptions = {},
-): Array<Monzo<{ rough: 5 }>> => {
+): Array<RationalMonzo<{ rough: 5 }>> => {
     if (isUndefined(max23FreeSopfr) && isUndefined(maxN2D3P9)) {
         if (isUndefined(maxPrimeLimit)) {
             if (isUndefined(max23FreeCopfr)) {
@@ -47,17 +47,17 @@ const compute23FreeMonzosToCheck = (
         primeExponentExtremasGivenMaxN2D3P9,
     })
 
-    let twoThreeFreeMonzosToCheck: Array<Monzo<{ rough: 5 }>> = [
+    let twoThreeFreeMonzosToCheck: Array<RationalMonzo<{ rough: 5 }>> = [
         shallowClone(TWO_THREE_FREE_MONZO_BASE),
     ]
     twoThreeFreePrimesToCheck.forEach((twoThreeFreePrimeToCheck: Prime, index: number): void => {
-        const extended23FreeMonzosToCheck: Array<Monzo<{ rough: 5 }>> =
-            computeExtensionBase(ExtensionBaseType.ARRAY) as Array<Monzo<{ rough: 5 }>>
+        const extended23FreeMonzosToCheck: Array<RationalMonzo<{ rough: 5 }>> =
+            computeExtensionBase(ExtensionBaseType.ARRAY) as Array<RationalMonzo<{ rough: 5 }>>
 
         const primeExponentExtremaGivenMaxN2D3P9: Maybe<Extrema<Integer & Exponent<Prime>>> =
             primeExponentExtremasGivenMaxN2D3P9 && primeExponentExtremasGivenMaxN2D3P9[ index + FIVE_PRIME_INDEX ]
 
-        twoThreeFreeMonzosToCheck.forEach((twoThreeFreeMonzoToCheck: Monzo): void => {
+        twoThreeFreeMonzosToCheck.forEach((twoThreeFreeMonzoToCheck: RationalMonzo): void => {
             const twoThreeFreeSopfr = computeSopfr(twoThreeFreeMonzoToCheck)
             const twoThreeFreeCopfr = computeCopfr(twoThreeFreeMonzoToCheck)
 
@@ -76,7 +76,7 @@ const compute23FreeMonzosToCheck = (
             ) as Array<Integer & Exponent<Prime>>
             termRange.forEach((potentialNextTerm: Integer & Exponent<Prime>): void => {
                 extended23FreeMonzosToCheck.push(
-                    twoThreeFreeMonzoToCheck.concat(potentialNextTerm) as Monzo<{ rough: 5 }>,
+                    twoThreeFreeMonzoToCheck.concat(potentialNextTerm) as RationalMonzo<{ rough: 5 }>,
                 )
             })
         })

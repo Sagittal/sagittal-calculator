@@ -1,4 +1,4 @@
-import { Monzo } from "../../../../../../src/general"
+import { RationalMonzo } from "../../../../../../src/general"
 import { computeMonzoFrom23FreeClassAndSizeCategoryName } from "../../../../../../src/sagittal"
 import { CommaNameRatio, SizeCategoryName } from "../../../../../../src/sagittal/ji/comma/name/types"
 
@@ -9,7 +9,7 @@ describe("computeMonzoFrom23FreeClassAndSizeCategoryName", (): void => {
 
         const actual = computeMonzoFrom23FreeClassAndSizeCategoryName({ commaNameRatio, sizeCategoryName })
 
-        const expected = [-3, 6, 0, -1, 0, -1] as Monzo
+        const expected = [-3, 6, 0, -1, 0, -1] as RationalMonzo
         expect(actual).toEqual(expected)
     })
 })

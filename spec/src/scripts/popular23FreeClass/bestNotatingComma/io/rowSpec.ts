@@ -1,6 +1,5 @@
-import { Direction, Id, Popularity, Row, Votes } from "../../../../../../src/general"
+import { Direction, Id, Popularity, RationalMonzo, Row, Votes } from "../../../../../../src/general"
 import { Rank, Ranked } from "../../../../../../src/general/code"
-import { Monzo } from "../../../../../../src/general/math/num/monzo"
 import { Cents } from "../../../../../../src/general/music"
 import { N2D3P9 } from "../../../../../../src/sagittal/ji/twoThreeFreeClass/n2d3p9"
 import { SymbolClass } from "../../../../../../src/sagittal/notations"
@@ -16,12 +15,12 @@ describe("computePopular23FreeClassWithBestNotatingCommaRow", (): void => {
             ...twoThreeFreeClassFixture,
             rank: 4 as Rank<Popular23FreeClass & BestNotatingCommaProperties>,
             bestNotatingCommaCents: 5 as Cents,
-            bestNotatingCommaMonzo: [1] as Monzo,
+            bestNotatingCommaMonzo: [1] as RationalMonzo,
             bestNotatingCommaMaybeSymbolClassId: 6 as Id<SymbolClass>,
             n2d3p9: 2 as N2D3P9,
             votes: 7 as Votes,
             popularityRank: 3 as Rank<Popularity>,
-            monzo: [0, 0, -1, 1] as Monzo<{ rough: 5, direction: Direction.SUPER }>,
+            monzo: [0, 0, -1, 1] as RationalMonzo<{ rough: 5, direction: Direction.SUPER }>,
         }
 
         const actual = computePopular23FreeClassWithBestNotatingCommaRow(rankedPopular23FreeClassWithBestNotatingComma)

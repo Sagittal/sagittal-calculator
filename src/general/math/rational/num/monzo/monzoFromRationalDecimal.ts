@@ -1,15 +1,17 @@
-import { Decimal, Monzo, NumTypeParameters } from "../../../num"
-import { computeRatioFromRationalDecimal } from "../ratio"
-import { computeMonzoFromRatio } from "./monzoFromRatio"
+import { NumTypeParameters } from "../../../num"
+import { RationalDecimal } from "../decimal"
+import { computeRationalRatioFromRationalDecimal } from "../ratio"
+import { computeRationalMonzoFromRationalRatio } from "./monzoFromRatio"
+import { RationalMonzo } from "./types"
 
-const computeMonzoFromRationalDecimal = <T extends NumTypeParameters>(
-    rationalDecimal: Decimal<T & { potentiallyIrrational: false }>,
-): Monzo<T> => {
-    const ratio = computeRatioFromRationalDecimal(rationalDecimal)
+const computeRationalMonzoFromRationalDecimal = <T extends NumTypeParameters>(
+    rationalDecimal: RationalDecimal<T>,
+): RationalMonzo<T> => {
+    const ratio = computeRationalRatioFromRationalDecimal(rationalDecimal)
 
-    return computeMonzoFromRatio(ratio) as Monzo<T>
+    return computeRationalMonzoFromRationalRatio(ratio) as RationalMonzo<T>
 }
 
 export {
-    computeMonzoFromRationalDecimal,
+    computeRationalMonzoFromRationalDecimal,
 }

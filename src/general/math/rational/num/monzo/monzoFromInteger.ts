@@ -1,9 +1,10 @@
 import { increment, indexOfFinalElement } from "../../../../code"
-import { Direction, Monzo } from "../../../num"
+import { Direction } from "../../../num"
 import { Exponent } from "../../../types"
 import { PRIMES } from "../../primes"
 import { integerDivide } from "../../typedOperations"
 import { Integer, Prime } from "../../types"
+import { RationalMonzo } from "./types"
 
 // TODO: POSSIBLY MORE PERFORMANT PRIME FACTORIZATION ALGORITHM
 //  Consider using Dave's tricky GCP-involved technique
@@ -21,12 +22,12 @@ exponent(n, i) = Math.round(math.log(math.gcd(n, maxPrimePower[i]), prime[i]) )
 That's more like what I really do in Excel.
  */
 
-const computeMonzoFromInteger = (integer: Integer): Monzo<{ direction: Direction.SUPER }> => {
+const computeIntegerMonzoFromInteger = (integer: Integer): RationalMonzo<{ direction: Direction.SUPER }> => {
     if (integer === 0) {
         throw new Error("The prime factorization of zero is not defined.")
     }
 
-    const monzo: Monzo = [] as unknown[] as Monzo
+    const monzo: RationalMonzo = [] as unknown[] as RationalMonzo
     let remnant = integer
 
     const computePrimeFactorizationForPrimeAtIndexAndUpdateRemnant = (index: number): void => {
@@ -56,9 +57,9 @@ const computeMonzoFromInteger = (integer: Integer): Monzo<{ direction: Direction
 
     if (remnant > 1) throw new Error(`This integer ${integer} contains primes which are too big; remainder is ${remnant}`)
 
-    return monzo as Monzo<{ direction: Direction.SUPER }>
+    return monzo as RationalMonzo<{ direction: Direction.SUPER }>
 }
 
 export {
-    computeMonzoFromInteger,
+    computeIntegerMonzoFromInteger,
 }

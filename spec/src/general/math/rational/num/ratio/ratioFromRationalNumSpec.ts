@@ -1,22 +1,24 @@
-import { Monzo } from "../../../../../../../src/general/math/num/monzo"
-import { Ratio } from "../../../../../../../src/general/math/num/ratio"
-import { computeRatioFromRationalNum } from "../../../../../../../src/general/math/rational/num/ratio"
+import { RationalMonzo } from "../../../../../../../src/general/math/rational/num/monzo"
+import {
+    computeRationalRatioFromRationalNum,
+    RationalRatio,
+} from "../../../../../../../src/general/math/rational/num/ratio"
 
-describe("computeRatioFromRationalNum", (): void => {
+describe("computeRationalRatioFromRationalNum", (): void => {
     it("returns the ratio, if present", (): void => {
-        const rationalNum = { ratio: [3, 2] as Ratio }
+        const rationalNum = { ratio: [3, 2] as RationalRatio }
 
-        const actual = computeRatioFromRationalNum(rationalNum)
+        const actual = computeRationalRatioFromRationalNum(rationalNum)
 
         expect(actual).toEqual(rationalNum.ratio)
     })
 
     it("computes the ratio from the monzo otherwise", (): void => {
-        const rationalNum = { monzo: [-1, 1] as Monzo }
+        const rationalNum = { monzo: [-1, 1] as RationalMonzo }
 
-        const actual = computeRatioFromRationalNum(rationalNum)
+        const actual = computeRationalRatioFromRationalNum(rationalNum)
 
-        const expected = [3, 2] as Ratio
+        const expected = [3, 2] as RationalRatio
         expect(actual).toEqual(expected)
     })
 })

@@ -1,10 +1,9 @@
 import {
-    computeLowestTermsRatio,
-    computeMonzoFromRatio,
+    computeLowestTermsRationalRatio,
+    computeRationalMonzoFromRationalRatio,
     isRationalRatio,
     isSubRatio,
     NumTypeParameters,
-    Ratio,
 } from "../../math"
 import { TwoThreeFreeClass } from "../../music"
 import { Io } from "../types"
@@ -20,10 +19,10 @@ const parse23FreeClass = <T extends NumTypeParameters>(twoThreeFreeClassIo: Io):
         throw new Error(`Attempted to parse ${twoThreeFreeClassIo} to a 2,3-free class, but they must be sub.`)
     }
 
-    const reducedTwoThreeFreeRatio = computeLowestTermsRatio(twoThreeFreeRatio)
+    const reducedTwoThreeFreeRatio = computeLowestTermsRationalRatio(twoThreeFreeRatio)
 
     return {
-        monzo: computeMonzoFromRatio(reducedTwoThreeFreeRatio as Ratio<T>),
+        monzo: computeRationalMonzoFromRationalRatio(reducedTwoThreeFreeRatio),
     } as TwoThreeFreeClass<T>
 }
 

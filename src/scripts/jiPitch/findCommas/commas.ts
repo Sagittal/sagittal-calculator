@@ -1,4 +1,4 @@
-import { Comma, computeSuperNum, equalNums, formatPitch, Monzo, numIsHigher } from "../../../general"
+import { Comma, computeSuperNum, equalNums, formatPitch, numIsHigher, RationalMonzo } from "../../../general"
 import {
     computeCommasFrom23FreeMonzo,
     DEFAULT_LOWER_BOUND,
@@ -36,13 +36,13 @@ const computeCommas = (options: CommasOptions): Comma[] => {
 
     let commas: Comma[] = []
 
-    const twoThreeFreeMonzosToCheck: Array<Monzo<{ rough: 5 }>> = compute23FreeMonzosToCheck({
+    const twoThreeFreeMonzosToCheck: Array<RationalMonzo<{ rough: 5 }>> = compute23FreeMonzosToCheck({
         maxPrimeLimit,
         max23FreeSopfr,
         max23FreeCopfr,
     })
 
-    twoThreeFreeMonzosToCheck.forEach((twoThreeFreeMonzoToCheck: Monzo<{ rough: 5 }>): void => {
+    twoThreeFreeMonzosToCheck.forEach((twoThreeFreeMonzoToCheck: RationalMonzo<{ rough: 5 }>): void => {
         commas = commas.concat(
             computeCommasFrom23FreeMonzo(
                 twoThreeFreeMonzoToCheck,

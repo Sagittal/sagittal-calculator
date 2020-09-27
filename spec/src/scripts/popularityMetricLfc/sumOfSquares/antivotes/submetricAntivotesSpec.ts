@@ -1,4 +1,4 @@
-import { Base, log, Monzo } from "../../../../../../src/general/math"
+import { Base, log, RationalMonzo } from "../../../../../../src/general/math"
 import { Parameter, ParameterValue, Submetric } from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
 import { computeSubmetricAntivotes } from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares/antivotes/submetricAntivotes"
 import { Antivotes } from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares/types"
@@ -6,7 +6,7 @@ import { Antivotes } from "../../../../../../src/scripts/popularityMetricLfc/sum
 describe("computeSubmetricAntivotes", (): void => {
     let submetric: Submetric
 
-    const twoThreeFreeNumberMonzo: Monzo = [
+    const twoThreeFreeNumberMonzo: RationalMonzo = [
         0,                  // Prime 2,  prime index 1 (from the prime count function)
         0,                  // Prime 3,  prime index 2 (from the prime count function)
         0,                  // Prime 5,  prime index 3 (from the prime count function)
@@ -14,7 +14,7 @@ describe("computeSubmetricAntivotes", (): void => {
         1,                  // Prime 11, prime index 5 (from the prime count function)
         -1,                 // Prime 13, prime index 6 (from the prime count function)
         2,                  // Prime 17, prime index 7 (from the prime count function)
-    ] as Monzo
+    ] as RationalMonzo
 
     beforeEach((): void => {
         submetric = {}
@@ -187,7 +187,7 @@ describe("computeSubmetricAntivotes", (): void => {
 
         it("when Dave's modified count is provided, counts 5's half as much as normal", (): void => {
             submetric[ Parameter.MODIFIED_COUNT ] = true
-            const twoThreeFreeNumberMonzo = [0, 0, 1, -1] as Monzo
+            const twoThreeFreeNumberMonzo = [0, 0, 1, -1] as RationalMonzo
 
             const actual = computeSubmetricAntivotes(twoThreeFreeNumberMonzo, submetric)
 

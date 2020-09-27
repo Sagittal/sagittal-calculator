@@ -1,13 +1,15 @@
-import { Ratio } from "../../../../../../../src/general/math/num/ratio"
-import { computeLowestTermsRatio } from "../../../../../../../src/general/math/rational/num/ratio"
+import {
+    computeLowestTermsRationalRatio,
+    RationalRatio,
+} from "../../../../../../../src/general/math/rational/num/ratio"
 
-describe("computeLowestTermsRatio", (): void => {
+describe("computeLowestTermsRationalRatio", (): void => {
     it("returns the ratio in lowest terms", (): void => {
-        const ratio = [99, 21] as Ratio
+        const ratio = [99, 21] as RationalRatio
 
-        const actual = computeLowestTermsRatio(ratio)
+        const actual = computeLowestTermsRationalRatio(ratio)
 
-        const expected: Ratio = [33, 7] as Ratio
+        const expected: RationalRatio = [33, 7] as RationalRatio
         expect(actual).toEqual(expected)
     })
 })

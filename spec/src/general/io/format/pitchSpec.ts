@@ -1,7 +1,5 @@
 import { formatPitch, Formatted } from "../../../../../src/general/io/format"
-import { Decimal, Integer, Num } from "../../../../../src/general/math"
-import { Monzo } from "../../../../../src/general/math/num/monzo"
-import { Ratio } from "../../../../../src/general/math/num/ratio"
+import { Decimal, Integer, Monzo, Num, Ratio } from "../../../../../src/general/math"
 import { Cents } from "../../../../../src/general/music"
 
 describe("formatPitch", (): void => {

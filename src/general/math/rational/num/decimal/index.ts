@@ -1,3 +1,3 @@
-export { computeIntegerFromMonzo } from "./integerFromMonzo"
+export { computeIntegerFromIntegerMonzo } from "./integerFromMonzo"
 export { isRationalDecimal } from "./typeGuards"
-export { RationalNumByDecimal } from "./types"
+export { RationalNumByDecimal, RationalDecimal } from "./types"

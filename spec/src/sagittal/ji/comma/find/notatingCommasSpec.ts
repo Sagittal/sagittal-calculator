@@ -1,9 +1,9 @@
-import { Abs, Comma, Decimal, Max, Monzo, Num } from "../../../../../../src/general"
+import { Abs, Comma, Decimal, Max, Num, RationalMonzo } from "../../../../../../src/general"
 import { ApotomeSlope, computeNotatingCommas } from "../../../../../../src/sagittal"
 
 describe("computeNotatingCommas", (): void => {
     it("given a monzo, returns a list of the commas that notate it", (): void => {
-        const monzo = [0, 0, 0, 0, 1] as Monzo
+        const monzo = [0, 0, 0, 0, 1] as RationalMonzo
 
         const actual = computeNotatingCommas({ monzo })
 
@@ -16,7 +16,7 @@ describe("computeNotatingCommas", (): void => {
     })
 
     it("can filter", (): void => {
-        const monzo = [0, 0, 0, 0, 1] as Monzo
+        const monzo = [0, 0, 0, 0, 1] as RationalMonzo
         const maxAas = 9 as Max<Abs<ApotomeSlope>>
         const upperBound = { decimal: 1.032279 as Decimal } as Max<Num>
 
@@ -30,7 +30,7 @@ describe("computeNotatingCommas", (): void => {
     })
 
     it("when given a unison monzo, does not return duplicates", (): void => {
-        const monzo = [] as Monzo
+        const monzo = [] as RationalMonzo
 
         const actual = computeNotatingCommas({ monzo })
 

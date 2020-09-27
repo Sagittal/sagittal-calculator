@@ -1,19 +1,29 @@
-import { Direction, invertMonzo, Monzo, NumTypeParameters, Ratio, sumMonzos } from "../../../num"
+import { Direction, invertMonzo, NumTypeParameters, sumMonzos } from "../../../num"
 import { Exponent } from "../../../types"
 import { Integer, Prime } from "../../types"
-import { computeMonzoFromInteger } from "./monzoFromInteger"
+import { RationalRatio } from "../ratio"
+import { computeIntegerMonzoFromInteger } from "./monzoFromInteger"
+import { RationalMonzo } from "./types"
 
-const computeMonzoFromRatio = <T extends NumTypeParameters>(ratio: Ratio<T>): Monzo<T> => {
-    const positiveFactors: Monzo<{ direction: Direction.SUPER }> = computeMonzoFromInteger(ratio[ 0 ])
-    const negativeFactors: Monzo<{ direction: Direction.SUB }> = invertMonzo(computeMonzoFromInteger(ratio[ 1 ]))
+const computeRationalMonzoFromRationalRatio = <T extends NumTypeParameters>(
+    [ numerator, denominator ]: RationalRatio<T>
+): RationalMonzo<T> => {
+    const positiveFactors: RationalMonzo<{ direction: Direction.SUPER }> =
+        computeIntegerMonzoFromInteger(numerator)
+    const negativeFactors: RationalMonzo<{ direction: Direction.SUB }> =
+        invertMonzo(computeIntegerMonzoFromInteger(denominator))
 
     while (positiveFactors.length < negativeFactors.length) {
         positiveFactors.push(0 as Integer & Exponent<Prime>)
     }
+    // TODO: test this part's necessity... pretty sure it is necessary...
+    while (negativeFactors.length < positiveFactors.length) {
+        negativeFactors.push(0 as Integer & Exponent<Prime>)
+    }
 
-    return sumMonzos(positiveFactors, negativeFactors) as Monzo<T>
+    return sumMonzos(positiveFactors, negativeFactors) as RationalMonzo<T>
 }
 
 export {
-    computeMonzoFromRatio,
+    computeRationalMonzoFromRationalRatio,
 }

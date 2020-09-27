@@ -12,12 +12,12 @@ import {
     KeyPath,
     LogTarget,
     Max,
-    Monzo,
     parse23FreeClass,
     Prime,
     rank,
     Ranked,
     RankStrategy,
+    RationalMonzo,
     readLines,
     saveLog,
     shallowClone,
@@ -62,13 +62,13 @@ const computePopular23FreeClasses = (maxN2D3P9: Max<N2D3P9>): Array<Ranked<Popul
         saveLog(`total monzos to check: ${monzoCount}` as Io, LogTarget.PROGRESS)
         let monzosCheckedCount = 0
 
-        const initialMonzo: Monzo = primeExponentExtremasGivenMaxN2D3P9.map(
+        const initialMonzo: RationalMonzo = primeExponentExtremasGivenMaxN2D3P9.map(
             ([minPrimeExponent, _]: Extrema<Integer & Exponent<Prime>>): Integer & Exponent<Prime> => minPrimeExponent,
         )
-        const finalMonzo: Monzo = primeExponentExtremasGivenMaxN2D3P9.map(
+        const finalMonzo: RationalMonzo = primeExponentExtremasGivenMaxN2D3P9.map(
             ([_, maxPrimeExponent]: Extrema<Integer & Exponent<Prime>>): Integer & Exponent<Prime> => maxPrimeExponent,
         )
-        let twoThreeFreeMonzo: Monzo<{ rough: 5 }> = shallowClone(initialMonzo) as Monzo<{ rough: 5 }>
+        let twoThreeFreeMonzo: RationalMonzo<{ rough: 5 }> = shallowClone(initialMonzo) as RationalMonzo<{ rough: 5 }>
 
         popular23FreeClassAnalyses = [] as Array<Popular23FreeClass>
         while (true) {

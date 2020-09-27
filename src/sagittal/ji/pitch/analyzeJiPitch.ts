@@ -2,8 +2,8 @@ import {
     compute23FreeClass,
     computeCentsFromPitch,
     computeDecimalFromNum,
-    computeMonzoFromRationalNum,
-    computeRatioFromRationalNum,
+    computeRationalMonzoFromRationalNum,
+    computeRationalRatioFromRationalNum,
     Num,
     RationalNum,
 } from "../../../general"
@@ -14,8 +14,8 @@ import { computeAte } from "./ate"
 import { JiPitchAnalysis } from "./types"
 
 const analyzeJiPitch = (jiPitch: RationalNum): JiPitchAnalysis => {
-    const monzo = computeMonzoFromRationalNum(jiPitch)
-    const ratio = computeRatioFromRationalNum(jiPitch)
+    const monzo = computeRationalMonzoFromRationalNum(jiPitch)
+    const ratio = computeRationalRatioFromRationalNum(jiPitch)
     const decimal = computeDecimalFromNum(jiPitch as Num)
 
     const apotomeSlope = computeApotomeSlope(jiPitch)

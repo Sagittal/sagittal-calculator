@@ -1,7 +1,5 @@
 import { Row } from "../../../../../../src/general/io/table"
-import { Abs, Exponent, Integer, Prime } from "../../../../../../src/general/math"
-import { Monzo } from "../../../../../../src/general/math/num/monzo"
-import { Ratio } from "../../../../../../src/general/math/num/ratio"
+import { Abs, Exponent, Integer, Prime, RationalMonzo, RationalRatio } from "../../../../../../src/general/math"
 import { Cents } from "../../../../../../src/general/music"
 import { ApotomeSlope, JiPitchAnalysis } from "../../../../../../src/sagittal/ji"
 import { jiPitchScriptGroupSettings } from "../../../../../../src/scripts/jiPitch/globals"
@@ -16,8 +14,8 @@ describe("computeJiPitchRow", (): void => {
     const jiPitchAnalysis: JiPitchAnalysis = {
         ...jiPitchAnalysisFixture,
         cents: 11.2 as Cents,
-        monzo: [0, -1, 1] as Monzo,
-        ratio: [5, 4] as Ratio,
+        monzo: [0, -1, 1] as RationalMonzo,
+        ratio: [5, 4] as RationalRatio,
         apotomeSlope: 8.2 as ApotomeSlope,
         aas: 8.2 as Abs<ApotomeSlope>,
         ate: 1 as Abs<Integer & Exponent<3 & Prime>>,

@@ -1,4 +1,4 @@
-import { BASE_2, log, Monzo, Power } from "../../../../../../src/general/math"
+import { BASE_2, log, Power, RationalMonzo } from "../../../../../../src/general/math"
 import { TwoThreeFreeClass } from "../../../../../../src/general/music"
 import { ParameterValue } from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
 import { computeRatioSubmetricAntivotes } from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares/antivotes/ratioSubmetricAntivotes"
@@ -14,8 +14,8 @@ describe("computeRatioSubmetricAntivotes", (): void => {
         const actual = computeRatioSubmetricAntivotes(twoThreeFreeClass, submetric)
 
         expect(actual).toBe(
-            computeSubmetricAntivotes([0, 0, 0, 0, 1] as Monzo, submetric) as Antivotes +
-            kAsCoefficient * computeSubmetricAntivotes([0, 0, 0, 1] as Monzo, submetric) as Antivotes,
+            computeSubmetricAntivotes([0, 0, 0, 0, 1] as RationalMonzo, submetric) as Antivotes +
+            kAsCoefficient * computeSubmetricAntivotes([0, 0, 0, 1] as RationalMonzo, submetric) as Antivotes,
         )
     })
 
@@ -27,8 +27,8 @@ describe("computeRatioSubmetricAntivotes", (): void => {
         const actual = computeRatioSubmetricAntivotes(twoThreeFreeClass, submetric)
 
         expect(actual).toBe(
-            computeSubmetricAntivotes([0, 0, 2] as Monzo, submetric) as Antivotes +
-            kAsCoefficient * computeSubmetricAntivotes([0, 0, 0, 0, 1] as Monzo, submetric) as Antivotes,
+            computeSubmetricAntivotes([0, 0, 2] as RationalMonzo, submetric) as Antivotes +
+            kAsCoefficient * computeSubmetricAntivotes([0, 0, 0, 0, 1] as RationalMonzo, submetric) as Antivotes,
         )
     })
 
@@ -39,7 +39,7 @@ describe("computeRatioSubmetricAntivotes", (): void => {
         const actual = computeRatioSubmetricAntivotes(twoThreeFreeClass, submetric)
 
         expect(actual).toBe(
-            computeSubmetricAntivotes([0, 0, 1, -1] as Monzo, submetric),
+            computeSubmetricAntivotes([0, 0, 1, -1] as RationalMonzo, submetric),
         )
     })
 
@@ -52,8 +52,8 @@ describe("computeRatioSubmetricAntivotes", (): void => {
         const actual = computeRatioSubmetricAntivotes(twoThreeFreeClass, submetric)
 
         expect(actual).toBe(
-            computeSubmetricAntivotes([0, 0, 0, 0, 1] as Monzo, submetric) as Antivotes +
-            kAsCoefficient * computeSubmetricAntivotes([0, 0, 2] as Monzo, submetric) as Antivotes,
+            computeSubmetricAntivotes([0, 0, 0, 0, 1] as RationalMonzo, submetric) as Antivotes +
+            kAsCoefficient * computeSubmetricAntivotes([0, 0, 2] as RationalMonzo, submetric) as Antivotes,
         )
     })
 
@@ -65,7 +65,7 @@ describe("computeRatioSubmetricAntivotes", (): void => {
         const actual = computeRatioSubmetricAntivotes(twoThreeFreeClass, submetric)
 
         expect(actual).toBe(
-            computeSubmetricAntivotes([0, 0, 1] as Monzo, submetric),
+            computeSubmetricAntivotes([0, 0, 1] as RationalMonzo, submetric),
         )
     })
 
@@ -77,7 +77,7 @@ describe("computeRatioSubmetricAntivotes", (): void => {
         const actual = computeRatioSubmetricAntivotes(twoThreeFreeClass, submetric)
 
         expect(actual).toBe(
-            computeSubmetricAntivotes([0, 0, 0, 1] as Monzo, submetric),
+            computeSubmetricAntivotes([0, 0, 0, 1] as RationalMonzo, submetric),
         )
     })
 
@@ -89,8 +89,11 @@ describe("computeRatioSubmetricAntivotes", (): void => {
         const actual = computeRatioSubmetricAntivotes(twoThreeFreeClass, submetric)
 
         expect(actual).toBe(
-            computeSubmetricAntivotes([0, 0, 1] as Monzo, submetric) as Antivotes +
-            log(computeSubmetricAntivotes([0, 0, 0, 1] as Monzo, submetric) as number as Power, BASE_2) as Antivotes,
+            computeSubmetricAntivotes([0, 0, 1] as RationalMonzo, submetric) as Antivotes +
+            log(
+                computeSubmetricAntivotes([0, 0, 0, 1] as RationalMonzo, submetric) as number as Power,
+                BASE_2,
+            ) as Antivotes,
         )
     })
 
@@ -102,8 +105,8 @@ describe("computeRatioSubmetricAntivotes", (): void => {
         const actual = computeRatioSubmetricAntivotes(twoThreeFreeClass, submetric)
 
         expect(actual).toBe(
-            computeSubmetricAntivotes([0, 0, 1] as Monzo, submetric) as Antivotes +
-            computeSubmetricAntivotes([0, 0, 0, 1] as Monzo, submetric) ** 2 as Antivotes,
+            computeSubmetricAntivotes([0, 0, 1] as RationalMonzo, submetric) as Antivotes +
+            computeSubmetricAntivotes([0, 0, 0, 1] as RationalMonzo, submetric) ** 2 as Antivotes,
         )
     })
 
@@ -115,8 +118,8 @@ describe("computeRatioSubmetricAntivotes", (): void => {
         const actual = computeRatioSubmetricAntivotes(twoThreeFreeClass, submetric)
 
         expect(actual).toBe(
-            computeSubmetricAntivotes([0, 0, 1] as Monzo, submetric) as Antivotes +
-            2 ** computeSubmetricAntivotes([0, 0, 0, 1] as Monzo, submetric) as Antivotes,
+            computeSubmetricAntivotes([0, 0, 1] as RationalMonzo, submetric) as Antivotes +
+            2 ** computeSubmetricAntivotes([0, 0, 0, 1] as RationalMonzo, submetric) as Antivotes,
         )
     })
 
@@ -128,8 +131,8 @@ describe("computeRatioSubmetricAntivotes", (): void => {
         const actual = computeRatioSubmetricAntivotes(twoThreeFreeClass, submetric)
 
         expect(actual).toBe(
-            log(computeSubmetricAntivotes([0, 0, 1] as Monzo, submetric) as number as Power, BASE_2) as number +
-            computeSubmetricAntivotes([0, 0, 0, 1] as Monzo, submetric) as Antivotes,
+            log(computeSubmetricAntivotes([0, 0, 1] as RationalMonzo, submetric) as number as Power, BASE_2) as number +
+            computeSubmetricAntivotes([0, 0, 0, 1] as RationalMonzo, submetric) as Antivotes,
         )
     })
 
@@ -141,8 +144,8 @@ describe("computeRatioSubmetricAntivotes", (): void => {
         const actual = computeRatioSubmetricAntivotes(twoThreeFreeClass, submetric)
 
         expect(actual).toBe(
-            computeSubmetricAntivotes([0, 0, 1] as Monzo, submetric) ** 2 as Antivotes +
-            computeSubmetricAntivotes([0, 0, 0, 1] as Monzo, submetric) as Antivotes,
+            computeSubmetricAntivotes([0, 0, 1] as RationalMonzo, submetric) ** 2 as Antivotes +
+            computeSubmetricAntivotes([0, 0, 0, 1] as RationalMonzo, submetric) as Antivotes,
         )
     })
 
@@ -154,8 +157,8 @@ describe("computeRatioSubmetricAntivotes", (): void => {
         const actual = computeRatioSubmetricAntivotes(twoThreeFreeClass, submetric)
 
         expect(actual).toBe(
-            2 ** computeSubmetricAntivotes([0, 0, 1] as Monzo, submetric) as Antivotes +
-            computeSubmetricAntivotes([0, 0, 0, 1] as Monzo, submetric) as Antivotes,
+            2 ** computeSubmetricAntivotes([0, 0, 1] as RationalMonzo, submetric) as Antivotes +
+            computeSubmetricAntivotes([0, 0, 0, 1] as RationalMonzo, submetric) as Antivotes,
         )
     })
 })

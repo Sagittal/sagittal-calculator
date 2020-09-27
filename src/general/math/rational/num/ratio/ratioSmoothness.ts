@@ -1,16 +1,17 @@
-import { NumTypeParameters, Ratio } from "../../../num"
+import { NumTypeParameters } from "../../../num"
 import { isSmoothInteger } from "../../smoothness"
 import { Primes, Smoothness } from "../../types"
+import { RationalRatio } from "./types"
 
-const isSmoothRatio = <S extends Primes, T extends NumTypeParameters>(
-    ratio: Ratio<T>,
+const isSmoothRationalRatio = <S extends Primes, T extends NumTypeParameters>(
+    rationalRatio: RationalRatio<T>,
     smoothness: S & Smoothness,
-): ratio is Ratio<T & { smooth: S }> => {
-    const [numerator, denominator] = ratio
+): rationalRatio is RationalRatio<T & { smooth: S }> => {
+    const [numerator, denominator] = rationalRatio
 
     return isSmoothInteger(numerator, smoothness) && isSmoothInteger(denominator, smoothness)
 }
 
 export {
-    isSmoothRatio,
+    isSmoothRationalRatio,
 }

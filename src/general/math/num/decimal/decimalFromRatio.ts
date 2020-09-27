@@ -1,12 +1,10 @@
-import { RatioNotDefaultingToRational } from "../ratio"
+import { Ratio } from "../ratio"
 import { NumTypeParameters } from "../types"
-import { Decimal, DecimalNotDefaultingToPotentiallyIrrational } from "./types"
+import { Decimal } from "./types"
 
-const computeDecimalFromRatio = <T extends NumTypeParameters>(
-    [numerator, denominator]: RatioNotDefaultingToRational<T>,
-): DecimalNotDefaultingToPotentiallyIrrational<T> => {
-    return numerator / denominator as Decimal<T>
-}
+const computeDecimalFromRatio = <T extends NumTypeParameters>([numerator, denominator]: Ratio<T>): Decimal<T> =>
+    numerator / denominator as Decimal<T>
+
 
 export {
     computeDecimalFromRatio,

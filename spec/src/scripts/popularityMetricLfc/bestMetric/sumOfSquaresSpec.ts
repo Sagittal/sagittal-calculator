@@ -4,10 +4,10 @@ import {
     Direction,
     Index,
     KeyPath,
-    Monzo,
     Ms,
     Name,
     Obj,
+    RationalMonzo,
     TwoThreeFreeClass,
 } from "../../../../../src/general"
 import * as doOnNextEventLoop from "../../../../../src/general/code/doOnNextEventLoop"
@@ -102,21 +102,21 @@ describe("computeSumOfSquaresAndMaybeUpdateBestMetric", (): void => {
             {
                 antivotes: 0 as Antivotes,
                 twoThreeFreeClass: {
-                    monzo: [] as unknown[] as Monzo<{ rough: 5, direction: Direction.SUPER }>,
+                    monzo: [] as unknown[] as RationalMonzo<{ rough: 5, direction: Direction.SUPER }>,
                 } as TwoThreeFreeClass,
                 index: 0 as Index<Unpopularity>,
             },
             {
                 antivotes: NaN as Antivotes,
                 twoThreeFreeClass: {
-                    monzo: [0, 0, 1] as Monzo<{ rough: 5, direction: Direction.SUPER }>,
+                    monzo: [0, 0, 1] as RationalMonzo<{ rough: 5, direction: Direction.SUPER }>,
                 } as TwoThreeFreeClass,
                 index: 0 as Index<Unpopularity>,
             },
             {
                 antivotes: 8 as Antivotes,
                 twoThreeFreeClass: {
-                    monzo: [0, 0, 0, 1] as Monzo<{ rough: 5, direction: Direction.SUPER }>,
+                    monzo: [0, 0, 0, 1] as RationalMonzo<{ rough: 5, direction: Direction.SUPER }>,
                 } as TwoThreeFreeClass,
                 index: 0 as Index<Unpopularity>,
             },

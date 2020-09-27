@@ -1,5 +1,4 @@
-import { Id } from "../../../../../src/general"
-import { Monzo } from "../../../../../src/general/math/num"
+import { Id, RationalMonzo } from "../../../../../src/general"
 import { Cents, TwoThreeFreeClass } from "../../../../../src/general/music"
 import { SymbolClass } from "../../../../../src/sagittal/notations"
 import {
@@ -17,7 +16,7 @@ describe("computeBestNotatingCommaProperties", (): void => {
 
             const expected: BestNotatingCommaProperties = {
                 bestNotatingCommaCents: 29.217813 as Cents,
-                bestNotatingCommaMonzo: [-9, 6, 1, -1] as Monzo,
+                bestNotatingCommaMonzo: [-9, 6, 1, -1] as RationalMonzo,
                 bestNotatingCommaMaybeSymbolClassId: 62 as Id<SymbolClass>,
             }
             expect(actual).toBeCloseToObject(expected)

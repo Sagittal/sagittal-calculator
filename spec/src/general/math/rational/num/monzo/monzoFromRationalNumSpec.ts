@@ -1,30 +1,30 @@
-import { Integer, Monzo, Ratio } from "../../../../../../../src/general/math"
-import { computeMonzoFromRationalNum } from "../../../../../../../src/general/math/rational/num/monzo"
+import { Integer, RationalMonzo, RationalRatio } from "../../../../../../../src/general/math"
+import { computeRationalMonzoFromRationalNum } from "../../../../../../../src/general/math/rational/num/monzo"
 
-describe("computeMonzoFromRationalNum", (): void => {
+describe("computeRationalMonzoFromRationalNum", (): void => {
     it("returns the monzo, if present", (): void => {
-        const rationalNum = { monzo: [3, -2] as Monzo }
+        const rationalNum = { monzo: [3, -2] as RationalMonzo }
 
-        const actual = computeMonzoFromRationalNum(rationalNum)
+        const actual = computeRationalMonzoFromRationalNum(rationalNum)
 
         expect(actual).toEqual(rationalNum.monzo)
     })
 
     it("computes the monzo from the ratio, if present", (): void => {
-        const rationalNum = { ratio: [3, 2] as Ratio }
+        const rationalNum = { ratio: [3, 2] as RationalRatio }
 
-        const actual = computeMonzoFromRationalNum(rationalNum)
+        const actual = computeRationalMonzoFromRationalNum(rationalNum)
 
-        const expected = [-1, 1] as Monzo
+        const expected = [-1, 1] as RationalMonzo
         expect(actual).toEqual(expected)
     })
 
     it("computes the monzo from the (integer) decimal, if present", (): void => {
         const rationalNum = { decimal: 5 as Integer }
 
-        const actual = computeMonzoFromRationalNum(rationalNum)
+        const actual = computeRationalMonzoFromRationalNum(rationalNum)
 
-        const expected = [0, 0, 1] as Monzo
+        const expected = [0, 0, 1] as RationalMonzo
         expect(actual).toEqual(expected)
     })
 })

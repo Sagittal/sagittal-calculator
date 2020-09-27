@@ -2,15 +2,16 @@ import {
     computeRationalNumSmoothness,
     Integer,
     isSmoothRationalNum,
-    Ratio, RationalNum,
+    RationalMonzo,
+    RationalNum,
+    RationalRatio,
     Smoothness,
 } from "../../../../../../src/general/math"
-import { Monzo } from "../../../../../../src/general/math/num/monzo"
 
 describe("isSmoothRationalNum", (): void => {
     describe("by monzo", (): void => {
         it("returns true if the rational num is smooth to the given smoothness", (): void => {
-            const rationalNum = { monzo: [0, 0, 1] as Monzo }
+            const rationalNum = { monzo: [0, 0, 1] as RationalMonzo }
 
             const actual = isSmoothRationalNum(rationalNum, 5 as 5 & Smoothness)
 
@@ -18,7 +19,7 @@ describe("isSmoothRationalNum", (): void => {
         })
 
         it("returns false if the rational num is not smooth to the given smoothness", (): void => {
-            const rationalNum = { monzo: [0, 0, 1] as Monzo }
+            const rationalNum = { monzo: [0, 0, 1] as RationalMonzo }
 
             const actual = isSmoothRationalNum(rationalNum, 3 as 3 & Smoothness)
 
@@ -28,7 +29,7 @@ describe("isSmoothRationalNum", (): void => {
 
     describe("by ratio", (): void => {
         it("returns true if the rational num is smooth to the given smoothness", (): void => {
-            const rationalNum = { ratio: [7, 5] as Ratio }
+            const rationalNum = { ratio: [7, 5] as RationalRatio }
 
             const actual = isSmoothRationalNum(rationalNum, 7 as 7 & Smoothness)
 
@@ -36,7 +37,7 @@ describe("isSmoothRationalNum", (): void => {
         })
 
         it("returns false if the rational num is not smooth to the given smoothness", (): void => {
-            const rationalNum = { ratio: [7, 5] as Ratio }
+            const rationalNum = { ratio: [7, 5] as RationalRatio }
 
             const actual = isSmoothRationalNum(rationalNum, 3 as 3 & Smoothness)
 
@@ -65,7 +66,7 @@ describe("isSmoothRationalNum", (): void => {
 
 describe("computeRationalNumSmoothness", (): void => {
     it("works for rational nums with monzos", (): void => {
-        const rationalNum = { monzo: [0, 4, 1, -3, 0, 1] as Monzo }
+        const rationalNum = { monzo: [0, 4, 1, -3, 0, 1] as RationalMonzo }
 
         const actual = computeRationalNumSmoothness(rationalNum)
 
@@ -74,7 +75,7 @@ describe("computeRationalNumSmoothness", (): void => {
     })
 
     it("works for rational nums with ratios", (): void => {
-        const rationalNum = { ratio: [7, 5] as Ratio }
+        const rationalNum = { ratio: [7, 5] as RationalRatio }
 
         const actual = computeRationalNumSmoothness(rationalNum)
 

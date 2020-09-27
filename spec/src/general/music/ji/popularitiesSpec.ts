@@ -1,40 +1,40 @@
 import {
-    computeMonzoFromRatio,
     computeRatioFromMonzo,
+    computeRationalMonzoFromRationalRatio,
     Direction,
     KeyPath,
-    Monzo,
     Popularity,
     rank,
     Ranked,
     RankStrategy,
-    Ratio,
+    RationalMonzo,
+    RationalRatio,
 } from "../../../../../src/general"
 import { COMMA_POPULARITIES } from "../../../../../src/general/music"
 import { onlyRunInCi } from "../../../../helpers/onlyRunInCi"
 
 describe("COMMA_POPULARITIES", (): void => {
     it("is the case that all the ratios capable of being parsed by monzo from ratio correctly when only top is 80 or less", (): void => {
-        const originalRatios: Array<Ratio<{ potentiallyIrrational: false, rough: 5, direction: Direction.SUPER }>> =
+        const originalRatios: Array<RationalRatio<{ irrational: false, rough: 5, direction: Direction.SUPER }>> =
             COMMA_POPULARITIES.map((
                 popularity: Popularity,
-            ): Ratio<{ potentiallyIrrational: false, rough: 5, direction: Direction.SUPER }> => {
+            ): RationalRatio<{ irrational: false, rough: 5, direction: Direction.SUPER }> => {
                 return popularity.twoThreeFreeClass.ratio!
             })
 
-        const monzos: Array<Monzo<{ potentiallyIrrational: false, rough: 5, direction: Direction.SUPER }>> =
+        const rationalMonzos: Array<RationalMonzo<{ irrational: false, rough: 5, direction: Direction.SUPER }>> =
             originalRatios.map((
-                ratio: Ratio<{ potentiallyIrrational: false, rough: 5, direction: Direction.SUPER }>,
-            ): Monzo<{ potentiallyIrrational: false, rough: 5, direction: Direction.SUPER }> => {
-                return computeMonzoFromRatio(ratio)
+                rationalRatio: RationalRatio<{ irrational: false, rough: 5, direction: Direction.SUPER }>,
+            ): RationalMonzo<{ irrational: false, rough: 5, direction: Direction.SUPER }> => {
+                return computeRationalMonzoFromRationalRatio(rationalRatio)
             })
-        const ratios: Array<Ratio<{ rough: 5, direction: Direction.SUPER }>> = monzos.map((
-            monzo: Monzo<{ rough: 5, direction: Direction.SUPER }>,
-        ): Ratio<{ rough: 5, direction: Direction.SUPER }> => {
-            return computeRatioFromMonzo(monzo)
+        const rationalRatios: Array<RationalRatio<{ rough: 5, direction: Direction.SUPER }>> = rationalMonzos.map((
+            rationalMonzo: RationalMonzo<{ rough: 5, direction: Direction.SUPER }>,
+        ): RationalRatio<{ rough: 5, direction: Direction.SUPER }> => {
+            return computeRatioFromMonzo(rationalMonzo)
         })
 
-        expect(ratios).toEqual(originalRatios)
+        expect(rationalRatios).toEqual(originalRatios)
     })
 
     it("is the case that the fractional ranks are correct", (): void => {

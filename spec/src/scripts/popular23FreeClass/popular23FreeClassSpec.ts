@@ -1,4 +1,4 @@
-import { Cents, Id, Index, Monzo, Rank, TwoThreeFreeClass } from "../../../../src/general"
+import { Cents, Id, Index, Rank, RationalMonzo, TwoThreeFreeClass } from "../../../../src/general"
 import { Popularity, Votes } from "../../../../src/general/music"
 import { N2D3P9 } from "../../../../src/sagittal/ji/twoThreeFreeClass/n2d3p9"
 import { SymbolClass, SymbolSubset } from "../../../../src/sagittal/notations"
@@ -34,7 +34,7 @@ describe("computePopular23FreeClass", (): void => {
             popularityRank: 2 as Rank<Popularity>,
             votes: 5371 as Votes,
             bestNotatingCommaCents: 21.506290 as Cents,
-            bestNotatingCommaMonzo: [-4, 4, -1] as Monzo,
+            bestNotatingCommaMonzo: [-4, 4, -1] as RationalMonzo,
             bestNotatingCommaMaybeSymbolClassId: 44 as Id<SymbolClass>,
         }
         expect(actual).toBeCloseToObject(expected)

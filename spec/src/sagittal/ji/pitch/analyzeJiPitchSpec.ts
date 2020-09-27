@@ -2,13 +2,13 @@ import {
     Abs,
     Cents,
     Copfr,
-    DecimalNotDefaultingToPotentiallyIrrational,
+    Decimal,
     Direction,
     Exponent,
     Integer,
-    Monzo,
     Prime,
-    Ratio,
+    RationalMonzo,
+    RationalRatio,
     Sopfr,
 } from "../../../../../src/general"
 import { ApotomeSlope, N2D3P9, TwoThreeFreeClassAnalysis } from "../../../../../src/sagittal"
@@ -16,21 +16,21 @@ import { analyzeJiPitch } from "../../../../../src/sagittal/ji"
 
 describe("analyzeJiPitch", (): void => {
     it("returns an analysis of a JI pitch, given its monzo", (): void => {
-        const jiPitch = { monzo: [-7, -6, 3, 5, -1] as Monzo }
+        const jiPitch = { monzo: [-7, -6, 3, 5, -1] as RationalMonzo }
 
         const actual = analyzeJiPitch(jiPitch)
 
         const expected = {
             cents: 1240.022726 as Cents,
-            monzo: [-7, -6, 3, 5, -1] as Monzo,
-            ratio: [2100875, 1026432] as Ratio,
-            decimal: 2.046775 as DecimalNotDefaultingToPotentiallyIrrational,
+            monzo: [-7, -6, 3, 5, -1] as RationalMonzo,
+            ratio: [2100875, 1026432] as RationalRatio,
+            decimal: 2.046775 as Decimal,
             apotomeSlope: -82.352717 as ApotomeSlope,
             ate: 6 as Abs<Integer & Exponent<3 & Prime>>,
             aas: 82.352717 as Abs<ApotomeSlope>,
             twoThreeFreeClassAnalysis: {
                 twoThreeFreePrimeLimit: 11 as Prime,
-                monzo: [0, 0, 3, 5, -1] as Monzo<{ rough: 5, direction: Direction.SUPER }>,
+                monzo: [0, 0, 3, 5, -1] as RationalMonzo<{ rough: 5, direction: Direction.SUPER }>,
                 twoThreeFreeCopfr: 9 as Copfr<{ rough: 5 }>,
                 twoThreeFreeSopfr: 61 as Sopfr<{ rough: 5 }>,
                 n2d3p9: 36777.470341 as N2D3P9,

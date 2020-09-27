@@ -9,11 +9,11 @@ import {
     Integer,
     Io,
     ioSettings,
-    Monzo,
     Name,
     NEWLINE,
     Prime,
-    Ratio,
+    RationalMonzo,
+    RationalRatio,
     TableFormat,
 } from "../../../../../../src/general"
 import { ApotomeSlope, CommaAnalysis } from "../../../../../../src/sagittal/ji"
@@ -26,8 +26,8 @@ describe("computeNotatingCommasOutput", (): void => {
         {
             name: "11M" as Name<Comma>,
             cents: 45.45 as Cents,
-            monzo: [0, 0, 1] as Monzo,
-            ratio: [33, 32] as Ratio,
+            monzo: [0, 0, 1] as RationalMonzo,
+            ratio: [33, 32] as RationalRatio,
             apotomeSlope: -4 as ApotomeSlope,
             aas: 4 as Abs<ApotomeSlope>,
             ate: 0 as Abs<Integer & Exponent<3 & Prime>>,
@@ -36,8 +36,8 @@ describe("computeNotatingCommasOutput", (): void => {
         {
             name: "25/49M" as Name<Comma>,
             cents: 33.4 as Cents,
-            monzo: [1, 0, 2, -2] as Monzo,
-            ratio: [50, 49] as Ratio,
+            monzo: [1, 0, 2, -2] as RationalMonzo,
+            ratio: [50, 49] as RationalRatio,
             apotomeSlope: -2.154 as ApotomeSlope,
             aas: 2.154 as Abs<ApotomeSlope>,
             ate: 0 as Abs<Integer & Exponent<3 & Prime>>,

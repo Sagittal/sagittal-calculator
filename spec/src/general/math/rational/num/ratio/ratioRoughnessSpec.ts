@@ -1,31 +1,31 @@
-import { FIVE_ROUGHNESS, Ratio, Roughness } from "../../../../../../../src/general/math"
-import { computeRoughRatio, isRoughRatio } from "../../../../../../../src/general/math/rational/num/ratio"
+import { FIVE_ROUGHNESS, RationalRatio, Roughness } from "../../../../../../../src/general/math"
+import { computeRoughRationalRatio, isRoughRationalRatio } from "../../../../../../../src/general/math/rational/num/ratio"
 
-describe("isRoughRatio", (): void => {
+describe("isRoughRationalRatio", (): void => {
     it("returns true if the ratio is to the requested roughness", (): void => {
-        const ratio = [7, 5] as Ratio
+        const rationalRatio = [7, 5] as RationalRatio
 
-        const actual = isRoughRatio(ratio, FIVE_ROUGHNESS)
+        const actual = isRoughRationalRatio(rationalRatio, FIVE_ROUGHNESS)
 
         expect(actual).toBeTruthy()
     })
 
     it("returns false if the ratio is not to the requested roughness", (): void => {
-        const ratio = [7, 5] as Ratio
+        const rationalRatio = [7, 5] as RationalRatio
 
-        const actual = isRoughRatio(ratio, 11 as 11 & Roughness)
+        const actual = isRoughRationalRatio(rationalRatio, 11 as 11 & Roughness)
 
         expect(actual).toBeFalsy()
     })
 })
 
-describe("computeRoughRatio", (): void => {
+describe("computeRoughRationalRatio", (): void => {
     it("roughens the ratio to the desired roughness", (): void => {
-        const ratio = [7, 5] as Ratio
+        const rationalRatio = [7, 5] as RationalRatio
 
-        const actual = computeRoughRatio(ratio, 7 as 7 & Roughness)
+        const actual = computeRoughRationalRatio(rationalRatio, 7 as 7 & Roughness)
 
-        const expected = [7, 1] as Ratio<{ rough: 7 }>
+        const expected = [7, 1] as RationalRatio<{ rough: 7 }>
         expect(actual).toEqual(expected)
     })
 })

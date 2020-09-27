@@ -2,7 +2,7 @@ import { Direction, Integer, NumTypeParameters, RationalNum } from "../../math"
 import { Cents } from "../types"
 
 type Comma<T extends NumTypeParameters = {}> =
-    RationalNum<T & { potentiallyIrrational: false }>
+    RationalNum<T>
     & { _CommaBrand: boolean }
 
 // TODO: 2,3-free class maybe should have a name, like comma does?

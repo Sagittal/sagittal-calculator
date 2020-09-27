@@ -1,4 +1,4 @@
-import { Comma, Monzo } from "../../../../../../src/general"
+import { Comma, RationalMonzo } from "../../../../../../src/general"
 import { computeCommaName } from "../../../../../../src/sagittal/ji/comma/name"
 
 describe("computeCommaName", (): void => {
@@ -77,7 +77,7 @@ describe("computeCommaName", (): void => {
     )
 
     it("works when the monzo is empty", (): void => {
-        const comma = { monzo: [] as Monzo } as Comma
+        const comma = { monzo: [] as RationalMonzo } as Comma
 
         const actual = computeCommaName(comma)
 
@@ -86,13 +86,13 @@ describe("computeCommaName", (): void => {
     })
 
     it("assigns the correct size category", (): void => {
-        expect(computeCommaName({ monzo: [12, -2, -1, -1, 0, -1] as Monzo } as Comma)).toBe("1/455n")
-        expect(computeCommaName({ monzo: [-15, 8, 1] as Monzo } as Comma)).toBe("5s")
-        expect(computeCommaName({ monzo: [-7, 7, 0, 0, 0, 0, -1] as Monzo } as Comma)).toBe("1/17k")
-        expect(computeCommaName({ monzo: [-12, 5, 0, 0, 0, 0, 1] as Monzo } as Comma)).toBe("17C")
-        expect(computeCommaName({ monzo: [1, -2, -1, 0, 0, 0, 0, 0, 1] as Monzo } as Comma)).toBe("23/5S")
-        expect(computeCommaName({ monzo: [7, -3, 1, 0, 0, 0, 0, 0, -1] as Monzo } as Comma)).toBe("5/23M")
-        expect(computeCommaName({ monzo: [-18, 10, -1, 0, 0, 0, 0, 0, 1] as Monzo } as Comma)).toBe("23/5L")
+        expect(computeCommaName({ monzo: [12, -2, -1, -1, 0, -1] as RationalMonzo } as Comma)).toBe("1/455n")
+        expect(computeCommaName({ monzo: [-15, 8, 1] as RationalMonzo } as Comma)).toBe("5s")
+        expect(computeCommaName({ monzo: [-7, 7, 0, 0, 0, 0, -1] as RationalMonzo } as Comma)).toBe("1/17k")
+        expect(computeCommaName({ monzo: [-12, 5, 0, 0, 0, 0, 1] as RationalMonzo } as Comma)).toBe("17C")
+        expect(computeCommaName({ monzo: [1, -2, -1, 0, 0, 0, 0, 0, 1] as RationalMonzo } as Comma)).toBe("23/5S")
+        expect(computeCommaName({ monzo: [7, -3, 1, 0, 0, 0, 0, 0, -1] as RationalMonzo } as Comma)).toBe("5/23M")
+        expect(computeCommaName({ monzo: [-18, 10, -1, 0, 0, 0, 0, 0, 1] as RationalMonzo } as Comma)).toBe("23/5L")
     })
 
     it("says 'down' when the comma is negative", (): void => {

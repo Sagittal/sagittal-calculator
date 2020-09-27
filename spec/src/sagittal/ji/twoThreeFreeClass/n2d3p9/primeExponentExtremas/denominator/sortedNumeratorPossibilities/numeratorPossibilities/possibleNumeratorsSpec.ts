@@ -1,4 +1,4 @@
-import { Max, Numerator } from "../../../../../../../../../../src/general/math"
+import { Max, RationalNumerator } from "../../../../../../../../../../src/general/math"
 import { N2D3P9 } from "../../../../../../../../../../src/sagittal/ji/twoThreeFreeClass/n2d3p9"
 import { computePossibleNumeratorsGivenMaxN2D3P9 } from "../../../../../../../../../../src/sagittal/ji/twoThreeFreeClass/n2d3p9/primeExponentExtremas/denominator/sortedNumeratorPossibilities/numeratorPossibilities/possibleNumerators"
 
@@ -9,13 +9,13 @@ describe("computePossibleNumeratorsGivenMaxN2D3P9", (): void => {
         const actual = computePossibleNumeratorsGivenMaxN2D3P9(maxN2D3P9)
 
         const expected = [
-            7 as Numerator,
-            11 as Numerator,
-            13 as Numerator,
-            17 as Numerator,
-            19 as Numerator,
-            23 as Numerator,
-            25 as Numerator,
+            7 as RationalNumerator,
+            11 as RationalNumerator,
+            13 as RationalNumerator,
+            17 as RationalNumerator,
+            19 as RationalNumerator,
+            23 as RationalNumerator,
+            25 as RationalNumerator,
         ]
         expect(actual).toEqual(expected)
     })

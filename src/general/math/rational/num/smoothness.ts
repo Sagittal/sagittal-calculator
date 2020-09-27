@@ -3,8 +3,8 @@ import { NumTypeParameters } from "../../num"
 import { max } from "../../typedOperations"
 import { computeGpf } from "../gpf"
 import { Integer, Primes, Smoothness } from "../types"
-import { isSmoothMonzo } from "./monzo"
-import { computeRatioFromRationalDecimal, isSmoothRatio } from "./ratio"
+import { isSmoothRationalMonzo } from "./monzo"
+import { computeRationalRatioFromRationalDecimal, isSmoothRationalRatio } from "./ratio"
 import { RationalNum } from "./types"
 
 const isSmoothRationalNum = <S extends Primes, T extends NumTypeParameters>(
@@ -14,14 +14,14 @@ const isSmoothRationalNum = <S extends Primes, T extends NumTypeParameters>(
     let { monzo, ratio, decimal } = rationalNum
 
     if (isUndefined(monzo) && isUndefined(ratio) && !isUndefined(decimal)) {
-        return isSmoothRatio(
-            computeRatioFromRationalDecimal(decimal),
+        return isSmoothRationalRatio(
+            computeRationalRatioFromRationalDecimal(decimal),
             smoothness as S & Integer as S & Smoothness,
         )
     }
 
-    return (!isUndefined(monzo) && isSmoothMonzo(monzo, smoothness as S & Integer as S & Smoothness)) ||
-        (!isUndefined(ratio) && isSmoothRatio(ratio, smoothness as S & Integer as S & Smoothness))
+    return (!isUndefined(monzo) && isSmoothRationalMonzo(monzo, smoothness as S & Integer as S & Smoothness)) ||
+        (!isUndefined(ratio) && isSmoothRationalRatio(ratio, smoothness as S & Integer as S & Smoothness))
 }
 
 const computeRationalNumSmoothness = <S extends Primes, T extends NumTypeParameters>(
@@ -32,7 +32,7 @@ const computeRationalNumSmoothness = <S extends Primes, T extends NumTypeParamet
     }
 
     if (isUndefined(ratio) && !isUndefined(decimal)) {
-        ratio = computeRatioFromRationalDecimal(decimal)
+        ratio = computeRationalRatioFromRationalDecimal(decimal)
     }
 
     const [numerator, denominator] = ratio

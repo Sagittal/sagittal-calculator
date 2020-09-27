@@ -1,4 +1,4 @@
-export { DecimalNotDefaultingToPotentiallyIrrational, Decimal, PotentiallyIrrationalNumByDecimal } from "./types"
+export { Decimal, NumByDecimal } from "./types"
 export { computeDecimalFromNum } from "./decimalFromNum"
 export { computeDecimalFromMonzo } from "./decimalFromMonzo"
 export { computeDecimalFromRatio } from "./decimalFromRatio"

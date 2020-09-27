@@ -4,10 +4,9 @@ import { RationalNumByMonzo } from "./monzo"
 import { RationalNumByRatio } from "./ratio"
 
 type RationalNum<T extends NumTypeParameters = {}> =
-    RationalNumByDecimal<T & { potentiallyIrrational: false }> |
-    RationalNumByMonzo<T & { potentiallyIrrational: false }> |
-    RationalNumByRatio<T & { potentiallyIrrational: false }>
-
+    RationalNumByDecimal<T> |
+    RationalNumByMonzo<T> |
+    RationalNumByRatio<T>
 
 export {
     RationalNum,

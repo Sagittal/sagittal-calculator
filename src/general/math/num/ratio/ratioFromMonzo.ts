@@ -1,12 +1,22 @@
-import { MAX_JAVASCRIPT_INTEGER_VALUE } from "../../../../code"
-import { formatMonzo } from "../../../../io"
-import { Denominator, MonzoNotDefaultingToRational, Numerator, NumTypeParameters, Ratio } from "../../../num"
-import { Exponent } from "../../../types"
-import { PRIMES } from "../../primes"
-import { Prime } from "../../types"
+import { MAX_JAVASCRIPT_INTEGER_VALUE } from "../../../code"
+import { formatMonzo } from "../../../io"
+import { Prime, PRIMES, RationalMonzo, RationalRatio } from "../../rational"
+import { Exponent } from "../../types"
+import { Monzo } from "../monzo"
+import { NumTypeParameters } from "../types"
+import { Denominator, Numerator, Ratio } from "./types"
 
-const computeRatioFromMonzo = <T extends NumTypeParameters>(
-    monzo: MonzoNotDefaultingToRational<T>,
+const computeRatioFromMonzo: {
+    <T extends NumTypeParameters>(
+        rationalMonzo: RationalMonzo<T>,
+        { disableErrorBecauseExactValueNotRequired }?: { disableErrorBecauseExactValueNotRequired?: boolean },
+    ): RationalRatio<T>,
+    <T extends NumTypeParameters>(
+        monzo: Monzo<T>,
+        { disableErrorBecauseExactValueNotRequired }?: { disableErrorBecauseExactValueNotRequired?: boolean },
+    ): Ratio<T>,
+} = <T extends NumTypeParameters>(
+    monzo: Monzo<T>,
     { disableErrorBecauseExactValueNotRequired }: { disableErrorBecauseExactValueNotRequired?: boolean } = {},
 ): Ratio<T> => {
     let numerator: Numerator<T> = 1 as Numerator<T>

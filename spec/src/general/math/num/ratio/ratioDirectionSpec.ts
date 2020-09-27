@@ -1,12 +1,6 @@
 import { computeSuperRatio, Direction } from "../../../../../../src/general/math"
-import {
-    Denominator,
-    isSubRatio,
-    isSuperRatio,
-    isUnisonRatio,
-    Numerator,
-    Ratio,
-} from "../../../../../../src/general/math/num/ratio"
+import { isSubRatio, isSuperRatio, isUnisonRatio, Ratio } from "../../../../../../src/general/math/num/ratio"
+import { Denominator, Numerator } from "../../../../../../src/general/math/num/ratio/types"
 
 describe("isSuperRatio", (): void => {
     it("returns true if n > d", (): void => {
@@ -108,7 +102,7 @@ describe("computeSuperRatio", (): void => {
     const expected = [5, 4] as Ratio<{ direction: Direction.SUPER }>
 
     it("returns the ratio unchanged if the numerator is already greater than the denominator", (): void => {
-        const ratio = [5, 4] as Ratio
+        const ratio = [5, 4] as Ratio<{ direction: Direction.SUB }>
 
         const actual = computeSuperRatio(ratio)
 
@@ -116,7 +110,7 @@ describe("computeSuperRatio", (): void => {
     })
 
     it("returns the reciprocal of the ratio if the numerator is lesser than the denominator", (): void => {
-        const ratio = [4, 5] as Ratio
+        const ratio = [4, 5] as Ratio<{ direction: Direction.SUB }>
 
         const actual = computeSuperRatio(ratio)
 

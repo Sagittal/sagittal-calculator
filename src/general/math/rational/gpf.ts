@@ -1,7 +1,7 @@
 import { computeTrimmedArray, indexOfFinalElement, isEmpty } from "../../code"
-import { Monzo, NumTypeParameters } from "../num"
+import { NumTypeParameters } from "../num"
 import { Max } from "../types"
-import { computeMonzoFromIntegerOrMonzo } from "./num"
+import { computeIntegerMonzoFromIntegerOrMonzo, RationalMonzo } from "./num"
 import { PRIMES } from "./primes"
 import { Integer, Prime, Smoothness } from "./types"
 
@@ -20,9 +20,9 @@ import { Integer, Prime, Smoothness } from "./types"
 //  And sometimes when I want say a half-apotome, the thing I'm dividing by is just the number 2...
 //  So if I don't want to find myself passing it { decimal: 2 } instead of the simpler plain old 2, I would want that
 const computeGpf = <T extends NumTypeParameters>(
-    integerOrMonzo: Integer<T> | Monzo<T>,
+    integerOrMonzo: Integer<T> | RationalMonzo<T>,
 ): Max<Prime> | Smoothness => {
-    const monzo = computeMonzoFromIntegerOrMonzo(integerOrMonzo)
+    const monzo = computeIntegerMonzoFromIntegerOrMonzo(integerOrMonzo)
     const trimmedMonzo = computeTrimmedArray(monzo)
 
     if (isEmpty(trimmedMonzo)) {

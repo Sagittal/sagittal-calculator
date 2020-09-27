@@ -1,14 +1,13 @@
 import {
     Comma,
-    computeMonzoFromInteger,
-    computeRatioFromRationalNum,
-    computeRoughRatio,
+    computeIntegerMonzoFromInteger,
+    computeRationalRatioFromRationalNum,
+    computeRoughRationalRatio,
     computeSubRatio,
     computeSuperNum,
     Direction,
     Exponent,
     FIVE_ROUGHNESS,
-    FractionalPart,
     Integer,
     isSubNum,
     isUnisonNum,
@@ -16,7 +15,8 @@ import {
     Name,
     Prime,
     PRIMES,
-    Ratio,
+    RationalFractionalPart,
+    RationalRatio,
     stringify,
     SUPERSCRIPT_NUMS,
     THREE_PRIME_LIMIT,
@@ -25,10 +25,10 @@ import { computeSizeCategory } from "./sizeCategory"
 import { isCommaSized } from "./typeGuards"
 import { CommaNameOptions, CommaNameRatio, SizeCategoryAbbreviation, SizeCategoryName } from "./types"
 
-const primeFactorize = (numeratorOrDenominator: FractionalPart): string => {
+const primeFactorize = (numeratorOrDenominator: RationalFractionalPart): string => {
     if (numeratorOrDenominator === 1) return "1"
 
-    const monzo = computeMonzoFromInteger(numeratorOrDenominator)
+    const monzo = computeIntegerMonzoFromInteger(numeratorOrDenominator)
     const factorizedTerms: string[] = []
 
     monzo.forEach((primeExponent: Integer & Exponent<Prime>, primeExponentIndex: number): void => {
@@ -48,10 +48,10 @@ const primeFactorize = (numeratorOrDenominator: FractionalPart): string => {
     return factorizedTerms.join(".")
 }
 
-const stringifyRatio = (ratio: Ratio, { factored }: { factored: boolean }): string[] => {
+const stringifyRatio = (rationalRatio: RationalRatio, { factored }: { factored: boolean }): string[] => {
     return factored ?
-        ratio.map(primeFactorize) :
-        ratio.map((fractionalPart: FractionalPart): string => fractionalPart.toString())
+        rationalRatio.map(primeFactorize) :
+        rationalRatio.map((rationalFractionalPart: RationalFractionalPart): string => rationalFractionalPart.toString())
 }
 
 // "Secor-Keenan systematic name" or "Sagittal name"
@@ -76,7 +76,7 @@ const computeCommaName = (
         formattedCommaNameRatio = "3"
     } else {
         const commaNameRatio: CommaNameRatio =
-            computeRoughRatio(computeRatioFromRationalNum(superComma), FIVE_ROUGHNESS) as CommaNameRatio
+            computeRoughRationalRatio(computeRationalRatioFromRationalNum(superComma), FIVE_ROUGHNESS) as CommaNameRatio
 
         if (directed) {
             const stringifiedRatio = stringifyRatio(commaNameRatio, { factored })

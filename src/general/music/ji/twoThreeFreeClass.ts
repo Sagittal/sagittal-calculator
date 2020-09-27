@@ -1,9 +1,9 @@
 import { isUndefined } from "../../code"
 import {
     computeDecimalFromRatio,
-    computeRatioFromRationalDecimal,
-    computeRoughMonzo,
-    computeRoughRatio,
+    computeRationalRatioFromRationalDecimal,
+    computeRoughRationalMonzo,
+    computeRoughRationalRatio,
     computeSuperMonzo,
     computeSuperRatio,
     FIVE_ROUGHNESS,
@@ -19,18 +19,18 @@ const compute23FreeClass = <T extends NumTypeParameters>(
     const twoThreeFreeClass = {} as TwoThreeFreeClass
 
     if (!isUndefined(monzo)) {
-        const twoThreeFreeMonzo = computeRoughMonzo(monzo, FIVE_ROUGHNESS)
+        const twoThreeFreeMonzo = computeRoughRationalMonzo(monzo, FIVE_ROUGHNESS)
         twoThreeFreeClass.monzo = computeSuperMonzo(twoThreeFreeMonzo)
     }
 
     if (!isUndefined(ratio)) {
-        const twoThreeFreeRatio = computeRoughRatio(ratio, FIVE_ROUGHNESS)
+        const twoThreeFreeRatio = computeRoughRationalRatio(ratio, FIVE_ROUGHNESS)
         twoThreeFreeClass.ratio = computeSuperRatio(twoThreeFreeRatio)
     }
 
     if (!isUndefined(decimal)) {
-        const ratio = computeRatioFromRationalDecimal(decimal)
-        const twoThreeFreeRatio = computeRoughRatio(ratio, FIVE_ROUGHNESS)
+        const ratio = computeRationalRatioFromRationalDecimal(decimal)
+        const twoThreeFreeRatio = computeRoughRationalRatio(ratio, FIVE_ROUGHNESS)
         const super23FreeRatio = computeSuperRatio(twoThreeFreeRatio)
         const super23FreeDecimal = computeDecimalFromRatio(super23FreeRatio)
 

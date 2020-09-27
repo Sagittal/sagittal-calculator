@@ -4,12 +4,12 @@ import {
     Integer,
     Io,
     Monzo,
-    MonzoNotDefaultingToRational,
     Num,
     parseInteger,
     parseMonzo,
     parseRatio,
-    RatioNotDefaultingToRational,
+    Ratio,
+    RationalMonzo,
 } from "../../../general"
 import { computeMonzoFrom23FreeClassAndSizeCategoryName, parseCommaName, parsePitch } from "../../../sagittal"
 
@@ -18,17 +18,17 @@ const readJiPitchOptions = (): void => {
         .option(
             `-${CommandFlag.MONZO}, --monzo <monzo>`,
             "monzo",
-            (monzoIo: string): MonzoNotDefaultingToRational => parseMonzo(monzoIo as Io),
+            (monzoIo: string): Monzo => parseMonzo(monzoIo as Io),
         )
         .option(
             `-${CommandFlag.RATIO}, --ratio <ratio>`,
             "ratio",
-            (ratioIo: string): RatioNotDefaultingToRational => parseRatio(ratioIo as Io),
+            (ratioIo: string): Ratio => parseRatio(ratioIo as Io),
         )
         .option(
             `-${CommandFlag.COMMA_NAME}, --comma-name <commaName>`,
             "comma name",
-            (commaNameIo: string): Monzo => {
+            (commaNameIo: string): RationalMonzo => {
                 return computeMonzoFrom23FreeClassAndSizeCategoryName(parseCommaName(commaNameIo as Io))
             },
         )

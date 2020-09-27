@@ -12,7 +12,6 @@ const JI_PITCH_COLUMN_TITLES: Record<JiPitchField, Io> = {
     [ JiPitchField.ATE ]: "ATE" as Io,
 }
 
-// tslint:disable-next-line max-line-length
 const TWO_THREE_FREE_CLASS_COLUMN_TITLES: Record<TwoThreeFreeClassField, Io> = {
     [ TwoThreeFreeClassField.TWO_THREE_FREE_PRIME_LIMIT ]: "prime limit" as Io,
     [ TwoThreeFreeClassField.TWO_THREE_FREE_CLASS_NAME ]: "name" as Io,

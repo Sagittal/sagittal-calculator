@@ -1,30 +1,30 @@
 import { isUndefined } from "../../../../code"
 import { formatNum } from "../../../../io"
-import { NumTypeParameters, Ratio } from "../../../num"
+import { computeRatioFromMonzo, NumTypeParameters } from "../../../num"
 import { RationalNum } from "../types"
-import { computeLowestTermsRatio } from "./lowestTerms"
-import { computeRatioFromMonzo } from "./ratioFromMonzo"
-import { computeRatioFromRationalDecimal } from "./ratioFromRationalDecimal"
+import { computeLowestTermsRationalRatio } from "./lowestTerms"
+import { computeRationalRatioFromRationalDecimal } from "./ratioFromRationalDecimal"
+import { RationalRatio } from "./types"
 
-const computeRatioFromRationalNum = <T extends NumTypeParameters>(
+const computeRationalRatioFromRationalNum = <T extends NumTypeParameters>(
     rationalNum: RationalNum<T>,
-): Ratio<T> => {
+): RationalRatio<T> => {
     const { monzo, ratio, decimal } = rationalNum
 
-    let outputRatio: Ratio<T>
+    let rationalRatio: RationalRatio<T>
     if (!isUndefined(ratio)) {
-        outputRatio = ratio
+        rationalRatio = ratio
     } else if (!isUndefined(monzo)) {
-        outputRatio = computeRatioFromMonzo(monzo)
+        rationalRatio = computeRatioFromMonzo(monzo)
     } else if (!isUndefined(decimal)) {
-        outputRatio = computeRatioFromRationalDecimal(decimal)
+        rationalRatio = computeRationalRatioFromRationalDecimal(decimal)
     } else {
         throw new Error(`Tried to compute ratio from rational num ${formatNum(rationalNum)} but it had no numeric members.`)
     }
 
-    return computeLowestTermsRatio(outputRatio)
+    return computeLowestTermsRationalRatio(rationalRatio)
 }
 
 export {
-    computeRatioFromRationalNum,
+    computeRationalRatioFromRationalNum,
 }

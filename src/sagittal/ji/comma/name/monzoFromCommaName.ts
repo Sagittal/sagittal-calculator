@@ -1,16 +1,16 @@
-import { computeMonzoFromRatio, Monzo } from "../../../../general"
+import { computeRationalMonzoFromRationalRatio, RationalMonzo } from "../../../../general"
 import { computeNotatingCommas } from "../find"
 import { computeSizeCategoryExtrema } from "./sizeCategoryExtrema"
 import { CommaNameRatio, SizeCategoryName } from "./types"
 
 const computeMonzoFrom23FreeClassAndSizeCategoryName = (
     parsedCommaName: { commaNameRatio: CommaNameRatio, sizeCategoryName: SizeCategoryName },
-): Monzo => {
+): RationalMonzo => {
     const { commaNameRatio, sizeCategoryName } = parsedCommaName
 
     const [lowerBound, upperBound] = computeSizeCategoryExtrema(sizeCategoryName)
 
-    const twoThreeFreeMonzo = computeMonzoFromRatio(commaNameRatio)
+    const twoThreeFreeMonzo = computeRationalMonzoFromRationalRatio(commaNameRatio)
     const commas = computeNotatingCommas({ monzo: twoThreeFreeMonzo }, { lowerBound, upperBound })
 
     if (commas.length !== 1) {

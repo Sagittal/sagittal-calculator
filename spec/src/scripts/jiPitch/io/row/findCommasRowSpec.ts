@@ -7,10 +7,10 @@ import {
     Exponent,
     Id,
     Integer,
-    Monzo,
     Name,
     Prime,
-    Ratio,
+    RationalMonzo,
+    RationalRatio,
     Row,
     Sopfr,
 } from "../../../../../../src/general"
@@ -25,8 +25,8 @@ describe("computeFindCommasRow", (): void => {
     // Only the name is important as it is used to find the symbol.
     const commaAnalysis: CommaAnalysis = {
         cents: 11.2 as Cents,
-        monzo: [0, -1, 1] as Monzo,
-        ratio: [5, 4] as Ratio,
+        monzo: [0, -1, 1] as RationalMonzo,
+        ratio: [5, 4] as RationalRatio,
         name: "1/5C" as Name<Comma>,
         apotomeSlope: 8.2 as ApotomeSlope,
         aas: 8.2 as Abs<ApotomeSlope>,
@@ -35,7 +35,7 @@ describe("computeFindCommasRow", (): void => {
             twoThreeFreePrimeLimit: 14 as Prime,
             twoThreeFreeCopfr: 1 as Copfr<{ rough: 5 }>,
             twoThreeFreeSopfr: 13 as Sopfr<{ rough: 5 }>,
-            monzo: [0, 0, 1] as Monzo<{ rough: 5, direction: Direction.SUPER }>,
+            monzo: [0, 0, 1] as RationalMonzo<{ rough: 5, direction: Direction.SUPER }>,
             n2d3p9: 18.4567 as N2D3P9,
         } as TwoThreeFreeClassAnalysis,
     } as CommaAnalysis

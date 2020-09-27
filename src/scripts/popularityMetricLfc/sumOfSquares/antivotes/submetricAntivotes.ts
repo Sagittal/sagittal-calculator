@@ -8,9 +8,9 @@ import {
     Integer,
     isUndefined,
     log,
-    Monzo,
     Prime,
     PRIMES,
+    RationalMonzo,
     stringify,
 } from "../../../../general"
 import { Antivotes, ParameterValue, Submetric } from "../types"
@@ -22,7 +22,7 @@ import { secondaryParameterOverride } from "./secondaryParameter"
 // (maybe with (maybe adjusted) repetition)
 
 const computeSubmetricAntivotes = (
-    twoThreeFreeNumberMonzo: Monzo,
+    twoThreeFreeNumberMonzo: RationalMonzo,
     submetric: Submetric = {},
     fractionalPartType?: FractionalPartType,
 ): Antivotes => {

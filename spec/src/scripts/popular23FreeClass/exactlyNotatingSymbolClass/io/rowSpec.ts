@@ -1,7 +1,7 @@
-import { Id, Index, Ranked } from "../../../../../../src/general"
+import { Id, Index, Ranked, RationalMonzo } from "../../../../../../src/general"
 import { Rank } from "../../../../../../src/general/code"
 import { Row } from "../../../../../../src/general/io/table"
-import { Direction, Monzo } from "../../../../../../src/general/math/num"
+import { Direction } from "../../../../../../src/general/math/num"
 import { Popularity, Votes } from "../../../../../../src/general/music/ji"
 import { N2D3P9 } from "../../../../../../src/sagittal/ji/twoThreeFreeClass/n2d3p9"
 import { SymbolClass, SymbolSubset } from "../../../../../../src/sagittal/notations"
@@ -23,7 +23,7 @@ describe("computePopular23FreeClassWithExactlyNotatingSymbolClassRow", (): void 
             n2d3p9: 2 as N2D3P9,
             votes: 7 as Votes,
             popularityRank: 3 as Rank<Popularity>,
-            monzo: [0, 0, -1, 1] as Monzo<{ rough: 5, direction: Direction.SUPER }>,
+            monzo: [0, 0, -1, 1] as RationalMonzo<{ rough: 5, direction: Direction.SUPER }>,
         }
 
         const actual = computePopular23FreeClassWithExactlyNotatingSymbolClassRow(

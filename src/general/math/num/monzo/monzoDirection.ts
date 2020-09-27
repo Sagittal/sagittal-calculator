@@ -1,33 +1,40 @@
 import { MULTIPLICATIVE_IDENTITY } from "../../constants"
-import { Prime } from "../../rational"
+import { Prime, RationalMonzo } from "../../rational"
 import { Exponent } from "../../types"
 import { computeDecimalFromMonzo } from "../decimal"
 import { Direction, NumTypeParameters } from "../types"
-import { Monzo, MonzoNotDefaultingToRational } from "./types"
+import { Monzo } from "./types"
 
 const isSubMonzo = <T extends NumTypeParameters>(
-    monzo: MonzoNotDefaultingToRational<T>,
-): monzo is Monzo<T & { direction: Direction.SUB }> => {
-    if (monzo.length && monzo.every((term: Exponent<Prime>): boolean => term >= 0)) return false
-    if (monzo.length && monzo.every((term: Exponent<Prime>): boolean => term <= 0)) return true
+    candidateSubMonzo: Monzo<T>,
+): candidateSubMonzo is Monzo<T & { direction: Direction.SUB }> => {
+    if (candidateSubMonzo.length && candidateSubMonzo.every((term: Exponent<Prime>): boolean => term >= 0)) return false
+    if (candidateSubMonzo.length && candidateSubMonzo.every((term: Exponent<Prime>): boolean => term <= 0)) return true
 
-    return computeDecimalFromMonzo(monzo) < MULTIPLICATIVE_IDENTITY
+    return computeDecimalFromMonzo(candidateSubMonzo) < MULTIPLICATIVE_IDENTITY
 }
 
 const isSuperMonzo = <T extends NumTypeParameters>(
-    monzo: MonzoNotDefaultingToRational<T>,
-): monzo is Monzo<T & { direction: Direction.SUPER }> => {
-    return !(isUnisonMonzo(monzo) || isSubMonzo(monzo))
+    candidateSuperMonzo: Monzo<T>,
+): candidateSuperMonzo is Monzo<T & { direction: Direction.SUPER }> => {
+    return !(isUnisonMonzo(candidateSuperMonzo) || isSubMonzo(candidateSuperMonzo))
 }
 
 const isUnisonMonzo = <T extends NumTypeParameters>(
-    monzo: MonzoNotDefaultingToRational<T>,
-): monzo is Monzo<T & { direction: Direction.UNISON }> => {
-    return monzo.every((term: Exponent<Prime>): boolean => term === 0)
+    candidateUnisonMonzo: Monzo<T>,
+): candidateUnisonMonzo is Monzo<T & { direction: Direction.UNISON }> => {
+    return candidateUnisonMonzo.every((term: Exponent<Prime>): boolean => term === 0)
 }
 
-const computeSuperMonzo = <T extends NumTypeParameters>(
-    monzo: MonzoNotDefaultingToRational<T>,
+const computeSuperMonzo: {
+    <T extends NumTypeParameters>(
+        rationalMonzo: RationalMonzo<T>,
+    ): RationalMonzo<T & { direction: Direction.SUPER, integer: false }>,
+    <T extends NumTypeParameters>(
+        monzo: Monzo<T>,
+    ): Monzo<T & { direction: Direction.SUPER, integer: false }>,
+} = <T extends NumTypeParameters>(
+    monzo: Monzo<T>,
 ): Monzo<T & { direction: Direction.SUPER, integer: false }> => {
     if (isSubMonzo(monzo)) {
         return invertMonzo(monzo) as Monzo<T & { direction: Direction.SUPER, integer: false }>
@@ -38,15 +45,24 @@ const computeSuperMonzo = <T extends NumTypeParameters>(
 
 const invertMonzo: {
     <T extends NumTypeParameters & { direction: Direction.SUPER }>(
-        monzo: MonzoNotDefaultingToRational<T>,
+        rationalMonzo: RationalMonzo<T>,
+    ): RationalMonzo<T & { direction: Direction.SUB, integer: false }>,
+    <T extends NumTypeParameters & { direction: Direction.SUB }>(
+        rationalMonzo: RationalMonzo<T>,
+    ): RationalMonzo<T & { direction: Direction.SUPER, integer: false }>,
+    <T extends NumTypeParameters>(
+        rationalMonzo: RationalMonzo<T>,
+    ): RationalMonzo<T & { integer: false }>,
+    <T extends NumTypeParameters & { direction: Direction.SUPER }>(
+        monzo: Monzo<T>,
     ): Monzo<T & { direction: Direction.SUB, integer: false }>,
     <T extends NumTypeParameters & { direction: Direction.SUB }>(
-        monzo: MonzoNotDefaultingToRational<T>,
+        monzo: Monzo<T>,
     ): Monzo<T & { direction: Direction.SUPER, integer: false }>,
     <T extends NumTypeParameters>(
-        monzo: MonzoNotDefaultingToRational<T>,
+        monzo: Monzo<T>,
     ): Monzo<T & { integer: false }>,
-} = <T extends NumTypeParameters>(monzo: MonzoNotDefaultingToRational<T>): Monzo<T & { integer: false }> =>
+} = <T extends NumTypeParameters>(monzo: Monzo<T>): Monzo<T & { integer: false }> =>
     monzo.map((primeExponent: Exponent<Prime>): Exponent<Prime> => {
         return primeExponent === 0 ?
             0 as Exponent<Prime> :

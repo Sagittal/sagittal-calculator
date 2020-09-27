@@ -1,20 +1,19 @@
-import { Monzo, Ratio } from "../../../../../../src/general/math/num"
-import { isRationalNum } from "../../../../../../src/general/math/rational/num"
+import { isRationalNum, RationalMonzo, RationalRatio } from "../../../../../../src/general/math/rational/num"
 
 describe("isRationalNum", (): void => {
     describe("works for nums with monzos", (): void => {
         it("returns true if the monzo is irrational", (): void => {
-            const num = { monzo: [ 5, 4 ] as Monzo }
+            const candidateRationalNum = { monzo: [ 5, 4 ] as RationalMonzo }
 
-            const actual = isRationalNum(num)
+            const actual = isRationalNum(candidateRationalNum)
 
             expect(actual).toBeTruthy()
         })
 
         it("returns false if the monzo is irrational", (): void => {
-            const num = { monzo: [ 5.1, 4.5 ] as Monzo }
+            const candidateRationalNum = { monzo: [ 5.1, 4.5 ] as RationalMonzo }
 
-            const actual = isRationalNum(num)
+            const actual = isRationalNum(candidateRationalNum)
 
             expect(actual).toBeFalsy()
         })
@@ -22,17 +21,17 @@ describe("isRationalNum", (): void => {
 
     describe("works for nums with ratios", (): void => {
         it("returns true if the ratio is rational", (): void => {
-            const num = { ratio: [ 5, 4 ] as Ratio }
+            const candidateRationalNum = { ratio: [ 5, 4 ] as RationalRatio }
 
-            const actual = isRationalNum(num)
+            const actual = isRationalNum(candidateRationalNum)
 
             expect(actual).toBeTruthy()
         })
 
         it("returns false if the ratio is irrational", (): void => {
-            const num = { ratio: [ 5.1, 4.5 ] as Ratio }
+            const candidateRationalNum = { ratio: [ 5.1, 4.5 ] as RationalRatio }
 
-            const actual = isRationalNum(num)
+            const actual = isRationalNum(candidateRationalNum)
 
             expect(actual).toBeFalsy()
         })
@@ -40,9 +39,9 @@ describe("isRationalNum", (): void => {
 
     describe("works for nums with decimals", (): void => {
         it("always returns true", (): void => {
-            const num = { decimal: 1.589655}
+            const candidateRationalNum = { decimal: 1.589655}
 
-            const actual = isRationalNum(num)
+            const actual = isRationalNum(candidateRationalNum)
 
             expect(actual).toBeTruthy()
         })

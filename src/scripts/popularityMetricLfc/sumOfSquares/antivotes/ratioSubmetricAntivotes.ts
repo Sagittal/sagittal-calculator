@@ -1,9 +1,9 @@
 import {
-    computeMonzoFromInteger,
-    computeMonzoFromRatio,
+    computeIntegerMonzoFromInteger,
+    computeRationalMonzoFromRationalRatio,
     FractionalPartType,
     isUndefined,
-    Ratio,
+    RationalRatio,
     stringify,
     TwoThreeFreeClass,
 } from "../../../../general"
@@ -34,7 +34,7 @@ const computeRatioSubmetricAntivotes = (twoThreeFreeClass: TwoThreeFreeClass, su
         isUndefined(kAsPowerExponent) &&
         isUndefined(kAsPowerBase)
     ) {
-        const twoThreeFreeNumberMonzo = computeMonzoFromRatio(twoThreeFreeClass.ratio as Ratio)
+        const twoThreeFreeNumberMonzo = computeRationalMonzoFromRationalRatio(twoThreeFreeClass.ratio as RationalRatio)
 
         return computeSubmetricAntivotes(twoThreeFreeNumberMonzo, submetric)
     }
@@ -43,10 +43,10 @@ const computeRatioSubmetricAntivotes = (twoThreeFreeClass: TwoThreeFreeClass, su
     let { numeratorAntivotes, denominatorAntivotes } = maybeNuminatorSwap({
         useNuminator,
         numeratorAntivotes: computeSubmetricAntivotes(
-            computeMonzoFromInteger(numerator), submetric, FractionalPartType.NUMERATOR,
+            computeIntegerMonzoFromInteger(numerator), submetric, FractionalPartType.NUMERATOR,
         ),
         denominatorAntivotes: computeSubmetricAntivotes(
-            computeMonzoFromInteger(denominator), submetric, FractionalPartType.DENOMINATOR,
+            computeIntegerMonzoFromInteger(denominator), submetric, FractionalPartType.DENOMINATOR,
         ),
     })
 

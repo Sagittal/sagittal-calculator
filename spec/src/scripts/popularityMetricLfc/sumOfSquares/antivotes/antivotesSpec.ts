@@ -1,4 +1,4 @@
-import { Combination, Monzo } from "../../../../../../src/general/math"
+import { Combination, RationalMonzo } from "../../../../../../src/general/math"
 import { TwoThreeFreeClass } from "../../../../../../src/general/music"
 import { Parameter, ParameterValue, Submetric } from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
 import { computeAntivotes } from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares/antivotes"
@@ -55,8 +55,14 @@ describe("computeAntivotes", (): void => {
         const actual = computeAntivotes(twoThreeFreeClass, submetrics)
 
         const expected =
-            0.5 * computeSubmetricAntivotes([0, 0, 0, 1, 1] as Monzo, { [ Parameter.SUM ]: true }) as Antivotes +
-            0.3 * computeSubmetricAntivotes([0, 0, 0, 1, 1] as Monzo, { [ Parameter.SUM ]: true }) as Antivotes
+            0.5 * computeSubmetricAntivotes(
+                [0, 0, 0, 1, 1] as RationalMonzo,
+                { [ Parameter.SUM ]: true },
+            ) as Antivotes +
+            0.3 * computeSubmetricAntivotes(
+                [0, 0, 0, 1, 1] as RationalMonzo,
+                { [ Parameter.SUM ]: true },
+            ) as Antivotes
         expect(actual).toBeCloseToTyped(expected, ANTIVOTES_PRECISION)
     })
 

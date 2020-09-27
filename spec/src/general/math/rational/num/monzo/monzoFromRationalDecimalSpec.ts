@@ -1,13 +1,14 @@
-import { Decimal, Monzo } from "../../../../../../../src/general/math"
-import { computeMonzoFromRationalDecimal } from "../../../../../../../src/general/math/rational/num/monzo/monzoFromRationalDecimal"
+import { RationalMonzo } from "../../../../../../../src/general/math"
+import { RationalDecimal } from "../../../../../../../src/general/math/rational/num/decimal"
+import { computeRationalMonzoFromRationalDecimal } from "../../../../../../../src/general/math/rational/num/monzo/monzoFromRationalDecimal"
 
-describe("computeMonzoFromRationalDecimal", (): void => {
+describe("computeRationalMonzoFromRationalDecimal", (): void => {
     it("works", (): void => {
-        const decimal = 1.4 as Decimal<{ potentiallyIrrational: false }>
+        const rationalDecimal = 1.4 as RationalDecimal
 
-        const actual = computeMonzoFromRationalDecimal(decimal)
+        const actual = computeRationalMonzoFromRationalDecimal(rationalDecimal)
 
-        const expected = [0, 0, -1, 1] as Monzo
+        const expected = [0, 0, -1, 1] as RationalMonzo
         expect(actual).toEqual(expected)
     })
 })

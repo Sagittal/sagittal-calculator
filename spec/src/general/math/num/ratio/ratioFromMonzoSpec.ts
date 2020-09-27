@@ -1,8 +1,7 @@
-import { Monzo } from "../../../../../../../src/general/math/num/monzo"
-import { Ratio } from "../../../../../../../src/general/math/num/ratio"
-import { computeRatioFromMonzo } from "../../../../../../../src/general/math/rational/num/ratio"
+import { Monzo } from "../../../../../../src/general/math/num/monzo"
+import { computeRatioFromMonzo, Ratio } from "../../../../../../src/general/math/num/ratio"
 
-describe("ratioFromMonzo", (): void => {
+describe("computeRatioFromMonzo", (): void => {
     it("converts a monzo into a two-element array reformating the numerator and denominator", (): void => {
         const monzo = [-4, 9, -2, -2] as Monzo
 
@@ -28,4 +27,6 @@ describe("ratioFromMonzo", (): void => {
         const expected = [9722180859015624, 1] as Ratio
         expect(actual).toEqual(expected)
     })
+
+    // TODO: it works for an irrational monzo -> irrational ratio
 })

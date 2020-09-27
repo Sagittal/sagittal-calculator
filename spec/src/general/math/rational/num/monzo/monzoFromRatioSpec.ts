@@ -1,31 +1,39 @@
-import { computeMonzoFromRatio, Monzo, Ratio } from "../../../../../../../src/general"
+import { computeRationalMonzoFromRationalRatio, RationalMonzo, RationalRatio } from "../../../../../../../src/general"
 
-describe("monzoFromRatio", (): void => {
+describe("computeRationalMonzoFromRationalRatio", (): void => {
     it("given a ratio in the form of an array of the numerator and denominator, returns it as a monzo", (): void => {
-        const actual = computeMonzoFromRatio([4, 5] as Ratio)
+        const rationalRatio = [4, 5] as RationalRatio
 
-        const expected = [2, 0, -1] as Monzo
+        const actual = computeRationalMonzoFromRationalRatio(rationalRatio)
+
+        const expected = [2, 0, -1] as RationalMonzo
         expect(actual).toEqual(expected)
     })
 
     it("works for 1/1", (): void => {
-        const actual = computeMonzoFromRatio([1, 1] as Ratio)
+        const rationalRatio = [1, 1] as RationalRatio
 
-        const expected = [] as Monzo
+        const actual = computeRationalMonzoFromRationalRatio(rationalRatio)
+
+        const expected = [] as RationalMonzo
         expect(actual).toEqual(expected)
     })
 
     it("works for ratios where the numerator is 1", (): void => {
-        const actual = computeMonzoFromRatio([1, 5] as Ratio)
+        const rationalRatio = [1, 5] as RationalRatio
 
-        const expected = [0, 0, -1] as Monzo
+        const actual = computeRationalMonzoFromRationalRatio(rationalRatio)
+
+        const expected = [0, 0, -1] as RationalMonzo
         expect(actual).toEqual(expected)
     })
 
     it("works for ratios where the denominator is 1", (): void => {
-        const actual = computeMonzoFromRatio([5, 1] as Ratio)
+        const rationalRatio = [5, 1] as RationalRatio
 
-        const expected = [0, 0, 1] as Monzo
+        const actual = computeRationalMonzoFromRationalRatio(rationalRatio)
+
+        const expected = [0, 0, 1] as RationalMonzo
         expect(actual).toEqual(expected)
     })
 })

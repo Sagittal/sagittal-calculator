@@ -3,29 +3,34 @@ export {
     RationalNumByDecimal,
 } from "./types"
 export {
-    computeIntegerFromMonzo,
+    computeIntegerFromIntegerMonzo,
+    RationalDecimal,
 } from "./decimal"
 export {
-    isRoughRatio,
-    computeRatioFromMonzo,
-    computeRoughRatio,
-    isSmoothRatio,
-    computeRatioFromRationalNum,
-    computeRatioFromRationalDecimal,
+    isRoughRationalRatio,
+    computeRoughRationalRatio,
+    isSmoothRationalRatio,
+    computeRationalRatioFromRationalNum,
+    computeRationalRatioFromRationalDecimal,
     isRationalRatio,
     RationalNumByRatio,
-    computeLowestTermsRatio,
+    computeLowestTermsRationalRatio,
+    RationalDenominator,
+    RationalFractionalPart,
+    RationalNumerator,
+    RationalRatio,
 } from "./ratio"
 export {
-    computeMonzoFromInteger,
-    computeMonzoFromRatio,
-    computeMonzosFromPrimeExponentExtremas,
-    computeRoughMonzo,
-    isRoughMonzo,
-    isSmoothMonzo,
-    computeMonzoFromRationalNum,
-    computeMonzoFromIntegerOrMonzo,
+    computeIntegerMonzoFromInteger,
+    computeRationalMonzoFromRationalRatio,
+    computeRationalMonzosFromPrimeExponentExtremas,
+    computeRoughRationalMonzo,
+    isRoughRationalMonzo,
+    isSmoothRationalMonzo,
+    computeRationalMonzoFromRationalNum,
+    computeIntegerMonzoFromIntegerOrMonzo,
     RationalNumByMonzo,
+    RationalMonzo,
 } from "./monzo"
 export { isRationalNum } from "./typeGuards"
 export { isSmoothRationalNum, computeRationalNumSmoothness } from "./smoothness"

@@ -1,4 +1,4 @@
-import { Decimal, Max, Min, Monzo, Num, Sopfr } from "../../../../../src/general/math"
+import { Decimal, Max, Min, Num, RationalMonzo, Sopfr } from "../../../../../src/general/math"
 import { Comma } from "../../../../../src/general/music"
 import { computeCommas } from "../../../../../src/scripts/jiPitch/findCommas"
 
@@ -61,9 +61,9 @@ describe("computeCommas", (): void => {
         const actual = computeCommas({ lowerBound, upperBound, max23FreeSopfr })
 
         const expected: Comma[] = [
-            { monzo: [-4, 4, -1] as Monzo },
-            { monzo: [6, -2, 0, -1] as Monzo },
-            { monzo: [-19, 12] as Monzo },
+            { monzo: [-4, 4, -1] as RationalMonzo },
+            { monzo: [6, -2, 0, -1] as RationalMonzo },
+            { monzo: [-19, 12] as RationalMonzo },
         ] as Comma[]
         expect(actual).toEqual(expected)
     })

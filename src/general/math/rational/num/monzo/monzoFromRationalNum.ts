@@ -1,28 +1,29 @@
 import { computeTrimmedArray, isUndefined } from "../../../../code"
 import { formatNum } from "../../../../io"
-import { Monzo, NumTypeParameters } from "../../../num"
+import { NumTypeParameters } from "../../../num"
 import { RationalNum } from "../types"
-import { computeMonzoFromRatio } from "./monzoFromRatio"
-import { computeMonzoFromRationalDecimal } from "./monzoFromRationalDecimal"
+import { computeRationalMonzoFromRationalRatio } from "./monzoFromRatio"
+import { computeRationalMonzoFromRationalDecimal } from "./monzoFromRationalDecimal"
+import { RationalMonzo } from "./types"
 
-const computeMonzoFromRationalNum = <T extends NumTypeParameters>(
+const computeRationalMonzoFromRationalNum = <T extends NumTypeParameters>(
     rationalNum: RationalNum<T>,
-): Monzo<T> => {
+): RationalMonzo<T> => {
     const { monzo, ratio, decimal } = rationalNum
-    let outputMonzo: Monzo<T>
+    let rationalMonzo: RationalMonzo<T>
     if (!isUndefined(monzo)) {
-        outputMonzo = monzo
+        rationalMonzo = monzo
     } else if (!isUndefined(ratio)) {
-        outputMonzo = computeMonzoFromRatio(ratio)
+        rationalMonzo = computeRationalMonzoFromRationalRatio(ratio)
     } else if (!isUndefined(decimal)) {
-        outputMonzo = computeMonzoFromRationalDecimal(decimal)
+        rationalMonzo = computeRationalMonzoFromRationalDecimal(decimal)
     } else {
         throw new Error(`Tried to compute monzo from rational num ${formatNum(rationalNum)} but it had no numeric members.`)
     }
 
-    return computeTrimmedArray(outputMonzo)
+    return computeTrimmedArray(rationalMonzo)
 }
 
 export {
-    computeMonzoFromRationalNum,
+    computeRationalMonzoFromRationalNum,
 }

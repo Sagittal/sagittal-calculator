@@ -1,9 +1,9 @@
-import { Denominator, Exponent, Max, Prime } from "../../../../../../general"
+import { Exponent, Max, Prime, RationalDenominator } from "../../../../../../general"
 import { SortedNumeratorPossibilitiesForDenominatorPrimeGivenMaxN2D3P9 } from "./sortedNumeratorPossibilities"
 
 interface D39ForCandidateMaxDenominatorPrimeExponentOptions {
-    denominatorPrime: Denominator & Prime,
-    candidateMaxDenominatorPrimeExponentGivenMaxN2D3P9: Max<Denominator & Exponent<Prime>>,
+    denominatorPrime: RationalDenominator & Prime,
+    candidateMaxDenominatorPrimeExponentGivenMaxN2D3P9: Max<RationalDenominator & Exponent<Prime>>,
 }
 
 interface MinN2PForCandidateMaxDenominatorPrimeExponentGivenMaxN2D3P9Options

@@ -1,5 +1,5 @@
 import { Exponent, Max, Min, Prime } from "../../../../../../../../src/general"
-import { Denominator } from "../../../../../../../../src/general/math"
+import { RationalDenominator } from "../../../../../../../../src/general/math"
 import { N2D3P9 } from "../../../../../../../../src/sagittal"
 import * as d39
     from "../../../../../../../../src/sagittal/ji/twoThreeFreeClass/n2d3p9/primeExponentExtremas/denominator/d39"
@@ -15,8 +15,8 @@ describe("computeMinN2D3P9ForCandidateMaxDenominatorPrimeExponentGivenMaxN2D3P9"
             sortedNumeratorPossibilitiesGivenMaxN2D3P9WithLesserGpfThanDenominatorPrimeSortedByN2: [],
             sortedNumeratorPossibilitiesGivenMaxN2D3P9WithGreaterGpfThanDenominatorPrimeSortedByN2P: [],
         }
-        const denominatorPrime = 7 as Denominator & Prime
-        const candidateMaxDenominatorPrimeExponentGivenMaxN2D3P9 = 2 as Max<Denominator & Exponent<Prime>>
+        const denominatorPrime = 7 as RationalDenominator & Prime
+        const candidateMaxDenominatorPrimeExponentGivenMaxN2D3P9 = 2 as Max<RationalDenominator & Exponent<Prime>>
 
         const minN2PForCandidateMaxDenominatorPrimeExponentGivenMaxN2D3P9 = 15.5 as Min<N2P>
         const d39ForCandidateMaxDenominatorPrimeExponent = 3 as D39

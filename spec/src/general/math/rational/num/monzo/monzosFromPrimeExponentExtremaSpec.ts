@@ -1,12 +1,12 @@
 import {
-    computeMonzosFromPrimeExponentExtremas,
+    computeRationalMonzosFromPrimeExponentExtremas,
     Exponent,
     Extrema,
     Integer,
     Prime,
 } from "../../../../../../../src/general"
 
-describe("computeMonzosFromPrimeExponentExtremas", (): void => {
+describe("computeRationalMonzosFromPrimeExponentExtremas", (): void => {
     it("returns the monzos that are possible given the corresponding prime exponent extremas", (): void => {
         const primeExponentExtremas = [
             [-1, 1],
@@ -15,7 +15,7 @@ describe("computeMonzosFromPrimeExponentExtremas", (): void => {
             [4, 6],
         ] as Array<Extrema<Integer & Exponent<Prime>>>
 
-        const actual = computeMonzosFromPrimeExponentExtremas(primeExponentExtremas)
+        const actual = computeRationalMonzosFromPrimeExponentExtremas(primeExponentExtremas)
 
         const expected = jasmine.arrayWithExactContents([
             [-1, -2, 0, 4],
@@ -46,7 +46,7 @@ describe("computeMonzosFromPrimeExponentExtremas", (): void => {
             [-1, 1],
         ] as Array<Extrema<Integer & Exponent<Prime>>>
 
-        const actual = computeMonzosFromPrimeExponentExtremas(primeExponentExtremas)
+        const actual = computeRationalMonzosFromPrimeExponentExtremas(primeExponentExtremas)
 
         const expected = jasmine.arrayWithExactContents([
             [1, -1],

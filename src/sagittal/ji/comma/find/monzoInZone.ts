@@ -4,26 +4,26 @@ import {
     Exponent,
     Integer,
     Maybe,
-    Monzo,
     numIsHigher,
     numIsHigherOrEqual,
     numIsLower,
     numIsLowerOrEqual,
     Prime,
+    RationalMonzo,
     shallowClone,
     TWO_PRIME_INDEX,
     Zone,
 } from "../../../../general"
 
-const computeMonzoInZone = (twoFreeMonzo: Monzo<{ rough: 3 }>, zone: Zone): Maybe<Monzo> => {
+const computeMonzoInZone = (twoFreeMonzo: RationalMonzo<{ rough: 3 }>, zone: Zone): Maybe<RationalMonzo> => {
     const [lowerBound, upperBound] = zone
 
     const monzoInZone = shallowClone(twoFreeMonzo)
 
-    if (!equalMonzos(monzoInZone, [] as Monzo)) {
+    if (!equalMonzos(monzoInZone, [] as RationalMonzo)) {
         // TODO: this isn't ideal how we're making fake pitches to use the available helpers
-        //  But the alternative would be have, what, a "numify" helper? 
-        //  Or expose a monzoIsHigher and then grab the monzo out of the upperBound? 
+        //  But the alternative would be have, what, a "numify" helper?
+        //  Or expose a monzoIsHigher and then grab the monzo out of the upperBound?
         //  Or should numIsHigher simply accept Monzos, Ratios, and Decimals in addition to Nums?
         //  That seems like the way. Which would involve having some typeGuards to distinguish Monzos from Ratios
         //  Based on their brands, as I believe I've done in Musical Patterns before

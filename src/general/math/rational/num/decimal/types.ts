@@ -1,11 +1,17 @@
-import { Decimal, Monzo, NumTypeParameters, Ratio } from "../../../num"
+import { NumTypeParameterEffects, NumTypeParameters } from "../../../num"
+import { RationalMonzo } from "../monzo"
+import { RationalRatio } from "../ratio"
+
+type RationalDecimal<T extends NumTypeParameters = {}> = number & NumTypeParameterEffects<T & { irrational: false }>
+// TODO: perhaps we can now simplify and just make it rational: true/false
 
 type RationalNumByDecimal<T extends NumTypeParameters = {}> = {
-    decimal: Decimal<T & { potentiallyIrrational: false }>,
-    monzo?: Monzo<T & { potentiallyIrrational: false }>,
-    ratio?: Ratio<T & { potentiallyIrrational: false }>,
+    decimal: RationalDecimal<T>,
+    monzo?: RationalMonzo<T>,
+    ratio?: RationalRatio<T>,
 }
 
 export {
+    RationalDecimal,
     RationalNumByDecimal,
 }

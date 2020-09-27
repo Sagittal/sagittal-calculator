@@ -1,4 +1,4 @@
-import { computeLowestTermsRatio, Io, isUndefined, Maybe, parseRatio, Ratio } from "../../../../general"
+import { computeLowestTermsRationalRatio, Io, isUndefined, Maybe, parseRatio, RationalRatio } from "../../../../general"
 import { SIZE_CATEGORIES } from "./sizeCategories"
 import { CommaNameRatio, ParsedCommaName, SizeCategoryName } from "./types"
 
@@ -9,9 +9,9 @@ const parseCommaName = (commaNameIo: Io): ParsedCommaName => {
         .replace(twoThreeFreePartOfCommaName, "")
         .replace(/-/, "") as Io
 
-    const commaNameRatio: CommaNameRatio = computeLowestTermsRatio(
-        parseRatio(twoThreeFreePartOfCommaName) as Ratio<{ rough: 5 }>,
-    ) as Ratio<{ rough: 5 }> as CommaNameRatio
+    const commaNameRatio: CommaNameRatio = computeLowestTermsRationalRatio(
+        parseRatio(twoThreeFreePartOfCommaName) as RationalRatio<{ rough: 5 }>,
+    ) as RationalRatio<{ rough: 5 }> as CommaNameRatio
 
     let sizeCategoryName: Maybe<SizeCategoryName> = undefined
 

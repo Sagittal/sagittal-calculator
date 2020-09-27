@@ -1,5 +1,4 @@
-import { Max, Min, Prime, Ratio } from "../../../../../src/general/math"
-import { Monzo } from "../../../../../src/general/math/num/monzo"
+import { Max, Min, Prime, RationalMonzo, RationalRatio } from "../../../../../src/general/math"
 import {
     computePrimeLimit,
     isWithinPrimeLimit,
@@ -11,7 +10,7 @@ import { FIVE_PRIME_LIMIT, SEVEN_PRIME_LIMIT } from "../../../../../src/general/
 describe("isWithinPrimeLimit", (): void => {
     describe("by monzo", (): void => {
         it("returns true if the pitch is within the given prime limit", (): void => {
-            const jiPitch = { monzo: [0, 0, 1] as Monzo }
+            const jiPitch = { monzo: [0, 0, 1] as RationalMonzo }
 
             const actual = isWithinPrimeLimit(jiPitch, FIVE_PRIME_LIMIT)
 
@@ -19,7 +18,7 @@ describe("isWithinPrimeLimit", (): void => {
         })
 
         it("returns false if the pitch is not within the given prime limit", (): void => {
-            const jiPitch = { monzo: [0, 0, 1] as Monzo }
+            const jiPitch = { monzo: [0, 0, 1] as RationalMonzo }
 
             const actual = isWithinPrimeLimit(jiPitch, THREE_PRIME_LIMIT)
 
@@ -29,7 +28,7 @@ describe("isWithinPrimeLimit", (): void => {
 
     describe("by ratio", (): void => {
         it("returns true if the pitch is within the given prime limit", (): void => {
-            const jiPitch = { ratio: [7, 5] as Ratio }
+            const jiPitch = { ratio: [7, 5] as RationalRatio }
 
             const actual = isWithinPrimeLimit(jiPitch, SEVEN_PRIME_LIMIT)
 
@@ -37,7 +36,7 @@ describe("isWithinPrimeLimit", (): void => {
         })
 
         it("returns false if the pitch is not within the given prime limit", (): void => {
-            const jiPitch = { ratio: [7, 5] as Ratio }
+            const jiPitch = { ratio: [7, 5] as RationalRatio }
 
             const actual = isWithinPrimeLimit(jiPitch, THREE_PRIME_LIMIT)
 
@@ -49,7 +48,7 @@ describe("isWithinPrimeLimit", (): void => {
 describe("isWithinPrimeMin", (): void => {
     describe("by monzo", (): void => {
         it("returns true if the pitch has no prime factors less than the prime min", (): void => {
-            const jiPitch = { monzo: [0, 0, 1] as Monzo }
+            const jiPitch = { monzo: [0, 0, 1] as RationalMonzo }
 
             const actual = isWithinPrimeMin(jiPitch, 5 as 5 & Min<Prime>)
 
@@ -57,7 +56,7 @@ describe("isWithinPrimeMin", (): void => {
         })
 
         it("returns false if the pitch has no prime factors less than the prime min", (): void => {
-            const jiPitch = { monzo: [0, 0, 1] as Monzo }
+            const jiPitch = { monzo: [0, 0, 1] as RationalMonzo }
 
             const actual = isWithinPrimeMin(jiPitch, 7 as 7 & Min<Prime>)
 
@@ -67,7 +66,7 @@ describe("isWithinPrimeMin", (): void => {
 
     describe("by ratio", (): void => {
         it("returns true if the pitch has no prime factors less than the prime min", (): void => {
-            const jiPitch = { ratio: [7, 5] as Ratio }
+            const jiPitch = { ratio: [7, 5] as RationalRatio }
 
             const actual = isWithinPrimeMin(jiPitch, 5 as 5 & Min<Prime>)
 
@@ -75,7 +74,7 @@ describe("isWithinPrimeMin", (): void => {
         })
 
         it("returns false if the pitch has no prime factors less than the prime min", (): void => {
-            const jiPitch = { ratio: [5, 4] as Ratio }
+            const jiPitch = { ratio: [5, 4] as RationalRatio }
 
             const actual = isWithinPrimeMin(jiPitch, 7 as 7 & Min<Prime>)
 
@@ -86,7 +85,7 @@ describe("isWithinPrimeMin", (): void => {
 
 describe("computePrimeLimit", (): void => {
     it("works for pitches with monzos", (): void => {
-        const jiPitch = { monzo: [0, 4, 1, -3, 0, 1] as Monzo }
+        const jiPitch = { monzo: [0, 4, 1, -3, 0, 1] as RationalMonzo }
 
         const actual = computePrimeLimit(jiPitch)
 
@@ -95,7 +94,7 @@ describe("computePrimeLimit", (): void => {
     })
 
     it("works for pitches with ratios", (): void => {
-        const jiPitch = { ratio: [7, 5] as Ratio }
+        const jiPitch = { ratio: [7, 5] as RationalRatio }
 
         const actual = computePrimeLimit(jiPitch)
 

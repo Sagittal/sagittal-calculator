@@ -1,7 +1,7 @@
 import { MaybeIntegerBrand, RationalNum } from "../rational"
-import { PotentiallyIrrationalNumByDecimal } from "./decimal"
-import { PotentiallyIrrationalNumByMonzo } from "./monzo"
-import { PotentiallyIrrationalNumByRatio } from "./ratio"
+import { NumByDecimal } from "./decimal"
+import { NumByMonzo } from "./monzo"
+import { NumByRatio } from "./ratio"
 
 enum Direction {
     SUPER = "super",
@@ -11,7 +11,7 @@ enum Direction {
 
 type NumTypeParameters = Partial<{
     integer: boolean,
-    potentiallyIrrational: boolean,
+    irrational: boolean,
     direction: Direction
     rough: number,
     smooth: number,
@@ -23,11 +23,11 @@ type NumTypeParameterEffects<T> =
     & (T extends { direction: Direction.UNISON } ? { _DirectionBrand: Direction.UNISON } : {})
     & (T extends { rough: number } ? { _RoughBrand: Pick<T, "rough"> } : {})
     & (T extends { smooth: number } ? { _SmoothBrand: Pick<T, "smooth"> } : {})
-    & (T extends { potentiallyIrrational: true } ? { _PotentiallyIrrationalBrand: boolean } : {})
+    & (T extends { irrational: true } ? { _IrrationalBrand: boolean } : {})
     & MaybeIntegerBrand<T>
 
-type NumTypeParameterTranslationForMonzosAndRatiosToTheirFractionalPartsAndTermsAboutDefaultRationality<T> =
-    (T extends { potentiallyIrrational: true } ? {} : { potentiallyIrrational: false, integer: true })
+type NumTypeParameterTranslationForMonzosAndRatiosToTheirFractionalPartsAndTermsAboutRationality<T> =
+    (T extends { irrational: false } ? { irrational: false, integer: true } : {})
 
 // TODO: IMPLEMENT EDO PITCHES ON POTENTIALLY IRRATIONAL NUMS
 //  Starting to think about non-JI pitches
@@ -62,21 +62,15 @@ call it a Degree
 the existing Window isn’t a base, it gets divided up additively, not multiplicatively
  */
 
-// I've been vacillating a bit on whether to force the presence of decimal or not
-//  But I was actually forced to go back to this more complex situation when I made parsing monzos and ratios
-//  Not guarantee they come back rational, which is true
-type PotentiallyIrrationalNum<T extends NumTypeParameters = {}> =
-    PotentiallyIrrationalNumByDecimal<T>
-    | PotentiallyIrrationalNumByMonzo<T>
-    | PotentiallyIrrationalNumByRatio<T> // TODO: rename Ratio to Quotient
-
-type Num<T extends NumTypeParameters = {}> = RationalNum<T> | PotentiallyIrrationalNum<T>
+type Num<T extends NumTypeParameters = {}> = RationalNum<T>
+    | NumByDecimal<T>
+    | NumByMonzo<T>
+    | NumByRatio<T> // TODO: rename Ratio to Quotient
 
 export {
     NumTypeParameters,
     Direction,
     NumTypeParameterEffects,
-    PotentiallyIrrationalNum,
     Num,
-    NumTypeParameterTranslationForMonzosAndRatiosToTheirFractionalPartsAndTermsAboutDefaultRationality,
+    NumTypeParameterTranslationForMonzosAndRatiosToTheirFractionalPartsAndTermsAboutRationality,
 }

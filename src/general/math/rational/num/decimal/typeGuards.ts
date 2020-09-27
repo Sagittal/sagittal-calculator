@@ -1,8 +1,9 @@
-import { Decimal, DecimalNotDefaultingToPotentiallyIrrational, NumTypeParameters } from "../../../num"
+import { Decimal, NumTypeParameters } from "../../../num"
+import { RationalDecimal } from "./types"
 
 const isRationalDecimal = <T extends NumTypeParameters>(
-    decimal: DecimalNotDefaultingToPotentiallyIrrational,
-): decimal is Decimal<T & { potentiallyIrrational: false }> => {
+    candidateRationalDecimal: Decimal,
+): candidateRationalDecimal is RationalDecimal<T> => {
     return true
 }
 

@@ -1,9 +1,9 @@
 import { Max, Prime } from "../../../../../src/general"
-import { computeGpf, Integer, Monzo } from "../../../../../src/general/math"
+import { computeGpf, Integer, RationalMonzo } from "../../../../../src/general/math"
 
 describe("computeGpf", (): void => {
     it("returns the greatest prime factor (AKA prime limit) of the given monzo", (): void => {
-        const monzo = [2, 3, 0, 0, 4] as Monzo
+        const monzo = [2, 3, 0, 0, 4] as RationalMonzo
 
         const actual = computeGpf(monzo)
 
@@ -12,7 +12,7 @@ describe("computeGpf", (): void => {
     })
 
     it("works when a monzo has trailing zeroes", (): void => {
-        const monzo = [2, 3, 4, 0, 0] as Monzo
+        const monzo = [2, 3, 4, 0, 0] as RationalMonzo
 
         const actual = computeGpf(monzo)
 
@@ -21,7 +21,7 @@ describe("computeGpf", (): void => {
     })
 
     it("works for an empty monzo (AKA the ratio 1/1), giving the conventional value of 1", (): void => {
-        const monzo = [] as Monzo
+        const monzo = [] as RationalMonzo
 
         const actual = computeGpf(monzo)
 

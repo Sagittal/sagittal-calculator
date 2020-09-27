@@ -6,8 +6,8 @@ import {
     Integer,
     isUndefined,
     Maybe,
-    Monzo,
     Prime,
+    RationalMonzo,
     shallowClone,
     THREE_PRIME_INDEX,
     TWO_PRIME_INDEX,
@@ -25,10 +25,11 @@ import { computeMonzoInZone } from "./monzoInZone"
 import { CommasFrom23FreeMonzoOptions } from "./types"
 
 const computeTwoFreeMonzo = (
-    twoThreeFreeMonzo: Monzo<{ rough: 5 }>,
+    twoThreeFreeMonzo: RationalMonzo<{ rough: 5 }>,
     threeExponent: Integer & Exponent<3 & Prime>,
-): Monzo<{ rough: 3 }> => {
-    const twoFreeMonzo: Monzo<{ rough: 3 }> = shallowClone(twoThreeFreeMonzo) as Monzo as Monzo<{ rough: 3 }>
+): RationalMonzo<{ rough: 3 }> => {
+    const twoFreeMonzo: RationalMonzo<{ rough: 3 }> =
+        shallowClone(twoThreeFreeMonzo) as RationalMonzo as RationalMonzo<{ rough: 3 }>
     twoFreeMonzo[ THREE_PRIME_INDEX ] = threeExponent
 
     if (isUndefined(twoFreeMonzo[ TWO_PRIME_INDEX ])) {
@@ -39,7 +40,7 @@ const computeTwoFreeMonzo = (
 }
 
 const computeCommasFrom23FreeMonzo = (
-    twoThreeFreeMonzo: Monzo<{ rough: 5 }>,
+    twoThreeFreeMonzo: RationalMonzo<{ rough: 5 }>,
     options?: CommasFrom23FreeMonzoOptions,
 ): Comma[] => {
     const {
@@ -54,7 +55,7 @@ const computeCommasFrom23FreeMonzo = (
 
     computePlusOrMinusRange(maxAte).forEach((threeExponent: Integer & Exponent<3 & Prime>): void => {
         const twoFreeMonzo = computeTwoFreeMonzo(twoThreeFreeMonzo, threeExponent)
-        const monzo: Maybe<Monzo> = computeMonzoInZone(twoFreeMonzo, [lowerBound, upperBound])
+        const monzo: Maybe<RationalMonzo> = computeMonzoInZone(twoFreeMonzo, [lowerBound, upperBound])
 
         if (monzo) {
             const comma = { monzo } as Comma

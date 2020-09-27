@@ -1,8 +1,8 @@
-import { computeSopfr, Integer, Monzo, Sopfr } from "../../../../../src/general/math"
+import { computeSopfr, Integer, RationalMonzo, Sopfr } from "../../../../../src/general/math"
 
 describe("computeSopfr", (): void => {
     it("sums the abs values of the prime factors (with repetition) in the monzo", (): void => {
-        const monzo = [5, 6, 0, 0, 1, -1, 2] as Monzo
+        const monzo = [5, 6, 0, 0, 1, -1, 2] as RationalMonzo
 
         const actual = computeSopfr(monzo)
 
@@ -11,7 +11,7 @@ describe("computeSopfr", (): void => {
     })
 
     it("works for an empty monzo", (): void => {
-        const monzo = [] as Monzo
+        const monzo = [] as RationalMonzo
 
         const actual = computeSopfr(monzo)
 

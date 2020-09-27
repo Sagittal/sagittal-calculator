@@ -1,34 +1,35 @@
 import { computeTrimmedArray, increment } from "../../../../code"
-import { Monzo, NumTypeParameters } from "../../../num"
+import { NumTypeParameters } from "../../../num"
 import { Exponent } from "../../../types"
 import { computeRoughnessIndex } from "../../primeCount"
 import { Integer, Prime, Primes, Roughness } from "../../types"
+import { RationalMonzo } from "./types"
 
-const computeRoughMonzo = <S extends Primes, T extends NumTypeParameters>(
-    monzo: Monzo<T>,    // This used to be Monzo<Omit<T, "rough">> but it wasn't smart enough to preserve Integer-ness
+const computeRoughRationalMonzo = <S extends Primes, T extends NumTypeParameters>(
+    rationalMonzo: RationalMonzo<T>,
     roughness: S & Roughness,
-): Monzo<T & { rough: S }> => {
+): RationalMonzo<T & { rough: S }> => {
     const roughnessIndex = computeRoughnessIndex(roughness)
 
     return computeTrimmedArray(
-        monzo.map(
+        rationalMonzo.map(
             (primeExponent: Integer & Exponent<Prime>, index: number): Integer & Exponent<Prime> =>
                 index < roughnessIndex ?
                     0 as Integer & Exponent<Prime> :
                     primeExponent,
         ),
-    ) as Monzo<T & { rough: S }>
+    ) as RationalMonzo<T & { rough: S }>
 }
 
-const isRoughMonzo = <S extends Primes, T extends NumTypeParameters>(
-    monzo: Monzo<T>,
+const isRoughRationalMonzo = <S extends Primes, T extends NumTypeParameters>(
+    candidateRoughRationalMonzo: RationalMonzo<T>,
     roughness: S & Roughness,
-): monzo is Monzo<T & { rough: S }> => {
+): candidateRoughRationalMonzo is RationalMonzo<T & { rough: S }> => {
     const roughnessIndex = computeRoughnessIndex(roughness)
 
     let index = 0
     while (index < roughnessIndex) {
-        if (monzo[ index ] !== 0) return false
+        if (candidateRoughRationalMonzo[ index ] !== 0) return false
         index = increment(index)
     }
 
@@ -36,6 +37,6 @@ const isRoughMonzo = <S extends Primes, T extends NumTypeParameters>(
 }
 
 export {
-    computeRoughMonzo,
-    isRoughMonzo,
+    computeRoughRationalMonzo,
+    isRoughRationalMonzo,
 }

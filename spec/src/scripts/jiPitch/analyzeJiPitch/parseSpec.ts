@@ -1,5 +1,5 @@
 import { program } from "commander"
-import { Abs, Decimal, Exponent, Integer, Max, Monzo, Prime, Ratio } from "../../../../../src/general/math"
+import { Abs, Decimal, Exponent, Integer, Max, Prime, RationalMonzo, RationalRatio } from "../../../../../src/general/math"
 import { ApotomeSlope, JiPitchAnalysis, N2D3P9 } from "../../../../../src/sagittal/ji"
 import { parseJiPitch, parseNotatingCommasSettings } from "../../../../../src/scripts/jiPitch/analyzeJiPitch"
 import { DEFAULT_FIND_COMMAS_SETTINGS } from "../../../../../src/scripts/jiPitch/findCommas"
@@ -11,7 +11,7 @@ import {
 describe("parseNotatingCommasSettings", (): void => {
     const n2d3p9 = DEFAULT_FIND_COMMAS_SETTINGS.maxN2D3P9 + 100 as N2D3P9
     const ate = DEFAULT_FIND_COMMAS_SETTINGS.maxAte + 10 as Abs<Integer & Exponent<3 & Prime>>
-    const monzo = [0, ate] as Monzo
+    const monzo = [0, ate] as RationalMonzo
     const decimal = 847300834270 as Decimal             // 47548.9¢
     const apotomeSlope = -2902.759003 as ApotomeSlope
     const jiPitchAnalysis: JiPitchAnalysis = {
@@ -58,7 +58,7 @@ describe("parseJiPitch", (): void => {
 
             const actual = parseJiPitch()
 
-            const expected = { monzo: [0, 1, -2, 1] as Monzo }
+            const expected = { monzo: [0, 1, -2, 1] as RationalMonzo }
             expect(actual).toEqual(expected)
         })
 
@@ -67,7 +67,7 @@ describe("parseJiPitch", (): void => {
 
             const actual = parseJiPitch()
 
-            const expected = { ratio: [7, 2] as Ratio }
+            const expected = { ratio: [7, 2] as RationalRatio }
             expect(actual).toEqual(expected)
         })
 
@@ -76,7 +76,7 @@ describe("parseJiPitch", (): void => {
 
             const actual = parseJiPitch()
 
-            const expected = { monzo: [-11, 7] as Monzo }
+            const expected = { monzo: [-11, 7] as RationalMonzo }
             expect(actual).toEqual(expected)
         })
 
@@ -96,7 +96,7 @@ describe("parseJiPitch", (): void => {
 
             const actual = parseJiPitch()
 
-            const expected = { monzo: [0, 1, -2, 1] as Monzo }
+            const expected = { monzo: [0, 1, -2, 1] as RationalMonzo }
             expect(actual).toEqual(expected)
         })
 
@@ -105,7 +105,7 @@ describe("parseJiPitch", (): void => {
 
             const actual = parseJiPitch()
 
-            const expected = { ratio: [7, 2] as Ratio }
+            const expected = { ratio: [7, 2] as RationalRatio }
             expect(actual).toEqual(expected)
         })
 
@@ -114,7 +114,7 @@ describe("parseJiPitch", (): void => {
 
             const actual = parseJiPitch()
 
-            const expected = { monzo: [-11, 7] as Monzo }
+            const expected = { monzo: [-11, 7] as RationalMonzo }
             expect(actual).toEqual(expected)
         })
 

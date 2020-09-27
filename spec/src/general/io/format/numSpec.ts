@@ -1,7 +1,5 @@
 import { formatNum, Formatted } from "../../../../../src/general/io/format"
-import { Decimal, Num } from "../../../../../src/general/math"
-import { Monzo } from "../../../../../src/general/math/num/monzo"
-import { Ratio } from "../../../../../src/general/math/num/ratio"
+import { Decimal, Monzo, Num, Ratio } from "../../../../../src/general/math"
 
 describe("formatNum", (): void => {
     it("if only the ratio is present, returns it formatted", (): void => {

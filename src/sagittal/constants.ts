@@ -1,13 +1,13 @@
-import { Comma, DecimalNotDefaultingToPotentiallyIrrational, Monzo, Num, Ratio, THREE_PRIME_INDEX } from "../general"
+import { Comma, Decimal, Num, RationalMonzo, RationalRatio, THREE_PRIME_INDEX } from "../general"
 
 const APOTOME: Comma = {
-    monzo: [-11, 7] as Monzo,
-    ratio: [2187, 2048] as Ratio,
-    decimal: 2187 / 2048 as DecimalNotDefaultingToPotentiallyIrrational,    // 113.68500605771192¢
+    monzo: [-11, 7] as RationalMonzo,
+    ratio: [2187, 2048] as RationalRatio,
+    decimal: 2187 / 2048 as Decimal,    // 113.68500605771192¢
 } as Comma
 
 const HALF_APOTOME: Num = {
-    monzo: [-5.5, 3.5] as Monzo,
+    monzo: [-5.5, 3.5] as RationalMonzo,
     // TODO: HALF-PITCH HELPER
     //  Could be cool to have a half-pitch helper or maybe just general multiply or divide
     //  Which would adjust monzo, ratio, cents, number, etc. accordingly
@@ -15,7 +15,7 @@ const HALF_APOTOME: Num = {
     //  So find all they places where you are doing that and update them
 }
 
-const APOTOME_DECIMAL: DecimalNotDefaultingToPotentiallyIrrational = APOTOME.decimal!
+const APOTOME_DECIMAL: Decimal = APOTOME.decimal!
 
 const APOTOME_3_EXPONENT = APOTOME.monzo![ THREE_PRIME_INDEX ]
 
