@@ -8,7 +8,7 @@ const computeExactlyNotatingSymbolClassProperties = (
 ): ExactlyNotatingSymbolClassProperties => {
     const exactlyNotatingSymbolClassIds = computeExactlyNotatingSymbolClassIds(twoThreeFreeClass)
 
-    const smallestJiNotationSymbolSubsetIndices = exactlyNotatingSymbolClassIds
+    const smallestSymbolSubsetIndices = exactlyNotatingSymbolClassIds
         .map((symbolClassId: Id<SymbolClass>): Index<SymbolSubset> => {
             // This used to not include Trojan, and the tables that have been shared on the forum reflect that.
             // However I eventually decided the complexity wasn't justified in excluding it, once I got the code
@@ -19,7 +19,7 @@ const computeExactlyNotatingSymbolClassProperties = (
 
     return {
         exactlyNotatingSymbolClassIds,
-        exactlyNotatingSymbolClassSmallestJiNotationSymbolSubsetIndices: smallestJiNotationSymbolSubsetIndices,
+        exactlyNotatingSymbolClassSmallestSymbolSubsetIndices: smallestSymbolSubsetIndices,
     }
 }
 

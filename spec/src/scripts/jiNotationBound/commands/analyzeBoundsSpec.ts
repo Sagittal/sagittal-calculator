@@ -10,7 +10,6 @@ describe("analyze-ji-notation-bounds", (): void => {
         const actual = runCommandAndGetConsoleOutput("npm run analyze-ji-notation-bounds" as Io)
 
         const expected = readLines("src/scripts/jiNotationBound/results/boundsTerminalAndImage.txt" as Filename)
-        expected.pop()
         expect(actual).toEqual(expected)
     })
 })

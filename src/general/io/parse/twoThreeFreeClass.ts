@@ -14,10 +14,10 @@ const parse23FreeClass = <T extends NumTypeParameters>(twoThreeFreeClassIo: Io):
     const twoThreeFreeRatio = parseRatio(twoThreeFreeClassIo)
 
     if (!isRationalRatio(twoThreeFreeRatio)) {
-        throw new Error(`2,3-free classes must be rational. Attempted to parse ratio to ${twoThreeFreeRatio}`)
+        throw new Error(`Attempted to parse ${twoThreeFreeClassIo} to a 2,3-free class, but they must be rational`)
     }
     if (isSubRatio(twoThreeFreeRatio)) {
-        throw new Error(`2,3-free classes cannot be sub. Attempted to parse ratio to ${twoThreeFreeRatio}`)
+        throw new Error(`Attempted to parse ${twoThreeFreeClassIo} to a 2,3-free class, but they must be sub.`)
     }
 
     const reducedTwoThreeFreeRatio = computeLowestTermsRatio(twoThreeFreeRatio)

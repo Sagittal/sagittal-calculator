@@ -2,7 +2,7 @@ import { Id, Index } from "../../../general"
 import { SymbolClass, SymbolSubset } from "../../../sagittal"
 
 interface ExactlyNotatingSymbolClassProperties {
-    exactlyNotatingSymbolClassSmallestJiNotationSymbolSubsetIndices: Array<Index<SymbolSubset>>,
+    exactlyNotatingSymbolClassSmallestSymbolSubsetIndices: Array<Index<SymbolSubset>>,
     exactlyNotatingSymbolClassIds: Array<Id<SymbolClass>>,
 }
 

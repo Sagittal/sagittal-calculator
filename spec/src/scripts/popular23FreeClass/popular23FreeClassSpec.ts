@@ -19,7 +19,7 @@ describe("computePopular23FreeClass", (): void => {
             popularityRank: 2 as Rank<Popularity>,
             votes: 5371 as Votes,
             exactlyNotatingSymbolClassIds: [4, 44] as Array<Id<SymbolClass>>,
-            exactlyNotatingSymbolClassSmallestJiNotationSymbolSubsetIndices: [5, 1] as Array<Index<SymbolSubset>>,
+            exactlyNotatingSymbolClassSmallestSymbolSubsetIndices: [5, 1] as Array<Index<SymbolSubset>>,
         }
         expect(actual).toEqual(expected)
     })

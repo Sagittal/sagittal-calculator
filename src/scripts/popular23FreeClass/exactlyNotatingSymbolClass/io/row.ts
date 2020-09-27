@@ -20,21 +20,21 @@ const computePopular23FreeClassWithExactlyNotatingSymbolClassRow = (
         n2d3p9,
         rank: estimatedRank,
         popularityRank: actualRank,
-        exactlyNotatingSymbolClassSmallestJiNotationSymbolSubsetIndices,
+        exactlyNotatingSymbolClassSmallestSymbolSubsetIndices,
         exactlyNotatingSymbolClassIds,
         votes,
     } = popular23FreeClass
 
     return [
         format23FreeClass(popular23FreeClass),
-        formatDecimal(n2d3p9),
+        formatDecimal(n2d3p9, { align: true }),
         exactlyNotatingSymbolClassIds.map((exactlyNotatingSymbolClassId: Id<SymbolClass>): Formatted<SymbolGlyph> => {
             return formatSymbolClass(exactlyNotatingSymbolClassId, ioSettings)
         }).join(SPACE),
-        exactlyNotatingSymbolClassSmallestJiNotationSymbolSubsetIndices.join(", "),
-        estimatedRank,
-        isUndefined(actualRank) ? "-" : actualRank,
-        votes,
+        exactlyNotatingSymbolClassSmallestSymbolSubsetIndices.join(", "),
+        estimatedRank.toString(),
+        isUndefined(actualRank) ? "-" : actualRank.toString(),
+        votes.toString(),
     ] as Row<{ of: Popular23FreeClass & ExactlyNotatingSymbolClassProperties, header: true }>
 }
 

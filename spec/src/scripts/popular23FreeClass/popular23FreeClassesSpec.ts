@@ -20,7 +20,7 @@ describe("computePopular23FreeClasses", (): void => {
                     popularityRank: 1 as Rank<Popularity>,
                     votes: 7624 as Votes,
                     exactlyNotatingSymbolClassIds: [0, 48] as Array<Id<SymbolClass>>,
-                    exactlyNotatingSymbolClassSmallestJiNotationSymbolSubsetIndices:
+                    exactlyNotatingSymbolClassSmallestSymbolSubsetIndices:
                         [0, 5] as Array<Index<SymbolSubset>>,
                     rank: 1 as Rank<Popular23FreeClass>,
                 },
@@ -30,7 +30,7 @@ describe("computePopular23FreeClasses", (): void => {
                     popularityRank: 2 as Rank<Popularity>,
                     votes: 5371 as Votes,
                     exactlyNotatingSymbolClassIds: [4, 44] as Array<Id<SymbolClass>>,
-                    exactlyNotatingSymbolClassSmallestJiNotationSymbolSubsetIndices:
+                    exactlyNotatingSymbolClassSmallestSymbolSubsetIndices:
                         [5, 1] as Array<Index<SymbolSubset>>,
                     rank: 2 as Rank<Popular23FreeClass>,
                 },
@@ -40,7 +40,7 @@ describe("computePopular23FreeClasses", (): void => {
                     popularityRank: 3 as Rank<Popularity>,
                     votes: 3016 as Votes,
                     exactlyNotatingSymbolClassIds: [58, 108, 137] as Array<Id<SymbolClass>>,
-                    exactlyNotatingSymbolClassSmallestJiNotationSymbolSubsetIndices:
+                    exactlyNotatingSymbolClassSmallestSymbolSubsetIndices:
                         [1, 5, 5] as Array<Index<SymbolSubset>>,
                     rank: 3 as Rank<Popular23FreeClass>,
                 },
@@ -50,7 +50,7 @@ describe("computePopular23FreeClasses", (): void => {
                     popularityRank: 4 as Rank<Popularity>,
                     votes: 1610 as Votes,
                     exactlyNotatingSymbolClassIds: [40, 92] as Array<Id<SymbolClass>>,
-                    exactlyNotatingSymbolClassSmallestJiNotationSymbolSubsetIndices:
+                    exactlyNotatingSymbolClassSmallestSymbolSubsetIndices:
                         [5, 1] as Array<Index<SymbolSubset>>,
                     rank: 4 as Rank<Popular23FreeClass>,
                 },
@@ -60,7 +60,7 @@ describe("computePopular23FreeClasses", (): void => {
                     popularityRank: 5 as Rank<Popularity>,
                     votes: 1318 as Votes,
                     exactlyNotatingSymbolClassIds: [12, 62] as Array<Id<SymbolClass>>,
-                    exactlyNotatingSymbolClassSmallestJiNotationSymbolSubsetIndices:
+                    exactlyNotatingSymbolClassSmallestSymbolSubsetIndices:
                         [1, 5] as Array<Index<SymbolSubset>>,
                     rank: 5 as Rank<Popular23FreeClass>,
                 },

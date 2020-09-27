@@ -14,7 +14,7 @@ describe("computeExactlyNotatingSymbolClassProperties", (): void => {
 
         const expected: ExactlyNotatingSymbolClassProperties = {
             exactlyNotatingSymbolClassIds: [12, 62] as Array<Id<SymbolClass>>,
-            exactlyNotatingSymbolClassSmallestJiNotationSymbolSubsetIndices: [1, 5] as Array<Index<SymbolSubset>>,
+            exactlyNotatingSymbolClassSmallestSymbolSubsetIndices: [1, 5] as Array<Index<SymbolSubset>>,
         }
         expect(actual).toEqual(expected)
     })

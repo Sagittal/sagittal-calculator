@@ -1,7 +1,7 @@
 import {
     BLANK,
-    format23FreeClass,
-    formatDecimal,
+    format23FreeClass, 
+    formatCents,
     formatMonzo,
     ioSettings,
     isUndefined,
@@ -9,13 +9,12 @@ import {
     Row,
 } from "../../../../general"
 import { formatSymbolClass } from "../../../../sagittal"
-import { ExactlyNotatingSymbolClassProperties } from "../../exactlyNotatingSymbolClass"
 import { Popular23FreeClass } from "../../types"
 import { BestNotatingCommaProperties } from "../types"
 
 const computePopular23FreeClassWithBestNotatingCommaRow = (
     rankedPopular23FreeClassWithBestNotatingComma: Ranked<Popular23FreeClass & BestNotatingCommaProperties>,
-): Row<{ of: Popular23FreeClass & ExactlyNotatingSymbolClassProperties, header: true }> => {
+): Row<{ of: Popular23FreeClass & BestNotatingCommaProperties, header: true }> => {
     const {
         rank: estimatedRank,
         bestNotatingCommaCents,
@@ -25,13 +24,13 @@ const computePopular23FreeClassWithBestNotatingCommaRow = (
 
     return [
         format23FreeClass(rankedPopular23FreeClassWithBestNotatingComma),
-        estimatedRank,
-        formatDecimal(bestNotatingCommaCents),
+        estimatedRank.toString(),
+        formatCents(bestNotatingCommaCents, { align: true }),
         formatMonzo(bestNotatingCommaMonzo),
         isUndefined(bestNotatingCommaMaybeSymbolClassId) ?
             BLANK :
             formatSymbolClass(bestNotatingCommaMaybeSymbolClassId, ioSettings),
-    ] as Row<{ of: Popular23FreeClass & ExactlyNotatingSymbolClassProperties, header: true }>
+    ] as Row<{ of: Popular23FreeClass & BestNotatingCommaProperties, header: true }>
 }
 
 export {
