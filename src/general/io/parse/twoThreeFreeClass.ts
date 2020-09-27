@@ -16,7 +16,6 @@ const parse23FreeClass = <T extends NumTypeParameters>(twoThreeFreeClassIo: Io):
     if (!isRationalRatio(twoThreeFreeRatio)) {
         throw new Error(`2,3-free classes must be rational. Attempted to parse ratio to ${twoThreeFreeRatio}`)
     }
-    // TODO: completely different ordering in "ratio is rational" and "is super ratio"; standardize
     if (isSubRatio(twoThreeFreeRatio)) {
         throw new Error(`2,3-free classes cannot be sub. Attempted to parse ratio to ${twoThreeFreeRatio}`)
     }

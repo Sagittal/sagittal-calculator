@@ -1,5 +1,5 @@
 export { computeCentsFromPitch } from "./centsFromPitch"
-export { computeCentsFromDecimal } from "./centsFromDecimal"
+export { computeCents } from "./cents"
 export {
     compute23FreeClass,
     THREE_PRIME_LIMIT,
@@ -14,5 +14,5 @@ export {
     computePrimeLimit,
 } from "./ji"
 export { CENTS_PER_OCTAVE } from "./constants"
-export { computeDecimalFromCents } from "./decimalFromCents"
+export { computeNumberFromCents } from "./numberFromCents"
 export { Cents, Zone } from "./types"

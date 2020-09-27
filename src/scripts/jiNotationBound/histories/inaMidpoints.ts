@@ -1,4 +1,4 @@
-import { Cents, computeCentsFromPitch, computeDecimalFromCents, Maybe, Name, numIsHigher } from "../../../general"
+import { Cents, computeCentsFromPitch, computeNumberFromCents, Maybe, Name, numIsHigher } from "../../../general"
 import {
     APOTOME,
     JiNotationLevel,
@@ -17,15 +17,15 @@ const computeInaMidpoints = (jiNotationLevel: JiNotationLevel): InaMidpoint[] =>
         //  another place where we could use that helper for a fraction of a rational pitch!
         //  or actually, rather, ina midpoints should be encoded with the new ED property of Nums
         const cents = computeCentsFromPitch(APOTOME) * midpoint / eda as Cents
-        const decimal = computeDecimalFromCents(cents)
+        const number = computeNumberFromCents(cents)
 
-        if (numIsHigher({ decimal }, MAX_SYMBOL_CLASS_POSITION)) {
+        if (numIsHigher({ decimal: number }, MAX_SYMBOL_CLASS_POSITION)) {
             return undefined
         }
 
         const name: Name<InaMidpoint> = `${midpoint}°${eda}` as Name<InaMidpoint>
 
-        return { name, decimal }
+        return { name, decimal: number }
     })
 
     return inaMidpoints.filter((inaMidpoint: Maybe<InaMidpoint>): boolean => !!inaMidpoint) as InaMidpoint[]

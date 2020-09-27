@@ -1,4 +1,4 @@
-import { Cents, computeDecimalFromCents, equalNums, Id, numIsHigher } from "../../../../../src/general"
+import { Cents, computeNumberFromCents, equalNums, Id, numIsHigher } from "../../../../../src/general"
 import { JiNotationBound, JI_NOTATION_BOUNDS, TINA } from "../../../../../src/sagittal"
 
 describe("JI_NOTATION_BOUNDS", (): void => {
@@ -21,7 +21,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
         JI_NOTATION_BOUNDS.forEach((jiNotationBound: JiNotationBound): void => {
             while (true) {
                 const currentHalfTinaCents: Cents = TINA * currentHalfTina as Cents
-                const currentHalfTinaPitch = { decimal: computeDecimalFromCents(currentHalfTinaCents) }
+                const currentHalfTinaPitch = { decimal: computeNumberFromCents(currentHalfTinaCents) }
 
                 if (equalNums(currentHalfTinaPitch, jiNotationBound)) {
                     break

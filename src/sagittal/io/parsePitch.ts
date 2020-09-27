@@ -2,7 +2,7 @@ import {
     ANY_CENTS_CHARS,
     ANY_MONZO_CHARS,
     ANY_RATIO_CHARS,
-    computeDecimalFromCents,
+    computeNumberFromCents,
     IDENTIFYING_COMMA_NAME_CHARS,
     Io,
     Num,
@@ -27,7 +27,7 @@ const parsePitch = (pitchIo: Io): Num => {
     } else if (pitchIo.match(ANY_MONZO_CHARS)) {
         pitch = { monzo: parseMonzo(pitchIo) }
     } else if (pitchIo.match(ANY_CENTS_CHARS)) {
-        pitch = { decimal: computeDecimalFromCents(parseCents(pitchIo)) }
+        pitch = { decimal: computeNumberFromCents(parseCents(pitchIo)) }
     } else {
         pitch = { decimal: parseDecimal(pitchIo) }
     }

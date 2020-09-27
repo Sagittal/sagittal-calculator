@@ -1,5 +1,5 @@
 import { computeDecimalFromNum, Num } from "../../math"
-import { computeCentsFromDecimal } from "../../music"
+import { computeCents } from "../../music"
 import { ANY_DECIMAL_CHARS } from "../constants"
 import { formatCents } from "./cents"
 import { formatNum } from "./num"
@@ -10,7 +10,7 @@ const formatPitch = (pitch: Num, options: { align?: boolean } = {}): Formatted<N
 
     if (formattedNum.match(ANY_DECIMAL_CHARS)) {
         return formatCents(
-            computeCentsFromDecimal(
+            computeCents(
                 computeDecimalFromNum(pitch),
             ),
             options,

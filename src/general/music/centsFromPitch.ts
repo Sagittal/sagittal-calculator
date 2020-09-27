@@ -1,11 +1,11 @@
 import { computeDecimalFromNum, Num } from "../math"
-import { computeCentsFromDecimal } from "./centsFromDecimal"
+import { computeCents } from "./cents"
 import { Cents } from "./types"
 
 const computeCentsFromPitch = (pitch: Num): Cents => {
     const decimal = computeDecimalFromNum(pitch)
 
-    return computeCentsFromDecimal(decimal)
+    return computeCents(decimal)
 }
 
 export {

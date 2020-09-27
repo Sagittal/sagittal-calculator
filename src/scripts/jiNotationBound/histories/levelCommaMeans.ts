@@ -1,4 +1,4 @@
-import { Cents, computeCentsFromPitch, computeDecimalFromCents, Id, indexOfFinalElement, Name } from "../../../general"
+import { Cents, computeCentsFromPitch, computeNumberFromCents, Id, indexOfFinalElement, Name } from "../../../general"
 import {
     getPrimaryComma,
     getRepresentativeSymbol,
@@ -34,14 +34,14 @@ const computeJiNotationLevelCommaMeans = (jiNotationLevel: JiNotationLevel): Com
             const cents = (
                 getJiNotationSymbolCents(symbolClassId) + getJiNotationSymbolCents(nextSymbolClassId)
             ) / 2 as Cents
-            const decimal = computeDecimalFromCents(cents)
+            const number = computeNumberFromCents(cents)
             const name = [
                 getJiNotationSymbolAscii(symbolClassId),
                 getJiNotationSymbolAscii(nextSymbolClassId),
             ].join(" ") as Name<CommaMean>
 
             return {
-                decimal,
+                decimal: number,
                 name,
             }
         })

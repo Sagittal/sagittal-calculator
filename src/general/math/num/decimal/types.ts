@@ -1,10 +1,5 @@
 import { NumTypeParameterEffects, NumTypeParameters } from "../types"
 
-// TODO: DECIMALS AS SPECIAL INSIDE NUMS
-//  hunt down and eliminate places Decimal is being used outside of Num; in general only should live inside one
-//  e.g. I don't think that Monzos should use them as their terms... maybe? or maybe it is fine that ratios and monzos
-//  use them internally???
-
 // This is the one place where we default the NumTypeParameters to something other than {}
 // but things seem to massively blow up otherwise.
 type Decimal<T extends NumTypeParameters = { potentiallyIrrational?: true }> = number & NumTypeParameterEffects<T>

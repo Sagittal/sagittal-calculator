@@ -1,4 +1,4 @@
-import { Cents, computeDecimalFromCents, Copfr, Max, Min, Num } from "../../../general"
+import { Cents, computeNumberFromCents, Copfr, Max, Min, Num } from "../../../general"
 import { N2D3P9, TINA, Tina } from "../../../sagittal"
 
 const INFINITE_N2D3P9 = Infinity as Max<N2D3P9>
@@ -8,12 +8,12 @@ const TINAS_TO_CHECK: Tina[] = [0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6, 
 const TINA_COMMAS_PLUS_MINUS_RANGE = 0.25
 
 const TINA_COMMAS_LOWER_BOUND = {
-    decimal: computeDecimalFromCents(
+    decimal: computeNumberFromCents(
         (TINAS_TO_CHECK[ 0 ] - TINA_COMMAS_PLUS_MINUS_RANGE) * TINA as Cents,
     ),
 } as Min<Num>
 const TINA_COMMAS_UPPER_BOUND = {
-    decimal: computeDecimalFromCents(
+    decimal: computeNumberFromCents(
         (TINAS_TO_CHECK[ TINAS_TO_CHECK.length - 1 ] + TINA_COMMAS_PLUS_MINUS_RANGE) * TINA as Cents,
     ),
 } as Max<Num>

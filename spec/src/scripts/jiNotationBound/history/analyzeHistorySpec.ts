@@ -1,4 +1,4 @@
-import { Abs, add, Cents, computeCentsFromDecimal, Decimal, Multiplier, Sum } from "../../../../../src/general"
+import { Abs, add, Cents, computeCents, Decimal, Multiplier, Sum } from "../../../../../src/general"
 import { multiply } from "../../../../../src/general/math"
 import { BoundType, Ina, JiNotationBound, JiNotationLevel, Tina, TINA } from "../../../../../src/sagittal/notations/ji"
 import { computeInitialPosition } from "../../../../../src/scripts/jiNotationBound/bound/initialPosition"
@@ -24,7 +24,7 @@ describe("analyzeHistory", (): void => {
         and its distance from the initial position, 
         and its overall distance the JI notation bound moved across all the bound events`,
         (): void => {
-            cents = computeCentsFromDecimal(actualJiNotationBoundDecimal) + 0.5 as Cents
+            cents = computeCents(actualJiNotationBoundDecimal) + 0.5 as Cents
             boundHistory = [
                 {
                     ...boundEventFixture,
@@ -83,7 +83,7 @@ describe("analyzeHistory", (): void => {
             // tslint:disable-next-line max-line-length
             `returns the bound history's events with their rank, plus true for the possible property and a 0 tina error`,
             (): void => {
-                cents = computeCentsFromDecimal(actualJiNotationBoundDecimal)
+                cents = computeCents(actualJiNotationBoundDecimal)
                 boundHistory = [
                     {
                         ...boundEventFixture,
@@ -122,7 +122,7 @@ describe("analyzeHistory", (): void => {
                 (): void => {
                     const expectedTinaError = 2 / 5 as Multiplier<Tina>
                     cents = add(
-                        computeCentsFromDecimal(actualJiNotationBoundDecimal),
+                        computeCents(actualJiNotationBoundDecimal),
                         multiply(TINA, expectedTinaError),
                     )
                     boundHistory = [{ ...boundEventFixture, boundType: BoundType.INA_MIDPOINT, cents }, {
@@ -149,7 +149,7 @@ describe("analyzeHistory", (): void => {
                 (): void => {
                     const expectedTinaError = 5 / 2 as Multiplier<Tina>
                     cents = add(
-                        computeCentsFromDecimal(actualJiNotationBoundDecimal),
+                        computeCents(actualJiNotationBoundDecimal),
                         multiply(TINA, expectedTinaError),
                     )
                     boundHistory = [{ ...boundEventFixture, boundType: BoundType.INA_MIDPOINT, cents }, {
@@ -177,7 +177,7 @@ describe("analyzeHistory", (): void => {
                 (): void => {
                     const expectedTinaError = -2 / 5 as Multiplier<Tina>
                     cents = add(
-                        computeCentsFromDecimal(actualJiNotationBoundDecimal),
+                        computeCents(actualJiNotationBoundDecimal),
                         multiply(TINA, expectedTinaError),
                     )
                     boundHistory = [{
@@ -210,7 +210,7 @@ describe("analyzeHistory", (): void => {
                 (): void => {
                     const expectedTinaError = -5 / 2 as Multiplier<Tina>
                     cents = add(
-                        computeCentsFromDecimal(actualJiNotationBoundDecimal),
+                        computeCents(actualJiNotationBoundDecimal),
                         multiply(TINA, expectedTinaError),
                     )
                     boundHistory = [{ ...boundEventFixture, boundType: BoundType.INA_MIDPOINT, cents }, {

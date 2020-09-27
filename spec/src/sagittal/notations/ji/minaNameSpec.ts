@@ -12,7 +12,8 @@ describe("getMinaName", (): void => {
 
     const computeSplitMinaName = (symbolClassId: Id<SymbolClass>): Name<Mina> => {
         const [lowerBound, upperBound] = computeCaptureZone(symbolClassId)
-        // TODO: an "interval" helper, which should return cents if pitches have cents, monzos if monzos, etc.
+        // TODO: FRACTIONAL PITCH HELPER
+        //  an "interval" helper, which should return cents if pitches have cents, monzos if monzos, etc.
         //  as is familiar from creating 2,3-free classes from other pitches
         //  and it should return a branded pitch, an Interval, to enforce that it's not a position, but an interval
         //  and perhaps think about how it might play nice with a Zone

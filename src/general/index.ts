@@ -210,9 +210,9 @@ export {
     isWithinPrimeLimit,
     THREE_PRIME_LIMIT,
     Apotome,
-    computeCentsFromDecimal,
+    computeCents,
     computePrimeLimit,
-    computeDecimalFromCents,
+    computeNumberFromCents,
     computeCentsFromPitch,
 } from "./music"
 export { Count, Ed, Extrema, Id, Index, Ms, Multiplier, Name, Step, Sum, Window } from "./types"

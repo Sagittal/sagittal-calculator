@@ -31,7 +31,8 @@ describe("half-apotome mirror", (): void => {
             const comma = jiNotationPrimaryCommas[ index ]
             const mirroredComma = jiNotationPrimaryCommas[ mirroredIndex ]
 
-            // TODO: another place to use the pitch helper, the interval
+            // TODO: FRACTIONAL PITCH HELPER
+            //  another place to use the pitch helper, the interval
             //  and in apotome slope, you could use it too, I think for the apotome fraction bit
             const actual = computeDecimalFromNum(comma) - computeDecimalFromNum(HALF_APOTOME)
             const expected = computeDecimalFromNum(HALF_APOTOME) - computeDecimalFromNum(mirroredComma)
