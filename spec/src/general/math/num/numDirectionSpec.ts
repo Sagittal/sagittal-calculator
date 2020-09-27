@@ -1,8 +1,11 @@
 import {
     computeSuperNum,
     Decimal,
-    Direction, isSubNum,
-    isSuperNum, isUnisonNum, Num,
+    Direction,
+    isSubNum,
+    isSuperNum,
+    isUnisonNum,
+    Num,
     Ratio,
 } from "../../../../../src/general/math/num"
 import { Monzo } from "../../../../../src/general/math/num/monzo"

@@ -1,5 +1,5 @@
-import { Decimal, DecimalNotDefaultingToPotentiallyIrrational } from "../decimal"
-import { Monzo } from "../monzo"
+import { Decimal } from "../decimal"
+import { MonzoNotDefaultingToRational } from "../monzo"
 import {
     NumTypeParameterEffects,
     NumTypeParameters,
@@ -47,10 +47,10 @@ type FractionalPartNotDefaultingToRational<T extends NumTypeParameters = {}> =
     NumeratorNotDefaultingToRational<T> |
     DenominatorNotDefaultingToRational<T>
 
-type RationalNumByRatio<T extends NumTypeParameters = {}> = {
-    decimal?: DecimalNotDefaultingToPotentiallyIrrational<T & { potentiallyIrrational: false }>,
-    monzo?: Monzo<T & { potentiallyIrrational: false }>,
-    ratio: Ratio<T & { potentiallyIrrational: false }>,
+type PotentiallyIrrationalNumByRatio<T extends NumTypeParameters> = {
+    decimal?: Decimal<T>,
+    monzo?: MonzoNotDefaultingToRational<T>,
+    ratio: RatioNotDefaultingToRational<T>,
 }
 
 export {
@@ -60,6 +60,6 @@ export {
     FractionalPartType,
     FractionalPart,
     RatioNotDefaultingToRational,
-    RationalNumByRatio,
     FractionalPartNotDefaultingToRational,
+    PotentiallyIrrationalNumByRatio,
 }

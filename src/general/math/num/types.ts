@@ -1,6 +1,7 @@
 import { MaybeIntegerBrand, RationalNum } from "../rational"
-import { Decimal } from "./decimal"
-import { MonzoNotDefaultingToRational, RatioNotDefaultingToRational } from "./index"
+import { PotentiallyIrrationalNumByDecimal } from "./decimal"
+import { PotentiallyIrrationalNumByMonzo } from "./monzo"
+import { PotentiallyIrrationalNumByRatio } from "./ratio"
 
 enum Direction {
     SUPER = "super",
@@ -67,21 +68,9 @@ the existing Window isn’t a base, it gets divided up additively, not multiplic
 //  And In the comma means etc lists you can describe them
 //  as only one of monzo ratio or decimal and put the others in test
 type PotentiallyIrrationalNum<T extends NumTypeParameters = {}> =
-    {
-        decimal: Decimal<T>,
-        monzo?: MonzoNotDefaultingToRational<T>,
-        ratio?: RatioNotDefaultingToRational<T>,
-    }
-    | {
-    decimal?: Decimal<T>,
-    monzo: MonzoNotDefaultingToRational<T>,
-    ratio?: RatioNotDefaultingToRational<T>,
-}
-    | {
-    decimal?: Decimal<T>,
-    monzo?: MonzoNotDefaultingToRational<T>,
-    ratio: RatioNotDefaultingToRational<T>,
-}
+    PotentiallyIrrationalNumByDecimal<T>
+    | PotentiallyIrrationalNumByMonzo<T>
+    | PotentiallyIrrationalNumByRatio<T> // TODO: rename Ratio to Quotient
 
 type Num<T extends NumTypeParameters = {}> = RationalNum<T> | PotentiallyIrrationalNum<T>
 

@@ -1,3 +1,5 @@
+import { MonzoNotDefaultingToRational } from "../monzo"
+import { RatioNotDefaultingToRational } from "../ratio"
 import { NumTypeParameterEffects, NumTypeParameters } from "../types"
 
 // This is the one place where we default the NumTypeParameters to something other than {}
@@ -34,7 +36,14 @@ type DecimalNotDefaultingToPotentiallyIrrational<T extends NumTypeParameters = {
 // TODO: Irrational could be Irr for short... but then what about Rational...
 //  And potentially could be maybe
 
+type PotentiallyIrrationalNumByDecimal<T extends NumTypeParameters> = {
+    decimal: Decimal<T>,
+    monzo?: MonzoNotDefaultingToRational<T>,
+    ratio?: RatioNotDefaultingToRational<T>,
+}
+
 export {
     Decimal,
     DecimalNotDefaultingToPotentiallyIrrational,
+    PotentiallyIrrationalNumByDecimal,
 }

@@ -2,7 +2,7 @@ import {
     computeRationalNumSmoothness,
     Integer,
     isRoughRationalNum,
-    isSmoothRational,
+    isSmoothRationalNum,
     Max,
     Min,
     NumTypeParameters,
@@ -20,7 +20,7 @@ const isWithinPrimeLimit = <S extends Primes, T extends NumTypeParameters>(
     jiPitch: RationalNum<T>,
     primeLimit: S & Max<Prime>,
 ): jiPitch is RationalNum<T & { smooth: S }> => {
-    return isSmoothRational(jiPitch, primeLimit as S as S & Smoothness)
+    return isSmoothRationalNum(jiPitch, primeLimit as S as S & Smoothness)
 }
 
 const isWithinPrimeMin = <S extends Primes, T extends NumTypeParameters>(

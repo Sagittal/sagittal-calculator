@@ -1,11 +1,10 @@
-import { increment, isUndefined } from "../../code"
+import { increment } from "../../code"
 import { Index } from "../../types"
 import { dividesEvenly } from "../dividesEvenly"
-import { computeRatioFromRationalDecimal, isRoughMonzo, isRoughRatio, NumTypeParameters } from "../num"
 import { computeRoughnessIndex } from "./primeCount"
 import { PRIMES } from "./primes"
 import { integerDivide } from "./typedOperations"
-import { Integer, Prime, Primes, RationalNum, Roughness } from "./types"
+import { Integer, Prime, Roughness } from "./types"
 
 const isRoughInteger = (integer: Integer, roughness: Roughness): boolean => {
     let isRough = true
@@ -47,26 +46,7 @@ const computeRoughInteger = <T extends Integer>(integer: T, roughness: Roughness
     return roughInteger
 }
 
-// TODO: perhaps these roughness and smoothnesses should be broken up into num/decimal and num/
-const isRoughRationalNum = <S extends Primes, T extends NumTypeParameters>(
-    rationalNum: RationalNum<T>,
-    roughness: S & Roughness,
-): rationalNum is RationalNum<T & { rough: S }> => {
-    const { monzo, ratio, decimal } = rationalNum
-
-    if (isUndefined(monzo) && isUndefined(ratio) && !isUndefined(decimal)) {
-        return isRoughRatio(
-            computeRatioFromRationalDecimal(decimal),
-            roughness as S & Integer as S & Roughness,
-        )
-    }
-
-    return (!isUndefined(monzo) && isRoughMonzo(monzo, roughness as S & Integer as S & Roughness)) ||
-        (!isUndefined(ratio) && isRoughRatio(ratio, roughness as S & Integer as S & Roughness))
-}
-
 export {
     isRoughInteger,
     computeRoughInteger,
-    isRoughRationalNum,
 }

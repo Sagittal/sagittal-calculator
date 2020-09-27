@@ -1,6 +1,7 @@
-import { computeMonzoFromIntegerOrMonzo, Monzo, NumTypeParameters } from "../num"
+import { Monzo, NumTypeParameters } from "../num"
 import { abs } from "../typedOperations"
 import { Exponent } from "../types"
+import { computeMonzoFromIntegerOrMonzo } from "./num"
 import { PRIMES } from "./primes"
 import { Integer, Prime, Sopfr } from "./types"
 

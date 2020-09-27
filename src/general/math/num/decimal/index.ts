@@ -1,7 +1,5 @@
-export { DecimalNotDefaultingToPotentiallyIrrational, Decimal } from "./types"
+export { DecimalNotDefaultingToPotentiallyIrrational, Decimal, PotentiallyIrrationalNumByDecimal } from "./types"
 export { computeDecimalFromNum } from "./decimalFromNum"
-export { computeIntegerFromMonzo } from "./integerFromMonzo"
 export { computeDecimalFromMonzo } from "./decimalFromMonzo"
 export { computeDecimalFromRatio } from "./decimalFromRatio"
-export { isRationalDecimal } from "./typeGuards"
 export { isSuperDecimal, isUnisonDecimal, isSubDecimal, invertDecimal } from "./decimalDirection"

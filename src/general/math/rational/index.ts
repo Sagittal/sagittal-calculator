@@ -17,16 +17,31 @@ export { isInteger } from "./typeGuards"
 export { computeSopfr } from "./sopfr"
 export { computeGreatestCommonDivisor } from "./common"
 export { ceil, floor, integerDivide } from "./typedOperations"
-export {
-    Copfr,
-    Integer,
-    Prime,
-    Roughness,
-    Sopfr,
-    Smoothness,
-    Primes,
+export { Copfr, Integer, Prime, Roughness, Sopfr, Smoothness, Primes } from "./types"
+export { isSmoothInteger } from "./smoothness"
+export { 
+    isRationalRatio,
     RationalNum,
     RationalNumByDecimal,
-} from "./types"
-export { isSmoothRational, computeRationalNumSmoothness, isSmoothInteger } from "./smoothness"
-export { isRoughRationalNum } from "./roughness"
+    isRoughRatio,
+    computeRatioFromMonzo,
+    computeRoughRatio,
+    isSmoothRatio,
+    computeIntegerFromMonzo,
+    computeMonzoFromInteger,
+    computeMonzoFromRatio,
+    computeMonzosFromPrimeExponentExtremas,
+    computeRoughMonzo,
+    isSmoothMonzo,
+    computeMonzoFromRationalNum,
+    computeRatioFromRationalNum,
+    computeRatioFromRationalDecimal,
+    isRoughMonzo,
+    RationalNumByMonzo,
+    RationalNumByRatio,
+    isRationalNum,
+    computeLowestTermsRatio,
+    isSmoothRationalNum,
+    computeRationalNumSmoothness,
+    isRoughRationalNum,
+} from "./num"

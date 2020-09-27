@@ -1,6 +1,7 @@
 import { computeTrimmedArray, indexOfFinalElement, isEmpty } from "../../code"
-import { computeMonzoFromIntegerOrMonzo, Monzo, NumTypeParameters } from "../num"
+import { Monzo, NumTypeParameters } from "../num"
 import { Max } from "../types"
+import { computeMonzoFromIntegerOrMonzo } from "./num"
 import { PRIMES } from "./primes"
 import { Integer, Prime, Smoothness } from "./types"
 

@@ -1,13 +1,5 @@
 import { Count, Sum } from "../../types"
-import {
-    Decimal,
-    Monzo,
-    NumTypeParameterEffects,
-    NumTypeParameters,
-    Ratio,
-    RationalNumByMonzo,
-    RationalNumByRatio,
-} from "../num"
+import { Decimal, NumTypeParameterEffects, NumTypeParameters } from "../num"
 
 type Integer<T extends NumTypeParameters = {}> = Decimal<T & { potentiallyIrrational: false, integer: true }>
 
@@ -40,17 +32,6 @@ type Primes =
     | 797 | 809 | 811 | 821 | 823 | 827 | 829 | 839 | 853 | 857 | 859 | 863 | 877 | 881 | 883 | 887 | 907 | 911 | 919
     | 929 | 937 | 941 | 947 | 953 | 967 | 971 | 977 | 983 | 991 | 997
 
-type RationalNum<T extends NumTypeParameters = {}> =
-    RationalNumByDecimal<T & { potentiallyIrrational: false }> |
-    RationalNumByMonzo<T & { potentiallyIrrational: false }> |
-    RationalNumByRatio<T & { potentiallyIrrational: false }>
-
-type RationalNumByDecimal<T extends NumTypeParameters = {}> = {
-    decimal: Decimal<T & { potentiallyIrrational: false }>,
-    monzo?: Monzo<T & { potentiallyIrrational: false }>,
-    ratio?: Ratio<T & { potentiallyIrrational: false }>,
-}
-
 export {
     Integer,
     Sopfr,
@@ -61,6 +42,4 @@ export {
     Primes,
     MaybeIntegerBrand,
     CommonFunction,
-    RationalNum,
-    RationalNumByDecimal,
 }
