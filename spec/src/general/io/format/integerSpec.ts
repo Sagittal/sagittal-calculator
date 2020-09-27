@@ -2,11 +2,19 @@ import { formatInteger } from "../../../../../src/general/io"
 import { Integer } from "../../../../../src/general/math"
 
 describe("formatInteger", (): void => {
+    const integer = 1 as Integer
+
     it("provides the same centering (3 digits, decimal point, 3 digits) as with formatted numbers", (): void => {
-        expect(formatInteger(1 as Integer)).toBe("  1    ")
+        const actual = formatInteger(integer)
+
+        const expected = "1"
+        expect(actual).toBe(expected)
     })
 
-    it("supports not aligning", (): void => {
-        expect(formatInteger(1 as Integer, { align: false })).toBe("1")
+    it("supports aligning (for tables)", (): void => {
+        const actual = formatInteger(integer, { align: true })
+
+        const expected = "  1    "
+        expect(actual).toBe(expected)
     })
 })

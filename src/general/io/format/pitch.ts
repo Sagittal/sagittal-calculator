@@ -6,7 +6,7 @@ import { formatNum } from "./num"
 import { Formatted } from "./types"
 
 const formatPitch = (pitch: Num, options: { align?: boolean } = {}): Formatted<Num> => {
-    const formattedNum = formatNum(pitch)
+    const formattedNum = formatNum(pitch, options)
 
     if (formattedNum.match(ANY_DECIMAL_CHARS)) {
         return formatCents(

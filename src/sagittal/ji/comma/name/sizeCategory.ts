@@ -18,7 +18,7 @@ const computeSizeCategory: {
     })
 
     if (isUndefined(sizeCategory)) {
-        throw new Error(`${formatPitch(comma, { align: false })} is beyond the maximum size category's bounds.`)
+        throw new Error(`${formatPitch(comma)} is beyond the maximum size category's bounds.`)
     }
 
     return abbreviated ?

@@ -12,7 +12,7 @@ const extractJiNotationLevelRanks = (
             })
 
         return jiNotationLevelEventAnalysis ?
-            formatInteger(jiNotationLevelEventAnalysis.rank) as Formatted<Integer & Rank<BoundType>> :
+            formatInteger(jiNotationLevelEventAnalysis.rank, { align: true }) as Formatted<Integer & Rank<BoundType>> :
             " " as Formatted<Integer & Rank<BoundType>>
     })
 

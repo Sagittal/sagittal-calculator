@@ -55,32 +55,29 @@ describe("computeJiNotationBoundRow", (): void => {
         const actual = computeJiNotationBoundRow(jiNotationBoundAnalysis, { jiNotationBound })
 
         const expected = [
-            " 10    ",
-            " 10",
-            " 11",
-            "   ," +
-            "," +
-            "|( ",
-            "    ," +
-            "|( ",
-            " ",
-            " ",
-            "  1    ",
-            "  1    ",
-            "  2    ",
-            "",
-            "",
-            "  0.333",
-            "  0.022",
-            "  0.355",
-            "",
-            "",
-            "  0.682",
-            "  0.157",
-            "  0.839",
-            "  5.448",
-            "  5.485",
-            "  0.039",
+            " 10    ",          // bound ID
+            " 10",              // lesser bounded mina name
+            " 11",              // greater bounded mina name
+            "   ,,|( ",         // Extreme lesser bounded symbol class
+            "    ,|( ",         // Extreme greater bounded symbol class
+            " ",                // Medium rank
+            " ",                // High rank
+            "  1    ",          // Ultra rank
+            "  1    ",          // Extreme rank
+            "  2    ",          // best rank
+            "",                 // best possible bound history Medium distance
+            "",                 // best possible bound history High distance
+            "  0.333",          // best possible bound history Ultra distance
+            "  0.022",          // best possible bound history Extreme distance
+            "  0.355",          // best possible bound history total distance
+            "",                 // best possible bound history Medium ina distance  (medina)
+            "",                 // best possible bound history High ina distance    (highina)
+            "  0.682",          // best possible bound history Ultra ina distance   (ultrina)
+            "  0.157",          // best possible bound history Extreme ina distance (mina)
+            "  0.839",          // best possible bound history total ina distance
+            "  5.448",          // cents
+            "  5.485",          // initial position
+            "  0.039",          // initial position tina distance
         ] as Row<{ of: JiNotationBoundAnalysis }>
         expect(actual).toEqual(expected)
     })

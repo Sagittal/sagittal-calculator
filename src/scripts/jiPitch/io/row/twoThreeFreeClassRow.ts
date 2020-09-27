@@ -10,19 +10,29 @@ const compute23FreeClassRow = (
 
     const rows = [] as unknown[] as Row<{ of: TwoThreeFreeClassAnalysis }>
     if (!jiPitchScriptGroupSettings.excludedFields.includes(TwoThreeFreeClassField.TWO_THREE_FREE_PRIME_LIMIT)) {
-        rows.push(formatInteger(twoThreeFreePrimeLimit) as Formatted as Formatted<TwoThreeFreeClassAnalysis>)
+        rows.push(
+            formatInteger(twoThreeFreePrimeLimit, { align: true }) as Formatted as Formatted<TwoThreeFreeClassAnalysis>,
+        )
     }
     if (!jiPitchScriptGroupSettings.excludedFields.includes(TwoThreeFreeClassField.TWO_THREE_FREE_CLASS_NAME)) {
-        rows.push(format23FreeClass(twoThreeFreeClassAnalysis) as Formatted as Formatted<TwoThreeFreeClassAnalysis>)
+        rows.push(
+            format23FreeClass(twoThreeFreeClassAnalysis) as Formatted as Formatted<TwoThreeFreeClassAnalysis>,
+        )
     }
     if (!jiPitchScriptGroupSettings.excludedFields.includes(TwoThreeFreeClassField.TWO_THREE_FREE_COPFR)) {
-        rows.push(formatInteger(twoThreeFreeCopfr) as Formatted as Formatted<TwoThreeFreeClassAnalysis>)
+        rows.push(
+            formatInteger(twoThreeFreeCopfr, { align: true }) as Formatted as Formatted<TwoThreeFreeClassAnalysis>,
+        )
     }
     if (!jiPitchScriptGroupSettings.excludedFields.includes(TwoThreeFreeClassField.TWO_THREE_FREE_SOPFR)) {
-        rows.push(formatInteger(twoThreeFreeSopfr) as Formatted as Formatted<TwoThreeFreeClassAnalysis>)
+        rows.push(
+            formatInteger(twoThreeFreeSopfr, { align: true }) as Formatted as Formatted<TwoThreeFreeClassAnalysis>,
+        )
     }
     if (!jiPitchScriptGroupSettings.excludedFields.includes(TwoThreeFreeClassField.N2D3P9)) {
-        rows.push(formatDecimal(n2d3p9) as Formatted as Formatted<TwoThreeFreeClassAnalysis>)
+        rows.push(
+            formatDecimal(n2d3p9, { align: true }) as Formatted as Formatted<TwoThreeFreeClassAnalysis>,
+        )
     }
 
     return rows

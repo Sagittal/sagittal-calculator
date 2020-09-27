@@ -23,16 +23,16 @@ const computeJiPitchRow = (jiPitchAnalysis: JiPitchAnalysis): Row<{ of: JiPitchA
         rows.push(formatMonzo(monzo) as Formatted as Formatted<JiPitchAnalysis>)
     }
     if (!jiPitchScriptGroupSettings.excludedFields.includes(JiPitchField.CENTS)) {
-        rows.push(formatCents(cents) as Formatted as Formatted<JiPitchAnalysis>)
+        rows.push(formatCents(cents, { align: true }) as Formatted as Formatted<JiPitchAnalysis>)
     }
     if (!jiPitchScriptGroupSettings.excludedFields.includes(JiPitchField.APOTOME_SLOPE)) {
-        rows.push(formatDecimal(apotomeSlope) as Formatted as Formatted<JiPitchAnalysis>)
+        rows.push(formatDecimal(apotomeSlope, { align: true }) as Formatted as Formatted<JiPitchAnalysis>)
     }
     if (!jiPitchScriptGroupSettings.excludedFields.includes(JiPitchField.AAS)) {
-        rows.push(formatDecimal(aas) as Formatted as Formatted<JiPitchAnalysis>)
+        rows.push(formatDecimal(aas, { align: true }) as Formatted as Formatted<JiPitchAnalysis>)
     }
     if (!jiPitchScriptGroupSettings.excludedFields.includes(JiPitchField.ATE)) {
-        rows.push(formatInteger(ate) as Formatted as Formatted<JiPitchAnalysis>)
+        rows.push(formatInteger(ate, { align: true }) as Formatted as Formatted<JiPitchAnalysis>)
     }
 
     return rows

@@ -16,7 +16,7 @@ const computeDecimalFromNum = <T extends NumTypeParameters>(
         return computeDecimalFromMonzo(num.monzo)
     }
 
-    throw new Error(`Tried to compute decimal from num ${formatNum(num, { align: false })} but no numeric representations were found.`)
+    throw new Error(`Tried to compute decimal from num ${formatNum(num)} but no numeric representations were found.`)
 }
 
 export {

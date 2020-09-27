@@ -54,16 +54,16 @@ describe("formatNum", (): void => {
 
         const actual = formatNum(num)
 
-        const expected = "  1.667" as Formatted<Num>
+        const expected = "1.667" as Formatted<Num>
         expect(actual).toBe(expected)
     })
 
-    it("return the num unaligned (such as for in error messages, rather than in tables)", (): void => {
+    it("return the num aligned (such as for tables)", (): void => {
         const num = { decimal: 1.666667 as Decimal }
 
-        const actual = formatNum(num, { align: false })
+        const actual = formatNum(num, { align: true })
 
-        const expected = "1.667" as Formatted<Num>
+        const expected = "  1.667" as Formatted<Num>
         expect(actual).toBe(expected)
     })
 })

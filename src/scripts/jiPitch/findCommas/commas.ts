@@ -24,14 +24,14 @@ const computeCommas = (options: CommasOptions): Comma[] => {
     } = options
 
     if (numIsHigher(lowerBound, upperBound) || equalNums(lowerBound, upperBound)) {
-        throw new Error(`Lower bound is not less than upper bound; range was ${formatPitch(lowerBound, { align: false })} - ${formatPitch(upperBound, { align: false })}.`)
+        throw new Error(`Lower bound is not less than upper bound; range was ${formatPitch(lowerBound)} - ${formatPitch(upperBound)}.`)
     }
 
     if (
         numIsHigher(computeSuperNum(upperBound), MAX_SIZE_CATEGORY_BOUND) ||
         numIsHigher(computeSuperNum(lowerBound), MAX_SIZE_CATEGORY_BOUND)
     ) {
-        throw new Error(`Search range must be within comma size category bounds (±227.370¢); range was ${formatPitch(lowerBound, { align: false })} - ${formatPitch(upperBound, { align: false })}.`)
+        throw new Error(`Search range must be within comma size category bounds (±227.370¢); range was ${formatPitch(lowerBound)} - ${formatPitch(upperBound)}.`)
     }
 
     let commas: Comma[] = []

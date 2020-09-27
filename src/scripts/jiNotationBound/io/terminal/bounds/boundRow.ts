@@ -33,7 +33,7 @@ const computeJiNotationBoundRow = (
     const [
         mediumLevelRank,
         highLevelRank,
-        veryHighLevelRank,
+        ultraLevelRank,
         extremeLevelRank,
     ] = extractJiNotationLevelRanks(bestPossibleBoundHistoryAnalysis)
 
@@ -52,29 +52,29 @@ const computeJiNotationBoundRow = (
     ] = extractJiNotationLevelDistances(bestPossibleBoundHistoryAnalysis, { ina: true })
 
     jiNotationBoundRow = [
-        formatInteger(jiNotationBound.id),
+        formatInteger(jiNotationBound.id, { align: true }),
         formatMinaName(lesserBoundedMinaName),
         formatMinaName(greaterBoundedMinaName),
         formatSymbolAscii(extremeLevelLesserBoundedSymbolClass),
         formatSymbolAscii(extremeLevelGreaterBoundedSymbolClass),
         mediumLevelRank,
         highLevelRank,
-        veryHighLevelRank,
+        ultraLevelRank,
         extremeLevelRank,
-        formatInteger(bestRank),
+        formatInteger(bestRank, { align: true }),
         bestPossibleBoundHistoryMediumDistance,
         bestPossibleBoundHistoryHighDistance,
         bestPossibleBoundHistoryUltraDistance,
         bestPossibleBoundHistoryExtremeDistance,
-        formatDecimal(bestPossibleBoundHistoryTotalDistance),
+        formatDecimal(bestPossibleBoundHistoryTotalDistance, { align: true }),
         bestPossibleBoundHistoryMediumInaDistance,
         bestPossibleBoundHistoryHighInaDistance,
         bestPossibleBoundHistoryUltraInaDistance,
         bestPossibleBoundHistoryExtremeInaDistance,
-        formatDecimal(bestPossibleBoundHistoryTotalInaDistance), // these are cents but b/c the header
-        formatDecimal(cents),                                    // specifically states they are cents
-        formatDecimal(initialPosition),                          // and this is a really dense table
-        formatDecimal(initialPositionTinaDistance),              // we're saving space and no ¢ symbols
+        formatDecimal(bestPossibleBoundHistoryTotalInaDistance, { align: true }), // these are cents but b/c the header
+        formatDecimal(cents, { align: true }),                                    // specifically states they are cents
+        formatDecimal(initialPosition, { align: true }),                          // and this is a really dense table
+        formatDecimal(initialPositionTinaDistance, { align: true }),              // we're saving space and no ¢ symbols
     ] as Row as Row<{ of: JiNotationBoundAnalysis }>
 
     return jiNotationBoundRow

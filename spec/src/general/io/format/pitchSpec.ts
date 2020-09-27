@@ -73,7 +73,7 @@ describe("formatPitch", (): void => {
 
         const actual = formatPitch(pitch)
 
-        const expected = "       884.359¢" as Formatted<Num>
+        const expected = "884.359¢" as Formatted<Num>
         expect(actual).toBe(expected)
     })
 
@@ -82,16 +82,16 @@ describe("formatPitch", (): void => {
 
         const actual = formatPitch(pitch)
 
-        const expected = "       884.359¢" as Formatted<Num>
+        const expected = "884.359¢" as Formatted<Num>
         expect(actual).toBe(expected)
     })
 
-    it("can return the pitch unaligned (such as for in error messages, rather than in tables)", (): void => {
+    it("can return the pitch aligned (for tables)", (): void => {
         const pitch = { decimal: 1.666667 as Decimal }
 
-        const actual = formatPitch(pitch, { align: false })
+        const actual = formatPitch(pitch, { align: true })
 
-        const expected = "884.359¢" as Formatted<Num>
+        const expected = "       884.359¢" as Formatted<Num>
         expect(actual).toBe(expected)
     })
 })

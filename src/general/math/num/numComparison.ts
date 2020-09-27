@@ -14,7 +14,7 @@ const equalNums = (numA: Num, numB: Num, precision: Precision = MAX_JAVASCRIPT_P
         } else if (!isUndefined(numB.ratio)) {
             return isCloseTo(numA.decimal, computeDecimalFromRatio(numB.ratio), precision)
         }
-        throw new Error(`Tried to check equality of nums ${formatNum(numA, { align: false })} and ${formatNum(numB, { align: false })} but the latter lacked any numeric representations.`)
+        throw new Error(`Tried to check equality of nums ${formatNum(numA)} and ${formatNum(numB)} but the latter lacked any numeric representations.`)
     }
 
     if (!isUndefined(numA.monzo)) {
@@ -25,7 +25,7 @@ const equalNums = (numA: Num, numB: Num, precision: Precision = MAX_JAVASCRIPT_P
         } else if (!isUndefined(numB.ratio)) {
             return equalRatios(computeRatioFromMonzo(numA.monzo), numB.ratio)
         }
-        throw new Error(`Tried to check equality of nums ${formatNum(numA, { align: false })} and ${formatNum(numB, { align: false })} but the latter lacked any numeric representations.`)
+        throw new Error(`Tried to check equality of nums ${formatNum(numA)} and ${formatNum(numB)} but the latter lacked any numeric representations.`)
     }
 
     if (!isUndefined(numA.ratio)) {
@@ -36,10 +36,10 @@ const equalNums = (numA: Num, numB: Num, precision: Precision = MAX_JAVASCRIPT_P
         } else if (!isUndefined(numB.ratio)) {
             return equalRatios(numA.ratio, numB.ratio)
         }
-        throw new Error(`Tried to check equality of nums ${formatNum(numA, { align: false })} and ${formatNum(numB, { align: false })} but the latter lacked any numeric representations.`)
+        throw new Error(`Tried to check equality of nums ${formatNum(numA)} and ${formatNum(numB)} but the latter lacked any numeric representations.`)
     }
 
-    throw new Error(`Tried to check equality of nums ${formatNum(numA, { align: false })} and ${formatNum(numB, { align: false })} but the former lacked any numeric representations.`)
+    throw new Error(`Tried to check equality of nums ${formatNum(numA)} and ${formatNum(numB)} but the former lacked any numeric representations.`)
 }
 
 const numIsHigher = (num: Num, otherNum: Num, precision: Precision = MAX_JAVASCRIPT_PRECISION): boolean =>

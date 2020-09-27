@@ -16,10 +16,10 @@ const computeJiNotationLevelAnalysisRows = (jiNotationLevel: JiNotationLevel): A
                 [RecordKey<Integer & Rank<BoundType>>, Count<Integer & Rank<BoundType>>],
         ): void => {
             let formattedBestHistoryRankCount =
-                formatInteger(bestHistoryRankCount as Count<Integer & Rank<BoundType>>)
+                formatInteger(bestHistoryRankCount as Count<Integer & Rank<BoundType>>, { align: true })
 
             const bestCumulativeHistoryRankCount = jiNotationLevelsBestCumulativeHistoryRanks[ jiNotationLevel ][ rank ]
-            let formattedBestCumulativeHistoryRankCount = formatInteger(bestCumulativeHistoryRankCount)
+            let formattedBestCumulativeHistoryRankCount = formatInteger(bestCumulativeHistoryRankCount, { align: true })
 
             const jiNotationLevelRankRow = [
                 FORMATTED_RANKS[ rank ],

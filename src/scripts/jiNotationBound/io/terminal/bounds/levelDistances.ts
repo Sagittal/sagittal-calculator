@@ -21,6 +21,7 @@ const extractJiNotationLevelDistances = (
 
             return formatDecimal(
                 ina ? jiNotationLevelEventAnalysis.inaDistance : jiNotationLevelEventAnalysis.distance,
+                { align: true }
             ) as Formatted<Multiplier<Ina> | Cents>
         })
 }

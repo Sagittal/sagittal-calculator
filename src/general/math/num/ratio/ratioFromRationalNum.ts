@@ -20,7 +20,7 @@ const computeRatioFromRationalNum = <T extends NumTypeParameters>(
     } else if (!isUndefined(decimal)) {
         outputRatio = computeRatioFromRationalDecimal(decimal)
     } else {
-        throw new Error(`Tried to compute ratio from rational num ${formatNum(rationalNum, { align: false })} but it had no numeric members.`)
+        throw new Error(`Tried to compute ratio from rational num ${formatNum(rationalNum)} but it had no numeric members.`)
     }
 
     return computeLowestTermsRatio(outputRatio)

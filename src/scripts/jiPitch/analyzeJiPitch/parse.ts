@@ -27,10 +27,10 @@ const parseJiPitch = (): RationalNum => {
             jiPitch = pitch
 
             if (!isUndefined(pitch.monzo) || !isUndefined(pitch.ratio)) {
-                saveLog(`Warning: JI pitch ${formatPitch(pitch, { align: false })} provided as decimal or cents, and may not be exactly what you intended.` as Io, LogTarget.ERROR)
+                saveLog(`Warning: JI pitch ${formatPitch(pitch)} provided as decimal or cents, and may not be exactly what you intended.` as Io, LogTarget.ERROR)
             }
         } else {
-            throw new Error(`JI pitches must be rational. This pitch was ${formatPitch(pitch, { align: false })}`)
+            throw new Error(`JI pitches must be rational. This pitch was ${formatPitch(pitch)}`)
         }
 
         // When provided via specific flags, they are pre-parsed (in readOptions.ts).

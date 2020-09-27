@@ -18,7 +18,7 @@ const computeMonzoFromRationalNum = <T extends NumTypeParameters>(
     } else if (!isUndefined(decimal)) {
         outputMonzo = computeMonzoFromRationalDecimal(decimal)
     } else {
-        throw new Error(`Tried to compute monzo from rational num ${formatNum(rationalNum, { align: false })} but it had no numeric members.`)
+        throw new Error(`Tried to compute monzo from rational num ${formatNum(rationalNum)} but it had no numeric members.`)
     }
 
     return computeTrimmedArray(outputMonzo)
