@@ -1,6 +1,5 @@
 import { Decimal, Name } from "../../../../../src/general"
-import { JiNotationLevel } from "../../../../../src/sagittal/notations/ji"
-import { InaMidpoint } from "../../../../../src/scripts/jiNotationBound/histories"
+import { InaMidpoint, JiNotationLevel } from "../../../../../src/sagittal/notations/ji"
 import { computeInaMidpoints } from "../../../../../src/scripts/jiNotationBound/histories/inaMidpoints"
 
 describe("computeInaMidpoints", (): void => {

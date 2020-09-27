@@ -1,8 +1,7 @@
 import { Name } from "../../../../../src/general"
-import { BoundType, JiNotationLevel } from "../../../../../src/sagittal/notations/ji"
+import { Bound, BoundType, JiNotationLevel } from "../../../../../src/sagittal/notations/ji"
 import { BoundEventConsolidation } from "../../../../../src/scripts/jiNotationBound/consolidateHistories/types"
 import { updateEventConsolidation } from "../../../../../src/scripts/jiNotationBound/consolidateHistories/updateEventConsolidation"
-import { BoundPosition } from "../../../../../src/scripts/jiNotationBound/histories"
 import { BoundEventAnalysis, BoundHistoryAnalysis } from "../../../../../src/scripts/jiNotationBound/history"
 import { RANKS } from "../../../../../src/scripts/jiNotationBound/ranks"
 import {
@@ -28,7 +27,7 @@ describe("updateEventConsolidation", (): void => {
         it("when there is no next event analysis (i.e. this is the final event of the bound history analysis) the next events stays the same", (): void => {
             const boundEventConsolidation: BoundEventConsolidation = {
                 ...boundEventConsolidationFixture,
-                nextBoundEvents: ["2.5°58"] as Name<BoundPosition>[],
+                nextBoundEvents: ["2.5°58"] as Name<Bound>[],
             }
 
             updateEventConsolidation(boundEventConsolidation, {
@@ -38,15 +37,15 @@ describe("updateEventConsolidation", (): void => {
                 bestPossibleBoundHistoryAnalysis,
             })
 
-            expect(boundEventConsolidation.nextBoundEvents).toEqual(["2.5°58"] as Name<BoundPosition>[])
+            expect(boundEventConsolidation.nextBoundEvents).toEqual(["2.5°58"] as Name<Bound>[])
         })
 
         it("when there is a next event analysis, it adds its name to the next events", (): void => {
             const boundEventConsolidation: BoundEventConsolidation = {
                 ...boundEventConsolidationFixture,
-                nextBoundEvents: ["2.5°58"] as Name<BoundPosition>[],
+                nextBoundEvents: ["2.5°58"] as Name<Bound>[],
             }
-            nextBoundEventAnalysis = { ...boundEventAnalysis, name: ".)/| '/|" as Name<BoundPosition> }
+            nextBoundEventAnalysis = { ...boundEventAnalysis, name: ".)/| '/|" as Name<Bound> }
 
             updateEventConsolidation(boundEventConsolidation, {
                 boundHistoryAnalysis,
@@ -62,9 +61,9 @@ describe("updateEventConsolidation", (): void => {
         it("when there is a next event analysis, but an event with that name has already been updated into this event consolidation, the next events stays the same", (): void => {
             const boundEventConsolidation: BoundEventConsolidation = {
                 ...boundEventConsolidationFixture,
-                nextBoundEvents: ["2.5°58"] as Name<BoundPosition>[],
+                nextBoundEvents: ["2.5°58"] as Name<Bound>[],
             }
-            nextBoundEventAnalysis = { ...boundEventAnalysisFixture, name: "2.5°58" as Name<BoundPosition> }
+            nextBoundEventAnalysis = { ...boundEventAnalysisFixture, name: "2.5°58" as Name<Bound> }
 
             updateEventConsolidation(boundEventConsolidation, {
                 boundHistoryAnalysis,
@@ -144,14 +143,14 @@ describe("updateEventConsolidation", (): void => {
             const boundEventConsolidation: BoundEventConsolidation = {
                 ...boundEventConsolidationFixture,
                 isBestPossibleBoundHistoryMember: true,
-                name: "eventName" as Name<BoundPosition>,
+                name: "eventName" as Name<Bound>,
                 jiNotationLevel: JiNotationLevel.ULTRA,
             }
             bestPossibleBoundHistoryAnalysis = {
                 ...boundHistoryAnalysisFixture,
                 boundEventAnalyses: [{
                     ...boundEventAnalysisFixture,
-                    name: "eventName" as Name<BoundPosition>,
+                    name: "eventName" as Name<Bound>,
                     jiNotationLevel: JiNotationLevel.ULTRA,
                 }],
             }
@@ -170,13 +169,13 @@ describe("updateEventConsolidation", (): void => {
             const boundEventConsolidation: BoundEventConsolidation = {
                 ...boundEventConsolidationFixture,
                 isBestPossibleBoundHistoryMember: true,
-                name: "eventName" as Name<BoundPosition>,
+                name: "eventName" as Name<Bound>,
             }
             bestPossibleBoundHistoryAnalysis = {
                 ...boundHistoryAnalysisFixture,
                 boundEventAnalyses: [{
                     ...boundEventAnalysisFixture,
-                    name: "eventName" as Name<BoundPosition>,
+                    name: "eventName" as Name<Bound>,
                     jiNotationLevel: JiNotationLevel.EXTREME,
                 }],
             }
@@ -195,14 +194,14 @@ describe("updateEventConsolidation", (): void => {
             const boundEventConsolidation: BoundEventConsolidation = {
                 ...boundEventConsolidationFixture,
                 isBestPossibleBoundHistoryMember: false,
-                name: "eventName" as Name<BoundPosition>,
+                name: "eventName" as Name<Bound>,
                 jiNotationLevel: JiNotationLevel.ULTRA,
             }
             bestPossibleBoundHistoryAnalysis = {
                 ...boundHistoryAnalysisFixture,
                 boundEventAnalyses: [{
                     ...boundEventAnalysisFixture,
-                    name: "eventName" as Name<BoundPosition>,
+                    name: "eventName" as Name<Bound>,
                     jiNotationLevel: JiNotationLevel.ULTRA,
                 }],
             }
@@ -221,14 +220,14 @@ describe("updateEventConsolidation", (): void => {
             const boundEventConsolidation: BoundEventConsolidation = {
                 ...boundEventConsolidationFixture,
                 isBestPossibleBoundHistoryMember: false,
-                name: "eventName" as Name<BoundPosition>,
+                name: "eventName" as Name<Bound>,
                 jiNotationLevel: JiNotationLevel.ULTRA,
             }
             bestPossibleBoundHistoryAnalysis = {
                 ...boundHistoryAnalysisFixture,
                 boundEventAnalyses: [{
                     ...boundEventAnalysisFixture,
-                    name: "eventName" as Name<BoundPosition>,
+                    name: "eventName" as Name<Bound>,
                     jiNotationLevel: JiNotationLevel.EXTREME,
                 }],
             }

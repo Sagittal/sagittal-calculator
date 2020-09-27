@@ -1,6 +1,6 @@
 import { Cents, Decimal, Name } from "../../../../../src/general"
-import { BoundType, JiNotationLevel } from "../../../../../src/sagittal/notations/ji"
-import { BoundEvent, BoundHistory, BoundPosition } from "../../../../../src/scripts/jiNotationBound/histories"
+import { Bound, BoundType, JiNotationLevel } from "../../../../../src/sagittal/notations/ji"
+import { BoundEvent, BoundHistory } from "../../../../../src/scripts/jiNotationBound/histories"
 import { computeExtendedHistories } from "../../../../../src/scripts/jiNotationBound/histories/extendedHistories"
 import { jiNotationBoundFixture } from "../../../../helpers/src/scripts/jiNotationBound/fixtures"
 
@@ -10,7 +10,7 @@ describe("computeExtendedHistories", (): void => {
     let passedInBoundEvent: BoundEvent = {
         jiNotationLevel: JiNotationLevel.HIGH,
         boundType: BoundType.INA_MIDPOINT,
-        name: "16.5°47" as Name<BoundPosition>,
+        name: "16.5°47" as Name<Bound>,
         cents: 45.45 as Cents,
     }
     beforeEach((): void => {
@@ -34,7 +34,7 @@ describe("computeExtendedHistories", (): void => {
                 {
                     jiNotationLevel: JiNotationLevel.ULTRA,
                     boundType: BoundType.INA_MIDPOINT,
-                    name: "23.5°58" as Name<BoundPosition>,
+                    name: "23.5°58" as Name<Bound>,
                     cents: 46.062028 as Cents,
                 },
             ],
@@ -43,7 +43,7 @@ describe("computeExtendedHistories", (): void => {
                 {
                     jiNotationLevel: JiNotationLevel.ULTRA,
                     boundType: BoundType.COMMA_MEAN,
-                    name: "'//| )//|" as Name<BoundPosition>,
+                    name: "'//| )//|" as Name<Bound>,
                     cents: 45.681795 as Cents,
                 },
             ],
@@ -52,7 +52,7 @@ describe("computeExtendedHistories", (): void => {
                 {
                     jiNotationLevel: JiNotationLevel.ULTRA,
                     boundType: BoundType.SIZE_CATEGORY_BOUND,
-                    name: "S|M" as Name<BoundPosition>,
+                    name: "S|M" as Name<Bound>,
                     cents: 45.112498 as Cents,
                 },
             ],

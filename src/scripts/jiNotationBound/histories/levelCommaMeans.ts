@@ -1,13 +1,13 @@
 import { Cents, computeCentsFromPitch, computeNumberFromCents, Id, indexOfFinalElement, Name } from "../../../general"
 import {
+    CommaMean,
     getPrimaryComma,
     getRepresentativeSymbol,
-    JiNotationLevel,
     JI_NOTATION_LEVELS_SYMBOL_CLASS_IDS,
+    JiNotationLevel,
     SymbolClass,
     SymbolLongAscii,
 } from "../../../sagittal"
-import { CommaMean } from "./types"
 
 const getJiNotationSymbolCents = (symbolClassId: Id<SymbolClass>): Cents => {
     const primaryComma = getPrimaryComma(symbolClassId)

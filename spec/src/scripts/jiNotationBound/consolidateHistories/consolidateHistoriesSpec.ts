@@ -1,7 +1,6 @@
 import { Cents, Multiplier, Name } from "../../../../../src/general"
-import { BoundType, JiNotationLevel, Tina } from "../../../../../src/sagittal/notations/ji"
+import { Bound, BoundType, JiNotationLevel, Tina } from "../../../../../src/sagittal/notations/ji"
 import { consolidateBoundHistories } from "../../../../../src/scripts/jiNotationBound/consolidateHistories"
-import { BoundPosition } from "../../../../../src/scripts/jiNotationBound/histories"
 import { BoundEventAnalysis, BoundHistoryAnalysis } from "../../../../../src/scripts/jiNotationBound/history"
 import { RANKS } from "../../../../../src/scripts/jiNotationBound/ranks"
 import {
@@ -15,7 +14,7 @@ describe("consolidateBoundHistories", (): void => {
             ...boundEventAnalysisFixture,
             jiNotationLevel: JiNotationLevel.ULTRA,
             boundType: BoundType.COMMA_MEAN,
-            name: "'/| )/|" as Name<BoundPosition>,
+            name: "'/| )/|" as Name<Bound>,
             cents: 24.200000 as Cents,
             rank: RANKS[ BoundType.SIZE_CATEGORY_BOUND ],
             exact: false,
@@ -24,7 +23,7 @@ describe("consolidateBoundHistories", (): void => {
             ...boundEventAnalysisFixture,
             jiNotationLevel: JiNotationLevel.ULTRA,
             boundType: BoundType.INA_MIDPOINT,
-            name: "12.5°58" as Name<BoundPosition>,
+            name: "12.5°58" as Name<Bound>,
             cents: 24.333333 as Cents,
             rank: RANKS[ BoundType.COMMA_MEAN ],
             exact: false,
@@ -33,7 +32,7 @@ describe("consolidateBoundHistories", (): void => {
             ...boundEventAnalysisFixture,
             jiNotationLevel: JiNotationLevel.EXTREME,
             boundType: BoundType.COMMA_MEAN,
-            name: ",)/|_)/|" as Name<BoundPosition>,
+            name: ",)/|_)/|" as Name<Bound>,
             cents: 24.581395 as Cents,
             rank: RANKS[ BoundType.SIZE_CATEGORY_BOUND ],
             exact: false,
@@ -42,7 +41,7 @@ describe("consolidateBoundHistories", (): void => {
             ...boundEventAnalysisFixture,
             jiNotationLevel: JiNotationLevel.EXTREME,
             boundType: BoundType.INA_MIDPOINT,
-            name: "50.5°233" as Name<BoundPosition>,
+            name: "50.5°233" as Name<Bound>,
             cents: 24.151964 as Cents,
             rank: RANKS[ BoundType.COMMA_MEAN ],
             exact: false,
@@ -51,7 +50,7 @@ describe("consolidateBoundHistories", (): void => {
             ...boundEventAnalysisFixture,
             jiNotationLevel: JiNotationLevel.EXTREME,
             boundType: BoundType.COMMA_MEAN,
-            name: ",)/|_)/|" as Name<BoundPosition>,
+            name: ",)/|_)/|" as Name<Bound>,
             cents: 24.581395 as Cents,
             rank: RANKS[ BoundType.COMMA_MEAN ],
             exact: false,
@@ -121,7 +120,7 @@ describe("consolidateBoundHistories", (): void => {
                     nextBoundEvents: [
                         boundEventAnalysisThree.name,
                         boundEventAnalysisFour.name,
-                    ] as Name<BoundPosition>[],
+                    ] as Name<Bound>[],
                 },
                 {
                     boundType: boundEventAnalysisTwoGoesToEventThree.boundType,
@@ -135,7 +134,7 @@ describe("consolidateBoundHistories", (): void => {
                     rankOfBestRankedMemberHistory: RANKS[ BoundType.COMMA_MEAN ],
                     nextBoundEvents: [
                         boundEventAnalysisThree.name,
-                    ] as Name<BoundPosition>[],
+                    ] as Name<Bound>[],
                 },
             ],
             [ JiNotationLevel.EXTREME ]: [
@@ -149,7 +148,7 @@ describe("consolidateBoundHistories", (): void => {
                     exact: false,
                     rankOfBestRankedEventInAnyMemberHistory: RANKS[ BoundType.COMMA_MEAN ],
                     rankOfBestRankedMemberHistory: RANKS[ BoundType.COMMA_MEAN ],
-                    nextBoundEvents: [] as Name<BoundPosition>[],
+                    nextBoundEvents: [] as Name<Bound>[],
                 },
                 {
                     boundType: boundEventAnalysisFour.boundType,
@@ -161,7 +160,7 @@ describe("consolidateBoundHistories", (): void => {
                     exact: false,
                     rankOfBestRankedEventInAnyMemberHistory: RANKS[ BoundType.COMMA_MEAN ],
                     rankOfBestRankedMemberHistory: RANKS[ BoundType.SIZE_CATEGORY_BOUND ],
-                    nextBoundEvents: [] as Name<BoundPosition>[],
+                    nextBoundEvents: [] as Name<Bound>[],
                 },
             ],
         }

@@ -1,30 +1,38 @@
 import { Abs, Cents, Count, Decimal, Id, Multiplier, Name, Sum } from "../../../../../src/general"
-import { BoundType, Ina, JiNotationBound, JiNotationLevel, Tina } from "../../../../../src/sagittal/notations/ji"
+import {
+    Bound,
+    BoundType,
+    Ina,
+    JiNotationBound,
+    JiNotationLevel,
+    Tina,
+} from "../../../../../src/sagittal/notations/ji"
 import { analyzeJiNotationBound } from "../../../../../src/scripts/jiNotationBound/bound"
 import * as jiNotationLevels from "../../../../../src/scripts/jiNotationBound/bound/levels"
 import * as ranks from "../../../../../src/scripts/jiNotationBound/bound/ranks"
-import { BoundHistory, BoundPosition } from "../../../../../src/scripts/jiNotationBound/histories"
+import { BoundHistory } from "../../../../../src/scripts/jiNotationBound/histories"
 import { BoundEventAnalysis, BoundHistoryAnalysis, Score } from "../../../../../src/scripts/jiNotationBound/history"
 import { RANKS } from "../../../../../src/scripts/jiNotationBound/ranks"
+import { jiNotationBoundFixture } from "../../../../helpers/src/scripts/jiNotationBound/fixtures"
 
 describe("analyzeJiNotationBound", (): void => {
     const notBestHistory: BoundHistory = [
         {
             jiNotationLevel: JiNotationLevel.ULTRA,
             boundType: BoundType.COMMA_MEAN,
-            name: ".)/| '/|" as Name<BoundPosition>,
+            name: ".)/| '/|" as Name<Bound>,
             cents: 23.2 as Cents,
         },
         {
             jiNotationLevel: JiNotationLevel.EXTREME,
             boundType: BoundType.COMMA_MEAN,
-            name: ".)/| '/|" as Name<BoundPosition>,
+            name: ".)/| '/|" as Name<Bound>,
             cents: 23.2 as Cents,
         },
         {
             jiNotationLevel: JiNotationLevel.INSANE,
             boundType: BoundType.INA_MIDPOINT,
-            name: "164.5°809" as Name<BoundPosition>,
+            name: "164.5°809" as Name<Bound>,
             cents: 23.116419649559468 as Cents,
             // This one gets rank 4
         },
@@ -33,19 +41,19 @@ describe("analyzeJiNotationBound", (): void => {
         {
             jiNotationLevel: JiNotationLevel.ULTRA,
             boundType: BoundType.COMMA_MEAN,
-            name: ".)/| '/|" as Name<BoundPosition>,
+            name: ".)/| '/|" as Name<Bound>,
             cents: 23.2 as Cents,
         },
         {
             jiNotationLevel: JiNotationLevel.EXTREME,
             boundType: BoundType.INA_MIDPOINT,
-            name: "47.5°233" as Name<BoundPosition>,
+            name: "47.5°233" as Name<Bound>,
             cents: 23.15 as Cents,
         },
         {
             jiNotationLevel: JiNotationLevel.INSANE,
             boundType: BoundType.INA_MIDPOINT,
-            name: "164.5°809" as Name<BoundPosition>,
+            name: "164.5°809" as Name<Bound>,
             cents: 23.116419649559468 as Cents,
             // This one gets rank 1
         },
@@ -55,6 +63,7 @@ describe("analyzeJiNotationBound", (): void => {
         bestHistory,
     ]
     const jiNotationBound: JiNotationBound = {
+        ...jiNotationBoundFixture,
         decimal: 1.01344211122 as Decimal, // 23.116420¢
         jiNotationLevels: [JiNotationLevel.ULTRA, JiNotationLevel.EXTREME, JiNotationLevel.INSANE],
         id: 47 as Id<JiNotationBound>,
@@ -64,7 +73,7 @@ describe("analyzeJiNotationBound", (): void => {
         {
             jiNotationLevel: JiNotationLevel.ULTRA,
             boundType: BoundType.COMMA_MEAN,
-            name: ".)/| '/|" as Name<BoundPosition>,
+            name: ".)/| '/|" as Name<Bound>,
             cents: 23.2 as Cents,
             rank: RANKS[ BoundType.COMMA_MEAN ],
             distance: 0 as Abs<Cents>,
@@ -74,7 +83,7 @@ describe("analyzeJiNotationBound", (): void => {
         {
             jiNotationLevel: JiNotationLevel.EXTREME,
             boundType: BoundType.INA_MIDPOINT,
-            name: "47.5°233" as Name<BoundPosition>,
+            name: "47.5°233" as Name<Bound>,
             cents: 23.15 as Cents,
             rank: RANKS[ BoundType.INA_MIDPOINT ],
             distance: 0.05000000000000071 as Abs<Cents>,
@@ -84,7 +93,7 @@ describe("analyzeJiNotationBound", (): void => {
         {
             jiNotationLevel: JiNotationLevel.INSANE,
             boundType: BoundType.INA_MIDPOINT,
-            name: "164.5°809" as Name<BoundPosition>,
+            name: "164.5°809" as Name<Bound>,
             cents: 23.116419649559468 as Cents,
             rank: RANKS[ BoundType.INA_MIDPOINT ],
             distance: 0.03358035044053054 as Abs<Cents>,
@@ -121,7 +130,7 @@ describe("analyzeJiNotationBound", (): void => {
                     {
                         jiNotationLevel: JiNotationLevel.ULTRA,
                         boundType: BoundType.COMMA_MEAN,
-                        name: ".)/| '/|" as Name<BoundPosition>,
+                        name: ".)/| '/|" as Name<Bound>,
                         cents: 23.2 as Cents,
                         isPossibleBoundHistoryMember: true,
                         isBestPossibleBoundHistoryMember: true,
@@ -131,14 +140,14 @@ describe("analyzeJiNotationBound", (): void => {
                         nextBoundEvents: [
                             ".)/| '/|",
                             "47.5°233",
-                        ] as Name<BoundPosition>[],
+                        ] as Name<Bound>[],
                     },
                 ],
                 [ JiNotationLevel.EXTREME ]: [
                     {
                         jiNotationLevel: JiNotationLevel.EXTREME,
                         boundType: BoundType.COMMA_MEAN,
-                        name: ".)/| '/|" as Name<BoundPosition>,
+                        name: ".)/| '/|" as Name<Bound>,
                         cents: 23.2 as Cents,
                         isPossibleBoundHistoryMember: true,
                         isBestPossibleBoundHistoryMember: false,
@@ -147,12 +156,12 @@ describe("analyzeJiNotationBound", (): void => {
                         rankOfBestRankedMemberHistory: RANKS[ BoundType.COMMA_MEAN ],
                         nextBoundEvents: [
                             "164.5°809",
-                        ] as Name<BoundPosition>[],
+                        ] as Name<Bound>[],
                     },
                     {
                         jiNotationLevel: JiNotationLevel.EXTREME,
                         boundType: BoundType.INA_MIDPOINT,
-                        name: "47.5°233" as Name<BoundPosition>,
+                        name: "47.5°233" as Name<Bound>,
                         cents: 23.15 as Cents,
                         isPossibleBoundHistoryMember: true,
                         isBestPossibleBoundHistoryMember: true,
@@ -161,21 +170,21 @@ describe("analyzeJiNotationBound", (): void => {
                         rankOfBestRankedMemberHistory: RANKS[ BoundType.COMMA_MEAN ],
                         nextBoundEvents: [
                             "164.5°809",
-                        ] as Name<BoundPosition>[],
+                        ] as Name<Bound>[],
                     },
                 ],
                 [ JiNotationLevel.INSANE ]: [
                     {
                         jiNotationLevel: JiNotationLevel.INSANE,
                         boundType: BoundType.INA_MIDPOINT,
-                        name: "164.5°809" as Name<BoundPosition>,
+                        name: "164.5°809" as Name<Bound>,
                         cents: 23.116419649559468 as Cents,
                         isPossibleBoundHistoryMember: true,
                         isBestPossibleBoundHistoryMember: true,
                         exact: true,
                         rankOfBestRankedEventInAnyMemberHistory: RANKS[ BoundType.INA_MIDPOINT ],
                         rankOfBestRankedMemberHistory: RANKS[ BoundType.COMMA_MEAN ],
-                        nextBoundEvents: [] as Name<BoundPosition>[],
+                        nextBoundEvents: [] as Name<Bound>[],
                     },
                 ],
             },

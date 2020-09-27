@@ -1,20 +1,27 @@
-import { BoundType, JiNotationLevel, JI_NOTATION_LEVELS, SizeCategoryBound } from "../../../sagittal"
+import {
+    Bound,
+    BoundType,
+    CommaMean,
+    InaMidpoint,
+    JiNotationLevel,
+    JI_NOTATION_LEVELS,
+    SizeCategoryBound,
+} from "../../../sagittal"
 import { computeInaMidpoints } from "./inaMidpoints"
 import { computeJiNotationLevelCommaMeans } from "./levelCommaMeans"
 import { computeSizeCategoryBoundsWithinMaximumPosition } from "./sizeCategoryBounds"
-import { BoundPosition, CommaMean, InaMidpoint } from "./types"
 
-const computeBoundPositions = <T extends BoundPosition>(
-    computeLevelSnappablePositions: (jiNotationLevel: JiNotationLevel) => T[],
+const computeBoundPositions = <T extends Bound>(
+    computeLevelBoundPositions: (jiNotationLevel: JiNotationLevel) => T[],
 ): Record<JiNotationLevel, T[]> =>
     JI_NOTATION_LEVELS.reduce(
         (
-            boundPositions: Record<JiNotationLevel, T[]>,
+            bounds: Record<JiNotationLevel, T[]>,
             jiNotationLevel: JiNotationLevel,
         ): Record<JiNotationLevel, T[]> =>
             ({
-                ...boundPositions,
-                [ jiNotationLevel ]: computeLevelSnappablePositions(jiNotationLevel),
+                ...bounds,
+                [ jiNotationLevel ]: computeLevelBoundPositions(jiNotationLevel),
             }),
         {} as Record<JiNotationLevel, T[]>,
     )
@@ -26,7 +33,7 @@ const JI_NOTATION_LEVELS_COMMA_MEANS: Record<JiNotationLevel, CommaMean[]> =
 const JI_NOTATION_LEVELS_SIZE_CATEGORY_BOUNDS: Record<JiNotationLevel, SizeCategoryBound[]> =
     computeBoundPositions(computeSizeCategoryBoundsWithinMaximumPosition)
 
-const BOUND_POSITIONS_BY_BOUND_TYPE: Record<BoundType, Record<JiNotationLevel, BoundPosition[]>> = {
+const BOUNDS_BY_TYPE: Record<BoundType, Record<JiNotationLevel, Bound[]>> = {
     [ BoundType.INA_MIDPOINT ]: INA_MIDPOINTS,
     [ BoundType.SIZE_CATEGORY_BOUND ]: JI_NOTATION_LEVELS_SIZE_CATEGORY_BOUNDS,
     [ BoundType.COMMA_MEAN ]: JI_NOTATION_LEVELS_COMMA_MEANS,
@@ -36,5 +43,5 @@ export {
     INA_MIDPOINTS,
     JI_NOTATION_LEVELS_COMMA_MEANS,
     JI_NOTATION_LEVELS_SIZE_CATEGORY_BOUNDS,
-    BOUND_POSITIONS_BY_BOUND_TYPE,
+    BOUNDS_BY_TYPE,
 }

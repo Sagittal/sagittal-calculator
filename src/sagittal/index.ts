@@ -72,5 +72,8 @@ export {
     SymbolSubset,
     computeSecondaryCommaZone,
     BoundType,
+    Bound,
+    InaMidpoint,
+    CommaMean,
 } from "./notations"
 export { APOTOME, HALF_APOTOME } from "./constants"

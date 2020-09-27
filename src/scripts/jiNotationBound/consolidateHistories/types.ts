@@ -1,13 +1,13 @@
 import { Integer, Name, Rank } from "../../../general"
-import { BoundType, JiNotationLevel } from "../../../sagittal"
-import { BoundEvent, BoundPosition } from "../histories"
+import { Bound, BoundType, JiNotationLevel } from "../../../sagittal"
+import { BoundEvent } from "../histories"
 import { BoundEventAnalysis, BoundHistoryAnalysis } from "../history"
 
 interface BoundEventConsolidation extends BoundEvent {
     exact: boolean,
     isBestPossibleBoundHistoryMember: boolean,
     isPossibleBoundHistoryMember: boolean,
-    nextBoundEvents: Name<BoundPosition>[],
+    nextBoundEvents: Name<Bound>[],
     rankOfBestRankedEventInAnyMemberHistory: Integer & Rank<BoundType>,
     rankOfBestRankedMemberHistory: Integer & Rank<BoundType>,
 }

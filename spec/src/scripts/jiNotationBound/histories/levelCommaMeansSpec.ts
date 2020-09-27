@@ -1,6 +1,5 @@
 import { Decimal, Name } from "../../../../../src/general"
-import { JiNotationLevel } from "../../../../../src/sagittal/notations/ji"
-import { CommaMean } from "../../../../../src/scripts/jiNotationBound/histories"
+import { CommaMean, JiNotationLevel } from "../../../../../src/sagittal/notations/ji"
 import { computeJiNotationLevelCommaMeans } from "../../../../../src/scripts/jiNotationBound/histories/levelCommaMeans"
 
 describe("computeJiNotationLevelCommaMeans", (): void => {

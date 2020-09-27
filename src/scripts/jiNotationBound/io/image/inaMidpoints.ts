@@ -1,6 +1,6 @@
 import { add, computeCentsFromPitch, Io, Px, subtract } from "../../../../general"
-import { JiNotationLevel } from "../../../../sagittal"
-import { InaMidpoint, INA_MIDPOINTS } from "../../histories"
+import { InaMidpoint, JiNotationLevel } from "../../../../sagittal"
+import { INA_MIDPOINTS } from "../../histories"
 import { JI_NOTATION_LEVEL_CENTERS } from "./levelHeights"
 import { INA_MIDPOINT_HEX_COLOR } from "./rankColors"
 import { DASH_SIZE, HALF_TICK_SIZE } from "./sizes"

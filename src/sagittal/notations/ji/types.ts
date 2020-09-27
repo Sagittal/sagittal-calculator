@@ -1,4 +1,5 @@
-import { Cents, Id, PotentiallyIrrationalNum } from "../../../general"
+import { Cents, Id, Name, PotentiallyIrrationalNum } from "../../../general"
+import { SizeCategoryBound } from "../../ji"
 
 enum BoundType {
     INA_MIDPOINT = "inaMidpoint",
@@ -22,10 +23,17 @@ enum JiNotationLevel {
     INSANE = "insane",          // Corresponds closely with Magrathean symbol subset
 }
 
-// TODO: wait.. what's the difference between this and a BoundPosition?
-//  Should this not just extend that? okay, if you do that, you'll force each one to have a name too.
-//  Which I think is cool. but you don't have to worry about that yet.
-type JiNotationBound = PotentiallyIrrationalNum & {
+type CommaMean = PotentiallyIrrationalNum & {
+    name: Name<CommaMean>,
+}
+
+type InaMidpoint = PotentiallyIrrationalNum & {
+    name: Name<InaMidpoint>,
+}
+
+type Bound = InaMidpoint | CommaMean | SizeCategoryBound
+
+type JiNotationBound = Bound & {
     id: Id<JiNotationBound>,
     jiNotationLevels: JiNotationLevel[],
     boundType: BoundType,
@@ -41,4 +49,7 @@ export {
     JiNotationBound,
     Ina,
     BoundType,
+    CommaMean,
+    InaMidpoint,
+    Bound,
 }

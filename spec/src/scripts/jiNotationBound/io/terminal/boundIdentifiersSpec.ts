@@ -34,9 +34,11 @@ import { MINA, ULTRINA } from "../../../../../../src/sagittal/notations/ji/inter
 import { PrimaryCommaAnalysis } from "../../../../../../src/sagittal/notations/types"
 import { extractJiNotationBoundIdentifiers } from "../../../../../../src/scripts/jiNotationBound/io/terminal/boundIdentifiers"
 import { JiNotationBoundIdentifiers } from "../../../../../../src/scripts/jiNotationBound/io/terminal/types"
+import { jiNotationBoundFixture } from "../../../../../helpers/src/scripts/jiNotationBound/fixtures"
 
 describe("extractJiNotationBoundIdentifiers", (): void => {
     const jiNotationBound: JiNotationBound = {
+        ...jiNotationBoundFixture,
         decimal: 1.01344211084 as Decimal,  // 23.116419¢
         jiNotationLevels: [JiNotationLevel.ULTRA, JiNotationLevel.EXTREME, JiNotationLevel.INSANE],
         id: 47 as Id<JiNotationBound>,

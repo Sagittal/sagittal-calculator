@@ -1,8 +1,8 @@
 import { Cents, Name } from "../../../../../src/general"
-import { BoundType } from "../../../../../src/sagittal/notations/ji"
+import { Bound, BoundType } from "../../../../../src/sagittal/notations/ji"
 import { computeInitialEventConsolidation } from "../../../../../src/scripts/jiNotationBound/consolidateHistories/initialEventConsolidation"
 import { BoundEventConsolidation } from "../../../../../src/scripts/jiNotationBound/consolidateHistories/types"
-import { BoundEvent, BoundPosition } from "../../../../../src/scripts/jiNotationBound/histories"
+import { BoundEvent } from "../../../../../src/scripts/jiNotationBound/histories"
 import { BoundEventAnalysis } from "../../../../../src/scripts/jiNotationBound/history"
 import { RANKS } from "../../../../../src/scripts/jiNotationBound/ranks"
 import { boundEventAnalysisFixture } from "../../../../helpers/src/scripts/jiNotationBound/fixtures"
@@ -12,7 +12,7 @@ describe("computeInitialEventConsolidation", (): void => {
     const boundEventAnalysis: BoundEventAnalysis = {
         ...boundEventAnalysisFixture,
         boundType: BoundType.INA_MIDPOINT,
-        name: "12.5°58" as Name<BoundPosition>,
+        name: "12.5°58" as Name<Bound>,
         rank: RANKS[ BoundType.COMMA_MEAN ],
         cents: 43.343455 as Cents,
     }

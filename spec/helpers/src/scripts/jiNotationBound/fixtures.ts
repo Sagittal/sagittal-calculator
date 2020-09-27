@@ -1,8 +1,15 @@
 import { Abs, Cents, Count, Decimal, Id, Integer, Multiplier, Name, Rank, Sum } from "../../../../../src/general"
-import { BoundType, Ina, JiNotationBound, JiNotationLevel, Tina } from "../../../../../src/sagittal/notations/ji"
+import {
+    Bound,
+    BoundType,
+    Ina,
+    JiNotationBound,
+    JiNotationLevel,
+    Tina,
+} from "../../../../../src/sagittal/notations/ji"
 import { JiNotationBoundAnalysis } from "../../../../../src/scripts/jiNotationBound/bound"
 import { BoundEventConsolidation } from "../../../../../src/scripts/jiNotationBound/consolidateHistories/types"
-import { BoundEvent, BoundPosition } from "../../../../../src/scripts/jiNotationBound/histories"
+import { BoundEvent } from "../../../../../src/scripts/jiNotationBound/histories"
 import { BoundEventAnalysis, BoundHistoryAnalysis, Score } from "../../../../../src/scripts/jiNotationBound/history"
 import { RANKS } from "../../../../../src/scripts/jiNotationBound/ranks"
 
@@ -10,7 +17,7 @@ const boundEventFixture: BoundEvent = {
     cents: 0 as Cents,
     boundType: "" as BoundType,
     jiNotationLevel: "" as JiNotationLevel,
-    name: "" as Name<BoundPosition>,
+    name: "" as Name<Bound>,
 }
 
 const boundEventAnalysisFixture: BoundEventAnalysis = {
@@ -40,7 +47,7 @@ const boundEventConsolidationFixture: BoundEventConsolidation = {
     isBestPossibleBoundHistoryMember: false,
     rankOfBestRankedMemberHistory: 0 as Integer & Rank<BoundType>,
     rankOfBestRankedEventInAnyMemberHistory: 0 as Integer & Rank<BoundType>,
-    nextBoundEvents: [] as Name<BoundPosition>[],
+    nextBoundEvents: [] as Name<Bound>[],
     exact: false,
 }
 
@@ -49,6 +56,7 @@ const jiNotationBoundFixture: JiNotationBound = {
     jiNotationLevels: [],
     decimal: 1 as Decimal,
     boundType: BoundType.INA_MIDPOINT,
+    name: "" as Name<Bound>,
 }
 
 const jiNotationBoundAnalysisFixture: JiNotationBoundAnalysis = {

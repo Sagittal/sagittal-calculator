@@ -19,6 +19,9 @@ export {
     JI_NOTATION,
     computeSecondaryCommaZone,
     BoundType,
+    Bound,
+    InaMidpoint,
+    CommaMean,
 } from "./ji"
 export { PrimaryComma, SymbolClass, Symbol, SymbolClassAnalysis, SymbolSubset, Flavor } from "./types"
 export { SYMBOL_CLASSES } from "./symbolClasses"

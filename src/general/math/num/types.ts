@@ -62,11 +62,9 @@ call it a Degree
 the existing Window isn’t a base, it gets divided up additively, not multiplicatively
  */
 
-// TODO: I've been vacillating a bit on whether to force the presence of decimal or not
+// I've been vacillating a bit on whether to force the presence of decimal or not
 //  But I was actually forced to go back to this more complex situation when I made parsing monzos and ratios
 //  Not guarantee they come back rational, which is true
-//  And In the comma means etc lists you can describe them
-//  As only one of monzo ratio or decimal and put the others in test
 type PotentiallyIrrationalNum<T extends NumTypeParameters = {}> =
     PotentiallyIrrationalNumByDecimal<T>
     | PotentiallyIrrationalNumByMonzo<T>

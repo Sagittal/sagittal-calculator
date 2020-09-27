@@ -1,10 +1,10 @@
 import { Cents, Name } from "../../../../../src/general"
-import { BoundType, JiNotationLevel } from "../../../../../src/sagittal/notations/ji"
+import { Bound, BoundType, JiNotationLevel } from "../../../../../src/sagittal/notations/ji"
 import {
     BoundedSymbolClassPositions,
     computeBoundedSymbolClassPositions,
 } from "../../../../../src/scripts/jiNotationBound/boundedPositions"
-import { BoundEvent, BoundPosition } from "../../../../../src/scripts/jiNotationBound/histories"
+import { BoundEvent } from "../../../../../src/scripts/jiNotationBound/histories"
 import { computeBoundEvents } from "../../../../../src/scripts/jiNotationBound/histories/events"
 
 describe("computeBoundEvents", (): void => {
@@ -28,7 +28,7 @@ describe("computeBoundEvents", (): void => {
                     {
                         jiNotationLevel: JiNotationLevel.ULTRA,
                         boundType: BoundType.INA_MIDPOINT,
-                        name: "2.5°58" as Name<BoundPosition>,
+                        name: "2.5°58" as Name<Bound>,
                         cents: 4.900215 as Cents,
                     },
                 ]
@@ -48,7 +48,7 @@ describe("computeBoundEvents", (): void => {
                         {
                             jiNotationLevel: JiNotationLevel.ULTRA,
                             boundType: BoundType.INA_MIDPOINT,
-                            name: "2.5°58" as Name<BoundPosition>,
+                            name: "2.5°58" as Name<Bound>,
                             cents: 4.900215 as Cents,
                         },
                     ]
@@ -66,13 +66,13 @@ describe("computeBoundEvents", (): void => {
                     {
                         jiNotationLevel: JiNotationLevel.HIGH,
                         boundType: BoundType.INA_MIDPOINT,
-                        name: "11.5°47" as Name<BoundPosition>,
+                        name: "11.5°47" as Name<Bound>,
                         cents: 27.816544 as Cents,
                     },
                     {
                         jiNotationLevel: JiNotationLevel.HIGH,
                         boundType: BoundType.INA_MIDPOINT,
-                        name: "12.5°47" as Name<BoundPosition>,
+                        name: "12.5°47" as Name<Bound>,
                         cents: 30.235373 as Cents,
                     },
                 ]
@@ -108,7 +108,7 @@ describe("computeBoundEvents", (): void => {
                     {
                         jiNotationLevel: JiNotationLevel.MEDIUM,
                         boundType: BoundType.COMMA_MEAN,
-                        name: "/| |)" as Name<BoundPosition>,
+                        name: "/| |)" as Name<Bound>,
                         cents: 24.385190 as Cents,
                     },
                 ]
@@ -125,7 +125,7 @@ describe("computeBoundEvents", (): void => {
                     {
                         jiNotationLevel: JiNotationLevel.HIGH,
                         boundType: BoundType.COMMA_MEAN,
-                        name: ")/| |)" as Name<BoundPosition>,
+                        name: ")/| |)" as Name<Bound>,
                         cents: 26.074200 as Cents,
                     },
                 ]
@@ -142,7 +142,7 @@ describe("computeBoundEvents", (): void => {
                     {
                         jiNotationLevel: JiNotationLevel.ULTRA,
                         boundType: BoundType.COMMA_MEAN,
-                        name: ".|) |)" as Name<BoundPosition>,
+                        name: ".|) |)" as Name<Bound>,
                         cents: 26.287231 as Cents,
                     },
                 ]
@@ -159,7 +159,7 @@ describe("computeBoundEvents", (): void => {
                     {
                         jiNotationLevel: JiNotationLevel.EXTREME,
                         boundType: BoundType.COMMA_MEAN,
-                        name: "`.|) ,,|)" as Name<BoundPosition>,
+                        name: "`.|) ,,|)" as Name<Bound>,
                         cents: 26.220209 as Cents,
                     },
                 ]
@@ -183,7 +183,7 @@ describe("computeBoundEvents", (): void => {
                         {
                             jiNotationLevel: JiNotationLevel.HIGH,
                             boundType: BoundType.COMMA_MEAN,
-                            name: "|) )|)" as Name<BoundPosition>,
+                            name: "|) )|)" as Name<Bound>,
                             cents: 28.953101 as Cents,
                         },
                     ]
@@ -207,7 +207,7 @@ describe("computeBoundEvents", (): void => {
                     {
                         jiNotationLevel: JiNotationLevel.MEDIUM,
                         boundType: BoundType.SIZE_CATEGORY_BOUND,
-                        name: "C|S" as Name<BoundPosition>,
+                        name: "C|S" as Name<Bound>,
                         cents: 33.382492 as Cents,
                     },
                 ]

@@ -1,6 +1,6 @@
 import { computeCentsFromPitch, Io, Px, subtract } from "../../../../general"
-import { JiNotationLevel, SymbolLongAscii, unicodeFromAscii } from "../../../../sagittal"
-import { CommaMean, JI_NOTATION_LEVELS_COMMA_MEANS } from "../../histories"
+import { CommaMean, JiNotationLevel, SymbolLongAscii, unicodeFromAscii } from "../../../../sagittal"
+import { JI_NOTATION_LEVELS_COMMA_MEANS } from "../../histories"
 import { JI_NOTATION_LEVEL_CENTERS } from "./levelHeights"
 import { COMMA_MEAN_HEX_COLOR } from "./rankColors"
 import { DASH_SIZE, HALF_TICK_SIZE } from "./sizes"

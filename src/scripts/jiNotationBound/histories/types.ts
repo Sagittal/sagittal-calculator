@@ -1,9 +1,9 @@
-import { Cents, Name, PotentiallyIrrationalNum } from "../../../general"
-import { BoundType, JiNotationLevel, SizeCategoryBound } from "../../../sagittal"
+import { Cents, Name } from "../../../general"
+import { Bound, BoundType, JiNotationLevel } from "../../../sagittal"
 
 interface BoundEvent {
     jiNotationLevel: JiNotationLevel,
-    name: Name<BoundPosition>,
+    name: Name<Bound>,
     // TODO: BOUNDS ANALYSIS DOES NOT BASE EVERYTHING ON CENTS INTERNALLY
     //  Right, so you'll eventually want to wean yourself off this too
     //  Eventually certainly you'll want to convert this script over to internally working in decimals,
@@ -14,20 +14,7 @@ interface BoundEvent {
 
 type BoundHistory = BoundEvent[]
 
-type CommaMean = PotentiallyIrrationalNum & {
-    name: Name<CommaMean>,
-}
-
-type InaMidpoint = PotentiallyIrrationalNum & {
-    name: Name<InaMidpoint>,
-}
-
-type BoundPosition = InaMidpoint | CommaMean | SizeCategoryBound
-
 export {
     BoundEvent,
     BoundHistory,
-    CommaMean,
-    InaMidpoint,
-    BoundPosition,
 }
