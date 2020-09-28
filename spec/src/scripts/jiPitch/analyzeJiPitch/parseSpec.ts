@@ -118,8 +118,8 @@ describe("parseJiPitch", (): void => {
             expect(actual).toEqual(expected)
         })
 
-        it("works for a comma name (which will have been pre-parsed into a monzo)", (): void => {
-            program.commaName = [-11, 7]
+        it("works for a comma name (which will have been pre-parsed into a comma)", (): void => {
+            program.commaName = { monzo: [-11, 7] as RationalMonzo }
 
             const actual = parseJiPitch()
 

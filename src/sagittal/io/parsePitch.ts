@@ -11,13 +11,12 @@ import {
     parseMonzo,
     parseQuotient,
 } from "../../general"
-import { computeMonzoFrom23FreeClassAndSizeCategoryName, parseCommaName } from "../ji"
+import { computeCommaFromCommaNameQuotientAndSizeCategoryName, parseCommaName } from "../ji"
 
 const parsePitch = (pitchIo: Io): Num => {
     let pitch: Num
     if (pitchIo.match(IDENTIFYING_COMMA_NAME_CHARS)) {
-        const { commaNameQuotient, sizeCategoryName } = parseCommaName(pitchIo)
-        pitch = { monzo: computeMonzoFrom23FreeClassAndSizeCategoryName({ commaNameQuotient, sizeCategoryName }) }
+        pitch = computeCommaFromCommaNameQuotientAndSizeCategoryName(parseCommaName(pitchIo))
     } else if (pitchIo.match(ANY_QUOTIENT_CHARS)) {
         pitch = { quotient: parseQuotient(pitchIo) }
     } else if (pitchIo.match(ANY_MONZO_CHARS)) {

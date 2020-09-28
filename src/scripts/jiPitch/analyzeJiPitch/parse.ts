@@ -39,7 +39,7 @@ const parseJiPitch = (): Ratio => {
     } else if (program.quotient) {
         jiPitch = { quotient: program.quotient }
     } else if (program.commaName) {
-        jiPitch = { monzo: program.commaName }
+        jiPitch = program.commaName
     } else if (program.integer) {
         jiPitch = { decimal: program.integer }
     } else {

@@ -19,7 +19,7 @@ export {
     DEFAULT_MAX_PRIME_LIMIT,
     DEFAULT_LOWER_BOUND,
     N2D3P9,
-    computeMonzoFrom23FreeClassAndSizeCategoryName,
+    computeCommaFromCommaNameQuotientAndSizeCategoryName,
     parseCommaName,
     computeCommaName,
     SIZE_CATEGORY_BOUNDS,

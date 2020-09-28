@@ -2,8 +2,8 @@ import { isUndefined } from "../../../../code"
 import { formatNum } from "../../../../io"
 import { computeQuotientFromMonzo, NumTypeParameters } from "../../../num"
 import { Ratio } from "../types"
-import { computeLowestTermsRationalQuotient } from "./lowestTerms"
 import { computeRationalQuotientFromRationalDecimal } from "./fromDecimal"
+import { computeLowestTermsRationalQuotient } from "./lowestTerms"
 import { RationalQuotient } from "./types"
 
 const computeRationalQuotientFromRatio = <T extends NumTypeParameters>(

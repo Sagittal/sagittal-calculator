@@ -1,5 +1,6 @@
 import { program } from "commander"
 import {
+    Comma,
     CommandFlag,
     IntegerDecimal,
     Io,
@@ -9,9 +10,8 @@ import {
     parseMonzo,
     parseQuotient,
     Quotient,
-    RationalMonzo,
 } from "../../../general"
-import { computeMonzoFrom23FreeClassAndSizeCategoryName, parseCommaName, parsePitch } from "../../../sagittal"
+import { computeCommaFromCommaNameQuotientAndSizeCategoryName, parseCommaName, parsePitch } from "../../../sagittal"
 
 const readJiPitchOptions = (): void => {
     program
@@ -28,8 +28,8 @@ const readJiPitchOptions = (): void => {
         .option(
             `-${CommandFlag.COMMA_NAME}, --comma-name <commaName>`,
             "comma name",
-            (commaNameIo: string): RationalMonzo => {
-                return computeMonzoFrom23FreeClassAndSizeCategoryName(parseCommaName(commaNameIo as Io))
+            (commaNameIo: string): Comma => {
+                return computeCommaFromCommaNameQuotientAndSizeCategoryName(parseCommaName(commaNameIo as Io))
             },
         )
         .option(

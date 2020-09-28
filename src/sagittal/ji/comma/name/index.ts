@@ -1,4 +1,4 @@
-export { computeMonzoFrom23FreeClassAndSizeCategoryName } from "./monzoFromCommaName"
+export { computeCommaFromCommaNameQuotientAndSizeCategoryName } from "./commaFromCommaName"
 export { computeCommaName } from "./commaName"
 export { parseCommaName } from "./parseCommaName"
 export { SIZE_CATEGORY_BOUNDS } from "./sizeCategoryBounds"

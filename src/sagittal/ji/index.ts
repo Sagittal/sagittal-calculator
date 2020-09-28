@@ -12,7 +12,7 @@ export {
     DEFAULT_LOWER_BOUND,
     DEFAULT_MAX_N2D3P9,
     CommaAnalysis,
-    computeMonzoFrom23FreeClassAndSizeCategoryName,
+    computeCommaFromCommaNameQuotientAndSizeCategoryName,
     computeCommaName,
     SIZE_CATEGORY_BOUNDS,
     parseCommaName,

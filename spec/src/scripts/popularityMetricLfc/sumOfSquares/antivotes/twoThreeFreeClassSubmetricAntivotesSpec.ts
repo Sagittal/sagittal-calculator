@@ -1,8 +1,8 @@
 import { BASE_2, log, Power, RationalMonzo } from "../../../../../../src/general/math"
 import { TwoThreeFreeClass } from "../../../../../../src/general/music"
 import { ParameterValue } from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
-import { compute23FreeClassSubmetricAntivotes } from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares/antivotes/twoThreeFreeClassSubmetricAntivotes"
 import { computeSubmetricAntivotes } from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares/antivotes/submetricAntivotes"
+import { compute23FreeClassSubmetricAntivotes } from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares/antivotes/twoThreeFreeClassSubmetricAntivotes"
 import { Antivotes } from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares/types"
 
 describe("compute23FreeClassSubmetricAntivotes", (): void => {
