@@ -17,10 +17,6 @@ const parsePitch = (pitchIo: Io): Num => {
     let pitch: Num
     if (pitchIo.match(IDENTIFYING_COMMA_NAME_CHARS)) {
         const { commaNameQuotient, sizeCategoryName } = parseCommaName(pitchIo)
-        // TODO: this, by comma name, is the only reason this has to live in here.
-        //  Because comma name is sagittal-specific.
-        //  Perhaps you should rename this to account for that, like, parsePotentiallyComma or something?
-        //  Or break out everything here that doesn't HAVE to live in sagittal/ elsewhere?
         pitch = { monzo: computeMonzoFrom23FreeClassAndSizeCategoryName({ commaNameQuotient, sizeCategoryName }) }
     } else if (pitchIo.match(ANY_QUOTIENT_CHARS)) {
         pitch = { quotient: parseQuotient(pitchIo) }
