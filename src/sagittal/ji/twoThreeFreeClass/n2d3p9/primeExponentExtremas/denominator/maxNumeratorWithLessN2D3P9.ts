@@ -2,6 +2,7 @@ import {
     computeIntegerFromIntegerMonzo,
     Direction,
     Integer,
+    IntegerMonzo,
     IntegerNumerator,
     Max,
     RationalMonzo,
@@ -12,8 +13,7 @@ import { computeN2D3P9 } from "../../n2d3p9"
 import { N2D3P9 } from "../../types"
 
 const computeMaxNumeratorWithLessN2D3P9ThanMaxN2D3P9 = (
-    numeratorMonzosToCheck:
-        Array<RationalMonzo<{ irrational: false, integer: true, direction: Direction.SUPER, rough: 5 }>>,
+    numeratorMonzosToCheck: Array<IntegerMonzo<{ direction: Direction.SUPER, rough: 5 }>>,
     maxN2D3P9: Max<N2D3P9>,
 ): Max<IntegerNumerator> => {
     const filteredNumeratorMonzosToCheck =

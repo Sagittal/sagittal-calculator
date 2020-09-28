@@ -77,7 +77,7 @@ describe("computeCommaName", (): void => {
     )
 
     it("works when the monzo is empty", (): void => {
-        const comma = { monzo: [] as RationalMonzo } as Comma
+        const comma = { monzo: [] as unknown[] as RationalMonzo } as Comma
 
         const actual = computeCommaName(comma)
 

@@ -49,4 +49,5 @@ export {
     RationalMonzo,
     equalQuotients,
     RationalDecimal,
+    IntegerMonzo,
 } from "./num"

@@ -17,7 +17,7 @@ import {
 import { N2D3P9 } from "./types"
 
 const computeN2D3P9 = <T extends NumTypeParameters &
-    { direction: Direction.SUPER, rough: 5 } = { direction: Direction.SUPER, rough: 5, irrational: true }>(
+    { direction: Direction.SUPER, rough: 5 } = { direction: Direction.SUPER, rough: 5, rational: false }>(
     twoThreeFreeClass: TwoThreeFreeClass,
 ): N2D3P9 => {
     const monzo = computeRationalMonzoFromRationalNum(twoThreeFreeClass)

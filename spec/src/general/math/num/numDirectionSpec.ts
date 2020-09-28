@@ -296,13 +296,13 @@ describe("computeSuperNum", (): void => {
 
     it("works when only number are provided", (): void => {
         const num: Num<{ direction: Direction.SUB }> = {
-            decimal: 0.2 as Decimal<{ irrational: true, direction: Direction.SUB }>,
+            decimal: 0.2 as Decimal<{ direction: Direction.SUB }>,
         }
 
         const actual = computeSuperNum(num)
 
         const expected: Num<{ direction: Direction.SUPER }> = {
-            decimal: 5 as Decimal<{ irrational: true, direction: Direction.SUPER }>,
+            decimal: 5 as Decimal<{ direction: Direction.SUPER }>,
         }
         expect(actual).toEqual(expected)
     })

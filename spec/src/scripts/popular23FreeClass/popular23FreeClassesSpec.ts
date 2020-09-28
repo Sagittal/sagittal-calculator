@@ -16,7 +16,7 @@ describe("computePopular23FreeClasses", (): void => {
             const expected = [
                 {
                     n2d3p9: 1.000000 as N2D3P9,
-                    monzo: [] as RationalMonzo as RationalMonzo<{ rough: 5, direction: Direction.SUPER }>,
+                    monzo: [] as unknown[] as RationalMonzo as RationalMonzo<{ rough: 5, direction: Direction.SUPER }>,
                     popularityRank: 1 as Rank<Popularity>,
                     votes: 7624 as Votes,
                     exactlyNotatingSymbolClassIds: [0, 48] as Array<Id<SymbolClass>>,
@@ -80,11 +80,11 @@ describe("computePopular23FreeClasses", (): void => {
             const expected = [
                 {
                     n2d3p9: 1.000000 as N2D3P9,
-                    monzo: [] as RationalMonzo as RationalMonzo<{ rough: 5, direction: Direction.SUPER }>,
+                    monzo: [] as unknown[] as RationalMonzo as RationalMonzo<{ rough: 5, direction: Direction.SUPER }>,
                     popularityRank: 1 as Rank<Popularity>,
                     votes: 7624 as Votes,
                     bestNotatingCommaCents: 0 as Cents,
-                    bestNotatingCommaMonzo: [] as RationalMonzo,
+                    bestNotatingCommaMonzo: [] as unknown[] as RationalMonzo,
                     bestNotatingCommaMaybeSymbolClassId: 0 as Id<SymbolClass>,
                     rank: 1 as Rank<Popular23FreeClass>,
                 },

@@ -1,5 +1,14 @@
 import { program } from "commander"
-import { Abs, Decimal, Exponent, Integer, Max, Prime, RationalMonzo, RationalQuotient } from "../../../../../src/general/math"
+import {
+    Abs,
+    Exponent,
+    Integer,
+    Max,
+    Prime,
+    RationalDecimal,
+    RationalMonzo,
+    RationalQuotient,
+} from "../../../../../src/general/math"
 import { ApotomeSlope, JiPitchAnalysis, N2D3P9 } from "../../../../../src/sagittal/ji"
 import { parseJiPitch, parseNotatingCommasSettings } from "../../../../../src/scripts/jiPitch/analyzeJiPitch"
 import { DEFAULT_FIND_COMMAS_SETTINGS } from "../../../../../src/scripts/jiPitch/findCommas"
@@ -12,7 +21,7 @@ describe("parseNotatingCommasSettings", (): void => {
     const n2d3p9 = DEFAULT_FIND_COMMAS_SETTINGS.maxN2D3P9 + 100 as N2D3P9
     const ate = DEFAULT_FIND_COMMAS_SETTINGS.maxAte + 10 as Abs<Integer & Exponent<3 & Prime>>
     const monzo = [0, ate] as RationalMonzo
-    const decimal = 847300834270 as Decimal             // 47548.9¢
+    const decimal = 847300834270 as RationalDecimal             // 47548.9¢
     const apotomeSlope = -2902.759003 as ApotomeSlope
     const jiPitchAnalysis: JiPitchAnalysis = {
         ...jiPitchAnalysisFixture,

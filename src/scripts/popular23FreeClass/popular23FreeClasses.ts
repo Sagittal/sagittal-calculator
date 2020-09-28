@@ -64,10 +64,10 @@ const computePopular23FreeClasses = (maxN2D3P9: Max<N2D3P9>): Array<Ranked<Popul
 
         const initialMonzo: RationalMonzo = primeExponentExtremasGivenMaxN2D3P9.map(
             ([minPrimeExponent, _]: Extrema<Integer & Exponent<Prime>>): Integer & Exponent<Prime> => minPrimeExponent,
-        )
+        ) as RationalMonzo
         const finalMonzo: RationalMonzo = primeExponentExtremasGivenMaxN2D3P9.map(
             ([_, maxPrimeExponent]: Extrema<Integer & Exponent<Prime>>): Integer & Exponent<Prime> => maxPrimeExponent,
-        )
+        ) as RationalMonzo
         let twoThreeFreeMonzo: RationalMonzo<{ rough: 5 }> = shallowClone(initialMonzo) as RationalMonzo<{ rough: 5 }>
 
         popular23FreeClassAnalyses = [] as Array<Popular23FreeClass>

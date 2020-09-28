@@ -198,7 +198,7 @@ describe("computeSubmetricAntivotes", (): void => {
         })
 
         it("works for an empty monzo", (): void => {
-            const actual = computeSubmetricAntivotes([], submetric)
+            const actual = computeSubmetricAntivotes([] as unknown[] as RationalMonzo, submetric)
 
             const expected = 0 as Antivotes
             expect(actual).toBe(expected)

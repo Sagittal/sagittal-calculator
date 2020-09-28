@@ -19,7 +19,7 @@ type IntegerQuotientPart<T extends NumTypeParameters = {}> = IntegerNumerator<T>
 
 type RationalQuotient<T extends NumTypeParameters = {}> =
     [IntegerNumerator<T>, IntegerDenominator<T>]
-    & NumTypeParameterEffects<T & { irrational: false }>
+    & NumTypeParameterEffects<T & { rational: true }>
 
 type RationalNumByQuotient<T extends NumTypeParameters = {}> = {
     decimal?: RationalDecimal<T>,
@@ -28,7 +28,7 @@ type RationalNumByQuotient<T extends NumTypeParameters = {}> = {
 }
 type IntegerQuotient<T extends NumTypeParameters = {}> =
     [IntegerNumerator<T>, IntegerDenominator<T>]
-    & NumTypeParameterEffects<T & { integer: true, irrational: false, direction: Direction.SUPER }>
+    & NumTypeParameterEffects<T & { integer: true, rational: true, direction: Direction.SUPER }>
 
 type IntegerNumByQuotient<T extends NumTypeParameters = {}> = {
     decimal?: Integer<T>,

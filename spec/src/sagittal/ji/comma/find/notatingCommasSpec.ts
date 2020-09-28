@@ -30,7 +30,7 @@ describe("computeNotatingCommas", (): void => {
     })
 
     it("when given a unison monzo, does not return duplicates", (): void => {
-        const monzo = [] as RationalMonzo
+        const monzo = [] as unknown[] as RationalMonzo
 
         const actual = computeNotatingCommas({ monzo })
 

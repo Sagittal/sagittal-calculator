@@ -7,7 +7,7 @@ type Cents = number & { _CentsBrand: boolean }
 //  So we've established that prime limit is the direct musical equivalent of smooth in math
 //  Perhaps there is some way to fernangle it so that pitches could have free: [2,3] and then potentially you know
 //  Like [3,5,7] such as is the case in the Yer tuning system, where it's a chunk in the middle, nonconsecutive
-//  And ji: true could map to irrational: false
+//  And ji: true could map to rational: true
 //  To do that though you'd have to bring back the type Pitch as an alias type essentially
 
 type Zone<T = void> = Extrema<Num> & (T extends void ? {} : { _ZoneOfBrand: T })

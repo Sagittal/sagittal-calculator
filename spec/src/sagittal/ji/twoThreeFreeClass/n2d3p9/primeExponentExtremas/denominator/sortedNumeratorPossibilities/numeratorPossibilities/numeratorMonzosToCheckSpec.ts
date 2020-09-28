@@ -1,4 +1,4 @@
-import { Direction, Max, RationalMonzo } from "../../../../../../../../../../src/general"
+import { Direction, IntegerMonzo, Max } from "../../../../../../../../../../src/general"
 import { N2D3P9 } from "../../../../../../../../../../src/sagittal/ji/twoThreeFreeClass/n2d3p9"
 import { computeNumeratorMonzosToCheckGivenMaxN2D3P9 } from "../../../../../../../../../../src/sagittal/ji/twoThreeFreeClass/n2d3p9/primeExponentExtremas/denominator/sortedNumeratorPossibilities/numeratorPossibilities/numeratorMonzosToCheck"
 
@@ -18,7 +18,7 @@ describe("computeNumeratorMonzosToCheckGivenMaxN2D3P9", (): void => {
             // This one is not less than 3, but the only thing that's correct to worry about at this point is that
             // 5^1 and 7^1 are okay, so we gotta try them together to be safe
             [0, 0, 1, 1],   // N2D3P9(35) = 6.81 <---- GREATER THAN 3
-        ] as Array<RationalMonzo<{ irrational: false, integer: true, direction: Direction.SUPER, rough: 5 }>>
+        ] as Array<IntegerMonzo<{ direction: Direction.SUPER, rough: 5 }>>
         expect(actual).toEqual(expected)
     })
 })

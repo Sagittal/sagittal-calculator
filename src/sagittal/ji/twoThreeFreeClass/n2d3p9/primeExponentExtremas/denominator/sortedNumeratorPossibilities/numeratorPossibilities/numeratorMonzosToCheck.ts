@@ -4,18 +4,18 @@ import {
     Exponent,
     Extrema,
     Integer,
+    IntegerMonzo,
     IntegerNumerator,
     Max,
     Min,
     Prime,
-    RationalMonzo,
 } from "../../../../../../../../general"
 import { N2D3P9 } from "../../../../types"
 import { computeMaxNumeratorPrimeExponentsGivenMaxN2D3P9 } from "./maxNumeratorPrimeExponents"
 
 const computeNumeratorMonzosToCheckGivenMaxN2D3P9 = (
     maxN2D3P9: Max<N2D3P9>,
-): Array<RationalMonzo<{ irrational: false, integer: true, direction: Direction.SUPER, rough: 5 }>> => {
+): Array<IntegerMonzo<{ direction: Direction.SUPER, rough: 5 }>> => {
     const maxNumeratorPrimeExponentsGivenMaxN2D3P9 = computeMaxNumeratorPrimeExponentsGivenMaxN2D3P9(maxN2D3P9)
 
     const numeratorPrimeExponentExtremaGivenMaxN2D3P9: Array<Extrema<Integer & Exponent<Prime>>> =
@@ -41,7 +41,7 @@ const computeNumeratorMonzosToCheckGivenMaxN2D3P9 = (
 
     return computeRationalMonzosFromPrimeExponentExtremas(
         numeratorPrimeExponentExtremaGivenMaxN2D3P9,
-    ) as Array<RationalMonzo<{ irrational: false, integer: true, direction: Direction.SUPER, rough: 5 }>>
+    ) as Array<IntegerMonzo<{ direction: Direction.SUPER, rough: 5 }>>
 }
 
 export {

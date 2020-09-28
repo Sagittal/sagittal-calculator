@@ -102,7 +102,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                             twoThreeFreeClassAnalysis: {
                                 twoThreeFreeCopfr: 0 as Copfr<{ rough: 5 }>,
                                 twoThreeFreeSopfr: 0 as Sopfr<{ rough: 5 }>,
-                                monzo: [] as RationalMonzo as RationalMonzo<{ rough: 5, direction: Direction.SUPER }>,
+                                monzo: [] as unknown[] as RationalMonzo as RationalMonzo<{ rough: 5, direction: Direction.SUPER }>,
                                 twoThreeFreePrimeLimit: 1 as Prime,
                                 n2d3p9: 1 as N2D3P9,
                             } as TwoThreeFreeClassAnalysis,
@@ -162,7 +162,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                             twoThreeFreeClassAnalysis: {
                                 twoThreeFreeCopfr: 0 as Copfr<{ rough: 5 }>,
                                 twoThreeFreeSopfr: 0 as Sopfr<{ rough: 5 }>,
-                                monzo: [] as RationalMonzo as RationalMonzo<{ rough: 5, direction: Direction.SUPER }>,
+                                monzo: [] as unknown[] as RationalMonzo as RationalMonzo<{ rough: 5, direction: Direction.SUPER }>,
                                 twoThreeFreePrimeLimit: 1 as Prime,
                                 n2d3p9: 1 as N2D3P9,
                             } as TwoThreeFreeClassAnalysis,
@@ -223,7 +223,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                             twoThreeFreeClassAnalysis: {
                                 twoThreeFreeCopfr: 0 as Copfr<{ rough: 5 }>,
                                 twoThreeFreeSopfr: 0 as Sopfr<{ rough: 5 }>,
-                                monzo: [] as RationalMonzo as RationalMonzo<{ rough: 5, direction: Direction.SUPER }>,
+                                monzo: [] as unknown[] as RationalMonzo as RationalMonzo<{ rough: 5, direction: Direction.SUPER }>,
                                 twoThreeFreePrimeLimit: 1 as Prime,
                                 n2d3p9: 1 as N2D3P9,
                             } as TwoThreeFreeClassAnalysis,

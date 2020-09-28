@@ -13,7 +13,7 @@ describe("computeApotomeSlope", (): void => {
     })
 
     it("works for monzos without three exponents", (): void => {
-        const jiPitch = { monzo: [] as RationalMonzo }
+        const jiPitch = { monzo: [] as unknown[] as RationalMonzo }
 
         const actual = computeApotomeSlope(jiPitch)
 

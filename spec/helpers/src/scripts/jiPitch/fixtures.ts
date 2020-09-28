@@ -1,11 +1,11 @@
 import {
     Abs,
     Copfr,
-    Decimal,
     Direction,
     Exponent,
     Integer,
     Max,
+    RationalDecimal,
     RationalNum,
 } from "../../../../../src/general"
 import { Prime, RationalMonzo, RationalQuotient, Sopfr } from "../../../../../src/general/math"
@@ -22,8 +22,8 @@ const twoThreeFreeClassAnalysisFixture: TwoThreeFreeClassAnalysis = {
 
 const jiPitchAnalysisFixture: JiPitchAnalysis = {
     cents: 0 as Cents,
-    decimal: 1 as Decimal,
-    monzo: [] as RationalMonzo,
+    decimal: 1 as RationalDecimal,
+    monzo: [] as unknown[] as RationalMonzo,
     quotient: [1, 1] as RationalQuotient,
     apotomeSlope: 0 as ApotomeSlope,
     aas: 0 as Abs<ApotomeSlope>,

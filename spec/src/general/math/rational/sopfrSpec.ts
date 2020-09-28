@@ -11,7 +11,7 @@ describe("computeSopfr", (): void => {
     })
 
     it("works for an empty monzo", (): void => {
-        const monzo = [] as RationalMonzo
+        const monzo = [] as unknown[] as RationalMonzo
 
         const actual = computeSopfr(monzo)
 

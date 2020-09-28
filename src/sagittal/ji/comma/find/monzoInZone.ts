@@ -20,7 +20,7 @@ const computeMonzoInZone = (twoFreeMonzo: RationalMonzo<{ rough: 3 }>, zone: Zon
 
     const monzoInZone = shallowClone(twoFreeMonzo)
 
-    if (!equalMonzos(monzoInZone, [] as RationalMonzo)) {
+    if (!equalMonzos(monzoInZone, [] as unknown[] as RationalMonzo)) {
         // TODO: NUM IMPROVEMENTS
         //  This isn't ideal how we're making fake pitches to use the available helpers
         //  But the alternative would be have, what, a "numify" helper?

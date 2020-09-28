@@ -2,7 +2,7 @@ import { Monzo, NumTypeParameters } from "../../../num"
 import { Exponent } from "../../../types"
 import { isInteger } from "../../typeGuards"
 import { Prime } from "../../types"
-import { RationalMonzo } from "./types"
+import { IntegerMonzo, RationalMonzo } from "./types"
 
 const isRationalMonzo = <T extends NumTypeParameters>(
     candidateRationalMonzo: Monzo<T>,
@@ -11,7 +11,7 @@ const isRationalMonzo = <T extends NumTypeParameters>(
 
 const isIntegerMonzo = <T extends NumTypeParameters>(
     candidateIntegerMonzo: Monzo<T>,
-): candidateIntegerMonzo is RationalMonzo<T & { integer: true }> =>
+): candidateIntegerMonzo is IntegerMonzo<T> =>
     isRationalMonzo(candidateIntegerMonzo) &&
     candidateIntegerMonzo.every((term: Exponent<Prime>): boolean => term >= 0)
 

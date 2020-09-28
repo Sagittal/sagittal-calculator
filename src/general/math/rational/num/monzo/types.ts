@@ -6,7 +6,7 @@ import { IntegerQuotient, RationalQuotient } from "../quotient"
 
 type RationalMonzo<T extends NumTypeParameters = {}> =
     Array<Integer & Exponent<Prime>>
-    & NumTypeParameterEffects<T & { irrational: false }>
+    & NumTypeParameterEffects<T & { rational: true }>
 
 type RationalNumByMonzo<T extends NumTypeParameters = {}> = {
     decimal?: RationalDecimal<T>,
@@ -16,7 +16,7 @@ type RationalNumByMonzo<T extends NumTypeParameters = {}> = {
 
 type IntegerMonzo<T extends NumTypeParameters = {}> =
     Array<Integer & Exponent<Prime>>
-    & NumTypeParameterEffects<T & { integer: true, irrational: false, direction: Direction.SUPER }>
+    & NumTypeParameterEffects<T & { integer: true, rational: true, direction: Direction.SUPER }>
 
 type IntegerNumByMonzo<T extends NumTypeParameters = {}> = {
     decimal?: Integer<T>,

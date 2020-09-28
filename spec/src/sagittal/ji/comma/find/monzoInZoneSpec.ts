@@ -40,7 +40,7 @@ describe("computeMonzoInZone", (): void => {
 
         const actual = computeMonzoInZone(twoFreeMonzo, [lowerBound, upperBound])
 
-        const expected = [] as RationalMonzo as RationalMonzo
+        const expected = [] as unknown[] as RationalMonzo as RationalMonzo
         expect(actual).toEqual(expected)
     })
 
@@ -51,7 +51,7 @@ describe("computeMonzoInZone", (): void => {
 
         const actual = computeMonzoInZone(twoFreeMonzo, [lowerBound, upperBound])
 
-        const expected = [] as RationalMonzo as RationalMonzo
+        const expected = [] as unknown[] as RationalMonzo as RationalMonzo
         expect(actual).toEqual(expected)
     })
 

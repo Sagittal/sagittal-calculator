@@ -18,7 +18,7 @@ describe("computeRoughRationalMonzo", (): void => {
 
         const actual = computeRoughRationalMonzo(rationalMonzo, roughness)
 
-        const expected = [] as RationalMonzo
+        const expected = [] as unknown[] as RationalMonzo
         expect(actual).toEqual(expected)
     })
 })

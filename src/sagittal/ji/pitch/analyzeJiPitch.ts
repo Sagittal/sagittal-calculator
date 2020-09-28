@@ -16,7 +16,7 @@ import { JiPitchAnalysis } from "./types"
 const analyzeJiPitch = (jiPitch: RationalNum): JiPitchAnalysis => {
     const monzo = computeRationalMonzoFromRationalNum(jiPitch)
     const quotient = computeRationalQuotientFromRationalNum(jiPitch)
-    const decimal = computeDecimalFromNum(jiPitch as Num)
+    const decimal = computeDecimalFromNum(jiPitch)
 
     const apotomeSlope = computeApotomeSlope(jiPitch)
     const cents = computeCentsFromPitch(jiPitch)

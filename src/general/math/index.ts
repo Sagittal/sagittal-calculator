@@ -123,4 +123,5 @@ export {
     RationalMonzo,
     equalQuotients,
     RationalDecimal,
+    IntegerMonzo,
 } from "./rational"

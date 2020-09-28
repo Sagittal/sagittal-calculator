@@ -12,7 +12,7 @@ describe("computeAte", (): void => {
     })
 
     it("works for monzos without 3-exponents", (): void => {
-        const jiPitch = { monzo: [] as RationalMonzo } as RationalNum
+        const jiPitch = { monzo: [] as unknown[] as RationalMonzo } as RationalNum
 
         const actual = computeAte(jiPitch)
 

@@ -23,7 +23,7 @@ type NumTypeParameterEffects<T> =
     & (T extends { direction: Direction.UNISON } ? { _DirectionBrand: Direction.UNISON } : {})
     & (T extends { rough: number } ? { _RoughBrand: Pick<T, "rough"> } : {})
     & (T extends { smooth: number } ? { _SmoothBrand: Pick<T, "smooth"> } : {})
-    & (T extends { irrational: true } ? { _IrrationalBrand: boolean } : {})
+    & (T extends { rational: true } ? { _RationalBrand: boolean } : {})
     & (T extends { integer: true } ? { _IntegerBrand: boolean } : {})
 
 

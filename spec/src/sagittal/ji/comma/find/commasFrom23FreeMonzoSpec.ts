@@ -59,7 +59,7 @@ describe("computeCommasFrom23FreeMonzo", (): void => {
             maxN2D3P9,
         })
 
-        const expected = [{ monzo: [] as RationalMonzo } as Comma]
+        const expected = [{ monzo: [] as unknown[] as RationalMonzo } as Comma]
         expect(actual).toEqual(expected)
     })
 })

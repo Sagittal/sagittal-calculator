@@ -1,4 +1,4 @@
-import { Decimal, RationalMonzo, RationalQuotient } from "../../../../../src/general/math"
+import { RationalDecimal, RationalMonzo, RationalQuotient } from "../../../../../src/general/math"
 import { compute23FreeClass, TwoThreeFreeClass } from "../../../../../src/general/music"
 
 describe("compute23FreeClass", (): void => {
@@ -16,7 +16,7 @@ describe("compute23FreeClass", (): void => {
 
         const actual = compute23FreeClass(jiPitch)
 
-        const expected = { monzo: [] as RationalMonzo } as TwoThreeFreeClass
+        const expected = { monzo: [] as unknown[] as RationalMonzo } as TwoThreeFreeClass
         expect(actual).toEqual(expected)
     })
 
@@ -30,7 +30,7 @@ describe("compute23FreeClass", (): void => {
     })
 
     it("works for pitches with (integer) decimals too", (): void => {
-        const jiPitch = { decimal: 34 as Decimal }
+        const jiPitch = { decimal: 34 as RationalDecimal }
 
         const actual = compute23FreeClass(jiPitch)
 
@@ -40,7 +40,7 @@ describe("compute23FreeClass", (): void => {
 
     it("if more than one representation is present, it includes all of them", (): void => {
         const jiPitch = {
-            decimal: 8.5 as Decimal,
+            decimal: 8.5 as RationalDecimal,
             quotient: [17, 2] as RationalQuotient,
             monzo: [-1, 0, 0, 0, 0, 0, 1] as RationalMonzo,
         }

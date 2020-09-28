@@ -5,8 +5,8 @@ import { RationalDecimal } from "./num"
 // This is really just an IntegerDecimal, in the sense of IntegerMonzo and IntegerRatio.
 // But it's so widespread I really want to keep its name simple.
 // I might consider making RationalDecimal into just "Rational", but that's less pressing.
-type Integer<T extends NumTypeParameters = {}> = 
-    RationalDecimal<T & { integer: true, irrational: false, direction: Direction.SUPER }>
+type Integer<T extends NumTypeParameters = {}> =
+    RationalDecimal<T & { integer: true, rational: true, direction: Direction.SUPER }>
 
 type Prime<T extends NumTypeParameters = {}> = Integer<T> & { _PrimeBrand: "Prime" }
 type Roughness = Integer & { _RoughnessBrand: boolean }
