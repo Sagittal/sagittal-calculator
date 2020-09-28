@@ -1,15 +1,15 @@
-import { Exponent, FractionalPartType, isUndefined, Maybe, Prime } from "../../../../general"
+import { Exponent, isUndefined, Maybe, Prime, QuotientPartType } from "../../../../general"
 import { ParameterValue } from "../types"
 
 const secondaryParameterOverride = (
     parameter: ParameterValue,
     denominatorSpecificParameter: Maybe<ParameterValue>,
     primeExponent: Exponent<Prime>,
-    fractionalPart?: FractionalPartType,
+    quotientPart?: QuotientPartType,
 ): ParameterValue =>
     !isUndefined(denominatorSpecificParameter) &&
-    fractionalPart !== FractionalPartType.NUMERATOR &&
-    (fractionalPart === FractionalPartType.DENOMINATOR || primeExponent < 0) ?
+    quotientPart !== QuotientPartType.NUMERATOR &&
+    (quotientPart === QuotientPartType.DENOMINATOR || primeExponent < 0) ?
         denominatorSpecificParameter :
         parameter
 

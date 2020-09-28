@@ -1,8 +1,8 @@
 import {
     computeIntegerMonzoFromInteger,
     computeRationalMonzoFromRationalQuotient,
-    FractionalPartType,
     isUndefined,
+    QuotientPartType,
     RationalQuotient,
     stringify,
     TwoThreeFreeClass,
@@ -47,10 +47,10 @@ const computeQuotientSubmetricAntivotes = (
     let { numeratorAntivotes, denominatorAntivotes } = maybeNuminatorSwap({
         useNuminator,
         numeratorAntivotes: computeSubmetricAntivotes(
-            computeIntegerMonzoFromInteger(numerator), submetric, FractionalPartType.NUMERATOR,
+            computeIntegerMonzoFromInteger(numerator), submetric, QuotientPartType.NUMERATOR,
         ),
         denominatorAntivotes: computeSubmetricAntivotes(
-            computeIntegerMonzoFromInteger(denominator), submetric, FractionalPartType.DENOMINATOR,
+            computeIntegerMonzoFromInteger(denominator), submetric, QuotientPartType.DENOMINATOR,
         ),
     })
 

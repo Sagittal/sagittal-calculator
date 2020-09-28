@@ -9,6 +9,6 @@ export {
     RationalNumByQuotient,
     RationalQuotient,
     RationalDenominator,
-    RationalFractionalPart,
+    RationalQuotientPart,
     RationalNumerator,
 } from "./types"

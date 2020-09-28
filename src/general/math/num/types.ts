@@ -26,7 +26,7 @@ type NumTypeParameterEffects<T> =
     & (T extends { irrational: true } ? { _IrrationalBrand: boolean } : {})
     & MaybeIntegerBrand<T>
 
-type NumTypeParameterTranslationForMonzosAndQuotientsToTheirFractionalPartsAndTermsAboutRationality<T> =
+type NumTypeParameterTranslationForMonzosAndQuotientsToTheirQuotientPartsAndTermsAboutRationality<T> =
     (T extends { irrational: false } ? { irrational: false, integer: true } : {})
 
 // TODO: IMPLEMENT EDO PITCHES ON POTENTIALLY IRRATIONAL NUMS
@@ -72,5 +72,5 @@ export {
     Direction,
     NumTypeParameterEffects,
     Num,
-    NumTypeParameterTranslationForMonzosAndQuotientsToTheirFractionalPartsAndTermsAboutRationality,
+    NumTypeParameterTranslationForMonzosAndQuotientsToTheirQuotientPartsAndTermsAboutRationality,
 }

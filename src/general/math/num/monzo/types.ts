@@ -6,7 +6,7 @@ import { Quotient } from "../quotient"
 import {
     NumTypeParameterEffects,
     NumTypeParameters,
-    NumTypeParameterTranslationForMonzosAndQuotientsToTheirFractionalPartsAndTermsAboutRationality,
+    NumTypeParameterTranslationForMonzosAndQuotientsToTheirQuotientPartsAndTermsAboutRationality,
 } from "../types"
 
 type NumTypeParameterTranslationForMonzosToTheirTermsExceptDefaultRationality<T extends NumTypeParameters = {}> =
@@ -14,7 +14,7 @@ type NumTypeParameterTranslationForMonzosToTheirTermsExceptDefaultRationality<T 
     // & (T extends { irrational: false } ? { irrational: false } : {})
 
 type Monzo<T extends NumTypeParameters = {}> =
-    Array<Decimal<NumTypeParameterTranslationForMonzosAndQuotientsToTheirFractionalPartsAndTermsAboutRationality<T>
+    Array<Decimal<NumTypeParameterTranslationForMonzosAndQuotientsToTheirQuotientPartsAndTermsAboutRationality<T>
 & NumTypeParameterTranslationForMonzosToTheirTermsExceptDefaultRationality<T>> & Exponent<Prime>>
     & NumTypeParameterEffects<T>
 

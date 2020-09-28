@@ -3,13 +3,13 @@ import {
     Base,
     computePrimeCount,
     Exponent,
-    FractionalPartType,
     indexOfFinalElement,
     Integer,
     isUndefined,
     log,
     Prime,
     PRIMES,
+    QuotientPartType,
     RationalMonzo,
     stringify,
 } from "../../../../general"
@@ -24,7 +24,7 @@ import { secondaryParameterOverride } from "./secondaryParameter"
 const computeSubmetricAntivotes = (
     twoThreeFreeNumberMonzo: RationalMonzo,
     submetric: Submetric = {},
-    fractionalPartType?: FractionalPartType,
+    quotientPartType?: QuotientPartType,
 ): Antivotes => {
     const {
         aAsCoefficient = 1 as ParameterValue,
@@ -65,7 +65,7 @@ const computeSubmetricAntivotes = (
                 usePrimeIndex ?
                     computePrimeCount(prime) :
                     prime
-            adjustedPrime = adjustedPrime + secondaryParameterOverride(x, u, primeExponent, fractionalPartType)
+            adjustedPrime = adjustedPrime + secondaryParameterOverride(x, u, primeExponent, quotientPartType)
             if (!isUndefined(aAsLogarithmBase)) {
                 adjustedPrime = adjustedPrime >= 1 ?
                     log(adjustedPrime, aAsLogarithmBase as number as Base) :
@@ -80,14 +80,14 @@ const computeSubmetricAntivotes = (
                 adjustedPrime = aAsPowerBase ** adjustedPrime
             }
             adjustedPrime = adjustedPrime * aAsCoefficient
-            adjustedPrime = adjustedPrime + secondaryParameterOverride(w, b, primeExponent, fractionalPartType)
+            adjustedPrime = adjustedPrime + secondaryParameterOverride(w, b, primeExponent, quotientPartType)
 
             if (primeExponent === 0) {
                 adjustedPrimeExponent = 0
             } else {
                 adjustedPrimeExponent = withoutRepetition ? 1 : abs(primeExponent)
                 adjustedPrimeExponent = adjustedPrimeExponent >= 0 ?
-                    adjustedPrimeExponent ** secondaryParameterOverride(y, v, primeExponent, fractionalPartType) :
+                    adjustedPrimeExponent ** secondaryParameterOverride(y, v, primeExponent, quotientPartType) :
                     0
             }
 

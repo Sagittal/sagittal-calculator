@@ -2,11 +2,11 @@ export { isSubQuotient, isSuperQuotient, isUnisonQuotient, computeSubQuotient, i
 export { equalIrrationalQuotients } from "./equalIrrationalQuotients"
 export { computeQuotientFromMonzo } from "./quotientFromMonzo"
 export {
-    FractionalPartType,
+    QuotientPartType,
     Quotient,
     NumByQuotient,
-    NumTypeParameterTranslationForQuotientsToTheirFractionalPartsExceptRationality,
+    NumTypeParameterTranslationForQuotientsToTheirQuotientPartsExceptRationality,
     Denominator,
-    FractionalPart,
+    QuotientPart,
 } from "./types"
 export { computeSuperQuotient } from "./quotientDirection"

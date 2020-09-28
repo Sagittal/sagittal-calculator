@@ -1,6 +1,6 @@
 import { RationalQuotient } from "../../rational"
 import { Direction, NumTypeParameters } from "../types"
-import { Denominator, FractionalPart, Numerator, Quotient } from "./types"
+import { Denominator, Numerator, Quotient, QuotientPart } from "./types"
 
 const isSuperQuotient = <T extends NumTypeParameters>(
     candidateSuperQuotient: Quotient<Omit<T, "direction">>,
@@ -23,7 +23,7 @@ const isUnisonQuotient = <T extends NumTypeParameters>(
 ): candidateUnisonQuotient is Quotient<Omit<T, "direction"> & { direction: Direction.UNISON }> => {
     const [numerator, denominator] = candidateUnisonQuotient
 
-    return numerator as FractionalPart === denominator as FractionalPart
+    return numerator as QuotientPart === denominator as QuotientPart
 }
 
 const computeSuperQuotient: {

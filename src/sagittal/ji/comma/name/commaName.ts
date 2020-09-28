@@ -15,8 +15,8 @@ import {
     Name,
     Prime,
     PRIMES,
-    RationalFractionalPart,
     RationalQuotient,
+    RationalQuotientPart,
     stringify,
     SUPERSCRIPT_NUMS,
     THREE_PRIME_LIMIT,
@@ -25,7 +25,7 @@ import { computeSizeCategory } from "./sizeCategory"
 import { isCommaSized } from "./typeGuards"
 import { CommaNameOptions, CommaNameQuotient, SizeCategoryAbbreviation, SizeCategoryName } from "./types"
 
-const primeFactorize = (numeratorOrDenominator: RationalFractionalPart): string => {
+const primeFactorize = (numeratorOrDenominator: RationalQuotientPart): string => {
     if (numeratorOrDenominator === 1) return "1"
 
     const monzo = computeIntegerMonzoFromInteger(numeratorOrDenominator)
@@ -51,8 +51,8 @@ const primeFactorize = (numeratorOrDenominator: RationalFractionalPart): string 
 const stringifyQuotient = (rationalQuotient: RationalQuotient, { factored }: { factored: boolean }): string[] => {
     return factored ?
         rationalQuotient.map(primeFactorize) :
-        rationalQuotient.map((rationalFractionalPart: RationalFractionalPart): string => {
-            return rationalFractionalPart.toString()
+        rationalQuotient.map((rationalQuotientPart: RationalQuotientPart): string => {
+            return rationalQuotientPart.toString()
         })
 }
 

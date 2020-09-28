@@ -7,15 +7,15 @@ export {
 export {
     isSubQuotient,
     isSuperQuotient,
-    FractionalPartType,
+    QuotientPartType,
     computeSuperQuotient,
     isUnisonQuotient,
     Quotient,
     computeSubQuotient,
     invertQuotient,
-    NumTypeParameterTranslationForQuotientsToTheirFractionalPartsExceptRationality,
+    NumTypeParameterTranslationForQuotientsToTheirQuotientPartsExceptRationality,
     Denominator,
-    FractionalPart,
+    QuotientPart,
     computeQuotientFromMonzo,
     equalIrrationalQuotients,
 } from "./quotient"
@@ -37,5 +37,5 @@ export {
     NumTypeParameters,
     Num,
     NumTypeParameterEffects,
-    NumTypeParameterTranslationForMonzosAndQuotientsToTheirFractionalPartsAndTermsAboutRationality,
+    NumTypeParameterTranslationForMonzosAndQuotientsToTheirQuotientPartsAndTermsAboutRationality,
 } from "./types"

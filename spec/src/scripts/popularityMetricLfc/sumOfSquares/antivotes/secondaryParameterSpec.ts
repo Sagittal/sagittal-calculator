@@ -1,4 +1,4 @@
-import { Exponent, FractionalPartType, Prime } from "../../../../../../src/general/math"
+import { Exponent, Prime, QuotientPartType } from "../../../../../../src/general/math"
 import { ParameterValue } from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
 import { secondaryParameterOverride } from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares/antivotes/secondaryParameter"
 
@@ -36,10 +36,10 @@ describe("secondaryParameterOverride", (): void => {
         (which should never happen, but just in case, I think the fractional part is a stronger message)`,
         (): void => {
             const primeExponent = -2 as Exponent<Prime>
-            const fractionalPart = FractionalPartType.NUMERATOR
+            const quotientPart = QuotientPartType.NUMERATOR
 
             const actual =
-                secondaryParameterOverride(parameter, denominatorSpecificParameter, primeExponent, fractionalPart)
+                secondaryParameterOverride(parameter, denominatorSpecificParameter, primeExponent, quotientPart)
 
             expect(actual).toBe(parameter)
         },
@@ -51,10 +51,10 @@ describe("secondaryParameterOverride", (): void => {
         when a separate monzo for the denominator is calculated from an integer which was in a denominator)`,
         (): void => {
             const primeExponent = 2 as Exponent<Prime>
-            const fractionalPart = FractionalPartType.DENOMINATOR
+            const quotientPart = QuotientPartType.DENOMINATOR
 
             const actual =
-                secondaryParameterOverride(parameter, denominatorSpecificParameter, primeExponent, fractionalPart)
+                secondaryParameterOverride(parameter, denominatorSpecificParameter, primeExponent, quotientPart)
 
             expect(actual).toBe(denominatorSpecificParameter)
         },
@@ -65,10 +65,10 @@ describe("secondaryParameterOverride", (): void => {
         even if the prime exponent is negative and the requested fractional part is denominator`,
         (): void => {
             const primeExponent = -2 as Exponent<Prime>
-            const fractionalPart = FractionalPartType.DENOMINATOR
+            const quotientPart = QuotientPartType.DENOMINATOR
 
             const actual =
-                secondaryParameterOverride(parameter, undefined, primeExponent, fractionalPart)
+                secondaryParameterOverride(parameter, undefined, primeExponent, quotientPart)
 
             expect(actual).toBe(parameter)
         },

@@ -3,7 +3,7 @@ export { BASE_2, ADDITIVE_IDENTITY } from "./constants"
 export {
     isSubQuotient,
     isSuperQuotient,
-    FractionalPartType,
+    QuotientPartType,
     computeSuperQuotient,
     isUnisonQuotient,
     Quotient,
@@ -33,7 +33,7 @@ export {
     numIsLowerOrEqual,
     numIsHigherOrEqual,
     Denominator,
-    FractionalPart,
+    QuotientPart,
     computeQuotientFromMonzo,
 } from "./num"
 export { computeDistributions } from "./distributions"
@@ -117,7 +117,7 @@ export {
     isRationalNum,
     computeLowestTermsRationalQuotient,
     RationalDenominator,
-    RationalFractionalPart,
+    RationalQuotientPart,
     RationalNumerator,
     RationalQuotient,
     RationalMonzo,

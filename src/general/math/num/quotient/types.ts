@@ -3,32 +3,32 @@ import { Monzo } from "../monzo"
 import {
     NumTypeParameterEffects,
     NumTypeParameters,
-    NumTypeParameterTranslationForMonzosAndQuotientsToTheirFractionalPartsAndTermsAboutRationality,
+    NumTypeParameterTranslationForMonzosAndQuotientsToTheirQuotientPartsAndTermsAboutRationality,
 } from "../types"
 
-type NumTypeParameterTranslationForQuotientsToTheirFractionalPartsExceptRationality<T extends NumTypeParameters = {}> =
+type NumTypeParameterTranslationForQuotientsToTheirQuotientPartsExceptRationality<T extends NumTypeParameters = {}> =
     (T extends { rough: number } ? { rough: T["rough"] } : {})
     & (T extends { smooth: number } ? { smooth: T["smooth"] } : {})
     & (T extends { integer: true } ? { irrational: false, integer: true } : {})
 
 type Numerator<T extends NumTypeParameters = {}> =
-    Decimal<NumTypeParameterTranslationForMonzosAndQuotientsToTheirFractionalPartsAndTermsAboutRationality<T>
-        & NumTypeParameterTranslationForQuotientsToTheirFractionalPartsExceptRationality<T>>
+    Decimal<NumTypeParameterTranslationForMonzosAndQuotientsToTheirQuotientPartsAndTermsAboutRationality<T>
+        & NumTypeParameterTranslationForQuotientsToTheirQuotientPartsExceptRationality<T>>
     & { _NumeratorBrand: boolean }
 type Denominator<T extends NumTypeParameters = {}> =
-    Decimal<NumTypeParameterTranslationForMonzosAndQuotientsToTheirFractionalPartsAndTermsAboutRationality<T>
-        & NumTypeParameterTranslationForQuotientsToTheirFractionalPartsExceptRationality<T>>
+    Decimal<NumTypeParameterTranslationForMonzosAndQuotientsToTheirQuotientPartsAndTermsAboutRationality<T>
+        & NumTypeParameterTranslationForQuotientsToTheirQuotientPartsExceptRationality<T>>
     & { _DenominatorBrand: boolean }
 type Quotient<T extends NumTypeParameters = {}> =
     [Numerator<T>, Denominator<T>]
     & NumTypeParameterEffects<T>
 
-enum FractionalPartType {
+enum QuotientPartType {
     NUMERATOR = "numerator",
     DENOMINATOR = "denominator",
 }
 
-type FractionalPart<T extends NumTypeParameters = {}> = Numerator<T> | Denominator<T>
+type QuotientPart<T extends NumTypeParameters = {}> = Numerator<T> | Denominator<T>
 
 type NumByQuotient<T extends NumTypeParameters> = {
     decimal?: Decimal<T>,
@@ -37,10 +37,10 @@ type NumByQuotient<T extends NumTypeParameters> = {
 }
 
 export {
-    NumTypeParameterTranslationForQuotientsToTheirFractionalPartsExceptRationality,
-    FractionalPartType,
+    NumTypeParameterTranslationForQuotientsToTheirQuotientPartsExceptRationality,
+    QuotientPartType,
     Quotient,
-    FractionalPart,
+    QuotientPart,
     NumByQuotient,
     Numerator,
     Denominator,

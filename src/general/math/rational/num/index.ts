@@ -16,7 +16,7 @@ export {
     RationalNumByQuotient,
     computeLowestTermsRationalQuotient,
     RationalDenominator,
-    RationalFractionalPart,
+    RationalQuotientPart,
     RationalNumerator,
     RationalQuotient,
     equalQuotients,

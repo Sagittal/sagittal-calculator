@@ -44,7 +44,7 @@ export {
     computeRationalNumSmoothness,
     isRoughRationalNum,
     RationalDenominator,
-    RationalFractionalPart,
+    RationalQuotientPart,
     RationalNumerator,
     RationalQuotient,
     RationalMonzo,
