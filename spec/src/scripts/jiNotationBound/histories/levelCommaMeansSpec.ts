@@ -8,7 +8,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
         (): void => {
             expect(computeJiNotationLevelCommaMeans(JiNotationLevel.MEDIUM)).toBeCloseToObject([
                 {
-                    name: "|//| |(" as Name<CommaMean>,
+                    name: "(|//|) |(" as Name<CommaMean>,
                     decimal: 1.001664301900464 as Decimal,  // 2.878901¢
                 },
                 {
@@ -64,7 +64,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
         (): void => {
             expect(computeJiNotationLevelCommaMeans(JiNotationLevel.HIGH)).toBeCloseToObject([
                 {
-                    name: "|//| )|" as Name<CommaMean>,
+                    name: "(|//|) )|" as Name<CommaMean>,
                     decimal: 1.0009760861279353 as Decimal, // 1.689009¢
                 },
                 {
@@ -197,7 +197,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
         (): void => {
             expect(computeJiNotationLevelCommaMeans(JiNotationLevel.ULTRA)).toBeCloseToObject([
                 {
-                    name: "|//| .)|" as Name<CommaMean>,
+                    name: "(|//|) .)|" as Name<CommaMean>,
                     decimal: 1.0004114379931337 as Decimal, // 0.712148¢
                 },
                 {
@@ -421,7 +421,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
         (): void => {
             expect(computeJiNotationLevelCommaMeans(JiNotationLevel.EXTREME)).toBeCloseToObject([
                 {
-                    name: "|//| `|" as Name<CommaMean>,
+                    name: "(|//|) `|" as Name<CommaMean>,
                     decimal: 1.0001220926687902 as Decimal, // 0.211358¢
                 },
                 {

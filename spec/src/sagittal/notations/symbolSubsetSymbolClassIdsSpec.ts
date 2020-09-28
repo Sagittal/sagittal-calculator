@@ -17,7 +17,7 @@ describe("SYMBOL_SUBSET_SYMBOL_CLASS_IDS", (): void => {
         const actual: SymbolLongAscii[] = subject(symbolSubset)
 
         const expected = [
-            "|//|",
+            "(|//|)",
         ] as SymbolLongAscii[]
         expect(actual.length).toEqual(1)
         expect(actual).toEqual(expected)

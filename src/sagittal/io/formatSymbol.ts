@@ -1,7 +1,7 @@
 import { Formatted, TableFormat } from "../../general"
 import { Symbol } from "../notations"
+import { formatSymbolAscii } from "./formatSymbolAscii"
 import { computeSmileyFromAscii } from "./smiley"
-import { formatSymbolAscii } from "./symbolAscii"
 import { SymbolGlyph, SymbolLongAscii, SymbolSmiley, SymbolUnicode } from "./types"
 
 const formatSymbol = (

@@ -1,6 +1,6 @@
 import { Formatted, Id, TableFormat } from "../../general"
 import { getRepresentativeSymbol, Symbol, SymbolClass } from "../notations"
-import { formatSymbol } from "./symbol"
+import { formatSymbol } from "./formatSymbol"
 import { SymbolGlyph } from "./types"
 
 // These options are required by design, to force you to pass it the ioSettings global
