@@ -2,8 +2,8 @@ import { computeTrimmedArray, isUndefined } from "../../../../code"
 import { formatNum } from "../../../../io"
 import { NumTypeParameters } from "../../../num"
 import { Ratio } from "../types"
-import { computeRationalMonzoFromRationalQuotient } from "./monzoFromQuotient"
-import { computeRationalMonzoFromRationalDecimal } from "./monzoFromRationalDecimal"
+import { computeRationalMonzoFromRationalQuotient } from "./fromQuotient"
+import { computeRationalMonzoFromRationalDecimal } from "./fromDecimal"
 import { RationalMonzo } from "./types"
 
 const computeRationalMonzoFromRatio = <T extends NumTypeParameters>(

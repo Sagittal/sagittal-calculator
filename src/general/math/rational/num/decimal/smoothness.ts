@@ -2,7 +2,7 @@ import { MULTIPLICATIVE_IDENTITY } from "../../../constants"
 import { SMOOTH_ROUGH_OFFSET } from "../../constants"
 import { Roughness, Smoothness } from "../../types"
 
-import { computeRoughIntegerDecimal } from "./decimalRoughness"
+import { computeRoughIntegerDecimal } from "./roughness"
 import { IntegerDecimal } from "./types"
 
 const isSmoothIntegerDecimal = (integerDecimal: IntegerDecimal, smoothness: Smoothness): boolean => {

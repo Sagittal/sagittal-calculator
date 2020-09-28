@@ -1,9 +1,9 @@
-export { isRoughRationalQuotient, computeRoughRationalQuotient } from "./quotientRoughness"
-export { isSmoothRationalQuotient } from "./quotientSmoothness"
-export { computeRationalQuotientFromRationalDecimal } from "./quotientFromRationalDecimal"
-export { computeRationalQuotientFromRatio } from "./quotientFromRatio"
+export { isRoughRationalQuotient, computeRoughRationalQuotient } from "./roughness"
+export { isSmoothRationalQuotient } from "./smoothness"
+export { computeRationalQuotientFromRationalDecimal } from "./fromDecimal"
+export { computeRationalQuotientFromRatio } from "./fromRatio"
 export { isRationalQuotient } from "./typeGuards"
-export { equalQuotients } from "./equalQuotients"
+export { equalQuotients } from "./comparison"
 export { computeLowestTermsRationalQuotient } from "./lowestTerms"
 export {
     RatioByQuotient,

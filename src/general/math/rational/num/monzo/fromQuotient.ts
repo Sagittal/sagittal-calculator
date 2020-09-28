@@ -1,6 +1,6 @@
 import { Direction, invertMonzo, NumTypeParameters, sumMonzos } from "../../../num"
 import { RationalQuotient } from "../quotient"
-import { computeIntegerMonzoFromIntegerDecimal } from "./monzoFromIntegerDecimal"
+import { computeIntegerMonzoFromIntegerDecimal } from "./fromDecimal"
 import { RationalMonzo } from "./types"
 
 const computeRationalMonzoFromRationalQuotient = <T extends NumTypeParameters>(

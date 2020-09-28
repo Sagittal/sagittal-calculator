@@ -2,8 +2,8 @@ import { isUndefined } from "../../../code"
 import { formatNum } from "../../../io"
 import { Ratio, RationalDecimal } from "../../rational"
 import { Num, NumTypeParameters } from "../types"
-import { computeDecimalFromMonzo } from "./decimalFromMonzo"
-import { computeDecimalFromQuotient } from "./decimalFromQuotient"
+import { computeDecimalFromMonzo } from "./fromMonzo"
+import { computeDecimalFromQuotient } from "./fromQuotient"
 import { Decimal } from "./types"
 
 const computeDecimalFromNum: {

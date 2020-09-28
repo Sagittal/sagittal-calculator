@@ -4,8 +4,18 @@ import { Exponent } from "../../../types"
 import { PRIMES } from "../../primes"
 import { integerDivide } from "../../typedOperations"
 import { Prime } from "../../types"
-import { IntegerDecimal } from "../decimal"
-import { IntegerMonzo } from "./types"
+import { IntegerDecimal, RationalDecimal } from "../decimal"
+import { computeRationalQuotientFromRationalDecimal } from "../quotient"
+import { computeRationalMonzoFromRationalQuotient } from "./fromQuotient"
+import { IntegerMonzo, RationalMonzo } from "./types"
+
+const computeRationalMonzoFromRationalDecimal = <T extends NumTypeParameters>(
+    rationalDecimal: RationalDecimal<T>,
+): RationalMonzo<T> => {
+    const quotient = computeRationalQuotientFromRationalDecimal(rationalDecimal)
+
+    return computeRationalMonzoFromRationalQuotient(quotient) as RationalMonzo<T>
+}
 
 // TODO: POSSIBLY MORE PERFORMANT PRIME FACTORIZATION ALGORITHM
 //  Consider using Dave's tricky GCP-involved technique
@@ -64,5 +74,6 @@ const computeIntegerMonzoFromIntegerDecimal = <T extends NumTypeParameters>(
 }
 
 export {
+    computeRationalMonzoFromRationalDecimal,
     computeIntegerMonzoFromIntegerDecimal,
 }

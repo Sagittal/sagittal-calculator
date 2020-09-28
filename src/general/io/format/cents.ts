@@ -13,7 +13,7 @@ const formatCents = (cents: Cents, options: { align?: boolean } = {}): Formatted
         }
     }
 
-    return formattedCents
+    return formattedCents as Formatted<Cents>
 }
 
 export {

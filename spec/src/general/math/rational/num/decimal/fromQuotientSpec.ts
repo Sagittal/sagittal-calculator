@@ -1,5 +1,5 @@
 import { IntegerDecimal } from "../../../../../../../src/general/math"
-import { computeIntegerDecimalFromIntegerQuotient } from "../../../../../../../src/general/math/rational/num/decimal/decimalFromQuotient"
+import { computeIntegerDecimalFromIntegerQuotient } from "../../../../../../../src/general/math/rational/num/decimal/fromQuotient"
 import { IntegerQuotient } from "../../../../../../../src/general/math/rational/num/quotient"
 
 describe("computeIntegerDecimalFromIntegerQuotient", (): void => {

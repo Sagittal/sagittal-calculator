@@ -29,9 +29,9 @@ export {
     isUnisonMonzo,
     equalMonzos,
 } from "./monzo"
-export { isSubNum, isSuperNum, isUnisonNum, computeSuperNum } from "./numDirection"
+export { isSubNum, isSuperNum, isUnisonNum, computeSuperNum } from "./direction"
 export { computeNumFromMonzo, computeNumFromDecimal, computeNumFromQuotient } from "./num"
-export { equalNums, numIsHigher, numIsLower, numIsLowerOrEqual, numIsHigherOrEqual } from "./numComparison"
+export { equalNums, numIsHigher, numIsLower, numIsLowerOrEqual, numIsHigherOrEqual } from "./comparison"
 export {
     Direction,
     NumTypeParameters,

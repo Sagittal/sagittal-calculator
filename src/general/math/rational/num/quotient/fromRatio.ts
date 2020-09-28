@@ -3,7 +3,7 @@ import { formatNum } from "../../../../io"
 import { computeQuotientFromMonzo, NumTypeParameters } from "../../../num"
 import { Ratio } from "../types"
 import { computeLowestTermsRationalQuotient } from "./lowestTerms"
-import { computeRationalQuotientFromRationalDecimal } from "./quotientFromRationalDecimal"
+import { computeRationalQuotientFromRationalDecimal } from "./fromDecimal"
 import { RationalQuotient } from "./types"
 
 const computeRationalQuotientFromRatio = <T extends NumTypeParameters>(

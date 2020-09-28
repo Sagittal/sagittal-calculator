@@ -1,4 +1,4 @@
-import { Abs, Exponent, IntegerDecimal, Prime, RationalMonzo, Ratio } from "../../../../../src/general/math"
+import { Abs, Exponent, IntegerDecimal, Prime, Ratio, RationalMonzo } from "../../../../../src/general/math"
 import { computeAte } from "../../../../../src/sagittal/ji/pitch"
 
 describe("computeAte", (): void => {

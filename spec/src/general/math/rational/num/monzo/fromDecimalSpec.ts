@@ -1,4 +1,22 @@
-import { computeIntegerMonzoFromIntegerDecimal, IntegerDecimal, RationalMonzo } from "../../../../../../../src/general/math"
+import {
+    computeIntegerMonzoFromIntegerDecimal,
+    IntegerDecimal,
+    RationalDecimal,
+    RationalMonzo,
+} from "../../../../../../../src/general/math"
+import { computeRationalMonzoFromRationalDecimal } from "../../../../../../../src/general/math/rational/num/monzo/fromDecimal"
+
+describe("computeRationalMonzoFromRationalDecimal", (): void => {
+    it("works", (): void => {
+        const rationalDecimal = 1.4 as RationalDecimal
+
+        const actual = computeRationalMonzoFromRationalDecimal(rationalDecimal)
+
+        const expected = [0, 0, -1, 1] as RationalMonzo
+        expect(actual).toEqual(expected)
+    })
+})
+
 
 describe("computeIntegerMonzoFromIntegerDecimal", (): void => {
     it("prime factorizes the integer into a monzo", (): void => {

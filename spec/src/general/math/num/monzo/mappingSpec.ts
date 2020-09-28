@@ -1,5 +1,5 @@
 import { Monzo, Step } from "../../../../../../src/general"
-import { computeMonzoMapping } from "../../../../../../src/general/math/num/monzo/monzoMapping"
+import { computeMonzoMapping } from "../../../../../../src/general/math/num/monzo/mapping"
 import { Val } from "../../../../../../src/general/math/num/monzo/types"
 
 describe("computeMonzoMapping", (): void => {
