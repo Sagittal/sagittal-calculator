@@ -1,10 +1,11 @@
-import { computeIntegerFromIntegerMonzo, Integer, RationalMonzo } from "../../../../../../../src/general/math"
+import { computeIntegerFromIntegerMonzo, Integer } from "../../../../../../../src/general/math"
+import { IntegerMonzo } from "../../../../../../../src/general/math/rational/num/monzo"
 
 describe("computeIntegerFromIntegerMonzo", (): void => {
     it("returns an integer if the monzo has all positive exponents", (): void => {
-        const rationalMonzo = [1, 4, 2, 3] as RationalMonzo<{ irrational: false, integer: true }>
+        const integerMonzo = [1, 4, 2, 3] as IntegerMonzo
 
-        const actual = computeIntegerFromIntegerMonzo(rationalMonzo)
+        const actual = computeIntegerFromIntegerMonzo(integerMonzo)
 
         const expected: Integer = 1389150 as Integer
         expect(actual).toBe(expected)
@@ -12,10 +13,10 @@ describe("computeIntegerFromIntegerMonzo", (): void => {
 
     it("throws an error if the monzo has any negative elements", (): void => {
         // The type parameters is supposed to protect, but who knows!
-        const rationalMonzo = [-1, 4, 2, 3] as RationalMonzo<{ irrational: false, integer: true }>
+        const integerMonzo = [-1, 4, 2, 3] as IntegerMonzo
 
         expect((): void => {
-            computeIntegerFromIntegerMonzo(rationalMonzo)
+            computeIntegerFromIntegerMonzo(integerMonzo)
         }).toThrowError(`Tried to compute integer from non-integer monzo [  -1   4   2   3 ⟩.`)
     })
 })

@@ -1,5 +1,5 @@
 import { increment, indexOfFinalElement } from "../../../../code"
-import { Direction } from "../../../num"
+import { NumTypeParameters } from "../../../num"
 import { Exponent } from "../../../types"
 import { PRIMES } from "../../primes"
 import { integerDivide } from "../../typedOperations"
@@ -22,9 +22,7 @@ exponent(n, i) = Math.round(math.log(math.gcd(n, maxPrimePower[i]), prime[i]) )
 That's more like what I really do in Excel.
  */
 
-// TODO: NUM IMPROVEMENTS
-//  Perhaps Integers should all be direction super
-const computeIntegerMonzoFromInteger = (integer: Integer): IntegerMonzo<{ direction: Direction.SUPER }> => {
+const computeIntegerMonzoFromInteger = <T extends NumTypeParameters>(integer: Integer<T>): IntegerMonzo<T> => {
     if (integer === 0) {
         throw new Error("The prime factorization of zero is not defined.")
     }
@@ -33,7 +31,7 @@ const computeIntegerMonzoFromInteger = (integer: Integer): IntegerMonzo<{ direct
     let remnant = integer
 
     const computePrimeFactorizationForPrimeAtIndexAndUpdateRemnant = (index: number): void => {
-        const divisor = PRIMES[ index ]
+        const divisor = PRIMES[ index ] as Integer as Integer<T>
         let remainder = remnant % divisor
 
         if (remainder === 0) {
@@ -59,7 +57,7 @@ const computeIntegerMonzoFromInteger = (integer: Integer): IntegerMonzo<{ direct
 
     if (remnant > 1) throw new Error(`This integer ${integer} contains primes which are too big; remainder is ${remnant}`)
 
-    return integerMonzo as IntegerMonzo<{ direction: Direction.SUPER }>
+    return integerMonzo as IntegerMonzo<T>
 }
 
 export {

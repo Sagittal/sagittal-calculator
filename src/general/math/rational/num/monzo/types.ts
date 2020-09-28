@@ -1,4 +1,4 @@
-import { NumTypeParameterEffects, NumTypeParameters } from "../../../num"
+import { Direction, NumTypeParameterEffects, NumTypeParameters } from "../../../num"
 import { Exponent } from "../../../types"
 import { Integer, Prime } from "../../types"
 import { RationalDecimal } from "../decimal"
@@ -16,7 +16,7 @@ type RationalNumByMonzo<T extends NumTypeParameters = {}> = {
 
 type IntegerMonzo<T extends NumTypeParameters = {}> =
     Array<Integer & Exponent<Prime>>
-    & NumTypeParameterEffects<T & { integer: true, irrational: false }>
+    & NumTypeParameterEffects<T & { integer: true, irrational: false, direction: Direction.SUPER }>
 
 type IntegerNumByMonzo<T extends NumTypeParameters = {}> = {
     decimal?: Integer<T>,

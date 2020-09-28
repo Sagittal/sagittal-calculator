@@ -1,6 +1,5 @@
-// tslint:disable max-line-length
-
 import {
+    Direction,
     NumTypeParameterEffects,
     NumTypeParameters,
     NumTypeParameterTranslationForQuotientsToTheirQuotientPartsExceptRationality,
@@ -29,7 +28,7 @@ type RationalNumByQuotient<T extends NumTypeParameters = {}> = {
 }
 type IntegerQuotient<T extends NumTypeParameters = {}> =
     [IntegerNumerator<T>, IntegerDenominator<T>]
-    & NumTypeParameterEffects<T & { integer: true, irrational: false }>
+    & NumTypeParameterEffects<T & { integer: true, irrational: false, direction: Direction.SUPER }>
 
 type IntegerNumByQuotient<T extends NumTypeParameters = {}> = {
     decimal?: Integer<T>,
