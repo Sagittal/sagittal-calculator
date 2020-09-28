@@ -10,7 +10,7 @@ import {
 
 describe("consolidateBoundHistories", (): void => {
     it("consolidates bound histories to collapse redundancies per JI notation level and show which bound events can lead into which events in the next JI notation level, and which ones are members of histories that are possible, and what the best rank is in any event that becomes part of this consolidation, and what the best rank of any bound history this bound event is a member of is, and membership in the best possible bound history", (): void => {
-        const boundEventAnalysisOneGoesToEventThreeAndFour: BoundEventAnalysis = {
+        const boundEventAnalysisAGoesToEventCAndD: BoundEventAnalysis = {
             ...boundEventAnalysisFixture,
             jiNotationLevel: JiNotationLevel.ULTRA,
             boundType: BoundType.COMMA_MEAN,
@@ -19,7 +19,7 @@ describe("consolidateBoundHistories", (): void => {
             rank: RANKS[ BoundType.SIZE_CATEGORY_BOUND ],
             exact: false,
         }
-        const boundEventAnalysisTwoGoesToEventThree: BoundEventAnalysis = {
+        const boundEventAnalysisBGoesToEventC: BoundEventAnalysis = {
             ...boundEventAnalysisFixture,
             jiNotationLevel: JiNotationLevel.ULTRA,
             boundType: BoundType.INA_MIDPOINT,
@@ -28,7 +28,7 @@ describe("consolidateBoundHistories", (): void => {
             rank: RANKS[ BoundType.COMMA_MEAN ],
             exact: false,
         }
-        const boundEventAnalysisThree: BoundEventAnalysis = {
+        const boundEventAnalysisC: BoundEventAnalysis = {
             ...boundEventAnalysisFixture,
             jiNotationLevel: JiNotationLevel.EXTREME,
             boundType: BoundType.COMMA_MEAN,
@@ -37,7 +37,7 @@ describe("consolidateBoundHistories", (): void => {
             rank: RANKS[ BoundType.SIZE_CATEGORY_BOUND ],
             exact: false,
         }
-        const boundEventAnalysisFour: BoundEventAnalysis = {
+        const boundEventAnalysisD: BoundEventAnalysis = {
             ...boundEventAnalysisFixture,
             jiNotationLevel: JiNotationLevel.EXTREME,
             boundType: BoundType.INA_MIDPOINT,
@@ -46,7 +46,7 @@ describe("consolidateBoundHistories", (): void => {
             rank: RANKS[ BoundType.COMMA_MEAN ],
             exact: false,
         }
-        const boundEventAnalysisThreeButWithBetterRank: BoundEventAnalysis = {
+        const boundEventAnalysisCButWithBetterRank: BoundEventAnalysis = {
             ...boundEventAnalysisFixture,
             jiNotationLevel: JiNotationLevel.EXTREME,
             boundType: BoundType.COMMA_MEAN,
@@ -59,8 +59,8 @@ describe("consolidateBoundHistories", (): void => {
         const bestPossibleBoundHistoryAnalysis: BoundHistoryAnalysis = {
             ...boundHistoryAnalysisFixture,
             boundEventAnalyses: [
-                boundEventAnalysisTwoGoesToEventThree,
-                boundEventAnalysisThreeButWithBetterRank,
+                boundEventAnalysisBGoesToEventC,
+                boundEventAnalysisCButWithBetterRank,
             ],
             rank: RANKS[ BoundType.COMMA_MEAN ],
             possible: true,
@@ -71,8 +71,8 @@ describe("consolidateBoundHistories", (): void => {
             {
                 ...boundHistoryAnalysisFixture,
                 boundEventAnalyses: [
-                    boundEventAnalysisOneGoesToEventThreeAndFour,
-                    boundEventAnalysisThree,
+                    boundEventAnalysisAGoesToEventCAndD,
+                    boundEventAnalysisC,
                 ],
                 rank: RANKS[ BoundType.SIZE_CATEGORY_BOUND ],
                 possible: true,
@@ -83,8 +83,8 @@ describe("consolidateBoundHistories", (): void => {
             {
                 ...boundHistoryAnalysisFixture,
                 boundEventAnalyses: [
-                    boundEventAnalysisOneGoesToEventThreeAndFour,
-                    boundEventAnalysisFour,
+                    boundEventAnalysisAGoesToEventCAndD,
+                    boundEventAnalysisD,
                 ],
                 rank: RANKS[ BoundType.SIZE_CATEGORY_BOUND ],
                 possible: false,
@@ -94,7 +94,7 @@ describe("consolidateBoundHistories", (): void => {
             {
                 ...boundHistoryAnalysisFixture,
                 boundEventAnalyses: [
-                    boundEventAnalysisTwoGoesToEventThree,
+                    boundEventAnalysisBGoesToEventC,
                 ],
                 rank: RANKS[ BoundType.SIZE_CATEGORY_BOUND ],
                 possible: false,
@@ -108,41 +108,41 @@ describe("consolidateBoundHistories", (): void => {
         const expected = {
             [ JiNotationLevel.ULTRA ]: [
                 {
-                    boundType: boundEventAnalysisOneGoesToEventThreeAndFour.boundType,
-                    jiNotationLevel: boundEventAnalysisOneGoesToEventThreeAndFour.jiNotationLevel,
-                    name: boundEventAnalysisOneGoesToEventThreeAndFour.name,
-                    cents: boundEventAnalysisOneGoesToEventThreeAndFour.cents,
+                    boundType: boundEventAnalysisAGoesToEventCAndD.boundType,
+                    jiNotationLevel: boundEventAnalysisAGoesToEventCAndD.jiNotationLevel,
+                    name: boundEventAnalysisAGoesToEventCAndD.name,
+                    cents: boundEventAnalysisAGoesToEventCAndD.cents,
                     isPossibleBoundHistoryMember: true,
                     isBestPossibleBoundHistoryMember: false,
                     exact: false,
                     rankOfBestRankedEventInAnyMemberHistory: RANKS[ BoundType.SIZE_CATEGORY_BOUND ],
                     rankOfBestRankedMemberHistory: RANKS[ BoundType.SIZE_CATEGORY_BOUND ],
                     nextBoundEvents: [
-                        boundEventAnalysisThree.name,
-                        boundEventAnalysisFour.name,
+                        boundEventAnalysisC.name,
+                        boundEventAnalysisD.name,
                     ] as Name<Bound>[],
                 },
                 {
-                    boundType: boundEventAnalysisTwoGoesToEventThree.boundType,
-                    jiNotationLevel: boundEventAnalysisTwoGoesToEventThree.jiNotationLevel,
-                    name: boundEventAnalysisTwoGoesToEventThree.name,
-                    cents: boundEventAnalysisTwoGoesToEventThree.cents,
+                    boundType: boundEventAnalysisBGoesToEventC.boundType,
+                    jiNotationLevel: boundEventAnalysisBGoesToEventC.jiNotationLevel,
+                    name: boundEventAnalysisBGoesToEventC.name,
+                    cents: boundEventAnalysisBGoesToEventC.cents,
                     isPossibleBoundHistoryMember: true,
                     isBestPossibleBoundHistoryMember: true,
                     exact: false,
                     rankOfBestRankedEventInAnyMemberHistory: RANKS[ BoundType.COMMA_MEAN ],
                     rankOfBestRankedMemberHistory: RANKS[ BoundType.COMMA_MEAN ],
                     nextBoundEvents: [
-                        boundEventAnalysisThree.name,
+                        boundEventAnalysisC.name,
                     ] as Name<Bound>[],
                 },
             ],
             [ JiNotationLevel.EXTREME ]: [
                 {
-                    boundType: boundEventAnalysisThree.boundType,
-                    jiNotationLevel: boundEventAnalysisThree.jiNotationLevel,
-                    name: boundEventAnalysisThree.name,
-                    cents: boundEventAnalysisThree.cents,
+                    boundType: boundEventAnalysisC.boundType,
+                    jiNotationLevel: boundEventAnalysisC.jiNotationLevel,
+                    name: boundEventAnalysisC.name,
+                    cents: boundEventAnalysisC.cents,
                     isPossibleBoundHistoryMember: true,
                     isBestPossibleBoundHistoryMember: true,
                     exact: false,
@@ -151,10 +151,10 @@ describe("consolidateBoundHistories", (): void => {
                     nextBoundEvents: [] as Name<Bound>[],
                 },
                 {
-                    boundType: boundEventAnalysisFour.boundType,
-                    jiNotationLevel: boundEventAnalysisFour.jiNotationLevel,
-                    name: boundEventAnalysisFour.name,
-                    cents: boundEventAnalysisFour.cents,
+                    boundType: boundEventAnalysisD.boundType,
+                    jiNotationLevel: boundEventAnalysisD.jiNotationLevel,
+                    name: boundEventAnalysisD.name,
+                    cents: boundEventAnalysisD.cents,
                     isPossibleBoundHistoryMember: false,
                     isBestPossibleBoundHistoryMember: false,
                     exact: false,

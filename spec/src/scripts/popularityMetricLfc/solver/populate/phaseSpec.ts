@@ -19,7 +19,7 @@ describe("populateScopesPhase", (): void => {
     const chunkCount = 5 as Count<Chunk>
     const chunkCountForSubmetrics = 3 as Count<Chunk<Submetric>>
     const expectedChunkCountForParameters = 2 as Count<Chunk<Parameter>>
-    const submetricChunkCombinationOne = [
+    const submetricChunkCombinationA = [
         {
             [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
         },
@@ -28,7 +28,7 @@ describe("populateScopesPhase", (): void => {
             [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
         },
     ] as unknown[] as Combination<Chunk<Submetric>>
-    const submetricChunkCombinationTwo = [
+    const submetricChunkCombinationB = [
         {
             [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
             [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
@@ -44,7 +44,7 @@ describe("populateScopesPhase", (): void => {
         },
     ] as unknown[] as Combination<Chunk<Parameter>>
     const submetricChunkCombinations =
-        [submetricChunkCombinationOne, submetricChunkCombinationTwo] as unknown[] as Combinations<Chunk<Submetric>>
+        [submetricChunkCombinationA, submetricChunkCombinationB] as unknown[] as Combinations<Chunk<Submetric>>
     const parameterChunkCombinations = [parameterChunkCombination] as unknown[] as Combinations<Chunk<Parameter>>
 
     beforeEach((): void => {
@@ -91,7 +91,7 @@ describe("populateScopesPhase", (): void => {
 
         expect(submetricChunkCombination.populateScopesForSubmetricChunkCombination).toHaveBeenCalledTimes(2)
         expect(submetricChunkCombination.populateScopesForSubmetricChunkCombination).toHaveBeenCalledWith(
-            submetricChunkCombinationOne,
+            submetricChunkCombinationA,
             {
                 parameterChunkCombinations,
                 parameterChunkCombinationIndex: 0 as Index<Combination<Chunk<Parameter>>>,
@@ -100,7 +100,7 @@ describe("populateScopesPhase", (): void => {
             },
         )
         expect(submetricChunkCombination.populateScopesForSubmetricChunkCombination).toHaveBeenCalledWith(
-            submetricChunkCombinationTwo,
+            submetricChunkCombinationB,
             {
                 parameterChunkCombinations,
                 parameterChunkCombinationIndex: 0 as Index<Combination<Chunk<Parameter>>>,

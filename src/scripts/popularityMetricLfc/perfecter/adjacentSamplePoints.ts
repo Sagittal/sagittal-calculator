@@ -7,13 +7,13 @@ const computeAdjacentSamplePoints = (samplePoint: SamplePoint): SamplePoint[] =>
 
     // Haha, wow. It's an index of an index.
     samplePoint.forEach((dynamicParameterValueIndex: Index<ParameterValue>, index: number): void => {
-        const adjacentSamplePointOne: SamplePoint = shallowClone(samplePoint) as SamplePoint
-        adjacentSamplePointOne[ index ] = dynamicParameterValueIndex - 1 as Index<ParameterValue>
-        adjacentSamplePoints.push(adjacentSamplePointOne)
+        const adjacentSamplePointA: SamplePoint = shallowClone(samplePoint) as SamplePoint
+        adjacentSamplePointA[ index ] = dynamicParameterValueIndex - 1 as Index<ParameterValue>
+        adjacentSamplePoints.push(adjacentSamplePointA)
 
-        const adjacentSamplePointTwo: SamplePoint = shallowClone(samplePoint) as SamplePoint
-        adjacentSamplePointTwo[ index ] = dynamicParameterValueIndex + 1 as Index<ParameterValue>
-        adjacentSamplePoints.push(adjacentSamplePointTwo)
+        const adjacentSamplePointB: SamplePoint = shallowClone(samplePoint) as SamplePoint
+        adjacentSamplePointB[ index ] = dynamicParameterValueIndex + 1 as Index<ParameterValue>
+        adjacentSamplePoints.push(adjacentSamplePointB)
     })
 
     return adjacentSamplePoints

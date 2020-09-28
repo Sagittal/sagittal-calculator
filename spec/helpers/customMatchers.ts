@@ -50,14 +50,14 @@ const testIsCloseTo = <T extends number>(actual: T, expected: T, precision: Prec
     }
 }
 
-const arraysHaveSameContents = <T>(arrayOne: T[], arrayTwo: T[]): boolean => {
-    if (arrayOne.length !== arrayTwo.length) {
+const arraysHaveSameContents = <T>(arrayA: T[], arrayB: T[]): boolean => {
+    if (arrayA.length !== arrayB.length) {
         return false
     }
 
-    return arrayOne.every((elementOne: T): boolean =>
-        arrayTwo.some((elementTwo: T): boolean =>
-            deepEquals(elementOne, elementTwo)))
+    return arrayA.every((elementA: T): boolean =>
+        arrayB.some((elementB: T): boolean =>
+            deepEquals(elementA, elementB)))
 }
 
 const arraysAreCloseUpThroughExpected = <T extends number>(expected: T[], actual: T[], precision: Precision, negate?: boolean, message?: string): void => {

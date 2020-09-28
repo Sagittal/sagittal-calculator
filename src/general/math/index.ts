@@ -13,7 +13,7 @@ export {
     computeSuperMonzo,
     invertMonzo,
     isSuperMonzo,
-    sumMonzos,
+    computeMonzoSum,
     Monzo,
     isUnisonMonzo,
     computeDecimalFromMonzo,

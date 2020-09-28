@@ -6,7 +6,7 @@ import { Parameter, ParameterValue } from "../../../../../../src/scripts/popular
 
 describe("search scopes", (): void => {
     it("searches all remaining scopes at the current chunk count and then, given scopes are finished populated by then, searching finishes too", async (): Promise<void> => {
-        const scopeOne = [
+        const scopeA = [
             {
                 [ Parameter.SUM ]: true,
                 [ Parameter.A_AS_COEFFICIENT ]: {
@@ -16,14 +16,14 @@ describe("search scopes", (): void => {
                 },
             },
         ] as Scope
-        const scopeTwo = [{ [ Parameter.MAX ]: true }] as Scope
-        const scopeThree = [{ [ Parameter.COUNT ]: true }] as Scope
+        const scopeB = [{ [ Parameter.MAX ]: true }] as Scope
+        const scopeC = [{ [ Parameter.COUNT ]: true }] as Scope
 
         solverStatus.finishedPopulating = false
         solverStatus.chunkCount = 1 as Count<Chunk>
-        scopesToSearch.push(scopeOne)
-        scopesToSearch.push(scopeTwo)
-        scopesToSearch.push(scopeThree)
+        scopesToSearch.push(scopeA)
+        scopesToSearch.push(scopeB)
+        scopesToSearch.push(scopeC)
 
         setTimeout((): void => {
             solverStatus.finishedPopulating = true

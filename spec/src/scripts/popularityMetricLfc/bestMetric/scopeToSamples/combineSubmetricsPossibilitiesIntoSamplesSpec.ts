@@ -17,44 +17,44 @@ describe("combineSubmetricsPossibilitiesIntoSamples", (): void => {
         it also takes the zeroth submetric scope (the all bins one) and spreads it across every submetric`,
         (): void => {
             // Submetric zero has two possibilities
-            const submetricZeroPossibilityOne = {
+            const submetricZeroPossibilityA = {
                 [ Parameter.K_AS_COEFFICIENT ]: 0.33 as ParameterValue,
             } as SubmetricPossibility
-            const submetricZeroPossibilityTwo = {
+            const submetricZeroPossibilityB = {
                 [ Parameter.K_AS_COEFFICIENT ]: 0.45 as ParameterValue,
             } as SubmetricPossibility
 
             // Submetric one has three possibilities
-            const submetricOnePossibilityOne: SubmetricPossibility = {
+            const submetricAPossibilityA: SubmetricPossibility = {
                 [ Parameter.A_AS_COEFFICIENT ]: 0.5 as ParameterValue,
                 [ Parameter.Y ]: 1.5 as ParameterValue,
                 [ Parameter.COUNT ]: true,
             } as SubmetricPossibility
-            const submetricOnePossibilityTwo: SubmetricPossibility = {
+            const submetricAPossibilityB: SubmetricPossibility = {
                 [ Parameter.A_AS_COEFFICIENT ]: 0.5 as ParameterValue,
                 [ Parameter.Y ]: 1.2 as ParameterValue,
                 [ Parameter.COUNT ]: true,
             } as SubmetricPossibility
-            const submetricOnePossibilityThree: SubmetricPossibility = {
+            const submetricAPossibilityC: SubmetricPossibility = {
                 [ Parameter.A_AS_COEFFICIENT ]: 0.5 as ParameterValue,
                 [ Parameter.Y ]: 0.9 as ParameterValue,
                 [ Parameter.COUNT ]: true,
             } as SubmetricPossibility
 
             // Submetric two has four possibilities (2x2: 2 for y, 2 for a)
-            const submetricTwoPossibilityOne: SubmetricPossibility = {
+            const submetricBPossibilityA: SubmetricPossibility = {
                 [ Parameter.Y ]: 0.9 as ParameterValue,
                 [ Parameter.A_AS_COEFFICIENT ]: 0.7 as ParameterValue,
             } as SubmetricPossibility
-            const submetricTwoPossibilityTwo: SubmetricPossibility = {
+            const submetricBPossibilityB: SubmetricPossibility = {
                 [ Parameter.Y ]: 1.1 as ParameterValue,
                 [ Parameter.A_AS_COEFFICIENT ]: 0.7 as ParameterValue,
             } as SubmetricPossibility
-            const submetricTwoPossibilityThree: SubmetricPossibility = {
+            const submetricBPossibilityC: SubmetricPossibility = {
                 [ Parameter.Y ]: 0.9 as ParameterValue,
                 [ Parameter.A_AS_COEFFICIENT ]: 0.6 as ParameterValue,
             } as SubmetricPossibility
-            const submetricTwoPossibilityFour: SubmetricPossibility = {
+            const submetricBPossibilityD: SubmetricPossibility = {
                 [ Parameter.Y ]: 1.1 as ParameterValue,
                 [ Parameter.A_AS_COEFFICIENT ]: 0.6 as ParameterValue,
             } as SubmetricPossibility
@@ -64,19 +64,19 @@ describe("combineSubmetricsPossibilitiesIntoSamples", (): void => {
             // But whatever possibility it is, it is spread the same one across all of them
             const submetricsPossibilities: Combination<SubmetricPossibility>[] = [
                 [
-                    submetricZeroPossibilityOne,
-                    submetricZeroPossibilityTwo,
+                    submetricZeroPossibilityA,
+                    submetricZeroPossibilityB,
                 ] as Combination<SubmetricPossibility>,
                 [
-                    submetricOnePossibilityOne,
-                    submetricOnePossibilityTwo,
-                    submetricOnePossibilityThree,
+                    submetricAPossibilityA,
+                    submetricAPossibilityB,
+                    submetricAPossibilityC,
                 ] as Combination<SubmetricPossibility>,
                 [
-                    submetricTwoPossibilityOne,
-                    submetricTwoPossibilityTwo,
-                    submetricTwoPossibilityThree,
-                    submetricTwoPossibilityFour,
+                    submetricBPossibilityA,
+                    submetricBPossibilityB,
+                    submetricBPossibilityC,
+                    submetricBPossibilityD,
                 ] as Combination<SubmetricPossibility>,
             ]
 
@@ -127,85 +127,85 @@ describe("combineSubmetricsPossibilitiesIntoSamples", (): void => {
                 // In this section, submetric zero (all bins) is at possibility 1 of 2
                 {
                     submetrics: [
-                        { ...submetricZeroPossibilityOne, ...submetricOnePossibilityOne } as Submetric,
-                        { ...submetricZeroPossibilityOne, ...submetricTwoPossibilityOne } as Submetric,
+                        { ...submetricZeroPossibilityA, ...submetricAPossibilityA } as Submetric,
+                        { ...submetricZeroPossibilityA, ...submetricBPossibilityA } as Submetric,
                     ] as Combination<Submetric>,
                     samplePoint: [0, 0, 0, 0] as SamplePoint,
                 },
                 {
                     submetrics: [
-                        { ...submetricZeroPossibilityOne, ...submetricOnePossibilityOne } as Submetric,
-                        { ...submetricZeroPossibilityOne, ...submetricTwoPossibilityTwo } as Submetric,
+                        { ...submetricZeroPossibilityA, ...submetricAPossibilityA } as Submetric,
+                        { ...submetricZeroPossibilityA, ...submetricBPossibilityB } as Submetric,
                     ] as Combination<Submetric>,
                     samplePoint: [0, 0, 1, 0] as SamplePoint,
                 },
                 {
                     submetrics: [
-                        { ...submetricZeroPossibilityOne, ...submetricOnePossibilityOne } as Submetric,
-                        { ...submetricZeroPossibilityOne, ...submetricTwoPossibilityThree } as Submetric,
+                        { ...submetricZeroPossibilityA, ...submetricAPossibilityA } as Submetric,
+                        { ...submetricZeroPossibilityA, ...submetricBPossibilityC } as Submetric,
                     ] as Combination<Submetric>,
                     samplePoint: [0, 0, 0, 1] as SamplePoint,
                 },
                 {
                     submetrics: [
-                        { ...submetricZeroPossibilityOne, ...submetricOnePossibilityOne } as Submetric,
-                        { ...submetricZeroPossibilityOne, ...submetricTwoPossibilityFour } as Submetric,
+                        { ...submetricZeroPossibilityA, ...submetricAPossibilityA } as Submetric,
+                        { ...submetricZeroPossibilityA, ...submetricBPossibilityD } as Submetric,
                     ] as Combination<Submetric>,
                     samplePoint: [0, 0, 1, 1] as SamplePoint,
                 },
                 {
                     submetrics: [
-                        { ...submetricZeroPossibilityOne, ...submetricOnePossibilityTwo } as Submetric,
-                        { ...submetricZeroPossibilityOne, ...submetricTwoPossibilityOne } as Submetric,
+                        { ...submetricZeroPossibilityA, ...submetricAPossibilityB } as Submetric,
+                        { ...submetricZeroPossibilityA, ...submetricBPossibilityA } as Submetric,
                     ] as Combination<Submetric>,
                     samplePoint: [0, 1, 0, 0] as SamplePoint,
                 },
                 {
                     submetrics: [
-                        { ...submetricZeroPossibilityOne, ...submetricOnePossibilityTwo } as Submetric,
-                        { ...submetricZeroPossibilityOne, ...submetricTwoPossibilityTwo } as Submetric,
+                        { ...submetricZeroPossibilityA, ...submetricAPossibilityB } as Submetric,
+                        { ...submetricZeroPossibilityA, ...submetricBPossibilityB } as Submetric,
                     ] as Combination<Submetric>,
                     samplePoint: [0, 1, 1, 0] as SamplePoint,
                 },
                 {
                     submetrics: [
-                        { ...submetricZeroPossibilityOne, ...submetricOnePossibilityTwo } as Submetric,
-                        { ...submetricZeroPossibilityOne, ...submetricTwoPossibilityThree } as Submetric,
+                        { ...submetricZeroPossibilityA, ...submetricAPossibilityB } as Submetric,
+                        { ...submetricZeroPossibilityA, ...submetricBPossibilityC } as Submetric,
                     ] as Combination<Submetric>,
                     samplePoint: [0, 1, 0, 1] as SamplePoint,
                 },
                 {
                     submetrics: [
-                        { ...submetricZeroPossibilityOne, ...submetricOnePossibilityTwo } as Submetric,
-                        { ...submetricZeroPossibilityOne, ...submetricTwoPossibilityFour } as Submetric,
+                        { ...submetricZeroPossibilityA, ...submetricAPossibilityB } as Submetric,
+                        { ...submetricZeroPossibilityA, ...submetricBPossibilityD } as Submetric,
                     ] as Combination<Submetric>,
                     samplePoint: [0, 1, 1, 1] as SamplePoint,
                 },
                 {
                     submetrics: [
-                        { ...submetricZeroPossibilityOne, ...submetricOnePossibilityThree } as Submetric,
-                        { ...submetricZeroPossibilityOne, ...submetricTwoPossibilityOne } as Submetric,
+                        { ...submetricZeroPossibilityA, ...submetricAPossibilityC } as Submetric,
+                        { ...submetricZeroPossibilityA, ...submetricBPossibilityA } as Submetric,
                     ] as Combination<Submetric>,
                     samplePoint: [0, 2, 0, 0] as SamplePoint,
                 },
                 {
                     submetrics: [
-                        { ...submetricZeroPossibilityOne, ...submetricOnePossibilityThree } as Submetric,
-                        { ...submetricZeroPossibilityOne, ...submetricTwoPossibilityTwo } as Submetric,
+                        { ...submetricZeroPossibilityA, ...submetricAPossibilityC } as Submetric,
+                        { ...submetricZeroPossibilityA, ...submetricBPossibilityB } as Submetric,
                     ] as Combination<Submetric>,
                     samplePoint: [0, 2, 1, 0] as SamplePoint,
                 },
                 {
                     submetrics: [
-                        { ...submetricZeroPossibilityOne, ...submetricOnePossibilityThree } as Submetric,
-                        { ...submetricZeroPossibilityOne, ...submetricTwoPossibilityThree } as Submetric,
+                        { ...submetricZeroPossibilityA, ...submetricAPossibilityC } as Submetric,
+                        { ...submetricZeroPossibilityA, ...submetricBPossibilityC } as Submetric,
                     ] as Combination<Submetric>,
                     samplePoint: [0, 2, 0, 1] as SamplePoint,
                 },
                 {
                     submetrics: [
-                        { ...submetricZeroPossibilityOne, ...submetricOnePossibilityThree } as Submetric,
-                        { ...submetricZeroPossibilityOne, ...submetricTwoPossibilityFour } as Submetric,
+                        { ...submetricZeroPossibilityA, ...submetricAPossibilityC } as Submetric,
+                        { ...submetricZeroPossibilityA, ...submetricBPossibilityD } as Submetric,
                     ] as Combination<Submetric>,
                     samplePoint: [0, 2, 1, 1] as SamplePoint,
                 },
@@ -213,85 +213,85 @@ describe("combineSubmetricsPossibilitiesIntoSamples", (): void => {
                 // In this section, submetric zero (all bins) is at possibility 2 of 2, otherwise a copy of the above
                 {
                     submetrics: [
-                        { ...submetricZeroPossibilityTwo, ...submetricOnePossibilityOne } as Submetric,
-                        { ...submetricZeroPossibilityTwo, ...submetricTwoPossibilityOne } as Submetric,
+                        { ...submetricZeroPossibilityB, ...submetricAPossibilityA } as Submetric,
+                        { ...submetricZeroPossibilityB, ...submetricBPossibilityA } as Submetric,
                     ] as Combination<Submetric>,
                     samplePoint: [1, 0, 0, 0] as SamplePoint,
                 },
                 {
                     submetrics: [
-                        { ...submetricZeroPossibilityTwo, ...submetricOnePossibilityOne } as Submetric,
-                        { ...submetricZeroPossibilityTwo, ...submetricTwoPossibilityTwo } as Submetric,
+                        { ...submetricZeroPossibilityB, ...submetricAPossibilityA } as Submetric,
+                        { ...submetricZeroPossibilityB, ...submetricBPossibilityB } as Submetric,
                     ] as Combination<Submetric>,
                     samplePoint: [1, 0, 1, 0] as SamplePoint,
                 },
                 {
                     submetrics: [
-                        { ...submetricZeroPossibilityTwo, ...submetricOnePossibilityOne } as Submetric,
-                        { ...submetricZeroPossibilityTwo, ...submetricTwoPossibilityThree } as Submetric,
+                        { ...submetricZeroPossibilityB, ...submetricAPossibilityA } as Submetric,
+                        { ...submetricZeroPossibilityB, ...submetricBPossibilityC } as Submetric,
                     ] as Combination<Submetric>,
                     samplePoint: [1, 0, 0, 1] as SamplePoint,
                 },
                 {
                     submetrics: [
-                        { ...submetricZeroPossibilityTwo, ...submetricOnePossibilityOne } as Submetric,
-                        { ...submetricZeroPossibilityTwo, ...submetricTwoPossibilityFour } as Submetric,
+                        { ...submetricZeroPossibilityB, ...submetricAPossibilityA } as Submetric,
+                        { ...submetricZeroPossibilityB, ...submetricBPossibilityD } as Submetric,
                     ] as Combination<Submetric>,
                     samplePoint: [1, 0, 1, 1] as SamplePoint,
                 },
                 {
                     submetrics: [
-                        { ...submetricZeroPossibilityTwo, ...submetricOnePossibilityTwo } as Submetric,
-                        { ...submetricZeroPossibilityTwo, ...submetricTwoPossibilityOne } as Submetric,
+                        { ...submetricZeroPossibilityB, ...submetricAPossibilityB } as Submetric,
+                        { ...submetricZeroPossibilityB, ...submetricBPossibilityA } as Submetric,
                     ] as Combination<Submetric>,
                     samplePoint: [1, 1, 0, 0] as SamplePoint,
                 },
                 {
                     submetrics: [
-                        { ...submetricZeroPossibilityTwo, ...submetricOnePossibilityTwo } as Submetric,
-                        { ...submetricZeroPossibilityTwo, ...submetricTwoPossibilityTwo } as Submetric,
+                        { ...submetricZeroPossibilityB, ...submetricAPossibilityB } as Submetric,
+                        { ...submetricZeroPossibilityB, ...submetricBPossibilityB } as Submetric,
                     ] as Combination<Submetric>,
                     samplePoint: [1, 1, 1, 0] as SamplePoint,
                 },
                 {
                     submetrics: [
-                        { ...submetricZeroPossibilityTwo, ...submetricOnePossibilityTwo } as Submetric,
-                        { ...submetricZeroPossibilityTwo, ...submetricTwoPossibilityThree } as Submetric,
+                        { ...submetricZeroPossibilityB, ...submetricAPossibilityB } as Submetric,
+                        { ...submetricZeroPossibilityB, ...submetricBPossibilityC } as Submetric,
                     ] as Combination<Submetric>,
                     samplePoint: [1, 1, 0, 1] as SamplePoint,
                 },
                 {
                     submetrics: [
-                        { ...submetricZeroPossibilityTwo, ...submetricOnePossibilityTwo } as Submetric,
-                        { ...submetricZeroPossibilityTwo, ...submetricTwoPossibilityFour } as Submetric,
+                        { ...submetricZeroPossibilityB, ...submetricAPossibilityB } as Submetric,
+                        { ...submetricZeroPossibilityB, ...submetricBPossibilityD } as Submetric,
                     ] as Combination<Submetric>,
                     samplePoint: [1, 1, 1, 1] as SamplePoint,
                 },
                 {
                     submetrics: [
-                        { ...submetricZeroPossibilityTwo, ...submetricOnePossibilityThree } as Submetric,
-                        { ...submetricZeroPossibilityTwo, ...submetricTwoPossibilityOne } as Submetric,
+                        { ...submetricZeroPossibilityB, ...submetricAPossibilityC } as Submetric,
+                        { ...submetricZeroPossibilityB, ...submetricBPossibilityA } as Submetric,
                     ] as Combination<Submetric>,
                     samplePoint: [1, 2, 0, 0] as SamplePoint,
                 },
                 {
                     submetrics: [
-                        { ...submetricZeroPossibilityTwo, ...submetricOnePossibilityThree } as Submetric,
-                        { ...submetricZeroPossibilityTwo, ...submetricTwoPossibilityTwo } as Submetric,
+                        { ...submetricZeroPossibilityB, ...submetricAPossibilityC } as Submetric,
+                        { ...submetricZeroPossibilityB, ...submetricBPossibilityB } as Submetric,
                     ] as Combination<Submetric>,
                     samplePoint: [1, 2, 1, 0] as SamplePoint,
                 },
                 {
                     submetrics: [
-                        { ...submetricZeroPossibilityTwo, ...submetricOnePossibilityThree } as Submetric,
-                        { ...submetricZeroPossibilityTwo, ...submetricTwoPossibilityThree } as Submetric,
+                        { ...submetricZeroPossibilityB, ...submetricAPossibilityC } as Submetric,
+                        { ...submetricZeroPossibilityB, ...submetricBPossibilityC } as Submetric,
                     ] as Combination<Submetric>,
                     samplePoint: [1, 2, 0, 1] as SamplePoint,
                 },
                 {
                     submetrics: [
-                        { ...submetricZeroPossibilityTwo, ...submetricOnePossibilityThree } as Submetric,
-                        { ...submetricZeroPossibilityTwo, ...submetricTwoPossibilityFour } as Submetric,
+                        { ...submetricZeroPossibilityB, ...submetricAPossibilityC } as Submetric,
+                        { ...submetricZeroPossibilityB, ...submetricBPossibilityD } as Submetric,
                     ] as Combination<Submetric>,
                     samplePoint: [1, 2, 1, 1] as SamplePoint,
                 },

@@ -18,13 +18,14 @@ export {
     QuotientPart,
     computeQuotientFromMonzo,
     equalIrrationalQuotients,
+    computeQuotientProduct,
 } from "./quotient"
 export {
     isSubMonzo,
     computeSuperMonzo,
     invertMonzo,
     isSuperMonzo,
-    sumMonzos,
+    computeMonzoSum,
     Monzo,
     isUnisonMonzo,
     equalMonzos,

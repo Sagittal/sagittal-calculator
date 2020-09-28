@@ -10,3 +10,4 @@ export {
     QuotientPart,
 } from "./types"
 export { computeSuperQuotient } from "./direction"
+export { computeQuotientProduct } from "./typedOperations"

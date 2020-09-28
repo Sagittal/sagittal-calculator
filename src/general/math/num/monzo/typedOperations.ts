@@ -1,7 +1,7 @@
 import { computeRange, computeTrimmedArray } from "../../../code"
 import { add, count, Exponent, max, Monzo, Prime } from "../../../math"
 
-const sumMonzos = (...monzos: Array<Monzo>): Monzo => {
+const computeMonzoSum = (...monzos: Array<Monzo>): Monzo => {
     const maxMonzoLength = max(...monzos.map(count))
 
     const summedMonzos: Monzo = computeRange(maxMonzoLength).map((index: number): Exponent<Prime> => {
@@ -19,5 +19,5 @@ const sumMonzos = (...monzos: Array<Monzo>): Monzo => {
 }
 
 export {
-    sumMonzos,
+    computeMonzoSum,
 }

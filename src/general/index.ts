@@ -161,7 +161,7 @@ export {
     Sopfr,
     sqrt,
     sum,
-    sumMonzos,
+    computeMonzoSum,
     computeSuperQuotient,
     THREE_PRIME_INDEX,
     THREE_SMOOTHNESS,
