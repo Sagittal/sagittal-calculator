@@ -12,8 +12,7 @@ import { maybeNuminatorSwap } from "./numinator"
 import { computeSubmetricAntivotes } from "./submetricAntivotes"
 import { computeWeightedAntivotes } from "./weightedAntivotes"
 
-// TODO: rename
-const computeQuotientSubmetricAntivotes = (
+const compute23FreeClassSubmetricAntivotes = (
     twoThreeFreeClass: TwoThreeFreeClass,
     submetric: Submetric = {},
 ): Antivotes => {
@@ -77,5 +76,5 @@ const computeQuotientSubmetricAntivotes = (
 }
 
 export {
-    computeQuotientSubmetricAntivotes,
+    compute23FreeClassSubmetricAntivotes,
 }

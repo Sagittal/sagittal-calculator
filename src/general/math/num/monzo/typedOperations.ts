@@ -1,8 +1,6 @@
 import { computeRange, computeTrimmedArray } from "../../../code"
 import { add, count, Exponent, max, Monzo, Prime } from "../../../math"
 
-// TODO: I could imagine this module getting rename like "operations" such that quotients might have an equivalent
-//  Where they could get multiplied or whatever
 const sumMonzos = (...monzos: Array<Monzo>): Monzo => {
     const maxMonzoLength = max(...monzos.map(count))
 

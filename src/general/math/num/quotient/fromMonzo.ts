@@ -6,8 +6,6 @@ import { Monzo } from "../monzo"
 import { NumTypeParameters } from "../types"
 import { Denominator, Numerator, Quotient } from "./types"
 
-// TODO: add a helper that catches empty files
-
 const computeQuotientFromMonzo: {
     <T extends NumTypeParameters>(
         rationalMonzo: RationalMonzo<T>,

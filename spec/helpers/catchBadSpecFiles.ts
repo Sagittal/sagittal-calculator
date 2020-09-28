@@ -2,6 +2,8 @@ import * as fs from "fs"
 import * as path from "path"
 import { Filename } from "../../src/general/io"
 
+// TODO: add a helper that catches empty files... and then maybe this is just bad files, not bad spec files
+
 const catchBadSpecFiles = (basePath: Filename = "" as Filename): void => {
     for (const file of fs.readdirSync(path.join("spec/src", basePath))) {
         const filename = path.join(basePath, file) as Filename

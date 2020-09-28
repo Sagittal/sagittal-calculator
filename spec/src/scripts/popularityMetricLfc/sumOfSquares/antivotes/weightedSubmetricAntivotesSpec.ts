@@ -2,7 +2,7 @@ import { log, TwoThreeFreeClass } from "../../../../../../src/general"
 import { BASE_2, Power } from "../../../../../../src/general/math"
 import { Parameter, ParameterValue } from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
 import * as quotientSubmetricAntivotes
-    from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares/antivotes/quotientSubmetricAntivotes"
+    from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares/antivotes/twoThreeFreeClassSubmetricAntivotes"
 import { computeWeightedSubmetricAntivotes } from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares/antivotes/weightedSubmetricAntivotes"
 import { Antivotes } from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares/types"
 
@@ -17,15 +17,15 @@ describe("computeWeightedSubmetricAntivotes", (): void => {
         expect(actual).toBe(expected)
     })
 
-    it("does not waste resources calling computeQuotientSubmetricAntivotes when the weight is 0", (): void => {
-        spyOn(quotientSubmetricAntivotes, "computeQuotientSubmetricAntivotes")
+    it("does not waste resources calling compute23FreeClassSubmetricAntivotes when the weight is 0", (): void => {
+        spyOn(quotientSubmetricAntivotes, "compute23FreeClassSubmetricAntivotes")
 
         const twoThreeFreeClass = { quotient: [15, 14] } as TwoThreeFreeClass
         const submetric = { [ Parameter.WEIGHT_AS_COEFFICIENT ]: 0 as ParameterValue, [ Parameter.SUM ]: true }
 
         computeWeightedSubmetricAntivotes(twoThreeFreeClass, submetric)
 
-        expect(quotientSubmetricAntivotes.computeQuotientSubmetricAntivotes).not.toHaveBeenCalled()
+        expect(quotientSubmetricAntivotes.compute23FreeClassSubmetricAntivotes).not.toHaveBeenCalled()
     })
 
     it("returns the full submetric antivotes when the weight is 1", (): void => {
@@ -34,7 +34,7 @@ describe("computeWeightedSubmetricAntivotes", (): void => {
 
         const actual = computeWeightedSubmetricAntivotes(twoThreeFreeClass, submetric)
 
-        const expected = quotientSubmetricAntivotes.computeQuotientSubmetricAntivotes(
+        const expected = quotientSubmetricAntivotes.compute23FreeClassSubmetricAntivotes(
             twoThreeFreeClass,
             { [ Parameter.SUM ]: true },
         )
@@ -50,7 +50,7 @@ describe("computeWeightedSubmetricAntivotes", (): void => {
         const expected =
             0.5 *
             quotientSubmetricAntivotes
-                .computeQuotientSubmetricAntivotes(twoThreeFreeClass, { [ Parameter.SUM ]: true }) as Antivotes
+                .compute23FreeClassSubmetricAntivotes(twoThreeFreeClass, { [ Parameter.SUM ]: true }) as Antivotes
         expect(actual).toBe(expected)
     })
 
@@ -70,7 +70,7 @@ describe("computeWeightedSubmetricAntivotes", (): void => {
         const actual = computeWeightedSubmetricAntivotes(twoThreeFreeClass, submetric)
 
         const expected = log(
-            quotientSubmetricAntivotes.computeQuotientSubmetricAntivotes(
+            quotientSubmetricAntivotes.compute23FreeClassSubmetricAntivotes(
                 twoThreeFreeClass,
                 { [ Parameter.SUM ]: true },
             ) as number as Power,
@@ -85,7 +85,7 @@ describe("computeWeightedSubmetricAntivotes", (): void => {
 
         const actual = computeWeightedSubmetricAntivotes(twoThreeFreeClass, submetric)
 
-        const expected = quotientSubmetricAntivotes.computeQuotientSubmetricAntivotes(
+        const expected = quotientSubmetricAntivotes.compute23FreeClassSubmetricAntivotes(
             twoThreeFreeClass,
             { [ Parameter.SUM ]: true },
         ) ** 2 as Antivotes
@@ -98,7 +98,7 @@ describe("computeWeightedSubmetricAntivotes", (): void => {
 
         const actual = computeWeightedSubmetricAntivotes(twoThreeFreeClass, submetric)
 
-        const expected = 2 ** quotientSubmetricAntivotes.computeQuotientSubmetricAntivotes(
+        const expected = 2 ** quotientSubmetricAntivotes.compute23FreeClassSubmetricAntivotes(
             twoThreeFreeClass,
             { [ Parameter.SUM ]: true },
         ) as Antivotes
