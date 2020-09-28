@@ -6,11 +6,11 @@ const computeUnpopularities = (
     realPopularities: Array<Ranked<Popularity>>,
     submetrics: Combination<Submetric>,
 ): Unpopularity[] =>
-    realPopularities.map(({ twoThreeFreeClass }: Popularity, index: number): Unpopularity =>
+    realPopularities.map(({ two3FreeClass }: Popularity, index: number): Unpopularity =>
         ({
             index: index as Index<Unpopularity>,
-            antivotes: computeAntivotes(twoThreeFreeClass, submetrics),
-            twoThreeFreeClass,
+            antivotes: computeAntivotes(two3FreeClass, submetrics),
+            two3FreeClass,
         }))
 
 export {

@@ -1,4 +1,4 @@
-export { parse23FreeClass } from "./twoThreeFreeClass"
+export { parse23FreeClass } from "./two3FreeClass"
 export { parseMonzo } from "./monzo"
 export { parseQuotient } from "./quotient"
 export { parseCents } from "./cents"

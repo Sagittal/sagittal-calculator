@@ -7,7 +7,7 @@ import {
     Num,
     Ratio,
 } from "../../../general"
-import { analyze23FreeClass } from "../twoThreeFreeClass"
+import { analyze23FreeClass } from "../two3FreeClass"
 import { computeAas } from "./aas"
 import { computeApotomeSlope } from "./apotomeSlope"
 import { computeAte } from "./ate"
@@ -21,8 +21,8 @@ const analyzeJiPitch = (jiPitch: Ratio): JiPitchAnalysis => {
     const apotomeSlope = computeApotomeSlope(jiPitch)
     const cents = computeCentsFromPitch(jiPitch)
 
-    const twoThreeFreeClass = compute23FreeClass(jiPitch)
-    const twoThreeFreeClassAnalysis = analyze23FreeClass(twoThreeFreeClass)
+    const two3FreeClass = compute23FreeClass(jiPitch)
+    const two3FreeClassAnalysis = analyze23FreeClass(two3FreeClass)
 
     const aas = computeAas(jiPitch)
     const ate = computeAte(jiPitch)
@@ -33,7 +33,7 @@ const analyzeJiPitch = (jiPitch: Ratio): JiPitchAnalysis => {
         quotient,
         cents,
         decimal,
-        twoThreeFreeClassAnalysis,
+        two3FreeClassAnalysis,
         apotomeSlope,
         aas,
         ate,

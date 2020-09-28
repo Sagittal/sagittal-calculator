@@ -3,14 +3,14 @@ import { SIZE_CATEGORIES } from "./sizeCategories"
 import { CommaNameQuotient, ParsedCommaName, SizeCategoryName } from "./types"
 
 const parseCommaName = (commaNameIo: Io): ParsedCommaName => {
-    const twoThreeFreePartOfCommaName = commaNameIo // *not* a 2,3-free class, becuase it's not necessarily super!!!
+    const two3FreePartOfCommaName = commaNameIo // *not* a 2,3-free class, becuase it's not necessarily super!!!
         .replace(/[a-zA-Z+\-]/g, "") as Io
     const sizeCategoryPartOfCommaName = commaNameIo
-        .replace(twoThreeFreePartOfCommaName, "")
+        .replace(two3FreePartOfCommaName, "")
         .replace(/-/, "") as Io
 
     const commaNameQuotient: CommaNameQuotient = computeLowestTermsRationalQuotient(
-        parseQuotient(twoThreeFreePartOfCommaName) as RationalQuotient<{ rough: 5 }>,
+        parseQuotient(two3FreePartOfCommaName) as RationalQuotient<{ rough: 5 }>,
     ) as RationalQuotient<{ rough: 5 }> as CommaNameQuotient
 
     let sizeCategoryName: Maybe<SizeCategoryName> = undefined

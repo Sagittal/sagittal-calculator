@@ -6,7 +6,7 @@ export {
     Comma,
     Popularity,
     Votes,
-    TwoThreeFreeClass,
+    Two3FreeClass,
     Apotome,
     COMMA_POPULARITIES,
     isWithinPrimeLimit,

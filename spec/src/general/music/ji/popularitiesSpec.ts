@@ -19,7 +19,7 @@ describe("COMMA_POPULARITIES", (): void => {
             COMMA_POPULARITIES.map((
                 popularity: Popularity,
             ): RationalQuotient<{ rough: 5, direction: Direction.SUPER }> => {
-                return popularity.twoThreeFreeClass.quotient!
+                return popularity.two3FreeClass.quotient!
             })
 
         const rationalMonzos: Array<RationalMonzo<{ rough: 5, direction: Direction.SUPER }>> =
@@ -43,7 +43,7 @@ describe("COMMA_POPULARITIES", (): void => {
 
         const unrankedPopularities: Popularity[] = COMMA_POPULARITIES
             .map((popularity: Ranked<Popularity>): Popularity => ({
-                twoThreeFreeClass: popularity.twoThreeFreeClass,
+                two3FreeClass: popularity.two3FreeClass,
                 votes: popularity.votes,
             }))
 

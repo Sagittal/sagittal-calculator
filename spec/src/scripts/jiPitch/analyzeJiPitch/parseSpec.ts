@@ -14,7 +14,7 @@ import { parseJiPitch, parseNotatingCommasSettings } from "../../../../../src/sc
 import { DEFAULT_FIND_COMMAS_SETTINGS } from "../../../../../src/scripts/jiPitch/findCommas"
 import {
     jiPitchAnalysisFixture,
-    twoThreeFreeClassAnalysisFixture,
+    two3FreeClassAnalysisFixture,
 } from "../../../../helpers/src/scripts/jiPitch/fixtures"
 
 describe("parseNotatingCommasSettings", (): void => {
@@ -25,8 +25,8 @@ describe("parseNotatingCommasSettings", (): void => {
     const apotomeSlope = -2902.759003 as ApotomeSlope
     const jiPitchAnalysis: JiPitchAnalysis = {
         ...jiPitchAnalysisFixture,
-        twoThreeFreeClassAnalysis: {
-            ...twoThreeFreeClassAnalysisFixture,
+        two3FreeClassAnalysis: {
+            ...two3FreeClassAnalysisFixture,
             n2d3p9,
         },
         monzo: rationalMonzo,

@@ -77,7 +77,7 @@ type CommaNameOptions = Partial<{
 // And so shouldn't try to be the comma's 2,3-free class.
 // Note, however, that when you return the 2's and 3's to this to make it comma-sized, of the size of its name,
 // It WILL be super! This is a subtle but critical point.
-// You can observe this difference in ordering in commaName.ts and twoThreeFreeClass.ts
+// You can observe this difference in ordering in commaName.ts and two3FreeClass.ts
 type CommaNameQuotient<T extends NumTypeParameters = {}> =
     RationalQuotient<T & { rough: 5 }>
     & { _CommaNameQuotientBrand: boolean }

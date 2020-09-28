@@ -27,11 +27,11 @@ enum JiPitchField {
     ATE = "ate",
 }
 
-enum TwoThreeFreeClassField {
-    TWO_THREE_FREE_PRIME_LIMIT = "twoThreeFreePrimeLimit",
-    TWO_THREE_FREE_CLASS_NAME = "twoThreeFreeClassName",
-    TWO_THREE_FREE_COPFR = "twoThreeFreeCopfr",
-    TWO_THREE_FREE_SOPFR = "twoThreeFreeSopfr",
+enum Two3FreeClassField {
+    TWO_3_FREE_PRIME_LIMIT = "two3FreePrimeLimit",
+    TWO_3_FREE_CLASS_NAME = "two3FreeClassName",
+    TWO_3_FREE_COPFR = "two3FreeCopfr",
+    TWO_3_FREE_SOPFR = "two3FreeSopfr",
     N2D3P9 = "n2d3p9",
 }
 
@@ -55,19 +55,19 @@ enum FindCommasField {
     ATE = "ate",
     SYMBOL_CLASS = "symbolClass",
     NAME = "name",
-    TWO_THREE_FREE_PRIME_LIMIT = "twoThreeFreePrimeLimit",
-    TWO_THREE_FREE_CLASS_NAME = "twoThreeFreeClassName",
-    TWO_THREE_FREE_COPFR = "twoThreeFreeCopfr",
-    TWO_THREE_FREE_SOPFR = "twoThreeFreeSopfr",
+    TWO_3_FREE_PRIME_LIMIT = "two3FreePrimeLimit",
+    TWO_3_FREE_CLASS_NAME = "two3FreeClassName",
+    TWO_3_FREE_COPFR = "two3FreeCopfr",
+    TWO_3_FREE_SOPFR = "two3FreeSopfr",
     N2D3P9 = "n2d3p9",
 }
 
-type JiPitchScriptGroupField = JiPitchField | TwoThreeFreeClassField | NotatingCommasField | FindCommasField
+type JiPitchScriptGroupField = JiPitchField | Two3FreeClassField | NotatingCommasField | FindCommasField
 
 export {
     JiPitchScriptGroupSettings,
     JiPitchField,
-    TwoThreeFreeClassField,
+    Two3FreeClassField,
     NotatingCommasField,
     FindCommasField,
     JiPitchScriptGroupField,

@@ -1,4 +1,4 @@
-import { Combination, Index, Popularity, Rank, Ranked, TwoThreeFreeClass } from "../../../../../src/general"
+import { Combination, Index, Popularity, Rank, Ranked, Two3FreeClass } from "../../../../../src/general"
 import { Votes } from "../../../../../src/general/music"
 import {
     computeUnpopularities,
@@ -13,17 +13,17 @@ describe("computeUnpopularities", (): void => {
         const realPopularities: Array<Ranked<Popularity>> = [
             {
                 rank: 5 as Rank<Popularity>,
-                twoThreeFreeClass: { quotient: [7, 5] } as TwoThreeFreeClass,
+                two3FreeClass: { quotient: [7, 5] } as Two3FreeClass,
                 votes: 1318 as Votes,
             },
             {
                 rank: 8 as Rank<Popularity>,
-                twoThreeFreeClass: { quotient: [125, 1] } as TwoThreeFreeClass,
+                two3FreeClass: { quotient: [125, 1] } as Two3FreeClass,
                 votes: 492 as Votes,
             },
             {
                 rank: 39 as Rank<Popularity>,
-                twoThreeFreeClass: { quotient: [55, 49] } as TwoThreeFreeClass,
+                two3FreeClass: { quotient: [55, 49] } as Two3FreeClass,
                 votes: 51 as Votes,
             },
         ]
@@ -44,17 +44,17 @@ describe("computeUnpopularities", (): void => {
         const expected: Unpopularity[] = [
             {
                 antivotes: 2 as Antivotes,
-                twoThreeFreeClass: { quotient: [7, 5] } as TwoThreeFreeClass,
+                two3FreeClass: { quotient: [7, 5] } as Two3FreeClass,
                 index: 0 as Index<Unpopularity>,
             },
             {
                 antivotes: 1 as Antivotes,
-                twoThreeFreeClass: { quotient: [125, 1] } as TwoThreeFreeClass,
+                two3FreeClass: { quotient: [125, 1] } as Two3FreeClass,
                 index: 1 as Index<Unpopularity>,
             },
             {
                 antivotes: 3 as Antivotes,
-                twoThreeFreeClass: { quotient: [55, 49] } as TwoThreeFreeClass,
+                two3FreeClass: { quotient: [55, 49] } as Two3FreeClass,
                 index: 2 as Index<Unpopularity>,
             },
         ]

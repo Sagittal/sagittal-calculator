@@ -17,12 +17,12 @@ import {
     RationalMonzo,
     RationalQuotient,
     Sopfr,
-    TableFormat, TwoThreeFreeClass,
+    TableFormat, Two3FreeClass,
 } from "../../../../../../src/general"
-import { ApotomeSlope, CommaAnalysis, SymbolClass, TwoThreeFreeClassAnalysis } from "../../../../../../src/sagittal"
-import { N2D3P9 } from "../../../../../../src/sagittal/ji/twoThreeFreeClass/n2d3p9"
+import { ApotomeSlope, CommaAnalysis, SymbolClass, Two3FreeClassAnalysis } from "../../../../../../src/sagittal"
+import { N2D3P9 } from "../../../../../../src/sagittal/ji/two3FreeClass/n2d3p9"
 import { computeFindCommasOutput } from "../../../../../../src/scripts/jiPitch/io"
-import { twoThreeFreeClassFixture } from "../../../../../helpers/src/general/music/fixtures"
+import { two3FreeClassFixture } from "../../../../../helpers/src/general/music/fixtures"
 
 describe("computeFindCommasOutput", (): void => {
     // I'm pretty sure that this is not realistic comma data, since these commas are unrelated.
@@ -35,12 +35,12 @@ describe("computeFindCommasOutput", (): void => {
             apotomeSlope: -4 as ApotomeSlope,
             aas: 4 as Abs<ApotomeSlope>,
             ate: 0 as Abs<IntegerDecimal & Exponent<3 & Prime>>,
-            twoThreeFreeClassAnalysis: {
-                ...twoThreeFreeClassFixture,
-                name: "11/1" as Name<TwoThreeFreeClass>,
-                twoThreeFreePrimeLimit: 11 as Prime,
-                twoThreeFreeCopfr: 1 as Copfr<{ rough: 5 }>,
-                twoThreeFreeSopfr: 11 as Sopfr<{ rough: 5 }>,
+            two3FreeClassAnalysis: {
+                ...two3FreeClassFixture,
+                name: "11/1" as Name<Two3FreeClass>,
+                two3FreePrimeLimit: 11 as Prime,
+                two3FreeCopfr: 1 as Copfr<{ rough: 5 }>,
+                two3FreeSopfr: 11 as Sopfr<{ rough: 5 }>,
                 monzo: [0, 0, 0, 0, 1] as RationalMonzo<{ rough: 5, direction: Direction.SUPER }>,
                 n2d3p9: 6.722 as N2D3P9,
             },
@@ -53,12 +53,12 @@ describe("computeFindCommasOutput", (): void => {
             apotomeSlope: -2.154 as ApotomeSlope,
             aas: 2.154 as Abs<ApotomeSlope>,
             ate: 0 as Abs<IntegerDecimal & Exponent<3 & Prime>>,
-            twoThreeFreeClassAnalysis: {
-                ...twoThreeFreeClassFixture,
-                name: "49/25" as Name<TwoThreeFreeClass>,
-                twoThreeFreePrimeLimit: 7 as Prime,
-                twoThreeFreeCopfr: 4 as Copfr<{ rough: 5 }>,
-                twoThreeFreeSopfr: 24 as Sopfr<{ rough: 5 }>,
+            two3FreeClassAnalysis: {
+                ...two3FreeClassFixture,
+                name: "49/25" as Name<Two3FreeClass>,
+                two3FreePrimeLimit: 7 as Prime,
+                two3FreeCopfr: 4 as Copfr<{ rough: 5 }>,
+                two3FreeSopfr: 24 as Sopfr<{ rough: 5 }>,
                 monzo: [0, 0, -2, 2] as RationalMonzo<{ rough: 5, direction: Direction.SUPER }>,
                 n2d3p9: 26.466 as N2D3P9,
             },

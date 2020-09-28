@@ -5,16 +5,16 @@ type Comma<T extends NumTypeParameters = {}> =
     Ratio<T>
     & { _CommaBrand: boolean }
 
-type TwoThreeFreeClass<T extends NumTypeParameters = {}> =
+type Two3FreeClass<T extends NumTypeParameters = {}> =
     // TODO: argh... okay, technically this could be SUPER or UNISON... but it seems potentially quite painful to make
     //  That so... may need to rethink a lot of the work around direction... like how even would a SUPER_OR_UNISON work?
     Ratio<T & { rough: 5, direction: Direction.SUPER }>
-    & { _TwoThreeFreeClassBrand: boolean }
+    & { _Two3FreeClassBrand: boolean }
 
 type Votes = IntegerDecimal & { _VotesBrand: boolean }
 
 interface Popularity {
-    twoThreeFreeClass: TwoThreeFreeClass,
+    two3FreeClass: Two3FreeClass,
     votes: Votes,
 }
 
@@ -25,5 +25,5 @@ export {
     Popularity,
     Apotome,
     Comma,
-    TwoThreeFreeClass,
+    Two3FreeClass,
 }

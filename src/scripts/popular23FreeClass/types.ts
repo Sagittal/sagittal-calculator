@@ -1,9 +1,9 @@
 import { Popularity, Rank, Votes } from "../../general"
-import { TwoThreeFreeClassAnalysis } from "../../sagittal"
+import { Two3FreeClassAnalysis } from "../../sagittal"
 import { BestNotatingCommaProperties } from "./bestNotatingComma"
 import { ExactlyNotatingSymbolClassProperties } from "./exactlyNotatingSymbolClass"
 
-type SharedPopular23FreeClassProperties = TwoThreeFreeClassAnalysis & {
+type SharedPopular23FreeClassProperties = Two3FreeClassAnalysis & {
     votes: Votes,
     popularityRank?: Rank<Popularity>,
 }

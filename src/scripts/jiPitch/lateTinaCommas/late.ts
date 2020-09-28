@@ -26,7 +26,7 @@ const computeLateComma = (tinaCommaAnalyses: CommaAnalysis[]): Maybe<CommaAnalys
         const tinaCommaAnalysis = tinaCommaAnalyses[ index ]
 
         saveLog(
-            `Checking comma ${index}: ${tinaCommaAnalysis.monzo}, N2D3P9 ${tinaCommaAnalysis.twoThreeFreeClassAnalysis.n2d3p9}` as Io,
+            `Checking comma ${index}: ${tinaCommaAnalysis.monzo}, N2D3P9 ${tinaCommaAnalysis.two3FreeClassAnalysis.n2d3p9}` as Io,
             LogTarget.PROGRESS,
         )
         if (isCommaLate(tinaCommaAnalysis)) {

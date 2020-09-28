@@ -6,7 +6,7 @@ import { Antivotes } from "../../../../../../src/scripts/popularityMetricLfc/sum
 describe("computeSubmetricAntivotes", (): void => {
     let submetric: Submetric
 
-    const twoThreeFreeNumberMonzo: RationalMonzo = [
+    const two3FreeNumberMonzo: RationalMonzo = [
         0,                  // Prime 2,  prime index 1 (from the prime count function)
         0,                  // Prime 3,  prime index 2 (from the prime count function)
         0,                  // Prime 5,  prime index 3 (from the prime count function)
@@ -26,7 +26,7 @@ describe("computeSubmetricAntivotes", (): void => {
         })
 
         it("sums the abs values of the prime factors in the 2,3-free monzo", (): void => {
-            const actual = computeSubmetricAntivotes(twoThreeFreeNumberMonzo, submetric)
+            const actual = computeSubmetricAntivotes(two3FreeNumberMonzo, submetric)
 
             const expected =
                 1 * 11 +
@@ -39,7 +39,7 @@ describe("computeSubmetricAntivotes", (): void => {
             const aAsCoefficient = 0.56 as ParameterValue
             submetric[ Parameter.A_AS_COEFFICIENT ] = aAsCoefficient
 
-            const actual = computeSubmetricAntivotes(twoThreeFreeNumberMonzo, submetric)
+            const actual = computeSubmetricAntivotes(two3FreeNumberMonzo, submetric)
 
             const expected =
                 1 * 11 * aAsCoefficient +
@@ -52,7 +52,7 @@ describe("computeSubmetricAntivotes", (): void => {
             const aAsPowerExponent = 0.56 as ParameterValue
             submetric[ Parameter.A_AS_POWER_EXPONENT ] = aAsPowerExponent
 
-            const actual = computeSubmetricAntivotes(twoThreeFreeNumberMonzo, submetric)
+            const actual = computeSubmetricAntivotes(two3FreeNumberMonzo, submetric)
 
             expect(actual).toBe(
                 1 * 11 ** aAsPowerExponent +
@@ -65,7 +65,7 @@ describe("computeSubmetricAntivotes", (): void => {
             const aAsLogarithmBase = 0.56 as ParameterValue
             submetric[ Parameter.A_AS_LOGARITHM_BASE ] = aAsLogarithmBase
 
-            const actual = computeSubmetricAntivotes(twoThreeFreeNumberMonzo, submetric)
+            const actual = computeSubmetricAntivotes(two3FreeNumberMonzo, submetric)
 
             expect(actual).toBe(
                 1 * log(11, aAsLogarithmBase as number as Base) +
@@ -78,7 +78,7 @@ describe("computeSubmetricAntivotes", (): void => {
             const aAsPowerBase = 0.56 as ParameterValue
             submetric[ Parameter.A_AS_POWER_BASE ] = aAsPowerBase
 
-            const actual = computeSubmetricAntivotes(twoThreeFreeNumberMonzo, submetric)
+            const actual = computeSubmetricAntivotes(two3FreeNumberMonzo, submetric)
 
             expect(actual).toBe(
                 1 * aAsPowerBase ** 11 +
@@ -95,7 +95,7 @@ describe("computeSubmetricAntivotes", (): void => {
                 submetric[ Parameter.A_AS_COEFFICIENT ] = aAsCoefficient
                 submetric[ Parameter.W ] = w
 
-                const actual = computeSubmetricAntivotes(twoThreeFreeNumberMonzo, submetric)
+                const actual = computeSubmetricAntivotes(two3FreeNumberMonzo, submetric)
 
                 expect(actual).toBe(
                     1 * (11 * aAsCoefficient + w) +
@@ -113,7 +113,7 @@ describe("computeSubmetricAntivotes", (): void => {
             submetric[ Parameter.W ] = w
             submetric[ Parameter.B ] = b
 
-            const actual = computeSubmetricAntivotes(twoThreeFreeNumberMonzo, submetric)
+            const actual = computeSubmetricAntivotes(two3FreeNumberMonzo, submetric)
 
             expect(actual).toBe(
                 1 * (11 * aAsCoefficient + w) +
@@ -130,7 +130,7 @@ describe("computeSubmetricAntivotes", (): void => {
                 submetric[ Parameter.A_AS_COEFFICIENT ] = aAsCoefficient
                 submetric[ Parameter.X ] = x
 
-                const actual = computeSubmetricAntivotes(twoThreeFreeNumberMonzo, submetric)
+                const actual = computeSubmetricAntivotes(two3FreeNumberMonzo, submetric)
 
                 expect(actual).toBe(
                     1 * (11 + x) * aAsCoefficient +
@@ -148,7 +148,7 @@ describe("computeSubmetricAntivotes", (): void => {
             submetric[ Parameter.X ] = x
             submetric[ Parameter.U ] = u
 
-            const actual = computeSubmetricAntivotes(twoThreeFreeNumberMonzo, submetric)
+            const actual = computeSubmetricAntivotes(two3FreeNumberMonzo, submetric)
 
             expect(actual).toBe(
                 1 * (11 + x) * aAsCoefficient +
@@ -161,7 +161,7 @@ describe("computeSubmetricAntivotes", (): void => {
             const y = 0.81 as ParameterValue
             submetric[ Parameter.Y ] = y
 
-            const actual = computeSubmetricAntivotes(twoThreeFreeNumberMonzo, submetric)
+            const actual = computeSubmetricAntivotes(two3FreeNumberMonzo, submetric)
 
             expect(actual).toBe(
                 1 ** y * 11 +
@@ -176,7 +176,7 @@ describe("computeSubmetricAntivotes", (): void => {
             submetric[ Parameter.Y ] = y
             submetric[ Parameter.V ] = v
 
-            const actual = computeSubmetricAntivotes(twoThreeFreeNumberMonzo, submetric)
+            const actual = computeSubmetricAntivotes(two3FreeNumberMonzo, submetric)
 
             expect(actual).toBe(
                 1 ** y * 11 +
@@ -187,9 +187,9 @@ describe("computeSubmetricAntivotes", (): void => {
 
         it("when Dave's modified count is provided, counts 5's half as much as normal", (): void => {
             submetric[ Parameter.MODIFIED_COUNT ] = true
-            const twoThreeFreeNumberMonzo = [0, 0, 1, -1] as RationalMonzo
+            const two3FreeNumberMonzo = [0, 0, 1, -1] as RationalMonzo
 
-            const actual = computeSubmetricAntivotes(twoThreeFreeNumberMonzo, submetric)
+            const actual = computeSubmetricAntivotes(two3FreeNumberMonzo, submetric)
 
             expect(actual).toBe(
                 0.5 * 5 +
@@ -211,7 +211,7 @@ describe("computeSubmetricAntivotes", (): void => {
             submetric[ Parameter.SUM ] = true
             submetric[ Parameter.WITHOUT_REPETITION ] = true
 
-            const actual = computeSubmetricAntivotes(twoThreeFreeNumberMonzo, submetric)
+            const actual = computeSubmetricAntivotes(two3FreeNumberMonzo, submetric)
 
             const expected =
                 1 * 11 +
@@ -225,7 +225,7 @@ describe("computeSubmetricAntivotes", (): void => {
         submetric[ Parameter.SUM ] = true
         submetric[ Parameter.USE_PRIME_INDEX ] = true
 
-        const actual = computeSubmetricAntivotes(twoThreeFreeNumberMonzo, submetric)
+        const actual = computeSubmetricAntivotes(two3FreeNumberMonzo, submetric)
 
         const expected =
             1 * 5 +
@@ -239,7 +239,7 @@ describe("computeSubmetricAntivotes", (): void => {
         submetric[ Parameter.USE_PRIME_INDEX ] = true
         submetric[ Parameter.WITHOUT_REPETITION ] = true
 
-        const actual = computeSubmetricAntivotes(twoThreeFreeNumberMonzo, submetric)
+        const actual = computeSubmetricAntivotes(two3FreeNumberMonzo, submetric)
 
         const expected =
             1 * 5 +
@@ -251,7 +251,7 @@ describe("computeSubmetricAntivotes", (): void => {
     it("when the submetric type is coapfar, counts the prime factors in the 2,3-free monzo", (): void => {
         submetric[ Parameter.COUNT ] = true
 
-        const actual = computeSubmetricAntivotes(twoThreeFreeNumberMonzo, submetric)
+        const actual = computeSubmetricAntivotes(two3FreeNumberMonzo, submetric)
 
         const expected =
             1 * 1 +
@@ -264,7 +264,7 @@ describe("computeSubmetricAntivotes", (): void => {
         submetric[ Parameter.COUNT ] = true
         submetric[ Parameter.WITHOUT_REPETITION ] = true
 
-        const actual = computeSubmetricAntivotes(twoThreeFreeNumberMonzo, submetric)
+        const actual = computeSubmetricAntivotes(two3FreeNumberMonzo, submetric)
 
         const expected =
             1 * 1 +
@@ -277,7 +277,7 @@ describe("computeSubmetricAntivotes", (): void => {
         submetric[ Parameter.MAX ] = true
         submetric[ Parameter.WITHOUT_REPETITION ] = true
 
-        const actual = computeSubmetricAntivotes(twoThreeFreeNumberMonzo, submetric)
+        const actual = computeSubmetricAntivotes(two3FreeNumberMonzo, submetric)
 
         const expected =
             0 * 11 +
@@ -291,7 +291,7 @@ describe("computeSubmetricAntivotes", (): void => {
         submetric[ Parameter.WITHOUT_REPETITION ] = true
         submetric[ Parameter.USE_PRIME_INDEX ] = true
 
-        const actual = computeSubmetricAntivotes(twoThreeFreeNumberMonzo, submetric)
+        const actual = computeSubmetricAntivotes(two3FreeNumberMonzo, submetric)
 
         const expected =
             0 * 5 +

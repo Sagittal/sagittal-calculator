@@ -37,7 +37,7 @@ const computeCommaAnalysesSortedByTinaEntries = (commas: Comma[]): Array<[string
     })
 
     Object.values(commaAnalysesByTina).forEach((tinaCommaAnalyses: CommaAnalysis[]): void => {
-        sort(tinaCommaAnalyses, { by: ["twoThreeFreeClassAnalysis", "n2d3p9"] as KeyPath })
+        sort(tinaCommaAnalyses, { by: ["two3FreeClassAnalysis", "n2d3p9"] as KeyPath })
     })
 
     return sort(Object.entries(commaAnalysesByTina), { by: 0 as KeyPath })

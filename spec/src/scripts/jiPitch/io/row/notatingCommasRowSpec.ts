@@ -14,8 +14,8 @@ import {
     Row,
     Sopfr,
 } from "../../../../../../src/general"
-import { ApotomeSlope, CommaAnalysis, SymbolClass, TwoThreeFreeClassAnalysis } from "../../../../../../src/sagittal"
-import { N2D3P9 } from "../../../../../../src/sagittal/ji/twoThreeFreeClass/n2d3p9"
+import { ApotomeSlope, CommaAnalysis, SymbolClass, Two3FreeClassAnalysis } from "../../../../../../src/sagittal"
+import { N2D3P9 } from "../../../../../../src/sagittal/ji/two3FreeClass/n2d3p9"
 import { jiPitchScriptGroupSettings } from "../../../../../../src/scripts/jiPitch/globals"
 import { computeNotatingCommasRow } from "../../../../../../src/scripts/jiPitch/io/row"
 import { NotatingCommasField } from "../../../../../../src/scripts/jiPitch/types"
@@ -31,13 +31,13 @@ describe("computeNotatingCommasRow", (): void => {
         apotomeSlope: 8.2 as ApotomeSlope,
         aas: 8.2 as Abs<ApotomeSlope>,
         ate: 1 as Abs<IntegerDecimal & Exponent<3 & Prime>>,
-        twoThreeFreeClassAnalysis: {
-            twoThreeFreePrimeLimit: 14 as Prime,
-            twoThreeFreeCopfr: 1 as Copfr<{ rough: 5 }>,
-            twoThreeFreeSopfr: 13 as Sopfr<{ rough: 5 }>,
+        two3FreeClassAnalysis: {
+            two3FreePrimeLimit: 14 as Prime,
+            two3FreeCopfr: 1 as Copfr<{ rough: 5 }>,
+            two3FreeSopfr: 13 as Sopfr<{ rough: 5 }>,
             monzo: [0, 0, 1] as RationalMonzo<{ rough: 5, direction: Direction.SUPER }>,
             n2d3p9: 18.4567 as N2D3P9,
-        } as TwoThreeFreeClassAnalysis,
+        } as Two3FreeClassAnalysis,
     } as CommaAnalysis
     const symbolClassId = 44 as Id<SymbolClass>
 

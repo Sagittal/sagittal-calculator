@@ -10,7 +10,7 @@ import {
     RationalMonzo,
     RationalQuotient,
 } from "../../../general"
-import { TwoThreeFreeClassAnalysis } from "../twoThreeFreeClass"
+import { Two3FreeClassAnalysis } from "../two3FreeClass"
 
 interface JiPitchAnalysisProperties<T extends NumTypeParameters = {}> {
     apotomeSlope: ApotomeSlope,
@@ -20,7 +20,7 @@ interface JiPitchAnalysisProperties<T extends NumTypeParameters = {}> {
     quotient: RationalQuotient<T>,
     decimal: Decimal<T>,
     cents: Cents,
-    twoThreeFreeClassAnalysis: TwoThreeFreeClassAnalysis<T>,
+    two3FreeClassAnalysis: Two3FreeClassAnalysis<T>,
 }
 
 type JiPitchAnalysis<T extends NumTypeParameters = {}> = Ratio<T> & JiPitchAnalysisProperties<T>

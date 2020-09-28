@@ -13,10 +13,10 @@ describe("excludedFields", (): void => {
     })
 
     it("throws an error if a field does not exist", (): void => {
-        const excludedFieldIo = "twoThreeFreeClass,twoThreeFreePrimeLimit" as Io
+        const excludedFieldIo = "two3FreeClass,two3FreePrimeLimit" as Io
 
         expect((): void => {
             parseExcludedFields(excludedFieldIo)
-        }).toThrowError("Tried to exclude field twoThreeFreeClass but it is not a member of the list of possible fields to exclude: quotient,monzo,cents,apotomeSlope,aas,ate,symbolClass,name,twoThreeFreePrimeLimit,twoThreeFreeClassName,twoThreeFreeCopfr,twoThreeFreeSopfr,n2d3p9")
+        }).toThrowError("Tried to exclude field two3FreeClass but it is not a member of the list of possible fields to exclude: quotient,monzo,cents,apotomeSlope,aas,ate,symbolClass,name,two3FreePrimeLimit,two3FreeClassName,two3FreeCopfr,two3FreeSopfr,n2d3p9")
     })
 })

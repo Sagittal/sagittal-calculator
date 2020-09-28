@@ -15,10 +15,10 @@ import { computeApotomeSlope } from "../../pitch"
 
 const computeSecorComplexity = (jiPitch: Ratio): number => {
     const rationalMonzo = computeRationalMonzoFromRatio(jiPitch)
-    const twoThreeFreeRationalMonzo = computeRoughRationalMonzo(rationalMonzo, FIVE_ROUGHNESS)
-    const g = computeSopfr(twoThreeFreeRationalMonzo)
+    const two3FreeRationalMonzo = computeRoughRationalMonzo(rationalMonzo, FIVE_ROUGHNESS)
+    const g = computeSopfr(two3FreeRationalMonzo)
 
-    const [numerator, denominator] = computeQuotientFromMonzo(twoThreeFreeRationalMonzo)
+    const [numerator, denominator] = computeQuotientFromMonzo(two3FreeRationalMonzo)
     const h = computeCopfr(numerator)
     const i = computeCopfr(denominator)
     const j = abs(h - i)

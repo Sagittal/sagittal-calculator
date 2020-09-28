@@ -22,9 +22,9 @@ const DEFAULT_FIND_COMMAS_SETTINGS: FindCommasSettings = {
     maxAte: DEFAULT_MAX_ATE,
 }
 
-const TWO_THREE_FREE_MONZO_BASE = [0, 0] as RationalMonzo<{ rough: 5 }>
+const TWO_3_FREE_MONZO_BASE = [0, 0] as RationalMonzo<{ rough: 5 }>
 
 export {
     DEFAULT_FIND_COMMAS_SETTINGS,
-    TWO_THREE_FREE_MONZO_BASE,
+    TWO_3_FREE_MONZO_BASE,
 }

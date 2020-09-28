@@ -1,25 +1,25 @@
 import { Cents, Direction, Id, Index, Rank, RationalMonzo } from "../../../../src/general"
 import { Popularity, Votes } from "../../../../src/general/music"
-import { TwoThreeFreeClassAnalysis } from "../../../../src/sagittal/ji/twoThreeFreeClass"
-import { N2D3P9 } from "../../../../src/sagittal/ji/twoThreeFreeClass/n2d3p9"
+import { Two3FreeClassAnalysis } from "../../../../src/sagittal/ji/two3FreeClass"
+import { N2D3P9 } from "../../../../src/sagittal/ji/two3FreeClass/n2d3p9"
 import { SymbolClass, SymbolSubset } from "../../../../src/sagittal/notations"
 import { popular23FreeClassesScriptGroupSettings } from "../../../../src/scripts/popular23FreeClass/globals"
 import { computePopular23FreeClass } from "../../../../src/scripts/popular23FreeClass/popular23FreeClass"
 import { Popular23FreeClass } from "../../../../src/scripts/popular23FreeClass/types"
-import { twoThreeFreeClassAnalysisFixture } from "../../../helpers/src/scripts/jiPitch/fixtures"
+import { two3FreeClassAnalysisFixture } from "../../../helpers/src/scripts/jiPitch/fixtures"
 
 describe("computePopular23FreeClass", (): void => {
-    const twoThreeFreeClassAnalysis: TwoThreeFreeClassAnalysis = {
-        ...twoThreeFreeClassAnalysisFixture,
+    const two3FreeClassAnalysis: Two3FreeClassAnalysis = {
+        ...two3FreeClassAnalysisFixture,
         n2d3p9: 1.388889 as N2D3P9,
         monzo: [0, 0, 1] as RationalMonzo<{ rough: 5, direction: Direction.SUPER }>,
     }
 
     it("assembles helpful information about a 2,3-free class, given a valid 2,3-free monzo & its N2D3P9", (): void => {
-        const actual = computePopular23FreeClass(twoThreeFreeClassAnalysis)
+        const actual = computePopular23FreeClass(two3FreeClassAnalysis)
 
         const expected: Popular23FreeClass = {
-            ...twoThreeFreeClassAnalysis,
+            ...two3FreeClassAnalysis,
             popularityRank: 2 as Rank<Popularity>,
             votes: 5371 as Votes,
             exactlyNotatingSymbolClassIds: [4, 44] as Array<Id<SymbolClass>>,
@@ -30,10 +30,10 @@ describe("computePopular23FreeClass", (): void => {
 
     it("also works when associating the popular 2,3-free class with its best notating comma", (): void => {
         popular23FreeClassesScriptGroupSettings.useBestNotatingCommas = true
-        const actual = computePopular23FreeClass(twoThreeFreeClassAnalysis)
+        const actual = computePopular23FreeClass(two3FreeClassAnalysis)
 
         const expected: Popular23FreeClass = {
-            ...twoThreeFreeClassAnalysis,
+            ...two3FreeClassAnalysis,
             popularityRank: 2 as Rank<Popularity>,
             votes: 5371 as Votes,
             bestNotatingCommaCents: 21.506290 as Cents,

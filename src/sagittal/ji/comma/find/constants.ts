@@ -1,7 +1,7 @@
 import { Abs, Copfr, Decimal, Exponent, IntegerDecimal, Max, Min, Num, Prime, Sopfr, sqrt } from "../../../../general"
 import { APOTOME_DECIMAL } from "../../../constants"
 import { ApotomeSlope } from "../../pitch"
-import { N2D3P9 } from "../../twoThreeFreeClass"
+import { N2D3P9 } from "../../two3FreeClass"
 
 const DEFAULT_LOWER_BOUND = { decimal: 1 as Decimal } as Min<Num>             //  0.0000000000¢
 const DEFAULT_UPPER_BOUND = { decimal: sqrt(APOTOME_DECIMAL) } as Max<Num>    // 56.8425030289¢

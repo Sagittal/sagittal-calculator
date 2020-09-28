@@ -14,16 +14,16 @@ const computeExactlyNotatingSymbolClassIds = (jiPitch: Ratio): Array<Id<SymbolCl
     const monzo = computeRationalMonzoFromRatio(jiPitch)
 
     const exactlyNotatingSymbolClassIds: Array<Id<SymbolClass>> = []
-    const twoThreeFreeMonzo = computeRoughRationalMonzo(monzo, FIVE_ROUGHNESS)
+    const two3FreeMonzo = computeRoughRationalMonzo(monzo, FIVE_ROUGHNESS)
 
     JI_NOTATION.forEach((symbolClassId: Id<SymbolClass>): void => {
         const primaryComma = getPrimaryComma(symbolClassId)
         const primaryCommaMonzo = computeRationalMonzoFromRatio(primaryComma)
-        const twoThreeFreePrimaryCommaMonzo = computeRoughRationalMonzo(primaryCommaMonzo, FIVE_ROUGHNESS)
+        const two3FreePrimaryCommaMonzo = computeRoughRationalMonzo(primaryCommaMonzo, FIVE_ROUGHNESS)
 
         if (
-            equalMonzos(twoThreeFreeMonzo, twoThreeFreePrimaryCommaMonzo) ||
-            equalMonzos(twoThreeFreeMonzo, invertMonzo(twoThreeFreePrimaryCommaMonzo))
+            equalMonzos(two3FreeMonzo, two3FreePrimaryCommaMonzo) ||
+            equalMonzos(two3FreeMonzo, invertMonzo(two3FreePrimaryCommaMonzo))
         ) {
             exactlyNotatingSymbolClassIds.push(symbolClassId)
         }

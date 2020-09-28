@@ -6,7 +6,7 @@ import {
     LogTarget,
     saveLog,
     stringify,
-    TwoThreeFreeClass,
+    Two3FreeClass,
 } from "../../../general"
 import { computeAntivotes, Submetric } from "../sumOfSquares"
 import { applySharedPopularityMetricLfcCommandSetup, load } from "./shared"
@@ -15,8 +15,8 @@ applySharedPopularityMetricLfcCommandSetup({ defaultLogTargets: [LogTarget.DETAI
 
 const submetrics = load("submetrics" as Filename) as Combination<Submetric>
 
-const twoThreeFreeClass: TwoThreeFreeClass = { quotient: [11, 7] } as TwoThreeFreeClass
+const two3FreeClass: Two3FreeClass = { quotient: [11, 7] } as Two3FreeClass
 
-const antivotes = computeAntivotes(twoThreeFreeClass, submetrics)
+const antivotes = computeAntivotes(two3FreeClass, submetrics)
 
-saveLog(`${format23FreeClass(twoThreeFreeClass)}\n${stringify(submetrics)}\n${antivotes}` as Io, LogTarget.FINAL)
+saveLog(`${format23FreeClass(two3FreeClass)}\n${stringify(submetrics)}\n${antivotes}` as Io, LogTarget.FINAL)

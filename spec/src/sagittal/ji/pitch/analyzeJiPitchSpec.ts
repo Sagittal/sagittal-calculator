@@ -9,9 +9,9 @@ import {
     RationalDecimal,
     RationalMonzo,
     RationalQuotient,
-    Sopfr, TwoThreeFreeClass,
+    Sopfr, Two3FreeClass,
 } from "../../../../../src/general"
-import { ApotomeSlope, N2D3P9, TwoThreeFreeClassAnalysis } from "../../../../../src/sagittal"
+import { ApotomeSlope, N2D3P9, Two3FreeClassAnalysis } from "../../../../../src/sagittal"
 import { analyzeJiPitch } from "../../../../../src/sagittal/ji"
 
 describe("analyzeJiPitch", (): void => {
@@ -28,14 +28,14 @@ describe("analyzeJiPitch", (): void => {
             apotomeSlope: -82.352717 as ApotomeSlope,
             ate: 6 as Abs<IntegerDecimal & Exponent<3 & Prime>>,
             aas: 82.352717 as Abs<ApotomeSlope>,
-            twoThreeFreeClassAnalysis: {
-                name: "2100875/11" as Name<TwoThreeFreeClass>,
-                twoThreeFreePrimeLimit: 11 as Max<Prime<{ rough: 5 }>>,
+            two3FreeClassAnalysis: {
+                name: "2100875/11" as Name<Two3FreeClass>,
+                two3FreePrimeLimit: 11 as Max<Prime<{ rough: 5 }>>,
                 monzo: [0, 0, 3, 5, -1] as RationalMonzo<{ rough: 5, direction: Direction.SUPER }>,
-                twoThreeFreeCopfr: 9 as Copfr<{ rough: 5 }>,
-                twoThreeFreeSopfr: 61 as Sopfr<{ rough: 5 }>,
+                two3FreeCopfr: 9 as Copfr<{ rough: 5 }>,
+                two3FreeSopfr: 61 as Sopfr<{ rough: 5 }>,
                 n2d3p9: 36777.470341 as N2D3P9,
-            } as TwoThreeFreeClassAnalysis,
+            } as Two3FreeClassAnalysis,
         }
         expect(actual).toBeCloseToObject(expected)
     })

@@ -1,16 +1,16 @@
-import { Max, Maybe, TwoThreeFreeClass } from "../../general"
+import { Max, Maybe, Two3FreeClass } from "../../general"
 import { analyze23FreeClass, N2D3P9 } from "../../sagittal"
 import { computePopular23FreeClass } from "./popular23FreeClass"
 import { Popular23FreeClass } from "./types"
 
 const computeMaybePopular23FreeClass = (
-    twoThreeFreeClass: TwoThreeFreeClass,
+    two3FreeClass: Two3FreeClass,
     maxN2D3P9: Max<N2D3P9>,
 ): Maybe<Popular23FreeClass> => {
-    const twoThreeFreeClassAnalysis = analyze23FreeClass(twoThreeFreeClass)
+    const two3FreeClassAnalysis = analyze23FreeClass(two3FreeClass)
 
-    if (twoThreeFreeClassAnalysis.n2d3p9 <= maxN2D3P9) {
-        return computePopular23FreeClass(twoThreeFreeClassAnalysis)
+    if (two3FreeClassAnalysis.n2d3p9 <= maxN2D3P9) {
+        return computePopular23FreeClass(two3FreeClassAnalysis)
     }
 
     return undefined

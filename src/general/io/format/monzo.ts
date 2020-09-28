@@ -18,13 +18,13 @@ const formatMonzo = <T extends NumTypeParameters>(
 ): Formatted<Monzo<T>> => {
     let contents
     if (punctuated) {
-        const twoThreeFreeMonzo: Monzo<T & { rough: 5 }> = monzo.splice(2) as Monzo<T & { rough: 5 }>
+        const two3FreeMonzo: Monzo<T & { rough: 5 }> = monzo.splice(2) as Monzo<T & { rough: 5 }>
         contents = monzo.map(spaceTerm).join(" ") + ", "
 
         let index = 0
-        while (index < twoThreeFreeMonzo.length) {
-            contents = contents + spaceTerm(twoThreeFreeMonzo[ index ])
-            if (index < indexOfFinalElement(twoThreeFreeMonzo)) {
+        while (index < two3FreeMonzo.length) {
+            contents = contents + spaceTerm(two3FreeMonzo[ index ])
+            if (index < indexOfFinalElement(two3FreeMonzo)) {
                 if (index % 3 === 2) {
                     contents = contents + ", "
                 } else {

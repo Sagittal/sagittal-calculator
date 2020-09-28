@@ -1,5 +1,5 @@
 import { Id, Index } from "../../../../../src/general"
-import { TwoThreeFreeClass } from "../../../../../src/general/music/ji"
+import { Two3FreeClass } from "../../../../../src/general/music/ji"
 import { SymbolClass, SymbolSubset } from "../../../../../src/sagittal/notations"
 import {
     computeExactlyNotatingSymbolClassProperties,
@@ -8,9 +8,9 @@ import {
 
 describe("computeExactlyNotatingSymbolClassProperties", (): void => {
     it("returns, for the given 2,3-free class, all exactly notating symbol class's IDs (if any), as well as the corresponding list of indices of the smallest symbol subsets these symbol classes appear in", (): void => {
-        const twoThreeFreeClass = { monzo: [0, 0, -1, 1] } as TwoThreeFreeClass
+        const two3FreeClass = { monzo: [0, 0, -1, 1] } as Two3FreeClass
 
-        const actual = computeExactlyNotatingSymbolClassProperties(twoThreeFreeClass)
+        const actual = computeExactlyNotatingSymbolClassProperties(two3FreeClass)
 
         const expected: ExactlyNotatingSymbolClassProperties = {
             exactlyNotatingSymbolClassIds: [12, 62] as Array<Id<SymbolClass>>,

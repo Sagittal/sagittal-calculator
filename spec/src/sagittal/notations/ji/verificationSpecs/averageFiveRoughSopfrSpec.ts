@@ -7,15 +7,15 @@ const AVERAGE_2_3_FREE_SOPFR: Avg<Sopfr<{ rough: 5 }>> = 22.785235 as Avg<Sopfr<
 
 describe("average 2,3-free SoPFR", (): void => {
     it("is about 23", (): void => {
-        const twoThreeFreeSopfrs: Array<Sopfr<{ rough: 5 }>> =
+        const two3FreeSopfrs: Array<Sopfr<{ rough: 5 }>> =
             JI_NOTATION.map((symbolClassId: Id<SymbolClass>): Sopfr<{ rough: 5 }> => {
                 const primaryComma = getPrimaryComma(symbolClassId)
                 const primaryCommaMonzo = computeRationalMonzoFromRatio(primaryComma)
-                const twoThreeFreeNumberMonzo = computeRoughRationalMonzo(primaryCommaMonzo, FIVE_ROUGHNESS)
+                const two3FreeNumberMonzo = computeRoughRationalMonzo(primaryCommaMonzo, FIVE_ROUGHNESS)
 
-                return computeSopfr(twoThreeFreeNumberMonzo)
+                return computeSopfr(two3FreeNumberMonzo)
             })
 
-        expect(avg(...twoThreeFreeSopfrs)).toBeCloseToTyped(AVERAGE_2_3_FREE_SOPFR)
+        expect(avg(...two3FreeSopfrs)).toBeCloseToTyped(AVERAGE_2_3_FREE_SOPFR)
     })
 })

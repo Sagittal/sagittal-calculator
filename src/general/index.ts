@@ -207,7 +207,7 @@ export {
     Votes,
     Zone,
     Comma,
-    TwoThreeFreeClass,
+    Two3FreeClass,
     compute23FreeClass,
     isWithinPrimeMin,
     isWithinPrimeLimit,

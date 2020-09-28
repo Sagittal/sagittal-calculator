@@ -19,8 +19,8 @@ const jiPitchAnalysis: JiPitchAnalysis = analyzeJiPitch(jiPitch)
 const jiPitchOutput: Io = computeJiPitchOutput(jiPitchAnalysis)
 saveLog(jiPitchOutput, LogTarget.FINAL)
 
-const twoThreeFreeClassOutput: Io = compute23FreeClassOutput(jiPitchAnalysis.twoThreeFreeClassAnalysis)
-saveLog(twoThreeFreeClassOutput, LogTarget.FINAL)
+const two3FreeClassOutput: Io = compute23FreeClassOutput(jiPitchAnalysis.two3FreeClassAnalysis)
+saveLog(two3FreeClassOutput, LogTarget.FINAL)
 
 const notatingCommasSettings = parseNotatingCommasSettings(jiPitchAnalysis)
 const notatingCommaAnalyses: CommaAnalysis[] = computeNotatingCommaAnalyses(jiPitch, notatingCommasSettings)

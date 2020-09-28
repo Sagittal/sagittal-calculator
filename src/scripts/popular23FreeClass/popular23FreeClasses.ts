@@ -22,7 +22,7 @@ import {
     saveLog,
     shallowClone,
     stringify,
-    TwoThreeFreeClass,
+    Two3FreeClass,
 } from "../../general"
 import { analyze23FreeClass, computePrimeExponentExtremasGivenMaxN2D3P9, N2D3P9 } from "../../sagittal"
 import { popular23FreeClassesScriptGroupSettings } from "./globals"
@@ -35,13 +35,13 @@ const computePopular23FreeClasses = (maxN2D3P9: Max<N2D3P9>): Array<Ranked<Popul
     if (popular23FreeClassesScriptGroupSettings.useKnown) {
         const knownPopular23FreeClasses =
             readLines("src/scripts/popular23FreeClass/input/knownPopular23FreeClasses.txt" as Filename)
-                .map((knownPopular23FreeClassIo: Io): TwoThreeFreeClass => {
+                .map((knownPopular23FreeClassIo: Io): Two3FreeClass => {
                     return parse23FreeClass(knownPopular23FreeClassIo)
                 })
 
         popular23FreeClassAnalyses = knownPopular23FreeClasses
-            .map((twoThreeFreeClass: TwoThreeFreeClass): Popular23FreeClass => {
-                return computePopular23FreeClass(analyze23FreeClass(twoThreeFreeClass))
+            .map((two3FreeClass: Two3FreeClass): Popular23FreeClass => {
+                return computePopular23FreeClass(analyze23FreeClass(two3FreeClass))
             })
     } else {
         saveLog("About to calculate prime exponent extremas given max N2D3P9" as Io, LogTarget.PROGRESS)
@@ -69,16 +69,16 @@ const computePopular23FreeClasses = (maxN2D3P9: Max<N2D3P9>): Array<Ranked<Popul
                 [_, maxPrimeExponent]: Extrema<IntegerDecimal & Exponent<Prime>>,
             ): IntegerDecimal & Exponent<Prime> => maxPrimeExponent,
         ) as RationalMonzo
-        let twoThreeFreeRationalMonzo: RationalMonzo<{ rough: 5 }> = 
+        let two3FreeRationalMonzo: RationalMonzo<{ rough: 5 }> = 
             shallowClone(initialMonzo) as RationalMonzo<{ rough: 5 }>
 
         popular23FreeClassAnalyses = [] as Array<Popular23FreeClass>
         while (true) {
             // Do the work (trimming has the extra win of shallow cloning, disconnecting from this ticking process)
-            const twoThreeFreeRationalMonzoForWork = computeTrimmedArray(twoThreeFreeRationalMonzo)
-            const maybePopular23FreeClass = !isSubMonzo(twoThreeFreeRationalMonzoForWork) ?
+            const two3FreeRationalMonzoForWork = computeTrimmedArray(two3FreeRationalMonzo)
+            const maybePopular23FreeClass = !isSubMonzo(two3FreeRationalMonzoForWork) ?
                 computeMaybePopular23FreeClass(
-                    { monzo: twoThreeFreeRationalMonzoForWork } as TwoThreeFreeClass,
+                    { monzo: two3FreeRationalMonzoForWork } as Two3FreeClass,
                     maxN2D3P9,
                 ) :
                 undefined
@@ -101,8 +101,8 @@ const computePopular23FreeClasses = (maxN2D3P9: Max<N2D3P9>): Array<Ranked<Popul
             let indexToTick = 0
             // We have reached the max for this term for now (and haven't exceeded the end of the monzo)
             while (
-                indexToTick < twoThreeFreeRationalMonzo.length &&
-                twoThreeFreeRationalMonzo[ indexToTick ] === finalMonzo[ indexToTick ]
+                indexToTick < two3FreeRationalMonzo.length &&
+                two3FreeRationalMonzo[ indexToTick ] === finalMonzo[ indexToTick ]
                 ) {
                 indexToTick = increment(indexToTick)
             }
@@ -110,18 +110,18 @@ const computePopular23FreeClasses = (maxN2D3P9: Max<N2D3P9>): Array<Ranked<Popul
             // Ok so now we're at the first term which isn't at its max
 
             // Quit now if apparently ALL the terms are at their maxes
-            if (indexToTick === twoThreeFreeRationalMonzo.length) {
+            if (indexToTick === two3FreeRationalMonzo.length) {
                 break
             }
 
             // Otherwise increment the term at this not-yet-maxed index toward its max
-            twoThreeFreeRationalMonzo[ indexToTick ] = increment(twoThreeFreeRationalMonzo[ indexToTick ])
+            two3FreeRationalMonzo[ indexToTick ] = increment(two3FreeRationalMonzo[ indexToTick ])
 
             // And reset the term at every other index before this one to its min,
             // So we can repeat everything we've done so far but for this index being one higher than it was previously
             let i = 0
             while (i < indexToTick) {
-                twoThreeFreeRationalMonzo[ i ] = initialMonzo[ i ]
+                two3FreeRationalMonzo[ i ] = initialMonzo[ i ]
                 i = increment(i)
             }
         }

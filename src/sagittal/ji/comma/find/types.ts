@@ -1,6 +1,6 @@
 import { Abs, Exponent, IntegerDecimal, Max, Min, Num, Prime } from "../../../../general"
 import { ApotomeSlope } from "../../pitch"
-import { N2D3P9 } from "../../twoThreeFreeClass"
+import { N2D3P9 } from "../../two3FreeClass"
 
 type CommasFrom23FreeMonzoOptions = Partial<{
     lowerBound: Min<Num>,

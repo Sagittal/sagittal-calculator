@@ -26,7 +26,7 @@ export {
     MAX_SIZE_CATEGORY_BOUND,
     DEFAULT_MAX_N2D3P9,
     ParsedCommaName,
-    TwoThreeFreeClassAnalysis,
+    Two3FreeClassAnalysis,
     SizeCategoryBound,
     computeAte,
     computeAas,

@@ -3,7 +3,7 @@ import { FindCommasSettings } from "../findCommas"
 
 const JI_PITCH_TITLE = "   --- JI pitch ---\n\n" as Io
 
-const TWO_THREE_FREE_CLASS_TITLE = "   --- 2,3-free class ---\n\n" as Io
+const TWO_3_FREE_CLASS_TITLE = "   --- 2,3-free class ---\n\n" as Io
 
 const NOTATING_COMMAS_TITLE = "   --- notating commas ---\n\n" as Io
 
@@ -35,7 +35,7 @@ const computeFindCommasTitle = (findCommasSettings: FindCommasSettings): Io => {
 
 export {
     JI_PITCH_TITLE,
-    TWO_THREE_FREE_CLASS_TITLE,
+    TWO_3_FREE_CLASS_TITLE,
     NOTATING_COMMAS_TITLE,
     computeFindCommasTitle,
 }

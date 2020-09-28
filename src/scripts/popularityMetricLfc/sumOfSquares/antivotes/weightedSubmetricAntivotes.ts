@@ -1,10 +1,10 @@
-import { stringify, TwoThreeFreeClass } from "../../../../general"
+import { stringify, Two3FreeClass } from "../../../../general"
 import { Antivotes, ParameterValue, Submetric } from "../types"
-import { compute23FreeClassSubmetricAntivotes } from "./twoThreeFreeClassSubmetricAntivotes"
+import { compute23FreeClassSubmetricAntivotes } from "./two3FreeClassSubmetricAntivotes"
 import { computeWeightedAntivotes } from "./weightedAntivotes"
 
 const computeWeightedSubmetricAntivotes = (
-    twoThreeFreeClass: TwoThreeFreeClass,
+    two3FreeClass: Two3FreeClass,
     submetric: Submetric = {},
 ): Antivotes => {
     const {
@@ -16,7 +16,7 @@ const computeWeightedSubmetricAntivotes = (
 
     let submetricAntivotes = 0 as Antivotes
     if (weightAsCoefficient !== 0) {
-        submetricAntivotes = compute23FreeClassSubmetricAntivotes(twoThreeFreeClass, submetric)
+        submetricAntivotes = compute23FreeClassSubmetricAntivotes(two3FreeClass, submetric)
     }
 
     submetricAntivotes = computeWeightedAntivotes(submetricAntivotes, {
@@ -27,7 +27,7 @@ const computeWeightedSubmetricAntivotes = (
     })
 
     if (isNaN(submetricAntivotes)) {
-        throw new Error(`You got NaN! ${twoThreeFreeClass} ${stringify(submetric, { multiline: true })} ${submetricAntivotes} ${weightAsCoefficient} ${weightAsLogarithmBase} ${weightAsPowerExponent} ${weightAsPowerBase}`)
+        throw new Error(`You got NaN! ${two3FreeClass} ${stringify(submetric, { multiline: true })} ${submetricAntivotes} ${weightAsCoefficient} ${weightAsLogarithmBase} ${weightAsPowerExponent} ${weightAsPowerBase}`)
     }
 
     return submetricAntivotes

@@ -21,16 +21,16 @@ const computeNotatingCommas = <T extends NumTypeParameters>(
     //  The monzo in zone thing could also be a ratio in zone I think... but the name should be improved to reflect
     //  How it's searching only by octave equivalence at this point...
     const rationalMonzo = computeRationalMonzoFromRatio(jiPitch)
-    const twoThreeFreeRationalMonzo: RationalMonzo<{ rough: 5 }> =
+    const two3FreeRationalMonzo: RationalMonzo<{ rough: 5 }> =
         computeRoughRationalMonzo(rationalMonzo, FIVE_ROUGHNESS) as RationalMonzo<{ rough: 5 }>
 
-    if (equalMonzos(twoThreeFreeRationalMonzo, [])) {
-        return computeCommasFrom23FreeRationalMonzo(twoThreeFreeRationalMonzo, options)
+    if (equalMonzos(two3FreeRationalMonzo, [])) {
+        return computeCommasFrom23FreeRationalMonzo(two3FreeRationalMonzo, options)
     }
 
     return [
-        ...computeCommasFrom23FreeRationalMonzo(twoThreeFreeRationalMonzo, options),
-        ...computeCommasFrom23FreeRationalMonzo(invertMonzo(twoThreeFreeRationalMonzo), options),
+        ...computeCommasFrom23FreeRationalMonzo(two3FreeRationalMonzo, options),
+        ...computeCommasFrom23FreeRationalMonzo(invertMonzo(two3FreeRationalMonzo), options),
     ]
 }
 

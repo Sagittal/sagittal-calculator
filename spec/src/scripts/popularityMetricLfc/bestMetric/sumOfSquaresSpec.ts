@@ -8,7 +8,7 @@ import {
     Name,
     Obj,
     RationalMonzo,
-    TwoThreeFreeClass,
+    Two3FreeClass,
 } from "../../../../../src/general"
 import * as doOnNextEventLoop from "../../../../../src/general/code/doOnNextEventLoop"
 import { Combination } from "../../../../../src/general/math"
@@ -101,23 +101,23 @@ describe("computeSumOfSquaresAndMaybeUpdateBestMetric", (): void => {
         spyOn(unpopularities, "computeUnpopularities").and.returnValue([
             {
                 antivotes: 0 as Antivotes,
-                twoThreeFreeClass: {
+                two3FreeClass: {
                     monzo: [] as unknown[] as RationalMonzo<{ rough: 5, direction: Direction.SUPER }>,
-                } as TwoThreeFreeClass,
+                } as Two3FreeClass,
                 index: 0 as Index<Unpopularity>,
             },
             {
                 antivotes: NaN as Antivotes,
-                twoThreeFreeClass: {
+                two3FreeClass: {
                     monzo: [0, 0, 1] as RationalMonzo<{ rough: 5, direction: Direction.SUPER }>,
-                } as TwoThreeFreeClass,
+                } as Two3FreeClass,
                 index: 0 as Index<Unpopularity>,
             },
             {
                 antivotes: 8 as Antivotes,
-                twoThreeFreeClass: {
+                two3FreeClass: {
                     monzo: [0, 0, 0, 1] as RationalMonzo<{ rough: 5, direction: Direction.SUPER }>,
-                } as TwoThreeFreeClass,
+                } as Two3FreeClass,
                 index: 0 as Index<Unpopularity>,
             },
         ])

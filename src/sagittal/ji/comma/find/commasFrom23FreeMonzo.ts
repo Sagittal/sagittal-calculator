@@ -25,11 +25,11 @@ import { computeRationalMonzoInZone } from "./monzoInZone"
 import { CommasFrom23FreeMonzoOptions } from "./types"
 
 const compute2FreeRationalMonzo = (
-    twoThreeFreeRationalMonzo: RationalMonzo<{ rough: 5 }>,
+    two3FreeRationalMonzo: RationalMonzo<{ rough: 5 }>,
     threeExponent: IntegerDecimal & Exponent<3 & Prime>,
 ): RationalMonzo<{ rough: 3 }> => {
     const twoFreeRationalMonzo: RationalMonzo<{ rough: 3 }> =
-        shallowClone(twoThreeFreeRationalMonzo) as RationalMonzo as RationalMonzo<{ rough: 3 }>
+        shallowClone(two3FreeRationalMonzo) as RationalMonzo as RationalMonzo<{ rough: 3 }>
     twoFreeRationalMonzo[ THREE_PRIME_INDEX ] = threeExponent
 
     if (isUndefined(twoFreeRationalMonzo[ TWO_PRIME_INDEX ])) {
@@ -39,9 +39,8 @@ const compute2FreeRationalMonzo = (
     return twoFreeRationalMonzo
 }
 
-// TODO: twoThree -> two3
 const computeCommasFrom23FreeRationalMonzo = (
-    twoThreeFreeRationalMonzo: RationalMonzo<{ rough: 5 }>,
+    two3FreeRationalMonzo: RationalMonzo<{ rough: 5 }>,
     options?: CommasFrom23FreeMonzoOptions,
 ): Comma[] => {
     const {
@@ -55,7 +54,7 @@ const computeCommasFrom23FreeRationalMonzo = (
     const commas: Comma[] = []
 
     computePlusOrMinusRange(maxAte).forEach((threeExponent: IntegerDecimal & Exponent<3 & Prime>): void => {
-        const twoFreeRationalMonzo = compute2FreeRationalMonzo(twoThreeFreeRationalMonzo, threeExponent)
+        const twoFreeRationalMonzo = compute2FreeRationalMonzo(two3FreeRationalMonzo, threeExponent)
         const rationalMonzoInZone: Maybe<RationalMonzo> = 
             computeRationalMonzoInZone(twoFreeRationalMonzo, [lowerBound, upperBound])
 
@@ -65,7 +64,7 @@ const computeCommasFrom23FreeRationalMonzo = (
             const commaAnalysis: CommaAnalysis = analyzeComma(comma)
             if (
                 abs(commaAnalysis.apotomeSlope) > maxAas ||
-                commaAnalysis.twoThreeFreeClassAnalysis.n2d3p9 > maxN2D3P9
+                commaAnalysis.two3FreeClassAnalysis.n2d3p9 > maxN2D3P9
             ) {
                 return
             }

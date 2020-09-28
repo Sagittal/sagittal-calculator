@@ -1,15 +1,15 @@
-import { COMMA_POPULARITIES, equalNums, isUndefined, Popularity, TwoThreeFreeClass, Votes } from "../../general"
-import { N2D3P9, TwoThreeFreeClassAnalysis } from "../../sagittal"
+import { COMMA_POPULARITIES, equalNums, isUndefined, Popularity, Two3FreeClass, Votes } from "../../general"
+import { N2D3P9, Two3FreeClassAnalysis } from "../../sagittal"
 import { computeBestNotatingCommaProperties } from "./bestNotatingComma"
 import { computeExactlyNotatingSymbolClassProperties } from "./exactlyNotatingSymbolClass"
 import { popular23FreeClassesScriptGroupSettings } from "./globals"
 import { Popular23FreeClass } from "./types"
 
 const computePopular23FreeClass = (
-    twoThreeFreeClassAnalysis: TwoThreeFreeClassAnalysis,
+    two3FreeClassAnalysis: Two3FreeClassAnalysis,
 ): Popular23FreeClass => {
     const popularity = COMMA_POPULARITIES.find((popularity: Popularity): boolean => {
-        return equalNums(popularity.twoThreeFreeClass, twoThreeFreeClassAnalysis)
+        return equalNums(popularity.two3FreeClass, two3FreeClassAnalysis)
     })
     const popularityRank = !isUndefined(popularity) ? popularity.rank : undefined
     const votes = popularity?.votes || 0 as Votes
@@ -17,14 +17,14 @@ const computePopular23FreeClass = (
     let bestNotatingCommaOrExactlyNotatingSymbolClassProperties
     if (popular23FreeClassesScriptGroupSettings.useBestNotatingCommas) {
         bestNotatingCommaOrExactlyNotatingSymbolClassProperties =
-            computeBestNotatingCommaProperties(twoThreeFreeClassAnalysis)
+            computeBestNotatingCommaProperties(two3FreeClassAnalysis)
     } else {
         bestNotatingCommaOrExactlyNotatingSymbolClassProperties =
-            computeExactlyNotatingSymbolClassProperties(twoThreeFreeClassAnalysis)
+            computeExactlyNotatingSymbolClassProperties(two3FreeClassAnalysis)
     }
 
     return {
-        ...twoThreeFreeClassAnalysis,
+        ...two3FreeClassAnalysis,
         popularityRank,
         votes,
         ...bestNotatingCommaOrExactlyNotatingSymbolClassProperties,

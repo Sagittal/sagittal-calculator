@@ -1,12 +1,12 @@
-import { Id, Index, TwoThreeFreeClass } from "../../../general"
+import { Id, Index, Two3FreeClass } from "../../../general"
 import { getSmallestSymbolSubset, SymbolClass, SymbolSubset, SYMBOL_SUBSETS } from "../../../sagittal"
 import { computeExactlyNotatingSymbolClassIds } from "./exactlyNotatingSymbolClassIds"
 import { ExactlyNotatingSymbolClassProperties } from "./types"
 
 const computeExactlyNotatingSymbolClassProperties = (
-    twoThreeFreeClass: TwoThreeFreeClass,
+    two3FreeClass: Two3FreeClass,
 ): ExactlyNotatingSymbolClassProperties => {
-    const exactlyNotatingSymbolClassIds = computeExactlyNotatingSymbolClassIds(twoThreeFreeClass)
+    const exactlyNotatingSymbolClassIds = computeExactlyNotatingSymbolClassIds(two3FreeClass)
 
     const smallestSymbolSubsetIndices = exactlyNotatingSymbolClassIds
         .map((symbolClassId: Id<SymbolClass>): Index<SymbolSubset> => {

@@ -1,7 +1,7 @@
 export { Formatted } from "./types"
 export { formatMonzo } from "./monzo"
 export { formatDecimal, formatIntegerDecimal, alignFormattedDecimal } from "./decimal"
-export { format23FreeClass } from "./twoThreeFreeClass"
+export { format23FreeClass } from "./two3FreeClass"
 export { formatQuotient } from "./quotient"
 export { formatTime } from "./time"
 export { formatPitch } from "./pitch"

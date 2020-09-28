@@ -7,7 +7,7 @@ import { computeJiPitchRow } from "../../../../../../src/scripts/jiPitch/io/row"
 import { JiPitchField } from "../../../../../../src/scripts/jiPitch/types"
 import {
     jiPitchAnalysisFixture,
-    twoThreeFreeClassAnalysisFixture,
+    two3FreeClassAnalysisFixture,
 } from "../../../../../helpers/src/scripts/jiPitch/fixtures"
 
 describe("computeJiPitchRow", (): void => {
@@ -19,7 +19,7 @@ describe("computeJiPitchRow", (): void => {
         apotomeSlope: 8.2 as ApotomeSlope,
         aas: 8.2 as Abs<ApotomeSlope>,
         ate: 1 as Abs<IntegerDecimal & Exponent<3 & Prime>>,
-        twoThreeFreeClassAnalysis: twoThreeFreeClassAnalysisFixture,
+        two3FreeClassAnalysis: two3FreeClassAnalysisFixture,
     }
 
     it("returns a row of information about the JI pitch", (): void => {

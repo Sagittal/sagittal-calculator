@@ -3,7 +3,7 @@ import { ApotomeSlope, JiPitchAnalysis } from "../../../../../../src/sagittal"
 import { computeJiPitchOutput } from "../../../../../../src/scripts/jiPitch/io"
 import {
     jiPitchAnalysisFixture,
-    twoThreeFreeClassAnalysisFixture,
+    two3FreeClassAnalysisFixture,
 } from "../../../../../helpers/src/scripts/jiPitch/fixtures"
 
 describe("computeJiPitchOutput", (): void => {
@@ -15,7 +15,7 @@ describe("computeJiPitchOutput", (): void => {
         apotomeSlope: 8.2 as ApotomeSlope,
         aas: 8.2 as Abs<ApotomeSlope>,
         ate: 1 as Abs<IntegerDecimal & Exponent<3 & Prime>>,
-        twoThreeFreeClassAnalysis: twoThreeFreeClassAnalysisFixture,
+        two3FreeClassAnalysis: two3FreeClassAnalysisFixture,
     }
 
     it("formats it in a multi-line output with titles for each line", (): void => {

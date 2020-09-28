@@ -1,10 +1,10 @@
-import { Index, TwoThreeFreeClass } from "../../../general"
+import { Index, Two3FreeClass } from "../../../general"
 
 type Antivotes = number & { _AntivotesBrand: boolean }
 
 interface Unpopularity {
     antivotes: Antivotes,
-    twoThreeFreeClass: TwoThreeFreeClass,
+    two3FreeClass: Two3FreeClass,
     index: Index<Unpopularity>,
 }
 
