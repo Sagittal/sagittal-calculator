@@ -1,4 +1,4 @@
-export { compute23FreeClass } from "./twoThreeFreeClass"
+export { compute23FreeClass, compute23FreeClassName } from "./twoThreeFreeClass"
 export { THREE_PRIME_LIMIT } from "./constants"
 export { Comma, Popularity, Votes, TwoThreeFreeClass, Apotome } from "./types"
 export { COMMA_POPULARITIES } from "./popularities"

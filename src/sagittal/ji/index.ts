@@ -23,5 +23,5 @@ export {
 } from "./comma"
 export { analyzeJiPitch, computeApotomeSlope, ApotomeSlope, JiPitchAnalysis, computeAte, computeAas } from "./pitch"
 export {
-    TwoThreeFreeClassAnalysis, N2D3P9, computeN2D3P9, computePrimeExponentExtremasGivenMaxN2D3P9,
+    TwoThreeFreeClassAnalysis, N2D3P9, computeN2D3P9, computePrimeExponentExtremasGivenMaxN2D3P9, analyze23FreeClass,
 } from "./twoThreeFreeClass"

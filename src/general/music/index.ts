@@ -12,6 +12,7 @@ export {
     isWithinPrimeLimit,
     isWithinPrimeMin,
     computePrimeLimit,
+    compute23FreeClassName,
 } from "./ji"
 export { CENTS_PER_OCTAVE } from "./constants"
 export { computeNumberFromCents } from "./numberFromCents"

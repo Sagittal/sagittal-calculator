@@ -22,7 +22,7 @@ const TWO_THREE_FREE_CLASS_COLUMN_TITLES: Record<TwoThreeFreeClassField, Io> = {
 
 const NOTATING_COMMAS_WITH_MAYBE_SAGITTAL_SYMBOL_CLASSES_COLUMN_TITLES: Record<NotatingCommasField, Io> = {
     [ NotatingCommasField.SYMBOL_CLASS ]: "symbol class" as Io,
-    [ NotatingCommasField.NAME ]: "comma name" as Io,
+    [ NotatingCommasField.NAME ]: "name" as Io,
     ...JI_PITCH_COLUMN_TITLES,
 }
 

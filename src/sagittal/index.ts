@@ -30,6 +30,7 @@ export {
     SizeCategoryBound,
     computeAte,
     computeAas,
+    analyze23FreeClass,
 } from "./ji"
 export {
     formatSymbolClass,

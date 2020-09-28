@@ -2,6 +2,7 @@ import { isUndefined } from "../../code"
 import {
     computeDecimalFromQuotient,
     computeRationalQuotientFromRationalDecimal,
+    computeRationalQuotientFromRationalNum,
     computeRoughRationalMonzo,
     computeRoughRationalQuotient,
     computeSuperMonzo,
@@ -11,6 +12,7 @@ import {
     NumTypeParameters,
     RationalNum,
 } from "../../math"
+import { Name } from "../../types"
 import { TwoThreeFreeClass } from "./types"
 
 const compute23FreeClass = <T extends NumTypeParameters>(
@@ -43,6 +45,16 @@ const compute23FreeClass = <T extends NumTypeParameters>(
     return twoThreeFreeClass as TwoThreeFreeClass<T>
 }
 
+const compute23FreeClassName = (twoThreeFreeClass: TwoThreeFreeClass): Name<TwoThreeFreeClass> => {
+    const [numerator, denominator] = computeRationalQuotientFromRationalNum(
+        twoThreeFreeClass,
+        { disableErrorBecauseExactValueNotRequired: true },
+    )
+
+    return `${numerator}/${denominator}` as Name<TwoThreeFreeClass>
+}
+
 export {
     compute23FreeClass,
+    compute23FreeClassName,
 }

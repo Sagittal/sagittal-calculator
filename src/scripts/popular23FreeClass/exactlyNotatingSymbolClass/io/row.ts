@@ -26,7 +26,7 @@ const computePopular23FreeClassWithExactlyNotatingSymbolClassRow = (
     } = popular23FreeClass
 
     return [
-        format23FreeClass(popular23FreeClass),
+        popular23FreeClass.name,
         formatDecimal(n2d3p9, { align: true }),
         exactlyNotatingSymbolClassIds.map((exactlyNotatingSymbolClassId: Id<SymbolClass>): Formatted<SymbolGlyph> => {
             return formatSymbolClass(exactlyNotatingSymbolClassId, ioSettings)

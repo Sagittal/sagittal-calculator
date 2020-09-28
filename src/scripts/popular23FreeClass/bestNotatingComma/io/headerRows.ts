@@ -3,7 +3,7 @@ import { Popular23FreeClass } from "../../types"
 import { BestNotatingCommaProperties } from "../types"
 
 const POPULAR_2_3_FREE_CLASS_WITH_BEST_NOTATING_COMMA_COLUMN_TITLES: Io[] = [
-    "2,3- free class",
+    "2,3- free class name",
     "N2D3P9 rank",
     "best notating comma cents",
     "best notating comma monzo",

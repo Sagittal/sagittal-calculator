@@ -1,6 +1,6 @@
 import {
     BLANK,
-    format23FreeClass, 
+    format23FreeClass,
     formatCents,
     formatMonzo,
     ioSettings,
@@ -23,7 +23,7 @@ const computePopular23FreeClassWithBestNotatingCommaRow = (
     } = rankedPopular23FreeClassWithBestNotatingComma
 
     return [
-        format23FreeClass(rankedPopular23FreeClassWithBestNotatingComma),
+        rankedPopular23FreeClassWithBestNotatingComma.name,
         estimatedRank.toString(),
         formatCents(bestNotatingCommaCents, { align: true }),
         formatMonzo(bestNotatingCommaMonzo),

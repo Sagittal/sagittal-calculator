@@ -6,12 +6,13 @@ import {
     Decimal,
     Direction,
     Exponent,
-    Integer,
+    Integer, Max,
     Name,
     Prime,
     RationalMonzo,
     RationalQuotient,
     Sopfr,
+    TwoThreeFreeClass,
 } from "../../../../../src/general"
 import { ApotomeSlope, CommaAnalysis, N2D3P9, TwoThreeFreeClassAnalysis } from "../../../../../src/sagittal"
 import { analyzeComma } from "../../../../../src/sagittal/ji"
@@ -32,7 +33,8 @@ describe("analyzeComma", (): void => {
             aas: 8.464345 as Abs<ApotomeSlope>,
             ate: 6 as Abs<Integer & Exponent<3 & Prime>>,
             twoThreeFreeClassAnalysis: {
-                twoThreeFreePrimeLimit: 11 as Prime,
+                name: "2100875/11" as Name<TwoThreeFreeClass>,
+                twoThreeFreePrimeLimit: 11 as Max<Prime<{ rough: 5 }>>,
                 monzo: [0, 0, 3, 5, -1] as RationalMonzo<{ rough: 5, direction: Direction.SUPER }>,
                 twoThreeFreeCopfr: 9 as Copfr<{ rough: 5 }>,
                 twoThreeFreeSopfr: 61 as Sopfr<{ rough: 5 }>,

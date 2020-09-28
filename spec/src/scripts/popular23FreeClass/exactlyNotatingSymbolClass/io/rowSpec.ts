@@ -1,4 +1,4 @@
-import { Id, Index, Ranked, RationalMonzo } from "../../../../../../src/general"
+import { Id, Index, Name, Ranked, RationalMonzo, TwoThreeFreeClass } from "../../../../../../src/general"
 import { Rank } from "../../../../../../src/general/code"
 import { Row } from "../../../../../../src/general/io/table"
 import { Direction } from "../../../../../../src/general/math/num"
@@ -10,13 +10,14 @@ import {
     ExactlyNotatingSymbolClassProperties,
 } from "../../../../../../src/scripts/popular23FreeClass/exactlyNotatingSymbolClass"
 import { Popular23FreeClass } from "../../../../../../src/scripts/popular23FreeClass/types"
-import { twoThreeFreeClassFixture } from "../../../../../helpers/src/general/music/fixtures"
+import { twoThreeFreeClassAnalysisFixture } from "../../../../../helpers/src/scripts/jiPitch/fixtures"
 
 describe("computePopular23FreeClassWithExactlyNotatingSymbolClassRow", (): void => {
     it("works", (): void => {
         const rankedPopular23FreeClassWithExactlyNotatingSymbolClass:
             Ranked<Popular23FreeClass & ExactlyNotatingSymbolClassProperties> = {
-            ...twoThreeFreeClassFixture,
+            ...twoThreeFreeClassAnalysisFixture,
+            name: "7/5" as Name<TwoThreeFreeClass>,
             rank: 4 as Rank<Popular23FreeClass & ExactlyNotatingSymbolClassProperties>,
             exactlyNotatingSymbolClassSmallestSymbolSubsetIndices: [1, 3] as Array<Index<SymbolSubset>>,
             exactlyNotatingSymbolClassIds: [20, 40] as Array<Id<SymbolClass>>,
@@ -31,7 +32,7 @@ describe("computePopular23FreeClassWithExactlyNotatingSymbolClassRow", (): void 
         )
 
         const expected = [
-            "7/5",                  // 2,3-free class
+            "7/5",                  // 2,3-free class name
             "  2.000",              // N2D3P9
             "    )|(     ./|  ",    // Exactly notating symbol classes
             "1, 3",                 // Exactly notating symbol class smallest symbol subset indices

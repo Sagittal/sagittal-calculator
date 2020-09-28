@@ -18,22 +18,22 @@ import {
 
 const isWithinPrimeLimit = <S extends Primes, T extends NumTypeParameters>(
     candidateJiPitchWithinPrimeLimit: RationalNum<T>,
-    primeLimit: S & Max<Prime>,
+    primeLimit: S & Max<Prime<T>>,
 ): candidateJiPitchWithinPrimeLimit is RationalNum<T & { smooth: S }> => {
     return isSmoothRationalNum(candidateJiPitchWithinPrimeLimit, primeLimit as S as S & Smoothness)
 }
 
 const isWithinPrimeMin = <S extends Primes, T extends NumTypeParameters>(
     candidateJiPitchWithinPrimeMin: RationalNum<T>,
-    primeMin: S & Min<Prime>,
+    primeMin: S & Min<Prime<T>>,
 ): candidateJiPitchWithinPrimeMin is RationalNum<T & { rough: S }> => {
     return isRoughRationalNum(candidateJiPitchWithinPrimeMin, primeMin as S as S & Roughness)
 }
 
 const computePrimeLimit = <S extends Primes, T extends NumTypeParameters>(
     jiPitch: RationalNum<T>,
-): Max<Prime> => {
-    return computeRationalNumSmoothness(jiPitch) as Integer as Max<Prime>
+): Max<Prime<T>> => {
+    return computeRationalNumSmoothness(jiPitch) as Integer as Max<Prime<T>>
 }
 
 export {

@@ -24,7 +24,7 @@ import {
     stringify,
     TwoThreeFreeClass,
 } from "../../general"
-import { computeN2D3P9, computePrimeExponentExtremasGivenMaxN2D3P9, N2D3P9 } from "../../sagittal"
+import { analyze23FreeClass, computePrimeExponentExtremasGivenMaxN2D3P9, N2D3P9 } from "../../sagittal"
 import { popular23FreeClassesScriptGroupSettings } from "./globals"
 import { computeMaybePopular23FreeClass } from "./maybePopular23FreeClass"
 import { computePopular23FreeClass } from "./popular23FreeClass"
@@ -41,10 +41,7 @@ const computePopular23FreeClasses = (maxN2D3P9: Max<N2D3P9>): Array<Ranked<Popul
 
         popular23FreeClassAnalyses = knownPopular23FreeClasses
             .map((twoThreeFreeClass: TwoThreeFreeClass): Popular23FreeClass => {
-                return computePopular23FreeClass({
-                    twoThreeFreeClass,
-                    n2d3p9: computeN2D3P9(twoThreeFreeClass),
-                })
+                return computePopular23FreeClass(analyze23FreeClass(twoThreeFreeClass))
             })
     } else {
         saveLog("About to calculate prime exponent extremas given max N2D3P9" as Io, LogTarget.PROGRESS)

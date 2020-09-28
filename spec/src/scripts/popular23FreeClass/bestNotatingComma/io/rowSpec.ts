@@ -1,4 +1,13 @@
-import { Direction, Id, Popularity, RationalMonzo, Row, Votes } from "../../../../../../src/general"
+import {
+    Direction,
+    Id,
+    Name,
+    Popularity,
+    RationalMonzo,
+    Row,
+    TwoThreeFreeClass,
+    Votes,
+} from "../../../../../../src/general"
 import { Rank, Ranked } from "../../../../../../src/general/code"
 import { Cents } from "../../../../../../src/general/music"
 import { N2D3P9 } from "../../../../../../src/sagittal/ji/twoThreeFreeClass/n2d3p9"
@@ -6,13 +15,14 @@ import { SymbolClass } from "../../../../../../src/sagittal/notations"
 import { BestNotatingCommaProperties } from "../../../../../../src/scripts/popular23FreeClass/bestNotatingComma"
 import { computePopular23FreeClassWithBestNotatingCommaRow } from "../../../../../../src/scripts/popular23FreeClass/bestNotatingComma/io"
 import { Popular23FreeClass } from "../../../../../../src/scripts/popular23FreeClass/types"
-import { twoThreeFreeClassFixture } from "../../../../../helpers/src/general/music/fixtures"
+import { twoThreeFreeClassAnalysisFixture } from "../../../../../helpers/src/scripts/jiPitch/fixtures"
 
 describe("computePopular23FreeClassWithBestNotatingCommaRow", (): void => {
     it("works", (): void => {
         const rankedPopular23FreeClassWithBestNotatingComma:
             Ranked<Popular23FreeClass & BestNotatingCommaProperties> = {
-            ...twoThreeFreeClassFixture,
+            ...twoThreeFreeClassAnalysisFixture,
+            name: "7/5" as Name<TwoThreeFreeClass>,
             rank: 4 as Rank<Popular23FreeClass & BestNotatingCommaProperties>,
             bestNotatingCommaCents: 5 as Cents,
             bestNotatingCommaMonzo: [1] as RationalMonzo,
@@ -26,7 +36,7 @@ describe("computePopular23FreeClassWithBestNotatingCommaRow", (): void => {
         const actual = computePopular23FreeClassWithBestNotatingCommaRow(rankedPopular23FreeClassWithBestNotatingComma)
 
         const expected = [
-            "7/5",              // 2,3-free class
+            "7/5",              // 2,3-free class name
             "4",                // Estimated rank
             "         5.000¢",  // Best notating comma cents
             "[   1 ⟩",          // Best notating comma monzo

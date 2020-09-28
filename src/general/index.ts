@@ -214,5 +214,6 @@ export {
     computePrimeLimit,
     computeNumberFromCents,
     computeCentsFromPitch,
+    compute23FreeClassName,
 } from "./music"
 export { Count, Ed, Extrema, Id, Index, Ms, Multiplier, Name, Step, Sum, Window } from "./types"

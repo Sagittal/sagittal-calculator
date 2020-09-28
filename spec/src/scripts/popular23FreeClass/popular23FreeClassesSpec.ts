@@ -1,4 +1,16 @@
-import { Cents, Direction, Id, Index, Max, Popularity, Rank, Ranked, RationalMonzo, Votes } from "../../../../src/general"
+import {
+    Cents, Copfr,
+    Direction,
+    Id,
+    Index,
+    Max, Name,
+    Popularity, Prime,
+    Rank,
+    Ranked,
+    RationalMonzo, Sopfr,
+    TwoThreeFreeClass,
+    Votes,
+} from "../../../../src/general"
 import { N2D3P9 } from "../../../../src/sagittal/ji/twoThreeFreeClass/n2d3p9"
 import { SymbolClass, SymbolSubset } from "../../../../src/sagittal/notations"
 import { popular23FreeClassesScriptGroupSettings } from "../../../../src/scripts/popular23FreeClass/globals"
@@ -15,6 +27,10 @@ describe("computePopular23FreeClasses", (): void => {
 
             const expected = [
                 {
+                    name: "1/1" as Name<TwoThreeFreeClass>,
+                    twoThreeFreePrimeLimit: 1 as Max<Prime<{ rough: 5 }>>,
+                    twoThreeFreeSopfr: 0 as Sopfr<{rough: 5}>,
+                    twoThreeFreeCopfr: 0 as Copfr<{rough: 5}>,
                     n2d3p9: 1.000000 as N2D3P9,
                     monzo: [] as unknown[] as RationalMonzo as RationalMonzo<{ rough: 5, direction: Direction.SUPER }>,
                     popularityRank: 1 as Rank<Popularity>,
@@ -25,6 +41,10 @@ describe("computePopular23FreeClasses", (): void => {
                     rank: 1 as Rank<Popular23FreeClass>,
                 },
                 {
+                    name: "5/1" as Name<TwoThreeFreeClass>,
+                    twoThreeFreePrimeLimit: 5 as Max<Prime<{ rough: 5 }>>,
+                    twoThreeFreeSopfr: 5 as Sopfr<{rough: 5}>,
+                    twoThreeFreeCopfr: 1 as Copfr<{rough: 5}>,
                     n2d3p9: 1.388888 as N2D3P9,
                     monzo: [0, 0, 1] as RationalMonzo<{ rough: 5, direction: Direction.SUPER }>,
                     popularityRank: 2 as Rank<Popularity>,
@@ -35,6 +55,10 @@ describe("computePopular23FreeClasses", (): void => {
                     rank: 2 as Rank<Popular23FreeClass>,
                 },
                 {
+                    name: "7/1" as Name<TwoThreeFreeClass>,
+                    twoThreeFreePrimeLimit: 7 as Max<Prime<{ rough: 5 }>>,
+                    twoThreeFreeSopfr: 7 as Sopfr<{rough: 5}>,
+                    twoThreeFreeCopfr: 1 as Copfr<{rough: 5}>,
                     n2d3p9: 2.722222 as N2D3P9,
                     monzo: [0, 0, 0, 1] as RationalMonzo<{ rough: 5, direction: Direction.SUPER }>,
                     popularityRank: 3 as Rank<Popularity>,
@@ -45,6 +69,10 @@ describe("computePopular23FreeClasses", (): void => {
                     rank: 3 as Rank<Popular23FreeClass>,
                 },
                 {
+                    name: "25/1" as Name<TwoThreeFreeClass>,
+                    twoThreeFreePrimeLimit: 5 as Max<Prime<{ rough: 5 }>>,
+                    twoThreeFreeSopfr: 10 as Sopfr<{rough: 5}>,
+                    twoThreeFreeCopfr: 2 as Copfr<{rough: 5}>,
                     n2d3p9: 3.472222 as N2D3P9,
                     monzo: [0, 0, 2] as RationalMonzo<{ rough: 5, direction: Direction.SUPER }>,
                     popularityRank: 4 as Rank<Popularity>,
@@ -55,6 +83,10 @@ describe("computePopular23FreeClasses", (): void => {
                     rank: 4 as Rank<Popular23FreeClass>,
                 },
                 {
+                    name: "7/5" as Name<TwoThreeFreeClass>,
+                    twoThreeFreePrimeLimit: 7 as Max<Prime<{ rough: 5 }>>,
+                    twoThreeFreeSopfr: 12 as Sopfr<{rough: 5}>,
+                    twoThreeFreeCopfr: 2 as Copfr<{rough: 5}>,
                     n2d3p9: 4.537037 as N2D3P9,
                     monzo: [0, 0, -1, 1] as RationalMonzo<{ rough: 5, direction: Direction.SUPER }>,
                     popularityRank: 5 as Rank<Popularity>,
@@ -79,6 +111,10 @@ describe("computePopular23FreeClasses", (): void => {
 
             const expected = [
                 {
+                    name: "1/1" as Name<TwoThreeFreeClass>,
+                    twoThreeFreePrimeLimit: 1 as Max<Prime<{ rough: 5 }>>,
+                    twoThreeFreeSopfr: 0 as Sopfr<{rough: 5}>,
+                    twoThreeFreeCopfr: 0 as Copfr<{rough: 5}>,
                     n2d3p9: 1.000000 as N2D3P9,
                     monzo: [] as unknown[] as RationalMonzo as RationalMonzo<{ rough: 5, direction: Direction.SUPER }>,
                     popularityRank: 1 as Rank<Popularity>,
@@ -89,6 +125,10 @@ describe("computePopular23FreeClasses", (): void => {
                     rank: 1 as Rank<Popular23FreeClass>,
                 },
                 {
+                    name: "5/1" as Name<TwoThreeFreeClass>,
+                    twoThreeFreePrimeLimit: 5 as Max<Prime<{ rough: 5 }>>,
+                    twoThreeFreeSopfr: 5 as Sopfr<{rough: 5}>,
+                    twoThreeFreeCopfr: 1 as Copfr<{rough: 5}>,
                     n2d3p9: 1.388888 as N2D3P9,
                     monzo: [0, 0, 1] as RationalMonzo<{ rough: 5, direction: Direction.SUPER }>,
                     popularityRank: 2 as Rank<Popularity>,
@@ -99,6 +139,10 @@ describe("computePopular23FreeClasses", (): void => {
                     rank: 2 as Rank<Popular23FreeClass>,
                 },
                 {
+                    name: "7/1" as Name<TwoThreeFreeClass>,
+                    twoThreeFreePrimeLimit: 7 as Max<Prime<{ rough: 5 }>>,
+                    twoThreeFreeSopfr: 7 as Sopfr<{rough: 5}>,
+                    twoThreeFreeCopfr: 1 as Copfr<{rough: 5}>,
                     n2d3p9: 2.722222 as N2D3P9,
                     monzo: [0, 0, 0, 1] as RationalMonzo<{ rough: 5, direction: Direction.SUPER }>,
                     popularityRank: 3 as Rank<Popularity>,
@@ -109,6 +153,10 @@ describe("computePopular23FreeClasses", (): void => {
                     rank: 3 as Rank<Popular23FreeClass>,
                 },
                 {
+                    name: "25/1" as Name<TwoThreeFreeClass>,
+                    twoThreeFreePrimeLimit: 5 as Max<Prime<{ rough: 5 }>>,
+                    twoThreeFreeSopfr: 10 as Sopfr<{rough: 5}>,
+                    twoThreeFreeCopfr: 2 as Copfr<{rough: 5}>,
                     n2d3p9: 3.472222 as N2D3P9,
                     monzo: [0, 0, 2] as RationalMonzo<{ rough: 5, direction: Direction.SUPER }>,
                     popularityRank: 4 as Rank<Popularity>,
@@ -119,6 +167,10 @@ describe("computePopular23FreeClasses", (): void => {
                     rank: 4 as Rank<Popular23FreeClass>,
                 },
                 {
+                    name: "7/5" as Name<TwoThreeFreeClass>,
+                    twoThreeFreePrimeLimit: 7 as Max<Prime<{ rough: 5 }>>,
+                    twoThreeFreeSopfr: 12 as Sopfr<{rough: 5}>,
+                    twoThreeFreeCopfr: 2 as Copfr<{rough: 5}>,
                     n2d3p9: 4.537037 as N2D3P9,
                     monzo: [0, 0, -1, 1] as RationalMonzo<{ rough: 5, direction: Direction.SUPER }>,
                     popularityRank: 5 as Rank<Popularity>,

@@ -16,6 +16,7 @@ import {
     RationalMonzo,
     RationalQuotient,
     Sopfr,
+    TwoThreeFreeClass,
 } from "../../../../../../src/general"
 import {
     ApotomeSlope,
@@ -70,6 +71,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                             aas: 2.411919815346935 as Abs<ApotomeSlope>,
                             ate: 1 as Abs<Integer & Exponent<3 & Prime>>,
                             twoThreeFreeClassAnalysis: {
+                                name: "25/19" as Name<TwoThreeFreeClass>,
                                 twoThreeFreeCopfr: 3 as Copfr<{ rough: 5 }>,
                                 twoThreeFreeSopfr: 29 as Sopfr<{ rough: 5 }>,
                                 monzo: [0, 0, 2, 0, 0, 0, 0, -1] as RationalMonzo<{ rough: 5, direction: Direction.SUPER }>,
@@ -100,6 +102,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                             aas: 10.555481691145998 as Abs<ApotomeSlope>,
                             ate: 12 as Abs<Integer & Exponent<3 & Prime>>,
                             twoThreeFreeClassAnalysis: {
+                                name: "1/1" as Name<TwoThreeFreeClass>,
                                 twoThreeFreeCopfr: 0 as Copfr<{ rough: 5 }>,
                                 twoThreeFreeSopfr: 0 as Sopfr<{ rough: 5 }>,
                                 monzo: [] as unknown[] as RationalMonzo as RationalMonzo<{ rough: 5, direction: Direction.SUPER }>,
@@ -131,6 +134,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                             aas: 2.411919815346935 as Abs<ApotomeSlope>,
                             ate: 1 as Abs<Integer & Exponent<3 & Prime>>,
                             twoThreeFreeClassAnalysis: {
+                                name: "25/19" as Name<TwoThreeFreeClass>,
                                 twoThreeFreeCopfr: 3 as Copfr<{ rough: 5 }>,
                                 twoThreeFreeSopfr: 29 as Sopfr<{ rough: 5 }>,
                                 monzo: [0, 0, 2, 0, 0, 0, 0, -1] as RationalMonzo<{ rough: 5, direction: Direction.SUPER }>,
@@ -160,6 +164,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                             aas: 10.555481691145998 as Abs<ApotomeSlope>,
                             ate: 12 as Abs<Integer & Exponent<3 & Prime>>,
                             twoThreeFreeClassAnalysis: {
+                                name: "1/1" as Name<TwoThreeFreeClass>,
                                 twoThreeFreeCopfr: 0 as Copfr<{ rough: 5 }>,
                                 twoThreeFreeSopfr: 0 as Sopfr<{ rough: 5 }>,
                                 monzo: [] as unknown[] as RationalMonzo as RationalMonzo<{ rough: 5, direction: Direction.SUPER }>,
@@ -192,6 +197,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                             aas: 2.411919815346935 as Abs<ApotomeSlope>,
                             ate: 1 as Abs<Integer & Exponent<3 & Prime>>,
                             twoThreeFreeClassAnalysis: {
+                                name: "25/19" as Name<TwoThreeFreeClass>,
                                 twoThreeFreeCopfr: 3 as Copfr<{ rough: 5 }>,
                                 twoThreeFreeSopfr: 29 as Sopfr<{ rough: 5 }>,
                                 monzo: [0, 0, 2, 0, 0, 0, 0, -1] as RationalMonzo<{ rough: 5, direction: Direction.SUPER }>,
@@ -221,6 +227,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                             aas: 10.555481691145998 as Abs<ApotomeSlope>,
                             ate: 12 as Abs<Integer & Exponent<3 & Prime>>,
                             twoThreeFreeClassAnalysis: {
+                                name: "1/1" as Name<TwoThreeFreeClass>,
                                 twoThreeFreeCopfr: 0 as Copfr<{ rough: 5 }>,
                                 twoThreeFreeSopfr: 0 as Sopfr<{ rough: 5 }>,
                                 monzo: [] as unknown[] as RationalMonzo as RationalMonzo<{ rough: 5, direction: Direction.SUPER }>,

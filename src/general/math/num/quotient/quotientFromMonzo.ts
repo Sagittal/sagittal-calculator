@@ -1,4 +1,4 @@
-import { MAX_JAVASCRIPT_INTEGER_VALUE } from "../../../code"
+import { MAX_JAVASCRIPT_INTEGER_VALUE, Maybe } from "../../../code"
 import { formatMonzo } from "../../../io"
 import { Prime, PRIMES, RationalMonzo, RationalQuotient } from "../../rational"
 import { Exponent } from "../../types"
@@ -9,11 +9,11 @@ import { Denominator, Numerator, Quotient } from "./types"
 const computeQuotientFromMonzo: {
     <T extends NumTypeParameters>(
         rationalMonzo: RationalMonzo<T>,
-        { disableErrorBecauseExactValueNotRequired }?: { disableErrorBecauseExactValueNotRequired?: boolean },
+        options?: { disableErrorBecauseExactValueNotRequired?: boolean },
     ): RationalQuotient<T>,
     <T extends NumTypeParameters>(
         monzo: Monzo<T>,
-        { disableErrorBecauseExactValueNotRequired }?: { disableErrorBecauseExactValueNotRequired?: boolean },
+        options?: { disableErrorBecauseExactValueNotRequired?: boolean },
     ): Quotient<T>,
 } = <T extends NumTypeParameters>(
     monzo: Monzo<T>,
