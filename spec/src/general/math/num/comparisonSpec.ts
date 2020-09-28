@@ -136,10 +136,37 @@ describe("equalNums", (): void => {
 
         expect(actual).toBeFalsy()
     })
+
+    it("works for a monzo and a direct decimal", (): void => {
+        const numA: Num = { monzo: [0, 0, -1, 1] as Monzo }
+        const decimalB: Decimal = 1.4 as Decimal
+
+        const actual = equalNums(numA, decimalB)
+
+        expect(actual).toBeTruthy()
+    })
+
+    it("works for a quotient and a direct decimal", (): void => {
+        const numA: Num = { quotient: [14, 10] as Quotient }
+        const decimalB: Decimal = 1.4 as Decimal
+
+        const actual = equalNums(numA, decimalB)
+
+        expect(actual).toBeTruthy()
+    })
+
+    it("works for a decimal and a direct decimal", (): void => {
+        const numA: Num = { decimal: 1.4 as Decimal }
+        const decimalB: Decimal = 1.4 as Decimal
+
+        const actual = equalNums(numA, decimalB)
+
+        expect(actual).toBeTruthy()
+    })
 })
 
 describe("numIsHigher", (): void => {
-    describe("when both numes have monzos", (): void => {
+    describe("when both nums have monzos", (): void => {
         it("returns true if the num is higher than the other", (): void => {
             const num = { monzo: [-2, 0, 1] as Monzo }
             const otherNum = { monzo: [-3, 2] as Monzo }
@@ -168,7 +195,7 @@ describe("numIsHigher", (): void => {
         })
     })
 
-    describe("when both numes have quotients", (): void => {
+    describe("when both nums have quotients", (): void => {
         it("returns true if the num is higher than the other", (): void => {
             const num = { quotient: [5, 4] as Quotient }
             const otherNum = { quotient: [9, 8] as Quotient }
@@ -197,7 +224,7 @@ describe("numIsHigher", (): void => {
         })
     })
 
-    describe("when both numes have decimals", (): void => {
+    describe("when both nums have decimals", (): void => {
         it("returns true if the num is higher than the other", (): void => {
             const num = { decimal: 3.313714 as Decimal }
             const otherNum = { decimal: 2 as Decimal }
@@ -308,6 +335,35 @@ describe("numIsHigher", (): void => {
             const otherNum = { decimal: 1.3 as Decimal }
 
             const actual = numIsHigher(num, otherNum)
+
+            expect(actual).toBeFalsy()
+        })
+    })
+
+    describe("when both nums are direct decimals", (): void => {
+        it("returns true if the num is higher than the other", (): void => {
+            const decimal = { decimal: 1.25 as Decimal }
+            const otherDecimal = 1.2 as Decimal
+
+            const actual = numIsHigher(decimal, otherDecimal)
+
+            expect(actual).toBeTruthy()
+        })
+
+        it("returns false if the num is equal to the other", (): void => {
+            const decimal = { decimal: 1.25 as Decimal }
+            const otherDecimal = 1.25 as Decimal
+
+            const actual = numIsHigher(decimal, otherDecimal)
+
+            expect(actual).toBeFalsy()
+        })
+
+        it("returns false if the num is lower than the other", (): void => {
+            const decimal = { decimal: 1.25 as Decimal }
+            const otherDecimal = 1.3 as Decimal
+
+            const actual = numIsHigher(decimal, otherDecimal)
 
             expect(actual).toBeFalsy()
         })
@@ -315,7 +371,7 @@ describe("numIsHigher", (): void => {
 })
 
 describe("numIsLower", (): void => {
-    describe("when both numes have monzos", (): void => {
+    describe("when both nums have monzos", (): void => {
         it("returns false if the num is higher than the other", (): void => {
             const num = { monzo: [-2, 0, 1] as Monzo }
             const otherNum = { monzo: [-3, 2] as Monzo }
@@ -344,7 +400,7 @@ describe("numIsLower", (): void => {
         })
     })
 
-    describe("when both numes have quotients", (): void => {
+    describe("when both nums have quotients", (): void => {
         it("returns false if the num is higher than the other", (): void => {
             const num = { quotient: [5, 4] as Quotient }
             const otherNum = { quotient: [9, 8] as Quotient }
@@ -373,7 +429,7 @@ describe("numIsLower", (): void => {
         })
     })
 
-    describe("when both numes have decimals", (): void => {
+    describe("when both nums have decimals", (): void => {
         it("returns false if the num is higher than the other", (): void => {
             const num = { decimal: 3.313714 as Decimal }
             const otherNum = { decimal: 2 as Decimal }
@@ -484,6 +540,35 @@ describe("numIsLower", (): void => {
             const otherNum = { decimal: 1.3 as Decimal }
 
             const actual = numIsLower(num, otherNum)
+
+            expect(actual).toBeTruthy()
+        })
+    })
+
+    describe("when both nums are direct decimals", (): void => {
+        it("returns false if the num is higher than the other", (): void => {
+            const decimal = { decimal: 1.25 as Decimal }
+            const otherDecimal = 1.2 as Decimal
+
+            const actual = numIsLower(decimal, otherDecimal)
+
+            expect(actual).toBeFalsy()
+        })
+
+        it("returns false if the num is equal to the other", (): void => {
+            const decimal = { decimal: 1.25 as Decimal }
+            const otherDecimal = 1.25 as Decimal
+
+            const actual = numIsLower(decimal, otherDecimal)
+
+            expect(actual).toBeFalsy()
+        })
+
+        it("returns true if the num is lower than the other", (): void => {
+            const decimal = { decimal: 1.25 as Decimal }
+            const otherDecimal = 1.3 as Decimal
+
+            const actual = numIsLower(decimal, otherDecimal)
 
             expect(actual).toBeTruthy()
         })
@@ -491,7 +576,7 @@ describe("numIsLower", (): void => {
 })
 
 describe("numIsHigherOrEqual", (): void => {
-    describe("when both numes have monzos", (): void => {
+    describe("when both nums have monzos", (): void => {
         it("returns true if the num is higher than the other", (): void => {
             const num = { monzo: [-2, 0, 1] as Monzo }
             const otherNum = { monzo: [-3, 2] as Monzo }
@@ -520,7 +605,7 @@ describe("numIsHigherOrEqual", (): void => {
         })
     })
 
-    describe("when both numes have quotients", (): void => {
+    describe("when both nums have quotients", (): void => {
         it("returns true if the num is higher than the other", (): void => {
             const num = { quotient: [5, 4] as Quotient }
             const otherNum = { quotient: [9, 8] as Quotient }
@@ -549,7 +634,7 @@ describe("numIsHigherOrEqual", (): void => {
         })
     })
 
-    describe("when both numes have decimals", (): void => {
+    describe("when both nums have decimals", (): void => {
         it("returns true if the num is higher than the other", (): void => {
             const num = { decimal: 3.313714 as Decimal }
             const otherNum = { decimal: 2 as Decimal }
@@ -660,6 +745,35 @@ describe("numIsHigherOrEqual", (): void => {
             const otherNum = { decimal: 1.3 as Decimal }
 
             const actual = numIsHigherOrEqual(num, otherNum)
+
+            expect(actual).toBeFalsy()
+        })
+    })
+
+    describe("when both nums are direct decimals", (): void => {
+        it("returns true if the num is higher than the other", (): void => {
+            const decimal = { decimal: 1.25 as Decimal }
+            const otherDecimal = 1.2 as Decimal
+
+            const actual = numIsHigherOrEqual(decimal, otherDecimal)
+
+            expect(actual).toBeTruthy()
+        })
+
+        it("returns true if the num is equal to the other", (): void => {
+            const decimal = { decimal: 1.25 as Decimal }
+            const otherDecimal = 1.25 as Decimal
+
+            const actual = numIsHigherOrEqual(decimal, otherDecimal)
+
+            expect(actual).toBeTruthy()
+        })
+
+        it("returns false if the num is lower than the other", (): void => {
+            const decimal = { decimal: 1.25 as Decimal }
+            const otherDecimal = 1.3 as Decimal
+
+            const actual = numIsHigherOrEqual(decimal, otherDecimal)
 
             expect(actual).toBeFalsy()
         })
@@ -667,7 +781,7 @@ describe("numIsHigherOrEqual", (): void => {
 })
 
 describe("numIsLowerOrEqual", (): void => {
-    describe("when both numes have monzos", (): void => {
+    describe("when both nums have monzos", (): void => {
         it("returns false if the num is higher than the other", (): void => {
             const num = { monzo: [-2, 0, 1] as Monzo }
             const otherNum = { monzo: [-3, 2] as Monzo }
@@ -696,7 +810,7 @@ describe("numIsLowerOrEqual", (): void => {
         })
     })
 
-    describe("when both numes have quotients", (): void => {
+    describe("when both nums have quotients", (): void => {
         it("returns false if the num is higher than the other", (): void => {
             const num = { quotient: [5, 4] as Quotient }
             const otherNum = { quotient: [9, 8] as Quotient }
@@ -725,7 +839,7 @@ describe("numIsLowerOrEqual", (): void => {
         })
     })
 
-    describe("when both numes have decimals", (): void => {
+    describe("when both nums have decimals", (): void => {
         it("returns false if the num is higher than the other", (): void => {
             const num = { decimal: 3.313714 as Decimal }
             const otherNum = { decimal: 2 as Decimal }
@@ -836,6 +950,35 @@ describe("numIsLowerOrEqual", (): void => {
             const otherNum = { decimal: 1.3 as Decimal }
 
             const actual = numIsLowerOrEqual(num, otherNum)
+
+            expect(actual).toBeTruthy()
+        })
+    })
+
+    describe("when both nums are direct decimals", (): void => {
+        it("returns false if the num is higher than the other", (): void => {
+            const decimal = { decimal: 1.25 as Decimal }
+            const otherDecimal = 1.2 as Decimal
+
+            const actual = numIsLowerOrEqual(decimal, otherDecimal)
+
+            expect(actual).toBeFalsy()
+        })
+
+        it("returns true if the num is equal to the other", (): void => {
+            const decimal = { decimal: 1.25 as Decimal }
+            const otherDecimal = 1.25 as Decimal
+
+            const actual = numIsLowerOrEqual(decimal, otherDecimal)
+
+            expect(actual).toBeTruthy()
+        })
+
+        it("returns true if the num is lower than the other", (): void => {
+            const decimal = { decimal: 1.25 as Decimal }
+            const otherDecimal = 1.3 as Decimal
+
+            const actual = numIsLowerOrEqual(decimal, otherDecimal)
 
             expect(actual).toBeTruthy()
         })

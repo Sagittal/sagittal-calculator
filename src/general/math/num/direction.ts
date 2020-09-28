@@ -1,12 +1,16 @@
-import { deepClone, isUndefined } from "../../code"
+import { deepClone, isNumber, isUndefined } from "../../code"
+import { reciprocal } from "../typedOperations"
 import { invertDecimal, isSubDecimal, isSuperDecimal, isUnisonDecimal } from "./decimal"
+import { computeNumFromNumParameter } from "./fromNumParameter"
 import { invertMonzo, isSubMonzo, isSuperMonzo, isUnisonMonzo } from "./monzo"
 import { invertQuotient, isSubQuotient, isSuperQuotient, isUnisonQuotient } from "./quotient"
-import { Direction, Num, NumTypeParameters } from "./types"
+import { Direction, Num, NumParameter, NumTypeParameters } from "./types"
 
-const isSuperNum = <T extends NumTypeParameters, U extends Num<T>>(
-    candidateSuperNum: U,
-): candidateSuperNum is U & Num<T & { direction: Direction.SUPER }> => {
+const isSuperNum = <T extends NumTypeParameters, U extends NumParameter<T>>(
+    candidateSuperNumParameter: U,
+): candidateSuperNumParameter is U & NumParameter<T & { direction: Direction.SUPER }> => {
+    const candidateSuperNum = computeNumFromNumParameter(candidateSuperNumParameter)
+
     const { monzo, quotient, decimal } = candidateSuperNum
 
     return (!isUndefined(decimal) && isSuperDecimal(decimal)) ||
@@ -14,9 +18,11 @@ const isSuperNum = <T extends NumTypeParameters, U extends Num<T>>(
         (!isUndefined(monzo) && isSuperMonzo(monzo))
 }
 
-const isSubNum = <T extends NumTypeParameters, U extends Num<T>>(
-    candidateSubNum: U,
-): candidateSubNum is U & Num<T & { direction: Direction.SUB }> => {
+const isSubNum = <T extends NumTypeParameters, U extends NumParameter<T>>(
+    candidateSubNumParameter: U,
+): candidateSubNumParameter is U & NumParameter<T & { direction: Direction.SUB }> => {
+    const candidateSubNum = computeNumFromNumParameter(candidateSubNumParameter)
+
     const { monzo, quotient, decimal } = candidateSubNum
 
     return (!isUndefined(decimal) && isSubDecimal(decimal)) ||
@@ -24,9 +30,11 @@ const isSubNum = <T extends NumTypeParameters, U extends Num<T>>(
         (!isUndefined(monzo) && isSubMonzo(monzo))
 }
 
-const isUnisonNum = <T extends NumTypeParameters, U extends Num<T>>(
-    candidateUnisonNum: U,
-): candidateUnisonNum is U & Num<T & { direction: Direction.UNISON }> => {
+const isUnisonNum = <T extends NumTypeParameters, U extends NumParameter<T>>(
+    candidateUnisonNumParameter: U,
+): candidateUnisonNumParameter is U & NumParameter<T & { direction: Direction.UNISON }> => {
+    const candidateUnisonNum = computeNumFromNumParameter(candidateUnisonNumParameter)
+
     const { monzo, quotient, decimal } = candidateUnisonNum
 
     return (!isUndefined(decimal) && isUnisonDecimal(decimal)) ||
@@ -34,13 +42,19 @@ const isUnisonNum = <T extends NumTypeParameters, U extends Num<T>>(
         (!isUndefined(monzo) && isUnisonMonzo(monzo))
 }
 
-const computeSuperNum = <T extends NumTypeParameters, U extends Num<T>>(
-    num: U,
-): Exclude<U, Num> & Num<Omit<T, "direction"> & { direction: Direction.SUPER, integer: false }> => {
-    let superNum = {} as Exclude<U, Num> & Num<T & { direction: Direction.SUPER, integer: false }>
+const computeSuperNum = <T extends NumTypeParameters, U extends NumParameter<T>>(
+    numParameter: U,
+): Exclude<U, NumParameter> & NumParameter<Omit<T, "direction"> & { direction: Direction.SUPER, integer: false }> => {
+    let superNum = {} as Exclude<U, NumParameter> & NumParameter<T & { direction: Direction.SUPER, integer: false }>
 
-    if (isSubNum(num)) {
-        const { monzo, quotient, decimal } = num
+    if (isSubNum(numParameter)) {
+        if (isNumber(numParameter)) {
+            return reciprocal(
+                numParameter,
+            ) as Exclude<U, NumParameter> & NumParameter<T & { direction: Direction.SUPER, integer: false }>
+        }
+        
+        const { monzo, quotient, decimal } = numParameter
         if (!isUndefined(quotient)) {
             superNum.quotient = invertQuotient(quotient)
         }
@@ -52,7 +66,7 @@ const computeSuperNum = <T extends NumTypeParameters, U extends Num<T>>(
         }
     } else {
         superNum = deepClone(
-            num as Exclude<U, Num> & Num<T & { direction: Direction.SUPER, integer: false }>,
+            numParameter as Exclude<U, NumParameter> & NumParameter<T & { direction: Direction.SUPER, integer: false }>,
         )
     }
 

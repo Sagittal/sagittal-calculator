@@ -61,4 +61,22 @@ describe("isRoughRatio", (): void => {
             expect(actual).toBeFalsy()
         })
     })
+
+    describe("by direct decimal", (): void => {
+        it("returns true if the ratio is rough to the given roughness", (): void => {
+            const rationalDecimal = 5 as RationalDecimal
+
+            const actual = isRoughRatio(rationalDecimal, FIVE_ROUGHNESS)
+
+            expect(actual).toBeTruthy()
+        })
+
+        it("returns false if the ratio is not rough to the given roughness", (): void => {
+            const rationalDecimal = 5 as RationalDecimal
+
+            const actual = isRoughRatio(rationalDecimal, 7 as 7 & Roughness)
+
+            expect(actual).toBeFalsy()
+        })
+    })
 })

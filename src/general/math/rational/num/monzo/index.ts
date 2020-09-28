@@ -3,7 +3,7 @@ export { computeRationalMonzoFromIntegerDecimalOrRationalMonzo } from "./fromDec
 export { computeRationalMonzoFromRationalQuotient } from "./fromQuotient"
 export { computeRationalMonzosFromPrimeExponentExtremas } from "./fromPrimeExponentExtrema"
 export { isRoughRationalMonzo, computeRoughRationalMonzo } from "./roughness"
-export { isSmoothRationalMonzo } from "./smoothness"
+export { isSmoothRationalMonzo, computeRationalMonzoSmoothness } from "./smoothness"
 export { isRationalMonzo } from "./typeGuards"
 export { computeRationalMonzoFromRatio } from "./fromRatio"
 export { RatioByMonzo, RationalMonzo, IntegerMonzo, IntegerByMonzo } from "./types"

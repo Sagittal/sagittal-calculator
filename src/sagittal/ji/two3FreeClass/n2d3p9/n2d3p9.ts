@@ -1,6 +1,6 @@
 import {
     abs,
-    computeGpf,
+    computeGpf, computeNumFromMonzo,
     computeRationalMonzoFromRatio,
     computeTrimmedArray,
     Direction,
@@ -41,7 +41,7 @@ const computeN2D3P9 = <T extends NumTypeParameters &
             return n2d3p9 * (prime / divisor) ** abs(primeExponent) as N2D3P9
         },
         1 as N2D3P9,
-    ) * computeGpf(monzo) * (1 / 9) as N2D3P9
+    ) * computeGpf(computeNumFromMonzo(monzo)) * (1 / 9) as N2D3P9
 }
 
 export {

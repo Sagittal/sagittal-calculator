@@ -6,10 +6,10 @@ const sumMonzos = (...monzos: Array<Monzo>): Monzo => {
 
     const summedMonzos: Monzo = computeRange(maxMonzoLength).map((index: number): Exponent<Prime> => {
         return monzos.reduce(
-            (primeExponent: Exponent<Prime>, monzo: Monzo): Exponent<Prime> => {
-                const term: Exponent<Prime> = monzo[ index ] || 0 as Exponent<Prime>
+            (totalPrimeExponent: Exponent<Prime>, monzo: Monzo): Exponent<Prime> => {
+                const primeExponent: Exponent<Prime> = monzo[ index ] || 0 as Exponent<Prime>
 
-                return add(primeExponent, term)
+                return add(totalPrimeExponent, primeExponent)
             },
             0 as Exponent<Prime>,
         ) as Exponent<Prime>

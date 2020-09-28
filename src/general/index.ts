@@ -195,7 +195,6 @@ export {
     RationalDecimal,
     IntegerMonzo,
     computeNumFromMonzo,
-    computeNumFromDecimal,
     computeNumFromQuotient,
     isRoughIntegerDecimal,
 } from "./math"

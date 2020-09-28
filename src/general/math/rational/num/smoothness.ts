@@ -1,17 +1,22 @@
 import { isUndefined } from "../../../code"
-import { NumTypeParameters } from "../../num"
-import { max } from "../../typedOperations"
-import { computeGpf } from "../gpf"
+import { formatNum } from "../../../io"
+import { computeNumFromNumParameter, NumTypeParameters } from "../../num"
 import { Primes, Smoothness } from "../types"
-import { IntegerDecimal } from "./decimal"
-import { isSmoothRationalMonzo } from "./monzo"
-import { computeRationalQuotientFromRationalDecimal, isSmoothRationalQuotient } from "./quotient"
-import { Ratio } from "./types"
+import { computeRationalDecimalSmoothness, IntegerDecimal } from "./decimal"
+import { computeRationalMonzoSmoothness, isSmoothRationalMonzo } from "./monzo"
+import {
+    computeRationalQuotientFromRationalDecimal,
+    computeRationalQuotientSmoothness,
+    isSmoothRationalQuotient,
+} from "./quotient"
+import { Ratio, RationalParameter } from "./types"
 
 const isSmoothRatio = <S extends Primes, T extends NumTypeParameters>(
-    ratio: Ratio<T>,
+    rationalParameter: RationalParameter<T>,
     smoothness: S & Smoothness,
-): ratio is Ratio<T & { smooth: S }> => {
+): rationalParameter is RationalParameter<T & { smooth: S }> => {
+    const ratio = computeNumFromNumParameter(rationalParameter)
+
     let { monzo, quotient, decimal } = ratio
 
     if (isUndefined(monzo) && isUndefined(quotient) && !isUndefined(decimal)) {
@@ -32,19 +37,22 @@ const isSmoothRatio = <S extends Primes, T extends NumTypeParameters>(
 }
 
 const computeRatioSmoothness = <S extends Primes, T extends NumTypeParameters>(
-    { monzo, quotient, decimal }: Ratio<T>,
+    rationalParameter: RationalParameter<T>,
 ): Smoothness => {
+    const ratio = computeNumFromNumParameter(rationalParameter)
+
+    const { monzo, quotient, decimal } = ratio
+
     if (!isUndefined(monzo)) {
-        return computeGpf(monzo) as Smoothness
+        return computeRationalMonzoSmoothness(monzo)
+    } else if (!isUndefined(quotient)) {
+        return computeRationalQuotientSmoothness(quotient)
+    } else if (!isUndefined(decimal)) {
+        return computeRationalDecimalSmoothness(decimal)
+    } else {
+        // TODO: formatRatio passes through? should I just keep pass-throughs in general?
+        throw new Error(`Tried to check smoothness of ratio ${formatNum(ratio)} and ${formatNum(ratio)} but the latter lacked any numeric representations.`)
     }
-
-    if (isUndefined(quotient) && !isUndefined(decimal)) {
-        quotient = computeRationalQuotientFromRationalDecimal(decimal)
-    }
-
-    const [numerator, denominator] = quotient
-
-    return max(computeGpf(numerator), computeGpf(denominator)) as Smoothness
 }
 
 export {

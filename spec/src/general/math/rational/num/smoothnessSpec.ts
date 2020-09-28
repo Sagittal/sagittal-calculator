@@ -62,6 +62,24 @@ describe("isSmoothRatio", (): void => {
             expect(actual).toBeFalsy()
         })
     })
+
+    describe("by direct rational decimal", (): void => {
+        it("returns true if the ratio is smooth to the given smoothness", (): void => {
+            const rationalDecimal = 14 as RationalDecimal
+
+            const actual = isSmoothRatio(rationalDecimal, 7 as 7 & Smoothness)
+
+            expect(actual).toBeTruthy()
+        })
+
+        it("returns false if the ratio is not smooth to the given smoothness", (): void => {
+            const rationalDecimal = 14 as RationalDecimal
+
+            const actual = isSmoothRatio(rationalDecimal, 3 as 3 & Smoothness)
+
+            expect(actual).toBeFalsy()
+        })
+    })
 })
 
 describe("computeRatioSmoothness", (): void => {
@@ -87,6 +105,15 @@ describe("computeRatioSmoothness", (): void => {
         const ratio: Ratio = { decimal: 14 as RationalDecimal }
 
         const actual = computeRatioSmoothness(ratio)
+
+        const expected = 7 as Smoothness
+        expect(actual).toBe(expected)
+    })
+
+    it("works for direct rational decimals", (): void => {
+        const rationalDecimal =  14 as RationalDecimal
+
+        const actual = computeRatioSmoothness(rationalDecimal)
 
         const expected = 7 as Smoothness
         expect(actual).toBe(expected)

@@ -2,6 +2,8 @@ export {
     Ratio,
     RatioByDecimal,
     Integer,
+    RationalParameter,
+    IntegerParameter,
 } from "./types"
 export {
     computeIntegerDecimalFromIntegerMonzo,
@@ -9,6 +11,8 @@ export {
     IntegerDecimal,
     isIntegerDecimal,
     isRoughIntegerDecimal,
+    computeIntegerDecimalSmoothness,
+    computeRationalDecimalSmoothness,
 } from "./decimal"
 export {
     isRoughRationalQuotient,

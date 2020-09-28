@@ -1,5 +1,5 @@
 export { isRoughRationalQuotient, computeRoughRationalQuotient } from "./roughness"
-export { isSmoothRationalQuotient } from "./smoothness"
+export { isSmoothRationalQuotient, computeRationalQuotientSmoothness } from "./smoothness"
 export { computeRationalQuotientFromRationalDecimal } from "./fromDecimal"
 export { computeRationalQuotientFromRatio } from "./fromRatio"
 export { isRationalQuotient } from "./typeGuards"

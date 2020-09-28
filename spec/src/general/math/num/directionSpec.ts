@@ -88,6 +88,32 @@ describe("isSubNum", (): void => {
             expect(actual).toBeFalsy()
         })
     })
+
+    describe("by direct decimal", (): void => {
+        it("returns true if the num is sub", (): void => {
+            const decimal = 0.17 as Decimal
+
+            const actual = isSubNum(decimal)
+
+            expect(actual).toBeTruthy()
+        })
+
+        it("returns false if the num is unison", (): void => {
+            const decimal = 1 as Decimal
+
+            const actual = isSubNum(decimal)
+
+            expect(actual).toBeFalsy()
+        })
+
+        it("returns false if the num is super", (): void => {
+            const decimal = 7.1 as Decimal
+
+            const actual = isSubNum(decimal)
+
+            expect(actual).toBeFalsy()
+        })
+    })
 })
 
 describe("isSuperNum", (): void => {
@@ -164,6 +190,32 @@ describe("isSuperNum", (): void => {
             const num = { decimal: 7.1 as Decimal }
 
             const actual = isSuperNum(num)
+
+            expect(actual).toBeTruthy()
+        })
+    })
+
+    describe("by direct decimal", (): void => {
+        it("returns false if the num is sub", (): void => {
+            const decimal = 0.17 as Decimal
+
+            const actual = isSuperNum(decimal)
+
+            expect(actual).toBeFalsy()
+        })
+
+        it("returns false if the num is unison", (): void => {
+            const decimal = 1 as Decimal
+
+            const actual = isSuperNum(decimal)
+
+            expect(actual).toBeFalsy()
+        })
+
+        it("returns true if the num is super", (): void => {
+            const decimal = 7.1 as Decimal
+
+            const actual = isSuperNum(decimal)
 
             expect(actual).toBeTruthy()
         })
@@ -248,10 +300,36 @@ describe("isUnisonNumber", (): void => {
             expect(actual).toBeFalsy()
         })
     })
+
+    describe("by direct decimal", (): void => {
+        it("returns false if the num is sub", (): void => {
+            const decimal = 0.17 as Decimal
+
+            const actual = isUnisonNum(decimal)
+
+            expect(actual).toBeFalsy()
+        })
+
+        it("returns true if the num is unison", (): void => {
+            const decimal = 1 as Decimal
+
+            const actual = isUnisonNum(decimal)
+
+            expect(actual).toBeTruthy()
+        })
+
+        it("returns false if the num is super", (): void => {
+            const decimal = 7.1 as Decimal
+
+            const actual = isUnisonNum(decimal)
+
+            expect(actual).toBeFalsy()
+        })
+    })
 })
 
 describe("computeSuperNum", (): void => {
-    it("flips the monzo, quotient, number", (): void => {
+    it("flips the monzo, quotient, and decimal", (): void => {
         const num: Num<{ direction: Direction.SUB }> = {
             monzo: [-40, 22, 1, 1] as Monzo<{ direction: Direction.SUB }>,
             quotient: [1098337086315, 1099511627776] as Quotient<{ direction: Direction.SUB }>,
@@ -268,7 +346,7 @@ describe("computeSuperNum", (): void => {
         expect(actual).toEqual(expected)
     })
 
-    it("works when only monzo is provided", (): void => {
+    it("works when only a monzo is contained", (): void => {
         const num: Num<{ direction: Direction.SUB }> = {
             monzo: [-40, 22, 1, 1] as Monzo<{ direction: Direction.SUB }>,
         }
@@ -281,7 +359,7 @@ describe("computeSuperNum", (): void => {
         expect(actual).toEqual(expected)
     })
 
-    it("works when only quotient is provided", (): void => {
+    it("works when only a quotient is contained", (): void => {
         const num: Num<{ direction: Direction.SUB }> = {
             quotient: [1098337086315, 1099511627776] as Quotient<{ direction: Direction.SUB }>,
         }
@@ -294,7 +372,7 @@ describe("computeSuperNum", (): void => {
         expect(actual).toEqual(expected)
     })
 
-    it("works when only number are provided", (): void => {
+    it("works when only a decimal is contained", (): void => {
         const num: Num<{ direction: Direction.SUB }> = {
             decimal: 0.2 as Decimal<{ direction: Direction.SUB }>,
         }
@@ -304,6 +382,15 @@ describe("computeSuperNum", (): void => {
         const expected: Num<{ direction: Direction.SUPER }> = {
             decimal: 5 as Decimal<{ direction: Direction.SUPER }>,
         }
+        expect(actual).toEqual(expected)
+    })
+
+    it("works for direct decimals", (): void => {
+        const decimal = 0.2 as Decimal<{ direction: Direction.SUB }>
+
+        const actual = computeSuperNum(decimal)
+
+        const expected = 5 as Decimal<{ direction: Direction.SUPER }>
         expect(actual).toEqual(expected)
     })
 })

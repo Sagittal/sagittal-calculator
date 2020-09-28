@@ -18,24 +18,24 @@ const computePatentVal = <T extends Window>(options: PatentValOptions<T>): Val =
 
         let previousApproximation = undefined
         let currentApproximation = undefined
-        let term = 0 as IntegerDecimal & Exponent<Step>
+        let primeExponent = 0 as IntegerDecimal & Exponent<Step>
         while (true) {
             previousApproximation = currentApproximation
-            currentApproximation = stepSize ** term
+            currentApproximation = stepSize ** primeExponent
 
             if (currentApproximation > prime) {
                 const currentDiff = abs(currentApproximation - prime)
                 const previousDiff = previousApproximation ? abs(previousApproximation - prime) : Infinity
 
                 if (currentDiff < previousDiff) {
-                    patentVal.push(term)
+                    patentVal.push(primeExponent)
                 } else {
-                    patentVal.push(term - 1 as IntegerDecimal & Exponent<Step>)
+                    patentVal.push(primeExponent - 1 as IntegerDecimal & Exponent<Step>)
                 }
                 break
             }
 
-            term = increment(term)
+            primeExponent = increment(primeExponent)
         }
     }
 

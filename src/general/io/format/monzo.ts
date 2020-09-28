@@ -3,13 +3,13 @@ import { Exponent, Monzo, NumTypeParameters, Prime } from "../../math"
 import { Io } from "../types"
 import { Formatted } from "./types"
 
-const spaceTerm = (term: Exponent<Prime>): Io => {
-    let termText = term.toString()
-    while (termText.length < 3) {
-        termText = " " + termText
+const spacePrimeExponent = (primeExponent: Exponent<Prime>): Io => {
+    let primeExponentText = primeExponent.toString()
+    while (primeExponentText.length < 3) {
+        primeExponentText = " " + primeExponentText
     }
 
-    return termText as Io
+    return primeExponentText as Io
 }
 
 const formatMonzo = <T extends NumTypeParameters>(
@@ -19,11 +19,11 @@ const formatMonzo = <T extends NumTypeParameters>(
     let contents
     if (punctuated) {
         const two3FreeMonzo: Monzo<T & { rough: 5 }> = monzo.splice(2) as Monzo<T & { rough: 5 }>
-        contents = monzo.map(spaceTerm).join(" ") + ", "
+        contents = monzo.map(spacePrimeExponent).join(" ") + ", "
 
         let index = 0
         while (index < two3FreeMonzo.length) {
-            contents = contents + spaceTerm(two3FreeMonzo[ index ])
+            contents = contents + spacePrimeExponent(two3FreeMonzo[ index ])
             if (index < indexOfFinalElement(two3FreeMonzo)) {
                 if (index % 3 === 2) {
                     contents = contents + ", "
@@ -34,7 +34,7 @@ const formatMonzo = <T extends NumTypeParameters>(
             index += 1
         }
     } else {
-        contents = monzo.map(spaceTerm).join(" ")
+        contents = monzo.map(spacePrimeExponent).join(" ")
     }
 
     return `[ ${contents} ⟩` as Formatted<Monzo<T>>

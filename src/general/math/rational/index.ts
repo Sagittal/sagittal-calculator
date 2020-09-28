@@ -52,4 +52,6 @@ export {
     IntegerDecimal,
     isIntegerDecimal,
     isRoughIntegerDecimal,
+    IntegerParameter,
+    RationalParameter,
 } from "./num"

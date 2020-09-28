@@ -2,7 +2,7 @@ import { isRationalMonzo, RationalMonzo } from "../../../../../../../src/general
 import { isIntegerMonzo } from "../../../../../../../src/general/math/rational/num/monzo/typeGuards"
 
 describe("isIntegerMonzo", (): void => {
-    it("returns true if every term is positive or zero", (): void => {
+    it("returns true if every prime exponent is positive or zero", (): void => {
         const candidateIntegerMonzo = [0, 2, 0, 1] as RationalMonzo
 
         const actual = isIntegerMonzo(candidateIntegerMonzo)
@@ -10,7 +10,7 @@ describe("isIntegerMonzo", (): void => {
         expect(actual).toBeTruthy()
     })
 
-    it("returns false if every term is negative or zero", (): void => {
+    it("returns false if every prime exponent is negative or zero", (): void => {
         const candidateIntegerMonzo = [-3, 0, -5] as RationalMonzo
 
         const actual = isIntegerMonzo(candidateIntegerMonzo)
@@ -18,7 +18,7 @@ describe("isIntegerMonzo", (): void => {
         expect(actual).toBeFalsy()
     })
 
-    it("returns false if the terms are not all positive or zero or all negative or zero", (): void => {
+    it("returns false if the prime exponents are not all positive or zero or all negative or zero", (): void => {
         const candidateIntegerMonzo = [-2, 0, 1] as RationalMonzo
 
         const actual = isIntegerMonzo(candidateIntegerMonzo)
@@ -26,7 +26,7 @@ describe("isIntegerMonzo", (): void => {
         expect(actual).toBeFalsy()
     })
 
-    it("returns false if any of the terms are not integers", (): void => {
+    it("returns false if any of the prime exponents are not integers", (): void => {
         const candidateIntegerMonzo = [0, 2.5, 0, 1] as RationalMonzo
 
         const actual = isIntegerMonzo(candidateIntegerMonzo)
@@ -36,7 +36,7 @@ describe("isIntegerMonzo", (): void => {
 })
 
 describe("isRationalMonzo", (): void => {
-    it("returns true if every term is an integer", (): void => {
+    it("returns true if every prime exponent is an integer", (): void => {
         const candidateIntegerMonzo = [0, 2, 0, 1] as RationalMonzo
 
         const actual = isRationalMonzo(candidateIntegerMonzo)
@@ -44,7 +44,7 @@ describe("isRationalMonzo", (): void => {
         expect(actual).toBeTruthy()
     })
 
-    it("returns true if any term is not an integer", (): void => {
+    it("returns true if any prime exponent is not an integer", (): void => {
         const candidateIntegerMonzo = [2.5, 1.5, 0] as RationalMonzo
 
         const actual = isRationalMonzo(candidateIntegerMonzo)

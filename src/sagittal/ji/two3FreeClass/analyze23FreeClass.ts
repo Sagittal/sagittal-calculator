@@ -1,6 +1,6 @@
 import {
     compute23FreeClassName,
-    computeCopfr,
+    computeCopfr, computeNumFromMonzo,
     computePrimeLimit,
     computeRationalMonzoFromRatio,
     computeSopfr,
@@ -20,8 +20,10 @@ const analyze23FreeClass = (two3FreeClass: Two3FreeClass): Two3FreeClassAnalysis
 
     // TODO: yeah see this is a perfect example of where you should be able to just call these calcs on the Num
     const two3FreeClassMonzo = computeRationalMonzoFromRatio(two3FreeClass)
-    const two3FreeSopfr: Sopfr<{ rough: 5 }> = computeSopfr(two3FreeClassMonzo) as Sopfr<{ rough: 5 }>
-    const two3FreeCopfr: Copfr<{ rough: 5 }> = computeCopfr(two3FreeClassMonzo) as Copfr<{ rough: 5 }>
+    const two3FreeSopfr: Sopfr<{ rough: 5 }> = 
+        computeSopfr(computeNumFromMonzo(two3FreeClassMonzo)) as Sopfr<{ rough: 5 }>
+    const two3FreeCopfr: Copfr<{ rough: 5 }> = 
+        computeCopfr(computeNumFromMonzo(two3FreeClassMonzo)) as Copfr<{ rough: 5 }>
 
     const n2d3p9: N2D3P9 = computeN2D3P9(two3FreeClass)
 

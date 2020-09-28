@@ -30,7 +30,9 @@ export {
     equalMonzos,
 } from "./monzo"
 export { isSubNum, isSuperNum, isUnisonNum, computeSuperNum } from "./direction"
-export { computeNumFromMonzo, computeNumFromDecimal, computeNumFromQuotient } from "./num"
+export { computeNumFromMonzo } from "./fromMonzo"
+export { computeNumFromQuotient } from "./fromQuotient"
+export { computeNumFromNumParameter } from "./fromNumParameter"
 export { equalNums, numIsHigher, numIsLower, numIsLowerOrEqual, numIsHigherOrEqual } from "./comparison"
 export {
     Direction,

@@ -2,7 +2,6 @@ import {
     Cents,
     computeCentsFromPitch,
     computeNumberFromCents,
-    computeNumFromDecimal,
     Maybe,
     Name,
     numIsHigher,
@@ -29,7 +28,7 @@ const computeInaMidpoints = (jiNotationLevel: JiNotationLevel): InaMidpoint[] =>
         const cents = computeCentsFromPitch(APOTOME) * midpoint / eda as Cents
         const number = computeNumberFromCents(cents)
 
-        if (numIsHigher(computeNumFromDecimal(number), MAX_SYMBOL_CLASS_POSITION)) {
+        if (numIsHigher(number, MAX_SYMBOL_CLASS_POSITION)) {
             return undefined
         }
 

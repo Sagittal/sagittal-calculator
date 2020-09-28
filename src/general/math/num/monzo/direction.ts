@@ -8,8 +8,18 @@ import { Monzo } from "./types"
 const isSubMonzo = <T extends NumTypeParameters>(
     candidateSubMonzo: Monzo<T>,
 ): candidateSubMonzo is Monzo<T & { direction: Direction.SUB }> => {
-    if (candidateSubMonzo.length && candidateSubMonzo.every((term: Exponent<Prime>): boolean => term >= 0)) return false
-    if (candidateSubMonzo.length && candidateSubMonzo.every((term: Exponent<Prime>): boolean => term <= 0)) return true
+    if (
+        candidateSubMonzo.length && 
+        candidateSubMonzo.every((primeExponent: Exponent<Prime>): boolean => primeExponent >= 0)
+    ) {
+        return false
+    }
+    if (
+        candidateSubMonzo.length && 
+        candidateSubMonzo.every((primeExponent: Exponent<Prime>): boolean => primeExponent <= 0)
+    ) {
+        return true
+    }
 
     return computeDecimalFromMonzo(candidateSubMonzo) < MULTIPLICATIVE_IDENTITY
 }
@@ -23,7 +33,7 @@ const isSuperMonzo = <T extends NumTypeParameters>(
 const isUnisonMonzo = <T extends NumTypeParameters>(
     candidateUnisonMonzo: Monzo<T>,
 ): candidateUnisonMonzo is Monzo<T & { direction: Direction.UNISON }> => {
-    return candidateUnisonMonzo.every((term: Exponent<Prime>): boolean => term === 0)
+    return candidateUnisonMonzo.every((primeExponent: Exponent<Prime>): boolean => primeExponent === 0)
 }
 
 const computeSuperMonzo: {

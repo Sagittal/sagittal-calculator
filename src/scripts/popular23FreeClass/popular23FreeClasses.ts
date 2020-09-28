@@ -99,7 +99,7 @@ const computePopular23FreeClasses = (maxN2D3P9: Max<N2D3P9>): Array<Ranked<Popul
 
             // Figure out which index is the first one which hasn't reached its max
             let indexToTick = 0
-            // We have reached the max for this term for now (and haven't exceeded the end of the monzo)
+            // We have reached the max for this c for now (and haven't exceeded the end of the monzo)
             while (
                 indexToTick < two3FreeRationalMonzo.length &&
                 two3FreeRationalMonzo[ indexToTick ] === finalMonzo[ indexToTick ]
@@ -107,17 +107,17 @@ const computePopular23FreeClasses = (maxN2D3P9: Max<N2D3P9>): Array<Ranked<Popul
                 indexToTick = increment(indexToTick)
             }
 
-            // Ok so now we're at the first term which isn't at its max
+            // Ok so now we're at the first prime exponent which isn't at its max
 
             // Quit now if apparently ALL the terms are at their maxes
             if (indexToTick === two3FreeRationalMonzo.length) {
                 break
             }
 
-            // Otherwise increment the term at this not-yet-maxed index toward its max
+            // Otherwise increment the prime exponent at this not-yet-maxed index toward its max
             two3FreeRationalMonzo[ indexToTick ] = increment(two3FreeRationalMonzo[ indexToTick ])
 
-            // And reset the term at every other index before this one to its min,
+            // And reset the prime exponent at every other index before this one to its min,
             // So we can repeat everything we've done so far but for this index being one higher than it was previously
             let i = 0
             while (i < indexToTick) {

@@ -36,7 +36,6 @@ export {
     QuotientPart,
     computeQuotientFromMonzo,
     computeNumFromMonzo,
-    computeNumFromDecimal,
     computeNumFromQuotient,
 } from "./num"
 export { computeDistributions } from "./distributions"

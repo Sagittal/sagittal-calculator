@@ -1,15 +1,17 @@
 import { isUndefined } from "../../../code"
-import { NumTypeParameters } from "../../num"
+import { computeNumFromNumParameter, NumTypeParameters } from "../../num"
 import { Primes, Roughness } from "../types"
 import { IntegerDecimal } from "./decimal"
 import { isRoughRationalMonzo } from "./monzo"
 import { computeRationalQuotientFromRationalDecimal, isRoughRationalQuotient } from "./quotient"
-import { Ratio } from "./types"
+import { RationalParameter } from "./types"
 
 const isRoughRatio = <S extends Primes, T extends NumTypeParameters>(
-    ratio: Ratio<T>,
+    rationalParameter: RationalParameter<T>,
     roughness: S & Roughness,
-): ratio is Ratio<T & { rough: S }> => {
+): rationalParameter is RationalParameter<T & { rough: S }> => {
+    const ratio = computeNumFromNumParameter(rationalParameter)
+
     const { monzo, quotient, decimal } = ratio
 
     if (isUndefined(monzo) && isUndefined(quotient) && !isUndefined(decimal)) {
