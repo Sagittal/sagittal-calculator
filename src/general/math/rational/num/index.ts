@@ -38,7 +38,6 @@ export {
     isRoughRationalMonzo,
     isSmoothRationalMonzo,
     computeRationalMonzoFromRatio,
-    computeRationalMonzoFromIntegerDecimalOrRationalMonzo,
     RatioByMonzo,
     RationalMonzo,
     IntegerMonzo,

@@ -1,5 +1,4 @@
 export { computeIntegerMonzoFromIntegerDecimal } from "./fromDecimal"
-export { computeRationalMonzoFromIntegerDecimalOrRationalMonzo } from "./fromDecimalOrMonzo"
 export { computeRationalMonzoFromRationalQuotient } from "./fromQuotient"
 export { computeRationalMonzosFromPrimeExponentExtremas } from "./fromPrimeExponentExtrema"
 export { isRoughRationalMonzo, computeRoughRationalMonzo } from "./roughness"
