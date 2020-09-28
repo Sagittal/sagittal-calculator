@@ -2,10 +2,10 @@ import {
     Exponent,
     FIVE_PRIME_INDEX,
     increment,
+    IntegerNumerator,
     Max,
     Prime,
     PRIMES,
-    RationalNumerator,
     shallowClone,
 } from "../../../../../../../../general"
 import { N2D3P9 } from "../../../../types"
@@ -14,12 +14,12 @@ import { INITIAL_MAX_NUMERATOR_PRIME_EXPONENTS_FOR_TWO_AND_THREE } from "./const
 
 const computeMaxNumeratorPrimeExponentsGivenMaxN2D3P9 = (
     maxN2D3P9: Max<N2D3P9>,
-): Array<Max<RationalNumerator & Exponent<Prime>>> => {
+): Array<Max<IntegerNumerator & Exponent<Prime>>> => {
     let numeratorPrimeIndex = FIVE_PRIME_INDEX
     const maxNumeratorPrimeExponentsGivenMaxN2D3P9 =
         shallowClone(INITIAL_MAX_NUMERATOR_PRIME_EXPONENTS_FOR_TWO_AND_THREE)
     while (true) {
-        const numeratorPrime = PRIMES[ numeratorPrimeIndex ] as RationalNumerator & Prime
+        const numeratorPrime = PRIMES[ numeratorPrimeIndex ] as IntegerNumerator & Prime
 
         const maxNumeratorPrimeExponentGivenMaxN2D3P9 =
             computeMaxNumeratorPrimeExponentGivenMaxN2D3P9(numeratorPrime, maxN2D3P9)

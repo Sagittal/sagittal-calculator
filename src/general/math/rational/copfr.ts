@@ -1,13 +1,13 @@
 import { NumTypeParameters } from "../num"
 import { abs } from "../typedOperations"
 import { Exponent } from "../types"
-import { computeIntegerMonzoFromIntegerOrMonzo, RationalMonzo } from "./num"
+import { computeRationalMonzoFromIntegerOrRationalMonzo, RationalMonzo } from "./num"
 import { Copfr, Integer, Prime } from "./types"
 
 // Count Of Prime Factors with Repetition (big omega)
 
-const computeCopfr = <T extends NumTypeParameters>(integerOrMonzo: Integer<T> | RationalMonzo<T>): Copfr<T> => {
-    const monzo = computeIntegerMonzoFromIntegerOrMonzo(integerOrMonzo)
+const computeCopfr = <T extends NumTypeParameters>(integerOrRationalMonzo: Integer<T> | RationalMonzo<T>): Copfr<T> => {
+    const monzo = computeRationalMonzoFromIntegerOrRationalMonzo(integerOrRationalMonzo)
 
     return monzo.reduce(
         (copfr: Copfr<T>, primeExponent: Integer & Exponent<Prime>): Copfr<T> =>

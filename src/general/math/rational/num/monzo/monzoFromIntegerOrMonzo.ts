@@ -1,19 +1,21 @@
 import { isNumber } from "../../../../code"
 import { Integer } from "../../types"
 import { computeIntegerMonzoFromInteger } from "./monzoFromInteger"
-import { RationalMonzo } from "./types"
+import { IntegerMonzo, RationalMonzo } from "./types"
 
-const computeIntegerMonzoFromIntegerOrMonzo = (integerOrMonzo: Integer | RationalMonzo): RationalMonzo => {
-    let integerMonzo: RationalMonzo
-    if (isNumber(integerOrMonzo)) {
-        integerMonzo = computeIntegerMonzoFromInteger(integerOrMonzo)
+const computeRationalMonzoFromIntegerOrRationalMonzo = (
+    integerOrRationalMonzo: Integer | RationalMonzo,
+): RationalMonzo => {
+    let rationalMonzo: RationalMonzo
+    if (isNumber(integerOrRationalMonzo)) {
+        rationalMonzo = computeIntegerMonzoFromInteger(integerOrRationalMonzo)
     } else {
-        integerMonzo = integerOrMonzo as RationalMonzo
+        rationalMonzo = integerOrRationalMonzo as IntegerMonzo
     }
 
-    return integerMonzo
+    return rationalMonzo
 }
 
 export {
-    computeIntegerMonzoFromIntegerOrMonzo,
+    computeRationalMonzoFromIntegerOrRationalMonzo,
 }

@@ -1,4 +1,4 @@
-import { Exponent, Extrema, Integer, Max, Min, negative, Prime, RationalDenominator, RationalNumerator } from "../../../../../general"
+import { Exponent, Extrema, Integer, IntegerDenominator, IntegerNumerator, Max, Min, negative, Prime } from "../../../../../general"
 import { N2D3P9 } from "../types"
 import {
     computeMaxDenominatorPrimeExponentGivenMaxN2D3P9,
@@ -12,14 +12,14 @@ const computePrimeExponentExtremaGivenMaxN2D3P9 = (
     numeratorPossibilitiesForDenominatorGivenMaxN2D3P9: NumeratorPossibilityForDenominatorGivenMaxN2D3P9[],
     { mirrored }: { mirrored?: boolean } = {},
 ): Extrema<Integer & Exponent<Prime>> => {
-    const maxNumeratorPrimeExponentGivenMaxN2D3P9: Max<RationalNumerator & Exponent<Prime>> =
-        computeMaxNumeratorPrimeExponentGivenMaxN2D3P9(prime as RationalNumerator & Prime, maxN2D3P9)
-    const maxDenominatorPrimeExponentGivenMaxN2D3P9: Max<RationalDenominator & Exponent<Prime>> =
+    const maxNumeratorPrimeExponentGivenMaxN2D3P9: Max<IntegerNumerator & Exponent<Prime>> =
+        computeMaxNumeratorPrimeExponentGivenMaxN2D3P9(prime as IntegerNumerator & Prime, maxN2D3P9)
+    const maxDenominatorPrimeExponentGivenMaxN2D3P9: Max<IntegerDenominator & Exponent<Prime>> =
         mirrored ?
             maxNumeratorPrimeExponentGivenMaxN2D3P9 as
-                Max<Integer & Exponent<Prime>> as Max<RationalDenominator & Exponent<Prime>> :
+                Max<Integer & Exponent<Prime>> as Max<IntegerDenominator & Exponent<Prime>> :
             computeMaxDenominatorPrimeExponentGivenMaxN2D3P9(
-                prime as RationalDenominator & Prime,
+                prime as IntegerDenominator & Prime,
                 maxN2D3P9,
                 numeratorPossibilitiesForDenominatorGivenMaxN2D3P9,
             )

@@ -1,10 +1,10 @@
 import { formatMonzo } from "../../../../io"
 import { computeQuotientFromMonzo, NumTypeParameters } from "../../../num"
 import { Integer } from "../../types"
-import { RationalMonzo } from "../monzo"
+import { IntegerMonzo } from "../monzo"
 
 const computeIntegerFromIntegerMonzo = <T extends NumTypeParameters>(
-    integerMonzo: RationalMonzo<T>, // TODO: actually make an IntegerMonzo
+    integerMonzo: IntegerMonzo<T>,
 ): Integer<T> => {
     const quotient = computeQuotientFromMonzo(integerMonzo)
     const [numerator, denominator] = quotient

@@ -1,6 +1,6 @@
 import { Index } from "../../../../../../../../../../../src/general"
 import { increment } from "../../../../../../../../../../../src/general/code"
-import { Exponent, Max, Prime, PRIMES, RationalNumerator } from "../../../../../../../../../../../src/general/math"
+import { Exponent, IntegerNumerator, Max, Prime, PRIMES } from "../../../../../../../../../../../src/general/math"
 import { N2D3P9 } from "../../../../../../../../../../../src/sagittal/ji/twoThreeFreeClass/n2d3p9"
 
 describe("breaking points of max N2D3P9 per numerator prime", (): void => {
@@ -72,7 +72,7 @@ describe("breaking points of max N2D3P9 per numerator prime", (): void => {
     it("okay, here is where we are going to figure this out", (): void => {
         const computeMaxN2D3P9GivenMaxNumeratorPrimeExponent = (
             prime: Prime,
-            maxNumeratorPrimeExponent: Max<RationalNumerator & Exponent<Prime>>,
+            maxNumeratorPrimeExponent: Max<IntegerNumerator & Exponent<Prime>>,
         ): Max<N2D3P9> => {
             return maxNumeratorPrimeExponent === 0 ?
                 1 as Max<N2D3P9> :
@@ -86,9 +86,9 @@ describe("breaking points of max N2D3P9 per numerator prime", (): void => {
 
         while (true) {
             breakingPoints.push([] as Array<Max<N2D3P9>>)
-            const numeratorPrime = PRIMES[ primeIndex ] as RationalNumerator & Prime
+            const numeratorPrime = PRIMES[ primeIndex ] as IntegerNumerator & Prime
 
-            let maxNumeratorPrimeExponent = 0 as Max<RationalNumerator & Exponent<Prime>>
+            let maxNumeratorPrimeExponent = 0 as Max<IntegerNumerator & Exponent<Prime>>
             while (true) {
                 const maxN2D3P9 =
                     computeMaxN2D3P9GivenMaxNumeratorPrimeExponent(numeratorPrime, maxNumeratorPrimeExponent)

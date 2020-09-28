@@ -1,4 +1,4 @@
-import { MaybeIntegerBrand, RationalNum } from "../rational"
+import { RationalNum } from "../rational"
 import { NumByDecimal } from "./decimal"
 import { NumByMonzo } from "./monzo"
 import { NumByQuotient } from "./quotient"
@@ -24,10 +24,8 @@ type NumTypeParameterEffects<T> =
     & (T extends { rough: number } ? { _RoughBrand: Pick<T, "rough"> } : {})
     & (T extends { smooth: number } ? { _SmoothBrand: Pick<T, "smooth"> } : {})
     & (T extends { irrational: true } ? { _IrrationalBrand: boolean } : {})
-    & MaybeIntegerBrand<T>
+    & (T extends { integer: true } ? { _IntegerBrand: boolean } : {})
 
-type NumTypeParameterTranslationForMonzosAndQuotientsToTheirQuotientPartsAndTermsAboutRationality<T> =
-    (T extends { irrational: false } ? { irrational: false, integer: true } : {})
 
 // TODO: IMPLEMENT EDO PITCHES ON POTENTIALLY IRRATIONAL NUMS
 //  Starting to think about non-JI pitches
@@ -72,5 +70,4 @@ export {
     Direction,
     NumTypeParameterEffects,
     Num,
-    NumTypeParameterTranslationForMonzosAndQuotientsToTheirQuotientPartsAndTermsAboutRationality,
 }

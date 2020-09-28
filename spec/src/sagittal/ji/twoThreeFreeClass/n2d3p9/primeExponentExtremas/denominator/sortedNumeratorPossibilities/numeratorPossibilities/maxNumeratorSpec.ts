@@ -1,4 +1,4 @@
-import { Max, RationalNumerator } from "../../../../../../../../../../src/general"
+import { IntegerNumerator, Max } from "../../../../../../../../../../src/general"
 import { N2D3P9 } from "../../../../../../../../../../src/sagittal/ji/twoThreeFreeClass/n2d3p9"
 import { computeMaxNumeratorGivenMaxN2D3P9 } from "../../../../../../../../../../src/sagittal/ji/twoThreeFreeClass/n2d3p9/primeExponentExtremas/denominator/sortedNumeratorPossibilities/numeratorPossibilities/maxNumerator"
 import { onlyRunInCi } from "../../../../../../../../../helpers/onlyRunInCi"
@@ -11,7 +11,7 @@ describe("computeMaxNumeratorGivenMaxN2D3P9", (): void => {
 
         const actual = computeMaxNumeratorGivenMaxN2D3P9(maxN2D3P9)
 
-        const expected = 5 ** 6 as Max<RationalNumerator>
+        const expected = 5 ** 6 as Max<IntegerNumerator>
         expect(actual).toEqual(expected)
     })
 
@@ -20,7 +20,7 @@ describe("computeMaxNumeratorGivenMaxN2D3P9", (): void => {
 
         const actual = computeMaxNumeratorGivenMaxN2D3P9(maxN2D3P9)
 
-        const expected = 5 ** 3 as Max<RationalNumerator>
+        const expected = 5 ** 3 as Max<IntegerNumerator>
         expect(actual).toEqual(expected)
     })
 
@@ -31,7 +31,7 @@ describe("computeMaxNumeratorGivenMaxN2D3P9", (): void => {
 
             const actual = computeMaxNumeratorGivenMaxN2D3P9(maxN2D3P9)
 
-            const expected = 5 ** 1 * 7 ** 1 as Max<RationalNumerator>
+            const expected = 5 ** 1 * 7 ** 1 as Max<IntegerNumerator>
             expect(actual).toEqual(expected)
         },
     )

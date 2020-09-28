@@ -3,19 +3,10 @@ import { Prime } from "../../rational"
 import { Exponent, Max } from "../../types"
 import { Decimal } from "../decimal"
 import { Quotient } from "../quotient"
-import {
-    NumTypeParameterEffects,
-    NumTypeParameters,
-    NumTypeParameterTranslationForMonzosAndQuotientsToTheirQuotientPartsAndTermsAboutRationality,
-} from "../types"
-
-type NumTypeParameterTranslationForMonzosToTheirTermsExceptDefaultRationality<T extends NumTypeParameters = {}> =
-    (T extends { integer: true } ? { irrational: false, integer: true } : {})
-    // & (T extends { irrational: false } ? { irrational: false } : {})
+import { NumTypeParameterEffects, NumTypeParameters } from "../types"
 
 type Monzo<T extends NumTypeParameters = {}> =
-    Array<Decimal<NumTypeParameterTranslationForMonzosAndQuotientsToTheirQuotientPartsAndTermsAboutRationality<T>
-& NumTypeParameterTranslationForMonzosToTheirTermsExceptDefaultRationality<T>> & Exponent<Prime>>
+    Array<number & Exponent<Prime>>
     & NumTypeParameterEffects<T>
 
 type Val = Array<Exponent<Step>>
@@ -65,5 +56,4 @@ export {
     PatentValOptions,
     Monzo,
     NumByMonzo,
-    NumTypeParameterTranslationForMonzosToTheirTermsExceptDefaultRationality,
 }

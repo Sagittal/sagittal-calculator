@@ -28,7 +28,6 @@ export {
     Monzo,
     isUnisonMonzo,
     equalMonzos,
-    NumTypeParameterTranslationForMonzosToTheirTermsExceptDefaultRationality,
 } from "./monzo"
 export { isSubNum, isSuperNum, isUnisonNum, computeSuperNum } from "./numDirection"
 export { equalNums, numIsHigher, numIsLower, numIsLowerOrEqual, numIsHigherOrEqual } from "./numComparison"
@@ -37,5 +36,4 @@ export {
     NumTypeParameters,
     Num,
     NumTypeParameterEffects,
-    NumTypeParameterTranslationForMonzosAndQuotientsToTheirQuotientPartsAndTermsAboutRationality,
 } from "./types"

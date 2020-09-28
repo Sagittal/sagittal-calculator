@@ -1,4 +1,4 @@
-import { Direction, Max, RationalMonzo, RationalNumerator } from "../../../../../../../../src/general"
+import { Direction, IntegerNumerator, Max, RationalMonzo } from "../../../../../../../../src/general"
 import { N2D3P9 } from "../../../../../../../../src/sagittal/ji/twoThreeFreeClass/n2d3p9"
 import { computeMaxNumeratorWithLessN2D3P9ThanMaxN2D3P9 } from "../../../../../../../../src/sagittal/ji/twoThreeFreeClass/n2d3p9/primeExponentExtremas/denominator/maxNumeratorWithLessN2D3P9"
 
@@ -14,7 +14,7 @@ describe("computeMaxNumeratorWithLessN2D3P9ThanMaxN2D3P9", (): void => {
 
         const actual = computeMaxNumeratorWithLessN2D3P9ThanMaxN2D3P9(numeratorMonzosToCheck, maxN2D3P9)
 
-        const expected = 7 as Max<RationalNumerator>
+        const expected = 7 as Max<IntegerNumerator>
         expect(actual).toBe(expected)
     })
 })

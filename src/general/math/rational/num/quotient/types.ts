@@ -3,36 +3,46 @@
 import {
     NumTypeParameterEffects,
     NumTypeParameters,
-    NumTypeParameterTranslationForMonzosAndQuotientsToTheirQuotientPartsAndTermsAboutRationality,
     NumTypeParameterTranslationForQuotientsToTheirQuotientPartsExceptRationality,
 } from "../../../num"
+import { Integer } from "../../types"
 import { RationalDecimal } from "../decimal"
-import { RationalMonzo } from "../monzo"
+import { IntegerMonzo, RationalMonzo } from "../monzo"
 
-type RationalNumerator<T extends NumTypeParameters = {}> =
-    RationalDecimal<NumTypeParameterTranslationForMonzosAndQuotientsToTheirQuotientPartsAndTermsAboutRationality<T & { irrational: false }>
-        & NumTypeParameterTranslationForQuotientsToTheirQuotientPartsExceptRationality<T & { irrational: false }>>
+type IntegerNumerator<T extends NumTypeParameters = {}> =
+    Integer<NumTypeParameterTranslationForQuotientsToTheirQuotientPartsExceptRationality<T>>
     & { _NumeratorBrand: boolean }
-type RationalDenominator<T extends NumTypeParameters = {}> =
-    RationalDecimal<NumTypeParameterTranslationForMonzosAndQuotientsToTheirQuotientPartsAndTermsAboutRationality<T & { irrational: false }>
-        & NumTypeParameterTranslationForQuotientsToTheirQuotientPartsExceptRationality<T & { irrational: false }>>
+type IntegerDenominator<T extends NumTypeParameters = {}> =
+    Integer<NumTypeParameterTranslationForQuotientsToTheirQuotientPartsExceptRationality<T>>
     & { _DenominatorBrand: boolean }
-type RationalQuotient<T extends NumTypeParameters = {}> =
-    [RationalNumerator<T>, RationalDenominator<T>]
-    & NumTypeParameterEffects<T & { irrational: false }>
 
-type RationalQuotientPart<T extends NumTypeParameters = {}> = RationalNumerator<T> | RationalDenominator<T>
+type IntegerQuotientPart<T extends NumTypeParameters = {}> = IntegerNumerator<T> | IntegerDenominator<T>
+
+type RationalQuotient<T extends NumTypeParameters = {}> =
+    [IntegerNumerator<T>, IntegerDenominator<T>]
+    & NumTypeParameterEffects<T & { irrational: false }>
 
 type RationalNumByQuotient<T extends NumTypeParameters = {}> = {
     decimal?: RationalDecimal<T>,
     monzo?: RationalMonzo<T>,
     quotient: RationalQuotient<T>,
 }
+type IntegerQuotient<T extends NumTypeParameters = {}> =
+    [IntegerNumerator<T>, IntegerDenominator<T>]
+    & NumTypeParameterEffects<T & { integer: true, irrational: false }>
+
+type IntegerNumByQuotient<T extends NumTypeParameters = {}> = {
+    decimal?: Integer<T>,
+    monzo?: IntegerMonzo<T>,
+    quotient: IntegerQuotient<T>,
+}
 
 export {
+    IntegerNumerator,
+    IntegerDenominator,
+    IntegerQuotientPart,
     RationalQuotient,
-    RationalNumerator,
-    RationalDenominator,
-    RationalQuotientPart,
     RationalNumByQuotient,
+    IntegerQuotient,
+    IntegerNumByQuotient,
 }

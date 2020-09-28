@@ -2,9 +2,10 @@ import { Count, Sum } from "../../types"
 import { NumTypeParameterEffects, NumTypeParameters } from "../num"
 import { RationalDecimal } from "./num"
 
+// This is really just an IntegerDecimal, in the sense of IntegerMonzo and IntegerRatio.
+// But it's so widespread I really want to keep its name simple.
+// I might consider making RationalDecimal into just "Rational", but that's less pressing.
 type Integer<T extends NumTypeParameters = {}> = RationalDecimal<T & { integer: true }>
-
-type MaybeIntegerBrand<T> = T extends { integer: true } ? { _IntegerBrand: boolean } : {}
 
 type Prime<T extends NumTypeParameters = {}> = Integer<T> & { _PrimeBrand: "Prime" }
 type Roughness = Integer & { _RoughnessBrand: boolean }
@@ -40,6 +41,5 @@ export {
     Roughness,
     Smoothness,
     Primes,
-    MaybeIntegerBrand,
     CommonFunction,
 }

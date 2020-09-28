@@ -1,7 +1,7 @@
-import { Max, Prime, RationalNumerator } from "../../../../../../../../general"
+import { IntegerNumerator, Max, Prime } from "../../../../../../../../general"
 
 interface NumeratorPossibilityForDenominatorGivenMaxN2D3P9 {
-    numerator: RationalNumerator,
+    numerator: IntegerNumerator,
     gpf: Max<Prime>,
 }
 

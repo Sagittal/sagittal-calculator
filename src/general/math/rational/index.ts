@@ -1,4 +1,3 @@
-export { MaybeIntegerBrand } from "./types"
 export {
     FIVE_PRIME_INDEX,
     FIVE_ROUGHNESS,
@@ -43,9 +42,9 @@ export {
     isSmoothRationalNum,
     computeRationalNumSmoothness,
     isRoughRationalNum,
-    RationalDenominator,
-    RationalQuotientPart,
-    RationalNumerator,
+    IntegerDenominator,
+    IntegerQuotientPart,
+    IntegerNumerator,
     RationalQuotient,
     RationalMonzo,
     equalQuotients,

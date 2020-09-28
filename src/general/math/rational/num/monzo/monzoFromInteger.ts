@@ -4,7 +4,7 @@ import { Exponent } from "../../../types"
 import { PRIMES } from "../../primes"
 import { integerDivide } from "../../typedOperations"
 import { Integer, Prime } from "../../types"
-import { RationalMonzo } from "./types"
+import { IntegerMonzo } from "./types"
 
 // TODO: POSSIBLY MORE PERFORMANT PRIME FACTORIZATION ALGORITHM
 //  Consider using Dave's tricky GCP-involved technique
@@ -22,12 +22,13 @@ exponent(n, i) = Math.round(math.log(math.gcd(n, maxPrimePower[i]), prime[i]) )
 That's more like what I really do in Excel.
  */
 
-const computeIntegerMonzoFromInteger = (integer: Integer): RationalMonzo<{ direction: Direction.SUPER }> => {
+// TODO: perhaps Integers should all be direction super
+const computeIntegerMonzoFromInteger = (integer: Integer): IntegerMonzo<{ direction: Direction.SUPER }> => {
     if (integer === 0) {
         throw new Error("The prime factorization of zero is not defined.")
     }
 
-    const monzo: RationalMonzo = [] as unknown[] as RationalMonzo
+    const integerMonzo: IntegerMonzo = [] as unknown[] as IntegerMonzo
     let remnant = integer
 
     const computePrimeFactorizationForPrimeAtIndexAndUpdateRemnant = (index: number): void => {
@@ -35,13 +36,13 @@ const computeIntegerMonzoFromInteger = (integer: Integer): RationalMonzo<{ direc
         let remainder = remnant % divisor
 
         if (remainder === 0) {
-            while (monzo.length <= index) {
-                monzo.push(0 as Integer & Exponent<Prime>)
+            while (integerMonzo.length <= index) {
+                integerMonzo.push(0 as Integer & Exponent<Prime>)
             }
 
             while (remainder === 0) {
                 remnant = integerDivide(remnant, divisor)
-                monzo[ index ] = increment(monzo[ index ])
+                integerMonzo[ index ] = increment(integerMonzo[ index ])
                 remainder = remnant % divisor
             }
         }
@@ -57,7 +58,7 @@ const computeIntegerMonzoFromInteger = (integer: Integer): RationalMonzo<{ direc
 
     if (remnant > 1) throw new Error(`This integer ${integer} contains primes which are too big; remainder is ${remnant}`)
 
-    return monzo as RationalMonzo<{ direction: Direction.SUPER }>
+    return integerMonzo as IntegerMonzo<{ direction: Direction.SUPER }>
 }
 
 export {

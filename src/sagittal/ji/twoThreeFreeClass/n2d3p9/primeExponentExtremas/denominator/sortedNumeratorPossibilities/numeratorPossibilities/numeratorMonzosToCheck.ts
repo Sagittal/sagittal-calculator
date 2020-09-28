@@ -4,11 +4,11 @@ import {
     Exponent,
     Extrema,
     Integer,
+    IntegerNumerator,
     Max,
     Min,
     Prime,
     RationalMonzo,
-    RationalNumerator,
 } from "../../../../../../../../general"
 import { N2D3P9 } from "../../../../types"
 import { computeMaxNumeratorPrimeExponentsGivenMaxN2D3P9 } from "./maxNumeratorPrimeExponents"
@@ -20,7 +20,7 @@ const computeNumeratorMonzosToCheckGivenMaxN2D3P9 = (
 
     const numeratorPrimeExponentExtremaGivenMaxN2D3P9: Array<Extrema<Integer & Exponent<Prime>>> =
         maxNumeratorPrimeExponentsGivenMaxN2D3P9.map((
-            maxNumeratorPrimeExponentGivenMaxN2D3P9: Max<RationalNumerator & Exponent<Prime>>,
+            maxNumeratorPrimeExponentGivenMaxN2D3P9: Max<IntegerNumerator & Exponent<Prime>>,
         ): Extrema<Integer & Exponent<Prime>> => {
             return [0 as Min<Integer & Exponent<Prime>>, maxNumeratorPrimeExponentGivenMaxN2D3P9]
         })

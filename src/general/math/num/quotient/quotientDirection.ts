@@ -35,7 +35,7 @@ const computeSuperQuotient: {
     ): Quotient<T & { direction: Direction.SUPER, integer: false }>,
 } = <T extends NumTypeParameters>(
     quotient: Quotient<T>,
-): Quotient<T & { direction: Direction.SUPER, integer: false }> => {
+): any => {
     return isSuperQuotient(quotient) ?
         quotient as Quotient<T & { direction: Direction.SUPER, integer: false }> :
         invertQuotient(quotient)
@@ -50,7 +50,7 @@ const computeSubQuotient: {
     ): Quotient<T & { direction: Direction.SUB, integer: false }>
 } = <T extends NumTypeParameters>(
     quotient: Quotient<T>,
-): Quotient<T & { direction: Direction.SUB, integer: false }> => {
+): any => {
     return isSubQuotient(quotient) ?
         quotient as Quotient<T & { direction: Direction.SUB, integer: false }> :
         invertQuotient(quotient)
@@ -75,7 +75,7 @@ const invertQuotient: {
     <T extends NumTypeParameters>(
         quotient: Quotient<T>,
     ): Quotient<T & { integer: false }>,
-} = <T extends NumTypeParameters>(quotient: Quotient<T>): Quotient<T & { integer: false }> => {
+} = <T extends NumTypeParameters>(quotient: Quotient<T>): any => {
     const [numerator, denominator] = quotient
 
     return [

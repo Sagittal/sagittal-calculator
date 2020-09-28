@@ -15,9 +15,9 @@ export {
     isRationalQuotient,
     RationalNumByQuotient,
     computeLowestTermsRationalQuotient,
-    RationalDenominator,
-    RationalQuotientPart,
-    RationalNumerator,
+    IntegerDenominator,
+    IntegerQuotientPart,
+    IntegerNumerator,
     RationalQuotient,
     equalQuotients,
 } from "./quotient"
@@ -29,9 +29,10 @@ export {
     isRoughRationalMonzo,
     isSmoothRationalMonzo,
     computeRationalMonzoFromRationalNum,
-    computeIntegerMonzoFromIntegerOrMonzo,
+    computeRationalMonzoFromIntegerOrRationalMonzo,
     RationalNumByMonzo,
     RationalMonzo,
+    IntegerMonzo,
 } from "./monzo"
 export { isRationalNum } from "./typeGuards"
 export { isSmoothRationalNum, computeRationalNumSmoothness } from "./smoothness"

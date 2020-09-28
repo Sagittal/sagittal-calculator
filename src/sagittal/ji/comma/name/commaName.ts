@@ -9,6 +9,7 @@ import {
     Exponent,
     FIVE_ROUGHNESS,
     Integer,
+    IntegerQuotientPart,
     isSubNum,
     isUnisonNum,
     isWithinPrimeLimit,
@@ -16,7 +17,6 @@ import {
     Prime,
     PRIMES,
     RationalQuotient,
-    RationalQuotientPart,
     stringify,
     SUPERSCRIPT_NUMS,
     THREE_PRIME_LIMIT,
@@ -25,7 +25,7 @@ import { computeSizeCategory } from "./sizeCategory"
 import { isCommaSized } from "./typeGuards"
 import { CommaNameOptions, CommaNameQuotient, SizeCategoryAbbreviation, SizeCategoryName } from "./types"
 
-const primeFactorize = (numeratorOrDenominator: RationalQuotientPart): string => {
+const primeFactorize = (numeratorOrDenominator: IntegerQuotientPart): string => {
     if (numeratorOrDenominator === 1) return "1"
 
     const monzo = computeIntegerMonzoFromInteger(numeratorOrDenominator)
@@ -51,7 +51,7 @@ const primeFactorize = (numeratorOrDenominator: RationalQuotientPart): string =>
 const stringifyQuotient = (rationalQuotient: RationalQuotient, { factored }: { factored: boolean }): string[] => {
     return factored ?
         rationalQuotient.map(primeFactorize) :
-        rationalQuotient.map((rationalQuotientPart: RationalQuotientPart): string => {
+        rationalQuotient.map((rationalQuotientPart: IntegerQuotientPart): string => {
             return rationalQuotientPart.toString()
         })
 }

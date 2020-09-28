@@ -4,19 +4,19 @@ import { multiply } from "../../../typedOperations"
 import { isInteger } from "../../typeGuards"
 import { RationalDecimal } from "../decimal"
 import { computeLowestTermsRationalQuotient } from "./lowestTerms"
-import { RationalDenominator, RationalNumerator, RationalQuotient } from "./types"
+import { IntegerDenominator, IntegerNumerator, RationalQuotient } from "./types"
 
 const computeRationalQuotientFromRationalDecimal = <T extends NumTypeParameters>(
     rationalDecimal: RationalDecimal<T>,
 ): RationalQuotient<T> => {
-    let denominator: RationalDenominator = 1 as RationalDenominator
+    let denominator: IntegerDenominator = 1 as IntegerDenominator
     let numerator = rationalDecimal as number
     while (!isInteger(numerator)) {
-        denominator = multiply(denominator, 10 as Multiplier<RationalDenominator>)
+        denominator = multiply(denominator, 10 as Multiplier<IntegerDenominator>)
         numerator = numerator * 10
     }
 
-    const quotient = [numerator as RationalNumerator, denominator] as RationalQuotient<T>
+    const quotient = [numerator as IntegerNumerator, denominator] as RationalQuotient<T>
 
     return computeLowestTermsRationalQuotient(quotient)
 }

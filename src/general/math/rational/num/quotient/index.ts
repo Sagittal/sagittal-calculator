@@ -8,7 +8,9 @@ export { computeLowestTermsRationalQuotient } from "./lowestTerms"
 export {
     RationalNumByQuotient,
     RationalQuotient,
-    RationalDenominator,
-    RationalQuotientPart,
-    RationalNumerator,
+    IntegerDenominator,
+    IntegerQuotientPart,
+    IntegerNumerator,
+    IntegerQuotient,
+    IntegerNumByQuotient,
 } from "./types"

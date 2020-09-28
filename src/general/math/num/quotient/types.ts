@@ -3,21 +3,17 @@ import { Monzo } from "../monzo"
 import {
     NumTypeParameterEffects,
     NumTypeParameters,
-    NumTypeParameterTranslationForMonzosAndQuotientsToTheirQuotientPartsAndTermsAboutRationality,
 } from "../types"
 
 type NumTypeParameterTranslationForQuotientsToTheirQuotientPartsExceptRationality<T extends NumTypeParameters = {}> =
     (T extends { rough: number } ? { rough: T["rough"] } : {})
     & (T extends { smooth: number } ? { smooth: T["smooth"] } : {})
-    & (T extends { integer: true } ? { irrational: false, integer: true } : {})
 
 type Numerator<T extends NumTypeParameters = {}> =
-    Decimal<NumTypeParameterTranslationForMonzosAndQuotientsToTheirQuotientPartsAndTermsAboutRationality<T>
-        & NumTypeParameterTranslationForQuotientsToTheirQuotientPartsExceptRationality<T>>
+    Decimal<NumTypeParameterTranslationForQuotientsToTheirQuotientPartsExceptRationality<T>>
     & { _NumeratorBrand: boolean }
 type Denominator<T extends NumTypeParameters = {}> =
-    Decimal<NumTypeParameterTranslationForMonzosAndQuotientsToTheirQuotientPartsAndTermsAboutRationality<T>
-        & NumTypeParameterTranslationForQuotientsToTheirQuotientPartsExceptRationality<T>>
+    Decimal<NumTypeParameterTranslationForQuotientsToTheirQuotientPartsExceptRationality<T>>
     & { _DenominatorBrand: boolean }
 type Quotient<T extends NumTypeParameters = {}> =
     [Numerator<T>, Denominator<T>]

@@ -18,7 +18,7 @@ const computeQuotientFromMonzo: {
 } = <T extends NumTypeParameters>(
     monzo: Monzo<T>,
     { disableErrorBecauseExactValueNotRequired }: { disableErrorBecauseExactValueNotRequired?: boolean } = {},
-): Quotient<T> => {
+): any => {
     let numerator: Numerator<T> = 1 as Numerator<T>
     let denominator: Denominator<T> = 1 as Denominator<T>
 

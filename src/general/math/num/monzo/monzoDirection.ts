@@ -35,7 +35,7 @@ const computeSuperMonzo: {
     ): Monzo<T & { direction: Direction.SUPER, integer: false }>,
 } = <T extends NumTypeParameters>(
     monzo: Monzo<T>,
-): Monzo<T & { direction: Direction.SUPER, integer: false }> => {
+): any => {
     if (isSubMonzo(monzo)) {
         return invertMonzo(monzo) as Monzo<T & { direction: Direction.SUPER, integer: false }>
     }
@@ -62,7 +62,7 @@ const invertMonzo: {
     <T extends NumTypeParameters>(
         monzo: Monzo<T>,
     ): Monzo<T & { integer: false }>,
-} = <T extends NumTypeParameters>(monzo: Monzo<T>): Monzo<T & { integer: false }> =>
+} = <T extends NumTypeParameters>(monzo: Monzo<T>): any =>
     monzo.map((primeExponent: Exponent<Prime>): Exponent<Prime> => {
         return primeExponent === 0 ?
             0 as Exponent<Prime> :

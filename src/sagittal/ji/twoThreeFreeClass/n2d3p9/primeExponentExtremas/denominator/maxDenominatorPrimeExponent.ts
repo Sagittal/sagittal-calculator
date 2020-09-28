@@ -1,4 +1,4 @@
-import { decrement, Exponent, increment, Max, Prime, RationalDenominator } from "../../../../../../general"
+import { decrement, Exponent, increment, IntegerDenominator, Max, Prime } from "../../../../../../general"
 import { N2D3P9 } from "../../types"
 import { computeMinN2D3P9ForCandidateMaxDenominatorPrimeExponentGivenMaxN2D3P9 } from "./minN2D3P9"
 import {
@@ -19,10 +19,10 @@ http://forum.sagittal.org/viewtopic.php?p=2295#p2295
 */
 
 const computeMaxDenominatorPrimeExponentGivenMaxN2D3P9 = (
-    denominatorPrime: RationalDenominator & Prime,
+    denominatorPrime: IntegerDenominator & Prime,
     maxN2D3P9: Max<N2D3P9>,
     numeratorPossibilitiesForDenominatorGivenMaxN2D3P9: NumeratorPossibilityForDenominatorGivenMaxN2D3P9[],
-): Max<RationalDenominator & Exponent<Prime>> => {
+): Max<IntegerDenominator & Exponent<Prime>> => {
     const sortedNumeratorPossibilitiesForDenominatorPrimeGivenMaxN2D3P9 =
         computeSortedNumeratorPossibilitiesForDenominatorPrimeGivenMaxN2D3P9(
             denominatorPrime,
@@ -30,7 +30,7 @@ const computeMaxDenominatorPrimeExponentGivenMaxN2D3P9 = (
             numeratorPossibilitiesForDenominatorGivenMaxN2D3P9,
         )
 
-    let candidateMaxDenominatorPrimeExponentGivenMaxN2D3P9 = 1 as Max<RationalDenominator & Exponent<Prime>>
+    let candidateMaxDenominatorPrimeExponentGivenMaxN2D3P9 = 1 as Max<IntegerDenominator & Exponent<Prime>>
     while (true) {
         const minN2D3P9ForCandidateMaxDenominatorPrimeExponentGivenMaxN2D3P9 =
             computeMinN2D3P9ForCandidateMaxDenominatorPrimeExponentGivenMaxN2D3P9({
@@ -49,7 +49,7 @@ const computeMaxDenominatorPrimeExponentGivenMaxN2D3P9 = (
         }
     }
 
-    return candidateMaxDenominatorPrimeExponentGivenMaxN2D3P9 as Max<RationalDenominator & Exponent<Prime>>
+    return candidateMaxDenominatorPrimeExponentGivenMaxN2D3P9 as Max<IntegerDenominator & Exponent<Prime>>
 }
 
 export {
