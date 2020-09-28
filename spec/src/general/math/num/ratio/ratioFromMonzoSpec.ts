@@ -28,5 +28,12 @@ describe("computeRatioFromMonzo", (): void => {
         expect(actual).toEqual(expected)
     })
 
-    // TODO: it works for an irrational monzo -> irrational ratio
+    it("works for irrational monzos to irrational ratios", (): void => {
+        const monzo = [-5.5, 3.5] as Monzo
+
+        const actual = computeRatioFromMonzo(monzo)
+
+        const expected = [46.765372, 45.254834] as Ratio
+        expect(actual).toBeCloseToArray(expected)
+    })
 })

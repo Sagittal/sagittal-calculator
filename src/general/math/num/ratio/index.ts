@@ -1,5 +1,5 @@
 export { isSubRatio, isSuperRatio, isUnisonRatio, computeSubRatio, invertRatio } from "./ratioDirection"
-export { equalRatios } from "./equalRatios"
+export { equalIrrationalRatios } from "./equalIrrationalRatios"
 export { computeRatioFromMonzo } from "./ratioFromMonzo"
 export {
     FractionalPartType,

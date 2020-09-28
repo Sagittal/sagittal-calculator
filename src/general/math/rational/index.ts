@@ -48,4 +48,6 @@ export {
     RationalNumerator,
     RationalRatio,
     RationalMonzo,
+    equalRatios,
+    RationalDecimal,
 } from "./num"

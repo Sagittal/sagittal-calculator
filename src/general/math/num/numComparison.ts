@@ -1,8 +1,9 @@
 import { isCloseTo, isUndefined, MAX_JAVASCRIPT_PRECISION, Precision } from "../../code"
 import { formatNum } from "../../io"
+import { equalRatios } from "../rational"
 import { computeDecimalFromMonzo, computeDecimalFromNum, computeDecimalFromRatio } from "./decimal"
 import { equalMonzos } from "./monzo"
-import { computeRatioFromMonzo, equalRatios } from "./ratio"
+import { computeRatioFromMonzo } from "./ratio"
 import { Num } from "./types"
 
 const equalNums = (numA: Num, numB: Num, precision: Precision = MAX_JAVASCRIPT_PRECISION): boolean => {

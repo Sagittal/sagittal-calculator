@@ -12,12 +12,12 @@ export {
     isUnisonRatio,
     Ratio,
     computeSubRatio,
-    equalRatios,
     invertRatio,
     NumTypeParameterTranslationForRatiosToTheirFractionalPartsExceptRationality,
     Denominator,
     FractionalPart,
     computeRatioFromMonzo,
+    equalIrrationalRatios,
 } from "./ratio"
 export {
     isSubMonzo,

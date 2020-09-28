@@ -9,7 +9,6 @@ export {
     Ratio,
     computeSubRatio,
     computeDecimalFromRatio,
-    equalRatios,
     isSubMonzo,
     computeSuperMonzo,
     invertMonzo,
@@ -122,4 +121,6 @@ export {
     RationalNumerator,
     RationalRatio,
     RationalMonzo,
+    equalRatios,
+    RationalDecimal,
 } from "./rational"

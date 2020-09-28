@@ -19,6 +19,7 @@ export {
     RationalFractionalPart,
     RationalNumerator,
     RationalRatio,
+    equalRatios,
 } from "./ratio"
 export {
     computeIntegerMonzoFromInteger,

@@ -1,4 +1,4 @@
-import { Id, Maybe, Zone } from "../../../../../../src/general"
+import { computeDecimalFromNum, Id, Maybe, Zone } from "../../../../../../src/general"
 import { JI_NOTATION_LEVELS_SYMBOL_CLASS_IDS, PrimaryComma, SymbolClass } from "../../../../../../src/sagittal"
 import { JiNotationLevel } from "../../../../../../src/sagittal/notations/ji"
 import { computeCaptureZone } from "../../../../../../src/sagittal/notations/ji/captureZone"
@@ -26,8 +26,8 @@ describe("capture zones", (): void => {
             [{ decimal: 1.036740 }, { decimal: 1.040403 }], // [{ cents: 62.465465 }, { cents: 68.572508 }],
         ] as Array<Zone<PrimaryComma>>
         expected.forEach((zone: Zone, index: number): void => {
-            expect(actual[ index ]![ 0 ].decimal).toBeCloseToTyped(zone[ 0 ].decimal)
-            expect(actual[ index ]![ 1 ].decimal).toBeCloseToTyped(zone[ 1 ].decimal)
+            expect(computeDecimalFromNum(actual[ index ]![ 0 ])).toBeCloseToTyped(zone[ 0 ].decimal!)
+            expect(computeDecimalFromNum(actual[ index ]![ 1 ])).toBeCloseToTyped(zone[ 1 ].decimal!)
         })
     })
 
@@ -72,8 +72,8 @@ describe("capture zones", (): void => {
             [{ decimal: 1.038929 }, { decimal: 1.040403 }], // [{ cents: 66.117175 }, { cents: 68.572508 }],
         ] as Array<Zone<PrimaryComma>>
         expected.forEach((zone: Zone, index: number): void => {
-            expect(actual[ index ]![ 0 ].decimal).toBeCloseToTyped(zone[ 0 ].decimal)
-            expect(actual[ index ]![ 1 ].decimal).toBeCloseToTyped(zone[ 1 ].decimal)
+            expect(computeDecimalFromNum(actual[ index ]![ 0 ])).toBeCloseToTyped(zone[ 0 ].decimal!)
+            expect(computeDecimalFromNum(actual[ index ]![ 1 ])).toBeCloseToTyped(zone[ 1 ].decimal!)
         })
     })
 
@@ -141,8 +141,8 @@ describe("capture zones", (): void => {
             [{ decimal: 1.038929 }, { decimal: 1.040403 }], // [{ cents: 66.117175 }, { cents: 68.572508 }],
         ] as Array<Zone<PrimaryComma>>
         expected.forEach((zone: Zone, index: number): void => {
-            expect(actual[ index ]![ 0 ].decimal).toBeCloseToTyped(zone[ 0 ].decimal)
-            expect(actual[ index ]![ 1 ].decimal).toBeCloseToTyped(zone[ 1 ].decimal)
+            expect(computeDecimalFromNum(actual[ index ]![ 0 ])).toBeCloseToTyped(zone[ 0 ].decimal!)
+            expect(computeDecimalFromNum(actual[ index ]![ 1 ])).toBeCloseToTyped(zone[ 1 ].decimal!)
         })
     })
 
@@ -304,8 +304,8 @@ describe("capture zones", (): void => {
             [{ decimal: 1.040110 }, { decimal: 1.040403 }], // [{ cents: 68.084530 }, { cents: 68.572508 }],
         ] as Array<Zone<PrimaryComma>>
         expected.forEach((zone: Zone, index: number): void => {
-            expect(actual[ index ]![ 0 ].decimal).toBeCloseToTyped(zone[ 0 ].decimal)
-            expect(actual[ index ]![ 1 ].decimal).toBeCloseToTyped(zone[ 1 ].decimal)
+            expect(computeDecimalFromNum(actual[ index ]![ 0 ])).toBeCloseToTyped(zone[ 0 ].decimal!)
+            expect(computeDecimalFromNum(actual[ index ]![ 1 ])).toBeCloseToTyped(zone[ 1 ].decimal!)
         })
     })
 })

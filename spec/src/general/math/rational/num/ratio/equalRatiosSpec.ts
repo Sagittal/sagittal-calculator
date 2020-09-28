@@ -1,4 +1,5 @@
-import { equalRatios, Ratio } from "../../../../../../src/general/math/num/ratio"
+import { Ratio } from "../../../../../../../src/general/math/num/ratio"
+import { equalRatios } from "../../../../../../../src/general/math/rational/num/ratio"
 
 describe("equalRatios", (): void => {
     it("returns true when the ratios are equal", (): void => {

@@ -193,6 +193,7 @@ export {
     computeRationalMonzoFromRationalNum,
     RationalNum,
     isRationalNum,
+    RationalDecimal,
 } from "./math"
 export {
     Cents,

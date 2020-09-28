@@ -3,11 +3,11 @@ import { PrimaryComma } from "./types"
 
 const UNISON: PrimaryComma = {
     id: 0 as Id<PrimaryComma>,
-    monzo: [] as RationalMonzo
+    monzo: [] as RationalMonzo,
 } as PrimaryComma
 const PYTHAGOREAN_COMMA: PrimaryComma = {
     id: 48 as Id<PrimaryComma>,
-    monzo: [-19, 12] as RationalMonzo
+    monzo: [-19, 12] as RationalMonzo,
 } as PrimaryComma
 
 const PRIMARY_COMMAS: PrimaryComma[] = [
