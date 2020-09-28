@@ -22,8 +22,8 @@ enum CommandFlag {
     MAX_N2D3P9 = "n",
     ONLY_TOP = "o",
     PRIME_LIMIT = "p",
-    USE_BEST_NOTATING_COMMAS = "q",
-    QUOTIENT = "r", // TODO: make this q
+    QUOTIENT = "q",
+    USE_BEST_NOTATING_COMMAS = "r",
     SORT_BY = "s",
     LOG_TARGETS = "t",
     UPPER_BOUND = "u",

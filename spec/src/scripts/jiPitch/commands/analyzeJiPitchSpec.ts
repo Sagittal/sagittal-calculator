@@ -42,7 +42,7 @@ describe("analyze-ji-pitch", (): void => {
     it("can appraise a JI pitch for you", (): void => {
         onlyRunInCi()
 
-        const command = "npm run analyze-ji-pitch -- -r 2200/2187" as Io
+        const command = "npm run analyze-ji-pitch -- -q 2200/2187" as Io
 
         const actual = runCommandAndGetConsoleOutput(command)
 
