@@ -35,6 +35,9 @@ export {
     Denominator,
     QuotientPart,
     computeQuotientFromMonzo,
+    computeNumFromMonzo,
+    computeNumFromDecimal,
+    computeNumFromQuotient,
 } from "./num"
 export { computeDistributions } from "./distributions"
 export { dividesEvenly } from "./dividesEvenly"

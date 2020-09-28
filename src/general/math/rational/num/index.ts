@@ -1,6 +1,7 @@
 export {
     RationalNum,
     RationalNumByDecimal,
+    IntegerNum,
 } from "./types"
 export {
     computeIntegerFromIntegerMonzo,
@@ -20,6 +21,7 @@ export {
     IntegerNumerator,
     RationalQuotient,
     equalQuotients,
+    IntegerQuotient,
 } from "./quotient"
 export {
     computeIntegerMonzoFromInteger,

@@ -50,4 +50,6 @@ export {
     equalQuotients,
     RationalDecimal,
     IntegerMonzo,
+    IntegerNum,
+    IntegerQuotient,
 } from "./num"
