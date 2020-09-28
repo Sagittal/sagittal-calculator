@@ -1,11 +1,11 @@
 import { isUndefined } from "../../code"
 import {
-    computeDecimalFromRatio,
-    computeRationalRatioFromRationalDecimal,
+    computeDecimalFromQuotient,
+    computeRationalQuotientFromRationalDecimal,
     computeRoughRationalMonzo,
-    computeRoughRationalRatio,
+    computeRoughRationalQuotient,
     computeSuperMonzo,
-    computeSuperRatio,
+    computeSuperQuotient,
     FIVE_ROUGHNESS,
     isInteger,
     NumTypeParameters,
@@ -14,7 +14,7 @@ import {
 import { TwoThreeFreeClass } from "./types"
 
 const compute23FreeClass = <T extends NumTypeParameters>(
-    { monzo, ratio, decimal }: RationalNum<T>,
+    { monzo, quotient, decimal }: RationalNum<T>,
 ): TwoThreeFreeClass<T> => {
     const twoThreeFreeClass = {} as TwoThreeFreeClass
 
@@ -23,16 +23,16 @@ const compute23FreeClass = <T extends NumTypeParameters>(
         twoThreeFreeClass.monzo = computeSuperMonzo(twoThreeFreeMonzo)
     }
 
-    if (!isUndefined(ratio)) {
-        const twoThreeFreeRatio = computeRoughRationalRatio(ratio, FIVE_ROUGHNESS)
-        twoThreeFreeClass.ratio = computeSuperRatio(twoThreeFreeRatio)
+    if (!isUndefined(quotient)) {
+        const twoThreeFreeQuotient = computeRoughRationalQuotient(quotient, FIVE_ROUGHNESS)
+        twoThreeFreeClass.quotient = computeSuperQuotient(twoThreeFreeQuotient)
     }
 
     if (!isUndefined(decimal)) {
-        const ratio = computeRationalRatioFromRationalDecimal(decimal)
-        const twoThreeFreeRatio = computeRoughRationalRatio(ratio, FIVE_ROUGHNESS)
-        const super23FreeRatio = computeSuperRatio(twoThreeFreeRatio)
-        const super23FreeDecimal = computeDecimalFromRatio(super23FreeRatio)
+        const quotient = computeRationalQuotientFromRationalDecimal(decimal)
+        const twoThreeFreeQuotient = computeRoughRationalQuotient(quotient, FIVE_ROUGHNESS)
+        const super23FreeQuotient = computeSuperQuotient(twoThreeFreeQuotient)
+        const super23FreeDecimal = computeDecimalFromQuotient(super23FreeQuotient)
 
         if (!isInteger(super23FreeDecimal)) {
             throw new Error("Cannot safely represent a 2,3-free class (or JI in general) as a decimal which is not an integer.")

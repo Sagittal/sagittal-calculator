@@ -1,5 +1,5 @@
 import { Row } from "../../../../../../src/general/io/table"
-import { Abs, Exponent, Integer, Prime, RationalMonzo, RationalRatio } from "../../../../../../src/general/math"
+import { Abs, Exponent, Integer, Prime, RationalMonzo, RationalQuotient } from "../../../../../../src/general/math"
 import { Cents } from "../../../../../../src/general/music"
 import { ApotomeSlope, JiPitchAnalysis } from "../../../../../../src/sagittal/ji"
 import { jiPitchScriptGroupSettings } from "../../../../../../src/scripts/jiPitch/globals"
@@ -15,7 +15,7 @@ describe("computeJiPitchRow", (): void => {
         ...jiPitchAnalysisFixture,
         cents: 11.2 as Cents,
         monzo: [0, -1, 1] as RationalMonzo,
-        ratio: [5, 4] as RationalRatio,
+        quotient: [5, 4] as RationalQuotient,
         apotomeSlope: 8.2 as ApotomeSlope,
         aas: 8.2 as Abs<ApotomeSlope>,
         ate: 1 as Abs<Integer & Exponent<3 & Prime>>,
@@ -26,7 +26,7 @@ describe("computeJiPitchRow", (): void => {
         const actual = computeJiPitchRow(jiPitchAnalysis)
 
         const expected = [
-            "5/4",              // Ratio
+            "5/4",              // Quotient
             "[   0  -1   1 ⟩",  // Monzo
             "        11.200¢",  // Cents
             "  8.200",          // Apotome slope
@@ -37,7 +37,7 @@ describe("computeJiPitchRow", (): void => {
     })
 
     it("can filter the excluded fields", (): void => {
-        jiPitchScriptGroupSettings.excludedFields = [JiPitchField.APOTOME_SLOPE, JiPitchField.RATIO]
+        jiPitchScriptGroupSettings.excludedFields = [JiPitchField.APOTOME_SLOPE, JiPitchField.QUOTIENT]
         const actual = computeJiPitchRow(jiPitchAnalysis)
 
         const expected = [

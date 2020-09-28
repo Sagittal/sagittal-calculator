@@ -7,7 +7,7 @@ type Distribution<T> = Array<DistributionBin<T>> & { _DistributionBrand: boolean
 // Numeric types where parameter is also numeric
 type Exponent<T extends number = number> = number & { _ExponentBrand: boolean, _ExponentOfBrand: T }
 type Base<T extends number = number> = number & { _BaseBrand: boolean, _BaseOfBrand: T }
-// TODO: rework this to be a tuple, like Quotient or Ratio, of a Base and Exponent
+// TODO: rework this to be a tuple, like Quotient or Quotient, of a Base and Exponent
 //  (though remember to look up the email with Dave where he talks about this terminology)
 type Power<T extends number = number> = number & { _PowerBrand: boolean, _PowerOfBrand: T }
 

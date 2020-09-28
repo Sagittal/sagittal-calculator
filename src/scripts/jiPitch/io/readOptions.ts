@@ -7,8 +7,8 @@ import {
     Num,
     parseInteger,
     parseMonzo,
-    parseRatio,
-    Ratio,
+    parseQuotient,
+    Quotient,
     RationalMonzo,
 } from "../../../general"
 import { computeMonzoFrom23FreeClassAndSizeCategoryName, parseCommaName, parsePitch } from "../../../sagittal"
@@ -21,9 +21,9 @@ const readJiPitchOptions = (): void => {
             (monzoIo: string): Monzo => parseMonzo(monzoIo as Io),
         )
         .option(
-            `-${CommandFlag.RATIO}, --ratio <ratio>`,
-            "ratio",
-            (ratioIo: string): Ratio => parseRatio(ratioIo as Io),
+            `-${CommandFlag.QUOTIENT}, --quotient <quotient>`,
+            "quotient",
+            (quotientIo: string): Quotient => parseQuotient(quotientIo as Io),
         )
         .option(
             `-${CommandFlag.COMMA_NAME}, --comma-name <commaName>`,

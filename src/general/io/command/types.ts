@@ -23,7 +23,7 @@ enum CommandFlag {
     ONLY_TOP = "o",
     PRIME_LIMIT = "p",
     USE_BEST_NOTATING_COMMAS = "q",
-    RATIO = "r",
+    QUOTIENT = "r", // TODO: make this q
     SORT_BY = "s",
     LOG_TARGETS = "t",
     UPPER_BOUND = "u",

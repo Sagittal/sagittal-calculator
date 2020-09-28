@@ -1,5 +1,5 @@
 export { Decimal, NumByDecimal } from "./types"
 export { computeDecimalFromNum } from "./decimalFromNum"
 export { computeDecimalFromMonzo } from "./decimalFromMonzo"
-export { computeDecimalFromRatio } from "./decimalFromRatio"
+export { computeDecimalFromQuotient } from "./decimalFromQuotient"
 export { isSuperDecimal, isUnisonDecimal, isSubDecimal, invertDecimal } from "./decimalDirection"

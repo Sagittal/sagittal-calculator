@@ -1,4 +1,4 @@
-import { isRationalNum, RationalMonzo, RationalRatio } from "../../../../../../src/general/math/rational/num"
+import { isRationalNum, RationalMonzo, RationalQuotient } from "../../../../../../src/general/math/rational/num"
 
 describe("isRationalNum", (): void => {
     describe("works for nums with monzos", (): void => {
@@ -19,17 +19,17 @@ describe("isRationalNum", (): void => {
         })
     })
 
-    describe("works for nums with ratios", (): void => {
-        it("returns true if the ratio is rational", (): void => {
-            const candidateRationalNum = { ratio: [ 5, 4 ] as RationalRatio }
+    describe("works for nums with quotients", (): void => {
+        it("returns true if the quotient is rational", (): void => {
+            const candidateRationalNum = { quotient: [ 5, 4 ] as RationalQuotient }
 
             const actual = isRationalNum(candidateRationalNum)
 
             expect(actual).toBeTruthy()
         })
 
-        it("returns false if the ratio is irrational", (): void => {
-            const candidateRationalNum = { ratio: [ 5.1, 4.5 ] as RationalRatio }
+        it("returns false if the quotient is irrational", (): void => {
+            const candidateRationalNum = { quotient: [ 5.1, 4.5 ] as RationalQuotient }
 
             const actual = isRationalNum(candidateRationalNum)
 

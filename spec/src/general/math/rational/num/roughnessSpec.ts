@@ -3,7 +3,7 @@ import {
     Integer,
     isRoughRationalNum,
     RationalMonzo,
-    RationalRatio,
+    RationalQuotient,
     Roughness,
 } from "../../../../../../src/general/math"
 
@@ -26,9 +26,9 @@ describe("isRoughRationalNum", (): void => {
         })
     })
 
-    describe("by ratio", (): void => {
+    describe("by quotient", (): void => {
         it("returns true if the rational num is rough to the given roughness", (): void => {
-            const rationalNum = { ratio: [7, 5] as RationalRatio }
+            const rationalNum = { quotient: [7, 5] as RationalQuotient }
 
             const actual = isRoughRationalNum(rationalNum, FIVE_ROUGHNESS)
 
@@ -36,7 +36,7 @@ describe("isRoughRationalNum", (): void => {
         })
 
         it("returns false if the rational num is not rough to the given roughness", (): void => {
-            const rationalNum = { ratio: [5, 4] as RationalRatio }
+            const rationalNum = { quotient: [5, 4] as RationalQuotient }
 
             const actual = isRoughRationalNum(rationalNum, 7 as 7 & Roughness)
 

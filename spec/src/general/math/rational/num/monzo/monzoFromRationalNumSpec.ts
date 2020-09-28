@@ -1,4 +1,4 @@
-import { Integer, RationalMonzo, RationalRatio } from "../../../../../../../src/general/math"
+import { Integer, RationalMonzo, RationalQuotient } from "../../../../../../../src/general/math"
 import { computeRationalMonzoFromRationalNum } from "../../../../../../../src/general/math/rational/num/monzo"
 
 describe("computeRationalMonzoFromRationalNum", (): void => {
@@ -10,8 +10,8 @@ describe("computeRationalMonzoFromRationalNum", (): void => {
         expect(actual).toEqual(rationalNum.monzo)
     })
 
-    it("computes the monzo from the ratio, if present", (): void => {
-        const rationalNum = { ratio: [3, 2] as RationalRatio }
+    it("computes the monzo from the quotient, if present", (): void => {
+        const rationalNum = { quotient: [3, 2] as RationalQuotient }
 
         const actual = computeRationalMonzoFromRationalNum(rationalNum)
 

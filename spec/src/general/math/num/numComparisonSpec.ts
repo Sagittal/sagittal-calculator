@@ -7,7 +7,7 @@ import {
     numIsHigherOrEqual,
     numIsLower,
     numIsLowerOrEqual,
-    Ratio,
+    Quotient,
 } from "../../../../../src/general/math/num"
 
 describe("equalNums", (): void => {
@@ -20,9 +20,9 @@ describe("equalNums", (): void => {
         expect(actual).toBeTruthy()
     })
 
-    it("returns true if the ratios match", (): void => {
-        const numA: Num = { ratio: [5, 7] as Ratio }
-        const numB: Num = { ratio: [5, 7] as Ratio }
+    it("returns true if the quotients match", (): void => {
+        const numA: Num = { quotient: [5, 7] as Quotient }
+        const numB: Num = { quotient: [5, 7] as Quotient }
 
         const actual = equalNums(numA, numB)
 
@@ -38,27 +38,27 @@ describe("equalNums", (): void => {
         expect(actual).toBeFalsy()
     })
 
-    it("returns false if the ratios do not match", (): void => {
-        const numA: Num = { ratio: [5, 7] as Ratio }
-        const numB: Num = { ratio: [5, 6] as Ratio }
+    it("returns false if the quotients do not match", (): void => {
+        const numA: Num = { quotient: [5, 7] as Quotient }
+        const numB: Num = { quotient: [5, 6] as Quotient }
 
         const actual = equalNums(numA, numB)
 
         expect(actual).toBeFalsy()
     })
 
-    it("returns true if the monzo of one is not the same rational num as the ratio of the other", (): void => {
+    it("returns true if the monzo of one is not the same rational num as the quotient of the other", (): void => {
         const numA: Num = { monzo: [0, 0, 1, -1] as Monzo }
-        const numB: Num = { ratio: [5, 7] as Ratio }
+        const numB: Num = { quotient: [5, 7] as Quotient }
 
         const actual = equalNums(numA, numB)
 
         expect(actual).toBeTruthy()
     })
 
-    it("returns false if the monzo of one is not the same rational num as the ratio of the other", (): void => {
+    it("returns false if the monzo of one is not the same rational num as the quotient of the other", (): void => {
         const numA: Num = { monzo: [0, 0, 1, -1] as Monzo }
-        const numB: Num = { ratio: [5, 6] as Ratio }
+        const numB: Num = { quotient: [5, 6] as Quotient }
 
         const actual = equalNums(numA, numB)
 
@@ -74,9 +74,9 @@ describe("equalNums", (): void => {
         expect(actual).toBeTruthy()
     })
 
-    it("works when ratios haven't been reduced", (): void => {
-        const numA: Num = { ratio: [10, 14] as Ratio }
-        const numB: Num = { ratio: [5, 7] as Ratio }
+    it("works when quotients haven't been reduced", (): void => {
+        const numA: Num = { quotient: [10, 14] as Quotient }
+        const numB: Num = { quotient: [5, 7] as Quotient }
 
         const actual = equalNums(numA, numB)
 
@@ -119,8 +119,8 @@ describe("equalNums", (): void => {
         expect(actual).toBeFalsy()
     })
 
-    it("returns true when one has a ratio and the other has a decimal, and they match", (): void => {
-        const numA: Num = { ratio: [7, 5] as Ratio }
+    it("returns true when one has a quotient and the other has a decimal, and they match", (): void => {
+        const numA: Num = { quotient: [7, 5] as Quotient }
         const numB: Num = { decimal: 1.4 as Decimal }
 
         const actual = equalNums(numA, numB)
@@ -128,8 +128,8 @@ describe("equalNums", (): void => {
         expect(actual).toBeTruthy()
     })
 
-    it("returns false when one has a ratio and the other has a decimal, and they do not match", (): void => {
-        const numA: Num = { ratio: [7, 10] as Ratio }
+    it("returns false when one has a quotient and the other has a decimal, and they do not match", (): void => {
+        const numA: Num = { quotient: [7, 10] as Quotient }
         const numB: Num = { decimal: 1.4 as Decimal }
 
         const actual = equalNums(numA, numB)
@@ -168,10 +168,10 @@ describe("numIsHigher", (): void => {
         })
     })
 
-    describe("when both numes have ratios", (): void => {
+    describe("when both numes have quotients", (): void => {
         it("returns true if the num is higher than the other", (): void => {
-            const num = { ratio: [5, 4] as Ratio }
-            const otherNum = { ratio: [9, 8] as Ratio }
+            const num = { quotient: [5, 4] as Quotient }
+            const otherNum = { quotient: [9, 8] as Quotient }
 
             const actual = numIsHigher(num, otherNum)
 
@@ -179,8 +179,8 @@ describe("numIsHigher", (): void => {
         })
 
         it("returns false if the num is equal to the other", (): void => {
-            const num = { ratio: [5, 4] as Ratio }
-            const otherNum = { ratio: [5, 4] as Ratio }
+            const num = { quotient: [5, 4] as Quotient }
+            const otherNum = { quotient: [5, 4] as Quotient }
 
             const actual = numIsHigher(num, otherNum)
 
@@ -188,8 +188,8 @@ describe("numIsHigher", (): void => {
         })
 
         it("returns false if the num is lower than the other", (): void => {
-            const num = { ratio: [9, 8] as Ratio }
-            const otherNum = { ratio: [5, 4] as Ratio }
+            const num = { quotient: [9, 8] as Quotient }
+            const otherNum = { quotient: [5, 4] as Quotient }
 
             const actual = numIsHigher(num, otherNum)
 
@@ -226,10 +226,10 @@ describe("numIsHigher", (): void => {
         })
     })
 
-    describe("when one num has a monzo and the other has a ratio", (): void => {
+    describe("when one num has a monzo and the other has a quotient", (): void => {
         it("returns true if the num is higher than the other", (): void => {
             const num = { monzo: [0, 0, 0, 1] as Monzo }
-            const otherNum = { ratio: [5, 4] as Ratio }
+            const otherNum = { quotient: [5, 4] as Quotient }
 
             const actual = numIsHigher(num, otherNum)
 
@@ -238,7 +238,7 @@ describe("numIsHigher", (): void => {
 
         it("returns false if the num is equal to the other", (): void => {
             const num = { monzo: [-2, 0, 1] as Monzo }
-            const otherNum = { ratio: [5, 4] as Ratio }
+            const otherNum = { quotient: [5, 4] as Quotient }
 
             const actual = numIsHigher(num, otherNum)
 
@@ -247,7 +247,7 @@ describe("numIsHigher", (): void => {
 
         it("returns false if the num is lower than the other", (): void => {
             const num = { monzo: [4, -1, -1] as Monzo }
-            const otherNum = { ratio: [5, 4] as Ratio }
+            const otherNum = { quotient: [5, 4] as Quotient }
 
             const actual = numIsHigher(num, otherNum)
 
@@ -284,9 +284,9 @@ describe("numIsHigher", (): void => {
         })
     })
 
-    describe("when one num has a ratio and the other has a decimal", (): void => {
+    describe("when one num has a quotient and the other has a decimal", (): void => {
         it("returns true if the num is higher than the other", (): void => {
-            const num = { ratio: [5, 4] as Ratio }
+            const num = { quotient: [5, 4] as Quotient }
             const otherNum = { decimal: 1.2 as Decimal }
 
             const actual = numIsHigher(num, otherNum)
@@ -295,7 +295,7 @@ describe("numIsHigher", (): void => {
         })
 
         it("returns false if the num is equal to the other", (): void => {
-            const num = { ratio: [5, 4] as Ratio }
+            const num = { quotient: [5, 4] as Quotient }
             const otherNum = { decimal: 1.25 as Decimal }
 
             const actual = numIsHigher(num, otherNum)
@@ -304,7 +304,7 @@ describe("numIsHigher", (): void => {
         })
 
         it("returns false if the num is lower than the other", (): void => {
-            const num = { ratio: [5, 4] as Ratio }
+            const num = { quotient: [5, 4] as Quotient }
             const otherNum = { decimal: 1.3 as Decimal }
 
             const actual = numIsHigher(num, otherNum)
@@ -344,10 +344,10 @@ describe("numIsLower", (): void => {
         })
     })
 
-    describe("when both numes have ratios", (): void => {
+    describe("when both numes have quotients", (): void => {
         it("returns false if the num is higher than the other", (): void => {
-            const num = { ratio: [5, 4] as Ratio }
-            const otherNum = { ratio: [9, 8] as Ratio }
+            const num = { quotient: [5, 4] as Quotient }
+            const otherNum = { quotient: [9, 8] as Quotient }
 
             const actual = numIsLower(num, otherNum)
 
@@ -355,8 +355,8 @@ describe("numIsLower", (): void => {
         })
 
         it("returns false if the num is equal to the other", (): void => {
-            const num = { ratio: [5, 4] as Ratio }
-            const otherNum = { ratio: [5, 4] as Ratio }
+            const num = { quotient: [5, 4] as Quotient }
+            const otherNum = { quotient: [5, 4] as Quotient }
 
             const actual = numIsLower(num, otherNum)
 
@@ -364,8 +364,8 @@ describe("numIsLower", (): void => {
         })
 
         it("returns true if the num is lower than the other", (): void => {
-            const num = { ratio: [9, 8] as Ratio }
-            const otherNum = { ratio: [5, 4] as Ratio }
+            const num = { quotient: [9, 8] as Quotient }
+            const otherNum = { quotient: [5, 4] as Quotient }
 
             const actual = numIsLower(num, otherNum)
 
@@ -402,10 +402,10 @@ describe("numIsLower", (): void => {
         })
     })
 
-    describe("when one num has a monzo and the other has a ratio", (): void => {
+    describe("when one num has a monzo and the other has a quotient", (): void => {
         it("returns false if the num is higher than the other", (): void => {
             const num = { monzo: [0, 0, 0, 1] as Monzo }
-            const otherNum = { ratio: [5, 4] as Ratio }
+            const otherNum = { quotient: [5, 4] as Quotient }
 
             const actual = numIsLower(num, otherNum)
 
@@ -414,7 +414,7 @@ describe("numIsLower", (): void => {
 
         it("returns false if the num is equal to the other", (): void => {
             const num = { monzo: [-2, 0, 1] as Monzo }
-            const otherNum = { ratio: [5, 4] as Ratio }
+            const otherNum = { quotient: [5, 4] as Quotient }
 
             const actual = numIsLower(num, otherNum)
 
@@ -423,7 +423,7 @@ describe("numIsLower", (): void => {
 
         it("returns true if the num is lower than the other", (): void => {
             const num = { monzo: [4, -1, -1] as Monzo }
-            const otherNum = { ratio: [5, 4] as Ratio }
+            const otherNum = { quotient: [5, 4] as Quotient }
 
             const actual = numIsLower(num, otherNum)
 
@@ -460,9 +460,9 @@ describe("numIsLower", (): void => {
         })
     })
 
-    describe("when one num has a ratio and the other has a decimal", (): void => {
+    describe("when one num has a quotient and the other has a decimal", (): void => {
         it("returns false if the num is higher than the other", (): void => {
-            const num = { ratio: [5, 4] as Ratio }
+            const num = { quotient: [5, 4] as Quotient }
             const otherNum = { decimal: 1.2 as Decimal }
 
             const actual = numIsLower(num, otherNum)
@@ -471,7 +471,7 @@ describe("numIsLower", (): void => {
         })
 
         it("returns false if the num is equal to the other", (): void => {
-            const num = { ratio: [5, 4] as Ratio }
+            const num = { quotient: [5, 4] as Quotient }
             const otherNum = { decimal: 1.25 as Decimal }
 
             const actual = numIsLower(num, otherNum)
@@ -480,7 +480,7 @@ describe("numIsLower", (): void => {
         })
 
         it("returns true if the num is lower than the other", (): void => {
-            const num = { ratio: [5, 4] as Ratio }
+            const num = { quotient: [5, 4] as Quotient }
             const otherNum = { decimal: 1.3 as Decimal }
 
             const actual = numIsLower(num, otherNum)
@@ -520,10 +520,10 @@ describe("numIsHigherOrEqual", (): void => {
         })
     })
 
-    describe("when both numes have ratios", (): void => {
+    describe("when both numes have quotients", (): void => {
         it("returns true if the num is higher than the other", (): void => {
-            const num = { ratio: [5, 4] as Ratio }
-            const otherNum = { ratio: [9, 8] as Ratio }
+            const num = { quotient: [5, 4] as Quotient }
+            const otherNum = { quotient: [9, 8] as Quotient }
 
             const actual = numIsHigherOrEqual(num, otherNum)
 
@@ -531,8 +531,8 @@ describe("numIsHigherOrEqual", (): void => {
         })
 
         it("returns true if the num is equal to the other", (): void => {
-            const num = { ratio: [5, 4] as Ratio }
-            const otherNum = { ratio: [5, 4] as Ratio }
+            const num = { quotient: [5, 4] as Quotient }
+            const otherNum = { quotient: [5, 4] as Quotient }
 
             const actual = numIsHigherOrEqual(num, otherNum)
 
@@ -540,8 +540,8 @@ describe("numIsHigherOrEqual", (): void => {
         })
 
         it("returns false if the num is lower than the other", (): void => {
-            const num = { ratio: [9, 8] as Ratio }
-            const otherNum = { ratio: [5, 4] as Ratio }
+            const num = { quotient: [9, 8] as Quotient }
+            const otherNum = { quotient: [5, 4] as Quotient }
 
             const actual = numIsHigherOrEqual(num, otherNum)
 
@@ -578,10 +578,10 @@ describe("numIsHigherOrEqual", (): void => {
         })
     })
 
-    describe("when one num has a monzo and the other has a ratio", (): void => {
+    describe("when one num has a monzo and the other has a quotient", (): void => {
         it("returns true if the num is higher than the other", (): void => {
             const num = { monzo: [0, 0, 0, 1] as Monzo }
-            const otherNum = { ratio: [5, 4] as Ratio }
+            const otherNum = { quotient: [5, 4] as Quotient }
 
             const actual = numIsHigherOrEqual(num, otherNum)
 
@@ -590,7 +590,7 @@ describe("numIsHigherOrEqual", (): void => {
 
         it("returns true if the num is equal to the other", (): void => {
             const num = { monzo: [-2, 0, 1] as Monzo }
-            const otherNum = { ratio: [5, 4] as Ratio }
+            const otherNum = { quotient: [5, 4] as Quotient }
 
             const actual = numIsHigherOrEqual(num, otherNum)
 
@@ -599,7 +599,7 @@ describe("numIsHigherOrEqual", (): void => {
 
         it("returns false if the num is lower than the other", (): void => {
             const num = { monzo: [4, -1, -1] as Monzo }
-            const otherNum = { ratio: [5, 4] as Ratio }
+            const otherNum = { quotient: [5, 4] as Quotient }
 
             const actual = numIsHigherOrEqual(num, otherNum)
 
@@ -636,9 +636,9 @@ describe("numIsHigherOrEqual", (): void => {
         })
     })
 
-    describe("when one num has a ratio and the other has a decimal", (): void => {
+    describe("when one num has a quotient and the other has a decimal", (): void => {
         it("returns true if the num is higher than the other", (): void => {
-            const num = { ratio: [5, 4] as Ratio }
+            const num = { quotient: [5, 4] as Quotient }
             const otherNum = { decimal: 1.2 as Decimal }
 
             const actual = numIsHigherOrEqual(num, otherNum)
@@ -647,7 +647,7 @@ describe("numIsHigherOrEqual", (): void => {
         })
 
         it("returns true if the num is equal to the other", (): void => {
-            const num = { ratio: [5, 4] as Ratio }
+            const num = { quotient: [5, 4] as Quotient }
             const otherNum = { decimal: 1.25 as Decimal }
 
             const actual = numIsHigherOrEqual(num, otherNum)
@@ -656,7 +656,7 @@ describe("numIsHigherOrEqual", (): void => {
         })
 
         it("returns false if the num is lower than the other", (): void => {
-            const num = { ratio: [5, 4] as Ratio }
+            const num = { quotient: [5, 4] as Quotient }
             const otherNum = { decimal: 1.3 as Decimal }
 
             const actual = numIsHigherOrEqual(num, otherNum)
@@ -696,10 +696,10 @@ describe("numIsLowerOrEqual", (): void => {
         })
     })
 
-    describe("when both numes have ratios", (): void => {
+    describe("when both numes have quotients", (): void => {
         it("returns false if the num is higher than the other", (): void => {
-            const num = { ratio: [5, 4] as Ratio }
-            const otherNum = { ratio: [9, 8] as Ratio }
+            const num = { quotient: [5, 4] as Quotient }
+            const otherNum = { quotient: [9, 8] as Quotient }
 
             const actual = numIsLowerOrEqual(num, otherNum)
 
@@ -707,8 +707,8 @@ describe("numIsLowerOrEqual", (): void => {
         })
 
         it("returns true if the num is equal to the other", (): void => {
-            const num = { ratio: [5, 4] as Ratio }
-            const otherNum = { ratio: [5, 4] as Ratio }
+            const num = { quotient: [5, 4] as Quotient }
+            const otherNum = { quotient: [5, 4] as Quotient }
 
             const actual = numIsLowerOrEqual(num, otherNum)
 
@@ -716,8 +716,8 @@ describe("numIsLowerOrEqual", (): void => {
         })
 
         it("returns true if the num is lower than the other", (): void => {
-            const num = { ratio: [9, 8] as Ratio }
-            const otherNum = { ratio: [5, 4] as Ratio }
+            const num = { quotient: [9, 8] as Quotient }
+            const otherNum = { quotient: [5, 4] as Quotient }
 
             const actual = numIsLowerOrEqual(num, otherNum)
 
@@ -754,10 +754,10 @@ describe("numIsLowerOrEqual", (): void => {
         })
     })
 
-    describe("when one num has a monzo and the other has a ratio", (): void => {
+    describe("when one num has a monzo and the other has a quotient", (): void => {
         it("returns false if the num is higher than the other", (): void => {
             const num = { monzo: [0, 0, 0, 1] as Monzo }
-            const otherNum = { ratio: [5, 4] as Ratio }
+            const otherNum = { quotient: [5, 4] as Quotient }
 
             const actual = numIsLowerOrEqual(num, otherNum)
 
@@ -766,7 +766,7 @@ describe("numIsLowerOrEqual", (): void => {
 
         it("returns true if the num is equal to the other", (): void => {
             const num = { monzo: [-2, 0, 1] as Monzo }
-            const otherNum = { ratio: [5, 4] as Ratio }
+            const otherNum = { quotient: [5, 4] as Quotient }
 
             const actual = numIsLowerOrEqual(num, otherNum)
 
@@ -775,7 +775,7 @@ describe("numIsLowerOrEqual", (): void => {
 
         it("returns true if the num is lower than the other", (): void => {
             const num = { monzo: [4, -1, -1] as Monzo }
-            const otherNum = { ratio: [5, 4] as Ratio }
+            const otherNum = { quotient: [5, 4] as Quotient }
 
             const actual = numIsLowerOrEqual(num, otherNum)
 
@@ -812,9 +812,9 @@ describe("numIsLowerOrEqual", (): void => {
         })
     })
 
-    describe("when one num has a ratio and the other has a decimal", (): void => {
+    describe("when one num has a quotient and the other has a decimal", (): void => {
         it("returns false if the num is higher than the other", (): void => {
-            const num = { ratio: [5, 4] as Ratio }
+            const num = { quotient: [5, 4] as Quotient }
             const otherNum = { decimal: 1.2 as Decimal }
 
             const actual = numIsLowerOrEqual(num, otherNum)
@@ -823,7 +823,7 @@ describe("numIsLowerOrEqual", (): void => {
         })
 
         it("returns true if the num is equal to the other", (): void => {
-            const num = { ratio: [5, 4] as Ratio }
+            const num = { quotient: [5, 4] as Quotient }
             const otherNum = { decimal: 1.25 as Decimal }
 
             const actual = numIsLowerOrEqual(num, otherNum)
@@ -832,7 +832,7 @@ describe("numIsLowerOrEqual", (): void => {
         })
 
         it("returns true if the num is lower than the other", (): void => {
-            const num = { ratio: [5, 4] as Ratio }
+            const num = { quotient: [5, 4] as Quotient }
             const otherNum = { decimal: 1.3 as Decimal }
 
             const actual = numIsLowerOrEqual(num, otherNum)

@@ -1,7 +1,7 @@
 import {
     ANY_CENTS_CHARS,
     ANY_MONZO_CHARS,
-    ANY_RATIO_CHARS,
+    ANY_QUOTIENT_CHARS,
     computeNumberFromCents,
     IDENTIFYING_COMMA_NAME_CHARS,
     Io,
@@ -9,21 +9,21 @@ import {
     parseCents,
     parseDecimal,
     parseMonzo,
-    parseRatio,
+    parseQuotient,
 } from "../../general"
 import { computeMonzoFrom23FreeClassAndSizeCategoryName, parseCommaName } from "../ji"
 
 const parsePitch = (pitchIo: Io): Num => {
     let pitch: Num
     if (pitchIo.match(IDENTIFYING_COMMA_NAME_CHARS)) {
-        const { commaNameRatio, sizeCategoryName } = parseCommaName(pitchIo)
+        const { commaNameQuotient, sizeCategoryName } = parseCommaName(pitchIo)
         // TODO: this, by comma name, is the only reason this has to live in here.
         //  Because comma name is sagittal-specific.
         //  Perhaps you should rename this to account for that, like, parsePotentiallyComma or something?
         //  Or break out everything here that doesn't HAVE to live in sagittal/ elsewhere?
-        pitch = { monzo: computeMonzoFrom23FreeClassAndSizeCategoryName({ commaNameRatio, sizeCategoryName }) }
-    } else if (pitchIo.match(ANY_RATIO_CHARS)) {
-        pitch = { ratio: parseRatio(pitchIo) }
+        pitch = { monzo: computeMonzoFrom23FreeClassAndSizeCategoryName({ commaNameQuotient, sizeCategoryName }) }
+    } else if (pitchIo.match(ANY_QUOTIENT_CHARS)) {
+        pitch = { quotient: parseQuotient(pitchIo) }
     } else if (pitchIo.match(ANY_MONZO_CHARS)) {
         pitch = { monzo: parseMonzo(pitchIo) }
     } else if (pitchIo.match(ANY_CENTS_CHARS)) {

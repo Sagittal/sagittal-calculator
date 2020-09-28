@@ -10,7 +10,7 @@ import {
     Name,
     Prime,
     RationalMonzo,
-    RationalRatio,
+    RationalQuotient,
     Sopfr,
 } from "../../../../../src/general"
 import { ApotomeSlope, CommaAnalysis, N2D3P9, TwoThreeFreeClassAnalysis } from "../../../../../src/sagittal"
@@ -25,7 +25,7 @@ describe("analyzeComma", (): void => {
         const expected = {
             cents: 40.022726 as Cents,
             monzo: [-8, -6, 3, 5, -1] as RationalMonzo,
-            ratio: [2100875, 2052864] as RationalRatio,
+            quotient: [2100875, 2052864] as RationalQuotient,
             decimal: 1.023387 as Decimal,
             name: "2100875/11S" as Name<Comma>,
             apotomeSlope: -8.464345 as ApotomeSlope,

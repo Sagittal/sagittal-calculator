@@ -1,5 +1,5 @@
 import { program } from "commander"
-import { Abs, Decimal, Exponent, Integer, Max, Prime, RationalMonzo, RationalRatio } from "../../../../../src/general/math"
+import { Abs, Decimal, Exponent, Integer, Max, Prime, RationalMonzo, RationalQuotient } from "../../../../../src/general/math"
 import { ApotomeSlope, JiPitchAnalysis, N2D3P9 } from "../../../../../src/sagittal/ji"
 import { parseJiPitch, parseNotatingCommasSettings } from "../../../../../src/scripts/jiPitch/analyzeJiPitch"
 import { DEFAULT_FIND_COMMAS_SETTINGS } from "../../../../../src/scripts/jiPitch/findCommas"
@@ -47,7 +47,7 @@ describe("parseJiPitch", (): void => {
     beforeEach((): void => {
         program.args = []
         program.monzo = undefined
-        program.ratio = undefined
+        program.quotient = undefined
         program.commaName = undefined
         program.integer = undefined
     })
@@ -62,12 +62,12 @@ describe("parseJiPitch", (): void => {
             expect(actual).toEqual(expected)
         })
 
-        it("works for a ratio", (): void => {
+        it("works for a quotient", (): void => {
             program.args = ["7/2"]
 
             const actual = parseJiPitch()
 
-            const expected = { ratio: [7, 2] as RationalRatio }
+            const expected = { quotient: [7, 2] as RationalQuotient }
             expect(actual).toEqual(expected)
         })
 
@@ -100,12 +100,12 @@ describe("parseJiPitch", (): void => {
             expect(actual).toEqual(expected)
         })
 
-        it("works for a ratio (which will have been pre-parsed)", (): void => {
-            program.ratio = [7, 2]
+        it("works for a quotient (which will have been pre-parsed)", (): void => {
+            program.quotient = [7, 2]
 
             const actual = parseJiPitch()
 
-            const expected = { ratio: [7, 2] as RationalRatio }
+            const expected = { quotient: [7, 2] as RationalQuotient }
             expect(actual).toEqual(expected)
         })
 

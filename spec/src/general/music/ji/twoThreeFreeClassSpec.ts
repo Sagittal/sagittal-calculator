@@ -1,4 +1,4 @@
-import { Decimal, RationalMonzo, RationalRatio } from "../../../../../src/general/math"
+import { Decimal, RationalMonzo, RationalQuotient } from "../../../../../src/general/math"
 import { compute23FreeClass, TwoThreeFreeClass } from "../../../../../src/general/music"
 
 describe("compute23FreeClass", (): void => {
@@ -20,12 +20,12 @@ describe("compute23FreeClass", (): void => {
         expect(actual).toEqual(expected)
     })
 
-    it("works for pitches with ratios too", (): void => {
-        const jiPitch = { ratio: [48, 25] as RationalRatio }
+    it("works for pitches with quotients too", (): void => {
+        const jiPitch = { quotient: [48, 25] as RationalQuotient }
 
         const actual = compute23FreeClass(jiPitch)
 
-        const expected = { ratio: [25, 1] } as TwoThreeFreeClass
+        const expected = { quotient: [25, 1] } as TwoThreeFreeClass
         expect(actual).toEqual(expected)
     })
 
@@ -41,7 +41,7 @@ describe("compute23FreeClass", (): void => {
     it("if more than one representation is present, it includes all of them", (): void => {
         const jiPitch = {
             decimal: 8.5 as Decimal,
-            ratio: [17, 2] as RationalRatio,
+            quotient: [17, 2] as RationalQuotient,
             monzo: [-1, 0, 0, 0, 0, 0, 1] as RationalMonzo,
         }
 
@@ -49,7 +49,7 @@ describe("compute23FreeClass", (): void => {
 
         const expected = {
             decimal: 17,
-            ratio: [17, 1],
+            quotient: [17, 1],
             monzo: [0, 0, 0, 0, 0, 0, 1],
         } as TwoThreeFreeClass
         expect(actual).toEqual(expected)

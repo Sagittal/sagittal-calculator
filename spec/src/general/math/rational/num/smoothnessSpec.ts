@@ -4,7 +4,7 @@ import {
     isSmoothRationalNum,
     RationalMonzo,
     RationalNum,
-    RationalRatio,
+    RationalQuotient,
     Smoothness,
 } from "../../../../../../src/general/math"
 
@@ -27,9 +27,9 @@ describe("isSmoothRationalNum", (): void => {
         })
     })
 
-    describe("by ratio", (): void => {
+    describe("by quotient", (): void => {
         it("returns true if the rational num is smooth to the given smoothness", (): void => {
-            const rationalNum = { ratio: [7, 5] as RationalRatio }
+            const rationalNum = { quotient: [7, 5] as RationalQuotient }
 
             const actual = isSmoothRationalNum(rationalNum, 7 as 7 & Smoothness)
 
@@ -37,7 +37,7 @@ describe("isSmoothRationalNum", (): void => {
         })
 
         it("returns false if the rational num is not smooth to the given smoothness", (): void => {
-            const rationalNum = { ratio: [7, 5] as RationalRatio }
+            const rationalNum = { quotient: [7, 5] as RationalQuotient }
 
             const actual = isSmoothRationalNum(rationalNum, 3 as 3 & Smoothness)
 
@@ -74,8 +74,8 @@ describe("computeRationalNumSmoothness", (): void => {
         expect(actual).toBe(expected)
     })
 
-    it("works for rational nums with ratios", (): void => {
-        const rationalNum = { ratio: [7, 5] as RationalRatio }
+    it("works for rational nums with quotients", (): void => {
+        const rationalNum = { quotient: [7, 5] as RationalQuotient }
 
         const actual = computeRationalNumSmoothness(rationalNum)
 

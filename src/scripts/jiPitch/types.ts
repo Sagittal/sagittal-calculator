@@ -19,7 +19,7 @@ interface JiPitchScriptGroupSettings {
 //  The only drawback is that then, if you ever want to just filter one column, you'd have to write out all the others
 //  Okay so maybe just provide a new CLI arg
 enum JiPitchField {
-    RATIO = "ratio",
+    QUOTIENT = "quotient",
     MONZO = "monzo",
     CENTS = "cents",
     APOTOME_SLOPE = "apotomeSlope",
@@ -36,7 +36,7 @@ enum TwoThreeFreeClassField {
 }
 
 enum NotatingCommasField {
-    RATIO = "ratio",
+    QUOTIENT = "quotient",
     MONZO = "monzo",
     CENTS = "cents",
     APOTOME_SLOPE = "apotomeSlope",
@@ -47,7 +47,7 @@ enum NotatingCommasField {
 }
 
 enum FindCommasField {
-    RATIO = "ratio",
+    QUOTIENT = "quotient",
     MONZO = "monzo",
     CENTS = "cents",
     APOTOME_SLOPE = "apotomeSlope",

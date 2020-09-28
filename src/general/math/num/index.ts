@@ -1,24 +1,24 @@
 export {
     Decimal,
     computeDecimalFromNum,
-    computeDecimalFromRatio,
+    computeDecimalFromQuotient,
     computeDecimalFromMonzo,
 } from "./decimal"
 export {
-    isSubRatio,
-    isSuperRatio,
+    isSubQuotient,
+    isSuperQuotient,
     FractionalPartType,
-    computeSuperRatio,
-    isUnisonRatio,
-    Ratio,
-    computeSubRatio,
-    invertRatio,
-    NumTypeParameterTranslationForRatiosToTheirFractionalPartsExceptRationality,
+    computeSuperQuotient,
+    isUnisonQuotient,
+    Quotient,
+    computeSubQuotient,
+    invertQuotient,
+    NumTypeParameterTranslationForQuotientsToTheirFractionalPartsExceptRationality,
     Denominator,
     FractionalPart,
-    computeRatioFromMonzo,
-    equalIrrationalRatios,
-} from "./ratio"
+    computeQuotientFromMonzo,
+    equalIrrationalQuotients,
+} from "./quotient"
 export {
     isSubMonzo,
     computeSuperMonzo,
@@ -37,5 +37,5 @@ export {
     NumTypeParameters,
     Num,
     NumTypeParameterEffects,
-    NumTypeParameterTranslationForMonzosAndRatiosToTheirFractionalPartsAndTermsAboutRationality,
+    NumTypeParameterTranslationForMonzosAndQuotientsToTheirFractionalPartsAndTermsAboutRationality,
 } from "./types"

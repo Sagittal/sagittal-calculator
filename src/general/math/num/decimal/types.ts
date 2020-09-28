@@ -1,5 +1,5 @@
 import { Monzo } from "../monzo"
-import { Ratio } from "../ratio"
+import { Quotient } from "../quotient"
 import { NumTypeParameterEffects, NumTypeParameters } from "../types"
 
 type Decimal<T extends NumTypeParameters = {}> = number & NumTypeParameterEffects<T>
@@ -7,7 +7,7 @@ type Decimal<T extends NumTypeParameters = {}> = number & NumTypeParameterEffect
 type NumByDecimal<T extends NumTypeParameters> = {
     decimal: Decimal<T>,
     monzo?: Monzo<T>,
-    ratio?: Ratio<T>,
+    quotient?: Quotient<T>,
 }
 
 export {

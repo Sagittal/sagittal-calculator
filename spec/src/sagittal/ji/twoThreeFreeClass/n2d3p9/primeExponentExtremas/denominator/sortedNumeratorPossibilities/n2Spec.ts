@@ -1,4 +1,4 @@
-import { RationalNumerator } from "../../../../../../../../../src/general/math/rational/num/ratio"
+import { RationalNumerator } from "../../../../../../../../../src/general/math/rational/num/quotient"
 import { computeN2 } from "../../../../../../../../../src/sagittal/ji/twoThreeFreeClass/n2d3p9/primeExponentExtremas/denominator/sortedNumeratorPossibilities/n2"
 import { N2 } from "../../../../../../../../../src/sagittal/ji/twoThreeFreeClass/n2d3p9/primeExponentExtremas/denominator/sortedNumeratorPossibilities/types"
 

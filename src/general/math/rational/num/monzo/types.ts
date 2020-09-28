@@ -1,17 +1,17 @@
 import {
     NumTypeParameterEffects,
     NumTypeParameters,
-    NumTypeParameterTranslationForMonzosAndRatiosToTheirFractionalPartsAndTermsAboutRationality,
+    NumTypeParameterTranslationForMonzosAndQuotientsToTheirFractionalPartsAndTermsAboutRationality,
     NumTypeParameterTranslationForMonzosToTheirTermsExceptDefaultRationality,
 } from "../../../num"
 import { Exponent } from "../../../types"
 import { Prime } from "../../types"
 import { RationalDecimal } from "../decimal"
-import { RationalRatio } from "../ratio"
+import { RationalQuotient } from "../quotient"
 
 type RationalMonzo<T extends NumTypeParameters = {}> =
 // tslint:disable-next-line max-line-length
-    Array<RationalDecimal<NumTypeParameterTranslationForMonzosAndRatiosToTheirFractionalPartsAndTermsAboutRationality<T & { irrational: false }>
+    Array<RationalDecimal<NumTypeParameterTranslationForMonzosAndQuotientsToTheirFractionalPartsAndTermsAboutRationality<T & { irrational: false }>
         & NumTypeParameterTranslationForMonzosToTheirTermsExceptDefaultRationality<T & { irrational: false }>>
         & Exponent<Prime>>
     & NumTypeParameterEffects<T & { irrational: false }>
@@ -19,7 +19,7 @@ type RationalMonzo<T extends NumTypeParameters = {}> =
 type RationalNumByMonzo<T extends NumTypeParameters = {}> = {
     decimal?: RationalDecimal<T>,
     monzo: RationalMonzo<T>,
-    ratio?: RationalRatio<T>,
+    quotient?: RationalQuotient<T>,
 }
 
 export {

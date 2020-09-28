@@ -53,8 +53,8 @@ enum Parameter {
     Y = "y",
     // Prime exponent exponent, but only applied to d and overriding y if format
     V = "v",
-    // Reorient the ratio to use as its numerator the greater of the two results (the numinator)
-    // Of calling the submetric on the original ratio's numerator and denominator
+    // Reorient the quotient to use as its numerator the greater of the two results (the numinator)
+    // Of calling the submetric on the original quotient's numerator and denominator
     USE_NUMINATOR = "useNuminator",
     // Dave's trick where 5's get a half-count
     MODIFIED_COUNT = "modifiedCount",

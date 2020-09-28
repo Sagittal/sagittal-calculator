@@ -1,12 +1,12 @@
-import { computeRationalRatioFromRationalNum } from "../../math"
+import { computeRationalQuotientFromRationalNum } from "../../math"
 import { TwoThreeFreeClass } from "../../music"
-import { formatRatio } from "./ratio"
+import { formatQuotient } from "./quotient"
 import { Formatted } from "./types"
 
 const format23FreeClass = (twoThreeFreeClass: TwoThreeFreeClass): Formatted<TwoThreeFreeClass> => {
-    const ratio = computeRationalRatioFromRationalNum(twoThreeFreeClass)
+    const quotient = computeRationalQuotientFromRationalNum(twoThreeFreeClass)
 
-    return formatRatio(ratio) as Formatted as Formatted<TwoThreeFreeClass>
+    return formatQuotient(quotient) as Formatted as Formatted<TwoThreeFreeClass>
 }
 
 export {

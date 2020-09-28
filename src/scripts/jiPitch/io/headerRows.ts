@@ -4,7 +4,7 @@ import { FindCommasField, JiPitchField, NotatingCommasField, TwoThreeFreeClassFi
 import { excludeFields } from "./excludeFields"
 
 const JI_PITCH_COLUMN_TITLES: Record<JiPitchField, Io> = {
-    [ JiPitchField.RATIO ]: "ratio" as Io,
+    [ JiPitchField.QUOTIENT ]: "quotient" as Io,
     [ JiPitchField.MONZO ]: "monzo" as Io,
     [ JiPitchField.CENTS ]: "cents" as Io,
     [ JiPitchField.APOTOME_SLOPE ]: "apotome slope" as Io,

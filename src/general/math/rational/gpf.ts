@@ -14,7 +14,7 @@ import { Integer, Prime, Smoothness } from "./types"
 //  Primitive number only method
 //  OR... perhaps it speaks to how Nums should also take a simple decimal as a possible representation
 //  Like maybe instead of the decimal being a key on the object part, instead its like this:
-//  Num = Decimal<T> | { monzo: Monzo<T>, ratio: Ratio<T>, ... }
+//  Num = Decimal<T> | { monzo: Monzo<T>, quotient: Quotient<T>, ... }
 //  Anyway, this occurred to me while I was contemplating the interval helper for the half-apotome mirror spec etc.
 //  And I was thinking that while it's *difference* when in cents, it's truly a division of two Nums
 //  And sometimes when I want say a half-apotome, the thing I'm dividing by is just the number 2...

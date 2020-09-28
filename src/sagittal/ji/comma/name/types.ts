@@ -1,4 +1,4 @@
-import { Name, Num, NumTypeParameters, RationalRatio } from "../../../../general"
+import { Name, Num, NumTypeParameters, RationalQuotient } from "../../../../general"
 
 interface SizeCategoryOptions {
     abbreviated?: boolean,
@@ -69,7 +69,7 @@ type CommaNameOptions = Partial<{
     abbreviated: boolean
 }>
 
-// This ratio does not stipulate being super,
+// This quotient does not stipulate being super,
 // Which is maybe an argument for us not going with directed comma names after all.
 // I.e. if a comma's 2,3-free class was just part of its name, that might be nice.
 // Do we know whether it's possible for in a size category to have both a e.g. 1/5 and a 5/1, though?
@@ -78,12 +78,12 @@ type CommaNameOptions = Partial<{
 // Note, however, that when you return the 2's and 3's to this to make it comma-sized, of the size of its name,
 // It WILL be super! This is a subtle but critical point.
 // You can observe this difference in ordering in commaName.ts and twoThreeFreeClass.ts
-type CommaNameRatio<T extends NumTypeParameters = {}> =
-    RationalRatio<T & { rough: 5 }>
-    & { _CommaNameRatioBrand: boolean }
+type CommaNameQuotient<T extends NumTypeParameters = {}> =
+    RationalQuotient<T & { rough: 5 }>
+    & { _CommaNameQuotientBrand: boolean }
 
 interface ParsedCommaName {
-    commaNameRatio: CommaNameRatio,
+    commaNameQuotient: CommaNameQuotient,
     sizeCategoryName: SizeCategoryName,
 }
 
@@ -93,7 +93,7 @@ export {
     SizeCategoryName,
     SizeCategoryAbbreviation,
     CommaNameOptions,
-    CommaNameRatio,
+    CommaNameQuotient,
     ParsedCommaName,
     SizeCategoryBound,
 }

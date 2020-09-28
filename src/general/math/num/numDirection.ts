@@ -1,36 +1,36 @@
 import { deepClone, isUndefined } from "../../code"
 import { invertDecimal, isSubDecimal, isSuperDecimal, isUnisonDecimal } from "./decimal"
 import { invertMonzo, isSubMonzo, isSuperMonzo, isUnisonMonzo } from "./monzo"
-import { invertRatio, isSubRatio, isSuperRatio, isUnisonRatio } from "./ratio"
+import { invertQuotient, isSubQuotient, isSuperQuotient, isUnisonQuotient } from "./quotient"
 import { Direction, Num, NumTypeParameters } from "./types"
 
 const isSuperNum = <T extends NumTypeParameters, U extends Num<T>>(
     candidateSuperNum: U,
 ): candidateSuperNum is U & Num<T & { direction: Direction.SUPER }> => {
-    const { monzo, ratio, decimal } = candidateSuperNum
+    const { monzo, quotient, decimal } = candidateSuperNum
 
     return (!isUndefined(decimal) && isSuperDecimal(decimal)) ||
-        (!isUndefined(ratio) && isSuperRatio(ratio)) ||
+        (!isUndefined(quotient) && isSuperQuotient(quotient)) ||
         (!isUndefined(monzo) && isSuperMonzo(monzo))
 }
 
 const isSubNum = <T extends NumTypeParameters, U extends Num<T>>(
     candidateSubNum: U,
 ): candidateSubNum is U & Num<T & { direction: Direction.SUB }> => {
-    const { monzo, ratio, decimal } = candidateSubNum
+    const { monzo, quotient, decimal } = candidateSubNum
 
     return (!isUndefined(decimal) && isSubDecimal(decimal)) ||
-        (!isUndefined(ratio) && isSubRatio(ratio)) ||
+        (!isUndefined(quotient) && isSubQuotient(quotient)) ||
         (!isUndefined(monzo) && isSubMonzo(monzo))
 }
 
 const isUnisonNum = <T extends NumTypeParameters, U extends Num<T>>(
     candidateUnisonNum: U,
 ): candidateUnisonNum is U & Num<T & { direction: Direction.UNISON }> => {
-    const { monzo, ratio, decimal } = candidateUnisonNum
+    const { monzo, quotient, decimal } = candidateUnisonNum
 
     return (!isUndefined(decimal) && isUnisonDecimal(decimal)) ||
-        (!isUndefined(ratio) && isUnisonRatio(ratio)) ||
+        (!isUndefined(quotient) && isUnisonQuotient(quotient)) ||
         (!isUndefined(monzo) && isUnisonMonzo(monzo))
 }
 
@@ -40,9 +40,9 @@ const computeSuperNum = <T extends NumTypeParameters, U extends Num<T>>(
     let superNum = {} as Exclude<U, Num> & Num<T & { direction: Direction.SUPER, integer: false }>
 
     if (isSubNum(num)) {
-        const { monzo, ratio, decimal } = num
-        if (!isUndefined(ratio)) {
-            superNum.ratio = invertRatio(ratio)
+        const { monzo, quotient, decimal } = num
+        if (!isUndefined(quotient)) {
+            superNum.quotient = invertQuotient(quotient)
         }
         if (!isUndefined(monzo)) {
             superNum.monzo = invertMonzo(monzo)

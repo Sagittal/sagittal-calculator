@@ -30,10 +30,10 @@ describe("find-commas", (): void => {
             "max 2,3-free copfr:\t  3    ",
             "max prime limit:   \t 37    ",
             "",
-            "      \t      \t     \t                                           \t               \t       \t       \t       \t2,3-free\t2,3-free\t2,3-free\t2,3-free\t2,3-free",
-            "symbol\tcomma \t     \t                                           \t               \tapotome\t       \t       \tprime   \tclass   \tclass   \tclass   \tclass   ",
-            "class \tname  \tratio\tmonzo                                      \tcents          \tslope  \tAAS    \tATE    \tlimit   \tname    \tCoPFR   \tSoPFR   \tN2D3P9  ",
-            "      \t29/19C\t58/57\t[   1  -1   0   0   0   0   0  -1   0   1 ⟩\t        30.109¢\t -2.854\t  2.854\t  1    \t 29     \t29/19   \t  2     \t 48     \t295.907 ",
+            "      \t      \t        \t                                           \t               \t       \t       \t       \t2,3-free\t2,3-free\t2,3-free\t2,3-free\t2,3-free",
+            "symbol\tcomma \t        \t                                           \t               \tapotome\t       \t       \tprime   \tclass   \tclass   \tclass   \tclass   ",
+            "class \tname  \tquotient\tmonzo                                      \tcents          \tslope  \tAAS    \tATE    \tlimit   \tname    \tCoPFR   \tSoPFR   \tN2D3P9  ",
+            "      \t29/19C\t58/57   \t[   1  -1   0   0   0   0   0  -1   0   1 ⟩\t        30.109¢\t -2.854\t  2.854\t  1    \t 29     \t29/19   \t  2     \t 48     \t295.907 ",
             "",
         ] as Io[]
         expect(actual).toEqual(expected)
@@ -59,7 +59,7 @@ describe("find-commas", (): void => {
             "",
             "        \t       \t                 \t                                   \t               \t       \t       \t       \t2,3-free\t2,3-free\t2,3-free\t2,3-free\t2,3-free",
             "symbol  \tcomma  \t                 \t                                   \t               \tapotome\t       \t       \tprime   \tclass   \tclass   \tclass   \tclass   ",
-            "class   \tname   \tratio            \tmonzo                              \tcents          \tslope  \tAAS    \tATE    \tlimit   \tname    \tCoPFR   \tSoPFR   \tN2D3P9  ",
+            "class   \tname   \tquotient         \tmonzo                              \tcents          \tslope  \tAAS    \tATE    \tlimit   \tname    \tCoPFR   \tSoPFR   \tN2D3P9  ",
             "        \t19/175M\t4864/4725        \t[   8  -3  -2  -1   0   0   0   1 ⟩\t        50.195¢\t -6.091\t  6.091\t  3    \t 19     \t175/19  \t  4     \t 36     \t292.477 ",
             "        \t35/17M \t35/34            \t[  -1   0   1   1   0   0  -1 ⟩    \t        50.184¢\t -3.090\t  3.090\t  0    \t 17     \t35/17   \t  3     \t 29     \t 93.657 ",
             "  ,'/|) \t65M    \t34543665/33554432\t[ -25  12   1   0   0   1 ⟩        \t        50.301¢\t  8.903\t  8.903\t 12    \t 13     \t65/1    \t  2     \t 18     \t 23.472 ",
@@ -89,7 +89,7 @@ describe("find-commas", (): void => {
             "",
             "        \t                     \t                 \t                                   \t               \t       \t       \t       \t2,3-free\t2,3-free\t2,3-free\t2,3-free\t2,3-free",
             "symbol  \tcomma                \t                 \t                                   \t               \tapotome\t       \t       \tprime   \tclass   \tclass   \tclass   \tclass   ",
-            "class   \tname                 \tratio            \tmonzo                              \tcents          \tslope  \tAAS    \tATE    \tlimit   \tname    \tCoPFR   \tSoPFR   \tN2D3P9  ",
+            "class   \tname                 \tquotient         \tmonzo                              \tcents          \tslope  \tAAS    \tATE    \tlimit   \tname    \tCoPFR   \tSoPFR   \tN2D3P9  ",
             "  ,'/|) \t5.13-Medium-Diesis   \t34543665/33554432\t[ -25  12   1   0   0   1 ⟩        \t        50.301¢\t  8.903\t  8.903\t 12    \t 13     \t65/1    \t  2     \t 18     \t 23.472 ",
             "        \t17:5.7-Medium-Diesis \t35/34            \t[  -1   0   1   1   0   0  -1 ⟩    \t        50.184¢\t -3.090\t  3.090\t  0    \t 17     \t35/17   \t  3     \t 29     \t 93.657 ",
             "        \t5².11²-Medium-Diesis \t1594323/1548800  \t[  -9  13  -2   0  -2 ⟩            \t        50.152¢\t  9.912\t  9.912\t 13    \t 11     \t3025/1  \t  4     \t 32     \t231.076 ",
@@ -127,16 +127,16 @@ describe("find-commas", (): void => {
             "max 2,3-free copfr:\t  3    ",
             "max prime limit:   \t 37    ",
             "",
-            "      \t      \t     \t                                           \t               \t       \t2,3-free\t2,3-free\t2,3-free\t2,3-free\t2,3-free",
-            "symbol\tcomma \t     \t                                           \t               \tapotome\tprime   \tclass   \tclass   \tclass   \tclass   ",
-            "class \tname  \tratio\tmonzo                                      \tcents          \tslope  \tlimit   \tname    \tCoPFR   \tSoPFR   \tN2D3P9  ",
-            "      \t29/19C\t58/57\t[   1  -1   0   0   0   0   0  -1   0   1 ⟩\t        30.109¢\t -2.854\t 29     \t29/19   \t  2     \t 48     \t295.907 ",
+            "      \t      \t        \t                                           \t               \t       \t2,3-free\t2,3-free\t2,3-free\t2,3-free\t2,3-free",
+            "symbol\tcomma \t        \t                                           \t               \tapotome\tprime   \tclass   \tclass   \tclass   \tclass   ",
+            "class \tname  \tquotient\tmonzo                                      \tcents          \tslope  \tlimit   \tname    \tCoPFR   \tSoPFR   \tN2D3P9  ",
+            "      \t29/19C\t58/57   \t[   1  -1   0   0   0   0   0  -1   0   1 ⟩\t        30.109¢\t -2.854\t 29     \t29/19   \t  2     \t 48     \t295.907 ",
             "",
         ] as Io[]
         expect(actual).toEqual(expected)
     })
 
-    it("can set bounds by monzos and ratios instead of just cents", (): void => {
+    it("can set bounds by monzos and quotients instead of just cents", (): void => {
         onlyRunInCi()
 
         const command = `npm run find-commas -- --lower-bound 1594323/1548800 --upper-bound "[ -25  12   1   0   0   1 ⟩" --undirected --factored --unabbreviated` as Io
@@ -156,7 +156,7 @@ describe("find-commas", (): void => {
             "",
             "        \t                     \t                 \t                                   \t               \t       \t       \t       \t2,3-free\t2,3-free\t2,3-free\t2,3-free\t2,3-free",
             "symbol  \tcomma                \t                 \t                                   \t               \tapotome\t       \t       \tprime   \tclass   \tclass   \tclass   \tclass   ",
-            "class   \tname                 \tratio            \tmonzo                              \tcents          \tslope  \tAAS    \tATE    \tlimit   \tname    \tCoPFR   \tSoPFR   \tN2D3P9  ",
+            "class   \tname                 \tquotient         \tmonzo                              \tcents          \tslope  \tAAS    \tATE    \tlimit   \tname    \tCoPFR   \tSoPFR   \tN2D3P9  ",
             "  ,'/|) \t5.13-Medium-Diesis   \t34543665/33554432\t[ -25  12   1   0   0   1 ⟩        \t        50.301¢\t  8.903\t  8.903\t 12    \t 13     \t65/1    \t  2     \t 18     \t 23.472 ",
             "        \t17:5.7-Medium-Diesis \t35/34            \t[  -1   0   1   1   0   0  -1 ⟩    \t        50.184¢\t -3.090\t  3.090\t  0    \t 17     \t35/17   \t  3     \t 29     \t 93.657 ",
             "        \t5².11²-Medium-Diesis \t1594323/1548800  \t[  -9  13  -2   0  -2 ⟩            \t        50.152¢\t  9.912\t  9.912\t 13    \t 11     \t3025/1  \t  4     \t 32     \t231.076 ",

@@ -10,7 +10,7 @@ import {
     Name,
     Prime,
     RationalMonzo,
-    RationalRatio,
+    RationalQuotient,
     Row,
     Sopfr,
 } from "../../../../../../src/general"
@@ -26,7 +26,7 @@ describe("computeFindCommasRow", (): void => {
     const commaAnalysis: CommaAnalysis = {
         cents: 11.2 as Cents,
         monzo: [0, -1, 1] as RationalMonzo,
-        ratio: [5, 4] as RationalRatio,
+        quotient: [5, 4] as RationalQuotient,
         name: "1/5C" as Name<Comma>,
         apotomeSlope: 8.2 as ApotomeSlope,
         aas: 8.2 as Abs<ApotomeSlope>,
@@ -47,7 +47,7 @@ describe("computeFindCommasRow", (): void => {
         const expected = [
             "    /|  ",         // Symbol class
             "1/5C",             // Comma name
-            "5/4",              // Ratio
+            "5/4",              // Quotient
             "[   0  -1   1 ⟩",  // Monzo
             "        11.200¢",  // Cents
             "  8.200",          // Apotome slope
@@ -69,7 +69,7 @@ describe("computeFindCommasRow", (): void => {
         const expected = [
             "    /|  ",         // Symbol class
             "1/5C",             // Comma name
-            "5/4",              // Ratio
+            "5/4",              // Quotient
             "[   0  -1   1 ⟩",  // Monzo
             "        11.200¢",  // Cents
             "  8.200",          // Apotome slope

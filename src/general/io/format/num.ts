@@ -3,13 +3,13 @@ import { Num } from "../../math"
 import { stringify } from "../stringify"
 import { formatDecimal } from "./decimal"
 import { formatMonzo } from "./monzo"
-import { formatRatio } from "./ratio"
+import { formatQuotient } from "./quotient"
 import { Formatted } from "./types"
 
 const formatNum = (num: Num, options: { align?: boolean } = {}): Formatted<Num> => {
-    const { ratio, monzo, decimal } = num
-    if (!isUndefined(ratio)) {
-        return formatRatio(ratio) as Formatted as Formatted<Num>
+    const { quotient, monzo, decimal } = num
+    if (!isUndefined(quotient)) {
+        return formatQuotient(quotient) as Formatted as Formatted<Num>
     } else if (!isUndefined(monzo)) {
         return formatMonzo(monzo) as Formatted as Formatted<Num>
     } else if (!isUndefined(decimal)) {

@@ -26,7 +26,7 @@ const parseJiPitch = (): RationalNum => {
         if (isRationalNum(pitch)) {
             jiPitch = pitch
 
-            if (!isUndefined(pitch.monzo) || !isUndefined(pitch.ratio)) {
+            if (!isUndefined(pitch.monzo) || !isUndefined(pitch.quotient)) {
                 saveLog(`Warning: JI pitch ${formatPitch(pitch)} provided as decimal or cents, and may not be exactly what you intended.` as Io, LogTarget.ERROR)
             }
         } else {
@@ -36,8 +36,8 @@ const parseJiPitch = (): RationalNum => {
         // When provided via specific flags, they are pre-parsed (in readOptions.ts).
     } else if (program.monzo) {
         jiPitch = { monzo: program.monzo }
-    } else if (program.ratio) {
-        jiPitch = { ratio: program.ratio }
+    } else if (program.quotient) {
+        jiPitch = { quotient: program.quotient }
     } else if (program.commaName) {
         jiPitch = { monzo: program.commaName }
     } else if (program.integer) {

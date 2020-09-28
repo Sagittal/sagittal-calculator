@@ -1,6 +1,6 @@
 export { computeIntegerMonzoFromInteger } from "./monzoFromInteger"
 export { computeIntegerMonzoFromIntegerOrMonzo } from "./monzoFromIntegerOrMonzo"
-export { computeRationalMonzoFromRationalRatio } from "./monzoFromRatio"
+export { computeRationalMonzoFromRationalQuotient } from "./monzoFromQuotient"
 export { computeRationalMonzosFromPrimeExponentExtremas } from "./monzosFromPrimeExponentExtrema"
 export { isRoughRationalMonzo, computeRoughRationalMonzo } from "./monzoRoughness"
 export { isSmoothRationalMonzo } from "./monzoSmoothness"

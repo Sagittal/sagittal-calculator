@@ -1,6 +1,6 @@
 import { computeDecimalFromNum, Decimal } from "../../../../../../src/general/math/num/decimal"
 import { Monzo } from "../../../../../../src/general/math/num/monzo"
-import { Ratio } from "../../../../../../src/general/math/num/ratio"
+import { Quotient } from "../../../../../../src/general/math/num/quotient"
 
 describe("computeDecimalFromNum", (): void => {
     it("when the num has a monzo, returns its decimal representation", (): void => {
@@ -12,8 +12,8 @@ describe("computeDecimalFromNum", (): void => {
         expect(actual).toBe(expected)
     })
 
-    it("when the num has a ratio, returns its decimal representation", (): void => {
-        const num = { ratio: [6, 5] as Ratio }
+    it("when the num has a quotient, returns its decimal representation", (): void => {
+        const num = { quotient: [6, 5] as Quotient }
 
         const actual = computeDecimalFromNum(num)
 

@@ -1,9 +1,9 @@
 import { formatNum, Formatted } from "../../../../../src/general/io/format"
-import { Decimal, Monzo, Num, Ratio } from "../../../../../src/general/math"
+import { Decimal, Monzo, Num, Quotient } from "../../../../../src/general/math"
 
 describe("formatNum", (): void => {
-    it("if only the ratio is present, returns it formatted", (): void => {
-        const num = { ratio: [5, 3] as Ratio }
+    it("if only the quotient is present, returns it formatted", (): void => {
+        const num = { quotient: [5, 3] as Quotient }
 
         const actual = formatNum(num)
 
@@ -11,8 +11,8 @@ describe("formatNum", (): void => {
         expect(actual).toBe(expected)
     })
 
-    it("if the ratio and monzo are present, returns the ratio formatted", (): void => {
-        const num = { ratio: [5, 3] as Ratio, monzo: [0, -1, 1] as Monzo }
+    it("if the quotient and monzo are present, returns the quotient formatted", (): void => {
+        const num = { quotient: [5, 3] as Quotient, monzo: [0, -1, 1] as Monzo }
 
         const actual = formatNum(num)
 
@@ -20,8 +20,8 @@ describe("formatNum", (): void => {
         expect(actual).toBe(expected)
     })
 
-    it("if the ratio and decimal are present, returns the ratio formatted", (): void => {
-        const num = { ratio: [5, 3] as Ratio, decimal: 1.666667 as Decimal }
+    it("if the quotient and decimal are present, returns the quotient formatted", (): void => {
+        const num = { quotient: [5, 3] as Quotient, decimal: 1.666667 as Decimal }
 
         const actual = formatNum(num)
 

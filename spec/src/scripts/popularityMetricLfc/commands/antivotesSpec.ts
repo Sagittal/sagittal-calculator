@@ -3,7 +3,7 @@ import { onlyRunInCi } from "../../../../helpers/onlyRunInCi"
 import { runCommandAndGetConsoleOutput } from "../../../../helpers/src/scripts/runCommand"
 
 describe("antivotes", (): void => {
-    it("gives you the antivotes of a specific ratio for the submetric combination set in the file", (): void => {
+    it("gives you the antivotes of a specific quotient for the submetric combination set in the file", (): void => {
         onlyRunInCi()
 
         const command = "npm run antivotes" as Io

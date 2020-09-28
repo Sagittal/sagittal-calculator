@@ -1,7 +1,7 @@
 import { MaybeIntegerBrand, RationalNum } from "../rational"
 import { NumByDecimal } from "./decimal"
 import { NumByMonzo } from "./monzo"
-import { NumByRatio } from "./ratio"
+import { NumByQuotient } from "./quotient"
 
 enum Direction {
     SUPER = "super",
@@ -26,7 +26,7 @@ type NumTypeParameterEffects<T> =
     & (T extends { irrational: true } ? { _IrrationalBrand: boolean } : {})
     & MaybeIntegerBrand<T>
 
-type NumTypeParameterTranslationForMonzosAndRatiosToTheirFractionalPartsAndTermsAboutRationality<T> =
+type NumTypeParameterTranslationForMonzosAndQuotientsToTheirFractionalPartsAndTermsAboutRationality<T> =
     (T extends { irrational: false } ? { irrational: false, integer: true } : {})
 
 // TODO: IMPLEMENT EDO PITCHES ON POTENTIALLY IRRATIONAL NUMS
@@ -48,7 +48,7 @@ type NumTypeParameterTranslationForMonzosAndRatiosToTheirFractionalPartsAndTerms
 //  And along with that, Comma mean should be irrational Monzo (both of the above, i.e. as opposed to Decimal)
 /*
 Base assume 2
-Power - would be a ratio... but like 3/19 for degrees of 19...
+Power - would be a quotient... but like 3/19 for degrees of 19...
 
 Window (is the base, 2)
 Ed (19)
@@ -65,12 +65,12 @@ the existing Window isn’t a base, it gets divided up additively, not multiplic
 type Num<T extends NumTypeParameters = {}> = RationalNum<T>
     | NumByDecimal<T>
     | NumByMonzo<T>
-    | NumByRatio<T> // TODO: rename Ratio to Quotient
+    | NumByQuotient<T>
 
 export {
     NumTypeParameters,
     Direction,
     NumTypeParameterEffects,
     Num,
-    NumTypeParameterTranslationForMonzosAndRatiosToTheirFractionalPartsAndTermsAboutRationality,
+    NumTypeParameterTranslationForMonzosAndQuotientsToTheirFractionalPartsAndTermsAboutRationality,
 }

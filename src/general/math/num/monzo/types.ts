@@ -2,11 +2,11 @@ import { Ed, Step, Window } from "../../../types"
 import { Prime } from "../../rational"
 import { Exponent, Max } from "../../types"
 import { Decimal } from "../decimal"
-import { Ratio } from "../ratio"
+import { Quotient } from "../quotient"
 import {
     NumTypeParameterEffects,
     NumTypeParameters,
-    NumTypeParameterTranslationForMonzosAndRatiosToTheirFractionalPartsAndTermsAboutRationality,
+    NumTypeParameterTranslationForMonzosAndQuotientsToTheirFractionalPartsAndTermsAboutRationality,
 } from "../types"
 
 type NumTypeParameterTranslationForMonzosToTheirTermsExceptDefaultRationality<T extends NumTypeParameters = {}> =
@@ -14,7 +14,7 @@ type NumTypeParameterTranslationForMonzosToTheirTermsExceptDefaultRationality<T 
     // & (T extends { irrational: false } ? { irrational: false } : {})
 
 type Monzo<T extends NumTypeParameters = {}> =
-    Array<Decimal<NumTypeParameterTranslationForMonzosAndRatiosToTheirFractionalPartsAndTermsAboutRationality<T>
+    Array<Decimal<NumTypeParameterTranslationForMonzosAndQuotientsToTheirFractionalPartsAndTermsAboutRationality<T>
 & NumTypeParameterTranslationForMonzosToTheirTermsExceptDefaultRationality<T>> & Exponent<Prime>>
     & NumTypeParameterEffects<T>
 
@@ -31,7 +31,7 @@ but an exponent for a ...
 well, when you combine it with whatever it is, you get 2.99661415375, or basically a prime, just an approximated one
 so maybe you need an Approx<> type you could put around Prime
 and maybe if an Exponent<Prime> is an exponent that can be combined with a Prime w/o needing to specify "Base"
-which you can then get Power<Prime> and then Product<Power<Prime>> --> ji ratio
+which you can then get Power<Prime> and then Product<Power<Prime>> --> ji quotient
 
 ok so another thing is, that value 2.99661415375, you can use that as the prime now, for monzos
 cuz whatever that weird float is, it's a multiple of the step size of the EDO
@@ -57,7 +57,7 @@ interface PatentValOptions<T extends Window> {
 type NumByMonzo<T extends NumTypeParameters> = {
     decimal?: Decimal<T>,
     monzo: Monzo<T>,
-    ratio?: Ratio<T>,
+    quotient?: Quotient<T>,
 }
 
 export {

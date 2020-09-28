@@ -20,7 +20,7 @@ describe("computeGpf", (): void => {
         expect(actual).toBe(expected)
     })
 
-    it("works for an empty monzo (AKA the ratio 1/1), giving the conventional value of 1", (): void => {
+    it("works for an empty monzo (AKA the quotient 1/1), giving the conventional value of 1", (): void => {
         const monzo = [] as RationalMonzo
 
         const actual = computeGpf(monzo)

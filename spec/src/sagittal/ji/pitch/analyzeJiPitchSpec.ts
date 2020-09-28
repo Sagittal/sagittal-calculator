@@ -8,7 +8,7 @@ import {
     Integer,
     Prime,
     RationalMonzo,
-    RationalRatio,
+    RationalQuotient,
     Sopfr,
 } from "../../../../../src/general"
 import { ApotomeSlope, N2D3P9, TwoThreeFreeClassAnalysis } from "../../../../../src/sagittal"
@@ -23,7 +23,7 @@ describe("analyzeJiPitch", (): void => {
         const expected = {
             cents: 1240.022726 as Cents,
             monzo: [-7, -6, 3, 5, -1] as RationalMonzo,
-            ratio: [2100875, 1026432] as RationalRatio,
+            quotient: [2100875, 1026432] as RationalQuotient,
             decimal: 2.046775 as Decimal,
             apotomeSlope: -82.352717 as ApotomeSlope,
             ate: 6 as Abs<Integer & Exponent<3 & Prime>>,

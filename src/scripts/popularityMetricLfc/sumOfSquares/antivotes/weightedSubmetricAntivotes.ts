@@ -1,6 +1,6 @@
 import { stringify, TwoThreeFreeClass } from "../../../../general"
 import { Antivotes, ParameterValue, Submetric } from "../types"
-import { computeRatioSubmetricAntivotes } from "./ratioSubmetricAntivotes"
+import { computeQuotientSubmetricAntivotes } from "./quotientSubmetricAntivotes"
 import { computeWeightedAntivotes } from "./weightedAntivotes"
 
 const computeWeightedSubmetricAntivotes = (
@@ -16,7 +16,7 @@ const computeWeightedSubmetricAntivotes = (
 
     let submetricAntivotes = 0 as Antivotes
     if (weightAsCoefficient !== 0) {
-        submetricAntivotes = computeRatioSubmetricAntivotes(twoThreeFreeClass, submetric)
+        submetricAntivotes = computeQuotientSubmetricAntivotes(twoThreeFreeClass, submetric)
     }
 
     submetricAntivotes = computeWeightedAntivotes(submetricAntivotes, {

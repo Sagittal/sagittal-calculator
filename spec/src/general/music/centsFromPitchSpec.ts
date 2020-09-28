@@ -1,4 +1,4 @@
-import { Num, RationalMonzo, RationalRatio } from "../../../../src/general"
+import { Num, RationalMonzo, RationalQuotient } from "../../../../src/general"
 import { Cents, computeCentsFromPitch } from "../../../../src/general/music"
 
 describe("computeCentsFromPitch", (): void => {
@@ -38,8 +38,8 @@ describe("computeCentsFromPitch", (): void => {
         expect(actual).toBeCloseToTyped(expected)
     })
 
-    it("gives the cents value of a ratio", (): void => {
-        const pitch: Num = { ratio: [3, 2] as RationalRatio }
+    it("gives the cents value of a quotient", (): void => {
+        const pitch: Num = { quotient: [3, 2] as RationalQuotient }
 
         const actual = computeCentsFromPitch(pitch)
 

@@ -7,7 +7,7 @@ import {
     isUnisonNum,
     Monzo,
     Num,
-    Ratio,
+    Quotient,
 } from "../../../../../src/general/math/num"
 
 describe("isSubNum", (): void => {
@@ -37,25 +37,25 @@ describe("isSubNum", (): void => {
         })
     })
 
-    describe("by ratio", (): void => {
-        it("returns true if the ratio is sub", (): void => {
-            const num = { ratio: [1, 3] as Ratio }
+    describe("by quotient", (): void => {
+        it("returns true if the quotient is sub", (): void => {
+            const num = { quotient: [1, 3] as Quotient }
 
             const actual = isSubNum(num)
 
             expect(actual).toBeTruthy()
         })
 
-        it("returns false if the ratio is unison", (): void => {
-            const num = { ratio: [3, 3] as Ratio }
+        it("returns false if the quotient is unison", (): void => {
+            const num = { quotient: [3, 3] as Quotient }
 
             const actual = isSubNum(num)
 
             expect(actual).toBeFalsy()
         })
 
-        it("returns false if the ratio is super", (): void => {
-            const num = { ratio: [3, 1] as Ratio }
+        it("returns false if the quotient is super", (): void => {
+            const num = { quotient: [3, 1] as Quotient }
 
             const actual = isSubNum(num)
 
@@ -117,25 +117,25 @@ describe("isSuperNum", (): void => {
         })
     })
 
-    describe("by ratio", (): void => {
-        it("returns false if the ratio is sub", (): void => {
-            const num = { ratio: [1, 3] as Ratio }
+    describe("by quotient", (): void => {
+        it("returns false if the quotient is sub", (): void => {
+            const num = { quotient: [1, 3] as Quotient }
 
             const actual = isSuperNum(num)
 
             expect(actual).toBeFalsy()
         })
 
-        it("returns false if the ratio is unison", (): void => {
-            const num = { ratio: [3, 3] as Ratio }
+        it("returns false if the quotient is unison", (): void => {
+            const num = { quotient: [3, 3] as Quotient }
 
             const actual = isSuperNum(num)
 
             expect(actual).toBeFalsy()
         })
 
-        it("returns true if the ratio is super", (): void => {
-            const num = { ratio: [3, 1] as Ratio }
+        it("returns true if the quotient is super", (): void => {
+            const num = { quotient: [3, 1] as Quotient }
 
             const actual = isSuperNum(num)
 
@@ -197,25 +197,25 @@ describe("isUnisonNumber", (): void => {
         })
     })
 
-    describe("by ratio", (): void => {
-        it("returns false if the ratio is sub", (): void => {
-            const num = { ratio: [1, 3] as Ratio }
+    describe("by quotient", (): void => {
+        it("returns false if the quotient is sub", (): void => {
+            const num = { quotient: [1, 3] as Quotient }
 
             const actual = isUnisonNum(num)
 
             expect(actual).toBeFalsy()
         })
 
-        it("returns true if the ratio is unison", (): void => {
-            const num = { ratio: [3, 3] as Ratio }
+        it("returns true if the quotient is unison", (): void => {
+            const num = { quotient: [3, 3] as Quotient }
 
             const actual = isUnisonNum(num)
 
             expect(actual).toBeTruthy()
         })
 
-        it("returns false if the ratio is super", (): void => {
-            const num = { ratio: [3, 1] as Ratio }
+        it("returns false if the quotient is super", (): void => {
+            const num = { quotient: [3, 1] as Quotient }
 
             const actual = isUnisonNum(num)
 
@@ -251,10 +251,10 @@ describe("isUnisonNumber", (): void => {
 })
 
 describe("computeSuperNum", (): void => {
-    it("flips the monzo, ratio, number", (): void => {
+    it("flips the monzo, quotient, number", (): void => {
         const num: Num<{ direction: Direction.SUB }> = {
             monzo: [-40, 22, 1, 1] as Monzo<{ direction: Direction.SUB }>,
-            ratio: [1098337086315, 1099511627776] as Ratio<{ direction: Direction.SUB }>,
+            quotient: [1098337086315, 1099511627776] as Quotient<{ direction: Direction.SUB }>,
             decimal: 0.2 as Decimal<{ direction: Direction.SUB }>,
         }
 
@@ -262,7 +262,7 @@ describe("computeSuperNum", (): void => {
 
         const expected: Num<{ direction: Direction.SUPER }> = {
             monzo: [40, -22, -1, -1] as Monzo<{ direction: Direction.SUPER }>,
-            ratio: [1099511627776, 1098337086315] as Ratio<{ direction: Direction.SUPER }>,
+            quotient: [1099511627776, 1098337086315] as Quotient<{ direction: Direction.SUPER }>,
             decimal: 5 as Decimal<{ direction: Direction.SUPER }>,
         }
         expect(actual).toEqual(expected)
@@ -281,15 +281,15 @@ describe("computeSuperNum", (): void => {
         expect(actual).toEqual(expected)
     })
 
-    it("works when only ratio is provided", (): void => {
+    it("works when only quotient is provided", (): void => {
         const num: Num<{ direction: Direction.SUB }> = {
-            ratio: [1098337086315, 1099511627776] as Ratio<{ direction: Direction.SUB }>,
+            quotient: [1098337086315, 1099511627776] as Quotient<{ direction: Direction.SUB }>,
         }
 
         const actual = computeSuperNum(num)
 
         const expected: Num<{ direction: Direction.SUPER }> = {
-            ratio: [1099511627776, 1098337086315] as Ratio<{ direction: Direction.SUPER }>,
+            quotient: [1099511627776, 1098337086315] as Quotient<{ direction: Direction.SUPER }>,
         }
         expect(actual).toEqual(expected)
     })

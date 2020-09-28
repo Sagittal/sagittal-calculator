@@ -1,9 +1,9 @@
 import {
     Comma,
     computeIntegerMonzoFromInteger,
-    computeRationalRatioFromRationalNum,
-    computeRoughRationalRatio,
-    computeSubRatio,
+    computeRationalQuotientFromRationalNum,
+    computeRoughRationalQuotient,
+    computeSubQuotient,
     computeSuperNum,
     Direction,
     Exponent,
@@ -16,14 +16,14 @@ import {
     Prime,
     PRIMES,
     RationalFractionalPart,
-    RationalRatio,
+    RationalQuotient,
     stringify,
     SUPERSCRIPT_NUMS,
     THREE_PRIME_LIMIT,
 } from "../../../../general"
 import { computeSizeCategory } from "./sizeCategory"
 import { isCommaSized } from "./typeGuards"
-import { CommaNameOptions, CommaNameRatio, SizeCategoryAbbreviation, SizeCategoryName } from "./types"
+import { CommaNameOptions, CommaNameQuotient, SizeCategoryAbbreviation, SizeCategoryName } from "./types"
 
 const primeFactorize = (numeratorOrDenominator: RationalFractionalPart): string => {
     if (numeratorOrDenominator === 1) return "1"
@@ -48,10 +48,12 @@ const primeFactorize = (numeratorOrDenominator: RationalFractionalPart): string 
     return factorizedTerms.join(".")
 }
 
-const stringifyRatio = (rationalRatio: RationalRatio, { factored }: { factored: boolean }): string[] => {
+const stringifyQuotient = (rationalQuotient: RationalQuotient, { factored }: { factored: boolean }): string[] => {
     return factored ?
-        rationalRatio.map(primeFactorize) :
-        rationalRatio.map((rationalFractionalPart: RationalFractionalPart): string => rationalFractionalPart.toString())
+        rationalQuotient.map(primeFactorize) :
+        rationalQuotient.map((rationalFractionalPart: RationalFractionalPart): string => {
+            return rationalFractionalPart.toString()
+        })
 }
 
 // "Secor-Keenan systematic name" or "Sagittal name"
@@ -71,25 +73,31 @@ const computeCommaName = (
     const superComma: Comma<{ direction: Direction.SUPER }> = computeSuperNum(comma)
     const sizeCategory: SizeCategoryAbbreviation | SizeCategoryName = computeSizeCategory(superComma, { abbreviated })
 
-    let formattedCommaNameRatio
+    let formattedCommaNameQuotient
     if (isWithinPrimeLimit(comma, THREE_PRIME_LIMIT) && !isUnisonNum(comma)) {
-        formattedCommaNameRatio = "3"
+        formattedCommaNameQuotient = "3"
     } else {
-        const commaNameRatio: CommaNameRatio =
-            computeRoughRationalRatio(computeRationalRatioFromRationalNum(superComma), FIVE_ROUGHNESS) as CommaNameRatio
+        const commaNameQuotient: CommaNameQuotient = computeRoughRationalQuotient(
+            computeRationalQuotientFromRationalNum(superComma),
+            FIVE_ROUGHNESS
+        ) as CommaNameQuotient
 
         if (directed) {
-            const stringifiedRatio = stringifyRatio(commaNameRatio, { factored })
+            const stringifiedQuotient = stringifyQuotient(commaNameQuotient, { factored })
 
-            formattedCommaNameRatio = stringifiedRatio[ 1 ] === "1" ? stringifiedRatio[ 0 ] : stringifiedRatio.join("/")
+            formattedCommaNameQuotient = stringifiedQuotient[ 1 ] === "1" ?
+                stringifiedQuotient[ 0 ] :
+                stringifiedQuotient.join("/")
         } else {
-            const stringifiedRatio = stringifyRatio(computeSubRatio(commaNameRatio), { factored })
+            const stringifiedQuotient = stringifyQuotient(computeSubQuotient(commaNameQuotient), { factored })
 
-            formattedCommaNameRatio = stringifiedRatio[ 0 ] === "1" ? stringifiedRatio[ 1 ] : stringifiedRatio.join(":")
+            formattedCommaNameQuotient = stringifiedQuotient[ 0 ] === "1" ?
+                stringifiedQuotient[ 1 ] :
+                stringifiedQuotient.join(":")
         }
     }
 
-    return `${formattedCommaNameRatio}${maybeHyphen}${sizeCategory}${maybeDown}` as Name<Comma>
+    return `${formattedCommaNameQuotient}${maybeHyphen}${sizeCategory}${maybeDown}` as Name<Comma>
 }
 
 export {

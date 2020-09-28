@@ -1,10 +1,10 @@
 import { formatPitch, Formatted } from "../../../../../src/general/io/format"
-import { Decimal, Integer, Monzo, Num, Ratio } from "../../../../../src/general/math"
+import { Decimal, Integer, Monzo, Num, Quotient } from "../../../../../src/general/math"
 import { Cents } from "../../../../../src/general/music"
 
 describe("formatPitch", (): void => {
-    it("if only the ratio is present, returns it formatted", (): void => {
-        const pitch = { ratio: [5, 3] as Ratio }
+    it("if only the quotient is present, returns it formatted", (): void => {
+        const pitch = { quotient: [5, 3] as Quotient }
 
         const actual = formatPitch(pitch)
 
@@ -12,8 +12,8 @@ describe("formatPitch", (): void => {
         expect(actual).toBe(expected)
     })
 
-    it("if the ratio and monzo are present, returns the ratio formatted", (): void => {
-        const pitch = { ratio: [5, 3] as Ratio, monzo: [0, -1, 1] as Monzo }
+    it("if the quotient and monzo are present, returns the quotient formatted", (): void => {
+        const pitch = { quotient: [5, 3] as Quotient, monzo: [0, -1, 1] as Monzo }
 
         const actual = formatPitch(pitch)
 
@@ -21,8 +21,8 @@ describe("formatPitch", (): void => {
         expect(actual).toBe(expected)
     })
 
-    it("if the ratio and decimal are present, returns the ratio formatted", (): void => {
-        const pitch = { ratio: [5, 1] as Ratio, decimal: 5 as Integer }
+    it("if the quotient and decimal are present, returns the quotient formatted", (): void => {
+        const pitch = { quotient: [5, 1] as Quotient, decimal: 5 as Integer }
 
         const actual = formatPitch(pitch)
 
@@ -30,8 +30,8 @@ describe("formatPitch", (): void => {
         expect(actual).toBe(expected)
     })
 
-    it("if the ratio and cents are present, returns the ratio formatted", (): void => {
-        const pitch = { ratio: [5, 3] as Ratio, cents: 884.358713 as Cents }
+    it("if the quotient and cents are present, returns the quotient formatted", (): void => {
+        const pitch = { quotient: [5, 3] as Quotient, cents: 884.358713 as Cents }
 
         const actual = formatPitch(pitch)
 

@@ -1,4 +1,4 @@
-import { Max, Min, Prime, RationalMonzo, RationalRatio } from "../../../../../src/general/math"
+import { Max, Min, Prime, RationalMonzo, RationalQuotient } from "../../../../../src/general/math"
 import {
     computePrimeLimit,
     isWithinPrimeLimit,
@@ -26,9 +26,9 @@ describe("isWithinPrimeLimit", (): void => {
         })
     })
 
-    describe("by ratio", (): void => {
+    describe("by quotient", (): void => {
         it("returns true if the pitch is within the given prime limit", (): void => {
-            const jiPitch = { ratio: [7, 5] as RationalRatio }
+            const jiPitch = { quotient: [7, 5] as RationalQuotient }
 
             const actual = isWithinPrimeLimit(jiPitch, SEVEN_PRIME_LIMIT)
 
@@ -36,7 +36,7 @@ describe("isWithinPrimeLimit", (): void => {
         })
 
         it("returns false if the pitch is not within the given prime limit", (): void => {
-            const jiPitch = { ratio: [7, 5] as RationalRatio }
+            const jiPitch = { quotient: [7, 5] as RationalQuotient }
 
             const actual = isWithinPrimeLimit(jiPitch, THREE_PRIME_LIMIT)
 
@@ -64,9 +64,9 @@ describe("isWithinPrimeMin", (): void => {
         })
     })
 
-    describe("by ratio", (): void => {
+    describe("by quotient", (): void => {
         it("returns true if the pitch has no prime factors less than the prime min", (): void => {
-            const jiPitch = { ratio: [7, 5] as RationalRatio }
+            const jiPitch = { quotient: [7, 5] as RationalQuotient }
 
             const actual = isWithinPrimeMin(jiPitch, 5 as 5 & Min<Prime>)
 
@@ -74,7 +74,7 @@ describe("isWithinPrimeMin", (): void => {
         })
 
         it("returns false if the pitch has no prime factors less than the prime min", (): void => {
-            const jiPitch = { ratio: [5, 4] as RationalRatio }
+            const jiPitch = { quotient: [5, 4] as RationalQuotient }
 
             const actual = isWithinPrimeMin(jiPitch, 7 as 7 & Min<Prime>)
 
@@ -93,8 +93,8 @@ describe("computePrimeLimit", (): void => {
         expect(actual).toBe(expected)
     })
 
-    it("works for pitches with ratios", (): void => {
-        const jiPitch = { ratio: [7, 5] as RationalRatio }
+    it("works for pitches with quotients", (): void => {
+        const jiPitch = { quotient: [7, 5] as RationalQuotient }
 
         const actual = computePrimeLimit(jiPitch)
 

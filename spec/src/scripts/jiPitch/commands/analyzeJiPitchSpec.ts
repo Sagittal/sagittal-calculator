@@ -10,7 +10,7 @@ describe("analyze-ji-pitch", (): void => {
         "   --- JI pitch ---",
         "",
         "         \t                       \t               \tapotome\t       \t       ",
-        "ratio    \tmonzo                  \tcents          \tslope  \tAAS    \tATE    ",
+        "quotient \tmonzo                  \tcents          \tslope  \tAAS    \tATE    ",
         "2200/2187\t[   3  -7   2   0   1 ⟩\t        10.260¢\t -7.632\t  7.632\t  7    ",
         "",
         "   --- 2,3-free class ---",
@@ -22,7 +22,7 @@ describe("analyze-ji-pitch", (): void => {
         "   --- notating commas ---",
         "",
         "symbol  \tcomma \t                 \t                       \t               \tapotome\t       \t       ",
-        "class   \tname  \tratio            \tmonzo                  \tcents          \tslope  \tAAS    \tATE    ",
+        "class   \tname  \tquotient         \tmonzo                  \tcents          \tslope  \tAAS    \tATE    ",
         "   `)|( \t275k  \t2200/2187        \t[   3  -7   2   0   1 ⟩\t        10.260¢\t -7.632\t  7.632\t  7    ",
         "        \t275S  \t66825/65536      \t[ -16   5   2   0   1 ⟩\t        33.720¢\t  2.924\t  2.924\t  5    ",
         "        \t1/275M\t16777216/16238475\t[  24 -10  -2   0  -1 ⟩\t        56.505¢\t-13.479\t 13.479\t 10    ",
@@ -69,7 +69,7 @@ describe("analyze-ji-pitch", (): void => {
         expect(actual).toEqual(expected)
     })
 
-    it("throws an error if you provide neither monzo, ratio, name, or integer", (): void => {
+    it("throws an error if you provide neither monzo, quotient, name, or integer", (): void => {
         onlyRunInCi()
 
         const command = "npm run analyze-ji-pitch" as Io
@@ -90,7 +90,7 @@ describe("analyze-ji-pitch", (): void => {
             "   --- JI pitch ---",
             "",
             "         \t                       \t               \tapotome\t       \t       ",
-            "ratio    \tmonzo                  \tcents          \tslope  \tAAS    \tATE    ",
+            "quotient \tmonzo                  \tcents          \tslope  \tAAS    \tATE    ",
             "2200/2187\t[   3  -7   2   0   1 ⟩\t        10.260¢\t -7.632\t  7.632\t  7    ",
             "",
             "   --- 2,3-free class ---",
@@ -102,7 +102,7 @@ describe("analyze-ji-pitch", (): void => {
             "   --- notating commas ---",
             "",
             "symbol  \tcomma \t                 \t                       \t               \tapotome\t       \t       ",
-            "class   \tname  \tratio            \tmonzo                  \tcents          \tslope  \tAAS    \tATE    ",
+            "class   \tname  \tquotient         \tmonzo                  \tcents          \tslope  \tAAS    \tATE    ",
             "        \t1/275M\t16777216/16238475\t[  24 -10  -2   0  -1 ⟩\t        56.505¢\t-13.479\t 13.479\t 10    ",
             "   `)|( \t275k  \t2200/2187        \t[   3  -7   2   0   1 ⟩\t        10.260¢\t -7.632\t  7.632\t  7    ",
             "        \t275S  \t66825/65536      \t[ -16   5   2   0   1 ⟩\t        33.720¢\t  2.924\t  2.924\t  5    ",
@@ -121,9 +121,9 @@ describe("analyze-ji-pitch", (): void => {
         const expected = [
             "   --- JI pitch ---",
             "",
-            "     \t                       \t               \tapotome \t       \t       ",
-            "ratio\tmonzo                  \tcents          \tslope   \tAAS    \tATE    ",
-            "275/1\t[   0   0   2   0   1 ⟩\t      9723.945¢\t-598.739\t598.739\t  0    ",
+            "        \t                       \t               \tapotome \t       \t       ",
+            "quotient\tmonzo                  \tcents          \tslope   \tAAS    \tATE    ",
+            "275/1   \t[   0   0   2   0   1 ⟩\t      9723.945¢\t-598.739\t598.739\t  0    ",
             "",
             "   --- 2,3-free class ---",
             "",
@@ -134,7 +134,7 @@ describe("analyze-ji-pitch", (): void => {
             "   --- notating commas ---",
             "",
             "symbol  \tcomma \t                 \t                       \t               \tapotome\t       \t       ",
-            "class   \tname  \tratio            \tmonzo                  \tcents          \tslope  \tAAS    \tATE    ",
+            "class   \tname  \tquotient         \tmonzo                  \tcents          \tslope  \tAAS    \tATE    ",
             "   `)|( \t275k  \t2200/2187        \t[   3  -7   2   0   1 ⟩\t        10.260¢\t -7.632\t  7.632\t  7    ",
             "        \t275S  \t66825/65536      \t[ -16   5   2   0   1 ⟩\t        33.720¢\t  2.924\t  2.924\t  5    ",
             "        \t1/275M\t16777216/16238475\t[  24 -10  -2   0  -1 ⟩\t        56.505¢\t-13.479\t 13.479\t 10    ",
@@ -154,7 +154,7 @@ describe("analyze-ji-pitch", (): void => {
             "   --- JI pitch ---",
             "",
             "         \t                       \t               \tapotome\t       \t       ",
-            "ratio    \tmonzo                  \tcents          \tslope  \tAAS    \tATE    ",
+            "quotient \tmonzo                  \tcents          \tslope  \tAAS    \tATE    ",
             "2200/2187\t[   3  -7   2   0   1 ⟩\t        10.260¢\t -7.632\t  7.632\t  7    ",
             "",
             "   --- 2,3-free class ---",
@@ -166,7 +166,7 @@ describe("analyze-ji-pitch", (): void => {
             "   --- notating commas ---",
             "",
             "symbol  \tcomma              \t                 \t                       \t               \tapotome\t       \t       ",
-            "class   \tname               \tratio            \tmonzo                  \tcents          \tslope  \tAAS    \tATE    ",
+            "class   \tname               \tquotient         \tmonzo                  \tcents          \tslope  \tAAS    \tATE    ",
             "   `)|( \t5².11-kleisma      \t2200/2187        \t[   3  -7   2   0   1 ⟩\t        10.260¢\t -7.632\t  7.632\t  7    ",
             "        \t5².11-Small-Diesis \t66825/65536      \t[ -16   5   2   0   1 ⟩\t        33.720¢\t  2.924\t  2.924\t  5    ",
             "        \t5².11-Medium-Diesis\t16777216/16238475\t[  24 -10  -2   0  -1 ⟩\t        56.505¢\t-13.479\t 13.479\t 10    ",
@@ -186,7 +186,7 @@ describe("analyze-ji-pitch", (): void => {
             "   --- JI pitch ---",
             "",
             "                         \t                                   \t               \tapotome\t       \t       ",
-            "ratio                    \tmonzo                              \tcents          \tslope  \tAAS    \tATE    ",
+            "quotient                 \tmonzo                              \tcents          \tslope  \tAAS    \tATE    ",
             "242912646603/223338299392\t[ -34  19   0   0   1  -1   0   1 ⟩\t       145.448¢\t 10.044\t 10.044\t 19    ",
             "",
             "   --- 2,3-free class ---",
@@ -198,7 +198,7 @@ describe("analyze-ji-pitch", (): void => {
             "   --- notating commas ---",
             "",
             "symbol\tcomma  \t                   \t                                   \t               \tapotome\t       \t       ",
-            "class \tname   \tratio              \tmonzo                              \tcents          \tslope  \tAAS    \tATE    ",
+            "class \tname   \tquotient           \tmonzo                              \tcents          \tslope  \tAAS    \tATE    ",
             "      \t209/13k\t209/208            \t[  -4   0   0   0   1  -1   0   1 ⟩\t         8.303¢\t -0.511\t  0.511\t  0    ",
             "      \t209/13C\t111071169/109051904\t[ -23  12   0   0   1  -1   0   1 ⟩\t        31.763¢\t 10.044\t 10.044\t 12    ",
             "      \t13/209C\t6908733/6848512    \t[ -15  12   0   0  -1   1   0  -1 ⟩\t        15.157¢\t 11.067\t 11.067\t 12    ",

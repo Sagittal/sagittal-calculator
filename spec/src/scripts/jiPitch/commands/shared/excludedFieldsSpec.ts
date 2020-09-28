@@ -17,6 +17,6 @@ describe("excludedFields", (): void => {
 
         expect((): void => {
             parseExcludedFields(excludedFieldIo)
-        }).toThrowError("Tried to exclude field twoThreeFreeClass but it is not a member of the list of possible fields to exclude: ratio,monzo,cents,apotomeSlope,aas,ate,symbolClass,name,twoThreeFreePrimeLimit,twoThreeFreeClassName,twoThreeFreeCopfr,twoThreeFreeSopfr,n2d3p9")
+        }).toThrowError("Tried to exclude field twoThreeFreeClass but it is not a member of the list of possible fields to exclude: quotient,monzo,cents,apotomeSlope,aas,ate,symbolClass,name,twoThreeFreePrimeLimit,twoThreeFreeClassName,twoThreeFreeCopfr,twoThreeFreeSopfr,n2d3p9")
     })
 })

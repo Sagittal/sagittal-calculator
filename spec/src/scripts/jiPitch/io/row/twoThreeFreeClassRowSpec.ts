@@ -1,5 +1,5 @@
 import { Row } from "../../../../../../src/general/io/table"
-import { Copfr, Direction, Prime, RationalRatio, Sopfr } from "../../../../../../src/general/math"
+import { Copfr, Direction, Prime, RationalQuotient, Sopfr } from "../../../../../../src/general/math"
 import { TwoThreeFreeClass } from "../../../../../../src/general/music"
 import { N2D3P9, TwoThreeFreeClassAnalysis } from "../../../../../../src/sagittal/ji"
 import { jiPitchScriptGroupSettings } from "../../../../../../src/scripts/jiPitch/globals"
@@ -8,7 +8,7 @@ import { FindCommasField } from "../../../../../../src/scripts/jiPitch/types"
 
 describe("compute23FreeClassRow", (): void => {
     const twoThreeFreeClassAnalysis: TwoThreeFreeClassAnalysis = {
-        ratio: [5, 1] as RationalRatio<{ rough: 5, direction: Direction.SUPER }>,
+        quotient: [5, 1] as RationalQuotient<{ rough: 5, direction: Direction.SUPER }>,
         twoThreeFreeSopfr: 13 as Sopfr<{ rough: 5 }>,
         twoThreeFreeCopfr: 3 as Copfr<{ rough: 5 }>,
         n2d3p9: 18.4567 as N2D3P9,

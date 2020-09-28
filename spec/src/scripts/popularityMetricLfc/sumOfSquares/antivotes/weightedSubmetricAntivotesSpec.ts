@@ -1,14 +1,14 @@
 import { log, TwoThreeFreeClass } from "../../../../../../src/general"
 import { BASE_2, Power } from "../../../../../../src/general/math"
 import { Parameter, ParameterValue } from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
-import * as ratioSubmetricAntivotes
-    from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares/antivotes/ratioSubmetricAntivotes"
+import * as quotientSubmetricAntivotes
+    from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares/antivotes/quotientSubmetricAntivotes"
 import { computeWeightedSubmetricAntivotes } from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares/antivotes/weightedSubmetricAntivotes"
 import { Antivotes } from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares/types"
 
 describe("computeWeightedSubmetricAntivotes", (): void => {
     it("returns 0 when the weight is 0", (): void => {
-        const twoThreeFreeClass = { ratio: [15, 14] } as TwoThreeFreeClass
+        const twoThreeFreeClass = { quotient: [15, 14] } as TwoThreeFreeClass
         const submetric = { [ Parameter.WEIGHT_AS_COEFFICIENT ]: 0 as ParameterValue, [ Parameter.SUM ]: true }
 
         const actual = computeWeightedSubmetricAntivotes(twoThreeFreeClass, submetric)
@@ -17,24 +17,24 @@ describe("computeWeightedSubmetricAntivotes", (): void => {
         expect(actual).toBe(expected)
     })
 
-    it("does not waste resources calling computeRatioSubmetricAntivotes when the weight is 0", (): void => {
-        spyOn(ratioSubmetricAntivotes, "computeRatioSubmetricAntivotes")
+    it("does not waste resources calling computeQuotientSubmetricAntivotes when the weight is 0", (): void => {
+        spyOn(quotientSubmetricAntivotes, "computeQuotientSubmetricAntivotes")
 
-        const twoThreeFreeClass = { ratio: [15, 14] } as TwoThreeFreeClass
+        const twoThreeFreeClass = { quotient: [15, 14] } as TwoThreeFreeClass
         const submetric = { [ Parameter.WEIGHT_AS_COEFFICIENT ]: 0 as ParameterValue, [ Parameter.SUM ]: true }
 
         computeWeightedSubmetricAntivotes(twoThreeFreeClass, submetric)
 
-        expect(ratioSubmetricAntivotes.computeRatioSubmetricAntivotes).not.toHaveBeenCalled()
+        expect(quotientSubmetricAntivotes.computeQuotientSubmetricAntivotes).not.toHaveBeenCalled()
     })
 
     it("returns the full submetric antivotes when the weight is 1", (): void => {
-        const twoThreeFreeClass = { ratio: [15, 14] } as TwoThreeFreeClass
+        const twoThreeFreeClass = { quotient: [15, 14] } as TwoThreeFreeClass
         const submetric = { [ Parameter.WEIGHT_AS_COEFFICIENT ]: 1 as ParameterValue, [ Parameter.SUM ]: true }
 
         const actual = computeWeightedSubmetricAntivotes(twoThreeFreeClass, submetric)
 
-        const expected = ratioSubmetricAntivotes.computeRatioSubmetricAntivotes(
+        const expected = quotientSubmetricAntivotes.computeQuotientSubmetricAntivotes(
             twoThreeFreeClass,
             { [ Parameter.SUM ]: true },
         )
@@ -42,20 +42,20 @@ describe("computeWeightedSubmetricAntivotes", (): void => {
     })
 
     it("returns the weighted value of the submetric antivotes", (): void => {
-        const twoThreeFreeClass = { ratio: [15, 14] } as TwoThreeFreeClass
+        const twoThreeFreeClass = { quotient: [15, 14] } as TwoThreeFreeClass
         const submetric = { [ Parameter.WEIGHT_AS_COEFFICIENT ]: 0.5 as ParameterValue, [ Parameter.SUM ]: true }
 
         const actual = computeWeightedSubmetricAntivotes(twoThreeFreeClass, submetric)
 
         const expected =
             0.5 *
-            ratioSubmetricAntivotes
-                .computeRatioSubmetricAntivotes(twoThreeFreeClass, { [ Parameter.SUM ]: true }) as Antivotes
+            quotientSubmetricAntivotes
+                .computeQuotientSubmetricAntivotes(twoThreeFreeClass, { [ Parameter.SUM ]: true }) as Antivotes
         expect(actual).toBe(expected)
     })
 
     it("defaults the weight to 1", (): void => {
-        const twoThreeFreeClass = { ratio: [15, 14] } as TwoThreeFreeClass
+        const twoThreeFreeClass = { quotient: [15, 14] } as TwoThreeFreeClass
 
         const actual = computeWeightedSubmetricAntivotes(twoThreeFreeClass, { [ Parameter.SUM ]: true })
 
@@ -64,13 +64,13 @@ describe("computeWeightedSubmetricAntivotes", (): void => {
     })
 
     it("can use the weight as a logarithm base", (): void => {
-        const twoThreeFreeClass = { ratio: [15, 14] } as TwoThreeFreeClass
+        const twoThreeFreeClass = { quotient: [15, 14] } as TwoThreeFreeClass
         const submetric = { [ Parameter.WEIGHT_AS_LOGARITHM_BASE ]: 2 as ParameterValue, [ Parameter.SUM ]: true }
 
         const actual = computeWeightedSubmetricAntivotes(twoThreeFreeClass, submetric)
 
         const expected = log(
-            ratioSubmetricAntivotes.computeRatioSubmetricAntivotes(
+            quotientSubmetricAntivotes.computeQuotientSubmetricAntivotes(
                 twoThreeFreeClass,
                 { [ Parameter.SUM ]: true },
             ) as number as Power,
@@ -80,12 +80,12 @@ describe("computeWeightedSubmetricAntivotes", (): void => {
     })
 
     it("can use the weight as a power exponent", (): void => {
-        const twoThreeFreeClass = { ratio: [15, 14] } as TwoThreeFreeClass
+        const twoThreeFreeClass = { quotient: [15, 14] } as TwoThreeFreeClass
         const submetric = { [ Parameter.WEIGHT_AS_POWER_EXPONENT ]: 2 as ParameterValue, [ Parameter.SUM ]: true }
 
         const actual = computeWeightedSubmetricAntivotes(twoThreeFreeClass, submetric)
 
-        const expected = ratioSubmetricAntivotes.computeRatioSubmetricAntivotes(
+        const expected = quotientSubmetricAntivotes.computeQuotientSubmetricAntivotes(
             twoThreeFreeClass,
             { [ Parameter.SUM ]: true },
         ) ** 2 as Antivotes
@@ -93,12 +93,12 @@ describe("computeWeightedSubmetricAntivotes", (): void => {
     })
 
     it("can use the weight as a power base", (): void => {
-        const twoThreeFreeClass = { ratio: [15, 14] } as TwoThreeFreeClass
+        const twoThreeFreeClass = { quotient: [15, 14] } as TwoThreeFreeClass
         const submetric = { [ Parameter.WEIGHT_AS_POWER_BASE ]: 2 as ParameterValue, [ Parameter.SUM ]: true }
 
         const actual = computeWeightedSubmetricAntivotes(twoThreeFreeClass, submetric)
 
-        const expected = 2 ** ratioSubmetricAntivotes.computeRatioSubmetricAntivotes(
+        const expected = 2 ** quotientSubmetricAntivotes.computeQuotientSubmetricAntivotes(
             twoThreeFreeClass,
             { [ Parameter.SUM ]: true },
         ) as Antivotes

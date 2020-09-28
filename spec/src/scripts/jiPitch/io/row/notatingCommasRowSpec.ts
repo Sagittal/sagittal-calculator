@@ -10,7 +10,7 @@ import {
     Name,
     Prime,
     RationalMonzo,
-    RationalRatio,
+    RationalQuotient,
     Row,
     Sopfr,
 } from "../../../../../../src/general"
@@ -27,7 +27,7 @@ describe("computeNotatingCommasRow", (): void => {
         name: "1/5C" as Name<Comma>,
         cents: 11.2 as Cents,
         monzo: [0, -1, 1] as RationalMonzo,
-        ratio: [5, 4] as RationalRatio,
+        quotient: [5, 4] as RationalQuotient,
         apotomeSlope: 8.2 as ApotomeSlope,
         aas: 8.2 as Abs<ApotomeSlope>,
         ate: 1 as Abs<Integer & Exponent<3 & Prime>>,
@@ -47,7 +47,7 @@ describe("computeNotatingCommasRow", (): void => {
         const expected = [
             "    /|  ",         // Symbol class
             "1/5C",             // Comma name
-            "5/4",              // Ratio
+            "5/4",              // Quotient
             "[   0  -1   1 ⟩",  // Monzo
             "        11.200¢",  // Cents
             "  8.200",          // Apotome slope
@@ -65,7 +65,7 @@ describe("computeNotatingCommasRow", (): void => {
         const expected = [
             "    /|  ",         // Symbol class
             "1/5C",             // Comma name
-            "5/4",              // Ratio
+            "5/4",              // Quotient
             "  8.200",          // Apotome slope
             "  8.200",          // AAS
             "  1    ",          // ATE

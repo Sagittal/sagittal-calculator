@@ -1,4 +1,4 @@
-import { Abs, Cents, Exponent, Integer, Io, NEWLINE, Prime, RationalMonzo, RationalRatio } from "../../../../../../src/general"
+import { Abs, Cents, Exponent, Integer, Io, NEWLINE, Prime, RationalMonzo, RationalQuotient } from "../../../../../../src/general"
 import { ApotomeSlope, JiPitchAnalysis } from "../../../../../../src/sagittal"
 import { computeJiPitchOutput } from "../../../../../../src/scripts/jiPitch/io"
 import {
@@ -11,7 +11,7 @@ describe("computeJiPitchOutput", (): void => {
         ...jiPitchAnalysisFixture,
         cents: 11.2 as Cents,
         monzo: [0, -1, 1] as RationalMonzo,
-        ratio: [5, 4] as RationalRatio,
+        quotient: [5, 4] as RationalQuotient,
         apotomeSlope: 8.2 as ApotomeSlope,
         aas: 8.2 as Abs<ApotomeSlope>,
         ate: 1 as Abs<Integer & Exponent<3 & Prime>>,
@@ -24,9 +24,9 @@ describe("computeJiPitchOutput", (): void => {
         const expected =
             "   --- JI pitch ---" + NEWLINE +
             "" + NEWLINE +
-            "     \t               \t               \tapotome\t       \t       " + NEWLINE +
-            "ratio\tmonzo          \tcents          \tslope  \tAAS    \tATE    ".underline + NEWLINE +
-            "5/4  \t[   0  -1   1 ⟩\t        11.200¢\t  8.200\t  8.200\t  1    " + NEWLINE as Io
+            "        \t               \t               \tapotome\t       \t       " + NEWLINE +
+            "quotient\tmonzo          \tcents          \tslope  \tAAS    \tATE    ".underline + NEWLINE +
+            "5/4     \t[   0  -1   1 ⟩\t        11.200¢\t  8.200\t  8.200\t  1    " + NEWLINE as Io
         expect(actual).toEqual(expected)
     })
 })

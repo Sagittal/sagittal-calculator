@@ -12,10 +12,10 @@ export {
     TAB,
     COMMA,
     ANY_CENTS_CHARS,
-    ANY_RATIO_CHARS,
+    ANY_QUOTIENT_CHARS,
 } from "./constants"
 export { clearLogFiles, LogTarget, saveLog, setLogTargets } from "./log"
-export { parse23FreeClass, parseMonzo, parseRatio, parseCents, parseInteger, parseDecimal } from "./parse"
+export { parse23FreeClass, parseMonzo, parseQuotient, parseCents, parseInteger, parseDecimal } from "./parse"
 export { removeColor } from "./removeColor"
 export { stringify } from "./stringify"
 export { Column, formatTable, Row, Table, splitColumnTitlesIntoRowsBySpaces, TableFormat } from "./table"
@@ -28,7 +28,7 @@ export {
     formatMonzo,
     formatDecimal,
     format23FreeClass,
-    formatRatio,
+    formatQuotient,
     formatTime,
     formatPitch,
     Formatted,

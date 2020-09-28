@@ -8,7 +8,7 @@ import {
     Prime,
     RationalMonzo,
     RationalNum,
-    RationalRatio,
+    RationalQuotient,
 } from "../../../general"
 import { TwoThreeFreeClassAnalysis } from "../twoThreeFreeClass"
 
@@ -17,7 +17,7 @@ interface JiPitchAnalysisProperties<T extends NumTypeParameters = {}> {
     ate: Abs<Integer & Exponent<3 & Prime>>,
     aas: Abs<ApotomeSlope>,
     monzo: RationalMonzo<T>,
-    ratio: RationalRatio<T>,
+    quotient: RationalQuotient<T>,
     decimal: Decimal<T>,
     cents: Cents,
     twoThreeFreeClassAnalysis: TwoThreeFreeClassAnalysis<T>,

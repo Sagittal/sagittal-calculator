@@ -3,7 +3,7 @@ import {
     formatDecimal,
     formatInteger,
     formatMonzo,
-    formatRatio,
+    formatQuotient,
     Formatted,
     Row,
 } from "../../../../general"
@@ -12,12 +12,12 @@ import { jiPitchScriptGroupSettings } from "../../globals"
 import { JiPitchField } from "../../types"
 
 const computeJiPitchRow = (jiPitchAnalysis: JiPitchAnalysis): Row<{ of: JiPitchAnalysis }> => {
-    const { cents, monzo, ratio, apotomeSlope, aas, ate } = jiPitchAnalysis
+    const { cents, monzo, quotient, apotomeSlope, aas, ate } = jiPitchAnalysis
 
     const rows = [] as unknown[] as Row<{ of: JiPitchAnalysis }>
 
-    if (!jiPitchScriptGroupSettings.excludedFields.includes(JiPitchField.RATIO)) {
-        rows.push(formatRatio(ratio) as Formatted as Formatted<JiPitchAnalysis>)
+    if (!jiPitchScriptGroupSettings.excludedFields.includes(JiPitchField.QUOTIENT)) {
+        rows.push(formatQuotient(quotient) as Formatted as Formatted<JiPitchAnalysis>)
     }
     if (!jiPitchScriptGroupSettings.excludedFields.includes(JiPitchField.MONZO)) {
         rows.push(formatMonzo(monzo) as Formatted as Formatted<JiPitchAnalysis>)

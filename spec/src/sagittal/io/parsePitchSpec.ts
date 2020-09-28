@@ -1,5 +1,5 @@
 import { Io } from "../../../../src/general/io"
-import { Decimal, RationalMonzo, RationalRatio } from "../../../../src/general/math"
+import { Decimal, RationalMonzo, RationalQuotient } from "../../../../src/general/math"
 import { parsePitch } from "../../../../src/sagittal/io"
 
 describe("parsePitch", (): void => {
@@ -12,12 +12,12 @@ describe("parsePitch", (): void => {
         expect(actual).toEqual(expected)
     })
 
-    it("works when given as a ratio", (): void => {
+    it("works when given as a quotient", (): void => {
         const pitchText = "7/2" as Io
 
         const actual = parsePitch(pitchText)
 
-        const expected = { ratio: [7, 2] as RationalRatio }
+        const expected = { quotient: [7, 2] as RationalQuotient }
         expect(actual).toEqual(expected)
     })
 

@@ -1,7 +1,7 @@
 import {
     abs,
     computeCopfr,
-    computeRatioFromMonzo,
+    computeQuotientFromMonzo,
     computeRationalMonzoFromRationalNum,
     computeRoughRationalMonzo,
     computeSopfr,
@@ -18,7 +18,7 @@ const computeSecorComplexity = (jiPitch: RationalNum): number => {
     const twoThreeFreeRationalMonzo = computeRoughRationalMonzo(rationalMonzo, FIVE_ROUGHNESS)
     const g = computeSopfr(twoThreeFreeRationalMonzo)
 
-    const [numerator, denominator] = computeRatioFromMonzo(twoThreeFreeRationalMonzo)
+    const [numerator, denominator] = computeQuotientFromMonzo(twoThreeFreeRationalMonzo)
     const h = computeCopfr(numerator)
     const i = computeCopfr(denominator)
     const j = abs(h - i)
