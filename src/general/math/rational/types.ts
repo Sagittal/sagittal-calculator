@@ -1,16 +1,10 @@
 import { Count, Sum } from "../../types"
-import { Direction, NumTypeParameterEffects, NumTypeParameters } from "../num"
-import { RationalDecimal } from "./num"
+import { NumTypeParameterEffects, NumTypeParameters } from "../num"
+import { IntegerDecimal } from "./num"
 
-// This is really just an IntegerDecimal, in the sense of IntegerMonzo and IntegerRatio.
-// But it's so widespread I really want to keep its name simple.
-// I might consider making RationalDecimal into just "Rational", but that's less pressing.
-type Integer<T extends NumTypeParameters = {}> =
-    RationalDecimal<T & { integer: true, rational: true, direction: Direction.SUPER }>
-
-type Prime<T extends NumTypeParameters = {}> = Integer<T> & { _PrimeBrand: "Prime" }
-type Roughness = Integer & { _RoughnessBrand: boolean }
-type Smoothness = Integer & { _SmoothnessBrand: boolean }
+type Prime<T extends NumTypeParameters = {}> = IntegerDecimal<T> & { _PrimeBrand: "Prime" }
+type Roughness = IntegerDecimal & { _RoughnessBrand: boolean }
+type Smoothness = IntegerDecimal & { _SmoothnessBrand: boolean }
 
 type Sopfr<T extends NumTypeParameters = {}> =
     Sum<Prime>
@@ -21,7 +15,7 @@ type Copfr<T extends NumTypeParameters = {}> =
     & { _CopfrBrand: boolean }
     & NumTypeParameterEffects<T>
 
-type CommonFunction = (firstInteger: Integer, secondInteger: Integer) => Integer
+type CommonFunction = (firstInteger: IntegerDecimal, secondInteger: IntegerDecimal) => IntegerDecimal
 
 type Primes =
     2 | 3 | 5 | 7 | 11 | 13 | 17 | 19 | 23 | 29 | 31 | 37 | 41 | 43 | 47 | 53 | 59 | 61 | 67 | 71 | 73 | 79 | 83 | 89
@@ -35,7 +29,6 @@ type Primes =
     | 929 | 937 | 941 | 947 | 953 | 967 | 971 | 977 | 983 | 991 | 997
 
 export {
-    Integer,
     Sopfr,
     Copfr,
     Prime,

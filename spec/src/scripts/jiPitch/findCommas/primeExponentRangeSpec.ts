@@ -1,4 +1,4 @@
-import { Copfr, Exponent, Extrema, Integer, Max, Prime, Sopfr } from "../../../../../src/general"
+import { Copfr, Exponent, Extrema, IntegerDecimal, Max, Prime, Sopfr } from "../../../../../src/general"
 import { computePrimeExponentRange } from "../../../../../src/scripts/jiPitch/findCommas/primeExponentRange"
 
 describe("computePrimeExponentRange", (): void => {
@@ -9,7 +9,7 @@ describe("computePrimeExponentRange", (): void => {
 
         const actual = computePrimeExponentRange(prime, { max23FreeSopfr, max23FreeCopfr })
 
-        const expected = [-3, -2, -1, 0, 1, 2, 3] as Array<Integer & Exponent<Prime>>
+        const expected = [-3, -2, -1, 0, 1, 2, 3] as Array<IntegerDecimal & Exponent<Prime>>
         expect(actual).toEqual(expected)
     })
 
@@ -20,51 +20,51 @@ describe("computePrimeExponentRange", (): void => {
 
         const actual = computePrimeExponentRange(prime, { max23FreeSopfr, max23FreeCopfr })
 
-        const expected = [-2, -1, 0, 1, 2] as Array<Integer & Exponent<Prime>>
+        const expected = [-2, -1, 0, 1, 2] as Array<IntegerDecimal & Exponent<Prime>>
         expect(actual).toEqual(expected)
     })
 
     it("gives the valid range of the prime exponent given a max 2,3-free SoPFR and a max N2D3P9 where the 2,3-free SoPFR is the constraining factor", (): void => {
         const prime = 7 as Prime
         const max23FreeSopfr = 999 as Max<Sopfr<{ rough: 5 }>>
-        const primeExponentExtremaGivenMaxN2D3P9 = [-2, 4] as Extrema<Integer & Exponent<Prime>>
+        const primeExponentExtremaGivenMaxN2D3P9 = [-2, 4] as Extrema<IntegerDecimal & Exponent<Prime>>
 
         const actual = computePrimeExponentRange(prime, { max23FreeSopfr, primeExponentExtremaGivenMaxN2D3P9 })
 
-        const expected = [-2, -1, 0, 1, 2, 3, 4] as Array<Integer & Exponent<Prime>>
+        const expected = [-2, -1, 0, 1, 2, 3, 4] as Array<IntegerDecimal & Exponent<Prime>>
         expect(actual).toEqual(expected)
     })
 
     it("gives the valid range of the prime exponent given a max 2,3-free SoPFR and a max N2D3P9 where the N2D3P9 is the constraining factor", (): void => {
         const prime = 7 as Prime
         const max23FreeSopfr = 14 as Max<Sopfr<{ rough: 5 }>>
-        const primeExponentExtremaGivenMaxN2D3P9 = [-5, 8] as Extrema<Integer & Exponent<Prime>>
+        const primeExponentExtremaGivenMaxN2D3P9 = [-5, 8] as Extrema<IntegerDecimal & Exponent<Prime>>
 
         const actual = computePrimeExponentRange(prime, { max23FreeSopfr, primeExponentExtremaGivenMaxN2D3P9 })
 
-        const expected = [-2, -1, 0, 1, 2] as Array<Integer & Exponent<Prime>>
+        const expected = [-2, -1, 0, 1, 2] as Array<IntegerDecimal & Exponent<Prime>>
         expect(actual).toEqual(expected)
     })
 
     it("gives the valid range of the prime exponent given a max 2,3-free CoPFR and a max N2D3P9 where the 2,3-free CoPFR is the constraining factor", (): void => {
         const prime = 11 as Prime
         const max23FreeCopfr = 3 as Max<Copfr<{ rough: 5 }>>
-        const primeExponentExtremaGivenMaxN2D3P9 = [-5, 9] as Extrema<Integer & Exponent<Prime>>
+        const primeExponentExtremaGivenMaxN2D3P9 = [-5, 9] as Extrema<IntegerDecimal & Exponent<Prime>>
 
         const actual = computePrimeExponentRange(prime, { primeExponentExtremaGivenMaxN2D3P9, max23FreeCopfr })
 
-        const expected = [-3, -2, -1, 0, 1, 2, 3] as Array<Integer & Exponent<Prime>>
+        const expected = [-3, -2, -1, 0, 1, 2, 3] as Array<IntegerDecimal & Exponent<Prime>>
         expect(actual).toEqual(expected)
     })
 
     it("gives the valid range of the prime exponent given a max 2,3-free CoPFR and a max N2D3P9 where the N2D3P9 is the constraining factor", (): void => {
         const prime = 11 as Prime
         const max23FreeCopfr = 3 as Max<Copfr<{ rough: 5 }>>
-        const primeExponentExtremaGivenMaxN2D3P9 = [-1, 2] as Extrema<Integer & Exponent<Prime>>
+        const primeExponentExtremaGivenMaxN2D3P9 = [-1, 2] as Extrema<IntegerDecimal & Exponent<Prime>>
 
         const actual = computePrimeExponentRange(prime, { primeExponentExtremaGivenMaxN2D3P9, max23FreeCopfr })
 
-        const expected = [-1, 0, 1, 2] as Array<Integer & Exponent<Prime>>
+        const expected = [-1, 0, 1, 2] as Array<IntegerDecimal & Exponent<Prime>>
         expect(actual).toEqual(expected)
     })
 
@@ -74,7 +74,7 @@ describe("computePrimeExponentRange", (): void => {
 
         const actual = computePrimeExponentRange(prime, { max23FreeSopfr })
 
-        const expected = [-4, -3, -2, -1, 0, 1, 2, 3, 4] as Array<Integer & Exponent<Prime>>
+        const expected = [-4, -3, -2, -1, 0, 1, 2, 3, 4] as Array<IntegerDecimal & Exponent<Prime>>
         expect(actual).toEqual(expected)
     })
 
@@ -84,17 +84,17 @@ describe("computePrimeExponentRange", (): void => {
 
         const actual = computePrimeExponentRange(prime, { max23FreeCopfr })
 
-        const expected = [-3, -2, -1, 0, 1, 2, 3] as Array<Integer & Exponent<Prime>>
+        const expected = [-3, -2, -1, 0, 1, 2, 3] as Array<IntegerDecimal & Exponent<Prime>>
         expect(actual).toEqual(expected)
     })
 
     it("gives the valid range of the prime exponent given only a max N2D3P9", (): void => {
         const prime = 7 as Prime
-        const primeExponentExtremaGivenMaxN2D3P9 = [-2, 4] as Extrema<Integer & Exponent<Prime>>
+        const primeExponentExtremaGivenMaxN2D3P9 = [-2, 4] as Extrema<IntegerDecimal & Exponent<Prime>>
 
         const actual = computePrimeExponentRange(prime, { primeExponentExtremaGivenMaxN2D3P9 })
 
-        const expected = [-2, -1, 0, 1, 2, 3, 4] as Array<Integer & Exponent<Prime>>
+        const expected = [-2, -1, 0, 1, 2, 3, 4] as Array<IntegerDecimal & Exponent<Prime>>
         expect(actual).toEqual(expected)
     })
 

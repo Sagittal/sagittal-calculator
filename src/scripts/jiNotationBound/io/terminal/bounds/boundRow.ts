@@ -1,4 +1,4 @@
-import { formatDecimal, formatInteger, Row } from "../../../../../general"
+import { formatDecimal, formatIntegerDecimal, Row } from "../../../../../general"
 import { formatSymbolAscii } from "../../../../../sagittal"
 import { JiNotationBoundAnalysis } from "../../../bound"
 import { extractJiNotationBoundIdentifiers } from "../boundIdentifiers"
@@ -52,7 +52,7 @@ const computeJiNotationBoundRow = (
     ] = extractJiNotationLevelDistances(bestPossibleBoundHistoryAnalysis, { ina: true })
 
     jiNotationBoundRow = [
-        formatInteger(jiNotationBound.id, { align: true }),
+        formatIntegerDecimal(jiNotationBound.id, { align: true }),
         formatMinaName(lesserBoundedMinaName),
         formatMinaName(greaterBoundedMinaName),
         formatSymbolAscii(extremeLevelLesserBoundedSymbolClass),
@@ -61,7 +61,7 @@ const computeJiNotationBoundRow = (
         highLevelRank,
         ultraLevelRank,
         extremeLevelRank,
-        formatInteger(bestRank, { align: true }),
+        formatIntegerDecimal(bestRank, { align: true }),
         bestPossibleBoundHistoryMediumDistance,
         bestPossibleBoundHistoryHighDistance,
         bestPossibleBoundHistoryUltraDistance,

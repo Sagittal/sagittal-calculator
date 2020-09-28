@@ -1,6 +1,6 @@
 import { NumTypeParameters } from "../../../num"
-import { isSmoothInteger } from "../../smoothness"
 import { Primes, Smoothness } from "../../types"
+import { isSmoothIntegerDecimal } from "../decimal"
 import { RationalQuotient } from "./types"
 
 const isSmoothRationalQuotient = <S extends Primes, T extends NumTypeParameters>(
@@ -9,7 +9,7 @@ const isSmoothRationalQuotient = <S extends Primes, T extends NumTypeParameters>
 ): rationalQuotient is RationalQuotient<T & { smooth: S }> => {
     const [numerator, denominator] = rationalQuotient
 
-    return isSmoothInteger(numerator, smoothness) && isSmoothInteger(denominator, smoothness)
+    return isSmoothIntegerDecimal(numerator, smoothness) && isSmoothIntegerDecimal(denominator, smoothness)
 }
 
 export {

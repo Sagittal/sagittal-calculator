@@ -1,11 +1,11 @@
-import { Count, deepClone, Id, Integer, Rank } from "../../../../../src/general"
+import { Count, deepClone, Id, IntegerDecimal, Rank } from "../../../../../src/general"
 import { BoundType, JiNotationBound } from "../../../../../src/sagittal/notations/ji"
 import { updateRankAnalysis } from "../../../../../src/scripts/jiNotationBound/bound/ranks"
 import { rankBoundIndices, rankCounts } from "../../../../../src/scripts/jiNotationBound/globals"
 import { RANKS } from "../../../../../src/scripts/jiNotationBound/ranks"
 
 describe("updateRankAnalysis", (): void => {
-    const bestRank: Integer & Rank<BoundType> = RANKS[ BoundType.SIZE_CATEGORY_BOUND ]
+    const bestRank: IntegerDecimal & Rank<BoundType> = RANKS[ BoundType.SIZE_CATEGORY_BOUND ]
     const jiNotationBoundId: Id<JiNotationBound> = 88 as Id<JiNotationBound>
 
     let previousRankAnalysis: number
@@ -19,7 +19,7 @@ describe("updateRankAnalysis", (): void => {
     })
 
     it("updates the count of JI notation bounds with this rank as their best rank", (): void => {
-        expect(rankCounts[ bestRank ]).toBe(previousRankAnalysis + 1 as Count<Integer & Rank<BoundType>>)
+        expect(rankCounts[ bestRank ]).toBe(previousRankAnalysis + 1 as Count<IntegerDecimal & Rank<BoundType>>)
     })
 
     it(

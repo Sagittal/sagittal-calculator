@@ -1,15 +1,15 @@
 import { Direction, invertMonzo, NumTypeParameters, sumMonzos } from "../../../num"
 import { RationalQuotient } from "../quotient"
-import { computeIntegerMonzoFromInteger } from "./monzoFromInteger"
+import { computeIntegerMonzoFromIntegerDecimal } from "./monzoFromIntegerDecimal"
 import { RationalMonzo } from "./types"
 
 const computeRationalMonzoFromRationalQuotient = <T extends NumTypeParameters>(
     [numerator, denominator]: RationalQuotient<T>,
 ): RationalMonzo<T> => {
     const positiveFactors: RationalMonzo<{ direction: Direction.SUPER }> =
-        computeIntegerMonzoFromInteger(numerator)
+        computeIntegerMonzoFromIntegerDecimal(numerator)
     const negativeFactors: RationalMonzo<{ direction: Direction.SUB }> =
-        invertMonzo(computeIntegerMonzoFromInteger(denominator))
+        invertMonzo(computeIntegerMonzoFromIntegerDecimal(denominator))
 
     return sumMonzos(positiveFactors, negativeFactors) as RationalMonzo<T>
 }

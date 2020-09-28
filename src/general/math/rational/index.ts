@@ -9,39 +9,36 @@ export {
 } from "./constants"
 export { computeCopfr } from "./copfr"
 export { computeGpf } from "./gpf"
-export { isRoughInteger, computeRoughInteger } from "./roughness"
 export { computePrimeCount, computeRoughnessIndex, computeSmoothnessIndex } from "./primeCount"
 export { PRIMES } from "./primes"
-export { isInteger } from "./typeGuards"
 export { computeSopfr } from "./sopfr"
 export { computeGreatestCommonDivisor } from "./common"
 export { ceil, floor, integerDivide } from "./typedOperations"
-export { Copfr, Integer, Prime, Roughness, Sopfr, Smoothness, Primes } from "./types"
-export { isSmoothInteger } from "./smoothness"
+export { Copfr, Prime, Roughness, Sopfr, Smoothness, Primes } from "./types"
 export {
     isRationalQuotient,
-    RationalNum,
-    RationalNumByDecimal,
+    Ratio,
+    RatioByDecimal,
     isRoughRationalQuotient,
     computeRoughRationalQuotient,
     isSmoothRationalQuotient,
-    computeIntegerFromIntegerMonzo,
-    computeIntegerMonzoFromInteger,
+    computeIntegerDecimalFromIntegerMonzo,
+    computeIntegerMonzoFromIntegerDecimal,
     computeRationalMonzoFromRationalQuotient,
     computeRationalMonzosFromPrimeExponentExtremas,
     computeRoughRationalMonzo,
     isSmoothRationalMonzo,
-    computeRationalMonzoFromRationalNum,
-    computeRationalQuotientFromRationalNum,
+    computeRationalMonzoFromRatio,
+    computeRationalQuotientFromRatio,
     computeRationalQuotientFromRationalDecimal,
     isRoughRationalMonzo,
-    RationalNumByMonzo,
-    RationalNumByQuotient,
-    isRationalNum,
+    RatioByMonzo,
+    RatioByQuotient,
+    isRatio,
     computeLowestTermsRationalQuotient,
-    isSmoothRationalNum,
-    computeRationalNumSmoothness,
-    isRoughRationalNum,
+    isSmoothRatio,
+    computeRatioSmoothness,
+    isRoughRatio,
     IntegerDenominator,
     IntegerQuotientPart,
     IntegerNumerator,
@@ -50,6 +47,9 @@ export {
     equalQuotients,
     RationalDecimal,
     IntegerMonzo,
-    IntegerNum,
+    Integer,
     IntegerQuotient,
+    IntegerDecimal,
+    isIntegerDecimal,
+    isRoughIntegerDecimal,
 } from "./num"

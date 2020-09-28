@@ -1,4 +1,4 @@
-import { Integer, Rank } from "../../../general"
+import { IntegerDecimal, Rank } from "../../../general"
 import { BoundType } from "../../../sagittal"
 import { BoundEventAnalysis } from "../history"
 import { RANKS } from "../ranks"
@@ -13,8 +13,8 @@ const computeInitialEventConsolidation = (boundEventAnalysis: BoundEventAnalysis
     isPossibleBoundHistoryMember: false,
     isBestPossibleBoundHistoryMember: false,
     nextBoundEvents: [],
-    rankOfBestRankedMemberHistory: Object.keys(RANKS).length as Integer & Rank<BoundType>,
-    rankOfBestRankedEventInAnyMemberHistory: Object.keys(RANKS).length as Integer & Rank<BoundType>,
+    rankOfBestRankedMemberHistory: Object.keys(RANKS).length as IntegerDecimal & Rank<BoundType>,
+    rankOfBestRankedEventInAnyMemberHistory: Object.keys(RANKS).length as IntegerDecimal & Rank<BoundType>,
 })
 
 export {

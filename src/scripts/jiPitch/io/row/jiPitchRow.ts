@@ -1,7 +1,7 @@
 import {
     formatCents,
     formatDecimal,
-    formatInteger,
+    formatIntegerDecimal,
     formatMonzo,
     formatQuotient,
     Formatted,
@@ -32,7 +32,7 @@ const computeJiPitchRow = (jiPitchAnalysis: JiPitchAnalysis): Row<{ of: JiPitchA
         rows.push(formatDecimal(aas, { align: true }) as Formatted as Formatted<JiPitchAnalysis>)
     }
     if (!jiPitchScriptGroupSettings.excludedFields.includes(JiPitchField.ATE)) {
-        rows.push(formatInteger(ate, { align: true }) as Formatted as Formatted<JiPitchAnalysis>)
+        rows.push(formatIntegerDecimal(ate, { align: true }) as Formatted as Formatted<JiPitchAnalysis>)
     }
 
     return rows

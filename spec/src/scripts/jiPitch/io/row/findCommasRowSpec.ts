@@ -6,7 +6,7 @@ import {
     Direction,
     Exponent,
     Id,
-    Integer,
+    IntegerDecimal,
     Name,
     Prime,
     RationalMonzo,
@@ -30,7 +30,7 @@ describe("computeFindCommasRow", (): void => {
         name: "1/5C" as Name<Comma>,
         apotomeSlope: 8.2 as ApotomeSlope,
         aas: 8.2 as Abs<ApotomeSlope>,
-        ate: 1 as Abs<Integer & Exponent<3 & Prime>>,
+        ate: 1 as Abs<IntegerDecimal & Exponent<3 & Prime>>,
         twoThreeFreeClassAnalysis: {
             twoThreeFreePrimeLimit: 14 as Prime,
             twoThreeFreeCopfr: 1 as Copfr<{ rough: 5 }>,

@@ -1,7 +1,7 @@
-import { Integer } from "../../math"
+import { IntegerDecimal } from "../../math"
 
-const parseInteger = (integerIo: string): Integer => {
-    return parseInt(integerIo) as Integer
+const parseInteger = (integerIo: string): IntegerDecimal => {
+    return parseInt(integerIo) as IntegerDecimal
 }
 
 export {

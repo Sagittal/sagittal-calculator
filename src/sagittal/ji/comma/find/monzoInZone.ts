@@ -3,7 +3,7 @@ import {
     computeTrimmedArray,
     equalMonzos,
     Exponent,
-    Integer,
+    IntegerDecimal,
     Maybe,
     numIsHigher,
     numIsHigherOrEqual,
@@ -16,28 +16,32 @@ import {
     Zone,
 } from "../../../../general"
 
-const computeMonzoInZone = (twoFreeMonzo: RationalMonzo<{ rough: 3 }>, zone: Zone): Maybe<RationalMonzo> => {
+const computeRationalMonzoInZone = (
+    twoFreeRationalMonzo: RationalMonzo<{ rough: 3 }>, zone: Zone
+): Maybe<RationalMonzo> => {
     const [lowerBound, upperBound] = zone
 
-    const monzoInZone = shallowClone(twoFreeMonzo)
+    const rationalMonzoInZone = shallowClone(twoFreeRationalMonzo)
 
-    if (!equalMonzos(monzoInZone, [] as unknown[] as RationalMonzo)) {
-        while (numIsHigher(computeNumFromMonzo(monzoInZone), upperBound)) {
-            monzoInZone[ TWO_PRIME_INDEX ] = monzoInZone[ TWO_PRIME_INDEX ] - 1 as Integer & Exponent<Prime>
+    if (!equalMonzos(rationalMonzoInZone, [] as unknown[] as RationalMonzo)) {
+        while (numIsHigher(computeNumFromMonzo(rationalMonzoInZone), upperBound)) {
+            rationalMonzoInZone[ TWO_PRIME_INDEX ] = 
+                rationalMonzoInZone[ TWO_PRIME_INDEX ] - 1 as IntegerDecimal & Exponent<Prime>
         }
-        while (numIsLower(computeNumFromMonzo(monzoInZone), lowerBound)) {
-            monzoInZone[ TWO_PRIME_INDEX ] = monzoInZone[ TWO_PRIME_INDEX ] + 1 as Integer & Exponent<Prime>
+        while (numIsLower(computeNumFromMonzo(rationalMonzoInZone), lowerBound)) {
+            rationalMonzoInZone[ TWO_PRIME_INDEX ] = 
+                rationalMonzoInZone[ TWO_PRIME_INDEX ] + 1 as IntegerDecimal & Exponent<Prime>
         }
     }
 
     return (
-        numIsHigherOrEqual(computeNumFromMonzo(monzoInZone), lowerBound) &&
-        numIsLowerOrEqual(computeNumFromMonzo(monzoInZone), upperBound)
+        numIsHigherOrEqual(computeNumFromMonzo(rationalMonzoInZone), lowerBound) &&
+        numIsLowerOrEqual(computeNumFromMonzo(rationalMonzoInZone), upperBound)
     ) ?
-        computeTrimmedArray(monzoInZone) :
+        computeTrimmedArray(rationalMonzoInZone) :
         undefined
 }
 
 export {
-    computeMonzoInZone,
+    computeRationalMonzoInZone,
 }

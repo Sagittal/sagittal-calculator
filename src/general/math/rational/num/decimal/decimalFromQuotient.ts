@@ -1,20 +1,20 @@
 import { formatQuotient } from "../../../../io"
 import { NumTypeParameters } from "../../../num"
-import { Integer } from "../../types"
 import { computeLowestTermsRationalQuotient, IntegerQuotient } from "../quotient"
+import { IntegerDecimal } from "./types"
 
-const computeIntegerFromIntegerQuotient = <T extends NumTypeParameters>(
+const computeIntegerDecimalFromIntegerQuotient = <T extends NumTypeParameters>(
     integerQuotient: IntegerQuotient<T>,
-): Integer<T> => {
+): IntegerDecimal<T> => {
     const [numerator, denominator] = computeLowestTermsRationalQuotient(integerQuotient)
 
     if (denominator !== 1) {
         throw new Error(`Tried to compute integer from non-integer quotient ${formatQuotient(integerQuotient)}.`)
     }
 
-    return numerator as Integer as Integer<T>
+    return numerator as IntegerDecimal as IntegerDecimal<T>
 }
 
 export {
-    computeIntegerFromIntegerQuotient,
+    computeIntegerDecimalFromIntegerQuotient,
 }

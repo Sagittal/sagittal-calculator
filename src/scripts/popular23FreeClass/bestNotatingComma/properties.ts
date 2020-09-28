@@ -1,4 +1,4 @@
-import { computeCentsFromPitch, computeRationalMonzoFromRationalNum, Max, Num, TwoThreeFreeClass } from "../../../general"
+import { computeCentsFromPitch, computeRationalMonzoFromRatio, Max, Num, TwoThreeFreeClass } from "../../../general"
 import { computeMaybeSymbolClassId, computeNotatingCommas, HALF_APOTOME } from "../../../sagittal"
 import { computeBestNotatingComma } from "./bestNotatingComma"
 import { BestNotatingCommaProperties } from "./types"
@@ -10,7 +10,7 @@ const computeBestNotatingCommaProperties = (twoThreeFreeClass: TwoThreeFreeClass
 
     return {
         bestNotatingCommaCents: computeCentsFromPitch(bestNotatingComma),
-        bestNotatingCommaMonzo: computeRationalMonzoFromRationalNum(bestNotatingComma),
+        bestNotatingCommaMonzo: computeRationalMonzoFromRatio(bestNotatingComma),
         bestNotatingCommaMaybeSymbolClassId: maybeSymbolClassId,
     }
 }

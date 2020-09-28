@@ -24,7 +24,7 @@ export { ColorMethod, Filename, HexColor, Io } from "./types"
 export { Basis, computePx, Px, Scale } from "./visualize"
 export {
     alignFormattedDecimal,
-    formatInteger,
+    formatIntegerDecimal,
     formatMonzo,
     formatDecimal,
     format23FreeClass,

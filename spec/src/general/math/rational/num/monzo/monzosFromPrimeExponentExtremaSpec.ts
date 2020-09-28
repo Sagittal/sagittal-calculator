@@ -2,7 +2,7 @@ import {
     computeRationalMonzosFromPrimeExponentExtremas,
     Exponent,
     Extrema,
-    Integer,
+    IntegerDecimal,
     Prime,
 } from "../../../../../../../src/general"
 
@@ -13,7 +13,7 @@ describe("computeRationalMonzosFromPrimeExponentExtremas", (): void => {
             [-2, -1],
             [0, 0],
             [4, 6],
-        ] as Array<Extrema<Integer & Exponent<Prime>>>
+        ] as Array<Extrema<IntegerDecimal & Exponent<Prime>>>
 
         const actual = computeRationalMonzosFromPrimeExponentExtremas(primeExponentExtremas)
 
@@ -44,7 +44,7 @@ describe("computeRationalMonzosFromPrimeExponentExtremas", (): void => {
         const primeExponentExtremas = [
             [1, 1],
             [-1, 1],
-        ] as Array<Extrema<Integer & Exponent<Prime>>>
+        ] as Array<Extrema<IntegerDecimal & Exponent<Prime>>>
 
         const actual = computeRationalMonzosFromPrimeExponentExtremas(primeExponentExtremas)
 

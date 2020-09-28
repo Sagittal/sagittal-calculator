@@ -29,7 +29,7 @@ describe("compute23FreeClass", (): void => {
         expect(actual).toEqual(expected)
     })
 
-    it("works for pitches with (integer) decimals too", (): void => {
+    it("works for pitches with decimals too", (): void => {
         const jiPitch = { decimal: 34 as RationalDecimal }
 
         const actual = compute23FreeClass(jiPitch)

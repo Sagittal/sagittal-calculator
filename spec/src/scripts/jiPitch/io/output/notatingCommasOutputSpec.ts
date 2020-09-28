@@ -6,7 +6,7 @@ import {
     Comma,
     Exponent,
     Id,
-    Integer,
+    IntegerDecimal,
     Io,
     ioSettings,
     Name,
@@ -30,7 +30,7 @@ describe("computeNotatingCommasOutput", (): void => {
             quotient: [33, 32] as RationalQuotient,
             apotomeSlope: -4 as ApotomeSlope,
             aas: 4 as Abs<ApotomeSlope>,
-            ate: 0 as Abs<Integer & Exponent<3 & Prime>>,
+            ate: 0 as Abs<IntegerDecimal & Exponent<3 & Prime>>,
             twoThreeFreeClassAnalysis: twoThreeFreeClassAnalysisFixture,
         },
         {
@@ -40,7 +40,7 @@ describe("computeNotatingCommasOutput", (): void => {
             quotient: [50, 49] as RationalQuotient,
             apotomeSlope: -2.154 as ApotomeSlope,
             aas: 2.154 as Abs<ApotomeSlope>,
-            ate: 0 as Abs<Integer & Exponent<3 & Prime>>,
+            ate: 0 as Abs<IntegerDecimal & Exponent<3 & Prime>>,
             twoThreeFreeClassAnalysis: twoThreeFreeClassAnalysisFixture,
         },
     ] as CommaAnalysis[]

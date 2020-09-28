@@ -4,7 +4,7 @@ import {
     Copfr,
     Direction,
     Exponent,
-    Integer, Max, Name,
+    IntegerDecimal, Max, Name,
     Prime,
     RationalDecimal,
     RationalMonzo,
@@ -26,7 +26,7 @@ describe("analyzeJiPitch", (): void => {
             quotient: [2100875, 1026432] as RationalQuotient,
             decimal: 2.046775 as RationalDecimal,
             apotomeSlope: -82.352717 as ApotomeSlope,
-            ate: 6 as Abs<Integer & Exponent<3 & Prime>>,
+            ate: 6 as Abs<IntegerDecimal & Exponent<3 & Prime>>,
             aas: 82.352717 as Abs<ApotomeSlope>,
             twoThreeFreeClassAnalysis: {
                 name: "2100875/11" as Name<TwoThreeFreeClass>,

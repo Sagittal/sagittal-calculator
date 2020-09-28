@@ -1,4 +1,4 @@
-import { Count, Integer, Rank } from "../../../../../src/general"
+import { Count, IntegerDecimal, Rank } from "../../../../../src/general"
 import { BoundType, JiNotationLevel } from "../../../../../src/sagittal/notations/ji"
 import { updateJiNotationLevelAnalysis } from "../../../../../src/scripts/jiNotationBound/bound/levels"
 import {
@@ -34,7 +34,7 @@ describe("updateJiNotationLevelAnalysis", (): void => {
             updateJiNotationLevelAnalysis(bestPossibleBoundHistory)
 
             expect(jiNotationLevelsBestHistoryRanks[ JiNotationLevel.MEDIUM ][ RANKS[ BoundType.INA_MIDPOINT ] ])
-                .toBe(1 as Count<Integer & Rank<BoundType>>)
+                .toBe(1 as Count<IntegerDecimal & Rank<BoundType>>)
         })
 
         it("increments ranks at JI levels when they exist", (): void => {
@@ -53,8 +53,8 @@ describe("updateJiNotationLevelAnalysis", (): void => {
                     },
                 ],
             }
-            let formerMediumIna = 3 as Count<Integer & Rank<BoundType>>
-            let formerHighMean = 4 as Count<Integer & Rank<BoundType>>
+            let formerMediumIna = 3 as Count<IntegerDecimal & Rank<BoundType>>
+            let formerHighMean = 4 as Count<IntegerDecimal & Rank<BoundType>>
             jiNotationLevelsBestHistoryRanks[ JiNotationLevel.MEDIUM ] = {
                 [ RANKS[ BoundType.INA_MIDPOINT ] ]: formerMediumIna,
             }
@@ -65,9 +65,9 @@ describe("updateJiNotationLevelAnalysis", (): void => {
             updateJiNotationLevelAnalysis(bestPossibleBoundHistory)
 
             expect(jiNotationLevelsBestHistoryRanks[ JiNotationLevel.MEDIUM ][ RANKS[ BoundType.INA_MIDPOINT ] ])
-                .toBe(formerMediumIna + 1 as Count<Integer & Rank<BoundType>>)
+                .toBe(formerMediumIna + 1 as Count<IntegerDecimal & Rank<BoundType>>)
             expect(jiNotationLevelsBestHistoryRanks[ JiNotationLevel.HIGH ][ RANKS[ BoundType.COMMA_MEAN ] ])
-                .toBe(formerHighMean + 1 as Count<Integer & Rank<BoundType>>)
+                .toBe(formerHighMean + 1 as Count<IntegerDecimal & Rank<BoundType>>)
         })
     })
 
@@ -120,20 +120,20 @@ describe("updateJiNotationLevelAnalysis", (): void => {
             expect(
                 jiNotationLevelsBestCumulativeHistoryRanks[ JiNotationLevel.MEDIUM ][ RANKS[ BoundType.INA_MIDPOINT ] ],
             )
-                .toBe(1 as Count<Integer & Rank<BoundType>>)
+                .toBe(1 as Count<IntegerDecimal & Rank<BoundType>>)
             expect(
                 jiNotationLevelsBestCumulativeHistoryRanks[ JiNotationLevel.HIGH ][ RANKS[ BoundType.COMMA_MEAN ] ],
             )
-                .toBe(1 as Count<Integer & Rank<BoundType>>)
+                .toBe(1 as Count<IntegerDecimal & Rank<BoundType>>)
             expect(
                 jiNotationLevelsBestCumulativeHistoryRanks[ JiNotationLevel.ULTRA ][ RANKS[ BoundType.COMMA_MEAN ] ],
             )
-                .toBe(1 as Count<Integer & Rank<BoundType>>)
+                .toBe(1 as Count<IntegerDecimal & Rank<BoundType>>)
             expect(
                 // tslint:disable-next-line max-line-length
                 jiNotationLevelsBestCumulativeHistoryRanks[ JiNotationLevel.EXTREME ][ RANKS[ BoundType.SIZE_CATEGORY_BOUND ] ],
             )
-                .toBe(1 as Count<Integer & Rank<BoundType>>)
+                .toBe(1 as Count<IntegerDecimal & Rank<BoundType>>)
         })
     })
 })

@@ -1,4 +1,4 @@
-import { Integer, Name, Rank } from "../../../general"
+import { IntegerDecimal, Name, Rank } from "../../../general"
 import { Bound, BoundType, JiNotationLevel } from "../../../sagittal"
 import { BoundEvent } from "../histories"
 import { BoundEventAnalysis, BoundHistoryAnalysis } from "../history"
@@ -8,8 +8,8 @@ interface BoundEventConsolidation extends BoundEvent {
     isBestPossibleBoundHistoryMember: boolean,
     isPossibleBoundHistoryMember: boolean,
     nextBoundEvents: Name<Bound>[],
-    rankOfBestRankedEventInAnyMemberHistory: Integer & Rank<BoundType>,
-    rankOfBestRankedMemberHistory: Integer & Rank<BoundType>,
+    rankOfBestRankedEventInAnyMemberHistory: IntegerDecimal & Rank<BoundType>,
+    rankOfBestRankedMemberHistory: IntegerDecimal & Rank<BoundType>,
 }
 
 type BoundHistoryConsolidation = Partial<Record<JiNotationLevel, BoundEventConsolidation[]>>

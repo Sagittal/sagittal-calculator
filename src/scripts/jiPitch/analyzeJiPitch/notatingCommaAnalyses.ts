@@ -1,10 +1,10 @@
-import { Comma, RationalNum, sort } from "../../../general"
+import { Comma, Ratio, sort } from "../../../general"
 import { analyzeComma, CommaAnalysis, computeNotatingCommas } from "../../../sagittal"
 import { FindCommasSettings } from "../findCommas"
 import { jiPitchScriptGroupSettings } from "../globals"
 
 const computeNotatingCommaAnalyses = (
-    jiPitch: RationalNum,
+    jiPitch: Ratio,
     notatingCommasSettings: Partial<FindCommasSettings> = {},
 ): CommaAnalysis[] => {
     const notatingCommas: Comma[] =

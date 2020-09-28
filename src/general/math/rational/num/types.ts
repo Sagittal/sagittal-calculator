@@ -1,20 +1,20 @@
 import { NumTypeParameters } from "../../num"
-import { IntegerNumByDecimal, RationalNumByDecimal } from "./decimal"
-import { IntegerNumByMonzo, RationalNumByMonzo } from "./monzo"
-import { IntegerNumByQuotient, RationalNumByQuotient } from "./quotient"
+import { IntegerByDecimal, RatioByDecimal } from "./decimal"
+import { IntegerByMonzo, RatioByMonzo } from "./monzo"
+import { IntegerByQuotient, RatioByQuotient } from "./quotient"
 
-type RationalNum<T extends NumTypeParameters = {}> =
-    RationalNumByDecimal<T> |
-    RationalNumByMonzo<T> |
-    RationalNumByQuotient<T>
+type Ratio<T extends NumTypeParameters = {}> =
+    RatioByDecimal<T> |
+    RatioByMonzo<T> |
+    RatioByQuotient<T>
 
-type IntegerNum<T extends NumTypeParameters = {}> =
-    IntegerNumByDecimal<T> |
-    IntegerNumByMonzo<T> |
-    IntegerNumByQuotient<T>
+type Integer<T extends NumTypeParameters = {}> =
+    IntegerByDecimal<T> |
+    IntegerByMonzo<T> |
+    IntegerByQuotient<T>
 
 export {
-    RationalNum,
-    RationalNumByDecimal,
-    IntegerNum,
+    Ratio,
+    RatioByDecimal,
+    Integer,
 }

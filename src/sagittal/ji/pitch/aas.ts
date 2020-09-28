@@ -1,8 +1,8 @@
-import { abs, Abs, RationalNum } from "../../../general"
+import { abs, Abs, Ratio } from "../../../general"
 import { computeApotomeSlope } from "./apotomeSlope"
 import { ApotomeSlope } from "./types"
 
-const computeAas = (jiPitch: RationalNum): Abs<ApotomeSlope> => {
+const computeAas = (jiPitch: Ratio): Abs<ApotomeSlope> => {
     return abs(computeApotomeSlope(jiPitch))
 }
 

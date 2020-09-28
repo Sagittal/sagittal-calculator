@@ -8,7 +8,7 @@ import {
     Direction,
     Exponent,
     Id,
-    Integer,
+    IntegerDecimal,
     Io,
     ioSettings,
     Name,
@@ -34,7 +34,7 @@ describe("computeFindCommasOutput", (): void => {
             quotient: [33, 32] as RationalQuotient,
             apotomeSlope: -4 as ApotomeSlope,
             aas: 4 as Abs<ApotomeSlope>,
-            ate: 0 as Abs<Integer & Exponent<3 & Prime>>,
+            ate: 0 as Abs<IntegerDecimal & Exponent<3 & Prime>>,
             twoThreeFreeClassAnalysis: {
                 ...twoThreeFreeClassFixture,
                 name: "11/1" as Name<TwoThreeFreeClass>,
@@ -52,7 +52,7 @@ describe("computeFindCommasOutput", (): void => {
             quotient: [50, 49] as RationalQuotient,
             apotomeSlope: -2.154 as ApotomeSlope,
             aas: 2.154 as Abs<ApotomeSlope>,
-            ate: 0 as Abs<Integer & Exponent<3 & Prime>>,
+            ate: 0 as Abs<IntegerDecimal & Exponent<3 & Prime>>,
             twoThreeFreeClassAnalysis: {
                 ...twoThreeFreeClassFixture,
                 name: "49/25" as Name<TwoThreeFreeClass>,

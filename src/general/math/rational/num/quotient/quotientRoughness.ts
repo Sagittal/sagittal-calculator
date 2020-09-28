@@ -1,6 +1,6 @@
 import { NumTypeParameters } from "../../../num"
-import { computeRoughInteger, isRoughInteger } from "../../roughness"
 import { Primes, Roughness } from "../../types"
+import { computeRoughIntegerDecimal, isRoughIntegerDecimal } from "../decimal"
 import { RationalQuotient } from "./types"
 
 const computeRoughRationalQuotient = <S extends Primes, T extends NumTypeParameters>(
@@ -10,8 +10,8 @@ const computeRoughRationalQuotient = <S extends Primes, T extends NumTypeParamet
     const [numerator, denominator] = rationalQuotient
 
     return [
-        computeRoughInteger(numerator, roughness),
-        computeRoughInteger(denominator, roughness),
+        computeRoughIntegerDecimal(numerator, roughness),
+        computeRoughIntegerDecimal(denominator, roughness),
     ] as RationalQuotient<T & { rough: S }>
 }
 
@@ -21,7 +21,7 @@ const isRoughRationalQuotient = <S extends Primes, T extends NumTypeParameters>(
 ): candidateRoughRationalQuotient is RationalQuotient<T & { rough: S }> => {
     const [numerator, denominator] = candidateRoughRationalQuotient
 
-    return isRoughInteger(numerator, roughness) && isRoughInteger(denominator, roughness)
+    return isRoughIntegerDecimal(numerator, roughness) && isRoughIntegerDecimal(denominator, roughness)
 }
 
 export {

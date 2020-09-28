@@ -1,4 +1,4 @@
-import { Copfr, Exponent, Extrema, Integer, KeyPath, Max, Prime, Sopfr } from "../../../general"
+import { Copfr, Exponent, Extrema, IntegerDecimal, KeyPath, Max, Prime, Sopfr } from "../../../general"
 import { CommasFrom23FreeMonzoOptions, N2D3P9 } from "../../../sagittal"
 
 type CommasOptions = CommasFrom23FreeMonzoOptions & TwoThreeFreeMonzosToCheckOptions & Partial<{
@@ -10,13 +10,13 @@ type TwoThreeFreeMonzosToCheckOptions = Partial<FindCommasSettings & { maxN2D3P9
 type PrimeExponentRangeOptions = Partial<{
     max23FreeCopfr: Max<Copfr<{ rough: 5 }>>,
     max23FreeSopfr: Max<Sopfr<{ rough: 5 }>>,
-    primeExponentExtremaGivenMaxN2D3P9: Extrema<Integer & Exponent<Prime>>,
+    primeExponentExtremaGivenMaxN2D3P9: Extrema<IntegerDecimal & Exponent<Prime>>,
 }>
 
 type TwoThreeFreePrimesToCheckOptions = Partial<{
     maxPrimeLimit: Max<Max<Prime>>,
     max23FreeSopfr: Max<Sopfr<{ rough: 5 }>>,
-    primeExponentExtremasGivenMaxN2D3P9: Array<Extrema<Integer & Exponent<Prime>>>,
+    primeExponentExtremasGivenMaxN2D3P9: Array<Extrema<IntegerDecimal & Exponent<Prime>>>,
 }>
 
 interface FindCommasSettings extends Required<CommasFrom23FreeMonzoOptions> {

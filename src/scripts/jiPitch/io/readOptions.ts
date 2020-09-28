@@ -1,7 +1,7 @@
 import { program } from "commander"
 import {
     CommandFlag,
-    Integer,
+    IntegerDecimal,
     Io,
     Monzo,
     Num,
@@ -35,7 +35,7 @@ const readJiPitchOptions = (): void => {
         .option(
             `-${CommandFlag.INTEGER}, --integer <integer>`,
             "integer",
-            (integerText: string): Integer => parseInteger(integerText),
+            (integerText: string): IntegerDecimal => parseInteger(integerText),
         )
 }
 

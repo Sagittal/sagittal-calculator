@@ -1,4 +1,4 @@
-import { RationalNum } from "../rational"
+import { Ratio } from "../rational"
 import { NumByDecimal } from "./decimal"
 import { NumByMonzo } from "./monzo"
 import { NumByQuotient } from "./quotient"
@@ -60,7 +60,7 @@ call it a Degree
 the existing Window isn’t a base, it gets divided up additively, not multiplicatively
  */
 
-type Num<T extends NumTypeParameters = {}> = RationalNum<T>
+type Num<T extends NumTypeParameters = {}> = Ratio<T>
     | NumByDecimal<T>
     | NumByMonzo<T>
     | NumByQuotient<T>

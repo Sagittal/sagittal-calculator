@@ -3,18 +3,18 @@ import {
     Cents,
     Decimal,
     Exponent,
-    Integer,
+    IntegerDecimal,
     NumTypeParameters,
     Prime,
+    Ratio,
     RationalMonzo,
-    RationalNum,
     RationalQuotient,
 } from "../../../general"
 import { TwoThreeFreeClassAnalysis } from "../twoThreeFreeClass"
 
 interface JiPitchAnalysisProperties<T extends NumTypeParameters = {}> {
     apotomeSlope: ApotomeSlope,
-    ate: Abs<Integer & Exponent<3 & Prime>>,
+    ate: Abs<IntegerDecimal & Exponent<3 & Prime>>,
     aas: Abs<ApotomeSlope>,
     monzo: RationalMonzo<T>,
     quotient: RationalQuotient<T>,
@@ -23,7 +23,7 @@ interface JiPitchAnalysisProperties<T extends NumTypeParameters = {}> {
     twoThreeFreeClassAnalysis: TwoThreeFreeClassAnalysis<T>,
 }
 
-type JiPitchAnalysis<T extends NumTypeParameters = {}> = RationalNum<T> & JiPitchAnalysisProperties<T>
+type JiPitchAnalysis<T extends NumTypeParameters = {}> = Ratio<T> & JiPitchAnalysisProperties<T>
 
 type ApotomeSlope = number & { _ApotomeSlopeBrand: boolean }
 

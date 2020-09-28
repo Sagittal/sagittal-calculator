@@ -1,4 +1,11 @@
-import { format23FreeClass, formatDecimal, formatInteger, Formatted, Row, TwoThreeFreeClass } from "../../../../general"
+import {
+    format23FreeClass,
+    formatDecimal,
+    formatIntegerDecimal,
+    Formatted,
+    Row,
+    TwoThreeFreeClass,
+} from "../../../../general"
 import { TwoThreeFreeClassAnalysis } from "../../../../sagittal"
 import { jiPitchScriptGroupSettings } from "../../globals"
 import { TwoThreeFreeClassField } from "../../types"
@@ -11,7 +18,10 @@ const compute23FreeClassRow = (
     const rows = [] as unknown[] as Row<{ of: TwoThreeFreeClassAnalysis }>
     if (!jiPitchScriptGroupSettings.excludedFields.includes(TwoThreeFreeClassField.TWO_THREE_FREE_PRIME_LIMIT)) {
         rows.push(
-            formatInteger(twoThreeFreePrimeLimit, { align: true }) as Formatted as Formatted<TwoThreeFreeClassAnalysis>,
+            formatIntegerDecimal(
+                twoThreeFreePrimeLimit,
+                { align: true },
+            ) as Formatted as Formatted<TwoThreeFreeClassAnalysis>,
         )
     }
     if (!jiPitchScriptGroupSettings.excludedFields.includes(TwoThreeFreeClassField.TWO_THREE_FREE_CLASS_NAME)) {
@@ -21,12 +31,18 @@ const compute23FreeClassRow = (
     }
     if (!jiPitchScriptGroupSettings.excludedFields.includes(TwoThreeFreeClassField.TWO_THREE_FREE_COPFR)) {
         rows.push(
-            formatInteger(twoThreeFreeCopfr, { align: true }) as Formatted as Formatted<TwoThreeFreeClassAnalysis>,
+            formatIntegerDecimal(
+                twoThreeFreeCopfr,
+                { align: true },
+            ) as Formatted as Formatted<TwoThreeFreeClassAnalysis>,
         )
     }
     if (!jiPitchScriptGroupSettings.excludedFields.includes(TwoThreeFreeClassField.TWO_THREE_FREE_SOPFR)) {
         rows.push(
-            formatInteger(twoThreeFreeSopfr, { align: true }) as Formatted as Formatted<TwoThreeFreeClassAnalysis>,
+            formatIntegerDecimal(
+                twoThreeFreeSopfr,
+                { align: true },
+            ) as Formatted as Formatted<TwoThreeFreeClassAnalysis>,
         )
     }
     if (!jiPitchScriptGroupSettings.excludedFields.includes(TwoThreeFreeClassField.N2D3P9)) {

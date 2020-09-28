@@ -1,4 +1,4 @@
-import { Abs, Cents, Exponent, Integer, Io, NEWLINE, Prime, RationalMonzo, RationalQuotient } from "../../../../../../src/general"
+import { Abs, Cents, Exponent, IntegerDecimal, Io, NEWLINE, Prime, RationalMonzo, RationalQuotient } from "../../../../../../src/general"
 import { ApotomeSlope, JiPitchAnalysis } from "../../../../../../src/sagittal"
 import { computeJiPitchOutput } from "../../../../../../src/scripts/jiPitch/io"
 import {
@@ -14,7 +14,7 @@ describe("computeJiPitchOutput", (): void => {
         quotient: [5, 4] as RationalQuotient,
         apotomeSlope: 8.2 as ApotomeSlope,
         aas: 8.2 as Abs<ApotomeSlope>,
-        ate: 1 as Abs<Integer & Exponent<3 & Prime>>,
+        ate: 1 as Abs<IntegerDecimal & Exponent<3 & Prime>>,
         twoThreeFreeClassAnalysis: twoThreeFreeClassAnalysisFixture,
     }
 

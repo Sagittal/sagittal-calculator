@@ -1,6 +1,6 @@
 import { increment } from "../../../code"
 import { Step, Window } from "../../../types"
-import { Integer, PRIMES } from "../../rational"
+import { IntegerDecimal, PRIMES } from "../../rational"
 import { abs } from "../../typedOperations"
 import { Exponent } from "../../types"
 import { PatentValOptions, Val } from "./types"
@@ -18,7 +18,7 @@ const computePatentVal = <T extends Window>(options: PatentValOptions<T>): Val =
 
         let previousApproximation = undefined
         let currentApproximation = undefined
-        let term = 0 as Integer & Exponent<Step>
+        let term = 0 as IntegerDecimal & Exponent<Step>
         while (true) {
             previousApproximation = currentApproximation
             currentApproximation = stepSize ** term
@@ -30,7 +30,7 @@ const computePatentVal = <T extends Window>(options: PatentValOptions<T>): Val =
                 if (currentDiff < previousDiff) {
                     patentVal.push(term)
                 } else {
-                    patentVal.push(term - 1 as Integer & Exponent<Step>)
+                    patentVal.push(term - 1 as IntegerDecimal & Exponent<Step>)
                 }
                 break
             }

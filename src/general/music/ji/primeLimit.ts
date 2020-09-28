@@ -1,14 +1,14 @@
 import {
-    computeRationalNumSmoothness,
-    Integer,
-    isRoughRationalNum,
-    isSmoothRationalNum,
+    computeRatioSmoothness,
+    IntegerDecimal,
+    isRoughRatio,
+    isSmoothRatio,
     Max,
     Min,
     NumTypeParameters,
     Prime,
     Primes,
-    RationalNum,
+    Ratio,
     Roughness,
     Smoothness,
 } from "../../math"
@@ -17,23 +17,23 @@ import {
 // Except for prime limit because we speak about it differently (vs mathematical roughness or smoothness).
 
 const isWithinPrimeLimit = <S extends Primes, T extends NumTypeParameters>(
-    candidateJiPitchWithinPrimeLimit: RationalNum<T>,
+    candidateJiPitchWithinPrimeLimit: Ratio<T>,
     primeLimit: S & Max<Prime<T>>,
-): candidateJiPitchWithinPrimeLimit is RationalNum<T & { smooth: S }> => {
-    return isSmoothRationalNum(candidateJiPitchWithinPrimeLimit, primeLimit as S as S & Smoothness)
+): candidateJiPitchWithinPrimeLimit is Ratio<T & { smooth: S }> => {
+    return isSmoothRatio(candidateJiPitchWithinPrimeLimit, primeLimit as S as S & Smoothness)
 }
 
 const isWithinPrimeMin = <S extends Primes, T extends NumTypeParameters>(
-    candidateJiPitchWithinPrimeMin: RationalNum<T>,
+    candidateJiPitchWithinPrimeMin: Ratio<T>,
     primeMin: S & Min<Prime<T>>,
-): candidateJiPitchWithinPrimeMin is RationalNum<T & { rough: S }> => {
-    return isRoughRationalNum(candidateJiPitchWithinPrimeMin, primeMin as S as S & Roughness)
+): candidateJiPitchWithinPrimeMin is Ratio<T & { rough: S }> => {
+    return isRoughRatio(candidateJiPitchWithinPrimeMin, primeMin as S as S & Roughness)
 }
 
 const computePrimeLimit = <S extends Primes, T extends NumTypeParameters>(
-    jiPitch: RationalNum<T>,
+    jiPitch: Ratio<T>,
 ): Max<Prime<T>> => {
-    return computeRationalNumSmoothness(jiPitch) as Integer as Max<Prime<T>>
+    return computeRatioSmoothness(jiPitch) as IntegerDecimal as Max<Prime<T>>
 }
 
 export {

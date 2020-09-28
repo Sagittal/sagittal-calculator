@@ -2,7 +2,8 @@ import { computeTrimmedArray, increment } from "../../../../code"
 import { NumTypeParameters } from "../../../num"
 import { Exponent } from "../../../types"
 import { computeRoughnessIndex } from "../../primeCount"
-import { Integer, Prime, Primes, Roughness } from "../../types"
+import { Prime, Primes, Roughness } from "../../types"
+import { IntegerDecimal } from "../decimal"
 import { RationalMonzo } from "./types"
 
 const computeRoughRationalMonzo = <S extends Primes, T extends NumTypeParameters>(
@@ -13,9 +14,9 @@ const computeRoughRationalMonzo = <S extends Primes, T extends NumTypeParameters
 
     return computeTrimmedArray(
         rationalMonzo.map(
-            (primeExponent: Integer & Exponent<Prime>, index: number): Integer & Exponent<Prime> =>
+            (primeExponent: IntegerDecimal & Exponent<Prime>, index: number): IntegerDecimal & Exponent<Prime> =>
                 index < roughnessIndex ?
-                    0 as Integer & Exponent<Prime> :
+                    0 as IntegerDecimal & Exponent<Prime> :
                     primeExponent,
         ),
     ) as RationalMonzo<T & { rough: S }>

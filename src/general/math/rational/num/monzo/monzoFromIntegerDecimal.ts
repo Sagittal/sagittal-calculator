@@ -3,7 +3,8 @@ import { NumTypeParameters } from "../../../num"
 import { Exponent } from "../../../types"
 import { PRIMES } from "../../primes"
 import { integerDivide } from "../../typedOperations"
-import { Integer, Prime } from "../../types"
+import { Prime } from "../../types"
+import { IntegerDecimal } from "../decimal"
 import { IntegerMonzo } from "./types"
 
 // TODO: POSSIBLY MORE PERFORMANT PRIME FACTORIZATION ALGORITHM
@@ -22,21 +23,23 @@ exponent(n, i) = Math.round(math.log(math.gcd(n, maxPrimePower[i]), prime[i]) )
 That's more like what I really do in Excel.
  */
 
-const computeIntegerMonzoFromInteger = <T extends NumTypeParameters>(integer: Integer<T>): IntegerMonzo<T> => {
-    if (integer === 0) {
+const computeIntegerMonzoFromIntegerDecimal = <T extends NumTypeParameters>(
+    integerDecimal: IntegerDecimal<T>,
+): IntegerMonzo<T> => {
+    if (integerDecimal === 0) {
         throw new Error("The prime factorization of zero is not defined.")
     }
 
     const integerMonzo: IntegerMonzo = [] as unknown[] as IntegerMonzo
-    let remnant = integer
+    let remnant = integerDecimal
 
     const computePrimeFactorizationForPrimeAtIndexAndUpdateRemnant = (index: number): void => {
-        const divisor = PRIMES[ index ] as Integer as Integer<T>
+        const divisor = PRIMES[ index ] as IntegerDecimal as IntegerDecimal<T>
         let remainder = remnant % divisor
 
         if (remainder === 0) {
             while (integerMonzo.length <= index) {
-                integerMonzo.push(0 as Integer & Exponent<Prime>)
+                integerMonzo.push(0 as IntegerDecimal & Exponent<Prime>)
             }
 
             while (remainder === 0) {
@@ -55,11 +58,11 @@ const computeIntegerMonzoFromInteger = <T extends NumTypeParameters>(integer: In
         }
     }
 
-    if (remnant > 1) throw new Error(`This integer ${integer} contains primes which are too big; remainder is ${remnant}`)
+    if (remnant > 1) throw new Error(`This integer ${integerDecimal} contains primes which are too big; remainder is ${remnant}`)
 
     return integerMonzo as IntegerMonzo<T>
 }
 
 export {
-    computeIntegerMonzoFromInteger,
+    computeIntegerMonzoFromIntegerDecimal,
 }

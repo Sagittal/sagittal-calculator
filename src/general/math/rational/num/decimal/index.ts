@@ -1,3 +1,5 @@
-export { computeIntegerFromIntegerMonzo } from "./integerFromMonzo"
-export { isRationalDecimal } from "./typeGuards"
-export { RationalNumByDecimal, RationalDecimal, IntegerNumByDecimal } from "./types"
+export { computeIntegerDecimalFromIntegerMonzo } from "./decimalFromMonzo"
+export { isRationalDecimal, isIntegerDecimal } from "./typeGuards"
+export { RatioByDecimal, RationalDecimal, IntegerByDecimal, IntegerDecimal } from "./types"
+export { isSmoothIntegerDecimal } from "./decimalSmoothness"
+export { computeRoughIntegerDecimal, isRoughIntegerDecimal } from "./decimalRoughness"

@@ -2,7 +2,7 @@ import { program } from "commander"
 import {
     Abs,
     Exponent,
-    Integer,
+    IntegerDecimal,
     Max,
     Prime,
     RationalDecimal,
@@ -19,9 +19,9 @@ import {
 
 describe("parseNotatingCommasSettings", (): void => {
     const n2d3p9 = DEFAULT_FIND_COMMAS_SETTINGS.maxN2D3P9 + 100 as N2D3P9
-    const ate = DEFAULT_FIND_COMMAS_SETTINGS.maxAte + 10 as Abs<Integer & Exponent<3 & Prime>>
-    const monzo = [0, ate] as RationalMonzo
-    const decimal = 847300834270 as RationalDecimal             // 47548.9¢
+    const ate = DEFAULT_FIND_COMMAS_SETTINGS.maxAte + 10 as Abs<IntegerDecimal & Exponent<3 & Prime>>
+    const rationalMonzo = [0, ate] as RationalMonzo
+    const rationalDecimal = 847300834270 as RationalDecimal             // 47548.9¢
     const apotomeSlope = -2902.759003 as ApotomeSlope
     const jiPitchAnalysis: JiPitchAnalysis = {
         ...jiPitchAnalysisFixture,
@@ -29,8 +29,8 @@ describe("parseNotatingCommasSettings", (): void => {
             ...twoThreeFreeClassAnalysisFixture,
             n2d3p9,
         },
-        monzo,
-        decimal,
+        monzo: rationalMonzo,
+        decimal: rationalDecimal,
     }
 
     it("adjusts the max N2D3P9 if the JI pitch has greater than the current settings", (): void => {
@@ -48,7 +48,7 @@ describe("parseNotatingCommasSettings", (): void => {
     it("adjusts the max ATE if the JI pitch has greater than the current settings", (): void => {
         const actual = parseNotatingCommasSettings(jiPitchAnalysis)
 
-        expect(actual.maxAte).toBe(ate as Max<Abs<Integer & Exponent<3 & Prime>>>)
+        expect(actual.maxAte).toBe(ate as Max<Abs<IntegerDecimal & Exponent<3 & Prime>>>)
     })
 })
 
@@ -94,7 +94,7 @@ describe("parseJiPitch", (): void => {
 
             const actual = parseJiPitch()
 
-            const expected = { decimal: 3 as Integer }
+            const expected = { decimal: 3 as IntegerDecimal }
             expect(actual).toEqual(expected)
         })
     })
@@ -127,12 +127,12 @@ describe("parseJiPitch", (): void => {
             expect(actual).toEqual(expected)
         })
 
-        it("works for an (integer) decimal (which will have been pre-parsed into an integer)", (): void => {
+        it("works for a decimal (which will have been pre-parsed into an integer)", (): void => {
             program.integer = 3
 
             const actual = parseJiPitch()
 
-            const expected = { decimal: 3 as Integer }
+            const expected = { decimal: 3 as RationalDecimal }
             expect(actual).toEqual(expected)
         })
     })

@@ -3,27 +3,27 @@ import {
     Abs,
     Exponent,
     formatPitch,
-    Integer,
+    IntegerDecimal,
     Io,
-    isRationalNum,
+    isRatio,
     isUndefined,
     LogTarget,
     Max,
     Prime,
-    RationalNum,
+    Ratio,
     saveLog,
 } from "../../../general"
 import { ApotomeSlope, computeAas, computeAte, JiPitchAnalysis, N2D3P9, parsePitch } from "../../../sagittal"
 import { FindCommasSettings, parseFindCommasSettings } from "../findCommas"
 
-const parseJiPitch = (): RationalNum => {
+const parseJiPitch = (): Ratio => {
     const jiPitchText = program.args[ 0 ] as Io
 
-    let jiPitch: RationalNum
+    let jiPitch: Ratio
     if (jiPitchText) {
         const pitch = parsePitch(jiPitchText)
 
-        if (isRationalNum(pitch)) {
+        if (isRatio(pitch)) {
             jiPitch = pitch
 
             if (!isUndefined(pitch.monzo) || !isUndefined(pitch.quotient)) {
@@ -61,7 +61,7 @@ const parseNotatingCommasSettings = (
 
     const ate = computeAte(jiPitchAnalysis)
     if (ate > findCommasSettings.maxAte) {
-        findCommasSettings.maxAte = ate as Max<Abs<Integer & Exponent<3 & Prime>>>
+        findCommasSettings.maxAte = ate as Max<Abs<IntegerDecimal & Exponent<3 & Prime>>>
     }
 
     const n2d3p9 = jiPitchAnalysis.twoThreeFreeClassAnalysis.n2d3p9

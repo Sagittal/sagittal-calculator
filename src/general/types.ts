@@ -1,10 +1,10 @@
 import { Io } from "./io"
-import { Integer, Max, Min } from "./math"
+import { IntegerDecimal, Max, Min } from "./math"
 
 // Numeric types where parameter is not numeric
-type Index<T = void> = Integer & { _IndexBrand: boolean } & (T extends void ? {} : { _IndexOfBrand: T })
-type Id<T = void> = Integer & { _IdBrand: boolean } & (T extends void ? {} : { _IdOfBrand: T })
-type Count<T = void> = Integer & { _CountBrand: boolean } & (T extends void ? {} : { _CountOfBrand: T })
+type Index<T = void> = IntegerDecimal & { _IndexBrand: boolean } & (T extends void ? {} : { _IndexOfBrand: T })
+type Id<T = void> = IntegerDecimal & { _IdBrand: boolean } & (T extends void ? {} : { _IdOfBrand: T })
+type Count<T = void> = IntegerDecimal & { _CountBrand: boolean } & (T extends void ? {} : { _CountOfBrand: T })
 
 // Numeric types where parameter is also numeric
 type Addend<T extends number | void = void> =

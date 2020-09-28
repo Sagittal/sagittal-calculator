@@ -9,7 +9,7 @@ import {
     Direction,
     Exponent,
     Id,
-    Integer,
+    IntegerDecimal,
     Multiplier,
     Name,
     Prime,
@@ -69,7 +69,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                             id: 47 as Id<PrimaryComma>,
                             apotomeSlope: -2.411919815346935 as ApotomeSlope,
                             aas: 2.411919815346935 as Abs<ApotomeSlope>,
-                            ate: 1 as Abs<Integer & Exponent<3 & Prime>>,
+                            ate: 1 as Abs<IntegerDecimal & Exponent<3 & Prime>>,
                             twoThreeFreeClassAnalysis: {
                                 name: "25/19" as Name<TwoThreeFreeClass>,
                                 twoThreeFreeCopfr: 3 as Copfr<{ rough: 5 }>,
@@ -100,7 +100,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                             id: 48 as Id<PrimaryComma>,
                             apotomeSlope: 10.555481691145998 as ApotomeSlope,
                             aas: 10.555481691145998 as Abs<ApotomeSlope>,
-                            ate: 12 as Abs<Integer & Exponent<3 & Prime>>,
+                            ate: 12 as Abs<IntegerDecimal & Exponent<3 & Prime>>,
                             twoThreeFreeClassAnalysis: {
                                 name: "1/1" as Name<TwoThreeFreeClass>,
                                 twoThreeFreeCopfr: 0 as Copfr<{ rough: 5 }>,
@@ -132,7 +132,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                             id: 47 as Id<PrimaryComma>,
                             apotomeSlope: -2.411919815346935 as ApotomeSlope,
                             aas: 2.411919815346935 as Abs<ApotomeSlope>,
-                            ate: 1 as Abs<Integer & Exponent<3 & Prime>>,
+                            ate: 1 as Abs<IntegerDecimal & Exponent<3 & Prime>>,
                             twoThreeFreeClassAnalysis: {
                                 name: "25/19" as Name<TwoThreeFreeClass>,
                                 twoThreeFreeCopfr: 3 as Copfr<{ rough: 5 }>,
@@ -162,7 +162,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                             id: 48 as Id<PrimaryComma>,
                             apotomeSlope: 10.555481691145998 as ApotomeSlope,
                             aas: 10.555481691145998 as Abs<ApotomeSlope>,
-                            ate: 12 as Abs<Integer & Exponent<3 & Prime>>,
+                            ate: 12 as Abs<IntegerDecimal & Exponent<3 & Prime>>,
                             twoThreeFreeClassAnalysis: {
                                 name: "1/1" as Name<TwoThreeFreeClass>,
                                 twoThreeFreeCopfr: 0 as Copfr<{ rough: 5 }>,
@@ -195,7 +195,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                             id: 47 as Id<PrimaryComma>,
                             apotomeSlope: -2.411919815346935 as ApotomeSlope,
                             aas: 2.411919815346935 as Abs<ApotomeSlope>,
-                            ate: 1 as Abs<Integer & Exponent<3 & Prime>>,
+                            ate: 1 as Abs<IntegerDecimal & Exponent<3 & Prime>>,
                             twoThreeFreeClassAnalysis: {
                                 name: "25/19" as Name<TwoThreeFreeClass>,
                                 twoThreeFreeCopfr: 3 as Copfr<{ rough: 5 }>,
@@ -225,7 +225,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                             id: 48 as Id<PrimaryComma>,
                             apotomeSlope: 10.555481691145998 as ApotomeSlope,
                             aas: 10.555481691145998 as Abs<ApotomeSlope>,
-                            ate: 12 as Abs<Integer & Exponent<3 & Prime>>,
+                            ate: 12 as Abs<IntegerDecimal & Exponent<3 & Prime>>,
                             twoThreeFreeClassAnalysis: {
                                 name: "1/1" as Name<TwoThreeFreeClass>,
                                 twoThreeFreeCopfr: 0 as Copfr<{ rough: 5 }>,

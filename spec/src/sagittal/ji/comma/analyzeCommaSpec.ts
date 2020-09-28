@@ -6,7 +6,7 @@ import {
     Decimal,
     Direction,
     Exponent,
-    Integer, Max,
+    IntegerDecimal, Max,
     Name,
     Prime,
     RationalMonzo,
@@ -31,7 +31,7 @@ describe("analyzeComma", (): void => {
             name: "2100875/11S" as Name<Comma>,
             apotomeSlope: -8.464345 as ApotomeSlope,
             aas: 8.464345 as Abs<ApotomeSlope>,
-            ate: 6 as Abs<Integer & Exponent<3 & Prime>>,
+            ate: 6 as Abs<IntegerDecimal & Exponent<3 & Prime>>,
             twoThreeFreeClassAnalysis: {
                 name: "2100875/11" as Name<TwoThreeFreeClass>,
                 twoThreeFreePrimeLimit: 11 as Max<Prime<{ rough: 5 }>>,

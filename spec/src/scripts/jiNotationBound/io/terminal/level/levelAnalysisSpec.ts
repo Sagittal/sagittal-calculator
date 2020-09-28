@@ -1,6 +1,6 @@
 import { Count, NEWLINE } from "../../../../../../../src/general"
 import { Rank } from "../../../../../../../src/general/code"
-import { Integer } from "../../../../../../../src/general/math"
+import { IntegerDecimal } from "../../../../../../../src/general/math"
 import { BoundType, JiNotationLevel } from "../../../../../../../src/sagittal/notations/ji"
 import {
     jiNotationLevelsBestCumulativeHistoryRanks,
@@ -13,14 +13,14 @@ describe("formatJiNotationLevelAnalysis", (): void => {
     it("gives an explanation per JI notation level of what JI notation bounds have what ranks there — both purely within the level, and though all levels up to that point", (): void => {
         const jiNotationLevel = JiNotationLevel.ULTRA
         jiNotationLevelsBestHistoryRanks[ jiNotationLevel ] = {
-            [ RANKS[ BoundType.INA_MIDPOINT ] ]: 18 as Count<Integer & Rank<BoundType>>,
-            [ RANKS[ BoundType.COMMA_MEAN ] ]: 23 as Count<Integer & Rank<BoundType>>,
-            [ RANKS[ BoundType.SIZE_CATEGORY_BOUND ] ]: 13 as Count<Integer & Rank<BoundType>>,
+            [ RANKS[ BoundType.INA_MIDPOINT ] ]: 18 as Count<IntegerDecimal & Rank<BoundType>>,
+            [ RANKS[ BoundType.COMMA_MEAN ] ]: 23 as Count<IntegerDecimal & Rank<BoundType>>,
+            [ RANKS[ BoundType.SIZE_CATEGORY_BOUND ] ]: 13 as Count<IntegerDecimal & Rank<BoundType>>,
         }
         jiNotationLevelsBestCumulativeHistoryRanks[ jiNotationLevel ] = {
-            [ RANKS[ BoundType.INA_MIDPOINT ] ]: 18 as Count<Integer & Rank<BoundType>>,
-            [ RANKS[ BoundType.COMMA_MEAN ] ]: 17 as Count<Integer & Rank<BoundType>>,
-            [ RANKS[ BoundType.SIZE_CATEGORY_BOUND ] ]: 15 as Count<Integer & Rank<BoundType>>,
+            [ RANKS[ BoundType.INA_MIDPOINT ] ]: 18 as Count<IntegerDecimal & Rank<BoundType>>,
+            [ RANKS[ BoundType.COMMA_MEAN ] ]: 17 as Count<IntegerDecimal & Rank<BoundType>>,
+            [ RANKS[ BoundType.SIZE_CATEGORY_BOUND ] ]: 15 as Count<IntegerDecimal & Rank<BoundType>>,
         }
 
         const actual = formatJiNotationLevelAnalysis(jiNotationLevel)

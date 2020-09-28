@@ -1,5 +1,5 @@
 export { computeNotatingCommas } from "./notatingCommas"
-export { computeCommasFrom23FreeMonzo } from "./commasFrom23FreeMonzo"
+export { computeCommasFrom23FreeRationalMonzo } from "./commasFrom23FreeMonzo"
 export { CommasFrom23FreeMonzoOptions } from "./types"
 export {
     DEFAULT_MAX_AAS,

@@ -3,7 +3,7 @@ export { CommaAnalysis } from "./types"
 export {
     CommasFrom23FreeMonzoOptions,
     computeNotatingCommas,
-    computeCommasFrom23FreeMonzo,
+    computeCommasFrom23FreeRationalMonzo,
     DEFAULT_MAX_AAS,
     DEFAULT_MAX_ATE,
     DEFAULT_UPPER_BOUND,

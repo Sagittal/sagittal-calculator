@@ -1,4 +1,4 @@
-import { Exponent, Extrema, Integer } from "../../../../../src/general"
+import { Exponent, Extrema, IntegerDecimal } from "../../../../../src/general"
 import { Max, Prime, Sopfr } from "../../../../../src/general/math"
 import { compute23FreePrimesToCheck } from "../../../../../src/scripts/jiPitch/findCommas/twoThreeFreePrimesToCheck"
 
@@ -80,7 +80,7 @@ describe("compute23FreePrimesToCheck", (): void => {
             [-1, 2],    // 11
             [-1, 1],    // 13
             [0, 1],     // 17
-        ] as Array<Extrema<Integer & Exponent<Prime>>>
+        ] as Array<Extrema<IntegerDecimal & Exponent<Prime>>>
 
         it("when only N2D3P9 is provided, its final element is the max prime", (): void => {
             const actual = compute23FreePrimesToCheck({ primeExponentExtremasGivenMaxN2D3P9 })

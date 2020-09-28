@@ -1,22 +1,22 @@
 import { isUndefined } from "../../code"
 import {
     computeDecimalFromQuotient,
+    computeRationalQuotientFromRatio,
     computeRationalQuotientFromRationalDecimal,
-    computeRationalQuotientFromRationalNum,
     computeRoughRationalMonzo,
     computeRoughRationalQuotient,
     computeSuperMonzo,
     computeSuperQuotient,
     FIVE_ROUGHNESS,
-    isInteger,
+    isIntegerDecimal,
     NumTypeParameters,
-    RationalNum,
+    Ratio,
 } from "../../math"
 import { Name } from "../../types"
 import { TwoThreeFreeClass } from "./types"
 
 const compute23FreeClass = <T extends NumTypeParameters>(
-    { monzo, quotient, decimal }: RationalNum<T>,
+    { monzo, quotient, decimal }: Ratio<T>,
 ): TwoThreeFreeClass<T> => {
     const twoThreeFreeClass = {} as TwoThreeFreeClass
 
@@ -36,7 +36,7 @@ const compute23FreeClass = <T extends NumTypeParameters>(
         const super23FreeQuotient = computeSuperQuotient(twoThreeFreeQuotient)
         const super23FreeDecimal = computeDecimalFromQuotient(super23FreeQuotient)
 
-        if (!isInteger(super23FreeDecimal)) {
+        if (!isIntegerDecimal(super23FreeDecimal)) {
             throw new Error("Cannot safely represent a 2,3-free class (or JI in general) as a decimal which is not an integer.")
         }
         twoThreeFreeClass.decimal = super23FreeDecimal
@@ -46,7 +46,7 @@ const compute23FreeClass = <T extends NumTypeParameters>(
 }
 
 const compute23FreeClassName = (twoThreeFreeClass: TwoThreeFreeClass): Name<TwoThreeFreeClass> => {
-    const [numerator, denominator] = computeRationalQuotientFromRationalNum(
+    const [numerator, denominator] = computeRationalQuotientFromRatio(
         twoThreeFreeClass,
         { disableErrorBecauseExactValueNotRequired: true },
     )

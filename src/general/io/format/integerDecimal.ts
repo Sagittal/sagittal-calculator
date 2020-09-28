@@ -1,8 +1,11 @@
-import { Integer } from "../../math"
+import { IntegerDecimal } from "../../math"
 import { alignFormattedDecimal } from "./alignFormattedDecimal"
 import { Formatted } from "./types"
 
-const formatInteger = <T extends Integer>(integer: T, { align }: { align?: boolean } = {}): Formatted<T> => {
+// TODO: and perhaps this should be housed in the same module as decimal too
+const formatIntegerDecimal = <T extends IntegerDecimal>(
+    integer: T, { align }: { align?: boolean } = {},
+): Formatted<T> => {
     const stringifiedInteger = integer.toString()
 
     return align ?
@@ -11,5 +14,5 @@ const formatInteger = <T extends Integer>(integer: T, { align }: { align?: boole
 }
 
 export {
-    formatInteger,
+    formatIntegerDecimal,
 }

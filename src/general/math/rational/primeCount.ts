@@ -1,8 +1,9 @@
 import { finalElement } from "../../code"
 import { Count, Index } from "../../types"
 import { SMOOTH_ROUGH_OFFSET } from "./constants"
+import { IntegerDecimal } from "./num"
 import { PRIMES } from "./primes"
-import { Integer, Prime, Roughness, Smoothness } from "./types"
+import { Prime, Roughness, Smoothness } from "./types"
 
 // Prime Counting Function (π)
 // See: https://mathworld.wolfram.com/PrimeCountingFunction.html
@@ -28,7 +29,7 @@ const computeRoughnessIndex = (roughness: Roughness): Index<Prime> => {
 }
 
 const computeSmoothnessIndex = (smoothness: Smoothness): Index<Prime> =>
-    computeRoughnessIndex(smoothness as Integer as Roughness) + SMOOTH_ROUGH_OFFSET as Index<Prime>
+    computeRoughnessIndex(smoothness as IntegerDecimal as Roughness) + SMOOTH_ROUGH_OFFSET as Index<Prime>
 
 export {
     computePrimeCount,

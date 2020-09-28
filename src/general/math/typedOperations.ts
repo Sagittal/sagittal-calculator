@@ -5,7 +5,7 @@ import {
     MULTIPLICATIVE_IDENTITY,
     VALUE_BELOW_WHICH_ROUNDING_IMPLEMENTATION_BREAKS,
 } from "./constants"
-import { Integer } from "./rational"
+import { IntegerDecimal } from "./rational"
 import { Abs, Avg, Base, Exponent, Max, Min, Power } from "./types"
 
 const count = <T>(array: T[]): Count<T> => {
@@ -49,7 +49,7 @@ const negative = <T extends number>(number: T): T =>
 
 const round = <T extends number>(number: T, precision?: Precision): T => {
     if (isUndefined(precision)) {
-        return Math.round(number) as T & Integer
+        return Math.round(number) as T & IntegerDecimal
     }
 
     if (abs(number) < VALUE_BELOW_WHICH_ROUNDING_IMPLEMENTATION_BREAKS) {

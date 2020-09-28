@@ -1,11 +1,11 @@
-import { Abs, Exponent, Integer, Max, Min, Num, Prime } from "../../../../general"
+import { Abs, Exponent, IntegerDecimal, Max, Min, Num, Prime } from "../../../../general"
 import { ApotomeSlope } from "../../pitch"
 import { N2D3P9 } from "../../twoThreeFreeClass"
 
 type CommasFrom23FreeMonzoOptions = Partial<{
     lowerBound: Min<Num>,
     upperBound: Max<Num>,
-    maxAte: Max<Abs<Integer & Exponent<3 & Prime>>>,
+    maxAte: Max<Abs<IntegerDecimal & Exponent<3 & Prime>>>,
     maxAas: Max<Abs<ApotomeSlope>>,
     maxN2D3P9: Max<N2D3P9>,
 }>

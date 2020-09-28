@@ -3,7 +3,7 @@ import {
     Copfr,
     Direction,
     Exponent,
-    Integer,
+    IntegerDecimal,
     Max,
     Name,
     RationalDecimal,
@@ -31,7 +31,7 @@ const jiPitchAnalysisFixture: JiPitchAnalysis = {
     quotient: [1, 1] as RationalQuotient,
     apotomeSlope: 0 as ApotomeSlope,
     aas: 0 as Abs<ApotomeSlope>,
-    ate: 0 as Abs<Integer & Exponent<3 & Prime>>,
+    ate: 0 as Abs<IntegerDecimal & Exponent<3 & Prime>>,
     twoThreeFreeClassAnalysis: twoThreeFreeClassAnalysisFixture,
 }
 

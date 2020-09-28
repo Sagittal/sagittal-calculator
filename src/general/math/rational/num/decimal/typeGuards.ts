@@ -1,5 +1,6 @@
+import { dividesEvenly } from "../../../dividesEvenly"
 import { Decimal, NumTypeParameters } from "../../../num"
-import { RationalDecimal } from "./types"
+import { IntegerDecimal, RationalDecimal } from "./types"
 
 const isRationalDecimal = <T extends NumTypeParameters>(
     candidateRationalDecimal: Decimal,
@@ -7,6 +8,11 @@ const isRationalDecimal = <T extends NumTypeParameters>(
     return true
 }
 
+const isIntegerDecimal = (candidateInteger: number): candidateInteger is IntegerDecimal => {
+    return dividesEvenly(candidateInteger, 1)
+}
+
 export {
     isRationalDecimal,
+    isIntegerDecimal,
 }

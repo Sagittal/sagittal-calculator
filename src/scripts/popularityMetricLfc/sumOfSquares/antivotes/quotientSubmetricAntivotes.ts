@@ -1,5 +1,5 @@
 import {
-    computeIntegerMonzoFromInteger,
+    computeIntegerMonzoFromIntegerDecimal,
     computeRationalMonzoFromRationalQuotient,
     isUndefined,
     QuotientPartType,
@@ -12,6 +12,7 @@ import { maybeNuminatorSwap } from "./numinator"
 import { computeSubmetricAntivotes } from "./submetricAntivotes"
 import { computeWeightedAntivotes } from "./weightedAntivotes"
 
+// TODO: rename
 const computeQuotientSubmetricAntivotes = (
     twoThreeFreeClass: TwoThreeFreeClass,
     submetric: Submetric = {},
@@ -47,10 +48,10 @@ const computeQuotientSubmetricAntivotes = (
     let { numeratorAntivotes, denominatorAntivotes } = maybeNuminatorSwap({
         useNuminator,
         numeratorAntivotes: computeSubmetricAntivotes(
-            computeIntegerMonzoFromInteger(numerator), submetric, QuotientPartType.NUMERATOR,
+            computeIntegerMonzoFromIntegerDecimal(numerator), submetric, QuotientPartType.NUMERATOR,
         ),
         denominatorAntivotes: computeSubmetricAntivotes(
-            computeIntegerMonzoFromInteger(denominator), submetric, QuotientPartType.DENOMINATOR,
+            computeIntegerMonzoFromIntegerDecimal(denominator), submetric, QuotientPartType.DENOMINATOR,
         ),
     })
 

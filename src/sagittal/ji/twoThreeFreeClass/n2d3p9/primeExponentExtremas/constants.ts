@@ -1,11 +1,11 @@
-import { Exponent, Extrema, Integer, Prime } from "../../../../../general"
+import { Exponent, Extrema, IntegerDecimal, Prime } from "../../../../../general"
 
-const EMPTY_PRIME_EXPONENT_EXTREMA = [0, 0] as Extrema<Integer & Exponent<Prime>>
+const EMPTY_PRIME_EXPONENT_EXTREMA = [0, 0] as Extrema<IntegerDecimal & Exponent<Prime>>
 
 const INITIAL_PRIME_EXPONENT_EXTREMAS_FOR_TWO_AND_THREE = [
     EMPTY_PRIME_EXPONENT_EXTREMA,
     EMPTY_PRIME_EXPONENT_EXTREMA,
-] as Array<Extrema<Integer & Exponent<Prime>>>
+] as Array<Extrema<IntegerDecimal & Exponent<Prime>>>
 
 export {
     EMPTY_PRIME_EXPONENT_EXTREMA,

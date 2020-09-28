@@ -47,7 +47,7 @@ describe("equalNums", (): void => {
         expect(actual).toBeFalsy()
     })
 
-    it("returns true if the monzo of one is not the same rational num as the quotient of the other", (): void => {
+    it("returns true if the monzo of one is not the same ratio as the quotient of the other", (): void => {
         const numA: Num = { monzo: [0, 0, 1, -1] as Monzo }
         const numB: Num = { quotient: [5, 7] as Quotient }
 
@@ -56,7 +56,7 @@ describe("equalNums", (): void => {
         expect(actual).toBeTruthy()
     })
 
-    it("returns false if the monzo of one is not the same rational num as the quotient of the other", (): void => {
+    it("returns false if the monzo of one is not the same ratio as the quotient of the other", (): void => {
         const numA: Num = { monzo: [0, 0, 1, -1] as Monzo }
         const numB: Num = { quotient: [5, 6] as Quotient }
 

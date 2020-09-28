@@ -1,4 +1,4 @@
-import { doOnNextEventLoop, Integer, Io, LogTarget, Ms, saveLog } from "../../../general"
+import { doOnNextEventLoop, IntegerDecimal, Io, LogTarget, Ms, saveLog } from "../../../general"
 import { Scope } from "../bestMetric"
 import { computeNextScope } from "./nextScope"
 import {
@@ -30,7 +30,7 @@ const computeRecursiveSearchScopeAndMaybeUpdateBestMetricArguments = (
         onlyBetterThanSopfgtt,
     } = options
 
-    const nextDepth = depth + 1 as Integer
+    const nextDepth = depth + 1 as IntegerDecimal
     const nextScope: Scope = computeNextScope(nextLocalMin.samplePoint, dynamicParameters, scope)
     const nextMetricTag = metricTag + `.${index + 1}/${(nextLocalMinima.length)}` as MetricTag
     saveLog(`  ${indentation}${nextMetricTag} - depth ${nextDepth}` as Io, LogTarget.PROGRESS)

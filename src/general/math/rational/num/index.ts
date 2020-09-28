@@ -1,20 +1,23 @@
 export {
-    RationalNum,
-    RationalNumByDecimal,
-    IntegerNum,
+    Ratio,
+    RatioByDecimal,
+    Integer,
 } from "./types"
 export {
-    computeIntegerFromIntegerMonzo,
+    computeIntegerDecimalFromIntegerMonzo,
     RationalDecimal,
+    IntegerDecimal,
+    isIntegerDecimal,
+    isRoughIntegerDecimal,
 } from "./decimal"
 export {
     isRoughRationalQuotient,
     computeRoughRationalQuotient,
     isSmoothRationalQuotient,
-    computeRationalQuotientFromRationalNum,
+    computeRationalQuotientFromRatio,
     computeRationalQuotientFromRationalDecimal,
     isRationalQuotient,
-    RationalNumByQuotient,
+    RatioByQuotient,
     computeLowestTermsRationalQuotient,
     IntegerDenominator,
     IntegerQuotientPart,
@@ -24,18 +27,18 @@ export {
     IntegerQuotient,
 } from "./quotient"
 export {
-    computeIntegerMonzoFromInteger,
+    computeIntegerMonzoFromIntegerDecimal,
     computeRationalMonzoFromRationalQuotient,
     computeRationalMonzosFromPrimeExponentExtremas,
     computeRoughRationalMonzo,
     isRoughRationalMonzo,
     isSmoothRationalMonzo,
-    computeRationalMonzoFromRationalNum,
-    computeRationalMonzoFromIntegerOrRationalMonzo,
-    RationalNumByMonzo,
+    computeRationalMonzoFromRatio,
+    computeRationalMonzoFromIntegerDecimalOrRationalMonzo,
+    RatioByMonzo,
     RationalMonzo,
     IntegerMonzo,
 } from "./monzo"
-export { isRationalNum } from "./typeGuards"
-export { isSmoothRationalNum, computeRationalNumSmoothness } from "./smoothness"
-export { isRoughRationalNum } from "./roughness"
+export { isRatio } from "./typeGuards"
+export { isSmoothRatio, computeRatioSmoothness } from "./ratioSmoothness"
+export { isRoughRatio } from "./ratioRoughness"

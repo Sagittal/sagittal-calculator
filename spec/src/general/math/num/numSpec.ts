@@ -7,12 +7,13 @@ import {
     Quotient,
 } from "../../../../../src/general/math/num"
 import { Monzo } from "../../../../../src/general/math/num/monzo"
-import { Integer } from "../../../../../src/general/math/rational"
+import { IntegerDecimal } from "../../../../../src/general/math/rational"
 import {
+    Integer,
     IntegerMonzo,
-    IntegerNum,
-    IntegerQuotient, RationalDecimal,
-    RationalNum,
+    IntegerQuotient,
+    Ratio,
+    RationalDecimal,
     RationalQuotient,
 } from "../../../../../src/general/math/rational/num"
 import { RationalMonzo } from "../../../../../src/general/math/rational/num/monzo"
@@ -28,20 +29,20 @@ describe("computeNumFromMonzo", (): void => {
     })
 
     it("works for rational monzos", (): void => {
-        const monzo = [0, 0, -1, 1] as RationalMonzo
+        const rationalMonzo = [0, 0, -1, 1] as RationalMonzo
 
-        const actual = computeNumFromMonzo(monzo)
+        const actual = computeNumFromMonzo(rationalMonzo)
 
-        const expected: RationalNum = { monzo: [0, 0, -1, 1] as RationalMonzo }
+        const expected: Ratio = { monzo: [0, 0, -1, 1] as RationalMonzo }
         expect(actual).toEqual(expected)
     })
 
     it("works for integer monzos", (): void => {
-        const monzo = [0, 0, 1, 1] as IntegerMonzo
+        const integerMonzo = [0, 0, 1, 1] as IntegerMonzo
 
-        const actual = computeNumFromMonzo(monzo)
+        const actual = computeNumFromMonzo(integerMonzo)
 
-        const expected: IntegerNum = { monzo: [0, 0, 1, 1] as IntegerMonzo }
+        const expected: Integer = { monzo: [0, 0, 1, 1] as IntegerMonzo }
         expect(actual).toEqual(expected)
     })
 })
@@ -52,25 +53,25 @@ describe("computeNumFromQuotient", (): void => {
 
         const actual = computeNumFromQuotient(quotient)
 
-        const expected: Num = { quotient: [-1.1, 1] as Quotient }
+        const expected: Num = { quotient: [7.5, 5] as Quotient }
         expect(actual).toEqual(expected)
     })
 
     it("works for rational quotients", (): void => {
-        const quotient = [7, 5] as RationalQuotient
+        const rationalQuotient = [7, 5] as RationalQuotient
 
-        const actual = computeNumFromQuotient(quotient)
+        const actual = computeNumFromQuotient(rationalQuotient)
 
-        const expected: RationalNum = { quotient: [7, 5] as RationalQuotient }
+        const expected: Ratio = { quotient: [7, 5] as RationalQuotient }
         expect(actual).toEqual(expected)
     })
 
     it("works for integer quotients", (): void => {
-        const quotient = [35, 1] as IntegerQuotient
+        const integerQuotient = [35, 1] as IntegerQuotient
 
-        const actual = computeNumFromQuotient(quotient)
+        const actual = computeNumFromQuotient(integerQuotient)
 
-        const expected: IntegerNum = { quotient: [35, 1] as IntegerQuotient }
+        const expected: Integer = { quotient: [35, 1] as IntegerQuotient }
         expect(actual).toEqual(expected)
     })
 })
@@ -78,28 +79,28 @@ describe("computeNumFromQuotient", (): void => {
 describe("computeNumFromDecimal", (): void => {
     it("creates a num from a decimal", (): void => {
         const decimal = 7.534635 as Decimal
-        
+
         const actual = computeNumFromDecimal(decimal)
-        
+
         const expected: Num = { decimal: 7.534635 as Decimal }
         expect(actual).toEqual(expected)
     })
 
     it("works for rational decimals", (): void => {
-        const decimal = 7.5 as RationalDecimal
+        const rationalDecimal = 7.5 as RationalDecimal
 
-        const actual = computeNumFromDecimal(decimal)
-        
-        const expected: RationalNum = { decimal: 7.5 as RationalDecimal }
+        const actual = computeNumFromDecimal(rationalDecimal)
+
+        const expected: Ratio = { decimal: 7.5 as RationalDecimal }
         expect(actual).toEqual(expected)
     })
 
     it("works for integer decimals", (): void => {
-        const decimal = 7 as Integer
-        
-        const actual = computeNumFromDecimal(decimal)
-        
-        const expected: IntegerNum = { decimal: 7.5 as Integer }
+        const integerDecimal = 7 as IntegerDecimal
+
+        const actual = computeNumFromDecimal(integerDecimal)
+
+        const expected: Integer = { decimal: 7 as IntegerDecimal }
         expect(actual).toEqual(expected)
     })
 })

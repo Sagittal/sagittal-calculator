@@ -1,4 +1,4 @@
-import { BLANK, Index, Integer, Ms, Name, Step } from "../../../../../src/general"
+import { BLANK, Index, IntegerDecimal, Ms, Name, Step } from "../../../../../src/general"
 import * as doOnNextEventLoop from "../../../../../src/general/code/doOnNextEventLoop"
 import { Combination } from "../../../../../src/general/math"
 import { Metric, Scope, SumOfSquares } from "../../../../../src/scripts/popularityMetricLfc/bestMetric"
@@ -43,7 +43,7 @@ describe("searchNextLocalMin", (): void => {
     const index = 7
     const metricTag = "" as MetricTag
     const indentation = BLANK
-    const depth = 5 as Integer
+    const depth = 5 as IntegerDecimal
     const nextLocalMinima = [{}, {}, {}, {}, {}, {}, {}, {}, {}] as LocalMin[]
     const onlyBetterThanSopfgtt = true
     const metricName = "{aAsCoefficient,kAsCoefficient,w}" as Name<Metric>
@@ -117,7 +117,7 @@ describe("searchNextLocalMin", (): void => {
                 },
             ] as unknown[] as Scope,
             {
-                depth: 6 as Integer,
+                depth: 6 as IntegerDecimal,
                 metricTag: ".8/9" as MetricTag,
                 localMin: nextLocalMin,
                 onlyBetterThanSopfgtt,

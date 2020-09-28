@@ -1,6 +1,6 @@
 export { Formatted } from "./types"
 export { alignFormattedDecimal } from "./alignFormattedDecimal"
-export { formatInteger } from "./integer"
+export { formatIntegerDecimal } from "./integerDecimal"
 export { formatMonzo } from "./monzo"
 export { formatDecimal } from "./decimal"
 export { format23FreeClass } from "./twoThreeFreeClass"

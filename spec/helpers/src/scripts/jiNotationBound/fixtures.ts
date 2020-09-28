@@ -4,7 +4,7 @@ import {
     Count,
     Decimal,
     Id,
-    Integer,
+    IntegerDecimal,
     Multiplier,
     Name,
     Rank,
@@ -35,14 +35,14 @@ const boundEventAnalysisFixture: BoundEventAnalysis = {
     ...boundEventFixture,
     distance: 0 as Abs<Cents>,
     inaDistance: 0 as Multiplier<Ina>,
-    rank: 0 as Integer & Rank<BoundType>,
+    rank: 0 as IntegerDecimal & Rank<BoundType>,
     exact: false,
 }
 
 const boundHistoryAnalysisFixture: BoundHistoryAnalysis = {
     boundEventAnalyses: [],
     cents: 0 as Cents,
-    rank: 0 as Integer & Rank<BoundType>,
+    rank: 0 as IntegerDecimal & Rank<BoundType>,
     score: 0 as Score,
     totalDistance: 0 as Sum<Abs<Cents>>,
     exact: false,
@@ -56,8 +56,8 @@ const boundEventConsolidationFixture: BoundEventConsolidation = {
     ...boundEventFixture,
     isPossibleBoundHistoryMember: false,
     isBestPossibleBoundHistoryMember: false,
-    rankOfBestRankedMemberHistory: 0 as Integer & Rank<BoundType>,
-    rankOfBestRankedEventInAnyMemberHistory: 0 as Integer & Rank<BoundType>,
+    rankOfBestRankedMemberHistory: 0 as IntegerDecimal & Rank<BoundType>,
+    rankOfBestRankedEventInAnyMemberHistory: 0 as IntegerDecimal & Rank<BoundType>,
     nextBoundEvents: [] as Name<Bound>[],
     exact: false,
 }

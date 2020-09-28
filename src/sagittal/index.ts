@@ -7,7 +7,7 @@ export {
     CommaNameOptions,
     CommasFrom23FreeMonzoOptions,
     computeApotomeSlope,
-    computeCommasFrom23FreeMonzo,
+    computeCommasFrom23FreeRationalMonzo,
     computeN2D3P9,
     computeNotatingCommas,
     computePrimeExponentExtremasGivenMaxN2D3P9,

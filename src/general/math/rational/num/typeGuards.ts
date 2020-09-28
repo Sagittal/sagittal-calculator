@@ -3,12 +3,12 @@ import { Num, NumTypeParameters } from "../../num"
 import { isRationalDecimal } from "./decimal"
 import { isRationalMonzo } from "./monzo"
 import { isRationalQuotient } from "./quotient"
-import { RationalNum } from "./types"
+import { Ratio } from "./types"
 
-const isRationalNum = <T extends NumTypeParameters>(
-    candidateRationalNum: Num<T>,
-): candidateRationalNum is RationalNum<T> => {
-    const { monzo, quotient, decimal } = candidateRationalNum
+const isRatio = <T extends NumTypeParameters>(
+    candidateRatio: Num<T>,
+): candidateRatio is Ratio<T> => {
+    const { monzo, quotient, decimal } = candidateRatio
 
     return (!isUndefined(monzo) && isRationalMonzo(monzo)) ||
         (!isUndefined(quotient) && isRationalQuotient(quotient)) ||
@@ -16,5 +16,5 @@ const isRationalNum = <T extends NumTypeParameters>(
 }
 
 export {
-    isRationalNum,
+    isRatio,
 }

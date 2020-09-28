@@ -1,13 +1,13 @@
-import { Integer } from "./types"
+import { IntegerDecimal } from "./num"
 
-const integerDivide = <T extends number>(dividend: T, divisor: T): T & Integer =>
-    floor(dividend / divisor) as T & Integer
+const integerDivide = <T extends number>(dividend: T, divisor: T): T & IntegerDecimal =>
+    floor(dividend / divisor) as T & IntegerDecimal
 
-const floor = <T extends number>(number: T): T & Integer =>
-    Math.floor(number) as T & Integer
+const floor = <T extends number>(number: T): T & IntegerDecimal =>
+    Math.floor(number) as T & IntegerDecimal
 
-const ceil = <T extends number>(number: T): T & Integer =>
-    Math.ceil(number) as T & Integer
+const ceil = <T extends number>(number: T): T & IntegerDecimal =>
+    Math.ceil(number) as T & IntegerDecimal
 
 export {
     integerDivide,

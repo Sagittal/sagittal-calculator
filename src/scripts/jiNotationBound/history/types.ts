@@ -1,4 +1,4 @@
-import { Abs, Cents, Integer, Multiplier, Rank, Sum } from "../../../general"
+import { Abs, Cents, IntegerDecimal, Multiplier, Rank, Sum } from "../../../general"
 import { BoundType, Ina, Tina } from "../../../sagittal"
 import { BoundEventAnalysis } from "./events"
 
@@ -12,7 +12,7 @@ interface BoundHistoryAnalysis {
     initialPositionTinaDistance: Multiplier<Tina>,
     cents: Cents,
     possible: boolean,
-    rank: Integer & Rank<BoundType>,
+    rank: IntegerDecimal & Rank<BoundType>,
     score: Score,
     tinaError: Multiplier<Tina>,
 }

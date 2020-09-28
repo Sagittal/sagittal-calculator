@@ -1,5 +1,5 @@
 import { Row } from "../../../../../../src/general/io/table"
-import { Abs, Exponent, Integer, Prime, RationalMonzo, RationalQuotient } from "../../../../../../src/general/math"
+import { Abs, Exponent, IntegerDecimal, Prime, RationalMonzo, RationalQuotient } from "../../../../../../src/general/math"
 import { Cents } from "../../../../../../src/general/music"
 import { ApotomeSlope, JiPitchAnalysis } from "../../../../../../src/sagittal/ji"
 import { jiPitchScriptGroupSettings } from "../../../../../../src/scripts/jiPitch/globals"
@@ -18,7 +18,7 @@ describe("computeJiPitchRow", (): void => {
         quotient: [5, 4] as RationalQuotient,
         apotomeSlope: 8.2 as ApotomeSlope,
         aas: 8.2 as Abs<ApotomeSlope>,
-        ate: 1 as Abs<Integer & Exponent<3 & Prime>>,
+        ate: 1 as Abs<IntegerDecimal & Exponent<3 & Prime>>,
         twoThreeFreeClassAnalysis: twoThreeFreeClassAnalysisFixture,
     }
 

@@ -1,11 +1,11 @@
 import { formatMonzo } from "../../../../io"
 import { computeQuotientFromMonzo, NumTypeParameters } from "../../../num"
-import { Integer } from "../../types"
 import { IntegerMonzo } from "../monzo"
+import { IntegerDecimal } from "./types"
 
-const computeIntegerFromIntegerMonzo = <T extends NumTypeParameters>(
+const computeIntegerDecimalFromIntegerMonzo = <T extends NumTypeParameters>(
     integerMonzo: IntegerMonzo<T>,
-): Integer<T> => {
+): IntegerDecimal<T> => {
     const quotient = computeQuotientFromMonzo(integerMonzo)
     const [numerator, denominator] = quotient
 
@@ -13,9 +13,9 @@ const computeIntegerFromIntegerMonzo = <T extends NumTypeParameters>(
         throw new Error(`Tried to compute integer from non-integer monzo ${formatMonzo(integerMonzo)}.`)
     }
 
-    return numerator as Integer as Integer<T>
+    return numerator as IntegerDecimal as IntegerDecimal<T>
 }
 
 export {
-    computeIntegerFromIntegerMonzo,
+    computeIntegerDecimalFromIntegerMonzo,
 }

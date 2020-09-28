@@ -1,32 +1,32 @@
 import {
     Comma,
-    computeRationalMonzoFromRationalNum,
+    computeRationalMonzoFromRatio,
     computeRoughRationalMonzo,
     equalMonzos,
     FIVE_ROUGHNESS,
     invertMonzo,
     NumTypeParameters,
+    Ratio,
     RationalMonzo,
-    RationalNum,
 } from "../../../../general"
-import { computeCommasFrom23FreeMonzo } from "./commasFrom23FreeMonzo"
+import { computeCommasFrom23FreeRationalMonzo } from "./commasFrom23FreeMonzo"
 import { CommasFrom23FreeMonzoOptions } from "./types"
 
 const computeNotatingCommas = <T extends NumTypeParameters>(
-    jiPitch: RationalNum<T>,
+    jiPitch: Ratio<T>,
     options?: CommasFrom23FreeMonzoOptions,
 ): Comma[] => {
-    const monzo = computeRationalMonzoFromRationalNum(jiPitch)
-    const twoThreeFreeMonzo: RationalMonzo<{ rough: 5 }> =
-        computeRoughRationalMonzo(monzo, FIVE_ROUGHNESS) as RationalMonzo<{ rough: 5 }>
+    const rationalMonzo = computeRationalMonzoFromRatio(jiPitch)
+    const twoThreeFreeRationalMonzo: RationalMonzo<{ rough: 5 }> =
+        computeRoughRationalMonzo(rationalMonzo, FIVE_ROUGHNESS) as RationalMonzo<{ rough: 5 }>
 
-    if (equalMonzos(twoThreeFreeMonzo, [])) {
-        return computeCommasFrom23FreeMonzo(twoThreeFreeMonzo, options)
+    if (equalMonzos(twoThreeFreeRationalMonzo, [])) {
+        return computeCommasFrom23FreeRationalMonzo(twoThreeFreeRationalMonzo, options)
     }
 
     return [
-        ...computeCommasFrom23FreeMonzo(twoThreeFreeMonzo, options),
-        ...computeCommasFrom23FreeMonzo(invertMonzo(twoThreeFreeMonzo), options),
+        ...computeCommasFrom23FreeRationalMonzo(twoThreeFreeRationalMonzo, options),
+        ...computeCommasFrom23FreeRationalMonzo(invertMonzo(twoThreeFreeRationalMonzo), options),
     ]
 }
 

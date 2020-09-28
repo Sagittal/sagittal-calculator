@@ -1,13 +1,13 @@
 import { Decimal, Max, Min, Num, RationalMonzo } from "../../../../../../src/general/math"
-import { computeMonzoInZone } from "../../../../../../src/sagittal/ji/comma/find/monzoInZone"
+import { computeRationalMonzoInZone } from "../../../../../../src/sagittal/ji/comma/find/monzoInZone"
 
-describe("computeMonzoInZone", (): void => {
+describe("computeRationalMonzoInZone", (): void => {
     it("given a 2-free monzo, finds the correct power of 2 for the monzo which is in the search bounds", (): void => {
         const twoFreeMonzo = [0, -6, 3, 5, -1] as RationalMonzo<{ rough: 3 }>
         const lowerBound = { decimal: 1.023374 as Decimal } as Min<Num>
         const upperBound = { decimal: 1.023433 as Decimal } as Max<Num>
 
-        const actual = computeMonzoInZone(twoFreeMonzo, [lowerBound, upperBound])
+        const actual = computeRationalMonzoInZone(twoFreeMonzo, [lowerBound, upperBound])
 
         const expected = [-8, -6, 3, 5, -1] as RationalMonzo
         expect(actual).toEqual(expected)
@@ -18,7 +18,7 @@ describe("computeMonzoInZone", (): void => {
         const lowerBound = { decimal: 1.023433 as Decimal } as Min<Num>
         const upperBound = { decimal: 1.023492 as Decimal } as Max<Num>
 
-        const actual = computeMonzoInZone(twoFreeMonzo, [lowerBound, upperBound])
+        const actual = computeRationalMonzoInZone(twoFreeMonzo, [lowerBound, upperBound])
 
         expect(actual).toBeUndefined()
     })
@@ -28,7 +28,7 @@ describe("computeMonzoInZone", (): void => {
         const lowerBound = { decimal: 1.023433 as Decimal } as Min<Num>
         const upperBound = { decimal: 1.023492 as Decimal } as Max<Num>
 
-        const actual = computeMonzoInZone(twoFreeMonzo, [lowerBound, upperBound])
+        const actual = computeRationalMonzoInZone(twoFreeMonzo, [lowerBound, upperBound])
 
         expect(actual).toBeUndefined()
     })
@@ -38,7 +38,7 @@ describe("computeMonzoInZone", (): void => {
         const lowerBound = { decimal: 0.977104 as Decimal } as Min<Num>
         const upperBound = { decimal: 1.023492 as Decimal } as Max<Num>
 
-        const actual = computeMonzoInZone(twoFreeMonzo, [lowerBound, upperBound])
+        const actual = computeRationalMonzoInZone(twoFreeMonzo, [lowerBound, upperBound])
 
         const expected = [] as unknown[] as RationalMonzo as RationalMonzo
         expect(actual).toEqual(expected)
@@ -49,7 +49,7 @@ describe("computeMonzoInZone", (): void => {
         const lowerBound = { decimal: 1.000000 as Decimal } as Min<Num>
         const upperBound = { decimal: 1.023433 as Decimal } as Max<Num>
 
-        const actual = computeMonzoInZone(twoFreeMonzo, [lowerBound, upperBound])
+        const actual = computeRationalMonzoInZone(twoFreeMonzo, [lowerBound, upperBound])
 
         const expected = [] as unknown[] as RationalMonzo as RationalMonzo
         expect(actual).toEqual(expected)
@@ -60,7 +60,7 @@ describe("computeMonzoInZone", (): void => {
         const lowerBound = { decimal: 1.023374 as Decimal } as Min<Num>
         const upperBound = { decimal: 1.023433 as Decimal } as Max<Num>
 
-        computeMonzoInZone(twoFreeMonzo, [lowerBound, upperBound])
+        computeRationalMonzoInZone(twoFreeMonzo, [lowerBound, upperBound])
 
         const expected = [0, -6, 3, 5, -1] as RationalMonzo
         expect(twoFreeMonzo).toEqual(expected)

@@ -1,16 +1,16 @@
 export { isRoughRationalQuotient, computeRoughRationalQuotient } from "./quotientRoughness"
 export { isSmoothRationalQuotient } from "./quotientSmoothness"
 export { computeRationalQuotientFromRationalDecimal } from "./quotientFromRationalDecimal"
-export { computeRationalQuotientFromRationalNum } from "./quotientFromRationalNum"
+export { computeRationalQuotientFromRatio } from "./quotientFromRatio"
 export { isRationalQuotient } from "./typeGuards"
 export { equalQuotients } from "./equalQuotients"
 export { computeLowestTermsRationalQuotient } from "./lowestTerms"
 export {
-    RationalNumByQuotient,
+    RatioByQuotient,
     RationalQuotient,
     IntegerDenominator,
     IntegerQuotientPart,
     IntegerNumerator,
     IntegerQuotient,
-    IntegerNumByQuotient,
+    IntegerByQuotient,
 } from "./types"

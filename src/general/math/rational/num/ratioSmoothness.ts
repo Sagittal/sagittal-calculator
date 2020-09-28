@@ -2,30 +2,37 @@ import { isUndefined } from "../../../code"
 import { NumTypeParameters } from "../../num"
 import { max } from "../../typedOperations"
 import { computeGpf } from "../gpf"
-import { Integer, Primes, Smoothness } from "../types"
+import { Primes, Smoothness } from "../types"
+import { IntegerDecimal } from "./decimal"
 import { isSmoothRationalMonzo } from "./monzo"
 import { computeRationalQuotientFromRationalDecimal, isSmoothRationalQuotient } from "./quotient"
-import { RationalNum } from "./types"
+import { Ratio } from "./types"
 
-const isSmoothRationalNum = <S extends Primes, T extends NumTypeParameters>(
-    rationalNum: RationalNum<T>,
+const isSmoothRatio = <S extends Primes, T extends NumTypeParameters>(
+    ratio: Ratio<T>,
     smoothness: S & Smoothness,
-): rationalNum is RationalNum<T & { smooth: S }> => {
-    let { monzo, quotient, decimal } = rationalNum
+): ratio is Ratio<T & { smooth: S }> => {
+    let { monzo, quotient, decimal } = ratio
 
     if (isUndefined(monzo) && isUndefined(quotient) && !isUndefined(decimal)) {
         return isSmoothRationalQuotient(
             computeRationalQuotientFromRationalDecimal(decimal),
-            smoothness as S & Integer as S & Smoothness,
+            smoothness as S & IntegerDecimal as S & Smoothness,
         )
     }
 
-    return (!isUndefined(monzo) && isSmoothRationalMonzo(monzo, smoothness as S & Integer as S & Smoothness)) ||
-        (!isUndefined(quotient) && isSmoothRationalQuotient(quotient, smoothness as S & Integer as S & Smoothness))
+    return (
+            !isUndefined(monzo) &&
+            isSmoothRationalMonzo(monzo, smoothness as S & IntegerDecimal as S & Smoothness)
+        ) ||
+        (
+            !isUndefined(quotient) &&
+            isSmoothRationalQuotient(quotient, smoothness as S & IntegerDecimal as S & Smoothness)
+        )
 }
 
-const computeRationalNumSmoothness = <S extends Primes, T extends NumTypeParameters>(
-    { monzo, quotient, decimal }: RationalNum<T>,
+const computeRatioSmoothness = <S extends Primes, T extends NumTypeParameters>(
+    { monzo, quotient, decimal }: Ratio<T>,
 ): Smoothness => {
     if (!isUndefined(monzo)) {
         return computeGpf(monzo) as Smoothness
@@ -41,6 +48,6 @@ const computeRationalNumSmoothness = <S extends Primes, T extends NumTypeParamet
 }
 
 export {
-    isSmoothRationalNum,
-    computeRationalNumSmoothness,
+    isSmoothRatio,
+    computeRatioSmoothness,
 }

@@ -4,7 +4,7 @@ import {
     computePrimeCount,
     Exponent,
     indexOfFinalElement,
-    Integer,
+    IntegerDecimal,
     isUndefined,
     log,
     Prime,
@@ -22,7 +22,7 @@ import { secondaryParameterOverride } from "./secondaryParameter"
 // (maybe with (maybe adjusted) repetition)
 
 const computeSubmetricAntivotes = (
-    twoThreeFreeNumberMonzo: RationalMonzo,
+    twoThreeFreeRationalMonzo: RationalMonzo,
     submetric: Submetric = {},
     quotientPartType?: QuotientPartType,
 ): Antivotes => {
@@ -49,9 +49,9 @@ const computeSubmetricAntivotes = (
         throw new Error("Attempted to compute antivotes without an operation (sum, count, or max).")
     }
 
-    return twoThreeFreeNumberMonzo.reduce(
-        (monzoAntivotes: Antivotes, primeExponent: Integer & Exponent<Prime>, index: number): Antivotes => {
-            if (max && index < indexOfFinalElement(twoThreeFreeNumberMonzo)) {
+    return twoThreeFreeRationalMonzo.reduce(
+        (monzoAntivotes: Antivotes, primeExponent: IntegerDecimal & Exponent<Prime>, index: number): Antivotes => {
+            if (max && index < indexOfFinalElement(twoThreeFreeRationalMonzo)) {
                 return 0 as Antivotes
             }
 
@@ -97,7 +97,7 @@ const computeSubmetricAntivotes = (
             }
 
             if (isNaN(primeExponentAntivotes)) {
-                throw new Error(`You got NaN! in submetricAntivotes ${twoThreeFreeNumberMonzo} ${stringify(submetric, { multiline: true })}`)
+                throw new Error(`You got NaN! in submetricAntivotes ${twoThreeFreeRationalMonzo} ${stringify(submetric, { multiline: true })}`)
             }
 
             return monzoAntivotes + primeExponentAntivotes as Antivotes

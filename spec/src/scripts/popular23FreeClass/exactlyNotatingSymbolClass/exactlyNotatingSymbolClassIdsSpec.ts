@@ -6,9 +6,9 @@ describe("computeExactlyNotatingSymbolClassIds", (): void => {
     it(
         `returns a list of JI Notation symbol class IDs for symbol classes which exactly notate this pitch relative to a skeleton of Pythagorean nominals`,
         (): void => {
-            const monzo: RationalMonzo = [0, -2, 0, 0, 1] as RationalMonzo
+            const rationalMonzo: RationalMonzo = [0, -2, 0, 0, 1] as RationalMonzo
 
-            const actual = computeExactlyNotatingSymbolClassIds({ monzo })
+            const actual = computeExactlyNotatingSymbolClassIds({ monzo: rationalMonzo })
 
             const expected = [
                 79,     // 1/11S
@@ -20,9 +20,9 @@ describe("computeExactlyNotatingSymbolClassIds", (): void => {
     )
 
     it("another example", (): void => {
-        const monzo: RationalMonzo = [0, 0, 1, 1] as RationalMonzo
+        const rationalMonzo: RationalMonzo = [0, 0, 1, 1] as RationalMonzo
 
-        const actual = computeExactlyNotatingSymbolClassIds({ monzo })
+        const actual = computeExactlyNotatingSymbolClassIds({ monzo: rationalMonzo })
 
         const expected = [
             54,     // 1/35C

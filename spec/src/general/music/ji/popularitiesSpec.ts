@@ -15,7 +15,7 @@ import { onlyRunInCi } from "../../../../helpers/onlyRunInCi"
 
 describe("COMMA_POPULARITIES", (): void => {
     it("is the case that all the quotients capable of being parsed by monzo from quotient correctly when only top is 80 or less", (): void => {
-        const originalQuotients: Array<RationalQuotient<{ rough: 5, direction: Direction.SUPER }>> =
+        const originalRationalQuotients: Array<RationalQuotient<{ rough: 5, direction: Direction.SUPER }>> =
             COMMA_POPULARITIES.map((
                 popularity: Popularity,
             ): RationalQuotient<{ rough: 5, direction: Direction.SUPER }> => {
@@ -23,7 +23,7 @@ describe("COMMA_POPULARITIES", (): void => {
             })
 
         const rationalMonzos: Array<RationalMonzo<{ rough: 5, direction: Direction.SUPER }>> =
-            originalQuotients.map((
+            originalRationalQuotients.map((
                 rationalQuotient: RationalQuotient<{ rough: 5, direction: Direction.SUPER }>,
             ): RationalMonzo<{ rough: 5, direction: Direction.SUPER }> => {
                 return computeRationalMonzoFromRationalQuotient(rationalQuotient)
@@ -35,7 +35,7 @@ describe("COMMA_POPULARITIES", (): void => {
                 return computeQuotientFromMonzo(rationalMonzo)
             })
 
-        expect(rationalQuotients).toEqual(originalQuotients)
+        expect(rationalQuotients).toEqual(originalRationalQuotients)
     })
 
     it("is the case that the fractional ranks are correct", (): void => {

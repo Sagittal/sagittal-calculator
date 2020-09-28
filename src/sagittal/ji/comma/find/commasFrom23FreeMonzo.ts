@@ -1,9 +1,9 @@
 import {
     abs,
-    Comma,
+    Comma, computeNumFromMonzo,
     computePlusOrMinusRange,
     Exponent,
-    Integer,
+    IntegerDecimal,
     isUndefined,
     Maybe,
     Prime,
@@ -21,26 +21,27 @@ import {
     DEFAULT_MAX_N2D3P9,
     DEFAULT_UPPER_BOUND,
 } from "./constants"
-import { computeMonzoInZone } from "./monzoInZone"
+import { computeRationalMonzoInZone } from "./monzoInZone"
 import { CommasFrom23FreeMonzoOptions } from "./types"
 
-const computeTwoFreeMonzo = (
-    twoThreeFreeMonzo: RationalMonzo<{ rough: 5 }>,
-    threeExponent: Integer & Exponent<3 & Prime>,
+const compute2FreeRationalMonzo = (
+    twoThreeFreeRationalMonzo: RationalMonzo<{ rough: 5 }>,
+    threeExponent: IntegerDecimal & Exponent<3 & Prime>,
 ): RationalMonzo<{ rough: 3 }> => {
-    const twoFreeMonzo: RationalMonzo<{ rough: 3 }> =
-        shallowClone(twoThreeFreeMonzo) as RationalMonzo as RationalMonzo<{ rough: 3 }>
-    twoFreeMonzo[ THREE_PRIME_INDEX ] = threeExponent
+    const twoFreeRationalMonzo: RationalMonzo<{ rough: 3 }> =
+        shallowClone(twoThreeFreeRationalMonzo) as RationalMonzo as RationalMonzo<{ rough: 3 }>
+    twoFreeRationalMonzo[ THREE_PRIME_INDEX ] = threeExponent
 
-    if (isUndefined(twoFreeMonzo[ TWO_PRIME_INDEX ])) {
-        twoFreeMonzo[ TWO_PRIME_INDEX ] = 0 as Integer & Exponent<Prime>
+    if (isUndefined(twoFreeRationalMonzo[ TWO_PRIME_INDEX ])) {
+        twoFreeRationalMonzo[ TWO_PRIME_INDEX ] = 0 as IntegerDecimal & Exponent<Prime>
     }
 
-    return twoFreeMonzo
+    return twoFreeRationalMonzo
 }
 
-const computeCommasFrom23FreeMonzo = (
-    twoThreeFreeMonzo: RationalMonzo<{ rough: 5 }>,
+// TODO: twoThree -> two3
+const computeCommasFrom23FreeRationalMonzo = (
+    twoThreeFreeRationalMonzo: RationalMonzo<{ rough: 5 }>,
     options?: CommasFrom23FreeMonzoOptions,
 ): Comma[] => {
     const {
@@ -53,12 +54,13 @@ const computeCommasFrom23FreeMonzo = (
 
     const commas: Comma[] = []
 
-    computePlusOrMinusRange(maxAte).forEach((threeExponent: Integer & Exponent<3 & Prime>): void => {
-        const twoFreeMonzo = computeTwoFreeMonzo(twoThreeFreeMonzo, threeExponent)
-        const monzo: Maybe<RationalMonzo> = computeMonzoInZone(twoFreeMonzo, [lowerBound, upperBound])
+    computePlusOrMinusRange(maxAte).forEach((threeExponent: IntegerDecimal & Exponent<3 & Prime>): void => {
+        const twoFreeRationalMonzo = compute2FreeRationalMonzo(twoThreeFreeRationalMonzo, threeExponent)
+        const rationalMonzoInZone: Maybe<RationalMonzo> = 
+            computeRationalMonzoInZone(twoFreeRationalMonzo, [lowerBound, upperBound])
 
-        if (monzo) {
-            const comma = { monzo } as Comma
+        if (rationalMonzoInZone) {
+            const comma = computeNumFromMonzo(rationalMonzoInZone) as Comma
 
             const commaAnalysis: CommaAnalysis = analyzeComma(comma)
             if (
@@ -76,5 +78,5 @@ const computeCommasFrom23FreeMonzo = (
 }
 
 export {
-    computeCommasFrom23FreeMonzo,
+    computeCommasFrom23FreeRationalMonzo,
 }

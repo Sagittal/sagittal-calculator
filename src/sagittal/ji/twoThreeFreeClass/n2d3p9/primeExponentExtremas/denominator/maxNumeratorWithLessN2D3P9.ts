@@ -1,8 +1,8 @@
 import {
-    computeIntegerFromIntegerMonzo,
+    computeIntegerDecimalFromIntegerMonzo,
     computeNumFromMonzo,
     Direction,
-    Integer,
+    IntegerDecimal,
     IntegerMonzo,
     IntegerNumerator,
     Max,
@@ -24,11 +24,11 @@ const computeMaxNumeratorWithLessN2D3P9ThanMaxN2D3P9 = (
             ) < maxN2D3P9
         })
 
-    const numeratorsToCheck: IntegerNumerator[] = filteredNumeratorMonzosToCheck
-        .map(computeIntegerFromIntegerMonzo) as Integer[] as IntegerNumerator[]
-    sort(numeratorsToCheck, { descending: true })
+    const integerNumeratorsToCheck: IntegerNumerator[] = filteredNumeratorMonzosToCheck
+        .map(computeIntegerDecimalFromIntegerMonzo) as IntegerDecimal[] as IntegerNumerator[]
+    sort(integerNumeratorsToCheck, { descending: true })
 
-    return numeratorsToCheck[ 0 ] as Max<IntegerNumerator>
+    return integerNumeratorsToCheck[ 0 ] as Max<IntegerNumerator>
 }
 
 export {

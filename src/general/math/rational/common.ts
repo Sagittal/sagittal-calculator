@@ -2,27 +2,34 @@ import { allElementsEqual, isEmpty, isSingleton } from "../../code"
 import { Divisor } from "../../types"
 import { abs, divide, mod } from "../typedOperations"
 import { ONE } from "./constants"
-import { CommonFunction, Integer } from "./types"
+import { IntegerDecimal } from "./num"
+import { CommonFunction } from "./types"
 
-const computeLowestCommonMultipleOfTwoNumbers = (firstValue: Integer, secondValue: Integer): Integer =>
+const computeLowestCommonMultipleOfTwoNumbers = (
+    firstValue: IntegerDecimal, 
+    secondValue: IntegerDecimal
+): IntegerDecimal =>
     abs(divide(
-        firstValue * secondValue as Integer,
+        firstValue * secondValue as IntegerDecimal,
         computeGreatestCommonDivisor(firstValue, secondValue),
-    )) as Integer
+    )) as IntegerDecimal
 
-const computeGreatestCommonDivisorOfTwoNumbers = (firstValue: Integer, secondValue: Integer): Integer => {
-    let output: Integer = firstValue
-    let remainder: Integer = secondValue
+const computeGreatestCommonDivisorOfTwoNumbers = (
+    firstValue: IntegerDecimal, 
+    secondValue: IntegerDecimal
+): IntegerDecimal => {
+    let output: IntegerDecimal = firstValue
+    let remainder: IntegerDecimal = secondValue
     while (remainder) {
-        const previousRemainder: Integer = remainder
-        remainder = mod(output, remainder) as Integer
+        const previousRemainder: IntegerDecimal = remainder
+        remainder = mod(output, remainder) as IntegerDecimal
         output = previousRemainder
     }
 
     return output
 }
 
-const recurseCommon = (commonFunction: CommonFunction, ...integers: Integer[]): Integer => {
+const recurseCommon = (commonFunction: CommonFunction, ...integers: IntegerDecimal[]): IntegerDecimal => {
     if (isSingleton(integers)) {
         return integers[ 0 ]
     }
@@ -30,7 +37,7 @@ const recurseCommon = (commonFunction: CommonFunction, ...integers: Integer[]): 
         return ONE
     }
 
-    const result: Integer = commonFunction(integers[ 0 ], integers[ 1 ])
+    const result: IntegerDecimal = commonFunction(integers[ 0 ], integers[ 1 ])
     if (integers.length === 2) {
         return result
     }
@@ -38,7 +45,7 @@ const recurseCommon = (commonFunction: CommonFunction, ...integers: Integer[]): 
     return recurseCommon(commonFunction, result, ...integers.slice(2))
 }
 
-const computeCommon = (integers: Integer[], commonFunction: CommonFunction): Integer => {
+const computeCommon = (integers: IntegerDecimal[], commonFunction: CommonFunction): IntegerDecimal => {
     if (isEmpty(integers)) {
         return ONE
     }
@@ -50,10 +57,10 @@ const computeCommon = (integers: Integer[], commonFunction: CommonFunction): Int
     return recurseCommon(commonFunction, ...integers)
 }
 
-const computeLeastCommonMultiple = (...integers: Integer[]): Integer =>
+const computeLeastCommonMultiple = (...integers: IntegerDecimal[]): IntegerDecimal =>
     computeCommon(integers, computeLowestCommonMultipleOfTwoNumbers)
 
-const computeGreatestCommonDivisor = <T extends Integer>(...integers: T[]): Divisor<T> =>
+const computeGreatestCommonDivisor = <T extends IntegerDecimal>(...integers: T[]): Divisor<T> =>
     computeCommon(integers, computeGreatestCommonDivisorOfTwoNumbers) as Divisor<T>
 
 export {

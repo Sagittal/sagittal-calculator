@@ -1,6 +1,6 @@
 import { dividesEvenly } from "../../../dividesEvenly"
 import { NumTypeParameters, Quotient } from "../../../num"
-import { isInteger } from "../../typeGuards"
+import { isIntegerDecimal } from "../decimal"
 import { IntegerQuotient, RationalQuotient } from "./types"
 
 // TODO: IRRATIONAL QUOTIENTS
@@ -21,7 +21,7 @@ const isRationalQuotient = <T extends NumTypeParameters>(
 ): candidateRationalQuotient is RationalQuotient<T> => {
     const [numerator, denominator] = candidateRationalQuotient
 
-    return isInteger(numerator) && isInteger(denominator)
+    return isIntegerDecimal(numerator) && isIntegerDecimal(denominator)
 }
 
 const isIntegerQuotient = <T extends NumTypeParameters>(

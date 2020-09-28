@@ -2,7 +2,7 @@ import {
     compute23FreeClassName,
     computeCopfr,
     computePrimeLimit,
-    computeRationalMonzoFromRationalNum,
+    computeRationalMonzoFromRatio,
     computeSopfr,
     Copfr,
     Max,
@@ -19,7 +19,7 @@ const analyze23FreeClass = (twoThreeFreeClass: TwoThreeFreeClass): TwoThreeFreeC
     const twoThreeFreePrimeLimit: Max<Prime<{ rough: 5 }>> = computePrimeLimit(twoThreeFreeClass)
 
     // TODO: yeah see this is a perfect example of where you should be able to just call these calcs on the Num
-    const twoThreeFreeClassMonzo = computeRationalMonzoFromRationalNum(twoThreeFreeClass)
+    const twoThreeFreeClassMonzo = computeRationalMonzoFromRatio(twoThreeFreeClass)
     const twoThreeFreeSopfr: Sopfr<{ rough: 5 }> = computeSopfr(twoThreeFreeClassMonzo) as Sopfr<{ rough: 5 }>
     const twoThreeFreeCopfr: Copfr<{ rough: 5 }> = computeCopfr(twoThreeFreeClassMonzo) as Copfr<{ rough: 5 }>
 

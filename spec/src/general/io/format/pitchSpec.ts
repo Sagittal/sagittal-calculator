@@ -1,5 +1,5 @@
 import { formatPitch, Formatted } from "../../../../../src/general/io/format"
-import { Decimal, Integer, Monzo, Num, Quotient } from "../../../../../src/general/math"
+import { Decimal, IntegerDecimal, Monzo, Num, Quotient } from "../../../../../src/general/math"
 import { Cents } from "../../../../../src/general/music"
 
 describe("formatPitch", (): void => {
@@ -22,7 +22,7 @@ describe("formatPitch", (): void => {
     })
 
     it("if the quotient and decimal are present, returns the quotient formatted", (): void => {
-        const pitch = { quotient: [5, 1] as Quotient, decimal: 5 as Integer }
+        const pitch = { quotient: [5, 1] as Quotient, decimal: 5 as IntegerDecimal }
 
         const actual = formatPitch(pitch)
 
@@ -49,7 +49,7 @@ describe("formatPitch", (): void => {
     })
 
     it("if the monzo and decimal are present, returns the monzo formatted", (): void => {
-        const pitch = { monzo: [0, 0, 1] as Monzo, decimal: 5 as Integer }
+        const pitch = { monzo: [0, 0, 1] as Monzo, decimal: 5 as IntegerDecimal }
 
         const actual = formatPitch(pitch)
 
