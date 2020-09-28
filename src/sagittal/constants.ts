@@ -8,7 +8,7 @@ const APOTOME: Comma = {
 
 const HALF_APOTOME: Num = {
     monzo: [-5.5, 3.5] as RationalMonzo,
-    // TODO: HALF-PITCH HELPER
+    // TODO: FRACTIONAL PITCH HELPER
     //  Could be cool to have a half-pitch helper or maybe just general multiply or divide
     //  Which would adjust monzo, quotient, cents, number, etc. accordingly
     //  It might spare me the pain of thinking I could just divide decimals by 2 instead of taking the sqrt...

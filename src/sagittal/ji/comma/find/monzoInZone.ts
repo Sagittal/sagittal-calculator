@@ -21,7 +21,8 @@ const computeMonzoInZone = (twoFreeMonzo: RationalMonzo<{ rough: 3 }>, zone: Zon
     const monzoInZone = shallowClone(twoFreeMonzo)
 
     if (!equalMonzos(monzoInZone, [] as RationalMonzo)) {
-        // TODO: this isn't ideal how we're making fake pitches to use the available helpers
+        // TODO: NUM IMPROVEMENTS
+        //  This isn't ideal how we're making fake pitches to use the available helpers
         //  But the alternative would be have, what, a "numify" helper?
         //  Or expose a monzoIsHigher and then grab the monzo out of the upperBound?
         //  Or should numIsHigher simply accept Monzos, Quotients, and Decimals in addition to Nums?

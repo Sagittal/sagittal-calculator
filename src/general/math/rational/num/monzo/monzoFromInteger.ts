@@ -22,7 +22,8 @@ exponent(n, i) = Math.round(math.log(math.gcd(n, maxPrimePower[i]), prime[i]) )
 That's more like what I really do in Excel.
  */
 
-// TODO: perhaps Integers should all be direction super
+// TODO: NUM IMPROVEMENTS
+//  Perhaps Integers should all be direction super
 const computeIntegerMonzoFromInteger = (integer: Integer): IntegerMonzo<{ direction: Direction.SUPER }> => {
     if (integer === 0) {
         throw new Error("The prime factorization of zero is not defined.")
