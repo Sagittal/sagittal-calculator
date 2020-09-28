@@ -1,6 +1,8 @@
 import { SymbolLongAscii, SymbolSmiley } from "./types"
 
 const computeSmileyFromAscii = (ascii: SymbolLongAscii): SymbolSmiley => {
+    if (ascii === "(|//|)") return "(:h:)" as SymbolSmiley
+
     const withoutAccentsAndFixedSlashes = ascii
         .replace(/`/g, "")
         .replace(/,/g, "")

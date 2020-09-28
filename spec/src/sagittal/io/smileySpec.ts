@@ -47,4 +47,13 @@ describe("computeSmileyFromAscii", (): void => {
         const expected = ":,,::|):" as SymbolSmiley
         expect(actual).toBe(expected)
     })
+
+    it("does the correct thing with the natural symbol", (): void => {
+        const ascii = "(|//|)" as SymbolLongAscii
+
+        const actual = computeSmileyFromAscii(ascii)
+
+        const expected = "(:h:)" as SymbolSmiley
+        expect(actual).toBe(expected)
+    })
 })
