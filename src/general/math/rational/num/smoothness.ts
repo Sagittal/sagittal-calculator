@@ -50,7 +50,6 @@ const computeRatioSmoothness = <S extends Primes, T extends NumTypeParameters>(
     } else if (!isUndefined(decimal)) {
         return computeRationalDecimalSmoothness(decimal)
     } else {
-        // TODO: formatRatio passes through? should I just keep pass-throughs in general?
         throw new Error(`Tried to check smoothness of ratio ${formatNum(ratio)} and ${formatNum(ratio)} but the latter lacked any numeric representations.`)
     }
 }

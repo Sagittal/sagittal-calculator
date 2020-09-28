@@ -9,7 +9,7 @@ describe("average 2,3-free SoPFR", (): void => {
     it("is about 23", (): void => {
         const two3FreeSopfrs: Array<Sopfr<{ rough: 5 }>> =
             JI_NOTATION.map((symbolClassId: Id<SymbolClass>): Sopfr<{ rough: 5 }> => {
-                // TODO: this work should probably also be handled in Num territory
+                // TODO: CONDUCT AT NUM LEVEL
                 const primaryComma = getPrimaryComma(symbolClassId)
                 const primaryCommaMonzo = computeRationalMonzoFromRatio(primaryComma)
                 const two3FreeNumberMonzo = computeRoughRationalMonzo(primaryCommaMonzo, FIVE_ROUGHNESS)

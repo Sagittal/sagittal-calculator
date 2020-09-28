@@ -18,7 +18,7 @@ const analyze23FreeClass = (two3FreeClass: Two3FreeClass): Two3FreeClassAnalysis
 
     const two3FreePrimeLimit: Max<Prime<{ rough: 5 }>> = computePrimeLimit(two3FreeClass)
 
-    // TODO: yeah see this is a perfect example of where you should be able to just call these calcs on the Num
+    // TODO: CONDUCT AT NUM LEVEL
     const two3FreeClassMonzo = computeRationalMonzoFromRatio(two3FreeClass)
     const two3FreeSopfr: Sopfr<{ rough: 5 }> = 
         computeSopfr(computeNumFromMonzo(two3FreeClassMonzo)) as Sopfr<{ rough: 5 }>
